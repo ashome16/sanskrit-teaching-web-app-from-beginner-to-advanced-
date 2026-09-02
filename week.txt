@@ -1,0 +1,8 @@
+# day|wing|pack|shape|target
+1|prarambhah|matra|जोडो|का
+2|prarambhah|colours|मेलः|पीतः
+3|ganitam|sankhya-0-10|बनाओ|पञ्च
+4|sariram|nada-pathah|रिक्तम्|कण्ठः
+5|bhugolah|nadyah|मेलः|गङ्गा
+6|sanskritih|katha-bija|रिक्तम्|तारा
+7|krida|banao|बनाओ|माता
