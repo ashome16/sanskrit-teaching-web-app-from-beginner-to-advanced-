@@ -87,7 +87,10 @@ Map only. No `puzzles.txt` rows until Day 1 **का** Check holds.
 | **ऋतवः** seasons | Sanskriti | वसन्तः spring · ग्रीष्मः summer · वर्षा rains · हेमन्तः winter | मेलः | Four first. शरत् / शिशिरः later. |
 | **इन्द्रियाणि** five senses | Body | चक्षुः seeing · श्रोत्रम् hearing · घ्राणम् smell · रसना taste · त्वक् touch | मेलः | Organ → what it meets (रूपम् शब्दः गन्धः रसः स्पर्शः). Names, no anatomy drill. |
 | **भोजनम्** eating | Beginners / food | अन्नम् food · जलम् water · फलम् fruit · दुग्धम् milk | बनाओ / मेलः | Nouns you can put in a bowl. **खादति / पिबति** wait — those are verbs (not the 50-dhātu dump). |
+| **वृत्तिः** professions | Beginners / school | गुरुः teacher · छात्रः student · कृषकः farmer · योद्धा warrior | मेलः | People you can point at. **वैद्यः** is a name only, never a treatment. |
+| **वातः** weather | Map / Sanskriti | सूर्यः sun · मेघः cloud · वायुः wind · वृष्टिः rain · शीतम् cold · उष्णम् hot | मेलः | What the sky is doing today. Not the same pack as ऋतवः (season). |
+| **चिह्नानि** glue words | Beginners | अहम् I · त्वम् you · सः / सा he/she · ते they · एतत् this · तत् that · अत्र here · तत्र there · कुत्र where · कः who · किम् what | जोडो / मेलः | The little words that hold a sentence. **न** and **च** already in this week’s glue note. |
 
 **भूतम् / वर्तमानम् / भविष्यत्** (past · present · future) is abstract. That is a Sūtram TRACE later, not a Beginners tile.
 
-Do not add these to the live board this week. After **का** works: maybe **one** pack (कालः four tiles), not all five.
+Do not add these to the live board this week. After **का** works: maybe **one** pack (कालः four tiles), not the whole shelf.
