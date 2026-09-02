@@ -1,27 +1,11 @@
-# puzzles.txt
 # shape|target|answer|tiles|sentence|english|seed
-# After Check: slide chosen tiles together, then show english (big) and sentence+seed.
-# Skip # and blanks. 6 tiles. 2–3 decoys from same varga or stem.
-जोडो|का|का|क,ा,ख,ग,ि,ु|का बालिका पठति।|the girl reads|क is a throat letter. आ is two beats. Together they make का.
-जोडो|कि|कि|क,ि,ा,ु,ख,ग|किं नाम ते?|what is your name?|इ lives at the palate. On क it becomes ि, कि.
-बनाओ|माता|माता|मा,ता,पा,रा,ना,सा|माता अन्नं ददाति।|mother gives food|मा on the lips, ता at the teeth. First home-word.
-बनाओ|जलम्|जलम्|ज,लम्,कम्,गम्,तम्,पम्|बालः जलं पिबति।|the child drinks water|जलम् is water. Palate then teeth.
-मेलः|५|पञ्च|पञ्च,षट्,सप्त,चत्वारि,नव,दश|मम हस्ते पञ्च अङ्गुलयः सन्ति।|five (fingers)|पञ्च is five. Palatal च plus nasal ञ.
-मेलः|१०|दश|दश,नव,एकम्,पञ्च,षट्,सप्त|दश बालकाः क्रीडन्ति।|ten children play|दश is ten. Palatal श.
-मेलः|पीतः|हरिद्रा|हरिद्रा,नीली,रक्तम्,हरितम्,श्वेतम्,कृष्णम्|पीतः वर्णः हरिद्रायाः इव।|yellow = turmeric|Colour to plant. No recipe.
-मेलः|नीलः|आकाशः|आकाशः,पीतः,रक्तः,हरितः,श्वेतः,कृष्णः|नीलः आकाशः शोभते।|blue = the sky|नीलः is blue, a colour you can point at.
-बनाओ|पञ्च|पञ्च|प,ञ्च,ञ,च,त,न|पञ्च अङ्गुलयः सन्ति।|five|Tiles प + ञ्च make the word five.
-बनाओ|अष्ट|अष्ट|पञ्च,त्रि,अष्ट,षट्,नव,दश|पञ्च + त्रि = अष्ट।|five plus three is eight|Addition as words, not a calculator.
-रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is an address on the breath-path.
-मेलः|गङ्गा|नदी|नदी,पर्वतः,ग्रामः,वनम्,आकाशः,गृहम्|गङ्गा एका नदी अस्ति।|Ganga is a river|Book-geography, not a modern border.
-मेलः|यमुना|नदी|नदी,पर्वतः,ग्रामः,वनम्,आकाशः,गृहम्|यमुना एका नदी अस्ति।|Yamuna is a river|Second river. Same match, new name.
-रिक्तम्|वयं सर्वे ____ धूलयः।|तारा|तारा,मृत्तिका,जल,वन,ग्राम,गृह|वयं सर्वे तारा-धूलयः — इति सेतुः।|we are all star-dust (a bridge, not an identity)|Sagan + Saptarṣi names. Label BRIDGE.
-मेलः|चैत्रः|चित्रा|चित्रा,रोहिणी,मघा,अश्विनी,भरणी,अनुराधा|चैत्रमासे वसन्तः आगतः।|the month Caitra wears the star Citrā|The month is named from that full moon.
-क्रमः|सा रे ग|सा रे ग|सा,रे,ग,म,प,नि|सा रे ग म प ध नि।|sargam: a cousin of do-re-mi, not a copy|Two ladders for the ear. Label BRIDGE.
-रिक्तम्|ध्वजे केसरः ____ हरितः च।|श्वेतः|श्वेतः,नीलः,पीतः,कृष्णः,रक्तः,अरुणः|ध्वजे केसरः श्वेतः हरितः च।|the flag is saffron, white, and green|Toy gap for Deepakam-1 colours, not a quoted line.
-प्रश्न|कस्य|रामस्य|रामस्य,रामः,रामम्,रामेण,रामाय,रामे|कस्य पुस्तकम्? रामस्य पुस्तकम्।|whose book? Rama's book|राम् + स्य → रामस्य. TRACE on Sūtram.
-मेलः|सूची|सीवनम्|सीवनम्,यन्त्रम्,छेदनम्,प्राणः,कण्ठः,फलम्|सूची सीवनस्य नाम।|needle goes with sewing (names only)|Karma ↔ tool-family. Never how-deep.
-बनाओ|रामः|रामः|रा,मः,लः,नः,सः,यः|रामः फलं खादति।|Rama eats fruit|Visarga ः is a final breath, not a pitch.
-जोडो|देवालयः|देवालयः|देव,आलय,गृह,वन,नदी,ग्राम|देवालयं गच्छामः।|a god's house (god + house)|The two words slide into one meaning. Sandhi a+ā=ā is a small TRACE, not the lesson.
-जोडो|पुस्तकालयः|पुस्तकालयः|पुस्तक,आलय,देव,जल,गृह,वन|पुस्तकालये पठामः।|a library (book + house)|Same house-word आलय. Meaning first: a house for books.
-जोडो|जलाशयः|जलाशयः|जल,आशय,आलय,नदी,गृह,वन|जलाशये मत्स्याः सन्ति।|a pond (water + resting-place)|जल is water. The fused word is a place water rests.
+जोडो|का|का|क,ा,त,म,र,न|का बालकः पठति।|The boy reads.|A short vowel-mark lesson.
+मेलः|पीतः|पीतः|पीतः,रक्तः,नीलः,हरितः,श्वेतः,श्यामः|पीतः हरिद्रा अस्ति।|Yellow is turmeric.|Colour is a bridge from word to world.
+बनाओ|पञ्च|पञ्च|पञ्च,त्रि,एक,द्वि,नव,दश|पञ्च छात्राः सन्ति।|There are five students.|Count the Sanskrit word.
+रिक्तम्|कण्ठः|कण्ठः|कण्ठः,तालु,मूर्धा,दन्तः,ओष्ठः,नासिका|कण्ठः नादस्य स्थानम्।|The throat is a sound place.|A picture of the rule, not a recording.
+मेलः|गङ्गा|गङ्गा|गङ्गा,यमुना,नदी,जलम्,पर्वतः,भूमिः|गङ्गा नदी अस्ति।|Ganga is a river.|Two river names meet on a map.
+रिक्तम्|तारा|तारा|तारा,धूलिः,बीजम्,आकाशः,नदी,पुष्पम्|तारा आकाशे दृश्यते।|A star is seen in the sky.|BRIDGE: तारा-धूलिः joins science and itihāsa.
+बनाओ|मिश्रणम्|मिश्रणम्|मिश्र,णम्,पञ्च,का,रक्तः,गङ्गा|शब्दाः मिश्रणम् न भवन्ति।|Words are not a random mix.|Choose meaning first.
+जोडो|देवालयः|देवालयः|देव,आलय,जल,आशय,पुस्तक,नदी|देवालयः देवस्य गृहम्।|A god's house.|देव + आलय; a+ā=ā.
+जोडो|पुस्तकालयः|पुस्तकालयः|पुस्तक,आलय,देव,जल,आशय,नदी|पुस्तकालयः पुस्तकानां गृहम्।|A library.|पुस्तक + आलय; a+ā=ā.
+जोडो|जलाशयः|जलाशयः|जल,आशय,देव,आलय,पुस्तक,नदी|जलाशयः जलस्य स्थानम्।|A pond.|जल + आशय; a+ā=ā.

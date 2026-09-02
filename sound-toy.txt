@@ -1,13 +1,4 @@
-# sound-toy.txt  MODEL of the rule, not a recording
 # letter|place|voice|puff|nose|beats
-# place: kantha talu murdha danta ostha nasika kantha-talu kantha-ostha
-# voice 1 = ghoṣa (hand on throat)  0 = aghoṣa
-# puff  1 = mahāprāṇa               0 = alpa
-# nose  1 = anunāsika
-# beats 1 or 2 (mātrā)
-# Caption always: A picture of the rule, not a recording. Hand on throat for voice.
-# Day-1 letters only. No Hz. No spectrogram. No audio.
-
 क|kantha|0|0|0|1
 ख|kantha|0|1|0|1
 ग|kantha|1|0|0|1
@@ -15,10 +6,5 @@
 ङ|kantha|1|0|1|1
 अ|kantha|1|0|0|1
 आ|kantha|1|0|0|2
-इ|talu|1|0|0|1
-उ|ostha|1|0|0|1
-ए|kantha-talu|1|0|0|2
-ा|kantha|1|0|0|2
-ि|talu|1|0|0|1
-ु|ostha|1|0|0|1
-े|kantha-talu|1|0|0|2
+इ|kantha-talu|1|0|0|1
+उ|kantha-ostha|1|0|0|1
