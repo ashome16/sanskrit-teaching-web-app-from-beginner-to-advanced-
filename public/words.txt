@@ -97,3 +97,46 @@
 रामः|rāmaḥ|Rama (citation)|stems|रामः is the teaching-stem. Visarga is a final breath, not the pitch.
 राम्|rām|Rama base|stems|राम् has no final vowel. glue: राम् + अः → रामः. राम् + स्य → रामस्य.
 रामस्य|rāmasya|Rama's|stems|रामस्य must stay रामस्य. परीक्षा. Blue ṣaṣṭhī. कस्य?
+# --- SHELF packs (not in week.txt). After का Check. ---
+प्रातः|prātaḥ|morning|kalah|प्रातः is morning. Point at the sky.
+मध्याह्नः|madhyāhnaḥ|midday|kalah|मध्याह्नः is the middle of the day.
+सायम्|sāyam|evening|kalah|सायम् is evening.
+रात्रिः|rātriḥ|night|kalah|रात्रिः is night.
+ह्यः|hyaḥ|yesterday|dinam|ह्यः is yesterday. A day you already stood in.
+अद्य|adya|today|dinam|अद्य is today.
+श्वः|śvaḥ|tomorrow|dinam|श्वः is tomorrow.
+सः|saḥ|he / that (masc.)|glue|सः is he. A pointing word, not a name.
+सा|sā|she / that (fem.)|glue|सा is she. Same pointing, other gender. (Also a sargam step on another shelf.)
+ते|te|they / those|glue|ते is they. More than one.
+एतत्|etat|this|glue|एतत् is this (near).
+तत्|tat|that|glue|तत् is that (further).
+अत्र|atra|here|glue|अत्र is here.
+तत्र|tatra|there|glue|तत्र is there.
+कुत्र|kutra|where|glue|कुत्र is where. The asking-place.
+कः|kaḥ|who|glue|कः is who.
+किम्|kim|what|glue|किम् is what.
+छात्रः|chātraḥ|student|vrittih|छात्रः is the student. Pair with गुरुः.
+कृषकः|kṛṣakaḥ|farmer|vrittih|कृषकः is a farmer. A person you can point at.
+योद्धा|yoddhā|warrior|vrittih|योद्धा is a warrior-name. Not a battle lesson.
+वैद्यः|vaidyaḥ|healer (name)|vrittih|वैद्यः is a name only. No treatment.
+वसन्तः|vasantaḥ|spring|rtvah|वसन्तः is spring.
+ग्रीष्मः|grīṣmaḥ|summer|rtvah|ग्रीष्मः is summer.
+वर्षा|varṣā|rains|rtvah|वर्षा is the rains. A season-name. Weather-rain is वृष्टिः.
+हेमन्तः|hemantaḥ|winter|rtvah|हेमन्तः is winter. Four seasons first.
+सूर्यः|sūryaḥ|sun|vatah|सूर्यः is the sun. What the sky is doing.
+मेघः|meghaḥ|cloud|vatah|मेघः is a cloud.
+वायुः|vāyuḥ|wind|vatah|वायुः is wind.
+वृष्टिः|vṛṣṭiḥ|rain (weather)|vatah|वृष्टिः is rain falling today. Not the season वर्षा.
+शीतम्|śītam|cold|vatah|शीतम् is cold.
+उष्णम्|uṣṇam|hot|vatah|उष्णम् is hot.
+चक्षुः|cakṣuḥ|eye / seeing|indriyani|चक्षुः sees. Pair with रूपम्. Name, not a clinic.
+श्रोत्रम्|śrotram|ear / hearing|indriyani|श्रोत्रम् hears. Pair with शब्दः.
+घ्राणम्|ghrāṇam|nose / smell|indriyani|घ्राणम् smells. Pair with गन्धः.
+रसना|rasanā|tongue / taste|indriyani|रसना tastes. Pair with रसः. Name, not a recipe.
+त्वक्|tvak|skin / touch|indriyani|त्वक् touches. Pair with स्पर्शः.
+रूपम्|rūpam|form / sight|indriyani|रूपम् is what the eye meets.
+शब्दः|śabdaḥ|sound|indriyani|शब्दः is what the ear meets. (Sūtram button शब्दः सिध्यति is the same word as 'word'.)
+गन्धः|gandhaḥ|smell|indriyani|गन्धः is what the nose meets.
+रसः|rasaḥ|taste|indriyani|रसः is what the tongue meets.
+स्पर्शः|sparśaḥ|touch|indriyani|स्पर्शः is what the skin meets.
+दुग्धम्|dugdham|milk|food|दुग्धम् is milk. A bowl-word with अन्नम् जलम् फलम्.
