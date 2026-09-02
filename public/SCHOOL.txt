@@ -1,0 +1,31 @@
+Sanskrit Learning — one school
+==============================
+Not seven apps. One chrome. One board.
+Engine: Deepakam reader + बनाओ.
+Wings are shelves of packs. Shapes are skins of one board.
+
+Child dropdown: 1 Beginners → 2 Biology → 5 Maths → 3 Geography → 4 Sanskriti → 6 Games → 7 Coding
+Coding last. Beginners never see Hūṇa.
+
+SHIP NOW (this folder)
+  The week, plus the tiles those puzzles need.
+  ~80 words. 20 puzzles. 3 Suśruta names. 2 rivers. 0 far-lands.
+
+SHELF LATER (map only, no files yet)
+  11–20 and tens, animals, nature, home, full 8 janapadas, para-deśaḥ,
+  8 karmas, 12 months, 8 rāgas, chess words, conj(), living names.
+
+Heritage: every line has a seed. Bridges labelled. No treatment, no how-to.
+
+Week
+  1 Beginners  matra         जोडो
+  2 Beginners  colours       मेलः
+  3 Maths      1–10          बनाओ
+  4 Biology    nāda-path     रिक्तम्
+  5 Geography  two rivers    मेलः
+  6 Sanskriti  one seed      रिक्तम्
+  7 Games      mix           बनाओ
+
+Beginners games: जोडो + बनाओ. Day-2 मेलः is a Games skin on a Beginners pack.
+Sūtram is a TRACE skin on the same 20 rows: glue(), decl(), three sandhi only.
+Button: शब्दः सिध्यति
