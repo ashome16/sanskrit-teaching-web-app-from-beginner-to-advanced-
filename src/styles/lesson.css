@@ -1,0 +1,421 @@
+/* Lesson Page Specific Styles */
+.lesson-page {
+  padding: 2rem 0;
+}
+
+.lesson-header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.lesson-header h1 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.lesson-progress {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+.lesson-container {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.lesson-main {
+  background-color: var(--bg);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  min-height: 500px;
+}
+
+.lesson-sidebar {
+  background-color: var(--bg);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  max-height: fit-content;
+  position: sticky;
+  top: 90px;
+}
+
+.content-list h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+.content-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content-item {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--light);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.content-item:hover {
+  background-color: #e0e7ff;
+}
+
+.content-item.active {
+  background-color: #dbeafe;
+  border-left-color: var(--primary);
+  font-weight: 600;
+}
+
+.content-type {
+  display: inline-block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 2px;
+  width: fit-content;
+}
+
+.content-title {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.completion-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(59, 130, 246, 0.1));
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.completion-banner .completion-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--success);
+  color: white;
+  font-weight: 800;
+}
+
+.completion-banner strong {
+  display: block;
+  color: var(--dark);
+}
+
+.completion-banner p {
+  margin: 0;
+  color: var(--text-light);
+}
+
+.study-checklist {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.study-checklist h3 {
+  margin-bottom: 0.75rem;
+}
+
+/* Verse Selector Styles */
+.verse-selector {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.verse-selector h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+.verse-selector ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.verse-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: var(--light);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  font-size: 0.85rem;
+}
+
+.verse-item:hover:not(.completed) {
+  background-color: #e0e7ff;
+  transform: translateX(2px);
+}
+
+.verse-item.active {
+  background-color: var(--primary);
+  color: white;
+  border-left-color: var(--secondary);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
+}
+
+.verse-item.completed {
+  background-color: rgba(16, 185, 129, 0.12);
+  border-left-color: var(--success);
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.verse-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.verse-item.active .verse-number {
+  background-color: var(--secondary);
+}
+
+.verse-item.completed .verse-number {
+  background-color: var(--success);
+}
+
+.verse-title {
+  flex: 1;
+  word-break: break-word;
+}
+
+.study-checklist ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.study-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.study-checklist li.done {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.lesson-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: var(--bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.lesson-controls > .btn {
+  min-width: 120px;
+}
+
+.lesson-controls > .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.middle-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Lesson Vocabulary Wrapper - for sidebar integration */
+.lesson-vocabulary-wrapper {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border);
+}
+
+.lesson-vocabulary-wrapper .lesson-vocabulary-panel {
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+  position: relative;
+  top: auto;
+  max-height: 400px;
+}
+
+.lesson-vocabulary-wrapper .lesson-vocabulary-panel h3 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .lesson-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .lesson-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .lesson-header {
+    padding: 1.5rem;
+  }
+
+  .lesson-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .lesson-main {
+    padding: 1.5rem;
+    min-height: auto;
+  }
+
+  .lesson-sidebar {
+    padding: 1rem;
+  }
+
+  .lesson-controls {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .lesson-controls > .btn {
+    width: 100%;
+  }
+
+  .middle-controls {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .middle-controls > .btn {
+    width: 100%;
+  }
+}
+
+/* Word Practice Section */
+.word-practice-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 3px solid var(--primary);
+}
+
+.word-practice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.word-practice-header h3 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.close-word-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.close-word-btn:hover {
+  background-color: rgba(102, 126, 234, 0.1);
+  transform: rotate(90deg);
+}
+
+@media (max-width: 480px) {
+  .lesson-header {
+    padding: 1rem;
+  }
+
+  .lesson-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .lesson-main {
+    padding: 1rem;
+  }
+
+  .lesson-progress {
+    font-size: 0.85rem;
+  }
+
+  .word-practice-section {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  .word-practice-header h3 {
+    font-size: 1rem;
+  }
+}

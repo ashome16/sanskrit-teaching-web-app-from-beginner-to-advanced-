@@ -1,0 +1,31 @@
+वर्णमाला : SANSKRIT ALPHABET GUIDE
+
+अ आ इ ई उ ऊ ऋ ॠ ऌ ए ऐ ओ औ
+स्वराः - एते त्रयोदश स्वराः सन्ति (Vowels: These are the 13 foundational vowel sounds).
+
+क ख ग घ ङ
+क-वर्गः : कण्ठ्याः - कण्ठात् उत्पद्यन्ते (Velar Group: Sounds produced from the throat).
+
+च छ ज झ ञ
+च-वर्गः : तालव्याः - जिह्वायाः तालुस्पर्शात् (Palatal Group: Sounds produced with the tongue flat against the roof of the mouth).
+
+ट ठ ड ढ ण
+ट-वर्गः : मूर्धन्याः - जिह्वायाः मूर्धस्पर्शात् (Retroflex Group: Sounds produced by curling the tip of the tongue back).
+
+त थ द ध न
+त-वर्गः : दन्त्याः - जिह्वायाः दन्तस्पर्शात् (Dental Group: Sounds produced with the tongue touching the upper teeth).
+
+प फ ब भ म
+प-वर्गः : ओष्ठ्याः - ओष्ठयोः मेलनात् (Labial Group: Sounds produced by closing the lips together).
+
+य र ल व
+अन्तःस्थाः - स्वराणाम् व्यञ्जनानां च मध्ये स्थिताः (Semi-vowels: Intermediate positional consonants).
+
+श ष स ह
+ऊष्माणः - मुखात् उष्मवायोः निष्कासनात् प्रजायन्ते (Sibilants / Fricatives: Air friction breathing sounds).
+
+अं अः अँ
+अनुस्वार/विसर्ग आदि : अन्य स्वराः (Others: Nasalization, Visarga, and Candrabindu indicators).
+
+क्ष ज्ञ त्र श्र
+संयुक्तवत् : संयुक्त व्यञ्जनानि (Conjuncts: Combinations of two or more distinct consonant sounds).

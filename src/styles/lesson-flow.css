@@ -1,0 +1,360 @@
+/* Lesson Flow Selector Styles */
+
+.lesson-flow-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem 0;
+}
+
+/* Page Selector Section */
+.page-selector {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  border: 2px solid #667eea;
+}
+
+.page-selector h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.pages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.page-btn {
+  padding: 1rem;
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.page-btn:hover {
+  border-color: #667eea;
+  background-color: #f0f9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.page-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+}
+
+.page-icon {
+  font-size: 1.8rem;
+}
+
+.page-title {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Content Display Section */
+.lesson-content-display {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Content Header with Narration */
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.content-title-section h2 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.content-description {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.narrate-btn {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.narrate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.narrate-btn.playing {
+  animation: pulse-btn 1s infinite;
+}
+
+@keyframes pulse-btn {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+  }
+}
+
+/* Content Box */
+.content-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Section Styles */
+.devanagari-section,
+.transliteration-section,
+.text-section,
+.meaning-section,
+.examples-section {
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.section-label {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.devanagari-text {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+  font-family: 'Noto Sans Devanagari', serif;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+}
+
+.transliteration-text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.interactive-content {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.interactive-word {
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  background-color: transparent;
+  white-space: nowrap;
+}
+
+.interactive-word:hover {
+  background-color: #fffacd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  transform: translateY(-1px);
+}
+
+.meaning-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+  font-style: italic;
+  padding: 1rem;
+  background-color: #f0f9ff;
+  border-left: 4px solid #667eea;
+  border-radius: 4px;
+}
+
+.examples-list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.example-item {
+  margin-bottom: 0.75rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Word Selection Panel */
+.word-selection-panel {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fdebd0 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.word-selection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.word-selection-header span {
+  font-weight: 700;
+  color: #92400e;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #92400e;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+.word-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.word-devanagari {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #78350f;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.word-transliteration {
+  font-size: 1rem;
+  color: #92400e;
+  font-weight: 600;
+}
+
+.word-hint {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+  color: #92400e;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .lesson-flow-selector {
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .page-selector {
+    padding: 1rem;
+  }
+
+  .pages-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .page-btn {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .page-icon {
+    font-size: 1.5rem;
+  }
+
+  .lesson-content-display {
+    padding: 1.5rem 1rem;
+  }
+
+  .content-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .narrate-btn {
+    width: 100%;
+  }
+
+  .content-box {
+    gap: 1rem;
+  }
+
+  .devanagari-section,
+  .transliteration-section,
+  .text-section,
+  .meaning-section,
+  .examples-section {
+    padding: 1rem;
+  }
+
+  .devanagari-text {
+    font-size: 1.3rem;
+  }
+
+  .interactive-content {
+    font-size: 0.95rem;
+  }
+
+  .word-selection-panel {
+    padding: 1rem;
+  }
+}

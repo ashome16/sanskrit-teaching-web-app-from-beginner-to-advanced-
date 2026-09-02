@@ -1,0 +1,819 @@
+/* Word Analyzer Styles */
+
+.word-analyzer {
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.analyzer-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.analyzer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.analyzer-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Search Section */
+.search-section {
+  padding: 2rem;
+  border-bottom: 2px solid #f0f0f0;
+  background-color: #fafbfc;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.quick-access {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.quick-label {
+  font-weight: 600;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.quick-btn {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.quick-btn:hover {
+  border-color: #667eea;
+  background-color: #f5f7fa;
+  transform: translateY(-2px);
+}
+
+/* Search Results */
+.search-results {
+  padding: 2rem;
+  background-color: #f5f7fa;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.search-results h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.result-item {
+  padding: 1.25rem;
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.result-item:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  transform: translateY(-2px);
+}
+
+.result-devanagari {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.result-transliteration {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.result-meaning {
+  font-size: 0.85rem;
+  color: #999;
+  line-height: 1.4;
+}
+
+/* Word Analysis */
+.word-analysis {
+  padding: 2rem;
+}
+
+.word-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 2rem;
+  background: linear-gradient(135deg, #fef5e7 0%, #fdebd0 100%);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 2px solid #f9e79f;
+}
+
+.word-main {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.word-main-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.word-devanagari-button {
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.word-pronunciation-button {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 50%;
+  background: #667eea;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.word-devanagari {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Noto Sans Devanagari', serif;
+  line-height: 1;
+}
+
+.word-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.word-transliteration {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.word-pos {
+  font-size: 0.9rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.word-meaning {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+  text-align: right;
+}
+
+.analyzer-page-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(360px, 1.4fr);
+  gap: 1.5rem;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.lesson-reader-panel {
+  position: sticky;
+  top: 1.5rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-reader-panel h2 {
+  margin: 0 0 1rem;
+}
+
+.lesson-reader-select {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.lesson-reader-text {
+  color: #333;
+  font-family: 'Noto Sans Devanagari', serif;
+  font-size: 1.5rem;
+  line-height: 2.2;
+}
+
+.lesson-reader-line {
+  margin: 0 0 0.75rem;
+}
+
+.lesson-reader-hint {
+  margin: 1rem 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.interactive-word {
+  padding: 0.1rem 0.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.interactive-word:hover,
+.interactive-word.active-word {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+@media (max-width: 900px) {
+  .analyzer-page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-reader-panel {
+    position: static;
+  }
+}
+
+/* Analysis Sections */
+.analysis-section {
+  margin-bottom: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease;
+}
+
+.section-header:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #6a4490 100%);
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.toggle-icon {
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+}
+
+.section-content {
+  padding: 2rem;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
+
+.section-description {
+  color: #666;
+  margin: 0 0 1.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Syllables Grid */
+.syllables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.syllable-card {
+  padding: 1rem;
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.syllable-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.syllable-devanagari {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.syllable-transliteration {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.syllable-type {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.syllable-type.vowel {
+  background-color: #d4f1d4;
+  color: #2e7d32;
+}
+
+.syllable-type.consonant {
+  background-color: #bbdefb;
+  color: #1565c0;
+}
+
+.syllable-type.conjunct {
+  background-color: #ffe0b2;
+  color: #e65100;
+}
+
+.syllable-type.vowel-sign {
+  background-color: #f8bbd0;
+  color: #c2185b;
+}
+
+/* Conjuncts List */
+.conjuncts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.conjunct-card {
+  padding: 1.5rem;
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.conjunct-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.conjunct-main {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.conjunct-devanagari {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Noto Sans Devanagari', serif;
+  min-width: 60px;
+}
+
+.conjunct-info {
+  flex: 1;
+}
+
+.conjunct-transliteration {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.conjunct-description {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.conjunct-components {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.component {
+  padding: 0.5rem 1rem;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 600;
+}
+
+/* Dhatu Card */
+.dhatu-card {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e8f4f8 100%);
+  border: 2px solid #b3e5fc;
+  border-radius: 8px;
+}
+
+.dhatu-main {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.dhatu-devanagari {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #01579b;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.dhatu-info {
+  flex: 1;
+}
+
+.dhatu-transliteration {
+  font-size: 1.1rem;
+  color: #0277bd;
+  font-weight: 600;
+}
+
+.dhatu-class {
+  font-size: 0.9rem;
+  color: #0277bd;
+  opacity: 0.8;
+}
+
+.dhatu-meaning {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.dhatu-description {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.dhatu-examples {
+  padding-top: 1rem;
+  border-top: 1px solid #b3e5fc;
+}
+
+.dhatu-examples strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #01579b;
+}
+
+.dhatu-examples ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.dhatu-examples li {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+/* Affixes Grid */
+.affixes-group {
+  margin-bottom: 2rem;
+}
+
+.affixes-group h4 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1rem;
+}
+
+.affixes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.affix-card {
+  padding: 1rem;
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.affix-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.affix-devanagari {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.affix-transliteration {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.affix-type {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.affix-meaning {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* Grammar Grid */
+.grammar-group {
+  margin-bottom: 2rem;
+}
+
+.grammar-group h4 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1rem;
+}
+
+.grammar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.grammar-item {
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.grammar-item.full {
+  grid-column: 1 / -1;
+}
+
+.grammar-label {
+  font-weight: 600;
+  color: #667eea;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.grammar-value {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Etymology Section */
+.etymology-text {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Examples List */
+.examples-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.example-item {
+  padding: 1rem;
+  background-color: white;
+  border-left: 4px solid #667eea;
+  border-radius: 4px;
+}
+
+.example-text {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Empty State */
+.empty-state {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #999;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.empty-state p {
+  color: #666;
+  margin: 0 0 2rem 0;
+}
+
+.empty-tips {
+  text-align: left;
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  color: #666;
+}
+
+.empty-tips li {
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .analyzer-container {
+    border-radius: 0;
+  }
+
+  .analyzer-header {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .analyzer-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .search-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .search-results {
+    padding: 1.5rem 1rem;
+  }
+
+  .results-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .result-devanagari {
+    font-size: 1.1rem;
+  }
+
+  .word-analysis {
+    padding: 1.5rem 1rem;
+  }
+
+  .word-header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .word-main {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .word-devanagari {
+    font-size: 2rem;
+  }
+
+  .word-meaning {
+    text-align: left;
+    width: 100%;
+  }
+
+  .syllables-grid,
+  .affixes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .section-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .grammar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-access {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quick-btn {
+    width: 100%;
+  }
+}

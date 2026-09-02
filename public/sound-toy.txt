@@ -1,0 +1,10 @@
+# letter|place|voice|puff|nose|beats
+क|kantha|0|0|0|1
+ख|kantha|0|1|0|1
+ग|kantha|1|0|0|1
+घ|kantha|1|1|0|1
+ङ|kantha|1|0|1|1
+अ|kantha|1|0|0|1
+आ|kantha|1|0|0|2
+इ|kantha-talu|1|0|0|1
+उ|kantha-ostha|1|0|0|1

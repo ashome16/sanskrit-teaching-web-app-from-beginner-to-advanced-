@@ -1,0 +1,291 @@
+.textbook-reader {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.textbook-lesson-select-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.textbook-lesson-select-label {
+  font-size: 0.85rem;
+  color: #7a6f5e;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.textbook-lesson-select {
+  flex: 1;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #d8ceba;
+  background: #fbf8f2;
+  font-size: 0.95rem;
+}
+
+.textbook-reader-header {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.textbook-reader-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #2b2118;
+}
+
+.textbook-reader-source {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  color: #a08a5f;
+}
+
+.textbook-reader-progress {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 0.35rem;
+}
+
+.textbook-sentence-block {
+  flex: 1;
+}
+
+.textbook-sentence-sanskrit {
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  margin: 0 0 0.75rem;
+  color: #1f1a14;
+}
+
+.interactive-word {
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 0.05em 0.15em;
+  transition: background-color 0.15s ease;
+}
+
+.interactive-word:hover,
+.interactive-word:focus {
+  background-color: #ffe9b3;
+  outline: none;
+}
+
+.interactive-word:not(:last-child)::after {
+  content: ' ';
+}
+
+.textbook-sentence-meaning {
+  font-size: 1.05rem;
+  color: #5b5348;
+  font-style: italic;
+  margin: 0;
+}
+
+.textbook-paragraph-translation {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  background: #f4f1e8;
+  border-left: 3px solid #c9a86a;
+  border-radius: 8px;
+}
+
+.textbook-paragraph-translation-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #8a7550;
+  margin-bottom: 0.35rem;
+}
+
+.textbook-paragraph-translation-text {
+  margin: 0;
+  font-size: 0.98rem;
+  font-style: italic;
+  color: #3d362a;
+  line-height: 1.5rem;
+}
+
+.textbook-nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.textbook-nav-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #d8ceba;
+  background: #fbf8f2;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.textbook-nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.textbook-nav-btn:not(:disabled):hover {
+  background: #f0e6d2;
+}
+
+.varnamala-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.varnamala-chart-toggle-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.varnamala-chart-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #d8ceba;
+  background: #fbf8f2;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #5b5348;
+  cursor: pointer;
+}
+
+.varnamala-chart-toggle:hover,
+.varnamala-chart-toggle:focus {
+  background: #f0e6d2;
+  outline: none;
+}
+
+.varnamala-chart-toggle-arrow {
+  font-size: 0.75rem;
+}
+
+.varnamala-chart-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  overflow: hidden;
+  transition: grid-template-rows 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+  margin-top: 0;
+}
+
+.varnamala-chart-panel--open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: 0.75rem;
+}
+
+.varnamala-chart-panel > .varnamala-chart-image {
+  min-height: 0;
+}
+
+.varnamala-chart-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #d8ceba;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.varnamala-row {
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid transparent;
+}
+
+.varnamala-row-header {
+  margin-bottom: 0.5rem;
+}
+
+.varnamala-row-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+
+.varnamala-row-letters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.varnamala-letter-btn {
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.varnamala-letter-btn:hover,
+.varnamala-letter-btn:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  outline: none;
+}
+
+.varnamala-row-description {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #5b5348;
+}
+
+/* Standard phonetic grouping colors: vowels, velars, palatals, retroflexes,
+   dentals, labials, semi-vowels, sibilants, others (anusvāra/visarga), conjuncts. */
+.varnamala-row--0 { background: #e6f7f5; border-color: #a9e0d8; }
+.varnamala-row--0 .varnamala-row-label { color: #0f766e; }
+
+.varnamala-row--1 { background: #fdeaea; border-color: #f2b8b8; }
+.varnamala-row--1 .varnamala-row-label { color: #b91c1c; }
+
+.varnamala-row--2 { background: #fff1e0; border-color: #f6cf9c; }
+.varnamala-row--2 .varnamala-row-label { color: #c2610a; }
+
+.varnamala-row--3 { background: #fdf6d8; border-color: #ecd97a; }
+.varnamala-row--3 .varnamala-row-label { color: #92720b; }
+
+.varnamala-row--4 { background: #e9f7e5; border-color: #a9dd9a; }
+.varnamala-row--4 .varnamala-row-label { color: #166534; }
+
+.varnamala-row--5 { background: #e6f0fb; border-color: #a7c8ef; }
+.varnamala-row--5 .varnamala-row-label { color: #1d4ed8; }
+
+.varnamala-row--6 { background: #f2e9fb; border-color: #cfa9ec; }
+.varnamala-row--6 .varnamala-row-label { color: #6d28d9; }
+
+.varnamala-row--7 { background: #fbe7f2; border-color: #eea9cf; }
+.varnamala-row--7 .varnamala-row-label { color: #a3155e; }
+
+.varnamala-row--8 { background: #eef2fb; border-color: #b6c4ec; }
+.varnamala-row--8 .varnamala-row-label { color: #3143a0; }
+
+.varnamala-row--9 { background: #f7f0e3; border-color: #dcc78f; }
+.varnamala-row--9 .varnamala-row-label { color: #8a5a10; }
+

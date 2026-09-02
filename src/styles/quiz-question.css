@@ -1,0 +1,21 @@
+/* Quiz Question Component Styles */
+.quiz-question {
+  padding: 1rem 0;
+}
+
+.quiz-question.type-multiple-choice .options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quiz-question.type-short-answer textarea {
+  min-height: 120px;
+}
+
+.quiz-question.type-pronunciation .pronunciation-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}

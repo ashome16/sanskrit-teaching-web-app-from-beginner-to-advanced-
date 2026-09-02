@@ -1,0 +1,243 @@
+.word-analyzer-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.wac-search-bar {
+  margin-bottom: 1.25rem;
+}
+
+.wac-search-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #8a7550;
+  margin-bottom: 0.4rem;
+}
+
+.wac-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.wac-input-icon {
+  font-size: 1rem;
+  color: #a08a5f;
+}
+
+.wac-input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #d8ceba;
+  font-size: 1rem;
+}
+
+.wac-input-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #c9791f;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.wac-empty-state {
+  color: #888;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+}
+
+.wac-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.wac-header-flex {
+  flex-wrap: wrap;
+  row-gap: 0.6rem;
+}
+
+.wac-devanagari-btn {
+  font-size: 2.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1f1a14;
+  padding: 0;
+  font-family: inherit;
+}
+
+.wac-speaker-btn {
+  font-size: 1.4rem;
+  background: #f6efdf;
+  border: 1px solid #e3d5b3;
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wac-speaker-btn:hover {
+  background: #efe1bc;
+}
+
+.wac-speed-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.wac-speed-btn {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #e3d5b3;
+  background: #fbf8f2;
+  color: #5b5348;
+  cursor: pointer;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.wac-speed-btn:hover {
+  background: #f0e6d2;
+  border-color: #d8ceba;
+}
+
+.wac-speed-btn--active {
+  background: #1f1a14;
+  border-color: #1f1a14;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(31, 26, 20, 0.3);
+}
+
+.wac-section {
+  margin-bottom: 1.5rem;
+}
+
+.wac-section-title {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #7a6f5e;
+  margin: 0 0 0.6rem;
+}
+
+.wac-placeholder {
+  color: #999;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.wac-syllables-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.wac-syllable-box {
+  border: 1px solid #e3d5b3;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  min-width: 3rem;
+  background: #fbf8f2;
+}
+
+.wac-syllable-dev {
+  font-size: 1.2rem;
+}
+
+.wac-syllable-translit {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.wac-conjunct-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.wac-conjunct-box {
+  border: 1px solid #e3d5b3;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  background: #fbf8f2;
+}
+
+.wac-conjunct-dev {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.wac-conjunct-components {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.wac-conjunct-component {
+  font-size: 0.8rem;
+  background: #f0e6d2;
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+}
+
+.wac-grammar-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.wac-grammar-box {
+  border: 1px solid #e3d5b3;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  background: #fbf8f2;
+}
+
+.wac-grammar-label {
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.wac-grammar-value {
+  font-size: 0.95rem;
+  color: #2b2118;
+}
+
+.wac-etymology {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #3a332a;
+  line-height: 1.4;
+}
+
+.wac-examples-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  color: #3a332a;
+  line-height: 1.5;
+}
