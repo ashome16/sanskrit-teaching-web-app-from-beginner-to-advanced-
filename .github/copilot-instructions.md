@@ -37,6 +37,8 @@ One child line per screen. Do not replace the header.
 public/puzzles.txt is the week. Do not create packs.json.
 Do not add 11–20, far lands, audio, or new packs.
 Do not shuffle 80 words.
+Time / seasons / five senses / eating are listed in docs/GUIDE.md as NEXT PACKS. Do not implement them until the user says Day 1 का Check is proven.
+भूतम् वर्तमानम् भविष्यत् is Sūtram later, not Beginners.
 
 ## Stop when
 

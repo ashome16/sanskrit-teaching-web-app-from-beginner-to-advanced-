@@ -73,3 +73,21 @@ Data: `public/puzzles.txt` `packs.txt` `words.txt` `week.txt` `sound-toy.txt`. N
 Shelf later: 11–20, animals, home, janapadas, far lands, rāgas, conj(), PDF→tiles. Never run `extract_txt.py` to fill the board.
 
 Proof before more code: क then आ then Check → का and “the girl reads.” Deepakam still opens a lesson.
+
+---
+
+## Next packs (after the week is proven)
+
+Map only. No `puzzles.txt` rows until Day 1 **का** Check holds.
+
+| Pack | Shelf | Child words (tiny) | Skin | Sense |
+|---|---|---|---|---|
+| **कालः** time of day | Beginners | प्रातः morning · मध्याह्नः midday · सायम् evening · रात्रिः night | मेलः | Point at the sky, not a clock app. |
+| **दिनम्** relative day | Beginners | ह्यः yesterday · अद्य today · श्वः tomorrow | मेलः | Three days you can stand in. |
+| **ऋतवः** seasons | Sanskriti | वसन्तः spring · ग्रीष्मः summer · वर्षा rains · हेमन्तः winter | मेलः | Four first. शरत् / शिशिरः later. |
+| **इन्द्रियाणि** five senses | Body | चक्षुः seeing · श्रोत्रम् hearing · घ्राणम् smell · रसना taste · त्वक् touch | मेलः | Organ → what it meets (रूपम् शब्दः गन्धः रसः स्पर्शः). Names, no anatomy drill. |
+| **भोजनम्** eating | Beginners / food | अन्नम् food · जलम् water · फलम् fruit · दुग्धम् milk | बनाओ / मेलः | Nouns you can put in a bowl. **खादति / पिबति** wait — those are verbs (not the 50-dhātu dump). |
+
+**भूतम् / वर्तमानम् / भविष्यत्** (past · present · future) is abstract. That is a Sūtram TRACE later, not a Beginners tile.
+
+Do not add these to the live board this week. After **का** works: maybe **one** pack (कालः four tiles), not all five.
