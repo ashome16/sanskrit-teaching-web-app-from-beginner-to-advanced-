@@ -1,0 +1,23 @@
+# shelf-puzzles.txt  NOT in week.txt
+# pack|shape|target|answer|tiles|sentence|english|seed
+# Load only when that pack is opened. Do not mix into Day 1–7.
+# मेलः: never put the target word in the tiles.
+# रिक्तम्: the blank sentence is the target; the answer may be in the tiles.
+
+kalah|मेलः|प्रातः|सूर्यः|सूर्यः,चन्द्रः,मेघः,नदी,फलम्,गृहम्|प्रातः सूर्यः उदेति।|in the morning the sun rises|Time of day to the sky. Not a clock.
+kalah|मेलः|रात्रिः|चन्द्रः|चन्द्रः,सूर्यः,मेघः,नदी,फलम्,गृहम्|रात्रौ चन्द्रः शोभते।|at night the moon shines|Night to the moon.
+dinam|मेलः|ह्यः|अद्य|अद्य,श्वः,नदी,फलम्,गृहम्,गुरुः|ह्यः गतम्, अद्य इदानीम्।|yesterday then today|Three days in a row. Target ह्यः, tap अद्य.
+dinam|मेलः|अद्य|श्वः|श्वः,ह्यः,नदी,फलम्,गृहम्,गुरुः|अद्य पठामः, श्वः पठिष्यामः।|today then tomorrow|Forward along the same three.
+glue|रिक्तम्|____ बालिका अस्मि।|अहम्|अहम्,त्वम्,सः,सा,ते,नदी|अहम् बालिका अस्मि।|I am a girl|अहम् is I.
+glue|मेलः|अहम्|त्वम्|त्वम्,सः,नदी,फलम्,गृहम्,गुरुः|अहम् च त्वं च।|I and you|The two people in a talk.
+glue|मेलः|अत्र|तत्र|तत्र,कुत्र,नदी,फलम्,गृहम्,गुरुः|अत्र वयं, तत्र ते।|here and there|Place-words. कुत्र asks.
+glue|मेलः|कुत्र|अत्र|अत्र,तत्र,नदी,फलम्,गृहम्,गुरुः|कुत्र पुस्तकम्? अत्र।|where? here|Ask-place to a place.
+vrittih|मेलः|गुरुः|छात्रः|छात्रः,कृषकः,योद्धा,नदी,फलम्,गृहम्|गुरुः छात्राय पाठं ददाति।|the teacher gives a lesson to the student|People you can point at.
+vrittih|मेलः|कृषकः|अन्नम्|अन्नम्,गुरुः,योद्धा,नदी,फलम्,गृहम्|कृषकः अन्नं ददाति।|the farmer gives food|A person and the bowl-word.
+rtvah|मेलः|वसन्तः|पुष्पम्|पुष्पम्,शीतम्,मेघः,नदी,फलम्,गृहम्|वसन्ते पुष्पाणि विकसन्ति।|spring wears flowers|Season to a thing you can point at.
+rtvah|मेलः|हेमन्तः|शीतम्|शीतम्,उष्णम्,पुष्पम्,नदी,फलम्,गृहम्|हेमन्ते शीतं भवति।|winter is cold|Season to weather, not a forecast.
+vatah|मेलः|मेघः|वृष्टिः|वृष्टिः,सूर्यः,नदी,फलम्,गृहम्,गुरुः|मेघात् वृष्टिः पतति।|rain falls from the cloud|Weather today. Not the season वर्षा.
+vatah|मेलः|सूर्यः|उष्णम्|उष्णम्,शीतम्,मेघः,नदी,फलम्,गृहम्|सूर्यात् उष्णं भवति।|the sun is hot|Sky to a feeling.
+indriyani|मेलः|चक्षुः|रूपम्|रूपम्,शब्दः,गन्धः,रसः,स्पर्शः,नदी|चक्षुषा रूपं पश्यामि।|the eye meets form|Organ to what it meets. Names, no clinic.
+indriyani|मेलः|श्रोत्रम्|शब्दः|शब्दः,रूपम्,गन्धः,रसः,स्पर्शः,नदी|श्रोत्रेण शब्दं शृणोमि।|the ear meets sound|Same pattern.
+indriyani|मेलः|त्वक्|स्पर्शः|स्पर्शः,रूपम्,शब्दः,गन्धः,रसः,नदी|त्वचा स्पर्शं जानामि।|the skin meets touch|Names only.

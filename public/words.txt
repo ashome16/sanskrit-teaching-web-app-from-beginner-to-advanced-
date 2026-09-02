@@ -140,3 +140,5 @@
 रसः|rasaḥ|taste|indriyani|रसः is what the tongue meets.
 स्पर्शः|sparśaḥ|touch|indriyani|स्पर्शः is what the skin meets.
 दुग्धम्|dugdham|milk|food|दुग्धम् is milk. A bowl-word with अन्नम् जलम् फलम्.
+चन्द्रः|candraḥ|moon|kalah|चन्द्रः is the moon. Night’s pair.
+पुष्पम्|puṣpam|flower|rtvah|पुष्पम् is a flower. Spring’s pair.
