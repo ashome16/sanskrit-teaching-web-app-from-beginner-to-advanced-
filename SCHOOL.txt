@@ -30,3 +30,5 @@ Week
 Beginners games: जोडो + बनाओ. Day-2 मेलः is a Games skin on a Beginners pack.
 Sūtram is a TRACE skin on the same 20 rows: glue(), decl(), three sandhi only.
 Button: शब्दः सिध्यति
+
+Sound-toy: 1s glow from sound-toy.txt. Caption: A picture of the rule, not a recording. Hand on throat for voice. No audio, no Hz.

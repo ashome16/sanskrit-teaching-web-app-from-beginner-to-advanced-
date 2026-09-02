@@ -6,6 +6,7 @@ Drop into public/
   week.txt     7 days
   sushruta.txt 3 names
   janapada.txt placeholder (rivers already in words)
+  sound-toy.txt k-row flags: place|voice|puff|nose|beats (MODEL, not a mic)
 
 Skip # and blanks. Split on |.
 Sūtram: reuse puzzles.txt, add TRACE. Do not add a grammar engine.
