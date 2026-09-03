@@ -11,7 +11,7 @@ Beginners · मात्रा · nada · नाद-पथः · numbers · स
 | ganitam | numbers · संख्या | संख्या | बनाओ |
 | bhugolah | map · नक्शा | नक्शा | मेलः |
 | sanskritih | Sanskriti · संस्कृतिः | कथा | रिक्तम् |
-| krida | Play · क्रीडा | बनाओ | बनाओ |
+| krida | Play · क्रिया | क्रिया | कर्ता-क्रिया |
 | prakrtih | Nature · प्रकृतिः | प्रकृतिः | मेलः |
 
 Nature (in Sūtram last seat): point-at names. Animals and plants. No treatment. No zoo dump.
