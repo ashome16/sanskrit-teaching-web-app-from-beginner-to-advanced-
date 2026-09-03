@@ -13,7 +13,7 @@ nada-pathah|sariram|नाद-पथः|2|रिक्तम्,मेलः|
 sthanam|sariram|स्थानम्|2|मेलः,रिक्तम्|
 osadhih|sariram|ओषधिः|2|बनाओ,मेलः|
 sushruta-kosa|sariram|सुश्रुत-कोशः|2|मेलः|
-nadyah|bhugolah|नद्यः|4|मेलः|
+nadyah|bhugolah|स्थानानि|4|मेलः|
 katha-bija|sanskritih|कथा|5|रिक्तम्|
 masah|sanskritih|मासाः|5|मेलः|
 svara-raga|sanskritih|स्वर|5|क्रमः|
