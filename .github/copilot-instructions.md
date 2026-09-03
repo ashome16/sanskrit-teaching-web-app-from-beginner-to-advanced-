@@ -104,3 +104,10 @@ A small Next after Check on a shelf loads that shelf’s second puzzle. Default 
 - वृक्षः · वृक्षः भूमौ तिष्ठति। · The tree stands on the earth.
 - बीजम् · ज्ञानं परमं बीजम्। · Knowledge is the ultimate seed.
 - चलति · गजः मन्दं चलति। · The elephant walks slowly. Highlight चलति.
+
+## Two marks, not seven colours
+
+Do not colour shelves. One saffron, one quiet gold.
+- `span.word-focus` = `puzzle.highlight` = the word this row teaches (सूर्यः).
+- `span.word-tap` = `puzzle.tapHighlight` = the form of the tile they tapped, if it appears (आकाशे).
+English stays the sentence. The yellow tile border already shows the tap.
