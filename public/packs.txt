@@ -26,3 +26,4 @@ rtvah|sanskritih|ऋतवः|5|मेलः|
 vatah|bhugolah|वातः|4|मेलः|
 indriyani|sariram|इन्द्रियाणि|2|मेलः|
 prakrtih|prakrtih|प्रकृतिः|7|मेलः|
+kriya|krida|क्रिया|6|कर्ता-क्रिया|
