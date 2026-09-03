@@ -36,3 +36,4 @@
 .word-focus { border-bottom: 3px solid #d86a3d; color: #f1c75b; font-weight: 700; padding-bottom: 1px; }
 .puzzle-result .result-sanskrit { font-size: 1.45rem; margin: 0 0 .35rem; }
 .puzzle-result .result-english { color: #f4ede0; font: italic 500 1.05rem Georgia, serif; margin: 0; }
+.word-tap { background: #f1c75b33; border-radius: 3px; color: inherit; padding: 0 .12rem; }
