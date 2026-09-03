@@ -51,3 +51,7 @@ Time / seasons / five senses / eating / professions / weather / glue-words (अ�
 
 Day 1: tap क then आ then Check shows का and “the girl reads.”
 Deepakam still opens a lesson.
+
+## Analyse
+Same word bank, other door. Read docs/ANALYSE.md and public/analyse.json.
+Never live-translate. Missing word: say not in the bank. Do not put language pills on the Board.
