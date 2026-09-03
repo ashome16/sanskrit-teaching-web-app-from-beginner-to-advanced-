@@ -15,6 +15,7 @@ shelf|ganitam|Maths|गणितम्
 shelf|bhugolah|Map|भूगोलः
 shelf|sanskritih|Sanskriti|संस्कृतिः
 shelf|krida|Play|क्रीडा
+shelf|prakrtih|Nature|प्रकृतिः
 # shelf sutram is a later grammar door, not this board
 
 pack|matra|मात्रा|letters and marks
@@ -50,3 +51,4 @@ skin|प्रश्न|प्रश्न|ask
 skin|क्रमः|क्रमः|order
 
 site|loop|Pick a shelf. Tap tiles. Then Check.|
+pack|prakrtih|प्रकृतिः|animals and plants
