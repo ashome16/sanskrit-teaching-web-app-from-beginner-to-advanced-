@@ -1,11 +1,12 @@
 # shape|target|answer|tiles|sentence|english|seed
-जोडो|का|का|क,ा,त,म,र,न|का बालकः पठति।|The boy reads.|A short vowel-mark lesson.
-मेलः|पीतः|पीतः|पीतः,रक्तः,नीलः,हरितः,श्वेतः,श्यामः|पीतः हरिद्रा अस्ति।|Yellow is turmeric.|Colour is a bridge from word to world.
+जोडो|का|का|क,आ,ख,ग,इ,उ|का बालिका पठति।|The girl reads.|A short vowel-mark lesson.
+मेलः|पीतः|हरिद्रा|हरिद्रा,रक्तः,नीलः,हरितः,श्वेतः,श्यामः|पीतः हरिद्रा अस्ति।|Yellow is turmeric.|Colour is a bridge from word to world.
 बनाओ|पञ्च|पञ्च|पञ्च,त्रि,एक,द्वि,नव,दश|पञ्च छात्राः सन्ति।|There are five students.|Count the Sanskrit word.
-रिक्तम्|कण्ठः|कण्ठः|कण्ठः,तालु,मूर्धा,दन्तः,ओष्ठः,नासिका|कण्ठः नादस्य स्थानम्।|The throat is a sound place.|A picture of the rule, not a recording.
-मेलः|गङ्गा|गङ्गा|गङ्गा,यमुना,नदी,जलम्,पर्वतः,भूमिः|गङ्गा नदी अस्ति।|Ganga is a river.|Two river names meet on a map.
-रिक्तम्|तारा|तारा|तारा,धूलिः,बीजम्,आकाशः,नदी,पुष्पम्|तारा आकाशे दृश्यते।|A star is seen in the sky.|BRIDGE: तारा-धूलिः joins science and itihāsa.
+रिक्तम्|कण्ठस्य|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter.|A picture of the rule, not a recording.
+मेलः|गङ्गा|नदी|यमुना,नदी,जलम्,पर्वतः,भूमिः,सागरः|गङ्गा नदी अस्ति।|Ganga is a river.|Two river names meet on a map.
+रिक्तम्|तारा|तारा|तारा,धूलिः,बीजम्,आकाशः,नदी,पुष्पम्|तारा आकाशे दृश्यते।|A star is seen in the sky.|Sky and story.
 बनाओ|मिश्रणम्|मिश्रणम्|मिश्र,णम्,पञ्च,का,रक्तः,गङ्गा|शब्दाः मिश्रणम् न भवन्ति।|Words are not a random mix.|Choose meaning first.
 जोडो|देवालयः|देवालयः|देव,आलय,जल,आशय,पुस्तक,नदी|देवालयः देवस्य गृहम्।|A god's house.|देव + आलय; a+ā=ā.
 जोडो|पुस्तकालयः|पुस्तकालयः|पुस्तक,आलय,देव,जल,आशय,नदी|पुस्तकालयः पुस्तकानां गृहम्।|A library.|पुस्तक + आलय; a+ā=ā.
 जोडो|जलाशयः|जलाशयः|जल,आशय,देव,आलय,पुस्तक,नदी|जलाशयः जलस्य स्थानम्।|A pond.|जल + आशय; a+ā=ā.
+मेलः|गजः|गजः|गजः,अश्वः,वृक्षः,पुष्पम्,नदी,सागरः|गजः वनं गच्छति।|The elephant goes to the forest.|Nature words in a row.

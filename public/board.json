@@ -1,0 +1,188 @@
+{
+  "labels": [
+    "Beginners",
+    "Body",
+    "Maths",
+    "Map",
+    "Sanskriti",
+    "Play",
+    "Nature"
+  ],
+  "packs": [
+    {
+      "id": "matra",
+      "wing": "prarambhah",
+      "title": "का",
+      "dropdown": "क + आ",
+      "shapes": ["जोडो", "बनाओ"],
+      "note": "Tap क then आ, then Check."
+    },
+    {
+      "id": "colours",
+      "wing": "prarambhah",
+      "title": "रंगः",
+      "dropdown": "रंगः",
+      "shapes": ["मेलः"],
+      "note": "Match the colour word."
+    },
+    {
+      "id": "numbers",
+      "wing": "ganitam",
+      "title": "१–१०",
+      "dropdown": "1–10",
+      "shapes": ["बनाओ"],
+      "note": "Count with Sanskrit."
+    },
+    {
+      "id": "nadapath",
+      "wing": "sariram",
+      "title": "गकारः",
+      "dropdown": "गकारः",
+      "shapes": ["रिक्तम्"],
+      "note": "Body is नाद-पथः."
+    },
+    {
+      "id": "nadyah",
+      "wing": "bhugolah",
+      "title": "गङ्गा",
+      "dropdown": "नदी",
+      "shapes": ["मेलः"],
+      "note": "Prompt is गङ्गा, tap नदी."
+    },
+    {
+      "id": "tara",
+      "wing": "sanskritih",
+      "title": "तारा",
+      "dropdown": "तारा",
+      "shapes": ["रिक्तम्"],
+      "note": "Sky and story."
+    },
+    {
+      "id": "mix",
+      "wing": "krida",
+      "title": "Mix",
+      "dropdown": "Mix",
+      "shapes": ["बनाओ"],
+      "note": "Play with the board."
+    },
+    {
+      "id": "nature",
+      "wing": "nature",
+      "title": "गजः",
+      "dropdown": "गजः",
+      "shapes": ["मेलः"],
+      "note": "Nature tiles: गजः अश्वः वृक्षः पुष्पम्."
+    }
+  ],
+  "puzzles": [
+    {
+      "shape": "जोडो",
+      "target": "का",
+      "answer": "का",
+      "tiles": ["क", "आ", "ख", "ग", "इ", "उ"],
+      "sentence": "का बालिका पठति।",
+      "english": "The girl reads.",
+      "seed": "A short vowel-mark lesson."
+    },
+    {
+      "shape": "मेलः",
+      "target": "पीतः",
+      "answer": "हरिद्रा",
+      "tiles": ["हरिद्रा", "रक्तः", "नीलः", "हरितः", "श्वेतः", "श्यामः"],
+      "sentence": "पीतः हरिद्रा अस्ति।",
+      "english": "Yellow is turmeric.",
+      "seed": "Colour is a bridge from word to world."
+    },
+    {
+      "shape": "बनाओ",
+      "target": "पञ्च",
+      "answer": "पञ्च",
+      "tiles": ["पञ्च", "त्रि", "एक", "द्वि", "नव", "दश"],
+      "sentence": "पञ्च छात्राः सन्ति।",
+      "english": "There are five students.",
+      "seed": "Count the Sanskrit word."
+    },
+    {
+      "shape": "रिक्तम्",
+      "target": "कण्ठस्य",
+      "answer": "कण्ठस्य",
+      "tiles": ["कण्ठस्य", "तालस्य", "दन्तस्य", "ओष्ठस्य", "मूर्ध्नः", "नासिकायाः"],
+      "sentence": "गकारः कण्ठस्य स्थानस्य अस्ति।",
+      "english": "ga is a throat-letter.",
+      "seed": "A picture of the rule, not a recording."
+    },
+    {
+      "shape": "मेलः",
+      "target": "गङ्गा",
+      "answer": "नदी",
+      "tiles": ["यमुना", "नदी", "जलम्", "पर्वतः", "भूमिः", "सागरः"],
+      "sentence": "गङ्गा नदी अस्ति।",
+      "english": "Ganga is a river.",
+      "seed": "Two river names meet on a map."
+    },
+    {
+      "shape": "रिक्तम्",
+      "target": "तारा",
+      "answer": "तारा",
+      "tiles": ["तारा", "धूलिः", "बीजम्", "आकाशः", "नदी", "पुष्पम्"],
+      "sentence": "तारा आकाशे दृश्यते।",
+      "english": "A star is seen in the sky.",
+      "seed": "Sky and story."
+    },
+    {
+      "shape": "बनाओ",
+      "target": "मिश्रणम्",
+      "answer": "मिश्रणम्",
+      "tiles": ["मिश्र", "णम्", "पञ्च", "का", "रक्तः", "गङ्गा"],
+      "sentence": "शब्दाः मिश्रणम् न भवन्ति।",
+      "english": "Words are not a random mix.",
+      "seed": "Choose meaning first."
+    },
+    {
+      "shape": "जोडो",
+      "target": "देवालयः",
+      "answer": "देवालयः",
+      "tiles": ["देव", "आलय", "जल", "आशय", "पुस्तक", "नदी"],
+      "sentence": "देवालयः देवस्य गृहम्।",
+      "english": "A god's house.",
+      "seed": "देव + आलय; a+ā=ā."
+    },
+    {
+      "shape": "जोडो",
+      "target": "पुस्तकालयः",
+      "answer": "पुस्तकालयः",
+      "tiles": ["पुस्तक", "आलय", "देव", "जल", "आशय", "नदी"],
+      "sentence": "पुस्तकालयः पुस्तकानां गृहम्।",
+      "english": "A library.",
+      "seed": "पुस्तक + आलय; a+ā=ā."
+    },
+    {
+      "shape": "जोडो",
+      "target": "जलाशयः",
+      "answer": "जलाशयः",
+      "tiles": ["जल", "आशय", "देव", "आलय", "पुस्तक", "नदी"],
+      "sentence": "जलाशयः जलस्य स्थानम्।",
+      "english": "A pond.",
+      "seed": "जल + आशय; a+ā=ā."
+    },
+    {
+      "shape": "मेलः",
+      "target": "गजः",
+      "answer": "गजः",
+      "tiles": ["गजः", "अश्वः", "वृक्षः", "पुष्पम्", "नदी", "सागरः"],
+      "sentence": "गजः वनं गच्छति।",
+      "english": "The elephant goes to the forest.",
+      "seed": "Nature words in a row."
+    }
+  ],
+  "week": [
+    { "day": 1, "wing": "prarambhah", "pack": "matra", "shape": "जोडो", "target": "का" },
+    { "day": 2, "wing": "prarambhah", "pack": "colours", "shape": "मेलः", "target": "पीतः" },
+    { "day": 3, "wing": "ganitam", "pack": "numbers", "shape": "बनाओ", "target": "पञ्च" },
+    { "day": 4, "wing": "sariram", "pack": "nadapath", "shape": "रिक्तम्", "target": "कण्ठस्य" },
+    { "day": 5, "wing": "bhugolah", "pack": "nadyah", "shape": "मेलः", "target": "गङ्गा" },
+    { "day": 6, "wing": "sanskritih", "pack": "tara", "shape": "रिक्तम्", "target": "तारा" },
+    { "day": 7, "wing": "krida", "pack": "mix", "shape": "बनाओ", "target": "मिश्रणम्" },
+    { "day": 8, "wing": "nature", "pack": "nature", "shape": "मेलः", "target": "गजः" }
+  ]
+}

@@ -1,9 +1,9 @@
 # pack_id|wing|title|dropdown|shapes|note
-matra|prarambhah|मात्रा|Maatra|जोडो,बनाओ|Hear the vowel mark.
-colours|prarambhah|Colours|Colours|मेलः|Meaning before grammar.
+matra|prarambhah|का|क + आ|जोडो,बनाओ|Tap क then आ, then Check.
+colours|prarambhah|रंगः|रंगः|मेलः|Match the colour word.
 numbers|ganitam|१–१०|1–10|बनाओ|Count with Sanskrit.
-nadapath|sariram|नाद-पथ|Sound path|रिक्तम्|A picture of the rule.
-nadyah|bhugolah|Two rivers|Two rivers|मेलः|Names on a map.
-tara|sanskritih|One seed|One seed|रिक्तम्|BRIDGE: sky and story.
-mix|krida|Mix|Mix|बनाओ|Play with the week.
-compounds|sutram|Meaning fuses|Meaning fuses|जोडो|Small TRACE, no compiler.
+nadapath|sariram|गकारः|गकारः|रिक्तम्|Body is नाद-पथः.
+nadyah|bhugolah|गङ्गा|नदी|मेलः|Prompt is गङ्गा, tap नदी.
+tara|sanskritih|तारा|तारा|रिक्तम्|Sky and story.
+mix|krida|Mix|Mix|बनाओ|Play with the board.
+nature|nature|गजः|गजः|मेलः|Nature tiles: गजः अश्वः वृक्षः पुष्पम्.
