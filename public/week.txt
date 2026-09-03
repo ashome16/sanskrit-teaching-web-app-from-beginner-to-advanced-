@@ -1,7 +1,7 @@
 # day|wing|pack|shape|target
 1|prarambhah|matra|जोडो|का
 2|sariram|nada-pathah|रिक्तम्|कण्ठस्य
-3|ganitam|sankhya-0-10|बनाओ|पञ्च
+3|ganitam|parivesah|मेलः|पुस्तकम्
 4|bhugolah|nadyah|मेलः|गङ्गा
 5|sanskritih|katha-bija|रिक्तम्|तारा
 6|prakrtih|prakrtih|मेलः|गजः
