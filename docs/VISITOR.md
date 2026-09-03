@@ -52,3 +52,12 @@ The doer and the doing. Prompt is the doer. You tap the verb. Never write (Kart�
 Chrome stays: Board · Deepakam · Analyse · Vibhakti Guide.
 Deepakam is the book. Analyse is sealed meanings. Grammar is a later door.
 संख्या is off this board.
+
+---
+
+## On-screen (visual)
+
+A small **?** sits on the same line as “Pick a shelf. Tap tiles. Then Check.”
+It opens a cream card (this file / `visitor.txt`) over the board. Close with ×. Not a new page. Not a shelf tab.
+
+After Check, the Sanskrit sentence is the large line. Wrap `highlight` in `.word-focus` (saffron underline). English is the smaller line under it.
