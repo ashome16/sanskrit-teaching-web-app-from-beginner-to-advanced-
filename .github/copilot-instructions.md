@@ -21,13 +21,13 @@ Parse `public/labels.txt`: skip `#` and blanks. Row is `kind|id|tab|sanskrit`.
 
 1. Beginners · मात्रा
 2. nada · नाद-पथः
-3. Objects · परिवेशः
+3. Vastu · वस्तु
 4. Naksha · नक्शा
 5. Nature · प्रकृतिः
 6. Sanskriti · संस्कृतिः
 7. Play · क्रिया
 
-Never: Maths, Body, Map, Geography, numbers · संख्या, space · परिवेशः, map · नक्शा, one seed, Gunitālu, Maatra, Breath Travel, Build, SHELF, TRACE as a heading.
+Never: Maths, Body, Map, Geography, numbers · संख्या, Vastu · वस्तु, map · नक्शा, one seed, Gunitālu, Maatra, Breath Travel, Build, SHELF, TRACE as a heading.
 संख्या is a later door, like Sūtram. Not a shelf.
 Sanskriti never shows `one seed`.
 nada is the sound path. Not Body. Not शरीरम् on that tab.
