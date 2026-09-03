@@ -76,6 +76,53 @@
     ]
   },
   {
+    "shelf": "space",
+    "native": "परिवेशः",
+    "skin": "मेलः",
+    "puzzles": [
+      {
+        "prompt": "पुस्तकम्",
+        "target": "पठति",
+        "tiles": [
+          "पठति",
+          "पिबति",
+          "वसति"
+        ],
+        "english": "a book"
+      },
+      {
+        "prompt": "जलम्",
+        "target": "पिबति",
+        "tiles": [
+          "पिबति",
+          "पठति",
+          "धारयति"
+        ],
+        "english": "water"
+      },
+      {
+        "prompt": "गृहम्",
+        "target": "वसति",
+        "tiles": [
+          "वसति",
+          "पिबति",
+          "पठति"
+        ],
+        "english": "a house"
+      },
+      {
+        "prompt": "वस्त्रम्",
+        "target": "धारयति",
+        "tiles": [
+          "धारयति",
+          "वसति",
+          "पिबति"
+        ],
+        "english": "cloth"
+      }
+    ]
+  },
+  {
     "shelf": "map",
     "native": "नक्शा",
     "skin": "मेलः",
