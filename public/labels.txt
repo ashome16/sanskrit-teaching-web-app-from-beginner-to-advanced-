@@ -4,11 +4,11 @@ nav|analyse|Analyse|
 nav|vibhakti|Vibhakti Guide|eight boxes
 shelf|prarambhah|Beginners · मात्रा|मात्रा
 shelf|sariram|nada · नाद-पथः|नाद-पथः
-shelf|ganitam|space · परिवेशः|परिवेशः
-shelf|bhugolah|map · नक्शा|नक्शा
+shelf|ganitam|Objects · परिवेशः|परिवेशः
+shelf|bhugolah|Naksha · नक्शा|नक्शा
+shelf|prakrtih|Nature · प्रकृतिः|प्रकृतिः
 shelf|sanskritih|Sanskriti · संस्कृतिः|संस्कृतिः
 shelf|krida|Play · क्रिया|क्रिया
-shelf|prakrtih|Nature · प्रकृतिः|प्रकृतिः
 pack|matra|मात्रा|letters and marks
 pack|colours|वर्णाः|colours
 pack|family|परिवारः|family
