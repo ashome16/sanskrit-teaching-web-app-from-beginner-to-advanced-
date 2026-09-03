@@ -21,7 +21,7 @@ Fetch `public/labels.txt`. Skip `#` lines and blank lines.
 Each row is `kind|id|tab|sanskrit` (four pipe fields).
 
 - `shelf` rows: the button is field 3 **as written**. It is already bilingual English · देवनागरी.
-  Beginners · मात्रा · nada · नाद-पथः · Objects · परिवेशः · Naksha · नक्शा · Sanskriti · संस्कृतिः · Play · क्रीडा · Nature · प्रकृतिः
+  Beginners · मात्रा · nada · नाद-पथः · Objects · परिवेशः · Naksha · नक्शा · Sanskriti · संस्कृतिः · Play · क्रिया · Nature · प्रकृतिः
 - Render **only** field 3 for the tab. If you also print field 4 you double the Devanagari.
 - Never print field 2 (file id: prarambhah, sariram, ganitam, bhugolah, sankhya-0-10).
 - Never invent Maths, Body, Map, Geography, Breath Travel, गणितम् as the numbers tab.
