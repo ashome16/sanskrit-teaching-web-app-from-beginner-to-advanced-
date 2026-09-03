@@ -32,6 +32,7 @@ Each row is `kind|id|tab|sanskrit` (four pipe fields).
 - Meaning first. After a correct Check, English is the meaning. Devanagari stays.
 - जोडो morphs: आ becomes ा, then NFC. क+आ = का (not कआ).
 - मेलः does not morph. Target गङ्गा → tap नदी. Target पीतः → tap हरिद्रा. Never put the target word in the tiles.
+- Play is कर्ता-क्रिया. Same renderer as मेलः. Prompt is the कर्ता in Devanagari only (बालकः). Tiles are क्रिया. Never write (Kartā) on a tile.
 - रिक्तम् shows the blank sentence. गकारः ____ स्थानस्य अस्ति। Answer कण्ठस्य. Not a self-match on कण्ठः.
 - Play does the join. Sūtram watches: glue(...) → का, three sandhi only, button शब्दः सिध्यति (visarga). English is a small caption on Sūtram.
 - Deepakam is the book. Never turn lessons into tiles.
