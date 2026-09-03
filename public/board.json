@@ -14,8 +14,10 @@
           "इ",
           "उ"
         ],
-        "english": "who? (feminine)",
-        "explanation": "क plus आ makes का."
+        "english": "Who is the girl reading?",
+        "explanation": "क plus आ makes का.",
+        "sentence": "का बालिका पठति।",
+        "highlight": "का"
       },
       {
         "target": "मा",
@@ -71,8 +73,10 @@
           "मूर्ध्नः",
           "नासिकायाः"
         ],
-        "english": "ga is a throat-letter",
-        "explanation": "ग lives in the throat. Not क."
+        "english": "The sound ga belongs to the throat repository.",
+        "explanation": "ग lives in the throat. Not क.",
+        "sentence": "गकारः कण्ठस्य स्थानस्य अस्ति।",
+        "highlight": "कण्ठस्य"
       }
     ]
   },
@@ -89,8 +93,9 @@
           "पिबति",
           "वसति"
         ],
+        "sentence": "अहं पुस्तकं पठामि।",
         "english": "I read a book.",
-        "sentence": "अहं पुस्तकं पठामि।"
+        "highlight": "पुस्तकं"
       },
       {
         "prompt": "जलम्",
@@ -100,8 +105,9 @@
           "पठति",
           "धारयति"
         ],
-        "english": "I drink water.",
-        "sentence": "अहं जलं पिबामि।"
+        "sentence": "बालकः जलं पिबति।",
+        "english": "The boy drinks water.",
+        "highlight": "जलं"
       },
       {
         "prompt": "गृहम्",
@@ -111,8 +117,9 @@
           "पिबति",
           "पठति"
         ],
-        "english": "I live in a house.",
-        "sentence": "अहं गृहे वसामि।"
+        "sentence": "अहं गृहे वसामि।",
+        "english": "I live in the house.",
+        "highlight": "गृहे"
       },
       {
         "prompt": "वस्त्रम्",
@@ -122,8 +129,9 @@
           "वसति",
           "पिबति"
         ],
-        "english": "I wear cloth.",
-        "sentence": "अहं वस्त्रं धारयामि।"
+        "sentence": "सा वस्त्रं धारयति।",
+        "english": "She wears the garment.",
+        "highlight": "वस्त्रं"
       }
     ]
   },
@@ -140,40 +148,58 @@
           "नदी",
           "गृहम्"
         ],
+        "sentence": "सूर्यः आकाशे अस्ति।",
         "english": "The sun is in the sky.",
-        "sentence": "सूर्यः आकाशे अस्ति।"
+        "highlight": "सूर्यः"
       },
       {
-        "prompt": "नक्षत्रम्",
-        "target": "रात्रिः",
+        "prompt": "नदी",
+        "target": "वहति",
         "tiles": [
-          "रात्रिः",
-          "आकाशः",
-          "नदी"
+          "वहति",
+          "तिष्ठति",
+          "चलति"
         ],
-        "english": "A star is seen at night.",
-        "sentence": "नक्षत्रम् रात्रौ दृश्यते।"
+        "sentence": "नदी वेगेन वहति।",
+        "english": "The river flows swiftly.",
+        "highlight": "नदी"
       }
     ]
   },
   {
     "shelf": "nature",
     "native": "प्रकृतिः",
-    "skin": "मेलः",
+    "skin": "रिक्तम्",
     "puzzles": [
       {
-        "prompt": "गजः",
-        "target": "अश्वः",
+        "prompt": "____ मन्दं चलति।",
+        "target": "गजः",
         "tiles": [
+          "गजः",
           "अश्वः",
           "वृक्षः",
           "पुष्पम्",
           "नदी",
-          "गृहम्",
-          "गुरुः"
+          "गृहम्"
         ],
-        "english": "elephant, and horse",
-        "sentence": "गजः च अश्वः च।"
+        "sentence": "गजः मन्दं चलति।",
+        "english": "The elephant walks slowly.",
+        "highlight": "गजः"
+      },
+      {
+        "prompt": "____ भूमौ तिष्ठति।",
+        "target": "वृक्षः",
+        "tiles": [
+          "वृक्षः",
+          "गजः",
+          "पुष्पम्",
+          "नदी",
+          "गृहम्",
+          "अश्वः"
+        ],
+        "sentence": "वृक्षः भूमौ तिष्ठति।",
+        "english": "The tree stands on the earth.",
+        "highlight": "वृक्षः"
       }
     ]
   },
@@ -193,8 +219,9 @@
           "ग्राम",
           "गृह"
         ],
-        "english": "a star",
-        "sentence": "वयं सर्वे तारा-धूलयः।"
+        "english": "We are all star-dust.",
+        "sentence": "वयं सर्वे तारा-धूलयः।",
+        "highlight": "तारा"
       }
     ]
   },
@@ -211,8 +238,9 @@
           "वहति",
           "उदयति"
         ],
+        "sentence": "बालकः पठति।",
         "english": "The boy reads.",
-        "sentence": "बालकः पठति।"
+        "highlight": "बालकः"
       },
       {
         "prompt": "गजः",
@@ -222,8 +250,9 @@
           "विकसति",
           "पठति"
         ],
-        "english": "The elephant walks.",
-        "sentence": "गजः चलति।"
+        "sentence": "गजः मन्दं चलति।",
+        "english": "The elephant walks slowly.",
+        "highlight": "चलति"
       },
       {
         "prompt": "नदी",
@@ -233,8 +262,9 @@
           "तिष्ठति",
           "चलति"
         ],
-        "english": "The river flows.",
-        "sentence": "नदी वहति।"
+        "sentence": "नदी वेगेन वहति।",
+        "english": "The river flows swiftly.",
+        "highlight": "नदी"
       },
       {
         "prompt": "वृक्षः",
@@ -244,8 +274,9 @@
           "उदयति",
           "वहति"
         ],
+        "sentence": "वृक्षः फलति।",
         "english": "The tree bears fruit.",
-        "sentence": "वृक्षः फलति।"
+        "highlight": "वृक्षः"
       }
     ]
   }
