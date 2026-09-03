@@ -115,7 +115,7 @@ English stays the sentence. The yellow tile border already shows the tap.
 ## nada does not run out
 
 Mouth-seats first (कण्ठस्य तालस्य दन्तस्य …). Then on the SAME shelf, not a new tab:
-- five senses (इन्द्रियाणि): चक्षुः श्रोत्रम् घ्राणम् रसना त्वक्
+- five senses then body names from Kalpana पाठ 3 (नेत्रेण रसनया नासिकया त्वचा श्रोत्रेण मनः then हस्तेन पादेन शिरसि दन्तैः कण्ठेन). One word per puzzle. No अक्षि/चक्षुः dump. Mouth-seats stay puzzles 1–2.
 - then rhythm/music (स्वर): स्वरः गीतम् तालः (तालः is beat, not तालस्य the palate)
 
 Next after Check: increment that shelf’s puzzle index in board.json. Nature: गजः then वृक्षः. Do not reload week 1.
