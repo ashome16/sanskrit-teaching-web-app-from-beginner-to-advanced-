@@ -170,6 +170,26 @@
     ]
   },
   {
+    "shelf": "sanskriti",
+    "native": "संस्कृतिः",
+    "skin": "रिक्तम्",
+    "puzzles": [
+      {
+        "prompt": "वयं सर्वे ____ धूलयः।",
+        "target": "तारा",
+        "tiles": [
+          "तारा",
+          "मृत्तिका",
+          "जल",
+          "वन",
+          "ग्राम",
+          "गृह"
+        ],
+        "english": "we are all star-dust"
+      }
+    ]
+  },
+  {
     "shelf": "play",
     "native": "क्रिया",
     "skin": "कर्ता-क्रिया",
