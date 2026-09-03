@@ -4,5 +4,5 @@
 3|ganitam|parivesah|मेलः|पुस्तकम्
 4|bhugolah|nadyah|मेलः|सूर्यः
 5|sanskritih|katha-bija|रिक्तम्|तारा
-6|prakrtih|prakrtih|मेलः|गजः
+6|prakrtih|prakrtih|रिक्तम्|गजः
 7|krida|kriya|कर्ता-क्रिया|बालकः
