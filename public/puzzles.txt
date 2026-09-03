@@ -2,8 +2,10 @@
 # shape|target|answer|tiles|sentence|english|seed
 # After Check: slide chosen tiles together, then show english (big) and sentence+seed.
 # Skip # and blanks. 6 tiles. 2–3 decoys from same varga or stem.
-जोडो|का|का|क,ा,ख,ग,ि,ु|का बालिका पठति।|the girl reads|क is a throat letter. आ is two beats. Together they make का.
-जोडो|कि|कि|क,ि,ा,ु,ख,ग|किं नाम ते?|what is your name?|इ lives at the palate. On क it becomes ि, कि.
+# NEVER put a naked combining mark in tiles (ा ि ु). Fonts draw a dotted circle = fake “to”.
+# Use independent vowels आ इ उ. glueTiles maps आ→ा on Check.
+जोडो|का|का|क,आ,ख,ग,इ,उ|का बालिका पठति।|the girl reads|क is a throat letter. आ is two beats. Together they make का.
+जोडो|कि|कि|क,इ,आ,उ,ख,ग|किं नाम ते?|what is your name?|इ lives at the palate. On क it becomes ि, कि.
 बनाओ|माता|माता|मा,ता,पा,रा,ना,सा|माता अन्नं ददाति।|mother gives food|मा on the lips, ता at the teeth. First home-word.
 बनाओ|जलम्|जलम्|ज,लम्,कम्,गम्,तम्,पम्|बालः जलं पिबति।|the child drinks water|जलम् is water. Palate then teeth.
 मेलः|५|पञ्च|पञ्च,षट्,सप्त,चत्वारि,नव,दश|मम हस्ते पञ्च अङ्गुलयः सन्ति।|five (fingers)|पञ्च is five. Palatal च plus nasal ञ.

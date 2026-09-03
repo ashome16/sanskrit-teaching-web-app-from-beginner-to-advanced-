@@ -97,6 +97,7 @@ Meaning fuses · Small TRACE, no compiler · Hear the vowel mark · no row yet
 A short vowel-mark lesson · शब्द: (colon) · dotted-circle ◌ा as a tile
 
 Use **मात्रा** not Maatra. Use **शब्दः सिध्यति**. Use **आ** on Day 1.
+Tile arrays: **आ इ उ**, never naked **ा ि ु**. glueTiles does the clothes-change on Check.
 
 ---
 

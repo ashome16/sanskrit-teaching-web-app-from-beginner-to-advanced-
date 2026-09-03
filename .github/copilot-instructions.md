@@ -24,6 +24,9 @@ Shelves stay: Beginners → Body → Maths → Map → Sanskriti → Play → S�
 - Silent. No TTS, no new Audio, no “Hear the vowel mark.”
 - Yellow card: sound-toy.txt letters only. Never “no row yet.” Close on wing/puzzle change. No setTimeout unmount.
 - Day-1 tile is आ, not dotted-circle ा.
+- NEVER put naked combining marks (ा ि ु ू े ो) in a tile array. The font inserts U+25CC dotted circle, which looks like inverted English “to”.
+- Tile face = independent vowel आ इ उ. glueTiles maps आ→ा, इ→ि, उ→ु, then NFC. क+आ = का (not कआ, not “ आ ” with a space).
+- Do not prepend U+25CC. Do not pad the mark with spaces as a fake base.
 
 ## Delete these labels if you see them
 
