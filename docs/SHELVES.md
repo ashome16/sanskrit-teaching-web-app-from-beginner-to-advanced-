@@ -2,13 +2,13 @@
 
 Grammar is off this board. Sūtram is a later door (Vibhakti Guide).
 
-Beginners · मात्रा · nada · नाद-पथः · numbers · संख्या · map · नक्शा · Sanskriti · संस्कृतिः · Play · क्रीडा · Nature · प्रकृतिः
+Beginners · मात्रा · nada · नाद-पथः · space · परिवेशः · map · नक्शा · Sanskriti · संस्कृतिः · Play · क्रीडा · Nature · प्रकृतिः
 
 | id | label | native | week skin |
 |---|---|---|---|
 | prarambhah | Beginners · मात्रा | मात्रा | जोडो |
 | sariram | nada · नाद-पथः | नाद-पथः | रिक्तम् |
-| ganitam | numbers · संख्या | संख्या | बनाओ |
+| ganitam | space · परिवेशः | परिवेशः | मेलः |
 | bhugolah | map · नक्शा | नक्शा | मेलः |
 | sanskritih | Sanskriti · संस्कृतिः | कथा | रिक्तम् |
 | krida | Play · क्रिया | क्रिया | कर्ता-क्रिया |
