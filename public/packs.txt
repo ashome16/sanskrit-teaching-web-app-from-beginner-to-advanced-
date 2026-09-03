@@ -1,5 +1,5 @@
 # pack_id|wing|title|dropdown|shapes|note
-# dropdown 1=Beginners 2=Body 3=Maths 4=Map 5=Sanskriti 6=Play 7=Sūtram
+# dropdown 1=Beginners·मात्रा 2=nada·नाद-पथः 3=numbers·संख्या 4=map·नक्शा 5=Sanskriti·संस्कृतिः 6=Play·क्रीडा 7=Nature·प्रकृतिः
 # File tags (prarambhah, matra) are silent. On-screen names: public/labels.txt and docs/NAMES.md
 matra|prarambhah|मात्रा|1|जोडो,बनाओ|
 colours|prarambhah|वर्णाः|1|जोडो,बनाओ,मेलः|
@@ -8,7 +8,7 @@ school|prarambhah|विद्यालयः|1|जोडो,बनाओ|
 body-laghu|prarambhah|शरीरम्|1|जोडो,बनाओ|
 food|prarambhah|आहारः|1|जोडो,बनाओ|
 glue|prarambhah|चिह्नानि|1|जोडो,बनाओ,मेलः|
-sankhya-0-10|ganitam|संख्या १–१०|3|बनाओ,मेलः|
+sankhya-0-10|ganitam|संख्या|3|बनाओ,मेलः|
 nada-pathah|sariram|नाद-पथः|2|रिक्तम्,मेलः|
 sthanam|sariram|स्थानम्|2|मेलः,रिक्तम्|
 osadhih|sariram|ओषधिः|2|बनाओ,मेलः|
