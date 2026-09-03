@@ -84,3 +84,10 @@ One line: Pick a shelf. Tap tiles. Then Check.
 ## Stop when
 
 Ports: seven tabs as above. Vastu shows पुस्तकम्. Day 1 का still holds. Deepakam still opens a lesson.
+
+## Welcome visual
+
+CSS is already in `src/styles/board.css`.
+Put a `button.welcome-open` **?** on `.board-tip`’s row. Click: scrim + `aside.welcome-overlay` with `public/visitor.txt` (skip `#` headings into h2/h3, paragraphs as p). Close × and scrim click. Do not auto-open. Do not make Welcome a shelf.
+
+After Check: `puzzle.sentence` with `puzzle.highlight` wrapped in `span.word-focus`, then `p.result-english`. Use existing puzzle-result box. No inline styles. No green success-banner.
