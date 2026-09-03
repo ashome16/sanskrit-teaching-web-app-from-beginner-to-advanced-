@@ -142,3 +142,12 @@
 दुग्धम्|dugdham|milk|food|दुग्धम् is milk. A bowl-word with अन्नम् जलम् फलम्.
 चन्द्रः|candraḥ|moon|kalah|चन्द्रः is the moon. Night’s pair.
 पुष्पम्|puṣpam|flower|rtvah|पुष्पम् is a flower. Spring’s pair.
+# Nature (prakrtih)
+गौः|goḥ|cow|prakrtih|गौः is a cow. Point-at name.
+अश्वः|aśvaḥ|horse|prakrtih|अश्वः is a horse.
+मत्स्यः|matsyaḥ|fish|prakrtih|मत्स्यः is a fish. Pairs with नदी.
+काकः|kākaḥ|crow|prakrtih|काकः is a crow.
+गजः|gajaḥ|elephant|prakrtih|गजः is an elephant.
+वृक्षः|vṛkṣaḥ|tree|prakrtih|वृक्षः is a tree.
+कमलम्|kamalam|lotus|prakrtih|कमलम् is a lotus. A plant-name, not a rite.
+आम्रः|āmraḥ|mango|prakrtih|आम्रः is a mango tree. Fruit you can point at.
