@@ -1,8 +1,15 @@
-# sentences.txt  SANSKRIT SENTENCE BANK (Devanagari + English gloss only)
 # sentence|english|focus|shelf
-# No Telugu/Kannada/Tamil here. Pills: public/analyse.json
-बालकः पुस्तकं पठति।|The boy reads the book.|पठति|play
-नदी वेगेन वहति।|The river flows swiftly.|वहति|map
-गजः मन्दं चलति।|The elephant walks slowly.|चलति|nature
-सूर्यः आकाशे उदयति।|The sun rises in the sky.|उदयति|nature
-वृक्षः भूमौ तिष्ठति।|The tree stands on the ground.|तिष्ठति|nature
+# Devanagari + English only. Highlight focus in the sentence.
+का बालिका पठति।|Who is the girl reading?|का|beginners
+गकारः कण्ठस्य स्थानस्य अस्ति।|The sound ga belongs to the throat repository.|कण्ठस्य|nada
+अहं पुस्तकं पठामि।|I read a book.|पुस्तकं|vastu
+बालकः जलं पिबति।|The boy drinks water.|जलं|vastu
+अहं गृहे वसामि।|I live in the house.|गृहे|vastu
+सा वस्त्रं धारयति।|She wears the garment.|वस्त्रं|vastu
+सूर्यः आकाशे अस्ति।|The sun is in the sky.|सूर्यः|naksha
+सूर्यः आकाशे उदयति।|The sun rises in the sky.|आकाशे|naksha
+नदी वेगेन वहति।|The river flows swiftly.|नदी|naksha
+गजः मन्दं चलति।|The elephant walks slowly.|गजः|nature
+वृक्षः भूमौ तिष्ठति।|The tree stands on the earth.|वृक्षः|nature
+वयं सर्वे तारा-धूलयः।|We are all star-dust.|तारा|sanskriti
+बालकः पठति।|The boy reads.|बालकः|play
