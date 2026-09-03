@@ -25,9 +25,9 @@ Child loop, always: **Pick a shelf. Tap tiles. Then Check.**
 ## The seven shelves
 
 1. **Beginners (मात्रा)** — Entry. Tap क then आ. That physicalizes the long mark. Day 2: पीतः is turmeric; tap हरिद्रा.
-2. **Body** (pack नाद-पथः) — Where the breath strikes. गकारः ____ puts the hand on the throat (कण्ठस्य). Names only. No treatment.
-3. **Maths (1–10)** — Word-numbers. Build पञ्च. Not a calculator. Hold 11–20.
-4. **नक्शा** (pack नक्शा) — Names to their kind. गङ्गा → नदी. No far lands. No Hūṇa.
+2. **nada · नाद-पथः** (pack नाद-पथः) — Where the breath strikes. गकारः ____ puts the hand on the throat (कण्ठस्य). Names only. No treatment.
+3. **numbers · संख्या** — Word-numbers. Build पञ्च. Not a calculator. Hold 11–20.
+4. **map · नक्शा** (pack नक्शा) — Names to their kind. गङ्गा → नदी. No far lands. No Hūṇa.
 5. **Sanskriti (one seed)** — Heritage anchor. तारा-धूलिः, labelled BRIDGE.
 6. **Play** — Active generation. Same board, as a game. The child puts the week into motion.
 7. **Sūtram** — Mechanics behind the magic. Not a grammar drill. A trace of how the word succeeds: **शब्दः सिध्यति**.
