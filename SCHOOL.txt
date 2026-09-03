@@ -1,0 +1,28 @@
+Sanskrit Learning — one school
+==============================
+One chrome. One board. Deepakam is the book. बनाओ is the engine.
+On-screen names: public/labels.txt and docs/NAMES.md
+File tags (prarambhah, matra) are silent. Never print them.
+
+Child shelves: Beginners → Body → Maths → Map → Sanskriti → Play → Sūtram
+Sūtram last. Beginners never see Hūṇa.
+
+SHIP NOW
+  This week’s puzzles + the tiles they need.
+  week.txt + puzzles.txt + words.txt + sound-toy.txt
+
+LATER (packs exist, not in week.txt)
+  Time, glue-words, people, seasons, weather, senses: shelf-puzzles.txt
+  Still later: 11–20, animals, home, janapadas, far lands.
+
+Week
+  1 Beginners  मात्रा      जोडो   का
+  2 Beginners  वर्णाः      मेलः   पीतः → हरिद्रा
+  3 Maths      संख्या      बनाओ  पञ्च
+  4 Body       नाद-पथः    रिक्तम्  कण्ठस्य
+  5 Map        नद्यः       मेलः   गङ्गा → नदी
+  6 Sanskriti  कथा        रिक्तम्  तारा
+  7 Play       mix        बनाओ  माता
+
+Play does the join. Sūtram watches: glue, three sandhi, शब्दः सिध्यति.
+Yellow card: stays until Close. Caption: A picture of the rule, not a recording.
