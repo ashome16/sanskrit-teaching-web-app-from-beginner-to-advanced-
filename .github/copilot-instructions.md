@@ -1,72 +1,77 @@
-# Copilot — Sanskrit Learning (read before any edit)
+# Copilot — Sanskrit Learning (canonical rules)
 
-You are patching ONE child school. One chrome. One board.
-Read this file and docs/NAMES.md. Then touch only what the user named.
-On-screen copy comes from public/labels.txt. Never print a file tag (prarambhah, matra, kalah, vrittih, glue).
+Read this file before any edit. This is the only rules file. Do not invent a second manifesto.
+On-screen copy comes from `public/labels.txt` field 3. Never print a file tag (`prarambhah`, `matra`, `ganitam`, `nadyah`, `parivesah`, `katha-bija`, `sankhya-0-10`).
+
+After `git pull origin main --no-rebase --no-edit`, quote the seven `shelf|` lines from `public/labels.txt` before you patch UI.
 
 ## Do not open
 
 Deepakam, TextbookReader, gsde*, extract_txt.py, extract-lessons.js,
-Analyse, Vibhakti Guide, vite.config base, index.html nav labels.
+Analyse, Vibhakti Guide, vite.config, index.html nav, `public/numbers.txt`, navigation.ts.
 
-Top nav stays: Board · Deepakam · Analyse · Vibhakti Guide
-Shelves stay: Beginners · मात्रा → nada · नाद-पथः → Objects · परिवेशः → Naksha · नक्शा → Nature · प्रकृतिः → Sanskriti · संस्कृतिः → Play · क्रिया
-Sūtram is a later grammar door. Nature is प्रकृतिः.
-Sūtram is a later grammar door, not a shelf on this word-bank board. Never Breath Travel or Build.
-(not Biology, Geography, Games, Coding). Pack vrittih is on-screen जनाः.
+Never render `29`. Never commit `numbers.txt`.
 
-## labels.txt — parse, do not dump
+Top nav: Board · Deepakam · Analyse · Vibhakti Guide
 
-Fetch `public/labels.txt`. Skip `#` lines and blank lines.
-Each row is `kind|id|tab|sanskrit` (four pipe fields).
+## Seven child tabs (field 3 only)
 
-- `shelf` rows: the button is field 3 **as written**. It is already bilingual English · देवनागरी.
-  Beginners · मात्रा · nada · नाद-पथः · Objects · परिवेशः · Naksha · नक्शा · Sanskriti · संस्कृतिः · Play · क्रिया · Nature · प्रकृतिः
-- Render **only** field 3 for the tab. If you also print field 4 you double the Devanagari.
-- Never print field 2 (file id: prarambhah, sariram, ganitam, bhugolah, sankhya-0-10).
-- Never invent Maths, Body, Map, Geography, Breath Travel, गणितम् as the numbers tab.
-- nada means sound path. Not Body. Not शरीरम् on that tab.
+Parse `public/labels.txt`: skip `#` and blanks. Row is `kind|id|tab|sanskrit`.
+`shelf` button text = field 3 as written. Do not also print field 4.
 
-## Product law
+1. Beginners · मात्रा
+2. nada · नाद-पथः
+3. Objects · परिवेशः
+4. Naksha · नक्शा
+5. Nature · प्रकृतिः
+6. Sanskriti · संस्कृतिः
+7. Play · क्रिया
 
-- Meaning first. After a correct Check, English is the meaning. Devanagari stays.
-- जोडो morphs: आ becomes ा, then NFC. क+आ = का (not कआ).
-- मेलः does not morph. Target गङ्गा → tap नदी. Target पीतः → tap हरिद्रा. Never put the target word in the tiles.
-- Play is कर्ता-क्रिया. Same renderer as मेलः. Prompt is the कर्ता in Devanagari only (बालकः). Tiles are क्रिया. Never write (Kartā) on a tile.
-- रिक्तम् shows the blank sentence. गकारः ____ स्थानस्य अस्ति। Answer कण्ठस्य. Not a self-match on कण्ठः.
-- Play does the join. Sūtram watches: glue(...) → का, three sandhi only, button शब्दः सिध्यति (visarga). English is a small caption on Sūtram.
-- Deepakam is the book. Never turn lessons into tiles.
-- Silent. No TTS, no new Audio, no “Hear the vowel mark.”
-- Yellow card: sound-toy.txt letters only. Never “no row yet.” Close on wing/puzzle change. No setTimeout unmount.
-- Day-1 tile is आ, not dotted-circle ा.
-- NEVER put naked combining marks (ा ि ु ू े ो) in a tile array. The font inserts U+25CC dotted circle, which looks like inverted English “to”.
-- Tile face = independent vowel आ इ उ. glueTiles maps आ→ा, इ→ि, उ→ु, then NFC. क+आ = का (not कआ, not “ आ ” with a space).
-- Do not prepend U+25CC. Do not pad the mark with spaces as a fake base.
+Never: Maths, Body, Map, Geography, numbers · संख्या, space · परिवेशः, map · नक्शा, one seed, Gunitālu, Maatra, Breath Travel, Build, SHELF, TRACE as a heading.
+संख्या is a later door, like Sūtram. Not a shelf.
+Sanskriti never shows `one seed`.
+nada is the sound path. Not Body. Not शरीरम् on that tab.
 
-## Delete these labels if you see them
+If `Board.tsx` has `FALLBACK_WINGS`, its order and labels must match the seven tabs above.
+
+## Skins
+
+- जोडो: आ→ा then NFC. क+आ = का (not कआ). Tiles are independent आ इ उ, never naked ा ि ु.
+- मेलः: prompt + tiles + Check. Tapped tile === target. No morph. Prompt is not a tile.
+- कर्ता-क्रिया: same renderer as मेलः. Prompt is the कर्ता in Devanagari only. Never print (Kartā) or (Kriyā).
+- रिक्तम्: blank sentence. गकारः ____ → कण्ठस्य. Not a self-match on कण्ठः.
+
+If you touch `type Shape`, the union is:
+`'जोडो' | 'बनाओ' | 'मेलः' | 'रिक्तम्' | 'प्रश्न' | 'क्रमः' | 'कर्ता-क्रिया'`
+Never जोड़ो, जोड़िये, रंगो, परखो, मेल without visarga.
+
+## Week proofs (from public/board.json + week.txt)
+
+1. Beginners जोडो: क then आ then Check → का and “who? (feminine)”
+2. nada रिक्तम्: गकारः ____ → कण्ठस्य → “ga is a throat-letter”
+3. Objects मेलः: पुस्तकम्, tap पठति → “a book”. Tiles Devanagari only. Never Book/Water/Cloth as tiles.
+4. Naksha मेलः: सूर्यः, tap आकाशः → “the sun”. Not गङ्गा this week.
+5. Nature मेलः: गजः
+6. Sanskriti: तारा
+7. Play कर्ता-क्रिया: बालकः, tap पठति → “The boy reads.”
+
+Tiles are Devanagari. English only after a correct Check.
+
+## Delete if you see them
 
 Hear the vowel mark; Meaning fuses; Small TRACE, no compiler;
-ONE BOARD / SHELF; no row yet; A short vowel-mark lesson; Maatra; Biology; Geography; Games; Coding; SHELF; TRACE as a heading;
-tripled titles; शब्द: with a colon.
+ONE BOARD / SHELF; no row yet; Maatra; Biology; Geography; Games; Coding;
+tripled titles; शब्द: with a colon; (Kartā); (Kriyā).
 
-One site line under the shelves: Pick a shelf. Tap tiles. Then Check.
-One child line per screen. Do not replace the header.
+One site line: Pick a shelf. Tap tiles. Then Check.
 
 ## Data
 
-public/puzzles.txt is the week. Do not create packs.json.
-Do not add 11–20, far lands, audio, or new packs.
-Do not shuffle 80 words.
-Time / seasons / five senses / eating / professions / weather / glue-words (अहम् त्वम् अत्र कुत्र) are listed in docs/GUIDE.md as NEXT PACKS. Do not implement them until the user says Day 1 का Check is proven.
-भूतम् वर्तमानम् भविष्यत् is Sūtram later, not Beginners.
+`public/board.json` and `public/puzzles.txt` are the week. Do not create packs.json.
+Do not add 11–20, far lands, audio, TTS, or new packs until Day 1 का still holds.
+Do not live-translate. Analyse is a later door (`docs/ANALYSE.md`). No language pills on the Board.
 
 ## Stop when
 
-Day 1: tap क then आ then Check shows का and “the girl reads.”
+Ports preview matches the seven tabs and the week proofs above.
 Deepakam still opens a lesson.
-
-## Analyse
-Same word bank, other door. Read docs/ANALYSE.md and public/analyse.json.
-Never live-translate. Missing word: say not in the bank. Do not put language pills on the Board.
-
-Sentence bank is public/sentences.txt (Devanagari only). Do not mix Telugu/Kannada into it. Language pills belong only in Analyse via public/analyse.json.
