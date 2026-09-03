@@ -27,8 +27,8 @@ Naksha is सूर्यः / आकाशः, not नेत्रम्, not �
 
 `shelf` button = field 3 only.
 
-1. Beginners · मात्रा — जोडो — क+आ → का — “who? (feminine)”
-2. nada · नाद-पथः — रिक्तम् — गकारः ____ → कण्ठस्य — “ga is a throat-letter”
+1. Beginners · मात्रा — जोडो — क+आ → का — “Who is the girl reading?”
+2. nada · नाद-पथः — रिक्तम् — गकारः ____ → कण्ठस्य — “The sound ga belongs to the throat repository.”
 3. Vastu · वस्तु — मेलः — पुस्तकम् tap पठति — “I read a book.”
 4. Naksha · नक्शा — मेलः — सूर्यः tap आकाशः — “The sun is in the sky.”
 5. Nature · प्रकृतिः — मेलः — गजः (animal/plant names, not चलति)
@@ -51,20 +51,27 @@ If you touch `type Shape`:
 `'जोडो' | 'बनाओ' | 'मेलः' | 'रिक्तम्' | 'प्रश्न' | 'क्रमः' | 'कर्ता-क्रिया'`
 
 
-## Meaning (do not lie to the child)
+## Meaning (sentence + highlight)
 
-English only after a correct Check.
-The big English line is the **sentence** meaning (`puzzle.english`), never a dictionary glued under the selected tile.
+After a correct Check only:
+1. Show `puzzle.sentence` (Devanagari).
+2. Highlight `puzzle.highlight` inside that sentence (different colour/weight). The highlight is the form in the sentence (`पुस्तकं`, `आकाशे`), which may differ from the tile (`पुस्तकम्`, `आकाशः`).
+3. Show `puzzle.english` under it. That English is the **sentence**, not a dictionary for the tapped tile.
 
-Wrong: tap आकाशः, show “आकाशः” + “the sun”.
-Right: Check सूर्यः + आकाशः → Sanskrit `सूर्यः आकाशे अस्ति।` and English `The sun is in the sky.`
+Never: tapped tile आकाशः + English “the sun”.
+Never show English before Check.
 
-आकाशः is sky. सूर्यः is the sun. पठति is reads. जलम् is water. तारा is a star. कण्ठस्य is of the throat.
-If you print a Devanagari word, the English next to it must be THAT word — or print the full sentence instead.
+Week bank (do not rewrite these English lines):
+- का · का बालिका पठति। · Who is the girl reading?
+- कण्ठस्य · गकारः कण्ठस्य स्थानस्य अस्ति। · The sound ga belongs to the throat repository.
+- पुस्तकम् · अहं पुस्तकं पठामि। · I read a book.
+- सूर्यः · सूर्यः आकाशे अस्ति। · The sun is in the sky.
+- गजः · गजः मन्दं चलति। · The elephant walks slowly.
+- तारा · वयं सर्वे तारा-धूलयः। · We are all star-dust.
+- बालकः · बालकः पठति। · The boy reads.
 
-Do not invent puzzles (दीपः, भोजनम्, अत्र, लिखति, एकम् on Beginners). Use `public/board.json` only.
-nada footer: ग lives in the throat when the target is गकारः. Never say क for ग.
-Sanskriti तारा = a star. Not “star-dust” as the word-gloss.
+Read `public/board.json` `highlight` + `sentence` + `english`. Do not invent दीपः / भोजनम् / एकम् on Beginners.
+
 
 ## Board copy
 
