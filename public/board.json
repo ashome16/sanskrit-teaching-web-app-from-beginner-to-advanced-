@@ -114,5 +114,52 @@
         "english": "elephant (an animal)"
       }
     ]
+  },
+  {
+    "shelf": "play",
+    "native": "क्रिया",
+    "skin": "कर्ता-क्रिया",
+    "puzzles": [
+      {
+        "prompt": "बालकः",
+        "target": "पठति",
+        "tiles": [
+          "पठति",
+          "वहति",
+          "उदयति"
+        ],
+        "english": "The boy reads."
+      },
+      {
+        "prompt": "गजः",
+        "target": "चलति",
+        "tiles": [
+          "चलति",
+          "विकसति",
+          "पठति"
+        ],
+        "english": "The elephant walks."
+      },
+      {
+        "prompt": "नदी",
+        "target": "वहति",
+        "tiles": [
+          "वहति",
+          "तिष्ठति",
+          "चलति"
+        ],
+        "english": "The river flows."
+      },
+      {
+        "prompt": "वृक्षः",
+        "target": "फलति",
+        "tiles": [
+          "फलति",
+          "उदयति",
+          "वहति"
+        ],
+        "english": "The tree bears fruit."
+      }
+    ]
   }
 ]
