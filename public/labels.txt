@@ -2,13 +2,13 @@ nav|board|Board|the game
 nav|deepakam|Deepakam|the book
 nav|analyse|Analyse|
 nav|vibhakti|Vibhakti Guide|eight boxes
-shelf|prarambhah|Beginners|प्रारम्भः
-shelf|sariram|Body|शरीरम्
-shelf|ganitam|Maths|गणितम्
-shelf|bhugolah|नक्शा|नक्शा
-shelf|sanskritih|Sanskriti|संस्कृतिः
-shelf|krida|Play|क्रीडा
-shelf|prakrtih|Nature|प्रकृतिः
+shelf|prarambhah|Beginners · मात्रा|मात्रा
+shelf|sariram|nada · नाद-पथः|नाद-पथः
+shelf|ganitam|numbers · संख्या|संख्या
+shelf|bhugolah|map · नक्शा|नक्शा
+shelf|sanskritih|Sanskriti · संस्कृतिः|संस्कृतिः
+shelf|krida|Play · क्रीडा|क्रीडा
+shelf|prakrtih|Nature · प्रकृतिः|प्रकृतिः
 pack|matra|मात्रा|letters and marks
 pack|colours|वर्णाः|colours
 pack|family|परिवारः|family
@@ -16,8 +16,8 @@ pack|school|विद्यालयः|school
 pack|body-laghu|शरीरम्|body words
 pack|food|आहारः|food in a bowl
 pack|glue|चिह्नानि|I, you, here, where
-pack|sankhya-0-10|संख्या|one to ten
-pack|nada-pathah|नाद-पथः|where the sound lives
+pack|sankhya-0-10|संख्या|numbers
+pack|nada-pathah|नाद-पथः|sound path
 pack|sthanam|स्थानम्|six mouth-seats
 pack|osadhih|ओषधिः|plant names
 pack|sushruta-kosa|सुश्रुत-कोशः|three tool-names
