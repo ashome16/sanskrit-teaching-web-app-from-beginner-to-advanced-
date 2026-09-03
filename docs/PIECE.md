@@ -1,4 +1,4 @@
-# Puzzle piece — one shape, six anecdotes
+# Puzzle piece — six plus Nature
 
 No XP. No Locked. No Sūtram on this board.
 
@@ -10,5 +10,6 @@ No XP. No Locked. No Sūtram on this board.
 | Map | नदी | गङ्गा is a river. |
 | Sanskriti | तारा | One seed. |
 | Play | माता | Make a word. |
+| Nature | गौः | A cow, a tree. Names you can point at. |
 
-States: waiting (grey dash) · doing (pencil) · done (gold). Same path.
+States: waiting · doing · done. Same pencil path.
