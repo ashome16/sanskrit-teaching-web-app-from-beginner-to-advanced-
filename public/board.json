@@ -112,7 +112,8 @@
         ],
         "sentence": "अहं पुस्तकं पठामि।",
         "english": "I read a book.",
-        "highlight": "पुस्तकं"
+        "highlight": "पुस्तकं",
+        "tapHighlight": "पठामि"
       },
       {
         "prompt": "जलम्",
@@ -124,7 +125,8 @@
         ],
         "sentence": "बालकः जलं पिबति।",
         "english": "The boy drinks water.",
-        "highlight": "जलं"
+        "highlight": "जलं",
+        "tapHighlight": "पिबति"
       },
       {
         "prompt": "गृहम्",
@@ -136,7 +138,8 @@
         ],
         "sentence": "अहं गृहे वसामि।",
         "english": "I live in the house.",
-        "highlight": "गृहे"
+        "highlight": "गृहे",
+        "tapHighlight": "वसामि"
       },
       {
         "prompt": "वस्त्रम्",
@@ -148,7 +151,8 @@
         ],
         "sentence": "सा वस्त्रं धारयति।",
         "english": "She wears the garment.",
-        "highlight": "वस्त्रं"
+        "highlight": "वस्त्रं",
+        "tapHighlight": "धारयति"
       }
     ]
   },
@@ -167,7 +171,8 @@
         ],
         "sentence": "सूर्यः आकाशे अस्ति।",
         "english": "The sun is in the sky.",
-        "highlight": "सूर्यः"
+        "highlight": "सूर्यः",
+        "tapHighlight": "आकाशे"
       },
       {
         "prompt": "नदी",
@@ -272,7 +277,8 @@
         ],
         "sentence": "बालकः पठति।",
         "english": "The boy reads.",
-        "highlight": "बालकः"
+        "highlight": "बालकः",
+        "tapHighlight": "पठति"
       },
       {
         "prompt": "गजः",
@@ -284,7 +290,8 @@
         ],
         "sentence": "गजः मन्दं चलति।",
         "english": "The elephant walks slowly.",
-        "highlight": "चलति"
+        "highlight": "चलति",
+        "tapHighlight": "चलति"
       },
       {
         "prompt": "नदी",
@@ -296,7 +303,8 @@
         ],
         "sentence": "नदी वेगेन वहति।",
         "english": "The river flows swiftly.",
-        "highlight": "नदी"
+        "highlight": "नदी",
+        "tapHighlight": "वहति"
       },
       {
         "prompt": "वृक्षः",
