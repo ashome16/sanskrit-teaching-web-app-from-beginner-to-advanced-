@@ -5,7 +5,7 @@ nav|vibhakti|Vibhakti Guide|eight boxes
 shelf|prarambhah|Beginners|प्रारम्भः
 shelf|sariram|Body|शरीरम्
 shelf|ganitam|Maths|गणितम्
-shelf|bhugolah|Map|भूगोलः
+shelf|bhugolah|नक्शा|नक्शा
 shelf|sanskritih|Sanskriti|संस्कृतिः
 shelf|krida|Play|क्रीडा
 shelf|prakrtih|Nature|प्रकृतिः
@@ -21,7 +21,7 @@ pack|nada-pathah|नाद-पथः|where the sound lives
 pack|sthanam|स्थानम्|six mouth-seats
 pack|osadhih|ओषधिः|plant names
 pack|sushruta-kosa|सुश्रुत-कोशः|three tool-names
-pack|nadyah|स्थानानि|places
+pack|nadyah|नक्शा|map
 pack|katha-bija|कथा|one seed
 pack|masah|मासाः|months
 pack|svara-raga|स्वर|sā re ga
