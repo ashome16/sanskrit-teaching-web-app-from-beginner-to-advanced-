@@ -4,7 +4,7 @@ nav|analyse|Analyse|
 nav|vibhakti|Vibhakti Guide|eight boxes
 shelf|prarambhah|Beginners · मात्रा|मात्रा
 shelf|sariram|nada · नाद-पथः|नाद-पथः
-shelf|ganitam|numbers · संख्या|संख्या
+shelf|ganitam|space · परिवेशः|परिवेशः
 shelf|bhugolah|map · नक्शा|नक्शा
 shelf|sanskritih|Sanskriti · संस्कृतिः|संस्कृतिः
 shelf|krida|Play · क्रिया|क्रिया
@@ -16,7 +16,7 @@ pack|school|विद्यालयः|school
 pack|body-laghu|शरीरम्|body words
 pack|food|आहारः|food in a bowl
 pack|glue|चिह्नानि|I, you, here, where
-pack|sankhya-0-10|संख्या|numbers
+pack|parivesah|परिवेशः|home things
 pack|nada-pathah|नाद-पथः|sound path
 pack|sthanam|स्थानम्|six mouth-seats
 pack|osadhih|ओषधिः|plant names
