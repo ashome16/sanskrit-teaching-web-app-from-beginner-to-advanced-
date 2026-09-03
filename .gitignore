@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Not board data. संख्या is a later door.
+public/numbers.txt
