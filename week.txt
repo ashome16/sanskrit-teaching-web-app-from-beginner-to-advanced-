@@ -2,7 +2,8 @@
 1|prarambhah|matra|जोडो|का
 2|prarambhah|colours|मेलः|पीतः
 3|ganitam|numbers|बनाओ|पञ्च
-4|sariram|nadapath|रिक्तम्|कण्ठः
+4|sariram|nadapath|रिक्तम्|कण्ठस्य
 5|bhugolah|nadyah|मेलः|गङ्गा
 6|sanskritih|tara|रिक्तम्|तारा
 7|krida|mix|बनाओ|मिश्रणम्
+8|nature|nature|मेलः|गजः
