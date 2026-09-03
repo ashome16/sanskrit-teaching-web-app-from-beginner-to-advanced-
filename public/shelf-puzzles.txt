@@ -21,3 +21,6 @@ vatah|मेलः|सूर्यः|उष्णम्|उष्णम्,श�
 indriyani|मेलः|चक्षुः|रूपम्|रूपम्,शब्दः,गन्धः,रसः,स्पर्शः,नदी|चक्षुषा रूपं पश्यामि।|the eye meets form|Organ to what it meets. Names, no clinic.
 indriyani|मेलः|श्रोत्रम्|शब्दः|शब्दः,रूपम्,गन्धः,रसः,स्पर्शः,नदी|श्रोत्रेण शब्दं शृणोमि।|the ear meets sound|Same pattern.
 indriyani|मेलः|त्वक्|स्पर्शः|स्पर्शः,रूपम्,शब्दः,गन्धः,रसः,नदी|त्वचा स्पर्शं जानामि।|the skin meets touch|Names only.
+prakrtih|मेलः|गौः|दुग्धम्|दुग्धम्,अश्वः,नदी,फलम्,गृहम्,गुरुः|गौः दुग्धं ददाति।|the cow gives milk|Animal to a bowl-word. No farm lesson.
+prakrtih|मेलः|मत्स्यः|नदी|नदी,गौः,वृक्षः,फलम्,गृहम्,गुरुः|मत्स्यः नद्यां वसति।|the fish lives in the river|Animal to a place.
+prakrtih|मेलः|वृक्षः|कमलम्|कमलम्,गौः,नदी,गजः,गृहम्,गुरुः|वृक्षे कमलं न; जले कमलम्।|the lotus is a plant|Plant with plant. Names only.
