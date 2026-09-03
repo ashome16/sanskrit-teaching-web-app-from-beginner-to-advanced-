@@ -1,17 +1,118 @@
 [
-  {"shelf":"beginners","native":"मात्रा","skin":"जोडो","puzzles":[
-    {"target":"का","tiles":["क","आ","ख","ग","इ","उ"],"english":"the girl reads"},
-    {"target":"मा","tiles":["म","आ","क","प","इ","उ"],"english":"ma, as in mother"},
-    {"target":"सा","tiles":["स","आ","क","म","इ","उ"],"english":"she"},
-    {"target":"बालः","tiles":["ब","आ","लः","क","म","स"],"english":"the boy reads"}
-  ]},
-  {"shelf":"body","native":"नाद-पथः","skin":"रिक्तम्","puzzles":[
-    {"prompt":"गकारः ____","target":"कण्ठस्य","tiles":["कण्ठस्य","तालस्य","दन्तस्य","ओष्ठस्य","मूर्ध्नः","नासिकायाः"],"english":"ga is a throat-letter"}
-  ]},
-  {"shelf":"map","native":"नद्यः","skin":"मेलः","puzzles":[
-    {"prompt":"गङ्गा","target":"नदी","tiles":["नदी","पर्वतः","वनम्","ग्रामः","आकाशः","गृहम्"],"english":"Ganga is a river"}
-  ]},
-  {"shelf":"nature","native":"प्रकृतिः","skin":"मेलः","puzzles":[
-    {"prompt":"गजः","target":"अश्वः","tiles":["अश्वः","वृक्षः","पुष्पम्","नदी","गृहम्","गुरुः"],"english":"elephant (an animal)"}
-  ]}
+  {
+    "shelf": "beginners",
+    "native": "मात्रा",
+    "skin": "जोडो",
+    "puzzles": [
+      {
+        "target": "का",
+        "tiles": [
+          "क",
+          "आ",
+          "ख",
+          "ग",
+          "इ",
+          "उ"
+        ],
+        "english": "who? (feminine)",
+        "explanation": "क plus आ makes का."
+      },
+      {
+        "target": "मा",
+        "tiles": [
+          "म",
+          "आ",
+          "क",
+          "प",
+          "इ",
+          "उ"
+        ],
+        "english": "ma, as in mother"
+      },
+      {
+        "target": "सा",
+        "tiles": [
+          "स",
+          "आ",
+          "क",
+          "म",
+          "इ",
+          "उ"
+        ],
+        "english": "she"
+      },
+      {
+        "target": "बालः",
+        "tiles": [
+          "ब",
+          "आ",
+          "लः",
+          "क",
+          "म",
+          "स"
+        ],
+        "english": "the boy reads"
+      }
+    ]
+  },
+  {
+    "shelf": "body",
+    "native": "नाद-पथः",
+    "skin": "रिक्तम्",
+    "puzzles": [
+      {
+        "prompt": "गकारः ____",
+        "target": "कण्ठस्य",
+        "tiles": [
+          "कण्ठस्य",
+          "तालस्य",
+          "दन्तस्य",
+          "ओष्ठस्य",
+          "मूर्ध्नः",
+          "नासिकायाः"
+        ],
+        "english": "ga is a throat-letter"
+      }
+    ]
+  },
+  {
+    "shelf": "map",
+    "native": "नद्यः",
+    "skin": "मेलः",
+    "puzzles": [
+      {
+        "prompt": "गङ्गा",
+        "target": "नदी",
+        "tiles": [
+          "नदी",
+          "पर्वतः",
+          "वनम्",
+          "ग्रामः",
+          "आकाशः",
+          "गृहम्"
+        ],
+        "english": "Ganga is a river"
+      }
+    ]
+  },
+  {
+    "shelf": "nature",
+    "native": "प्रकृतिः",
+    "skin": "मेलः",
+    "puzzles": [
+      {
+        "prompt": "गजः",
+        "target": "अश्वः",
+        "tiles": [
+          "अश्वः",
+          "वृक्षः",
+          "पुष्पम्",
+          "नदी",
+          "गृहम्",
+          "गुरुः"
+        ],
+        "english": "elephant (an animal)"
+      }
+    ]
+  }
 ]
