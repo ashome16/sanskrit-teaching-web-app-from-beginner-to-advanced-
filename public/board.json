@@ -41,7 +41,9 @@
           "इ",
           "उ"
         ],
-        "english": "she"
+        "english": "She is the girl laughing.",
+        "sentence": "सा बालिका हसति।",
+        "highlight": "सा"
       },
       {
         "target": "बालः",
@@ -77,6 +79,21 @@
         "explanation": "ग lives in the throat. Not क.",
         "sentence": "गकारः कण्ठस्य स्थानस्य अस्ति।",
         "highlight": "कण्ठस्य"
+      },
+      {
+        "prompt": "चकारः ____",
+        "target": "तालस्य",
+        "tiles": [
+          "तालस्य",
+          "कण्ठस्य",
+          "दन्तस्य",
+          "ओष्ठस्य",
+          "मूर्ध्नः",
+          "नासिकायाः"
+        ],
+        "sentence": "चकारः तालस्य स्थानस्य अस्ति।",
+        "english": "The sound ca belongs to the palate repository.",
+        "highlight": "तालस्य"
       }
     ]
   },
@@ -222,6 +239,21 @@
         "english": "We are all star-dust.",
         "sentence": "वयं सर्वे तारा-धूलयः।",
         "highlight": "तारा"
+      },
+      {
+        "prompt": "ज्ञानं परमं ____।",
+        "target": "बीजम्",
+        "tiles": [
+          "बीजम्",
+          "तारा",
+          "मृत्तिका",
+          "वन",
+          "ग्राम",
+          "गृह"
+        ],
+        "sentence": "ज्ञानं परमं बीजम्।",
+        "english": "Knowledge is the ultimate seed.",
+        "highlight": "बीजम्"
       }
     ]
   },
