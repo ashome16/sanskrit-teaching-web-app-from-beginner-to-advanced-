@@ -14,8 +14,10 @@
           "इ",
           "उ"
         ],
-        "english": "who? (feminine)",
-        "explanation": "क plus आ makes का."
+        "english": "Who is the girl reading?",
+        "explanation": "क plus आ makes का.",
+        "sentence": "का बालिका पठति।",
+        "highlight": "का"
       },
       {
         "target": "मा",
@@ -39,7 +41,9 @@
           "इ",
           "उ"
         ],
-        "english": "she"
+        "english": "She is the girl laughing.",
+        "sentence": "सा बालिका हसति।",
+        "highlight": "सा"
       },
       {
         "target": "बालः",
@@ -71,47 +75,428 @@
           "मूर्ध्नः",
           "नासिकायाः"
         ],
-        "english": "ga is a throat-letter"
+        "english": "The sound ga belongs to the throat repository.",
+        "explanation": "ग lives in the throat. Not क.",
+        "sentence": "गकारः कण्ठस्य स्थानस्य अस्ति।",
+        "highlight": "कण्ठस्य"
+      },
+      {
+        "prompt": "चकारः ____",
+        "target": "तालस्य",
+        "tiles": [
+          "तालस्य",
+          "कण्ठस्य",
+          "दन्तस्य",
+          "ओष्ठस्य",
+          "मूर्ध्नः",
+          "नासिकायाः"
+        ],
+        "sentence": "चकारः तालस्य स्थानस्य अस्ति।",
+        "english": "The sound ca belongs to the palate repository.",
+        "highlight": "तालस्य"
+      },
+      {
+        "prompt": "____ वयं पश्यामः ।",
+        "target": "नेत्रेण",
+        "tiles": [
+          "नेत्रेण",
+          "रसनया",
+          "नासिकया",
+          "त्वचा",
+          "श्रोत्रेण",
+          "मनः"
+        ],
+        "sentence": "नेत्रेण वयं पश्यामः ।",
+        "english": "We see with our eyes.",
+        "highlight": "नेत्रेण"
+      },
+      {
+        "prompt": "____ वयं रसं जानीमः ।",
+        "target": "रसनया",
+        "tiles": [
+          "नेत्रेण",
+          "रसनया",
+          "नासिकया",
+          "त्वचा",
+          "श्रोत्रेण",
+          "मनः"
+        ],
+        "sentence": "रसनया वयं रसं जानीमः ।",
+        "english": "We taste with our tongue.",
+        "highlight": "रसनया"
+      },
+      {
+        "prompt": "____ वयं जिघ्रामः ।",
+        "target": "नासिकया",
+        "tiles": [
+          "नेत्रेण",
+          "रसनया",
+          "नासिकया",
+          "त्वचा",
+          "श्रोत्रेण",
+          "मनः"
+        ],
+        "sentence": "नासिकया वयं जिघ्रामः ।",
+        "english": "We smell with our nose.",
+        "highlight": "नासिकया"
+      },
+      {
+        "prompt": "____ वयं स्पर्शं जानीमः ।",
+        "target": "त्वचा",
+        "tiles": [
+          "नेत्रेण",
+          "रसनया",
+          "नासिकया",
+          "त्वचा",
+          "श्रोत्रेण",
+          "मनः"
+        ],
+        "sentence": "त्वचा वयं स्पर्शं जानीमः ।",
+        "english": "We feel touch with our skin.",
+        "highlight": "त्वचा"
+      },
+      {
+        "prompt": "____ वयं शृणुमः ।",
+        "target": "श्रोत्रेण",
+        "tiles": [
+          "नेत्रेण",
+          "रसनया",
+          "नासिकया",
+          "त्वचा",
+          "श्रोत्रेण",
+          "मनः"
+        ],
+        "sentence": "श्रोत्रेण वयं शृणुमः ।",
+        "english": "We hear with our ears.",
+        "highlight": "श्रोत्रेण"
+      },
+      {
+        "prompt": "____ एतानि इन्द्रियाणि चालयति ।",
+        "target": "मनः",
+        "tiles": [
+          "नेत्रेण",
+          "रसनया",
+          "नासिकया",
+          "त्वचा",
+          "श्रोत्रेण",
+          "मनः"
+        ],
+        "sentence": "मनः एतानि इन्द्रियाणि चालयति ।",
+        "english": "The mind directs all of these senses.",
+        "highlight": "मनः"
+      },
+      {
+        "prompt": "____ वयं कार्यं कुर्मः ।",
+        "target": "हस्तेन",
+        "tiles": [
+          "हस्तेन",
+          "पादेन",
+          "शिरसि",
+          "दन्तैः",
+          "कण्ठेन",
+          "शिरः"
+        ],
+        "sentence": "हस्तेन वयं कार्यं कुर्मः ।",
+        "english": "We work with our hands.",
+        "highlight": "हस्तेन"
+      },
+      {
+        "prompt": "____ वयं चलामः ।",
+        "target": "पादेन",
+        "tiles": [
+          "हस्तेन",
+          "पादेन",
+          "शिरसि",
+          "दन्तैः",
+          "कण्ठेन",
+          "शिरः"
+        ],
+        "sentence": "पादेन वयं चलामः ।",
+        "english": "We walk with our feet.",
+        "highlight": "पादेन"
+      },
+      {
+        "prompt": "____ बुद्धिः वर्तते ।",
+        "target": "शिरसि",
+        "tiles": [
+          "हस्तेन",
+          "पादेन",
+          "शिरसि",
+          "दन्तैः",
+          "कण्ठेन",
+          "शिरः"
+        ],
+        "sentence": "शिरसि बुद्धिः वर्तते ।",
+        "english": "The head is the seat of intelligence.",
+        "highlight": "शिरसि"
+      },
+      {
+        "prompt": "____ वयं अन्नं चर्वयामः ।",
+        "target": "दन्तैः",
+        "tiles": [
+          "हस्तेन",
+          "पादेन",
+          "शिरसि",
+          "दन्तैः",
+          "कण्ठेन",
+          "शिरः"
+        ],
+        "sentence": "दन्तैः वयं अन्नं चर्वयामः ।",
+        "english": "We chew food with our teeth.",
+        "highlight": "दन्तैः"
+      },
+      {
+        "prompt": "____ मधुरं वदामः ।",
+        "target": "कण्ठेन",
+        "tiles": [
+          "हस्तेन",
+          "पादेन",
+          "शिरसि",
+          "दन्तैः",
+          "कण्ठेन",
+          "शिरः"
+        ],
+        "sentence": "कण्ठेन मधुरं वदामः ।",
+        "english": "We speak sweetly from our throat.",
+        "highlight": "कण्ठेन"
+      },
+      {
+        "prompt": "अतः ____ आद्यं खलु धर्मसाधनम् ।",
+        "target": "शरीरम्",
+        "tiles": [
+          "शरीरम्",
+          "हस्तः",
+          "पादः",
+          "शिरः",
+          "दन्तः",
+          "मनः"
+        ],
+        "sentence": "अतः शरीरम् आद्यं खलु धर्मसाधनम् ।",
+        "english": "The body is the primary vehicle for all noble duties.",
+        "highlight": "शरीरम्"
+      }
+    ]
+  },
+  {
+    "shelf": "space",
+    "native": "वस्तु",
+    "skin": "मेलः",
+    "puzzles": [
+      {
+        "prompt": "पुस्तकम्",
+        "target": "पठति",
+        "tiles": [
+          "पठति",
+          "पिबति",
+          "वसति"
+        ],
+        "sentence": "अहं पुस्तकं पठामि।",
+        "english": "I read a book.",
+        "highlight": "पुस्तकं",
+        "tapHighlight": "पठामि"
+      },
+      {
+        "prompt": "जलम्",
+        "target": "पिबति",
+        "tiles": [
+          "पिबति",
+          "पठति",
+          "धारयति"
+        ],
+        "sentence": "बालकः जलं पिबति।",
+        "english": "The boy drinks water.",
+        "highlight": "जलं",
+        "tapHighlight": "पिबति"
+      },
+      {
+        "prompt": "गृहम्",
+        "target": "वसति",
+        "tiles": [
+          "वसति",
+          "पिबति",
+          "पठति"
+        ],
+        "sentence": "अहं गृहे वसामि।",
+        "english": "I live in the house.",
+        "highlight": "गृहे",
+        "tapHighlight": "वसामि"
+      },
+      {
+        "prompt": "वस्त्रम्",
+        "target": "धारयति",
+        "tiles": [
+          "धारयति",
+          "वसति",
+          "पिबति"
+        ],
+        "sentence": "सा वस्त्रं धारयति।",
+        "english": "She wears the garment.",
+        "highlight": "वस्त्रं",
+        "tapHighlight": "धारयति"
       }
     ]
   },
   {
     "shelf": "map",
-    "native": "नद्यः",
+    "native": "नक्शा",
     "skin": "मेलः",
     "puzzles": [
       {
-        "prompt": "गङ्गा",
-        "target": "नदी",
+        "prompt": "सूर्यः",
+        "target": "आकाशः",
         "tiles": [
-          "नदी",
-          "पर्वतः",
-          "वनम्",
-          "ग्रामः",
           "आकाशः",
+          "नदी",
           "गृहम्"
         ],
-        "english": "Ganga is a river"
+        "sentence": "सूर्यः आकाशे अस्ति।",
+        "english": "The sun is in the sky.",
+        "highlight": "सूर्यः",
+        "tapHighlight": "आकाशे"
+      },
+      {
+        "prompt": "नदी",
+        "target": "वहति",
+        "tiles": [
+          "वहति",
+          "तिष्ठति",
+          "चलति"
+        ],
+        "sentence": "नदी वेगेन वहति।",
+        "english": "The river flows swiftly.",
+        "highlight": "नदी"
       }
     ]
   },
   {
     "shelf": "nature",
     "native": "प्रकृतिः",
-    "skin": "मेलः",
+    "skin": "रिक्तम्",
     "puzzles": [
       {
-        "prompt": "गजः",
-        "target": "अश्वः",
+        "prompt": "____ मन्दं चलति।",
+        "target": "गजः",
         "tiles": [
+          "गजः",
           "अश्वः",
           "वृक्षः",
           "पुष्पम्",
           "नदी",
-          "गृहम्",
-          "गुरुः"
+          "गृहम्"
         ],
-        "english": "elephant (an animal)"
+        "sentence": "गजः मन्दं चलति।",
+        "english": "The elephant walks slowly.",
+        "highlight": "गजः"
+      },
+      {
+        "prompt": "____ भूमौ तिष्ठति।",
+        "target": "वृक्षः",
+        "tiles": [
+          "वृक्षः",
+          "गजः",
+          "पुष्पम्",
+          "नदी",
+          "गृहम्",
+          "अश्वः"
+        ],
+        "sentence": "वृक्षः भूमौ तिष्ठति।",
+        "english": "The tree stands on the earth.",
+        "highlight": "वृक्षः"
+      }
+    ]
+  },
+  {
+    "shelf": "sanskriti",
+    "native": "संस्कृतिः",
+    "skin": "रिक्तम्",
+    "puzzles": [
+      {
+        "prompt": "वयं सर्वे ____ धूलयः।",
+        "target": "तारा",
+        "tiles": [
+          "तारा",
+          "मृत्तिका",
+          "जल",
+          "वन",
+          "ग्राम",
+          "गृह"
+        ],
+        "english": "We are all star-dust.",
+        "sentence": "वयं सर्वे तारा-धूलयः।",
+        "highlight": "तारा"
+      },
+      {
+        "prompt": "ज्ञानं परमं ____।",
+        "target": "बीजम्",
+        "tiles": [
+          "बीजम्",
+          "तारा",
+          "मृत्तिका",
+          "वन",
+          "ग्राम",
+          "गृह"
+        ],
+        "sentence": "ज्ञानं परमं बीजम्।",
+        "english": "Knowledge is the ultimate seed.",
+        "highlight": "बीजम्"
+      }
+    ]
+  },
+  {
+    "shelf": "play",
+    "native": "क्रिया",
+    "skin": "कर्ता-क्रिया",
+    "puzzles": [
+      {
+        "prompt": "बालकः",
+        "target": "पठति",
+        "tiles": [
+          "पठति",
+          "वहति",
+          "उदयति"
+        ],
+        "sentence": "बालकः पठति।",
+        "english": "The boy reads.",
+        "highlight": "बालकः",
+        "tapHighlight": "पठति"
+      },
+      {
+        "prompt": "गजः",
+        "target": "चलति",
+        "tiles": [
+          "चलति",
+          "विकसति",
+          "पठति"
+        ],
+        "sentence": "गजः मन्दं चलति।",
+        "english": "The elephant walks slowly.",
+        "highlight": "चलति",
+        "tapHighlight": "चलति"
+      },
+      {
+        "prompt": "नदी",
+        "target": "वहति",
+        "tiles": [
+          "वहति",
+          "तिष्ठति",
+          "चलति"
+        ],
+        "sentence": "नदी वेगेन वहति।",
+        "english": "The river flows swiftly.",
+        "highlight": "नदी",
+        "tapHighlight": "वहति"
+      },
+      {
+        "prompt": "वृक्षः",
+        "target": "फलति",
+        "tiles": [
+          "फलति",
+          "उदयति",
+          "वहति"
+        ],
+        "sentence": "वृक्षः फलति।",
+        "english": "The tree bears fruit.",
+        "highlight": "वृक्षः"
       }
     ]
   }

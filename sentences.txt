@@ -1,0 +1,30 @@
+# sentence|english|focus|shelf
+# Devanagari + English only. Highlight focus in the sentence.
+का बालिका पठति।|Who is the girl reading?|का|beginners
+गकारः कण्ठस्य स्थानस्य अस्ति।|The sound ga belongs to the throat repository.|कण्ठस्य|nada
+अहं पुस्तकं पठामि।|I read a book.|पुस्तकं|vastu
+बालकः जलं पिबति।|The boy drinks water.|जलं|vastu
+अहं गृहे वसामि।|I live in the house.|गृहे|vastu
+सा वस्त्रं धारयति।|She wears the garment.|वस्त्रं|vastu
+सूर्यः आकाशे अस्ति।|The sun is in the sky.|सूर्यः|naksha
+सूर्यः आकाशे उदयति।|The sun rises in the sky.|आकाशे|naksha
+नदी वेगेन वहति।|The river flows swiftly.|नदी|naksha
+गजः मन्दं चलति।|The elephant walks slowly.|गजः|nature
+वृक्षः भूमौ तिष्ठति।|The tree stands on the earth.|वृक्षः|nature
+वयं सर्वे तारा-धूलयः।|We are all star-dust.|तारा|sanskriti
+बालकः पठति।|The boy reads.|बालकः|play
+सा बालिका हसति।|She is the girl laughing.|सा|beginners
+चकारः तालस्य स्थानस्य अस्ति।|The sound ca belongs to the palate repository.|तालस्य|nada
+ज्ञानं परमं बीजम्।|Knowledge is the ultimate seed.|बीजम्|sanskriti
+नेत्रेण वयं पश्यामः ।|We see with our eyes.|नेत्रेण|nada
+रसनया वयं रसं जानीमः ।|We taste with our tongue.|रसनया|nada
+नासिकया वयं जिघ्रामः ।|We smell with our nose.|नासिकया|nada
+त्वचा वयं स्पर्शं जानीमः ।|We feel touch with our skin.|त्वचा|nada
+श्रोत्रेण वयं शृणुमः ।|We hear with our ears.|श्रोत्रेण|nada
+मनः एतानि इन्द्रियाणि चालयति ।|The mind directs all of these senses.|मनः|nada
+हस्तेन वयं कार्यं कुर्मः ।|We work with our hands.|हस्तेन|nada
+पादेन वयं चलामः ।|We walk with our feet.|पादेन|nada
+शिरसि बुद्धिः वर्तते ।|The head is the seat of intelligence.|शिरसि|nada
+दन्तैः वयं अन्नं चर्वयामः ।|We chew food with our teeth.|दन्तैः|nada
+कण्ठेन मधुरं वदामः ।|We speak sweetly from our throat.|कण्ठेन|nada
+अतः शरीरम् आद्यं खलु धर्मसाधनम् ।|The body is the primary vehicle for all noble duties.|शरीरम्|nada

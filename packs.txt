@@ -1,5 +1,5 @@
 # pack_id|wing|title|dropdown|shapes|note
-# dropdown 1=Beginners 2=Body 3=Maths 4=Map 5=Sanskriti 6=Play 7=Sūtram
+# dropdown 1=Beginners·मात्रा 2=nada·नाद-पथः 3=Vastu·वस्तु 4=map·नक्शा 5=Sanskriti·संस्कृतिः 6=Play·क्रीडा 7=Nature·प्रकृतिः
 # File tags (prarambhah, matra) are silent. On-screen names: public/labels.txt and docs/NAMES.md
 matra|prarambhah|मात्रा|1|जोडो,बनाओ|
 colours|prarambhah|वर्णाः|1|जोडो,बनाओ,मेलः|
@@ -8,15 +8,15 @@ school|prarambhah|विद्यालयः|1|जोडो,बनाओ|
 body-laghu|prarambhah|शरीरम्|1|जोडो,बनाओ|
 food|prarambhah|आहारः|1|जोडो,बनाओ|
 glue|prarambhah|चिह्नानि|1|जोडो,बनाओ,मेलः|
-sankhya-0-10|ganitam|संख्या १–१०|3|बनाओ,मेलः|
+parivesah|ganitam|वस्तु|3|मेलः|
 nada-pathah|sariram|नाद-पथः|2|रिक्तम्,मेलः|
 sthanam|sariram|स्थानम्|2|मेलः,रिक्तम्|
 osadhih|sariram|ओषधिः|2|बनाओ,मेलः|
 sushruta-kosa|sariram|सुश्रुत-कोशः|2|मेलः|
-nadyah|bhugolah|नद्यः|4|मेलः|
+nadyah|bhugolah|नक्शा|4|मेलः|
 katha-bija|sanskritih|कथा|5|रिक्तम्|
 masah|sanskritih|मासाः|5|मेलः|
-svara-raga|sanskritih|स्वर|5|क्रमः|
+svara-raga|sariram|स्वर|2|मेलः,क्रमः|
 dhvaja-varna|sanskritih|ध्वज|5|क्रमः,रिक्तम्|
 stems|sutram|राम्|7|अनुरेख|
 kalah|prarambhah|कालः|1|मेलः|
@@ -26,3 +26,4 @@ rtvah|sanskritih|ऋतवः|5|मेलः|
 vatah|bhugolah|वातः|4|मेलः|
 indriyani|sariram|इन्द्रियाणि|2|मेलः|
 prakrtih|prakrtih|प्रकृतिः|7|मेलः|
+kriya|krida|क्रिया|6|कर्ता-क्रिया|

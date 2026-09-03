@@ -1,0 +1,8 @@
+# day|wing|pack|shape|target
+1|prarambhah|matra|जोडो|सा
+2|sariram|nada-pathah|रिक्तम्|तालस्य
+3|ganitam|parivesah|मेलः|जलम्
+4|bhugolah|nadyah|मेलः|नदी
+5|sanskritih|katha-bija|रिक्तम्|बीजम्
+6|prakrtih|prakrtih|रिक्तम्|वृक्षः
+7|krida|kriya|कर्ता-क्रिया|चलति

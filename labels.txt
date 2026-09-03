@@ -2,13 +2,13 @@ nav|board|Board|the game
 nav|deepakam|Deepakam|the book
 nav|analyse|Analyse|
 nav|vibhakti|Vibhakti Guide|eight boxes
-shelf|prarambhah|Beginners|प्रारम्भः
-shelf|sariram|Body|शरीरम्
-shelf|ganitam|Maths|गणितम्
-shelf|bhugolah|Map|भूगोलः
-shelf|sanskritih|Sanskriti|संस्कृतिः
-shelf|krida|Play|क्रीडा
-shelf|prakrtih|Nature|प्रकृतिः
+shelf|prarambhah|Beginners · मात्रा|मात्रा
+shelf|sariram|nada · नाद-पथः|नाद-पथः
+shelf|ganitam|Vastu · वस्तु|वस्तु
+shelf|bhugolah|Naksha · नक्शा|नक्शा
+shelf|prakrtih|Nature · प्रकृतिः|प्रकृतिः
+shelf|sanskritih|Sanskriti · संस्कृतिः|संस्कृतिः
+shelf|krida|Play · क्रिया|क्रिया
 pack|matra|मात्रा|letters and marks
 pack|colours|वर्णाः|colours
 pack|family|परिवारः|family
@@ -16,12 +16,12 @@ pack|school|विद्यालयः|school
 pack|body-laghu|शरीरम्|body words
 pack|food|आहारः|food in a bowl
 pack|glue|चिह्नानि|I, you, here, where
-pack|sankhya-0-10|संख्या|one to ten
-pack|nada-pathah|नाद-पथः|where the sound lives
+pack|parivesah|वस्तु|things you can touch
+pack|nada-pathah|नाद-पथः|sound path
 pack|sthanam|स्थानम्|six mouth-seats
 pack|osadhih|ओषधिः|plant names
 pack|sushruta-kosa|सुश्रुत-कोशः|three tool-names
-pack|nadyah|नद्यः|two rivers
+pack|nadyah|नक्शा|map
 pack|katha-bija|कथा|one seed
 pack|masah|मासाः|months
 pack|svara-raga|स्वर|sā re ga
@@ -36,8 +36,10 @@ pack|indriyani|इन्द्रियाणि|seeing, touching
 skin|जोडो|जोडो|join
 skin|बनाओ|बनाओ|build
 skin|मेलः|मेलः|match
+skin|कर्ता-क्रिया|कर्ता-क्रिया|doer then verb
 skin|रिक्तम्|रिक्तम्|fill the blank
 skin|प्रश्न|प्रश्न|ask
 skin|क्रमः|क्रमः|order
 site|loop|Pick a shelf. Tap tiles. Then Check.|
 pack|prakrtih|प्रकृतिः|animals and plants
+pack|kriya|क्रिया|doer then verb

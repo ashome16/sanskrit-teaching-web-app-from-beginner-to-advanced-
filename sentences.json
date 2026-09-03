@@ -1,0 +1,37 @@
+{
+  "बालकः पुस्तकं पठति।": {
+    "sentence": "बालकः पुस्तकं पठति।",
+    "shelf_origin": "Play",
+    "english_meaning": "The boy reads the book.",
+    "action_focus": "पठति (reads)",
+    "sense_note": "Action. Letters become a living line."
+  },
+  "नदी वेगेन वहति।": {
+    "sentence": "नदी वेगेन वहति।",
+    "shelf_origin": "Map",
+    "english_meaning": "The river flows swiftly.",
+    "action_focus": "वहति (flows)",
+    "sense_note": "Water moving. Same नदी as the Map shelf."
+  },
+  "गजः मन्दं चलति।": {
+    "sentence": "गजः मन्दं चलति।",
+    "shelf_origin": "Nature",
+    "english_meaning": "The elephant walks slowly.",
+    "action_focus": "चलति (walks)",
+    "sense_note": "The animal by how it moves. Same गजः as Nature."
+  },
+  "सूर्यः आकाशे उदयति।": {
+    "sentence": "सूर्यः आकाशे उदयति।",
+    "shelf_origin": "Nature",
+    "english_meaning": "The sun rises in the sky.",
+    "action_focus": "उदयति (rises)",
+    "sense_note": "Morning light. A thing you can point at."
+  },
+  "वृक्षः भूमौ तिष्ठति।": {
+    "sentence": "वृक्षः भूमौ तिष्ठति।",
+    "shelf_origin": "Nature",
+    "english_meaning": "The tree stands on the ground.",
+    "action_focus": "तिष्ठति (stands)",
+    "sense_note": "A living thing rooted in the ground. Same वृक्षः as Nature."
+  }
+}
