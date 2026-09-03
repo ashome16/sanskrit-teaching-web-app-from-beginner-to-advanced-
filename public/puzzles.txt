@@ -1,29 +1,27 @@
-# puzzles.txt
+# puzzles.txt  week board
 # shape|target|answer|tiles|sentence|english|seed
-# After Check: slide chosen tiles together, then show english (big) and sentence+seed.
-# Skip # and blanks. 6 tiles. 2–3 decoys from same varga or stem.
-# NEVER put a naked combining mark in tiles (ा ि ु). Fonts draw a dotted circle = fake “to”.
-# Use independent vowels आ इ उ. glueTiles maps आ→ा on Check.
-जोडो|का|का|क,आ,ख,ग,इ,उ|का बालिका पठति।|the girl reads|क is a throat letter. आ is two beats. Together they make का.
-जोडो|कि|कि|क,इ,आ,उ,ख,ग|किं नाम ते?|what is your name?|इ lives at the palate. On क it becomes ि, कि.
-बनाओ|माता|माता|मा,ता,पा,रा,ना,सा|माता अन्नं ददाति।|mother gives food|मा on the lips, ता at the teeth. First home-word.
-बनाओ|जलम्|जलम्|ज,लम्,कम्,गम्,तम्,पम्|बालः जलं पिबति।|the child drinks water|जलम् is water. Palate then teeth.
-मेलः|५|पञ्च|पञ्च,षट्,सप्त,चत्वारि,नव,दश|मम हस्ते पञ्च अङ्गुलयः सन्ति।|five (fingers)|पञ्च is five. Palatal च plus nasal ञ.
-मेलः|१०|दश|दश,नव,एकम्,पञ्च,षट्,सप्त|दश बालकाः क्रीडन्ति।|ten children play|दश is ten. Palatal श.
-मेलः|पीतः|हरिद्रा|हरिद्रा,नीली,रक्तम्,हरितम्,श्वेतम्,कृष्णम्|पीतः वर्णः हरिद्रायाः इव।|yellow = turmeric|Colour to plant. No recipe.
-मेलः|नीलः|आकाशः|आकाशः,पीतः,रक्तः,हरितः,श्वेतः,कृष्णः|नीलः आकाशः शोभते।|blue = the sky|नीलः is blue, a colour you can point at.
-बनाओ|पञ्च|पञ्च|प,ञ्च,ञ,च,त,न|पञ्च अङ्गुलयः सन्ति।|five|Tiles प + ञ्च make the word five.
-बनाओ|अष्ट|अष्ट|पञ्च,त्रि,अष्ट,षट्,नव,दश|पञ्च + त्रि = अष्ट।|five plus three is eight|Addition as words, not a calculator.
-रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is an address on the breath-path.
-मेलः|गङ्गा|नदी|नदी,पर्वतः,ग्रामः,वनम्,आकाशः,गृहम्|गङ्गा एका नदी अस्ति।|Ganga is a river|Book-geography, not a modern border.
-मेलः|यमुना|नदी|नदी,पर्वतः,ग्रामः,वनम्,आकाशः,गृहम्|यमुना एका नदी अस्ति।|Yamuna is a river|Second river. Same match, new name.
-रिक्तम्|वयं सर्वे ____ धूलयः।|तारा|तारा,मृत्तिका,जल,वन,ग्राम,गृह|वयं सर्वे तारा-धूलयः — इति सेतुः।|we are all star-dust (a bridge, not an identity)|Sagan + Saptarṣi names. Label BRIDGE.
-मेलः|चैत्रः|चित्रा|चित्रा,रोहिणी,मघा,अश्विनी,भरणी,अनुराधा|चैत्रमासे वसन्तः आगतः।|the month Caitra wears the star Citrā|The month is named from that full moon.
-क्रमः|सा रे ग|सा रे ग|सा,रे,ग,म,प,नि|सा रे ग म प ध नि।|sargam: a cousin of do-re-mi, not a copy|Two ladders for the ear. Label BRIDGE.
-रिक्तम्|ध्वजे केसरः ____ हरितः च।|श्वेतः|श्वेतः,नीलः,पीतः,कृष्णः,रक्तः,अरुणः|ध्वजे केसरः श्वेतः हरितः च।|the flag is saffron, white, and green|Toy gap for Deepakam-1 colours, not a quoted line.
-प्रश्न|कस्य|रामस्य|रामस्य,रामः,रामम्,रामेण,रामाय,रामे|कस्य पुस्तकम्? रामस्य पुस्तकम्।|whose book? Rama's book|राम् + स्य → रामस्य. TRACE on Sūtram.
-मेलः|सूची|सीवनम्|सीवनम्,यन्त्रम्,छेदनम्,प्राणः,कण्ठः,फलम्|सूची सीवनस्य नाम।|needle goes with sewing (names only)|Karma ↔ tool-family. Never how-deep.
-बनाओ|रामः|रामः|रा,मः,लः,नः,सः,यः|रामः फलं खादति।|Rama eats fruit|Visarga ः is a final breath, not a pitch.
-जोडो|देवालयः|देवालयः|देव,आलय,गृह,वन,नदी,ग्राम|देवालयं गच्छामः।|a god's house (god + house)|The two words slide into one meaning. Sandhi a+ā=ā is a small TRACE, not the lesson.
-जोडो|पुस्तकालयः|पुस्तकालयः|पुस्तक,आलय,देव,जल,गृह,वन|पुस्तकालये पठामः।|a library (book + house)|Same house-word आलय. Meaning first: a house for books.
-जोडो|जलाशयः|जलाशयः|जल,आशय,आलय,नदी,गृह,वन|जलाशये मत्स्याः सन्ति।|a pond (water + resting-place)|जल is water. The fused word is a place water rests.
+# Tiles: independent आ इ उ. Never naked ा or U+200B.
+# मेलः: target column is the prompt. answer is the tap. Never put the prompt in tiles.
+जोडो|का|का|क,आ,ख,ग,इ,उ|का बालिका पठति।|the girl reads|क plus आ makes का.
+जोडो|मा|मा|म,आ,क,प,इ,उ|माता अन्नं ददाति।|ma, as in mother|Not the word do-not. A mark on म.
+जोडो|सा|सा|स,आ,क,म,इ,उ|सा बालिका पठति।|she|सा is she.
+जोडो|बालः|बालः|ब,आ,लः,क,म,स|बालः पठति।|the boy reads|Visarga stays on लः.
+रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|नाद-पथः. Not Breath Travel.
+रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
+रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
+बनाओ|एकम्|एकम्|एकम्,द्वे,त्रीणि,पञ्च,दश,षट्|एकं फलम्।|one|Word-number.
+बनाओ|द्वे|द्वे|द्वे,एकम्,त्रीणि,पञ्च,दश,षट्|द्वे फले।|two|Word-number.
+बनाओ|त्रीणि|त्रीणि|त्रीणि,एकम्,द्वे,पञ्च,दश,षट्|त्रीणि फलानि।|three|Word-number.
+बनाओ|पञ्च|पञ्च|पञ्च,एकम्,द्वे,त्रीणि,दश,षट्|पञ्च अङ्गुलयः।|five|Five fingers.
+बनाओ|दश|दश|दश,एकम्,द्वे,पञ्च,षट्,नव|दश बालकाः।|ten|Ten. Hold 11-20.
+मेलः|गङ्गा|नदी|नदी,पर्वतः,वनम्,ग्रामः,आकाशः,गृहम्|गङ्गा एका नदी अस्ति।|Ganga is a river|Name then kind. गङ्गा is not a tile.
+मेलः|यमुना|नदी|नदी,पर्वतः,वनम्,ग्रामः,आकाशः,गृहम्|यमुना एका नदी अस्ति।|Yamuna is a river|Same kind, new name.
+मेलः|प्रयागः|सङ्गमः|सङ्गमः,नदी,पर्वतः,वनम्,ग्रामः,गृहम्|प्रयागे सङ्गमः अस्ति।|Prayaga is a meeting of rivers|Book-geography.
+रिक्तम्|वयं सर्वे ____ धूलयः।|तारा|तारा,मृत्तिका,जल,वन,ग्राम,गृह|वयं सर्वे तारा-धूलयः — इति सेतुः।|we are all star-dust (BRIDGE)|One seed.
+मेलः|सुश्रुतः|नाम|नाम,नदी,गजः,गृहम्,फलम्,गुरुः|सुश्रुतः एकं नाम।|Sushruta (a name in the books)|Names only. Not a surgery lesson.
+मेलः|वृक्षः|पुष्पम्|पुष्पम्,गजः,अश्वः,नदी,गृहम्,गुरुः|वृक्षे पुष्पाणि सन्ति।|tree and flower|Nature. Sanskrit tiles.
+मेलः|गजः|अश्वः|अश्वः,वृक्षः,पुष्पम्,नदी,गृहम्,गुरुः|गजः च अश्वः च।|elephant (an animal)|Not an English tile.
+मेलः|अश्वः|गजः|गजः,वृक्षः,पुष्पम्,नदी,गृहम्,गुरुः|अश्वः च गजः च।|horse (an animal)|Pair of animals.
+बनाओ|बालः पठति|बालः पठति|बालः,पठति,गजः,चलति,नदी,वहति|बालः पठति।|the boy reads|Play. Week words in motion.
+बनाओ|गजः चलति|गजः चलति|गजः,चलति,बालः,पठति,नदी,वहति|गजः चलति।|the elephant walks|Play.
+बनाओ|नदी वहति|नदी वहति|नदी,वहति,गजः,चलति,बालः,पठति|नदी वहति।|the river flows|Play.
