@@ -26,7 +26,7 @@ Child loop: **Pick a shelf. Tap tiles. Then Check.**
 |---|---|---|---|---|
 | 1 | **Beginners · मात्रा** | मात्रा | `prarambhah` | Maatra, Prarambhah |
 | 2 | **nada · नाद-पथः** | नाद-पथः | `sariram` | Biology, nāda-path (as the shelf name) |
-| 3 | **numbers · संख्या** | संख्या | `ganitam` | Word-numbers |
+| 3 | **space · परिवेशः** | परिवेशः | `ganitam` | Home things. संख्या is a later door. |
 | 4 | **map · नक्शा** | नक्शा | `bhugolah` | Geography |
 | 5 | **Sanskriti · संस्कृतिः** | संस्कृतिः | `sanskritih` | Culture tab |
 | 6 | **Play · क्रीडा** | क्रीडा | `krida` | Games, Coding-play |
@@ -46,7 +46,7 @@ English is a gloss under the title, never a second heading.
 |---|---|---|---|
 | **मात्रा** | letters and marks | `matra` | Beginners |
 | **वर्णाः** | colours | `colours` | Beginners |
-| **संख्या** | numbers | `sankhya-0-10` | numbers · संख्या |
+| **परिवेशः** | home things | `parivesah` | space · परिवेशः |
 | **नाद-पथः** | sound path | `nada-pathah` | nada · नाद-पथः |
 | **नक्शा** | map | `nadyah` | map · नक्शा |
 | **कथा** | one seed | `katha-bija` | Sanskriti |
