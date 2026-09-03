@@ -12,3 +12,5 @@
 **File tags** (`prarambhah`, `matra`, `kalah`) live in `packs.txt` / `words.txt`. They are never UI.
 
 **Child names** live in `labels.txt`. One Devanagari title, one short English gloss.
+| [LAYOUT.md](LAYOUT.md) | Board chrome, one column | Yes, this is the page. |
+| [PIECE.md](PIECE.md) | Pencil piece plus shelf anecdote | Sidebar only. |
