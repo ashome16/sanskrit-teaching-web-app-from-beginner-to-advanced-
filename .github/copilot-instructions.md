@@ -8,9 +8,9 @@ After `git pull origin main --no-rebase --no-edit`, quote the seven `shelf|` lin
 ## Do not open
 
 Deepakam, TextbookReader, gsde*, extract_txt.py, extract-lessons.js,
-Analyse, Vibhakti Guide, vite.config, index.html nav, `public/numbers.txt`, navigation.ts.
+Analyse, Vibhakti Guide, vite.config, index.html nav, navigation.ts.
 
-Never render `29`. Never commit `numbers.txt`.
+`public/numbers.txt` is gone. Do not create it. संख्या 1–20 lives in `docs/SANKHYA.md` (later door). Never render `29`.
 
 Top nav: Board · Deepakam · Analyse · Vibhakti Guide
 
