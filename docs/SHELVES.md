@@ -1,8 +1,8 @@
-# Six shelves (this board)
+# Shelves (this word-bank board)
 
-Word bank. Not a grammar game.
+Grammar is off this board. Sūtram is a later door (Vibhakti Guide).
 
-id is the file tag. label is English. native is Devanagari on the card. skin is the board shape for this week.
+Beginners · Body · Maths · Map · Sanskriti · Play · Nature
 
 | id | label | native | week skin |
 |---|---|---|---|
@@ -12,7 +12,11 @@ id is the file tag. label is English. native is Devanagari on the card. skin is 
 | bhugolah | Map | नद्यः | मेलः |
 | sanskritih | Sanskriti | कथा | रिक्तम् |
 | krida | Play | बनाओ | बनाओ |
+| prakrtih | Nature | प्रकृतिः | मेलः |
 
-Later door (not a shelf): Sūtram / Vibhakti / glue TRACE / शब्दः सिध्यति.
+Nature (in Sūtram last seat): point-at names. Animals and plants. No treatment. No zoo dump.
 
-Never ids: breath_travel, build, sutram as a shelf on this board.
+Animals: गौः cow · अश्वः horse · मत्स्यः fish · काकः crow · गजः elephant
+Plants: तुलसी · हरिद्रा (already) · वृक्षः tree · कमलम् lotus · आम्रः mango
+
+Never: Breath Travel, Build, Sūtram as a shelf, sacred-war, recipe.
