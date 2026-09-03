@@ -21,7 +21,7 @@ pack|nada-pathah|नाद-पथः|where the sound lives
 pack|sthanam|स्थानम्|six mouth-seats
 pack|osadhih|ओषधिः|plant names
 pack|sushruta-kosa|सुश्रुत-कोशः|three tool-names
-pack|nadyah|नद्यः|two rivers
+pack|nadyah|स्थानानि|places
 pack|katha-bija|कथा|one seed
 pack|masah|मासाः|months
 pack|svara-raga|स्वर|sā re ga
