@@ -55,3 +55,5 @@ Deepakam still opens a lesson.
 ## Analyse
 Same word bank, other door. Read docs/ANALYSE.md and public/analyse.json.
 Never live-translate. Missing word: say not in the bank. Do not put language pills on the Board.
+
+Sentence bank is public/sentences.txt (Devanagari only). Do not mix Telugu/Kannada into it. Language pills belong only in Analyse via public/analyse.json.
