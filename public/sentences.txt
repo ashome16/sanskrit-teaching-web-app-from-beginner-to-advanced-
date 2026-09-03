@@ -1,9 +1,8 @@
-# sentences.txt  SANSKRIT SENTENCE BANK
-# sentence|english|theme|shelf
-# Devanagari only in the sentence column. No Telugu/Kannada/Tamil here.
-# Pills for other languages live in public/analyse.json (Analyse tab).
-नदी वेगेन वहति।|The river flows swiftly.|river|map
-बालः पठति।|The boy reads.|read|play
-गजः मन्दं चलति।|The elephant walks slowly.|walk|nature
-सूर्यः उदयति।|The sun rises.|morning|nature
-वृक्षः फलति।|The tree bears fruit.|fruit|nature
+# sentences.txt  SANSKRIT SENTENCE BANK (Devanagari + English gloss only)
+# sentence|english|focus|shelf
+# No Telugu/Kannada/Tamil here. Pills: public/analyse.json
+बालकः पुस्तकं पठति।|The boy reads the book.|पठति|play
+नदी वेगेन वहति।|The river flows swiftly.|वहति|map
+गजः मन्दं चलति।|The elephant walks slowly.|चलति|nature
+सूर्यः आकाशे उदयति।|The sun rises in the sky.|उदयति|nature
+वृक्षः भूमौ तिष्ठति।|The tree stands on the ground.|तिष्ठति|nature
