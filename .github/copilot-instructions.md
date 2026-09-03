@@ -10,7 +10,7 @@ Deepakam, TextbookReader, gsde*, extract_txt.py, extract-lessons.js,
 Analyse, Vibhakti Guide, vite.config base, index.html nav labels.
 
 Top nav stays: Board · Deepakam · Analyse · Vibhakti Guide
-Shelves stay: Beginners · मात्रा → nada · नाद-पथः → numbers · संख्या → map · नक्शा → Sanskriti · संस्कृतिः → Play · क्रीडा → Nature · प्रकृतिः
+Shelves stay: Beginners · मात्रा → nada · नाद-पथः → space · परिवेशः → map · नक्शा → Sanskriti · संस्कृतिः → Play · क्रीडा → Nature · प्रकृतिः
 Sūtram is a later grammar door. Nature is प्रकृतिः.
 Sūtram is a later grammar door, not a shelf on this word-bank board. Never Breath Travel or Build.
 (not Biology, Geography, Games, Coding). Pack vrittih is on-screen जनाः.
@@ -21,7 +21,7 @@ Fetch `public/labels.txt`. Skip `#` lines and blank lines.
 Each row is `kind|id|tab|sanskrit` (four pipe fields).
 
 - `shelf` rows: the button is field 3 **as written**. It is already bilingual English · देवनागरी.
-  Beginners · मात्रा · nada · नाद-पथः · numbers · संख्या · map · नक्शा · Sanskriti · संस्कृतिः · Play · क्रीडा · Nature · प्रकृतिः
+  Beginners · मात्रा · nada · नाद-पथः · space · परिवेशः · map · नक्शा · Sanskriti · संस्कृतिः · Play · क्रीडा · Nature · प्रकृतिः
 - Render **only** field 3 for the tab. If you also print field 4 you double the Devanagari.
 - Never print field 2 (file id: prarambhah, sariram, ganitam, bhugolah, sankhya-0-10).
 - Never invent Maths, Body, Map, Geography, Breath Travel, गणितम् as the numbers tab.
