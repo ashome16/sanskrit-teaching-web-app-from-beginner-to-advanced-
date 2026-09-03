@@ -10,10 +10,22 @@ Deepakam, TextbookReader, gsde*, extract_txt.py, extract-lessons.js,
 Analyse, Vibhakti Guide, vite.config base, index.html nav labels.
 
 Top nav stays: Board · Deepakam · Analyse · Vibhakti Guide
-Shelves stay: Beginners → Body → Maths → नक्शा → Sanskriti → Play → Nature
+Shelves stay: Beginners · मात्रा → nada · नाद-पथः → numbers · संख्या → map · नक्शा → Sanskriti · संस्कृतिः → Play · क्रीडा → Nature · प्रकृतिः
 Sūtram is a later grammar door. Nature is प्रकृतिः.
 Sūtram is a later grammar door, not a shelf on this word-bank board. Never Breath Travel or Build.
 (not Biology, Geography, Games, Coding). Pack vrittih is on-screen जनाः.
+
+## labels.txt — parse, do not dump
+
+Fetch `public/labels.txt`. Skip `#` lines and blank lines.
+Each row is `kind|id|tab|sanskrit` (four pipe fields).
+
+- `shelf` rows: the button is field 3 **as written**. It is already bilingual English · देवनागरी.
+  Beginners · मात्रा · nada · नाद-पथः · numbers · संख्या · map · नक्शा · Sanskriti · संस्कृतिः · Play · क्रीडा · Nature · प्रकृतिः
+- Render **only** field 3 for the tab. If you also print field 4 you double the Devanagari.
+- Never print field 2 (file id: prarambhah, sariram, ganitam, bhugolah, sankhya-0-10).
+- Never invent Maths, Body, Map, Geography, Breath Travel, गणितम् as the numbers tab.
+- nada means sound path. Not Body. Not शरीरम् on that tab.
 
 ## Product law
 
@@ -34,7 +46,8 @@ Sūtram is a later grammar door, not a shelf on this word-bank board. Never Brea
 
 Hear the vowel mark; Meaning fuses; Small TRACE, no compiler;
 ONE BOARD / SHELF; no row yet; A short vowel-mark lesson; Maatra; Biology; Geography; Games; Coding; SHELF; TRACE as a heading;
-tripled titles; शब्द: with a colon.
+tripled titles; शब्द: with a colon;
+alone Maths; alone Body; alone Map; Geography.
 
 One site line under the shelves: Pick a shelf. Tap tiles. Then Check.
 One child line per screen. Do not replace the header.
