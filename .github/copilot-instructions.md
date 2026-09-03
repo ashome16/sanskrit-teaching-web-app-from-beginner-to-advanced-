@@ -119,3 +119,13 @@ Mouth-seats first (कण्ठस्य तालस्य दन्तस्�
 - then rhythm/music (स्वर): स्वरः गीतम् तालः (तालः is beat, not तालस्य the palate)
 
 Next after Check: increment that shelf’s puzzle index in board.json. Nature: गजः then वृक्षः. Do not reload week 1.
+
+## Next after Check
+
+The Next button already appears after a correct Check. Wire it. Do not add a second Next.
+
+- Each shelf keeps puzzles[] from public/board.json (array of 7 shelves) and its own index, start 0.
+- Next: index = (index + 1) % puzzles.length; checked = false; chosen = [].
+- Nature puzzles[0] = गजः / ___ मन्दं चलति।  puzzles[1] = वृक्षः / ____ भूमौ तिष्ठति।
+- After Next, tiles must tap again. welcomeOpen starts false; no leftover scrim.
+- Default open stays का. Do not recreate numbers.txt. Do not replace Board.tsx with the old GitHub file.
