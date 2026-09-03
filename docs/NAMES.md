@@ -48,7 +48,7 @@ English is a gloss under the title, never a second heading.
 | **वर्णाः** | colours | `colours` | Beginners |
 | **संख्या** | one to ten | `sankhya-0-10` | Maths |
 | **नाद-पथः** | where the sound lives | `nada-pathah` | Body |
-| **स्थानानि** | places | `nadyah` | Map |
+| **नक्शा** | map | `nadyah` | नक्शा |
 | **कथा** | one seed | `katha-bija` | Sanskriti |
 | **बनाओ** mix | make a word | week day 7 | Play |
 
@@ -62,7 +62,7 @@ English is a gloss under the title, never a second heading.
 | **जनाः** | teacher, farmer | `vrittih` | Beginners |
 | **आहारः** | food in a bowl | `food` | Beginners |
 | **ऋतवः** | seasons | `rtvah` | Sanskriti |
-| **वातः** | sun, rain, wind | `vatah` | Map |
+| **वातः** | sun, rain, wind | `vatah` | नक्शा |
 | **इन्द्रियाणि** | seeing, touching | `indriyani` | Body |
 | **परिवारः** | family | `family` | Beginners |
 | **विद्यालयः** | school | `school` | Beginners |
@@ -109,5 +109,5 @@ Tile arrays: **आ इ उ**, never naked **ा ि ु**. glueTiles does the cl
 | मात्रा | Tap क then आ, then Check. |
 | वर्णाः | पीतः is turmeric. Tap हरिद्रा. |
 | नाद-पथः | Fill the blank. ग lives in the throat. |
-| स्थानानि | गङ्गा is a river. Tap नदी. |
+| नक्शा | गङ्गा is a river. Tap नदी. |
 | Sūtram | Watch the join. |
