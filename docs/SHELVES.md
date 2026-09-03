@@ -9,7 +9,7 @@ Beginners · Body · Maths · Map · Sanskriti · Play · Nature
 | prarambhah | Beginners | मात्रा | जोडो |
 | sariram | Body | नाद-पथः | रिक्तम् |
 | ganitam | Maths | संख्या | बनाओ |
-| bhugolah | Map | नद्यः | मेलः |
+| bhugolah | Map | स्थानानि | मेलः |
 | sanskritih | Sanskriti | कथा | रिक्तम् |
 | krida | Play | बनाओ | बनाओ |
 | prakrtih | Nature | प्रकृतिः | मेलः |
