@@ -16,7 +16,7 @@ sushruta-kosa|sariram|सुश्रुत-कोशः|2|मेलः|
 nadyah|bhugolah|नक्शा|4|मेलः|
 katha-bija|sanskritih|कथा|5|रिक्तम्|
 masah|sanskritih|मासाः|5|मेलः|
-svara-raga|sanskritih|स्वर|5|क्रमः|
+svara-raga|sariram|स्वर|2|मेलः,क्रमः|
 dhvaja-varna|sanskritih|ध्वज|5|क्रमः,रिक्तम्|
 stems|sutram|राम्|7|अनुरेख|
 kalah|prarambhah|कालः|1|मेलः|
