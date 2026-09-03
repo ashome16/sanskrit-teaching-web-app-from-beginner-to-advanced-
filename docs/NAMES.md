@@ -48,7 +48,7 @@ English is a gloss under the title, never a second heading.
 | **वर्णाः** | colours | `colours` | Beginners |
 | **संख्या** | one to ten | `sankhya-0-10` | Maths |
 | **नाद-पथः** | where the sound lives | `nada-pathah` | Body |
-| **नद्यः** | two rivers | `nadyah` | Map |
+| **स्थानानि** | places | `nadyah` | Map |
 | **कथा** | one seed | `katha-bija` | Sanskriti |
 | **बनाओ** mix | make a word | week day 7 | Play |
 
@@ -109,5 +109,5 @@ Tile arrays: **आ इ उ**, never naked **ा ि ु**. glueTiles does the cl
 | मात्रा | Tap क then आ, then Check. |
 | वर्णाः | पीतः is turmeric. Tap हरिद्रा. |
 | नाद-पथः | Fill the blank. ग lives in the throat. |
-| नद्यः | गङ्गा is a river. Tap नदी. |
+| स्थानानि | गङ्गा is a river. Tap नदी. |
 | Sūtram | Watch the join. |
