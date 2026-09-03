@@ -107,7 +107,7 @@
           "मनः"
         ],
         "sentence": "नेत्रेण वयं पश्यामः ।",
-        "english": "We see with the eye.",
+        "english": "We see with our eyes.",
         "highlight": "नेत्रेण"
       },
       {
@@ -122,7 +122,7 @@
           "मनः"
         ],
         "sentence": "रसनया वयं रसं जानीमः ।",
-        "english": "We know taste with the tongue.",
+        "english": "We taste with our tongue.",
         "highlight": "रसनया"
       },
       {
@@ -137,7 +137,7 @@
           "मनः"
         ],
         "sentence": "नासिकया वयं जिघ्रामः ।",
-        "english": "We smell with the nose.",
+        "english": "We smell with our nose.",
         "highlight": "नासिकया"
       },
       {
@@ -152,7 +152,7 @@
           "मनः"
         ],
         "sentence": "त्वचा वयं स्पर्शं जानीमः ।",
-        "english": "We know touch with the skin.",
+        "english": "We feel touch with our skin.",
         "highlight": "त्वचा"
       },
       {
@@ -167,7 +167,7 @@
           "मनः"
         ],
         "sentence": "श्रोत्रेण वयं शृणुमः ।",
-        "english": "We hear with the ear.",
+        "english": "We hear with our ears.",
         "highlight": "श्रोत्रेण"
       },
       {
@@ -182,7 +182,7 @@
           "मनः"
         ],
         "sentence": "मनः एतानि इन्द्रियाणि चालयति ।",
-        "english": "The mind drives these senses.",
+        "english": "The mind directs all of these senses.",
         "highlight": "मनः"
       },
       {
@@ -197,7 +197,7 @@
           "शिरः"
         ],
         "sentence": "हस्तेन वयं कार्यं कुर्मः ।",
-        "english": "We work with the hand.",
+        "english": "We work with our hands.",
         "highlight": "हस्तेन"
       },
       {
@@ -212,7 +212,7 @@
           "शिरः"
         ],
         "sentence": "पादेन वयं चलामः ।",
-        "english": "We walk with the foot.",
+        "english": "We walk with our feet.",
         "highlight": "पादेन"
       },
       {
@@ -227,7 +227,7 @@
           "शिरः"
         ],
         "sentence": "शिरसि बुद्धिः वर्तते ।",
-        "english": "Intelligence stays in the head.",
+        "english": "The head is the seat of intelligence.",
         "highlight": "शिरसि"
       },
       {
@@ -242,7 +242,7 @@
           "शिरः"
         ],
         "sentence": "दन्तैः वयं अन्नं चर्वयामः ।",
-        "english": "We chew food with the teeth.",
+        "english": "We chew food with our teeth.",
         "highlight": "दन्तैः"
       },
       {
@@ -257,8 +257,23 @@
           "शिरः"
         ],
         "sentence": "कण्ठेन मधुरं वदामः ।",
-        "english": "We speak sweetly with the throat.",
+        "english": "We speak sweetly from our throat.",
         "highlight": "कण्ठेन"
+      },
+      {
+        "prompt": "अतः ____ आद्यं खलु धर्मसाधनम् ।",
+        "target": "शरीरम्",
+        "tiles": [
+          "शरीरम्",
+          "हस्तः",
+          "पादः",
+          "शिरः",
+          "दन्तः",
+          "मनः"
+        ],
+        "sentence": "अतः शरीरम् आद्यं खलु धर्मसाधनम् ।",
+        "english": "The body is the primary vehicle for all noble duties.",
+        "highlight": "शरीरम्"
       }
     ]
   },
