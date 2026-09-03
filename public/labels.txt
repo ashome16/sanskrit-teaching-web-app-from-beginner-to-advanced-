@@ -15,7 +15,7 @@ shelf|ganitam|Maths|गणितम्
 shelf|bhugolah|Map|भूगोलः
 shelf|sanskritih|Sanskriti|संस्कृतिः
 shelf|krida|Play|क्रीडा
-shelf|sutram|Sūtram|सूत्रम्
+# shelf sutram is a later grammar door, not this board
 
 pack|matra|मात्रा|letters and marks
 pack|colours|वर्णाः|colours

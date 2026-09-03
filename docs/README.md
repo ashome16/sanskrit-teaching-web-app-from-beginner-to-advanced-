@@ -14,3 +14,4 @@
 **Child names** live in `labels.txt`. One Devanagari title, one short English gloss.
 | [LAYOUT.md](LAYOUT.md) | Board chrome, one column | Yes, this is the page. |
 | [PIECE.md](PIECE.md) | Pencil piece plus shelf anecdote | Sidebar only. |
+| [SHELVES.md](SHELVES.md) | Six shelves, no Sūtram on this board | Shelf row. |

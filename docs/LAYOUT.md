@@ -1,9 +1,12 @@
-# Board layout (child chrome)
+# Board layout — word bank (no Sūtram)
 
-One column. No extra cards. No tripled titles. Deepakam stays the other tab.
+This board is sense and speech. Grammar (Sūtram, glue TRACE, Vibhakti drill) is a **later door**, not a shelf here. Vibhakti Guide may stay in the top nav as that future door. Do not put सूत्रम् on this shelf row.
+
+Six shelves:
+Beginners · Body · Maths · Map · Sanskriti · Play
 
 ```
-[ SHELF ROW ]     Beginners Body Maths Map Sanskriti Play Sūtram
+[ SHELF ROW ]     Beginners  Body  Maths  Map  Sanskriti  Play
 
 [ GUIDE ]          Pick a shelf. Tap tiles. Then Check.
 
@@ -12,20 +15,24 @@ One column. No extra cards. No tripled titles. Deepakam stays the other tab.
 
 [ TILES ]          क   आ   ख   ग   इ   उ
 
-[ BUTTON ]         Beginners: Check
-                    Sūtram: शब्दः सिध्यति
+[ BUTTON ]         Check
 
 [ SIDEBAR ]        pencil piece + one anecdote line
 ```
 
-## Rules
+## Name law (never the leaked labels)
 
-1. Shelf row is the only navigation on the Board. Tapping a shelf loads that pack.
-2. One guide line under the shelves. Never repeat it on a white card.
-3. Target is the prompt. English is not next to it until success.
-4. Tiles: independent vowels आ इ उ. Never naked ा, never U+200B plus ा, never dotted circle.
-5. Check is the Beginners button. Sūtram uses शब्दः सिध्यति. Do not swap Check into that word on success.
-6. Sidebar: one puzzle piece (waiting / doing / done) plus the shelf anecdote from docs/PIECE.md. This is नाद-पथः on Body, not sound breath.
-7. Do not edit Deepakam, Analyse, or Vibhakti to make this layout.
+| Shelf | Native title | Skin this week | File tag (silent) | Never show |
+|---|---|---|---|---|
+| Beginners | मात्रा | जोडो | prarambhah | Maatra, breath |
+| Body | नाद-पथः | रिक्तम् | sariram | Breath Travel, sound breath, Biology |
+| Maths | संख्या | बनाओ | ganitam | 1–10 as the shelf name |
+| Map | नद्यः | मेलः | bhugolah | Geography |
+| Sanskriti | कथा | रिक्तम् | sanskritih | तारा-धूलिः as a skin name |
+| Play | बनाओ mix | बनाओ | krida | Build, Games, Coding |
 
-Day 1 proof: tap क then आ then Check. का and the girl reads. Piece goes doing then done.
+Check is the only board button. शब्दः सिध्यति waits with grammar.
+
+Tiles: आ इ उ, never naked ा.
+Sidebar anecdotes: docs/PIECE.md (six rows, no Sūtram).
+Do not edit Deepakam to make this layout.
