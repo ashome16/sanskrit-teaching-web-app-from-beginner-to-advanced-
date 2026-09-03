@@ -1,0 +1,56 @@
+{
+  "का": {
+    "word": "का",
+    "base_english": "who? (feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Who? (f.)",
+        "sentence_sanskrit": "का बालिका पठति।",
+        "sentence_translation": "Which girl is reading?"
+      },
+      "te": {
+        "label": "తెలుగు",
+        "meaning": "ఎవరు? (స్త్రీలింగం)",
+        "sentence_sanskrit": "का बालिका पठति।",
+        "sentence_translation": "ఏ అమ్మాయి చదువుతోంది?"
+      }
+    }
+  },
+  "गजः": {
+    "word": "गजः",
+    "base_english": "Elephant",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Elephant",
+        "sentence_sanskrit": "गजः मन्दं चलति।",
+        "sentence_translation": "The elephant walks slowly."
+      },
+      "te": {
+        "label": "తెలుగు",
+        "meaning": "ఏనుగు",
+        "sentence_sanskrit": "गजः मन्दं चलति।",
+        "sentence_translation": "ఏనుగు మెల్లగా నడుస్తుంది."
+      },
+      "kn": {
+        "label": "ಕನ್ನಡ",
+        "meaning": "ಆನೆ",
+        "sentence_sanskrit": "गजः मन्दं चलति।",
+        "sentence_translation": "ಆನೆಯು ನಿಧಾನವಾಗಿ ನಡೆಯುತ್ತದೆ."
+      },
+      "ml": {
+        "label": "മലയാളം",
+        "meaning": "ആന",
+        "sentence_sanskrit": "गजः मन्दं चलति।",
+        "sentence_translation": "ആന മെല്ലെ നടക്കുന്നു."
+      },
+      "ta": {
+        "label": "தமிழ்",
+        "meaning": "யானை",
+        "sentence_sanskrit": "गजः मन्दं चलति।",
+        "sentence_translation": "யானை மெதுவாக நடக்கிறது."
+      }
+    }
+  }
+}
