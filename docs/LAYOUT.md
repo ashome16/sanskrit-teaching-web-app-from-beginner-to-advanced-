@@ -3,10 +3,10 @@
 Grammar is off this board. Last seat is Nature, not Sūtram.
 Vibhakti Guide may stay in the top nav as the later grammar door.
 
-Beginners · Body · Maths · Map · Sanskriti · Play · Nature
+Beginners · Body · Maths · नक्शा · Sanskriti · Play · Nature
 
 ```
-[ SHELF ROW ]     Beginners  Body  Maths  Map  Sanskriti  Play  Nature
+[ SHELF ROW ]     Beginners  Body  Maths  नक्शा  Sanskriti  Play  Nature
 
 [ GUIDE ]          Pick a shelf. Tap tiles. Then Check.
 
