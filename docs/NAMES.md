@@ -24,12 +24,12 @@ Child loop: **Pick a shelf. Tap tiles. Then Check.**
 
 | # | On screen | Devanagari | File tag (silent) | Old leak — never show |
 |---|---|---|---|---|
-| 1 | **Beginners** | प्रारम्भः | `prarambhah` | Maatra, Prarambhah |
-| 2 | **Body** | शरीरम् | `sariram` | Biology, nāda-path (as the shelf name) |
-| 3 | **Maths** | गणितम् | `ganitam` | Numbers app |
-| 4 | **Map** | भूगोलः | `bhugolah` | Geography |
-| 5 | **Sanskriti** | संस्कृतिः | `sanskritih` | Culture tab |
-| 6 | **Play** | क्रीडा | `krida` | Games, Coding-play |
+| 1 | **Beginners · मात्रा** | मात्रा | `prarambhah` | Maatra, Prarambhah |
+| 2 | **nada · नाद-पथः** | नाद-पथः | `sariram` | Biology, nāda-path (as the shelf name) |
+| 3 | **numbers · संख्या** | संख्या | `ganitam` | Word-numbers |
+| 4 | **map · नक्शा** | नक्शा | `bhugolah` | Geography |
+| 5 | **Sanskriti · संस्कृतिः** | संस्कृतिः | `sanskritih` | Culture tab |
+| 6 | **Play · क्रीडा** | क्रीडा | `krida` | Games, Coding-play |
 | 7 | **Sūtram** | सूत्रम् | `sutram` | Coding, compiler, TRACE (as a heading) |
 
 Play **does** the join. Sūtram **watches** the join (`शब्दः सिध्यति`).
@@ -46,9 +46,9 @@ English is a gloss under the title, never a second heading.
 |---|---|---|---|
 | **मात्रा** | letters and marks | `matra` | Beginners |
 | **वर्णाः** | colours | `colours` | Beginners |
-| **संख्या** | one to ten | `sankhya-0-10` | Maths |
-| **नाद-पथः** | where the sound lives | `nada-pathah` | Body |
-| **नक्शा** | map | `nadyah` | नक्शा |
+| **संख्या** | numbers | `sankhya-0-10` | numbers · संख्या |
+| **नाद-पथः** | sound path | `nada-pathah` | nada · नाद-पथः |
+| **नक्शा** | map | `nadyah` | map · नक्शा |
 | **कथा** | one seed | `katha-bija` | Sanskriti |
 | **बनाओ** mix | make a word | week day 7 | Play |
 
