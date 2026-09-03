@@ -4,7 +4,7 @@ One chrome. One board. Deepakam is the book. बनाओ is the engine.
 On-screen names: public/labels.txt and docs/NAMES.md
 File tags (prarambhah, matra) are silent. Never print them.
 
-Child shelves: Beginners · मात्रा → nada · नाद-पथः → numbers · संख्या → map · नक्शा → Sanskriti · संस्कृतिः → Play · क्रीडा → Nature · प्रकृतिः
+Child shelves: Beginners · मात्रा → nada · नाद-पथः → space · परिवेशः → map · नक्शा → Sanskriti · संस्कृतिः → Play · क्रीडा → Nature · प्रकृतिः
 Sūtram last. Beginners never see Hūṇa.
 
 SHIP NOW
@@ -18,7 +18,7 @@ LATER (packs exist, not in week.txt)
 Week
   1 Beginners · मात्रा मात्रा      जोडो   का
   2 Beginners  वर्णाः      मेलः   पीतः → हरिद्रा
-  3 numbers · संख्या   संख्या      बनाओ  पञ्च
+  3 space · परिवेशः   परिवेशः     मेलः   पुस्तकम् → पठति
   4 nada · नाद-पथः    नाद-पथः    रिक्तम्  कण्ठस्य
   5 map · नक्शा        नक्शा       मेलः   गङ्गा → नदी
   6 Sanskriti  कथा        रिक्तम्  तारा
