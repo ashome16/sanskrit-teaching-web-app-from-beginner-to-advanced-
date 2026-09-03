@@ -13,6 +13,16 @@ Do not `git add -A`. Do not `git push`. Do not `gh-pages` unless the user names 
 
 Do not open: Deepakam, gsde*, extract_txt.py, Analyse, Vibhakti Guide, vite.config.
 
+
+## Week story (spatial, already the week proofs)
+
+A mark on the board → the throat that made it → the book in the hand → the sun in the sky → a living creature → a star → the boy reads.
+
+1 का · 2 कण्ठस्य · 3 पुस्तकम् · 4 सूर्यः · 5 गजः · 6 तारा · 7 बालकः पठति।
+
+Do not replace this with anatomy-across-shelves (हस्तः नेत्रम् प्राणः) or a morning-routine that drops कण्ठस्य.
+Naksha is सूर्यः / आकाशः, not नेत्रम्, not मार्गः this week.
+
 ## Seven child tabs
 
 `shelf` button = field 3 only.
