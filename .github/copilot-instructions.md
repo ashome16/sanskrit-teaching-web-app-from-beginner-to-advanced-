@@ -27,7 +27,7 @@ Parse `public/labels.txt`: skip `#` and blanks. Row is `kind|id|tab|sanskrit`.
 6. Sanskriti · संस्कृतिः
 7. Play · क्रिया
 
-Never: Maths, Body, Map, Geography, numbers · संख्या, Vastu · वस्तु, map · नक्शा, one seed, Gunitālu, Maatra, Breath Travel, Build, SHELF, TRACE as a heading.
+Never: Maths, Body, Map, Geography, numbers · संख्या, Objects · परिवेशः, space · परिवेशः, map · नक्शा, one seed, Gunitālu, Maatra, Breath Travel, Build, SHELF, TRACE as a heading.
 संख्या is a later door, like Sūtram. Not a shelf.
 Sanskriti never shows `one seed`.
 nada is the sound path. Not Body. Not शरीरम् on that tab.
@@ -49,7 +49,7 @@ Never जोड़ो, जोड़िये, रंगो, परखो, मे
 
 1. Beginners जोडो: क then आ then Check → का and “who? (feminine)”
 2. nada रिक्तम्: गकारः ____ → कण्ठस्य → “ga is a throat-letter”
-3. Objects मेलः: पुस्तकम्, tap पठति → “a book”. Tiles Devanagari only. Never Book/Water/Cloth as tiles.
+3. Vastu मेलः: पुस्तकम्, tap पठति → “a book”. Tiles Devanagari only. Never Book/Water/Cloth as tiles.
 4. Naksha मेलः: सूर्यः, tap आकाशः → “the sun”. Not गङ्गा this week.
 5. Nature मेलः: गजः
 6. Sanskriti: तारा
