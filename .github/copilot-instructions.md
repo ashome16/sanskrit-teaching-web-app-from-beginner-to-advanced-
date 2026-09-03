@@ -1,6 +1,7 @@
 # Copilot — Sanskrit Learning (canonical rules)
 
 Read this file before any edit. This is the only rules file.
+Visitor/parent copy: `docs/VISITOR.md` and `public/visitor.txt`. If you add a Welcome on the Board, fetch visitor.txt. Do not dump it as nav.
 Tabs come from `public/labels.txt` field 3. Never print a file tag.
 
 After `git pull origin main --no-rebase --no-edit`, quote the seven `shelf|` lines before you patch UI.
