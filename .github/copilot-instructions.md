@@ -19,8 +19,8 @@ Do not open: Deepakam, gsde*, extract_txt.py, Analyse, Vibhakti Guide, vite.conf
 
 1. Beginners · मात्रा — जोडो — क+आ → का — “who? (feminine)”
 2. nada · नाद-पथः — रिक्तम् — गकारः ____ → कण्ठस्य — “ga is a throat-letter”
-3. Vastu · वस्तु — मेलः — पुस्तकम् tap पठति — “a book”
-4. Naksha · नक्शा — मेलः — सूर्यः tap आकाशः — “the sun”
+3. Vastu · वस्तु — मेलः — पुस्तकम् tap पठति — “I read a book.”
+4. Naksha · नक्शा — मेलः — सूर्यः tap आकाशः — “The sun is in the sky.”
 5. Nature · प्रकृतिः — मेलः — गजः (animal/plant names, not चलति)
 6. Sanskriti · संस्कृतिः — रिक्तम् — तारा — never “one seed”
 7. Play · क्रिया — कर्ता-क्रिया — बालकः tap पठति — “The boy reads.”
@@ -39,6 +39,22 @@ Clicking a tab must load that shelf’s puzzle from `public/board.json`. Vastu m
 
 If you touch `type Shape`:
 `'जोडो' | 'बनाओ' | 'मेलः' | 'रिक्तम्' | 'प्रश्न' | 'क्रमः' | 'कर्ता-क्रिया'`
+
+
+## Meaning (do not lie to the child)
+
+English only after a correct Check.
+The big English line is the **sentence** meaning (`puzzle.english`), never a dictionary glued under the selected tile.
+
+Wrong: tap आकाशः, show “आकाशः” + “the sun”.
+Right: Check सूर्यः + आकाशः → Sanskrit `सूर्यः आकाशे अस्ति।` and English `The sun is in the sky.`
+
+आकाशः is sky. सूर्यः is the sun. पठति is reads. जलम् is water. तारा is a star. कण्ठस्य is of the throat.
+If you print a Devanagari word, the English next to it must be THAT word — or print the full sentence instead.
+
+Do not invent puzzles (दीपः, भोजनम्, अत्र, लिखति, एकम् on Beginners). Use `public/board.json` only.
+nada footer: ग lives in the throat when the target is गकारः. Never say क for ग.
+Sanskriti तारा = a star. Not “star-dust” as the word-gloss.
 
 ## Board copy
 
