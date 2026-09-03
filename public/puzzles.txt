@@ -2,7 +2,7 @@
 # shape|target|answer|tiles|sentence|english|seed
 # Tiles: independent आ इ उ. Never naked ा or U+200B.
 # मेलः: target column is the prompt. answer is the tap. Never put the prompt in tiles.
-जोडो|का|का|क,आ,ख,ग,इ,उ|का बालिका पठति।|the girl reads|क plus आ makes का.
+जोडो|का|का|क,आ,ख,ग,इ,उ|का बालिका पठति।|who? (feminine)|क plus आ makes का. Which girl? Not the girl reads.
 जोडो|मा|मा|म,आ,क,प,इ,उ|माता अन्नं ददाति।|ma, as in mother|Not the word do-not. A mark on म.
 जोडो|सा|सा|स,आ,क,म,इ,उ|सा बालिका पठति।|she|सा is she.
 जोडो|बालः|बालः|ब,आ,लः,क,म,स|बालः पठति।|the boy reads|Visarga stays on लः.
