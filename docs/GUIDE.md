@@ -1,5 +1,9 @@
 # The one-board manifesto
 
+Visitor walk (child/parent): [VISITOR.md](VISITOR.md). Same text: `public/visitor.txt`.
+Copilot: match that walk. Do not invent shelf1 or vowel math.
+
+
 One school. One chrome. One board.
 Play does the join. Sūtram watches the join. Deepakam stays the book.
 
@@ -24,13 +28,15 @@ Child loop, always: **Pick a shelf. Tap tiles. Then Check.**
 
 ## The seven shelves
 
-1. **Beginners (मात्रा)** — Entry. Tap क then आ. That physicalizes the long mark. Day 2: पीतः is turmeric; tap हरिद्रा.
-2. **nada · नाद-पथः** (pack नाद-पथः) — Where the breath strikes. गकारः ____ puts the hand on the throat (कण्ठस्य). Names only. No treatment.
-3. **space · परिवेशः** — Things you can touch. पुस्तकम् tap पठति. Tiles Devanagari only. संख्या is a later door, like Sūtram.
-4. **map · नक्शा** (pack नक्शा) — Names to their kind. गङ्गा → नदी. No far lands. No Hūṇa.
-5. **Sanskriti (one seed)** — Heritage anchor. तारा-धूलिः, labelled BRIDGE.
-6. **Play** — Active generation. Same board, as a game. The child puts the week into motion.
-7. **Sūtram** — Mechanics behind the magic. Not a grammar drill. A trace of how the word succeeds: **शब्दः सिध्यति**.
+Visitor copy: [VISITOR.md](VISITOR.md). Week story: का · कण्ठस्य · पुस्तकम् · सूर्यः · गजः · तारा · बालकः पठति।
+
+1. **Beginners · मात्रा** — जोडो. क+आ → का. Sentence: का बालिका पठति। Who is the girl reading?
+2. **nada · नाद-पथः** — रिक्तम्. गकारः ____ → कण्ठस्य. The sound ga belongs to the throat repository.
+3. **Vastu · वस्तु** — मेलः. पुस्तकम् tap पठति. अहं पुस्तकं पठामि। I read a book.
+4. **Naksha · नक्शा** — मेलः. सूर्यः tap आकाशः. सूर्यः आकाशे अस्ति। The sun is in the sky. Not गङ्गा this week.
+5. **Nature · प्रकृतिः** — रिक्तम्. ____ मन्दं चलति। → गजः. The elephant walks slowly.
+6. **Sanskriti · संस्कृतिः** — रिक्तम्. तारा. We are all star-dust. Never print “one seed”.
+7. **Play · क्रिया** — कर्ता-क्रिया. बालकः tap पठति. The boy reads. Sūtram is a later door, not a shelf.
 
 Top chrome (keep): Board · Deepakam · Analyse · Vibhakti Guide.
 
