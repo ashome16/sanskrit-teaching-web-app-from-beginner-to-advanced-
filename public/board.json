@@ -128,17 +128,24 @@
     "skin": "मेलः",
     "puzzles": [
       {
-        "prompt": "गङ्गा",
-        "target": "नदी",
+        "prompt": "सूर्यः",
+        "target": "आकाशः",
         "tiles": [
-          "नदी",
-          "पर्वतः",
-          "वनम्",
-          "ग्रामः",
           "आकाशः",
+          "नदी",
           "गृहम्"
         ],
-        "english": "Ganga is a river"
+        "english": "the sun"
+      },
+      {
+        "prompt": "नक्षत्रम्",
+        "target": "रात्रिः",
+        "tiles": [
+          "रात्रिः",
+          "आकाशः",
+          "नदी"
+        ],
+        "english": "a star"
       }
     ]
   },
