@@ -16,10 +16,10 @@ LATER (packs exist, not in week.txt)
   Still later: 11–20, animals, home, janapadas, far lands.
 
 Week
-  1 Beginners  मात्रा      जोडो   का
+  1 Beginners · मात्रा मात्रा      जोडो   का
   2 Beginners  वर्णाः      मेलः   पीतः → हरिद्रा
   3 numbers · संख्या   संख्या      बनाओ  पञ्च
-  4 Body       नाद-पथः    रिक्तम्  कण्ठस्य
+  4 nada · नाद-पथः    नाद-पथः    रिक्तम्  कण्ठस्य
   5 map · नक्शा        नक्शा       मेलः   गङ्गा → नदी
   6 Sanskriti  कथा        रिक्तम्  तारा
   7 Play       mix        बनाओ  माता
