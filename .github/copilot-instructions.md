@@ -91,3 +91,16 @@ CSS is already in `src/styles/board.css`.
 Put a `button.welcome-open` **?** on `.board-tip`’s row. Click: scrim + `aside.welcome-overlay` with `public/visitor.txt` (skip `#` headings into h2/h3, paragraphs as p). Close × and scrim click. Do not auto-open. Do not make Welcome a shelf.
 
 After Check: `puzzle.sentence` with `puzzle.highlight` wrapped in `span.word-focus`, then `p.result-english`. Use existing puzzle-result box. No inline styles. No green success-banner.
+
+## Week 2 (second puzzle on each shelf)
+
+Do not replace week 1. `public/week-2.txt` + `board.json` puzzles[1].
+A small Next after Check on a shelf loads that shelf’s second puzzle. Default open is still week 1 (का).
+
+- सा · सा बालिका हसति। · She is the girl laughing.
+- तालस्य · चकारः तालस्य स्थानस्य अस्ति। · The sound ca belongs to the palate repository.
+- जलम् · बालकः जलं पिबति। · The boy drinks water.
+- नदी · नदी वेगेन वहति। · The river flows swiftly.
+- वृक्षः · वृक्षः भूमौ तिष्ठति। · The tree stands on the earth.
+- बीजम् · ज्ञानं परमं बीजम्। · Knowledge is the ultimate seed.
+- चलति · गजः मन्दं चलति। · The elephant walks slowly. Highlight चलति.
