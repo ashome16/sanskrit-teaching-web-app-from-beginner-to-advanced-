@@ -1,7 +1,8 @@
 # Copilot — Sanskrit Learning (read before any edit)
 
 You are patching ONE child school. One chrome. One board.
-Read this file. Then touch only what the user named.
+Read this file and docs/NAMES.md. Then touch only what the user named.
+On-screen copy comes from public/labels.txt. Never print a file tag (prarambhah, matra, kalah, vrittih, glue).
 
 ## Do not open
 
@@ -10,6 +11,7 @@ Analyse, Vibhakti Guide, vite.config base, index.html nav labels.
 
 Top nav stays: Board · Deepakam · Analyse · Vibhakti Guide
 Shelves stay: Beginners → Body → Maths → Map → Sanskriti → Play → Sūtram
+(not Biology, Geography, Games, Coding). Pack vrittih is on-screen जनाः.
 
 ## Product law
 
@@ -26,7 +28,7 @@ Shelves stay: Beginners → Body → Maths → Map → Sanskriti → Play → S�
 ## Delete these labels if you see them
 
 Hear the vowel mark; Meaning fuses; Small TRACE, no compiler;
-ONE BOARD / SHELF; no row yet; A short vowel-mark lesson; Maatra;
+ONE BOARD / SHELF; no row yet; A short vowel-mark lesson; Maatra; Biology; Geography; Games; Coding; SHELF; TRACE as a heading;
 tripled titles; शब्द: with a colon.
 
 One site line under the shelves: Pick a shelf. Tap tiles. Then Check.

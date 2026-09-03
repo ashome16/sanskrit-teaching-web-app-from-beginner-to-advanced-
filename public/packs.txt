@@ -1,10 +1,11 @@
 # pack_id|wing|title|dropdown|shapes|note
-# dropdown 1=Beginners 2=Biology 3=Maths 4=Geography 5=Sanskriti 6=Games 7=Coding
+# dropdown 1=Beginners 2=Body 3=Maths 4=Map 5=Sanskriti 6=Play 7=Sūtram
+# File tags (prarambhah, matra) are silent. On-screen names: public/labels.txt and docs/NAMES.md
 matra|prarambhah|मात्रा|1|जोडो,बनाओ|क-row then signs. Day 1.
 colours|prarambhah|वर्णाः|1|जोडो,बनाओ,मेलः|Screen: रक्तः बालकः · रक्ता बालिका · रक्तं पुष्पम्
 family|prarambhah|परिवारः|1|जोडो,बनाओ|
 school|prarambhah|विद्यालयः|1|जोडो,बनाओ|Tiny: गुरुः पुस्तकम् पाठः
-body-laghu|prarambhah|शरीरम्-लघु|1|जोडो,बनाओ|Point-at four + हृदयम्
+body-laghu|prarambhah|शरीरम्|1|जोडो,बनाओ|Point-at four + हृदयम्
 food|prarambhah|आहारः|1|जोडो,बनाओ|जलम् अन्नम् फलम्
 glue|prarambhah|चिह्नानि|1|जोडो,बनाओ,मेलः|अहम् त्वम् अत्र तत्र कुत्र. Expand after week.
 sankhya-0-10|ganitam|संख्या १–१०|3|बनाओ,मेलः|Same numbers pack. Day 3.
@@ -13,14 +14,14 @@ sthanam|sariram|स्थानम्|2|मेलः,रिक्तम्|Six p
 osadhih|sariram|ओषधिः|2|बनाओ,मेलः|तुलसी हरिद्रा only. Names, no treatment.
 sushruta-kosa|sariram|सुश्रुत-कोशः|2|मेलः|Three tiles only: सूची यन्त्रम् सीवनम्
 nadyah|bhugolah|नद्यः|4|मेलः|Two rivers this week. Book-geography.
-katha-bija|sanskritih|कथा-बीजानि|5|रिक्तम्|One seed: तारा-धूलिः BRIDGE
+katha-bija|sanskritih|कथा|5|रिक्तम्|One seed: तारा-धूलिः BRIDGE
 masah|sanskritih|मासाः|5|मेलः|चैत्रः ↔ चित्रा only
 svara-raga|sanskritih|स्वर|5|क्रमः|सा रे ग म प ध नि. Counterpart, not copy.
 dhvaja-varna|sanskritih|ध्वज|5|क्रमः,रिक्तम्|केसर श्वेत हरित. Toy gap, not a fake quote.
 stems|sutram|राम्|7|अनुरेख|राम् + अः / स्य. Three sandhi only.
-kalah|prarambhah|कालः|1|मेलः|SHELF. प्रातः मध्याह्नः सायम् रात्रिः. Not in week.txt yet.
-dinam|prarambhah|दिनम्|1|मेलः|SHELF. ह्यः अद्य श्वः.
-vrittih|prarambhah|वृत्तिः|1|मेलः|SHELF. गुरुः छात्रः कृषकः योद्धा. वैद्यः name only.
-rtvah|sanskritih|ऋतवः|5|मेलः|SHELF. वसन्तः ग्रीष्मः वर्षा हेमन्तः. Four first.
-vatah|bhugolah|वातः|4|मेलः|SHELF. Weather today: सूर्यः मेघः वायुः वृष्टिः. Not ऋतवः.
-indriyani|sariram|इन्द्रियाणि|2|मेलः|SHELF. चक्षुः श्रोत्रम् घ्राणम् रसना त्वक्. Names, no drill.
+kalah|prarambhah|कालः|1|मेलः|Later. प्रातः मध्याह्नः सायम् रात्रिः. Not in week.txt yet.
+dinam|prarambhah|दिनम्|1|मेलः|Later. ह्यः अद्य श्वः.
+vrittih|prarambhah|जनाः|1|मेलः|Later. गुरुः छात्रः कृषकः योद्धा. On-screen जनाः not vrittih.
+rtvah|sanskritih|ऋतवः|5|मेलः|Later. वसन्तः ग्रीष्मः वर्षा हेमन्तः. Four first.
+vatah|bhugolah|वातः|4|मेलः|Later. Weather today: सूर्यः मेघः वायुः वृष्टिः. Not ऋतवः.
+indriyani|sariram|इन्द्रियाणि|2|मेलः|Later. चक्षुः श्रोत्रम् घ्राणम् रसना त्वक्. Names, no drill.
