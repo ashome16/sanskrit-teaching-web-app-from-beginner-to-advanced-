@@ -7,7 +7,7 @@ shelf|sariram|nada · नाद-पथः|नाद-पथः
 shelf|ganitam|numbers · संख्या|संख्या
 shelf|bhugolah|map · नक्शा|नक्शा
 shelf|sanskritih|Sanskriti · संस्कृतिः|संस्कृतिः
-shelf|krida|Play · क्रीडा|क्रीडा
+shelf|krida|Play · क्रिया|क्रिया
 shelf|prakrtih|Nature · प्रकृतिः|प्रकृतिः
 pack|matra|मात्रा|letters and marks
 pack|colours|वर्णाः|colours
@@ -36,8 +36,10 @@ pack|indriyani|इन्द्रियाणि|seeing, touching
 skin|जोडो|जोडो|join
 skin|बनाओ|बनाओ|build
 skin|मेलः|मेलः|match
+skin|कर्ता-क्रिया|कर्ता-क्रिया|doer then verb
 skin|रिक्तम्|रिक्तम्|fill the blank
 skin|प्रश्न|प्रश्न|ask
 skin|क्रमः|क्रमः|order
 site|loop|Pick a shelf. Tap tiles. Then Check.|
 pack|prakrtih|प्रकृतिः|animals and plants
+pack|kriya|क्रिया|doer then verb
