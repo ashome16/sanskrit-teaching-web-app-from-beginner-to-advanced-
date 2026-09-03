@@ -1,14 +1,7 @@
-# labels.txt  ON-SCREEN COPY
-# kind|id|title|gloss
-# id is the file tag — never print it.
-# kind: nav | shelf | pack | skin
-# Skip # and blank.
-
 nav|board|Board|the game
 nav|deepakam|Deepakam|the book
 nav|analyse|Analyse|
 nav|vibhakti|Vibhakti Guide|eight boxes
-
 shelf|prarambhah|Beginners|प्रारम्भः
 shelf|sariram|Body|शरीरम्
 shelf|ganitam|Maths|गणितम्
@@ -16,8 +9,6 @@ shelf|bhugolah|Map|भूगोलः
 shelf|sanskritih|Sanskriti|संस्कृतिः
 shelf|krida|Play|क्रीडा
 shelf|prakrtih|Nature|प्रकृतिः
-# shelf sutram is a later grammar door, not this board
-
 pack|matra|मात्रा|letters and marks
 pack|colours|वर्णाः|colours
 pack|family|परिवारः|family
@@ -42,13 +33,11 @@ pack|vrittih|जनाः|teacher, farmer
 pack|rtvah|ऋतवः|seasons
 pack|vatah|वातः|sun, rain, wind
 pack|indriyani|इन्द्रियाणि|seeing, touching
-
 skin|जोडो|जोडो|join
 skin|बनाओ|बनाओ|build
 skin|मेलः|मेलः|match
 skin|रिक्तम्|रिक्तम्|fill the blank
 skin|प्रश्न|प्रश्न|ask
 skin|क्रमः|क्रमः|order
-
 site|loop|Pick a shelf. Tap tiles. Then Check.|
 pack|prakrtih|प्रकृतिः|animals and plants
