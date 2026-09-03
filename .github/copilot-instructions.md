@@ -10,7 +10,8 @@ Deepakam, TextbookReader, gsde*, extract_txt.py, extract-lessons.js,
 Analyse, Vibhakti Guide, vite.config base, index.html nav labels.
 
 Top nav stays: Board · Deepakam · Analyse · Vibhakti Guide
-Shelves stay: Beginners → Body → Maths → Map → Sanskriti → Play
+Shelves stay: Beginners → Body → Maths → Map → Sanskriti → Play → Nature
+Sūtram is a later grammar door. Nature is प्रकृतिः.
 Sūtram is a later grammar door, not a shelf on this word-bank board. Never Breath Travel or Build.
 (not Biology, Geography, Games, Coding). Pack vrittih is on-screen जनाः.
 
