@@ -148,20 +148,22 @@ const Board: React.FC = () => {
   const isCorrect = (() => {
     if (!activePuzzle) return false;
     const target = (activePuzzle.answer ?? activePuzzle.target).normalize('NFC');
+    const glued = glueTiles(chosen);
+    const wholeWordRow = activePuzzle.tiles.some((tile) => cleanTile(tile).normalize('NFC') === target);
+    // Question-word rows: exactly one tile, exact match (कः ≠ क, and कथम् is never right here)
+    if (wholeWordRow) {
+      return chosen.length === 1 && cleanTile(chosen[0]).normalize('NFC') === target;
+    }
     if (activePuzzle.target === 'का') {
-      const glued = glueTiles(chosen);
       const chosenSet = new Set(chosen.map((tile) => cleanTile(tile).normalize('NFC')));
       const isKaAaPair = chosenSet.size === 2 && chosen.length === 2
         && (chosenSet.has('क') && (chosenSet.has('आ') || chosenSet.has('ा')));
       return glued === 'का' || isKaAaPair;
     }
     if (activePuzzle.target === 'मा' || activePuzzle.target === 'सा' || activePuzzle.target === 'बालः') {
-      // Same glue as का: म+आ → मा, not मआ
-      return glueTiles(chosen) === target;
+      return glued === target;
     }
-    const targetNoVisarga = target.replace(/ः$/, '');
-    const glued = glueTiles(chosen);
-    return glued === target || glued === targetNoVisarga;
+    return glued === target;
   })();
 
   const chooseShelf = (nextShelf: ShelfId) => {
@@ -219,7 +221,7 @@ const Board: React.FC = () => {
 
     <div className="board-tip-row">
       <p className="board-tip">{targetIsWholeTile
-        ? 'Click ONE cream tile — the whole word for the blank (for example कः). Then click Check. Then click Next.'
+        ? 'Click ONE cream tile that fills the blank (कः or का or किम् or कुत्र — not कदा or कथम्). Then click Check. Then click Next.'
         : (activeBoardShelf?.skin === 'जोडो'
           ? 'Click TWO cream tiles in order: first the letter (क), then the vowel आ. Then click Check. Then click Next.'
           : loopLine)}</p>
