@@ -557,7 +557,7 @@
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "हमारी"
+        "meaning": "हमारे"
       }
     }
   },
@@ -2131,11 +2131,11 @@
   },
   "भवन्ति": {
     "word": "भवन्ति",
-    "base_english": "Are / Become",
+    "base_english": "Become",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Are / Become"
+        "meaning": "Become"
       },
       "hi": {
         "label": "हिन्दी",
@@ -4156,6 +4156,230 @@
       "hi": {
         "label": "हिन्दी",
         "meaning": "अच्छे लोगों के साथ"
+      }
+    }
+  },
+  "मधुरभाषणेन": {
+    "word": "मधुरभाषणेन",
+    "base_english": "By sweet speech",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By sweet speech"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मीठा बोलने से"
+      }
+    }
+  },
+  "प्राणिनः": {
+    "word": "प्राणिनः",
+    "base_english": "Living beings",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Living beings"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जीव / प्राणी"
+      }
+    }
+  },
+  "सर्वाणि": {
+    "word": "सर्वाणि",
+    "base_english": "All",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "All"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सारे"
+      }
+    }
+  },
+  "मित्राणि": {
+    "word": "मित्राणि",
+    "base_english": "Friends",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Friends"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दोस्त"
+      }
+    }
+  },
+  "माता": {
+    "word": "माता",
+    "base_english": "Mother",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mother"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "माँ"
+      }
+    }
+  },
+  "पिता": {
+    "word": "पिता",
+    "base_english": "Father",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Father"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पिता"
+      }
+    }
+  },
+  "भ्राता": {
+    "word": "भ्राता",
+    "base_english": "Brother",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Brother"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भाई"
+      }
+    }
+  },
+  "इत्यादयः": {
+    "word": "इत्यादयः",
+    "base_english": "Etcetera",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Etcetera"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इत्यादि / आदि"
+      }
+    }
+  },
+  "प्रसन्नाः": {
+    "word": "प्रसन्नाः",
+    "base_english": "Happy / Pleased",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Happy / Pleased"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खुश"
+      }
+    }
+  },
+  "कापि": {
+    "word": "कापि",
+    "base_english": "Any",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Any"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कोई भी"
+      }
+    }
+  },
+  "हानिः": {
+    "word": "हानिः",
+    "base_english": "Loss / Harm",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Loss / Harm"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नुकसान / घाटा"
+      }
+    }
+  },
+  "सर्वदा": {
+    "word": "सर्वदा",
+    "base_english": "Always",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Always"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हमेशा"
+      }
+    }
+  },
+  "मधुरभाषणम्": {
+    "word": "मधुरभाषणम्",
+    "base_english": "Sweet speech",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sweet speech"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मीठी वाणी"
+      }
+    }
+  },
+  "करणीयम्": {
+    "word": "करणीयम्",
+    "base_english": "Should be done",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Should be done"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "करना चाहिए"
+      }
+    }
+  },
+  "कदापि": {
+    "word": "कदापि",
+    "base_english": "Ever / At any time",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ever / At any time"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कभी भी"
+      }
+    }
+  },
+  "सङ्कोचः": {
+    "word": "सङ्कोचः",
+    "base_english": "Hesitation",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Hesitation"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हिचकिचाहट / कंजूसी"
       }
     }
   }
