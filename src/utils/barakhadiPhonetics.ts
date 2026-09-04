@@ -32,8 +32,16 @@ const MATRA_VOWEL: Record<string, string> = {
 
 const INDEPENDENT_VOWELS: Record<string, string> = {
   अ: 'a', आ: 'aa', इ: 'i', ई: 'ee', उ: 'u', ऊ: 'oo',
-  ऋ: 'ru', ॠ: 'ruu', ए: 'e', ऐ: 'ai', ओ: 'o', औ: 'au',
-  अं: 'am', अः: 'ah',
+  ऋ: 'ru', ॠ: 'ruu', ऌ: 'lru', ए: 'e', ऐ: 'ai', ओ: 'o', औ: 'au',
+  अं: 'am', अः: 'ah', अँ: 'an',
+};
+
+/** Varnamala conjunct tiles */
+const CONJUNCTS: Record<string, string> = {
+  क्ष: 'ksha',
+  ज्ञ: 'jnya',
+  त्र: 'tra',
+  श्र: 'shra',
 };
 
 export const barakhadiLabel = (akshara: string): string => {
@@ -100,7 +108,6 @@ export const isBarakhadiAkshara = (value: string): boolean => {
   return rest === '' || rest in MATRA_VOWEL;
 };
 
-/** Shared name used by Varṇamālā + बारहखड़ी tiles */
+/** Shared name used by Varnamala + barakhadi tiles */
 export const aksharaLabel = barakhadiLabel;
 export const isPhoneticAkshara = isBarakhadiAkshara;
-
