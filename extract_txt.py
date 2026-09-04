@@ -36,16 +36,16 @@ TITLE_OVERRIDES = {
 
 # Ordered phonetic groupings used to label each block of public/varnamala.txt.
 VARNAMALA_CATEGORIES = [
-    ('स्वराः', 'Vowels (स्वराः)'),
-    ('क-वर्गः', 'Velars (क-वर्गः)'),
-    ('च-वर्गः', 'Palatals (च-वर्गः)'),
-    ('ट-वर्गः', 'Retroflexes (ट-वर्गः)'),
-    ('त-वर्गः', 'Dentals (त-वर्गः)'),
-    ('प-वर्गः', 'Labials (प-वर्गः)'),
-    ('अन्तःस्थाः', 'Semi-vowels (अन्तःस्थाः)'),
-    ('ऊष्माणः', 'Sibilants (ऊष्माणः)'),
-    ('अनुस्वार', 'Others (अनुस्वार/विसर्ग)'),
-    ('संयुक्तवत्', 'Conjuncts (संयुक्तवत्)'),
+    ('स्वराः', 'स्वराः — Vowels'),
+    ('क-वर्गः', 'क-वर्ग — Velars'),
+    ('च-वर्गः', 'च-वर्ग — Palatals'),
+    ('ट-वर्गः', 'ट-वर्ग — Retroflexes'),
+    ('त-वर्गः', 'त-वर्ग — Dentals'),
+    ('प-वर्गः', 'प-वर्ग — Labials'),
+    ('अन्तःस्थाः', 'अन्तःस्थ व्यञ्जनानि — Semivowels'),
+    ('ऊष्माणः', 'ऊष्माणि — Sibilants and Aspirate'),
+    ('अनुस्वार', 'अं / अः — Anusvāra & Visarga'),
+    ('संयुक्तवत्', 'संयुक्तवत् — Conjuncts'),
 ]
 
 # Ordered groupings used to label each block of public/numbers.txt.

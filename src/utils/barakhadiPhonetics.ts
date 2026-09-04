@@ -20,8 +20,8 @@ const MATRA_VOWEL: Record<string, string> = {
   'ी': 'ee',
   'ु': 'u',
   'ू': 'oo',
-  'ृ': 'ru',
-  'ॄ': 'ruu',
+  'ृ': 'ri',
+  'ॄ': 'rii',
   'े': 'e',
   'ै': 'ai',
   'ो': 'o',
@@ -32,7 +32,7 @@ const MATRA_VOWEL: Record<string, string> = {
 
 const INDEPENDENT_VOWELS: Record<string, string> = {
   अ: 'a', आ: 'aa', इ: 'i', ई: 'ee', उ: 'u', ऊ: 'oo',
-  ऋ: 'ru', ॠ: 'ruu', ऌ: 'lru', ए: 'e', ऐ: 'ai', ओ: 'o', औ: 'au',
+  ऋ: 'ri', ॠ: 'rī', ऌ: 'li', ए: 'e', ऐ: 'ai', ओ: 'o', औ: 'au',
   अं: 'am', अः: 'ah', अँ: 'an',
 };
 
@@ -83,7 +83,7 @@ export const barakhadiSpeechText = (akshara: string): string => {
     shha: 'sh-ha', shhaa: 'sh-haa', shhi: 'sh-hi', shhee: 'sh-hee',
     chha: 'ch-ha', chhaa: 'ch-haa', chhi: 'ch-hi', chhee: 'ch-hee',
     ksha: 'k-sha', jnya: 'j-nya', tra: 't-ra', shra: 'sh-ra',
-    lru: 'l-ru',
+    li: 'li', ri: 'ri', rii: 'ree',
     kha: 'k-ha', khaa: 'k-haa', khi: 'k-hi', khee: 'k-hee',
     gha: 'g-ha', ghaa: 'g-haa', ghi: 'g-hi', ghee: 'g-hee',
     jha: 'j-ha', jhaa: 'j-haa', jhi: 'j-hi', jhee: 'j-hee',
@@ -108,6 +108,65 @@ export const isBarakhadiAkshara = (value: string): boolean => {
   return rest === '' || rest in MATRA_VOWEL;
 };
 
-/** Shared name used by Varnamala + barakhadi tiles */
+
+/** Traditional Varṇamālā roman (school chart: ri, ṭa, ṣha…). */
+const VARNAMALA_VOWELS: Record<string, string> = {
+  अ: 'a', आ: 'aa', इ: 'i', ई: 'ee', उ: 'u', ऊ: 'oo',
+  ऋ: 'ri', ॠ: 'rī', ऌ: 'li', ए: 'e', ऐ: 'ai', ओ: 'o', औ: 'au',
+  अं: 'am', अः: 'ah', अँ: 'an',
+};
+
+const VARNAMALA_STEM: Record<string, string> = {
+  क: 'k', ख: 'kh', ग: 'g', घ: 'gh', ङ: 'ng',
+  च: 'ch', छ: 'chh', ज: 'j', झ: 'jh', ञ: 'ny',
+  ट: 'ṭ', ठ: 'ṭh', ड: 'ḍ', ढ: 'ḍh', ण: 'ṇ',
+  त: 't', थ: 'th', द: 'd', ध: 'dh', न: 'n',
+  प: 'p', फ: 'ph', ब: 'b', भ: 'bh', म: 'm',
+  य: 'y', र: 'r', ल: 'l', व: 'v',
+  श: 'sh', ष: 'ṣh', स: 's', ह: 'h',
+};
+
+const VARNAMALA_CONJUNCTS: Record<string, string> = {
+  क्ष: 'ksha',
+  ज्ञ: 'jnya',
+  त्र: 'tra',
+  श्र: 'shra',
+};
+
+export const varnamalaLabel = (akshara: string): string => {
+  const clean = akshara.normalize('NFC').trim();
+  if (!clean) return '';
+  if (VARNAMALA_VOWELS[clean]) return VARNAMALA_VOWELS[clean];
+  if (VARNAMALA_CONJUNCTS[clean]) return VARNAMALA_CONJUNCTS[clean];
+  const cons = clean[0];
+  const stem = VARNAMALA_STEM[cons];
+  if (!stem) return clean;
+  const rest = clean.slice(1);
+  if (!rest) return `${stem}a`;
+  if (rest === 'ं') return `${stem}am`;
+  if (rest === 'ः') return `${stem}ah`;
+  // Matras rarely appear on Varṇamālā tiles; fall back to barakhadi scheme.
+  return barakhadiLabel(clean);
+};
+
+/** Speakable ASCII for traditional labels (ṭ→tt, ṣ→shh, rii→ree). */
+export const varnamalaSpeechText = (akshara: string): string => {
+  const label = varnamalaLabel(akshara);
+  if (!label || label === akshara) return barakhadiSpeechText(akshara);
+  const ascii = label
+    .replace(/ṭ/g, 'tt')
+    .replace(/ḍ/g, 'dd')
+    .replace(/ṇ/g, 'nn')
+    .replace(/ṣ/g, 'shh')
+    .replace(/ī/g, 'ee')
+    .replace(/rii/g, 'ree');
+  const special: Record<string, string> = {
+    nga: 'ng-a', nya: 'ny-a', chha: 'ch-ha',
+    tta: 't-ta', ttha: 't-tha', dda: 'd-da', ddha: 'd-dha', nna: 'n-na',
+    shha: 'sh-ha', ksha: 'k-sha', jnya: 'j-nya',
+  };
+  return special[ascii] || ascii;
+};
+/** Shared default (बारहखड़ी). Prefer varnamalaLabel for Varṇamālā tiles. */
 export const aksharaLabel = barakhadiLabel;
 export const isPhoneticAkshara = isBarakhadiAkshara;

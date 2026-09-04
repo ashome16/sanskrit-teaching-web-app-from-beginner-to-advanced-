@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { Lesson, LessonSentence } from '../types/chapters';
-import { aksharaLabel } from '../utils/barakhadiPhonetics';
+import { aksharaLabel, varnamalaLabel } from '../utils/barakhadiPhonetics';
 import '../styles/textbook-reader.css';
 
 interface TextbookReaderProps {
@@ -60,6 +60,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const isSamyukta = activeLessonId === 'samyukta';
   const isGroupedLesson = isVarnamala || isSamyukta || activeLessonId === 'numbers' || activeLessonId === 'barakhadi';
   const showRomanTiles = activeLessonId === 'barakhadi' || activeLessonId === 'varnamala';
+  const tileLabel = (letter: string) =>
+    activeLessonId === 'varnamala' ? varnamalaLabel(letter) : aksharaLabel(letter);
   const [isChartOpen, setIsChartOpen] = useState(false);
   const [openGames, setOpenGames] = useState<Record<string, boolean>>({ game1: true });
   const toggleGame = (id: string) =>
@@ -146,11 +148,17 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             Three playground posters. Tap a game title to open or close its picture.
           </p>
         )}
-        {(activeLessonId === 'barakhadi' || activeLessonId === 'varnamala') && (
+        {activeLessonId === 'varnamala' && (
           <p className="textbook-glossary-hint" style={{ marginTop: '.35rem' }}>
-            Tap any अक्षर to hear it. Each tile shows its sound (a · aa · ka · kha…). Retroflex ट/ठ/ड use tt/tth/dd so they stay distinct from त/थ/द.
+            Traditional chart: a · aa · i · ee · ri · rī · ka · kha · ṭa · ṣha…. Tap any letter to hear it.
           </p>
         )}
+        {activeLessonId === 'barakhadi' && (
+          <p className="textbook-glossary-hint" style={{ marginTop: '.35rem' }}>
+            Tap any letter to hear it. Kid spellings keep look-alikes clear (tt vs t, shh vs sh).
+          </p>
+        )}
+
         {!isGroupedLesson && (
           <span className="textbook-reader-progress">
             {sentence.kind?.startsWith('glossary') || sentence.kind?.startsWith('exercise')
@@ -233,11 +241,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                     type="button"
                     className={`varnamala-letter-btn${showRomanTiles ? ' barakhadi-letter-btn' : ''}`}
                     onClick={() => onWordClick(letter)}
-                    aria-label={`Play pronunciation for ${letter}${showRomanTiles ? ` (${aksharaLabel(letter)})` : ''}`}
+                    aria-label={`Play pronunciation for ${letter}${showRomanTiles ? ` (${tileLabel(letter)})` : ''}`}
                   >
                     <span className="barakhadi-dev">{letter}</span>
                     {showRomanTiles ? (
-                      <small className="barakhadi-roman">{aksharaLabel(letter)}</small>
+                      <small className="barakhadi-roman">{tileLabel(letter)}</small>
                     ) : null}
                   </button>
                 ))}
