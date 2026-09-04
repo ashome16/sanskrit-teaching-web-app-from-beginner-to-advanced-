@@ -333,6 +333,132 @@
         "english": "She wears the garment.",
         "highlight": "वस्त्रं",
         "tapHighlight": "धारयति"
+      },
+      {
+        "prompt": "____ अत्र अस्ति।",
+        "target": "घटः",
+        "tiles": [
+          "घटः",
+          "फलम्",
+          "कन्दुकः",
+          "पुष्पम्",
+          "दीपः",
+          "अन्नम्"
+        ],
+        "sentence": "घटः अत्र अस्ति।",
+        "english": "The pot is here.",
+        "highlight": "घटः"
+      },
+      {
+        "prompt": "अहं ____ खादामि।",
+        "target": "फलम्",
+        "tiles": [
+          "अन्नम्",
+          "फलम्",
+          "घटः",
+          "कन्दुकः",
+          "पुष्पम्",
+          "दीपः"
+        ],
+        "sentence": "अहं फलं खादामि।",
+        "english": "I eat a fruit.",
+        "highlight": "फलं",
+        "tapHighlight": "फलं"
+      },
+      {
+        "prompt": "बालकः ____ क्षिपति।",
+        "target": "कन्दुकः",
+        "tiles": [
+          "दीपः",
+          "अन्नम्",
+          "कन्दुकः",
+          "घटः",
+          "फलम्",
+          "पुष्पम्"
+        ],
+        "sentence": "बालकः कन्दुकं क्षिपति।",
+        "english": "The boy throws the ball.",
+        "highlight": "कन्दुकं",
+        "tapHighlight": "कन्दुकं"
+      },
+      {
+        "prompt": "____ सुन्दरं अस्ति।",
+        "target": "पुष्पम्",
+        "tiles": [
+          "कन्दुकः",
+          "दीपः",
+          "अन्नम्",
+          "पुष्पम्",
+          "घटः",
+          "फलम्"
+        ],
+        "sentence": "पुष्पं सुन्दरं अस्ति।",
+        "english": "The flower is beautiful.",
+        "highlight": "पुष्पं",
+        "tapHighlight": "पुष्पं"
+      },
+      {
+        "prompt": "अहं ____ पश्यामि।",
+        "target": "दीपः",
+        "tiles": [
+          "फलम्",
+          "कन्दुकः",
+          "पुष्पम्",
+          "अन्नम्",
+          "दीपः",
+          "घटः"
+        ],
+        "sentence": "अहं दीपं पश्यामि।",
+        "english": "I see the lamp.",
+        "highlight": "दीपं",
+        "tapHighlight": "दीपं"
+      },
+      {
+        "prompt": "सा ____ पचति।",
+        "target": "अन्नम्",
+        "tiles": [
+          "घटः",
+          "फलम्",
+          "कन्दुकः",
+          "पुष्पम्",
+          "दीपः",
+          "अन्नम्"
+        ],
+        "sentence": "सा अन्नं पचति।",
+        "english": "She cooks food.",
+        "highlight": "अन्नं",
+        "tapHighlight": "अन्नं"
+      },
+      {
+        "prompt": "____ पतति।",
+        "target": "पत्रम्",
+        "tiles": [
+          "पत्रम्",
+          "घटः",
+          "फलम्",
+          "कन्दुकः",
+          "पुष्पम्",
+          "दीपः"
+        ],
+        "sentence": "पत्रं पतति।",
+        "english": "The letter falls.",
+        "highlight": "पत्रं",
+        "tapHighlight": "पत्रं"
+      },
+      {
+        "prompt": "मम हस्ते ____ अस्ति।",
+        "target": "धनम्",
+        "tiles": [
+          "दीपः",
+          "धनम्",
+          "घटः",
+          "फलम्",
+          "कन्दुकः",
+          "पुष्पम्"
+        ],
+        "sentence": "मम हस्ते धनम् अस्ति।",
+        "english": "Money is in my hand.",
+        "highlight": "धनम्"
       }
     ]
   },
