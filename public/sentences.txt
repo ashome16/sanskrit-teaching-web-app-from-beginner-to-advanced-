@@ -51,7 +51,6 @@
 का महिला गायति?|Who is the woman singing?|का|beginners
 पुस्तकम् कुत्र पतति?|Where is the book falling?|कुत्र|beginners
 त्वम् किम् करोषि?|What are you doing?|किम्|beginners
-कः पुरुषः खादति?|Who is the man eating?|कः|beginners
 का अत्र आगच्छति?|Who is coming here?|का|beginners
 सा किम् पठति?|What is she reading?|किम्|beginners
 भवान् कदा उत्तिष्ठति?|When do you wake up?|कदा|beginners
