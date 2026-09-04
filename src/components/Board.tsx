@@ -156,8 +156,8 @@ const Board: React.FC = () => {
       return glued === 'का' || isKaAaPair;
     }
     if (activePuzzle.target === 'मा' || activePuzzle.target === 'सा' || activePuzzle.target === 'बालः') {
-      const chosenValue = chosen.map((tile) => cleanTile(tile).normalize('NFC')).join('');
-      return chosenValue === target;
+      // Same glue as का: म+आ → मा, not मआ
+      return glueTiles(chosen) === target;
     }
     const targetNoVisarga = target.replace(/ः$/, '');
     const glued = glueTiles(chosen);
