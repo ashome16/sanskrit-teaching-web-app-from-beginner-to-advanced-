@@ -20,19 +20,26 @@ Tap the **?** any time to reopen this guide.
 
 ---
 
-## 1. Beginners · मात्रा — TWO tiles
+## 1. Beginners · मात्रा — read the tip every row
 
-This shelf joins a consonant and a vowel.
+This shelf has **two kinds of rows**. Look at the tip line and the **1 tile / 2 tiles** mark next to Target.
 
-- Tap **two** tiles: first the consonant, then the vowel (**आ इ उ**).
-- **आ** is not a second letter stuck on. It becomes the mark **ा** on the consonant: **क** + **आ** → **का**.
-- Most rows need exactly two tiles. **बालः** is **बा** then **लः** (still two). Question-word rows later (**कः**, **किम्**) need one whole-word tile.
+### A. Join rows (जोडो) — TWO tiles
+Letters and marks. Tap in order:
+1. consonant (**क** / **म** / **स**)
+2. vowel (**आ**)
+Check. **आ** becomes **ा** on the letter → **का** / **मा** / **सा**.
+**बालः** is **बा** then **लः** (still two).
 
-**Day 1 proof**
-Target **का**. Tap **क**, then **आ**, then Check.
-→ **का बालिका पठति।** *Who is the girl reading?*
+Day-1 proof: **क** + **आ** → **का बालिका पठति।** *Who is the girl reading?*
 
-Then **Next** for **मा**, **सा**, **बालः** — still two (or three for बालः: **ब** + **आ** + **लः**).
+### B. Question-word rows — ONE tile
+After Next past the joins, Target looks like **____ बालकः धावति?**
+Tap **only** the whole word that fills the blank (**कः**). Do **not** tap a second tile.
+Then: **किम्**, **का**, **कुत्र**, more **कः** / **का** / **किम्** with new sentences.
+
+If two tiles are gold, tap the wrong one again to clear it.
+
 
 ---
 
