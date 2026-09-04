@@ -66,9 +66,17 @@
 बालिका उच्चैः हसति।|The girl laughs loudly.|हसति|play
 छात्रः पत्रं लिखति।|The student writes a letter.|लिखति|play
 पत्रं वृक्षात् पतति।|The leaf falls from the tree.|पतति|play
-माता भोजनं करोति।|The mother makes the meal.|करोति|play
+माता भोजनं करोति।|Mother makes/prepares food.|करोति|play
 शिशुः चन्द्रं पश्यति।|The baby sees the moon.|पश्यति|play
 मार्जारः दुग्धं पिबति।|The cat drinks milk.|पिबति|play
 मित्रं कन्दुकेन क्रीडति।|The friend plays with a ball.|क्रीडति|play
 सा पुस्तकं पठति।|She reads a book.|पठति|play
 सूर्यः उदयति।|The sun rises.|उदयति|play
+बालकः प्रातरं उत्तिष्ठति।|The boy wakes up in the morning.|उत्तिष्ठति|play
+सा देवाय नमस्करोति।|She bows to God.|नमस्करोति|play
+शिशुः कथां शृणोति।|The baby listens to a story.|शृणोति|play
+मार्जारः आसन्दे निद्रायते।|The cat sleeps on the chair.|निद्रायते|play
+पिता द्वारं उद्घाटयति।|The father opens the door.|उद्घाटयति|play
+अनुजः पुस्तकं पिदधाति।|The younger brother closes the book.|पिदधाति|play
+माता फलं क्रीणाति।|The mother buys a fruit.|क्रीणाति|play
+जनकः धनं ददाति।|The father gives money.|ददाति|play
