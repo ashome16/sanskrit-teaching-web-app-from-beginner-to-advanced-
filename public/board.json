@@ -102,10 +102,10 @@
           "कुत्र",
           "कः"
         ],
-        "sentence": "पुस्तकम् कुत्र अस्ति?",
-        "english": "Where is the book?",
+        "sentence": "पुस्तकम् कुत्र पतति?",
+        "english": "Where is the book falling?",
         "highlight": "कुत्र",
-        "prompt": "पुस्तकम् ____ अस्ति?",
+        "prompt": "पुस्तकम् ____ पतति?",
         "phase": "prashna"
       },
       {
