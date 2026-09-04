@@ -168,6 +168,7 @@ const Board: React.FC = () => {
 
   const chooseShelf = (nextShelf: ShelfId) => {
     setActiveShelf(nextShelf);
+    setPuzzleIndexByShelf((current) => ({ ...current, [nextShelf]: 0 }));
     setChecked(false);
     setWrongAttempt(false);
     setChosen([]);
@@ -210,11 +211,12 @@ const Board: React.FC = () => {
     }
   };
 
-  const hasNextPuzzle = isCorrect && puzzleIndex + 1 < activePuzzles.length;
+  const hasNextPuzzle = isCorrect && activePuzzles.length > 0;
 
   const chooseNextPuzzle = () => {
     if (!hasNextPuzzle) return;
-    setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: puzzleIndex + 1 }));
+    const nextIndex = activePuzzles.length ? (puzzleIndex + 1) % activePuzzles.length : 0;
+    setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: nextIndex }));
     setChecked(false);
     setWrongAttempt(false);
     setChosen([]);
@@ -270,7 +272,7 @@ const Board: React.FC = () => {
             <p className="result-sanskrit">{highlightedSentence(activePuzzle.sentence, activePuzzle.highlight, activePuzzle.tapHighlight)}</p>
             <p className="result-english">{activePuzzle.english}</p>
             {activePuzzle.seed && <p className="result-seed">{activePuzzle.seed}</p>}
-            {hasNextPuzzle && <button className="next-button" type="button" onClick={chooseNextPuzzle}>Next</button>}
+            {hasNextPuzzle && <button className="next-button" type="button" onClick={chooseNextPuzzle}>{puzzleIndex + 1 >= activePuzzles.length ? 'Again' : 'Next'}</button>}
           </div>
         )}
         {wrongAttempt && (
