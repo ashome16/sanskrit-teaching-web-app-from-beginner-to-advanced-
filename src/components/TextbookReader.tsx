@@ -50,7 +50,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 }) => {
   const activeLesson = lessons.find((lesson) => lesson.id === activeLessonId);
   const isVarnamala = activeLessonId === 'varnamala';
-  const isGroupedLesson = isVarnamala || activeLessonId === 'numbers';
+  const isGroupedLesson = isVarnamala || activeLessonId === 'numbers' || activeLessonId === 'barakhadi';
   const [isChartOpen, setIsChartOpen] = useState(false);
   const sectionJumps = buildSectionJumps(activeLesson);
   const currentJumpIndex = (() => {
@@ -128,6 +128,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         <h2>{activeLesson?.title}</h2>
         {activeLesson && (
           <p className="textbook-reader-source">Source Material: {activeLesson.fileName}</p>
+        )}
+        {activeLessonId === 'barakhadi' && (
+          <p className="textbook-glossary-hint" style={{ marginTop: '.35rem' }}>
+            Tap any अक्षर to hear it. Rows follow क का कि की… कं कः.
+          </p>
         )}
         {!isGroupedLesson && (
           <span className="textbook-reader-progress">
