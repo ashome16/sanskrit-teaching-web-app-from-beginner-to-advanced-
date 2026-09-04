@@ -9,6 +9,8 @@ export interface LessonSentence {
   kind?: string;
   sanskrit_gloss?: string;
   hindi_gloss?: string;
+  answer_sanskrit?: string;
+  answer_label?: string;
 }
 
 export interface Lesson {
