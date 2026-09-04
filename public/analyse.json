@@ -503,15 +503,15 @@
   },
   "अयोग्यः": {
     "word": "अयोग्यः",
-    "base_english": "Incapable",
+    "base_english": "Incapable / Unqualified",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Incapable"
+        "meaning": "Incapable / Unqualified"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "अयोग्य"
+        "meaning": "योग्यता से रहित / बेकार"
       }
     }
   },
@@ -1618,6 +1618,76 @@
       "hi": {
         "label": "हिन्दी",
         "meaning": "सम्मानित / पूजनीय"
+      }
+    }
+  },
+  "अस्माकं": {
+    "word": "अस्माकं",
+    "base_english": "Our",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Our"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हमारे"
+      }
+    }
+  },
+  "एतादृशं": {
+    "word": "एतादृशं",
+    "base_english": "Like this / Such",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Like this / Such"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इस प्रकार का"
+      }
+    }
+  },
+  "युक्तो": {
+    "word": "युक्तो",
+    "base_english": "Possessing / Endowed with",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Possessing / Endowed with"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जुड़ा हुआ / सहित"
+      }
+    }
+  },
+  "नरो": {
+    "word": "नरो",
+    "base_english": "Man / Human",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Man / Human"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्य / आदमी"
+      }
+    }
+  },
+  "पुरुषो": {
+    "word": "पुरुषो",
+    "base_english": "Person / Man",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Person / Man"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्य"
       }
     }
   }
