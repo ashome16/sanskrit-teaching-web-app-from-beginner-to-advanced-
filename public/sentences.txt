@@ -36,3 +36,11 @@
 सा अन्नं पचति।|She cooks food.|अन्नं|vastu
 पत्रं पतति।|The letter falls.|पत्रं|vastu
 मम हस्ते धनम् अस्ति।|Money is in my hand.|धनम्|vastu
+गृहं विशालं अस्ति।|The house is big.|गृहं|naksha
+मार्गः दीर्घः अस्ति।|The path is long.|मार्गः|naksha
+अहं नगरं पश्यामि।|I see the city.|नगरं|naksha
+पर्वतः उच्चैः अस्ति।|The mountain is high.|पर्वतः|naksha
+वनं हरितं अस्ति।|The forest is green.|वनं|naksha
+सः ग्रामे वसति।|He lives in the village.|ग्रामे|naksha
+आपणः अत्र अस्ति।|The shop is here.|आपणः|naksha
+कृषकः क्षेत्रं गच्छति।|The farmer goes to the field.|क्षेत्रं|naksha
