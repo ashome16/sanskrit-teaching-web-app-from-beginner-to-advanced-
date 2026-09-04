@@ -3412,5 +3412,75 @@
         "meaning": "और हिमालय पर्वत के ही"
       }
     }
+  },
+  "जलबिन्दुनिपातेन": {
+    "word": "जलबिन्दुनिपातेन",
+    "base_english": "By the falling of water drops",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By the falling of water drops"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पानी की बूंदों के गिरने से"
+      }
+    }
+  },
+  "जलबिन्दु": {
+    "word": "जलबिन्दु",
+    "base_english": "Water drop",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Water drop"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पानी की बूंद"
+      }
+    }
+  },
+  "सर्वविद्यानां": {
+    "word": "सर्वविद्यानां",
+    "base_english": "Of all sciences/knowledge",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of all sciences/knowledge"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सभी प्रकार की विद्याओं/ज्ञान का"
+      }
+    }
+  },
+  "सर्वविद्यानाम्": {
+    "word": "सर्वविद्यानाम्",
+    "base_english": "Of all sciences/knowledge",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of all sciences/knowledge"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सभी प्रकार की विद्याओं/ज्ञान का"
+      }
+    }
+  },
+  "चैव": {
+    "word": "चैव",
+    "base_english": "And indeed",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "And indeed"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "और ही"
+      }
+    }
   }
 }
