@@ -254,9 +254,15 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
           {/* Meaning — from dictionary entry or sealed analyse.json glosses */}
           <section className="wac-section">
             <h3 className="wac-section-title">Meaning</h3>
-            {displayMeaning ? (
+            {displayMeaning || glossEntry?.sanskrit_gloss ? (
               <div className="wac-meaning-block">
-                <p className="wac-meaning-english">{displayMeaning}</p>
+                {displayMeaning ? <p className="wac-meaning-english">{displayMeaning}</p> : null}
+                {glossEntry?.sanskrit_gloss ? (
+                  <p className="wac-meaning-sanskrit">
+                    <span className="wac-meaning-lang">संस्कृतम्</span>
+                    {glossEntry.sanskrit_gloss}
+                  </p>
+                ) : null}
                 {regionalGlosses.map(([code, item]) => (
                   <p key={code} className="wac-meaning-regional">
                     <span className="wac-meaning-lang">{item.label}</span>
@@ -273,7 +279,10 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
           <section className="wac-section">
             <h3 className="wac-section-title">Etymology</h3>
             <p className="wac-etymology">
-              {word.etymology || 'Etymology details unavailable for custom input.'}
+              {word.etymology
+                || glossEntry?.etymology
+                || glossEntry?.grammar
+                || 'Etymology details unavailable for custom input.'}
             </p>
           </section>
 
