@@ -1447,6 +1447,870 @@
           "sanskrit_gloss": "अन्येभ्यः कष्टप्रदानम्",
           "hindi_gloss": "दूसरों को सताना",
           "paragraphTranslation": "अन्येभ्यः कष्टप्रदानम् · Bothering others / causing pain to others · दूसरों को सताना"
+        },
+        {
+          "sanskrit": "वयम् अभ्यासम् कुर्मः",
+          "meaning": "Exercises · पृष्ठम् २३–२६ · with answers",
+          "words": [
+            "वयम्",
+            "अभ्यासम्",
+            "कुर्मः"
+          ],
+          "kind": "exercise-header",
+          "category": "अभ्यासः"
+        },
+        {
+          "sanskrit": "१. एकपदेन लिखन्तु",
+          "meaning": "Answer in one word",
+          "words": [
+            "१",
+            "एकपदेन",
+            "लिखन्तु"
+          ],
+          "kind": "exercise-header",
+          "category": "अभ्यासः"
+        },
+        {
+          "sanskrit": "नरः कतिभिः वकारैः पूजितः भवति?",
+          "meaning": "Five",
+          "words": [
+            "पञ्चभिः",
+            "नरः",
+            "कतिभिः",
+            "वकारैः",
+            "पूजितः",
+            "भवति"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "पञ्चभिः",
+          "answer_label": "उत्तरम्",
+          "sanskrit_gloss": "पञ्चभिः",
+          "hindi_gloss": "",
+          "paragraphTranslation": "Five"
+        },
+        {
+          "sanskrit": "पुरुषेण कति दोषाः हातव्याः?",
+          "meaning": "Six",
+          "words": [
+            "षड्",
+            "पुरुषेण",
+            "कति",
+            "दोषाः",
+            "हातव्याः"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "षड्",
+          "answer_label": "उत्तरम्",
+          "sanskrit_gloss": "षड्",
+          "hindi_gloss": "",
+          "paragraphTranslation": "Six"
+        },
+        {
+          "sanskrit": "बुद्धिः केन शुध्यति?",
+          "meaning": "By knowledge",
+          "words": [
+            "ज्ञानेन",
+            "बुद्धिः",
+            "केन",
+            "शुध्यति"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "ज्ञानेन",
+          "answer_label": "उत्तरम्",
+          "sanskrit_gloss": "ज्ञानेन",
+          "hindi_gloss": "",
+          "paragraphTranslation": "By knowledge"
+        },
+        {
+          "sanskrit": "जलबिन्दुनिपातेन क्रमशः कः पूर्यते?",
+          "meaning": "The pot",
+          "words": [
+            "घटः",
+            "जलबिन्दुनिपातेन",
+            "क्रमशः",
+            "कः",
+            "पूर्यते"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "घटः",
+          "answer_label": "उत्तरम्",
+          "sanskrit_gloss": "घटः",
+          "hindi_gloss": "",
+          "paragraphTranslation": "The pot"
+        },
+        {
+          "sanskrit": "आलस्यं केषां महान् रिपुः अस्ति?",
+          "meaning": "Of human beings",
+          "words": [
+            "मनुष्याणाम्",
+            "आलस्यं",
+            "केषां",
+            "महान्",
+            "रिपुः",
+            "अस्ति"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "मनुष्याणाम्",
+          "answer_label": "उत्तरम्",
+          "sanskrit_gloss": "मनुष्याणाम्",
+          "hindi_gloss": "",
+          "paragraphTranslation": "Of human beings"
+        },
+        {
+          "sanskrit": "२. पूर्णवाक्येन लिखन्तु",
+          "meaning": "Answer in a full sentence",
+          "words": [
+            "२",
+            "पूर्णवाक्येन",
+            "लिखन्तु"
+          ],
+          "kind": "exercise-header",
+          "category": "अभ्यासः"
+        },
+        {
+          "sanskrit": "नरः कथं पूजितो भवति?",
+          "meaning": "",
+          "words": [
+            "नरः",
+            "वस्त्रेण",
+            "वपुषा",
+            "वाचा",
+            "विद्यया",
+            "विनयेन",
+            "च",
+            "एतैः",
+            "पञ्चभिः",
+            "वकारैः",
+            "युक्तः",
+            "पूजितो",
+            "भवति।",
+            "कथं",
+            "भवति"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "नरः वस्त्रेण, वपुषा, वाचा, विद्यया, विनयेन च एतैः पञ्चभिः वकारैः युक्तः पूजितो भवति।",
+          "answer_label": "उत्तरम्",
+          "sanskrit_gloss": "नरः वस्त्रेण, वपुषा, वाचा, विद्यया, विनयेन च एतैः पञ्चभिः वकारैः युक्तः पूजितो भवति।",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "पुरुषेण के दोषाः हातव्याः?",
+          "meaning": "",
+          "words": [
+            "भूतिम्",
+            "इच्छता",
+            "पुरुषेण",
+            "निद्रा",
+            "तन्द्रा",
+            "भयम्",
+            "क्रोधः",
+            "आलस्यम्",
+            "दीर्घसूत्रता",
+            "च",
+            "एते",
+            "षड्",
+            "दोषाः",
+            "हातव्याः।",
+            "के",
+            "हातव्याः"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "भूतिम् इच्छता पुरुषेण निद्रा, तन्द्रा, भयम्, क्रोधः, आलस्यम्, दीर्घसूत्रता च एते षड् दोषाः हातव्याः।",
+          "answer_label": "उत्तरम्",
+          "sanskrit_gloss": "भूतिम् इच्छता पुरुषेण निद्रा, तन्द्रा, भयम्, क्रोधः, आलस्यम्, दीर्घसूत्रता च एते षड् दोषाः हातव्याः।",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "कस्य बुद्धिः विस्तारिता भवति?",
+          "meaning": "",
+          "words": [
+            "यः",
+            "पठति",
+            "लिखति",
+            "पश्यति",
+            "परिपृच्छति",
+            "पण्डितान्",
+            "च",
+            "उपाश्रयति",
+            "तस्य",
+            "बुद्धिः",
+            "विस्तारिता",
+            "भवति।",
+            "कस्य",
+            "भवति"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "यः पठति, लिखति, पश्यति, परिपृच्छति, पण्डितान् च उपाश्रयति, तस्य बुद्धिः विस्तारिता भवति।",
+          "answer_label": "उत्तरम्",
+          "sanskrit_gloss": "यः पठति, लिखति, पश्यति, परिपृच्छति, पण्डितान् च उपाश्रयति, तस्य बुद्धिः विस्तारिता भवति।",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "किं कृत्वा मनुष्यः नावसीदति?",
+          "meaning": "By making effort a person does not sink.",
+          "words": [
+            "उद्यमम्",
+            "परिश्रमम्",
+            "कृत्वा",
+            "मनुष्यः",
+            "न",
+            "अवसीदति।",
+            "किं",
+            "नावसीदति"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "उद्यमम् (परिश्रमम्) कृत्वा मनुष्यः न अवसीदति।",
+          "answer_label": "उत्तरम्",
+          "sanskrit_gloss": "उद्यमम् (परिश्रमम्) कृत्वा मनुष्यः न अवसीदति।",
+          "hindi_gloss": "",
+          "paragraphTranslation": "By making effort a person does not sink."
+        },
+        {
+          "sanskrit": "व्यासस्य वचनद्वयं किम्?",
+          "meaning": "",
+          "words": [
+            "व्यासस्य",
+            "वचनद्वयम्",
+            "अस्ति",
+            "परोपकारः",
+            "पुण्याय",
+            "पापाय",
+            "च",
+            "परपीडनम्।",
+            "वचनद्वयं",
+            "किम्"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "व्यासस्य वचनद्वयम् अस्ति— परोपकारः पुण्याय, पापाय च परपीडनम्।",
+          "answer_label": "उत्तरम्",
+          "sanskrit_gloss": "व्यासस्य वचनद्वयम् अस्ति— परोपकारः पुण्याय, पापाय च परपीडनम्।",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "३. श्लोकांशान् यथोचितं योजयन्तु",
+          "meaning": "Match the verse segments",
+          "words": [
+            "३",
+            "श्लोकांशान्",
+            "यथोचितं",
+            "योजयन्तु"
+          ],
+          "kind": "exercise-header",
+          "category": "अभ्यासः"
+        },
+        {
+          "sanskrit": "विद्यया वपुषा वाचा वस्त्रेण विनयेन च।",
+          "meaning": "",
+          "words": [
+            "वकारैः",
+            "पञ्चभिर्युक्तो",
+            "नरो",
+            "भवति",
+            "पूजितः॥",
+            "विद्यया",
+            "वपुषा",
+            "वाचा",
+            "वस्त्रेण",
+            "विनयेन",
+            "च।"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "वकारैः पञ्चभिर्युक्तो नरो भवति पूजितः॥",
+          "answer_label": "मेलनम्",
+          "sanskrit_gloss": "वकारैः पञ्चभिर्युक्तो नरो भवति पूजितः॥",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "षड्दोषाः पुरुषेणेह हातव्या भूतिमिच्छता।",
+          "meaning": "",
+          "words": [
+            "निद्रा",
+            "तन्द्रा",
+            "भयं",
+            "क्रोध",
+            "आलस्यं",
+            "दीर्घसूत्रता॥",
+            "षड्दोषाः",
+            "पुरुषेणेह",
+            "हातव्या",
+            "भूतिमिच्छता।"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "निद्रा तन्द्रा भयं क्रोध आलस्यं दीर्घसूत्रता॥",
+          "answer_label": "मेलनम्",
+          "sanskrit_gloss": "निद्रा तन्द्रा भयं क्रोध आलस्यं दीर्घसूत्रता॥",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "अद्भिर्गात्राणि शुध्यन्ति मनः सत्येन शुध्यति।",
+          "meaning": "",
+          "words": [
+            "विद्यातपोभ्यां",
+            "भूतात्मा",
+            "बुद्धिर्ज्ञानेन",
+            "शुध्यति॥",
+            "अद्भिर्गात्राणि",
+            "शुध्यन्ति",
+            "मनः",
+            "सत्येन",
+            "शुध्यति।"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "विद्यातपोभ्यां भूतात्मा बुद्धिर्ज्ञानेन शुध्यति॥",
+          "answer_label": "मेलनम्",
+          "sanskrit_gloss": "विद्यातपोभ्यां भूतात्मा बुद्धिर्ज्ञानेन शुध्यति॥",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्।",
+          "meaning": "",
+          "words": [
+            "वर्षं",
+            "तद्",
+            "भारतं",
+            "नाम",
+            "भारती",
+            "यत्र",
+            "सन्ततिः॥",
+            "उत्तरं",
+            "यत्",
+            "समुद्रस्य",
+            "हिमाद्रेश्चैव",
+            "दक्षिणम्।"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "वर्षं तद् भारतं नाम भारती यत्र सन्ततिः॥",
+          "answer_label": "मेलनम्",
+          "sanskrit_gloss": "वर्षं तद् भारतं नाम भारती यत्र सन्ततिः॥",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "जलबिन्दुनिपातेन क्रमशः पूर्यते घटः।",
+          "meaning": "",
+          "words": [
+            "स",
+            "हेतुः",
+            "सर्वविद्यानां",
+            "धर्मस्य",
+            "च",
+            "धनस्य",
+            "च॥",
+            "जलबिन्दुनिपातेन",
+            "क्रमशः",
+            "पूर्यते",
+            "घटः।"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "स हेतुः सर्वविद्यानां धर्मस्य च धनस्य च॥",
+          "answer_label": "मेलनम्",
+          "sanskrit_gloss": "स हेतुः सर्वविद्यानां धर्मस्य च धनस्य च॥",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "४. समानार्थकान् श्लोकांशान् लिखन्तु",
+          "meaning": "Find matching lines from the text",
+          "words": [
+            "४",
+            "समानार्थकान्",
+            "श्लोकांशान्",
+            "लिखन्तु"
+          ],
+          "kind": "exercise-header",
+          "category": "अभ्यासः"
+        },
+        {
+          "sanskrit": "मधुरवाण्या सर्वे प्रसन्नाः भवन्ति।",
+          "meaning": "",
+          "words": [
+            "प्रियवाक्यप्रदानेन",
+            "सर्वे",
+            "तुष्यन्ति",
+            "जन्तवः।",
+            "मधुरवाण्या",
+            "प्रसन्नाः",
+            "भवन्ति।"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः।",
+          "answer_label": "श्लोकांशः",
+          "sanskrit_gloss": "प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः।",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "परिश्रमेण तुल्यः बान्धवः नास्ति।",
+          "meaning": "",
+          "words": [
+            "नास्त्युद्यमसमो",
+            "बन्धुः",
+            "कृत्वा",
+            "यं",
+            "नावसीदति॥",
+            "परिश्रमेण",
+            "तुल्यः",
+            "बान्धवः",
+            "नास्ति।"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "नास्त्युद्यमसमो बन्धुः कृत्वा यं नावसीदति॥",
+          "answer_label": "श्लोकांशः",
+          "sanskrit_gloss": "नास्त्युद्यमसमो बन्धुः कृत्वा यं नावसीदति॥",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "परोपकारेण मानवस्य पुण्यार्जनं भवति।",
+          "meaning": "",
+          "words": [
+            "परोपकारः",
+            "पुण्याय",
+            "पापाय",
+            "परपीडनम्॥",
+            "परोपकारेण",
+            "मानवस्य",
+            "पुण्यार्जनं",
+            "भवति।"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "परोपकारः पुण्याय पापाय परपीडनम्॥",
+          "answer_label": "श्लोकांशः",
+          "sanskrit_gloss": "परोपकारः पुण्याय पापाय परपीडनम्॥",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "हिन्दमहासागरात् हिमालयपर्यन्तं भारतवर्षम्।",
+          "meaning": "",
+          "words": [
+            "उत्तरं",
+            "यत्",
+            "समुद्रस्य",
+            "हिमाद्रेश्चैव",
+            "दक्षिणम्।",
+            "वर्षं",
+            "तद्",
+            "भारतं",
+            "नाम",
+            "॥",
+            "हिन्दमहासागरात्",
+            "हिमालयपर्यन्तं",
+            "भारतवर्षम्।"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्। वर्षं तद् भारतं नाम…॥",
+          "answer_label": "श्लोकांशः",
+          "sanskrit_gloss": "उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्। वर्षं तद् भारतं नाम…॥",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "५. पर्यायपदानि लिखन्तु",
+          "meaning": "Write synonyms · यथा – वपुः – शरीरम्",
+          "words": [
+            "५",
+            "पर्यायपदानि",
+            "लिखन्तु"
+          ],
+          "kind": "exercise-header",
+          "category": "अभ्यासः"
+        },
+        {
+          "sanskrit": "जलम्",
+          "meaning": "water",
+          "words": [
+            "अम्भः",
+            "तोयम्",
+            "सलिलम्",
+            "जलम्"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "अम्भः / तोयम् / सलिलम्",
+          "answer_label": "पर्यायः",
+          "sanskrit_gloss": "अम्भः / तोयम् / सलिलम्",
+          "hindi_gloss": "",
+          "paragraphTranslation": "water"
+        },
+        {
+          "sanskrit": "लोचनम्",
+          "meaning": "eye",
+          "words": [
+            "नेत्रम्",
+            "नयनम्",
+            "लोचनम्"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "नेत्रम् / नयनम्",
+          "answer_label": "पर्यायः",
+          "sanskrit_gloss": "नेत्रम् / नयनम्",
+          "hindi_gloss": "",
+          "paragraphTranslation": "eye"
+        },
+        {
+          "sanskrit": "धनम्",
+          "meaning": "wealth",
+          "words": [
+            "द्रव्यम्",
+            "वित्तम्",
+            "वसु",
+            "धनम्"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "द्रव्यम् / वित्तम् / वसु",
+          "answer_label": "पर्यायः",
+          "sanskrit_gloss": "द्रव्यम् / वित्तम् / वसु",
+          "hindi_gloss": "",
+          "paragraphTranslation": "wealth"
+        },
+        {
+          "sanskrit": "बुद्धिः",
+          "meaning": "intellect",
+          "words": [
+            "मनीषा",
+            "प्रज्ञा",
+            "मतिः",
+            "बुद्धिः"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "मनीषा / प्रज्ञा / मतिः",
+          "answer_label": "पर्यायः",
+          "sanskrit_gloss": "मनीषा / प्रज्ञा / मतिः",
+          "hindi_gloss": "",
+          "paragraphTranslation": "intellect"
+        },
+        {
+          "sanskrit": "रिपुः",
+          "meaning": "enemy",
+          "words": [
+            "शत्रुः",
+            "वैरी",
+            "अरातिः",
+            "रिपुः"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "शत्रुः / वैरी / अरातिः",
+          "answer_label": "पर्यायः",
+          "sanskrit_gloss": "शत्रुः / वैरी / अरातिः",
+          "hindi_gloss": "",
+          "paragraphTranslation": "enemy"
+        },
+        {
+          "sanskrit": "६. तृतीयाविभक्तेः रिक्तस्थानानि पूरयन्तु",
+          "meaning": "3rd case · singular / dual / plural (answers filled)",
+          "words": [
+            "६",
+            "तृतीयाविभक्तेः",
+            "रिक्तस्थानानि",
+            "पूरयन्तु"
+          ],
+          "kind": "exercise-header",
+          "category": "अभ्यासः"
+        },
+        {
+          "sanskrit": "सुधाखण्डेन",
+          "meaning": "Dual: सुधाखण्डाभ्याम् · Plural: सुधाखण्डैः",
+          "words": [
+            "सुधाखण्डेन",
+            "सुधाखण्डाभ्याम्",
+            "सुधाखण्डैः"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "सुधाखण्डेन · सुधाखण्डाभ्याम् · सुधाखण्डैः",
+          "answer_label": "एक · द्वि · बहु",
+          "sanskrit_gloss": "सुधाखण्डेन · सुधाखण्डाभ्याम् · सुधाखण्डैः",
+          "hindi_gloss": "",
+          "paragraphTranslation": "Instrumental singular · dual · plural"
+        },
+        {
+          "sanskrit": "वृक्षेण",
+          "meaning": "Dual: वृक्षाभ्याम् · Plural: वृक्षैः",
+          "words": [
+            "वृक्षेण",
+            "वृक्षाभ्याम्",
+            "वृक्षैः"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "वृक्षेण · वृक्षाभ्याम् · वृक्षैः",
+          "answer_label": "एक · द्वि · बहु",
+          "sanskrit_gloss": "वृक्षेण · वृक्षाभ्याम् · वृक्षैः",
+          "hindi_gloss": "",
+          "paragraphTranslation": "Instrumental singular · dual · plural"
+        },
+        {
+          "sanskrit": "लतया",
+          "meaning": "Dual: लताभ्याम् · Plural: लताभिः",
+          "words": [
+            "लतया",
+            "लताभ्याम्",
+            "लताभिः"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "लतया · लताभ्याम् · लताभिः",
+          "answer_label": "एक · द्वि · बहु",
+          "sanskrit_gloss": "लतया · लताभ्याम् · लताभिः",
+          "hindi_gloss": "",
+          "paragraphTranslation": "Instrumental singular · dual · plural"
+        },
+        {
+          "sanskrit": "देशेन",
+          "meaning": "Dual: देशाभ्याम् · Plural: देशैः",
+          "words": [
+            "देशेन",
+            "देशाभ्याम्",
+            "देशैः"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "देशेन · देशाभ्याम् · देशैः",
+          "answer_label": "एक · द्वि · बहु",
+          "sanskrit_gloss": "देशेन · देशाभ्याम् · देशैः",
+          "hindi_gloss": "",
+          "paragraphTranslation": "Instrumental singular · dual · plural"
+        },
+        {
+          "sanskrit": "पुण्येन",
+          "meaning": "Dual: पुण्याभ्याम् · Plural: पुण्यैः",
+          "words": [
+            "पुण्येन",
+            "पुण्याभ्याम्",
+            "पुण्यैः"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "पुण्येन · पुण्याभ्याम् · पुण्यैः",
+          "answer_label": "एक · द्वि · बहु",
+          "sanskrit_gloss": "पुण्येन · पुण्याभ्याम् · पुण्यैः",
+          "hindi_gloss": "",
+          "paragraphTranslation": "Instrumental singular · dual · plural"
+        },
+        {
+          "sanskrit": "विनयेन",
+          "meaning": "Dual: विनयाभ्याम् · Plural: विनयैः",
+          "words": [
+            "विनयेन",
+            "विनयाभ्याम्",
+            "विनयैः"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "विनयेन · विनयाभ्याम् · विनयैः",
+          "answer_label": "एक · द्वि · बहु",
+          "sanskrit_gloss": "विनयेन · विनयाभ्याम् · विनयैः",
+          "hindi_gloss": "",
+          "paragraphTranslation": "Instrumental singular · dual · plural"
+        },
+        {
+          "sanskrit": "७. कोष्ठके पदानि विलिख्य सुभाषितं पूरयन्तु",
+          "meaning": "Complete the verses",
+          "words": [
+            "७",
+            "कोष्ठके",
+            "पदानि",
+            "विलिख्य",
+            "सुभाषितं",
+            "पूरयन्तु"
+          ],
+          "kind": "exercise-header",
+          "category": "अभ्यासः"
+        },
+        {
+          "sanskrit": "प्रथमं सुभाषितम् (श्लोक ४)",
+          "meaning": "",
+          "words": [
+            "उत्तरं",
+            "यत्",
+            "समुद्रस्य",
+            "हिमाद्रेश्चैव",
+            "दक्षिणम्।",
+            "वर्षं",
+            "तद्",
+            "भारतं",
+            "नाम",
+            "भारती",
+            "यत्र",
+            "सन्ततिः॥",
+            "प्रथमं",
+            "सुभाषितम्",
+            "श्लोक",
+            "४"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्।\nवर्षं तद् भारतं नाम भारती यत्र सन्ततिः॥",
+          "answer_label": "पूरितम्",
+          "sanskrit_gloss": "उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्।\nवर्षं तद् भारतं नाम भारती यत्र सन्ततिः॥",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "द्वितीयं सुभाषितम् (श्लोक ७)",
+          "meaning": "",
+          "words": [
+            "प्रियवाक्यप्रदानेन",
+            "सर्वे",
+            "तुष्यन्ति",
+            "जन्तवः।",
+            "तस्मात्",
+            "तदेव",
+            "वक्तव्यं",
+            "वचने",
+            "का",
+            "दरिद्रता॥",
+            "द्वितीयं",
+            "सुभाषितम्",
+            "श्लोक",
+            "७"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः।\nतस्मात् तदेव वक्तव्यं वचने का दरिद्रता॥",
+          "answer_label": "पूरितम्",
+          "sanskrit_gloss": "प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः।\nतस्मात् तदेव वक्तव्यं वचने का दरिद्रता॥",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "८. रिक्तस्थानानि पूरयन्तु",
+          "meaning": "Fill in the blanks (answered)",
+          "words": [
+            "८",
+            "रिक्तस्थानानि",
+            "पूरयन्तु"
+          ],
+          "kind": "exercise-header",
+          "category": "अभ्यासः"
+        },
+        {
+          "sanskrit": "(क)",
+          "meaning": "",
+          "words": [
+            "आलस्यं",
+            "हि",
+            "मनुष्याणां",
+            "शरीरस्थो",
+            "महान्",
+            "रिपुः।",
+            "क"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "आलस्यं हि मनुष्याणां शरीरस्थो महान् रिपुः।",
+          "answer_label": "पूरितम्",
+          "sanskrit_gloss": "आलस्यं हि मनुष्याणां शरीरस्थो महान् रिपुः।",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "(ख)",
+          "meaning": "",
+          "words": [
+            "तस्मात्तदेव",
+            "वक्तव्यं",
+            "वचने",
+            "का",
+            "दरिद्रता।",
+            "ख"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "तस्मात्तदेव वक्तव्यं वचने का दरिद्रता।",
+          "answer_label": "पूरितम्",
+          "sanskrit_gloss": "तस्मात्तदेव वक्तव्यं वचने का दरिद्रता।",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "(ग)",
+          "meaning": "",
+          "words": [
+            "यः",
+            "पठति",
+            "लिखति",
+            "पृच्छति",
+            "पण्डितानुपाश्रयति।",
+            "ग"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "यः पठति लिखति पृच्छति पण्डितानुपाश्रयति।",
+          "answer_label": "पूरितम्",
+          "sanskrit_gloss": "यः पठति लिखति पृच्छति पण्डितानुपाश्रयति।",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "(घ)",
+          "meaning": "",
+          "words": [
+            "स",
+            "हेतुः",
+            "सर्वविद्यानां",
+            "धर्मस्य",
+            "च",
+            "धनस्य",
+            "च।",
+            "घ"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "स हेतुः सर्वविद्यानां धर्मस्य च धनस्य च।",
+          "answer_label": "पूरितम्",
+          "sanskrit_gloss": "स हेतुः सर्वविद्यानां धर्मस्य च धनस्य च।",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
+        },
+        {
+          "sanskrit": "(ङ)",
+          "meaning": "",
+          "words": [
+            "विद्यातपोभ्यां",
+            "भूतात्मा",
+            "बुद्धिर्ज्ञानेन",
+            "शुध्यति।",
+            "ङ"
+          ],
+          "kind": "exercise-qa",
+          "category": "अभ्यासः",
+          "answer_sanskrit": "विद्यातपोभ्यां भूतात्मा बुद्धिर्ज्ञानेन शुध्यति।",
+          "answer_label": "पूरितम्",
+          "sanskrit_gloss": "विद्यातपोभ्यां भूतात्मा बुद्धिर्ज्ञानेन शुध्यति।",
+          "hindi_gloss": "",
+          "paragraphTranslation": ""
         }
       ]
     }
