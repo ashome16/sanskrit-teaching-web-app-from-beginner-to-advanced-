@@ -29,7 +29,9 @@
           "इ",
           "उ"
         ],
-        "english": "ma, as in mother"
+        "english": "Do not go.",
+        "sentence": "मा गच्छ।",
+        "highlight": "मा"
       },
       {
         "target": "सा",
@@ -55,7 +57,9 @@
           "म",
           "स"
         ],
-        "english": "the boy reads"
+        "english": "The boy plays.",
+        "sentence": "बालः क्रीडति।",
+        "highlight": "बालः"
       }
     ]
   },

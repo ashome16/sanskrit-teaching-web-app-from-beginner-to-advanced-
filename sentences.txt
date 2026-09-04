@@ -44,3 +44,5 @@
 सः ग्रामे वसति।|He lives in the village.|ग्रामे|naksha
 आपणः अत्र अस्ति।|The shop is here.|आपणः|naksha
 कृषकः क्षेत्रं गच्छति।|The farmer goes to the field.|क्षेत्रं|naksha
+मा गच्छ।|Do not go.|मा|beginners
+बालः क्रीडति।|The boy plays.|बालः|beginners
