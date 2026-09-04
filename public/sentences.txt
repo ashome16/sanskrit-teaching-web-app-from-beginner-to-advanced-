@@ -46,7 +46,7 @@
 कृषकः क्षेत्रं गच्छति।|The farmer goes to the field.|क्षेत्रं|naksha
 मा गच्छ।|Do not go.|मा|beginners
 बालः क्रीडति।|The boy plays.|बालः|beginners
-कः बालकः धावति?|Who is the boy running?|कः|beginners
+कः तत्र उपविशति?|Who is sitting there?|कः|beginners
 तत् किम् फलम् अस्ति?|What fruit is that?|किम्|beginners
 का महिला गायति?|Who is the woman singing?|का|beginners
 पुस्तकम् कुत्र अस्ति?|Where is the book?|कुत्र|beginners
