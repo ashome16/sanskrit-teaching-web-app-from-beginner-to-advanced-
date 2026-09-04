@@ -88,3 +88,9 @@
 पिता ग्रन्थं पठति।|The father reads the scripture.|ग्रन्थं|sanskriti
 सा तिलकं धरति।|She wears a tilak.|तिलकं|sanskriti
 एषः प्रसादः मधुरः अस्ति।|This prasad is sweet.|प्रसादः|sanskriti
+बालकः नमस्कारं करोति।|The boy does a namaskar (greets).|नमस्कारं|sanskriti
+घण्टा मधुरं नदति।|The bell rings sweetly.|घण्टा|sanskriti
+सा प्रार्थनां करोति।|She does a prayer.|प्रार्थनां|sanskriti
+धेनुः दुग्धं ददाति।|The cow gives milk.|धेनुः|sanskriti
+अतिथिः गृहं आगच्छति।|A guest comes to the house.|अतिथिः|sanskriti
+धूपः गृहं सुगन्धयति।|The incense makes the house fragrant.|धूपः|sanskriti
