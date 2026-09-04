@@ -177,12 +177,16 @@ const Board: React.FC = () => {
 
   const targetWord = ((activePuzzle?.answer ?? activePuzzle?.target) || '').normalize('NFC');
   const targetIsWholeTile = !!activePuzzle?.tiles?.some((tile) => cleanTile(tile).normalize('NFC') === targetWord);
-  const displaySkin = targetIsWholeTile ? 'प्रश्न' : (activeBoardShelf?.skin ?? '');
-  const displayPackTitle = targetIsWholeTile ? 'प्रश्न-पदानि' : packTitle;
-  const displayPackGloss = targetIsWholeTile ? 'who · what · where · when · how' : packGloss;
-  const phaseBanner = targetIsWholeTile
+  // प्रश्न-पदानि is Beginners Part 2 only — never hijack Sanskriti/Vastu रिक्तम् rows
+  const isPrashnaPart = activeShelf === 'prarambhah' && targetIsWholeTile;
+  const displaySkin = isPrashnaPart ? 'प्रश्न' : (activeBoardShelf?.skin ?? '');
+  const displayPackTitle = isPrashnaPart ? 'प्रश्न-पदानि' : packTitle;
+  const displayPackGloss = isPrashnaPart ? 'who · what · where · when · how' : packGloss;
+  const phaseBanner = isPrashnaPart
     ? 'Part 2 — question words. Click one cream tile.'
-    : (activeBoardShelf?.skin === 'जोडो' ? 'Part 1 — join letters. Click two cream tiles.' : '');
+    : (activeBoardShelf?.skin === 'जोडो' && activeShelf === 'prarambhah' && !targetIsWholeTile
+      ? 'Part 1 — join letters. Click two cream tiles.'
+      : '');
 
   // जोडो joins (क+आ) stay multi-tap. Question-words (कः on a tile) are one tap.
   const isJodoSkin = (!activeBoardShelf || activeBoardShelf.skin === 'जोडो') && !targetIsWholeTile;
@@ -230,9 +234,9 @@ const Board: React.FC = () => {
     </nav>
 
     <div className="board-tip-row">
-      <p className="board-tip">{targetIsWholeTile
+      <p className="board-tip">{isPrashnaPart
         ? 'Part 2: click ONE cream tile for the blank (who/what/where…). Then click Check. Then click Next.'
-        : (activeBoardShelf?.skin === 'जोडो'
+        : (activeBoardShelf?.skin === 'जोडो' && activeShelf === 'prarambhah' && !targetIsWholeTile
           ? 'Part 1: click TWO cream tiles — letter, then vowel आ. Then click Check. Then click Next.'
           : loopLine)}</p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
