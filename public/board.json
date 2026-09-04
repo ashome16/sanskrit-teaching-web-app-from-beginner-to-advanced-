@@ -1070,7 +1070,7 @@
           "लिखति"
         ],
         "sentence": "माता भोजनं करोति।",
-        "english": "The mother makes the meal.",
+        "english": "Mother makes/prepares food.",
         "highlight": "माता",
         "tapHighlight": "करोति"
       },
@@ -1153,6 +1153,134 @@
         "english": "The sun rises.",
         "highlight": "सूर्यः",
         "tapHighlight": "उदयति"
+      },
+      {
+        "prompt": "बालकः",
+        "target": "उत्तिष्ठति",
+        "tiles": [
+          "नमस्करोति",
+          "क्रीडति",
+          "उत्तिष्ठति",
+          "उद्घाटयति",
+          "शृणोति",
+          "करोति"
+        ],
+        "sentence": "बालकः प्रातरं उत्तिष्ठति।",
+        "english": "The boy wakes up in the morning.",
+        "highlight": "बालकः",
+        "tapHighlight": "उत्तिष्ठति"
+      },
+      {
+        "prompt": "सा",
+        "target": "नमस्करोति",
+        "tiles": [
+          "शृणोति",
+          "करोति",
+          "क्रीडति",
+          "नमस्करोति",
+          "उत्तिष्ठति",
+          "उद्घाटयति"
+        ],
+        "sentence": "सा देवाय नमस्करोति।",
+        "english": "She bows to God.",
+        "highlight": "सा",
+        "tapHighlight": "नमस्करोति"
+      },
+      {
+        "prompt": "शिशुः",
+        "target": "शृणोति",
+        "tiles": [
+          "उद्घाटयति",
+          "करोति",
+          "नमस्करोति",
+          "क्रीडति",
+          "शृणोति",
+          "उत्तिष्ठति"
+        ],
+        "sentence": "शिशुः कथां शृणोति।",
+        "english": "The baby listens to a story.",
+        "highlight": "शिशुः",
+        "tapHighlight": "शृणोति"
+      },
+      {
+        "prompt": "मार्जारः",
+        "target": "निद्रायते",
+        "tiles": [
+          "उत्तिष्ठति",
+          "उद्घाटयति",
+          "शृणोति",
+          "करोति",
+          "नमस्करोति",
+          "निद्रायते"
+        ],
+        "sentence": "मार्जारः आसन्दे निद्रायते।",
+        "english": "The cat sleeps on the chair.",
+        "highlight": "मार्जारः",
+        "tapHighlight": "निद्रायते"
+      },
+      {
+        "prompt": "पिता",
+        "target": "उद्घाटयति",
+        "tiles": [
+          "उद्घाटयति",
+          "उत्तिष्ठति",
+          "शृणोति",
+          "करोति",
+          "नमस्करोति",
+          "क्रीडति"
+        ],
+        "sentence": "पिता द्वारं उद्घाटयति।",
+        "english": "The father opens the door.",
+        "highlight": "पिता",
+        "tapHighlight": "उद्घाटयति"
+      },
+      {
+        "prompt": "अनुजः",
+        "target": "पिदधाति",
+        "tiles": [
+          "नमस्करोति",
+          "पिदधाति",
+          "उत्तिष्ठति",
+          "उद्घाटयति",
+          "शृणोति",
+          "करोति"
+        ],
+        "sentence": "अनुजः पुस्तकं पिदधाति।",
+        "english": "The younger brother closes the book.",
+        "highlight": "अनुजः",
+        "tapHighlight": "पिदधाति"
+      },
+      {
+        "prompt": "माता",
+        "target": "क्रीणाति",
+        "tiles": [
+          "करोति",
+          "नमस्करोति",
+          "क्रीणाति",
+          "उत्तिष्ठति",
+          "उद्घाटयति",
+          "शृणोति"
+        ],
+        "sentence": "माता फलं क्रीणाति।",
+        "english": "The mother buys a fruit.",
+        "highlight": "माता",
+        "tapHighlight": "क्रीणाति"
+      },
+      {
+        "prompt": "जनकः",
+        "target": "ददाति",
+        "tiles": [
+          "शृणोति",
+          "करोति",
+          "नमस्करोति",
+          "ददाति",
+          "उत्तिष्ठति",
+          "उद्घाटयति"
+        ],
+        "sentence": "जनकः धनं ददाति।",
+        "english": "The father gives money.",
+        "highlight": "जनकः",
+        "tapHighlight": "ददाति"
       }
     ]
   }
