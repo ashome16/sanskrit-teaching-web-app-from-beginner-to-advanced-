@@ -18,6 +18,7 @@ OUTPUT_PATHS = [
 # Alphabet guide, numbers guide, then Deepakam chapters from public/gsde*.txt.
 TXT_FILES = [
     ('varnamala', PUBLIC_DIR / 'varnamala.txt'),
+    ('barakhadi', PUBLIC_DIR / 'barakhadi.txt'),
     ('numbers', PUBLIC_DIR / 'numbers.txt'),
     ('gsde101', PUBLIC_DIR / 'gsde101.txt'),
     ('gsde102', PUBLIC_DIR / 'gsde102.txt'),
@@ -27,6 +28,7 @@ TITLE_OVERRIDES = {
     'gsde101': 'Chapter 1: वन्दे भारतमातरम्',
     'gsde102': 'Chapter 2: नित्यं पिबामः सुभाषितरसम्',
     'varnamala': 'Sanskrit Varṇamālā Guide',
+    'barakhadi': 'बारहखड़ी · Audio Lesson',
     'numbers': 'Sanskrit Numbers Guide (संख्या)',
 }
 
@@ -161,6 +163,38 @@ def build_varnamala_lesson(item_id: str, txt_path: Path) -> dict:
     }
 
 
+
+def build_barakhadi_lesson(item_id: str, txt_path: Path) -> dict:
+    """Parse बारहखड़ी into one tappable audio row per consonant."""
+    raw_text = txt_path.read_text(encoding='utf-8')
+    raw_blocks = split_into_raw_blocks(raw_text)
+    group_blocks = raw_blocks[1:]  # skip title
+
+    sentences = []
+    for raw_block in group_blocks:
+        lines = [clean_line(line) for line in raw_block.split('\n') if clean_line(line)]
+        if not lines:
+            continue
+        letters_line = lines[0]
+        description_line = lines[1] if len(lines) > 1 else ''
+        letters = letters_line.split()
+        # category = first consonant of the row
+        category = letters[0] if letters else ''
+        label = description_line or f'{category}-row'
+        sentences.append({
+            'sanskrit': description_line or letters_line,
+            'meaning': label,
+            'words': letters,
+            'category': category,
+        })
+
+    return {
+        'id': item_id,
+        'fileName': txt_path.name,
+        'title': TITLE_OVERRIDES.get(item_id, 'बारहखड़ी · Audio Lesson'),
+        'sentences': sentences,
+    }
+
 def build_numbers_lesson(item_id: str, txt_path: Path) -> dict:
     """Parse the numbers guide into one row per decade block (1-10, 11-20, ...)."""
     raw_text = txt_path.read_text(encoding='utf-8')
@@ -220,10 +254,21 @@ def main() -> None:
             raise FileNotFoundError(f'Missing text file: {txt_path}')
         if item_id == 'varnamala':
             lessons.append(build_varnamala_lesson(item_id, txt_path))
+        elif item_id == 'barakhadi':
+            lessons.append(build_barakhadi_lesson(item_id, txt_path))
         elif item_id == 'numbers':
             lessons.append(build_numbers_lesson(item_id, txt_path))
         else:
-            lessons.append(build_lesson(item_id, txt_path, existing_by_id.get(item_id)))
+            existing = existing_by_id.get(item_id)
+            # Keep hand-enriched Chapter 2 (शब्दार्थ + अभ्यास cards) if already present.
+            if item_id == 'gsde102' and existing and any(
+                (s.get('kind') or '').startswith(('glossary', 'exercise'))
+                for s in existing.get('sentences', [])
+            ):
+                lessons.append(existing)
+                print(f'Kept enriched lesson {item_id} ({len(existing["sentences"])} cards)')
+            else:
+                lessons.append(build_lesson(item_id, txt_path, existing))
 
     # Keep only the lessons listed in TXT_FILES.
     lessons = [lesson for lesson in lessons if lesson['id'] in allowed_ids]
