@@ -172,10 +172,10 @@
           "किम्",
           "कुत्र"
         ],
-        "sentence": "कः बालकः धावति?",
-        "english": "Who is the boy running?",
+        "sentence": "कः तत्र उपविशति?",
+        "english": "Who is sitting there?",
         "highlight": "कः",
-        "prompt": "____ बालकः धावति?",
+        "prompt": "____ तत्र उपविशति?",
         "phase": "prashna"
       },
       {
