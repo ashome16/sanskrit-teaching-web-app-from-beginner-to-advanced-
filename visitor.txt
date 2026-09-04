@@ -20,28 +20,31 @@ Tap the **?** any time to reopen this guide.
 
 ---
 
-## 1. Beginners · मात्रा — read the tip every row
+## 1. Beginners · मात्रा — read the yellow tip every time
 
-This shelf has **two kinds of rows**. Look at the tip line and the **1 tile / 2 tiles** mark next to Target.
+This shelf has two kinds of rows. The tip line and the mark **Click 1 tile** / **Click 2 tiles** tell you which kind you are on.
 
-### A. Join rows (जोडो) — TWO tiles
-Letters and marks. Tap in order:
-1. consonant (**क** / **म** / **स**)
-2. vowel (**आ**)
-Check. **आ** becomes **ा** on the letter → **का** / **मा** / **सा**.
-**बालः** is **बा** then **लः** (still two).
+### A. Join rows — click TWO tiles
+1. Click the consonant tile first (for Day 1 that is **क**).
+2. Click the vowel tile next (**आ**).
+3. Click **Check**.
+4. You should see **का बालिका पठति।** and *Who is the girl reading?*
+5. Click **Next** for the next word.
 
-Day-1 proof: **क** + **आ** → **का बालिका पठति।** *Who is the girl reading?*
+**आ** is not glued on as a second letter. It becomes the mark **ा** on **क** → **का**.
 
-### B. Question-word rows — ONE tile
-After Next past the joins, Target looks like **____ बालकः धावति?**
-Tap **only** the whole word that fills the blank (**कः**). Do **not** tap a second tile.
-Then: **किम्**, **का**, **कुत्र**, more **कः** / **का** / **किम्** with new sentences.
+Same pattern: **म** then **आ** → **मा**; **स** then **आ** → **सा**; **बा** then **लः** → **बालः**.
 
-If two tiles are gold, tap the wrong one again to clear it.
+### B. Question-word rows — click ONE tile
+After the join rows, the Target looks like **____ बालकः धावति?**
+1. Click only **कः** (the whole word).
+2. Do not click a second tile.
+3. Click **Check**, then **Next**.
 
+Later blanks use **किम्**, **का**, **कुत्र**. Still one click each.
 
----
+If two tiles are gold by mistake, click the wrong one again to turn it off.
+
 
 ## 2. nada · नाद-पथः — ONE tile
 
