@@ -222,7 +222,7 @@ const Board: React.FC = () => {
 
     <div className="board-tip-row">
       <p className="board-tip">{targetIsWholeTile
-        ? 'Click ONE cream tile that fills the blank (कः का किम् कुत्र कदा कथम् — pick the word that fits). Then click Check. Then click Next.'
+        ? 'Click ONE cream tile that fills the blank — the word that fits. Then click Check. Then click Next.'
         : (activeBoardShelf?.skin === 'जोडो'
           ? 'Click TWO cream tiles in order: first the letter (क), then the vowel आ. Then click Check. Then click Next.'
           : loopLine)}</p>
