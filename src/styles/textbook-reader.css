@@ -314,3 +314,7 @@
 .textbook-jump-chip { background: #f4ede0; border: 1px solid #d8d0c3; border-radius: 999px; color: #273b35; cursor: pointer; font: 600 .82rem "Noto Sans Devanagari", Georgia, serif; padding: .28rem .7rem; }
 .textbook-jump-chip.active { background: #273b35; border-color: #273b35; color: #fffdf8; }
 .textbook-jump-chip:hover { border-color: #d86a3d; }
+
+.barakhadi-letter-btn { align-items: center; display: inline-flex; flex-direction: column; gap: .15rem; min-width: 3.1rem; padding: .45rem .35rem .4rem; }
+.barakhadi-dev { display: block; font-size: 1.55rem; line-height: 1.1; }
+.barakhadi-roman { color: #756b60; display: block; font: 600 .68rem Georgia, serif; letter-spacing: .02em; }
