@@ -307,3 +307,10 @@
 .textbook-exercise-card .textbook-exercise-q { color: #273b35; font: 600 1.05rem "Noto Sans Devanagari", Georgia, serif; margin: 0; white-space: pre-wrap; }
 .textbook-glossary-card--header.textbook-exercise-card .textbook-glossary-title { font-size: 1.25rem; }
 .textbook-exercise-card .textbook-glossary-arth-sa .interactive-word { margin-right: .15rem; }
+
+.textbook-jump-row { display: flex; flex-wrap: wrap; gap: .55rem .7rem; align-items: center; margin: .35rem 0 .85rem; }
+.textbook-jump-select { min-width: min(100%, 22rem); }
+.textbook-jump-chips { display: flex; flex-wrap: wrap; gap: .35rem; width: 100%; }
+.textbook-jump-chip { background: #f4ede0; border: 1px solid #d8d0c3; border-radius: 999px; color: #273b35; cursor: pointer; font: 600 .82rem "Noto Sans Devanagari", Georgia, serif; padding: .28rem .7rem; }
+.textbook-jump-chip.active { background: #273b35; border-color: #273b35; color: #fffdf8; }
+.textbook-jump-chip:hover { border-color: #d86a3d; }
