@@ -55,23 +55,29 @@
   },
   "विद्यातपोभ्यां": {
     "word": "विद्यातपोभ्यां",
-    "base_english": "by knowledge and austerity (instrumental dual)",
+    "base_english": "By knowledge and penance",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "by knowledge and austerity",
-        "sentence_sanskrit": "विद्यातपोभ्यां भूतात्मा शुध्यति।",
-        "sentence_translation": "The self is purified by knowledge and austerity."
+        "meaning": "By knowledge and penance"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्ञान और तपस्या के द्वारा"
       }
     }
   },
   "विद्या": {
     "word": "विद्या",
-    "base_english": "knowledge, learning",
+    "base_english": "By knowledge and penance",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "knowledge, learning"
+        "meaning": "By knowledge and penance"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तपोभ्याम् — ज्ञान और तपस्या (कठिन परिश्रम) के द्वारा"
       },
       "te": {
         "label": "తెలుగు",
@@ -81,21 +87,29 @@
   },
   "सत्येन": {
     "word": "सत्येन",
-    "base_english": "by truth (instrumental)",
+    "base_english": "By truth",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "by truth"
+        "meaning": "By truth"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सच बोलने से / सत्य के द्वारा"
       }
     }
   },
   "मनः": {
     "word": "मनः",
-    "base_english": "mind",
+    "base_english": "Mind",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "mind"
+        "meaning": "Mind"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मन / अंतःकरण"
       },
       "te": {
         "label": "తెలుగు",
@@ -105,11 +119,15 @@
   },
   "बुद्धिः": {
     "word": "बुद्धिः",
-    "base_english": "intellect, understanding",
+    "base_english": "Intellect",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "intellect, understanding"
+        "meaning": "Intellect"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सोचने-समझने की शक्ति / बुद्धि"
       },
       "te": {
         "label": "తెలుగు",
@@ -177,61 +195,85 @@
   },
   "हातव्याः": {
     "word": "हातव्याः",
-    "base_english": "Worth discarding / should be given up",
+    "base_english": "Should be given up / abandoned",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Worth discarding / should be given up"
+        "meaning": "Should be given up / abandoned"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "त्याग देने योग्य / छोड़ देने चाहिए"
       }
     }
   },
   "भूतिम्": {
     "word": "भूतिम्",
-    "base_english": "Prosperity / wealth / welfare",
+    "base_english": "Prosperity / Welfare",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Prosperity / wealth / welfare"
+        "meaning": "Prosperity / Welfare"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उन्नति / कल्याण / ऐश्वर्य"
       }
     }
   },
   "तन्द्रा": {
     "word": "तन्द्रा",
-    "base_english": "Lassitude / drowsiness / exhaustion",
+    "base_english": "Drowsiness / Sluggishness",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Lassitude / drowsiness / exhaustion"
+        "meaning": "Drowsiness / Sluggishness"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ऊंघना / सुस्ती"
       }
     }
   },
   "दीर्घसूत्रता": {
     "word": "दीर्घसूत्रता",
-    "base_english": "Procrastination / habit of delaying work",
+    "base_english": "Procrastination",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Procrastination / habit of delaying work"
+        "meaning": "Procrastination"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हर काम में बहुत देरी करना / टालमटोल"
       }
     }
   },
   "अवरोधकाः": {
     "word": "अवरोधकाः",
-    "base_english": "Barriers / obstacles / preventers",
+    "base_english": "Obstacles / Barriers",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Barriers / obstacles / preventers"
+        "meaning": "Obstacles / Barriers"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रुकावट डालने वाले"
       }
     }
   },
   "वाञ्छति": {
     "word": "वाञ्छति",
-    "base_english": "Wants / desires",
+    "base_english": "Desires",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Wants / desires"
+        "meaning": "Desires"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इच्छा करता है"
       }
     }
   },
@@ -242,26 +284,38 @@
       "en": {
         "label": "English",
         "meaning": "By water"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जल से / पानी के द्वारा"
       }
     }
   },
   "भूतात्मा": {
     "word": "भूतात्मा",
-    "base_english": "Soul / living entity",
+    "base_english": "The inner soul / living entity",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Soul / living entity"
+        "meaning": "The inner soul / living entity"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जीवात्मा / अंतरात्मा"
       }
     }
   },
   "द्वन्द्वः": {
     "word": "द्वन्द्वः",
-    "base_english": "Dilemma / conflict of mind",
+    "base_english": "Conflict / Dilemma",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Dilemma / conflict of mind"
+        "meaning": "Conflict / Dilemma"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "असमंजस / उलझन"
       }
     }
   },
@@ -405,15 +459,15 @@
   },
   "नित्यम्": {
     "word": "नित्यम्",
-    "base_english": "Daily / Always",
+    "base_english": "Daily",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Daily / Always"
+        "meaning": "Daily"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "रोज़ / हमेशा"
+        "meaning": "रोज़ाना"
       }
     }
   },
@@ -469,7 +523,7 @@
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "हमारे"
+        "meaning": "हमारी"
       }
     }
   },
@@ -1477,7 +1531,7 @@
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "तो फिर"
+        "meaning": "तो"
       }
     }
   },
@@ -1842,6 +1896,832 @@
       "hi": {
         "label": "हिन्दी",
         "meaning": "श्रीमान जी!"
+      }
+    }
+  },
+  "षड्": {
+    "word": "षड्",
+    "base_english": "Six",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Six"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "छः"
+      }
+    }
+  },
+  "दोषाः": {
+    "word": "दोषाः",
+    "base_english": "Flaws / Faults",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Flaws / Faults"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कमियाँ / बुराइयाँ"
+      }
+    }
+  },
+  "पुरुषेण": {
+    "word": "पुरुषेण",
+    "base_english": "By a person",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By a person"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्य के द्वारा"
+      }
+    }
+  },
+  "इह": {
+    "word": "इह",
+    "base_english": "In this world",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In this world"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इस संसार में"
+      }
+    }
+  },
+  "इच्छता": {
+    "word": "इच्छता",
+    "base_english": "By one who desires",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By one who desires"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चाहने वाले के द्वारा"
+      }
+    }
+  },
+  "निद्रा": {
+    "word": "निद्रा",
+    "base_english": "Excessive sleep",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Excessive sleep"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अधिक सोना / नींद"
+      }
+    }
+  },
+  "भयम्": {
+    "word": "भयम्",
+    "base_english": "Fear",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fear"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "डर"
+      }
+    }
+  },
+  "क्रोधः": {
+    "word": "क्रोधः",
+    "base_english": "Anger",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Anger"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गुस्सा"
+      }
+    }
+  },
+  "आलस्यम्": {
+    "word": "आलस्यम्",
+    "base_english": "Laziness",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Laziness"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "काम न करने की इच्छा / आलस"
+      }
+    }
+  },
+  "अस्मासु": {
+    "word": "अस्मासु",
+    "base_english": "In us",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In us"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम सब में"
+      }
+    }
+  },
+  "निद्रादयः": {
+    "word": "निद्रादयः",
+    "base_english": "Sleep etc.",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sleep etc."
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नींद आदि"
+      }
+    }
+  },
+  "एते": {
+    "word": "एते",
+    "base_english": "These",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "These"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ये सब"
+      }
+    }
+  },
+  "ऐश्वर्यस्य": {
+    "word": "ऐश्वर्यस्य",
+    "base_english": "Of prosperity",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of prosperity"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वैभव की / धन-दौलत की"
+      }
+    }
+  },
+  "उन्नतेः": {
+    "word": "उन्नतेः",
+    "base_english": "Of progress",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of progress"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रगति की"
+      }
+    }
+  },
+  "भवन्ति": {
+    "word": "भवन्ति",
+    "base_english": "Are / Become",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Are / Become"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "होते हैं"
+      }
+    }
+  },
+  "अतः": {
+    "word": "अतः",
+    "base_english": "Therefore",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Therefore"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इसलिए"
+      }
+    }
+  },
+  "यदि": {
+    "word": "यदि",
+    "base_english": "If",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "If"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अगर"
+      }
+    }
+  },
+  "मानवः": {
+    "word": "मानवः",
+    "base_english": "Human",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Human"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्य"
+      }
+    }
+  },
+  "स्वजीवने": {
+    "word": "स्वजीवने",
+    "base_english": "In one's own life",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In one's own life"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अपने जीवन में"
+      }
+    }
+  },
+  "धनिकः": {
+    "word": "धनिकः",
+    "base_english": "Rich",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Rich"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अमीर"
+      }
+    }
+  },
+  "विद्वान्": {
+    "word": "विद्वान्",
+    "base_english": "Scholar / Wise",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Scholar / Wise"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्ञानी"
+      }
+    }
+  },
+  "वा": {
+    "word": "वा",
+    "base_english": "Or",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Or"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "या"
+      }
+    }
+  },
+  "भवितुम्": {
+    "word": "भवितुम्",
+    "base_english": "To become",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To become"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बनने के लिए"
+      }
+    }
+  },
+  "इच्छति": {
+    "word": "इच्छति",
+    "base_english": "Wishes / Desires",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wishes / Desires"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चाहता है"
+      }
+    }
+  },
+  "वैभवम्": {
+    "word": "वैभवम्",
+    "base_english": "Grandeur",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Grandeur"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुख-समृद्धि"
+      }
+    }
+  },
+  "प्राप्तुम्": {
+    "word": "प्राप्तुम्",
+    "base_english": "To attain",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To attain"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पाने के लिए"
+      }
+    }
+  },
+  "सः": {
+    "word": "सः",
+    "base_english": "He",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "He"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वह"
+      }
+    }
+  },
+  "अतिनिद्राम्": {
+    "word": "अतिनिद्राम्",
+    "base_english": "Excessive sleep",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Excessive sleep"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बहुत ज़्यादा नींद को"
+      }
+    }
+  },
+  "भीतिम्": {
+    "word": "भीतिम्",
+    "base_english": "Fear",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fear"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "डर को"
+      }
+    }
+  },
+  "विलम्बेन": {
+    "word": "विलम्बेन",
+    "base_english": "With delay",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "With delay"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देरी से"
+      }
+    }
+  },
+  "कार्यकरणस्य": {
+    "word": "कार्यकरणस्य",
+    "base_english": "Of doing work",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of doing work"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "काम करने की"
+      }
+    }
+  },
+  "प्रवृत्तिम्": {
+    "word": "प्रवृत्तिम्",
+    "base_english": "Tendency / Habit",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Tendency / Habit"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आदत को"
+      }
+    }
+  },
+  "एतान्": {
+    "word": "एतान्",
+    "base_english": "These",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "These"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इन सबको"
+      }
+    }
+  },
+  "परित्यजेत्": {
+    "word": "परित्यजेत्",
+    "base_english": "Should abandon",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Should abandon"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पूरी तरह छोड़ देना चाहिए"
+      }
+    }
+  },
+  "गात्राणि": {
+    "word": "गात्राणि",
+    "base_english": "Limbs / Body parts",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Limbs / Body parts"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शरीर के अंग / अंग-प्रत्यंग"
+      }
+    }
+  },
+  "शुध्यन्ति": {
+    "word": "शुध्यन्ति",
+    "base_english": "Are purified / cleaned",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Are purified / cleaned"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "साफ होते हैं / शुद्ध होते हैं"
+      }
+    }
+  },
+  "शुध्यति": {
+    "word": "शुध्यति",
+    "base_english": "Is purified",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Is purified"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पवित्र होता है"
+      }
+    }
+  },
+  "ज्ञानेन": {
+    "word": "ज्ञानेन",
+    "base_english": "By wisdom / true knowledge",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By wisdom / true knowledge"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आत्मज्ञान / विवेक के द्वारा"
+      }
+    }
+  },
+  "प्रतिदिनम्": {
+    "word": "प्रतिदिनम्",
+    "base_english": "Every day",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Every day"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हर रोज़"
+      }
+    }
+  },
+  "स्नानेन": {
+    "word": "स्नानेन",
+    "base_english": "By bathing",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By bathing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नहाने से"
+      }
+    }
+  },
+  "स्वच्छम्": {
+    "word": "स्वच्छम्",
+    "base_english": "Clean",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Clean"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "साफ"
+      }
+    }
+  },
+  "पवित्रम्": {
+    "word": "पवित्रम्",
+    "base_english": "Holy / Pure",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Holy / Pure"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पावन"
+      }
+    }
+  },
+  "सत्यकथनेन": {
+    "word": "सत्यकथनेन",
+    "base_english": "By speaking the truth",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By speaking the truth"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सच कहने से"
+      }
+    }
+  },
+  "मनसि": {
+    "word": "मनसि",
+    "base_english": "In the mind",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the mind"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मन में"
+      }
+    }
+  },
+  "विद्याभ्यासेन": {
+    "word": "विद्याभ्यासेन",
+    "base_english": "By study / learning",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By study / learning"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्या के अभ्यास से / पढ़ाई से"
+      }
+    }
+  },
+  "परिश्रमेण": {
+    "word": "परिश्रमेण",
+    "base_english": "By hard work",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By hard work"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मेहनत से"
+      }
+    }
+  },
+  "जीवस्य": {
+    "word": "जीवस्य",
+    "base_english": "Of the living being",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the living being"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्राणी की / जीव की"
+      }
+    }
+  },
+  "शुद्धिः": {
+    "word": "शुद्धिः",
+    "base_english": "Purification",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Purification"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सफाई / पवित्रता"
+      }
+    }
+  },
+  "निर्मला": {
+    "word": "निर्मला",
+    "base_english": "Spotless / Clear",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Spotless / Clear"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मैल से रहित / एकदम साफ"
+      }
+    }
+  },
+  "कुर्यात्": {
+    "word": "कुर्यात्",
+    "base_english": "Should do",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Should do"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "करना चाहिए"
+      }
+    }
+  },
+  "षट्": {
+    "word": "षट्",
+    "base_english": "Six",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Six"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "छः"
+      }
+    }
+  },
+  "हातव्या": {
+    "word": "हातव्या",
+    "base_english": "Should be given up / abandoned",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Should be given up / abandoned"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "त्याग देने योग्य / छोड़ देने चाहिए"
+      }
+    }
+  },
+  "भयं": {
+    "word": "भयं",
+    "base_english": "Fear",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fear"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "डर"
+      }
+    }
+  },
+  "क्रोध": {
+    "word": "क्रोध",
+    "base_english": "Anger",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Anger"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गुस्सा"
+      }
+    }
+  },
+  "आलस्यं": {
+    "word": "आलस्यं",
+    "base_english": "Laziness",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Laziness"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "काम न करने की इच्छा / आलस"
+      }
+    }
+  },
+  "अद्भिर्": {
+    "word": "अद्भिर्",
+    "base_english": "By water",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By water"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जल से / पानी के द्वारा"
+      }
+    }
+  },
+  "बुद्धिर्": {
+    "word": "बुद्धिर्",
+    "base_english": "Intellect",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Intellect"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सोचने-समझने की शक्ति / बुद्धि"
+      }
+    }
+  },
+  "विद्यातपोभ्याम्": {
+    "word": "विद्यातपोभ्याम्",
+    "base_english": "By knowledge and penance",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By knowledge and penance"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्ञान और तपस्या के द्वारा"
+      }
+    }
+  },
+  "पुरुषेणेह": {
+    "word": "पुरुषेणेह",
+    "base_english": "By a person in this world",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By a person in this world"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्य के द्वारा इस संसार में"
       }
     }
   }
