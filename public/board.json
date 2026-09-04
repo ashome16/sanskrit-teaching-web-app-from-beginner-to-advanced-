@@ -953,7 +953,7 @@
         "highlight": "बीजम्"
       },
       {
-        "prompt": "भगिनी ____ ज्वालयति।",
+        "prompt": "____ प्रज्वलति।",
         "target": "दीपः",
         "tiles": [
           "दीपः",
@@ -963,13 +963,12 @@
           "उत्सवः",
           "ग्रन्थः"
         ],
-        "sentence": "भगिनी दीपं ज्वालयति।",
-        "english": "The sister lights the lamp.",
-        "highlight": "दीपं",
-        "tapHighlight": "दीपं"
+        "sentence": "दीपः प्रज्वलति।",
+        "english": "The lamp burns bright.",
+        "highlight": "दीपः"
       },
       {
-        "prompt": "____ शान्तिं ददाति।",
+        "prompt": "माता ____ करोति।",
         "target": "पूजा",
         "tiles": [
           "ग्रन्थः",
@@ -979,12 +978,13 @@
           "मन्त्रः",
           "उत्सवः"
         ],
-        "sentence": "पूजा शान्तिं ददाति।",
-        "english": "Worship gives peace.",
-        "highlight": "पूजा"
+        "sentence": "माता पूजां करोति।",
+        "english": "The mother does worship.",
+        "highlight": "पूजां",
+        "tapHighlight": "पूजां"
       },
       {
-        "prompt": "बालकः ____ पूरयति।",
+        "prompt": "____ नादं करोति।",
         "target": "शङ्खः",
         "tiles": [
           "उत्सवः",
@@ -994,10 +994,9 @@
           "पूजा",
           "मन्त्रः"
         ],
-        "sentence": "बालकः शङ्खं पूरयति।",
-        "english": "The boy blows the conch.",
-        "highlight": "शङ्खं",
-        "tapHighlight": "शङ्खं"
+        "sentence": "शङ्खः नादं करोति।",
+        "english": "The conch makes a sound.",
+        "highlight": "शङ्खः"
       },
       {
         "prompt": "बालकः ____ वदति।",
@@ -1016,7 +1015,7 @@
         "tapHighlight": "मन्त्रं"
       },
       {
-        "prompt": "____ आनन्दं आनयति।",
+        "prompt": "गृहम् ____ अस्ति।",
         "target": "उत्सवः",
         "tiles": [
           "पूजा",
@@ -1026,12 +1025,13 @@
           "उत्सवः",
           "दीपः"
         ],
-        "sentence": "उत्सवः आनन्दं आनयति।",
-        "english": "The festival brings joy.",
-        "highlight": "उत्सवः"
+        "sentence": "गृहम् उत्सवे अस्ति।",
+        "english": "The house is in a festive mood.",
+        "highlight": "उत्सवे",
+        "tapHighlight": "उत्सवे"
       },
       {
-        "prompt": "छात्रः ____ स्थापयति।",
+        "prompt": "पिता ____ पठति।",
         "target": "ग्रन्थः",
         "tiles": [
           "दीपः",
@@ -1041,8 +1041,8 @@
           "उत्सवः",
           "ग्रन्थः"
         ],
-        "sentence": "छात्रः ग्रन्थं स्थापयति।",
-        "english": "The student places the scripture down.",
+        "sentence": "पिता ग्रन्थं पठति।",
+        "english": "The father reads the scripture.",
         "highlight": "ग्रन्थं",
         "tapHighlight": "ग्रन्थं"
       },
