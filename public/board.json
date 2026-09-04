@@ -792,6 +792,128 @@
         "sentence": "वृक्षः भूमौ तिष्ठति।",
         "english": "The tree stands on the earth.",
         "highlight": "वृक्षः"
+      },
+      {
+        "prompt": "____ शीघ्रं धावति।",
+        "target": "अश्वः",
+        "tiles": [
+          "अश्वः",
+          "सिंहः",
+          "मयूरः",
+          "पुष्पम्",
+          "फलम्",
+          "नदी"
+        ],
+        "sentence": "अश्वः शीघ्रं धावति।",
+        "english": "The horse runs fast.",
+        "highlight": "अश्वः"
+      },
+      {
+        "prompt": "____ वने वसति।",
+        "target": "सिंहः",
+        "tiles": [
+          "नदी",
+          "सिंहः",
+          "अश्वः",
+          "मयूरः",
+          "पुष्पम्",
+          "फलम्"
+        ],
+        "sentence": "सिंहः वने वसति।",
+        "english": "The lion lives in the forest.",
+        "highlight": "सिंहः"
+      },
+      {
+        "prompt": "____ अत्र नृत्यति।",
+        "target": "मयूरः",
+        "tiles": [
+          "फलम्",
+          "नदी",
+          "मयूरः",
+          "अश्वः",
+          "सिंहः",
+          "पुष्पम्"
+        ],
+        "sentence": "मयूरः अत्र नृत्यति।",
+        "english": "The peacock dances here.",
+        "highlight": "मयूरः"
+      },
+      {
+        "prompt": "____ तत्र विकसति।",
+        "target": "पुष्पम्",
+        "tiles": [
+          "मयूरः",
+          "फलम्",
+          "नदी",
+          "पुष्पम्",
+          "अश्वः",
+          "सिंहः"
+        ],
+        "sentence": "पुष्पं तत्र विकसति।",
+        "english": "The flower blooms there.",
+        "highlight": "पुष्पं",
+        "tapHighlight": "पुष्पं"
+      },
+      {
+        "prompt": "____ वृक्षात् पतति।",
+        "target": "फलम्",
+        "tiles": [
+          "सिंहः",
+          "मयूरः",
+          "पुष्पम्",
+          "नदी",
+          "फलम्",
+          "अश्वः"
+        ],
+        "sentence": "फलं वृक्षात् पतति।",
+        "english": "The fruit falls from the tree.",
+        "highlight": "फलं",
+        "tapHighlight": "फलं"
+      },
+      {
+        "prompt": "____ मधुरं वहति।",
+        "target": "नदी",
+        "tiles": [
+          "अश्वः",
+          "सिंहः",
+          "मयूरः",
+          "पुष्पम्",
+          "फलम्",
+          "नदी"
+        ],
+        "sentence": "नदी मधुरं वहति।",
+        "english": "The river flows sweetly.",
+        "highlight": "नदी"
+      },
+      {
+        "prompt": "____ दृढः अस्ति।",
+        "target": "पर्वतः",
+        "tiles": [
+          "पर्वतः",
+          "अश्वः",
+          "सिंहः",
+          "मयूरः",
+          "पुष्पम्",
+          "फलम्"
+        ],
+        "sentence": "पर्वतः दृढः अस्ति।",
+        "english": "The mountain is strong.",
+        "highlight": "पर्वतः"
+      },
+      {
+        "prompt": "____ जलं ददाति।",
+        "target": "मेघः",
+        "tiles": [
+          "फलम्",
+          "मेघः",
+          "अश्वः",
+          "सिंहः",
+          "मयूरः",
+          "पुष्पम्"
+        ],
+        "sentence": "मेघः जलं ददाति।",
+        "english": "The cloud gives water.",
+        "highlight": "मेघः"
       }
     ]
   },
