@@ -1009,6 +1009,150 @@
         "sentence": "वृक्षः फलति।",
         "english": "The tree bears fruit.",
         "highlight": "वृक्षः"
+      },
+      {
+        "prompt": "बालिका",
+        "target": "हसति",
+        "tiles": [
+          "हसति",
+          "लिखति",
+          "पतति",
+          "करोति",
+          "पश्यति",
+          "पिबति"
+        ],
+        "sentence": "बालिका उच्चैः हसति।",
+        "english": "The girl laughs loudly.",
+        "highlight": "बालिका",
+        "tapHighlight": "हसति"
+      },
+      {
+        "prompt": "छात्रः",
+        "target": "लिखति",
+        "tiles": [
+          "पिबति",
+          "लिखति",
+          "हसति",
+          "पतति",
+          "करोति",
+          "पश्यति"
+        ],
+        "sentence": "छात्रः पत्रं लिखति।",
+        "english": "The student writes a letter.",
+        "highlight": "छात्रः",
+        "tapHighlight": "लिखति"
+      },
+      {
+        "prompt": "पत्रं",
+        "target": "पतति",
+        "tiles": [
+          "पश्यति",
+          "पिबति",
+          "पतति",
+          "हसति",
+          "लिखति",
+          "करोति"
+        ],
+        "sentence": "पत्रं वृक्षात् पतति।",
+        "english": "The leaf falls from the tree.",
+        "highlight": "पत्रं",
+        "tapHighlight": "पतति"
+      },
+      {
+        "prompt": "माता",
+        "target": "करोति",
+        "tiles": [
+          "पतति",
+          "पश्यति",
+          "पिबति",
+          "करोति",
+          "हसति",
+          "लिखति"
+        ],
+        "sentence": "माता भोजनं करोति।",
+        "english": "The mother makes the meal.",
+        "highlight": "माता",
+        "tapHighlight": "करोति"
+      },
+      {
+        "prompt": "शिशुः",
+        "target": "पश्यति",
+        "tiles": [
+          "लिखति",
+          "पतति",
+          "करोति",
+          "पिबति",
+          "पश्यति",
+          "हसति"
+        ],
+        "sentence": "शिशुः चन्द्रं पश्यति।",
+        "english": "The baby sees the moon.",
+        "highlight": "शिशुः",
+        "tapHighlight": "पश्यति"
+      },
+      {
+        "prompt": "मार्जारः",
+        "target": "पिबति",
+        "tiles": [
+          "हसति",
+          "लिखति",
+          "पतति",
+          "करोति",
+          "पश्यति",
+          "पिबति"
+        ],
+        "sentence": "मार्जारः दुग्धं पिबति।",
+        "english": "The cat drinks milk.",
+        "highlight": "मार्जारः",
+        "tapHighlight": "पिबति"
+      },
+      {
+        "prompt": "मित्रं",
+        "target": "क्रीडति",
+        "tiles": [
+          "क्रीडति",
+          "हसति",
+          "लिखति",
+          "पतति",
+          "करोति",
+          "पश्यति"
+        ],
+        "sentence": "मित्रं कन्दुकेन क्रीडति।",
+        "english": "The friend plays with a ball.",
+        "highlight": "मित्रं",
+        "tapHighlight": "क्रीडति"
+      },
+      {
+        "prompt": "सा",
+        "target": "पठति",
+        "tiles": [
+          "पश्यति",
+          "पठति",
+          "हसति",
+          "लिखति",
+          "पतति",
+          "करोति"
+        ],
+        "sentence": "सा पुस्तकं पठति।",
+        "english": "She reads a book.",
+        "highlight": "सा",
+        "tapHighlight": "पठति"
+      },
+      {
+        "prompt": "सूर्यः",
+        "target": "उदयति",
+        "tiles": [
+          "करोति",
+          "पश्यति",
+          "उदयति",
+          "हसति",
+          "लिखति",
+          "पतति"
+        ],
+        "sentence": "सूर्यः उदयति।",
+        "english": "The sun rises.",
+        "highlight": "सूर्यः",
+        "tapHighlight": "उदयति"
       }
     ]
   }
