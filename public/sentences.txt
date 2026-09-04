@@ -55,3 +55,11 @@
 सा किम् पठति?|What is she reading?|किम्|beginners
 भवान् कदा उत्तिष्ठति?|When do you wake up?|कदा|beginners
 एतत् कथम् भवति?|How does this happen?|कथम्|beginners
+अश्वः शीघ्रं धावति।|The horse runs fast.|अश्वः|nature
+सिंहः वने वसति।|The lion lives in the forest.|सिंहः|nature
+मयूरः अत्र नृत्यति।|The peacock dances here.|मयूरः|nature
+पुष्पं तत्र विकसति।|The flower blooms there.|पुष्पं|nature
+फलं वृक्षात् पतति।|The fruit falls from the tree.|फलं|nature
+नदी मधुरं वहति।|The river flows sweetly.|नदी|nature
+पर्वतः दृढः अस्ति।|The mountain is strong.|पर्वतः|nature
+मेघः जलं ददाति।|The cloud gives water.|मेघः|nature
