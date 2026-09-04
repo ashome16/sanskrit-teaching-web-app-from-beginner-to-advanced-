@@ -951,6 +951,131 @@
         "sentence": "ज्ञानं परमं बीजम्।",
         "english": "Knowledge is the ultimate seed.",
         "highlight": "बीजम्"
+      },
+      {
+        "prompt": "____ प्रज्वलति।",
+        "target": "दीपः",
+        "tiles": [
+          "दीपः",
+          "पूजा",
+          "शङ्खः",
+          "मन्त्रः",
+          "उत्सवः",
+          "ग्रन्थः"
+        ],
+        "sentence": "दीपः प्रज्वलति।",
+        "english": "The lamp burns bright.",
+        "highlight": "दीपः"
+      },
+      {
+        "prompt": "माता ____ करोति।",
+        "target": "पूजा",
+        "tiles": [
+          "ग्रन्थः",
+          "पूजा",
+          "दीपः",
+          "शङ्खः",
+          "मन्त्रः",
+          "उत्सवः"
+        ],
+        "sentence": "माता पूजां करोति।",
+        "english": "The mother does worship.",
+        "highlight": "पूजां",
+        "tapHighlight": "पूजां"
+      },
+      {
+        "prompt": "____ नादं करोति।",
+        "target": "शङ्खः",
+        "tiles": [
+          "उत्सवः",
+          "ग्रन्थः",
+          "शङ्खः",
+          "दीपः",
+          "पूजा",
+          "मन्त्रः"
+        ],
+        "sentence": "शङ्खः नादं करोति।",
+        "english": "The conch makes a sound.",
+        "highlight": "शङ्खः"
+      },
+      {
+        "prompt": "बालकः ____ वदति।",
+        "target": "मन्त्रः",
+        "tiles": [
+          "शङ्खः",
+          "उत्सवः",
+          "ग्रन्थः",
+          "मन्त्रः",
+          "दीपः",
+          "पूजा"
+        ],
+        "sentence": "बालकः मन्त्रं वदति।",
+        "english": "The boy speaks a mantra.",
+        "highlight": "मन्त्रं",
+        "tapHighlight": "मन्त्रं"
+      },
+      {
+        "prompt": "गृहम् ____ अस्ति।",
+        "target": "उत्सवः",
+        "tiles": [
+          "पूजा",
+          "शङ्खः",
+          "मन्त्रः",
+          "ग्रन्थः",
+          "उत्सवः",
+          "दीपः"
+        ],
+        "sentence": "गृहम् उत्सवे अस्ति।",
+        "english": "The house is in a festive mood.",
+        "highlight": "उत्सवे",
+        "tapHighlight": "उत्सवे"
+      },
+      {
+        "prompt": "पिता ____ पठति।",
+        "target": "ग्रन्थः",
+        "tiles": [
+          "दीपः",
+          "पूजा",
+          "शङ्खः",
+          "मन्त्रः",
+          "उत्सवः",
+          "ग्रन्थः"
+        ],
+        "sentence": "पिता ग्रन्थं पठति।",
+        "english": "The father reads the scripture.",
+        "highlight": "ग्रन्थं",
+        "tapHighlight": "ग्रन्थं"
+      },
+      {
+        "prompt": "सा ____ धरति।",
+        "target": "तिलकम्",
+        "tiles": [
+          "तिलकम्",
+          "दीपः",
+          "पूजा",
+          "शङ्खः",
+          "मन्त्रः",
+          "उत्सवः"
+        ],
+        "sentence": "सा तिलकं धरति।",
+        "english": "She wears a tilak.",
+        "highlight": "तिलकं",
+        "tapHighlight": "तिलकं"
+      },
+      {
+        "prompt": "एषः ____ मधुरः अस्ति।",
+        "target": "प्रसादः",
+        "tiles": [
+          "उत्सवः",
+          "प्रसादः",
+          "दीपः",
+          "पूजा",
+          "शङ्खः",
+          "मन्त्रः"
+        ],
+        "sentence": "एषः प्रसादः मधुरः अस्ति।",
+        "english": "This prasad is sweet.",
+        "highlight": "प्रसादः"
       }
     ]
   },
