@@ -303,3 +303,7 @@
 .textbook-glossary-arth-sa { color: #273b35; font: 600 1.15rem "Noto Sans Devanagari", Georgia, serif; margin: 0 0 .25rem; }
 .textbook-glossary-arth-en { color: #273b35; font: 700 1.05rem Georgia, serif; margin: 0; }
 .textbook-glossary-arth-hi { color: #4a433a; font-size: .95rem; margin: .25rem 0 0; }
+
+.textbook-exercise-card .textbook-exercise-q { color: #273b35; font: 600 1.05rem "Noto Sans Devanagari", Georgia, serif; margin: 0; white-space: pre-wrap; }
+.textbook-glossary-card--header.textbook-exercise-card .textbook-glossary-title { font-size: 1.25rem; }
+.textbook-exercise-card .textbook-glossary-arth-sa .interactive-word { margin-right: .15rem; }
