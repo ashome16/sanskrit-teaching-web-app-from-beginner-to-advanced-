@@ -89,8 +89,8 @@
 धेनुः दुग्धं ददाति।|The cow gives milk.|धेनुः|sanskriti
 अतिथिः गृहं आगच्छति।|A guest comes to the house.|अतिथिः|sanskriti
 धूपः गृहं सुगन्धयति।|The incense makes the house fragrant.|धूपः|sanskriti
-बालकः शङ्खं पूरयति।|The boy blows the conch.|शङ्खं|sanskriti
-उत्सवः आनन्दं आनयति।|The festival brings joy.|उत्सवः|sanskriti
-भगिनी दीपं ज्वालयति।|The sister lights the lamp.|दीपं|sanskriti
-पूजा शान्तिं ददाति।|Worship gives peace.|पूजा|sanskriti
-छात्रः ग्रन्थं स्थापयति।|The student places the scripture down.|ग्रन्थं|sanskriti
+दीपः प्रज्वलति।|The lamp burns bright.|दीपः|sanskriti
+माता पूजां करोति।|The mother does worship.|पूजां|sanskriti
+शङ्खः नादं करोति।|The conch makes a sound.|शङ्खः|sanskriti
+गृहम् उत्सवे अस्ति।|The house is in a festive mood.|उत्सवे|sanskriti
+पिता ग्रन्थं पठति।|The father reads the scripture.|ग्रन्थं|sanskriti
