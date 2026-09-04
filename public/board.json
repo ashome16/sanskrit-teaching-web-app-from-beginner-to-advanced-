@@ -491,6 +491,131 @@
         "sentence": "नदी वेगेन वहति।",
         "english": "The river flows swiftly.",
         "highlight": "नदी"
+      },
+      {
+        "prompt": "____ विशालं अस्ति।",
+        "target": "गृहम्",
+        "tiles": [
+          "गृहम्",
+          "मार्गः",
+          "नगरम्",
+          "पर्वतः",
+          "वनम्",
+          "ग्रामः"
+        ],
+        "sentence": "गृहं विशालं अस्ति।",
+        "english": "The house is big.",
+        "highlight": "गृहं",
+        "tapHighlight": "गृहं"
+      },
+      {
+        "prompt": "____ दीर्घः अस्ति।",
+        "target": "मार्गः",
+        "tiles": [
+          "ग्रामः",
+          "मार्गः",
+          "गृहम्",
+          "नगरम्",
+          "पर्वतः",
+          "वनम्"
+        ],
+        "sentence": "मार्गः दीर्घः अस्ति।",
+        "english": "The path is long.",
+        "highlight": "मार्गः"
+      },
+      {
+        "prompt": "अहं ____ पश्यामि।",
+        "target": "नगरम्",
+        "tiles": [
+          "वनम्",
+          "ग्रामः",
+          "नगरम्",
+          "गृहम्",
+          "मार्गः",
+          "पर्वतः"
+        ],
+        "sentence": "अहं नगरं पश्यामि।",
+        "english": "I see the city.",
+        "highlight": "नगरं",
+        "tapHighlight": "नगरं"
+      },
+      {
+        "prompt": "____ उच्चैः अस्ति।",
+        "target": "पर्वतः",
+        "tiles": [
+          "नगरम्",
+          "वनम्",
+          "ग्रामः",
+          "पर्वतः",
+          "गृहम्",
+          "मार्गः"
+        ],
+        "sentence": "पर्वतः उच्चैः अस्ति।",
+        "english": "The mountain is high.",
+        "highlight": "पर्वतः"
+      },
+      {
+        "prompt": "____ हरितं अस्ति।",
+        "target": "वनम्",
+        "tiles": [
+          "मार्गः",
+          "नगरम्",
+          "पर्वतः",
+          "ग्रामः",
+          "वनम्",
+          "गृहम्"
+        ],
+        "sentence": "वनं हरितं अस्ति।",
+        "english": "The forest is green.",
+        "highlight": "वनं",
+        "tapHighlight": "वनं"
+      },
+      {
+        "prompt": "सः ____ वसति।",
+        "target": "ग्रामः",
+        "tiles": [
+          "गृहम्",
+          "मार्गः",
+          "नगरम्",
+          "पर्वतः",
+          "वनम्",
+          "ग्रामः"
+        ],
+        "sentence": "सः ग्रामे वसति।",
+        "english": "He lives in the village.",
+        "highlight": "ग्रामे",
+        "tapHighlight": "ग्रामे"
+      },
+      {
+        "prompt": "____ अत्र अस्ति।",
+        "target": "आपणः",
+        "tiles": [
+          "आपणः",
+          "गृहम्",
+          "मार्गः",
+          "नगरम्",
+          "पर्वतः",
+          "वनम्"
+        ],
+        "sentence": "आपणः अत्र अस्ति।",
+        "english": "The shop is here.",
+        "highlight": "आपणः"
+      },
+      {
+        "prompt": "कृषकः ____ गच्छति।",
+        "target": "क्षेत्रम्",
+        "tiles": [
+          "वनम्",
+          "क्षेत्रम्",
+          "गृहम्",
+          "मार्गः",
+          "नगरम्",
+          "पर्वतः"
+        ],
+        "sentence": "कृषकः क्षेत्रं गच्छति।",
+        "english": "The farmer goes to the field.",
+        "highlight": "क्षेत्रं",
+        "tapHighlight": "क्षेत्रं"
       }
     ]
   },
