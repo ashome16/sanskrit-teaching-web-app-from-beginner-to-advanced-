@@ -40,6 +40,7 @@ export const barakhadiLabel = (akshara: string): string => {
   const clean = akshara.normalize('NFC').trim();
   if (!clean) return '';
   if (INDEPENDENT_VOWELS[clean]) return INDEPENDENT_VOWELS[clean];
+  if (CONJUNCTS[clean]) return CONJUNCTS[clean];
 
   const cons = clean[0];
   const stem = CONSONANT_STEM[cons];
@@ -73,6 +74,8 @@ export const barakhadiSpeechText = (akshara: string): string => {
     nna: 'n-na', nnaa: 'n-naa', nni: 'n-ni', nnee: 'n-nee',
     shha: 'sh-ha', shhaa: 'sh-haa', shhi: 'sh-hi', shhee: 'sh-hee',
     chha: 'ch-ha', chhaa: 'ch-haa', chhi: 'ch-hi', chhee: 'ch-hee',
+    ksha: 'k-sha', jnya: 'j-nya', tra: 't-ra', shra: 'sh-ra',
+    lru: 'l-ru',
     kha: 'k-ha', khaa: 'k-haa', khi: 'k-hi', khee: 'k-hee',
     gha: 'g-ha', ghaa: 'g-haa', ghi: 'g-hi', ghee: 'g-hee',
     jha: 'j-ha', jhaa: 'j-haa', jhi: 'j-hi', jhee: 'j-hee',
@@ -89,10 +92,15 @@ export const barakhadiSpeechText = (akshara: string): string => {
 
 export const isBarakhadiAkshara = (value: string): boolean => {
   const clean = value.normalize('NFC').trim();
-  if (!clean || clean.length > 3) return false;
-  if (INDEPENDENT_VOWELS[clean]) return true;
+  if (!clean || clean.length > 4) return false;
+  if (INDEPENDENT_VOWELS[clean] || CONJUNCTS[clean]) return true;
   const cons = clean[0];
   if (!CONSONANT_STEM[cons]) return false;
   const rest = clean.slice(1);
   return rest === '' || rest in MATRA_VOWEL;
 };
+
+/** Shared name used by Varṇamālā + बारहखड़ी tiles */
+export const aksharaLabel = barakhadiLabel;
+export const isPhoneticAkshara = isBarakhadiAkshara;
+

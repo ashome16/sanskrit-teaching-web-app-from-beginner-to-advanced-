@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { Lesson, LessonSentence } from '../types/chapters';
-import { barakhadiLabel } from '../utils/barakhadiPhonetics';
+import { aksharaLabel } from '../utils/barakhadiPhonetics';
 import '../styles/textbook-reader.css';
 
 interface TextbookReaderProps {
@@ -52,6 +52,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const activeLesson = lessons.find((lesson) => lesson.id === activeLessonId);
   const isVarnamala = activeLessonId === 'varnamala';
   const isGroupedLesson = isVarnamala || activeLessonId === 'numbers' || activeLessonId === 'barakhadi';
+  const showRomanTiles = activeLessonId === 'barakhadi' || activeLessonId === 'varnamala';
   const [isChartOpen, setIsChartOpen] = useState(false);
   const sectionJumps = buildSectionJumps(activeLesson);
   const currentJumpIndex = (() => {
@@ -130,9 +131,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         {activeLesson && (
           <p className="textbook-reader-source">Source Material: {activeLesson.fileName}</p>
         )}
-        {activeLessonId === 'barakhadi' && (
+        {(activeLessonId === 'barakhadi' || activeLessonId === 'varnamala') && (
           <p className="textbook-glossary-hint" style={{ marginTop: '.35rem' }}>
-            Tap any अक्षर to hear it. Each tile shows its sound (ka · kaa · ki · kee…). Retroflex ट/ठ/ड use tt/tth/dd so they stay distinct from त/थ/द.
+            Tap any अक्षर to hear it. Each tile shows its sound (a · aa · ka · kha…). Retroflex ट/ठ/ड use tt/tth/dd so they stay distinct from त/थ/द.
           </p>
         )}
         {!isGroupedLesson && (
@@ -184,13 +185,13 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                   <button
                     key={`${activeLessonId}-${groupIdx}-${letterIdx}`}
                     type="button"
-                    className={`varnamala-letter-btn${activeLessonId === 'barakhadi' ? ' barakhadi-letter-btn' : ''}`}
+                    className={`varnamala-letter-btn${showRomanTiles ? ' barakhadi-letter-btn' : ''}`}
                     onClick={() => onWordClick(letter)}
-                    aria-label={`Play pronunciation for ${letter}${activeLessonId === 'barakhadi' ? ` (${barakhadiLabel(letter)})` : ''}`}
+                    aria-label={`Play pronunciation for ${letter}${showRomanTiles ? ` (${aksharaLabel(letter)})` : ''}`}
                   >
                     <span className="barakhadi-dev">{letter}</span>
-                    {activeLessonId === 'barakhadi' ? (
-                      <small className="barakhadi-roman">{barakhadiLabel(letter)}</small>
+                    {showRomanTiles ? (
+                      <small className="barakhadi-roman">{aksharaLabel(letter)}</small>
                     ) : null}
                   </button>
                 ))}
