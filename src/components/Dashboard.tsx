@@ -76,6 +76,13 @@ const Dashboard: React.FC = () => {
     setWordSelection(null);
   };
 
+  const jumpToSentence = (index: number) => {
+    if (!lesson?.sentences?.length) return;
+    const clamped = Math.max(0, Math.min(index, lesson.sentences.length - 1));
+    setSentenceIndex(clamped);
+    setWordSelection(null);
+  };
+
   if (!lesson || !sentence) {
     return <div className="dashboard-empty">No chapter content available.</div>;
   }
@@ -110,6 +117,7 @@ const Dashboard: React.FC = () => {
         onWordClick={handleWordClick}
         onNext={goNext}
         onPrevious={goPrevious}
+        onJumpToSentence={jumpToSentence}
         isFirstSentence={isFirstSentence}
         isLastSentence={isLastSentence}
       />}
