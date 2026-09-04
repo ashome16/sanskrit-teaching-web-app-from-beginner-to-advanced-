@@ -50,16 +50,17 @@
       {
         "target": "बालः",
         "tiles": [
-          "ब",
-          "आ",
+          "बा",
           "लः",
-          "क",
-          "म",
-          "स"
+          "का",
+          "मा",
+          "सा",
+          "क"
         ],
         "english": "The boy plays.",
         "sentence": "बालः क्रीडति।",
-        "highlight": "बालः"
+        "highlight": "बालः",
+        "explanation": "बा plus लः makes बालः. Two tiles."
       },
       {
         "target": "कः",
