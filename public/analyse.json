@@ -144,8 +144,15 @@
       "en": {
         "label": "English",
         "meaning": "Having got up / standing up"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उठकर"
       }
-    }
+    },
+    "sanskrit_gloss": "उत्थानं कृत्वा",
+    "grammar": "उत् + स्था (धातु) + क्त्वा/ल्यप् (प्रत्यय)",
+    "etymology": "उत् + स्था (धातु) + क्त्वा/ल्यप् (प्रत्यय)"
   },
   "प्रेरकः": {
     "word": "प्रेरकः",
@@ -154,36 +161,49 @@
       "en": {
         "label": "English",
         "meaning": "One who inspires / motivator"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रेरणा देने वाला"
       }
-    }
+    },
+    "sanskrit_gloss": "प्रेरणादायकः",
+    "grammar": "प्र + ईर् + ण्वुल् (कर्ता रूप)",
+    "etymology": "प्र + ईर् + ण्वुल् (कर्ता रूप)"
   },
   "नैतिकः": {
     "word": "नैतिकः",
-    "base_english": "Moral",
+    "base_english": "Moral / ethical",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Moral"
+        "meaning": "Moral / ethical"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "नैतिक / आचरण संबंधी"
+        "meaning": "अच्छे आचरण वाला"
       }
-    }
+    },
+    "sanskrit_gloss": "सदाचारयुक्तः",
+    "grammar": "नीति + ठञ् (विशेषण)",
+    "etymology": "नीति + ठञ् (विशेषण)"
   },
   "वपुषा": {
     "word": "वपुषा",
-    "base_english": "By healthy body",
+    "base_english": "By physique / by body",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By healthy body"
+        "meaning": "By physique / by body"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "सुंदर/स्वस्थ शरीर से"
+        "meaning": "शरीर से"
       }
-    }
+    },
+    "sanskrit_gloss": "शरीरेण",
+    "grammar": "वपुस् (शब्द) — तृतीया विभक्ति, एकवचन",
+    "etymology": "वपुस् (शब्द) — तृतीया विभक्ति, एकवचन"
   },
   "सम्मानम्": {
     "word": "सम्मानम्",
@@ -192,92 +212,117 @@
       "en": {
         "label": "English",
         "meaning": "Respect / honor"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इज़्ज़त"
       }
-    }
+    },
+    "sanskrit_gloss": "आदरः",
+    "grammar": "सम् + मन् + घञ् (भाववाचक संज्ञा)",
+    "etymology": "सम् + मन् + घञ् (भाववाचक संज्ञा)"
   },
   "हातव्याः": {
     "word": "हातव्याः",
-    "base_english": "Should be given up / abandoned",
+    "base_english": "Worth discarding / should be given up",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Should be given up / abandoned"
+        "meaning": "Worth discarding / should be given up"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "त्याग देने योग्य / छोड़ देने चाहिए"
+        "meaning": "छोड़ देने योग्य"
       }
-    }
+    },
+    "sanskrit_gloss": "त्यक्तव्याः",
+    "grammar": "हा (त्यागना) + तव्यत् (प्रत्यय) — बहुवचन",
+    "etymology": "हा (त्यागना) + तव्यत् (प्रत्यय) — बहुवचन"
   },
   "भूतिम्": {
     "word": "भूतिम्",
-    "base_english": "Prosperity / Welfare",
+    "base_english": "Prosperity / wealth / welfare",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Prosperity / Welfare"
+        "meaning": "Prosperity / wealth / welfare"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "उन्नति / कल्याण / ऐश्वर्य"
+        "meaning": "सुख-समृद्धि"
       }
-    }
+    },
+    "sanskrit_gloss": "वैभवम् / ऐश्वर्यम्",
+    "grammar": "भू + क्तिन् (स्त्रीलिङ्ग, द्वितीया विभक्ति)",
+    "etymology": "भू + क्तिन् (स्त्रीलिङ्ग, द्वितीया विभक्ति)"
   },
   "तन्द्रा": {
     "word": "तन्द्रा",
-    "base_english": "Drowsiness / Sluggishness",
+    "base_english": "Lassitude / drowsiness / exhaustion",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Drowsiness / Sluggishness"
+        "meaning": "Lassitude / drowsiness / exhaustion"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "ऊंघना / सुस्ती"
+        "meaning": "सुस्ती / ऊंघना"
       }
-    }
+    },
+    "sanskrit_gloss": "अकर्मण्यता",
+    "grammar": "तन्द्र (तन्द्रि/तन्द्रा) — प्रथमा विभक्ति संज्ञा",
+    "etymology": "तन्द्र (तन्द्रि/तन्द्रा) — प्रथमा विभक्ति संज्ञा"
   },
   "दीर्घसूत्रता": {
     "word": "दीर्घसूत्रता",
-    "base_english": "Procrastination",
+    "base_english": "Procrastination / habit of delaying work",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Procrastination"
+        "meaning": "Procrastination / habit of delaying work"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "हर काम में बहुत देरी करना / टालमटोल"
+        "meaning": "काम टालने की आदत"
       }
-    }
+    },
+    "sanskrit_gloss": "विलम्बकार्यप्रवृत्तिः",
+    "grammar": "दीर्घ + सूत्र + तल् (भाववाचक प्रत्यय)",
+    "etymology": "दीर्घ + सूत्र + तल् (भाववाचक प्रत्यय)"
   },
   "अवरोधकाः": {
     "word": "अवरोधकाः",
-    "base_english": "Obstacles / Barriers",
+    "base_english": "Barriers / obstacles / preventers",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Obstacles / Barriers"
+        "meaning": "Barriers / obstacles / preventers"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "रुकावट डालने वाले"
+        "meaning": "रुकावट पैदा करने वाले"
       }
-    }
+    },
+    "sanskrit_gloss": "निवारकाः",
+    "grammar": "अव + रुध् + ण्वुल् — बहुवचन",
+    "etymology": "अव + रुध् + ण्वुल् — बहुवचन"
   },
   "वाञ्छति": {
     "word": "वाञ्छति",
-    "base_english": "Desires",
+    "base_english": "Wants / desires",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Desires"
+        "meaning": "Wants / desires"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "इच्छा करता है"
+        "meaning": "चाहता है"
       }
-    }
+    },
+    "sanskrit_gloss": "इच्छति",
+    "grammar": "वाञ्छ् (धातु) — लट् लकार (वर्तमान काल), प्रथम पुरुष, एकवचन",
+    "etymology": "वाञ्छ् (धातु) — लट् लकार (वर्तमान काल), प्रथम पुरुष, एकवचन"
   },
   "अद्भिः": {
     "word": "अद्भिः",
@@ -289,65 +334,80 @@
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "जल से / पानी के द्वारा"
+        "meaning": "पानी द्वारा / जलों से"
       }
-    }
+    },
+    "sanskrit_gloss": "जलैः",
+    "grammar": "अप् (जल) शब्द — तृतीया विभक्ति, बहुवचन",
+    "etymology": "अप् (जल) शब्द — तृतीया विभक्ति, बहुवचन"
   },
   "भूतात्मा": {
     "word": "भूतात्मा",
-    "base_english": "The inner soul / living entity",
+    "base_english": "Soul / living entity",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "The inner soul / living entity"
+        "meaning": "Soul / living entity"
       },
       "hi": {
         "label": "हिन्दी",
         "meaning": "जीवात्मा / अंतरात्मा"
       }
-    }
+    },
+    "sanskrit_gloss": "जीवः",
+    "grammar": "भूत + आत्मा (कर्मधारय समास)",
+    "etymology": "भूत + आत्मा (कर्मधारय समास)"
   },
   "द्वन्द्वः": {
     "word": "द्वन्द्वः",
-    "base_english": "Conflict / Dilemma",
+    "base_english": "Dilemma / conflict of mind",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Conflict / Dilemma"
+        "meaning": "Dilemma / conflict of mind"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "असमंजस / उलझन"
+        "meaning": "असमंजस / मन का टकराव"
       }
-    }
+    },
+    "sanskrit_gloss": "द्वैधीभावः",
+    "grammar": "द्वन्द्व संज्ञा",
+    "etymology": "द्वन्द्व संज्ञा"
   },
   "वर्षम्": {
     "word": "वर्षम्",
-    "base_english": "Country / Land division",
+    "base_english": "A division of land / continent",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Country / Land division"
+        "meaning": "A division of land / continent"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "देश / भूभाग"
+        "meaning": "धरती का टुकड़ा / देश"
       }
-    }
+    },
+    "sanskrit_gloss": "भूमेः विभागः",
+    "grammar": "वर्ष (नपुंसकलिङ्ग संज्ञा)",
+    "etymology": "वर्ष (नपुंसकलिङ्ग संज्ञा)"
   },
   "सन्ततिः": {
     "word": "सन्ततिः",
-    "base_english": "Progeny / Offspring",
+    "base_english": "Progeny / offspring / children",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Progeny / Offspring"
+        "meaning": "Progeny / offspring / children"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "संतान / प्रजा"
+        "meaning": "संतान / बच्चे"
       }
-    }
+    },
+    "sanskrit_gloss": "अपत्यम्",
+    "grammar": "सम् + तन् + क्तिन् (स्त्रीलिङ्ग संज्ञा)",
+    "etymology": "सम् + तन् + क्तिन् (स्त्रीलिङ्ग संज्ञा)"
   },
   "निपातेन": {
     "word": "निपातेन",
@@ -361,77 +421,95 @@
         "label": "हिन्दी",
         "meaning": "गिरने से / टपकने से"
       }
-    }
+    },
+    "sanskrit_gloss": "पतनेन",
+    "grammar": "नि + पत् + घञ् — तृतीया विभक्ति, एकवचन",
+    "etymology": "नि + पत् + घञ् — तृतीया विभक्ति, एकवचन"
   },
   "हेतुः": {
     "word": "हेतुः",
-    "base_english": "Reason / Cause / Method",
+    "base_english": "Reason / cause",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Reason / Cause / Method"
+        "meaning": "Reason / cause"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "कारण / नियम"
+        "meaning": "वजह"
       }
-    }
+    },
+    "sanskrit_gloss": "कारणम्",
+    "grammar": "हेतु (पुँल्लिङ्ग संज्ञा)",
+    "etymology": "हेतु (पुँल्लिङ्ग संज्ञा)"
   },
   "परिपृच्छति": {
     "word": "परिपृच्छति",
-    "base_english": "Enquires / Asks questions",
+    "base_english": "Humbly enquires / asks questions politely",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Enquires / Asks questions"
+        "meaning": "Humbly enquires / asks questions politely"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "विनम्रतापूर्वक प्रश्न पूछता है"
+        "meaning": "आदरपूर्वक पूछता है"
       }
-    }
+    },
+    "sanskrit_gloss": "सादरं पृच्छति",
+    "grammar": "परि + प्रच्छ् (धातु) — लट् लकार, प्रथम पुरुष, एकवचन",
+    "etymology": "परि + प्रच्छ् (धातु) — लट् लकार, प्रथम पुरुष, एकवचन"
   },
   "उपाश्रयति": {
     "word": "उपाश्रयति",
-    "base_english": "Approaches / Takes shelter of",
+    "base_english": "Approaches / takes shelter of / goes near",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Approaches / Takes shelter of"
+        "meaning": "Approaches / takes shelter of / goes near"
       },
       "hi": {
         "label": "हिन्दी",
         "meaning": "पास जाता है / शरण लेता है"
       }
-    }
+    },
+    "sanskrit_gloss": "समीपम् गच्छति",
+    "grammar": "उप + आ + श्रि (धातु) — लट् लकार, प्रथम पुरुष, एकवचन",
+    "etymology": "उप + आ + श्रि (धातु) — लट् लकार, प्रथम पुरुष, एकवचन"
   },
   "सङ्गतिः": {
     "word": "सङ्गतिः",
-    "base_english": "Company",
+    "base_english": "Association / company",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Company"
+        "meaning": "Association / company"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "मित्रता / साथ"
+        "meaning": "साथ / सोहबत"
       }
-    }
+    },
+    "sanskrit_gloss": "संसर्गः",
+    "grammar": "सम् + गम् + क्तिन् (स्त्रीलिङ्ग संज्ञा)",
+    "etymology": "सम् + गम् + क्तिन् (स्त्रीलिङ्ग संज्ञा)"
   },
   "तुष्यन्ति": {
     "word": "तुष्यन्ति",
-    "base_english": "Are pleased / satisfied",
+    "base_english": "Feeling satisfied / pleased",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Are pleased / satisfied"
+        "meaning": "Feeling satisfied / pleased"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "खुश होते हैं / संतुष्ट होते हैं"
+        "meaning": "संतुष्ट होते हैं"
       }
-    }
+    },
+    "sanskrit_gloss": "सन्तोषम् अनुभवन्ति",
+    "grammar": "तुष् (धातु) — लट् लकार, प्रथम पुरुष, बहुवचन",
+    "etymology": "तुष् (धातु) — लट् लकार, प्रथम पुरुष, बहुवचन"
   },
   "रिपुः": {
     "word": "रिपुः",
@@ -440,8 +518,15 @@
       "en": {
         "label": "English",
         "meaning": "Enemy"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दुश्मन"
       }
-    }
+    },
+    "sanskrit_gloss": "शत्रुः",
+    "grammar": "रिपु (पुँल्लिङ्ग संज्ञा)",
+    "etymology": "रिपु (पुँल्लिङ्ग संज्ञा)"
   },
   "पुण्यम्": {
     "word": "पुण्यम्",
@@ -450,8 +535,15 @@
       "en": {
         "label": "English",
         "meaning": "Fruits of meritorious deeds / virtue / good karma"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अच्छे कर्मों का फल"
       }
-    }
+    },
+    "sanskrit_gloss": "सत्कर्मणां फलम्",
+    "grammar": "पुण्य (नपुंसकलिङ्ग संज्ञा)",
+    "etymology": "पुण्य (नपुंसकलिङ्ग संज्ञा)"
   },
   "परपीडनम्": {
     "word": "परपीडनम्",
@@ -460,8 +552,15 @@
       "en": {
         "label": "English",
         "meaning": "Bothering others / causing pain to others"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दूसरों को सताना"
       }
-    }
+    },
+    "sanskrit_gloss": "अन्येभ्यः कष्टप्रदानम्",
+    "grammar": "पर + पीडनम् (षष्ठी तत्पुरुष समास)",
+    "etymology": "पर + पीडनम् (षष्ठी तत्पुरुष समास)"
   },
   "द्वितीयः": {
     "word": "द्वितीयः",
@@ -4382,5 +4481,49 @@
         "meaning": "हिचकिचाहट / कंजूसी"
       }
     }
+  },
+  "शब्दार्थान्": {
+    "word": "शब्दार्थान्",
+    "base_english": "Word meanings",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Word meanings"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शब्दों के अर्थों को"
+      }
+    },
+    "sanskrit_gloss": "शब्द-अर्थान्"
+  },
+  "जानीमः": {
+    "word": "जानीमः",
+    "base_english": "Let us know / We know",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Let us know / We know"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जानते हैं / सीखें"
+      }
+    }
+  },
+  "शब्दअर्थान्": {
+    "word": "शब्दअर्थान्",
+    "base_english": "Word meanings",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Word meanings"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शब्दों के अर्थों को"
+      }
+    },
+    "sanskrit_gloss": "शब्द-अर्थान्"
   }
 }
