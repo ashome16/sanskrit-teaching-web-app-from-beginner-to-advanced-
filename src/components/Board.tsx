@@ -218,7 +218,11 @@ const Board: React.FC = () => {
     </nav>
 
     <div className="board-tip-row">
-      <p className="board-tip">{targetIsWholeTile ? 'This row: tap ONE tile (कः / का / किम् / कुत्र). Then Check → Next.' : (activeBoardShelf?.skin === 'जोडो' ? 'This row: tap TWO tiles in order (letter, then vowel आ). Then Check → Next.' : loopLine)}</p>
+      <p className="board-tip">{targetIsWholeTile
+        ? 'Click ONE cream tile — the whole word for the blank (for example कः). Then click Check. Then click Next.'
+        : (activeBoardShelf?.skin === 'जोडो'
+          ? 'Click TWO cream tiles in order: first the letter (क), then the vowel आ. Then click Check. Then click Next.'
+          : loopLine)}</p>
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
     </div>
 
@@ -236,7 +240,7 @@ const Board: React.FC = () => {
       <section className="puzzle-board">
         <div className="puzzle-meta">
           <span>{activeBoardShelf?.skin}</span>
-          <span>{targetIsWholeTile ? '1 tile' : (activeBoardShelf?.skin === 'जोडो' ? '2 tiles' : '1 tile')}</span>
+          <span>{targetIsWholeTile ? 'Click 1 tile' : (activeBoardShelf?.skin === 'जोडो' ? 'Click 2 tiles' : 'Click 1 tile')}</span>
           <span>Target: <b>{activePuzzle.prompt ?? activePuzzle.target}</b></span>
         </div>
 
