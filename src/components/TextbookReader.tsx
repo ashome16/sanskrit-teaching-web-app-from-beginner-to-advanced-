@@ -61,7 +61,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         )}
         {!isGroupedLesson && (
           <span className="textbook-reader-progress">
-            Paragraph {sentenceNumber} of {totalSentences}
+            {sentence.kind === 'glossary' || sentence.kind === 'glossary-header'
+              ? `Exercise · ${sentenceNumber} of ${totalSentences}`
+              : `Paragraph ${sentenceNumber} of ${totalSentences}`}
           </span>
         )}
       </header>
@@ -120,30 +122,86 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         </div>
       ) : (
         <div className="textbook-sentence-block">
-          <p className="textbook-sentence-sanskrit">
-            {sentence.words.map((word, idx) => (
-              <span
-                key={`${activeLessonId}-${sentenceNumber}-${idx}`}
-                className="interactive-word"
-                onClick={() => onWordClick(word)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(event) => {
-                  if (event.key === 'Enter' || event.key === ' ') {
-                    onWordClick(word);
-                  }
-                }}
-              >
-                {word}
-              </span>
-            ))}
-          </p>
-          <p className="textbook-sentence-meaning">{sentence.meaning}</p>
-          {sentence.paragraphTranslation && (
-            <div className="textbook-paragraph-translation">
-              <span className="textbook-paragraph-translation-label">English Paragraph Meaning</span>
-              <p className="textbook-paragraph-translation-text">{sentence.paragraphTranslation}</p>
+          {(sentence.kind === 'glossary' || sentence.kind === 'glossary-header') ? (
+            <div className={`textbook-glossary-card${sentence.kind === 'glossary-header' ? ' textbook-glossary-card--header' : ''}`}>
+              {sentence.kind === 'glossary-header' ? (
+                <>
+                  <p className="textbook-glossary-title">
+                    {sentence.words.map((word, idx) => (
+                      <span
+                        key={`${activeLessonId}-gh-${idx}`}
+                        className="interactive-word"
+                        onClick={() => onWordClick(word)}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(event) => {
+                          if (event.key === 'Enter' || event.key === ' ') onWordClick(word);
+                        }}
+                      >
+                        {word}
+                      </span>
+                    ))}
+                  </p>
+                  <p className="textbook-glossary-subtitle">{sentence.meaning}</p>
+                  <p className="textbook-glossary-hint">शब्द tap → अर्थ below. Then Analyse on the right.</p>
+                </>
+              ) : (
+                <>
+                  <div className="textbook-glossary-pair">
+                    <span className="textbook-glossary-label">शब्द</span>
+                    <button
+                      type="button"
+                      className="textbook-glossary-shabd"
+                      onClick={() => onWordClick(sentence.sanskrit)}
+                    >
+                      {sentence.sanskrit}
+                    </button>
+                  </div>
+                  <div className="textbook-glossary-pair">
+                    <span className="textbook-glossary-label">अर्थ</span>
+                    <div className="textbook-glossary-arth">
+                      {sentence.sanskrit_gloss ? (
+                        <p className="textbook-glossary-arth-sa">{sentence.sanskrit_gloss}</p>
+                      ) : null}
+                      {sentence.meaning ? (
+                        <p className="textbook-glossary-arth-en">{sentence.meaning}</p>
+                      ) : null}
+                      {sentence.hindi_gloss ? (
+                        <p className="textbook-glossary-arth-hi">{sentence.hindi_gloss}</p>
+                      ) : null}
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
+          ) : (
+            <>
+              <p className="textbook-sentence-sanskrit">
+                {sentence.words.map((word, idx) => (
+                  <span
+                    key={`${activeLessonId}-${sentenceNumber}-${idx}`}
+                    className="interactive-word"
+                    onClick={() => onWordClick(word)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        onWordClick(word);
+                      }
+                    }}
+                  >
+                    {word}
+                  </span>
+                ))}
+              </p>
+              <p className="textbook-sentence-meaning">{sentence.meaning}</p>
+              {sentence.paragraphTranslation && (
+                <div className="textbook-paragraph-translation">
+                  <span className="textbook-paragraph-translation-label">English Paragraph Meaning</span>
+                  <p className="textbook-paragraph-translation-text">{sentence.paragraphTranslation}</p>
+                </div>
+              )}
+            </>
           )}
         </div>
       )}
