@@ -198,7 +198,8 @@ const Board: React.FC = () => {
     } else {
       setChecked(false);
       setWrongAttempt(true);
-      setChosen([]);
+      // One-tile rows: keep the gold tile so the child can click a different word
+      if (!targetIsWholeTile) setChosen([]);
     }
   };
 
@@ -248,7 +249,7 @@ const Board: React.FC = () => {
 
         <div className="tile-row">
           {activePuzzle.tiles.map((tile, index) => (
-            <button key={`${tile}-${index}`} className={chosen.includes(tile) ? 'puzzle-tile chosen' : 'puzzle-tile'} onClick={() => toggleTile(tile)}>
+            <button key={`${tile}-${index}`} className={chosen.includes(cleanTile(tile)) ? 'puzzle-tile chosen' : 'puzzle-tile'} onClick={() => toggleTile(tile)}>
               <span>{tile}</span>
             </button>
           ))}
@@ -265,7 +266,7 @@ const Board: React.FC = () => {
           </div>
         )}
         {wrongAttempt && (
-          <div className="puzzle-result"><strong>Try the row again.</strong></div>
+          <div className="puzzle-result"><strong>Not that tile. Click the word that fills the blank, then Check again.</strong></div>
         )}
       </section>
 
