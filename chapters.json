@@ -6,8 +6,8 @@
       "title": "Sanskrit Varṇamālā Guide",
       "sentences": [
         {
-          "sanskrit": "स्वराः - एते त्रयोदश स्वराः सन्ति (Vowels: These are the 13 foundational vowel sounds).",
-          "meaning": "Vowels (स्वराः)",
+          "sanskrit": "स्वराः — Vowels",
+          "meaning": "स्वराः — Vowels",
           "words": [
             "अ",
             "आ",
@@ -26,8 +26,8 @@
           "category": "स्वराः"
         },
         {
-          "sanskrit": "क-वर्गः : कण्ठ्याः - कण्ठात् उत्पद्यन्ते (Velar Group: Sounds produced from the throat).",
-          "meaning": "Velars (क-वर्गः)",
+          "sanskrit": "क-वर्ग — Velars",
+          "meaning": "क-वर्ग — Velars",
           "words": [
             "क",
             "ख",
@@ -38,8 +38,8 @@
           "category": "क-वर्गः"
         },
         {
-          "sanskrit": "च-वर्गः : तालव्याः - जिह्वायाः तालुस्पर्शात् (Palatal Group: Sounds produced with the tongue flat against the roof of the mouth).",
-          "meaning": "Palatals (च-वर्गः)",
+          "sanskrit": "च-वर्ग — Palatals",
+          "meaning": "च-वर्ग — Palatals",
           "words": [
             "च",
             "छ",
@@ -50,8 +50,8 @@
           "category": "च-वर्गः"
         },
         {
-          "sanskrit": "ट-वर्गः : मूर्धन्याः - जिह्वायाः मूर्धस्पर्शात् (Retroflex Group: Sounds produced by curling the tip of the tongue back).",
-          "meaning": "Retroflexes (ट-वर्गः)",
+          "sanskrit": "ट-वर्ग — Retroflexes",
+          "meaning": "ट-वर्ग — Retroflexes",
           "words": [
             "ट",
             "ठ",
@@ -62,8 +62,8 @@
           "category": "ट-वर्गः"
         },
         {
-          "sanskrit": "त-वर्गः : दन्त्याः - जिह्वायाः दन्तस्पर्शात् (Dental Group: Sounds produced with the tongue touching the upper teeth).",
-          "meaning": "Dentals (त-वर्गः)",
+          "sanskrit": "त-वर्ग — Dentals",
+          "meaning": "त-वर्ग — Dentals",
           "words": [
             "त",
             "थ",
@@ -74,8 +74,8 @@
           "category": "त-वर्गः"
         },
         {
-          "sanskrit": "प-वर्गः : ओष्ठ्याः - ओष्ठयोः मेलनात् (Labial Group: Sounds produced by closing the lips together).",
-          "meaning": "Labials (प-वर्गः)",
+          "sanskrit": "प-वर्ग — Labials",
+          "meaning": "प-वर्ग — Labials",
           "words": [
             "प",
             "फ",
@@ -86,8 +86,8 @@
           "category": "प-वर्गः"
         },
         {
-          "sanskrit": "अन्तःस्थाः - स्वराणाम् व्यञ्जनानां च मध्ये स्थिताः (Semi-vowels: Intermediate positional consonants).",
-          "meaning": "Semi-vowels (अन्तःस्थाः)",
+          "sanskrit": "अन्तःस्थ व्यञ्जनानि — Semivowels",
+          "meaning": "अन्तःस्थ व्यञ्जनानि — Semivowels",
           "words": [
             "य",
             "र",
@@ -97,8 +97,8 @@
           "category": "अन्तःस्थाः"
         },
         {
-          "sanskrit": "ऊष्माणः - मुखात् उष्मवायोः निष्कासनात् प्रजायन्ते (Sibilants / Fricatives: Air friction breathing sounds).",
-          "meaning": "Sibilants (ऊष्माणः)",
+          "sanskrit": "ऊष्माणि — Sibilants and Aspirate",
+          "meaning": "ऊष्माणि — Sibilants and Aspirate",
           "words": [
             "श",
             "ष",
@@ -108,8 +108,8 @@
           "category": "ऊष्माणः"
         },
         {
-          "sanskrit": "अनुस्वार/विसर्ग आदि : अन्य स्वराः (Others: Nasalization, Visarga, and Candrabindu indicators).",
-          "meaning": "Others (अनुस्वार/विसर्ग)",
+          "sanskrit": "अं / अः — Anusvāra & Visarga",
+          "meaning": "अं / अः — Anusvāra & Visarga",
           "words": [
             "अं",
             "अः",
@@ -118,8 +118,8 @@
           "category": "अनुस्वार"
         },
         {
-          "sanskrit": "संयुक्तवत् : संयुक्त व्यञ्जनानि (Conjuncts: Combinations of two or more distinct consonant sounds).",
-          "meaning": "Conjuncts (संयुक्तवत्)",
+          "sanskrit": "संयुक्तवत् — Conjuncts",
+          "meaning": "संयुक्तवत् — Conjuncts",
           "words": [
             "क्ष",
             "ज्ञ",
