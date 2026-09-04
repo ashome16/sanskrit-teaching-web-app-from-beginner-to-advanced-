@@ -12,9 +12,27 @@ interface TextbookReaderProps {
   onWordClick: (word: string) => void;
   onNext: () => void;
   onPrevious: () => void;
+  onJumpToSentence: (index: number) => void;
   isFirstSentence: boolean;
   isLastSentence: boolean;
 }
+
+type SectionJump = { index: number; label: string };
+
+const buildSectionJumps = (lesson: Lesson | undefined): SectionJump[] => {
+  if (!lesson?.sentences?.length) return [];
+  const jumps: SectionJump[] = [{ index: 0, label: 'पाठः · Lesson text' }];
+  lesson.sentences.forEach((item, index) => {
+    if (item.kind === 'glossary-header') {
+      jumps.push({ index, label: 'शब्दार्थ · Word meanings' });
+    } else if (item.kind === 'exercise-header') {
+      const short = (item.sanskrit || 'Exercise').replace(/\s+/g, ' ').trim();
+      // Skip the main umbrella title if numbered sections follow — keep all headers
+      jumps.push({ index, label: short.length > 42 ? `${short.slice(0, 40)}…` : short });
+    }
+  });
+  return jumps;
+};
 
 const TextbookReader: React.FC<TextbookReaderProps> = ({
   lessons,
@@ -26,6 +44,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   onWordClick,
   onNext,
   onPrevious,
+  onJumpToSentence,
   isFirstSentence,
   isLastSentence,
 }) => {
@@ -33,6 +52,15 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const isVarnamala = activeLessonId === 'varnamala';
   const isGroupedLesson = isVarnamala || activeLessonId === 'numbers';
   const [isChartOpen, setIsChartOpen] = useState(false);
+  const sectionJumps = buildSectionJumps(activeLesson);
+  const currentJumpIndex = (() => {
+    if (!sectionJumps.length) return 0;
+    let best = sectionJumps[0].index;
+    for (const jump of sectionJumps) {
+      if (jump.index <= sentenceNumber - 1) best = jump.index;
+    }
+    return best;
+  })();
 
   return (
     <section className="textbook-reader">
@@ -53,6 +81,48 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           ))}
         </select>
       </div>
+
+      {!isGroupedLesson && sectionJumps.length > 1 && (
+        <div className="textbook-jump-row">
+          <label htmlFor="section-jump" className="textbook-lesson-select-label">
+            Jump to
+          </label>
+          <select
+            id="section-jump"
+            className="textbook-lesson-select textbook-jump-select"
+            value={String(currentJumpIndex)}
+            onChange={(event) => onJumpToSentence(Number(event.target.value))}
+          >
+            {sectionJumps.map((jump) => (
+              <option key={`${jump.index}-${jump.label}`} value={String(jump.index)}>
+                {jump.label}
+              </option>
+            ))}
+          </select>
+          <div className="textbook-jump-chips" aria-label="Quick sections">
+            {sectionJumps.map((jump) => (
+              <button
+                key={`chip-${jump.index}`}
+                type="button"
+                className={`textbook-jump-chip${currentJumpIndex === jump.index ? ' active' : ''}`}
+                onClick={() => onJumpToSentence(jump.index)}
+              >
+                {jump.label.startsWith('१') || jump.label.startsWith('२') || jump.label.startsWith('३')
+                  || jump.label.startsWith('४') || jump.label.startsWith('५') || jump.label.startsWith('६')
+                  || jump.label.startsWith('७') || jump.label.startsWith('८')
+                  ? jump.label.split(' ')[0]
+                  : jump.label.startsWith('शब्दार्थ')
+                    ? 'शब्दार्थ'
+                    : jump.label.startsWith('वयम् अभ्यास')
+                      ? 'अभ्यास'
+                      : jump.label.startsWith('पाठ')
+                        ? 'पाठः'
+                        : jump.label.split('·')[0].trim().slice(0, 10)}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       <header className="textbook-reader-header">
         <h2>{activeLesson?.title}</h2>
