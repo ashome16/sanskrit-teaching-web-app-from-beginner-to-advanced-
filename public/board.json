@@ -60,6 +60,126 @@
         "english": "The boy plays.",
         "sentence": "बालः क्रीडति।",
         "highlight": "बालः"
+      },
+      {
+        "target": "कः",
+        "tiles": [
+          "कः",
+          "का",
+          "किम्",
+          "कुत्र",
+          "कदा",
+          "कथम्"
+        ],
+        "sentence": "कः बालकः धावति?",
+        "english": "Who is the boy running?",
+        "highlight": "कः",
+        "prompt": "____ बालकः धावति?"
+      },
+      {
+        "target": "किम्",
+        "tiles": [
+          "कथम्",
+          "किम्",
+          "कः",
+          "का",
+          "कुत्र",
+          "कदा"
+        ],
+        "sentence": "तत् किम् फलम् अस्ति?",
+        "english": "What fruit is that?",
+        "highlight": "किम्",
+        "prompt": "तत् ____ फलम् अस्ति?"
+      },
+      {
+        "target": "का",
+        "tiles": [
+          "कदा",
+          "कथम्",
+          "का",
+          "कः",
+          "किम्",
+          "कुत्र"
+        ],
+        "sentence": "का महिला गायति?",
+        "english": "Who is the woman singing?",
+        "highlight": "का",
+        "prompt": "____ महिला गायति?"
+      },
+      {
+        "target": "कुत्र",
+        "tiles": [
+          "किम्",
+          "कदा",
+          "कथम्",
+          "कुत्र",
+          "कः",
+          "का"
+        ],
+        "sentence": "पुस्तकम् कुत्र अस्ति?",
+        "english": "Where is the book?",
+        "highlight": "कुत्र",
+        "prompt": "पुस्तकम् ____ अस्ति?"
+      },
+      {
+        "target": "किम्",
+        "tiles": [
+          "का",
+          "कुत्र",
+          "कदा",
+          "कथम्",
+          "किम्",
+          "कः"
+        ],
+        "sentence": "त्वम् किम् करोषि?",
+        "english": "What are you doing?",
+        "highlight": "किम्",
+        "prompt": "त्वम् ____ करोषि?"
+      },
+      {
+        "target": "कः",
+        "tiles": [
+          "का",
+          "किम्",
+          "कुत्र",
+          "कदा",
+          "कथम्",
+          "कः"
+        ],
+        "sentence": "कः पुरुषः खादति?",
+        "english": "Who is the man eating?",
+        "highlight": "कः",
+        "prompt": "____ पुरुषः खादति?"
+      },
+      {
+        "target": "का",
+        "tiles": [
+          "का",
+          "कः",
+          "किम्",
+          "कुत्र",
+          "कदा",
+          "कथम्"
+        ],
+        "sentence": "का अत्र आगच्छति?",
+        "english": "Who is coming here?",
+        "highlight": "का",
+        "prompt": "____ अत्र आगच्छति?"
+      },
+      {
+        "target": "किम्",
+        "tiles": [
+          "कथम्",
+          "किम्",
+          "कः",
+          "का",
+          "कुत्र",
+          "कदा"
+        ],
+        "sentence": "सा किम् पठति?",
+        "english": "What is she reading?",
+        "highlight": "किम्",
+        "prompt": "सा ____ पठति?"
       }
     ]
   },
