@@ -49,7 +49,7 @@
 कः तत्र उपविशति?|Who is sitting there?|कः|beginners
 तत् किम् फलम् अस्ति?|What fruit is that?|किम्|beginners
 का महिला गायति?|Who is the woman singing?|का|beginners
-पुस्तकम् कुत्र अस्ति?|Where is the book?|कुत्र|beginners
+पुस्तकम् कुत्र पतति?|Where is the book falling?|कुत्र|beginners
 त्वम् किम् करोषि?|What are you doing?|किम्|beginners
 कः पुरुषः खादति?|Who is the man eating?|कः|beginners
 का अत्र आगच्छति?|Who is coming here?|का|beginners
