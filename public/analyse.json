@@ -321,21 +321,29 @@
   },
   "वर्षम्": {
     "word": "वर्षम्",
-    "base_english": "A division of land / continent",
+    "base_english": "Country / Land division",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "A division of land / continent"
+        "meaning": "Country / Land division"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देश / भूभाग"
       }
     }
   },
   "सन्ततिः": {
     "word": "सन्ततिः",
-    "base_english": "Progeny / offspring / children",
+    "base_english": "Progeny / Offspring",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Progeny / offspring / children"
+        "meaning": "Progeny / Offspring"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "संतान / प्रजा"
       }
     }
   },
@@ -346,16 +354,24 @@
       "en": {
         "label": "English",
         "meaning": "By falling"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गिरने से / टपकने से"
       }
     }
   },
   "हेतुः": {
     "word": "हेतुः",
-    "base_english": "Reason / cause",
+    "base_english": "Reason / Cause / Method",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Reason / cause"
+        "meaning": "Reason / Cause / Method"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कारण / नियम"
       }
     }
   },
@@ -641,15 +657,15 @@
   },
   "इति": {
     "word": "इति",
-    "base_english": "This / Thus",
+    "base_english": "As / Thus",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "This / Thus"
+        "meaning": "As / Thus"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "ऐसा / यह"
+        "meaning": "इस नाम से"
       }
     }
   },
@@ -781,15 +797,15 @@
   },
   "यत्": {
     "word": "यत्",
-    "base_english": "That",
+    "base_english": "Which",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "That"
+        "meaning": "Which"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "कि"
+        "meaning": "जो"
       }
     }
   },
@@ -1117,11 +1133,11 @@
   },
   "एव": {
     "word": "एव",
-    "base_english": "Only",
+    "base_english": "Only / Indeed",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Only"
+        "meaning": "Only / Indeed"
       },
       "hi": {
         "label": "हिन्दी",
@@ -2265,11 +2281,11 @@
   },
   "सः": {
     "word": "सः",
-    "base_english": "He",
+    "base_english": "That",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "He"
+        "meaning": "That"
       },
       "hi": {
         "label": "हिन्दी",
@@ -2722,6 +2738,678 @@
       "hi": {
         "label": "हिन्दी",
         "meaning": "मनुष्य के द्वारा इस संसार में"
+      }
+    }
+  },
+  "उत्तरम्": {
+    "word": "उत्तरम्",
+    "base_english": "In the North",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the North"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्तर दिशा में"
+      }
+    }
+  },
+  "समुद्रस्य": {
+    "word": "समुद्रस्य",
+    "base_english": "Of the ocean",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the ocean"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "समुद्र के / महासागर के"
+      }
+    }
+  },
+  "हिमाद्रेः": {
+    "word": "हिमाद्रेः",
+    "base_english": "Of the Himalaya mountain",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the Himalaya mountain"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हिमालय पर्वत के"
+      }
+    }
+  },
+  "दक्षिणम्": {
+    "word": "दक्षिणम्",
+    "base_english": "In the South",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the South"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दक्षिण दिशा में"
+      }
+    }
+  },
+  "तद्": {
+    "word": "तद्",
+    "base_english": "That",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "That"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वह"
+      }
+    }
+  },
+  "भारतम्": {
+    "word": "भारतम्",
+    "base_english": "Bharata",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Bharata"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भारत"
+      }
+    }
+  },
+  "नाम": {
+    "word": "नाम",
+    "base_english": "Named",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Named"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नाम का"
+      }
+    }
+  },
+  "भारती": {
+    "word": "भारती",
+    "base_english": "The children of Bharata",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The children of Bharata"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सरस्वती की संतान / भारत माता की संतान"
+      }
+    }
+  },
+  "यत्र": {
+    "word": "यत्र",
+    "base_english": "Where",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Where"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जहाँ"
+      }
+    }
+  },
+  "अस्मीन": {
+    "word": "अस्मीन",
+    "base_english": "In this",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In this"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इस"
+      }
+    }
+  },
+  "सुभाषिते": {
+    "word": "सुभाषिते",
+    "base_english": "In the Subhashita",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the Subhashita"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुंदर वचन में"
+      }
+    }
+  },
+  "सुभाषितकारः": {
+    "word": "सुभाषितकारः",
+    "base_english": "The author of the verse",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The author of the verse"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "श्लोक लिखने वाला कवि"
+      }
+    }
+  },
+  "भारतस्य": {
+    "word": "भारतस्य",
+    "base_english": "Of India",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of India"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भारत का"
+      }
+    }
+  },
+  "भौगोलिकम्": {
+    "word": "भौगोलिकम्",
+    "base_english": "Geographical",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Geographical"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भूगोल से सम्बंधित"
+      }
+    }
+  },
+  "स्वरूपम्": {
+    "word": "स्वरूपम्",
+    "base_english": "Nature / Form",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Nature / Form"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आकार / रूप"
+      }
+    }
+  },
+  "वर्णयति": {
+    "word": "वर्णयति",
+    "base_english": "Describes",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Describes"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वर्णन करता है"
+      }
+    }
+  },
+  "हिन्दमहासागरस्य": {
+    "word": "हिन्दमहासागरस्य",
+    "base_english": "Of the Indian Ocean",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the Indian Ocean"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हिन्द महासागर के"
+      }
+    }
+  },
+  "उत्तरभागे": {
+    "word": "उत्तरभागे",
+    "base_english": "In the northern part",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the northern part"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्तर भाग में"
+      }
+    }
+  },
+  "हिमालयस्य": {
+    "word": "हिमालयस्य",
+    "base_english": "Of the Himalayas",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the Himalayas"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हिमालय के"
+      }
+    }
+  },
+  "दक्षिणभागे": {
+    "word": "दक्षिणभागे",
+    "base_english": "In the southern part",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the southern part"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दक्षिण भाग में"
+      }
+    }
+  },
+  "भूभागः": {
+    "word": "भूभागः",
+    "base_english": "Land mass",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Land mass"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज़मीन का टुकड़ा"
+      }
+    }
+  },
+  "तस्य": {
+    "word": "तस्य",
+    "base_english": "Of that",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of that"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उस"
+      }
+    }
+  },
+  "अत्रत्याः": {
+    "word": "अत्रत्याः",
+    "base_english": "Of this place",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of this place"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "यहाँ के"
+      }
+    }
+  },
+  "नागरिकाः": {
+    "word": "नागरिकाः",
+    "base_english": "Citizens",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Citizens"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नागरिक / रहने वाले लोग"
+      }
+    }
+  },
+  "प्रसिद्धाः": {
+    "word": "प्रसिद्धाः",
+    "base_english": "Famous",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Famous"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मशहूर / विख्यात"
+      }
+    }
+  },
+  "जल": {
+    "word": "जल",
+    "base_english": "Water drop",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Water drop"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बिन्दु — पानी की बूंद"
+      }
+    }
+  },
+  "क्रमशः": {
+    "word": "क्रमशः",
+    "base_english": "Gradually / Step by step",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Gradually / Step by step"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धीरे-धीरे / एक-एक करके"
+      }
+    }
+  },
+  "पूर्यते": {
+    "word": "पूर्यते",
+    "base_english": "Is filled",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Is filled"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भर जाता है"
+      }
+    }
+  },
+  "घटः": {
+    "word": "घटः",
+    "base_english": "The pot",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The pot"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "घड़ा"
+      }
+    }
+  },
+  "सर्व": {
+    "word": "सर्व",
+    "base_english": "Of all sciences/knowledge",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of all sciences/knowledge"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्यानाम् — सभी प्रकार की विद्याओं/ज्ञान का"
+      }
+    }
+  },
+  "धर्मस्य": {
+    "word": "धर्मस्य",
+    "base_english": "Of righteousness / virtue",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of righteousness / virtue"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धर्म का / अच्छे कार्यों का"
+      }
+    }
+  },
+  "धनस्य": {
+    "word": "धनस्य",
+    "base_english": "Of wealth",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of wealth"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धन का / पैसे का"
+      }
+    }
+  },
+  "यथा": {
+    "word": "यथा",
+    "base_english": "Just as",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Just as"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जैसे"
+      }
+    }
+  },
+  "निरन्तरम्": {
+    "word": "निरन्तरम्",
+    "base_english": "Continuously",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Continuously"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लगातार"
+      }
+    }
+  },
+  "बिन्दूनाम्": {
+    "word": "बिन्दूनाम्",
+    "base_english": "Of drops",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of drops"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बूंदों के"
+      }
+    }
+  },
+  "रिक्तः": {
+    "word": "रिक्तः",
+    "base_english": "Empty",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Empty"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खाली"
+      }
+    }
+  },
+  "पूर्णः": {
+    "word": "पूर्णः",
+    "base_english": "Full",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Full"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भरा हुआ"
+      }
+    }
+  },
+  "तथैव": {
+    "word": "तथैव",
+    "base_english": "In the same way",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the same way"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वैसे ही"
+      }
+    }
+  },
+  "जीवने": {
+    "word": "जीवने",
+    "base_english": "In life",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In life"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जीवन में"
+      }
+    }
+  },
+  "अभ्यासेन": {
+    "word": "अभ्यासेन",
+    "base_english": "By practice",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By practice"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अभ्यास से / बार-बार करने से"
+      }
+    }
+  },
+  "सामान्यः": {
+    "word": "सामान्यः",
+    "base_english": "Ordinary / Common",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ordinary / Common"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "साधारण"
+      }
+    }
+  },
+  "सर्वप्रकारम्": {
+    "word": "सर्वप्रकारम्",
+    "base_english": "All kinds of",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "All kinds of"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सब प्रकार का"
+      }
+    }
+  },
+  "लभते": {
+    "word": "लभते",
+    "base_english": "Attains / Gains",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Attains / Gains"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्राप्त करता है"
+      }
+    }
+  },
+  "उत्तरं": {
+    "word": "उत्तरं",
+    "base_english": "In the North",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the North"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्तर दिशा में"
+      }
+    }
+  },
+  "हिमाद्रेश्": {
+    "word": "हिमाद्रेश्",
+    "base_english": "Of the Himalaya mountain",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the Himalaya mountain"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हिमालय पर्वत के"
+      }
+    }
+  },
+  "वर्षं": {
+    "word": "वर्षं",
+    "base_english": "Country / Land division",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Country / Land division"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देश / भूभाग"
+      }
+    }
+  },
+  "भारतं": {
+    "word": "भारतं",
+    "base_english": "Bharata",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Bharata"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भारत"
+      }
+    }
+  },
+  "हिमाद्रेश्चैव": {
+    "word": "हिमाद्रेश्चैव",
+    "base_english": "And indeed of the Himalaya",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "And indeed of the Himalaya"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "और हिमालय पर्वत के ही"
       }
     }
   }
