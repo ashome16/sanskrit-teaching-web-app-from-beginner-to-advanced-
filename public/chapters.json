@@ -1136,6 +1136,317 @@
             "९",
             "॥"
           ]
+        },
+        {
+          "sanskrit": "वयं शब्दार्थान् जानीमः",
+          "meaning": "Exercise · Let us learn the word meanings (पृष्ठम् २२-२३)",
+          "words": [
+            "वयम्",
+            "शब्दार्थान्",
+            "जानीमः"
+          ],
+          "category": "शब्दार्थ-शीर्षक",
+          "kind": "glossary-header"
+        },
+        {
+          "sanskrit": "उत्थाय",
+          "meaning": "Having got up / standing up",
+          "words": [
+            "उत्थाय"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "उत्थानं कृत्वा",
+          "hindi_gloss": "उठकर",
+          "paragraphTranslation": "उत्थानं कृत्वा · Having got up / standing up · उठकर"
+        },
+        {
+          "sanskrit": "प्रेरकः",
+          "meaning": "One who inspires / motivator",
+          "words": [
+            "प्रेरकः"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "प्रेरणादायकः",
+          "hindi_gloss": "प्रेरणा देने वाला",
+          "paragraphTranslation": "प्रेरणादायकः · One who inspires / motivator · प्रेरणा देने वाला"
+        },
+        {
+          "sanskrit": "नैतिकः",
+          "meaning": "Moral / ethical",
+          "words": [
+            "नैतिकः"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "सदाचारयुक्तः",
+          "hindi_gloss": "अच्छे आचरण वाला",
+          "paragraphTranslation": "सदाचारयुक्तः · Moral / ethical · अच्छे आचरण वाला"
+        },
+        {
+          "sanskrit": "वपुषा",
+          "meaning": "By physique / by body",
+          "words": [
+            "वपुषा"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "शरीरेण",
+          "hindi_gloss": "शरीर से",
+          "paragraphTranslation": "शरीरेण · By physique / by body · शरीर से"
+        },
+        {
+          "sanskrit": "सम्मानम्",
+          "meaning": "Respect / honor",
+          "words": [
+            "सम्मानम्"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "आदरः",
+          "hindi_gloss": "इज़्ज़त",
+          "paragraphTranslation": "आदरः · Respect / honor · इज़्ज़त"
+        },
+        {
+          "sanskrit": "हातव्याः",
+          "meaning": "Worth discarding / should be given up",
+          "words": [
+            "हातव्याः"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "त्यक्तव्याः",
+          "hindi_gloss": "छोड़ देने योग्य",
+          "paragraphTranslation": "त्यक्तव्याः · Worth discarding / should be given up · छोड़ देने योग्य"
+        },
+        {
+          "sanskrit": "भूतिम्",
+          "meaning": "Prosperity / wealth / welfare",
+          "words": [
+            "भूतिम्"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "वैभवम् / ऐश्वर्यम्",
+          "hindi_gloss": "सुख-समृद्धि",
+          "paragraphTranslation": "वैभवम् / ऐश्वर्यम् · Prosperity / wealth / welfare · सुख-समृद्धि"
+        },
+        {
+          "sanskrit": "तन्द्रा",
+          "meaning": "Lassitude / drowsiness / exhaustion",
+          "words": [
+            "तन्द्रा"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "अकर्मण्यता",
+          "hindi_gloss": "सुस्ती / ऊंघना",
+          "paragraphTranslation": "अकर्मण्यता · Lassitude / drowsiness / exhaustion · सुस्ती / ऊंघना"
+        },
+        {
+          "sanskrit": "दीर्घसूत्रता",
+          "meaning": "Procrastination / habit of delaying work",
+          "words": [
+            "दीर्घसूत्रता"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "विलम्बकार्यप्रवृत्तिः",
+          "hindi_gloss": "काम टालने की आदत",
+          "paragraphTranslation": "विलम्बकार्यप्रवृत्तिः · Procrastination / habit of delaying work · काम टालने की आदत"
+        },
+        {
+          "sanskrit": "अवरोधकाः",
+          "meaning": "Barriers / obstacles / preventers",
+          "words": [
+            "अवरोधकाः"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "निवारकाः",
+          "hindi_gloss": "रुकावट पैदा करने वाले",
+          "paragraphTranslation": "निवारकाः · Barriers / obstacles / preventers · रुकावट पैदा करने वाले"
+        },
+        {
+          "sanskrit": "वाञ्छति",
+          "meaning": "Wants / desires",
+          "words": [
+            "वाञ्छति"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "इच्छति",
+          "hindi_gloss": "चाहता है",
+          "paragraphTranslation": "इच्छति · Wants / desires · चाहता है"
+        },
+        {
+          "sanskrit": "अद्भिः",
+          "meaning": "By water",
+          "words": [
+            "अद्भिः"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "जलैः",
+          "hindi_gloss": "पानी द्वारा / जलों से",
+          "paragraphTranslation": "जलैः · By water · पानी द्वारा / जलों से"
+        },
+        {
+          "sanskrit": "भूतात्मा",
+          "meaning": "Soul / living entity",
+          "words": [
+            "भूतात्मा"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "जीवः",
+          "hindi_gloss": "जीवात्मा / अंतरात्मा",
+          "paragraphTranslation": "जीवः · Soul / living entity · जीवात्मा / अंतरात्मा"
+        },
+        {
+          "sanskrit": "द्वन्द्वः",
+          "meaning": "Dilemma / conflict of mind",
+          "words": [
+            "द्वन्द्वः"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "द्वैधीभावः",
+          "hindi_gloss": "असमंजस / मन का टकराव",
+          "paragraphTranslation": "द्वैधीभावः · Dilemma / conflict of mind · असमंजस / मन का टकराव"
+        },
+        {
+          "sanskrit": "वर्षम्",
+          "meaning": "A division of land / continent",
+          "words": [
+            "वर्षम्"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "भूमेः विभागः",
+          "hindi_gloss": "धरती का टुकड़ा / देश",
+          "paragraphTranslation": "भूमेः विभागः · A division of land / continent · धरती का टुकड़ा / देश"
+        },
+        {
+          "sanskrit": "सन्ततिः",
+          "meaning": "Progeny / offspring / children",
+          "words": [
+            "सन्ततिः"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "अपत्यम्",
+          "hindi_gloss": "संतान / बच्चे",
+          "paragraphTranslation": "अपत्यम् · Progeny / offspring / children · संतान / बच्चे"
+        },
+        {
+          "sanskrit": "निपातेन",
+          "meaning": "By falling",
+          "words": [
+            "निपातेन"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "पतनेन",
+          "hindi_gloss": "गिरने से / टपकने से",
+          "paragraphTranslation": "पतनेन · By falling · गिरने से / टपकने से"
+        },
+        {
+          "sanskrit": "हेतुः",
+          "meaning": "Reason / cause",
+          "words": [
+            "हेतुः"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "कारणम्",
+          "hindi_gloss": "वजह",
+          "paragraphTranslation": "कारणम् · Reason / cause · वजह"
+        },
+        {
+          "sanskrit": "परिपृच्छति",
+          "meaning": "Humbly enquires / asks questions politely",
+          "words": [
+            "परिपृच्छति"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "सादरं पृच्छति",
+          "hindi_gloss": "आदरपूर्वक पूछता है",
+          "paragraphTranslation": "सादरं पृच्छति · Humbly enquires / asks questions politely · आदरपूर्वक पूछता है"
+        },
+        {
+          "sanskrit": "उपाश्रयति",
+          "meaning": "Approaches / takes shelter of / goes near",
+          "words": [
+            "उपाश्रयति"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "समीपम् गच्छति",
+          "hindi_gloss": "पास जाता है / शरण लेता है",
+          "paragraphTranslation": "समीपम् गच्छति · Approaches / takes shelter of / goes near · पास जाता है / शरण लेता है"
+        },
+        {
+          "sanskrit": "सङ्गतिः",
+          "meaning": "Association / company",
+          "words": [
+            "सङ्गतिः"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "संसर्गः",
+          "hindi_gloss": "साथ / सोहबत",
+          "paragraphTranslation": "संसर्गः · Association / company · साथ / सोहबत"
+        },
+        {
+          "sanskrit": "तुष्यन्ति",
+          "meaning": "Feeling satisfied / pleased",
+          "words": [
+            "तुष्यन्ति"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "सन्तोषम् अनुभवन्ति",
+          "hindi_gloss": "संतुष्ट होते हैं",
+          "paragraphTranslation": "सन्तोषम् अनुभवन्ति · Feeling satisfied / pleased · संतुष्ट होते हैं"
+        },
+        {
+          "sanskrit": "रिपुः",
+          "meaning": "Enemy",
+          "words": [
+            "रिपुः"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "शत्रुः",
+          "hindi_gloss": "दुश्मन",
+          "paragraphTranslation": "शत्रुः · Enemy · दुश्मन"
+        },
+        {
+          "sanskrit": "पुण्यम्",
+          "meaning": "Fruits of meritorious deeds / virtue / good karma",
+          "words": [
+            "पुण्यम्"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "सत्कर्मणां फलम्",
+          "hindi_gloss": "अच्छे कर्मों का फल",
+          "paragraphTranslation": "सत्कर्मणां फलम् · Fruits of meritorious deeds / virtue / good karma · अच्छे कर्मों का फल"
+        },
+        {
+          "sanskrit": "परपीडनम्",
+          "meaning": "Bothering others / causing pain to others",
+          "words": [
+            "परपीडनम्"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "अन्येभ्यः कष्टप्रदानम्",
+          "hindi_gloss": "दूसरों को सताना",
+          "paragraphTranslation": "अन्येभ्यः कष्टप्रदानम् · Bothering others / causing pain to others · दूसरों को सताना"
         }
       ]
     }
