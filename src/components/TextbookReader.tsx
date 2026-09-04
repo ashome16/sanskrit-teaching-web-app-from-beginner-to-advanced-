@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { Lesson, LessonSentence } from '../types/chapters';
+import { barakhadiLabel } from '../utils/barakhadiPhonetics';
 import '../styles/textbook-reader.css';
 
 interface TextbookReaderProps {
@@ -131,7 +132,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         )}
         {activeLessonId === 'barakhadi' && (
           <p className="textbook-glossary-hint" style={{ marginTop: '.35rem' }}>
-            Tap any अक्षर to hear it. Rows follow क का कि की… कं कः.
+            Tap any अक्षर to hear it. Each tile shows its sound (ka · kaa · ki · kee…). Retroflex ट/ठ/ड use tt/tth/dd so they stay distinct from त/थ/द.
           </p>
         )}
         {!isGroupedLesson && (
@@ -183,11 +184,14 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                   <button
                     key={`${activeLessonId}-${groupIdx}-${letterIdx}`}
                     type="button"
-                    className="varnamala-letter-btn"
+                    className={`varnamala-letter-btn${activeLessonId === 'barakhadi' ? ' barakhadi-letter-btn' : ''}`}
                     onClick={() => onWordClick(letter)}
-                    aria-label={`Play pronunciation for ${letter}`}
+                    aria-label={`Play pronunciation for ${letter}${activeLessonId === 'barakhadi' ? ` (${barakhadiLabel(letter)})` : ''}`}
                   >
-                    {letter}
+                    <span className="barakhadi-dev">{letter}</span>
+                    {activeLessonId === 'barakhadi' ? (
+                      <small className="barakhadi-roman">{barakhadiLabel(letter)}</small>
+                    ) : null}
                   </button>
                 ))}
               </div>
