@@ -4,6 +4,13 @@ import { searchSanskritWords } from '../data/sanskrit-words';
 import { extractLinguisticInfo } from '../utils/linguistics';
 import { playPronunciation } from '../utils/pronunciation';
 import { formatCaseLabel } from '../data/vibhakti';
+import {
+  loadAnalyseGlosses,
+  lookupAnalyseGloss,
+  englishMeaningFromGloss,
+  type AnalyseEntry,
+  type AnalyseRegistry,
+} from '../utils/analyseGloss';
 import '../styles/word-analyzer-card.css';
 
 export interface WordSelection {
@@ -54,6 +61,17 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
     null
   );
   const [speechRate, setSpeechRate] = useState<number>(1);
+  const [glosses, setGlosses] = useState<AnalyseRegistry>({});
+
+  useEffect(() => {
+    let cancelled = false;
+    loadAnalyseGlosses().then((data) => {
+      if (!cancelled) setGlosses(data);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   // Click-to-analyze: whenever a word is clicked in the reader panel, populate and analyze instantly
   useEffect(() => {
@@ -84,6 +102,14 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
   const word = analysis?.word;
   const isCustom = analysis?.isCustom ?? false;
   const nounInflection = word?.nounInflection;
+  const glossEntry: AnalyseEntry | undefined = word
+    ? lookupAnalyseGloss(glosses, word.devanagari)
+    : undefined;
+  const glossEnglish = glossEntry ? englishMeaningFromGloss(glossEntry) : '';
+  const displayMeaning = (word?.meaning || '').trim() || glossEnglish;
+  const regionalGlosses = glossEntry?.languages
+    ? Object.entries(glossEntry.languages).filter(([code, item]) => code !== 'en' && item?.meaning)
+    : [];
 
   return (
     <aside className="word-analyzer-card">
@@ -222,14 +248,25 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
                     : (isCustom ? 'Unavailable for custom input' : '—')}
                 </div>
               </div>
-              <div className="wac-grammar-box">
-                <div className="wac-grammar-label">Core Word Meaning</div>
-                <div className="wac-grammar-value">
-                  {word.meaning ||
-                    (isCustom ? 'Grammatical details unavailable for custom input' : '—')}
-                </div>
-              </div>
             </div>
+          </section>
+
+          {/* Meaning — from dictionary entry or sealed analyse.json glosses */}
+          <section className="wac-section">
+            <h3 className="wac-section-title">Meaning</h3>
+            {displayMeaning ? (
+              <div className="wac-meaning-block">
+                <p className="wac-meaning-english">{displayMeaning}</p>
+                {regionalGlosses.map(([code, item]) => (
+                  <p key={code} className="wac-meaning-regional">
+                    <span className="wac-meaning-lang">{item.label}</span>
+                    {item.meaning}
+                  </p>
+                ))}
+              </div>
+            ) : (
+              <p className="wac-placeholder">No meaning yet for this word. Add it in analyse.json.</p>
+            )}
           </section>
 
           {/* Section 4: Etymology */}
