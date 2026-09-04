@@ -699,15 +699,15 @@
   },
   "भोः": {
     "word": "भोः",
-    "base_english": "O Sushila!",
+    "base_english": "O (vocative)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "O Sushila!"
+        "meaning": "O (vocative)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "हे सुशीला"
+        "meaning": "हे"
       }
     }
   },
@@ -903,7 +903,7 @@
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "आदरणीय श्रीमान"
+        "meaning": "आदरणीय श्रीमान!"
       }
     }
   },
@@ -1029,7 +1029,7 @@
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "हे रमा"
+        "meaning": "हे रमा!"
       }
     }
   },
@@ -1099,7 +1099,7 @@
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "हे बच्चे"
+        "meaning": "हे बच्चे!"
       }
     }
   },
@@ -1688,6 +1688,160 @@
       "hi": {
         "label": "हिन्दी",
         "meaning": "मनुष्य"
+      }
+    }
+  },
+  "चिन्तनविकासाय": {
+    "word": "चिन्तनविकासाय",
+    "base_english": "For the development of thinking",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For the development of thinking"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सोच के विकास के लिए"
+      }
+    }
+  },
+  "चिन्तन-विकासाय": {
+    "word": "चिन्तन-विकासाय",
+    "base_english": "For the development of thinking",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For the development of thinking"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सोच के विकास के लिए"
+      }
+    }
+  },
+  "विविधमूल्यानाम्": {
+    "word": "विविधमूल्यानाम्",
+    "base_english": "Of various values",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of various values"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विभिन्न जीवन-मूल्यों के"
+      }
+    }
+  },
+  "विविध-मूल्यानाम्": {
+    "word": "विविध-मूल्यानाम्",
+    "base_english": "Of various values",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of various values"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विभिन्न जीवन-मूल्यों के"
+      }
+    }
+  },
+  "सुभाषितरसम्": {
+    "word": "सुभाषितरसम्",
+    "base_english": "The nectar of good sayings",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The nectar of good sayings"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुंदर वचनों का रस"
+      }
+    }
+  },
+  "सुभाषित-रसम्": {
+    "word": "सुभाषित-रसम्",
+    "base_english": "The nectar of good sayings",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The nectar of good sayings"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुंदर वचनों का रस"
+      }
+    }
+  },
+  "प्रियसुरेश": {
+    "word": "प्रियसुरेश",
+    "base_english": "Dear Suresh!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Dear Suresh!"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रिय सुरेश!"
+      }
+    }
+  },
+  "प्रियसुरेशु": {
+    "word": "प्रियसुरेशु",
+    "base_english": "Dear Suresh!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Dear Suresh!"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रिय सुरेश!"
+      }
+    }
+  },
+  "श्लोकं": {
+    "word": "श्लोकं",
+    "base_english": "Verse",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Verse"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "श्लोक"
+      }
+    }
+  },
+  "सुशीले": {
+    "word": "सुशीले",
+    "base_english": "O Sushila!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "O Sushila!"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हे सुशीला!"
+      }
+    }
+  },
+  "श्रीमन्": {
+    "word": "श्रीमन्",
+    "base_english": "Sir!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sir!"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "श्रीमान जी!"
       }
     }
   }
