@@ -181,6 +181,66 @@
         "english": "What is she reading?",
         "highlight": "किम्",
         "prompt": "सा ____ पठति?"
+      },
+      {
+        "target": "कदा",
+        "tiles": [
+          "कदा",
+          "कः",
+          "का",
+          "किम्",
+          "कुत्र",
+          "कथम्"
+        ],
+        "sentence": "त्वम् कदा आगच्छसि?",
+        "english": "When do you come?",
+        "highlight": "कदा",
+        "prompt": "त्वम् ____ आगच्छसि?"
+      },
+      {
+        "target": "कथम्",
+        "tiles": [
+          "कदा",
+          "कथम्",
+          "कः",
+          "का",
+          "किम्",
+          "कुत्र"
+        ],
+        "sentence": "त्वम् कथम् पठसि?",
+        "english": "How do you read?",
+        "highlight": "कथम्",
+        "prompt": "त्वम् ____ पठसि?"
+      },
+      {
+        "target": "कदा",
+        "tiles": [
+          "कुत्र",
+          "कथम्",
+          "कदा",
+          "कः",
+          "का",
+          "किम्"
+        ],
+        "sentence": "सः कदा खेलति?",
+        "english": "When does he play?",
+        "highlight": "कदा",
+        "prompt": "सः ____ खेलति?"
+      },
+      {
+        "target": "कथम्",
+        "tiles": [
+          "किम्",
+          "कुत्र",
+          "कदा",
+          "कथम्",
+          "कः",
+          "का"
+        ],
+        "sentence": "सा कथम् गायति?",
+        "english": "How does she sing?",
+        "highlight": "कथम्",
+        "prompt": "सा ____ गायति?"
       }
     ]
   },
