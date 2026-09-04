@@ -38,3 +38,4 @@
 .puzzle-result .result-sanskrit { font-size: 1.45rem; margin: 0 0 .35rem; }
 .puzzle-result .result-english { color: #f4ede0; font: italic 500 1.05rem Georgia, serif; margin: 0; }
 .word-tap { background: #f1c75b33; border-radius: 3px; color: inherit; padding: 0 .12rem; }
+.board-phase { color: #9a3423; font: 700 .95rem Georgia, serif; margin: .35rem 0 0; }
