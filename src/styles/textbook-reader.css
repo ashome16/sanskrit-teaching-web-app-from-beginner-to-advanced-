@@ -289,3 +289,17 @@
 .varnamala-row--9 { background: #f7f0e3; border-color: #dcc78f; }
 .varnamala-row--9 .varnamala-row-label { color: #8a5a10; }
 
+
+.textbook-glossary-card { background: #f7f1e6; border: 2px solid #273b35; border-radius: 8px; padding: 1rem 1.1rem 1.15rem; }
+.textbook-glossary-card--header { background: #273b35; color: #fffdf8; }
+.textbook-glossary-title { font: 700 1.55rem "Noto Sans Devanagari", Georgia, serif; margin: 0 0 .4rem; }
+.textbook-glossary-title .interactive-word { color: #f1c75b; margin-right: .35rem; }
+.textbook-glossary-subtitle { color: #d8d0c3; font-size: .95rem; margin: 0 0 .55rem; }
+.textbook-glossary-hint { color: #cbd6c8; font-size: .82rem; margin: 0; }
+.textbook-glossary-pair { display: grid; gap: .35rem; margin-top: .75rem; }
+.textbook-glossary-label { color: #8a5a2b; font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.textbook-glossary-shabd { background: #fffdf8; border: 2px solid #d86a3d; border-radius: 6px; color: #273b35; cursor: pointer; font: 700 1.8rem "Noto Sans Devanagari", Georgia, serif; padding: .45rem .7rem; text-align: left; }
+.textbook-glossary-arth { background: #fffdf8; border-radius: 6px; padding: .55rem .7rem; }
+.textbook-glossary-arth-sa { color: #273b35; font: 600 1.15rem "Noto Sans Devanagari", Georgia, serif; margin: 0 0 .25rem; }
+.textbook-glossary-arth-en { color: #273b35; font: 700 1.05rem Georgia, serif; margin: 0; }
+.textbook-glossary-arth-hi { color: #4a433a; font-size: .95rem; margin: .25rem 0 0; }
