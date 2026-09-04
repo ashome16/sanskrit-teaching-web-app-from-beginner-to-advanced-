@@ -26,7 +26,7 @@ This shelf joins a consonant and a vowel.
 
 - Tap **two** tiles: first the consonant, then the vowel (**आ इ उ**).
 - **आ** is not a second letter stuck on. It becomes the mark **ा** on the consonant: **क** + **आ** → **का**.
-- Do not tap a third tile.
+- Most rows need exactly two tiles. **बालः** is **बा** then **लः** (still two). Question-word rows later (**कः**, **किम्**) need one whole-word tile.
 
 **Day 1 proof**
 Target **का**. Tap **क**, then **आ**, then Check.
