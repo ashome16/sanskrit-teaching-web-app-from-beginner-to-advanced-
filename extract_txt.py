@@ -19,6 +19,7 @@ OUTPUT_PATHS = [
 TXT_FILES = [
     ('varnamala', PUBLIC_DIR / 'varnamala.txt'),
     ('barakhadi', PUBLIC_DIR / 'barakhadi.txt'),
+    ('samyukta', PUBLIC_DIR / 'samyukta.txt'),
     ('numbers', PUBLIC_DIR / 'numbers.txt'),
     ('gsde101', PUBLIC_DIR / 'gsde101.txt'),
     ('gsde102', PUBLIC_DIR / 'gsde102.txt'),
@@ -29,6 +30,7 @@ TITLE_OVERRIDES = {
     'gsde102': 'Chapter 2: नित्यं पिबामः सुभाषितरसम्',
     'varnamala': 'Sanskrit Varṇamālā Guide',
     'barakhadi': 'बारहखड़ी · Audio Lesson',
+    'samyukta': 'संयुक्त · Conjunct Games',
     'numbers': 'Sanskrit Numbers Guide (संख्या)',
 }
 
@@ -238,6 +240,29 @@ def load_existing_lessons(output_path: Path) -> list[dict]:
     return data.get('lessons', [])
 
 
+def build_samyukta_lesson(item_id: str, txt_path: Path) -> dict:
+    title = TITLE_OVERRIDES[item_id]
+    games = [
+        ('game1', 'Game 1 · Drop the Stick', 'स + त → स्त'),
+        ('game2', 'Game 2 · Piggyback Ride', 'द + व → द्व'),
+        ('game3', 'Game 3 · Superhero Shape-Shifters', 'क्+ष / त्+र'),
+    ]
+    sentences = [
+        {
+            'sanskrit': note,
+            'meaning': label,
+            'words': [],
+            'category': gid,
+        }
+        for gid, label, note in games
+    ]
+    return {
+        'id': item_id,
+        'fileName': txt_path.name,
+        'title': title,
+        'sentences': sentences,
+    }
+
 def main() -> None:
     existing_lessons = load_existing_lessons(OUTPUT_PATHS[0])
     existing_by_id = {item['id']: item for item in existing_lessons}
@@ -256,6 +281,8 @@ def main() -> None:
             lessons.append(build_varnamala_lesson(item_id, txt_path))
         elif item_id == 'barakhadi':
             lessons.append(build_barakhadi_lesson(item_id, txt_path))
+        elif item_id == 'samyukta':
+            lessons.append(build_samyukta_lesson(item_id, txt_path))
         elif item_id == 'numbers':
             lessons.append(build_numbers_lesson(item_id, txt_path))
         else:

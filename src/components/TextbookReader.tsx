@@ -18,6 +18,12 @@ interface TextbookReaderProps {
   isLastSentence: boolean;
 }
 
+const CONJUNCT_GAMES = [
+  { id: 'game1', title: 'Game 1 · Drop the Stick', src: './conjunct-game1.jpg', alt: 'Drop the Stick game' },
+  { id: 'game2', title: 'Game 2 · Piggyback Ride', src: './conjunct-game2.jpg', alt: 'Piggyback stacking game' },
+  { id: 'game3', title: 'Game 3 · Superhero Shape-Shifters', src: './conjunct-game3.jpg', alt: 'Superhero shape-shifters' },
+];
+
 type SectionJump = { index: number; label: string };
 
 const buildSectionJumps = (lesson: Lesson | undefined): SectionJump[] => {
@@ -51,9 +57,13 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 }) => {
   const activeLesson = lessons.find((lesson) => lesson.id === activeLessonId);
   const isVarnamala = activeLessonId === 'varnamala';
-  const isGroupedLesson = isVarnamala || activeLessonId === 'numbers' || activeLessonId === 'barakhadi';
+  const isSamyukta = activeLessonId === 'samyukta';
+  const isGroupedLesson = isVarnamala || isSamyukta || activeLessonId === 'numbers' || activeLessonId === 'barakhadi';
   const showRomanTiles = activeLessonId === 'barakhadi' || activeLessonId === 'varnamala';
   const [isChartOpen, setIsChartOpen] = useState(false);
+  const [openGames, setOpenGames] = useState<Record<string, boolean>>({ game1: true });
+  const toggleGame = (id: string) =>
+    setOpenGames((prev) => ({ ...prev, [id]: !prev[id] }));
   const sectionJumps = buildSectionJumps(activeLesson);
   const currentJumpIndex = (() => {
     if (!sectionJumps.length) return 0;
@@ -131,6 +141,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         {activeLesson && (
           <p className="textbook-reader-source">Source Material: {activeLesson.fileName}</p>
         )}
+        {isSamyukta && (
+          <p className="textbook-glossary-hint" style={{ marginTop: '.35rem' }}>
+            Three playground posters. Tap a game title to open or close its picture.
+          </p>
+        )}
         {(activeLessonId === 'barakhadi' || activeLessonId === 'varnamala') && (
           <p className="textbook-glossary-hint" style={{ marginTop: '.35rem' }}>
             Tap any अक्षर to hear it. Each tile shows its sound (a · aa · ka · kha…). Retroflex ट/ठ/ड use tt/tth/dd so they stay distinct from त/थ/द.
@@ -145,7 +160,38 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         )}
       </header>
 
-      {isGroupedLesson && activeLesson ? (
+      {isSamyukta ? (
+        <div className="conjunct-games">
+          {CONJUNCT_GAMES.map((game) => {
+            const open = !!openGames[game.id];
+            return (
+              <div key={game.id} className="varnamala-chart-toggle-wrap conjunct-game-wrap">
+                <button
+                  type="button"
+                  className="varnamala-chart-toggle"
+                  onClick={() => toggleGame(game.id)}
+                  aria-expanded={open}
+                  aria-controls={`conjunct-${game.id}`}
+                >
+                  {game.title}
+                  <span className="varnamala-chart-toggle-arrow">{open ? '▲' : '▼'}</span>
+                </button>
+                <div
+                  id={`conjunct-${game.id}`}
+                  className={`varnamala-chart-panel${open ? ' varnamala-chart-panel--open' : ''}`}
+                >
+                  <img
+                    src={game.src}
+                    alt={game.alt}
+                    className="varnamala-chart-image"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      ) : isGroupedLesson && activeLesson ? (
         <div className="varnamala-groups">
           {isVarnamala && (
             <div className="varnamala-chart-toggle-wrap">
