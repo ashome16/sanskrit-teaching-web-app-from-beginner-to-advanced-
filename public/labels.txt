@@ -40,6 +40,6 @@ skin|कर्ता-क्रिया|कर्ता-क्रिया|doer 
 skin|रिक्तम्|रिक्तम्|fill the blank
 skin|प्रश्न|प्रश्न|ask
 skin|क्रमः|क्रमः|order
-site|loop|On मात्रा tap two tiles (letter + vowel). Elsewhere one tile. Then Check.|
+site|loop|मात्रा: two tiles (letter + vowel). Other shelves: one tile. Check, then Next.|
 pack|prakrtih|प्रकृतिः|animals and plants
 pack|kriya|क्रिया|doer then verb
