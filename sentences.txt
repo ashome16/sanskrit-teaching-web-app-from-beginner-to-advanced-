@@ -63,3 +63,12 @@
 नदी वेगेन वहति।|The river flows swiftly.|नदी|nature
 पर्वतः दृढः अस्ति।|The mountain is strong.|पर्वतः|nature
 मेघः जलं ददाति।|The cloud gives water.|मेघः|nature
+बालिका उच्चैः हसति।|The girl laughs loudly.|हसति|play
+छात्रः पत्रं लिखति।|The student writes a letter.|लिखति|play
+पत्रं वृक्षात् पतति।|The leaf falls from the tree.|पतति|play
+माता भोजनं करोति।|The mother makes the meal.|करोति|play
+शिशुः चन्द्रं पश्यति।|The baby sees the moon.|पश्यति|play
+मार्जारः दुग्धं पिबति।|The cat drinks milk.|पिबति|play
+मित्रं कन्दुकेन क्रीडति।|The friend plays with a ball.|क्रीडति|play
+सा पुस्तकं पठति।|She reads a book.|पठति|play
+सूर्यः उदयति।|The sun rises.|उदयति|play
