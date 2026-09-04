@@ -185,36 +185,6 @@
       {
         "target": "कदा",
         "tiles": [
-          "कदा",
-          "कः",
-          "का",
-          "किम्",
-          "कुत्र",
-          "कथम्"
-        ],
-        "sentence": "त्वम् कदा आगच्छसि?",
-        "english": "When do you come?",
-        "highlight": "कदा",
-        "prompt": "त्वम् ____ आगच्छसि?"
-      },
-      {
-        "target": "कथम्",
-        "tiles": [
-          "कदा",
-          "कथम्",
-          "कः",
-          "का",
-          "किम्",
-          "कुत्र"
-        ],
-        "sentence": "त्वम् कथम् पठसि?",
-        "english": "How do you read?",
-        "highlight": "कथम्",
-        "prompt": "त्वम् ____ पठसि?"
-      },
-      {
-        "target": "कदा",
-        "tiles": [
           "कुत्र",
           "कथम्",
           "कदा",
@@ -222,10 +192,10 @@
           "का",
           "किम्"
         ],
-        "sentence": "सः कदा खेलति?",
-        "english": "When does he play?",
+        "sentence": "भवान् कदा उत्तिष्ठति?",
+        "english": "When do you wake up?",
         "highlight": "कदा",
-        "prompt": "सः ____ खेलति?"
+        "prompt": "भवान् ____ उत्तिष्ठति?"
       },
       {
         "target": "कथम्",
@@ -237,10 +207,10 @@
           "कः",
           "का"
         ],
-        "sentence": "सा कथम् गायति?",
-        "english": "How does she sing?",
+        "sentence": "एतत् कथम् भवति?",
+        "english": "How does this happen?",
         "highlight": "कथम्",
-        "prompt": "सा ____ गायति?"
+        "prompt": "एतत् ____ भवति?"
       }
     ]
   },
