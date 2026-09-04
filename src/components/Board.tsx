@@ -218,7 +218,7 @@ const Board: React.FC = () => {
     </nav>
 
     <div className="board-tip-row">
-      <p className="board-tip">{targetIsWholeTile ? 'Tap one tile (the whole word). Then Check.' : loopLine}</p>
+      <p className="board-tip">{targetIsWholeTile ? 'This row: tap ONE tile (कः / का / किम् / कुत्र). Then Check → Next.' : (activeBoardShelf?.skin === 'जोडो' ? 'This row: tap TWO tiles in order (letter, then vowel आ). Then Check → Next.' : loopLine)}</p>
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
     </div>
 
@@ -236,6 +236,7 @@ const Board: React.FC = () => {
       <section className="puzzle-board">
         <div className="puzzle-meta">
           <span>{activeBoardShelf?.skin}</span>
+          <span>{targetIsWholeTile ? '1 tile' : (activeBoardShelf?.skin === 'जोडो' ? '2 tiles' : '1 tile')}</span>
           <span>Target: <b>{activePuzzle.prompt ?? activePuzzle.target}</b></span>
         </div>
 
