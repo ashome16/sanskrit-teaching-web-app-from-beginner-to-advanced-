@@ -871,7 +871,7 @@
         "tapHighlight": "फलं"
       },
       {
-        "prompt": "____ मधुरं वहति।",
+        "prompt": "____ वेगेन वहति।",
         "target": "नदी",
         "tiles": [
           "अश्वः",
@@ -881,8 +881,8 @@
           "फलम्",
           "नदी"
         ],
-        "sentence": "नदी मधुरं वहति।",
-        "english": "The river flows sweetly.",
+        "sentence": "नदी वेगेन वहति।",
+        "english": "The river flows swiftly.",
         "highlight": "नदी"
       },
       {
