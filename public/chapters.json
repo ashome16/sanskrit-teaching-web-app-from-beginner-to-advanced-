@@ -131,6 +131,673 @@
       ]
     },
     {
+      "id": "barakhadi",
+      "fileName": "barakhadi.txt",
+      "title": "बारहखड़ी · Audio Lesson",
+      "sentences": [
+        {
+          "sanskrit": "Velars · क-row · tap to hear",
+          "meaning": "Velars · क-row · tap to hear",
+          "words": [
+            "क",
+            "का",
+            "कि",
+            "की",
+            "कु",
+            "कू",
+            "कृ",
+            "के",
+            "कै",
+            "को",
+            "कौ",
+            "कं",
+            "कः"
+          ],
+          "category": "क"
+        },
+        {
+          "sanskrit": "Velars · ख-row · tap to hear",
+          "meaning": "Velars · ख-row · tap to hear",
+          "words": [
+            "ख",
+            "खा",
+            "खि",
+            "खी",
+            "खु",
+            "खू",
+            "खृ",
+            "खे",
+            "खै",
+            "खो",
+            "खौ",
+            "खं",
+            "खः"
+          ],
+          "category": "ख"
+        },
+        {
+          "sanskrit": "Velars · ग-row · tap to hear",
+          "meaning": "Velars · ग-row · tap to hear",
+          "words": [
+            "ग",
+            "गा",
+            "गि",
+            "गी",
+            "गु",
+            "गू",
+            "गृ",
+            "गे",
+            "गै",
+            "गो",
+            "गौ",
+            "गं",
+            "गः"
+          ],
+          "category": "ग"
+        },
+        {
+          "sanskrit": "Velars · घ-row · tap to hear",
+          "meaning": "Velars · घ-row · tap to hear",
+          "words": [
+            "घ",
+            "घा",
+            "घि",
+            "घी",
+            "घु",
+            "घू",
+            "घृ",
+            "घे",
+            "घै",
+            "घो",
+            "घौ",
+            "घं",
+            "घः"
+          ],
+          "category": "घ"
+        },
+        {
+          "sanskrit": "Velars · ङ-row · tap to hear",
+          "meaning": "Velars · ङ-row · tap to hear",
+          "words": [
+            "ङ",
+            "ङा",
+            "ङि",
+            "ङी",
+            "ङु",
+            "ङू",
+            "ङृ",
+            "ङे",
+            "ङै",
+            "ङो",
+            "ङौ",
+            "ङं",
+            "ङः"
+          ],
+          "category": "ङ"
+        },
+        {
+          "sanskrit": "Palatals · च-row · tap to hear",
+          "meaning": "Palatals · च-row · tap to hear",
+          "words": [
+            "च",
+            "चा",
+            "चि",
+            "ची",
+            "चु",
+            "चू",
+            "चृ",
+            "चे",
+            "चै",
+            "चो",
+            "चौ",
+            "चं",
+            "चः"
+          ],
+          "category": "च"
+        },
+        {
+          "sanskrit": "Palatals · छ-row · tap to hear",
+          "meaning": "Palatals · छ-row · tap to hear",
+          "words": [
+            "छ",
+            "छा",
+            "छि",
+            "छी",
+            "छु",
+            "छू",
+            "छृ",
+            "छे",
+            "छै",
+            "छो",
+            "छौ",
+            "छं",
+            "छः"
+          ],
+          "category": "छ"
+        },
+        {
+          "sanskrit": "Palatals · ज-row · tap to hear",
+          "meaning": "Palatals · ज-row · tap to hear",
+          "words": [
+            "ज",
+            "जा",
+            "जि",
+            "जी",
+            "जु",
+            "जू",
+            "जृ",
+            "जे",
+            "जै",
+            "जो",
+            "जौ",
+            "जं",
+            "जः"
+          ],
+          "category": "ज"
+        },
+        {
+          "sanskrit": "Palatals · झ-row · tap to hear",
+          "meaning": "Palatals · झ-row · tap to hear",
+          "words": [
+            "झ",
+            "झा",
+            "झि",
+            "झी",
+            "झु",
+            "झू",
+            "झृ",
+            "झे",
+            "झै",
+            "झो",
+            "झौ",
+            "झं",
+            "झः"
+          ],
+          "category": "झ"
+        },
+        {
+          "sanskrit": "Palatals · ञ-row · tap to hear",
+          "meaning": "Palatals · ञ-row · tap to hear",
+          "words": [
+            "ञ",
+            "ञा",
+            "ञि",
+            "ञी",
+            "ञु",
+            "ञू",
+            "ञृ",
+            "ञे",
+            "ञै",
+            "ञो",
+            "ञौ",
+            "ञं",
+            "ञः"
+          ],
+          "category": "ञ"
+        },
+        {
+          "sanskrit": "Retroflexes · ट-row · tap to hear",
+          "meaning": "Retroflexes · ट-row · tap to hear",
+          "words": [
+            "ट",
+            "टा",
+            "टि",
+            "टी",
+            "टु",
+            "टू",
+            "टृ",
+            "टे",
+            "टै",
+            "टो",
+            "टौ",
+            "टं",
+            "टः"
+          ],
+          "category": "ट"
+        },
+        {
+          "sanskrit": "Retroflexes · ठ-row · tap to hear",
+          "meaning": "Retroflexes · ठ-row · tap to hear",
+          "words": [
+            "ठ",
+            "ठा",
+            "ठि",
+            "ठी",
+            "ठु",
+            "ठू",
+            "ठृ",
+            "ठे",
+            "ठै",
+            "ठो",
+            "ठौ",
+            "ठं",
+            "ठः"
+          ],
+          "category": "ठ"
+        },
+        {
+          "sanskrit": "Retroflexes · ड-row · tap to hear",
+          "meaning": "Retroflexes · ड-row · tap to hear",
+          "words": [
+            "ड",
+            "डा",
+            "डि",
+            "डी",
+            "डु",
+            "डू",
+            "डृ",
+            "डे",
+            "डै",
+            "डो",
+            "डौ",
+            "डं",
+            "डः"
+          ],
+          "category": "ड"
+        },
+        {
+          "sanskrit": "Retroflexes · ढ-row · tap to hear",
+          "meaning": "Retroflexes · ढ-row · tap to hear",
+          "words": [
+            "ढ",
+            "ढा",
+            "ढि",
+            "ढी",
+            "ढु",
+            "ढू",
+            "ढृ",
+            "ढे",
+            "ढै",
+            "ढो",
+            "ढौ",
+            "ढं",
+            "ढः"
+          ],
+          "category": "ढ"
+        },
+        {
+          "sanskrit": "Retroflexes · ण-row · tap to hear",
+          "meaning": "Retroflexes · ण-row · tap to hear",
+          "words": [
+            "ण",
+            "णा",
+            "णि",
+            "णी",
+            "णु",
+            "णू",
+            "णृ",
+            "णे",
+            "णै",
+            "णो",
+            "णौ",
+            "णं",
+            "णः"
+          ],
+          "category": "ण"
+        },
+        {
+          "sanskrit": "Dentals · त-row · tap to hear",
+          "meaning": "Dentals · त-row · tap to hear",
+          "words": [
+            "त",
+            "ता",
+            "ति",
+            "ती",
+            "तु",
+            "तू",
+            "तृ",
+            "ते",
+            "तै",
+            "तो",
+            "तौ",
+            "तं",
+            "तः"
+          ],
+          "category": "त"
+        },
+        {
+          "sanskrit": "Dentals · थ-row · tap to hear",
+          "meaning": "Dentals · थ-row · tap to hear",
+          "words": [
+            "थ",
+            "था",
+            "थि",
+            "थी",
+            "थु",
+            "थू",
+            "थृ",
+            "थे",
+            "थै",
+            "थो",
+            "थौ",
+            "थं",
+            "थः"
+          ],
+          "category": "थ"
+        },
+        {
+          "sanskrit": "Dentals · द-row · tap to hear",
+          "meaning": "Dentals · द-row · tap to hear",
+          "words": [
+            "द",
+            "दा",
+            "दि",
+            "दी",
+            "दु",
+            "दू",
+            "दृ",
+            "दे",
+            "दै",
+            "दो",
+            "दौ",
+            "दं",
+            "दः"
+          ],
+          "category": "द"
+        },
+        {
+          "sanskrit": "Dentals · ध-row · tap to hear",
+          "meaning": "Dentals · ध-row · tap to hear",
+          "words": [
+            "ध",
+            "धा",
+            "धि",
+            "धी",
+            "धु",
+            "धू",
+            "धृ",
+            "धे",
+            "धै",
+            "धो",
+            "धौ",
+            "धं",
+            "धः"
+          ],
+          "category": "ध"
+        },
+        {
+          "sanskrit": "Dentals · न-row · tap to hear",
+          "meaning": "Dentals · न-row · tap to hear",
+          "words": [
+            "न",
+            "ना",
+            "नि",
+            "नी",
+            "नु",
+            "नू",
+            "नृ",
+            "ने",
+            "नै",
+            "नो",
+            "नौ",
+            "नं",
+            "नः"
+          ],
+          "category": "न"
+        },
+        {
+          "sanskrit": "Labials · प-row · tap to hear",
+          "meaning": "Labials · प-row · tap to hear",
+          "words": [
+            "प",
+            "पा",
+            "पि",
+            "पी",
+            "पु",
+            "पू",
+            "पृ",
+            "पे",
+            "पै",
+            "पो",
+            "पौ",
+            "पं",
+            "पः"
+          ],
+          "category": "प"
+        },
+        {
+          "sanskrit": "Labials · फ-row · tap to hear",
+          "meaning": "Labials · फ-row · tap to hear",
+          "words": [
+            "फ",
+            "फा",
+            "फि",
+            "फी",
+            "फु",
+            "फू",
+            "फृ",
+            "फे",
+            "फै",
+            "फो",
+            "फौ",
+            "फं",
+            "फः"
+          ],
+          "category": "फ"
+        },
+        {
+          "sanskrit": "Labials · ब-row · tap to hear",
+          "meaning": "Labials · ब-row · tap to hear",
+          "words": [
+            "ब",
+            "बा",
+            "बि",
+            "बी",
+            "बु",
+            "बू",
+            "बृ",
+            "बे",
+            "बै",
+            "बो",
+            "बौ",
+            "बं",
+            "बः"
+          ],
+          "category": "ब"
+        },
+        {
+          "sanskrit": "Labials · भ-row · tap to hear",
+          "meaning": "Labials · भ-row · tap to hear",
+          "words": [
+            "भ",
+            "भा",
+            "भि",
+            "भी",
+            "भु",
+            "भू",
+            "भृ",
+            "भे",
+            "भै",
+            "भो",
+            "भौ",
+            "भं",
+            "भः"
+          ],
+          "category": "भ"
+        },
+        {
+          "sanskrit": "Labials · म-row · tap to hear",
+          "meaning": "Labials · म-row · tap to hear",
+          "words": [
+            "म",
+            "मा",
+            "मि",
+            "मी",
+            "मु",
+            "मू",
+            "मृ",
+            "मे",
+            "मै",
+            "मो",
+            "मौ",
+            "मं",
+            "मः"
+          ],
+          "category": "म"
+        },
+        {
+          "sanskrit": "Semi-vowels · य-row · tap to hear",
+          "meaning": "Semi-vowels · य-row · tap to hear",
+          "words": [
+            "य",
+            "या",
+            "यि",
+            "यी",
+            "यु",
+            "यू",
+            "यृ",
+            "ये",
+            "यै",
+            "यो",
+            "यौ",
+            "यं",
+            "यः"
+          ],
+          "category": "य"
+        },
+        {
+          "sanskrit": "Semi-vowels · र-row · tap to hear",
+          "meaning": "Semi-vowels · र-row · tap to hear",
+          "words": [
+            "र",
+            "रा",
+            "रि",
+            "री",
+            "रु",
+            "रू",
+            "रृ",
+            "रे",
+            "रै",
+            "रो",
+            "रौ",
+            "रं",
+            "रः"
+          ],
+          "category": "र"
+        },
+        {
+          "sanskrit": "Semi-vowels · ल-row · tap to hear",
+          "meaning": "Semi-vowels · ल-row · tap to hear",
+          "words": [
+            "ल",
+            "ला",
+            "लि",
+            "ली",
+            "लु",
+            "लू",
+            "लृ",
+            "ले",
+            "लै",
+            "लो",
+            "लौ",
+            "लं",
+            "लः"
+          ],
+          "category": "ल"
+        },
+        {
+          "sanskrit": "Semi-vowels · व-row · tap to hear",
+          "meaning": "Semi-vowels · व-row · tap to hear",
+          "words": [
+            "व",
+            "वा",
+            "वि",
+            "वी",
+            "वु",
+            "वू",
+            "वृ",
+            "वे",
+            "वै",
+            "वो",
+            "वौ",
+            "वं",
+            "वः"
+          ],
+          "category": "व"
+        },
+        {
+          "sanskrit": "Sibilants & ह · श-row · tap to hear",
+          "meaning": "Sibilants & ह · श-row · tap to hear",
+          "words": [
+            "श",
+            "शा",
+            "शि",
+            "शी",
+            "शु",
+            "शू",
+            "शृ",
+            "शे",
+            "शै",
+            "शो",
+            "शौ",
+            "शं",
+            "शः"
+          ],
+          "category": "श"
+        },
+        {
+          "sanskrit": "Sibilants & ह · ष-row · tap to hear",
+          "meaning": "Sibilants & ह · ष-row · tap to hear",
+          "words": [
+            "ष",
+            "षा",
+            "षि",
+            "षी",
+            "षु",
+            "षू",
+            "षृ",
+            "षे",
+            "षै",
+            "षो",
+            "षौ",
+            "षं",
+            "षः"
+          ],
+          "category": "ष"
+        },
+        {
+          "sanskrit": "Sibilants & ह · स-row · tap to hear",
+          "meaning": "Sibilants & ह · स-row · tap to hear",
+          "words": [
+            "स",
+            "सा",
+            "सि",
+            "सी",
+            "सु",
+            "सू",
+            "सृ",
+            "से",
+            "सै",
+            "सो",
+            "सौ",
+            "सं",
+            "सः"
+          ],
+          "category": "स"
+        },
+        {
+          "sanskrit": "Sibilants & ह · ह-row · tap to hear",
+          "meaning": "Sibilants & ह · ह-row · tap to hear",
+          "words": [
+            "ह",
+            "हा",
+            "हि",
+            "ही",
+            "हु",
+            "हू",
+            "हृ",
+            "हे",
+            "है",
+            "हो",
+            "हौ",
+            "हं",
+            "हः"
+          ],
+          "category": "ह"
+        }
+      ]
+    },
+    {
       "id": "numbers",
       "fileName": "numbers.txt",
       "title": "Sanskrit Numbers Guide (संख्या)",
