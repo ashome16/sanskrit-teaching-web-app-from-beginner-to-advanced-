@@ -1,3 +1,5 @@
+import { barakhadiSpeechText, isBarakhadiAkshara } from './barakhadiPhonetics';
+
 // Native Web Speech API pronunciation helper for Sanskrit text only.
 // Strips whitespace/punctuation plus Devanagari digits and hyphens (e.g. the
 // numbers guide's "० - शून्यम्" button labels) so only the word itself is spoken.
@@ -55,6 +57,10 @@ const applyVisargaEcho = (word: string): string => {
 // explicit phonetic hint. 'viṃśatiḥ' (विंशतिः -> विंशतिहि) falls out of the
 // visarga echo rule automatically since it just echoes the preceding vowel.
 const toSpeechText = (word: string): string => {
+  // Single बारहखड़ी tiles: speak distinct roman cues (ka/kaa/ki…; tt vs t; ng vs n).
+  if (isBarakhadiAkshara(word)) {
+    return barakhadiSpeechText(word);
+  }
   const withVisargaEcho = applyVisargaEcho(applyWordOverrides(word));
   let result = '';
   for (const ch of withVisargaEcho) {
@@ -79,10 +85,26 @@ export const playPronunciation = (value: string, rate = 0.85): void => {
   }
 
   window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(toSpeechText(word));
+  const speech = toSpeechText(word);
+  const utterance = new SpeechSynthesisUtterance(speech);
   const voice = pickPreferredVoice();
   utterance.voice = voice || null;
-  utterance.lang = voice?.lang || 'hi-IN';
-  utterance.rate = rate;
+  // Roman cues for बारहखड़ी work better with an English voice; Hindi for longer Sanskrit.
+  if (isBarakhadiAkshara(word) && /^[a-z\-]+$/i.test(speech)) {
+    const voices = window.speechSynthesis.getVoices();
+    const en =
+      voices.find((item) => item.lang === 'en-IN') ||
+      voices.find((item) => item.lang?.startsWith('en'));
+    if (en) {
+      utterance.voice = en;
+      utterance.lang = en.lang;
+    } else {
+      utterance.lang = 'en-IN';
+    }
+    utterance.rate = Math.min(rate, 0.75);
+  } else {
+    utterance.lang = voice?.lang || 'hi-IN';
+    utterance.rate = rate;
+  }
   window.speechSynthesis.speak(utterance);
 };
