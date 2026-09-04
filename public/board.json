@@ -116,10 +116,10 @@
           "किम्",
           "कुत्र"
         ],
-        "sentence": "कः पुरुषः खादति?",
-        "english": "Who is the man eating?",
+        "sentence": "कः तत्र उपविशति?",
+        "english": "Who is sitting there?",
         "highlight": "कः",
-        "prompt": "____ पुरुषः खादति?",
+        "prompt": "____ तत्र उपविशति?",
         "phase": "prashna"
       },
       {
@@ -162,20 +162,6 @@
         "english": "What is she reading?",
         "highlight": "किम्",
         "prompt": "सा ____ पठति?",
-        "phase": "prashna"
-      },
-      {
-        "target": "कः",
-        "tiles": [
-          "कः",
-          "का",
-          "किम्",
-          "कुत्र"
-        ],
-        "sentence": "कः तत्र उपविशति?",
-        "english": "Who is sitting there?",
-        "highlight": "कः",
-        "prompt": "____ तत्र उपविशति?",
         "phase": "prashna"
       },
       {
