@@ -53,6 +53,21 @@ function glueTiles(tiles: string[]) {
   return tiles.map((tile) => cleanTile(tile)).map((tile) => MARK[tile] ?? tile).join('').normalize('NFC');
 }
 
+/** जोडो: any tap order of the same tiles still counts (आ then म = मा). */
+function glueMatchesTarget(tiles: string[], target: string) {
+  const cleaned = tiles.map((tile) => cleanTile(tile)).filter(Boolean);
+  if (!cleaned.length) return false;
+  const goal = target.normalize('NFC');
+  if (glueTiles(cleaned) === goal) return true;
+  if (cleaned.length === 2) return glueTiles([cleaned[1], cleaned[0]]) === goal;
+  if (cleaned.length > 3) return false;
+  const perms = (arr: string[]): string[][] => {
+    if (arr.length <= 1) return [arr];
+    return arr.flatMap((item, index) => perms([...arr.slice(0, index), ...arr.slice(index + 1)]).map((rest) => [item, ...rest]));
+  };
+  return perms(cleaned).some((order) => glueTiles(order) === goal);
+}
+
 function highlightedSentence(sentence: string | undefined, highlight: string | undefined, tapHighlight: string | undefined) {
   if (!sentence || !highlight) return sentence;
   const matchStart = sentence.indexOf(highlight);
@@ -148,27 +163,27 @@ const Board: React.FC = () => {
   const isCorrect = (() => {
     if (!activePuzzle) return false;
     const target = (activePuzzle.answer ?? activePuzzle.target).normalize('NFC');
-    const glued = glueTiles(chosen);
     const wholeWordRow = activePuzzle.tiles.some((tile) => cleanTile(tile).normalize('NFC') === target);
     // Question-word rows: exactly one tile, exact match (कः ≠ क, and कथम् is never right here)
     if (wholeWordRow) {
       return chosen.length === 1 && cleanTile(chosen[0]).normalize('NFC') === target;
     }
+    // जोडो joins: any order of the two cream tiles
     if (activePuzzle.target === 'का') {
       const chosenSet = new Set(chosen.map((tile) => cleanTile(tile).normalize('NFC')));
       const isKaAaPair = chosenSet.size === 2 && chosen.length === 2
         && (chosenSet.has('क') && (chosenSet.has('आ') || chosenSet.has('ा')));
-      return glued === 'का' || isKaAaPair;
+      return glueMatchesTarget(chosen, 'का') || isKaAaPair;
     }
-    if (activePuzzle.target === 'मा' || activePuzzle.target === 'सा' || activePuzzle.target === 'बालः') {
-      return glued === target;
-    }
-    return glued === target;
+    return glueMatchesTarget(chosen, target);
   })();
 
   const chooseShelf = (nextShelf: ShelfId) => {
+    const switched = nextShelf !== activeShelf;
     setActiveShelf(nextShelf);
-    setPuzzleIndexByShelf((current) => ({ ...current, [nextShelf]: 0 }));
+    if (switched) {
+      setPuzzleIndexByShelf((current) => ({ ...current, [nextShelf]: 0 }));
+    }
     setChecked(false);
     setWrongAttempt(false);
     setChosen([]);
@@ -218,13 +233,22 @@ const Board: React.FC = () => {
   const hasNextPuzzle = isCorrect && activePuzzles.length > 0;
 
   const chooseNextPuzzle = () => {
-    if (!hasNextPuzzle) return;
-    const nextIndex = activePuzzles.length ? (puzzleIndex + 1) % activePuzzles.length : 0;
+    if (!activePuzzles.length) return;
+    const nextIndex = (puzzleIndex + 1) % activePuzzles.length;
     setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: nextIndex }));
     setChecked(false);
     setWrongAttempt(false);
     setChosen([]);
   };
+
+  // After a correct Check, auto-advance so later मात्रा rows still appear if Next is missed
+  useEffect(() => {
+    if (!checked || !isCorrect || activePuzzles.length < 2) return undefined;
+    const timer = window.setTimeout(() => {
+      chooseNextPuzzle();
+    }, 2200);
+    return () => window.clearTimeout(timer);
+  }, [checked, isCorrect, puzzleIndex, activeShelf, activePuzzles.length]);
 
   return <main className="board-shell">
     <nav className="wing-nav" aria-label="Learning shelves">
@@ -237,7 +261,7 @@ const Board: React.FC = () => {
       <p className="board-tip">{isPrashnaPart
         ? 'Part 2: click ONE cream tile for the blank (who/what/where…). Then click Check. Then click Next.'
         : (activeBoardShelf?.skin === 'जोडो' && activeShelf === 'prarambhah' && !targetIsWholeTile
-          ? 'Part 1: click TWO cream tiles — letter, then vowel आ. Then click Check. Then click Next.'
+          ? 'Part 1: click TWO cream tiles (any order). Then Check. Then Next — or wait and it moves on.'
           : loopLine)}</p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
@@ -258,6 +282,7 @@ const Board: React.FC = () => {
         <div className="puzzle-meta">
           <span>{displaySkin}</span>
           <span>{targetIsWholeTile ? 'Click 1 tile' : (activeBoardShelf?.skin === 'जोडो' ? 'Click 2 tiles' : 'Click 1 tile')}</span>
+          <span>{puzzleIndex + 1} / {activePuzzles.length}</span>
           <span>Target: <b>{activePuzzle.prompt ?? activePuzzle.target}</b></span>
         </div>
 
