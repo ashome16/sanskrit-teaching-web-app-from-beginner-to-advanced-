@@ -246,3 +246,5 @@
 .wac-meaning-english { color: #273b35; font: 700 1.05rem Georgia, serif; margin: 0 0 .35rem; }
 .wac-meaning-regional { color: #4a433a; font-size: .95rem; margin: .25rem 0 0; }
 .wac-meaning-lang { color: #8a5a2b; display: inline-block; font-size: .75rem; font-weight: 700; margin-right: .45rem; min-width: 4.5rem; }
+
+.wac-meaning-sanskrit { color: #273b35; font-family: "Noto Sans Devanagari", Georgia, serif; font-size: 1rem; margin: .2rem 0 0; }
