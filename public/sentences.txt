@@ -92,5 +92,5 @@
 दीपः प्रज्वलति।|The lamp burns bright.|दीपः|sanskriti
 माता पूजां करोति।|The mother does worship.|पूजां|sanskriti
 शङ्खः नादं करोति।|The conch makes a sound.|शङ्खः|sanskriti
-गृहम् उत्सवे अस्ति।|The house is in a festive mood.|उत्सवे|sanskriti
-पिता ग्रन्थं पठति।|The father reads the scripture.|ग्रन्थं|sanskriti
+उत्सवः आनन्दं आनयति।|The festival brings joy.|उत्सवः|sanskriti
+छात्रः ग्रन्थं स्थापयति।|The student places the scripture down.|ग्रन्थं|sanskriti
