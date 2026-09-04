@@ -55,13 +55,15 @@
   },
   "विद्यातपोभ्यां": {
     "word": "विद्यातपोभ्यां",
-    "base_english": "by knowledge and austerity (instrumental dual)",
+    "base_english": "By knowledge and penance",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "by knowledge and austerity",
-        "sentence_sanskrit": "विद्यातपोभ्यां भूतात्मा शुध्यति।",
-        "sentence_translation": "The self is purified by knowledge and austerity."
+        "meaning": "By knowledge and penance"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्ञान और तपस्या के द्वारा"
       }
     }
   },
@@ -2692,6 +2694,34 @@
       "hi": {
         "label": "हिन्दी",
         "meaning": "सोचने-समझने की शक्ति / बुद्धि"
+      }
+    }
+  },
+  "विद्यातपोभ्याम्": {
+    "word": "विद्यातपोभ्याम्",
+    "base_english": "By knowledge and penance",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By knowledge and penance"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्ञान और तपस्या के द्वारा"
+      }
+    }
+  },
+  "पुरुषेणेह": {
+    "word": "पुरुषेणेह",
+    "base_english": "By a person in this world",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By a person in this world"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्य के द्वारा इस संसार में"
       }
     }
   }
