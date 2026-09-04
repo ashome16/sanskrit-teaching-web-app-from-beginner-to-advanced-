@@ -80,3 +80,11 @@
 अनुजः पुस्तकं पिदधाति।|The younger brother closes the book.|पिदधाति|play
 माता फलं क्रीणाति।|The mother buys a fruit.|क्रीणाति|play
 जनकः धनं ददाति।|The father gives money.|ददाति|play
+दीपः प्रज्वलति।|The lamp burns bright.|दीपः|sanskriti
+माता पूजां करोति।|The mother does worship.|पूजां|sanskriti
+शङ्खः नादं करोति।|The conch makes a sound.|शङ्खः|sanskriti
+बालकः मन्त्रं वदति।|The boy speaks a mantra.|मन्त्रं|sanskriti
+गृहम् उत्सवे अस्ति।|The house is in a festive mood.|उत्सवे|sanskriti
+पिता ग्रन्थं पठति।|The father reads the scripture.|ग्रन्थं|sanskriti
+सा तिलकं धरति।|She wears a tilak.|तिलकं|sanskriti
+एषः प्रसादः मधुरः अस्ति।|This prasad is sweet.|प्रसादः|sanskriti
