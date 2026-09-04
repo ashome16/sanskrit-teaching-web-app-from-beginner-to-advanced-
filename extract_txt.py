@@ -12,18 +12,20 @@ PUBLIC_DIR = ROOT / 'public'
 # generated file at runtime instead of a stale bundled copy.
 OUTPUT_PATHS = [
     PUBLIC_DIR / 'chapters.json',
+    ROOT / 'src' / 'data' / 'chapters.json',
 ]
 
-# Only the alphabet guide, the numbers guide, and the first standard lesson are
-# compiled into chapters.json; Chapter 2 / Chapter 3 source material is intentionally excluded.
+# Alphabet guide, numbers guide, then Deepakam chapters from public/gsde*.txt.
 TXT_FILES = [
     ('varnamala', PUBLIC_DIR / 'varnamala.txt'),
     ('numbers', PUBLIC_DIR / 'numbers.txt'),
     ('gsde101', PUBLIC_DIR / 'gsde101.txt'),
+    ('gsde102', PUBLIC_DIR / 'gsde102.txt'),
 ]
 
 TITLE_OVERRIDES = {
     'gsde101': 'Chapter 1: वन्दे भारतमातरम्',
+    'gsde102': 'Chapter 2: नित्यं पिबामः सुभाषितरसम्',
     'varnamala': 'Sanskrit Varṇamālā Guide',
     'numbers': 'Sanskrit Numbers Guide (संख्या)',
 }
@@ -204,21 +206,26 @@ def load_existing_lessons(output_path: Path) -> list[dict]:
 
 def main() -> None:
     existing_lessons = load_existing_lessons(OUTPUT_PATHS[0])
+    existing_by_id = {item['id']: item for item in existing_lessons}
     allowed_ids = {item_id for item_id, _ in TXT_FILES}
 
     lessons: list[dict] = []
     for item_id, txt_path in TXT_FILES:
         if not txt_path.exists():
+            # Keep a previously compiled lesson (e.g. numbers) if its .txt is absent.
+            if item_id in existing_by_id:
+                lessons.append(existing_by_id[item_id])
+                print(f'Kept existing lesson {item_id} (missing {txt_path.name})')
+                continue
             raise FileNotFoundError(f'Missing text file: {txt_path}')
         if item_id == 'varnamala':
             lessons.append(build_varnamala_lesson(item_id, txt_path))
         elif item_id == 'numbers':
             lessons.append(build_numbers_lesson(item_id, txt_path))
         else:
-            existing_lesson = next((item for item in existing_lessons if item['id'] == item_id), None)
-            lessons.append(build_lesson(item_id, txt_path, existing_lesson))
+            lessons.append(build_lesson(item_id, txt_path, existing_by_id.get(item_id)))
 
-    # Purge any stale lessons (e.g. Chapter 2 / Chapter 3) that are no longer compiled.
+    # Keep only the lessons listed in TXT_FILES.
     lessons = [lesson for lesson in lessons if lesson['id'] in allowed_ids]
 
     payload = {'lessons': lessons}
