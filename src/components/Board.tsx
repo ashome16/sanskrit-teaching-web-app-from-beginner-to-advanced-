@@ -176,6 +176,13 @@ const Board: React.FC = () => {
 
   const targetWord = ((activePuzzle?.answer ?? activePuzzle?.target) || '').normalize('NFC');
   const targetIsWholeTile = !!activePuzzle?.tiles?.some((tile) => cleanTile(tile).normalize('NFC') === targetWord);
+  const displaySkin = targetIsWholeTile ? 'प्रश्न' : (activeBoardShelf?.skin ?? '');
+  const displayPackTitle = targetIsWholeTile ? 'प्रश्न-पदानि' : packTitle;
+  const displayPackGloss = targetIsWholeTile ? 'who · what · where · when · how' : packGloss;
+  const phaseBanner = targetIsWholeTile
+    ? 'Part 2 — question words. Click one cream tile.'
+    : (activeBoardShelf?.skin === 'जोडो' ? 'Part 1 — join letters. Click two cream tiles.' : '');
+
   // जोडो joins (क+आ) stay multi-tap. Question-words (कः on a tile) are one tap.
   const isJodoSkin = (!activeBoardShelf || activeBoardShelf.skin === 'जोडो') && !targetIsWholeTile;
 
@@ -222,10 +229,11 @@ const Board: React.FC = () => {
 
     <div className="board-tip-row">
       <p className="board-tip">{targetIsWholeTile
-        ? 'Click ONE cream tile that fills the blank — the word that fits. Then click Check. Then click Next.'
+        ? 'Part 2: click ONE cream tile for the blank (who/what/where…). Then click Check. Then click Next.'
         : (activeBoardShelf?.skin === 'जोडो'
-          ? 'Click TWO cream tiles in order: first the letter (क), then the vowel आ. Then click Check. Then click Next.'
+          ? 'Part 1: click TWO cream tiles — letter, then vowel आ. Then click Check. Then click Next.'
           : loopLine)}</p>
+      {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
     </div>
 
@@ -235,14 +243,14 @@ const Board: React.FC = () => {
     {!loading && !error && activePuzzle && <>
       {packTitle && <div className="pack-shelf" aria-label="Packs">
         <div className="pack-card active">
-          <strong>{packTitle}</strong>
-          {packGloss && <small>{packGloss}</small>}
+          <strong>{displayPackTitle}</strong>
+          {packGloss && <small>{displayPackGloss}</small>}
         </div>
       </div>}
 
       <section className="puzzle-board">
         <div className="puzzle-meta">
-          <span>{activeBoardShelf?.skin}</span>
+          <span>{displaySkin}</span>
           <span>{targetIsWholeTile ? 'Click 1 tile' : (activeBoardShelf?.skin === 'जोडो' ? 'Click 2 tiles' : 'Click 1 tile')}</span>
           <span>Target: <b>{activePuzzle.prompt ?? activePuzzle.target}</b></span>
         </div>
