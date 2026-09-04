@@ -13,6 +13,11 @@ export type AnalyseEntry = {
   word: string;
   base_english: string;
   languages?: Record<string, AnalyseLangGloss>;
+  /** Sanskrit paraphrase from शब्दार्थ (e.g. उत्थानं कृत्वा) */
+  sanskrit_gloss?: string;
+  /** Morph notes from मूल रूप / व्याकरण */
+  grammar?: string;
+  etymology?: string;
 };
 
 export type AnalyseRegistry = Record<string, AnalyseEntry>;
