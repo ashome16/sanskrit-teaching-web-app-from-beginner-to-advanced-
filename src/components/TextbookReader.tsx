@@ -61,7 +61,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         )}
         {!isGroupedLesson && (
           <span className="textbook-reader-progress">
-            {sentence.kind === 'glossary' || sentence.kind === 'glossary-header'
+            {sentence.kind?.startsWith('glossary') || sentence.kind?.startsWith('exercise')
               ? `Exercise · ${sentenceNumber} of ${totalSentences}`
               : `Paragraph ${sentenceNumber} of ${totalSentences}`}
           </span>
@@ -122,7 +122,58 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         </div>
       ) : (
         <div className="textbook-sentence-block">
-          {(sentence.kind === 'glossary' || sentence.kind === 'glossary-header') ? (
+          {(sentence.kind === 'exercise-header' || sentence.kind === 'exercise-qa' || sentence.kind === 'exercise-note') ? (
+            <div className={`textbook-glossary-card textbook-exercise-card${sentence.kind === 'exercise-header' ? ' textbook-glossary-card--header' : ''}`}>
+              {sentence.kind === 'exercise-header' ? (
+                <>
+                  <p className="textbook-glossary-title">{sentence.sanskrit}</p>
+                  <p className="textbook-glossary-subtitle">{sentence.meaning}</p>
+                </>
+              ) : sentence.kind === 'exercise-qa' ? (
+                <>
+                  <div className="textbook-glossary-pair">
+                    <span className="textbook-glossary-label">प्रश्न</span>
+                    <p className="textbook-exercise-q">
+                      {sentence.words.length > 0 && sentence.sanskrit.length < 80 ? (
+                        sentence.sanskrit
+                      ) : (
+                        sentence.sanskrit
+                      )}
+                    </p>
+                  </div>
+                  <div className="textbook-glossary-pair">
+                    <span className="textbook-glossary-label">{sentence.answer_label || 'उत्तरम्'}</span>
+                    <div className="textbook-glossary-arth">
+                      <p className="textbook-glossary-arth-sa">
+                        {(sentence.answer_sanskrit || sentence.sanskrit_gloss || '').split(/(\s+)/).map((part, idx) => {
+                          const clean = part.replace(/[॥।,;:!?—–\-…\/()]+/g, '');
+                          const isWord = /[\u0900-\u097F]/.test(clean);
+                          if (!isWord) return <span key={idx}>{part}</span>;
+                          return (
+                            <span
+                              key={idx}
+                              className="interactive-word"
+                              onClick={() => onWordClick(clean)}
+                              role="button"
+                              tabIndex={0}
+                              onKeyDown={(event) => {
+                                if (event.key === 'Enter' || event.key === ' ') onWordClick(clean);
+                              }}
+                            >
+                              {part}
+                            </span>
+                          );
+                        })}
+                      </p>
+                      {sentence.meaning ? <p className="textbook-glossary-arth-en">{sentence.meaning}</p> : null}
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <p className="textbook-glossary-subtitle">{sentence.sanskrit}</p>
+              )}
+            </div>
+          ) : (sentence.kind === 'glossary' || sentence.kind === 'glossary-header') ? (
             <div className={`textbook-glossary-card${sentence.kind === 'glossary-header' ? ' textbook-glossary-card--header' : ''}`}>
               {sentence.kind === 'glossary-header' ? (
                 <>
