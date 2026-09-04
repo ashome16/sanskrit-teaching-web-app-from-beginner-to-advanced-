@@ -1,13 +1,15 @@
 {
   "का": {
     "word": "का",
-    "base_english": "who? (feminine)",
+    "base_english": "What / Why",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Who? (f.)",
-        "sentence_sanskrit": "का बालिका पठति।",
-        "sentence_translation": "Which girl is reading?"
+        "meaning": "What / Why"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कैसी / क्या"
       },
       "te": {
         "label": "తెలుగు",
@@ -127,7 +129,7 @@
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "सोचने-समझने की शक्ति / बुद्धि"
+        "meaning": "समझ / बुद्धि"
       },
       "te": {
         "label": "తెలుగు",
@@ -377,41 +379,57 @@
   },
   "परिपृच्छति": {
     "word": "परिपृच्छति",
-    "base_english": "Humbly enquires / asks questions politely",
+    "base_english": "Enquires / Asks questions",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Humbly enquires / asks questions politely"
+        "meaning": "Enquires / Asks questions"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विनम्रतापूर्वक प्रश्न पूछता है"
       }
     }
   },
   "उपाश्रयति": {
     "word": "उपाश्रयति",
-    "base_english": "Approaches / takes shelter of / goes near",
+    "base_english": "Approaches / Takes shelter of",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Approaches / takes shelter of / goes near"
+        "meaning": "Approaches / Takes shelter of"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पास जाता है / शरण लेता है"
       }
     }
   },
   "सङ्गतिः": {
     "word": "सङ्गतिः",
-    "base_english": "Association / company",
+    "base_english": "Company",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Association / company"
+        "meaning": "Company"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मित्रता / साथ"
       }
     }
   },
   "तुष्यन्ति": {
     "word": "तुष्यन्ति",
-    "base_english": "Feeling satisfied / pleased",
+    "base_english": "Are pleased / satisfied",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Feeling satisfied / pleased"
+        "meaning": "Are pleased / satisfied"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खुश होते हैं / संतुष्ट होते हैं"
       }
     }
   },
@@ -1133,11 +1151,11 @@
   },
   "एव": {
     "word": "एव",
-    "base_english": "Only / Indeed",
+    "base_english": "Only",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Only / Indeed"
+        "meaning": "Only"
       },
       "hi": {
         "label": "हिन्दी",
@@ -1217,15 +1235,15 @@
   },
   "श्रेष्ठजनैः": {
     "word": "श्रेष्ठजनैः",
-    "base_english": "By noble people",
+    "base_english": "Of noble people",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By noble people"
+        "meaning": "Of noble people"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "महान/अच्छे लोगों द्वारा"
+        "meaning": "अच्छे लोगों के"
       }
     }
   },
@@ -1385,15 +1403,15 @@
   },
   "प्रिय": {
     "word": "प्रिय",
-    "base_english": "Dear Suresh!",
+    "base_english": "Sweet words",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Dear Suresh!"
+        "meaning": "Sweet words"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "सुरेशु ! — प्रिय सुरेश"
+        "meaning": "वाक्य — मीठे वचन / मधुर बोल"
       }
     }
   },
@@ -3037,15 +3055,15 @@
   },
   "तस्य": {
     "word": "तस्य",
-    "base_english": "Of that",
+    "base_english": "His",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Of that"
+        "meaning": "His"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "उस"
+        "meaning": "उसकी"
       }
     }
   },
@@ -3480,6 +3498,664 @@
       "hi": {
         "label": "हिन्दी",
         "meaning": "और ही"
+      }
+    }
+  },
+  "यः": {
+    "word": "यः",
+    "base_english": "He who",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "He who"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जो मनुष्य"
+      }
+    }
+  },
+  "पठति": {
+    "word": "पठति",
+    "base_english": "Reads",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Reads"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़ता है / स्वाध्याय करता है"
+      }
+    }
+  },
+  "लिखति": {
+    "word": "लिखति",
+    "base_english": "Writes",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Writes"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लिखता है"
+      }
+    }
+  },
+  "पश्यति": {
+    "word": "पश्यति",
+    "base_english": "Sees / Observes",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sees / Observes"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देखता है / निरीक्षण करता है"
+      }
+    }
+  },
+  "पण्डितान्": {
+    "word": "पण्डितान्",
+    "base_english": "Scholars / Wise people",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Scholars / Wise people"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्वान लोगों के / ज्ञानियों के"
+      }
+    }
+  },
+  "दिवाकर": {
+    "word": "दिवाकर",
+    "base_english": "By the rays of the sun",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By the rays of the sun"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किरणैः — सूर्य की किरणों के द्वारा"
+      }
+    }
+  },
+  "नलिनी": {
+    "word": "नलिनी",
+    "base_english": "Lotus petal",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Lotus petal"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दलम् — कमल की पंखुड़ी"
+      }
+    }
+  },
+  "इव": {
+    "word": "इव",
+    "base_english": "Like",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Like"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "की तरह / समान"
+      }
+    }
+  },
+  "विस्तारिता": {
+    "word": "विस्तारिता",
+    "base_english": "Expanded / Blossomed",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Expanded / Blossomed"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विकसित / खिली हुई"
+      }
+    }
+  },
+  "आत्म": {
+    "word": "आत्म",
+    "base_english": "For self-development",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For self-development"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विकासाय — अपने स्वयं के विकास के लिए"
+      }
+    }
+  },
+  "सर्वथा": {
+    "word": "सर्वथा",
+    "base_english": "In every way",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In every way"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सब प्रकार से / हमेशा"
+      }
+    }
+  },
+  "सह": {
+    "word": "सह",
+    "base_english": "With",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "With"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "साथ"
+      }
+    }
+  },
+  "वासः": {
+    "word": "वासः",
+    "base_english": "Living",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Living"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रहना / निवास"
+      }
+    }
+  },
+  "कर्तव्यः": {
+    "word": "कर्तव्यः",
+    "base_english": "Should be done",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Should be done"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "करना चाहिए"
+      }
+    }
+  },
+  "यतः": {
+    "word": "यतः",
+    "base_english": "Because",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Because"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "क्योंकि"
+      }
+    }
+  },
+  "हि": {
+    "word": "हि",
+    "base_english": "Indeed",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Indeed"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ही"
+      }
+    }
+  },
+  "विविधान्": {
+    "word": "विविधान्",
+    "base_english": "Various",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Various"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तरह-तरह के"
+      }
+    }
+  },
+  "प्रश्नान्": {
+    "word": "प्रश्नान्",
+    "base_english": "Questions",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Questions"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रश्नों को"
+      }
+    }
+  },
+  "करोति": {
+    "word": "करोति",
+    "base_english": "Does",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Does"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "करता है"
+      }
+    }
+  },
+  "स्वस्य": {
+    "word": "स्वस्य",
+    "base_english": "One's own",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "One's own"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अपने"
+      }
+    }
+  },
+  "संशयम्": {
+    "word": "संशयम्",
+    "base_english": "Doubt",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Doubt"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शक / दुविधा को"
+      }
+    }
+  },
+  "दूरीकरोति": {
+    "word": "दूरीकरोति",
+    "base_english": "Removes / Clears",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Removes / Clears"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दूर करता है"
+      }
+    }
+  },
+  "ज्ञानिजनानाम्": {
+    "word": "ज्ञानिजनानाम्",
+    "base_english": "Of wise people",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of wise people"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्ञानियों के"
+      }
+    }
+  },
+  "समीपे": {
+    "word": "समीपे",
+    "base_english": "Near",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Near"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पास में"
+      }
+    }
+  },
+  "तिष्ठति": {
+    "word": "तिष्ठति",
+    "base_english": "Sits / Stays",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sits / Stays"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बैठता है / रहता है"
+      }
+    }
+  },
+  "वर्धते": {
+    "word": "वर्धते",
+    "base_english": "Grows / Increases",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Grows / Increases"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बढ़ती है"
+      }
+    }
+  },
+  "सूर्यस्य": {
+    "word": "सूर्यस्य",
+    "base_english": "Of the sun",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the sun"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सूरज की"
+      }
+    }
+  },
+  "कमलम्": {
+    "word": "कमलम्",
+    "base_english": "Lotus",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Lotus"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कमल का फूल"
+      }
+    }
+  },
+  "पूर्णतया": {
+    "word": "पूर्णतया",
+    "base_english": "Completely",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Completely"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पूरी तरह से"
+      }
+    }
+  },
+  "विकसितम्": {
+    "word": "विकसितम्",
+    "base_english": "Blossomed",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Blossomed"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खिला हुआ"
+      }
+    }
+  },
+  "प्रदानेन": {
+    "word": "प्रदानेन",
+    "base_english": "By speaking / giving",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By speaking / giving"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बोलने से / देने से"
+      }
+    }
+  },
+  "जन्तवः": {
+    "word": "जन्तवः",
+    "base_english": "Living beings",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Living beings"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्राणी / जीव-जंतु"
+      }
+    }
+  },
+  "तस्मात्": {
+    "word": "तस्मात्",
+    "base_english": "Therefore",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Therefore"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इसलिए"
+      }
+    }
+  },
+  "वक्तव्यम्": {
+    "word": "वक्तव्यम्",
+    "base_english": "Should be spoken",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Should be spoken"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बोलना चाहिए"
+      }
+    }
+  },
+  "वचने": {
+    "word": "वचने",
+    "base_english": "In speech",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In speech"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बोलने में / वाणी में"
+      }
+    }
+  },
+  "दरिद्रता": {
+    "word": "दरिद्रता",
+    "base_english": "Poverty / Miserliness",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Poverty / Miserliness"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कंगाली / कंजूसी"
+      }
+    }
+  },
+  "पण्डितानुपाश्रयति": {
+    "word": "पण्डितानुपाश्रयति",
+    "base_english": "Approaches scholars / takes shelter of the wise",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Approaches scholars / takes shelter of the wise"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्वानों के पास जाता है / शरण लेता है"
+      }
+    }
+  },
+  "दिवाकरकिरणैः": {
+    "word": "दिवाकरकिरणैः",
+    "base_english": "By the rays of the sun",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By the rays of the sun"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सूर्य की किरणों के द्वारा"
+      }
+    }
+  },
+  "नलिनीदलम्": {
+    "word": "नलिनीदलम्",
+    "base_english": "Lotus petal",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Lotus petal"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कमल की पंखुड़ी"
+      }
+    }
+  },
+  "नलिनीदलमिव": {
+    "word": "नलिनीदलमिव",
+    "base_english": "Like a lotus petal",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Like a lotus petal"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कमल की पंखुड़ी की तरह"
+      }
+    }
+  },
+  "प्रियवाक्यप्रदानेन": {
+    "word": "प्रियवाक्यप्रदानेन",
+    "base_english": "By speaking sweet words",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By speaking sweet words"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मीठे वचन बोलने से"
+      }
+    }
+  },
+  "प्रियवाक्य": {
+    "word": "प्रियवाक्य",
+    "base_english": "Sweet words",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sweet words"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मीठे वचन / मधुर बोल"
+      }
+    }
+  },
+  "तस्मात्तदेव": {
+    "word": "तस्मात्तदेव",
+    "base_english": "Therefore that alone",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Therefore that alone"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इसलिए वही"
+      }
+    }
+  },
+  "आत्मविकासाय": {
+    "word": "आत्मविकासाय",
+    "base_english": "For self-development",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For self-development"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अपने स्वयं के विकास के लिए"
+      }
+    }
+  },
+  "यतोहि": {
+    "word": "यतोहि",
+    "base_english": "Because",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Because"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "क्योंकि"
+      }
+    }
+  },
+  "यतो हि": {
+    "word": "यतो हि",
+    "base_english": "Because",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Because"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "क्योंकि"
+      }
+    }
+  },
+  "श्रेष्ठजनैःसह": {
+    "word": "श्रेष्ठजनैःसह",
+    "base_english": "With noble people",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "With noble people"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अच्छे लोगों के साथ"
       }
     }
   }
