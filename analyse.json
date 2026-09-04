@@ -139,21 +139,29 @@
   },
   "नैतिकः": {
     "word": "नैतिकः",
-    "base_english": "Moral / ethical",
+    "base_english": "Moral",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Moral / ethical"
+        "meaning": "Moral"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नैतिक / आचरण संबंधी"
       }
     }
   },
   "वपुषा": {
     "word": "वपुषा",
-    "base_english": "By physique / by body",
+    "base_english": "By healthy body",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By physique / by body"
+        "meaning": "By healthy body"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुंदर/स्वस्थ शरीर से"
       }
     }
   },
@@ -364,6 +372,1476 @@
       "en": {
         "label": "English",
         "meaning": "Bothering others / causing pain to others"
+      }
+    }
+  },
+  "द्वितीयः": {
+    "word": "द्वितीयः",
+    "base_english": "Second",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Second"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दूसरा"
+      }
+    }
+  },
+  "पाठः": {
+    "word": "पाठः",
+    "base_english": "Lesson",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Lesson"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पाठ"
+      }
+    }
+  },
+  "नित्यम्": {
+    "word": "नित्यम्",
+    "base_english": "Daily / Always",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Daily / Always"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोज़ / हमेशा"
+      }
+    }
+  },
+  "पिबामः": {
+    "word": "पिबामः",
+    "base_english": "We drink",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We drink"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम सब पीते हैं"
+      }
+    }
+  },
+  "सुभाषित": {
+    "word": "सुभाषित",
+    "base_english": "The nectar of good sayings",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The nectar of good sayings"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रसम् — सुंदर वचनों का रस"
+      }
+    }
+  },
+  "महोदय": {
+    "word": "महोदय",
+    "base_english": "Sir!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sir!"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "श्रीमान जी"
+      }
+    }
+  },
+  "अस्माकम्": {
+    "word": "अस्माकम्",
+    "base_english": "Our",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Our"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हमारे"
+      }
+    }
+  },
+  "विद्यालयस्य": {
+    "word": "विद्यालयस्य",
+    "base_english": "Of the school",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the school"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्यालय के"
+      }
+    }
+  },
+  "भित्तौ": {
+    "word": "भित्तौ",
+    "base_english": "On the wall",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "On the wall"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दीवार पर"
+      }
+    }
+  },
+  "अयोग्यः": {
+    "word": "अयोग्यः",
+    "base_english": "Incapable / Unqualified",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Incapable / Unqualified"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "योग्यता से रहित / बेकार"
+      }
+    }
+  },
+  "पुरुषः": {
+    "word": "पुरुषः",
+    "base_english": "Person / Man",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Person / Man"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्य"
+      }
+    }
+  },
+  "नास्ति": {
+    "word": "नास्ति",
+    "base_english": "Is not",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Is not"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नहीं है"
+      }
+    }
+  },
+  "योजकः": {
+    "word": "योजकः",
+    "base_english": "Organizer / Connector",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Organizer / Connector"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जोड़ने वाला / परख कर काम पर लगाने वाला"
+      }
+    }
+  },
+  "तत्र": {
+    "word": "तत्र",
+    "base_english": "There",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "There"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वहाँ"
+      }
+    }
+  },
+  "दुर्लभः": {
+    "word": "दुर्लभः",
+    "base_english": "Rare",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Rare"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कठिनाई से मिलने वाला"
+      }
+    }
+  },
+  "इति": {
+    "word": "इति",
+    "base_english": "This / Thus",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "This / Thus"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ऐसा / यह"
+      }
+    }
+  },
+  "लिखितम्": {
+    "word": "लिखितम्",
+    "base_english": "Written",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Written"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लिखा हुआ"
+      }
+    }
+  },
+  "अस्ति": {
+    "word": "अस्ति",
+    "base_english": "Is",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Is"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "है"
+      }
+    }
+  },
+  "अस्य": {
+    "word": "अस्य",
+    "base_english": "Its",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Its"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इसका"
+      }
+    }
+  },
+  "कः": {
+    "word": "कः",
+    "base_english": "What",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "What"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "क्या"
+      }
+    }
+  },
+  "भावः": {
+    "word": "भावः",
+    "base_english": "Meaning / Essence",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Meaning / Essence"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अर्थ / मतलब"
+      }
+    }
+  },
+  "कृपया": {
+    "word": "कृपया",
+    "base_english": "Please",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कृपया"
+      }
+    }
+  },
+  "बोधयतु": {
+    "word": "बोधयतु",
+    "base_english": "Please explain",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please explain"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "समझाइए"
+      }
+    }
+  },
+  "भोः": {
+    "word": "भोः",
+    "base_english": "O (vocative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "O (vocative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हे"
+      }
+    }
+  },
+  "भावार्थः": {
+    "word": "भावार्थः",
+    "base_english": "Meaning",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Meaning"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मुख्य भाव / अर्थ"
+      }
+    }
+  },
+  "यत्": {
+    "word": "यत्",
+    "base_english": "That",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "That"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कि"
+      }
+    }
+  },
+  "अस्मिन्": {
+    "word": "अस्मिन्",
+    "base_english": "In this",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In this"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इस"
+      }
+    }
+  },
+  "जगति": {
+    "word": "जगति",
+    "base_english": "In the world",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the world"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "संसार में"
+      }
+    }
+  },
+  "कोऽपि": {
+    "word": "कोऽपि",
+    "base_english": "Anyone",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Anyone"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कोई भी"
+      }
+    }
+  },
+  "सर्वे": {
+    "word": "सर्वे",
+    "base_english": "All",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "All"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सभी"
+      }
+    }
+  },
+  "योग्याः": {
+    "word": "योग्याः",
+    "base_english": "Capable",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Capable"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "योग्य"
+      }
+    }
+  },
+  "सन्ति": {
+    "word": "सन्ति",
+    "base_english": "Are",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Are"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हैं"
+      }
+    }
+  },
+  "परन्तु": {
+    "word": "परन्तु",
+    "base_english": "But",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "But"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लेकिन"
+      }
+    }
+  },
+  "प्रेरकस्य": {
+    "word": "प्रेरकस्य",
+    "base_english": "Of the motivator",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the motivator"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रेरणा देने वाले का"
+      }
+    }
+  },
+  "मार्गदर्शकस्य": {
+    "word": "मार्गदर्शकस्य",
+    "base_english": "Of the guide",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the guide"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रास्ता दिखाने वाले का"
+      }
+    }
+  },
+  "च": {
+    "word": "च",
+    "base_english": "And",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "And"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "और"
+      }
+    }
+  },
+  "अभावः": {
+    "word": "अभावः",
+    "base_english": "Scarcity / Absence",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Scarcity / Absence"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कमी / अनुपस्थिति"
+      }
+    }
+  },
+  "मान्यवर": {
+    "word": "मान्यवर",
+    "base_english": "Respected Sir!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Respected Sir!"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आदरणीय श्रीमान!"
+      }
+    }
+  },
+  "अहम्": {
+    "word": "अहम्",
+    "base_english": "I",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मैंने / मैं"
+      }
+    }
+  },
+  "अपि": {
+    "word": "अपि",
+    "base_english": "Also",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Also"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भी"
+      }
+    }
+  },
+  "परिसरे": {
+    "word": "परिसरे",
+    "base_english": "In the campus",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the campus"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "परिसर/प्रांगण में"
+      }
+    }
+  },
+  "एतादृशम्": {
+    "word": "एतादृशम्",
+    "base_english": "Like this / Such",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Like this / Such"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इस प्रकार का"
+      }
+    }
+  },
+  "पठितवती": {
+    "word": "पठितवती",
+    "base_english": "Read",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Read"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़ा था [स्त्रीलिंग]"
+      }
+    }
+  },
+  "सुभाषितानि": {
+    "word": "सुभाषितानि",
+    "base_english": "Good sayings",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Good sayings"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुभाषित / सुंदर वचन"
+      }
+    }
+  },
+  "इत्यनेन": {
+    "word": "इत्यनेन",
+    "base_english": "By this",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By this"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इससे"
+      }
+    }
+  },
+  "अभिप्रायः": {
+    "word": "अभिप्रायः",
+    "base_english": "Meaning / Intent",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Meaning / Intent"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तात्पर्य / मतलब"
+      }
+    }
+  },
+  "रमे": {
+    "word": "रमे",
+    "base_english": "O Rama!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "O Rama!"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हे रमा!"
+      }
+    }
+  },
+  "एतानि": {
+    "word": "एतानि",
+    "base_english": "These",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "These"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ये सब"
+      }
+    }
+  },
+  "चिन्तन": {
+    "word": "चिन्तन",
+    "base_english": "For the development of thinking",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For the development of thinking"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विकासाय — सोच/सोचने की शक्ति के विकास के लिए"
+      }
+    }
+  },
+  "एव": {
+    "word": "एव",
+    "base_english": "Only",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Only"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ही"
+      }
+    }
+  },
+  "स्थापितानि": {
+    "word": "स्थापितानि",
+    "base_english": "Placed / Established",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Placed / Established"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लगाए गए हैं / स्थापित किए गए हैं"
+      }
+    }
+  },
+  "वत्स": {
+    "word": "वत्स",
+    "base_english": "Dear child!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Dear child!"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हे बच्चे!"
+      }
+    }
+  },
+  "मानवानाम्": {
+    "word": "मानवानाम्",
+    "base_english": "Of humans",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of humans"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्यों के"
+      }
+    }
+  },
+  "विविध": {
+    "word": "विविध",
+    "base_english": "Of various values",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of various values"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मूल्यानाम् — विभिन्न जीवन-मूल्यों / नैतिक गुणों के"
+      }
+    }
+  },
+  "विकासाय": {
+    "word": "विकासाय",
+    "base_english": "For development",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For development"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विकास के लिए"
+      }
+    }
+  },
+  "श्रेष्ठजनैः": {
+    "word": "श्रेष्ठजनैः",
+    "base_english": "By noble people",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By noble people"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "महान/अच्छे लोगों द्वारा"
+      }
+    }
+  },
+  "उक्तानि": {
+    "word": "उक्तानि",
+    "base_english": "Spoken",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Spoken"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कहे गए"
+      }
+    }
+  },
+  "सुवचनानि": {
+    "word": "सुवचनानि",
+    "base_english": "Good words",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Good words"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अच्छे वचन"
+      }
+    }
+  },
+  "सुभाषितानाम्": {
+    "word": "सुभाषितानाम्",
+    "base_english": "Of good sayings",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of good sayings"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुभाषितों के"
+      }
+    }
+  },
+  "पठनेन": {
+    "word": "पठनेन",
+    "base_english": "By reading",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By reading"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़ने से"
+      }
+    }
+  },
+  "लाभः": {
+    "word": "लाभः",
+    "base_english": "Benefit",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Benefit"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फ़ायदा"
+      }
+    }
+  },
+  "अहो": {
+    "word": "अहो",
+    "base_english": "Oh!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Oh!"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अरे / ओहो"
+      }
+    }
+  },
+  "वयम्": {
+    "word": "वयम्",
+    "base_english": "We",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम सब"
+      }
+    }
+  },
+  "पठितुम्": {
+    "word": "पठितुम्",
+    "base_english": "To read",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To read"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़ने के लिए / पढ़ना"
+      }
+    }
+  },
+  "इच्छामः": {
+    "word": "इच्छामः",
+    "base_english": "Want / Wish",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Want / Wish"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चाहते हैं"
+      }
+    }
+  },
+  "अस्मान्": {
+    "word": "अस्मान्",
+    "base_english": "Us",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Us"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम सबको"
+      }
+    }
+  },
+  "पाठयतु": {
+    "word": "पाठयतु",
+    "base_english": "Please teach",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please teach"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़ाइए"
+      }
+    }
+  },
+  "प्रिय": {
+    "word": "प्रिय",
+    "base_english": "Dear Suresh!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Dear Suresh!"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुरेशु ! — प्रिय सुरेश"
+      }
+    }
+  },
+  "सामाजिकः": {
+    "word": "सामाजिकः",
+    "base_english": "Social",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Social"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सामाजिक"
+      }
+    }
+  },
+  "विकासः": {
+    "word": "विकासः",
+    "base_english": "Development",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Development"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विकास"
+      }
+    }
+  },
+  "भवति": {
+    "word": "भवति",
+    "base_english": "Happens / Takes place",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Happens / Takes place"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "होता है"
+      }
+    }
+  },
+  "अस्माभिः": {
+    "word": "अस्माभिः",
+    "base_english": "By us",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By us"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हमारे द्वारा / हमें"
+      }
+    }
+  },
+  "किम्": {
+    "word": "किम्",
+    "base_english": "What",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "What"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "क्या"
+      }
+    }
+  },
+  "कर्तव्यम्": {
+    "word": "कर्तव्यम्",
+    "base_english": "Should be done",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Should be done"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "करना चाहिए"
+      }
+    }
+  },
+  "किञ्च": {
+    "word": "किञ्च",
+    "base_english": "And what",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "And what"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "और क्या"
+      }
+    }
+  },
+  "न": {
+    "word": "न",
+    "base_english": "Not",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Not"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नहीं"
+      }
+    }
+  },
+  "बोधयन्ति": {
+    "word": "बोधयन्ति",
+    "base_english": "Teach / Make us realize",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Teach / Make us realize"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्ञान कराते हैं / समझाते हैं"
+      }
+    }
+  },
+  "समीचीनम्": {
+    "word": "समीचीनम्",
+    "base_english": "Very well / Correct",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Very well / Correct"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बहुत अच्छा / सही है"
+      }
+    }
+  },
+  "तर्हि": {
+    "word": "तर्हि",
+    "base_english": "Then",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Then"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तो फिर"
+      }
+    }
+  },
+  "रसम्": {
+    "word": "रसम्",
+    "base_english": "Nectar / Essence",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Nectar / Essence"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रस / आनंद"
+      }
+    }
+  },
+  "वस्त्रेण": {
+    "word": "वस्त्रेण",
+    "base_english": "By good clothes",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By good clothes"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अच्छे कपड़ों से"
+      }
+    }
+  },
+  "वाचा": {
+    "word": "वाचा",
+    "base_english": "By speech",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By speech"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मीठी वाणी/बोली से"
+      }
+    }
+  },
+  "विद्यया": {
+    "word": "विद्यया",
+    "base_english": "By knowledge",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By knowledge"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्ञान/विद्या से"
+      }
+    }
+  },
+  "विनयेन": {
+    "word": "विनयेन",
+    "base_english": "By humility",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By humility"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नम्रता/शिष्टता से"
+      }
+    }
+  },
+  "वकारैः": {
+    "word": "वकारैः",
+    "base_english": "By the letters starting with 'Va'",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By the letters starting with 'Va'"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "'व' अक्षर से शुरू होने वाले शब्दों से"
+      }
+    }
+  },
+  "पञ्चभिः": {
+    "word": "पञ्चभिः",
+    "base_english": "By five",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By five"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पाँच"
+      }
+    }
+  },
+  "युक्तः": {
+    "word": "युक्तः",
+    "base_english": "Possessing / Endowed with",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Possessing / Endowed with"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जुड़ा हुआ / सहित"
+      }
+    }
+  },
+  "नरः": {
+    "word": "नरः",
+    "base_english": "Man / Human",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Man / Human"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्य / आदमी"
+      }
+    }
+  },
+  "पूजितः": {
+    "word": "पूजितः",
+    "base_english": "Respected / Worshipped",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Respected / Worshipped"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सम्मानित / पूजनीय"
+      }
+    }
+  },
+  "अस्माकं": {
+    "word": "अस्माकं",
+    "base_english": "Our",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Our"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हमारे"
+      }
+    }
+  },
+  "एतादृशं": {
+    "word": "एतादृशं",
+    "base_english": "Like this / Such",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Like this / Such"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इस प्रकार का"
+      }
+    }
+  },
+  "युक्तो": {
+    "word": "युक्तो",
+    "base_english": "Possessing / Endowed with",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Possessing / Endowed with"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जुड़ा हुआ / सहित"
+      }
+    }
+  },
+  "नरो": {
+    "word": "नरो",
+    "base_english": "Man / Human",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Man / Human"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्य / आदमी"
+      }
+    }
+  },
+  "पुरुषो": {
+    "word": "पुरुषो",
+    "base_english": "Person / Man",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Person / Man"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्य"
+      }
+    }
+  },
+  "चिन्तनविकासाय": {
+    "word": "चिन्तनविकासाय",
+    "base_english": "For the development of thinking",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For the development of thinking"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सोच के विकास के लिए"
+      }
+    }
+  },
+  "चिन्तन-विकासाय": {
+    "word": "चिन्तन-विकासाय",
+    "base_english": "For the development of thinking",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For the development of thinking"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सोच के विकास के लिए"
+      }
+    }
+  },
+  "विविधमूल्यानाम्": {
+    "word": "विविधमूल्यानाम्",
+    "base_english": "Of various values",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of various values"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विभिन्न जीवन-मूल्यों के"
+      }
+    }
+  },
+  "विविध-मूल्यानाम्": {
+    "word": "विविध-मूल्यानाम्",
+    "base_english": "Of various values",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of various values"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विभिन्न जीवन-मूल्यों के"
+      }
+    }
+  },
+  "सुभाषितरसम्": {
+    "word": "सुभाषितरसम्",
+    "base_english": "The nectar of good sayings",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The nectar of good sayings"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुंदर वचनों का रस"
+      }
+    }
+  },
+  "सुभाषित-रसम्": {
+    "word": "सुभाषित-रसम्",
+    "base_english": "The nectar of good sayings",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The nectar of good sayings"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुंदर वचनों का रस"
+      }
+    }
+  },
+  "प्रियसुरेश": {
+    "word": "प्रियसुरेश",
+    "base_english": "Dear Suresh!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Dear Suresh!"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रिय सुरेश!"
+      }
+    }
+  },
+  "प्रियसुरेशु": {
+    "word": "प्रियसुरेशु",
+    "base_english": "Dear Suresh!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Dear Suresh!"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रिय सुरेश!"
+      }
+    }
+  },
+  "श्लोकं": {
+    "word": "श्लोकं",
+    "base_english": "Verse",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Verse"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "श्लोक"
+      }
+    }
+  },
+  "सुशीले": {
+    "word": "सुशीले",
+    "base_english": "O Sushila!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "O Sushila!"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हे सुशीला!"
+      }
+    }
+  },
+  "श्रीमन्": {
+    "word": "श्रीमन्",
+    "base_english": "Sir!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sir!"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "श्रीमान जी!"
       }
     }
   }
