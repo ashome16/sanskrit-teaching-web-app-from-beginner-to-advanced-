@@ -54,7 +54,5 @@
 कः पुरुषः खादति?|Who is the man eating?|कः|beginners
 का अत्र आगच्छति?|Who is coming here?|का|beginners
 सा किम् पठति?|What is she reading?|किम्|beginners
-त्वम् कदा आगच्छसि?|When do you come?|कदा|beginners
-त्वम् कथम् पठसि?|How do you read?|कथम्|beginners
-सः कदा खेलति?|When does he play?|कदा|beginners
-सा कथम् गायति?|How does she sing?|कथम्|beginners
+भवान् कदा उत्तिष्ठति?|When do you wake up?|कदा|beginners
+एतत् कथम् भवति?|How does this happen?|कथम्|beginners
