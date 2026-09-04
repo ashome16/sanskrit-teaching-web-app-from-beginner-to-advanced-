@@ -52,5 +52,69 @@
         "sentence_translation": "யானை மெதுவாக நடக்கிறது."
       }
     }
+  },
+  "विद्यातपोभ्यां": {
+    "word": "विद्यातपोभ्यां",
+    "base_english": "by knowledge and austerity (instrumental dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "by knowledge and austerity",
+        "sentence_sanskrit": "विद्यातपोभ्यां भूतात्मा शुध्यति।",
+        "sentence_translation": "The self is purified by knowledge and austerity."
+      }
+    }
+  },
+  "विद्या": {
+    "word": "विद्या",
+    "base_english": "knowledge, learning",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "knowledge, learning"
+      },
+      "te": {
+        "label": "తెలుగు",
+        "meaning": "విద్య / జ్ఞానం"
+      }
+    }
+  },
+  "सत्येन": {
+    "word": "सत्येन",
+    "base_english": "by truth (instrumental)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "by truth"
+      }
+    }
+  },
+  "मनः": {
+    "word": "मनः",
+    "base_english": "mind",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "mind"
+      },
+      "te": {
+        "label": "తెలుగు",
+        "meaning": "మనస్సు"
+      }
+    }
+  },
+  "बुद्धिः": {
+    "word": "बुद्धिः",
+    "base_english": "intellect, understanding",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "intellect, understanding"
+      },
+      "te": {
+        "label": "తెలుగు",
+        "meaning": "బుద్ధి"
+      }
+    }
   }
 }
