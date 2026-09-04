@@ -172,7 +172,10 @@ const Board: React.FC = () => {
     localStorage.setItem('last-board-shelf', nextShelf);
   };
 
-  const isJodoSkin = !activeBoardShelf || activeBoardShelf.skin === 'जोडो';
+  const targetWord = ((activePuzzle?.answer ?? activePuzzle?.target) || '').normalize('NFC');
+  const targetIsWholeTile = !!activePuzzle?.tiles?.some((tile) => cleanTile(tile).normalize('NFC') === targetWord);
+  // जोडो joins (क+आ) stay multi-tap. Question-words (कः on a tile) are one tap.
+  const isJodoSkin = (!activeBoardShelf || activeBoardShelf.skin === 'जोडो') && !targetIsWholeTile;
 
   const toggleTile = (tile: string) => {
     if (checked) return;
@@ -215,7 +218,7 @@ const Board: React.FC = () => {
     </nav>
 
     <div className="board-tip-row">
-      <p className="board-tip">{loopLine}</p>
+      <p className="board-tip">{targetIsWholeTile ? 'Tap one tile (the whole word). Then Check.' : loopLine}</p>
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
     </div>
 
