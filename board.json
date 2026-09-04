@@ -1015,7 +1015,7 @@
         "tapHighlight": "मन्त्रं"
       },
       {
-        "prompt": "गृहम् ____ अस्ति।",
+        "prompt": "____ आनन्दं आनयति।",
         "target": "उत्सवः",
         "tiles": [
           "पूजा",
@@ -1025,13 +1025,13 @@
           "उत्सवः",
           "दीपः"
         ],
-        "sentence": "गृहम् उत्सवे अस्ति।",
-        "english": "The house is in a festive mood.",
-        "highlight": "उत्सवे",
-        "tapHighlight": "उत्सवे"
+        "sentence": "उत्सवः आनन्दं आनयति।",
+        "english": "The festival brings joy.",
+        "highlight": "उत्सवः",
+        "answer": "उत्सवः"
       },
       {
-        "prompt": "पिता ____ पठति।",
+        "prompt": "छात्रः ____ स्थापयति।",
         "target": "ग्रन्थः",
         "tiles": [
           "दीपः",
@@ -1039,12 +1039,13 @@
           "शङ्खः",
           "मन्त्रः",
           "उत्सवः",
-          "ग्रन्थः"
+          "ग्रन्थं"
         ],
-        "sentence": "पिता ग्रन्थं पठति।",
-        "english": "The father reads the scripture.",
+        "sentence": "छात्रः ग्रन्थं स्थापयति।",
+        "english": "The student places the scripture down.",
         "highlight": "ग्रन्थं",
-        "tapHighlight": "ग्रन्थं"
+        "tapHighlight": "ग्रन्थं",
+        "answer": "ग्रन्थं"
       },
       {
         "prompt": "सा ____ धरति।",
