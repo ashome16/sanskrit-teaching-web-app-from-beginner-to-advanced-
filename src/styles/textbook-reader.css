@@ -17,7 +17,8 @@
 
 .textbook-lesson-select-label {
   font-size: 0.85rem;
-  color: #7a6f5e;
+  color: #3d3428;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
@@ -26,9 +27,11 @@
   flex: 1;
   padding: 0.5rem 0.7rem;
   border-radius: 8px;
-  border: 1px solid #d8ceba;
-  background: #fbf8f2;
+  border: 2px solid #5c4f3a;
+  background: #f0e6d4;
+  color: #1f1a14;
   font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .textbook-reader-header {
