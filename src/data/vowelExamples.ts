@@ -16,7 +16,7 @@ export const VOWEL_EXAMPLES: Record<string, VowelExample[]> = {
   'इ': [{ word: 'गिरिः', gloss: 'mountain' }, { word: 'मित्रम्', gloss: 'friend' }, { word: 'सिंहः', gloss: 'lion' }],
   'ई': [{ word: 'नदी', gloss: 'river' }, { word: 'सीता', gloss: 'Sita' }, { word: 'गीतम्', gloss: 'song' }],
   'उ': [{ word: 'गुरुः', gloss: 'teacher' }, { word: 'पुत्रः', gloss: 'son' }, { word: 'मुखम्', gloss: 'face/mouth' }],
-  'ऊ': [{ word: 'सूर्यः', gloss: 'sun' }, { word: 'भूमिः', gloss: 'earth' }, { word: 'पूर्णम्', gloss: 'full/complete' }],
+  'ऊ': [{ word: 'ऊनम्', gloss: 'less / short' }, { word: 'कूर्मः', gloss: 'tortoise' }, { word: 'मूलम्', gloss: 'root' }],
   'ऋ': [{ word: 'ऋषिः', gloss: 'sage' }, { word: 'वृक्षः', gloss: 'tree' }, { word: 'कृष्णः', gloss: 'Krishna' }],
   'ॠ': [{ word: 'पितॄणाम्', gloss: 'of the fathers' }, { word: 'नॄणाम्', gloss: 'of men' }],
   'ऌ': [{ word: 'क्लृप्तम्', gloss: 'arranged' }],
