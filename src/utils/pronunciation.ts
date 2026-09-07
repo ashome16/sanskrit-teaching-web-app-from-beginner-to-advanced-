@@ -19,15 +19,16 @@ const VOWEL_TO_MATRA: Record<string, string> = {
 // Exact/substring phonetic overrides for words that speech engines
 // otherwise mispronounce or misinterpret entirely.
 const applyWordOverrides = (word: string): string => {
+  // ङ example words: stable English cues (same every click).
+  if (word === 'अङ्गम्' || word === 'अंगम्') return 'angam';
+  if (word === 'गङ्गा' || word === 'गंगा') return 'ganga';
+  if (word === 'रङ्गः' || word === 'रंगः' || word === 'रङ्ग' || word === 'रंग') return 'ranga';
   // 'नव' (nava, 9) is otherwise auto-corrected by some engines to the English
   // month "November"; force a pure Devanagari override to keep it Sanskrit.
   if (word.includes('नव')) return word.replace(/नव/g, 'नवम्');
   // 'सप्त' (sapta, 7) gets clipped to "sat" without the plosive 'p'; a
   // hyphenated romanized hint forces the engine to articulate it in full.
   if (word === 'सप्त') return 'sap-ta';
-  // Hindi/Sanskrit TTS often reads ङ्ग clearer as anusvāra+ग (अंग, गंगा, रंग).
-  // Do NOT inject Latin "nga" into Devanagari — that made second plays / गङ्गा wrong.
-  if (word.includes('ङ्')) return word.replace(/ङ्/g, 'ंग');
   return word;
 };
 
@@ -73,8 +74,8 @@ const DEFAULT_RATE = 1;
 const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, speech: string): void => {
   const voice = pickPreferredVoice();
   utterance.voice = voice || null;
-  // Roman cues for बारहखड़ी work better with an English voice; Hindi for longer Sanskrit.
-  if (isBarakhadiAkshara(word) && /^[a-z\- ]+$/i.test(speech)) {
+  // Roman cues (tiles or word anchors like angam/ganga/ranga) use English; Devanagari uses Hindi.
+  if (/^[a-z\- ]+$/i.test(speech)) {
     const voices = window.speechSynthesis.getVoices();
     const en =
       voices.find((item) => item.lang === 'en-IN') ||
