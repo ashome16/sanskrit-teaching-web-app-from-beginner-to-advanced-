@@ -177,8 +177,8 @@ const Dashboard: React.FC = () => {
           <div
             className={`dashboard-nav-group${activeView === 'reader' && lesson.id !== 'varnamala' ? ' dashboard-nav-group--active' : ''}`}
           >
-            <span className="dashboard-nav-group-label">NCERT Textbook</span>
-            <div className="dashboard-nav-sub" role="group" aria-label="NCERT Textbook grades">
+            <span className="dashboard-nav-group-label">NCERT Deepakam</span>
+            <div className="dashboard-nav-sub" role="group" aria-label="NCERT Deepakam grades">
               <button
                 type="button"
                 className={activeView === 'reader' && lesson.id !== 'varnamala' ? 'active' : ''}
