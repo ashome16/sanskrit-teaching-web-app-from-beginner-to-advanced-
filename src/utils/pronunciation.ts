@@ -102,13 +102,44 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   }
   // औ: slower diphthong; घ: gha a touch slower.
   // छ uses Devanagari + Hindi voice (roman chhha was letter-spelled as C-A).
+  // ञ uses a two-beat contour in playPronunciation (fast en + slow ya).
   const isAu = word === 'औ' || speech === 'au';
   const isGha = word === 'घ' || speech === 'gha';
   const isChha = word === 'छ' || speech === 'छ';
-  // ञ: cue 'enya'.
-  const isNya = word === 'ञ' || speech === 'enya';
-  utterance.rate = isAu ? 0.45 : isGha ? 0.75 : isChha ? 0.9 : isNya ? 0.85 : DEFAULT_RATE;
-  utterance.pitch = isNya ? 0.95 : 1;
+  utterance.rate = isAu ? 0.45 : isGha ? 0.75 : isChha ? 0.9 : DEFAULT_RATE;
+  utterance.pitch = 1;
+};
+
+const pickEnglishVoice = (): SpeechSynthesisVoice | undefined => {
+  const voices = window.speechSynthesis.getVoices();
+  return (
+    voices.find((item) => item.lang === 'en-IN') ||
+    voices.find((item) => item.lang?.startsWith('en'))
+  );
+};
+
+/** ञ = enya with fast en then slow ya. */
+const playNyaEnya = (onDone?: () => void): void => {
+  const enVoice = pickEnglishVoice();
+  const enPart = new SpeechSynthesisUtterance('en');
+  enPart.voice = enVoice || null;
+  enPart.lang = enVoice?.lang || 'en-IN';
+  enPart.rate = 1.45;
+  enPart.pitch = 1;
+  const yaPart = new SpeechSynthesisUtterance('ya');
+  yaPart.voice = enVoice || null;
+  yaPart.lang = enVoice?.lang || 'en-IN';
+  yaPart.rate = 0.55;
+  yaPart.pitch = 1;
+  enPart.onend = () => {
+    window.speechSynthesis.speak(yaPart);
+  };
+  yaPart.onend = () => onDone?.();
+  yaPart.onerror = () => onDone?.();
+  enPart.onerror = () => {
+    window.speechSynthesis.speak(yaPart);
+  };
+  window.speechSynthesis.speak(enPart);
 };
 
 
@@ -124,6 +155,10 @@ export const playPronunciation = (value: string): void => {
   }
 
   stopPronunciation();
+  if (word === 'ञ') {
+    playNyaEnya();
+    return;
+  }
   const speech = toSpeechText(word);
   const utterance = new SpeechSynthesisUtterance(speech);
   configureUtterance(utterance, word, speech);
@@ -170,13 +205,18 @@ export const playSequence = (
     }
     const word = items[index];
     index += 1;
-    const speech = toSpeechText(word);
-    const utterance = new SpeechSynthesisUtterance(speech);
-    configureUtterance(utterance, word, speech);
-    utterance.onend = () => {
+    const after = () => {
       if (cancelled) return;
       timer = setTimeout(speakNext, gapMs);
     };
+    if (word === 'ञ') {
+      playNyaEnya(after);
+      return;
+    }
+    const speech = toSpeechText(word);
+    const utterance = new SpeechSynthesisUtterance(speech);
+    configureUtterance(utterance, word, speech);
+    utterance.onend = after;
     utterance.onerror = () => {
       if (cancelled) return;
       timer = setTimeout(speakNext, gapMs);
