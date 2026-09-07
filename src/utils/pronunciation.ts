@@ -107,6 +107,37 @@ const pickEnglishVoice = (): SpeechSynthesisVoice | undefined => {
   );
 };
 
+
+/** ङ words गङ्गा / रङ्गः: slow clear first beat, then ga. */
+const isGangaWord = (word: string): boolean =>
+  word === 'गङ्गा' || word === 'गंगा';
+const isRangaWord = (word: string): boolean =>
+  word === 'रङ्गः' || word === 'रंगः' || word === 'रङ्ग' || word === 'रंग';
+
+const playGunRunGa = (first: 'gun' | 'run', onDone?: () => void): void => {
+  const enVoice = pickEnglishVoice();
+  const firstPart = new SpeechSynthesisUtterance(first);
+  firstPart.voice = enVoice || null;
+  firstPart.lang = enVoice?.lang || 'en-IN';
+  firstPart.rate = 0.55;
+  firstPart.pitch = 1.1;
+  firstPart.volume = 1;
+  const gaPart = new SpeechSynthesisUtterance('ga');
+  gaPart.voice = enVoice || null;
+  gaPart.lang = enVoice?.lang || 'en-IN';
+  gaPart.rate = 0.85;
+  gaPart.pitch = 1;
+  firstPart.onend = () => {
+    window.speechSynthesis.speak(gaPart);
+  };
+  gaPart.onend = () => onDone?.();
+  gaPart.onerror = () => onDone?.();
+  firstPart.onerror = () => {
+    window.speechSynthesis.speak(gaPart);
+  };
+  window.speechSynthesis.speak(firstPart);
+};
+
 /** ञ = enya with fast en then slow ya. */
 const playNyaEnya = (onDone?: () => void): void => {
   const enVoice = pickEnglishVoice();
@@ -146,6 +177,14 @@ export const playPronunciation = (value: string): void => {
   stopPronunciation();
   if (word === 'ञ') {
     playNyaEnya();
+    return;
+  }
+  if (isGangaWord(word)) {
+    playGunRunGa('gun');
+    return;
+  }
+  if (isRangaWord(word)) {
+    playGunRunGa('run');
     return;
   }
   const speech = toSpeechText(word);
@@ -200,6 +239,14 @@ export const playSequence = (
     };
     if (word === 'ञ') {
       playNyaEnya(after);
+      return;
+    }
+    if (isGangaWord(word)) {
+      playGunRunGa('gun', after);
+      return;
+    }
+    if (isRangaWord(word)) {
+      playGunRunGa('run', after);
       return;
     }
     const speech = toSpeechText(word);
