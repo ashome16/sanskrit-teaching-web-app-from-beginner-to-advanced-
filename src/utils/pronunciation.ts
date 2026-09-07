@@ -121,10 +121,10 @@ const pickEnglishVoice = (): SpeechSynthesisVoice | undefined => {
 /** ञ = enya with fast en then slow ya. */
 const playNyaEnya = (onDone?: () => void): void => {
   const enVoice = pickEnglishVoice();
-  const enPart = new SpeechSynthesisUtterance('en');
+  const enPart = new SpeechSynthesisUtterance('enn');
   enPart.voice = enVoice || null;
   enPart.lang = enVoice?.lang || 'en-IN';
-  enPart.rate = 1.45;
+  enPart.rate = 1.95;
   enPart.pitch = 1;
   const yaPart = new SpeechSynthesisUtterance('ya');
   yaPart.voice = enVoice || null;
