@@ -3,7 +3,7 @@ import type { SanskritWordBreakdown } from '../types/linguistics';
 import { searchSanskritWords } from '../data/sanskrit-words';
 import { extractLinguisticInfo } from '../utils/linguistics';
 import { playPronunciation } from '../utils/pronunciation';
-import { examplesForAkshara, baseAksharaForExamples } from '../data/vowelExamples';
+import { examplesForAkshara, baseAksharaForExamples, devanagariOnly } from '../data/vowelExamples';
 import { iconForExampleWord } from '../data/exampleIcons';
 import { formatCaseLabel } from '../data/vibhakti';
 import {
@@ -80,7 +80,8 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
       const result = findWord(selection.text);
       setAnalysis(result);
       setInputValue(cleaned);
-      setSoundAnchor(examplesForAkshara(cleaned).length > 0 ? baseAksharaForExamples(cleaned) : null);
+      const tip = devanagariOnly(cleaned);
+      setSoundAnchor(examplesForAkshara(tip).length > 0 ? baseAksharaForExamples(tip) : null);
     }
   }, [selection?.nonce]);
 
@@ -101,7 +102,8 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
     const cleaned = cleanWord(trimmed);
     const result = findWord(trimmed);
     setAnalysis(result);
-    setSoundAnchor(examplesForAkshara(cleaned).length > 0 ? baseAksharaForExamples(cleaned) : null);
+    const tip = devanagariOnly(cleaned);
+    setSoundAnchor(examplesForAkshara(tip).length > 0 ? baseAksharaForExamples(tip) : null);
   };
 
   const word = analysis?.word;
@@ -115,7 +117,13 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
   const regionalGlosses = glossEntry?.languages
     ? Object.entries(glossEntry.languages).filter(([code, item]) => code !== 'en' && item?.meaning)
     : [];
-  const vowelExamples = soundAnchor ? examplesForAkshara(soundAnchor) : [];
+  const tipFromWord = word ? devanagariOnly(word.devanagari) : '';
+  const effectiveAnchor =
+    soundAnchor ||
+    (tipFromWord && examplesForAkshara(tipFromWord).length > 0
+      ? baseAksharaForExamples(tipFromWord)
+      : null);
+  const vowelExamples = effectiveAnchor ? examplesForAkshara(effectiveAnchor) : [];
   const openExampleWord = (example: string) => {
     // Keep soundAnchor so the related-words list does not disappear.
     const result = findWord(example);
@@ -197,8 +205,10 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
                     onClick={() => openExampleWord(item.word)}
                   >
                     <span className="wac-vowel-example-icon" aria-hidden="true">{iconForExampleWord(item.word)}</span>
-                    <span className="wac-vowel-example-dev">{item.word}</span>
-                    <span className="wac-vowel-example-gloss">{item.gloss}</span>
+                    <span className="wac-vowel-example-text">
+                      <span className="wac-vowel-example-dev">{item.word}</span>
+                      <span className="wac-vowel-example-gloss">{item.gloss}</span>
+                    </span>
                   </button>
                 ))}
               </div>

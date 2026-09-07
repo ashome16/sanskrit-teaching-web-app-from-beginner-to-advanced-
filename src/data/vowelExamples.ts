@@ -219,11 +219,17 @@ export const examplesForVowel = (vowel: string): VowelExample[] => {
   return VOWEL_EXAMPLES[clean] || [];
 };
 
+/** Keep only Devanagari so roman labels never break example lookup. */
+export const devanagariOnly = (value: string): string =>
+  value.normalize('NFC').replace(/[^\u0900-\u097F]/g, '').trim();
+
 /** Base letter for example lookup (टा/ति → ट; vowels stay as-is). */
 export const baseAksharaForExamples = (akshara: string): string => {
-  const clean = akshara.normalize('NFC').trim();
+  const clean = devanagariOnly(akshara);
   if (!clean) return clean;
   if (VOWEL_EXAMPLES[clean] || CONSONANT_EXAMPLES[clean]) return clean;
+  // Independent vowels must never fall through to consonant first-char mapping.
+  if (INDEPENDENT_VOWELS.has(clean)) return clean;
   // Conjunct keys (क्ष त्र ज्ञ) may be multi-codepoint — try full string already failed above.
   const first = clean[0];
   if (CONSONANT_EXAMPLES[first]) return first;
@@ -232,7 +238,9 @@ export const baseAksharaForExamples = (akshara: string): string => {
 
 /** Vowel or consonant tile examples for Analyse “Words with this sound”. */
 export const examplesForAkshara = (akshara: string): VowelExample[] => {
-  const base = baseAksharaForExamples(akshara);
+  const clean = devanagariOnly(akshara);
+  if (VOWEL_EXAMPLES[clean]?.length) return VOWEL_EXAMPLES[clean];
+  const base = baseAksharaForExamples(clean);
   return VOWEL_EXAMPLES[base] || CONSONANT_EXAMPLES[base] || [];
 };
 
