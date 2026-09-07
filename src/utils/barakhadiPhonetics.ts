@@ -83,7 +83,7 @@ export const barakhadiSpeechText = (akshara: string): string => {
   // Hyphenate long digraphs so engines keep aspiration / retroflex.
   const special: Record<string, string> = {
     // Pure vowels: avoid English letter names (a/i) and E-E for ee.
-    a: 'aaaah', aa: 'ahh', i: 'इ', ee: 'ई', gi: 'गि',
+    a: 'aaaah', aa: 'ahh', i: 'इ', ee: 'ई', gi: 'गि', ti: 'ति', tee: 'ती', tu: 'तु', too: 'तू',
     u: 'ooh', oo: 'ooooh',
     e: 'yay', ai: 'ai', o: 'o', au: 'au',
     ri: 'rih', rii: 'reee', ree: 'reee',
@@ -198,6 +198,8 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'ण') return 'nah';
   if (clean === 'ब') return 'bah';
   if (clean === 'त') return 'त';
+  // ति–तु: English ti/tee/tu → tea; use Hindi letter voice.
+  if (clean === 'ति' || clean === 'ती' || clean === 'तु' || clean === 'तू') return clean;
   if (clean === 'क्ष') return 'क्ष';
   if (clean === 'गि') return 'गि';
   const label = varnamalaLabel(clean);
@@ -225,7 +227,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
     dde: 'डे', ddai: 'डै', ddo: 'डो', ddau: 'डौ', ddam: 'डं', ddah: 'डः', ddru: 'डृ',
     ddha: 'dhah', nna: 'nah',
     ba: 'bah',
-    ta: 'त',
+    ta: 'त', ti: 'ति', tee: 'ती', tu: 'तु', too: 'तू',
     shha: 'sh-ha', ksha: 'क्ष', jnya: 'j-nya', tra: 't-ra', shra: 'sh-ra',
   };
   return stretchUuSpeech(special[ascii] || ascii);
