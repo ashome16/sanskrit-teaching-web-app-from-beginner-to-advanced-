@@ -76,7 +76,7 @@ export const barakhadiSpeechText = (akshara: string): string => {
     u: 'ooh', oo: 'ooooh',
     e: 'yay', ai: 'ai', o: 'o', au: 'au',
     ri: 'rih', rii: 'reee', ree: 'reee',
-    nga: 'ng-a', ngaa: 'ng-aa', ngi: 'ng-i', ngee: 'ng-ee', ngu: 'ng-u', ngoo: 'ng-oo',
+    nga: 'unga', ngaa: 'ng-aa', ngi: 'ng-i', ngee: 'ng-ee', ngu: 'ng-u', ngoo: 'ng-oo',
     nge: 'ng-e', ngai: 'ng-ai', ngo: 'ng-o', ngau: 'ng-au', ngam: 'ng-am', ngah: 'ng-ah', ngru: 'ng-ru',
     nya: 'ny-a', nyaa: 'ny-aa', nyi: 'ny-i', nyee: 'ny-ee',
     tta: 't-ta', ttaa: 't-taa', tti: 't-ti', ttee: 't-tee', ttu: 't-tu', ttoo: 't-too',
@@ -122,7 +122,7 @@ const VARNAMALA_VOWELS: Record<string, string> = {
 };
 
 const VARNAMALA_STEM: Record<string, string> = {
-  क: 'k', ख: 'kh', ग: 'g', घ: 'gh', ङ: 'ng',
+  क: 'k', ख: 'kh', ग: 'g', घ: 'gh', ङ: 'ṅ',
   च: 'ch', छ: 'chh', ज: 'j', झ: 'jh', ञ: 'ny',
   ट: 'ṭ', ठ: 'ṭh', ड: 'ḍ', ढ: 'ḍh', ण: 'ṇ',
   त: 't', थ: 'th', द: 'd', ध: 'dh', न: 'n',
@@ -172,6 +172,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'औ') return 'au';
   if (clean === 'ग') return 'ga';
   if (clean === 'घ') return 'ggha';
+  if (clean === 'ङ') return 'unga';
   const label = varnamalaLabel(clean);
   if (!label || label === clean) return barakhadiSpeechText(clean);
   const ascii = label
@@ -179,6 +180,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
     .replace(/ḍ/g, 'dd')
     .replace(/ṇ/g, 'nn')
     .replace(/ṣ/g, 'shh')
+    .replace(/ṅ/g, 'ng')
     .replace(/ī/g, 'ee')
     .replace(/rii/g, 'ree');
   const special: Record<string, string> = {
@@ -187,7 +189,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
     e: 'yay', ai: 'ai', o: 'o', au: 'au',
     ri: 'rih', rii: 'reee', ree: 'reee',
     ga: 'ga', gha: 'ggha',
-    nga: 'ng-a', nya: 'ny-a', chha: 'ch-ha',
+    nga: 'unga', nya: 'ny-a', chha: 'ch-ha',
     tta: 't-ta', ttha: 't-tha', dda: 'd-da', ddha: 'd-dha', nna: 'n-na',
     shha: 'sh-ha', ksha: 'k-sha', jnya: 'j-nya',
   };
