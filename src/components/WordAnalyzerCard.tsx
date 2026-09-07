@@ -3,7 +3,7 @@ import type { SanskritWordBreakdown } from '../types/linguistics';
 import { searchSanskritWords } from '../data/sanskrit-words';
 import { extractLinguisticInfo } from '../utils/linguistics';
 import { playPronunciation } from '../utils/pronunciation';
-import { examplesForAkshara } from '../data/vowelExamples';
+import { examplesForAkshara, baseAksharaForExamples } from '../data/vowelExamples';
 import { formatCaseLabel } from '../data/vibhakti';
 import {
   loadAnalyseGlosses,
@@ -79,7 +79,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
       const result = findWord(selection.text);
       setAnalysis(result);
       setInputValue(cleaned);
-      setSoundAnchor(examplesForAkshara(cleaned).length > 0 ? cleaned : null);
+      setSoundAnchor(examplesForAkshara(cleaned).length > 0 ? baseAksharaForExamples(cleaned) : null);
     }
   }, [selection?.nonce]);
 
@@ -100,7 +100,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
     const cleaned = cleanWord(trimmed);
     const result = findWord(trimmed);
     setAnalysis(result);
-    setSoundAnchor(examplesForAkshara(cleaned).length > 0 ? cleaned : null);
+    setSoundAnchor(examplesForAkshara(cleaned).length > 0 ? baseAksharaForExamples(cleaned) : null);
   };
 
   const word = analysis?.word;

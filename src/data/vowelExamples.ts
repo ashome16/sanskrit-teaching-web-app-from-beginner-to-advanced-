@@ -219,10 +219,21 @@ export const examplesForVowel = (vowel: string): VowelExample[] => {
   return VOWEL_EXAMPLES[clean] || [];
 };
 
+/** Base letter for example lookup (टा/ति → ट; vowels stay as-is). */
+export const baseAksharaForExamples = (akshara: string): string => {
+  const clean = akshara.normalize('NFC').trim();
+  if (!clean) return clean;
+  if (VOWEL_EXAMPLES[clean] || CONSONANT_EXAMPLES[clean]) return clean;
+  // Conjunct keys (क्ष त्र ज्ञ) may be multi-codepoint — try full string already failed above.
+  const first = clean[0];
+  if (CONSONANT_EXAMPLES[first]) return first;
+  return clean;
+};
+
 /** Vowel or consonant tile examples for Analyse “Words with this sound”. */
 export const examplesForAkshara = (akshara: string): VowelExample[] => {
-  const clean = akshara.normalize('NFC').trim();
-  return VOWEL_EXAMPLES[clean] || CONSONANT_EXAMPLES[clean] || [];
+  const base = baseAksharaForExamples(akshara);
+  return VOWEL_EXAMPLES[base] || CONSONANT_EXAMPLES[base] || [];
 };
 
 export const hasSoundExamples = (akshara: string): boolean =>
