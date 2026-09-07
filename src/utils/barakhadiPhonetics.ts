@@ -64,6 +64,17 @@ export const barakhadiLabel = (akshara: string): string => {
   return clean;
 };
 
+
+/** Stretch short उ vs long ऊ so TTS does not collapse ku/koo. */
+const stretchUuSpeech = (speech: string): string => {
+  if (!speech || speech.includes('ooooh') || speech === 'ooh') return speech;
+  if (speech.endsWith('-oo')) return `${speech.slice(0, -3)}ooooh`;
+  if (speech.endsWith('oo')) return `${speech.slice(0, -2)}ooooh`;
+  if (speech.endsWith('-u')) return `${speech.slice(0, -2)}ooh`;
+  if (speech.endsWith('u') && !speech.endsWith('au')) return `${speech.slice(0, -1)}ooh`;
+  return speech;
+};
+
 /** Speech engines need clearer separation for look-alike rows. */
 export const barakhadiSpeechText = (akshara: string): string => {
   const label = barakhadiLabel(akshara);
@@ -76,10 +87,10 @@ export const barakhadiSpeechText = (akshara: string): string => {
     u: 'ooh', oo: 'ooooh',
     e: 'yay', ai: 'ai', o: 'o', au: 'au',
     ri: 'rih', rii: 'reee', ree: 'reee',
-    nga: 'unga', ngaa: 'ng-aa', ngi: 'ng-i', ngee: 'ng-ee', ngu: 'ng-u', ngoo: 'ng-oo',
+    nga: 'unga', ngaa: 'ng-aa', ngi: 'ng-i', ngee: 'ng-ee', ngu: 'ngooh', ngoo: 'ngooooh',
     nge: 'ng-e', ngai: 'ng-ai', ngo: 'ng-o', ngau: 'ng-au', ngam: 'ng-am', ngah: 'ng-ah', ngru: 'ng-ru',
     nya: 'enya', nyaa: 'ny-aa', nyi: 'ny-i', nyee: 'ny-ee',
-    tta: 'tah', ttaa: 't-taa', tti: 't-ti', ttee: 't-tee', ttu: 't-tu', ttoo: 't-too',
+    tta: 'tah', ttaa: 't-taa', tti: 't-ti', ttee: 't-tee', ttu: 'ttooh', ttoo: 'ttooooh',
     tte: 't-te', ttai: 't-tai', tto: 't-to', ttau: 't-tau', ttam: 't-tam', ttah: 't-tah', ttru: 't-tru',
     ttha: 'ठ', tthaa: 't-thaa', tthi: 't-thi', tthee: 't-thee',
     dda: 'dah', ddaa: 'd-daa', ddi: 'd-di', ddee: 'd-dee',
@@ -97,10 +108,10 @@ export const barakhadiSpeechText = (akshara: string): string => {
     tha: 't-ha', thaa: 't-haa', thi: 't-hi', thee: 't-hee',
     dha: 'd-ha', dhaa: 'd-haa', dhi: 'd-hi', dhee: 'd-hee',
   };
-  if (special[label]) return special[label];
+  if (special[label]) return stretchUuSpeech(special[label]);
 
-  // Default: slow clear roman (kaa, kee, koo already distinct)
-  return label;
+  // Default roman, with उ/ऊ length stretched (ku→kooh, koo→kooooh).
+  return stretchUuSpeech(label);
 };
 
 export const isBarakhadiAkshara = (value: string): boolean => {
@@ -205,7 +216,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
     ta: 'त',
     shha: 'sh-ha', ksha: 'क्ष', jnya: 'j-nya', tra: 't-ra', shra: 'sh-ra',
   };
-  return special[ascii] || ascii;
+  return stretchUuSpeech(special[ascii] || ascii);
 };
 /** Shared default (बारहखड़ी). Prefer varnamalaLabel for Varṇamālā tiles. */
 export const aksharaLabel = barakhadiLabel;
