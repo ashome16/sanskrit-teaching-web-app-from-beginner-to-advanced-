@@ -1,4 +1,4 @@
-import { barakhadiSpeechText, isBarakhadiAkshara } from './barakhadiPhonetics';
+import { isBarakhadiAkshara, varnamalaSpeechText } from './barakhadiPhonetics';
 
 // Native Web Speech API pronunciation helper for Sanskrit text only.
 // Strips whitespace/punctuation plus Devanagari digits and hyphens (e.g. the
@@ -59,7 +59,8 @@ const applyVisargaEcho = (word: string): string => {
 const toSpeechText = (word: string): string => {
   // Single बारहखड़ी tiles: speak distinct roman cues (ka/kaa/ki…; tt vs t; ng vs n).
   if (isBarakhadiAkshara(word)) {
-    return barakhadiSpeechText(word);
+    // Varṇamālā / bare vowels: uh · ih · eee (not English A / I / E-E).
+    return varnamalaSpeechText(word);
   }
   const withVisargaEcho = applyVisargaEcho(applyWordOverrides(word));
   let result = '';
