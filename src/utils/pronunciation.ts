@@ -16,14 +16,7 @@ const VOWEL_TO_MATRA: Record<string, string> = {
   'ए': 'े', 'ऐ': 'ै', 'ओ': 'ो', 'औ': 'ौ',
 };
 
-// Some speech engines flatten 'ङ' and 'ढ' into their plain dental look-alikes
-// ('na', 'dha' without aspiration); force the correct phonetic sound instead.
-const CONSONANT_PHONETIC_HINTS: Record<string, string> = {
-  'ङ': 'nga',
-  'ढ': 'dha',
-};
-
-// Exact/substring phonetic overrides for numbers-guide words that speech engines
+// Exact/substring phonetic overrides for words that speech engines
 // otherwise mispronounce or misinterpret entirely.
 const applyWordOverrides = (word: string): string => {
   // 'नव' (nava, 9) is otherwise auto-corrected by some engines to the English
@@ -32,6 +25,9 @@ const applyWordOverrides = (word: string): string => {
   // 'सप्त' (sapta, 7) gets clipped to "sat" without the plosive 'p'; a
   // hyphenated romanized hint forces the engine to articulate it in full.
   if (word === 'सप्त') return 'sap-ta';
+  // Hindi/Sanskrit TTS often reads ङ्ग clearer as anusvāra+ग (अंग, गंगा, रंग).
+  // Do NOT inject Latin "nga" into Devanagari — that made second plays / गङ्गा wrong.
+  if (word.includes('ङ्')) return word.replace(/ङ्/g, 'ंग');
   return word;
 };
 
@@ -52,22 +48,14 @@ const applyVisargaEcho = (word: string): string => {
   return base + 'ह';
 };
 
-// Builds the text actually sent to the speech engine: applies word-specific
-// overrides and the visarga echo, then swaps any ङ/ढ occurrences for their
-// explicit phonetic hint. 'viṃśatiḥ' (विंशतिः -> विंशतिहि) falls out of the
-// visarga echo rule automatically since it just echoes the preceding vowel.
+// Builds the text actually sent to the speech engine: word overrides + visarga echo.
+// Full words stay Devanagari (Hindi voice). Single tiles use roman cues.
 const toSpeechText = (word: string): string => {
-  // Single बारहखड़ी tiles: speak distinct roman cues (ka/kaa/ki…; tt vs t; ng vs n).
+  // Single बारहखड़ी / Varṇamālā tiles: distinct roman cues.
   if (isBarakhadiAkshara(word)) {
-    // Varṇamālā / bare vowels: uh · ih · eee (not English A / I / E-E).
     return varnamalaSpeechText(word);
   }
-  const withVisargaEcho = applyVisargaEcho(applyWordOverrides(word));
-  let result = '';
-  for (const ch of withVisargaEcho) {
-    result += CONSONANT_PHONETIC_HINTS[ch] ?? ch;
-  }
-  return result;
+  return applyVisargaEcho(applyWordOverrides(word));
 };
 
 const pickPreferredVoice = (): SpeechSynthesisVoice | undefined => {
