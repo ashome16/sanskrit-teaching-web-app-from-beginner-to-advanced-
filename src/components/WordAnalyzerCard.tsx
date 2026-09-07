@@ -23,7 +23,7 @@ interface WordAnalyzerCardProps {
 }
 
 // Preset playback speeds offered next to the speaker icon.
-const SPEED_PRESETS = [0.5, 0.75, 1] as const;
+const SPEED_PRESETS = [0.35, 0.7, 1] as const;
 
 // Strips whitespace/punctuation plus Devanagari digits and hyphens (e.g. the
 // numbers guide's "० - शून्यम्" button labels) so only the word itself is analyzed.

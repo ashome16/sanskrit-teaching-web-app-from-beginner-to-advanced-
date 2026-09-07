@@ -102,7 +102,8 @@ export const playPronunciation = (value: string, rate = 0.85): void => {
     } else {
       utterance.lang = 'en-IN';
     }
-    utterance.rate = Math.min(rate, 0.75);
+    // Honor the Analyse speed preset (was capped at 0.75 so 0.75x and 1x sounded identical).
+    utterance.rate = rate;
   } else {
     utterance.lang = voice?.lang || 'hi-IN';
     utterance.rate = rate;
