@@ -82,6 +82,136 @@ export const CONSONANT_EXAMPLES: Record<string, VowelExample[]> = {
     { word: 'ज्ञानम्', gloss: 'knowledge' },
     { word: 'अञ्जलिः', gloss: 'joined palms' },
   ],
+  'ट': [
+    { word: 'पटः', gloss: 'cloth' },
+    { word: 'कटः', gloss: 'mat' },
+    { word: 'वाटिका', gloss: 'garden' },
+  ],
+  'ठ': [
+    { word: 'पाठः', gloss: 'lesson' },
+    { word: 'कण्ठः', gloss: 'throat' },
+    { word: 'कठिनम्', gloss: 'hard / difficult' },
+  ],
+  'ड': [
+    { word: 'अण्डम्', gloss: 'egg' },
+    { word: 'डमरुः', gloss: 'small drum' },
+    { word: 'नाडी', gloss: 'pulse / channel' },
+  ],
+  'ढ': [
+    { word: 'दृढम्', gloss: 'firm' },
+    { word: 'गूढम्', gloss: 'hidden' },
+    { word: 'गाढम्', gloss: 'intense / deep' },
+  ],
+  'ण': [
+    { word: 'गणः', gloss: 'group' },
+    { word: 'कर्णः', gloss: 'ear' },
+    { word: 'वेणुः', gloss: 'flute' },
+  ],
+  'त': [
+    { word: 'तातः', gloss: 'father' },
+    { word: 'तरुः', gloss: 'tree' },
+    { word: 'तारा', gloss: 'star' },
+  ],
+  'थ': [
+    { word: 'कथा', gloss: 'story' },
+    { word: 'पथः', gloss: 'path' },
+    { word: 'अथवा', gloss: 'or' },
+  ],
+  'द': [
+    { word: 'देवः', gloss: 'god' },
+    { word: 'दधि', gloss: 'yogurt' },
+    { word: 'दुग्धम्', gloss: 'milk' },
+  ],
+  'ध': [
+    { word: 'धर्मः', gloss: 'duty / dharma' },
+    { word: 'धनुः', gloss: 'bow' },
+    { word: 'धनम्', gloss: 'wealth' },
+  ],
+  'न': [
+    { word: 'नदी', gloss: 'river' },
+    { word: 'नरः', gloss: 'man' },
+    { word: 'नयनम्', gloss: 'eye' },
+  ],
+  'प': [
+    { word: 'पत्रम्', gloss: 'leaf / letter' },
+    { word: 'पद्मम्', gloss: 'lotus' },
+    { word: 'पुत्रः', gloss: 'son' },
+  ],
+  'फ': [
+    { word: 'फलम्', gloss: 'fruit' },
+    { word: 'फणिः', gloss: 'cobra' },
+    { word: 'फेनम्', gloss: 'foam' },
+  ],
+  'ब': [
+    { word: 'बालः', gloss: 'child' },
+    { word: 'बलम्', gloss: 'strength' },
+    { word: 'बकः', gloss: 'crane (bird)' },
+  ],
+  'भ': [
+    { word: 'भूमिः', gloss: 'earth' },
+    { word: 'भानुः', gloss: 'sun' },
+    { word: 'भक्तः', gloss: 'devotee' },
+  ],
+  'म': [
+    { word: 'माता', gloss: 'mother' },
+    { word: 'मित्रम्', gloss: 'friend' },
+    { word: 'मुखम्', gloss: 'face / mouth' },
+  ],
+  'य': [
+    { word: 'यज्ञः', gloss: 'ritual' },
+    { word: 'यमः', gloss: 'Yama' },
+    { word: 'यन्त्रम्', gloss: 'machine' },
+  ],
+  'र': [
+    { word: 'रामः', gloss: 'Rama' },
+    { word: 'रविः', gloss: 'sun' },
+    { word: 'रथः', gloss: 'chariot' },
+  ],
+  'ल': [
+    { word: 'लता', gloss: 'creeper' },
+    { word: 'लोकः', gloss: 'world' },
+    { word: 'लालः', gloss: 'dear one' },
+  ],
+  'व': [
+    { word: 'वनम्', gloss: 'forest' },
+    { word: 'वायुः', gloss: 'wind' },
+    { word: 'वानरः', gloss: 'monkey' },
+  ],
+  'श': [
+    { word: 'शशिः', gloss: 'moon' },
+    { word: 'शङ्खः', gloss: 'conch' },
+    { word: 'शिष्यः', gloss: 'student' },
+  ],
+  'ष': [
+    { word: 'षट्', gloss: 'six' },
+    { word: 'विषम्', gloss: 'poison' },
+    { word: 'पुरुषः', gloss: 'person / man' },
+  ],
+  'स': [
+    { word: 'सूर्यः', gloss: 'sun' },
+    { word: 'सरः', gloss: 'lake' },
+    { word: 'सिंहः', gloss: 'lion' },
+  ],
+  'ह': [
+    { word: 'हस्तः', gloss: 'hand' },
+    { word: 'हंसः', gloss: 'swan' },
+    { word: 'हरिः', gloss: 'Hari' },
+  ],
+  'क्ष': [
+    { word: 'क्षेत्रम्', gloss: 'field' },
+    { word: 'लक्ष्मीः', gloss: 'Lakshmi' },
+    { word: 'वृक्षः', gloss: 'tree' },
+  ],
+  'त्र': [
+    { word: 'नेत्रम्', gloss: 'eye' },
+    { word: 'मित्रम्', gloss: 'friend' },
+    { word: 'सूत्रम्', gloss: 'thread / rule' },
+  ],
+  'ज्ञ': [
+    { word: 'ज्ञानम्', gloss: 'knowledge' },
+    { word: 'यज्ञः', gloss: 'ritual' },
+    { word: 'विज्ञानम्', gloss: 'science' },
+  ],
 };
 
 export const examplesForVowel = (vowel: string): VowelExample[] => {
