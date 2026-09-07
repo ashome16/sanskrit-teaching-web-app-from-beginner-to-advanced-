@@ -100,13 +100,13 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   } else {
     utterance.lang = voice?.lang || 'hi-IN';
   }
-  // औ: slower diphthong; घ: gha a touch slower; छ: louder/faster stress vs च.
+  // औ: slower diphthong; घ: gha a touch slower.
+  // छ uses Devanagari + Hindi voice (roman chhha was letter-spelled as C-A).
   const isAu = word === 'औ' || speech === 'au';
   const isGha = word === 'घ' || speech === 'gha';
-  const isChha = word === 'छ' || speech === 'chhha';
-  utterance.rate = isAu ? 0.45 : isGha ? 0.75 : isChha ? 1.2 : DEFAULT_RATE;
-  utterance.volume = isChha ? 1 : 1;
-  utterance.pitch = isChha ? 1.15 : 1;
+  const isChha = word === 'छ' || speech === 'छ';
+  utterance.rate = isAu ? 0.45 : isGha ? 0.75 : isChha ? 0.9 : DEFAULT_RATE;
+  utterance.pitch = 1;
 };
 
 
