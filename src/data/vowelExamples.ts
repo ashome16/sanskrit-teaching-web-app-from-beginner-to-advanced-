@@ -235,9 +235,27 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'खि': [{ word: 'शिखी', gloss: 'peacock' }, { word: 'लेखिका', gloss: 'writer' }, { word: 'खिन्नः', gloss: 'sad / tired' }],
   'खी': [{ word: 'सखी', gloss: 'friend (girl)' }, { word: 'सुखी', gloss: 'happy' }, { word: 'नखी', gloss: 'clawed' }],
   'खु': [{ word: 'खुरः', gloss: 'hoof' }, { word: 'आखुः', gloss: 'mouse' }],
+  'खू': [{ word: 'खूर्दति', gloss: 'jumps / plays' }],
+  // खृ: no honest kid-familiar Sanskrit word contains exact खृ — left empty on purpose
   'खे': [{ word: 'खेलति', gloss: 'plays' }, { word: 'लेखः', gloss: 'a writing' }, { word: 'मुखेन', gloss: 'by the mouth' }],
+  'खै': [{ word: 'नखैः', gloss: 'with nails' }, { word: 'सुखैः', gloss: 'with joys' }],
+  'खो': [{ word: 'खोदति', gloss: 'digs' }, { word: 'मुखो', gloss: 'face (sandhi form)' }, { word: 'शिखोपरि', gloss: 'on the crest' }],
+  'खौ': [{ word: 'नखौ', gloss: 'two nails' }, { word: 'शिखौ', gloss: 'two crests' }],
   'खं': [{ word: 'खं', gloss: 'sky / space' }, { word: 'सुखं', gloss: 'happiness' }],
   'खः': [{ word: 'नखः', gloss: 'nail' }, { word: 'शिखः', gloss: 'crest / flame-tip' }],
+  // ग-row (bare ग stays in CONSONANT_EXAMPLES)
+  'गा': [{ word: 'गानम्', gloss: 'song' }, { word: 'गावः', gloss: 'cows' }, { word: 'गंगा', gloss: 'Ganga' }],
+  'गि': [{ word: 'गिरिः', gloss: 'mountain' }, { word: 'गिरिशः', gloss: 'lord of mountains (Shiva)' }],
+  'गी': [{ word: 'गीतम्', gloss: 'song' }, { word: 'गीता', gloss: 'Gita' }],
+  'गु': [{ word: 'गुरुः', gloss: 'teacher' }, { word: 'गुणः', gloss: 'quality / virtue' }],
+  'गू': [{ word: 'गूढम्', gloss: 'hidden' }],
+  'गृ': [{ word: 'गृहम्', gloss: 'home' }, { word: 'गृध्रः', gloss: 'vulture' }, { word: 'गृहिणी', gloss: 'lady of the house' }],
+  'गे': [{ word: 'गेहम्', gloss: 'house' }, { word: 'गेयम्', gloss: 'to be sung' }],
+  'गै': [{ word: 'गैरिकम्', gloss: 'red ochre' }, { word: 'स्वर्गैः', gloss: 'by the heavens' }],
+  'गो': [{ word: 'गोपालः', gloss: 'cowherd / Krishna' }, { word: 'गोमयम्', gloss: 'cow-dung' }, { word: 'गोः', gloss: 'cow' }],
+  'गौ': [{ word: 'गौः', gloss: 'cow' }, { word: 'गौरवम्', gloss: 'honour / glory' }],
+  'गं': [{ word: 'गंगा', gloss: 'Ganga' }, { word: 'गंधः', gloss: 'fragrance' }],
+  'गः': [{ word: 'नागः', gloss: 'serpent / naga' }, { word: 'भागः', gloss: 'share / portion' }, { word: 'योगः', gloss: 'yoga / union' }],
 };
 
 
