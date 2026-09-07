@@ -83,7 +83,7 @@ export const barakhadiSpeechText = (akshara: string): string => {
   // Hyphenate long digraphs so engines keep aspiration / retroflex.
   const special: Record<string, string> = {
     // Pure vowels: avoid English letter names (a/i) and E-E for ee.
-    a: 'aaaah', aa: 'ahh', i: 'इ', ee: 'ई',
+    a: 'aaaah', aa: 'ahh', i: 'इ', ee: 'ई', gi: 'गि',
     u: 'ooh', oo: 'ooooh',
     e: 'yay', ai: 'ai', o: 'o', au: 'au',
     ri: 'rih', rii: 'reee', ree: 'reee',
@@ -193,6 +193,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'ब') return 'bah';
   if (clean === 'त') return 'त';
   if (clean === 'क्ष') return 'क्ष';
+  if (clean === 'गि') return 'गि';
   const label = varnamalaLabel(clean);
   if (!label || label === clean) return barakhadiSpeechText(clean);
   const ascii = label
@@ -205,7 +206,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
     .replace(/ī/g, 'ee')
     .replace(/rii/g, 'ree');
   const special: Record<string, string> = {
-    a: 'aaaah', aa: 'ahh', i: 'इ', ee: 'ई',
+    a: 'aaaah', aa: 'ahh', i: 'इ', ee: 'ई', gi: 'गि',
     u: 'ooh', oo: 'ooooh',
     e: 'yay', ai: 'ai', o: 'o', au: 'au',
     ri: 'rih', rii: 'reee', ree: 'reee',
