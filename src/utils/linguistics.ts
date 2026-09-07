@@ -93,7 +93,7 @@ const DEVANAGARI_TO_IAST: Record<string, string> = {
   'क': 'ka', 'ख': 'kha', 'ग': 'ga', 'घ': 'gha', 'ङ': PHONETIC_OVERRIDES['ङ'],
   
   // Consonants (Cha-Varga)
-  'च': 'ca', 'छ': 'cha', 'ज': 'ja', 'झ': 'jha', 'ञ': 'ña',
+  'च': 'ca', 'छ': 'cha', 'ज': 'ja', 'झ': 'jha', 'ञ': 'nya',
   
   // Consonants (Ta-Varga)
   'ट': 'ṭa', 'ठ': 'ṭha', 'ड': 'ḍa', 'ढ': PHONETIC_OVERRIDES['ढ'], 'ण': 'ṇa',
