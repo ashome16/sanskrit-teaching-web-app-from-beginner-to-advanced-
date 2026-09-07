@@ -286,6 +286,43 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'घौ': [{ word: 'मेघौ', gloss: 'two clouds' }, { word: 'संघौ', gloss: 'two groups' }],
   'घं': [{ word: 'घंटा', gloss: 'bell' }, { word: 'संघं', gloss: 'group / union (object form)' }],
   'घः': [{ word: 'मेघः', gloss: 'cloud' }, { word: 'संघः', gloss: 'group / union' }, { word: 'उल्लाघः', gloss: 'recovered / healthy' }],
+  // ङ-row — ङ almost always ङ् before a consonant; exact matra tiles are rare
+  'ङ': [{ word: 'अङ्गम्', gloss: 'limb / body' }, { word: 'गङ्गा', gloss: 'Ganga' }, { word: 'रङ्गः', gloss: 'color / stage' }],
+  // ङा…ङौ / ङं: almost no everyday lexeme with THIS exact akṣara (ङ्ग ≠ ङा)
+  'ङा': [
+    { word: 'ङा', gloss: 'rare akṣara — almost never alone · Aryabhata number 5' },
+  ],
+  'ङि': [
+    { word: 'ङि', gloss: 'rare akṣara — few everyday words · Aryabhata number 500' },
+  ],
+  'ङी': [
+    { word: 'ङी', gloss: 'rare akṣara — few everyday words · Aryabhata number 500' },
+  ],
+  // ङु: real Dhātupāṭha root (ṅavate “to sound”) — citation form is ङु
+  'ङु': [{ word: 'ङु', gloss: 'to sound (verbal root)' }],
+  'ङू': [
+    { word: 'ङू', gloss: 'rare akṣara — few everyday words · Aryabhata number 50,000' },
+  ],
+  'ङृ': [
+    { word: 'ङृ', gloss: 'rare akṣara — few everyday words · Aryabhata number 50,00,000' },
+  ],
+  'ङे': [
+    { word: 'ङे', gloss: 'rare akṣara — few everyday words · Aryabhata · listen for the shape' },
+  ],
+  'ङै': [
+    { word: 'ङै', gloss: 'rare akṣara — few everyday words · Aryabhata · listen for the shape' },
+  ],
+  'ङो': [
+    { word: 'ङो', gloss: 'rare akṣara — few everyday words · Aryabhata · listen for the shape' },
+  ],
+  'ङौ': [
+    { word: 'ङौ', gloss: 'rare akṣara — few everyday words · Aryabhata · listen for the shape' },
+  ],
+  'ङं': [
+    { word: 'ङं', gloss: 'rare akṣara — almost never alone · listen for the shape' },
+  ],
+  // ङः: lexicon headword (Medinī / MW) — object of sense, Bhairava
+  'ङः': [{ word: 'ङः', gloss: 'object of sense / Bhairava (lexicon)' }],
 };
 
 
