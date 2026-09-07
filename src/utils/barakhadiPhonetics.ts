@@ -72,7 +72,7 @@ export const barakhadiSpeechText = (akshara: string): string => {
   // Hyphenate long digraphs so engines keep aspiration / retroflex.
   const special: Record<string, string> = {
     // Pure vowels: avoid English letter names (a/i) and E-E for ee.
-    a: 'uh', aa: 'aaaah', i: 'ih', ee: 'eee',
+    a: 'ahh', aa: 'aaaah', i: 'yi', ee: 'eel',
     u: 'uu', oo: 'ooo',
     nga: 'ng-a', ngaa: 'ng-aa', ngi: 'ng-i', ngee: 'ng-ee', ngu: 'ng-u', ngoo: 'ng-oo',
     nge: 'ng-e', ngai: 'ng-ai', ngo: 'ng-o', ngau: 'ng-au', ngam: 'ng-am', ngah: 'ng-ah', ngru: 'ng-ru',
@@ -155,11 +155,11 @@ export const varnamalaLabel = (akshara: string): string => {
 /** Speakable ASCII for traditional labels (ṭ→tt, ṣ→shh, rii→ree). */
 export const varnamalaSpeechText = (akshara: string): string => {
   const clean = akshara.normalize('NFC').trim();
-  // अ / इ / ई: speak Devanagari with Hindi voice.
-  // Roman uh / ih / eee become letter-noise, English I, or E-E-E.
-  if (clean === 'अ' || clean === 'इ' || clean === 'ई') {
-    return clean;
-  }
+  // Cues English voices will not read as letter names / E-E-E.
+  // अ short open; आ stays aaaah; इ = yi; ई = eel (one long ee).
+  if (clean === 'अ') return 'ahh';
+  if (clean === 'इ') return 'yi';
+  if (clean === 'ई') return 'eel';
   const label = varnamalaLabel(clean);
   if (!label || label === clean) return barakhadiSpeechText(clean);
   const ascii = label
@@ -170,7 +170,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
     .replace(/ī/g, 'ee')
     .replace(/rii/g, 'ree');
   const special: Record<string, string> = {
-    a: 'uh', aa: 'aaaah', i: 'ih', ee: 'eee',
+    a: 'ahh', aa: 'aaaah', i: 'yi', ee: 'eel',
     u: 'uu', oo: 'ooo',
     nga: 'ng-a', nya: 'ny-a', chha: 'ch-ha',
     tta: 't-ta', ttha: 't-tha', dda: 'd-da', ddha: 'd-dha', nna: 'n-na',

@@ -9,11 +9,28 @@ import '../styles/dashboard.css';
 
 const Dashboard: React.FC = () => {
   const [lessons, setLessons] = useState(STATIC_LESSONS);
-  const [lessonIndex, setLessonIndex] = useState(0);
+  const [lessonIndex, setLessonIndex] = useState(() => {
+    const saved = localStorage.getItem('school-lesson-id');
+    if (saved) {
+      const idx = STATIC_LESSONS.findIndex((item) => item.id === saved);
+      if (idx >= 0) return idx;
+    }
+    const varna = STATIC_LESSONS.findIndex((item) => item.id === 'varnamala');
+    return varna >= 0 ? varna : 0;
+  });
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [wordSelection, setWordSelection] = useState<WordSelection | null>(null);
   const [isVibhaktiGuideOpen, setIsVibhaktiGuideOpen] = useState(false);
-  const [activeView, setActiveView] = useState<'board' | 'reader' | 'analyzer'>('board');
+  const [activeView, setActiveView] = useState<'board' | 'reader' | 'analyzer'>('reader');
+
+  useEffect(() => {
+    localStorage.setItem('school-active-view', activeView);
+  }, [activeView]);
+
+  useEffect(() => {
+    const id = lessons[lessonIndex]?.id;
+    if (id) localStorage.setItem('school-lesson-id', id);
+  }, [lessonIndex, lessons]);
 
   // Cache-busted refetch on mount so freshly regenerated chapters.json content
   // (varṇamālā guide + Chapter 1) shows up without a hard reload.
@@ -83,6 +100,16 @@ const Dashboard: React.FC = () => {
     setWordSelection(null);
   };
 
+  const openVarnamala = () => {
+    const idx = lessons.findIndex((item) => item.id === 'varnamala');
+    if (idx >= 0) {
+      setLessonIndex(idx);
+      setSentenceIndex(0);
+      setWordSelection(null);
+    }
+    setActiveView('reader');
+  };
+
   if (!lesson || !sentence) {
     return <div className="dashboard-empty">No chapter content available.</div>;
   }
@@ -92,8 +119,19 @@ const Dashboard: React.FC = () => {
       <header className="dashboard-header">
         <h1 className="dashboard-title">🕉️ Sanskrit Learning</h1>
         <nav className="dashboard-nav" aria-label="Main learning views">
+          <button
+            className={activeView === 'reader' && lesson.id === 'varnamala' ? 'active' : ''}
+            onClick={openVarnamala}
+          >
+            Varṇamālā
+          </button>
           <button className={activeView === 'board' ? 'active' : ''} onClick={() => setActiveView('board')}>Board</button>
-          <button className={activeView === 'reader' ? 'active' : ''} onClick={() => setActiveView('reader')}>Deepakam</button>
+          <button
+            className={activeView === 'reader' && lesson.id !== 'varnamala' ? 'active' : ''}
+            onClick={() => setActiveView('reader')}
+          >
+            Deepakam
+          </button>
           <button className={activeView === 'analyzer' ? 'active' : ''} onClick={() => setActiveView('analyzer')}>Analyse</button>
         </nav>
         <button
