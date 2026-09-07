@@ -86,7 +86,7 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   const voice = pickPreferredVoice();
   utterance.voice = voice || null;
   // Roman cues for बारहखड़ी work better with an English voice; Hindi for longer Sanskrit.
-  if (isBarakhadiAkshara(word) && /^[a-z\-]+$/i.test(speech)) {
+  if (isBarakhadiAkshara(word) && /^[a-z\- ]+$/i.test(speech)) {
     const voices = window.speechSynthesis.getVoices();
     const en =
       voices.find((item) => item.lang === 'en-IN') ||
@@ -105,8 +105,8 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   const isAu = word === 'औ' || speech === 'au';
   const isGha = word === 'घ' || speech === 'gha';
   const isChha = word === 'छ' || speech === 'छ';
-  // ञ: ihnya = inya with weak short i (not stressed IN/EE).
-  const isNya = word === 'ञ' || speech === 'ihnya';
+  // ञ: cue 'n ya' (spaced, so it won't glue into one mushy syllable).
+  const isNya = word === 'ञ' || speech === 'n ya';
   utterance.rate = isAu ? 0.45 : isGha ? 0.75 : isChha ? 0.9 : isNya ? 0.7 : DEFAULT_RATE;
   utterance.pitch = isNya ? 0.85 : 1;
 };
