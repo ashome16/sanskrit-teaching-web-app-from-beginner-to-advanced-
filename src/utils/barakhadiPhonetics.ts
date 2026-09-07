@@ -90,8 +90,8 @@ export const barakhadiSpeechText = (akshara: string): string => {
     nga: 'unga', ngaa: 'ng-aa', ngi: 'ng-i', ngee: 'ng-ee', ngu: 'ngooh', ngoo: 'ngooooh',
     nge: 'ng-e', ngai: 'ng-ai', ngo: 'ng-o', ngau: 'ng-au', ngam: 'ng-am', ngah: 'ng-ah', ngru: 'ng-ru',
     nya: 'enya', nyaa: 'ny-aa', nyi: 'ny-i', nyee: 'ny-ee',
-    tta: 'tah', ttaa: 't-taa', tti: 't-ti', ttee: 't-tee', ttu: 'ttooh', ttoo: 'ttooooh',
-    tte: 't-te', ttai: 't-tai', tto: 't-to', ttau: 't-tau', ttam: 't-tam', ttah: 't-tah', ttru: 't-tru',
+    tta: 'tah', ttaa: 'टा', tti: 'टि', ttee: 'टी', ttu: 'टु', ttoo: 'टू',
+    tte: 'टे', ttai: 'टै', tto: 'टो', ttau: 'टौ', ttam: 'टं', ttah: 'टः', ttru: 'टृ',
     ttha: 'ठ', tthaa: 't-thaa', tthi: 't-thi', tthee: 't-thee',
     dda: 'dah', ddaa: 'd-daa', ddi: 'd-di', ddee: 'd-dee',
     ddha: 'dhah', ddhaa: 'd-dhaa', ddhi: 'd-dhi', ddhee: 'd-dhee',
@@ -186,6 +186,8 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'ञ') return 'enya';
   if (clean === 'ङ') return 'unga';
   if (clean === 'ट') return 'tah';
+  // ट + matra: English tt*/t-t* sounds like double-t; use Hindi letter voice.
+  if (clean.startsWith('ट') && clean.length > 1) return clean;
   if (clean === 'ठ') return 'ठ';
   if (clean === 'ड') return 'dah';
   if (clean === 'ढ') return 'dhah';
@@ -212,7 +214,9 @@ export const varnamalaSpeechText = (akshara: string): string => {
     ri: 'rih', rii: 'reee', ree: 'reee',
     gha: 'gha',
     nga: 'unga', nya: 'enya', chha: 'chha',
-    tta: 'tah', ttha: 'ठ', dda: 'dah', ddha: 'dhah', nna: 'nah',
+    tta: 'tah', ttaa: 'टा', tti: 'टि', ttee: 'टी', ttu: 'टु', ttoo: 'टू',
+    tte: 'टे', ttai: 'टै', tto: 'टो', ttau: 'टौ', ttam: 'टं', ttah: 'टः', ttru: 'टृ',
+    ttha: 'ठ', dda: 'dah', ddha: 'dhah', nna: 'nah',
     ba: 'bah',
     ta: 'त',
     shha: 'sh-ha', ksha: 'क्ष', jnya: 'j-nya', tra: 't-ra', shra: 'sh-ra',
