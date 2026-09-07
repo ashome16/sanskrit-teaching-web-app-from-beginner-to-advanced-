@@ -96,7 +96,7 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   const isAu = word === 'औ' || speech === 'au';
   const isGha = word === 'घ' || speech === 'gha';
   const isChha = word === 'छ' || speech === 'छ';
-  const isTtha = word === 'ठ' || speech === 'taaahh';
+  const isTtha = word === 'ठ' || speech === 'ठ';
   const isDdha = word === 'ढ' || speech === 'dhah';
   const isVisargaWord = word.endsWith('ः');
   // गङ्गा / रङ्गः / अङ्गम्: original roman cues, extended slowly + full volume.
@@ -105,7 +105,7 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   utterance.rate = isNgaWord
     ? 0.42
     : isTtha
-      ? 0.38
+      ? 0.5
       : isDdha
         ? 0.72
         : isVisargaWord

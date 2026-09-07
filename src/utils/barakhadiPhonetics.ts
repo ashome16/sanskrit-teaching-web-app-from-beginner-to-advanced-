@@ -81,7 +81,7 @@ export const barakhadiSpeechText = (akshara: string): string => {
     nya: 'enya', nyaa: 'ny-aa', nyi: 'ny-i', nyee: 'ny-ee',
     tta: 'tah', ttaa: 't-taa', tti: 't-ti', ttee: 't-tee', ttu: 't-tu', ttoo: 't-too',
     tte: 't-te', ttai: 't-tai', tto: 't-to', ttau: 't-tau', ttam: 't-tam', ttah: 't-tah', ttru: 't-tru',
-    ttha: 'taaahh', tthaa: 't-thaa', tthi: 't-thi', tthee: 't-thee',
+    ttha: 'ठ', tthaa: 't-thaa', tthi: 't-thi', tthee: 't-thee',
     dda: 'dah', ddaa: 'd-daa', ddi: 'd-di', ddee: 'd-dee',
     ddha: 'dhah', ddhaa: 'd-dhaa', ddhi: 'd-dhi', ddhee: 'd-dhee',
     nna: 'nah', nnaa: 'n-naa', nni: 'n-ni', nnee: 'n-nee',
@@ -175,7 +175,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'ञ') return 'enya';
   if (clean === 'ङ') return 'unga';
   if (clean === 'ट') return 'tah';
-  if (clean === 'ठ') return 'taaahh';
+  if (clean === 'ठ') return 'ठ';
   if (clean === 'ड') return 'dah';
   if (clean === 'ढ') return 'dhah';
   if (clean === 'ण') return 'nah';
@@ -201,7 +201,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
     ri: 'rih', rii: 'reee', ree: 'reee',
     gha: 'gha',
     nga: 'unga', nya: 'enya', chha: 'chha',
-    tta: 'tah', ttha: 'taaahh', dda: 'dah', ddha: 'dhah', nna: 'nah',
+    tta: 'tah', ttha: 'ठ', dda: 'dah', ddha: 'dhah', nna: 'nah',
     ba: 'bah',
     ta: 'त',
     shha: 'sh-ha', ksha: 'k-sha', jnya: 'ज्ञ', shra: 'श्र',
