@@ -57,6 +57,31 @@ export const CONSONANT_EXAMPLES: Record<string, VowelExample[]> = {
     { word: 'गङ्गा', gloss: 'Ganga' },
     { word: 'रङ्गः', gloss: 'color / stage' },
   ],
+  'च': [
+    { word: 'चन्द्रः', gloss: 'moon' },
+    { word: 'चक्रम्', gloss: 'wheel' },
+    { word: 'चित्रम्', gloss: 'picture' },
+  ],
+  'छ': [
+    { word: 'छात्रः', gloss: 'student' },
+    { word: 'छत्रम्', gloss: 'umbrella' },
+    { word: 'छाया', gloss: 'shadow' },
+  ],
+  'ज': [
+    { word: 'जलम्', gloss: 'water' },
+    { word: 'जगत्', gloss: 'world' },
+    { word: 'राजः', gloss: 'king' },
+  ],
+  'झ': [
+    { word: 'झषः', gloss: 'fish' },
+    { word: 'झङ्कारः', gloss: 'jingle / buzz' },
+    { word: 'झिल्ली', gloss: 'cricket (insect)' },
+  ],
+  'ञ': [
+    { word: 'पञ्च', gloss: 'five' },
+    { word: 'ज्ञानम्', gloss: 'knowledge' },
+    { word: 'अञ्जलिः', gloss: 'joined palms' },
+  ],
 };
 
 export const examplesForVowel = (vowel: string): VowelExample[] => {
