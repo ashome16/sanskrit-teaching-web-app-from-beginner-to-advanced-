@@ -36,6 +36,7 @@ export const CONSONANT_EXAMPLES: Record<string, VowelExample[]> = {
     { word: 'गङ्गा', gloss: 'Ganga' },
   ],
   'घ': [
+    { word: 'घनः', gloss: 'solid/cube' },
     { word: 'घरम्', gloss: 'house' },
     { word: 'घटः', gloss: 'pot' },
     { word: 'मेघः', gloss: 'cloud' },

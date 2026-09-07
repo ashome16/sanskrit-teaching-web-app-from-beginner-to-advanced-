@@ -100,10 +100,10 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   } else {
     utterance.lang = voice?.lang || 'hi-IN';
   }
-  // औ: slower diphthong; घ: slightly slower so aspiration lands clearer.
+  // औ: slower diphthong; घ: word-anchor 'ghana' a touch slower so gha is clear (not dha).
   const isAu = word === 'औ' || speech === 'au';
-  const isGha = word === 'घ' || speech === 'ghha' || speech.startsWith('ghha');
-  utterance.rate = isAu ? 0.45 : isGha ? 0.7 : DEFAULT_RATE;
+  const isGha = word === 'घ' || speech === 'ghana';
+  utterance.rate = isAu ? 0.45 : isGha ? 0.75 : DEFAULT_RATE;
 };
 
 
