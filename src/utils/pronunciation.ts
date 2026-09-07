@@ -21,7 +21,7 @@ const VOWEL_TO_MATRA: Record<string, string> = {
 const applyWordOverrides = (word: string): string => {
   // ङ example words: stable English cues (same every click).
   if (word === 'अङ्गम्' || word === 'अंगम्') return 'an gam';
-  if (word === 'गङ्गा' || word === 'गंगा') return 'gan ga';
+  if (word === 'गङ्गा' || word === 'गंगा') return 'gun ga';
   if (word === 'रङ्गः' || word === 'रंगः' || word === 'रङ्ग' || word === 'रंग') return 'run ga';
   // 'नव' (nava, 9) is otherwise auto-corrected by some engines to the English
   // month "November"; force a pure Devanagari override to keep it Sanskrit.
