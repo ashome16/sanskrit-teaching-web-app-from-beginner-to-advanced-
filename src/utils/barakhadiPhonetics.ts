@@ -104,11 +104,13 @@ export const barakhadiSpeechText = (akshara: string): string => {
     kha: 'k-ha', khaa: 'k-haa', khi: 'k-hi', khee: 'k-hee',
     gha: 'gha', ghaa: 'g-haa', ghi: 'g-hi', ghee: 'g-hee',
     jha: 'j-ha', jhaa: 'j-haa', jhi: 'j-hi', jhee: 'j-hee',
-    pha: 'p-ha', phaa: 'p-haa', phi: 'p-hi', phee: 'p-hee',
+    pha: 'p-ha', phaa: 'p-haa', phi: 'फि', phee: 'p-hee',
     bha: 'b-ha', bhaa: 'b-haa', bhi: 'b-hi', bhee: 'b-hee',
     tha: 't-ha', thaa: 't-haa', thi: 't-hi', thee: 't-hee',
     dha: 'd-ha', dhaa: 'd-haa', dhi: 'धि', dhee: 'd-hee',
     the: 'थे', de: 'दे', dhe: 'धे', nru: 'नृ', nri: 'नृ', pi: 'पि', pau: 'पौ',
+    be: 'बे', bhe: 'भे', bho: 'भो', mri: 'मृ', mru: 'मृ', me: 'मे', mau: 'मौ', ye: 'yae',
+    yai: 'yaai', rri: 'rar', lri: 'lar',
   };
   if (special[label]) return stretchUuSpeech(special[label]);
 
@@ -210,6 +212,17 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'नृ') return 'नृ';
   if (clean === 'पि') return 'पि';
   if (clean === 'पौ') return 'पौ';
+  if (clean === 'फि') return 'फि';
+  if (clean === 'बे') return 'बे';
+  if (clean === 'भे') return 'भे';
+  if (clean === 'भो') return 'भो';
+  if (clean === 'मृ') return 'मृ';
+  if (clean === 'मे') return 'मे';
+  if (clean === 'मौ') return 'मौ';
+  if (clean === 'ये') return 'yae';
+  if (clean === 'यै') return 'yaai';
+  if (clean === 'रृ') return 'rar';
+  if (clean === 'लृ') return 'lar';
   const label = varnamalaLabel(clean);
   if (!label || label === clean) return barakhadiSpeechText(clean);
   const ascii = label
@@ -237,6 +250,8 @@ export const varnamalaSpeechText = (akshara: string): string => {
     ba: 'bah',
     ta: 'त', ti: 'ति', tee: 'ती', tu: 'तु', too: 'तू',
     the: 'थे', de: 'दे', dhi: 'धि', dhe: 'धे', nru: 'नृ', nri: 'नृ', pi: 'पि', pau: 'पौ',
+    phi: 'फि', be: 'बे', bhe: 'भे', bho: 'भो', mri: 'मृ', mru: 'मृ', me: 'मे', mau: 'मौ', ye: 'yae',
+    yai: 'yaai', rri: 'rar', lri: 'lar',
     shha: 'sh-ha', ksha: 'क्ष', jnya: 'j-nya', tra: 't-ra', shra: 'sh-ra',
   };
   return stretchUuSpeech(special[ascii] || ascii);

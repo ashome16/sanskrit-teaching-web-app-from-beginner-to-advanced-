@@ -268,19 +268,6 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               </div>
             </div>
           )}
-          {activeLessonId === 'barakhadi' && (
-            <div className="textbook-playall-row barakhadi-playall-inline">
-              <button
-                type="button"
-                className={`textbook-playall-btn${isPlayingAll ? ' textbook-playall-btn--active' : ''}`}
-                onClick={handlePlayAll}
-                aria-pressed={isPlayingAll}
-              >
-                {isPlayingAll ? '⏹ Stop' : '▶ Play all letters'}
-              </button>
-              <span className="textbook-glossary-hint">Plays the full बारहखड़ी chart in order.</span>
-            </div>
-          )}
           {activeLesson.sentences.map((group, groupIdx) => (
             <div
               key={group.category || groupIdx}
