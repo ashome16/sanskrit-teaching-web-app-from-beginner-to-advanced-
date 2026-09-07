@@ -3,7 +3,11 @@ import type { SanskritWordBreakdown } from '../types/linguistics';
 import { searchSanskritWords } from '../data/sanskrit-words';
 import { extractLinguisticInfo } from '../utils/linguistics';
 import { playPronunciation } from '../utils/pronunciation';
-import { examplesForAkshara, baseAksharaForExamples, devanagariOnly } from '../data/vowelExamples';
+import {
+  displayExamplesForAkshara,
+  baseAksharaForExamples,
+  devanagariOnly,
+} from '../data/vowelExamples';
 import { isBarakhadiAkshara } from '../utils/barakhadiPhonetics';
 import { iconForExampleWord } from '../data/exampleIcons';
 import { formatCaseLabel } from '../data/vibhakti';
@@ -81,7 +85,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
       setAnalysis(result);
       const tip = devanagariOnly(cleaned);
       // Keep barakhadi tiles anchored even when examples are scarce (rare matras).
-      const hasExamples = examplesForAkshara(tip).length > 0;
+      const hasExamples = displayExamplesForAkshara(tip).examples.length > 0;
       setSoundAnchor(
         hasExamples || isBarakhadiAkshara(tip) ? baseAksharaForExamples(tip) : null
       );
@@ -108,7 +112,12 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
     ? Object.entries(glossEntry.languages).filter(([code, item]) => code !== 'en' && item?.meaning)
     : [];
   // Letter-tile anchors only — never first letter of a Deepakam word.
-  const vowelExamples = soundAnchor ? examplesForAkshara(soundAnchor) : [];
+  const exampleBundle = soundAnchor
+    ? displayExamplesForAkshara(soundAnchor)
+    : { examples: [], mode: 'exact' as const, rareNote: null };
+  const vowelExamples = exampleBundle.examples;
+  const examplesMode = exampleBundle.mode;
+  const rareNote = exampleBundle.rareNote;
   const openExampleWord = (example: string) => {
     // Keep soundAnchor so the related-words list does not disappear.
     const result = findWord(example);
@@ -150,9 +159,22 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
           {soundAnchor && vowelExamples.length > 0 && (
             <section className="wac-section">
               <h3 className="wac-section-title">Words with this akṣara</h3>
-              <p className="wac-placeholder" style={{ marginBottom: '.5rem' }}>
-                Familiar words that use this exact letter (का is not the same as क). The list stays while you browse.
-              </p>
+              {examplesMode === 'related' ? (
+                <>
+                  {rareNote ? (
+                    <p className="wac-placeholder" style={{ marginBottom: '.35rem' }}>
+                      {rareNote}
+                    </p>
+                  ) : null}
+                  <p className="wac-placeholder" style={{ marginBottom: '.5rem' }}>
+                    Related ङ-family words (in real words ङ is written ङ् before a consonant).
+                  </p>
+                </>
+              ) : (
+                <p className="wac-placeholder" style={{ marginBottom: '.5rem' }}>
+                  Familiar words that use this exact letter (का is not the same as क). The list stays while you browse.
+                </p>
+              )}
               <div className="wac-vowel-examples">
                 {vowelExamples.map((item) => (
                   <button

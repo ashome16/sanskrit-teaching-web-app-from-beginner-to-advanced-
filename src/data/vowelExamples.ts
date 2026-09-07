@@ -58,6 +58,10 @@ export const CONSONANT_EXAMPLES: Record<string, VowelExample[]> = {
     { word: 'अङ्गम्', gloss: 'limb / body' },
     { word: 'गङ्गा', gloss: 'Ganga' },
     { word: 'रङ्गः', gloss: 'color / stage' },
+    { word: 'शङ्खः', gloss: 'conch' },
+    { word: 'अङ्कुरः', gloss: 'sprout' },
+    { word: 'पङ्कजम्', gloss: 'lotus (mud-born)' },
+    { word: 'सङ्गीतम्', gloss: 'music' },
   ],
   'च': [
     { word: 'चन्द्रः', gloss: 'moon' },
@@ -286,15 +290,23 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'घौ': [{ word: 'मेघौ', gloss: 'two clouds' }, { word: 'संघौ', gloss: 'two groups' }],
   'घं': [{ word: 'घंटा', gloss: 'bell' }, { word: 'संघं', gloss: 'group / union (object form)' }],
   'घः': [{ word: 'मेघः', gloss: 'cloud' }, { word: 'संघः', gloss: 'group / union' }, { word: 'उल्लाघः', gloss: 'recovered / healthy' }],
-  // cache-bust 2026-09-07c
-  // ङ-row — ङ almost always ङ् before a consonant; exact matra tiles are rare.
-  // Standing rule: exact akṣara (का ≠ क). गङ्गा has ङ्ग, not ङा — so rare matra
-  // tiles show ONLY the self-tile (word === key). Family trio stays on bare ङ.
-  'ङ': [{ word: 'अङ्गम्', gloss: 'limb / body' }, { word: 'गङ्गा', gloss: 'Ganga' }, { word: 'रङ्गः', gloss: 'color / stage' }],
+  // cache-bust 2026-09-08a
+  // ङ-row — exact akṣara only here. Everyday Sanskrit almost never has open
+  // ङा/ङि/…; family kid-words with ङ् live in BARAKHADI_RELATED (not "exact letter").
+  'ङ': [
+    { word: 'अङ्गम्', gloss: 'limb / body' },
+    { word: 'गङ्गा', gloss: 'Ganga' },
+    { word: 'रङ्गः', gloss: 'color / stage' },
+    { word: 'शङ्खः', gloss: 'conch' },
+    { word: 'अङ्कुरः', gloss: 'sprout' },
+    { word: 'पङ्कजम्', gloss: 'lotus (mud-born)' },
+    { word: 'सङ्गीतम्', gloss: 'music' },
+  ],
+  // Self-tile teaching placeholders (exact empty of real lexemes) — card uses RELATED.
   'ङा': [{ word: 'ङा', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
   'ङि': [{ word: 'ङि', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
   'ङी': [{ word: 'ङी', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
-  // ङु: real Dhātupāṭha root (ṅavate "to sound") — lexicon only (no family trio)
+  // ङु: Dhātupāṭha root (ṅavate "to sound") — self exact; related list still shown.
   'ङु': [{ word: 'ङु', gloss: 'to sound (verbal root)' }],
   'ङू': [{ word: 'ङू', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
   'ङृ': [{ word: 'ङृ', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
@@ -303,7 +315,7 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'ङो': [{ word: 'ङो', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
   'ङौ': [{ word: 'ङौ', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
   'ङं': [{ word: 'ङं', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
-  // ङः: lexicon headword (Medinī / MW) — lexicon only (no family trio)
+  // ङः: lexicon headword (Medinī / MW) — self exact; related list still shown.
   'ङः': [{ word: 'ङः', gloss: 'object of sense / Bhairava (lexicon)' }],
   // च-row (bare च stays in CONSONANT_EXAMPLES)
   'चा': [{ word: 'चातकः', gloss: 'cātaka bird' }, { word: 'वाचा', gloss: 'by speech / with words' }, { word: 'आचारः', gloss: 'conduct / good manners' }],
@@ -321,6 +333,83 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'चौ': [{ word: 'चौर्यम्', gloss: 'theft' }, { word: 'चौरः', gloss: 'thief' }, { word: 'चौलम्', gloss: 'tonsure ceremony' }],
   'चं': [{ word: 'चंपकः', gloss: 'champaka flower' }, { word: 'चंद्रः', gloss: 'moon' }, { word: 'उच्चं', gloss: 'high / upward' }],
   'चः': [{ word: 'वाचः', gloss: 'of speech / voices' }, { word: 'वचः', gloss: 'speech / word' }, { word: 'ऋचः', gloss: 'of a Vedic verse (ṛc)' }],
+};
+
+
+/** Related (not exact-letter) examples — e.g. ङ matras: real words write ङ as ङ्. */
+export const BARAKHADI_RELATED: Record<string, VowelExample[]> = {
+  'ङा': [
+    { word: 'अङ्गम्', gloss: 'related · ङ as ङ् · limb / body' },
+    { word: 'गङ्गा', gloss: 'related · ङ as ङ् · Ganga' },
+    { word: 'रङ्गः', gloss: 'related · ङ as ङ् · color / stage' },
+    { word: 'शङ्खः', gloss: 'related · ङ as ङ् · conch' },
+  ],
+  'ङि': [
+    { word: 'अङ्गम्', gloss: 'related · ङ as ङ् · limb / body' },
+    { word: 'गङ्गा', gloss: 'related · ङ as ङ् · Ganga' },
+    { word: 'अङ्कुरः', gloss: 'related · ङ as ङ् · sprout' },
+    { word: 'सङ्गीतम्', gloss: 'related · ङ as ङ् · music' },
+  ],
+  'ङी': [
+    { word: 'गङ्गा', gloss: 'related · ङ as ङ् · Ganga' },
+    { word: 'सङ्गीतम्', gloss: 'related · ङ as ङ् · music' },
+    { word: 'पङ्कजम्', gloss: 'related · ङ as ङ् · lotus' },
+    { word: 'शङ्खः', gloss: 'related · ङ as ङ् · conch' },
+  ],
+  'ङु': [
+    { word: 'अङ्कुरः', gloss: 'related · ङ as ङ् · sprout' },
+    { word: 'रङ्गः', gloss: 'related · ङ as ङ् · color / stage' },
+    { word: 'अङ्गम्', gloss: 'related · ङ as ङ् · limb / body' },
+    { word: 'पङ्कजम्', gloss: 'related · ङ as ङ् · lotus' },
+  ],
+  'ङू': [
+    { word: 'शङ्खः', gloss: 'related · ङ as ङ् · conch' },
+    { word: 'गङ्गा', gloss: 'related · ङ as ङ् · Ganga' },
+    { word: 'सङ्गीतम्', gloss: 'related · ङ as ङ् · music' },
+    { word: 'रङ्गः', gloss: 'related · ङ as ङ् · color / stage' },
+  ],
+  'ङृ': [
+    { word: 'अङ्गम्', gloss: 'related · ङ as ङ् · limb / body' },
+    { word: 'अङ्कुरः', gloss: 'related · ङ as ङ् · sprout' },
+    { word: 'पङ्कजम्', gloss: 'related · ङ as ङ् · lotus' },
+    { word: 'शङ्खः', gloss: 'related · ङ as ङ् · conch' },
+  ],
+  'ङे': [
+    { word: 'गङ्गा', gloss: 'related · ङ as ङ् · Ganga' },
+    { word: 'रङ्गः', gloss: 'related · ङ as ङ् · color / stage' },
+    { word: 'सङ्गीतम्', gloss: 'related · ङ as ङ् · music' },
+    { word: 'अङ्गम्', gloss: 'related · ङ as ङ् · limb / body' },
+  ],
+  'ङै': [
+    { word: 'पङ्कजम्', gloss: 'related · ङ as ङ् · lotus' },
+    { word: 'शङ्खः', gloss: 'related · ङ as ङ् · conch' },
+    { word: 'अङ्कुरः', gloss: 'related · ङ as ङ् · sprout' },
+    { word: 'गङ्गा', gloss: 'related · ङ as ङ् · Ganga' },
+  ],
+  'ङो': [
+    { word: 'रङ्गः', gloss: 'related · ङ as ङ् · color / stage' },
+    { word: 'अङ्गम्', gloss: 'related · ङ as ङ् · limb / body' },
+    { word: 'सङ्गीतम्', gloss: 'related · ङ as ङ् · music' },
+    { word: 'शङ्खः', gloss: 'related · ङ as ङ् · conch' },
+  ],
+  'ङौ': [
+    { word: 'अङ्कुरः', gloss: 'related · ङ as ङ् · sprout' },
+    { word: 'पङ्कजम्', gloss: 'related · ङ as ङ् · lotus' },
+    { word: 'गङ्गा', gloss: 'related · ङ as ङ् · Ganga' },
+    { word: 'रङ्गः', gloss: 'related · ङ as ङ् · color / stage' },
+  ],
+  'ङं': [
+    { word: 'अङ्गम्', gloss: 'related · ङ as ङ् · limb / body' },
+    { word: 'शङ्खः', gloss: 'related · ङ as ङ् · conch' },
+    { word: 'सङ्गीतम्', gloss: 'related · ङ as ङ् · music' },
+    { word: 'पङ्कजम्', gloss: 'related · ङ as ङ् · lotus' },
+  ],
+  'ङः': [
+    { word: 'रङ्गः', gloss: 'related · ङ as ङ् · color / stage' },
+    { word: 'शङ्खः', gloss: 'related · ङ as ङ् · conch' },
+    { word: 'अङ्गम्', gloss: 'related · ङ as ङ् · limb / body' },
+    { word: 'गङ्गा', gloss: 'related · ङ as ङ् · Ganga' },
+  ],
 };
 
 export const examplesForVowel = (vowel: string): VowelExample[] => {
@@ -360,6 +449,7 @@ const allKnownExamples = (): VowelExample[] => {
   dump(VOWEL_EXAMPLES);
   dump(CONSONANT_EXAMPLES);
   dump(BARAKHADI_EXAMPLES);
+  dump(BARAKHADI_RELATED);
   return out;
 };
 
@@ -378,13 +468,20 @@ const examplesMatchingTile = (tile: string): VowelExample[] => {
 export const baseAksharaForExamples = (akshara: string): string => {
   const clean = devanagariOnly(akshara);
   if (!clean) return clean;
-  if (VOWEL_EXAMPLES[clean] || CONSONANT_EXAMPLES[clean] || BARAKHADI_EXAMPLES[clean]) return clean;
+  if (
+    VOWEL_EXAMPLES[clean] ||
+    CONSONANT_EXAMPLES[clean] ||
+    BARAKHADI_EXAMPLES[clean] ||
+    BARAKHADI_RELATED[clean]
+  ) {
+    return clean;
+  }
   if (INDEPENDENT_VOWELS.has(clean)) return clean;
   if (isBarakhadiAkshara(clean)) return clean;
   return clean;
 };
 
-/** Vowel / Varṇamālā letter / बारहखड़ी akṣara examples. */
+/** Exact-letter examples only (never BARAKHADI_RELATED). */
 export const examplesForAkshara = (akshara: string): VowelExample[] => {
   const clean = devanagariOnly(akshara);
   if (VOWEL_EXAMPLES[clean]?.length) return VOWEL_EXAMPLES[clean];
@@ -394,5 +491,41 @@ export const examplesForAkshara = (akshara: string): VowelExample[] => {
   return [];
 };
 
-export const hasSoundExamples = (akshara: string): boolean =>
-  examplesForAkshara(akshara).length > 0;
+/** Related-family examples (ङ matras: ङ written as ङ् before a consonant). */
+export const relatedExamplesForAkshara = (akshara: string): VowelExample[] => {
+  const clean = devanagariOnly(akshara);
+  return BARAKHADI_RELATED[clean] || [];
+};
+
+/** True when every exact example is the tile itself (rare-alone placeholder / lexicon). */
+export const isSelfRareExact = (akshara: string, exact: VowelExample[]): boolean => {
+  const clean = devanagariOnly(akshara);
+  if (!clean || exact.length === 0) return false;
+  return exact.every((item) => devanagariOnly(item.word) === clean);
+};
+
+/**
+ * Prefer exact real words; when exact is empty or self-rare and related exists,
+ * use related (honest non-exact caption in the card).
+ */
+export const displayExamplesForAkshara = (
+  akshara: string
+): { examples: VowelExample[]; mode: 'exact' | 'related'; rareNote: string | null } => {
+  const clean = devanagariOnly(akshara);
+  const exact = examplesForAkshara(clean);
+  const related = relatedExamplesForAkshara(clean);
+  const selfRare = isSelfRareExact(clean, exact);
+  if (related.length > 0 && (exact.length === 0 || selfRare)) {
+    const rareNote =
+      selfRare && exact[0]?.gloss
+        ? exact[0].gloss
+        : 'rare alone — in real words ङ is written ङ् before a consonant';
+    return { examples: related, mode: 'related', rareNote };
+  }
+  return { examples: exact, mode: 'exact', rareNote: null };
+};
+
+export const hasSoundExamples = (akshara: string): boolean => {
+  const bundle = displayExamplesForAkshara(akshara);
+  return bundle.examples.length > 0;
+};
