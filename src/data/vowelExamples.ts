@@ -364,6 +364,22 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
     { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
     { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
   ],
+  // च-row (bare च stays in CONSONANT_EXAMPLES)
+  'चा': [{ word: 'चातकः', gloss: 'cātaka bird' }, { word: 'वाचा', gloss: 'by speech / with words' }, { word: 'आचारः', gloss: 'conduct / good manners' }],
+  'चि': [{ word: 'चित्रम्', gloss: 'picture' }, { word: 'चिन्ता', gloss: 'thought / worry' }, { word: 'अचिरम्', gloss: 'soon / not long' }],
+  'ची': [{ word: 'चीरम्', gloss: 'bark cloth / rag' }, { word: 'चीवरम्', gloss: "monk's robe" }, { word: 'वाची', gloss: 'speaker / eloquent' }],
+  'चु': [{ word: 'चुम्बति', gloss: 'kisses' }, { word: 'चुलुकः', gloss: 'palmful of water' }, { word: 'चुक्रम्', gloss: 'tamarind / sour' }],
+  'चू': [{ word: 'चूडः', gloss: 'topknot / crest' }, { word: 'चूतम्', gloss: 'mango' }, { word: 'चूडामणिः', gloss: 'crest-jewel' }],
+  // चृ: almost no everyday Sanskrit lexeme — teaching placeholder so Analyse is not blank
+  'चृ': [
+    { word: 'चृ', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'चे': [{ word: 'चेतना', gloss: 'awareness / consciousness' }, { word: 'चेष्टा', gloss: 'effort / gesture' }, { word: 'चेतः', gloss: 'mind / heart' }],
+  'चै': [{ word: 'चैत्रः', gloss: 'month of Chaitra' }, { word: 'चैतन्यम्', gloss: 'consciousness / vitality' }, { word: 'चैत्यम्', gloss: 'shrine / sacred mound' }],
+  'चो': [{ word: 'चोरः', gloss: 'thief' }, { word: 'चोदनम्', gloss: 'urging / impulse' }, { word: 'प्रचोदयात्', gloss: 'may (He) inspire (Gāyatrī)' }],
+  'चौ': [{ word: 'चौर्यम्', gloss: 'theft' }, { word: 'चौरः', gloss: 'thief' }, { word: 'चौलम्', gloss: 'tonsure ceremony' }],
+  'चं': [{ word: 'चंपकः', gloss: 'champaka flower' }, { word: 'चंद्रः', gloss: 'moon' }, { word: 'उच्चं', gloss: 'high / upward' }],
+  'चः': [{ word: 'वाचः', gloss: 'of speech / voices' }, { word: 'वचः', gloss: 'speech / word' }, { word: 'ऋचः', gloss: 'of a Vedic verse (ṛc)' }],
 };
 
 export const examplesForVowel = (vowel: string): VowelExample[] => {
