@@ -174,12 +174,26 @@ const Dashboard: React.FC = () => {
             Varṇamālā
           </button>
           <button className={activeView === 'board' ? 'active' : ''} onClick={() => setActiveView('board')}>Board</button>
-          <button
-            className={activeView === 'reader' && lesson.id !== 'varnamala' ? 'active' : ''}
-            onClick={openDeepakam}
+          <div
+            className={`dashboard-nav-group${activeView === 'reader' && lesson.id !== 'varnamala' ? ' dashboard-nav-group--active' : ''}`}
           >
-            Deepakam
-          </button>
+            <span className="dashboard-nav-group-label">NCERT Deepakam</span>
+            <div className="dashboard-nav-sub" role="group" aria-label="NCERT Deepakam grades">
+              <button
+                type="button"
+                className={activeView === 'reader' && lesson.id !== 'varnamala' ? 'active' : ''}
+                onClick={openDeepakam}
+              >
+                7th · Deepakam
+              </button>
+              <button type="button" className="dashboard-nav-soon" disabled aria-disabled="true" title="Coming later">
+                8th
+              </button>
+              <button type="button" className="dashboard-nav-soon" disabled aria-disabled="true" title="Coming later">
+                9th
+              </button>
+            </div>
+          </div>
           <button
             className={activeView === 'grammar' ? 'active' : ''}
             onClick={() => setActiveView('grammar')}
