@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import type { SanskritWordBreakdown } from '../types/linguistics';
 import { searchSanskritWords } from '../data/sanskrit-words';
 import { extractLinguisticInfo } from '../utils/linguistics';
-import { playPronunciation } from '../utils/pronunciation';
+import { playPronunciation, setSharedSpeechRate } from '../utils/pronunciation';
 import { formatCaseLabel } from '../data/vibhakti';
 import {
   loadAnalyseGlosses,
@@ -173,7 +173,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
                   key={preset}
                   type="button"
                   className={`wac-speed-btn${speechRate === preset ? ' wac-speed-btn--active' : ''}`}
-                  onClick={() => setSpeechRate(preset)}
+                  onClick={() => { setSpeechRate(preset); setSharedSpeechRate(preset); }}
                   aria-pressed={speechRate === preset}
                 >
                   {preset}x

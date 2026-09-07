@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { Lesson, LessonSentence } from '../types/chapters';
 import { aksharaLabel, varnamalaLabel } from '../utils/barakhadiPhonetics';
+import { getSharedSpeechRate, setSharedSpeechRate } from '../utils/pronunciation';
 import '../styles/textbook-reader.css';
 
 interface TextbookReaderProps {
@@ -23,6 +24,8 @@ const CONJUNCT_GAMES = [
   { id: 'game2', title: 'Game 2 · Piggyback Ride', src: './conjunct-game2.jpg', alt: 'Piggyback stacking game' },
   { id: 'game3', title: 'Game 3 · Superhero Shape-Shifters', src: './conjunct-game3.jpg', alt: 'Superhero shape-shifters' },
 ];
+
+const SPEED_PRESETS = [0.35, 0.7, 1] as const;
 
 type SectionJump = { index: number; label: string };
 
@@ -64,6 +67,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     activeLessonId === 'varnamala' ? varnamalaLabel(letter) : aksharaLabel(letter);
   const [isChartOpen, setIsChartOpen] = useState(false);
   const [openGames, setOpenGames] = useState<Record<string, boolean>>({ game1: true });
+  const [readerSpeechRate, setReaderSpeechRate] = useState(getSharedSpeechRate);
   const toggleGame = (id: string) =>
     setOpenGames((prev) => ({ ...prev, [id]: !prev[id] }));
   const sectionJumps = buildSectionJumps(activeLesson);
@@ -159,6 +163,25 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           </p>
         )}
 
+        {showRomanTiles && (
+          <div className="textbook-speed-row" role="group" aria-label="Playback speed">
+            <span className="textbook-glossary-hint">Speed</span>
+            {SPEED_PRESETS.map((preset) => (
+              <button
+                key={preset}
+                type="button"
+                className={`textbook-speed-btn${readerSpeechRate === preset ? ' textbook-speed-btn--active' : ''}`}
+                onClick={() => {
+                  setReaderSpeechRate(preset);
+                  setSharedSpeechRate(preset);
+                }}
+                aria-pressed={readerSpeechRate === preset}
+              >
+                {preset}x
+              </button>
+            ))}
+          </div>
+        )}
         {!isGroupedLesson && (
           <span className="textbook-reader-progress">
             {sentence.kind?.startsWith('glossary') || sentence.kind?.startsWith('exercise')

@@ -72,7 +72,7 @@ export const barakhadiSpeechText = (akshara: string): string => {
   // Hyphenate long digraphs so engines keep aspiration / retroflex.
   const special: Record<string, string> = {
     // Pure vowels: avoid English letter names (a/i) and E-E for ee.
-    a: 'uh', aa: 'aah', i: 'ih', ee: 'eee',
+    a: 'uh', aa: 'aaaah', i: 'ih', ee: 'eee',
     u: 'uu', oo: 'ooo',
     nga: 'ng-a', ngaa: 'ng-aa', ngi: 'ng-i', ngee: 'ng-ee', ngu: 'ng-u', ngoo: 'ng-oo',
     nge: 'ng-e', ngai: 'ng-ai', ngo: 'ng-o', ngau: 'ng-au', ngam: 'ng-am', ngah: 'ng-ah', ngru: 'ng-ru',
@@ -164,7 +164,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
     .replace(/ī/g, 'ee')
     .replace(/rii/g, 'ree');
   const special: Record<string, string> = {
-    a: 'uh', aa: 'aah', i: 'ih', ee: 'eee',
+    a: 'uh', aa: 'aaaah', i: 'ih', ee: 'eee',
     u: 'uu', oo: 'ooo',
     nga: 'ng-a', nya: 'ny-a', chha: 'ch-ha',
     tta: 't-ta', ttha: 't-tha', dda: 'd-da', ddha: 'd-dha', nna: 'n-na',

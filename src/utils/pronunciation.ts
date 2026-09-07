@@ -79,14 +79,32 @@ const pickPreferredVoice = (): SpeechSynthesisVoice | undefined => {
   );
 };
 
-export const playPronunciation = (value: string, rate = 0.85): void => {
+/** Shared Analyse / Deepakam playback speed (0.35 · 0.7 · 1). */
+let sharedSpeechRate = 1;
+export const setSharedSpeechRate = (rate: number): void => {
+  sharedSpeechRate = rate;
+};
+export const getSharedSpeechRate = (): number => sharedSpeechRate;
+
+/** Stretch Slow vs Fast for tiny roman cues (uh / aaah) so kids can hear the gap. */
+const effectiveRateForCue = (requested: number, isShortRomanCue: boolean): number => {
+  if (!isShortRomanCue) return requested;
+  if (requested <= 0.4) return 0.2;
+  if (requested <= 0.75) return 0.55;
+  return 0.95;
+};
+
+export const playPronunciation = (value: string, rate?: number): void => {
   const word = cleanWord(value) || value.trim();
   if (!word || !isSanskritText(word) || typeof window === 'undefined' || !window.speechSynthesis) {
     return;
   }
 
+  const requestedRate = rate ?? sharedSpeechRate;
   window.speechSynthesis.cancel();
   const speech = toSpeechText(word);
+  const isShortRomanCue = isBarakhadiAkshara(word) && /^[a-z\-]+$/i.test(speech);
+  const playRate = effectiveRateForCue(requestedRate, isShortRomanCue);
   const utterance = new SpeechSynthesisUtterance(speech);
   const voice = pickPreferredVoice();
   utterance.voice = voice || null;
@@ -103,10 +121,10 @@ export const playPronunciation = (value: string, rate = 0.85): void => {
       utterance.lang = 'en-IN';
     }
     // Honor the Analyse speed preset (was capped at 0.75 so 0.75x and 1x sounded identical).
-    utterance.rate = rate;
+    utterance.rate = playRate;
   } else {
     utterance.lang = voice?.lang || 'hi-IN';
-    utterance.rate = rate;
+    utterance.rate = playRate;
   }
   window.speechSynthesis.speak(utterance);
 };
