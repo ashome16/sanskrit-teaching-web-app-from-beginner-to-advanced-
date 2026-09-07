@@ -123,7 +123,7 @@ const VARNAMALA_VOWELS: Record<string, string> = {
 
 const VARNAMALA_STEM: Record<string, string> = {
   क: 'k', ख: 'kh', ग: 'g', घ: 'gh', ङ: 'ṅ',
-  च: 'ch', छ: 'chh', ज: 'j', झ: 'jh', ञ: 'ny',
+  च: 'ch', छ: 'chh', ज: 'j', झ: 'jh', ञ: 'ñ',
   ट: 'ṭ', ठ: 'ṭh', ड: 'ḍ', ढ: 'ḍh', ण: 'ṇ',
   त: 't', थ: 'th', द: 'd', ध: 'dh', न: 'n',
   प: 'p', फ: 'ph', ब: 'b', भ: 'bh', म: 'm',
@@ -172,6 +172,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'औ') return 'au';
   if (clean === 'घ') return 'gha';
   if (clean === 'छ') return 'छ';
+  if (clean === 'ञ') return 'ञ';
   if (clean === 'ङ') return 'unga';
   const label = varnamalaLabel(clean);
   if (!label || label === clean) return barakhadiSpeechText(clean);
@@ -181,6 +182,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
     .replace(/ṇ/g, 'nn')
     .replace(/ṣ/g, 'shh')
     .replace(/ṅ/g, 'ng')
+    .replace(/ñ/g, 'ny')
     .replace(/ī/g, 'ee')
     .replace(/rii/g, 'ree');
   const special: Record<string, string> = {
