@@ -177,14 +177,14 @@ const Dashboard: React.FC = () => {
           <div
             className={`dashboard-nav-group${activeView === 'reader' && lesson.id !== 'varnamala' ? ' dashboard-nav-group--active' : ''}`}
           >
-            <span className="dashboard-nav-group-label">NCERT Deepakam</span>
-            <div className="dashboard-nav-sub" role="group" aria-label="NCERT Deepakam grades">
+            <span className="dashboard-nav-group-label">NCERT Textbook</span>
+            <div className="dashboard-nav-sub" role="group" aria-label="NCERT Textbook grades">
               <button
                 type="button"
                 className={activeView === 'reader' && lesson.id !== 'varnamala' ? 'active' : ''}
                 onClick={openDeepakam}
               >
-                7th · Deepakam
+                7th Grade Lessons
               </button>
               <button type="button" className="dashboard-nav-soon" disabled aria-disabled="true" title="Coming later">
                 8th
