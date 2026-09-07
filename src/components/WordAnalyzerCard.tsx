@@ -3,7 +3,7 @@ import type { SanskritWordBreakdown } from '../types/linguistics';
 import { searchSanskritWords } from '../data/sanskrit-words';
 import { extractLinguisticInfo } from '../utils/linguistics';
 import { playPronunciation } from '../utils/pronunciation';
-import { examplesForVowel, isIndependentVowel } from '../data/vowelExamples';
+import { examplesForAkshara } from '../data/vowelExamples';
 import { formatCaseLabel } from '../data/vibhakti';
 import {
   loadAnalyseGlosses,
@@ -107,9 +107,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
   const regionalGlosses = glossEntry?.languages
     ? Object.entries(glossEntry.languages).filter(([code, item]) => code !== 'en' && item?.meaning)
     : [];
-  const vowelExamples = word && isIndependentVowel(word.devanagari)
-    ? examplesForVowel(word.devanagari)
-    : [];
+  const vowelExamples = word ? examplesForAkshara(word.devanagari) : [];
   const openExampleWord = (example: string) => {
     const result = findWord(example);
     setAnalysis(result);
