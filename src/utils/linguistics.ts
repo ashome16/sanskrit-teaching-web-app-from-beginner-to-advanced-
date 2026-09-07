@@ -122,15 +122,33 @@ const DEVANAGARI_TO_IAST: Record<string, string> = {
 };
 
 /**
- * Transliterate a single syllable/cluster, stripping the inherent 'a' when
- * the syllable ends in a bare halant (i.e. it carries no vowel of its own).
+ * Transliterate a single syllable/cluster.
+ * Inherent 'a' on a consonant is replaced by a following matra (ङी → ṅī, not
+ * ṅaī / ṅai) and dropped by virama (ङ् → ṅ). Anusvara/visarga keep the vowel
+ * (कं → kaṃ). Cache-bust note: 2026-09-07 ṅī matra fix.
  */
 const transliterateSyllable = (syllable: string): string => {
   if (DEVANAGARI_TO_IAST[syllable]) return DEVANAGARI_TO_IAST[syllable];
 
   let result = '';
   for (const ch of syllable) {
-    result += DEVANAGARI_TO_IAST[ch] ?? ch;
+    if (ch === '्') {
+      // Virama: kill inherent a of the previous consonant (ध्य → dhya)
+      if (result.endsWith('a')) {
+        result = result.slice(0, -1);
+      }
+      continue;
+    }
+    const mapped = DEVANAGARI_TO_IAST[ch] ?? ch;
+    if (DEVANAGARI_VOWEL_SIGNS.includes(ch)) {
+      // Matra replaces inherent a (ङि → ṅi, ङी → ṅī; never ṅai / ṅaī)
+      if (result.endsWith('a')) {
+        result = result.slice(0, -1);
+      }
+      result += mapped;
+    } else {
+      result += mapped;
+    }
   }
   if (syllable.endsWith('्') && result.endsWith('a')) {
     result = result.slice(0, -1);
@@ -272,33 +290,13 @@ export const identifyConjuncts = (devanagari: string): SamyuktAksara[] => {
 };
 
 /**
- * Convert Devanagari to IAST transliteration
+ * Convert Devanagari to IAST transliteration.
+ * Uses syllable segmentation so matras replace inherent a (ङी → ṅī).
  */
 export const devanagariToIAST = (devanagari: string): string => {
-  let result = '';
-  let i = 0;
-
-  while (i < devanagari.length) {
-    let foundMatch = false;
-
-    // Try to match longest sequences first (for conjuncts and vowel+sign)
-    for (let len = 3; len > 0; len--) {
-      const substring = devanagari.slice(i, i + len);
-      if (DEVANAGARI_TO_IAST[substring]) {
-        result += DEVANAGARI_TO_IAST[substring];
-        i += len;
-        foundMatch = true;
-        break;
-      }
-    }
-
-    if (!foundMatch) {
-      result += devanagari[i];
-      i++;
-    }
-  }
-
-  return result;
+  return segmentSyllables(devanagari)
+    .map((syllable) => syllable.transliteration)
+    .join('');
 };
 
 /**

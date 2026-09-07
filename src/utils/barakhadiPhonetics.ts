@@ -196,6 +196,8 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'छ') return 'छ';
   if (clean === 'ञ') return 'enya';
   if (clean === 'ङ') return 'unga';
+  // ङ + matra: reuse barakhadi unga/ng-ee cues (varnamalaLabel alone yields bare ngee).
+  if (clean.startsWith('ङ') && clean.length > 1) return barakhadiSpeechText(clean);
   if (clean === 'ट') return 'tah';
   if (clean === 'टं') return 'tam';
   // ट + matra: English tt*/t-t* sounds like double-t; use Hindi letter voice.
