@@ -95,8 +95,20 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   const isAu = word === 'औ' || speech === 'au';
   const isGha = word === 'घ' || speech === 'gha';
   const isChha = word === 'छ' || speech === 'छ';
-  utterance.rate = isAu ? 0.45 : isGha ? 0.75 : isChha ? 0.9 : DEFAULT_RATE;
-  utterance.pitch = 1;
+  // गङ्गा / रङ्गः / अङ्गम्: original roman cues, extended slowly + full volume.
+  const isNgaWord =
+    speech === 'gun ga' || speech === 'run ga' || speech === 'an gam';
+  utterance.rate = isNgaWord
+    ? 0.42
+    : isAu
+      ? 0.45
+      : isGha
+        ? 0.75
+        : isChha
+          ? 0.9
+          : DEFAULT_RATE;
+  utterance.pitch = isNgaWord ? 1.15 : 1;
+  utterance.volume = 1;
 };
 
 const pickEnglishVoice = (): SpeechSynthesisVoice | undefined => {
@@ -107,50 +119,6 @@ const pickEnglishVoice = (): SpeechSynthesisVoice | undefined => {
   );
 };
 
-
-/** ङ words गङ्गा / रङ्गः: slow clear first beat, then ga. */
-const isGangaWord = (word: string): boolean =>
-  word === 'गङ्गा' || word === 'गंगा';
-const isRangaWord = (word: string): boolean =>
-  word === 'रङ्गः' || word === 'रंगः' || word === 'रङ्ग' || word === 'रंग';
-
-const playGunRunGa = (first: 'gun' | 'run', onDone?: () => void): void => {
-  const voices = window.speechSynthesis.getVoices();
-  // Prefer a fuller English voice — soft en-IN often buries short beats.
-  const enVoice =
-    voices.find((item) => item.lang === 'en-US') ||
-    voices.find((item) => item.lang === 'en-GB') ||
-    pickEnglishVoice();
-  const cue = first === 'gun' ? 'GUNN' : 'RUNN';
-  const mk = (text: string, rate: number, pitch: number) => {
-    const u = new SpeechSynthesisUtterance(text);
-    u.voice = enVoice || null;
-    u.lang = enVoice?.lang || 'en-US';
-    u.rate = rate;
-    u.pitch = pitch;
-    u.volume = 1;
-    return u;
-  };
-  // Punch the first beat twice so gun/run cuts through, then GA.
-  const punch1 = mk(cue, 0.78, 1.35);
-  const punch2 = mk(cue, 0.72, 1.4);
-  const gaPart = mk('GA', 0.88, 1.1);
-  punch1.onend = () => {
-    window.speechSynthesis.speak(punch2);
-  };
-  punch1.onerror = () => {
-    window.speechSynthesis.speak(punch2);
-  };
-  punch2.onend = () => {
-    window.speechSynthesis.speak(gaPart);
-  };
-  punch2.onerror = () => {
-    window.speechSynthesis.speak(gaPart);
-  };
-  gaPart.onend = () => onDone?.();
-  gaPart.onerror = () => onDone?.();
-  window.speechSynthesis.speak(punch1);
-};
 
 /** ञ = enya with fast en then slow ya. */
 const playNyaEnya = (onDone?: () => void): void => {
@@ -191,14 +159,6 @@ export const playPronunciation = (value: string): void => {
   stopPronunciation();
   if (word === 'ञ') {
     playNyaEnya();
-    return;
-  }
-  if (isGangaWord(word)) {
-    playGunRunGa('gun');
-    return;
-  }
-  if (isRangaWord(word)) {
-    playGunRunGa('run');
     return;
   }
   const speech = toSpeechText(word);
@@ -253,14 +213,6 @@ export const playSequence = (
     };
     if (word === 'ञ') {
       playNyaEnya(after);
-      return;
-    }
-    if (isGangaWord(word)) {
-      playGunRunGa('gun', after);
-      return;
-    }
-    if (isRangaWord(word)) {
-      playGunRunGa('run', after);
       return;
     }
     const speech = toSpeechText(word);

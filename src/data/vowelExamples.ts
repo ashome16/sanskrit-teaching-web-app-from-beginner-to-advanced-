@@ -73,9 +73,9 @@ export const CONSONANT_EXAMPLES: Record<string, VowelExample[]> = {
     { word: 'राजः', gloss: 'king' },
   ],
   'झ': [
-    { word: 'झषः', gloss: 'fish' },
-    { word: 'झङ्कारः', gloss: 'jingle / buzz' },
-    { word: 'झिल्ली', gloss: 'cricket (insect)' },
+    { word: 'झण्डा', gloss: 'flag' },
+    { word: 'झूला', gloss: 'swing' },
+    { word: 'झरी', gloss: 'waterfall' },
   ],
   'ञ': [
     { word: 'पञ्च', gloss: 'five' },
