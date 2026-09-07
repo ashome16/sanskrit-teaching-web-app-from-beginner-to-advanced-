@@ -110,6 +110,24 @@ const Dashboard: React.FC = () => {
     setActiveView('reader');
   };
 
+  /** Deepakam = textbook chapters (not the Varṇamālā alphabet chart). */
+  const openDeepakam = () => {
+    const current = lessons[lessonIndex];
+    const guideIds = new Set(['varnamala', 'barakhadi', 'samyukta', 'numbers']);
+    if (!current || guideIds.has(current.id)) {
+      const idx =
+        lessons.findIndex((item) => item.id === 'gsde101') >= 0
+          ? lessons.findIndex((item) => item.id === 'gsde101')
+          : lessons.findIndex((item) => item.id.startsWith('gsde'));
+      if (idx >= 0) {
+        setLessonIndex(idx);
+        setSentenceIndex(0);
+        setWordSelection(null);
+      }
+    }
+    setActiveView('reader');
+  };
+
   if (!lesson || !sentence) {
     return <div className="dashboard-empty">No chapter content available.</div>;
   }
@@ -128,7 +146,7 @@ const Dashboard: React.FC = () => {
           <button className={activeView === 'board' ? 'active' : ''} onClick={() => setActiveView('board')}>Board</button>
           <button
             className={activeView === 'reader' && lesson.id !== 'varnamala' ? 'active' : ''}
-            onClick={() => setActiveView('reader')}
+            onClick={openDeepakam}
           >
             Deepakam
           </button>
