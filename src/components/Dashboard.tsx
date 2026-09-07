@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import TextbookReader from './TextbookReader';
 import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
-import VibhaktiGuideModal from './VibhaktiGuideModal';
 import Board from './Board';
+import Grammar from './Grammar';
 import { LESSONS as STATIC_LESSONS, fetchLatestChapters } from '../data/chapters';
 import { playPronunciation } from '../utils/pronunciation';
 import '../styles/dashboard.css';
@@ -20,8 +20,7 @@ const Dashboard: React.FC = () => {
   });
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [wordSelection, setWordSelection] = useState<WordSelection | null>(null);
-  const [isVibhaktiGuideOpen, setIsVibhaktiGuideOpen] = useState(false);
-  const [activeView, setActiveView] = useState<'board' | 'reader'>('reader');
+    const [activeView, setActiveView] = useState<'board' | 'reader' | 'grammar'>('reader');
 
   useEffect(() => {
     localStorage.setItem('school-active-view', activeView);
@@ -150,18 +149,17 @@ const Dashboard: React.FC = () => {
           >
             Deepakam
           </button>
+          <button
+            className={activeView === 'grammar' ? 'active' : ''}
+            onClick={() => setActiveView('grammar')}
+          >
+            Grammar
+          </button>
         </nav>
-        <button
-          type="button"
-          className="vibhakti-guide-trigger"
-          onClick={() => setIsVibhaktiGuideOpen(true)}
-          aria-haspopup="dialog"
-        >
-          <span aria-hidden="true">ℹ️</span> Vibhakti Guide
-        </button>
       </header>
 
       {activeView === 'board' && <Board />}
+      {activeView === 'grammar' && <Grammar />}
       {activeView === 'reader' && <TextbookReader
         lessons={lessons}
         activeLessonId={lesson.id}
@@ -178,10 +176,6 @@ const Dashboard: React.FC = () => {
       />}
       {activeView === 'reader' && <WordAnalyzerCard selection={wordSelection} />}
 
-      <VibhaktiGuideModal
-        isOpen={isVibhaktiGuideOpen}
-        onClose={() => setIsVibhaktiGuideOpen(false)}
-      />
     </div>
   );
 };
