@@ -287,44 +287,84 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'घं': [{ word: 'घंटा', gloss: 'bell' }, { word: 'संघं', gloss: 'group / union (object form)' }],
   'घः': [{ word: 'मेघः', gloss: 'cloud' }, { word: 'संघः', gloss: 'group / union' }, { word: 'उल्लाघः', gloss: 'recovered / healthy' }],
   // ङ-row — ङ almost always ङ् before a consonant; exact matra tiles are rare
+  // Standing rule: exact akṣara (का ≠ क). गङ्गा has ङ्ग, not ङा — so rare matra
+  // tiles teach the ङ-family link with honest glosses instead of pretending.
   'ङ': [{ word: 'अङ्गम्', gloss: 'limb / body' }, { word: 'गङ्गा', gloss: 'Ganga' }, { word: 'रङ्गः', gloss: 'color / stage' }],
-  // ङा…ङौ / ङं: almost no everyday lexeme with THIS exact akṣara (ङ्ग ≠ ङा)
   'ङा': [
-    { word: 'ङा', gloss: 'rare akṣara — almost never alone · Aryabhata number 5' },
+    { word: 'ङा', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
+    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
+    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
+    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
   ],
   'ङि': [
-    { word: 'ङि', gloss: 'rare akṣara — few everyday words · Aryabhata number 500' },
+    { word: 'ङि', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
+    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
+    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
+    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
   ],
   'ङी': [
-    { word: 'ङी', gloss: 'rare akṣara — few everyday words · Aryabhata number 500' },
+    { word: 'ङी', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
+    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
+    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
+    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
   ],
-  // ङु: real Dhātupāṭha root (ṅavate “to sound”) — citation form is ङु
-  'ङु': [{ word: 'ङु', gloss: 'to sound (verbal root)' }],
+  // ङु: real Dhātupāṭha root (ṅavate “to sound”) — plus ङ-family kid words
+  'ङु': [
+    { word: 'ङु', gloss: 'to sound (verbal root)' },
+    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
+    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
+    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
+  ],
   'ङू': [
-    { word: 'ङू', gloss: 'rare akṣara — few everyday words · Aryabhata number 50,000' },
+    { word: 'ङू', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
+    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
+    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
+    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
   ],
   'ङृ': [
-    { word: 'ङृ', gloss: 'rare akṣara — few everyday words · Aryabhata number 50,00,000' },
+    { word: 'ङृ', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
+    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
+    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
+    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
   ],
   'ङे': [
-    { word: 'ङे', gloss: 'rare akṣara — few everyday words · Aryabhata · listen for the shape' },
+    { word: 'ङे', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
+    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
+    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
+    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
   ],
   'ङै': [
-    { word: 'ङै', gloss: 'rare akṣara — few everyday words · Aryabhata · listen for the shape' },
+    { word: 'ङै', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
+    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
+    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
+    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
   ],
   'ङो': [
-    { word: 'ङो', gloss: 'rare akṣara — few everyday words · Aryabhata · listen for the shape' },
+    { word: 'ङो', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
+    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
+    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
+    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
   ],
   'ङौ': [
-    { word: 'ङौ', gloss: 'rare akṣara — few everyday words · Aryabhata · listen for the shape' },
+    { word: 'ङौ', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
+    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
+    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
+    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
   ],
   'ङं': [
-    { word: 'ङं', gloss: 'rare akṣara — almost never alone · listen for the shape' },
+    { word: 'ङं', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
+    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
+    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
+    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
   ],
-  // ङः: lexicon headword (Medinī / MW) — object of sense, Bhairava
-  'ङः': [{ word: 'ङः', gloss: 'object of sense / Bhairava (lexicon)' }],
+  // ङः: lexicon headword (Medinī / MW) — plus ङ-family kid words
+  'ङः': [
+    { word: 'ङः', gloss: 'object of sense / Bhairava (lexicon)' },
+    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
+    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
+    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
+  ],
 };
-
 
 export const examplesForVowel = (vowel: string): VowelExample[] => {
   const clean = vowel.normalize('NFC').trim();
