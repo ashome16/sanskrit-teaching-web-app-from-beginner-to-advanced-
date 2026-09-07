@@ -3,6 +3,7 @@ import type { SanskritWordBreakdown } from '../types/linguistics';
 import { searchSanskritWords } from '../data/sanskrit-words';
 import { extractLinguisticInfo } from '../utils/linguistics';
 import { playPronunciation, setSharedSpeechRate } from '../utils/pronunciation';
+import { examplesForVowel, isIndependentVowel } from '../data/vowelExamples';
 import { formatCaseLabel } from '../data/vibhakti';
 import {
   loadAnalyseGlosses,
@@ -110,6 +111,15 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
   const regionalGlosses = glossEntry?.languages
     ? Object.entries(glossEntry.languages).filter(([code, item]) => code !== 'en' && item?.meaning)
     : [];
+  const vowelExamples = word && isIndependentVowel(word.devanagari)
+    ? examplesForVowel(word.devanagari)
+    : [];
+  const openExampleWord = (example: string) => {
+    const result = findWord(example);
+    setAnalysis(result);
+    setInputValue(cleanWord(example));
+    playPronunciation(example, speechRate);
+  };
 
   return (
     <aside className="word-analyzer-card">
@@ -181,6 +191,28 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
               ))}
             </div>
           </div>
+
+          {vowelExamples.length > 0 && (
+            <section className="wac-section">
+              <h3 className="wac-section-title">Words with this sound</h3>
+              <p className="wac-placeholder" style={{ marginBottom: '.5rem' }}>
+                Tap a familiar word to hear how this vowel lives inside it.
+              </p>
+              <div className="wac-vowel-examples">
+                {vowelExamples.map((item) => (
+                  <button
+                    key={item.word}
+                    type="button"
+                    className="wac-vowel-example-btn"
+                    onClick={() => openExampleWord(item.word)}
+                  >
+                    <span className="wac-vowel-example-dev">{item.word}</span>
+                    <span className="wac-vowel-example-gloss">{item.gloss}</span>
+                  </button>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Section 1: Syllable Breakdown */}
           <section className="wac-section">
