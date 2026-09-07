@@ -105,10 +105,10 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   const isAu = word === 'औ' || speech === 'au';
   const isGha = word === 'घ' || speech === 'gha';
   const isChha = word === 'छ' || speech === 'छ';
-  // ञ: inya with weak/unstressed i (softer pitch, slightly slower).
-  const isNya = word === 'ञ' || speech === 'inya';
-  utterance.rate = isAu ? 0.45 : isGha ? 0.75 : isChha ? 0.9 : isNya ? 0.8 : DEFAULT_RATE;
-  utterance.pitch = isNya ? 0.9 : 1;
+  // ञ: ihnya = inya with weak short i (not stressed IN/EE).
+  const isNya = word === 'ञ' || speech === 'ihnya';
+  utterance.rate = isAu ? 0.45 : isGha ? 0.75 : isChha ? 0.9 : isNya ? 0.7 : DEFAULT_RATE;
+  utterance.pitch = isNya ? 0.85 : 1;
 };
 
 
