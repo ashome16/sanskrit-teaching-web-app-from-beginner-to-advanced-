@@ -154,8 +154,14 @@ export const varnamalaLabel = (akshara: string): string => {
 
 /** Speakable ASCII for traditional labels (ṭ→tt, ṣ→shh, rii→ree). */
 export const varnamalaSpeechText = (akshara: string): string => {
-  const label = varnamalaLabel(akshara);
-  if (!label || label === akshara) return barakhadiSpeechText(akshara);
+  const clean = akshara.normalize('NFC').trim();
+  // अ / इ / ई: speak Devanagari with Hindi voice.
+  // Roman uh / ih / eee become letter-noise, English I, or E-E-E.
+  if (clean === 'अ' || clean === 'इ' || clean === 'ई') {
+    return clean;
+  }
+  const label = varnamalaLabel(clean);
+  if (!label || label === clean) return barakhadiSpeechText(clean);
   const ascii = label
     .replace(/ṭ/g, 'tt')
     .replace(/ḍ/g, 'dd')
