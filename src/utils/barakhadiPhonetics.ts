@@ -107,7 +107,8 @@ export const barakhadiSpeechText = (akshara: string): string => {
     pha: 'p-ha', phaa: 'p-haa', phi: 'p-hi', phee: 'p-hee',
     bha: 'b-ha', bhaa: 'b-haa', bhi: 'b-hi', bhee: 'b-hee',
     tha: 't-ha', thaa: 't-haa', thi: 't-hi', thee: 't-hee',
-    dha: 'd-ha', dhaa: 'd-haa', dhi: 'd-hi', dhee: 'd-hee',
+    dha: 'd-ha', dhaa: 'd-haa', dhi: 'धि', dhee: 'd-hee',
+    the: 'थे', de: 'दे', dhe: 'धे', nru: 'नृ', nri: 'नृ', pi: 'पि', pau: 'पौ',
   };
   if (special[label]) return stretchUuSpeech(special[label]);
 
@@ -202,6 +203,13 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'ति' || clean === 'ती' || clean === 'तु' || clean === 'तू') return clean;
   if (clean === 'क्ष') return 'क्ष';
   if (clean === 'गि') return 'गि';
+  if (clean === 'थे') return 'थे';
+  if (clean === 'दे') return 'दे';
+  if (clean === 'धि') return 'धि';
+  if (clean === 'धे') return 'धे';
+  if (clean === 'नृ') return 'नृ';
+  if (clean === 'पि') return 'पि';
+  if (clean === 'पौ') return 'पौ';
   const label = varnamalaLabel(clean);
   if (!label || label === clean) return barakhadiSpeechText(clean);
   const ascii = label
@@ -228,6 +236,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
     ddha: 'dhah', nna: 'nah',
     ba: 'bah',
     ta: 'त', ti: 'ति', tee: 'ती', tu: 'तु', too: 'तू',
+    the: 'थे', de: 'दे', dhi: 'धि', dhe: 'धे', nru: 'नृ', nri: 'नृ', pi: 'पि', pau: 'पौ',
     shha: 'sh-ha', ksha: 'क्ष', jnya: 'j-nya', tra: 't-ra', shra: 'sh-ra',
   };
   return stretchUuSpeech(special[ascii] || ascii);
