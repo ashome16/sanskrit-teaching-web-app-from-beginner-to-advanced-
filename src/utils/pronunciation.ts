@@ -100,8 +100,11 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   } else {
     utterance.lang = voice?.lang || 'hi-IN';
   }
-  utterance.rate = DEFAULT_RATE;
+  // औ alone: original cue 'au', but slower so the diphthong is hearable.
+  const isAu = word === 'औ' || speech === 'au';
+  utterance.rate = isAu ? 0.45 : DEFAULT_RATE;
 };
+
 
 export const stopPronunciation = (): void => {
   if (typeof window === 'undefined' || !window.speechSynthesis) return;

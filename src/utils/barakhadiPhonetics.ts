@@ -74,7 +74,7 @@ export const barakhadiSpeechText = (akshara: string): string => {
     // Pure vowels: avoid English letter names (a/i) and E-E for ee.
     a: 'aaaah', aa: 'ahh', i: 'yih', ee: 'yee',
     u: 'ooh', oo: 'ooooh',
-    e: 'yay', ai: 'ai', o: 'o', au: 'ah-oo',
+    e: 'yay', ai: 'ai', o: 'o', au: 'au',
     ri: 'rih', rii: 'reee', ree: 'reee',
     nga: 'ng-a', ngaa: 'ng-aa', ngi: 'ng-i', ngee: 'ng-ee', ngu: 'ng-u', ngoo: 'ng-oo',
     nge: 'ng-e', ngai: 'ng-ai', ngo: 'ng-o', ngau: 'ng-au', ngam: 'ng-am', ngah: 'ng-ah', ngru: 'ng-ru',
@@ -169,7 +169,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'ॠ') return 'reee';
   if (clean === 'ए') return 'yay';
   if (clean === 'ओ') return 'o';
-  if (clean === 'औ') return 'ah-oo';
+  if (clean === 'औ') return 'au';
   const label = varnamalaLabel(clean);
   if (!label || label === clean) return barakhadiSpeechText(clean);
   const ascii = label
@@ -182,7 +182,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
   const special: Record<string, string> = {
     a: 'aaaah', aa: 'ahh', i: 'yih', ee: 'yee',
     u: 'ooh', oo: 'ooooh',
-    e: 'yay', ai: 'ai', o: 'o', au: 'ah-oo',
+    e: 'yay', ai: 'ai', o: 'o', au: 'au',
     ri: 'rih', rii: 'reee', ree: 'reee',
     nga: 'ng-a', nya: 'ny-a', chha: 'ch-ha',
     tta: 't-ta', ttha: 't-tha', dda: 'd-da', ddha: 'd-dha', nna: 'n-na',
