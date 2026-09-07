@@ -59,6 +59,8 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
     null
   );
   const [glosses, setGlosses] = useState<AnalyseRegistry>({});
+  /** Letter whose “Words with this sound” list stays pinned while browsing examples. */
+  const [soundAnchor, setSoundAnchor] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -73,9 +75,11 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
   // Click-to-analyze: whenever a word is clicked in the reader panel, populate and analyze instantly
   useEffect(() => {
     if (selection?.text.trim()) {
+      const cleaned = cleanWord(selection.text);
       const result = findWord(selection.text);
       setAnalysis(result);
-      setInputValue(cleanWord(selection.text));
+      setInputValue(cleaned);
+      setSoundAnchor(examplesForAkshara(cleaned).length > 0 ? cleaned : null);
     }
   }, [selection?.nonce]);
 
@@ -84,6 +88,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
     if (!selection) {
       setAnalysis(null);
       setInputValue('');
+      setSoundAnchor(null);
     }
   }, [selection]);
 
@@ -92,8 +97,10 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
     if (!trimmed) return;
     // Step A: exact glossary match short-circuits to clean data; Step B falls back to
     // live syllable/conjunct analysis for any word outside the local dictionary.
+    const cleaned = cleanWord(trimmed);
     const result = findWord(trimmed);
     setAnalysis(result);
+    setSoundAnchor(examplesForAkshara(cleaned).length > 0 ? cleaned : null);
   };
 
   const word = analysis?.word;
@@ -107,8 +114,9 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
   const regionalGlosses = glossEntry?.languages
     ? Object.entries(glossEntry.languages).filter(([code, item]) => code !== 'en' && item?.meaning)
     : [];
-  const vowelExamples = word ? examplesForAkshara(word.devanagari) : [];
+  const vowelExamples = soundAnchor ? examplesForAkshara(soundAnchor) : [];
   const openExampleWord = (example: string) => {
+    // Keep soundAnchor so the related-words list does not disappear.
     const result = findWord(example);
     setAnalysis(result);
     setInputValue(cleanWord(example));
@@ -177,14 +185,14 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
             <section className="wac-section">
               <h3 className="wac-section-title">Words with this sound</h3>
               <p className="wac-placeholder" style={{ marginBottom: '.5rem' }}>
-                Tap a familiar word to hear how this vowel lives inside it.
+                Tap a familiar word to hear this sound inside it. The list stays while you browse.
               </p>
               <div className="wac-vowel-examples">
                 {vowelExamples.map((item) => (
                   <button
                     key={item.word}
                     type="button"
-                    className="wac-vowel-example-btn"
+                    className={`wac-vowel-example-btn${word?.devanagari === item.word ? ' wac-vowel-example-btn--active' : ''}`}
                     onClick={() => openExampleWord(item.word)}
                   >
                     <span className="wac-vowel-example-dev">{item.word}</span>
