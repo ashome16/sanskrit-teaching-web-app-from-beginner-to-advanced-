@@ -286,6 +286,7 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'घौ': [{ word: 'मेघौ', gloss: 'two clouds' }, { word: 'संघौ', gloss: 'two groups' }],
   'घं': [{ word: 'घंटा', gloss: 'bell' }, { word: 'संघं', gloss: 'group / union (object form)' }],
   'घः': [{ word: 'मेघः', gloss: 'cloud' }, { word: 'संघः', gloss: 'group / union' }, { word: 'उल्लाघः', gloss: 'recovered / healthy' }],
+  // cache-bust 2026-09-07c
   // ङ-row — ङ almost always ङ् before a consonant; exact matra tiles are rare.
   // Standing rule: exact akṣara (का ≠ क). गङ्गा has ङ्ग, not ङा — so rare matra
   // tiles show ONLY the self-tile (word === key). Family trio stays on bare ङ.
