@@ -93,7 +93,7 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   // छ uses Devanagari + Hindi voice (roman chhha was letter-spelled as C-A).
   // ञ uses a two-beat contour in playPronunciation (fast en + slow ya).
   // Any word ending in visarga (ः): speak the whole word slowly so the echo is clear.
-  const isAu = word === 'औ' || speech === 'au';
+  const isAu = word === 'औ' || speech === 'au' || speech === 'gaau' || /aau$/i.test(speech);
   const isGha = word === 'घ' || speech === 'gha';
   const isChha = word === 'छ' || speech === 'छ';
   const isTtha = word === 'ठ' || speech === 'ठ';
