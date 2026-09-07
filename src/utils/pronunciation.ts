@@ -96,7 +96,7 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   const isAu = word === 'औ' || speech === 'au';
   const isGha = word === 'घ' || speech === 'gha';
   const isChha = word === 'छ' || speech === 'छ';
-  const isTtha = word === 'ठ' || speech === 'tah ha';
+  const isTtha = word === 'ठ' || speech === 'taaahh';
   const isVisargaWord = word.endsWith('ः');
   // गङ्गा / रङ्गः / अङ्गम्: original roman cues, extended slowly + full volume.
   const isNgaWord =
@@ -104,7 +104,7 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   utterance.rate = isNgaWord
     ? 0.42
     : isTtha
-      ? 0.5
+      ? 0.38
       : isVisargaWord
         ? 0.45
         : isAu
@@ -114,7 +114,7 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
             : isChha
               ? 0.9
               : DEFAULT_RATE;
-  utterance.pitch = isNgaWord ? 1.15 : isTtha ? 1.2 : 1;
+  utterance.pitch = isNgaWord ? 1.15 : isTtha ? 1.35 : 1;
   utterance.volume = 1;
 };
 

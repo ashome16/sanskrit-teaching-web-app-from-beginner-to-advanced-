@@ -4,6 +4,7 @@ import { searchSanskritWords } from '../data/sanskrit-words';
 import { extractLinguisticInfo } from '../utils/linguistics';
 import { playPronunciation } from '../utils/pronunciation';
 import { examplesForAkshara, baseAksharaForExamples } from '../data/vowelExamples';
+import { iconForExampleWord } from '../data/exampleIcons';
 import { formatCaseLabel } from '../data/vibhakti';
 import {
   loadAnalyseGlosses,
@@ -195,6 +196,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
                     className={`wac-vowel-example-btn${word?.devanagari === item.word ? ' wac-vowel-example-btn--active' : ''}`}
                     onClick={() => openExampleWord(item.word)}
                   >
+                    <span className="wac-vowel-example-icon" aria-hidden="true">{iconForExampleWord(item.word)}</span>
                     <span className="wac-vowel-example-dev">{item.word}</span>
                     <span className="wac-vowel-example-gloss">{item.gloss}</span>
                   </button>
