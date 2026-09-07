@@ -90,7 +90,7 @@ export const barakhadiSpeechText = (akshara: string): string => {
     ksha: 'k-sha', jnya: 'j-nya', tra: 't-ra', shra: 'sh-ra',
     li: 'li',
     kha: 'k-ha', khaa: 'k-haa', khi: 'k-hi', khee: 'k-hee',
-    gha: 'g-ha', ghaa: 'g-haa', ghi: 'g-hi', ghee: 'g-hee',
+    ga: 'ga', gha: 'ggha', ghaa: 'gghaa', ghi: 'gghi', ghee: 'gghee',
     jha: 'j-ha', jhaa: 'j-haa', jhi: 'j-hi', jhee: 'j-hee',
     pha: 'p-ha', phaa: 'p-haa', phi: 'p-hi', phee: 'p-hee',
     bha: 'b-ha', bhaa: 'b-haa', bhi: 'b-hi', bhee: 'b-hee',
@@ -170,6 +170,8 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'ए') return 'yay';
   if (clean === 'ओ') return 'o';
   if (clean === 'औ') return 'au';
+  if (clean === 'ग') return 'ga';
+  if (clean === 'घ') return 'ggha';
   const label = varnamalaLabel(clean);
   if (!label || label === clean) return barakhadiSpeechText(clean);
   const ascii = label
@@ -184,6 +186,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
     u: 'ooh', oo: 'ooooh',
     e: 'yay', ai: 'ai', o: 'o', au: 'au',
     ri: 'rih', rii: 'reee', ree: 'reee',
+    ga: 'ga', gha: 'ggha',
     nga: 'ng-a', nya: 'ny-a', chha: 'ch-ha',
     tta: 't-ta', ttha: 't-tha', dda: 'd-da', ddha: 'd-dha', nna: 'n-na',
     shha: 'sh-ha', ksha: 'k-sha', jnya: 'j-nya',
