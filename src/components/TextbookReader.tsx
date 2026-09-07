@@ -19,12 +19,6 @@ interface TextbookReaderProps {
   isLastSentence: boolean;
 }
 
-const CONJUNCT_GAMES = [
-  { id: 'game1', title: 'Game 1 · Drop the Stick', src: './conjunct-game1.jpg', alt: 'Drop the Stick game' },
-  { id: 'game2', title: 'Game 2 · Piggyback Ride', src: './conjunct-game2.jpg', alt: 'Piggyback stacking game' },
-  { id: 'game3', title: 'Game 3 · Superhero Shape-Shifters', src: './conjunct-game3.jpg', alt: 'Superhero shape-shifters' },
-];
-
 type SectionJump = { index: number; label: string };
 
 const buildSectionJumps = (lesson: Lesson | undefined): SectionJump[] => {
@@ -58,17 +52,13 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 }) => {
   const activeLesson = lessons.find((lesson) => lesson.id === activeLessonId);
   const isVarnamala = activeLessonId === 'varnamala';
-  const isSamyukta = activeLessonId === 'samyukta';
-  const isGroupedLesson = isVarnamala || isSamyukta || activeLessonId === 'numbers' || activeLessonId === 'barakhadi';
+  const isGroupedLesson = isVarnamala || activeLessonId === 'numbers' || activeLessonId === 'barakhadi';
   const showRomanTiles = activeLessonId === 'barakhadi' || activeLessonId === 'varnamala';
   const tileLabel = (letter: string) =>
     activeLessonId === 'varnamala' ? varnamalaLabel(letter) : aksharaLabel(letter);
   const [isChartOpen, setIsChartOpen] = useState(false);
-  const [openGames, setOpenGames] = useState<Record<string, boolean>>({ game1: true });
   const [isPlayingAll, setIsPlayingAll] = useState(false);
   const stopPlayAllRef = useRef<(() => void) | null>(null);
-  const toggleGame = (id: string) =>
-    setOpenGames((prev) => ({ ...prev, [id]: !prev[id] }));
 
   const stopPlayAll = () => {
     stopPlayAllRef.current?.();
@@ -89,7 +79,6 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   }, [activeLessonId, sentenceNumber]);
 
   const collectPlayAllItems = (): string[] => {
-    if (isSamyukta) return [];
     if (isGroupedLesson && activeLesson) {
       return activeLesson.sentences.flatMap((group) => group.words || []);
     }
@@ -152,7 +141,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           value={activeLessonId}
           onChange={(event) => onSelectLesson(event.target.value)}
         >
-          {lessons.map((lesson) => (
+          {lessons
+            .filter((lesson) => lesson.id !== 'samyukta')
+            .map((lesson) => (
             <option key={lesson.id} value={lesson.id}>
               {lesson.title}
             </option>
@@ -207,11 +198,6 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         {activeLesson && (
           <p className="textbook-reader-source">Source Material: {activeLesson.fileName}</p>
         )}
-        {isSamyukta && (
-          <p className="textbook-glossary-hint" style={{ marginTop: '.35rem' }}>
-            Three playground posters. Tap a game title to open or close its picture.
-          </p>
-        )}
         {activeLessonId === 'varnamala' && (
           <p className="textbook-glossary-hint" style={{ marginTop: '.35rem' }}>
             Traditional chart: a · aa · i · ee · ri · rī · ka · kha · ṭa · ṣha…. Tap any letter to hear it.
@@ -223,23 +209,21 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           </p>
         )}
 
-        {!isSamyukta && (
-          <div className="textbook-playall-row">
-            <button
-              type="button"
-              className={`textbook-playall-btn${isPlayingAll ? ' textbook-playall-btn--active' : ''}`}
-              onClick={handlePlayAll}
-              aria-pressed={isPlayingAll}
-            >
-              {isPlayingAll ? '⏹ Stop' : '▶ Play all'}
-            </button>
-            <span className="textbook-glossary-hint">
-              {isGroupedLesson
-                ? 'Hear every letter on this chart, in order.'
-                : 'Hear every word on this page, in order.'}
-            </span>
-          </div>
-        )}
+        <div className="textbook-playall-row">
+          <button
+            type="button"
+            className={`textbook-playall-btn${isPlayingAll ? ' textbook-playall-btn--active' : ''}`}
+            onClick={handlePlayAll}
+            aria-pressed={isPlayingAll}
+          >
+            {isPlayingAll ? '⏹ Stop' : '▶ Play all'}
+          </button>
+          <span className="textbook-glossary-hint">
+            {isGroupedLesson
+              ? 'Hear every letter on this chart, in order.'
+              : 'Hear every word on this page, in order.'}
+          </span>
+        </div>
         {!isGroupedLesson && (
           <span className="textbook-reader-progress">
             {sentence.kind?.startsWith('glossary') || sentence.kind?.startsWith('exercise')
@@ -249,38 +233,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         )}
       </header>
 
-      {isSamyukta ? (
-        <div className="conjunct-games">
-          {CONJUNCT_GAMES.map((game) => {
-            const open = !!openGames[game.id];
-            return (
-              <div key={game.id} className="varnamala-chart-toggle-wrap conjunct-game-wrap">
-                <button
-                  type="button"
-                  className="varnamala-chart-toggle"
-                  onClick={() => toggleGame(game.id)}
-                  aria-expanded={open}
-                  aria-controls={`conjunct-${game.id}`}
-                >
-                  {game.title}
-                  <span className="varnamala-chart-toggle-arrow">{open ? '▲' : '▼'}</span>
-                </button>
-                <div
-                  id={`conjunct-${game.id}`}
-                  className={`varnamala-chart-panel${open ? ' varnamala-chart-panel--open' : ''}`}
-                >
-                  <img
-                    src={game.src}
-                    alt={game.alt}
-                    className="varnamala-chart-image"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      ) : isGroupedLesson && activeLesson ? (
+      {isGroupedLesson && activeLesson ? (
         <div className="varnamala-groups">
           {isVarnamala && (
             <div className="varnamala-chart-toggle-wrap">

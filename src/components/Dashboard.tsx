@@ -7,11 +7,21 @@ import { LESSONS as STATIC_LESSONS, fetchLatestChapters } from '../data/chapters
 import { playPronunciation } from '../utils/pronunciation';
 import '../styles/dashboard.css';
 
+/** Conjunct Games live under Grammar now — keep out of Deepakam nav. */
+const HIDDEN_DEEPAKAM_IDS = new Set(['samyukta']);
+
+const firstDeepakamIndex = (lessons: typeof STATIC_LESSONS): number => {
+  const gsde101 = lessons.findIndex((item) => item.id === 'gsde101');
+  if (gsde101 >= 0) return gsde101;
+  const gsde = lessons.findIndex((item) => item.id.startsWith('gsde'));
+  return gsde >= 0 ? gsde : 0;
+};
+
 const Dashboard: React.FC = () => {
   const [lessons, setLessons] = useState(STATIC_LESSONS);
   const [lessonIndex, setLessonIndex] = useState(() => {
     const saved = localStorage.getItem('school-lesson-id');
-    if (saved) {
+    if (saved && !HIDDEN_DEEPAKAM_IDS.has(saved)) {
       const idx = STATIC_LESSONS.findIndex((item) => item.id === saved);
       if (idx >= 0) return idx;
     }
@@ -20,7 +30,7 @@ const Dashboard: React.FC = () => {
   });
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [wordSelection, setWordSelection] = useState<WordSelection | null>(null);
-    const [activeView, setActiveView] = useState<'board' | 'reader' | 'grammar'>('reader');
+  const [activeView, setActiveView] = useState<'board' | 'reader' | 'grammar'>('reader');
 
   useEffect(() => {
     localStorage.setItem('school-active-view', activeView);
@@ -28,40 +38,62 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     const id = lessons[lessonIndex]?.id;
-    if (id) localStorage.setItem('school-lesson-id', id);
+    if (id && !HIDDEN_DEEPAKAM_IDS.has(id)) {
+      localStorage.setItem('school-lesson-id', id);
+    }
   }, [lessonIndex, lessons]);
 
-  // Cache-busted refetch on mount so freshly regenerated chapters.json content
-  // (varṇamālā guide + Chapter 1) shows up without a hard reload.
+  // If a stale save still points at samyukta, bounce to Chapter 1.
+  useEffect(() => {
+    const id = lessons[lessonIndex]?.id;
+    if (!id || !HIDDEN_DEEPAKAM_IDS.has(id)) return;
+    const fallback = firstDeepakamIndex(lessons);
+    setLessonIndex(fallback);
+    setSentenceIndex(0);
+    setWordSelection(null);
+  }, [lessonIndex, lessons]);
+
   useEffect(() => {
     let cancelled = false;
     fetchLatestChapters()
       .then((fresh) => {
         if (!cancelled && fresh.length > 0) setLessons(fresh);
       })
-      .catch(() => {
-        // Keep the statically bundled lessons if the runtime fetch fails.
-      });
+      .catch(() => {});
     return () => {
       cancelled = true;
     };
   }, []);
 
+  const findNextVisibleLesson = (from: number, direction: 1 | -1): number => {
+    let i = from + direction;
+    while (i >= 0 && i < lessons.length) {
+      if (!HIDDEN_DEEPAKAM_IDS.has(lessons[i]?.id)) return i;
+      i += direction;
+    }
+    return from;
+  };
+
   const lesson = lessons[lessonIndex];
   const sentence = lesson?.sentences[sentenceIndex];
   const isFirstSentence = lessonIndex === 0 && sentenceIndex === 0;
+  const lastVisible = (() => {
+    for (let i = lessons.length - 1; i >= 0; i -= 1) {
+      if (!HIDDEN_DEEPAKAM_IDS.has(lessons[i]?.id)) return i;
+    }
+    return lessons.length - 1;
+  })();
   const isLastSentence =
-    lessonIndex === lessons.length - 1 && sentenceIndex === lesson.sentences.length - 1;
+    lessonIndex === lastVisible && sentenceIndex === (lesson?.sentences.length ?? 1) - 1;
 
-  // Every word in a paragraph block is clickable: it speaks the word aloud and populates the analyzer card.
   const handleWordClick = (word: string) => {
     playPronunciation(word);
     localStorage.setItem('last-stem', word);
     setWordSelection({ text: word, nonce: Date.now() });
   };
 
-  // Switching lessons resets the sentence loop to item 0 and flushes the analyzer card
   const handleSelectLesson = (nextLessonId: string) => {
+    if (HIDDEN_DEEPAKAM_IDS.has(nextLessonId)) return;
     const nextIndex = lessons.findIndex((item) => item.id === nextLessonId);
     if (nextIndex === -1) return;
     setLessonIndex(nextIndex);
@@ -69,14 +101,15 @@ const Dashboard: React.FC = () => {
     setWordSelection(null);
   };
 
-  // Next/Previous always reset the analyzer's word selection state
   const goNext = () => {
     if (sentenceIndex < lesson.sentences.length - 1) {
       setSentenceIndex(sentenceIndex + 1);
-    } else if (lessonIndex < lessons.length - 1) {
-      // Seamlessly transition into the next lesson once the active one is finished
-      setLessonIndex(lessonIndex + 1);
-      setSentenceIndex(0);
+    } else {
+      const next = findNextVisibleLesson(lessonIndex, 1);
+      if (next !== lessonIndex) {
+        setLessonIndex(next);
+        setSentenceIndex(0);
+      }
     }
     setWordSelection(null);
   };
@@ -84,10 +117,12 @@ const Dashboard: React.FC = () => {
   const goPrevious = () => {
     if (sentenceIndex > 0) {
       setSentenceIndex(sentenceIndex - 1);
-    } else if (lessonIndex > 0) {
-      const previousLesson = lessons[lessonIndex - 1];
-      setLessonIndex(lessonIndex - 1);
-      setSentenceIndex(previousLesson.sentences.length - 1);
+    } else {
+      const prev = findNextVisibleLesson(lessonIndex, -1);
+      if (prev !== lessonIndex) {
+        setLessonIndex(prev);
+        setSentenceIndex(lessons[prev].sentences.length - 1);
+      }
     }
     setWordSelection(null);
   };
@@ -109,15 +144,11 @@ const Dashboard: React.FC = () => {
     setActiveView('reader');
   };
 
-  /** Deepakam = textbook chapters (not the Varṇamālā alphabet chart). */
   const openDeepakam = () => {
     const current = lessons[lessonIndex];
     const guideIds = new Set(['varnamala', 'barakhadi', 'samyukta', 'numbers']);
-    if (!current || guideIds.has(current.id)) {
-      const idx =
-        lessons.findIndex((item) => item.id === 'gsde101') >= 0
-          ? lessons.findIndex((item) => item.id === 'gsde101')
-          : lessons.findIndex((item) => item.id.startsWith('gsde'));
+    if (!current || guideIds.has(current.id) || HIDDEN_DEEPAKAM_IDS.has(current.id)) {
+      const idx = firstDeepakamIndex(lessons);
       if (idx >= 0) {
         setLessonIndex(idx);
         setSentenceIndex(0);
@@ -181,4 +212,3 @@ const Dashboard: React.FC = () => {
 };
 
 export default Dashboard;
-

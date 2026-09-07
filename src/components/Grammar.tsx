@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { VIBHAKTI_CASES } from '../data/vibhakti';
+import ConjunctGames from './ConjunctGames';
 import '../styles/grammar.css';
 
-type GrammarTopic = 'home' | 'vibhakti';
+type GrammarTopic = 'home' | 'vibhakti' | 'samyukta';
 
 const Grammar: React.FC = () => {
   const [topic, setTopic] = useState<GrammarTopic>('home');
@@ -46,13 +47,30 @@ const Grammar: React.FC = () => {
     );
   }
 
+  if (topic === 'samyukta') {
+    return (
+      <section className="grammar-page" aria-label="Conjunct games">
+        <header className="grammar-page-header">
+          <button type="button" className="grammar-back" onClick={() => setTopic('home')}>
+            ← Grammar
+          </button>
+          <h2 className="grammar-title">संयुक्त · Conjunct Games</h2>
+          <p className="grammar-lead">
+            Three playground posters. Tap a game title to open or close its picture.
+          </p>
+        </header>
+        <ConjunctGames />
+      </section>
+    );
+  }
+
   return (
     <section className="grammar-page" aria-label="Grammar">
       <header className="grammar-page-header">
         <h2 className="grammar-title">व्याकरणम् · Grammar</h2>
         <p className="grammar-lead">
-          We build this shelf from the base. Start with Vibhakti; more bricks come later
-          (sandhi, dhātu, etc.) without crowding Deepakam.
+          We build this shelf from the base. Vibhakti and conjunct games live here so Deepakam
+          stays the book.
         </p>
       </header>
       <div className="grammar-shelf">
@@ -60,6 +78,11 @@ const Grammar: React.FC = () => {
           <span className="grammar-card-kicker">Ready</span>
           <span className="grammar-card-title">विभक्ति · Vibhakti</span>
           <span className="grammar-card-blurb">Seven noun cases — who does what to whom.</span>
+        </button>
+        <button type="button" className="grammar-card grammar-card--ready" onClick={() => setTopic('samyukta')}>
+          <span className="grammar-card-kicker">Ready</span>
+          <span className="grammar-card-title">संयुक्त · Conjunct Games</span>
+          <span className="grammar-card-blurb">Drop the stick, piggyback, shape-shifters — how letters join.</span>
         </button>
         <div className="grammar-card grammar-card--soon" aria-disabled="true">
           <span className="grammar-card-kicker">Later</span>
