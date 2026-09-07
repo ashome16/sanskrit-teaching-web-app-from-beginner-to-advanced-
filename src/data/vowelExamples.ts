@@ -216,6 +216,22 @@ export const CONSONANT_EXAMPLES: Record<string, VowelExample[]> = {
   ],
 };
 
+/** बारहखड़ी matra tiles — words that contain THIS akṣara (का ≠ क). */
+export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
+  'का': [{ word: 'काकः', gloss: 'crow' }, { word: 'कार्यम्', gloss: 'work' }, { word: 'आकाशः', gloss: 'sky' }],
+  'कि': [{ word: 'किरणः', gloss: 'ray of light' }, { word: 'किम्', gloss: 'what' }, { word: 'किसलयम्', gloss: 'tender leaf' }],
+  'की': [{ word: 'कीटः', gloss: 'insect' }, { word: 'कीर्तिः', gloss: 'fame' }, { word: 'कीर्तनम्', gloss: 'singing praise' }],
+  'कु': [{ word: 'कुसुमम्', gloss: 'flower' }, { word: 'कुम्भः', gloss: 'pot' }, { word: 'कुक्कुरः', gloss: 'dog' }],
+  'कू': [{ word: 'कूर्मः', gloss: 'tortoise' }, { word: 'कूपः', gloss: 'well' }, { word: 'कूटः', gloss: 'peak' }],
+  'कृ': [{ word: 'कृष्णः', gloss: 'Krishna' }, { word: 'कृषिः', gloss: 'farming' }, { word: 'कृमिः', gloss: 'worm' }],
+  'के': [{ word: 'केशः', gloss: 'hair' }, { word: 'केलिः', gloss: 'play' }, { word: 'केन्द्रम्', gloss: 'centre' }],
+  'कै': [{ word: 'कैलासः', gloss: 'Kailasa' }, { word: 'कैकेयी', gloss: 'Kaikeyi' }, { word: 'कैवर्तः', gloss: 'fisher' }],
+  'को': [{ word: 'कोकिलः', gloss: 'cuckoo' }, { word: 'कोपः', gloss: 'anger' }, { word: 'कोशः', gloss: 'treasury' }],
+  'कौ': [{ word: 'कौशलम्', gloss: 'skill' }, { word: 'कौशिकः', gloss: 'owl / Kaushika' }, { word: 'कौस्तुभः', gloss: 'Kaustubha jewel' }],
+  'कं': [{ word: 'कंसः', gloss: 'Kamsa' }, { word: 'कंबलः', gloss: 'blanket' }, { word: 'अंकः', gloss: 'number' }],
+  'कः': [{ word: 'कः', gloss: 'who' }, { word: 'बालकः', gloss: 'boy' }, { word: 'नायकः', gloss: 'hero' }],
+};
+
 export const examplesForVowel = (vowel: string): VowelExample[] => {
   const clean = vowel.normalize('NFC').trim();
   return VOWEL_EXAMPLES[clean] || [];
@@ -225,30 +241,66 @@ export const examplesForVowel = (vowel: string): VowelExample[] => {
 export const devanagariOnly = (value: string): string =>
   value.normalize('NFC').replace(/[^\u0900-\u097F]/g, '').trim();
 
-/** Base letter for example lookup (टा/ति → ट; vowels stay as-is).
- * Full Deepakam words must NOT map to their first consonant. */
+const MATRA_MARK = /[ािीुूृॄेैोौंःँ]/;
+
+/** True if `word` contains this exact akṣara (का does not count as क). */
+export const wordContainsAkshara = (word: string, tile: string): boolean => {
+  const w = devanagariOnly(word);
+  const t = devanagariOnly(tile);
+  if (!w || !t) return false;
+  if (t.length >= 2) return w.includes(t);
+  const re = new RegExp(t + '(?!' + MATRA_MARK.source + ')');
+  return re.test(w);
+};
+
+const allKnownExamples = (): VowelExample[] => {
+  const out: VowelExample[] = [];
+  const seen = new Set<string>();
+  const dump = (lists: Record<string, VowelExample[]>) => {
+    Object.values(lists).forEach((arr) => {
+      arr.forEach((item) => {
+        if (!seen.has(item.word)) {
+          seen.add(item.word);
+          out.push(item);
+        }
+      });
+    });
+  };
+  dump(VOWEL_EXAMPLES);
+  dump(CONSONANT_EXAMPLES);
+  dump(BARAKHADI_EXAMPLES);
+  return out;
+};
+
+const examplesMatchingTile = (tile: string): VowelExample[] => {
+  const hits: VowelExample[] = [];
+  for (const item of allKnownExamples()) {
+    if (wordContainsAkshara(item.word, tile)) {
+      hits.push(item);
+      if (hits.length >= 3) break;
+    }
+  }
+  return hits;
+};
+
+/** Exact tile for example lookup — never collapse का → क. */
 export const baseAksharaForExamples = (akshara: string): string => {
   const clean = devanagariOnly(akshara);
   if (!clean) return clean;
-  if (VOWEL_EXAMPLES[clean] || CONSONANT_EXAMPLES[clean]) return clean;
+  if (VOWEL_EXAMPLES[clean] || CONSONANT_EXAMPLES[clean] || BARAKHADI_EXAMPLES[clean]) return clean;
   if (INDEPENDENT_VOWELS.has(clean)) return clean;
-  // Matra / single-tile forms only (टा, क्ष…), never a full word.
-  if (isBarakhadiAkshara(clean)) {
-    if (CONSONANT_EXAMPLES[clean]) return clean;
-    const first = clean[0];
-    if (CONSONANT_EXAMPLES[first]) return first;
-  }
+  if (isBarakhadiAkshara(clean)) return clean;
   return clean;
 };
 
-/** Vowel or consonant tile examples for Analyse “Words with this sound”. */
+/** Vowel / Varṇamālā letter / बारहखड़ी akṣara examples. */
 export const examplesForAkshara = (akshara: string): VowelExample[] => {
   const clean = devanagariOnly(akshara);
   if (VOWEL_EXAMPLES[clean]?.length) return VOWEL_EXAMPLES[clean];
   if (CONSONANT_EXAMPLES[clean]?.length) return CONSONANT_EXAMPLES[clean];
-  const base = baseAksharaForExamples(clean);
-  if (base === clean) return [];
-  return VOWEL_EXAMPLES[base] || CONSONANT_EXAMPLES[base] || [];
+  if (BARAKHADI_EXAMPLES[clean]?.length) return BARAKHADI_EXAMPLES[clean];
+  if (isBarakhadiAkshara(clean) && clean.length > 1) return examplesMatchingTile(clean);
+  return [];
 };
 
 export const hasSoundExamples = (akshara: string): boolean =>

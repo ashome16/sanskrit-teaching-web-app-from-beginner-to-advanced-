@@ -144,9 +144,9 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
 
           {vowelExamples.length > 0 && (
             <section className="wac-section">
-              <h3 className="wac-section-title">Words with this sound</h3>
+              <h3 className="wac-section-title">Words with this akṣara</h3>
               <p className="wac-placeholder" style={{ marginBottom: '.5rem' }}>
-                Tap a familiar word to hear this sound inside it. The list stays while you browse.
+                Familiar words that use this exact letter (का is not the same as क). The list stays while you browse.
               </p>
               <div className="wac-vowel-examples">
                 {vowelExamples.map((item) => (
