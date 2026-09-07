@@ -163,6 +163,8 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'ई') return 'yee';
   if (clean === 'उ') return 'ooh';
   if (clean === 'ऊ') return 'ooooh';
+  if (clean === 'ऋ') return 'ri';
+  if (clean === 'ॠ') return 'ree';
   const label = varnamalaLabel(clean);
   if (!label || label === clean) return barakhadiSpeechText(clean);
   const ascii = label
