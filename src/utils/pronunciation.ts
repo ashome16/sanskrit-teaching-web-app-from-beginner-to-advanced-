@@ -115,27 +115,41 @@ const isRangaWord = (word: string): boolean =>
   word === 'रङ्गः' || word === 'रंगः' || word === 'रङ्ग' || word === 'रंग';
 
 const playGunRunGa = (first: 'gun' | 'run', onDone?: () => void): void => {
-  const enVoice = pickEnglishVoice();
-  const firstPart = new SpeechSynthesisUtterance(first);
-  firstPart.voice = enVoice || null;
-  firstPart.lang = enVoice?.lang || 'en-IN';
-  firstPart.rate = 0.55;
-  firstPart.pitch = 1.1;
-  firstPart.volume = 1;
-  const gaPart = new SpeechSynthesisUtterance('ga');
-  gaPart.voice = enVoice || null;
-  gaPart.lang = enVoice?.lang || 'en-IN';
-  gaPart.rate = 0.85;
-  gaPart.pitch = 1;
-  firstPart.onend = () => {
+  const voices = window.speechSynthesis.getVoices();
+  // Prefer a fuller English voice — soft en-IN often buries short beats.
+  const enVoice =
+    voices.find((item) => item.lang === 'en-US') ||
+    voices.find((item) => item.lang === 'en-GB') ||
+    pickEnglishVoice();
+  const cue = first === 'gun' ? 'GUNN' : 'RUNN';
+  const mk = (text: string, rate: number, pitch: number) => {
+    const u = new SpeechSynthesisUtterance(text);
+    u.voice = enVoice || null;
+    u.lang = enVoice?.lang || 'en-US';
+    u.rate = rate;
+    u.pitch = pitch;
+    u.volume = 1;
+    return u;
+  };
+  // Punch the first beat twice so gun/run cuts through, then GA.
+  const punch1 = mk(cue, 0.78, 1.35);
+  const punch2 = mk(cue, 0.72, 1.4);
+  const gaPart = mk('GA', 0.88, 1.1);
+  punch1.onend = () => {
+    window.speechSynthesis.speak(punch2);
+  };
+  punch1.onerror = () => {
+    window.speechSynthesis.speak(punch2);
+  };
+  punch2.onend = () => {
+    window.speechSynthesis.speak(gaPart);
+  };
+  punch2.onerror = () => {
     window.speechSynthesis.speak(gaPart);
   };
   gaPart.onend = () => onDone?.();
   gaPart.onerror = () => onDone?.();
-  firstPart.onerror = () => {
-    window.speechSynthesis.speak(gaPart);
-  };
-  window.speechSynthesis.speak(firstPart);
+  window.speechSynthesis.speak(punch1);
 };
 
 /** ञ = enya with fast en then slow ya. */
