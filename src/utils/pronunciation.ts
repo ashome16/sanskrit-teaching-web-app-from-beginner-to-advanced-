@@ -20,9 +20,9 @@ const VOWEL_TO_MATRA: Record<string, string> = {
 // otherwise mispronounce or misinterpret entirely.
 const applyWordOverrides = (word: string): string => {
   // ङ example words: stable English cues (same every click).
-  if (word === 'अङ्गम्' || word === 'अंगम्') return 'angam';
-  if (word === 'गङ्गा' || word === 'गंगा') return 'ganga';
-  if (word === 'रङ्गः' || word === 'रंगः' || word === 'रङ्ग' || word === 'रंग') return 'ranga';
+  if (word === 'अङ्गम्' || word === 'अंगम्') return 'an gam';
+  if (word === 'गङ्गा' || word === 'गंगा') return 'gan ga';
+  if (word === 'रङ्गः' || word === 'रंगः' || word === 'रङ्ग' || word === 'रंग') return 'run ga';
   // 'नव' (nava, 9) is otherwise auto-corrected by some engines to the English
   // month "November"; force a pure Devanagari override to keep it Sanskrit.
   if (word.includes('नव')) return word.replace(/नव/g, 'नवम्');
