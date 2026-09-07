@@ -91,9 +91,10 @@ export const barakhadiSpeechText = (akshara: string): string => {
     nge: 'ng-e', ngai: 'ng-ai', ngo: 'ng-o', ngau: 'ng-au', ngam: 'ng-am', ngah: 'ng-ah', ngru: 'ng-ru',
     nya: 'enya', nyaa: 'ny-aa', nyi: 'ny-i', nyee: 'ny-ee',
     tta: 'tah', ttaa: 'टा', tti: 'टि', ttee: 'टी', ttu: 'टु', ttoo: 'टू',
-    tte: 'टे', ttai: 'टै', tto: 'टो', ttau: 'टौ', ttam: 'टं', ttah: 'टः', ttru: 'टृ',
+    tte: 'टे', ttai: 'टै', tto: 'टो', ttau: 'टौ', ttam: 'tam', ttah: 'टः', ttru: 'टृ',
     ttha: 'ठ', tthaa: 't-thaa', tthi: 't-thi', tthee: 't-thee',
-    dda: 'dah', ddaa: 'd-daa', ddi: 'd-di', ddee: 'd-dee',
+    dda: 'dah', ddaa: 'डा', ddi: 'डि', ddee: 'डी', ddu: 'डु', ddoo: 'डू',
+    dde: 'डे', ddai: 'डै', ddo: 'डो', ddau: 'डौ', ddam: 'डं', ddah: 'डः', ddru: 'डृ',
     ddha: 'dhah', ddhaa: 'd-dhaa', ddhi: 'd-dhi', ddhee: 'd-dhee',
     nna: 'nah', nnaa: 'n-naa', nni: 'n-ni', nnee: 'n-nee',
     shha: 'sh-ha', shhaa: 'sh-haa', shhi: 'sh-hi', shhee: 'sh-hee',
@@ -186,10 +187,13 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'ञ') return 'enya';
   if (clean === 'ङ') return 'unga';
   if (clean === 'ट') return 'tah';
+  if (clean === 'टं') return 'tam';
   // ट + matra: English tt*/t-t* sounds like double-t; use Hindi letter voice.
   if (clean.startsWith('ट') && clean.length > 1) return clean;
   if (clean === 'ठ') return 'ठ';
   if (clean === 'ड') return 'dah';
+  // ड + matra: English dd*/d-d* doubles; use Hindi letter voice.
+  if (clean.startsWith('ड') && clean.length > 1) return clean;
   if (clean === 'ढ') return 'dhah';
   if (clean === 'ण') return 'nah';
   if (clean === 'ब') return 'bah';
@@ -215,8 +219,11 @@ export const varnamalaSpeechText = (akshara: string): string => {
     gha: 'gha',
     nga: 'unga', nya: 'enya', chha: 'chha',
     tta: 'tah', ttaa: 'टा', tti: 'टि', ttee: 'टी', ttu: 'टु', ttoo: 'टू',
-    tte: 'टे', ttai: 'टै', tto: 'टो', ttau: 'टौ', ttam: 'टं', ttah: 'टः', ttru: 'टृ',
-    ttha: 'ठ', dda: 'dah', ddha: 'dhah', nna: 'nah',
+    tte: 'टे', ttai: 'टै', tto: 'टो', ttau: 'टौ', ttam: 'tam', ttah: 'टः', ttru: 'टृ',
+    ttha: 'ठ',
+    dda: 'dah', ddaa: 'डा', ddi: 'डि', ddee: 'डी', ddu: 'डु', ddoo: 'डू',
+    dde: 'डे', ddai: 'डै', ddo: 'डो', ddau: 'डौ', ddam: 'डं', ddah: 'डः', ddru: 'डृ',
+    ddha: 'dhah', nna: 'nah',
     ba: 'bah',
     ta: 'त',
     shha: 'sh-ha', ksha: 'क्ष', jnya: 'j-nya', tra: 't-ra', shra: 'sh-ra',
