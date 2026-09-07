@@ -179,6 +179,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'ड') return 'dah';
   if (clean === 'ढ') return 'dhah';
   if (clean === 'ण') return 'nah';
+  if (clean === 'ब') return 'bah';
   const label = varnamalaLabel(clean);
   if (!label || label === clean) return barakhadiSpeechText(clean);
   const ascii = label
@@ -198,6 +199,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
     gha: 'gha',
     nga: 'unga', nya: 'enya', chha: 'chha',
     tta: 'tah', ttha: 'taaahh', dda: 'dah', ddha: 'dhah', nna: 'nah',
+    ba: 'bah',
     shha: 'sh-ha', ksha: 'k-sha', jnya: 'j-nya',
   };
   return special[ascii] || ascii;
