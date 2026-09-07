@@ -97,25 +97,27 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   const isGha = word === 'घ' || speech === 'gha';
   const isChha = word === 'छ' || speech === 'छ';
   const isTtha = word === 'ठ' || speech === 'taaahh';
-  const isDdha = word === 'ढ' || speech === 'daaahh';
+  const isDdha = word === 'ढ' || speech === 'dhah';
   const isVisargaWord = word.endsWith('ः');
   // गङ्गा / रङ्गः / अङ्गम्: original roman cues, extended slowly + full volume.
   const isNgaWord =
     speech === 'gun ga' || speech === 'run ga' || speech === 'an gam';
   utterance.rate = isNgaWord
     ? 0.42
-    : isTtha || isDdha
+    : isTtha
       ? 0.38
-      : isVisargaWord
-        ? 0.45
-        : isAu
+      : isDdha
+        ? 0.72
+        : isVisargaWord
           ? 0.45
-          : isGha
-            ? 0.75
-            : isChha
-              ? 0.9
-              : DEFAULT_RATE;
-  utterance.pitch = isNgaWord ? 1.15 : isTtha || isDdha ? 1.35 : 1;
+          : isAu
+            ? 0.45
+            : isGha
+              ? 0.75
+              : isChha
+                ? 0.9
+                : DEFAULT_RATE;
+  utterance.pitch = isNgaWord ? 1.15 : isTtha ? 1.35 : isDdha ? 1.12 : 1;
   utterance.volume = 1;
 };
 
