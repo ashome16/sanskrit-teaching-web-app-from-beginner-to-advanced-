@@ -21,7 +21,7 @@ const Dashboard: React.FC = () => {
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [wordSelection, setWordSelection] = useState<WordSelection | null>(null);
   const [isVibhaktiGuideOpen, setIsVibhaktiGuideOpen] = useState(false);
-  const [activeView, setActiveView] = useState<'board' | 'reader' | 'analyzer'>('reader');
+  const [activeView, setActiveView] = useState<'board' | 'reader'>('reader');
 
   useEffect(() => {
     localStorage.setItem('school-active-view', activeView);
@@ -150,7 +150,6 @@ const Dashboard: React.FC = () => {
           >
             Deepakam
           </button>
-          <button className={activeView === 'analyzer' ? 'active' : ''} onClick={() => setActiveView('analyzer')}>Analyse</button>
         </nav>
         <button
           type="button"
@@ -177,7 +176,7 @@ const Dashboard: React.FC = () => {
         isFirstSentence={isFirstSentence}
         isLastSentence={isLastSentence}
       />}
-      {activeView !== 'board' && <WordAnalyzerCard selection={wordSelection} />}
+      {activeView === 'reader' && <WordAnalyzerCard selection={wordSelection} />}
 
       <VibhaktiGuideModal
         isOpen={isVibhaktiGuideOpen}

@@ -55,7 +55,6 @@ const findWord = (value: string): { word: SanskritWordBreakdown; isCustom: boole
 };
 
 const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
-  const [inputValue, setInputValue] = useState('');
   const [analysis, setAnalysis] = useState<{ word: SanskritWordBreakdown; isCustom: boolean } | null>(
     null
   );
@@ -79,7 +78,6 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
       const cleaned = cleanWord(selection.text);
       const result = findWord(selection.text);
       setAnalysis(result);
-      setInputValue(cleaned);
       const tip = devanagariOnly(cleaned);
       setSoundAnchor(examplesForAkshara(tip).length > 0 ? baseAksharaForExamples(tip) : null);
     }
@@ -89,22 +87,9 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
   useEffect(() => {
     if (!selection) {
       setAnalysis(null);
-      setInputValue('');
       setSoundAnchor(null);
     }
   }, [selection]);
-
-  const handleInputSubmit = () => {
-    const trimmed = inputValue.trim();
-    if (!trimmed) return;
-    // Step A: exact glossary match short-circuits to clean data; Step B falls back to
-    // live syllable/conjunct analysis for any word outside the local dictionary.
-    const cleaned = cleanWord(trimmed);
-    const result = findWord(trimmed);
-    setAnalysis(result);
-    const tip = devanagariOnly(cleaned);
-    setSoundAnchor(examplesForAkshara(tip).length > 0 ? baseAksharaForExamples(tip) : null);
-  };
 
   const word = analysis?.word;
   const isCustom = analysis?.isCustom ?? false;
@@ -117,50 +102,17 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
   const regionalGlosses = glossEntry?.languages
     ? Object.entries(glossEntry.languages).filter(([code, item]) => code !== 'en' && item?.meaning)
     : [];
-  const tipFromWord = word ? devanagariOnly(word.devanagari) : '';
-  const effectiveAnchor =
-    soundAnchor ||
-    (tipFromWord && examplesForAkshara(tipFromWord).length > 0
-      ? baseAksharaForExamples(tipFromWord)
-      : null);
-  const vowelExamples = effectiveAnchor ? examplesForAkshara(effectiveAnchor) : [];
+  // Letter-tile anchors only — never first letter of a Deepakam word.
+  const vowelExamples = soundAnchor ? examplesForAkshara(soundAnchor) : [];
   const openExampleWord = (example: string) => {
     // Keep soundAnchor so the related-words list does not disappear.
     const result = findWord(example);
     setAnalysis(result);
-    setInputValue(cleanWord(example));
     playPronunciation(example);
   };
 
   return (
     <aside className="word-analyzer-card">
-      <div className="wac-search-bar">
-        <label htmlFor="wac-search-input" className="wac-search-label">
-          Sanskrit Word Search
-        </label>
-        <div className="wac-input-row">
-          <span className="wac-input-icon" aria-hidden="true">
-            🔍
-          </span>
-          <input
-            id="wac-search-input"
-            type="text"
-            className="wac-input"
-            placeholder="Type any Sanskrit word to analyze…"
-            value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)}
-            onKeyDown={(event) => {
-              if (event.key === 'Enter') {
-                handleInputSubmit();
-              }
-            }}
-          />
-          <button type="button" className="wac-input-btn" onClick={handleInputSubmit}>
-            Analyze Word
-          </button>
-        </div>
-      </div>
-
       {!word && (
         <div className="wac-empty-state">
           Click any Sanskrit word in the reading panel to see its analysis here.
