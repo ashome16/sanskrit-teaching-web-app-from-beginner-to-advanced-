@@ -286,84 +286,24 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'घौ': [{ word: 'मेघौ', gloss: 'two clouds' }, { word: 'संघौ', gloss: 'two groups' }],
   'घं': [{ word: 'घंटा', gloss: 'bell' }, { word: 'संघं', gloss: 'group / union (object form)' }],
   'घः': [{ word: 'मेघः', gloss: 'cloud' }, { word: 'संघः', gloss: 'group / union' }, { word: 'उल्लाघः', gloss: 'recovered / healthy' }],
-  // ङ-row — ङ almost always ङ् before a consonant; exact matra tiles are rare
+  // ङ-row — ङ almost always ङ् before a consonant; exact matra tiles are rare.
   // Standing rule: exact akṣara (का ≠ क). गङ्गा has ङ्ग, not ङा — so rare matra
-  // tiles teach the ङ-family link with honest glosses instead of pretending.
+  // tiles show ONLY the self-tile (word === key). Family trio stays on bare ङ.
   'ङ': [{ word: 'अङ्गम्', gloss: 'limb / body' }, { word: 'गङ्गा', gloss: 'Ganga' }, { word: 'रङ्गः', gloss: 'color / stage' }],
-  'ङा': [
-    { word: 'ङा', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
-    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
-    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
-    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
-  ],
-  'ङि': [
-    { word: 'ङि', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
-    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
-    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
-    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
-  ],
-  'ङी': [
-    { word: 'ङी', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
-    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
-    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
-    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
-  ],
-  // ङु: real Dhātupāṭha root (ṅavate “to sound”) — plus ङ-family kid words
-  'ङु': [
-    { word: 'ङु', gloss: 'to sound (verbal root)' },
-    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
-    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
-    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
-  ],
-  'ङू': [
-    { word: 'ङू', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
-    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
-    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
-    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
-  ],
-  'ङृ': [
-    { word: 'ङृ', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
-    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
-    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
-    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
-  ],
-  'ङे': [
-    { word: 'ङे', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
-    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
-    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
-    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
-  ],
-  'ङै': [
-    { word: 'ङै', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
-    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
-    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
-    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
-  ],
-  'ङो': [
-    { word: 'ङो', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
-    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
-    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
-    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
-  ],
-  'ङौ': [
-    { word: 'ङौ', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
-    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
-    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
-    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
-  ],
-  'ङं': [
-    { word: 'ङं', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' },
-    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
-    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
-    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
-  ],
-  // ङः: lexicon headword (Medinī / MW) — plus ङ-family kid words
-  'ङः': [
-    { word: 'ङः', gloss: 'object of sense / Bhairava (lexicon)' },
-    { word: 'अङ्गम्', gloss: 'limb · ङ-family (written ङ्ग)' },
-    { word: 'गङ्गा', gloss: 'Ganga · ङ-family (written ङ्ग)' },
-    { word: 'रङ्गः', gloss: 'colour · ङ-family (written ङ्ग)' },
-  ],
+  'ङा': [{ word: 'ङा', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
+  'ङि': [{ word: 'ङि', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
+  'ङी': [{ word: 'ङी', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
+  // ङु: real Dhātupāṭha root (ṅavate "to sound") — lexicon only (no family trio)
+  'ङु': [{ word: 'ङु', gloss: 'to sound (verbal root)' }],
+  'ङू': [{ word: 'ङू', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
+  'ङृ': [{ word: 'ङृ', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
+  'ङे': [{ word: 'ङे', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
+  'ङै': [{ word: 'ङै', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
+  'ङो': [{ word: 'ङो', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
+  'ङौ': [{ word: 'ङौ', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
+  'ङं': [{ word: 'ङं', gloss: 'rare alone — in words ङ becomes ङ् before a consonant' }],
+  // ङः: lexicon headword (Medinī / MW) — lexicon only (no family trio)
+  'ङः': [{ word: 'ङः', gloss: 'object of sense / Bhairava (lexicon)' }],
   // च-row (bare च stays in CONSONANT_EXAMPLES)
   'चा': [{ word: 'चातकः', gloss: 'cātaka bird' }, { word: 'वाचा', gloss: 'by speech / with words' }, { word: 'आचारः', gloss: 'conduct / good manners' }],
   'चि': [{ word: 'चित्रम्', gloss: 'picture' }, { word: 'चिन्ता', gloss: 'thought / worry' }, { word: 'अचिरम्', gloss: 'soon / not long' }],
