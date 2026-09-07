@@ -247,6 +247,29 @@
   outline: none;
 }
 
+.varnamala-letter-btn--extra {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  background: #f3e8ff;
+  border-color: #c4b5fd;
+  color: #6d28d9;
+}
+
+.varnamala-letter-btn--extra .barakhadi-dev {
+  color: #6d28d9;
+}
+
+.varnamala-letter-note {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  color: #7c3aed;
+  line-height: 1.1;
+}
+
 .varnamala-row-description {
   margin: 0;
   font-size: 0.85rem;

@@ -325,20 +325,27 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 </button>
               </div>
               <div className="varnamala-row-letters">
-                {group.words.map((letter, letterIdx) => (
+                {group.words.map((letter, letterIdx) => {
+                  const isExtraAnunasika = letter === 'अँ';
+                  return (
                   <button
                     key={`${activeLessonId}-${groupIdx}-${letterIdx}`}
                     type="button"
-                    className={`varnamala-letter-btn${showRomanTiles ? ' barakhadi-letter-btn' : ''}`}
+                    className={`varnamala-letter-btn${showRomanTiles ? ' barakhadi-letter-btn' : ''}${isExtraAnunasika ? ' varnamala-letter-btn--extra' : ''}`}
                     onClick={() => onWordClick(letter)}
-                    aria-label={`Play pronunciation for ${letter}${showRomanTiles ? ` (${tileLabel(letter)})` : ''}`}
+                    aria-label={`Play pronunciation for ${letter}${isExtraAnunasika ? ' (optional, for later)' : ''}${showRomanTiles ? ` (${tileLabel(letter)})` : ''}`}
+                    title={isExtraAnunasika ? 'Candrabindu — optional for beginners, learn later' : undefined}
                   >
                     <span className="barakhadi-dev">{letter}</span>
                     {showRomanTiles ? (
                       <small className="barakhadi-roman">{tileLabel(letter)}</small>
                     ) : null}
+                    {isExtraAnunasika ? (
+                      <small className="varnamala-letter-note">extra · later</small>
+                    ) : null}
                   </button>
-                ))}
+                  );
+                })}
               </div>
               <p className="varnamala-row-description">{group.sanskrit}</p>
             </div>
