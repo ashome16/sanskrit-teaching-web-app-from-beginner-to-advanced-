@@ -89,11 +89,12 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   } else {
     utterance.lang = voice?.lang || 'hi-IN';
   }
-  // औ: slower diphthong; घ: gha a touch slower.
+  // औ/ऐ: slower diphthong; घ: gha a touch slower.
   // छ uses Devanagari + Hindi voice (roman chhha was letter-spelled as C-A).
   // ञ uses a two-beat contour in playPronunciation (fast en + slow ya).
   // Any word ending in visarga (ः): speak the whole word slowly so the echo is clear.
   const isAu = word === 'औ' || speech === 'au' || speech === 'gaau' || /aau$/i.test(speech);
+  const isAi = word === 'ऐ' || speech === 'ai' || speech === 'ghaai' || /aai$/i.test(speech);
   const isGha = word === 'घ' || speech === 'gha';
   const isChha = word === 'छ' || speech === 'छ';
   const isTtha = word === 'ठ' || speech === 'ठ';
@@ -119,7 +120,7 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
           ? 0.72
           : isVisargaWord
             ? 0.45
-            : isAu
+            : isAu || isAi
               ? 0.45
               : isGha
                 ? 0.75
