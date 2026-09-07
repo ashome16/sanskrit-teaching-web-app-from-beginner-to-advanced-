@@ -272,6 +272,20 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'गौ': [{ word: 'गौः', gloss: 'cow' }, { word: 'गौरवम्', gloss: 'honour / glory' }],
   'गं': [{ word: 'गंगा', gloss: 'Ganga' }, { word: 'गंधः', gloss: 'fragrance' }],
   'गः': [{ word: 'नागः', gloss: 'serpent / naga' }, { word: 'भागः', gloss: 'share / portion' }, { word: 'योगः', gloss: 'yoga / union' }],
+  // घ-row (bare घ stays in CONSONANT_EXAMPLES)
+  'घा': [{ word: 'घाटः', gloss: 'river bank / landing' }, { word: 'आघातः', gloss: 'blow / impact' }, { word: 'घातः', gloss: 'strike / blow' }],
+  'घि': [{ word: 'दीर्घिका', gloss: 'pond / long pool' }, { word: 'परिघिः', gloss: 'rim / circumference (rare)' }],
+  'घी': [{ word: 'घी', gloss: 'ghee (clarified butter)' }, { word: 'दीर्घी', gloss: 'long (feminine)' }],
+  'घु': [{ word: 'घुणः', gloss: 'wood-insect' }, { word: 'घुसृणम्', gloss: 'saffron' }],
+  'घू': [{ word: 'घूकः', gloss: 'owl' }],
+  'घृ': [{ word: 'घृतम्', gloss: 'ghee' }, { word: 'घृणा', gloss: 'disgust / aversion' }],
+  // घे / घै / घौ: few headwords — case / dual forms (same pattern as खे / खै / खौ)
+  'घे': [{ word: 'मेघेन', gloss: 'by the cloud' }, { word: 'संघेन', gloss: 'by the group' }],
+  'घै': [{ word: 'मेघैः', gloss: 'with clouds' }, { word: 'संघैः', gloss: 'with groups' }],
+  'घो': [{ word: 'घोषः', gloss: 'roar / loud sound' }, { word: 'घोटकः', gloss: 'horse' }],
+  'घौ': [{ word: 'मेघौ', gloss: 'two clouds' }, { word: 'संघौ', gloss: 'two groups' }],
+  'घं': [{ word: 'घंटा', gloss: 'bell' }, { word: 'संघं', gloss: 'group / union (object form)' }],
+  'घः': [{ word: 'मेघः', gloss: 'cloud' }, { word: 'संघः', gloss: 'group / union' }, { word: 'उल्लाघः', gloss: 'recovered / healthy' }],
 };
 
 
