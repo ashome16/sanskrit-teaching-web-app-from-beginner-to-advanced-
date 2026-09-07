@@ -230,7 +230,16 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'कौ': [{ word: 'कौशलम्', gloss: 'skill' }, { word: 'कौशिकः', gloss: 'owl / Kaushika' }, { word: 'कौस्तुभः', gloss: 'Kaustubha jewel' }],
   'कं': [{ word: 'कंसः', gloss: 'Kamsa' }, { word: 'कंबलः', gloss: 'blanket' }, { word: 'अंकः', gloss: 'number' }],
   'कः': [{ word: 'कः', gloss: 'who' }, { word: 'बालकः', gloss: 'boy' }, { word: 'नायकः', gloss: 'hero' }],
+  'ख': [{ word: 'खगः', gloss: 'bird' }, { word: 'खड्गः', gloss: 'sword' }, { word: 'खट्वा', gloss: 'cot / bed' }],
+  'खा': [{ word: 'खादति', gloss: 'eats' }, { word: 'शाखा', gloss: 'branch' }, { word: 'खातम्', gloss: 'pit / pond' }],
+  'खि': [{ word: 'शिखी', gloss: 'peacock' }, { word: 'लेखिका', gloss: 'writer' }, { word: 'खिन्नः', gloss: 'sad / tired' }],
+  'खी': [{ word: 'सखी', gloss: 'friend (girl)' }, { word: 'सुखी', gloss: 'happy' }, { word: 'नखी', gloss: 'clawed' }],
+  'खु': [{ word: 'खुरः', gloss: 'hoof' }, { word: 'आखुः', gloss: 'mouse' }],
+  'खे': [{ word: 'खेलति', gloss: 'plays' }, { word: 'लेखः', gloss: 'a writing' }, { word: 'मुखेन', gloss: 'by the mouth' }],
+  'खं': [{ word: 'खं', gloss: 'sky / space' }, { word: 'सुखं', gloss: 'happiness' }],
+  'खः': [{ word: 'नखः', gloss: 'nail' }, { word: 'शिखः', gloss: 'crest / flame-tip' }],
 };
+
 
 export const examplesForVowel = (vowel: string): VowelExample[] => {
   const clean = vowel.normalize('NFC').trim();
@@ -297,8 +306,8 @@ export const baseAksharaForExamples = (akshara: string): string => {
 export const examplesForAkshara = (akshara: string): VowelExample[] => {
   const clean = devanagariOnly(akshara);
   if (VOWEL_EXAMPLES[clean]?.length) return VOWEL_EXAMPLES[clean];
-  if (CONSONANT_EXAMPLES[clean]?.length) return CONSONANT_EXAMPLES[clean];
   if (BARAKHADI_EXAMPLES[clean]?.length) return BARAKHADI_EXAMPLES[clean];
+  if (CONSONANT_EXAMPLES[clean]?.length) return CONSONANT_EXAMPLES[clean];
   if (isBarakhadiAkshara(clean) && clean.length > 1) return examplesMatchingTile(clean);
   return [];
 };
