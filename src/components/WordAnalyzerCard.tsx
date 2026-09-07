@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import type { SanskritWordBreakdown } from '../types/linguistics';
 import { searchSanskritWords } from '../data/sanskrit-words';
 import { extractLinguisticInfo } from '../utils/linguistics';
-import { playPronunciation, setSharedSpeechRate } from '../utils/pronunciation';
+import { playPronunciation } from '../utils/pronunciation';
 import { examplesForVowel, isIndependentVowel } from '../data/vowelExamples';
 import { formatCaseLabel } from '../data/vibhakti';
 import {
@@ -22,9 +22,6 @@ export interface WordSelection {
 interface WordAnalyzerCardProps {
   selection: WordSelection | null;
 }
-
-// Preset playback speeds offered next to the speaker icon.
-const SPEED_PRESETS = [0.35, 0.7, 1] as const;
 
 // Strips whitespace/punctuation plus Devanagari digits and hyphens (e.g. the
 // numbers guide's "० - शून्यम्" button labels) so only the word itself is analyzed.
@@ -61,7 +58,6 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
   const [analysis, setAnalysis] = useState<{ word: SanskritWordBreakdown; isCustom: boolean } | null>(
     null
   );
-  const [speechRate, setSpeechRate] = useState<number>(1);
   const [glosses, setGlosses] = useState<AnalyseRegistry>({});
 
   useEffect(() => {
@@ -118,7 +114,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
     const result = findWord(example);
     setAnalysis(result);
     setInputValue(cleanWord(example));
-    playPronunciation(example, speechRate);
+    playPronunciation(example);
   };
 
   return (
@@ -163,7 +159,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
             <button
               type="button"
               className="wac-devanagari-btn"
-              onClick={() => playPronunciation(word.devanagari, speechRate)}
+              onClick={() => playPronunciation(word.devanagari)}
               aria-label={`Play pronunciation for ${word.devanagari}`}
             >
               {word.devanagari}
@@ -171,25 +167,12 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
             <button
               type="button"
               className="wac-speaker-btn"
-              onClick={() => playPronunciation(word.devanagari, speechRate)}
+              onClick={() => playPronunciation(word.devanagari)}
               aria-label={`Play pronunciation for ${word.devanagari}`}
               title="Play pronunciation"
             >
               🔊
             </button>
-            <div className="wac-speed-controls" role="group" aria-label="Playback speed">
-              {SPEED_PRESETS.map((preset) => (
-                <button
-                  key={preset}
-                  type="button"
-                  className={`wac-speed-btn${speechRate === preset ? ' wac-speed-btn--active' : ''}`}
-                  onClick={() => { setSpeechRate(preset); setSharedSpeechRate(preset); }}
-                  aria-pressed={speechRate === preset}
-                >
-                  {preset}x
-                </button>
-              ))}
-            </div>
           </div>
 
           {vowelExamples.length > 0 && (

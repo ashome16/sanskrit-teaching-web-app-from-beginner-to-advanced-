@@ -79,33 +79,10 @@ const pickPreferredVoice = (): SpeechSynthesisVoice | undefined => {
   );
 };
 
-/** Shared Analyse / Deepakam playback speed (0.35 · 0.7 · 1). */
-let sharedSpeechRate = 1;
-export const setSharedSpeechRate = (rate: number): void => {
-  sharedSpeechRate = rate;
-};
-export const getSharedSpeechRate = (): number => sharedSpeechRate;
+/** Default playback rate (1x). Slow presets were removed. */
+const DEFAULT_RATE = 1;
 
-/** Stretch Slow vs Fast for tiny roman cues (uh / aaah) so kids can hear the gap. */
-const effectiveRateForCue = (requested: number, isShortRomanCue: boolean): number => {
-  if (!isShortRomanCue) return requested;
-  if (requested <= 0.4) return 0.2;
-  if (requested <= 0.75) return 0.55;
-  return 0.95;
-};
-
-export const playPronunciation = (value: string, rate?: number): void => {
-  const word = cleanWord(value) || value.trim();
-  if (!word || !isSanskritText(word) || typeof window === 'undefined' || !window.speechSynthesis) {
-    return;
-  }
-
-  const requestedRate = rate ?? sharedSpeechRate;
-  window.speechSynthesis.cancel();
-  const speech = toSpeechText(word);
-  const isShortRomanCue = isBarakhadiAkshara(word) && /^[a-z\-]+$/i.test(speech);
-  const playRate = effectiveRateForCue(requestedRate, isShortRomanCue);
-  const utterance = new SpeechSynthesisUtterance(speech);
+const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, speech: string): void => {
   const voice = pickPreferredVoice();
   utterance.voice = voice || null;
   // Roman cues for बारहखड़ी work better with an English voice; Hindi for longer Sanskrit.
@@ -120,11 +97,85 @@ export const playPronunciation = (value: string, rate?: number): void => {
     } else {
       utterance.lang = 'en-IN';
     }
-    // Honor the Analyse speed preset (was capped at 0.75 so 0.75x and 1x sounded identical).
-    utterance.rate = playRate;
   } else {
     utterance.lang = voice?.lang || 'hi-IN';
-    utterance.rate = playRate;
   }
+  utterance.rate = DEFAULT_RATE;
+};
+
+export const stopPronunciation = (): void => {
+  if (typeof window === 'undefined' || !window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+};
+
+export const playPronunciation = (value: string): void => {
+  const word = cleanWord(value) || value.trim();
+  if (!word || !isSanskritText(word) || typeof window === 'undefined' || !window.speechSynthesis) {
+    return;
+  }
+
+  stopPronunciation();
+  const speech = toSpeechText(word);
+  const utterance = new SpeechSynthesisUtterance(speech);
+  configureUtterance(utterance, word, speech);
   window.speechSynthesis.speak(utterance);
+};
+
+/** Speak a list of words/letters in order. Returns stop(). */
+export const playSequence = (
+  values: string[],
+  options?: { gapMs?: number; onDone?: () => void },
+): (() => void) => {
+  const gapMs = options?.gapMs ?? 220;
+  const items = values
+    .map((value) => cleanWord(value) || value.trim())
+    .filter((word) => word && isSanskritText(word));
+
+  if (!items.length || typeof window === 'undefined' || !window.speechSynthesis) {
+    options?.onDone?.();
+    return () => undefined;
+  }
+
+  let cancelled = false;
+  let timer: ReturnType<typeof setTimeout> | null = null;
+  let index = 0;
+
+  const clearTimer = () => {
+    if (timer !== null) {
+      clearTimeout(timer);
+      timer = null;
+    }
+  };
+
+  const stop = () => {
+    cancelled = true;
+    clearTimer();
+    stopPronunciation();
+  };
+
+  const speakNext = () => {
+    if (cancelled) return;
+    if (index >= items.length) {
+      options?.onDone?.();
+      return;
+    }
+    const word = items[index];
+    index += 1;
+    const speech = toSpeechText(word);
+    const utterance = new SpeechSynthesisUtterance(speech);
+    configureUtterance(utterance, word, speech);
+    utterance.onend = () => {
+      if (cancelled) return;
+      timer = setTimeout(speakNext, gapMs);
+    };
+    utterance.onerror = () => {
+      if (cancelled) return;
+      timer = setTimeout(speakNext, gapMs);
+    };
+    window.speechSynthesis.speak(utterance);
+  };
+
+  stopPronunciation();
+  speakNext();
+  return stop;
 };

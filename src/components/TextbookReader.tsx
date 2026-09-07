@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import type { Lesson, LessonSentence } from '../types/chapters';
 import { aksharaLabel, varnamalaLabel } from '../utils/barakhadiPhonetics';
-import { getSharedSpeechRate, setSharedSpeechRate } from '../utils/pronunciation';
+import { playSequence, stopPronunciation } from '../utils/pronunciation';
 import '../styles/textbook-reader.css';
 
 interface TextbookReaderProps {
@@ -24,8 +24,6 @@ const CONJUNCT_GAMES = [
   { id: 'game2', title: 'Game 2 · Piggyback Ride', src: './conjunct-game2.jpg', alt: 'Piggyback stacking game' },
   { id: 'game3', title: 'Game 3 · Superhero Shape-Shifters', src: './conjunct-game3.jpg', alt: 'Superhero shape-shifters' },
 ];
-
-const SPEED_PRESETS = [0.35, 0.7, 1] as const;
 
 type SectionJump = { index: number; label: string };
 
@@ -67,9 +65,71 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     activeLessonId === 'varnamala' ? varnamalaLabel(letter) : aksharaLabel(letter);
   const [isChartOpen, setIsChartOpen] = useState(false);
   const [openGames, setOpenGames] = useState<Record<string, boolean>>({ game1: true });
-  const [readerSpeechRate, setReaderSpeechRate] = useState(getSharedSpeechRate);
+  const [isPlayingAll, setIsPlayingAll] = useState(false);
+  const stopPlayAllRef = useRef<(() => void) | null>(null);
   const toggleGame = (id: string) =>
     setOpenGames((prev) => ({ ...prev, [id]: !prev[id] }));
+
+  const stopPlayAll = () => {
+    stopPlayAllRef.current?.();
+    stopPlayAllRef.current = null;
+    stopPronunciation();
+    setIsPlayingAll(false);
+  };
+
+  useEffect(() => () => {
+    stopPlayAllRef.current?.();
+    stopPronunciation();
+  }, []);
+
+  useEffect(() => {
+    // New page / lesson: stop any running Play-all.
+    stopPlayAll();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeLessonId, sentenceNumber]);
+
+  const collectPlayAllItems = (): string[] => {
+    if (isSamyukta) return [];
+    if (isGroupedLesson && activeLesson) {
+      return activeLesson.sentences.flatMap((group) => group.words || []);
+    }
+    if (sentence.words?.length) return [...sentence.words];
+    // Fallback: split visible Sanskrit from the paragraph.
+    return (sentence.sanskrit || '')
+      .split(/\s+/)
+      .map((part) => part.replace(/[॥।,;:!?—–\-…\/()]+/g, ''))
+      .filter((part) => /[\u0900-\u097F]/.test(part));
+  };
+
+  const handlePlayAll = () => {
+    if (isPlayingAll) {
+      stopPlayAll();
+      return;
+    }
+    const items = collectPlayAllItems();
+    if (!items.length) return;
+    setIsPlayingAll(true);
+    stopPlayAllRef.current = playSequence(items, {
+      gapMs: 240,
+      onDone: () => {
+        stopPlayAllRef.current = null;
+        setIsPlayingAll(false);
+      },
+    });
+  };
+
+  const handlePlayGroup = (words: string[]) => {
+    stopPlayAll();
+    if (!words.length) return;
+    setIsPlayingAll(true);
+    stopPlayAllRef.current = playSequence(words, {
+      gapMs: 240,
+      onDone: () => {
+        stopPlayAllRef.current = null;
+        setIsPlayingAll(false);
+      },
+    });
+  };
   const sectionJumps = buildSectionJumps(activeLesson);
   const currentJumpIndex = (() => {
     if (!sectionJumps.length) return 0;
@@ -163,23 +223,21 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           </p>
         )}
 
-        {showRomanTiles && (
-          <div className="textbook-speed-row" role="group" aria-label="Playback speed">
-            <span className="textbook-glossary-hint">Speed</span>
-            {SPEED_PRESETS.map((preset) => (
-              <button
-                key={preset}
-                type="button"
-                className={`textbook-speed-btn${readerSpeechRate === preset ? ' textbook-speed-btn--active' : ''}`}
-                onClick={() => {
-                  setReaderSpeechRate(preset);
-                  setSharedSpeechRate(preset);
-                }}
-                aria-pressed={readerSpeechRate === preset}
-              >
-                {preset}x
-              </button>
-            ))}
+        {!isSamyukta && (
+          <div className="textbook-playall-row">
+            <button
+              type="button"
+              className={`textbook-playall-btn${isPlayingAll ? ' textbook-playall-btn--active' : ''}`}
+              onClick={handlePlayAll}
+              aria-pressed={isPlayingAll}
+            >
+              {isPlayingAll ? '⏹ Stop' : '▶ Play all'}
+            </button>
+            <span className="textbook-glossary-hint">
+              {isGroupedLesson
+                ? 'Hear every letter on this chart, in order.'
+                : 'Hear every word on this page, in order.'}
+            </span>
           </div>
         )}
         {!isGroupedLesson && (
@@ -256,6 +314,15 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             >
               <div className="varnamala-row-header">
                 <span className="varnamala-row-label">{group.meaning || group.category}</span>
+                <button
+                  type="button"
+                  className="textbook-playrow-btn"
+                  onClick={() => handlePlayGroup(group.words || [])}
+                  aria-label={`Play all letters in ${group.meaning || group.category || 'this row'}`}
+                  title="Play this row"
+                >
+                  ▶
+                </button>
               </div>
               <div className="varnamala-row-letters">
                 {group.words.map((letter, letterIdx) => (
