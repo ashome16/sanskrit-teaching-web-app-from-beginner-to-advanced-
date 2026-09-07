@@ -235,25 +235,27 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 
       {isGroupedLesson && activeLesson ? (
         <div className="varnamala-groups">
-          {isVarnamala && (
+          {(isVarnamala || activeLessonId === 'barakhadi') && (
             <div className="varnamala-chart-toggle-wrap">
               <button
                 type="button"
                 className="varnamala-chart-toggle"
                 onClick={() => setIsChartOpen((open) => !open)}
                 aria-expanded={isChartOpen}
-                aria-controls="varnamala-chart-panel"
+                aria-controls={`${activeLessonId}-chart-panel`}
               >
-                🗺️ View Alphabet Pronunciation Reference Chart
+                {activeLessonId === 'barakhadi'
+                  ? '🗺️ View बारहखड़ी Complete Chart'
+                  : '🗺️ View Alphabet Pronunciation Reference Chart'}
                 <span className="varnamala-chart-toggle-arrow">{isChartOpen ? '▲' : '▼'}</span>
               </button>
               <div
-                id="varnamala-chart-panel"
+                id={`${activeLessonId}-chart-panel`}
                 className={`varnamala-chart-panel${isChartOpen ? ' varnamala-chart-panel--open' : ''}`}
               >
                 <img
-                  src="./image1.jpg"
-                  alt="Sanskrit Pronunciation Chart"
+                  src={activeLessonId === 'barakhadi' ? './barakhadi-chart.png' : './image1.jpg'}
+                  alt={activeLessonId === 'barakhadi' ? 'बारहखड़ी complete chart' : 'Sanskrit Pronunciation Chart'}
                   className="varnamala-chart-image"
                   loading="lazy"
                 />
