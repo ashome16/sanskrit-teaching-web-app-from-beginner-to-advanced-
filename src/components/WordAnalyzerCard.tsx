@@ -4,6 +4,7 @@ import { searchSanskritWords } from '../data/sanskrit-words';
 import { extractLinguisticInfo } from '../utils/linguistics';
 import { playPronunciation } from '../utils/pronunciation';
 import { examplesForAkshara, baseAksharaForExamples, devanagariOnly } from '../data/vowelExamples';
+import { isBarakhadiAkshara } from '../utils/barakhadiPhonetics';
 import { iconForExampleWord } from '../data/exampleIcons';
 import { formatCaseLabel } from '../data/vibhakti';
 import {
@@ -79,7 +80,11 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
       const result = findWord(selection.text);
       setAnalysis(result);
       const tip = devanagariOnly(cleaned);
-      setSoundAnchor(examplesForAkshara(tip).length > 0 ? baseAksharaForExamples(tip) : null);
+      // Keep barakhadi tiles anchored even when examples are scarce (rare matras).
+      const hasExamples = examplesForAkshara(tip).length > 0;
+      setSoundAnchor(
+        hasExamples || isBarakhadiAkshara(tip) ? baseAksharaForExamples(tip) : null
+      );
     }
   }, [selection?.nonce]);
 
@@ -142,7 +147,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
             </button>
           </div>
 
-          {vowelExamples.length > 0 && (
+          {soundAnchor && vowelExamples.length > 0 && (
             <section className="wac-section">
               <h3 className="wac-section-title">Words with this akṣara</h3>
               <p className="wac-placeholder" style={{ marginBottom: '.5rem' }}>
@@ -164,6 +169,15 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
                   </button>
                 ))}
               </div>
+            </section>
+          )}
+
+          {soundAnchor && vowelExamples.length === 0 && isBarakhadiAkshara(soundAnchor) && (
+            <section className="wac-section">
+              <h3 className="wac-section-title">Words with this akṣara</h3>
+              <p className="wac-placeholder">
+                Rare akṣara — few everyday Sanskrit words use this exact letter. Learn the sound first; example words are scarce.
+              </p>
             </section>
           )}
 

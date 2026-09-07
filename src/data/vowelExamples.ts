@@ -235,12 +235,28 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'खि': [{ word: 'शिखी', gloss: 'peacock' }, { word: 'लेखिका', gloss: 'writer' }, { word: 'खिन्नः', gloss: 'sad / tired' }],
   'खी': [{ word: 'सखी', gloss: 'friend (girl)' }, { word: 'सुखी', gloss: 'happy' }, { word: 'नखी', gloss: 'clawed' }],
   'खु': [{ word: 'खुरः', gloss: 'hoof' }, { word: 'आखुः', gloss: 'mouse' }],
-  'खू': [{ word: 'खूर्दति', gloss: 'jumps / plays' }],
-  // खृ: no honest kid-familiar Sanskrit word contains exact खृ — left empty on purpose
+  'खू': [
+    { word: 'खूर्दति', gloss: 'jumps / plays (kid verb)' },
+  ],
+  // खृ: almost no everyday Sanskrit lexeme — teaching placeholder so Analyse is not blank
+  'खृ': [
+    { word: 'खृ', gloss: 'rare akṣara — few everyday words · Aryabhata number 20,00,000' },
+  ],
   'खे': [{ word: 'खेलति', gloss: 'plays' }, { word: 'लेखः', gloss: 'a writing' }, { word: 'मुखेन', gloss: 'by the mouth' }],
-  'खै': [{ word: 'नखैः', gloss: 'with nails' }, { word: 'सुखैः', gloss: 'with joys' }],
-  'खो': [{ word: 'खोदति', gloss: 'digs' }, { word: 'मुखो', gloss: 'face (sandhi form)' }, { word: 'शिखोपरि', gloss: 'on the crest' }],
-  'खौ': [{ word: 'नखौ', gloss: 'two nails' }, { word: 'शिखौ', gloss: 'two crests' }],
+  'खै': [
+    { word: 'नखैः', gloss: 'with nails / claws' },
+    { word: 'सुखैः', gloss: 'with joys / comforts' },
+    { word: 'मुखैः', gloss: 'with faces / mouths' },
+  ],
+  'खो': [
+    { word: 'खोदति', gloss: 'digs (in the ground)' },
+    { word: 'शिखोपरि', gloss: 'on the peak / crest' },
+    { word: 'मुखो', gloss: 'face (before sandhi vowel)' },
+  ],
+  'खौ': [
+    { word: 'नखौ', gloss: 'two nails (a pair)' },
+    { word: 'शिखौ', gloss: 'two crests / peaks' },
+  ],
   'खं': [{ word: 'खं', gloss: 'sky / space' }, { word: 'सुखं', gloss: 'happiness' }],
   'खः': [{ word: 'नखः', gloss: 'nail' }, { word: 'शिखः', gloss: 'crest / flame-tip' }],
   // ग-row (bare ग stays in CONSONANT_EXAMPLES)
