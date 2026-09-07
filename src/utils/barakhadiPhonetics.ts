@@ -47,6 +47,9 @@ const CONJUNCTS: Record<string, string> = {
 export const barakhadiLabel = (akshara: string): string => {
   const clean = akshara.normalize('NFC').trim();
   if (!clean) return '';
+  // Explicit diphthong labels: kids see/hear gaau / ghaai (not gau / ghai).
+  if (clean === 'गौ') return 'gaau';
+  if (clean === 'घै') return 'ghaai';
   if (INDEPENDENT_VOWELS[clean]) return INDEPENDENT_VOWELS[clean];
   if (CONJUNCTS[clean]) return CONJUNCTS[clean];
 
@@ -87,7 +90,9 @@ export const barakhadiSpeechText = (akshara: string): string => {
     u: 'ooh', oo: 'ooooh',
     e: 'yay', ai: 'ai', o: 'o', au: 'au',
     gau: 'gaau',
+    gaau: 'gaau',
     ghai: 'ghaai',
+    ghaai: 'ghaai',
     ri: 'rih', rii: 'reee', ree: 'reee',
     nga: 'unga', ngaa: 'ng-aa', ngi: 'ng-i', ngee: 'ng-ee', ngu: 'ngooh', ngoo: 'ngooooh',
     nge: 'ng-e', ngai: 'ng-ai', ngo: 'ng-o', ngau: 'ng-au', ngam: 'ng-am', ngah: 'ng-ah', ngru: 'ng-ru',
@@ -241,7 +246,9 @@ export const varnamalaSpeechText = (akshara: string): string => {
     u: 'ooh', oo: 'ooooh',
     e: 'yay', ai: 'ai', o: 'o', au: 'au',
     gau: 'gaau',
+    gaau: 'gaau',
     ghai: 'ghaai',
+    ghaai: 'ghaai',
     ri: 'rih', rii: 'reee', ree: 'reee',
     gha: 'gha',
     nga: 'unga', nya: 'enya', chha: 'chha',
