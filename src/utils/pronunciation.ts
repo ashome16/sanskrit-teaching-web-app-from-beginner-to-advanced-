@@ -105,8 +105,8 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   const isAu = word === 'औ' || speech === 'au';
   const isGha = word === 'घ' || speech === 'gha';
   const isChha = word === 'छ' || speech === 'छ';
-  // ञ: cue 'n ya' (spaced, so it won't glue into one mushy syllable).
-  const isNya = word === 'ञ' || speech === 'n ya';
+  // ञ: cue 'nya' (trimmed leading e from enya).
+  const isNya = word === 'ञ' || speech === 'nya';
   utterance.rate = isAu ? 0.45 : isGha ? 0.75 : isChha ? 0.9 : isNya ? 0.7 : DEFAULT_RATE;
   utterance.pitch = isNya ? 0.85 : 1;
 };
