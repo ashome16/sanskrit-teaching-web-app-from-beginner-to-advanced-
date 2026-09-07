@@ -92,21 +92,25 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   // औ: slower diphthong; घ: gha a touch slower.
   // छ uses Devanagari + Hindi voice (roman chhha was letter-spelled as C-A).
   // ञ uses a two-beat contour in playPronunciation (fast en + slow ya).
+  // Any word ending in visarga (ः): speak the whole word slowly so the echo is clear.
   const isAu = word === 'औ' || speech === 'au';
   const isGha = word === 'घ' || speech === 'gha';
   const isChha = word === 'छ' || speech === 'छ';
+  const isVisargaWord = word.endsWith('ः');
   // गङ्गा / रङ्गः / अङ्गम्: original roman cues, extended slowly + full volume.
   const isNgaWord =
     speech === 'gun ga' || speech === 'run ga' || speech === 'an gam';
   utterance.rate = isNgaWord
     ? 0.42
-    : isAu
+    : isVisargaWord
       ? 0.45
-      : isGha
-        ? 0.75
-        : isChha
-          ? 0.9
-          : DEFAULT_RATE;
+      : isAu
+        ? 0.45
+        : isGha
+          ? 0.75
+          : isChha
+            ? 0.9
+            : DEFAULT_RATE;
   utterance.pitch = isNgaWord ? 1.15 : 1;
   utterance.volume = 1;
 };
