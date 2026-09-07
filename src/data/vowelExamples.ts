@@ -30,6 +30,16 @@ export const VOWEL_EXAMPLES: Record<string, VowelExample[]> = {
 
 /** Consonant tiles (Varṇamālā) — familiar words that carry the sound. */
 export const CONSONANT_EXAMPLES: Record<string, VowelExample[]> = {
+  'क': [
+    { word: 'कमलम्', gloss: 'lotus' },
+    { word: 'काकः', gloss: 'crow' },
+    { word: 'करः', gloss: 'hand' },
+  ],
+  'ख': [
+    { word: 'खगः', gloss: 'bird' },
+    { word: 'मुखम्', gloss: 'face / mouth' },
+    { word: 'दुःखम्', gloss: 'sorrow' },
+  ],
   'ग': [
     { word: 'गजः', gloss: 'elephant' },
     { word: 'गुरुः', gloss: 'teacher' },
@@ -41,6 +51,11 @@ export const CONSONANT_EXAMPLES: Record<string, VowelExample[]> = {
     { word: 'घटः', gloss: 'pot' },
     { word: 'मेघः', gloss: 'cloud' },
     { word: 'घृतम्', gloss: 'ghee' },
+  ],
+  'ङ': [
+    { word: 'अङ्गम्', gloss: 'limb / body' },
+    { word: 'गङ्गा', gloss: 'Ganga' },
+    { word: 'रङ्गः', gloss: 'color / stage' },
   ],
 };
 
