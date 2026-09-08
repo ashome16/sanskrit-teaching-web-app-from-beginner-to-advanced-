@@ -87,6 +87,10 @@ export const CONSONANT_EXAMPLES: Record<string, VowelExample[]> = {
     { word: 'पञ्च', gloss: 'five' },
     { word: 'ज्ञानम्', gloss: 'knowledge' },
     { word: 'अञ्जलिः', gloss: 'joined palms' },
+    { word: 'अञ्जनम्', gloss: 'collyrium / kajal' },
+    { word: 'कुञ्जरः', gloss: 'elephant' },
+    { word: 'मञ्जरी', gloss: 'blossom cluster' },
+    { word: 'किञ्चित्', gloss: 'a little' },
   ],
   'ट': [
     { word: 'पटः', gloss: 'cloth' },
@@ -381,6 +385,32 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'झौ': [{ word: 'झौ', gloss: 'two झ ones (dual — rare teaching form)' }, { word: 'झौलिकम्', gloss: 'small bag (rare)' }],
   'झं': [{ word: 'झंकारः', gloss: 'jingle / buzz (of bees)' }, { word: 'झंपः', gloss: 'jump / leap' }, { word: 'झंपा', gloss: 'a jump' }],
   'झः': [{ word: 'झः', gloss: 'jingle / Bṛhaspati (lexicon)' }],
+  // cache-bust 2026-09-08c
+  // ञ-row — exact akṣara only here. Everyday Sanskrit almost never has open
+  // ञा/ञि/…; family kid-words with ञ् live in BARAKHADI_RELATED (not "exact letter").
+  // Bare ञ mirrored from CONSONANT_EXAMPLES (ज्ञानम् kept; यज्ञः is ज्ञ — skip).
+  'ञ': [
+    { word: 'पञ्च', gloss: 'five' },
+    { word: 'ज्ञानम्', gloss: 'knowledge' },
+    { word: 'अञ्जलिः', gloss: 'joined palms' },
+    { word: 'अञ्जनम्', gloss: 'collyrium / kajal' },
+    { word: 'कुञ्जरः', gloss: 'elephant' },
+    { word: 'मञ्जरी', gloss: 'blossom cluster' },
+    { word: 'किञ्चित्', gloss: 'a little' },
+  ],
+  // Self-tile teaching placeholders (exact empty of real lexemes) — card uses RELATED.
+  'ञा': [{ word: 'ञा', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
+  'ञि': [{ word: 'ञि', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
+  'ञी': [{ word: 'ञी', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
+  'ञु': [{ word: 'ञु', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
+  'ञू': [{ word: 'ञू', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
+  'ञृ': [{ word: 'ञृ', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
+  'ञे': [{ word: 'ञे', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
+  'ञै': [{ word: 'ञै', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
+  'ञो': [{ word: 'ञो', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
+  'ञौ': [{ word: 'ञौ', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
+  'ञं': [{ word: 'ञं', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
+  'ञः': [{ word: 'ञः', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
 };
 
 
@@ -458,6 +488,79 @@ export const BARAKHADI_RELATED: Record<string, VowelExample[]> = {
     { word: 'शङ्खः', gloss: 'related · ङ as ङ् · conch' },
     { word: 'अङ्गम्', gloss: 'related · ङ as ङ् · limb / body' },
     { word: 'गङ्गा', gloss: 'related · ङ as ङ् · Ganga' },
+  ],
+  // ञ-row — family kid-words write ञ as ञ् (not open ञा/ञि/…). Stick to ञ्, not ज्ञ.
+  'ञा': [
+    { word: 'पञ्च', gloss: 'related · ञ as ञ् · five' },
+    { word: 'अञ्जलिः', gloss: 'related · ञ as ञ् · joined palms' },
+    { word: 'अञ्जनम्', gloss: 'related · ञ as ञ् · collyrium' },
+    { word: 'कुञ्जरः', gloss: 'related · ञ as ञ् · elephant' },
+  ],
+  'ञि': [
+    { word: 'किञ्चित्', gloss: 'related · ञ as ञ् · a little' },
+    { word: 'मञ्जरी', gloss: 'related · ञ as ञ् · blossom cluster' },
+    { word: 'पञ्च', gloss: 'related · ञ as ञ् · five' },
+    { word: 'अञ्जलिः', gloss: 'related · ञ as ञ् · joined palms' },
+  ],
+  'ञी': [
+    { word: 'मञ्जरी', gloss: 'related · ञ as ञ् · blossom cluster' },
+    { word: 'कुञ्जरः', gloss: 'related · ञ as ञ् · elephant' },
+    { word: 'अञ्जनम्', gloss: 'related · ञ as ञ् · collyrium' },
+    { word: 'पञ्जरम्', gloss: 'related · ञ as ञ् · cage' },
+  ],
+  'ञु': [
+    { word: 'कुञ्जरः', gloss: 'related · ञ as ञ् · elephant' },
+    { word: 'पञ्जरम्', gloss: 'related · ञ as ञ् · cage' },
+    { word: 'मञ्जुः', gloss: 'related · ञ as ञ् · sweet / lovely' },
+    { word: 'अञ्जलिः', gloss: 'related · ञ as ञ् · joined palms' },
+  ],
+  'ञू': [
+    { word: 'पञ्च', gloss: 'related · ञ as ञ् · five' },
+    { word: 'किञ्चित्', gloss: 'related · ञ as ञ् · a little' },
+    { word: 'मञ्जरी', gloss: 'related · ञ as ञ् · blossom cluster' },
+    { word: 'कुञ्जरः', gloss: 'related · ञ as ञ् · elephant' },
+  ],
+  'ञृ': [
+    { word: 'अञ्जनम्', gloss: 'related · ञ as ञ् · collyrium' },
+    { word: 'पञ्जरम्', gloss: 'related · ञ as ञ् · cage' },
+    { word: 'अञ्जलिः', gloss: 'related · ञ as ञ् · joined palms' },
+    { word: 'पञ्च', gloss: 'related · ञ as ञ् · five' },
+  ],
+  'ञे': [
+    { word: 'मञ्जरी', gloss: 'related · ञ as ञ् · blossom cluster' },
+    { word: 'अञ्जलिः', gloss: 'related · ञ as ञ् · joined palms' },
+    { word: 'किञ्चित्', gloss: 'related · ञ as ञ् · a little' },
+    { word: 'कुञ्जरः', gloss: 'related · ञ as ञ् · elephant' },
+  ],
+  'ञै': [
+    { word: 'पञ्जरम्', gloss: 'related · ञ as ञ् · cage' },
+    { word: 'अञ्जनम्', gloss: 'related · ञ as ञ् · collyrium' },
+    { word: 'मञ्जुः', gloss: 'related · ञ as ञ् · sweet / lovely' },
+    { word: 'पञ्च', gloss: 'related · ञ as ञ् · five' },
+  ],
+  'ञो': [
+    { word: 'कुञ्जरः', gloss: 'related · ञ as ञ् · elephant' },
+    { word: 'पञ्च', gloss: 'related · ञ as ञ् · five' },
+    { word: 'मञ्जरी', gloss: 'related · ञ as ञ् · blossom cluster' },
+    { word: 'अञ्जलिः', gloss: 'related · ञ as ञ् · joined palms' },
+  ],
+  'ञौ': [
+    { word: 'किञ्चित्', gloss: 'related · ञ as ञ् · a little' },
+    { word: 'पञ्जरम्', gloss: 'related · ञ as ञ् · cage' },
+    { word: 'अञ्जनम्', gloss: 'related · ञ as ञ् · collyrium' },
+    { word: 'मञ्जरी', gloss: 'related · ञ as ञ् · blossom cluster' },
+  ],
+  'ञं': [
+    { word: 'पञ्च', gloss: 'related · ञ as ञ् · five' },
+    { word: 'अञ्जनम्', gloss: 'related · ञ as ञ् · collyrium' },
+    { word: 'कुञ्जरः', gloss: 'related · ञ as ञ् · elephant' },
+    { word: 'किञ्चित्', gloss: 'related · ञ as ञ् · a little' },
+  ],
+  'ञः': [
+    { word: 'अञ्जलिः', gloss: 'related · ञ as ञ् · joined palms' },
+    { word: 'कुञ्जरः', gloss: 'related · ञ as ञ् · elephant' },
+    { word: 'पञ्जरम्', gloss: 'related · ञ as ञ् · cage' },
+    { word: 'मञ्जुः', gloss: 'related · ञ as ञ् · sweet / lovely' },
   ],
 };
 
@@ -540,7 +643,7 @@ export const examplesForAkshara = (akshara: string): VowelExample[] => {
   return [];
 };
 
-/** Related-family examples (ङ matras: ङ written as ङ् before a consonant). */
+/** Related-family examples (ङ/ञ matras: written as ङ्/ञ् before a consonant). */
 export const relatedExamplesForAkshara = (akshara: string): VowelExample[] => {
   const clean = devanagariOnly(akshara);
   return BARAKHADI_RELATED[clean] || [];

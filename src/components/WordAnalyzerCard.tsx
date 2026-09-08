@@ -118,6 +118,9 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
   const vowelExamples = exampleBundle.examples;
   const examplesMode = exampleBundle.mode;
   const rareNote = exampleBundle.rareNote;
+  const relatedFamilyLetter = soundAnchor
+    ? Array.from(devanagariOnly(soundAnchor))[0] ?? ''
+    : '';
   const openExampleWord = (example: string) => {
     // Keep soundAnchor so the related-words list does not disappear.
     const result = findWord(example);
@@ -167,7 +170,8 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
                     </p>
                   ) : null}
                   <p className="wac-placeholder" style={{ marginBottom: '.5rem' }}>
-                    Related ङ-family words (in real words ङ is written ङ् before a consonant).
+                    Related {relatedFamilyLetter}-family words (in real words{' '}
+                    {relatedFamilyLetter} is written {relatedFamilyLetter}् before a consonant).
                   </p>
                 </>
               ) : (
