@@ -290,7 +290,7 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'घौ': [{ word: 'मेघौ', gloss: 'two clouds' }, { word: 'संघौ', gloss: 'two groups' }],
   'घं': [{ word: 'घंटा', gloss: 'bell' }, { word: 'संघं', gloss: 'group / union (object form)' }],
   'घः': [{ word: 'मेघः', gloss: 'cloud' }, { word: 'संघः', gloss: 'group / union' }, { word: 'उल्लाघः', gloss: 'recovered / healthy' }],
-  // cache-bust 2026-09-08a
+  // cache-bust 2026-09-08b
   // ङ-row — exact akṣara only here. Everyday Sanskrit almost never has open
   // ङा/ङि/…; family kid-words with ङ् live in BARAKHADI_RELATED (not "exact letter").
   'ङ': [
@@ -364,7 +364,25 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'जौ': [{ word: 'अजौ', gloss: 'two goats' }, { word: 'गजौ', gloss: 'two elephants' }, { word: 'द्विजौ', gloss: 'two brahmins / birds' }],
   'जं': [{ word: 'जंबू', gloss: 'rose-apple (jambū)' }, { word: 'जंबुकः', gloss: 'jackal' }, { word: 'गजं', gloss: 'elephant (object form)' }],
   'जः': [{ word: 'राजः', gloss: 'king' }, { word: 'गजः', gloss: 'elephant' }, { word: 'अजः', gloss: 'goat' }],
+  // झ-row (bare झ stays in CONSONANT_EXAMPLES)
+  'झा': [{ word: 'झाटः', gloss: 'arbour / thicket' }, { word: 'झालि', gloss: 'fried green mango (cookery)' }, { word: 'झावुः', gloss: 'tamarisk tree' }],
+  'झि': [{ word: 'उज्झितः', gloss: 'left / abandoned' }, { word: 'झिल्ली', gloss: 'cricket (insect)' }, { word: 'झिरिका', gloss: 'cricket' }],
+  'झी': [{ word: 'झीरिका', gloss: 'cricket (rare)' }, { word: 'झीरुका', gloss: 'cricket (rare)' }],
+  'झु': [{ word: 'झुण्टः', gloss: 'shrub / bush' }, { word: 'झुम्बरि', gloss: 'a kind of lute' }],
+  'झू': [{ word: 'झूला', gloss: 'swing (Hindi-familiar)' }, { word: 'झूणि', gloss: 'betel-nut / omen (rare)' }],
+  // झृ: almost no everyday Sanskrit lexeme — teaching placeholder so Analyse is not blank
+  'झृ': [
+    { word: 'झृ', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  // झे / झै / झौ: few headwords — case / dual forms (same pattern as घे / घै / घौ)
+  'झे': [{ word: 'झेन', gloss: 'by झ (instr. — rare teaching form)' }],
+  'झै': [{ word: 'झैः', gloss: 'with the झ ones (instr. pl. — rare)' }],
+  'झो': [{ word: 'झोडः', gloss: 'betel-nut tree' }, { word: 'झो', gloss: 'झ before sandhi vowel (rare)' }],
+  'झौ': [{ word: 'झौ', gloss: 'two झ ones (dual — rare teaching form)' }, { word: 'झौलिकम्', gloss: 'small bag (rare)' }],
+  'झं': [{ word: 'झंकारः', gloss: 'jingle / buzz (of bees)' }, { word: 'झंपः', gloss: 'jump / leap' }, { word: 'झंपा', gloss: 'a jump' }],
+  'झः': [{ word: 'झः', gloss: 'jingle / Bṛhaspati (lexicon)' }],
 };
+
 
 
 /** Related (not exact-letter) examples — e.g. ङ matras: real words write ङ as ङ्. */
