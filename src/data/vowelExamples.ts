@@ -449,7 +449,27 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'ठौ': [{ word: 'ओष्ठौ', gloss: 'two lips' }, { word: 'पीठौ', gloss: 'two seats' }, { word: 'कण्ठौ', gloss: 'two throats' }],
   'ठं': [{ word: 'कण्ठं', gloss: 'throat (object form)' }, { word: 'पीठं', gloss: 'seat (object form)' }, { word: 'पाठं', gloss: 'lesson (object form)' }],
   'ठः': [{ word: 'कण्ठः', gloss: 'throat' }, { word: 'पीठः', gloss: 'seat / pedestal' }, { word: 'पाठः', gloss: 'lesson' }],
+  // cache-bust 2026-09-08f
+  // ड-row (bare ड stays in CONSONANT_EXAMPLES: अण्डम् डमरुः नाडी)
+  'डा': [{ word: 'अण्डाकारः', gloss: 'egg-shaped' }, { word: 'भाण्डागारम्', gloss: 'storehouse / treasury' }, { word: 'डाकिनी', gloss: 'ḍākinī / sky-spirit' }],
+  'डि': [{ word: 'डिम्भः', gloss: 'newborn / little child' }, { word: 'पण्डितः', gloss: 'scholar / pandit' }, { word: 'डिण्डिमः', gloss: 'small drum' }],
+  'डी': [{ word: 'नाडी', gloss: 'pulse / channel' }, { word: 'चण्डी', gloss: 'fierce goddess / Caṇḍī' }, { word: 'कुण्डी', gloss: 'small pot / basin' }],
+  'डु': [{ word: 'डुण्डुभः', gloss: 'water-snake / lizard' }, { word: 'हुडुक्कः', gloss: 'small drum / rattle' }, { word: 'गुडुची', gloss: 'guduchi plant (giloy)' }],
+  // डू: few everyday lexemes — prefer exact गुडूची family
+  'डू': [{ word: 'गुडूची', gloss: 'guduchi / giloy creeper' }, { word: 'गुडूचिका', gloss: 'guduchi plant' }],
+  // डृ: almost no everyday Sanskrit lexeme — teaching placeholder so Analyse is not blank
+  'डृ': [
+    { word: 'डृ', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'डे': [{ word: 'दण्डे', gloss: 'on the stick / staff' }, { word: 'अण्डे', gloss: 'in the egg' }, { word: 'पिण्डे', gloss: 'in the lump / ball' }],
+  // डै: few headwords — instrumental plurals (same pattern as टै / ठै)
+  'डै': [{ word: 'दण्डैः', gloss: 'with sticks / staffs' }, { word: 'अण्डैः', gloss: 'with eggs' }, { word: 'पिण्डैः', gloss: 'with lumps / balls' }],
+  'डो': [{ word: 'दण्डो', gloss: 'staff (before sandhi vowel)' }, { word: 'पिण्डो', gloss: 'lump (before sandhi vowel)' }, { word: 'भण्डो', gloss: 'jester (before sandhi vowel)' }],
+  'डौ': [{ word: 'दण्डौ', gloss: 'two sticks / staffs' }, { word: 'पिण्डौ', gloss: 'two lumps / balls' }, { word: 'भण्डौ', gloss: 'two jesters' }],
+  'डं': [{ word: 'दण्डं', gloss: 'staff (object form)' }, { word: 'अण्डं', gloss: 'egg (object form)' }, { word: 'पिण्डं', gloss: 'lump (object form)' }],
+  'डः': [{ word: 'दण्डः', gloss: 'stick / staff' }, { word: 'पिण्डः', gloss: 'lump / ball' }, { word: 'भण्डः', gloss: 'jester / buffoon' }],
 };
+
 
 
 
