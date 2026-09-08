@@ -523,7 +523,27 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'तौ': [{ word: 'हस्तौ', gloss: 'two hands' }, { word: 'गतौ', gloss: 'two gone ones' }, { word: 'कृतौ', gloss: 'two done ones' }],
   'तं': [{ word: 'तं', gloss: 'him / that (object)' }, { word: 'हस्तं', gloss: 'hand (object form)' }, { word: 'गतं', gloss: 'gone (object / neuter)' }],
   'तः': [{ word: 'हस्तः', gloss: 'hand' }, { word: 'गतः', gloss: 'gone' }, { word: 'कृतः', gloss: 'done / made' }],
+  // थ-row (bare थ stays in CONSONANT_EXAMPLES: कथा पथः अथवा)
+  'था': [{ word: 'कथा', gloss: 'story' }, { word: 'यथा', gloss: 'as / just as' }, { word: 'तथा', gloss: 'so / thus' }],
+  'थि': [{ word: 'स्थितिः', gloss: 'state / position' }, { word: 'पथिकः', gloss: 'traveller' }, { word: 'अतिथिः', gloss: 'guest' }],
+  // थी: few everyday lexemes — fenugreek / seeker
+  'थी': [{ word: 'मेथी', gloss: 'fenugreek' }, { word: 'अर्थी', gloss: 'seeker / one who wants' }],
+  'थु': [{ word: 'मथुरा', gloss: 'Mathura' }, { word: 'मन्थुः', gloss: 'churning / agitation' }],
+  // थू / थृ: almost no everyday Sanskrit lexeme — teaching placeholder so Analyse is not blank
+  'थू': [
+    { word: 'थू', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'थृ': [
+    { word: 'थृ', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'थे': [{ word: 'पथे', gloss: 'on the path' }, { word: 'कथे', gloss: 'in the story' }, { word: 'अर्थे', gloss: 'in the meaning / for the sake of' }],
+  'थै': [{ word: 'पथैः', gloss: 'by the paths' }, { word: 'अर्थैः', gloss: 'by meanings / purposes' }, { word: 'कथैः', gloss: 'by stories' }],
+  'थो': [{ word: 'अथो', gloss: 'and then / moreover' }, { word: 'पथो', gloss: 'path (before sandhi vowel)' }, { word: 'अर्थो', gloss: 'meaning (before sandhi vowel)' }],
+  'थौ': [{ word: 'पथौ', gloss: 'two paths' }, { word: 'अर्थौ', gloss: 'two meanings / purposes' }],
+  'थं': [{ word: 'पथं', gloss: 'path (object form)' }, { word: 'अर्थं', gloss: 'meaning (object form)' }, { word: 'कथं', gloss: 'how?' }],
+  'थः': [{ word: 'पथः', gloss: 'path' }, { word: 'अर्थः', gloss: 'meaning / wealth' }],
 };
+
 
 
 
