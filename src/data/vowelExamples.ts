@@ -568,7 +568,21 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'धौ': [{ word: 'धौतम्', gloss: 'washed' }, { word: 'बन्धौ', gloss: 'two bonds' }, { word: 'रोधौ', gloss: 'two obstacles' }],
   'धं': [{ word: 'बन्धं', gloss: 'bond (object form)' }, { word: 'रोधं', gloss: 'obstacle (object form)' }],
   'धः': [{ word: 'बन्धः', gloss: 'bond / dam' }, { word: 'रोधः', gloss: 'obstacle / stoppage' }, { word: 'अधः', gloss: 'below / down' }],
+  // न-row (bare न stays in CONSONANT_EXAMPLES: नदी नरः नयनम्)
+  'ना': [{ word: 'नाम', gloss: 'name' }, { word: 'नासिका', gloss: 'nose' }, { word: 'नारी', gloss: 'woman' }],
+  'नि': [{ word: 'नियमः', gloss: 'rule / discipline' }, { word: 'अग्निः', gloss: 'fire' }, { word: 'नित्यम्', gloss: 'always / eternal' }],
+  'नी': [{ word: 'नीरम्', gloss: 'water' }, { word: 'नीलः', gloss: 'blue' }, { word: 'नीतिः', gloss: 'conduct / policy' }],
+  'नु': [{ word: 'धनुः', gloss: 'bow' }, { word: 'मनुः', gloss: 'Manu' }, { word: 'तनुः', gloss: 'body / slender' }],
+  'नू': [{ word: 'नूतनम्', gloss: 'new' }, { word: 'नूनम्', gloss: 'indeed / certainly' }],
+  'नृ': [{ word: 'नृपः', gloss: 'king' }, { word: 'नृत्यम्', gloss: 'dance' }],
+  'ने': [{ word: 'नेत्रम्', gloss: 'eye' }, { word: 'नेता', gloss: 'leader' }, { word: 'वने', gloss: 'in the forest' }],
+  'नै': [{ word: 'नैतिकः', gloss: 'moral' }, { word: 'वनैः', gloss: 'by the forests' }],
+  'नो': [{ word: 'मनो', gloss: 'mind (before sandhi vowel)' }, { word: 'वनो', gloss: 'forest (before sandhi vowel)' }, { word: 'नो', gloss: 'not / and not' }],
+  'नौ': [{ word: 'नौका', gloss: 'boat' }, { word: 'वनौ', gloss: 'two forests' }],
+  'नं': [{ word: 'वनं', gloss: 'forest (object form)' }, { word: 'नयनं', gloss: 'eye (object form)' }, { word: 'गगनं', gloss: 'sky (object form)' }],
+  'नः': [{ word: 'मनः', gloss: 'mind' }, { word: 'धनः', gloss: 'wealth (in compounds / names)' }, { word: 'जीवनः', gloss: 'living / life (masc.)' }],
 };
+
 
 
 
