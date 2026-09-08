@@ -581,6 +581,19 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'नौ': [{ word: 'नौका', gloss: 'boat' }, { word: 'वनौ', gloss: 'two forests' }],
   'नं': [{ word: 'वनं', gloss: 'forest (object form)' }, { word: 'नयनं', gloss: 'eye (object form)' }, { word: 'गगनं', gloss: 'sky (object form)' }],
   'नः': [{ word: 'मनः', gloss: 'mind' }, { word: 'धनः', gloss: 'wealth (in compounds / names)' }, { word: 'जीवनः', gloss: 'living / life (masc.)' }],
+  // प-row (bare प stays in CONSONANT_EXAMPLES: पत्रम् पद्मम् पुत्रः)
+  'पा': [{ word: 'पातालम्', gloss: 'underworld / Patala' }, { word: 'पानीयम्', gloss: 'drinking water' }, { word: 'पादः', gloss: 'foot' }],
+  'पि': [{ word: 'पिता', gloss: 'father' }, { word: 'पिकः', gloss: 'cuckoo' }, { word: 'पिपासा', gloss: 'thirst' }],
+  'पी': [{ word: 'पीतम्', gloss: 'yellow / drunk' }, { word: 'पीठः', gloss: 'seat / pedestal' }, { word: 'पीनः', gloss: 'plump / stout' }],
+  'पु': [{ word: 'पुत्रः', gloss: 'son' }, { word: 'पुष्पम्', gloss: 'flower' }, { word: 'पुराणम्', gloss: 'Purana / ancient tale' }],
+  'पू': [{ word: 'पूजा', gloss: 'worship' }, { word: 'पूर्णम्', gloss: 'full / complete' }, { word: 'पूजकः', gloss: 'worshipper' }],
+  'पृ': [{ word: 'पृथ्वी', gloss: 'earth' }, { word: 'पृष्ठम्', gloss: 'back / page' }, { word: 'पृथक्', gloss: 'separate / apart' }],
+  'पे': [{ word: 'पेयम्', gloss: 'drink / beverage' }, { word: 'पेचकः', gloss: 'owl' }],
+  'पै': [{ word: 'पैतृकः', gloss: 'paternal / ancestral' }, { word: 'नृपैः', gloss: 'by the kings' }, { word: 'गोपैः', gloss: 'by the cowherds' }],
+  'पो': [{ word: 'पोतः', gloss: 'boat / young animal' }, { word: 'पोषणम्', gloss: 'nourishment' }],
+  'पौ': [{ word: 'पौत्रः', gloss: 'grandson' }, { word: 'पौरः', gloss: 'townsman / citizen' }],
+  'पं': [{ word: 'पापं', gloss: 'sin (object form)' }, { word: 'पुष्पं', gloss: 'flower (object form)' }, { word: 'नृपं', gloss: 'king (object form)' }],
+  'पः': [{ word: 'नृपः', gloss: 'king' }, { word: 'सर्पः', gloss: 'serpent' }, { word: 'तपः', gloss: 'austerity / heat' }],
 };
 
 
