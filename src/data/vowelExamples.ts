@@ -638,6 +638,19 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'बौ': [{ word: 'बौद्धः', gloss: 'Buddhist' }],
   'बं': [{ word: 'बिम्बं', gloss: 'disk (object form)' }, { word: 'जम्बं', gloss: 'rose-apple (object form)' }],
   'बः': [{ word: 'जम्बः', gloss: 'rose-apple / jambu tree' }],
+  // भ-row (bare भ stays in CONSONANT_EXAMPLES: भूमिः भानुः भक्तः)
+  'भा': [{ word: 'भारतम्', gloss: 'India / Bharata' }, { word: 'भाषा', gloss: 'language' }, { word: 'भागः', gloss: 'share / portion' }],
+  'भि': [{ word: 'भिषजः', gloss: 'physician' }, { word: 'भित्तिः', gloss: 'wall' }, { word: 'भिन्नम्', gloss: 'different / broken' }],
+  'भी': [{ word: 'भीमः', gloss: 'Bhima / terrible' }, { word: 'भीतिः', gloss: 'fear' }, { word: 'भीरुः', gloss: 'timid / fearful' }],
+  'भु': [{ word: 'भुजः', gloss: 'arm' }, { word: 'भुवनम्', gloss: 'world' }, { word: 'भुक्तिः', gloss: 'enjoyment / eating' }],
+  'भू': [{ word: 'भूमिः', gloss: 'earth' }, { word: 'भूतम्', gloss: 'being / past / ghost' }, { word: 'भूपः', gloss: 'king' }],
+  'भृ': [{ word: 'भृगुः', gloss: 'Bhrigu' }, { word: 'भृत्यः', gloss: 'servant' }, { word: 'भृङ्गः', gloss: 'bee' }],
+  'भे': [{ word: 'भेदः', gloss: 'difference / split' }, { word: 'भेकः', gloss: 'frog' }, { word: 'भेरी', gloss: 'kettle-drum' }],
+  'भै': [{ word: 'भैषज्यम्', gloss: 'medicine / remedy' }],
+  'भो': [{ word: 'भोजनम्', gloss: 'food / meal' }, { word: 'भोगः', gloss: 'enjoyment / pleasure' }],
+  'भौ': [{ word: 'भौतिकः', gloss: 'material / physical' }, { word: 'भौमः', gloss: 'earthly / Mars' }],
+  'भं': [{ word: 'शुभं', gloss: 'auspicious (neuter / object)' }],
+  'भः': [{ word: 'शुभः', gloss: 'auspicious' }, { word: 'लाभः', gloss: 'gain / profit' }],
 };
 
 
