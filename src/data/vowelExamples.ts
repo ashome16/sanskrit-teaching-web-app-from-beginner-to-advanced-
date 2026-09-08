@@ -333,6 +333,24 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'चौ': [{ word: 'चौर्यम्', gloss: 'theft' }, { word: 'चौरः', gloss: 'thief' }, { word: 'चौलम्', gloss: 'tonsure ceremony' }],
   'चं': [{ word: 'चंपकः', gloss: 'champaka flower' }, { word: 'चंद्रः', gloss: 'moon' }, { word: 'उच्चं', gloss: 'high / upward' }],
   'चः': [{ word: 'वाचः', gloss: 'of speech / voices' }, { word: 'वचः', gloss: 'speech / word' }, { word: 'ऋचः', gloss: 'of a Vedic verse (ṛc)' }],
+  // छ-row (bare छ stays in CONSONANT_EXAMPLES)
+  'छा': [{ word: 'छाया', gloss: 'shadow' }, { word: 'छात्रः', gloss: 'student' }, { word: 'छागः', gloss: 'goat' }],
+  'छि': [{ word: 'छिद्रम्', gloss: 'hole / opening' }, { word: 'छिनत्ति', gloss: 'cuts' }, { word: 'अच्छिन्नः', gloss: 'unbroken / continuous' }],
+  'छी': [{ word: 'छीकः', gloss: 'sneeze' }],
+  'छु': [{ word: 'छुरिका', gloss: 'knife' }, { word: 'छुरति', gloss: 'cuts / scrapes' }],
+  // छू / छृ: almost no everyday Sanskrit lexeme — teaching placeholder so Analyse is not blank
+  'छू': [
+    { word: 'छू', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'छृ': [
+    { word: 'छृ', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'छे': [{ word: 'छेदः', gloss: 'cut / section' }, { word: 'छेदनम्', gloss: 'cutting' }, { word: 'अच्छेद्यः', gloss: 'uncuttable' }],
+  'छै': [{ word: 'कच्छैः', gloss: 'with banks / shores' }, { word: 'अच्छैः', gloss: 'with clear ones' }, { word: 'तुच्छैः', gloss: 'with trifles / empty things' }],
+  'छो': [{ word: 'अच्छोदः', gloss: 'clear-water lake (Purāṇa)' }, { word: 'छोलङ्गः', gloss: 'bitter orange / citron' }, { word: 'कच्छो', gloss: 'bank / shore (before sandhi vowel)' }],
+  'छौ': [{ word: 'कच्छौ', gloss: 'two banks / shores' }, { word: 'अच्छौ', gloss: 'two clear ones' }, { word: 'तुच्छौ', gloss: 'two trifles' }],
+  'छं': [{ word: 'छंदः', gloss: 'metre / verse form' }, { word: 'अच्छं', gloss: 'clear / pure (object form)' }],
+  'छः': [{ word: 'कच्छः', gloss: 'bank / shore / marsh' }, { word: 'अच्छः', gloss: 'clear / transparent' }, { word: 'तुच्छः', gloss: 'empty / trifling' }],
 };
 
 
