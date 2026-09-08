@@ -489,6 +489,26 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'ढौ': [{ word: 'दृढौ', gloss: 'two firm ones' }, { word: 'गूढौ', gloss: 'two hidden ones' }, { word: 'गाढौ', gloss: 'two deep / intense ones' }],
   'ढं': [{ word: 'दृढं', gloss: 'firm (object / neuter)' }, { word: 'गूढं', gloss: 'hidden (object / neuter)' }, { word: 'गाढं', gloss: 'deep / intense (object / neuter)' }],
   'ढः': [{ word: 'दृढः', gloss: 'firm' }, { word: 'गूढः', gloss: 'hidden' }, { word: 'गाढः', gloss: 'deep / intense' }],
+  // cache-bust 2026-09-08h
+  // ण-row (bare ण stays in CONSONANT_EXAMPLES: गणः कर्णः वेणुः)
+  'णा': [{ word: 'बाणाः', gloss: 'arrows' }, { word: 'प्राणाः', gloss: 'life-breaths' }, { word: 'कृष्णा', gloss: 'Krishna (f.) / Draupadi' }],
+  'णि': [{ word: 'मणिः', gloss: 'jewel / gem' }, { word: 'पाणिः', gloss: 'hand' }, { word: 'कणिका', gloss: 'tiny particle / drop' }],
+  'णी': [{ word: 'वाणी', gloss: 'speech / voice' }, { word: 'श्रेणी', gloss: 'row / class' }, { word: 'वेणी', gloss: 'braid / plait' }],
+  'णु': [{ word: 'वेणुः', gloss: 'flute' }, { word: 'विष्णुः', gloss: 'Vishnu' }, { word: 'अणुः', gloss: 'atom / tiny bit' }],
+  // णू / णृ: almost no everyday Sanskrit lexeme — teaching placeholder so Analyse is not blank
+  'णू': [
+    { word: 'णू', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'णृ': [
+    { word: 'णृ', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'णे': [{ word: 'गुणे', gloss: 'in / on the quality' }, { word: 'बाणे', gloss: 'in / on the arrow' }, { word: 'कर्णे', gloss: 'in / on the ear' }],
+  // णै: few headwords — instrumental plurals (same pattern as ढै / डै)
+  'णै': [{ word: 'गुणैः', gloss: 'with qualities / virtues' }, { word: 'बाणैः', gloss: 'with arrows' }, { word: 'गणैः', gloss: 'with groups' }],
+  'णो': [{ word: 'गुणो', gloss: 'quality (before sandhi vowel)' }, { word: 'बाणो', gloss: 'arrow (before sandhi vowel)' }, { word: 'गणो', gloss: 'group (before sandhi vowel)' }],
+  'णौ': [{ word: 'कर्णौ', gloss: 'two ears' }, { word: 'गुणौ', gloss: 'two qualities' }, { word: 'बाणौ', gloss: 'two arrows' }],
+  'णं': [{ word: 'गुणं', gloss: 'quality (object form)' }, { word: 'बाणं', gloss: 'arrow (object form)' }, { word: 'कर्णं', gloss: 'ear (object form)' }],
+  'णः': [{ word: 'गणः', gloss: 'group' }, { word: 'गुणः', gloss: 'quality / virtue' }, { word: 'कर्णः', gloss: 'ear' }],
 };
 
 
