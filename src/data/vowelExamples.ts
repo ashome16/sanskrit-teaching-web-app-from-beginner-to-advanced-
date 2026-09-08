@@ -411,6 +411,24 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'ञौ': [{ word: 'ञौ', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
   'ञं': [{ word: 'ञं', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
   'ञः': [{ word: 'ञः', gloss: 'rare alone — in words ञ becomes ञ् before a consonant' }],
+  // cache-bust 2026-09-08d
+  // ट-row (bare ट stays in CONSONANT_EXAMPLES)
+  'टा': [{ word: 'घण्टा', gloss: 'bell' }, { word: 'फटा', gloss: "snake's hood" }, { word: 'कटाक्षः', gloss: 'sidelong glance' }],
+  'टि': [{ word: 'वाटिका', gloss: 'garden' }, { word: 'घटिका', gloss: 'small pot / water-clock' }, { word: 'टिट्टिभः', gloss: 'partridge' }],
+  'टी': [{ word: 'कोटी', gloss: 'crore / tip' }, { word: 'नटी', gloss: 'actress / dancer' }, { word: 'तटी', gloss: 'river-bank' }],
+  'टु': [{ word: 'कुटुम्बम्', gloss: 'family / household' }, { word: 'कटु', gloss: 'bitter' }, { word: 'पटु', gloss: 'skilled / clever' }],
+  'टू': [{ word: 'कटू', gloss: 'bitter (long ū)' }, { word: 'पटू', gloss: 'skilled / clever (long ū)' }],
+  // टृ: almost no everyday Sanskrit lexeme — teaching placeholder so Analyse is not blank
+  'टृ': [
+    { word: 'टृ', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'टे': [{ word: 'तटे', gloss: 'on the river-bank' }, { word: 'वटे', gloss: 'at the banyan' }, { word: 'नटे', gloss: 'in / at the actor' }],
+  // टै: few headwords — instrumental plurals (same pattern as छै / झै)
+  'टै': [{ word: 'नटैः', gloss: 'with actors / dancers' }, { word: 'पटैः', gloss: 'with cloths' }, { word: 'कटैः', gloss: 'with mats' }],
+  'टो': [{ word: 'नटो', gloss: 'actor (before sandhi vowel)' }, { word: 'पटो', gloss: 'cloth (before sandhi vowel)' }, { word: 'कण्टो', gloss: 'thorn (before sandhi vowel)' }],
+  'टौ': [{ word: 'नटौ', gloss: 'two actors / dancers' }, { word: 'पटौ', gloss: 'two cloths' }, { word: 'कटौ', gloss: 'two mats' }],
+  'टं': [{ word: 'टंकः', gloss: 'chisel / stamped coin' }, { word: 'पटं', gloss: 'cloth (object form)' }, { word: 'नटं', gloss: 'actor (object form)' }],
+  'टः': [{ word: 'पटः', gloss: 'cloth' }, { word: 'कटः', gloss: 'mat' }, { word: 'नटः', gloss: 'actor / dancer' }],
 };
 
 
