@@ -594,6 +594,34 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'पौ': [{ word: 'पौत्रः', gloss: 'grandson' }, { word: 'पौरः', gloss: 'townsman / citizen' }],
   'पं': [{ word: 'पापं', gloss: 'sin (object form)' }, { word: 'पुष्पं', gloss: 'flower (object form)' }, { word: 'नृपं', gloss: 'king (object form)' }],
   'पः': [{ word: 'नृपः', gloss: 'king' }, { word: 'सर्पः', gloss: 'serpent' }, { word: 'तपः', gloss: 'austerity / heat' }],
+  // फ-row (bare फ stays in CONSONANT_EXAMPLES: फलम् फणिः फेनम्)
+  'फा': [{ word: 'फाल्गुनः', gloss: 'Phalguna (month)' }, { word: 'फालः', gloss: 'ploughshare' }],
+  // फि / फी / फृ / फै / फो / फौ / फं / फः: almost no everyday Sanskrit lexemes — teaching placeholders
+  'फि': [
+    { word: 'फि', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'फी': [{ word: 'स्फीतः', gloss: 'swollen / abundant' }, { word: 'स्फीतिः', gloss: 'increase / prosperity' }],
+  'फु': [{ word: 'फुल्लम्', gloss: 'bloomed / blossomed' }, { word: 'फुल्लः', gloss: 'blooming' }],
+  'फू': [{ word: 'फूत्कारः', gloss: 'hissing / blowing sound' }],
+  'फृ': [
+    { word: 'फृ', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'फे': [{ word: 'फेनम्', gloss: 'foam' }, { word: 'फेनकः', gloss: 'froth / foam' }],
+  'फै': [
+    { word: 'फै', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'फो': [
+    { word: 'फो', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'फौ': [
+    { word: 'फौ', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'फं': [
+    { word: 'फं', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'फः': [
+    { word: 'फः', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
 };
 
 
