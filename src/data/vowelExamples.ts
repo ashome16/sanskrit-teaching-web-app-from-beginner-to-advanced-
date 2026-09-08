@@ -429,6 +429,26 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'टौ': [{ word: 'नटौ', gloss: 'two actors / dancers' }, { word: 'पटौ', gloss: 'two cloths' }, { word: 'कटौ', gloss: 'two mats' }],
   'टं': [{ word: 'टंकः', gloss: 'chisel / stamped coin' }, { word: 'पटं', gloss: 'cloth (object form)' }, { word: 'नटं', gloss: 'actor (object form)' }],
   'टः': [{ word: 'पटः', gloss: 'cloth' }, { word: 'कटः', gloss: 'mat' }, { word: 'नटः', gloss: 'actor / dancer' }],
+  // cache-bust 2026-09-08e
+  // ठ-row (bare ठ stays in CONSONANT_EXAMPLES)
+  'ठा': [{ word: 'कण्ठाभरणम्', gloss: 'necklace / throat-ornament' }, { word: 'कोष्ठागारम्', gloss: 'storehouse / granary' }, { word: 'ठाकुर', gloss: 'Thakur (Hindi-familiar name)' }],
+  'ठि': [{ word: 'कठिनम्', gloss: 'hard / difficult' }, { word: 'पीठिका', gloss: 'small seat / stool' }, { word: 'कण्ठिका', gloss: 'necklace / throat-band' }],
+  'ठी': [{ word: 'कोष्ठी', gloss: 'store-room / granary' }, { word: 'पृष्ठी', gloss: 'back / dorsal side' }, { word: 'पाठी', gloss: 'reciter / Veda student' }],
+  'ठु': [{ word: 'निष्ठुरः', gloss: 'harsh / cruel' }, { word: 'निष्ठुरम्', gloss: 'harshness / cruelty' }],
+  // ठू / ठृ: almost no everyday Sanskrit lexeme — teaching placeholder so Analyse is not blank
+  'ठू': [
+    { word: 'ठू', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'ठृ': [
+    { word: 'ठृ', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'ठे': [{ word: 'पीठे', gloss: 'on the seat' }, { word: 'पाठे', gloss: 'in the lesson' }, { word: 'मठे', gloss: 'in the monastery' }],
+  // ठै: few headwords — instrumental plurals (same pattern as टै / छै)
+  'ठै': [{ word: 'पाठैः', gloss: 'with lessons' }, { word: 'पीठैः', gloss: 'with seats' }, { word: 'मठैः', gloss: 'with monasteries' }],
+  'ठो': [{ word: 'कठोरः', gloss: 'hard / harsh' }, { word: 'कठोरम्', gloss: 'hard / severe' }, { word: 'पाठो', gloss: 'lesson (before sandhi vowel)' }],
+  'ठौ': [{ word: 'ओष्ठौ', gloss: 'two lips' }, { word: 'पीठौ', gloss: 'two seats' }, { word: 'कण्ठौ', gloss: 'two throats' }],
+  'ठं': [{ word: 'कण्ठं', gloss: 'throat (object form)' }, { word: 'पीठं', gloss: 'seat (object form)' }, { word: 'पाठं', gloss: 'lesson (object form)' }],
+  'ठः': [{ word: 'कण्ठः', gloss: 'throat' }, { word: 'पीठः', gloss: 'seat / pedestal' }, { word: 'पाठः', gloss: 'lesson' }],
 };
 
 
