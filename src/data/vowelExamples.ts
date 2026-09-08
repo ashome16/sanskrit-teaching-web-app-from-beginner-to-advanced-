@@ -468,6 +468,27 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'डौ': [{ word: 'दण्डौ', gloss: 'two sticks / staffs' }, { word: 'पिण्डौ', gloss: 'two lumps / balls' }, { word: 'भण्डौ', gloss: 'two jesters' }],
   'डं': [{ word: 'दण्डं', gloss: 'staff (object form)' }, { word: 'अण्डं', gloss: 'egg (object form)' }, { word: 'पिण्डं', gloss: 'lump (object form)' }],
   'डः': [{ word: 'दण्डः', gloss: 'stick / staff' }, { word: 'पिण्डः', gloss: 'lump / ball' }, { word: 'भण्डः', gloss: 'jester / buffoon' }],
+  // cache-bust 2026-09-08g
+  // ढ-row (bare ढ stays in CONSONANT_EXAMPLES: दृढम् गूढम् गाढम्)
+  'ढा': [{ word: 'गाढा', gloss: 'deep / intense (f.)' }, { word: 'दृढा', gloss: 'firm (f.)' }, { word: 'ऊढा', gloss: 'married / carried (f.)' }],
+  'ढि': [{ word: 'रूढिः', gloss: 'custom / conventional sense' }, { word: 'प्रौढिः', gloss: 'maturity / confidence' }],
+  'ढी': [{ word: 'रूढी', gloss: 'custom / usage' }, { word: 'दृढीकरणम्', gloss: 'making firm / strengthening' }, { word: 'दृढीकृत', gloss: 'made firm' }],
+  // ढु: few everyday lexemes — Gaṇeśa epithet is the clear exact hit
+  'ढु': [{ word: 'ढुण्ढिः', gloss: 'Gaṇeśa (searcher epithet)' }],
+  // ढू / ढृ: almost no everyday Sanskrit lexeme — teaching placeholder so Analyse is not blank
+  'ढू': [
+    { word: 'ढू', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'ढृ': [
+    { word: 'ढृ', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'ढे': [{ word: 'दृढे', gloss: 'in / on the firm' }, { word: 'गूढे', gloss: 'in the hidden' }, { word: 'गाढे', gloss: 'in the deep / intense' }],
+  // ढै: few headwords — instrumental plurals (same pattern as डै / ठै)
+  'ढै': [{ word: 'दृढैः', gloss: 'with the firm ones' }, { word: 'गूढैः', gloss: 'with the hidden ones' }, { word: 'गाढैः', gloss: 'with the deep / intense' }],
+  'ढो': [{ word: 'दृढो', gloss: 'firm (before sandhi vowel)' }, { word: 'गूढो', gloss: 'hidden (before sandhi vowel)' }, { word: 'गाढो', gloss: 'deep (before sandhi vowel)' }],
+  'ढौ': [{ word: 'दृढौ', gloss: 'two firm ones' }, { word: 'गूढौ', gloss: 'two hidden ones' }, { word: 'गाढौ', gloss: 'two deep / intense ones' }],
+  'ढं': [{ word: 'दृढं', gloss: 'firm (object / neuter)' }, { word: 'गूढं', gloss: 'hidden (object / neuter)' }, { word: 'गाढं', gloss: 'deep / intense (object / neuter)' }],
+  'ढः': [{ word: 'दृढः', gloss: 'firm' }, { word: 'गूढः', gloss: 'hidden' }, { word: 'गाढः', gloss: 'deep / intense' }],
 };
 
 
