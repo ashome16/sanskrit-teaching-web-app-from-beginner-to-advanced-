@@ -542,7 +542,21 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'थौ': [{ word: 'पथौ', gloss: 'two paths' }, { word: 'अर्थौ', gloss: 'two meanings / purposes' }],
   'थं': [{ word: 'पथं', gloss: 'path (object form)' }, { word: 'अर्थं', gloss: 'meaning (object form)' }, { word: 'कथं', gloss: 'how?' }],
   'थः': [{ word: 'पथः', gloss: 'path' }, { word: 'अर्थः', gloss: 'meaning / wealth' }],
+  // द-row (bare द stays in CONSONANT_EXAMPLES: देवः दधि दुग्धम्)
+  'दा': [{ word: 'दानम्', gloss: 'gift / giving' }, { word: 'दाता', gloss: 'giver' }, { word: 'दासी', gloss: 'maidservant' }],
+  'दि': [{ word: 'दिनम्', gloss: 'day' }, { word: 'आदिः', gloss: 'beginning' }, { word: 'मदिरा', gloss: 'wine / liquor' }],
+  'दी': [{ word: 'नदी', gloss: 'river' }, { word: 'दीपः', gloss: 'lamp' }, { word: 'दीनः', gloss: 'poor / humble' }],
+  'दु': [{ word: 'दुग्धम्', gloss: 'milk' }, { word: 'दुःखम्', gloss: 'sorrow' }, { word: 'दुर्गा', gloss: 'Durga' }],
+  'दू': [{ word: 'दूतः', gloss: 'messenger' }, { word: 'दूरम्', gloss: 'far / distance' }, { word: 'दूषितम्', gloss: 'spoiled / polluted' }],
+  'दृ': [{ word: 'दृढम्', gloss: 'firm' }, { word: 'दृष्टिः', gloss: 'sight / view' }, { word: 'दृशः', gloss: 'appearance / look' }],
+  'दे': [{ word: 'देवः', gloss: 'god' }, { word: 'देशः', gloss: 'country / region' }, { word: 'देहः', gloss: 'body' }],
+  'दै': [{ word: 'दैवम्', gloss: 'fate / divine' }, { word: 'दैत्यः', gloss: 'demon / daitya' }],
+  'दो': [{ word: 'दोषः', gloss: 'fault / defect' }, { word: 'दोहनम्', gloss: 'milking' }, { word: 'पदो', gloss: 'foot / word (before sandhi vowel)' }],
+  'दौ': [{ word: 'दौर्बल्यम्', gloss: 'weakness' }, { word: 'पदौ', gloss: 'two feet' }, { word: 'मदौ', gloss: 'two intoxications / ruts' }],
+  'दं': [{ word: 'इदं', gloss: 'this (neuter)' }, { word: 'पदं', gloss: 'foot / word (object form)' }, { word: 'दंतः', gloss: 'tooth' }],
+  'दः': [{ word: 'पदः', gloss: 'foot / step (in compounds)' }, { word: 'मदः', gloss: 'pride / intoxication' }, { word: 'हृदः', gloss: 'heart (stem form)' }],
 };
+
 
 
 
