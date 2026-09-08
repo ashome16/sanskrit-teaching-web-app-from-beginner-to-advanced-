@@ -509,7 +509,22 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'णौ': [{ word: 'कर्णौ', gloss: 'two ears' }, { word: 'गुणौ', gloss: 'two qualities' }, { word: 'बाणौ', gloss: 'two arrows' }],
   'णं': [{ word: 'गुणं', gloss: 'quality (object form)' }, { word: 'बाणं', gloss: 'arrow (object form)' }, { word: 'कर्णं', gloss: 'ear (object form)' }],
   'णः': [{ word: 'गणः', gloss: 'group' }, { word: 'गुणः', gloss: 'quality / virtue' }, { word: 'कर्णः', gloss: 'ear' }],
+// cache-bust 2026-09-08i
+  // त-row (bare त stays in CONSONANT_EXAMPLES: तातः तरुः तारा)
+  'ता': [{ word: 'तातः', gloss: 'father' }, { word: 'तारा', gloss: 'star' }, { word: 'माता', gloss: 'mother' }],
+  'ति': [{ word: 'गतिः', gloss: 'motion / gait' }, { word: 'मतिः', gloss: 'thought / mind' }, { word: 'पतिः', gloss: 'lord / husband' }],
+  'ती': [{ word: 'तीरम्', gloss: 'bank / shore' }, { word: 'तीर्थम्', gloss: 'holy place / ford' }, { word: 'सरस्वती', gloss: 'Saraswati' }],
+  'तु': [{ word: 'तुला', gloss: 'balance / scales' }, { word: 'धातुः', gloss: 'element / verb-root' }, { word: 'वस्तु', gloss: 'thing / object' }],
+  'तू': [{ word: 'तूलम्', gloss: 'cotton' }, { word: 'तूणः', gloss: 'quiver' }, { word: 'ऋतूनाम्', gloss: 'of the seasons' }],
+  'तृ': [{ word: 'तृणम्', gloss: 'grass' }, { word: 'तृप्तः', gloss: 'satisfied' }, { word: 'तृष्णा', gloss: 'thirst' }],
+  'ते': [{ word: 'तेजः', gloss: 'radiance / energy' }, { word: 'गते', gloss: 'in / at the gone' }, { word: 'हस्ते', gloss: 'in the hand' }],
+  'तै': [{ word: 'तैः', gloss: 'by them' }, { word: 'गतैः', gloss: 'by the gone ones' }, { word: 'हस्तैः', gloss: 'by the hands' }],
+  'तो': [{ word: 'तोयम्', gloss: 'water' }, { word: 'गतो', gloss: 'gone (before sandhi vowel)' }, { word: 'हस्तो', gloss: 'hand (before sandhi vowel)' }],
+  'तौ': [{ word: 'हस्तौ', gloss: 'two hands' }, { word: 'गतौ', gloss: 'two gone ones' }, { word: 'कृतौ', gloss: 'two done ones' }],
+  'तं': [{ word: 'तं', gloss: 'him / that (object)' }, { word: 'हस्तं', gloss: 'hand (object form)' }, { word: 'गतं', gloss: 'gone (object / neuter)' }],
+  'तः': [{ word: 'हस्तः', gloss: 'hand' }, { word: 'गतः', gloss: 'gone' }, { word: 'कृतः', gloss: 'done / made' }],
 };
+
 
 
 
