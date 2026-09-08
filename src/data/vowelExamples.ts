@@ -351,6 +351,19 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'छौ': [{ word: 'कच्छौ', gloss: 'two banks / shores' }, { word: 'अच्छौ', gloss: 'two clear ones' }, { word: 'तुच्छौ', gloss: 'two trifles' }],
   'छं': [{ word: 'छंदः', gloss: 'metre / verse form' }, { word: 'अच्छं', gloss: 'clear / pure (object form)' }],
   'छः': [{ word: 'कच्छः', gloss: 'bank / shore / marsh' }, { word: 'अच्छः', gloss: 'clear / transparent' }, { word: 'तुच्छः', gloss: 'empty / trifling' }],
+  // ज-row (bare ज stays in CONSONANT_EXAMPLES)
+  'जा': [{ word: 'जातकम्', gloss: 'Jātaka tale' }, { word: 'राजा', gloss: 'king' }, { word: 'जाम्बवन्', gloss: 'Jāmbavān (bear-king)' }],
+  'जि': [{ word: 'जिह्वा', gloss: 'tongue' }, { word: 'जितम्', gloss: 'conquered / won' }, { word: 'अजितः', gloss: 'unconquered' }],
+  'जी': [{ word: 'जीवनम्', gloss: 'life' }, { word: 'जीरकम्', gloss: 'cumin' }, { word: 'जीमूतः', gloss: 'cloud' }],
+  'जु': [{ word: 'अर्जुनः', gloss: 'Arjuna' }, { word: 'मञ्जुः', gloss: 'sweet / lovely' }, { word: 'जुष्टम्', gloss: 'liked / cherished' }],
+  'जू': [{ word: 'जूटः', gloss: 'topknot / hair-knot' }, { word: 'जूका', gloss: 'leech' }],
+  'जृ': [{ word: 'जृम्भते', gloss: 'yawns' }, { word: 'जृम्भणम्', gloss: 'yawning' }, { word: 'जृम्भा', gloss: 'a yawn' }],
+  'जे': [{ word: 'जेता', gloss: 'victor / winner' }, { word: 'अजेयः', gloss: 'invincible' }, { word: 'विजेता', gloss: 'conqueror' }],
+  'जै': [{ word: 'जैत्रः', gloss: 'victorious' }, { word: 'जैमिनिः', gloss: 'sage Jaimini' }, { word: 'जैत्रम्', gloss: 'victory / victorious' }],
+  'जो': [{ word: 'जोषम्', gloss: 'pleasure / quietly' }, { word: 'द्विजो', gloss: 'brahmin / bird (before sandhi vowel)' }, { word: 'गजो', gloss: 'elephant (before sandhi vowel)' }],
+  'जौ': [{ word: 'अजौ', gloss: 'two goats' }, { word: 'गजौ', gloss: 'two elephants' }, { word: 'द्विजौ', gloss: 'two brahmins / birds' }],
+  'जं': [{ word: 'जंबू', gloss: 'rose-apple (jambū)' }, { word: 'जंबुकः', gloss: 'jackal' }, { word: 'गजं', gloss: 'elephant (object form)' }],
+  'जः': [{ word: 'राजः', gloss: 'king' }, { word: 'गजः', gloss: 'elephant' }, { word: 'अजः', gloss: 'goat' }],
 };
 
 
