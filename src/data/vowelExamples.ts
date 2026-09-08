@@ -622,6 +622,22 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'फः': [
     { word: 'फः', gloss: 'rare akṣara — few everyday Sanskrit words' },
   ],
+  // ब-row (bare ब stays in CONSONANT_EXAMPLES: बालः बलम् बकः)
+  'बा': [{ word: 'बालः', gloss: 'child' }, { word: 'बाणः', gloss: 'arrow' }, { word: 'बाला', gloss: 'girl / young woman' }],
+  'बि': [{ word: 'बिम्बम्', gloss: 'disk / reflection' }, { word: 'बिन्दुः', gloss: 'dot / drop' }, { word: 'बिलम्', gloss: 'hole / cave' }],
+  'बी': [{ word: 'बीजम्', gloss: 'seed' }],
+  'बु': [{ word: 'बुद्धिः', gloss: 'intellect' }, { word: 'बुधः', gloss: 'wise one / Mercury' }, { word: 'बुद्धः', gloss: 'awakened / Buddha' }],
+  // बू: almost no everyday Sanskrit lexeme — teaching placeholder
+  'बू': [
+    { word: 'बू', gloss: 'rare akṣara — few everyday Sanskrit words' },
+  ],
+  'बृ': [{ word: 'बृहत्', gloss: 'great / large' }, { word: 'बृहस्पतिः', gloss: 'Brihaspati' }],
+  'बे': [{ word: 'कुबेरः', gloss: 'Kubera (god of wealth)' }],
+  'बै': [{ word: 'अम्बैः', gloss: 'by the mothers' }],
+  'बो': [{ word: 'बोधः', gloss: 'understanding / awakening' }, { word: 'बोधनम्', gloss: 'teaching / informing' }],
+  'बौ': [{ word: 'बौद्धः', gloss: 'Buddhist' }],
+  'बं': [{ word: 'बिम्बं', gloss: 'disk (object form)' }, { word: 'जम्बं', gloss: 'rose-apple (object form)' }],
+  'बः': [{ word: 'जम्बः', gloss: 'rose-apple / jambu tree' }],
 };
 
 
