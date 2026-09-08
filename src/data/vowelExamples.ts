@@ -555,7 +555,21 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'दौ': [{ word: 'दौर्बल्यम्', gloss: 'weakness' }, { word: 'पदौ', gloss: 'two feet' }, { word: 'मदौ', gloss: 'two intoxications / ruts' }],
   'दं': [{ word: 'इदं', gloss: 'this (neuter)' }, { word: 'पदं', gloss: 'foot / word (object form)' }, { word: 'दंतः', gloss: 'tooth' }],
   'दः': [{ word: 'पदः', gloss: 'foot / step (in compounds)' }, { word: 'मदः', gloss: 'pride / intoxication' }, { word: 'हृदः', gloss: 'heart (stem form)' }],
+  // ध-row (bare ध stays in CONSONANT_EXAMPLES: धर्मः धनुः धनम्)
+  'धा': [{ word: 'धावति', gloss: 'runs' }, { word: 'सुधा', gloss: 'nectar / ambrosia' }, { word: 'धात्री', gloss: 'nurse / earth' }],
+  'धि': [{ word: 'बुद्धिः', gloss: 'intellect' }, { word: 'विधिः', gloss: 'rule / method' }, { word: 'निधिः', gloss: 'treasure' }],
+  'धी': [{ word: 'धीरः', gloss: 'brave / calm' }, { word: 'सुधी', gloss: 'wise person' }, { word: 'धी', gloss: 'intellect / wisdom' }],
+  'धु': [{ word: 'मधु', gloss: 'honey' }, { word: 'सिन्धुः', gloss: 'river / ocean' }, { word: 'अधुना', gloss: 'now' }],
+  'धू': [{ word: 'धूमः', gloss: 'smoke' }, { word: 'धूलिः', gloss: 'dust' }, { word: 'वधू', gloss: 'bride' }],
+  'धृ': [{ word: 'धृतिः', gloss: 'firmness / courage' }, { word: 'धृतम्', gloss: 'held / worn' }],
+  'धे': [{ word: 'धेनुः', gloss: 'milk-cow' }, { word: 'बन्धे', gloss: 'in the bond / dam' }],
+  'धै': [{ word: 'धैर्यम्', gloss: 'patience / courage' }, { word: 'बन्धैः', gloss: 'with bonds' }, { word: 'रोधैः', gloss: 'with obstacles / dams' }],
+  'धो': [{ word: 'बन्धो', gloss: 'bond (before sandhi vowel)' }, { word: 'रोधो', gloss: 'obstacle (before sandhi vowel)' }, { word: 'अधो', gloss: 'below / downward' }],
+  'धौ': [{ word: 'धौतम्', gloss: 'washed' }, { word: 'बन्धौ', gloss: 'two bonds' }, { word: 'रोधौ', gloss: 'two obstacles' }],
+  'धं': [{ word: 'बन्धं', gloss: 'bond (object form)' }, { word: 'रोधं', gloss: 'obstacle (object form)' }],
+  'धः': [{ word: 'बन्धः', gloss: 'bond / dam' }, { word: 'रोधः', gloss: 'obstacle / stoppage' }, { word: 'अधः', gloss: 'below / down' }],
 };
+
 
 
 
