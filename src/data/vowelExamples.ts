@@ -651,6 +651,19 @@ export const BARAKHADI_EXAMPLES: Record<string, VowelExample[]> = {
   'भौ': [{ word: 'भौतिकः', gloss: 'material / physical' }, { word: 'भौमः', gloss: 'earthly / Mars' }],
   'भं': [{ word: 'शुभं', gloss: 'auspicious (neuter / object)' }],
   'भः': [{ word: 'शुभः', gloss: 'auspicious' }, { word: 'लाभः', gloss: 'gain / profit' }],
+  // म-row (bare म stays in CONSONANT_EXAMPLES: माता मित्रम् मुखम्)
+  'मा': [{ word: 'माता', gloss: 'mother' }, { word: 'मानवः', gloss: 'human being' }, { word: 'माला', gloss: 'garland' }],
+  'मि': [{ word: 'मित्रम्', gloss: 'friend' }, { word: 'मिथ्या', gloss: 'false / untrue' }, { word: 'मिलनम्', gloss: 'meeting / union' }],
+  'मी': [{ word: 'मीनः', gloss: 'fish' }, { word: 'लक्ष्मी', gloss: 'Lakshmi' }],
+  'मु': [{ word: 'मुखम्', gloss: 'face / mouth' }, { word: 'मुनिः', gloss: 'sage' }, { word: 'मुकुटः', gloss: 'crown' }],
+  'मू': [{ word: 'मूलम्', gloss: 'root' }, { word: 'मूर्तिः', gloss: 'idol / form' }, { word: 'मूर्खः', gloss: 'fool' }],
+  'मृ': [{ word: 'मृगः', gloss: 'deer' }, { word: 'मृत्युः', gloss: 'death' }, { word: 'मृदुः', gloss: 'soft' }],
+  'मे': [{ word: 'मेघः', gloss: 'cloud' }, { word: 'मेरुः', gloss: 'Meru (mountain)' }, { word: 'मेधा', gloss: 'intelligence' }],
+  'मै': [{ word: 'मैत्री', gloss: 'friendship' }],
+  'मो': [{ word: 'मोक्षः', gloss: 'liberation' }, { word: 'मोदकः', gloss: 'sweet dumpling' }, { word: 'मोहः', gloss: 'delusion / attachment' }],
+  'मौ': [{ word: 'मौनम्', gloss: 'silence' }, { word: 'मौर्यः', gloss: 'Maurya' }],
+  'मं': [{ word: 'रामं', gloss: 'Rama (object form)' }, { word: 'समं', gloss: 'equal / together' }, { word: 'आमं', gloss: 'raw / uncooked (neuter)' }],
+  'मः': [{ word: 'रामः', gloss: 'Rama' }, { word: 'समः', gloss: 'equal / same' }, { word: 'नमः', gloss: 'bow / salutation' }],
 };
 
 
