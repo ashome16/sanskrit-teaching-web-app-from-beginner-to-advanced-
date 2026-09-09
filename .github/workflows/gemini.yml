@@ -5,7 +5,7 @@ on:
     types: [created]
 
 jobs:
-  gemini-review:
+  gemini-agent:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -24,9 +24,9 @@ jobs:
       - name: Install Gemini CLI
         run: npm install -g @google/gemini-cli
 
-      - name: Run Gemini Agent Comment Command
+      - name: Run Gemini Agent
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gemini --comment "${{ github.event.comment.body }}"
+          gemini --yolo -p "You are an on-demand AI assistant. Read the following repository issue comment and answer it fully using files from the repository context. Issue Comment: ${{ github.event.comment.body }}"
