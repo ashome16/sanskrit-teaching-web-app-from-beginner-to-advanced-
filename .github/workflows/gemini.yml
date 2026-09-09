@@ -3,6 +3,8 @@ name: Gemini AI Assistant
 on:
   issue_comment:
     types: [created]
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
   gemini-agent:
@@ -16,17 +18,8 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Run Gemini Agent Integration
+        uses: google-github-actions/run-gemini-cli@main
         with:
-          node-version: '20'
-
-      - name: Install Gemini CLI
-        run: npm install -g @google/gemini-cli
-
-      - name: Run Gemini Agent
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gemini --yolo -p "You are an on-demand AI assistant. Read the following repository issue comment and answer it fully using files from the repository context. Issue Comment: ${{ github.event.comment.body }}"
+          api-key: ${{ secrets.GEMINI_API_KEY }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
