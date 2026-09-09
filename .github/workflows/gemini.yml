@@ -3,6 +3,8 @@ name: Gemini AI Assistant
 on:
   pull_request:
     types: [opened, synchronize]
+  issues:
+    types: [opened, edited]
   issue_comment:
     types: [created]
 
