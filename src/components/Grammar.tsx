@@ -161,61 +161,6 @@ const Grammar: React.FC = () => {
           <span className="grammar-card-blurb">Action words — placeholder for the next brick.</span>
         </div>
       </div>
-      Claude finished the response
-      Thought for 7s
-      Good news — looking at your screenshots, these are actually two different files, not duplicates:
-      
-      articleParser.ts (image 2) — looks perfect, correctly pasted with the parseArticle function.
-      Grammar.tsx (image 1) — this one still has the old content. Notice line 6 says type GrammarTopic = 'home' | 'vibhakti' | 'samyukta'; — it's missing 'article', and there's no article-loading code. This hasn't been replaced yet, which is probably why it looked the same as before.
-      So the fix is: you still need to replace Grammar.tsx's content with the new version. Here's how:
-      
-      Select all and delete the old content
-      You're already on the Grammar.tsx tab in the editor. Click anywhere inside the code, then press Cmd+A to select everything, then Delete/Backspace to clear it.
-      1
-      2
-      3
-      Want me to resend the Grammar.tsx file now so it's easy to grab?
-      
-      so am i done
-      
-      Thought for 1s
-      Not quite yet — here's where things stand:
-      
-      ✅ public/grammar/article.txt — updated with the structured format
-      ✅ src/utils/articleParser.ts — correctly pasted
-      ❌ src/components/Grammar.tsx — still has the old content, not yet replaced
-      ❌ Nothing committed/pushed to GitHub yet
-      Two things left:
-      
-      Replace Grammar.tsx
-      In your Grammar.tsx tab, select all (Cmd+A), delete, then paste in the new Grammar.tsx content and save (Cmd+S).
-      1
-      2
-      Want me to resend the Grammar.tsx content now so it's handy to paste in?
-      
-      but you are askingme to repalce grammar ,tsx with same contenat as article.txt
-      
-      Thought for 2s
-      No, they're not the same content at all — let me be really clear about what each file is:
-      
-      article.txt = just the article's wording (title, headings, paragraphs, bullet lists). Plain human-readable text.
-      Grammar.tsx = the actual app code (React/TypeScript) that builds the whole Grammar page — the shelf of cards, the Vibhakti list, the Conjunct Games, AND the part that fetches and displays article.txt. It's code, full of things like import, useState, <button>, etc.
-      They look nothing alike. Here's the actual Grammar.tsx code again, freshly generated, so you can compare directly:
-      
-      Ran a command, shared files
-      Open that file — you should see it starts with import React, { useEffect, useState } from 'react'; and is full of code, not the Sanskrit article text. Replace your src/components/Grammar.tsx in VS Code with exactly this.
-      
-      
-      Grammar
-      Code·TSX 
-      
-      Write a message…
-      
-      
-      Claude is AI and can make mistakes.
-      
-      
-      Grammar · TSX
     </section>
   );
 };
