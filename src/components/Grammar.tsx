@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { VIBHAKTI_CASES } from '../data/vibhakti';
+import { ARTICLES } from '../data/articleIndex';
 import { parseArticle, type ParsedArticle } from '../utils/articleParser';
 import ConjunctGames from './ConjunctGames';
 import '../styles/grammar.css';
@@ -11,16 +12,26 @@ const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((res
 const Grammar: React.FC = () => {
   const [topic, setTopic] = useState<GrammarTopic>('home');
   const [selectedCase, setSelectedCase] = useState(1);
-  const [article, setArticle] = useState<ParsedArticle | null>(null);
+  const [activeArticleId, setActiveArticleId] = useState<string | null>(null);
+  const [articles, setArticles] = useState<Record<string, ParsedArticle>>({});
   const [articleError, setArticleError] = useState(false);
 
+  const activeArticleMeta = ARTICLES.find((item) => item.id === activeArticleId);
+  const activeArticle = activeArticleId ? articles[activeArticleId] : undefined;
+
+  const openArticle = (id: string) => {
+    setActiveArticleId(id);
+    setArticleError(false);
+    setTopic('article');
+  };
+
   useEffect(() => {
-    if (topic === 'article' && !article && !articleError) {
-      fetchText('grammar/article.txt')
-        .then((text) => setArticle(parseArticle(text)))
+    if (topic === 'article' && activeArticleMeta && !articles[activeArticleMeta.id] && !articleError) {
+      fetchText(activeArticleMeta.file)
+        .then((text) => setArticles((prev) => ({ ...prev, [activeArticleMeta.id]: parseArticle(text) })))
         .catch(() => setArticleError(true));
     }
-  }, [topic, article, articleError]);
+  }, [topic, activeArticleMeta, articles, articleError]);
 
   if (topic === 'vibhakti') {
     return (
@@ -84,17 +95,18 @@ const Grammar: React.FC = () => {
           <button type="button" className="grammar-back" onClick={() => setTopic('home')}>
             ← Grammar
           </button>
-          <h2 className="grammar-title">{article ? article.title : 'Loading…'}</h2>
-          {article?.subtitle && <p className="grammar-lead">{article.subtitle}</p>}
+          <h2 className="grammar-title">{activeArticle ? activeArticle.title : 'Loading…'}</h2>
+          {activeArticle?.subtitle && <p className="grammar-lead">{activeArticle.subtitle}</p>}
         </header>
         {articleError && (
           <p className="grammar-lead">
-            Could not load the article. Make sure public/grammar/article.txt exists.
+            Could not load the article. Make sure {activeArticleMeta?.file ?? 'the article file'} exists in
+            public/.
           </p>
         )}
-        {article && (
+        {activeArticle && (
           <article className="grammar-article">
-            {article.blocks.map((block, index) => {
+            {activeArticle.blocks.map((block, index) => {
               if (block.type === 'subheading') {
                 return (
                   <h3 className="grammar-article-subheading" key={index}>
@@ -143,13 +155,20 @@ const Grammar: React.FC = () => {
           <span className="grammar-card-title">संयुक्त · Conjunct Games</span>
           <span className="grammar-card-blurb">Drop the stick, piggyback, shape-shifters — how letters join.</span>
         </button>
-        <button type="button" className="grammar-card grammar-card--ready" onClick={() => setTopic('article')}>
-          <span className="grammar-card-kicker">Ready</span>
-          <span className="grammar-card-title">📖 The Evolution of Sound</span>
-          <span className="grammar-card-blurb">
-            From Vedic mantra to modern linguistics — why Sanskrit grammar matters.
-          </span>
-        </button>
+        {ARTICLES.map((item) => (
+          <button
+            type="button"
+            className="grammar-card grammar-card--ready"
+            key={item.id}
+            onClick={() => openArticle(item.id)}
+          >
+            <span className="grammar-card-kicker">Ready</span>
+            <span className="grammar-card-title">
+              {item.emoji} {item.cardTitle}
+            </span>
+            <span className="grammar-card-blurb">{item.cardBlurb}</span>
+          </button>
+        ))}
         <div className="grammar-card grammar-card--soon" aria-disabled="true">
           <span className="grammar-card-kicker">Later</span>
           <span className="grammar-card-title">सन्धि · Sandhi</span>
