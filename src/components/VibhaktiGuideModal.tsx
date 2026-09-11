@@ -71,4 +71,3 @@ const VibhaktiGuideModal: React.FC<VibhaktiGuideModalProps> = ({ isOpen, onClose
 };
 
 export default VibhaktiGuideModal;
-Nominative (Prathama): Subject (The boy eats)Accusative (Dvitiya): Direct Object (He eats an apple)Instrumental (Tritiya): By/With (With a pen)Dative (Chaturthi): To/For (For the teacher)Ablative (Panchami): From (From the tree)Genitive (Shasthi): Possession (The king's crown)Locative (Saptami): In/On/At (In the forest)Vocative (Sambodhana): Addressing someone (O Friend!

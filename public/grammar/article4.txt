@@ -1,0 +1,74 @@
+# The Core Framework: Kārakas and Vibhaktis
+## How Sanskrit's 8 noun cases let words scramble freely and still make sense
+
+Once you understand how sounds blend and how verbal roots (dhātus) are structured, you're ready to tackle the sentence itself. In English, sentences depend entirely on rigid word order to make sense. In Sanskrit, words can go almost anywhere, because every noun carries its own grammatical identity card.
+
+That identity is powered by a dual system: kārakas (the semantic relationships) and vibhaktis (the physical case endings).
+
+## 1. The Dynamic Duo: Kāraka vs. Vibhakti
+
+To master Sanskrit nouns, you have to separate what a word means in a sentence from how it's spelled.
+
+- Kāraka (कारक) — the semantic role a noun plays in direct relation to the verb (kriyā). It answers structural questions like "who did it?", "for whom?", "with what tool?" Sanskrit recognizes exactly six kārakas.
+- Vibhakti (विभक्ति) — the actual grammatical case ending or suffix attached to a noun stem (prātipadika). There are eight vibhaktis across three numbers: singular, dual, and plural.
+
+Think of the kāraka as the invisible underlying function, and the vibhakti as the visible coat of paint marking that function.
+
+## 2. The 8 Vibhaktis: The Case Matrix
+
+Here's how the physical cases line up with their foundational kāraka roles, in plain language:
+
+| Case | English name | Kāraka | Function | Simple clue |
+| 1. Prathamā | Nominative | Kartā | The subject / doer | The agent acting |
+| 2. Dvitīyā | Accusative | Karma | The direct object | The goal of the action |
+| 3. Tṛtīyā | Instrumental | Karaṇa | The tool / instrument | By / with / through |
+| 4. Caturthī | Dative | Sampradāna | The recipient | To / for |
+| 5. Pañcamī | Ablative | Apādāna | The source of separation | From / than |
+| 6. Ṣaṣṭhī | Genitive | (not a kāraka) | Possession / relationship | Of / 's |
+| 7. Saptamī | Locative | Adhikaraṇa | The location / time | In / on / at |
+| 8. Sambodhana | Vocative | (not a kāraka) | Direct address | Hey! / Oh! |
+
+The 6th case (genitive) is technically not a kāraka, because saying "Rama's book" connects Rama to the book, not directly to the action of a verb.
+
+## 3. One Case, One Example
+
+Before tackling a full sentence, here's the simplest possible version of each case — the same name, राम (Rāma), wearing each of its eight case-endings in turn:
+
+| Case | Form | Example | Meaning |
+| 1. Prathamā (Nominative) | रामः | रामः पठति। | Rama reads. |
+| 2. Dvitīyā (Accusative) | रामम् | सीता रामम् पश्यति। | Sita sees Rama. |
+| 3. Tṛtīyā (Instrumental) | रामेण | रामेण सह गच्छामि। | I go with Rama. |
+| 4. Caturthī (Dative) | रामाय | रामाय फलम्। | A fruit, for Rama. |
+| 5. Pañcamī (Ablative) | रामात् | रामात् पत्रम्। | A letter, from Rama. |
+| 6. Ṣaṣṭhī (Genitive) | रामस्य | रामस्य पुस्तकम्। | Rama's book. |
+| 7. Saptamī (Locative) | रामे | रामे विश्वासः। | Trust in Rama. |
+| 8. Sambodhana (Vocative) | हे राम | हे राम, आगच्छ। | O Rama, come! |
+
+Notice that only the ending on राम changes from row to row — रामः, रामम्, रामेण, रामाय, रामात्, रामस्य, रामे, राम — while the meaning shifts completely each time. That single changing suffix is doing all the grammatical work an entire English preposition or word-order rule would otherwise have to do.
+
+## 4. The Grand Sentence: All Cases in One Example
+
+To see how these cases click together, look at one comprehensive sentence. Every noun points back, like a vector, to the central action — ददाति (dadāti, "gives"):
+
+हे मनुष्याः ! नृपस्य पुत्रः हस्तेन कोशात् याचकाय ग्रामे धनं ददाति ।
+(He manuṣyāḥ! Nṛpasya putraḥ hastena kośāt yācakāya grāme dhanaṁ dadāti.)
+
+Breaking it down case by case:
+
+- हे मनुष्याः (he manuṣyāḥ) — 8th case, Vocative: "O human beings!" — addressing the audience.
+- पुत्रः (putraḥ) — 1st case, Nominative / Kartā: "The son" — the one doing the giving.
+- नृपस्य (nṛpasya) — 6th case, Genitive: "Of the king" — shows whose son he is, with no direct link to the verb.
+- धनम् (dhanam) — 2nd case, Accusative / Karma: "Wealth" — the direct object being given.
+- हस्तेन (hastena) — 3rd case, Instrumental / Karaṇa: "With his hand" — the tool used to carry out the action.
+- याचकाय (yācakāya) — 4th case, Dative / Sampradāna: "To the beggar" — the ultimate recipient of the gift.
+- कोशात् (kośāt) — 5th case, Ablative / Apādāna: "From the treasury" — the point of physical separation.
+- ग्रामे (grāme) — 7th case, Locative / Adhikaraṇa: "In the village" — where the action occurs.
+- ददाति (dadāti) — the verb itself: "Gives" — the center holding the whole sentence together.
+
+Full translation: "O human beings! The king's son gives wealth to the beggar with his hand from the treasury in the village."
+
+## 5. The Power of Word Independence
+
+Because the suffixes (-अः, -अम्, -एन, -आय, -आत्, -अस्य, -ए) carry all the necessary relational information, you could scramble these words into almost any order and the sentence would mean exactly the same thing.
+
+The case endings act like labels glued to shipping crates — no matter where you move the crates around the room, the labels still tell you exactly what's inside and where it's supposed to go.
