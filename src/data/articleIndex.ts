@@ -44,4 +44,11 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: 'The DNA of Sanskrit',
     cardBlurb: 'Understanding Dhātus (Verbal Roots), the 10 Gaṇas, and Upasargas.',
   },
+  {
+    id: 'sandhi-how-sounds-join',
+    file: 'grammar/article-6.txt',
+    emoji: '🔗',
+    cardTitle: 'सन्धि · Sandhi',
+    cardBlurb: 'How sounds join — Svara Sandhi and the architecture of vowel transitions.',
+  },
 ];

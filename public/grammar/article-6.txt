@@ -1,0 +1,89 @@
+# सन्धि · Sandhi: How Sounds Join
+## Svara Sandhi – The Architecture of Vowel Transitions
+
+Imagine you have a tub of blue paint and a tub of yellow paint. If you place them right next to each other, they stay separate. But if they bump into each other and mix, they create a brand new color: green!
+
+Sandhi is just your tongue mixing sound-paints to create a beautiful, smooth conversation.
+
+## 1. How Sandhi Works (with English Examples)
+
+Even though Sandhi is a major rule in languages like Sanskrit and Hindi, we actually do it in English all the time without realizing it! Here are a few ways sounds join together:
+
+- The Blend (When two sounds mix into a new one): Try saying "Want" and "to" fast: "Wanna" (Want + to = Wanna). Or "Don't" and "you": "Don't-cha" (Don't + you = Don'tcha) — the 't' and 'y' joined hands to make a 'ch' sound!
+- The Sound Switch (When one sound changes to match its neighbor): Say "Input". If you say it at normal speed, your lips prepare for the "p" sound early, making it sound like "Im-put"! The 'n' switched to an 'm' to make it easier for your mouth.
+
+## 2. Sandhi in Sanskrit and Hindi
+
+In Indian languages, Sandhi is so popular that people actually change the way they write the words, not just how they say them!
+
+When two words are spoken in rapid succession in Sanskrit, their boundary sounds blend seamlessly. This phonetic blending is called Sandhi (literally, "joining" or "junction").
+
+The first major branch of this science is Svara Sandhi (Vowel Transition). It dictates exactly what happens when a word ending in a vowel meets a word beginning with a vowel. Instead of a clunky pause, the two vowels mathematically fuse into a single, optimized sound.
+
+## 3. The Core Mathematical Concept
+
+Pāṇini’s system relies on the vowel weights we established in Article 1. When vowels combine, they generally upgrade into a Dīrgha (long vowel) or morph via structural vowel grading into a Guṇa or Vṛddhi vowel.
+
+As a quick refresher from the Māheśvara Sūtras:
+
+- Guṇa Vowels: ए (e), ओ (o), अर् (ar)
+- Vṛddhi Vowels: ऐ (ai), औ (au), आर् (ār)
+
+## 4. The 5 Essential Rules of Svara Sandhi
+
+Here are the primary types of vowel transitions you will encounter, ordered by their mathematical logic:
+
+## Rule 1: Dīrgha Sandhi (Homogeneous Vowel Prolongation)
+
+When two of the same vowels (whether short or long) meet, they merge into their single, corresponding long vowel.
+
+Formula: Similar Vowel + Similar Vowel → Long Vowel
+
+- a / ā + a / ā → ā: देव + आलयः → देवालयः (deva + ālayas → devālayas / House of Gods)
+- i / ī + i / ī → ī: कपी + ईशः → कपीशः (kapī + īśaḥ → kapīśaḥ / Lord of Monkeys)
+
+## Rule 2: Guṇa Sandhi (The First-Degree Blend)
+
+When an a or ā is followed by a different simple vowel (i, u, ṛ), they blend into a single Guṇa vowel.
+
+Formula: a / ā + Different Vowel → Guṇa Vowel
+
+- a / ā + i / ī → e: गण + ईशः → गणेशः (gaṇa + īśaḥ → gaṇeśaḥ / Lord of the Tribes)
+- a / ā + u / ū → o: महा + उत्सवः → महोत्सवः (mahā + utsavaḥ → mahotsavaḥ / Great Festival)
+
+## Rule 3: Vṛddhi Sandhi (The Second-Degree Growth)
+
+When an a or ā meets an already complex diphthong (e, o, ai, au), the sound undergoes maximum expansion into a Vṛddhi vowel.
+
+Formula: a / ā + Diphthong → Vṛddhi Vowel
+
+- a / ā + e / ai → ai: तव + एव → तवैव (tava + eva → tavaiva / Yours alone)
+- a / ā + o / au → au: महा + औषधिः → महौषधिः (mahā + auṣadhiḥ → mahauṣadhiḥ / Great Medicine)
+
+## Rule 4: Yaṇ Sandhi (The Semi-Vowel Semi-Flip)
+
+When any simple vowel other than a/ā (i, u, ṛ) is followed by any dissimilar vowel, the first vowel completely surrenders its vowel status and transforms into its corresponding semi-vowel consonant (y, v, r).
+
+Formula: Simple Vowel (not a/ā) + Dissimilar Vowel → Semi-vowel + Dissimilar Vowel
+
+- i / ī + dissimilar → y: इति + आदि → इत्यादि (iti + ādi → ityādi / Et cetera / And so on)
+- u / ū + dissimilar → v: सु + आगतम् → स्वागतम् (su + āgatam → svāgatam / Welcome)
+
+## Rule 5: Ayādi Sandhi (Diphthong Unrolling)
+
+When compound vowels (e, o, ai, au) are followed by any vowel, they split apart into combinations of a semi-vowel and an open vowel:
+
+- e → ay (e.g., ने + अनम् → नयनम् / ne + anam → nayanam / Eye)
+- o → av (e.g., भो + अनम् → भवनम् / bho + anam → bhavanam / Building)
+
+## 5. Quick Reference Matrix
+
+| If Word 1 Ends In... | And Word 2 Starts With... | The Resulting Sound Is... | Sandhi Name |
+| a / ā | a / ā | ā | Dīrgha |
+| a / ā | i / ī | e | Guṇa |
+| a / ā | u / ū | o | Guṇa |
+| a / ā | e / ai | ai | Vṛddhi |
+| i / ī | Any other vowel | y + [Word 2 Vowel] | Yaṇ |
+| u / ū | Any other vowel | v + [Word 2 Vowel] | Yaṇ |
+
+Mastering Svara Sandhi allows you to instantly unpack massive combined words found in classical literature into their clean, dictionary-ready roots.

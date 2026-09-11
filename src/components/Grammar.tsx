@@ -200,11 +200,6 @@ const Grammar: React.FC = () => {
             <span className="grammar-card-blurb">{item.cardBlurb}</span>
           </button>
         ))}
-        <div className="grammar-card grammar-card--soon" aria-disabled="true">
-          <span className="grammar-card-kicker">Later</span>
-          <span className="grammar-card-title">सन्धि · Sandhi</span>
-          <span className="grammar-card-blurb">How sounds join — coming when we grow this shelf.</span>
-        </div>
       </div>
     </section>
   );
