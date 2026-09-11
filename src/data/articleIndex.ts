@@ -51,4 +51,11 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: 'सन्धि · Sandhi',
     cardBlurb: 'How sounds join — Svara Sandhi and the architecture of vowel transitions.',
   },
+  {
+    id: 'secret-code-upsarg-pratyaya',
+    file: 'grammar/article-7.txt',
+    emoji: '✨',
+    cardTitle: 'The Secret Code of Words',
+    cardBlurb: 'Upsarg, Pratyaya, and the legendary 21 Sup-Pratyaya power-up stickers.',
+  },
 ];
