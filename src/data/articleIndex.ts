@@ -37,4 +37,11 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: 'The Core Framework',
     cardBlurb: "How Sanskrit's 8 noun cases let words scramble freely and still make sense.",
   },
+  {
+    id: 'dna-of-sanskrit-dhatus',
+    file: 'grammar/article-5.txt',
+    emoji: '🧬',
+    cardTitle: 'The DNA of Sanskrit',
+    cardBlurb: 'Understanding Dhātus (Verbal Roots), the 10 Gaṇas, and Upasargas.',
+  },
 ];

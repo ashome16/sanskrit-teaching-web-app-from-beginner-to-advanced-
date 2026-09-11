@@ -205,11 +205,6 @@ const Grammar: React.FC = () => {
           <span className="grammar-card-title">सन्धि · Sandhi</span>
           <span className="grammar-card-blurb">How sounds join — coming when we grow this shelf.</span>
         </div>
-        <div className="grammar-card grammar-card--soon" aria-disabled="true">
-          <span className="grammar-card-kicker">Later</span>
-          <span className="grammar-card-title">धातु · Verb roots</span>
-          <span className="grammar-card-blurb">Action words — placeholder for the next brick.</span>
-        </div>
       </div>
     </section>
   );
