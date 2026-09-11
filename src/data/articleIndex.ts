@@ -30,4 +30,11 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: 'The Mouth Gym',
     cardBlurb: "Pāṇini's Shiva Sutras, Pratyāhāras, and Sandhi as a phonetic programming language.",
   },
+  {
+    id: 'karakas-and-vibhaktis',
+    file: 'grammar/article-4.txt',
+    emoji: '🏛️',
+    cardTitle: 'The Core Framework',
+    cardBlurb: "How Sanskrit's 8 noun cases let words scramble freely and still make sense.",
+  },
 ];
