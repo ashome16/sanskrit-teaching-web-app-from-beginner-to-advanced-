@@ -41,7 +41,7 @@ const Grammar: React.FC = () => {
             ← Grammar
           </button>
           <h2 className="grammar-title">विभक्ति · Vibhakti</h2>
-          <p className="grammar-lead">The 7 noun cases at a glance — our first grammar brick.</p>
+          <p className="grammar-lead">The 8 noun cases at a glance — our first grammar brick.</p>
         </header>
         <ul className="grammar-vibhakti-list">
           {VIBHAKTI_CASES.map((item) => (
@@ -179,7 +179,7 @@ const Grammar: React.FC = () => {
         <button type="button" className="grammar-card grammar-card--ready" onClick={() => setTopic('vibhakti')}>
           <span className="grammar-card-kicker">Ready</span>
           <span className="grammar-card-title">विभक्ति · Vibhakti</span>
-          <span className="grammar-card-blurb">Seven noun cases — who does what to whom.</span>
+          <span className="grammar-card-blurb">Eight noun cases — who does what to whom.</span>
         </button>
         <button type="button" className="grammar-card grammar-card--ready" onClick={() => setTopic('samyukta')}>
           <span className="grammar-card-kicker">Ready</span>
