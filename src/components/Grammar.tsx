@@ -147,6 +147,19 @@ const Grammar: React.FC = () => {
                   </div>
                 );
               }
+              if (block.type === 'image') {
+                const src = block.src.startsWith('http') || block.src.startsWith('/') ? block.src : `./${block.src}`;
+                return (
+                  <figure className="grammar-article-image-wrap" key={index}>
+                    <img src={src} alt={block.alt} className="grammar-article-image" loading="lazy" />
+                    {block.caption && (
+                      <figcaption className="grammar-article-image-caption">
+                        {block.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                );
+              }
               if (block.type === 'code') {
                 return (
                   <pre className="grammar-article-code" key={index}>

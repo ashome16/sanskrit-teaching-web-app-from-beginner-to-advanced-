@@ -40,6 +40,8 @@ Let's decode the Shiva Sutras (also called the Akṣarasamāmnāya) — arguably
 
 Legend says the master grammarian Pāṇini heard Lord Shiva play his drum (ḍamaru) fourteen times, and each beat produced a specific string of sounds. Pāṇini turned these fourteen sounds into a phonetic programming language that organizes the entire Sanskrit language — think of the Shiva Sutras as a hash table, or a compressed archive of every human speech sound.
 
+![The Sonic Architecture of Sanskrit: Śabda-Vicāra and the Māheśvara Sūtras](grammar/maheshwara-sutras.jpg "The Sonic Architecture of Sanskrit — Māheśvara Sūtras & Pratyāhāras")
+
 Every line ends with a special, unspoken marker sound called an "it" letter (shown in brackets below), which works exactly like a closing bracket in programming code:
 
 - अ इ उ [ण्] — (a i u)

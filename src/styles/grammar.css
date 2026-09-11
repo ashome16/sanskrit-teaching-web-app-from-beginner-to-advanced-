@@ -257,3 +257,27 @@
 .grammar-article-code code {
   font-family: 'SF Mono', Menlo, Consolas, monospace;
 }
+
+.grammar-article-image-wrap {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.grammar-article-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #e3d5b3;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.grammar-article-image-caption {
+  font-size: 0.85rem;
+  color: #5b5348;
+  font-style: italic;
+  text-align: center;
+}

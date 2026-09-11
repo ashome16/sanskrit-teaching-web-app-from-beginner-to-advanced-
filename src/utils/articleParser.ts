@@ -3,7 +3,8 @@ export type ArticleBlock =
   | { type: 'paragraph'; text: string }
   | { type: 'list'; items: string[] }
   | { type: 'table'; headers: string[]; rows: string[][] }
-  | { type: 'code'; text: string };
+  | { type: 'code'; text: string }
+  | { type: 'image'; src: string; alt: string; caption?: string };
 
 export interface ParsedArticle {
   title: string;
@@ -101,6 +102,25 @@ export function parseArticle(raw: string): ParsedArticle {
         blocks.push({ type: 'subheading', text });
       }
       continue;
+    }
+
+    if (line.startsWith('![') && line.includes('](') && line.endsWith(')')) {
+      flushParagraph();
+      flushList();
+      flushTable();
+      const match = line.match(/^!\[(.*?)\]\((.*?)\)$/);
+      if (match) {
+        const alt = match[1];
+        let src = match[2].trim();
+        let caption: string | undefined;
+        const captionMatch = src.match(/^(.*?)\s+["'](.*?)["']$/);
+        if (captionMatch) {
+          src = captionMatch[1];
+          caption = captionMatch[2];
+        }
+        blocks.push({ type: 'image', src, alt, caption });
+        continue;
+      }
     }
 
     if (line.startsWith('|') && line.endsWith('|')) {
