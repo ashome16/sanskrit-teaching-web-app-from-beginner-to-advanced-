@@ -42,6 +42,8 @@ Formula: Similar Vowel + Similar Vowel → Long Vowel
 - a / ā + a / ā → ā: देव + आलयः → देवालयः (deva + ālayas → devālayas / House of Gods)
 - i / ī + i / ī → ī: कपी + ईशः → कपीशः (kapī + īśaḥ → kapīśaḥ / Lord of Monkeys)
 
+![Dīrgha Sandhi (Homogeneous Vowel Prolongation)](grammar/sandhi-dirgha.jpg "Dīrgha Sandhi — Homogeneous Vowel Prolongation")
+
 ## Rule 2: Guṇa Sandhi (The First-Degree Blend)
 
 When an a or ā is followed by a different simple vowel (i, u, ṛ), they blend into a single Guṇa vowel.
@@ -50,6 +52,8 @@ Formula: a / ā + Different Vowel → Guṇa Vowel
 
 - a / ā + i / ī → e: गण + ईशः → गणेशः (gaṇa + īśaḥ → gaṇeśaḥ / Lord of the Tribes)
 - a / ā + u / ū → o: महा + उत्सवः → महोत्सवः (mahā + utsavaḥ → mahotsavaḥ / Great Festival)
+
+![Guṇa Sandhi (The First-Degree Blend)](grammar/sandhi-guna.jpg "Guṇa Sandhi — The First-Degree Blend")
 
 ## Rule 3: Vṛddhi Sandhi (The Second-Degree Growth)
 
@@ -60,6 +64,8 @@ Formula: a / ā + Diphthong → Vṛddhi Vowel
 - a / ā + e / ai → ai: तव + एव → तवैव (tava + eva → tavaiva / Yours alone)
 - a / ā + o / au → au: महा + औषधिः → महौषधिः (mahā + auṣadhiḥ → mahauṣadhiḥ / Great Medicine)
 
+![Vṛddhi Sandhi (The Second-Degree Growth)](grammar/sandhi-vriddhi.jpg "Vṛddhi Sandhi — The Second-Degree Growth")
+
 ## Rule 4: Yaṇ Sandhi (The Semi-Vowel Semi-Flip)
 
 When any simple vowel other than a/ā (i, u, ṛ) is followed by any dissimilar vowel, the first vowel completely surrenders its vowel status and transforms into its corresponding semi-vowel consonant (y, v, r).
@@ -68,6 +74,8 @@ Formula: Simple Vowel (not a/ā) + Dissimilar Vowel → Semi-vowel + Dissimilar 
 
 - i / ī + dissimilar → y: इति + आदि → इत्यादि (iti + ādi → ityādi / Et cetera / And so on)
 - u / ū + dissimilar → v: सु + आगतम् → स्वागतम् (su + āgatam → svāgatam / Welcome)
+
+![Yaṇ Sandhi (The Semi-Vowel Semi-Flip)](grammar/sandhi-yan.jpg "Yaṇ Sandhi — The Semi-Vowel Semi-Flip")
 
 ## Rule 5: Ayādi Sandhi (Diphthong Unrolling)
 
