@@ -1,26 +1,259 @@
-export interface ArticleMeta {
-  id: string;
-  file: string;
-  emoji: string;
-  cardTitle: string;
-  cardBlurb: string;
+.grammar-page {
+  background: #fffdf8;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem 1.75rem 2rem;
+  overflow-y: auto;
+  min-height: 0;
 }
 
-// To add a new article: drop a structured .txt file in public/grammar/,
-// then add one entry here. Grammar.tsx handles the rest automatically.
-export const ARTICLES: ArticleMeta[] = [
-  {
-    id: 'evolution-of-sound',
-    file: 'grammar/article.txt',
-    emoji: '📖',
-    cardTitle: 'The Evolution of Sound',
-    cardBlurb: 'From Vedic mantra to modern linguistics — why Sanskrit grammar matters.',
-  },
-  {
-    id: 'ipa-secret-code',
-    file: 'grammar/article-2.txt',
-    emoji: '🔤',
-    cardTitle: 'The Secret Code of Accents',
-    cardBlurb: 'How ancient mouth-science became the blueprint for the IPA.',
-  },
-];
+.grammar-page-header {
+  margin-bottom: 1.25rem;
+}
+
+.grammar-back {
+  border: none;
+  background: transparent;
+  color: #0f766e;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+
+.grammar-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.45rem;
+  color: #2b2118;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+}
+
+.grammar-lead {
+  margin: 0;
+  color: #5b5348;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  max-width: 40rem;
+}
+
+.grammar-shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.grammar-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  text-align: left;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid #e3d5b3;
+  background: #fbf8f2;
+}
+
+.grammar-card--ready {
+  cursor: pointer;
+  border-color: #a9e0d8;
+  background: #e6f7f5;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.grammar-card--ready:hover,
+.grammar-card--ready:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.15);
+  outline: none;
+}
+
+.grammar-card--soon {
+  opacity: 0.72;
+}
+
+.grammar-card-kicker {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #0f766e;
+}
+
+.grammar-card--soon .grammar-card-kicker {
+  color: #92720b;
+}
+
+.grammar-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2b2118;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+}
+
+.grammar-card-blurb {
+  font-size: 0.88rem;
+  color: #5b5348;
+  line-height: 1.4;
+}
+
+.grammar-vibhakti-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.grammar-vibhakti-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem 1rem;
+  align-items: start;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #e3d5b3;
+  background: #fbf8f2;
+  cursor: pointer;
+}
+
+.grammar-vibhakti-row.selected {
+  border-color: #0f766e;
+  background: #ecfdf5;
+  box-shadow: 0 0 0 1px #0f766e33;
+}
+
+.grammar-vibhakti-number {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #0f766e;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.grammar-vibhakti-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.grammar-vibhakti-name {
+  font-weight: 700;
+  color: #2b2118;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+}
+
+.grammar-vibhakti-role {
+  font-size: 0.9rem;
+  color: #0f766e;
+  font-weight: 600;
+}
+
+.grammar-vibhakti-description {
+  font-size: 0.85rem;
+  color: #5b5348;
+}
+
+.grammar-vibhakti-example {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: 0.15rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  background: #fffdf8;
+  border: 1px solid #cfe3dc;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+}
+
+.grammar-vibhakti-example strong {
+  font-size: 1.15rem;
+  color: #14352f;
+}
+
+.grammar-vibhakti-example span {
+  font-size: 0.9rem;
+  color: #5b5348;
+}
+
+.grammar-article {
+  max-width: 42rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.grammar-article-subheading {
+  margin: 0.75rem 0 0.1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f766e;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+}
+
+.grammar-article-paragraph {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #3a332a;
+}
+
+.grammar-article-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.grammar-article-list li {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #3a332a;
+}
+
+.grammar-article-table-wrap {
+  overflow-x: auto;
+}
+
+.grammar-article-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.grammar-article-table th,
+.grammar-article-table td {
+  border: 1px solid #d8cfbf;
+  padding: 0.5rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.45;
+}
+
+.grammar-article-table th {
+  background: #ede4d3;
+  color: #0f766e;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.grammar-article-code {
+  background: #2b2620;
+  color: #f3ead9;
+  padding: 0.9rem 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.grammar-article-code code {
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+}

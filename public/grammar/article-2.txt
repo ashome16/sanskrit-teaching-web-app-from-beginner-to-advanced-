@@ -23,6 +23,18 @@ The modern IPA chart uses this exact same "inside-to-outside" geographic highway
 - Zone 4, The Tooth Tappers (Dental / Dantya) — right against the back of your front teeth. Bite a tiny bit of your tongue or press it hard against your top teeth to say "Think": this gives us Sanskrit त (ta) and द (da). The IPA marks these pure dental sounds with a tiny tooth symbol under the letters: [t̪] and [d̪].
 - Zone 5, The Bubble Blowers (Bilabial / Oshthya) — your front lips. Smash your lips together and make a popping sound like a fish blowing bubbles: this is where प (pa) and ब (ba) live, coded by the IPA as [p] and [b].
 
+## The Vowel Family: Same Sounds, Familiar Words
+
+The five zones above map consonants, but Sanskrit's vowels follow just as clean an order: a, i, u, then e, o, then blended ones like ai and au. English later adapted these same core mouth shapes — its spelling just got messier along the way.
+
+- a — the short vowel in "father"
+- i — the vowel in "machine"
+- u — the vowel in "rule"
+- e — the vowel in "they"
+- o — the vowel in "go"
+
+English spelling hides this: the letter "a" alone stands for three different sounds in "cat," "cake," and "said." Ancient grammarians kept the sounds themselves clean and ordered, even where later spelling didn't.
+
 ## 2. The Engine Rules: Air and Vibrations
 
 Mapping the mouth was only half the game. Ancient scholars realized you can change a sound completely just by tweaking two "engine settings" in your throat and lungs. The IPA borrowed these exact settings.
