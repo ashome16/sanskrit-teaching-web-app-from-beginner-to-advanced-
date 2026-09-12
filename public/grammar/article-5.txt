@@ -1,0 +1,66 @@
+# The DNA of Sanskrit: Understanding Dhātus (Verbal Roots)
+## How Pāṇini's organic chemistry matrix unlocks thousands of words from a single root
+
+In Sanskrit grammar, words do not exist as random, isolated inventions. Instead, almost every noun, adjective, verb, and participle can be traced back to a foundational, atomic building block known as a Dhātu (धातु), or verbal root.
+
+Pāṇini’s architectural genius — treating language like an organic chemistry matrix — is best seen here. By understanding a single Dhātu, you instantly unlock the key to generating and understanding hundreds of interconnected words.
+
+## 1. What is a Dhātu?
+
+A Dhātu is the primitive semantic core of a word. It represents a raw action or a state of being.
+
+There are approximately 2,000 distinct verbal roots documented in the Dhātupāṭha (Pāṇini’s official catalog of roots). They are usually written with a radical mathematical root symbol (√) in modern texts to signify their foundational status:
+
+- √bhū → The concept of being / becoming
+- √gam → The concept of moving / going
+- √kṛ → The concept of doing / making
+
+## 2. The Great Division: The Ten Gaṇas (Verb Classes)
+
+To make things highly systematic, the 2,000 roots are divided into ten distinct classes called Gaṇas. Each class has a unique structural blueprint for how it transforms a raw root into a conjugable verbal stem:
+
+| Class (Gaṇa) | Name Source Root | Defining Stem Behavior | Example Root → Present Stem |
+| 1. Bhvādi | √bhū (To be) | Inserts a stabilizing -a- vowel; upgrades the root vowel (Guṇa). | √bhū → bhava- |
+| 2. Adādi | √ad (To eat) | Adds terminations directly to the root; no theme vowel. | √ad → ad- |
+| 3. Juhotyādi | √hu (To sacrifice) | Reduplicates the first syllable of the root. | √hu → juhu- |
+| 4. Divādi | √div (To play) | Inserts a -ya- suffix before the ending. | √nṛt → nṛtya- (dance) |
+| 5. Svādi | √su (To press juice) | Inserts a -no- or -nu- suffix. | √āp → āpno- (obtain) |
+| 6. Tudādi | √tud (To push) | Inserts a simple -a- vowel; no vowel upgrade. | √viś → viśa- (enter) |
+| 7. Rudhādi | √rudh (To obstruct) | Splits the root apart to insert an -na- infix inside it. | √bhaj → bhañja- (break) |
+| 8. Tanādi | √tan (To stretch) | Inserts a -o- suffix. | √kṛ → karo- (do) |
+| 9. Kryādi | √krī (To buy) | Inserts a -nā- suffix. | √grah → grahṇā- (seize) |
+| 10. Curādi | √cur (To steal) | Inserts a causative-sounding -aya- suffix. | √cur → coraya- |
+
+## 3. The Tree of Words: One Root, Endless Offshoots
+
+Because Sanskrit is an agglutinative language, you can run a single Dhātu through different grammatical pipelines to generate vastly different parts of speech.
+
+Let us trace how the single root √gam (to go) populates a whole dictionary:
+
+```
+                      [ √gam (To Go) ]
+                             │
+       ┌─────────────────────┼─────────────────────┐
+       ▼                     ▼                     ▼
+ [ Conjugated Verb ]   [ Verbal Participle ]    [ Abstract Noun ]
+    gacchati             gatvā / gantum            gatiḥ
+  (He/She/It goes)     (Having gone / To go)    (Movement/Path)
+```
+
+By adding a suffix to create an abstract noun (gatiḥ), a standard past participle (gataḥ — gone), or an agent noun (gantā — a traveler), the language multiplies its vocabulary exponentially without inventing a single new root word.
+
+## 4. Upasargas: Re-engineering the Root
+
+If the standard mutations aren't enough, Sanskrit features 22 specialized prefixes called Upasargas. When slapped onto the front of a Dhātu, they dynamically steer, twist, or completely reverse its direction.
+
+Look at how the root √hṛ (to take / carry) completely changes its nature with an Upasarga:
+
+- √hṛ → Harati (He takes away)
+- Pra + √hṛ → Praharati (He strikes / attacks)
+- Ā + √hṛ → Āharati (He brings / collects)
+- Vi + √hṛ → Viharati (He wanders / roams for pleasure)
+- Sam + √hṛ → Saṁharati (He destroys / annihilates)
+
+## 5. Why the Dhātu System is Empowering
+
+For learners, this structure is incredibly freeing. You do not need to memorize 50,000 completely separate words. If you master the core 100 Dhātus, the structural behavior of the 10 Gaṇas, and the 22 Upasargas, you can accurately calculate the meaning of thousands of complex terms on sight.

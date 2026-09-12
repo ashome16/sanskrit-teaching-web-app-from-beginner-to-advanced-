@@ -47,7 +47,7 @@ const VibhaktiGuideModal: React.FC<VibhaktiGuideModalProps> = ({ isOpen, onClose
         </header>
 
         <p className="vibhakti-modal-subtitle">
-          The 7 noun cases (Vibhakti) of Sanskrit, at a glance.
+          The 8 noun cases (Vibhakti) of Sanskrit, at a glance.
         </p>
 
         <ul className="vibhakti-case-list">

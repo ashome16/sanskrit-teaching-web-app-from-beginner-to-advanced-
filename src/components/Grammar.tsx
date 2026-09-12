@@ -41,7 +41,7 @@ const Grammar: React.FC = () => {
             ← Grammar
           </button>
           <h2 className="grammar-title">विभक्ति · Vibhakti</h2>
-          <p className="grammar-lead">The 7 noun cases at a glance — our first grammar brick.</p>
+          <p className="grammar-lead">The 8 noun cases at a glance — our first grammar brick.</p>
         </header>
         <ul className="grammar-vibhakti-list">
           {VIBHAKTI_CASES.map((item) => (
@@ -147,6 +147,19 @@ const Grammar: React.FC = () => {
                   </div>
                 );
               }
+              if (block.type === 'image') {
+                const src = block.src.startsWith('http') || block.src.startsWith('/') ? block.src : `./${block.src}`;
+                return (
+                  <figure className="grammar-article-image-wrap" key={index}>
+                    <img src={src} alt={block.alt} className="grammar-article-image" loading="lazy" />
+                    {block.caption && (
+                      <figcaption className="grammar-article-image-caption">
+                        {block.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                );
+              }
               if (block.type === 'code') {
                 return (
                   <pre className="grammar-article-code" key={index}>
@@ -179,7 +192,7 @@ const Grammar: React.FC = () => {
         <button type="button" className="grammar-card grammar-card--ready" onClick={() => setTopic('vibhakti')}>
           <span className="grammar-card-kicker">Ready</span>
           <span className="grammar-card-title">विभक्ति · Vibhakti</span>
-          <span className="grammar-card-blurb">Seven noun cases — who does what to whom.</span>
+          <span className="grammar-card-blurb">Eight noun cases — who does what to whom.</span>
         </button>
         <button type="button" className="grammar-card grammar-card--ready" onClick={() => setTopic('samyukta')}>
           <span className="grammar-card-kicker">Ready</span>
@@ -200,16 +213,6 @@ const Grammar: React.FC = () => {
             <span className="grammar-card-blurb">{item.cardBlurb}</span>
           </button>
         ))}
-        <div className="grammar-card grammar-card--soon" aria-disabled="true">
-          <span className="grammar-card-kicker">Later</span>
-          <span className="grammar-card-title">सन्धि · Sandhi</span>
-          <span className="grammar-card-blurb">How sounds join — coming when we grow this shelf.</span>
-        </div>
-        <div className="grammar-card grammar-card--soon" aria-disabled="true">
-          <span className="grammar-card-kicker">Later</span>
-          <span className="grammar-card-title">धातु · Verb roots</span>
-          <span className="grammar-card-blurb">Action words — placeholder for the next brick.</span>
-        </div>
       </div>
     </section>
   );
