@@ -200,7 +200,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         )}
         {activeLessonId === 'varnamala' && (
           <p className="textbook-glossary-hint" style={{ marginTop: '.35rem' }}>
-            Traditional chart: a · aa · i · ee · ri · rī · ka · kha · ṭa · ṣha…. Tap any letter to hear it.
+            Click on any syllable (akṣara (अक्षर)) to listen to audio pronunciation.
           </p>
         )}
         {activeLessonId === 'barakhadi' && (
@@ -474,5 +474,3 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 };
 
 export default TextbookReader;
-
-

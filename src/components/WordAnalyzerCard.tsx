@@ -176,7 +176,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
                 </>
               ) : (
                 <p className="wac-placeholder" style={{ marginBottom: '.5rem' }}>
-                  Familiar words that use this exact letter (का is not the same as क). The list stays while you browse.
+                  Familiar words that use this exact letter (का is not the same as क). Click on words to hear them.
                 </p>
               )}
               <div className="wac-vowel-examples">
