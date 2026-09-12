@@ -173,7 +173,7 @@ const Dashboard: React.FC = () => {
           >
             Varṇamālā
           </button>
-          <button className={activeView === 'board' ? 'active' : ''} onClick={() => setActiveView('board')}>Board</button>
+          <button className={activeView === 'board' ? 'active' : ''} onClick={() => setActiveView('board')}>जोडो · Tile Puzzle</button>
           <div
             className={`dashboard-nav-group${activeView === 'reader' && lesson.id !== 'varnamala' ? ' dashboard-nav-group--active' : ''}`}
           >
@@ -195,10 +195,11 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
           <button
-            className={activeView === 'grammar' ? 'active' : ''}
+            className={`dashboard-nav-stacked${activeView === 'grammar' ? ' active' : ''}`}
             onClick={() => setActiveView('grammar')}
           >
-            Grammar
+            <span className="dashboard-nav-primary">Vyākaraṇa</span>
+            <span className="dashboard-nav-secondary">Grammar</span>
           </button>
         </nav>
       </header>
