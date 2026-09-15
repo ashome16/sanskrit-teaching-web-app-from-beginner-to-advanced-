@@ -10963,6 +10963,726 @@
         "phase": "jodo"
       },
       {
+        "target": "र्ता",
+        "tiles": [
+          "र्त",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The doer-boy reads.",
+        "explanation": "र्त plus आ makes र्ता.",
+        "sentence": "कर्ता बालकः पठति।",
+        "highlight": "र्ता",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्ति",
+        "tiles": [
+          "र्त",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "Fame is in the village.",
+        "explanation": "र्त plus इ makes र्ति.",
+        "sentence": "कीर्तिः ग्रामे अस्ति।",
+        "highlight": "र्ति",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्ती",
+        "tiles": [
+          "र्त",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two fames are there.",
+        "explanation": "र्त plus ई makes र्ती.",
+        "sentence": "कीर्ती द्वौ स्तः।",
+        "highlight": "र्ती",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्तु",
+        "tiles": [
+          "र्त",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The season is spring.",
+        "explanation": "र्त plus उ makes र्तु.",
+        "sentence": "ऋतुः वसन्तः अस्ति।",
+        "highlight": "र्तु",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्तू",
+        "tiles": [
+          "र्त",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two seasons are there.",
+        "explanation": "र्त plus ऊ makes र्तू.",
+        "sentence": "ऋतू द्वौ स्तः।",
+        "highlight": "र्तू",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्ते",
+        "tiles": [
+          "र्त",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The glory of fame is wide.",
+        "explanation": "र्त plus ए makes र्ते.",
+        "sentence": "कीर्तेः यशः विस्तृतः अस्ति।",
+        "highlight": "र्ते",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्तै",
+        "tiles": [
+          "र्त",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy lives with fame.",
+        "explanation": "र्त plus ऐ makes र्तै.",
+        "sentence": "कीर्तैः सह बालकः वसति।",
+        "highlight": "र्तै",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्तो",
+        "tiles": [
+          "र्त",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The doer does the work.",
+        "explanation": "र्त plus ओ makes र्तो.",
+        "sentence": "कर्तो कार्यं करोति।",
+        "highlight": "र्तो",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्तौ",
+        "tiles": [
+          "र्त",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two doers are there.",
+        "explanation": "र्त plus औ makes र्तौ.",
+        "sentence": "कर्तौ द्वौ स्तः।",
+        "highlight": "र्तौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्धा",
+        "tiles": [
+          "र्ध",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "A half moon-digit looks lovely.",
+        "explanation": "र्ध plus आ makes र्धा.",
+        "sentence": "अर्धा चन्द्रकला शोभते।",
+        "highlight": "र्धा",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्धि",
+        "tiles": [
+          "र्ध",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "There is growth in the tree.",
+        "explanation": "र्ध plus इ makes र्धि.",
+        "sentence": "वृद्धिः वृक्षे अस्ति।",
+        "highlight": "र्धि",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्धी",
+        "tiles": [
+          "र्ध",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two growths are there.",
+        "explanation": "र्ध plus ई makes र्धी.",
+        "sentence": "वृद्धी द्वौ स्तः।",
+        "highlight": "र्धी",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्धु",
+        "tiles": [
+          "र्ध",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "He wishes half a fruit.",
+        "explanation": "र्ध plus उ makes र्धु.",
+        "sentence": "अर्धुं फलम् इच्छति।",
+        "highlight": "र्धु",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्धू",
+        "tiles": [
+          "र्ध",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two halves are there.",
+        "explanation": "र्ध plus ऊ makes र्धू.",
+        "sentence": "अर्धू द्वौ स्तः।",
+        "highlight": "र्धू",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्धे",
+        "tiles": [
+          "र्ध",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "At midday the sun burns.",
+        "explanation": "र्ध plus ए makes र्धे.",
+        "sentence": "अर्धे दिने सूर्यः तपति।",
+        "highlight": "र्धे",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्धै",
+        "tiles": [
+          "र्ध",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "There is a garland of half-flowers.",
+        "explanation": "र्ध plus ऐ makes र्धै.",
+        "sentence": "अर्धैः पुष्पैः माला अस्ति।",
+        "highlight": "र्धै",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्धो",
+        "tiles": [
+          "र्ध",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A half moon shines.",
+        "explanation": "र्ध plus ओ makes र्धो.",
+        "sentence": "अर्धो चन्द्रः विभाति।",
+        "highlight": "र्धो",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्धौ",
+        "tiles": [
+          "र्ध",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two half-moons are there.",
+        "explanation": "र्ध plus औ makes र्धौ.",
+        "sentence": "अर्धौ चन्द्रौ स्तः।",
+        "highlight": "र्धौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्भा",
+        "tiles": [
+          "र्भ",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "A sprout rises from the womb.",
+        "explanation": "र्भ plus आ makes र्भा.",
+        "sentence": "गर्भात् अङ्कुरः रोहति।",
+        "highlight": "र्भा",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्भि",
+        "tiles": [
+          "र्भ",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "Water falls dependently.",
+        "explanation": "र्भ plus इ makes र्भि.",
+        "sentence": "निर्भरि जलं पतति।",
+        "highlight": "र्भि",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्भी",
+        "tiles": [
+          "र्भ",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two wombs are there.",
+        "explanation": "र्भ plus ई makes र्भी.",
+        "sentence": "गर्भी द्वौ स्तः।",
+        "highlight": "र्भी",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्भु",
+        "tiles": [
+          "र्भ",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "It protects the seed in the womb.",
+        "explanation": "र्भ plus उ makes र्भु.",
+        "sentence": "गर्भुं बीजं रक्षति।",
+        "highlight": "र्भु",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्भू",
+        "tiles": [
+          "र्भ",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two wombs are there.",
+        "explanation": "र्भ plus ऊ makes र्भू.",
+        "sentence": "गर्भू द्वौ स्तः।",
+        "highlight": "र्भू",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्भे",
+        "tiles": [
+          "र्भ",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "There is a seed in the womb.",
+        "explanation": "र्भ plus ए makes र्भे.",
+        "sentence": "गर्भे बीजं अस्ति।",
+        "highlight": "र्भे",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्भै",
+        "tiles": [
+          "र्भ",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With wombs the earth bears fruit.",
+        "explanation": "र्भ plus ऐ makes र्भै.",
+        "sentence": "गर्भैः सह भूमिः फलति।",
+        "highlight": "र्भै",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्भो",
+        "tiles": [
+          "र्भ",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The womb holds the seed.",
+        "explanation": "र्भ plus ओ makes र्भो.",
+        "sentence": "गर्भो बीजं धारयति।",
+        "highlight": "र्भो",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्भौ",
+        "tiles": [
+          "र्भ",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two wombs are there.",
+        "explanation": "र्भ plus औ makes र्भौ.",
+        "sentence": "गर्भौ द्वौ स्तः।",
+        "highlight": "र्भौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्गा",
+        "tiles": [
+          "र्ग",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "Durga mountain is tall.",
+        "explanation": "र्ग plus आ makes र्गा.",
+        "sentence": "दुर्गा गिरिः उन्नता अस्ति।",
+        "highlight": "र्गा",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्गि",
+        "tiles": [
+          "र्ग",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A heavenly bird flies.",
+        "explanation": "र्ग plus इ makes र्गि.",
+        "sentence": "स्वर्गि खगः उड्डयति।",
+        "highlight": "र्गि",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्गी",
+        "tiles": [
+          "र्ग",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two Durgas are there.",
+        "explanation": "र्ग plus ई makes र्गी.",
+        "sentence": "दुर्गी द्वौ स्तः।",
+        "highlight": "र्गी",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्गु",
+        "tiles": [
+          "र्ग",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees heaven.",
+        "explanation": "र्ग plus उ makes र्गु.",
+        "sentence": "स्वर्गुं बालकः पश्यति।",
+        "highlight": "र्गु",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्गू",
+        "tiles": [
+          "र्ग",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two heavens are there.",
+        "explanation": "र्ग plus ऊ makes र्गू.",
+        "sentence": "स्वर्गू द्वौ स्तः।",
+        "highlight": "र्गू",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्गे",
+        "tiles": [
+          "र्ग",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "There are stars in heaven.",
+        "explanation": "र्ग plus ए makes र्गे.",
+        "sentence": "स्वर्गे ताराः सन्ति।",
+        "highlight": "र्गे",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्गै",
+        "tiles": [
+          "र्ग",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With heavens the moon looks lovely.",
+        "explanation": "र्ग plus ऐ makes र्गै.",
+        "sentence": "स्वर्गैः सह चन्द्रः शोभते।",
+        "highlight": "र्गै",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्गो",
+        "tiles": [
+          "र्ग",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Heaven is lovely.",
+        "explanation": "र्ग plus ओ makes र्गो.",
+        "sentence": "स्वर्गो रम्यः अस्ति।",
+        "highlight": "र्गो",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्गौ",
+        "tiles": [
+          "र्ग",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two heavens are there.",
+        "explanation": "र्ग plus औ makes र्गौ.",
+        "sentence": "स्वर्गौ द्वौ स्तः।",
+        "highlight": "र्गौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्मा",
+        "tiles": [
+          "र्म",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The boy does the deed.",
+        "explanation": "र्म plus आ makes र्मा.",
+        "sentence": "कर्मा बालकः करोति।",
+        "highlight": "र्मा",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्मि",
+        "tiles": [
+          "र्म",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "In the righteous village there is peace.",
+        "explanation": "र्म plus इ makes र्मि.",
+        "sentence": "धर्मि ग्रामे शान्तिः अस्ति।",
+        "highlight": "र्मि",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्मी",
+        "tiles": [
+          "र्म",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A righteous person speaks truth.",
+        "explanation": "र्म plus ई makes र्मी.",
+        "sentence": "धर्मी जनः सत्यं वदति।",
+        "highlight": "र्मी",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्मु",
+        "tiles": [
+          "र्म",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy wishes to act.",
+        "explanation": "र्म plus उ makes र्मु.",
+        "sentence": "कर्मुं बालकः इच्छति।",
+        "highlight": "र्मु",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्मू",
+        "tiles": [
+          "र्म",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two deeds are there.",
+        "explanation": "र्म plus ऊ makes र्मू.",
+        "sentence": "कर्मू द्वौ स्तः।",
+        "highlight": "र्मू",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्मे",
+        "tiles": [
+          "र्म",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "There is truth in dharma.",
+        "explanation": "र्म plus ए makes र्मे.",
+        "sentence": "धर्मे सत्यं अस्ति।",
+        "highlight": "र्मे",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्मै",
+        "tiles": [
+          "र्म",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A person lives with dharmas.",
+        "explanation": "र्म plus ऐ makes र्मै.",
+        "sentence": "धर्मैः सह जनः वसति।",
+        "highlight": "र्मै",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्मो",
+        "tiles": [
+          "र्म",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Dharma protects when protected.",
+        "explanation": "र्म plus ओ makes र्मो.",
+        "sentence": "धर्मो रक्षति रक्षितः।",
+        "highlight": "र्मो",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्मौ",
+        "tiles": [
+          "र्म",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two dharmas are there.",
+        "explanation": "र्म plus औ makes र्मौ.",
+        "sentence": "धर्मौ द्वौ स्तः।",
+        "highlight": "र्मौ",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -22977,6 +23697,606 @@
         "sentence": "भल्लूकगुहा गभीरा अस्ति।",
         "english": "The bear-cave is deep.",
         "highlight": "भल्लूकगुहा"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "कीर्तिपुष्पम्",
+        "tiles": [
+          "कीर्तिपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "कीर्तिपुष्पं विकसति।",
+        "english": "The fame-flower blooms.",
+        "highlight": "कीर्तिपुष्पम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "ऋतुपवनः",
+        "tiles": [
+          "ऋतुपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "ऋतुपवनः वहति।",
+        "english": "A seasonal breeze blows.",
+        "highlight": "ऋतुपवनः"
+      },
+      {
+        "prompt": "____ रम्यः अस्ति।",
+        "target": "वसन्तर्तुः",
+        "tiles": [
+          "वसन्तर्तुः",
+          "वसन्तः",
+          "पुष्पम्",
+          "पवनः",
+          "वृक्षः",
+          "भ्रमरः"
+        ],
+        "sentence": "वसन्तर्तुः रम्यः अस्ति।",
+        "english": "The spring season is lovely.",
+        "highlight": "वसन्तर्तुः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "कर्ताखगः",
+        "tiles": [
+          "कर्ताखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "कर्ताखगः कूजति।",
+        "english": "The doer-bird calls.",
+        "highlight": "कर्ताखगः"
+      },
+      {
+        "prompt": "____ उन्नतः अस्ति।",
+        "target": "कीर्तिगिरिः",
+        "tiles": [
+          "कीर्तिगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "कीर्तिगिरिः उन्नतः अस्ति।",
+        "english": "Fame-mountain is tall.",
+        "highlight": "कीर्तिगिरिः"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "ऋतुमेघः",
+        "tiles": [
+          "ऋतुमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "ऋतुमेघः गर्जति।",
+        "english": "A seasonal cloud thunders.",
+        "highlight": "ऋतुमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "कर्तातरुः",
+        "tiles": [
+          "कर्तातरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "कर्तातरुः फलति।",
+        "english": "The doer-tree bears fruit.",
+        "highlight": "कर्तातरुः"
+      },
+      {
+        "prompt": "____ नृत्यति।",
+        "target": "कीर्तिमयूरः",
+        "tiles": [
+          "कीर्तिमयूरः",
+          "मयूरः",
+          "पुष्पम्",
+          "वनम्",
+          "गिरिः",
+          "पवनः"
+        ],
+        "sentence": "कीर्तिमयूरः नृत्यति।",
+        "english": "The fame-peacock dances.",
+        "highlight": "कीर्तिमयूरः"
+      },
+      {
+        "prompt": "____ निशि विभाति।",
+        "target": "अर्धचन्द्रः",
+        "tiles": [
+          "अर्धचन्द्रः",
+          "चन्द्रः",
+          "तारा",
+          "आकाशः",
+          "रात्रिः",
+          "पवनः"
+        ],
+        "sentence": "अर्धचन्द्रः निशि विभाति।",
+        "english": "A half-moon shines at night.",
+        "highlight": "अर्धचन्द्रः"
+      },
+      {
+        "prompt": "____ हरितः अस्ति।",
+        "target": "वृद्धिपल्लवः",
+        "tiles": [
+          "वृद्धिपल्लवः",
+          "पल्लवः",
+          "वृक्षः",
+          "पत्रम्",
+          "वनम्",
+          "पवनः"
+        ],
+        "sentence": "वृद्धिपल्लवः हरितः अस्ति।",
+        "english": "A growth-sprout is green.",
+        "highlight": "वृद्धिपल्लवः"
+      },
+      {
+        "prompt": "____ हरितम् अस्ति।",
+        "target": "समृद्धवनम्",
+        "tiles": [
+          "समृद्धवनम्",
+          "वनम्",
+          "वृक्षः",
+          "खगः",
+          "पुष्पम्",
+          "पवनः"
+        ],
+        "sentence": "समृद्धवनं हरितम् अस्ति।",
+        "english": "A prosperous forest is green.",
+        "highlight": "समृद्धवनम्"
+      },
+      {
+        "prompt": "____ पतति।",
+        "target": "अर्धकिरणः",
+        "tiles": [
+          "अर्धकिरणः",
+          "किरणः",
+          "सूर्यः",
+          "आकाशः",
+          "मेघः",
+          "पवनः"
+        ],
+        "sentence": "अर्धकिरणः पतति।",
+        "english": "A half-ray falls.",
+        "highlight": "अर्धकिरणः"
+      },
+      {
+        "prompt": "____ जलं ददाति।",
+        "target": "वृद्धिमेघः",
+        "tiles": [
+          "वृद्धिमेघः",
+          "मेघः",
+          "जलम्",
+          "पवनः",
+          "वृक्षः",
+          "गिरिः"
+        ],
+        "sentence": "वृद्धिमेघः जलं ददाति।",
+        "english": "A growth-cloud gives water.",
+        "highlight": "वृद्धिमेघः"
+      },
+      {
+        "prompt": "____ शीतलः अस्ति।",
+        "target": "अर्धसरः",
+        "tiles": [
+          "अर्धसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "अर्धसरः शीतलः अस्ति।",
+        "english": "A half-lake is cool.",
+        "highlight": "अर्धसरः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "समृद्धपुष्पम्",
+        "tiles": [
+          "समृद्धपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "समृद्धपुष्पं विकसति।",
+        "english": "A prosperous flower blooms.",
+        "highlight": "समृद्धपुष्पम्"
+      },
+      {
+        "prompt": "____ गुहायां वसति।",
+        "target": "वृद्धिसिंहः",
+        "tiles": [
+          "वृद्धिसिंहः",
+          "सिंहः",
+          "गुहा",
+          "मृगः",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "वृद्धिसिंहः गुहायां वसति।",
+        "english": "A growth-lion lives in the cave.",
+        "highlight": "वृद्धिसिंहः"
+      },
+      {
+        "prompt": "____ रोहति।",
+        "target": "गर्भबीजम्",
+        "tiles": [
+          "गर्भबीजम्",
+          "बीजम्",
+          "अङ्कुरः",
+          "भूमिः",
+          "वृक्षः",
+          "पवनः"
+        ],
+        "sentence": "गर्भबीजं रोहति।",
+        "english": "A womb-seed sprouts.",
+        "highlight": "गर्भबीजम्"
+      },
+      {
+        "prompt": "____ पतति।",
+        "target": "निर्भरजलम्",
+        "tiles": [
+          "निर्भरजलम्",
+          "जलम्",
+          "मेघः",
+          "सरः",
+          "पवनः",
+          "गिरिः"
+        ],
+        "sentence": "निर्भरजलं पतति।",
+        "english": "Dependent water falls.",
+        "highlight": "निर्भरजलम्"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "गर्भकमलम्",
+        "tiles": [
+          "गर्भकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "गर्भकमलं विकसति।",
+        "english": "A womb-lotus blooms.",
+        "highlight": "गर्भकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "निर्भरपवनः",
+        "tiles": [
+          "निर्भरपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "निर्भरपवनः वहति।",
+        "english": "A dependent breeze blows.",
+        "highlight": "निर्भरपवनः"
+      },
+      {
+        "prompt": "____ उन्नतः अस्ति।",
+        "target": "गर्भतरुः",
+        "tiles": [
+          "गर्भतरुः",
+          "तरुः",
+          "मूलम्",
+          "पर्णम्",
+          "वनम्",
+          "बीजम्"
+        ],
+        "sentence": "गर्भतरुः उन्नतः अस्ति।",
+        "english": "A womb-tree is tall.",
+        "highlight": "गर्भतरुः"
+      },
+      {
+        "prompt": "____ शोभते।",
+        "target": "गर्भपुष्पम्",
+        "tiles": [
+          "गर्भपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "गर्भपुष्पं शोभते।",
+        "english": "A womb-flower looks lovely.",
+        "highlight": "गर्भपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "निर्भरमेघः",
+        "tiles": [
+          "निर्भरमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "निर्भरमेघः गर्जति।",
+        "english": "A dependent cloud thunders.",
+        "highlight": "निर्भरमेघः"
+      },
+      {
+        "prompt": "____ शान्तः अस्ति।",
+        "target": "गर्भमृगः",
+        "tiles": [
+          "गर्भमृगः",
+          "मृगः",
+          "वनम्",
+          "तृणम्",
+          "शशकः",
+          "गिरिः"
+        ],
+        "sentence": "गर्भमृगः शान्तः अस्ति।",
+        "english": "A womb-deer is peaceful.",
+        "highlight": "गर्भमृगः"
+      },
+      {
+        "prompt": "____ उन्नतः अस्ति।",
+        "target": "दुर्गगिरिः",
+        "tiles": [
+          "दुर्गगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "दुर्गगिरिः उन्नतः अस्ति।",
+        "english": "Fort-mountain is tall.",
+        "highlight": "दुर्गगिरिः"
+      },
+      {
+        "prompt": "____ विभाति।",
+        "target": "स्वर्गतारा",
+        "tiles": [
+          "स्वर्गतारा",
+          "तारा",
+          "आकाशः",
+          "चन्द्रः",
+          "किरणः",
+          "पवनः"
+        ],
+        "sentence": "स्वर्गतारा विभाति।",
+        "english": "A heaven-star shines.",
+        "highlight": "स्वर्गतारा"
+      },
+      {
+        "prompt": "____ हिमावृतम्।",
+        "target": "दुर्गशिखरम्",
+        "tiles": [
+          "दुर्गशिखरम्",
+          "शिखरम्",
+          "हिमम्",
+          "गिरिः",
+          "मेघः",
+          "पवनः"
+        ],
+        "sentence": "दुर्गशिखरं हिमावृतम्।",
+        "english": "Fort-peak is snow-covered.",
+        "highlight": "दुर्गशिखरम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "स्वर्गपवनः",
+        "tiles": [
+          "स्वर्गपवनः",
+          "पवनः",
+          "मेघः",
+          "आकाशः",
+          "तारा",
+          "गिरिः"
+        ],
+        "sentence": "स्वर्गपवनः वहति।",
+        "english": "A heaven-breeze blows.",
+        "highlight": "स्वर्गपवनः"
+      },
+      {
+        "prompt": "____ हरितम् अस्ति।",
+        "target": "दुर्गवनम्",
+        "tiles": [
+          "दुर्गवनम्",
+          "वनम्",
+          "वृक्षः",
+          "खगः",
+          "पुष्पम्",
+          "गिरिः"
+        ],
+        "sentence": "दुर्गवनं हरितम् अस्ति।",
+        "english": "Fort-forest is green.",
+        "highlight": "दुर्गवनम्"
+      },
+      {
+        "prompt": "____ उड्डयति।",
+        "target": "स्वर्गखगः",
+        "tiles": [
+          "स्वर्गखगः",
+          "खगः",
+          "आकाशः",
+          "नीडम्",
+          "तारा",
+          "पवनः"
+        ],
+        "sentence": "स्वर्गखगः उड्डयति।",
+        "english": "A heaven-bird flies up.",
+        "highlight": "स्वर्गखगः"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "दुर्गमेघः",
+        "tiles": [
+          "दुर्गमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "गिरिः",
+          "आकाशः"
+        ],
+        "sentence": "दुर्गमेघः गर्जति।",
+        "english": "A fort-cloud thunders.",
+        "highlight": "दुर्गमेघः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "स्वर्गकमलम्",
+        "tiles": [
+          "स्वर्गकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "स्वर्गकमलं विकसति।",
+        "english": "A heaven-lotus blooms.",
+        "highlight": "स्वर्गकमलम्"
+      },
+      {
+        "prompt": "____ दृढः अस्ति।",
+        "target": "धर्मतरुः",
+        "tiles": [
+          "धर्मतरुः",
+          "तरुः",
+          "मूलम्",
+          "पर्णम्",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "धर्मतरुः दृढः अस्ति।",
+        "english": "The dharma-tree is firm.",
+        "highlight": "धर्मतरुः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "कर्मपुष्पम्",
+        "tiles": [
+          "कर्मपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "कर्मपुष्पं विकसति।",
+        "english": "The deed-flower blooms.",
+        "highlight": "कर्मपुष्पम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "धर्मपवनः",
+        "tiles": [
+          "धर्मपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "धर्मपवनः वहति।",
+        "english": "A dharma-breeze blows.",
+        "highlight": "धर्मपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "कर्मखगः",
+        "tiles": [
+          "कर्मखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "कर्मखगः कूजति।",
+        "english": "The deed-bird calls.",
+        "highlight": "कर्मखगः"
+      },
+      {
+        "prompt": "____ मेघैः स्पृशति।",
+        "target": "धर्मगिरिः",
+        "tiles": [
+          "धर्मगिरिः",
+          "गिरिः",
+          "मेघः",
+          "शिखरम्",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "धर्मगिरिः मेघैः स्पृशति।",
+        "english": "Dharma-mountain touches the clouds.",
+        "highlight": "धर्मगिरिः"
+      },
+      {
+        "prompt": "____ सरलः अस्ति।",
+        "target": "कर्ममार्गः",
+        "tiles": [
+          "कर्ममार्गः",
+          "मार्गः",
+          "गिरिः",
+          "वनम्",
+          "पवनः",
+          "वृक्षः"
+        ],
+        "sentence": "कर्ममार्गः सरलः अस्ति।",
+        "english": "The deed-path is simple.",
+        "highlight": "कर्ममार्गः"
+      },
+      {
+        "prompt": "____ शीतलः अस्ति।",
+        "target": "धर्मसरः",
+        "tiles": [
+          "धर्मसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "धर्मसरः शीतलः अस्ति।",
+        "english": "The dharma-lake is cool.",
+        "highlight": "धर्मसरः"
+      },
+      {
+        "prompt": "____ जलं ददाति।",
+        "target": "कर्ममेघः",
+        "tiles": [
+          "कर्ममेघः",
+          "मेघः",
+          "जलम्",
+          "पवनः",
+          "वृक्षः",
+          "गिरिः"
+        ],
+        "sentence": "कर्ममेघः जलं ददाति।",
+        "english": "A deed-cloud gives water.",
+        "highlight": "कर्ममेघः"
       },
       {
         "phase": "learn",
