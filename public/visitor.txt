@@ -2,7 +2,7 @@
 
 One school. Seven shelves. Meaning first.
 A letter is a place on the breath. A word lives in a sentence.
-English appears only after you Read the sentence correctly, and it names the whole sentence — never the wrong tile.
+When you click the right cream tile, a picture and the Sanskrit sentence appear. English names the whole sentence — never the wrong tile.
 
 Tap the **?** any time to reopen this guide.
 
@@ -12,11 +12,10 @@ Tap the **?** any time to reopen this guide.
 
 1. Pick a tab.
 2. Read the Target / blank.
-3. Tap tile(s) on the chalkboard.
-4. Press **Read the sentence**.
-5. If you are right, the Sanskrit sentence opens (taught word marked). English is under it.
-6. Press **Next** for the next word on the **same** shelf.
-7. A wrong answer clears the row — tap again. Tiles freeze only after you Read the sentence correctly, until Next.
+3. Tap the cream tile(s) on the chalkboard.
+4. If you are right, a picture and the Sanskrit sentence open right away (taught word marked). English is under them.
+5. Press **Next** for the next word on the **same** shelf.
+6. A wrong tap shows a tip — try another cream tile right away. Nothing freezes.
 
 ---
 
@@ -25,11 +24,10 @@ Tap the **?** any time to reopen this guide.
 This shelf has two kinds of rows. The tip line and the mark **Click 1 tile** / **Click 2 tiles** tell you which kind you are on.
 
 ### A. Join rows — click TWO tiles
-1. Click the consonant tile first (for Day 1 that is **क**).
-2. Click the vowel tile next (**आ**).
-3. Click **Read the sentence**.
-4. You should see **का बालिका पठति।** and *Who is the girl reading?*
-5. Click **Next** for the next word.
+1. Click the consonant tile (for Day 1 that is **क**).
+2. Click the vowel tile (**आ**) — any order is fine.
+3. When the pair is right, the picture and sentence appear: **का बालिका पठति।** and *Who is the girl reading?*
+4. Click **Next** for the next word.
 
 **आ** is not glued on as a second letter. It becomes the mark **ा** on **क** → **का**.
 
@@ -38,8 +36,8 @@ Same pattern: **म** then **आ** → **मा**; **स** then **आ** → **�
 ### B. Question-word rows — click ONE tile
 After the join rows, the Target looks like **____ बालकः धावति?**
 1. Click only **कः** (the whole word).
-2. Do not click a second tile.
-3. Click **Read the sentence**, then **Next**.
+2. Do not click a second tile — the picture and sentence appear at once.
+3. Click **Next**.
 
 Later blanks use **किम्**, **का**, **कुत्र**. Still one click each.
 
@@ -67,7 +65,7 @@ Things you can touch.
 - First rows: match the **verb** to the thing (**पुस्तकम्** → tap **पठति**).
 - Later rows (after Next): name the thing (**घटः**, **फलम्**, **कन्दुकः** …).
 
-One tile. Read the sentence. Next.
+One tile. Picture and sentence appear. Next.
 
 ---
 

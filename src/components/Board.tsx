@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/board.css';
+import { iconForExampleWord } from '../data/exampleIcons';
 import { playPronunciation } from '../utils/pronunciation';
 
 type ShelfId = 'prarambhah' | 'sariram' | 'ganitam' | 'bhugolah' | 'sanskritih' | 'krida' | 'prakrtih';
@@ -69,6 +70,24 @@ function glueMatchesTarget(tiles: string[], target: string) {
   return perms(cleaned).some((order) => glueTiles(order) === goal);
 }
 
+
+/** Evaluate whether `tiles` is a correct answer for this puzzle (same rules as isCorrect). */
+function evaluateChosen(puzzle: BoardPuzzle | null, tiles: string[]): boolean {
+  if (!puzzle) return false;
+  const target = (puzzle.answer ?? puzzle.target).normalize('NFC');
+  const wholeWordRow = puzzle.tiles.some((tile) => cleanTile(tile).normalize('NFC') === target);
+  if (wholeWordRow) {
+    return tiles.length === 1 && cleanTile(tiles[0]).normalize('NFC') === target;
+  }
+  if (puzzle.target === 'का') {
+    const chosenSet = new Set(tiles.map((tile) => cleanTile(tile).normalize('NFC')));
+    const isKaAaPair = chosenSet.size === 2 && tiles.length === 2
+      && (chosenSet.has('क') && (chosenSet.has('आ') || chosenSet.has('ा')));
+    return glueMatchesTarget(tiles, 'का') || isKaAaPair;
+  }
+  return glueMatchesTarget(tiles, target);
+}
+
 function highlightedSentence(sentence: string | undefined, highlight: string | undefined, tapHighlight: string | undefined) {
   if (!sentence || !highlight) return sentence;
   const matchStart = sentence.indexOf(highlight);
@@ -83,7 +102,7 @@ function highlightedSentence(sentence: string | undefined, highlight: string | u
 }
 
 
-/** Bold “Read the sentence” / Click Next inside tip or welcome copy (labels loop + visitor **markdown**). */
+/** Bold Click Next (and legacy phrases) inside tip or welcome copy (labels loop + visitor **markdown**). */
 function emphasizeTipText(text: string): React.ReactNode {
   const pattern = /(Read the sentence|click\s+Next|Click\s+Next|\*\*[^*]+\*\*|\bNext\b)/g;
   const nodes: React.ReactNode[] = [];
@@ -190,23 +209,7 @@ const Board: React.FC = () => {
   const isLearnPhase = puzzlePhase === 'learn';
   const isMatchMeaningPhase = puzzlePhase === 'match-meaning';
 
-  const isCorrect = (() => {
-    if (!activePuzzle) return false;
-    const target = (activePuzzle.answer ?? activePuzzle.target).normalize('NFC');
-    const wholeWordRow = activePuzzle.tiles.some((tile) => cleanTile(tile).normalize('NFC') === target);
-    // Question-word rows: exactly one tile, exact match (कः ≠ क, and कथम् is never right here)
-    if (wholeWordRow) {
-      return chosen.length === 1 && cleanTile(chosen[0]).normalize('NFC') === target;
-    }
-    // जोडो joins: any order of the two cream tiles
-    if (activePuzzle.target === 'का') {
-      const chosenSet = new Set(chosen.map((tile) => cleanTile(tile).normalize('NFC')));
-      const isKaAaPair = chosenSet.size === 2 && chosen.length === 2
-        && (chosenSet.has('क') && (chosenSet.has('आ') || chosenSet.has('ा')));
-      return glueMatchesTarget(chosen, 'का') || isKaAaPair;
-    }
-    return glueMatchesTarget(chosen, target);
-  })();
+  const isCorrect = evaluateChosen(activePuzzle, chosen);
 
   const chooseShelf = (nextShelf: ShelfId) => {
     const switched = nextShelf !== activeShelf;
@@ -247,40 +250,63 @@ const Board: React.FC = () => {
     || isPrashnaPart
   );
   const wrongAttemptMessage = isMatchMeaningPhase
-    ? 'Not that cream word — pick the one that matches the meaning, then Read the sentence again.'
+    ? 'Not that cream word — try another cream tile.'
     : hasBlank
-      ? 'Not that cream tile — try another, then Read the sentence again.'
+      ? 'Not that cream tile — try another cream tile.'
       : isJodoSkin
-        ? 'Not those tiles. Click the right letter and vowel (any order), then Read the sentence again.'
-        : 'Not that cream tile — try another, then Read the sentence again.';
+        ? 'Not those tiles. Click the right letter and vowel (any order), or try another cream tile.'
+        : 'Not that cream tile — try another cream tile.';
 
-  const toggleTile = (tile: string) => {
-    // Never permanently freeze cream tiles after a correct Read — kids must always be able to tap.
-    // If we are still on the success screen, clear checked so a new selection can start.
-    if (checked && isCorrect) {
-      setChecked(false);
-    }
-    const clean = cleanTile(tile);
-    if (!clean) return;
-    setWrongAttempt(false);
+  /** Apply a new cream-tile selection and immediately reveal sentence/graphic if correct. */
+  const applySelection = (nextChosen: string[]) => {
+    setChosen(nextChosen);
     if (!isJodoSkin) {
-      setChosen((current) => current[0] === clean ? [] : [clean]);
+      if (nextChosen.length === 0) {
+        setChecked(false);
+        setWrongAttempt(false);
+        return;
+      }
+      if (evaluateChosen(activePuzzle, nextChosen)) {
+        setChecked(true);
+        setWrongAttempt(false);
+      } else {
+        setChecked(false);
+        setWrongAttempt(true);
+      }
       return;
     }
-    setChosen((current) => current.includes(clean) ? current.filter((item) => item !== clean) : [...current, clean]);
-  };
-
-  const submitCheck = () => {
-    if (chosen.length === 0) return;
-    if (isCorrect) {
+    // जोडो: wait until two tiles, then auto-reveal or tip
+    if (nextChosen.length < 2) {
+      setChecked(false);
+      setWrongAttempt(false);
+      return;
+    }
+    if (evaluateChosen(activePuzzle, nextChosen)) {
       setChecked(true);
       setWrongAttempt(false);
     } else {
-      setWrongAttempt(true);
       setChecked(false);
-      // One-tile rows: keep the gold tile so the child can click a different word
-      if (!targetIsWholeTile) setChosen([]);
+      setWrongAttempt(true);
     }
+  };
+
+  const toggleTile = (tile: string) => {
+    const clean = cleanTile(tile);
+    if (!clean) return;
+    // Selecting a tile must always work — never freeze. Wrong/other click replaces and re-evaluates.
+    if (!isJodoSkin) {
+      applySelection([clean]);
+      return;
+    }
+    // जोडो: after success, a new tap starts a fresh pair; otherwise toggle membership (any order).
+    if (checked && isCorrect) {
+      applySelection([clean]);
+      return;
+    }
+    const nextChosen = chosen.includes(clean)
+      ? chosen.filter((item) => item !== clean)
+      : [...chosen, clean];
+    applySelection(nextChosen);
   };
 
   const hasNextPuzzle = (isLearnPhase || isCorrect) && activePuzzles.length > 0;
@@ -335,7 +361,7 @@ const Board: React.FC = () => {
     else goNext();
   };
 
-  // After a correct Check, auto-advance so later मात्रा rows still appear if Next is missed.
+  // After a correct cream-tile reveal, auto-advance so later मात्रा rows still appear if Next is missed.
   // Learn cards never auto-advance — child must hear, then click Next.
   // Do not wrap on the last puzzle (that felt like the chain broke).
   useEffect(() => {
@@ -349,10 +375,9 @@ const Board: React.FC = () => {
     // goNext closes over puzzleIndex/activeShelf; listing those deps avoids stale advance / double-fire.
   }, [checked, isCorrect, puzzleIndex, activeShelf, activePuzzles.length, isLearnPhase]);
 
-  const tilesNeeded = isJodoSkin ? 2 : 1;
-  const activeStep = (checked && isCorrect)
-    ? 3
-    : (chosen.length >= tilesNeeded ? 2 : 1);
+  const activeStep = (checked && isCorrect) ? 2 : 1;
+  const graphicWord = ((activePuzzle?.answer ?? activePuzzle?.target ?? activePuzzle?.highlight) || '').normalize('NFC');
+  const puzzleGraphic = graphicWord ? iconForExampleWord(graphicWord) : '✨';
 
   return <main className="board-shell">
     <nav className="wing-nav" aria-label="Learning shelves">
@@ -365,8 +390,8 @@ const Board: React.FC = () => {
       <p className="board-tip">{isLearnPhase
         ? <>Hear the word, read the meaning, then <strong className="tip-next">Click Next</strong>.</>
         : emphasizeTipText(isJodoSkin
-          ? 'Sequence: 1) Click the letter cream tile. 2) Click the vowel cream tile. 3) Read the sentence. 4) Click Next.'
-          : 'Sequence: 1) Click one cream tile (numbers are on the tiles). 2) Read the sentence. 3) Click Next. Then do the same on the next puzzle.')}</p>
+          ? 'Click two cream tiles. The picture and sentence appear. Then Click Next.'
+          : 'Click a cream tile. The picture and sentence appear. Then Click Next.')}</p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
     </div>
@@ -389,8 +414,8 @@ const Board: React.FC = () => {
           <span className="meta-hint">{isLearnPhase
             ? 'Learn the word'
             : isJodoSkin
-              ? '2 tiles → Read → Next'
-              : '1 tile → Read → Next'}</span>
+              ? '2 tiles → Next'
+              : '1 tile → Next'}</span>
           <span className="meta-sep" aria-hidden="true">·</span>
           <span className="meta-progress">{puzzleIndex + 1} / {activePuzzles.length}</span>
         </div>
@@ -399,14 +424,12 @@ const Board: React.FC = () => {
           <ol className="puzzle-steps" aria-label="Puzzle steps">
             <li className={activeStep === 1 ? 'active' : undefined}>
               <span className="step-num" aria-hidden="true">1</span>
-              <span className="step-label">Click a cream tile <small>(numbers on tiles)</small></span>
+              <span className="step-label">{isJodoSkin
+                ? <>Click two cream tiles <small>(any order)</small></>
+                : <>Click a cream tile <small>(numbers on tiles)</small></>}</span>
             </li>
             <li className={activeStep === 2 ? 'active' : undefined}>
               <span className="step-num" aria-hidden="true">2</span>
-              <span className="step-label">Read the sentence</span>
-            </li>
-            <li className={activeStep === 3 ? 'active' : undefined}>
-              <span className="step-num" aria-hidden="true">3</span>
               <span className="step-label">Click Next</span>
             </li>
           </ol>
@@ -459,12 +482,9 @@ const Board: React.FC = () => {
               ))}
             </div>
 
-            <div className="puzzle-actions">
-              <button className="check-button" onClick={submitCheck}>Read the sentence</button>
-            </div>
-
             {checked && isCorrect && (
               <div className="puzzle-result correct">
+                <div className="puzzle-graphic" aria-hidden="true">{puzzleGraphic}</div>
                 <p className="result-sanskrit">{highlightedSentence(activePuzzle.sentence, activePuzzle.highlight, activePuzzle.tapHighlight)}</p>
                 <p className="result-english">{activePuzzle.english}</p>
                 {isMatchMeaningPhase && (
