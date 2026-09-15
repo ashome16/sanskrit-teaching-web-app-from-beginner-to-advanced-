@@ -649,3 +649,43 @@
 तुष्टखगः नीडे कूजति।|The contented bird calls in the nest.|तुष्टखगः|nature
 सृष्टिकमलं शोभते।|The creation-lotus looks lovely.|सृष्टिकमलम्|nature
 अष्टशिखरं हिमावृतम् अस्ति।|The eight-peak is snow-covered.|अष्टशिखरम्|nature
+ह्रदजलं शीतलम् अस्ति।|The lake water is cool.|ह्रदजलम्|nature
+ह्रस्वखगः नीडे कूजति।|The small bird calls in the nest.|ह्रस्वखगः|nature
+ह्रीमत्पद्मं विकसति।|The modest lotus blooms.|ह्रीमत्पद्मम्|nature
+ह्रुदयस्नेहः मातरि अस्ति।|Heart-affection is in the mother.|ह्रुदयस्नेहः|nature
+ह्रेपितमृगः पलायते।|The startled deer flees.|ह्रेपितमृगः|nature
+ह्रस्वतरुः छायां ददाति।|The short tree gives shade.|ह्रस्वतरुः|nature
+सुह्रदसरः रम्यः अस्ति।|The friendly lake is lovely.|सुह्रदसरः|nature
+ह्रासपवनः मन्दं वहति।|The fading wind blows slowly.|ह्रासपवनः|nature
+सह्यागिरिः मेघैः स्पृशति।|The Sahya mountain touches the clouds.|सह्यागिरिः|nature
+ह्यस्तनपुष्पं शुष्कम् अस्ति।|Yesterday’s flower is dry.|ह्यस्तनपुष्पम्|nature
+सह्यवनं हरितम् अस्ति।|The Sahya forest is green.|सह्यवनम्|nature
+ह्युत्साहसिंहः गर्जति।|The eager lion roars.|ह्युत्साहसिंहः|nature
+ह्योत्सवमयूरः नृत्यति।|The festival peacock dances.|ह्योत्सवमयूरः|nature
+प्रियह्यखगः कूजति।|The dear bird sings.|प्रियह्यखगः|nature
+ह्येयपथः वने अस्ति।|The path to take is in the forest.|ह्येयपथः|nature
+ह्यूतबीजं रोहति।|The sown seed sprouts.|ह्यूतबीजम्|nature
+वस्त्रपुष्पं शोभते।|The cloth-flower looks lovely.|वस्त्रपुष्पम्|nature
+स्त्रीकमलं विकसति।|The woman’s lotus blooms.|स्त्रीकमलम्|nature
+शस्त्रमेघः गर्जति।|The weapon-cloud thunders.|शस्त्रमेघः|nature
+तन्त्रिखगः मधुरं कूजति।|The string-bird sings sweetly.|तन्त्रिखगः|nature
+वस्त्रतरुः छायां ददाति।|The cloth-tree gives shade.|वस्त्रतरुः|nature
+सुस्त्रोतजलं वहति।|Fair stream-water flows.|सुस्त्रोतजलम्|nature
+अस्त्रवनं शान्तम् अस्ति।|The arms-forest is peaceful.|अस्त्रवनम्|nature
+वस्त्रपल्लवः हरितः अस्ति।|The cloth-sprout is green.|वस्त्रपल्लवः|nature
+पङ्ककमलं विकसति।|The mud-lotus blooms.|पङ्ककमलम्|nature
+अङ्कुरपत्रं हरितम् अस्ति।|The sprout-leaf is green.|अङ्कुरपत्रम्|nature
+शङ्खध्वनिः सागरे श्रूयते।|A conch sound is heard at the sea.|शङ्खध्वनिः|nature
+अङ्कमृगः वने चरति।|The marked deer wanders in the forest.|अङ्कमृगः|nature
+पङ्किलजलं मलिनम् अस्ति।|The muddy water is dirty.|पङ्किलजलम्|nature
+शङ्कासिंहः गुहायां वसति।|The wary lion lives in the cave.|शङ्कासिंहः|nature
+अङ्केशिशुः मातुः शेते।|The lap-child sleeps with mother.|अङ्केशिशुः|nature
+तुङ्कशिखरं हिमावृतम् अस्ति।|The lofty peak is snow-covered.|तुङ्कशिखरम्|nature
+इच्छापुष्पं विकसति।|The wish-flower blooms.|इच्छापुष्पम्|nature
+गच्छत्खगः आकाशे उड्डयति।|The going bird flies in the sky.|गच्छत्खगः|nature
+उच्छ्रिततरुः उन्नतः अस्ति।|The raised tree is tall.|उच्छ्रिततरुः|nature
+मत्स्यच्छत्रं जले तरति।|A fish-umbrella floats on water.|मत्स्यच्छत्रम्|nature
+इच्छामयूरः नृत्यति।|The wish-peacock dances.|इच्छामयूरः|nature
+आच्छादितगिरिः मेघैः आवृतः।|The covered mountain is wrapped in clouds.|आच्छादितगिरिः|nature
+उच्छिष्टफलं पतति।|Leftover fruit falls.|उच्छिष्टफलम्|nature
+स्वच्छपवनः वहति।|A clean wind blows.|स्वच्छपवनः|nature
