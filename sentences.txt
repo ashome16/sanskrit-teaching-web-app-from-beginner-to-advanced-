@@ -849,3 +849,43 @@
 कर्ममार्गः सरलः अस्ति।|The deed-path is simple.|कर्ममार्गः|nature
 धर्मसरः शीतलः अस्ति।|The dharma-lake is cool.|धर्मसरः|nature
 कर्ममेघः जलं ददाति।|A deed-cloud gives water.|कर्ममेघः|nature
+अन्नपुष्पं विकसति।|The food-flower blooms.|अन्नपुष्पम्|nature
+अन्नतरुः फलति।|The food-tree bears fruit.|अन्नतरुः|nature
+अन्नपवनः वहति।|A food-breeze blows.|अन्नपवनः|nature
+भिन्नपुष्पं शोभते।|A different flower looks lovely.|भिन्नपुष्पम्|nature
+अन्नमेघः जलं ददाति।|A food-cloud gives water.|अन्नमेघः|nature
+अन्नसरः शीतलः अस्ति।|The food-lake is cool.|अन्नसरः|nature
+भिन्नखगः कूजति।|A different bird calls.|भिन्नखगः|nature
+अन्नगिरिः उन्नतः अस्ति।|Food-mountain is tall.|अन्नगिरिः|nature
+सम्मानतरुः उन्नतः अस्ति।|The respect-tree is tall.|सम्मानतरुः|nature
+सम्मुखपवनः वहति।|A front-facing breeze blows.|सम्मुखपवनः|nature
+सम्मतपुष्पं विकसति।|An agreed flower blooms.|सम्मतपुष्पम्|nature
+सम्मानगिरिः मेघैः स्पृशति।|Respect-mountain touches the clouds.|सम्मानगिरिः|nature
+सम्मानकमलं विकसति।|A respect-lotus blooms.|सम्मानकमलम्|nature
+सम्मुखखगः उड्डयति।|A front-facing bird flies up.|सम्मुखखगः|nature
+सम्मानसरः शीतलः अस्ति।|The respect-lake is cool.|सम्मानसरः|nature
+सम्मतमेघः जलं ददाति।|An agreed cloud gives water.|सम्मतमेघः|nature
+शय्यापुष्पं विकसति।|The bed-flower blooms.|शय्यापुष्पम्|nature
+शय्यापवनः वहति।|A bed-breeze blows.|शय्यापवनः|nature
+शय्यातरुः हरितः अस्ति।|The bed-tree is green.|शय्यातरुः|nature
+शय्यामेघः गर्जति।|A bed-cloud thunders.|शय्यामेघः|nature
+शय्याकमलं शोभते।|A bed-lotus looks lovely.|शय्याकमलम्|nature
+शय्याखगः कूजति।|A bed-bird calls.|शय्याखगः|nature
+शय्यागिरिः उन्नतः अस्ति।|Bed-mountain is tall.|शय्यागिरिः|nature
+शय्यावनं हरितम् अस्ति।|Bed-forest is green.|शय्यावनम्|nature
+सर्रपवनः वहति।|A swift breeze blows.|सर्रपवनः|nature
+तर्रपुष्पं विकसति।|A swift flower blooms.|तर्रपुष्पम्|nature
+सर्रतरुः फलति।|The swift tree bears fruit.|सर्रतरुः|nature
+तर्रमेघः जलं ददाति।|A swift cloud gives water.|तर्रमेघः|nature
+सर्रगिरिः उन्नतः अस्ति।|Swift-mountain is tall.|सर्रगिरिः|nature
+तर्रखगः कूजति।|A swift bird calls.|तर्रखगः|nature
+सर्रसरः शीतलः अस्ति।|The swift lake is cool.|सर्रसरः|nature
+तर्रवनं हरितम् अस्ति।|Swift-forest is green.|तर्रवनम्|nature
+सव्वपवनः वहति।|An all-ready breeze blows.|सव्वपवनः|nature
+सव्वपुष्पं विकसति।|An all-ready flower blooms.|सव्वपुष्पम्|nature
+सव्वतरुः उन्नतः अस्ति।|The all-ready tree is tall.|सव्वतरुः|nature
+सव्वमेघः गर्जति।|An all-ready cloud thunders.|सव्वमेघः|nature
+सव्वकमलं विकसति।|An all-ready lotus blooms.|सव्वकमलम्|nature
+सव्वखगः उड्डयति।|An all-ready bird flies up.|सव्वखगः|nature
+सव्वगिरिः हिमावृतः।|All-ready mountain is snow-covered.|सव्वगिरिः|nature
+सव्वसरः शीतलः अस्ति।|The all-ready lake is cool.|सव्वसरः|nature
