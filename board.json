@@ -387,6 +387,86 @@
         "phase": "jodo"
       },
       {
+        "target": "कू",
+        "tiles": [
+          "क",
+          "ऊ",
+          "ख",
+          "ग",
+          "आ",
+          "इ"
+        ],
+        "english": "The well is deep.",
+        "explanation": "क plus ऊ makes कू.",
+        "sentence": "कूपः गभीरा अस्ति।",
+        "highlight": "कू",
+        "phase": "jodo"
+      },
+      {
+        "target": "मू",
+        "tiles": [
+          "म",
+          "ऊ",
+          "क",
+          "प",
+          "आ",
+          "इ"
+        ],
+        "english": "The root is in the ground.",
+        "explanation": "म plus ऊ makes मू.",
+        "sentence": "मूलं भूमौ अस्ति।",
+        "highlight": "मू",
+        "phase": "jodo"
+      },
+      {
+        "target": "सू",
+        "tiles": [
+          "स",
+          "ऊ",
+          "क",
+          "म",
+          "आ",
+          "इ"
+        ],
+        "english": "The sun rises in the morning.",
+        "explanation": "स plus ऊ makes सू.",
+        "sentence": "सूर्यः प्रातः उदेति।",
+        "highlight": "सू",
+        "phase": "jodo"
+      },
+      {
+        "target": "पू",
+        "tiles": [
+          "प",
+          "ऊ",
+          "क",
+          "म",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy performs worship.",
+        "explanation": "प plus ऊ makes पू.",
+        "sentence": "पूजां बालकः करोति।",
+        "highlight": "पू",
+        "phase": "jodo"
+      },
+      {
+        "target": "नू",
+        "tiles": [
+          "न",
+          "ऊ",
+          "प",
+          "क",
+          "आ",
+          "इ"
+        ],
+        "english": "The anklet rings.",
+        "explanation": "न plus ऊ makes नू.",
+        "sentence": "नूपुरं नदति।",
+        "highlight": "नू",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -1695,6 +1775,96 @@
         "sentence": "गजः जलं पिबति।",
         "english": "The elephant drinks water.",
         "highlight": "गजः"
+      },
+      {
+        "prompt": "____ दुग्धं ददाति।",
+        "target": "धेनुः",
+        "tiles": [
+          "धेनुः",
+          "अश्वः",
+          "सिंहः",
+          "मयूरः",
+          "पुष्पम्",
+          "फलम्"
+        ],
+        "sentence": "धेनुः दुग्धं ददाति।",
+        "english": "The cow gives milk.",
+        "highlight": "धेनुः"
+      },
+      {
+        "prompt": "____ मधुरं वदति।",
+        "target": "शुकः",
+        "tiles": [
+          "शुकः",
+          "मयूरः",
+          "कपोतः",
+          "चटकः",
+          "हंसः",
+          "कुक्कुटः"
+        ],
+        "sentence": "शुकः मधुरं वदति।",
+        "english": "The parrot speaks sweetly.",
+        "highlight": "शुकः"
+      },
+      {
+        "prompt": "____ वृक्षं आश्रयति।",
+        "target": "लता",
+        "tiles": [
+          "लता",
+          "वृक्षः",
+          "पुष्पम्",
+          "फलम्",
+          "कमलम्",
+          "वनम्"
+        ],
+        "sentence": "लता वृक्षं आश्रयति।",
+        "english": "The creeper leans on the tree.",
+        "highlight": "लता"
+      },
+      {
+        "prompt": "____ आकाशे उड्डयति।",
+        "target": "खगः",
+        "tiles": [
+          "खगः",
+          "मयूरः",
+          "हंसः",
+          "उलूकः",
+          "मेघः",
+          "सूर्यः"
+        ],
+        "sentence": "खगः आकाशे उड्डयति।",
+        "english": "The bird flies in the sky.",
+        "highlight": "खगः"
+      },
+      {
+        "prompt": "____ शैले अस्ति।",
+        "target": "हिमम्",
+        "tiles": [
+          "हिमम्",
+          "पर्वतः",
+          "मेघः",
+          "वनम्",
+          "जलम्",
+          "भूमिः"
+        ],
+        "sentence": "हिमं शैले अस्ति।",
+        "english": "Snow is on the mountain.",
+        "highlight": "हिमं"
+      },
+      {
+        "prompt": "____ पुष्पे उपविशति।",
+        "target": "मक्षिका",
+        "tiles": [
+          "मक्षिका",
+          "भ्रमरः",
+          "पुष्पम्",
+          "चटकः",
+          "कपोतः",
+          "फलम्"
+        ],
+        "sentence": "मक्षिका पुष्पे उपविशति।",
+        "english": "The fly sits on the flower.",
+        "highlight": "मक्षिका"
       },
       {
         "phase": "learn",
