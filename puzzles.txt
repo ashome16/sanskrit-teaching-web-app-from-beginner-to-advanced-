@@ -462,6 +462,51 @@
 जोडो|त्वै|त्वै|त्व,ऐ,क,त,आ,इ|महत्त्वैः गिरिभिः वनं रम्यम्।|With great mountains the forest is lovely.|त्व plus ऐ makes त्वै.
 जोडो|त्वो|त्वो|त्व,ओ,क,त,आ,इ|सत्त्वो मृगः वने चरति।|The calm deer wanders in the forest.|त्व plus ओ makes त्वो.
 जोडो|त्वौ|त्वौ|त्व,औ,क,त,आ,इ|सत्त्वौ हंसौ कूजतः।|Two gentle swans call.|त्व plus औ makes त्वौ.
+जोडो|स्ता|स्ता|स्त,आ,क,त,इ,उ|हस्तात् पुष्पं पतति।|A flower falls from the hand.|स्त plus आ makes स्ता.
+जोडो|स्ति|स्ति|स्त,इ,क,त,आ,उ|हस्तिनी वने चरति।|The female elephant wanders in the forest.|स्त plus इ makes स्ति.
+जोडो|स्ती|स्ती|स्त,ई,क,त,आ,इ|हस्ती गजः मन्दं चलति।|The elephant walks slowly.|स्त plus ई makes स्ती.
+जोडो|स्तु|स्तु|स्त,उ,क,त,आ,इ|स्तुतिं बालकः करोति।|The boy offers praise.|स्त plus उ makes स्तु.
+जोडो|स्तू|स्तू|स्त,ऊ,क,त,आ,इ|स्तूपः उन्नतः अस्ति।|The stupa is tall.|स्त plus ऊ makes स्तू.
+जोडो|स्ते|स्ते|स्त,ए,क,त,आ,इ|हस्ते फलम् अस्ति।|There is fruit in the hand.|स्त plus ए makes स्ते.
+जोडो|स्तै|स्तै|स्त,ऐ,क,त,आ,इ|हस्तैः कार्यं करोति।|He works with the hands.|स्त plus ऐ makes स्तै.
+जोडो|स्तो|स्तो|स्त,ओ,क,त,आ,इ|प्रस्तोता मधुरं गायति।|The singer sings sweetly.|स्त plus ओ makes स्तो.
+जोडो|स्तौ|स्तौ|स्त,औ,क,त,आ,इ|हस्तौ प्रसारयति बालकः।|The boy spreads both hands.|स्त plus औ makes स्तौ.
+जोडो|स्वा|स्वा|स्व,आ,क,त,इ,उ|स्वादु फलम् अस्ति।|The fruit is tasty.|स्व plus आ makes स्वा.
+जोडो|स्वि|स्वि|स्व,इ,क,त,आ,उ|स्विन्नः बालकः विश्राम्यति।|The sweaty boy rests.|स्व plus इ makes स्वि.
+जोडो|स्वी|स्वी|स्व,ई,क,त,आ,इ|स्वीयं पुस्तकम् अस्ति।|It is his own book.|स्व plus ई makes स्वी.
+जोडो|स्वु|स्वु|स्व,उ,क,त,आ,इ|स्वुरति भ्रमरः पुष्पे।|The bee hums on the flower.|स्व plus उ makes स्वु.
+जोडो|स्वू|स्वू|स्व,ऊ,क,त,आ,इ|स्वूतिः वायौ श्रूयते।|A whistling sound is heard in the wind.|स्व plus ऊ makes स्वू.
+जोडो|स्वे|स्वे|स्व,ए,क,त,आ,इ|स्वेदेन वदनं क्लिन्नम्।|The face is wet with sweat.|स्व plus ए makes स्वे.
+जोडो|स्वै|स्वै|स्व,ऐ,क,त,आ,इ|स्वैः पुष्पैः माला शोभते।|The garland shines with its own flowers.|स्व plus ऐ makes स्वै.
+जोडो|स्वो|स्वो|स्व,ओ,क,त,आ,इ|स्वोत्साहः बालके अस्ति।|There is self-enthusiasm in the child.|स्व plus ओ makes स्वो.
+जोडो|स्वौ|स्वौ|स्व,औ,क,त,आ,इ|स्वौ खगौ नीडे कूजतः।|Two birds of their own call in the nest.|स्व plus औ makes स्वौ.
+जोडो|स्मा|स्मा|स्म,आ,क,त,इ,उ|स्मारकं उद्याने अस्ति।|There is a memorial in the garden.|स्म plus आ makes स्मा.
+जोडो|स्मि|स्मि|स्म,इ,क,त,आ,उ|स्मितं मुखे शोभते।|A smile looks lovely on the face.|स्म plus इ makes स्मि.
+जोडो|स्मी|स्मी|स्म,ई,क,त,आ,इ|स्मीरणः पवनः वहति।|A gentle breeze blows.|स्म plus ई makes स्मी.
+जोडो|स्मु|स्मु|स्म,उ,क,त,आ,इ|विस्मुग्धः बालकः पश्यति।|The enchanted boy looks on.|स्म plus उ makes स्मु.
+जोडो|स्मू|स्मू|स्म,ऊ,क,त,आ,इ|स्मूतिपत्रं गुरुः पठति।|The teacher reads the memory-leaf.|स्म plus ऊ makes स्मू.
+जोडो|स्मे|स्मे|स्म,ए,क,त,आ,इ|स्मेरं मुखं हसति।|The smiling face laughs.|स्म plus ए makes स्मे.
+जोडो|स्मै|स्मै|स्म,ऐ,क,त,आ,इ|अस्मै फलं ददाति माता।|Mother gives fruit to him.|स्म plus ऐ makes स्मै.
+जोडो|स्मो|स्मो|स्म,ओ,क,त,आ,इ|विस्मयो नेत्रयोः अस्ति।|There is wonder in the eyes.|स्म plus ओ makes स्मो.
+जोडो|स्मौ|स्मौ|स्म,औ,क,त,आ,इ|स्मौक्तिकं शङ्खे शोभते।|A pearl looks lovely in the shell.|स्म plus औ makes स्मौ.
+जोडो|स्ना|स्ना|स्न,आ,क,त,इ,उ|स्नानं प्रातः करोति।|He bathes in the morning.|स्न plus आ makes स्ना.
+जोडो|स्नि|स्नि|स्न,इ,क,त,आ,उ|स्निग्धं पत्रं हरितम् अस्ति।|The glossy leaf is green.|स्न plus इ makes स्नि.
+जोडो|स्नी|स्नी|स्न,ई,क,त,आ,इ|स्नीह्यति धेनुः वत्सम्।|The cow is affectionate to the calf.|स्न plus ई makes स्नी.
+जोडो|स्नु|स्नु|स्न,उ,क,त,आ,इ|स्नुषा गृहे पचति।|The daughter-in-law cooks at home.|स्न plus उ makes स्नु.
+जोडो|स्नू|स्नू|स्न,ऊ,क,त,आ,इ|प्रस्नुतं दुग्धं पिबति वत्सः।|The calf drinks the flowing milk.|स्न plus ऊ makes स्नू.
+जोडो|स्ने|स्ने|स्न,ए,क,त,आ,इ|स्नेहेन माता आलिङ्गति।|Mother hugs with affection.|स्न plus ए makes स्ने.
+जोडो|स्नै|स्नै|स्न,ऐ,क,त,आ,इ|स्नैहिकं तैलं मृदु अस्ति।|The oily lotion is soft.|स्न plus ऐ makes स्नै.
+जोडो|स्नो|स्नो|स्न,ओ,क,त,आ,इ|स्नोतः गिरेः वहति।|A stream flows from the mountain.|स्न plus ओ makes स्नो.
+जोडो|स्नौ|स्नौ|स्न,औ,क,त,आ,इ|स्नौते मत्स्यौ जले।|Two fish bathe-swim in the water.|स्न plus औ makes स्नौ.
+जोडो|ष्टा|ष्टा|ष्ट,आ,क,त,इ,उ|इष्टा पूजा शुभा अस्ति।|The desired worship is auspicious.|ष्ट plus आ makes ष्टा.
+जोडो|ष्टि|ष्टि|ष्ट,इ,क,त,आ,उ|वृष्टिः भूमिं सिञ्चति।|Rain waters the earth.|ष्ट plus इ makes ष्टि.
+जोडो|ष्टी|ष्टी|ष्ट,ई,क,त,आ,इ|इष्टी अग्नौ दीप्यते।|The ritual fire offering blazes.|ष्ट plus ई makes ष्टी.
+जोडो|ष्टु|ष्टु|ष्ट,उ,क,त,आ,इ|तुष्टुः खगः मधुरं कूजति।|The glad bird sings sweetly.|ष्ट plus उ makes ष्टु.
+जोडो|ष्टू|ष्टू|ष्ट,ऊ,क,त,आ,इ|तुष्टूरं बालकः वादयति।|The boy plays the trumpet.|ष्ट plus ऊ makes ष्टू.
+जोडो|ष्टे|ष्टे|ष्ट,ए,क,त,आ,इ|कष्टे मार्गे न गच्छति।|He does not go on the hard path.|ष्ट plus ए makes ष्टे.
+जोडो|ष्टै|ष्टै|ष्ट,ऐ,क,त,आ,इ|अष्टैः पुष्पैः माला अस्ति।|There is a garland of eight flowers.|ष्ट plus ऐ makes ष्टै.
+जोडो|ष्टो|ष्टो|ष्ट,ओ,क,त,आ,इ|इष्टो देवः पूज्यः अस्ति।|The beloved deity is to be worshipped.|ष्ट plus ओ makes ष्टो.
+जोडो|ष्टौ|ष्टौ|ष्ट,औ,क,त,आ,इ|अष्टौ दिशः सन्ति।|There are eight directions.|ष्ट plus औ makes ष्टौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
