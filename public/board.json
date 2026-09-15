@@ -27523,6 +27523,726 @@
         "phase": "jodo"
       },
       {
+        "target": "झ्या",
+        "tiles": [
+          "झ्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The jhya-form looks lovely.",
+        "explanation": "झ्य plus आ makes झ्या.",
+        "sentence": "झ्या रूपं शोभते।",
+        "highlight": "झ्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "झ्यि",
+        "tiles": [
+          "झ्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A jhyi-bird calls.",
+        "explanation": "झ्य plus इ makes झ्यि.",
+        "sentence": "झ्यि खगः कूजति।",
+        "highlight": "झ्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "झ्यी",
+        "tiles": [
+          "झ्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two jhyi-forms are there.",
+        "explanation": "झ्य plus ई makes झ्यी.",
+        "sentence": "झ्यी द्वौ स्तः।",
+        "highlight": "झ्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "झ्यु",
+        "tiles": [
+          "झ्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the jhyu.",
+        "explanation": "झ्य plus उ makes झ्यु.",
+        "sentence": "झ्युं बालकः पश्यति।",
+        "highlight": "झ्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "झ्यू",
+        "tiles": [
+          "झ्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two jhyu-forms are there.",
+        "explanation": "झ्य plus ऊ makes झ्यू.",
+        "sentence": "झ्यू द्वौ स्तः।",
+        "highlight": "झ्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "झ्ये",
+        "tiles": [
+          "झ्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at jhye.",
+        "explanation": "झ्य plus ए makes झ्ये.",
+        "sentence": "झ्ये पुष्पं विकसति।",
+        "highlight": "झ्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "झ्यै",
+        "tiles": [
+          "झ्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With jhyai the breeze blows.",
+        "explanation": "झ्य plus ऐ makes झ्यै.",
+        "sentence": "झ्यैः सह पवनः वहति।",
+        "highlight": "झ्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "झ्यो",
+        "tiles": [
+          "झ्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The jhyo is lovely.",
+        "explanation": "झ्य plus ओ makes झ्यो.",
+        "sentence": "झ्यो रम्यः अस्ति।",
+        "highlight": "झ्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "झ्यौ",
+        "tiles": [
+          "झ्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two jhyau-forms are there.",
+        "explanation": "झ्य plus औ makes झ्यौ.",
+        "sentence": "झ्यौ द्वौ स्तः।",
+        "highlight": "झ्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "ट्या",
+        "tiles": [
+          "ट्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The tya-form looks lovely.",
+        "explanation": "ट्य plus आ makes ट्या.",
+        "sentence": "ट्या रूपं शोभते।",
+        "highlight": "ट्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "ट्यि",
+        "tiles": [
+          "ट्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A tyi-bird calls.",
+        "explanation": "ट्य plus इ makes ट्यि.",
+        "sentence": "ट्यि खगः कूजति।",
+        "highlight": "ट्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "ट्यी",
+        "tiles": [
+          "ट्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two tyi-forms are there.",
+        "explanation": "ट्य plus ई makes ट्यी.",
+        "sentence": "ट्यी द्वौ स्तः।",
+        "highlight": "ट्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "ट्यु",
+        "tiles": [
+          "ट्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the tyu.",
+        "explanation": "ट्य plus उ makes ट्यु.",
+        "sentence": "ट्युं बालकः पश्यति।",
+        "highlight": "ट्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "ट्यू",
+        "tiles": [
+          "ट्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two tyu-forms are there.",
+        "explanation": "ट्य plus ऊ makes ट्यू.",
+        "sentence": "ट्यू द्वौ स्तः।",
+        "highlight": "ट्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "ट्ये",
+        "tiles": [
+          "ट्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at tye.",
+        "explanation": "ट्य plus ए makes ट्ये.",
+        "sentence": "ट्ये पुष्पं विकसति।",
+        "highlight": "ट्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "ट्यै",
+        "tiles": [
+          "ट्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With tyai the breeze blows.",
+        "explanation": "ट्य plus ऐ makes ट्यै.",
+        "sentence": "ट्यैः सह पवनः वहति।",
+        "highlight": "ट्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "ट्यो",
+        "tiles": [
+          "ट्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The tyo is lovely.",
+        "explanation": "ट्य plus ओ makes ट्यो.",
+        "sentence": "ट्यो रम्यः अस्ति।",
+        "highlight": "ट्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "ट्यौ",
+        "tiles": [
+          "ट्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two tyau-forms are there.",
+        "explanation": "ट्य plus औ makes ट्यौ.",
+        "sentence": "ट्यौ द्वौ स्तः।",
+        "highlight": "ट्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "ठ्या",
+        "tiles": [
+          "ठ्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The thya-form looks lovely.",
+        "explanation": "ठ्य plus आ makes ठ्या.",
+        "sentence": "ठ्या रूपं शोभते।",
+        "highlight": "ठ्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "ठ्यि",
+        "tiles": [
+          "ठ्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A thyi-bird calls.",
+        "explanation": "ठ्य plus इ makes ठ्यि.",
+        "sentence": "ठ्यि खगः कूजति।",
+        "highlight": "ठ्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "ठ्यी",
+        "tiles": [
+          "ठ्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two thyi-forms are there.",
+        "explanation": "ठ्य plus ई makes ठ्यी.",
+        "sentence": "ठ्यी द्वौ स्तः।",
+        "highlight": "ठ्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "ठ्यु",
+        "tiles": [
+          "ठ्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the thyu.",
+        "explanation": "ठ्य plus उ makes ठ्यु.",
+        "sentence": "ठ्युं बालकः पश्यति।",
+        "highlight": "ठ्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "ठ्यू",
+        "tiles": [
+          "ठ्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two thyu-forms are there.",
+        "explanation": "ठ्य plus ऊ makes ठ्यू.",
+        "sentence": "ठ्यू द्वौ स्तः।",
+        "highlight": "ठ्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "ठ्ये",
+        "tiles": [
+          "ठ्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at thye.",
+        "explanation": "ठ्य plus ए makes ठ्ये.",
+        "sentence": "ठ्ये पुष्पं विकसति।",
+        "highlight": "ठ्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "ठ्यै",
+        "tiles": [
+          "ठ्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With thyai the breeze blows.",
+        "explanation": "ठ्य plus ऐ makes ठ्यै.",
+        "sentence": "ठ्यैः सह पवनः वहति।",
+        "highlight": "ठ्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "ठ्यो",
+        "tiles": [
+          "ठ्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The thyo is lovely.",
+        "explanation": "ठ्य plus ओ makes ठ्यो.",
+        "sentence": "ठ्यो रम्यः अस्ति।",
+        "highlight": "ठ्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "ठ्यौ",
+        "tiles": [
+          "ठ्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two thyau-forms are there.",
+        "explanation": "ठ्य plus औ makes ठ्यौ.",
+        "sentence": "ठ्यौ द्वौ स्तः।",
+        "highlight": "ठ्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "ड्या",
+        "tiles": [
+          "ड्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The dya-form looks lovely.",
+        "explanation": "ड्य plus आ makes ड्या.",
+        "sentence": "ड्या रूपं शोभते।",
+        "highlight": "ड्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "ड्यि",
+        "tiles": [
+          "ड्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A dyi-bird calls.",
+        "explanation": "ड्य plus इ makes ड्यि.",
+        "sentence": "ड्यि खगः कूजति।",
+        "highlight": "ड्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "ड्यी",
+        "tiles": [
+          "ड्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two dyi-forms are there.",
+        "explanation": "ड्य plus ई makes ड्यी.",
+        "sentence": "ड्यी द्वौ स्तः।",
+        "highlight": "ड्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "ड्यु",
+        "tiles": [
+          "ड्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the dyu.",
+        "explanation": "ड्य plus उ makes ड्यु.",
+        "sentence": "ड्युं बालकः पश्यति।",
+        "highlight": "ड्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "ड्यू",
+        "tiles": [
+          "ड्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two dyu-forms are there.",
+        "explanation": "ड्य plus ऊ makes ड्यू.",
+        "sentence": "ड्यू द्वौ स्तः।",
+        "highlight": "ड्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "ड्ये",
+        "tiles": [
+          "ड्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at dye.",
+        "explanation": "ड्य plus ए makes ड्ये.",
+        "sentence": "ड्ये पुष्पं विकसति।",
+        "highlight": "ड्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "ड्यै",
+        "tiles": [
+          "ड्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With dyai the breeze blows.",
+        "explanation": "ड्य plus ऐ makes ड्यै.",
+        "sentence": "ड्यैः सह पवनः वहति।",
+        "highlight": "ड्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "ड्यो",
+        "tiles": [
+          "ड्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The dyo is lovely.",
+        "explanation": "ड्य plus ओ makes ड्यो.",
+        "sentence": "ड्यो रम्यः अस्ति।",
+        "highlight": "ड्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "ड्यौ",
+        "tiles": [
+          "ड्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two dyau-forms are there.",
+        "explanation": "ड्य plus औ makes ड्यौ.",
+        "sentence": "ड्यौ द्वौ स्तः।",
+        "highlight": "ड्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "ढ्या",
+        "tiles": [
+          "ढ्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The dhya-form looks lovely.",
+        "explanation": "ढ्य plus आ makes ढ्या.",
+        "sentence": "ढ्या रूपं शोभते।",
+        "highlight": "ढ्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "ढ्यि",
+        "tiles": [
+          "ढ्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A dhyi-bird calls.",
+        "explanation": "ढ्य plus इ makes ढ्यि.",
+        "sentence": "ढ्यि खगः कूजति।",
+        "highlight": "ढ्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "ढ्यी",
+        "tiles": [
+          "ढ्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two dhyi-forms are there.",
+        "explanation": "ढ्य plus ई makes ढ्यी.",
+        "sentence": "ढ्यी द्वौ स्तः।",
+        "highlight": "ढ्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "ढ्यु",
+        "tiles": [
+          "ढ्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the dhyu.",
+        "explanation": "ढ्य plus उ makes ढ्यु.",
+        "sentence": "ढ्युं बालकः पश्यति।",
+        "highlight": "ढ्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "ढ्यू",
+        "tiles": [
+          "ढ्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two dhyu-forms are there.",
+        "explanation": "ढ्य plus ऊ makes ढ्यू.",
+        "sentence": "ढ्यू द्वौ स्तः।",
+        "highlight": "ढ्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "ढ्ये",
+        "tiles": [
+          "ढ्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at dhye.",
+        "explanation": "ढ्य plus ए makes ढ्ये.",
+        "sentence": "ढ्ये पुष्पं विकसति।",
+        "highlight": "ढ्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "ढ्यै",
+        "tiles": [
+          "ढ्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With dhyai the breeze blows.",
+        "explanation": "ढ्य plus ऐ makes ढ्यै.",
+        "sentence": "ढ्यैः सह पवनः वहति।",
+        "highlight": "ढ्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "ढ्यो",
+        "tiles": [
+          "ढ्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The dhyo is lovely.",
+        "explanation": "ढ्य plus ओ makes ढ्यो.",
+        "sentence": "ढ्यो रम्यः अस्ति।",
+        "highlight": "ढ्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "ढ्यौ",
+        "tiles": [
+          "ढ्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two dhyau-forms are there.",
+        "explanation": "ढ्य plus औ makes ढ्यौ.",
+        "sentence": "ढ्यौ द्वौ स्तः।",
+        "highlight": "ढ्यौ",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -53513,6 +54233,606 @@
         "sentence": "ष्ट्यकमलं विकसति।",
         "english": "A shtya lotus blooms.",
         "highlight": "ष्ट्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "झ्यपवनः",
+        "tiles": [
+          "झ्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "झ्यपवनः वहति।",
+        "english": "A jhya breeze blows.",
+        "highlight": "झ्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "झ्यखगः",
+        "tiles": [
+          "झ्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "झ्यखगः कूजति।",
+        "english": "A jhya bird calls.",
+        "highlight": "झ्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "झ्यपुष्पम्",
+        "tiles": [
+          "झ्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "झ्यपुष्पं विकसति।",
+        "english": "A jhya flower blooms.",
+        "highlight": "झ्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "झ्यमेघः",
+        "tiles": [
+          "झ्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "झ्यमेघः गर्जति।",
+        "english": "A jhya cloud thunders.",
+        "highlight": "झ्यमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "झ्यतरुः",
+        "tiles": [
+          "झ्यतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "झ्यतरुः फलति।",
+        "english": "A jhya tree bears fruit.",
+        "highlight": "झ्यतरुः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "झ्यसरः",
+        "tiles": [
+          "झ्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "झ्यसरः शीतलः।",
+        "english": "A jhya lake is cool.",
+        "highlight": "झ्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "झ्यगिरिः",
+        "tiles": [
+          "झ्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "झ्यगिरिः उन्नतः।",
+        "english": "Jhya-mountain is tall.",
+        "highlight": "झ्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "झ्यकमलम्",
+        "tiles": [
+          "झ्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "झ्यकमलं विकसति।",
+        "english": "A jhya lotus blooms.",
+        "highlight": "झ्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "ट्यपवनः",
+        "tiles": [
+          "ट्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "ट्यपवनः वहति।",
+        "english": "A tya breeze blows.",
+        "highlight": "ट्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "ट्यखगः",
+        "tiles": [
+          "ट्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "ट्यखगः कूजति।",
+        "english": "A tya bird calls.",
+        "highlight": "ट्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ट्यपुष्पम्",
+        "tiles": [
+          "ट्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "ट्यपुष्पं विकसति।",
+        "english": "A tya flower blooms.",
+        "highlight": "ट्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "ट्यमेघः",
+        "tiles": [
+          "ट्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "ट्यमेघः गर्जति।",
+        "english": "A tya cloud thunders.",
+        "highlight": "ट्यमेघः"
+      },
+      {
+        "prompt": "____ हरितः।",
+        "target": "ट्यतरुः",
+        "tiles": [
+          "ट्यतरुः",
+          "तरुः",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्",
+          "पुष्पम्"
+        ],
+        "sentence": "ट्यतरुः हरितः।",
+        "english": "A tya tree is green.",
+        "highlight": "ट्यतरुः"
+      },
+      {
+        "prompt": "____ रम्यः।",
+        "target": "ट्यसरः",
+        "tiles": [
+          "ट्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "ट्यसरः रम्यः।",
+        "english": "A tya lake is lovely.",
+        "highlight": "ट्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "ट्यगिरिः",
+        "tiles": [
+          "ट्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "ट्यगिरिः उन्नतः।",
+        "english": "Tya-mountain is tall.",
+        "highlight": "ट्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ट्यकमलम्",
+        "tiles": [
+          "ट्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "ट्यकमलं विकसति।",
+        "english": "A tya lotus blooms.",
+        "highlight": "ट्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "ठ्यपवनः",
+        "tiles": [
+          "ठ्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "ठ्यपवनः वहति।",
+        "english": "A thya breeze blows.",
+        "highlight": "ठ्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "ठ्यखगः",
+        "tiles": [
+          "ठ्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "ठ्यखगः कूजति।",
+        "english": "A thya bird calls.",
+        "highlight": "ठ्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ठ्यपुष्पम्",
+        "tiles": [
+          "ठ्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "ठ्यपुष्पं विकसति।",
+        "english": "A thya flower blooms.",
+        "highlight": "ठ्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "ठ्यमेघः",
+        "tiles": [
+          "ठ्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "ठ्यमेघः गर्जति।",
+        "english": "A thya cloud thunders.",
+        "highlight": "ठ्यमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "ठ्यतरुः",
+        "tiles": [
+          "ठ्यतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "ठ्यतरुः फलति।",
+        "english": "A thya tree bears fruit.",
+        "highlight": "ठ्यतरुः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "ठ्यसरः",
+        "tiles": [
+          "ठ्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "ठ्यसरः शीतलः।",
+        "english": "A thya lake is cool.",
+        "highlight": "ठ्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "ठ्यगिरिः",
+        "tiles": [
+          "ठ्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "ठ्यगिरिः उन्नतः।",
+        "english": "Thya-mountain is tall.",
+        "highlight": "ठ्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ठ्यकमलम्",
+        "tiles": [
+          "ठ्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "ठ्यकमलं विकसति।",
+        "english": "A thya lotus blooms.",
+        "highlight": "ठ्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "ड्यपवनः",
+        "tiles": [
+          "ड्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "ड्यपवनः वहति।",
+        "english": "A dya breeze blows.",
+        "highlight": "ड्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "ड्यखगः",
+        "tiles": [
+          "ड्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "ड्यखगः कूजति।",
+        "english": "A dya bird calls.",
+        "highlight": "ड्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ड्यपुष्पम्",
+        "tiles": [
+          "ड्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "ड्यपुष्पं विकसति।",
+        "english": "A dya flower blooms.",
+        "highlight": "ड्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "ड्यमेघः",
+        "tiles": [
+          "ड्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "ड्यमेघः गर्जति।",
+        "english": "A dya cloud thunders.",
+        "highlight": "ड्यमेघः"
+      },
+      {
+        "prompt": "____ हरितः।",
+        "target": "ड्यतरुः",
+        "tiles": [
+          "ड्यतरुः",
+          "तरुः",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्",
+          "पुष्पम्"
+        ],
+        "sentence": "ड्यतरुः हरितः।",
+        "english": "A dya tree is green.",
+        "highlight": "ड्यतरुः"
+      },
+      {
+        "prompt": "____ रम्यः।",
+        "target": "ड्यसरः",
+        "tiles": [
+          "ड्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "ड्यसरः रम्यः।",
+        "english": "A dya lake is lovely.",
+        "highlight": "ड्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "ड्यगिरिः",
+        "tiles": [
+          "ड्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "ड्यगिरिः उन्नतः।",
+        "english": "Dya-mountain is tall.",
+        "highlight": "ड्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ड्यकमलम्",
+        "tiles": [
+          "ड्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "ड्यकमलं विकसति।",
+        "english": "A dya lotus blooms.",
+        "highlight": "ड्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "ढ्यपवनः",
+        "tiles": [
+          "ढ्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "ढ्यपवनः वहति।",
+        "english": "A dhya breeze blows.",
+        "highlight": "ढ्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "ढ्यखगः",
+        "tiles": [
+          "ढ्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "ढ्यखगः कूजति।",
+        "english": "A dhya bird calls.",
+        "highlight": "ढ्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ढ्यपुष्पम्",
+        "tiles": [
+          "ढ्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "ढ्यपुष्पं विकसति।",
+        "english": "A dhya flower blooms.",
+        "highlight": "ढ्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "ढ्यमेघः",
+        "tiles": [
+          "ढ्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "ढ्यमेघः गर्जति।",
+        "english": "A dhya cloud thunders.",
+        "highlight": "ढ्यमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "ढ्यतरुः",
+        "tiles": [
+          "ढ्यतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "ढ्यतरुः फलति।",
+        "english": "A dhya tree bears fruit.",
+        "highlight": "ढ्यतरुः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "ढ्यसरः",
+        "tiles": [
+          "ढ्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "ढ्यसरः शीतलः।",
+        "english": "A dhya lake is cool.",
+        "highlight": "ढ्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "ढ्यगिरिः",
+        "tiles": [
+          "ढ्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "ढ्यगिरिः उन्नतः।",
+        "english": "Dhya-mountain is tall.",
+        "highlight": "ढ्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ढ्यकमलम्",
+        "tiles": [
+          "ढ्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "ढ्यकमलं विकसति।",
+        "english": "A dhya lotus blooms.",
+        "highlight": "ढ्यकमलम्"
       },
       {
         "phase": "learn",

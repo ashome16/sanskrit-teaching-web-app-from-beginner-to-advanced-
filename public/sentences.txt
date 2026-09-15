@@ -1729,3 +1729,43 @@
 ष्ट्यसरः शीतलः।|A shtya lake is cool.|ष्ट्यसरः|nature
 ष्ट्यगिरिः उन्नतः।|Shtya-mountain is tall.|ष्ट्यगिरिः|nature
 ष्ट्यकमलं विकसति।|A shtya lotus blooms.|ष्ट्यकमलम्|nature
+झ्यपवनः वहति।|A jhya breeze blows.|झ्यपवनः|nature
+झ्यखगः कूजति।|A jhya bird calls.|झ्यखगः|nature
+झ्यपुष्पं विकसति।|A jhya flower blooms.|झ्यपुष्पम्|nature
+झ्यमेघः गर्जति।|A jhya cloud thunders.|झ्यमेघः|nature
+झ्यतरुः फलति।|A jhya tree bears fruit.|झ्यतरुः|nature
+झ्यसरः शीतलः।|A jhya lake is cool.|झ्यसरः|nature
+झ्यगिरिः उन्नतः।|Jhya-mountain is tall.|झ्यगिरिः|nature
+झ्यकमलं विकसति।|A jhya lotus blooms.|झ्यकमलम्|nature
+ट्यपवनः वहति।|A tya breeze blows.|ट्यपवनः|nature
+ट्यखगः कूजति।|A tya bird calls.|ट्यखगः|nature
+ट्यपुष्पं विकसति।|A tya flower blooms.|ट्यपुष्पम्|nature
+ट्यमेघः गर्जति।|A tya cloud thunders.|ट्यमेघः|nature
+ट्यतरुः हरितः।|A tya tree is green.|ट्यतरुः|nature
+ट्यसरः रम्यः।|A tya lake is lovely.|ट्यसरः|nature
+ट्यगिरिः उन्नतः।|Tya-mountain is tall.|ट्यगिरिः|nature
+ट्यकमलं विकसति।|A tya lotus blooms.|ट्यकमलम्|nature
+ठ्यपवनः वहति।|A thya breeze blows.|ठ्यपवनः|nature
+ठ्यखगः कूजति।|A thya bird calls.|ठ्यखगः|nature
+ठ्यपुष्पं विकसति।|A thya flower blooms.|ठ्यपुष्पम्|nature
+ठ्यमेघः गर्जति।|A thya cloud thunders.|ठ्यमेघः|nature
+ठ्यतरुः फलति।|A thya tree bears fruit.|ठ्यतरुः|nature
+ठ्यसरः शीतलः।|A thya lake is cool.|ठ्यसरः|nature
+ठ्यगिरिः उन्नतः।|Thya-mountain is tall.|ठ्यगिरिः|nature
+ठ्यकमलं विकसति।|A thya lotus blooms.|ठ्यकमलम्|nature
+ड्यपवनः वहति।|A dya breeze blows.|ड्यपवनः|nature
+ड्यखगः कूजति।|A dya bird calls.|ड्यखगः|nature
+ड्यपुष्पं विकसति।|A dya flower blooms.|ड्यपुष्पम्|nature
+ड्यमेघः गर्जति।|A dya cloud thunders.|ड्यमेघः|nature
+ड्यतरुः हरितः।|A dya tree is green.|ड्यतरुः|nature
+ड्यसरः रम्यः।|A dya lake is lovely.|ड्यसरः|nature
+ड्यगिरिः उन्नतः।|Dya-mountain is tall.|ड्यगिरिः|nature
+ड्यकमलं विकसति।|A dya lotus blooms.|ड्यकमलम्|nature
+ढ्यपवनः वहति।|A dhya breeze blows.|ढ्यपवनः|nature
+ढ्यखगः कूजति।|A dhya bird calls.|ढ्यखगः|nature
+ढ्यपुष्पं विकसति।|A dhya flower blooms.|ढ्यपुष्पम्|nature
+ढ्यमेघः गर्जति।|A dhya cloud thunders.|ढ्यमेघः|nature
+ढ्यतरुः फलति।|A dhya tree bears fruit.|ढ्यतरुः|nature
+ढ्यसरः शीतलः।|A dhya lake is cool.|ढ्यसरः|nature
+ढ्यगिरिः उन्नतः।|Dhya-mountain is tall.|ढ्यगिरिः|nature
+ढ्यकमलं विकसति।|A dhya lotus blooms.|ढ्यकमलम्|nature
