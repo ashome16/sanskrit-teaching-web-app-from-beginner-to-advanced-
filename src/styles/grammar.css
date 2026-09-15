@@ -11,14 +11,51 @@
   margin-bottom: 1.25rem;
 }
 
-.grammar-back {
-  border: none;
-  background: transparent;
+.grammar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.grammar-back,
+.grammar-home {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1.5px solid #99d5cd;
+  background: #e6f7f5;
   color: #0f766e;
+  font-size: 1.1rem;
   font-weight: 700;
+  line-height: 1.2;
   cursor: pointer;
-  padding: 0;
-  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 3px rgba(15, 118, 110, 0.08);
+  transition: background 0.12s ease, transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.grammar-home {
+  background: #fffdf8;
+  border-color: #e3d5b3;
+  color: #5b5348;
+}
+
+.grammar-back:hover,
+.grammar-back:focus,
+.grammar-home:hover,
+.grammar-home:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(15, 118, 110, 0.14);
+  outline: none;
+}
+
+.grammar-back:focus-visible,
+.grammar-home:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
 }
 
 .grammar-title {

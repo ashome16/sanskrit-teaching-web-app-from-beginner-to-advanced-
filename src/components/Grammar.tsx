@@ -10,7 +10,11 @@ type GrammarTopic = 'home' | 'vibhakti' | 'samyukta' | 'sound-teams' | 'article'
 
 const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((response) => response.text());
 
-const Grammar: React.FC = () => {
+type GrammarProps = {
+  onGoHome?: () => void;
+};
+
+const Grammar: React.FC<GrammarProps> = ({ onGoHome }) => {
   const [topic, setTopic] = useState<GrammarTopic>('home');
   const [selectedCase, setSelectedCase] = useState(1);
   const [activeArticleId, setActiveArticleId] = useState<string | null>(null);
@@ -26,6 +30,20 @@ const Grammar: React.FC = () => {
     setTopic('article');
   };
 
+
+  const topicNav = (
+    <nav className="grammar-nav" aria-label="Grammar page navigation">
+      <button type="button" className="grammar-back" onClick={() => setTopic('home')}>
+        ← Back to Grammar
+      </button>
+      {onGoHome && (
+        <button type="button" className="grammar-home" onClick={onGoHome}>
+          ← Deepakam · Home
+        </button>
+      )}
+    </nav>
+  );
+
   useEffect(() => {
     if (topic === 'article' && activeArticleMeta && !articles[activeArticleMeta.id] && !articleError) {
       fetchText(activeArticleMeta.file)
@@ -38,9 +56,7 @@ const Grammar: React.FC = () => {
     return (
       <section className="grammar-page" aria-label="Vibhakti guide">
         <header className="grammar-page-header">
-          <button type="button" className="grammar-back" onClick={() => setTopic('home')}>
-            ← Grammar
-          </button>
+          {topicNav}
           <h2 className="grammar-title">विभक्ति · Vibhakti</h2>
           <p className="grammar-lead">The 8 noun cases at a glance — our first grammar brick.</p>
         </header>
@@ -76,9 +92,7 @@ const Grammar: React.FC = () => {
     return (
       <section className="grammar-page" aria-label="Conjunct games">
         <header className="grammar-page-header">
-          <button type="button" className="grammar-back" onClick={() => setTopic('home')}>
-            ← Grammar
-          </button>
+          {topicNav}
           <h2 className="grammar-title">संयुक्त · Conjunct Games</h2>
           <p className="grammar-lead">
             Three playground posters. Tap a game title to open or close its picture.
@@ -93,9 +107,7 @@ const Grammar: React.FC = () => {
     return (
       <section className="grammar-page" aria-label="Five Sound Teams">
         <header className="grammar-page-header">
-          <button type="button" className="grammar-back" onClick={() => setTopic('home')}>
-            ← Grammar
-          </button>
+          {topicNav}
           <h2 className="grammar-title">Five Sound Teams · पञ्च वर्ण-टीमें</h2>
           <p className="grammar-lead">
             Vowels, consonants, sliders, hissers, and fusion blocks — how every letter finds its
@@ -111,9 +123,7 @@ const Grammar: React.FC = () => {
     return (
       <section className="grammar-page" aria-label="Grammar article">
         <header className="grammar-page-header">
-          <button type="button" className="grammar-back" onClick={() => setTopic('home')}>
-            ← Grammar
-          </button>
+          {topicNav}
           <h2 className="grammar-title">{activeArticle ? activeArticle.title : 'Loading…'}</h2>
           {activeArticle?.subtitle && <p className="grammar-lead">{activeArticle.subtitle}</p>}
         </header>

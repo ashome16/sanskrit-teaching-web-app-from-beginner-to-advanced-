@@ -205,7 +205,7 @@ const Dashboard: React.FC = () => {
       </header>
 
       {activeView === 'board' && <Board />}
-      {activeView === 'grammar' && <Grammar />}
+      {activeView === 'grammar' && <Grammar onGoHome={() => setActiveView('reader')} />}
       {activeView === 'reader' && <TextbookReader
         lessons={lessons}
         activeLessonId={lesson.id}
