@@ -2,7 +2,21 @@
 .wing-nav { display: flex; gap: .35rem; overflow-x: auto; border-bottom: 1px solid #d8d0c3; padding: 0 .1rem; }
 .wing-button { border: 0; border-bottom: 3px solid transparent; background: none; color: #6b6258; cursor: pointer; padding: .8rem .65rem .65rem; font: 600 .82rem 'Trebuchet MS', sans-serif; white-space: nowrap; }
 .wing-button.active { border-bottom-color: #b3472f; color: #9a3423; }
-.board-tip { color: #83776a; font-size: .78rem; margin: .5rem 0 0; }
+.board-tip { color: #273b35; font-size: 1rem; font-weight: 700; line-height: 1.4; margin: .5rem 0 0; }
+.board-tip .tip-next, .welcome-overlay strong.tip-next {
+  background: #d8f0eb;
+  border-radius: 4px;
+  color: #9a3423;
+  font-size: 1.05rem;
+  font-weight: 800;
+  padding: .08rem .38rem;
+  text-decoration: underline;
+  text-decoration-color: #2a6f66;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.board-tip strong:not(.tip-next) { color: #9a3423; font-weight: 800; }
+.welcome-overlay strong { color: #9a3423; font-weight: 800; }
 .board-heading { align-items: center; display: flex; justify-content: space-between; padding: 1.5rem 0 1rem; }
 .eyebrow { color: #b3472f; font: 700 .7rem 'Trebuchet MS', sans-serif; letter-spacing: 1.5px; margin: 0 0 .35rem; }
 .board-heading h2 { color: #273b35; font: 700 2rem 'Noto Sans Devanagari', Georgia, serif; margin: 0; }
@@ -18,7 +32,7 @@
 .tile-row { display: grid; gap: .55rem; grid-template-columns: repeat(6, minmax(0, 1fr)); }
 .puzzle-tile { background: #f4ede0; border: 2px solid transparent; border-radius: 5px; color: #273b35; cursor: pointer; min-height: 92px; padding: .6rem .25rem; }.puzzle-tile.chosen { border-color: #f1c75b; transform: translateY(-4px); }.puzzle-tile span { display: block; font: 1.65rem 'Noto Sans Devanagari', Georgia, serif; }.puzzle-tile small { color: #756b60; display: block; font-size: .65rem; margin-top: .4rem; }
 .check-button { background: #d86a3d; border: 0; border-radius: 4px; color: white; cursor: pointer; font-weight: 700; margin-top: 1rem; padding: .7rem 1.5rem; }.puzzle-result { animation: fuse .4s ease-out; border-top: 1px solid #62766d; display: flex; flex-direction: column; font-family: 'Noto Sans Devanagari', Georgia, serif; margin-top: 1rem; overflow: visible; padding-top: 1rem; }.puzzle-result strong { color: #f1c75b; }.result-english { font: 700 1.7rem Georgia, serif; margin: .45rem 0; }.result-sanskrit { font-size: 1.1rem; }.result-seed { color: #cbd6c8; font-size: .8rem; margin-top: .5rem; }.board-status { color: #746b61; padding: 1rem 0; }.board-status.error { color: #a33c2b; }
-.next-button { background: transparent; border: 1px solid #f1c75b; border-radius: 4px; color: #f1c75b; cursor: pointer; font-size: .8rem; font-weight: 700; margin: .8rem 0 0; order: 99; padding: .35rem .8rem; }
+.next-button { background: #f1c75b; border: 2px solid #e0b84a; border-radius: 5px; color: #273b35; cursor: pointer; font-size: 1rem; font-weight: 800; margin: .8rem 0 0; order: 99; padding: .55rem 1.25rem; box-shadow: 0 2px 0 #c9a63d; }
 .sound-overlay { animation: sound-in .15s ease-out; background: #f1c75b; border: 2px solid #273b35; border-radius: 6px; bottom: 1.5rem; box-shadow: 0 8px 20px #17251f66; color: #273b35; display: grid; gap: .2rem; min-width: 210px; padding: .8rem; position: fixed; right: 1.5rem; z-index: 4; }.sound-overlay strong { font: 2rem 'Noto Sans Devanagari', Georgia, serif; }.sound-overlay small { font-size: .68rem; margin-top: .3rem; }.sound-close { background: #273b35; border: 0; border-radius: 4px; color: #f1c75b; cursor: pointer; font-weight: 700; margin-top: .4rem; padding: .35rem .8rem; }
 @keyframes fuse { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes sound-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
@@ -38,4 +52,4 @@
 .puzzle-result .result-sanskrit { font-size: 1.45rem; margin: 0 0 .35rem; }
 .puzzle-result .result-english { color: #f4ede0; font: italic 500 1.05rem Georgia, serif; margin: 0; }
 .word-tap { background: #f1c75b33; border-radius: 3px; color: inherit; padding: 0 .12rem; }
-.board-phase { color: #9a3423; font: 700 .95rem Georgia, serif; margin: .35rem 0 0; }
+.board-phase { color: #6b2418; font: 800 1.05rem Georgia, serif; margin: .35rem 0 0; }

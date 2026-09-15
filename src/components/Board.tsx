@@ -81,6 +81,32 @@ function highlightedSentence(sentence: string | undefined, highlight: string | u
   return <>{before}<span className="word-focus">{highlight}</span>{afterNode}</>;
 }
 
+
+/** Bold Check / Click Next inside tip or welcome copy (labels loop + visitor **markdown**). */
+function emphasizeTipText(text: string): React.ReactNode {
+  const pattern = /(click\s+Next|Click\s+Next|click\s+Check|Click\s+Check|\*\*[^*]+\*\*|\bCheck\b|\bNext\b)/g;
+  const nodes: React.ReactNode[] = [];
+  let last = 0;
+  let key = 0;
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > last) nodes.push(text.slice(last, match.index));
+    const phrase = match[0];
+    if (phrase.startsWith('**') && phrase.endsWith('**')) {
+      const inner = phrase.slice(2, -2);
+      const isNext = /next/i.test(inner);
+      nodes.push(<strong key={key++} className={isNext ? 'tip-next' : undefined}>{inner}</strong>);
+    } else {
+      const isNext = /next/i.test(phrase);
+      const label = isNext && !/^click\s/i.test(phrase) ? 'Click Next' : phrase;
+      nodes.push(<strong key={key++} className={isNext ? 'tip-next' : undefined}>{label}</strong>);
+    }
+    last = match.index + phrase.length;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return nodes.length ? <>{nodes}</> : text;
+}
+
 const Board: React.FC = () => {
   const [shelfButtons, setShelfButtons] = useState<ShelfButton[]>(DEFAULT_SHELVES);
   const [boardShelves, setBoardShelves] = useState<BoardShelfLine[]>([]);
@@ -259,10 +285,10 @@ const Board: React.FC = () => {
 
     <div className="board-tip-row">
       <p className="board-tip">{isPrashnaPart
-        ? 'Part 2: click ONE cream tile for the blank (who/what/where…). Then click Check. Then click Next.'
+        ? <>Part 2: click ONE cream tile for the blank (who/what/where…). Then <strong>click Check</strong>. Then <strong className="tip-next">Click Next</strong>.</>
         : (activeBoardShelf?.skin === 'जोडो' && activeShelf === 'prarambhah' && !targetIsWholeTile
-          ? 'Part 1: click TWO cream tiles (any order). Then Check. Then Next — or wait and it moves on.'
-          : loopLine)}</p>
+          ? <>Part 1: click TWO cream tiles (any order). Then <strong>click Check</strong>. Then <strong className="tip-next">Click Next</strong> — or wait and it moves on.</>
+          : emphasizeTipText(loopLine))}</p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
     </div>
@@ -318,7 +344,7 @@ const Board: React.FC = () => {
       <div className="welcome-scrim" role="presentation" onClick={() => setWelcomeOpen(false)} />
       <aside className="welcome-overlay" aria-label="Welcome">
         <button className="welcome-close" type="button" aria-label="Close Welcome" onClick={() => setWelcomeOpen(false)}>×</button>
-        {visitorBlocks.map((block, index) => React.createElement(block.heading, { key: `${block.heading}-${index}` }, block.text))}
+        {visitorBlocks.map((block, index) => React.createElement(block.heading, { key: `${block.heading}-${index}` }, emphasizeTipText(block.text)))}
       </aside>
     </>}
   </main>;
