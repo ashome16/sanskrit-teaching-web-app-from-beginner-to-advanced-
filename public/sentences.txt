@@ -1289,3 +1289,83 @@
 ह्लादसरः रम्यः।|A joy lake is lovely.|ह्लादसरः|nature
 ह्लादगिरिः उन्नतः।|Joy-mountain is tall.|ह्लादगिरिः|nature
 ह्लादकमलं विकसति।|A joy lotus blooms.|ह्लादकमलम्|nature
+त्यागपवनः वहति।|A renunciation breeze blows.|त्यागपवनः|nature
+त्यागखगः कूजति।|A renunciation bird calls.|त्यागखगः|nature
+त्यागपुष्पं विकसति।|A renunciation flower blooms.|त्यागपुष्पम्|nature
+त्यागमेघः गर्जति।|A renunciation cloud thunders.|त्यागमेघः|nature
+त्यागतरुः फलति।|A renunciation tree bears fruit.|त्यागतरुः|nature
+त्यागसरः शीतलः।|A renunciation lake is cool.|त्यागसरः|nature
+त्यागगिरिः उन्नतः।|Renunciation-mountain is tall.|त्यागगिरिः|nature
+त्यागकमलं विकसति।|A renunciation lotus blooms.|त्यागकमलम्|nature
+विद्यापवनः वहति।|A knowledge breeze blows.|विद्यापवनः|nature
+विद्याखगः कूजति।|A knowledge bird calls.|विद्याखगः|nature
+विद्यापुष्पं विकसति।|A knowledge flower blooms.|विद्यापुष्पम्|nature
+विद्यामेघः गर्जति।|A knowledge cloud thunders.|विद्यामेघः|nature
+विद्यातरुः हरितः।|A knowledge tree is green.|विद्यातरुः|nature
+विद्यासरः रम्यः।|A knowledge lake is lovely.|विद्यासरः|nature
+विद्यागिरिः उन्नतः।|Knowledge-mountain is tall.|विद्यागिरिः|nature
+विद्याकमलं विकसति।|A knowledge lotus blooms.|विद्याकमलम्|nature
+व्याघ्रपवनः वहति।|A tiger breeze blows.|व्याघ्रपवनः|nature
+व्याघ्रखगः कूजति।|A tiger bird calls.|व्याघ्रखगः|nature
+व्याघ्रपुष्पं विकसति।|A tiger flower blooms.|व्याघ्रपुष्पम्|nature
+व्याघ्रमेघः गर्जति।|A tiger cloud thunders.|व्याघ्रमेघः|nature
+व्याघ्रतरुः फलति।|A tiger tree bears fruit.|व्याघ्रतरुः|nature
+व्याघ्रसरः शीतलः।|A tiger lake is cool.|व्याघ्रसरः|nature
+व्याघ्रगिरिः उन्नतः।|Tiger-mountain is tall.|व्याघ्रगिरिः|nature
+व्याघ्रकमलं विकसति।|A tiger lotus blooms.|व्याघ्रकमलम्|nature
+श्यामपवनः वहति।|A dark breeze blows.|श्यामपवनः|nature
+श्यामखगः कूजति।|A dark bird calls.|श्यामखगः|nature
+श्यामपुष्पं विकसति।|A dark flower blooms.|श्यामपुष्पम्|nature
+श्याममेघः गर्जति।|A dark cloud thunders.|श्याममेघः|nature
+श्यामतरुः हरितः।|A dark tree is green.|श्यामतरुः|nature
+श्यामसरः रम्यः।|A dark lake is lovely.|श्यामसरः|nature
+श्यामगिरिः उन्नतः।|Dark-mountain is tall.|श्यामगिरिः|nature
+श्यामकमलं विकसति।|A dark lotus blooms.|श्यामकमलम्|nature
+वाक्यपवनः वहति।|A sentence breeze blows.|वाक्यपवनः|nature
+वाक्यखगः कूजति।|A sentence bird calls.|वाक्यखगः|nature
+वाक्यपुष्पं विकसति।|A sentence flower blooms.|वाक्यपुष्पम्|nature
+वाक्यमेघः गर्जति।|A sentence cloud thunders.|वाक्यमेघः|nature
+वाक्यतरुः फलति।|A sentence tree bears fruit.|वाक्यतरुः|nature
+वाक्यसरः शीतलः।|A sentence lake is cool.|वाक्यसरः|nature
+वाक्यगिरिः उन्नतः।|Sentence-mountain is tall.|वाक्यगिरिः|nature
+वाक्यकमलं विकसति।|A sentence lotus blooms.|वाक्यकमलम्|nature
+भाग्यपवनः वहति।|A fortune breeze blows.|भाग्यपवनः|nature
+भाग्यखगः कूजति।|A fortune bird calls.|भाग्यखगः|nature
+भाग्यपुष्पं विकसति।|A fortune flower blooms.|भाग्यपुष्पम्|nature
+भाग्यमेघः गर्जति।|A fortune cloud thunders.|भाग्यमेघः|nature
+भाग्यतरुः हरितः।|A fortune tree is green.|भाग्यतरुः|nature
+भाग्यसरः रम्यः।|A fortune lake is lovely.|भाग्यसरः|nature
+भाग्यगिरिः उन्नतः।|Fortune-mountain is tall.|भाग्यगिरिः|nature
+भाग्यकमलं विकसति।|A fortune lotus blooms.|भाग्यकमलम्|nature
+वाच्यपवनः वहति।|A speech breeze blows.|वाच्यपवनः|nature
+वाच्यखगः कूजति।|A speech bird calls.|वाच्यखगः|nature
+वाच्यपुष्पं विकसति।|A speech flower blooms.|वाच्यपुष्पम्|nature
+वाच्यमेघः गर्जति।|A speech cloud thunders.|वाच्यमेघः|nature
+वाच्यतरुः फलति।|A speech tree bears fruit.|वाच्यतरुः|nature
+वाच्यसरः शीतलः।|A speech lake is cool.|वाच्यसरः|nature
+वाच्यगिरिः उन्नतः।|Speech-mountain is tall.|वाच्यगिरिः|nature
+वाच्यकमलं विकसति।|A speech lotus blooms.|वाच्यकमलम्|nature
+राज्यपवनः वहति।|A kingdom breeze blows.|राज्यपवनः|nature
+राज्यखगः कूजति।|A kingdom bird calls.|राज्यखगः|nature
+राज्यपुष्पं विकसति।|A kingdom flower blooms.|राज्यपुष्पम्|nature
+राज्यमेघः गर्जति।|A kingdom cloud thunders.|राज्यमेघः|nature
+राज्यतरुः हरितः।|A kingdom tree is green.|राज्यतरुः|nature
+राज्यसरः रम्यः।|A kingdom lake is lovely.|राज्यसरः|nature
+राज्यगिरिः उन्नतः।|Kingdom-mountain is tall.|राज्यगिरिः|nature
+राज्यकमलं विकसति।|A kingdom lotus blooms.|राज्यकमलम्|nature
+रूप्यपवनः वहति।|A silver breeze blows.|रूप्यपवनः|nature
+रूप्यखगः कूजति।|A silver bird calls.|रूप्यखगः|nature
+रूप्यपुष्पं विकसति।|A silver flower blooms.|रूप्यपुष्पम्|nature
+रूप्यमेघः गर्जति।|A silver cloud thunders.|रूप्यमेघः|nature
+रूप्यतरुः फलति।|A silver tree bears fruit.|रूप्यतरुः|nature
+रूप्यसरः शीतलः।|A silver lake is cool.|रूप्यसरः|nature
+रूप्यगिरिः उन्नतः।|Silver-mountain is tall.|रूप्यगिरिः|nature
+रूप्यकमलं विकसति।|A silver lotus blooms.|रूप्यकमलम्|nature
+अभ्यासपवनः वहति।|A practice breeze blows.|अभ्यासपवनः|nature
+अभ्यासखगः कूजति।|A practice bird calls.|अभ्यासखगः|nature
+अभ्यासपुष्पं विकसति।|A practice flower blooms.|अभ्यासपुष्पम्|nature
+अभ्यासमेघः गर्जति।|A practice cloud thunders.|अभ्यासमेघः|nature
+अभ्यासतरुः हरितः।|A practice tree is green.|अभ्यासतरुः|nature
+अभ्याससरः रम्यः।|A practice lake is lovely.|अभ्याससरः|nature
+अभ्यासगिरिः उन्नतः।|Practice-mountain is tall.|अभ्यासगिरिः|nature
+अभ्यासकमलं विकसति।|A practice lotus blooms.|अभ्यासकमलम्|nature
