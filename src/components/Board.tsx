@@ -82,9 +82,9 @@ function highlightedSentence(sentence: string | undefined, highlight: string | u
 }
 
 
-/** Bold Check / Click Next inside tip or welcome copy (labels loop + visitor **markdown**). */
+/** Bold “Read the sentence” / Click Next inside tip or welcome copy (labels loop + visitor **markdown**). */
 function emphasizeTipText(text: string): React.ReactNode {
-  const pattern = /(click\s+Next|Click\s+Next|click\s+Check|Click\s+Check|\*\*[^*]+\*\*|\bCheck\b|\bNext\b)/g;
+  const pattern = /(Read the sentence|click\s+Next|Click\s+Next|\*\*[^*]+\*\*|\bNext\b)/g;
   const nodes: React.ReactNode[] = [];
   let last = 0;
   let key = 0;
@@ -113,7 +113,6 @@ const Board: React.FC = () => {
   const [fallbackPuzzles, setFallbackPuzzles] = useState<BoardPuzzle[]>([]);
   const [packLabels, setPackLabels] = useState<PackLabel[]>([]);
   const [visitorBlocks, setVisitorBlocks] = useState<VisitorBlock[]>([]);
-  const [loopLine, setLoopLine] = useState('Pick a shelf. Tap tiles. Then Check.');
   const [activeShelf, setActiveShelf] = useState<ShelfId>(() => (localStorage.getItem('last-board-shelf') as ShelfId) || 'prarambhah');
   const [chosen, setChosen] = useState<string[]>([]);
   const [checked, setChecked] = useState(false);
@@ -142,8 +141,6 @@ const Board: React.FC = () => {
           .filter((parts) => parts[0] === 'pack' && parts[2])
           .map(([, , title, gloss]) => ({ title, gloss: gloss ?? '' }));
         setPackLabels(parsedPackLabels);
-        const loopRow = labelRows.find((parts) => parts[0] === 'site' && parts[1] === 'loop');
-        if (loopRow?.[2]) setLoopLine(loopRow[2]);
         if (visitorText.trim()) setVisitorBlocks(parseVisitor(visitorText));
 
         if (boardText.trim()) {
@@ -237,10 +234,10 @@ const Board: React.FC = () => {
     || activeBoardShelf?.skin === 'रिक्तम्'
     || isPrashnaPart;
   const wrongAttemptMessage = hasBlank
-    ? 'Not that tile. Click the cream tile that fills the blank, then click Check again.'
+    ? 'Not that tile. Click the cream tile that fills the blank, then Read the sentence again.'
     : isJodoSkin
-      ? 'Not those tiles. Click the right letter and vowel (any order), then click Check again.'
-      : 'Not that tile. Click a different cream tile, then click Check again.';
+      ? 'Not those tiles. Click the right letter and vowel (any order), then Read the sentence again.'
+      : 'Not that tile. Click a different cream tile, then Read the sentence again.';
 
   const toggleTile = (tile: string) => {
     if (checked) return;
@@ -295,10 +292,14 @@ const Board: React.FC = () => {
 
     <div className="board-tip-row">
       <p className="board-tip">{isPrashnaPart
-        ? <>Part 2: click ONE cream tile for the blank (who/what/where…). Then <strong>click Check</strong>. Then <strong className="tip-next">Click Next</strong>.</>
+        ? <>Part 2: click ONE cream tile for the blank (who/what/where…). Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
         : (activeBoardShelf?.skin === 'जोडो' && activeShelf === 'prarambhah' && !targetIsWholeTile
-          ? <>Part 1: click TWO cream tiles (any order). Then <strong>click Check</strong>. Then <strong className="tip-next">Click Next</strong> — or wait a few seconds and it moves on.</>
-          : emphasizeTipText(loopLine))}</p>
+          ? <>Part 1: click TWO cream tiles (any order). Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong> — or wait a few seconds and it moves on.</>
+          : hasBlank
+            ? <>Click ONE cream tile that fills the blank. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
+            : isJodoSkin
+              ? <>Click TWO cream tiles (any order). Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
+              : <>Click ONE cream tile that matches. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>)}</p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
     </div>
@@ -334,7 +335,7 @@ const Board: React.FC = () => {
         </div>
 
         <div className="puzzle-actions">
-          <button className="check-button" onClick={submitCheck}>Check</button>
+          <button className="check-button" onClick={submitCheck}>Read the sentence</button>
         </div>
 
         {checked && isCorrect && (

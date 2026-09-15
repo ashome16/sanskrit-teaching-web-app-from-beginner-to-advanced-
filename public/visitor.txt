@@ -2,7 +2,7 @@
 
 One school. Seven shelves. Meaning first.
 A letter is a place on the breath. A word lives in a sentence.
-English appears only after a correct Check, and it names the whole sentence — never the wrong tile.
+English appears only after you Read the sentence correctly, and it names the whole sentence — never the wrong tile.
 
 Tap the **?** any time to reopen this guide.
 
@@ -13,10 +13,10 @@ Tap the **?** any time to reopen this guide.
 1. Pick a tab.
 2. Read the Target / blank.
 3. Tap tile(s) on the chalkboard.
-4. Press **Check**.
+4. Press **Read the sentence**.
 5. If you are right, the Sanskrit sentence opens (taught word marked). English is under it.
 6. Press **Next** for the next word on the **same** shelf.
-7. Wrong Check clears the row — tap again. Tiles freeze only after a correct Check, until Next.
+7. A wrong answer clears the row — tap again. Tiles freeze only after you Read the sentence correctly, until Next.
 
 ---
 
@@ -27,7 +27,7 @@ This shelf has two kinds of rows. The tip line and the mark **Click 1 tile** / *
 ### A. Join rows — click TWO tiles
 1. Click the consonant tile first (for Day 1 that is **क**).
 2. Click the vowel tile next (**आ**).
-3. Click **Check**.
+3. Click **Read the sentence**.
 4. You should see **का बालिका पठति।** and *Who is the girl reading?*
 5. Click **Next** for the next word.
 
@@ -39,7 +39,7 @@ Same pattern: **म** then **आ** → **मा**; **स** then **आ** → **�
 After the join rows, the Target looks like **____ बालकः धावति?**
 1. Click only **कः** (the whole word).
 2. Do not click a second tile.
-3. Click **Check**, then **Next**.
+3. Click **Read the sentence**, then **Next**.
 
 Later blanks use **किम्**, **का**, **कुत्र**. Still one click each.
 
@@ -67,7 +67,7 @@ Things you can touch.
 - First rows: match the **verb** to the thing (**पुस्तकम्** → tap **पठति**).
 - Later rows (after Next): name the thing (**घटः**, **फलम्**, **कन्दुकः** …).
 
-One tile. Check. Next.
+One tile. Read the sentence. Next.
 
 ---
 
