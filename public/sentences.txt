@@ -969,3 +969,43 @@
 उद्बोधतरुः हरितः।|An awakening tree is green.|उद्बोधतरुः|nature
 उद्बाष्पखगः कूजति।|A tear-bird calls.|उद्बाष्पखगः|nature
 उद्बोधगिरिः उन्नतः।|Awakening-mountain is tall.|उद्बोधगिरिः|nature
+गङ्गापवनः वहति।|A Ganga-breeze blows.|गङ्गापवनः|nature
+सङ्गखगः कूजति।|A sanga-bird calls.|सङ्गखगः|nature
+अङ्गपुष्पं विकसति।|A limb-flower blooms.|अङ्गपुष्पम्|nature
+सङ्गमेघः गर्जति।|A sanga-cloud thunders.|सङ्गमेघः|nature
+गङ्गातरुः फलति।|A Ganga-tree bears fruit.|गङ्गातरुः|nature
+सङ्गकमलं विकसति।|A sanga-lotus blooms.|सङ्गकमलम्|nature
+अङ्गगिरिः उन्नतः।|Limb-mountain is tall.|अङ्गगिरिः|nature
+सङ्गसरः शीतलः।|A sanga-lake is cool.|सङ्गसरः|nature
+शङ्खपवनः वहति।|A conch-breeze blows.|शङ्खपवनः|nature
+शङ्खखगः कूजति।|A conch-bird calls.|शङ्खखगः|nature
+शङ्खपुष्पं विकसति।|A conch-flower blooms.|शङ्खपुष्पम्|nature
+शङ्खमेघः गर्जति।|A conch-cloud thunders.|शङ्खमेघः|nature
+शङ्खतरुः हरितः।|A conch-tree is green.|शङ्खतरुः|nature
+शङ्खसरः रम्यः।|A conch-lake is lovely.|शङ्खसरः|nature
+शङ्खगिरिः उन्नतः।|Conch-mountain is tall.|शङ्खगिरिः|nature
+शङ्खकमलं विकसति।|A conch-lotus blooms.|शङ्खकमलम्|nature
+पट्टपवनः वहति।|A cloth-breeze blows.|पट्टपवनः|nature
+पट्टखगः कूजति।|A cloth-bird calls.|पट्टखगः|nature
+पट्टपुष्पं विकसति।|A cloth-flower blooms.|पट्टपुष्पम्|nature
+पट्टमेघः गर्जति।|A cloth-cloud thunders.|पट्टमेघः|nature
+पट्टतरुः फलति।|A cloth-tree bears fruit.|पट्टतरुः|nature
+पट्टसरः शीतलः।|A cloth-lake is cool.|पट्टसरः|nature
+पट्टगिरिः उन्नतः।|Cloth-mountain is tall.|पट्टगिरिः|nature
+पट्टकमलं विकसति।|A cloth-lotus blooms.|पट्टकमलम्|nature
+उड्डयनखगः उड्डयति।|A flying bird flies up.|उड्डयनखगः|nature
+उड्डयनपवनः वहति।|A flying breeze blows.|उड्डयनपवनः|nature
+उड्डयनपुष्पं विकसति।|A flying flower blooms.|उड्डयनपुष्पम्|nature
+उड्डयनमेघः गर्जति।|A flying cloud thunders.|उड्डयनमेघः|nature
+उड्डयनतरुः हरितः।|A flying tree is green.|उड्डयनतरुः|nature
+उड्डयनसरः शीतलः।|A flying lake is cool.|उड्डयनसरः|nature
+उड्डयनगिरिः उन्नतः।|Flying-mountain is tall.|उड्डयनगिरिः|nature
+उड्डयनकमलं विकसति।|A flying lotus blooms.|उड्डयनकमलम्|nature
+ब्बपवनः वहति।|A bba-breeze blows.|ब्बपवनः|nature
+ब्बखगः कूजति।|A bba-bird calls.|ब्बखगः|nature
+ब्बपुष्पं विकसति।|A bba-flower blooms.|ब्बपुष्पम्|nature
+ब्बमेघः गर्जति।|A bba-cloud thunders.|ब्बमेघः|nature
+ब्बतरुः फलति।|A bba-tree bears fruit.|ब्बतरुः|nature
+ब्बसरः शीतलः।|A bba-lake is cool.|ब्बसरः|nature
+ब्बगिरिः उन्नतः।|Bba-mountain is tall.|ब्बगिरिः|nature
+ब्बकमलं विकसति।|A bba-lotus blooms.|ब्बकमलम्|nature

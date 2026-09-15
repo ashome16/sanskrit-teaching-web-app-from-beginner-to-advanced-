@@ -867,6 +867,51 @@
 जोडो|द्बै|द्बै|द्ब,ऐ,क,त,आ,इ|उद्बैः सह पवनः वहति।|With udbai the breeze blows.|द्ब plus ऐ makes द्बै.
 जोडो|द्बो|द्बो|द्ब,ओ,क,त,आ,इ|उद्बो रम्यः अस्ति।|The udbo is lovely.|द्ब plus ओ makes द्बो.
 जोडो|द्बौ|द्बौ|द्ब,औ,क,त,आ,इ|उद्बौ द्वौ स्तः।|Two udbau-forms are there.|द्ब plus औ makes द्बौ.
+जोडो|ङ्गा|ङ्गा|ङ्ग,आ,क,त,इ,उ|गङ्गा वेगेन वहति।|Ganga flows swiftly.|ङ्ग plus आ makes ङ्गा.
+जोडो|ङ्गि|ङ्गि|ङ्ग,इ,क,त,आ,उ|सङ्गि खगः कूजति।|A joined bird calls.|ङ्ग plus इ makes ङ्गि.
+जोडो|ङ्गी|ङ्गी|ङ्ग,ई,क,त,आ,इ|अङ्गी द्वौ स्तः।|Two limbs are there.|ङ्ग plus ई makes ङ्गी.
+जोडो|ङ्गु|ङ्गु|ङ्ग,उ,क,त,आ,इ|सङ्गुं बालकः इच्छति।|The boy wishes union.|ङ्ग plus उ makes ङ्गु.
+जोडो|ङ्गू|ङ्गू|ङ्ग,ऊ,क,त,आ,इ|सङ्गू द्वौ स्तः।|Two unions are there.|ङ्ग plus ऊ makes ङ्गू.
+जोडो|ङ्गे|ङ्गे|ङ्ग,ए,क,त,आ,इ|सङ्गे पुष्पं विकसति।|A flower blooms in sanga.|ङ्ग plus ए makes ङ्गे.
+जोडो|ङ्गै|ङ्गै|ङ्ग,ऐ,क,त,आ,इ|सङ्गैः सह पवनः वहति।|With sangai the breeze blows.|ङ्ग plus ऐ makes ङ्गै.
+जोडो|ङ्गो|ङ्गो|ङ्ग,ओ,क,त,आ,इ|सङ्गो रम्यः अस्ति।|The sanga is lovely.|ङ्ग plus ओ makes ङ्गो.
+जोडो|ङ्गौ|ङ्गौ|ङ्ग,औ,क,त,आ,इ|सङ्गौ द्वौ स्तः।|Two sangau-forms are there.|ङ्ग plus औ makes ङ्गौ.
+जोडो|ङ्खा|ङ्खा|ङ्ख,आ,क,त,इ,उ|शङ्खा ध्वनति।|The conch sounds.|ङ्ख plus आ makes ङ्खा.
+जोडो|ङ्खि|ङ्खि|ङ्ख,इ,क,त,आ,उ|शङ्खि खगः कूजति।|A conch-bird calls.|ङ्ख plus इ makes ङ्खि.
+जोडो|ङ्खी|ङ्खी|ङ्ख,ई,क,त,आ,इ|शङ्खी द्वौ स्तः।|Two conches are there.|ङ्ख plus ई makes ङ्खी.
+जोडो|ङ्खु|ङ्खु|ङ्ख,उ,क,त,आ,इ|शङ्खुं बालकः शृणोति।|The boy hears the conch.|ङ्ख plus उ makes ङ्खु.
+जोडो|ङ्खू|ङ्खू|ङ्ख,ऊ,क,त,आ,इ|शङ्खू द्वौ स्तः।|Two conches are there.|ङ्ख plus ऊ makes ङ्खू.
+जोडो|ङ्खे|ङ्खे|ङ्ख,ए,क,त,आ,इ|शङ्खे पुष्पं विकसति।|A flower blooms at shankhe.|ङ्ख plus ए makes ङ्खे.
+जोडो|ङ्खै|ङ्खै|ङ्ख,ऐ,क,त,आ,इ|शङ्खैः सह पवनः वहति।|With shankhai the breeze blows.|ङ्ख plus ऐ makes ङ्खै.
+जोडो|ङ्खो|ङ्खो|ङ्ख,ओ,क,त,आ,इ|शङ्खो रम्यः अस्ति।|The conch is lovely.|ङ्ख plus ओ makes ङ्खो.
+जोडो|ङ्खौ|ङ्खौ|ङ्ख,औ,क,त,आ,इ|शङ्खौ द्वौ स्तः।|Two shankhau-forms are there.|ङ्ख plus औ makes ङ्खौ.
+जोडो|ट्टा|ट्टा|ट्ट,आ,क,त,इ,उ|पट्टा रम्यः अस्ति।|The cloth is lovely.|ट्ट plus आ makes ट्टा.
+जोडो|ट्टि|ट्टि|ट्ट,इ,क,त,आ,उ|पट्टि खगः कूजति।|A cloth-bird calls.|ट्ट plus इ makes ट्टि.
+जोडो|ट्टी|ट्टी|ट्ट,ई,क,त,आ,इ|पट्टी द्वौ स्तः।|Two cloths are there.|ट्ट plus ई makes ट्टी.
+जोडो|ट्टु|ट्टु|ट्ट,उ,क,त,आ,इ|पट्टुं बालकः पश्यति।|The boy sees the cloth.|ट्ट plus उ makes ट्टु.
+जोडो|ट्टू|ट्टू|ट्ट,ऊ,क,त,आ,इ|पट्टू द्वौ स्तः।|Two cloths are there.|ट्ट plus ऊ makes ट्टू.
+जोडो|ट्टे|ट्टे|ट्ट,ए,क,त,आ,इ|पट्टे पुष्पं विकसति।|A flower blooms on the cloth.|ट्ट plus ए makes ट्टे.
+जोडो|ट्टै|ट्टै|ट्ट,ऐ,क,त,आ,इ|पट्टैः सह माला अस्ति।|There is a garland with cloths.|ट्ट plus ऐ makes ट्टै.
+जोडो|ट्टो|ट्टो|ट्ट,ओ,क,त,आ,इ|पट्टो रम्यः अस्ति।|The patto is lovely.|ट्ट plus ओ makes ट्टो.
+जोडो|ट्टौ|ट्टौ|ट्ट,औ,क,त,आ,इ|पट्टौ द्वौ स्तः।|Two pattau-forms are there.|ट्ट plus औ makes ट्टौ.
+जोडो|ड्डा|ड्डा|ड्ड,आ,क,त,इ,उ|उड्डा खगः उड्डयति।|An upward bird flies.|ड्ड plus आ makes ड्डा.
+जोडो|ड्डि|ड्डि|ड्ड,इ,क,त,आ,उ|उड्डि खगः कूजति।|An upward bird calls.|ड्ड plus इ makes ड्डि.
+जोडो|ड्डी|ड्डी|ड्ड,ई,क,त,आ,इ|उड्डी द्वौ स्तः।|Two upward ones are there.|ड्ड plus ई makes ड्डी.
+जोडो|ड्डु|ड्डु|ड्ड,उ,क,त,आ,इ|उड्डुं खगः गच्छति।|The bird goes upward.|ड्ड plus उ makes ड्डु.
+जोडो|ड्डू|ड्डू|ड्ड,ऊ,क,त,आ,इ|उड्डू द्वौ स्तः।|Two upward ones are there.|ड्ड plus ऊ makes ड्डू.
+जोडो|ड्डे|ड्डे|ड्ड,ए,क,त,आ,इ|उड्डे पुष्पं विकसति।|A flower blooms at udde.|ड्ड plus ए makes ड्डे.
+जोडो|ड्डै|ड्डै|ड्ड,ऐ,क,त,आ,इ|उड्डैः सह पवनः वहति।|With uddai the breeze blows.|ड्ड plus ऐ makes ड्डै.
+जोडो|ड्डो|ड्डो|ड्ड,ओ,क,त,आ,इ|उड्डो रम्यः अस्ति।|The uddo is lovely.|ड्ड plus ओ makes ड्डो.
+जोडो|ड्डौ|ड्डौ|ड्ड,औ,क,त,आ,इ|उड्डौ द्वौ स्तः।|Two uddau-forms are there.|ड्ड plus औ makes ड्डौ.
+जोडो|ब्बा|ब्बा|ब्ब,आ,क,त,इ,उ|ब्बा रूपं शोभते।|The bba-form looks lovely.|ब्ब plus आ makes ब्बा.
+जोडो|ब्बि|ब्बि|ब्ब,इ,क,त,आ,उ|ब्बि खगः कूजति।|A bbi-bird calls.|ब्ब plus इ makes ब्बि.
+जोडो|ब्बी|ब्बी|ब्ब,ई,क,त,आ,इ|ब्बी द्वौ स्तः।|Two bbi-forms are there.|ब्ब plus ई makes ब्बी.
+जोडो|ब्बु|ब्बु|ब्ब,उ,क,त,आ,इ|ब्बुं बालकः पश्यति।|The boy sees the bbu.|ब्ब plus उ makes ब्बु.
+जोडो|ब्बू|ब्बू|ब्ब,ऊ,क,त,आ,इ|ब्बू द्वौ स्तः।|Two bbu-forms are there.|ब्ब plus ऊ makes ब्बू.
+जोडो|ब्बे|ब्बे|ब्ब,ए,क,त,आ,इ|ब्बे पुष्पं विकसति।|A flower blooms at bbe.|ब्ब plus ए makes ब्बे.
+जोडो|ब्बै|ब्बै|ब्ब,ऐ,क,त,आ,इ|ब्बैः सह पवनः वहति।|With bbai the breeze blows.|ब्ब plus ऐ makes ब्बै.
+जोडो|ब्बो|ब्बो|ब्ब,ओ,क,त,आ,इ|ब्बो रम्यः अस्ति।|The bbo is lovely.|ब्ब plus ओ makes ब्बो.
+जोडो|ब्बौ|ब्बौ|ब्ब,औ,क,त,आ,इ|ब्बौ द्वौ स्तः।|Two bbau-forms are there.|ब्ब plus औ makes ब्बौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
