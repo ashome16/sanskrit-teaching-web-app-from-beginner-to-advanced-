@@ -1209,3 +1209,83 @@
 जिह्वसरः रम्यः।|A tongue lake is lovely.|जिह्वसरः|nature
 जिह्वगिरिः उन्नतः।|Tongue-mountain is tall.|जिह्वगिरिः|nature
 जिह्वकमलं विकसति।|A tongue lotus blooms.|जिह्वकमलम्|nature
+मज्जपवनः वहति।|A marrow breeze blows.|मज्जपवनः|nature
+मज्जखगः कूजति।|A marrow bird calls.|मज्जखगः|nature
+मज्जपुष्पं विकसति।|A marrow flower blooms.|मज्जपुष्पम्|nature
+मज्जमेघः गर्जति।|A marrow cloud thunders.|मज्जमेघः|nature
+मज्जतरुः फलति।|A marrow tree bears fruit.|मज्जतरुः|nature
+मज्जसरः शीतलः।|A marrow lake is cool.|मज्जसरः|nature
+मज्जगिरिः उन्नतः।|Marrow-mountain is tall.|मज्जगिरिः|nature
+मज्जकमलं विकसति।|A marrow lotus blooms.|मज्जकमलम्|nature
+ट्ठपवनः वहति।|A ttha breeze blows.|ट्ठपवनः|nature
+ट्ठखगः कूजति।|A ttha bird calls.|ट्ठखगः|nature
+ट्ठपुष्पं विकसति।|A ttha flower blooms.|ट्ठपुष्पम्|nature
+ट्ठमेघः गर्जति।|A ttha cloud thunders.|ट्ठमेघः|nature
+ट्ठतरुः हरितः।|A ttha tree is green.|ट्ठतरुः|nature
+ट्ठसरः रम्यः।|A ttha lake is lovely.|ट्ठसरः|nature
+ट्ठगिरिः उन्नतः।|Ttha-mountain is tall.|ट्ठगिरिः|nature
+ट्ठकमलं विकसति।|A ttha lotus blooms.|ट्ठकमलम्|nature
+ड्ढपवनः वहति।|A ddha breeze blows.|ड्ढपवनः|nature
+ड्ढखगः कूजति।|A ddha bird calls.|ड्ढखगः|nature
+ड्ढपुष्पं विकसति।|A ddha flower blooms.|ड्ढपुष्पम्|nature
+ड्ढमेघः गर्जति।|A ddha cloud thunders.|ड्ढमेघः|nature
+ड्ढतरुः फलति।|A ddha tree bears fruit.|ड्ढतरुः|nature
+ड्ढसरः शीतलः।|A ddha lake is cool.|ड्ढसरः|nature
+ड्ढगिरिः उन्नतः।|Ddha-mountain is tall.|ड्ढगिरिः|nature
+ड्ढकमलं विकसति।|A ddha lotus blooms.|ड्ढकमलम्|nature
+क्कपवनः वहति।|A kka breeze blows.|क्कपवनः|nature
+क्कखगः कूजति।|A kka bird calls.|क्कखगः|nature
+क्कपुष्पं विकसति।|A kka flower blooms.|क्कपुष्पम्|nature
+क्कमेघः गर्जति।|A kka cloud thunders.|क्कमेघः|nature
+क्कतरुः हरितः।|A kka tree is green.|क्कतरुः|nature
+क्कसरः रम्यः।|A kka lake is lovely.|क्कसरः|nature
+क्कगिरिः उन्नतः।|Kka-mountain is tall.|क्कगिरिः|nature
+क्ककमलं विकसति।|A kka lotus blooms.|क्ककमलम्|nature
+ग्गपवनः वहति।|A gga breeze blows.|ग्गपवनः|nature
+ग्गखगः कूजति।|A gga bird calls.|ग्गखगः|nature
+ग्गपुष्पं विकसति।|A gga flower blooms.|ग्गपुष्पम्|nature
+ग्गमेघः गर्जति।|A gga cloud thunders.|ग्गमेघः|nature
+ग्गतरुः फलति।|A gga tree bears fruit.|ग्गतरुः|nature
+ग्गसरः शीतलः।|A gga lake is cool.|ग्गसरः|nature
+ग्गगिरिः उन्नतः।|Gga-mountain is tall.|ग्गगिरिः|nature
+ग्गकमलं विकसति।|A gga lotus blooms.|ग्गकमलम्|nature
+कम्पपवनः वहति।|A trembling breeze blows.|कम्पपवनः|nature
+कम्पखगः कूजति।|A trembling bird calls.|कम्पखगः|nature
+कम्पपुष्पं विकसति।|A trembling flower blooms.|कम्पपुष्पम्|nature
+कम्पमेघः गर्जति।|A trembling cloud thunders.|कम्पमेघः|nature
+कम्पतरुः हरितः।|A trembling tree is green.|कम्पतरुः|nature
+कम्पसरः रम्यः।|A trembling lake is lovely.|कम्पसरः|nature
+कम्पगिरिः उन्नतः।|Trembling-mountain is tall.|कम्पगिरिः|nature
+कम्पकमलं विकसति।|A trembling lotus blooms.|कम्पकमलम्|nature
+अम्बपवनः वहति।|A mother breeze blows.|अम्बपवनः|nature
+अम्बखगः कूजति।|A mother bird calls.|अम्बखगः|nature
+अम्बपुष्पं विकसति।|A mother flower blooms.|अम्बपुष्पम्|nature
+अम्बमेघः गर्जति।|A mother cloud thunders.|अम्बमेघः|nature
+अम्बतरुः फलति।|A mother tree bears fruit.|अम्बतरुः|nature
+अम्बसरः शीतलः।|A mother lake is cool.|अम्बसरः|nature
+अम्बगिरिः उन्नतः।|Mother-mountain is tall.|अम्बगिरिः|nature
+अम्बकमलं विकसति।|A mother lotus blooms.|अम्बकमलम्|nature
+वत्सपवनः वहति।|A calf breeze blows.|वत्सपवनः|nature
+वत्सखगः कूजति।|A calf bird calls.|वत्सखगः|nature
+वत्सपुष्पं विकसति।|A calf flower blooms.|वत्सपुष्पम्|nature
+वत्समेघः गर्जति।|A calf cloud thunders.|वत्समेघः|nature
+वत्सतरुः हरितः।|A calf tree is green.|वत्सतरुः|nature
+वत्ससरः रम्यः।|A calf lake is lovely.|वत्ससरः|nature
+वत्सगिरिः उन्नतः।|Calf-mountain is tall.|वत्सगिरिः|nature
+वत्सकमलं विकसति।|A calf lotus blooms.|वत्सकमलम्|nature
+द्सपवनः वहति।|A dsa breeze blows.|द्सपवनः|nature
+द्सखगः कूजति।|A dsa bird calls.|द्सखगः|nature
+द्सपुष्पं विकसति।|A dsa flower blooms.|द्सपुष्पम्|nature
+द्समेघः गर्जति।|A dsa cloud thunders.|द्समेघः|nature
+द्सतरुः फलति।|A dsa tree bears fruit.|द्सतरुः|nature
+द्ससरः शीतलः।|A dsa lake is cool.|द्ससरः|nature
+द्सगिरिः उन्नतः।|Dsa-mountain is tall.|द्सगिरिः|nature
+द्सकमलं विकसति।|A dsa lotus blooms.|द्सकमलम्|nature
+ह्लादपवनः वहति।|A joy breeze blows.|ह्लादपवनः|nature
+ह्लादखगः कूजति।|A joy bird calls.|ह्लादखगः|nature
+ह्लादपुष्पं विकसति।|A joy flower blooms.|ह्लादपुष्पम्|nature
+ह्लादमेघः गर्जति।|A joy cloud thunders.|ह्लादमेघः|nature
+ह्लादतरुः हरितः।|A joy tree is green.|ह्लादतरुः|nature
+ह्लादसरः रम्यः।|A joy lake is lovely.|ह्लादसरः|nature
+ह्लादगिरिः उन्नतः।|Joy-mountain is tall.|ह्लादगिरिः|nature
+ह्लादकमलं विकसति।|A joy lotus blooms.|ह्लादकमलम्|nature

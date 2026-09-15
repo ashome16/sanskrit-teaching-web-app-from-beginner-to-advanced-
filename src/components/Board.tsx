@@ -301,6 +301,16 @@ const CONSONANT_ROW_CHIP_DEFS: { id: string; consonant: string }[] = [
   { id: 'श्व', consonant: 'श्व' },
   { id: 'ष्व', consonant: 'ष्व' },
   { id: 'ह्व', consonant: 'ह्व' },
+  { id: 'ज्ज', consonant: 'ज्ज' },
+  { id: 'ट्ठ', consonant: 'ट्ठ' },
+  { id: 'ड्ढ', consonant: 'ड्ढ' },
+  { id: 'क्क', consonant: 'क्क' },
+  { id: 'ग्ग', consonant: 'ग्ग' },
+  { id: 'म्प', consonant: 'म्प' },
+  { id: 'म्ब', consonant: 'म्ब' },
+  { id: 'त्स', consonant: 'त्स' },
+  { id: 'द्स', consonant: 'द्स' },
+  { id: 'ह्ल', consonant: 'ह्ल' },
 ];
 
 const CONSONANT_ROW_MATRA_CHARS = new Set([

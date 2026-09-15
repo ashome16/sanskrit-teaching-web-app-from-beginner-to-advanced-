@@ -1137,6 +1137,96 @@
 जोडो|ह्वै|ह्वै|ह्व,ऐ,क,त,आ,इ|ह्वैः सह पवनः वहति।|With hvai the breeze blows.|ह्व plus ऐ makes ह्वै.
 जोडो|ह्वो|ह्वो|ह्व,ओ,क,त,आ,इ|ह्वो रम्यः अस्ति।|The hvo is lovely.|ह्व plus ओ makes ह्वो.
 जोडो|ह्वौ|ह्वौ|ह्व,औ,क,त,आ,इ|ह्वौ द्वौ स्तः।|Two hvau-forms are there.|ह्व plus औ makes ह्वौ.
+जोडो|ज्जा|ज्जा|ज्ज,आ,क,त,इ,उ|मज्जा अस्थिषु अस्ति।|Marrow is in the bones.|ज्ज plus आ makes ज्जा.
+जोडो|ज्जि|ज्जि|ज्ज,इ,क,त,आ,उ|ज्जि खगः कूजति।|A jji-bird calls.|ज्ज plus इ makes ज्जि.
+जोडो|ज्जी|ज्जी|ज्ज,ई,क,त,आ,इ|ज्जी द्वौ स्तः।|Two jji-forms are there.|ज्ज plus ई makes ज्जी.
+जोडो|ज्जु|ज्जु|ज्ज,उ,क,त,आ,इ|ज्जुं बालकः पश्यति।|The boy sees the jju.|ज्ज plus उ makes ज्जु.
+जोडो|ज्जू|ज्जू|ज्ज,ऊ,क,त,आ,इ|ज्जू द्वौ स्तः।|Two jju-forms are there.|ज्ज plus ऊ makes ज्जू.
+जोडो|ज्जे|ज्जे|ज्ज,ए,क,त,आ,इ|ज्जे पुष्पं विकसति।|A flower blooms at jje.|ज्ज plus ए makes ज्जे.
+जोडो|ज्जै|ज्जै|ज्ज,ऐ,क,त,आ,इ|ज्जैः सह पवनः वहति।|With jjai the breeze blows.|ज्ज plus ऐ makes ज्जै.
+जोडो|ज्जो|ज्जो|ज्ज,ओ,क,त,आ,इ|ज्जो रम्यः अस्ति।|The jjo is lovely.|ज्ज plus ओ makes ज्जो.
+जोडो|ज्जौ|ज्जौ|ज्ज,औ,क,त,आ,इ|ज्जौ द्वौ स्तः।|Two jjau-forms are there.|ज्ज plus औ makes ज्जौ.
+जोडो|ट्ठा|ट्ठा|ट्ठ,आ,क,त,इ,उ|ट्ठा रूपं शोभते।|The ttha-form looks lovely.|ट्ठ plus आ makes ट्ठा.
+जोडो|ट्ठि|ट्ठि|ट्ठ,इ,क,त,आ,उ|ट्ठि खगः कूजति।|A tthi-bird calls.|ट्ठ plus इ makes ट्ठि.
+जोडो|ट्ठी|ट्ठी|ट्ठ,ई,क,त,आ,इ|ट्ठी द्वौ स्तः।|Two tthi-forms are there.|ट्ठ plus ई makes ट्ठी.
+जोडो|ट्ठु|ट्ठु|ट्ठ,उ,क,त,आ,इ|ट्ठुं बालकः पश्यति।|The boy sees the tthu.|ट्ठ plus उ makes ट्ठु.
+जोडो|ट्ठू|ट्ठू|ट्ठ,ऊ,क,त,आ,इ|ट्ठू द्वौ स्तः।|Two tthu-forms are there.|ट्ठ plus ऊ makes ट्ठू.
+जोडो|ट्ठे|ट्ठे|ट्ठ,ए,क,त,आ,इ|ट्ठे पुष्पं विकसति।|A flower blooms at tthe.|ट्ठ plus ए makes ट्ठे.
+जोडो|ट्ठै|ट्ठै|ट्ठ,ऐ,क,त,आ,इ|ट्ठैः सह पवनः वहति।|With tthai the breeze blows.|ट्ठ plus ऐ makes ट्ठै.
+जोडो|ट्ठो|ट्ठो|ट्ठ,ओ,क,त,आ,इ|ट्ठो रम्यः अस्ति।|The ttho is lovely.|ट्ठ plus ओ makes ट्ठो.
+जोडो|ट्ठौ|ट्ठौ|ट्ठ,औ,क,त,आ,इ|ट्ठौ द्वौ स्तः।|Two tthau-forms are there.|ट्ठ plus औ makes ट्ठौ.
+जोडो|ड्ढा|ड्ढा|ड्ढ,आ,क,त,इ,उ|ड्ढा रूपं शोभते।|The ddha-form looks lovely.|ड्ढ plus आ makes ड्ढा.
+जोडो|ड्ढि|ड्ढि|ड्ढ,इ,क,त,आ,उ|ड्ढि खगः कूजति।|A ddhi-bird calls.|ड्ढ plus इ makes ड्ढि.
+जोडो|ड्ढी|ड्ढी|ड्ढ,ई,क,त,आ,इ|ड्ढी द्वौ स्तः।|Two ddhi-forms are there.|ड्ढ plus ई makes ड्ढी.
+जोडो|ड्ढु|ड्ढु|ड्ढ,उ,क,त,आ,इ|ड्ढुं बालकः पश्यति।|The boy sees the ddhu.|ड्ढ plus उ makes ड्ढु.
+जोडो|ड्ढू|ड्ढू|ड्ढ,ऊ,क,त,आ,इ|ड्ढू द्वौ स्तः।|Two ddhu-forms are there.|ड्ढ plus ऊ makes ड्ढू.
+जोडो|ड्ढे|ड्ढे|ड्ढ,ए,क,त,आ,इ|ड्ढे पुष्पं विकसति।|A flower blooms at ddhe.|ड्ढ plus ए makes ड्ढे.
+जोडो|ड्ढै|ड्ढै|ड्ढ,ऐ,क,त,आ,इ|ड्ढैः सह पवनः वहति।|With ddhai the breeze blows.|ड्ढ plus ऐ makes ड्ढै.
+जोडो|ड्ढो|ड्ढो|ड्ढ,ओ,क,त,आ,इ|ड्ढो रम्यः अस्ति।|The ddho is lovely.|ड्ढ plus ओ makes ड्ढो.
+जोडो|ड्ढौ|ड्ढौ|ड्ढ,औ,क,त,आ,इ|ड्ढौ द्वौ स्तः।|Two ddhau-forms are there.|ड्ढ plus औ makes ड्ढौ.
+जोडो|क्का|क्का|क्क,आ,क,त,इ,उ|क्का रूपं शोभते।|The kka-form looks lovely.|क्क plus आ makes क्का.
+जोडो|क्कि|क्कि|क्क,इ,क,त,आ,उ|क्कि खगः कूजति।|A kki-bird calls.|क्क plus इ makes क्कि.
+जोडो|क्की|क्की|क्क,ई,क,त,आ,इ|क्की द्वौ स्तः।|Two kki-forms are there.|क्क plus ई makes क्की.
+जोडो|क्कु|क्कु|क्क,उ,क,त,आ,इ|क्कुं बालकः पश्यति।|The boy sees the kku.|क्क plus उ makes क्कु.
+जोडो|क्कू|क्कू|क्क,ऊ,क,त,आ,इ|क्कू द्वौ स्तः।|Two kku-forms are there.|क्क plus ऊ makes क्कू.
+जोडो|क्के|क्के|क्क,ए,क,त,आ,इ|क्के पुष्पं विकसति।|A flower blooms at kke.|क्क plus ए makes क्के.
+जोडो|क्कै|क्कै|क्क,ऐ,क,त,आ,इ|क्कैः सह पवनः वहति।|With kkai the breeze blows.|क्क plus ऐ makes क्कै.
+जोडो|क्को|क्को|क्क,ओ,क,त,आ,इ|क्को रम्यः अस्ति।|The kko is lovely.|क्क plus ओ makes क्को.
+जोडो|क्कौ|क्कौ|क्क,औ,क,त,आ,इ|क्कौ द्वौ स्तः।|Two kkau-forms are there.|क्क plus औ makes क्कौ.
+जोडो|ग्गा|ग्गा|ग्ग,आ,क,त,इ,उ|ग्गा रूपं शोभते।|The gga-form looks lovely.|ग्ग plus आ makes ग्गा.
+जोडो|ग्गि|ग्गि|ग्ग,इ,क,त,आ,उ|ग्गि खगः कूजति।|A ggi-bird calls.|ग्ग plus इ makes ग्गि.
+जोडो|ग्गी|ग्गी|ग्ग,ई,क,त,आ,इ|ग्गी द्वौ स्तः।|Two ggi-forms are there.|ग्ग plus ई makes ग्गी.
+जोडो|ग्गु|ग्गु|ग्ग,उ,क,त,आ,इ|ग्गुं बालकः पश्यति।|The boy sees the ggu.|ग्ग plus उ makes ग्गु.
+जोडो|ग्गू|ग्गू|ग्ग,ऊ,क,त,आ,इ|ग्गू द्वौ स्तः।|Two ggu-forms are there.|ग्ग plus ऊ makes ग्गू.
+जोडो|ग्गे|ग्गे|ग्ग,ए,क,त,आ,इ|ग्गे पुष्पं विकसति।|A flower blooms at gge.|ग्ग plus ए makes ग्गे.
+जोडो|ग्गै|ग्गै|ग्ग,ऐ,क,त,आ,इ|ग्गैः सह पवनः वहति।|With ggai the breeze blows.|ग्ग plus ऐ makes ग्गै.
+जोडो|ग्गो|ग्गो|ग्ग,ओ,क,त,आ,इ|ग्गो रम्यः अस्ति।|The ggo is lovely.|ग्ग plus ओ makes ग्गो.
+जोडो|ग्गौ|ग्गौ|ग्ग,औ,क,त,आ,इ|ग्गौ द्वौ स्तः।|Two ggau-forms are there.|ग्ग plus औ makes ग्गौ.
+जोडो|म्पा|म्पा|म्प,आ,क,त,इ,उ|कम्पा भूमिः कम्पते।|The trembling earth quakes.|म्प plus आ makes म्पा.
+जोडो|म्पि|म्पि|म्प,इ,क,त,आ,उ|म्पि खगः कूजति।|A mpi-bird calls.|म्प plus इ makes म्पि.
+जोडो|म्पी|म्पी|म्प,ई,क,त,आ,इ|म्पी द्वौ स्तः।|Two mpi-forms are there.|म्प plus ई makes म्पी.
+जोडो|म्पु|म्पु|म्प,उ,क,त,आ,इ|म्पुं बालकः पश्यति।|The boy sees the mpu.|म्प plus उ makes म्पु.
+जोडो|म्पू|म्पू|म्प,ऊ,क,त,आ,इ|म्पू द्वौ स्तः।|Two mpu-forms are there.|म्प plus ऊ makes म्पू.
+जोडो|म्पे|म्पे|म्प,ए,क,त,आ,इ|म्पे पुष्पं विकसति।|A flower blooms at mpe.|म्प plus ए makes म्पे.
+जोडो|म्पै|म्पै|म्प,ऐ,क,त,आ,इ|म्पैः सह पवनः वहति।|With mpai the breeze blows.|म्प plus ऐ makes म्पै.
+जोडो|म्पो|म्पो|म्प,ओ,क,त,आ,इ|म्पो रम्यः अस्ति।|The mpo is lovely.|म्प plus ओ makes म्पो.
+जोडो|म्पौ|म्पौ|म्प,औ,क,त,आ,इ|म्पौ द्वौ स्तः।|Two mpau-forms are there.|म्प plus औ makes म्पौ.
+जोडो|म्बा|म्बा|म्ब,आ,क,त,इ,उ|अम्बा स्नेहेन पालयति।|Mother nurtures with love.|म्ब plus आ makes म्बा.
+जोडो|म्बि|म्बि|म्ब,इ,क,त,आ,उ|म्बि खगः कूजति।|A mbi-bird calls.|म्ब plus इ makes म्बि.
+जोडो|म्बी|म्बी|म्ब,ई,क,त,आ,इ|म्बी द्वौ स्तः।|Two mbi-forms are there.|म्ब plus ई makes म्बी.
+जोडो|म्बु|म्बु|म्ब,उ,क,त,आ,इ|म्बुं बालकः पश्यति।|The boy sees the mbu.|म्ब plus उ makes म्बु.
+जोडो|म्बू|म्बू|म्ब,ऊ,क,त,आ,इ|म्बू द्वौ स्तः।|Two mbu-forms are there.|म्ब plus ऊ makes म्बू.
+जोडो|म्बे|म्बे|म्ब,ए,क,त,आ,इ|म्बे पुष्पं विकसति।|A flower blooms at mbe.|म्ब plus ए makes म्बे.
+जोडो|म्बै|म्बै|म्ब,ऐ,क,त,आ,इ|म्बैः सह पवनः वहति।|With mbai the breeze blows.|म्ब plus ऐ makes म्बै.
+जोडो|म्बो|म्बो|म्ब,ओ,क,त,आ,इ|म्बो रम्यः अस्ति।|The mbo is lovely.|म्ब plus ओ makes म्बो.
+जोडो|म्बौ|म्बौ|म्ब,औ,क,त,आ,इ|म्बौ द्वौ स्तः।|Two mbau-forms are there.|म्ब plus औ makes म्बौ.
+जोडो|त्सा|त्सा|त्स,आ,क,त,इ,उ|वत्सा धेनुम् अनुसरति।|The calf follows the cow.|त्स plus आ makes त्सा.
+जोडो|त्सि|त्सि|त्स,इ,क,त,आ,उ|त्सि खगः कूजति।|A tsi-bird calls.|त्स plus इ makes त्सि.
+जोडो|त्सी|त्सी|त्स,ई,क,त,आ,इ|त्सी द्वौ स्तः।|Two tsi-forms are there.|त्स plus ई makes त्सी.
+जोडो|त्सु|त्सु|त्स,उ,क,त,आ,इ|त्सुं बालकः पश्यति।|The boy sees the tsu.|त्स plus उ makes त्सु.
+जोडो|त्सू|त्सू|त्स,ऊ,क,त,आ,इ|त्सू द्वौ स्तः।|Two tsu-forms are there.|त्स plus ऊ makes त्सू.
+जोडो|त्से|त्से|त्स,ए,क,त,आ,इ|त्से पुष्पं विकसति।|A flower blooms at tse.|त्स plus ए makes त्से.
+जोडो|त्सै|त्सै|त्स,ऐ,क,त,आ,इ|त्सैः सह पवनः वहति।|With tsai the breeze blows.|त्स plus ऐ makes त्सै.
+जोडो|त्सो|त्सो|त्स,ओ,क,त,आ,इ|त्सो रम्यः अस्ति।|The tso is lovely.|त्स plus ओ makes त्सो.
+जोडो|त्सौ|त्सौ|त्स,औ,क,त,आ,इ|त्सौ द्वौ स्तः।|Two tsau-forms are there.|त्स plus औ makes त्सौ.
+जोडो|द्सा|द्सा|द्स,आ,क,त,इ,उ|द्सा रूपं शोभते।|The dsa-form looks lovely.|द्स plus आ makes द्सा.
+जोडो|द्सि|द्सि|द्स,इ,क,त,आ,उ|द्सि खगः कूजति।|A dsi-bird calls.|द्स plus इ makes द्सि.
+जोडो|द्सी|द्सी|द्स,ई,क,त,आ,इ|द्सी द्वौ स्तः।|Two dsi-forms are there.|द्स plus ई makes द्सी.
+जोडो|द्सु|द्सु|द्स,उ,क,त,आ,इ|द्सुं बालकः पश्यति।|The boy sees the dsu.|द्स plus उ makes द्सु.
+जोडो|द्सू|द्सू|द्स,ऊ,क,त,आ,इ|द्सू द्वौ स्तः।|Two dsu-forms are there.|द्स plus ऊ makes द्सू.
+जोडो|द्से|द्से|द्स,ए,क,त,आ,इ|द्से पुष्पं विकसति।|A flower blooms at dse.|द्स plus ए makes द्से.
+जोडो|द्सै|द्सै|द्स,ऐ,क,त,आ,इ|द्सैः सह पवनः वहति।|With dsai the breeze blows.|द्स plus ऐ makes द्सै.
+जोडो|द्सो|द्सो|द्स,ओ,क,त,आ,इ|द्सो रम्यः अस्ति।|The dso is lovely.|द्स plus ओ makes द्सो.
+जोडो|द्सौ|द्सौ|द्स,औ,क,त,आ,इ|द्सौ द्वौ स्तः।|Two dsau-forms are there.|द्स plus औ makes द्सौ.
+जोडो|ह्ला|ह्ला|ह्ल,आ,क,त,इ,उ|ह्लादः हृदयं पूरयति।|Joy fills the heart.|ह्ल plus आ makes ह्ला.
+जोडो|ह्लि|ह्लि|ह्ल,इ,क,त,आ,उ|ह्लि खगः कूजति।|A hli-bird calls.|ह्ल plus इ makes ह्लि.
+जोडो|ह्ली|ह्ली|ह्ल,ई,क,त,आ,इ|ह्ली द्वौ स्तः।|Two hli-forms are there.|ह्ल plus ई makes ह्ली.
+जोडो|ह्लु|ह्लु|ह्ल,उ,क,त,आ,इ|ह्लुं बालकः पश्यति।|The boy sees the hlu.|ह्ल plus उ makes ह्लु.
+जोडो|ह्लू|ह्लू|ह्ल,ऊ,क,त,आ,इ|ह्लू द्वौ स्तः।|Two hlu-forms are there.|ह्ल plus ऊ makes ह्लू.
+जोडो|ह्ले|ह्ले|ह्ल,ए,क,त,आ,इ|ह्ले पुष्पं विकसति।|A flower blooms at hle.|ह्ल plus ए makes ह्ले.
+जोडो|ह्लै|ह्लै|ह्ल,ऐ,क,त,आ,इ|ह्लैः सह पवनः वहति।|With hlai the breeze blows.|ह्ल plus ऐ makes ह्लै.
+जोडो|ह्लो|ह्लो|ह्ल,ओ,क,त,आ,इ|ह्लो रम्यः अस्ति।|The hlo is lovely.|ह्ल plus ओ makes ह्लो.
+जोडो|ह्लौ|ह्लौ|ह्ल,औ,क,त,आ,इ|ह्लौ द्वौ स्तः।|Two hlau-forms are there.|ह्ल plus औ makes ह्लौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
