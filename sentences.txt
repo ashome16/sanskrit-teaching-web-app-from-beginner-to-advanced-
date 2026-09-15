@@ -139,3 +139,11 @@
 विद्युत् प्रकाशते।|Lightning flashes.|विद्युत्|nature
 तुषारः पतति।|Frost falls.|तुषारः|nature
 पवनः वहति।|The wind blows.|पवनः|nature
+पर्णम् वृक्षात् पतति।|A leaf falls from the tree.|पर्णम्|nature
+मूलम् भूमौ अस्ति।|The root is in the ground.|मूलम्|nature
+शाखा उपरि अस्ति।|The branch is above.|शाखा|nature
+सरसिजम् विकसति।|The lotus blooms.|सरसिजम्|nature
+तडागः जले पूर्णः।|The pond is full of water.|तडागः|nature
+गिरिः उच्चः अस्ति।|The mountain is tall.|गिरिः|nature
+मरुभूमिः शुष्का अस्ति।|The desert is dry.|मरुभूमिः|nature
+वर्षा आगच्छति।|Rain comes.|वर्षा|nature
