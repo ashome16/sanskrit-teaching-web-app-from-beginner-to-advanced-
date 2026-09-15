@@ -103,8 +103,9 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   const isLongEe = word === 'ई' || /^eeee$/i.test(speech);
   const isRih = word === 'ऋ' || /^rih$/i.test(speech);
   const isReee = word === 'ॠ' || /^reee$/i.test(speech);
-  const isGya = word === 'ज्ञ' || /^gya[h]?$/i.test(speech);
-  const isTra = word === 'त्र' || /^traa?$/i.test(speech);
+  // ज्ञ/त्र speech is Devanagari so hi-IN path applies (not ASCII English).
+  const isGya = word === 'ज्ञ' || speech === 'ज्ञ';
+  const isTra = word === 'त्र' || speech === 'त्र';
   const isLongUu = /ooooh$/i.test(speech);
   const isShortUu = /ooh$/i.test(speech) && !isLongUu;
   const isVisargaWord = word.endsWith('ः');
@@ -122,7 +123,7 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
           : isRih || isReee
             ? 0.58
             : isGya || isTra
-              ? 0.85
+              ? 0.75
               : isLongUu
                 ? 0.62
                 : isShortUu
@@ -145,11 +146,13 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
       ? 1.35
       : isKsha
         ? 1.45
-        : isRih || isReee
-          ? 1.12
-          : isDdha
+        : isGya || isTra
+          ? 1.1
+          : isRih || isReee
             ? 1.12
-            : 1;
+            : isDdha
+              ? 1.12
+              : 1;
   utterance.volume = 1;
 };
 
