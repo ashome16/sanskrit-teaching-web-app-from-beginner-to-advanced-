@@ -234,13 +234,13 @@ const Board: React.FC = () => {
     || activeBoardShelf?.skin === 'रिक्तम्'
     || isPrashnaPart;
   const wrongAttemptMessage = hasBlank
-    ? 'Not that tile. Click the cream tile that fills the blank, then Read the sentence again.'
+    ? 'Not that cream tile — try another, then Read the sentence again.'
     : isJodoSkin
       ? 'Not those tiles. Click the right letter and vowel (any order), then Read the sentence again.'
-      : 'Not that tile. Click a different cream tile, then Read the sentence again.';
+      : 'Not that cream tile — try another, then Read the sentence again.';
 
   const toggleTile = (tile: string) => {
-    if (checked) return;
+    if (checked && isCorrect) return;
     const clean = cleanTile(tile);
     if (!clean) return;
     setWrongAttempt(false);
@@ -252,12 +252,13 @@ const Board: React.FC = () => {
   };
 
   const submitCheck = () => {
+    if (chosen.length === 0) return;
     if (isCorrect) {
       setChecked(true);
       setWrongAttempt(false);
     } else {
-      setChecked(false);
       setWrongAttempt(true);
+      setChecked(false);
       // One-tile rows: keep the gold tile so the child can click a different word
       if (!targetIsWholeTile) setChosen([]);
     }
