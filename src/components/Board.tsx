@@ -185,6 +185,9 @@ const CONSONANT_ROW_CHIP_DEFS: { id: string; consonant: string }[] = [
   { id: 'त', consonant: 'त' },
   { id: 'द', consonant: 'द' },
   { id: 'ब', consonant: 'ब' },
+  { id: 'भ', consonant: 'भ' },
+  { id: 'ध', consonant: 'ध' },
+  { id: 'य', consonant: 'य' },
 ];
 
 const CONSONANT_ROW_MATRA = '[\u093E\u093F\u0940\u0941\u0942\u0943\u0947\u0948\u094B\u094C\u0902\u0903]';
