@@ -51,6 +51,11 @@
 जोडो|सौ|सौ|स,औ,क,म,आ,उ|सौन्दर्यं वनस्य अस्ति।|There is beauty of the forest.|स plus औ makes सौ.
 जोडो|पौ|पौ|प,औ,क,म,आ,उ|पौत्रः क्रीडति।|The grandson plays.|प plus औ makes पौ.
 जोडो|नौ|नौ|न,औ,प,क,आ,उ|नौका जले तरति।|The boat floats on water.|न plus औ makes नौ.
+जोडो|कृ|कृ|क,ऋ,ख,ग,आ,उ|कृष्णः वेणुं वादयति।|Krishna plays the flute.|क plus ऋ makes कृ.
+जोडो|मृ|मृ|म,ऋ,क,प,आ,उ|मृगः वने धावति।|The deer runs in the forest.|म plus ऋ makes मृ.
+जोडो|सृ|सृ|स,ऋ,क,म,आ,उ|सृष्टिः अद्भुता अस्ति।|Creation is wonderful.|स plus ऋ makes सृ.
+जोडो|पृ|पृ|प,ऋ,क,म,आ,उ|पृथ्वी अन्नं ददाति।|The earth gives food.|प plus ऋ makes पृ.
+जोडो|नृ|नृ|न,ऋ,प,क,आ,उ|नृपः राज्यं पालयति।|The king protects the kingdom.|न plus ऋ makes नृ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
