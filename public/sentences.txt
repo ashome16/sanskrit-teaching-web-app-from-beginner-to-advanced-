@@ -1129,3 +1129,83 @@
 अर्चसरः रम्यः।|A worship lake is lovely.|अर्चसरः|nature
 अर्चगिरिः उन्नतः।|Worship-mountain is tall.|अर्चगिरिः|nature
 अर्चकमलं विकसति।|A worship lotus blooms.|अर्चकमलम्|nature
+नन्दपवनः वहति।|A joyful breeze blows.|नन्दपवनः|nature
+नन्दखगः कूजति।|A joyful bird calls.|नन्दखगः|nature
+नन्दपुष्पं विकसति।|A joyful flower blooms.|नन्दपुष्पम्|nature
+नन्दमेघः गर्जति।|A joyful cloud thunders.|नन्दमेघः|nature
+नन्दतरुः फलति।|A joyful tree bears fruit.|नन्दतरुः|nature
+नन्दसरः शीतलः।|A joyful lake is cool.|नन्दसरः|nature
+नन्दगिरिः उन्नतः।|Joyful-mountain is tall.|नन्दगिरिः|nature
+नन्दकमलं विकसति।|A joyful lotus blooms.|नन्दकमलम्|nature
+गन्धपवनः वहति।|A fragrant breeze blows.|गन्धपवनः|nature
+गन्धखगः कूजति।|A fragrant bird calls.|गन्धखगः|nature
+गन्धपुष्पं विकसति।|A fragrant flower blooms.|गन्धपुष्पम्|nature
+गन्धमेघः गर्जति।|A fragrant cloud thunders.|गन्धमेघः|nature
+गन्धतरुः हरितः।|A fragrant tree is green.|गन्धतरुः|nature
+गन्धसरः रम्यः।|A fragrant lake is lovely.|गन्धसरः|nature
+गन्धगिरिः उन्नतः।|Fragrant-mountain is tall.|गन्धगिरिः|nature
+गन्धकमलं विकसति।|A fragrant lotus blooms.|गन्धकमलम्|nature
+न्गपवनः वहति।|A nga breeze blows.|न्गपवनः|nature
+न्गखगः कूजति।|A nga bird calls.|न्गखगः|nature
+न्गपुष्पं विकसति।|A nga flower blooms.|न्गपुष्पम्|nature
+न्गमेघः गर्जति।|A nga cloud thunders.|न्गमेघः|nature
+न्गतरुः फलति।|A nga tree bears fruit.|न्गतरुः|nature
+न्गसरः शीतलः।|A nga lake is cool.|न्गसरः|nature
+न्गगिरिः उन्नतः।|Nga-mountain is tall.|न्गगिरिः|nature
+न्गकमलं विकसति।|A nga lotus blooms.|न्गकमलम्|nature
+न्जपवनः वहति।|A nja breeze blows.|न्जपवनः|nature
+न्जखगः कूजति।|A nja bird calls.|न्जखगः|nature
+न्जपुष्पं विकसति।|A nja flower blooms.|न्जपुष्पम्|nature
+न्जमेघः गर्जति।|A nja cloud thunders.|न्जमेघः|nature
+न्जतरुः हरितः।|A nja tree is green.|न्जतरुः|nature
+न्जसरः रम्यः।|A nja lake is lovely.|न्जसरः|nature
+न्जगिरिः उन्नतः।|Nja-mountain is tall.|न्जगिरिः|nature
+न्जकमलं विकसति।|A nja lotus blooms.|न्जकमलम्|nature
+न्बपवनः वहति।|A nba breeze blows.|न्बपवनः|nature
+न्बखगः कूजति।|A nba bird calls.|न्बखगः|nature
+न्बपुष्पं विकसति।|A nba flower blooms.|न्बपुष्पम्|nature
+न्बमेघः गर्जति।|A nba cloud thunders.|न्बमेघः|nature
+न्बतरुः फलति।|A nba tree bears fruit.|न्बतरुः|nature
+न्बसरः शीतलः।|A nba lake is cool.|न्बसरः|nature
+न्बगिरिः उन्नतः।|Nba-mountain is tall.|न्बगिरिः|nature
+न्बकमलं विकसति।|A nba lotus blooms.|न्बकमलम्|nature
+ल्गपवनः वहति।|A lga breeze blows.|ल्गपवनः|nature
+ल्गखगः कूजति।|A lga bird calls.|ल्गखगः|nature
+ल्गपुष्पं विकसति।|A lga flower blooms.|ल्गपुष्पम्|nature
+ल्गमेघः गर्जति।|A lga cloud thunders.|ल्गमेघः|nature
+ल्गतरुः हरितः।|A lga tree is green.|ल्गतरुः|nature
+ल्गसरः रम्यः।|A lga lake is lovely.|ल्गसरः|nature
+ल्गगिरिः उन्नतः।|Lga-mountain is tall.|ल्गगिरिः|nature
+ल्गकमलं विकसति।|A lga lotus blooms.|ल्गकमलम्|nature
+गुल्मपवनः वहति।|A shrub breeze blows.|गुल्मपवनः|nature
+गुल्मखगः कूजति।|A shrub bird calls.|गुल्मखगः|nature
+गुल्मपुष्पं विकसति।|A shrub flower blooms.|गुल्मपुष्पम्|nature
+गुल्ममेघः गर्जति।|A shrub cloud thunders.|गुल्ममेघः|nature
+गुल्मतरुः फलति।|A shrub tree bears fruit.|गुल्मतरुः|nature
+गुल्मसरः शीतलः।|A shrub lake is cool.|गुल्मसरः|nature
+गुल्मगिरिः उन्नतः।|Shrub-mountain is tall.|गुल्मगिरिः|nature
+गुल्मकमलं विकसति।|A shrub lotus blooms.|गुल्मकमलम्|nature
+अश्वपवनः वहति।|A horse breeze blows.|अश्वपवनः|nature
+अश्वखगः कूजति।|A horse bird calls.|अश्वखगः|nature
+अश्वपुष्पं विकसति।|A horse flower blooms.|अश्वपुष्पम्|nature
+अश्वमेघः गर्जति।|A horse cloud thunders.|अश्वमेघः|nature
+अश्वतरुः हरितः।|A horse tree is green.|अश्वतरुः|nature
+अश्वसरः रम्यः।|A horse lake is lovely.|अश्वसरः|nature
+अश्वगिरिः उन्नतः।|Horse-mountain is tall.|अश्वगिरिः|nature
+अश्वकमलं विकसति।|A horse lotus blooms.|अश्वकमलम्|nature
+ष्वपवनः वहति।|A shva breeze blows.|ष्वपवनः|nature
+ष्वखगः कूजति।|A shva bird calls.|ष्वखगः|nature
+ष्वपुष्पं विकसति।|A shva flower blooms.|ष्वपुष्पम्|nature
+ष्वमेघः गर्जति।|A shva cloud thunders.|ष्वमेघः|nature
+ष्वतरुः फलति।|A shva tree bears fruit.|ष्वतरुः|nature
+ष्वसरः शीतलः।|A shva lake is cool.|ष्वसरः|nature
+ष्वगिरिः उन्नतः।|Shva-mountain is tall.|ष्वगिरिः|nature
+ष्वकमलं विकसति।|A shva lotus blooms.|ष्वकमलम्|nature
+जिह्वपवनः वहति।|A tongue breeze blows.|जिह्वपवनः|nature
+जिह्वखगः कूजति।|A tongue bird calls.|जिह्वखगः|nature
+जिह्वपुष्पं विकसति।|A tongue flower blooms.|जिह्वपुष्पम्|nature
+जिह्वमेघः गर्जति।|A tongue cloud thunders.|जिह्वमेघः|nature
+जिह्वतरुः हरितः।|A tongue tree is green.|जिह्वतरुः|nature
+जिह्वसरः रम्यः।|A tongue lake is lovely.|जिह्वसरः|nature
+जिह्वगिरिः उन्नतः।|Tongue-mountain is tall.|जिह्वगिरिः|nature
+जिह्वकमलं विकसति।|A tongue lotus blooms.|जिह्वकमलम्|nature
