@@ -787,6 +787,86 @@
         "phase": "jodo"
       },
       {
+        "target": "कृ",
+        "tiles": [
+          "क",
+          "ऋ",
+          "ख",
+          "ग",
+          "आ",
+          "उ"
+        ],
+        "english": "Krishna plays the flute.",
+        "explanation": "क plus ऋ makes कृ.",
+        "sentence": "कृष्णः वेणुं वादयति।",
+        "highlight": "कृ",
+        "phase": "jodo"
+      },
+      {
+        "target": "मृ",
+        "tiles": [
+          "म",
+          "ऋ",
+          "क",
+          "प",
+          "आ",
+          "उ"
+        ],
+        "english": "The deer runs in the forest.",
+        "explanation": "म plus ऋ makes मृ.",
+        "sentence": "मृगः वने धावति।",
+        "highlight": "मृ",
+        "phase": "jodo"
+      },
+      {
+        "target": "सृ",
+        "tiles": [
+          "स",
+          "ऋ",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "Creation is wonderful.",
+        "explanation": "स plus ऋ makes सृ.",
+        "sentence": "सृष्टिः अद्भुता अस्ति।",
+        "highlight": "सृ",
+        "phase": "jodo"
+      },
+      {
+        "target": "पृ",
+        "tiles": [
+          "प",
+          "ऋ",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "The earth gives food.",
+        "explanation": "प plus ऋ makes पृ.",
+        "sentence": "पृथ्वी अन्नं ददाति।",
+        "highlight": "पृ",
+        "phase": "jodo"
+      },
+      {
+        "target": "नृ",
+        "tiles": [
+          "न",
+          "ऋ",
+          "प",
+          "क",
+          "आ",
+          "उ"
+        ],
+        "english": "The king protects the kingdom.",
+        "explanation": "न plus ऋ makes नृ.",
+        "sentence": "नृपः राज्यं पालयति।",
+        "highlight": "नृ",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -2515,6 +2595,126 @@
         "sentence": "श्वानः गृहं रक्षति।",
         "english": "The dog protects the house.",
         "highlight": "श्वानः"
+      },
+      {
+        "prompt": "____ मन्दं चरति।",
+        "target": "कच्छपः",
+        "tiles": [
+          "कच्छपः",
+          "कूर्मः",
+          "शशः",
+          "मयूरः",
+          "वनम्",
+          "फलम्"
+        ],
+        "sentence": "कच्छपः मन्दं चरति।",
+        "english": "The tortoise walks slowly.",
+        "highlight": "कच्छपः"
+      },
+      {
+        "prompt": "____ वने चरति।",
+        "target": "हस्तिनी",
+        "tiles": [
+          "हस्तिनी",
+          "गजः",
+          "सिंहः",
+          "अश्वः",
+          "वनम्",
+          "फलम्"
+        ],
+        "sentence": "हस्तिनी वने चरति।",
+        "english": "The female elephant wanders in the forest.",
+        "highlight": "हस्तिनी"
+      },
+      {
+        "prompt": "____ नृत्यति।",
+        "target": "मयूरी",
+        "tiles": [
+          "मयूरी",
+          "मयूरः",
+          "हंसः",
+          "काकः",
+          "वनम्",
+          "पुष्पम्"
+        ],
+        "sentence": "मयूरी नृत्यति।",
+        "english": "The peahen dances.",
+        "highlight": "मयूरी"
+      },
+      {
+        "prompt": "____ शैले चरति।",
+        "target": "गोधा",
+        "tiles": [
+          "गोधा",
+          "सर्पः",
+          "नकुलः",
+          "शशः",
+          "पर्वतः",
+          "वनम्"
+        ],
+        "sentence": "गोधा शैले चरति।",
+        "english": "The lizard walks on the rock.",
+        "highlight": "गोधा"
+      },
+      {
+        "prompt": "____ वने वसति।",
+        "target": "जम्बूकः",
+        "tiles": [
+          "जम्बूकः",
+          "शृगालः",
+          "वृकः",
+          "सिंहः",
+          "वनम्",
+          "गजः"
+        ],
+        "sentence": "जम्बूकः वने वसति।",
+        "english": "The jackal lives in the forest.",
+        "highlight": "जम्बूकः"
+      },
+      {
+        "prompt": "____ वृक्षे कूदति।",
+        "target": "कपिः",
+        "tiles": [
+          "कपिः",
+          "वानरः",
+          "शशः",
+          "मयूरः",
+          "वृक्षः",
+          "फलम्"
+        ],
+        "sentence": "कपिः वृक्षे कूदति।",
+        "english": "The monkey jumps on the tree.",
+        "highlight": "कपिः"
+      },
+      {
+        "prompt": "____ वसन्ते कूजति।",
+        "target": "पिकः",
+        "tiles": [
+          "पिकः",
+          "कोकिलः",
+          "काकः",
+          "शुकः",
+          "वृक्षः",
+          "वनम्"
+        ],
+        "sentence": "पिकः वसन्ते कूजति।",
+        "english": "The cuckoo coos in spring.",
+        "highlight": "पिकः"
+      },
+      {
+        "prompt": "____ जले तिष्ठति।",
+        "target": "बकः",
+        "tiles": [
+          "बकः",
+          "सारसः",
+          "हंसः",
+          "मत्स्यः",
+          "जलम्",
+          "वनम्"
+        ],
+        "sentence": "बकः जले तिष्ठति।",
+        "english": "The heron stands in the water.",
+        "highlight": "बकः"
       },
       {
         "phase": "learn",

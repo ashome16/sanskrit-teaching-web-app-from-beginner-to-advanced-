@@ -123,3 +123,11 @@
 अजः तृणं खादति।|The goat eats grass.|अजः|nature
 मेषः क्षेत्रे चरति।|The sheep grazes in the field.|मेषः|nature
 श्वानः गृहं रक्षति।|The dog protects the house.|श्वानः|nature
+कच्छपः मन्दं चरति।|The tortoise walks slowly.|कच्छपः|nature
+हस्तिनी वने चरति।|The female elephant wanders in the forest.|हस्तिनी|nature
+मयूरी नृत्यति।|The peahen dances.|मयूरी|nature
+गोधा शैले चरति।|The lizard walks on the rock.|गोधा|nature
+जम्बूकः वने वसति।|The jackal lives in the forest.|जम्बूकः|nature
+कपिः वृक्षे कूदति।|The monkey jumps on the tree.|कपिः|nature
+पिकः वसन्ते कूजति।|The cuckoo coos in spring.|पिकः|nature
+बकः जले तिष्ठति।|The heron stands in the water.|बकः|nature
