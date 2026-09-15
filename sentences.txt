@@ -1969,3 +1969,43 @@
 ढ्र्यसरः शीतलः।|A dhrya lake is cool.|ढ्र्यसरः|nature
 ढ्र्यगिरिः उन्नतः।|Dhrya-mountain is tall.|ढ्र्यगिरिः|nature
 ढ्र्यकमलं विकसति।|A dhrya lotus blooms.|ढ्र्यकमलम्|nature
+ञ्यपवनः वहति।|A nya breeze blows.|ञ्यपवनः|nature
+ञ्यखगः कूजति।|A nya bird calls.|ञ्यखगः|nature
+ञ्यपुष्पं विकसति।|A nya flower blooms.|ञ्यपुष्पम्|nature
+ञ्यमेघः गर्जति।|A nya cloud thunders.|ञ्यमेघः|nature
+ञ्यतरुः फलति।|A nya tree bears fruit.|ञ्यतरुः|nature
+ञ्यसरः शीतलः।|A nya lake is cool.|ञ्यसरः|nature
+ञ्यगिरिः उन्नतः।|Nya-mountain is tall.|ञ्यगिरिः|nature
+ञ्यकमलं विकसति।|A nya lotus blooms.|ञ्यकमलम्|nature
+छ्यपवनः वहति।|A chhya breeze blows.|छ्यपवनः|nature
+छ्यखगः कूजति।|A chhya bird calls.|छ्यखगः|nature
+छ्यपुष्पं विकसति।|A chhya flower blooms.|छ्यपुष्पम्|nature
+छ्यमेघः गर्जति।|A chhya cloud thunders.|छ्यमेघः|nature
+छ्यतरुः हरितः।|A chhya tree is green.|छ्यतरुः|nature
+छ्यसरः रम्यः।|A chhya lake is lovely.|छ्यसरः|nature
+छ्यगिरिः उन्नतः।|Chhya-mountain is tall.|छ्यगिरिः|nature
+छ्यकमलं विकसति।|A chhya lotus blooms.|छ्यकमलम्|nature
+ज्ज्यपवनः वहति।|A jjya breeze blows.|ज्ज्यपवनः|nature
+ज्ज्यखगः कूजति।|A jjya bird calls.|ज्ज्यखगः|nature
+ज्ज्यपुष्पं विकसति।|A jjya flower blooms.|ज्ज्यपुष्पम्|nature
+ज्ज्यमेघः गर्जति।|A jjya cloud thunders.|ज्ज्यमेघः|nature
+ज्ज्यतरुः फलति।|A jjya tree bears fruit.|ज्ज्यतरुः|nature
+ज्ज्यसरः शीतलः।|A jjya lake is cool.|ज्ज्यसरः|nature
+ज्ज्यगिरिः उन्नतः।|Jjya-mountain is tall.|ज्ज्यगिरिः|nature
+ज्ज्यकमलं विकसति।|A jjya lotus blooms.|ज्ज्यकमलम्|nature
+ट्ट्यपवनः वहति।|A ttya breeze blows.|ट्ट्यपवनः|nature
+ट्ट्यखगः कूजति।|A ttya bird calls.|ट्ट्यखगः|nature
+ट्ट्यपुष्पं विकसति।|A ttya flower blooms.|ट्ट्यपुष्पम्|nature
+ट्ट्यमेघः गर्जति।|A ttya cloud thunders.|ट्ट्यमेघः|nature
+ट्ट्यतरुः हरितः।|A ttya tree is green.|ट्ट्यतरुः|nature
+ट्ट्यसरः रम्यः।|A ttya lake is lovely.|ट्ट्यसरः|nature
+ट्ट्यगिरिः उन्नतः।|Ttya-mountain is tall.|ट्ट्यगिरिः|nature
+ट्ट्यकमलं विकसति।|A ttya lotus blooms.|ट्ट्यकमलम्|nature
+ड्ड्यपवनः वहति।|A ddya breeze blows.|ड्ड्यपवनः|nature
+ड्ड्यखगः कूजति।|A ddya bird calls.|ड्ड्यखगः|nature
+ड्ड्यपुष्पं विकसति।|A ddya flower blooms.|ड्ड्यपुष्पम्|nature
+ड्ड्यमेघः गर्जति।|A ddya cloud thunders.|ड्ड्यमेघः|nature
+ड्ड्यतरुः फलति।|A ddya tree bears fruit.|ड्ड्यतरुः|nature
+ड्ड्यसरः शीतलः।|A ddya lake is cool.|ड्ड्यसरः|nature
+ड्ड्यगिरिः उन्नतः।|Ddya-mountain is tall.|ड्ड्यगिरिः|nature
+ड्ड्यकमलं विकसति।|A ddya lotus blooms.|ड्ड्यकमलम्|nature
