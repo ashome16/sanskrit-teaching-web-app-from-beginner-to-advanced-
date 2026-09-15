@@ -147,3 +147,13 @@
 गिरिः उच्चः अस्ति।|The mountain is tall.|गिरिः|nature
 मरुभूमिः शुष्का अस्ति।|The desert is dry.|मरुभूमिः|nature
 वर्षा आगच्छति।|Rain comes.|वर्षा|nature
+तृणम् हरितम् अस्ति।|The grass is green.|तृणम्|nature
+गुल्मः लघुः अस्ति।|The bush is small.|गुल्मः|nature
+दलम् पुष्पात् पतति।|A petal falls from the flower.|दलम्|nature
+कुसुमम् विकसति।|The blossom blooms.|कुसुमम्|nature
+माला शोभते।|The garland looks beautiful.|माला|nature
+छाया शीतला अस्ति।|The shade is cool.|छाया|nature
+आतपः तीक्ष्णः अस्ति।|The sunshine is sharp.|आतपः|nature
+शीतम् जलम् अस्ति।|The water is cold.|शीतम्|nature
+उष्णम् अन्नम् अस्ति।|The food is hot.|उष्णम्|nature
+बीजम् भूमौ अस्ति।|The seed is in the ground.|बीजम्|nature
