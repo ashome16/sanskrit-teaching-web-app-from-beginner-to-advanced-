@@ -867,6 +867,86 @@
         "phase": "jodo"
       },
       {
+        "target": "कं",
+        "tiles": [
+          "क",
+          "अं",
+          "ख",
+          "ग",
+          "आ",
+          "उ"
+        ],
+        "english": "The ball falls.",
+        "explanation": "क plus अं makes कं.",
+        "sentence": "कन्दुकः पतति।",
+        "highlight": "कं",
+        "phase": "jodo"
+      },
+      {
+        "target": "मं",
+        "tiles": [
+          "म",
+          "अं",
+          "क",
+          "प",
+          "आ",
+          "उ"
+        ],
+        "english": "The elephant walks slowly.",
+        "explanation": "म plus अं makes मं.",
+        "sentence": "मन्दं गजः चलति।",
+        "highlight": "मं",
+        "phase": "jodo"
+      },
+      {
+        "target": "सं",
+        "tiles": [
+          "स",
+          "अं",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "A message comes.",
+        "explanation": "स plus अं makes सं.",
+        "sentence": "सन्देशः आयति।",
+        "highlight": "सं",
+        "phase": "jodo"
+      },
+      {
+        "target": "पं",
+        "tiles": [
+          "प",
+          "अं",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "Pampa is lovely.",
+        "explanation": "प plus अं makes पं.",
+        "sentence": "पम्पा रम्या अस्ति।",
+        "highlight": "पं",
+        "phase": "jodo"
+      },
+      {
+        "target": "नं",
+        "tiles": [
+          "न",
+          "अं",
+          "प",
+          "क",
+          "आ",
+          "उ"
+        ],
+        "english": "Nanda smiles.",
+        "explanation": "न plus अं makes नं.",
+        "sentence": "नन्दः हसति।",
+        "highlight": "नं",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -2715,6 +2795,126 @@
         "sentence": "बकः जले तिष्ठति।",
         "english": "The heron stands in the water.",
         "highlight": "बकः"
+      },
+      {
+        "prompt": "____ दुग्धं पिबति।",
+        "target": "वत्सः",
+        "tiles": [
+          "वत्सः",
+          "धेनुः",
+          "महिषः",
+          "अजः",
+          "वनम्",
+          "जलम्"
+        ],
+        "sentence": "वत्सः दुग्धं पिबति।",
+        "english": "The calf drinks milk.",
+        "highlight": "वत्सः"
+      },
+      {
+        "prompt": "____ कमलानि सन्ति।",
+        "target": "सरः",
+        "tiles": [
+          "सरः",
+          "सागरः",
+          "पर्वतः",
+          "वनम्",
+          "कमलम्",
+          "जलम्"
+        ],
+        "sentence": "सरः कमलानि सन्ति।",
+        "english": "The lake has lotuses.",
+        "highlight": "सरः"
+      },
+      {
+        "prompt": "____ समुद्रे अस्ति।",
+        "target": "द्वीपः",
+        "tiles": [
+          "द्वीपः",
+          "पर्वतः",
+          "वनम्",
+          "सरः",
+          "गजः",
+          "जलम्"
+        ],
+        "sentence": "द्वीपः समुद्रे अस्ति।",
+        "english": "The island is in the ocean.",
+        "highlight": "द्वीपः"
+      },
+      {
+        "prompt": "____ विशालः अस्ति।",
+        "target": "सागरः",
+        "tiles": [
+          "सागरः",
+          "सरः",
+          "पर्वतः",
+          "वनम्",
+          "मेघः",
+          "जलम्"
+        ],
+        "sentence": "सागरः विशालः अस्ति।",
+        "english": "The ocean is vast.",
+        "highlight": "सागरः"
+      },
+      {
+        "prompt": "____ नीलम् अस्ति।",
+        "target": "नभः",
+        "tiles": [
+          "नभः",
+          "आकाशः",
+          "मेघः",
+          "सूर्यः",
+          "वनम्",
+          "जलम्"
+        ],
+        "sentence": "नभः नीलम् अस्ति।",
+        "english": "The sky is blue.",
+        "highlight": "नभः"
+      },
+      {
+        "prompt": "____ प्रकाशते।",
+        "target": "विद्युत्",
+        "tiles": [
+          "विद्युत्",
+          "मेघः",
+          "सूर्यः",
+          "अग्निः",
+          "वनम्",
+          "पर्वतः"
+        ],
+        "sentence": "विद्युत् प्रकाशते।",
+        "english": "Lightning flashes.",
+        "highlight": "विद्युत्"
+      },
+      {
+        "prompt": "____ पतति।",
+        "target": "तुषारः",
+        "tiles": [
+          "तुषारः",
+          "हिमम्",
+          "मेघः",
+          "वर्षा",
+          "वनम्",
+          "पर्वतः"
+        ],
+        "sentence": "तुषारः पतति।",
+        "english": "Frost falls.",
+        "highlight": "तुषारः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "पवनः",
+        "tiles": [
+          "पवनः",
+          "वायुः",
+          "मेघः",
+          "नभः",
+          "वनम्",
+          "पर्वतः"
+        ],
+        "sentence": "पवनः वहति।",
+        "english": "The wind blows.",
+        "highlight": "पवनः"
       },
       {
         "phase": "learn",

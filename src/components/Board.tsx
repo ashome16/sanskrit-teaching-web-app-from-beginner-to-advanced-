@@ -53,6 +53,8 @@ const cleanTile = (tile: string) => tile.replace(/\u200B/g, '').normalize('NFC')
 // Independent vowel tiles must map to combining matras so glueTiles(क+ई)→की, क+ऊ→कू, etc.
 const MARK: Record<string, string> = {
   'आ': 'ा', 'इ': 'ि', 'ई': 'ी', 'उ': 'ु', 'ऊ': 'ू', 'ऋ': 'ृ', 'ए': 'े', 'ऐ': 'ै', 'ओ': 'ो', 'औ': 'ौ',
+  'अं': 'ं',
+  'अः': 'ः',  // future-proof visarga row
 };
 function glueTiles(tiles: string[]) {
   return tiles.map((tile) => cleanTile(tile)).map((tile) => MARK[tile] ?? tile).join('').normalize('NFC');

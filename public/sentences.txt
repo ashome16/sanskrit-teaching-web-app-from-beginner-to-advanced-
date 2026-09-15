@@ -131,3 +131,11 @@
 कपिः वृक्षे कूदति।|The monkey jumps on the tree.|कपिः|nature
 पिकः वसन्ते कूजति।|The cuckoo coos in spring.|पिकः|nature
 बकः जले तिष्ठति।|The heron stands in the water.|बकः|nature
+वत्सः दुग्धं पिबति।|The calf drinks milk.|वत्सः|nature
+सरः कमलानि सन्ति।|The lake has lotuses.|सरः|nature
+द्वीपः समुद्रे अस्ति।|The island is in the ocean.|द्वीपः|nature
+सागरः विशालः अस्ति।|The ocean is vast.|सागरः|nature
+नभः नीलम् अस्ति।|The sky is blue.|नभः|nature
+विद्युत् प्रकाशते।|Lightning flashes.|विद्युत्|nature
+तुषारः पतति।|Frost falls.|तुषारः|nature
+पवनः वहति।|The wind blows.|पवनः|nature
