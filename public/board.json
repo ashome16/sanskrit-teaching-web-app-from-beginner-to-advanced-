@@ -547,6 +547,86 @@
         "phase": "jodo"
       },
       {
+        "target": "कै",
+        "tiles": [
+          "क",
+          "ऐ",
+          "ख",
+          "ग",
+          "आ",
+          "उ"
+        ],
+        "english": "Kailasa is in the Himalayas.",
+        "explanation": "क plus ऐ makes कै.",
+        "sentence": "कैलासः हिमालये अस्ति।",
+        "highlight": "कै",
+        "phase": "jodo"
+      },
+      {
+        "target": "मै",
+        "tiles": [
+          "म",
+          "ऐ",
+          "क",
+          "प",
+          "आ",
+          "उ"
+        ],
+        "english": "Friendship is beautiful.",
+        "explanation": "म plus ऐ makes मै.",
+        "sentence": "मैत्री सुन्दरा अस्ति।",
+        "highlight": "मै",
+        "phase": "jodo"
+      },
+      {
+        "target": "सै",
+        "tiles": [
+          "स",
+          "ऐ",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "The army protects the village.",
+        "explanation": "स plus ऐ makes सै.",
+        "sentence": "सैन्यं ग्रामं रक्षति।",
+        "highlight": "सै",
+        "phase": "jodo"
+      },
+      {
+        "target": "पै",
+        "tiles": [
+          "प",
+          "ऐ",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "The boy goes on foot.",
+        "explanation": "प plus ऐ makes पै.",
+        "sentence": "पैदलं बालकः गच्छति।",
+        "highlight": "पै",
+        "phase": "jodo"
+      },
+      {
+        "target": "नै",
+        "tiles": [
+          "न",
+          "ऐ",
+          "प",
+          "क",
+          "आ",
+          "उ"
+        ],
+        "english": "There are many stars.",
+        "explanation": "न plus ऐ makes नै.",
+        "sentence": "नैकाः ताराः सन्ति।",
+        "highlight": "नै",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -2035,6 +2115,96 @@
         "sentence": "वृश्चिकः दंशति।",
         "english": "The scorpion stings.",
         "highlight": "वृश्चिकः"
+      },
+      {
+        "prompt": "____ मन्दं चलति।",
+        "target": "कूर्मः",
+        "tiles": [
+          "कूर्मः",
+          "गजः",
+          "अश्वः",
+          "शशः",
+          "सिंहः",
+          "वृक्षः"
+        ],
+        "sentence": "कूर्मः मन्दं चलति।",
+        "english": "The tortoise walks slowly.",
+        "highlight": "कूर्मः"
+      },
+      {
+        "prompt": "____ बिले वसति।",
+        "target": "मूषकः",
+        "tiles": [
+          "मूषकः",
+          "बिडालः",
+          "शशः",
+          "सर्पः",
+          "फलम्",
+          "गृहम्"
+        ],
+        "sentence": "मूषकः बिले वसति।",
+        "english": "The mouse lives in a hole.",
+        "highlight": "मूषकः"
+      },
+      {
+        "prompt": "____ वने गर्जति।",
+        "target": "व्याघ्रः",
+        "tiles": [
+          "व्याघ्रः",
+          "सिंहः",
+          "मृगः",
+          "गजः",
+          "वनम्",
+          "मयूरः"
+        ],
+        "sentence": "व्याघ्रः वने गर्जति।",
+        "english": "The tiger roars in the forest.",
+        "highlight": "व्याघ्रः"
+      },
+      {
+        "prompt": "____ जले मज्जति।",
+        "target": "महिषः",
+        "tiles": [
+          "महिषः",
+          "गजः",
+          "अश्वः",
+          "मत्स्यः",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "महिषः जले मज्जति।",
+        "english": "The buffalo bathes in the water.",
+        "highlight": "महिषः"
+      },
+      {
+        "prompt": "____ रात्रौ चरति।",
+        "target": "शृगालः",
+        "tiles": [
+          "शृगालः",
+          "बिडालः",
+          "शशः",
+          "उलूकः",
+          "सिंहः",
+          "वनम्"
+        ],
+        "sentence": "शृगालः रात्रौ चरति।",
+        "english": "The jackal wanders at night.",
+        "highlight": "शृगालः"
+      },
+      {
+        "prompt": "____ सर्पं पश्यति।",
+        "target": "नकुलः",
+        "tiles": [
+          "नकुलः",
+          "सर्पः",
+          "बिडालः",
+          "शशः",
+          "मृगः",
+          "फलम्"
+        ],
+        "sentence": "नकुलः सर्पं पश्यति।",
+        "english": "The mongoose watches the snake.",
+        "highlight": "नकुलः"
       },
       {
         "phase": "learn",

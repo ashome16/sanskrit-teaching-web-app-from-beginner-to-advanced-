@@ -36,6 +36,11 @@
 जोडो|से|से|स,ए,क,म,आ,उ|सेना ग्रामं गच्छति।|The army goes to the village.|स plus ए makes से.
 जोडो|पे|पे|प,ए,क,म,आ,उ|पेयं जलम् अस्ति।|The drink is water.|प plus ए makes पे.
 जोडो|ने|ने|न,ए,प,क,आ,उ|नेत्रे पश्यतः।|The two eyes see.|न plus ए makes ने.
+जोडो|कै|कै|क,ऐ,ख,ग,आ,उ|कैलासः हिमालये अस्ति।|Kailasa is in the Himalayas.|क plus ऐ makes कै.
+जोडो|मै|मै|म,ऐ,क,प,आ,उ|मैत्री सुन्दरा अस्ति।|Friendship is beautiful.|म plus ऐ makes मै.
+जोडो|सै|सै|स,ऐ,क,म,आ,उ|सैन्यं ग्रामं रक्षति।|The army protects the village.|स plus ऐ makes सै.
+जोडो|पै|पै|प,ऐ,क,म,आ,उ|पैदलं बालकः गच्छति।|The boy goes on foot.|प plus ऐ makes पै.
+जोडो|नै|नै|न,ऐ,प,क,आ,उ|नैकाः ताराः सन्ति।|There are many stars.|न plus ऐ makes नै.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.

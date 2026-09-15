@@ -107,3 +107,9 @@
 नक्रः जले वसति।|The crocodile lives in the water.|नक्रः|nature
 पिपीलिका शर्करां हरति।|The ant carries sugar.|पिपीलिका|nature
 वृश्चिकः दंशति।|The scorpion stings.|वृश्चिकः|nature
+कूर्मः मन्दं चलति।|The tortoise walks slowly.|कूर्मः|nature
+मूषकः बिले वसति।|The mouse lives in a hole.|मूषकः|nature
+व्याघ्रः वने गर्जति।|The tiger roars in the forest.|व्याघ्रः|nature
+महिषः जले मज्जति।|The buffalo bathes in the water.|महिषः|nature
+शृगालः रात्रौ चरति।|The jackal wanders at night.|शृगालः|nature
+नकुलः सर्पं पश्यति।|The mongoose watches the snake.|नकुलः|nature
