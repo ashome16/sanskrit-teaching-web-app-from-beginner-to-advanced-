@@ -334,6 +334,11 @@ const Board: React.FC = () => {
     // goNext closes over puzzleIndex/activeShelf; listing those deps avoids stale advance / double-fire.
   }, [checked, isCorrect, puzzleIndex, activeShelf, activePuzzles.length, isLearnPhase]);
 
+  const tilesNeeded = isJodoSkin ? 2 : 1;
+  const activeStep = (checked && isCorrect)
+    ? 3
+    : (chosen.length >= tilesNeeded ? 2 : 1);
+
   return <main className="board-shell">
     <nav className="wing-nav" aria-label="Learning shelves">
       {shelfButtons.map((item) => (
@@ -344,17 +349,9 @@ const Board: React.FC = () => {
     <div className="board-tip-row">
       <p className="board-tip">{isLearnPhase
         ? <>Hear the word, read the meaning, then <strong className="tip-next">Click Next</strong>.</>
-        : isMatchMeaningPhase
-          ? <>Click the first cream tile — numbers are on the tiles. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
-          : isPrashnaPart
-            ? <>Click the first cream tile — numbers are on the tiles. Part 2: who/what/where…. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
-            : (activeBoardShelf?.skin === 'जोडो' && activeShelf === 'prarambhah' && !targetIsWholeTile
-              ? <>Part 1: click TWO cream tiles (any order) — numbers are on the tiles. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong> — or wait a few seconds and it moves on.</>
-              : hasBlank
-                ? <>Click the first cream tile — numbers are on the tiles. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
-                : isJodoSkin
-                  ? <>Click TWO cream tiles (any order) — numbers are on the tiles. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
-                  : <>Click the first cream tile — numbers are on the tiles. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>)}</p>
+        : emphasizeTipText(isJodoSkin
+          ? 'Sequence: 1) Click the letter cream tile. 2) Click the vowel cream tile. 3) Read the sentence. 4) Click Next.'
+          : 'Sequence: 1) Click one cream tile (numbers are on the tiles). 2) Read the sentence. 3) Click Next. Then do the same on the next puzzle.')}</p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
     </div>
@@ -376,14 +373,29 @@ const Board: React.FC = () => {
           <span className="meta-sep" aria-hidden="true">·</span>
           <span className="meta-hint">{isLearnPhase
             ? 'Learn the word'
-            : isMatchMeaningPhase
-              ? 'Click first tile'
-              : (targetIsWholeTile || !isJodoSkin
-                ? 'Click first tile'
-                : (activeBoardShelf?.skin === 'जोडो' ? 'Click 2 tiles' : 'Click first tile'))}</span>
+            : isJodoSkin
+              ? '2 tiles → Read → Next'
+              : '1 tile → Read → Next'}</span>
           <span className="meta-sep" aria-hidden="true">·</span>
           <span className="meta-progress">{puzzleIndex + 1} / {activePuzzles.length}</span>
         </div>
+
+        {!isLearnPhase && (
+          <ol className="puzzle-steps" aria-label="Puzzle steps">
+            <li className={activeStep === 1 ? 'active' : undefined}>
+              <span className="step-num" aria-hidden="true">1</span>
+              <span className="step-label">Click a cream tile <small>(numbers on tiles)</small></span>
+            </li>
+            <li className={activeStep === 2 ? 'active' : undefined}>
+              <span className="step-num" aria-hidden="true">2</span>
+              <span className="step-label">Read the sentence</span>
+            </li>
+            <li className={activeStep === 3 ? 'active' : undefined}>
+              <span className="step-num" aria-hidden="true">3</span>
+              <span className="step-label">Click Next</span>
+            </li>
+          </ol>
+        )}
 
         {isLearnPhase ? (
           <div className="learn-card">

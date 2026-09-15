@@ -33,6 +33,58 @@
 .puzzle-meta .meta-skin { color: #f1c75b; font-weight: 700; }
 .puzzle-meta .meta-hint, .puzzle-meta .meta-progress { color: #d9e2dc; }
 .puzzle-meta .meta-sep { color: #7a8f86; font-weight: 400; user-select: none; }
+
+/* Numbered step chips on non-learn puzzles */
+.puzzle-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  list-style: none;
+  margin: 0 0 .95rem;
+  padding: 0;
+}
+.puzzle-steps li {
+  align-items: center;
+  background: #1f302b;
+  border: 1px solid #3d524a;
+  border-radius: 999px;
+  color: #b8c5be;
+  display: inline-flex;
+  font: 600 .78rem 'Trebuchet MS', sans-serif;
+  gap: .35rem;
+  padding: .35rem .7rem .35rem .4rem;
+}
+.puzzle-steps li.active {
+  background: #3a3420;
+  border-color: #f1c75b;
+  color: #f1c75b;
+  font-weight: 800;
+}
+.puzzle-steps .step-num {
+  align-items: center;
+  background: #314840;
+  border-radius: 50%;
+  color: #d9e2dc;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-weight: 800;
+  height: 1.35rem;
+  justify-content: center;
+  width: 1.35rem;
+}
+.puzzle-steps li.active .step-num {
+  background: #f1c75b;
+  color: #273b35;
+}
+.puzzle-steps .step-label small {
+  color: inherit;
+  font-weight: 600;
+  opacity: .85;
+}
+@media (max-width: 600px) {
+  .puzzle-steps { gap: .3rem; margin-bottom: .8rem; }
+  .puzzle-steps li { font-size: .72rem; padding: .3rem .55rem .3rem .35rem; }
+}
 .puzzle-prompt { color: #fffdf8; font-family: 'Noto Sans Devanagari', Georgia, serif; font-size: 1.45rem; font-weight: 600; letter-spacing: .01em; line-height: 1.35; margin: 0 0 1.15rem; }
 .tile-row { display: grid; gap: .65rem; grid-template-columns: repeat(6, minmax(0, 1fr)); }
 .puzzle-tile {
