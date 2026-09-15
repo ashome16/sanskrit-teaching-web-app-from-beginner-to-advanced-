@@ -35,7 +35,40 @@
 .puzzle-meta .meta-sep { color: #7a8f86; font-weight: 400; user-select: none; }
 .puzzle-prompt { color: #fffdf8; font-family: 'Noto Sans Devanagari', Georgia, serif; font-size: 1.45rem; font-weight: 600; letter-spacing: .01em; line-height: 1.35; margin: 0 0 1.15rem; }
 .tile-row { display: grid; gap: .65rem; grid-template-columns: repeat(6, minmax(0, 1fr)); }
-.puzzle-tile { background: #f4ede0; border: 2px solid transparent; border-radius: 7px; color: #273b35; cursor: pointer; min-height: 96px; padding: .65rem .3rem; }.puzzle-tile.chosen { border-color: #f1c75b; transform: translateY(-4px); }.puzzle-tile span { display: block; font: 1.65rem 'Noto Sans Devanagari', Georgia, serif; }.puzzle-tile small { color: #756b60; display: block; font-size: .65rem; margin-top: .4rem; }
+.puzzle-tile {
+  background: #f4ede0;
+  border: 2px solid transparent;
+  border-radius: 7px;
+  color: #273b35;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .2rem;
+  min-height: 96px;
+  padding: .55rem .3rem .65rem;
+  position: relative;
+}
+.puzzle-tile.chosen { border-color: #f1c75b; transform: translateY(-4px); }
+.puzzle-tile .tile-num {
+  color: #8a7355;
+  font: 800 .95rem 'Trebuchet MS', sans-serif;
+  letter-spacing: .02em;
+  line-height: 1;
+  pointer-events: none;
+  text-align: center;
+  z-index: 1;
+}
+.puzzle-tile.chosen .tile-num { color: #6b5520; }
+.puzzle-tile span:not(.tile-num) {
+  display: block;
+  font: 1.65rem 'Noto Sans Devanagari', Georgia, serif;
+  line-height: 1.15;
+  position: relative;
+  z-index: 1;
+}
+.puzzle-tile small { color: #756b60; display: block; font-size: .65rem; margin-top: .4rem; }
 .puzzle-actions { display: flex; justify-content: center; margin-top: 1.05rem; }
 .check-button { background: #d86a3d; border: 0; border-radius: 5px; color: white; cursor: pointer; font-weight: 700; margin: 0; padding: .7rem 1.65rem; }.puzzle-result { animation: fuse .4s ease-out; border-top: 1px solid #62766d; display: flex; flex-direction: column; font-family: 'Noto Sans Devanagari', Georgia, serif; margin-top: 1rem; overflow: visible; padding-top: 1rem; }.puzzle-result strong { color: #f1c75b; }.result-english { font: 700 1.7rem Georgia, serif; margin: .45rem 0; }.result-sanskrit { font-size: 1.1rem; }.result-seed { color: #cbd6c8; font-size: .8rem; margin-top: .5rem; }.board-status { color: #746b61; padding: 1rem 0; }.board-status.error { color: #a33c2b; }
 .next-button { background: #f1c75b; border: 2px solid #e0b84a; border-radius: 5px; color: #273b35; cursor: pointer; font-size: 1rem; font-weight: 800; margin: .8rem 0 0; order: 99; padding: .55rem 1.25rem; box-shadow: 0 2px 0 #c9a63d; }

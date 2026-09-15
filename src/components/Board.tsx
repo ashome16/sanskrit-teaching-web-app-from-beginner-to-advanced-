@@ -178,7 +178,10 @@ const Board: React.FC = () => {
   const activePuzzles = activeBoardShelf?.puzzles.length
     ? activeBoardShelf.puzzles
     : fallbackPuzzles.filter((item) => item.target === 'का' || item.target === 'मा' || item.target === 'सा' || item.target === 'बालः');
-  const puzzleIndex = puzzleIndexByShelf[activeShelf] ?? 0;
+  const rawPuzzleIndex = puzzleIndexByShelf[activeShelf] ?? 0;
+  const puzzleIndex = activePuzzles.length
+    ? Math.max(0, Math.min(rawPuzzleIndex, activePuzzles.length - 1))
+    : 0;
   const activePuzzle = activePuzzles[puzzleIndex] ?? activePuzzles[0] ?? fallbackPuzzles[0] ?? null;
   const activePackLabel = packLabels.find((item) => item.title === activeBoardShelf?.native) ?? null;
   const packTitle = activePackLabel?.title ?? activeBoardShelf?.native ?? '';
@@ -277,25 +280,58 @@ const Board: React.FC = () => {
   };
 
   const hasNextPuzzle = (isLearnPhase || isCorrect) && activePuzzles.length > 0;
+  const isLastPuzzle = activePuzzles.length > 0 && puzzleIndex + 1 >= activePuzzles.length;
 
-  const chooseNextPuzzle = () => {
-    if (!activePuzzles.length) return;
-    const nextIndex = (puzzleIndex + 1) % activePuzzles.length;
-    setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: nextIndex }));
+  // If shelf grew/shrank or index is stale, keep progress in range (avoids wild N / length vs puzzle 0).
+  useEffect(() => {
+    const len = activePuzzles.length;
+    if (len === 0) return;
+    setPuzzleIndexByShelf((current) => {
+      const idx = current[activeShelf] ?? 0;
+      const clamped = Math.max(0, Math.min(idx, len - 1));
+      if (clamped === idx) return current;
+      return { ...current, [activeShelf]: clamped };
+    });
+  }, [activeShelf, activePuzzles.length]);
+
+  const resetPuzzleUi = () => {
     setChecked(false);
     setWrongAttempt(false);
     setChosen([]);
   };
 
+  /** Advance without wrapping — used by Next and auto-advance. */
+  const goNext = () => {
+    if (!activePuzzles.length) return;
+    if (puzzleIndex + 1 >= activePuzzles.length) return;
+    setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: puzzleIndex + 1 }));
+    resetPuzzleUi();
+  };
+
+  /** Again on the last puzzle — restart shelf at 0. */
+  const restartShelf = () => {
+    if (!activePuzzles.length) return;
+    setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: 0 }));
+    resetPuzzleUi();
+  };
+
+  const onNextOrAgain = () => {
+    if (isLastPuzzle) restartShelf();
+    else goNext();
+  };
+
   // After a correct Check, auto-advance so later मात्रा rows still appear if Next is missed.
   // Learn cards never auto-advance — child must hear, then click Next.
+  // Do not wrap on the last puzzle (that felt like the chain broke).
   useEffect(() => {
     if (isLearnPhase) return undefined;
     if (!checked || !isCorrect || activePuzzles.length < 2) return undefined;
+    if (puzzleIndex + 1 >= activePuzzles.length) return undefined;
     const timer = window.setTimeout(() => {
-      chooseNextPuzzle();
+      goNext();
     }, 8000);
     return () => window.clearTimeout(timer);
+    // goNext closes over puzzleIndex/activeShelf; listing those deps avoids stale advance / double-fire.
   }, [checked, isCorrect, puzzleIndex, activeShelf, activePuzzles.length, isLearnPhase]);
 
   return <main className="board-shell">
@@ -309,16 +345,16 @@ const Board: React.FC = () => {
       <p className="board-tip">{isLearnPhase
         ? <>Hear the word, read the meaning, then <strong className="tip-next">Click Next</strong>.</>
         : isMatchMeaningPhase
-          ? <>Click the cream word that matches the meaning. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
+          ? <>Click the first cream tile — numbers are on the tiles. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
           : isPrashnaPart
-            ? <>Part 2: click ONE cream tile for the blank (who/what/where…). Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
+            ? <>Click the first cream tile — numbers are on the tiles. Part 2: who/what/where…. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
             : (activeBoardShelf?.skin === 'जोडो' && activeShelf === 'prarambhah' && !targetIsWholeTile
-              ? <>Part 1: click TWO cream tiles (any order). Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong> — or wait a few seconds and it moves on.</>
+              ? <>Part 1: click TWO cream tiles (any order) — numbers are on the tiles. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong> — or wait a few seconds and it moves on.</>
               : hasBlank
-                ? <>Click ONE cream tile that fills the blank. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
+                ? <>Click the first cream tile — numbers are on the tiles. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
                 : isJodoSkin
-                  ? <>Click TWO cream tiles (any order). Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
-                  : <>Click ONE cream tile that matches. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>)}</p>
+                  ? <>Click TWO cream tiles (any order) — numbers are on the tiles. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
+                  : <>Click the first cream tile — numbers are on the tiles. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>)}</p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
     </div>
@@ -341,8 +377,10 @@ const Board: React.FC = () => {
           <span className="meta-hint">{isLearnPhase
             ? 'Learn the word'
             : isMatchMeaningPhase
-              ? 'Match the meaning'
-              : (targetIsWholeTile ? 'Click 1 tile' : (activeBoardShelf?.skin === 'जोडो' ? 'Click 2 tiles' : 'Click 1 tile'))}</span>
+              ? 'Click first tile'
+              : (targetIsWholeTile || !isJodoSkin
+                ? 'Click first tile'
+                : (activeBoardShelf?.skin === 'जोडो' ? 'Click 2 tiles' : 'Click first tile'))}</span>
           <span className="meta-sep" aria-hidden="true">·</span>
           <span className="meta-progress">{puzzleIndex + 1} / {activePuzzles.length}</span>
         </div>
@@ -366,13 +404,14 @@ const Board: React.FC = () => {
                   type="button"
                   onClick={() => playPronunciation(cleanTile(tile))}
                 >
+                  <span className="tile-num" aria-hidden="true">{index + 1}</span>
                   <span>{tile}</span>
                 </button>
               ))}
             </div>
             <div className="puzzle-actions">
-              <button className="next-button learn-next" type="button" onClick={chooseNextPuzzle}>
-                {puzzleIndex + 1 >= activePuzzles.length ? 'Again' : 'I learnt it · Next'}
+              <button className="next-button learn-next" type="button" onClick={onNextOrAgain}>
+                {isLastPuzzle ? 'Again' : 'I learnt it · Next'}
               </button>
             </div>
           </div>
@@ -387,6 +426,7 @@ const Board: React.FC = () => {
             <div className="tile-row">
               {activePuzzle.tiles.map((tile, index) => (
                 <button key={`${tile}-${index}`} className={chosen.includes(cleanTile(tile)) ? 'puzzle-tile chosen' : 'puzzle-tile'} onClick={() => toggleTile(tile)}>
+                  <span className="tile-num" aria-hidden="true">{index + 1}</span>
                   <span>{tile}</span>
                 </button>
               ))}
@@ -410,7 +450,7 @@ const Board: React.FC = () => {
                   </button>
                 )}
                 {activePuzzle.seed && <p className="result-seed">{activePuzzle.seed}</p>}
-                {hasNextPuzzle && <button className="next-button" type="button" onClick={chooseNextPuzzle}>{puzzleIndex + 1 >= activePuzzles.length ? 'Again' : 'Next'}</button>}
+                {hasNextPuzzle && <button className="next-button" type="button" onClick={onNextOrAgain}>{isLastPuzzle ? 'Again' : 'Next'}</button>}
               </div>
             )}
             {wrongAttempt && (
