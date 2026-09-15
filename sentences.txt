@@ -2049,3 +2049,43 @@
 च्च्यसरः शीतलः।|A ccya lake is cool.|च्च्यसरः|nature
 च्च्यगिरिः उन्नतः।|Ccya-mountain is tall.|च्च्यगिरिः|nature
 च्च्यकमलं विकसति।|A ccya lotus blooms.|च्च्यकमलम्|nature
+ल्ल्यपवनः वहति।|A llya breeze blows.|ल्ल्यपवनः|nature
+ल्ल्यखगः कूजति।|A llya bird calls.|ल्ल्यखगः|nature
+ल्ल्यपुष्पं विकसति।|A llya flower blooms.|ल्ल्यपुष्पम्|nature
+ल्ल्यमेघः गर्जति।|A llya cloud thunders.|ल्ल्यमेघः|nature
+ल्ल्यतरुः फलति।|A llya tree bears fruit.|ल्ल्यतरुः|nature
+ल्ल्यसरः शीतलः।|A llya lake is cool.|ल्ल्यसरः|nature
+ल्ल्यगिरिः उन्नतः।|Llya-mountain is tall.|ल्ल्यगिरिः|nature
+ल्ल्यकमलं विकसति।|A llya lotus blooms.|ल्ल्यकमलम्|nature
+म्म्यपवनः वहति।|A mmya breeze blows.|म्म्यपवनः|nature
+म्म्यखगः कूजति।|A mmya bird calls.|म्म्यखगः|nature
+म्म्यपुष्पं विकसति।|A mmya flower blooms.|म्म्यपुष्पम्|nature
+म्म्यमेघः गर्जति।|A mmya cloud thunders.|म्म्यमेघः|nature
+म्म्यतरुः हरितः।|A mmya tree is green.|म्म्यतरुः|nature
+म्म्यसरः रम्यः।|A mmya lake is lovely.|म्म्यसरः|nature
+म्म्यगिरिः उन्नतः।|Mmya-mountain is tall.|म्म्यगिरिः|nature
+म्म्यकमलं विकसति।|A mmya lotus blooms.|म्म्यकमलम्|nature
+न्न्यपवनः वहति।|A nnya breeze blows.|न्न्यपवनः|nature
+न्न्यखगः कूजति।|A nnya bird calls.|न्न्यखगः|nature
+न्न्यपुष्पं विकसति।|A nnya flower blooms.|न्न्यपुष्पम्|nature
+न्न्यमेघः गर्जति।|A nnya cloud thunders.|न्न्यमेघः|nature
+न्न्यतरुः फलति।|A nnya tree bears fruit.|न्न्यतरुः|nature
+न्न्यसरः शीतलः।|A nnya lake is cool.|न्न्यसरः|nature
+न्न्यगिरिः उन्नतः।|Nnya-mountain is tall.|न्न्यगिरिः|nature
+न्न्यकमलं विकसति।|A nnya lotus blooms.|न्न्यकमलम्|nature
+र्र्यपवनः वहति।|A rrya breeze blows.|र्र्यपवनः|nature
+र्र्यखगः कूजति।|A rrya bird calls.|र्र्यखगः|nature
+र्र्यपुष्पं विकसति।|A rrya flower blooms.|र्र्यपुष्पम्|nature
+र्र्यमेघः गर्जति।|A rrya cloud thunders.|र्र्यमेघः|nature
+र्र्यतरुः हरितः।|A rrya tree is green.|र्र्यतरुः|nature
+र्र्यसरः रम्यः।|A rrya lake is lovely.|र्र्यसरः|nature
+र्र्यगिरिः उन्नतः।|Rrya-mountain is tall.|र्र्यगिरिः|nature
+र्र्यकमलं विकसति।|A rrya lotus blooms.|र्र्यकमलम्|nature
+व्व्यपवनः वहति।|A vvya breeze blows.|व्व्यपवनः|nature
+व्व्यखगः कूजति।|A vvya bird calls.|व्व्यखगः|nature
+व्व्यपुष्पं विकसति।|A vvya flower blooms.|व्व्यपुष्पम्|nature
+व्व्यमेघः गर्जति।|A vvya cloud thunders.|व्व्यमेघः|nature
+व्व्यतरुः फलति।|A vvya tree bears fruit.|व्व्यतरुः|nature
+व्व्यसरः शीतलः।|A vvya lake is cool.|व्व्यसरः|nature
+व्व्यगिरिः उन्नतः।|Vvya-mountain is tall.|व्व्यगिरिः|nature
+व्व्यकमलं विकसति।|A vvya lotus blooms.|व्व्यकमलम्|nature
