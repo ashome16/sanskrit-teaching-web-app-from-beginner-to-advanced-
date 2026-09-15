@@ -277,3 +277,103 @@
 हस्तिकः जलं पिबति।|The young elephant drinks water.|हस्तिकः|nature
 हेमन्तः शीतलः अस्ति।|Winter is cold.|हेमन्तः|nature
 हरितं पर्णम् अस्ति।|The leaf is green.|हरितम्|nature
+वटः विशालः अस्ति।|The banyan is vast.|वटः|nature
+तटः रम्यः अस्ति।|The bank is lovely.|तटः|nature
+वाटिका पुष्पिता अस्ति।|The garden is in bloom.|वाटिका|nature
+कीटः पर्णे चरति।|The insect moves on the leaf.|कीटः|nature
+कोटरे खगः वसति।|A bird lives in the hollow.|कोटरः|nature
+अटवी गभीरा अस्ति।|The forest is deep.|अटवी|nature
+टिट्टिभः कूजति।|The sandpiper chirps.|टिट्टिभः|nature
+कर्कटकः तटे चरति।|The crab moves on the bank.|कर्कटकः|nature
+उटजः वने अस्ति।|The leaf-hut is in the forest.|उटजः|nature
+अट्टः उन्नतः अस्ति।|The lofty place is tall.|अट्टः|nature
+कण्ठः मधुरः अस्ति।|The throat-song is sweet.|कण्ठः|nature
+मठः वने अस्ति।|The hermitage is in the forest.|मठः|nature
+पीठं दृढम् अस्ति।|The seat is firm.|पीठम्|nature
+कठिनं काष्ठम् अस्ति।|The wood is hard.|कठिनम्|nature
+जठरं पूर्णम् अस्ति।|The belly is full.|जठरम्|nature
+गोष्ठं विशालम् अस्ति।|The cow-pen is large.|गोष्ठम्|nature
+कुठारः तीक्ष्णः अस्ति।|The axe is sharp.|कुठारः|nature
+ठाटः प्रकृत्याः शोभते।|Nature’s splendour shines.|ठाटः|nature
+उत्कण्ठितः कोकिलः गायति।|The eager cuckoo sings.|उत्कण्ठितः|nature
+शिलापीठं शीतलम् अस्ति।|The stone seat is cool.|शिलापीठम्|nature
+मण्डूकः गर्जति।|The frog croaks.|मण्डूकः|nature
+नडः जले रोहति।|The reed grows in water.|नडः|nature
+तडित् चमकति।|Lightning flashes.|तडित्|nature
+उडुपः नभसि शोभते।|The moon shines in the sky.|उडुपः|nature
+गरुडः उड्डयति।|Garuda flies.|गरुडः|nature
+दण्डः दीर्घः अस्ति।|The stem-stick is long.|दण्डः|nature
+पिण्डः मृत्तिकायाः अस्ति।|The lump is of clay.|पिण्डः|nature
+मण्डलं सूर्यस्य अस्ति।|The sun has a disk.|मण्डलम्|nature
+खड्गी वने चरति।|The rhinoceros wanders in the forest.|खड्गिन्|nature
+अण्डकोशः नीडे अस्ति।|The egg-clutch is in the nest.|अण्डकोशः|nature
+दृढं मूलम् अस्ति।|The root is firm.|दृढम्|nature
+गाढं वनम् अस्ति।|The forest is dense.|गाढम्|nature
+गूढं बिलम् अस्ति।|The burrow is hidden.|गूढम्|nature
+रूढं बीजं रोहति।|The sprouted seed grows.|रूढम्|nature
+दृढस्कन्धः वृक्षस्य अस्ति।|The tree has a firm trunk.|दृढस्कन्धः|nature
+गाढच्छाया शीतला अस्ति।|The dense shade is cool.|गाढच्छाया|nature
+गूढबिलं मृगस्य अस्ति।|The deer has a hidden hollow.|गूढबिलम्|nature
+बाढं जलं वर्षति।|Rain falls abundantly.|बाढम्|nature
+द्रढिमा तरोः अस्ति।|The tree has firmness.|द्रढिमा|nature
+गाढहरितं वनम् अस्ति।|The forest is deep-green.|गाढहरितम्|nature
+वेणुः वने रोहति।|Bamboo grows in the forest.|वेणुः|nature
+मणिः शोभते।|The gem shines.|मणिः|nature
+पुण्डरीकं विकसति।|The white lotus blooms.|पुण्डरीकम्|nature
+क्रौञ्चः कूजति।|The curlew cries.|क्रौञ्चः|nature
+कणः भूमौ अस्ति।|A grain is on the earth.|कणः|nature
+वर्णः पुष्पस्य रम्यः अस्ति।|The flower’s colour is lovely.|वर्णः|nature
+चूर्णं पुष्पात् पतति।|Pollen falls from the flower.|चूर्णम्|nature
+ऊर्णं मेषस्य अस्ति।|Wool belongs to the sheep.|ऊर्णम्|nature
+प्राणः वायौ अस्ति।|Life-breath is in the wind.|प्राणः|nature
+अणुः रेणौ अस्ति।|An atom is in the dust-speck.|अणुः|nature
+कदली फलति।|The banana tree bears fruit.|कदली|nature
+कुञ्जः शीतलः अस्ति।|The grove is cool.|कुञ्जः|nature
+किंशुकः विकसति।|The flame-of-the-forest blooms.|किंशुकः|nature
+कदम्बः सुरभिः अस्ति।|The kadamba is fragrant.|कदम्बः|nature
+करिः जलं पिबति।|The elephant drinks water.|करिः|nature
+कल्लोलः सागरे अस्ति।|A wave is in the ocean.|कल्लोलः|nature
+कुशः तीरे रोहति।|Kusha grass grows on the bank.|कुशः|nature
+कूलं रम्यम् अस्ति।|The river-bank is lovely.|कूलम्|nature
+किरणः तपति।|A ray is warm.|किरणः|nature
+केसरः पुष्पे अस्ति।|The filament is in the flower.|केसरः|nature
+नखः तीक्ष्णः अस्ति।|The claw is sharp.|नखः|nature
+खुरः दृढः अस्ति।|The hoof is firm.|खुरः|nature
+मेखला गिरेः शोभते।|The mountain’s girdle shines.|मेखला|nature
+शाखामृगः कूर्दति।|The tree-monkey jumps.|शाखामृगः|nature
+आखुः बिलं गच्छति।|The mouse goes to the burrow.|आखुः|nature
+शिखरं उन्नतम् अस्ति।|The peak is tall.|शिखरम्|nature
+खनिः पर्वते अस्ति।|The mine is in the mountain.|खनिः|nature
+मुखं मृगस्य रम्यम् अस्ति।|The deer’s face is lovely.|मुखम्|nature
+खण्डः शिलायाः अस्ति।|A chunk is of rock.|खण्डः|nature
+खद्योतः चमकति।|The firefly glows.|खद्योतः|nature
+गौः तृणं अत्ति।|The cow eats grass.|गौः|nature
+गगनं नीलम् अस्ति।|The sky is blue.|गगनम्|nature
+नगः उन्नतः अस्ति।|The mountain is tall.|नगः|nature
+गर्तः गभीरः अस्ति।|The pit is deep.|गर्तः|nature
+ओघः शीघ्रं वहति।|The flood-torrent flows fast.|ओघः|nature
+गभस्तिः तपति।|The sunbeam is hot.|गभस्तिः|nature
+गन्धः पुष्पात् आयाति।|Fragrance comes from the flower.|गन्धः|nature
+गुञ्जा रक्ता अस्ति।|The gunja berry is red.|गुञ्जा|nature
+गोधूमः क्षेत्रे रोहति।|Wheat grows in the field.|गोधूमः|nature
+उरगः बिले वसति।|The serpent lives in the burrow.|उरगः|nature
+घोटकः धावति।|The horse runs.|घोटकः|nature
+घूकः नक्तं चरति।|The owl moves at night.|घूकः|nature
+घुणः काष्ठे चरति।|The wood-worm lives in wood.|घुणः|nature
+घर्मः ग्रीष्मे अस्ति।|Heat is in summer.|घर्मः|nature
+घनं मेघं अस्ति।|The cloud is dense.|घनम्|nature
+घाटः तीरे अस्ति।|The ghat is on the bank.|घाटः|nature
+घोषः वने श्रूयते।|A roar is heard in the forest.|घोषः|nature
+घोणा दीर्घा अस्ति।|The snout is long.|घोणा|nature
+परिघः सूर्यस्य शोभते।|The sun’s halo shines.|परिघः|nature
+घनच्छाया शीतला अस्ति।|Dense shade is cool.|घनच्छाया|nature
+अङ्कुरः रोहति।|The sprout grows.|अङ्कुरः|nature
+भुजङ्गः बिले वसति।|The snake lives in the burrow.|भुजङ्गः|nature
+शृङ्गं मृगस्य अस्ति।|The deer has a horn.|शृङ्गम्|nature
+तुङ्गः नगः अस्ति।|The mountain is lofty.|तुङ्गः|nature
+भ्रुङ्गः गुंजाति।|The bee buzzes.|भ्रुङ्गः|nature
+कुरङ्गः वने धावति।|The antelope runs in the forest.|कुरङ्गः|nature
+अङ्गं बलवत् अस्ति।|The limb is strong.|अङ्गम्|nature
+उत्तुङ्गः शिखरः अस्ति।|The peak is towering.|उत्तुङ्गः|nature
+अङ्गारः तपति।|The ember glows.|अङ्गारः|nature
+पिङ्गलः वने चरति।|The tawny one wanders in the forest.|पिङ्गलः|nature
