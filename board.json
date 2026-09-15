@@ -147,6 +147,86 @@
         "explanation": "ल plus आ makes ला."
       },
       {
+        "target": "कि",
+        "tiles": [
+          "क",
+          "इ",
+          "ख",
+          "ग",
+          "आ",
+          "उ"
+        ],
+        "english": "A ray falls from the sun.",
+        "sentence": "किरणः सूर्यात् पतति।",
+        "highlight": "कि",
+        "phase": "jodo",
+        "explanation": "क plus इ makes कि."
+      },
+      {
+        "target": "मि",
+        "tiles": [
+          "म",
+          "इ",
+          "क",
+          "प",
+          "आ",
+          "उ"
+        ],
+        "english": "A friend comes here.",
+        "sentence": "मित्रम् अत्र आगच्छति।",
+        "highlight": "मि",
+        "phase": "jodo",
+        "explanation": "म plus इ makes मि."
+      },
+      {
+        "target": "सि",
+        "tiles": [
+          "स",
+          "इ",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "Sita gives fruit.",
+        "sentence": "सिता फलं ददाति।",
+        "highlight": "सि",
+        "phase": "jodo",
+        "explanation": "स plus इ makes सि."
+      },
+      {
+        "target": "पि",
+        "tiles": [
+          "प",
+          "इ",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "Father gives food.",
+        "sentence": "पिता अन्नं ददाति।",
+        "highlight": "पि",
+        "phase": "jodo",
+        "explanation": "प plus इ makes पि."
+      },
+      {
+        "target": "नि",
+        "tiles": [
+          "न",
+          "इ",
+          "प",
+          "क",
+          "आ",
+          "उ"
+        ],
+        "english": "The night is peaceful.",
+        "sentence": "निशा शान्ता अस्ति।",
+        "highlight": "नि",
+        "phase": "jodo",
+        "explanation": "न plus इ makes नि."
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -1170,6 +1250,96 @@
         "sentence": "मत्स्यः जालात् मुच्यते।",
         "english": "The fish escapes from the net.",
         "highlight": "मत्स्यः"
+      },
+      {
+        "prompt": "____ दुग्धं पिबति।",
+        "target": "बिडालः",
+        "tiles": [
+          "बिडालः",
+          "मृगः",
+          "कुक्कुटः",
+          "शशः",
+          "वानरः",
+          "मत्स्यः"
+        ],
+        "sentence": "बिडालः दुग्धं पिबति।",
+        "english": "The cat drinks milk.",
+        "highlight": "बिडालः"
+      },
+      {
+        "prompt": "____ प्रातः कूजति।",
+        "target": "कुक्कुटः",
+        "tiles": [
+          "कपोतः",
+          "कुक्कुटः",
+          "मयूरः",
+          "बिडालः",
+          "सूर्यः",
+          "मेघः"
+        ],
+        "sentence": "कुक्कुटः प्रातः कूजति।",
+        "english": "The rooster crows at dawn.",
+        "highlight": "कुक्कुटः"
+      },
+      {
+        "prompt": "____ रात्रौ शोभते।",
+        "target": "चन्द्रः",
+        "tiles": [
+          "सूर्यः",
+          "चन्द्रः",
+          "तारा",
+          "मेघः",
+          "आकाशः",
+          "मृगः"
+        ],
+        "sentence": "चन्द्रः रात्रौ शोभते।",
+        "english": "The moon shines at night.",
+        "highlight": "चन्द्रः"
+      },
+      {
+        "prompt": "____ आकाशे दीप्यते।",
+        "target": "तारा",
+        "tiles": [
+          "तारा",
+          "चन्द्रः",
+          "सूर्यः",
+          "आकाशः",
+          "मेघः",
+          "बिडालः"
+        ],
+        "sentence": "तारा आकाशे दीप्यते।",
+        "english": "The star shines in the sky.",
+        "highlight": "तारा"
+      },
+      {
+        "prompt": "____ रमणीयम् अस्ति।",
+        "target": "वनम्",
+        "tiles": [
+          "वनम्",
+          "नदी",
+          "पर्वतः",
+          "वृक्षः",
+          "मृगः",
+          "सिंहः"
+        ],
+        "sentence": "वनं रमणीयम् अस्ति।",
+        "english": "The forest is lovely.",
+        "highlight": "वनं"
+      },
+      {
+        "prompt": "____ वने धावति।",
+        "target": "मृगः",
+        "tiles": [
+          "मृगः",
+          "अश्वः",
+          "बिडालः",
+          "शशः",
+          "सिंहः",
+          "गजः"
+        ],
+        "sentence": "मृगः वने धावति।",
+        "english": "The deer runs in the forest.",
+        "highlight": "मृगः"
       }
     ]
   },
