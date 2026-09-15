@@ -120,6 +120,69 @@
 जोडो|यै|यै|य,ऐ,क,त,आ,उ|यैः पुष्पैः पूजयति।|He worships with flowers.|य plus ऐ makes यै.
 जोडो|यो|यो|य,ओ,क,त,आ,उ|योगः स्वास्थ्यं ददाति।|Yoga gives health.|य plus ओ makes यो.
 जोडो|यौ|यौ|य,औ,क,त,आ,उ|यौवनं बलवत् अस्ति।|Youth is strong.|य plus औ makes यौ.
+जोडो|रा|रा|र,आ,क,त,इ,उ|रात्रिः शान्ता अस्ति।|Night is peaceful.|र plus आ makes रा.
+जोडो|रि|रि|र,इ,क,त,आ,उ|गिरिः उन्नतः अस्ति।|The mountain is tall.|र plus इ makes रि.
+जोडो|री|री|र,ई,क,त,आ,उ|नारी गायति।|The woman sings.|र plus ई makes री.
+जोडो|रु|रु|र,उ,क,त,आ,इ|गुरुः पठयति।|The teacher teaches.|र plus उ makes रु.
+जोडो|रू|रू|र,ऊ,क,त,आ,इ|रूपं सुन्दरम् अस्ति।|The form is beautiful.|र plus ऊ makes रू.
+जोडो|रे|रे|र,ए,क,त,आ,उ|रेणुः उड्डयति।|Dust flies up.|र plus ए makes रे.
+जोडो|रै|रै|र,ऐ,क,त,आ,उ|नरैः सह क्रीडति।|He plays with the people.|र plus ऐ makes रै.
+जोडो|रो|रो|र,ओ,क,त,आ,उ|रोगः न अस्ति।|There is no disease.|र plus ओ makes रो.
+जोडो|रौ|रौ|र,औ,क,त,आ,उ|रौप्यं शुभ्रम् अस्ति।|Silver is white.|र plus औ makes रौ.
+जोडो|ला|ला|ल,आ,क,त,इ,उ|माला शोभते।|The garland looks beautiful.|ल plus आ makes ला.
+जोडो|लि|लि|ल,इ,क,त,आ,उ|लिपिः सुन्दरा अस्ति।|The script is beautiful.|ल plus इ makes लि.
+जोडो|ली|ली|ल,ई,क,त,आ,उ|लीला रम्या अस्ति।|The play is lovely.|ल plus ई makes ली.
+जोडो|लु|लु|ल,उ,क,त,आ,इ|बालुका तटे अस्ति।|Sand is on the bank.|ल plus उ makes लु.
+जोडो|लू|लू|ल,ऊ,क,त,आ,इ|लूता जाले तिष्ठति।|The spider sits in the web.|ल plus ऊ makes लू.
+जोडो|ले|ले|ल,ए,क,त,आ,उ|लेखः स्पष्टः अस्ति।|The writing is clear.|ल plus ए makes ले.
+जोडो|लै|लै|ल,ऐ,क,त,आ,उ|बालैः सह क्रीडति।|He plays with the children.|ल plus ऐ makes लै.
+जोडो|लो|लो|ल,ओ,क,त,आ,उ|लोकः विशालः अस्ति।|The world is vast.|ल plus ओ makes लो.
+जोडो|लौ|लौ|ल,औ,क,त,आ,उ|लौहं दृढम् अस्ति।|Iron is strong.|ल plus औ makes लौ.
+जोडो|वा|वा|व,आ,क,त,इ,उ|वायुः वहति।|The wind blows.|व plus आ makes वा.
+जोडो|वि|वि|व,इ,क,त,आ,उ|विहगः उड्डयति।|The bird flies.|व plus इ makes वि.
+जोडो|वी|वी|व,ई,क,त,आ,उ|वीरः बलवान् अस्ति।|The hero is strong.|व plus ई makes वी.
+जोडो|वु|वु|व,उ,क,त,आ,इ|ववुः वाताः।|The winds blew.|व plus उ makes वु.
+जोडो|वू|वू|व,ऊ,क,त,आ,इ|वूतं वस्त्रम् अस्ति।|There is woven cloth.|व plus ऊ makes वू.
+जोडो|वे|वे|व,ए,क,त,आ,उ|वेदः पवित्रः अस्ति।|The Veda is sacred.|व plus ए makes वे.
+जोडो|वै|वै|व,ऐ,क,त,आ,उ|वैद्यः आगच्छति।|The doctor comes.|व plus ऐ makes वै.
+जोडो|वो|वो|व,ओ,क,त,आ,उ|वोढा भारं वहति।|The porter carries the load.|व plus ओ makes वो.
+जोडो|वौ|वौ|व,औ,क,त,आ,उ|नावौ तरेते।|Two boats float.|व plus औ makes वौ.
+जोडो|शा|शा|श,आ,क,त,इ,उ|शाखा हरिता अस्ति।|The branch is green.|श plus आ makes शा.
+जोडो|शि|शि|श,इ,क,त,आ,उ|शिशुः हसति।|The child laughs.|श plus इ makes शि.
+जोडो|शी|शी|श,ई,क,त,आ,उ|शीतं जलम् अस्ति।|The water is cold.|श plus ई makes शी.
+जोडो|शु|शु|श,उ,क,त,आ,इ|शुचि वस्त्रम् अस्ति।|The cloth is clean.|श plus उ makes शु.
+जोडो|शू|शू|श,ऊ,क,त,आ,इ|शूरः बलवान् अस्ति।|The warrior is strong.|श plus ऊ makes शू.
+जोडो|शे|शे|श,ए,क,त,आ,उ|शेखरः शोभते।|The crest looks beautiful.|श plus ए makes शे.
+जोडो|शै|शै|श,ऐ,क,त,आ,उ|शैलः उन्नतः अस्ति।|The rock-mountain is tall.|श plus ऐ makes शै.
+जोडो|शो|शो|श,ओ,क,त,आ,उ|शोभनं पुष्पम् अस्ति।|The flower is lovely.|श plus ओ makes शो.
+जोडो|शौ|शौ|श,औ,क,त,आ,उ|शौचं शुभम् अस्ति।|Cleanliness is good.|श plus औ makes शौ.
+जोडो|षा|षा|ष,आ,क,त,इ,उ|भाषा मधुरा अस्ति।|Language is sweet.|ष plus आ makes षा.
+जोडो|षि|षि|ष,इ,क,त,आ,उ|ऋषिः वने तिष्ठति।|The sage stays in the forest.|ष plus इ makes षि.
+जोडो|षी|षी|ष,ई,क,त,आ,उ|महीषी वने चरति।|The buffalo-cow wanders in the forest.|ष plus ई makes षी.
+जोडो|षु|षु|ष,उ,क,त,आ,इ|सुषुप्तिः गभीरा अस्ति।|Deep sleep is deep.|ष plus उ makes षु.
+जोडो|षू|षू|ष,ऊ,क,त,आ,इ|षूत्कारः श्रूयते।|A hissing sound is heard.|ष plus ऊ makes षू.
+जोडो|षे|षे|ष,ए,क,त,आ,उ|वर्षे पुष्पाणि विकसन्ति।|In the rains flowers bloom.|ष plus ए makes षे.
+जोडो|षै|षै|ष,ऐ,क,त,आ,उ|ऋषैः सह वसति।|He lives with the sages.|ष plus ऐ makes षै.
+जोडो|षो|षो|ष,ओ,क,त,आ,उ|दोषः न अस्ति।|There is no fault.|ष plus ओ makes षो.
+जोडो|षौ|षौ|ष,औ,क,त,आ,उ|महिषौ क्षेत्रे चरतः।|Two buffaloes graze in the field.|ष plus औ makes षौ.
+जोडो|सा|सा|स,आ,क,त,इ,उ|सारसः जले तिष्ठति।|The crane stands in the water.|स plus आ makes सा.
+जोडो|सि|सि|स,इ,क,त,आ,उ|सिंहः गर्जति।|The lion roars.|स plus इ makes सि.
+जोडो|सी|सी|स,ई,क,त,आ,उ|सीता पठति।|Sita reads.|स plus ई makes सी.
+जोडो|सु|सु|स,उ,क,त,आ,इ|सुखं भवान् लभते।|You obtain happiness.|स plus उ makes सु.
+जोडो|सू|सू|स,ऊ,क,त,आ,इ|सूर्यः उदेति।|The sun rises.|स plus ऊ makes सू.
+जोडो|से|से|स,ए,क,त,आ,उ|सेना गच्छति।|The army goes.|स plus ए makes से.
+जोडो|सै|सै|स,ऐ,क,त,आ,उ|सैन्यं चलति।|The troop moves.|स plus ऐ makes सै.
+जोडो|सो|सो|स,ओ,क,त,आ,उ|सोपानं दृढम् अस्ति।|The stair is firm.|स plus ओ makes सो.
+जोडो|सौ|सौ|स,औ,क,त,आ,उ|सौन्दर्यं शोभते।|Beauty shines.|स plus औ makes सौ.
+जोडो|हा|हा|ह,आ,क,त,इ,उ|हास्यं मधुरम् अस्ति।|Laughter is sweet.|ह plus आ makes हा.
+जोडो|हि|हि|ह,इ,क,त,आ,उ|हिमं श्वेतम् अस्ति।|Snow is white.|ह plus इ makes हि.
+जोडो|ही|ही|ह,ई,क,त,आ,उ|हीरकं शुभ्रम् अस्ति।|The diamond is bright.|ह plus ई makes ही.
+जोडो|हु|हु|ह,उ,क,त,आ,इ|हुतं अग्नौ अस्ति।|The offering is in the fire.|ह plus उ makes हु.
+जोडो|हू|हू|ह,ऊ,क,त,आ,इ|बहूनि पुष्पाणि सन्ति।|There are many flowers.|ह plus ऊ makes हू.
+जोडो|हे|हे|ह,ए,क,त,आ,उ|हेमन्त ऋतुः अस्ति।|It is winter.|ह plus ए makes हे.
+जोडो|है|है|ह,ऐ,क,त,आ,उ|हैमं सुवर्णम् अस्ति।|The golden thing is gold.|ह plus ऐ makes है.
+जोडो|हो|हो|ह,ओ,क,त,आ,उ|होत्रं शुभम् अस्ति।|The priestly rite is auspicious.|ह plus ओ makes हो.
+जोडो|हौ|हौ|ह,औ,क,त,आ,उ|हौत्रं वेदे अस्ति।|Hautra lore is in the Veda.|ह plus औ makes हौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
