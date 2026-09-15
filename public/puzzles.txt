@@ -552,6 +552,51 @@
 जोडो|च्छै|च्छै|च्छ,ऐ,क,त,आ,इ|इच्छैः रहितः मुनिः।|The sage is free of desires.|च्छ plus ऐ makes च्छै.
 जोडो|च्छो|च्छो|च्छ,ओ,क,त,आ,इ|उच्छोषः पत्राणां भवति।|There is drying of the leaves.|च्छ plus ओ makes च्छो.
 जोडो|च्छौ|च्छौ|च्छ,औ,क,त,आ,इ|इच्छौ फलौ खादितुम्।|He wishes to eat two fruits.|च्छ plus औ makes च्छौ.
+जोडो|क्ता|क्ता|क्त,आ,क,त,इ,उ|भक्ता पुष्पं ददाति।|The devotee gives a flower.|क्त plus आ makes क्ता.
+जोडो|क्ति|क्ति|क्त,इ,क,त,आ,उ|शक्तिः सिंहस्य अस्ति।|Strength belongs to the lion.|क्त plus इ makes क्ति.
+जोडो|क्ती|क्ती|क्त,ई,क,त,आ,इ|भक्ती गीतं गायति।|Devotion sings a song.|क्त plus ई makes क्ती.
+जोडो|क्तु|क्तु|क्त,उ,क,त,आ,इ|भक्तुं बालकः इच्छति।|The boy wishes to be devoted.|क्त plus उ makes क्तु.
+जोडो|क्तू|क्तू|क्त,ऊ,क,त,आ,इ|भक्तू हरिं स्मतः।|Two devotees remember Hari.|क्त plus ऊ makes क्तू.
+जोडो|क्ते|क्ते|क्त,ए,क,त,आ,इ|भक्ते हृदये शान्तिः अस्ति।|In the devoted heart there is peace.|क्त plus ए makes क्ते.
+जोडो|क्तै|क्तै|क्त,ऐ,क,त,आ,इ|भक्तैः माला क्रियते।|A garland is made by devotees.|क्त plus ऐ makes क्तै.
+जोडो|क्तो|क्तो|क्त,ओ,क,त,आ,इ|भक्तो गीतं गायति।|The devotee sings a song.|क्त plus ओ makes क्तो.
+जोडो|क्तौ|क्तौ|क्त,औ,क,त,आ,इ|भक्तौ मन्दिरे स्तः।|Two devotees are in the temple.|क्त plus औ makes क्तौ.
+जोडो|र्था|र्था|र्थ,आ,क,त,इ,उ|अर्थात् सत्यं ज्ञायते।|From the meaning truth is known.|र्थ plus आ makes र्था.
+जोडो|र्थि|र्थि|र्थ,इ,क,त,आ,उ|अर्थिना धनं याचितम्।|Wealth was asked by the seeker.|र्थ plus इ makes र्थि.
+जोडो|र्थी|र्थी|र्थ,ई,क,त,आ,इ|अर्थी धनं इच्छति।|The seeker wants wealth.|र्थ plus ई makes र्थी.
+जोडो|र्थु|र्थु|र्थ,उ,क,त,आ,इ|अर्थुं मुनिः याचते।|The sage asks for meaning.|र्थ plus उ makes र्थु.
+जोडो|र्थू|र्थू|र्थ,ऊ,क,त,आ,इ|अर्थू द्वौ स्तः।|There are two meanings.|र्थ plus ऊ makes र्थू.
+जोडो|र्थे|र्थे|र्थ,ए,क,त,आ,इ|अर्थे बुद्धिः अस्ति।|There is wisdom in the meaning.|र्थ plus ए makes र्थे.
+जोडो|र्थै|र्थै|र्थ,ऐ,क,त,आ,इ|अर्थैः धनवान् भवति।|One becomes wealthy by means.|र्थ plus ऐ makes र्थै.
+जोडो|र्थो|र्थो|र्थ,ओ,क,त,आ,इ|अर्थो स्पष्टः अस्ति।|The meaning is clear.|र्थ plus ओ makes र्थो.
+जोडो|र्थौ|र्थौ|र्थ,औ,क,त,आ,इ|अर्थौ द्वौ स्तः।|There are two meanings.|र्थ plus औ makes र्थौ.
+जोडो|र्णा|र्णा|र्ण,आ,क,त,इ,उ|पूर्णां चन्द्रकलां पश्यति।|He sees the full moon digit.|र्ण plus आ makes र्णा.
+जोडो|र्णि|र्णि|र्ण,इ,क,त,आ,उ|वर्णितं पुष्पं शोभते।|The described flower looks lovely.|र्ण plus इ makes र्णि.
+जोडो|र्णी|र्णी|र्ण,ई,क,त,आ,इ|पूर्णी रात्रिः शान्ता अस्ति।|The full night is peaceful.|र्ण plus ई makes र्णी.
+जोडो|र्णु|र्णु|र्ण,उ,क,त,आ,इ|चूर्णुं बालकः पिषति।|The boy grinds the powder.|र्ण plus उ makes र्णु.
+जोडो|र्णू|र्णू|र्ण,ऊ,क,त,आ,इ|चूर्णू भूमौ पततः।|Two powders fall on the ground.|र्ण plus ऊ makes र्णू.
+जोडो|र्णे|र्णे|र्ण,ए,क,त,आ,इ|पूर्णे चन्द्रे ज्योत्स्ना अस्ति।|In the full moon there is moonlight.|र्ण plus ए makes र्णे.
+जोडो|र्णै|र्णै|र्ण,ऐ,क,त,आ,इ|वर्णैः चित्रं शोभते।|The picture looks lovely with colors.|र्ण plus ऐ makes र्णै.
+जोडो|र्णो|र्णो|र्ण,ओ,क,त,आ,इ|पूर्णो चन्द्रः प्रकाशते।|The full moon shines.|र्ण plus ओ makes र्णो.
+जोडो|र्णौ|र्णौ|र्ण,औ,क,त,आ,इ|कर्णौ शृणुतः।|The two ears hear.|र्ण plus औ makes र्णौ.
+जोडो|ष्णा|ष्णा|ष्ण,आ,क,त,इ,उ|तृष्णा बलवती अस्ति।|Thirst is strong.|ष्ण plus आ makes ष्णा.
+जोडो|ष्णि|ष्णि|ष्ण,इ,क,त,आ,उ|कृष्णिकं मेघं पश्यति।|He sees a darkish cloud.|ष्ण plus इ makes ष्णि.
+जोडो|ष्णी|ष्णी|ष्ण,ई,क,त,आ,इ|कृष्णी रात्रिः अस्ति।|It is a dark night.|ष्ण plus ई makes ष्णी.
+जोडो|ष्णु|ष्णु|ष्ण,उ,क,त,आ,इ|विष्णुं भक्तः स्मरति।|The devotee remembers Vishnu.|ष्ण plus उ makes ष्णु.
+जोडो|ष्णू|ष्णू|ष्ण,ऊ,क,त,आ,इ|विष्णू द्वौ स्मतः।|Two remember Vishnu.|ष्ण plus ऊ makes ष्णू.
+जोडो|ष्णे|ष्णे|ष्ण,ए,क,त,आ,इ|कृष्णे वने सिंहः चरति।|In the dark forest the lion wanders.|ष्ण plus ए makes ष्णे.
+जोडो|ष्णै|ष्णै|ष्ण,ऐ,क,त,आ,इ|कृष्णैः मेघैः आकाशः आवृतः।|The sky is covered by dark clouds.|ष्ण plus ऐ makes ष्णै.
+जोडो|ष्णो|ष्णो|ष्ण,ओ,क,त,आ,इ|कृष्णो मेघः गर्जति।|The dark cloud thunders.|ष्ण plus ओ makes ष्णो.
+जोडो|ष्णौ|ष्णौ|ष्ण,औ,क,त,आ,इ|कृष्णौ मेघौ गर्जतः।|Two dark clouds thunder.|ष्ण plus औ makes ष्णौ.
+जोडो|त्ता|त्ता|त्त,आ,क,त,इ,उ|सत्ता राज्ये अस्ति।|Authority is in the kingdom.|त्त plus आ makes त्ता.
+जोडो|त्ति|त्ति|त्त,इ,क,त,आ,उ|उत्तिष्ठति बालकः प्रातः।|The boy rises in the morning.|त्त plus इ makes त्ति.
+जोडो|त्ती|त्ती|त्त,ई,क,त,आ,इ|पत्ती हरिता अस्ति।|The leaf is green.|त्त plus ई makes त्ती.
+जोडो|त्तु|त्तु|त्त,उ,क,त,आ,इ|उत्तुङ्गः गिरिः अस्ति।|The mountain is lofty.|त्त plus उ makes त्तु.
+जोडो|त्तू|त्तू|त्त,ऊ,क,त,आ,इ|उत्तूला पुष्पाणि सन्ति।|There are lofty flowers.|त्त plus ऊ makes त्तू.
+जोडो|त्ते|त्ते|त्त,ए,क,त,आ,इ|पत्ते कीटः चरति।|An insect walks on the leaf.|त्त plus ए makes त्ते.
+जोडो|त्तै|त्तै|त्त,ऐ,क,त,आ,इ|उत्तैः वृक्षैः वनं शोभते।|The forest looks lovely with tall trees.|त्त plus ऐ makes त्तै.
+जोडो|त्तो|त्तो|त्त,ओ,क,त,आ,इ|पत्तो हरितः अस्ति।|The leaf is green.|त्त plus ओ makes त्तो.
+जोडो|त्तौ|त्तौ|त्त,औ,क,त,आ,इ|पत्तौ द्वौ हरितौ स्तः।|The two leaves are green.|त्त plus औ makes त्तौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.

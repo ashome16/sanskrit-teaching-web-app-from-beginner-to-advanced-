@@ -689,3 +689,43 @@
 आच्छादितगिरिः मेघैः आवृतः।|The covered mountain is wrapped in clouds.|आच्छादितगिरिः|nature
 उच्छिष्टफलं पतति।|Leftover fruit falls.|उच्छिष्टफलम्|nature
 स्वच्छपवनः वहति।|A clean wind blows.|स्वच्छपवनः|nature
+भक्तपुष्पं विकसति।|The devotee-flower blooms.|भक्तपुष्पम्|nature
+शक्तिसिंहः गर्जति।|The strong lion roars.|शक्तिसिंहः|nature
+भक्तिखगः मधुरं कूजति।|The devotion-bird sings sweetly.|भक्तिखगः|nature
+युक्तमार्गः सरलः अस्ति।|The proper path is simple.|युक्तमार्गः|nature
+मुक्तपवनः वहति।|A free wind blows.|मुक्तपवनः|nature
+सक्तमधु भ्रमरे अस्ति।|Sticky honey is in the bee.|सक्तमधु|nature
+रक्तकमलं विकसति।|The red lotus blooms.|रक्तकमलम्|nature
+व्यक्तचन्द्रः प्रकाशते।|The clear moon shines.|व्यक्तचन्द्रः|nature
+अर्थतरुः फलं ददाति।|The meaning-tree gives fruit.|अर्थतरुः|nature
+सार्थयात्रा शुभा अस्ति।|The purposeful journey is auspicious.|सार्थयात्रा|nature
+पार्थिवगिरिः उन्नतः अस्ति।|The earthly mountain is tall.|पार्थिवगिरिः|nature
+समर्थमृगः वेगेन धावति।|The capable deer runs swiftly.|समर्थमृगः|nature
+अनर्थमेघः गर्जति।|The harmful cloud thunders.|अनर्थमेघः|nature
+परार्थपुष्पं ददाति।|He gives a flower for others.|परार्थपुष्पम्|nature
+स्वार्थरहितः मुनिः वसति।|The selfless sage dwells.|स्वार्थरहितः|nature
+निरर्थकपत्रं पतति।|A useless leaf falls.|निरर्थकपत्रम्|nature
+पूर्णचन्द्रः प्रकाशते।|The full moon shines.|पूर्णचन्द्रः|nature
+वर्णखगः चित्रः अस्ति।|The colorful bird is painted.|वर्णखगः|nature
+कर्णमृगः शृणोति।|The eared deer listens.|कर्णमृगः|nature
+चूर्णपुष्पं गन्धि अस्ति।|The powder-flower is fragrant.|चूर्णपुष्पम्|nature
+सुवर्णकिरणः पतति।|A golden ray falls.|सुवर्णकिरणः|nature
+अपर्णतरुः शुष्कः अस्ति।|The leafless tree is dry.|अपर्णतरुः|nature
+पर्णशय्या मृदु अस्ति।|The leaf-bed is soft.|पर्णशय्या|nature
+निर्णयपथः स्पष्टः अस्ति।|The decision-path is clear.|निर्णयपथः|nature
+तृष्णाहरी जलं ददाति।|The thirst-quencher gives water.|तृष्णाहरी|nature
+कृष्णमेघः गर्जति।|The dark cloud thunders.|कृष्णमेघः|nature
+विष्णुपदं पवित्रम् अस्ति।|Vishnu’s foot is sacred.|विष्णुपदम्|nature
+उष्णकिरणः सूर्यात् पतति।|A hot ray falls from the sun.|उष्णकिरणः|nature
+श्लक्ष्णपत्रं मृदु अस्ति।|The smooth leaf is soft.|श्लक्ष्णपत्रम्|nature
+कृष्णसर्पः बिले वसति।|The black snake lives in the burrow.|कृष्णसर्पः|nature
+शुष्णाभूमिः तप्ता अस्ति।|The dry earth is hot.|शुष्णाभूमिः|nature
+कृष्णलता आरोहति।|The dark creeper climbs.|कृष्णलता|nature
+पत्तीहरिता शोभते।|The green leaf looks lovely.|पत्तीहरिता|nature
+उत्तिष्ठत्खगः उड्डयति।|The rising bird flies up.|उत्तिष्ठत्खगः|nature
+सत्तववृक्षः दृढः अस्ति।|The sturdy tree is firm.|सत्तववृक्षः|nature
+उत्तुङ्गशिखरं हिमावृतम्।|The lofty peak is snow-covered.|उत्तुङ्गशिखरम्|nature
+पत्तेकीटः चरति।|A leaf-insect walks.|पत्तेकीटः|nature
+वृत्तफलं मधुरम् अस्ति।|The round fruit is sweet.|वृत्तफलम्|nature
+मत्तभ्रमरः गुञ्जति।|The intoxicated bee buzzes.|मत्तभ्रमरः|nature
+वृत्तपथः वने अस्ति।|The round path is in the forest.|वृत्तपथः|nature
