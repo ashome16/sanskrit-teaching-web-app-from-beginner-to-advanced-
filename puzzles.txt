@@ -822,6 +822,51 @@
 जोडो|ल्पै|ल्पै|ल्प,ऐ,क,त,आ,इ|अल्पैः पुष्पैः माला अस्ति।|There is a garland of small flowers.|ल्प plus ऐ makes ल्पै.
 जोडो|ल्पो|ल्पो|ल्प,ओ,क,त,आ,इ|अल्पो वृक्षः अस्ति।|The tree is small.|ल्प plus ओ makes ल्पो.
 जोडो|ल्पौ|ल्पौ|ल्प,औ,क,त,आ,इ|कल्पौ द्वौ स्तः।|Two kalpas are there.|ल्प plus औ makes ल्पौ.
+जोडो|त्का|त्का|त्क,आ,क,त,इ,उ|उत्कासे बालकः हसति।|The boy laughs in eagerness.|त्क plus आ makes त्का.
+जोडो|त्कि|त्कि|त्क,इ,क,त,आ,उ|उत्किरणं सूर्यात् पतति।|A ray falls from the sun.|त्क plus इ makes त्कि.
+जोडो|त्की|त्की|त्क,ई,क,त,आ,इ|उत्कीर्णं पत्रं पतति।|A carved leaf falls.|त्क plus ई makes त्की.
+जोडो|त्कु|त्कु|त्क,उ,क,त,आ,इ|उत्कुं खगः उड्डयति।|The bird flies upward.|त्क plus उ makes त्कु.
+जोडो|त्कू|त्कू|त्क,ऊ,क,त,आ,इ|उत्कू द्वौ स्तः।|Two upward ones are there.|त्क plus ऊ makes त्कू.
+जोडो|त्के|त्के|त्क,ए,क,त,आ,इ|उत्के पुष्पं विकसति।|A flower blooms at utke.|त्क plus ए makes त्के.
+जोडो|त्कै|त्कै|त्क,ऐ,क,त,आ,इ|उत्कैः पुष्पैः माला अस्ति।|There is a garland of utkai-flowers.|त्क plus ऐ makes त्कै.
+जोडो|त्को|त्को|त्क,ओ,क,त,आ,इ|उत्को बालकः धावति।|The eager boy runs.|त्क plus ओ makes त्को.
+जोडो|त्कौ|त्कौ|त्क,औ,क,त,आ,इ|उत्कौ द्वौ स्तः।|Two eager ones are there.|त्क plus औ makes त्कौ.
+जोडो|त्पा|त्पा|त्प,आ,क,त,इ,उ|उत्पातः मेघे गर्जति।|A sudden roar thunders in the cloud.|त्प plus आ makes त्पा.
+जोडो|त्पि|त्पि|त्प,इ,क,त,आ,उ|उत्पितं पुष्पं विकसति।|A risen flower blooms.|त्प plus इ makes त्पि.
+जोडो|त्पी|त्पी|त्प,ई,क,त,आ,इ|उत्पी द्वौ स्तः।|Two risen ones are there.|त्प plus ई makes त्पी.
+जोडो|त्पु|त्पु|त्प,उ,क,त,आ,इ|उत्पुं बालकः इच्छति।|The boy wishes to rise.|त्प plus उ makes त्पु.
+जोडो|त्पू|त्पू|त्प,ऊ,क,त,आ,इ|उत्पू द्वौ स्तः।|Two rises are there.|त्प plus ऊ makes त्पू.
+जोडो|त्पे|त्पे|त्प,ए,क,त,आ,इ|उत्पे खगः कूजति।|A bird calls at utpe.|त्प plus ए makes त्पे.
+जोडो|त्पै|त्पै|त्प,ऐ,क,त,आ,इ|उत्पैः सह पवनः वहति।|With utpai the breeze blows.|त्प plus ऐ makes त्पै.
+जोडो|त्पो|त्पो|त्प,ओ,क,त,आ,इ|उत्पो रम्यः अस्ति।|The utpo is lovely.|त्प plus ओ makes त्पो.
+जोडो|त्पौ|त्पौ|त्प,औ,क,त,आ,इ|उत्पौ द्वौ स्तः।|Two utpau-forms are there.|त्प plus औ makes त्पौ.
+जोडो|त्मा|त्मा|त्म,आ,क,त,इ,उ|आत्मा शान्तः अस्ति।|The self is peaceful.|त्म plus आ makes त्मा.
+जोडो|त्मि|त्मि|त्म,इ,क,त,आ,उ|सत्मि गृहे सुखं अस्ति।|There is joy in a good home.|त्म plus इ makes त्मि.
+जोडो|त्मी|त्मी|त्म,ई,क,त,आ,इ|आत्मी द्वौ स्तः।|Two selves are there.|त्म plus ई makes त्मी.
+जोडो|त्मु|त्मु|त्म,उ,क,त,आ,इ|आत्मुं बालकः पश्यति।|The boy sees the self.|त्म plus उ makes त्मु.
+जोडो|त्मू|त्मू|त्म,ऊ,क,त,आ,इ|आत्मू द्वौ स्तः।|Two selves are there.|त्म plus ऊ makes त्मू.
+जोडो|त्मे|त्मे|त्म,ए,क,त,आ,इ|आत्मे शान्तिः अस्ति।|There is peace in the self.|त्म plus ए makes त्मे.
+जोडो|त्मै|त्मै|त्म,ऐ,क,त,आ,इ|आत्मैः सह जनः वसति।|A person lives with selves.|त्म plus ऐ makes त्मै.
+जोडो|त्मो|त्मो|त्म,ओ,क,त,आ,इ|आत्मो रम्यः अस्ति।|The self is lovely.|त्म plus ओ makes त्मो.
+जोडो|त्मौ|त्मौ|त्म,औ,क,त,आ,इ|आत्मौ द्वौ स्तः।|Two selves are there.|त्म plus औ makes त्मौ.
+जोडो|द्गा|द्गा|द्ग,आ,क,त,इ,उ|उद्गायति खगः वृक्षे।|A bird sings on the tree.|द्ग plus आ makes द्गा.
+जोडो|द्गि|द्गि|द्ग,इ,क,त,आ,उ|उद्गितिं बालकः शृणोति।|The boy hears the rising song.|द्ग plus इ makes द्गि.
+जोडो|द्गी|द्गी|द्ग,ई,क,त,आ,इ|उद्गी द्वौ स्तः।|Two rising songs are there.|द्ग plus ई makes द्गी.
+जोडो|द्गु|द्गु|द्ग,उ,क,त,आ,इ|उद्गुं खगः कूजति।|The bird calls upward.|द्ग plus उ makes द्गु.
+जोडो|द्गू|द्गू|द्ग,ऊ,क,त,आ,इ|उद्गू द्वौ स्तः।|Two rising ones are there.|द्ग plus ऊ makes द्गू.
+जोडो|द्गे|द्गे|द्ग,ए,क,त,आ,इ|उद्गे पुष्पं विकसति।|A flower blooms at udge.|द्ग plus ए makes द्गे.
+जोडो|द्गै|द्गै|द्ग,ऐ,क,त,आ,इ|उद्गैः पुष्पैः वनं शोभते।|With udgai-flowers the forest looks lovely.|द्ग plus ऐ makes द्गै.
+जोडो|द्गो|द्गो|द्ग,ओ,क,त,आ,इ|उद्गो रम्यः अस्ति।|The udgo is lovely.|द्ग plus ओ makes द्गो.
+जोडो|द्गौ|द्गौ|द्ग,औ,क,त,आ,इ|उद्गौ द्वौ स्तः।|Two udgau-forms are there.|द्ग plus औ makes द्गौ.
+जोडो|द्बा|द्बा|द्ब,आ,क,त,इ,उ|उद्बाष्पं नेत्रात् पतति।|A tear falls from the eye.|द्ब plus आ makes द्बा.
+जोडो|द्बि|द्बि|द्ब,इ,क,त,आ,उ|उद्बितिं बालकः पश्यति।|The boy sees the rising mark.|द्ब plus इ makes द्बि.
+जोडो|द्बी|द्बी|द्ब,ई,क,त,आ,इ|उद्बी द्वौ स्तः।|Two rising marks are there.|द्ब plus ई makes द्बी.
+जोडो|द्बु|द्बु|द्ब,उ,क,त,आ,इ|उद्बुं जलं वहति।|He carries water up.|द्ब plus उ makes द्बु.
+जोडो|द्बू|द्बू|द्ब,ऊ,क,त,आ,इ|उद्बू द्वौ स्तः।|Two upward ones are there.|द्ब plus ऊ makes द्बू.
+जोडो|द्बे|द्बे|द्ब,ए,क,त,आ,इ|उद्बे खगः उड्डयति।|A bird flies up at udbe.|द्ब plus ए makes द्बे.
+जोडो|द्बै|द्बै|द्ब,ऐ,क,त,आ,इ|उद्बैः सह पवनः वहति।|With udbai the breeze blows.|द्ब plus ऐ makes द्बै.
+जोडो|द्बो|द्बो|द्ब,ओ,क,त,आ,इ|उद्बो रम्यः अस्ति।|The udbo is lovely.|द्ब plus ओ makes द्बो.
+जोडो|द्बौ|द्बौ|द्ब,औ,क,त,आ,इ|उद्बौ द्वौ स्तः।|Two udbau-forms are there.|द्ब plus औ makes द्बौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
