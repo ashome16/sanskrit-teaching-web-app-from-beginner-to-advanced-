@@ -1609,3 +1609,43 @@
 प्र्यसरः शीतलः।|A prya lake is cool.|प्र्यसरः|nature
 प्र्यगिरिः उन्नतः।|Prya-mountain is tall.|प्र्यगिरिः|nature
 प्र्यकमलं विकसति।|A prya lotus blooms.|प्र्यकमलम्|nature
+क्र्यपवनः वहति।|A krya breeze blows.|क्र्यपवनः|nature
+क्र्यखगः कूजति।|A krya bird calls.|क्र्यखगः|nature
+क्र्यपुष्पं विकसति।|A krya flower blooms.|क्र्यपुष्पम्|nature
+क्र्यमेघः गर्जति।|A krya cloud thunders.|क्र्यमेघः|nature
+क्र्यतरुः फलति।|A krya tree bears fruit.|क्र्यतरुः|nature
+क्र्यसरः शीतलः।|A krya lake is cool.|क्र्यसरः|nature
+क्र्यगिरिः उन्नतः।|Krya-mountain is tall.|क्र्यगिरिः|nature
+क्र्यकमलं विकसति।|A krya lotus blooms.|क्र्यकमलम्|nature
+ग्र्यपवनः वहति।|A grya breeze blows.|ग्र्यपवनः|nature
+ग्र्यखगः कूजति।|A grya bird calls.|ग्र्यखगः|nature
+ग्र्यपुष्पं विकसति।|A grya flower blooms.|ग्र्यपुष्पम्|nature
+ग्र्यमेघः गर्जति।|A grya cloud thunders.|ग्र्यमेघः|nature
+ग्र्यतरुः हरितः।|A grya tree is green.|ग्र्यतरुः|nature
+ग्र्यसरः रम्यः।|A grya lake is lovely.|ग्र्यसरः|nature
+ग्र्यगिरिः उन्नतः।|Grya-mountain is tall.|ग्र्यगिरिः|nature
+ग्र्यकमलं विकसति।|A grya lotus blooms.|ग्र्यकमलम्|nature
+ब्र्यपवनः वहति।|A brya breeze blows.|ब्र्यपवनः|nature
+ब्र्यखगः कूजति।|A brya bird calls.|ब्र्यखगः|nature
+ब्र्यपुष्पं विकसति।|A brya flower blooms.|ब्र्यपुष्पम्|nature
+ब्र्यमेघः गर्जति।|A brya cloud thunders.|ब्र्यमेघः|nature
+ब्र्यतरुः फलति।|A brya tree bears fruit.|ब्र्यतरुः|nature
+ब्र्यसरः शीतलः।|A brya lake is cool.|ब्र्यसरः|nature
+ब्र्यगिरिः उन्नतः।|Brya-mountain is tall.|ब्र्यगिरिः|nature
+ब्र्यकमलं विकसति।|A brya lotus blooms.|ब्र्यकमलम्|nature
+त्व्यपवनः वहति।|A tvya breeze blows.|त्व्यपवनः|nature
+त्व्यखगः कूजति।|A tvya bird calls.|त्व्यखगः|nature
+त्व्यपुष्पं विकसति।|A tvya flower blooms.|त्व्यपुष्पम्|nature
+त्व्यमेघः गर्जति।|A tvya cloud thunders.|त्व्यमेघः|nature
+त्व्यतरुः हरितः।|A tvya tree is green.|त्व्यतरुः|nature
+त्व्यसरः रम्यः।|A tvya lake is lovely.|त्व्यसरः|nature
+त्व्यगिरिः उन्नतः।|Tvya-mountain is tall.|त्व्यगिरिः|nature
+त्व्यकमलं विकसति।|A tvya lotus blooms.|त्व्यकमलम्|nature
+स्त्यपवनः वहति।|A stya breeze blows.|स्त्यपवनः|nature
+स्त्यखगः कूजति।|A stya bird calls.|स्त्यखगः|nature
+स्त्यपुष्पं विकसति।|A stya flower blooms.|स्त्यपुष्पम्|nature
+स्त्यमेघः गर्जति।|A stya cloud thunders.|स्त्यमेघः|nature
+स्त्यतरुः फलति।|A stya tree bears fruit.|स्त्यतरुः|nature
+स्त्यसरः शीतलः।|A stya lake is cool.|स्त्यसरः|nature
+स्त्यगिरिः उन्नतः।|Stya-mountain is tall.|स्त्यगिरिः|nature
+स्त्यकमलं विकसति।|A stya lotus blooms.|स्त्यकमलम्|nature
