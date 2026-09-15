@@ -195,6 +195,94 @@
         "highlight": "कथम्",
         "prompt": "एतत् ____ भवति?",
         "phase": "prashna"
+      },
+      {
+        "target": "किम्",
+        "tiles": [
+          "का",
+          "कुत्र",
+          "किम्",
+          "कः"
+        ],
+        "sentence": "भवान् किम् चिन्तयति?",
+        "english": "What are you thinking?",
+        "highlight": "किम्",
+        "prompt": "भवान् ____ चिन्तयति?",
+        "phase": "prashna"
+      },
+      {
+        "target": "कुत्र",
+        "tiles": [
+          "किम्",
+          "कुत्र",
+          "का",
+          "कः"
+        ],
+        "sentence": "धनं कुत्र गोपायति?",
+        "english": "Where are you hiding the money?",
+        "highlight": "कुत्र",
+        "prompt": "धनं ____ गोपायति?",
+        "phase": "prashna"
+      },
+      {
+        "target": "कदा",
+        "tiles": [
+          "कः",
+          "कथम्",
+          "कदा",
+          "कुत्र",
+          "किम्",
+          "का"
+        ],
+        "sentence": "भानुः कदा विभाति?",
+        "english": "When does the sun shine?",
+        "highlight": "कदा",
+        "prompt": "भानुः ____ विभाति?",
+        "phase": "prashna"
+      },
+      {
+        "target": "कः",
+        "tiles": [
+          "का",
+          "किम्",
+          "कुत्र",
+          "कः"
+        ],
+        "sentence": "कः द्वारं ताडयति?",
+        "english": "Who is knocking on the door?",
+        "highlight": "कः",
+        "prompt": "____ द्वारं ताडयति?",
+        "phase": "prashna"
+      },
+      {
+        "target": "का",
+        "tiles": [
+          "कः",
+          "किम्",
+          "कुत्र",
+          "का"
+        ],
+        "sentence": "का मधुरं कूजति?",
+        "english": "Who [female] is chirping sweetly?",
+        "highlight": "का",
+        "prompt": "____ मधुरं कूजति?",
+        "phase": "prashna"
+      },
+      {
+        "target": "कथम्",
+        "tiles": [
+          "कदा",
+          "किम्",
+          "कथम्",
+          "कः",
+          "का",
+          "कुत्र"
+        ],
+        "sentence": "सः कथम् जीवति?",
+        "english": "How does he live/survive?",
+        "highlight": "कथम्",
+        "prompt": "सः ____ जीवति?",
+        "phase": "prashna"
       }
     ]
   },
@@ -851,8 +939,7 @@
         ],
         "sentence": "पुष्पं तत्र विकसति।",
         "english": "The flower blooms there.",
-        "highlight": "पुष्पं",
-        "tapHighlight": "पुष्पं"
+        "highlight": "पुष्पं"
       },
       {
         "prompt": "____ वृक्षात् पतति।",
@@ -867,8 +954,7 @@
         ],
         "sentence": "फलं वृक्षात् पतति।",
         "english": "The fruit falls from the tree.",
-        "highlight": "फलं",
-        "tapHighlight": "फलं"
+        "highlight": "फलं"
       },
       {
         "prompt": "____ वेगेन वहति।",
@@ -914,6 +1000,96 @@
         "sentence": "मेघः जलं ददाति।",
         "english": "The cloud gives water.",
         "highlight": "मेघः"
+      },
+      {
+        "prompt": "____ बिले लीयते।",
+        "target": "शशः",
+        "tiles": [
+          "वृक्षः",
+          "सिंहः",
+          "मेघः",
+          "शशः",
+          "सूर्यः",
+          "वानरः"
+        ],
+        "sentence": "शशः बिले लीयते।",
+        "english": "The rabbit hides in the burrow.",
+        "highlight": "शशः"
+      },
+      {
+        "prompt": "____ फलं त्रोटयति।",
+        "target": "वानरः",
+        "tiles": [
+          "गजः",
+          "अश्वः",
+          "फलम्",
+          "मत्स्यः",
+          "शशः",
+          "वानरः"
+        ],
+        "sentence": "वानरः फलं त्रोटयति।",
+        "english": "The monkey plucks the fruit.",
+        "highlight": "वानरः"
+      },
+      {
+        "prompt": "____ अन्धकारं हरति।",
+        "target": "सूर्यः",
+        "tiles": [
+          "शशः",
+          "सूर्यः",
+          "मयूरः",
+          "मेघः",
+          "अश्वः",
+          "वानरः"
+        ],
+        "sentence": "सूर्यः अन्धकारं हरति।",
+        "english": "The sun removes the darkness.",
+        "highlight": "सूर्यः"
+      },
+      {
+        "prompt": "मेघाः ____ वृण्वन्ति।",
+        "target": "आकाशः",
+        "tiles": [
+          "मत्स्यः",
+          "मयूरः",
+          "आकाशः",
+          "अश्वः",
+          "मेघः",
+          "गजः"
+        ],
+        "sentence": "मेघाः आकाशं वृण्वन्ति।",
+        "english": "Clouds cover the sky.",
+        "highlight": "आकाशं"
+      },
+      {
+        "prompt": "____ कणान् चञ्चति।",
+        "target": "कपोतः",
+        "tiles": [
+          "शशः",
+          "वृक्षः",
+          "अश्वः",
+          "पुष्पम्",
+          "सूर्यः",
+          "कपोतः"
+        ],
+        "sentence": "कपोतः कणान् चञ्चति।",
+        "english": "The pigeon pecks at the grains.",
+        "highlight": "कपोतः"
+      },
+      {
+        "prompt": "____ जालात् मुच्यते।",
+        "target": "मत्स्यः",
+        "tiles": [
+          "अश्वः",
+          "शशः",
+          "मेघः",
+          "वानरः",
+          "मत्स्यः",
+          "मयूरः"
+        ],
+        "sentence": "मत्स्यः जालात् मुच्यते।",
+        "english": "The fish escapes from the net.",
+        "highlight": "मत्स्यः"
       }
     ]
   },
