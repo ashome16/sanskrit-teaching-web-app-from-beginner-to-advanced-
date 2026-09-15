@@ -67,3 +67,36 @@
 .puzzle-result .result-english { color: #f4ede0; font: italic 500 1.05rem Georgia, serif; margin: 0; }
 .word-tap { background: #f1c75b33; border-radius: 3px; color: inherit; padding: 0 .12rem; }
 .board-phase { color: #6b2418; font: 800 1.05rem Georgia, serif; margin: .35rem 0 0; }
+
+/* Learn · शिक्षा cards — big word + gloss + Hear */
+.learn-card { text-align: center; }
+.learn-word {
+  color: #f1c75b;
+  font: 700 2.6rem 'Noto Sans Devanagari', Georgia, serif;
+  letter-spacing: .02em;
+  line-height: 1.2;
+  margin: .35rem 0 .25rem;
+}
+.learn-gloss {
+  color: #f4ede0;
+  font: italic 500 1.2rem Georgia, serif;
+  margin: 0 0 .85rem;
+}
+.hear-button {
+  background: #f4ede0;
+  border: 2px solid #f1c75b;
+  border-radius: 5px;
+  color: #273b35;
+  cursor: pointer;
+  font-weight: 800;
+  margin: 0 0 .9rem;
+  padding: .55rem 1.35rem;
+}
+.hear-button:hover { background: #fffdf8; }
+.hear-button--inline { align-self: flex-start; margin: .55rem 0 0; }
+.learn-tile-row { justify-content: center; margin: 0 auto .35rem; max-width: 10rem; }
+.learn-tile-row .puzzle-tile { min-height: 72px; }
+.learn-next { margin-top: .35rem; }
+@media (max-width: 600px) {
+  .learn-word { font-size: 2.1rem; }
+}

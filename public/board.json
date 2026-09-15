@@ -1695,6 +1695,180 @@
         "sentence": "गजः जलं पिबति।",
         "english": "The elephant drinks water.",
         "highlight": "गजः"
+      },
+      {
+        "phase": "learn",
+        "target": "गजः",
+        "prompt": "Learn · गजः",
+        "gloss": "elephant",
+        "english": "elephant",
+        "sentence": "गजः",
+        "highlight": "गजः",
+        "tiles": [
+          "गजः"
+        ]
+      },
+      {
+        "phase": "learn",
+        "target": "नदी",
+        "prompt": "Learn · नदी",
+        "gloss": "river",
+        "english": "river",
+        "sentence": "नदी",
+        "highlight": "नदी",
+        "tiles": [
+          "नदी"
+        ]
+      },
+      {
+        "phase": "learn",
+        "target": "वृक्षः",
+        "prompt": "Learn · वृक्षः",
+        "gloss": "tree",
+        "english": "tree",
+        "sentence": "वृक्षः",
+        "highlight": "वृक्षः",
+        "tiles": [
+          "वृक्षः"
+        ]
+      },
+      {
+        "phase": "learn",
+        "target": "सिंहः",
+        "prompt": "Learn · सिंहः",
+        "gloss": "lion",
+        "english": "lion",
+        "sentence": "सिंहः",
+        "highlight": "सिंहः",
+        "tiles": [
+          "सिंहः"
+        ]
+      },
+      {
+        "phase": "learn",
+        "target": "अश्वः",
+        "prompt": "Learn · अश्वः",
+        "gloss": "horse",
+        "english": "horse",
+        "sentence": "अश्वः",
+        "highlight": "अश्वः",
+        "tiles": [
+          "अश्वः"
+        ]
+      },
+      {
+        "phase": "learn",
+        "target": "पुष्पम्",
+        "prompt": "Learn · पुष्पम्",
+        "gloss": "flower",
+        "english": "flower",
+        "sentence": "पुष्पम्",
+        "highlight": "पुष्पम्",
+        "tiles": [
+          "पुष्पम्"
+        ]
+      },
+      {
+        "phase": "match-meaning",
+        "target": "गजः",
+        "prompt": "Which word means · elephant?",
+        "gloss": "elephant",
+        "english": "elephant",
+        "sentence": "गजः means elephant.",
+        "highlight": "गजः",
+        "tiles": [
+          "गजः",
+          "नदी",
+          "वृक्षः",
+          "सिंहः",
+          "अश्वः",
+          "पुष्पम्"
+        ]
+      },
+      {
+        "phase": "match-meaning",
+        "target": "नदी",
+        "prompt": "Which word means · river?",
+        "gloss": "river",
+        "english": "river",
+        "sentence": "नदी means river.",
+        "highlight": "नदी",
+        "tiles": [
+          "नदी",
+          "गजः",
+          "वृक्षः",
+          "सिंहः",
+          "अश्वः",
+          "पुष्पम्"
+        ]
+      },
+      {
+        "phase": "match-meaning",
+        "target": "वृक्षः",
+        "prompt": "Which word means · tree?",
+        "gloss": "tree",
+        "english": "tree",
+        "sentence": "वृक्षः means tree.",
+        "highlight": "वृक्षः",
+        "tiles": [
+          "वृक्षः",
+          "गजः",
+          "नदी",
+          "सिंहः",
+          "अश्वः",
+          "पुष्पम्"
+        ]
+      },
+      {
+        "phase": "match-meaning",
+        "target": "सिंहः",
+        "prompt": "Which word means · lion?",
+        "gloss": "lion",
+        "english": "lion",
+        "sentence": "सिंहः means lion.",
+        "highlight": "सिंहः",
+        "tiles": [
+          "सिंहः",
+          "गजः",
+          "नदी",
+          "वृक्षः",
+          "अश्वः",
+          "पुष्पम्"
+        ]
+      },
+      {
+        "phase": "match-meaning",
+        "target": "अश्वः",
+        "prompt": "Which word means · horse?",
+        "gloss": "horse",
+        "english": "horse",
+        "sentence": "अश्वः means horse.",
+        "highlight": "अश्वः",
+        "tiles": [
+          "अश्वः",
+          "गजः",
+          "नदी",
+          "वृक्षः",
+          "सिंहः",
+          "पुष्पम्"
+        ]
+      },
+      {
+        "phase": "match-meaning",
+        "target": "पुष्पम्",
+        "prompt": "Which word means · flower?",
+        "gloss": "flower",
+        "english": "flower",
+        "sentence": "पुष्पम् means flower.",
+        "highlight": "पुष्पम्",
+        "tiles": [
+          "पुष्पम्",
+          "गजः",
+          "नदी",
+          "वृक्षः",
+          "सिंहः",
+          "अश्वः"
+        ]
       }
     ]
   },

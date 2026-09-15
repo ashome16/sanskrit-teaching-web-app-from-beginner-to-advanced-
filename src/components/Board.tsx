@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/board.css';
+import { playPronunciation } from '../utils/pronunciation';
 
 type ShelfId = 'prarambhah' | 'sariram' | 'ganitam' | 'bhugolah' | 'sanskritih' | 'krida' | 'prakrtih';
 
 interface ShelfButton { id: ShelfId; label: string; }
-interface BoardPuzzle { target: string; tiles: string[]; answer?: string; english: string; sentence?: string; highlight?: string; tapHighlight?: string; seed?: string; prompt?: string; }
+interface BoardPuzzle { target: string; tiles: string[]; answer?: string; english: string; sentence?: string; highlight?: string; tapHighlight?: string; seed?: string; prompt?: string; gloss?: string; phase?: string; }
 interface BoardShelfLine { shelf: string; native: string; skin: string; puzzles: BoardPuzzle[]; }
 interface PackLabel { title: string; gloss: string; }
 interface VisitorBlock { heading: 'h2' | 'h3' | 'p'; text: string; }
@@ -182,6 +183,9 @@ const Board: React.FC = () => {
   const activePackLabel = packLabels.find((item) => item.title === activeBoardShelf?.native) ?? null;
   const packTitle = activePackLabel?.title ?? activeBoardShelf?.native ?? '';
   const packGloss = activePackLabel?.gloss ?? '';
+  const puzzlePhase = (activePuzzle?.phase || '').trim();
+  const isLearnPhase = puzzlePhase === 'learn';
+  const isMatchMeaningPhase = puzzlePhase === 'match-meaning';
 
   const isCorrect = (() => {
     if (!activePuzzle) return false;
@@ -217,7 +221,11 @@ const Board: React.FC = () => {
   const targetIsWholeTile = !!activePuzzle?.tiles?.some((tile) => cleanTile(tile).normalize('NFC') === targetWord);
   // प्रश्न-पदानि is Beginners Part 2 only — never hijack Sanskriti/Vastu रिक्तम् rows
   const isPrashnaPart = activeShelf === 'prarambhah' && targetIsWholeTile;
-  const displaySkin = isPrashnaPart ? 'प्रश्न' : (activeBoardShelf?.skin ?? '');
+  const displaySkin = isLearnPhase
+    ? 'शिक्षा'
+    : isMatchMeaningPhase
+      ? 'अर्थ'
+      : (isPrashnaPart ? 'प्रश्न' : (activeBoardShelf?.skin ?? ''));
   const displayPackTitle = isPrashnaPart ? 'प्रश्न-पदानि' : packTitle;
   const displayPackGloss = isPrashnaPart ? 'who · what · where · when · how' : packGloss;
   const phaseBanner = isPrashnaPart
@@ -230,14 +238,18 @@ const Board: React.FC = () => {
   const isJodoSkin = (!activeBoardShelf || activeBoardShelf.skin === 'जोडो') && !targetIsWholeTile;
 
   const shownTarget = (activePuzzle?.prompt ?? activePuzzle?.target) || '';
-  const hasBlank = shownTarget.includes('____')
+  const hasBlank = !isLearnPhase && !isMatchMeaningPhase && (
+    shownTarget.includes('____')
     || activeBoardShelf?.skin === 'रिक्तम्'
-    || isPrashnaPart;
-  const wrongAttemptMessage = hasBlank
-    ? 'Not that cream tile — try another, then Read the sentence again.'
-    : isJodoSkin
-      ? 'Not those tiles. Click the right letter and vowel (any order), then Read the sentence again.'
-      : 'Not that cream tile — try another, then Read the sentence again.';
+    || isPrashnaPart
+  );
+  const wrongAttemptMessage = isMatchMeaningPhase
+    ? 'Not that cream word — pick the one that matches the meaning, then Read the sentence again.'
+    : hasBlank
+      ? 'Not that cream tile — try another, then Read the sentence again.'
+      : isJodoSkin
+        ? 'Not those tiles. Click the right letter and vowel (any order), then Read the sentence again.'
+        : 'Not that cream tile — try another, then Read the sentence again.';
 
   const toggleTile = (tile: string) => {
     if (checked && isCorrect) return;
@@ -264,7 +276,7 @@ const Board: React.FC = () => {
     }
   };
 
-  const hasNextPuzzle = isCorrect && activePuzzles.length > 0;
+  const hasNextPuzzle = (isLearnPhase || isCorrect) && activePuzzles.length > 0;
 
   const chooseNextPuzzle = () => {
     if (!activePuzzles.length) return;
@@ -275,14 +287,16 @@ const Board: React.FC = () => {
     setChosen([]);
   };
 
-  // After a correct Check, auto-advance so later मात्रा rows still appear if Next is missed
+  // After a correct Check, auto-advance so later मात्रा rows still appear if Next is missed.
+  // Learn cards never auto-advance — child must hear, then click Next.
   useEffect(() => {
+    if (isLearnPhase) return undefined;
     if (!checked || !isCorrect || activePuzzles.length < 2) return undefined;
     const timer = window.setTimeout(() => {
       chooseNextPuzzle();
     }, 8000);
     return () => window.clearTimeout(timer);
-  }, [checked, isCorrect, puzzleIndex, activeShelf, activePuzzles.length]);
+  }, [checked, isCorrect, puzzleIndex, activeShelf, activePuzzles.length, isLearnPhase]);
 
   return <main className="board-shell">
     <nav className="wing-nav" aria-label="Learning shelves">
@@ -292,15 +306,19 @@ const Board: React.FC = () => {
     </nav>
 
     <div className="board-tip-row">
-      <p className="board-tip">{isPrashnaPart
-        ? <>Part 2: click ONE cream tile for the blank (who/what/where…). Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
-        : (activeBoardShelf?.skin === 'जोडो' && activeShelf === 'prarambhah' && !targetIsWholeTile
-          ? <>Part 1: click TWO cream tiles (any order). Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong> — or wait a few seconds and it moves on.</>
-          : hasBlank
-            ? <>Click ONE cream tile that fills the blank. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
-            : isJodoSkin
-              ? <>Click TWO cream tiles (any order). Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
-              : <>Click ONE cream tile that matches. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>)}</p>
+      <p className="board-tip">{isLearnPhase
+        ? <>Hear the word, read the meaning, then <strong className="tip-next">Click Next</strong>.</>
+        : isMatchMeaningPhase
+          ? <>Click the cream word that matches the meaning. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
+          : isPrashnaPart
+            ? <>Part 2: click ONE cream tile for the blank (who/what/where…). Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
+            : (activeBoardShelf?.skin === 'जोडो' && activeShelf === 'prarambhah' && !targetIsWholeTile
+              ? <>Part 1: click TWO cream tiles (any order). Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong> — or wait a few seconds and it moves on.</>
+              : hasBlank
+                ? <>Click ONE cream tile that fills the blank. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
+                : isJodoSkin
+                  ? <>Click TWO cream tiles (any order). Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>
+                  : <>Click ONE cream tile that matches. Then <strong>Read the sentence</strong>. Then <strong className="tip-next">Click Next</strong>.</>)}</p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
     </div>
@@ -320,35 +338,85 @@ const Board: React.FC = () => {
         <div className="puzzle-meta">
           <span className="meta-skin">{displaySkin}</span>
           <span className="meta-sep" aria-hidden="true">·</span>
-          <span className="meta-hint">{targetIsWholeTile ? 'Click 1 tile' : (activeBoardShelf?.skin === 'जोडो' ? 'Click 2 tiles' : 'Click 1 tile')}</span>
+          <span className="meta-hint">{isLearnPhase
+            ? 'Learn the word'
+            : isMatchMeaningPhase
+              ? 'Match the meaning'
+              : (targetIsWholeTile ? 'Click 1 tile' : (activeBoardShelf?.skin === 'जोडो' ? 'Click 2 tiles' : 'Click 1 tile'))}</span>
           <span className="meta-sep" aria-hidden="true">·</span>
           <span className="meta-progress">{puzzleIndex + 1} / {activePuzzles.length}</span>
         </div>
 
-        <p className="puzzle-prompt">{activePuzzle.prompt ?? activePuzzle.target}</p>
-
-        <div className="tile-row">
-          {activePuzzle.tiles.map((tile, index) => (
-            <button key={`${tile}-${index}`} className={chosen.includes(cleanTile(tile)) ? 'puzzle-tile chosen' : 'puzzle-tile'} onClick={() => toggleTile(tile)}>
-              <span>{tile}</span>
+        {isLearnPhase ? (
+          <div className="learn-card">
+            <p className="learn-word">{activePuzzle.target}</p>
+            <p className="learn-gloss">{activePuzzle.gloss ?? activePuzzle.english}</p>
+            <button
+              className="hear-button"
+              type="button"
+              onClick={() => playPronunciation(activePuzzle.target)}
+            >
+              Hear
             </button>
-          ))}
-        </div>
-
-        <div className="puzzle-actions">
-          <button className="check-button" onClick={submitCheck}>Read the sentence</button>
-        </div>
-
-        {checked && isCorrect && (
-          <div className="puzzle-result correct">
-            <p className="result-sanskrit">{highlightedSentence(activePuzzle.sentence, activePuzzle.highlight, activePuzzle.tapHighlight)}</p>
-            <p className="result-english">{activePuzzle.english}</p>
-            {activePuzzle.seed && <p className="result-seed">{activePuzzle.seed}</p>}
-            {hasNextPuzzle && <button className="next-button" type="button" onClick={chooseNextPuzzle}>{puzzleIndex + 1 >= activePuzzles.length ? 'Again' : 'Next'}</button>}
+            <div className="tile-row learn-tile-row">
+              {activePuzzle.tiles.map((tile, index) => (
+                <button
+                  key={`${tile}-${index}`}
+                  className="puzzle-tile"
+                  type="button"
+                  onClick={() => playPronunciation(cleanTile(tile))}
+                >
+                  <span>{tile}</span>
+                </button>
+              ))}
+            </div>
+            <div className="puzzle-actions">
+              <button className="next-button learn-next" type="button" onClick={chooseNextPuzzle}>
+                {puzzleIndex + 1 >= activePuzzles.length ? 'Again' : 'I learnt it · Next'}
+              </button>
+            </div>
           </div>
-        )}
-        {wrongAttempt && (
-          <div className="puzzle-result"><strong>{wrongAttemptMessage}</strong></div>
+        ) : (
+          <>
+            <p className="puzzle-prompt">
+              {isMatchMeaningPhase
+                ? (activePuzzle.prompt ?? `Which word means · ${activePuzzle.gloss ?? activePuzzle.english}?`)
+                : (activePuzzle.prompt ?? activePuzzle.target)}
+            </p>
+
+            <div className="tile-row">
+              {activePuzzle.tiles.map((tile, index) => (
+                <button key={`${tile}-${index}`} className={chosen.includes(cleanTile(tile)) ? 'puzzle-tile chosen' : 'puzzle-tile'} onClick={() => toggleTile(tile)}>
+                  <span>{tile}</span>
+                </button>
+              ))}
+            </div>
+
+            <div className="puzzle-actions">
+              <button className="check-button" onClick={submitCheck}>Read the sentence</button>
+            </div>
+
+            {checked && isCorrect && (
+              <div className="puzzle-result correct">
+                <p className="result-sanskrit">{highlightedSentence(activePuzzle.sentence, activePuzzle.highlight, activePuzzle.tapHighlight)}</p>
+                <p className="result-english">{activePuzzle.english}</p>
+                {isMatchMeaningPhase && (
+                  <button
+                    className="hear-button hear-button--inline"
+                    type="button"
+                    onClick={() => playPronunciation(activePuzzle.target)}
+                  >
+                    Hear
+                  </button>
+                )}
+                {activePuzzle.seed && <p className="result-seed">{activePuzzle.seed}</p>}
+                {hasNextPuzzle && <button className="next-button" type="button" onClick={chooseNextPuzzle}>{puzzleIndex + 1 >= activePuzzles.length ? 'Again' : 'Next'}</button>}
+              </div>
+            )}
+            {wrongAttempt && (
+              <div className="puzzle-result"><strong>{wrongAttemptMessage}</strong></div>
+            )}
+          </>
         )}
       </section>
 
