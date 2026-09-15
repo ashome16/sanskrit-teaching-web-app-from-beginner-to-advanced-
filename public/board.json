@@ -8083,6 +8083,726 @@
         "phase": "jodo"
       },
       {
+        "target": "ह्रा",
+        "tiles": [
+          "ह्र",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "Water falls from the lake.",
+        "explanation": "ह्र plus आ makes ह्रा.",
+        "sentence": "ह्रादात् जलं पतति।",
+        "highlight": "ह्रा",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्रि",
+        "tiles": [
+          "ह्र",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "The short boy smiles.",
+        "explanation": "ह्र plus इ makes ह्रि.",
+        "sentence": "ह्रस्वः बालकः हसति।",
+        "highlight": "ह्रि",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्री",
+        "tiles": [
+          "ह्र",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The modest girl reads.",
+        "explanation": "ह्र plus ई makes ह्री.",
+        "sentence": "ह्रीमती बालिका पठति।",
+        "highlight": "ह्री",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्रु",
+        "tiles": [
+          "ह्र",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "There is affection in the heart.",
+        "explanation": "ह्र plus उ makes ह्रु.",
+        "sentence": "ह्रुदये स्नेहः अस्ति।",
+        "highlight": "ह्रु",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्रू",
+        "tiles": [
+          "ह्र",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A faint sound is heard.",
+        "explanation": "ह्र plus ऊ makes ह्रू.",
+        "sentence": "ह्रूतः शब्दः श्रूयते।",
+        "highlight": "ह्रू",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्रे",
+        "tiles": [
+          "ह्र",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy shivers in the cold.",
+        "explanation": "ह्र plus ए makes ह्रे.",
+        "sentence": "ह्रेपते बालकः शीते।",
+        "highlight": "ह्रे",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्रै",
+        "tiles": [
+          "ह्र",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "There is a garland with bright flowers.",
+        "explanation": "ह्र plus ऐ makes ह्रै.",
+        "sentence": "मह्रैः पुष्पैः माला अस्ति।",
+        "highlight": "ह्रै",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्रो",
+        "tiles": [
+          "ह्र",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A plump fruit falls.",
+        "explanation": "ह्र plus ओ makes ह्रो.",
+        "sentence": "ह्रोडं फलं पतति।",
+        "highlight": "ह्रो",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्रौ",
+        "tiles": [
+          "ह्र",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "He sees a fierce cloud.",
+        "explanation": "ह्र plus औ makes ह्रौ.",
+        "sentence": "ह्रौद्रं मेघं पश्यति।",
+        "highlight": "ह्रौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्या",
+        "tiles": [
+          "ह्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The Sahya mountain is tall.",
+        "explanation": "ह्य plus आ makes ह्या.",
+        "sentence": "सह्याचलः उन्नतः अस्ति।",
+        "highlight": "ह्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्यि",
+        "tiles": [
+          "ह्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "The dearest flower blooms.",
+        "explanation": "ह्य plus इ makes ह्यि.",
+        "sentence": "ह्यिष्ठं पुष्पं विकसति।",
+        "highlight": "ह्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्यी",
+        "tiles": [
+          "ह्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A depleted leaf falls on the ground.",
+        "explanation": "ह्य plus ई makes ह्यी.",
+        "sentence": "ह्यीनपत्रं भूमौ पतति।",
+        "highlight": "ह्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्यु",
+        "tiles": [
+          "ह्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "There is eager enthusiasm in the child.",
+        "explanation": "ह्य plus उ makes ह्यु.",
+        "sentence": "ह्युत्साहः बालके अस्ति।",
+        "highlight": "ह्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्यू",
+        "tiles": [
+          "ह्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The sown seed sprouts in the ground.",
+        "explanation": "ह्य plus ऊ makes ह्यू.",
+        "sentence": "ह्यूतबीजं भूमौ रोहति।",
+        "highlight": "ह्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्ये",
+        "tiles": [
+          "ह्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The path to be taken is simple.",
+        "explanation": "ह्य plus ए makes ह्ये.",
+        "sentence": "ह्येयमार्गः सरलः अस्ति।",
+        "highlight": "ह्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्यै",
+        "tiles": [
+          "ह्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With dear birds the forest sings.",
+        "explanation": "ह्य plus ऐ makes ह्यै.",
+        "sentence": "ह्यैः खगैः वनं कूजति।",
+        "highlight": "ह्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्यो",
+        "tiles": [
+          "ह्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "At the festival the peacock dances.",
+        "explanation": "ह्य plus ओ makes ह्यो.",
+        "sentence": "ह्योत्सवे मयूरः नृत्यति।",
+        "highlight": "ह्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "ह्यौ",
+        "tiles": [
+          "ह्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two dear flowers bloom.",
+        "explanation": "ह्य plus औ makes ह्यौ.",
+        "sentence": "ह्यौ पुष्पौ विकसतः।",
+        "highlight": "ह्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्त्रा",
+        "tiles": [
+          "स्त्र",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The clothes are clean.",
+        "explanation": "स्त्र plus आ makes स्त्रा.",
+        "sentence": "वस्त्राणि शुचि सन्ति।",
+        "highlight": "स्त्रा",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्त्रि",
+        "tiles": [
+          "स्त्र",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "The string-player plays the veena.",
+        "explanation": "स्त्र plus इ makes स्त्रि.",
+        "sentence": "तन्त्रिणी वीणां वादयति।",
+        "highlight": "स्त्रि",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्त्री",
+        "tiles": [
+          "स्त्र",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The woman gives a flower.",
+        "explanation": "स्त्र plus ई makes स्त्री.",
+        "sentence": "स्त्री पुष्पं ददाति।",
+        "highlight": "स्त्री",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्त्रु",
+        "tiles": [
+          "स्त्र",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The armed warrior stands.",
+        "explanation": "स्त्र plus उ makes स्त्रु.",
+        "sentence": "शस्त्रुः योद्धा तिष्ठति।",
+        "highlight": "स्त्रु",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्त्रू",
+        "tiles": [
+          "स्त्र",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two weapons-bearers flee.",
+        "explanation": "स्त्र plus ऊ makes स्त्रू.",
+        "sentence": "शस्त्रू पलायतः।",
+        "highlight": "स्त्रू",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्त्रे",
+        "tiles": [
+          "स्त्र",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower looks lovely on the cloth.",
+        "explanation": "स्त्र plus ए makes स्त्रे.",
+        "sentence": "वस्त्रे पुष्पं शोभते।",
+        "highlight": "स्त्रे",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्त्रै",
+        "tiles": [
+          "स्त्र",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy is covered with clothes.",
+        "explanation": "स्त्र plus ऐ makes स्त्रै.",
+        "sentence": "वस्त्रैः बालकः आच्छादितः।",
+        "highlight": "स्त्रै",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्त्रो",
+        "tiles": [
+          "स्त्र",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A bird sings in the arms-garden.",
+        "explanation": "स्त्र plus ओ makes स्त्रो.",
+        "sentence": "शस्त्रोद्याने खगः कूजति।",
+        "highlight": "स्त्रो",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्त्रौ",
+        "tiles": [
+          "स्त्र",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The two cloths are white.",
+        "explanation": "स्त्र plus औ makes स्त्रौ.",
+        "sentence": "वस्त्रौ शुभ्रौ स्तः।",
+        "highlight": "स्त्रौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "ङ्का",
+        "tiles": [
+          "ङ्क",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "A lotus blooms from the mud.",
+        "explanation": "ङ्क plus आ makes ङ्का.",
+        "sentence": "पङ्कात् कमलं विकसति।",
+        "highlight": "ङ्का",
+        "phase": "jodo"
+      },
+      {
+        "target": "ङ्कि",
+        "tiles": [
+          "ङ्क",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "There is a marked leaf.",
+        "explanation": "ङ्क plus इ makes ङ्कि.",
+        "sentence": "अङ्कितं पत्रं अस्ति।",
+        "highlight": "ङ्कि",
+        "phase": "jodo"
+      },
+      {
+        "target": "ङ्की",
+        "tiles": [
+          "ङ्क",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The timid deer flees.",
+        "explanation": "ङ्क plus ई makes ङ्की.",
+        "sentence": "शङ्की मृगः पलायते।",
+        "highlight": "ङ्की",
+        "phase": "jodo"
+      },
+      {
+        "target": "ङ्कु",
+        "tiles": [
+          "ङ्क",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A sprout grows in the ground.",
+        "explanation": "ङ्क plus उ makes ङ्कु.",
+        "sentence": "अङ्कुरः भूमौ रोहति।",
+        "highlight": "ङ्कु",
+        "phase": "jodo"
+      },
+      {
+        "target": "ङ्कू",
+        "tiles": [
+          "ङ्क",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The muddy water is dirty.",
+        "explanation": "ङ्क plus ऊ makes ङ्कू.",
+        "sentence": "पङ्कू जलं मलिनम् अस्ति।",
+        "highlight": "ङ्कू",
+        "phase": "jodo"
+      },
+      {
+        "target": "ङ्के",
+        "tiles": [
+          "ङ्क",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The child sleeps in the lap.",
+        "explanation": "ङ्क plus ए makes ङ्के.",
+        "sentence": "अङ्के शिशुः शेते।",
+        "highlight": "ङ्के",
+        "phase": "jodo"
+      },
+      {
+        "target": "ङ्कै",
+        "tiles": [
+          "ङ्क",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The lion is without fears.",
+        "explanation": "ङ्क plus ऐ makes ङ्कै.",
+        "sentence": "शङ्कैः रहितः सिंहः।",
+        "highlight": "ङ्कै",
+        "phase": "jodo"
+      },
+      {
+        "target": "ङ्को",
+        "tiles": [
+          "ङ्क",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The lotus is born of mud.",
+        "explanation": "ङ्क plus ओ makes ङ्को.",
+        "sentence": "पङ्कोद्भवं कमलम्।",
+        "highlight": "ङ्को",
+        "phase": "jodo"
+      },
+      {
+        "target": "ङ्कौ",
+        "tiles": [
+          "ङ्क",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "There are marks on both hands.",
+        "explanation": "ङ्क plus औ makes ङ्कौ.",
+        "sentence": "अङ्कौ हस्तयोः स्तः।",
+        "highlight": "ङ्कौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्छा",
+        "tiles": [
+          "च्छ",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "Desire is strong.",
+        "explanation": "च्छ plus आ makes च्छा.",
+        "sentence": "इच्छा बलवती अस्ति।",
+        "highlight": "च्छा",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्छि",
+        "tiles": [
+          "च्छ",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A torn leaf falls.",
+        "explanation": "च्छ plus इ makes च्छि.",
+        "sentence": "विच्छिन्नं पत्रं पतति।",
+        "highlight": "च्छि",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्छी",
+        "tiles": [
+          "च्छ",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "He wishes to eat fruit.",
+        "explanation": "च्छ plus ई makes च्छी.",
+        "sentence": "इच्छी फलं खादितुम्।",
+        "highlight": "च्छी",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्छु",
+        "tiles": [
+          "च्छ",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A fish-scale creature swims in water.",
+        "explanation": "च्छ plus उ makes च्छु.",
+        "sentence": "मत्स्यच्छुरा जले तरति।",
+        "highlight": "च्छु",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्छू",
+        "tiles": [
+          "च्छ",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A soft sound is heard.",
+        "explanation": "च्छ plus ऊ makes च्छू.",
+        "sentence": "च्छूतः शब्दः श्रूयते।",
+        "highlight": "च्छू",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्छे",
+        "tiles": [
+          "च्छ",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "I wish for this book.",
+        "explanation": "च्छ plus ए makes च्छे.",
+        "sentence": "इच्छेयं पुस्तकम्।",
+        "highlight": "च्छे",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्छै",
+        "tiles": [
+          "च्छ",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The sage is free of desires.",
+        "explanation": "च्छ plus ऐ makes च्छै.",
+        "sentence": "इच्छैः रहितः मुनिः।",
+        "highlight": "च्छै",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्छो",
+        "tiles": [
+          "च्छ",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "There is drying of the leaves.",
+        "explanation": "च्छ plus ओ makes च्छो.",
+        "sentence": "उच्छोषः पत्राणां भवति।",
+        "highlight": "च्छो",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्छौ",
+        "tiles": [
+          "च्छ",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "He wishes to eat two fruits.",
+        "explanation": "च्छ plus औ makes च्छौ.",
+        "sentence": "इच्छौ फलौ खादितुम्।",
+        "highlight": "च्छौ",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -17697,6 +18417,606 @@
         "sentence": "अष्टशिखरं हिमावृतम् अस्ति।",
         "english": "The eight-peak is snow-covered.",
         "highlight": "अष्टशिखरम्"
+      },
+      {
+        "prompt": "____ शीतलम् अस्ति।",
+        "target": "ह्रदजलम्",
+        "tiles": [
+          "ह्रदजलम्",
+          "जलम्",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "गिरिः"
+        ],
+        "sentence": "ह्रदजलं शीतलम् अस्ति।",
+        "english": "The lake water is cool.",
+        "highlight": "ह्रदजलम्"
+      },
+      {
+        "prompt": "____ नीडे कूजति।",
+        "target": "ह्रस्वखगः",
+        "tiles": [
+          "ह्रस्वखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "ह्रस्वखगः नीडे कूजति।",
+        "english": "The small bird calls in the nest.",
+        "highlight": "ह्रस्वखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ह्रीमत्पद्मम्",
+        "tiles": [
+          "ह्रीमत्पद्मम्",
+          "पद्मम्",
+          "सरः",
+          "हंसः",
+          "जलम्",
+          "भ्रमरः"
+        ],
+        "sentence": "ह्रीमत्पद्मं विकसति।",
+        "english": "The modest lotus blooms.",
+        "highlight": "ह्रीमत्पद्मम्"
+      },
+      {
+        "prompt": "____ मातरि अस्ति।",
+        "target": "ह्रुदयस्नेहः",
+        "tiles": [
+          "ह्रुदयस्नेहः",
+          "स्नेहः",
+          "माता",
+          "वत्सः",
+          "धेनुः",
+          "पुष्पम्"
+        ],
+        "sentence": "ह्रुदयस्नेहः मातरि अस्ति।",
+        "english": "Heart-affection is in the mother.",
+        "highlight": "ह्रुदयस्नेहः"
+      },
+      {
+        "prompt": "____ पलायते।",
+        "target": "ह्रेपितमृगः",
+        "tiles": [
+          "ह्रेपितमृगः",
+          "मृगः",
+          "वनम्",
+          "तृणम्",
+          "शशकः",
+          "गिरिः"
+        ],
+        "sentence": "ह्रेपितमृगः पलायते।",
+        "english": "The startled deer flees.",
+        "highlight": "ह्रेपितमृगः"
+      },
+      {
+        "prompt": "____ छायां ददाति।",
+        "target": "ह्रस्वतरुः",
+        "tiles": [
+          "ह्रस्वतरुः",
+          "तरुः",
+          "छाया",
+          "पर्णम्",
+          "वनम्",
+          "पवनः"
+        ],
+        "sentence": "ह्रस्वतरुः छायां ददाति।",
+        "english": "The short tree gives shade.",
+        "highlight": "ह्रस्वतरुः"
+      },
+      {
+        "prompt": "____ रम्यः अस्ति।",
+        "target": "सुह्रदसरः",
+        "tiles": [
+          "सुह्रदसरः",
+          "सरः",
+          "जलम्",
+          "हंसः",
+          "पद्मम्",
+          "खगः"
+        ],
+        "sentence": "सुह्रदसरः रम्यः अस्ति।",
+        "english": "The friendly lake is lovely.",
+        "highlight": "सुह्रदसरः"
+      },
+      {
+        "prompt": "____ मन्दं वहति।",
+        "target": "ह्रासपवनः",
+        "tiles": [
+          "ह्रासपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "ह्रासपवनः मन्दं वहति।",
+        "english": "The fading wind blows slowly.",
+        "highlight": "ह्रासपवनः"
+      },
+      {
+        "prompt": "____ मेघैः स्पृशति।",
+        "target": "सह्यागिरिः",
+        "tiles": [
+          "सह्यागिरिः",
+          "गिरिः",
+          "मेघः",
+          "शिखरम्",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "सह्यागिरिः मेघैः स्पृशति।",
+        "english": "The Sahya mountain touches the clouds.",
+        "highlight": "सह्यागिरिः"
+      },
+      {
+        "prompt": "____ शुष्कम् अस्ति।",
+        "target": "ह्यस्तनपुष्पम्",
+        "tiles": [
+          "ह्यस्तनपुष्पम्",
+          "पुष्पम्",
+          "पत्रम्",
+          "भ्रमरः",
+          "मधु",
+          "वनम्"
+        ],
+        "sentence": "ह्यस्तनपुष्पं शुष्कम् अस्ति।",
+        "english": "Yesterday’s flower is dry.",
+        "highlight": "ह्यस्तनपुष्पम्"
+      },
+      {
+        "prompt": "____ हरितम् अस्ति।",
+        "target": "सह्यवनम्",
+        "tiles": [
+          "सह्यवनम्",
+          "वनम्",
+          "वृक्षः",
+          "खगः",
+          "मृगः",
+          "पुष्पम्"
+        ],
+        "sentence": "सह्यवनं हरितम् अस्ति।",
+        "english": "The Sahya forest is green.",
+        "highlight": "सह्यवनम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "ह्युत्साहसिंहः",
+        "tiles": [
+          "ह्युत्साहसिंहः",
+          "सिंहः",
+          "गुहा",
+          "वनम्",
+          "मृगः",
+          "गिरिः"
+        ],
+        "sentence": "ह्युत्साहसिंहः गर्जति।",
+        "english": "The eager lion roars.",
+        "highlight": "ह्युत्साहसिंहः"
+      },
+      {
+        "prompt": "____ नृत्यति।",
+        "target": "ह्योत्सवमयूरः",
+        "tiles": [
+          "ह्योत्सवमयूरः",
+          "मयूरः",
+          "पुष्पम्",
+          "वनम्",
+          "गिरिः",
+          "खगः"
+        ],
+        "sentence": "ह्योत्सवमयूरः नृत्यति।",
+        "english": "The festival peacock dances.",
+        "highlight": "ह्योत्सवमयूरः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "प्रियह्यखगः",
+        "tiles": [
+          "प्रियह्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "प्रियह्यखगः कूजति।",
+        "english": "The dear bird sings.",
+        "highlight": "प्रियह्यखगः"
+      },
+      {
+        "prompt": "____ वने अस्ति।",
+        "target": "ह्येयपथः",
+        "tiles": [
+          "ह्येयपथः",
+          "पथः",
+          "वनम्",
+          "वृक्षः",
+          "मृगः",
+          "गिरिः"
+        ],
+        "sentence": "ह्येयपथः वने अस्ति।",
+        "english": "The path to take is in the forest.",
+        "highlight": "ह्येयपथः"
+      },
+      {
+        "prompt": "____ रोहति।",
+        "target": "ह्यूतबीजम्",
+        "tiles": [
+          "ह्यूतबीजम्",
+          "बीजम्",
+          "भूमिः",
+          "अङ्कुरः",
+          "जलम्",
+          "वृक्षः"
+        ],
+        "sentence": "ह्यूतबीजं रोहति।",
+        "english": "The sown seed sprouts.",
+        "highlight": "ह्यूतबीजम्"
+      },
+      {
+        "prompt": "____ शोभते।",
+        "target": "वस्त्रपुष्पम्",
+        "tiles": [
+          "वस्त्रपुष्पम्",
+          "पुष्पम्",
+          "वस्त्रम्",
+          "पत्रम्",
+          "भ्रमरः",
+          "वनम्"
+        ],
+        "sentence": "वस्त्रपुष्पं शोभते।",
+        "english": "The cloth-flower looks lovely.",
+        "highlight": "वस्त्रपुष्पम्"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "स्त्रीकमलम्",
+        "tiles": [
+          "स्त्रीकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "स्त्रीकमलं विकसति।",
+        "english": "The woman’s lotus blooms.",
+        "highlight": "स्त्रीकमलम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "शस्त्रमेघः",
+        "tiles": [
+          "शस्त्रमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "गिरिः",
+          "आकाशः"
+        ],
+        "sentence": "शस्त्रमेघः गर्जति।",
+        "english": "The weapon-cloud thunders.",
+        "highlight": "शस्त्रमेघः"
+      },
+      {
+        "prompt": "____ मधुरं कूजति।",
+        "target": "तन्त्रिखगः",
+        "tiles": [
+          "तन्त्रिखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "तन्त्रिखगः मधुरं कूजति।",
+        "english": "The string-bird sings sweetly.",
+        "highlight": "तन्त्रिखगः"
+      },
+      {
+        "prompt": "____ छायां ददाति।",
+        "target": "वस्त्रतरुः",
+        "tiles": [
+          "वस्त्रतरुः",
+          "तरुः",
+          "छाया",
+          "पर्णम्",
+          "वनम्",
+          "पवनः"
+        ],
+        "sentence": "वस्त्रतरुः छायां ददाति।",
+        "english": "The cloth-tree gives shade.",
+        "highlight": "वस्त्रतरुः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "सुस्त्रोतजलम्",
+        "tiles": [
+          "सुस्त्रोतजलम्",
+          "जलम्",
+          "झरः",
+          "गिरिः",
+          "शिला",
+          "पवनः"
+        ],
+        "sentence": "सुस्त्रोतजलं वहति।",
+        "english": "Fair stream-water flows.",
+        "highlight": "सुस्त्रोतजलम्"
+      },
+      {
+        "prompt": "____ शान्तम् अस्ति।",
+        "target": "अस्त्रवनम्",
+        "tiles": [
+          "अस्त्रवनम्",
+          "वनम्",
+          "वृक्षः",
+          "खगः",
+          "मृगः",
+          "पुष्पम्"
+        ],
+        "sentence": "अस्त्रवनं शान्तम् अस्ति।",
+        "english": "The arms-forest is peaceful.",
+        "highlight": "अस्त्रवनम्"
+      },
+      {
+        "prompt": "____ हरितः अस्ति।",
+        "target": "वस्त्रपल्लवः",
+        "tiles": [
+          "वस्त्रपल्लवः",
+          "पल्लवः",
+          "पत्रम्",
+          "वृक्षः",
+          "लता",
+          "पुष्पम्"
+        ],
+        "sentence": "वस्त्रपल्लवः हरितः अस्ति।",
+        "english": "The cloth-sprout is green.",
+        "highlight": "वस्त्रपल्लवः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "पङ्ककमलम्",
+        "tiles": [
+          "पङ्ककमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "पङ्ककमलं विकसति।",
+        "english": "The mud-lotus blooms.",
+        "highlight": "पङ्ककमलम्"
+      },
+      {
+        "prompt": "____ हरितम् अस्ति।",
+        "target": "अङ्कुरपत्रम्",
+        "tiles": [
+          "अङ्कुरपत्रम्",
+          "पत्रम्",
+          "अङ्कुरः",
+          "भूमिः",
+          "वृक्षः",
+          "जलम्"
+        ],
+        "sentence": "अङ्कुरपत्रं हरितम् अस्ति।",
+        "english": "The sprout-leaf is green.",
+        "highlight": "अङ्कुरपत्रम्"
+      },
+      {
+        "prompt": "____ सागरे श्रूयते।",
+        "target": "शङ्खध्वनिः",
+        "tiles": [
+          "शङ्खध्वनिः",
+          "शङ्खः",
+          "सागरः",
+          "पवनः",
+          "तटः",
+          "मत्स्यः"
+        ],
+        "sentence": "शङ्खध्वनिः सागरे श्रूयते।",
+        "english": "A conch sound is heard at the sea.",
+        "highlight": "शङ्खध्वनिः"
+      },
+      {
+        "prompt": "____ वने चरति।",
+        "target": "अङ्कमृगः",
+        "tiles": [
+          "अङ्कमृगः",
+          "मृगः",
+          "वनम्",
+          "तृणम्",
+          "शशकः",
+          "गिरिः"
+        ],
+        "sentence": "अङ्कमृगः वने चरति।",
+        "english": "The marked deer wanders in the forest.",
+        "highlight": "अङ्कमृगः"
+      },
+      {
+        "prompt": "____ मलिनम् अस्ति।",
+        "target": "पङ्किलजलम्",
+        "tiles": [
+          "पङ्किलजलम्",
+          "जलम्",
+          "पङ्कः",
+          "सरः",
+          "मत्स्यः",
+          "पवनः"
+        ],
+        "sentence": "पङ्किलजलं मलिनम् अस्ति।",
+        "english": "The muddy water is dirty.",
+        "highlight": "पङ्किलजलम्"
+      },
+      {
+        "prompt": "____ गुहायां वसति।",
+        "target": "शङ्कासिंहः",
+        "tiles": [
+          "शङ्कासिंहः",
+          "सिंहः",
+          "गुहा",
+          "वनम्",
+          "मृगः",
+          "गिरिः"
+        ],
+        "sentence": "शङ्कासिंहः गुहायां वसति।",
+        "english": "The wary lion lives in the cave.",
+        "highlight": "शङ्कासिंहः"
+      },
+      {
+        "prompt": "____ मातुः शेते।",
+        "target": "अङ्केशिशुः",
+        "tiles": [
+          "अङ्केशिशुः",
+          "शिशुः",
+          "माता",
+          "वत्सः",
+          "धेनुः",
+          "गृहम्"
+        ],
+        "sentence": "अङ्केशिशुः मातुः शेते।",
+        "english": "The lap-child sleeps with mother.",
+        "highlight": "अङ्केशिशुः"
+      },
+      {
+        "prompt": "____ हिमावृतम् अस्ति।",
+        "target": "तुङ्कशिखरम्",
+        "tiles": [
+          "तुङ्कशिखरम्",
+          "शिखरम्",
+          "हिमम्",
+          "गिरिः",
+          "मेघः",
+          "पवनः"
+        ],
+        "sentence": "तुङ्कशिखरं हिमावृतम् अस्ति।",
+        "english": "The lofty peak is snow-covered.",
+        "highlight": "तुङ्कशिखरम्"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "इच्छापुष्पम्",
+        "tiles": [
+          "इच्छापुष्पम्",
+          "पुष्पम्",
+          "पत्रम्",
+          "भ्रमरः",
+          "मधु",
+          "वनम्"
+        ],
+        "sentence": "इच्छापुष्पं विकसति।",
+        "english": "The wish-flower blooms.",
+        "highlight": "इच्छापुष्पम्"
+      },
+      {
+        "prompt": "____ आकाशे उड्डयति।",
+        "target": "गच्छत्खगः",
+        "tiles": [
+          "गच्छत्खगः",
+          "खगः",
+          "आकाशः",
+          "नीडम्",
+          "वृक्षः",
+          "पवनः"
+        ],
+        "sentence": "गच्छत्खगः आकाशे उड्डयति।",
+        "english": "The going bird flies in the sky.",
+        "highlight": "गच्छत्खगः"
+      },
+      {
+        "prompt": "____ उन्नतः अस्ति।",
+        "target": "उच्छ्रिततरुः",
+        "tiles": [
+          "उच्छ्रिततरुः",
+          "तरुः",
+          "वृक्षः",
+          "पर्णम्",
+          "वनम्",
+          "पवनः"
+        ],
+        "sentence": "उच्छ्रिततरुः उन्नतः अस्ति।",
+        "english": "The raised tree is tall.",
+        "highlight": "उच्छ्रिततरुः"
+      },
+      {
+        "prompt": "____ जले तरति।",
+        "target": "मत्स्यच्छत्रम्",
+        "tiles": [
+          "मत्स्यच्छत्रम्",
+          "मत्स्यः",
+          "जलम्",
+          "सरः",
+          "हंसः",
+          "पद्मम्"
+        ],
+        "sentence": "मत्स्यच्छत्रं जले तरति।",
+        "english": "A fish-umbrella floats on water.",
+        "highlight": "मत्स्यच्छत्रम्"
+      },
+      {
+        "prompt": "____ नृत्यति।",
+        "target": "इच्छामयूरः",
+        "tiles": [
+          "इच्छामयूरः",
+          "मयूरः",
+          "पुष्पम्",
+          "वनम्",
+          "गिरिः",
+          "खगः"
+        ],
+        "sentence": "इच्छामयूरः नृत्यति।",
+        "english": "The wish-peacock dances.",
+        "highlight": "इच्छामयूरः"
+      },
+      {
+        "prompt": "____ मेघैः आवृतः।",
+        "target": "आच्छादितगिरिः",
+        "tiles": [
+          "आच्छादितगिरिः",
+          "गिरिः",
+          "मेघः",
+          "शिखरम्",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "आच्छादितगिरिः मेघैः आवृतः।",
+        "english": "The covered mountain is wrapped in clouds.",
+        "highlight": "आच्छादितगिरिः"
+      },
+      {
+        "prompt": "____ पतति।",
+        "target": "उच्छिष्टफलम्",
+        "tiles": [
+          "उच्छिष्टफलम्",
+          "फलम्",
+          "वृक्षः",
+          "पत्रम्",
+          "भूमिः",
+          "पवनः"
+        ],
+        "sentence": "उच्छिष्टफलं पतति।",
+        "english": "Leftover fruit falls.",
+        "highlight": "उच्छिष्टफलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "स्वच्छपवनः",
+        "tiles": [
+          "स्वच्छपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "स्वच्छपवनः वहति।",
+        "english": "A clean wind blows.",
+        "highlight": "स्वच्छपवनः"
       },
       {
         "phase": "learn",

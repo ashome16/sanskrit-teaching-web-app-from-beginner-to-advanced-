@@ -507,6 +507,51 @@
 जोडो|ष्टै|ष्टै|ष्ट,ऐ,क,त,आ,इ|अष्टैः पुष्पैः माला अस्ति।|There is a garland of eight flowers.|ष्ट plus ऐ makes ष्टै.
 जोडो|ष्टो|ष्टो|ष्ट,ओ,क,त,आ,इ|इष्टो देवः पूज्यः अस्ति।|The beloved deity is to be worshipped.|ष्ट plus ओ makes ष्टो.
 जोडो|ष्टौ|ष्टौ|ष्ट,औ,क,त,आ,इ|अष्टौ दिशः सन्ति।|There are eight directions.|ष्ट plus औ makes ष्टौ.
+जोडो|ह्रा|ह्रा|ह्र,आ,क,त,इ,उ|ह्रादात् जलं पतति।|Water falls from the lake.|ह्र plus आ makes ह्रा.
+जोडो|ह्रि|ह्रि|ह्र,इ,क,त,आ,उ|ह्रस्वः बालकः हसति।|The short boy smiles.|ह्र plus इ makes ह्रि.
+जोडो|ह्री|ह्री|ह्र,ई,क,त,आ,इ|ह्रीमती बालिका पठति।|The modest girl reads.|ह्र plus ई makes ह्री.
+जोडो|ह्रु|ह्रु|ह्र,उ,क,त,आ,इ|ह्रुदये स्नेहः अस्ति।|There is affection in the heart.|ह्र plus उ makes ह्रु.
+जोडो|ह्रू|ह्रू|ह्र,ऊ,क,त,आ,इ|ह्रूतः शब्दः श्रूयते।|A faint sound is heard.|ह्र plus ऊ makes ह्रू.
+जोडो|ह्रे|ह्रे|ह्र,ए,क,त,आ,इ|ह्रेपते बालकः शीते।|The boy shivers in the cold.|ह्र plus ए makes ह्रे.
+जोडो|ह्रै|ह्रै|ह्र,ऐ,क,त,आ,इ|मह्रैः पुष्पैः माला अस्ति।|There is a garland with bright flowers.|ह्र plus ऐ makes ह्रै.
+जोडो|ह्रो|ह्रो|ह्र,ओ,क,त,आ,इ|ह्रोडं फलं पतति।|A plump fruit falls.|ह्र plus ओ makes ह्रो.
+जोडो|ह्रौ|ह्रौ|ह्र,औ,क,त,आ,इ|ह्रौद्रं मेघं पश्यति।|He sees a fierce cloud.|ह्र plus औ makes ह्रौ.
+जोडो|ह्या|ह्या|ह्य,आ,क,त,इ,उ|सह्याचलः उन्नतः अस्ति।|The Sahya mountain is tall.|ह्य plus आ makes ह्या.
+जोडो|ह्यि|ह्यि|ह्य,इ,क,त,आ,उ|ह्यिष्ठं पुष्पं विकसति।|The dearest flower blooms.|ह्य plus इ makes ह्यि.
+जोडो|ह्यी|ह्यी|ह्य,ई,क,त,आ,इ|ह्यीनपत्रं भूमौ पतति।|A depleted leaf falls on the ground.|ह्य plus ई makes ह्यी.
+जोडो|ह्यु|ह्यु|ह्य,उ,क,त,आ,इ|ह्युत्साहः बालके अस्ति।|There is eager enthusiasm in the child.|ह्य plus उ makes ह्यु.
+जोडो|ह्यू|ह्यू|ह्य,ऊ,क,त,आ,इ|ह्यूतबीजं भूमौ रोहति।|The sown seed sprouts in the ground.|ह्य plus ऊ makes ह्यू.
+जोडो|ह्ये|ह्ये|ह्य,ए,क,त,आ,इ|ह्येयमार्गः सरलः अस्ति।|The path to be taken is simple.|ह्य plus ए makes ह्ये.
+जोडो|ह्यै|ह्यै|ह्य,ऐ,क,त,आ,इ|ह्यैः खगैः वनं कूजति।|With dear birds the forest sings.|ह्य plus ऐ makes ह्यै.
+जोडो|ह्यो|ह्यो|ह्य,ओ,क,त,आ,इ|ह्योत्सवे मयूरः नृत्यति।|At the festival the peacock dances.|ह्य plus ओ makes ह्यो.
+जोडो|ह्यौ|ह्यौ|ह्य,औ,क,त,आ,इ|ह्यौ पुष्पौ विकसतः।|Two dear flowers bloom.|ह्य plus औ makes ह्यौ.
+जोडो|स्त्रा|स्त्रा|स्त्र,आ,क,त,इ,उ|वस्त्राणि शुचि सन्ति।|The clothes are clean.|स्त्र plus आ makes स्त्रा.
+जोडो|स्त्रि|स्त्रि|स्त्र,इ,क,त,आ,उ|तन्त्रिणी वीणां वादयति।|The string-player plays the veena.|स्त्र plus इ makes स्त्रि.
+जोडो|स्त्री|स्त्री|स्त्र,ई,क,त,आ,इ|स्त्री पुष्पं ददाति।|The woman gives a flower.|स्त्र plus ई makes स्त्री.
+जोडो|स्त्रु|स्त्रु|स्त्र,उ,क,त,आ,इ|शस्त्रुः योद्धा तिष्ठति।|The armed warrior stands.|स्त्र plus उ makes स्त्रु.
+जोडो|स्त्रू|स्त्रू|स्त्र,ऊ,क,त,आ,इ|शस्त्रू पलायतः।|Two weapons-bearers flee.|स्त्र plus ऊ makes स्त्रू.
+जोडो|स्त्रे|स्त्रे|स्त्र,ए,क,त,आ,इ|वस्त्रे पुष्पं शोभते।|A flower looks lovely on the cloth.|स्त्र plus ए makes स्त्रे.
+जोडो|स्त्रै|स्त्रै|स्त्र,ऐ,क,त,आ,इ|वस्त्रैः बालकः आच्छादितः।|The boy is covered with clothes.|स्त्र plus ऐ makes स्त्रै.
+जोडो|स्त्रो|स्त्रो|स्त्र,ओ,क,त,आ,इ|शस्त्रोद्याने खगः कूजति।|A bird sings in the arms-garden.|स्त्र plus ओ makes स्त्रो.
+जोडो|स्त्रौ|स्त्रौ|स्त्र,औ,क,त,आ,इ|वस्त्रौ शुभ्रौ स्तः।|The two cloths are white.|स्त्र plus औ makes स्त्रौ.
+जोडो|ङ्का|ङ्का|ङ्क,आ,क,त,इ,उ|पङ्कात् कमलं विकसति।|A lotus blooms from the mud.|ङ्क plus आ makes ङ्का.
+जोडो|ङ्कि|ङ्कि|ङ्क,इ,क,त,आ,उ|अङ्कितं पत्रं अस्ति।|There is a marked leaf.|ङ्क plus इ makes ङ्कि.
+जोडो|ङ्की|ङ्की|ङ्क,ई,क,त,आ,इ|शङ्की मृगः पलायते।|The timid deer flees.|ङ्क plus ई makes ङ्की.
+जोडो|ङ्कु|ङ्कु|ङ्क,उ,क,त,आ,इ|अङ्कुरः भूमौ रोहति।|A sprout grows in the ground.|ङ्क plus उ makes ङ्कु.
+जोडो|ङ्कू|ङ्कू|ङ्क,ऊ,क,त,आ,इ|पङ्कू जलं मलिनम् अस्ति।|The muddy water is dirty.|ङ्क plus ऊ makes ङ्कू.
+जोडो|ङ्के|ङ्के|ङ्क,ए,क,त,आ,इ|अङ्के शिशुः शेते।|The child sleeps in the lap.|ङ्क plus ए makes ङ्के.
+जोडो|ङ्कै|ङ्कै|ङ्क,ऐ,क,त,आ,इ|शङ्कैः रहितः सिंहः।|The lion is without fears.|ङ्क plus ऐ makes ङ्कै.
+जोडो|ङ्को|ङ्को|ङ्क,ओ,क,त,आ,इ|पङ्कोद्भवं कमलम्।|The lotus is born of mud.|ङ्क plus ओ makes ङ्को.
+जोडो|ङ्कौ|ङ्कौ|ङ्क,औ,क,त,आ,इ|अङ्कौ हस्तयोः स्तः।|There are marks on both hands.|ङ्क plus औ makes ङ्कौ.
+जोडो|च्छा|च्छा|च्छ,आ,क,त,इ,उ|इच्छा बलवती अस्ति।|Desire is strong.|च्छ plus आ makes च्छा.
+जोडो|च्छि|च्छि|च्छ,इ,क,त,आ,उ|विच्छिन्नं पत्रं पतति।|A torn leaf falls.|च्छ plus इ makes च्छि.
+जोडो|च्छी|च्छी|च्छ,ई,क,त,आ,इ|इच्छी फलं खादितुम्।|He wishes to eat fruit.|च्छ plus ई makes च्छी.
+जोडो|च्छु|च्छु|च्छ,उ,क,त,आ,इ|मत्स्यच्छुरा जले तरति।|A fish-scale creature swims in water.|च्छ plus उ makes च्छु.
+जोडो|च्छू|च्छू|च्छ,ऊ,क,त,आ,इ|च्छूतः शब्दः श्रूयते।|A soft sound is heard.|च्छ plus ऊ makes च्छू.
+जोडो|च्छे|च्छे|च्छ,ए,क,त,आ,इ|इच्छेयं पुस्तकम्।|I wish for this book.|च्छ plus ए makes च्छे.
+जोडो|च्छै|च्छै|च्छ,ऐ,क,त,आ,इ|इच्छैः रहितः मुनिः।|The sage is free of desires.|च्छ plus ऐ makes च्छै.
+जोडो|च्छो|च्छो|च्छ,ओ,क,त,आ,इ|उच्छोषः पत्राणां भवति।|There is drying of the leaves.|च्छ plus ओ makes च्छो.
+जोडो|च्छौ|च्छौ|च्छ,औ,क,त,आ,इ|इच्छौ फलौ खादितुम्।|He wishes to eat two fruits.|च्छ plus औ makes च्छौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
