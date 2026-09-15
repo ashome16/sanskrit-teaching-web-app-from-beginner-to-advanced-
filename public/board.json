@@ -947,6 +947,86 @@
         "phase": "jodo"
       },
       {
+        "target": "कः",
+        "tiles": [
+          "क",
+          "अः",
+          "ख",
+          "ग",
+          "आ",
+          "उ"
+        ],
+        "english": "The boy reads.",
+        "explanation": "क plus अः makes कः.",
+        "sentence": "बालकः पठति।",
+        "highlight": "कः",
+        "phase": "jodo"
+      },
+      {
+        "target": "मः",
+        "tiles": [
+          "म",
+          "अः",
+          "क",
+          "प",
+          "आ",
+          "उ"
+        ],
+        "english": "Rama goes.",
+        "explanation": "म plus अः makes मः.",
+        "sentence": "रामः गच्छति।",
+        "highlight": "मः",
+        "phase": "jodo"
+      },
+      {
+        "target": "सः",
+        "tiles": [
+          "स",
+          "अः",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "He smiles.",
+        "explanation": "स plus अः makes सः.",
+        "sentence": "सः हसति।",
+        "highlight": "सः",
+        "phase": "jodo"
+      },
+      {
+        "target": "पः",
+        "tiles": [
+          "प",
+          "अः",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "The king protects.",
+        "explanation": "प plus अः makes पः.",
+        "sentence": "नृपः पालयति।",
+        "highlight": "पः",
+        "phase": "jodo"
+      },
+      {
+        "target": "नः",
+        "tiles": [
+          "न",
+          "अः",
+          "प",
+          "क",
+          "आ",
+          "उ"
+        ],
+        "english": "A person lives here.",
+        "explanation": "न plus अः makes नः.",
+        "sentence": "जनः अत्र वसति।",
+        "highlight": "नः",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -2915,6 +2995,126 @@
         "sentence": "पवनः वहति।",
         "english": "The wind blows.",
         "highlight": "पवनः"
+      },
+      {
+        "prompt": "____ वृक्षात् पतति।",
+        "target": "पर्णम्",
+        "tiles": [
+          "पर्णम्",
+          "फलम्",
+          "पुष्पम्",
+          "मूलम्",
+          "वनम्",
+          "जलम्"
+        ],
+        "sentence": "पर्णम् वृक्षात् पतति।",
+        "english": "A leaf falls from the tree.",
+        "highlight": "पर्णम्"
+      },
+      {
+        "prompt": "____ भूमौ अस्ति।",
+        "target": "मूलम्",
+        "tiles": [
+          "मूलम्",
+          "शाखा",
+          "पर्णम्",
+          "वृक्षः",
+          "वनम्",
+          "जलम्"
+        ],
+        "sentence": "मूलम् भूमौ अस्ति।",
+        "english": "The root is in the ground.",
+        "highlight": "मूलम्"
+      },
+      {
+        "prompt": "____ उपरि अस्ति।",
+        "target": "शाखा",
+        "tiles": [
+          "शाखा",
+          "मूलम्",
+          "पर्णम्",
+          "वृक्षः",
+          "वनम्",
+          "पर्वतः"
+        ],
+        "sentence": "शाखा उपरि अस्ति।",
+        "english": "The branch is above.",
+        "highlight": "शाखा"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "सरसिजम्",
+        "tiles": [
+          "सरसिजम्",
+          "पुष्पम्",
+          "कमलम्",
+          "पर्णम्",
+          "वनम्",
+          "जलम्"
+        ],
+        "sentence": "सरसिजम् विकसति।",
+        "english": "The lotus blooms.",
+        "highlight": "सरसिजम्"
+      },
+      {
+        "prompt": "____ जले पूर्णः।",
+        "target": "तडागः",
+        "tiles": [
+          "तडागः",
+          "सरः",
+          "सागरः",
+          "गिरिः",
+          "वनम्",
+          "जलम्"
+        ],
+        "sentence": "तडागः जले पूर्णः।",
+        "english": "The pond is full of water.",
+        "highlight": "तडागः"
+      },
+      {
+        "prompt": "____ उच्चः अस्ति।",
+        "target": "गिरिः",
+        "tiles": [
+          "गिरिः",
+          "पर्वतः",
+          "तडागः",
+          "वनम्",
+          "मेघः",
+          "जलम्"
+        ],
+        "sentence": "गिरिः उच्चः अस्ति।",
+        "english": "The mountain is tall.",
+        "highlight": "गिरिः"
+      },
+      {
+        "prompt": "____ शुष्का अस्ति।",
+        "target": "मरुभूमिः",
+        "tiles": [
+          "मरुभूमिः",
+          "वनम्",
+          "तडागः",
+          "गिरिः",
+          "मेघः",
+          "पर्वतः"
+        ],
+        "sentence": "मरुभूमिः शुष्का अस्ति।",
+        "english": "The desert is dry.",
+        "highlight": "मरुभूमिः"
+      },
+      {
+        "prompt": "____ आगच्छति।",
+        "target": "वर्षा",
+        "tiles": [
+          "वर्षा",
+          "मेघः",
+          "पवनः",
+          "हिमम्",
+          "वनम्",
+          "सूर्यः"
+        ],
+        "sentence": "वर्षा आगच्छति।",
+        "english": "Rain comes.",
+        "highlight": "वर्षा"
       },
       {
         "phase": "learn",
