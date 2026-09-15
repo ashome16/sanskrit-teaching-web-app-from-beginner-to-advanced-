@@ -84,6 +84,15 @@
 जोडो|दै|दै|द,ऐ,क,त,आ,उ|दैवं बलवत् अस्ति।|Fate is strong.|द plus ऐ makes दै.
 जोडो|दो|दो|द,ओ,क,त,आ,उ|दोषः न अस्ति।|There is no fault.|द plus ओ makes दो.
 जोडो|दौ|दौ|द,औ,क,त,आ,उ|दौर्बल्यं त्यज।|Give up weakness.|द plus औ makes दौ.
+जोडो|बा|बा|ब,आ,क,त,इ,उ|बालकः पठति।|The boy reads.|ब plus आ makes बा.
+जोडो|बि|बि|ब,इ,क,त,आ,उ|बिन्दुः अस्ति।|There is a drop.|ब plus इ makes बि.
+जोडो|बी|बी|ब,ई,क,त,आ,उ|बीजं भूमौ अस्ति।|The seed is in the ground.|ब plus ई makes बी.
+जोडो|बु|बु|ब,उ,क,त,आ,इ|बुद्धिः शुभा अस्ति।|Intellect is good.|ब plus उ makes बु.
+जोडो|बू|बू|ब,ऊ,क,त,आ,इ|खर्बूजं मधुरम् अस्ति।|The melon is sweet.|ब plus ऊ makes बू.
+जोडो|बे|बे|ब,ए,क,त,आ,उ|कुबेरः धनं रक्षति।|Kubera protects wealth.|ब plus ए makes बे.
+जोडो|बै|बै|ब,ऐ,क,त,आ,उ|बैलः क्षेत्रे चरति।|The ox grazes in the field.|ब plus ऐ makes बै.
+जोडो|बो|बो|ब,ओ,क,त,आ,उ|बोधः आगच्छति।|Understanding comes.|ब plus ओ makes बो.
+जोडो|बौ|बौ|ब,औ,क,त,आ,उ|बौद्धः मन्दिरं गच्छति।|The Buddhist goes to the temple.|ब plus औ makes बौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.

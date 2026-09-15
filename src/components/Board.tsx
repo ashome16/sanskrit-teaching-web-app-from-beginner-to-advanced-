@@ -184,12 +184,13 @@ function findPrashnaSectionStart(puzzles: BoardPuzzle[]): number {
 const CONSONANT_ROW_CHIP_DEFS: { id: string; consonant: string }[] = [
   { id: 'त', consonant: 'त' },
   { id: 'द', consonant: 'द' },
+  { id: 'ब', consonant: 'ब' },
 ];
 
 const CONSONANT_ROW_MATRA = '[\u093E\u093F\u0940\u0941\u0942\u0943\u0947\u0948\u094B\u094C\u0902\u0903]';
 
 function findConsonantRowStart(puzzles: BoardPuzzle[], consonant: string): number {
-  const re = new RegExp(`^${consonant}${CONSONANT_ROW_MATRA}`);
+  const re = new RegExp(`^${consonant}${CONSONANT_ROW_MATRA}$`);
   return puzzles.findIndex((p) => {
     if (isPrashnaPuzzle(p)) return false;
     const t = (p.target || '').normalize('NFC');

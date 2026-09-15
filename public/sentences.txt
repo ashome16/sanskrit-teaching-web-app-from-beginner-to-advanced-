@@ -167,3 +167,13 @@
 शिला दृढा अस्ति।|The rock is firm.|शिला|nature
 लोष्ठः भूमौ अस्ति।|A clod is on the ground.|लोष्ठः|nature
 धूलिः वायुना उड्डयति।|Dust flies with the wind.|धूलिः|nature
+नीडम् वृक्षे अस्ति।|The nest is on the tree.|नीडम्|nature
+अण्डम् नीडे अस्ति।|The egg is in the nest.|अण्डम्|nature
+पक्षः विस्तृतः अस्ति।|The wing is broad.|पक्षः|nature
+चञ्चुः तीक्ष्णा अस्ति।|The beak is sharp.|चञ्चुः|nature
+लोमशः पशुः अस्ति।|The furry one is an animal.|लोमशः|nature
+मृत्तिका मृदु अस्ति।|Clay is soft.|मृत्तिका|nature
+पांसुः वायुना उड्डयति।|Dust flies with the wind.|पांसुः|nature
+कर्दमः मार्गे अस्ति।|Mud is on the path.|कर्दमः|nature
+शैवालम् जले अस्ति।|Algae is in the water.|शैवालम्|nature
+शैत्यम् रात्रौ अस्ति।|Coldness is at night.|शैत्यम्|nature

@@ -1315,6 +1315,150 @@
         "phase": "jodo"
       },
       {
+        "target": "बा",
+        "tiles": [
+          "ब",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The boy reads.",
+        "explanation": "ब plus आ makes बा.",
+        "sentence": "बालकः पठति।",
+        "highlight": "बा",
+        "phase": "jodo"
+      },
+      {
+        "target": "बि",
+        "tiles": [
+          "ब",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "There is a drop.",
+        "explanation": "ब plus इ makes बि.",
+        "sentence": "बिन्दुः अस्ति।",
+        "highlight": "बि",
+        "phase": "jodo"
+      },
+      {
+        "target": "बी",
+        "tiles": [
+          "ब",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "The seed is in the ground.",
+        "explanation": "ब plus ई makes बी.",
+        "sentence": "बीजं भूमौ अस्ति।",
+        "highlight": "बी",
+        "phase": "jodo"
+      },
+      {
+        "target": "बु",
+        "tiles": [
+          "ब",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Intellect is good.",
+        "explanation": "ब plus उ makes बु.",
+        "sentence": "बुद्धिः शुभा अस्ति।",
+        "highlight": "बु",
+        "phase": "jodo"
+      },
+      {
+        "target": "बू",
+        "tiles": [
+          "ब",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The melon is sweet.",
+        "explanation": "ब plus ऊ makes बू.",
+        "sentence": "खर्बूजं मधुरम् अस्ति।",
+        "highlight": "बू",
+        "phase": "jodo"
+      },
+      {
+        "target": "बे",
+        "tiles": [
+          "ब",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "Kubera protects wealth.",
+        "explanation": "ब plus ए makes बे.",
+        "sentence": "कुबेरः धनं रक्षति।",
+        "highlight": "बे",
+        "phase": "jodo"
+      },
+      {
+        "target": "बै",
+        "tiles": [
+          "ब",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "The ox grazes in the field.",
+        "explanation": "ब plus ऐ makes बै.",
+        "sentence": "बैलः क्षेत्रे चरति।",
+        "highlight": "बै",
+        "phase": "jodo"
+      },
+      {
+        "target": "बो",
+        "tiles": [
+          "ब",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "Understanding comes.",
+        "explanation": "ब plus ओ makes बो.",
+        "sentence": "बोधः आगच्छति।",
+        "highlight": "बो",
+        "phase": "jodo"
+      },
+      {
+        "target": "बौ",
+        "tiles": [
+          "ब",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "The Buddhist goes to the temple.",
+        "explanation": "ब plus औ makes बौ.",
+        "sentence": "बौद्धः मन्दिरं गच्छति।",
+        "highlight": "बौ",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -3703,6 +3847,156 @@
         "sentence": "धूलिः वायुना उड्डयति।",
         "english": "Dust flies with the wind.",
         "highlight": "धूलिः"
+      },
+      {
+        "prompt": "____ वृक्षे अस्ति।",
+        "target": "नीडम्",
+        "tiles": [
+          "नीडम्",
+          "अण्डम्",
+          "पक्षः",
+          "वृक्षः",
+          "खगः",
+          "वनम्"
+        ],
+        "sentence": "नीडम् वृक्षे अस्ति।",
+        "english": "The nest is on the tree.",
+        "highlight": "नीडम्"
+      },
+      {
+        "prompt": "____ नीडे अस्ति।",
+        "target": "अण्डम्",
+        "tiles": [
+          "अण्डम्",
+          "नीडम्",
+          "पक्षः",
+          "चञ्चुः",
+          "फलम्",
+          "बीजम्"
+        ],
+        "sentence": "अण्डम् नीडे अस्ति।",
+        "english": "The egg is in the nest.",
+        "highlight": "अण्डम्"
+      },
+      {
+        "prompt": "____ विस्तृतः अस्ति।",
+        "target": "पक्षः",
+        "tiles": [
+          "पक्षः",
+          "चञ्चुः",
+          "नीडम्",
+          "खगः",
+          "वृक्षः",
+          "वनम्"
+        ],
+        "sentence": "पक्षः विस्तृतः अस्ति।",
+        "english": "The wing is broad.",
+        "highlight": "पक्षः"
+      },
+      {
+        "prompt": "____ तीक्ष्णा अस्ति।",
+        "target": "चञ्चुः",
+        "tiles": [
+          "चञ्चुः",
+          "पक्षः",
+          "नीडम्",
+          "खगः",
+          "अण्डम्",
+          "वनम्"
+        ],
+        "sentence": "चञ्चुः तीक्ष्णा अस्ति।",
+        "english": "The beak is sharp.",
+        "highlight": "चञ्चुः"
+      },
+      {
+        "prompt": "____ पशुः अस्ति।",
+        "target": "लोमशः",
+        "tiles": [
+          "लोमशः",
+          "मृगः",
+          "गजः",
+          "अश्वः",
+          "सिंहः",
+          "खगः"
+        ],
+        "sentence": "लोमशः पशुः अस्ति।",
+        "english": "The furry one is an animal.",
+        "highlight": "लोमशः"
+      },
+      {
+        "prompt": "____ मृदु अस्ति।",
+        "target": "मृत्तिका",
+        "tiles": [
+          "मृत्तिका",
+          "कर्दमः",
+          "पांसुः",
+          "शिला",
+          "जलम्",
+          "वनम्"
+        ],
+        "sentence": "मृत्तिका मृदु अस्ति।",
+        "english": "Clay is soft.",
+        "highlight": "मृत्तिका"
+      },
+      {
+        "prompt": "____ वायुना उड्डयति।",
+        "target": "पांसुः",
+        "tiles": [
+          "पांसुः",
+          "मृत्तिका",
+          "कर्दमः",
+          "पवनः",
+          "मेघः",
+          "वनम्"
+        ],
+        "sentence": "पांसुः वायुना उड्डयति।",
+        "english": "Dust flies with the wind.",
+        "highlight": "पांसुः"
+      },
+      {
+        "prompt": "____ मार्गे अस्ति।",
+        "target": "कर्दमः",
+        "tiles": [
+          "कर्दमः",
+          "मृत्तिका",
+          "पांसुः",
+          "जलम्",
+          "शिला",
+          "वनम्"
+        ],
+        "sentence": "कर्दमः मार्गे अस्ति।",
+        "english": "Mud is on the path.",
+        "highlight": "कर्दमः"
+      },
+      {
+        "prompt": "____ जले अस्ति।",
+        "target": "शैवालम्",
+        "tiles": [
+          "शैवालम्",
+          "कमलम्",
+          "सरः",
+          "नदी",
+          "मत्स्यः",
+          "वनम्"
+        ],
+        "sentence": "शैवालम् जले अस्ति।",
+        "english": "Algae is in the water.",
+        "highlight": "शैवालम्"
+      },
+      {
+        "prompt": "____ रात्रौ अस्ति।",
+        "target": "शैत्यम्",
+        "tiles": [
+          "शैत्यम्",
+          "शीतम्",
+          "हिमम्",
+          "उष्णम्",
+          "आतपः",
+          "वनम्"
+        ],
+        "sentence": "शैत्यम् रात्रौ अस्ति।",
+        "english": "Coldness is at night.",
+        "highlight": "शैत्यम्"
       },
       {
         "phase": "learn",
