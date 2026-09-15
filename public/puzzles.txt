@@ -597,6 +597,51 @@
 जोडो|त्तै|त्तै|त्त,ऐ,क,त,आ,इ|उत्तैः वृक्षैः वनं शोभते।|The forest looks lovely with tall trees.|त्त plus ऐ makes त्तै.
 जोडो|त्तो|त्तो|त्त,ओ,क,त,आ,इ|पत्तो हरितः अस्ति।|The leaf is green.|त्त plus ओ makes त्तो.
 जोडो|त्तौ|त्तौ|त्त,औ,क,त,आ,इ|पत्तौ द्वौ हरितौ स्तः।|The two leaves are green.|त्त plus औ makes त्तौ.
+जोडो|द्धा|द्धा|द्ध,आ,क,त,इ,उ|बुद्धा माता पठति।|The wise mother reads.|द्ध plus आ makes द्धा.
+जोडो|द्धि|द्धि|द्ध,इ,क,त,आ,उ|बुद्धिः बालके अस्ति।|There is intelligence in the child.|द्ध plus इ makes द्धि.
+जोडो|द्धी|द्धी|द्ध,ई,क,त,आ,इ|वृद्धी वृक्षौ रोहतः।|Two grown trees rise.|द्ध plus ई makes द्धी.
+जोडो|द्धु|द्धु|द्ध,उ,क,त,आ,इ|शुद्धुं जलं पिबति।|He drinks pure water.|द्ध plus उ makes द्धु.
+जोडो|द्धू|द्धू|द्ध,ऊ,क,त,आ,इ|वृद्धू द्वौ स्तः।|There are two elders.|द्ध plus ऊ makes द्धू.
+जोडो|द्धे|द्धे|द्ध,ए,क,त,आ,इ|बुद्धे हृदये शान्तिः अस्ति।|In the wise heart there is peace.|द्ध plus ए makes द्धे.
+जोडो|द्धै|द्धै|द्ध,ऐ,क,त,आ,इ|बुद्धैः सह बालकः वसति।|The boy lives with the wise.|द्ध plus ऐ makes द्धै.
+जोडो|द्धो|द्धो|द्ध,ओ,क,त,आ,इ|बुद्धो मुनिः तिष्ठति।|The wise sage stands.|द्ध plus ओ makes द्धो.
+जोडो|द्धौ|द्धौ|द्ध,औ,क,त,आ,इ|बुद्धौ शिष्यौ पठतः।|Two wise students read.|द्ध plus औ makes द्धौ.
+जोडो|ब्धा|ब्धा|ब्ध,आ,क,त,इ,उ|लब्धा विद्या शुभा अस्ति।|The obtained knowledge is auspicious.|ब्ध plus आ makes ब्धा.
+जोडो|ब्धि|ब्धि|ब्ध,इ,क,त,आ,उ|लब्धिः फलं ददाति।|Gain gives fruit.|ब्ध plus इ makes ब्धि.
+जोडो|ब्धी|ब्धी|ब्ध,ई,क,त,आ,इ|लब्धी ज्ञानं प्रकाशते।|Obtained knowledge shines.|ब्ध plus ई makes ब्धी.
+जोडो|ब्धु|ब्धु|ब्ध,उ,क,त,आ,इ|लब्धुं बालकः इच्छति।|The boy wishes to obtain.|ब्ध plus उ makes ब्धु.
+जोडो|ब्धू|ब्धू|ब्ध,ऊ,क,त,आ,इ|लब्धू द्वौ स्तः।|There are two gains.|ब्ध plus ऊ makes ब्धू.
+जोडो|ब्धे|ब्धे|ब्ध,ए,क,त,आ,इ|लब्धे फले हर्षः अस्ति।|In the obtained fruit there is joy.|ब्ध plus ए makes ब्धे.
+जोडो|ब्धै|ब्धै|ब्ध,ऐ,क,त,आ,इ|लब्धैः पुष्पैः माला अस्ति।|There is a garland of obtained flowers.|ब्ध plus ऐ makes ब्धै.
+जोडो|ब्धो|ब्धो|ब्ध,ओ,क,त,आ,इ|लब्धो अर्थः स्पष्टः अस्ति।|The obtained meaning is clear.|ब्ध plus ओ makes ब्धो.
+जोडो|ब्धौ|ब्धौ|ब्ध,औ,क,त,आ,इ|लब्धौ फलौ मधुरौ स्तः।|Two obtained fruits are sweet.|ब्ध plus औ makes ब्धौ.
+जोडो|म्भा|म्भा|म्भ,आ,क,त,इ,उ|कुम्भात् जलं पतति।|Water falls from the pot.|म्भ plus आ makes म्भा.
+जोडो|म्भि|म्भि|म्भ,इ,क,त,आ,उ|कुम्भिनि जलं अस्ति।|There is water in the pot.|म्भ plus इ makes म्भि.
+जोडो|म्भी|म्भी|म्भ,ई,क,त,आ,इ|गम्भीरा सरः शीतला अस्ति।|The deep lake is cool.|म्भ plus ई makes म्भी.
+जोडो|म्भु|म्भु|म्भ,उ,क,त,आ,इ|शम्भुं बालकः नमति।|The boy bows to Shambhu.|म्भ plus उ makes म्भु.
+जोडो|म्भू|म्भू|म्भ,ऊ,क,त,आ,इ|कुम्भू द्वौ स्तः।|There are two pots.|म्भ plus ऊ makes म्भू.
+जोडो|म्भे|म्भे|म्भ,ए,क,त,आ,इ|कुम्भे जलम् अस्ति।|There is water in the pot.|म्भ plus ए makes म्भे.
+जोडो|म्भै|म्भै|म्भ,ऐ,क,त,आ,इ|कुम्भैः जलं वहति।|He carries water with pots.|म्भ plus ऐ makes म्भै.
+जोडो|म्भो|म्भो|म्भ,ओ,क,त,आ,इ|शम्भोः मन्दिरं शोभते।|Shambhu’s temple looks lovely.|म्भ plus ओ makes म्भो.
+जोडो|म्भौ|म्भौ|म्भ,औ,क,त,आ,इ|कुम्भौ द्वौ स्तः।|Two pots are there.|म्भ plus औ makes म्भौ.
+जोडो|ञ्जा|ञ्जा|ञ्ज,आ,क,त,इ,उ|सञ्जातं पुष्पं विकसति।|A newly born flower blooms.|ञ्ज plus आ makes ञ्जा.
+जोडो|ञ्जि|ञ्जि|ञ्ज,इ,क,त,आ,उ|अञ्जितं नेत्रं शोभते।|The anointed eye looks lovely.|ञ्ज plus इ makes ञ्जि.
+जोडो|ञ्जी|ञ्जी|ञ्ज,ई,क,त,आ,इ|कुञ्जी द्वारे अस्ति।|The key is at the door.|ञ्ज plus ई makes ञ्जी.
+जोडो|ञ्जु|ञ्जु|ञ्ज,उ,क,त,आ,इ|मञ्जु गीतं गायति।|He sings a sweet song.|ञ्ज plus उ makes ञ्जु.
+जोडो|ञ्जू|ञ्जू|ञ्ज,ऊ,क,त,आ,इ|मञ्जू द्वौ गायतः।|Two sing sweetly.|ञ्ज plus ऊ makes ञ्जू.
+जोडो|ञ्जे|ञ्जे|ञ्ज,ए,क,त,आ,इ|मञ्जे उद्याने खगः कूजति।|In the lovely garden a bird calls.|ञ्ज plus ए makes ञ्जे.
+जोडो|ञ्जै|ञ्जै|ञ्ज,ऐ,क,त,आ,इ|मञ्जैः पुष्पैः माला अस्ति।|There is a garland of lovely flowers.|ञ्ज plus ऐ makes ञ्जै.
+जोडो|ञ्जो|ञ्जो|ञ्ज,ओ,क,त,आ,इ|मञ्जो गायकः अस्ति।|He is a sweet singer.|ञ्ज plus ओ makes ञ्जो.
+जोडो|ञ्जौ|ञ्जौ|ञ्ज,औ,क,त,आ,इ|मञ्जौ खगौ कूजतः।|Two lovely birds call.|ञ्ज plus औ makes ञ्जौ.
+जोडो|ञ्चा|ञ्चा|ञ्च,आ,क,त,इ,उ|पञ्चाशत् खगाः सन्ति।|There are fifty birds.|ञ्च plus आ makes ञ्चा.
+जोडो|ञ्चि|ञ्चि|ञ्च,इ,क,त,आ,उ|अञ्चितं शिरः नमति।|The bowed head salutes.|ञ्च plus इ makes ञ्चि.
+जोडो|ञ्ची|ञ्ची|ञ्च,ई,क,त,आ,इ|काञ्ची नगरी शोभते।|The city of Kanchi looks lovely.|ञ्च plus ई makes ञ्ची.
+जोडो|ञ्चु|ञ्चु|ञ्च,उ,क,त,आ,इ|मुञ्चति बालकः खगम्।|The boy releases the bird.|ञ्च plus उ makes ञ्चु.
+जोडो|ञ्चू|ञ्चू|ञ्च,ऊ,क,त,आ,इ|मुञ्चू द्वौ खगौ।|Two release birds.|ञ्च plus ऊ makes ञ्चू.
+जोडो|ञ्चे|ञ्चे|ञ्च,ए,क,त,आ,इ|मञ्चे बालकः उपविशति।|The boy sits on the platform.|ञ्च plus ए makes ञ्चे.
+जोडो|ञ्चै|ञ्चै|ञ्च,ऐ,क,त,आ,इ|पञ्चैः पुष्पैः माला अस्ति।|There is a garland of five flowers.|ञ्च plus ऐ makes ञ्चै.
+जोडो|ञ्चो|ञ्चो|ञ्च,ओ,क,त,आ,इ|मञ्चो उच्चः अस्ति।|The platform is high.|ञ्च plus ओ makes ञ्चो.
+जोडो|ञ्चौ|ञ्चौ|ञ्च,औ,क,त,आ,इ|मञ्चौ द्वौ स्तः।|Two platforms are there.|ञ्च plus औ makes ञ्चौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../styles/board.css';
 import { iconForExampleWord } from '../data/exampleIcons';
 import { playPronunciation } from '../utils/pronunciation';
@@ -241,6 +241,11 @@ const CONSONANT_ROW_CHIP_DEFS: { id: string; consonant: string }[] = [
   { id: 'र्ण', consonant: 'र्ण' },
   { id: 'ष्ण', consonant: 'ष्ण' },
   { id: 'त्त', consonant: 'त्त' },
+  { id: 'द्ध', consonant: 'द्ध' },
+  { id: 'ब्ध', consonant: 'ब्ध' },
+  { id: 'म्भ', consonant: 'म्भ' },
+  { id: 'ञ्ज', consonant: 'ञ्ज' },
+  { id: 'ञ्च', consonant: 'ञ्च' },
 ];
 
 const CONSONANT_ROW_MATRA_CHARS = new Set([
@@ -438,7 +443,7 @@ const Board: React.FC = () => {
   const phaseBanner = isPrashnaPart
     ? 'Part 2 — question words. Click one cream tile.'
     : (activeBoardShelf?.skin === 'जोडो' && activeShelf === 'prarambhah' && !targetIsWholeTile
-      ? 'Part 1 — join letters. Click two cream tiles.'
+      ? 'Part 1 — join letters. To begin, click क then आ.'
       : '');
 
   // जोडो joins (क+आ) stay multi-tap. Question-words (कः on a tile) are one tap.
@@ -518,6 +523,13 @@ const Board: React.FC = () => {
 
   const hasNextPuzzle = (isLearnPhase || isCorrect) && activePuzzles.length > 0;
   const isLastPuzzle = activePuzzles.length > 0 && puzzleIndex + 1 >= activePuzzles.length;
+
+  const nextBtnRef = useRef<HTMLButtonElement | null>(null);
+  useEffect(() => {
+    if (!(checked && isCorrect)) return;
+    nextBtnRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }, [checked, isCorrect, puzzleIndex, activeShelf]);
+
 
   // If shelf grew/shrank or index is stale, keep progress in range (avoids wild N / length vs puzzle 0).
   useEffect(() => {
@@ -626,9 +638,9 @@ const Board: React.FC = () => {
     <div className="board-tip-row">
       <p className="board-tip">{isLearnPhase
         ? <>Hear the word, read the meaning, then <strong className="tip-next">Click Next</strong>.</>
-        : emphasizeTipText(isJodoSkin
-          ? 'Click two cream tiles. The picture and sentence appear. Then Click Next.'
-          : 'Click a cream tile. The picture and sentence appear. Then Click Next.')}</p>
+        : isJodoSkin
+          ? <>To begin, click क then आ. The picture and sentence appear. Then <strong className="tip-next">Click Next</strong>.</>
+          : emphasizeTipText('Click a cream tile. The picture and sentence appear. Then Click Next.')}</p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
     </div>
@@ -662,7 +674,7 @@ const Board: React.FC = () => {
             <li className={activeStep === 1 ? 'active' : undefined}>
               <span className="step-num" aria-hidden="true">1</span>
               <span className="step-label">{isJodoSkin
-                ? <>Click two cream tiles <small>(any order)</small></>
+                ? <>To begin click क then आ</>
                 : <>Click a cream tile <small>(numbers on tiles)</small></>}</span>
             </li>
             <li className={activeStep === 2 ? 'active' : undefined}>
@@ -697,7 +709,7 @@ const Board: React.FC = () => {
               ))}
             </div>
             <div className="puzzle-actions">
-              <button className="next-button learn-next" type="button" onClick={onNextOrAgain}>
+              <button ref={nextBtnRef} className="next-button learn-next" type="button" onClick={onNextOrAgain}>
                 {isLastPuzzle ? 'Again' : 'I learnt it · Next'}
               </button>
             </div>
@@ -734,7 +746,7 @@ const Board: React.FC = () => {
                   </button>
                 )}
                 {activePuzzle.seed && <p className="result-seed">{activePuzzle.seed}</p>}
-                {hasNextPuzzle && <button className="next-button" type="button" onClick={onNextOrAgain}>{isLastPuzzle ? 'Again' : 'Next'}</button>}
+                {hasNextPuzzle && <button ref={nextBtnRef} className="next-button" type="button" onClick={onNextOrAgain}>{isLastPuzzle ? 'Again' : 'Next'}</button>}
               </div>
             )}
             {wrongAttempt && (

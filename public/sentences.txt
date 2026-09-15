@@ -729,3 +729,43 @@
 वृत्तफलं मधुरम् अस्ति।|The round fruit is sweet.|वृत्तफलम्|nature
 मत्तभ्रमरः गुञ्जति।|The intoxicated bee buzzes.|मत्तभ्रमरः|nature
 वृत्तपथः वने अस्ति।|The round path is in the forest.|वृत्तपथः|nature
+बुद्धपुष्पं विकसति।|The wisdom-flower blooms.|बुद्धपुष्पम्|nature
+वृद्धतरुः उन्नतः अस्ति।|The old tree is tall.|वृद्धतरुः|nature
+शुद्धपवनः वहति।|A pure wind blows.|शुद्धपवनः|nature
+बुद्धिहंसः सरसि तरति।|The wise swan swims in the lake.|बुद्धिहंसः|nature
+सिद्धिगिरिः मेघैः स्पृशति।|The success-mountain touches the clouds.|सिद्धिगिरिः|nature
+शुद्धसरः प्रकाशते।|The pure lake sparkles.|शुद्धसरः|nature
+वृद्धसिंहः गुहायां वसति।|The old lion lives in the cave.|वृद्धसिंहः|nature
+बुद्धमृगः शान्तः अस्ति।|The wise deer is peaceful.|बुद्धमृगः|nature
+लब्धफलं मधुरम् अस्ति।|The obtained fruit is sweet.|लब्धफलम्|nature
+लब्धिपुष्पं शोभते।|The gain-flower looks lovely.|लब्धिपुष्पम्|nature
+उब्धमेघः गर्जति।|The gathered cloud thunders.|उब्धमेघः|nature
+लब्धमधु भ्रमरे अस्ति।|Obtained honey is in the bee.|लब्धमधु|nature
+सम्बद्धलता आरोहति।|The bound creeper climbs.|सम्बद्धलता|nature
+लब्धपल्लवः हरितः अस्ति।|The obtained sprout is green.|लब्धपल्लवः|nature
+उब्धबीजं रोहति।|The gathered seed sprouts.|उब्धबीजम्|nature
+लब्धकिरणः पतति।|An obtained ray falls.|लब्धकिरणः|nature
+कुम्भसरः शीतलः अस्ति।|The pot-lake is cool.|कुम्भसरः|nature
+शम्भुगिरिः उन्नतः अस्ति।|Shambhu’s mountain is tall.|शम्भुगिरिः|nature
+गम्भीरसरः गभीरः अस्ति।|The deep lake is profound.|गम्भीरसरः|nature
+कुम्भपवनः वहति।|A pot-breeze blows.|कुम्भपवनः|nature
+शम्भुपुष्पं विकसति।|The Shambhu-flower blooms.|शम्भुपुष्पम्|nature
+स्तम्भतरुः दृढः अस्ति।|The pillar-tree is firm.|स्तम्भतरुः|nature
+कुम्भमत्स्यः जले तरति।|The pot-fish swims in water.|कुम्भमत्स्यः|nature
+गम्भीरमेघः गर्जति।|The deep cloud thunders.|गम्भीरमेघः|nature
+सञ्जातपुष्पं विकसति।|A newly born flower blooms.|सञ्जातपुष्पम्|nature
+पञ्जरखगः कूजति।|The cage-bird calls.|पञ्जरखगः|nature
+मञ्जुगानं मधुरम् अस्ति।|Sweet singing is lovely.|मञ्जुगानम्|nature
+अञ्जलिपद्मं शोभते।|The cupped-hands lotus looks lovely.|अञ्जलिपद्मम्|nature
+कुञ्जवनं हरितम् अस्ति।|The grove-forest is green.|कुञ्जवनम्|nature
+मञ्जीरमयूरः नृत्यति।|The anklet-peacock dances.|मञ्जीरमयूरः|nature
+सञ्जीवबीजं रोहति।|The living seed sprouts.|सञ्जीवबीजम्|nature
+मञ्जुलता आरोहति।|The lovely creeper climbs.|मञ्जुलता|nature
+पञ्चदलं कमलं विकसति।|A five-petaled lotus blooms.|पञ्चदलम्|nature
+काञ्चनकिरणः पतति।|A golden ray falls.|काञ्चनकिरणः|nature
+मञ्चखगः उपविशति।|The platform-bird sits.|मञ्चखगः|nature
+पञ्चशिखरं हिमावृतम्।|The five-peak is snow-covered.|पञ्चशिखरम्|nature
+अञ्चलपवनः वहति।|A border-breeze blows.|अञ्चलपवनः|nature
+काञ्चीमार्गः सरलः अस्ति।|The Kanchi path is simple.|काञ्चीमार्गः|nature
+मुञ्चत्खगः उड्डयति।|The releasing bird flies up.|मुञ्चत्खगः|nature
+पञ्चवर्णखगः चित्रः अस्ति।|The five-colored bird is painted.|पञ्चवर्णखगः|nature
