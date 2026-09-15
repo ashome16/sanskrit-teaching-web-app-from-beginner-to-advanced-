@@ -390,6 +390,33 @@
 जोडो|त्रै|त्रै|त्र,ऐ,क,त,आ,इ|पुत्रैः वनं गम्यते।|One goes to the forest with sons.|त्र plus ऐ makes त्रै.
 जोडो|त्रो|त्रो|त्र,ओ,क,त,आ,इ|पुत्रो हसति।|The son smiles.|त्र plus ओ makes त्रो.
 जोडो|त्रौ|त्रौ|त्र,औ,क,त,आ,इ|पुत्रौ क्रीडतः।|Two sons play.|त्र plus औ makes त्रौ.
+जोडो|श्रा|श्रा|श्र,आ,क,त,इ,उ|श्रावणे मेघाः गर्जन्ति।|In Shrāvaṇa the clouds roar.|श्र plus आ makes श्रा.
+जोडो|श्रि|श्रि|श्र,इ,क,त,आ,उ|आश्रितः खगः तिष्ठति।|The sheltered bird stays.|श्र plus इ makes श्रि.
+जोडो|श्री|श्री|श्र,ई,क,त,आ,इ|श्रीः गृहे वसति।|Prosperity lives in the home.|श्र plus ई makes श्री.
+जोडो|श्रु|श्रु|श्र,उ,क,त,आ,इ|श्रुतं गीतं मधुरम् अस्ति।|The heard song is sweet.|श्र plus उ makes श्रु.
+जोडो|श्रू|श्रू|श्र,ऊ,क,त,आ,इ|कोकिलः श्रूयते वने।|The cuckoo is heard in the forest.|श्र plus ऊ makes श्रू.
+जोडो|श्रे|श्रे|श्र,ए,क,त,आ,इ|श्रेष्ठं फलं पतति।|The best fruit falls.|श्र plus ए makes श्रे.
+जोडो|श्रै|श्रै|श्र,ऐ,क,त,आ,इ|मिश्रैः पुष्पैः वनं शोभते।|The forest shines with mixed flowers.|श्र plus ऐ makes श्रै.
+जोडो|श्रो|श्रो|श्र,ओ,क,त,आ,इ|श्रोता बालकः अस्ति।|The boy is a listener.|श्र plus ओ makes श्रो.
+जोडो|श्रौ|श्रौ|श्र,औ,क,त,आ,इ|श्रौतं मन्त्रं वदति।|He speaks a Vedic mantra.|श्र plus औ makes श्रौ.
+जोडो|प्रा|प्रा|प्र,आ,क,त,इ,उ|प्रातः सूर्यः उदेति।|At dawn the sun rises.|प्र plus आ makes प्रा.
+जोडो|प्रि|प्रि|प्र,इ,क,त,आ,उ|प्रियः मित्रं हसति।|The dear friend smiles.|प्र plus इ makes प्रि.
+जोडो|प्री|प्री|प्र,ई,क,त,आ,इ|प्रीतिः गृहे वर्धते।|Affection grows at home.|प्र plus ई makes प्री.
+जोडो|प्रु|प्रु|प्र,उ,क,त,आ,इ|मेघाः जलं प्रुषन्ति।|Clouds sprinkle water.|प्र plus उ makes प्रु.
+जोडो|प्रू|प्रू|प्र,ऊ,क,त,आ,इ|मेघौ जलं प्रूषतः।|Two clouds sprinkle water.|प्र plus ऊ makes प्रू.
+जोडो|प्रे|प्रे|प्र,ए,क,त,आ,इ|प्रेङ्खायां बालः क्रीडति।|The child plays on the swing.|प्र plus ए makes प्रे.
+जोडो|प्रै|प्रै|प्र,ऐ,क,त,आ,इ|प्रैषं गुरुः ददाति।|The teacher gives a command.|प्र plus ऐ makes प्रै.
+जोडो|प्रो|प्रो|प्र,ओ,क,त,आ,इ|प्रोक्तं सत्यं अस्ति।|What was said is true.|प्र plus ओ makes प्रो.
+जोडो|प्रौ|प्रौ|प्र,औ,क,त,आ,इ|प्रौढः वृक्षः तिष्ठति।|The mature tree stands.|प्र plus औ makes प्रौ.
+जोडो|क्रा|क्रा|क्र,आ,क,त,इ,उ|चक्राणि वेगेन भ्रमन्ति।|The wheels spin swiftly.|क्र plus आ makes क्रा.
+जोडो|क्रि|क्रि|क्र,इ,क,त,आ,उ|क्रिया सरला अस्ति।|Action is simple.|क्र plus इ makes क्रि.
+जोडो|क्री|क्री|क्र,ई,क,त,आ,इ|क्रीडति बालकः उद्याने।|The boy plays in the garden.|क्र plus ई makes क्री.
+जोडो|क्रु|क्रु|क्र,उ,क,त,आ,इ|क्रुद्धः सिंहः गर्जति।|The angry lion roars.|क्र plus उ makes क्रु.
+जोडो|क्रू|क्रू|क्र,ऊ,क,त,आ,इ|क्रूरः सर्पः सरति।|The fierce snake creeps.|क्र plus ऊ makes क्रू.
+जोडो|क्रे|क्रे|क्र,ए,क,त,आ,इ|विक्रेयं पुष्पं अस्ति।|The flower is for sale.|क्र plus ए makes क्रे.
+जोडो|क्रै|क्रै|क्र,ऐ,क,त,आ,इ|चक्रैः रथः गच्छति।|The chariot goes with wheels.|क्र plus ऐ makes क्रै.
+जोडो|क्रो|क्रो|क्र,ओ,क,त,आ,इ|काकः क्रोशति वृक्षे।|The crow caws on the tree.|क्र plus ओ makes क्रो.
+जोडो|क्रौ|क्रौ|क्र,औ,क,त,आ,इ|क्रौञ्चः खगः उड्डयति।|The krauncha bird flies.|क्र plus औ makes क्रौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
