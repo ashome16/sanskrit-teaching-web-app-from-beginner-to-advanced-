@@ -1089,3 +1089,43 @@
 कल्कसरः शीतलः।|A kalka lake is cool.|कल्कसरः|nature
 कल्कगिरिः उन्नतः।|Kalka-mountain is tall.|कल्कगिरिः|nature
 कल्ककमलं विकसति।|A kalka lotus blooms.|कल्ककमलम्|nature
+सर्वपवनः वहति।|A all-around breeze blows.|सर्वपवनः|nature
+सर्वखगः कूजति।|A all-around bird calls.|सर्वखगः|nature
+सर्वपुष्पं विकसति।|A all-around flower blooms.|सर्वपुष्पम्|nature
+सर्वमेघः गर्जति।|A all-around cloud thunders.|सर्वमेघः|nature
+सर्वतरुः हरितः।|A all-around tree is green.|सर्वतरुः|nature
+सर्वसरः रम्यः।|A all-around lake is lovely.|सर्वसरः|nature
+सर्वगिरिः उन्नतः।|All-mountain is tall.|सर्वगिरिः|nature
+सर्वकमलं विकसति।|A all-around lotus blooms.|सर्वकमलम्|nature
+सर्पपवनः वहति।|A serpent breeze blows.|सर्पपवनः|nature
+सर्पखगः कूजति।|A serpent bird calls.|सर्पखगः|nature
+सर्पपुष्पं विकसति।|A serpent flower blooms.|सर्पपुष्पम्|nature
+सर्पमेघः गर्जति।|A serpent cloud thunders.|सर्पमेघः|nature
+सर्पतरुः फलति।|A serpent tree bears fruit.|सर्पतरुः|nature
+सर्पसरः शीतलः।|A serpent lake is cool.|सर्पसरः|nature
+सर्पगिरिः उन्नतः।|Serpent-mountain is tall.|सर्पगिरिः|nature
+सर्पकमलं विकसति।|A serpent lotus blooms.|सर्पकमलम्|nature
+र्लपवनः वहति।|A rla breeze blows.|र्लपवनः|nature
+र्लखगः कूजति।|A rla bird calls.|र्लखगः|nature
+र्लपुष्पं विकसति।|A rla flower blooms.|र्लपुष्पम्|nature
+र्लमेघः गर्जति।|A rla cloud thunders.|र्लमेघः|nature
+र्लतरुः हरितः।|A rla tree is green.|र्लतरुः|nature
+र्लसरः रम्यः।|A rla lake is lovely.|र्लसरः|nature
+र्लगिरिः उन्नतः।|Rla-mountain is tall.|र्लगिरिः|nature
+र्लकमलं विकसति।|A rla lotus blooms.|र्लकमलम्|nature
+गर्जपवनः वहति।|A roaring breeze blows.|गर्जपवनः|nature
+गर्जखगः कूजति।|A roaring bird calls.|गर्जखगः|nature
+गर्जपुष्पं विकसति।|A roaring flower blooms.|गर्जपुष्पम्|nature
+गर्जमेघः गर्जति।|A roaring cloud thunders.|गर्जमेघः|nature
+गर्जतरुः फलति।|A roaring tree bears fruit.|गर्जतरुः|nature
+गर्जसरः शीतलः।|A roaring lake is cool.|गर्जसरः|nature
+गर्जगिरिः उन्नतः।|Roaring-mountain is tall.|गर्जगिरिः|nature
+गर्जकमलं विकसति।|A roaring lotus blooms.|गर्जकमलम्|nature
+अर्चपवनः वहति।|A worship breeze blows.|अर्चपवनः|nature
+अर्चखगः कूजति।|A worship bird calls.|अर्चखगः|nature
+अर्चपुष्पं विकसति।|A worship flower blooms.|अर्चपुष्पम्|nature
+अर्चमेघः गर्जति।|A worship cloud thunders.|अर्चमेघः|nature
+अर्चतरुः हरितः।|A worship tree is green.|अर्चतरुः|nature
+अर्चसरः रम्यः।|A worship lake is lovely.|अर्चसरः|nature
+अर्चगिरिः उन्नतः।|Worship-mountain is tall.|अर्चगिरिः|nature
+अर्चकमलं विकसति।|A worship lotus blooms.|अर्चकमलम्|nature

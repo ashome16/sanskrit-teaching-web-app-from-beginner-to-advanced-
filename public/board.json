@@ -16003,6 +16003,726 @@
         "phase": "jodo"
       },
       {
+        "target": "र्वा",
+        "tiles": [
+          "र्व",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The whole earth is green.",
+        "explanation": "र्व plus आ makes र्वा.",
+        "sentence": "सर्वा भूमिः हरिता अस्ति।",
+        "highlight": "र्वा",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्वि",
+        "tiles": [
+          "र्व",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A rvi-bird calls.",
+        "explanation": "र्व plus इ makes र्वि.",
+        "sentence": "पर्वि खगः कूजति।",
+        "highlight": "र्वि",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्वी",
+        "tiles": [
+          "र्व",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्वी-forms are there.",
+        "explanation": "र्व plus ई makes र्वी.",
+        "sentence": "र्वी द्वौ स्तः।",
+        "highlight": "र्वी",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्वु",
+        "tiles": [
+          "र्व",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the rvu.",
+        "explanation": "र्व plus उ makes र्वु.",
+        "sentence": "र्वुं बालकः पश्यति।",
+        "highlight": "र्वु",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्वू",
+        "tiles": [
+          "र्व",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्वू-forms are there.",
+        "explanation": "र्व plus ऊ makes र्वू.",
+        "sentence": "र्वू द्वौ स्तः।",
+        "highlight": "र्वू",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्वे",
+        "tiles": [
+          "र्व",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "In the east the sun rises.",
+        "explanation": "र्व plus ए makes र्वे.",
+        "sentence": "पूर्वे सूर्यः उदयति।",
+        "highlight": "र्वे",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्वै",
+        "tiles": [
+          "र्व",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With rvai the breeze blows.",
+        "explanation": "र्व plus ऐ makes र्वै.",
+        "sentence": "र्वैः सह पवनः वहति।",
+        "highlight": "र्वै",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्वो",
+        "tiles": [
+          "र्व",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The र्वो is lovely.",
+        "explanation": "र्व plus ओ makes र्वो.",
+        "sentence": "र्वो रम्यः अस्ति।",
+        "highlight": "र्वो",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्वौ",
+        "tiles": [
+          "र्व",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्वौ-forms are there.",
+        "explanation": "र्व plus औ makes र्वौ.",
+        "sentence": "र्वौ द्वौ स्तः।",
+        "highlight": "र्वौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्पा",
+        "tiles": [
+          "र्प",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "Snakes are in the forest.",
+        "explanation": "र्प plus आ makes र्पा.",
+        "sentence": "सर्पाः वने सन्ति।",
+        "highlight": "र्पा",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्पि",
+        "tiles": [
+          "र्प",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A rpi-bird calls.",
+        "explanation": "र्प plus इ makes र्पि.",
+        "sentence": "र्पि खगः कूजति।",
+        "highlight": "र्पि",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्पी",
+        "tiles": [
+          "र्प",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्पी-forms are there.",
+        "explanation": "र्प plus ई makes र्पी.",
+        "sentence": "र्पी द्वौ स्तः।",
+        "highlight": "र्पी",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्पु",
+        "tiles": [
+          "र्प",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the rpu.",
+        "explanation": "र्प plus उ makes र्पु.",
+        "sentence": "र्पुं बालकः पश्यति।",
+        "highlight": "र्पु",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्पू",
+        "tiles": [
+          "र्प",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्पू-forms are there.",
+        "explanation": "र्प plus ऊ makes र्पू.",
+        "sentence": "र्पू द्वौ स्तः।",
+        "highlight": "र्पू",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्पे",
+        "tiles": [
+          "र्प",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at rpe.",
+        "explanation": "र्प plus ए makes र्पे.",
+        "sentence": "र्पे पुष्पं विकसति।",
+        "highlight": "र्पे",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्पै",
+        "tiles": [
+          "र्प",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With rpai the breeze blows.",
+        "explanation": "र्प plus ऐ makes र्पै.",
+        "sentence": "र्पैः सह पवनः वहति।",
+        "highlight": "र्पै",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्पो",
+        "tiles": [
+          "र्प",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The र्पो is lovely.",
+        "explanation": "र्प plus ओ makes र्पो.",
+        "sentence": "र्पो रम्यः अस्ति।",
+        "highlight": "र्पो",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्पौ",
+        "tiles": [
+          "र्प",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्पौ-forms are there.",
+        "explanation": "र्प plus औ makes र्पौ.",
+        "sentence": "र्पौ द्वौ स्तः।",
+        "highlight": "र्पौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्ला",
+        "tiles": [
+          "र्ल",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The rla-form looks lovely.",
+        "explanation": "र्ल plus आ makes र्ला.",
+        "sentence": "र्ला रूपं शोभते।",
+        "highlight": "र्ला",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्लि",
+        "tiles": [
+          "र्ल",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A rli-bird calls.",
+        "explanation": "र्ल plus इ makes र्लि.",
+        "sentence": "र्लि खगः कूजति।",
+        "highlight": "र्लि",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्ली",
+        "tiles": [
+          "र्ल",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्ली-forms are there.",
+        "explanation": "र्ल plus ई makes र्ली.",
+        "sentence": "र्ली द्वौ स्तः।",
+        "highlight": "र्ली",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्लु",
+        "tiles": [
+          "र्ल",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the rlu.",
+        "explanation": "र्ल plus उ makes र्लु.",
+        "sentence": "र्लुं बालकः पश्यति।",
+        "highlight": "र्लु",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्लू",
+        "tiles": [
+          "र्ल",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्लू-forms are there.",
+        "explanation": "र्ल plus ऊ makes र्लू.",
+        "sentence": "र्लू द्वौ स्तः।",
+        "highlight": "र्लू",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्ले",
+        "tiles": [
+          "र्ल",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at rle.",
+        "explanation": "र्ल plus ए makes र्ले.",
+        "sentence": "र्ले पुष्पं विकसति।",
+        "highlight": "र्ले",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्लै",
+        "tiles": [
+          "र्ल",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With rlai the breeze blows.",
+        "explanation": "र्ल plus ऐ makes र्लै.",
+        "sentence": "र्लैः सह पवनः वहति।",
+        "highlight": "र्लै",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्लो",
+        "tiles": [
+          "र्ल",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The र्लो is lovely.",
+        "explanation": "र्ल plus ओ makes र्लो.",
+        "sentence": "र्लो रम्यः अस्ति।",
+        "highlight": "र्लो",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्लौ",
+        "tiles": [
+          "र्ल",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्लौ-forms are there.",
+        "explanation": "र्ल plus औ makes र्लौ.",
+        "sentence": "र्लौ द्वौ स्तः।",
+        "highlight": "र्लौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्जा",
+        "tiles": [
+          "र्ज",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The cloud’s roar is heard.",
+        "explanation": "र्ज plus आ makes र्जा.",
+        "sentence": "गर्जा मेघस्य श्रूयते।",
+        "highlight": "र्जा",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्जि",
+        "tiles": [
+          "र्ज",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A rji-bird calls.",
+        "explanation": "र्ज plus इ makes र्जि.",
+        "sentence": "र्जि खगः कूजति।",
+        "highlight": "र्जि",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्जी",
+        "tiles": [
+          "र्ज",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्जी-forms are there.",
+        "explanation": "र्ज plus ई makes र्जी.",
+        "sentence": "र्जी द्वौ स्तः।",
+        "highlight": "र्जी",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्जु",
+        "tiles": [
+          "र्ज",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the rju.",
+        "explanation": "र्ज plus उ makes र्जु.",
+        "sentence": "र्जुं बालकः पश्यति।",
+        "highlight": "र्जु",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्जू",
+        "tiles": [
+          "र्ज",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्जू-forms are there.",
+        "explanation": "र्ज plus ऊ makes र्जू.",
+        "sentence": "र्जू द्वौ स्तः।",
+        "highlight": "र्जू",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्जे",
+        "tiles": [
+          "र्ज",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at rje.",
+        "explanation": "र्ज plus ए makes र्जे.",
+        "sentence": "र्जे पुष्पं विकसति।",
+        "highlight": "र्जे",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्जै",
+        "tiles": [
+          "र्ज",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With rjai the breeze blows.",
+        "explanation": "र्ज plus ऐ makes र्जै.",
+        "sentence": "र्जैः सह पवनः वहति।",
+        "highlight": "र्जै",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्जो",
+        "tiles": [
+          "र्ज",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The र्जो is lovely.",
+        "explanation": "र्ज plus ओ makes र्जो.",
+        "sentence": "र्जो रम्यः अस्ति।",
+        "highlight": "र्जो",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्जौ",
+        "tiles": [
+          "र्ज",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्जौ-forms are there.",
+        "explanation": "र्ज plus औ makes र्जौ.",
+        "sentence": "र्जौ द्वौ स्तः।",
+        "highlight": "र्जौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्चा",
+        "tiles": [
+          "र्च",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The worship of the deity looks fine.",
+        "explanation": "र्च plus आ makes र्चा.",
+        "sentence": "अर्चा देवस्य शोभते।",
+        "highlight": "र्चा",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्चि",
+        "tiles": [
+          "र्च",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A rci-bird calls.",
+        "explanation": "र्च plus इ makes र्चि.",
+        "sentence": "र्चि खगः कूजति।",
+        "highlight": "र्चि",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्ची",
+        "tiles": [
+          "र्च",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्ची-forms are there.",
+        "explanation": "र्च plus ई makes र्ची.",
+        "sentence": "र्ची द्वौ स्तः।",
+        "highlight": "र्ची",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्चु",
+        "tiles": [
+          "र्च",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the rcu.",
+        "explanation": "र्च plus उ makes र्चु.",
+        "sentence": "र्चुं बालकः पश्यति।",
+        "highlight": "र्चु",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्चू",
+        "tiles": [
+          "र्च",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्चू-forms are there.",
+        "explanation": "र्च plus ऊ makes र्चू.",
+        "sentence": "र्चू द्वौ स्तः।",
+        "highlight": "र्चू",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्चे",
+        "tiles": [
+          "र्च",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at rce.",
+        "explanation": "र्च plus ए makes र्चे.",
+        "sentence": "र्चे पुष्पं विकसति।",
+        "highlight": "र्चे",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्चै",
+        "tiles": [
+          "र्च",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With rcai the breeze blows.",
+        "explanation": "र्च plus ऐ makes र्चै.",
+        "sentence": "र्चैः सह पवनः वहति।",
+        "highlight": "र्चै",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्चो",
+        "tiles": [
+          "र्च",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The र्चो is lovely.",
+        "explanation": "र्च plus ओ makes र्चो.",
+        "sentence": "र्चो रम्यः अस्ति।",
+        "highlight": "र्चो",
+        "phase": "jodo"
+      },
+      {
+        "target": "र्चौ",
+        "tiles": [
+          "र्च",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two र्चौ-forms are there.",
+        "explanation": "र्च plus औ makes र्चौ.",
+        "sentence": "र्चौ द्वौ स्तः।",
+        "highlight": "र्चौ",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -32217,6 +32937,606 @@
         "sentence": "कल्ककमलं विकसति।",
         "english": "A kalka lotus blooms.",
         "highlight": "कल्ककमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "सर्वपवनः",
+        "tiles": [
+          "सर्वपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "सर्वपवनः वहति।",
+        "english": "A all-around breeze blows.",
+        "highlight": "सर्वपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "सर्वखगः",
+        "tiles": [
+          "सर्वखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "सर्वखगः कूजति।",
+        "english": "A all-around bird calls.",
+        "highlight": "सर्वखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "सर्वपुष्पम्",
+        "tiles": [
+          "सर्वपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "सर्वपुष्पं विकसति।",
+        "english": "A all-around flower blooms.",
+        "highlight": "सर्वपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "सर्वमेघः",
+        "tiles": [
+          "सर्वमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "सर्वमेघः गर्जति।",
+        "english": "A all-around cloud thunders.",
+        "highlight": "सर्वमेघः"
+      },
+      {
+        "prompt": "____ हरितः।",
+        "target": "सर्वतरुः",
+        "tiles": [
+          "सर्वतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "सर्वतरुः हरितः।",
+        "english": "A all-around tree is green.",
+        "highlight": "सर्वतरुः"
+      },
+      {
+        "prompt": "____ रम्यः।",
+        "target": "सर्वसरः",
+        "tiles": [
+          "सर्वसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "सर्वसरः रम्यः।",
+        "english": "A all-around lake is lovely.",
+        "highlight": "सर्वसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "सर्वगिरिः",
+        "tiles": [
+          "सर्वगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "सर्वगिरिः उन्नतः।",
+        "english": "All-mountain is tall.",
+        "highlight": "सर्वगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "सर्वकमलम्",
+        "tiles": [
+          "सर्वकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "सर्वकमलं विकसति।",
+        "english": "A all-around lotus blooms.",
+        "highlight": "सर्वकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "सर्पपवनः",
+        "tiles": [
+          "सर्पपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "सर्पपवनः वहति।",
+        "english": "A serpent breeze blows.",
+        "highlight": "सर्पपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "सर्पखगः",
+        "tiles": [
+          "सर्पखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "सर्पखगः कूजति।",
+        "english": "A serpent bird calls.",
+        "highlight": "सर्पखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "सर्पपुष्पम्",
+        "tiles": [
+          "सर्पपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "सर्पपुष्पं विकसति।",
+        "english": "A serpent flower blooms.",
+        "highlight": "सर्पपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "सर्पमेघः",
+        "tiles": [
+          "सर्पमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "सर्पमेघः गर्जति।",
+        "english": "A serpent cloud thunders.",
+        "highlight": "सर्पमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "सर्पतरुः",
+        "tiles": [
+          "सर्पतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "सर्पतरुः फलति।",
+        "english": "A serpent tree bears fruit.",
+        "highlight": "सर्पतरुः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "सर्पसरः",
+        "tiles": [
+          "सर्पसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "सर्पसरः शीतलः।",
+        "english": "A serpent lake is cool.",
+        "highlight": "सर्पसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "सर्पगिरिः",
+        "tiles": [
+          "सर्पगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "सर्पगिरिः उन्नतः।",
+        "english": "Serpent-mountain is tall.",
+        "highlight": "सर्पगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "सर्पकमलम्",
+        "tiles": [
+          "सर्पकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "सर्पकमलं विकसति।",
+        "english": "A serpent lotus blooms.",
+        "highlight": "सर्पकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "र्लपवनः",
+        "tiles": [
+          "र्लपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "र्लपवनः वहति।",
+        "english": "A rla breeze blows.",
+        "highlight": "र्लपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "र्लखगः",
+        "tiles": [
+          "र्लखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "र्लखगः कूजति।",
+        "english": "A rla bird calls.",
+        "highlight": "र्लखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "र्लपुष्पम्",
+        "tiles": [
+          "र्लपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "र्लपुष्पं विकसति।",
+        "english": "A rla flower blooms.",
+        "highlight": "र्लपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "र्लमेघः",
+        "tiles": [
+          "र्लमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "र्लमेघः गर्जति।",
+        "english": "A rla cloud thunders.",
+        "highlight": "र्लमेघः"
+      },
+      {
+        "prompt": "____ हरितः।",
+        "target": "र्लतरुः",
+        "tiles": [
+          "र्लतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "र्लतरुः हरितः।",
+        "english": "A rla tree is green.",
+        "highlight": "र्लतरुः"
+      },
+      {
+        "prompt": "____ रम्यः।",
+        "target": "र्लसरः",
+        "tiles": [
+          "र्लसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "र्लसरः रम्यः।",
+        "english": "A rla lake is lovely.",
+        "highlight": "र्लसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "र्लगिरिः",
+        "tiles": [
+          "र्लगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "र्लगिरिः उन्नतः।",
+        "english": "Rla-mountain is tall.",
+        "highlight": "र्लगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "र्लकमलम्",
+        "tiles": [
+          "र्लकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "र्लकमलं विकसति।",
+        "english": "A rla lotus blooms.",
+        "highlight": "र्लकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "गर्जपवनः",
+        "tiles": [
+          "गर्जपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "गर्जपवनः वहति।",
+        "english": "A roaring breeze blows.",
+        "highlight": "गर्जपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "गर्जखगः",
+        "tiles": [
+          "गर्जखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "गर्जखगः कूजति।",
+        "english": "A roaring bird calls.",
+        "highlight": "गर्जखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "गर्जपुष्पम्",
+        "tiles": [
+          "गर्जपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "गर्जपुष्पं विकसति।",
+        "english": "A roaring flower blooms.",
+        "highlight": "गर्जपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "गर्जमेघः",
+        "tiles": [
+          "गर्जमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "गर्जमेघः गर्जति।",
+        "english": "A roaring cloud thunders.",
+        "highlight": "गर्जमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "गर्जतरुः",
+        "tiles": [
+          "गर्जतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "गर्जतरुः फलति।",
+        "english": "A roaring tree bears fruit.",
+        "highlight": "गर्जतरुः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "गर्जसरः",
+        "tiles": [
+          "गर्जसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "गर्जसरः शीतलः।",
+        "english": "A roaring lake is cool.",
+        "highlight": "गर्जसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "गर्जगिरिः",
+        "tiles": [
+          "गर्जगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "गर्जगिरिः उन्नतः।",
+        "english": "Roaring-mountain is tall.",
+        "highlight": "गर्जगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "गर्जकमलम्",
+        "tiles": [
+          "गर्जकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "गर्जकमलं विकसति।",
+        "english": "A roaring lotus blooms.",
+        "highlight": "गर्जकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "अर्चपवनः",
+        "tiles": [
+          "अर्चपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "अर्चपवनः वहति।",
+        "english": "A worship breeze blows.",
+        "highlight": "अर्चपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "अर्चखगः",
+        "tiles": [
+          "अर्चखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "अर्चखगः कूजति।",
+        "english": "A worship bird calls.",
+        "highlight": "अर्चखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "अर्चपुष्पम्",
+        "tiles": [
+          "अर्चपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "अर्चपुष्पं विकसति।",
+        "english": "A worship flower blooms.",
+        "highlight": "अर्चपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "अर्चमेघः",
+        "tiles": [
+          "अर्चमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "अर्चमेघः गर्जति।",
+        "english": "A worship cloud thunders.",
+        "highlight": "अर्चमेघः"
+      },
+      {
+        "prompt": "____ हरितः।",
+        "target": "अर्चतरुः",
+        "tiles": [
+          "अर्चतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "अर्चतरुः हरितः।",
+        "english": "A worship tree is green.",
+        "highlight": "अर्चतरुः"
+      },
+      {
+        "prompt": "____ रम्यः।",
+        "target": "अर्चसरः",
+        "tiles": [
+          "अर्चसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "अर्चसरः रम्यः।",
+        "english": "A worship lake is lovely.",
+        "highlight": "अर्चसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "अर्चगिरिः",
+        "tiles": [
+          "अर्चगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "अर्चगिरिः उन्नतः।",
+        "english": "Worship-mountain is tall.",
+        "highlight": "अर्चगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "अर्चकमलम्",
+        "tiles": [
+          "अर्चकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "अर्चकमलं विकसति।",
+        "english": "A worship lotus blooms.",
+        "highlight": "अर्चकमलम्"
       },
       {
         "phase": "learn",
