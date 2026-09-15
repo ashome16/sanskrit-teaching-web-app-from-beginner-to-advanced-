@@ -1849,3 +1849,43 @@
 त्ल्यसरः शीतलः।|A tlya lake is cool.|त्ल्यसरः|nature
 त्ल्यगिरिः उन्नतः।|Tlya-mountain is tall.|त्ल्यगिरिः|nature
 त्ल्यकमलं विकसति।|A tlya lotus blooms.|त्ल्यकमलम्|nature
+ब्ल्यपवनः वहति।|A blya breeze blows.|ब्ल्यपवनः|nature
+ब्ल्यखगः कूजति।|A blya bird calls.|ब्ल्यखगः|nature
+ब्ल्यपुष्पं विकसति।|A blya flower blooms.|ब्ल्यपुष्पम्|nature
+ब्ल्यमेघः गर्जति।|A blya cloud thunders.|ब्ल्यमेघः|nature
+ब्ल्यतरुः फलति।|A blya tree bears fruit.|ब्ल्यतरुः|nature
+ब्ल्यसरः शीतलः।|A blya lake is cool.|ब्ल्यसरः|nature
+ब्ल्यगिरिः उन्नतः।|Blya-mountain is tall.|ब्ल्यगिरिः|nature
+ब्ल्यकमलं विकसति।|A blya lotus blooms.|ब्ल्यकमलम्|nature
+ह्ल्यपवनः वहति।|A hlya breeze blows.|ह्ल्यपवनः|nature
+ह्ल्यखगः कूजति।|A hlya bird calls.|ह्ल्यखगः|nature
+ह्ल्यपुष्पं विकसति।|A hlya flower blooms.|ह्ल्यपुष्पम्|nature
+ह्ल्यमेघः गर्जति।|A hlya cloud thunders.|ह्ल्यमेघः|nature
+ह्ल्यतरुः हरितः।|A hlya tree is green.|ह्ल्यतरुः|nature
+ह्ल्यसरः रम्यः।|A hlya lake is lovely.|ह्ल्यसरः|nature
+ह्ल्यगिरिः उन्नतः।|Hlya-mountain is tall.|ह्ल्यगिरिः|nature
+ह्ल्यकमलं विकसति।|A hlya lotus blooms.|ह्ल्यकमलम्|nature
+ज्र्यपवनः वहति।|A jrya breeze blows.|ज्र्यपवनः|nature
+ज्र्यखगः कूजति।|A jrya bird calls.|ज्र्यखगः|nature
+ज्र्यपुष्पं विकसति।|A jrya flower blooms.|ज्र्यपुष्पम्|nature
+ज्र्यमेघः गर्जति।|A jrya cloud thunders.|ज्र्यमेघः|nature
+ज्र्यतरुः फलति।|A jrya tree bears fruit.|ज्र्यतरुः|nature
+ज्र्यसरः शीतलः।|A jrya lake is cool.|ज्र्यसरः|nature
+ज्र्यगिरिः उन्नतः।|Jrya-mountain is tall.|ज्र्यगिरिः|nature
+ज्र्यकमलं विकसति।|A jrya lotus blooms.|ज्र्यकमलम्|nature
+ध्र्यपवनः वहति।|A dhrya breeze blows.|ध्र्यपवनः|nature
+ध्र्यखगः कूजति।|A dhrya bird calls.|ध्र्यखगः|nature
+ध्र्यपुष्पं विकसति।|A dhrya flower blooms.|ध्र्यपुष्पम्|nature
+ध्र्यमेघः गर्जति।|A dhrya cloud thunders.|ध्र्यमेघः|nature
+ध्र्यतरुः हरितः।|A dhrya tree is green.|ध्र्यतरुः|nature
+ध्र्यसरः रम्यः।|A dhrya lake is lovely.|ध्र्यसरः|nature
+ध्र्यगिरिः उन्नतः।|Dhrya-mountain is tall.|ध्र्यगिरिः|nature
+ध्र्यकमलं विकसति।|A dhrya lotus blooms.|ध्र्यकमलम्|nature
+भ्र्यपवनः वहति।|A bhrya breeze blows.|भ्र्यपवनः|nature
+भ्र्यखगः कूजति।|A bhrya bird calls.|भ्र्यखगः|nature
+भ्र्यपुष्पं विकसति।|A bhrya flower blooms.|भ्र्यपुष्पम्|nature
+भ्र्यमेघः गर्जति।|A bhrya cloud thunders.|भ्र्यमेघः|nature
+भ्र्यतरुः फलति।|A bhrya tree bears fruit.|भ्र्यतरुः|nature
+भ्र्यसरः शीतलः।|A bhrya lake is cool.|भ्र्यसरः|nature
+भ्र्यगिरिः उन्नतः।|Bhrya-mountain is tall.|भ्र्यगिरिः|nature
+भ्र्यकमलं विकसति।|A bhrya lotus blooms.|भ्र्यकमलम्|nature
