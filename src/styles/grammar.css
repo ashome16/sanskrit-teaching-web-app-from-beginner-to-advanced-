@@ -281,3 +281,135 @@
   font-style: italic;
   text-align: center;
 }
+/* —— Sound Teams article —— */
+.sound-teams {
+  max-width: 46rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.sound-teams-intro {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #3a332a;
+}
+
+.sound-teams-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.95rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #e3d5b3;
+  background: #fbf8f2;
+}
+
+.sound-teams-heading {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #0f766e;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+  line-height: 1.35;
+}
+
+.sound-teams-section p,
+.sound-teams-section li {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: #3a332a;
+}
+
+.sound-teams-section ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sound-teams-deva {
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+  white-space: nowrap;
+}
+
+.sound-teams-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 10px;
+  border: 1px solid #d8cfbf;
+  background: #fffdf8;
+}
+
+.sound-teams-table {
+  width: 100%;
+  min-width: 36rem;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+.sound-teams-table th,
+.sound-teams-table td {
+  border: 1px solid #d8cfbf;
+  padding: 0.45rem 0.55rem;
+  text-align: left;
+  vertical-align: middle;
+  line-height: 1.4;
+}
+
+.sound-teams-table th {
+  background: #ede4d3;
+  color: #0f766e;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.sound-teams-table tbody tr:nth-child(even) {
+  background: #f7f2e8;
+}
+
+.sound-teams-card-list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sound-teams-card-item {
+  border: 1px solid #d8cfbf;
+  border-radius: 10px;
+  background: #fffdf8;
+  padding: 0.65rem 0.75rem;
+}
+
+.sound-teams-card-vowel {
+  font-weight: 700;
+  color: #0f766e;
+  font-size: 0.88rem;
+  margin-bottom: 0.35rem;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+}
+
+.sound-teams-card-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+  color: #3a332a;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+}
+
+@media (max-width: 640px) {
+  .sound-teams-table-wrap {
+    display: none;
+  }
+
+  .sound-teams-card-list {
+    display: flex;
+  }
+}

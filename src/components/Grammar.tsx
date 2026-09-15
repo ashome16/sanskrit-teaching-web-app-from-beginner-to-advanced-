@@ -3,9 +3,10 @@ import { VIBHAKTI_CASES } from '../data/vibhakti';
 import { ARTICLES } from '../data/articleIndex';
 import { parseArticle, type ParsedArticle } from '../utils/articleParser';
 import ConjunctGames from './ConjunctGames';
+import SoundTeamsArticle from './SoundTeamsArticle';
 import '../styles/grammar.css';
 
-type GrammarTopic = 'home' | 'vibhakti' | 'samyukta' | 'article';
+type GrammarTopic = 'home' | 'vibhakti' | 'samyukta' | 'sound-teams' | 'article';
 
 const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((response) => response.text());
 
@@ -84,6 +85,24 @@ const Grammar: React.FC = () => {
           </p>
         </header>
         <ConjunctGames />
+      </section>
+    );
+  }
+
+  if (topic === 'sound-teams') {
+    return (
+      <section className="grammar-page" aria-label="Five Sound Teams">
+        <header className="grammar-page-header">
+          <button type="button" className="grammar-back" onClick={() => setTopic('home')}>
+            ← Grammar
+          </button>
+          <h2 className="grammar-title">Five Sound Teams · पञ्च वर्ण-टीमें</h2>
+          <p className="grammar-lead">
+            Vowels, consonants, sliders, hissers, and fusion blocks — how every letter finds its
+            squad.
+          </p>
+        </header>
+        <SoundTeamsArticle />
       </section>
     );
   }
@@ -193,6 +212,18 @@ const Grammar: React.FC = () => {
           <span className="grammar-card-kicker">Ready</span>
           <span className="grammar-card-title">विभक्ति · Vibhakti</span>
           <span className="grammar-card-blurb">Eight noun cases — who does what to whom.</span>
+        </button>
+        <button
+          type="button"
+          className="grammar-card grammar-card--ready"
+          onClick={() => setTopic('sound-teams')}
+        >
+          <span className="grammar-card-kicker">Ready</span>
+          <span className="grammar-card-title">Five Sound Teams · पञ्च वर्ण-टीमें</span>
+          <span className="grammar-card-blurb">
+            Vowels, consonants, sliders, hissers, and fusion blocks — how every letter finds its
+            squad.
+          </span>
         </button>
         <button type="button" className="grammar-card grammar-card--ready" onClick={() => setTopic('samyukta')}>
           <span className="grammar-card-kicker">Ready</span>
