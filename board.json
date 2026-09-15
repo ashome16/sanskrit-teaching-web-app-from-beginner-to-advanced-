@@ -34003,6 +34003,726 @@
         "phase": "jodo"
       },
       {
+        "target": "स्क्या",
+        "tiles": [
+          "स्क्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The skya-form looks lovely.",
+        "explanation": "स्क्य plus आ makes स्क्या.",
+        "sentence": "स्क्या रूपं शोभते।",
+        "highlight": "स्क्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्क्यि",
+        "tiles": [
+          "स्क्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A skyi-bird calls.",
+        "explanation": "स्क्य plus इ makes स्क्यि.",
+        "sentence": "स्क्यि खगः कूजति।",
+        "highlight": "स्क्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्क्यी",
+        "tiles": [
+          "स्क्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two skyi-forms are there.",
+        "explanation": "स्क्य plus ई makes स्क्यी.",
+        "sentence": "स्क्यी द्वौ स्तः।",
+        "highlight": "स्क्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्क्यु",
+        "tiles": [
+          "स्क्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the skyu.",
+        "explanation": "स्क्य plus उ makes स्क्यु.",
+        "sentence": "स्क्युं बालकः पश्यति।",
+        "highlight": "स्क्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्क्यू",
+        "tiles": [
+          "स्क्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two skyu-forms are there.",
+        "explanation": "स्क्य plus ऊ makes स्क्यू.",
+        "sentence": "स्क्यू द्वौ स्तः।",
+        "highlight": "स्क्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्क्ये",
+        "tiles": [
+          "स्क्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at skye.",
+        "explanation": "स्क्य plus ए makes स्क्ये.",
+        "sentence": "स्क्ये पुष्पं विकसति।",
+        "highlight": "स्क्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्क्यै",
+        "tiles": [
+          "स्क्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With skyai the breeze blows.",
+        "explanation": "स्क्य plus ऐ makes स्क्यै.",
+        "sentence": "स्क्यैः सह पवनः वहति।",
+        "highlight": "स्क्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्क्यो",
+        "tiles": [
+          "स्क्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The skyo is lovely.",
+        "explanation": "स्क्य plus ओ makes स्क्यो.",
+        "sentence": "स्क्यो रम्यः अस्ति।",
+        "highlight": "स्क्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्क्यौ",
+        "tiles": [
+          "स्क्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two skyau-forms are there.",
+        "explanation": "स्क्य plus औ makes स्क्यौ.",
+        "sentence": "स्क्यौ द्वौ स्तः।",
+        "highlight": "स्क्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्प्या",
+        "tiles": [
+          "स्प्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The spya-form looks lovely.",
+        "explanation": "स्प्य plus आ makes स्प्या.",
+        "sentence": "स्प्या रूपं शोभते।",
+        "highlight": "स्प्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्प्यि",
+        "tiles": [
+          "स्प्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A spyi-bird calls.",
+        "explanation": "स्प्य plus इ makes स्प्यि.",
+        "sentence": "स्प्यि खगः कूजति।",
+        "highlight": "स्प्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्प्यी",
+        "tiles": [
+          "स्प्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two spyi-forms are there.",
+        "explanation": "स्प्य plus ई makes स्प्यी.",
+        "sentence": "स्प्यी द्वौ स्तः।",
+        "highlight": "स्प्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्प्यु",
+        "tiles": [
+          "स्प्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the spyu.",
+        "explanation": "स्प्य plus उ makes स्प्यु.",
+        "sentence": "स्प्युं बालकः पश्यति।",
+        "highlight": "स्प्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्प्यू",
+        "tiles": [
+          "स्प्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two spyu-forms are there.",
+        "explanation": "स्प्य plus ऊ makes स्प्यू.",
+        "sentence": "स्प्यू द्वौ स्तः।",
+        "highlight": "स्प्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्प्ये",
+        "tiles": [
+          "स्प्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at spye.",
+        "explanation": "स्प्य plus ए makes स्प्ये.",
+        "sentence": "स्प्ये पुष्पं विकसति।",
+        "highlight": "स्प्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्प्यै",
+        "tiles": [
+          "स्प्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With spyai the breeze blows.",
+        "explanation": "स्प्य plus ऐ makes स्प्यै.",
+        "sentence": "स्प्यैः सह पवनः वहति।",
+        "highlight": "स्प्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्प्यो",
+        "tiles": [
+          "स्प्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The spyo is lovely.",
+        "explanation": "स्प्य plus ओ makes स्प्यो.",
+        "sentence": "स्प्यो रम्यः अस्ति।",
+        "highlight": "स्प्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्प्यौ",
+        "tiles": [
+          "स्प्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two spyau-forms are there.",
+        "explanation": "स्प्य plus औ makes स्प्यौ.",
+        "sentence": "स्प्यौ द्वौ स्तः।",
+        "highlight": "स्प्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्थ्या",
+        "tiles": [
+          "स्थ्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The sthya-form looks lovely.",
+        "explanation": "स्थ्य plus आ makes स्थ्या.",
+        "sentence": "स्थ्या रूपं शोभते।",
+        "highlight": "स्थ्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्थ्यि",
+        "tiles": [
+          "स्थ्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A sthyi-bird calls.",
+        "explanation": "स्थ्य plus इ makes स्थ्यि.",
+        "sentence": "स्थ्यि खगः कूजति।",
+        "highlight": "स्थ्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्थ्यी",
+        "tiles": [
+          "स्थ्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two sthyi-forms are there.",
+        "explanation": "स्थ्य plus ई makes स्थ्यी.",
+        "sentence": "स्थ्यी द्वौ स्तः।",
+        "highlight": "स्थ्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्थ्यु",
+        "tiles": [
+          "स्थ्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the sthyu.",
+        "explanation": "स्थ्य plus उ makes स्थ्यु.",
+        "sentence": "स्थ्युं बालकः पश्यति।",
+        "highlight": "स्थ्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्थ्यू",
+        "tiles": [
+          "स्थ्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two sthyu-forms are there.",
+        "explanation": "स्थ्य plus ऊ makes स्थ्यू.",
+        "sentence": "स्थ्यू द्वौ स्तः।",
+        "highlight": "स्थ्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्थ्ये",
+        "tiles": [
+          "स्थ्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at sthye.",
+        "explanation": "स्थ्य plus ए makes स्थ्ये.",
+        "sentence": "स्थ्ये पुष्पं विकसति।",
+        "highlight": "स्थ्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्थ्यै",
+        "tiles": [
+          "स्थ्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With sthyai the breeze blows.",
+        "explanation": "स्थ्य plus ऐ makes स्थ्यै.",
+        "sentence": "स्थ्यैः सह पवनः वहति।",
+        "highlight": "स्थ्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्थ्यो",
+        "tiles": [
+          "स्थ्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The sthyo is lovely.",
+        "explanation": "स्थ्य plus ओ makes स्थ्यो.",
+        "sentence": "स्थ्यो रम्यः अस्ति।",
+        "highlight": "स्थ्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "स्थ्यौ",
+        "tiles": [
+          "स्थ्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two sthyau-forms are there.",
+        "explanation": "स्थ्य plus औ makes स्थ्यौ.",
+        "sentence": "स्थ्यौ द्वौ स्तः।",
+        "highlight": "स्थ्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्च्या",
+        "tiles": [
+          "श्च्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The shcya-form looks lovely.",
+        "explanation": "श्च्य plus आ makes श्च्या.",
+        "sentence": "श्च्या रूपं शोभते।",
+        "highlight": "श्च्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्च्यि",
+        "tiles": [
+          "श्च्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A shcyi-bird calls.",
+        "explanation": "श्च्य plus इ makes श्च्यि.",
+        "sentence": "श्च्यि खगः कूजति।",
+        "highlight": "श्च्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्च्यी",
+        "tiles": [
+          "श्च्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two shcyi-forms are there.",
+        "explanation": "श्च्य plus ई makes श्च्यी.",
+        "sentence": "श्च्यी द्वौ स्तः।",
+        "highlight": "श्च्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्च्यु",
+        "tiles": [
+          "श्च्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the shcyu.",
+        "explanation": "श्च्य plus उ makes श्च्यु.",
+        "sentence": "श्च्युं बालकः पश्यति।",
+        "highlight": "श्च्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्च्यू",
+        "tiles": [
+          "श्च्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two shcyu-forms are there.",
+        "explanation": "श्च्य plus ऊ makes श्च्यू.",
+        "sentence": "श्च्यू द्वौ स्तः।",
+        "highlight": "श्च्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्च्ये",
+        "tiles": [
+          "श्च्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at shcye.",
+        "explanation": "श्च्य plus ए makes श्च्ये.",
+        "sentence": "श्च्ये पुष्पं विकसति।",
+        "highlight": "श्च्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्च्यै",
+        "tiles": [
+          "श्च्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With shcyai the breeze blows.",
+        "explanation": "श्च्य plus ऐ makes श्च्यै.",
+        "sentence": "श्च्यैः सह पवनः वहति।",
+        "highlight": "श्च्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्च्यो",
+        "tiles": [
+          "श्च्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The shcyo is lovely.",
+        "explanation": "श्च्य plus ओ makes श्च्यो.",
+        "sentence": "श्च्यो रम्यः अस्ति।",
+        "highlight": "श्च्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्च्यौ",
+        "tiles": [
+          "श्च्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two shcyau-forms are there.",
+        "explanation": "श्च्य plus औ makes श्च्यौ.",
+        "sentence": "श्च्यौ द्वौ स्तः।",
+        "highlight": "श्च्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्क्या",
+        "tiles": [
+          "श्क्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The shkya-form looks lovely.",
+        "explanation": "श्क्य plus आ makes श्क्या.",
+        "sentence": "श्क्या रूपं शोभते।",
+        "highlight": "श्क्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्क्यि",
+        "tiles": [
+          "श्क्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A shkyi-bird calls.",
+        "explanation": "श्क्य plus इ makes श्क्यि.",
+        "sentence": "श्क्यि खगः कूजति।",
+        "highlight": "श्क्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्क्यी",
+        "tiles": [
+          "श्क्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two shkyi-forms are there.",
+        "explanation": "श्क्य plus ई makes श्क्यी.",
+        "sentence": "श्क्यी द्वौ स्तः।",
+        "highlight": "श्क्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्क्यु",
+        "tiles": [
+          "श्क्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the shkyu.",
+        "explanation": "श्क्य plus उ makes श्क्यु.",
+        "sentence": "श्क्युं बालकः पश्यति।",
+        "highlight": "श्क्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्क्यू",
+        "tiles": [
+          "श्क्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two shkyu-forms are there.",
+        "explanation": "श्क्य plus ऊ makes श्क्यू.",
+        "sentence": "श्क्यू द्वौ स्तः।",
+        "highlight": "श्क्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्क्ये",
+        "tiles": [
+          "श्क्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at shkye.",
+        "explanation": "श्क्य plus ए makes श्क्ये.",
+        "sentence": "श्क्ये पुष्पं विकसति।",
+        "highlight": "श्क्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्क्यै",
+        "tiles": [
+          "श्क्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With shkyai the breeze blows.",
+        "explanation": "श्क्य plus ऐ makes श्क्यै.",
+        "sentence": "श्क्यैः सह पवनः वहति।",
+        "highlight": "श्क्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्क्यो",
+        "tiles": [
+          "श्क्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The shkyo is lovely.",
+        "explanation": "श्क्य plus ओ makes श्क्यो.",
+        "sentence": "श्क्यो रम्यः अस्ति।",
+        "highlight": "श्क्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "श्क्यौ",
+        "tiles": [
+          "श्क्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two shkyau-forms are there.",
+        "explanation": "श्क्य plus औ makes श्क्यौ.",
+        "sentence": "श्क्यौ द्वौ स्तः।",
+        "highlight": "श्क्यौ",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -65393,6 +66113,606 @@
         "sentence": "व्व्यकमलं विकसति।",
         "english": "A vvya lotus blooms.",
         "highlight": "व्व्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "स्क्यपवनः",
+        "tiles": [
+          "स्क्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "स्क्यपवनः वहति।",
+        "english": "A skya breeze blows.",
+        "highlight": "स्क्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "स्क्यखगः",
+        "tiles": [
+          "स्क्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "स्क्यखगः कूजति।",
+        "english": "A skya bird calls.",
+        "highlight": "स्क्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "स्क्यपुष्पम्",
+        "tiles": [
+          "स्क्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "स्क्यपुष्पं विकसति।",
+        "english": "A skya flower blooms.",
+        "highlight": "स्क्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "स्क्यमेघः",
+        "tiles": [
+          "स्क्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "स्क्यमेघः गर्जति।",
+        "english": "A skya cloud thunders.",
+        "highlight": "स्क्यमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "स्क्यतरुः",
+        "tiles": [
+          "स्क्यतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "स्क्यतरुः फलति।",
+        "english": "A skya tree bears fruit.",
+        "highlight": "स्क्यतरुः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "स्क्यसरः",
+        "tiles": [
+          "स्क्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "स्क्यसरः शीतलः।",
+        "english": "A skya lake is cool.",
+        "highlight": "स्क्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "स्क्यगिरिः",
+        "tiles": [
+          "स्क्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "स्क्यगिरिः उन्नतः।",
+        "english": "Skya-mountain is tall.",
+        "highlight": "स्क्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "स्क्यकमलम्",
+        "tiles": [
+          "स्क्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "स्क्यकमलं विकसति।",
+        "english": "A skya lotus blooms.",
+        "highlight": "स्क्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "स्प्यपवनः",
+        "tiles": [
+          "स्प्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "स्प्यपवनः वहति।",
+        "english": "A spya breeze blows.",
+        "highlight": "स्प्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "स्प्यखगः",
+        "tiles": [
+          "स्प्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "स्प्यखगः कूजति।",
+        "english": "A spya bird calls.",
+        "highlight": "स्प्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "स्प्यपुष्पम्",
+        "tiles": [
+          "स्प्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "स्प्यपुष्पं विकसति।",
+        "english": "A spya flower blooms.",
+        "highlight": "स्प्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "स्प्यमेघः",
+        "tiles": [
+          "स्प्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "स्प्यमेघः गर्जति।",
+        "english": "A spya cloud thunders.",
+        "highlight": "स्प्यमेघः"
+      },
+      {
+        "prompt": "____ हरितः।",
+        "target": "स्प्यतरुः",
+        "tiles": [
+          "स्प्यतरुः",
+          "तरुः",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्",
+          "पुष्पम्"
+        ],
+        "sentence": "स्प्यतरुः हरितः।",
+        "english": "A spya tree is green.",
+        "highlight": "स्प्यतरुः"
+      },
+      {
+        "prompt": "____ रम्यः।",
+        "target": "स्प्यसरः",
+        "tiles": [
+          "स्प्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "स्प्यसरः रम्यः।",
+        "english": "A spya lake is lovely.",
+        "highlight": "स्प्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "स्प्यगिरिः",
+        "tiles": [
+          "स्प्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "स्प्यगिरिः उन्नतः।",
+        "english": "Spya-mountain is tall.",
+        "highlight": "स्प्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "स्प्यकमलम्",
+        "tiles": [
+          "स्प्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "स्प्यकमलं विकसति।",
+        "english": "A spya lotus blooms.",
+        "highlight": "स्प्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "स्थ्यपवनः",
+        "tiles": [
+          "स्थ्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "स्थ्यपवनः वहति।",
+        "english": "A sthya breeze blows.",
+        "highlight": "स्थ्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "स्थ्यखगः",
+        "tiles": [
+          "स्थ्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "स्थ्यखगः कूजति।",
+        "english": "A sthya bird calls.",
+        "highlight": "स्थ्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "स्थ्यपुष्पम्",
+        "tiles": [
+          "स्थ्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "स्थ्यपुष्पं विकसति।",
+        "english": "A sthya flower blooms.",
+        "highlight": "स्थ्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "स्थ्यमेघः",
+        "tiles": [
+          "स्थ्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "स्थ्यमेघः गर्जति।",
+        "english": "A sthya cloud thunders.",
+        "highlight": "स्थ्यमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "स्थ्यतरुः",
+        "tiles": [
+          "स्थ्यतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "स्थ्यतरुः फलति।",
+        "english": "A sthya tree bears fruit.",
+        "highlight": "स्थ्यतरुः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "स्थ्यसरः",
+        "tiles": [
+          "स्थ्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "स्थ्यसरः शीतलः।",
+        "english": "A sthya lake is cool.",
+        "highlight": "स्थ्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "स्थ्यगिरिः",
+        "tiles": [
+          "स्थ्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "स्थ्यगिरिः उन्नतः।",
+        "english": "Sthya-mountain is tall.",
+        "highlight": "स्थ्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "स्थ्यकमलम्",
+        "tiles": [
+          "स्थ्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "स्थ्यकमलं विकसति।",
+        "english": "A sthya lotus blooms.",
+        "highlight": "स्थ्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "श्च्यपवनः",
+        "tiles": [
+          "श्च्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "श्च्यपवनः वहति।",
+        "english": "A shcya breeze blows.",
+        "highlight": "श्च्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "श्च्यखगः",
+        "tiles": [
+          "श्च्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "श्च्यखगः कूजति।",
+        "english": "A shcya bird calls.",
+        "highlight": "श्च्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "श्च्यपुष्पम्",
+        "tiles": [
+          "श्च्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "श्च्यपुष्पं विकसति।",
+        "english": "A shcya flower blooms.",
+        "highlight": "श्च्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "श्च्यमेघः",
+        "tiles": [
+          "श्च्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "श्च्यमेघः गर्जति।",
+        "english": "A shcya cloud thunders.",
+        "highlight": "श्च्यमेघः"
+      },
+      {
+        "prompt": "____ हरितः।",
+        "target": "श्च्यतरुः",
+        "tiles": [
+          "श्च्यतरुः",
+          "तरुः",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्",
+          "पुष्पम्"
+        ],
+        "sentence": "श्च्यतरुः हरितः।",
+        "english": "A shcya tree is green.",
+        "highlight": "श्च्यतरुः"
+      },
+      {
+        "prompt": "____ रम्यः।",
+        "target": "श्च्यसरः",
+        "tiles": [
+          "श्च्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "श्च्यसरः रम्यः।",
+        "english": "A shcya lake is lovely.",
+        "highlight": "श्च्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "श्च्यगिरिः",
+        "tiles": [
+          "श्च्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "श्च्यगिरिः उन्नतः।",
+        "english": "Shcya-mountain is tall.",
+        "highlight": "श्च्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "श्च्यकमलम्",
+        "tiles": [
+          "श्च्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "श्च्यकमलं विकसति।",
+        "english": "A shcya lotus blooms.",
+        "highlight": "श्च्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "श्क्यपवनः",
+        "tiles": [
+          "श्क्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "श्क्यपवनः वहति।",
+        "english": "A shkya breeze blows.",
+        "highlight": "श्क्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "श्क्यखगः",
+        "tiles": [
+          "श्क्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "श्क्यखगः कूजति।",
+        "english": "A shkya bird calls.",
+        "highlight": "श्क्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "श्क्यपुष्पम्",
+        "tiles": [
+          "श्क्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "श्क्यपुष्पं विकसति।",
+        "english": "A shkya flower blooms.",
+        "highlight": "श्क्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "श्क्यमेघः",
+        "tiles": [
+          "श्क्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "श्क्यमेघः गर्जति।",
+        "english": "A shkya cloud thunders.",
+        "highlight": "श्क्यमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "श्क्यतरुः",
+        "tiles": [
+          "श्क्यतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "श्क्यतरुः फलति।",
+        "english": "A shkya tree bears fruit.",
+        "highlight": "श्क्यतरुः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "श्क्यसरः",
+        "tiles": [
+          "श्क्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "श्क्यसरः शीतलः।",
+        "english": "A shkya lake is cool.",
+        "highlight": "श्क्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "श्क्यगिरिः",
+        "tiles": [
+          "श्क्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "श्क्यगिरिः उन्नतः।",
+        "english": "Shkya-mountain is tall.",
+        "highlight": "श्क्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "श्क्यकमलम्",
+        "tiles": [
+          "श्क्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "श्क्यकमलं विकसति।",
+        "english": "A shkya lotus blooms.",
+        "highlight": "श्क्यकमलम्"
       },
       {
         "phase": "learn",
