@@ -889,3 +889,43 @@
 सव्वखगः उड्डयति।|An all-ready bird flies up.|सव्वखगः|nature
 सव्वगिरिः हिमावृतः।|All-ready mountain is snow-covered.|सव्वगिरिः|nature
 सव्वसरः शीतलः अस्ति।|The all-ready lake is cool.|सव्वसरः|nature
+स्कन्धतरुः छायां ददाति।|The trunk-tree gives shade.|स्कन्धतरुः|nature
+स्कन्दपुष्पं विकसति।|The Skanda-flower blooms.|स्कन्दपुष्पम्|nature
+स्कुरपवनः वहति।|A flickering breeze blows.|स्कुरपवनः|nature
+स्कन्धगिरिः उन्नतः अस्ति।|Trunk-mountain is tall.|स्कन्धगिरिः|nature
+स्कुरविद्युत् मेघे अस्ति।|Flickering lightning is in the cloud.|स्कुरविद्युत्|nature
+स्कन्दखगः कूजति।|A Skanda-bird calls.|स्कन्दखगः|nature
+स्कन्धवनं हरितम् अस्ति।|Trunk-forest is green.|स्कन्धवनम्|nature
+स्कुरकमलं विकसति।|A flickering lotus blooms.|स्कुरकमलम्|nature
+स्पन्दपवनः वहति।|A pulsing breeze blows.|स्पन्दपवनः|nature
+स्पष्टगिरिः दृश्यते।|A clear mountain is seen.|स्पष्टगिरिः|nature
+स्पृहापुष्पं विकसति।|A longing-flower blooms.|स्पृहापुष्पम्|nature
+स्पन्दमेघः गर्जति।|A pulsing cloud thunders.|स्पन्दमेघः|nature
+स्पष्टसरः शीतलः अस्ति।|A clear lake is cool.|स्पष्टसरः|nature
+स्पन्दखगः उड्डयति।|A pulsing bird flies up.|स्पन्दखगः|nature
+स्पृहातरुः फलति।|The longing-tree bears fruit.|स्पृहातरुः|nature
+स्पष्टकिरणः पतति।|A clear ray falls.|स्पष्टकिरणः|nature
+रत्नपुष्पं विकसति।|A jewel-flower blooms.|रत्नपुष्पम्|nature
+यत्नखगः कूजति।|An effort-bird calls.|यत्नखगः|nature
+रत्नसरः शीतलः अस्ति।|The jewel-lake is cool.|रत्नसरः|nature
+यत्नतरुः उन्नतः अस्ति।|The effort-tree is tall.|यत्नतरुः|nature
+रत्नमेघः जलं ददाति।|A jewel-cloud gives water.|रत्नमेघः|nature
+यत्नपवनः वहति।|An effort-breeze blows.|यत्नपवनः|nature
+रत्नगिरिः हिमावृतः।|Jewel-mountain is snow-covered.|रत्नगिरिः|nature
+यत्नकमलं विकसति।|An effort-lotus blooms.|यत्नकमलम्|nature
+चन्दनतरुः सुरभिः अस्ति।|The sandal tree is fragrant.|चन्दनतरुः|nature
+निम्नसरः शीतलः अस्ति।|The low lake is cool.|निम्नसरः|nature
+चन्दनगन्धः वायौ अस्ति।|Sandal scent is in the air.|चन्दनगन्धः|nature
+निम्नमार्गः सरलः अस्ति।|The low path is simple.|निम्नमार्गः|nature
+चन्दनवनं हरितम् अस्ति।|Sandal-forest is green.|चन्दनवनम्|nature
+निम्नमेघः जलं ददाति।|A low cloud gives water.|निम्नमेघः|nature
+चन्दनपुष्पं विकसति।|A sandal-flower blooms.|चन्दनपुष्पम्|nature
+निम्नखगः कूजति।|A low bird calls.|निम्नखगः|nature
+कल्पतरुः फलति।|The wish-tree bears fruit.|कल्पतरुः|nature
+अल्पपुष्पं विकसति।|A small flower blooms.|अल्पपुष्पम्|nature
+कल्पवनं रम्यम् अस्ति।|Kalpa-forest is lovely.|कल्पवनम्|nature
+अल्पपवनः वहति।|A small breeze blows.|अल्पपवनः|nature
+कल्पमेघः गर्जति।|A kalpa-cloud thunders.|कल्पमेघः|nature
+अल्पकमलं विकसति।|A small lotus blooms.|अल्पकमलम्|nature
+कल्पगिरिः उन्नतः अस्ति।|Kalpa-mountain is tall.|कल्पगिरिः|nature
+अल्पसरः शीतलः अस्ति।|A small lake is cool.|अल्पसरः|nature
