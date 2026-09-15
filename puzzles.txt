@@ -1317,6 +1317,96 @@
 जोडो|भ्यै|भ्यै|भ्य,ऐ,क,त,आ,इ|भ्यैः सह पवनः वहति।|With bhyai the breeze blows.|भ्य plus ऐ makes भ्यै.
 जोडो|भ्यो|भ्यो|भ्य,ओ,क,त,आ,इ|भ्यो रम्यः अस्ति।|The bhyo is lovely.|भ्य plus ओ makes भ्यो.
 जोडो|भ्यौ|भ्यौ|भ्य,औ,क,त,आ,इ|भ्यौ द्वौ स्तः।|Two bhyau-forms are there.|भ्य plus औ makes भ्यौ.
+जोडो|म्या|म्या|म्य,आ,क,त,इ,उ|रम्या भूमिः अस्ति।|The lovely land is there.|म्य plus आ makes म्या.
+जोडो|म्यि|म्यि|म्य,इ,क,त,आ,उ|म्यि खगः कूजति।|A myi-bird calls.|म्य plus इ makes म्यि.
+जोडो|म्यी|म्यी|म्य,ई,क,त,आ,इ|म्यी द्वौ स्तः।|Two myi-forms are there.|म्य plus ई makes म्यी.
+जोडो|म्यु|म्यु|म्य,उ,क,त,आ,इ|म्युं बालकः पश्यति।|The boy sees the myu.|म्य plus उ makes म्यु.
+जोडो|म्यू|म्यू|म्य,ऊ,क,त,आ,इ|म्यू द्वौ स्तः।|Two myu-forms are there.|म्य plus ऊ makes म्यू.
+जोडो|म्ये|म्ये|म्य,ए,क,त,आ,इ|म्ये पुष्पं विकसति।|A flower blooms at mye.|म्य plus ए makes म्ये.
+जोडो|म्यै|म्यै|म्य,ऐ,क,त,आ,इ|म्यैः सह पवनः वहति।|With myai the breeze blows.|म्य plus ऐ makes म्यै.
+जोडो|म्यो|म्यो|म्य,ओ,क,त,आ,इ|म्यो रम्यः अस्ति।|The myo is lovely.|म्य plus ओ makes म्यो.
+जोडो|म्यौ|म्यौ|म्य,औ,क,त,आ,इ|म्यौ द्वौ स्तः।|Two myau-forms are there.|म्य plus औ makes म्यौ.
+जोडो|न्या|न्या|न्य,आ,क,त,इ,उ|धन्या माता पश्यति।|The blessed mother sees.|न्य plus आ makes न्या.
+जोडो|न्यि|न्यि|न्य,इ,क,त,आ,उ|न्यि खगः कूजति।|A nyi-bird calls.|न्य plus इ makes न्यि.
+जोडो|न्यी|न्यी|न्य,ई,क,त,आ,इ|न्यी द्वौ स्तः।|Two nyi-forms are there.|न्य plus ई makes न्यी.
+जोडो|न्यु|न्यु|न्य,उ,क,त,आ,इ|न्युं बालकः पश्यति।|The boy sees the nyu.|न्य plus उ makes न्यु.
+जोडो|न्यू|न्यू|न्य,ऊ,क,त,आ,इ|न्यू द्वौ स्तः।|Two nyu-forms are there.|न्य plus ऊ makes न्यू.
+जोडो|न्ये|न्ये|न्य,ए,क,त,आ,इ|न्ये पुष्पं विकसति।|A flower blooms at nye.|न्य plus ए makes न्ये.
+जोडो|न्यै|न्यै|न्य,ऐ,क,त,आ,इ|न्यैः सह पवनः वहति।|With nyai the breeze blows.|न्य plus ऐ makes न्यै.
+जोडो|न्यो|न्यो|न्य,ओ,क,त,आ,इ|न्यो रम्यः अस्ति।|The nyo is lovely.|न्य plus ओ makes न्यो.
+जोडो|न्यौ|न्यौ|न्य,औ,क,त,आ,इ|न्यौ द्वौ स्तः।|Two nyau-forms are there.|न्य plus औ makes न्यौ.
+जोडो|ल्या|ल्या|ल्य,आ,क,त,इ,उ|मूल्यं उचितम् अस्ति।|The price is fair.|ल्य plus आ makes ल्या.
+जोडो|ल्यि|ल्यि|ल्य,इ,क,त,आ,उ|ल्यि खगः कूजति।|A lyi-bird calls.|ल्य plus इ makes ल्यि.
+जोडो|ल्यी|ल्यी|ल्य,ई,क,त,आ,इ|ल्यी द्वौ स्तः।|Two lyi-forms are there.|ल्य plus ई makes ल्यी.
+जोडो|ल्यु|ल्यु|ल्य,उ,क,त,आ,इ|ल्युं बालकः पश्यति।|The boy sees the lyu.|ल्य plus उ makes ल्यु.
+जोडो|ल्यू|ल्यू|ल्य,ऊ,क,त,आ,इ|ल्यू द्वौ स्तः।|Two lyu-forms are there.|ल्य plus ऊ makes ल्यू.
+जोडो|ल्ये|ल्ये|ल्य,ए,क,त,आ,इ|ल्ये पुष्पं विकसति।|A flower blooms at lye.|ल्य plus ए makes ल्ये.
+जोडो|ल्यै|ल्यै|ल्य,ऐ,क,त,आ,इ|ल्यैः सह पवनः वहति।|With lyai the breeze blows.|ल्य plus ऐ makes ल्यै.
+जोडो|ल्यो|ल्यो|ल्य,ओ,क,त,आ,इ|ल्यो रम्यः अस्ति।|The lyo is lovely.|ल्य plus ओ makes ल्यो.
+जोडो|ल्यौ|ल्यौ|ल्य,औ,क,त,आ,इ|ल्यौ द्वौ स्तः।|Two lyau-forms are there.|ल्य plus औ makes ल्यौ.
+जोडो|र्या|र्या|र्य,आ,क,त,इ,उ|कार्यं पूर्णम् अस्ति।|The work is complete.|र्य plus आ makes र्या.
+जोडो|र्यि|र्यि|र्य,इ,क,त,आ,उ|र्यि खगः कूजति।|A ryi-bird calls.|र्य plus इ makes र्यि.
+जोडो|र्यी|र्यी|र्य,ई,क,त,आ,इ|र्यी द्वौ स्तः।|Two ryi-forms are there.|र्य plus ई makes र्यी.
+जोडो|र्यु|र्यु|र्य,उ,क,त,आ,इ|र्युं बालकः पश्यति।|The boy sees the ryu.|र्य plus उ makes र्यु.
+जोडो|र्यू|र्यू|र्य,ऊ,क,त,आ,इ|र्यू द्वौ स्तः।|Two ryu-forms are there.|र्य plus ऊ makes र्यू.
+जोडो|र्ये|र्ये|र्य,ए,क,त,आ,इ|र्ये पुष्पं विकसति।|A flower blooms at rye.|र्य plus ए makes र्ये.
+जोडो|र्यै|र्यै|र्य,ऐ,क,त,आ,इ|र्यैः सह पवनः वहति।|With ryai the breeze blows.|र्य plus ऐ makes र्यै.
+जोडो|र्यो|र्यो|र्य,ओ,क,त,आ,इ|र्यो रम्यः अस्ति।|The ryo is lovely.|र्य plus ओ makes र्यो.
+जोडो|र्यौ|र्यौ|र्य,औ,क,त,आ,इ|र्यौ द्वौ स्तः।|Two ryau-forms are there.|र्य plus औ makes र्यौ.
+जोडो|व्रा|व्रा|व्र,आ,क,त,इ,उ|व्रतं पालयति बालकः।|The boy keeps the vow.|व्र plus आ makes व्रा.
+जोडो|व्रि|व्रि|व्र,इ,क,त,आ,उ|व्रि खगः कूजति।|A vri-bird calls.|व्र plus इ makes व्रि.
+जोडो|व्री|व्री|व्र,ई,क,त,आ,इ|व्री द्वौ स्तः।|Two vri-forms are there.|व्र plus ई makes व्री.
+जोडो|व्रु|व्रु|व्र,उ,क,त,आ,इ|व्रुं बालकः पश्यति।|The boy sees the vru.|व्र plus उ makes व्रु.
+जोडो|व्रू|व्रू|व्र,ऊ,क,त,आ,इ|व्रू द्वौ स्तः।|Two vru-forms are there.|व्र plus ऊ makes व्रू.
+जोडो|व्रे|व्रे|व्र,ए,क,त,आ,इ|व्रे पुष्पं विकसति।|A flower blooms at vre.|व्र plus ए makes व्रे.
+जोडो|व्रै|व्रै|व्र,ऐ,क,त,आ,इ|व्रैः सह पवनः वहति।|With vrai the breeze blows.|व्र plus ऐ makes व्रै.
+जोडो|व्रो|व्रो|व्र,ओ,क,त,आ,इ|व्रो रम्यः अस्ति।|The vro is lovely.|व्र plus ओ makes व्रो.
+जोडो|व्रौ|व्रौ|व्र,औ,क,त,आ,इ|व्रौ द्वौ स्तः।|Two vrau-forms are there.|व्र plus औ makes व्रौ.
+जोडो|क्ला|क्ला|क्ल,आ,क,त,इ,उ|शुक्ला चन्द्रिका शोभते।|White moonlight looks lovely.|क्ल plus आ makes क्ला.
+जोडो|क्लि|क्लि|क्ल,इ,क,त,आ,उ|क्लि खगः कूजति।|A kli-bird calls.|क्ल plus इ makes क्लि.
+जोडो|क्ली|क्ली|क्ल,ई,क,त,आ,इ|क्ली द्वौ स्तः।|Two kli-forms are there.|क्ल plus ई makes क्ली.
+जोडो|क्लु|क्लु|क्ल,उ,क,त,आ,इ|क्लुं बालकः पश्यति।|The boy sees the klu.|क्ल plus उ makes क्लु.
+जोडो|क्लू|क्लू|क्ल,ऊ,क,त,आ,इ|क्लू द्वौ स्तः।|Two klu-forms are there.|क्ल plus ऊ makes क्लू.
+जोडो|क्ले|क्ले|क्ल,ए,क,त,आ,इ|क्ले पुष्पं विकसति।|A flower blooms at kle.|क्ल plus ए makes क्ले.
+जोडो|क्लै|क्लै|क्ल,ऐ,क,त,आ,इ|क्लैः सह पवनः वहति।|With klai the breeze blows.|क्ल plus ऐ makes क्लै.
+जोडो|क्लो|क्लो|क्ल,ओ,क,त,आ,इ|क्लो रम्यः अस्ति।|The klo is lovely.|क्ल plus ओ makes क्लो.
+जोडो|क्लौ|क्लौ|क्ल,औ,क,त,आ,इ|क्लौ द्वौ स्तः।|Two klau-forms are there.|क्ल plus औ makes क्लौ.
+जोडो|ग्ला|ग्ला|ग्ल,आ,क,त,इ,उ|ग्लानिः नश्यति शीघ्रम्।|Lassitude disappears quickly.|ग्ल plus आ makes ग्ला.
+जोडो|ग्लि|ग्लि|ग्ल,इ,क,त,आ,उ|ग्लि खगः कूजति।|A gli-bird calls.|ग्ल plus इ makes ग्लि.
+जोडो|ग्ली|ग्ली|ग्ल,ई,क,त,आ,इ|ग्ली द्वौ स्तः।|Two gli-forms are there.|ग्ल plus ई makes ग्ली.
+जोडो|ग्लु|ग्लु|ग्ल,उ,क,त,आ,इ|ग्लुं बालकः पश्यति।|The boy sees the glu.|ग्ल plus उ makes ग्लु.
+जोडो|ग्लू|ग्लू|ग्ल,ऊ,क,त,आ,इ|ग्लू द्वौ स्तः।|Two glu-forms are there.|ग्ल plus ऊ makes ग्लू.
+जोडो|ग्ले|ग्ले|ग्ल,ए,क,त,आ,इ|ग्ले पुष्पं विकसति।|A flower blooms at gle.|ग्ल plus ए makes ग्ले.
+जोडो|ग्लै|ग्लै|ग्ल,ऐ,क,त,आ,इ|ग्लैः सह पवनः वहति।|With glai the breeze blows.|ग्ल plus ऐ makes ग्लै.
+जोडो|ग्लो|ग्लो|ग्ल,ओ,क,त,आ,इ|ग्लो रम्यः अस्ति।|The glo is lovely.|ग्ल plus ओ makes ग्लो.
+जोडो|ग्लौ|ग्लौ|ग्ल,औ,क,त,आ,इ|ग्लौ द्वौ स्तः।|Two glau-forms are there.|ग्ल plus औ makes ग्लौ.
+जोडो|प्ला|प्ला|प्ल,आ,क,त,इ,उ|प्लवः जले तरति।|The float swims in water.|प्ल plus आ makes प्ला.
+जोडो|प्लि|प्लि|प्ल,इ,क,त,आ,उ|प्लि खगः कूजति।|A pli-bird calls.|प्ल plus इ makes प्लि.
+जोडो|प्ली|प्ली|प्ल,ई,क,त,आ,इ|प्ली द्वौ स्तः।|Two pli-forms are there.|प्ल plus ई makes प्ली.
+जोडो|प्लु|प्लु|प्ल,उ,क,त,आ,इ|प्लुं बालकः पश्यति।|The boy sees the plu.|प्ल plus उ makes प्लु.
+जोडो|प्लू|प्लू|प्ल,ऊ,क,त,आ,इ|प्लू द्वौ स्तः।|Two plu-forms are there.|प्ल plus ऊ makes प्लू.
+जोडो|प्ले|प्ले|प्ल,ए,क,त,आ,इ|प्ले पुष्पं विकसति।|A flower blooms at ple.|प्ल plus ए makes प्ले.
+जोडो|प्लै|प्लै|प्ल,ऐ,क,त,आ,इ|प्लैः सह पवनः वहति।|With plai the breeze blows.|प्ल plus ऐ makes प्लै.
+जोडो|प्लो|प्लो|प्ल,ओ,क,त,आ,इ|प्लो रम्यः अस्ति।|The plo is lovely.|प्ल plus ओ makes प्लो.
+जोडो|प्लौ|प्लौ|प्ल,औ,क,त,आ,इ|प्लौ द्वौ स्तः।|Two plau-forms are there.|प्ल plus औ makes प्लौ.
+जोडो|फ्ला|फ्ला|फ्ल,आ,क,त,इ,उ|फ्ला रूपं शोभते।|The phla-form looks lovely.|फ्ल plus आ makes फ्ला.
+जोडो|फ्लि|फ्लि|फ्ल,इ,क,त,आ,उ|फ्लि खगः कूजति।|A phli-bird calls.|फ्ल plus इ makes फ्लि.
+जोडो|फ्ली|फ्ली|फ्ल,ई,क,त,आ,इ|फ्ली द्वौ स्तः।|Two phli-forms are there.|फ्ल plus ई makes फ्ली.
+जोडो|फ्लु|फ्लु|फ्ल,उ,क,त,आ,इ|फ्लुं बालकः पश्यति।|The boy sees the phlu.|फ्ल plus उ makes फ्लु.
+जोडो|फ्लू|फ्लू|फ्ल,ऊ,क,त,आ,इ|फ्लू द्वौ स्तः।|Two phlu-forms are there.|फ्ल plus ऊ makes फ्लू.
+जोडो|फ्ले|फ्ले|फ्ल,ए,क,त,आ,इ|फ्ले पुष्पं विकसति।|A flower blooms at phle.|फ्ल plus ए makes फ्ले.
+जोडो|फ्लै|फ्लै|फ्ल,ऐ,क,त,आ,इ|फ्लैः सह पवनः वहति।|With phlai the breeze blows.|फ्ल plus ऐ makes फ्लै.
+जोडो|फ्लो|फ्लो|फ्ल,ओ,क,त,आ,इ|फ्लो रम्यः अस्ति।|The phlo is lovely.|फ्ल plus ओ makes फ्लो.
+जोडो|फ्लौ|फ्लौ|फ्ल,औ,क,त,आ,इ|फ्लौ द्वौ स्तः।|Two phlau-forms are there.|फ्ल plus औ makes फ्लौ.
+जोडो|ब्ला|ब्ला|ब्ल,आ,क,त,इ,उ|ब्ला रूपं शोभते।|The bla-form looks lovely.|ब्ल plus आ makes ब्ला.
+जोडो|ब्लि|ब्लि|ब्ल,इ,क,त,आ,उ|ब्लि खगः कूजति।|A bli-bird calls.|ब्ल plus इ makes ब्लि.
+जोडो|ब्ली|ब्ली|ब्ल,ई,क,त,आ,इ|ब्ली द्वौ स्तः।|Two bli-forms are there.|ब्ल plus ई makes ब्ली.
+जोडो|ब्लु|ब्लु|ब्ल,उ,क,त,आ,इ|ब्लुं बालकः पश्यति।|The boy sees the blu.|ब्ल plus उ makes ब्लु.
+जोडो|ब्लू|ब्लू|ब्ल,ऊ,क,त,आ,इ|ब्लू द्वौ स्तः।|Two blu-forms are there.|ब्ल plus ऊ makes ब्लू.
+जोडो|ब्ले|ब्ले|ब्ल,ए,क,त,आ,इ|ब्ले पुष्पं विकसति।|A flower blooms at ble.|ब्ल plus ए makes ब्ले.
+जोडो|ब्लै|ब्लै|ब्ल,ऐ,क,त,आ,इ|ब्लैः सह पवनः वहति।|With blai the breeze blows.|ब्ल plus ऐ makes ब्लै.
+जोडो|ब्लो|ब्लो|ब्ल,ओ,क,त,आ,इ|ब्लो रम्यः अस्ति।|The blo is lovely.|ब्ल plus ओ makes ब्लो.
+जोडो|ब्लौ|ब्लौ|ब्ल,औ,क,त,आ,इ|ब्लौ द्वौ स्तः।|Two blau-forms are there.|ब्ल plus औ makes ब्लौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.

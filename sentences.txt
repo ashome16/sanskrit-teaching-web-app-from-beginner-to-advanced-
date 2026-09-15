@@ -1369,3 +1369,83 @@
 अभ्याससरः रम्यः।|A practice lake is lovely.|अभ्याससरः|nature
 अभ्यासगिरिः उन्नतः।|Practice-mountain is tall.|अभ्यासगिरिः|nature
 अभ्यासकमलं विकसति।|A practice lotus blooms.|अभ्यासकमलम्|nature
+रम्यपवनः वहति।|A lovely breeze blows.|रम्यपवनः|nature
+रम्यखगः कूजति।|A lovely bird calls.|रम्यखगः|nature
+रम्यपुष्पं विकसति।|A lovely flower blooms.|रम्यपुष्पम्|nature
+रम्यमेघः गर्जति।|A lovely cloud thunders.|रम्यमेघः|nature
+रम्यतरुः फलति।|A lovely tree bears fruit.|रम्यतरुः|nature
+रम्यसरः शीतलः।|A lovely lake is cool.|रम्यसरः|nature
+रम्यगिरिः उन्नतः।|Lovely-mountain is tall.|रम्यगिरिः|nature
+रम्यकमलं विकसति।|A lovely lotus blooms.|रम्यकमलम्|nature
+धन्यपवनः वहति।|A blessed breeze blows.|धन्यपवनः|nature
+धन्यखगः कूजति।|A blessed bird calls.|धन्यखगः|nature
+धन्यपुष्पं विकसति।|A blessed flower blooms.|धन्यपुष्पम्|nature
+धन्यमेघः गर्जति।|A blessed cloud thunders.|धन्यमेघः|nature
+धन्यतरुः हरितः।|A blessed tree is green.|धन्यतरुः|nature
+धन्यसरः रम्यः।|A blessed lake is lovely.|धन्यसरः|nature
+धन्यगिरिः उन्नतः।|Blessed-mountain is tall.|धन्यगिरिः|nature
+धन्यकमलं विकसति।|A blessed lotus blooms.|धन्यकमलम्|nature
+मूल्यपवनः वहति।|A value breeze blows.|मूल्यपवनः|nature
+मूल्यखगः कूजति।|A value bird calls.|मूल्यखगः|nature
+मूल्यपुष्पं विकसति।|A value flower blooms.|मूल्यपुष्पम्|nature
+मूल्यमेघः गर्जति।|A value cloud thunders.|मूल्यमेघः|nature
+मूल्यतरुः फलति।|A value tree bears fruit.|मूल्यतरुः|nature
+मूल्यसरः शीतलः।|A value lake is cool.|मूल्यसरः|nature
+मूल्यगिरिः उन्नतः।|Value-mountain is tall.|मूल्यगिरिः|nature
+मूल्यकमलं विकसति।|A value lotus blooms.|मूल्यकमलम्|nature
+कार्यपवनः वहति।|A work breeze blows.|कार्यपवनः|nature
+कार्यखगः कूजति।|A work bird calls.|कार्यखगः|nature
+कार्यपुष्पं विकसति।|A work flower blooms.|कार्यपुष्पम्|nature
+कार्यमेघः गर्जति।|A work cloud thunders.|कार्यमेघः|nature
+कार्यतरुः हरितः।|A work tree is green.|कार्यतरुः|nature
+कार्यसरः रम्यः।|A work lake is lovely.|कार्यसरः|nature
+कार्यगिरिः उन्नतः।|Work-mountain is tall.|कार्यगिरिः|nature
+कार्यकमलं विकसति।|A work lotus blooms.|कार्यकमलम्|nature
+व्रतपवनः वहति।|A vow breeze blows.|व्रतपवनः|nature
+व्रतखगः कूजति।|A vow bird calls.|व्रतखगः|nature
+व्रतपुष्पं विकसति।|A vow flower blooms.|व्रतपुष्पम्|nature
+व्रतमेघः गर्जति।|A vow cloud thunders.|व्रतमेघः|nature
+व्रततरुः फलति।|A vow tree bears fruit.|व्रततरुः|nature
+व्रतसरः शीतलः।|A vow lake is cool.|व्रतसरः|nature
+व्रतगिरिः उन्नतः।|Vow-mountain is tall.|व्रतगिरिः|nature
+व्रतकमलं विकसति।|A vow lotus blooms.|व्रतकमलम्|nature
+शुक्लपवनः वहति।|A bright breeze blows.|शुक्लपवनः|nature
+शुक्लखगः कूजति।|A bright bird calls.|शुक्लखगः|nature
+शुक्लपुष्पं विकसति।|A bright flower blooms.|शुक्लपुष्पम्|nature
+शुक्लमेघः गर्जति।|A bright cloud thunders.|शुक्लमेघः|nature
+शुक्लतरुः हरितः।|A bright tree is green.|शुक्लतरुः|nature
+शुक्लसरः रम्यः।|A bright lake is lovely.|शुक्लसरः|nature
+शुक्लगिरिः उन्नतः।|Bright-mountain is tall.|शुक्लगिरिः|nature
+शुक्लकमलं विकसति।|A bright lotus blooms.|शुक्लकमलम्|nature
+ग्लानिपवनः वहति।|A weariness breeze blows.|ग्लानिपवनः|nature
+ग्लानिखगः कूजति।|A weariness bird calls.|ग्लानिखगः|nature
+ग्लानिपुष्पं विकसति।|A weariness flower blooms.|ग्लानिपुष्पम्|nature
+ग्लानिमेघः गर्जति।|A weariness cloud thunders.|ग्लानिमेघः|nature
+ग्लानितरुः फलति।|A weariness tree bears fruit.|ग्लानितरुः|nature
+ग्लानिसरः शीतलः।|A weariness lake is cool.|ग्लानिसरः|nature
+ग्लानिगिरिः उन्नतः।|Weariness-mountain is tall.|ग्लानिगिरिः|nature
+ग्लानिकमलं विकसति।|A weariness lotus blooms.|ग्लानिकमलम्|nature
+प्लवपवनः वहति।|A float breeze blows.|प्लवपवनः|nature
+प्लवखगः कूजति।|A float bird calls.|प्लवखगः|nature
+प्लवपुष्पं विकसति।|A float flower blooms.|प्लवपुष्पम्|nature
+प्लवमेघः गर्जति।|A float cloud thunders.|प्लवमेघः|nature
+प्लवतरुः हरितः।|A float tree is green.|प्लवतरुः|nature
+प्लवसरः रम्यः।|A float lake is lovely.|प्लवसरः|nature
+प्लवगिरिः उन्नतः।|Float-mountain is tall.|प्लवगिरिः|nature
+प्लवकमलं विकसति।|A float lotus blooms.|प्लवकमलम्|nature
+फ्लपवनः वहति।|A phla breeze blows.|फ्लपवनः|nature
+फ्लखगः कूजति।|A phla bird calls.|फ्लखगः|nature
+फ्लपुष्पं विकसति।|A phla flower blooms.|फ्लपुष्पम्|nature
+फ्लमेघः गर्जति।|A phla cloud thunders.|फ्लमेघः|nature
+फ्लतरुः फलति।|A phla tree bears fruit.|फ्लतरुः|nature
+फ्लसरः शीतलः।|A phla lake is cool.|फ्लसरः|nature
+फ्लगिरिः उन्नतः।|Phla-mountain is tall.|फ्लगिरिः|nature
+फ्लकमलं विकसति।|A phla lotus blooms.|फ्लकमलम्|nature
+ब्लपवनः वहति।|A bla breeze blows.|ब्लपवनः|nature
+ब्लखगः कूजति।|A bla bird calls.|ब्लखगः|nature
+ब्लपुष्पं विकसति।|A bla flower blooms.|ब्लपुष्पम्|nature
+ब्लमेघः गर्जति।|A bla cloud thunders.|ब्लमेघः|nature
+ब्लतरुः हरितः।|A bla tree is green.|ब्लतरुः|nature
+ब्लसरः रम्यः।|A bla lake is lovely.|ब्लसरः|nature
+ब्लगिरिः उन्नतः।|Bla-mountain is tall.|ब्लगिरिः|nature
+ब्लकमलं विकसति।|A bla lotus blooms.|ब्लकमलम्|nature
