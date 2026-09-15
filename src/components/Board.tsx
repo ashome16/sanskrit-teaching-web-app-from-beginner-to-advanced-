@@ -310,17 +310,20 @@ const Board: React.FC = () => {
       {packTitle && <div className="pack-shelf" aria-label="Packs">
         <div className="pack-card active">
           <strong>{displayPackTitle}</strong>
-          {packGloss && <small>{displayPackGloss}</small>}
+          {displayPackGloss && <small>{displayPackGloss}</small>}
         </div>
       </div>}
 
       <section className="puzzle-board">
         <div className="puzzle-meta">
-          <span>{displaySkin}</span>
-          <span>{targetIsWholeTile ? 'Click 1 tile' : (activeBoardShelf?.skin === 'जोडो' ? 'Click 2 tiles' : 'Click 1 tile')}</span>
-          <span>{puzzleIndex + 1} / {activePuzzles.length}</span>
-          <span>Target: <b>{activePuzzle.prompt ?? activePuzzle.target}</b></span>
+          <span className="meta-skin">{displaySkin}</span>
+          <span className="meta-sep" aria-hidden="true">·</span>
+          <span className="meta-hint">{targetIsWholeTile ? 'Click 1 tile' : (activeBoardShelf?.skin === 'जोडो' ? 'Click 2 tiles' : 'Click 1 tile')}</span>
+          <span className="meta-sep" aria-hidden="true">·</span>
+          <span className="meta-progress">{puzzleIndex + 1} / {activePuzzles.length}</span>
         </div>
+
+        <p className="puzzle-prompt">{activePuzzle.prompt ?? activePuzzle.target}</p>
 
         <div className="tile-row">
           {activePuzzle.tiles.map((tile, index) => (
@@ -330,7 +333,9 @@ const Board: React.FC = () => {
           ))}
         </div>
 
-        <button className="check-button" onClick={submitCheck}>Check</button>
+        <div className="puzzle-actions">
+          <button className="check-button" onClick={submitCheck}>Check</button>
+        </div>
 
         {checked && isCorrect && (
           <div className="puzzle-result correct">
