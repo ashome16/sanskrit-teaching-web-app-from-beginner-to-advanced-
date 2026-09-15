@@ -214,31 +214,45 @@ const CONSONANT_ROW_CHIP_DEFS: { id: string; consonant: string }[] = [
   { id: 'फ', consonant: 'फ' },
   { id: 'म', consonant: 'म' },
   { id: 'न', consonant: 'न' },
+  { id: 'थ', consonant: 'थ' },
+  { id: 'क्ष', consonant: 'क्ष' },
+  { id: 'ज्ञ', consonant: 'ज्ञ' },
+  { id: 'त्र', consonant: 'त्र' },
 ];
 
-const CONSONANT_ROW_MATRA = '[\u093E\u093F\u0940\u0941\u0942\u0943\u0947\u0948\u094B\u094C\u0902\u0903]';
+const CONSONANT_ROW_MATRA_CHARS = new Set([
+  '\u093E', '\u093F', '\u0940', '\u0941', '\u0942', '\u0943',
+  '\u0947', '\u0948', '\u094B', '\u094C', '\u0902', '\u0903',
+]);
+
+/** True when target is exactly base (one or more code points) + a single matra — so क्षा≠क, त्रा≠त, ज्ञा≠ज. */
+function isConsonantMatraTarget(target: string, consonant: string): boolean {
+  const t = target.normalize('NFC');
+  const base = consonant.normalize('NFC');
+  if (!base || !t.startsWith(base)) return false;
+  const rest = t.slice(base.length);
+  return rest.length === 1 && CONSONANT_ROW_MATRA_CHARS.has(rest);
+}
 
 /** First cons+matra at index >= minIndex (skips early रा/ला/सा once prior row ended). */
 function findConsonantRowStart(puzzles: BoardPuzzle[], consonant: string, minIndex = 0): number {
-  const re = new RegExp(`^${consonant}${CONSONANT_ROW_MATRA}$`);
   for (let i = Math.max(0, minIndex); i < puzzles.length; i++) {
     const p = puzzles[i];
     if (isPrashnaPuzzle(p)) continue;
     const t = (p.target || '').normalize('NFC');
-    if (re.test(t)) return i;
+    if (isConsonantMatraTarget(t, consonant)) return i;
   }
   return -1;
 }
 
 /** Exclusive end index of a contiguous cons+matra block starting at `start`. */
 function consonantRowEnd(puzzles: BoardPuzzle[], consonant: string, start: number): number {
-  const re = new RegExp(`^${consonant}${CONSONANT_ROW_MATRA}$`);
   let end = start;
   for (let i = start; i < puzzles.length; i++) {
     const p = puzzles[i];
     if (isPrashnaPuzzle(p)) break;
     const t = (p.target || '').normalize('NFC');
-    if (!re.test(t)) break;
+    if (!isConsonantMatraTarget(t, consonant)) break;
     end = i + 1;
   }
   return end;

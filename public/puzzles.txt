@@ -354,6 +354,42 @@
 जोडो|नै|नै|न,ऐ,क,त,आ,उ|वनैः वृतः ग्रामः।|The village is surrounded by forests.|न plus ऐ makes नै.
 जोडो|नो|नो|न,ओ,क,त,आ,उ|मनो प्रसन्नम् अस्ति।|The mind is glad.|न plus ओ makes नो.
 जोडो|नौ|नौ|न,औ,क,त,आ,उ|नौ द्वे जले तरेते।|Two boats float on the water.|न plus औ makes नौ.
+जोडो|था|था|थ,आ,क,त,इ,उ|थालं फलैः पूर्णम् अस्ति।|The plate is full of fruits.|थ plus आ makes था.
+जोडो|थि|थि|थ,इ,क,त,आ,उ|स्थितिः तरोः दृढा अस्ति।|The tree's stance is firm.|थ plus इ makes थि.
+जोडो|थी|थी|थ,ई,क,त,आ,इ|कथिता कथा रोचते।|The told story is pleasing.|थ plus ई makes थी.
+जोडो|थु|थु|थ,उ,क,त,आ,इ|पृथुः नगः अस्ति।|The mountain is broad.|थ plus उ makes थु.
+जोडो|थू|थू|थ,ऊ,क,त,आ,इ|थूत्कारः श्रूयते।|A puffing sound is heard.|थ plus ऊ makes थू.
+जोडो|थे|थे|थ,ए,क,त,आ,इ|पथे मृगः धावति।|A deer runs on the path.|थ plus ए makes थे.
+जोडो|थै|थै|थ,ऐ,क,त,आ,इ|रथैः बालाः गच्छन्ति।|Children go by chariots.|थ plus ऐ makes थै.
+जोडो|थो|थो|थ,ओ,क,त,आ,इ|रथो वेगेन गच्छति।|The chariot goes swiftly.|थ plus ओ makes थो.
+जोडो|थौ|थौ|थ,औ,क,त,आ,इ|रथौ द्वौ मार्गे स्तः।|Two chariots are on the road.|थ plus औ makes थौ.
+जोडो|क्षा|क्षा|क्ष,आ,क,त,इ,उ|पक्षाः खगे स्तः।|Wings are on the bird.|क्ष plus आ makes क्षा.
+जोडो|क्षि|क्षि|क्ष,इ,क,त,आ,उ|पक्षिणः उड्डयन्ति।|Birds fly up.|क्ष plus इ makes क्षि.
+जोडो|क्षी|क्षी|क्ष,ई,क,त,आ,इ|क्षीरं मधुरम् अस्ति।|Milk is sweet.|क्ष plus ई makes क्षी.
+जोडो|क्षु|क्षु|क्ष,उ,क,त,आ,इ|ईक्षुः क्षेत्रे रोहति।|Sugarcane grows in the field.|क्ष plus उ makes क्षु.
+जोडो|क्षू|क्षू|क्ष,ऊ,क,त,आ,इ|ईक्षू मधुरौ स्तः।|Two sugarcanes are sweet.|क्ष plus ऊ makes क्षू.
+जोडो|क्षे|क्षे|क्ष,ए,क,त,आ,इ|क्षेत्रे सस्यं रोहति।|Grain grows in the field.|क्ष plus ए makes क्षे.
+जोडो|क्षै|क्षै|क्ष,ऐ,क,त,आ,इ|पक्षैः खगः उड्डयति।|The bird flies with its wings.|क्ष plus ऐ makes क्षै.
+जोडो|क्षो|क्षो|क्ष,ओ,क,त,आ,इ|वृक्षो विशालः अस्ति।|The tree is vast.|क्ष plus ओ makes क्षो.
+जोडो|क्षौ|क्षौ|क्ष,औ,क,त,आ,इ|वृक्षौ वने स्तः।|Two trees are in the forest.|क्ष plus औ makes क्षौ.
+जोडो|ज्ञा|ज्ञा|ज्ञ,आ,क,त,इ,उ|संज्ञा सरला अस्ति।|The name-label is simple.|ज्ञ plus आ makes ज्ञा.
+जोडो|ज्ञि|ज्ञि|ज्ञ,इ,क,त,आ,उ|यज्ञिकः कुसुमं ददाति।|The priest offers a flower.|ज्ञ plus इ makes ज्ञि.
+जोडो|ज्ञी|ज्ञी|ज्ञ,ई,क,त,आ,इ|विज्ञानी पठति।|The wise one studies.|ज्ञ plus ई makes ज्ञी.
+जोडो|ज्ञु|ज्ञु|ज्ञ,उ,क,त,आ,इ|प्रज्ञुः बालकः हसति।|The clever boy smiles.|ज्ञ plus उ makes ज्ञु.
+जोडो|ज्ञू|ज्ञू|ज्ञ,ऊ,क,त,आ,इ|प्रज्ञू द्वौ पठतः।|Two clever ones study.|ज्ञ plus ऊ makes ज्ञू.
+जोडो|ज्ञे|ज्ञे|ज्ञ,ए,क,त,आ,इ|विज्ञेयं रहस्यं अस्ति।|The secret can be known.|ज्ञ plus ए makes ज्ञे.
+जोडो|ज्ञै|ज्ञै|ज्ञ,ऐ,क,त,आ,इ|सर्वज्ञैः पूज्यते गुरुः।|The teacher is honored by the wise.|ज्ञ plus ऐ makes ज्ञै.
+जोडो|ज्ञो|ज्ञो|ज्ञ,ओ,क,त,आ,इ|विज्ञो विद्यार्थी पठति।|The wise student studies.|ज्ञ plus ओ makes ज्ञो.
+जोडो|ज्ञौ|ज्ञौ|ज्ञ,औ,क,त,आ,इ|विज्ञौ द्वौ वदतः।|Two wise ones speak.|ज्ञ plus औ makes ज्ञौ.
+जोडो|त्रा|त्रा|त्र,आ,क,त,इ,उ|मित्राणि क्रीडन्ति।|Friends play.|त्र plus आ makes त्रा.
+जोडो|त्रि|त्रि|त्र,इ,क,त,आ,उ|पत्रिणः आकाशे उड्डयन्ति।|Winged birds fly in the sky.|त्र plus इ makes त्रि.
+जोडो|त्री|त्री|त्र,ई,क,त,आ,इ|रात्री शान्ता अस्ति।|Night is peaceful.|त्र plus ई makes त्री.
+जोडो|त्रु|त्रु|त्र,उ,क,त,आ,इ|शत्रुः दूरं गच्छति।|The foe goes far away.|त्र plus उ makes त्रु.
+जोडो|त्रू|त्रू|त्र,ऊ,क,त,आ,इ|शत्रू पलायतः।|Two foes flee.|त्र plus ऊ makes त्रू.
+जोडो|त्रे|त्रे|त्र,ए,क,त,आ,इ|पत्रे जलं तिष्ठति।|Water rests on the leaf.|त्र plus ए makes त्रे.
+जोडो|त्रै|त्रै|त्र,ऐ,क,त,आ,इ|पुत्रैः वनं गम्यते।|One goes to the forest with sons.|त्र plus ऐ makes त्रै.
+जोडो|त्रो|त्रो|त्र,ओ,क,त,आ,इ|पुत्रो हसति।|The son smiles.|त्र plus ओ makes त्रो.
+जोडो|त्रौ|त्रौ|त्र,औ,क,त,आ,इ|पुत्रौ क्रीडतः।|Two sons play.|त्र plus औ makes त्रौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
