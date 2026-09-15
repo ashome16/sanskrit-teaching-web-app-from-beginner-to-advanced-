@@ -50,7 +50,10 @@ const parseVisitor = (text: string): VisitorBlock[] => text.split(/\r?\n/).reduc
 const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((response) => response.text());
 const cleanTile = (tile: string) => tile.replace(/\u200B/g, '').normalize('NFC').trim();
 
-const MARK: Record<string, string> = { 'आ': 'ा', 'इ': 'ि', 'उ': 'ु', 'ए': 'े', 'ओ': 'ो' };
+// Independent vowel tiles must map to combining matras so glueTiles(क+ई)→की, क+ऊ→कू, etc.
+const MARK: Record<string, string> = {
+  'आ': 'ा', 'इ': 'ि', 'ई': 'ी', 'उ': 'ु', 'ऊ': 'ू', 'ऋ': 'ृ', 'ए': 'े', 'ऐ': 'ै', 'ओ': 'ो', 'औ': 'ौ',
+};
 function glueTiles(tiles: string[]) {
   return tiles.map((tile) => cleanTile(tile)).map((tile) => MARK[tile] ?? tile).join('').normalize('NFC');
 }
@@ -303,10 +306,16 @@ const Board: React.FC = () => {
       applySelection([clean]);
       return;
     }
-    const nextChosen = chosen.includes(clean)
-      ? chosen.filter((item) => item !== clean)
-      : [...chosen, clean];
-    applySelection(nextChosen);
+    // Never accumulate more than 2 tiles — a third tap starts fresh with that tile.
+    if (chosen.includes(clean)) {
+      applySelection(chosen.filter((item) => item !== clean));
+      return;
+    }
+    if (chosen.length >= 2) {
+      applySelection([clean]);
+      return;
+    }
+    applySelection([...chosen, clean]);
   };
 
   const hasNextPuzzle = (isLearnPhase || isCorrect) && activePuzzles.length > 0;
