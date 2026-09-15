@@ -609,3 +609,43 @@
 सत्त्वहंसः सरसि तरति।|The pure swan swims in the lake.|सत्त्वहंसः|nature
 महत्त्वगिरिः मेघैः स्पृशति।|The great mountain touches the clouds.|महत्त्वगिरिः|nature
 मधुरत्वं फले अस्ति।|There is sweetness in the fruit.|मधुरत्वम्|nature
+हस्तपुष्पं विकसति।|The hand-flower blooms.|हस्तपुष्पम्|nature
+हस्तिगजः मन्दं चलति।|The tusked elephant walks slowly.|हस्तिगजः|nature
+स्तुतिखगः मधुरं कूजति।|The praise-bird sings sweetly.|स्तुतिखगः|nature
+स्तूपगिरिः उन्नतः अस्ति।|The stupa-mountain is tall.|स्तूपगिरिः|nature
+हस्तेकमलं शोभते।|The lotus in the hand looks lovely.|हस्तेकमलम्|nature
+प्रस्तोतृपक्षी गायति।|The singing bird sings.|प्रस्तोतृपक्षी|nature
+हस्तौपल्लवौ हरितौ स्तः।|Two hand-sprouts are green.|हस्तौपल्लवौ|nature
+वस्तुवनं रम्यम् अस्ति।|The real forest is lovely.|वस्तुवनम्|nature
+स्वादुफलं वृक्षात् पतति।|Tasty fruit falls from the tree.|स्वादुफलम्|nature
+स्वर्णखगः आकाशे उड्डयति।|The golden bird flies in the sky.|स्वर्णखगः|nature
+स्वच्छसरः प्रकाशते।|The clear lake sparkles.|स्वच्छसरः|nature
+स्वेदबिन्दुः वदने अस्ति।|A drop of sweat is on the face.|स्वेदबिन्दुः|nature
+स्वैरमृगः वने चरति।|The free deer wanders in the forest.|स्वैरमृगः|nature
+स्वोद्यानपुष्पं विकसति।|A flower blooms in one’s own garden.|स्वोद्यानपुष्पम्|nature
+अस्वस्थपवनः न वहति।|An unhealthy wind does not blow.|अस्वस्थपवनः|nature
+स्वागतखगः नीडे कूजति।|The welcome-bird calls in the nest.|स्वागतखगः|nature
+स्मितमुखं हसति बालकः।|The smiling face of the child laughs.|स्मितमुखम्|nature
+स्मारकवृक्षः उन्नतः अस्ति।|The memorial tree is tall.|स्मारकवृक्षः|nature
+स्मेरपद्मं विकसति।|The smiling lotus blooms.|स्मेरपद्मम्|nature
+विस्मयमेघः गर्जति।|The wonder-cloud thunders.|विस्मयमेघः|nature
+स्मीरणलता कम्पते।|The breeze-creeper sways.|स्मीरणलता|nature
+अस्मिन्वने सिंहः वसति।|In this forest a lion lives.|अस्मिन्वने|nature
+स्मृतिपुष्पं शोभते।|The memory-flower looks lovely.|स्मृतिपुष्पम्|nature
+विस्मृतबीजं रोहति।|The forgotten seed sprouts.|विस्मृतबीजम्|nature
+स्नानसरः शीतलः अस्ति।|The bathing lake is cool.|स्नानसरः|nature
+स्निग्धपर्णं तरोः अस्ति।|A glossy leaf is on the tree.|स्निग्धपर्णम्|nature
+स्नेहमयूरः नृत्यति।|The affectionate peacock dances.|स्नेहमयूरः|nature
+प्रस्नुतदुग्धं पिबति वत्सः।|The calf drinks the flowing milk.|प्रस्नुतदुग्धम्|nature
+स्नुषाकमलं विकसति।|The daughter-in-law’s lotus blooms.|स्नुषाकमलम्|nature
+स्नोतझरः गिरेः पतति।|The stream-fall falls from the mountain.|स्नोतझरः|nature
+स्नेहिलता आरोहति।|The affection-creeper climbs.|स्नेहिलता|nature
+सुस्निग्धमृगः तृणं खादति।|The very gentle deer eats grass.|सुस्निग्धमृगः|nature
+वृष्टिजलं भूमिं सिञ्चति।|Rainwater waters the earth.|वृष्टिजलम्|nature
+अष्टदलं कमलं विकसति।|An eight-petaled lotus blooms.|अष्टदलम्|nature
+इष्टपुष्पं पूजायै अस्ति।|The desired flower is for worship.|इष्टपुष्पम्|nature
+कष्टमार्गे सिंहः चरति।|The lion walks on the hard path.|कष्टमार्गः|nature
+यष्टिवृक्षः सरलः अस्ति।|The staff-tree is straight.|यष्टिवृक्षः|nature
+तुष्टखगः नीडे कूजति।|The contented bird calls in the nest.|तुष्टखगः|nature
+सृष्टिकमलं शोभते।|The creation-lotus looks lovely.|सृष्टिकमलम्|nature
+अष्टशिखरं हिमावृतम् अस्ति।|The eight-peak is snow-covered.|अष्टशिखरम्|nature
