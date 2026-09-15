@@ -769,3 +769,43 @@
 काञ्चीमार्गः सरलः अस्ति।|The Kanchi path is simple.|काञ्चीमार्गः|nature
 मुञ्चत्खगः उड्डयति।|The releasing bird flies up.|मुञ्चत्खगः|nature
 पञ्चवर्णखगः चित्रः अस्ति।|The five-colored bird is painted.|पञ्चवर्णखगः|nature
+उत्थानसूर्यः विभाति।|The rising sun shines.|उत्थानसूर्यः|nature
+उत्थितपवनः वहति।|A risen wind blows.|उत्थितपवनः|nature
+उत्थानकमलं विकसति।|The rising lotus blooms.|उत्थानकमलम्|nature
+उत्थिततरुः दृढः अस्ति।|The risen tree is firm.|उत्थिततरुः|nature
+उत्थानमेघः गर्जति।|The rising cloud thunders.|उत्थानमेघः|nature
+उत्थानखगः उड्डयति।|The rising bird flies up.|उत्थानखगः|nature
+अश्वत्थपत्रं हरितम् अस्ति।|The peepal leaf is green.|अश्वत्थपत्रम्|nature
+उत्थानगिरिः उन्नतः अस्ति।|The rising mountain is tall.|उत्थानगिरिः|nature
+उद्दामपवनः वहति।|An unrestrained wind blows.|उद्दामपवनः|nature
+उद्दीपकिरणः पतति।|A lamp-ray falls.|उद्दीपकिरणः|nature
+उद्दिष्टफलं मधुरम् अस्ति।|The indicated fruit is sweet.|उद्दिष्टफलम्|nature
+उद्दाममेघः गर्जति।|An unrestrained cloud thunders.|उद्दाममेघः|nature
+उद्दीपप्रकाशः शोभते।|Lamp-light looks lovely.|उद्दीपप्रकाशः|nature
+उद्दामसिंहः गर्जति।|An unrestrained lion roars.|उद्दामसिंहः|nature
+उद्दिष्टमार्गः सरलः अस्ति।|The indicated path is simple.|उद्दिष्टमार्गः|nature
+बृहद्द्रुमपत्रं विशालम् अस्ति।|The great-tree leaf is broad.|बृहद्द्रुमपत्रम्|nature
+पिप्पलछाया शीतला अस्ति।|The peepal shade is cool.|पिप्पलछाया|nature
+पिप्पलफलं मधुरम् अस्ति।|The peepal fruit is sweet.|पिप्पलफलम्|nature
+पुप्पगन्धः सुरभि अस्ति।|Blossom fragrance is sweet-smelling.|पुप्पगन्धः|nature
+पुप्पभ्रमरः गुञ्जति।|The blossom-bee buzzes.|पुप्पभ्रमरः|nature
+पुप्पतरुः विकसति।|The blossom-tree blooms.|पुप्पतरुः|nature
+पुप्पमाला शोभते।|A blossom garland looks lovely.|पुप्पमाला|nature
+पुप्पपरागः पतति।|Blossom pollen falls.|पुप्पपरागः|nature
+पुप्पोद्यानं रम्यम् अस्ति।|The blossom garden is lovely.|पुप्पोद्यानम्|nature
+उच्चवृक्षः उन्नतः अस्ति।|A tall tree is lofty.|उच्चवृक्षः|nature
+उच्चशिखरं हिमावृतम्।|A high peak is snow-covered.|उच्चशिखरम्|nature
+उच्चमेघः गर्जति।|A high cloud thunders.|उच्चमेघः|nature
+उच्चशाखायां खगः कूजति।|A bird calls on a high branch.|उच्चशाखायां|nature
+उच्चगिरिः मेघैः स्पृशति।|A high mountain touches the clouds.|उच्चगिरिः|nature
+उच्चपवनः वहति।|A high wind blows.|उच्चपवनः|nature
+उच्चनीडं वृक्षे अस्ति।|A high nest is on the tree.|उच्चनीडम्|nature
+उच्चैःस्वरः श्रूयते।|A loud call is heard.|उच्चैःस्वरः|nature
+फुल्लकमलं विकसति।|A blooming lotus opens.|फुल्लकमलम्|nature
+मल्लक्रीडा रम्या अस्ति।|Wrestling play is lovely.|मल्लक्रीडा|nature
+पल्लीमार्गः सरलः अस्ति।|The hamlet path is simple.|पल्लीमार्गः|nature
+उल्लासपवनः वहति।|A joyful breeze blows.|उल्लासपवनः|nature
+फुल्लोद्यानं शोभते।|A blooming garden looks lovely.|फुल्लोद्यानम्|nature
+पल्लवकिरणः पतति।|A sprout-ray falls.|पल्लवकिरणः|nature
+कल्लोलमेघः गर्जति।|A surging cloud thunders.|कल्लोलमेघः|nature
+भल्लूकगुहा गभीरा अस्ति।|The bear-cave is deep.|भल्लूकगुहा|nature

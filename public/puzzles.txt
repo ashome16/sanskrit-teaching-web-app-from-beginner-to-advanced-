@@ -642,6 +642,51 @@
 जोडो|ञ्चै|ञ्चै|ञ्च,ऐ,क,त,आ,इ|पञ्चैः पुष्पैः माला अस्ति।|There is a garland of five flowers.|ञ्च plus ऐ makes ञ्चै.
 जोडो|ञ्चो|ञ्चो|ञ्च,ओ,क,त,आ,इ|मञ्चो उच्चः अस्ति।|The platform is high.|ञ्च plus ओ makes ञ्चो.
 जोडो|ञ्चौ|ञ्चौ|ञ्च,औ,क,त,आ,इ|मञ्चौ द्वौ स्तः।|Two platforms are there.|ञ्च plus औ makes ञ्चौ.
+जोडो|त्था|त्था|त्थ,आ,क,त,इ,उ|उत्थाय बालकः पठति।|Rising, the boy reads.|त्थ plus आ makes त्था.
+जोडो|त्थि|त्थि|त्थ,इ,क,त,आ,उ|उत्थितः सूर्यः विभाति।|The risen sun shines.|त्थ plus इ makes त्थि.
+जोडो|त्थी|त्थी|त्थ,ई,क,त,आ,इ|उत्थी द्वौ स्तः।|Two rising ones are there.|त्थ plus ई makes त्थी.
+जोडो|त्थु|त्थु|त्थ,उ,क,त,आ,इ|उत्थुं बालकः इच्छति।|The boy wishes to rise.|त्थ plus उ makes त्थु.
+जोडो|त्थू|त्थू|त्थ,ऊ,क,त,आ,इ|उत्थू द्वौ स्तः।|Two rises are there.|त्थ plus ऊ makes त्थू.
+जोडो|त्थे|त्थे|त्थ,ए,क,त,आ,इ|उत्थे काले खगः गायति।|At rising time the bird sings.|त्थ plus ए makes त्थे.
+जोडो|त्थै|त्थै|त्थ,ऐ,क,त,आ,इ|उत्थैः पुष्पैः उद्यानं शोभते।|With risen flowers the garden looks lovely.|त्थ plus ऐ makes त्थै.
+जोडो|त्थो|त्थो|त्थ,ओ,क,त,आ,इ|उत्थो बालकः हसति।|The rising boy laughs.|त्थ plus ओ makes त्थो.
+जोडो|त्थौ|त्थौ|त्थ,औ,क,त,आ,इ|उत्थौ बालकौ धावतः।|Two rising boys run.|त्थ plus औ makes त्थौ.
+जोडो|द्दा|द्दा|द्द,आ,क,त,इ,उ|उद्दामः पवनः वहति।|An unrestrained wind blows.|द्द plus आ makes द्दा.
+जोडो|द्दि|द्दि|द्द,इ,क,त,आ,उ|उद्दिष्टं फलं मधुरम् अस्ति।|The indicated fruit is sweet.|द्द plus इ makes द्दि.
+जोडो|द्दी|द्दी|द्द,ई,क,त,आ,इ|उद्दीपः प्रकाशते।|The lamp shines.|द्द plus ई makes द्दी.
+जोडो|द्दु|द्दु|द्द,उ,क,त,आ,इ|उद्दुं जलं वहति।|He carries water up.|द्द plus उ makes द्दु.
+जोडो|द्दू|द्दू|द्द,ऊ,क,त,आ,इ|उद्दू द्वौ स्तः।|Two upward ones are there.|द्द plus ऊ makes द्दू.
+जोडो|द्दे|द्दे|द्द,ए,क,त,आ,इ|उद्दे वने मृगः चरति।|In that forest a deer wanders.|द्द plus ए makes द्दे.
+जोडो|द्दै|द्दै|द्द,ऐ,क,त,आ,इ|उद्दैः पुष्पैः माला अस्ति।|There is a garland of chosen flowers.|द्द plus ऐ makes द्दै.
+जोडो|द्दो|द्दो|द्द,ओ,क,त,आ,इ|उद्दो गजः चलति।|The rising elephant walks.|द्द plus ओ makes द्दो.
+जोडो|द्दौ|द्दौ|द्द,औ,क,त,आ,इ|उद्दौ खगौ कूजतः।|Two rising birds call.|द्द plus औ makes द्दौ.
+जोडो|प्पा|प्पा|प्प,आ,क,त,इ,उ|पुप्पात् गन्धः आयाति।|Fragrance comes from the blossom.|प्प plus आ makes प्पा.
+जोडो|प्पि|प्पि|प्प,इ,क,त,आ,उ|पुप्पि मधु अस्ति।|There is honey in the blossom.|प्प plus इ makes प्पि.
+जोडो|प्पी|प्पी|प्प,ई,क,त,आ,इ|पुप्पी द्वौ स्तः।|Two blossoms are there.|प्प plus ई makes प्पी.
+जोडो|प्पु|प्पु|प्प,उ,क,त,आ,इ|पुप्पुं बालकः इच्छति।|The boy wants a blossom.|प्प plus उ makes प्पु.
+जोडो|प्पू|प्पू|प्प,ऊ,क,त,आ,इ|पुप्पू द्वौ स्तः।|Two blossoms are there.|प्प plus ऊ makes प्पू.
+जोडो|प्पे|प्पे|प्प,ए,क,त,आ,इ|पुप्पे भ्रमरः गुञ्जति।|On the blossom a bee buzzes.|प्प plus ए makes प्पे.
+जोडो|प्पै|प्पै|प्प,ऐ,क,त,आ,इ|पुप्पैः माला अस्ति।|There is a garland of blossoms.|प्प plus ऐ makes प्पै.
+जोडो|प्पो|प्पो|प्प,ओ,क,त,आ,इ|पुप्पो विकसति।|The blossom opens.|प्प plus ओ makes प्पो.
+जोडो|प्पौ|प्पौ|प्प,औ,क,त,आ,इ|पुप्पौ द्वौ विकसतः।|Two blossoms open.|प्प plus औ makes प्पौ.
+जोडो|च्चा|च्चा|च्च,आ,क,त,इ,उ|उच्चा शाखा शोभते।|A high branch looks lovely.|च्च plus आ makes च्चा.
+जोडो|च्चि|च्चि|च्च,इ,क,त,आ,उ|सच्चित्तं शान्तं अस्ति।|A pure mind is peaceful.|च्च plus इ makes च्चि.
+जोडो|च्ची|च्ची|च्च,ई,क,त,आ,इ|उच्ची शाखे स्तः।|Two high branches are there.|च्च plus ई makes च्ची.
+जोडो|च्चु|च्चु|च्च,उ,क,त,आ,इ|उच्चुं खगः उड्डयति।|The bird flies high.|च्च plus उ makes च्चु.
+जोडो|च्चू|च्चू|च्च,ऊ,क,त,आ,इ|उच्चू द्वौ स्तः।|Two high ones are there.|च्च plus ऊ makes च्चू.
+जोडो|च्चे|च्चे|च्च,ए,क,त,आ,इ|उच्चे वृक्षे खगः कूजति।|On a high tree a bird calls.|च्च plus ए makes च्चे.
+जोडो|च्चै|च्चै|च्च,ऐ,क,त,आ,इ|उच्चैः खगाः कूजन्ति।|Birds call loudly.|च्च plus ऐ makes च्चै.
+जोडो|च्चो|च्चो|च्च,ओ,क,त,आ,इ|उच्चो वृक्षः अस्ति।|The tree is tall.|च्च plus ओ makes च्चो.
+जोडो|च्चौ|च्चौ|च्च,औ,क,त,आ,इ|उच्चौ वृक्षौ स्तः।|Two tall trees are there.|च्च plus औ makes च्चौ.
+जोडो|ल्ला|ल्ला|ल्ल,आ,क,त,इ,उ|मल्लाः क्रीडन्ति।|Wrestlers play.|ल्ल plus आ makes ल्ला.
+जोडो|ल्लि|ल्लि|ल्ल,इ,क,त,आ,उ|मल्लिका विकसति।|Jasmine blooms.|ल्ल plus इ makes ल्लि.
+जोडो|ल्ली|ल्ली|ल्ल,ई,क,त,आ,इ|पल्ली ग्रामे अस्ति।|The hamlet is in the village.|ल्ल plus ई makes ल्ली.
+जोडो|ल्लु|ल्लु|ल्ल,उ,क,त,आ,इ|मल्लुं बालकः पश्यति।|The boy sees the wrestler.|ल्ल plus उ makes ल्लु.
+जोडो|ल्लू|ल्लू|ल्ल,ऊ,क,त,आ,इ|भल्लूकः वने वसति।|The bear lives in the forest.|ल्ल plus ऊ makes ल्लू.
+जोडो|ल्ले|ल्ले|ल्ल,ए,क,त,आ,इ|फुल्ले उद्याने भ्रमरः अस्ति।|In the blooming garden there is a bee.|ल्ल plus ए makes ल्ले.
+जोडो|ल्लै|ल्लै|ल्ल,ऐ,क,त,आ,इ|मल्लैः सह बालकः क्रीडति।|The boy plays with the wrestlers.|ल्ल plus ऐ makes ल्लै.
+जोडो|ल्लो|ल्लो|ल्ल,ओ,क,त,आ,इ|कल्लोलः सागरे अस्ति।|A wave is in the ocean.|ल्ल plus ओ makes ल्लो.
+जोडो|ल्लौ|ल्लौ|ल्ल,औ,क,त,आ,इ|मल्लौ द्वौ क्रीडतः।|Two wrestlers play.|ल्ल plus औ makes ल्लौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
