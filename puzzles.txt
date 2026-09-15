@@ -16,6 +16,11 @@
 जोडो|सि|सि|स,इ,क,म,आ,उ|सिता फलं ददाति।|Sita gives fruit.|स plus इ makes सि.
 जोडो|पि|पि|प,इ,क,म,आ,उ|पिता अन्नं ददाति।|Father gives food.|प plus इ makes पि.
 जोडो|नि|नि|न,इ,प,क,आ,उ|निशा शान्ता अस्ति।|The night is peaceful.|न plus इ makes नि.
+जोडो|की|की|क,ई,ख,ग,आ,उ|कीटः पत्रे चरति।|The insect walks on the leaf.|क plus ई makes की.
+जोडो|मी|मी|म,ई,क,प,आ,उ|मीना जले तरति।|Mina swims in the water.|म plus ई makes मी.
+जोडो|सी|सी|स,ई,क,म,आ,उ|सीता अन्नं पचति।|Sita cooks food.|स plus ई makes सी.
+जोडो|पी|पी|प,ई,क,म,आ,उ|पीतं पुष्पं शोभते।|The yellow flower looks beautiful.|प plus ई makes पी.
+जोडो|नी|नी|न,ई,प,क,आ,उ|नीलः आकाशः अस्ति।|The sky is blue.|न plus ई makes नी.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.

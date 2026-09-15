@@ -227,6 +227,86 @@
         "explanation": "न plus इ makes नि."
       },
       {
+        "target": "की",
+        "tiles": [
+          "क",
+          "ई",
+          "ख",
+          "ग",
+          "आ",
+          "उ"
+        ],
+        "english": "The insect walks on the leaf.",
+        "explanation": "क plus ई makes की.",
+        "sentence": "कीटः पत्रे चरति।",
+        "highlight": "की",
+        "phase": "jodo"
+      },
+      {
+        "target": "मी",
+        "tiles": [
+          "म",
+          "ई",
+          "क",
+          "प",
+          "आ",
+          "उ"
+        ],
+        "english": "Mina swims in the water.",
+        "explanation": "म plus ई makes मी.",
+        "sentence": "मीना जले तरति।",
+        "highlight": "मी",
+        "phase": "jodo"
+      },
+      {
+        "target": "सी",
+        "tiles": [
+          "स",
+          "ई",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "Sita cooks food.",
+        "explanation": "स plus ई makes सी.",
+        "sentence": "सीता अन्नं पचति।",
+        "highlight": "सी",
+        "phase": "jodo"
+      },
+      {
+        "target": "पी",
+        "tiles": [
+          "प",
+          "ई",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "The yellow flower looks beautiful.",
+        "explanation": "प plus ई makes पी.",
+        "sentence": "पीतं पुष्पं शोभते।",
+        "highlight": "पी",
+        "phase": "jodo"
+      },
+      {
+        "target": "नी",
+        "tiles": [
+          "न",
+          "ई",
+          "प",
+          "क",
+          "आ",
+          "उ"
+        ],
+        "english": "The sky is blue.",
+        "explanation": "न plus ई makes नी.",
+        "sentence": "नीलः आकाशः अस्ति।",
+        "highlight": "नी",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -1340,6 +1420,96 @@
         "sentence": "मृगः वने धावति।",
         "english": "The deer runs in the forest.",
         "highlight": "मृगः"
+      },
+      {
+        "prompt": "____ भूमौ सरति।",
+        "target": "सर्पः",
+        "tiles": [
+          "सर्पः",
+          "गजः",
+          "अश्वः",
+          "सिंहः",
+          "मयूरः",
+          "मृगः"
+        ],
+        "sentence": "सर्पः भूमौ सरति।",
+        "english": "The snake crawls on the ground.",
+        "highlight": "सर्पः"
+      },
+      {
+        "prompt": "____ रात्रौ पश्यति।",
+        "target": "उलूकः",
+        "tiles": [
+          "कपोतः",
+          "उलूकः",
+          "मयूरः",
+          "कुक्कुटः",
+          "शशः",
+          "बिडालः"
+        ],
+        "sentence": "उलूकः रात्रौ पश्यति।",
+        "english": "The owl sees at night.",
+        "highlight": "उलूकः"
+      },
+      {
+        "prompt": "____ जले विकसति।",
+        "target": "कमलम्",
+        "tiles": [
+          "पुष्पम्",
+          "फलम्",
+          "नदी",
+          "कमलम्",
+          "वृक्षः",
+          "वनम्"
+        ],
+        "sentence": "कमलं जले विकसति।",
+        "english": "The lotus blooms in the water.",
+        "highlight": "कमलं"
+      },
+      {
+        "prompt": "____ वृक्षान् कम्पयति।",
+        "target": "वायुः",
+        "tiles": [
+          "मेघः",
+          "आकाशः",
+          "सूर्यः",
+          "पर्वतः",
+          "वायुः",
+          "नदी"
+        ],
+        "sentence": "वायुः वृक्षान् कम्पयति।",
+        "english": "The wind shakes the trees.",
+        "highlight": "वायुः"
+      },
+      {
+        "prompt": "____ अन्नं ददाति।",
+        "target": "भूमिः",
+        "tiles": [
+          "पर्वतः",
+          "नदी",
+          "वनम्",
+          "भूमिः",
+          "वृक्षः",
+          "आकाशः"
+        ],
+        "sentence": "भूमिः अन्नं ददाति।",
+        "english": "The earth gives food.",
+        "highlight": "भूमिः"
+      },
+      {
+        "prompt": "____ उष्णः अस्ति।",
+        "target": "अग्निः",
+        "tiles": [
+          "सूर्यः",
+          "मेघः",
+          "अग्निः",
+          "पर्वतः",
+          "नदी",
+          "वृक्षः"
+        ],
+        "sentence": "अग्निः उष्णः अस्ति।",
+        "english": "Fire is hot.",
+        "highlight": "अग्निः"
       }
     ]
   },
