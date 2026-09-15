@@ -1722,6 +1722,51 @@
 जोडो|ष्ट्यै|ष्ट्यै|ष्ट्य,ऐ,क,त,आ,इ|ष्ट्यैः सह पवनः वहति।|With shtyai the breeze blows.|ष्ट्य plus ऐ makes ष्ट्यै.
 जोडो|ष्ट्यो|ष्ट्यो|ष्ट्य,ओ,क,त,आ,इ|ष्ट्यो रम्यः अस्ति।|The shtyo is lovely.|ष्ट्य plus ओ makes ष्ट्यो.
 जोडो|ष्ट्यौ|ष्ट्यौ|ष्ट्य,औ,क,त,आ,इ|ष्ट्यौ द्वौ स्तः।|Two shtyau-forms are there.|ष्ट्य plus औ makes ष्ट्यौ.
+जोडो|झ्या|झ्या|झ्य,आ,क,त,इ,उ|झ्या रूपं शोभते।|The jhya-form looks lovely.|झ्य plus आ makes झ्या.
+जोडो|झ्यि|झ्यि|झ्य,इ,क,त,आ,उ|झ्यि खगः कूजति।|A jhyi-bird calls.|झ्य plus इ makes झ्यि.
+जोडो|झ्यी|झ्यी|झ्य,ई,क,त,आ,इ|झ्यी द्वौ स्तः।|Two jhyi-forms are there.|झ्य plus ई makes झ्यी.
+जोडो|झ्यु|झ्यु|झ्य,उ,क,त,आ,इ|झ्युं बालकः पश्यति।|The boy sees the jhyu.|झ्य plus उ makes झ्यु.
+जोडो|झ्यू|झ्यू|झ्य,ऊ,क,त,आ,इ|झ्यू द्वौ स्तः।|Two jhyu-forms are there.|झ्य plus ऊ makes झ्यू.
+जोडो|झ्ये|झ्ये|झ्य,ए,क,त,आ,इ|झ्ये पुष्पं विकसति।|A flower blooms at jhye.|झ्य plus ए makes झ्ये.
+जोडो|झ्यै|झ्यै|झ्य,ऐ,क,त,आ,इ|झ्यैः सह पवनः वहति।|With jhyai the breeze blows.|झ्य plus ऐ makes झ्यै.
+जोडो|झ्यो|झ्यो|झ्य,ओ,क,त,आ,इ|झ्यो रम्यः अस्ति।|The jhyo is lovely.|झ्य plus ओ makes झ्यो.
+जोडो|झ्यौ|झ्यौ|झ्य,औ,क,त,आ,इ|झ्यौ द्वौ स्तः।|Two jhyau-forms are there.|झ्य plus औ makes झ्यौ.
+जोडो|ट्या|ट्या|ट्य,आ,क,त,इ,उ|ट्या रूपं शोभते।|The tya-form looks lovely.|ट्य plus आ makes ट्या.
+जोडो|ट्यि|ट्यि|ट्य,इ,क,त,आ,उ|ट्यि खगः कूजति।|A tyi-bird calls.|ट्य plus इ makes ट्यि.
+जोडो|ट्यी|ट्यी|ट्य,ई,क,त,आ,इ|ट्यी द्वौ स्तः।|Two tyi-forms are there.|ट्य plus ई makes ट्यी.
+जोडो|ट्यु|ट्यु|ट्य,उ,क,त,आ,इ|ट्युं बालकः पश्यति।|The boy sees the tyu.|ट्य plus उ makes ट्यु.
+जोडो|ट्यू|ट्यू|ट्य,ऊ,क,त,आ,इ|ट्यू द्वौ स्तः।|Two tyu-forms are there.|ट्य plus ऊ makes ट्यू.
+जोडो|ट्ये|ट्ये|ट्य,ए,क,त,आ,इ|ट्ये पुष्पं विकसति।|A flower blooms at tye.|ट्य plus ए makes ट्ये.
+जोडो|ट्यै|ट्यै|ट्य,ऐ,क,त,आ,इ|ट्यैः सह पवनः वहति।|With tyai the breeze blows.|ट्य plus ऐ makes ट्यै.
+जोडो|ट्यो|ट्यो|ट्य,ओ,क,त,आ,इ|ट्यो रम्यः अस्ति।|The tyo is lovely.|ट्य plus ओ makes ट्यो.
+जोडो|ट्यौ|ट्यौ|ट्य,औ,क,त,आ,इ|ट्यौ द्वौ स्तः।|Two tyau-forms are there.|ट्य plus औ makes ट्यौ.
+जोडो|ठ्या|ठ्या|ठ्य,आ,क,त,इ,उ|ठ्या रूपं शोभते।|The thya-form looks lovely.|ठ्य plus आ makes ठ्या.
+जोडो|ठ्यि|ठ्यि|ठ्य,इ,क,त,आ,उ|ठ्यि खगः कूजति।|A thyi-bird calls.|ठ्य plus इ makes ठ्यि.
+जोडो|ठ्यी|ठ्यी|ठ्य,ई,क,त,आ,इ|ठ्यी द्वौ स्तः।|Two thyi-forms are there.|ठ्य plus ई makes ठ्यी.
+जोडो|ठ्यु|ठ्यु|ठ्य,उ,क,त,आ,इ|ठ्युं बालकः पश्यति।|The boy sees the thyu.|ठ्य plus उ makes ठ्यु.
+जोडो|ठ्यू|ठ्यू|ठ्य,ऊ,क,त,आ,इ|ठ्यू द्वौ स्तः।|Two thyu-forms are there.|ठ्य plus ऊ makes ठ्यू.
+जोडो|ठ्ये|ठ्ये|ठ्य,ए,क,त,आ,इ|ठ्ये पुष्पं विकसति।|A flower blooms at thye.|ठ्य plus ए makes ठ्ये.
+जोडो|ठ्यै|ठ्यै|ठ्य,ऐ,क,त,आ,इ|ठ्यैः सह पवनः वहति।|With thyai the breeze blows.|ठ्य plus ऐ makes ठ्यै.
+जोडो|ठ्यो|ठ्यो|ठ्य,ओ,क,त,आ,इ|ठ्यो रम्यः अस्ति।|The thyo is lovely.|ठ्य plus ओ makes ठ्यो.
+जोडो|ठ्यौ|ठ्यौ|ठ्य,औ,क,त,आ,इ|ठ्यौ द्वौ स्तः।|Two thyau-forms are there.|ठ्य plus औ makes ठ्यौ.
+जोडो|ड्या|ड्या|ड्य,आ,क,त,इ,उ|ड्या रूपं शोभते।|The dya-form looks lovely.|ड्य plus आ makes ड्या.
+जोडो|ड्यि|ड्यि|ड्य,इ,क,त,आ,उ|ड्यि खगः कूजति।|A dyi-bird calls.|ड्य plus इ makes ड्यि.
+जोडो|ड्यी|ड्यी|ड्य,ई,क,त,आ,इ|ड्यी द्वौ स्तः।|Two dyi-forms are there.|ड्य plus ई makes ड्यी.
+जोडो|ड्यु|ड्यु|ड्य,उ,क,त,आ,इ|ड्युं बालकः पश्यति।|The boy sees the dyu.|ड्य plus उ makes ड्यु.
+जोडो|ड्यू|ड्यू|ड्य,ऊ,क,त,आ,इ|ड्यू द्वौ स्तः।|Two dyu-forms are there.|ड्य plus ऊ makes ड्यू.
+जोडो|ड्ये|ड्ये|ड्य,ए,क,त,आ,इ|ड्ये पुष्पं विकसति।|A flower blooms at dye.|ड्य plus ए makes ड्ये.
+जोडो|ड्यै|ड्यै|ड्य,ऐ,क,त,आ,इ|ड्यैः सह पवनः वहति।|With dyai the breeze blows.|ड्य plus ऐ makes ड्यै.
+जोडो|ड्यो|ड्यो|ड्य,ओ,क,त,आ,इ|ड्यो रम्यः अस्ति।|The dyo is lovely.|ड्य plus ओ makes ड्यो.
+जोडो|ड्यौ|ड्यौ|ड्य,औ,क,त,आ,इ|ड्यौ द्वौ स्तः।|Two dyau-forms are there.|ड्य plus औ makes ड्यौ.
+जोडो|ढ्या|ढ्या|ढ्य,आ,क,त,इ,उ|ढ्या रूपं शोभते।|The dhya-form looks lovely.|ढ्य plus आ makes ढ्या.
+जोडो|ढ्यि|ढ्यि|ढ्य,इ,क,त,आ,उ|ढ्यि खगः कूजति।|A dhyi-bird calls.|ढ्य plus इ makes ढ्यि.
+जोडो|ढ्यी|ढ्यी|ढ्य,ई,क,त,आ,इ|ढ्यी द्वौ स्तः।|Two dhyi-forms are there.|ढ्य plus ई makes ढ्यी.
+जोडो|ढ्यु|ढ्यु|ढ्य,उ,क,त,आ,इ|ढ्युं बालकः पश्यति।|The boy sees the dhyu.|ढ्य plus उ makes ढ्यु.
+जोडो|ढ्यू|ढ्यू|ढ्य,ऊ,क,त,आ,इ|ढ्यू द्वौ स्तः।|Two dhyu-forms are there.|ढ्य plus ऊ makes ढ्यू.
+जोडो|ढ्ये|ढ्ये|ढ्य,ए,क,त,आ,इ|ढ्ये पुष्पं विकसति।|A flower blooms at dhye.|ढ्य plus ए makes ढ्ये.
+जोडो|ढ्यै|ढ्यै|ढ्य,ऐ,क,त,आ,इ|ढ्यैः सह पवनः वहति।|With dhyai the breeze blows.|ढ्य plus ऐ makes ढ्यै.
+जोडो|ढ्यो|ढ्यो|ढ्य,ओ,क,त,आ,इ|ढ्यो रम्यः अस्ति।|The dhyo is lovely.|ढ्य plus ओ makes ढ्यो.
+जोडो|ढ्यौ|ढ्यौ|ढ्य,औ,क,त,आ,इ|ढ्यौ द्वौ स्तः।|Two dhyau-forms are there.|ढ्य plus औ makes ढ्यौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
