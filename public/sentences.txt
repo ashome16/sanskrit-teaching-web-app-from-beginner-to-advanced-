@@ -1889,3 +1889,43 @@
 भ्र्यसरः शीतलः।|A bhrya lake is cool.|भ्र्यसरः|nature
 भ्र्यगिरिः उन्नतः।|Bhrya-mountain is tall.|भ्र्यगिरिः|nature
 भ्र्यकमलं विकसति।|A bhrya lotus blooms.|भ्र्यकमलम्|nature
+च्र्यपवनः वहति।|A chrya breeze blows.|च्र्यपवनः|nature
+च्र्यखगः कूजति।|A chrya bird calls.|च्र्यखगः|nature
+च्र्यपुष्पं विकसति।|A chrya flower blooms.|च्र्यपुष्पम्|nature
+च्र्यमेघः गर्जति।|A chrya cloud thunders.|च्र्यमेघः|nature
+च्र्यतरुः फलति।|A chrya tree bears fruit.|च्र्यतरुः|nature
+च्र्यसरः शीतलः।|A chrya lake is cool.|च्र्यसरः|nature
+च्र्यगिरिः उन्नतः।|Chrya-mountain is tall.|च्र्यगिरिः|nature
+च्र्यकमलं विकसति।|A chrya lotus blooms.|च्र्यकमलम्|nature
+ख्र्यपवनः वहति।|A khrya breeze blows.|ख्र्यपवनः|nature
+ख्र्यखगः कूजति।|A khrya bird calls.|ख्र्यखगः|nature
+ख्र्यपुष्पं विकसति।|A khrya flower blooms.|ख्र्यपुष्पम्|nature
+ख्र्यमेघः गर्जति।|A khrya cloud thunders.|ख्र्यमेघः|nature
+ख्र्यतरुः हरितः।|A khrya tree is green.|ख्र्यतरुः|nature
+ख्र्यसरः रम्यः।|A khrya lake is lovely.|ख्र्यसरः|nature
+ख्र्यगिरिः उन्नतः।|Khrya-mountain is tall.|ख्र्यगिरिः|nature
+ख्र्यकमलं विकसति।|A khrya lotus blooms.|ख्र्यकमलम्|nature
+थ्र्यपवनः वहति।|A thrya breeze blows.|थ्र्यपवनः|nature
+थ्र्यखगः कूजति।|A thrya bird calls.|थ्र्यखगः|nature
+थ्र्यपुष्पं विकसति।|A thrya flower blooms.|थ्र्यपुष्पम्|nature
+थ्र्यमेघः गर्जति।|A thrya cloud thunders.|थ्र्यमेघः|nature
+थ्र्यतरुः फलति।|A thrya tree bears fruit.|थ्र्यतरुः|nature
+थ्र्यसरः शीतलः।|A thrya lake is cool.|थ्र्यसरः|nature
+थ्र्यगिरिः उन्नतः।|Thrya-mountain is tall.|थ्र्यगिरिः|nature
+थ्र्यकमलं विकसति।|A thrya lotus blooms.|थ्र्यकमलम्|nature
+फ्र्यपवनः वहति।|A phrya breeze blows.|फ्र्यपवनः|nature
+फ्र्यखगः कूजति।|A phrya bird calls.|फ्र्यखगः|nature
+फ्र्यपुष्पं विकसति।|A phrya flower blooms.|फ्र्यपुष्पम्|nature
+फ्र्यमेघः गर्जति।|A phrya cloud thunders.|फ्र्यमेघः|nature
+फ्र्यतरुः हरितः।|A phrya tree is green.|फ्र्यतरुः|nature
+फ्र्यसरः रम्यः।|A phrya lake is lovely.|फ्र्यसरः|nature
+फ्र्यगिरिः उन्नतः।|Phrya-mountain is tall.|फ्र्यगिरिः|nature
+फ्र्यकमलं विकसति।|A phrya lotus blooms.|फ्र्यकमलम्|nature
+व्र्यपवनः वहति।|A vrya breeze blows.|व्र्यपवनः|nature
+व्र्यखगः कूजति।|A vrya bird calls.|व्र्यखगः|nature
+व्र्यपुष्पं विकसति।|A vrya flower blooms.|व्र्यपुष्पम्|nature
+व्र्यमेघः गर्जति।|A vrya cloud thunders.|व्र्यमेघः|nature
+व्र्यतरुः फलति।|A vrya tree bears fruit.|व्र्यतरुः|nature
+व्र्यसरः शीतलः।|A vrya lake is cool.|व्र्यसरः|nature
+व्र्यगिरिः उन्नतः।|Vrya-mountain is tall.|व्र्यगिरिः|nature
+व्र्यकमलं विकसति।|A vrya lotus blooms.|व्र्यकमलम्|nature

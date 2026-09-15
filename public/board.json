@@ -30403,6 +30403,726 @@
         "phase": "jodo"
       },
       {
+        "target": "च्र्या",
+        "tiles": [
+          "च्र्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The chrya-form looks lovely.",
+        "explanation": "च्र्य plus आ makes च्र्या.",
+        "sentence": "च्र्या रूपं शोभते।",
+        "highlight": "च्र्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्र्यि",
+        "tiles": [
+          "च्र्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A chryi-bird calls.",
+        "explanation": "च्र्य plus इ makes च्र्यि.",
+        "sentence": "च्र्यि खगः कूजति।",
+        "highlight": "च्र्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्र्यी",
+        "tiles": [
+          "च्र्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two chryi-forms are there.",
+        "explanation": "च्र्य plus ई makes च्र्यी.",
+        "sentence": "च्र्यी द्वौ स्तः।",
+        "highlight": "च्र्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्र्यु",
+        "tiles": [
+          "च्र्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the chryu.",
+        "explanation": "च्र्य plus उ makes च्र्यु.",
+        "sentence": "च्र्युं बालकः पश्यति।",
+        "highlight": "च्र्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्र्यू",
+        "tiles": [
+          "च्र्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two chryu-forms are there.",
+        "explanation": "च्र्य plus ऊ makes च्र्यू.",
+        "sentence": "च्र्यू द्वौ स्तः।",
+        "highlight": "च्र्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्र्ये",
+        "tiles": [
+          "च्र्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at chrye.",
+        "explanation": "च्र्य plus ए makes च्र्ये.",
+        "sentence": "च्र्ये पुष्पं विकसति।",
+        "highlight": "च्र्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्र्यै",
+        "tiles": [
+          "च्र्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With chryai the breeze blows.",
+        "explanation": "च्र्य plus ऐ makes च्र्यै.",
+        "sentence": "च्र्यैः सह पवनः वहति।",
+        "highlight": "च्र्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्र्यो",
+        "tiles": [
+          "च्र्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The chryo is lovely.",
+        "explanation": "च्र्य plus ओ makes च्र्यो.",
+        "sentence": "च्र्यो रम्यः अस्ति।",
+        "highlight": "च्र्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "च्र्यौ",
+        "tiles": [
+          "च्र्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two chryau-forms are there.",
+        "explanation": "च्र्य plus औ makes च्र्यौ.",
+        "sentence": "च्र्यौ द्वौ स्तः।",
+        "highlight": "च्र्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "ख्र्या",
+        "tiles": [
+          "ख्र्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The khrya-form looks lovely.",
+        "explanation": "ख्र्य plus आ makes ख्र्या.",
+        "sentence": "ख्र्या रूपं शोभते।",
+        "highlight": "ख्र्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "ख्र्यि",
+        "tiles": [
+          "ख्र्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A khryi-bird calls.",
+        "explanation": "ख्र्य plus इ makes ख्र्यि.",
+        "sentence": "ख्र्यि खगः कूजति।",
+        "highlight": "ख्र्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "ख्र्यी",
+        "tiles": [
+          "ख्र्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two khryi-forms are there.",
+        "explanation": "ख्र्य plus ई makes ख्र्यी.",
+        "sentence": "ख्र्यी द्वौ स्तः।",
+        "highlight": "ख्र्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "ख्र्यु",
+        "tiles": [
+          "ख्र्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the khryu.",
+        "explanation": "ख्र्य plus उ makes ख्र्यु.",
+        "sentence": "ख्र्युं बालकः पश्यति।",
+        "highlight": "ख्र्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "ख्र्यू",
+        "tiles": [
+          "ख्र्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two khryu-forms are there.",
+        "explanation": "ख्र्य plus ऊ makes ख्र्यू.",
+        "sentence": "ख्र्यू द्वौ स्तः।",
+        "highlight": "ख्र्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "ख्र्ये",
+        "tiles": [
+          "ख्र्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at khrye.",
+        "explanation": "ख्र्य plus ए makes ख्र्ये.",
+        "sentence": "ख्र्ये पुष्पं विकसति।",
+        "highlight": "ख्र्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "ख्र्यै",
+        "tiles": [
+          "ख्र्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With khryai the breeze blows.",
+        "explanation": "ख्र्य plus ऐ makes ख्र्यै.",
+        "sentence": "ख्र्यैः सह पवनः वहति।",
+        "highlight": "ख्र्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "ख्र्यो",
+        "tiles": [
+          "ख्र्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The khryo is lovely.",
+        "explanation": "ख्र्य plus ओ makes ख्र्यो.",
+        "sentence": "ख्र्यो रम्यः अस्ति।",
+        "highlight": "ख्र्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "ख्र्यौ",
+        "tiles": [
+          "ख्र्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two khryau-forms are there.",
+        "explanation": "ख्र्य plus औ makes ख्र्यौ.",
+        "sentence": "ख्र्यौ द्वौ स्तः।",
+        "highlight": "ख्र्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "थ्र्या",
+        "tiles": [
+          "थ्र्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The thrya-form looks lovely.",
+        "explanation": "थ्र्य plus आ makes थ्र्या.",
+        "sentence": "थ्र्या रूपं शोभते।",
+        "highlight": "थ्र्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "थ्र्यि",
+        "tiles": [
+          "थ्र्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A thryi-bird calls.",
+        "explanation": "थ्र्य plus इ makes थ्र्यि.",
+        "sentence": "थ्र्यि खगः कूजति।",
+        "highlight": "थ्र्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "थ्र्यी",
+        "tiles": [
+          "थ्र्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two thryi-forms are there.",
+        "explanation": "थ्र्य plus ई makes थ्र्यी.",
+        "sentence": "थ्र्यी द्वौ स्तः।",
+        "highlight": "थ्र्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "थ्र्यु",
+        "tiles": [
+          "थ्र्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the thryu.",
+        "explanation": "थ्र्य plus उ makes थ्र्यु.",
+        "sentence": "थ्र्युं बालकः पश्यति।",
+        "highlight": "थ्र्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "थ्र्यू",
+        "tiles": [
+          "थ्र्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two thryu-forms are there.",
+        "explanation": "थ्र्य plus ऊ makes थ्र्यू.",
+        "sentence": "थ्र्यू द्वौ स्तः।",
+        "highlight": "थ्र्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "थ्र्ये",
+        "tiles": [
+          "थ्र्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at thrye.",
+        "explanation": "थ्र्य plus ए makes थ्र्ये.",
+        "sentence": "थ्र्ये पुष्पं विकसति।",
+        "highlight": "थ्र्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "थ्र्यै",
+        "tiles": [
+          "थ्र्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With thryai the breeze blows.",
+        "explanation": "थ्र्य plus ऐ makes थ्र्यै.",
+        "sentence": "थ्र्यैः सह पवनः वहति।",
+        "highlight": "थ्र्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "थ्र्यो",
+        "tiles": [
+          "थ्र्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The thryo is lovely.",
+        "explanation": "थ्र्य plus ओ makes थ्र्यो.",
+        "sentence": "थ्र्यो रम्यः अस्ति।",
+        "highlight": "थ्र्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "थ्र्यौ",
+        "tiles": [
+          "थ्र्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two thryau-forms are there.",
+        "explanation": "थ्र्य plus औ makes थ्र्यौ.",
+        "sentence": "थ्र्यौ द्वौ स्तः।",
+        "highlight": "थ्र्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "फ्र्या",
+        "tiles": [
+          "फ्र्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The phrya-form looks lovely.",
+        "explanation": "फ्र्य plus आ makes फ्र्या.",
+        "sentence": "फ्र्या रूपं शोभते।",
+        "highlight": "फ्र्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "फ्र्यि",
+        "tiles": [
+          "फ्र्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A phryi-bird calls.",
+        "explanation": "फ्र्य plus इ makes फ्र्यि.",
+        "sentence": "फ्र्यि खगः कूजति।",
+        "highlight": "फ्र्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "फ्र्यी",
+        "tiles": [
+          "फ्र्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two phryi-forms are there.",
+        "explanation": "फ्र्य plus ई makes फ्र्यी.",
+        "sentence": "फ्र्यी द्वौ स्तः।",
+        "highlight": "फ्र्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "फ्र्यु",
+        "tiles": [
+          "फ्र्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the phryu.",
+        "explanation": "फ्र्य plus उ makes फ्र्यु.",
+        "sentence": "फ्र्युं बालकः पश्यति।",
+        "highlight": "फ्र्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "फ्र्यू",
+        "tiles": [
+          "फ्र्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two phryu-forms are there.",
+        "explanation": "फ्र्य plus ऊ makes फ्र्यू.",
+        "sentence": "फ्र्यू द्वौ स्तः।",
+        "highlight": "फ्र्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "फ्र्ये",
+        "tiles": [
+          "फ्र्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at phrye.",
+        "explanation": "फ्र्य plus ए makes फ्र्ये.",
+        "sentence": "फ्र्ये पुष्पं विकसति।",
+        "highlight": "फ्र्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "फ्र्यै",
+        "tiles": [
+          "फ्र्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With phryai the breeze blows.",
+        "explanation": "फ्र्य plus ऐ makes फ्र्यै.",
+        "sentence": "फ्र्यैः सह पवनः वहति।",
+        "highlight": "फ्र्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "फ्र्यो",
+        "tiles": [
+          "फ्र्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The phryo is lovely.",
+        "explanation": "फ्र्य plus ओ makes फ्र्यो.",
+        "sentence": "फ्र्यो रम्यः अस्ति।",
+        "highlight": "फ्र्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "फ्र्यौ",
+        "tiles": [
+          "फ्र्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two phryau-forms are there.",
+        "explanation": "फ्र्य plus औ makes फ्र्यौ.",
+        "sentence": "फ्र्यौ द्वौ स्तः।",
+        "highlight": "फ्र्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "व्र्या",
+        "tiles": [
+          "व्र्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The vrya-form looks lovely.",
+        "explanation": "व्र्य plus आ makes व्र्या.",
+        "sentence": "व्र्या रूपं शोभते।",
+        "highlight": "व्र्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "व्र्यि",
+        "tiles": [
+          "व्र्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A vryi-bird calls.",
+        "explanation": "व्र्य plus इ makes व्र्यि.",
+        "sentence": "व्र्यि खगः कूजति।",
+        "highlight": "व्र्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "व्र्यी",
+        "tiles": [
+          "व्र्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two vryi-forms are there.",
+        "explanation": "व्र्य plus ई makes व्र्यी.",
+        "sentence": "व्र्यी द्वौ स्तः।",
+        "highlight": "व्र्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "व्र्यु",
+        "tiles": [
+          "व्र्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the vryu.",
+        "explanation": "व्र्य plus उ makes व्र्यु.",
+        "sentence": "व्र्युं बालकः पश्यति।",
+        "highlight": "व्र्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "व्र्यू",
+        "tiles": [
+          "व्र्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two vryu-forms are there.",
+        "explanation": "व्र्य plus ऊ makes व्र्यू.",
+        "sentence": "व्र्यू द्वौ स्तः।",
+        "highlight": "व्र्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "व्र्ये",
+        "tiles": [
+          "व्र्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at vrye.",
+        "explanation": "व्र्य plus ए makes व्र्ये.",
+        "sentence": "व्र्ये पुष्पं विकसति।",
+        "highlight": "व्र्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "व्र्यै",
+        "tiles": [
+          "व्र्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With vryai the breeze blows.",
+        "explanation": "व्र्य plus ऐ makes व्र्यै.",
+        "sentence": "व्र्यैः सह पवनः वहति।",
+        "highlight": "व्र्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "व्र्यो",
+        "tiles": [
+          "व्र्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The vryo is lovely.",
+        "explanation": "व्र्य plus ओ makes व्र्यो.",
+        "sentence": "व्र्यो रम्यः अस्ति।",
+        "highlight": "व्र्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "व्र्यौ",
+        "tiles": [
+          "व्र्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two vryau-forms are there.",
+        "explanation": "व्र्य plus औ makes व्र्यौ.",
+        "sentence": "व्र्यौ द्वौ स्तः।",
+        "highlight": "व्र्यौ",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -58793,6 +59513,606 @@
         "sentence": "भ्र्यकमलं विकसति।",
         "english": "A bhrya lotus blooms.",
         "highlight": "भ्र्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "च्र्यपवनः",
+        "tiles": [
+          "च्र्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "च्र्यपवनः वहति।",
+        "english": "A chrya breeze blows.",
+        "highlight": "च्र्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "च्र्यखगः",
+        "tiles": [
+          "च्र्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "च्र्यखगः कूजति।",
+        "english": "A chrya bird calls.",
+        "highlight": "च्र्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "च्र्यपुष्पम्",
+        "tiles": [
+          "च्र्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "च्र्यपुष्पं विकसति।",
+        "english": "A chrya flower blooms.",
+        "highlight": "च्र्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "च्र्यमेघः",
+        "tiles": [
+          "च्र्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "च्र्यमेघः गर्जति।",
+        "english": "A chrya cloud thunders.",
+        "highlight": "च्र्यमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "च्र्यतरुः",
+        "tiles": [
+          "च्र्यतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "च्र्यतरुः फलति।",
+        "english": "A chrya tree bears fruit.",
+        "highlight": "च्र्यतरुः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "च्र्यसरः",
+        "tiles": [
+          "च्र्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "च्र्यसरः शीतलः।",
+        "english": "A chrya lake is cool.",
+        "highlight": "च्र्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "च्र्यगिरिः",
+        "tiles": [
+          "च्र्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "च्र्यगिरिः उन्नतः।",
+        "english": "Chrya-mountain is tall.",
+        "highlight": "च्र्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "च्र्यकमलम्",
+        "tiles": [
+          "च्र्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "च्र्यकमलं विकसति।",
+        "english": "A chrya lotus blooms.",
+        "highlight": "च्र्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "ख्र्यपवनः",
+        "tiles": [
+          "ख्र्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "ख्र्यपवनः वहति।",
+        "english": "A khrya breeze blows.",
+        "highlight": "ख्र्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "ख्र्यखगः",
+        "tiles": [
+          "ख्र्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "ख्र्यखगः कूजति।",
+        "english": "A khrya bird calls.",
+        "highlight": "ख्र्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ख्र्यपुष्पम्",
+        "tiles": [
+          "ख्र्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "ख्र्यपुष्पं विकसति।",
+        "english": "A khrya flower blooms.",
+        "highlight": "ख्र्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "ख्र्यमेघः",
+        "tiles": [
+          "ख्र्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "ख्र्यमेघः गर्जति।",
+        "english": "A khrya cloud thunders.",
+        "highlight": "ख्र्यमेघः"
+      },
+      {
+        "prompt": "____ हरितः।",
+        "target": "ख्र्यतरुः",
+        "tiles": [
+          "ख्र्यतरुः",
+          "तरुः",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्",
+          "पुष्पम्"
+        ],
+        "sentence": "ख्र्यतरुः हरितः।",
+        "english": "A khrya tree is green.",
+        "highlight": "ख्र्यतरुः"
+      },
+      {
+        "prompt": "____ रम्यः।",
+        "target": "ख्र्यसरः",
+        "tiles": [
+          "ख्र्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "ख्र्यसरः रम्यः।",
+        "english": "A khrya lake is lovely.",
+        "highlight": "ख्र्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "ख्र्यगिरिः",
+        "tiles": [
+          "ख्र्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "ख्र्यगिरिः उन्नतः।",
+        "english": "Khrya-mountain is tall.",
+        "highlight": "ख्र्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ख्र्यकमलम्",
+        "tiles": [
+          "ख्र्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "ख्र्यकमलं विकसति।",
+        "english": "A khrya lotus blooms.",
+        "highlight": "ख्र्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "थ्र्यपवनः",
+        "tiles": [
+          "थ्र्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "थ्र्यपवनः वहति।",
+        "english": "A thrya breeze blows.",
+        "highlight": "थ्र्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "थ्र्यखगः",
+        "tiles": [
+          "थ्र्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "थ्र्यखगः कूजति।",
+        "english": "A thrya bird calls.",
+        "highlight": "थ्र्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "थ्र्यपुष्पम्",
+        "tiles": [
+          "थ्र्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "थ्र्यपुष्पं विकसति।",
+        "english": "A thrya flower blooms.",
+        "highlight": "थ्र्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "थ्र्यमेघः",
+        "tiles": [
+          "थ्र्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "थ्र्यमेघः गर्जति।",
+        "english": "A thrya cloud thunders.",
+        "highlight": "थ्र्यमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "थ्र्यतरुः",
+        "tiles": [
+          "थ्र्यतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "थ्र्यतरुः फलति।",
+        "english": "A thrya tree bears fruit.",
+        "highlight": "थ्र्यतरुः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "थ्र्यसरः",
+        "tiles": [
+          "थ्र्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "थ्र्यसरः शीतलः।",
+        "english": "A thrya lake is cool.",
+        "highlight": "थ्र्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "थ्र्यगिरिः",
+        "tiles": [
+          "थ्र्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "थ्र्यगिरिः उन्नतः।",
+        "english": "Thrya-mountain is tall.",
+        "highlight": "थ्र्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "थ्र्यकमलम्",
+        "tiles": [
+          "थ्र्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "थ्र्यकमलं विकसति।",
+        "english": "A thrya lotus blooms.",
+        "highlight": "थ्र्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "फ्र्यपवनः",
+        "tiles": [
+          "फ्र्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "फ्र्यपवनः वहति।",
+        "english": "A phrya breeze blows.",
+        "highlight": "फ्र्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "फ्र्यखगः",
+        "tiles": [
+          "फ्र्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "फ्र्यखगः कूजति।",
+        "english": "A phrya bird calls.",
+        "highlight": "फ्र्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "फ्र्यपुष्पम्",
+        "tiles": [
+          "फ्र्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "फ्र्यपुष्पं विकसति।",
+        "english": "A phrya flower blooms.",
+        "highlight": "फ्र्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "फ्र्यमेघः",
+        "tiles": [
+          "फ्र्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "फ्र्यमेघः गर्जति।",
+        "english": "A phrya cloud thunders.",
+        "highlight": "फ्र्यमेघः"
+      },
+      {
+        "prompt": "____ हरितः।",
+        "target": "फ्र्यतरुः",
+        "tiles": [
+          "फ्र्यतरुः",
+          "तरुः",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्",
+          "पुष्पम्"
+        ],
+        "sentence": "फ्र्यतरुः हरितः।",
+        "english": "A phrya tree is green.",
+        "highlight": "फ्र्यतरुः"
+      },
+      {
+        "prompt": "____ रम्यः।",
+        "target": "फ्र्यसरः",
+        "tiles": [
+          "फ्र्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "फ्र्यसरः रम्यः।",
+        "english": "A phrya lake is lovely.",
+        "highlight": "फ्र्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "फ्र्यगिरिः",
+        "tiles": [
+          "फ्र्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "फ्र्यगिरिः उन्नतः।",
+        "english": "Phrya-mountain is tall.",
+        "highlight": "फ्र्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "फ्र्यकमलम्",
+        "tiles": [
+          "फ्र्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "फ्र्यकमलं विकसति।",
+        "english": "A phrya lotus blooms.",
+        "highlight": "फ्र्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "व्र्यपवनः",
+        "tiles": [
+          "व्र्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "व्र्यपवनः वहति।",
+        "english": "A vrya breeze blows.",
+        "highlight": "व्र्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "व्र्यखगः",
+        "tiles": [
+          "व्र्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "व्र्यखगः कूजति।",
+        "english": "A vrya bird calls.",
+        "highlight": "व्र्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "व्र्यपुष्पम्",
+        "tiles": [
+          "व्र्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "व्र्यपुष्पं विकसति।",
+        "english": "A vrya flower blooms.",
+        "highlight": "व्र्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "व्र्यमेघः",
+        "tiles": [
+          "व्र्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "व्र्यमेघः गर्जति।",
+        "english": "A vrya cloud thunders.",
+        "highlight": "व्र्यमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "व्र्यतरुः",
+        "tiles": [
+          "व्र्यतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "व्र्यतरुः फलति।",
+        "english": "A vrya tree bears fruit.",
+        "highlight": "व्र्यतरुः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "व्र्यसरः",
+        "tiles": [
+          "व्र्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "व्र्यसरः शीतलः।",
+        "english": "A vrya lake is cool.",
+        "highlight": "व्र्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "व्र्यगिरिः",
+        "tiles": [
+          "व्र्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "व्र्यगिरिः उन्नतः।",
+        "english": "Vrya-mountain is tall.",
+        "highlight": "व्र्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "व्र्यकमलम्",
+        "tiles": [
+          "व्र्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "व्र्यकमलं विकसति।",
+        "english": "A vrya lotus blooms.",
+        "highlight": "व्र्यकमलम्"
       },
       {
         "phase": "learn",
