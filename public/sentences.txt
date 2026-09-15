@@ -1529,3 +1529,43 @@
 घ्यसरः रम्यः।|A ghya lake is lovely.|घ्यसरः|nature
 घ्यगिरिः उन्नतः।|Ghya-mountain is tall.|घ्यगिरिः|nature
 घ्यकमलं विकसति।|A ghya lotus blooms.|घ्यकमलम्|nature
+त्त्रपवनः वहति।|A ttra breeze blows.|त्त्रपवनः|nature
+त्त्रखगः कूजति।|A ttra bird calls.|त्त्रखगः|nature
+त्त्रपुष्पं विकसति।|A ttra flower blooms.|त्त्रपुष्पम्|nature
+त्त्रमेघः गर्जति।|A ttra cloud thunders.|त्त्रमेघः|nature
+त्त्रतरुः फलति।|A ttra tree bears fruit.|त्त्रतरुः|nature
+त्त्रसरः शीतलः।|A ttra lake is cool.|त्त्रसरः|nature
+त्त्रगिरिः उन्नतः।|Ttra-mountain is tall.|त्त्रगिरिः|nature
+त्त्रकमलं विकसति।|A ttra lotus blooms.|त्त्रकमलम्|nature
+द्र्यपवनः वहति।|A drya breeze blows.|द्र्यपवनः|nature
+द्र्यखगः कूजति।|A drya bird calls.|द्र्यखगः|nature
+द्र्यपुष्पं विकसति।|A drya flower blooms.|द्र्यपुष्पम्|nature
+द्र्यमेघः गर्जति।|A drya cloud thunders.|द्र्यमेघः|nature
+द्र्यतरुः हरितः।|A drya tree is green.|द्र्यतरुः|nature
+द्र्यसरः रम्यः।|A drya lake is lovely.|द्र्यसरः|nature
+द्र्यगिरिः उन्नतः।|Drya-mountain is tall.|द्र्यगिरिः|nature
+द्र्यकमलं विकसति।|A drya lotus blooms.|द्र्यकमलम्|nature
+ह्र्यपवनः वहति।|A hrya breeze blows.|ह्र्यपवनः|nature
+ह्र्यखगः कूजति।|A hrya bird calls.|ह्र्यखगः|nature
+ह्र्यपुष्पं विकसति।|A hrya flower blooms.|ह्र्यपुष्पम्|nature
+ह्र्यमेघः गर्जति।|A hrya cloud thunders.|ह्र्यमेघः|nature
+ह्र्यतरुः फलति।|A hrya tree bears fruit.|ह्र्यतरुः|nature
+ह्र्यसरः शीतलः।|A hrya lake is cool.|ह्र्यसरः|nature
+ह्र्यगिरिः उन्नतः।|Hrya-mountain is tall.|ह्र्यगिरिः|nature
+ह्र्यकमलं विकसति।|A hrya lotus blooms.|ह्र्यकमलम्|nature
+ञ्च्यपवनः वहति।|A nchya breeze blows.|ञ्च्यपवनः|nature
+ञ्च्यखगः कूजति।|A nchya bird calls.|ञ्च्यखगः|nature
+ञ्च्यपुष्पं विकसति।|A nchya flower blooms.|ञ्च्यपुष्पम्|nature
+ञ्च्यमेघः गर्जति।|A nchya cloud thunders.|ञ्च्यमेघः|nature
+ञ्च्यतरुः हरितः।|A nchya tree is green.|ञ्च्यतरुः|nature
+ञ्च्यसरः रम्यः।|A nchya lake is lovely.|ञ्च्यसरः|nature
+ञ्च्यगिरिः उन्नतः।|Nchya-mountain is tall.|ञ्च्यगिरिः|nature
+ञ्च्यकमलं विकसति।|A nchya lotus blooms.|ञ्च्यकमलम्|nature
+राष्ट्रपवनः वहति।|A nation breeze blows.|राष्ट्रपवनः|nature
+राष्ट्रखगः कूजति।|A nation bird calls.|राष्ट्रखगः|nature
+राष्ट्रपुष्पं विकसति।|A nation flower blooms.|राष्ट्रपुष्पम्|nature
+राष्ट्रमेघः गर्जति।|A nation cloud thunders.|राष्ट्रमेघः|nature
+राष्ट्रतरुः फलति।|A nation tree bears fruit.|राष्ट्रतरुः|nature
+राष्ट्रसरः शीतलः।|A nation lake is cool.|राष्ट्रसरः|nature
+राष्ट्रगिरिः उन्नतः।|Nation-mountain is tall.|राष्ट्रगिरिः|nature
+राष्ट्रकमलं विकसति।|A nation lotus blooms.|राष्ट्रकमलम्|nature
