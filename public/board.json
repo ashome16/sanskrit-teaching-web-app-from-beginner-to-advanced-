@@ -1171,6 +1171,150 @@
         "phase": "jodo"
       },
       {
+        "target": "दा",
+        "tiles": [
+          "द",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "Giving is good.",
+        "explanation": "द plus आ makes दा.",
+        "sentence": "दानं शुभम् अस्ति।",
+        "highlight": "दा",
+        "phase": "jodo"
+      },
+      {
+        "target": "दि",
+        "tiles": [
+          "द",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "The day is bright.",
+        "explanation": "द plus इ makes दि.",
+        "sentence": "दिनं शुभ्रम् अस्ति।",
+        "highlight": "दि",
+        "phase": "jodo"
+      },
+      {
+        "target": "दी",
+        "tiles": [
+          "द",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "The lamp shines.",
+        "explanation": "द plus ई makes दी.",
+        "sentence": "दीपः प्रकाशते।",
+        "highlight": "दी",
+        "phase": "jodo"
+      },
+      {
+        "target": "दु",
+        "tiles": [
+          "द",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "He drinks milk.",
+        "explanation": "द plus उ makes दु.",
+        "sentence": "दुग्धं पिबति।",
+        "highlight": "दु",
+        "phase": "jodo"
+      },
+      {
+        "target": "दू",
+        "tiles": [
+          "द",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The forest is far.",
+        "explanation": "द plus ऊ makes दू.",
+        "sentence": "दूरं वनम् अस्ति।",
+        "highlight": "दू",
+        "phase": "jodo"
+      },
+      {
+        "target": "दे",
+        "tiles": [
+          "द",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "The deity is to be worshipped.",
+        "explanation": "द plus ए makes दे.",
+        "sentence": "देवः पूज्यः अस्ति।",
+        "highlight": "दे",
+        "phase": "jodo"
+      },
+      {
+        "target": "दै",
+        "tiles": [
+          "द",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "Fate is strong.",
+        "explanation": "द plus ऐ makes दै.",
+        "sentence": "दैवं बलवत् अस्ति।",
+        "highlight": "दै",
+        "phase": "jodo"
+      },
+      {
+        "target": "दो",
+        "tiles": [
+          "द",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "There is no fault.",
+        "explanation": "द plus ओ makes दो.",
+        "sentence": "दोषः न अस्ति।",
+        "highlight": "दो",
+        "phase": "jodo"
+      },
+      {
+        "target": "दौ",
+        "tiles": [
+          "द",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "Give up weakness.",
+        "explanation": "द plus औ makes दौ.",
+        "sentence": "दौर्बल्यं त्यज।",
+        "highlight": "दौ",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -3409,6 +3553,156 @@
         "sentence": "बीजम् भूमौ अस्ति।",
         "english": "The seed is in the ground.",
         "highlight": "बीजम्"
+      },
+      {
+        "prompt": "____ उच्चः अस्ति।",
+        "target": "हिमालयः",
+        "tiles": [
+          "हिमालयः",
+          "गिरिः",
+          "सागरः",
+          "वनम्",
+          "नदी",
+          "मेघः"
+        ],
+        "sentence": "हिमालयः उच्चः अस्ति।",
+        "english": "The Himalaya is tall.",
+        "highlight": "हिमालयः"
+      },
+      {
+        "prompt": "____ गभीरा अस्ति।",
+        "target": "कन्दरा",
+        "tiles": [
+          "कन्दरा",
+          "गुहा",
+          "गिरिः",
+          "वनम्",
+          "सरः",
+          "शिला"
+        ],
+        "sentence": "कन्दरा गभीरा अस्ति।",
+        "english": "The cave is deep.",
+        "highlight": "कन्दरा"
+      },
+      {
+        "prompt": "____ अन्धकारा अस्ति।",
+        "target": "गुहा",
+        "tiles": [
+          "गुहा",
+          "कन्दरा",
+          "वनम्",
+          "गिरिः",
+          "सरः",
+          "मेघः"
+        ],
+        "sentence": "गुहा अन्धकारा अस्ति।",
+        "english": "The cavern is dark.",
+        "highlight": "गुहा"
+      },
+      {
+        "prompt": "____ गिरेः पतति।",
+        "target": "झरः",
+        "tiles": [
+          "झरः",
+          "नदी",
+          "मेघः",
+          "गिरिः",
+          "सरः",
+          "वनम्"
+        ],
+        "sentence": "झरः गिरेः पतति।",
+        "english": "The waterfall falls from the mountain.",
+        "highlight": "झरः"
+      },
+      {
+        "prompt": "____ शुद्धः अस्ति।",
+        "target": "उत्सः",
+        "tiles": [
+          "उत्सः",
+          "सरः",
+          "नदी",
+          "मेघः",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "उत्सः शुद्धः अस्ति।",
+        "english": "The spring is pure.",
+        "highlight": "उत्सः"
+      },
+      {
+        "prompt": "____ मार्गं आवृणोति।",
+        "target": "पङ्कः",
+        "tiles": [
+          "पङ्कः",
+          "धूलिः",
+          "सिकता",
+          "जलम्",
+          "भूमिः",
+          "वनम्"
+        ],
+        "sentence": "पङ्कः मार्गं आवृणोति।",
+        "english": "Mud covers the path.",
+        "highlight": "पङ्कः"
+      },
+      {
+        "prompt": "____ तीरे अस्ति।",
+        "target": "सिकता",
+        "tiles": [
+          "सिकता",
+          "शिला",
+          "पङ्कः",
+          "धूलिः",
+          "जलम्",
+          "वनम्"
+        ],
+        "sentence": "सिकता तीरे अस्ति।",
+        "english": "Sand is on the bank.",
+        "highlight": "सिकता"
+      },
+      {
+        "prompt": "____ दृढा अस्ति।",
+        "target": "शिला",
+        "tiles": [
+          "शिला",
+          "लोष्ठः",
+          "गिरिः",
+          "वनम्",
+          "सिकता",
+          "भूमिः"
+        ],
+        "sentence": "शिला दृढा अस्ति।",
+        "english": "The rock is firm.",
+        "highlight": "शिला"
+      },
+      {
+        "prompt": "____ भूमौ अस्ति।",
+        "target": "लोष्ठः",
+        "tiles": [
+          "लोष्ठः",
+          "शिला",
+          "बीजम्",
+          "धूलिः",
+          "मूलम्",
+          "वनम्"
+        ],
+        "sentence": "लोष्ठः भूमौ अस्ति।",
+        "english": "A clod is on the ground.",
+        "highlight": "लोष्ठः"
+      },
+      {
+        "prompt": "____ वायुना उड्डयति।",
+        "target": "धूलिः",
+        "tiles": [
+          "धूलिः",
+          "पङ्कः",
+          "सिकता",
+          "पवनः",
+          "मेघः",
+          "वनम्"
+        ],
+        "sentence": "धूलिः वायुना उड्डयति।",
+        "english": "Dust flies with the wind.",
+        "highlight": "धूलिः"
       },
       {
         "phase": "learn",

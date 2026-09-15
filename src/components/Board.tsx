@@ -180,12 +180,20 @@ function findPrashnaSectionStart(puzzles: BoardPuzzle[]): number {
   });
 }
 
-/** त-row: first target starting with त + matra (ता ति…) once that row exists. */
-function findTaRowStart(puzzles: BoardPuzzle[]): number {
+/** Consonant rows (त / द …): first target matching consonant + matra. */
+const CONSONANT_ROW_CHIP_DEFS: { id: string; consonant: string }[] = [
+  { id: 'त', consonant: 'त' },
+  { id: 'द', consonant: 'द' },
+];
+
+const CONSONANT_ROW_MATRA = '[\u093E\u093F\u0940\u0941\u0942\u0943\u0947\u0948\u094B\u094C\u0902\u0903]';
+
+function findConsonantRowStart(puzzles: BoardPuzzle[], consonant: string): number {
+  const re = new RegExp(`^${consonant}${CONSONANT_ROW_MATRA}`);
   return puzzles.findIndex((p) => {
     if (isPrashnaPuzzle(p)) return false;
     const t = (p.target || '').normalize('NFC');
-    return /^त[\u093E\u093F\u0940\u0941\u0942\u0943\u0947\u0948\u094B\u094C\u0902\u0903]/.test(t);
+    return re.test(t);
   });
 }
 
@@ -195,8 +203,10 @@ function buildMatraSectionChips(puzzles: BoardPuzzle[]): BoardSectionChip[] {
     const start = findMatraSectionStart(puzzles, def.exemplar, def.mark);
     if (start >= 0) chips.push({ id: def.label, label: def.label, start });
   }
-  const taStart = findTaRowStart(puzzles);
-  if (taStart >= 0) chips.push({ id: 'त', label: 'त', start: taStart });
+  for (const row of CONSONANT_ROW_CHIP_DEFS) {
+    const start = findConsonantRowStart(puzzles, row.consonant);
+    if (start >= 0) chips.push({ id: row.id, label: row.id, start });
+  }
   const prashnaStart = findPrashnaSectionStart(puzzles);
   if (prashnaStart >= 0) chips.push({ id: 'प्रश्न', label: 'प्रश्न', start: prashnaStart });
   return chips.sort((a, b) => a.start - b.start);

@@ -157,3 +157,13 @@
 शीतम् जलम् अस्ति।|The water is cold.|शीतम्|nature
 उष्णम् अन्नम् अस्ति।|The food is hot.|उष्णम्|nature
 बीजम् भूमौ अस्ति।|The seed is in the ground.|बीजम्|nature
+हिमालयः उच्चः अस्ति।|The Himalaya is tall.|हिमालयः|nature
+कन्दरा गभीरा अस्ति।|The cave is deep.|कन्दरा|nature
+गुहा अन्धकारा अस्ति।|The cavern is dark.|गुहा|nature
+झरः गिरेः पतति।|The waterfall falls from the mountain.|झरः|nature
+उत्सः शुद्धः अस्ति।|The spring is pure.|उत्सः|nature
+पङ्कः मार्गं आवृणोति।|Mud covers the path.|पङ्कः|nature
+सिकता तीरे अस्ति।|Sand is on the bank.|सिकता|nature
+शिला दृढा अस्ति।|The rock is firm.|शिला|nature
+लोष्ठः भूमौ अस्ति।|A clod is on the ground.|लोष्ठः|nature
+धूलिः वायुना उड्डयति।|Dust flies with the wind.|धूलिः|nature
