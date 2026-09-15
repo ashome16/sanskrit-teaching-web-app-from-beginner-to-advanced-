@@ -1449,3 +1449,83 @@
 ब्लसरः रम्यः।|A bla lake is lovely.|ब्लसरः|nature
 ब्लगिरिः उन्नतः।|Bla-mountain is tall.|ब्लगिरिः|nature
 ब्लकमलं विकसति।|A bla lotus blooms.|ब्लकमलम्|nature
+श्लोकपवनः वहति।|A shloka breeze blows.|श्लोकपवनः|nature
+श्लोकखगः कूजति।|A shloka bird calls.|श्लोकखगः|nature
+श्लोकपुष्पं विकसति।|A shloka flower blooms.|श्लोकपुष्पम्|nature
+श्लोकमेघः गर्जति।|A shloka cloud thunders.|श्लोकमेघः|nature
+श्लोकतरुः फलति।|A shloka tree bears fruit.|श्लोकतरुः|nature
+श्लोकसरः शीतलः।|A shloka lake is cool.|श्लोकसरः|nature
+श्लोकगिरिः उन्नतः।|Shloka-mountain is tall.|श्लोकगिरिः|nature
+श्लोककमलं विकसति।|A shloka lotus blooms.|श्लोककमलम्|nature
+स्लपवनः वहति।|A sla breeze blows.|स्लपवनः|nature
+स्लखगः कूजति।|A sla bird calls.|स्लखगः|nature
+स्लपुष्पं विकसति।|A sla flower blooms.|स्लपुष्पम्|nature
+स्लमेघः गर्जति।|A sla cloud thunders.|स्लमेघः|nature
+स्लतरुः हरितः।|A sla tree is green.|स्लतरुः|nature
+स्लसरः रम्यः।|A sla lake is lovely.|स्लसरः|nature
+स्लगिरिः उन्नतः।|Sla-mountain is tall.|स्लगिरिः|nature
+स्लकमलं विकसति।|A sla lotus blooms.|स्लकमलम्|nature
+त्लपवनः वहति।|A tla breeze blows.|त्लपवनः|nature
+त्लखगः कूजति।|A tla bird calls.|त्लखगः|nature
+त्लपुष्पं विकसति।|A tla flower blooms.|त्लपुष्पम्|nature
+त्लमेघः गर्जति।|A tla cloud thunders.|त्लमेघः|nature
+त्लतरुः फलति।|A tla tree bears fruit.|त्लतरुः|nature
+त्लसरः शीतलः।|A tla lake is cool.|त्लसरः|nature
+त्लगिरिः उन्नतः।|Tla-mountain is tall.|त्लगिरिः|nature
+त्लकमलं विकसति।|A tla lotus blooms.|त्लकमलम्|nature
+ज्येष्ठपवनः वहति।|A elder breeze blows.|ज्येष्ठपवनः|nature
+ज्येष्ठखगः कूजति।|A elder bird calls.|ज्येष्ठखगः|nature
+ज्येष्ठपुष्पं विकसति।|A elder flower blooms.|ज्येष्ठपुष्पम्|nature
+ज्येष्ठमेघः गर्जति।|A elder cloud thunders.|ज्येष्ठमेघः|nature
+ज्येष्ठतरुः हरितः।|A elder tree is green.|ज्येष्ठतरुः|nature
+ज्येष्ठसरः रम्यः।|A elder lake is lovely.|ज्येष्ठसरः|nature
+ज्येष्ठगिरिः उन्नतः।|Elder-mountain is tall.|ज्येष्ठगिरिः|nature
+ज्येष्ठकमलं विकसति।|A elder lotus blooms.|ज्येष्ठकमलम्|nature
+ष्पपवनः वहति।|A shpa breeze blows.|ष्पपवनः|nature
+ष्पखगः कूजति।|A shpa bird calls.|ष्पखगः|nature
+ष्पपुष्पं विकसति।|A shpa flower blooms.|ष्पपुष्पम्|nature
+ष्पमेघः गर्जति।|A shpa cloud thunders.|ष्पमेघः|nature
+ष्पतरुः फलति।|A shpa tree bears fruit.|ष्पतरुः|nature
+ष्पसरः शीतलः।|A shpa lake is cool.|ष्पसरः|nature
+ष्पगिरिः उन्नतः।|Shpa-mountain is tall.|ष्पगिरिः|nature
+ष्पकमलं विकसति।|A shpa lotus blooms.|ष्पकमलम्|nature
+ध्यानपवनः वहति।|A meditation breeze blows.|ध्यानपवनः|nature
+ध्यानखगः कूजति।|A meditation bird calls.|ध्यानखगः|nature
+ध्यानपुष्पं विकसति।|A meditation flower blooms.|ध्यानपुष्पम्|nature
+ध्यानमेघः गर्जति।|A meditation cloud thunders.|ध्यानमेघः|nature
+ध्यानतरुः हरितः।|A meditation tree is green.|ध्यानतरुः|nature
+ध्यानसरः रम्यः।|A meditation lake is lovely.|ध्यानसरः|nature
+ध्यानगिरिः उन्नतः।|Meditation-mountain is tall.|ध्यानगिरिः|nature
+ध्यानकमलं विकसति।|A meditation lotus blooms.|ध्यानकमलम्|nature
+पथ्यपवनः वहति।|A wholesome breeze blows.|पथ्यपवनः|nature
+पथ्यखगः कूजति।|A wholesome bird calls.|पथ्यखगः|nature
+पथ्यपुष्पं विकसति।|A wholesome flower blooms.|पथ्यपुष्पम्|nature
+पथ्यमेघः गर्जति।|A wholesome cloud thunders.|पथ्यमेघः|nature
+पथ्यतरुः फलति।|A wholesome tree bears fruit.|पथ्यतरुः|nature
+पथ्यसरः शीतलः।|A wholesome lake is cool.|पथ्यसरः|nature
+पथ्यगिरिः उन्नतः।|Wholesome-mountain is tall.|पथ्यगिरिः|nature
+पथ्यकमलं विकसति।|A wholesome lotus blooms.|पथ्यकमलम्|nature
+फ्यपवनः वहति।|A phya breeze blows.|फ्यपवनः|nature
+फ्यखगः कूजति।|A phya bird calls.|फ्यखगः|nature
+फ्यपुष्पं विकसति।|A phya flower blooms.|फ्यपुष्पम्|nature
+फ्यमेघः गर्जति।|A phya cloud thunders.|फ्यमेघः|nature
+फ्यतरुः हरितः।|A phya tree is green.|फ्यतरुः|nature
+फ्यसरः रम्यः।|A phya lake is lovely.|फ्यसरः|nature
+फ्यगिरिः उन्नतः।|Phya-mountain is tall.|फ्यगिरिः|nature
+फ्यकमलं विकसति।|A phya lotus blooms.|फ्यकमलम्|nature
+मुख्यपवनः वहति।|A chief breeze blows.|मुख्यपवनः|nature
+मुख्यखगः कूजति।|A chief bird calls.|मुख्यखगः|nature
+मुख्यपुष्पं विकसति।|A chief flower blooms.|मुख्यपुष्पम्|nature
+मुख्यमेघः गर्जति।|A chief cloud thunders.|मुख्यमेघः|nature
+मुख्यतरुः फलति।|A chief tree bears fruit.|मुख्यतरुः|nature
+मुख्यसरः शीतलः।|A chief lake is cool.|मुख्यसरः|nature
+मुख्यगिरिः उन्नतः।|Chief-mountain is tall.|मुख्यगिरिः|nature
+मुख्यकमलं विकसति।|A chief lotus blooms.|मुख्यकमलम्|nature
+घ्यपवनः वहति।|A ghya breeze blows.|घ्यपवनः|nature
+घ्यखगः कूजति।|A ghya bird calls.|घ्यखगः|nature
+घ्यपुष्पं विकसति।|A ghya flower blooms.|घ्यपुष्पम्|nature
+घ्यमेघः गर्जति।|A ghya cloud thunders.|घ्यमेघः|nature
+घ्यतरुः हरितः।|A ghya tree is green.|घ्यतरुः|nature
+घ्यसरः रम्यः।|A ghya lake is lovely.|घ्यसरः|nature
+घ्यगिरिः उन्नतः।|Ghya-mountain is tall.|घ्यगिरिः|nature
+घ्यकमलं विकसति।|A ghya lotus blooms.|घ्यकमलम्|nature
