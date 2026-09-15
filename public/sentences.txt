@@ -1649,3 +1649,43 @@
 स्त्यसरः शीतलः।|A stya lake is cool.|स्त्यसरः|nature
 स्त्यगिरिः उन्नतः।|Stya-mountain is tall.|स्त्यगिरिः|nature
 स्त्यकमलं विकसति।|A stya lotus blooms.|स्त्यकमलम्|nature
+म्र्यपवनः वहति।|A mrya breeze blows.|म्र्यपवनः|nature
+म्र्यखगः कूजति।|A mrya bird calls.|म्र्यखगः|nature
+म्र्यपुष्पं विकसति।|A mrya flower blooms.|म्र्यपुष्पम्|nature
+म्र्यमेघः गर्जति।|A mrya cloud thunders.|म्र्यमेघः|nature
+म्र्यतरुः फलति।|A mrya tree bears fruit.|म्र्यतरुः|nature
+म्र्यसरः शीतलः।|A mrya lake is cool.|म्र्यसरः|nature
+म्र्यगिरिः उन्नतः।|Mrya-mountain is tall.|म्र्यगिरिः|nature
+म्र्यकमलं विकसति।|A mrya lotus blooms.|म्र्यकमलम्|nature
+न्र्यपवनः वहति।|A nrya breeze blows.|न्र्यपवनः|nature
+न्र्यखगः कूजति।|A nrya bird calls.|न्र्यखगः|nature
+न्र्यपुष्पं विकसति।|A nrya flower blooms.|न्र्यपुष्पम्|nature
+न्र्यमेघः गर्जति।|A nrya cloud thunders.|न्र्यमेघः|nature
+न्र्यतरुः हरितः।|A nrya tree is green.|न्र्यतरुः|nature
+न्र्यसरः रम्यः।|A nrya lake is lovely.|न्र्यसरः|nature
+न्र्यगिरिः उन्नतः।|Nrya-mountain is tall.|न्र्यगिरिः|nature
+न्र्यकमलं विकसति।|A nrya lotus blooms.|न्र्यकमलम्|nature
+स्र्यपवनः वहति।|A srya breeze blows.|स्र्यपवनः|nature
+स्र्यखगः कूजति।|A srya bird calls.|स्र्यखगः|nature
+स्र्यपुष्पं विकसति।|A srya flower blooms.|स्र्यपुष्पम्|nature
+स्र्यमेघः गर्जति।|A srya cloud thunders.|स्र्यमेघः|nature
+स्र्यतरुः फलति।|A srya tree bears fruit.|स्र्यतरुः|nature
+स्र्यसरः शीतलः।|A srya lake is cool.|स्र्यसरः|nature
+स्र्यगिरिः उन्नतः।|Srya-mountain is tall.|स्र्यगिरिः|nature
+स्र्यकमलं विकसति।|A srya lotus blooms.|स्र्यकमलम्|nature
+ब्यपवनः वहति।|A bya breeze blows.|ब्यपवनः|nature
+ब्यखगः कूजति।|A bya bird calls.|ब्यखगः|nature
+ब्यपुष्पं विकसति।|A bya flower blooms.|ब्यपुष्पम्|nature
+ब्यमेघः गर्जति।|A bya cloud thunders.|ब्यमेघः|nature
+ब्यतरुः हरितः।|A bya tree is green.|ब्यतरुः|nature
+ब्यसरः रम्यः।|A bya lake is lovely.|ब्यसरः|nature
+ब्यगिरिः उन्नतः।|Bya-mountain is tall.|ब्यगिरिः|nature
+ब्यकमलं विकसति।|A bya lotus blooms.|ब्यकमलम्|nature
+ष्यपवनः वहति।|A shya breeze blows.|ष्यपवनः|nature
+ष्यखगः कूजति।|A shya bird calls.|ष्यखगः|nature
+ष्यपुष्पं विकसति।|A shya flower blooms.|ष्यपुष्पम्|nature
+ष्यमेघः गर्जति।|A shya cloud thunders.|ष्यमेघः|nature
+ष्यतरुः फलति।|A shya tree bears fruit.|ष्यतरुः|nature
+ष्यसरः शीतलः।|A shya lake is cool.|ष्यसरः|nature
+ष्यगिरिः उन्नतः।|Shya-mountain is tall.|ष्यगिरिः|nature
+ष्यकमलं विकसति।|A shya lotus blooms.|ष्यकमलम्|nature
