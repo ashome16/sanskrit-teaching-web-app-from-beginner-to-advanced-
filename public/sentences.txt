@@ -929,3 +929,43 @@
 अल्पकमलं विकसति।|A small lotus blooms.|अल्पकमलम्|nature
 कल्पगिरिः उन्नतः अस्ति।|Kalpa-mountain is tall.|कल्पगिरिः|nature
 अल्पसरः शीतलः अस्ति।|A small lake is cool.|अल्पसरः|nature
+उत्कण्ठपवनः वहति।|An eager breeze blows.|उत्कण्ठपवनः|nature
+उत्कण्ठखगः कूजति।|An eager bird calls.|उत्कण्ठखगः|nature
+उत्कीर्णपत्रं पतति।|A carved leaf falls.|उत्कीर्णपत्रम्|nature
+उत्कण्ठमेघः गर्जति।|An eager cloud thunders.|उत्कण्ठमेघः|nature
+उत्कण्ठतरुः फलति।|An eager tree bears fruit.|उत्कण्ठतरुः|nature
+उत्कण्ठकमलं विकसति।|An eager lotus blooms.|उत्कण्ठकमलम्|nature
+उत्कण्ठगिरिः उन्नतः।|Eager-mountain is tall.|उत्कण्ठगिरिः|nature
+उत्कण्ठसरः शीतलः।|An eager lake is cool.|उत्कण्ठसरः|nature
+उत्पातमेघः गर्जति।|A sudden cloud thunders.|उत्पातमेघः|nature
+उत्पितपुष्पं विकसति।|A risen flower blooms.|उत्पितपुष्पम्|nature
+उत्पातपवनः वहति।|A sudden breeze blows.|उत्पातपवनः|nature
+उत्पितखगः उड्डयति।|A risen bird flies up.|उत्पितखगः|nature
+उत्पातगिरिः दृश्यते।|A sudden mountain is seen.|उत्पातगिरिः|nature
+उत्पिततरुः हरितः।|A risen tree is green.|उत्पिततरुः|nature
+उत्पातसरः रम्यः।|A sudden lake is lovely.|उत्पातसरः|nature
+उत्पितकमलं विकसति।|A risen lotus blooms.|उत्पितकमलम्|nature
+आत्मतारुः शान्तः अस्ति।|The self-tree is peaceful.|आत्मतारुः|nature
+सत्मपुष्पं विकसति।|A good-self flower blooms.|सत्मपुष्पम्|nature
+आत्मेपवनः वहति।|A self-breeze blows.|आत्मेपवनः|nature
+आत्मखगः कूजति।|A self-bird calls.|आत्मखगः|nature
+आत्मगिरिः मेघैः स्पृशति।|Self-mountain touches the clouds.|आत्मगिरिः|nature
+आत्मसरः शीतलः अस्ति।|The self-lake is cool.|आत्मसरः|nature
+सत्मकमलं विकसति।|A good-self lotus blooms.|सत्मकमलम्|nature
+आत्मवनं हरितम् अस्ति।|Self-forest is green.|आत्मवनम्|nature
+उद्गायनखगः कूजति।|A singing bird calls.|उद्गायनखगः|nature
+उद्गीतपवनः वहति।|A song-breeze blows.|उद्गीतपवनः|nature
+उद्गायनपुष्पं विकसति।|A song-flower blooms.|उद्गायनपुष्पम्|nature
+उद्गीतमेघः गर्जति।|A song-cloud thunders.|उद्गीतमेघः|nature
+उद्गायनतरुः फलति।|A song-tree bears fruit.|उद्गायनतरुः|nature
+उद्गीतसरः शीतलः।|A song-lake is cool.|उद्गीतसरः|nature
+उद्गायनगिरिः उन्नतः।|Song-mountain is tall.|उद्गायनगिरिः|nature
+उद्गीतकमलं विकसति।|A song-lotus blooms.|उद्गीतकमलम्|nature
+उद्बाष्पकिरणः पतति।|A tear-ray falls.|उद्बाष्पकिरणः|nature
+उद्बोधपवनः वहति।|An awakening breeze blows.|उद्बोधपवनः|nature
+उद्बाष्पमेघः जलं ददाति।|A tear-cloud gives water.|उद्बाष्पमेघः|nature
+उद्बोधपुष्पं विकसति।|An awakening flower blooms.|उद्बोधपुष्पम्|nature
+उद्बाष्पसरः शीतलः।|A tear-lake is cool.|उद्बाष्पसरः|nature
+उद्बोधतरुः हरितः।|An awakening tree is green.|उद्बोधतरुः|nature
+उद्बाष्पखगः कूजति।|A tear-bird calls.|उद्बाष्पखगः|nature
+उद्बोधगिरिः उन्नतः।|Awakening-mountain is tall.|उद्बोधगिरिः|nature
