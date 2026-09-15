@@ -104,8 +104,9 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   const isRih = word === 'ऋ' || /^rih$/i.test(speech);
   const isReee = word === 'ॠ' || /^reee$/i.test(speech);
   // ज्ञ/त्र speech is Devanagari so hi-IN path applies (not ASCII English).
-  const isGya = word === 'ज्ञ' || speech === 'ज्ञ';
-  const isTra = word === 'त्र' || speech === 'त्र';
+  // Doubled forms match क्ष presence pattern (volume already at API max).
+  const isGya = word === 'ज्ञ' || speech === 'ज्ञ' || speech === 'ज्ञ ज्ञ';
+  const isTra = word === 'त्र' || speech === 'त्र' || speech === 'त्र त्र';
   const isLongUu = /ooooh$/i.test(speech);
   const isShortUu = /ooh$/i.test(speech) && !isLongUu;
   const isVisargaWord = word.endsWith('ः');
@@ -116,15 +117,13 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
     ? 0.42
     : isTtha
       ? 0.5
-      : isKsha
+      : isKsha || isGya || isTra
         ? 0.7
         : isLongEe
           ? 0.55
           : isRih || isReee
             ? 0.58
-            : isGya || isTra
-              ? 0.75
-              : isLongUu
+            : isLongUu
                 ? 0.62
                 : isShortUu
                   ? 1.05
@@ -139,20 +138,18 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
                           : isChha
                             ? 0.9
                             : DEFAULT_RATE;
-  // SpeechSynthesis volume max is 1; क्ष gets higher pitch so it cuts through.
+  // SpeechSynthesis volume max is 1; क्ष/ज्ञ/त्र use higher pitch + double speech for presence.
   utterance.pitch = isNgaWord
     ? 1.15
     : isTtha
       ? 1.35
-      : isKsha
-        ? 1.45
-        : isGya || isTra
-          ? 1.1
-          : isRih || isReee
+      : isKsha || isGya || isTra
+        ? 1.5
+        : isRih || isReee
+          ? 1.12
+          : isDdha
             ? 1.12
-            : isDdha
-              ? 1.12
-              : 1;
+            : 1;
   utterance.volume = 1;
 };
 

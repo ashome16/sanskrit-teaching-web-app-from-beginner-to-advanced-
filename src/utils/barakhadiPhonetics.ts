@@ -106,7 +106,7 @@ export const barakhadiSpeechText = (akshara: string): string => {
     nna: 'nah', nnaa: 'n-naa', nni: 'n-ni', nnee: 'n-nee',
     shha: 'sh-ha', shhaa: 'sh-haa', shhi: 'sh-hi', shhee: 'sh-hee',
     chha: 'chha', chhaa: 'chhaa', chhi: 'chhi', chhee: 'chhee',
-    ksha: 'क्ष क्ष', jnya: 'ज्ञ', tra: 'त्र', shra: 'sh-ra',
+    ksha: 'क्ष क्ष', jnya: 'ज्ञ ज्ञ', tra: 'त्र त्र', shra: 'sh-ra',
     li: 'li',
     kha: 'k-ha', khaa: 'k-haa', khi: 'k-hi', khee: 'k-hee',
     gha: 'gha', ghaa: 'g-haa', ghi: 'g-hi', ghee: 'g-hee',
@@ -213,8 +213,8 @@ export const varnamalaSpeechText = (akshara: string): string => {
   // ति–तु: English ti/tee/tu → tea; use Hindi letter voice.
   if (clean === 'ति' || clean === 'ती' || clean === 'तु' || clean === 'तू') return clean;
   if (clean === 'क्ष') return 'क्ष क्ष';
-  if (clean === 'ज्ञ') return 'ज्ञ';
-  if (clean === 'त्र') return 'त्र';
+  if (clean === 'ज्ञ') return 'ज्ञ ज्ञ';
+  if (clean === 'त्र') return 'त्र त्र';
   if (clean === 'गि') return 'गि';
   if (clean === 'थे') return 'थे';
   if (clean === 'दे') return 'दे';
@@ -267,7 +267,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
     the: 'थे', de: 'दे', dhi: 'धि', dhe: 'धे', nru: 'नृ', nri: 'नृ', pi: 'पि', pau: 'पौ',
     phi: 'फि', be: 'बे', bhe: 'भे', bho: 'भो', mri: 'मृ', mru: 'मृ', me: 'मे', mau: 'मौ', ye: 'yae',
     yai: 'yaai', rri: 'rar', lri: 'lar',
-    shha: 'sh-ha', ksha: 'क्ष क्ष', jnya: 'ज्ञ', tra: 'त्र', shra: 'sh-ra',
+    shha: 'sh-ha', ksha: 'क्ष क्ष', jnya: 'ज्ञ ज्ञ', tra: 'त्र त्र', shra: 'sh-ra',
   };
   return stretchUuSpeech(special[ascii] || ascii);
 };
