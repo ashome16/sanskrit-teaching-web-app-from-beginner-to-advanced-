@@ -451,9 +451,9 @@ const Board: React.FC = () => {
   const displayPackTitle = isPrashnaPart ? 'प्रश्न-पदानि' : packTitle;
   const displayPackGloss = isPrashnaPart ? 'who · what · where · when · how' : packGloss;
   const phaseBanner = isPrashnaPart
-    ? 'Part 2 — question words. Click one cream tile.'
+    ? 'Part 2 — question words.'
     : (activeBoardShelf?.skin === 'जोडो' && activeShelf === 'prarambhah' && !targetIsWholeTile
-      ? 'Part 1 — join letters. To begin, click क then आ.'
+      ? 'Part 1 — join letters.'
       : '');
 
   // जोडो joins (क+आ) stay multi-tap. Question-words (कः on a tile) are one tap.
@@ -649,7 +649,7 @@ const Board: React.FC = () => {
       <p className="board-tip">{isLearnPhase
         ? <>Hear the word, read the meaning, then <strong className="tip-next">Click Next</strong>.</>
         : isJodoSkin
-          ? <>To begin, click क then आ. The picture and sentence appear. Then <strong className="tip-next">Click Next</strong>.</>
+          ? <>On top, click one or two letter chips to jump. Below, click क then आ. The picture and sentence appear. Then <strong className="tip-next">Click Next</strong>.</>
           : emphasizeTipText('Click a cream tile. The picture and sentence appear. Then Click Next.')}</p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
@@ -684,7 +684,7 @@ const Board: React.FC = () => {
             <li className={activeStep === 1 ? 'active' : undefined}>
               <span className="step-num" aria-hidden="true">1</span>
               <span className="step-label">{isJodoSkin
-                ? <>To begin click क then आ</>
+                ? <>Click क then आ</>
                 : <>Click a cream tile <small>(numbers on tiles)</small></>}</span>
             </li>
             <li className={activeStep === 2 ? 'active' : undefined}>
