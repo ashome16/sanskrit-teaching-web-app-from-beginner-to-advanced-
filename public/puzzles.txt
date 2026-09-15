@@ -777,6 +777,51 @@
 जोडो|व्वै|व्वै|व्व,ऐ,क,त,आ,इ|सव्वैः सह जनः वसति।|A person lives with all-ready ones.|व्व plus ऐ makes व्वै.
 जोडो|व्वो|व्वो|व्व,ओ,क,त,आ,इ|सव्वो रम्यः अस्ति।|The all-ready one is lovely.|व्व plus ओ makes व्वो.
 जोडो|व्वौ|व्वौ|व्व,औ,क,त,आ,इ|सव्वौ द्वौ स्तः।|Two all-ready ones are there.|व्व plus औ makes व्वौ.
+जोडो|स्का|स्का|स्क,आ,क,त,इ,उ|स्कान्दे बालकः क्रीडति।|The boy plays at Skanda-fest.|स्क plus आ makes स्का.
+जोडो|स्कि|स्कि|स्क,इ,क,त,आ,उ|स्कितिं खगः पश्यति।|The bird sees the skiti-mark.|स्क plus इ makes स्कि.
+जोडो|स्की|स्की|स्क,ई,क,त,आ,इ|स्कीर्णं पत्रं पतति।|A scattered leaf falls.|स्क plus ई makes स्की.
+जोडो|स्कु|स्कु|स्क,उ,क,त,आ,इ|स्कुरति विद्युत् मेघे।|Lightning flickers in the cloud.|स्क plus उ makes स्कु.
+जोडो|स्कू|स्कू|स्क,ऊ,क,त,आ,इ|स्कूतिः वायौ श्रूयते।|A soft skoot is heard in the wind.|स्क plus ऊ makes स्कू.
+जोडो|स्के|स्के|स्क,ए,क,त,आ,इ|आस्के पुष्पं विकसति।|A flower blooms nearby.|स्क plus ए makes स्के.
+जोडो|स्कै|स्कै|स्क,ऐ,क,त,आ,इ|स्कैः पुष्पैः माला अस्ति।|There is a garland of ska-flowers.|स्क plus ऐ makes स्कै.
+जोडो|स्को|स्को|स्क,ओ,क,त,आ,इ|आस्को बालकः हसति।|The eager boy laughs.|स्क plus ओ makes स्को.
+जोडो|स्कौ|स्कौ|स्क,औ,क,त,आ,इ|स्कौ द्वौ स्तः।|Two ska-forms are there.|स्क plus औ makes स्कौ.
+जोडो|स्पा|स्पा|स्प,आ,क,त,इ,उ|स्पारं ज्योतिः विभाति।|A clear light shines.|स्प plus आ makes स्पा.
+जोडो|स्पि|स्पि|स्प,इ,क,त,आ,उ|स्पितिं बालकः शृणोति।|The boy hears the soft tap.|स्प plus इ makes स्पि.
+जोडो|स्पी|स्पी|स्प,ई,क,त,आ,इ|स्पीतिः गृहे अस्ति।|There is fullness in the house.|स्प plus ई makes स्पी.
+जोडो|स्पु|स्पु|स्प,उ,क,त,आ,इ|स्पुरति दीपः निशि।|The lamp flickers at night.|स्प plus उ makes स्पु.
+जोडो|स्पू|स्पू|स्प,ऊ,क,त,आ,इ|स्पूतिः वायौ अस्ति।|There is a soft puff in the air.|स्प plus ऊ makes स्पू.
+जोडो|स्पे|स्पे|स्प,ए,क,त,आ,इ|आस्पे खगः कूजति।|A bird calls nearby.|स्प plus ए makes स्पे.
+जोडो|स्पै|स्पै|स्प,ऐ,क,त,आ,इ|स्पैः पुष्पैः उद्यानं शोभते।|With spa-flowers the garden looks lovely.|स्प plus ऐ makes स्पै.
+जोडो|स्पो|स्पो|स्प,ओ,क,त,आ,इ|स्पोदः जलं ददाति।|The spa-cloud gives water.|स्प plus ओ makes स्पो.
+जोडो|स्पौ|स्पौ|स्प,औ,क,त,आ,इ|स्पौ द्वौ स्तः।|Two spa-forms are there.|स्प plus औ makes स्पौ.
+जोडो|त्ना|त्ना|त्न,आ,क,त,इ,उ|रत्ना माला शोभते।|A jewel garland looks lovely.|त्न plus आ makes त्ना.
+जोडो|त्नि|त्नि|त्न,इ,क,त,आ,उ|यत्नि बालकः पठति।|The boy reads with effort.|त्न plus इ makes त्नि.
+जोडो|त्नी|त्नी|त्न,ई,क,त,आ,इ|पत्नी पुष्पं ददाति।|The wife gives a flower.|त्न plus ई makes त्नी.
+जोडो|त्नु|त्नु|त्न,उ,क,त,आ,इ|यत्नुं बालकः करोति।|The boy makes an effort.|त्न plus उ makes त्नु.
+जोडो|त्नू|त्नू|त्न,ऊ,क,त,आ,इ|रत्नू द्वौ स्तः।|Two jewels are there.|त्न plus ऊ makes त्नू.
+जोडो|त्ने|त्ने|त्न,ए,क,त,आ,इ|रत्ने ज्योतिः अस्ति।|There is light in the jewel.|त्न plus ए makes त्ने.
+जोडो|त्नै|त्नै|त्न,ऐ,क,त,आ,इ|रत्नैः माला शोभते।|The garland shines with jewels.|त्न plus ऐ makes त्नै.
+जोडो|त्नो|त्नो|त्न,ओ,क,त,आ,इ|यत्नो सफलः अस्ति।|The effort is successful.|त्न plus ओ makes त्नो.
+जोडो|त्नौ|त्नौ|त्न,औ,क,त,आ,इ|रत्नौ द्वौ स्तः।|Two jewels are there.|त्न plus औ makes त्नौ.
+जोडो|द्ना|द्ना|द्न,आ,क,त,इ,उ|आद्ना पुष्पं विकसति।|An aadna-flower blooms.|द्न plus आ makes द्ना.
+जोडो|द्नि|द्नि|द्न,इ,क,त,आ,उ|आद्नि खगः कूजति।|An aadni-bird calls.|द्न plus इ makes द्नि.
+जोडो|द्नी|द्नी|द्न,ई,क,त,आ,इ|आद्नी द्वौ स्तः।|Two aadni-forms are there.|द्न plus ई makes द्नी.
+जोडो|द्नु|द्नु|द्न,उ,क,त,आ,इ|आद्नुं बालकः पश्यति।|The boy sees the aadnu.|द्न plus उ makes द्नु.
+जोडो|द्नू|द्नू|द्न,ऊ,क,त,आ,इ|आद्नू द्वौ स्तः।|Two aadnuu-forms are there.|द्न plus ऊ makes द्नू.
+जोडो|द्ने|द्ने|द्न,ए,क,त,आ,इ|आद्ने जलं अस्ति।|There is water at aadne.|द्न plus ए makes द्ने.
+जोडो|द्नै|द्नै|द्न,ऐ,क,त,आ,इ|आद्नैः सह पवनः वहति।|With aadnai the breeze blows.|द्न plus ऐ makes द्नै.
+जोडो|द्नो|द्नो|द्न,ओ,क,त,आ,इ|आद्नो रम्यः अस्ति।|The aadno is lovely.|द्न plus ओ makes द्नो.
+जोडो|द्नौ|द्नौ|द्न,औ,क,त,आ,इ|आद्नौ द्वौ स्तः।|Two aadnau-forms are there.|द्न plus औ makes द्नौ.
+जोडो|ल्पा|ल्पा|ल्प,आ,क,त,इ,उ|कल्पा लता हरिता अस्ति।|The kalpa creeper is green.|ल्प plus आ makes ल्पा.
+जोडो|ल्पि|ल्पि|ल्प,इ,क,त,आ,उ|अल्पि पुष्पं विकसति।|A small flower blooms.|ल्प plus इ makes ल्पि.
+जोडो|ल्पी|ल्पी|ल्प,ई,क,त,आ,इ|अल्पी द्वौ स्तः।|Two small ones are there.|ल्प plus ई makes ल्पी.
+जोडो|ल्पु|ल्पु|ल्प,उ,क,त,आ,इ|कल्पुं बालकः इच्छति।|The boy wishes for a kalpa.|ल्प plus उ makes ल्पु.
+जोडो|ल्पू|ल्पू|ल्प,ऊ,क,त,आ,इ|अल्पू द्वौ स्तः।|Two small ones are there.|ल्प plus ऊ makes ल्पू.
+जोडो|ल्पे|ल्पे|ल्प,ए,क,त,आ,इ|कल्पे तरुः फलति।|In a kalpa the tree bears fruit.|ल्प plus ए makes ल्पे.
+जोडो|ल्पै|ल्पै|ल्प,ऐ,क,त,आ,इ|अल्पैः पुष्पैः माला अस्ति।|There is a garland of small flowers.|ल्प plus ऐ makes ल्पै.
+जोडो|ल्पो|ल्पो|ल्प,ओ,क,त,आ,इ|अल्पो वृक्षः अस्ति।|The tree is small.|ल्प plus ओ makes ल्पो.
+जोडो|ल्पौ|ल्पौ|ल्प,औ,क,त,आ,इ|कल्पौ द्वौ स्तः।|Two kalpas are there.|ल्प plus औ makes ल्पौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
