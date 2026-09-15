@@ -2089,3 +2089,43 @@
 व्व्यसरः शीतलः।|A vvya lake is cool.|व्व्यसरः|nature
 व्व्यगिरिः उन्नतः।|Vvya-mountain is tall.|व्व्यगिरिः|nature
 व्व्यकमलं विकसति।|A vvya lotus blooms.|व्व्यकमलम्|nature
+स्क्यपवनः वहति।|A skya breeze blows.|स्क्यपवनः|nature
+स्क्यखगः कूजति।|A skya bird calls.|स्क्यखगः|nature
+स्क्यपुष्पं विकसति।|A skya flower blooms.|स्क्यपुष्पम्|nature
+स्क्यमेघः गर्जति।|A skya cloud thunders.|स्क्यमेघः|nature
+स्क्यतरुः फलति।|A skya tree bears fruit.|स्क्यतरुः|nature
+स्क्यसरः शीतलः।|A skya lake is cool.|स्क्यसरः|nature
+स्क्यगिरिः उन्नतः।|Skya-mountain is tall.|स्क्यगिरिः|nature
+स्क्यकमलं विकसति।|A skya lotus blooms.|स्क्यकमलम्|nature
+स्प्यपवनः वहति।|A spya breeze blows.|स्प्यपवनः|nature
+स्प्यखगः कूजति।|A spya bird calls.|स्प्यखगः|nature
+स्प्यपुष्पं विकसति।|A spya flower blooms.|स्प्यपुष्पम्|nature
+स्प्यमेघः गर्जति।|A spya cloud thunders.|स्प्यमेघः|nature
+स्प्यतरुः हरितः।|A spya tree is green.|स्प्यतरुः|nature
+स्प्यसरः रम्यः।|A spya lake is lovely.|स्प्यसरः|nature
+स्प्यगिरिः उन्नतः।|Spya-mountain is tall.|स्प्यगिरिः|nature
+स्प्यकमलं विकसति।|A spya lotus blooms.|स्प्यकमलम्|nature
+स्थ्यपवनः वहति।|A sthya breeze blows.|स्थ्यपवनः|nature
+स्थ्यखगः कूजति।|A sthya bird calls.|स्थ्यखगः|nature
+स्थ्यपुष्पं विकसति।|A sthya flower blooms.|स्थ्यपुष्पम्|nature
+स्थ्यमेघः गर्जति।|A sthya cloud thunders.|स्थ्यमेघः|nature
+स्थ्यतरुः फलति।|A sthya tree bears fruit.|स्थ्यतरुः|nature
+स्थ्यसरः शीतलः।|A sthya lake is cool.|स्थ्यसरः|nature
+स्थ्यगिरिः उन्नतः।|Sthya-mountain is tall.|स्थ्यगिरिः|nature
+स्थ्यकमलं विकसति।|A sthya lotus blooms.|स्थ्यकमलम्|nature
+श्च्यपवनः वहति।|A shcya breeze blows.|श्च्यपवनः|nature
+श्च्यखगः कूजति।|A shcya bird calls.|श्च्यखगः|nature
+श्च्यपुष्पं विकसति।|A shcya flower blooms.|श्च्यपुष्पम्|nature
+श्च्यमेघः गर्जति।|A shcya cloud thunders.|श्च्यमेघः|nature
+श्च्यतरुः हरितः।|A shcya tree is green.|श्च्यतरुः|nature
+श्च्यसरः रम्यः।|A shcya lake is lovely.|श्च्यसरः|nature
+श्च्यगिरिः उन्नतः।|Shcya-mountain is tall.|श्च्यगिरिः|nature
+श्च्यकमलं विकसति।|A shcya lotus blooms.|श्च्यकमलम्|nature
+श्क्यपवनः वहति।|A shkya breeze blows.|श्क्यपवनः|nature
+श्क्यखगः कूजति।|A shkya bird calls.|श्क्यखगः|nature
+श्क्यपुष्पं विकसति।|A shkya flower blooms.|श्क्यपुष्पम्|nature
+श्क्यमेघः गर्जति।|A shkya cloud thunders.|श्क्यमेघः|nature
+श्क्यतरुः फलति।|A shkya tree bears fruit.|श्क्यतरुः|nature
+श्क्यसरः शीतलः।|A shkya lake is cool.|श्क्यसरः|nature
+श्क्यगिरिः उन्नतः।|Shkya-mountain is tall.|श्क्यगिरिः|nature
+श्क्यकमलं विकसति।|A shkya lotus blooms.|श्क्यकमलम्|nature
