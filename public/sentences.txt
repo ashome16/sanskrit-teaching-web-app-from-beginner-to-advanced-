@@ -809,3 +809,43 @@
 पल्लवकिरणः पतति।|A sprout-ray falls.|पल्लवकिरणः|nature
 कल्लोलमेघः गर्जति।|A surging cloud thunders.|कल्लोलमेघः|nature
 भल्लूकगुहा गभीरा अस्ति।|The bear-cave is deep.|भल्लूकगुहा|nature
+कीर्तिपुष्पं विकसति।|The fame-flower blooms.|कीर्तिपुष्पम्|nature
+ऋतुपवनः वहति।|A seasonal breeze blows.|ऋतुपवनः|nature
+वसन्तर्तुः रम्यः अस्ति।|The spring season is lovely.|वसन्तर्तुः|nature
+कर्ताखगः कूजति।|The doer-bird calls.|कर्ताखगः|nature
+कीर्तिगिरिः उन्नतः अस्ति।|Fame-mountain is tall.|कीर्तिगिरिः|nature
+ऋतुमेघः गर्जति।|A seasonal cloud thunders.|ऋतुमेघः|nature
+कर्तातरुः फलति।|The doer-tree bears fruit.|कर्तातरुः|nature
+कीर्तिमयूरः नृत्यति।|The fame-peacock dances.|कीर्तिमयूरः|nature
+अर्धचन्द्रः निशि विभाति।|A half-moon shines at night.|अर्धचन्द्रः|nature
+वृद्धिपल्लवः हरितः अस्ति।|A growth-sprout is green.|वृद्धिपल्लवः|nature
+समृद्धवनं हरितम् अस्ति।|A prosperous forest is green.|समृद्धवनम्|nature
+अर्धकिरणः पतति।|A half-ray falls.|अर्धकिरणः|nature
+वृद्धिमेघः जलं ददाति।|A growth-cloud gives water.|वृद्धिमेघः|nature
+अर्धसरः शीतलः अस्ति।|A half-lake is cool.|अर्धसरः|nature
+समृद्धपुष्पं विकसति।|A prosperous flower blooms.|समृद्धपुष्पम्|nature
+वृद्धिसिंहः गुहायां वसति।|A growth-lion lives in the cave.|वृद्धिसिंहः|nature
+गर्भबीजं रोहति।|A womb-seed sprouts.|गर्भबीजम्|nature
+निर्भरजलं पतति।|Dependent water falls.|निर्भरजलम्|nature
+गर्भकमलं विकसति।|A womb-lotus blooms.|गर्भकमलम्|nature
+निर्भरपवनः वहति।|A dependent breeze blows.|निर्भरपवनः|nature
+गर्भतरुः उन्नतः अस्ति।|A womb-tree is tall.|गर्भतरुः|nature
+गर्भपुष्पं शोभते।|A womb-flower looks lovely.|गर्भपुष्पम्|nature
+निर्भरमेघः गर्जति।|A dependent cloud thunders.|निर्भरमेघः|nature
+गर्भमृगः शान्तः अस्ति।|A womb-deer is peaceful.|गर्भमृगः|nature
+दुर्गगिरिः उन्नतः अस्ति।|Fort-mountain is tall.|दुर्गगिरिः|nature
+स्वर्गतारा विभाति।|A heaven-star shines.|स्वर्गतारा|nature
+दुर्गशिखरं हिमावृतम्।|Fort-peak is snow-covered.|दुर्गशिखरम्|nature
+स्वर्गपवनः वहति।|A heaven-breeze blows.|स्वर्गपवनः|nature
+दुर्गवनं हरितम् अस्ति।|Fort-forest is green.|दुर्गवनम्|nature
+स्वर्गखगः उड्डयति।|A heaven-bird flies up.|स्वर्गखगः|nature
+दुर्गमेघः गर्जति।|A fort-cloud thunders.|दुर्गमेघः|nature
+स्वर्गकमलं विकसति।|A heaven-lotus blooms.|स्वर्गकमलम्|nature
+धर्मतरुः दृढः अस्ति।|The dharma-tree is firm.|धर्मतरुः|nature
+कर्मपुष्पं विकसति।|The deed-flower blooms.|कर्मपुष्पम्|nature
+धर्मपवनः वहति।|A dharma-breeze blows.|धर्मपवनः|nature
+कर्मखगः कूजति।|The deed-bird calls.|कर्मखगः|nature
+धर्मगिरिः मेघैः स्पृशति।|Dharma-mountain touches the clouds.|धर्मगिरिः|nature
+कर्ममार्गः सरलः अस्ति।|The deed-path is simple.|कर्ममार्गः|nature
+धर्मसरः शीतलः अस्ति।|The dharma-lake is cool.|धर्मसरः|nature
+कर्ममेघः जलं ददाति।|A deed-cloud gives water.|कर्ममेघः|nature

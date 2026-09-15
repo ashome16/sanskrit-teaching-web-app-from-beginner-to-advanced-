@@ -687,6 +687,51 @@
 जोडो|ल्लै|ल्लै|ल्ल,ऐ,क,त,आ,इ|मल्लैः सह बालकः क्रीडति।|The boy plays with the wrestlers.|ल्ल plus ऐ makes ल्लै.
 जोडो|ल्लो|ल्लो|ल्ल,ओ,क,त,आ,इ|कल्लोलः सागरे अस्ति।|A wave is in the ocean.|ल्ल plus ओ makes ल्लो.
 जोडो|ल्लौ|ल्लौ|ल्ल,औ,क,त,आ,इ|मल्लौ द्वौ क्रीडतः।|Two wrestlers play.|ल्ल plus औ makes ल्लौ.
+जोडो|र्ता|र्ता|र्त,आ,क,त,इ,उ|कर्ता बालकः पठति।|The doer-boy reads.|र्त plus आ makes र्ता.
+जोडो|र्ति|र्ति|र्त,इ,क,त,आ,उ|कीर्तिः ग्रामे अस्ति।|Fame is in the village.|र्त plus इ makes र्ति.
+जोडो|र्ती|र्ती|र्त,ई,क,त,आ,इ|कीर्ती द्वौ स्तः।|Two fames are there.|र्त plus ई makes र्ती.
+जोडो|र्तु|र्तु|र्त,उ,क,त,आ,इ|ऋतुः वसन्तः अस्ति।|The season is spring.|र्त plus उ makes र्तु.
+जोडो|र्तू|र्तू|र्त,ऊ,क,त,आ,इ|ऋतू द्वौ स्तः।|Two seasons are there.|र्त plus ऊ makes र्तू.
+जोडो|र्ते|र्ते|र्त,ए,क,त,आ,इ|कीर्तेः यशः विस्तृतः अस्ति।|The glory of fame is wide.|र्त plus ए makes र्ते.
+जोडो|र्तै|र्तै|र्त,ऐ,क,त,आ,इ|कीर्तैः सह बालकः वसति।|The boy lives with fame.|र्त plus ऐ makes र्तै.
+जोडो|र्तो|र्तो|र्त,ओ,क,त,आ,इ|कर्तो कार्यं करोति।|The doer does the work.|र्त plus ओ makes र्तो.
+जोडो|र्तौ|र्तौ|र्त,औ,क,त,आ,इ|कर्तौ द्वौ स्तः।|Two doers are there.|र्त plus औ makes र्तौ.
+जोडो|र्धा|र्धा|र्ध,आ,क,त,इ,उ|अर्धा चन्द्रकला शोभते।|A half moon-digit looks lovely.|र्ध plus आ makes र्धा.
+जोडो|र्धि|र्धि|र्ध,इ,क,त,आ,उ|वृद्धिः वृक्षे अस्ति।|There is growth in the tree.|र्ध plus इ makes र्धि.
+जोडो|र्धी|र्धी|र्ध,ई,क,त,आ,इ|वृद्धी द्वौ स्तः।|Two growths are there.|र्ध plus ई makes र्धी.
+जोडो|र्धु|र्धु|र्ध,उ,क,त,आ,इ|अर्धुं फलम् इच्छति।|He wishes half a fruit.|र्ध plus उ makes र्धु.
+जोडो|र्धू|र्धू|र्ध,ऊ,क,त,आ,इ|अर्धू द्वौ स्तः।|Two halves are there.|र्ध plus ऊ makes र्धू.
+जोडो|र्धे|र्धे|र्ध,ए,क,त,आ,इ|अर्धे दिने सूर्यः तपति।|At midday the sun burns.|र्ध plus ए makes र्धे.
+जोडो|र्धै|र्धै|र्ध,ऐ,क,त,आ,इ|अर्धैः पुष्पैः माला अस्ति।|There is a garland of half-flowers.|र्ध plus ऐ makes र्धै.
+जोडो|र्धो|र्धो|र्ध,ओ,क,त,आ,इ|अर्धो चन्द्रः विभाति।|A half moon shines.|र्ध plus ओ makes र्धो.
+जोडो|र्धौ|र्धौ|र्ध,औ,क,त,आ,इ|अर्धौ चन्द्रौ स्तः।|Two half-moons are there.|र्ध plus औ makes र्धौ.
+जोडो|र्भा|र्भा|र्भ,आ,क,त,इ,उ|गर्भात् अङ्कुरः रोहति।|A sprout rises from the womb.|र्भ plus आ makes र्भा.
+जोडो|र्भि|र्भि|र्भ,इ,क,त,आ,उ|निर्भरि जलं पतति।|Water falls dependently.|र्भ plus इ makes र्भि.
+जोडो|र्भी|र्भी|र्भ,ई,क,त,आ,इ|गर्भी द्वौ स्तः।|Two wombs are there.|र्भ plus ई makes र्भी.
+जोडो|र्भु|र्भु|र्भ,उ,क,त,आ,इ|गर्भुं बीजं रक्षति।|It protects the seed in the womb.|र्भ plus उ makes र्भु.
+जोडो|र्भू|र्भू|र्भ,ऊ,क,त,आ,इ|गर्भू द्वौ स्तः।|Two wombs are there.|र्भ plus ऊ makes र्भू.
+जोडो|र्भे|र्भे|र्भ,ए,क,त,आ,इ|गर्भे बीजं अस्ति।|There is a seed in the womb.|र्भ plus ए makes र्भे.
+जोडो|र्भै|र्भै|र्भ,ऐ,क,त,आ,इ|गर्भैः सह भूमिः फलति।|With wombs the earth bears fruit.|र्भ plus ऐ makes र्भै.
+जोडो|र्भो|र्भो|र्भ,ओ,क,त,आ,इ|गर्भो बीजं धारयति।|The womb holds the seed.|र्भ plus ओ makes र्भो.
+जोडो|र्भौ|र्भौ|र्भ,औ,क,त,आ,इ|गर्भौ द्वौ स्तः।|Two wombs are there.|र्भ plus औ makes र्भौ.
+जोडो|र्गा|र्गा|र्ग,आ,क,त,इ,उ|दुर्गा गिरिः उन्नता अस्ति।|Durga mountain is tall.|र्ग plus आ makes र्गा.
+जोडो|र्गि|र्गि|र्ग,इ,क,त,आ,उ|स्वर्गि खगः उड्डयति।|A heavenly bird flies.|र्ग plus इ makes र्गि.
+जोडो|र्गी|र्गी|र्ग,ई,क,त,आ,इ|दुर्गी द्वौ स्तः।|Two Durgas are there.|र्ग plus ई makes र्गी.
+जोडो|र्गु|र्गु|र्ग,उ,क,त,आ,इ|स्वर्गुं बालकः पश्यति।|The boy sees heaven.|र्ग plus उ makes र्गु.
+जोडो|र्गू|र्गू|र्ग,ऊ,क,त,आ,इ|स्वर्गू द्वौ स्तः।|Two heavens are there.|र्ग plus ऊ makes र्गू.
+जोडो|र्गे|र्गे|र्ग,ए,क,त,आ,इ|स्वर्गे ताराः सन्ति।|There are stars in heaven.|र्ग plus ए makes र्गे.
+जोडो|र्गै|र्गै|र्ग,ऐ,क,त,आ,इ|स्वर्गैः सह चन्द्रः शोभते।|With heavens the moon looks lovely.|र्ग plus ऐ makes र्गै.
+जोडो|र्गो|र्गो|र्ग,ओ,क,त,आ,इ|स्वर्गो रम्यः अस्ति।|Heaven is lovely.|र्ग plus ओ makes र्गो.
+जोडो|र्गौ|र्गौ|र्ग,औ,क,त,आ,इ|स्वर्गौ द्वौ स्तः।|Two heavens are there.|र्ग plus औ makes र्गौ.
+जोडो|र्मा|र्मा|र्म,आ,क,त,इ,उ|कर्मा बालकः करोति।|The boy does the deed.|र्म plus आ makes र्मा.
+जोडो|र्मि|र्मि|र्म,इ,क,त,आ,उ|धर्मि ग्रामे शान्तिः अस्ति।|In the righteous village there is peace.|र्म plus इ makes र्मि.
+जोडो|र्मी|र्मी|र्म,ई,क,त,आ,इ|धर्मी जनः सत्यं वदति।|A righteous person speaks truth.|र्म plus ई makes र्मी.
+जोडो|र्मु|र्मु|र्म,उ,क,त,आ,इ|कर्मुं बालकः इच्छति।|The boy wishes to act.|र्म plus उ makes र्मु.
+जोडो|र्मू|र्मू|र्म,ऊ,क,त,आ,इ|कर्मू द्वौ स्तः।|Two deeds are there.|र्म plus ऊ makes र्मू.
+जोडो|र्मे|र्मे|र्म,ए,क,त,आ,इ|धर्मे सत्यं अस्ति।|There is truth in dharma.|र्म plus ए makes र्मे.
+जोडो|र्मै|र्मै|र्म,ऐ,क,त,आ,इ|धर्मैः सह जनः वसति।|A person lives with dharmas.|र्म plus ऐ makes र्मै.
+जोडो|र्मो|र्मो|र्म,ओ,क,त,आ,इ|धर्मो रक्षति रक्षितः।|Dharma protects when protected.|र्म plus ओ makes र्मो.
+जोडो|र्मौ|र्मौ|र्म,औ,क,त,आ,इ|धर्मौ द्वौ स्तः।|Two dharmas are there.|र्म plus औ makes र्मौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
