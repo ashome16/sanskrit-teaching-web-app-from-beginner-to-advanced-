@@ -2009,3 +2009,43 @@
 ड्ड्यसरः शीतलः।|A ddya lake is cool.|ड्ड्यसरः|nature
 ड्ड्यगिरिः उन्नतः।|Ddya-mountain is tall.|ड्ड्यगिरिः|nature
 ड्ड्यकमलं विकसति।|A ddya lotus blooms.|ड्ड्यकमलम्|nature
+ब्ब्यपवनः वहति।|A bbya breeze blows.|ब्ब्यपवनः|nature
+ब्ब्यखगः कूजति।|A bbya bird calls.|ब्ब्यखगः|nature
+ब्ब्यपुष्पं विकसति।|A bbya flower blooms.|ब्ब्यपुष्पम्|nature
+ब्ब्यमेघः गर्जति।|A bbya cloud thunders.|ब्ब्यमेघः|nature
+ब्ब्यतरुः फलति।|A bbya tree bears fruit.|ब्ब्यतरुः|nature
+ब्ब्यसरः शीतलः।|A bbya lake is cool.|ब्ब्यसरः|nature
+ब्ब्यगिरिः उन्नतः।|Bbya-mountain is tall.|ब्ब्यगिरिः|nature
+ब्ब्यकमलं विकसति।|A bbya lotus blooms.|ब्ब्यकमलम्|nature
+ग्ग्यपवनः वहति।|A ggya breeze blows.|ग्ग्यपवनः|nature
+ग्ग्यखगः कूजति।|A ggya bird calls.|ग्ग्यखगः|nature
+ग्ग्यपुष्पं विकसति।|A ggya flower blooms.|ग्ग्यपुष्पम्|nature
+ग्ग्यमेघः गर्जति।|A ggya cloud thunders.|ग्ग्यमेघः|nature
+ग्ग्यतरुः हरितः।|A ggya tree is green.|ग्ग्यतरुः|nature
+ग्ग्यसरः रम्यः।|A ggya lake is lovely.|ग्ग्यसरः|nature
+ग्ग्यगिरिः उन्नतः।|Ggya-mountain is tall.|ग्ग्यगिरिः|nature
+ग्ग्यकमलं विकसति।|A ggya lotus blooms.|ग्ग्यकमलम्|nature
+क्क्यपवनः वहति।|A kkya breeze blows.|क्क्यपवनः|nature
+क्क्यखगः कूजति।|A kkya bird calls.|क्क्यखगः|nature
+क्क्यपुष्पं विकसति।|A kkya flower blooms.|क्क्यपुष्पम्|nature
+क्क्यमेघः गर्जति।|A kkya cloud thunders.|क्क्यमेघः|nature
+क्क्यतरुः फलति।|A kkya tree bears fruit.|क्क्यतरुः|nature
+क्क्यसरः शीतलः।|A kkya lake is cool.|क्क्यसरः|nature
+क्क्यगिरिः उन्नतः।|Kkya-mountain is tall.|क्क्यगिरिः|nature
+क्क्यकमलं विकसति।|A kkya lotus blooms.|क्क्यकमलम्|nature
+प्प्यपवनः वहति।|A ppya breeze blows.|प्प्यपवनः|nature
+प्प्यखगः कूजति।|A ppya bird calls.|प्प्यखगः|nature
+प्प्यपुष्पं विकसति।|A ppya flower blooms.|प्प्यपुष्पम्|nature
+प्प्यमेघः गर्जति।|A ppya cloud thunders.|प्प्यमेघः|nature
+प्प्यतरुः हरितः।|A ppya tree is green.|प्प्यतरुः|nature
+प्प्यसरः रम्यः।|A ppya lake is lovely.|प्प्यसरः|nature
+प्प्यगिरिः उन्नतः।|Ppya-mountain is tall.|प्प्यगिरिः|nature
+प्प्यकमलं विकसति।|A ppya lotus blooms.|प्प्यकमलम्|nature
+च्च्यपवनः वहति।|A ccya breeze blows.|च्च्यपवनः|nature
+च्च्यखगः कूजति।|A ccya bird calls.|च्च्यखगः|nature
+च्च्यपुष्पं विकसति।|A ccya flower blooms.|च्च्यपुष्पम्|nature
+च्च्यमेघः गर्जति।|A ccya cloud thunders.|च्च्यमेघः|nature
+च्च्यतरुः फलति।|A ccya tree bears fruit.|च्च्यतरुः|nature
+च्च्यसरः शीतलः।|A ccya lake is cool.|च्च्यसरः|nature
+च्च्यगिरिः उन्नतः।|Ccya-mountain is tall.|च्च्यगिरिः|nature
+च्च्यकमलं विकसति।|A ccya lotus blooms.|च्च्यकमलम्|nature
