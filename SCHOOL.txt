@@ -4,7 +4,7 @@ One chrome. One board. Deepakam is the book. बनाओ is the engine.
 On-screen names: public/labels.txt and docs/NAMES.md
 File tags (prarambhah, matra) are silent. Never print them.
 
-Child shelves: Beginners · मात्रा → nada · नाद-पथः → space · परिवेशः → map · नक्शा → Sanskriti · संस्कृतिः → Play · क्रीडा → Nature · प्रकृतिः
+Child shelves: Beginners · मात्रा → nada · नाद-पथः → space · परिवेशः → map · नक्शा → Sanskriti · संस्कृतिः → Vyakaran · व्याकरण → Nature · प्रकृतिः
 Sūtram last. Beginners never see Hūṇa.
 
 SHIP NOW
@@ -22,7 +22,7 @@ Week
   4 nada · नाद-पथः    नाद-पथः    रिक्तम्  कण्ठस्य
   5 map · नक्शा        नक्शा       मेलः   गङ्गा → नदी
   6 Sanskriti  कथा        रिक्तम्  तारा
-  7 Play       mix        बनाओ  माता
+  7 Vyakaran  mix        बनाओ  माता
 
 Play does the join. Sūtram watches: glue, three sandhi, शब्दः सिध्यति.
 Yellow card: stays until Close. Caption: A picture of the rule, not a recording.

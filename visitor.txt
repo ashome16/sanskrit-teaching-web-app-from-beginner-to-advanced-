@@ -96,7 +96,7 @@ Never show “one seed” on the tab.
 
 ---
 
-## 7. Play · क्रिया — ONE tile
+## 7. Vyakaran · व्याकरण — ONE tile
 
 Doer + action. The doer is the prompt. You tap the **verb**.
 **बालकः** → **पठति** → *The boy reads.*
