@@ -207,3 +207,73 @@
 उपवनं हरितम् अस्ति।|The garden-grove is green.|उपवनम्|nature
 उद्यानं पुष्पितम् अस्ति।|The garden is in bloom.|उद्यानम्|nature
 चम्पकः सुरभिः अस्ति।|The champaka is fragrant.|चम्पकः|nature
+रविः आकाशे शोभते।|The sun shines in the sky.|रविः|nature
+रजनी शान्ता अस्ति।|The night is peaceful.|रजनी|nature
+रसः मधुरः अस्ति।|The juice is sweet.|रसः|nature
+रथः मार्गे गच्छति।|The chariot goes on the road.|रथः|nature
+रङ्गः विविधः अस्ति।|The colour is varied.|रङ्गः|nature
+मरुस्थलं शुष्कम् अस्ति।|The desert is dry.|मरुस्थलम्|nature
+तरुः उन्नतः अस्ति।|The tree is tall.|तरुः|nature
+शरत् शीतला अस्ति।|Autumn is cool.|शरत्|nature
+करका पतति।|Hail falls.|करका|nature
+रजः उड्डयति।|Dust flies.|रजः|nature
+बकुलः सुरभिः अस्ति।|The bakula is fragrant.|बकुलः|nature
+अलिः गुंजाति।|The bee buzzes.|अलिः|nature
+बालुकं तटे अस्ति।|Sand is on the bank.|बालुकम्|nature
+नीलम् नभः अस्ति।|The sky is blue.|नीलम्|nature
+पल्लवः कोमलः अस्ति।|The sprout is tender.|पल्लवः|nature
+लवणं समुद्रे अस्ति।|Salt is in the ocean.|लवणम्|nature
+मालती विकसति।|Jasmine blooms.|मालती|nature
+पलाशः विकसति।|The palasha blooms.|पलाशः|nature
+लकुटः दृढः अस्ति।|The stick is firm.|लकुटः|nature
+बिल्वं पवित्रम् अस्ति।|The bilva is sacred.|बिल्वम्|nature
+वल्ली आरोहति।|The creeper climbs.|वल्ली|nature
+वापी स्वच्छा अस्ति।|The pond is clean.|वापी|nature
+अश्वत्थः विशालः अस्ति।|The peepal is vast.|अश्वत्थः|nature
+विहगः गायति।|The bird sings.|विहगः|nature
+सस्यं क्षेत्रे अस्ति।|The crop is in the field.|सस्यम्|nature
+अवनिः माता अस्ति।|The earth is a mother.|अवनिः|nature
+वृष्टिः भूमिम् सिञ्चति।|Rain wets the earth.|वृष्टिः|nature
+वल्मीकः उद्याने अस्ति।|The anthill is in the garden.|वल्मीकः|nature
+वराहः कर्दमं इच्छति।|The boar wants mud.|वराहः|nature
+वल्कलं वृक्षात् अस्ति।|Bark comes from the tree.|वल्कलम्|nature
+शिखी नृत्यति।|The peacock dances.|शिखी|nature
+शष्पं हरितम् अस्ति।|Young grass is green.|शष्पम्|nature
+शाद्वलं रम्यम् अस्ति।|The lawn is lovely.|शाद्वलम्|nature
+शरभः वने चरति।|The sharabha wanders in the forest.|शरभः|nature
+शल्मलिः पुष्पयति।|The silk-cotton tree flowers.|शल्मलिः|nature
+शीकरः पतति।|Spray falls.|शीकरः|nature
+श्यामलं वनम् अस्ति।|The forest is dark-green.|श्यामलम्|nature
+शुण्डा दीर्घा अस्ति।|The trunk is long.|शुण्डा|nature
+शेखरः शोभते।|The crest shines.|शेखरः|nature
+शालः विशालः अस्ति।|The sal tree is vast.|शालः|nature
+वृषभः गर्जति।|The bull bellows.|वृषभः|nature
+वृषः बलवान् अस्ति।|The bull is strong.|वृषः|nature
+ओषधिः रोहति।|The herb grows.|ओषधिः|nature
+ओषधं हितकरम् अस्ति।|The medicine is beneficial.|ओषधम्|nature
+तुषारं श्वेतम् अस्ति।|Frost is white.|तुषारम्|nature
+कषायं तिक्तम् अस्ति।|Astringent taste is sharp.|कषायम्|nature
+पाषाणः दृढः अस्ति।|The stone is firm.|पाषाणः|nature
+विषाणं दीर्घम् अस्ति।|The horn is long.|विषाणम्|nature
+आषाढः वर्षति।|Ashadha brings rain.|आषाढः|nature
+पृषत् जलं पतति।|A drop of water falls.|पृषत्|nature
+सेतुः दृढः अस्ति।|The bridge is firm.|सेतुः|nature
+सलिलं स्वच्छम् अस्ति।|Water is clean.|सलिलम्|nature
+सोपानं उन्नतम् अस्ति।|The stairway is high.|सोपानम्|nature
+सप्तपर्णः पुष्पयति।|The seven-leaved tree flowers.|सप्तपर्णः|nature
+सस्यक्षेत्रं हरितम् अस्ति।|The crop-field is green.|सस्यक्षेत्रम्|nature
+सूर्यकिरणः तपति।|A sunbeam is hot.|सूर्यकिरणः|nature
+सरोजिनी विकसति।|The lotus-bed blooms.|सरोजिनी|nature
+सुवर्णं पीतम् अस्ति।|Gold is yellow.|सुवर्णम्|nature
+स्रोतः शीघ्रं वहति।|The stream flows fast.|स्रोतः|nature
+स्फटिकः स्वच्छः अस्ति।|Crystal is clear.|स्फटिकः|nature
+ह्रदः गभीरा अस्ति।|The lake is deep.|ह्रदः|nature
+हरिणशावः धावति।|The fawn runs.|हरिणशावः|nature
+हिमबिन्दुः पतति।|A snow-drop falls.|हिमबिन्दुः|nature
+हिमपातः श्वेतः अस्ति।|Snowfall is white.|हिमपातः|nature
+हरिततृणं कोमलम् अस्ति।|Green grass is soft.|हरिततृणम्|nature
+हिमशिखरं शोभते।|The snow-peak shines.|हिमशिखरम्|nature
+हिमजं शीतलम् अस्ति।|Snow-born water is cool.|हिमजम्|nature
+हस्तिकः जलं पिबति।|The young elephant drinks water.|हस्तिकः|nature
+हेमन्तः शीतलः अस्ति।|Winter is cold.|हेमन्तः|nature
+हरितं पर्णम् अस्ति।|The leaf is green.|हरितम्|nature

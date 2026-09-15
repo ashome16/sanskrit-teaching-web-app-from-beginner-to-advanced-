@@ -188,17 +188,41 @@ const CONSONANT_ROW_CHIP_DEFS: { id: string; consonant: string }[] = [
   { id: 'भ', consonant: 'भ' },
   { id: 'ध', consonant: 'ध' },
   { id: 'य', consonant: 'य' },
+  { id: 'र', consonant: 'र' },
+  { id: 'ल', consonant: 'ल' },
+  { id: 'व', consonant: 'व' },
+  { id: 'श', consonant: 'श' },
+  { id: 'ष', consonant: 'ष' },
+  { id: 'स', consonant: 'स' },
+  { id: 'ह', consonant: 'ह' },
 ];
 
 const CONSONANT_ROW_MATRA = '[\u093E\u093F\u0940\u0941\u0942\u0943\u0947\u0948\u094B\u094C\u0902\u0903]';
 
-function findConsonantRowStart(puzzles: BoardPuzzle[], consonant: string): number {
+/** First cons+matra at index >= minIndex (skips early रा/ला/सा once prior row ended). */
+function findConsonantRowStart(puzzles: BoardPuzzle[], consonant: string, minIndex = 0): number {
   const re = new RegExp(`^${consonant}${CONSONANT_ROW_MATRA}$`);
-  return puzzles.findIndex((p) => {
-    if (isPrashnaPuzzle(p)) return false;
+  for (let i = Math.max(0, minIndex); i < puzzles.length; i++) {
+    const p = puzzles[i];
+    if (isPrashnaPuzzle(p)) continue;
     const t = (p.target || '').normalize('NFC');
-    return re.test(t);
-  });
+    if (re.test(t)) return i;
+  }
+  return -1;
+}
+
+/** Exclusive end index of a contiguous cons+matra block starting at `start`. */
+function consonantRowEnd(puzzles: BoardPuzzle[], consonant: string, start: number): number {
+  const re = new RegExp(`^${consonant}${CONSONANT_ROW_MATRA}$`);
+  let end = start;
+  for (let i = start; i < puzzles.length; i++) {
+    const p = puzzles[i];
+    if (isPrashnaPuzzle(p)) break;
+    const t = (p.target || '').normalize('NFC');
+    if (!re.test(t)) break;
+    end = i + 1;
+  }
+  return end;
 }
 
 function buildMatraSectionChips(puzzles: BoardPuzzle[]): BoardSectionChip[] {
@@ -207,9 +231,14 @@ function buildMatraSectionChips(puzzles: BoardPuzzle[]): BoardSectionChip[] {
     const start = findMatraSectionStart(puzzles, def.exemplar, def.mark);
     if (start >= 0) chips.push({ id: def.label, label: def.label, start });
   }
+  // Sequential: each row starts at/after the previous consonant row's end (so ल≠early ला, स≠early सा).
+  let minIndex = 0;
   for (const row of CONSONANT_ROW_CHIP_DEFS) {
-    const start = findConsonantRowStart(puzzles, row.consonant);
-    if (start >= 0) chips.push({ id: row.id, label: row.id, start });
+    const start = findConsonantRowStart(puzzles, row.consonant, minIndex);
+    if (start >= 0) {
+      chips.push({ id: row.id, label: row.id, start });
+      minIndex = consonantRowEnd(puzzles, row.consonant, start);
+    }
   }
   const prashnaStart = findPrashnaSectionStart(puzzles);
   if (prashnaStart >= 0) chips.push({ id: 'प्रश्न', label: 'प्रश्न', start: prashnaStart });
