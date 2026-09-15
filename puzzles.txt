@@ -417,6 +417,51 @@
 जोडो|क्रै|क्रै|क्र,ऐ,क,त,आ,इ|चक्रैः रथः गच्छति।|The chariot goes with wheels.|क्र plus ऐ makes क्रै.
 जोडो|क्रो|क्रो|क्र,ओ,क,त,आ,इ|काकः क्रोशति वृक्षे।|The crow caws on the tree.|क्र plus ओ makes क्रो.
 जोडो|क्रौ|क्रौ|क्र,औ,क,त,आ,इ|क्रौञ्चः खगः उड्डयति।|The krauncha bird flies.|क्र plus औ makes क्रौ.
+जोडो|ग्रा|ग्रा|ग्र,आ,क,त,इ,उ|ग्रामे बालकः क्रीडति।|The boy plays in the village.|ग्र plus आ makes ग्रा.
+जोडो|ग्रि|ग्रि|ग्र,इ,क,त,आ,उ|अग्रिमः खगः उड्डयति।|The lead bird flies up.|ग्र plus इ makes ग्रि.
+जोडो|ग्री|ग्री|ग्र,ई,क,त,आ,इ|ग्रीष्मे सूर्यः तपति।|In summer the sun burns.|ग्र plus ई makes ग्री.
+जोडो|ग्रु|ग्रु|ग्र,उ,क,त,आ,इ|ग्रुञ्जति भ्रमरः पुष्पे।|The bee hums on the flower.|ग्र plus उ makes ग्रु.
+जोडो|ग्रू|ग्रू|ग्र,ऊ,क,त,आ,इ|ग्रूढबीजं भूमौ अस्ति।|The hidden seed is in the ground.|ग्र plus ऊ makes ग्रू.
+जोडो|ग्रे|ग्रे|ग्र,ए,क,त,आ,इ|अग्रे मयूरः नृत्यति।|In front the peacock dances.|ग्र plus ए makes ग्रे.
+जोडो|ग्रै|ग्रै|ग्र,ऐ,क,त,आ,इ|ग्रैवेयः हारः शोभते।|The neck-garland looks lovely.|ग्र plus ऐ makes ग्रै.
+जोडो|ग्रो|ग्रो|ग्र,ओ,क,त,आ,इ|ग्रोष्ठे धेनुः दुग्धं ददाति।|In the cowshed the cow gives milk.|ग्र plus ओ makes ग्रो.
+जोडो|ग्रौ|ग्रौ|ग्र,औ,क,त,आ,इ|उग्रौ सिंहौ गर्जतः।|Two fierce lions roar.|ग्र plus औ makes ग्रौ.
+जोडो|द्रा|द्रा|द्र,आ,क,त,इ,उ|द्राक्षा मधुरा अस्ति।|The grape is sweet.|द्र plus आ makes द्रा.
+जोडो|द्रि|द्रि|द्र,इ,क,त,आ,उ|अद्रिषु हिमं शोभते।|Snow shines on the mountains.|द्र plus इ makes द्रि.
+जोडो|द्री|द्री|द्र,ई,क,त,आ,इ|चन्द्रीका निशि विभाति।|Moonlight shines at night.|द्र plus ई makes द्री.
+जोडो|द्रु|द्रु|द्र,उ,क,त,आ,इ|द्रुमः उद्याने फलति।|The tree bears fruit in the garden.|द्र plus उ makes द्रु.
+जोडो|द्रू|द्रू|द्र,ऊ,क,त,आ,इ|द्रूतः मृगः वने धावति।|The swift deer runs in the forest.|द्र plus ऊ makes द्रू.
+जोडो|द्रे|द्रे|द्र,ए,क,त,आ,इ|चन्द्रे ज्योत्स्ना अस्ति।|There is moonlight on the moon.|द्र plus ए makes द्रे.
+जोडो|द्रै|द्रै|द्र,ऐ,क,त,आ,इ|समुद्रैः मेघाः भरिताः।|Clouds are filled from the seas.|द्र plus ऐ makes द्रै.
+जोडो|द्रो|द्रो|द्र,ओ,क,त,आ,इ|द्रोण्यां सरः शीतलः अस्ति।|In the valley the lake is cool.|द्र plus ओ makes द्रो.
+जोडो|द्रौ|द्रौ|द्र,औ,क,त,आ,इ|उद्रौ मत्स्यौ जले तरतः।|Two otters swim in the water.|द्र plus औ makes द्रौ.
+जोडो|ब्रा|ब्रा|ब्र,आ,क,त,इ,उ|ब्राही लता हरिता अस्ति।|The brahmi creeper is green.|ब्र plus आ makes ब्रा.
+जोडो|ब्रि|ब्रि|ब्र,इ,क,त,आ,उ|ब्रिन्दं पुष्पाणां शोभते।|A cluster of flowers looks lovely.|ब्र plus इ makes ब्रि.
+जोडो|ब्री|ब्री|ब्र,ई,क,त,आ,इ|ब्रीहिः क्षेत्रे वर्धते।|Rice grows in the field.|ब्र plus ई makes ब्री.
+जोडो|ब्रु|ब्रु|ब्र,उ,क,त,आ,इ|ब्रुवन् खगः मधुरं कूजति।|The speaking bird sings sweetly.|ब्र plus उ makes ब्रु.
+जोडो|ब्रू|ब्रू|ब्र,ऊ,क,त,आ,इ|गुरुः प्रातः ब्रूते।|The teacher speaks at dawn.|ब्र plus ऊ makes ब्रू.
+जोडो|ब्रे|ब्रे|ब्र,ए,क,त,आ,इ|ब्रेधितः अङ्कुरः वर्धते।|The swollen sprout grows.|ब्र plus ए makes ब्रे.
+जोडो|ब्रै|ब्रै|ब्र,ऐ,क,त,आ,इ|सब्रैः पुष्पैः वनं शोभते।|With many flowers the forest shines.|ब्र plus ऐ makes ब्रै.
+जोडो|ब्रो|ब्रो|ब्र,ओ,क,त,आ,इ|सब्रोढं फलम् गजः वहति।|The elephant carries the loaded fruit.|ब्र plus ओ makes ब्रो.
+जोडो|ब्रौ|ब्रौ|ब्र,औ,क,त,आ,इ|ब्रौढं फलं वृक्षात् पतति।|The ripe fruit falls from the tree.|ब्र plus औ makes ब्रौ.
+जोडो|द्वा|द्वा|द्व,आ,क,त,इ,उ|द्वा सुपर्णा कूजतः।|Two fair-winged birds sing.|द्व plus आ makes द्वा.
+जोडो|द्वि|द्वि|द्व,इ,क,त,आ,उ|द्विरदः गजः मन्दं चलति।|The tusked elephant walks slowly.|द्व plus इ makes द्वि.
+जोडो|द्वी|द्वी|द्व,ई,क,त,आ,इ|द्वीपे खगः नीडं रचयति।|On the island a bird builds a nest.|द्व plus ई makes द्वी.
+जोडो|द्वु|द्वु|द्व,उ,क,त,आ,इ|अद्वुतं पुष्पं विकसति।|A wonderful flower blooms.|द्व plus उ makes द्वु.
+जोडो|द्वू|द्वू|द्व,ऊ,क,त,आ,इ|द्वूर्जं पत्रं पतति।|A strong leaf falls.|द्व plus ऊ makes द्वू.
+जोडो|द्वे|द्वे|द्व,ए,क,त,आ,इ|द्वे पुष्पे उद्याने विकसतः।|Two flowers bloom in the garden.|द्व plus ए makes द्वे.
+जोडो|द्वै|द्वै|द्व,ऐ,क,त,आ,इ|द्वैप्यः नक्रः तटे शेते।|The island crocodile rests on the bank.|द्व plus ऐ makes द्वै.
+जोडो|द्वो|द्वो|द्व,ओ,क,त,आ,इ|द्वयोः खगयोः नीडं अस्ति।|There is a nest of two birds.|द्व plus ओ makes द्वो.
+जोडो|द्वौ|द्वौ|द्व,औ,क,त,आ,इ|द्वौ खगौ आकाशे उड्डयतः।|Two birds fly in the sky.|द्व plus औ makes द्वौ.
+जोडो|त्वा|त्वा|त्व,आ,क,त,इ,उ|पठित्वा बालकः हसति।|Having read, the boy smiles.|त्व plus आ makes त्वा.
+जोडो|त्वि|त्वि|त्व,इ,क,त,आ,उ|त्विषि सूर्यस्य ज्योतिः अस्ति।|There is light in the sun’s brilliance.|त्व plus इ makes त्वि.
+जोडो|त्वी|त्वी|त्व,ई,क,त,आ,इ|सत्त्वी धेनुः शान्ता अस्ति।|The gentle cow is peaceful.|त्व plus ई makes त्वी.
+जोडो|त्वु|त्वु|त्व,उ,क,त,आ,इ|सत्त्वुः मृगः तृणं खादति।|The gentle deer eats grass.|त्व plus उ makes त्वु.
+जोडो|त्वू|त्वू|त्व,ऊ,क,त,आ,इ|मधुरत्वू रसं पिबति भ्रमरः।|The bee drinks the sweet juice.|त्व plus ऊ makes त्वू.
+जोडो|त्वे|त्वे|त्व,ए,क,त,आ,इ|सत्त्वे हंसः सरसि तरति।|In calmness the swan swims in the lake.|त्व plus ए makes त्वे.
+जोडो|त्वै|त्वै|त्व,ऐ,क,त,आ,इ|महत्त्वैः गिरिभिः वनं रम्यम्।|With great mountains the forest is lovely.|त्व plus ऐ makes त्वै.
+जोडो|त्वो|त्वो|त्व,ओ,क,त,आ,इ|सत्त्वो मृगः वने चरति।|The calm deer wanders in the forest.|त्व plus ओ makes त्वो.
+जोडो|त्वौ|त्वौ|त्व,औ,क,त,आ,इ|सत्त्वौ हंसौ कूजतः।|Two gentle swans call.|त्व plus औ makes त्वौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
