@@ -507,3 +507,65 @@
 पत्रशयनं कोमलम् अस्ति।|The leaf-bed is soft.|पत्रशयनम्|nature
 अत्रिसरः शीतलः अस्ति।|Atri’s lake is cool.|अत्रिसरः|nature
 गोत्रतरुः छायां ददाति।|The clan-tree gives shade.|गोत्रतरुः|nature
+कः फलम् खादति?|Who is eating the fruit?|कः|beginners
+का बालिका नृत्यति?|Who is the girl dancing?|का|beginners
+एतत् किम् पुष्पम् अस्ति?|What flower is this?|किम्|beginners
+खगः कुत्र उड्डयति?|Where is the bird flying?|कुत्र|beginners
+त्वं कदा पठसि?|When do you study?|कदा|beginners
+मयूरः कथम् नृत्यति?|How does the peacock dance?|कथम्|beginners
+कः जलं पिबति?|Who is drinking water?|कः|beginners
+का धेनुः दुग्धं ददाति?|Which cow gives milk?|का|beginners
+भवान् किम् इच्छसि?|What do you want?|किम्|beginners
+सिंहः कुत्र वसति?|Where does the lion live?|कुत्र|beginners
+चन्द्रः कदा विभाति?|When does the moon shine?|कदा|beginners
+गजः कथम् चलति?|How does the elephant walk?|कथम्|beginners
+आश्रयतरुः छायां ददाति।|The shelter-tree gives shade.|आश्रयतरुः|nature
+श्रवणखगः मधुरं शृणोति।|The listening bird hears sweetly.|श्रवणखगः|nature
+श्रीफलं मधुरम् अस्ति।|The sacred fruit is sweet.|श्रीफलम्|nature
+श्रुतसरः शीतलः अस्ति।|The famous lake is cool.|श्रुतसरः|nature
+श्रेष्ठगिरिः उन्नतः अस्ति।|The finest mountain is tall.|श्रेष्ठगिरिः|nature
+आश्रमवनं शान्तम् अस्ति।|The ashram forest is peaceful.|आश्रमवनम्|nature
+मिश्रपुष्पं शोभते।|The mixed flower looks lovely.|मिश्रपुष्पम्|nature
+श्रद्धालता वृक्षं आरोहति।|The devoted creeper climbs the tree.|श्रद्धालता|nature
+श्रोत्रमयूरः नृत्यति।|The listening peacock dances.|श्रोत्रमयूरः|nature
+आश्रयनीडं सुरक्षितम् अस्ति।|The shelter-nest is safe.|आश्रयनीडम्|nature
+प्रभातसूर्यः उदेति।|The morning sun rises.|प्रभातसूर्यः|nature
+प्रियखगः मधुरं कूजति।|The dear bird sings sweetly.|प्रियखगः|nature
+प्रीतिवनं रम्यम् अस्ति।|The affection-forest is lovely.|प्रीतिवनम्|nature
+प्रसन्नसरः प्रकाशते।|The clear lake sparkles.|प्रसन्नसरः|nature
+प्रपातझरः गिरेः पतति।|The waterfall falls from the mountain.|प्रपातझरः|nature
+प्रफुल्लपुष्पं विकसति।|The blooming flower opens.|प्रफुल्लपुष्पम्|nature
+प्रशान्तगिरिः स्थिरीभवति।|The quiet mountain stands still.|प्रशान्तगिरिः|nature
+प्रचुरफलं वृक्षे अस्ति।|Abundant fruit is on the tree.|प्रचुरफलम्|nature
+प्रबलपवनः वहति।|A strong wind blows.|प्रबलपवनः|nature
+प्रभाचन्द्रः विभाति।|The radiant moon shines.|प्रभाचन्द्रः|nature
+प्रवालशिला सागरे अस्ति।|The coral rock is in the sea.|प्रवालशिला|nature
+प्रसन्नमयूरः नृत्यति।|The happy peacock dances.|प्रसन्नमयूरः|nature
+प्रसारितपक्षः उड्डयति।|The spread-wing bird flies.|प्रसारितपक्षः|nature
+प्रसन्नकमलं विकसति।|The bright lotus blooms.|प्रसन्नकमलम्|nature
+प्रपातशिला भिद्यते।|The fall-rock splits.|प्रपातशिला|nature
+प्रचुरपर्णं तरोः अस्ति।|Abundant leaves are on the tree.|प्रचुरपर्णम्|nature
+प्रीतिमधु मधुरम् अस्ति।|Affection-honey is sweet.|प्रीतिमधु|nature
+प्रभातपवनः शीतलः अस्ति।|The morning breeze is cool.|प्रभातपवनः|nature
+प्रियमृगः तृणं खादति।|The dear deer eats grass.|प्रियमृगः|nature
+प्रसन्नहंसः सरसि तरति।|The glad swan swims in the lake.|प्रसन्नहंसः|nature
+क्रीडामृगः वने कूदति।|The play-deer jumps in the forest.|क्रीडामृगः|nature
+क्रुद्धसिंहः गर्जति।|The angry lion roars.|क्रुद्धसिंहः|nature
+क्रूरसर्पः तृणे सरति।|The fierce snake creeps in the grass.|क्रूरसर्पः|nature
+क्रौञ्चपक्षी उड्डयति।|The krauncha bird flies up.|क्रौञ्चपक्षी|nature
+विक्रान्तगजः मन्दं चलति।|The mighty elephant walks slowly.|विक्रान्तगजः|nature
+चक्रवाकहंसः कूजति।|The chakravaka bird calls.|चक्रवाकहंसः|nature
+वज्रशिला दृढा अस्ति।|The thunderbolt-rock is firm.|वज्रशिला|nature
+क्रीडानीडं तरौ अस्ति।|The play-nest is on the tree.|क्रीडानीडम्|nature
+क्रान्तमार्गः वने अस्ति।|The crossed path is in the forest.|क्रान्तमार्गः|nature
+सुक्रियखगः नीडं रचयति।|The busy bird builds a nest.|सुक्रियखगः|nature
+क्रीडाशशकः तृणे क्रीडति।|The play-rabbit plays in the grass.|क्रीडाशशकः|nature
+विक्रमसिंहः गुहायां वसति।|The valiant lion lives in the cave.|विक्रमसिंहः|nature
+क्रोधमेघः गर्जति।|The angry cloud thunders.|क्रोधमेघः|nature
+चक्रपुष्पं विकसति।|The wheel-flower blooms.|चक्रपुष्पम्|nature
+क्रीडाकन्दुकः पतति।|The play-ball falls.|क्रीडाकन्दुकः|nature
+सुक्रूरसर्पः बिले वसति।|The very fierce snake lives in a burrow.|सुक्रूरसर्पः|nature
+क्रौञ्चनीडं वृक्षे अस्ति।|The krauncha nest is on the tree.|क्रौञ्चनीडम्|nature
+आक्रान्तगिरिः मेघैः आवृतः।|The covered mountain is wrapped in clouds.|आक्रान्तगिरिः|nature
+प्रक्रान्तपथः सरलः अस्ति।|The advanced path is simple.|प्रक्रान्तपथः|nature
+श्रमखगः नीडं गच्छति।|The tired bird goes to the nest.|श्रमखगः|nature
