@@ -8,7 +8,7 @@ shelf|ganitam|Vastu · वस्तु|वस्तु
 shelf|bhugolah|Naksha · नक्शा|नक्शा
 shelf|prakrtih|Nature · प्रकृतिः|प्रकृतिः
 shelf|sanskritih|Sanskriti · संस्कृतिः|संस्कृतिः
-shelf|krida|Play · क्रिया|क्रिया
+shelf|krida|Vyakaran · व्याकरण|व्याकरण
 pack|matra|मात्रा|letters and marks
 pack|colours|वर्णाः|colours
 pack|family|परिवारः|family
@@ -42,4 +42,4 @@ skin|प्रश्न|प्रश्न|ask
 skin|क्रमः|क्रमः|order
 site|loop|Click a cream tile. The picture and sentence appear. Then Click Next.|
 pack|prakrtih|प्रकृतिः|animals and plants
-pack|kriya|क्रिया|doer then verb
+pack|kriya|व्याकरण|doer then verb

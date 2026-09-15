@@ -19,7 +19,7 @@ const DEFAULT_SHELVES: ShelfButton[] = [
   { id: 'ganitam', label: 'Maths' },
   { id: 'bhugolah', label: 'Map' },
   { id: 'sanskritih', label: 'Sanskriti' },
-  { id: 'krida', label: 'Play' },
+  { id: 'krida', label: 'Vyakaran · व्याकरण' },
   { id: 'prakrtih', label: 'Nature' },
 ];
 
@@ -35,6 +35,9 @@ const SHELF_ALIASES: Record<string, ShelfId> = {
   sanskritih: 'sanskritih',
   play: 'krida',
   krida: 'krida',
+  vyakaran: 'krida',
+  vyakarana: 'krida',
+  'व्याकरण': 'krida',
   nature: 'prakrtih',
   prakrtih: 'prakrtih',
 };
