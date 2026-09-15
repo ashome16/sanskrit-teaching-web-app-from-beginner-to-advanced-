@@ -209,7 +209,6 @@ const Grammar: React.FC = () => {
       </header>
       <div className="grammar-shelf">
         <button type="button" className="grammar-card grammar-card--ready" onClick={() => setTopic('vibhakti')}>
-          <span className="grammar-card-kicker">Ready</span>
           <span className="grammar-card-title">विभक्ति · Vibhakti</span>
           <span className="grammar-card-blurb">Eight noun cases — who does what to whom.</span>
         </button>
@@ -218,7 +217,6 @@ const Grammar: React.FC = () => {
           className="grammar-card grammar-card--ready"
           onClick={() => setTopic('sound-teams')}
         >
-          <span className="grammar-card-kicker">Ready</span>
           <span className="grammar-card-title">Five Sound Teams · पञ्च वर्ण-टीमें</span>
           <span className="grammar-card-blurb">
             Vowels, consonants, sliders, hissers, and fusion blocks — how every letter finds its
@@ -226,7 +224,6 @@ const Grammar: React.FC = () => {
           </span>
         </button>
         <button type="button" className="grammar-card grammar-card--ready" onClick={() => setTopic('samyukta')}>
-          <span className="grammar-card-kicker">Ready</span>
           <span className="grammar-card-title">संयुक्त · Conjunct Games</span>
           <span className="grammar-card-blurb">Drop the stick, piggyback, shape-shifters — how letters join.</span>
         </button>
@@ -237,7 +234,6 @@ const Grammar: React.FC = () => {
             key={item.id}
             onClick={() => openArticle(item.id)}
           >
-            <span className="grammar-card-kicker">Ready</span>
             <span className="grammar-card-title">
               {item.emoji} {item.cardTitle}
             </span>
