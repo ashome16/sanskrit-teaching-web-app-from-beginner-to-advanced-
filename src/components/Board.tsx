@@ -205,6 +205,15 @@ const CONSONANT_ROW_CHIP_DEFS: { id: string; consonant: string }[] = [
   { id: 'ग', consonant: 'ग' },
   { id: 'घ', consonant: 'घ' },
   { id: 'ङ', consonant: 'ङ' },
+  { id: 'च', consonant: 'च' },
+  { id: 'छ', consonant: 'छ' },
+  { id: 'ज', consonant: 'ज' },
+  { id: 'झ', consonant: 'झ' },
+  { id: 'ञ', consonant: 'ञ' },
+  { id: 'प', consonant: 'प' },
+  { id: 'फ', consonant: 'फ' },
+  { id: 'म', consonant: 'म' },
+  { id: 'न', consonant: 'न' },
 ];
 
 const CONSONANT_ROW_MATRA = '[\u093E\u093F\u0940\u0941\u0942\u0943\u0947\u0948\u094B\u094C\u0902\u0903]';

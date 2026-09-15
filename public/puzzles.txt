@@ -273,6 +273,87 @@
 जोडो|ङै|ङै|ङ,ऐ,क,त,आ,उ|रङ्गैः शोभते।|It shines with colours.|ङ plus ऐ makes ङै.
 जोडो|ङो|ङो|ङ,ओ,क,त,आ,उ|रङ्गो रम्यः अस्ति।|The colour is lovely.|ङ plus ओ makes ङो.
 जोडो|ङौ|ङौ|ङ,औ,क,त,आ,उ|रङ्गौ द्वौ स्तः।|There are two colours.|ङ plus औ makes ङौ.
+जोडो|चा|चा|च,आ,क,त,इ,उ|चातकः जलं याचते।|The chataka bird asks for water.|च plus आ makes चा.
+जोडो|चि|चि|च,इ,क,त,आ,उ|चित्रं शोभते।|The picture looks beautiful.|च plus इ makes चि.
+जोडो|ची|ची|च,ई,क,त,आ,उ|चीरं तरोः अस्ति।|There is bark-cloth on the tree.|च plus ई makes ची.
+जोडो|चु|चु|च,उ,क,त,आ,इ|चुलुकं जलं अस्ति।|There is a palmful of water.|च plus उ makes चु.
+जोडो|चू|चू|च,ऊ,क,त,आ,इ|चूतः फलति।|The mango tree bears fruit.|च plus ऊ makes चू.
+जोडो|चे|चे|च,ए,क,त,आ,उ|चेतः प्रसन्नम् अस्ति।|The mind is glad.|च plus ए makes चे.
+जोडो|चै|चै|च,ऐ,क,त,आ,उ|चैत्रे पुष्पाणि विकसन्ति।|In Chaitra the flowers bloom.|च plus ऐ makes चै.
+जोडो|चो|चो|च,ओ,क,त,आ,उ|चोलकः शुभ्रः अस्ति।|The jacket is white.|च plus ओ makes चो.
+जोडो|चौ|चौ|च,औ,क,त,आ,उ|चौकः विशालः अस्ति।|The courtyard is wide.|च plus औ makes चौ.
+जोडो|छा|छा|छ,आ,क,त,इ,उ|छागः तृणं अत्ति।|The goat eats grass.|छ plus आ makes छा.
+जोडो|छि|छि|छ,इ,क,त,आ,उ|छिद्रं लघु अस्ति।|The hole is small.|छ plus इ makes छि.
+जोडो|छी|छी|छ,ई,क,त,आ,उ|छीकः श्रूयते।|A sneeze is heard.|छ plus ई makes छी.
+जोडो|छु|छु|छ,उ,क,त,आ,इ|छुरिका तीक्ष्णा अस्ति।|The knife is sharp.|छ plus उ makes छु.
+जोडो|छू|छू|छ,ऊ,क,त,आ,इ|छूत्कारः श्रूयते।|A soft rustle is heard.|छ plus ऊ makes छू.
+जोडो|छे|छे|छ,ए,क,त,आ,उ|छेदः स्पष्टः अस्ति।|The cut is clear.|छ plus ए makes छे.
+जोडो|छै|छै|छ,ऐ,क,त,आ,उ|कच्छैः वृतः सरः।|The lake is ringed by banks.|छ plus ऐ makes छै.
+जोडो|छो|छो|छ,ओ,क,त,आ,उ|अच्छोदः स्वच्छः अस्ति।|The clear lake is pure.|छ plus ओ makes छो.
+जोडो|छौ|छौ|छ,औ,क,त,आ,उ|कच्छौ द्वौ स्तः।|There are two banks.|छ plus औ makes छौ.
+जोडो|जा|जा|ज,आ,क,त,इ,उ|जम्बूफलं मधुरम् अस्ति।|The rose-apple is sweet.|ज plus आ makes जा.
+जोडो|जि|जि|ज,इ,क,त,आ,उ|जिह्वा मधुरा अस्ति।|The tongue tastes sweet.|ज plus इ makes जि.
+जोडो|जी|जी|ज,ई,क,त,आ,उ|जीवनं प्रियम् अस्ति।|Life is dear.|ज plus ई makes जी.
+जोडो|जु|जु|ज,उ,क,त,आ,इ|मञ्जु नादः अस्ति।|The sound is sweet.|ज plus उ makes जु.
+जोडो|जू|जू|ज,ऊ,क,त,आ,इ|जूतकं पादे अस्ति।|A shoe is on the foot.|ज plus ऊ makes जू.
+जोडो|जे|जे|ज,ए,क,त,आ,उ|जेमनं मधुरम् अस्ति।|The meal is sweet.|ज plus ए makes जे.
+जोडो|जै|जै|ज,ऐ,क,त,आ,उ|जैत्रः पक्षी उड्डयति।|The victorious bird flies.|ज plus ऐ makes जै.
+जोडो|जो|जो|ज,ओ,क,त,आ,उ|ज्योतिः प्रकाशते।|The light shines.|ज plus ओ makes जो.
+जोडो|जौ|जौ|ज,औ,क,त,आ,उ|जौ क्षेत्रे रोहतः।|Two barley plants grow in the field.|ज plus औ makes जौ.
+जोडो|झा|झा|झ,आ,क,त,इ,उ|झाटः घनः अस्ति।|The thicket is dense.|झ plus आ makes झा.
+जोडो|झि|झि|झ,इ,क,त,आ,उ|झिल्ली गुंजाति।|The cricket chirps.|झ plus इ makes झि.
+जोडो|झी|झी|झ,ई,क,त,आ,उ|झीङ्कारः श्रूयते।|A jingling sound is heard.|झ plus ई makes झी.
+जोडो|झु|झु|झ,उ,क,त,आ,इ|झुमकं शोभते।|The earring looks pretty.|झ plus उ makes झु.
+जोडो|झू|झू|झ,ऊ,क,त,आ,इ|झूलनं रम्यम् अस्ति।|The swing is lovely.|झ plus ऊ makes झू.
+जोडो|झे|झे|झ,ए,क,त,आ,उ|झेङ्कारः श्रूयते।|A buzzing sound is heard.|झ plus ए makes झे.
+जोडो|झै|झै|झ,ऐ,क,त,आ,उ|झषैः पूर्णं सरः।|The lake is full of fish.|झ plus ऐ makes झै.
+जोडो|झो|झो|झ,ओ,क,त,आ,उ|झोलः गभीरः अस्ति।|The bag is deep.|झ plus ओ makes झो.
+जोडो|झौ|झौ|झ,औ,क,त,आ,उ|झषौ जले स्तः।|Two fish are in the water.|झ plus औ makes झौ.
+जोडो|ञा|ञा|ञ,आ,क,त,इ,उ|ज्ञानं प्रकाशते।|Knowledge shines.|ञ plus आ makes ञा.
+जोडो|ञि|ञि|ञ,इ,क,त,आ,उ|अञ्जिरा सुरभिः अस्ति।|The fig is fragrant.|ञ plus इ makes ञि.
+जोडो|ञी|ञी|ञ,ई,क,त,आ,उ|ज्ञानी पठति।|The wise one reads.|ञ plus ई makes ञी.
+जोडो|ञु|ञु|ञ,उ,क,त,आ,इ|मञ्जुनदः श्रूयते।|A sweet murmur is heard.|ञ plus उ makes ञु.
+जोडो|ञू|ञू|ञ,ऊ,क,त,आ,इ|मञ्जूषा गभीरा अस्ति।|The chest is deep.|ञ plus ऊ makes ञू.
+जोडो|ञे|ञे|ञ,ए,क,त,आ,उ|यज्ञे अग्निः अस्ति।|There is fire in the sacrifice.|ञ plus ए makes ञे.
+जोडो|ञै|ञै|ञ,ऐ,क,त,आ,उ|गुणज्ञैः सभा शोभते।|The hall shines with the wise.|ञ plus ऐ makes ञै.
+जोडो|ञो|ञो|ञ,ओ,क,त,आ,उ|अज्ञो न पठति।|The ignorant one does not read.|ञ plus ओ makes ञो.
+जोडो|ञौ|ञौ|ञ,औ,क,त,आ,उ|अज्ञौ द्वौ स्तः।|There are two ignorant ones.|ञ plus औ makes ञौ.
+जोडो|पा|पा|प,आ,क,त,इ,उ|पारावतः कूजति।|The pigeon coos.|प plus आ makes पा.
+जोडो|पि|पि|प,इ,क,त,आ,उ|पिपीलिका चलति।|The ant walks.|प plus इ makes पि.
+जोडो|पी|पी|प,ई,क,त,आ,उ|पीनं फलम् अस्ति।|The fruit is plump.|प plus ई makes पी.
+जोडो|पु|पु|प,उ,क,त,आ,इ|पुरतः वृक्षः अस्ति।|There is a tree in front.|प plus उ makes पु.
+जोडो|पू|पू|प,ऊ,क,त,आ,इ|पूरः वेगेन आयाति।|The flood comes swiftly.|प plus ऊ makes पू.
+जोडो|पे|पे|प,ए,क,त,आ,उ|पेचकः नक्तं चरति।|The owl moves at night.|प plus ए makes पे.
+जोडो|पै|पै|प,ऐ,क,त,आ,उ|तपैः भूमिः तपति।|The earth grows hot from heat.|प plus ऐ makes पै.
+जोडो|पो|पो|प,ओ,क,त,आ,उ|पोतं जले तरति।|The little boat floats on the water.|प plus ओ makes पो.
+जोडो|पौ|पौ|प,औ,क,त,आ,उ|पौषे शीतं भवति।|In Pausha it becomes cold.|प plus औ makes पौ.
+जोडो|फा|फा|फ,आ,क,त,इ,उ|फाल्गुने पुष्पाणि विकसन्ति।|In Phalguna the flowers bloom.|फ plus आ makes फा.
+जोडो|फि|फि|फ,इ,क,त,आ,उ|स्फितिः क्षेत्रे दृश्यते।|Abundance is seen in the field.|फ plus इ makes फि.
+जोडो|फी|फी|फ,ई,क,त,आ,उ|फीत्कारः श्रूयते।|A puffing sound is heard.|फ plus ई makes फी.
+जोडो|फु|फु|फ,उ,क,त,आ,इ|फुल्लं विकसति।|The blossom opens.|फ plus उ makes फु.
+जोडो|फू|फू|फ,ऊ,क,त,आ,इ|फूत्कारः श्रूयते।|A blowing sound is heard.|फ plus ऊ makes फू.
+जोडो|फे|फे|फ,ए,क,त,आ,उ|फेनं जले अस्ति।|There is foam on the water.|फ plus ए makes फे.
+जोडो|फै|फै|फ,ऐ,क,त,आ,उ|सफलैः वृक्षैः वनं शोभते।|The forest shines with fruiting trees.|फ plus ऐ makes फै.
+जोडो|फो|फो|फ,ओ,क,त,आ,उ|स्फोटः श्रूयते।|A crack-burst is heard.|फ plus ओ makes फो.
+जोडो|फौ|फौ|फ,औ,क,त,आ,उ|शफौ अश्वस्य स्तः।|The horse has two hooves.|फ plus औ makes फौ.
+जोडो|मा|मा|म,आ,क,त,इ,उ|मारालः जले तरति।|The swan floats on the water.|म plus आ makes मा.
+जोडो|मि|मि|म,इ,क,त,आ,उ|मिलिन्दः गुंजाति।|The bee buzzes.|म plus इ makes मि.
+जोडो|मी|मी|म,ई,क,त,आ,उ|मीनौ जले स्तः।|Two fish are in the water.|म plus ई makes मी.
+जोडो|मु|मु|म,उ,क,त,आ,इ|मुकुलं विकसति।|The bud opens.|म plus उ makes मु.
+जोडो|मू|मू|म,ऊ,क,त,आ,इ|मूषिकः बिले वसति।|The mouse lives in the burrow.|म plus ऊ makes मू.
+जोडो|मे|मे|म,ए,क,त,आ,उ|मेघगर्जनं श्रूयते।|Thunder is heard.|म plus ए makes मे.
+जोडो|मै|मै|म,ऐ,क,त,आ,उ|मैनाकः पर्वतः अस्ति।|Mainaka is a mountain.|म plus ऐ makes मै.
+जोडो|मो|मो|म,ओ,क,त,आ,उ|मोरः नृत्यति।|The peacock dances.|म plus ओ makes मो.
+जोडो|मौ|मौ|म,औ,क,त,आ,उ|मौक्तिकं शोभते।|The pearl looks beautiful.|म plus औ makes मौ.
+जोडो|ना|ना|न,आ,क,त,इ,उ|नाकं नीलम् अस्ति।|The sky-vault is blue.|न plus आ makes ना.
+जोडो|नि|नि|न,इ,क,त,आ,उ|निकुञ्जः शीतलः अस्ति।|The bower is cool.|न plus इ makes नि.
+जोडो|नी|नी|न,ई,क,त,आ,उ|नीरं स्वच्छम् अस्ति।|The water is clear.|न plus ई makes नी.
+जोडो|नु|नु|न,उ,क,त,आ,इ|धनुः दृढम् अस्ति।|The bow is firm.|न plus उ makes नु.
+जोडो|नू|नू|न,ऊ,क,त,आ,इ|नूतनं पर्णम् अस्ति।|The leaf is new.|न plus ऊ makes नू.
+जोडो|ने|ने|न,ए,क,त,आ,उ|नेत्रे पश्यतः।|The two eyes see.|न plus ए makes ने.
+जोडो|नै|नै|न,ऐ,क,त,आ,उ|वनैः वृतः ग्रामः।|The village is surrounded by forests.|न plus ऐ makes नै.
+जोडो|नो|नो|न,ओ,क,त,आ,उ|मनो प्रसन्नम् अस्ति।|The mind is glad.|न plus ओ makes नो.
+जोडो|नौ|नौ|न,औ,क,त,आ,उ|नौ द्वे जले तरेते।|Two boats float on the water.|न plus औ makes नौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.

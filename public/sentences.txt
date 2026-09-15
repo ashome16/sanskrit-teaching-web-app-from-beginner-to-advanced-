@@ -377,3 +377,93 @@
 उत्तुङ्गः शिखरः अस्ति।|The peak is towering.|उत्तुङ्गः|nature
 अङ्गारः तपति।|The ember glows.|अङ्गारः|nature
 पिङ्गलः वने चरति।|The tawny one wanders in the forest.|पिङ्गलः|nature
+चातकः जलं याचते।|The chataka bird asks for water.|चातकः|nature
+चक्रवाकः सरसि तिष्ठति।|The chakravaka rests at the lake.|चक्रवाकः|nature
+चकोरः चन्द्रं पश्यति।|The chukar looks at the moon.|चकोरः|nature
+चन्दनम् सुरभि अस्ति।|Sandalwood is fragrant.|चन्दनम्|nature
+चूतवृक्षः फलति।|The mango tree fruits.|चूतवृक्षः|nature
+चटका नीडे वसति।|The sparrow lives in the nest.|चटका|nature
+चित्रकः वने चरति।|The leopard wanders in the forest.|चित्रकः|nature
+चमसपुष्पम् विकसति।|The chalice-flower blooms.|चमसपुष्पम्|nature
+अचिरप्रसूनम् विकसति।|A fresh blossom opens.|अचिरप्रसूनम्|nature
+चञ्चरीकः गुंजाति।|The bee buzzes.|चञ्चरीकः|nature
+छागः तृणं अत्ति।|The goat eats grass.|छागः|nature
+अच्छोदः स्वच्छः अस्ति।|The clear lake is pure.|अच्छोदः|nature
+छोलङ्गः अम्लः अस्ति।|The citron is sour.|छोलङ्गः|nature
+छदनम् हरितम् अस्ति।|The leaf-cover is green.|छदनम्|nature
+कच्छः तटे अस्ति।|The marsh-bank is at the shore.|कच्छः|nature
+मच्छिका उड्डयति।|The fly buzzes about.|मच्छिका|nature
+पर्णच्छदः शीतलः अस्ति।|The leafy cover is cool.|पर्णच्छदः|nature
+छत्रकः भूमौ रोहति।|The mushroom grows on the ground.|छत्रकः|nature
+मेघच्छायम् शीतलम् अस्ति।|Cloud-shade is cool.|मेघच्छायम्|nature
+चिरबिल्वः वने रोहति।|The wood-apple grows in the forest.|चिरबिल्वः|nature
+जम्बुकः वने चरति।|The jackal wanders in the forest.|जम्बुकः|nature
+जतुका नक्तं उड्डयति।|The bat flies at night.|जतुका|nature
+जम्बूफलम् मधुरम् अस्ति।|The rose-apple is sweet.|जम्बूफलम्|nature
+जवा रक्तं विकसति।|The hibiscus blooms red.|जवा|nature
+ज्योत्स्ना शीतला अस्ति।|Moonlight is cool.|ज्योत्स्ना|nature
+जालिका तन्तुमयी अस्ति।|The web is made of threads.|जालिका|nature
+जलचरः सरसि चरति।|The water-creature moves in the lake.|जलचरः|nature
+जवनः अश्वः धावति।|The swift horse runs.|जवनः|nature
+जातीपुष्पम् सुरभि अस्ति।|Jasmine is fragrant.|जातीपुष्पम्|nature
+जतु वृक्षे अस्ति।|Lac is on the tree.|जतु|nature
+झषः जले तरति।|The fish swims in the water.|झषः|nature
+झिल्ली गुंजाति।|The cricket chirps.|झिल्ली|nature
+झङ्कारः पुष्पे श्रूयते।|A buzz is heard on the flower.|झङ्कारः|nature
+झाटी घना अस्ति।|The hedge is dense.|झाटी|nature
+झर्झरः नदति।|The drum-rattle sounds.|झर्झरः|nature
+झषराजः जले चरति।|The great fish moves in the water.|झषराजः|nature
+झिल्लीनादः श्रूयते।|The cricket-song is heard.|झिल्लीनादः|nature
+वात्यझञ्झा आयाति।|A stormy gust comes.|वात्यझञ्झा|nature
+झिल्लीकः तृणे चरति।|The little cricket moves in the grass.|झिल्लीकः|nature
+झञ्झावातः वहति।|The storm-wind blows.|झञ्झावातः|nature
+कुञ्जरः जलं पिबति।|The elephant drinks water.|कुञ्जरः|nature
+मञ्जरी विकसति।|The blossom-cluster opens.|मञ्जरी|nature
+अञ्जनम् नेत्रे अस्ति।|Collyrium is on the eye.|अञ्जनम्|nature
+किञ्जल्कः पुष्पे अस्ति।|The filament is in the flower.|किञ्जल्कः|nature
+मञ्जिष्ठा रक्ता अस्ति।|Madder is red.|मञ्जिष्ठा|nature
+गुञ्जनम् श्रूयते।|A hum is heard.|गुञ्जनम्|nature
+वञ्जुलः तटे रोहति।|The cane grows on the bank.|वञ्जुलः|nature
+पिञ्छम् मयूरस्य अस्ति।|The peacock has a feather.|पिञ्छम्|nature
+अञ्जलिपत्रम् हरितम् अस्ति।|The cupped leaf is green.|अञ्जलिपत्रम्|nature
+अञ्जिरवृक्षः फलति।|The fig tree fruits.|अञ्जिरवृक्षः|nature
+पारावतः कूजति।|The pigeon coos.|पारावतः|nature
+परागः पुष्पात् पतति।|Pollen falls from the flower.|परागः|nature
+पन्नगः बिले वसति।|The serpent lives in the burrow.|पन्नगः|nature
+प्रसूनम् विकसति।|The blossom opens.|प्रसूनम्|nature
+पक्वफलम् मधुरम् अस्ति।|The ripe fruit is sweet.|पक्वफलम्|nature
+पिप्पलः विशालः अस्ति।|The peepal is vast.|पिप्पलः|nature
+पवनवेगः वहति।|A gust of wind blows.|पवनवेगः|nature
+पल्लवितः तरुः शोभते।|The sprouting tree looks lovely.|पल्लवितः|nature
+कुररः जले तिष्ठति।|The osprey stands by the water.|कुररः|nature
+तित्तिरिः कूजति।|The partridge calls.|तित्तिरिः|nature
+फेनम् जले अस्ति।|There is foam on the water.|फेनम्|nature
+फेनिलम् सरः अस्ति।|The lake is foamy.|फेनिलम्|nature
+फलिनः वृक्षः शोभते।|The fruiting tree looks lovely.|फलिनः|nature
+फुल्लम् विकसति।|The blossom opens.|फुल्लम्|nature
+फेरवः नक्तं गर्जति।|The jackal howls at night.|फेरवः|nature
+स्फुलिङ्गः चमकति।|A spark flashes.|स्फुलिङ्गः|nature
+उत्फुल्लम् कमलम् अस्ति।|The lotus is fully open.|उत्फुल्लम्|nature
+शफरः जले तरति।|The carp swims in the water.|शफरः|nature
+फेनपुञ्जः तटे अस्ति।|A heap of foam is on the bank.|फेनपुञ्जः|nature
+अम्बुजम् विकसति।|The water-lotus blooms.|अम्बुजम्|nature
+मारालः जले तरति।|The swan floats on the water.|मारालः|nature
+मिलिन्दः गुंजाति।|The bee buzzes.|मिलिन्दः|nature
+मूषिकः बिले वसति।|The mouse lives in the burrow.|मूषिकः|nature
+मल्लिका विकसति।|Jasmine blooms.|मल्लिका|nature
+मधुकरः पुष्पे चरति।|The honey-bee moves on the flower.|मधुकरः|nature
+मर्कतः वृक्षे कूर्दति।|The monkey jumps on the tree.|मर्कतः|nature
+मुकुलम् कोमलम् अस्ति।|The bud is tender.|मुकुलम्|nature
+मधूलिका सुरभि अस्ति।|The honey-flower is fragrant.|मधूलिका|nature
+मधुकरी गुंजाति।|The honey-bee buzzes.|मधुकरी|nature
+मरालयूथम् सरसि तरति।|A flock of swans floats on the lake.|मरालयूथम्|nature
+नीहारः गिरौ अस्ति।|Mist is on the mountain.|नीहारः|nature
+नारिकेलः तटे रोहति।|The coconut grows on the shore.|नारिकेलः|nature
+निर्झरः गिरेः पतति।|The waterfall falls from the mountain.|निर्झरः|nature
+नक्षत्रम् नभसि शोभते।|A star shines in the sky.|नक्षत्रम्|nature
+नवपत्रम् कोमलम् अस्ति।|The new leaf is tender.|नवपत्रम्|nature
+नगकन्दरः गभीरः अस्ति।|The mountain cave is deep.|नगकन्दरः|nature
+नभश्चरः उड्डयति।|The sky-roamer flies.|नभश्चरः|nature
+नलिनम् सरसि विकसति।|The lotus blooms in the lake.|नलिनम्|nature
+निम्बः तिक्तः अस्ति।|The neem is bitter.|निम्बः|nature
+न्यग्रोधः विशालः अस्ति।|The banyan is vast.|न्यग्रोधः|nature
