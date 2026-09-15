@@ -1510,6 +1510,21 @@
         "sentence": "अग्निः उष्णः अस्ति।",
         "english": "Fire is hot.",
         "highlight": "अग्निः"
+      },
+      {
+        "prompt": "____ पर्वतात् आगच्छति।",
+        "target": "नदी",
+        "tiles": [
+          "नदी",
+          "पर्वतः",
+          "वनम्",
+          "मेघः",
+          "गजः",
+          "वृक्षः"
+        ],
+        "sentence": "नदी पर्वतात् आगच्छति।",
+        "english": "The river comes from the mountain.",
+        "highlight": "नदी"
       }
     ]
   },
