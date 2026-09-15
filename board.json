@@ -28243,6 +28243,726 @@
         "phase": "jodo"
       },
       {
+        "target": "ण्या",
+        "tiles": [
+          "ण्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The nya-form looks lovely.",
+        "explanation": "ण्य plus आ makes ण्या.",
+        "sentence": "ण्या रूपं शोभते।",
+        "highlight": "ण्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "ण्यि",
+        "tiles": [
+          "ण्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A nyi-bird calls.",
+        "explanation": "ण्य plus इ makes ण्यि.",
+        "sentence": "ण्यि खगः कूजति।",
+        "highlight": "ण्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "ण्यी",
+        "tiles": [
+          "ण्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two nyi-forms are there.",
+        "explanation": "ण्य plus ई makes ण्यी.",
+        "sentence": "ण्यी द्वौ स्तः।",
+        "highlight": "ण्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "ण्यु",
+        "tiles": [
+          "ण्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the nyu.",
+        "explanation": "ण्य plus उ makes ण्यु.",
+        "sentence": "ण्युं बालकः पश्यति।",
+        "highlight": "ण्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "ण्यू",
+        "tiles": [
+          "ण्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two nyu-forms are there.",
+        "explanation": "ण्य plus ऊ makes ण्यू.",
+        "sentence": "ण्यू द्वौ स्तः।",
+        "highlight": "ण्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "ण्ये",
+        "tiles": [
+          "ण्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at nye.",
+        "explanation": "ण्य plus ए makes ण्ये.",
+        "sentence": "ण्ये पुष्पं विकसति।",
+        "highlight": "ण्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "ण्यै",
+        "tiles": [
+          "ण्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With nyai the breeze blows.",
+        "explanation": "ण्य plus ऐ makes ण्यै.",
+        "sentence": "ण्यैः सह पवनः वहति।",
+        "highlight": "ण्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "ण्यो",
+        "tiles": [
+          "ण्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The nyo is lovely.",
+        "explanation": "ण्य plus ओ makes ण्यो.",
+        "sentence": "ण्यो रम्यः अस्ति।",
+        "highlight": "ण्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "ण्यौ",
+        "tiles": [
+          "ण्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two nyau-forms are there.",
+        "explanation": "ण्य plus औ makes ण्यौ.",
+        "sentence": "ण्यौ द्वौ स्तः।",
+        "highlight": "ण्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "क्ल्या",
+        "tiles": [
+          "क्ल्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The klya-form looks lovely.",
+        "explanation": "क्ल्य plus आ makes क्ल्या.",
+        "sentence": "क्ल्या रूपं शोभते।",
+        "highlight": "क्ल्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "क्ल्यि",
+        "tiles": [
+          "क्ल्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A klyi-bird calls.",
+        "explanation": "क्ल्य plus इ makes क्ल्यि.",
+        "sentence": "क्ल्यि खगः कूजति।",
+        "highlight": "क्ल्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "क्ल्यी",
+        "tiles": [
+          "क्ल्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two klyi-forms are there.",
+        "explanation": "क्ल्य plus ई makes क्ल्यी.",
+        "sentence": "क्ल्यी द्वौ स्तः।",
+        "highlight": "क्ल्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "क्ल्यु",
+        "tiles": [
+          "क्ल्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the klyu.",
+        "explanation": "क्ल्य plus उ makes क्ल्यु.",
+        "sentence": "क्ल्युं बालकः पश्यति।",
+        "highlight": "क्ल्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "क्ल्यू",
+        "tiles": [
+          "क्ल्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two klyu-forms are there.",
+        "explanation": "क्ल्य plus ऊ makes क्ल्यू.",
+        "sentence": "क्ल्यू द्वौ स्तः।",
+        "highlight": "क्ल्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "क्ल्ये",
+        "tiles": [
+          "क्ल्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at klye.",
+        "explanation": "क्ल्य plus ए makes क्ल्ये.",
+        "sentence": "क्ल्ये पुष्पं विकसति।",
+        "highlight": "क्ल्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "क्ल्यै",
+        "tiles": [
+          "क्ल्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With klyai the breeze blows.",
+        "explanation": "क्ल्य plus ऐ makes क्ल्यै.",
+        "sentence": "क्ल्यैः सह पवनः वहति।",
+        "highlight": "क्ल्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "क्ल्यो",
+        "tiles": [
+          "क्ल्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The klyo is lovely.",
+        "explanation": "क्ल्य plus ओ makes क्ल्यो.",
+        "sentence": "क्ल्यो रम्यः अस्ति।",
+        "highlight": "क्ल्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "क्ल्यौ",
+        "tiles": [
+          "क्ल्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two klyau-forms are there.",
+        "explanation": "क्ल्य plus औ makes क्ल्यौ.",
+        "sentence": "क्ल्यौ द्वौ स्तः।",
+        "highlight": "क्ल्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "ग्ल्या",
+        "tiles": [
+          "ग्ल्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The glya-form looks lovely.",
+        "explanation": "ग्ल्य plus आ makes ग्ल्या.",
+        "sentence": "ग्ल्या रूपं शोभते।",
+        "highlight": "ग्ल्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "ग्ल्यि",
+        "tiles": [
+          "ग्ल्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A glyi-bird calls.",
+        "explanation": "ग्ल्य plus इ makes ग्ल्यि.",
+        "sentence": "ग्ल्यि खगः कूजति।",
+        "highlight": "ग्ल्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "ग्ल्यी",
+        "tiles": [
+          "ग्ल्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two glyi-forms are there.",
+        "explanation": "ग्ल्य plus ई makes ग्ल्यी.",
+        "sentence": "ग्ल्यी द्वौ स्तः।",
+        "highlight": "ग्ल्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "ग्ल्यु",
+        "tiles": [
+          "ग्ल्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the glyu.",
+        "explanation": "ग्ल्य plus उ makes ग्ल्यु.",
+        "sentence": "ग्ल्युं बालकः पश्यति।",
+        "highlight": "ग्ल्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "ग्ल्यू",
+        "tiles": [
+          "ग्ल्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two glyu-forms are there.",
+        "explanation": "ग्ल्य plus ऊ makes ग्ल्यू.",
+        "sentence": "ग्ल्यू द्वौ स्तः।",
+        "highlight": "ग्ल्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "ग्ल्ये",
+        "tiles": [
+          "ग्ल्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at glye.",
+        "explanation": "ग्ल्य plus ए makes ग्ल्ये.",
+        "sentence": "ग्ल्ये पुष्पं विकसति।",
+        "highlight": "ग्ल्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "ग्ल्यै",
+        "tiles": [
+          "ग्ल्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With glyai the breeze blows.",
+        "explanation": "ग्ल्य plus ऐ makes ग्ल्यै.",
+        "sentence": "ग्ल्यैः सह पवनः वहति।",
+        "highlight": "ग्ल्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "ग्ल्यो",
+        "tiles": [
+          "ग्ल्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The glyo is lovely.",
+        "explanation": "ग्ल्य plus ओ makes ग्ल्यो.",
+        "sentence": "ग्ल्यो रम्यः अस्ति।",
+        "highlight": "ग्ल्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "ग्ल्यौ",
+        "tiles": [
+          "ग्ल्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two glyau-forms are there.",
+        "explanation": "ग्ल्य plus औ makes ग्ल्यौ.",
+        "sentence": "ग्ल्यौ द्वौ स्तः।",
+        "highlight": "ग्ल्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "प्ल्या",
+        "tiles": [
+          "प्ल्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The plya-form looks lovely.",
+        "explanation": "प्ल्य plus आ makes प्ल्या.",
+        "sentence": "प्ल्या रूपं शोभते।",
+        "highlight": "प्ल्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "प्ल्यि",
+        "tiles": [
+          "प्ल्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A plyi-bird calls.",
+        "explanation": "प्ल्य plus इ makes प्ल्यि.",
+        "sentence": "प्ल्यि खगः कूजति।",
+        "highlight": "प्ल्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "प्ल्यी",
+        "tiles": [
+          "प्ल्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two plyi-forms are there.",
+        "explanation": "प्ल्य plus ई makes प्ल्यी.",
+        "sentence": "प्ल्यी द्वौ स्तः।",
+        "highlight": "प्ल्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "प्ल्यु",
+        "tiles": [
+          "प्ल्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the plyu.",
+        "explanation": "प्ल्य plus उ makes प्ल्यु.",
+        "sentence": "प्ल्युं बालकः पश्यति।",
+        "highlight": "प्ल्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "प्ल्यू",
+        "tiles": [
+          "प्ल्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two plyu-forms are there.",
+        "explanation": "प्ल्य plus ऊ makes प्ल्यू.",
+        "sentence": "प्ल्यू द्वौ स्तः।",
+        "highlight": "प्ल्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "प्ल्ये",
+        "tiles": [
+          "प्ल्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at plye.",
+        "explanation": "प्ल्य plus ए makes प्ल्ये.",
+        "sentence": "प्ल्ये पुष्पं विकसति।",
+        "highlight": "प्ल्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "प्ल्यै",
+        "tiles": [
+          "प्ल्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With plyai the breeze blows.",
+        "explanation": "प्ल्य plus ऐ makes प्ल्यै.",
+        "sentence": "प्ल्यैः सह पवनः वहति।",
+        "highlight": "प्ल्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "प्ल्यो",
+        "tiles": [
+          "प्ल्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The plyo is lovely.",
+        "explanation": "प्ल्य plus ओ makes प्ल्यो.",
+        "sentence": "प्ल्यो रम्यः अस्ति।",
+        "highlight": "प्ल्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "प्ल्यौ",
+        "tiles": [
+          "प्ल्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two plyau-forms are there.",
+        "explanation": "प्ल्य plus औ makes प्ल्यौ.",
+        "sentence": "प्ल्यौ द्वौ स्तः।",
+        "highlight": "प्ल्यौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "म्ल्या",
+        "tiles": [
+          "म्ल्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The mlya-form looks lovely.",
+        "explanation": "म्ल्य plus आ makes म्ल्या.",
+        "sentence": "म्ल्या रूपं शोभते।",
+        "highlight": "म्ल्या",
+        "phase": "jodo"
+      },
+      {
+        "target": "म्ल्यि",
+        "tiles": [
+          "म्ल्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A mlyi-bird calls.",
+        "explanation": "म्ल्य plus इ makes म्ल्यि.",
+        "sentence": "म्ल्यि खगः कूजति।",
+        "highlight": "म्ल्यि",
+        "phase": "jodo"
+      },
+      {
+        "target": "म्ल्यी",
+        "tiles": [
+          "म्ल्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two mlyi-forms are there.",
+        "explanation": "म्ल्य plus ई makes म्ल्यी.",
+        "sentence": "म्ल्यी द्वौ स्तः।",
+        "highlight": "म्ल्यी",
+        "phase": "jodo"
+      },
+      {
+        "target": "म्ल्यु",
+        "tiles": [
+          "म्ल्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the mlyu.",
+        "explanation": "म्ल्य plus उ makes म्ल्यु.",
+        "sentence": "म्ल्युं बालकः पश्यति।",
+        "highlight": "म्ल्यु",
+        "phase": "jodo"
+      },
+      {
+        "target": "म्ल्यू",
+        "tiles": [
+          "म्ल्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two mlyu-forms are there.",
+        "explanation": "म्ल्य plus ऊ makes म्ल्यू.",
+        "sentence": "म्ल्यू द्वौ स्तः।",
+        "highlight": "म्ल्यू",
+        "phase": "jodo"
+      },
+      {
+        "target": "म्ल्ये",
+        "tiles": [
+          "म्ल्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at mlye.",
+        "explanation": "म्ल्य plus ए makes म्ल्ये.",
+        "sentence": "म्ल्ये पुष्पं विकसति।",
+        "highlight": "म्ल्ये",
+        "phase": "jodo"
+      },
+      {
+        "target": "म्ल्यै",
+        "tiles": [
+          "म्ल्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With mlyai the breeze blows.",
+        "explanation": "म्ल्य plus ऐ makes म्ल्यै.",
+        "sentence": "म्ल्यैः सह पवनः वहति।",
+        "highlight": "म्ल्यै",
+        "phase": "jodo"
+      },
+      {
+        "target": "म्ल्यो",
+        "tiles": [
+          "म्ल्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The mlyo is lovely.",
+        "explanation": "म्ल्य plus ओ makes म्ल्यो.",
+        "sentence": "म्ल्यो रम्यः अस्ति।",
+        "highlight": "म्ल्यो",
+        "phase": "jodo"
+      },
+      {
+        "target": "म्ल्यौ",
+        "tiles": [
+          "म्ल्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two mlyau-forms are there.",
+        "explanation": "म्ल्य plus औ makes म्ल्यौ.",
+        "sentence": "म्ल्यौ द्वौ स्तः।",
+        "highlight": "म्ल्यौ",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -54833,6 +55553,606 @@
         "sentence": "ढ्यकमलं विकसति।",
         "english": "A dhya lotus blooms.",
         "highlight": "ढ्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "ण्यपवनः",
+        "tiles": [
+          "ण्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "ण्यपवनः वहति।",
+        "english": "A nya breeze blows.",
+        "highlight": "ण्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "ण्यखगः",
+        "tiles": [
+          "ण्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "ण्यखगः कूजति।",
+        "english": "A nya bird calls.",
+        "highlight": "ण्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ण्यपुष्पम्",
+        "tiles": [
+          "ण्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "ण्यपुष्पं विकसति।",
+        "english": "A nya flower blooms.",
+        "highlight": "ण्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "ण्यमेघः",
+        "tiles": [
+          "ण्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "ण्यमेघः गर्जति।",
+        "english": "A nya cloud thunders.",
+        "highlight": "ण्यमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "ण्यतरुः",
+        "tiles": [
+          "ण्यतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "ण्यतरुः फलति।",
+        "english": "A nya tree bears fruit.",
+        "highlight": "ण्यतरुः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "ण्यसरः",
+        "tiles": [
+          "ण्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "ण्यसरः शीतलः।",
+        "english": "A nya lake is cool.",
+        "highlight": "ण्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "ण्यगिरिः",
+        "tiles": [
+          "ण्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "ण्यगिरिः उन्नतः।",
+        "english": "Nya-mountain is tall.",
+        "highlight": "ण्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ण्यकमलम्",
+        "tiles": [
+          "ण्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "ण्यकमलं विकसति।",
+        "english": "A nya lotus blooms.",
+        "highlight": "ण्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "क्ल्यपवनः",
+        "tiles": [
+          "क्ल्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "क्ल्यपवनः वहति।",
+        "english": "A klya breeze blows.",
+        "highlight": "क्ल्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "क्ल्यखगः",
+        "tiles": [
+          "क्ल्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "क्ल्यखगः कूजति।",
+        "english": "A klya bird calls.",
+        "highlight": "क्ल्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "क्ल्यपुष्पम्",
+        "tiles": [
+          "क्ल्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "क्ल्यपुष्पं विकसति।",
+        "english": "A klya flower blooms.",
+        "highlight": "क्ल्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "क्ल्यमेघः",
+        "tiles": [
+          "क्ल्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "क्ल्यमेघः गर्जति।",
+        "english": "A klya cloud thunders.",
+        "highlight": "क्ल्यमेघः"
+      },
+      {
+        "prompt": "____ हरितः।",
+        "target": "क्ल्यतरुः",
+        "tiles": [
+          "क्ल्यतरुः",
+          "तरुः",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्",
+          "पुष्पम्"
+        ],
+        "sentence": "क्ल्यतरुः हरितः।",
+        "english": "A klya tree is green.",
+        "highlight": "क्ल्यतरुः"
+      },
+      {
+        "prompt": "____ रम्यः।",
+        "target": "क्ल्यसरः",
+        "tiles": [
+          "क्ल्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "क्ल्यसरः रम्यः।",
+        "english": "A klya lake is lovely.",
+        "highlight": "क्ल्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "क्ल्यगिरिः",
+        "tiles": [
+          "क्ल्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "क्ल्यगिरिः उन्नतः।",
+        "english": "Klya-mountain is tall.",
+        "highlight": "क्ल्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "क्ल्यकमलम्",
+        "tiles": [
+          "क्ल्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "क्ल्यकमलं विकसति।",
+        "english": "A klya lotus blooms.",
+        "highlight": "क्ल्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "ग्ल्यपवनः",
+        "tiles": [
+          "ग्ल्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "ग्ल्यपवनः वहति।",
+        "english": "A glya breeze blows.",
+        "highlight": "ग्ल्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "ग्ल्यखगः",
+        "tiles": [
+          "ग्ल्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "ग्ल्यखगः कूजति।",
+        "english": "A glya bird calls.",
+        "highlight": "ग्ल्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ग्ल्यपुष्पम्",
+        "tiles": [
+          "ग्ल्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "ग्ल्यपुष्पं विकसति।",
+        "english": "A glya flower blooms.",
+        "highlight": "ग्ल्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "ग्ल्यमेघः",
+        "tiles": [
+          "ग्ल्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "ग्ल्यमेघः गर्जति।",
+        "english": "A glya cloud thunders.",
+        "highlight": "ग्ल्यमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "ग्ल्यतरुः",
+        "tiles": [
+          "ग्ल्यतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "ग्ल्यतरुः फलति।",
+        "english": "A glya tree bears fruit.",
+        "highlight": "ग्ल्यतरुः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "ग्ल्यसरः",
+        "tiles": [
+          "ग्ल्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "ग्ल्यसरः शीतलः।",
+        "english": "A glya lake is cool.",
+        "highlight": "ग्ल्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "ग्ल्यगिरिः",
+        "tiles": [
+          "ग्ल्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "ग्ल्यगिरिः उन्नतः।",
+        "english": "Glya-mountain is tall.",
+        "highlight": "ग्ल्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "ग्ल्यकमलम्",
+        "tiles": [
+          "ग्ल्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "ग्ल्यकमलं विकसति।",
+        "english": "A glya lotus blooms.",
+        "highlight": "ग्ल्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "प्ल्यपवनः",
+        "tiles": [
+          "प्ल्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "वनम्",
+          "गिरिः"
+        ],
+        "sentence": "प्ल्यपवनः वहति।",
+        "english": "A plya breeze blows.",
+        "highlight": "प्ल्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "प्ल्यखगः",
+        "tiles": [
+          "प्ल्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "प्ल्यखगः कूजति।",
+        "english": "A plya bird calls.",
+        "highlight": "प्ल्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "प्ल्यपुष्पम्",
+        "tiles": [
+          "प्ल्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "प्ल्यपुष्पं विकसति।",
+        "english": "A plya flower blooms.",
+        "highlight": "प्ल्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "प्ल्यमेघः",
+        "tiles": [
+          "प्ल्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "प्ल्यमेघः गर्जति।",
+        "english": "A plya cloud thunders.",
+        "highlight": "प्ल्यमेघः"
+      },
+      {
+        "prompt": "____ हरितः।",
+        "target": "प्ल्यतरुः",
+        "tiles": [
+          "प्ल्यतरुः",
+          "तरुः",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्",
+          "पुष्पम्"
+        ],
+        "sentence": "प्ल्यतरुः हरितः।",
+        "english": "A plya tree is green.",
+        "highlight": "प्ल्यतरुः"
+      },
+      {
+        "prompt": "____ रम्यः।",
+        "target": "प्ल्यसरः",
+        "tiles": [
+          "प्ल्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "प्ल्यसरः रम्यः।",
+        "english": "A plya lake is lovely.",
+        "highlight": "प्ल्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "प्ल्यगिरिः",
+        "tiles": [
+          "प्ल्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "प्ल्यगिरिः उन्नतः।",
+        "english": "Plya-mountain is tall.",
+        "highlight": "प्ल्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "प्ल्यकमलम्",
+        "tiles": [
+          "प्ल्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "प्ल्यकमलं विकसति।",
+        "english": "A plya lotus blooms.",
+        "highlight": "प्ल्यकमलम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "म्ल्यपवनः",
+        "tiles": [
+          "म्ल्यपवनः",
+          "पवनः",
+          "मेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "म्ल्यपवनः वहति।",
+        "english": "A mlya breeze blows.",
+        "highlight": "म्ल्यपवनः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "म्ल्यखगः",
+        "tiles": [
+          "म्ल्यखगः",
+          "खगः",
+          "नीडम्",
+          "वृक्षः",
+          "आकाशः",
+          "पुष्पम्"
+        ],
+        "sentence": "म्ल्यखगः कूजति।",
+        "english": "A mlya bird calls.",
+        "highlight": "म्ल्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "म्ल्यपुष्पम्",
+        "tiles": [
+          "म्ल्यपुष्पम्",
+          "पुष्पम्",
+          "भ्रमरः",
+          "मधु",
+          "पत्रम्",
+          "वनम्"
+        ],
+        "sentence": "म्ल्यपुष्पं विकसति।",
+        "english": "A mlya flower blooms.",
+        "highlight": "म्ल्यपुष्पम्"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "म्ल्यमेघः",
+        "tiles": [
+          "म्ल्यमेघः",
+          "मेघः",
+          "विद्युत्",
+          "पवनः",
+          "आकाशः",
+          "गिरिः"
+        ],
+        "sentence": "म्ल्यमेघः गर्जति।",
+        "english": "A mlya cloud thunders.",
+        "highlight": "म्ल्यमेघः"
+      },
+      {
+        "prompt": "____ फलति।",
+        "target": "म्ल्यतरुः",
+        "tiles": [
+          "म्ल्यतरुः",
+          "तरुः",
+          "फलम्",
+          "पर्णम्",
+          "वनम्",
+          "मूलम्"
+        ],
+        "sentence": "म्ल्यतरुः फलति।",
+        "english": "A mlya tree bears fruit.",
+        "highlight": "म्ल्यतरुः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "म्ल्यसरः",
+        "tiles": [
+          "म्ल्यसरः",
+          "सरः",
+          "हंसः",
+          "पद्मम्",
+          "जलम्",
+          "खगः"
+        ],
+        "sentence": "म्ल्यसरः शीतलः।",
+        "english": "A mlya lake is cool.",
+        "highlight": "म्ल्यसरः"
+      },
+      {
+        "prompt": "____ उन्नतः।",
+        "target": "म्ल्यगिरिः",
+        "tiles": [
+          "म्ल्यगिरिः",
+          "गिरिः",
+          "शिखरम्",
+          "मेघः",
+          "पवनः",
+          "वनम्"
+        ],
+        "sentence": "म्ल्यगिरिः उन्नतः।",
+        "english": "Mlya-mountain is tall.",
+        "highlight": "म्ल्यगिरिः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "म्ल्यकमलम्",
+        "tiles": [
+          "म्ल्यकमलम्",
+          "कमलम्",
+          "सरः",
+          "पद्मम्",
+          "हंसः",
+          "जलम्"
+        ],
+        "sentence": "म्ल्यकमलं विकसति।",
+        "english": "A mlya lotus blooms.",
+        "highlight": "म्ल्यकमलम्"
       },
       {
         "phase": "learn",
