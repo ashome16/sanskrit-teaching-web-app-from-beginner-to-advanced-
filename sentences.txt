@@ -177,3 +177,33 @@
 कर्दमः मार्गे अस्ति।|Mud is on the path.|कर्दमः|nature
 शैवालम् जले अस्ति।|Algae is in the water.|शैवालम्|nature
 शैत्यम् रात्रौ अस्ति।|Coldness is at night.|शैत्यम्|nature
+मधुकः पुष्पं पिबति।|The honey-bee drinks from the flower.|मधुकः|nature
+पुष्करिणी स्वच्छा अस्ति।|The lotus-pond is clean.|पुष्करिणी|nature
+नलिनी विकसति।|The lotus plant blooms.|नलिनी|nature
+पद्मम् जले अस्ति।|The lotus is in the water.|पद्मम्|nature
+सरोजम् शोभते।|The lotus looks beautiful.|सरोजम्|nature
+अम्भः शीतलम् अस्ति।|The water is cool.|अम्भः|nature
+पयः मधुरम् अस्ति।|Milk is sweet.|पयः|nature
+क्षीरं पिबति बालकः।|The boy drinks milk.|क्षीरम्|nature
+दधि पुष्टम् अस्ति।|Curd is nourishing.|दधि|nature
+नवनीतं मृदु अस्ति।|Butter is soft.|नवनीतम्|nature
+धूमः ऊर्ध्वं गच्छति।|Smoke goes upward.|धूमः|nature
+धारा गिरेः पतति।|The stream falls from the mountain.|धारा|nature
+धान्यं क्षेत्रे अस्ति।|Grain is in the field.|धान्यम्|nature
+धनुः आकाशे शोभते।|The bow (rainbow) shines in the sky.|धनुः|nature
+ध्वजः वायुना कम्पति।|The flag flutters in the wind.|ध्वजः|nature
+धरा अन्नं ददाति।|The earth gives food.|धरा|nature
+शलभः दीपं गच्छति।|The moth goes to the lamp.|शलभः|nature
+मक्षिकः गुंजाति।|The fly buzzes.|मक्षिकः|nature
+अरण्यं विस्तीर्णम् अस्ति।|The wilderness is vast.|अरण्यम्|nature
+काननं रम्यम् अस्ति।|The grove is lovely.|काननम्|nature
+यवः क्षेत्रे रोहति।|Barley grows in the field.|यवः|nature
+यष्टिः दृढा अस्ति।|The stick is firm.|यष्टिः|nature
+युगं दीर्घम् अस्ति।|The age is long.|युगम्|nature
+यूथं वने चरति।|The herd wanders in the forest.|यूथम्|nature
+यन्त्रं चलति।|The machine runs.|यन्त्रम्|nature
+कुमुदं विकसति।|The white water-lily blooms.|कुमुदम्|nature
+उत्पलं शोभते।|The blue lotus looks beautiful.|उत्पलम्|nature
+उपवनं हरितम् अस्ति।|The garden-grove is green.|उपवनम्|nature
+उद्यानं पुष्पितम् अस्ति।|The garden is in bloom.|उद्यानम्|nature
+चम्पकः सुरभिः अस्ति।|The champaka is fragrant.|चम्पकः|nature
