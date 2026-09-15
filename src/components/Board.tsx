@@ -450,11 +450,10 @@ const Board: React.FC = () => {
       : (isPrashnaPart ? 'प्रश्न' : (activeBoardShelf?.skin ?? ''));
   const displayPackTitle = isPrashnaPart ? 'प्रश्न-पदानि' : packTitle;
   const displayPackGloss = isPrashnaPart ? 'who · what · where · when · how' : packGloss;
+  // जोडो: no Part banner — board-tip alone covers the instructions
   const phaseBanner = isPrashnaPart
     ? 'Part 2 — question words.'
-    : (activeBoardShelf?.skin === 'जोडो' && activeShelf === 'prarambhah' && !targetIsWholeTile
-      ? 'Part 1 — join letters.'
-      : '');
+    : '';
 
   // जोडो joins (क+आ) stay multi-tap. Question-words (कः on a tile) are one tap.
   const isJodoSkin = (!activeBoardShelf || activeBoardShelf.skin === 'जोडो') && !targetIsWholeTile;
@@ -649,7 +648,7 @@ const Board: React.FC = () => {
       <p className="board-tip">{isLearnPhase
         ? <>Hear the word, read the meaning, then <strong className="tip-next">Click Next</strong>.</>
         : isJodoSkin
-          ? <>On top, click one or two letter chips to jump. Below, click क then आ. The picture and sentence appear. Then <strong className="tip-next">Click Next</strong>.</>
+          ? <>On top, click one or two letter chips. Below, click क then आ — picture and sentence appear. Then <strong className="tip-next">Click Next</strong>.</>
           : emphasizeTipText('Click a cream tile. The picture and sentence appear. Then Click Next.')}</p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
@@ -673,19 +672,19 @@ const Board: React.FC = () => {
           <span className="meta-hint">{isLearnPhase
             ? 'Learn the word'
             : isJodoSkin
-              ? '2 tiles → Next'
+              ? 'जोडो'
               : '1 tile → Next'}</span>
           <span className="meta-sep" aria-hidden="true">·</span>
           <span className="meta-progress">{puzzleIndex + 1} / {activePuzzles.length}</span>
         </div>
 
-        {!isLearnPhase && (
+        {!isLearnPhase && !isJodoSkin && (
           <ol className="puzzle-steps" aria-label="Puzzle steps">
             <li className={activeStep === 1 ? 'active' : undefined}>
               <span className="step-num" aria-hidden="true">1</span>
-              <span className="step-label">{isJodoSkin
-                ? <>Click क then आ</>
-                : <>Click a cream tile <small>(numbers on tiles)</small></>}</span>
+              <span className="step-label">
+                <>Click a cream tile <small>(numbers on tiles)</small></>
+              </span>
             </li>
             <li className={activeStep === 2 ? 'active' : undefined}>
               <span className="step-num" aria-hidden="true">2</span>
