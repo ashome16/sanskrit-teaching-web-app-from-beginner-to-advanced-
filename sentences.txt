@@ -113,3 +113,13 @@
 महिषः जले मज्जति।|The buffalo bathes in the water.|महिषः|nature
 शृगालः रात्रौ चरति।|The jackal wanders at night.|शृगालः|nature
 नकुलः सर्पं पश्यति।|The mongoose watches the snake.|नकुलः|nature
+मकरः जले वसति।|The makara lives in the water.|मकरः|nature
+हरिणः वने धावति।|The deer runs in the forest.|हरिणः|nature
+शार्दूलः गर्जति।|The tiger roars.|शार्दूलः|nature
+काकः वृक्षे उपविशति।|The crow sits on the tree.|काकः|nature
+सारसः जले तिष्ठति।|The crane stands in the water.|सारसः|nature
+भल्लूकः मधु खादति।|The bear eats honey.|भल्लूकः|nature
+वृकः वने धावति।|The wolf runs in the forest.|वृकः|nature
+अजः तृणं खादति।|The goat eats grass.|अजः|nature
+मेषः क्षेत्रे चरति।|The sheep grazes in the field.|मेषः|nature
+श्वानः गृहं रक्षति।|The dog protects the house.|श्वानः|nature

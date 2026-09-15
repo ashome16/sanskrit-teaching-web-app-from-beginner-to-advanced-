@@ -627,6 +627,166 @@
         "phase": "jodo"
       },
       {
+        "target": "को",
+        "tiles": [
+          "क",
+          "ओ",
+          "ख",
+          "ग",
+          "आ",
+          "उ"
+        ],
+        "english": "The cuckoo sings sweetly.",
+        "explanation": "क plus ओ makes को.",
+        "sentence": "कोकिलः मधुरं कूजति।",
+        "highlight": "को",
+        "phase": "jodo"
+      },
+      {
+        "target": "मो",
+        "tiles": [
+          "म",
+          "ओ",
+          "क",
+          "प",
+          "आ",
+          "उ"
+        ],
+        "english": "The boy eats a sweet.",
+        "explanation": "म plus ओ makes मो.",
+        "sentence": "मोदकं बालकः खादति।",
+        "highlight": "मो",
+        "phase": "jodo"
+      },
+      {
+        "target": "सो",
+        "tiles": [
+          "स",
+          "ओ",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "The staircase is firm.",
+        "explanation": "स plus ओ makes सो.",
+        "sentence": "सोपानं दृढम् अस्ति।",
+        "highlight": "सो",
+        "phase": "jodo"
+      },
+      {
+        "target": "पो",
+        "tiles": [
+          "प",
+          "ओ",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "The boat floats on water.",
+        "explanation": "प plus ओ makes पो.",
+        "sentence": "पोतः जले तरति।",
+        "highlight": "पो",
+        "phase": "jodo"
+      },
+      {
+        "target": "नो",
+        "tiles": [
+          "न",
+          "ओ",
+          "प",
+          "क",
+          "आ",
+          "उ"
+        ],
+        "english": "The mind is strong.",
+        "explanation": "न plus ओ makes नो.",
+        "sentence": "मनो बलवत् अस्ति।",
+        "highlight": "नो",
+        "phase": "jodo"
+      },
+      {
+        "target": "कौ",
+        "tiles": [
+          "क",
+          "औ",
+          "ख",
+          "ग",
+          "आ",
+          "उ"
+        ],
+        "english": "It is a silk cloth.",
+        "explanation": "क plus औ makes कौ.",
+        "sentence": "कौशेयं वस्त्रम् अस्ति।",
+        "highlight": "कौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "मौ",
+        "tiles": [
+          "म",
+          "औ",
+          "क",
+          "प",
+          "आ",
+          "उ"
+        ],
+        "english": "The pearl looks beautiful.",
+        "explanation": "म plus औ makes मौ.",
+        "sentence": "मौक्तिकं शोभते।",
+        "highlight": "मौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "सौ",
+        "tiles": [
+          "स",
+          "औ",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "There is beauty of the forest.",
+        "explanation": "स plus औ makes सौ.",
+        "sentence": "सौन्दर्यं वनस्य अस्ति।",
+        "highlight": "सौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "पौ",
+        "tiles": [
+          "प",
+          "औ",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "The grandson plays.",
+        "explanation": "प plus औ makes पौ.",
+        "sentence": "पौत्रः क्रीडति।",
+        "highlight": "पौ",
+        "phase": "jodo"
+      },
+      {
+        "target": "नौ",
+        "tiles": [
+          "न",
+          "औ",
+          "प",
+          "क",
+          "आ",
+          "उ"
+        ],
+        "english": "The boat floats on water.",
+        "explanation": "न plus औ makes नौ.",
+        "sentence": "नौका जले तरति।",
+        "highlight": "नौ",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -2205,6 +2365,156 @@
         "sentence": "नकुलः सर्पं पश्यति।",
         "english": "The mongoose watches the snake.",
         "highlight": "नकुलः"
+      },
+      {
+        "prompt": "____ जले वसति।",
+        "target": "मकरः",
+        "tiles": [
+          "मकरः",
+          "मत्स्यः",
+          "हंसः",
+          "गजः",
+          "सिंहः",
+          "जलम्"
+        ],
+        "sentence": "मकरः जले वसति।",
+        "english": "The makara lives in the water.",
+        "highlight": "मकरः"
+      },
+      {
+        "prompt": "____ वने धावति।",
+        "target": "हरिणः",
+        "tiles": [
+          "हरिणः",
+          "सिंहः",
+          "गजः",
+          "शशः",
+          "वनम्",
+          "फलम्"
+        ],
+        "sentence": "हरिणः वने धावति।",
+        "english": "The deer runs in the forest.",
+        "highlight": "हरिणः"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "शार्दूलः",
+        "tiles": [
+          "शार्दूलः",
+          "सिंहः",
+          "मृगः",
+          "गजः",
+          "वनम्",
+          "मयूरः"
+        ],
+        "sentence": "शार्दूलः गर्जति।",
+        "english": "The tiger roars.",
+        "highlight": "शार्दूलः"
+      },
+      {
+        "prompt": "____ वृक्षे उपविशति।",
+        "target": "काकः",
+        "tiles": [
+          "काकः",
+          "शुकः",
+          "उलूकः",
+          "चटकः",
+          "वृक्षः",
+          "फलम्"
+        ],
+        "sentence": "काकः वृक्षे उपविशति।",
+        "english": "The crow sits on the tree.",
+        "highlight": "काकः"
+      },
+      {
+        "prompt": "____ जले तिष्ठति।",
+        "target": "सारसः",
+        "tiles": [
+          "सारसः",
+          "हंसः",
+          "मत्स्यः",
+          "कपोतः",
+          "जलम्",
+          "वनम्"
+        ],
+        "sentence": "सारसः जले तिष्ठति।",
+        "english": "The crane stands in the water.",
+        "highlight": "सारसः"
+      },
+      {
+        "prompt": "____ मधु खादति।",
+        "target": "भल्लूकः",
+        "tiles": [
+          "भल्लूकः",
+          "सिंहः",
+          "वानरः",
+          "मयूरः",
+          "फलम्",
+          "वनम्"
+        ],
+        "sentence": "भल्लूकः मधु खादति।",
+        "english": "The bear eats honey.",
+        "highlight": "भल्लूकः"
+      },
+      {
+        "prompt": "____ वने धावति।",
+        "target": "वृकः",
+        "tiles": [
+          "वृकः",
+          "शृगालः",
+          "सिंहः",
+          "शशः",
+          "वनम्",
+          "गजः"
+        ],
+        "sentence": "वृकः वने धावति।",
+        "english": "The wolf runs in the forest.",
+        "highlight": "वृकः"
+      },
+      {
+        "prompt": "____ तृणं खादति।",
+        "target": "अजः",
+        "tiles": [
+          "अजः",
+          "धेनुः",
+          "अश्वः",
+          "सिंहः",
+          "फलम्",
+          "वनम्"
+        ],
+        "sentence": "अजः तृणं खादति।",
+        "english": "The goat eats grass.",
+        "highlight": "अजः"
+      },
+      {
+        "prompt": "____ क्षेत्रे चरति।",
+        "target": "मेषः",
+        "tiles": [
+          "मेषः",
+          "धेनुः",
+          "अजः",
+          "अश्वः",
+          "फलम्",
+          "वनम्"
+        ],
+        "sentence": "मेषः क्षेत्रे चरति।",
+        "english": "The sheep grazes in the field.",
+        "highlight": "मेषः"
+      },
+      {
+        "prompt": "____ गृहं रक्षति।",
+        "target": "श्वानः",
+        "tiles": [
+          "श्वानः",
+          "बिडालः",
+          "सिंहः",
+          "शशः",
+          "गृहम्",
+          "फलम्"
+        ],
+        "sentence": "श्वानः गृहं रक्षति।",
+        "english": "The dog protects the house.",
+        "highlight": "श्वानः"
       },
       {
         "phase": "learn",
