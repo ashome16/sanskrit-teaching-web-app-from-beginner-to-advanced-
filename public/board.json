@@ -467,6 +467,86 @@
         "phase": "jodo"
       },
       {
+        "target": "के",
+        "tiles": [
+          "क",
+          "ए",
+          "ख",
+          "ग",
+          "आ",
+          "उ"
+        ],
+        "english": "The hair is dark.",
+        "explanation": "क plus ए makes के.",
+        "sentence": "केशः श्यामः अस्ति।",
+        "highlight": "के",
+        "phase": "jodo"
+      },
+      {
+        "target": "मे",
+        "tiles": [
+          "म",
+          "ए",
+          "क",
+          "प",
+          "आ",
+          "उ"
+        ],
+        "english": "The cloud gives water.",
+        "explanation": "म plus ए makes मे.",
+        "sentence": "मेघः जलं ददाति।",
+        "highlight": "मे",
+        "phase": "jodo"
+      },
+      {
+        "target": "से",
+        "tiles": [
+          "स",
+          "ए",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "The army goes to the village.",
+        "explanation": "स plus ए makes से.",
+        "sentence": "सेना ग्रामं गच्छति।",
+        "highlight": "से",
+        "phase": "jodo"
+      },
+      {
+        "target": "पे",
+        "tiles": [
+          "प",
+          "ए",
+          "क",
+          "म",
+          "आ",
+          "उ"
+        ],
+        "english": "The drink is water.",
+        "explanation": "प plus ए makes पे.",
+        "sentence": "पेयं जलम् अस्ति।",
+        "highlight": "पे",
+        "phase": "jodo"
+      },
+      {
+        "target": "ने",
+        "tiles": [
+          "न",
+          "ए",
+          "प",
+          "क",
+          "आ",
+          "उ"
+        ],
+        "english": "The two eyes see.",
+        "explanation": "न plus ए makes ने.",
+        "sentence": "नेत्रे पश्यतः।",
+        "highlight": "ने",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -1865,6 +1945,96 @@
         "sentence": "मक्षिका पुष्पे उपविशति।",
         "english": "The fly sits on the flower.",
         "highlight": "मक्षिका"
+      },
+      {
+        "prompt": "____ मधुरं कूजति।",
+        "target": "कोकिलः",
+        "tiles": [
+          "कोकिलः",
+          "शुकः",
+          "मयूरः",
+          "चटकः",
+          "खगः",
+          "हंसः"
+        ],
+        "sentence": "कोकिलः मधुरं कूजति।",
+        "english": "The cuckoo sings sweetly.",
+        "highlight": "कोकिलः"
+      },
+      {
+        "prompt": "____ सरसि कूदति।",
+        "target": "भेकः",
+        "tiles": [
+          "भेकः",
+          "मत्स्यः",
+          "सर्पः",
+          "हंसः",
+          "कमलम्",
+          "जलम्"
+        ],
+        "sentence": "भेकः सरसि कूदति।",
+        "english": "The frog jumps in the pond.",
+        "highlight": "भेकः"
+      },
+      {
+        "prompt": "____ मरुभुवि चरति।",
+        "target": "उष्ट्रः",
+        "tiles": [
+          "उष्ट्रः",
+          "अश्वः",
+          "गजः",
+          "मृगः",
+          "सिंहः",
+          "वनम्"
+        ],
+        "sentence": "उष्ट्रः मरुभुवि चरति।",
+        "english": "The camel walks in the desert.",
+        "highlight": "उष्ट्रः"
+      },
+      {
+        "prompt": "____ जले वसति।",
+        "target": "नक्रः",
+        "tiles": [
+          "नक्रः",
+          "मत्स्यः",
+          "हंसः",
+          "सर्पः",
+          "कमलम्",
+          "जलम्"
+        ],
+        "sentence": "नक्रः जले वसति।",
+        "english": "The crocodile lives in the water.",
+        "highlight": "नक्रः"
+      },
+      {
+        "prompt": "____ शर्करां हरति।",
+        "target": "पिपीलिका",
+        "tiles": [
+          "पिपीलिका",
+          "मक्षिका",
+          "भ्रमरः",
+          "चटकः",
+          "फलम्",
+          "पुष्पम्"
+        ],
+        "sentence": "पिपीलिका शर्करां हरति।",
+        "english": "The ant carries sugar.",
+        "highlight": "पिपीलिका"
+      },
+      {
+        "prompt": "____ दंशति।",
+        "target": "वृश्चिकः",
+        "tiles": [
+          "वृश्चिकः",
+          "सर्पः",
+          "बिडालः",
+          "शशः",
+          "मृगः",
+          "फलम्"
+        ],
+        "sentence": "वृश्चिकः दंशति।",
+        "english": "The scorpion stings.",
+        "highlight": "वृश्चिकः"
       },
       {
         "phase": "learn",

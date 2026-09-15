@@ -101,3 +101,9 @@
 खगः आकाशे उड्डयति।|The bird flies in the sky.|खगः|nature
 हिमं शैले अस्ति।|Snow is on the mountain.|हिमं|nature
 मक्षिका पुष्पे उपविशति।|The fly sits on the flower.|मक्षिका|nature
+कोकिलः मधुरं कूजति।|The cuckoo sings sweetly.|कोकिलः|nature
+भेकः सरसि कूदति।|The frog jumps in the pond.|भेकः|nature
+उष्ट्रः मरुभुवि चरति।|The camel walks in the desert.|उष्ट्रः|nature
+नक्रः जले वसति।|The crocodile lives in the water.|नक्रः|nature
+पिपीलिका शर्करां हरति।|The ant carries sugar.|पिपीलिका|nature
+वृश्चिकः दंशति।|The scorpion stings.|वृश्चिकः|nature
