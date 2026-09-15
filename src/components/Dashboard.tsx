@@ -30,7 +30,11 @@ const Dashboard: React.FC = () => {
   });
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [wordSelection, setWordSelection] = useState<WordSelection | null>(null);
-  const [activeView, setActiveView] = useState<'board' | 'reader' | 'grammar'>('reader');
+  const [activeView, setActiveView] = useState<'board' | 'reader' | 'grammar'>(() => {
+    const saved = localStorage.getItem('school-active-view');
+    if (saved === 'board' || saved === 'reader' || saved === 'grammar') return saved;
+    return 'reader';
+  });
 
   useEffect(() => {
     localStorage.setItem('school-active-view', activeView);

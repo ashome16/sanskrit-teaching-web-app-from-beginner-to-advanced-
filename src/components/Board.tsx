@@ -132,6 +132,103 @@ function emphasizeTipText(text: string): React.ReactNode {
   return nodes.length ? <>{nodes}</> : text;
 }
 
+
+/** Matra section chips for Beginners · मात्रा (scan for first matching target). */
+const MATRA_SECTION_DEFS: { label: string; exemplar: string; mark: string }[] = [
+  { label: 'आ', exemplar: 'का', mark: 'ा' },
+  { label: 'इ', exemplar: 'कि', mark: 'ि' },
+  { label: 'ई', exemplar: 'की', mark: 'ी' },
+  { label: 'उ', exemplar: 'कु', mark: 'ु' },
+  { label: 'ऊ', exemplar: 'कू', mark: 'ू' },
+  { label: 'ए', exemplar: 'के', mark: 'े' },
+  { label: 'ऐ', exemplar: 'कै', mark: 'ै' },
+  { label: 'ओ', exemplar: 'को', mark: 'ो' },
+  { label: 'औ', exemplar: 'कौ', mark: 'ौ' },
+  { label: 'ऋ', exemplar: 'कृ', mark: 'ृ' },
+  { label: 'अं', exemplar: 'कं', mark: 'ं' },
+  { label: 'अः', exemplar: 'कः', mark: 'ः' },
+];
+
+type BoardSectionChip = { id: string; label: string; start: number };
+
+function isPrashnaPuzzle(puzzle: BoardPuzzle): boolean {
+  if ((puzzle.phase || '').trim() === 'prashna') return true;
+  return false;
+}
+
+function findMatraSectionStart(puzzles: BoardPuzzle[], exemplar: string, mark: string): number {
+  const byExemplar = puzzles.findIndex((p) => {
+    if (isPrashnaPuzzle(p)) return false;
+    const t = (p.target || '').normalize('NFC');
+    return t === exemplar || t.startsWith(exemplar);
+  });
+  if (byExemplar >= 0) return byExemplar;
+  return puzzles.findIndex((p) => {
+    if (isPrashnaPuzzle(p)) return false;
+    return (p.target || '').normalize('NFC').includes(mark);
+  });
+}
+
+function findPrashnaSectionStart(puzzles: BoardPuzzle[]): number {
+  const byPhase = puzzles.findIndex((p) => (p.phase || '').trim() === 'prashna');
+  if (byPhase >= 0) return byPhase;
+  // First whole-word question row (target appears as a full cream tile).
+  return puzzles.findIndex((p) => {
+    const target = ((p.answer ?? p.target) || '').normalize('NFC');
+    if (!target) return false;
+    return p.tiles.some((tile) => cleanTile(tile).normalize('NFC') === target);
+  });
+}
+
+/** त-row: first target starting with त + matra (ता ति…) once that row exists. */
+function findTaRowStart(puzzles: BoardPuzzle[]): number {
+  return puzzles.findIndex((p) => {
+    if (isPrashnaPuzzle(p)) return false;
+    const t = (p.target || '').normalize('NFC');
+    return /^त[\u093E\u093F\u0940\u0941\u0942\u0943\u0947\u0948\u094B\u094C\u0902\u0903]/.test(t);
+  });
+}
+
+function buildMatraSectionChips(puzzles: BoardPuzzle[]): BoardSectionChip[] {
+  const chips: BoardSectionChip[] = [];
+  for (const def of MATRA_SECTION_DEFS) {
+    const start = findMatraSectionStart(puzzles, def.exemplar, def.mark);
+    if (start >= 0) chips.push({ id: def.label, label: def.label, start });
+  }
+  const taStart = findTaRowStart(puzzles);
+  if (taStart >= 0) chips.push({ id: 'त', label: 'त', start: taStart });
+  const prashnaStart = findPrashnaSectionStart(puzzles);
+  if (prashnaStart >= 0) chips.push({ id: 'प्रश्न', label: 'प्रश्न', start: prashnaStart });
+  return chips.sort((a, b) => a.start - b.start);
+}
+
+function buildNatureSectionChips(puzzles: BoardPuzzle[]): BoardSectionChip[] {
+  const defs: { id: string; label: string; match: (p: BoardPuzzle) => boolean }[] = [
+    { id: 'रिक्तम्', label: 'रिक्तम्', match: (p) => {
+      const ph = (p.phase || '').trim();
+      return ph !== 'learn' && ph !== 'match-meaning';
+    } },
+    { id: 'शिक्षा', label: 'शिक्षा', match: (p) => (p.phase || '').trim() === 'learn' },
+    { id: 'अर्थ', label: 'अर्थ', match: (p) => (p.phase || '').trim() === 'match-meaning' },
+  ];
+  const chips: BoardSectionChip[] = [];
+  for (const def of defs) {
+    const start = puzzles.findIndex(def.match);
+    if (start >= 0) chips.push({ id: def.id, label: def.label, start });
+  }
+  return chips;
+}
+
+function activeSectionChipId(chips: BoardSectionChip[], puzzleIndex: number): string | null {
+  if (!chips.length) return null;
+  let active = chips[0].id;
+  for (const chip of chips) {
+    if (puzzleIndex >= chip.start) active = chip.id;
+    else break;
+  }
+  return active;
+}
+
 const Board: React.FC = () => {
   const [shelfButtons, setShelfButtons] = useState<ShelfButton[]>(DEFAULT_SHELVES);
   const [boardShelves, setBoardShelves] = useState<BoardShelfLine[]>([]);
@@ -386,6 +483,21 @@ const Board: React.FC = () => {
     // goNext closes over puzzleIndex/activeShelf; listing those deps avoids stale advance / double-fire.
   }, [checked, isCorrect, puzzleIndex, activeShelf, activePuzzles.length, isLearnPhase]);
 
+  const sectionChips: BoardSectionChip[] =
+    activeShelf === 'prarambhah' ? buildMatraSectionChips(activePuzzles)
+      : activeShelf === 'prakrtih' ? buildNatureSectionChips(activePuzzles)
+        : [];
+  const activeChipId = activeSectionChipId(sectionChips, puzzleIndex);
+
+  const jumpToSection = (start: number) => {
+    if (start < 0 || !activePuzzles.length) return;
+    const clamped = Math.max(0, Math.min(start, activePuzzles.length - 1));
+    setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: clamped }));
+    setChosen([]);
+    setChecked(false);
+    setWrongAttempt(false);
+  };
+
   const activeStep = (checked && isCorrect) ? 2 : 1;
   const graphicWord = ((activePuzzle?.answer ?? activePuzzle?.target ?? activePuzzle?.highlight) || '').normalize('NFC');
   const puzzleGraphic = graphicWord ? iconForExampleWord(graphicWord) : '✨';
@@ -393,9 +505,24 @@ const Board: React.FC = () => {
   return <main className="board-shell">
     <nav className="wing-nav" aria-label="Learning shelves">
       {shelfButtons.map((item) => (
-        <button key={item.id} className={activeShelf === item.id ? 'wing-button active' : 'wing-button'} onClick={() => chooseShelf(item.id)}>{item.label}</button>
+        <button key={item.id} type="button" className={activeShelf === item.id ? 'wing-button active' : 'wing-button'} onClick={() => chooseShelf(item.id)}>{item.label}</button>
       ))}
     </nav>
+
+    {sectionChips.length > 0 && (
+      <div className="board-sections" role="group" aria-label="Jump to section">
+        {sectionChips.map((chip) => (
+          <button
+            key={chip.id}
+            type="button"
+            className={activeChipId === chip.id ? 'board-section-chip active' : 'board-section-chip'}
+            onClick={() => jumpToSection(chip.start)}
+          >
+            {chip.label}
+          </button>
+        ))}
+      </div>
+    )}
 
     <div className="board-tip-row">
       <p className="board-tip">{isLearnPhase
