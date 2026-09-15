@@ -1769,3 +1769,43 @@
 ढ्यसरः शीतलः।|A dhya lake is cool.|ढ्यसरः|nature
 ढ्यगिरिः उन्नतः।|Dhya-mountain is tall.|ढ्यगिरिः|nature
 ढ्यकमलं विकसति।|A dhya lotus blooms.|ढ्यकमलम्|nature
+ण्यपवनः वहति।|A nya breeze blows.|ण्यपवनः|nature
+ण्यखगः कूजति।|A nya bird calls.|ण्यखगः|nature
+ण्यपुष्पं विकसति।|A nya flower blooms.|ण्यपुष्पम्|nature
+ण्यमेघः गर्जति।|A nya cloud thunders.|ण्यमेघः|nature
+ण्यतरुः फलति।|A nya tree bears fruit.|ण्यतरुः|nature
+ण्यसरः शीतलः।|A nya lake is cool.|ण्यसरः|nature
+ण्यगिरिः उन्नतः।|Nya-mountain is tall.|ण्यगिरिः|nature
+ण्यकमलं विकसति।|A nya lotus blooms.|ण्यकमलम्|nature
+क्ल्यपवनः वहति।|A klya breeze blows.|क्ल्यपवनः|nature
+क्ल्यखगः कूजति।|A klya bird calls.|क्ल्यखगः|nature
+क्ल्यपुष्पं विकसति।|A klya flower blooms.|क्ल्यपुष्पम्|nature
+क्ल्यमेघः गर्जति।|A klya cloud thunders.|क्ल्यमेघः|nature
+क्ल्यतरुः हरितः।|A klya tree is green.|क्ल्यतरुः|nature
+क्ल्यसरः रम्यः।|A klya lake is lovely.|क्ल्यसरः|nature
+क्ल्यगिरिः उन्नतः।|Klya-mountain is tall.|क्ल्यगिरिः|nature
+क्ल्यकमलं विकसति।|A klya lotus blooms.|क्ल्यकमलम्|nature
+ग्ल्यपवनः वहति।|A glya breeze blows.|ग्ल्यपवनः|nature
+ग्ल्यखगः कूजति।|A glya bird calls.|ग्ल्यखगः|nature
+ग्ल्यपुष्पं विकसति।|A glya flower blooms.|ग्ल्यपुष्पम्|nature
+ग्ल्यमेघः गर्जति।|A glya cloud thunders.|ग्ल्यमेघः|nature
+ग्ल्यतरुः फलति।|A glya tree bears fruit.|ग्ल्यतरुः|nature
+ग्ल्यसरः शीतलः।|A glya lake is cool.|ग्ल्यसरः|nature
+ग्ल्यगिरिः उन्नतः।|Glya-mountain is tall.|ग्ल्यगिरिः|nature
+ग्ल्यकमलं विकसति।|A glya lotus blooms.|ग्ल्यकमलम्|nature
+प्ल्यपवनः वहति।|A plya breeze blows.|प्ल्यपवनः|nature
+प्ल्यखगः कूजति।|A plya bird calls.|प्ल्यखगः|nature
+प्ल्यपुष्पं विकसति।|A plya flower blooms.|प्ल्यपुष्पम्|nature
+प्ल्यमेघः गर्जति।|A plya cloud thunders.|प्ल्यमेघः|nature
+प्ल्यतरुः हरितः।|A plya tree is green.|प्ल्यतरुः|nature
+प्ल्यसरः रम्यः।|A plya lake is lovely.|प्ल्यसरः|nature
+प्ल्यगिरिः उन्नतः।|Plya-mountain is tall.|प्ल्यगिरिः|nature
+प्ल्यकमलं विकसति।|A plya lotus blooms.|प्ल्यकमलम्|nature
+म्ल्यपवनः वहति।|A mlya breeze blows.|म्ल्यपवनः|nature
+म्ल्यखगः कूजति।|A mlya bird calls.|म्ल्यखगः|nature
+म्ल्यपुष्पं विकसति।|A mlya flower blooms.|म्ल्यपुष्पम्|nature
+म्ल्यमेघः गर्जति।|A mlya cloud thunders.|म्ल्यमेघः|nature
+म्ल्यतरुः फलति।|A mlya tree bears fruit.|म्ल्यतरुः|nature
+म्ल्यसरः शीतलः।|A mlya lake is cool.|म्ल्यसरः|nature
+म्ल्यगिरिः उन्नतः।|Mlya-mountain is tall.|म्ल्यगिरिः|nature
+म्ल्यकमलं विकसति।|A mlya lotus blooms.|म्ल्यकमलम्|nature
