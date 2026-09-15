@@ -569,3 +569,43 @@
 आक्रान्तगिरिः मेघैः आवृतः।|The covered mountain is wrapped in clouds.|आक्रान्तगिरिः|nature
 प्रक्रान्तपथः सरलः अस्ति।|The advanced path is simple.|प्रक्रान्तपथः|nature
 श्रमखगः नीडं गच्छति।|The tired bird goes to the nest.|श्रमखगः|nature
+ग्रामतरुः छायां ददाति।|The village tree gives shade.|ग्रामतरुः|nature
+ग्रीष्मसूर्यः तपति।|The summer sun burns hot.|ग्रीष्मसूर्यः|nature
+उग्रसिंहः गुहायां गर्जति।|The fierce lion roars in the cave.|उग्रसिंहः|nature
+ग्रीवामृगः तृणं खादति।|The long-necked deer eats grass.|ग्रीवामृगः|nature
+अग्रिपक्षिणी उड्डयति।|The lead bird flies upward.|अग्रिपक्षिणी|nature
+ग्रावमयूरः शैले नृत्यति।|The rock peacock dances on the cliff.|ग्रावमयूरः|nature
+उग्राशनिः मेघे गर्जति।|Fierce thunder roars in the cloud.|उग्राशनिः|nature
+ग्रन्थिलता वृक्षं आरोहति।|The knotted creeper climbs the tree.|ग्रन्थिलता|nature
+संग्रहनीडं तरौ अस्ति।|The gathered nest is on the tree.|संग्रहनीडम्|nature
+ग्रोष्ठधेनुः दुग्धं ददाति।|The cowshed cow gives milk.|ग्रोष्ठधेनुः|nature
+द्रुमपुष्पं विकसति।|The tree-flower blooms.|द्रुमपुष्पम्|nature
+द्राक्षालता मधुरा अस्ति।|The grape vine is sweet.|द्राक्षालता|nature
+अद्रिशिखरं हिमावृतम् अस्ति।|The mountain peak is snow-covered.|अद्रिशिखरम्|nature
+चन्द्रकान्तिः निशि विभाति।|Moon-glow shines at night.|चन्द्रकान्तिः|nature
+समुद्रतटः रम्यः अस्ति।|The sea shore is lovely.|समुद्रतटः|nature
+द्रोणीसरः शीतलः अस्ति।|The valley lake is cool.|द्रोणीसरः|nature
+मधुद्रवः पुष्पात् सरति।|Honey-flow seeps from the flower.|मधुद्रवः|nature
+रुद्रपुष्पं शोभते।|The rudra-flower looks lovely.|रुद्रपुष्पम्|nature
+चन्द्रातपः मृदुः अस्ति।|The moonlight is soft.|चन्द्रातपः|nature
+द्रुतमृगः वने धावति।|The swift deer runs in the forest.|द्रुतमृगः|nature
+ब्रीहिक्षेत्रं हरितम् अस्ति।|The rice field is green.|ब्रीहिक्षेत्रम्|nature
+ब्राहीपत्रं हरितम् अस्ति।|The brahmi leaf is green.|ब्राहीपत्रम्|nature
+ब्रूतखगः मधुरं कूजति।|The speaking bird sings sweetly.|ब्रूतखगः|nature
+बृहद्द्रुमः उन्नतः अस्ति।|The great tree is tall.|बृहद्द्रुमः|nature
+सब्रह्मवनं शान्तम् अस्ति।|The sacred grove is peaceful.|सब्रह्मवनम्|nature
+अब्रकमलं विकसति।|The clear-sky lotus blooms.|अब्रकमलम्|nature
+ब्रिन्दपुष्पं शोभते।|The clustered flower looks lovely.|ब्रिन्दपुष्पम्|nature
+उब्रौढफलं पतति।|The over-ripe fruit falls.|उब्रौढफलम्|nature
+द्विरदगजः मन्दं चलति।|The tusked elephant walks slowly.|द्विरदगजः|nature
+द्वीपखगः नीडं रचयति।|The island bird builds a nest.|द्वीपखगः|nature
+अद्वितीयपुष्पं विकसति।|A unique flower blooms.|अद्वितीयपुष्पम्|nature
+द्वादशखगाः वृक्षे कूजन्ति।|Twelve birds sing on the tree.|द्वादशखगाः|nature
+द्वयसरः रम्यः अस्ति।|The twin lake is lovely.|द्वयसरः|nature
+सुद्वीपवनं हरितम् अस्ति।|The fair island forest is green.|सुद्वीपवनम्|nature
+द्विपक्षः आकाशे उड्डयति।|The two-winged bird flies in the sky.|द्विपक्षः|nature
+द्वितीयहंसः सरसि तरति।|The second swan swims in the lake.|द्वितीयहंसः|nature
+सत्त्वमृगः शान्तः अस्ति।|The gentle deer is peaceful.|सत्त्वमृगः|nature
+सत्त्वहंसः सरसि तरति।|The pure swan swims in the lake.|सत्त्वहंसः|nature
+महत्त्वगिरिः मेघैः स्पृशति।|The great mountain touches the clouds.|महत्त्वगिरिः|nature
+मधुरत्वं फले अस्ति।|There is sweetness in the fruit.|मधुरत्वम्|nature
