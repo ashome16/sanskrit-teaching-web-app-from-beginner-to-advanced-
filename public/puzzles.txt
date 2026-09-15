@@ -732,6 +732,51 @@
 जोडो|र्मै|र्मै|र्म,ऐ,क,त,आ,इ|धर्मैः सह जनः वसति।|A person lives with dharmas.|र्म plus ऐ makes र्मै.
 जोडो|र्मो|र्मो|र्म,ओ,क,त,आ,इ|धर्मो रक्षति रक्षितः।|Dharma protects when protected.|र्म plus ओ makes र्मो.
 जोडो|र्मौ|र्मौ|र्म,औ,क,त,आ,इ|धर्मौ द्वौ स्तः।|Two dharmas are there.|र्म plus औ makes र्मौ.
+जोडो|न्ना|न्ना|न्न,आ,क,त,इ,उ|अन्ना माता ददाति।|Mother gives food.|न्न plus आ makes न्ना.
+जोडो|न्नि|न्नि|न्न,इ,क,त,आ,उ|पन्नगि वने वसति।|A snake-form lives in the forest.|न्न plus इ makes न्नि.
+जोडो|न्नी|न्नी|न्न,ई,क,त,आ,इ|पन्नगी द्वौ स्तः।|Two snake-forms are there.|न्न plus ई makes न्नी.
+जोडो|न्नु|न्नु|न्न,उ,क,त,आ,इ|अन्नुं बालकः इच्छति।|The boy wishes for food.|न्न plus उ makes न्नु.
+जोडो|न्नू|न्नू|न्न,ऊ,क,त,आ,इ|अन्नू द्वौ स्तः।|Two foods are there.|न्न plus ऊ makes न्नू.
+जोडो|न्ने|न्ने|न्न,ए,क,त,आ,इ|अन्ने तृप्तिः अस्ति।|There is satisfaction in food.|न्न plus ए makes न्ने.
+जोडो|न्नै|न्नै|न्न,ऐ,क,त,आ,इ|अन्नैः सह जनः वसति।|A person lives with foods.|न्न plus ऐ makes न्नै.
+जोडो|न्नो|न्नो|न्न,ओ,क,त,आ,इ|अन्नो रम्यः अस्ति।|Food is lovely.|न्न plus ओ makes न्नो.
+जोडो|न्नौ|न्नौ|न्न,औ,क,त,आ,इ|अन्नौ द्वौ स्तः।|Two foods are there.|न्न plus औ makes न्नौ.
+जोडो|म्मा|म्मा|म्म,आ,क,त,इ,उ|सम्मानं गुरुः ददाति।|The teacher gives respect.|म्म plus आ makes म्मा.
+जोडो|म्मि|म्मि|म्म,इ,क,त,आ,उ|सम्मिलनं ग्रामे अस्ति।|There is a gathering in the village.|म्म plus इ makes म्मि.
+जोडो|म्मी|म्मी|म्म,ई,क,त,आ,इ|सम्मी द्वौ स्तः।|Two gatherings are there.|म्म plus ई makes म्मी.
+जोडो|म्मु|म्मु|म्म,उ,क,त,आ,इ|सम्मुखं बालकः पश्यति।|The boy looks in front.|म्म plus उ makes म्मु.
+जोडो|म्मू|म्मू|म्म,ऊ,क,त,आ,इ|सम्मू द्वौ स्तः।|Two fronts are there.|म्म plus ऊ makes म्मू.
+जोडो|म्मे|म्मे|म्म,ए,क,त,आ,इ|सम्मे सुखं अस्ति।|There is joy in togetherness.|म्म plus ए makes म्मे.
+जोडो|म्मै|म्मै|म्म,ऐ,क,त,आ,इ|सम्मैः सह बालकः क्रीडति।|The boy plays with companions.|म्म plus ऐ makes म्मै.
+जोडो|म्मो|म्मो|म्म,ओ,क,त,आ,इ|सम्मोदः गृहे अस्ति।|There is delight in the house.|म्म plus ओ makes म्मो.
+जोडो|म्मौ|म्मौ|म्म,औ,क,त,आ,इ|सम्मौ द्वौ स्तः।|Two delights are there.|म्म plus औ makes म्मौ.
+जोडो|य्या|य्या|य्य,आ,क,त,इ,उ|शय्या मृद्वी अस्ति।|The bed is soft.|य्य plus आ makes य्या.
+जोडो|य्यि|य्यि|य्य,इ,क,त,आ,उ|शय्यि बालकः शेते।|The boy sleeps on the bed.|य्य plus इ makes य्यि.
+जोडो|य्यी|य्यी|य्य,ई,क,त,आ,इ|शय्यी द्वौ स्तः।|Two beds are there.|य्य plus ई makes य्यी.
+जोडो|य्यु|य्यु|य्य,उ,क,त,आ,इ|शय्युं बालकः इच्छति।|The boy wishes for a bed.|य्य plus उ makes य्यु.
+जोडो|य्यू|य्यू|य्य,ऊ,क,त,आ,इ|शय्यू द्वौ स्तः।|Two beds are there.|य्य plus ऊ makes य्यू.
+जोडो|य्ये|य्ये|य्य,ए,क,त,आ,इ|शय्ये बालकः शेते।|The boy sleeps on the bed.|य्य plus ए makes य्ये.
+जोडो|य्यै|य्यै|य्य,ऐ,क,त,आ,इ|शय्यैः सह गृहं शोभते।|With beds the house looks lovely.|य्य plus ऐ makes य्यै.
+जोडो|य्यो|य्यो|य्य,ओ,क,त,आ,इ|शय्यो रम्या अस्ति।|The bed is lovely.|य्य plus ओ makes य्यो.
+जोडो|य्यौ|य्यौ|य्य,औ,क,त,आ,इ|शय्यौ द्वौ स्तः।|Two beds are there.|य्य plus औ makes य्यौ.
+जोडो|र्रा|र्रा|र्र,आ,क,त,इ,उ|सर्रा पन्था रम्यः अस्ति।|The swift path is lovely.|र्र plus आ makes र्रा.
+जोडो|र्रि|र्रि|र्र,इ,क,त,आ,उ|तर्रि खगः उड्डयति।|A swift bird flies up.|र्र plus इ makes र्रि.
+जोडो|र्री|र्री|र्र,ई,क,त,आ,इ|तर्री द्वौ स्तः।|Two swift ones are there.|र्र plus ई makes र्री.
+जोडो|र्रु|र्रु|र्र,उ,क,त,आ,इ|सर्रुं बालकः पश्यति।|The boy sees the swift one.|र्र plus उ makes र्रु.
+जोडो|र्रू|र्रू|र्र,ऊ,क,त,आ,इ|सर्रू द्वौ स्तः।|Two swift ones are there.|र्र plus ऊ makes र्रू.
+जोडो|र्रे|र्रे|र्र,ए,क,त,आ,इ|सर्रे पुष्पं विकसति।|A flower blooms on the swift path.|र्र plus ए makes र्रे.
+जोडो|र्रै|र्रै|र्र,ऐ,क,त,आ,इ|सर्रैः सह पवनः वहति।|With swift ones the breeze blows.|र्र plus ऐ makes र्रै.
+जोडो|र्रो|र्रो|र्र,ओ,क,त,आ,इ|सर्रो रम्यः अस्ति।|The swift one is lovely.|र्र plus ओ makes र्रो.
+जोडो|र्रौ|र्रौ|र्र,औ,क,त,आ,इ|सर्रौ द्वौ स्तः।|Two swift ones are there.|र्र plus औ makes र्रौ.
+जोडो|व्वा|व्वा|व्व,आ,क,त,इ,उ|सव्वा बालकः धावति।|The all-ready boy runs.|व्व plus आ makes व्वा.
+जोडो|व्वि|व्वि|व्व,इ,क,त,आ,उ|सव्वि ग्रामे अस्ति।|All-readiness is in the village.|व्व plus इ makes व्वि.
+जोडो|व्वी|व्वी|व्व,ई,क,त,आ,इ|सव्वी द्वौ स्तः।|Two all-ready ones are there.|व्व plus ई makes व्वी.
+जोडो|व्वु|व्वु|व्व,उ,क,त,आ,इ|सव्वुं बालकः इच्छति।|The boy wishes all-readiness.|व्व plus उ makes व्वु.
+जोडो|व्वू|व्वू|व्व,ऊ,क,त,आ,इ|सव्वू द्वौ स्तः।|Two all-ready ones are there.|व्व plus ऊ makes व्वू.
+जोडो|व्वे|व्वे|व्व,ए,क,त,आ,इ|सव्वे सुखं अस्ति।|There is joy in all-readiness.|व्व plus ए makes व्वे.
+जोडो|व्वै|व्वै|व्व,ऐ,क,त,आ,इ|सव्वैः सह जनः वसति।|A person lives with all-ready ones.|व्व plus ऐ makes व्वै.
+जोडो|व्वो|व्वो|व्व,ओ,क,त,आ,इ|सव्वो रम्यः अस्ति।|The all-ready one is lovely.|व्व plus ओ makes व्वो.
+जोडो|व्वौ|व्वौ|व्व,औ,क,त,आ,इ|सव्वौ द्वौ स्तः।|Two all-ready ones are there.|व्व plus औ makes व्वौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
