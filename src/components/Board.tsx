@@ -255,7 +255,11 @@ const Board: React.FC = () => {
         : 'Not that cream tile — try another, then Read the sentence again.';
 
   const toggleTile = (tile: string) => {
-    if (checked && isCorrect) return;
+    // Never permanently freeze cream tiles after a correct Read — kids must always be able to tap.
+    // If we are still on the success screen, clear checked so a new selection can start.
+    if (checked && isCorrect) {
+      setChecked(false);
+    }
     const clean = cleanTile(tile);
     if (!clean) return;
     setWrongAttempt(false);
@@ -300,11 +304,22 @@ const Board: React.FC = () => {
     setChosen([]);
   };
 
+  // Unlock cream tiles on every puzzle advance / shelf change (guards race or sticky checked+chosen,
+  // especially back-to-back same targets like नदी → नदी).
+  useEffect(() => {
+    setChosen([]);
+    setChecked(false);
+    setWrongAttempt(false);
+  }, [puzzleIndex, activeShelf]);
+
   /** Advance without wrapping — used by Next and auto-advance. */
   const goNext = () => {
     if (!activePuzzles.length) return;
-    if (puzzleIndex + 1 >= activePuzzles.length) return;
-    setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: puzzleIndex + 1 }));
+    setPuzzleIndexByShelf((current) => {
+      const idx = current[activeShelf] ?? 0;
+      if (idx + 1 >= activePuzzles.length) return current;
+      return { ...current, [activeShelf]: idx + 1 };
+    });
     resetPuzzleUi();
   };
 
