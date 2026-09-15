@@ -1929,3 +1929,43 @@
 व्र्यसरः शीतलः।|A vrya lake is cool.|व्र्यसरः|nature
 व्र्यगिरिः उन्नतः।|Vrya-mountain is tall.|व्र्यगिरिः|nature
 व्र्यकमलं विकसति।|A vrya lotus blooms.|व्र्यकमलम्|nature
+घ्र्यपवनः वहति।|A ghrya breeze blows.|घ्र्यपवनः|nature
+घ्र्यखगः कूजति।|A ghrya bird calls.|घ्र्यखगः|nature
+घ्र्यपुष्पं विकसति।|A ghrya flower blooms.|घ्र्यपुष्पम्|nature
+घ्र्यमेघः गर्जति।|A ghrya cloud thunders.|घ्र्यमेघः|nature
+घ्र्यतरुः फलति।|A ghrya tree bears fruit.|घ्र्यतरुः|nature
+घ्र्यसरः शीतलः।|A ghrya lake is cool.|घ्र्यसरः|nature
+घ्र्यगिरिः उन्नतः।|Ghrya-mountain is tall.|घ्र्यगिरिः|nature
+घ्र्यकमलं विकसति।|A ghrya lotus blooms.|घ्र्यकमलम्|nature
+झ्र्यपवनः वहति।|A jhrya breeze blows.|झ्र्यपवनः|nature
+झ्र्यखगः कूजति।|A jhrya bird calls.|झ्र्यखगः|nature
+झ्र्यपुष्पं विकसति।|A jhrya flower blooms.|झ्र्यपुष्पम्|nature
+झ्र्यमेघः गर्जति।|A jhrya cloud thunders.|झ्र्यमेघः|nature
+झ्र्यतरुः हरितः।|A jhrya tree is green.|झ्र्यतरुः|nature
+झ्र्यसरः रम्यः।|A jhrya lake is lovely.|झ्र्यसरः|nature
+झ्र्यगिरिः उन्नतः।|Jhrya-mountain is tall.|झ्र्यगिरिः|nature
+झ्र्यकमलं विकसति।|A jhrya lotus blooms.|झ्र्यकमलम्|nature
+ट्र्यपवनः वहति।|A ttrya breeze blows.|ट्र्यपवनः|nature
+ट्र्यखगः कूजति।|A ttrya bird calls.|ट्र्यखगः|nature
+ट्र्यपुष्पं विकसति।|A ttrya flower blooms.|ट्र्यपुष्पम्|nature
+ट्र्यमेघः गर्जति।|A ttrya cloud thunders.|ट्र्यमेघः|nature
+ट्र्यतरुः फलति।|A ttrya tree bears fruit.|ट्र्यतरुः|nature
+ट्र्यसरः शीतलः।|A ttrya lake is cool.|ट्र्यसरः|nature
+ट्र्यगिरिः उन्नतः।|Ttrya-mountain is tall.|ट्र्यगिरिः|nature
+ट्र्यकमलं विकसति।|A ttrya lotus blooms.|ट्र्यकमलम्|nature
+ड्र्यपवनः वहति।|A drya breeze blows.|ड्र्यपवनः|nature
+ड्र्यखगः कूजति।|A drya bird calls.|ड्र्यखगः|nature
+ड्र्यपुष्पं विकसति।|A drya flower blooms.|ड्र्यपुष्पम्|nature
+ड्र्यमेघः गर्जति।|A drya cloud thunders.|ड्र्यमेघः|nature
+ड्र्यतरुः हरितः।|A drya tree is green.|ड्र्यतरुः|nature
+ड्र्यसरः रम्यः।|A drya lake is lovely.|ड्र्यसरः|nature
+ड्र्यगिरिः उन्नतः।|Drya-mountain is tall.|ड्र्यगिरिः|nature
+ड्र्यकमलं विकसति।|A drya lotus blooms.|ड्र्यकमलम्|nature
+ढ्र्यपवनः वहति।|A dhrya breeze blows.|ढ्र्यपवनः|nature
+ढ्र्यखगः कूजति।|A dhrya bird calls.|ढ्र्यखगः|nature
+ढ्र्यपुष्पं विकसति।|A dhrya flower blooms.|ढ्र्यपुष्पम्|nature
+ढ्र्यमेघः गर्जति।|A dhrya cloud thunders.|ढ्र्यमेघः|nature
+ढ्र्यतरुः फलति।|A dhrya tree bears fruit.|ढ्र्यतरुः|nature
+ढ्र्यसरः शीतलः।|A dhrya lake is cool.|ढ्र्यसरः|nature
+ढ्र्यगिरिः उन्नतः।|Dhrya-mountain is tall.|ढ्र्यगिरिः|nature
+ढ्र्यकमलं विकसति।|A dhrya lotus blooms.|ढ्र्यकमलम्|nature

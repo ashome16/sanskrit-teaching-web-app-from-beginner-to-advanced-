@@ -394,6 +394,11 @@ const CONSONANT_ROW_CHIP_DEFS: { id: string; consonant: string }[] = [
   { id: 'थ्र्य', consonant: 'थ्र्य' },
   { id: 'फ्र्य', consonant: 'फ्र्य' },
   { id: 'व्र्य', consonant: 'व्र्य' },
+  { id: 'घ्र्य', consonant: 'घ्र्य' },
+  { id: 'झ्र्य', consonant: 'झ्र्य' },
+  { id: 'ट्र्य', consonant: 'ट्र्य' },
+  { id: 'ड्र्य', consonant: 'ड्र्य' },
+  { id: 'ढ्र्य', consonant: 'ढ्र्य' },
 ];
 
 const CONSONANT_ROW_MATRA_CHARS = new Set([
