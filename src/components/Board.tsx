@@ -282,7 +282,7 @@ const Board: React.FC = () => {
     if (!checked || !isCorrect || activePuzzles.length < 2) return undefined;
     const timer = window.setTimeout(() => {
       chooseNextPuzzle();
-    }, 2200);
+    }, 8000);
     return () => window.clearTimeout(timer);
   }, [checked, isCorrect, puzzleIndex, activeShelf, activePuzzles.length]);
 
@@ -297,7 +297,7 @@ const Board: React.FC = () => {
       <p className="board-tip">{isPrashnaPart
         ? <>Part 2: click ONE cream tile for the blank (who/what/where…). Then <strong>click Check</strong>. Then <strong className="tip-next">Click Next</strong>.</>
         : (activeBoardShelf?.skin === 'जोडो' && activeShelf === 'prarambhah' && !targetIsWholeTile
-          ? <>Part 1: click TWO cream tiles (any order). Then <strong>click Check</strong>. Then <strong className="tip-next">Click Next</strong> — or wait and it moves on.</>
+          ? <>Part 1: click TWO cream tiles (any order). Then <strong>click Check</strong>. Then <strong className="tip-next">Click Next</strong> — or wait a few seconds and it moves on.</>
           : emphasizeTipText(loopLine))}</p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
