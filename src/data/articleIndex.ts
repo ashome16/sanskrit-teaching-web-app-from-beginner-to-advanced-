@@ -42,7 +42,7 @@ export const ARTICLES: ArticleMeta[] = [
     file: 'grammar/article-5.txt',
     emoji: '🧬',
     cardTitle: 'The DNA of Sanskrit',
-    cardBlurb: 'Understanding Dhātus (Verbal Roots), the 10 Gaṇas, and Upasargas.',
+    cardBlurb: 'Dhātu history, the 10 Gaṇas, English cognates, and Upasargas.',
   },
   {
     id: 'sandhi-how-sounds-join',
