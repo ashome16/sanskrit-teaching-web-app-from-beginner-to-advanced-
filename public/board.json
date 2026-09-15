@@ -67,6 +67,86 @@
         "phase": "jodo"
       },
       {
+        "target": "पा",
+        "tiles": [
+          "प",
+          "आ",
+          "क",
+          "म",
+          "इ",
+          "उ"
+        ],
+        "english": "Water is in the vessel.",
+        "sentence": "पात्रे जलम् अस्ति।",
+        "highlight": "पा",
+        "phase": "jodo",
+        "explanation": "प plus आ makes पा."
+      },
+      {
+        "target": "ना",
+        "tiles": [
+          "न",
+          "आ",
+          "प",
+          "क",
+          "इ",
+          "उ"
+        ],
+        "english": "The river flows swiftly.",
+        "sentence": "नदी वेगेन वहति।",
+        "highlight": "ना",
+        "phase": "jodo",
+        "explanation": "न plus आ makes ना."
+      },
+      {
+        "target": "रा",
+        "tiles": [
+          "र",
+          "आ",
+          "न",
+          "प",
+          "इ",
+          "उ"
+        ],
+        "english": "The king sits here.",
+        "sentence": "राजा अत्र उपविशति।",
+        "highlight": "रा",
+        "phase": "jodo",
+        "explanation": "र plus आ makes रा."
+      },
+      {
+        "target": "गा",
+        "tiles": [
+          "ग",
+          "आ",
+          "र",
+          "न",
+          "इ",
+          "उ"
+        ],
+        "english": "The boy sings.",
+        "sentence": "बालकः गायति।",
+        "highlight": "गा",
+        "phase": "jodo",
+        "explanation": "ग plus आ makes गा."
+      },
+      {
+        "target": "ला",
+        "tiles": [
+          "ल",
+          "आ",
+          "ग",
+          "र",
+          "इ",
+          "उ"
+        ],
+        "english": "The creeper is green.",
+        "sentence": "लता हरिता अस्ति।",
+        "highlight": "ला",
+        "phase": "jodo",
+        "explanation": "ल plus आ makes ला."
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
