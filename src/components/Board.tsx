@@ -379,6 +379,11 @@ const CONSONANT_ROW_CHIP_DEFS: { id: string; consonant: string }[] = [
   { id: 'ग्ल्य', consonant: 'ग्ल्य' },
   { id: 'प्ल्य', consonant: 'प्ल्य' },
   { id: 'म्ल्य', consonant: 'म्ल्य' },
+  { id: 'स्ल्य', consonant: 'स्ल्य' },
+  { id: 'श्ल्य', consonant: 'श्ल्य' },
+  { id: 'ष्ठ्य', consonant: 'ष्ठ्य' },
+  { id: 'फ्ल्य', consonant: 'फ्ल्य' },
+  { id: 'त्ल्य', consonant: 'त्ल्य' },
 ];
 
 const CONSONANT_ROW_MATRA_CHARS = new Set([

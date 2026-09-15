@@ -1809,3 +1809,43 @@
 म्ल्यसरः शीतलः।|A mlya lake is cool.|म्ल्यसरः|nature
 म्ल्यगिरिः उन्नतः।|Mlya-mountain is tall.|म्ल्यगिरिः|nature
 म्ल्यकमलं विकसति।|A mlya lotus blooms.|म्ल्यकमलम्|nature
+स्ल्यपवनः वहति।|A slya breeze blows.|स्ल्यपवनः|nature
+स्ल्यखगः कूजति।|A slya bird calls.|स्ल्यखगः|nature
+स्ल्यपुष्पं विकसति।|A slya flower blooms.|स्ल्यपुष्पम्|nature
+स्ल्यमेघः गर्जति।|A slya cloud thunders.|स्ल्यमेघः|nature
+स्ल्यतरुः फलति।|A slya tree bears fruit.|स्ल्यतरुः|nature
+स्ल्यसरः शीतलः।|A slya lake is cool.|स्ल्यसरः|nature
+स्ल्यगिरिः उन्नतः।|Slya-mountain is tall.|स्ल्यगिरिः|nature
+स्ल्यकमलं विकसति।|A slya lotus blooms.|स्ल्यकमलम्|nature
+श्ल्यपवनः वहति।|A shlya breeze blows.|श्ल्यपवनः|nature
+श्ल्यखगः कूजति।|A shlya bird calls.|श्ल्यखगः|nature
+श्ल्यपुष्पं विकसति।|A shlya flower blooms.|श्ल्यपुष्पम्|nature
+श्ल्यमेघः गर्जति।|A shlya cloud thunders.|श्ल्यमेघः|nature
+श्ल्यतरुः हरितः।|A shlya tree is green.|श्ल्यतरुः|nature
+श्ल्यसरः रम्यः।|A shlya lake is lovely.|श्ल्यसरः|nature
+श्ल्यगिरिः उन्नतः।|Shlya-mountain is tall.|श्ल्यगिरिः|nature
+श्ल्यकमलं विकसति।|A shlya lotus blooms.|श्ल्यकमलम्|nature
+ष्ठ्यपवनः वहति।|A shthya breeze blows.|ष्ठ्यपवनः|nature
+ष्ठ्यखगः कूजति।|A shthya bird calls.|ष्ठ्यखगः|nature
+ष्ठ्यपुष्पं विकसति।|A shthya flower blooms.|ष्ठ्यपुष्पम्|nature
+ष्ठ्यमेघः गर्जति।|A shthya cloud thunders.|ष्ठ्यमेघः|nature
+ष्ठ्यतरुः फलति।|A shthya tree bears fruit.|ष्ठ्यतरुः|nature
+ष्ठ्यसरः शीतलः।|A shthya lake is cool.|ष्ठ्यसरः|nature
+ष्ठ्यगिरिः उन्नतः।|Shthya-mountain is tall.|ष्ठ्यगिरिः|nature
+ष्ठ्यकमलं विकसति।|A shthya lotus blooms.|ष्ठ्यकमलम्|nature
+फ्ल्यपवनः वहति।|A phlya breeze blows.|फ्ल्यपवनः|nature
+फ्ल्यखगः कूजति।|A phlya bird calls.|फ्ल्यखगः|nature
+फ्ल्यपुष्पं विकसति।|A phlya flower blooms.|फ्ल्यपुष्पम्|nature
+फ्ल्यमेघः गर्जति।|A phlya cloud thunders.|फ्ल्यमेघः|nature
+फ्ल्यतरुः हरितः।|A phlya tree is green.|फ्ल्यतरुः|nature
+फ्ल्यसरः रम्यः।|A phlya lake is lovely.|फ्ल्यसरः|nature
+फ्ल्यगिरिः उन्नतः।|Phlya-mountain is tall.|फ्ल्यगिरिः|nature
+फ्ल्यकमलं विकसति।|A phlya lotus blooms.|फ्ल्यकमलम्|nature
+त्ल्यपवनः वहति।|A tlya breeze blows.|त्ल्यपवनः|nature
+त्ल्यखगः कूजति।|A tlya bird calls.|त्ल्यखगः|nature
+त्ल्यपुष्पं विकसति।|A tlya flower blooms.|त्ल्यपुष्पम्|nature
+त्ल्यमेघः गर्जति।|A tlya cloud thunders.|त्ल्यमेघः|nature
+त्ल्यतरुः फलति।|A tlya tree bears fruit.|त्ल्यतरुः|nature
+त्ल्यसरः शीतलः।|A tlya lake is cool.|त्ल्यसरः|nature
+त्ल्यगिरिः उन्नतः।|Tlya-mountain is tall.|त्ल्यगिरिः|nature
+त्ल्यकमलं विकसति।|A tlya lotus blooms.|त्ल्यकमलम्|nature
