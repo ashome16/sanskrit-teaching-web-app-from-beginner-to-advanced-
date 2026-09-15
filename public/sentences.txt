@@ -1009,3 +1009,43 @@
 ब्बसरः शीतलः।|A bba-lake is cool.|ब्बसरः|nature
 ब्बगिरिः उन्नतः।|Bba-mountain is tall.|ब्बगिरिः|nature
 ब्बकमलं विकसति।|A bba-lotus blooms.|ब्बकमलम्|nature
+अह्नपवनः वहति।|A day-breeze blows.|अह्नपवनः|nature
+अह्नखगः कूजति।|A day-bird calls.|अह्नखगः|nature
+अह्नपुष्पं विकसति।|A day-flower blooms.|अह्नपुष्पम्|nature
+अह्नमेघः गर्जति।|A day-cloud thunders.|अह्नमेघः|nature
+अह्नतरुः फलति।|A day-tree bears fruit.|अह्नतरुः|nature
+अह्नसरः शीतलः।|A day-lake is cool.|अह्नसरः|nature
+अह्नगिरिः उन्नतः।|Day-mountain is tall.|अह्नगिरिः|nature
+अह्नकमलं विकसति।|A day-lotus blooms.|अह्नकमलम्|nature
+ब्रह्मपवनः वहति।|A brahma-breeze blows.|ब्रह्मपवनः|nature
+ब्रह्मखगः कूजति।|A brahma-bird calls.|ब्रह्मखगः|nature
+ब्रह्मपुष्पं विकसति।|A brahma-flower blooms.|ब्रह्मपुष्पम्|nature
+ब्रह्ममेघः गर्जति।|A brahma-cloud thunders.|ब्रह्ममेघः|nature
+ब्रह्मतरुः हरितः।|A brahma-tree is green.|ब्रह्मतरुः|nature
+ब्रह्मसरः रम्यः।|A brahma-lake is lovely.|ब्रह्मसरः|nature
+ब्रह्मगिरिः उन्नतः।|Brahma-mountain is tall.|ब्रह्मगिरिः|nature
+ब्रह्मकमलं विकसति।|A brahma-lotus blooms.|ब्रह्मकमलम्|nature
+च्जपवनः वहति।|A cja-breeze blows.|च्जपवनः|nature
+च्जखगः कूजति।|A cja-bird calls.|च्जखगः|nature
+च्जपुष्पं विकसति।|A cja-flower blooms.|च्जपुष्पम्|nature
+च्जमेघः गर्जति।|A cja-cloud thunders.|च्जमेघः|nature
+च्जतरुः फलति।|A cja-tree bears fruit.|च्जतरुः|nature
+च्जसरः शीतलः।|A cja-lake is cool.|च्जसरः|nature
+च्जगिरिः उन्नतः।|Cja-mountain is tall.|च्जगिरिः|nature
+च्जकमलं विकसति।|A cja-lotus blooms.|च्जकमलम्|nature
+स्वप्नपवनः वहति।|A dream-breeze blows.|स्वप्नपवनः|nature
+स्वप्नखगः कूजति।|A dream-bird calls.|स्वप्नखगः|nature
+स्वप्नपुष्पं विकसति।|A dream-flower blooms.|स्वप्नपुष्पम्|nature
+स्वप्नमेघः गर्जति।|A dream-cloud thunders.|स्वप्नमेघः|nature
+स्वप्नतरुः हरितः।|A dream-tree is green.|स्वप्नतरुः|nature
+स्वप्नसरः शीतलः।|A dream-lake is cool.|स्वप्नसरः|nature
+स्वप्नगिरिः उन्नतः।|Dream-mountain is tall.|स्वप्नगिरिः|nature
+स्वप्नकमलं विकसति।|A dream-lotus blooms.|स्वप्नकमलम्|nature
+नम्नपवनः वहति।|A humble breeze blows.|नम्नपवनः|nature
+नम्नखगः कूजति।|A humble bird calls.|नम्नखगः|nature
+नम्नपुष्पं विकसति।|A humble flower blooms.|नम्नपुष्पम्|nature
+नम्नमेघः गर्जति।|A humble cloud thunders.|नम्नमेघः|nature
+नम्नतरुः फलति।|A humble tree bears fruit.|नम्नतरुः|nature
+नम्नसरः शीतलः।|A humble lake is cool.|नम्नसरः|nature
+नम्नगिरिः उन्नतः।|Humble-mountain is tall.|नम्नगिरिः|nature
+नम्नकमलं विकसति।|A humble lotus blooms.|नम्नकमलम्|nature

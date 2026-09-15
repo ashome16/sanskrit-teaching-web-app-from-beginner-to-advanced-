@@ -912,6 +912,51 @@
 जोडो|ब्बै|ब्बै|ब्ब,ऐ,क,त,आ,इ|ब्बैः सह पवनः वहति।|With bbai the breeze blows.|ब्ब plus ऐ makes ब्बै.
 जोडो|ब्बो|ब्बो|ब्ब,ओ,क,त,आ,इ|ब्बो रम्यः अस्ति।|The bbo is lovely.|ब्ब plus ओ makes ब्बो.
 जोडो|ब्बौ|ब्बौ|ब्ब,औ,क,त,आ,इ|ब्बौ द्वौ स्तः।|Two bbau-forms are there.|ब्ब plus औ makes ब्बौ.
+जोडो|ह्ना|ह्ना|ह्न,आ,क,त,इ,उ|अह्ना सूर्यः विभाति।|By day the sun shines.|ह्न plus आ makes ह्ना.
+जोडो|ह्नि|ह्नि|ह्न,इ,क,त,आ,उ|ह्नि खगः कूजति।|A hni-bird calls.|ह्न plus इ makes ह्नि.
+जोडो|ह्नी|ह्नी|ह्न,ई,क,त,आ,इ|ह्नी द्वौ स्तः।|Two hni-forms are there.|ह्न plus ई makes ह्नी.
+जोडो|ह्नु|ह्नु|ह्न,उ,क,त,आ,इ|प्रह्नुं बालकः नमति।|The boy bows humbly.|ह्न plus उ makes ह्नु.
+जोडो|ह्नू|ह्नू|ह्न,ऊ,क,त,आ,इ|ह्नू द्वौ स्तः।|Two hnu-forms are there.|ह्न plus ऊ makes ह्नू.
+जोडो|ह्ने|ह्ने|ह्न,ए,क,त,आ,इ|ह्ने पुष्पं विकसति।|A flower blooms at hne.|ह्न plus ए makes ह्ने.
+जोडो|ह्नै|ह्नै|ह्न,ऐ,क,त,आ,इ|ह्नैः सह पवनः वहति।|With hnai the breeze blows.|ह्न plus ऐ makes ह्नै.
+जोडो|ह्नो|ह्नो|ह्न,ओ,क,त,आ,इ|ह्नो रम्यः अस्ति।|The hno is lovely.|ह्न plus ओ makes ह्नो.
+जोडो|ह्नौ|ह्नौ|ह्न,औ,क,त,आ,इ|ह्नौ द्वौ स्तः।|Two hnau-forms are there.|ह्न plus औ makes ह्नौ.
+जोडो|ह्मा|ह्मा|ह्म,आ,क,त,इ,उ|ब्रह्मा शान्तः अस्ति।|Brahma is peaceful.|ह्म plus आ makes ह्मा.
+जोडो|ह्मि|ह्मि|ह्म,इ,क,त,आ,उ|ह्मि खगः कूजति।|A hmi-bird calls.|ह्म plus इ makes ह्मि.
+जोडो|ह्मी|ह्मी|ह्म,ई,क,त,आ,इ|ह्मी द्वौ स्तः।|Two hmi-forms are there.|ह्म plus ई makes ह्मी.
+जोडो|ह्मु|ह्मु|ह्म,उ,क,त,आ,इ|ह्मुं बालकः पश्यति।|The boy sees the hmu.|ह्म plus उ makes ह्मु.
+जोडो|ह्मू|ह्मू|ह्म,ऊ,क,त,आ,इ|ह्मू द्वौ स्तः।|Two hmu-forms are there.|ह्म plus ऊ makes ह्मू.
+जोडो|ह्मे|ह्मे|ह्म,ए,क,त,आ,इ|ह्मे पुष्पं विकसति।|A flower blooms at hme.|ह्म plus ए makes ह्मे.
+जोडो|ह्मै|ह्मै|ह्म,ऐ,क,त,आ,इ|ह्मैः सह पवनः वहति।|With hmai the breeze blows.|ह्म plus ऐ makes ह्मै.
+जोडो|ह्मो|ह्मो|ह्म,ओ,क,त,आ,इ|ह्मो रम्यः अस्ति।|The hmo is lovely.|ह्म plus ओ makes ह्मो.
+जोडो|ह्मौ|ह्मौ|ह्म,औ,क,त,आ,इ|ह्मौ द्वौ स्तः।|Two hmau-forms are there.|ह्म plus औ makes ह्मौ.
+जोडो|च्जा|च्जा|च्ज,आ,क,त,इ,उ|च्जा रूपं शोभते।|The cja-form looks lovely.|च्ज plus आ makes च्जा.
+जोडो|च्जि|च्जि|च्ज,इ,क,त,आ,उ|च्जि खगः कूजति।|A cji-bird calls.|च्ज plus इ makes च्जि.
+जोडो|च्जी|च्जी|च्ज,ई,क,त,आ,इ|च्जी द्वौ स्तः।|Two cji-forms are there.|च्ज plus ई makes च्जी.
+जोडो|च्जु|च्जु|च्ज,उ,क,त,आ,इ|च्जुं बालकः पश्यति।|The boy sees the cju.|च्ज plus उ makes च्जु.
+जोडो|च्जू|च्जू|च्ज,ऊ,क,त,आ,इ|च्जू द्वौ स्तः।|Two cju-forms are there.|च्ज plus ऊ makes च्जू.
+जोडो|च्जे|च्जे|च्ज,ए,क,त,आ,इ|च्जे पुष्पं विकसति।|A flower blooms at cje.|च्ज plus ए makes च्जे.
+जोडो|च्जै|च्जै|च्ज,ऐ,क,त,आ,इ|च्जैः सह पवनः वहति।|With cjai the breeze blows.|च्ज plus ऐ makes च्जै.
+जोडो|च्जो|च्जो|च्ज,ओ,क,त,आ,इ|च्जो रम्यः अस्ति।|The cjo is lovely.|च्ज plus ओ makes च्जो.
+जोडो|च्जौ|च्जौ|च्ज,औ,क,त,आ,इ|च्जौ द्वौ स्तः।|Two cjau-forms are there.|च्ज plus औ makes च्जौ.
+जोडो|प्ना|प्ना|प्न,आ,क,त,इ,उ|स्वप्नाः रम्याः सन्ति।|Dreams are lovely.|प्न plus आ makes प्ना.
+जोडो|प्नि|प्नि|प्न,इ,क,त,आ,उ|प्नि खगः कूजति।|A pni-bird calls.|प्न plus इ makes प्नि.
+जोडो|प्नी|प्नी|प्न,ई,क,त,आ,इ|प्नी द्वौ स्तः।|Two pni-forms are there.|प्न plus ई makes प्नी.
+जोडो|प्नु|प्नु|प्न,उ,क,त,आ,इ|प्नुं बालकः पश्यति।|The boy sees the pnu.|प्न plus उ makes प्नु.
+जोडो|प्नू|प्नू|प्न,ऊ,क,त,आ,इ|प्नू द्वौ स्तः।|Two pnu-forms are there.|प्न plus ऊ makes प्नू.
+जोडो|प्ने|प्ने|प्न,ए,क,त,आ,इ|प्ने पुष्पं विकसति।|A flower blooms at pne.|प्न plus ए makes प्ने.
+जोडो|प्नै|प्नै|प्न,ऐ,क,त,आ,इ|प्नैः सह पवनः वहति।|With pnai the breeze blows.|प्न plus ऐ makes प्नै.
+जोडो|प्नो|प्नो|प्न,ओ,क,त,आ,इ|प्नो रम्यः अस्ति।|The pno is lovely.|प्न plus ओ makes प्नो.
+जोडो|प्नौ|प्नौ|प्न,औ,क,त,आ,इ|प्नौ द्वौ स्तः।|Two pnau-forms are there.|प्न plus औ makes प्नौ.
+जोडो|म्ना|म्ना|म्न,आ,क,त,इ,उ|नम्ना बालकः वन्दते।|The boy bows with respect.|म्न plus आ makes म्ना.
+जोडो|म्नि|म्नि|म्न,इ,क,त,आ,उ|म्नि खगः कूजति।|A mni-bird calls.|म्न plus इ makes म्नि.
+जोडो|म्नी|म्नी|म्न,ई,क,त,आ,इ|म्नी द्वौ स्तः।|Two mni-forms are there.|म्न plus ई makes म्नी.
+जोडो|म्नु|म्नु|म्न,उ,क,त,आ,इ|म्नुं बालकः पश्यति।|The boy sees the mnu.|म्न plus उ makes म्नु.
+जोडो|म्नू|म्नू|म्न,ऊ,क,त,आ,इ|म्नू द्वौ स्तः।|Two mnu-forms are there.|म्न plus ऊ makes म्नू.
+जोडो|म्ने|म्ने|म्न,ए,क,त,आ,इ|म्ने पुष्पं विकसति।|A flower blooms at mne.|म्न plus ए makes म्ने.
+जोडो|म्नै|म्नै|म्न,ऐ,क,त,आ,इ|म्नैः सह पवनः वहति।|With mnai the breeze blows.|म्न plus ऐ makes म्नै.
+जोडो|म्नो|म्नो|म्न,ओ,क,त,आ,इ|म्नो रम्यः अस्ति।|The mno is lovely.|म्न plus ओ makes म्नो.
+जोडो|म्नौ|म्नौ|म्न,औ,क,त,आ,इ|म्नौ द्वौ स्तः।|Two mnau-forms are there.|म्न plus औ makes म्नौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
