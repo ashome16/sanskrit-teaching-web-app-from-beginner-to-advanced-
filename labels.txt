@@ -40,6 +40,6 @@ skin|कर्ता-क्रिया|कर्ता-क्रिया|doer 
 skin|रिक्तम्|रिक्तम्|fill the blank
 skin|प्रश्न|प्रश्न|ask
 skin|क्रमः|क्रमः|order
-site|loop|First click a cream tile. Then Read the sentence. Then Click Next.|
+site|loop|Click a cream tile. The picture and sentence appear. Then Click Next.|
 pack|prakrtih|प्रकृतिः|animals and plants
 pack|kriya|क्रिया|doer then verb
