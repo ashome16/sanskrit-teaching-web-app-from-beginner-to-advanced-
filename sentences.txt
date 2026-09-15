@@ -467,3 +467,43 @@
 नलिनम् सरसि विकसति।|The lotus blooms in the lake.|नलिनम्|nature
 निम्बः तिक्तः अस्ति।|The neem is bitter.|निम्बः|nature
 न्यग्रोधः विशालः अस्ति।|The banyan is vast.|न्यग्रोधः|nature
+थलचरः स्थले चरति।|The land-animal walks on land.|थलचरः|nature
+पृथुकः मातुः समीपे अस्ति।|The young one is beside its mother.|पृथुकः|nature
+थलपद्मम् विकसति।|The land-lotus blooms.|थलपद्मम्|nature
+पथशिला दृढा अस्ति।|The path-stone is firm.|पथशिला|nature
+पृथुपर्णम् हरितम् अस्ति।|The broad leaf is green.|पृथुपर्णम्|nature
+थलकुसुमम् सुरभि अस्ति।|The land-flower is fragrant.|थलकुसुमम्|nature
+सुपथं वने अस्ति।|A fair path is in the forest.|सुपथम्|nature
+पृथुफलं मधुरम् अस्ति।|The broad fruit is sweet.|पृथुफलम्|nature
+थलनीडं भूमौ अस्ति।|The ground-nest is on the earth.|थलनीडम्|nature
+पथमृगः धावति।|The path-deer runs.|पथमृगः|nature
+अक्षोटः वृक्षे फलति।|The walnut fruits on the tree.|अक्षोटः|nature
+ईक्षुदण्डः मधुरः अस्ति।|The sugarcane stalk is sweet.|ईक्षुदण्डः|nature
+पक्षिगणः उड्डयति।|A flock of birds flies.|पक्षिगणः|nature
+वृक्षवाटी रम्या अस्ति।|The tree-garden is lovely.|वृक्षवाटी|nature
+नीलपक्षः खगः उड्डयति।|The blue-winged bird flies.|नीलपक्षः|nature
+क्षुद्रखगः नीडे वसति।|The tiny bird lives in the nest.|क्षुद्रखगः|nature
+ईक्षुक्षेत्रं हरितम् अस्ति।|The sugarcane field is green.|ईक्षुक्षेत्रम्|nature
+रक्षावनं रम्यम् अस्ति।|The protected forest is lovely.|रक्षावनम्|nature
+कक्षगुल्मः घनः अस्ति।|The thicket in the hollow is dense.|कक्षगुल्मः|nature
+दक्षिणवायुः वहति।|The south wind blows.|दक्षिणवायुः|nature
+यज्ञवृक्षः वने रोहति।|The ritual-tree grows in the forest.|यज्ञवृक्षः|nature
+यज्ञकुसुमं रक्तं विकसति।|The ritual flower blooms red.|यज्ञकुसुमम्|nature
+संज्ञातरुः फलति।|The marked tree bears fruit.|संज्ञातरुः|nature
+प्रज्ञापक्षी उड्डयति।|The wise bird flies.|प्रज्ञापक्षी|nature
+विज्ञसरः स्वच्छः अस्ति।|The clear lake is pure.|विज्ञसरः|nature
+अज्ञेयकन्दरः गभीरः अस्ति।|The unknown cave is deep.|अज्ञेयकन्दरः|nature
+जिज्ञासाहंसः सरसि तरति।|The curious swan floats on the lake.|जिज्ञासाहंसः|nature
+सुज्ञमयूरः नृत्यति।|The clever peacock dances.|सुज्ञमयूरः|nature
+परिज्ञातगिरिः शोभते।|The well-known mountain shines.|परिज्ञातगिरिः|nature
+आज्ञापवनः मृदु वहति।|The gentle command-wind blows softly.|आज्ञापवनः|nature
+पत्रिगणः उड्डयति।|A flock of winged birds flies.|पत्रिगणः|nature
+सपत्रतरुः शोभते।|The leafy tree looks lovely.|सपत्रतरुः|nature
+त्रिदलपुष्पं विकसति।|The three-petaled flower blooms.|त्रिदलपुष्पम्|nature
+रात्रिखगः उड्डयति।|The night-bird flies.|रात्रिखगः|nature
+उत्पलपत्रं हरितम् अस्ति।|The lotus leaf is green.|उत्पलपत्रम्|nature
+त्रिधारा गिरेः पतति।|A triple stream falls from the mountain.|त्रिधारा|nature
+मित्रवनं रम्यम् अस्ति।|The friendly forest is lovely.|मित्रवनम्|nature
+पत्रशयनं कोमलम् अस्ति।|The leaf-bed is soft.|पत्रशयनम्|nature
+अत्रिसरः शीतलः अस्ति।|Atri’s lake is cool.|अत्रिसरः|nature
+गोत्रतरुः छायां ददाति।|The clan-tree gives shade.|गोत्रतरुः|nature
