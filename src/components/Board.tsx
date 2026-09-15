@@ -232,6 +232,16 @@ const Board: React.FC = () => {
   // जोडो joins (क+आ) stay multi-tap. Question-words (कः on a tile) are one tap.
   const isJodoSkin = (!activeBoardShelf || activeBoardShelf.skin === 'जोडो') && !targetIsWholeTile;
 
+  const shownTarget = (activePuzzle?.prompt ?? activePuzzle?.target) || '';
+  const hasBlank = shownTarget.includes('____')
+    || activeBoardShelf?.skin === 'रिक्तम्'
+    || isPrashnaPart;
+  const wrongAttemptMessage = hasBlank
+    ? 'Not that tile. Click the cream tile that fills the blank, then click Check again.'
+    : isJodoSkin
+      ? 'Not those tiles. Click the right letter and vowel (any order), then click Check again.'
+      : 'Not that tile. Click a different cream tile, then click Check again.';
+
   const toggleTile = (tile: string) => {
     if (checked) return;
     const clean = cleanTile(tile);
@@ -331,7 +341,7 @@ const Board: React.FC = () => {
           </div>
         )}
         {wrongAttempt && (
-          <div className="puzzle-result"><strong>Not that tile. Click the word that fills the blank, then Check again.</strong></div>
+          <div className="puzzle-result"><strong>{wrongAttemptMessage}</strong></div>
         )}
       </section>
 
