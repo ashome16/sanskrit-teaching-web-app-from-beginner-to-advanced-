@@ -94,3 +94,4 @@
 शङ्खः नादं करोति।|The conch makes a sound.|शङ्खः|sanskriti
 उत्सवः आनन्दं आनयति।|The festival brings joy.|उत्सवः|sanskriti
 छात्रः ग्रन्थं स्थापयति।|The student places the scripture down.|ग्रन्थं|sanskriti
+नदी पर्वतात् आगच्छति।|The river comes from the mountain.|नदी|nature
