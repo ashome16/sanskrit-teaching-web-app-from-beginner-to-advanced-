@@ -1049,3 +1049,43 @@
 नम्नसरः शीतलः।|A humble lake is cool.|नम्नसरः|nature
 नम्नगिरिः उन्नतः।|Humble-mountain is tall.|नम्नगिरिः|nature
 नम्नकमलं विकसति।|A humble lotus blooms.|नम्नकमलम्|nature
+स्फुटपवनः वहति।|A bursting breeze blows.|स्फुटपवनः|nature
+स्फुटखगः कूजति।|A bursting bird calls.|स्फुटखगः|nature
+स्फुटपुष्पं विकसति।|A bursting flower blooms.|स्फुटपुष्पम्|nature
+स्फुटमेघः गर्जति।|A bursting cloud thunders.|स्फुटमेघः|nature
+स्फुटतरुः फलति।|A bursting tree bears fruit.|स्फुटतरुः|nature
+स्फुटसरः शीतलः।|A bursting lake is cool.|स्फुटसरः|nature
+स्फुटगिरिः उन्नतः।|Bursting-mountain is tall.|स्फुटगिरिः|nature
+स्फुटकमलं विकसति।|A bursting lotus blooms.|स्फुटकमलम्|nature
+स्थलपवनः वहति।|A land breeze blows.|स्थलपवनः|nature
+स्थलखगः कूजति।|A land bird calls.|स्थलखगः|nature
+स्थलपुष्पं विकसति।|A land flower blooms.|स्थलपुष्पम्|nature
+स्थलमेघः गर्जति।|A land cloud thunders.|स्थलमेघः|nature
+स्थलतरुः हरितः।|A land tree is green.|स्थलतरुः|nature
+स्थलसरः रम्यः।|A land lake is lovely.|स्थलसरः|nature
+स्थलगिरिः उन्नतः।|Land-mountain is tall.|स्थलगिरिः|nature
+स्थलकमलं विकसति।|A land lotus blooms.|स्थलकमलम्|nature
+पश्चपवनः वहति।|A western breeze blows.|पश्चपवनः|nature
+पश्चखगः कूजति।|A western bird calls.|पश्चखगः|nature
+पश्चपुष्पं विकसति।|A western flower blooms.|पश्चपुष्पम्|nature
+पश्चमेघः गर्जति।|A western cloud thunders.|पश्चमेघः|nature
+पश्चतरुः फलति।|A western tree bears fruit.|पश्चतरुः|nature
+पश्चसरः शीतलः।|A western lake is cool.|पश्चसरः|nature
+पश्चगिरिः उन्नतः।|Western-mountain is tall.|पश्चगिरिः|nature
+पश्चकमलं विकसति।|A western lotus blooms.|पश्चकमलम्|nature
+श्कपवनः वहति।|A shka breeze blows.|श्कपवनः|nature
+श्कखगः कूजति।|A shka bird calls.|श्कखगः|nature
+श्कपुष्पं विकसति।|A shka flower blooms.|श्कपुष्पम्|nature
+श्कमेघः गर्जति।|A shka cloud thunders.|श्कमेघः|nature
+श्कतरुः हरितः।|A shka tree is green.|श्कतरुः|nature
+श्कसरः रम्यः।|A shka lake is lovely.|श्कसरः|nature
+श्कगिरिः उन्नतः।|Shka-mountain is tall.|श्कगिरिः|nature
+श्ककमलं विकसति।|A shka lotus blooms.|श्ककमलम्|nature
+कल्कपवनः वहति।|A kalka breeze blows.|कल्कपवनः|nature
+कल्कखगः कूजति।|A kalka bird calls.|कल्कखगः|nature
+कल्कपुष्पं विकसति।|A kalka flower blooms.|कल्कपुष्पम्|nature
+कल्कमेघः गर्जति।|A kalka cloud thunders.|कल्कमेघः|nature
+कल्कतरुः फलति।|A kalka tree bears fruit.|कल्कतरुः|nature
+कल्कसरः शीतलः।|A kalka lake is cool.|कल्कसरः|nature
+कल्कगिरिः उन्नतः।|Kalka-mountain is tall.|कल्कगिरिः|nature
+कल्ककमलं विकसति।|A kalka lotus blooms.|कल्ककमलम्|nature

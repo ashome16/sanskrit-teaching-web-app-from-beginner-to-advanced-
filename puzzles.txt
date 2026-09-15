@@ -957,6 +957,51 @@
 जोडो|म्नै|म्नै|म्न,ऐ,क,त,आ,इ|म्नैः सह पवनः वहति।|With mnai the breeze blows.|म्न plus ऐ makes म्नै.
 जोडो|म्नो|म्नो|म्न,ओ,क,त,आ,इ|म्नो रम्यः अस्ति।|The mno is lovely.|म्न plus ओ makes म्नो.
 जोडो|म्नौ|म्नौ|म्न,औ,क,त,आ,इ|म्नौ द्वौ स्तः।|Two mnau-forms are there.|म्न plus औ makes म्नौ.
+जोडो|स्फा|स्फा|स्फ,आ,क,त,इ,उ|स्फाटिकं स्वच्छं अस्ति।|The crystal is clear.|स्फ plus आ makes स्फा.
+जोडो|स्फि|स्फि|स्फ,इ,क,त,आ,उ|स्फि खगः कूजति।|A sphi-bird calls.|स्फ plus इ makes स्फि.
+जोडो|स्फी|स्फी|स्फ,ई,क,त,आ,इ|स्फी द्वौ स्तः।|Two sphi-forms are there.|स्फ plus ई makes स्फी.
+जोडो|स्फु|स्फु|स्फ,उ,क,त,आ,इ|स्फुटति पुष्पं प्रातः।|The flower bursts open at dawn.|स्फ plus उ makes स्फु.
+जोडो|स्फू|स्फू|स्फ,ऊ,क,त,आ,इ|स्फू द्वौ स्तः।|Two sphu-forms are there.|स्फ plus ऊ makes स्फू.
+जोडो|स्फे|स्फे|स्फ,ए,क,त,आ,इ|स्फे पुष्पं विकसति।|A flower blooms at sphe.|स्फ plus ए makes स्फे.
+जोडो|स्फै|स्फै|स्फ,ऐ,क,त,आ,इ|स्फैः सह पवनः वहति।|With sphai the breeze blows.|स्फ plus ऐ makes स्फै.
+जोडो|स्फो|स्फो|स्फ,ओ,क,त,आ,इ|स्फो रम्यः अस्ति।|The spho is lovely.|स्फ plus ओ makes स्फो.
+जोडो|स्फौ|स्फौ|स्फ,औ,क,त,आ,इ|स्फौ द्वौ स्तः।|Two sphau-forms are there.|स्फ plus औ makes स्फौ.
+जोडो|स्था|स्था|स्थ,आ,क,त,इ,उ|स्थानं रम्यं अस्ति।|The place is lovely.|स्थ plus आ makes स्था.
+जोडो|स्थि|स्थि|स्थ,इ,क,त,आ,उ|स्थितिः शान्ता अस्ति।|The situation is peaceful.|स्थ plus इ makes स्थि.
+जोडो|स्थी|स्थी|स्थ,ई,क,त,आ,इ|स्थी द्वौ स्तः।|Two sthi-forms are there.|स्थ plus ई makes स्थी.
+जोडो|स्थु|स्थु|स्थ,उ,क,त,आ,इ|स्थुं बालकः पश्यति।|The boy sees the sthu.|स्थ plus उ makes स्थु.
+जोडो|स्थू|स्थू|स्थ,ऊ,क,त,आ,इ|स्थूलः गजः मन्दं चलति।|The large elephant walks slowly.|स्थ plus ऊ makes स्थू.
+जोडो|स्थे|स्थे|स्थ,ए,क,त,आ,इ|स्थे पुष्पं विकसति।|A flower blooms at sthe.|स्थ plus ए makes स्थे.
+जोडो|स्थै|स्थै|स्थ,ऐ,क,त,आ,इ|स्थैः सह पवनः वहति।|With sthai the breeze blows.|स्थ plus ऐ makes स्थै.
+जोडो|स्थो|स्थो|स्थ,ओ,क,त,आ,इ|स्थो रम्यः अस्ति।|The stho is lovely.|स्थ plus ओ makes स्थो.
+जोडो|स्थौ|स्थौ|स्थ,औ,क,त,आ,इ|स्थौ द्वौ स्तः।|Two sthau-forms are there.|स्थ plus औ makes स्थौ.
+जोडो|श्चा|श्चा|श्च,आ,क,त,इ,उ|पश्चात् सूर्यः अस्तं गच्छति।|Afterwards the sun sets.|श्च plus आ makes श्चा.
+जोडो|श्चि|श्चि|श्च,इ,क,त,आ,उ|श्चि खगः कूजति।|A shci-bird calls.|श्च plus इ makes श्चि.
+जोडो|श्ची|श्ची|श्च,ई,क,त,आ,इ|श्ची द्वौ स्तः।|Two shci-forms are there.|श्च plus ई makes श्ची.
+जोडो|श्चु|श्चु|श्च,उ,क,त,आ,इ|श्चुं बालकः पश्यति।|The boy sees the shcu.|श्च plus उ makes श्चु.
+जोडो|श्चू|श्चू|श्च,ऊ,क,त,आ,इ|श्चू द्वौ स्तः।|Two shcu-forms are there.|श्च plus ऊ makes श्चू.
+जोडो|श्चे|श्चे|श्च,ए,क,त,आ,इ|श्चे पुष्पं विकसति।|A flower blooms at shce.|श्च plus ए makes श्चे.
+जोडो|श्चै|श्चै|श्च,ऐ,क,त,आ,इ|श्चैः सह पवनः वहति।|With shcai the breeze blows.|श्च plus ऐ makes श्चै.
+जोडो|श्चो|श्चो|श्च,ओ,क,त,आ,इ|श्चो रम्यः अस्ति।|The shco is lovely.|श्च plus ओ makes श्चो.
+जोडो|श्चौ|श्चौ|श्च,औ,क,त,आ,इ|श्चौ द्वौ स्तः।|Two shcau-forms are there.|श्च plus औ makes श्चौ.
+जोडो|श्का|श्का|श्क,आ,क,त,इ,उ|श्का रूपं शोभते।|The shka-form looks lovely.|श्क plus आ makes श्का.
+जोडो|श्कि|श्कि|श्क,इ,क,त,आ,उ|श्कि खगः कूजति।|A shki-bird calls.|श्क plus इ makes श्कि.
+जोडो|श्की|श्की|श्क,ई,क,त,आ,इ|श्की द्वौ स्तः।|Two shki-forms are there.|श्क plus ई makes श्की.
+जोडो|श्कु|श्कु|श्क,उ,क,त,आ,इ|श्कुं बालकः पश्यति।|The boy sees the shku.|श्क plus उ makes श्कु.
+जोडो|श्कू|श्कू|श्क,ऊ,क,त,आ,इ|श्कू द्वौ स्तः।|Two shku-forms are there.|श्क plus ऊ makes श्कू.
+जोडो|श्के|श्के|श्क,ए,क,त,आ,इ|श्के पुष्पं विकसति।|A flower blooms at shke.|श्क plus ए makes श्के.
+जोडो|श्कै|श्कै|श्क,ऐ,क,त,आ,इ|श्कैः सह पवनः वहति।|With shkai the breeze blows.|श्क plus ऐ makes श्कै.
+जोडो|श्को|श्को|श्क,ओ,क,त,आ,इ|श्को रम्यः अस्ति।|The shko is lovely.|श्क plus ओ makes श्को.
+जोडो|श्कौ|श्कौ|श्क,औ,क,त,आ,इ|श्कौ द्वौ स्तः।|Two shkau-forms are there.|श्क plus औ makes श्कौ.
+जोडो|ल्का|ल्का|ल्क,आ,क,त,इ,उ|कल्का लेपः शोभते।|The paste coating looks fine.|ल्क plus आ makes ल्का.
+जोडो|ल्कि|ल्कि|ल्क,इ,क,त,आ,उ|ल्कि खगः कूजति।|A lki-bird calls.|ल्क plus इ makes ल्कि.
+जोडो|ल्की|ल्की|ल्क,ई,क,त,आ,इ|ल्की द्वौ स्तः।|Two lki-forms are there.|ल्क plus ई makes ल्की.
+जोडो|ल्कु|ल्कु|ल्क,उ,क,त,आ,इ|ल्कुं बालकः पश्यति।|The boy sees the lku.|ल्क plus उ makes ल्कु.
+जोडो|ल्कू|ल्कू|ल्क,ऊ,क,त,आ,इ|ल्कू द्वौ स्तः।|Two lku-forms are there.|ल्क plus ऊ makes ल्कू.
+जोडो|ल्के|ल्के|ल्क,ए,क,त,आ,इ|ल्के पुष्पं विकसति।|A flower blooms at lke.|ल्क plus ए makes ल्के.
+जोडो|ल्कै|ल्कै|ल्क,ऐ,क,त,आ,इ|ल्कैः सह पवनः वहति।|With lkai the breeze blows.|ल्क plus ऐ makes ल्कै.
+जोडो|ल्को|ल्को|ल्क,ओ,क,त,आ,इ|ल्को रम्यः अस्ति।|The lko is lovely.|ल्क plus ओ makes ल्को.
+जोडो|ल्कौ|ल्कौ|ल्क,औ,क,त,आ,इ|ल्कौ द्वौ स्तः।|Two lkau-forms are there.|ल्क plus औ makes ल्कौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
