@@ -307,6 +307,86 @@
         "phase": "jodo"
       },
       {
+        "target": "कु",
+        "tiles": [
+          "क",
+          "उ",
+          "ख",
+          "ग",
+          "आ",
+          "इ"
+        ],
+        "english": "The rooster crows at dawn.",
+        "explanation": "क plus उ makes कु.",
+        "sentence": "कुक्कुटः प्रातः कूजति।",
+        "highlight": "कु",
+        "phase": "jodo"
+      },
+      {
+        "target": "मु",
+        "tiles": [
+          "म",
+          "उ",
+          "क",
+          "प",
+          "आ",
+          "इ"
+        ],
+        "english": "The face smiles.",
+        "explanation": "म plus उ makes मु.",
+        "sentence": "मुखं हसति।",
+        "highlight": "मु",
+        "phase": "jodo"
+      },
+      {
+        "target": "सु",
+        "tiles": [
+          "स",
+          "उ",
+          "क",
+          "म",
+          "आ",
+          "इ"
+        ],
+        "english": "The son plays.",
+        "explanation": "स plus उ makes सु.",
+        "sentence": "सुतः क्रीडति।",
+        "highlight": "सु",
+        "phase": "jodo"
+      },
+      {
+        "target": "पु",
+        "tiles": [
+          "प",
+          "उ",
+          "क",
+          "म",
+          "आ",
+          "इ"
+        ],
+        "english": "The flower blooms.",
+        "explanation": "प plus उ makes पु.",
+        "sentence": "पुष्पं विकसति।",
+        "highlight": "पु",
+        "phase": "jodo"
+      },
+      {
+        "target": "नु",
+        "tiles": [
+          "न",
+          "उ",
+          "प",
+          "क",
+          "आ",
+          "इ"
+        ],
+        "english": "The younger brother plays.",
+        "explanation": "न plus उ makes नु.",
+        "sentence": "अनुजः क्रीडति।",
+        "highlight": "नु",
+        "phase": "jodo"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -1525,6 +1605,96 @@
         "sentence": "नदी पर्वतात् आगच्छति।",
         "english": "The river comes from the mountain.",
         "highlight": "नदी"
+      },
+      {
+        "prompt": "____ जले तरति।",
+        "target": "हंसः",
+        "tiles": [
+          "हंसः",
+          "मयूरः",
+          "मत्स्यः",
+          "कपोतः",
+          "चटकः",
+          "उलूकः"
+        ],
+        "sentence": "हंसः जले तरति।",
+        "english": "The swan swims in the water.",
+        "highlight": "हंसः"
+      },
+      {
+        "prompt": "____ पुष्पे पतति।",
+        "target": "भ्रमरः",
+        "tiles": [
+          "भ्रमरः",
+          "मयूरः",
+          "कपोतः",
+          "चटकः",
+          "हंसः",
+          "पुष्पम्"
+        ],
+        "sentence": "भ्रमरः पुष्पे पतति।",
+        "english": "The bee lands on the flower.",
+        "highlight": "भ्रमरः"
+      },
+      {
+        "prompt": "____ वृक्षे कूजति।",
+        "target": "चटकः",
+        "tiles": [
+          "चटकः",
+          "कपोतः",
+          "मयूरः",
+          "उलूकः",
+          "हंसः",
+          "कुक्कुटः"
+        ],
+        "sentence": "चटकः वृक्षे कूजति।",
+        "english": "The sparrow chirps on the tree.",
+        "highlight": "चटकः"
+      },
+      {
+        "prompt": "____ स्वादु अस्ति।",
+        "target": "जलम्",
+        "tiles": [
+          "जलम्",
+          "नदी",
+          "मेघः",
+          "फलम्",
+          "पुष्पम्",
+          "वनम्"
+        ],
+        "sentence": "जलं स्वादु अस्ति।",
+        "english": "The water tastes sweet.",
+        "highlight": "जलं"
+      },
+      {
+        "prompt": "____ हिमं अस्ति।",
+        "target": "पर्वतः",
+        "tiles": [
+          "पर्वतः",
+          "नदी",
+          "वनम्",
+          "मेघः",
+          "भूमिः",
+          "आकाशः"
+        ],
+        "sentence": "पर्वते हिमं अस्ति।",
+        "english": "There is snow on the mountain.",
+        "highlight": "पर्वते"
+      },
+      {
+        "prompt": "____ जलं पिबति।",
+        "target": "गजः",
+        "tiles": [
+          "गजः",
+          "अश्वः",
+          "सिंहः",
+          "मयूरः",
+          "हंसः",
+          "मृगः"
+        ],
+        "sentence": "गजः जलं पिबति।",
+        "english": "The elephant drinks water.",
+        "highlight": "गजः"
       }
     ]
   },
