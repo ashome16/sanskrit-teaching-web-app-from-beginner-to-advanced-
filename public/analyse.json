@@ -1148,15 +1148,15 @@
   },
   "पठितवती": {
     "word": "पठितवती",
-    "base_english": "Read",
+    "base_english": "Read (feminine singular past, paṭh + ktavatu)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Read"
+        "meaning": "Read (feminine singular past, paṭh + ktavatu)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "पढ़ा था [स्त्रीलिंग]"
+        "meaning": "पढ़ी / पढ़ने वाली (स्त्रीलिंग एकवचन)"
       }
     }
   },
@@ -4672,11 +4672,15 @@
   },
   "तु": {
     "word": "तु",
-    "base_english": "Indeed / But",
+    "base_english": "Indeed / But / On the other hand",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Indeed / But"
+        "meaning": "Indeed / But / On the other hand"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तो / किन्तु (अव्यय)"
       }
     }
   },
@@ -4726,11 +4730,15 @@
   },
   "जनाः": {
     "word": "जनाः",
-    "base_english": "People",
+    "base_english": "People (prathamā plural)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "People"
+        "meaning": "People (prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लोग (प्रथमा बहुवचन)"
       }
     }
   },
@@ -20040,15 +20048,15 @@
   },
   "गतवान्": {
     "word": "गतवान्",
-    "base_english": "Went / Moved (gam + ktavatu)",
+    "base_english": "Went (masculine singular past, gam + ktavatu)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Went / Moved (gam + ktavatu)"
+        "meaning": "Went (masculine singular past, gam + ktavatu)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "चला गया (गम् + क्तवतु प्रत्यय)"
+        "meaning": "गया (पुल्लिंग एकवचन)"
       }
     }
   },
@@ -20469,6 +20477,3072 @@
       "hi": {
         "label": "हिन्दी",
         "meaning": "रहना / बने रहना"
+      }
+    }
+  },
+  "दिवसे": {
+    "word": "दिवसे",
+    "base_english": "On the day (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "On the day (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दिन में / दिन पर (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "कौ": {
+    "word": "कौ",
+    "base_english": "Which two / Who both (masculine dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Which two / Who both (masculine dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कौन दोनों (किम् पुल्लिंग प्रथमा द्विवचन)"
+      }
+    }
+  },
+  "आगतौ": {
+    "word": "आगतौ",
+    "base_english": "The two came / arrived (past participle dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The two came / arrived (past participle dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दोनों आए (आ + गम् + क्त प्रत्यय द्विवचन)"
+      }
+    }
+  },
+  "रुग्णस्य": {
+    "word": "रुग्णस्य",
+    "base_english": "Of the patient / sick person (genitive singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the patient / sick person (genitive singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोगी के / बीमार के (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "स्थिति": {
+    "word": "स्थिति",
+    "base_english": "Condition / State / Situation",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Condition / State / Situation"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हालत / स्थिति"
+      }
+    }
+  },
+  "कैसी": {
+    "word": "कैसी",
+    "base_english": "How / Of what kind (Hindi feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "How / Of what kind"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कैसी"
+      }
+    }
+  },
+  "सहायकरूपेण": {
+    "word": "सहायकरूपेण",
+    "base_english": "In the role of an assistant (tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the role of an assistant (tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सहायक के रूप में (तृतीया एकवचन)"
+      }
+    }
+  },
+  "केन": {
+    "word": "केन",
+    "base_english": "By which / By what (masculine/neuter tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By which / By what (masculine/neuter tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किससे / किस (मार्ग) से (तृतीया एकवचन)"
+      }
+    }
+  },
+  "किस": {
+    "word": "किस",
+    "base_english": "Which / What (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Which / What"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किस"
+      }
+    }
+  },
+  "गन्तुं": {
+    "word": "गन्तुं",
+    "base_english": "To go (gam + tumun)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To go (gam + tumun)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जाने के लिए / जाने को (तुमुन् प्रत्यय)"
+      }
+    }
+  },
+  "मार्गेण": {
+    "word": "मार्गेण",
+    "base_english": "By the way / By the path (tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By the way / By the path (tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रास्ते से / मार्ग से (तृतीया एकवचन)"
+      }
+    }
+  },
+  "ज्वरं": {
+    "word": "ज्वरं",
+    "base_english": "Fever (dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fever (dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बुखार को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "समस्याओं": {
+    "word": "समस्याओं",
+    "base_english": "Problems (Hindi plural oblique)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Problems"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "समस्याओं"
+      }
+    }
+  },
+  "क्तवतु": {
+    "word": "क्तवतु",
+    "base_english": "Ktavatu (past active participle suffix -vān / -vatī / -vat)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ktavatu (past active participle suffix denoting completed action by the agent)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "क्तवतु प्रत्यय (भूतकाल में कर्ता अर्थ में प्रयुक्त)"
+      }
+    }
+  },
+  "प्रत्यय": {
+    "word": "प्रत्यय",
+    "base_english": "Suffix / Affix (Grammar)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Suffix / Affix (Grammar)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रत्यय (शब्द के अंत में जुड़ने वाला अंश)"
+      }
+    }
+  },
+  "स्त्रीलिङ्ग": {
+    "word": "स्त्रीलिङ्ग",
+    "base_english": "Feminine gender",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Feminine gender"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "स्त्रीलिंग"
+      }
+    }
+  },
+  "स्त्रीलिंग": {
+    "word": "स्त्रीलिंग",
+    "base_english": "Feminine gender (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Feminine gender"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "स्त्रीलिंग"
+      }
+    }
+  },
+  "स्त्रीलिङ्गरूपाणि": {
+    "word": "स्त्रीलिङ्गरूपाणि",
+    "base_english": "Feminine gender forms (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Feminine gender forms (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "स्त्रीलिंग के रूप"
+      }
+    }
+  },
+  "पुंलिङ्ग": {
+    "word": "पुंलिङ्ग",
+    "base_english": "Masculine gender",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Masculine gender"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पुल्लिंग"
+      }
+    }
+  },
+  "पुल्लिंग": {
+    "word": "पुल्लिंग",
+    "base_english": "Masculine gender (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Masculine gender"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पुल्लिंग"
+      }
+    }
+  },
+  "पुंलिङ्गरूपाणि": {
+    "word": "पुंलिङ्गरूपाणि",
+    "base_english": "Masculine gender forms (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Masculine gender forms (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पुल्लिंग के रूप"
+      }
+    }
+  },
+  "पदानां": {
+    "word": "पदानां",
+    "base_english": "Of the words / terms (genitive plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the words / terms (genitive plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पदों का / शब्दों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "वती": {
+    "word": "वती",
+    "base_english": "-vatī (feminine singular suffix for ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "-vatī (feminine singular suffix for ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "-वती (क्तवतु स्त्रीलिंग एकवचन प्रत्यय)"
+      }
+    }
+  },
+  "वत्यः": {
+    "word": "वत्यः",
+    "base_english": "-vatyaḥ (feminine plural suffix for ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "-vatyaḥ (feminine plural suffix for ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "-वत्यः (क्तवतु स्त्रीलिंग बहुवचन प्रत्यय)"
+      }
+    }
+  },
+  "वान्": {
+    "word": "वान्",
+    "base_english": "-vān (masculine singular suffix for ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "-vān (masculine singular suffix for ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "-वान् (क्तवतु पुल्लिंग एकवचन प्रत्यय)"
+      }
+    }
+  },
+  "वन्तः": {
+    "word": "वन्तः",
+    "base_english": "-vantaḥ (masculine plural suffix for ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "-vantaḥ (masculine plural suffix for ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "-वन्तः (क्तवतु पुल्लिंग बहुवचन प्रत्यय)"
+      }
+    }
+  },
+  "जुड़ता": {
+    "word": "जुड़ता",
+    "base_english": "Attaches / Joins (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Attaches / Joins"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जुड़ता है"
+      }
+    }
+  },
+  "वाली": {
+    "word": "वाली",
+    "base_english": "One who does (feminine agent marker in Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "One who does (feminine agent marker)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वाली (स्त्रीलिंग कर्ता प्रत्यय)"
+      }
+    }
+  },
+  "पठितवान्": {
+    "word": "पठितवान्",
+    "base_english": "Read (masculine singular past, paṭh + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Read (masculine singular past, paṭh + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़ा / पढ़ने वाला (पुल्लिंग एकवचन)"
+      }
+    }
+  },
+  "पठितवत्यः": {
+    "word": "पठितवत्यः",
+    "base_english": "Read (feminine plural past, paṭh + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Read (feminine plural past, paṭh + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़ीं / पढ़ने वाली स्त्रियाँ (स्त्रीलिंग बहुवचन)"
+      }
+    }
+  },
+  "पठितवन्तः": {
+    "word": "पठितवन्तः",
+    "base_english": "Read (masculine plural past, paṭh + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Read (masculine plural past, paṭh + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़े / पढ़ने वाले लोग (पुल्लिंग बहुवचन)"
+      }
+    }
+  },
+  "पढ़ा": {
+    "word": "पढ़ा",
+    "base_english": "Read (Hindi past)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Read"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़ा"
+      }
+    }
+  },
+  "पढ़ने": {
+    "word": "पढ़ने",
+    "base_english": "Reading (Hindi oblique)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Reading"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़ने"
+      }
+    }
+  },
+  "गतवती": {
+    "word": "गतवती",
+    "base_english": "Went (feminine singular past, gam + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Went (feminine singular past, gam + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गई (स्त्रीलिंग एकवचन)"
+      }
+    }
+  },
+  "गतवत्यः": {
+    "word": "गतवत्यः",
+    "base_english": "Went (feminine plural past, gam + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Went (feminine plural past, gam + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गईं (स्त्रीलिंग बहुवचन)"
+      }
+    }
+  },
+  "लिखितवान्": {
+    "word": "लिखितवान्",
+    "base_english": "Wrote (masculine singular past, likh + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wrote (masculine singular past, likh + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लिखा (पुल्लिंग एकवचन)"
+      }
+    }
+  },
+  "लिखितवती": {
+    "word": "लिखितवती",
+    "base_english": "Wrote (feminine singular past, likh + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wrote (feminine singular past, likh + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लिखी (स्त्रीलिंग एकवचन)"
+      }
+    }
+  },
+  "लिखितवत्यः": {
+    "word": "लिखितवत्यः",
+    "base_english": "Wrote (feminine plural past, likh + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wrote (feminine plural past, likh + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लिखीं (स्त्रीलिंग बहुवचन)"
+      }
+    }
+  },
+  "लिखा": {
+    "word": "लिखा",
+    "base_english": "Wrote (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wrote"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लिखा"
+      }
+    }
+  },
+  "लिखने": {
+    "word": "लिखने",
+    "base_english": "Writing (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Writing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लिखने"
+      }
+    }
+  },
+  "खादितवान्": {
+    "word": "खादितवान्",
+    "base_english": "Ate (masculine singular past, khād + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ate (masculine singular past, khād + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खाया (पुल्लिंग एकवचन)"
+      }
+    }
+  },
+  "खादितवती": {
+    "word": "खादितवती",
+    "base_english": "Ate (feminine singular past, khād + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ate (feminine singular past, khād + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खाई (स्त्रीलिंग एकवचन)"
+      }
+    }
+  },
+  "खादितवत्यः": {
+    "word": "खादितवत्यः",
+    "base_english": "Ate (feminine plural past, khād + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ate (feminine plural past, khād + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खाईं (स्त्रीलिंग बहुवचन)"
+      }
+    }
+  },
+  "खादितवन्तः": {
+    "word": "खादितवन्तः",
+    "base_english": "Ate (masculine plural past, khād + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ate (masculine plural past, khād + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खाए (पुल्लिंग बहुवचन)"
+      }
+    }
+  },
+  "खाया": {
+    "word": "खाया",
+    "base_english": "Ate (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ate"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खाया"
+      }
+    }
+  },
+  "खाई": {
+    "word": "खाई",
+    "base_english": "Ate (Hindi feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ate"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खाई"
+      }
+    }
+  },
+  "खाने": {
+    "word": "खाने",
+    "base_english": "Eating (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Eating"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खाने"
+      }
+    }
+  },
+  "क्रीडितवान्": {
+    "word": "क्रीडितवान्",
+    "base_english": "Played (masculine singular past, krīḍ + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Played (masculine singular past, krīḍ + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेला (पुल्लिंग एकवचन)"
+      }
+    }
+  },
+  "क्रीडितवती": {
+    "word": "क्रीडितवती",
+    "base_english": "Played (feminine singular past, krīḍ + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Played (feminine singular past, krīḍ + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेली (स्त्रीलिंग एकवचन)"
+      }
+    }
+  },
+  "क्रीडितवत्यः": {
+    "word": "क्रीडितवत्यः",
+    "base_english": "Played (feminine plural past, krīḍ + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Played (feminine plural past, krīḍ + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेलीं (स्त्रीलिंग बहुवचन)"
+      }
+    }
+  },
+  "खेला": {
+    "word": "खेला",
+    "base_english": "Played (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Played"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेला"
+      }
+    }
+  },
+  "खेलने": {
+    "word": "खेलने",
+    "base_english": "Playing (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Playing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेलने"
+      }
+    }
+  },
+  "हसितवान्": {
+    "word": "हसितवान्",
+    "base_english": "Laughed (masculine singular past, has + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Laughed (masculine singular past, has + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हँसा (पुल्लिंग एकवचन)"
+      }
+    }
+  },
+  "हसितवती": {
+    "word": "हसितवती",
+    "base_english": "Laughed (feminine singular past, has + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Laughed (feminine singular past, has + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हँसी (स्त्रीलिंग एकवचन)"
+      }
+    }
+  },
+  "हसितवत्यः": {
+    "word": "हसितवत्यः",
+    "base_english": "Laughed (feminine plural past, has + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Laughed (feminine plural past, has + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हँसीं (स्त्रीलिंग बहुवचन)"
+      }
+    }
+  },
+  "हँसा": {
+    "word": "हँसा",
+    "base_english": "Laughed (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Laughed"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हँसा"
+      }
+    }
+  },
+  "हँसने": {
+    "word": "हँसने",
+    "base_english": "Laughing (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Laughing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हँसने"
+      }
+    }
+  },
+  "निवेदितवती": {
+    "word": "निवेदितवती",
+    "base_english": "Requested (feminine singular past)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Requested (feminine singular past)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "निवेदन किया (स्त्रीलिंग एकवचन)"
+      }
+    }
+  },
+  "निवेदितवत्यः": {
+    "word": "निवेदितवत्यः",
+    "base_english": "Requested (feminine plural past)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Requested (feminine plural past)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "निवेदन किया (स्त्रीलिंग बहुवचन)"
+      }
+    }
+  },
+  "सूचितवती": {
+    "word": "सूचितवती",
+    "base_english": "Informed / Instructed (feminine singular past)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Informed / Instructed (feminine singular past)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सूचित किया / निर्देश दिया (स्त्रीलिंग एकवचन)"
+      }
+    }
+  },
+  "सूचितवत्यः": {
+    "word": "सूचितवत्यः",
+    "base_english": "Informed / Instructed (feminine plural past)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Informed / Instructed (feminine plural past)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सूचित किया (स्त्रीलिंग बहुवचन)"
+      }
+    }
+  },
+  "सूचित": {
+    "word": "सूचित",
+    "base_english": "Informed / Instructed",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Informed / Instructed"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सूचित"
+      }
+    }
+  },
+  "कृतवती": {
+    "word": "कृतवती",
+    "base_english": "Did / Performed (feminine singular past, kṛ + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Did / Performed (feminine singular past, kṛ + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किया (स्त्रीलिंग एकवचन)"
+      }
+    }
+  },
+  "कृतवन्तः": {
+    "word": "कृतवन्तः",
+    "base_english": "Did / Performed (masculine plural past, kṛ + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Did / Performed (masculine plural past, kṛ + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किया / किए (पुल्लिंग बहुवचन)"
+      }
+    }
+  },
+  "दृष्टवती": {
+    "word": "दृष्टवती",
+    "base_english": "Saw / Watched (feminine singular past, dṛś + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Saw / Watched (feminine singular past, dṛś + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देखी / देखा (स्त्रीलिंग एकवचन)"
+      }
+    }
+  },
+  "दृष्टवन्तः": {
+    "word": "दृष्टवन्तः",
+    "base_english": "Saw / Watched (masculine plural past, dṛś + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Saw / Watched (masculine plural past, dṛś + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देखे (पुल्लिंग बहुवचन)"
+      }
+    }
+  },
+  "देखी": {
+    "word": "देखी",
+    "base_english": "Saw (Hindi feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Saw"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देखी"
+      }
+    }
+  },
+  "देखती": {
+    "word": "देखती",
+    "base_english": "Sees / Watches (Hindi feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sees / Watches"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देखती"
+      }
+    }
+  },
+  "दत्तवती": {
+    "word": "दत्तवती",
+    "base_english": "Gave (feminine singular past, dā + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Gave (feminine singular past, dā + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दिया / दी (स्त्रीलिंग एकवचन)"
+      }
+    }
+  },
+  "दत्तवन्तः": {
+    "word": "दत्तवन्तः",
+    "base_english": "Gave (masculine plural past, dā + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Gave (masculine plural past, dā + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दिए (पुल्लिंग बहुवचन)"
+      }
+    }
+  },
+  "देती": {
+    "word": "देती",
+    "base_english": "Gives (Hindi feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Gives"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देती"
+      }
+    }
+  },
+  "प्रक्षालितवती": {
+    "word": "प्रक्षालितवती",
+    "base_english": "Washed / Cleaned (feminine singular past)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Washed / Cleaned (feminine singular past)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धोई / साफ की (स्त्रीलिंग एकवचन)"
+      }
+    }
+  },
+  "प्रक्षालितवान्": {
+    "word": "प्रक्षालितवान्",
+    "base_english": "Washed / Cleaned (masculine singular past)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Washed / Cleaned (masculine singular past)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धोया / साफ किया (पुल्लिंग एकवचन)"
+      }
+    }
+  },
+  "प्रक्षालितवन्तः": {
+    "word": "प्रक्षालितवन्तः",
+    "base_english": "Washed / Cleaned (masculine plural past)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Washed / Cleaned (masculine plural past)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धोए (पुल्लिंग बहुवचन)"
+      }
+    }
+  },
+  "धोया": {
+    "word": "धोया",
+    "base_english": "Washed (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Washed"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धोया"
+      }
+    }
+  },
+  "साफ": {
+    "word": "साफ",
+    "base_english": "Clean (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Clean"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "स्वच्छ / साफ"
+      }
+    }
+  },
+  "धावितवती": {
+    "word": "धावितवती",
+    "base_english": "Ran (feminine singular past, dhāv + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ran (feminine singular past, dhāv + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दौड़ी (स्त्रीलिंग एकवचन)"
+      }
+    }
+  },
+  "धावितवान्": {
+    "word": "धावितवान्",
+    "base_english": "Ran (masculine singular past, dhāv + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ran (masculine singular past, dhāv + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दौड़ा (पुल्लिंग एकवचन)"
+      }
+    }
+  },
+  "धावितवन्तः": {
+    "word": "धावितवन्तः",
+    "base_english": "Ran (masculine plural past, dhāv + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ran (masculine plural past, dhāv + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दौड़े (पुल्लिंग बहुवचन)"
+      }
+    }
+  },
+  "दौड़ा": {
+    "word": "दौड़ा",
+    "base_english": "Ran (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ran"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दौड़ा"
+      }
+    }
+  },
+  "दौड़े": {
+    "word": "दौड़े",
+    "base_english": "Ran (Hindi plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ran"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दौड़े"
+      }
+    }
+  },
+  "दौड़ते": {
+    "word": "दौड़ते",
+    "base_english": "Run (Hindi plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Run"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दौड़ते"
+      }
+    }
+  },
+  "परिवर्तयन्तु": {
+    "word": "परिवर्तयन्तु",
+    "base_english": "Please transform / Please change (imperative 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please transform / Please change (imperative 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "परिवर्तित करें / बदलें (लोट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "बदलें": {
+    "word": "बदलें",
+    "base_english": "Change / Transform (Hindi imperative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Change / Transform"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बदलें"
+      }
+    }
+  },
+  "भूतकाल": {
+    "word": "भूतकाल",
+    "base_english": "Past tense",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Past tense"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भूतकाल (बीता हुआ समय)"
+      }
+    }
+  },
+  "वर्तमान": {
+    "word": "वर्तमान",
+    "base_english": "Present tense / Current",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Present tense / Current"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वर्तमान काल"
+      }
+    }
+  },
+  "काल": {
+    "word": "काल",
+    "base_english": "Tense / Time",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Tense / Time"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "काल / समय"
+      }
+    }
+  },
+  "आपणं": {
+    "word": "आपणं",
+    "base_english": "To the market / shop (dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the market / shop (dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बाज़ार को / दुकान पर (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "बाज़ार": {
+    "word": "बाज़ार",
+    "base_english": "Market (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Market"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बाज़ार / हाट"
+      }
+    }
+  },
+  "रोटिकां": {
+    "word": "रोटिकां",
+    "base_english": "Bread / Roti (feminine dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Bread / Roti (feminine dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोटी को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "रोटी": {
+    "word": "रोटी",
+    "base_english": "Roti / Bread (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Roti / Bread"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोटी / चपाती"
+      }
+    }
+  },
+  "खादति": {
+    "word": "खादति",
+    "base_english": "Eats (khād dhātu, laṭ 3rd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Eats (khād dhātu, laṭ 3rd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खाता है (खाद् धातु, लट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "खाद": {
+    "word": "खाद",
+    "base_english": "Eat / Food root",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Eat / Food root"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खाद् धातु"
+      }
+    }
+  },
+  "खाता": {
+    "word": "खाता",
+    "base_english": "Eats (Hindi masculine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Eats"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खाता"
+      }
+    }
+  },
+  "खाते": {
+    "word": "खाते",
+    "base_english": "Eat (Hindi plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Eat"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खाते"
+      }
+    }
+  },
+  "वस्त्र": {
+    "word": "वस्त्र",
+    "base_english": "Garment / Clothes",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Garment / Clothes"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कपड़ा / वस्त्र"
+      }
+    }
+  },
+  "बालकः": {
+    "word": "बालकः",
+    "base_english": "Boy (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Boy (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बालक / लड़का (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "बालक": {
+    "word": "बालक",
+    "base_english": "Boy / Child",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Boy / Child"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बालक / बच्चा"
+      }
+    }
+  },
+  "द्विचक्रिकातः": {
+    "word": "द्विचक्रिकातः",
+    "base_english": "From the bicycle (tasil suffix, pañcamī)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the bicycle (tasil suffix, pañcamī)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "साइकिल से (पञ्चमी अर्थ में तसिल्)"
+      }
+    }
+  },
+  "साइकिल": {
+    "word": "साइकिल",
+    "base_english": "Bicycle (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Bicycle"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "साइकिल / द्विचक्रिका"
+      }
+    }
+  },
+  "पतति": {
+    "word": "पतति",
+    "base_english": "Falls (pat dhātu, laṭ 3rd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Falls (pat dhātu, laṭ 3rd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गिरता है (पत् धातु, लट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "पतितवान्": {
+    "word": "पतितवान्",
+    "base_english": "Fell (pat + ktavatu masculine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fell (pat + ktavatu masculine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गिरा / गिर पड़ा (पुल्लिंग एकवचन)"
+      }
+    }
+  },
+  "गिरता": {
+    "word": "गिरता",
+    "base_english": "Falls (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Falls"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गिरता"
+      }
+    }
+  },
+  "गिरा": {
+    "word": "गिरा",
+    "base_english": "Fell (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fell"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गिरा"
+      }
+    }
+  },
+  "पितामही": {
+    "word": "पितामही",
+    "base_english": "Paternal grandmother (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Paternal grandmother (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दादी जी (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "दादी": {
+    "word": "दादी",
+    "base_english": "Grandmother (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Grandmother"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दादी"
+      }
+    }
+  },
+  "चलच्चित्रं": {
+    "word": "चलच्चित्रं",
+    "base_english": "Movie / Cinema / Film (dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Movie / Cinema / Film (dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फ़िल्म / सिनेमा को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "फ़िल्म": {
+    "word": "फ़िल्म",
+    "base_english": "Film / Movie (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Film / Movie"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चलचित्र / फ़िल्म"
+      }
+    }
+  },
+  "गृहपाठं": {
+    "word": "गृहपाठं",
+    "base_english": "Homework (dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Homework (dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गृहकार्य को / होमवर्क को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "गृहकार्य": {
+    "word": "गृहकार्य",
+    "base_english": "Homework",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Homework"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गृहकार्य"
+      }
+    }
+  },
+  "लिखामि": {
+    "word": "लिखामि",
+    "base_english": "I write (likh dhātu, laṭ 1st singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I write (likh dhātu, laṭ 1st singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मैं लिखता हूँ (लिख् धातु, लट् उत्तमपुरुष एकवचन)"
+      }
+    }
+  },
+  "लिखतालिखती": {
+    "word": "लिखतालिखती",
+    "base_english": "Writes (masculine/feminine Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Writes (masculine/feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लिखता / लिखती"
+      }
+    }
+  },
+  "गच्छसि": {
+    "word": "गच्छसि",
+    "base_english": "You go (gam dhātu, laṭ 2nd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You go (gam dhātu, laṭ 2nd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम जाते हो (गम् धातु, लट् मध्यमपुरुष एकवचन)"
+      }
+    }
+  },
+  "गएगईं": {
+    "word": "गएगईं",
+    "base_english": "Went (masculine/feminine Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Went (masculine/feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गए / गईं"
+      }
+    }
+  },
+  "अश्वाः": {
+    "word": "अश्वाः",
+    "base_english": "Horses (masculine prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Horses (masculine prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "घोड़े (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "घोड़े": {
+    "word": "घोड़े",
+    "base_english": "Horses (Hindi plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Horses"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "घोड़े / अश्व"
+      }
+    }
+  },
+  "वने": {
+    "word": "वने",
+    "base_english": "In the forest (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the forest (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वन में / जंगल में (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "धावन्ति": {
+    "word": "धावन्ति",
+    "base_english": "Run (dhāv dhātu, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Run (dhāv dhātu, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दौड़ते हैं (धाव् धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "बालिकाः": {
+    "word": "बालिकाः",
+    "base_english": "Girls (feminine prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Girls (feminine prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बालिकाएँ / लड़कियाँ (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "लड़कियाँ": {
+    "word": "लड़कियाँ",
+    "base_english": "Girls (Hindi plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Girls"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लड़कियाँ / कन्याएँ"
+      }
+    }
+  },
+  "शीघ्रम्": {
+    "word": "शीघ्रम्",
+    "base_english": "Quickly / Fast (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Quickly / Fast (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जल्दी / शीघ्र (अव्यय)"
+      }
+    }
+  },
+  "जल्दी": {
+    "word": "जल्दी",
+    "base_english": "Quickly (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Quickly"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जल्दी"
+      }
+    }
+  },
+  "आगच्छन्ति": {
+    "word": "आगच्छन्ति",
+    "base_english": "Come (ā + gam, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Come (ā + gam, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आती हैं / आते हैं (आ + गम् धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "आगतवत्यः": {
+    "word": "आगतवत्यः",
+    "base_english": "Came (feminine plural past, ā + gam + ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Came (feminine plural past, ā + gam + ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आईं (स्त्रीलिंग बहुवचन)"
+      }
+    }
+  },
+  "आती": {
+    "word": "आती",
+    "base_english": "Comes (Hindi feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Comes"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आती"
+      }
+    }
+  },
+  "आईं": {
+    "word": "आईं",
+    "base_english": "Came (Hindi feminine plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Came"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आईं"
+      }
+    }
+  },
+  "समुद्रतीरे": {
+    "word": "समुद्रतीरे",
+    "base_english": "On the seashore (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "On the seashore (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "समुद्र तट पर (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "समुद्र": {
+    "word": "समुद्र",
+    "base_english": "Sea / Ocean",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sea / Ocean"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सागर / समुद्र"
+      }
+    }
+  },
+  "तट": {
+    "word": "तट",
+    "base_english": "Shore / Bank / Beach",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Shore / Bank / Beach"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किनारा / तट"
+      }
+    }
+  },
+  "पयोहिमं": {
+    "word": "पयोहिमं",
+    "base_english": "Ice cream (payas milk + hima cold/ice)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ice cream (payas milk + hima cold/ice)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आइसक्रीम (पयोहिमम्)"
+      }
+    }
+  },
+  "आइसक्रीम": {
+    "word": "आइसक्रीम",
+    "base_english": "Ice cream",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ice cream"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आइसक्रीम / पयोहिमम्"
+      }
+    }
+  },
+  "खादामः": {
+    "word": "खादामः",
+    "base_english": "We eat (khād dhātu, laṭ 1st plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We eat (khād dhātu, laṭ 1st plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम खाते हैं (खाद् धातु, लट् उत्तमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "सबने": {
+    "word": "सबने",
+    "base_english": "Everyone (Hindi ergative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Everyone"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सबने"
+      }
+    }
+  },
+  "अव्ययपदम्": {
+    "word": "अव्ययपदम्",
+    "base_english": "Indeclinable word (Grammar)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Indeclinable word (Grammar)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अव्यय शब्द (जिसका रूप कभी नहीं बदलता)"
+      }
+    }
+  },
+  "अनुच्छेदं": {
+    "word": "अनुच्छेदं",
+    "base_english": "Paragraph / Passage",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Paragraph / Passage"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अनुच्छेद / पैराग्राफ को"
+      }
+    }
+  },
+  "पैराग्राफ": {
+    "word": "पैराग्राफ",
+    "base_english": "Paragraph",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Paragraph"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अनुच्छेद / पैराग्राफ"
+      }
+    }
+  },
+  "क्रियापद": {
+    "word": "क्रियापद",
+    "base_english": "Verb form",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Verb form"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "क्रिया शब्द / क्रियापद"
+      }
+    }
+  },
+  "जोड़ने": {
+    "word": "जोड़ने",
+    "base_english": "Adding / Connecting (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Adding / Connecting"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जोड़ने"
+      }
+    }
+  },
+  "बनता": {
+    "word": "बनता",
+    "base_english": "Becomes / Forms (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Becomes / Forms"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बनता है"
+      }
+    }
+  },
+  "शीर्षकः": {
+    "word": "शीर्षकः",
+    "base_english": "Title / Heading",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Title / Heading"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शीर्षक / हेडिंग"
+      }
+    }
+  },
+  "आदर्शः": {
+    "word": "आदर्शः",
+    "base_english": "Ideal / Role model (masculine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ideal / Role model (masculine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आदर्श / अनुकरणीय"
+      }
+    }
+  },
+  "गौरवशाली": {
+    "word": "गौरवशाली",
+    "base_english": "Glorious / Dignified",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Glorious / Dignified"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गौरवशाली / प्रतिष्ठित"
+      }
+    }
+  },
+  "कृषकः": {
+    "word": "कृषकः",
+    "base_english": "Farmer / Cultivator (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Farmer / Cultivator (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किसान / कृषक (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "कृषकाः": {
+    "word": "कृषकाः",
+    "base_english": "Farmers (prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Farmers (prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किसान लोग / कृषकगण (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "किसान": {
+    "word": "किसान",
+    "base_english": "Farmer (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Farmer"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किसान / खेतिहर"
+      }
+    }
+  },
+  "कृषिक्षेत्रं": {
+    "word": "कृषिक्षेत्रं",
+    "base_english": "Agricultural field / Farm (dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Agricultural field / Farm (dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेत को / कृषि-भूमि में (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "खेत": {
+    "word": "खेत",
+    "base_english": "Field / Farm (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Field / Farm"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेत / कृषि भूमि"
+      }
+    }
+  },
+  "क्षेत्रे": {
+    "word": "क्षेत्रे",
+    "base_english": "In the field (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the field (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेत में (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "जलसेचनं": {
+    "word": "जलसेचनं",
+    "base_english": "Watering / Irrigation (jala + secana)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Watering / Irrigation (jala + secana)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सिंचाई / पानी देना"
+      }
+    }
+  },
+  "सिंचाई": {
+    "word": "सिंचाई",
+    "base_english": "Irrigation / Watering (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Irrigation / Watering"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सिंचाई"
+      }
+    }
+  },
+  "गोमयं": {
+    "word": "गोमयं",
+    "base_english": "Cow dung / Organic manure",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Cow dung / Organic manure"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गोबर की खाद"
+      }
+    }
+  },
+  "गोबर": {
+    "word": "गोबर",
+    "base_english": "Cow dung (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Cow dung"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गोबर"
+      }
+    }
+  },
+  "योजयति": {
+    "word": "योजयति",
+    "base_english": "Mixes / Applies / Adds (yuj dhātu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mixes / Applies / Adds (yuj dhātu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मिलाता है / जोड़ता है"
+      }
+    }
+  },
+  "मिलाता": {
+    "word": "मिलाता",
+    "base_english": "Mixes (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mixes"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मिलाता"
+      }
+    }
+  },
+  "कृतकान्": {
+    "word": "कृतकान्",
+    "base_english": "Artificial / Synthetic (masculine dvitīyā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Artificial / Synthetic (masculine dvitīyā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बनावटी / कृत्रिम (द्वितीया बहुवचन)"
+      }
+    }
+  },
+  "कृत्रिम": {
+    "word": "कृत्रिम",
+    "base_english": "Artificial / Synthetic",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Artificial / Synthetic"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बनावटी / कृत्रिम"
+      }
+    }
+  },
+  "पदार्थान्": {
+    "word": "पदार्थान्",
+    "base_english": "Substances / Materials (masculine dvitīyā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Substances / Materials (masculine dvitīyā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पदार्थों को / रासायनिक खादों को (द्वितीया बहुवचन)"
+      }
+    }
+  },
+  "पदार्थ": {
+    "word": "पदार्थ",
+    "base_english": "Substance / Material",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Substance / Material"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पदार्थ / तत्त्व"
+      }
+    }
+  },
+  "रासायनिक": {
+    "word": "रासायनिक",
+    "base_english": "Chemical (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Chemical"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रासायनिक"
+      }
+    }
+  },
+  "व्रीहेः": {
+    "word": "व्रीहेः",
+    "base_english": "Of the rice / paddy crop (vrīhi genitive singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the rice / paddy crop (vrīhi genitive singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धान की / चावल की (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "धान": {
+    "word": "धान",
+    "base_english": "Paddy / Rice crop (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Paddy / Rice crop"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धान / व्रीहि"
+      }
+    }
+  },
+  "गुणवत्ता": {
+    "word": "गुणवत्ता",
+    "base_english": "Quality / Excellence",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Quality / Excellence"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गुणवत्ता / श्रेष्ठता"
+      }
+    }
+  },
+  "अधिका": {
+    "word": "अधिका",
+    "base_english": "High / Abundant / More (feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "High / Abundant / More (feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बहुत अधिक / ज्यादा (स्त्रीलिंग)"
+      }
+    }
+  },
+  "अधिक": {
+    "word": "अधिक",
+    "base_english": "Much / More",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Much / More"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्यादा / अधिक"
+      }
+    }
+  },
+  "कीटानां": {
+    "word": "कीटानां",
+    "base_english": "Of pests / insects (genitive plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of pests / insects (genitive plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कीड़ों का / कीटों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "कीड़ों": {
+    "word": "कीड़ों",
+    "base_english": "Insects / Pests (Hindi plural oblique)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Insects / Pests"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कीड़ों"
+      }
+    }
+  },
+  "निवारणार्थं": {
+    "word": "निवारणार्थं",
+    "base_english": "For the prevention / eradication (nivāraṇa + artham)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For the prevention / eradication (nivāraṇa + artham)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोकथाम के लिए / निवारण हेतु"
+      }
+    }
+  },
+  "रोकथाम": {
+    "word": "रोकथाम",
+    "base_english": "Prevention / Control (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Prevention / Control"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोकथाम / बचाव"
+      }
+    }
+  },
+  "जैवौषधं": {
+    "word": "जैवौषधं",
+    "base_english": "Bio-pesticide / Organic remedy (jaiva + auṣadha)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Bio-pesticide / Organic remedy (jaiva + auṣadha)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जैविक कीटनाशक / जैविक औषधि"
+      }
+    }
+  },
+  "जैविक": {
+    "word": "जैविक",
+    "base_english": "Organic / Biological",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Organic / Biological"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जैविक / ऑर्गेनिक"
+      }
+    }
+  },
+  "कीटनाशक": {
+    "word": "कीटनाशक",
+    "base_english": "Pesticide",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Pesticide"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कीटनाशक"
+      }
+    }
+  },
+  "स्थापयति": {
+    "word": "स्थापयति",
+    "base_english": "Applies / Places / Puts",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Applies / Places / Puts"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "डालता है / छिड़कता है"
+      }
+    }
+  },
+  "डालता": {
+    "word": "डालता",
+    "base_english": "Puts / Applies (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Puts / Applies"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "डालता"
+      }
+    }
+  },
+  "कृषिकार्यं": {
+    "word": "कृषिकार्यं",
+    "base_english": "Farming work / Agriculture (dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Farming work / Agriculture (dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेती का काम (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "कृषिकार्येण": {
+    "word": "कृषिकार्येण",
+    "base_english": "Through farming work (tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Through farming work (tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेती के कार्य से (तृतीया एकवचन)"
+      }
+    }
+  },
+  "खेती": {
+    "word": "खेती",
+    "base_english": "Farming / Agriculture (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Farming / Agriculture"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेती-बाड़ी"
+      }
+    }
+  },
+  "जानाति": {
+    "word": "जानाति",
+    "base_english": "Knows (jñā dhātu, laṭ 3rd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Knows (jñā dhātu, laṭ 3rd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जानता है (ज्ञा धातु, लट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "जानता": {
+    "word": "जानता",
+    "base_english": "Knows (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Knows"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जानता"
+      }
+    }
+  },
+  "भलीभाँति": {
+    "word": "भलीभाँति",
+    "base_english": "Well / Properly (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Well / Properly"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भली-भाँति / अच्छी तरह"
+      }
+    }
+  },
+  "अन्ये": {
+    "word": "अन्ये",
+    "base_english": "Other / Other farmers (prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Other / Other farmers (prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दूसरे / अन्य (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "संशयेन": {
+    "word": "संशयेन",
+    "base_english": "With doubt / When in doubt (tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "With doubt / When in doubt (tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "संदेह होने पर / संशय से (तृतीया एकवचन)"
+      }
+    }
+  },
+  "संदेह": {
+    "word": "संदेह",
+    "base_english": "Doubt / Uncertainty",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Doubt / Uncertainty"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शक / संदेह"
+      }
+    }
+  },
+  "होने": {
+    "word": "होने",
+    "base_english": "Occurring / Happening (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Occurring / Happening"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "होने"
+      }
+    }
+  },
+  "पूछते": {
+    "word": "पूछते",
+    "base_english": "Ask (Hindi plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ask"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पूछते"
+      }
+    }
+  },
+  "स्वाभिमानेन": {
+    "word": "स्वाभिमानेन",
+    "base_english": "With self-respect / Dignity (tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "With self-respect / Dignity (tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "स्वाभिमान के साथ / गर्व से (तृतीया एकवचन)"
+      }
+    }
+  },
+  "स्वाभिमान": {
+    "word": "स्वाभिमान",
+    "base_english": "Self-respect / Dignity",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Self-respect / Dignity"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आत्मसम्मान / स्वाभिमान"
+      }
+    }
+  },
+  "जीवति": {
+    "word": "जीवति",
+    "base_english": "Lives (jīv dhātu, laṭ 3rd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Lives (jīv dhātu, laṭ 3rd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जीता है (जीव् धातु, लट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "जीता": {
+    "word": "जीता",
+    "base_english": "Lives (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Lives"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जीता"
+      }
+    }
+  },
+  "भूमिपुत्रः": {
+    "word": "भूमिपुत्रः",
+    "base_english": "Son of the soil / Earth's son (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Son of the soil / Earth's son (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धरती का पुत्र / भूमिपुत्र"
+      }
+    }
+  },
+  "भूमि": {
+    "word": "भूमि",
+    "base_english": "Earth / Land / Soil",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Earth / Land / Soil"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धरती / ज़मीन"
+      }
+    }
+  },
+  "पुत्र": {
+    "word": "पुत्र",
+    "base_english": "Son",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Son"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बेटा / पुत्र"
+      }
+    }
+  },
+  "साभिमानं": {
+    "word": "साभिमानं",
+    "base_english": "With pride / Proudly (indeclinable adverb)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "With pride / Proudly (indeclinable adverb)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अभिमानपूर्वक / गर्व से (अव्यय)"
+      }
+    }
+  },
+  "अभिमानपूर्वक": {
+    "word": "अभिमानपूर्वक",
+    "base_english": "Proudly / With pride (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Proudly / With pride"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गर्व से / अभिमानपूर्वक"
+      }
+    }
+  },
+  "जालपुटमाध्यमेन": {
+    "word": "जालपुटमाध्यमेन",
+    "base_english": "Via the website / Through internet web page (jālapuṭa + mādhyamena)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Via the website / Through internet web page (jālapuṭa + mādhyamena)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वेबसाइट के माध्यम से / इंटरनेट द्वारा"
+      }
+    }
+  },
+  "वेबसाइट": {
+    "word": "वेबसाइट",
+    "base_english": "Website",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Website"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जालपुट / वेबसाइट"
+      }
+    }
+  },
+  "इंटरनेट": {
+    "word": "इंटरनेट",
+    "base_english": "Internet",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Internet"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इंटरनेट"
+      }
+    }
+  },
+  "तण्डुलं": {
+    "word": "तण्डुलं",
+    "base_english": "Rice grain / Husked rice (dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Rice grain / Husked rice (dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चावल को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "चावल": {
+    "word": "चावल",
+    "base_english": "Rice (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Rice"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चावल / तण्डुल"
+      }
+    }
+  },
+  "क्रीणन्ति": {
+    "word": "क्रीणन्ति",
+    "base_english": "Buy / Purchase (krī dhātu, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Buy / Purchase (krī dhātu, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खरीदते हैं (क्री धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "खरीदते": {
+    "word": "खरीदते",
+    "base_english": "Buy (Hindi plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Buy"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खरीदते"
+      }
+    }
+  },
+  "परिवारस्य": {
+    "word": "परिवारस्य",
+    "base_english": "Of the family (genitive singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the family (genitive singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "परिवार के (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "परिवार": {
+    "word": "परिवार",
+    "base_english": "Family",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Family"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कुटुंब / परिवार"
+      }
+    }
+  },
+  "ससुखं": {
+    "word": "ससुखं",
+    "base_english": "Happily / Joyfully (indeclinable adverb)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Happily / Joyfully (indeclinable adverb)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुखपूर्वक / आनंद से (अव्यय)"
+      }
+    }
+  },
+  "सुखपूर्वक": {
+    "word": "सुखपूर्वक",
+    "base_english": "Happily / In comfort (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Happily / In comfort"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुखपूर्वक"
+      }
+    }
+  },
+  "जीवन्ति": {
+    "word": "जीवन्ति",
+    "base_english": "Live (jīv dhātu, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Live (jīv dhātu, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जीते हैं (जीव् धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "जीते": {
+    "word": "जीते",
+    "base_english": "Live (Hindi plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Live"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जीते"
+      }
+    }
+  },
+  "सर्वान्": {
+    "word": "सर्वान्",
+    "base_english": "To all (masculine dvitīyā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To all (masculine dvitīyā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सबको (द्वितीया बहुवचन)"
+      }
+    }
+  },
+  "सबको": {
+    "word": "सबको",
+    "base_english": "To everyone (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To everyone"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सबको"
+      }
+    }
+  },
+  "दीनः": {
+    "word": "दीनः",
+    "base_english": "Helpless / Miserable / Pitiful (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Helpless / Miserable / Pitiful (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दीन / बेबस / लाचार (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "दीन": {
+    "word": "दीन",
+    "base_english": "Helpless / Pitiful",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Helpless / Pitiful"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लाचार / दीन"
+      }
+    }
+  },
+  "दरिद्रः": {
+    "word": "दरिद्रः",
+    "base_english": "Poor / Destitute (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Poor / Destitute (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गरीब / दरिद्र (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "दरिद्र": {
+    "word": "दरिद्र",
+    "base_english": "Poor / Penniless",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Poor / Penniless"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कंगाल / दरिद्र"
+      }
+    }
+  },
+  "परं": {
+    "word": "परं",
+    "base_english": "Rather / But / On the contrary",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Rather / But / On the contrary"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बल्कि / परन्तु (अव्यय)"
+      }
+    }
+  },
+  "बल्कि": {
+    "word": "बल्कि",
+    "base_english": "Rather / On the contrary (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Rather / On the contrary"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बल्कि"
+      }
+    }
+  },
+  "सर्वेषां": {
+    "word": "सर्वेषां",
+    "base_english": "Of all / For everyone (genitive plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of all / For everyone (genitive plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सबका / सभी का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "सबका": {
+    "word": "सबका",
+    "base_english": "Everyone's (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Everyone's"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सबका"
+      }
+    }
+  },
+  "पोषकः": {
+    "word": "पोषकः",
+    "base_english": "Nourisher / Provider / Sustainer (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Nourisher / Provider / Sustainer (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पालनकर्ता / पोषक (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "पोषक": {
+    "word": "पोषक",
+    "base_english": "Nourisher / Provider",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Nourisher / Provider"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पोषक / भरणकर्ता"
+      }
+    }
+  },
+  "पालनकर्ता": {
+    "word": "पालनकर्ता",
+    "base_english": "Sustainer / Caregiver / Provider",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sustainer / Caregiver / Provider"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पालन-पोषण करने वाला"
       }
     }
   }
