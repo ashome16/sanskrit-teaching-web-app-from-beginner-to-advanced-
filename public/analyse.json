@@ -1611,15 +1611,15 @@
   },
   "न": {
     "word": "न",
-    "base_english": "Not",
+    "base_english": "Not / No / The consonant 'n'",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Not"
+        "meaning": "Not / No / The consonant 'n'"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "नहीं (निषेधवाचक अव्यय)"
+        "meaning": "नहीं / 'न' वर्ण"
       }
     }
   },
@@ -8576,11 +8576,11 @@
   },
   "ज्ञानाय": {
     "word": "ज्ञानाय",
-    "base_english": "For knowledge / For wisdom (4th case/Dative)",
+    "base_english": "For wisdom / knowledge (caturthī singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "For knowledge / For wisdom (4th case/Dative)"
+        "meaning": "For wisdom / knowledge (caturthī singular)"
       },
       "hi": {
         "label": "हिन्दी",
@@ -8590,25 +8590,25 @@
   },
   "दानाय": {
     "word": "दानाय",
-    "base_english": "For giving / For charity (4th case/Dative)",
+    "base_english": "For charity / giving (caturthī singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "For giving / For charity (4th case/Dative)"
+        "meaning": "For charity / giving (caturthī singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "दान देने के लिए (चतुर्थी एकवचन)"
+        "meaning": "दान के लिए (चतुर्थी एकवचन)"
       }
     }
   },
   "रक्षणाय": {
     "word": "रक्षणाय",
-    "base_english": "For protection / To defend (4th case/Dative)",
+    "base_english": "For protection (caturthī singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "For protection / To defend (4th case/Dative)"
+        "meaning": "For protection (caturthī singular)"
       },
       "hi": {
         "label": "हिन्दी",
@@ -8618,43 +8618,43 @@
   },
   "विवादाय": {
     "word": "विवादाय",
-    "base_english": "For dispute / For arguing (4th case/Dative)",
+    "base_english": "For dispute / arguments (caturthī singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "For dispute / For arguing (4th case/Dative)"
+        "meaning": "For dispute / arguments (caturthī singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "विवाद (झगड़े) के लिए (चतुर्थी एकवचन)"
+        "meaning": "विवाद / झगड़े के लिए (चतुर्थी एकवचन)"
       }
     }
   },
   "मदाय": {
     "word": "मदाय",
-    "base_english": "For intoxication / For arrogance / Pride (4th case/Dative)",
+    "base_english": "For pride / arrogance (caturthī singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "For intoxication / For arrogance / Pride (4th case/Dative)"
+        "meaning": "For pride / arrogance (caturthī singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "घमण्ड (मद) के लिए (चतुर्थी एकवचन)"
+        "meaning": "घमंड / अहंकार के लिए (चतुर्थी एकवचन)"
       }
     }
   },
   "परिपीडनाय": {
     "word": "परिपीडनाय",
-    "base_english": "For tormenting / Troubling others (4th case/Dative)",
+    "base_english": "For tormenting / troubling others (caturthī singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "For tormenting / Troubling others (4th case/Dative)"
+        "meaning": "For tormenting / troubling others (caturthī singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "दूसरों को कष्ट देने के लिए (चतुर्थी एकवचन)"
+        "meaning": "दूसरों को सताने / कष्ट देने के लिए (चतुर्थी एकवचन)"
       }
     }
   },
@@ -24352,6 +24352,5116 @@
       "hi": {
         "label": "हिन्दी",
         "meaning": "चयन / चुनाव (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "पाठस्य": {
+    "word": "पाठस्य",
+    "base_english": "Of the lesson / chapter (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the lesson / chapter (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पाठ का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "मूलसंवादः": {
+    "word": "मूलसंवादः",
+    "base_english": "Main dialogue",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Main dialogue"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मुख्य बातचीत / मूल संवाद"
+      }
+    }
+  },
+  "मूल": {
+    "word": "मूल",
+    "base_english": "Original / Basic / Root",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Original / Basic / Root"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मूल / मुख्य"
+      }
+    }
+  },
+  "दीपिका": {
+    "word": "दीपिका",
+    "base_english": "Deepika (proper name)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Deepika (proper name)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दीपिका (छात्रा का नाम)"
+      }
+    }
+  },
+  "सखि": {
+    "word": "सखि",
+    "base_english": "O female friend! (vocative singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "O female friend! (vocative singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हे सखी! / हे सहेली! (संबोधन)"
+      }
+    }
+  },
+  "भारति": {
+    "word": "भारति",
+    "base_english": "O Bharati! (vocative singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "O Bharati! (vocative singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हे भारती! (संबोधन)"
+      }
+    }
+  },
+  "अधुना": {
+    "word": "अधुना",
+    "base_english": "Now / At present (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Now / At present (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अब / इस समय (अव्यय)"
+      }
+    }
+  },
+  "क्रीडितुम्": {
+    "word": "क्रीडितुम्",
+    "base_english": "To play (tumun infinitive)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To play (tumun infinitive)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेलने के लिए / खेलना (तुमुन् प्रत्यय)"
+      }
+    }
+  },
+  "क्रीडितुं": {
+    "word": "क्रीडितुम्",
+    "base_english": "To play (tumun infinitive)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To play (tumun infinitive)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेलने के लिए (तुमुन् प्रत्यय)"
+      }
+    }
+  },
+  "अभिलषामः": {
+    "word": "अभिलषामः",
+    "base_english": "We desire / We wish (lat uttamapurusha plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We desire / We wish (lat uttamapurusha plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम सब चाहते हैं / इच्छा करते हैं"
+      }
+    }
+  },
+  "बहिः": {
+    "word": "बहिः",
+    "base_english": "Outside (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Outside (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बाहर (अव्यय)"
+      }
+    }
+  },
+  "वृष्टिः": {
+    "word": "वृष्टिः",
+    "base_english": "Rain / Rainfall (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Rain / Rainfall (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वर्षा / बारिश"
+      }
+    }
+  },
+  "क्रीडामः": {
+    "word": "क्रीडामः",
+    "base_english": "We play / Let us play (lat/lot uttamapurusha plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We play / Let us play (lat/lot uttamapurusha plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम सब खेलें / खेलते हैं"
+      }
+    }
+  },
+  "इच्छा": {
+    "word": "इच्छा",
+    "base_english": "Wish / Desire (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wish / Desire (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इच्छा / चाह"
+      }
+    }
+  },
+  "बहिर्गमनस्य": {
+    "word": "बहिर्गमनस्य",
+    "base_english": "Of going outside (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of going outside (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बाहर जाने की (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "एषा": {
+    "word": "एषा",
+    "base_english": "This (feminine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "This (feminine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "यह (स्त्रीलिंग प्रथमा एकवचन)"
+      }
+    }
+  },
+  "नूतना": {
+    "word": "नूतना",
+    "base_english": "New / Fresh (feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "New / Fresh (feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नई / नवीन (स्त्रीलिंग)"
+      }
+    }
+  },
+  "क्रीडा": {
+    "word": "क्रीडा",
+    "base_english": "Game / Sport (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Game / Sport (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेल / क्रीड़ा"
+      }
+    }
+  },
+  "क्रीडायाः": {
+    "word": "क्रीडायाः",
+    "base_english": "Of the game (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the game (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेल के / खेल की (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "अन्त्याक्षरी": {
+    "word": "अन्त्याक्षरी",
+    "base_english": "Antyakshari (rhyming/last-letter verse recital game)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Antyakshari (rhyming/last-letter verse recital game)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अंत्याक्षरी (अंतिम अक्षर से शुरू होने वाला खेल)"
+      }
+    }
+  },
+  "क्रीडामि": {
+    "word": "क्रीडामि",
+    "base_english": "I play / I will play (lat uttamapurusha singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I play / I will play (lat uttamapurusha singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मैं खेलती हूँ / खेलूँगी (लट् उत्तमपुरुष एकवचन)"
+      }
+    }
+  },
+  "अवश्यम्": {
+    "word": "अवश्यम्",
+    "base_english": "Certainly / Definitely / Surely (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Certainly / Definitely / Surely (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अवश्य / ज़रूर (अव्यय)"
+      }
+    }
+  },
+  "अवश्य": {
+    "word": "अवश्य",
+    "base_english": "Certainly / Surely",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Certainly / Surely"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अवश्य / ज़रूर"
+      }
+    }
+  },
+  "आगच्छन्तु": {
+    "word": "आगच्छन्तु",
+    "base_english": "Please come / Come along (lot prathamapurusha plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please come / Come along (lot prathamapurusha plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आइए / आओ (लोट् लकार बहुवचन)"
+      }
+    }
+  },
+  "नियमान्": {
+    "word": "नियमान्",
+    "base_english": "Rules (dvitīyā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Rules (dvitīyā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नियमों को (द्वितीया बहुवचन)"
+      }
+    }
+  },
+  "सूचयतु": {
+    "word": "सूचयतु",
+    "base_english": "Please tell / Inform (lot prathamapurusha singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please tell / Inform (lot prathamapurusha singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बताइए / सूचित कीजिए (लोट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "गणद्वयं": {
+    "word": "गणद्वयं",
+    "base_english": "Two groups / Two teams",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Two groups / Two teams"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो समूह / दो टीमें"
+      }
+    }
+  },
+  "गणद्वयम्": {
+    "word": "गणद्वयम्",
+    "base_english": "Two groups / Two teams",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Two groups / Two teams"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो समूह / दो टीमें"
+      }
+    }
+  },
+  "रचयामः": {
+    "word": "रचयामः",
+    "base_english": "We create / We form (lat uttamapurusha plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We create / We form (lat uttamapurusha plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम बनाते हैं (लट् उत्तमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "प्रथमगणस्य": {
+    "word": "प्रथमगणस्य",
+    "base_english": "Of the first group (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the first group (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पहले समूह का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "ज्ञानमाला": {
+    "word": "ज्ञानमाला",
+    "base_english": "Jnanamala (Garland of Knowledge - Team 1 name)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Jnanamala (Garland of Knowledge - Team 1 name)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्ञानमाला (पहले समूह का नाम)"
+      }
+    }
+  },
+  "द्वितीयगणस्य": {
+    "word": "द्वितीयगणस्य",
+    "base_english": "Of the second group (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the second group (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दूसरे समूह का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "रत्नमाला": {
+    "word": "रत्नमाला",
+    "base_english": "Ratnamala (Garland of Gems - Team 2 name)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ratnamala (Garland of Gems - Team 2 name)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रत्नमाला (दूसरे समूह का नाम)"
+      }
+    }
+  },
+  "आदौ": {
+    "word": "आदौ",
+    "base_english": "In the beginning / First (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the beginning / First (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शुरुआत में / सबसे पहले (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "सदस्यः": {
+    "word": "सदस्यः",
+    "base_english": "Member (masculine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Member (masculine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सदस्य (पुल्लिंग प्रथमा एकवचन)"
+      }
+    }
+  },
+  "सदस्या": {
+    "word": "सदस्या",
+    "base_english": "Member (feminine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Member (feminine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सदस्या (स्त्रीलिंग प्रथमा एकवचन)"
+      }
+    }
+  },
+  "पद्यं": {
+    "word": "पद्यं",
+    "base_english": "Verse / Stanza / Poetry",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Verse / Stanza / Poetry"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पद्य / श्लोक"
+      }
+    }
+  },
+  "पद्यम्": {
+    "word": "पद्यम्",
+    "base_english": "Verse / Stanza / Poetry",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Verse / Stanza / Poetry"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पद्य / श्लोक"
+      }
+    }
+  },
+  "पद्यस्य": {
+    "word": "पद्यस्य",
+    "base_english": "Of the verse / stanza (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the verse / stanza (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "श्लोक का / पद्य का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "गायति": {
+    "word": "गायति",
+    "base_english": "Sings / Recites (lat prathamapurusha singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sings / Recites (lat prathamapurusha singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गाता है / गाती है (लट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "अन्तिमेन": {
+    "word": "अन्तिमेन",
+    "base_english": "By the last / With the final (tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By the last / With the final (tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अंतिम से / अंतिम के द्वारा (तृतीया एकवचन)"
+      }
+    }
+  },
+  "व्यञ्जनवर्णेन": {
+    "word": "व्यञ्जनवर्णेन",
+    "base_english": "By the consonant letter (tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By the consonant letter (tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "व्यंजन अक्षर के द्वारा (तृतीया एकवचन)"
+      }
+    }
+  },
+  "प्रचलति": {
+    "word": "प्रचलति",
+    "base_english": "Proceeds / Continues (lat prathamapurusha singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Proceeds / Continues (lat prathamapurusha singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चलता है / आगे बढ़ता है"
+      }
+    }
+  },
+  "महान्": {
+    "word": "महान्",
+    "base_english": "Great / Immense (masculine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Great / Immense (masculine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बड़ा / महान् / अत्यधिक"
+      }
+    }
+  },
+  "आनन्दः": {
+    "word": "आनन्दः",
+    "base_english": "Joy / Delight / Pleasure (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Joy / Delight / Pleasure (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आनंद / मज़ा / प्रसन्नता"
+      }
+    }
+  },
+  "भविष्यति": {
+    "word": "भविष्यति",
+    "base_english": "Will be (lṛt prathamapurusha singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Will be (lṛt prathamapurusha singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "होगा (लृट् लकार प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "ज्ञानमालागणः": {
+    "word": "ज्ञानमालागणः",
+    "base_english": "Jnanamala group",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Jnanamala group"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्ञानमाला समूह"
+      }
+    }
+  },
+  "रत्नमालागणः": {
+    "word": "रत्नमालागणः",
+    "base_english": "Ratnamala group",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ratnamala group"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रत्नमाला समूह"
+      }
+    }
+  },
+  "अक्षरात्": {
+    "word": "अक्षरात्",
+    "base_english": "From the letter (pañcamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the letter (pañcamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अक्षर से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "अन्तिम": {
+    "word": "अन्तिम",
+    "base_english": "Last / Final",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Last / Final"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अंतिम / आखिरी"
+      }
+    }
+  },
+  "वर्ण": {
+    "word": "वर्ण",
+    "base_english": "Letter / Sound / Phoneme",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Letter / Sound / Phoneme"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वर्ण / अक्षर"
+      }
+    }
+  },
+  "र्": {
+    "word": "र्",
+    "base_english": "The consonant sound 'r'",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The consonant sound 'r'"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "'र' व्यंजन वर्ण"
+      }
+    }
+  },
+  "क्": {
+    "word": "क्",
+    "base_english": "The consonant sound 'k'",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The consonant sound 'k'"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "'क' व्यंजन वर्ण"
+      }
+    }
+  },
+  "व": {
+    "word": "व",
+    "base_english": "The consonant sound 'v'",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The consonant sound 'v'"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "'व' व्यंजन वर्ण"
+      }
+    }
+  },
+  "त": {
+    "word": "त",
+    "base_english": "The consonant sound 't'",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The consonant sound 't'"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "'त' व्यंजन वर्ण"
+      }
+    }
+  },
+  "श": {
+    "word": "श",
+    "base_english": "The consonant sound 'sh'",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The consonant sound 'sh'"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "'श' व्यंजन वर्ण"
+      }
+    }
+  },
+  "म": {
+    "word": "म",
+    "base_english": "The consonant sound 'm'",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The consonant sound 'm'"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "'म' व्यंजन वर्ण"
+      }
+    }
+  },
+  "अन्वयः": {
+    "word": "अन्वयः",
+    "base_english": "Prose order of verse (anvaya)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Prose order of verse (anvaya)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अन्वय (श्लोक के शब्दों का गद्य क्रम)"
+      }
+    }
+  },
+  "अन्वय": {
+    "word": "अन्वय",
+    "base_english": "Prose order of verse",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Prose order of verse"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अन्वय"
+      }
+    }
+  },
+  "रूपयौवनसम्पन्ना": {
+    "word": "रूपयौवनसम्पन्ना",
+    "base_english": "Endowed with beauty and youth",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Endowed with beauty and youth"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुंदर रूप और यौवन से युक्त"
+      }
+    }
+  },
+  "रूपयौवनसम्पन्नाः": {
+    "word": "रूपयौवनसम्पन्नाः",
+    "base_english": "Endowed with beauty and youth (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Endowed with beauty and youth (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रूप और जवानी से संपन्न लोग (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "विशालकुलसम्भवाः": {
+    "word": "विशालकुलसम्भवाः",
+    "base_english": "Born in an illustrious / noble family",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Born in an illustrious / noble family"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ऊंचे / प्रतिष्ठित कुल में उत्पन्न"
+      }
+    }
+  },
+  "विद्याहीना": {
+    "word": "विद्याहीना",
+    "base_english": "Devoid of knowledge / education",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Devoid of knowledge / education"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्या से रहित / अनपढ़"
+      }
+    }
+  },
+  "विद्याहीनाः": {
+    "word": "विद्याहीनाः",
+    "base_english": "Devoid of education / Uneducated persons",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Devoid of education / Uneducated persons"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्या से रहित लोग (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "निर्गन्धा": {
+    "word": "निर्गन्धा",
+    "base_english": "Without fragrance / Scentless",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Without fragrance / Scentless"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गंधहीन / बिना खुशबू के"
+      }
+    }
+  },
+  "निर्गन्धाः": {
+    "word": "निर्गन्धाः",
+    "base_english": "Scentless / Odorless (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Scentless / Odorless (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बिना खुशबू वाले / गंधहीन (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "किंशुकाः": {
+    "word": "किंशुकाः",
+    "base_english": "Palāśa / Flame-of-the-forest flowers",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Palāśa / Flame-of-the-forest flowers"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पलाश (टेसू) के फूल"
+      }
+    }
+  },
+  "काव्यशास्त्रविनोदेन": {
+    "word": "काव्यशास्त्रविनोदेन",
+    "base_english": "Through the enjoyment of poetry and scriptures (tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Through the enjoyment of poetry and scriptures (tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "काव्य और शास्त्रों के पठन-मनोरंजन से"
+      }
+    }
+  },
+  "कालो": {
+    "word": "कालो",
+    "base_english": "Time (kālah -> kālo by sandhi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Time (kālah -> kālo by sandhi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "समय (कालः का सन्धि रूप)"
+      }
+    }
+  },
+  "धीमताम्": {
+    "word": "धीमताम्",
+    "base_english": "Of the wise / intelligent persons (shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the wise / intelligent persons (shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बुद्धिमान लोगों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "धीमतां": {
+    "word": "धीमताम्",
+    "base_english": "Of the wise / intelligent persons (shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the wise / intelligent persons (shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बुद्धिमानों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "व्यसनेन": {
+    "word": "व्यसनेन",
+    "base_english": "By bad habits / addiction (tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By bad habits / addiction (tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बुरी आदतों / व्यसन से (तृतीया एकवचन)"
+      }
+    }
+  },
+  "मूर्खाणां": {
+    "word": "मूर्खाणां",
+    "base_english": "Of fools (shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of fools (shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मूर्खों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "मूर्खाणाम्": {
+    "word": "मूर्खाणाम्",
+    "base_english": "Of fools (shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of fools (shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मूर्खों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "निद्रया": {
+    "word": "निद्रया",
+    "base_english": "By sleep (tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By sleep (tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सोने से / नींद के द्वारा (तृतीया एकवचन)"
+      }
+    }
+  },
+  "कलहेन": {
+    "word": "कलहेन",
+    "base_english": "By quarreling / fighting (tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By quarreling / fighting (tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लड़ाई-झगड़े से (तृतीया एकवचन)"
+      }
+    }
+  },
+  "साधोः": {
+    "word": "साधोः",
+    "base_english": "Of the virtuous / noble person (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the virtuous / noble person (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सज्जन व्यक्ति का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "विपरीतम्": {
+    "word": "विपरीतम्",
+    "base_english": "Opposite / Contrary",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Opposite / Contrary"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इसके विपरीत / उल्टा"
+      }
+    }
+  },
+  "विपरीत": {
+    "word": "विपरीत",
+    "base_english": "Opposite / Inverted",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Opposite / Inverted"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विपरीत / उल्टा"
+      }
+    }
+  },
+  "येषां": {
+    "word": "येषां",
+    "base_english": "Of those / Those who (yad shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of those / Those who (yad shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जिनके पास / जिन लोगों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "तपो": {
+    "word": "तपो",
+    "base_english": "Penance / Austerity (tapah -> tapo by sandhi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Penance / Austerity (tapah -> tapo by sandhi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तपस्या / तप (तपः का सन्धि रूप)"
+      }
+    }
+  },
+  "तपः": {
+    "word": "तपः",
+    "base_english": "Penance / Austerity / Hard work",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Penance / Austerity / Hard work"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तपस्या / कठिन परिश्रम"
+      }
+    }
+  },
+  "दानं": {
+    "word": "दानं",
+    "base_english": "Charity / Donation",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Charity / Donation"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दान / दानशीलता"
+      }
+    }
+  },
+  "दानम्": {
+    "word": "दानम्",
+    "base_english": "Charity / Donation",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Charity / Donation"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दान / दानशीलता"
+      }
+    }
+  },
+  "ज्ञानं": {
+    "word": "ज्ञानं",
+    "base_english": "Wisdom / Knowledge",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wisdom / Knowledge"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्ञान / समझ"
+      }
+    }
+  },
+  "ज्ञानम्": {
+    "word": "ज्ञानम्",
+    "base_english": "Wisdom / Knowledge",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wisdom / Knowledge"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्ञान / समझ"
+      }
+    }
+  },
+  "शीलं": {
+    "word": "शीलं",
+    "base_english": "Good character / Virtue",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Good character / Virtue"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अच्छा चरित्र / शील"
+      }
+    }
+  },
+  "शीलम्": {
+    "word": "शीलम्",
+    "base_english": "Good character / Virtue",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Good character / Virtue"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अच्छा चरित्र / शील"
+      }
+    }
+  },
+  "गुणो": {
+    "word": "गुणो",
+    "base_english": "Virtue / Merit (gunah -> guno by sandhi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Virtue / Merit (gunah -> guno by sandhi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गुण / अच्छाई (गुणः का सन्धि रूप)"
+      }
+    }
+  },
+  "गुणः": {
+    "word": "गुणः",
+    "base_english": "Virtue / Quality / Merit",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Virtue / Quality / Merit"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गुण / सद्विचार"
+      }
+    }
+  },
+  "मर्त्यलोके": {
+    "word": "मर्त्यलोके",
+    "base_english": "In this mortal earth / world (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In this mortal earth / world (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मृत्युलोक में / इस संसार में (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "भुवि": {
+    "word": "भुवि",
+    "base_english": "On earth (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "On earth (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धरती पर / पृथ्वी पर (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "भारभूता": {
+    "word": "भारभूता",
+    "base_english": "Being a burden / Like dead weight",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Being a burden / Like dead weight"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बोझ बने हुए"
+      }
+    }
+  },
+  "भारभूताः": {
+    "word": "भारभूताः",
+    "base_english": "Existing as a burden (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Existing as a burden (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धरती पर भार स्वरूप / बोझ बने हुए (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "मनुष्यरूपेण": {
+    "word": "मनुष्यरूपेण",
+    "base_english": "In human form (tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In human form (tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इंसानी रूप में (तृतीया एकवचन)"
+      }
+    }
+  },
+  "मृगाश्चरन्ति": {
+    "word": "मृगाश्चरन्ति",
+    "base_english": "Animals roam / graze (mṛgāḥ + caranti)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Animals roam / graze (mṛgāḥ + caranti)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पशु घूमते हैं (मृगाः + चरन्ति)"
+      }
+    }
+  },
+  "मृगाः": {
+    "word": "मृगाः",
+    "base_english": "Animals / Beasts / Deer (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Animals / Beasts / Deer (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पशु / जानवर / हिरण (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "चरन्ति": {
+    "word": "चरन्ति",
+    "base_english": "Roam / Graze / Wander (lat prathamapurusha plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Roam / Graze / Wander (lat prathamapurusha plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "घूमते हैं / विचरते हैं (लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "वृतिश्च": {
+    "word": "वृतिश्च",
+    "base_english": "And livelihood (vṛttiḥ + ca)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "And livelihood (vṛttiḥ + ca)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "और आजीविका / रोजगार (वृत्तिः + च)"
+      }
+    }
+  },
+  "वृत्तिश्च": {
+    "word": "वृत्तिश्च",
+    "base_english": "And livelihood (vṛttiḥ + ca)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "And livelihood (vṛttiḥ + ca)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "और आजीविका / रोजगार (वृत्तिः + च)"
+      }
+    }
+  },
+  "वृत्तिः": {
+    "word": "वृत्तिः",
+    "base_english": "Livelihood / Profession / Occupation",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Livelihood / Profession / Occupation"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोजगार / आजीविका"
+      }
+    }
+  },
+  "कीर्तिश्च": {
+    "word": "कीर्तिश्च",
+    "base_english": "And fame / renown (kīrtiḥ + ca)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "And fame / renown (kīrtiḥ + ca)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "और कीर्ति / यश (कीर्तिः + च)"
+      }
+    }
+  },
+  "कीर्तिः": {
+    "word": "कीर्तिः",
+    "base_english": "Fame / Glory / Renown",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fame / Glory / Renown"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "यश / प्रसिद्धि / कीर्ति"
+      }
+    }
+  },
+  "लक्ष्मीर्वाणी": {
+    "word": "लक्ष्मीर्वाणी",
+    "base_english": "Wealth and speech (lakṣmīḥ + vāṇī)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wealth and speech (lakṣmīḥ + vāṇī)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धन-संपत्ति और वाणी (लक्ष्मीः + वाणी)"
+      }
+    }
+  },
+  "लक्ष्मीः": {
+    "word": "लक्ष्मीः",
+    "base_english": "Wealth / Goddess of prosperity",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wealth / Goddess of prosperity"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धन-दौलत / लक्ष्मी"
+      }
+    }
+  },
+  "वाणी": {
+    "word": "वाणी",
+    "base_english": "Speech / Voice / Words",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Speech / Voice / Words"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बोली / वाणी / आवाज़"
+      }
+    }
+  },
+  "यशस्विनी": {
+    "word": "यशस्विनी",
+    "base_english": "Glorious / Renowned (feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Glorious / Renowned (feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गौरवमयी / यशस्वी"
+      }
+    }
+  },
+  "तत्त्वज्ञानं": {
+    "word": "तत्त्वज्ञानं",
+    "base_english": "True knowledge / Metaphysical wisdom",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "True knowledge / Metaphysical wisdom"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वास्तविक सत्य का ज्ञान / तत्वज्ञान"
+      }
+    }
+  },
+  "तत्त्वज्ञानम्": {
+    "word": "तत्त्वज्ञानम्",
+    "base_english": "True knowledge / Metaphysical wisdom",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "True knowledge / Metaphysical wisdom"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "यथार्थ ज्ञान / तत्वज्ञान"
+      }
+    }
+  },
+  "परा": {
+    "word": "परा",
+    "base_english": "Supreme / Ultimate / Highest (feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Supreme / Ultimate / Highest (feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "परम / सर्वश्रेष्ठ (स्त्रीलिंग)"
+      }
+    }
+  },
+  "शान्तिर्यदा": {
+    "word": "शान्तिर्यदा",
+    "base_english": "Peace when (śāntiḥ + yadā)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Peace when (śāntiḥ + yadā)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शान्ति जब (शान्तिः + यदा)"
+      }
+    }
+  },
+  "शान्तिः": {
+    "word": "शान्तिः",
+    "base_english": "Peace / Tranquility",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Peace / Tranquility"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शान्ति / परम शांति"
+      }
+    }
+  },
+  "यदा": {
+    "word": "यदा",
+    "base_english": "When (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "When (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जब (अव्यय)"
+      }
+    }
+  },
+  "भवेत्तव": {
+    "word": "भवेत्तव",
+    "base_english": "Should become yours (bhavet + tava)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Should become yours (bhavet + tava)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम्हें प्राप्त हो / तुम्हारा हो (भवेत् + तव)"
+      }
+    }
+  },
+  "तव": {
+    "word": "तव",
+    "base_english": "Yours / Of you (yushmad shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Yours / Of you (yushmad shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम्हारा / तुम्हारे पास (युष्मद् षष्ठी एकवचन)"
+      }
+    }
+  },
+  "नरस्य": {
+    "word": "नरस्य",
+    "base_english": "Of man / human (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of man / human (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्य का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "रूपमधिकं": {
+    "word": "रूपमधिकं",
+    "base_english": "Extra/supreme beauty (rūpam + adhikam)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Extra/supreme beauty (rūpam + adhikam)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वास्तविक सौंदर्य (रूपम् + अधिकम्)"
+      }
+    }
+  },
+  "प्रच्छन्नगुप्तं": {
+    "word": "प्रच्छन्नगुप्तं",
+    "base_english": "Secretly hidden and safe",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Secretly hidden and safe"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अत्यंत सुरक्षित और छिपा हुआ"
+      }
+    }
+  },
+  "प्रच्छन्नगुप्तम्": {
+    "word": "प्रच्छन्नगुप्तम्",
+    "base_english": "Secretly hidden and safe",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Secretly hidden and safe"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अत्यंत सुरक्षित और छिपा हुआ"
+      }
+    }
+  },
+  "भोगकरी": {
+    "word": "भोगकरी",
+    "base_english": "Giver of enjoyments and comforts",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Giver of enjoyments and comforts"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुख-साधन जुटाने वाली"
+      }
+    }
+  },
+  "यशःसुखकरी": {
+    "word": "यशःसुखकरी",
+    "base_english": "Giver of fame and happiness",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Giver of fame and happiness"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कीर्ति और आनंद देने वाली"
+      }
+    }
+  },
+  "गुरूणां": {
+    "word": "गुरूणां",
+    "base_english": "Of teachers / masters (shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of teachers / masters (shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गुरुओं का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "गुरूणाम्": {
+    "word": "गुरूणाम्",
+    "base_english": "Of teachers / masters (shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of teachers / masters (shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गुरुओं का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "गुरुः": {
+    "word": "गुरुः",
+    "base_english": "Teacher / Master / Preceptor (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Teacher / Master / Preceptor (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गुरु / शिक्षक (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "बन्धुजनो": {
+    "word": "बन्धुजनो",
+    "base_english": "Kinsman / Friend / Relative (bandhujanah -> bandhujano by sandhi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Kinsman / Friend / Relative (bandhujanah -> bandhujano by sandhi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सगा-संबंधी / मित्र (बन्धुजनः का सन्धि रूप)"
+      }
+    }
+  },
+  "बन्धुजनः": {
+    "word": "बन्धुजनः",
+    "base_english": "Relative / Friend / Companion",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Relative / Friend / Companion"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सगा-संबंधी / मित्र"
+      }
+    }
+  },
+  "विदेशगमने": {
+    "word": "विदेशगमने",
+    "base_english": "While travelling abroad (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "While travelling abroad (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विदेश जाने पर / परदेश में (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "देवता": {
+    "word": "देवता",
+    "base_english": "Deity / Divinity",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Deity / Divinity"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देवता / देवी"
+      }
+    }
+  },
+  "राजसु": {
+    "word": "राजसु",
+    "base_english": "Among kings / In royal courts (saptamī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Among kings / In royal courts (saptamī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "राजाओं में / राजसभाओं में (सप्तमी बहुवचन)"
+      }
+    }
+  },
+  "पूज्यते": {
+    "word": "पूज्यते",
+    "base_english": "Is honored / worshipped (passive lat)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Is honored / worshipped (passive lat)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पूजा जाता है / सम्मान दिया जाता है"
+      }
+    }
+  },
+  "विद्याविहीनः": {
+    "word": "विद्याविहीनः",
+    "base_english": "One devoid of education / knowledge",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "One devoid of education / knowledge"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्या से रहित व्यक्ति"
+      }
+    }
+  },
+  "पशुः": {
+    "word": "पशुः",
+    "base_english": "Animal / Beast (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Animal / Beast (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जानवर / पशु (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "शनैः": {
+    "word": "शनैः",
+    "base_english": "Slowly / Gradually (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Slowly / Gradually (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धीरे-धीरे (अव्यय)"
+      }
+    }
+  },
+  "पन्थाः": {
+    "word": "पन्थाः",
+    "base_english": "Path / Way / Road (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Path / Way / Road (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रास्ता / मार्ग"
+      }
+    }
+  },
+  "कन्था": {
+    "word": "कन्था",
+    "base_english": "Quilt made of rags / Patchwork blanket",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Quilt made of rags / Patchwork blanket"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गुदड़ी / फटे कपड़ों की चादर"
+      }
+    }
+  },
+  "पर्वतलङ्घनम्": {
+    "word": "पर्वतलङ्घनम्",
+    "base_english": "Crossing / climbing a mountain",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Crossing / climbing a mountain"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पहाड़ को लांघना / चढ़ना"
+      }
+    }
+  },
+  "पर्वतलङ्घनं": {
+    "word": "पर्वतलङ्घनं",
+    "base_english": "Crossing / climbing a mountain",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Crossing / climbing a mountain"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पहाड़ को लांघना / चढ़ना"
+      }
+    }
+  },
+  "शनैर्विद्या": {
+    "word": "शनैर्विद्या",
+    "base_english": "Slowly knowledge (śanaiḥ + vidyā)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Slowly knowledge (śanaiḥ + vidyā)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धीरे-धीरे विद्या (शनैः + विद्या)"
+      }
+    }
+  },
+  "शनैर्वित्तं": {
+    "word": "शनैर्वित्तं",
+    "base_english": "Slowly wealth (śanaiḥ + vittam)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Slowly wealth (śanaiḥ + vittam)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धीरे-धीरे धन (शनैः + वित्तम्)"
+      }
+    }
+  },
+  "वित्तं": {
+    "word": "वित्तं",
+    "base_english": "Wealth / Money / Finance",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wealth / Money / Finance"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धन / पैसा"
+      }
+    }
+  },
+  "वित्तम्": {
+    "word": "वित्तम्",
+    "base_english": "Wealth / Money / Finance",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wealth / Money / Finance"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धन / पैसा"
+      }
+    }
+  },
+  "पञ्चैतानि": {
+    "word": "पञ्चैतानि",
+    "base_english": "These five (pañca + etāni)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "These five (pañca + etāni)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ये पाँचों (पञ्च + एतानि)"
+      }
+    }
+  },
+  "पञ्च": {
+    "word": "पञ्च",
+    "base_english": "Five (cardinal number)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Five (cardinal number)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पाँच (संख्यावाचक)"
+      }
+    }
+  },
+  "कार्याणि": {
+    "word": "कार्याणि",
+    "base_english": "Duties / Works / Deeds (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Duties / Works / Deeds (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कार्य / काम (बहुवचन)"
+      }
+    }
+  },
+  "करणीयानि": {
+    "word": "करणीयानि",
+    "base_english": "Ought to be done (anīyar plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ought to be done (anīyar plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "करने योग्य / करने चाहिए (अनीयर प्रत्यय)"
+      }
+    }
+  },
+  "सौख्यं": {
+    "word": "सौख्यं",
+    "base_english": "Happiness / Comfort / Well-being",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Happiness / Comfort / Well-being"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुख / चैन"
+      }
+    }
+  },
+  "सौख्यम्": {
+    "word": "सौख्यम्",
+    "base_english": "Happiness / Comfort / Well-being",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Happiness / Comfort / Well-being"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुख / चैन"
+      }
+    }
+  },
+  "नराणां": {
+    "word": "नराणां",
+    "base_english": "Of human beings / men (shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of human beings / men (shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्यों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "नराणाम्": {
+    "word": "नराणाम्",
+    "base_english": "Of human beings / men (shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of human beings / men (shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्यों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "ध्रुवम्": {
+    "word": "ध्रुवम्",
+    "base_english": "Certainly / Surely / Inevitably (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Certainly / Surely / Inevitably (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "निश्चित रूप से / निश्चय ही (अव्यय)"
+      }
+    }
+  },
+  "ध्रुवं": {
+    "word": "ध्रुवं",
+    "base_english": "Certainly / Surely / Inevitably (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Certainly / Surely / Inevitably (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "निश्चित रूप से (अव्यय)"
+      }
+    }
+  },
+  "अतो": {
+    "word": "अतो",
+    "base_english": "Therefore / Hence (ataḥ -> ato by sandhi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Therefore / Hence (ataḥ -> ato by sandhi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इसलिए (अतः का सन्धि रूप)"
+      }
+    }
+  },
+  "धर्मार्थमोक्षेभ्यो": {
+    "word": "धर्मार्थमोक्षेभ्यो",
+    "base_english": "For righteousness, wealth, and liberation (caturthī plural sandhi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For righteousness, wealth, and liberation (caturthī plural sandhi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धर्म, अर्थ और मोक्ष के लिए"
+      }
+    }
+  },
+  "धर्मार्थमोक्षेभ्यः": {
+    "word": "धर्मार्थमोक्षेभ्यः",
+    "base_english": "For righteousness, wealth, and liberation (caturthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For righteousness, wealth, and liberation (caturthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धर्म, अर्थ और मोक्ष के लिए (चतुर्थी बहुवचन)"
+      }
+    }
+  },
+  "धर्मअर्थमोक्षेभ्यः": {
+    "word": "धर्मअर्थमोक्षेभ्यः",
+    "base_english": "For Dharma, Artha, and Moksha",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For Dharma, Artha, and Moksha"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धर्म, अर्थ और मोक्ष के लिए"
+      }
+    }
+  },
+  "विद्याभ्यासं": {
+    "word": "विद्याभ्यासं",
+    "base_english": "Practice of knowledge / studying (dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Practice of knowledge / studying (dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्या का अभ्यास (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "विद्याभ्यासम्": {
+    "word": "विद्याभ्यासम्",
+    "base_english": "Practice of knowledge / studying (dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Practice of knowledge / studying (dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्या का अभ्यास (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "समाचरेत्": {
+    "word": "समाचरेत्",
+    "base_english": "Should practice / perform (vidhiliṅ prathamapurusha singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Should practice / perform (vidhiliṅ prathamapurusha singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "करना चाहिए / आचरण करना चाहिए"
+      }
+    }
+  },
+  "ताराणां": {
+    "word": "ताराणां",
+    "base_english": "Of the stars (shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the stars (shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तारों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "ताराणाम्": {
+    "word": "ताराणाम्",
+    "base_english": "Of the stars (shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the stars (shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तारों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "भूषणं": {
+    "word": "भूषणं",
+    "base_english": "Ornament / Adornment",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ornament / Adornment"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आभूषण / गहना / शोभा"
+      }
+    }
+  },
+  "भूषणम्": {
+    "word": "भूषणम्",
+    "base_english": "Ornament / Adornment",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ornament / Adornment"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आभूषण / गहना / शोभा"
+      }
+    }
+  },
+  "चन्द्रः": {
+    "word": "चन्द्रः",
+    "base_english": "Moon (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Moon (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चाँद / चंद्रमा (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "लतानां": {
+    "word": "लतानां",
+    "base_english": "Of creeping vines (shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of creeping vines (shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लताओं / बेलों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "लतानाम्": {
+    "word": "लतानाम्",
+    "base_english": "Of creeping vines (shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of creeping vines (shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लताओं / बेलों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "सुमम्": {
+    "word": "सुमम्",
+    "base_english": "Flower / Blossom",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Flower / Blossom"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फूल / पुष्प"
+      }
+    }
+  },
+  "सुमं": {
+    "word": "सुमं",
+    "base_english": "Flower / Blossom",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Flower / Blossom"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फूल / पुष्प"
+      }
+    }
+  },
+  "पृथिव्याः": {
+    "word": "पृथिव्याः",
+    "base_english": "Of the earth (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the earth (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धरती का / पृथ्वी का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "सर्वस्य": {
+    "word": "सर्वस्य",
+    "base_english": "Of all / Of everyone (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of all / Of everyone (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सबका / सभी का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "चोरहार्यं": {
+    "word": "चोरहार्यं",
+    "base_english": "Stealable by a thief",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Stealable by a thief"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चोर द्वारा चुराने योग्य"
+      }
+    }
+  },
+  "चोरहार्यम्": {
+    "word": "चोरहार्यम्",
+    "base_english": "Stealable by a thief",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Stealable by a thief"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चोर द्वारा चुराने योग्य"
+      }
+    }
+  },
+  "राजहार्यं": {
+    "word": "राजहार्यं",
+    "base_english": "Seizable by a king",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Seizable by a king"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "राजा द्वारा छीनने योग्य"
+      }
+    }
+  },
+  "राजहार्यम्": {
+    "word": "राजहार्यम्",
+    "base_english": "Seizable by a king",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Seizable by a king"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "राजा द्वारा छीनने योग्य"
+      }
+    }
+  },
+  "भ्रातृभाज्यं": {
+    "word": "भ्रातृभाज्यं",
+    "base_english": "Divisible among brothers",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Divisible among brothers"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भाइयों में बँटने योग्य"
+      }
+    }
+  },
+  "भ्रातृभाज्यम्": {
+    "word": "भ्रातृभाज्यम्",
+    "base_english": "Divisible among brothers",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Divisible among brothers"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भाइयों में बँटने योग्य"
+      }
+    }
+  },
+  "भारकारि": {
+    "word": "भारकारि",
+    "base_english": "Causing burden / Heavy",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Causing burden / Heavy"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बोझ स्वरूप / भारी"
+      }
+    }
+  },
+  "व्यये": {
+    "word": "व्यये",
+    "base_english": "Upon expenditure / spending (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Upon expenditure / spending (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खर्च करने पर (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "कृते": {
+    "word": "कृते",
+    "base_english": "Having been done (kta saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Having been done (kta saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किए जाने पर (क्त प्रत्यय)"
+      }
+    }
+  },
+  "वर्धत": {
+    "word": "वर्धत",
+    "base_english": "Increases (vardhate -> vardhata by sandhi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Increases (vardhate -> vardhata by sandhi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बढ़ता है (वर्धते का सन्धि रूप)"
+      }
+    }
+  },
+  "विद्याधनं": {
+    "word": "विद्याधनं",
+    "base_english": "The wealth of education / knowledge",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The wealth of education / knowledge"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्या रूपी धन"
+      }
+    }
+  },
+  "विद्याधनम्": {
+    "word": "विद्याधनम्",
+    "base_english": "The wealth of education / knowledge",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The wealth of education / knowledge"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्या रूपी धन"
+      }
+    }
+  },
+  "सर्वधनप्रधानम्": {
+    "word": "सर्वधनप्रधानम्",
+    "base_english": "Supreme among all kinds of wealth",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Supreme among all kinds of wealth"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सभी धनों में श्रेष्ठ / मुख्य"
+      }
+    }
+  },
+  "सर्वधनप्रधानं": {
+    "word": "सर्वधनप्रधानं",
+    "base_english": "Supreme among all kinds of wealth",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Supreme among all kinds of wealth"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सभी धनों में श्रेष्ठ / मुख्य"
+      }
+    }
+  },
+  "आओ": {
+    "word": "आओ",
+    "base_english": "Come / Let us",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Come / Let us"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आओ"
+      }
+    }
+  },
+  "श्लोकों": {
+    "word": "श्लोकों",
+    "base_english": "Of the shlokas / verses",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the shlokas / verses"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "श्लोकों"
+      }
+    }
+  },
+  "अंत्याक्षरी": {
+    "word": "अंत्याक्षरी",
+    "base_english": "Antyakshari game",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Antyakshari game"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अंत्याक्षरी"
+      }
+    }
+  },
+  "खेलें": {
+    "word": "खेलें",
+    "base_english": "Let us play",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Let us play"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेलें"
+      }
+    }
+  },
+  "सखी": {
+    "word": "सखी",
+    "base_english": "Friend (female)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Friend (female)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सखी"
+      }
+    }
+  },
+  "खेलना": {
+    "word": "खेलना",
+    "base_english": "To play",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To play"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेलना"
+      }
+    }
+  },
+  "बाहर": {
+    "word": "बाहर",
+    "base_english": "Outside",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Outside"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बाहर"
+      }
+    }
+  },
+  "वर्षा": {
+    "word": "वर्षा",
+    "base_english": "Rain",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Rain"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वर्षा"
+      }
+    }
+  },
+  "रही": {
+    "word": "रही",
+    "base_english": "Continuing / Happening",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Continuing / Happening"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रही"
+      }
+    }
+  },
+  "बारिश": {
+    "word": "बारिश",
+    "base_english": "Rain",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Rain"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बारिश"
+      }
+    }
+  },
+  "खेलेंगे": {
+    "word": "खेलेंगे",
+    "base_english": "Will play",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Will play"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेलेंगे"
+      }
+    }
+  },
+  "भाई": {
+    "word": "भाई",
+    "base_english": "Brother / Friend",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Brother / Friend"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भाई"
+      }
+    }
+  },
+  "नया": {
+    "word": "नया",
+    "base_english": "New",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "New"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नया"
+      }
+    }
+  },
+  "खेल": {
+    "word": "खेल",
+    "base_english": "Game / Sport",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Game / Sport"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेल"
+      }
+    }
+  },
+  "खेलूँगी": {
+    "word": "खेलूँगी",
+    "base_english": "I will play",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I will play"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेलूँगी"
+      }
+    }
+  },
+  "खेलते": {
+    "word": "खेलते",
+    "base_english": "Play",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Play"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेलते"
+      }
+    }
+  },
+  "बता": {
+    "word": "बता",
+    "base_english": "Tell",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Tell"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बता"
+      }
+    }
+  },
+  "बनाते": {
+    "word": "बनाते",
+    "base_english": "Make / Create",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Make / Create"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बनाते"
+      }
+    }
+  },
+  "सबसे": {
+    "word": "सबसे",
+    "base_english": "Most / In the beginning",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Most / In the beginning"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सबसे"
+      }
+    }
+  },
+  "गाएगा": {
+    "word": "गाएगा",
+    "base_english": "Will sing",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Will sing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गाएगा"
+      }
+    }
+  },
+  "गाएगी": {
+    "word": "गाएगी",
+    "base_english": "Will sing (female)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Will sing (female)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गाएगी"
+      }
+    }
+  },
+  "चलता": {
+    "word": "चलता",
+    "base_english": "Runs / Proceeds",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Runs / Proceeds"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चलता"
+      }
+    }
+  },
+  "रहेगा": {
+    "word": "रहेगा",
+    "base_english": "Will continue",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Will continue"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रहेगा"
+      }
+    }
+  },
+  "बड़ा": {
+    "word": "बड़ा",
+    "base_english": "Big / Great",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Big / Great"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बड़ा"
+      }
+    }
+  },
+  "आनंद": {
+    "word": "आनंद",
+    "base_english": "Joy / Fun",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Joy / Fun"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आनंद"
+      }
+    }
+  },
+  "आएगा": {
+    "word": "आएगा",
+    "base_english": "Will come",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Will come"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आएगा"
+      }
+    }
+  },
+  "देगा": {
+    "word": "देगा",
+    "base_english": "Will give",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Will give"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देगा"
+      }
+    }
+  },
+  "सहित": {
+    "word": "सहित",
+    "base_english": "Along with / Including",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Along with / Including"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सहित"
+      }
+    }
+  },
+  "सुंदर": {
+    "word": "सुंदर",
+    "base_english": "Beautiful",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Beautiful"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुंदर"
+      }
+    }
+  },
+  "यौवन": {
+    "word": "यौवन",
+    "base_english": "Youth",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Youth"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "यौवन"
+      }
+    }
+  },
+  "संपन्न": {
+    "word": "संपन्न",
+    "base_english": "Endowed / Wealthy",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Endowed / Wealthy"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "संपन्न"
+      }
+    }
+  },
+  "जिन्होंने": {
+    "word": "जिन्होंने",
+    "base_english": "Those who",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Those who"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जिन्होंने"
+      }
+    }
+  },
+  "उच्च": {
+    "word": "उच्च",
+    "base_english": "High / Noble",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "High / Noble"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उच्च"
+      }
+    }
+  },
+  "कुल": {
+    "word": "कुल",
+    "base_english": "Family / Lineage",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Family / Lineage"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कुल"
+      }
+    }
+  },
+  "जन्म": {
+    "word": "जन्म",
+    "base_english": "Birth",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Birth"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जन्म"
+      }
+    }
+  },
+  "रहित": {
+    "word": "रहित",
+    "base_english": "Devoid / Without",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Devoid / Without"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रहित"
+      }
+    }
+  },
+  "समाज": {
+    "word": "समाज",
+    "base_english": "Society",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Society"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "समाज"
+      }
+    }
+  },
+  "शोभा": {
+    "word": "शोभा",
+    "base_english": "Grace / Splendor",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Grace / Splendor"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शोभा"
+      }
+    }
+  },
+  "पाते": {
+    "word": "पाते",
+    "base_english": "Attain",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Attain"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पाते"
+      }
+    }
+  },
+  "पलाश": {
+    "word": "पलाश",
+    "base_english": "Flame-of-the-forest tree",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Flame-of-the-forest tree"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पलाश"
+      }
+    }
+  },
+  "टेसू": {
+    "word": "टेसू",
+    "base_english": "Palasa flower",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Palasa flower"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "टेसू"
+      }
+    }
+  },
+  "फूल": {
+    "word": "फूल",
+    "base_english": "Flower",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Flower"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फूल"
+      }
+    }
+  },
+  "दिखने": {
+    "word": "दिखने",
+    "base_english": "Appearance / Looking",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Appearance / Looking"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दिखने"
+      }
+    }
+  },
+  "होते": {
+    "word": "होते",
+    "base_english": "Are / Exist",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Are / Exist"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "होते"
+      }
+    }
+  },
+  "खुशबू": {
+    "word": "खुशबू",
+    "base_english": "Fragrance / Scent",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fragrance / Scent"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खुशबू"
+      }
+    }
+  },
+  "उनका": {
+    "word": "उनका",
+    "base_english": "Their",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Their"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उनका"
+      }
+    }
+  },
+  "उपयोग": {
+    "word": "उपयोग",
+    "base_english": "Use / Utility",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Use / Utility"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उपयोग"
+      }
+    }
+  },
+  "बुद्धिमान": {
+    "word": "बुद्धिमान",
+    "base_english": "Intelligent / Wise",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Intelligent / Wise"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बुद्धिमान"
+      }
+    }
+  },
+  "लोगों": {
+    "word": "लोगों",
+    "base_english": "People",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "People"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लोगों"
+      }
+    }
+  },
+  "काव्य": {
+    "word": "काव्य",
+    "base_english": "Poetry / Literature",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Poetry / Literature"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "काव्य"
+      }
+    }
+  },
+  "शास्त्रों": {
+    "word": "शास्त्रों",
+    "base_english": "Scriptures / Sciences",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Scriptures / Sciences"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शास्त्रों"
+      }
+    }
+  },
+  "चर्चापढ़ने": {
+    "word": "चर्चापढ़ने",
+    "base_english": "Discussion / Reading",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Discussion / Reading"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चर्चापढ़ने"
+      }
+    }
+  },
+  "बीतता": {
+    "word": "बीतता",
+    "base_english": "Passes",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Passes"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बीतता"
+      }
+    }
+  },
+  "जबकि": {
+    "word": "जबकि",
+    "base_english": "Whereas / While",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Whereas / While"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जबकि"
+      }
+    }
+  },
+  "मूर्ख": {
+    "word": "मूर्ख",
+    "base_english": "Fool / Ignorant",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fool / Ignorant"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मूर्ख"
+      }
+    }
+  },
+  "बुरी": {
+    "word": "बुरी",
+    "base_english": "Bad / Evil",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Bad / Evil"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बुरी"
+      }
+    }
+  },
+  "आदतों": {
+    "word": "आदतों",
+    "base_english": "Habits",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Habits"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आदतों"
+      }
+    }
+  },
+  "व्यसन": {
+    "word": "व्यसन",
+    "base_english": "Addiction / Vice",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Addiction / Vice"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "व्यसन"
+      }
+    }
+  },
+  "सोने": {
+    "word": "सोने",
+    "base_english": "Sleeping",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sleeping"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सोने"
+      }
+    }
+  },
+  "आपस": {
+    "word": "आपस",
+    "base_english": "Among each other",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Among each other"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आपस"
+      }
+    }
+  },
+  "लड़ाईझगड़ा": {
+    "word": "लड़ाईझगड़ा",
+    "base_english": "Quarrel / Fighting",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Quarrel / Fighting"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लड़ाईझगड़ा"
+      }
+    }
+  },
+  "करने": {
+    "word": "करने",
+    "base_english": "Doing",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Doing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "करने"
+      }
+    }
+  },
+  "नष्ट": {
+    "word": "नष्ट",
+    "base_english": "Destroyed / Wasted",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Destroyed / Wasted"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नष्ट"
+      }
+    }
+  },
+  "दुष्ट": {
+    "word": "दुष्ट",
+    "base_english": "Wicked / Evil",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wicked / Evil"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दुष्ट"
+      }
+    }
+  },
+  "विवाद": {
+    "word": "विवाद",
+    "base_english": "Dispute / Argument",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Dispute / Argument"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विवाद"
+      }
+    }
+  },
+  "अहंकार": {
+    "word": "अहंकार",
+    "base_english": "Ego / Arrogance",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ego / Arrogance"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अहंकार"
+      }
+    }
+  },
+  "दूसरों": {
+    "word": "दूसरों",
+    "base_english": "Others",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Others"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दूसरों"
+      }
+    }
+  },
+  "परेशान": {
+    "word": "परेशान",
+    "base_english": "Troubled / Harassed",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Troubled / Harassed"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "परेशान"
+      }
+    }
+  },
+  "सज्जन": {
+    "word": "सज्जन",
+    "base_english": "Noble person / Good person",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Noble person / Good person"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सज्जन"
+      }
+    }
+  },
+  "ज्ञान": {
+    "word": "ज्ञान",
+    "base_english": "Knowledge / Wisdom",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Knowledge / Wisdom"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्ञान"
+      }
+    }
+  },
+  "दान": {
+    "word": "दान",
+    "base_english": "Charity / Giving",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Charity / Giving"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दान"
+      }
+    }
+  },
+  "कमजोरों": {
+    "word": "कमजोरों",
+    "base_english": "The weak",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The weak"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कमजोरों"
+      }
+    }
+  },
+  "रक्षा": {
+    "word": "रक्षा",
+    "base_english": "Protection",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Protection"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रक्षा"
+      }
+    }
+  },
+  "जिन": {
+    "word": "जिन",
+    "base_english": "Which / Whom",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Which / Whom"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जिन"
+      }
+    }
+  },
+  "मनुष्यों": {
+    "word": "मनुष्यों",
+    "base_english": "Humans",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Humans"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्यों"
+      }
+    }
+  },
+  "तप": {
+    "word": "तप",
+    "base_english": "Penance / Austerity",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Penance / Austerity"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तप"
+      }
+    }
+  },
+  "चरित्र": {
+    "word": "चरित्र",
+    "base_english": "Character / Conduct",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Character / Conduct"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चरित्र"
+      }
+    }
+  },
+  "पृथ्वी": {
+    "word": "पृथ्वी",
+    "base_english": "Earth",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Earth"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पृथ्वी"
+      }
+    }
+  },
+  "लोक": {
+    "word": "लोक",
+    "base_english": "World / Realm",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "World / Realm"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लोक"
+      }
+    }
+  },
+  "केवल": {
+    "word": "केवल",
+    "base_english": "Only / Mere",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Only / Mere"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "केवल"
+      }
+    }
+  },
+  "बोझ": {
+    "word": "बोझ",
+    "base_english": "Burden / Weight",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Burden / Weight"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बोझ"
+      }
+    }
+  },
+  "जानवरों": {
+    "word": "जानवरों",
+    "base_english": "Animals",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Animals"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जानवरों"
+      }
+    }
+  },
+  "इधरउधर": {
+    "word": "इधरउधर",
+    "base_english": "Here and there",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Here and there"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इधरउधर"
+      }
+    }
+  },
+  "घूमते": {
+    "word": "घूमते",
+    "base_english": "Roam / Wander",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Roam / Wander"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "घूमते"
+      }
+    }
+  },
+  "जब": {
+    "word": "जब",
+    "base_english": "When",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "When"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जब"
+      }
+    }
+  },
+  "तुम्हारे": {
+    "word": "तुम्हारे",
+    "base_english": "Yours",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Yours"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम्हारे"
+      }
+    }
+  },
+  "तुम्हारी": {
+    "word": "तुम्हारी",
+    "base_english": "Yours (feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Yours (feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम्हारी"
+      }
+    }
+  },
+  "आजीविका": {
+    "word": "आजीविका",
+    "base_english": "Livelihood",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Livelihood"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आजीविका"
+      }
+    }
+  },
+  "रोजगार": {
+    "word": "रोजगार",
+    "base_english": "Employment / Occupation",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Employment / Occupation"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोजगार"
+      }
+    }
+  },
+  "यश": {
+    "word": "यश",
+    "base_english": "Fame / Glory",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fame / Glory"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "यश"
+      }
+    }
+  },
+  "धनसंपत्ति": {
+    "word": "धनसंपत्ति",
+    "base_english": "Wealth / Property",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wealth / Property"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धनसंपत्ति"
+      }
+    }
+  },
+  "मधुर": {
+    "word": "मधुर",
+    "base_english": "Sweet / Pleasant",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sweet / Pleasant"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मधुर"
+      }
+    }
+  },
+  "गौरवमयी": {
+    "word": "गौरवमयी",
+    "base_english": "Glorious",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Glorious"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गौरवमयी"
+      }
+    }
+  },
+  "वास्तविक": {
+    "word": "वास्तविक",
+    "base_english": "Real / True",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Real / True"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वास्तविक"
+      }
+    }
+  },
+  "शांति": {
+    "word": "शांति",
+    "base_english": "Peace",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Peace"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शांति"
+      }
+    }
+  },
+  "स्वतः": {
+    "word": "स्वतः",
+    "base_english": "Naturally / By oneself",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Naturally / By oneself"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "स्वतः"
+      }
+    }
+  },
+  "सौंदर्य": {
+    "word": "सौंदर्य",
+    "base_english": "Beauty",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Beauty"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सौंदर्य"
+      }
+    }
+  },
+  "छिपा": {
+    "word": "छिपा",
+    "base_english": "Hidden",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Hidden"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "छिपा"
+      }
+    }
+  },
+  "सुरक्षित": {
+    "word": "सुरक्षित",
+    "base_english": "Protected / Safe",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Protected / Safe"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुरक्षित"
+      }
+    }
+  },
+  "सुखसाधन": {
+    "word": "सुखसाधन",
+    "base_english": "Comforts / Luxuries",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Comforts / Luxuries"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुखसाधन"
+      }
+    }
+  },
+  "जुटाने": {
+    "word": "जुटाने",
+    "base_english": "Procuring / Bringing",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Procuring / Bringing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जुटाने"
+      }
+    }
+  },
+  "कीर्ति": {
+    "word": "कीर्ति",
+    "base_english": "Fame / Renown",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fame / Renown"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कीर्ति"
+      }
+    }
+  },
+  "देने": {
+    "word": "देने",
+    "base_english": "Giving",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Giving"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देने"
+      }
+    }
+  },
+  "गुरुओं": {
+    "word": "गुरुओं",
+    "base_english": "Of teachers",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of teachers"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गुरुओं"
+      }
+    }
+  },
+  "गुरु": {
+    "word": "गुरु",
+    "base_english": "Teacher",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Teacher"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गुरु"
+      }
+    }
+  },
+  "विदेश": {
+    "word": "विदेश",
+    "base_english": "Foreign land",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Foreign land"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विदेश"
+      }
+    }
+  },
+  "बड़ी": {
+    "word": "बड़ी",
+    "base_english": "Great / Elder",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Great / Elder"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बड़ी"
+      }
+    }
+  },
+  "मित्रभाई": {
+    "word": "मित्रभाई",
+    "base_english": "Friend / Brother",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Friend / Brother"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मित्रभाई"
+      }
+    }
+  },
+  "बनती": {
+    "word": "बनती",
+    "base_english": "Becomes",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Becomes"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बनती"
+      }
+    }
+  },
+  "राजसभाओं": {
+    "word": "राजसभाओं",
+    "base_english": "Royal assemblies",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Royal assemblies"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "राजसभाओं"
+      }
+    }
+  },
+  "राजाओं": {
+    "word": "राजाओं",
+    "base_english": "Kings",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Kings"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "राजाओं"
+      }
+    }
+  },
+  "द्वारा": {
+    "word": "द्वारा",
+    "base_english": "By / Through",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By / Through"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "द्वारा"
+      }
+    }
+  },
+  "सम्मान": {
+    "word": "सम्मान",
+    "base_english": "Respect / Honor",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Respect / Honor"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सम्मान"
+      }
+    }
+  },
+  "पशु": {
+    "word": "पशु",
+    "base_english": "Animal / Beast",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Animal / Beast"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पशु"
+      }
+    }
+  },
+  "रास्ता": {
+    "word": "रास्ता",
+    "base_english": "Path / Way",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Path / Way"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रास्ता"
+      }
+    }
+  },
+  "धीरेधीरे": {
+    "word": "धीरेधीरे",
+    "base_english": "Slowly / Step by step",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Slowly / Step by step"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धीरेधीरे"
+      }
+    }
+  },
+  "पार": {
+    "word": "पार",
+    "base_english": "Crossing",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Crossing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पार"
+      }
+    }
+  },
+  "फटे": {
+    "word": "फटे",
+    "base_english": "Torn",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Torn"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फटे"
+      }
+    }
+  },
+  "कपड़ों": {
+    "word": "कपड़ों",
+    "base_english": "Clothes",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Clothes"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कपड़ों"
+      }
+    }
+  },
+  "चादर": {
+    "word": "चादर",
+    "base_english": "Sheet / Blanket",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sheet / Blanket"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चादर"
+      }
+    }
+  },
+  "सिलनी": {
+    "word": "सिलनी",
+    "base_english": "Sewing",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sewing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सिलनी"
+      }
+    }
+  },
+  "पहाड़": {
+    "word": "पहाड़",
+    "base_english": "Mountain",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mountain"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पहाड़"
+      }
+    }
+  },
+  "चढ़ना": {
+    "word": "चढ़ना",
+    "base_english": "Climbing",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Climbing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चढ़ना"
+      }
+    }
+  },
+  "सीखनी": {
+    "word": "सीखनी",
+    "base_english": "Learning",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Learning"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सीखनी"
+      }
+    }
+  },
+  "कमाना": {
+    "word": "कमाना",
+    "base_english": "Earning",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Earning"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कमाना"
+      }
+    }
+  },
+  "पाँचों": {
+    "word": "पाँचों",
+    "base_english": "All five",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "All five"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पाँचों"
+      }
+    }
+  },
+  "सिद्ध": {
+    "word": "सिद्ध",
+    "base_english": "Accomplished / Achieved",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Accomplished / Achieved"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सिद्ध"
+      }
+    }
+  },
+  "निश्चित": {
+    "word": "निश्चित",
+    "base_english": "Definite / Certain",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Definite / Certain"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "निश्चित"
+      }
+    }
+  },
+  "सुख": {
+    "word": "सुख",
+    "base_english": "Happiness",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Happiness"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुख"
+      }
+    }
+  },
+  "मोक्ष": {
+    "word": "मोक्ष",
+    "base_english": "Liberation / Salvation",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Liberation / Salvation"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मोक्ष"
+      }
+    }
+  },
+  "प्राप्ति": {
+    "word": "प्राप्ति",
+    "base_english": "Attainment",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Attainment"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्राप्ति"
+      }
+    }
+  },
+  "निरंतर": {
+    "word": "निरंतर",
+    "base_english": "Continuously",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Continuously"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "निरंतर"
+      }
+    }
+  },
+  "तारों": {
+    "word": "तारों",
+    "base_english": "Of stars",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of stars"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तारों"
+      }
+    }
+  },
+  "आभूषण": {
+    "word": "आभूषण",
+    "base_english": "Ornament",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ornament"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आभूषण"
+      }
+    }
+  },
+  "चंद्रमा": {
+    "word": "चंद्रमा",
+    "base_english": "Moon",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Moon"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चंद्रमा"
+      }
+    }
+  },
+  "लताओं": {
+    "word": "लताओं",
+    "base_english": "Of vines / creepers",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of vines / creepers"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लताओं"
+      }
+    }
+  },
+  "रूपी": {
+    "word": "रूपी",
+    "base_english": "In the form of",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the form of"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रूपी"
+      }
+    }
+  },
+  "जिसे": {
+    "word": "जिसे",
+    "base_english": "Whom / Which",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Whom / Which"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जिसे"
+      }
+    }
+  },
+  "चोर": {
+    "word": "चोर",
+    "base_english": "Thief",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Thief"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चोर"
+      }
+    }
+  },
+  "चुरा": {
+    "word": "चुरा",
+    "base_english": "Steal",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Steal"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चुरा"
+      }
+    }
+  },
+  "छीन": {
+    "word": "छीन",
+    "base_english": "Seize / Snatch",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Seize / Snatch"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "छीन"
+      }
+    }
+  },
+  "भाइयों": {
+    "word": "भाइयों",
+    "base_english": "Brothers",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Brothers"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भाइयों"
+      }
+    }
+  },
+  "बाँटा": {
+    "word": "बाँटा",
+    "base_english": "Divided",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Divided"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बाँटा"
+      }
+    }
+  },
+  "इसमें": {
+    "word": "इसमें",
+    "base_english": "In this",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In this"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इसमें"
+      }
+    }
+  },
+  "वजन": {
+    "word": "वजन",
+    "base_english": "Weight",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Weight"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वजन"
+      }
+    }
+  },
+  "खर्च": {
+    "word": "खर्च",
+    "base_english": "Spending / Expense",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Spending / Expense"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खर्च"
+      }
+    }
+  },
+  "धनों": {
+    "word": "धनों",
+    "base_english": "Wealths",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wealths"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धनों"
+      }
+    }
+  },
+  "भले": {
+    "word": "भले",
+    "base_english": "Even if",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Even if"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भले"
+      }
+    }
+  },
+  "नई": {
+    "word": "नई",
+    "base_english": "New",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "New"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नई"
+      }
+    }
+  },
+  "टीमें": {
+    "word": "टीमें",
+    "base_english": "Teams",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Teams"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "टीमें"
+      }
+    }
+  },
+  "जवानी": {
+    "word": "जवानी",
+    "base_english": "Youth",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Youth"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जवानी"
+      }
+    }
+  },
+  "ऊंचे": {
+    "word": "ऊंचे",
+    "base_english": "High",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "High"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ऊंचे"
+      }
+    }
+  },
+  "गंधहीन": {
+    "word": "गंधहीन",
+    "base_english": "Scentless",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Scentless"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गंधहीन"
+      }
+    }
+  },
+  "मनोरंजन": {
+    "word": "मनोरंजन",
+    "base_english": "Entertainment",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Entertainment"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनोरंजन"
+      }
+    }
+  },
+  "बुद्धिमानों": {
+    "word": "बुद्धिमानों",
+    "base_english": "Of the wise",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the wise"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बुद्धिमानों"
+      }
+    }
+  },
+  "मूर्खों": {
+    "word": "मूर्खों",
+    "base_english": "Of fools",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of fools"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मूर्खों"
+      }
+    }
+  },
+  "नींद": {
+    "word": "नींद",
+    "base_english": "Sleep",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sleep"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नींद"
+      }
+    }
+  },
+  "झगड़े": {
+    "word": "झगड़े",
+    "base_english": "Quarrel",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Quarrel"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "झगड़े"
+      }
+    }
+  },
+  "सताने": {
+    "word": "सताने",
+    "base_english": "Troubling",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Troubling"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सताने"
+      }
+    }
+  },
+  "मृत्युलोक": {
+    "word": "मृत्युलोक",
+    "base_english": "Mortal world",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mortal world"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मृत्युलोक"
+      }
+    }
+  },
+  "संसार": {
+    "word": "संसार",
+    "base_english": "World",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "World"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "संसार"
+      }
+    }
+  },
+  "हुए": {
+    "word": "हुए",
+    "base_english": "Being",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Being"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हुए"
+      }
+    }
+  },
+  "हिरण": {
+    "word": "हिरण",
+    "base_english": "Deer",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Deer"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हिरण"
+      }
+    }
+  },
+  "सगासंबंधी": {
+    "word": "सगासंबंधी",
+    "base_english": "Relative",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Relative"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सगासंबंधी"
+      }
+    }
+  },
+  "पूजा": {
+    "word": "पूजा",
+    "base_english": "Honored / Worshipped",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Honored / Worshipped"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पूजा"
+      }
+    }
+  },
+  "गुदड़ी": {
+    "word": "गुदड़ी",
+    "base_english": "Quilt of rags",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Quilt of rags"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गुदड़ी"
+      }
+    }
+  },
+  "लांघना": {
+    "word": "लांघना",
+    "base_english": "Crossing",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Crossing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लांघना"
+      }
+    }
+  },
+  "पाँच": {
+    "word": "पाँच",
+    "base_english": "Five",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Five"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पाँच"
+      }
+    }
+  },
+  "आचरण": {
+    "word": "आचरण",
+    "base_english": "Practice / Conduct",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Practice / Conduct"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आचरण"
+      }
+    }
+  },
+  "चुराने": {
+    "word": "चुराने",
+    "base_english": "Stealing",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Stealing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चुराने"
+      }
+    }
+  },
+  "छीनने": {
+    "word": "छीनने",
+    "base_english": "Snatching",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Snatching"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "छीनने"
+      }
+    }
+  },
+  "बँटने": {
+    "word": "बँटने",
+    "base_english": "Dividing",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Dividing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बँटने"
+      }
+    }
+  },
+  "भारी": {
+    "word": "भारी",
+    "base_english": "Heavy",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Heavy"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भारी"
+      }
+    }
+  },
+  "भार": {
+    "word": "भार",
+    "base_english": "Burden / Weight",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Burden / Weight"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भार"
+      }
+    }
+  },
+  "स्वरूप": {
+    "word": "स्वरूप",
+    "base_english": "Form",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Form"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "स्वरूप"
+      }
+    }
+  },
+  "प्रधान": {
+    "word": "प्रधान",
+    "base_english": "Chief / Supreme",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Chief / Supreme"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रधान"
+      }
+    }
+  },
+  "आइए": {
+    "word": "आइए",
+    "base_english": "Please come",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please come"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आइए"
+      }
+    }
+  },
+  "टीम": {
+    "word": "टीम",
+    "base_english": "Team / Group",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Team / Group"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "टीम / समूह"
+      }
+    }
+  },
+  "अंतिम": {
+    "word": "अंतिम",
+    "base_english": "Last / Final",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Last / Final"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अंतिम / आखिरी"
+      }
+    }
+  },
+  "व्यंजन": {
+    "word": "व्यंजन",
+    "base_english": "Consonant",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Consonant"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "व्यंजन वर्ण"
+      }
+    }
+  },
+  "अक्षर": {
+    "word": "अक्षर",
+    "base_english": "Letter / Syllable",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Letter / Syllable"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अक्षर / वर्ण"
+      }
+    }
+  },
+  "र": {
+    "word": "र",
+    "base_english": "The letter / sound \"ra\"",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The letter / sound \"ra\""
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "\"र\" वर्ण"
       }
     }
   }
