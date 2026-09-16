@@ -1054,15 +1054,15 @@
   },
   "च": {
     "word": "च",
-    "base_english": "And",
+    "base_english": "And / Option (f)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "And"
+        "meaning": "And / Option (f)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "और"
+        "meaning": "और / विकल्प (च)"
       }
     }
   },
@@ -5743,6 +5743,4304 @@
       "en": {
         "label": "English",
         "meaning": "Of others"
+      }
+    }
+  },
+  "अगली": {
+    "word": "अगली",
+    "base_english": "Next / Upcoming (feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Next / Upcoming (feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अगली (क्रम में आगे आने वाली)"
+      }
+    }
+  },
+  "अच्छा": {
+    "word": "अच्छा",
+    "base_english": "Good / Okay / Fine",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Good / Okay / Fine"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अच्छा / ठीक है"
+      }
+    }
+  },
+  "अब": {
+    "word": "अब",
+    "base_english": "Now / At present",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Now / At present"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अब / इस समय"
+      }
+    }
+  },
+  "अरे": {
+    "word": "अरे",
+    "base_english": "Hey / Oh (calling attention)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Hey / Oh (calling attention)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अरे (सम्बोधन विस्मय)"
+      }
+    }
+  },
+  "आज": {
+    "word": "आज",
+    "base_english": "Today",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Today"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आज / वर्तमान दिवस"
+      }
+    }
+  },
+  "आप": {
+    "word": "आप",
+    "base_english": "You (formal / respectful)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You (formal / respectful)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आप (आदरसूचक मध्यम पुरुष)"
+      }
+    }
+  },
+  "इस": {
+    "word": "इस",
+    "base_english": "This (near pronoun)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "This (near pronoun)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इस (निकटवर्ती सर्वनाम)"
+      }
+    }
+  },
+  "इसलिए": {
+    "word": "इसलिए",
+    "base_english": "Therefore / Hence / That is why",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Therefore / Hence / That is why"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इसलिए / अतः"
+      }
+    }
+  },
+  "उनकी": {
+    "word": "उनकी",
+    "base_english": "Their / His / Her (respectful)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Their / His / Her (respectful)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उनकी (सम्बन्धवाचक सर्वनाम)"
+      }
+    }
+  },
+  "उनमें": {
+    "word": "उनमें",
+    "base_english": "Among them / In them",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Among them / In them"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उनमें (अधिकरण)"
+      }
+    }
+  },
+  "और": {
+    "word": "और",
+    "base_english": "And / Also",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "And / Also"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "और / तथा"
+      }
+    }
+  },
+  "कई": {
+    "word": "कई",
+    "base_english": "Several / Many",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Several / Many"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कई / अनेक"
+      }
+    }
+  },
+  "करती": {
+    "word": "करती",
+    "base_english": "Does / Doing (feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Does / Doing (feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "करती (स्त्रीलिंग क्रिया)"
+      }
+    }
+  },
+  "करते": {
+    "word": "करते",
+    "base_english": "Do / Doing (plural / masculine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Do / Doing (plural / masculine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "करते (बहुवचन क्रिया)"
+      }
+    }
+  },
+  "करना": {
+    "word": "करना",
+    "base_english": "To do",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To do"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "करना (क्रिया)"
+      }
+    }
+  },
+  "चलते": {
+    "word": "चलते",
+    "base_english": "Walk / Let us go / Going",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Walk / Let us go / Going"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चलते (चलना क्रिया)"
+      }
+    }
+  },
+  "चाहते": {
+    "word": "चाहते",
+    "base_english": "Want / Desire (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Want / Desire (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चाहते (इच्छा करना)"
+      }
+    }
+  },
+  "चाहिए": {
+    "word": "चाहिए",
+    "base_english": "Should / Ought to / Needed",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Should / Ought to / Needed"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चाहिए (आवश्यकता / कर्तव्य)"
+      }
+    }
+  },
+  "कौन": {
+    "word": "कौन",
+    "base_english": "Who / Which",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Who / Which"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कौन (प्रश्नवाचक)"
+      }
+    }
+  },
+  "क्या": {
+    "word": "क्या",
+    "base_english": "What",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "What"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "क्या (प्रश्नवाचक)"
+      }
+    }
+  },
+  "ज़रूर": {
+    "word": "ज़रूर",
+    "base_english": "Definitely / Surely / Of course",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Definitely / Surely / Of course"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज़रूर / अवश्य"
+      }
+    }
+  },
+  "जाइए": {
+    "word": "जाइए",
+    "base_english": "Please go (respectful)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please go (respectful)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जाइए (आदरसूचक क्रिया)"
+      }
+    }
+  },
+  "जाती": {
+    "word": "जाती",
+    "base_english": "Goes / Go (feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Goes / Go (feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जाती (जाना - स्त्रीलिंग क्रिया)"
+      }
+    }
+  },
+  "जाते": {
+    "word": "जाते",
+    "base_english": "Go / Going (plural / masculine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Go / Going (plural / masculine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जाते (जाना - बहुवचन क्रिया)"
+      }
+    }
+  },
+  "जानना": {
+    "word": "जानना",
+    "base_english": "To know / To learn",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To know / To learn"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जानना (ज्ञान प्राप्त करना)"
+      }
+    }
+  },
+  "जानेंगे": {
+    "word": "जानेंगे",
+    "base_english": "Will know / Will learn (plural future)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Will know / Will learn (plural future)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जानेंगे (भविष्यत् काल)"
+      }
+    }
+  },
+  "जिससे": {
+    "word": "जिससे",
+    "base_english": "So that / By which",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "So that / By which"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जिससे / जिसके कारण"
+      }
+    }
+  },
+  "जी": {
+    "word": "जी",
+    "base_english": "Sir / Madam / Respected (honorific)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sir / Madam / Respected (honorific)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जी (आदरसूचक शब्द)"
+      }
+    }
+  },
+  "जो": {
+    "word": "जो",
+    "base_english": "Who / Which / That (relative pronoun)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Who / Which / That (relative pronoun)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जो (सम्बन्धवाचक सर्वनाम)"
+      }
+    }
+  },
+  "तुम": {
+    "word": "तुम",
+    "base_english": "You (familiar / informal)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You (familiar / informal)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम (मध्यम पुरुष)"
+      }
+    }
+  },
+  "तुम्हारा": {
+    "word": "तुम्हारा",
+    "base_english": "Your / Yours",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Your / Yours"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम्हारा (सम्बन्धवाचक)"
+      }
+    }
+  },
+  "तो": {
+    "word": "तो",
+    "base_english": "Indeed / Then / But",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Indeed / Then / But"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तो (अवधारणा बोधक अव्यय)"
+      }
+    }
+  },
+  "दोहराइए": {
+    "word": "दोहराइए",
+    "base_english": "Please repeat",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please repeat"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दोहराइए (पुनरावृत्ति कीजिए)"
+      }
+    }
+  },
+  "दोहराएँ": {
+    "word": "दोहराएँ",
+    "base_english": "Let us repeat / Repeat",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Let us repeat / Repeat"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दोहराएँ (पुनरावृत्ति करें)"
+      }
+    }
+  },
+  "धन्यवाद": {
+    "word": "धन्यवाद",
+    "base_english": "Thank you / Thanks",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Thank you / Thanks"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धन्यवाद (आभार)"
+      }
+    }
+  },
+  "नमस्कार": {
+    "word": "नमस्कार",
+    "base_english": "Salutations / Greetings",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Salutations / Greetings"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नमस्कार (प्रणाम)"
+      }
+    }
+  },
+  "पहले": {
+    "word": "पहले",
+    "base_english": "Before / First / Earlier",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Before / First / Earlier"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पहले / पूर्व में"
+      }
+    }
+  },
+  "पहला": {
+    "word": "पहला",
+    "base_english": "First (masculine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "First (masculine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पहला (प्रथम)"
+      }
+    }
+  },
+  "पास": {
+    "word": "पास",
+    "base_english": "Near / Close to",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Near / Close to"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पास / निकट"
+      }
+    }
+  },
+  "प्रणाम": {
+    "word": "प्रणाम",
+    "base_english": "Salutation / Bowing in reverence",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Salutation / Bowing in reverence"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रणाम (अभिवादन)"
+      }
+    }
+  },
+  "बगीचे": {
+    "word": "बगीचे",
+    "base_english": "In the garden / Garden",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the garden / Garden"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बगीचे में (उद्यान में)"
+      }
+    }
+  },
+  "बढ़ता": {
+    "word": "बढ़ता",
+    "base_english": "Increases / Grows",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Increases / Grows"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बढ़ता (वृद्धि पाता है)"
+      }
+    }
+  },
+  "बढ़िया": {
+    "word": "बढ़िया",
+    "base_english": "Wonderful / Excellent / Great",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wonderful / Excellent / Great"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बढ़िया / अति उत्तम"
+      }
+    }
+  },
+  "बताइए": {
+    "word": "बताइए",
+    "base_english": "Please tell / Explain",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please tell / Explain"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बताइए (कहिए)"
+      }
+    }
+  },
+  "बताती": {
+    "word": "बताती",
+    "base_english": "Tells / Explains (feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Tells / Explains (feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बताती (कहती है)"
+      }
+    }
+  },
+  "बहुत": {
+    "word": "बहुत",
+    "base_english": "Many / A lot / Much",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Many / A lot / Much"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बहुत / अनेक"
+      }
+    }
+  },
+  "बारह": {
+    "word": "बारह",
+    "base_english": "Twelve (12)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Twelve (12)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बारह (१२)"
+      }
+    }
+  },
+  "बारे": {
+    "word": "बारे",
+    "base_english": "About / Regarding",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "About / Regarding"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बारे में (विषय में)"
+      }
+    }
+  },
+  "बैठ": {
+    "word": "बैठ",
+    "base_english": "Sit",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sit"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बैठ (बैठना क्रिया)"
+      }
+    }
+  },
+  "भी": {
+    "word": "भी",
+    "base_english": "Also / Too / As well",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Also / Too / As well"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भी (सहित / अपि)"
+      }
+    }
+  },
+  "में": {
+    "word": "में",
+    "base_english": "In / Inside",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In / Inside"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "में (अधिकरण कारक)"
+      }
+    }
+  },
+  "मैं": {
+    "word": "मैं",
+    "base_english": "I (first person)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I (first person)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मैं (उत्तम पुरुष एकवचन)"
+      }
+    }
+  },
+  "याद": {
+    "word": "याद",
+    "base_english": "Memory / Remember",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Memory / Remember"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "याद (स्मृति)"
+      }
+    }
+  },
+  "रोज़": {
+    "word": "रोज़",
+    "base_english": "Daily / Everyday",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Daily / Everyday"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोज़ (प्रतिदिन / हर दिन)"
+      }
+    }
+  },
+  "लेकिन": {
+    "word": "लेकिन",
+    "base_english": "But / However",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "But / However"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लेकिन (किन्तु / परन्तु)"
+      }
+    }
+  },
+  "लोग": {
+    "word": "लोग",
+    "base_english": "People",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "People"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लोग (जन / मनुष्य)"
+      }
+    }
+  },
+  "वहाँ": {
+    "word": "वहाँ",
+    "base_english": "There",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "There"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वहाँ (तत्र)"
+      }
+    }
+  },
+  "सकें": {
+    "word": "सकें",
+    "base_english": "Can / May be able to",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Can / May be able to"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सकें (सक्षम हो सकें)"
+      }
+    }
+  },
+  "सब": {
+    "word": "सब",
+    "base_english": "All / Everyone",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "All / Everyone"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सब (समस्त)"
+      }
+    }
+  },
+  "सभी": {
+    "word": "सभी",
+    "base_english": "All / Everyone",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "All / Everyone"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सभी (सारे लोग)"
+      }
+    }
+  },
+  "साथ": {
+    "word": "साथ",
+    "base_english": "Along with / Together",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Along with / Together"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "साथ (सह / संग)"
+      }
+    }
+  },
+  "सिखाइए": {
+    "word": "सिखाइए",
+    "base_english": "Please teach",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please teach"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सिखाइए (शिक्षा प्रदान कीजिए)"
+      }
+    }
+  },
+  "सिखाएँगी": {
+    "word": "सिखाएँगी",
+    "base_english": "Will teach (feminine future)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Will teach (feminine future)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सिखाएँगी (भविष्य में सिखाना)"
+      }
+    }
+  },
+  "सीखना": {
+    "word": "सीखना",
+    "base_english": "To learn",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To learn"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सीखना (अधिगम)"
+      }
+    }
+  },
+  "सुनिए": {
+    "word": "सुनिए",
+    "base_english": "Please listen",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please listen"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुनिए (श्रवण कीजिए)"
+      }
+    }
+  },
+  "सुबह": {
+    "word": "सुबह",
+    "base_english": "Morning",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Morning"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुबह (प्रातःकाल)"
+      }
+    }
+  },
+  "से": {
+    "word": "से",
+    "base_english": "From / By / With",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From / By / With"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "से (करण / अपादान कारक)"
+      }
+    }
+  },
+  "सैर": {
+    "word": "सैर",
+    "base_english": "Walk / Stroll / Outing",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Walk / Stroll / Outing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सैर (भ्रमण / टहलना)"
+      }
+    }
+  },
+  "हम": {
+    "word": "हम",
+    "base_english": "We (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम (उत्तम पुरुष बहुवचन)"
+      }
+    }
+  },
+  "हमें": {
+    "word": "हमें",
+    "base_english": "To us / Us",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To us / Us"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हमें (अस्मान्)"
+      }
+    }
+  },
+  "हर": {
+    "word": "हर",
+    "base_english": "Each / Every",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Each / Every"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हर (प्रत्येक)"
+      }
+    }
+  },
+  "हाँ": {
+    "word": "हाँ",
+    "base_english": "Yes",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Yes"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हाँ (स्वीकृति)"
+      }
+    }
+  },
+  "हूँ": {
+    "word": "हूँ",
+    "base_english": "Am (with मैं)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Am (with मैं)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हूँ (अस्मि)"
+      }
+    }
+  },
+  "हे": {
+    "word": "हे",
+    "base_english": "O! / Hey! (calling)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "O! / Hey! (calling)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हे (सम्बोधन)"
+      }
+    }
+  },
+  "है": {
+    "word": "है",
+    "base_english": "Is (singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Is (singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "है (अस्ति)"
+      }
+    }
+  },
+  "हैं": {
+    "word": "हैं",
+    "base_english": "Are (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Are (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हैं (सन्ति)"
+      }
+    }
+  },
+  "हो": {
+    "word": "हो",
+    "base_english": "Are (with तुम)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Are (with तुम)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हो (मध्यम पुरुष)"
+      }
+    }
+  },
+  "होता": {
+    "word": "होता",
+    "base_english": "Happens / Occurs / Exists",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Happens / Occurs / Exists"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "होता (होना क्रिया)"
+      }
+    }
+  },
+  "होती": {
+    "word": "होती",
+    "base_english": "Happens / Occurs (feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Happens / Occurs (feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "होती (होना - स्त्रीलिंग)"
+      }
+    }
+  },
+  "आसनों": {
+    "word": "आसनों",
+    "base_english": "Of asanas / Of postures (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of asanas / Of postures (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आसनों (आसन का बहुवचन)"
+      }
+    }
+  },
+  "योगासनों": {
+    "word": "योगासनों",
+    "base_english": "Of yogasanas / Of yoga postures (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of yogasanas / Of yoga postures (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "योगासनों (योगासन का बहुवचन)"
+      }
+    }
+  },
+  "एक": {
+    "word": "एक",
+    "base_english": "One / A",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "One / A"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "एक (संख्या १)"
+      }
+    }
+  },
+  "भाग": {
+    "word": "भाग",
+    "base_english": "Part / Section",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Part / Section"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भाग (खण्ड / हिस्सा)"
+      }
+    }
+  },
+  "सहेली": {
+    "word": "सहेली",
+    "base_english": "Female friend / Companion",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Female friend / Companion"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सहेली (सखी)"
+      }
+    }
+  },
+  "योगिता": {
+    "word": "योगिता",
+    "base_english": "Yogita (girl's name)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Yogita (girl's name)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "योगिता (स्त्रीलिंग नाम)"
+      }
+    }
+  },
+  "सूर्य": {
+    "word": "सूर्य",
+    "base_english": "Sun",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sun"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सूर्य (सूरज)"
+      }
+    }
+  },
+  "सूर्यनमस्कार": {
+    "word": "सूर्यनमस्कार",
+    "base_english": "Sun Salutation (sequence of 12 asanas)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sun Salutation (sequence of 12 asanas)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सूर्यनमस्कार (१२ आसनों का क्रम)"
+      }
+    }
+  },
+  "योगासन": {
+    "word": "योगासन",
+    "base_english": "Yoga posture / Asana",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Yoga posture / Asana"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "योगासन (योग की मुद्रा)"
+      }
+    }
+  },
+  "व्यायाम": {
+    "word": "व्यायाम",
+    "base_english": "Exercise / Physical workout",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Exercise / Physical workout"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "व्यायाम (कसरत)"
+      }
+    }
+  },
+  "समूह": {
+    "word": "समूह",
+    "base_english": "Group / Collection / Combination",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Group / Collection / Combination"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "समूह (संग्रह / दल)"
+      }
+    }
+  },
+  "मन्त्र": {
+    "word": "मन्त्र",
+    "base_english": "Mantra / Sacred chant",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mantra / Sacred chant"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मन्त्र (पवित्र ध्वनि / सूत्र)"
+      }
+    }
+  },
+  "श्लोक": {
+    "word": "श्लोक",
+    "base_english": "Verse / Shloka / Couplet",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Verse / Shloka / Couplet"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "श्लोक (पद्य / छन्द)"
+      }
+    }
+  },
+  "माध्यम": {
+    "word": "माध्यम",
+    "base_english": "Medium / Means / Through",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Medium / Means / Through"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "माध्यम (साधन / द्वारा)"
+      }
+    }
+  },
+  "लाभ": {
+    "word": "लाभ",
+    "base_english": "Benefit / Advantage / Gain",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Benefit / Advantage / Gain"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लाभ (फायदा)"
+      }
+    }
+  },
+  "अर्थ": {
+    "word": "अर्थ",
+    "base_english": "Meaning / Purport / Wealth",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Meaning / Purport / Wealth"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अर्थ (तात्पर्य / मतलब)"
+      }
+    }
+  },
+  "प्रतिदिन": {
+    "word": "प्रतिदिन",
+    "base_english": "Everyday / Daily",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Everyday / Daily"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रतिदिन (हर रोज़)"
+      }
+    }
+  },
+  "आयु": {
+    "word": "आयु",
+    "base_english": "Lifespan / Longevity / Age",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Lifespan / Longevity / Age"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आयु (उम्र / जीवनकाल)"
+      }
+    }
+  },
+  "बुद्धि": {
+    "word": "बुद्धि",
+    "base_english": "Intellect / Wisdom / Mind",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Intellect / Wisdom / Mind"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बुद्धि (प्रज्ञा / समझ)"
+      }
+    }
+  },
+  "बल": {
+    "word": "बल",
+    "base_english": "Strength / Power / Force",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Strength / Power / Force"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बल (ताकत / सामर्थ्य)"
+      }
+    }
+  },
+  "वीर्य": {
+    "word": "वीर्य",
+    "base_english": "Vitality / Vigour / Energy",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Vitality / Vigour / Energy"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वीर्य (तेज / पराक्रम)"
+      }
+    }
+  },
+  "तेज": {
+    "word": "तेज",
+    "base_english": "Radiance / Brilliance / Glow",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Radiance / Brilliance / Glow"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तेज (चमक / कान्ति)"
+      }
+    }
+  },
+  "वृद्धि": {
+    "word": "वृद्धि",
+    "base_english": "Growth / Increase / Development",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Growth / Increase / Development"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वृद्धि (बढ़ोतरी)"
+      }
+    }
+  },
+  "प्रकार": {
+    "word": "प्रकार",
+    "base_english": "Type / Manner / Way",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Type / Manner / Way"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रकार (तरह / रीति)"
+      }
+    }
+  },
+  "क्रम": {
+    "word": "क्रम",
+    "base_english": "Order / Sequence / Series",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Order / Sequence / Series"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "क्रम (सिलसिला)"
+      }
+    }
+  },
+  "सर्वश्रेष्ठ": {
+    "word": "सर्वश्रेष्ठ",
+    "base_english": "The best / Foremost / Supreme",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The best / Foremost / Supreme"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सर्वश्रेष्ठ (सबसे उत्तम)"
+      }
+    }
+  },
+  "शारीरिक": {
+    "word": "शारीरिक",
+    "base_english": "Bodily / Physical",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Bodily / Physical"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शारीरिक (शरीर सम्बन्धी)"
+      }
+    }
+  },
+  "मानसिक": {
+    "word": "मानसिक",
+    "base_english": "Mental / Of the mind",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mental / Of the mind"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मानसिक (मन सम्बन्धी)"
+      }
+    }
+  },
+  "आध्यात्मिक": {
+    "word": "आध्यात्मिक",
+    "base_english": "Spiritual",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Spiritual"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आध्यात्मिक (अध्यात्म सम्बन्धी)"
+      }
+    }
+  },
+  "शरीर": {
+    "word": "शरीर",
+    "base_english": "Body",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Body"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शरीर (देह / तन)"
+      }
+    }
+  },
+  "मन": {
+    "word": "मन",
+    "base_english": "Mind / Heart / Psyche",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mind / Heart / Psyche"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मन (अन्तःकरण)"
+      }
+    }
+  },
+  "स्वस्थ": {
+    "word": "स्वस्थ",
+    "base_english": "Healthy / Sound / Wholesome",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Healthy / Sound / Wholesome"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "स्वस्थ (तन्दुरुस्त / नीरोग)"
+      }
+    }
+  },
+  "कक्षा": {
+    "word": "कक्षा",
+    "base_english": "Class / Classroom / Grade",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Class / Classroom / Grade"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कक्षा (जमात / वर्ग)"
+      }
+    }
+  },
+  "अन्य": {
+    "word": "अन्य",
+    "base_english": "Other / Another",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Other / Another"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अन्य (दूसरा)"
+      }
+    }
+  },
+  "उत्साह": {
+    "word": "उत्साह",
+    "base_english": "Enthusiasm / Zeal / Energy",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Enthusiasm / Zeal / Energy"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्साह (उमंग / जोश)"
+      }
+    }
+  },
+  "आसन": {
+    "word": "आसन",
+    "base_english": "Posture / Seat / Asana",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Posture / Seat / Asana"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आसन (बैठने की मुद्रा)"
+      }
+    }
+  },
+  "कल्याण": {
+    "word": "कल्याण",
+    "base_english": "Wellbeing / Welfare / Auspiciousness",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wellbeing / Welfare / Auspiciousness"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कल्याण (मंगल / भलाई)"
+      }
+    }
+  },
+  "वीरता": {
+    "word": "वीरता",
+    "base_english": "Bravery / Valour / Heroism",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Bravery / Valour / Heroism"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वीरता (शूरवीरता)"
+      }
+    }
+  },
+  "कान्ति": {
+    "word": "कान्ति",
+    "base_english": "Radiance / Lustre / Beauty / Glow",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Radiance / Lustre / Beauty / Glow"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कान्ति (चमक / शोभा)"
+      }
+    }
+  },
+  "उत्तर": {
+    "word": "उत्तर",
+    "base_english": "Answer / Reply / North",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Answer / Reply / North"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्तर (जवाब / समाधान)"
+      }
+    }
+  },
+  "ॐ": {
+    "word": "ॐ",
+    "base_english": "Om (the sacred primordial sound of the universe)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Om (the sacred primordial sound of the universe)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ॐ (प्रणव - परब्रह्म का परम पावन नाम)"
+      }
+    }
+  },
+  "रवये": {
+    "word": "रवये",
+    "base_english": "To the radiant shining one (Surya) (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the radiant shining one (Surya) (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रकाशमान सूर्य के लिए (रवि शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "रविः": {
+    "word": "रविः",
+    "base_english": "The Sun God / The shining one",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The Sun God / The shining one"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सूर्य (सूरज / प्रकाशक)"
+      }
+    }
+  },
+  "सूर्याय": {
+    "word": "सूर्याय",
+    "base_english": "To the supreme Sun God / Inspirer of all (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the supreme Sun God / Inspirer of all (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "संसार के प्रेरक सूर्य देव के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "सूर्यः": {
+    "word": "सूर्यः",
+    "base_english": "The Sun God",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The Sun God"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सूर्य देव"
+      }
+    }
+  },
+  "भानवे": {
+    "word": "भानवे",
+    "base_english": "To the illuminator / Giver of light (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the illuminator / Giver of light (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रकाश देने वाले भानु के लिए (भानु शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "भानुः": {
+    "word": "भानुः",
+    "base_english": "The luminous sun / Illuminator",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The luminous sun / Illuminator"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रकाशवान सूर्य (भानु)"
+      }
+    }
+  },
+  "खगाय": {
+    "word": "खगाय",
+    "base_english": "To the sky-traveller (moving across space) (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the sky-traveller (moving across space) (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आकाश में विचरण करने वाले सूर्य के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "खगः": {
+    "word": "खगः",
+    "base_english": "Sky-traveller / Moving in the sky (Sun / Bird)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sky-traveller / Moving in the sky (Sun / Bird)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आकाशगामी सूर्य / पक्षी"
+      }
+    }
+  },
+  "पूष्णे": {
+    "word": "पूष्णे",
+    "base_english": "To the nourisher and sustainer of life (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the nourisher and sustainer of life (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "संसार का पोषण करने वाले सूर्य के लिए (पूषन् शब्द की चतुर्थी)"
+      }
+    }
+  },
+  "हिरण्यगर्भाय": {
+    "word": "हिरण्यगर्भाय",
+    "base_english": "To the golden cosmic womb / Creator of brilliance (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the golden cosmic womb / Creator of brilliance (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "स्वर्णमय तेज के उद्गम सूर्य के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "मरीचये": {
+    "word": "मरीचये",
+    "base_english": "To the master of golden rays / Ray of light (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the master of golden rays / Ray of light (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किरणों के स्वामी सूर्य के लिए (मरीचि शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "आदित्याय": {
+    "word": "आदित्याय",
+    "base_english": "To the son of Aditi / The cosmic Sun (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the son of Aditi / The cosmic Sun (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अदिति-पुत्र सूर्य के लिए (आदित्य शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "सवित्रे": {
+    "word": "सवित्रे",
+    "base_english": "To the Divine Procreator and stimulator of life (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the Divine Procreator and stimulator of life (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "संसार को उत्पन्न करने वाले सविता (सूर्य) के लिए (सवितृ शब्द की चतुर्थी)"
+      }
+    }
+  },
+  "अर्काय": {
+    "word": "अर्काय",
+    "base_english": "To the one worthy of praise and reverence (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the one worthy of praise and reverence (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पूजा के योग्य सूर्य के लिए (अर्क शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "भास्कराय": {
+    "word": "भास्कराय",
+    "base_english": "To the maker of light and brilliance (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the maker of light and brilliance (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रकाश करने वाले सूर्य के लिए (भास्कर शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "भास्करः": {
+    "word": "भास्करः",
+    "base_english": "The maker of light / The Sun",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The maker of light / The Sun"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रकाश करने वाला सूर्य (भास्कर)"
+      }
+    }
+  },
+  "सर्वान्ते": {
+    "word": "सर्वान्ते",
+    "base_english": "At the very end / In conclusion",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "At the very end / In conclusion"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सबके अंत में / आखिर में"
+      }
+    }
+  },
+  "सवितृसूर्यनारायणाय": {
+    "word": "सवितृसूर्यनारायणाय",
+    "base_english": "To Lord Savitr Surya Narayana (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To Lord Savitr Surya Narayana (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भगवान सवितृ-सूर्य-नारायण के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "सूर्यनमस्कारं": {
+    "word": "सूर्यनमस्कारं",
+    "base_english": "To the Sun Salutation (2nd case/Accusative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the Sun Salutation (2nd case/Accusative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सूर्यनमस्कार को (द्वितीया विभक्ति)"
+      }
+    }
+  },
+  "सूर्यनमस्कारम्": {
+    "word": "सूर्यनमस्कारम्",
+    "base_english": "To the Sun Salutation (2nd case/Accusative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the Sun Salutation (2nd case/Accusative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सूर्यनमस्कार को (द्वितीया विभक्ति)"
+      }
+    }
+  },
+  "सूर्यनमस्कारस्य": {
+    "word": "सूर्यनमस्कारस्य",
+    "base_english": "Of the Sun Salutation (6th case/Genitive)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the Sun Salutation (6th case/Genitive)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सूर्यनमस्कार का (षष्ठी विभक्ति)"
+      }
+    }
+  },
+  "सूर्यनमस्कारात्": {
+    "word": "सूर्यनमस्कारात्",
+    "base_english": "From the Sun Salutation (5th case/Ablative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the Sun Salutation (5th case/Ablative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सूर्यनमस्कार से (पञ्चमी विभक्ति)"
+      }
+    }
+  },
+  "मन्त्राः": {
+    "word": "मन्त्राः",
+    "base_english": "Mantras / Chants (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mantras / Chants (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अनेक मन्त्र (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "द्वादश": {
+    "word": "द्वादश",
+    "base_english": "Twelve (12)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Twelve (12)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बारह (संख्या १२)"
+      }
+    }
+  },
+  "लाभाः": {
+    "word": "लाभाः",
+    "base_english": "Benefits / Advantages (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Benefits / Advantages (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अनेक लाभ / फायदे (बहुवचन)"
+      }
+    }
+  },
+  "अग्नये": {
+    "word": "अग्नये",
+    "base_english": "To the fire / To Lord Agni (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the fire / To Lord Agni (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अग्नि देव के लिए (अग्नि शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "आचार्यायै": {
+    "word": "आचार्यायै",
+    "base_english": "To the female teacher / Acharya (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the female teacher / Acharya (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शिक्षिका के लिए (आचार्या शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "त्रिवर्णध्वजाय": {
+    "word": "त्रिवर्णध्वजाय",
+    "base_english": "To the tricolour national flag (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the tricolour national flag (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तिरंगे झण्डे के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "जनकाय": {
+    "word": "जनकाय",
+    "base_english": "To the father (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the father (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पिता जी के लिए (जनक शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "वृक्षाय": {
+    "word": "वृक्षाय",
+    "base_english": "To the tree (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the tree (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वृक्ष (पेड़) के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "देव्यै": {
+    "word": "देव्यै",
+    "base_english": "To the Goddess / Divine Mother (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the Goddess / Divine Mother (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देवी के लिए (देवी शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "भगिन्यै": {
+    "word": "भगिन्यै",
+    "base_english": "To the sister (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the sister (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बहन के लिए (भगिनी शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "मातामह्यै": {
+    "word": "मातामह्यै",
+    "base_english": "To the maternal grandmother (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the maternal grandmother (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नानी जी के लिए (मातामही शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "पितामह्यै": {
+    "word": "पितामह्यै",
+    "base_english": "To the paternal grandmother (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the paternal grandmother (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दादी जी के लिए (पितामही शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "जनन्यै": {
+    "word": "जनन्यै",
+    "base_english": "To the mother (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the mother (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "माता जी के लिए (जननी शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "पृथिव्यै": {
+    "word": "पृथिव्यै",
+    "base_english": "To Mother Earth (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To Mother Earth (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धरती माता के लिए (पृथिवी शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "नद्यै": {
+    "word": "नद्यै",
+    "base_english": "To the river (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the river (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नदी के लिए (नदी शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "याचकाय": {
+    "word": "याचकाय",
+    "base_english": "To the seeker / Beggar (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the seeker / Beggar (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "याचक (मांगने वाले) के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "सेविकायै": {
+    "word": "सेविकायै",
+    "base_english": "To the female helper / Maidservant (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the female helper / Maidservant (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सेविका के लिए (सेविका शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "भक्ताय": {
+    "word": "भक्ताय",
+    "base_english": "To the devotee (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the devotee (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भक्त के लिए (भक्त शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "चोराय": {
+    "word": "चोराय",
+    "base_english": "To the thief (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the thief (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चोर के लिए (चोर शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "पुत्राय": {
+    "word": "पुत्राय",
+    "base_english": "To the son (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the son (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पुत्र (बेटे) के लिए (पुत्र शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "पुत्र्यै": {
+    "word": "पुत्र्यै",
+    "base_english": "To the daughter (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the daughter (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पुत्री (बेटी) के लिए (पुत्री शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "पाचिकायै": {
+    "word": "पाचिकायै",
+    "base_english": "To the female cook (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the female cook (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रसोइया (स्त्री) के लिए (पाचिका शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "आपणिकाय": {
+    "word": "आपणिकाय",
+    "base_english": "To the shopkeeper (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the shopkeeper (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दुकानदार के लिए (आपणिक शब्द की चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "गणेश": {
+    "word": "गणेश",
+    "base_english": "Lord Ganesha (base noun stem)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Lord Ganesha (base noun stem)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भगवान गणेश (मूल प्रातिपदिक)"
+      }
+    }
+  },
+  "गणेशाय": {
+    "word": "गणेशाय",
+    "base_english": "To Lord Ganesha (singular 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To Lord Ganesha (singular 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गणेश जी के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "गणेशाभ्याम्": {
+    "word": "गणेशाभ्याम्",
+    "base_english": "To the two Ganeshas (dual 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the two Ganeshas (dual 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो गणेशों के लिए (चतुर्थी द्विवचन)"
+      }
+    }
+  },
+  "गणेशेभ्यः": {
+    "word": "गणेशेभ्यः",
+    "base_english": "To all the Ganeshas (plural 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To all the Ganeshas (plural 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सब गणेशों के लिए (चतुर्थी बहुवचन)"
+      }
+    }
+  },
+  "भक्त": {
+    "word": "भक्त",
+    "base_english": "Devotee (base noun stem)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Devotee (base noun stem)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भक्त (मूल प्रातिपदिक)"
+      }
+    }
+  },
+  "भक्ताभ्याम्": {
+    "word": "भक्ताभ्याम्",
+    "base_english": "To the two devotees (dual 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the two devotees (dual 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो भक्तों के लिए (चतुर्थी द्विवचन)"
+      }
+    }
+  },
+  "भक्तेभ्यः": {
+    "word": "भक्तेभ्यः",
+    "base_english": "To all devotees (plural 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To all devotees (plural 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सब भक्तों के लिए (चतुर्थी बहुवचन)"
+      }
+    }
+  },
+  "सेविका": {
+    "word": "सेविका",
+    "base_english": "Female attendant / Maidservant (base form)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Female attendant / Maidservant (base form)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सेविका (दासी / सहायिका - मूल रूप)"
+      }
+    }
+  },
+  "सेविकाभ्याम्": {
+    "word": "सेविकाभ्याम्",
+    "base_english": "To the two female attendants (dual 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the two female attendants (dual 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो सेविकाओं के लिए (चतुर्थी द्विवचन)"
+      }
+    }
+  },
+  "सेविकाभ्यः": {
+    "word": "सेविकाभ्यः",
+    "base_english": "To all female attendants (plural 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To all female attendants (plural 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सब सेविकाओं के लिए (चतुर्थी बहुवचन)"
+      }
+    }
+  },
+  "अनुजा": {
+    "word": "अनुजा",
+    "base_english": "Younger sister (base form)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Younger sister (base form)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "छोटी बहन (अनुजा - मूल रूप)"
+      }
+    }
+  },
+  "अनुजायै": {
+    "word": "अनुजायै",
+    "base_english": "To the younger sister (singular 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the younger sister (singular 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "छोटी बहन के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "अनुजाभ्याम्": {
+    "word": "अनुजाभ्याम्",
+    "base_english": "To the two younger sisters (dual 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the two younger sisters (dual 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो छोटी बहनों के लिए (चतुर्थी द्विवचन)"
+      }
+    }
+  },
+  "अनुजाभ्यः": {
+    "word": "अनुजाभ्यः",
+    "base_english": "To all younger sisters (plural 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To all younger sisters (plural 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सब छोटी बहनों के लिए (चतुर्थी बहुवचन)"
+      }
+    }
+  },
+  "गृहिणी": {
+    "word": "गृहिणी",
+    "base_english": "Homemaker / Housewife (base form)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Homemaker / Housewife (base form)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गृहिणी (घर की मालकिन - मूल रूप)"
+      }
+    }
+  },
+  "गृहिण्यै": {
+    "word": "गृहिण्यै",
+    "base_english": "To the homemaker (singular 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the homemaker (singular 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गृहिणी के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "गृहिणीभ्याम्": {
+    "word": "गृहिणीभ्याम्",
+    "base_english": "To the two homemakers (dual 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the two homemakers (dual 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो गृहिणियों के लिए (चतुर्थी द्विवचन)"
+      }
+    }
+  },
+  "गृहिणीभ्यः": {
+    "word": "गृहिणीभ्यः",
+    "base_english": "To all homemakers (plural 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To all homemakers (plural 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सब गृहिणियों के लिए (चतुर्थी बहुवचन)"
+      }
+    }
+  },
+  "कुमारी": {
+    "word": "कुमारी",
+    "base_english": "Young girl / Maiden / Princess (base form)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Young girl / Maiden / Princess (base form)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कुमारी (कन्या - मूल रूप)"
+      }
+    }
+  },
+  "कुमार्यै": {
+    "word": "कुमार्यै",
+    "base_english": "To the young girl (singular 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the young girl (singular 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कुमारी के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "कुमारीभ्याम्": {
+    "word": "कुमारीभ्याम्",
+    "base_english": "To the two young girls (dual 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the two young girls (dual 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो कुमारियों के लिए (चतुर्थी द्विवचन)"
+      }
+    }
+  },
+  "कुमारीभ्यः": {
+    "word": "कुमारीभ्यः",
+    "base_english": "To all young girls (plural 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To all young girls (plural 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सब कुमारियों के लिए (चतुर्थी बहुवचन)"
+      }
+    }
+  },
+  "वन": {
+    "word": "वन",
+    "base_english": "Forest (neuter base form)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Forest (neuter base form)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वन (जंगल - मूल रूप)"
+      }
+    }
+  },
+  "वनाय": {
+    "word": "वनाय",
+    "base_english": "For the forest (singular 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For the forest (singular 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वन के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "वनाभ्याम्": {
+    "word": "वनाभ्याम्",
+    "base_english": "For the two forests (dual 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For the two forests (dual 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो वनों के लिए (चतुर्थी द्विवचन)"
+      }
+    }
+  },
+  "वनेभ्यः": {
+    "word": "वनेभ्यः",
+    "base_english": "For all forests (plural 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For all forests (plural 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सब वनों के लिए (चतुर्थी बहुवचन)"
+      }
+    }
+  },
+  "मित्र": {
+    "word": "मित्र",
+    "base_english": "Friend (base noun form)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Friend (base noun form)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मित्र (दोस्त - मूल रूप)"
+      }
+    }
+  },
+  "मित्राभ्याम्": {
+    "word": "मित्राभ्याम्",
+    "base_english": "To the two friends (dual 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the two friends (dual 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो मित्रों के लिए (चतुर्थी द्विवचन)"
+      }
+    }
+  },
+  "मित्रेभ्यः": {
+    "word": "मित्रेभ्यः",
+    "base_english": "To all friends (plural 4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To all friends (plural 4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सब मित्रों के लिए (चतुर्थी बहुवचन)"
+      }
+    }
+  },
+  "चतुर्थी": {
+    "word": "चतुर्थी",
+    "base_english": "Fourth case / Dative case",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fourth case / Dative case"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चतुर्थी विभक्ति (सम्प्रदान कारक)"
+      }
+    }
+  },
+  "चतुर्थीविभक्ति": {
+    "word": "चतुर्थीविभक्ति",
+    "base_english": "Fourth case / Dative case",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fourth case / Dative case"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चतुर्थी विभक्ति (सम्प्रदान कारक)"
+      }
+    }
+  },
+  "चतुर्थीविभक्तेः": {
+    "word": "चतुर्थीविभक्तेः",
+    "base_english": "Of the fourth / Dative case (6th case/Genitive)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the fourth / Dative case (6th case/Genitive)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चतुर्थी विभक्ति के (षष्ठी रूप)"
+      }
+    }
+  },
+  "ज्ञानाय": {
+    "word": "ज्ञानाय",
+    "base_english": "For knowledge / For wisdom (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For knowledge / For wisdom (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज्ञान के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "दानाय": {
+    "word": "दानाय",
+    "base_english": "For giving / For charity (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For giving / For charity (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दान देने के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "रक्षणाय": {
+    "word": "रक्षणाय",
+    "base_english": "For protection / To defend (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For protection / To defend (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रक्षा करने के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "विवादाय": {
+    "word": "विवादाय",
+    "base_english": "For dispute / For arguing (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For dispute / For arguing (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विवाद (झगड़े) के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "मदाय": {
+    "word": "मदाय",
+    "base_english": "For intoxication / For arrogance / Pride (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For intoxication / For arrogance / Pride (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "घमण्ड (मद) के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "परिपीडनाय": {
+    "word": "परिपीडनाय",
+    "base_english": "For tormenting / Troubling others (4th case/Dative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For tormenting / Troubling others (4th case/Dative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दूसरों को कष्ट देने के लिए (चतुर्थी एकवचन)"
+      }
+    }
+  },
+  "कस्मैकस्यै": {
+    "word": "कस्मैकस्यै",
+    "base_english": "To whom? (masculine कस्मै / feminine कस्यै - 4th case)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To whom? (masculine कस्मै / feminine कस्यै - 4th case)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किसके लिए? (पुल्लिंग कस्मै / स्त्रीलिंग कस्यै)"
+      }
+    }
+  },
+  "अधः": {
+    "word": "अधः",
+    "base_english": "Below / Down / Underneath (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Below / Down / Underneath (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नीचे (अव्यय)"
+      }
+    }
+  },
+  "अधोलिखितानां": {
+    "word": "अधोलिखितानां",
+    "base_english": "Of the following / Written below (genitive plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the following / Written below (genitive plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नीचे लिखे हुए का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "अध्यात्मविषयकम्": {
+    "word": "अध्यात्मविषयकम्",
+    "base_english": "Related to spirituality / Spiritual",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Related to spirituality / Spiritual"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अध्यात्म से सम्बन्धित"
+      }
+    }
+  },
+  "अभ्यासं": {
+    "word": "अभ्यासं",
+    "base_english": "Practice / Exercise (accusative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Practice / Exercise (accusative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अभ्यास को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "अस्तु": {
+    "word": "अस्तु",
+    "base_english": "Let it be / So be it / All right",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Let it be / So be it / All right"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ऐसा ही हो / ठीक है"
+      }
+    }
+  },
+  "आगामिनि": {
+    "word": "आगामिनि",
+    "base_english": "In the upcoming / In the next (locative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the upcoming / In the next (locative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आने वाली (सप्तमी विभक्ति)"
+      }
+    }
+  },
+  "आचार्या": {
+    "word": "आचार्या",
+    "base_english": "Female teacher / Instructress",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Female teacher / Instructress"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शिक्षिका / गुरुमाता"
+      }
+    }
+  },
+  "आचार्यां": {
+    "word": "आचार्यां",
+    "base_english": "To the female teacher (accusative 2nd case)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the female teacher (accusative 2nd case)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शिक्षिका को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "आदि": {
+    "word": "आदि",
+    "base_english": "Et cetera / And so forth / Beginning",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Et cetera / And so forth / Beginning"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इत्यादि / आदि"
+      }
+    }
+  },
+  "आरक्षकः": {
+    "word": "आरक्षकः",
+    "base_english": "Policeman / Guard / Watchman",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Policeman / Guard / Watchman"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पुलिसकर्मी / रक्षक"
+      }
+    }
+  },
+  "आशयः": {
+    "word": "आशयः",
+    "base_english": "Purport / Meaning / Intention",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Purport / Meaning / Intention"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तात्पर्य / भाव / आशय"
+      }
+    }
+  },
+  "आशीर्वादं": {
+    "word": "आशीर्वादं",
+    "base_english": "Blessing / Benediction (accusative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Blessing / Benediction (accusative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आशीर्वाद को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "आसनं": {
+    "word": "आसनं",
+    "base_english": "Posture / Seat / Asana",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Posture / Seat / Asana"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आसन (बैठने की मुद्रा)"
+      }
+    }
+  },
+  "इच्छन्ति": {
+    "word": "इच्छन्ति",
+    "base_english": "They desire / They want (present 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They desire / They want (present 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इच्छा करते हैं (प्रथम पुरुष बहुवचन)"
+      }
+    }
+  },
+  "उच्चारणं": {
+    "word": "उच्चारणं",
+    "base_english": "Pronunciation / Utterance",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Pronunciation / Utterance"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उच्चारण (बोलना)"
+      }
+    }
+  },
+  "उत्तरः": {
+    "word": "उत्तरः",
+    "base_english": "Answer / Reply",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Answer / Reply"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्तर (समाधान)"
+      }
+    }
+  },
+  "उत्तराणि": {
+    "word": "उत्तराणि",
+    "base_english": "Answers / Replies (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Answers / Replies (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अनेक उत्तर (बहुवचन)"
+      }
+    }
+  },
+  "उदाहरणानुसारं": {
+    "word": "उदाहरणानुसारं",
+    "base_english": "According to the example",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "According to the example"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उदाहरण के अनुसार"
+      }
+    }
+  },
+  "उपयुज्य": {
+    "word": "उपयुज्य",
+    "base_english": "Having used / By utilizing",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Having used / By utilizing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उपयोग करके / प्रयोग कर"
+      }
+    }
+  },
+  "उपायनं": {
+    "word": "उपायनं",
+    "base_english": "Gift / Present",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Gift / Present"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उपहार / भेंट"
+      }
+    }
+  },
+  "एकपदेन": {
+    "word": "एकपदेन",
+    "base_english": "In one word (instrumental)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In one word (instrumental)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "एक शब्द में"
+      }
+    }
+  },
+  "एतं": {
+    "word": "एतं",
+    "base_english": "This (accusative masculine singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "This (accusative masculine singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इसको (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "औषधं": {
+    "word": "औषधं",
+    "base_english": "Medicine / Remedy",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Medicine / Remedy"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दवा / औषधि"
+      }
+    }
+  },
+  "कं": {
+    "word": "कं",
+    "base_english": "Whom? (accusative masculine singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Whom? (accusative masculine singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किसको? (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "कक्षायां": {
+    "word": "कक्षायां",
+    "base_english": "In the classroom / In class (locative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the classroom / In class (locative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कक्षा में (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "कतीनाम्": {
+    "word": "कतीनाम्",
+    "base_english": "Of how many? (genitive plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of how many? (genitive plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कितनों का? (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "कीदृशं": {
+    "word": "कीदृशं",
+    "base_english": "Of what kind? / How?",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of what kind? / How?"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कैसा? / किस प्रकार का?"
+      }
+    }
+  },
+  "कुर्मः": {
+    "word": "कुर्मः",
+    "base_english": "We do / Let us do (present 1st plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We do / Let us do (present 1st plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम करते हैं (उत्तम पुरुष बहुवचन)"
+      }
+    }
+  },
+  "कुर्वन्तु": {
+    "word": "कुर्वन्तु",
+    "base_english": "May they do / Let them do (imperative 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "May they do / Let them do (imperative 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे करें (लोट् लकार बहुवचन)"
+      }
+    }
+  },
+  "कृत्वा": {
+    "word": "कृत्वा",
+    "base_english": "Having done / After doing (indeclinable participle)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Having done / After doing (indeclinable participle)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "करके (क्त्वा प्रत्यय)"
+      }
+    }
+  },
+  "केषु": {
+    "word": "केषु",
+    "base_english": "In which? / Among which? (locative plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In which? / Among which? (locative plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किन में? (सप्तमी बहुवचन)"
+      }
+    }
+  },
+  "कोष्ठकात्": {
+    "word": "कोष्ठकात्",
+    "base_english": "From the bracket / box (5th case/Ablative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the bracket / box (5th case/Ablative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कोष्ठक से (पञ्चमी विभक्ति)"
+      }
+    }
+  },
+  "कोष्ठके": {
+    "word": "कोष्ठके",
+    "base_english": "In the bracket / box (7th case/Locative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the bracket / box (7th case/Locative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कोष्ठक में (सप्तमी विभक्ति)"
+      }
+    }
+  },
+  "खलस्य": {
+    "word": "खलस्य",
+    "base_english": "Of the wicked / evil person (6th case/Genitive)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the wicked / evil person (6th case/Genitive)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दुष्ट का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "छात्राः": {
+    "word": "छात्राः",
+    "base_english": "Students (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Students (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्यार्थी / छात्र (बहुवचन)"
+      }
+    }
+  },
+  "तेजस्तेषां": {
+    "word": "तेजस्तेषां",
+    "base_english": "Their radiance / Tejas of them (तेजः + तेषाम्)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Their radiance / Tejas of them (तेजः + तेषाम्)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उनका तेज (तेजः + तेषाम्)"
+      }
+    }
+  },
+  "दण्डं": {
+    "word": "दण्डं",
+    "base_english": "Punishment / Fine / Rod (accusative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Punishment / Fine / Rod (accusative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दण्ड (सज़ा) को"
+      }
+    }
+  },
+  "ददाति": {
+    "word": "ददाति",
+    "base_english": "He or she gives (present 3rd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "He or she gives (present 3rd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देता है / देती है (प्रथम पुरुष एकवचन)"
+      }
+    }
+  },
+  "ददामि": {
+    "word": "ददामि",
+    "base_english": "I give (present 1st singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I give (present 1st singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मैं देता हूँ (उत्तम पुरुष एकवचन)"
+      }
+    }
+  },
+  "ददासि": {
+    "word": "ददासि",
+    "base_english": "You give (present 2nd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You give (present 2nd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम देते हो (मध्यम पुरुष एकवचन)"
+      }
+    }
+  },
+  "दिने": {
+    "word": "दिने",
+    "base_english": "On the day / Day (locative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "On the day / Day (locative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दिन में (सप्तमी विभक्ति)"
+      }
+    }
+  },
+  "दीप्तिः": {
+    "word": "दीप्तिः",
+    "base_english": "Radiance / Lustre / Light",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Radiance / Lustre / Light"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चमक / प्रकाश / दीप्ति"
+      }
+    }
+  },
+  "देवः": {
+    "word": "देवः",
+    "base_english": "God / Deity",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "God / Deity"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भगवान / देवता"
+      }
+    }
+  },
+  "धनं": {
+    "word": "धनं",
+    "base_english": "Wealth / Money (accusative/nominative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wealth / Money (accusative/nominative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धन / सम्पत्ति"
+      }
+    }
+  },
+  "धन्यवादाः": {
+    "word": "धन्यवादाः",
+    "base_english": "Many thanks / Heartfelt thanks (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Many thanks / Heartfelt thanks (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बहुत-बहुत धन्यवाद / आभार (बहुवचन)"
+      }
+    }
+  },
+  "नमो": {
+    "word": "नमो",
+    "base_english": "Salutations / Bowing down (sandhi form of नमः)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Salutations / Bowing down (sandhi form of नमः)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रणाम / नमस्कार (नमः का सन्धि रूप)"
+      }
+    }
+  },
+  "नीरोगम्": {
+    "word": "नीरोगम्",
+    "base_english": "Free of illness / Healthy / Disease-free",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Free of illness / Healthy / Disease-free"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोगमुक्त / स्वस्थ"
+      }
+    }
+  },
+  "पदं": {
+    "word": "पदं",
+    "base_english": "Word / Inflected word / Step",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Word / Inflected word / Step"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पद / शब्द"
+      }
+    }
+  },
+  "पदानि": {
+    "word": "पदानि",
+    "base_english": "Words / Inflected words (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Words / Inflected words (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अनेक शब्द / पद"
+      }
+    }
+  },
+  "पराक्रमः": {
+    "word": "पराक्रमः",
+    "base_english": "Valour / Prowess / Might",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Valour / Prowess / Might"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पराक्रम / शूरवीरता"
+      }
+    }
+  },
+  "परियोजनाकार्यम्": {
+    "word": "परियोजनाकार्यम्",
+    "base_english": "Project work / Activity assignment",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Project work / Activity assignment"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "परियोजना कार्य (प्रोजेक्ट वर्क)"
+      }
+    }
+  },
+  "परेषां": {
+    "word": "परेषां",
+    "base_english": "Of others (genitive plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of others (genitive plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दूसरों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "पश्चात्": {
+    "word": "पश्चात्",
+    "base_english": "After / Afterwards / Behind (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "After / Afterwards / Behind (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बाद में / पीछे"
+      }
+    }
+  },
+  "पाठयति": {
+    "word": "पाठयति",
+    "base_english": "Teaches / Causes to study (causative verb)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Teaches / Causes to study (causative verb)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़ाता है / पढ़ाती है"
+      }
+    }
+  },
+  "पाठात्": {
+    "word": "पाठात्",
+    "base_english": "From the lesson / From the chapter (5th case/Ablative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the lesson / From the chapter (5th case/Ablative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पाठ से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "पाठे": {
+    "word": "पाठे",
+    "base_english": "In the lesson (7th case/Locative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the lesson (7th case/Locative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पाठ में (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "पौत्रः": {
+    "word": "पौत्रः",
+    "base_english": "Grandson (son's son)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Grandson (son's son)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पोता (पुत्र का पुत्र)"
+      }
+    }
+  },
+  "पुष्पं": {
+    "word": "पुष्पं",
+    "base_english": "Flower (accusative/nominative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Flower (accusative/nominative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फूल / पुष्प"
+      }
+    }
+  },
+  "पूरयन्तु": {
+    "word": "पूरयन्तु",
+    "base_english": "Please fill / Complete (imperative 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please fill / Complete (imperative 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भरिए / पूरा कीजिए (लोट् लकार)"
+      }
+    }
+  },
+  "पूर्णवाक्येन": {
+    "word": "पूर्णवाक्येन",
+    "base_english": "In a full sentence (instrumental)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In a full sentence (instrumental)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पूरे वाक्य में (तृतीया विभक्ति)"
+      }
+    }
+  },
+  "पृच्छन्ति": {
+    "word": "पृच्छन्ति",
+    "base_english": "They ask (present 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They ask (present 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पूछते हैं (प्रथम पुरुष बहुवचन)"
+      }
+    }
+  },
+  "प्रयुज्य": {
+    "word": "प्रयुज्य",
+    "base_english": "Having applied / Having used (indeclinable participle)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Having applied / Having used (indeclinable participle)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रयोग करके (ल्यप् प्रत्यय)"
+      }
+    }
+  },
+  "प्रश्नानाम्": {
+    "word": "प्रश्नानाम्",
+    "base_english": "Of the questions (genitive plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the questions (genitive plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रश्नों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "प्राप्नुवन्ति": {
+    "word": "प्राप्नुवन्ति",
+    "base_english": "They obtain / They attain (present 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They obtain / They attain (present 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्राप्त करते हैं (प्रथम पुरुष बहुवचन)"
+      }
+    }
+  },
+  "महोदया": {
+    "word": "महोदया",
+    "base_english": "Respected Madam / Lady",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Respected Madam / Lady"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आदरणीया महोदया"
+      }
+    }
+  },
+  "मेधा": {
+    "word": "मेधा",
+    "base_english": "Sharp intellect / Higher wisdom / Retention",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sharp intellect / Higher wisdom / Retention"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धारणावती बुद्धि / मेधा शक्ति"
+      }
+    }
+  },
+  "यस्य": {
+    "word": "यस्य",
+    "base_english": "Whose / Of whom (genitive masculine singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Whose / Of whom (genitive masculine singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जिसका (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "युक्तशब्दानां": {
+    "word": "युक्तशब्दानां",
+    "base_english": "Of the associated / attached words (genitive plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the associated / attached words (genitive plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "युक्त शब्दों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "योगशिक्षिका": {
+    "word": "योगशिक्षिका",
+    "base_english": "Female Yoga Teacher",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Female Yoga Teacher"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "योग अध्यापिका"
+      }
+    }
+  },
+  "योगासनेषु": {
+    "word": "योगासनेषु",
+    "base_english": "Among the yogasanas / In the postures (locative plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Among the yogasanas / In the postures (locative plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "योगासनों में (सप्तमी बहुवचन)"
+      }
+    }
+  },
+  "रचयन्तु": {
+    "word": "रचयन्तु",
+    "base_english": "Create / Construct / Form (imperative 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Create / Construct / Form (imperative 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बनाइए / रचना कीजिए (लोट् लकार)"
+      }
+    }
+  },
+  "रिक्तस्थानानि": {
+    "word": "रिक्तस्थानानि",
+    "base_english": "Blank spaces / Fill in the blanks (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Blank spaces / Fill in the blanks (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खाली स्थान / रिक्त स्थान (बहुवचन)"
+      }
+    }
+  },
+  "रूपाणि": {
+    "word": "रूपाणि",
+    "base_english": "Forms / Grammatical declensions / Shapes (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Forms / Grammatical declensions / Shapes (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शब्द रूप / विभक्ति रूप (बहुवचन)"
+      }
+    }
+  },
+  "लिखन्तु": {
+    "word": "लिखन्तु",
+    "base_english": "Please write / May they write (imperative 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please write / May they write (imperative 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लिखिए (लोट् लकार बहुवचन)"
+      }
+    }
+  },
+  "वदति": {
+    "word": "वदति",
+    "base_english": "Speaks / Says (present 3rd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Speaks / Says (present 3rd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बोलता है / कहती है (प्रथम पुरुष एकवचन)"
+      }
+    }
+  },
+  "वर्गे": {
+    "word": "वर्गे",
+    "base_english": "In the class / In the group (locative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the class / In the group (locative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वर्ग में / कक्षा में (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "वस्त्रं": {
+    "word": "वस्त्रं",
+    "base_english": "Cloth / Garment / Dress",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Cloth / Garment / Dress"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वस्त्र / कपड़ा"
+      }
+    }
+  },
+  "वाक्यानि": {
+    "word": "वाक्यानि",
+    "base_english": "Sentences (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sentences (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अनेक वाक्य (बहुवचन)"
+      }
+    }
+  },
+  "विद्यमानपदानि": {
+    "word": "विद्यमानपदानि",
+    "base_english": "Present words / Words given in the box",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Present words / Words given in the box"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उपस्थित / दिए गए पद (शब्द)"
+      }
+    }
+  },
+  "विद्यमानानां": {
+    "word": "विद्यमानानां",
+    "base_english": "Of those present / existing (genitive plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of those present / existing (genitive plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मौजूद / उपस्थित का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "विभक्ति": {
+    "word": "विभक्ति",
+    "base_english": "Grammatical case / Declension inflection",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Grammatical case / Declension inflection"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विभक्ति (व्याकरणिक कारक रूप)"
+      }
+    }
+  },
+  "वेतनं": {
+    "word": "वेतनं",
+    "base_english": "Salary / Wages",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Salary / Wages"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वेतन (पारिश्रमिक / तनख्वाह)"
+      }
+    }
+  },
+  "शक्तिः": {
+    "word": "शक्तिः",
+    "base_english": "Power / Strength / Energy",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Power / Strength / Energy"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शक्ति / सामर्थ्य"
+      }
+    }
+  },
+  "शब्दानां": {
+    "word": "शब्दानां",
+    "base_english": "Of the words (genitive plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the words (genitive plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शब्दों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "संवादः": {
+    "word": "संवादः",
+    "base_english": "Dialogue / Conversation",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Dialogue / Conversation"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "संवाद (बातचीत)"
+      }
+    }
+  },
+  "सङ्ग्रहं": {
+    "word": "सङ्ग्रहं",
+    "base_english": "Collection / Compilation (accusative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Collection / Compilation (accusative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "संग्रह को (एकत्र करना)"
+      }
+    }
+  },
+  "समुचितं": {
+    "word": "समुचितं",
+    "base_english": "Appropriate / Proper / Correct",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Appropriate / Proper / Correct"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उचित / सही"
+      }
+    }
+  },
+  "सा": {
+    "word": "सा",
+    "base_english": "She (feminine singular pronoun)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "She (feminine singular pronoun)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वह (स्त्रीलिंग सर्वनाम)"
+      }
+    }
+  },
+  "साधोर्विपरीतमेतत्": {
+    "word": "साधोर्विपरीतमेतत्",
+    "base_english": "In a noble person, this is the exact opposite (साधोः + विपरीतम् + एतत्)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In a noble person, this is the exact opposite (साधोः + विपरीतम् + एतत्)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सज्जन में इसके विपरीत होता है (साधोः + विपरीतम् + एतत्)"
+      }
+    }
+  },
+  "स्वीकृत्य": {
+    "word": "स्वीकृत्य",
+    "base_english": "Having selected / Having accepted (indeclinable participle)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Having selected / Having accepted (indeclinable participle)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "स्वीकार करके / चुनकर (ल्यप् प्रत्यय)"
+      }
+    }
+  },
+  "क": {
+    "word": "क",
+    "base_english": "Option (a) / First item",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Option (a) / First item"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "क (पहला विकल्प)"
+      }
+    }
+  },
+  "ख": {
+    "word": "ख",
+    "base_english": "Option (b) / Second item",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Option (b) / Second item"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ख (दूसरा विकल्प)"
+      }
+    }
+  },
+  "ग": {
+    "word": "ग",
+    "base_english": "Option (c) / Third item",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Option (c) / Third item"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ग (तीसरा विकल्प)"
+      }
+    }
+  },
+  "घ": {
+    "word": "घ",
+    "base_english": "Option (d) / Fourth item",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Option (d) / Fourth item"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "घ (चौथा विकल्प)"
+      }
+    }
+  },
+  "ङ": {
+    "word": "ङ",
+    "base_english": "Option (e) / Fifth item",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Option (e) / Fifth item"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ङ (पाँचवाँ विकल्प)"
+      }
+    }
+  },
+  "छ": {
+    "word": "छ",
+    "base_english": "Option (g) / Letter cha",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Option (g) / Letter cha"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "छ (विकल्प)"
+      }
+    }
+  },
+  "ज": {
+    "word": "ज",
+    "base_english": "Option (h) / Letter ja",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Option (h) / Letter ja"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ज (विकल्प)"
+      }
+    }
+  },
+  "झ": {
+    "word": "झ",
+    "base_english": "Option (i) / Letter jha",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Option (i) / Letter jha"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "झ (विकल्प)"
+      }
+    }
+  },
+  "ञ": {
+    "word": "ञ",
+    "base_english": "Option (j) / Letter nya",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Option (j) / Letter nya"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ञ (विकल्प)"
+      }
+    }
+  },
+  "ट": {
+    "word": "ट",
+    "base_english": "Option (k) / Letter ta",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Option (k) / Letter ta"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ट (विकल्प)"
+      }
+    }
+  },
+  "पा": {
+    "word": "पा",
+    "base_english": "Abbreviation for Lesson (पाठ) / Root pā (to drink)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Abbreviation for Lesson (पाठ) / Root pā (to drink)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पाठ का संक्षिप्त रूप / पा धातु (पीना)"
+      }
+    }
+  },
+  "के": {
+    "word": "के",
+    "base_english": "Of / With (possessive postposition / relation marker)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of / With (possessive postposition / relation marker)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "के (सम्बन्धबोधक परसर्ग - जैसे: के साथ)"
+      }
+    }
+  },
+  "चित्वा": {
+    "word": "चित्वा",
+    "base_english": "Having selected / Having chosen (indeclinable participle)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Having selected / Having chosen (indeclinable participle)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चुनकर / चयन करके (चि धातु + क्त्वा प्रत्यय)"
       }
     }
   }

@@ -11,11 +11,61 @@
   margin-bottom: 1.25rem;
 }
 
+.grammar-header-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.grammar-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  font-size: 0.95rem;
+  color: #78716c;
+}
+
+.grammar-breadcrumb-link {
+  background: none;
+  border: none;
+  padding: 0.2rem 0.4rem;
+  margin-left: -0.4rem;
+  border-radius: 6px;
+  color: #0f766e;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.12s ease, background 0.12s ease;
+}
+
+.grammar-breadcrumb-link:hover,
+.grammar-breadcrumb-link:focus {
+  color: #0b504b;
+  background: #e6f7f5;
+  outline: none;
+}
+
+.grammar-breadcrumb-sep {
+  color: #a8a29e;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.grammar-breadcrumb-current {
+  color: #44403c;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
 .grammar-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.5rem;
 }
 
 .grammar-back,
@@ -318,6 +368,21 @@
   font-style: italic;
   text-align: center;
 }
+
+.grammar-article-footer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e7e5e4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.grammar-footer-btn {
+  font-size: 1.05rem;
+  padding: 0.65rem 1.25rem;
+}
+
 /* —— Sound Teams article —— */
 .sound-teams {
   max-width: 46rem;

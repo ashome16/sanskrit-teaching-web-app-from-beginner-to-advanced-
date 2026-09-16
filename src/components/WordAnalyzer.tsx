@@ -17,7 +17,7 @@ interface WordAnalyzerProps {
 }
 
 const cleanWord = (value: string): string =>
-  value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’]+/g, '').trim();
+  value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९\.\/\\=+#*~_`]+/g, '').trim();
 
 const createCustomWord = (value: string): SanskritWordBreakdown => {
   const devanagari = cleanWord(value) || value.trim();

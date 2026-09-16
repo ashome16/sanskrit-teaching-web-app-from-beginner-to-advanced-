@@ -35,6 +35,12 @@ const Dashboard: React.FC = () => {
     if (saved === 'board' || saved === 'reader' || saved === 'grammar') return saved;
     return 'reader';
   });
+  const [grammarResetKey, setGrammarResetKey] = useState(0);
+
+  const handleOpenGrammar = () => {
+    setActiveView('grammar');
+    setGrammarResetKey((k) => k + 1);
+  };
 
   useEffect(() => {
     localStorage.setItem('school-active-view', activeView);
@@ -199,8 +205,10 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
           <button
+            type="button"
             className={`dashboard-nav-stacked${activeView === 'grammar' ? ' active' : ''}`}
-            onClick={() => setActiveView('grammar')}
+            onClick={handleOpenGrammar}
+            title="Open Grammar shelf with all articles"
           >
             <span className="dashboard-nav-primary">Vyākaraṇa</span>
             <span className="dashboard-nav-secondary">Grammar</span>
@@ -209,7 +217,9 @@ const Dashboard: React.FC = () => {
       </header>
 
       {activeView === 'board' && <Board />}
-      {activeView === 'grammar' && <Grammar onGoHome={() => setActiveView('reader')} />}
+      {activeView === 'grammar' && (
+        <Grammar key={grammarResetKey} onGoHome={() => setActiveView('reader')} />
+      )}
       {activeView === 'reader' && <TextbookReader
         lessons={lessons}
         activeLessonId={lesson.id}

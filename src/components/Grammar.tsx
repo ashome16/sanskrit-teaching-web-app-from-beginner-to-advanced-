@@ -24,24 +24,44 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome }) => {
   const activeArticleMeta = ARTICLES.find((item) => item.id === activeArticleId);
   const activeArticle = activeArticleId ? articles[activeArticleId] : undefined;
 
+  const goBackToShelf = () => {
+    setTopic('home');
+    setActiveArticleId(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const openArticle = (id: string) => {
     setActiveArticleId(id);
     setArticleError(false);
     setTopic('article');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-
-  const topicNav = (
-    <nav className="grammar-nav" aria-label="Grammar page navigation">
-      <button type="button" className="grammar-back" onClick={() => setTopic('home')}>
-        ← Back to Grammar
-      </button>
-      {onGoHome && (
-        <button type="button" className="grammar-home" onClick={onGoHome}>
-          ← Deepakam · Home
+  const renderBreadcrumb = (currentTitle: string) => (
+    <div className="grammar-header-nav">
+      <nav className="grammar-breadcrumb" aria-label="Grammar breadcrumb navigation">
+        <button
+          type="button"
+          className="grammar-breadcrumb-link"
+          onClick={goBackToShelf}
+          title="Return to Grammar Shelf with all articles"
+        >
+          📚 व्याकरणम् (Grammar Shelf)
         </button>
-      )}
-    </nav>
+        <span className="grammar-breadcrumb-sep" aria-hidden="true">›</span>
+        <span className="grammar-breadcrumb-current">{currentTitle}</span>
+      </nav>
+      <nav className="grammar-nav" aria-label="Grammar page navigation">
+        <button type="button" className="grammar-back" onClick={goBackToShelf}>
+          ← Back to All Articles
+        </button>
+        {onGoHome && (
+          <button type="button" className="grammar-home" onClick={onGoHome}>
+            ← Deepakam · Home
+          </button>
+        )}
+      </nav>
+    </div>
   );
 
   useEffect(() => {
@@ -56,7 +76,7 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome }) => {
     return (
       <section className="grammar-page" aria-label="Vibhakti guide">
         <header className="grammar-page-header">
-          {topicNav}
+          {renderBreadcrumb('विभक्ति · Vibhakti')}
           <h2 className="grammar-title">विभक्ति · Vibhakti</h2>
           <p className="grammar-lead">The 8 noun cases at a glance — our first grammar brick.</p>
         </header>
@@ -92,7 +112,7 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome }) => {
     return (
       <section className="grammar-page" aria-label="Conjunct games">
         <header className="grammar-page-header">
-          {topicNav}
+          {renderBreadcrumb('संयुक्त · Conjunct Games')}
           <h2 className="grammar-title">संयुक्त · Conjunct Games</h2>
           <p className="grammar-lead">
             Three playground posters. Tap a game title to open or close its picture.
@@ -107,7 +127,7 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome }) => {
     return (
       <section className="grammar-page" aria-label="Five Sound Teams">
         <header className="grammar-page-header">
-          {topicNav}
+          {renderBreadcrumb('Five Sound Teams · पञ्च वर्ण-टीमें')}
           <h2 className="grammar-title">Five Sound Teams · पञ्च वर्ण-टीमें</h2>
           <p className="grammar-lead">
             Vowels, consonants, sliders, hissers, and fusion blocks — how every letter finds its
@@ -123,7 +143,7 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome }) => {
     return (
       <section className="grammar-page" aria-label="Grammar article">
         <header className="grammar-page-header">
-          {topicNav}
+          {renderBreadcrumb(activeArticle ? activeArticle.title : (activeArticleMeta?.cardTitle || 'Article'))}
           <h2 className="grammar-title">{activeArticle ? activeArticle.title : 'Loading…'}</h2>
           {activeArticle?.subtitle && <p className="grammar-lead">{activeArticle.subtitle}</p>}
         </header>
@@ -202,6 +222,24 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome }) => {
                 </p>
               );
             })}
+            <footer className="grammar-article-footer">
+              <button
+                type="button"
+                className="grammar-back grammar-footer-btn"
+                onClick={goBackToShelf}
+              >
+                ← Back to All Grammar Articles
+              </button>
+              {onGoHome && (
+                <button
+                  type="button"
+                  className="grammar-home grammar-footer-btn"
+                  onClick={onGoHome}
+                >
+                  ← Return to Deepakam Lessons
+                </button>
+              )}
+            </footer>
           </article>
         )}
       </section>

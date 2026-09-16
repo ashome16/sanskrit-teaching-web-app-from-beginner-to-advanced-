@@ -29,10 +29,10 @@ interface WordAnalyzerCardProps {
   selection: WordSelection | null;
 }
 
-// Strips whitespace/punctuation plus Devanagari digits and hyphens (e.g. the
-// numbers guide's "० - शून्यम्" button labels) so only the word itself is analyzed.
+// Strips whitespace/punctuation plus Devanagari digits, dashes, quotes, and symbols
+// so only the clean word itself is analyzed.
 const cleanWord = (value: string): string =>
-  value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-०-९]+/g, '').trim();
+  value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९\.\/\\=+#*~_`]+/g, '').trim();
 
 const createCustomWord = (value: string): SanskritWordBreakdown => {
   const devanagari = cleanWord(value) || value.trim();

@@ -52,11 +52,28 @@ export const lookupAnalyseGloss = (
   const key = devanagari.normalize('NFC').trim();
   if (!key) return undefined;
   if (registry[key]) return registry[key];
-  // light fallback: strip a trailing visarga for lemma-ish hits
+
+  // light fallback: strip or add trailing visarga
   if (key.endsWith('ः')) {
     const bare = key.slice(0, -1);
     if (registry[bare]) return registry[bare];
+  } else if (registry[key + 'ः']) {
+    return registry[key + 'ः'];
   }
+
+  // fallback between anusvāra (ं) and halanta-m (म्)
+  if (key.endsWith('ं')) {
+    const withM = key.slice(0, -1) + 'म्';
+    if (registry[withM]) return registry[withM];
+    const bare = key.slice(0, -1);
+    if (registry[bare]) return registry[bare];
+  } else if (key.endsWith('म्')) {
+    const withAnusvara = key.slice(0, -2) + 'ं';
+    if (registry[withAnusvara]) return registry[withAnusvara];
+    const bare = key.slice(0, -2);
+    if (registry[bare]) return registry[bare];
+  }
+
   return undefined;
 };
 
