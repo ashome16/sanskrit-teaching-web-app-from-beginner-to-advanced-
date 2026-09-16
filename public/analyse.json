@@ -12675,5 +12675,2637 @@
         "meaning": "की (सम्बन्ध कारक स्त्रीलिंग परसर्ग)"
       }
     }
+  },
+  "अन्ते": {
+    "word": "अन्ते",
+    "base_english": "At the end / Finally (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "At the end / Finally (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अंत में / आख़िरकार (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "अंत": {
+    "word": "अंत",
+    "base_english": "End / Conclusion",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "End / Conclusion"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अंत / समाप्ति"
+      }
+    }
+  },
+  "कस्य": {
+    "word": "कस्य",
+    "base_english": "Whose / Of whom (masculine / neuter genitive singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Whose / Of whom (masculine / neuter genitive singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किसका / किसके (किम् सर्वनाम षष्ठी एकवचन)"
+      }
+    }
+  },
+  "कुत्र": {
+    "word": "कुत्र",
+    "base_english": "Where (indeclinable interrogative adverb)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Where (indeclinable interrogative adverb)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कहाँ (स्थानवाचक प्रश्न अव्यय)"
+      }
+    }
+  },
+  "कहाँ": {
+    "word": "कहाँ",
+    "base_english": "Where (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Where"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कहाँ (स्थानसूचक प्रश्न)"
+      }
+    }
+  },
+  "किमर्थं": {
+    "word": "किमर्थं",
+    "base_english": "Why / For what purpose (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Why / For what purpose (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किसलिए / क्यों (कारणसूचक अव्यय)"
+      }
+    }
+  },
+  "किसलिए": {
+    "word": "किसलिए",
+    "base_english": "Why / For what reason (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Why / For what reason"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किसलिए / किस कारण से"
+      }
+    }
+  },
+  "किसे": {
+    "word": "किसे",
+    "base_english": "Whom / To whom (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Whom / To whom"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किसे / किसको"
+      }
+    }
+  },
+  "किसके": {
+    "word": "किसके",
+    "base_english": "Whose (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Whose"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किसके / किसके संबंध में"
+      }
+    }
+  },
+  "गत्वा": {
+    "word": "गत्वा",
+    "base_english": "Having gone (indeclinable past participle, gam + ktvā)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Having gone (indeclinable past participle, gam + ktvā)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जाकर (गम् + क्त्वा प्रत्यय)"
+      }
+    }
+  },
+  "जाकर": {
+    "word": "जाकर",
+    "base_english": "Having gone (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Having gone"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जाकर / जाने के बाद"
+      }
+    }
+  },
+  "दृष्ट्वा": {
+    "word": "दृष्ट्वा",
+    "base_english": "Having seen (indeclinable past participle, dṛś + ktvā)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Having seen (indeclinable past participle, dṛś + ktvā)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देखकर (दृश् + क्त्वा प्रत्यय)"
+      }
+    }
+  },
+  "देखकर": {
+    "word": "देखकर",
+    "base_english": "Having seen (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Having seen"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देखकर / देखने के बाद"
+      }
+    }
+  },
+  "देखते": {
+    "word": "देखते",
+    "base_english": "See / Look (Hindi plural verb)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "See / Look (Hindi plural verb)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देखते हैं"
+      }
+    }
+  },
+  "प्राप्नोति": {
+    "word": "प्राप्नोति",
+    "base_english": "Obtains / Receives / Attains (pra + āp, lat prathama singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Obtains / Receives / Attains (pra + āp, lat prathama singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्राप्त करता है / पाता है (प्र + आप् धातु)"
+      }
+    }
+  },
+  "लेता": {
+    "word": "लेता",
+    "base_english": "Takes / Gets (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Takes / Gets"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लेता है / प्राप्त करता है"
+      }
+    }
+  },
+  "क्रीडति": {
+    "word": "क्रीडति",
+    "base_english": "Plays (krīḍ dhātu, lat prathama singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Plays (krīḍ dhātu, lat prathama singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खेलता है (क्रीड् धातु, लट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "मुखे": {
+    "word": "मुखे",
+    "base_english": "In the mouth (neuter saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the mouth (neuter saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मुँह में (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "द्राक्षालतायां": {
+    "word": "द्राक्षालतायां",
+    "base_english": "On the grapevine climber (feminine saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "On the grapevine climber (feminine saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अंगूर की बेल पर (स्त्रीलिङ्ग सप्तमी एकवचन)"
+      }
+    }
+  },
+  "द्राक्षालतायाम्": {
+    "word": "द्राक्षालतायाम्",
+    "base_english": "On the grapevine climber (feminine saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "On the grapevine climber (feminine saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अंगूर की बेल पर (स्त्रीलिङ्ग सप्तमी एकवचन)"
+      }
+    }
+  },
+  "देवं": {
+    "word": "देवं",
+    "base_english": "God / Deity (masculine dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "God / Deity (masculine dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ईश्वर को / देव को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "ईश्वर": {
+    "word": "ईश्वर",
+    "base_english": "God / Supreme Lord",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "God / Supreme Lord"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ईश्वर / परमात्मा"
+      }
+    }
+  },
+  "देशं": {
+    "word": "देशं",
+    "base_english": "Country / Nation (masculine dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Country / Nation (masculine dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देश को / राष्ट्र को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "देश": {
+    "word": "देश",
+    "base_english": "Country / Land / Nation",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Country / Land / Nation"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देश / वतन"
+      }
+    }
+  },
+  "रात्रिकाले": {
+    "word": "रात्रिकाले",
+    "base_english": "At night / During nighttime (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "At night / During nighttime (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रात के समय / रात्रि में (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "रात": {
+    "word": "रात",
+    "base_english": "Night (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Night"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रात / निशा"
+      }
+    }
+  },
+  "समय": {
+    "word": "समय",
+    "base_english": "Time / Period",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Time / Period"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "समय / काल"
+      }
+    }
+  },
+  "मार्गदीपाः": {
+    "word": "मार्गदीपाः",
+    "base_english": "Street lights / Road lamps (masculine prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Street lights / Road lamps (masculine prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सड़क के दीप / स्ट्रीट लाइटें (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "मार्गदीप": {
+    "word": "मार्गदीप",
+    "base_english": "Street lamp / Road lamp",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Street lamp / Road lamp"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मार्ग का दीप / स्ट्रीट लाइट"
+      }
+    }
+  },
+  "स्ट्रीट": {
+    "word": "स्ट्रीट",
+    "base_english": "Street",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Street"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सड़क / मार्ग"
+      }
+    }
+  },
+  "लाइटें": {
+    "word": "लाइटें",
+    "base_english": "Lights (Hindi plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Lights"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दीप / बत्तियाँ"
+      }
+    }
+  },
+  "मार्जारं": {
+    "word": "मार्जारं",
+    "base_english": "Cat (masculine dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Cat (masculine dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बिल्ली को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "बिल्ली": {
+    "word": "बिल्ली",
+    "base_english": "Cat (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Cat"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मार्जार / बिल्ली"
+      }
+    }
+  },
+  "मूषकः": {
+    "word": "मूषकः",
+    "base_english": "Mouse / Rat (masculine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mouse / Rat (masculine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चूहा (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "चूहा": {
+    "word": "चूहा",
+    "base_english": "Mouse / Rat (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mouse / Rat"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मूषक / चूहा"
+      }
+    }
+  },
+  "बालः": {
+    "word": "बालः",
+    "base_english": "Boy / Child (masculine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Boy / Child (masculine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बालक / बच्चा (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "बालाः": {
+    "word": "बालाः",
+    "base_english": "Children / Boys / Girls (prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Children / Boys / Girls (prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बच्चे / बालकगण (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "बच्चे": {
+    "word": "बच्चे",
+    "base_english": "Children (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Children"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बच्चे / बालकगण"
+      }
+    }
+  },
+  "भक्ताः": {
+    "word": "भक्ताः",
+    "base_english": "Devotees (masculine prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Devotees (masculine prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भक्तगण (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "प्रेक्षकाः": {
+    "word": "प्रेक्षकाः",
+    "base_english": "Spectators / Viewers / Audience (masculine prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Spectators / Viewers / Audience (masculine prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दर्शकगण / देखने वाले (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "दर्शक": {
+    "word": "दर्शक",
+    "base_english": "Spectator / Viewer",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Spectator / Viewer"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दर्शक / प्रेक्षक"
+      }
+    }
+  },
+  "कर्मचारी": {
+    "word": "कर्मचारी",
+    "base_english": "Employee / Worker / Official (masculine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Employee / Worker / Official (masculine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कर्मचारी / सेवक (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "महिलाः": {
+    "word": "महिलाः",
+    "base_english": "Women (feminine prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Women (feminine prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "महिलाएँ / स्त्रियाँ (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "महिलाएँ": {
+    "word": "महिलाएँ",
+    "base_english": "Women (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Women"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "महिलाएँ / स्त्रियाँ"
+      }
+    }
+  },
+  "रुग्णाः": {
+    "word": "रुग्णाः",
+    "base_english": "Patients / Sick persons (masculine prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Patients / Sick persons (masculine prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोगी / बीमार लोग (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "रोगी": {
+    "word": "रोगी",
+    "base_english": "Patient / Sick person",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Patient / Sick person"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोगी / मरीज़"
+      }
+    }
+  },
+  "वैद्यः": {
+    "word": "वैद्यः",
+    "base_english": "Doctor / Physician (masculine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Doctor / Physician (masculine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वैद्य / चिकित्सक / डॉक्टर (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "चिकित्सक": {
+    "word": "चिकित्सक",
+    "base_english": "Physician / Doctor",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Physician / Doctor"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चिकित्सक / डॉक्टर"
+      }
+    }
+  },
+  "विद्यार्थी": {
+    "word": "विद्यार्थी",
+    "base_english": "Student / Learner",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Student / Learner"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्यार्थी / छात्र"
+      }
+    }
+  },
+  "या": {
+    "word": "या",
+    "base_english": "Or (Hindi/Sanskrit indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Or"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "या / अथवा"
+      }
+    }
+  },
+  "अभ्यासः": {
+    "word": "अभ्यासः",
+    "base_english": "Exercise / Practice / Drill (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Exercise / Practice / Drill (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अभ्यास / पाठ का अभ्यास कार्य (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "अभ्यास": {
+    "word": "अभ्यास",
+    "base_english": "Exercise / Practice",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Exercise / Practice"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अभ्यास / रियाज़"
+      }
+    }
+  },
+  "कार्य": {
+    "word": "कार्य",
+    "base_english": "Work / Task / Exercise",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Work / Task / Exercise"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "काम / कार्य"
+      }
+    }
+  },
+  "प्रश्न": {
+    "word": "प्रश्न",
+    "base_english": "Question / Query",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Question / Query"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रश्न / सवाल"
+      }
+    }
+  },
+  "प्रदत्तानां": {
+    "word": "प्रदत्तानां",
+    "base_english": "Of the given / Of the provided (genitive plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the given / Of the provided (genitive plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दिए गए (प्रश्नों) का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "प्रदत्तां": {
+    "word": "प्रदत्तां",
+    "base_english": "Given / Provided (feminine dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Given / Provided (feminine dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दी गई (मञ्जूषा को) (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "पदद्वयेन": {
+    "word": "पदद्वयेन",
+    "base_english": "In two words (tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In two words (tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो शब्दों में (तृतीया एकवचन)"
+      }
+    }
+  },
+  "दें": {
+    "word": "दें",
+    "base_english": "Give (Hindi imperative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Give"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दें / उत्तर दें"
+      }
+    }
+  },
+  "मञ्जूषां": {
+    "word": "मञ्जूषां",
+    "base_english": "Word-box / Table / Helper box (dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Word-box / Table / Helper box (dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शब्द-पेटी / तालिका को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "तालिका": {
+    "word": "तालिका",
+    "base_english": "Table / Grid / Chart",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Table / Grid / Chart"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तालिका / सूची / सारणी"
+      }
+    }
+  },
+  "आधार": {
+    "word": "आधार",
+    "base_english": "Basis / Foundation",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Basis / Foundation"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आधार / बिना पर"
+      }
+    }
+  },
+  "लट्लकार": {
+    "word": "लट्लकार",
+    "base_english": "Laṭ Lakāra (Present tense)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Laṭ Lakāra (Present tense in Sanskrit)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लट् लकार (वर्तमान काल)"
+      }
+    }
+  },
+  "आत्मनेपद": {
+    "word": "आत्मनेपद",
+    "base_english": "Ātmanepada (Middle voice verb conjugation)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ātmanepada (Middle voice verb conjugation)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आत्मनेपद (क्रिया का आत्मनेपद रूप)"
+      }
+    }
+  },
+  "नियमः": {
+    "word": "नियमः",
+    "base_english": "Rule / Principle / Law (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Rule / Principle / Law (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नियम / सिद्धांत (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "रिक्तस्थानेषु": {
+    "word": "रिक्तस्थानेषु",
+    "base_english": "In the blanks / In the empty places (saptamī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the blanks / In the empty places (saptamī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "खाली स्थानों में / रिक्त स्थानों में (सप्तमी बहुवचन)"
+      }
+    }
+  },
+  "स्थान": {
+    "word": "स्थान",
+    "base_english": "Place / Spot / Blank",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Place / Spot / Blank"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जगह / खाली स्थान"
+      }
+    }
+  },
+  "भरें": {
+    "word": "भरें",
+    "base_english": "Fill in (Hindi imperative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fill in"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भरें / पूर्ति करें"
+      }
+    }
+  },
+  "उचितक्रियापदानि": {
+    "word": "उचितक्रियापदानि",
+    "base_english": "Appropriate / correct verb forms (dvitīyā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Appropriate / correct verb forms (dvitīyā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उचित क्रियापद / सही क्रिया शब्द (द्वितीया बहुवचन)"
+      }
+    }
+  },
+  "उचितरूपैः": {
+    "word": "उचितरूपैः",
+    "base_english": "With appropriate / suitable forms (tṛtīyā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "With appropriate / suitable forms (tṛtīyā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उचित रूपों के द्वारा (तृतीया बहुवचन)"
+      }
+    }
+  },
+  "पूरे": {
+    "word": "पूरे",
+    "base_english": "Complete / Fill (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Complete / Fill"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पूरे / संपूर्ण करें"
+      }
+    }
+  },
+  "पूर्ति": {
+    "word": "पूर्ति",
+    "base_english": "Completion / Filling up",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Completion / Filling up"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पूर्ति / पूरा करना"
+      }
+    }
+  },
+  "करें": {
+    "word": "करें",
+    "base_english": "Do / Perform (Hindi imperative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Do / Perform"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "करें / कीजिए"
+      }
+    }
+  },
+  "प्रथमपुरुषः": {
+    "word": "प्रथमपुरुषः",
+    "base_english": "Third person (He / She / It / They in Sanskrit)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Third person (equivalent to English 3rd person: He / She / They)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रथम पुरुष (अन्य पुरुष - वह / वे)"
+      }
+    }
+  },
+  "मध्यमपुरुषः": {
+    "word": "मध्यमपुरुषः",
+    "base_english": "Second person (You / You two / You all in Sanskrit)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Second person (You / You two / You all)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मध्यम पुरुष (तुम / आप)"
+      }
+    }
+  },
+  "मध्यम": {
+    "word": "मध्यम",
+    "base_english": "Middle / Second person",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Middle / Second person"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मध्यम / बीच का"
+      }
+    }
+  },
+  "उत्तमपुरुषः": {
+    "word": "उत्तमपुरुषः",
+    "base_english": "First person (I / We two / We all in Sanskrit)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "First person (I / We)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्तम पुरुष (मैं / हम)"
+      }
+    }
+  },
+  "उत्तम": {
+    "word": "उत्तम",
+    "base_english": "Best / First person",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Best / First person"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्तम / श्रेष्ठ"
+      }
+    }
+  },
+  "एकवचनम्": {
+    "word": "एकवचनम्",
+    "base_english": "Singular number (Grammar)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Singular number (Grammar)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "एकवचन (एक संख्या का बोध कराने वाला)"
+      }
+    }
+  },
+  "एकवचन": {
+    "word": "एकवचन",
+    "base_english": "Singular number",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Singular number"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "एकवचन"
+      }
+    }
+  },
+  "एकवचनरूपं": {
+    "word": "एकवचनरूपं",
+    "base_english": "Singular form (neuter dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Singular form (neuter dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "एकवचन रूप को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "द्विवचनम्": {
+    "word": "द्विवचनम्",
+    "base_english": "Dual number (Grammar)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Dual number (Sanskrit grammatical category for two items)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "द्विवचन (दो का बोध कराने वाला रूप)"
+      }
+    }
+  },
+  "द्विवचनबहुवचनरूपाणि": {
+    "word": "द्विवचनबहुवचनरूपाणि",
+    "base_english": "Dual and plural forms (plural neuter)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Dual and plural forms (plural neuter)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "द्विवचन और बहुवचन के रूप"
+      }
+    }
+  },
+  "बहुवचनम्": {
+    "word": "बहुवचनम्",
+    "base_english": "Plural number (Grammar)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Plural number (Grammar)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बहुवचन (अनेक का बोध कराने वाला)"
+      }
+    }
+  },
+  "बहुवचन": {
+    "word": "बहुवचन",
+    "base_english": "Plural number",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Plural number"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बहुवचन"
+      }
+    }
+  },
+  "उदाहरणम्": {
+    "word": "उदाहरणम्",
+    "base_english": "Example / Illustration (neuter prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Example / Illustration (neuter prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उदाहरण / मिसाल (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "उदाहरणं": {
+    "word": "उदाहरणं",
+    "base_english": "Example / Illustration (neuter dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Example / Illustration (neuter dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उदाहरण को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "धातुः": {
+    "word": "धातुः",
+    "base_english": "Verbal root (masculine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Verbal root (atomic core of Sanskrit verbs and nouns)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "क्रिया का मूल रूप / धातु (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "धातु": {
+    "word": "धातु",
+    "base_english": "Root / Verb root",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Root / Verb root"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धातु / क्रिया का मूल"
+      }
+    }
+  },
+  "वाक्य": {
+    "word": "वाक्य",
+    "base_english": "Sentence",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sentence"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वाक्य"
+      }
+    }
+  },
+  "वाक्यद्वयं": {
+    "word": "वाक्यद्वयं",
+    "base_english": "Two sentences / A pair of sentences",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Two sentences / A pair of sentences"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो वाक्य (एकवचन और बहुवचन)"
+      }
+    }
+  },
+  "बनाना": {
+    "word": "बनाना",
+    "base_english": "To make / To construct (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To make / To construct"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बनाना / निर्माण करना"
+      }
+    }
+  },
+  "कम्प्": {
+    "word": "कम्प्",
+    "base_english": "Root kamp (to shake / to tremble, ātmanepada)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Root kamp (to shake / to tremble, ātmanepada)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कम्प् धातु (काँपना - आत्मनेपद)"
+      }
+    }
+  },
+  "कम्पते": {
+    "word": "कम्पते",
+    "base_english": "Shakes / Trembles (kamp dhātu, laṭ 3rd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Shakes / Trembles (kamp dhātu, laṭ 3rd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "काँपता है (कम्प् धातु, लट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "कम्पेते": {
+    "word": "कम्पेते",
+    "base_english": "Both shake / Both tremble (kamp dhātu, laṭ 3rd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Both shake / Both tremble (kamp dhātu, laṭ 3rd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे दोनों काँपते हैं (कम्प् धातु, लट् प्रथमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "कम्पन्ते": {
+    "word": "कम्पन्ते",
+    "base_english": "They shake / They tremble (kamp dhātu, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They shake / They tremble (kamp dhātu, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे सब काँपते हैं (कम्प् धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "काँपना": {
+    "word": "काँपना",
+    "base_english": "To tremble / To shiver (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To tremble / To shiver"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "काँपना / थरथराना"
+      }
+    }
+  },
+  "काँपता": {
+    "word": "काँपता",
+    "base_english": "Trembles / Shivers (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Trembles / Shivers"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "काँपता है"
+      }
+    }
+  },
+  "काँपते": {
+    "word": "काँपते",
+    "base_english": "Tremble / Shiver (Hindi plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Tremble / Shiver"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "काँपते हैं"
+      }
+    }
+  },
+  "वर्ध्": {
+    "word": "वर्ध्",
+    "base_english": "Root vardh / vṛdh (to grow / to increase, ātmanepada)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Root vardh / vṛdh (to grow / to increase, ātmanepada)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वर्ध् / वृध् धातु (बढ़ना / वृद्धि होना - आत्मनेपद)"
+      }
+    }
+  },
+  "वर्धेते": {
+    "word": "वर्धेते",
+    "base_english": "Both grow / Both increase (vṛdh dhātu, laṭ 3rd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Both grow / Both increase (vṛdh dhātu, laṭ 3rd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे दोनों बढ़ते हैं (वर्ध् धातु, लट् प्रथमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "वर्धन्ते": {
+    "word": "वर्धन्ते",
+    "base_english": "They grow / They increase (vṛdh dhātu, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They grow / They increase (vṛdh dhātu, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे सब बढ़ते हैं (वर्ध् धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "बढ़ना": {
+    "word": "बढ़ना",
+    "base_english": "To grow / To increase (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To grow / To increase"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बढ़ना / विकास पाना"
+      }
+    }
+  },
+  "बढ़ते": {
+    "word": "बढ़ते",
+    "base_english": "Grow / Increase (Hindi plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Grow / Increase"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बढ़ते हैं"
+      }
+    }
+  },
+  "वृत्": {
+    "word": "वृत्",
+    "base_english": "Root vṛt (to be / to exist / to occur, ātmanepada)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Root vṛt (to be / to exist / to occur, ātmanepada)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वृत् धातु (होना / वर्तना / विद्यमान होना - आत्मनेपद)"
+      }
+    }
+  },
+  "वर्तसे": {
+    "word": "वर्तसे",
+    "base_english": "You exist / You are (vṛt dhātu, laṭ 2nd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You exist / You are (vṛt dhātu, laṭ 2nd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम हो / वर्तते हो (वृत् धातु, लट् मध्यमपुरुष एकवचन)"
+      }
+    }
+  },
+  "वर्तेथे": {
+    "word": "वर्तेथे",
+    "base_english": "You two exist / You two are (vṛt dhātu, laṭ 2nd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You two exist / You two are (vṛt dhātu, laṭ 2nd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम दोनों हो (वृत् धातु, लट् मध्यमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "वर्तध्वे": {
+    "word": "वर्तध्वे",
+    "base_english": "You all exist / You all are (vṛt dhātu, laṭ 2nd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You all exist / You all are (vṛt dhātu, laṭ 2nd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम सब हो (वृत् धातु, लट् मध्यमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "वर्तना": {
+    "word": "वर्तना",
+    "base_english": "To exist / To behave (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To exist / To behave"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वर्तना / रहना / होना"
+      }
+    }
+  },
+  "होना": {
+    "word": "होना",
+    "base_english": "To be / To happen (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To be / To happen"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "होना / विद्यमान होना"
+      }
+    }
+  },
+  "प्र": {
+    "word": "प्र",
+    "base_english": "Pra- (prefix denoting forward, forth, intense)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Pra- (prefix denoting forward, forth, intense)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्र (उपसर्ग - आगे / अधिक / प्रकर्ष)"
+      }
+    }
+  },
+  "काश्": {
+    "word": "काश्",
+    "base_english": "Root kāś (to shine / to appear)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Root kāś (to shine / to appear)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "काश् धातु (चमकना / प्रकाशित होना)"
+      }
+    }
+  },
+  "प्रकाशते": {
+    "word": "प्रकाशते",
+    "base_english": "Shines / Radiates light (pra + kāś, laṭ 3rd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Shines / Radiates light (pra + kāś, laṭ 3rd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चमकता है / प्रकाशित होता है (प्र + काश् धातु, लट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "प्रकाशेते": {
+    "word": "प्रकाशेते",
+    "base_english": "Both shine (pra + kāś, laṭ 3rd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Both shine (pra + kāś, laṭ 3rd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे दोनों चमकते हैं (प्र + काश् धातु, लट् प्रथमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "प्रकाशन्ते": {
+    "word": "प्रकाशन्ते",
+    "base_english": "They shine / Radiate light (pra + kāś, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They shine / Radiate light (pra + kāś, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे सब चमकते हैं / प्रकाशित होते हैं (प्र + काश् धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "प्रकाश": {
+    "word": "प्रकाश",
+    "base_english": "Light / Brightness / Illumination",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Light / Brightness / Illumination"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोशनी / उजाला / चमक"
+      }
+    }
+  },
+  "प्रकाशित": {
+    "word": "प्रकाशित",
+    "base_english": "Illuminated / Shined upon",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Illuminated / Shined upon"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोशन / प्रकाशित"
+      }
+    }
+  },
+  "चमकना": {
+    "word": "चमकना",
+    "base_english": "To shine / To sparkle (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To shine / To sparkle"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चमकना / दमकना"
+      }
+    }
+  },
+  "चमकते": {
+    "word": "चमकते",
+    "base_english": "Shine / Sparkle (Hindi plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Shine / Sparkle"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चमकते हैं"
+      }
+    }
+  },
+  "वन्द्": {
+    "word": "वन्द्",
+    "base_english": "Root vand (to bow / to salute / to praise, ātmanepada)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Root vand (to bow / to salute / to praise, ātmanepada)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वन्द् धातु (वन्दना करना / प्रणाम करना - आत्मनेपद)"
+      }
+    }
+  },
+  "वन्दते": {
+    "word": "वन्दते",
+    "base_english": "Bows / Salutes / Praises (vand dhātu, laṭ 3rd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Bows / Salutes / Praises (vand dhātu, laṭ 3rd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रणाम करता है / वन्दना करता है (वन्द् धातु, लट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "वन्देते": {
+    "word": "वन्देते",
+    "base_english": "Both bow / Both salute (vand dhātu, laṭ 3rd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Both bow / Both salute (vand dhātu, laṭ 3rd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे दोनों वन्दना करते हैं (वन्द् धातु, लट् प्रथमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "वन्दन्ते": {
+    "word": "वन्दन्ते",
+    "base_english": "They bow / They salute (vand dhātu, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They bow / They salute (vand dhātu, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे सब वन्दना करते हैं (वन्द् धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "वन्दसे": {
+    "word": "वन्दसे",
+    "base_english": "You bow / You salute (vand dhātu, laṭ 2nd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You bow / You salute (vand dhātu, laṭ 2nd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम वन्दना करते हो (वन्द् धातु, लट् मध्यमपुरुष एकवचन)"
+      }
+    }
+  },
+  "वन्देथे": {
+    "word": "वन्देथे",
+    "base_english": "You two bow / You two salute (vand dhātu, laṭ 2nd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You two bow / You two salute (vand dhātu, laṭ 2nd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम दोनों वन्दना करते हो (वन्द् धातु, लट् मध्यमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "वन्दध्वे": {
+    "word": "वन्दध्वे",
+    "base_english": "You all bow / You all salute (vand dhātu, laṭ 2nd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You all bow / You all salute (vand dhātu, laṭ 2nd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम सब वन्दना करते हो (वन्द् धातु, लट् मध्यमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "वन्दध्वै": {
+    "word": "वन्दध्वै",
+    "base_english": "You all bow / salute (variant for vandadhve)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You all bow / salute (variant for vandadhve)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम सब वन्दना करते हो (वन्दध्वे का रूप)"
+      }
+    }
+  },
+  "वन्दे": {
+    "word": "वन्दे",
+    "base_english": "I bow / I salute (vand dhātu, laṭ 1st singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I bow / I salute (vand dhātu, laṭ 1st singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मैं वन्दना करता हूँ / प्रणाम करता हूँ (वन्द् धातु, लट् उत्तमपुरुष एकवचन)"
+      }
+    }
+  },
+  "वन्दावहे": {
+    "word": "वन्दावहे",
+    "base_english": "We two bow / We two salute (vand dhātu, laṭ 1st dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We two bow / We two salute (vand dhātu, laṭ 1st dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम दोनों वन्दना करते हैं (वन्द् धातु, लट् उत्तमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "वन्दामहे": {
+    "word": "वन्दामहे",
+    "base_english": "We all bow / We all salute (vand dhātu, laṭ 1st plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We all bow / We all salute (vand dhātu, laṭ 1st plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम सब वन्दना करते हैं (वन्द् धातु, लट् उत्तमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "वन्दना": {
+    "word": "वन्दना",
+    "base_english": "Worship / Bowing / Salutation",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Worship / Bowing / Salutation"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रणाम / स्तुति / पूजा"
+      }
+    }
+  },
+  "याच्": {
+    "word": "याच्",
+    "base_english": "Root yāc (to ask / to beg / to request, ātmanepada)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Root yāc (to ask / to beg / to request, ātmanepada)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "याच् धातु (माँगना / याचना करना - आत्मनेपद)"
+      }
+    }
+  },
+  "याचते": {
+    "word": "याचते",
+    "base_english": "Asks / Begs / Requests (yāc dhātu, laṭ 3rd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Asks / Begs / Requests (yāc dhātu, laṭ 3rd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "माँगता है / याचना करता है (याच् धातु, लट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "याचेते": {
+    "word": "याचेते",
+    "base_english": "Both ask / Both request (yāc dhātu, laṭ 3rd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Both ask / Both request (yāc dhātu, laṭ 3rd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे दोनों माँगते हैं (याच् धातु, लट् प्रथमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "याचन्ते": {
+    "word": "याचन्ते",
+    "base_english": "They ask / They request (yāc dhātu, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They ask / They request (yāc dhātu, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे सब माँगते हैं (याच् धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "माँगना": {
+    "word": "माँगना",
+    "base_english": "To ask / To request / To beg (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To ask / To request / To beg"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "माँगना / याचना करना"
+      }
+    }
+  },
+  "लज्ज्": {
+    "word": "लज्ज्",
+    "base_english": "Root lajj (to feel shy / to blush / to be embarrassed, ātmanepada)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Root lajj (to feel shy / to blush / to be embarrassed, ātmanepada)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लज्ज् धातु (शर्माना / लज्जा महसूस करना - आत्मनेपद)"
+      }
+    }
+  },
+  "लज्जसे": {
+    "word": "लज्जसे",
+    "base_english": "You feel shy / You blush (lajj dhātu, laṭ 2nd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You feel shy / You blush (lajj dhātu, laṭ 2nd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम शर्माते हो / लज्जा करते हो (लज्ज् धातु, लट् मध्यमपुरुष एकवचन)"
+      }
+    }
+  },
+  "लज्जेथे": {
+    "word": "लज्जेथे",
+    "base_english": "You two feel shy (lajj dhātu, laṭ 2nd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You two feel shy (lajj dhātu, laṭ 2nd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम दोनों शर्माते हो (लज्ज् धातु, लट् मध्यमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "लज्जध्वे": {
+    "word": "लज्जध्वे",
+    "base_english": "You all feel shy (lajj dhātu, laṭ 2nd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You all feel shy (lajj dhātu, laṭ 2nd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम सब शर्माते हो (लज्ज् धातु, लट् मध्यमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "शर्माना": {
+    "word": "शर्माना",
+    "base_english": "To feel shy / To blush (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To feel shy / To blush"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शर्माना / लजाना"
+      }
+    }
+  },
+  "शर्माते": {
+    "word": "शर्माते",
+    "base_english": "Feel shy (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Feel shy"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शर्माते हो / लज्जा करते हो"
+      }
+    }
+  },
+  "वीक्ष्": {
+    "word": "वीक्ष्",
+    "base_english": "Root vīkṣ (vi + īkṣ: to look / to observe / to behold, ātmanepada)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Root vīkṣ (vi + īkṣ: to look / to observe / to behold, ātmanepada)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वीक्ष् धातु (वि + ईक्ष्: देखना / ध्यान से देखना - आत्मनेपद)"
+      }
+    }
+  },
+  "वीक्षते": {
+    "word": "वीक्षते",
+    "base_english": "Looks / Observes / Sees (vīkṣ dhātu, laṭ 3rd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Looks / Observes / Sees (vīkṣ dhātu, laṭ 3rd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "देखता है (वीक्ष् धातु, लट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "वीक्षेते": {
+    "word": "वीक्षेते",
+    "base_english": "Both look / Both see (vīkṣ dhātu, laṭ 3rd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Both look / Both see (vīkṣ dhātu, laṭ 3rd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे दोनों देखते हैं (वीक्ष् धातु, लट् प्रथमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "वीक्षन्ते": {
+    "word": "वीक्षन्ते",
+    "base_english": "They look / They see (vīkṣ dhātu, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They look / They see (vīkṣ dhātu, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे सब देखते हैं (वीक्ष् धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "सेव्": {
+    "word": "सेव्",
+    "base_english": "Root sev (to serve / to attend upon / to honor, ātmanepada)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Root sev (to serve / to attend upon / to honor, ātmanepada)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सेव् धातु (सेवा करना - आत्मनेपद)"
+      }
+    }
+  },
+  "सेवते": {
+    "word": "सेवते",
+    "base_english": "Serves / Attends upon (sev dhātu, laṭ 3rd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Serves / Attends upon (sev dhātu, laṭ 3rd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सेवा करता है (सेव् धातु, लट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "सेवन्ते": {
+    "word": "सेवन्ते",
+    "base_english": "They serve / They attend upon (sev dhātu, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They serve / They attend upon (sev dhātu, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे सब सेवा करती हैं / करते हैं (सेव् धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "सेवे": {
+    "word": "सेवे",
+    "base_english": "I serve (sev dhātu, laṭ 1st singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I serve (sev dhātu, laṭ 1st singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मैं सेवा करता हूँ (सेव् धातु, लट् उत्तमपुरुष एकवचन)"
+      }
+    }
+  },
+  "सेवावहे": {
+    "word": "सेवावहे",
+    "base_english": "We two serve (sev dhātu, laṭ 1st dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We two serve (sev dhātu, laṭ 1st dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम दोनों सेवा करते हैं (सेव् धातु, लट् उत्तमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "सेवामहे": {
+    "word": "सेवामहे",
+    "base_english": "We all serve (sev dhātu, laṭ 1st plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We all serve (sev dhātu, laṭ 1st plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम सब सेवा करते हैं (सेव् धातु, लट् उत्तमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "सेवा": {
+    "word": "सेवा",
+    "base_english": "Service / Attendance / Care",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Service / Attendance / Care"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सेवा / खिदमत"
+      }
+    }
+  },
+  "शुभ्": {
+    "word": "शुभ्",
+    "base_english": "Root śubh (to look beautiful / to shine / to be splendid, ātmanepada)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Root śubh (to look beautiful / to shine / to be splendid, ātmanepada)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शुभ् धातु (सुशोभित होना / शोभा पाना - आत्मनेपद)"
+      }
+    }
+  },
+  "शोभते": {
+    "word": "शोभते",
+    "base_english": "Looks beautiful / Shines / Is splendid (śubh dhātu, laṭ 3rd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Looks beautiful / Shines / Is splendid (śubh dhātu, laṭ 3rd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शोभा पाता है / सुंदर लगता है (शुभ् धातु, लट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "शोभेते": {
+    "word": "शोभेते",
+    "base_english": "Both look beautiful (śubh dhātu, laṭ 3rd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Both look beautiful (śubh dhātu, laṭ 3rd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे दोनों शोभा पाते हैं (शुभ् धातु, लट् प्रथमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "शोभन्ते": {
+    "word": "शोभन्ते",
+    "base_english": "They look beautiful / Are splendid (śubh dhātu, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They look beautiful / Are splendid (śubh dhātu, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे सब शोभा पाते हैं (शुभ् धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "सुशोभित": {
+    "word": "सुशोभित",
+    "base_english": "Adorned / Beautiful / Splendid",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Adorned / Beautiful / Splendid"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुशोभित / शोभायमान"
+      }
+    }
+  },
+  "पलाय्": {
+    "word": "पलाय्",
+    "base_english": "Root palāy (parā + ay: to flee / to run away, ātmanepada)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Root palāy (parā + ay: to flee / to run away, ātmanepada)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पलाय् धातु (परा + अय्: भाग जाना / पलायन करना - आत्मनेपद)"
+      }
+    }
+  },
+  "पलायेते": {
+    "word": "पलायेते",
+    "base_english": "Both run away / Both flee (palāy dhātu, laṭ 3rd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Both run away / Both flee (palāy dhātu, laṭ 3rd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे दोनों भाग जाते हैं (पलाय् धातु, लट् प्रथमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "पलायन्ते": {
+    "word": "पलायन्ते",
+    "base_english": "They run away / They flee (palāy dhātu, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They run away / They flee (palāy dhātu, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे सब भाग जाते हैं (पलाय् धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "पलायसे": {
+    "word": "पलायसे",
+    "base_english": "You run away / You flee (palāy dhātu, laṭ 2nd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You run away / You flee (palāy dhātu, laṭ 2nd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम भाग जाते हो (पलाय् धातु, लट् मध्यमपुरुष एकवचन)"
+      }
+    }
+  },
+  "पलायेथे": {
+    "word": "पलायेथे",
+    "base_english": "You two run away (palāy dhātu, laṭ 2nd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You two run away (palāy dhātu, laṭ 2nd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम दोनों भाग जाते हो (पलाय् धातु, लट् मध्यमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "पलायध्वे": {
+    "word": "पलायध्वे",
+    "base_english": "You all run away (palāy dhātu, laṭ 2nd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You all run away (palāy dhātu, laṭ 2nd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम सब भाग जाते हो (पलाय् धातु, लट् मध्यमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "पलाये": {
+    "word": "पलाये",
+    "base_english": "I run away / I flee (palāy dhātu, laṭ 1st singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I run away / I flee (palāy dhātu, laṭ 1st singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मैं भाग जाता हूँ (पलाय् धातु, लट् उत्तमपुरुष एकवचन)"
+      }
+    }
+  },
+  "पलायावहे": {
+    "word": "पलायावहे",
+    "base_english": "We two run away (palāy dhātu, laṭ 1st dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We two run away (palāy dhātu, laṭ 1st dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम दोनों भाग जाते हैं (पलाय् धातु, लट् उत्तमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "पलायामहे": {
+    "word": "पलायामहे",
+    "base_english": "We all run away (palāy dhātu, laṭ 1st plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We all run away (palāy dhātu, laṭ 1st plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम सब भाग जाते हैं (पलाय् धातु, लट् उत्तमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "जन्": {
+    "word": "जन्",
+    "base_english": "Root jan / jā (to be born / to arise / to happen, ātmanepada)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Root jan / jā (to be born / to arise / to happen, ātmanepada)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जन् / जा धातु (उत्पन्न होना / पैदा होना - आत्मनेपद)"
+      }
+    }
+  },
+  "जा": {
+    "word": "जा",
+    "base_english": "Jā- (form of jan root: to be born / arise)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Jā- (form of jan root: to be born / arise)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जा (जन् धातु का रूप - उत्पन्न होना)"
+      }
+    }
+  },
+  "जायेते": {
+    "word": "जायेते",
+    "base_english": "Both arise / Both are born (jan dhātu, laṭ 3rd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Both arise / Both are born (jan dhātu, laṭ 3rd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे दोनों उत्पन्न होते हैं (जन् धातु, लट् प्रथमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "जायन्ते": {
+    "word": "जायन्ते",
+    "base_english": "They arise / They are born (jan dhātu, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They arise / They are born (jan dhātu, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे सब उत्पन्न होते हैं (जन् धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "जायसे": {
+    "word": "जायसे",
+    "base_english": "You arise / You are born (jan dhātu, laṭ 2nd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You arise / You are born (jan dhātu, laṭ 2nd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम उत्पन्न होते हो (जन् धातु, लट् मध्यमपुरुष एकवचन)"
+      }
+    }
+  },
+  "जायेथे": {
+    "word": "जायेथे",
+    "base_english": "You two arise (jan dhātu, laṭ 2nd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You two arise (jan dhātu, laṭ 2nd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम दोनों उत्पन्न होते हो (जन् धातु, लट् मध्यमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "जायध्वे": {
+    "word": "जायध्वे",
+    "base_english": "You all arise (jan dhātu, laṭ 2nd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You all arise (jan dhātu, laṭ 2nd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम सब उत्पन्न होते हो (जन् धातु, लट् मध्यमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "जाये": {
+    "word": "जाये",
+    "base_english": "I arise / I am born (jan dhātu, laṭ 1st singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I arise / I am born (jan dhātu, laṭ 1st singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मैं उत्पन्न होता हूँ (जन् धातु, लट् उत्तमपुरुष एकवचन)"
+      }
+    }
+  },
+  "जायावहे": {
+    "word": "जायावहे",
+    "base_english": "We two arise (jan dhātu, laṭ 1st dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We two arise (jan dhātu, laṭ 1st dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम दोनों उत्पन्न होते हैं (जन् धातु, लट् उत्तमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "जायामहे": {
+    "word": "जायामहे",
+    "base_english": "We all arise (jan dhātu, laṭ 1st plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We all arise (jan dhātu, laṭ 1st plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम सब उत्पन्न होते हैं (जन् धातु, लट् उत्तमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "जायामहै": {
+    "word": "जायामहै",
+    "base_english": "We all arise (variant form for jāyāmahe)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We all arise (variant form for jāyāmahe)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम सब उत्पन्न होते हैं (जायामहे का रूप)"
+      }
+    }
+  },
+  "उत्पन्न": {
+    "word": "उत्पन्न",
+    "base_english": "Produced / Born / Arisen",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Produced / Born / Arisen"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पैदा / उत्पन्न"
+      }
+    }
+  },
+  "पैदा": {
+    "word": "पैदा",
+    "base_english": "Born / Produced (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Born / Produced"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पैदा / जन्म लेना"
+      }
+    }
+  },
+  "लभेते": {
+    "word": "लभेते",
+    "base_english": "Both obtain / Both receive (labh dhātu, laṭ 3rd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Both obtain / Both receive (labh dhātu, laṭ 3rd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे दोनों प्राप्त करते हैं (लभ् धातु, लट् प्रथमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "लभन्ते": {
+    "word": "लभन्ते",
+    "base_english": "They obtain / They receive (labh dhātu, laṭ 3rd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They obtain / They receive (labh dhātu, laṭ 3rd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वे सब प्राप्त करते हैं (लभ् धातु, लट् प्रथमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "लभसे": {
+    "word": "लभसे",
+    "base_english": "You obtain / You receive (labh dhātu, laṭ 2nd singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You obtain / You receive (labh dhātu, laṭ 2nd singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम प्राप्त करते हो (लभ् धातु, लट् मध्यमपुरुष एकवचन)"
+      }
+    }
+  },
+  "लभेथे": {
+    "word": "लभेथे",
+    "base_english": "You two obtain (labh dhātu, laṭ 2nd dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You two obtain (labh dhātu, laṭ 2nd dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम दोनों प्राप्त करते हो (लभ् धातु, लट् मध्यमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "लभध्वे": {
+    "word": "लभध्वे",
+    "base_english": "You all obtain (labh dhātu, laṭ 2nd plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You all obtain (labh dhātu, laṭ 2nd plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम सब प्राप्त करते हो (लभ् धातु, लट् मध्यमपुरुष बहुवचन)"
+      }
+    }
+  },
+  "लभध्वै": {
+    "word": "लभध्वै",
+    "base_english": "You all obtain (variant for labhadhve)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You all obtain (variant for labhadhve)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुम सब प्राप्त करते हो (लभध्वे का रूप)"
+      }
+    }
+  },
+  "लभे": {
+    "word": "लभे",
+    "base_english": "I obtain / I receive (labh dhātu, laṭ 1st singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I obtain / I receive (labh dhātu, laṭ 1st singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मैं प्राप्त करता हूँ (लभ् धातु, लट् उत्तमपुरुष एकवचन)"
+      }
+    }
+  },
+  "लभावहे": {
+    "word": "लभावहे",
+    "base_english": "We two obtain (labh dhātu, laṭ 1st dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We two obtain (labh dhātu, laṭ 1st dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम दोनों प्राप्त करते हैं (लभ् धातु, लट् उत्तमपुरुष द्विवचन)"
+      }
+    }
+  },
+  "लभामहे": {
+    "word": "लभामहे",
+    "base_english": "We all obtain (labh dhātu, laṭ 1st plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We all obtain (labh dhātu, laṭ 1st plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम सब प्राप्त करते हैं (लभ् धातु, लट् उत्तमपुरुष बहुवचन)"
+      }
+    }
   }
 }
