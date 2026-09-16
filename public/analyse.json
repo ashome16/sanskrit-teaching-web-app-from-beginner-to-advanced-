@@ -47154,5 +47154,1049 @@
   "पहली": {
     "english": "First (feminine)",
     "grammar": "Hindi ordinal, f. (संस्कृत: प्रथमा)"
+  },
+  "अकरिष्यत्": {
+    "english": "Would have done (conditional)",
+    "grammar": "Verb, lṛṅ lakāra (conditional), 3rd pers. sing. (कृ धातु)"
+  },
+  "अकल्पनीय": {
+    "english": "Inconceivable / unimaginable",
+    "grammar": "Hindi adj. (संस्कृत: अकल्पनीयः)"
+  },
+  "अकल्पनीयः": {
+    "english": "Inconceivable / unimaginable",
+    "grammar": "Future pass. part. (अनीयर्), m., nom. sing."
+  },
+  "अकेला": {
+    "english": "Alone / solely",
+    "grammar": "Hindi adj., m."
+  },
+  "अक्रीडः": {
+    "english": "You played",
+    "grammar": "Verb, lṅ. lakāra (past), 2nd pers. sing. (क्रीड् धातु)"
+  },
+  "अक्रीडत": {
+    "english": "You all played",
+    "grammar": "Verb, lṅ. lakāra (past), 2nd pers. plur. (क्रीड् धातु)"
+  },
+  "अक्रीडतम्": {
+    "english": "You two played",
+    "grammar": "Verb, lṅ. lakāra (past), 2nd pers. dual (क्रीड् धातु)"
+  },
+  "अक्षरों": {
+    "english": "Letters / characters (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "अखादः": {
+    "english": "You ate",
+    "grammar": "Verb, lṅ. lakāra (past), 2nd pers. sing. (खाद् धातु)"
+  },
+  "अखादत": {
+    "english": "You all ate",
+    "grammar": "Verb, lṅ. lakāra (past), 2nd pers. plur. (खाद् धातु)"
+  },
+  "अखादतम्": {
+    "english": "You two ate",
+    "grammar": "Verb, lṅ. lakāra (past), 2nd pers. dual (खाद् धातु)"
+  },
+  "अगच्छः": {
+    "english": "You went",
+    "grammar": "Verb, lṅ. lakāra (past), 2nd pers. sing. (गम् धातु)"
+  },
+  "अचिन्तयत्": {
+    "english": "Thought / pondered",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (चिन्त् धातु)"
+  },
+  "अच्छी": {
+    "english": "Good / well",
+    "grammar": "Hindi adj., f."
+  },
+  "अजानात्": {
+    "english": "Knew / understood",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (ज्ञा धातु)"
+  },
+  "अठारह": {
+    "english": "Eighteen",
+    "grammar": "Hindi numeral (संस्कृत: अष्टादश)"
+  },
+  "अथर्ववेदे": {
+    "english": "In Atharvaveda",
+    "grammar": "Noun, m., loc. sing. (अथर्ववेद)"
+  },
+  "अद्वितीयम्": {
+    "english": "Incomparable / unique",
+    "grammar": "Adj., n., nom./acc. sing."
+  },
+  "अद्वितीया": {
+    "english": "Incomparable / peerless (feminine)",
+    "grammar": "Adj., f., nom. sing."
+  },
+  "अनुभूतिः": {
+    "english": "Perception / empathy / experience",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "अनूठी": {
+    "english": "Unique / exceptional",
+    "grammar": "Hindi adj., f."
+  },
+  "अपठताम्": {
+    "english": "Two read (they both)",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. dual (पठ् धातु)"
+  },
+  "अपठत्": {
+    "english": "Read / studied",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (पठ् धातु)"
+  },
+  "अपठन": {
+    "english": "They read / studied",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. plur. (पठ् धातु)"
+  },
+  "अपश्यताम्": {
+    "english": "Two saw (they both)",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. dual (दृश् धातु)"
+  },
+  "अपश्यत्": {
+    "english": "Saw / looked at",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (दृश् धातु)"
+  },
+  "अपश्यन्": {
+    "english": "They saw",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. plur. (दृश् धातु)"
+  },
+  "अपश्यम्": {
+    "english": "I saw",
+    "grammar": "Verb, lṅ. lakāra (past), 1st pers. sing. (दृश् धातु)"
+  },
+  "अपिबः": {
+    "english": "You drank",
+    "grammar": "Verb, lṅ. lakāra (past), 2nd pers. sing. (पा धातु)"
+  },
+  "अपिबत": {
+    "english": "You all drank",
+    "grammar": "Verb, lṅ. lakāra (past), 2nd pers. plur. (पा धातु)"
+  },
+  "अपिबतम्": {
+    "english": "You two drank",
+    "grammar": "Verb, lṅ. lakāra (past), 2nd pers. dual (पा धातु)"
+  },
+  "अपृच्छम्": {
+    "english": "I asked",
+    "grammar": "Verb, lṅ. lakāra (past), 1st pers. sing. (प्रच्छ् धातु)"
+  },
+  "अपृच्छाम": {
+    "english": "We asked",
+    "grammar": "Verb, lṅ. lakāra (past), 1st pers. plur. (प्रच्छ् धातु)"
+  },
+  "अपृच्छाव": {
+    "english": "We two asked",
+    "grammar": "Verb, lṅ. lakāra (past), 1st pers. dual (प्रच्छ् धातु)"
+  },
+  "अभवम्": {
+    "english": "I became / was",
+    "grammar": "Verb, lṅ. lakāra (past), 1st pers. sing. (भू धातु)"
+  },
+  "अभवाम": {
+    "english": "We became / were",
+    "grammar": "Verb, lṅ. lakāra (past), 1st pers. plur. (भू धातु)"
+  },
+  "अभवाव": {
+    "english": "We two became / were",
+    "grammar": "Verb, lṅ. lakāra (past), 1st pers. dual (भू धातु)"
+  },
+  "अभविष्यत्": {
+    "english": "Would have been / existed (conditional)",
+    "grammar": "Verb, lṛṅ lakāra (conditional), 3rd pers. sing. (भू धातु)"
+  },
+  "अमारयताम्": {
+    "english": "Two killed (they both)",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. dual (मृ धातु + णिच्)"
+  },
+  "अमारयत्": {
+    "english": "Killed / assassinated",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (मृ धातु + णिच्)"
+  },
+  "अमारयन्": {
+    "english": "They killed",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. plur. (मृ धातु + णिच्)"
+  },
+  "अरक्षत्": {
+    "english": "Protected / guarded",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (रक्ष् धातु)"
+  },
+  "अरक्षम्": {
+    "english": "I protected",
+    "grammar": "Verb, lṅ. lakāra (past), 1st pers. sing. (रक्ष् धातु)"
+  },
+  "अरक्षाम": {
+    "english": "We protected",
+    "grammar": "Verb, lṅ. lakāra (past), 1st pers. plur. (रक्ष् धातु)"
+  },
+  "अरक्षाव": {
+    "english": "We two protected",
+    "grammar": "Verb, lṅ. lakāra (past), 1st pers. dual (रक्ष् धातु)"
+  },
+  "अरचयत्": {
+    "english": "Formulated / devised / wrote",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (रच् धातु)"
+  },
+  "अरिः": {
+    "english": "Enemy / adversary",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "अर्थी": {
+    "english": "Seeker / applicant / desirous",
+    "grammar": "Noun, m., nom. sing. (अर्थिन्)"
+  },
+  "अलङ्कारः": {
+    "english": "Ornament / decoration / figure of speech",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "अलभत": {
+    "english": "Obtained / received",
+    "grammar": "Verb, lṅ. lakāra (past, ātmanepada), 3rd pers. sing. (लभ् धातु)"
+  },
+  "अलिखताम्": {
+    "english": "Two wrote (they both)",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. dual (लिख् धातु)"
+  },
+  "अलिखत्": {
+    "english": "Wrote",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (लिख् धातु)"
+  },
+  "अलिखन्": {
+    "english": "They wrote",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. plur. (लिख् धातु)"
+  },
+  "अवदताम्": {
+    "english": "Two spoke (they both)",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. dual (वद् धातु)"
+  },
+  "अवदन्": {
+    "english": "They spoke",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. plur. (वद् धातु)"
+  },
+  "अष्टादशसु": {
+    "english": "Among eighteen",
+    "grammar": "Numeral, loc. plur. (अष्टादशन्)"
+  },
+  "आचन्द्रार्कं": {
+    "english": "As long as sun and moon endure / for eternity",
+    "grammar": "Avyayībhāva compound adverb (आचन्द्रार्कम्)"
+  },
+  "आचन्द्रार्कम्": {
+    "english": "As long as the sun and moon endure / eternally",
+    "grammar": "Avyayībhāva compound adverb"
+  },
+  "आस्ताम्": {
+    "english": "Two were (they both)",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. dual (अस् धातु)"
+  },
+  "इतिहासस्य": {
+    "english": "Of history",
+    "grammar": "Noun, m., gen. sing. (इतिहास)"
+  },
+  "इयं": {
+    "english": "This (feminine)",
+    "grammar": "Pronoun, f., nom. sing. (इदम् / इयम्)"
+  },
+  "इयम्": {
+    "english": "This (feminine)",
+    "grammar": "Pronoun, f., nom. sing. (इदम्)"
+  },
+  "ईशः": {
+    "english": "Lord / master / Supreme ruler",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "उक्तिः": {
+    "english": "Saying / utterance / speech",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "उचितैः": {
+    "english": "With appropriate / correct",
+    "grammar": "Adj., m./n., inst. plur. (उचित)"
+  },
+  "उत्तराधिकारी": {
+    "english": "Successor / heir",
+    "grammar": "Noun, m., nom. sing. (उत्तराधिकारिन्)"
+  },
+  "उदयसिंह": {
+    "english": "Udai Singh (Rana Udai Singh II of Mewar)",
+    "grammar": "Proper noun, m."
+  },
+  "उदयसिंहं": {
+    "english": "To Udai Singh",
+    "grammar": "Proper noun, m., acc. sing. (उदयसिंहम्)"
+  },
+  "उदयसिंहः": {
+    "english": "Udai Singh",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "उदयसिंहम्": {
+    "english": "To Udai Singh",
+    "grammar": "Proper noun, m., acc. sing."
+  },
+  "उदयसिंहस्य": {
+    "english": "Of Udai Singh",
+    "grammar": "Proper noun, m., gen. sing."
+  },
+  "एतादृशानां": {
+    "english": "Of such (noble persons)",
+    "grammar": "Demonstrative adj., m., gen. plur. (एतादृश्)"
+  },
+  "एतासु": {
+    "english": "Among these (women)",
+    "grammar": "Demonstrative pron., f., loc. plur. (एतद्)"
+  },
+  "ऐसी": {
+    "english": "Such / like this (feminine)",
+    "grammar": "Hindi demonstrative adj., f."
+  },
+  "ऐसे": {
+    "english": "Such (oblique/plural)",
+    "grammar": "Hindi demonstrative adj., m. plur."
+  },
+  "कथा": {
+    "english": "Story / tale / narrative",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "कपट": {
+    "english": "Deceit / deception",
+    "grammar": "Hindi noun, m. (संस्कृत: कपटः / छलम्)"
+  },
+  "कर्तव्यनिष्ठां": {
+    "english": "Devotion to duty",
+    "grammar": "Compound noun, f., acc. sing. (कर्तव्यनिष्ठा)"
+  },
+  "कवि": {
+    "english": "Poet",
+    "grammar": "Noun, m. (प्रतिपादिक)"
+  },
+  "कवीन्द्रः": {
+    "english": "Great poet / chief of poets (कवि + इन्द्रः)",
+    "grammar": "Sandhi / compound noun, m., nom. sing."
+  },
+  "कालान्तरे": {
+    "english": "In course of time / later on",
+    "grammar": "Compound adverb (काल + अन्तर)"
+  },
+  "किनकी": {
+    "english": "Whose (feminine)",
+    "grammar": "Hindi interrogative pron."
+  },
+  "किनके": {
+    "english": "Whose (plural/oblique)",
+    "grammar": "Hindi interrogative pron."
+  },
+  "कीदृशः": {
+    "english": "Of what kind? / what sort?",
+    "grammar": "Interrogative adj., m., nom. sing."
+  },
+  "कीदृशानां": {
+    "english": "Of what kind of (persons)?",
+    "grammar": "Interrogative adj., m., gen. plur."
+  },
+  "कुचक्र": {
+    "english": "Evil plot / conspiracy",
+    "grammar": "Hindi noun, m. (संस्कृत: कुतन्त्रम्)"
+  },
+  "कुतन्त्रं": {
+    "english": "Conspiracy / wicked plot",
+    "grammar": "Noun, n., nom./acc. sing. (कुतन्त्रम्)"
+  },
+  "कुतन्त्रम्": {
+    "english": "Conspiracy / malicious plot",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "कुतन्त्रात्": {
+    "english": "From the evil plot / conspiracy",
+    "grammar": "Noun, n., abl. sing. (कुतन्त्र)"
+  },
+  "कृतम्": {
+    "english": "Done / made",
+    "grammar": "Past pass. part., n., nom. sing. (कृ धातु + क्त)"
+  },
+  "कैसा": {
+    "english": "What sort / how",
+    "grammar": "Hindi interrogative adj., m."
+  },
+  "गणनायां": {
+    "english": "In the counting / reckoning",
+    "grammar": "Noun, f., loc. sing. (गणना)"
+  },
+  "गिनती": {
+    "english": "Counting / reckoning",
+    "grammar": "Hindi noun, f. (संस्कृत: गणना)"
+  },
+  "गिरि": {
+    "english": "Mountain",
+    "grammar": "Noun, m."
+  },
+  "गिरीशः": {
+    "english": "Lord of the mountain / Shiva (गिरि + ईशः)",
+    "grammar": "Sandhi / compound noun, m., nom. sing."
+  },
+  "घटना": {
+    "english": "Event / incident",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "चन्दन": {
+    "english": "Chandan (Panna Dhai's son)",
+    "grammar": "Proper noun, m."
+  },
+  "चन्दनं": {
+    "english": "Chandan (son of Panna Dhai)",
+    "grammar": "Proper noun, m., acc. sing. (चन्दनम्)"
+  },
+  "चन्दनम्": {
+    "english": "Chandan",
+    "grammar": "Proper noun, m., acc. sing."
+  },
+  "छल": {
+    "english": "Deceit / fraud",
+    "grammar": "Hindi noun, m. (संस्कृत: छलम्)"
+  },
+  "छलेन": {
+    "english": "By deceit / by treacherous trickery",
+    "grammar": "Noun, n., inst. sing. (छल)"
+  },
+  "जानकर": {
+    "english": "Having known / realizing",
+    "grammar": "Hindi conjunctive participle (संस्कृत: ज्ञात्वा)"
+  },
+  "ज्ञात्वा": {
+    "english": "Having known / having realized",
+    "grammar": "Indeclinable past participle (ज्ञा धातु + क्त्वा)"
+  },
+  "ज्येष्ठं": {
+    "english": "Eldest (son)",
+    "grammar": "Superlative adj., m., acc. sing. (ज्येष्ठ)"
+  },
+  "डाला": {
+    "english": "Killed / dropped",
+    "grammar": "Hindi verb, past (मार डाला)"
+  },
+  "त्याग": {
+    "english": "Renunciation / sacrifice",
+    "grammar": "Hindi noun, m. (संस्कृत: त्यागः)"
+  },
+  "त्यागः": {
+    "english": "Sacrifice / renunciation",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "त्यागधनानां": {
+    "english": "Of those whose wealth is sacrifice",
+    "grammar": "Compound noun, m., gen. plur. (त्यागधन)"
+  },
+  "त्यागधनानाम्": {
+    "english": "Of supreme self-sacrificing heroes",
+    "grammar": "Compound noun, m., gen. plur. (त्यागधन)"
+  },
+  "त्यागस्य": {
+    "english": "Of sacrifice / renunciation",
+    "grammar": "Noun, m., gen. sing. (त्याग)"
+  },
+  "त्यागियों": {
+    "english": "Self-sacrificing people (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "त्यागे": {
+    "english": "In sacrifice / renunciation",
+    "grammar": "Noun, m., loc. sing. (त्याग)"
+  },
+  "दिवङ्गतः": {
+    "english": "Passed away / departed to heaven",
+    "grammar": "Compound participle, m., nom. sing. (दिवम् + गतः)"
+  },
+  "दीर्घ": {
+    "english": "Long (vowel sandhi)",
+    "grammar": "Grammatical term"
+  },
+  "दुःष्परिणामं": {
+    "english": "Dire consequence / terrible outcome",
+    "grammar": "Compound noun, m., acc. sing. (दुःष्परिणाम)"
+  },
+  "दुष्टबुद्धिः": {
+    "english": "Evil-minded / malicious person",
+    "grammar": "Bahuvrihi compound, m., nom. sing."
+  },
+  "दैत्य": {
+    "english": "Demon / Asura",
+    "grammar": "Noun, m."
+  },
+  "दैत्यारिः": {
+    "english": "Enemy of demons (Vishnu) (दैत्य + अरिः)",
+    "grammar": "Sandhi / compound noun, m., nom. sing."
+  },
+  "द्विवचन": {
+    "english": "Dual number (grammar)",
+    "grammar": "Grammatical term"
+  },
+  "धात्री": {
+    "english": "Foster mother / nurse (Panna Dhai)",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "धोखे": {
+    "english": "Deceit / betrayal (oblique)",
+    "grammar": "Hindi noun, m. (संस्कृत: छलेन)"
+  },
+  "नगर": {
+    "english": "City / town",
+    "grammar": "Hindi noun, m. (संस्कृत: नगरम्)"
+  },
+  "नारियों": {
+    "english": "Women (oblique)",
+    "grammar": "Hindi noun, f. plur. (संस्कृत: नारीषु / वीराङ्गनासु)"
+  },
+  "नारी": {
+    "english": "Woman",
+    "grammar": "Hindi noun, f. (संस्कृत: नारी)"
+  },
+  "नाश": {
+    "english": "Destruction",
+    "grammar": "Hindi noun, m. (संस्कृत: नाशः / निबर्हणम्)"
+  },
+  "निष्ठायाः": {
+    "english": "Of devotion / loyalty / faith",
+    "grammar": "Noun, f., gen. sing. (निष्ठा)"
+  },
+  "पठन्ति": {
+    "english": "They read / study",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. plur. (पठ् धातु)"
+  },
+  "पदैः": {
+    "english": "With words / by terms",
+    "grammar": "Noun, n., inst. plur. (पद)"
+  },
+  "पन्नाधाय": {
+    "english": "Panna Dhai (legendary foster mother of Mewar)",
+    "grammar": "Historical proper noun"
+  },
+  "पन्नाधाया": {
+    "english": "Panna Dhai",
+    "grammar": "Proper noun, f., nom. sing."
+  },
+  "पन्नाधायायाः": {
+    "english": "Of Panna Dhai",
+    "grammar": "Proper noun, f., gen. sing."
+  },
+  "पराक्रमस्य": {
+    "english": "Of valor / prowess",
+    "grammar": "Noun, m., gen. sing. (पराक्रम)"
+  },
+  "पराक्रमी": {
+    "english": "Valiant / courageous hero",
+    "grammar": "Adj./Noun, m., nom. sing. (पराक्रमिन्)"
+  },
+  "परिणाम": {
+    "english": "Result / consequence",
+    "grammar": "Hindi noun, m. (संस्कृत: परिणामः)"
+  },
+  "परिवर्तन": {
+    "english": "Change / transformation",
+    "grammar": "Hindi noun, m. (संस्कृत: परिवर्तनम्)"
+  },
+  "पलंग": {
+    "english": "Bed / couch",
+    "grammar": "Hindi noun, m. (संस्कृत: शयनस्थानम्)"
+  },
+  "पश्यामि": {
+    "english": "I see",
+    "grammar": "Verb, laṭ lakāra (present), 1st pers. sing. (दृश् धातु)"
+  },
+  "पुत्रेषु": {
+    "english": "Among sons",
+    "grammar": "Noun, m., loc. plur. (पुत्र)"
+  },
+  "पुत्रों": {
+    "english": "Sons (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "पुत्रौ": {
+    "english": "Two sons",
+    "grammar": "Noun, m., nom./acc. dual (पुत्र)"
+  },
+  "पृथ्वीराज": {
+    "english": "Prithviraj (brother of Rana Sanga)",
+    "grammar": "Proper noun, m."
+  },
+  "पृथ्वीराजः": {
+    "english": "Prithviraj",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "पृथ्वीराजस्य": {
+    "english": "Of Prithviraj",
+    "grammar": "Proper noun, m., gen. sing."
+  },
+  "प्रताप": {
+    "english": "Maharana Pratap",
+    "grammar": "Proper noun, m."
+  },
+  "प्रतापः": {
+    "english": "Maharana Pratap / glory",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "प्रतिद्वंद्वी": {
+    "english": "Rival / competitor",
+    "grammar": "Hindi noun, m. (संस्कृत: प्रतिस्पर्धी)"
+  },
+  "प्रतिस्पर्धी": {
+    "english": "Competitor / rival / opponent",
+    "grammar": "Noun, m., nom. sing. (प्रतिस्पर्धिन्)"
+  },
+  "प्राप्नोत्": {
+    "english": "Attained / gained",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (प्र + आप्)"
+  },
+  "बचा": {
+    "english": "Saved / protected",
+    "grammar": "Hindi verb, past (संस्कृत: अरक्षत्)"
+  },
+  "बनवीर": {
+    "english": "Banvir (usurper of Mewar)",
+    "grammar": "Proper noun, m."
+  },
+  "बनवीरं": {
+    "english": "Banvir",
+    "grammar": "Proper noun, m., acc. sing. (बनवीरम्)"
+  },
+  "बनवीरः": {
+    "english": "Banvir",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "बनवीरस्य": {
+    "english": "Of Banvir",
+    "grammar": "Proper noun, m., gen. sing."
+  },
+  "बनूँ": {
+    "english": "May I become",
+    "grammar": "Hindi subjunctive verb, 1st pers. sing."
+  },
+  "बलिदानियों": {
+    "english": "Martyrs / self-sacrificing heroes (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "बहादुरी": {
+    "english": "Bravery / gallantry",
+    "grammar": "Hindi noun, f. (संस्कृत: शौर्यम्)"
+  },
+  "बालकौ": {
+    "english": "Two boys",
+    "grammar": "Noun, m., nom./acc. dual (बालक)"
+  },
+  "बुरे": {
+    "english": "Bad / dire (oblique)",
+    "grammar": "Hindi adj., m."
+  },
+  "भवामः": {
+    "english": "We become / are",
+    "grammar": "Verb, laṭ lakāra (present), 1st pers. plur. (भू धातु)"
+  },
+  "भवेयम्": {
+    "english": "May I become / should I be",
+    "grammar": "Verb, vidhiliṅ lakāra (optative), 1st pers. sing. (भू धातु)"
+  },
+  "भारतीयाः": {
+    "english": "Indians",
+    "grammar": "Noun/Adj., m., nom. plur. (भारतीय)"
+  },
+  "भारतीयानां": {
+    "english": "Of Indians",
+    "grammar": "Noun/Adj., m., gen. plur. (भारतीय)"
+  },
+  "भारतीयानाम्": {
+    "english": "Of Indians",
+    "grammar": "Noun/Adj., m., gen. plur. (भारतीय)"
+  },
+  "भारतीयों": {
+    "english": "Indians (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "मत्वा": {
+    "english": "Having considered / having thought",
+    "grammar": "Indeclinable past participle (मन् धातु + क्त्वा)"
+  },
+  "ममापि": {
+    "english": "Mine also / to me also (मम + अपि)",
+    "grammar": "Sandhi phrase (मम + अपि)"
+  },
+  "महद्": {
+    "english": "Great / immense",
+    "grammar": "Adj., n., nom./acc. sing. (महत्)"
+  },
+  "महाराणा": {
+    "english": "Maharana (royal title of Mewar rulers)",
+    "grammar": "Title / proper noun"
+  },
+  "महाराणाप्रतापः": {
+    "english": "Maharana Pratap",
+    "grammar": "Proper compound noun, m., nom. sing."
+  },
+  "महाराणासङ्ग्रामसिंहः": {
+    "english": "Maharana Sangram Singh (Rana Sanga)",
+    "grammar": "Proper compound noun, m., nom. sing."
+  },
+  "महाराणासङ्ग्रामसिंहस्य": {
+    "english": "Of Maharana Sangram Singh",
+    "grammar": "Proper compound noun, m., gen. sing."
+  },
+  "महिलाओं": {
+    "english": "Women (oblique)",
+    "grammar": "Hindi noun, f. plur."
+  },
+  "महिलानाम्": {
+    "english": "Of women",
+    "grammar": "Noun, f., gen. plur. (महिला)"
+  },
+  "मानकर": {
+    "english": "Believing / considering",
+    "grammar": "Hindi conjunctive participle (संस्कृत: मत्वा)"
+  },
+  "मार": {
+    "english": "Kill",
+    "grammar": "Hindi verb stem"
+  },
+  "मारकर": {
+    "english": "Having killed",
+    "grammar": "Hindi conjunctive participle (संस्कृत: हत्वा)"
+  },
+  "मारने": {
+    "english": "Of killing",
+    "grammar": "Hindi verbal noun (oblique) (संस्कृत: मारयितुम्)"
+  },
+  "मारयितुं": {
+    "english": "To kill / to assassinate",
+    "grammar": "Infinitive of purpose (मृ धातु + णिच् + तुमुन्)"
+  },
+  "मूर्ति": {
+    "english": "Embodiment / idol",
+    "grammar": "Hindi noun, f. (संस्कृत: मूर्तिः)"
+  },
+  "मूर्तिः": {
+    "english": "Embodiment / icon / statue",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "मूर्तियों": {
+    "english": "Embodiments (oblique)",
+    "grammar": "Hindi noun, f. plur."
+  },
+  "मेवाडनगरे": {
+    "english": "In the city of Mewar",
+    "grammar": "Compound noun, n., loc. sing."
+  },
+  "मेवाडराज्यं": {
+    "english": "Kingdom of Mewar",
+    "grammar": "Compound noun, n., acc. sing."
+  },
+  "मेवाडस्य": {
+    "english": "Of Mewar",
+    "grammar": "Proper noun, m., gen. sing."
+  },
+  "मेवाड़": {
+    "english": "Mewar",
+    "grammar": "Proper noun"
+  },
+  "युद्ध": {
+    "english": "War / battle",
+    "grammar": "Hindi noun, m. (संस्कृत: युद्धम्)"
+  },
+  "युद्धे": {
+    "english": "In battle / in war",
+    "grammar": "Noun, n., loc. sing. (युद्ध)"
+  },
+  "योगदान": {
+    "english": "Contribution",
+    "grammar": "Hindi noun, m. (संस्कृत: योगदानम्)"
+  },
+  "योगदानम्": {
+    "english": "Contribution",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "योद्धा": {
+    "english": "Warrior / combatant",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "रचा": {
+    "english": "Devised / plotted",
+    "grammar": "Hindi verb, past (संस्कृत: अरचयत्)"
+  },
+  "राजस्थान": {
+    "english": "Rajasthan",
+    "grammar": "Proper noun"
+  },
+  "राजस्थानस्य": {
+    "english": "Of Rajasthan",
+    "grammar": "Proper noun, n., gen. sing."
+  },
+  "राज्य": {
+    "english": "Kingdom / state",
+    "grammar": "Hindi noun, m. (संस्कृत: राज्यम्)"
+  },
+  "रात्रौ": {
+    "english": "At night",
+    "grammar": "Noun, f., loc. sing. (रात्रि)"
+  },
+  "राष्ट्रभक्तिं": {
+    "english": "Patriotism / love for nation",
+    "grammar": "Compound noun, f., acc. sing. (राष्ट्रभक्ति)"
+  },
+  "राष्ट्रहित": {
+    "english": "National interest",
+    "grammar": "Hindi compound noun, m."
+  },
+  "राष्ट्रहितं": {
+    "english": "National welfare / interest",
+    "grammar": "Compound noun, n., nom./acc. sing. (राष्ट्रहितम्)"
+  },
+  "राष्ट्रहितम्": {
+    "english": "National welfare / interest",
+    "grammar": "Compound noun, n., nom./acc. sing."
+  },
+  "लंबा": {
+    "english": "Long / lasting",
+    "grammar": "Hindi adj., m."
+  },
+  "लङ्लकार": {
+    "english": "Past tense (लङ् लकार)",
+    "grammar": "Grammatical term"
+  },
+  "लिखिता": {
+    "english": "Written (feminine)",
+    "grammar": "Past pass. part., f., nom. sing. (लिख् धातु + क्त + टाप्)"
+  },
+  "लिखी": {
+    "english": "Written",
+    "grammar": "Hindi participle, f."
+  },
+  "वदन्ति": {
+    "english": "They say / utter",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. plur. (वद् धातु)"
+  },
+  "वही": {
+    "english": "That very / the same",
+    "grammar": "Hindi emphatic pronoun"
+  },
+  "विक्रमादित्य": {
+    "english": "Vikramaditya (elder son of Rana Sanga)",
+    "grammar": "Proper noun, m."
+  },
+  "विक्रमादित्यं": {
+    "english": "Vikramaditya",
+    "grammar": "Proper noun, m., acc. sing. (विक्रमादित्यम्)"
+  },
+  "विक्रमादित्यः": {
+    "english": "Vikramaditya",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "विनाश": {
+    "english": "Destruction / annihilation",
+    "grammar": "Hindi noun, m. (संस्कृत: विनाशः)"
+  },
+  "विवेकं": {
+    "english": "Discernment / wisdom",
+    "grammar": "Noun, m., acc. sing. (विवेक)"
+  },
+  "वीराङ्गना": {
+    "english": "Heroine / brave woman",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "वीराङ्गनासु": {
+    "english": "Among heroic women",
+    "grammar": "Noun, f., loc. plur. (वीराङ्गना)"
+  },
+  "वीराणां": {
+    "english": "Of heroes / brave warriors",
+    "grammar": "Noun, m., gen. plur. (वीर)"
+  },
+  "वीरों": {
+    "english": "Heroes (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "वेद": {
+    "english": "Veda",
+    "grammar": "Noun, m."
+  },
+  "वेदालङ्कारः": {
+    "english": "Vedalankar (adornment of Vedas) (वेद + अलङ्कारः)",
+    "grammar": "Sandhi / compound noun, m., nom. sing."
+  },
+  "व्यक्तिगत": {
+    "english": "Personal / individual",
+    "grammar": "Hindi adj."
+  },
+  "व्यक्तिगतं": {
+    "english": "Personal / individual",
+    "grammar": "Adj., n., nom./acc. sing."
+  },
+  "शत्रुओं": {
+    "english": "Enemies (oblique)",
+    "grammar": "Hindi noun, m. plur. (संस्कृत: शत्रूणाम्)"
+  },
+  "शत्रुनिबर्हणाः": {
+    "english": "Destroyers of enemies (brave women)",
+    "grammar": "Compound adj., f., nom. plur. (शत्रु + निबर्हण)"
+  },
+  "शयनकक्ष": {
+    "english": "Bedchamber / bedroom",
+    "grammar": "Hindi compound noun, m."
+  },
+  "शयनकक्षम्": {
+    "english": "To the bedchamber",
+    "grammar": "Compound noun, m., acc. sing."
+  },
+  "शयनस्थान": {
+    "english": "Sleeping couch / bed",
+    "grammar": "Hindi compound noun, n."
+  },
+  "शयनस्थानं": {
+    "english": "Sleeping bed / bedchamber",
+    "grammar": "Compound noun, n., acc. sing. (शयनस्थानम्)"
+  },
+  "शयनस्थानम्": {
+    "english": "Sleeping couch / bed",
+    "grammar": "Compound noun, n., nom./acc. sing."
+  },
+  "शयनस्थाने": {
+    "english": "In the bed / sleeping place",
+    "grammar": "Compound noun, n., loc. sing."
+  },
+  "शयानं": {
+    "english": "Sleeping (boy) / reclining",
+    "grammar": "Pres. part. (शानच्), m., acc. sing. (शी धातु)"
+  },
+  "शायितवती": {
+    "english": "Put to sleep (she)",
+    "grammar": "Past active part. (क्तवतु), f., nom. sing. (शी धातु + णिच्)"
+  },
+  "शिक्षकाः": {
+    "english": "Teachers",
+    "grammar": "Noun, m., nom. plur. (शिक्षक)"
+  },
+  "शिक्षकौ": {
+    "english": "Two teachers",
+    "grammar": "Noun, m., nom./acc. dual (शिक्षक)"
+  },
+  "शूराः": {
+    "english": "Brave warriors / valiant",
+    "grammar": "Noun/Adj., m., nom. plur. (शूर)"
+  },
+  "शौर्यं": {
+    "english": "Valor / heroism",
+    "grammar": "Noun, n., nom./acc. sing. (शौर्यम्)"
+  },
+  "शौर्ये": {
+    "english": "In valor / bravery",
+    "grammar": "Noun, n., loc. sing. (शौर्य)"
+  },
+  "षड्यंत्र": {
+    "english": "Conspiracy / intrigue",
+    "grammar": "Hindi noun, m. (संस्कृत: षड्यन्त्रम्)"
+  },
+  "षड्यन्त्र": {
+    "english": "Conspiracy / intrigue",
+    "grammar": "Hindi noun, m. (संस्कृत: षड्यन्त्रम्)"
+  },
+  "षोडशशताब्द्यां": {
+    "english": "In the sixteenth century",
+    "grammar": "Compound noun, f., loc. sing."
+  },
+  "संग्रामसिंह": {
+    "english": "Sangram Singh (Rana Sanga)",
+    "grammar": "Proper noun, m."
+  },
+  "समर्पित": {
+    "english": "Dedicated / surrendered",
+    "grammar": "Hindi participle"
+  },
+  "समर्पितवन्तः": {
+    "english": "Dedicated / offered (they)",
+    "grammar": "Past active part. (क्तवतु), m., nom. plur. (सम् + ऋ + णिच्)"
+  },
+  "सर्वस्व": {
+    "english": "One's all / whole property",
+    "grammar": "Hindi noun, n. (संस्कृत: सर्वस्वम्)"
+  },
+  "सर्वोपरि": {
+    "english": "Above all / supreme",
+    "grammar": "Compound adj. / adverb (सर्व + उपरि)"
+  },
+  "सहानुभूतिः": {
+    "english": "Sympathy / empathy (सह + अनुभूतिः)",
+    "grammar": "Sandhi / compound noun, f., nom. sing."
+  },
+  "साहस": {
+    "english": "Courage / bravery",
+    "grammar": "Hindi noun, m. (संस्कृत: साहसम्)"
+  },
+  "साहसस्य": {
+    "english": "Of courage / audacity",
+    "grammar": "Noun, n., gen. sing. (साहस)"
+  },
+  "सिधार": {
+    "english": "Departed / passed away",
+    "grammar": "Hindi verb stem (स्वर्ग सिधार)"
+  },
+  "सु": {
+    "english": "Good / auspicious prefix",
+    "grammar": "Upasarga (सु-)"
+  },
+  "सुप्रसिद्ध": {
+    "english": "Renowned / celebrated",
+    "grammar": "Hindi adj. (संस्कृत: सुप्रसिद्धः)"
+  },
+  "सुप्रसिद्धः": {
+    "english": "Renowned / very famous",
+    "grammar": "Adj., m., nom. sing."
+  },
+  "सुला": {
+    "english": "Put to sleep",
+    "grammar": "Hindi verb, past (सुला दिया)"
+  },
+  "सोए": {
+    "english": "Sleeping / asleep",
+    "grammar": "Hindi participle"
+  },
+  "सोलहवीं": {
+    "english": "Sixteenth",
+    "grammar": "Hindi ordinal, f. (संस्कृत: षोडशी)"
+  },
+  "स्वपुत्रं": {
+    "english": "Her own son",
+    "grammar": "Compound noun, m., acc. sing. (स्वपुत्रम्)"
+  },
+  "स्वपुत्रस्य": {
+    "english": "Of her own son",
+    "grammar": "Compound noun, m., gen. sing."
+  },
+  "स्वर्णिम": {
+    "english": "Golden",
+    "grammar": "Hindi adj. (संस्कृत: स्वर्णिमः)"
+  },
+  "स्वर्णिमाक्षरैः": {
+    "english": "With golden letters",
+    "grammar": "Compound noun, n., inst. plur. (स्वर्णिमाक्षर)"
+  },
+  "स्वशौर्येण": {
+    "english": "By his own valor",
+    "grammar": "Compound noun, n., inst. sing. (स्वशौर्य)"
+  },
+  "स्वसर्वस्वं": {
+    "english": "One's entire all",
+    "grammar": "Compound noun, n., acc. sing. (स्वसर्वस्वम्)"
+  },
+  "हत्वा": {
+    "english": "Having slain / after killing",
+    "grammar": "Indeclinable past participle (हन् धातु + क्त्वा)"
+  },
+  "हमारी": {
+    "english": "Our",
+    "grammar": "Hindi possessive pron., f."
+  },
+  "हृदय": {
+    "english": "Heart",
+    "grammar": "Hindi noun, m. (संस्कृत: हृदयम्)"
+  },
+  "हृदये": {
+    "english": "In the heart",
+    "grammar": "Noun, n., loc. sing. (हृदय)"
   }
 }
