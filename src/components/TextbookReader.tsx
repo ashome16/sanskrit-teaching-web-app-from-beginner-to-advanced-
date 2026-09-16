@@ -1,7 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import type { Lesson, LessonSentence } from '../types/chapters';
 import { aksharaLabel, varnamalaLabel } from '../utils/barakhadiPhonetics';
-import { playSequence, stopPronunciation } from '../utils/pronunciation';
+import { playPronunciation, playSequence, stopPronunciation } from '../utils/pronunciation';
+import {
+  loadAnalyseGlosses,
+  lookupAnalyseGloss,
+  englishMeaningFromGloss,
+  type AnalyseRegistry,
+} from '../utils/analyseGloss';
 import '../styles/textbook-reader.css';
 
 interface TextbookReaderProps {
@@ -11,6 +17,7 @@ interface TextbookReaderProps {
   sentence: LessonSentence;
   sentenceNumber: number;
   totalSentences: number;
+  activeWord?: string;
   onWordClick: (word: string) => void;
   onNext: () => void;
   onPrevious: () => void;
@@ -18,6 +25,9 @@ interface TextbookReaderProps {
   isFirstSentence: boolean;
   isLastSentence: boolean;
 }
+
+const cleanWord = (value: string): string =>
+  value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९\.\/\\=+#*~_`]+/g, '').trim();
 
 type SectionJump = { index: number; label: string };
 
@@ -43,6 +53,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   sentence,
   sentenceNumber,
   totalSentences,
+  activeWord = '',
   onWordClick,
   onNext,
   onPrevious,
@@ -58,7 +69,23 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     activeLessonId === 'varnamala' ? varnamalaLabel(letter) : aksharaLabel(letter);
   const [isChartOpen, setIsChartOpen] = useState(false);
   const [isPlayingAll, setIsPlayingAll] = useState(false);
+  const [glosses, setGlosses] = useState<AnalyseRegistry>({});
   const stopPlayAllRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadAnalyseGlosses().then((data) => {
+      if (!cancelled) setGlosses(data);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const cleanActiveWord = activeWord ? cleanWord(activeWord) : '';
+  const activeGloss = cleanActiveWord ? lookupAnalyseGloss(glosses, cleanActiveWord) : undefined;
+  const activeEnglishMeaning = activeGloss ? englishMeaningFromGloss(activeGloss) : '';
+  const activeHindiMeaning = activeGloss?.languages?.hi?.meaning || '';
 
   const stopPlayAll = () => {
     stopPlayAllRef.current?.();
@@ -420,24 +447,72 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           ) : (
             <>
               <p className="textbook-sentence-sanskrit">
-                {sentence.words.map((word, idx) => (
-                  <span
-                    key={`${activeLessonId}-${sentenceNumber}-${idx}`}
-                    className="interactive-word"
-                    onClick={() => onWordClick(word)}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(event) => {
-                      if (event.key === 'Enter' || event.key === ' ') {
-                        onWordClick(word);
-                      }
-                    }}
-                  >
-                    {word}
-                  </span>
-                ))}
+                {sentence.words.map((word, idx) => {
+                  const cleaned = cleanWord(word);
+                  const isSelected = Boolean(cleanActiveWord && cleaned === cleanActiveWord);
+                  return (
+                    <span
+                      key={`${activeLessonId}-${sentenceNumber}-${idx}`}
+                      className={`interactive-word${isSelected ? ' interactive-word--active' : ''}`}
+                      onClick={() => onWordClick(word)}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                          onWordClick(word);
+                        }
+                      }}
+                    >
+                      {word}
+                    </span>
+                  );
+                })}
               </p>
-              <p className="textbook-sentence-meaning">{sentence.meaning}</p>
+
+              {/* Instant Inline Word Meaning Bar — Reads right on the same page with 0 scrolling */}
+              {cleanActiveWord && (
+                <div className="textbook-inline-meaning-bar" role="region" aria-label="Selected word meaning">
+                  <div className="textbook-inline-meaning-header">
+                    <div className="textbook-inline-word-info">
+                      <span className="textbook-inline-tag">शब्दार्थः · Word Meaning</span>
+                      <span className="textbook-inline-dev">{cleanActiveWord}</span>
+                      <button
+                        type="button"
+                        className="textbook-inline-sound-btn"
+                        onClick={() => playPronunciation(cleanActiveWord)}
+                        title={`Listen to ${cleanActiveWord}`}
+                        aria-label={`Listen to ${cleanActiveWord}`}
+                      >
+                        🔊
+                      </button>
+                    </div>
+                    {activeGloss?.grammar && (
+                      <span className="textbook-inline-grammar">{activeGloss.grammar}</span>
+                    )}
+                  </div>
+                  <div className="textbook-inline-meaning-body">
+                    {activeEnglishMeaning ? (
+                      <p className="textbook-inline-en">
+                        <span className="textbook-inline-lang-lbl">English:</span> {activeEnglishMeaning}
+                      </p>
+                    ) : null}
+                    {activeHindiMeaning ? (
+                      <p className="textbook-inline-hi">
+                        <span className="textbook-inline-lang-lbl">हिन्दी:</span> {activeHindiMeaning}
+                      </p>
+                    ) : null}
+                    {activeGloss?.sanskrit_gloss ? (
+                      <p className="textbook-inline-sa">
+                        <span className="textbook-inline-lang-lbl">संस्कृतम्:</span> {activeGloss.sanskrit_gloss}
+                      </p>
+                    ) : null}
+                  </div>
+                </div>
+              )}
+
+              {sentence.meaning && (
+                <p className="textbook-sentence-meaning">{sentence.meaning}</p>
+              )}
               {sentence.paragraphTranslation && (
                 <div className="textbook-paragraph-translation">
                   <span className="textbook-paragraph-translation-label">English Paragraph Meaning</span>

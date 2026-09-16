@@ -97,10 +97,14 @@ const Dashboard: React.FC = () => {
   const isLastSentence =
     lessonIndex === lastVisible && sentenceIndex === (lesson?.sentences.length ?? 1) - 1;
 
+  const cleanWord = (value: string): string =>
+    value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९\.\/\\=+#*~_`]+/g, '').trim();
+
   const handleWordClick = (word: string) => {
-    playPronunciation(word);
-    localStorage.setItem('last-stem', word);
-    setWordSelection({ text: word, nonce: Date.now() });
+    const cleaned = cleanWord(word) || word.trim();
+    playPronunciation(cleaned);
+    localStorage.setItem('last-stem', cleaned);
+    setWordSelection({ text: cleaned, nonce: Date.now() });
   };
 
   const handleSelectLesson = (nextLessonId: string) => {
@@ -276,6 +280,7 @@ const Dashboard: React.FC = () => {
         sentence={sentence}
         sentenceNumber={sentenceIndex + 1}
         totalSentences={lesson.sentences.length}
+        activeWord={wordSelection?.text || ''}
         onWordClick={handleWordClick}
         onNext={goNext}
         onPrevious={goPrevious}

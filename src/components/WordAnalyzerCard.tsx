@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import type { SanskritWordBreakdown } from '../types/linguistics';
 import { searchSanskritWords } from '../data/sanskrit-words';
 import { extractLinguisticInfo } from '../utils/linguistics';
@@ -66,6 +66,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
   const [glosses, setGlosses] = useState<AnalyseRegistry>({});
   /** Letter whose “Words with this sound” list stays pinned while browsing examples. */
   const [soundAnchor, setSoundAnchor] = useState<string | null>(null);
+  const cardRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -89,6 +90,13 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
       setSoundAnchor(
         hasExamples || isBarakhadiAkshara(tip) ? baseAksharaForExamples(tip) : null
       );
+    }
+  }, [selection?.nonce]);
+
+  // Auto-scroll the analyzer card back to top whenever a new word is selected
+  useEffect(() => {
+    if (cardRef.current) {
+      cardRef.current.scrollTop = 0;
     }
   }, [selection?.nonce]);
 
@@ -128,7 +136,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
   };
 
   return (
-    <aside className="word-analyzer-card">
+    <aside ref={cardRef} className="word-analyzer-card">
       {!word && (
         <div className="wac-empty-state">
           Click any Sanskrit word in the reading panel to see its analysis here.
@@ -137,60 +145,62 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
 
       {word && (
         <div className="wac-content">
-          {/* Top header */}
-          <div className="wac-header wac-header-flex">
-            <div className="wac-title-wrap">
+          {/* Top Sticky Header & Meaning: Always visible without scrolling */}
+          <div className="wac-pinned-meaning-header">
+            <div className="wac-header wac-header-flex">
+              <div className="wac-title-wrap">
+                <button
+                  type="button"
+                  className="wac-devanagari-btn"
+                  onClick={() => playPronunciation(word.devanagari)}
+                  aria-label={`Play pronunciation for ${word.devanagari}`}
+                >
+                  {word.devanagari}
+                </button>
+                {word.transliteration && (
+                  <span className="wac-transliteration">{word.transliteration}</span>
+                )}
+              </div>
               <button
                 type="button"
-                className="wac-devanagari-btn"
+                className="wac-speaker-btn"
                 onClick={() => playPronunciation(word.devanagari)}
                 aria-label={`Play pronunciation for ${word.devanagari}`}
+                title="Play pronunciation"
               >
-                {word.devanagari}
+                🔊
               </button>
-              {word.transliteration && (
-                <span className="wac-transliteration">{word.transliteration}</span>
-              )}
             </div>
-            <button
-              type="button"
-              className="wac-speaker-btn"
-              onClick={() => playPronunciation(word.devanagari)}
-              aria-label={`Play pronunciation for ${word.devanagari}`}
-              title="Play pronunciation"
-            >
-              🔊
-            </button>
-          </div>
 
-          {/* Meaning — Placed immediately at top so it is always visible without scrolling */}
-          <section className="wac-section wac-section--meaning">
-            <div className="wac-meaning-header-row">
-              <span className="wac-meaning-tag">अर्थः · Meaning</span>
-              {glossEntry?.grammar && (
-                <span className="wac-grammar-badge" title="Grammar">{glossEntry.grammar}</span>
-              )}
-            </div>
-            {displayMeaning || glossEntry?.sanskrit_gloss ? (
-              <div className="wac-meaning-block">
-                {displayMeaning ? <p className="wac-meaning-english">{displayMeaning}</p> : null}
-                {glossEntry?.sanskrit_gloss ? (
-                  <p className="wac-meaning-sanskrit">
-                    <span className="wac-meaning-lang">संस्कृतम्</span>
-                    {glossEntry.sanskrit_gloss}
-                  </p>
-                ) : null}
-                {regionalGlosses.map(([code, item]) => (
-                  <p key={code} className="wac-meaning-regional">
-                    <span className="wac-meaning-lang">{item.label}</span>
-                    {item.meaning}
-                  </p>
-                ))}
+            {/* Meaning — Positioned at the top of the card */}
+            <section className="wac-section wac-section--meaning">
+              <div className="wac-meaning-header-row">
+                <span className="wac-meaning-tag">अर्थः · Meaning</span>
+                {glossEntry?.grammar && (
+                  <span className="wac-grammar-badge" title="Grammar">{glossEntry.grammar}</span>
+                )}
               </div>
-            ) : (
-              <p className="wac-placeholder">No meaning available yet for this word.</p>
-            )}
-          </section>
+              {displayMeaning || glossEntry?.sanskrit_gloss ? (
+                <div className="wac-meaning-block">
+                  {displayMeaning ? <p className="wac-meaning-english">{displayMeaning}</p> : null}
+                  {glossEntry?.sanskrit_gloss ? (
+                    <p className="wac-meaning-sanskrit">
+                      <span className="wac-meaning-lang">संस्कृतम्</span>
+                      {glossEntry.sanskrit_gloss}
+                    </p>
+                  ) : null}
+                  {regionalGlosses.map(([code, item]) => (
+                    <p key={code} className="wac-meaning-regional">
+                      <span className="wac-meaning-lang">{item.label}</span>
+                      {item.meaning}
+                    </p>
+                  ))}
+                </div>
+              ) : (
+                <p className="wac-placeholder">No meaning available yet for this word.</p>
+              )}
+            </section>
+          </div>
 
           {/* Grammatical Information — displayed as compact pills when inflection is detected */}
           {nounInflection && (nounInflection.gender || nounInflection.number || nounInflection.case !== undefined) && (
