@@ -29464,5 +29464,691 @@
         "meaning": "\"र\" वर्ण"
       }
     }
+  },
+  "कीदृशाः": {
+    "word": "कीदृशाः",
+    "base_english": "What kind of / Of what nature (prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "What kind of / Of what nature (prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कैसे / किस प्रकार के (पुल्लिंग प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "केषां": {
+    "word": "केषां",
+    "base_english": "Whose / Of whom (kim shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Whose / Of whom (kim shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किनका / किन लोगों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "सज्जनस्य": {
+    "word": "सज्जनस्य",
+    "base_english": "Of the virtuous / noble person (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the virtuous / noble person (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सज्जन व्यक्ति का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "दुर्जनः": {
+    "word": "दुर्जनः",
+    "base_english": "Wicked / evil person (prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wicked / evil person (prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दुष्ट व्यक्ति / दुर्जन (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "विद्यायाः": {
+    "word": "विद्यायाः",
+    "base_english": "Of knowledge / education (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of knowledge / education (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्या की / ज्ञान का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "शक्तेः": {
+    "word": "शक्तेः",
+    "base_english": "Of power / strength (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of power / strength (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शक्ति का / सामर्थ्य की (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "मनुष्याः": {
+    "word": "मनुष्याः",
+    "base_english": "Humans / People (prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Humans / People (prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्य / लोग (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "तादृशाः": {
+    "word": "तादृशाः",
+    "base_english": "Such people / Those kinds of persons (prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Such people / Those kinds of persons (prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वैसे लोग / उस प्रकार के मनुष्य (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "कानि": {
+    "word": "कानि",
+    "base_english": "Which ones (neuter prathamā/dvitīyā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Which ones (neuter prathamā/dvitīyā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कौन-कौन से (नपुंसकलिंग बहुवचन)"
+      }
+    }
+  },
+  "साधनीयानि": {
+    "word": "साधनीयानि",
+    "base_english": "Should be accomplished / performed (anīyar neuter plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Should be accomplished / performed (anīyar neuter plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सिद्ध करने योग्य / पूरे करने चाहिए (अनीयर प्रत्यय)"
+      }
+    }
+  },
+  "वस्त्रसीवनम्": {
+    "word": "वस्त्रसीवनम्",
+    "base_english": "Sewing / stitching of clothes",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sewing / stitching of clothes"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कपड़े सिलना / वस्त्र सीना"
+      }
+    }
+  },
+  "उचितान्": {
+    "word": "उचितान्",
+    "base_english": "Appropriate / suitable (dvitīyā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Appropriate / suitable (dvitīyā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उचित / सही (द्वितीया बहुवचन)"
+      }
+    }
+  },
+  "वाक्यांशान्": {
+    "word": "वाक्यांशान्",
+    "base_english": "Clauses / parts of sentences (dvitīyā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Clauses / parts of sentences (dvitīyā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वाक्यांशों को / वाक्य के भागों को (द्वितीया बहुवचन)"
+      }
+    }
+  },
+  "परस्परं": {
+    "word": "परस्परं",
+    "base_english": "Mutually / with each other (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mutually / with each other (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आपस में / एक-दूसरे के साथ (अव्यय)"
+      }
+    }
+  },
+  "संयोजयन्तु": {
+    "word": "संयोजयन्तु",
+    "base_english": "Match / join together (lot prathamapurusha plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Match / join together (lot prathamapurusha plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मिलाइए / जोड़िए (लोट् लकार)"
+      }
+    }
+  },
+  "रेखाङ्कितानि": {
+    "word": "रेखाङ्कितानि",
+    "base_english": "Underlined (adjective neuter plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Underlined (adjective neuter plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रेखांकित (नपुंसकलिंग बहुवचन)"
+      }
+    }
+  },
+  "आश्रित्य": {
+    "word": "आश्रित्य",
+    "base_english": "Based on / having taken resort to (lyap indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Based on / having taken resort to (lyap indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आधार बनाकर / सहारा लेकर (ल्यप् प्रत्यय)"
+      }
+    }
+  },
+  "प्रश्ननिर्माणं": {
+    "word": "प्रश्ननिर्माणं",
+    "base_english": "Formation / construction of questions",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Formation / construction of questions"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्रश्नों का निर्माण करना"
+      }
+    }
+  },
+  "अथवा": {
+    "word": "अथवा",
+    "base_english": "Or / alternatively (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Or / alternatively (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "या / अथवा (अव्यय)"
+      }
+    }
+  },
+  "कस्याम्": {
+    "word": "कस्याम्",
+    "base_english": "In which / On which (kim feminine saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In which / On which (kim feminine saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किसमें / किस पर (स्त्रीलिंग सप्तमी एकवचन)"
+      }
+    }
+  },
+  "लोचनं": {
+    "word": "लोचनं",
+    "base_english": "Eye / Vision",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Eye / Vision"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आँख / नेत्र / दृष्टि"
+      }
+    }
+  },
+  "मञ्जूषातः": {
+    "word": "मञ्जूषातः",
+    "base_english": "From the word-box / help-box",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the word-box / help-box"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मंजूषा (शब्द-पेटी) से"
+      }
+    }
+  },
+  "समुचितानि": {
+    "word": "समुचितानि",
+    "base_english": "Appropriate / proper (neuter plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Appropriate / proper (neuter plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उचित / सही (बहुवचन)"
+      }
+    }
+  },
+  "मञ्जूषा": {
+    "word": "मञ्जूषा",
+    "base_english": "Word box / Help box",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Word box / Help box"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मंजूषा / शब्द सूची"
+      }
+    }
+  },
+  "दुर्जनस्य": {
+    "word": "दुर्जनस्य",
+    "base_english": "Of the wicked person (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the wicked person (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दुष्ट व्यक्ति का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "वचनं": {
+    "word": "वचनं",
+    "base_english": "Grammatical number / Word / Speech",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Grammatical number / Word / Speech"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वचन (एकवचन/द्विवचन/बहुवचन) / कथन"
+      }
+    }
+  },
+  "वचन": {
+    "word": "वचन",
+    "base_english": "Grammatical number / Word",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Grammatical number / Word"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वचन"
+      }
+    }
+  },
+  "षष्ठी": {
+    "word": "षष्ठी",
+    "base_english": "Sixth case / Genitive case",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sixth case / Genitive case"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "षष्ठी विभक्ति (संबंध कारक)"
+      }
+    }
+  },
+  "द्वितीया": {
+    "word": "द्वितीया",
+    "base_english": "Second case / Accusative case",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Second case / Accusative case"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "द्वितीया विभक्ति (कर्म कारक)"
+      }
+    }
+  },
+  "तृतीया": {
+    "word": "तृतीया",
+    "base_english": "Third case / Instrumental case",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Third case / Instrumental case"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तृतीया विभक्ति (करण कारक)"
+      }
+    }
+  },
+  "सप्तमी": {
+    "word": "सप्तमी",
+    "base_english": "Seventh case / Locative case",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Seventh case / Locative case"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सप्तमी विभक्ति (अधिकरण कारक)"
+      }
+    }
+  },
+  "शब्द": {
+    "word": "शब्द",
+    "base_english": "Word",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Word"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शब्द"
+      }
+    }
+  },
+  "फूलों": {
+    "word": "फूलों",
+    "base_english": "Of flowers",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of flowers"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फूलों का"
+      }
+    }
+  },
+  "वाले": {
+    "word": "वाले",
+    "base_english": "Having / possessing",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Having / possessing"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वाले"
+      }
+    }
+  },
+  "पठनमनोरंजन": {
+    "word": "पठनमनोरंजन",
+    "base_english": "Entertainment through reading",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Entertainment through reading"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़ने का आनंद"
+      }
+    }
+  },
+  "किनका": {
+    "word": "किनका",
+    "base_english": "Whose",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Whose"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किनका"
+      }
+    }
+  },
+  "लड़ाईझगड़े": {
+    "word": "लड़ाईझगड़े",
+    "base_english": "Quarrel / Dispute",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Quarrel / Dispute"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लड़ाई-झगड़े"
+      }
+    }
+  },
+  "चन्द्रमा": {
+    "word": "चन्द्रमा",
+    "base_english": "Moon",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Moon"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चन्द्रमा"
+      }
+    }
+  },
+  "किसका": {
+    "word": "किसका",
+    "base_english": "Whose",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Whose"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किसका"
+      }
+    }
+  },
+  "दुर्जन": {
+    "word": "दुर्जन",
+    "base_english": "Wicked person",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wicked person"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दुष्ट व्यक्ति"
+      }
+    }
+  },
+  "किन": {
+    "word": "किन",
+    "base_english": "Which",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Which"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किन"
+      }
+    }
+  },
+  "कार्यों": {
+    "word": "कार्यों",
+    "base_english": "Of works / tasks",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of works / tasks"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कार्यों का"
+      }
+    }
+  },
+  "सही": {
+    "word": "सही",
+    "base_english": "Correct / Right",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Correct / Right"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सही"
+      }
+    }
+  },
+  "मिलान": {
+    "word": "मिलान",
+    "base_english": "Match / Connecting",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Match / Connecting"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मिलान"
+      }
+    }
+  },
+  "निर्माण": {
+    "word": "निर्माण",
+    "base_english": "Creation / Construction",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Creation / Construction"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "निर्माण"
+      }
+    }
+  },
+  "सद्ज्ञान": {
+    "word": "सद्ज्ञान",
+    "base_english": "True noble knowledge",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "True noble knowledge"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सद्ज्ञान"
+      }
+    }
+  },
+  "अवगुण": {
+    "word": "अवगुण",
+    "base_english": "Vice / Defect",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Vice / Defect"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अवगुण / दोष"
+      }
+    }
+  },
+  "झगड़ा": {
+    "word": "झगड़ा",
+    "base_english": "Fight / Dispute",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fight / Dispute"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "झगड़ा"
+      }
+    }
+  },
+  "घमंड": {
+    "word": "घमंड",
+    "base_english": "Pride / Arrogance",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Pride / Arrogance"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "घमंड / अहंकार"
+      }
+    }
   }
 }
