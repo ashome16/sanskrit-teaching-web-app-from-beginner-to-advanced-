@@ -51392,5 +51392,1770 @@
     "english": "Words ending with 'ṝ'",
     "grammar": "Noun/adj., m., nom. plur.",
     "hindi": "ॠकारान्त शब्द"
+  },
+  "अआ": {
+    "english": "Vowels 'a' and 'ā'",
+    "grammar": "Phonetic sounds",
+    "hindi": "स्वर अ और आ"
+  },
+  "अकरोः": {
+    "english": "You did (Past)",
+    "grammar": "Verb, laṅ lakāra, 2nd pers. sing. (कृ)",
+    "hindi": "तूने किया (लङ् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "अकुरुत": {
+    "english": "You all did (Past)",
+    "grammar": "Verb, laṅ lakāra, 2nd pers. plur. (कृ)",
+    "hindi": "तुम सबने किया (लङ् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "अकुरुतम्": {
+    "english": "You two did (Past)",
+    "grammar": "Verb, laṅ lakāra, 2nd pers. dual (कृ)",
+    "hindi": "तुम दोनों ने किया (लङ् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "अकुरुताम्": {
+    "english": "They two did (Past)",
+    "grammar": "Verb, laṅ lakāra, 3rd pers. dual (कृ)",
+    "hindi": "उन दोनों ने किया (लङ् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "अकुर्म": {
+    "english": "We did (Past)",
+    "grammar": "Verb, laṅ lakāra, 1st pers. plur. (कृ)",
+    "hindi": "हम सबने किया (लङ् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "अकुर्व": {
+    "english": "We two did (Past)",
+    "grammar": "Verb, laṅ lakāra, 1st pers. dual (कृ)",
+    "hindi": "हम दोनों ने किया (लङ् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "अच्संधि": {
+    "english": "Vowel sandhi (Ac-sandhi)",
+    "grammar": "Compound grammatical term",
+    "hindi": "स्वर सन्धि (अच्-सन्धि)"
+  },
+  "अच्सन्धयः": {
+    "english": "Vowel sandhis (Ac-sandhis)",
+    "grammar": "Compound noun, m., nom. plur.",
+    "hindi": "स्वर संधियाँ (अच्-सन्धयः)"
+  },
+  "अतिनिकटता": {
+    "english": "Extreme closeness / proximity",
+    "grammar": "Hindi noun, f.",
+    "hindi": "अत्यधिक निकटता (संहिता)"
+  },
+  "अत्यधिक": {
+    "english": "Excessive / extreme",
+    "grammar": "Hindi adj.",
+    "hindi": "अत्यधिक / बहुत अधिक"
+  },
+  "अत्यन्तं": {
+    "english": "Exceedingly / extremely",
+    "grammar": "Adverb (अत्यन्तम्)",
+    "hindi": "अत्यधिक / बहुत निकट"
+  },
+  "अत्रैक्यम्": {
+    "english": "Unity here (atra + aikyam)",
+    "grammar": "Vriddhi sandhi compound, n., nom. sing.",
+    "hindi": "यहाँ एकता (अत्र + ऐक्यम्)"
+  },
+  "अन्तः": {
+    "english": "End / termination",
+    "grammar": "Noun, m., nom. sing.",
+    "hindi": "अन्त / समाप्ति"
+  },
+  "अपठः": {
+    "english": "You read (Past)",
+    "grammar": "Verb, laṅ lakāra, 2nd pers. sing. (पठ्)",
+    "hindi": "तूने पढ़ा (लङ् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "अपठत": {
+    "english": "You all read (Past)",
+    "grammar": "Verb, laṅ lakāra, 2nd pers. plur. (पठ्)",
+    "hindi": "तुम सबने पढ़ा (लङ् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "अपठतम्": {
+    "english": "You two read (Past)",
+    "grammar": "Verb, laṅ lakāra, 2nd pers. dual (पठ्)",
+    "hindi": "तुम दोनों ने पढ़ा (लङ् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "अपठन्": {
+    "english": "They read (Past)",
+    "grammar": "Verb, laṅ lakāra, 3rd pers. plur. (पठ्)",
+    "hindi": "उन सबने पढ़ा (लङ् लकार, प्रथम पुरुष बहुवचन)"
+  },
+  "अपठम्": {
+    "english": "I read (Past)",
+    "grammar": "Verb, laṅ lakāra, 1st pers. sing. (पठ्)",
+    "hindi": "मैंने पढ़ा (लङ् लकार, उत्तम पुरुष एकवचन)"
+  },
+  "अपठाम": {
+    "english": "We read (Past)",
+    "grammar": "Verb, laṅ lakāra, 1st pers. plur. (पठ्)",
+    "hindi": "हम सबने पढ़ा (लङ् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "अपठाव": {
+    "english": "We two read (Past)",
+    "grammar": "Verb, laṅ lakāra, 1st pers. dual (पठ्)",
+    "hindi": "हम दोनों ने पढ़ा (लङ् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "अर्": {
+    "english": "Ar sound (guna substitution for 'ṛ')",
+    "grammar": "Phonetic guna substitute",
+    "hindi": "'अर्' गुण एकादेश"
+  },
+  "असमान": {
+    "english": "Dissimilar / unequal",
+    "grammar": "Hindi adj.",
+    "hindi": "असमान / भिन्न"
+  },
+  "असवर्णाः": {
+    "english": "Dissimilar / non-cognate vowels",
+    "grammar": "Compound adj., m., nom. plur.",
+    "hindi": "असमान वर्ण (जो सवर्ण न हों)"
+  },
+  "असानि": {
+    "english": "May I be (Imperative)",
+    "grammar": "Verb, loṭ lakāra, 1st pers. sing. (अस्)",
+    "hindi": "मैं होऊँ (लोट् लकार, उत्तम पुरुष एकवचन)"
+  },
+  "असाम": {
+    "english": "May we be (Imperative)",
+    "grammar": "Verb, loṭ lakāra, 1st pers. plur. (अस्)",
+    "hindi": "हम सब हों (लोट् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "असाव": {
+    "english": "May we two be (Imperative)",
+    "grammar": "Verb, loṭ lakāra, 1st pers. dual (अस्)",
+    "hindi": "हम दोनों हों (लोट् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "अस्": {
+    "english": "Root 'as' (to be / exist)",
+    "grammar": "Verbal root (धातु), अदादिगण",
+    "hindi": "'अस्' धातु (होना / अस्तित्व)"
+  },
+  "अहसः": {
+    "english": "You laughed (Past)",
+    "grammar": "Verb, laṅ lakāra, 2nd pers. sing. (हस्)",
+    "hindi": "तू हँसा (लङ् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "अहसत": {
+    "english": "You all laughed (Past)",
+    "grammar": "Verb, laṅ lakāra, 2nd pers. plur. (हस्)",
+    "hindi": "तुम सब हँसे (लङ् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "अहसतम्": {
+    "english": "You two laughed (Past)",
+    "grammar": "Verb, laṅ lakāra, 2nd pers. dual (हस्)",
+    "hindi": "तुम दोनों हँसे (लङ् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "अहसताम्": {
+    "english": "They two laughed (Past)",
+    "grammar": "Verb, laṅ lakāra, 3rd pers. dual (हस्)",
+    "hindi": "वे दोनों हँसे (लङ् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "अहसत्": {
+    "english": "He/she laughed (Past)",
+    "grammar": "Verb, laṅ lakāra, 3rd pers. sing. (हस्)",
+    "hindi": "वह हँसा (लङ् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "अहसन्": {
+    "english": "They laughed (Past)",
+    "grammar": "Verb, laṅ lakāra, 3rd pers. plur. (हस्)",
+    "hindi": "वे सब हँसे (लङ् लकार, प्रथम पुरुष बहुवचन)"
+  },
+  "अहसम्": {
+    "english": "I laughed (Past)",
+    "grammar": "Verb, laṅ lakāra, 1st pers. sing. (हस्)",
+    "hindi": "मैं हँसा (लङ् लकार, उत्तम पुरुष एकवचन)"
+  },
+  "अहसाम": {
+    "english": "We laughed (Past)",
+    "grammar": "Verb, laṅ lakāra, 1st pers. plur. (हस्)",
+    "hindi": "हम सब हँसे (लङ् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "अहसाव": {
+    "english": "We two laughed (Past)",
+    "grammar": "Verb, laṅ lakāra, 1st pers. dual (हस्)",
+    "hindi": "हम दोनों हँसे (लङ् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "आज्ञाप्रार्थना": {
+    "english": "Command or prayer / request",
+    "grammar": "Dvandva compound",
+    "hindi": "आज्ञा और प्रार्थना"
+  },
+  "आज्ञार्थक": {
+    "english": "Imperative / commanding",
+    "grammar": "Hindi adj.",
+    "hindi": "आज्ञार्थक (लोट् लकार)"
+  },
+  "आज्ञार्थे": {
+    "english": "In the sense of command / imperative",
+    "grammar": "Noun, loc. sing.",
+    "hindi": "आज्ञा के अर्थ में (लोट् लकार)"
+  },
+  "आत्मनेपदिधातवः": {
+    "english": "Atmanepada verbs",
+    "grammar": "Compound noun, m., nom. plur.",
+    "hindi": "आत्मनेपदी धातुएँ"
+  },
+  "आत्मनेपदिधातूनां": {
+    "english": "Of Atmanepada verbs",
+    "grammar": "Compound noun, m., gen. plur.",
+    "hindi": "आत्मनेपदी धातुओं का"
+  },
+  "आत्मनेपदी": {
+    "english": "Atmanepada verbal category",
+    "grammar": "Hindi grammatical term",
+    "hindi": "आत्मनेपदी धातु"
+  },
+  "आसीः": {
+    "english": "You were (Past)",
+    "grammar": "Verb, laṅ lakāra, 2nd pers. sing. (अस्)",
+    "hindi": "तू था (लङ् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "आस्त": {
+    "english": "You all were (Past)",
+    "grammar": "Verb, laṅ lakāra, 2nd pers. plur. (अस्)",
+    "hindi": "तुम सब थे (लङ् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "आस्तम्": {
+    "english": "You two were (Past)",
+    "grammar": "Verb, laṅ lakāra, 2nd pers. dual (अस्)",
+    "hindi": "तुम दोनों थे (लङ् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "आस्म": {
+    "english": "We were (Past)",
+    "grammar": "Verb, laṅ lakāra, 1st pers. plur. (अस्)",
+    "hindi": "हम सब थे (लङ् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "आस्व": {
+    "english": "We two were (Past)",
+    "grammar": "Verb, laṅ lakāra, 1st pers. dual (अस्)",
+    "hindi": "हम दोनों थे (लङ् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "इई": {
+    "english": "Vowels 'i' and 'ī'",
+    "grammar": "Phonetic sounds",
+    "hindi": "स्वर इ और ई"
+  },
+  "इत्युक्त्वा": {
+    "english": "Having said this (iti + uktvā)",
+    "grammar": "Yan sandhi compound with ktdanta",
+    "hindi": "ऐसा कह कर (इति + उक्त्वा)"
+  },
+  "इन्हें": {
+    "english": "These (accusative)",
+    "grammar": "Hindi pronoun",
+    "hindi": "इन्हें"
+  },
+  "उऊ": {
+    "english": "Vowels 'u' and 'ū'",
+    "grammar": "Phonetic sounds",
+    "hindi": "स्वर उ और ऊ"
+  },
+  "उच्चारणसमये": {
+    "english": "At the time of pronunciation",
+    "grammar": "Compound noun, m., loc. sing.",
+    "hindi": "उच्चारण के समय"
+  },
+  "उत्पु": {
+    "english": "First person abbreviation (उत्तमपुरुषः)",
+    "grammar": "Abbreviation",
+    "hindi": "उत्तम पुरुष (संक्षेप)"
+  },
+  "उत्सवः": {
+    "english": "Festival / celebration",
+    "grammar": "Noun, m., nom. sing.",
+    "hindi": "उत्सव / त्योहार"
+  },
+  "उदाहरणप्रयोगः": {
+    "english": "Example usage in sentences",
+    "grammar": "Compound noun, m., nom. sing.",
+    "hindi": "उदाहरण सहित प्रयोग"
+  },
+  "उभयपदिधातवः": {
+    "english": "Ubhayapada verbs (active & middle)",
+    "grammar": "Compound noun, m., nom. plur.",
+    "hindi": "उभयपदी धातुएँ"
+  },
+  "उभयपदी": {
+    "english": "Ubhayapada category",
+    "grammar": "Hindi grammatical term",
+    "hindi": "उभयपदी धातु (दोनों पदों वाली)"
+  },
+  "एऐ": {
+    "english": "Diphthongs 'e' and 'ai'",
+    "grammar": "Phonetic sounds",
+    "hindi": "स्वर ए और ऐ"
+  },
+  "एकादेश": {
+    "english": "Single substitute replacing two sounds",
+    "grammar": "Compound grammatical term",
+    "hindi": "एकादेश (दो वर्णों के स्थान पर एक वर्ण)"
+  },
+  "एकैकम्": {
+    "english": "One by one / each one (eka + ekam)",
+    "grammar": "Vriddhi sandhi compound, n., nom./acc. sing.",
+    "hindi": "एक-एक (एक + एकम्)"
+  },
+  "एधि": {
+    "english": "Be! (Imperative)",
+    "grammar": "Verb, loṭ lakāra, 2nd pers. sing. (अस्)",
+    "hindi": "तू हो! (लोट् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "ऐक्यम्": {
+    "english": "Unity / oneness",
+    "grammar": "Noun, n., nom./acc. sing.",
+    "hindi": "एकता / ऐक्य"
+  },
+  "ओऔ": {
+    "english": "Vowels 'o' and 'au'",
+    "grammar": "Phonetic sounds",
+    "hindi": "स्वर ओ और औ"
+  },
+  "ओषधिः": {
+    "english": "Medicinal herb / plant",
+    "grammar": "Noun, f., nom. sing.",
+    "hindi": "औषधि / जड़ी-बूटी"
+  },
+  "करिष्यति": {
+    "english": "He/she will do (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 3rd pers. sing. (कृ)",
+    "hindi": "करेगा (लृट् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "कह": {
+    "english": "Say / call",
+    "grammar": "Hindi verb stem",
+    "hindi": "कह सकते हैं"
+  },
+  "कियाकरते": {
+    "english": "Did / used to do",
+    "grammar": "Hindi past habitual verb phrase",
+    "hindi": "किया अथवा करते थे"
+  },
+  "कियातुम": {
+    "english": "You did",
+    "grammar": "Hindi pronoun + verb phrase",
+    "hindi": "तुमने किया"
+  },
+  "कियाहम": {
+    "english": "We did",
+    "grammar": "Hindi pronoun + verb phrase",
+    "hindi": "हमने किया"
+  },
+  "कुरुतः": {
+    "english": "They two do (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. dual (कृ)",
+    "hindi": "वे दोनों करते हैं (लट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "कुरुथ": {
+    "english": "You all do (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. plur. (कृ)",
+    "hindi": "तुम सब करते हो (लट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "कुरुथः": {
+    "english": "You two do (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. dual (कृ)",
+    "hindi": "तुम दोनों करते हो (लट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "कुर्वः": {
+    "english": "We two do (Present)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. dual (कृ)",
+    "hindi": "हम दोनों करते हैं (लट् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "कूदना": {
+    "english": "To jump (gloss for कूर्द्)",
+    "grammar": "Hindi verbal noun",
+    "hindi": "कूदना (कूर्द् धातु)"
+  },
+  "कूर्द्": {
+    "english": "Root 'kūrd' (to jump / leap)",
+    "grammar": "Verbal root (आत्मनेपद धातु)",
+    "hindi": "'कूर्द्' धातु (कूदना)"
+  },
+  "कृ": {
+    "english": "Root 'kṛ' (to do / make)",
+    "grammar": "Verbal root (तनादिगण उभयपद)",
+    "hindi": "'कृ' धातु (करना)"
+  },
+  "क्रिया": {
+    "english": "Action / verb",
+    "grammar": "Hindi noun, f. (संस्कृत: क्रिया)",
+    "hindi": "क्रिया (कार्य)"
+  },
+  "क्रियापदानां": {
+    "english": "Of verbs / of action words",
+    "grammar": "Compound noun, n., gen. plur.",
+    "hindi": "क्रियापदों का"
+  },
+  "क्रियापदों": {
+    "english": "Verbs (oblique)",
+    "grammar": "Hindi noun, m. plur. oblique",
+    "hindi": "क्रियापदों के रूप"
+  },
+  "क्री": {
+    "english": "Root 'krī' (to buy / purchase)",
+    "grammar": "Verbal root (क्र्यादिगण उभयपद)",
+    "hindi": "'क्री' धातु (खरीदना)"
+  },
+  "क्रीड्": {
+    "english": "Root 'krīḍ' (to play)",
+    "grammar": "Verbal root (भ्वादिगण परस्मैपद)",
+    "hindi": "'क्रीड्' धातु (खेलना)"
+  },
+  "क्रीणाति": {
+    "english": "He/she buys (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. sing. (क्री)",
+    "hindi": "खरीदता है (लट् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "क्रीणामि": {
+    "english": "I buy (Present)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. sing. (क्री)",
+    "hindi": "मैं खरीदता हूँ (लट् लकार, उत्तम पुरुष एकवचन)"
+  },
+  "क्रीणासि": {
+    "english": "You buy (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. sing. (क्री)",
+    "hindi": "तू खरीदता है (लट् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "क्रीणीतः": {
+    "english": "They two buy (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. dual (क्री)",
+    "hindi": "वे दोनों खरीदते हैं (लट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "क्रीणीथ": {
+    "english": "You all buy (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. plur. (क्री)",
+    "hindi": "तुम सब खरीदते हो (लट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "क्रीणीथः": {
+    "english": "You two buy (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. dual (क्री)",
+    "hindi": "तुम दोनों खरीदते हो (लट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "क्रीणीमः": {
+    "english": "We buy (Present)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. plur. (क्री)",
+    "hindi": "हम सब खरीदते हैं (लट् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "क्रीणीवः": {
+    "english": "We two buy (Present)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. dual (क्री)",
+    "hindi": "हम दोनों खरीदते हैं (लट् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "खरीदना": {
+    "english": "To buy (gloss for क्री)",
+    "grammar": "Hindi verbal noun",
+    "hindi": "खरीदना"
+  },
+  "खादिष्यतः": {
+    "english": "They two will eat (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 3rd pers. dual (खाद्)",
+    "hindi": "वे दोनों खाएँगे (लृट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "खादिष्यति": {
+    "english": "He/she will eat (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 3rd pers. sing. (खाद्)",
+    "hindi": "खाएगा (लृट् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "खादिष्यामः": {
+    "english": "We will eat (Future)",
+    "grammar": "Verb, lṛट् lakāra, 1st pers. plur. (खाद्)",
+    "hindi": "हम सब खाएँगे (लृट् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "खादिष्यामि": {
+    "english": "I will eat (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 1st pers. sing. (खाद्)",
+    "hindi": "मैं खाऊँगा (लृट् लकार, उत्तम पुरुष एकवचन)"
+  },
+  "खादिष्यावः": {
+    "english": "We two will eat (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 1st pers. dual (खाद्)",
+    "hindi": "हम दोनों खाएँगे (लृट् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "खाद्": {
+    "english": "Root 'khād' (to eat)",
+    "grammar": "Verbal root (भ्वादिगण परस्मैपद)",
+    "hindi": "'खाद्' धातु (खाना)"
+  },
+  "गच्छ": {
+    "english": "Stem 'gaccha' of root gam (to go)",
+    "grammar": "Verbal stem (गम्)",
+    "hindi": "गच्छ (गम् धातु का आदेश)"
+  },
+  "गच्छतः": {
+    "english": "They two go (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. dual (गम्)",
+    "hindi": "वे दोनों जाते हैं (लट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "गच्छावः": {
+    "english": "We two go (Present)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. dual (गम्)",
+    "hindi": "हम दोनों जाते हैं (लट् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "गम्गच्छ": {
+    "english": "Gam / gaccha (to go)",
+    "grammar": "Root and modified present stem",
+    "hindi": "गम् (गच्छ) धातु"
+  },
+  "गुणसन्धिः": {
+    "english": "Guna sandhi (vowel modification to e, o, ar)",
+    "grammar": "Compound noun, f., nom. sing.",
+    "hindi": "गुण सन्धि"
+  },
+  "गुणसन्धिअभ्यासः": {
+    "english": "Guna sandhi exercise",
+    "grammar": "Compound noun, m., nom. sing.",
+    "hindi": "गुण सन्धि अभ्यास"
+  },
+  "गुरूत्सवः": {
+    "english": "Teacher's festival (guru + utsavah)",
+    "grammar": "Dirgha sandhi compound, m., nom. sing.",
+    "hindi": "गुरूत्सव (गुरु + उत्सवः)"
+  },
+  "चल्": {
+    "english": "Root 'cal' (to move / walk)",
+    "grammar": "Verbal root (भ्वादिगण)",
+    "hindi": "'चल्' धातु (चलना)"
+  },
+  "चाहिएहो": {
+    "english": "Should be (gloss for vidhilin)",
+    "grammar": "Hindi compound phrase",
+    "hindi": "चाहिए अथवा हो"
+  },
+  "जहाँ": {
+    "english": "Where (relative adverb)",
+    "grammar": "Hindi adverb",
+    "hindi": "जहाँ"
+  },
+  "जानासि": {
+    "english": "You know (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. sing. (ज्ञा)",
+    "hindi": "तू जानता है (लट् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "जानीतः": {
+    "english": "They two know (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. dual (ज्ञा)",
+    "hindi": "वे दोनों जानते हैं (लट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "जानीथ": {
+    "english": "You all know (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. plur. (ज्ञा)",
+    "hindi": "तुम सब जानते हो (लट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "जानीथः": {
+    "english": "You two know (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. dual (ज्ञा)",
+    "hindi": "तुम दोनों जानते हो (लट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "जानीवः": {
+    "english": "We two know (Present)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. dual (ज्ञा)",
+    "hindi": "हम दोनों जानते हैं (लट् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "जोड़ते": {
+    "english": "We join / connect",
+    "grammar": "Hindi verb phrase",
+    "hindi": "हम जोड़ते हैं"
+  },
+  "ज्ञा": {
+    "english": "Root 'jñā' (to know / perceive)",
+    "grammar": "Verbal root (क्र्यादिगण उभयपद)",
+    "hindi": "'ज्ञा' धातु (जानना)"
+  },
+  "ज्ञास्यति": {
+    "english": "He/she will know (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 3rd pers. sing. (ज्ञा)",
+    "hindi": "जानेगा (लृट् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "णिच्": {
+    "english": "Causal verbal suffix ṇic",
+    "grammar": "Grammatical causal affix (प्रत्यय)",
+    "hindi": "णिच् प्रत्यय (प्रेरणार्थक)"
+  },
+  "तत्रापि": {
+    "english": "There also (tatra + api)",
+    "grammar": "Dirgha sandhi compound adverb",
+    "hindi": "वहाँ भी (तत्र + अपि)"
+  },
+  "तस्यैव": {
+    "english": "Of that alone (tasya + eva)",
+    "grammar": "Vriddhi sandhi compound pronoun",
+    "hindi": "उसी का (तस्य + एव)"
+  },
+  "तिङन्त": {
+    "english": "Ending in tiṅ suffix (finite verb)",
+    "grammar": "Grammatical category",
+    "hindi": "तिङन्त (क्रियापद)"
+  },
+  "तिङन्ताः": {
+    "english": "Conjugated verb forms",
+    "grammar": "Compound noun, m., nom. plur.",
+    "hindi": "तिङन्त क्रियापद"
+  },
+  "तिङ्": {
+    "english": "Tiṅ pratyahara (18 finite verb terminations)",
+    "grammar": "Grammatical pratyahara",
+    "hindi": "तिङ् प्रत्यय (१८ क्रिया प्रत्यय)"
+  },
+  "तिङ्प्रत्ययाः": {
+    "english": "Tiṅ suffixes for verbs",
+    "grammar": "Compound noun, m., nom. plur.",
+    "hindi": "तिङ् प्रत्यय"
+  },
+  "तेभ्यः": {
+    "english": "From them / to them",
+    "grammar": "Pronoun, m./n., dat./abl. plur. (तद्)",
+    "hindi": "उनसे / उनके लिए"
+  },
+  "त्यजति": {
+    "english": "Abandons / leaves",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. sing. (त्यज्)",
+    "hindi": "त्यागता है / छोड़ता है"
+  },
+  "त्यज्": {
+    "english": "Root 'tyaj' (to abandon / leave)",
+    "grammar": "Verbal root (भ्वादिगण परस्मैपद)",
+    "hindi": "'त्यज्' धातु (त्यागना)"
+  },
+  "दत्तः": {
+    "english": "They two give (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. dual (दा)",
+    "hindi": "वे दोनों देते हैं (लट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "दत्थ": {
+    "english": "You all give (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. plur. (दा)",
+    "hindi": "तुम सब देते हो (लट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "दत्थः": {
+    "english": "You two give (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. dual (दा)",
+    "hindi": "तुम दोनों देते हो (लट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "ददति": {
+    "english": "They give (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. plur. (दा)",
+    "hindi": "वे सब देते हैं (लट् लकार, प्रथम पुरुष बहुवचन)"
+  },
+  "दद्मः": {
+    "english": "We give (Present)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. plur. (दा)",
+    "hindi": "हम सब देते हैं (लट् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "दद्वः": {
+    "english": "We two give (Present)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. dual (दा)",
+    "hindi": "हम दोनों देते हैं (लट् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "दा": {
+    "english": "Root 'dā' (to give)",
+    "grammar": "Verbal root (जुहोत्यादिगण उभयपद)",
+    "hindi": "'दा' धातु (देना)"
+  },
+  "दास्यतः": {
+    "english": "They two will give (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 3rd pers. dual (दा)",
+    "hindi": "वे दोनों देंगे (लृट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "दास्यति": {
+    "english": "He/she will give (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 3rd pers. sing. (दा)",
+    "hindi": "देगा (लृट् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "दास्यथ": {
+    "english": "You all will give (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 2nd pers. plur. (दा)",
+    "hindi": "तुम सब दोगे (लृट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "दास्यथः": {
+    "english": "You two will give (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 2nd pers. dual (दा)",
+    "hindi": "तुम दोनों दोगे (लृट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "दास्यसि": {
+    "english": "You will give (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 2nd pers. sing. (दा)",
+    "hindi": "तू देगा (लृट् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "दीर्घसन्धिअभ्यासः": {
+    "english": "Dirgha sandhi exercise",
+    "grammar": "Compound noun, m., nom. sing.",
+    "hindi": "दीर्घ सन्धि अभ्यास"
+  },
+  "दृश्": {
+    "english": "Root 'dṛś' (to see / behold)",
+    "grammar": "Verbal root (भ्वादिगण)",
+    "hindi": "'दृश्' धातु (देखना)"
+  },
+  "दृश्पश्य": {
+    "english": "Dṛś / paśya (to see)",
+    "grammar": "Root and modified present stem",
+    "hindi": "दृश् (पश्य) धातु"
+  },
+  "देना": {
+    "english": "To give (gloss for दा)",
+    "grammar": "Hindi verbal noun",
+    "hindi": "देना"
+  },
+  "देवेन्द्रः": {
+    "english": "Lord of gods / Indra (deva + indrah)",
+    "grammar": "Guna sandhi compound, m., nom. sing.",
+    "hindi": "देवेन्द्र (देव + इन्द्रः)"
+  },
+  "धातवः": {
+    "english": "Verbal roots / basic verbs",
+    "grammar": "Noun, m., nom. plur. (धातु)",
+    "hindi": "धातुएँ (क्रिया के मूल रूप)"
+  },
+  "धातुएँ": {
+    "english": "Verbal roots (plural)",
+    "grammar": "Hindi noun, f. plur.",
+    "hindi": "धातुएँ"
+  },
+  "धातुओं": {
+    "english": "Verbal roots (oblique plural)",
+    "grammar": "Hindi noun, f. plur. oblique",
+    "hindi": "धातुओं"
+  },
+  "धातुरूपाणि": {
+    "english": "Verb conjugations",
+    "grammar": "Compound noun, n., nom./acc. plur.",
+    "hindi": "धातुरूप (क्रियापदों के विभिन्न रूप)"
+  },
+  "निकटता": {
+    "english": "Proximity / closeness",
+    "grammar": "Hindi noun, f.",
+    "hindi": "निकटता"
+  },
+  "नी": {
+    "english": "Root 'nī' (to lead / guide)",
+    "grammar": "Verbal root (भ्वादिगण उभयपद)",
+    "hindi": "'नी' धातु (ले जाना)"
+  },
+  "नीनय": {
+    "english": "Nī / naya (to lead)",
+    "grammar": "Root and modified present stem",
+    "hindi": "नी (नय) धातु"
+  },
+  "पठ": {
+    "english": "Read! (Imperative)",
+    "grammar": "Verb, loṭ lakāra, 2nd pers. sing. (पठ्)",
+    "hindi": "तू पढ़! (लोट् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "पठत": {
+    "english": "Read! / you all read",
+    "grammar": "Verb, loṭ/laṅ lakāra, 2nd pers. plur. (पठ्)",
+    "hindi": "तुम सब पढ़ो! (लोट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "पठतः": {
+    "english": "They two read (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. dual (पठ्)",
+    "hindi": "वे दोनों पढ़ते हैं (लट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "पठतम्": {
+    "english": "You two read! (Imperative)",
+    "grammar": "Verb, loṭ lakāra, 2nd pers. dual (पठ्)",
+    "hindi": "तुम दोनों पढ़ो! (लोट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "पठताम्": {
+    "english": "Let them two read (Imperative)",
+    "grammar": "Verb, loट् lakāra, 3rd pers. dual (पठ्)",
+    "hindi": "वे दोनों पढ़ें (लोट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "पठतु": {
+    "english": "Let him/her read (Imperative)",
+    "grammar": "Verb, loṭ lakāra, 3rd pers. sing. (पठ्)",
+    "hindi": "वह पढ़े (लोट् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "पठथ": {
+    "english": "You all read (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. plur. (पठ्)",
+    "hindi": "तुम सब पढ़ते हो (लट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "पठथः": {
+    "english": "You two read (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. dual (पठ्)",
+    "hindi": "तुम दोनों पढ़ते हो (लट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "पठन्तु": {
+    "english": "Let them read (Imperative)",
+    "grammar": "Verb, loṭ lakāra, 3rd pers. plur. (पठ्)",
+    "hindi": "वे सब पढ़ें (लोट् लकार, प्रथम पुरुष बहुवचन)"
+  },
+  "पठसि": {
+    "english": "You read (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. sing. (पठ्)",
+    "hindi": "तू पढ़ता है (लट् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "पठानि": {
+    "english": "Let me read (Imperative)",
+    "grammar": "Verb, loṭ lakāra, 1st pers. sing. (पठ्)",
+    "hindi": "मैं पढूँ (लोट् लकार, उत्तम पुरुष एकवचन)"
+  },
+  "पठाव": {
+    "english": "Let us two read (Imperative)",
+    "grammar": "Verb, loṭ lakāra, 1st pers. dual (पठ्)",
+    "hindi": "हम दोनों पढ़ें (लोट् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "पठावः": {
+    "english": "We two read (Present)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. dual (पठ्)",
+    "hindi": "हम दोनों पढ़ते हैं (लट् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "पठिष्यतः": {
+    "english": "They two will read (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 3rd pers. dual (पठ्)",
+    "hindi": "वे दोनों पढ़ेंगे (लृट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "पठिष्यथ": {
+    "english": "You all will read (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 2nd pers. plur. (पठ्)",
+    "hindi": "तुम सब पढ़ोगे (लृट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "पठिष्यथः": {
+    "english": "You two will read (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 2nd pers. dual (पठ्)",
+    "hindi": "तुम दोनों पढ़ोगे (लृट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "पठिष्यन्ति": {
+    "english": "They will read (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 3rd pers. plur. (पठ्)",
+    "hindi": "वे सब पढ़ेंगे (लृट् लकार, प्रथम पुरुष बहुवचन)"
+  },
+  "पठिष्यसि": {
+    "english": "You will read (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 2nd pers. sing. (पठ्)",
+    "hindi": "तू पढ़ेगा (लृट् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "पठिष्यामः": {
+    "english": "We will read (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 1st pers. plur. (पठ्)",
+    "hindi": "हम सब पढ़ेंगे (लृट् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "पठिष्यावः": {
+    "english": "We two will read (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 1st pers. dual (पठ्)",
+    "hindi": "हम दोनों पढ़ेंगे (लृट् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "पठेः": {
+    "english": "You should read (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 2nd pers. sing. (पठ्)",
+    "hindi": "तुझे पढ़ना चाहिए (विधिलिङ् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "पठेत": {
+    "english": "You all should read (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 2nd pers. plur. (पठ्)",
+    "hindi": "तुम सबको पढ़ना चाहिए (विधिलिङ् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "पठेतम्": {
+    "english": "You two should read (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 2nd pers. dual (पठ्)",
+    "hindi": "तुम दोनों को पढ़ना चाहिए (विधिलिङ् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "पठेताम्": {
+    "english": "They two should read (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 3rd pers. dual (पठ्)",
+    "hindi": "उन दोनों को पढ़ना चाहिए (विधिलिङ् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "पठेत्": {
+    "english": "He/she should read (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 3rd pers. sing. (पठ्)",
+    "hindi": "उसे पढ़ना चाहिए (विधिलिङ् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "पठेम": {
+    "english": "We should read (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 1st pers. plur. (पठ्)",
+    "hindi": "हम सबको पढ़ना चाहिए (विधिलिङ् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "पठेयम्": {
+    "english": "I should read (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 1st pers. sing. (पठ्)",
+    "hindi": "मुझे पढ़ना चाहिए (विधिलिङ् लकार, उत्तम पुरुष एकवचन)"
+  },
+  "पठेयुः": {
+    "english": "They should read (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 3rd pers. plur. (पठ्)",
+    "hindi": "उन सबको पढ़ना चाहिए (विधिलिङ् लकार, प्रथम पुरुष बहुवचन)"
+  },
+  "पठेव": {
+    "english": "We two should read (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 1st pers. dual (पठ्)",
+    "hindi": "हम दोनों को पढ़ना चाहिए (विधिलिङ् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "पठ्": {
+    "english": "Root 'paṭh' (to read / study)",
+    "grammar": "Verbal root (भ्वादिगण परस्मैपद)",
+    "hindi": "'पठ्' धातु (पढ़ना)"
+  },
+  "पढ़ता": {
+    "english": "Reads (gloss for पठति)",
+    "grammar": "Hindi verb",
+    "hindi": "पढ़ता है"
+  },
+  "पढ़ातुम": {
+    "english": "You read (gloss for अपठः)",
+    "grammar": "Hindi pronoun + verb phrase",
+    "hindi": "तूने पढ़ा"
+  },
+  "पढ़ापढ़ते": {
+    "english": "Read / used to read",
+    "grammar": "Hindi past habitual verb phrase",
+    "hindi": "पढ़ा अथवा पढ़ते थे"
+  },
+  "पढ़ाहम": {
+    "english": "We read (gloss for अपठाम)",
+    "grammar": "Hindi pronoun + verb phrase",
+    "hindi": "हमने पढ़ा"
+  },
+  "पढ़ेंगे": {
+    "english": "Will read (plural)",
+    "grammar": "Hindi future verb",
+    "hindi": "पढ़ेंगे"
+  },
+  "पढ़ेगा": {
+    "english": "Will read (singular)",
+    "grammar": "Hindi future verb",
+    "hindi": "पढ़ेगा"
+  },
+  "पढ़ो": {
+    "english": "Read! (Imperative)",
+    "grammar": "Hindi imperative verb",
+    "hindi": "पढ़ो"
+  },
+  "पढ़ोगे": {
+    "english": "You will read",
+    "grammar": "Hindi future verb",
+    "hindi": "पढ़ोगे"
+  },
+  "पढूँ": {
+    "english": "May I read",
+    "grammar": "Hindi optative verb",
+    "hindi": "पढूँ"
+  },
+  "पढूँगा": {
+    "english": "I will read",
+    "grammar": "Hindi future verb",
+    "hindi": "पढूँगा"
+  },
+  "परमौषधिः": {
+    "english": "Supreme medicine (parama + oṣadhih)",
+    "grammar": "Vriddhi sandhi compound, f., nom. sing.",
+    "hindi": "उत्कृष्ट औषधि (परम + ओषधिः)"
+  },
+  "परस्मैपदिधातवः": {
+    "english": "Parasmaipada verbs (active voice)",
+    "grammar": "Compound noun, m., nom. plur.",
+    "hindi": "परस्मैपदी धातुएँ"
+  },
+  "परस्मैपदिधातूनां": {
+    "english": "Of Parasmaipada verbs",
+    "grammar": "Compound noun, m., gen. plur.",
+    "hindi": "परस्मैपदी धातुओं का"
+  },
+  "परस्मैपदी": {
+    "english": "Parasmaipada category",
+    "grammar": "Hindi grammatical term",
+    "hindi": "परस्मैपदी धातु"
+  },
+  "पापिब": {
+    "english": "Pā / piba (to drink)",
+    "grammar": "Root and modified present stem",
+    "hindi": "पा (पिब) धातु (पीना)"
+  },
+  "पिबति": {
+    "english": "Drinks (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. sing. (पा)",
+    "hindi": "पीता है (लट् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "प्रकाराः": {
+    "english": "Kinds / types / varieties",
+    "grammar": "Noun, m., nom. plur. (प्रकार)",
+    "hindi": "प्रकार / भेद"
+  },
+  "प्रकारेण": {
+    "english": "In the manner of / by way of",
+    "grammar": "Noun, m., inst. sing. (प्रकार)",
+    "hindi": "प्रकार से (एवं प्रकारेण)"
+  },
+  "प्रच्छ्": {
+    "english": "Root 'pracch' (to ask / inquire)",
+    "grammar": "Verbal root (तुदादिगण परस्मैपद)",
+    "hindi": "'प्रच्छ्' धातु (पूछना)"
+  },
+  "प्रच्छ्पृच्छ": {
+    "english": "Pracch / pṛccha (to ask)",
+    "grammar": "Root and modified present stem",
+    "hindi": "प्रच्छ् (पृच्छ) धातु"
+  },
+  "प्रतियोगिता": {
+    "english": "Competition (gloss for स्पर्ध्)",
+    "grammar": "Hindi noun, f.",
+    "hindi": "प्रतियोगिता / होड़"
+  },
+  "प्रत्ययान्": {
+    "english": "Suffixes / affixes (direct object plural)",
+    "grammar": "Noun, m., acc. plur. (प्रत्यय)",
+    "hindi": "प्रत्ययों को"
+  },
+  "प्रत्युत्तरम्": {
+    "english": "Reply / counter-answer (prati + uttaram)",
+    "grammar": "Yan sandhi compound, n., nom./acc. sing.",
+    "hindi": "उत्तर का उत्तर / प्रत्युत्तर (प्रति + उत्तरम्)"
+  },
+  "प्रपु": {
+    "english": "Third person abbreviation (प्रथमपुरुषः)",
+    "grammar": "Abbreviation",
+    "hindi": "प्रथम पुरुष (संक्षेप)"
+  },
+  "प्रमुख": {
+    "english": "Main / chief",
+    "grammar": "Hindi adj.",
+    "hindi": "मुख्य / प्रमुख"
+  },
+  "प्रमुखतया": {
+    "english": "Chiefly / principally",
+    "grammar": "Adverb",
+    "hindi": "मुख्य रूप से"
+  },
+  "प्रश्नावली": {
+    "english": "List of questions / questionnaire",
+    "grammar": "Compound noun, f., nom. sing.",
+    "hindi": "प्रश्नावली / अभ्यास-माला"
+  },
+  "प्रार्थना": {
+    "english": "Prayer / request",
+    "grammar": "Hindi noun, f.",
+    "hindi": "प्रार्थना"
+  },
+  "प्रार्थनाचाहिए": {
+    "english": "Request or obligation",
+    "grammar": "Compound Hindi gloss",
+    "hindi": "प्रार्थना अथवा चाहिए के अर्थ में"
+  },
+  "बनते": {
+    "english": "Become / are formed",
+    "grammar": "Hindi verb",
+    "hindi": "बनते हैं"
+  },
+  "बोलते": {
+    "english": "Speak (plural)",
+    "grammar": "Hindi verb",
+    "hindi": "बोलते हैं"
+  },
+  "बोलूँगा": {
+    "english": "I will speak",
+    "grammar": "Hindi future verb",
+    "hindi": "बोलूँगा"
+  },
+  "बोलेंगे": {
+    "english": "Will speak (plural)",
+    "grammar": "Hindi future verb",
+    "hindi": "बोलेंगे"
+  },
+  "बोलेगा": {
+    "english": "Will speak (singular)",
+    "grammar": "Hindi future verb",
+    "hindi": "बोलेगा"
+  },
+  "भविष्य": {
+    "english": "Future",
+    "grammar": "Hindi noun/adj., m.",
+    "hindi": "भविष्य काल"
+  },
+  "भाष": {
+    "english": "Root 'bhāṣ' (to speak / say)",
+    "grammar": "Verbal root (भ्वादिगण आत्मनेपद)",
+    "hindi": "'भाष' धातु (बोलना)"
+  },
+  "भाषते": {
+    "english": "He/she speaks (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. sing. (भाष)",
+    "hindi": "बोलता है (आत्मनेपद लट् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "भाषध्वे": {
+    "english": "You all speak (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. plur. (भाष)",
+    "hindi": "तुम सब बोलते हो (आत्मनेपद लट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "भाषन्ते": {
+    "english": "They speak (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. plur. (भाष)",
+    "hindi": "वे सब बोलते हैं (आत्मनेपद लट् लकार, प्रथम पुरुष बहुवचन)"
+  },
+  "भाषसे": {
+    "english": "You speak (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. sing. (भाष)",
+    "hindi": "तू बोलता है (आत्मनेपद लट् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "भाषामहे": {
+    "english": "We speak (Present)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. plur. (भाष)",
+    "hindi": "हम सब बोलते हैं (आत्मनेपद लट् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "भाषावहे": {
+    "english": "We two speak (Present)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. dual (भाष)",
+    "hindi": "हम दोनों बोलते हैं (आत्मनेपद लट् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "भाषिष्यते": {
+    "english": "He/she will speak (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 3rd pers. sing. (भाष)",
+    "hindi": "बोलेगा (आत्मनेपद लृट् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "भाषिष्यध्वे": {
+    "english": "You all will speak (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 2nd pers. plur. (भाष)",
+    "hindi": "तुम सब बोलोगे (आत्मनेपद लृट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "भाषिष्यन्ते": {
+    "english": "They will speak (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 3rd pers. plur. (भाष)",
+    "hindi": "वे सब बोलेंगे (आत्मनेपद लृट् लकार, प्रथम पुरुष बहुवचन)"
+  },
+  "भाषिष्यसे": {
+    "english": "You will speak (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 2nd pers. sing. (भाष)",
+    "hindi": "तू बोलेगा (आत्मनेपद लृट् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "भाषिष्यामहे": {
+    "english": "We will speak (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 1st pers. plur. (भाष)",
+    "hindi": "हम सब बोलेंगे (आत्मनेपद लृट् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "भाषिष्यावहे": {
+    "english": "We two will speak (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 1st pers. dual (भाष)",
+    "hindi": "हम दोनों बोलेंगे (आत्मनेपद लृट् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "भाषिष्ये": {
+    "english": "I will speak (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 1st pers. sing. (भाष)",
+    "hindi": "मैं बोलूँगा (आत्मनेपद लृट् लकार, उत्तम पुरुष एकवचन)"
+  },
+  "भाषिष्येते": {
+    "english": "They two will speak (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 3rd pers. dual (भाष)",
+    "hindi": "वे दोनों बोलेंगे (आत्मनेपद लृट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "भाषिष्येथे": {
+    "english": "You two will speak (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 2nd pers. dual (भाष)",
+    "hindi": "तुम दोनों बोलोगे (आत्मनेपद लृट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "भाषे": {
+    "english": "I speak (Present)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. sing. (भाष)",
+    "hindi": "मैं बोलता हूँ (आत्मनेपद लट् लकार, उत्तम पुरुष एकवचन)"
+  },
+  "भाषेते": {
+    "english": "They two speak (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. dual (भाष)",
+    "hindi": "वे दोनों बोलते हैं (आत्मनेपद लट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "भाषेथे": {
+    "english": "You two speak (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. dual (भाष)",
+    "hindi": "तुम दोनों बोलते हो (आत्मनेपद लट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "भिन्न": {
+    "english": "Different / distinct",
+    "grammar": "Hindi adj.",
+    "hindi": "भिन्न / अलग"
+  },
+  "भू": {
+    "english": "Root 'bhū' (to be / become)",
+    "grammar": "Verbal root (भ्वादिगण परस्मैपद)",
+    "hindi": "'भू' धातु (होना)"
+  },
+  "भूआदेश": {
+    "english": "Substitution of 'bhū' for 'as' root",
+    "grammar": "Grammatical substitution term",
+    "hindi": "भू-आदेश (अस् के स्थान पर भू)"
+  },
+  "भूआदेशः": {
+    "english": "Substitution of 'bhū'",
+    "grammar": "Compound noun, m., nom. sing.",
+    "hindi": "भू-आदेश"
+  },
+  "भूत": {
+    "english": "Past",
+    "grammar": "Hindi noun/adj., m.",
+    "hindi": "भूत काल"
+  },
+  "भूभव": {
+    "english": "Bhū / bhava (to be/become)",
+    "grammar": "Root and modified present stem",
+    "hindi": "भू (भव) धातु"
+  },
+  "ममैव": {
+    "english": "Mine alone (mama + eva)",
+    "grammar": "Vriddhi sandhi compound pronoun",
+    "hindi": "मेरा ही (मम + एव)"
+  },
+  "महतीच्छा": {
+    "english": "Great desire (mahatī + icchā)",
+    "grammar": "Dirgha sandhi compound, f., nom. sing.",
+    "hindi": "बड़ी इच्छा (महती + इच्छा)"
+  },
+  "महर्षिः": {
+    "english": "Great sage (mahā + ṛṣih)",
+    "grammar": "Guna sandhi compound, m., nom. sing.",
+    "hindi": "महर्षि (महा + ऋषिः)"
+  },
+  "महा": {
+    "english": "Great / big",
+    "grammar": "Compound prefix / adj.",
+    "hindi": "महान् / बड़ा"
+  },
+  "महोत्सवः": {
+    "english": "Grand festival (mahā + utsavah)",
+    "grammar": "Guna sandhi compound, m., nom. sing.",
+    "hindi": "बड़ा उत्सव / महोत्सव (महा + उत्सवः)"
+  },
+  "मिलति": {
+    "english": "Meets / finds",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. sing. (मिल्)",
+    "hindi": "मिलता है (लट् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "मिल्": {
+    "english": "Root 'mil' (to meet / join)",
+    "grammar": "Verbal root (तुदादिगण परस्मैपद)",
+    "hindi": "'मिल्' धातु (मिलना)"
+  },
+  "यण्": {
+    "english": "Yan pratyahara (semivowels y, v, r, l)",
+    "grammar": "Grammatical pratyahara",
+    "hindi": "यण् प्रत्याहार (य्, व्, र्, ल्)"
+  },
+  "यण्सन्धिः": {
+    "english": "Yan sandhi (semivowel substitution)",
+    "grammar": "Compound noun, f., nom. sing.",
+    "hindi": "यण् सन्धि"
+  },
+  "यण्सन्धिअभ्यासः": {
+    "english": "Yan sandhi exercise",
+    "grammar": "Compound noun, m., nom. sing.",
+    "hindi": "यण् सन्धि अभ्यास"
+  },
+  "यु": {
+    "english": "Conjunct syllable 'yu'",
+    "grammar": "Phonetic conjunct",
+    "hindi": "यु (य + उ)"
+  },
+  "युज्": {
+    "english": "Root 'yuj' (to join / unite)",
+    "grammar": "Verbal root (रुधादिगण उभयपद)",
+    "hindi": "'युज्' धातु (जोड़ना)"
+  },
+  "योजयामः": {
+    "english": "We join / connect",
+    "grammar": "Verb, causal laṭ lakāra, 1st pers. plur.",
+    "hindi": "हम सब जोड़ते हैं"
+  },
+  "रवीन्द्रः": {
+    "english": "Sun / proper name Ravindra (ravi + indrah)",
+    "grammar": "Dirgha sandhi compound, m., nom. sing.",
+    "hindi": "रवीन्द्र (रवि + इन्द्रः)"
+  },
+  "राज्": {
+    "english": "Root 'rāj' (to shine / be splendid)",
+    "grammar": "Verbal root (भ्वादिगण आत्मनेपद)",
+    "hindi": "'राज्' धातु (शोभित होना / चमकना)"
+  },
+  "लकार": {
+    "english": "Tense or mood marker",
+    "grammar": "Hindi noun, m.",
+    "hindi": "लकार (क्रिया का काल या भाव)"
+  },
+  "लकाराः": {
+    "english": "Lakarasa (10 tenses and moods)",
+    "grammar": "Noun, m., nom. plur. (लकार)",
+    "hindi": "लकार (क्रियापदों के काल व भाव)"
+  },
+  "लकारों": {
+    "english": "Lakaras (oblique)",
+    "grammar": "Hindi noun, m. plur. oblique",
+    "hindi": "लकारों में"
+  },
+  "लगभग": {
+    "english": "Approximately / around",
+    "grammar": "Hindi adverb",
+    "hindi": "लगभग"
+  },
+  "लङ्": {
+    "english": "Lan lakāra (Past tense)",
+    "grammar": "Grammatical tense marker",
+    "hindi": "लङ् लकार (अनद्यतन भूतकाल)"
+  },
+  "लट्": {
+    "english": "Lat lakāra (Present tense)",
+    "grammar": "Grammatical tense marker",
+    "hindi": "लट् लकार (वर्तमान काल)"
+  },
+  "लट्लकारस्य": {
+    "english": "Of Lat lakāra (Present tense)",
+    "grammar": "Compound noun, m., gen. sing.",
+    "hindi": "लट् लकार का"
+  },
+  "लिखतः": {
+    "english": "They two write (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. dual (लिख्)",
+    "hindi": "वे दोनों लिखते हैं (लट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "लिखथ": {
+    "english": "You all write (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. plur. (लिख्)",
+    "hindi": "तुम सब लिखते हो (लट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "लिखथः": {
+    "english": "You two write (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. dual (लिख्)",
+    "hindi": "तुम दोनों लिखते हो (लट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "लिखन्ति": {
+    "english": "They write (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. plur. (लिख्)",
+    "hindi": "वे सब लिखते हैं (लट् लकार, प्रथम पुरुष बहुवचन)"
+  },
+  "लिखसि": {
+    "english": "You write (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. sing. (लिख्)",
+    "hindi": "तू लिखता है (लट् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "लिखामः": {
+    "english": "We write (Present)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. plur. (लिख्)",
+    "hindi": "हम सब लिखते हैं (लट् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "लिखूँगा": {
+    "english": "I will write",
+    "grammar": "Hindi future verb",
+    "hindi": "लिखूँगा"
+  },
+  "लिखेगा": {
+    "english": "Will write (singular)",
+    "grammar": "Hindi future verb",
+    "hindi": "लिखेगा"
+  },
+  "लिखोगे": {
+    "english": "You will write",
+    "grammar": "Hindi future verb",
+    "hindi": "लिखोगे"
+  },
+  "लिख्": {
+    "english": "Root 'likh' (to write)",
+    "grammar": "Verbal root (तुदादिगण परस्मैपद)",
+    "hindi": "'लिख्' धातु (लिखना)"
+  },
+  "लृट्": {
+    "english": "Lrt lakāra (Future tense)",
+    "grammar": "Grammatical tense marker",
+    "hindi": "लृट् लकार (सामान्य भविष्यत्काल)"
+  },
+  "लेखिष्यथ": {
+    "english": "You all will write (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 2nd pers. plur. (लिख्)",
+    "hindi": "तुम सब लिखोगे (लृट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "लेखिष्यथः": {
+    "english": "You two will write (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 2nd pers. dual (लिख्)",
+    "hindi": "तुम दोनों लिखोगे (लृट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "लेखिष्यसि": {
+    "english": "You will write (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 2nd pers. sing. (लिख्)",
+    "hindi": "तू लिखेगा (लृट् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "लेखिष्यामः": {
+    "english": "We will write (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 1st pers. plur. (लिख्)",
+    "hindi": "हम सब लिखेंगे (लृट् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "लेखिष्यामि": {
+    "english": "I will write (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 1st pers. sing. (लिख्)",
+    "hindi": "मैं लिखूँगा (लृट् लकार, उत्तम पुरुष एकवचन)"
+  },
+  "लोट्": {
+    "english": "Lot lakāra (Imperative mood)",
+    "grammar": "Grammatical mood marker",
+    "hindi": "लोट् लकार (आज्ञार्थक काल)"
+  },
+  "लोट्लकारः": {
+    "english": "Imperative mood (Lot lakāra)",
+    "grammar": "Compound noun, m., nom. sing.",
+    "hindi": "लोट् लकार"
+  },
+  "वद्": {
+    "english": "Root 'vad' (to speak / tell)",
+    "grammar": "Verbal root (भ्वादिगण परस्मैपद)",
+    "hindi": "'वद्' धातु (बोलना)"
+  },
+  "वर्णेषु": {
+    "english": "In letters / among sounds",
+    "grammar": "Noun, m., loc. plur. (वर्ण)",
+    "hindi": "वर्णों में"
+  },
+  "वर्ध": {
+    "english": "Stem 'vardha' of root vṛdh (to grow)",
+    "grammar": "Verbal stem (वृध्)",
+    "hindi": "वर्ध (वृध् धातु का रूप)"
+  },
+  "विकार": {
+    "english": "Phonetic change / modification",
+    "grammar": "Hindi noun, m. (संस्कृत: विकारः)",
+    "hindi": "विकार (परिवर्तन)"
+  },
+  "विधिलिङ्": {
+    "english": "Vidhilin lakāra (Potential mood)",
+    "grammar": "Grammatical mood marker",
+    "hindi": "विधिलिङ् लकार (प्रार्थना/चाहिए अर्थ में)"
+  },
+  "विधिलिङ्लकारः": {
+    "english": "Potential mood (Vidhilin)",
+    "grammar": "Compound noun, m., nom. sing.",
+    "hindi": "विधिलिङ् लकार"
+  },
+  "विधु": {
+    "english": "The Moon",
+    "grammar": "Noun, m., base form (विधुः)",
+    "hindi": "चन्द्रमा (विधु)"
+  },
+  "विधूदयः": {
+    "english": "Moonrise (vidhu + udayah)",
+    "grammar": "Dirgha sandhi compound, m., nom. sing.",
+    "hindi": "चन्द्रोदय (विधु + उदयः)"
+  },
+  "विशेषधातवः": {
+    "english": "Special verbs / irregular conjugations",
+    "grammar": "Compound noun, m., nom. plur.",
+    "hindi": "विशेष धातुएँ"
+  },
+  "विशेषपरिवर्तनम्": {
+    "english": "Special stem changes",
+    "grammar": "Compound noun, n., nom. sing.",
+    "hindi": "विशेष परिवर्तन"
+  },
+  "विसर्गसंधि": {
+    "english": "Visarga sandhi",
+    "grammar": "Compound grammatical term",
+    "hindi": "विसर्ग सन्धि"
+  },
+  "विसर्गसन्धिः": {
+    "english": "Visarga sandhi",
+    "grammar": "Compound noun, f., nom. sing.",
+    "hindi": "विसर्ग सन्धि"
+  },
+  "वृद्धिसन्धिः": {
+    "english": "Vriddhi sandhi (growth to ai, au)",
+    "grammar": "Compound noun, f., nom. sing.",
+    "hindi": "वृद्धि सन्धि"
+  },
+  "वृद्धिसन्धिअभ्यासः": {
+    "english": "Vriddhi sandhi exercise",
+    "grammar": "Compound noun, m., nom. sing.",
+    "hindi": "वृद्धि सन्धि अभ्यास"
+  },
+  "वृध्": {
+    "english": "Root 'vṛdh' (to grow / increase)",
+    "grammar": "Verbal root (भ्वादिगण आत्मनेपद)",
+    "hindi": "'वृध्' धातु (बढ़ना)"
+  },
+  "व्यंजनसंधि": {
+    "english": "Consonant sandhi",
+    "grammar": "Compound grammatical term",
+    "hindi": "व्यंजन सन्धि (हल्-सन्धि)"
+  },
+  "व्यञ्जनसन्धिः": {
+    "english": "Consonant sandhi (Hal-sandhi)",
+    "grammar": "Compound noun, f., nom. sing.",
+    "hindi": "व्यञ्जन सन्धि"
+  },
+  "व्याकरणिक": {
+    "english": "Grammatical",
+    "grammar": "Hindi adj.",
+    "hindi": "व्याकरणिक"
+  },
+  "व्याकरणे": {
+    "english": "In grammar",
+    "grammar": "Noun, n., loc. sing. (व्याकरण)",
+    "hindi": "व्याकरण में"
+  },
+  "शक्": {
+    "english": "Root 'śak' (to be able / can)",
+    "grammar": "Verbal root (स्वादिगण परस्मैपद)",
+    "hindi": "'शक्' धातु (समर्थ होना)"
+  },
+  "शृणुतः": {
+    "english": "They two hear (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. dual (श्रु)",
+    "hindi": "वे दोनों सुनते हैं (लट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "शृणुथ": {
+    "english": "You all hear (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. plur. (श्रु)",
+    "hindi": "तुम सब सुनते हो (लट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "शृणूथः": {
+    "english": "You two hear (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. dual (श्रु)",
+    "hindi": "तुम दोनों सुनते हो (लट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "शृणोति": {
+    "english": "He/she hears (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. sing. (श्रु)",
+    "hindi": "सुनता है (लट् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "शृणोमि": {
+    "english": "I hear (Present)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. sing. (श्रु)",
+    "hindi": "मैं सुनता हूँ (लट् लकार, उत्तम पुरुष एकवचन)"
+  },
+  "शृणोषि": {
+    "english": "You hear (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. sing. (श्रु)",
+    "hindi": "तू सुनता है (लट् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "शृण्मःशृणुमः": {
+    "english": "We hear (variant forms of śru)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. plur.",
+    "hindi": "हम सब सुनते हैं (शृण्मः / शृणुमः)"
+  },
+  "शृण्वःशृणुवः": {
+    "english": "We two hear (variant forms of śru)",
+    "grammar": "Verb, laṭ lakāra, 1st pers. dual",
+    "hindi": "हम दोनों सुनते हैं (शृण्वः / शृणुवः)"
+  },
+  "शृण्वन्ति": {
+    "english": "They hear (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. plur. (श्रु)",
+    "hindi": "वे सब सुनते हैं (लट् लकार, प्रथम पुरुष बहुवचन)"
+  },
+  "शोभित": {
+    "english": "Adorned / shining (gloss for राज्)",
+    "grammar": "Hindi adj.",
+    "hindi": "शोभित होना"
+  },
+  "श्रु": {
+    "english": "Root 'śru' (to hear / listen)",
+    "grammar": "Verbal root (स्वादिगण परस्मैपद)",
+    "hindi": "'श्रु' धातु (सुनना)"
+  },
+  "श्रोष्यति": {
+    "english": "He/she will hear (Future)",
+    "grammar": "Verb, lṛṭ lakāra, 3rd pers. sing. (श्रु)",
+    "hindi": "सुनेगा (लृट् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "संधि": {
+    "english": "Sandhi / euphonic junction",
+    "grammar": "Hindi noun, f. (संस्कृत: सन्धिः)",
+    "hindi": "सन्धि (वर्णों का मेल)"
+  },
+  "संधियाँ": {
+    "english": "Sandhis (plural)",
+    "grammar": "Hindi noun, f. plur.",
+    "hindi": "संधियाँ"
+  },
+  "संधिविच्छेद": {
+    "english": "Splitting of sandhi compound",
+    "grammar": "Compound grammatical term",
+    "hindi": "सन्धि-विच्छेद"
+  },
+  "संहिता": {
+    "english": "Phonetic conjunction / close proximity",
+    "grammar": "Noun, f., nom. sing.",
+    "hindi": "संहिता (वर्णों की अत्यधिक निकटता)"
+  },
+  "संहिताद्वारा": {
+    "english": "Through phonetic conjunction",
+    "grammar": "Compound noun with postposition",
+    "hindi": "संहिता के द्वारा"
+  },
+  "सन्तु": {
+    "english": "Let them be (Imperative)",
+    "grammar": "Verb, loṭ lakāra, 3rd pers. plur. (अस्)",
+    "hindi": "वे सब हों (लोट् लकार, प्रथम पुरुष बहुवचन)"
+  },
+  "सन्धयः": {
+    "english": "Sandhis (plural)",
+    "grammar": "Noun, m., nom. plur. (सन्धि)",
+    "hindi": "सन्धियाँ (वर्ण-संयोग)"
+  },
+  "सन्धिपरिचयः": {
+    "english": "Introduction to Sandhi",
+    "grammar": "Compound noun, m., nom. sing.",
+    "hindi": "सन्धि का सामान्य परिचय"
+  },
+  "सन्धिविच्छेद": {
+    "english": "Sandhi splitting",
+    "grammar": "Compound noun, m.",
+    "hindi": "सन्धि-विच्छेद"
+  },
+  "सन्धीनां": {
+    "english": "Of Sandhis",
+    "grammar": "Noun, m., gen. plur. (सन्धि)",
+    "hindi": "सन्धियों का"
+  },
+  "सम्भावना": {
+    "english": "Possibility / potentiality",
+    "grammar": "Noun, f., nom. sing.",
+    "hindi": "सम्भावना"
+  },
+  "सवर्णदीर्घ": {
+    "english": "Savarna-dirgha (prolonging identical vowels)",
+    "grammar": "Compound grammatical term",
+    "hindi": "सवर्णदीर्घ"
+  },
+  "सवर्णदीर्घसन्धिः": {
+    "english": "Savarna-dirgha sandhi",
+    "grammar": "Compound noun, f., nom. sing.",
+    "hindi": "सवर्णदीर्घ सन्धि"
+  },
+  "सामीप्यं": {
+    "english": "Proximity / extreme closeness",
+    "grammar": "Noun, n., nom./acc. sing. (सामीप्यम्)",
+    "hindi": "सामीप्य / अत्यधिक निकटता"
+  },
+  "सामीप्यम्": {
+    "english": "Proximity / closeness",
+    "grammar": "Noun, n., nom./acc. sing.",
+    "hindi": "निकटता"
+  },
+  "सुनना": {
+    "english": "To hear (gloss for श्रु)",
+    "grammar": "Hindi verbal noun",
+    "hindi": "सुनना"
+  },
+  "सुरेन्द्रः": {
+    "english": "Lord Indra / king of gods (sura + indrah)",
+    "grammar": "Guna sandhi compound, m., nom. sing.",
+    "hindi": "सुरेन्द्र (सुर + इन्द्रः)"
+  },
+  "स्तम्": {
+    "english": "You two be! (Imperative)",
+    "grammar": "Verb, loṭ lakāra, 2nd pers. dual (अस्)",
+    "hindi": "तुम दोनों होओ! (लोट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "स्ताम्": {
+    "english": "Let them two be (Imperative)",
+    "grammar": "Verb, loṭ lakāra, 3rd pers. dual (अस्)",
+    "hindi": "वे दोनों हों (लोट् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "स्थ": {
+    "english": "You all are (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. plur. (अस्)",
+    "hindi": "तुम सब हो (लट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "स्थः": {
+    "english": "You two are (Present)",
+    "grammar": "Verb, laṭ lakāra, 2nd pers. dual (अस्)",
+    "hindi": "तुम दोनों हो (लट् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "स्पर्ध्": {
+    "english": "Root 'spardh' (to compete / rival)",
+    "grammar": "Verbal root (भ्वादिगण आत्मनेपद)",
+    "hindi": "'स्पर्ध्' धातु (होड़ करना / स्पर्धा करना)"
+  },
+  "स्मृ": {
+    "english": "Root 'smṛ' (to remember / recollect)",
+    "grammar": "Verbal root (भ्वादिगण परस्मैपद)",
+    "hindi": "'स्मृ' धातु (स्मरण करना)"
+  },
+  "स्मृस्मर": {
+    "english": "Smṛ / smara (to remember)",
+    "grammar": "Root and modified present stem",
+    "hindi": "स्मृ (स्मर) धातु"
+  },
+  "स्याः": {
+    "english": "You should be (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 2nd pers. sing. (अस्)",
+    "hindi": "तुझे होना चाहिए (विधिलिङ् लकार, मध्यम पुरुष एकवचन)"
+  },
+  "स्यात": {
+    "english": "You all should be (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 2nd pers. plur. (अस्)",
+    "hindi": "तुम सबको होना चाहिए (विधिलिङ् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "स्यातम्": {
+    "english": "You two should be (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 2nd pers. dual (अस्)",
+    "hindi": "तुम दोनों को होना चाहिए (विधिलिङ् लकार, मध्यम पुरुष द्विवचन)"
+  },
+  "स्याताम्": {
+    "english": "They two should be (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 3rd pers. dual (अस्)",
+    "hindi": "उन दोनों को होना चाहिए (विधिलिङ् लकार, प्रथम पुरुष द्विवचन)"
+  },
+  "स्याम": {
+    "english": "We should be (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 1st pers. plur. (अस्)",
+    "hindi": "हम सबको होना चाहिए (विधिलिङ् लकार, उत्तम पुरुष बहुवचन)"
+  },
+  "स्याम्": {
+    "english": "I should be (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 1st pers. sing. (अस्)",
+    "hindi": "मुझे होना चाहिए (विधिलिङ् लकार, उत्तम पुरुष एकवचन)"
+  },
+  "स्याव": {
+    "english": "We two should be (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 1st pers. dual (अस्)",
+    "hindi": "हम दोनों को होना चाहिए (विधिलिङ् लकार, उत्तम पुरुष द्विवचन)"
+  },
+  "स्युः": {
+    "english": "They should be (Potential)",
+    "grammar": "Verb, vidhiliṅ lakāra, 3rd pers. plur. (अस्)",
+    "hindi": "उन सबको होना चाहिए (विधिलिङ् लकार, प्रथम पुरुष बहुवचन)"
+  },
+  "स्वरसंधि": {
+    "english": "Vowel sandhi",
+    "grammar": "Compound grammatical term",
+    "hindi": "स्वर सन्धि"
+  },
+  "स्वरसन्धयः": {
+    "english": "Vowel sandhis",
+    "grammar": "Compound noun, f., nom. plur.",
+    "hindi": "स्वर संधियाँ"
+  },
+  "स्वरसन्धिः": {
+    "english": "Vowel sandhi",
+    "grammar": "Compound noun, f., nom. sing.",
+    "hindi": "स्वर सन्धि"
+  },
+  "स्वागतम्": {
+    "english": "Welcome (su + āgatam)",
+    "grammar": "Yan sandhi compound noun, n., nom. sing.",
+    "hindi": "स्वागत (सु + आगतम्)"
+  },
+  "हँसना": {
+    "english": "To laugh (gloss for हस्)",
+    "grammar": "Hindi verbal noun",
+    "hindi": "हँसना"
+  },
+  "हल्संधि": {
+    "english": "Consonant sandhi (Hal-sandhi)",
+    "grammar": "Compound grammatical term",
+    "hindi": "हल्-सन्धि (व्यंजन सन्धि)"
+  },
+  "हसति": {
+    "english": "Laughs (Present)",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. sing. (हस्)",
+    "hindi": "हँसता है (लट् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "हस्": {
+    "english": "Root 'has' (to laugh / smile)",
+    "grammar": "Verbal root (भ्वादिगण परस्मैपद)",
+    "hindi": "'हस्' धातु (हँसना)"
+  },
+  "होऊँ": {
+    "english": "May I be (gloss for असानि)",
+    "grammar": "Hindi optative verb",
+    "hindi": "मैं होऊँ"
+  },
+  "होकल्याण": {
+    "english": "Be auspicious (gloss for अस्तु)",
+    "grammar": "Compound Hindi gloss",
+    "hindi": "हो अथवा कल्याण हो"
   }
 }
