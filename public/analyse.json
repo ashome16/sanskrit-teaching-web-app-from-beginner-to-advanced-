@@ -45574,5 +45574,1585 @@
   "हेमलता": {
     "english": "Hemalata (proper name)",
     "grammar": "Proper noun, f., nom. sing."
+  },
+  "अंग्रेजों": {
+    "english": "Britishers / English rulers (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "अंतरीप": {
+    "english": "Cape / peninsula / headland",
+    "grammar": "Hindi noun, m. (संस्कृत: अन्तरीपः)"
+  },
+  "अकरवम्": {
+    "english": "I did / I performed",
+    "grammar": "Verb, lṅ. lakāra (past), 1st pers. sing. (कृ धातु)"
+  },
+  "अकरोत्": {
+    "english": "Did / made",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (कृ धातु)"
+  },
+  "अगच्छम्": {
+    "english": "I went",
+    "grammar": "Verb, lṅ. lakāra (past), 1st pers. sing. (गम् धातु)"
+  },
+  "अगादेमन्": {
+    "english": "Agademan (ancient Greek/Ptolemaic name)",
+    "grammar": "Proper noun, n."
+  },
+  "अङ्गादेमन्": {
+    "english": "Angademan (historical name)",
+    "grammar": "Proper noun, n."
+  },
+  "अण्डमान": {
+    "english": "Andaman",
+    "grammar": "Proper noun"
+  },
+  "अण्डमानः": {
+    "english": "Andaman (island)",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "अण्डमानजनाः": {
+    "english": "People of Andaman",
+    "grammar": "Compound noun, m., nom. plur."
+  },
+  "अण्डमानद्वीपसमूह": {
+    "english": "Andaman archipelago",
+    "grammar": "Compound noun, m."
+  },
+  "अण्डमानद्वीपसमूहः": {
+    "english": "Andaman archipelago / island group",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "अण्डमानद्वीपस्य": {
+    "english": "Of the Andaman island",
+    "grammar": "Noun, m., gen. sing."
+  },
+  "अण्डमानद्वीपे": {
+    "english": "In the Andaman island",
+    "grammar": "Noun, m., loc. sing."
+  },
+  "अण्डमानस्य": {
+    "english": "Of Andaman",
+    "grammar": "Proper noun, m., gen. sing."
+  },
+  "अण्डमानी": {
+    "english": "Andamani (indigenous tribe)",
+    "grammar": "Proper noun / tribe name"
+  },
+  "अण्डमानीओङ्गीजारवा": {
+    "english": "Andamani, Onge, and Jarawa (tribes)",
+    "grammar": "Dvandva compound noun"
+  },
+  "अण्डमानीओङ्गीजारवाजनजातीनाम्": {
+    "english": "Of Andamani, Onge, and Jarawa tribes",
+    "grammar": "Compound noun, f., gen. plur."
+  },
+  "अत्रैव": {
+    "english": "Right here / in this very place (अत्र + एव)",
+    "grammar": "Sandhi / compound adverb"
+  },
+  "अधोलिखितानि": {
+    "english": "Following / written below",
+    "grammar": "Adj., n., nom./acc. plur."
+  },
+  "अन्तर्भागः": {
+    "english": "Inner part / interior",
+    "grammar": "Noun, m., nom. sing. (अन्तर् + भाग)"
+  },
+  "अन्यतमः": {
+    "english": "One among many",
+    "grammar": "Pronoun/Adj., m., nom. sing."
+  },
+  "अन्यैः": {
+    "english": "By other / with others",
+    "grammar": "Pronoun/Adj., m./n., inst. plur. (अन्य)"
+  },
+  "अपना": {
+    "english": "One's own",
+    "grammar": "Hindi possessive adj."
+  },
+  "अपरं": {
+    "english": "Another / other (neuter)",
+    "grammar": "Pronoun/Adj., n., nom./acc. sing."
+  },
+  "अलङ्कृतः": {
+    "english": "Adorned / decorated",
+    "grammar": "Past pass. part., m., nom. sing. (अलम् + कृ + क्त)"
+  },
+  "अवश्यमेव": {
+    "english": "Certainly / surely (अवश्यम् + एव)",
+    "grammar": "Sandhi / compound adverb"
+  },
+  "अविस्मरणीयम्": {
+    "english": "Unforgettable / memorable",
+    "grammar": "Future pass. part. (अनीयर्), n., nom. sing."
+  },
+  "अष्टसु": {
+    "english": "In the eight",
+    "grammar": "Numeral, loc. plur. (अष्टन्)"
+  },
+  "आकर्षक": {
+    "english": "Attractive / charming",
+    "grammar": "Hindi adj. (संस्कृत: आकर्षकः)"
+  },
+  "आकर्षकं": {
+    "english": "Attractive / charming",
+    "grammar": "Adj., n., nom./acc. sing. (आकर्षकम्)"
+  },
+  "आकर्षकम्": {
+    "english": "Attractive / charming",
+    "grammar": "Adj., n., nom./acc. sing."
+  },
+  "आङ्ग्लशासनेन": {
+    "english": "By British rule / governance",
+    "grammar": "Noun, n., inst. sing. (आङ्ग्लशासन)"
+  },
+  "आज़ादी": {
+    "english": "Freedom / independence",
+    "grammar": "Hindi noun, f. (संस्कृत: स्वातन्त्र्यम्)"
+  },
+  "आजीविकायै": {
+    "english": "For livelihood / subsistence",
+    "grammar": "Noun, f., dat. sing. (आजीविका)"
+  },
+  "आजीविकार्थं": {
+    "english": "For the purpose of livelihood",
+    "grammar": "Compound adverbial phrase (आजीविका + अर्थम्)"
+  },
+  "आदिवासी": {
+    "english": "Indigenous / tribal people",
+    "grammar": "Hindi noun, m."
+  },
+  "आधिकारिक": {
+    "english": "Official / authoritative",
+    "grammar": "Hindi adj. (संस्कृत: आधिकारिकः)"
+  },
+  "आधिकारिकजालपुटे": {
+    "english": "On the official website",
+    "grammar": "Compound noun, n., loc. sing."
+  },
+  "आपणे": {
+    "english": "In the shop / marketplace",
+    "grammar": "Noun, m., loc. sing. (आपणः)"
+  },
+  "आरपार": {
+    "english": "Through and through / across",
+    "grammar": "Hindi adv."
+  },
+  "इतिहास": {
+    "english": "History",
+    "grammar": "Hindi noun, m. (संस्कृत: इतिहासः)"
+  },
+  "इतिहासः": {
+    "english": "History",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "इतिहासे": {
+    "english": "In history",
+    "grammar": "Noun, m., loc. sing. (इतिहास)"
+  },
+  "इत्यादीनाम्": {
+    "english": "Of such things / of etcetera",
+    "grammar": "Compound pronoun, m./n., gen. plur."
+  },
+  "इसकी": {
+    "english": "Its / of this",
+    "grammar": "Hindi possessive pron., f."
+  },
+  "उत्तमानि": {
+    "english": "Best / excellent (books/things)",
+    "grammar": "Adj., n., nom./acc. plur. (उत्तम)"
+  },
+  "उत्पादनेन": {
+    "english": "By production / manufacture",
+    "grammar": "Noun, n., inst. sing. (उत्पादन)"
+  },
+  "उद्यानानां": {
+    "english": "Of orchards / gardens / plantations",
+    "grammar": "Noun, n., gen. plur. (उद्यान)"
+  },
+  "उद्योगविषयः": {
+    "english": "Topic of industry / enterprise",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "उद्योगस्य": {
+    "english": "Of industry / enterprise",
+    "grammar": "Noun, m., gen. sing. (उद्योग)"
+  },
+  "उन्नतान्": {
+    "english": "Tall / lofty (trees)",
+    "grammar": "Adj., m., acc. plur. (उन्नत)"
+  },
+  "उपस्कराः": {
+    "english": "Furniture / household goods",
+    "grammar": "Noun, m., nom. plur. (उपस्कर)"
+  },
+  "ऋचा": {
+    "english": "Richa (female student name)",
+    "grammar": "Proper noun, f., nom. sing."
+  },
+  "एलीफेंटा": {
+    "english": "Elephant (beach)",
+    "grammar": "Loanword / proper name"
+  },
+  "एलीफेण्टातटे": {
+    "english": "At Elephant Beach",
+    "grammar": "Compound noun, m., loc. sing."
+  },
+  "एषः": {
+    "english": "This (masculine)",
+    "grammar": "Pronoun, m., nom. sing. (एतद्)"
+  },
+  "ओङ्गी": {
+    "english": "Onge (indigenous tribe of Little Andaman)",
+    "grammar": "Proper noun / tribal name"
+  },
+  "कच्छपः": {
+    "english": "Turtle / tortoise",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "कच्छपैः": {
+    "english": "By turtles / tortoises",
+    "grammar": "Noun, m., inst. plur. (कच्छप)"
+  },
+  "कछुआ": {
+    "english": "Turtle / tortoise",
+    "grammar": "Hindi noun, m. (संस्कृत: कच्छपः)"
+  },
+  "कछुओं": {
+    "english": "Turtles (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "कथयितुम्": {
+    "english": "To tell / to speak",
+    "grammar": "Infinitive of purpose (कथ् धातु + तुमुन्)"
+  },
+  "कन्दुकेन": {
+    "english": "With a ball",
+    "grammar": "Noun, m., inst. sing. (कन्दुक)"
+  },
+  "कमाई": {
+    "english": "Earnings / livelihood",
+    "grammar": "Hindi noun, f. (संस्कृत: आजीविका)"
+  },
+  "कलाकृतियाँ": {
+    "english": "Artifacts / crafts",
+    "grammar": "Hindi noun, f. plur. (संस्कृत: शिल्पानि)"
+  },
+  "कल्पना": {
+    "english": "Imagination / conception",
+    "grammar": "Hindi noun, f. (संस्कृत: कल्पना)"
+  },
+  "कल्पनातीतं": {
+    "english": "Beyond imagination",
+    "grammar": "Compound adj., n., acc. sing."
+  },
+  "कारागारम्": {
+    "english": "Prison / jail",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "कारागारस्य": {
+    "english": "Of the prison",
+    "grammar": "Noun, n., gen. sing. (कारागार)"
+  },
+  "कारागारे": {
+    "english": "In the prison",
+    "grammar": "Noun, n., loc. sing. (कारागार)"
+  },
+  "काला": {
+    "english": "Black",
+    "grammar": "Hindi adj."
+  },
+  "कालापत्थरतटम्": {
+    "english": "Kalapathar Beach (Havelock)",
+    "grammar": "Compound proper noun, m., acc. sing."
+  },
+  "कालापानी": {
+    "english": "Kalapani (Cellular Jail)",
+    "grammar": "Proper noun, n."
+  },
+  "काले": {
+    "english": "In the era / time",
+    "grammar": "Noun, m., loc. sing. (कालः)"
+  },
+  "काश्चन": {
+    "english": "Some / certain (feminine)",
+    "grammar": "Indefinite pronoun, f., nom. plur."
+  },
+  "किञ्चित्": {
+    "english": "A little / somewhat",
+    "grammar": "Indeclinable (अव्यय)"
+  },
+  "किन्नु": {
+    "english": "Is it indeed? / whether?",
+    "grammar": "Interrogative particle (किम् + नु)"
+  },
+  "कीदृशी": {
+    "english": "Of what kind? / how? (feminine)",
+    "grammar": "Interrogative adj., f., nom. sing."
+  },
+  "केंद्रशासित": {
+    "english": "Union territory",
+    "grammar": "Hindi compound adj."
+  },
+  "केन्द्रशासितप्रदेशेषु": {
+    "english": "Among union territories",
+    "grammar": "Compound noun, m., loc. plur."
+  },
+  "क्रांतिकारियों": {
+    "english": "Revolutionaries (oblique)",
+    "grammar": "Hindi noun, m. plur. (संस्कृत: क्रान्तिकारिणाम्)"
+  },
+  "क्रान्तिकारिणां": {
+    "english": "Of the revolutionaries",
+    "grammar": "Noun, m., gen. plur. (क्रान्तिकारिन्)"
+  },
+  "क्रीडन्ति": {
+    "english": "They play",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. plur. (क्रीड् धातु)"
+  },
+  "खोज": {
+    "english": "Search / exploration",
+    "grammar": "Hindi noun, f. (संस्कृत: अन्वेषणम्)"
+  },
+  "गजाय": {
+    "english": "To / for the elephant",
+    "grammar": "Noun, m., dat. sing. (गज)"
+  },
+  "गतिविधयः": {
+    "english": "Activities",
+    "grammar": "Noun, f., nom. plur. (गतिविधि)"
+  },
+  "गतिविधियाँ": {
+    "english": "Activities",
+    "grammar": "Hindi noun, f. plur. (संस्कृत: गतिविधयः)"
+  },
+  "गमिष्यामः": {
+    "english": "We shall go",
+    "grammar": "Verb, lṛṭ lakāra (future), 1st pers. plur. (गम् धातु)"
+  },
+  "गांधी": {
+    "english": "Gandhi",
+    "grammar": "Proper noun"
+  },
+  "गायन्ति": {
+    "english": "They sing",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. plur. (गै धातु)"
+  },
+  "गायामहः": {
+    "english": "We sing (together)",
+    "grammar": "Verb, laṭ lakāra (present), 1st pers. plur. (गै धातु)"
+  },
+  "गुरुकुलम्": {
+    "english": "Gurukula (traditional Vedic academy)",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "गृहे": {
+    "english": "In the house",
+    "grammar": "Noun, n., loc. sing. (गृह)"
+  },
+  "घूमने": {
+    "english": "For roaming / touring",
+    "grammar": "Hindi verbal noun (oblique) (संस्कृत: भ्रमणाय)"
+  },
+  "घोरं": {
+    "english": "Severe / terrible / intense",
+    "grammar": "Adj., n., acc. sing. (घोर)"
+  },
+  "चट्टानों": {
+    "english": "Reefs / rocks (oblique)",
+    "grammar": "Hindi noun, f. plur."
+  },
+  "चन्द्रयानम्": {
+    "english": "Chandrayaan (mooncraft)",
+    "grammar": "Noun, n., nom. sing."
+  },
+  "चलति": {
+    "english": "Runs / operates / moves",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. sing. (चल् धातु)"
+  },
+  "चलती": {
+    "english": "Runs / continues",
+    "grammar": "Hindi verb, f. sing."
+  },
+  "चलन्ति": {
+    "english": "Take place / operate (they)",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. plur. (चल् धातु)"
+  },
+  "चित्राणि": {
+    "english": "Pictures / images",
+    "grammar": "Noun, n., nom./acc. plur. (चित्र)"
+  },
+  "जनजातयः": {
+    "english": "Tribes / indigenous communities",
+    "grammar": "Noun, f., nom. plur. (जनजाति)"
+  },
+  "जनजाति": {
+    "english": "Tribe / indigenous group",
+    "grammar": "Hindi noun, f."
+  },
+  "जनजातिः": {
+    "english": "Tribe / tribal community",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "जनजातियाँ": {
+    "english": "Tribes",
+    "grammar": "Hindi noun, f. plur."
+  },
+  "जनजातियों": {
+    "english": "Tribes (oblique)",
+    "grammar": "Hindi noun, f. plur."
+  },
+  "जनसंख्या": {
+    "english": "Population",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "जलचरैः": {
+    "english": "By / with aquatic animals",
+    "grammar": "Noun, m., inst. plur. (जलचर)"
+  },
+  "जलचरों": {
+    "english": "Aquatic creatures (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "जाएँगे": {
+    "english": "We will go",
+    "grammar": "Hindi verb, future 1st pers. plur."
+  },
+  "जागरिता": {
+    "english": "Awakened / aroused",
+    "grammar": "Past pass. part., f., nom. sing. (जागृ धातु + क्त + टाप्)"
+  },
+  "जातम्": {
+    "english": "Became / turned into",
+    "grammar": "Past pass. part., n., nom. sing. (जन् धातु + क्त)"
+  },
+  "जारवा": {
+    "english": "Jarawa (indigenous Andamanese tribe)",
+    "grammar": "Proper noun / tribal name"
+  },
+  "जालपुटे": {
+    "english": "On the website / web portal",
+    "grammar": "Noun, n., loc. sing. (जालपुट)"
+  },
+  "जीवामः": {
+    "english": "We live",
+    "grammar": "Verb, laṭ lakāra (present), 1st pers. plur. (जीव् धातु)"
+  },
+  "जीविकां": {
+    "english": "Livelihood",
+    "grammar": "Noun, f., acc. sing. (जीविका)"
+  },
+  "जेल": {
+    "english": "Jail / prison",
+    "grammar": "Hindi loanword (संस्कृत: कारागारम्)"
+  },
+  "जैसी": {
+    "english": "Like / such as",
+    "grammar": "Hindi adj., f."
+  },
+  "टापू": {
+    "english": "Island",
+    "grammar": "Hindi noun, m. (संस्कृत: द्वीपः)"
+  },
+  "टूर": {
+    "english": "Tour",
+    "grammar": "Hindi loanword"
+  },
+  "डर": {
+    "english": "Fear",
+    "grammar": "Hindi noun, m. (संस्कृत: भीतिः)"
+  },
+  "डाइविंग": {
+    "english": "Diving",
+    "grammar": "Loanword"
+  },
+  "तटस्य": {
+    "english": "Of the shore / beach",
+    "grammar": "Noun, m., gen. sing. (तट)"
+  },
+  "तटों": {
+    "english": "Beaches / shores (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "तत्पुरुष": {
+    "english": "Tatpurusha (compound type)",
+    "grammar": "Grammatical term"
+  },
+  "तत्रत्यः": {
+    "english": "Belonging to that place / local",
+    "grammar": "Pronominal adj., m., nom. sing."
+  },
+  "तपस्या": {
+    "english": "Penance / austerity",
+    "grammar": "Hindi noun, f. (संस्कृत: तपस्या / तपस्)"
+  },
+  "तल": {
+    "english": "Bottom / surface",
+    "grammar": "Hindi noun, m. (संस्कृत: तलम्)"
+  },
+  "तलम्": {
+    "english": "Bed / bottom / surface",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "तस्यै": {
+    "english": "To her / for her",
+    "grammar": "Pronoun, f., dat. sing. (तद्)"
+  },
+  "तीर्थ": {
+    "english": "Pilgrimage shrine",
+    "grammar": "Hindi noun, m. (संस्कृत: तीर्थम्)"
+  },
+  "तीर्थकल्पा": {
+    "english": "Like a sacred pilgrimage",
+    "grammar": "Compound adj., f., nom. sing."
+  },
+  "त्रितलात्मकम्": {
+    "english": "Three-storeyed",
+    "grammar": "Compound adj., n., nom. sing."
+  },
+  "दत्तम्": {
+    "english": "Given / assigned",
+    "grammar": "Past pass. part., n., nom. sing. (दा धातु + क्त)"
+  },
+  "दमनार्थं": {
+    "english": "For the suppression / crushing",
+    "grammar": "Compound adverb (दमन + अर्थम्)"
+  },
+  "दर्शन": {
+    "english": "Visiting / seeing",
+    "grammar": "Hindi noun, m. (संस्कृत: दर्शनम्)"
+  },
+  "दिखाते": {
+    "english": "Showing",
+    "grammar": "Hindi participle"
+  },
+  "दीपा": {
+    "english": "Deepa (female student name)",
+    "grammar": "Proper noun, f., nom. sing."
+  },
+  "दीपेशः": {
+    "english": "Deepesh (male student name)",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "दूर": {
+    "english": "Far / distant",
+    "grammar": "Hindi adj./adv."
+  },
+  "दूरे": {
+    "english": "At a distance / far away",
+    "grammar": "Adverbial loc. (दूरम् / दूरे)"
+  },
+  "देशभक्त": {
+    "english": "Patriot",
+    "grammar": "Hindi noun, m. (संस्कृत: देशभक्तः)"
+  },
+  "देशभक्तः": {
+    "english": "Patriot",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "देशस्य": {
+    "english": "Of the country / nation",
+    "grammar": "Noun, m., gen. sing. (देश)"
+  },
+  "द्वीप": {
+    "english": "Island",
+    "grammar": "Hindi noun, m. (संस्कृत: द्वीपः)"
+  },
+  "द्वीपः": {
+    "english": "Island",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "द्वीपसमूहः": {
+    "english": "Island group / archipelago",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "द्वीपस्य": {
+    "english": "Of the island",
+    "grammar": "Noun, m., gen. sing. (द्वीप)"
+  },
+  "द्वीपानां": {
+    "english": "Of islands",
+    "grammar": "Noun, m., gen. plur. (द्वीप)"
+  },
+  "द्वीपे": {
+    "english": "On / in the island",
+    "grammar": "Noun, m., loc. sing. (द्वीप)"
+  },
+  "द्वीपों": {
+    "english": "Islands (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "धन्य": {
+    "english": "Blessed / praiseworthy",
+    "grammar": "Hindi adj."
+  },
+  "धन्याः": {
+    "english": "Blessed / fortunate / praiseworthy",
+    "grammar": "Adj., m., nom. plur. (धन्य)"
+  },
+  "धरोहर": {
+    "english": "Heritage",
+    "grammar": "Hindi noun, f."
+  },
+  "ननु": {
+    "english": "Certainly / indeed / surely",
+    "grammar": "Indeclinable emphatic particle (अव्यय)"
+  },
+  "नाम्नः": {
+    "english": "Of the name",
+    "grammar": "Noun, n., gen. sing. (नामन्)"
+  },
+  "नारिकेलशिल्पानि": {
+    "english": "Coconut handicrafts",
+    "grammar": "Compound noun, n., nom./acc. plur."
+  },
+  "नारिकेलस्य": {
+    "english": "Of coconut",
+    "grammar": "Noun, m., gen. sing. (नारिकेल)"
+  },
+  "नारियल": {
+    "english": "Coconut",
+    "grammar": "Hindi noun, m. (संस्कृत: नारिकेलम्)"
+  },
+  "निर्मलं": {
+    "english": "Clear / pure",
+    "grammar": "Adj., n., nom./acc. sing. (निर्मलम्)"
+  },
+  "निर्मितं": {
+    "english": "Built / constructed",
+    "grammar": "Past pass. part., n., nom. sing. (निर् + मा + क्त)"
+  },
+  "निर्वहन्ति": {
+    "english": "They maintain / carry on",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. plur. (निर् + वह्)"
+  },
+  "निवसन्ति": {
+    "english": "They reside / live",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. plur. (नि + वस्)"
+  },
+  "नीलं": {
+    "english": "Blue",
+    "grammar": "Adj., n., nom./acc. sing. (नीलम्)"
+  },
+  "नीलम्": {
+    "english": "Blue",
+    "grammar": "Adj., n., nom./acc. sing."
+  },
+  "नीलसमुद्रं": {
+    "english": "Blue sea",
+    "grammar": "Compound noun, m., acc. sing."
+  },
+  "नीला": {
+    "english": "Blue",
+    "grammar": "Hindi adj."
+  },
+  "नूतने": {
+    "english": "In the new",
+    "grammar": "Adj., n., loc. sing. (नूतन)"
+  },
+  "नृत्यतः": {
+    "english": "Two dance",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. dual (नृत् धातु)"
+  },
+  "नेशनल": {
+    "english": "National",
+    "grammar": "Loanword"
+  },
+  "नॉर्थबे": {
+    "english": "North Bay",
+    "grammar": "Loanword / proper name"
+  },
+  "नॉर्थबेअन्तरीपे": {
+    "english": "At North Bay peninsula",
+    "grammar": "Compound noun, m., loc. sing."
+  },
+  "नॉर्थबेद्वीपम्": {
+    "english": "North Bay Island",
+    "grammar": "Compound proper noun, m., acc. sing."
+  },
+  "नौसेना": {
+    "english": "Naval / Navy",
+    "grammar": "Noun, f."
+  },
+  "पट्टिकातः": {
+    "english": "From the list / strip",
+    "grammar": "Noun, f., abl. sing. (पट्टिका + तस्)"
+  },
+  "पदों": {
+    "english": "Words / terms (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "परिवर्तितं": {
+    "english": "Changed / modified",
+    "grammar": "Past pass. part., n., nom. sing."
+  },
+  "परे": {
+    "english": "Beyond",
+    "grammar": "Hindi postposition"
+  },
+  "पवित्र": {
+    "english": "Sacred / holy",
+    "grammar": "Hindi adj."
+  },
+  "पात्र": {
+    "english": "Worthy recipient / vessel",
+    "grammar": "Hindi noun, m. (संस्कृत: पात्रम्)"
+  },
+  "पारदर्शि": {
+    "english": "Transparent",
+    "grammar": "Adj., n., nom./acc. sing."
+  },
+  "पारदर्शी": {
+    "english": "Transparent / see-through",
+    "grammar": "Adj., m., nom. sing."
+  },
+  "पार्क": {
+    "english": "Park",
+    "grammar": "Loanword"
+  },
+  "पिबन्ति": {
+    "english": "They drink",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. plur. (पा धातु)"
+  },
+  "पुष्पाणाम्": {
+    "english": "Of flowers",
+    "grammar": "Noun, n., gen. plur. (पुष्प)"
+  },
+  "पूततपः": {
+    "english": "Of purified penance",
+    "grammar": "Bahuvrihi compound, n., nom. sing."
+  },
+  "पोर्टब्लेयर": {
+    "english": "Port Blair",
+    "grammar": "Proper noun"
+  },
+  "पोर्टब्लेयर्": {
+    "english": "Port Blair",
+    "grammar": "Proper noun"
+  },
+  "प्रकृति": {
+    "english": "Nature",
+    "grammar": "Hindi noun, f. (संस्कृत: प्रकृतिः)"
+  },
+  "प्रकृतेः": {
+    "english": "Of nature",
+    "grammar": "Noun, f., gen. sing. (प्रकृति)"
+  },
+  "प्रतिभाति": {
+    "english": "Appears / seems",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. sing. (प्रति + भा)"
+  },
+  "प्रथमशताब्द्याम्": {
+    "english": "In the first century",
+    "grammar": "Compound noun, f., loc. sing."
+  },
+  "प्रदेशों": {
+    "english": "Territories / provinces (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "प्रवालशृङ्खलाभिः": {
+    "english": "By / with coral reefs",
+    "grammar": "Noun, f., inst. plur. (प्रवालशृङ्खला)"
+  },
+  "प्रायः": {
+    "english": "Probably / mostly",
+    "grammar": "Indeclinable adverb (अव्यय)"
+  },
+  "फर्नीचरसामान": {
+    "english": "Furniture goods",
+    "grammar": "Hindi compound phrase"
+  },
+  "बताना": {
+    "english": "To tell",
+    "grammar": "Hindi infinitive"
+  },
+  "बदला": {
+    "english": "Changed",
+    "grammar": "Hindi participle"
+  },
+  "बनवाए": {
+    "english": "Constructed / got made",
+    "grammar": "Hindi verb, past"
+  },
+  "बनाया": {
+    "english": "Made / constructed",
+    "grammar": "Hindi verb, past"
+  },
+  "बर्तनशिल्प": {
+    "english": "Utensil craft",
+    "grammar": "Hindi compound noun"
+  },
+  "बलिदान": {
+    "english": "Sacrifice",
+    "grammar": "Hindi noun, m."
+  },
+  "बलिदानेन": {
+    "english": "By the sacrifice",
+    "grammar": "Noun, n., inst. sing. (बलिदान)"
+  },
+  "बागान": {
+    "english": "Plantations / groves",
+    "grammar": "Hindi noun, m."
+  },
+  "बालिकायै": {
+    "english": "To / for the girl",
+    "grammar": "Noun, f., dat. sing. (बालिका)"
+  },
+  "बालू": {
+    "english": "Sand",
+    "grammar": "Hindi noun, f. (संस्कृत: सिकता / रेणुः)"
+  },
+  "बोलना": {
+    "english": "To speak",
+    "grammar": "Hindi infinitive"
+  },
+  "ब्रिटिश": {
+    "english": "British",
+    "grammar": "Loanword adj."
+  },
+  "ब्रिटिशजनैः": {
+    "english": "By the British people",
+    "grammar": "Compound noun, m., inst. plur."
+  },
+  "भयानक": {
+    "english": "Terrible / dreadful",
+    "grammar": "Hindi adj."
+  },
+  "भवत्सु": {
+    "english": "Among you (respected)",
+    "grammar": "Pronoun, m., loc. plur. (भवत्)"
+  },
+  "भारतभूमिः": {
+    "english": "Land of India",
+    "grammar": "Compound noun, f., nom. sing."
+  },
+  "भीतिः": {
+    "english": "Fear / dread",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "भूलने": {
+    "english": "Of forgetting",
+    "grammar": "Hindi verbal noun (oblique)"
+  },
+  "भ्रमणाय": {
+    "english": "For excursion / sightseeing",
+    "grammar": "Noun, n., dat. sing. (भ्रमण)"
+  },
+  "मंजिला": {
+    "english": "Storeyed",
+    "grammar": "Hindi adj."
+  },
+  "मछलियों": {
+    "english": "Fishes (oblique)",
+    "grammar": "Hindi noun, f. plur."
+  },
+  "मछली": {
+    "english": "Fish",
+    "grammar": "Hindi noun, f. (संस्कृत: मत्स्यः)"
+  },
+  "मत्स्यव्यापारेण": {
+    "english": "By fishing trade",
+    "grammar": "Compound noun, m., inst. sing."
+  },
+  "मत्स्याः": {
+    "english": "Fishes",
+    "grammar": "Noun, m., nom. plur. (मत्स्य)"
+  },
+  "मत्स्यैः": {
+    "english": "With / by fishes",
+    "grammar": "Noun, m., inst. plur. (मत्स्य)"
+  },
+  "मनोहर": {
+    "english": "Pleasing / charming",
+    "grammar": "Hindi adj."
+  },
+  "मयूरौ": {
+    "english": "Two peacocks",
+    "grammar": "Noun, m., nom./acc. dual (मयूर)"
+  },
+  "मरीन": {
+    "english": "Marine",
+    "grammar": "Loanword"
+  },
+  "महती": {
+    "english": "Great / momentous (feminine)",
+    "grammar": "Adj., f., nom. sing. (महत्)"
+  },
+  "महात्मगान्धिमरीनराष्ट्रियम्": {
+    "english": "Mahatma Gandhi Marine National (Park)",
+    "grammar": "Proper compound adj., n."
+  },
+  "महान": {
+    "english": "Great",
+    "grammar": "Hindi adj. (संस्कृत: महान्)"
+  },
+  "महिमा": {
+    "english": "Greatness / glory",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "मातृभूमि": {
+    "english": "Motherland",
+    "grammar": "Hindi noun, f. (संस्कृत: मातृभूमिः)"
+  },
+  "मातृभूमेः": {
+    "english": "Of the motherland",
+    "grammar": "Noun, f., gen. sing. (मातृभूमि)"
+  },
+  "मानचित्र": {
+    "english": "Map",
+    "grammar": "Hindi noun, m. (संस्कृत: मानचित्रम्)"
+  },
+  "मालाएँ": {
+    "english": "Garlands / necklaces",
+    "grammar": "Hindi noun, f. plur."
+  },
+  "मिलाना": {
+    "english": "To join / match",
+    "grammar": "Hindi infinitive"
+  },
+  "मुकुन्दः": {
+    "english": "Mukunda (male student name)",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "मुक्तामालाः": {
+    "english": "Pearl necklaces",
+    "grammar": "Compound noun, f., nom./acc. plur."
+  },
+  "मुक्तामालाशुक्तिशिल्पनारिकेलशिल्पानाम्": {
+    "english": "Of pearl necklaces, seashell craft, and coconut craft",
+    "grammar": "Compound noun, n., gen. plur."
+  },
+  "मूंगे": {
+    "english": "Coral (oblique)",
+    "grammar": "Hindi noun, m."
+  },
+  "मेलयन्तु": {
+    "english": "Match! / connect!",
+    "grammar": "Verb, loṭ lakāra, 3rd pers. plur. (मेल् धातु)"
+  },
+  "मोतियों": {
+    "english": "Pearls (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "यच्छ": {
+    "english": "Give! (imperative)",
+    "grammar": "Verb, loṭ lakāra, 2nd pers. sing. (दा/यच्छ् धातु)"
+  },
+  "यहीं": {
+    "english": "Right here",
+    "grammar": "Hindi adv. (संस्कृत: अत्रैव)"
+  },
+  "यापन": {
+    "english": "Spending / sustaining (life)",
+    "grammar": "Hindi noun, m."
+  },
+  "यावत्": {
+    "english": "For / up to / during",
+    "grammar": "Indeclinable preposition/adverb (अव्यय)"
+  },
+  "युद्धरतानां": {
+    "english": "Of those fighting / engaged in struggle",
+    "grammar": "Compound adj., m., gen. plur."
+  },
+  "युवती": {
+    "english": "Young maiden",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "यूनेस्को": {
+    "english": "UNESCO",
+    "grammar": "Acronym / proper noun"
+  },
+  "यूनेस्कोसंस्थायाः": {
+    "english": "Of UNESCO organization",
+    "grammar": "Compound noun, f., gen. sing."
+  },
+  "रंगबिरंगी": {
+    "english": "Multicolored",
+    "grammar": "Hindi adj., f."
+  },
+  "रक्तायां": {
+    "english": "In the red (sari)",
+    "grammar": "Adj., f., loc. sing. (रक्ता)"
+  },
+  "रमणीयः": {
+    "english": "Enchanting / picturesque",
+    "grammar": "Adj., m., nom. sing."
+  },
+  "रहती": {
+    "english": "Lives / resides",
+    "grammar": "Hindi verb, f. sing."
+  },
+  "राजधानी": {
+    "english": "Capital city",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "राजर्षि": {
+    "english": "Rajarshi (student name)",
+    "grammar": "Proper noun, m."
+  },
+  "राजर्षिः": {
+    "english": "Rajarshi (proper name)",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "राजर्षे": {
+    "english": "O Rajarshi! (vocative)",
+    "grammar": "Proper noun, m., voc. sing."
+  },
+  "राधानगर": {
+    "english": "Radhanagar",
+    "grammar": "Proper noun"
+  },
+  "राधानगरतटः": {
+    "english": "Radhanagar Beach",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "राधानगरतटस्य": {
+    "english": "Of Radhanagar Beach",
+    "grammar": "Compound noun, m., gen. sing."
+  },
+  "रामायण": {
+    "english": "Ramayana",
+    "grammar": "Proper noun"
+  },
+  "रामायणकाले": {
+    "english": "During the Ramayana era",
+    "grammar": "Compound noun, m., loc. sing."
+  },
+  "रामायणस्य": {
+    "english": "Of the Ramayana",
+    "grammar": "Proper noun, n., gen. sing."
+  },
+  "राष्ट्रभक्तों": {
+    "english": "Patriots (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "रिसर्च": {
+    "english": "Research",
+    "grammar": "Loanword"
+  },
+  "रीतिपरम्पराः": {
+    "english": "Customs and traditions",
+    "grammar": "Compound noun, f., nom./acc. plur."
+  },
+  "रेत": {
+    "english": "Sand",
+    "grammar": "Hindi noun, f. (संस्कृत: रेणुः)"
+  },
+  "रोज़गार": {
+    "english": "Employment / livelihood",
+    "grammar": "Hindi noun, m."
+  },
+  "लगता": {
+    "english": "Seems / feels",
+    "grammar": "Hindi verb, m. sing."
+  },
+  "लड़ने": {
+    "english": "Of fighting",
+    "grammar": "Hindi verbal noun (oblique)"
+  },
+  "वनवासी": {
+    "english": "Forest-dweller / tribal",
+    "grammar": "Hindi noun, m."
+  },
+  "वर्णन": {
+    "english": "Description",
+    "grammar": "Hindi noun, m. (संस्कृत: वर्णनम्)"
+  },
+  "वर्णनं": {
+    "english": "Description / depiction",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "वर्षाणि": {
+    "english": "Years",
+    "grammar": "Noun, n., nom./acc. plur. (वर्ष)"
+  },
+  "वर्षों": {
+    "english": "Years (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "वाणिज्येन": {
+    "english": "By commerce / trade",
+    "grammar": "Noun, n., inst. sing. (वाणिज्य)"
+  },
+  "विजयनगर": {
+    "english": "Vijayanagar",
+    "grammar": "Proper noun"
+  },
+  "विजयनगरतटं": {
+    "english": "Vijayanagar Beach",
+    "grammar": "Compound noun, m., acc. sing."
+  },
+  "विनायकादिस्तुतिभाजनानाम्": {
+    "english": "Of those worthy of praise led by Vinayak Savarkar",
+    "grammar": "Compound adj., m., gen. plur."
+  },
+  "विविधवर्णाः": {
+    "english": "Multicolored (fishes)",
+    "grammar": "Compound adj., m., nom. plur."
+  },
+  "विविधवर्णैः": {
+    "english": "With multicolored",
+    "grammar": "Compound adj., m./n., inst. plur."
+  },
+  "विविधाः": {
+    "english": "Various / diverse",
+    "grammar": "Adj., f./m., nom. plur. (विविध)"
+  },
+  "विशालां": {
+    "english": "Vast / spacious (school)",
+    "grammar": "Adj., f., acc. sing. (विशाला)"
+  },
+  "विशिष्टा": {
+    "english": "Special / distinguished (feminine)",
+    "grammar": "Adj., f., nom. sing."
+  },
+  "विशिष्टाः": {
+    "english": "Special / distinguished (plural)",
+    "grammar": "Adj., f./m., nom. plur."
+  },
+  "विशिष्टानि": {
+    "english": "Special / distinct (places)",
+    "grammar": "Adj., n., nom./acc. plur."
+  },
+  "विशेषणविशेष्यपदानां": {
+    "english": "Of adjective and substantive words",
+    "grammar": "Compound noun, n., gen. plur."
+  },
+  "विशेषणानुसारं": {
+    "english": "According to the adjective",
+    "grammar": "Adverbial compound"
+  },
+  "विशेष्यपदं": {
+    "english": "Substantive word / noun",
+    "grammar": "Compound noun, n., nom./acc. sing."
+  },
+  "विश्व": {
+    "english": "World",
+    "grammar": "Hindi noun, m. (संस्कृत: विश्वम्)"
+  },
+  "वीर": {
+    "english": "Hero / brave",
+    "grammar": "Hindi adj./noun"
+  },
+  "वृक्षान्": {
+    "english": "Trees",
+    "grammar": "Noun, m., acc. plur. (वृक्ष)"
+  },
+  "वृद्धा": {
+    "english": "Elderly woman",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "वैश्विकसम्पदः": {
+    "english": "Of world heritage",
+    "grammar": "Compound noun, f., gen. sing. (वैश्विकसम्पद्)"
+  },
+  "व्यापार": {
+    "english": "Business / trade",
+    "grammar": "Hindi noun, m. (संस्कृत: व्यापारः)"
+  },
+  "शताब्दी": {
+    "english": "Century",
+    "grammar": "Hindi noun, f. (संस्कृत: शताब्दी)"
+  },
+  "शब्दस्य": {
+    "english": "Of the word",
+    "grammar": "Noun, m., gen. sing. (शब्द)"
+  },
+  "शहीदों": {
+    "english": "Martyrs (oblique)",
+    "grammar": "Hindi noun, m. plur. (संस्कृत: हुतात्मनाम्)"
+  },
+  "शाटिकायां": {
+    "english": "In the sari",
+    "grammar": "Noun, f., loc. sing. (शाटिका)"
+  },
+  "शासन": {
+    "english": "Rule / governance",
+    "grammar": "Hindi noun, m. (संस्कृत: शासनम्)"
+  },
+  "शिक्षयन्ति": {
+    "english": "They teach",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. plur. (शिक्ष् धातु + णिच्)"
+  },
+  "शिक्षयन्ती": {
+    "english": "Teaching (feminine participle)",
+    "grammar": "Pres. part., f., nom. sing. (शतृ + ङीप्)"
+  },
+  "शुक्तिशिल्पानि": {
+    "english": "Seashell handicrafts",
+    "grammar": "Compound noun, n., nom./acc. plur."
+  },
+  "शैक्षणिक": {
+    "english": "Educational",
+    "grammar": "Hindi adj."
+  },
+  "शैक्षिकभ्रमणार्थं": {
+    "english": "For an educational excursion/tour",
+    "grammar": "Compound adverb (शैक्षिकभ्रमण + अर्थम्)"
+  },
+  "श्रीविजयपुरम्": {
+    "english": "Sri Vijaya Puram (Port Blair)",
+    "grammar": "Proper noun, n., nom. sing."
+  },
+  "श्वेतरेणुः": {
+    "english": "White sand",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "संकेत": {
+    "english": "Hint / clue",
+    "grammar": "Hindi noun, m. (संस्कृत: सङ्केतः)"
+  },
+  "संग्रहालय": {
+    "english": "Museum",
+    "grammar": "Hindi noun, m. (संस्कृत: सङ्ग्रहालयः)"
+  },
+  "संभवतः": {
+    "english": "Possibly / probably",
+    "grammar": "Hindi adv."
+  },
+  "संरक्षितम्": {
+    "english": "Protected / preserved",
+    "grammar": "Past pass. part., n., nom. sing. (सम् + रक्ष् + क्त)"
+  },
+  "संस्था": {
+    "english": "Institution / organization",
+    "grammar": "Hindi noun, f. (संस्कृत: संस्था)"
+  },
+  "संस्थायाः": {
+    "english": "Of the organization / institution",
+    "grammar": "Noun, f., gen. sing. (संस्था)"
+  },
+  "सङ्केतं": {
+    "english": "Hint / clue",
+    "grammar": "Noun, m., acc. sing. (सङ्केत)"
+  },
+  "सजा": {
+    "english": "Decorated",
+    "grammar": "Hindi participle"
+  },
+  "सजावटी": {
+    "english": "Decorative",
+    "grammar": "Hindi adj."
+  },
+  "सत्यमेव": {
+    "english": "Truth indeed (सत्यम् + एव)",
+    "grammar": "Sandhi phrase"
+  },
+  "सफेद": {
+    "english": "White",
+    "grammar": "Hindi adj. (संस्कृत: श्वेतः)"
+  },
+  "समाजात्": {
+    "english": "From the society",
+    "grammar": "Noun, m., abl. sing. (समाज)"
+  },
+  "समास": {
+    "english": "Compound (grammatical)",
+    "grammar": "Noun, m."
+  },
+  "समुद्रतटेषु": {
+    "english": "On the seashores / beaches",
+    "grammar": "Compound noun, m., loc. plur."
+  },
+  "समुद्रतलं": {
+    "english": "Sea floor / ocean bed",
+    "grammar": "Compound noun, n., nom./acc. sing."
+  },
+  "समुद्रतलम्": {
+    "english": "Sea bed / ocean floor",
+    "grammar": "Compound noun, n., nom./acc. sing."
+  },
+  "समुद्रिका": {
+    "english": "Samudrika (Naval museum)",
+    "grammar": "Proper noun, f."
+  },
+  "समुद्रिकानौसेनासमुद्रीयसङ्ग्रहालयं": {
+    "english": "Samudrika Naval Marine Museum",
+    "grammar": "Compound proper noun, m., acc. sing."
+  },
+  "समुद्री": {
+    "english": "Marine / oceanic",
+    "grammar": "Hindi adj."
+  },
+  "सरकार": {
+    "english": "Government",
+    "grammar": "Hindi noun, f. (संस्कृत: सर्वकारः)"
+  },
+  "सर्वकारः": {
+    "english": "Government",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "सर्वकारस्य": {
+    "english": "Of the government",
+    "grammar": "Noun, m., gen. sing. (सर्वकार)"
+  },
+  "सर्वनामविशेषणपदानि": {
+    "english": "Pronominal adjective words",
+    "grammar": "Compound noun, n., nom./acc. plur."
+  },
+  "सहन": {
+    "english": "Endurance / bearing",
+    "grammar": "Hindi noun, m."
+  },
+  "सहा": {
+    "english": "Endured / bore",
+    "grammar": "Hindi verb, past"
+  },
+  "सामान": {
+    "english": "Goods / materials",
+    "grammar": "Hindi noun, m."
+  },
+  "सावरकर": {
+    "english": "Savarkar",
+    "grammar": "Proper noun"
+  },
+  "सावरकरः": {
+    "english": "Veer Savarkar",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "साश्चर्यम्": {
+    "english": "With wonder / in surprise",
+    "grammar": "Adverbial compound (स + आश्चर्यम्)"
+  },
+  "सिखाती": {
+    "english": "Teaches",
+    "grammar": "Hindi verb, f. sing."
+  },
+  "सिन्धुतलविहारं": {
+    "english": "Sea-floor walking / Sea Walk",
+    "grammar": "Compound noun, m., acc. sing."
+  },
+  "सीप": {
+    "english": "Seashell / oyster",
+    "grammar": "Hindi noun, f. (संस्कृत: शुक्तिः)"
+  },
+  "सीवॉक": {
+    "english": "Sea Walk",
+    "grammar": "Loanword"
+  },
+  "सुखेन": {
+    "english": "Happily / comfortably",
+    "grammar": "Noun, n., inst. sing. (सुख)"
+  },
+  "सुदर्शनीया": {
+    "english": "Worth seeing / charming to view",
+    "grammar": "Future pass. part. (अनीयर्), f., nom. sing."
+  },
+  "सुदीर्घः": {
+    "english": "Very long / extensive (path)",
+    "grammar": "Adj., m., nom. sing."
+  },
+  "सुधीरः": {
+    "english": "Sudheer (male student name)",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "सुन्दरतमेषु": {
+    "english": "Among the most beautiful",
+    "grammar": "Superlative adj., m./n., loc. plur."
+  },
+  "सुन्दरी": {
+    "english": "Beautiful lady",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "सुरुचिः": {
+    "english": "Suruchi (female student name)",
+    "grammar": "Proper noun, f., nom. sing."
+  },
+  "सुरेखा": {
+    "english": "Surekha (female student name)",
+    "grammar": "Proper noun, f., nom. sing."
+  },
+  "सूची": {
+    "english": "List / catalogue",
+    "grammar": "Hindi noun, f. (संस्कृत: सूची)"
+  },
+  "सूच्यां": {
+    "english": "In the list",
+    "grammar": "Noun, f., loc. sing. (सूची)"
+  },
+  "सूच्याम्": {
+    "english": "In the list",
+    "grammar": "Noun, f., loc. sing. (सूची)"
+  },
+  "सूर्यांश": {
+    "english": "Suryansh",
+    "grammar": "Proper noun"
+  },
+  "सूर्यांशः": {
+    "english": "Suryansh (student name)",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "सेण्टिनली": {
+    "english": "Sentinelese (uncontacted tribe of North Sentinel Island)",
+    "grammar": "Proper noun / tribal name"
+  },
+  "सेण्टिनलीजनजातीयाः": {
+    "english": "Sentinelese tribal people",
+    "grammar": "Compound noun, m., nom. plur."
+  },
+  "सेल्युलर": {
+    "english": "Cellular (jail)",
+    "grammar": "Loanword / proper noun"
+  },
+  "सेल्युलर्": {
+    "english": "Cellular (jail)",
+    "grammar": "Loanword / proper noun"
+  },
+  "सेल्यूलरकारागारः": {
+    "english": "Cellular Jail",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "सोढवान्": {
+    "english": "Endured / tolerated",
+    "grammar": "Past active part. (क्तवतु), m., nom. sing. (सह् धातु)"
+  },
+  "स्कूबा": {
+    "english": "Scuba",
+    "grammar": "Loanword"
+  },
+  "स्कूबाडाइविङ्ग": {
+    "english": "Scuba diving",
+    "grammar": "Loanword activity"
+  },
+  "स्तुति": {
+    "english": "Praise / hymn",
+    "grammar": "Hindi noun, f. (संस्कृत: स्तुतिः)"
+  },
+  "स्थलीयं": {
+    "english": "This place / sacred ground (स्थली + इयम्)",
+    "grammar": "Sandhi phrase (स्थली + इयम्)"
+  },
+  "स्थानानि": {
+    "english": "Places / tourist spots",
+    "grammar": "Noun, n., nom./acc. plur. (स्थान)"
+  },
+  "स्थानीये": {
+    "english": "In the local (market)",
+    "grammar": "Adj., m., loc. sing. (स्थानीय)"
+  },
+  "स्थानों": {
+    "english": "Places (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "स्थूलाय": {
+    "english": "To / for the stout (elephant)",
+    "grammar": "Adj., m., dat. sing. (स्थूल)"
+  },
+  "स्नॉर्कलिंग": {
+    "english": "Snorkeling",
+    "grammar": "Loanword"
+  },
+  "स्नॉर्कलिङ्ग्": {
+    "english": "Snorkeling",
+    "grammar": "Loanword activity"
+  },
+  "स्मरामि": {
+    "english": "I remember",
+    "grammar": "Verb, laṭ lakāra (present), 1st pers. sing. (स्मृ धातु)"
+  },
+  "स्वतंत्रता": {
+    "english": "Freedom / independence",
+    "grammar": "Hindi noun, f. (संस्कृत: स्वातन्त्र्यम्)"
+  },
+  "स्वराज": {
+    "english": "Swaraj (self-rule)",
+    "grammar": "Proper noun"
+  },
+  "स्वराजद्वीपं": {
+    "english": "Swaraj Island (Havelock)",
+    "grammar": "Compound proper noun, m., acc. sing."
+  },
+  "स्वराजद्वीपः": {
+    "english": "Swaraj Island (Havelock)",
+    "grammar": "Compound proper noun, m., nom. sing."
+  },
+  "स्वराजद्वीपे": {
+    "english": "On Swaraj Island",
+    "grammar": "Compound proper noun, m., loc. sing."
+  },
+  "स्वराष्ट्रधर्मं": {
+    "english": "Duty towards one's nation",
+    "grammar": "Compound noun, m., acc. sing."
+  },
+  "स्वल्पा": {
+    "english": "Very small / sparse (population)",
+    "grammar": "Adj., f., nom. sing. (स्वल्प)"
+  },
+  "स्वातन्त्र्यवीर": {
+    "english": "Hero of Independence (Savarkar)",
+    "grammar": "Proper honorific"
+  },
+  "स्वातन्त्र्यवीरः": {
+    "english": "Hero of Independence",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "स्वातन्त्र्यवीराः": {
+    "english": "Heroes of independence",
+    "grammar": "Compound noun, m., nom. plur."
+  },
+  "स्वातन्त्र्यवीराणां": {
+    "english": "Of the heroes of independence",
+    "grammar": "Compound noun, m., gen. plur."
+  },
+  "स्वातन्त्र्यार्थं": {
+    "english": "For the sake of freedom",
+    "grammar": "Compound adverb (स्वातन्त्र्य + अर्थम्)"
+  },
+  "स्वीयाः": {
+    "english": "Their own / one's own (customs)",
+    "grammar": "Pronominal adj., f., nom. plur. (स्वीय)"
+  },
+  "हटाकर": {
+    "english": "Having removed",
+    "grammar": "Hindi conjunctive participle"
+  },
+  "हण्डुकमान्": {
+    "english": "Handukman (Ramayana-era name of Andaman)",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "हनूमान": {
+    "english": "Hanuman",
+    "grammar": "Hindi proper noun (संस्कृत: हनूमान्)"
+  },
+  "हनूमान्": {
+    "english": "Lord Hanuman",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "हरियाली": {
+    "english": "Greenery",
+    "grammar": "Hindi noun, f. (संस्कृत: हारित्यम्)"
+  },
+  "हान्दुमान्": {
+    "english": "Handuman (variant historical name)",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "हारित्यं": {
+    "english": "Greenery / verdant nature",
+    "grammar": "Noun, n., nom./acc. sing. (हारित्यम्)"
+  },
+  "हारित्यम्": {
+    "english": "Greenery / verdant nature",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "हिस्सा": {
+    "english": "Part / portion",
+    "grammar": "Hindi noun, m. (संस्कृत: भागः)"
+  },
+  "हुतात्मनां": {
+    "english": "Of martyrs / heroic self-sacrificing souls",
+    "grammar": "Noun, m., gen. plur. (हुतात्मन्)"
+  },
+  "हैवलॉक्द्वीपः": {
+    "english": "Havelock Island (Swaraj Dweep)",
+    "grammar": "Compound proper noun, m., nom. sing."
+  },
+  "ह्यः": {
+    "english": "Yesterday",
+    "grammar": "Indeclinable time adverb (अव्यय)"
+  },
+  "पहली": {
+    "english": "First (feminine)",
+    "grammar": "Hindi ordinal, f. (संस्कृत: प्रथमा)"
   }
 }
