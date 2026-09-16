@@ -41448,5 +41448,3211 @@
         "meaning": "कमाने के लिए / अर्जित करने के लिए (तुमुन् प्रत्यय)"
       }
     }
+  },
+  "पुत्री": {
+    "word": "पुत्री",
+    "base_english": "Daughter (feminine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Daughter (feminine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पुत्री / बेटी (स्त्रीलिंग प्रथमा एकवचन)"
+      }
+    }
+  },
+  "अम्ब": {
+    "word": "अम्ब",
+    "base_english": "O Mother! (vocative singular of ambā)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "O Mother! (vocative singular of ambā)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हे माँ! / हे माता! (संबोधन एकवचन)"
+      }
+    }
+  },
+  "काचिद्": {
+    "word": "काचिद्",
+    "base_english": "A certain / Some (sandhi form of काचित्)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "A certain / Some (sandhi form of काचित्)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कोई / एक (स्त्रीलिंग सर्वनाम)"
+      }
+    }
+  },
+  "कीटाः": {
+    "word": "कीटाः",
+    "base_english": "Insects / Worms (masculine prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Insects / Worms (masculine prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कीड़े / कीट-पतंगे (पुल्लिंग प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "भूलोके": {
+    "word": "भूलोके",
+    "base_english": "On the earth / In this terrestrial realm (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "On the earth / In this terrestrial realm (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भूलोक में / इस पृथ्वी पर (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "आगताः": {
+    "word": "आगताः",
+    "base_english": "Arrived / Came (kta past participle masculine plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Arrived / Came (kta past participle masculine plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आए / पहुँचे (क्त प्रत्यय बहुवचन)"
+      }
+    }
+  },
+  "माँ": {
+    "word": "माँ",
+    "base_english": "Mother (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mother (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "माँ / माता"
+      }
+    }
+  },
+  "जानने": {
+    "word": "जानने",
+    "base_english": "To know / Knowing (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To know / Knowing (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जानने की / जानने हेतु"
+      }
+    }
+  },
+  "पशुपक्षी": {
+    "word": "पशुपक्षी",
+    "base_english": "Animals and birds (Hindi compound)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Animals and birds (Hindi compound)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पशु-पक्षी / जीव-जंतु"
+      }
+    }
+  },
+  "कीड़े": {
+    "word": "कीड़े",
+    "base_english": "Insects / Bugs (Hindi plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Insects / Bugs (Hindi plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कीड़े / कीट"
+      }
+    }
+  },
+  "वत्से": {
+    "word": "वत्से",
+    "base_english": "O child! / Dear daughter! (vocative singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "O child! / Dear daughter! (vocative singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हे बेटी! / हे प्यारी बच्ची! (संबोधन एकवचन)"
+      }
+    }
+  },
+  "भवती": {
+    "word": "भवती",
+    "base_english": "You (respectful feminine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You (respectful feminine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आप / तुम्हें (स्त्रीलिंग प्रथमा एकवचन)"
+      }
+    }
+  },
+  "उत्पत्तिक्रमं": {
+    "word": "उत्पत्तिक्रमं",
+    "base_english": "Sequence of origin / Order of creation (dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sequence of origin / Order of creation (dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्पत्ति का क्रम / पैदा होने का सिलसिला"
+      }
+    }
+  },
+  "जानीयात्": {
+    "word": "जानीयात्",
+    "base_english": "Should know / Ought to learn (vidhiliṅ prathamapurusha singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Should know / Ought to learn (vidhiliṅ prathamapurusha singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जानना चाहिए (विधि लिङ् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "बेटी": {
+    "word": "बेटी",
+    "base_english": "Daughter (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Daughter (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बेटी / पुत्री"
+      }
+    }
+  },
+  "उत्पत्ति": {
+    "word": "उत्पत्ति",
+    "base_english": "Creation / Origin / Manifestation (Hindi/Sanskrit)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Creation / Origin / Manifestation (Hindi/Sanskrit)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्पत्ति / उद्भव"
+      }
+    }
+  },
+  "रोचकं": {
+    "word": "रोचकं",
+    "base_english": "Interesting / Fascinating (neuter prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Interesting / Fascinating (neuter prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रोचक / दिलचस्प (नपुंसकलिंग प्रथमा एकवचन)"
+      }
+    }
+  },
+  "श्रावयतु": {
+    "word": "श्रावयतु",
+    "base_english": "Please narrate / recite (causal loṭ prathamapurusha singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please narrate / recite (causal loṭ prathamapurusha singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुनाइए / श्रवण कराइए (लोट् लकार)"
+      }
+    }
+  },
+  "दिलचस्प": {
+    "word": "दिलचस्प",
+    "base_english": "Interesting / Engaging (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Interesting / Engaging (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दिलचस्प / रोचक"
+      }
+    }
+  },
+  "होगा": {
+    "word": "होगा",
+    "base_english": "Will be (Hindi masculine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Will be (Hindi masculine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "होगा"
+      }
+    }
+  },
+  "सुनाइए": {
+    "word": "सुनाइए",
+    "base_english": "Please narrate / tell (Hindi respectful imperative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please narrate / tell (Hindi respectful imperative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुनाइए / सुनाओ"
+      }
+    }
+  },
+  "आकाशस्य": {
+    "word": "आकाशस्य",
+    "base_english": "Of space / ether / sky (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of space / ether / sky (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आकाश का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "उत्पत्तिः": {
+    "word": "उत्पत्तिः",
+    "base_english": "Creation / Manifestation / Birth (feminine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Creation / Manifestation / Birth (feminine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्पत्ति / जन्म / उद्भव (स्त्रीलिंग प्रथमा एकवचन)"
+      }
+    }
+  },
+  "ब्रह्म": {
+    "word": "ब्रह्म",
+    "base_english": "Brahman / The Ultimate Supreme Consciousness (neuter)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Brahman / The Ultimate Supreme Consciousness (neuter)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ब्रह्म / सर्वव्यापी चेतना या ऊर्जा"
+      }
+    }
+  },
+  "चेतना": {
+    "word": "चेतना",
+    "base_english": "Consciousness / Awareness (Hindi/Sanskrit)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Consciousness / Awareness (Hindi/Sanskrit)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चेतना / चैतन्य शक्ति"
+      }
+    }
+  },
+  "मतलब": {
+    "word": "मतलब",
+    "base_english": "Meaning / Purport (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Meaning / Purport (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मतलब / अभिप्राय"
+      }
+    }
+  },
+  "चेतनाशक्तिः": {
+    "word": "चेतनाशक्तिः",
+    "base_english": "Power of consciousness (feminine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Power of consciousness (feminine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चेतना की शक्ति / चैतन्य सामर्थ्य"
+      }
+    }
+  },
+  "ऊर्जा": {
+    "word": "ऊर्जा",
+    "base_english": "Energy / Vital force (feminine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Energy / Vital force (feminine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ऊर्जा / शक्ति (स्त्रीलिंग प्रथमा एकवचन)"
+      }
+    }
+  },
+  "व्याप्ता": {
+    "word": "व्याप्ता",
+    "base_english": "Pervaded / Spread everywhere (feminine kta participle)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Pervaded / Spread everywhere (feminine kta participle)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "व्याप्त / फैली हुई (स्त्रीलिंग)"
+      }
+    }
+  },
+  "अणुः": {
+    "word": "अणुः",
+    "base_english": "Atom / Tiny particle (masculine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Atom / Tiny particle (masculine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अणु / परमाणु (पुल्लिंग प्रथमा एकवचन)"
+      }
+    }
+  },
+  "चेतनाशक्ति": {
+    "word": "चेतनाशक्ति",
+    "base_english": "Conscious power (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Conscious power (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चेतना-शक्ति"
+      }
+    }
+  },
+  "फैली": {
+    "word": "फैली",
+    "base_english": "Spread / Extended (Hindi feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Spread / Extended (Hindi feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फैली हुई"
+      }
+    }
+  },
+  "हुई": {
+    "word": "हुई",
+    "base_english": "Been / Happened (Hindi feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Been / Happened (Hindi feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हुई"
+      }
+    }
+  },
+  "परमाणु": {
+    "word": "परमाणु",
+    "base_english": "Subatomic particle / Atom (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Subatomic particle / Atom (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "परमाणु / अणु"
+      }
+    }
+  },
+  "आकाशात्": {
+    "word": "आकाशात्",
+    "base_english": "From space / ether / sky (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From space / ether / sky (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आकाश से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "वायुः": {
+    "word": "वायुः",
+    "base_english": "Air / Wind (masculine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Air / Wind (masculine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वायु / हवा (पुल्लिंग प्रथमा एकवचन)"
+      }
+    }
+  },
+  "वायु": {
+    "word": "वायु",
+    "base_english": "Air / Wind (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Air / Wind (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वायु / पवन"
+      }
+    }
+  },
+  "हवा": {
+    "word": "हवा",
+    "base_english": "Wind / Breeze (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wind / Breeze (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हवा / पवन"
+      }
+    }
+  },
+  "कदा": {
+    "word": "कदा",
+    "base_english": "When? (interrogative indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "When? (interrogative indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कब? / किस समय? (अव्यय)"
+      }
+    }
+  },
+  "उत्पन्ना": {
+    "word": "उत्पन्ना",
+    "base_english": "Born / Originated (feminine kta participle)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Born / Originated (feminine kta participle)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्पन्न हुई / पैदा हुई (स्त्रीलिंग)"
+      }
+    }
+  },
+  "कब": {
+    "word": "कब",
+    "base_english": "When (Hindi interrogative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "When (Hindi interrogative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कब"
+      }
+    }
+  },
+  "शृणोतु": {
+    "word": "शृणोतु",
+    "base_english": "Please listen! / Hear! (loṭ prathamapurusha singular of śru)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please listen! / Hear! (loṭ prathamapurusha singular of śru)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुनो / सुनिए (लोट् लकार)"
+      }
+    }
+  },
+  "वायोः": {
+    "word": "वायोः",
+    "base_english": "From the air / wind (pañchamī singular of vāyu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the air / wind (pañchamī singular of vāyu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वायु से / हवा से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "सुनो": {
+    "word": "सुनो",
+    "base_english": "Listen (Hindi imperative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Listen (Hindi imperative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सुनो"
+      }
+    }
+  },
+  "उत्पत्तिं": {
+    "word": "उत्पत्तिं",
+    "base_english": "Creation / Origin (feminine dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Creation / Origin (feminine dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्पत्ति को / जन्म को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "वदतु": {
+    "word": "वदतु",
+    "base_english": "Please speak / tell! (loṭ prathamapurusha singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please speak / tell! (loṭ prathamapurusha singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बताइए / बोलिए (लोट् लकार)"
+      }
+    }
+  },
+  "रहेंगे": {
+    "word": "रहेंगे",
+    "base_english": "Will live / stay (Hindi future plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Will live / stay (Hindi future plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रहेंगे / जीवित रहेंगे"
+      }
+    }
+  },
+  "आहारः": {
+    "word": "आहारः",
+    "base_english": "Food / Nourishment (masculine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Food / Nourishment (masculine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भोजन / अन्न / आहार (पुल्लिंग प्रथमा एकवचन)"
+      }
+    }
+  },
+  "भोजन": {
+    "word": "भोजन",
+    "base_english": "Food / Meal (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Food / Meal (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भोजन / खाना"
+      }
+    }
+  },
+  "काफी": {
+    "word": "काफी",
+    "base_english": "Enough / Sufficient (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Enough / Sufficient (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "काफी / पर्याप्त"
+      }
+    }
+  },
+  "तेषामपि": {
+    "word": "तेषामपि",
+    "base_english": "Of them also (sandhi: तेषाम् + अपि)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of them also (sandhi: तेषाम् + अपि)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उनका भी (तेषाम् + अपि)"
+      }
+    }
+  },
+  "जानातु": {
+    "word": "जानातु",
+    "base_english": "Please learn / know! (loṭ prathamapurusha singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please learn / know! (loṭ prathamapurusha singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जानिए / समझिए (लोट् लकार)"
+      }
+    }
+  },
+  "जानो": {
+    "word": "जानो",
+    "base_english": "Know / Understand (Hindi imperative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Know / Understand (Hindi imperative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जानो"
+      }
+    }
+  },
+  "अग्नेः": {
+    "word": "अग्नेः",
+    "base_english": "From fire (pañchamī/shashthī singular of agni)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From fire (pañchamī/shashthī singular of agni)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अग्नि से / आग से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "किसकी": {
+    "word": "किसकी",
+    "base_english": "Whose / Of what (Hindi feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Whose / Of what (Hindi feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किसकी"
+      }
+    }
+  },
+  "जलस्य": {
+    "word": "जलस्य",
+    "base_english": "Of water (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of water (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जल का / पानी का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "जलात्": {
+    "word": "जलात्",
+    "base_english": "From water (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From water (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जल से / पानी से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "मनुष्यस्य": {
+    "word": "मनुष्यस्य",
+    "base_english": "Of man / human (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of man / human (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्य का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "मिट्टीधरती": {
+    "word": "मिट्टीधरती",
+    "base_english": "Soil and earth (Hindi compound)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Soil and earth (Hindi compound)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मिट्टी / धरती / पृथ्वी"
+      }
+    }
+  },
+  "विस्मृतवती": {
+    "word": "विस्मृतवती",
+    "base_english": "Forgot (feminine past active participle ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Forgot (feminine past active participle ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भूल गई (स्त्रीलिंग क्तवतु प्रत्यय)"
+      }
+    }
+  },
+  "उत्पन्नाः": {
+    "word": "उत्पन्नाः",
+    "base_english": "Originated / Born (masculine prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Originated / Born (masculine prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्पन्न हुए / पैदा हुए (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "सच": {
+    "word": "सच",
+    "base_english": "Truth / True (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Truth / True (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सच / सत्य"
+      }
+    }
+  },
+  "भूल": {
+    "word": "भूल",
+    "base_english": "Mistake / Forgetting (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mistake / Forgetting (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भूल / विस्मरण"
+      }
+    }
+  },
+  "जीवजंतु": {
+    "word": "जीवजंतु",
+    "base_english": "Living creatures (Hindi compound)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Living creatures (Hindi compound)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जीव-जंतु / प्राणी"
+      }
+    }
+  },
+  "नहि": {
+    "word": "नहि",
+    "base_english": "Not / Nay / By no means (sandhi: न + हि)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Not / Nay / By no means (sandhi: न + हि)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नहीं / नहीं ही (अव्यय)"
+      }
+    }
+  },
+  "ओषधीनां": {
+    "word": "ओषधीनां",
+    "base_english": "Of medicinal plants / herbs (feminine shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of medicinal plants / herbs (feminine shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जड़ी-बूटियों / ओषधियों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "सस्यानां": {
+    "word": "सस्यानां",
+    "base_english": "Of crops / food grains (neuter shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of crops / food grains (neuter shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फसलों / अन्नों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "वृक्षादीनां": {
+    "word": "वृक्षादीनां",
+    "base_english": "Of trees and vegetation (shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of trees and vegetation (shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पेड़-पौधों आदि का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "नहींनहीं": {
+    "word": "नहींनहीं",
+    "base_english": "No, no (Hindi emphatic denial)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "No, no (Hindi emphatic denial)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नहीं-नहीं"
+      }
+    }
+  },
+  "जड़ीबूटियों": {
+    "word": "जड़ीबूटियों",
+    "base_english": "Medicinal herbs (Hindi oblique plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Medicinal herbs (Hindi oblique plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जड़ी-बूटियों / ओषधियों"
+      }
+    }
+  },
+  "ओषधियों": {
+    "word": "ओषधियों",
+    "base_english": "Herbs (Hindi oblique plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Herbs (Hindi oblique plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ओषधियों / वनस्पतियों"
+      }
+    }
+  },
+  "फसलों": {
+    "word": "फसलों",
+    "base_english": "Crops (Hindi oblique plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Crops (Hindi oblique plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फसलों / अन्नों"
+      }
+    }
+  },
+  "धान्य": {
+    "word": "धान्य",
+    "base_english": "Food grain / Cereal (Hindi/Sanskrit)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Food grain / Cereal (Hindi/Sanskrit)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धान्य / अनाज"
+      }
+    }
+  },
+  "पेड़पौधों": {
+    "word": "पेड़पौधों",
+    "base_english": "Trees and plants (Hindi oblique plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Trees and plants (Hindi oblique plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पेड़-पौधों"
+      }
+    }
+  },
+  "अद्भुतम्": {
+    "word": "अद्भुतम्",
+    "base_english": "Marvelous / Wonderful (neuter prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Marvelous / Wonderful (neuter prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अद्भुत / आश्चर्यजनक"
+      }
+    }
+  },
+  "अद्भुत": {
+    "word": "अद्भुत",
+    "base_english": "Amazing / Wonderful (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Amazing / Wonderful (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अद्भुत / अनोखा"
+      }
+    }
+  },
+  "सस्येभ्यः": {
+    "word": "सस्येभ्यः",
+    "base_english": "From crops / grains (pañchamī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From crops / grains (pañchamī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फसलों से / अन्नों से (पञ्चमी बहुवचन)"
+      }
+    }
+  },
+  "आहारस्य": {
+    "word": "आहारस्य",
+    "base_english": "Of food / nourishment (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of food / nourishment (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आहार का / भोजन का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "वनस्पतियों": {
+    "word": "वनस्पतियों",
+    "base_english": "Plants / Vegetation (Hindi oblique plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Plants / Vegetation (Hindi oblique plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वनस्पतियों / पेड़-पौधों"
+      }
+    }
+  },
+  "आहार": {
+    "word": "आहार",
+    "base_english": "Food / Diet (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Food / Diet (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आहार / भोजन"
+      }
+    }
+  },
+  "अन्नभोजन": {
+    "word": "अन्नभोजन",
+    "base_english": "Grains and food (Hindi compound)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Grains and food (Hindi compound)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अन्न / भोजन"
+      }
+    }
+  },
+  "उत्पत्तेः": {
+    "word": "उत्पत्तेः",
+    "base_english": "From origin / After creation (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From origin / After creation (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उत्पत्ति के बाद (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "भूमौ": {
+    "word": "भूमौ",
+    "base_english": "On the earth (saptamī singular of bhūmi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "On the earth (saptamī singular of bhūmi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धरती पर / पृथ्वी पर (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "आगतम्": {
+    "word": "आगतम्",
+    "base_english": "Arrived / Came (neuter kta participle)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Arrived / Came (neuter kta participle)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आ गया / उपस्थित हुआ"
+      }
+    }
+  },
+  "आहारात्": {
+    "word": "आहारात्",
+    "base_english": "From food / nourishment (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From food / nourishment (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आहार से / भोजन से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "अन्न": {
+    "word": "अन्न",
+    "base_english": "Food grain / Food (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Food grain / Food (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अन्न / अनाज / भोजन"
+      }
+    }
+  },
+  "चतुरा": {
+    "word": "चतुरा",
+    "base_english": "Clever / Intelligent (feminine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Clever / Intelligent (feminine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चतुर / बुद्धिमान (स्त्रीलिंग प्रथमा एकवचन)"
+      }
+    }
+  },
+  "उक्तवती": {
+    "word": "उक्तवती",
+    "base_english": "Spoke / Said (feminine past active participle ktavatu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Spoke / Said (feminine past active participle ktavatu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बोली / कहा (स्त्रीलिंग क्तवतु प्रत्यय)"
+      }
+    }
+  },
+  "चालाक": {
+    "word": "चालाक",
+    "base_english": "Smart / Astute (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Smart / Astute (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चालाक / बुद्धिमान"
+      }
+    }
+  },
+  "तुमने": {
+    "word": "तुमने",
+    "base_english": "You (Hindi agentive)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You (Hindi agentive)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तुमने"
+      }
+    }
+  },
+  "जानती": {
+    "word": "जानती",
+    "base_english": "Know (Hindi feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Know (Hindi feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जानती हैं"
+      }
+    }
+  },
+  "आधुनिकं": {
+    "word": "आधुनिकं",
+    "base_english": "Modern (neuter dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Modern (neuter dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आधुनिक / नया (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "रसायनशास्त्रम्": {
+    "word": "रसायनशास्त्रम्",
+    "base_english": "Chemistry / Chemical science (neuter dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Chemistry / Chemical science (neuter dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रसायन विज्ञान / केमिस्ट्री"
+      }
+    }
+  },
+  "उपनिषद्ग्रन्थान्": {
+    "word": "उपनिषद्ग्रन्थान्",
+    "base_english": "Upanishadic scriptures (masculine dvitīyā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Upanishadic scriptures (masculine dvitīyā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उपनिषदों के ग्रन्थों को (द्वितीया बहुवचन)"
+      }
+    }
+  },
+  "आधुनिक": {
+    "word": "आधुनिक",
+    "base_english": "Modern (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Modern (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आधुनिक"
+      }
+    }
+  },
+  "विज्ञान": {
+    "word": "विज्ञान",
+    "base_english": "Science (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Science (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विज्ञान / शास्त्र"
+      }
+    }
+  },
+  "उपनिषदों": {
+    "word": "उपनिषदों",
+    "base_english": "Upanishads (Hindi oblique plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Upanishads (Hindi oblique plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उपनिषदों"
+      }
+    }
+  },
+  "ग्रन्थ": {
+    "word": "ग्रन्थ",
+    "base_english": "Scripture / Book (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Scripture / Book (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ग्रन्थ / पुस्तक"
+      }
+    }
+  },
+  "पढ़े": {
+    "word": "पढ़े",
+    "base_english": "Read / Studied (Hindi past plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Read / Studied (Hindi past plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़े हैं / अध्ययन किया"
+      }
+    }
+  },
+  "उपनिषदं": {
+    "word": "उपनिषदं",
+    "base_english": "The Upanishad (feminine dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The Upanishad (feminine dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उपनिषद को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "वाह": {
+    "word": "वाह",
+    "base_english": "Wow / Bravo (Hindi exclamation)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Wow / Bravo (Hindi exclamation)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वाह! (विस्मयादिबोधक)"
+      }
+    }
+  },
+  "उपनिषद": {
+    "word": "उपनिषद",
+    "base_english": "Upanishad (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Upanishad (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उपनिषद (वेदान्त दर्शन)"
+      }
+    }
+  },
+  "पढ़ूँगी": {
+    "word": "पढ़ूँगी",
+    "base_english": "I will read (Hindi future feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I will read (Hindi future feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़ूँगी"
+      }
+    }
+  },
+  "उपनिषद्ग्रन्थाः": {
+    "word": "उपनिषद्ग्रन्थाः",
+    "base_english": "Upanishadic texts (masculine prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Upanishadic texts (masculine prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उपनिषद ग्रन्थ (प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "पठनीयाः": {
+    "word": "पठनीयाः",
+    "base_english": "Should be read / Worth reading (anīyar participle masculine plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Should be read / Worth reading (anīyar participle masculine plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पढ़ने योग्य / अवश्य पढ़ने चाहिए (अनीयर् प्रत्यय)"
+      }
+    }
+  },
+  "मौलिकं": {
+    "word": "मौलिकं",
+    "base_english": "Fundamental / Original (neuter prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fundamental / Original (neuter prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मौलिक / मूल ज्ञान (नपुंसकलिंग)"
+      }
+    }
+  },
+  "निहितम्": {
+    "word": "निहितम्",
+    "base_english": "Embedded / Contained (neuter prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Embedded / Contained (neuter prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "निहित / समाया हुआ"
+      }
+    }
+  },
+  "जीवनस्य": {
+    "word": "जीवनस्य",
+    "base_english": "Of life (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of life (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जीवन का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "उत्कर्षः": {
+    "word": "उत्कर्षः",
+    "base_english": "Prosperity / Elevation / Progress (masculine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Prosperity / Elevation / Progress (masculine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उन्नति / उत्कर्ष / कल्याण (पुल्लिंग प्रथमा एकवचन)"
+      }
+    }
+  },
+  "भारत": {
+    "word": "भारत",
+    "base_english": "India / Bharat (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "India / Bharat (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भारत देश"
+      }
+    }
+  },
+  "उन्हीं": {
+    "word": "उन्हीं",
+    "base_english": "In those very (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In those very (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उन्हीं में"
+      }
+    }
+  },
+  "उन्नति": {
+    "word": "उन्नति",
+    "base_english": "Progress / Growth (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Progress / Growth (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उन्नति / प्रगति / उत्कर्ष"
+      }
+    }
+  },
+  "भूतानि": {
+    "word": "भूतानि",
+    "base_english": "Living creatures / Beings (neuter prathamā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Living creatures / Beings (neuter prathamā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "समस्त जीव / प्राणिगण (नपुंसकलिंग प्रथमा बहुवचन)"
+      }
+    }
+  },
+  "समस्त": {
+    "word": "समस्त",
+    "base_english": "All / Whole (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "All / Whole (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "समस्त / सभी"
+      }
+    }
+  },
+  "जीव": {
+    "word": "जीव",
+    "base_english": "Living creature / Soul (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Living creature / Soul (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जीव / प्राणी"
+      }
+    }
+  },
+  "प्राणिगण": {
+    "word": "प्राणिगण",
+    "base_english": "Multitude of living creatures (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Multitude of living creatures (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्राणिगण / जीव-समूह"
+      }
+    }
+  },
+  "सर्वव्यापी": {
+    "word": "सर्वव्यापी",
+    "base_english": "Omnipresent / All-pervading (Hindi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Omnipresent / All-pervading (Hindi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सर्वव्यापी / सर्वत्र व्याप्त"
+      }
+    }
+  },
+  "काचित्": {
+    "word": "काचित्",
+    "base_english": "A certain / Some (feminine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "A certain / Some (feminine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कोई / एक (स्त्रीलिंग सर्वनाम)"
+      }
+    }
+  },
+  "उत्पत्तिक्रमम्": {
+    "word": "उत्पत्तिक्रमम्",
+    "base_english": "Order of creation / Genesis (dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Order of creation / Genesis (dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पैदा होने का क्रम / उत्पत्ति-क्रम"
+      }
+    }
+  },
+  "प्यारी": {
+    "word": "प्यारी",
+    "base_english": "Dear / Beloved (Hindi feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Dear / Beloved (Hindi feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "प्यारी"
+      }
+    }
+  },
+  "बच्ची": {
+    "word": "बच्ची",
+    "base_english": "Little girl / Child (Hindi feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Little girl / Child (Hindi feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बच्ची / बालिका"
+      }
+    }
+  },
+  "ओषधीनाम्": {
+    "word": "ओषधीनाम्",
+    "base_english": "Of medicinal plants / herbs (feminine shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of medicinal plants / herbs (feminine shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वनस्पतियों या जड़ी-बूटियों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "बोली": {
+    "word": "बोली",
+    "base_english": "Said / Spoke (Hindi feminine)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Said / Spoke (Hindi feminine)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बोली / कहा"
+      }
+    }
+  },
+  "केमिस्ट्री": {
+    "word": "केमिस्ट्री",
+    "base_english": "Chemistry (transliterated English)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Chemistry (transliterated English)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "केमिस्ट्री / रसायन विज्ञान"
+      }
+    }
+  },
+  "अन्नों": {
+    "word": "अन्नों",
+    "base_english": "Of food grains (Hindi oblique plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of food grains (Hindi oblique plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अन्नों / खाद्यान्नों"
+      }
+    }
+  },
+  "अभ्यासप्रश्नोत्तराणि": {
+    "word": "अभ्यासप्रश्नोत्तराणि",
+    "base_english": "Exercise questions and answers (compound)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Exercise questions and answers (compound)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अभ्यास के प्रश्न और उत्तर"
+      }
+    }
+  },
+  "पुत्र्याः": {
+    "word": "पुत्र्याः",
+    "base_english": "Of the daughter (feminine shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the daughter (feminine shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पुत्री का / की (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "वचनपरिवर्तनं": {
+    "word": "वचनपरिवर्तनं",
+    "base_english": "Change of grammatical number (singular to dual/plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Change of grammatical number (singular to dual/plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वचन बदलना / वचन-परिवर्तन"
+      }
+    }
+  },
+  "अपादान": {
+    "word": "अपादान",
+    "base_english": "Apadana karaka (ablative of separation)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Apadana karaka (ablative of separation)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अपादान कारक (अलग होने का भाव)"
+      }
+    }
+  },
+  "पञ्चमी": {
+    "word": "पञ्चमी",
+    "base_english": "Fifth case / Ablative case",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Fifth case / Ablative case"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पञ्चमी विभक्ति"
+      }
+    }
+  },
+  "एकवचने": {
+    "word": "एकवचने",
+    "base_english": "In singular number (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In singular number (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "एकवचन में (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "आत्": {
+    "word": "आत्",
+    "base_english": "Ablative singular suffix -āt",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ablative singular suffix -āt"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पञ्चमी एकवचन प्रत्यय -आत्"
+      }
+    }
+  },
+  "द्विवचने": {
+    "word": "द्विवचने",
+    "base_english": "In dual number (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In dual number (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "द्विवचन में (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "भ्याम्": {
+    "word": "भ्याम्",
+    "base_english": "Dual case suffix -bhyām",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Dual case suffix -bhyām"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "द्विवचन प्रत्यय -भ्याम्"
+      }
+    }
+  },
+  "बहुवचने": {
+    "word": "बहुवचने",
+    "base_english": "In plural number (saptamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In plural number (saptamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बहुवचन में (सप्तमी एकवचन)"
+      }
+    }
+  },
+  "एभ्यः": {
+    "word": "एभ्यः",
+    "base_english": "Ablative plural suffix -ebhyaḥ",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ablative plural suffix -ebhyaḥ"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पञ्चमी बहुवचन प्रत्यय -एभ्यः"
+      }
+    }
+  },
+  "भ्यः": {
+    "word": "भ्यः",
+    "base_english": "Plural suffix -bhyaḥ",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Plural suffix -bhyaḥ"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बहुवचन प्रत्यय -भ्यः"
+      }
+    }
+  },
+  "आहाराभ्याम्": {
+    "word": "आहाराभ्याम्",
+    "base_english": "From two food sources (pañchamī dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From two food sources (pañchamī dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो आहारों से (पञ्चमी द्विवचन)"
+      }
+    }
+  },
+  "आहारेभ्यः": {
+    "word": "आहारेभ्यः",
+    "base_english": "From food sources (pañchamī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From food sources (pañchamī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आहारों से (पञ्चमी बहुवचन)"
+      }
+    }
+  },
+  "मनुष्यात्": {
+    "word": "मनुष्यात्",
+    "base_english": "From a human / man (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From a human / man (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्य से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "मनुष्याभ्याम्": {
+    "word": "मनुष्याभ्याम्",
+    "base_english": "From two humans (pañchamī dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From two humans (pañchamī dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो मनुष्यों से (पञ्चमी द्विवचन)"
+      }
+    }
+  },
+  "मनुष्येभ्यः": {
+    "word": "मनुष्येभ्यः",
+    "base_english": "From humans (pañchamī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From humans (pañchamī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मनुष्यों से (पञ्चमी बहुवचन)"
+      }
+    }
+  },
+  "वृक्षात्": {
+    "word": "वृक्षात्",
+    "base_english": "From a tree (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From a tree (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पेड़ से / वृक्ष से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "वृक्षाभ्याम्": {
+    "word": "वृक्षाभ्याम्",
+    "base_english": "From two trees (pañchamī dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From two trees (pañchamī dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो वृक्षों से (पञ्चमी द्विवचन)"
+      }
+    }
+  },
+  "वृक्षेभ्यः": {
+    "word": "वृक्षेभ्यः",
+    "base_english": "From trees (pañchamī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From trees (pañchamī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वृक्षों से (पञ्चमी बहुवचन)"
+      }
+    }
+  },
+  "इकारान्त": {
+    "word": "इकारान्त",
+    "base_english": "Ending in short vowel 'i'",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ending in short vowel 'i'"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इकारान्त (इ स्वर पर समाप्त होने वाला शब्द)"
+      }
+    }
+  },
+  "अग्निभ्याम्": {
+    "word": "अग्निभ्याम्",
+    "base_english": "From two fires (pañchamī dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From two fires (pañchamī dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो अग्नियों से (पञ्चमी द्विवचन)"
+      }
+    }
+  },
+  "अग्निभ्यः": {
+    "word": "अग्निभ्यः",
+    "base_english": "From fires (pañchamī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From fires (pañchamī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अग्नियों से (पञ्चमी बहुवचन)"
+      }
+    }
+  },
+  "मुनि": {
+    "word": "मुनि",
+    "base_english": "Sage / Ascetic",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sage / Ascetic"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मुनि / तपस्वी / ऋषि"
+      }
+    }
+  },
+  "मुनेः": {
+    "word": "मुनेः",
+    "base_english": "From the sage (pañchamī singular of muni)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the sage (pañchamī singular of muni)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मुनि से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "मुनिभ्याम्": {
+    "word": "मुनिभ्याम्",
+    "base_english": "From two sages (pañchamī dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From two sages (pañchamī dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो मुनियों से (पञ्चमी द्विवचन)"
+      }
+    }
+  },
+  "मुनिभ्यः": {
+    "word": "मुनिभ्यः",
+    "base_english": "From sages (pañchamī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From sages (pañchamī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मुनियों से (पञ्चमी बहुवचन)"
+      }
+    }
+  },
+  "पेटिका": {
+    "word": "पेटिका",
+    "base_english": "Box / Trunk / Chest (feminine base)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Box / Trunk / Chest (feminine base)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पेटी / बक्सा / सन्दूक"
+      }
+    }
+  },
+  "आकारान्त": {
+    "word": "आकारान्त",
+    "base_english": "Ending in long vowel 'ā'",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ending in long vowel 'ā'"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आकारान्त (आ स्वर पर समाप्त होने वाला शब्द)"
+      }
+    }
+  },
+  "पेटिकायाः": {
+    "word": "पेटिकायाः",
+    "base_english": "From the box (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the box (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पेटी से / बक्से से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "पेटिकाभ्यः": {
+    "word": "पेटिकाभ्यः",
+    "base_english": "From boxes (pañchamī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From boxes (pañchamī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पेटियों से (पञ्चमी बहुवचन)"
+      }
+    }
+  },
+  "वाटिका": {
+    "word": "वाटिका",
+    "base_english": "Garden / Orchard (feminine base)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Garden / Orchard (feminine base)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बगीचा / वाटिका (स्त्रीलिंग)"
+      }
+    }
+  },
+  "वाटिकायाः": {
+    "word": "वाटिकायाः",
+    "base_english": "From the garden (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the garden (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वाटिका से / बगीचे से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "वाटिकाभ्याम्": {
+    "word": "वाटिकाभ्याम्",
+    "base_english": "From two gardens (pañchamī dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From two gardens (pañchamī dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो वाटिकाओं से (पञ्चमी द्विवचन)"
+      }
+    }
+  },
+  "वाटिकाभ्यः": {
+    "word": "वाटिकाभ्यः",
+    "base_english": "From gardens (pañchamī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From gardens (pañchamī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वाटिकाओं से (पञ्चमी बहुवचन)"
+      }
+    }
+  },
+  "माला": {
+    "word": "माला",
+    "base_english": "Garland / Rosary (feminine base)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Garland / Rosary (feminine base)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "माला / हार (स्त्रीलिंग)"
+      }
+    }
+  },
+  "मालायाः": {
+    "word": "मालायाः",
+    "base_english": "From the garland (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the garland (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "माला से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "मालाभ्याम्": {
+    "word": "मालाभ्याम्",
+    "base_english": "From two garlands (pañchamī dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From two garlands (pañchamī dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो मालाओं से (पञ्चमी द्विवचन)"
+      }
+    }
+  },
+  "मालाभ्यः": {
+    "word": "मालाभ्यः",
+    "base_english": "From garlands (pañchamī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From garlands (pañchamī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मालाओं से (पञ्चमी बहुवचन)"
+      }
+    }
+  },
+  "कूपी": {
+    "word": "कूपी",
+    "base_english": "Bottle / Flask (feminine base)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Bottle / Flask (feminine base)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बोतल / कूपी (स्त्रीलिंग)"
+      }
+    }
+  },
+  "ईकारान्त": {
+    "word": "ईकारान्त",
+    "base_english": "Ending in long vowel 'ī'",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ending in long vowel 'ī'"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ईकारान्त (ई स्वर पर समाप्त होने वाला शब्द)"
+      }
+    }
+  },
+  "कूप्याः": {
+    "word": "कूप्याः",
+    "base_english": "From the bottle (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the bottle (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बोतल से / कूपी से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "कूपीभ्याम्": {
+    "word": "कूपीभ्याम्",
+    "base_english": "From two bottles (pañchamī dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From two bottles (pañchamī dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो बोतलों से (पञ्चमी द्विवचन)"
+      }
+    }
+  },
+  "कूपीभ्यः": {
+    "word": "कूपीभ्यः",
+    "base_english": "From bottles (pañchamī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From bottles (pañchamī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बोतलों से (पञ्चमी बहुवचन)"
+      }
+    }
+  },
+  "नदी": {
+    "word": "नदी",
+    "base_english": "River / Stream (feminine base)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "River / Stream (feminine base)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नदी / सरिता (स्त्रीलिंग)"
+      }
+    }
+  },
+  "नद्याः": {
+    "word": "नद्याः",
+    "base_english": "From the river (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the river (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नदी से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "नदीभ्याम्": {
+    "word": "नदीभ्याम्",
+    "base_english": "From two rivers (pañchamī dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From two rivers (pañchamī dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो नदियों से (पञ्चमी द्विवचन)"
+      }
+    }
+  },
+  "नदीभ्यः": {
+    "word": "नदीभ्यः",
+    "base_english": "From rivers (pañchamī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From rivers (pañchamī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नदियों से (पञ्चमी बहुवचन)"
+      }
+    }
+  },
+  "नगरी": {
+    "word": "नगरी",
+    "base_english": "City / Town (feminine base)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "City / Town (feminine base)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शहर / नगर / नगरी (स्त्रीलिंग)"
+      }
+    }
+  },
+  "नगर्याः": {
+    "word": "नगर्याः",
+    "base_english": "From the city (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the city (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नगर से / शहर से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "नगरीभ्याम्": {
+    "word": "नगरीभ्याम्",
+    "base_english": "From two cities (pañchamī dual)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From two cities (pañchamī dual)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो नगरों से (पञ्चमी द्विवचन)"
+      }
+    }
+  },
+  "नगरीभ्यः": {
+    "word": "नगरीभ्यः",
+    "base_english": "From cities (pañchamī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From cities (pañchamī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नगरों से (पञ्चमी बहुवचन)"
+      }
+    }
+  },
+  "राजेशः": {
+    "word": "राजेशः",
+    "base_english": "Rajesh (proper name, masculine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Rajesh (proper name, masculine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "राजेश (बालक का नाम)"
+      }
+    }
+  },
+  "विद्यालयात्": {
+    "word": "विद्यालयात्",
+    "base_english": "From the school (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the school (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्यालय से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "पुस्तकम्": {
+    "word": "पुस्तकम्",
+    "base_english": "Book (neuter prathamā/dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Book (neuter prathamā/dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किताब / पुस्तक को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "आनयति": {
+    "word": "आनयति",
+    "base_english": "Brings / Fetches (laṭ prathamapurusha singular of ā + nī)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Brings / Fetches (laṭ prathamapurusha singular of ā + nī)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लाता है (लट् प्रथमपुरुष एकवचन)"
+      }
+    }
+  },
+  "महेशात्": {
+    "word": "महेशात्",
+    "base_english": "From Mahesh (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From Mahesh (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "महेश से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "लेखनीं": {
+    "word": "लेखनीं",
+    "base_english": "Pen / Writing instrument (feminine dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Pen / Writing instrument (feminine dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कलम को / लेखनी को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "गृहात्": {
+    "word": "गृहात्",
+    "base_english": "From the house / home (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the house / home (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "घर से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "हिमालयात्": {
+    "word": "हिमालयात्",
+    "base_english": "From the Himalayas (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the Himalayas (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हिमालय पर्वत से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "गङ्गा": {
+    "word": "गङ्गा",
+    "base_english": "The holy river Ganga (feminine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The holy river Ganga (feminine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गंगा नदी (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "प्रवहति": {
+    "word": "प्रवहति",
+    "base_english": "Flows forth (laṭ prathamapurusha singular of pra + vah)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Flows forth (laṭ prathamapurusha singular of pra + vah)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बहती है / प्रवाहित होती है (लट् लकार)"
+      }
+    }
+  },
+  "पदरञ्जनी": {
+    "word": "पदरञ्जनी",
+    "base_english": "Crossword puzzle / Word game",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Crossword puzzle / Word game"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शब्द-पहेली / पदरञ्जनी"
+      }
+    }
+  },
+  "मातः": {
+    "word": "मातः",
+    "base_english": "O Mother! (vocative singular of mātṛ)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "O Mother! (vocative singular of mātṛ)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हे माता! / माँ! (संबोधन एकवचन)"
+      }
+    }
+  },
+  "तथ्यम्": {
+    "word": "तथ्यम्",
+    "base_english": "Truth / Fact / Reality (neuter prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Truth / Fact / Reality (neuter prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तथ्य / सत्य / यथार्थ"
+      }
+    }
+  },
+  "सस्यानाम्": {
+    "word": "सस्यानाम्",
+    "base_english": "Of food grains / crops (neuter shashthī plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of food grains / crops (neuter shashthī plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फसलों का / अन्नों का (षष्ठी बहुवचन)"
+      }
+    }
+  },
+  "उपरिष्टात्": {
+    "word": "उपरिष्टात्",
+    "base_english": "From above / From top (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From above / From top (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "ऊपर से (अव्यय)"
+      }
+    }
+  },
+  "उन्नतिः": {
+    "word": "उन्नतिः",
+    "base_english": "Progress / Growth / Elevation (feminine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Progress / Growth / Elevation (feminine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उन्नति / प्रगति / विकास (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "समाप्तम्": {
+    "word": "समाप्तम्",
+    "base_english": "Finished / Completed (neuter kta participle)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Finished / Completed (neuter kta participle)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "समाप्त / पूर्ण हुआ"
+      }
+    }
+  },
+  "अवसानम्": {
+    "word": "अवसानम्",
+    "base_english": "End / Conclusion / Termination (neuter singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "End / Conclusion / Termination (neuter singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अवसान / अंत / समाप्ति"
+      }
+    }
+  },
+  "पूर्णता": {
+    "word": "पूर्णता",
+    "base_english": "Completeness / Fullness (Hindi/Sanskrit)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Completeness / Fullness (Hindi/Sanskrit)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पूर्णता / समाप्ति"
+      }
+    }
+  },
+  "गगनस्य": {
+    "word": "गगनस्य",
+    "base_english": "Of the sky / firmament (shashthī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the sky / firmament (shashthī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आकाश का / गगन का (षष्ठी एकवचन)"
+      }
+    }
+  },
+  "बुद्धिमती": {
+    "word": "बुद्धिमती",
+    "base_english": "Intelligent woman / girl (feminine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Intelligent woman / girl (feminine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बुद्धिमती / समझदार स्त्री (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "पद्मपादः": {
+    "word": "पद्मपादः",
+    "base_english": "Padmapada (foremost disciple of Adi Shankaracharya)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Padmapada (foremost disciple of Adi Shankaracharya)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पद्मपाद (आदि शंकराचार्य के महान शिष्य)"
+      }
+    }
+  },
+  "शङ्कराचार्यः": {
+    "word": "शङ्कराचार्यः",
+    "base_english": "Adi Shankaracharya (great philosopher and preceptor)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Adi Shankaracharya (great philosopher and preceptor)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आदि शंकराचार्य (अद्वैत वेदान्त के प्रवर्तक)"
+      }
+    }
+  },
+  "शङ्कराचार्यात्": {
+    "word": "शङ्कराचार्यात्",
+    "base_english": "From Adi Shankaracharya (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From Adi Shankaracharya (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शंकराचार्य से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "विवेकानन्दः": {
+    "word": "विवेकानन्दः",
+    "base_english": "Swami Vivekananda (proper name)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Swami Vivekananda (proper name)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "स्वामी विवेकानन्द"
+      }
+    }
+  },
+  "रामकृष्णः": {
+    "word": "रामकृष्णः",
+    "base_english": "Sri Ramakrishna Paramahamsa (proper name)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sri Ramakrishna Paramahamsa (proper name)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रामकृष्ण परमहंस"
+      }
+    }
+  },
+  "रामकृष्णात्": {
+    "word": "रामकृष्णात्",
+    "base_english": "From Sri Ramakrishna (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From Sri Ramakrishna (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रामकृष्ण से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "वसिष्ठः": {
+    "word": "वसिष्ठः",
+    "base_english": "Sage Vashistha (revered Vedic Brahmarshi)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sage Vashistha (revered Vedic Brahmarshi)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "महर्षि वसिष्ठ (रघुवंश के कुलगुरु)"
+      }
+    }
+  },
+  "वसिष्ठात्": {
+    "word": "वसिष्ठात्",
+    "base_english": "From Sage Vashistha (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From Sage Vashistha (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "वसिष्ठ से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "भीष्मः": {
+    "word": "भीष्मः",
+    "base_english": "Bhishma Pitamaha (revered Mahabharata warrior)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Bhishma Pitamaha (revered Mahabharata warrior)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भीष्म पितामह"
+      }
+    }
+  },
+  "परशुरामः": {
+    "word": "परशुरामः",
+    "base_english": "Lord Parashurama (warrior avatar of Vishnu)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Lord Parashurama (warrior avatar of Vishnu)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "भगवान परशुराम"
+      }
+    }
+  },
+  "परशुरामात्": {
+    "word": "परशुरामात्",
+    "base_english": "From Lord Parashurama (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From Lord Parashurama (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "परशुराम से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "अर्जुनः": {
+    "word": "अर्जुनः",
+    "base_english": "Arjuna (Pandava hero and archer)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Arjuna (Pandava hero and archer)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अर्जुन (महान धनुर्धर)"
+      }
+    }
+  },
+  "द्रोणाचार्यः": {
+    "word": "द्रोणाचार्यः",
+    "base_english": "Guru Dronacharya (preceptor of Kauravas and Pandavas)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Guru Dronacharya (preceptor of Kauravas and Pandavas)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गुरु द्रोणाचार्य"
+      }
+    }
+  },
+  "द्रोणाचार्यात्": {
+    "word": "द्रोणाचार्यात्",
+    "base_english": "From Guru Dronacharya (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From Guru Dronacharya (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "द्रोणाचार्य से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "प्रदत्तानि": {
+    "word": "प्रदत्तानि",
+    "base_english": "Given / Provided (neuter prathamā/dvitīyā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Given / Provided (neuter prathamā/dvitīyā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दिए गए (वाक्य) (नपुंसकलिंग बहुवचन)"
+      }
+    }
+  },
+  "आङ्ग्लभाषया": {
+    "word": "आङ्ग्लभाषया",
+    "base_english": "In the English language (feminine tṛtīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the English language (feminine tṛtīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अंग्रेजी भाषा में (तृतीया एकवचन)"
+      }
+    }
+  },
+  "अनुवादं": {
+    "word": "अनुवादं",
+    "base_english": "Translation (masculine dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Translation (masculine dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अनुवाद को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "राधा": {
+    "word": "राधा",
+    "base_english": "Radha (proper female name)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Radha (proper female name)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "राधा (बालिका का नाम)"
+      }
+    }
+  },
+  "नगरात्": {
+    "word": "नगरात्",
+    "base_english": "From the city / town (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the city / town (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "नगर से / शहर से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "विनयः": {
+    "word": "विनयः",
+    "base_english": "Vinay (proper male name, prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Vinay (proper male name, prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विनय (बालक का नाम)"
+      }
+    }
+  },
+  "पुष्पाणि": {
+    "word": "पुष्पाणि",
+    "base_english": "Flowers (neuter prathamā/dvitīyā plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Flowers (neuter prathamā/dvitīyā plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फूल / पुष्प (द्वितीया बहुवचन)"
+      }
+    }
+  },
+  "चिनोति": {
+    "word": "चिनोति",
+    "base_english": "Plucks / Gathers (laṭ prathamapurusha singular of ci)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Plucks / Gathers (laṭ prathamapurusha singular of ci)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चुनता है / तोड़ता है (लट् लकार)"
+      }
+    }
+  },
+  "सन्दीपः": {
+    "word": "सन्दीपः",
+    "base_english": "Sandeep (proper male name, prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sandeep (proper male name, prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "संदीप (युवक का नाम)"
+      }
+    }
+  },
+  "कार्यालयात्": {
+    "word": "कार्यालयात्",
+    "base_english": "From the office (pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the office (pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कार्यालय से / ऑफिस से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "भगिनी": {
+    "word": "भगिनी",
+    "base_english": "Sister (feminine prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sister (feminine prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बहन / भगिनी (प्रथमा एकवचन)"
+      }
+    }
+  },
+  "दूरात्": {
+    "word": "दूरात्",
+    "base_english": "From a distance / Afar (pañchamī singular adverb)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From a distance / Afar (pañchamī singular adverb)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दूर से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "वाहनं": {
+    "word": "वाहनं",
+    "base_english": "Vehicle / Carriage (neuter dvitīyā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Vehicle / Carriage (neuter dvitīyā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गाड़ी को / वाहन को (द्वितीया एकवचन)"
+      }
+    }
+  },
+  "महेशः": {
+    "word": "महेशः",
+    "base_english": "Mahesh (proper male name, prathamā singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mahesh (proper male name, prathamā singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "महेश (छात्र का नाम)"
+      }
+    }
+  },
+  "शालायाः": {
+    "word": "शालायाः",
+    "base_english": "From the school (feminine pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the school (feminine pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शाला से / विद्यालय से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "कपाटिकायाः": {
+    "word": "कपाटिकायाः",
+    "base_english": "From the cupboard / wardrobe (feminine pañchamī singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "From the cupboard / wardrobe (feminine pañchamī singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अलमारी से (पञ्चमी एकवचन)"
+      }
+    }
+  },
+  "स्वीकरोति": {
+    "word": "स्वीकरोति",
+    "base_english": "Takes / Accepts (laṭ prathamapurusha singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Takes / Accepts (laṭ prathamapurusha singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "लेता है / स्वीकार करता है (लट् लकार)"
+      }
+    }
   }
 }
