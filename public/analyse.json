@@ -49762,5 +49762,1635 @@
   "ॠ": {
     "english": "Long vocalic 'ṝ'",
     "grammar": "Vowel sound (दीर्घ स्वर)"
+  },
+  "अकारान्त": {
+    "english": "Ending with short vowel 'a'",
+    "grammar": "Grammatical term",
+    "hindi": "अकारान्त (अ वर्ण के अंत वाला)"
+  },
+  "अकारान्तः": {
+    "english": "Ending with vowel 'a'",
+    "grammar": "Noun/adj., m., nom. sing.",
+    "hindi": "अकारान्त शब्द"
+  },
+  "अकारान्ताः": {
+    "english": "Words ending with vowel 'a'",
+    "grammar": "Noun/adj., m., nom. plur.",
+    "hindi": "अकारान्त शब्द"
+  },
+  "अच्": {
+    "english": "Vowels (Pratyahara 'ac' in Paninian grammar)",
+    "grammar": "Grammatical pratyahara (nom. sing.)",
+    "hindi": "स्वर वर्ण (अच् प्रत्याहार)"
+  },
+  "अजन्त": {
+    "english": "Ending in a vowel (ac + anta)",
+    "grammar": "Phonetic/morphological term",
+    "hindi": "स्वरान्त / अजन्त"
+  },
+  "अजन्ताः": {
+    "english": "Words ending in vowels (Ajanta nouns)",
+    "grammar": "Noun/adj., m., nom. plur.",
+    "hindi": "अजन्त शब्द (स्वरान्त शब्द)"
+  },
+  "अधिकरण": {
+    "english": "Locative case (Adhikarana karaka)",
+    "grammar": "Grammatical karaka",
+    "hindi": "अधिकरण कारक (सप्तमी विभक्ति)"
+  },
+  "अध्याय": {
+    "english": "Chapter / lesson",
+    "grammar": "Hindi noun, m. (संस्कृत: अध्यायः)",
+    "hindi": "अध्याय / पाठ"
+  },
+  "अन्तिमवर्णः": {
+    "english": "Final letter / ending sound",
+    "grammar": "Compound noun, m., nom. sing.",
+    "hindi": "अंतिम अक्षर"
+  },
+  "अभ्यासप्रश्नानां": {
+    "english": "Of exercise questions",
+    "grammar": "Compound noun, m., gen. plur.",
+    "hindi": "अभ्यास के प्रश्नों का"
+  },
+  "अमृत": {
+    "english": "Nectar / ambrosia (gloss for सुधा)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "अमृत (सुधा का अर्थ)"
+  },
+  "अस्मत्": {
+    "english": "From us / from me (5th case of Asmad)",
+    "grammar": "Pronoun, abl. sing./plur. (अस्मद्)",
+    "hindi": "हमसे / मुझसे (पंचमी विभक्ति)"
+  },
+  "अस्मद्": {
+    "english": "Base stem for first person pronoun ('I' / 'We')",
+    "grammar": "Pronoun base stem (सर्वनाम)",
+    "hindi": "अस्मद् (मैं/हम सर्वनाम प्रातिपदिक)"
+  },
+  "अस्मभ्यम्": {
+    "english": "For us / to us",
+    "grammar": "Pronoun, dat. plur. (अस्मद्)",
+    "hindi": "हम सबके लिए (चतुर्थी बहुवचन)"
+  },
+  "आँख": {
+    "english": "Eye (gloss for नयन / नेत्र)",
+    "grammar": "Hindi noun, f.",
+    "hindi": "आँख (नयन का अर्थ)"
+  },
+  "आकारान्ताः": {
+    "english": "Words ending with long vowel 'ā'",
+    "grammar": "Noun/adj., f./m., nom. plur.",
+    "hindi": "आकारान्त शब्द"
+  },
+  "आधारित": {
+    "english": "Based on",
+    "grammar": "Hindi adj.",
+    "hindi": "आधारित"
+  },
+  "आवयोः": {
+    "english": "Of us two / in us two",
+    "grammar": "Pronoun, gen./loc. dual (अस्मद्)",
+    "hindi": "हम दोनों का / हम दोनों में (षष्ठी/सप्तमी द्विवचन)"
+  },
+  "आवाभ्याम्": {
+    "english": "By us two / for us two / from us two",
+    "grammar": "Pronoun, inst./dat./abl. dual (अस्मद्)",
+    "hindi": "हम दोनों के द्वारा / हम दोनों के लिए / हम दोनों से"
+  },
+  "इकारान्ताः": {
+    "english": "Words ending with short vowel 'i'",
+    "grammar": "Noun/adj., m., nom. plur.",
+    "hindi": "इकारान्त शब्द"
+  },
+  "इक्षु": {
+    "english": "Sugarcane",
+    "grammar": "Noun, m., base form / nom. sing.",
+    "hindi": "गन्ना / ईख (इक्षु)"
+  },
+  "उकारान्त": {
+    "english": "Ending with short vowel 'u'",
+    "grammar": "Grammatical term",
+    "hindi": "उकारान्त"
+  },
+  "उकारान्तः": {
+    "english": "Noun ending with 'u'",
+    "grammar": "Noun/adj., m., nom. sing.",
+    "hindi": "उकारान्त शब्द"
+  },
+  "उकारान्ताः": {
+    "english": "Words ending with 'u'",
+    "grammar": "Noun/adj., m., nom. plur.",
+    "hindi": "उकारान्त शब्द"
+  },
+  "उत्तमपुरुषसर्वनाम": {
+    "english": "First person pronoun ('asmad')",
+    "grammar": "Compound grammatical term",
+    "hindi": "उत्तम पुरुष सर्वनाम (मैं/हम)"
+  },
+  "उद्यान": {
+    "english": "Garden / park",
+    "grammar": "Noun, n., base form",
+    "hindi": "बगीचा / उपवन"
+  },
+  "ऋकारान्त": {
+    "english": "Ending with vocalic vowel 'ṛ'",
+    "grammar": "Grammatical term",
+    "hindi": "ऋकारान्त"
+  },
+  "ऋकारान्तः": {
+    "english": "Noun ending with vocalic 'ṛ'",
+    "grammar": "Noun/adj., m., nom. sing.",
+    "hindi": "ऋकारान्त शब्द"
+  },
+  "ऋतु": {
+    "english": "Season",
+    "grammar": "Noun, m., base form / nom. sing.",
+    "hindi": "मौसम / ऋतु"
+  },
+  "ऋषि": {
+    "english": "Sage / seer",
+    "grammar": "Noun, m., base form / nom. sing.",
+    "hindi": "ऋषि / मुनि"
+  },
+  "कक्षावर्ग": {
+    "english": "Class / classroom / grade",
+    "grammar": "Compound Hindi gloss",
+    "hindi": "कक्षा या वर्ग"
+  },
+  "कपि": {
+    "english": "Monkey",
+    "grammar": "Noun, m., base form / nom. sing.",
+    "hindi": "बंदर / कपि"
+  },
+  "कर्ता": {
+    "english": "Doer / subject (Nominative)",
+    "grammar": "Noun, m., nom. sing. (कर्तृ)",
+    "hindi": "कर्ता कारक (प्रथमा विभक्ति)"
+  },
+  "कर्तृ": {
+    "english": "Doer / maker / creator",
+    "grammar": "Noun, m., base stem",
+    "hindi": "करने वाला (कर्ता)"
+  },
+  "कवयः": {
+    "english": "Poets (plural)",
+    "grammar": "Noun, m., nom. plur. (कवि)",
+    "hindi": "अनेक कवि (प्रथमा बहुवचन)"
+  },
+  "कवये": {
+    "english": "For the poet",
+    "grammar": "Noun, m., dat. sing. (कवि)",
+    "hindi": "कवि के लिए (चतुर्थी एकवचन)"
+  },
+  "कविना": {
+    "english": "By the poet / with the poet",
+    "grammar": "Noun, m., inst. sing. (कवि)",
+    "hindi": "कवि के द्वारा / कवि से (तृतीया एकवचन)"
+  },
+  "कविभिः": {
+    "english": "By poets",
+    "grammar": "Noun, m., inst. plur. (कवि)",
+    "hindi": "कवियों के द्वारा (तृतीया बहुवचन)"
+  },
+  "कविभ्यः": {
+    "english": "For poets / from poets",
+    "grammar": "Noun, m., dat./abl. plur. (कवि)",
+    "hindi": "कवियों के लिए / कवियों से (चतुर्थी/पंचमी बहुवचन)"
+  },
+  "कविभ्याम्": {
+    "english": "By / for / from two poets",
+    "grammar": "Noun, m., inst./dat./abl. dual (कवि)",
+    "hindi": "दो कवियों के द्वारा / दो कवियों के लिए (द्विवचन)"
+  },
+  "कवियो": {
+    "english": "O poets! (Vocative dual/plural)",
+    "grammar": "Hindi vocative noun, m. plur.",
+    "hindi": "हे कवियो!"
+  },
+  "कवियों": {
+    "english": "Poets (oblique case)",
+    "grammar": "Hindi noun, m. plur. oblique",
+    "hindi": "कवियों (कारक रूप)"
+  },
+  "कविषु": {
+    "english": "Among poets / in poets",
+    "grammar": "Noun, m., loc. plur. (कवि)",
+    "hindi": "कवियों में / कवियों पर (सप्तमी बहुवचन)"
+  },
+  "कविहरि": {
+    "english": "Like Kavi and Hari (short-i stems)",
+    "grammar": "Compound dvandva phrase",
+    "hindi": "कवि और हरि के समान"
+  },
+  "कवी": {
+    "english": "Two poets",
+    "grammar": "Noun, m., nom./acc. dual (कवि)",
+    "hindi": "दो कवि (प्रथमा/द्वितीया द्विवचन)"
+  },
+  "कवीनाम्": {
+    "english": "Of poets",
+    "grammar": "Noun, m., gen. plur. (कवि)",
+    "hindi": "कवियों का / के / की (षष्ठी बहुवचन)"
+  },
+  "कवीन्": {
+    "english": "To the poets (direct object plural)",
+    "grammar": "Noun, m., acc. plur. (कवि)",
+    "hindi": "कवियों को (द्वितीया बहुवचन)"
+  },
+  "कवे": {
+    "english": "O poet! (Vocative singular)",
+    "grammar": "Noun, m., voc. sing. (कवि)",
+    "hindi": "हे कवे! / हे कवि!"
+  },
+  "कवेः": {
+    "english": "From the poet / of the poet",
+    "grammar": "Noun, m., abl./gen. sing. (कवि)",
+    "hindi": "कवि से / कवि का (पंचमी/षष्ठी एकवचन)"
+  },
+  "कवौ": {
+    "english": "In the poet / on the poet",
+    "grammar": "Noun, m., loc. sing. (कवि)",
+    "hindi": "कवि में / कवि पर (सप्तमी एकवचन)"
+  },
+  "कव्योः": {
+    "english": "Of two poets / in two poets",
+    "grammar": "Noun, m., gen./loc. dual (कवि)",
+    "hindi": "दो कवियों का / दो कवियों में (षष्ठी/सप्तमी द्विवचन)"
+  },
+  "किताब": {
+    "english": "Book (gloss for पुस्तक)",
+    "grammar": "Hindi noun, f.",
+    "hindi": "किताब / पुस्तक"
+  },
+  "कृष्ण": {
+    "english": "Lord Krishna / dark-colored",
+    "grammar": "Noun/adj., m., base form",
+    "hindi": "भगवान कृष्ण"
+  },
+  "कोष्ठकम्": {
+    "english": "Table / bracket / box",
+    "grammar": "Noun, n., nom./acc. sing.",
+    "hindi": "कोष्ठक / तालिका"
+  },
+  "खंड": {
+    "english": "Section / part",
+    "grammar": "Hindi noun, m.",
+    "hindi": "भाग / खंड"
+  },
+  "गन्ना": {
+    "english": "Sugarcane (gloss for इक्षु)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "गन्ना"
+  },
+  "गिरते": {
+    "english": "Fall (plural verb)",
+    "grammar": "Hindi verb",
+    "hindi": "गिरते हैं (पतन्ति का अर्थ)"
+  },
+  "गीता": {
+    "english": "The Bhagavad Gita / proper name Gita",
+    "grammar": "Noun, f., nom. sing.",
+    "hindi": "श्रीमद्भगवद्गीता / गीता"
+  },
+  "गुरवः": {
+    "english": "Teachers / spiritual guides (plural)",
+    "grammar": "Noun, m., nom. plur. (गुरु)",
+    "hindi": "अनेक गुरु (प्रथमा बहुवचन)"
+  },
+  "गुरवे": {
+    "english": "For the teacher",
+    "grammar": "Noun, m., dat. sing. (गुरु)",
+    "hindi": "गुरु के लिए (चतुर्थी एकवचन)"
+  },
+  "गुरुओ": {
+    "english": "O teachers! (Vocative)",
+    "grammar": "Hindi vocative noun, m. plur.",
+    "hindi": "हे गुरुओ!"
+  },
+  "गुरुणा": {
+    "english": "By the teacher",
+    "grammar": "Noun, m., inst. sing. (गुरु)",
+    "hindi": "गुरु के द्वारा / गुरु से (तृतीया एकवचन)"
+  },
+  "गुरुभिः": {
+    "english": "By teachers",
+    "grammar": "Noun, m., inst. plur. (गुरु)",
+    "hindi": "गुरुओं के द्वारा (तृतीया बहुवचन)"
+  },
+  "गुरुभ्यः": {
+    "english": "For teachers / from teachers",
+    "grammar": "Noun, m., dat./abl. plur. (गुरु)",
+    "hindi": "गुरुओं के लिए / गुरुओं से (चतुर्थी/पंचमी बहुवचन)"
+  },
+  "गुरुभ्याम्": {
+    "english": "By / for / from two teachers",
+    "grammar": "Noun, m., inst./dat./abl. dual (गुरु)",
+    "hindi": "दो गुरुओं के द्वारा / दो गुरुओं के लिए (द्विवचन)"
+  },
+  "गुरुषु": {
+    "english": "Among teachers / in teachers",
+    "grammar": "Noun, m., loc. plur. (गुरु)",
+    "hindi": "गुरुओं में / गुरुओं पर (सप्तमी बहुवचन)"
+  },
+  "गुरू": {
+    "english": "Two teachers",
+    "grammar": "Noun, m., nom./acc. dual (गुरु)",
+    "hindi": "दो गुरु (प्रथमा/द्वितीया द्विवचन)"
+  },
+  "गुरून": {
+    "english": "To the teachers (plural direct object)",
+    "grammar": "Noun, m., acc. plur. (गुरु)",
+    "hindi": "गुरुओं को (द्वितीया बहुवचन - गुरून्)"
+  },
+  "गुरो": {
+    "english": "O teacher! (Vocative singular)",
+    "grammar": "Noun, m., voc. sing. (गुरु)",
+    "hindi": "हे गुरु! / हे गुरो!"
+  },
+  "गुरोः": {
+    "english": "From the teacher / of the teacher",
+    "grammar": "Noun, m., abl./gen. sing. (गुरु)",
+    "hindi": "गुरु से / गुरु का (पंचमी/षष्ठी एकवचन)"
+  },
+  "गुरौ": {
+    "english": "In the teacher / regarding the teacher",
+    "grammar": "Noun, m., loc. sing. (गुरु)",
+    "hindi": "गुरु में / गुरु पर (सप्तमी एकवचन)"
+  },
+  "गुर्वोः": {
+    "english": "Of two teachers / in two teachers",
+    "grammar": "Noun, m., gen./loc. dual (गुरु)",
+    "hindi": "दो गुरुओं का / दो गुरुओं में (षष्ठी/सप्तमी द्विवचन)"
+  },
+  "गृह": {
+    "english": "House / home",
+    "grammar": "Noun, n., base form",
+    "hindi": "घर / गृह"
+  },
+  "चक्र": {
+    "english": "Wheel / discus",
+    "grammar": "Noun, n., base form",
+    "hindi": "पहिया / चक्र"
+  },
+  "चषक": {
+    "english": "Cup / goblet",
+    "grammar": "Noun, m./n., base form",
+    "hindi": "प्याला / चषक"
+  },
+  "चिह्नानि": {
+    "english": "Signs / markers / indicators",
+    "grammar": "Noun, n., nom./acc. plur. (चिह्न)",
+    "hindi": "चिह्न / कारक चिह्न"
+  },
+  "चिह्नों": {
+    "english": "Signs / markers (oblique)",
+    "grammar": "Hindi noun, n. plur. oblique",
+    "hindi": "चिह्नों (कारक चिह्नों)"
+  },
+  "छात्राय": {
+    "english": "For the student / to the student",
+    "grammar": "Noun, m., dat. sing. (छात्र)",
+    "hindi": "छात्र के लिए / छात्र को (चतुर्थी एकवचन)"
+  },
+  "छात्रेण": {
+    "english": "By the student / with the student",
+    "grammar": "Noun, m., inst. sing. (छात्र)",
+    "hindi": "छात्र के द्वारा / छात्र से (तृतीया एकवचन)"
+  },
+  "जंगल": {
+    "english": "Forest (gloss for वन)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "जंगल / वन"
+  },
+  "जानवर": {
+    "english": "Animal (gloss for पशु)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "जानवर / पशु"
+  },
+  "जामातृ": {
+    "english": "Son-in-law",
+    "grammar": "Noun, m., base stem",
+    "hindi": "दामाद (जामातृ)"
+  },
+  "जिनके": {
+    "english": "Whose (plural/honorific)",
+    "grammar": "Hindi relative pronoun",
+    "hindi": "जिनके"
+  },
+  "तरु": {
+    "english": "Tree",
+    "grammar": "Noun, m., base form / nom. sing.",
+    "hindi": "पेड़ / वृक्ष / तरु"
+  },
+  "तालिकाओं": {
+    "english": "Tables / charts (oblique)",
+    "grammar": "Hindi noun, f. plur. oblique",
+    "hindi": "तालिकाओं को"
+  },
+  "तुझ": {
+    "english": "You (oblique base)",
+    "grammar": "Hindi pronoun",
+    "hindi": "तुझ"
+  },
+  "तुझसे": {
+    "english": "From you / by you",
+    "grammar": "Hindi pronoun + postposition",
+    "hindi": "तुझसे (अपादान/करण)"
+  },
+  "तुभ्यम्": {
+    "english": "To you / for you",
+    "grammar": "Pronoun, dat. sing. (युष्मद्)",
+    "hindi": "तुम्हारे लिए / तुझे (चतुर्थी एकवचन)"
+  },
+  "तुमआप": {
+    "english": "You (informal and formal)",
+    "grammar": "Compound pronoun pair",
+    "hindi": "तुम और आप (युष्मद् का अर्थ)"
+  },
+  "तुम्हारातुम": {
+    "english": "Your / yours",
+    "grammar": "Hindi pronoun compound gloss",
+    "hindi": "तुम्हारा / तुम सबका (युष्माकम्)"
+  },
+  "तूतुम": {
+    "english": "You (singular/informal)",
+    "grammar": "Hindi pronoun compound gloss",
+    "hindi": "तू और तुम (त्वम्)"
+  },
+  "तेरे": {
+    "english": "Your / of you",
+    "grammar": "Hindi possessive pronoun",
+    "hindi": "तेरे (तव का अर्थ)"
+  },
+  "त्रिषु": {
+    "english": "In the three (genders)",
+    "grammar": "Numeral adj., loc. plur.",
+    "hindi": "तीनों में (त्रिषु लिङ्गेषु)"
+  },
+  "त्वत्": {
+    "english": "From you (5th case singular)",
+    "grammar": "Pronoun, abl. sing. (युष्मद्)",
+    "hindi": "तुझसे / तुमसे अलग होकर (पंचमी एकवचन)"
+  },
+  "त्वया": {
+    "english": "By you / with you",
+    "grammar": "Pronoun, inst. sing. (युष्मद्)",
+    "hindi": "तेरे द्वारा / तुझसे (तृतीया एकवचन)"
+  },
+  "त्वयि": {
+    "english": "In you / on you",
+    "grammar": "Pronoun, loc. sing. (युष्मद्)",
+    "hindi": "तुझ में / तुझ पर (सप्तमी एकवचन)"
+  },
+  "दरवाजा": {
+    "english": "Door (gloss for द्वार)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "दरवाजा"
+  },
+  "दामाद": {
+    "english": "Son-in-law (gloss for जामातृ)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "दामाद"
+  },
+  "दिए": {
+    "english": "Given / provided",
+    "grammar": "Hindi past participle",
+    "hindi": "दिए गए हैं"
+  },
+  "देवयोः": {
+    "english": "Of two gods / in two gods",
+    "grammar": "Noun, m., gen./loc. dual (देव)",
+    "hindi": "दो देवों का / दो देवों में (षष्ठी/सप्तमी द्विवचन)"
+  },
+  "देवराम": {
+    "english": "Like Deva and Rama",
+    "grammar": "Compound dvandva gloss",
+    "hindi": "देव और राम के समान"
+  },
+  "देवस्य": {
+    "english": "Of god / divine person's",
+    "grammar": "Noun, m., gen. sing. (देव)",
+    "hindi": "देव का / के / की (षष्ठी एकवचन)"
+  },
+  "देवाः": {
+    "english": "Gods / deities (plural)",
+    "grammar": "Noun, m., nom. plur. (देव)",
+    "hindi": "अनेक देव / सब देव (प्रथमा बहुवचन)"
+  },
+  "देवात्": {
+    "english": "From the god",
+    "grammar": "Noun, m., abl. sing. (देव)",
+    "hindi": "देव से (पंचमी एकवचन)"
+  },
+  "देवानाम्": {
+    "english": "Of the gods",
+    "grammar": "Noun, m., gen. plur. (देव)",
+    "hindi": "देवों का / के / की (षष्ठी बहुवचन)"
+  },
+  "देवान्": {
+    "english": "To the gods (direct object plural)",
+    "grammar": "Noun, m., acc. plur. (देव)",
+    "hindi": "देवों को (द्वितीया बहुवचन)"
+  },
+  "देवाभ्याम्": {
+    "english": "By / for / from two gods",
+    "grammar": "Noun, m., inst./dat./abl. dual (देव)",
+    "hindi": "दो देवों से / दो देवों के लिए (द्विवचन)"
+  },
+  "देवाय": {
+    "english": "For the god / to the god",
+    "grammar": "Noun, m., dat. sing. (देव)",
+    "hindi": "देव के लिए (चतुर्थी एकवचन)"
+  },
+  "देवे": {
+    "english": "In the god / upon the god",
+    "grammar": "Noun, m., loc. sing. (देव)",
+    "hindi": "देव में / पर (सप्तमी एकवचन)"
+  },
+  "देवेन": {
+    "english": "By the god / with the god",
+    "grammar": "Noun, m., inst. sing. (देव)",
+    "hindi": "देव के द्वारा / देव से (तृतीया एकवचन)"
+  },
+  "देवेषु": {
+    "english": "Among gods / in the gods",
+    "grammar": "Noun, m., loc. plur. (देव)",
+    "hindi": "देवों में / देवों पर (सप्तमी बहुवचन)"
+  },
+  "देवैः": {
+    "english": "By the gods",
+    "grammar": "Noun, m., inst. plur. (देव)",
+    "hindi": "देवों के द्वारा / देवों से (तृतीया बहुवचन)"
+  },
+  "देवो": {
+    "english": "O gods! (Vocative)",
+    "grammar": "Hindi vocative noun, m. plur.",
+    "hindi": "हे देवो!"
+  },
+  "देवों": {
+    "english": "Gods (oblique plural)",
+    "grammar": "Hindi noun, m. plur. oblique",
+    "hindi": "देवों (कारक रूप)"
+  },
+  "देवौ": {
+    "english": "Two gods",
+    "grammar": "Noun, m., nom./acc. dual (देव)",
+    "hindi": "दो देव (प्रथमा/द्वितीया द्विवचन)"
+  },
+  "द्वार": {
+    "english": "Door / gate",
+    "grammar": "Noun, n., base form",
+    "hindi": "दरवाजा / फाटक"
+  },
+  "द्वि": {
+    "english": "Dual number abbreviation (द्विवचनम्)",
+    "grammar": "Abbreviation",
+    "hindi": "द्विवचन (संक्षेप)"
+  },
+  "धातृ": {
+    "english": "Creator / supporter / Brahma",
+    "grammar": "Noun, m., base stem",
+    "hindi": "विधाता / धारण करने वाला"
+  },
+  "नपुंसकलिंग": {
+    "english": "Neuter gender",
+    "grammar": "Hindi grammatical term",
+    "hindi": "नपुंसकलिंग"
+  },
+  "नपुंसकलिङ्गशब्दाः": {
+    "english": "Neuter gender words",
+    "grammar": "Compound noun, m., nom. plur.",
+    "hindi": "नपुंसकलिंग शब्द"
+  },
+  "नप्तृ": {
+    "english": "Grandson",
+    "grammar": "Noun, m., base stem",
+    "hindi": "पोता / नाती (नप्तृ)"
+  },
+  "नयन": {
+    "english": "Eye",
+    "grammar": "Noun, n., base form",
+    "hindi": "आँख / नेत्र"
+  },
+  "नेतः": {
+    "english": "O leader! (Vocative singular)",
+    "grammar": "Noun, m., voc. sing. (नेतृ)",
+    "hindi": "हे नेतः! / हे नेता!"
+  },
+  "नेतरी": {
+    "english": "In the leader / on the leader",
+    "grammar": "Noun, m., loc. sing. (नेतृ)",
+    "hindi": "नेता में / नेता पर (सप्तमी एकवचन)"
+  },
+  "नेताओ": {
+    "english": "O leaders! (Vocative plural)",
+    "grammar": "Hindi vocative noun, m. plur.",
+    "hindi": "हे नेताओ!"
+  },
+  "नेताओं": {
+    "english": "Leaders (oblique plural)",
+    "grammar": "Hindi noun, m. plur. oblique",
+    "hindi": "नेताओं (कारक रूप)"
+  },
+  "नेतारः": {
+    "english": "Leaders (plural)",
+    "grammar": "Noun, m., nom. plur. (नेतृ)",
+    "hindi": "अनेक नेता (प्रथमा बहुवचन)"
+  },
+  "नेतारम्": {
+    "english": "To the leader (direct object)",
+    "grammar": "Noun, m., acc. sing. (नेतृ)",
+    "hindi": "नेता को (द्वितीया एकवचन)"
+  },
+  "नेतारौ": {
+    "english": "Two leaders",
+    "grammar": "Noun, m., nom./acc. dual (नेतृ)",
+    "hindi": "दो नेता (प्रथमा/द्वितीया द्विवचन)"
+  },
+  "नेतुः": {
+    "english": "From the leader / of the leader",
+    "grammar": "Noun, m., abl./gen. sing. (नेतृ)",
+    "hindi": "नेता से / नेता का (पंचमी/षष्ठी एकवचन)"
+  },
+  "नेतृ": {
+    "english": "Leader / guide",
+    "grammar": "Noun, m., base stem",
+    "hindi": "नेता / नेतृत्व करने वाला"
+  },
+  "नेतृभिः": {
+    "english": "By leaders",
+    "grammar": "Noun, m., inst. plur. (नेतृ)",
+    "hindi": "नेताओं के द्वारा (तृतीया बहुवचन)"
+  },
+  "नेतृभ्यः": {
+    "english": "For leaders / from leaders",
+    "grammar": "Noun, m., dat./abl. plur. (नेतृ)",
+    "hindi": "नेताओं के लिए / नेताओं से (चतुर्थी/पंचमी बहुवचन)"
+  },
+  "नेतृभ्याम्": {
+    "english": "By / for / from two leaders",
+    "grammar": "Noun, m., inst./dat./abl. dual (नेतृ)",
+    "hindi": "दो नेताओं के द्वारा / दो नेताओं के लिए (द्विवचन)"
+  },
+  "नेतृषु": {
+    "english": "Among leaders / in leaders",
+    "grammar": "Noun, m., loc. plur. (नेतृ)",
+    "hindi": "नेताओं में / नेताओं पर (सप्तमी बहुवचन)"
+  },
+  "नेतॄणाम्": {
+    "english": "Of leaders",
+    "grammar": "Noun, m., gen. plur. (नेतृ)",
+    "hindi": "नेताओं का / के / की (षष्ठी बहुवचन)"
+  },
+  "नेतॄन्": {
+    "english": "To leaders (plural direct object)",
+    "grammar": "Noun, m., acc. plur. (नेतृ)",
+    "hindi": "नेताओं को (द्वितीया बहुवचन)"
+  },
+  "नेत्र": {
+    "english": "Eye",
+    "grammar": "Noun, n., base form",
+    "hindi": "आँख / नेत्र"
+  },
+  "नेत्रा": {
+    "english": "By the leader",
+    "grammar": "Noun, m., inst. sing. (नेतृ)",
+    "hindi": "नेता के द्वारा / नेता से (तृतीया एकवचन)"
+  },
+  "नेत्रोः": {
+    "english": "Of two leaders / in two leaders",
+    "grammar": "Noun, m., gen./loc. dual (नेतृ)",
+    "hindi": "दो नेताओं का / दो नेताओं में (षष्ठी/सप्तमी द्विवचन)"
+  },
+  "प": {
+    "english": "Letter 'pa'",
+    "grammar": "Phonetic letter",
+    "hindi": "वर्ण 'प'"
+  },
+  "पतन्ति": {
+    "english": "They fall",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. plur.",
+    "hindi": "गिरते हैं (पत धातु, लट् लकार, प्रथम पुरुष बहुवचन)"
+  },
+  "पत्तापत्र": {
+    "english": "Leaf or letter",
+    "grammar": "Compound Hindi gloss",
+    "hindi": "पत्ता या पत्र"
+  },
+  "पत्र": {
+    "english": "Leaf / letter",
+    "grammar": "Noun, n., base form",
+    "hindi": "पत्ता / चिट्ठी / पत्र"
+  },
+  "परिवर्तित": {
+    "english": "Changed / modified",
+    "grammar": "Hindi adj.",
+    "hindi": "परिवर्तित / बदला हुआ"
+  },
+  "परिशिष्ट": {
+    "english": "Appendix / supplement",
+    "grammar": "Hindi noun, m.",
+    "hindi": "परिशिष्ट (अतिरिक्त अंश)"
+  },
+  "पहिया": {
+    "english": "Wheel (gloss for चक्र)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "पहिया"
+  },
+  "पाद": {
+    "english": "Foot / step",
+    "grammar": "Noun, m., base form",
+    "hindi": "पैर / चरण"
+  },
+  "पितः": {
+    "english": "O father! (Vocative singular)",
+    "grammar": "Noun, m., voc. sing. (पितृ)",
+    "hindi": "हे पिता! / हे तात!"
+  },
+  "पितरः": {
+    "english": "Fathers / ancestors",
+    "grammar": "Noun, m., nom. plur. (पितृ)",
+    "hindi": "अनेक पिता / पितृगण (प्रथमा बहुवचन)"
+  },
+  "पितरम्": {
+    "english": "To the father (direct object)",
+    "grammar": "Noun, m., acc. sing. (पितृ)",
+    "hindi": "पिता को (द्वितीया एकवचन)"
+  },
+  "पितरि": {
+    "english": "In the father / upon father",
+    "grammar": "Noun, m., loc. sing. (पितृ)",
+    "hindi": "पिता में / पिता पर (सप्तमी एकवचन)"
+  },
+  "पितरौ": {
+    "english": "Two fathers / parents",
+    "grammar": "Noun, m., nom./acc. dual (पितृ)",
+    "hindi": "दो पिता / माता-पिता (प्रथमा/द्वितीया द्विवचन)"
+  },
+  "पिताओ": {
+    "english": "O fathers! (Vocative plural)",
+    "grammar": "Hindi vocative noun, m. plur.",
+    "hindi": "हे पिताओ!"
+  },
+  "पिताओं": {
+    "english": "Fathers (oblique plural)",
+    "grammar": "Hindi noun, m. plur. oblique",
+    "hindi": "पिताओं (कारक रूप)"
+  },
+  "पितृ": {
+    "english": "Father / ancestor",
+    "grammar": "Noun, m., base stem",
+    "hindi": "पिता / पूर्वज (ऋकारान्त शब्द)"
+  },
+  "पितृभिः": {
+    "english": "By fathers / ancestors",
+    "grammar": "Noun, m., inst. plur. (पितृ)",
+    "hindi": "पिताओं के द्वारा (तृतीया बहुवचन)"
+  },
+  "पितृभ्यः": {
+    "english": "For fathers / from ancestors",
+    "grammar": "Noun, m., dat./abl. plur. (पितृ)",
+    "hindi": "पिताओं के लिए / पिताओं से (चतुर्थी/पंचमी बहुवचन)"
+  },
+  "पितृभ्याम्": {
+    "english": "By / for / from two fathers",
+    "grammar": "Noun, m., inst./dat./abl. dual (पितृ)",
+    "hindi": "दो पिताओं के द्वारा / दो पिताओं के लिए (द्विवचन)"
+  },
+  "पितृषु": {
+    "english": "Among fathers / in ancestors",
+    "grammar": "Noun, m., loc. plur. (पितृ)",
+    "hindi": "पिताओं में / पितरों में (सप्तमी बहुवचन)"
+  },
+  "पितॄणाम्": {
+    "english": "Of fathers / of ancestors",
+    "grammar": "Noun, m., gen. plur. (पितृ)",
+    "hindi": "पिताओं का / पितरों का (षष्ठी बहुवचन)"
+  },
+  "पितॄन्": {
+    "english": "To fathers / ancestors (plural direct object)",
+    "grammar": "Noun, m., acc. plur. (पितृ)",
+    "hindi": "पिताओं को / पितरों को (द्वितीया बहुवचन)"
+  },
+  "पित्रे": {
+    "english": "For father / to father",
+    "grammar": "Noun, m., dat. sing. (पितृ)",
+    "hindi": "पिता के लिए (चतुर्थी एकवचन)"
+  },
+  "पित्रोः": {
+    "english": "Of two fathers / in two fathers",
+    "grammar": "Noun, m., gen./loc. dual (पितृ)",
+    "hindi": "दो पिताओं का / दोनों में (षष्ठी/सप्तमी द्विवचन)"
+  },
+  "पुंलिङ्गशब्दाः": {
+    "english": "Masculine words",
+    "grammar": "Compound noun, m., nom. plur.",
+    "hindi": "पुल्लिंग शब्द"
+  },
+  "पुष्प": {
+    "english": "Flower",
+    "grammar": "Noun, n., base form",
+    "hindi": "फूल / पुष्प"
+  },
+  "पुस्तक": {
+    "english": "Book",
+    "grammar": "Noun, n., base form",
+    "hindi": "किताब / पुस्तक"
+  },
+  "पूरयत": {
+    "english": "Fill in / complete (Imperative)",
+    "grammar": "Verb, loṭ lakāra, 2nd pers. plur.",
+    "hindi": "पूर्ण करो / भरो (लोट् लकार, मध्यम पुरुष बहुवचन)"
+  },
+  "पैर": {
+    "english": "Foot (gloss for पाद)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "पैर"
+  },
+  "पोता": {
+    "english": "Grandson (gloss for नप्तृ)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "पोता"
+  },
+  "प्याला": {
+    "english": "Cup (gloss for चषक)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "प्याला / कटोरी"
+  },
+  "प्रश्नों": {
+    "english": "Questions (oblique)",
+    "grammar": "Hindi noun, m. plur. oblique",
+    "hindi": "प्रश्नों"
+  },
+  "फलयोः": {
+    "english": "Of two fruits / in two fruits",
+    "grammar": "Noun, n., gen./loc. dual (फल)",
+    "hindi": "दो फलों का / दो फलों में (षष्ठी/सप्तमी द्विवचन)"
+  },
+  "फलस्य": {
+    "english": "Of a fruit",
+    "grammar": "Noun, n., gen. sing. (फल)",
+    "hindi": "फल का / के / की (षष्ठी एकवचन)"
+  },
+  "फलात्": {
+    "english": "From a fruit / from fruit",
+    "grammar": "Noun, n., abl. sing. (फल)",
+    "hindi": "फल से (पंचमी एकवचन)"
+  },
+  "फलानाम्": {
+    "english": "Of fruits",
+    "grammar": "Noun, n., gen. plur. (फल)",
+    "hindi": "फलों का / के / की (षष्ठी बहुवचन)"
+  },
+  "फलाभ्याम्": {
+    "english": "By / for / from two fruits",
+    "grammar": "Noun, n., inst./dat./abl. dual (फल)",
+    "hindi": "दो फलों से / दो फलों के लिए (द्विवचन)"
+  },
+  "फलाय": {
+    "english": "For fruit",
+    "grammar": "Noun, n., dat. sing. (फल)",
+    "hindi": "फल के लिए (चतुर्थी एकवचन)"
+  },
+  "फले": {
+    "english": "Two fruits / in a fruit",
+    "grammar": "Noun, n., nom./acc. dual or loc. sing. (फल)",
+    "hindi": "दो फल (प्रथमा/द्वितीया द्विवचन) / फल में (सप्तमी एकवचन)"
+  },
+  "फलेन": {
+    "english": "By the fruit / with fruit",
+    "grammar": "Noun, n., inst. sing. (फल)",
+    "hindi": "फल से / फल के द्वारा (तृतीया एकवचन)"
+  },
+  "फलेभ्यः": {
+    "english": "For fruits / from fruits",
+    "grammar": "Noun, n., dat./abl. plur. (फल)",
+    "hindi": "फलों के लिए / फलों से (चतुर्थी/पंचमी बहुवचन)"
+  },
+  "फलेषु": {
+    "english": "Among fruits / in fruits",
+    "grammar": "Noun, n., loc. plur. (फल)",
+    "hindi": "फलों में / फलों पर (सप्तमी बहुवचन)"
+  },
+  "फलैः": {
+    "english": "By fruits",
+    "grammar": "Noun, n., inst. plur. (फल)",
+    "hindi": "फलों के द्वारा / फलों से (तृतीया बहुवचन)"
+  },
+  "फलो": {
+    "english": "O fruits! (Vocative plural)",
+    "grammar": "Hindi vocative noun, n. plur.",
+    "hindi": "हे फलो!"
+  },
+  "फलों": {
+    "english": "Fruits (oblique plural)",
+    "grammar": "Hindi noun, m. plur. oblique",
+    "hindi": "फलों (कारक रूप)"
+  },
+  "फ्": {
+    "english": "Consonant 'ph' with virama",
+    "grammar": "Phonetic letter",
+    "hindi": "वर्ण 'फ्' (हलन्त)"
+  },
+  "बगीचा": {
+    "english": "Garden (gloss for उद्यान)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "बगीचा"
+  },
+  "बाण": {
+    "english": "Arrow (gloss for शर)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "बाण / तीर"
+  },
+  "बालम्": {
+    "english": "To the boy (direct object)",
+    "grammar": "Noun, m., acc. sing. (बाल)",
+    "hindi": "बालक को (द्वितीया एकवचन)"
+  },
+  "बालान्": {
+    "english": "To the boys (plural direct object)",
+    "grammar": "Noun, m., acc. plur. (बाल)",
+    "hindi": "बालकों को (द्वितीया बहुवचन)"
+  },
+  "बालौ": {
+    "english": "Two boys",
+    "grammar": "Noun, m., nom./acc. dual (बाल)",
+    "hindi": "दो बालक (प्रथमा/द्वितीया द्विवचन)"
+  },
+  "ब्रह्माविधान": {
+    "english": "Brahma / cosmic order (gloss for विधि)",
+    "grammar": "Compound Hindi gloss",
+    "hindi": "ब्रह्मा अथवा नियम/विधान"
+  },
+  "भरने": {
+    "english": "Filling in",
+    "grammar": "Hindi verbal noun",
+    "hindi": "भरने के लिए"
+  },
+  "भीम": {
+    "english": "Bhima (the strong Pandava)",
+    "grammar": "Noun, m., base form",
+    "hindi": "भीम / विशाल"
+  },
+  "भ्रातृ": {
+    "english": "Brother",
+    "grammar": "Noun, m., base stem",
+    "hindi": "भाई (भ्रातृ)"
+  },
+  "मत्": {
+    "english": "From me (5th case singular)",
+    "grammar": "Pronoun, abl. sing. (अस्मद्)",
+    "hindi": "मुझसे (पंचमी एकवचन - अस्मद्)"
+  },
+  "मध्यमपुरुषसर्वनाम": {
+    "english": "Second person pronoun ('yuṣmad')",
+    "grammar": "Compound grammatical term",
+    "hindi": "मध्यम पुरुष सर्वनाम (तुम/आप)"
+  },
+  "मनु": {
+    "english": "Manu (progenitor of humanity)",
+    "grammar": "Noun, m., base form / nom. sing.",
+    "hindi": "मनु / मानवों के आदिपुरुष"
+  },
+  "मन्दिर": {
+    "english": "Temple",
+    "grammar": "Noun, n., base form",
+    "hindi": "मन्दिर / देवालय"
+  },
+  "मयि": {
+    "english": "In me / upon me",
+    "grammar": "Pronoun, loc. sing. (अस्मद्)",
+    "hindi": "मुझ में / मुझ पर (सप्तमी एकवचन)"
+  },
+  "मह्यम्": {
+    "english": "To me / for me",
+    "grammar": "Pronoun, dat. sing. (अस्मद्)",
+    "hindi": "मुझे / मेरे लिए (चतुर्थी एकवचन)"
+  },
+  "मालया": {
+    "english": "With a garland / by garland",
+    "grammar": "Noun, f., inst. sing. (माला)",
+    "hindi": "माला से / माला के द्वारा (तृतीया एकवचन)"
+  },
+  "मालयोः": {
+    "english": "Of two garlands / in two garlands",
+    "grammar": "Noun, f., gen./loc. dual (माला)",
+    "hindi": "दो मालाओं का / दो मालाओं में (षष्ठी/सप्तमी द्विवचन)"
+  },
+  "मालाओ": {
+    "english": "O garlands! (Vocative plural)",
+    "grammar": "Hindi vocative noun, f. plur.",
+    "hindi": "हे मालाओ!"
+  },
+  "मालाओं": {
+    "english": "Garlands (oblique plural)",
+    "grammar": "Hindi noun, f. plur. oblique",
+    "hindi": "मालाओं (कारक रूप)"
+  },
+  "मालानाम्": {
+    "english": "Of garlands",
+    "grammar": "Noun, f., gen. plur. (माला)",
+    "hindi": "मालाओं का / के / की (षष्ठी बहुवचन)"
+  },
+  "मालाभिः": {
+    "english": "By garlands / with garlands",
+    "grammar": "Noun, f., inst. plur. (माला)",
+    "hindi": "मालाओं के द्वारा (तृतीया बहुवचन)"
+  },
+  "मालायाम्": {
+    "english": "In the garland / on the garland",
+    "grammar": "Noun, f., loc. sing. (माला)",
+    "hindi": "माला में / माला पर (सप्तमी एकवचन)"
+  },
+  "मालायै": {
+    "english": "For the garland",
+    "grammar": "Noun, f., dat. sing. (माला)",
+    "hindi": "माला के लिए (चतुर्थी एकवचन)"
+  },
+  "मालासु": {
+    "english": "Among garlands / on garlands",
+    "grammar": "Noun, f., loc. plur. (माला)",
+    "hindi": "मालाओं में / मालाओं पर (सप्तमी बहुवचन)"
+  },
+  "माले": {
+    "english": "Two garlands / O garland!",
+    "grammar": "Noun, f., nom./acc. dual or voc. sing. (माला)",
+    "hindi": "दो मालाएँ (प्रथमा/द्वितीया द्विवचन) / हे माले! (सम्बोधन)"
+  },
+  "मुझ": {
+    "english": "Me / my (base in Hindi)",
+    "grammar": "Hindi pronoun",
+    "hindi": "मुझ"
+  },
+  "मुझसे": {
+    "english": "From me / by me",
+    "grammar": "Hindi pronoun + postposition",
+    "hindi": "मुझसे (करण/अपादान)"
+  },
+  "मुनयः": {
+    "english": "Sages / ascetics (plural)",
+    "grammar": "Noun, m., nom. plur. (मुनि)",
+    "hindi": "अनेक मुनि (प्रथमा बहुवचन)"
+  },
+  "मुनिना": {
+    "english": "By the sage",
+    "grammar": "Noun, m., inst. sing. (मुनि)",
+    "hindi": "मुनि के द्वारा / मुनि से (तृतीया एकवचन)"
+  },
+  "मुनिभिः": {
+    "english": "By sages",
+    "grammar": "Noun, m., inst. plur. (मुनि)",
+    "hindi": "मुनियों के द्वारा (तृतीया बहुवचन)"
+  },
+  "मुनी": {
+    "english": "Two sages",
+    "grammar": "Noun, m., nom./acc. dual (मुनि)",
+    "hindi": "दो मुनि (प्रथमा/द्वितीया द्विवचन)"
+  },
+  "मैंहम": {
+    "english": "I and we (first person)",
+    "grammar": "Compound Hindi gloss",
+    "hindi": "मैं और हम (अस्मद् का भाव)"
+  },
+  "मौसम": {
+    "english": "Season (gloss for ऋतु)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "मौसम"
+  },
+  "यच्छति": {
+    "english": "Gives / bestows",
+    "grammar": "Verb, laṭ lakāra, 3rd pers. sing.",
+    "hindi": "देता है (दा धातु / यच्छ, लट् लकार, प्रथम पुरुष एकवचन)"
+  },
+  "युवयोः": {
+    "english": "Of you two / in you two",
+    "grammar": "Pronoun, gen./loc. dual (युष्मद्)",
+    "hindi": "तुम दोनों का / तुम दोनों में (षष्ठी/सप्तमी द्विवचन)"
+  },
+  "युवाभ्याम्": {
+    "english": "By you two / for you two / from you two",
+    "grammar": "Pronoun, inst./dat./abl. dual (युष्मद्)",
+    "hindi": "तुम दोनों के द्वारा / तुम दोनों के लिए / तुम दोनों से"
+  },
+  "युष्मत्": {
+    "english": "From you all / from you (5th case of Yuṣmad)",
+    "grammar": "Pronoun, abl. sing./plur. (युष्मद्)",
+    "hindi": "तुम सबसे / तुझसे (पंचमी बहुवचन/एकवचन)"
+  },
+  "युष्मद्": {
+    "english": "Base stem for second person pronoun ('You')",
+    "grammar": "Pronoun base stem (सर्वनाम)",
+    "hindi": "युष्मद् (तुम सर्वनाम प्रातिपदिक)"
+  },
+  "युष्मभ्यम्": {
+    "english": "To you all / for you all",
+    "grammar": "Pronoun, dat. plur. (युष्मद्)",
+    "hindi": "तुम सबके लिए (चतुर्थी बहुवचन)"
+  },
+  "युष्मान्": {
+    "english": "To you all (plural direct object)",
+    "grammar": "Pronoun, acc. plur. (युष्मद्)",
+    "hindi": "तुम सबको (द्वितीया बहुवचन)"
+  },
+  "युष्माभिः": {
+    "english": "By you all",
+    "grammar": "Pronoun, inst. plur. (युष्मद्)",
+    "hindi": "तुम सबके द्वारा (तृतीया बहुवचन)"
+  },
+  "युष्मासु": {
+    "english": "Among you all / in you all",
+    "grammar": "Pronoun, loc. plur. (युष्मद्)",
+    "hindi": "तुम सब में / तुम सब पर (सप्तमी बहुवचन)"
+  },
+  "रामयोः": {
+    "english": "Of two Ramas / in two Ramas",
+    "grammar": "Noun, m., gen./loc. dual (राम)",
+    "hindi": "दो रामों का / दो रामों में (षष्ठी/सप्तमी द्विवचन)"
+  },
+  "रामस्य": {
+    "english": "Of Rama / Rama's",
+    "grammar": "Noun, m., gen. sing. (राम)",
+    "hindi": "राम का / के / की (षष्ठी एकवचन)"
+  },
+  "रामाः": {
+    "english": "Ramas (plural)",
+    "grammar": "Noun, m., nom. plur. (राम)",
+    "hindi": "अनेक राम / सब राम (प्रथमा बहुवचन)"
+  },
+  "रामाणाम्": {
+    "english": "Of the Ramas",
+    "grammar": "Noun, m., gen. plur. (राम)",
+    "hindi": "रामों का / के / की (षष्ठी बहुवचन)"
+  },
+  "रामात्": {
+    "english": "From Rama",
+    "grammar": "Noun, m., abl. sing. (राम)",
+    "hindi": "राम से (पंचमी एकवचन)"
+  },
+  "रामान्": {
+    "english": "To the Ramas (direct object plural)",
+    "grammar": "Noun, m., acc. plur. (राम)",
+    "hindi": "रामों को (द्वितीया बहुवचन)"
+  },
+  "रामाभ्याम्": {
+    "english": "By / for / from two Ramas",
+    "grammar": "Noun, m., inst./dat./abl. dual (राम)",
+    "hindi": "दो रामों से / दो रामों के लिए (द्विवचन)"
+  },
+  "रामाय": {
+    "english": "For Rama / to Rama",
+    "grammar": "Noun, m., dat. sing. (राम)",
+    "hindi": "राम के लिए (चतुर्थी एकवचन)"
+  },
+  "रामे": {
+    "english": "In Rama / upon Rama",
+    "grammar": "Noun, m., loc. sing. (राम)",
+    "hindi": "राम में / राम पर (सप्तमी एकवचन)"
+  },
+  "रामेभ्यः": {
+    "english": "For Ramas / from Ramas",
+    "grammar": "Noun, m., dat./abl. plur. (राम)",
+    "hindi": "रामों के लिए / रामों से (चतुर्थी/पंचमी बहुवचन)"
+  },
+  "रामेषु": {
+    "english": "Among Ramas / in Ramas",
+    "grammar": "Noun, m., loc. plur. (राम)",
+    "hindi": "रामों में / रामों पर (सप्तमी बहुवचन)"
+  },
+  "रामैः": {
+    "english": "By Ramas",
+    "grammar": "Noun, m., inst. plur. (राम)",
+    "hindi": "रामों के द्वारा / रामों से (तृतीया बहुवचन)"
+  },
+  "रामो": {
+    "english": "O Ramas! (Vocative plural)",
+    "grammar": "Hindi vocative noun, m. plur.",
+    "hindi": "हे रामो!"
+  },
+  "रामों": {
+    "english": "Ramas (oblique plural)",
+    "grammar": "Hindi noun, m. plur. oblique",
+    "hindi": "रामों (कारक रूप)"
+  },
+  "रामौ": {
+    "english": "Two Ramas",
+    "grammar": "Noun, m., nom./acc. dual (राम)",
+    "hindi": "दो राम (प्रथमा/द्वितीया द्विवचन)"
+  },
+  "रिक्तस्थान": {
+    "english": "Blank space / fill in the blank",
+    "grammar": "Compound noun, n.",
+    "hindi": "खाली स्थान"
+  },
+  "रूपावलियों": {
+    "english": "Declension paradigm tables (oblique)",
+    "grammar": "Hindi noun, f. plur. oblique",
+    "hindi": "शब्दरूपावलियों"
+  },
+  "रेखा": {
+    "english": "Line",
+    "grammar": "Noun, f., base form / nom. sing.",
+    "hindi": "लकीर / रेखा"
+  },
+  "ल": {
+    "english": "Letter 'la'",
+    "grammar": "Phonetic letter",
+    "hindi": "वर्ण 'ल'"
+  },
+  "लकीर": {
+    "english": "Line (gloss for रेखा)",
+    "grammar": "Hindi noun, f.",
+    "hindi": "लकीर"
+  },
+  "लतयोः": {
+    "english": "Of two creepers / in two creepers",
+    "grammar": "Noun, f., gen./loc. dual (लता)",
+    "hindi": "दो लताओं का / दो लताओं में (षष्ठी/सप्तमी द्विवचन)"
+  },
+  "लता": {
+    "english": "Creeper / vine / proper name Lata",
+    "grammar": "Noun, f., nom. sing.",
+    "hindi": "बेल / लता"
+  },
+  "लताः": {
+    "english": "Creepers / vines (plural)",
+    "grammar": "Noun, f., nom./acc. plur. (लता)",
+    "hindi": "अनेक लताएँ (प्रथमा/द्वितीया बहुवचन)"
+  },
+  "लतायाः": {
+    "english": "From the creeper / of the creeper",
+    "grammar": "Noun, f., abl./gen. sing. (लता)",
+    "hindi": "लता से / लता का (पंचमी/षष्ठी एकवचन)"
+  },
+  "लते": {
+    "english": "Two creepers",
+    "grammar": "Noun, f., nom./acc. dual (लता)",
+    "hindi": "दो लताएँ (प्रथमा/द्वितीया द्विवचन)"
+  },
+  "लिंगों": {
+    "english": "Genders (oblique)",
+    "grammar": "Hindi noun, m. plur. oblique",
+    "hindi": "लिंगों (पुल्लिंग, स्त्रीलिंग, नपुंसकलिंग)"
+  },
+  "लिएको": {
+    "english": "For / to (dative marker gloss)",
+    "grammar": "Hindi postposition compound gloss",
+    "hindi": "के लिए / को"
+  },
+  "लिङ्गेषु": {
+    "english": "In the genders",
+    "grammar": "Noun, n., loc. plur. (लिङ्ग)",
+    "hindi": "लिंगों में (त्रिषु लिङ्गेषु)"
+  },
+  "वक्ष": {
+    "english": "Chest / bosom",
+    "grammar": "Noun, m./n., base form",
+    "hindi": "छाती / वक्षस्थल"
+  },
+  "वस्त्रकपड़ा": {
+    "english": "Garment or cloth",
+    "grammar": "Compound Hindi gloss",
+    "hindi": "वस्त्र अथवा कपड़ा"
+  },
+  "वानर": {
+    "english": "Monkey (gloss for कपि)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "वानर / बंदर"
+  },
+  "विधाता": {
+    "english": "Creator / Ordainer (gloss for धातृ)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "विधाता / ईश्वर"
+  },
+  "विधि": {
+    "english": "Ordainer / rule / method / Brahma",
+    "grammar": "Noun, m., base form / nom. sing.",
+    "hindi": "नियम / विधान / ब्रह्मा"
+  },
+  "विभक्तिकारकचिह्नानां": {
+    "english": "Of case inflections and case markers",
+    "grammar": "Compound noun, n., gen. plur.",
+    "hindi": "विभक्तियों और कारक चिह्नों का"
+  },
+  "विभक्तियाँ": {
+    "english": "Case endings / inflections",
+    "grammar": "Hindi noun, f. plur.",
+    "hindi": "विभक्तियाँ"
+  },
+  "विभक्तियों": {
+    "english": "Case endings (oblique)",
+    "grammar": "Hindi noun, f. plur. oblique",
+    "hindi": "विभक्तियों के"
+  },
+  "विवरणम्": {
+    "english": "Description / explanation / account",
+    "grammar": "Noun, n., nom./acc. sing.",
+    "hindi": "विवरण / स्पष्टीकरण"
+  },
+  "व्याकरण": {
+    "english": "Grammar",
+    "grammar": "Hindi noun, m./n.",
+    "hindi": "व्याकरण"
+  },
+  "शब्दरूप": {
+    "english": "Word declension / inflected noun form",
+    "grammar": "Compound noun, n., base form",
+    "hindi": "शब्दरूप"
+  },
+  "शब्दरूपम्": {
+    "english": "Declension of a word",
+    "grammar": "Noun, n., nom./acc. sing.",
+    "hindi": "शब्दरूप"
+  },
+  "शब्दरूपाणि": {
+    "english": "Declensions / inflected noun forms",
+    "grammar": "Noun, n., nom./acc. plur. (शब्दरूप)",
+    "hindi": "शब्दरूप (विभिन्न विभक्तियों में)"
+  },
+  "शब्दरूपों": {
+    "english": "Noun declensions (oblique)",
+    "grammar": "Hindi noun, m. plur. oblique",
+    "hindi": "शब्दरूपों"
+  },
+  "शम्भवः": {
+    "english": "Lord Shivas (plural / manifestations)",
+    "grammar": "Noun, m., nom. plur. (शम्भु)",
+    "hindi": "अनेक शम्भु (प्रथमा बहुवचन)"
+  },
+  "शम्भवे": {
+    "english": "For Lord Shiva",
+    "grammar": "Noun, m., dat. sing. (शम्भु)",
+    "hindi": "शम्भु के लिए (चतुर्थी एकवचन)"
+  },
+  "शम्भु": {
+    "english": "Lord Shiva",
+    "grammar": "Noun, m., base form / voc. sing.",
+    "hindi": "शम्भु / भगवान शिव"
+  },
+  "शम्भुः": {
+    "english": "Lord Shiva (Nominative)",
+    "grammar": "Noun, m., nom. sing. (शम्भु)",
+    "hindi": "शम्भु ने / भगवान शिव (प्रथमा एकवचन)"
+  },
+  "शम्भुओ": {
+    "english": "O Shambhus! (Vocative plural)",
+    "grammar": "Hindi vocative noun, m. plur.",
+    "hindi": "हे शम्भुओ!"
+  },
+  "शम्भुओं": {
+    "english": "Shambhus (oblique plural)",
+    "grammar": "Hindi noun, m. plur. oblique",
+    "hindi": "शम्भुओं (कारक रूप)"
+  },
+  "शम्भुना": {
+    "english": "By Lord Shiva",
+    "grammar": "Noun, m., inst. sing. (शम्भु)",
+    "hindi": "शम्भु के द्वारा / शम्भु से (तृतीया एकवचन)"
+  },
+  "शम्भुभिः": {
+    "english": "By Shambhus",
+    "grammar": "Noun, m., inst. plur. (शम्भु)",
+    "hindi": "शम्भुओं के द्वारा (तृतीया बहुवचन)"
+  },
+  "शम्भुभ्यः": {
+    "english": "For Shambhus / from Shambhus",
+    "grammar": "Noun, m., dat./abl. plur. (शम्भु)",
+    "hindi": "शम्भुओं के लिए / शम्भुओं से (चतुर्थी/पंचमी बहुवचन)"
+  },
+  "शम्भुभ्याम्": {
+    "english": "By / for / from two Shambhus",
+    "grammar": "Noun, m., inst./dat./abl. dual (शम्भु)",
+    "hindi": "दो शम्भुओं के द्वारा / दो शम्भुओं के लिए (द्विवचन)"
+  },
+  "शम्भुम्": {
+    "english": "To Lord Shiva (direct object)",
+    "grammar": "Noun, m., acc. sing. (शम्भु)",
+    "hindi": "शम्भु को (द्वितीया एकवचन)"
+  },
+  "शम्भुषु": {
+    "english": "Among Shambhus / in Shambhus",
+    "grammar": "Noun, m., loc. plur. (शम्भु)",
+    "hindi": "शम्भुओं में / शम्भुओं पर (सप्तमी बहुवचन)"
+  },
+  "शम्भू": {
+    "english": "Two Shambhus",
+    "grammar": "Noun, m., nom./acc. dual (शम्भु)",
+    "hindi": "दो शम्भु (प्रथमा/द्वितीया द्विवचन)"
+  },
+  "शम्भून": {
+    "english": "To the Shambhus (plural direct object - शम्भून्)",
+    "grammar": "Noun, m., acc. plur. (शम्भु)",
+    "hindi": "शम्भुओं को (द्वितीया बहुवचन)"
+  },
+  "शम्भूनाम्": {
+    "english": "Of Shambhus",
+    "grammar": "Noun, m., gen. plur. (शम्भु)",
+    "hindi": "शम्भुओं का / के / की (षष्ठी बहुवचन)"
+  },
+  "शम्भो": {
+    "english": "O Lord Shiva! (Vocative singular)",
+    "grammar": "Noun, m., voc. sing. (शम्भु)",
+    "hindi": "हे शम्भो! / हे शिव!"
+  },
+  "शम्भोः": {
+    "english": "From Shambhu / of Shambhu",
+    "grammar": "Noun, m., abl./gen. sing. (शम्भु)",
+    "hindi": "शम्भु से / शम्भु का (पंचमी/षष्ठी एकवचन)"
+  },
+  "शम्भौ": {
+    "english": "In Shambhu / upon Shambhu",
+    "grammar": "Noun, m., loc. sing. (शम्भु)",
+    "hindi": "शम्भु में / शम्भु पर (सप्तमी एकवचन)"
+  },
+  "शम्भ्वोः": {
+    "english": "Of two Shambhus / in two Shambhus",
+    "grammar": "Noun, m., gen./loc. dual (शम्भु)",
+    "hindi": "दो शम्भुओं का / दो शम्भुओं में (षष्ठी/सप्तमी द्विवचन)"
+  },
+  "शर": {
+    "english": "Arrow",
+    "grammar": "Noun, m., base form",
+    "hindi": "बाण / तीर / शर"
+  },
+  "शहर": {
+    "english": "City (gloss for नगर)",
+    "grammar": "Hindi noun, m.",
+    "hindi": "शहर / नगर"
+  },
+  "शिक्षा": {
+    "english": "Education / teaching",
+    "grammar": "Noun, f., base form / nom. sing.",
+    "hindi": "शिक्षा / विद्या"
+  },
+  "शिव": {
+    "english": "Lord Shiva / auspicious",
+    "grammar": "Noun/adj., m., base form",
+    "hindi": "भगवान शिव / कल्याणकारी"
+  },
+  "शिशु": {
+    "english": "Child / infant",
+    "grammar": "Noun, m., base form / nom. sing.",
+    "hindi": "बालक / बच्चा / शिशु"
+  },
+  "सबके": {
+    "english": "For all",
+    "grammar": "Hindi pronoun + postposition",
+    "hindi": "सबके लिए"
+  },
+  "समझने": {
+    "english": "Understanding",
+    "grammar": "Hindi verbal noun",
+    "hindi": "समझने के लिए"
+  },
+  "समाधानानि": {
+    "english": "Solutions / answers",
+    "grammar": "Noun, n., nom./acc. plur. (समाधान)",
+    "hindi": "समाधान / उत्तर"
+  },
+  "सम्प्रदान": {
+    "english": "Dative case (Sampradana karaka)",
+    "grammar": "Grammatical karaka",
+    "hindi": "सम्प्रदान कारक (चतुर्थी विभक्ति)"
+  },
+  "सम्बन्ध": {
+    "english": "Genitive relationship (Sambandha)",
+    "grammar": "Grammatical relation",
+    "hindi": "सम्बन्ध (षष्ठी विभक्ति)"
+  },
+  "सम्बोधन": {
+    "english": "Vocative address",
+    "grammar": "Hindi grammatical term",
+    "hindi": "सम्बोधन"
+  },
+  "सम्बोधनम्": {
+    "english": "Vocative case (Sambodhana)",
+    "grammar": "Noun, n., nom./acc. sing.",
+    "hindi": "सम्बोधन (पुकारने के लिए)"
+  },
+  "सर्वनाम": {
+    "english": "Pronoun",
+    "grammar": "Compound grammatical term",
+    "hindi": "सर्वनाम"
+  },
+  "सर्वनामशब्दाः": {
+    "english": "Pronoun words",
+    "grammar": "Compound noun, m., nom. plur.",
+    "hindi": "सर्वनाम शब्द"
+  },
+  "सुधा": {
+    "english": "Nectar / ambrosia",
+    "grammar": "Noun, f., base form / nom. sing.",
+    "hindi": "अमृत / सुधा"
+  },
+  "स्त्रीलिङ्गशब्दाः": {
+    "english": "Feminine words",
+    "grammar": "Compound noun, m., nom. plur.",
+    "hindi": "स्त्रीलिंग शब्द"
+  },
+  "स्वरवर्णाः": {
+    "english": "Vowel letters / phonemes",
+    "grammar": "Compound noun, m., nom. plur.",
+    "hindi": "स्वर वर्ण (अच्)"
+  },
+  "हमाराहम": {
+    "english": "Our / ours",
+    "grammar": "Compound Hindi gloss",
+    "hindi": "हमारा / हम सबका"
+  },
+  "हरयः": {
+    "english": "Haris (plural / incarnations)",
+    "grammar": "Noun, m., nom. plur. (हरि)",
+    "hindi": "अनेक हरि (प्रथमा बहुवचन)"
+  },
+  "हरये": {
+    "english": "For Lord Hari",
+    "grammar": "Noun, m., dat. sing. (हरि)",
+    "hindi": "हरि के लिए (चतुर्थी एकवचन)"
+  },
+  "हरिणा": {
+    "english": "By Lord Hari",
+    "grammar": "Noun, m., inst. sing. (हरि)",
+    "hindi": "हरि के द्वारा / हरि से (तृतीया एकवचन)"
+  },
+  "हरिभिः": {
+    "english": "By Haris",
+    "grammar": "Noun, m., inst. plur. (हरि)",
+    "hindi": "हरियों के द्वारा (तृतीया बहुवचन)"
+  },
+  "हरिभ्यः": {
+    "english": "For Haris / from Haris",
+    "grammar": "Noun, m., dat./abl. plur. (हरि)",
+    "hindi": "हरियों के लिए / हरियों से (चतुर्थी/पंचमी बहुवचन)"
+  },
+  "हरिभ्याम्": {
+    "english": "By / for / from two Haris",
+    "grammar": "Noun, m., inst./dat./abl. dual (हरि)",
+    "hindi": "दो हरियों के द्वारा / दो हरियों के लिए (द्विवचन)"
+  },
+  "हरियो": {
+    "english": "O Haris! (Vocative plural)",
+    "grammar": "Hindi vocative noun, m. plur.",
+    "hindi": "हे हरियो!"
+  },
+  "हरियों": {
+    "english": "Haris (oblique plural)",
+    "grammar": "Hindi noun, m. plur. oblique",
+    "hindi": "हरियों (कारक रूप)"
+  },
+  "हरिषु": {
+    "english": "Among Haris / in Haris",
+    "grammar": "Noun, m., loc. plur. (हरि)",
+    "hindi": "हरियों में / हरियों पर (सप्तमी बहुवचन)"
+  },
+  "हरी": {
+    "english": "Two Haris",
+    "grammar": "Noun, m., nom./acc. dual (हरि)",
+    "hindi": "दो हरि (प्रथमा/द्वितीया द्विवचन)"
+  },
+  "हरीणाम्": {
+    "english": "Of Haris",
+    "grammar": "Noun, m., gen. plur. (हरि)",
+    "hindi": "हरियों का / के / की (षष्ठी बहुवचन)"
+  },
+  "हरीन्": {
+    "english": "To the Haris (plural direct object)",
+    "grammar": "Noun, m., acc. plur. (हरि)",
+    "hindi": "हरियों को (द्वितीया बहुवचन)"
+  },
+  "हरौ": {
+    "english": "In Lord Hari / upon Hari",
+    "grammar": "Noun, m., loc. sing. (हरि)",
+    "hindi": "हरि में / हरि पर (सप्तमी एकवचन)"
+  },
+  "हर्योः": {
+    "english": "Of two Haris / in two Haris",
+    "grammar": "Noun, m., gen./loc. dual (हरि)",
+    "hindi": "दो हरियों का / दो हरियों में (षष्ठी/सप्तमी द्विवचन)"
+  },
+  "हलन्त": {
+    "english": "Ending in a consonant / virama",
+    "grammar": "Grammatical term",
+    "hindi": "हलन्त (व्यञ्जनान्त वर्ण)"
+  },
+  "हस्त": {
+    "english": "Hand",
+    "grammar": "Noun, m., base form",
+    "hindi": "हाथ / हस्त"
+  },
+  "ॠकारान्त": {
+    "english": "Ending with vocalic vowel 'ṝ'",
+    "grammar": "Grammatical term",
+    "hindi": "ॠकारान्त (दीर्घ ॠ के अंत वाला)"
+  },
+  "ॠकारान्तः": {
+    "english": "Noun ending with 'ṝ'",
+    "grammar": "Noun/adj., m., nom. sing.",
+    "hindi": "ॠकारान्त शब्द"
+  },
+  "ॠकारान्ताः": {
+    "english": "Words ending with 'ṝ'",
+    "grammar": "Noun/adj., m., nom. plur.",
+    "hindi": "ॠकारान्त शब्द"
   }
 }
