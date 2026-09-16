@@ -4525,5 +4525,1225 @@
       }
     },
     "sanskrit_gloss": "शब्द-अर्थान्"
+  },
+  "तृतीयः": {
+    "word": "तृतीयः",
+    "base_english": "Third",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Third"
+      }
+    }
+  },
+  "मित्राय": {
+    "word": "मित्राय",
+    "base_english": "To the friend (with 4th case/Dative suffix)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To the friend (with 4th case/Dative suffix)"
+      }
+    }
+  },
+  "नमः": {
+    "word": "नमः",
+    "base_english": "Salutations / Bow down",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Salutations / Bow down"
+      }
+    }
+  },
+  "योगिते": {
+    "word": "योगिते",
+    "base_english": "O Yogita! (calling name)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "O Yogita! (calling name)"
+      }
+    }
+  },
+  "त्वं": {
+    "word": "त्वं",
+    "base_english": "You",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You"
+      }
+    }
+  },
+  "प्रातः": {
+    "word": "प्रातः",
+    "base_english": "In the morning",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the morning"
+      }
+    }
+  },
+  "किं": {
+    "word": "किं",
+    "base_english": "What",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "What"
+      }
+    }
+  },
+  "करोषि": {
+    "word": "करोषि",
+    "base_english": "You do",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You do"
+      }
+    }
+  },
+  "अहं": {
+    "word": "अहं",
+    "base_english": "I",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I"
+      }
+    }
+  },
+  "प्रतिदिनं": {
+    "word": "प्रतिदिनं",
+    "base_english": "Daily / Everyday",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Daily / Everyday"
+      }
+    }
+  },
+  "पित्रा": {
+    "word": "पित्रा",
+    "base_english": "With father (3rd case/Instrumental suffix)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "With father (3rd case/Instrumental suffix)"
+      }
+    }
+  },
+  "उद्यानं": {
+    "word": "उद्यानं",
+    "base_english": "Garden / Park",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Garden / Park"
+      }
+    }
+  },
+  "गच्छामि": {
+    "word": "गच्छामि",
+    "base_english": "I go",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I go"
+      }
+    }
+  },
+  "उद्याने": {
+    "word": "उद्याने",
+    "base_english": "In the garden",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the garden"
+      }
+    }
+  },
+  "तु": {
+    "word": "तु",
+    "base_english": "Indeed / But",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Indeed / But"
+      }
+    }
+  },
+  "भ्रमणं": {
+    "word": "भ्रमणं",
+    "base_english": "Walking / Strolling",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Walking / Strolling"
+      }
+    }
+  },
+  "करोमि": {
+    "word": "करोमि",
+    "base_english": "I do",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I do"
+      }
+    }
+  },
+  "किन्तु": {
+    "word": "किन्तु",
+    "base_english": "But",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "But"
+      }
+    }
+  },
+  "बहवः": {
+    "word": "बहवः",
+    "base_english": "Many",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Many"
+      }
+    }
+  },
+  "जनाः": {
+    "word": "जनाः",
+    "base_english": "People",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "People"
+      }
+    }
+  },
+  "व्यायामं": {
+    "word": "व्यायामं",
+    "base_english": "Exercise",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Exercise"
+      }
+    }
+  },
+  "योगासनानि": {
+    "word": "योगासनानि",
+    "base_english": "Yoga postures",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Yoga postures"
+      }
+    }
+  },
+  "कुर्वन्ति": {
+    "word": "कुर्वन्ति",
+    "base_english": "They do",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They do"
+      }
+    }
+  },
+  "ज्ञातुम्": {
+    "word": "ज्ञातुम्",
+    "base_english": "To know",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To know"
+      }
+    }
+  },
+  "योगशिक्षिकायाः": {
+    "word": "योगशिक्षिकायाः",
+    "base_english": "Yoga teacher's",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Yoga teacher's"
+      }
+    }
+  },
+  "समीपं": {
+    "word": "समीपं",
+    "base_english": "Near / Towards",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Near / Towards"
+      }
+    }
+  },
+  "गच्छामः": {
+    "word": "गच्छामः",
+    "base_english": "We go",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We go"
+      }
+    }
+  },
+  "उत्साहेन": {
+    "word": "उत्साहेन",
+    "base_english": "With enthusiasm / Joyfully",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "With enthusiasm / Joyfully"
+      }
+    }
+  },
+  "गच्छन्ति": {
+    "word": "गच्छन्ति",
+    "base_english": "They go",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They go"
+      }
+    }
+  },
+  "नमो नमः": {
+    "word": "नमो नमः",
+    "base_english": "Salutations / Hello",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Salutations / Hello"
+      }
+    }
+  },
+  "आचार्ये": {
+    "word": "आचार्ये",
+    "base_english": "O Madam Teacher!",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "O Madam Teacher!"
+      }
+    }
+  },
+  "शुभं": {
+    "word": "शुभं",
+    "base_english": "Auspicious / Good",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Auspicious / Good"
+      }
+    }
+  },
+  "भवतु": {
+    "word": "भवतु",
+    "base_english": "May it be (May good happen to you)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "May it be (May good happen to you)"
+      }
+    }
+  },
+  "उपविशन्तु": {
+    "word": "उपविशन्तु",
+    "base_english": "Sit down (command to plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sit down (command to plural)"
+      }
+    }
+  },
+  "अद्य": {
+    "word": "अद्य",
+    "base_english": "Today",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Today"
+      }
+    }
+  },
+  "भवान्": {
+    "word": "भवान्",
+    "base_english": "You (formal)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You (formal)"
+      }
+    }
+  },
+  "योगासनं": {
+    "word": "योगासनं",
+    "base_english": "Yoga posture",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Yoga posture"
+      }
+    }
+  },
+  "शिक्षयति": {
+    "word": "शिक्षयति",
+    "base_english": "Teaching",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Teaching"
+      }
+    }
+  },
+  "निश्चयेन": {
+    "word": "निश्चयेन",
+    "base_english": "Definitely / Surely",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Definitely / Surely"
+      }
+    }
+  },
+  "वदन्तु": {
+    "word": "वदन्तु",
+    "base_english": "Speak / Tell (command to plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Speak / Tell (command to plural)"
+      }
+    }
+  },
+  "शिक्षितुम्": {
+    "word": "शिक्षितुम्",
+    "base_english": "To learn",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To learn"
+      }
+    }
+  },
+  "शिक्षयतु": {
+    "word": "शिक्षयतु",
+    "base_english": "Please teach (command to singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please teach (command to singular)"
+      }
+    }
+  },
+  "सूर्यनमस्कारः": {
+    "word": "सूर्यनमस्कारः",
+    "base_english": "Sun salutation",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Sun salutation"
+      }
+    }
+  },
+  "द्वादशानाम्": {
+    "word": "द्वादशानाम्",
+    "base_english": "Of twelve",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of twelve"
+      }
+    }
+  },
+  "आसनानां": {
+    "word": "आसनानां",
+    "base_english": "Of postures",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of postures"
+      }
+    }
+  },
+  "समाहारः": {
+    "word": "समाहारः",
+    "base_english": "Combination / Collection",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Combination / Collection"
+      }
+    }
+  },
+  "प्रत्येकस्मात्": {
+    "word": "प्रत्येकस्मात्",
+    "base_english": "Before every / From each",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Before every / From each"
+      }
+    }
+  },
+  "पूर्वम्": {
+    "word": "पूर्वम्",
+    "base_english": "Before",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Before"
+      }
+    }
+  },
+  "एकः": {
+    "word": "एकः",
+    "base_english": "One",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "One"
+      }
+    }
+  },
+  "मन्त्रः": {
+    "word": "मन्त्रः",
+    "base_english": "Chant / Hymn",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Chant / Hymn"
+      }
+    }
+  },
+  "तेषु": {
+    "word": "तेषु",
+    "base_english": "Among them",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Among them"
+      }
+    }
+  },
+  "प्रथमः": {
+    "word": "प्रथमः",
+    "base_english": "First",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "First"
+      }
+    }
+  },
+  "आम्": {
+    "word": "आम्",
+    "base_english": "Yes",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Yes"
+      }
+    }
+  },
+  "महोदये": {
+    "word": "महोदये",
+    "base_english": "Madam",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Madam"
+      }
+    }
+  },
+  "स्मरामः": {
+    "word": "स्मरामः",
+    "base_english": "We remember",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We remember"
+      }
+    }
+  },
+  "अत्युत्तमम्": {
+    "word": "अत्युत्तमम्",
+    "base_english": "Excellent / Very good",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Excellent / Very good"
+      }
+    }
+  },
+  "मिलित्वा": {
+    "word": "मिलित्वा",
+    "base_english": "Together / Joining together",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Together / Joining together"
+      }
+    }
+  },
+  "इदानीम्": {
+    "word": "इदानीम्",
+    "base_english": "Now",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Now"
+      }
+    }
+  },
+  "एकेन": {
+    "word": "एकेन",
+    "base_english": "With one",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "With one"
+      }
+    }
+  },
+  "श्लोकेन": {
+    "word": "श्लोकेन",
+    "base_english": "With a verse/shloka",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "With a verse/shloka"
+      }
+    }
+  },
+  "बहूनि": {
+    "word": "बहूनि",
+    "base_english": "Many",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Many"
+      }
+    }
+  },
+  "प्रयोजनानि": {
+    "word": "प्रयोजनानि",
+    "base_english": "Benefits / Purposes",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Benefits / Purposes"
+      }
+    }
+  },
+  "वदामि": {
+    "word": "वदामि",
+    "base_english": "I tell / I speak",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "I tell / I speak"
+      }
+    }
+  },
+  "भवन्तः": {
+    "word": "भवन्तः",
+    "base_english": "You all",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You all"
+      }
+    }
+  },
+  "शृण्वन्तु": {
+    "word": "शृण्वन्तु",
+    "base_english": "Please listen",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please listen"
+      }
+    }
+  },
+  "अनुवदन्तु": {
+    "word": "अनुवदन्तु",
+    "base_english": "Please repeat",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Please repeat"
+      }
+    }
+  },
+  "आदित्यस्य": {
+    "word": "आदित्यस्य",
+    "base_english": "Of the Sun",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of the Sun"
+      }
+    }
+  },
+  "नमस्कारान्": {
+    "word": "नमस्कारान्",
+    "base_english": "Salutations (plural object)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Salutations (plural object)"
+      }
+    }
+  },
+  "ये": {
+    "word": "ये",
+    "base_english": "Those who",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Those who"
+      }
+    }
+  },
+  "दिने दिने": {
+    "word": "दिने दिने",
+    "base_english": "Day by day / Everyday",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Day by day / Everyday"
+      }
+    }
+  },
+  "आयुः": {
+    "word": "आयुः",
+    "base_english": "Lifespan / Age",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Lifespan / Age"
+      }
+    }
+  },
+  "प्रज्ञा": {
+    "word": "प्रज्ञा",
+    "base_english": "Intellect / Wisdom",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Intellect / Wisdom"
+      }
+    }
+  },
+  "बलं": {
+    "word": "बलं",
+    "base_english": "Strength",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Strength"
+      }
+    }
+  },
+  "वीर्यं": {
+    "word": "वीर्यं",
+    "base_english": "Vigour / Valor",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Vigour / Valor"
+      }
+    }
+  },
+  "तेजः": {
+    "word": "तेजः",
+    "base_english": "Brilliance / Radiance",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Brilliance / Radiance"
+      }
+    }
+  },
+  "तेषाम्": {
+    "word": "तेषाम्",
+    "base_english": "Theirs / For them",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Theirs / For them"
+      }
+    }
+  },
+  "जायते": {
+    "word": "जायते",
+    "base_english": "Arises / Grows / Is produced",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Arises / Grows / Is produced"
+      }
+    }
+  },
+  "एवम्": {
+    "word": "एवम्",
+    "base_english": "In this way",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In this way"
+      }
+    }
+  },
+  "श्रेष्ठः": {
+    "word": "श्रेष्ठः",
+    "base_english": "Best / Superior",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Best / Superior"
+      }
+    }
+  },
+  "आसनक्रमः": {
+    "word": "आसनक्रमः",
+    "base_english": "Posture sequence",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Posture sequence"
+      }
+    }
+  },
+  "सूर्यनमस्कारेण": {
+    "word": "सूर्यनमस्कारेण",
+    "base_english": "By sun salutation",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By sun salutation"
+      }
+    }
+  },
+  "शारीरिकं": {
+    "word": "शारीरिकं",
+    "base_english": "Physical",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Physical"
+      }
+    }
+  },
+  "मानसिकम्": {
+    "word": "मानसिकम्",
+    "base_english": "Mental",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mental"
+      }
+    }
+  },
+  "आध्यात्मिकं": {
+    "word": "आध्यात्मिकं",
+    "base_english": "Spiritual",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Spiritual"
+      }
+    }
+  },
+  "करवाम": {
+    "word": "करवाम",
+    "base_english": "Let us do",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Let us do"
+      }
+    }
+  },
+  "स्वस्थं": {
+    "word": "स्वस्थं",
+    "base_english": "Healthy",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Healthy"
+      }
+    }
+  },
+  "शरीरं": {
+    "word": "शरीरं",
+    "base_english": "Body",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Body"
+      }
+    }
+  },
+  "प्राप्नवाम": {
+    "word": "प्राप्नवाम",
+    "base_english": "Let us achieve/obtain",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Let us achieve/obtain"
+      }
+    }
+  },
+  "पुनः": {
+    "word": "पुनः",
+    "base_english": "Again",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Again"
+      }
+    }
+  },
+  "अग्रिमकक्षायाम्": {
+    "word": "अग्रिमकक्षायाम्",
+    "base_english": "In the next class",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the next class"
+      }
+    }
+  },
+  "अन्येषाम्": {
+    "word": "अन्येषाम्",
+    "base_english": "Of others",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of others"
+      }
+    }
+  },
+  "विषये": {
+    "word": "विषये",
+    "base_english": "Regarding / About",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Regarding / About"
+      }
+    }
+  },
+  "ज्ञास्यामः": {
+    "word": "ज्ञास्यामः",
+    "base_english": "We will know/learn",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We will know/learn"
+      }
+    }
+  },
+  "धन्यवादः": {
+    "word": "धन्यवादः",
+    "base_english": "Thank you",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Thank you"
+      }
+    }
+  },
+  "त्वम्": {
+    "word": "त्वम्",
+    "base_english": "You",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "You"
+      }
+    }
+  },
+  "उद्यानम्": {
+    "word": "उद्यानम्",
+    "base_english": "Garden / Park",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Garden / Park"
+      }
+    }
+  },
+  "भ्रमणम्": {
+    "word": "भ्रमणम्",
+    "base_english": "Walking / Strolling",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Walking / Strolling"
+      }
+    }
+  },
+  "व्यायामम्": {
+    "word": "व्यायामम्",
+    "base_english": "Exercise",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Exercise"
+      }
+    }
+  },
+  "वयं": {
+    "word": "वयं",
+    "base_english": "We",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We"
+      }
+    }
+  },
+  "ज्ञातुं": {
+    "word": "ज्ञातुं",
+    "base_english": "To know",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To know"
+      }
+    }
+  },
+  "समीपम्": {
+    "word": "समीपम्",
+    "base_english": "Near / Towards",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Near / Towards"
+      }
+    }
+  },
+  "शुभम्": {
+    "word": "शुभम्",
+    "base_english": "Auspicious / Good",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Auspicious / Good"
+      }
+    }
+  },
+  "योगासनम्": {
+    "word": "योगासनम्",
+    "base_english": "Yoga posture",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Yoga posture"
+      }
+    }
+  },
+  "शिक्षितुं": {
+    "word": "शिक्षितुं",
+    "base_english": "To learn",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To learn"
+      }
+    }
+  },
+  "समीचीनं": {
+    "word": "समीचीनं",
+    "base_english": "Very good / Correct",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Very good / Correct"
+      }
+    }
+  },
+  "द्वादशानां": {
+    "word": "द्वादशानां",
+    "base_english": "Of twelve",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of twelve"
+      }
+    }
+  },
+  "आसनानाम्": {
+    "word": "आसनानाम्",
+    "base_english": "Of postures",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of postures"
+      }
+    }
+  },
+  "पूर्वं": {
+    "word": "पूर्वं",
+    "base_english": "Before",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Before"
+      }
+    }
+  },
+  "आं": {
+    "word": "आं",
+    "base_english": "Yes",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Yes"
+      }
+    }
+  },
+  "अत्युत्तमं": {
+    "word": "अत्युत्तमं",
+    "base_english": "Excellent / Very good",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Excellent / Very good"
+      }
+    }
+  },
+  "इदानीं": {
+    "word": "इदानीं",
+    "base_english": "Now",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Now"
+      }
+    }
+  },
+  "बलम्": {
+    "word": "बलम्",
+    "base_english": "Strength",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Strength"
+      }
+    }
+  },
+  "वीर्यम्": {
+    "word": "वीर्यम्",
+    "base_english": "Vigour / Valor",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Vigour / Valor"
+      }
+    }
+  },
+  "तेषां": {
+    "word": "तेषां",
+    "base_english": "Theirs / For them",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Theirs / For them"
+      }
+    }
+  },
+  "एवं": {
+    "word": "एवं",
+    "base_english": "In this way",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In this way"
+      }
+    }
+  },
+  "शारीरिकम्": {
+    "word": "शारीरिकम्",
+    "base_english": "Physical",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Physical"
+      }
+    }
+  },
+  "मानसिकं": {
+    "word": "मानसिकं",
+    "base_english": "Mental",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Mental"
+      }
+    }
+  },
+  "आध्यात्मिकम्": {
+    "word": "आध्यात्मिकम्",
+    "base_english": "Spiritual",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Spiritual"
+      }
+    }
+  },
+  "स्वस्थम्": {
+    "word": "स्वस्थम्",
+    "base_english": "Healthy",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Healthy"
+      }
+    }
+  },
+  "शरीरम्": {
+    "word": "शरीरम्",
+    "base_english": "Body",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Body"
+      }
+    }
+  },
+  "अग्रिमकक्षायां": {
+    "word": "अग्रिमकक्षायां",
+    "base_english": "In the next class",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the next class"
+      }
+    }
+  },
+  "अन्येषां": {
+    "word": "अन्येषां",
+    "base_english": "Of others",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of others"
+      }
+    }
   }
 }
