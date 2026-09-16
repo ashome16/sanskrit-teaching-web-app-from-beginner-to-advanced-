@@ -11,6 +11,50 @@ interface BoardShelfLine { shelf: string; native: string; skin: string; puzzles:
 interface PackLabel { title: string; gloss: string; }
 interface VisitorBlock { heading: 'h2' | 'h3' | 'p'; text: string; }
 
+export interface BoardProps {
+  onNavigateToReader?: () => void;
+  onNavigateToVarnamala?: () => void;
+  onNavigateToGrammar?: () => void;
+}
+
+const SHELF_DESCRIPTIONS: Record<ShelfId, { title: string; desc: string; icon: string }> = {
+  prarambhah: {
+    title: 'Beginners · प्रारम्भः',
+    desc: 'Vowel combinations, matras & basic syllable joining',
+    icon: '🌱',
+  },
+  sariram: {
+    title: 'Body · शरीरम्',
+    desc: 'Learn parts of the human body in Sanskrit',
+    icon: '👤',
+  },
+  ganitam: {
+    title: 'Maths & Space · गणितम्',
+    desc: 'Numbers, counting, time & astronomical terms',
+    icon: '🔢',
+  },
+  bhugolah: {
+    title: 'Map · भूगोलः',
+    desc: 'Geography, directions & locations in Sanskrit',
+    icon: '🗺️',
+  },
+  sanskritih: {
+    title: 'Sanskriti · संस्कृतिः',
+    desc: 'Indian culture, heritage & ancient traditions',
+    icon: '🪔',
+  },
+  krida: {
+    title: 'Vyakaran · व्याकरण',
+    desc: 'Core grammar rules, vibhaktis & declensions',
+    icon: '📖',
+  },
+  prakrtih: {
+    title: 'Nature · प्रकृतिः',
+    desc: 'Birds, animals, plants, rivers & nature',
+    icon: '🌿',
+  },
+};
+
 const BODY_ANECDOTE = 'नाद-पथः — क lives in the throat.';
 
 const DEFAULT_SHELVES: ShelfButton[] = [
@@ -506,7 +550,11 @@ function activeSectionChipId(chips: BoardSectionChip[], puzzleIndex: number): st
   return active;
 }
 
-const Board: React.FC = () => {
+const Board: React.FC<BoardProps> = ({
+  onNavigateToReader,
+  onNavigateToVarnamala,
+  onNavigateToGrammar,
+}) => {
   const [shelfButtons, setShelfButtons] = useState<ShelfButton[]>(DEFAULT_SHELVES);
   const [boardShelves, setBoardShelves] = useState<BoardShelfLine[]>([]);
   const [fallbackPuzzles, setFallbackPuzzles] = useState<BoardPuzzle[]>([]);
@@ -520,6 +568,25 @@ const Board: React.FC = () => {
   const [welcomeOpen, setWelcomeOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [showHelp, setShowHelp] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('jodo-help-collapsed') !== 'true';
+    } catch {
+      return true;
+    }
+  });
+
+  const toggleHelp = () => {
+    setShowHelp((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem('jodo-help-collapsed', next ? 'false' : 'true');
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  };
 
   useEffect(() => {
     const loadBoard = async () => {
@@ -784,13 +851,110 @@ const Board: React.FC = () => {
   const activeStep = (checked && isCorrect) ? 2 : 1;
   const graphicWord = ((activePuzzle?.answer ?? activePuzzle?.target ?? activePuzzle?.highlight) || '').normalize('NFC');
   const puzzleGraphic = graphicWord ? iconForExampleWord(graphicWord) : '✨';
+  const activeShelfInfo = SHELF_DESCRIPTIONS[activeShelf];
 
   return <main className="board-shell">
+    {/* Top Website Navigation Breadcrumbs & Badge */}
+    <div className="board-top-nav">
+      <nav className="board-breadcrumbs" aria-label="Website Navigation">
+        {onNavigateToReader && (
+          <button type="button" className="board-nav-link" onClick={onNavigateToReader} title="Go to NCERT Deepakam Lessons">
+            📖 Deepakam Lessons
+          </button>
+        )}
+        {onNavigateToVarnamala && (
+          <>
+            <span className="board-nav-sep" aria-hidden="true">/</span>
+            <button type="button" className="board-nav-link" onClick={onNavigateToVarnamala} title="Go to Varṇamālā Alphabet">
+              🔤 Varṇamālā
+            </button>
+          </>
+        )}
+        {onNavigateToGrammar && (
+          <>
+            <span className="board-nav-sep" aria-hidden="true">/</span>
+            <button type="button" className="board-nav-link" onClick={onNavigateToGrammar} title="Go to Vyākaraṇa Grammar">
+              📚 Vyākaraṇa (Grammar)
+            </button>
+          </>
+        )}
+      </nav>
+      <div className="board-game-badge">
+        <span className="badge-icon">🧩</span>
+        <span>जोडो · Tile Puzzle</span>
+      </div>
+    </div>
+
+    {/* Clear User-Friendly Instructions Card */}
+    <div className="jodo-instructions-card">
+      <div
+        className="jodo-instructions-header"
+        onClick={toggleHelp}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggleHelp(); }}
+      >
+        <div className="jodo-instructions-title">
+          <span className="jodo-help-icon">💡</span>
+          <span><strong>How to Play जोडो (Interactive Tile Puzzle)</strong></span>
+        </div>
+        <button type="button" className="jodo-help-toggle" aria-expanded={showHelp}>
+          {showHelp ? 'Hide Guide ▲' : 'Quick Guide ▼'}
+        </button>
+      </div>
+      {showHelp && (
+        <div className="jodo-steps-row">
+          <div className="jodo-step-card">
+            <div className="jodo-step-num">1</div>
+            <div className="jodo-step-text">
+              <strong>Read the Prompt</strong>
+              <span>Look at the target Sanskrit sound, syllable, or English clue.</span>
+            </div>
+          </div>
+          <div className="jodo-step-arrow" aria-hidden="true">➔</div>
+          <div className="jodo-step-card">
+            <div className="jodo-step-num">2</div>
+            <div className="jodo-step-text">
+              <strong>Tap the Tiles</strong>
+              <span>Click cream tiles to join letters (e.g. <code>क</code> + <code>आ</code> → <code>का</code>) or pick the matching word.</span>
+            </div>
+          </div>
+          <div className="jodo-step-arrow" aria-hidden="true">➔</div>
+          <div className="jodo-step-card">
+            <div className="jodo-step-num">3</div>
+            <div className="jodo-step-text">
+              <strong>Listen &amp; Advance</strong>
+              <span>Hear pronunciation, view sentence &amp; illustration, then click <strong>Next ▶</strong>!</span>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+
+    {/* Learning Shelves Navigation */}
     <nav className="wing-nav" aria-label="Learning shelves">
       {shelfButtons.map((item) => (
-        <button key={item.id} type="button" className={activeShelf === item.id ? 'wing-button active' : 'wing-button'} onClick={() => chooseShelf(item.id)}>{item.label}</button>
+        <button
+          key={item.id}
+          type="button"
+          className={activeShelf === item.id ? 'wing-button active' : 'wing-button'}
+          onClick={() => chooseShelf(item.id)}
+        >
+          {SHELF_DESCRIPTIONS[item.id]?.icon ? `${SHELF_DESCRIPTIONS[item.id].icon} ` : ''}{item.label}
+        </button>
       ))}
     </nav>
+
+    {/* Active Shelf Info Banner */}
+    {activeShelfInfo && (
+      <div className="board-shelf-banner">
+        <span className="shelf-banner-icon">{activeShelfInfo.icon}</span>
+        <div className="shelf-banner-details">
+          <span className="shelf-banner-title">{activeShelfInfo.title}</span>
+          <span className="shelf-banner-desc">{activeShelfInfo.desc}</span>
+        </div>
+      </div>
+    )}
 
     {sectionChips.length > 0 && (
       <div className="board-sections" role="group" aria-label="Jump to section">
@@ -811,7 +975,7 @@ const Board: React.FC = () => {
       <p className="board-tip">{isLearnPhase
         ? <>Hear the word, read the meaning, then <strong className="tip-next">Click Next</strong>.</>
         : isJodoSkin
-          ? <>On top, click one or two letter chips. Below, click क then आ — picture and sentence appear. Then <strong className="tip-next">Click Next</strong>.</>
+          ? <>Click letter chips to join them (e.g. क then आ) — picture and sentence appear. Then <strong className="tip-next">Click Next</strong>.</>
           : emphasizeTipText('Click a cream tile. The picture and sentence appear. Then Click Next.')}</p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
@@ -835,7 +999,7 @@ const Board: React.FC = () => {
           <span className="meta-hint">{isLearnPhase
             ? 'Learn the word'
             : isJodoSkin
-              ? 'जोडो'
+              ? 'जोडो · Join tiles'
               : '1 tile → Next'}</span>
           <span className="meta-sep" aria-hidden="true">·</span>
           <span className="meta-progress">{puzzleIndex + 1} / {activePuzzles.length}</span>
@@ -865,7 +1029,7 @@ const Board: React.FC = () => {
               type="button"
               onClick={() => playPronunciation(activePuzzle.target)}
             >
-              Hear
+              🔊 Hear
             </button>
             <div className="tile-row learn-tile-row">
               {activePuzzle.tiles.map((tile, index) => (
@@ -882,7 +1046,7 @@ const Board: React.FC = () => {
             </div>
             <div className="puzzle-actions">
               <button ref={nextBtnRef} className="next-button learn-next" type="button" onClick={onNextOrAgain}>
-                {isLastPuzzle ? 'Again' : 'I learnt it · Next'}
+                {isLastPuzzle ? 'Play Again ↺' : 'I learnt it · Next ▶'}
               </button>
             </div>
           </div>
@@ -905,6 +1069,10 @@ const Board: React.FC = () => {
 
             {checked && isCorrect && (
               <div className="puzzle-result correct">
+                <div className="puzzle-success-banner">
+                  <span className="success-emoji">🎉</span>
+                  <span className="success-text">उत्तमम्! Correct!</span>
+                </div>
                 <div className="puzzle-graphic" aria-hidden="true">{puzzleGraphic}</div>
                 <p className="result-sanskrit">{highlightedSentence(activePuzzle.sentence, activePuzzle.highlight, activePuzzle.tapHighlight)}</p>
                 <p className="result-english">{activePuzzle.english}</p>
@@ -914,15 +1082,21 @@ const Board: React.FC = () => {
                     type="button"
                     onClick={() => playPronunciation(activePuzzle.target)}
                   >
-                    Hear
+                    🔊 Hear Pronunciation
                   </button>
                 )}
                 {activePuzzle.seed && <p className="result-seed">{activePuzzle.seed}</p>}
-                {hasNextPuzzle && <button ref={nextBtnRef} className="next-button" type="button" onClick={onNextOrAgain}>{isLastPuzzle ? 'Again' : 'Next'}</button>}
+                {hasNextPuzzle && <button ref={nextBtnRef} className="next-button" type="button" onClick={onNextOrAgain}>{isLastPuzzle ? 'Play Again ↺' : 'Next Puzzle ▶'}</button>}
               </div>
             )}
             {wrongAttempt && (
-              <div className="puzzle-result"><strong>{wrongAttemptMessage}</strong></div>
+              <div className="puzzle-result wrong-feedback">
+                <span className="wrong-icon">🤔</span>
+                <div className="wrong-content">
+                  <strong>{wrongAttemptMessage}</strong>
+                  <button type="button" className="reset-try-btn" onClick={resetPuzzleUi}>Reset selection</button>
+                </div>
+              </div>
             )}
           </>
         )}

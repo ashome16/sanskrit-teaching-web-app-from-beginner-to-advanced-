@@ -175,7 +175,15 @@ const Dashboard: React.FC = () => {
   return (
     <div className="dashboard">
       <header className="dashboard-header">
-        <h1 className="dashboard-title">🕉️ Sanskrit Learning</h1>
+        <button
+          type="button"
+          className="dashboard-brand-btn"
+          onClick={openDeepakam}
+          title="Go to Deepakam Lessons (Home)"
+        >
+          <span className="dashboard-brand-symbol">🕉️</span>
+          <span className="dashboard-title">Sanskrit Learning</span>
+        </button>
         <nav className="dashboard-nav" aria-label="Main learning views">
           <button
             className={activeView === 'reader' && lesson.id === 'varnamala' ? 'active' : ''}
@@ -216,7 +224,13 @@ const Dashboard: React.FC = () => {
         </nav>
       </header>
 
-      {activeView === 'board' && <Board />}
+      {activeView === 'board' && (
+        <Board
+          onNavigateToReader={openDeepakam}
+          onNavigateToVarnamala={openVarnamala}
+          onNavigateToGrammar={handleOpenGrammar}
+        />
+      )}
       {activeView === 'grammar' && (
         <Grammar key={grammarResetKey} onGoHome={() => setActiveView('reader')} />
       )}

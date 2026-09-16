@@ -18,6 +18,28 @@
   gap: 1rem;
 }
 
+.dashboard-brand-btn {
+  background: none;
+  border: none;
+  padding: 0.25rem 0.5rem 0.25rem 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 8px;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.dashboard-brand-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.dashboard-brand-symbol {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
 .dashboard-title {
   margin: 0;
   font-size: 1.4rem;
@@ -160,6 +182,8 @@
   }
 }
 
-.grammar-page {
+.grammar-page,
+.board-shell {
   grid-column: 1 / -1;
+  width: 100%;
 }

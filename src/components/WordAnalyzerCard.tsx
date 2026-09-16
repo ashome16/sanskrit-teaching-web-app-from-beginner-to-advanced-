@@ -101,7 +101,6 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
   }, [selection]);
 
   const word = analysis?.word;
-  const isCustom = analysis?.isCustom ?? false;
   const nounInflection = word?.nounInflection;
   const glossEntry: AnalyseEntry | undefined = word
     ? lookupAnalyseGloss(glosses, word.devanagari)
@@ -140,14 +139,19 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
         <div className="wac-content">
           {/* Top header */}
           <div className="wac-header wac-header-flex">
-            <button
-              type="button"
-              className="wac-devanagari-btn"
-              onClick={() => playPronunciation(word.devanagari)}
-              aria-label={`Play pronunciation for ${word.devanagari}`}
-            >
-              {word.devanagari}
-            </button>
+            <div className="wac-title-wrap">
+              <button
+                type="button"
+                className="wac-devanagari-btn"
+                onClick={() => playPronunciation(word.devanagari)}
+                aria-label={`Play pronunciation for ${word.devanagari}`}
+              >
+                {word.devanagari}
+              </button>
+              {word.transliteration && (
+                <span className="wac-transliteration">{word.transliteration}</span>
+              )}
+            </div>
             <button
               type="button"
               className="wac-speaker-btn"
@@ -159,6 +163,99 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
             </button>
           </div>
 
+          {/* Meaning — Placed immediately at top so it is always visible without scrolling */}
+          <section className="wac-section wac-section--meaning">
+            <div className="wac-meaning-header-row">
+              <span className="wac-meaning-tag">अर्थः · Meaning</span>
+              {glossEntry?.grammar && (
+                <span className="wac-grammar-badge" title="Grammar">{glossEntry.grammar}</span>
+              )}
+            </div>
+            {displayMeaning || glossEntry?.sanskrit_gloss ? (
+              <div className="wac-meaning-block">
+                {displayMeaning ? <p className="wac-meaning-english">{displayMeaning}</p> : null}
+                {glossEntry?.sanskrit_gloss ? (
+                  <p className="wac-meaning-sanskrit">
+                    <span className="wac-meaning-lang">संस्कृतम्</span>
+                    {glossEntry.sanskrit_gloss}
+                  </p>
+                ) : null}
+                {regionalGlosses.map(([code, item]) => (
+                  <p key={code} className="wac-meaning-regional">
+                    <span className="wac-meaning-lang">{item.label}</span>
+                    {item.meaning}
+                  </p>
+                ))}
+              </div>
+            ) : (
+              <p className="wac-placeholder">No meaning available yet for this word.</p>
+            )}
+          </section>
+
+          {/* Grammatical Information — displayed as compact pills when inflection is detected */}
+          {nounInflection && (nounInflection.gender || nounInflection.number || nounInflection.case !== undefined) && (
+            <section className="wac-section wac-section--compact">
+              <h3 className="wac-section-title">Grammar (व्याकरणम्)</h3>
+              <div className="wac-grammar-pills">
+                {nounInflection.gender && (
+                  <div className="wac-grammar-pill">
+                    <span className="wac-pill-label">Gender</span>
+                    <span className="wac-pill-val">{nounInflection.gender}</span>
+                  </div>
+                )}
+                {nounInflection.number && (
+                  <div className="wac-grammar-pill">
+                    <span className="wac-pill-label">Number</span>
+                    <span className="wac-pill-val">{nounInflection.number}</span>
+                  </div>
+                )}
+                {nounInflection.case !== undefined && (
+                  <div className="wac-grammar-pill">
+                    <span className="wac-pill-label">Case</span>
+                    <span className="wac-pill-val">{formatCaseLabel(nounInflection.case)}</span>
+                  </div>
+                )}
+              </div>
+            </section>
+          )}
+
+          {/* Syllable Breakdown */}
+          {word.syllables.length > 0 && (
+            <section className="wac-section wac-section--compact">
+              <h3 className="wac-section-title">Syllables (अक्षराणि)</h3>
+              <div className="wac-syllables-grid">
+                {word.syllables.map((syllable, idx) => (
+                  <div key={idx} className="wac-syllable-box">
+                    <div className="wac-syllable-dev">{syllable.devanagari}</div>
+                    <div className="wac-syllable-translit">{syllable.transliteration}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Conjunct Consonants — Only shown if conjuncts exist */}
+          {word.conjunctConsonants.length > 0 && (
+            <section className="wac-section wac-section--compact">
+              <h3 className="wac-section-title">Conjunct Consonants (संयुक्ताक्षर)</h3>
+              <div className="wac-conjunct-list">
+                {word.conjunctConsonants.map((conjunct, idx) => (
+                  <div key={idx} className="wac-conjunct-box">
+                    <div className="wac-conjunct-dev">{conjunct.devanagari}</div>
+                    <div className="wac-conjunct-components">
+                      {conjunct.components.map((comp, i) => (
+                        <span key={i} className="wac-conjunct-component">
+                          {comp}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Letter / Akshara Explorer — Shown when browsing aksharas */}
           {soundAnchor && vowelExamples.length > 0 && (
             <section className="wac-section">
               <h3 className="wac-section-title">Words with this akṣara</h3>
@@ -176,7 +273,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
                 </>
               ) : (
                 <p className="wac-placeholder" style={{ marginBottom: '.5rem' }}>
-                  Familiar words that use this exact letter (का is not the same as क). Click on words to hear them.
+                  Familiar words that use this exact letter. Click on words to hear them.
                 </p>
               )}
               <div className="wac-vowel-examples">
@@ -202,128 +299,32 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
             <section className="wac-section">
               <h3 className="wac-section-title">Words with this akṣara</h3>
               <p className="wac-placeholder">
-                Rare akṣara — few everyday Sanskrit words use this exact letter. Learn the sound first; example words are scarce.
+                Rare akṣara — few everyday Sanskrit words use this exact letter. Learn the sound first.
               </p>
             </section>
           )}
 
-          {/* Section 1: Syllable Breakdown */}
-          <section className="wac-section">
-            <h3 className="wac-section-title">Syllable Breakdown (Akṣaras)</h3>
-            {word.syllables.length > 0 ? (
-              <div className="wac-syllables-grid">
-                {word.syllables.map((syllable, idx) => (
-                  <div key={idx} className="wac-syllable-box">
-                    <div className="wac-syllable-dev">{syllable.devanagari}</div>
-                    <div className="wac-syllable-translit">{syllable.transliteration}</div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="wac-placeholder">No syllable data available for this input.</p>
-            )}
-          </section>
+          {/* Etymology — Only shown if available */}
+          {(word.etymology || glossEntry?.etymology) && (
+            <section className="wac-section wac-section--compact">
+              <h3 className="wac-section-title">Etymology (व्युत्पत्तिः)</h3>
+              <p className="wac-etymology">
+                {word.etymology || glossEntry?.etymology}
+              </p>
+            </section>
+          )}
 
-          {/* Section 2: Conjunct Consonants */}
-          <section className="wac-section">
-            <h3 className="wac-section-title">Conjunct Consonants (Samyuktākṣara)</h3>
-            {word.conjunctConsonants.length > 0 ? (
-              <div className="wac-conjunct-list">
-                {word.conjunctConsonants.map((conjunct, idx) => (
-                  <div key={idx} className="wac-conjunct-box">
-                    <div className="wac-conjunct-dev">{conjunct.devanagari}</div>
-                    <div className="wac-conjunct-components">
-                      {conjunct.components.map((comp, i) => (
-                        <span key={i} className="wac-conjunct-component">
-                          {comp}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="wac-placeholder">No conjunct consonants detected in this word.</p>
-            )}
-          </section>
-
-          {/* Section 3: Grammatical Information Grid */}
-          <section className="wac-section">
-            <h3 className="wac-section-title">Grammatical Information</h3>
-            <div className="wac-grammar-grid">
-              <div className="wac-grammar-box">
-                <div className="wac-grammar-label">Gender</div>
-                <div className="wac-grammar-value">
-                  {nounInflection?.gender ??
-                    (isCustom ? 'Unavailable for custom input' : '—')}
-                </div>
-              </div>
-              <div className="wac-grammar-box">
-                <div className="wac-grammar-label">Number</div>
-                <div className="wac-grammar-value">
-                  {nounInflection?.number ??
-                    (isCustom ? 'Unavailable for custom input' : '—')}
-                </div>
-              </div>
-              <div className="wac-grammar-box">
-                <div className="wac-grammar-label">Case</div>
-                <div className="wac-grammar-value">
-                  {nounInflection?.case !== undefined
-                    ? formatCaseLabel(nounInflection.case)
-                    : (isCustom ? 'Unavailable for custom input' : '—')}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Meaning — from dictionary entry or sealed analyse.json glosses */}
-          <section className="wac-section">
-            <h3 className="wac-section-title">Meaning</h3>
-            {displayMeaning || glossEntry?.sanskrit_gloss ? (
-              <div className="wac-meaning-block">
-                {displayMeaning ? <p className="wac-meaning-english">{displayMeaning}</p> : null}
-                {glossEntry?.sanskrit_gloss ? (
-                  <p className="wac-meaning-sanskrit">
-                    <span className="wac-meaning-lang">संस्कृतम्</span>
-                    {glossEntry.sanskrit_gloss}
-                  </p>
-                ) : null}
-                {regionalGlosses.map(([code, item]) => (
-                  <p key={code} className="wac-meaning-regional">
-                    <span className="wac-meaning-lang">{item.label}</span>
-                    {item.meaning}
-                  </p>
-                ))}
-              </div>
-            ) : (
-              <p className="wac-placeholder">No meaning yet for this word. Add it in analyse.json.</p>
-            )}
-          </section>
-
-          {/* Section 4: Etymology */}
-          <section className="wac-section">
-            <h3 className="wac-section-title">Etymology</h3>
-            <p className="wac-etymology">
-              {word.etymology
-                || glossEntry?.etymology
-                || glossEntry?.grammar
-                || 'Etymology details unavailable for custom input.'}
-            </p>
-          </section>
-
-          {/* Section 5: Contextual Examples */}
-          <section className="wac-section">
-            <h3 className="wac-section-title">Contextual Examples</h3>
-            {word.examples && word.examples.length > 0 ? (
+          {/* Contextual Examples — Only shown if available */}
+          {word.examples && word.examples.length > 0 && (
+            <section className="wac-section wac-section--compact">
+              <h3 className="wac-section-title">Contextual Examples</h3>
               <ul className="wac-examples-list">
                 {word.examples.map((example, idx) => (
                   <li key={idx}>{example}</li>
                 ))}
               </ul>
-            ) : (
-              <p className="wac-placeholder">No contextual examples available for custom input.</p>
-            )}
-          </section>
+            </section>
+          )}
         </div>
       )}
     </aside>
