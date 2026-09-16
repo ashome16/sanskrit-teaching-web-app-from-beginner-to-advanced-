@@ -44654,5 +44654,925 @@
         "meaning": "लेता है / स्वीकार करता है (लट् लकार)"
       }
     }
+  },
+  "अंगूठा": {
+    "english": "Thumb",
+    "grammar": "Hindi noun, m. (संस्कृत: अङ्गुष्ठः)"
+  },
+  "अंगूठे": {
+    "english": "Thumb (oblique form)",
+    "grammar": "Hindi noun, m."
+  },
+  "अंग्रेजी": {
+    "english": "English / Gregorian",
+    "grammar": "Hindi adj."
+  },
+  "अकथयत्": {
+    "english": "Said / narrated",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (कथ् धातु)"
+  },
+  "अकथयन्": {
+    "english": "Said / spoke (they all)",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. plur. (कथ् धातु)"
+  },
+  "अकुर्वन्": {
+    "english": "Did / performed (they all)",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. plur. (कृ धातु)"
+  },
+  "अक्टूबरमासः": {
+    "english": "Month of October",
+    "grammar": "Noun, m., nom. sing. (समस्तपद)"
+  },
+  "अगच्छन्": {
+    "english": "Went (they all)",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. plur. (गम् धातु)"
+  },
+  "अगणयत्": {
+    "english": "Counted",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (गण् धातु)"
+  },
+  "अगस्तमासः": {
+    "english": "Month of August",
+    "grammar": "Noun, m., nom. sing. (समस्तपद)"
+  },
+  "अङ्कानां": {
+    "english": "Of numbers / of digits",
+    "grammar": "Noun, m., gen. plur. (अङ्क)"
+  },
+  "अङ्गुलिः": {
+    "english": "Finger",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "अङ्गुष्ठः": {
+    "english": "Thumb",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "अतिष्ठन्": {
+    "english": "Stood / sat / stayed (they all)",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. plur. (स्था धातु)"
+  },
+  "अध्यापकाः": {
+    "english": "Teachers",
+    "grammar": "Noun, m., nom. plur. (अध्यापक)"
+  },
+  "अनामिका": {
+    "english": "Ring finger",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "अनुपस्थित": {
+    "english": "Absent",
+    "grammar": "Hindi adj. (संस्कृत: अनुपस्थितः)"
+  },
+  "अनुपस्थिताः": {
+    "english": "Absent (persons)",
+    "grammar": "Adj., m., nom. plur."
+  },
+  "अन्यान": {
+    "english": "Others / other boys",
+    "grammar": "Pronoun/Adj., m., acc. plur. (अन्यान्)"
+  },
+  "अपरः": {
+    "english": "Another / second",
+    "grammar": "Pronoun/Adj., m., nom. sing."
+  },
+  "अपृच्छत्": {
+    "english": "Asked",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (प्रच्छ् धातु)"
+  },
+  "अभिनन्दनम्": {
+    "english": "Congratulations / greeting",
+    "grammar": "Noun, n., nom. sing."
+  },
+  "अवशिष्टाः": {
+    "english": "Remaining / left over",
+    "grammar": "Adj., m., nom. plur."
+  },
+  "अष्ट": {
+    "english": "Eight",
+    "grammar": "Numeral (cardinal)"
+  },
+  "अष्टमः": {
+    "english": "Eighth",
+    "grammar": "Ordinal numeral, m., nom. sing."
+  },
+  "आगच्छत्": {
+    "english": "Came / arrived",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (आ + गम्)"
+  },
+  "आङ्ग्लमासेषु": {
+    "english": "Among English / Gregorian months",
+    "grammar": "Noun, m., loc. plur. (आङ्ग्लमास)"
+  },
+  "आठ": {
+    "english": "Eight",
+    "grammar": "Hindi numeral (संस्कृत: अष्ट)"
+  },
+  "आत्मानं": {
+    "english": "Oneself / himself",
+    "grammar": "Pronoun/Noun, m., acc. sing. (आत्मन् / आत्मानम्)"
+  },
+  "आत्मानम्": {
+    "english": "Oneself / himself",
+    "grammar": "Pronoun/Noun, m., acc. sing. (आत्मन्)"
+  },
+  "आदिशत्": {
+    "english": "Commanded / ordered",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. sing. (आ + दिश्)"
+  },
+  "आदेश": {
+    "english": "Order / command",
+    "grammar": "Hindi noun, m. (संस्कृत: आदेशः)"
+  },
+  "आनंदित": {
+    "english": "Delighted / happy",
+    "grammar": "Hindi adj. (संस्कृत: आनन्दितः / प्रहृष्टः)"
+  },
+  "आनन्देन": {
+    "english": "With joy / happily",
+    "grammar": "Noun, m., inst. sing. (आनन्द)"
+  },
+  "आशीर्वाद": {
+    "english": "Blessing",
+    "grammar": "Hindi noun, m. (संस्कृत: आशीर्वादः)"
+  },
+  "आशीर्वादाः": {
+    "english": "Blessings",
+    "grammar": "Noun, m., nom. plur. (आशीर्वाद)"
+  },
+  "आसन्": {
+    "english": "Were (they all)",
+    "grammar": "Verb, lṅ. lakāra (past), 3rd pers. plur. (अस् धातु)"
+  },
+  "इंस्पेक्टर": {
+    "english": "Inspector",
+    "grammar": "Hindi / loanword noun (संस्कृत: निरीक्षकः)"
+  },
+  "उँगलियों": {
+    "english": "Fingers (oblique)",
+    "grammar": "Hindi noun, f. plur."
+  },
+  "उँगली": {
+    "english": "Finger",
+    "grammar": "Hindi noun, f. sing."
+  },
+  "उचितं": {
+    "english": "Appropriate / correct",
+    "grammar": "Adj., n., nom./acc. sing."
+  },
+  "उत्तीर्णाः": {
+    "english": "Crossed over / traversed",
+    "grammar": "Past pass. part., m., nom. plur. (उद् + तृ + क्त)"
+  },
+  "उनके": {
+    "english": "Their",
+    "grammar": "Hindi possessive pron."
+  },
+  "उन्हें": {
+    "english": "Them (to them)",
+    "grammar": "Hindi pron., objective"
+  },
+  "उपस्थित": {
+    "english": "Present / attended",
+    "grammar": "Hindi adj. (संस्कृत: उपस्थितः)"
+  },
+  "उपस्थिताः": {
+    "english": "Present (persons)",
+    "grammar": "Adj., m., nom. plur."
+  },
+  "एकवाक्येन": {
+    "english": "In one sentence",
+    "grammar": "Noun, n., inst. sing. (एकवाक्य)"
+  },
+  "एकस्मिन्": {
+    "english": "In one",
+    "grammar": "Pronoun/Numeral, m./n., loc. sing. (एक)"
+  },
+  "एका": {
+    "english": "One (feminine)",
+    "grammar": "Numeral, f., nom. sing. (एका पाठशाला)"
+  },
+  "ओलम्पियाड": {
+    "english": "Olympiad",
+    "grammar": "Hindi / loanword noun"
+  },
+  "कतमः": {
+    "english": "Which one (of many)",
+    "grammar": "Interrogative pron., m., nom. sing."
+  },
+  "कतार": {
+    "english": "Row / line / queue",
+    "grammar": "Hindi noun, f. (संस्कृत: पङ्क्तिः)"
+  },
+  "कति": {
+    "english": "How many",
+    "grammar": "Interrogative numeral/indeclinable"
+  },
+  "कनिष्ठिका": {
+    "english": "Little finger",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "करके": {
+    "english": "Having done / making",
+    "grammar": "Hindi conjunctive part."
+  },
+  "करे": {
+    "english": "In the hand",
+    "grammar": "Noun, m., loc. sing. (करः = hand)"
+  },
+  "कश्चित्": {
+    "english": "Someone / a certain",
+    "grammar": "Indefinite pronoun, m., nom. sing."
+  },
+  "कार्तिक": {
+    "english": "Kartik (month)",
+    "grammar": "Hindi noun, m. (संस्कृत: कार्त्तिकः)"
+  },
+  "कार्त्तिकः": {
+    "english": "Karttika month (8th lunar month)",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "कितने": {
+    "english": "How many",
+    "grammar": "Hindi interrogative (संस्कृत: कति)"
+  },
+  "किनकिन": {
+    "english": "Who all",
+    "grammar": "Hindi interrogative phrase"
+  },
+  "किसने": {
+    "english": "Who (ergative)",
+    "grammar": "Hindi interrogative (संस्कृत: कः)"
+  },
+  "कोष्ठाकात": {
+    "english": "From the bracket",
+    "grammar": "Noun, m., abl. sing. (कोष्ठक)"
+  },
+  "कोऽस्ति": {
+    "english": "Who is (कः + अस्ति)",
+    "grammar": "Sandhi form (कः + अस्ति)"
+  },
+  "खड़ा": {
+    "english": "Standing / placed",
+    "grammar": "Hindi adj."
+  },
+  "खुश": {
+    "english": "Happy / pleased",
+    "grammar": "Hindi adj. (संस्कृत: प्रहृष्टः)"
+  },
+  "खुशीखुशी": {
+    "english": "Happily / with great joy",
+    "grammar": "Hindi adv. (संस्कृत: आनन्देन)"
+  },
+  "गणना": {
+    "english": "Counting / calculation",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "गणय": {
+    "english": "Count! (imperative)",
+    "grammar": "Verb, loṭ lakāra, 2nd pers. sing. (गण् धातु)"
+  },
+  "गणितवान्": {
+    "english": "Counted (he)",
+    "grammar": "Past active part. (क्तवतु), m., nom. sing."
+  },
+  "गतसप्ताहे": {
+    "english": "In the last week",
+    "grammar": "Noun, m., loc. sing. (गतसप्ताह)"
+  },
+  "गताः": {
+    "english": "Went / reached (they)",
+    "grammar": "Past pass. part., m., nom. plur. (गम् धातु + क्त)"
+  },
+  "गद्यांशे": {
+    "english": "In the paragraph / passage",
+    "grammar": "Noun, m., loc. sing. (गद्यांश)"
+  },
+  "गिनने": {
+    "english": "Of counting",
+    "grammar": "Hindi verbal noun (oblique)"
+  },
+  "गिना": {
+    "english": "Counted",
+    "grammar": "Hindi verb, past (संस्कृत: अगणयत्)"
+  },
+  "गिनो": {
+    "english": "Count! (command)",
+    "grammar": "Hindi verb, imperative (संस्कृत: गणय)"
+  },
+  "गृहीतवन्तः": {
+    "english": "Took / participated (they)",
+    "grammar": "Past active part. (क्तवतु), m., nom. plur. (ग्रह् धातु)"
+  },
+  "चत्वारि": {
+    "english": "Four (neuter)",
+    "grammar": "Numeral, n., nom./acc."
+  },
+  "चले": {
+    "english": "Went / departed",
+    "grammar": "Hindi verb, past"
+  },
+  "चार": {
+    "english": "Four",
+    "grammar": "Hindi numeral (संस्कृत: चत्वारि / चत्वारः)"
+  },
+  "चिन्ता": {
+    "english": "Worry / anxiety",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "चिरं": {
+    "english": "For a long time",
+    "grammar": "Adverbial acc. (चिरम्)"
+  },
+  "चिरम्": {
+    "english": "For a long time",
+    "grammar": "Adverbial acc. / Indeclinable"
+  },
+  "चुनकर": {
+    "english": "Having selected",
+    "grammar": "Hindi conjunctive part. (संस्कृत: चित्वा)"
+  },
+  "चुपचाप": {
+    "english": "Silently / quietly",
+    "grammar": "Hindi adv. (संस्कृत: तूष्णीम्)"
+  },
+  "चौथा": {
+    "english": "Fourth",
+    "grammar": "Hindi ordinal, m. (संस्कृत: चतुर्थः)"
+  },
+  "चौथी": {
+    "english": "Fourth (fem.)",
+    "grammar": "Hindi ordinal, f. (संस्कृत: चतुर्थी)"
+  },
+  "छठा": {
+    "english": "Sixth",
+    "grammar": "Hindi ordinal, m. (संस्कृत: षष्ठः)"
+  },
+  "छह": {
+    "english": "Six",
+    "grammar": "Hindi numeral (संस्कृत: षट्)"
+  },
+  "छात्रौ": {
+    "english": "Two students",
+    "grammar": "Noun, m., nom./acc. dual (छात्र)"
+  },
+  "डूब": {
+    "english": "Drown / sink",
+    "grammar": "Hindi verb root (संस्कृत: मग्नः)"
+  },
+  "डूबने": {
+    "english": "Of drowning",
+    "grammar": "Hindi verbal noun (oblique)"
+  },
+  "तरीके": {
+    "english": "Manner / way",
+    "grammar": "Hindi noun, m. (oblique)"
+  },
+  "तर्जनी": {
+    "english": "Forefinger / index finger",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "तस्याः": {
+    "english": "Her / of her",
+    "grammar": "Pronoun, f., gen./abl. sing. (तद्)"
+  },
+  "तान": {
+    "english": "Them / to them (boys)",
+    "grammar": "Pronoun, m., acc. plur. (तान्)"
+  },
+  "तान्": {
+    "english": "Them / to them (boys)",
+    "grammar": "Pronoun, m., acc. plur. (तद्)"
+  },
+  "तिस्रः": {
+    "english": "Three (feminine)",
+    "grammar": "Numeral, f., nom./acc. (त्रि)"
+  },
+  "तीर्त्वा": {
+    "english": "Having swum / having crossed over",
+    "grammar": "Indeclinable past participle (तॄ धातु + क्त्वा)"
+  },
+  "तीसरा": {
+    "english": "Third",
+    "grammar": "Hindi ordinal, m. (संस्कृत: तृतीयः)"
+  },
+  "तीसरी": {
+    "english": "Third (fem.)",
+    "grammar": "Hindi ordinal, f. (संस्कृत: तृतीया)"
+  },
+  "तीसरे": {
+    "english": "Third (loc./oblique)",
+    "grammar": "Hindi ordinal, m. (संस्कृत: तृतीये)"
+  },
+  "तूष्णीम्": {
+    "english": "Silently / quietly",
+    "grammar": "Indeclinable (अव्यय)"
+  },
+  "तृतीयं": {
+    "english": "Third (place / neuter)",
+    "grammar": "Ordinal numeral, n., nom./acc. sing."
+  },
+  "तृतीये": {
+    "english": "In the third",
+    "grammar": "Ordinal numeral, m./n., loc. sing."
+  },
+  "तैरकर": {
+    "english": "Having swum / after swimming",
+    "grammar": "Hindi conjunctive part. (संस्कृत: तीर्त्वा)"
+  },
+  "त्यक्त्वा": {
+    "english": "Having abandoned / leaving out",
+    "grammar": "Indeclinable past participle (त्यज् धातु + क्त्वा)"
+  },
+  "त्रीणि": {
+    "english": "Three (neuter)",
+    "grammar": "Numeral, n., nom./acc."
+  },
+  "दश": {
+    "english": "Ten",
+    "grammar": "Numeral (cardinal)"
+  },
+  "दशमः": {
+    "english": "Tenth (boy/person)",
+    "grammar": "Ordinal numeral, m., nom. sing."
+  },
+  "दशमस्य": {
+    "english": "Of the tenth (one)",
+    "grammar": "Ordinal numeral, m., gen. sing."
+  },
+  "दस": {
+    "english": "Ten",
+    "grammar": "Hindi numeral (संस्कृत: दश)"
+  },
+  "दसवाँ": {
+    "english": "Tenth",
+    "grammar": "Hindi ordinal, m. (संस्कृत: दशमः)"
+  },
+  "दसवें": {
+    "english": "Tenth (oblique)",
+    "grammar": "Hindi ordinal, m. (संस्कृत: दशमस्य)"
+  },
+  "दिनों": {
+    "english": "Of days",
+    "grammar": "Hindi noun, m. plur. (oblique)"
+  },
+  "दिवसः": {
+    "english": "Day",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "दिसम्बरमासः": {
+    "english": "Month of December",
+    "grammar": "Noun, m., nom. sing. (समस्तपद)"
+  },
+  "दुःख": {
+    "english": "Sorrow / grief",
+    "grammar": "Hindi noun, m. (संस्कृत: दुःखम्)"
+  },
+  "दुःखस्य": {
+    "english": "Of sorrow / of grief",
+    "grammar": "Noun, n., gen. sing. (दुःख)"
+  },
+  "दुःखितान्": {
+    "english": "Grieving / sorrowful (boys)",
+    "grammar": "Adj., m., acc. plur. (दुःखित)"
+  },
+  "दूसरी": {
+    "english": "Second (fem.)",
+    "grammar": "Hindi ordinal, f. (संस्कृत: द्वितीया)"
+  },
+  "देर": {
+    "english": "Delay / long duration",
+    "grammar": "Hindi noun, f. (संस्कृत: चिरम्)"
+  },
+  "द्वे": {
+    "english": "Two (fem./neut.)",
+    "grammar": "Numeral, f./n., nom./acc. dual (द्वि)"
+  },
+  "नंबर": {
+    "english": "Number / order",
+    "grammar": "Hindi loanword"
+  },
+  "नदीजले": {
+    "english": "In river water",
+    "grammar": "Noun, n., loc. sing. (नदीजल)"
+  },
+  "नद्यां": {
+    "english": "In the river",
+    "grammar": "Noun, f., loc. sing. (नदी / नद्याम्)"
+  },
+  "नव": {
+    "english": "Nine",
+    "grammar": "Numeral (cardinal)"
+  },
+  "नवमः": {
+    "english": "Ninth",
+    "grammar": "Ordinal numeral, m., nom. sing."
+  },
+  "नवमी": {
+    "english": "Ninth (feminine)",
+    "grammar": "Ordinal numeral, f., nom. sing."
+  },
+  "नहाने": {
+    "english": "For bathing",
+    "grammar": "Hindi verbal noun (oblique) (संस्कृत: स्नानाय)"
+  },
+  "नायक": {
+    "english": "Leader",
+    "grammar": "Hindi noun, m. (संस्कृत: नायकः)"
+  },
+  "नायकः": {
+    "english": "Leader / captain",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "नायकम्": {
+    "english": "To the leader",
+    "grammar": "Noun, m., acc. sing. (नायक)"
+  },
+  "निरीक्षक": {
+    "english": "Inspector",
+    "grammar": "Hindi noun, m. (संस्कृत: निरीक्षकः)"
+  },
+  "निरीक्षकः": {
+    "english": "Inspector / examiner",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "निश्चय": {
+    "english": "Decision / conviction",
+    "grammar": "Hindi noun, m. (संस्कृत: निश्चयः)"
+  },
+  "निश्चयम्": {
+    "english": "Decision / determination",
+    "grammar": "Noun, m., acc. sing. (निश्चय)"
+  },
+  "नेता": {
+    "english": "Leader",
+    "grammar": "Hindi noun, m. (संस्कृत: नायकः)"
+  },
+  "नौ": {
+    "english": "Nine",
+    "grammar": "Hindi numeral (संस्कृत: नव)"
+  },
+  "नौवीं": {
+    "english": "Ninth (fem.)",
+    "grammar": "Hindi ordinal, f. (संस्कृत: नवमी)"
+  },
+  "पंद्रह": {
+    "english": "Fifteen",
+    "grammar": "Hindi numeral (संस्कृत: पञ्चदश)"
+  },
+  "पक्का": {
+    "english": "Firm / definite",
+    "grammar": "Hindi adj."
+  },
+  "पङ्क्तौ": {
+    "english": "In a line / row",
+    "grammar": "Noun, f., loc. sing. (पङ्क्ति)"
+  },
+  "पञ्चदश": {
+    "english": "Fifteen",
+    "grammar": "Numeral (cardinal)"
+  },
+  "पट्टिकां": {
+    "english": "Table / chart / strip",
+    "grammar": "Noun, f., acc. sing. (पट्टिका)"
+  },
+  "पथिकः": {
+    "english": "Traveller / wayfarer",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "पाँचवाँ": {
+    "english": "Fifth (masc.)",
+    "grammar": "Hindi ordinal, m. (संस्कृत: पञ्चमः)"
+  },
+  "पाँचवीं": {
+    "english": "Fifth (fem.)",
+    "grammar": "Hindi ordinal, f. (संस्कृत: पञ्चमी)"
+  },
+  "पाठशाला": {
+    "english": "School",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "पिछले": {
+    "english": "Previous / last",
+    "grammar": "Hindi adj. (oblique)"
+  },
+  "पूरणवाचक": {
+    "english": "Ordinal (numeral)",
+    "grammar": "Grammatical term, adj."
+  },
+  "पौषः": {
+    "english": "Pausha month (10th lunar month)",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "प्रसन्न": {
+    "english": "Happy / pleased",
+    "grammar": "Hindi adj. (संस्कृत: प्रसन्नः / प्रहृष्टः)"
+  },
+  "प्रहृष्टाः": {
+    "english": "Overjoyed / delighted",
+    "grammar": "Past pass. part., m., nom. plur. (प्र + हृष् + क्त)"
+  },
+  "प्राप्तवती": {
+    "english": "Attained / obtained (she)",
+    "grammar": "Past active part. (क्तवतु), f., nom. sing."
+  },
+  "प्राप्तवन्तः": {
+    "english": "Attained / obtained (they)",
+    "grammar": "Past active part. (क्तवतु), m., nom. plur."
+  },
+  "प्रीति": {
+    "english": "Preeti (female name)",
+    "grammar": "Proper noun, f."
+  },
+  "प्रीतिः": {
+    "english": "Preeti (proper name) / affection",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "फरवरीमासः": {
+    "english": "Month of February",
+    "grammar": "Noun, m., nom. sing. (समस्तपद)"
+  },
+  "फाल्गुनः": {
+    "english": "Phalguna month (12th lunar month)",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "बचे": {
+    "english": "Remaining / left",
+    "grammar": "Hindi adj."
+  },
+  "बधाई": {
+    "english": "Congratulations",
+    "grammar": "Hindi noun, f. (संस्कृत: अभिनन्दनम्)"
+  },
+  "बाकी": {
+    "english": "Remaining / rest",
+    "grammar": "Hindi adj."
+  },
+  "बालकाः": {
+    "english": "Boys",
+    "grammar": "Noun, m., nom. plur. (बालक)"
+  },
+  "बालकानां": {
+    "english": "Of the boys",
+    "grammar": "Noun, m., gen. plur. (बालक)"
+  },
+  "बालकान्": {
+    "english": "To the boys",
+    "grammar": "Noun, m., acc. plur. (बालक)"
+  },
+  "बालकों": {
+    "english": "Of boys (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "बीस": {
+    "english": "Twenty",
+    "grammar": "Hindi numeral (संस्कृत: विंशतिः)"
+  },
+  "बोला": {
+    "english": "Spoke / said",
+    "grammar": "Hindi verb, past (संस्कृत: अवदत्)"
+  },
+  "भरोसा": {
+    "english": "Trust / assurance",
+    "grammar": "Hindi noun, m."
+  },
+  "भवद्भ्यः": {
+    "english": "To all of you (respected)",
+    "grammar": "Pronoun, m., dat./abl. plur. (भवत्)"
+  },
+  "भारतीय": {
+    "english": "Indian",
+    "grammar": "Hindi / Sanskrit adj."
+  },
+  "भूत्वा": {
+    "english": "Having become",
+    "grammar": "Indeclinable past participle (भू धातु + क्त्वा)"
+  },
+  "मध्यमा": {
+    "english": "Middle finger",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "महीना": {
+    "english": "Month",
+    "grammar": "Hindi noun, m. sing. (संस्कृत: मासः)"
+  },
+  "महीनों": {
+    "english": "Months (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "मार्गशीर्ष": {
+    "english": "Margashirsha (month)",
+    "grammar": "Hindi noun, m. (संस्कृत: मार्गशीर्षः)"
+  },
+  "मार्गशीर्षः": {
+    "english": "Margashirsha month (9th lunar month)",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "मासः": {
+    "english": "Month",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "मासेषु": {
+    "english": "Among months / in months",
+    "grammar": "Noun, m., loc. plur. (मास)"
+  },
+  "मास्तु": {
+    "english": "Let it not be (मा + अस्तु)",
+    "grammar": "Compound phrase (मा + अस्तु)"
+  },
+  "मिलकर": {
+    "english": "Together / having met",
+    "grammar": "Hindi conjunctive part. (संस्कृत: मिलित्वा)"
+  },
+  "मौन": {
+    "english": "Silent / silence",
+    "grammar": "Hindi noun/adj. (संस्कृत: तूष्णीम्)"
+  },
+  "यात्री": {
+    "english": "Traveller / passenger",
+    "grammar": "Hindi noun, m. (संस्कृत: पथिकः)"
+  },
+  "युष्माकं": {
+    "english": "Your / of you all",
+    "grammar": "Pronoun, gen. plur. (युष्मद्)"
+  },
+  "योजयित्वा": {
+    "english": "Having joined / having added",
+    "grammar": "Indeclinable participle (युज् धातु + णिच् + क्त्वा)"
+  },
+  "रच्यन्तु": {
+    "english": "Compose! / create!",
+    "grammar": "Verb, loṭ lakāra, 3rd pers. plur. (रच् धातु)"
+  },
+  "रविवासर": {
+    "english": "Sunday",
+    "grammar": "Hindi noun, m. (संस्कृत: रविवासरः)"
+  },
+  "रविवासरः": {
+    "english": "Sunday",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "राहगीर": {
+    "english": "Wayfarer / passerby",
+    "grammar": "Hindi noun, m. (संस्कृत: पथिकः)"
+  },
+  "लंबे": {
+    "english": "Long",
+    "grammar": "Hindi adj."
+  },
+  "लाइन": {
+    "english": "Line / row",
+    "grammar": "Hindi loanword (संस्कृत: पङ्क्तिः)"
+  },
+  "लिखितवन्तः": {
+    "english": "Wrote (they all)",
+    "grammar": "Past active part. (क्तवतु), m., nom. plur. (लिख् धातु)"
+  },
+  "लिखितवन्तौ": {
+    "english": "Wrote (both of them)",
+    "grammar": "Past active part. (क्तवतु), m., nom. dual (लिख् धातु)"
+  },
+  "लिखे": {
+    "english": "Wrote",
+    "grammar": "Hindi verb, past"
+  },
+  "लिखें": {
+    "english": "Write! (subjunctive/imperative)",
+    "grammar": "Hindi verb (संस्कृत: लिखन्तु)"
+  },
+  "ली": {
+    "english": "Took / did",
+    "grammar": "Hindi verb, past"
+  },
+  "लेखितुम्": {
+    "english": "To write",
+    "grammar": "Infinitive of purpose (लिख् धातु + तुमुन्)"
+  },
+  "विंशतिः": {
+    "english": "Twenty",
+    "grammar": "Numeral, f., nom. sing."
+  },
+  "विकल्प": {
+    "english": "Option / alternative",
+    "grammar": "Hindi noun, m. (संस्कृत: विकल्पः)"
+  },
+  "विद्याधर": {
+    "english": "Vidyadhara (name)",
+    "grammar": "Proper noun, m."
+  },
+  "विद्याधरः": {
+    "english": "Vidyadhara (proper name)",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "विशेषणपदं": {
+    "english": "Adjective word",
+    "grammar": "Noun, n., nom./acc. sing. (विशेषणपद)"
+  },
+  "विषण्णाः": {
+    "english": "Dejected / sorrowful",
+    "grammar": "Past pass. part., m., nom. plur. (वि + सद् + क्त)"
+  },
+  "शनिवार": {
+    "english": "Saturday",
+    "grammar": "Hindi noun, m. (संस्कृत: शनिवासरः)"
+  },
+  "शनिवासरः": {
+    "english": "Saturday",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "शब्दान्": {
+    "english": "Words",
+    "grammar": "Noun, m., acc. plur. (शब्द)"
+  },
+  "शुक्रवासरः": {
+    "english": "Friday",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "श्रावणः": {
+    "english": "Shravana month (5th lunar month)",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "षष्ठः": {
+    "english": "Sixth",
+    "grammar": "Ordinal numeral, m., nom. sing."
+  },
+  "संख्या": {
+    "english": "Number / numeral",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "संख्यावाचकशब्दान्": {
+    "english": "Numeral words",
+    "grammar": "Noun, m., acc. plur. (संख्यावाचकशब्द)"
+  },
+  "संस्कृतओलम्पियाड्परीक्षा": {
+    "english": "Sanskrit Olympiad examination",
+    "grammar": "Compound noun, f., nom. sing."
+  },
+  "सप्त": {
+    "english": "Seven",
+    "grammar": "Numeral (cardinal)"
+  },
+  "सप्तमः": {
+    "english": "Seventh",
+    "grammar": "Ordinal numeral, m., nom. sing."
+  },
+  "सप्ताह": {
+    "english": "Week",
+    "grammar": "Hindi noun, m. (संस्कृत: सप्ताहः)"
+  },
+  "सप्ताहस्य": {
+    "english": "Of the week",
+    "grammar": "Noun, m., gen. sing. (सप्ताह)"
+  },
+  "सर्वान": {
+    "english": "All (persons / boys)",
+    "grammar": "Pronoun, m., acc. plur. (सर्वान्)"
+  },
+  "सर्वेभ्यः": {
+    "english": "To all / for all",
+    "grammar": "Pronoun, m., dat./abl. plur. (सर्व)"
+  },
+  "सात": {
+    "english": "Seven",
+    "grammar": "Hindi numeral (संस्कृत: सप्त)"
+  },
+  "साहित्यकक्षायां": {
+    "english": "In the literature class",
+    "grammar": "Noun, f., loc. sing. (साहित्यकक्षा)"
+  },
+  "सितम्बरमासः": {
+    "english": "Month of September",
+    "grammar": "Noun, m., nom. sing. (समस्तपद)"
+  },
+  "स्थाने": {
+    "english": "In the place / position / rank",
+    "grammar": "Noun, n., loc. sing. (स्थान)"
+  },
+  "स्नातुं": {
+    "english": "To bathe",
+    "grammar": "Infinitive of purpose (स्नातुम्)"
+  },
+  "स्नातुम्": {
+    "english": "To bathe",
+    "grammar": "Infinitive of purpose (स्ना धातु + तुमुन्)"
+  },
+  "स्नान": {
+    "english": "Bath / bathing",
+    "grammar": "Hindi noun, m. (संस्कृत: स्नानम्)"
+  },
+  "स्नानम्": {
+    "english": "Bath / bathing",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "स्नानाय": {
+    "english": "For bathing",
+    "grammar": "Noun, n., dat. sing. (स्नान)"
+  },
+  "स्वम्": {
+    "english": "Self / oneself",
+    "grammar": "Pronoun, m./n., acc. sing. (स्व)"
+  },
+  "हेमलता": {
+    "english": "Hemalata (proper name)",
+    "grammar": "Proper noun, f., nom. sing."
   }
 }
