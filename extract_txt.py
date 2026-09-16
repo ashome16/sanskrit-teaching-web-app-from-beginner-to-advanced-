@@ -28,6 +28,7 @@ TXT_FILES = [
     ('gsde105', PUBLIC_DIR / 'gsde105.txt'),
     ('gsde106', PUBLIC_DIR / 'gsde106.txt'),
     ('gsde107', PUBLIC_DIR / 'gsde107.txt'),
+    ('gsde108', PUBLIC_DIR / 'gsde108.txt'),
 ]
 
 TITLE_OVERRIDES = {
@@ -38,6 +39,7 @@ TITLE_OVERRIDES = {
     'gsde105': 'Chapter 5: सेवा हि परमो धर्मः',
     'gsde106': 'Chapter 6: क्रीडाम वयं श्लोकान्त्याक्षरीम्',
     'gsde107': 'Chapter 7: ईशावास्यम् इदं सर्वम्',
+    'gsde108': 'Chapter 8: हितं मनोहारि च दुर्लभं वचः',
     'varnamala': 'Sanskrit Varṇamālā Guide',
     'barakhadi': 'बारहखड़ी · Audio Lesson',
     'samyukta': 'संयुक्त · Conjunct Games',
