@@ -12,6 +12,7 @@ interface PackLabel { title: string; gloss: string; }
 interface VisitorBlock { heading: 'h2' | 'h3' | 'p'; text: string; }
 
 export interface BoardProps {
+  onNavigateToHome?: () => void;
   onNavigateToReader?: () => void;
   onNavigateToVarnamala?: () => void;
   onNavigateToGrammar?: () => void;
@@ -551,6 +552,7 @@ function activeSectionChipId(chips: BoardSectionChip[], puzzleIndex: number): st
 }
 
 const Board: React.FC<BoardProps> = ({
+  onNavigateToHome,
   onNavigateToReader,
   onNavigateToVarnamala,
   onNavigateToGrammar,
@@ -857,6 +859,14 @@ const Board: React.FC<BoardProps> = ({
     {/* Top Website Navigation Breadcrumbs & Badge */}
     <div className="board-top-nav">
       <nav className="board-breadcrumbs" aria-label="Website Navigation">
+        {onNavigateToHome && (
+          <>
+            <button type="button" className="board-nav-link" onClick={onNavigateToHome} title="Go to Homepage">
+              🏠 Home
+            </button>
+            <span className="board-nav-sep" aria-hidden="true">/</span>
+          </>
+        )}
         {onNavigateToReader && (
           <button type="button" className="board-nav-link" onClick={onNavigateToReader} title="Go to NCERT Deepakam Lessons">
             📖 Deepakam Lessons

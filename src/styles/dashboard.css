@@ -182,6 +182,7 @@
   }
 }
 
+.homepage-container,
 .grammar-page,
 .board-shell {
   grid-column: 1 / -1;

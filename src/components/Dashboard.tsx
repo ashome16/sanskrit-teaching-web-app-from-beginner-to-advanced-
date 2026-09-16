@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import HomePage from './HomePage';
 import TextbookReader from './TextbookReader';
 import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
 import Board from './Board';
@@ -30,10 +31,10 @@ const Dashboard: React.FC = () => {
   });
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [wordSelection, setWordSelection] = useState<WordSelection | null>(null);
-  const [activeView, setActiveView] = useState<'board' | 'reader' | 'grammar'>(() => {
+  const [activeView, setActiveView] = useState<'home' | 'board' | 'reader' | 'grammar'>(() => {
     const saved = localStorage.getItem('school-active-view');
-    if (saved === 'board' || saved === 'reader' || saved === 'grammar') return saved;
-    return 'reader';
+    if (saved === 'home' || saved === 'board' || saved === 'reader' || saved === 'grammar') return saved;
+    return 'home';
   });
   const [grammarResetKey, setGrammarResetKey] = useState(0);
 
@@ -154,7 +155,17 @@ const Dashboard: React.FC = () => {
     setActiveView('reader');
   };
 
-  const openDeepakam = () => {
+  const openDeepakam = (lessonId?: string) => {
+    if (lessonId) {
+      const idx = lessons.findIndex((item) => item.id === lessonId);
+      if (idx >= 0) {
+        setLessonIndex(idx);
+        setSentenceIndex(0);
+        setWordSelection(null);
+        setActiveView('reader');
+        return;
+      }
+    }
     const current = lessons[lessonIndex];
     const guideIds = new Set(['varnamala', 'barakhadi', 'samyukta', 'numbers']);
     if (!current || guideIds.has(current.id) || HIDDEN_DEEPAKAM_IDS.has(current.id)) {
@@ -178,20 +189,35 @@ const Dashboard: React.FC = () => {
         <button
           type="button"
           className="dashboard-brand-btn"
-          onClick={openDeepakam}
-          title="Go to Deepakam Lessons (Home)"
+          onClick={() => setActiveView('home')}
+          title="Go to Homepage"
         >
           <span className="dashboard-brand-symbol">🕉️</span>
           <span className="dashboard-title">Sanskrit Learning</span>
         </button>
         <nav className="dashboard-nav" aria-label="Main learning views">
           <button
+            type="button"
+            className={`dashboard-nav-home${activeView === 'home' ? ' active' : ''}`}
+            onClick={() => setActiveView('home')}
+            title="Go to Homepage"
+          >
+            🏠 Home
+          </button>
+          <button
+            type="button"
             className={activeView === 'reader' && lesson.id === 'varnamala' ? 'active' : ''}
             onClick={openVarnamala}
           >
             Varṇamālā
           </button>
-          <button className={activeView === 'board' ? 'active' : ''} onClick={() => setActiveView('board')}>जोडो · Tile Puzzle</button>
+          <button
+            type="button"
+            className={activeView === 'board' ? 'active' : ''}
+            onClick={() => setActiveView('board')}
+          >
+            जोडो · Tile Puzzle
+          </button>
           <div
             className={`dashboard-nav-group${activeView === 'reader' && lesson.id !== 'varnamala' ? ' dashboard-nav-group--active' : ''}`}
           >
@@ -200,7 +226,7 @@ const Dashboard: React.FC = () => {
               <button
                 type="button"
                 className={activeView === 'reader' && lesson.id !== 'varnamala' ? 'active' : ''}
-                onClick={openDeepakam}
+                onClick={() => openDeepakam()}
               >
                 7th Grade Lessons
               </button>
@@ -224,15 +250,24 @@ const Dashboard: React.FC = () => {
         </nav>
       </header>
 
+      {activeView === 'home' && (
+        <HomePage
+          onOpenReader={openDeepakam}
+          onOpenBoard={() => setActiveView('board')}
+          onOpenVarnamala={openVarnamala}
+          onOpenGrammar={handleOpenGrammar}
+        />
+      )}
       {activeView === 'board' && (
         <Board
-          onNavigateToReader={openDeepakam}
+          onNavigateToHome={() => setActiveView('home')}
+          onNavigateToReader={() => openDeepakam()}
           onNavigateToVarnamala={openVarnamala}
           onNavigateToGrammar={handleOpenGrammar}
         />
       )}
       {activeView === 'grammar' && (
-        <Grammar key={grammarResetKey} onGoHome={() => setActiveView('reader')} />
+        <Grammar key={grammarResetKey} onGoHome={() => setActiveView('home')} />
       )}
       {activeView === 'reader' && <TextbookReader
         lessons={lessons}
