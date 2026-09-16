@@ -48198,5 +48198,1569 @@
   "हृदये": {
     "english": "In the heart",
     "grammar": "Noun, n., loc. sing. (हृदय)"
+  },
+  "अँ": {
+    "english": "Short nasalized vowel / Chandrabindu 'a'",
+    "grammar": "Nasalized vowel (अनुनासिक स्वर)"
+  },
+  "अंतर": {
+    "english": "Difference / distinction",
+    "grammar": "Hindi noun, m. (संस्कृत: भेदः / अन्तरम्)"
+  },
+  "अकारः": {
+    "english": "The letter/sound 'a'",
+    "grammar": "Noun, m., nom. sing. (अ + कार)"
+  },
+  "अट्टहासः": {
+    "english": "Boisterous laughter / loud horse-laugh",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "अतिरिक्त": {
+    "english": "Additional / supplementary",
+    "grammar": "Hindi adj."
+  },
+  "अतिविलम्बकालिकः": {
+    "english": "Of overly prolonged duration (pluta)",
+    "grammar": "Compound adj., m., nom. sing."
+  },
+  "अदृश्यः": {
+    "english": "Invisible / latent",
+    "grammar": "Adj., m., nom. sing."
+  },
+  "अधिकलम्बमानकालप्रमाणः": {
+    "english": "Of excessive time duration",
+    "grammar": "Compound adj., m., nom. sing."
+  },
+  "अध्ययन": {
+    "english": "Study / learning",
+    "grammar": "Hindi noun, n. (संस्कृत: अध्ययनम्)"
+  },
+  "अध्यापक": {
+    "english": "Teacher",
+    "grammar": "Hindi noun, m. (संस्कृत: अध्यापकः)"
+  },
+  "अध्यापकः": {
+    "english": "Teacher / instructor",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "अध्यापकमहोदय": {
+    "english": "Respected teacher",
+    "grammar": "Vocative compound"
+  },
+  "अनुनासिक": {
+    "english": "Nasal / nasalized",
+    "grammar": "Phonetic adj. (संस्कृत: अनुनासिकः)"
+  },
+  "अनुनासिकस्वरः": {
+    "english": "Nasalized vowel sound",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "अनुनासिकस्वरयुक्ताः": {
+    "english": "Having nasalized vowels",
+    "grammar": "Compound adj., m., nom. plur."
+  },
+  "अनुसरण": {
+    "english": "Following / succession",
+    "grammar": "Hindi noun, n. (संस्कृत: अनुसरणम्)"
+  },
+  "अनुसरन्ति": {
+    "english": "They follow / correspond to",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. plur. (अनु + सृ धातु)"
+  },
+  "अनुसार": {
+    "english": "According to",
+    "grammar": "Hindi postposition"
+  },
+  "अनुस्वारविसर्गौ": {
+    "english": "Anusvara and Visarga (ayogavaha sounds)",
+    "grammar": "Dvandva compound, m., nom. dual"
+  },
+  "अनुस्वारस्य": {
+    "english": "Of the Anusvāra",
+    "grammar": "Noun, m., gen. sing. (अनुस्वार)"
+  },
+  "अन्तःस्थ": {
+    "english": "Semivowel / intermediate consonant",
+    "grammar": "Phonetic term (संस्कृत: अन्तःस्थः)"
+  },
+  "अन्तःस्थाः": {
+    "english": "Semivowels (य्, र्, ल्, व्)",
+    "grammar": "Noun, m., nom. plur."
+  },
+  "अन्यभारतीयभाषासु": {
+    "english": "Among other Indian languages",
+    "grammar": "Compound noun, f., loc. plur."
+  },
+  "अभ्यासउत्तराणि": {
+    "english": "Exercise solutions / answers",
+    "grammar": "Compound noun, n., nom. plur."
+  },
+  "अयोगवाह": {
+    "english": "Ayogavaha (dependent phonetic sounds)",
+    "grammar": "Grammatical term"
+  },
+  "अयोगवाहः": {
+    "english": "Ayogavaha (Anusvara & Visarga)",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "अयोगवाहत्वात्": {
+    "english": "Due to being Ayogavaha",
+    "grammar": "Noun, n., abl. sing. (अयोगवाहत्व)"
+  },
+  "अयोगवाहौ": {
+    "english": "Two Ayogavahas (Anusvara & Visarga)",
+    "grammar": "Noun, m., nom. dual"
+  },
+  "अर्धमात्रः": {
+    "english": "Having half a matra / mora",
+    "grammar": "Bahuvrihi compound adj., m., nom. sing."
+  },
+  "अर्धमात्रकम्": {
+    "english": "Having half a mora (consonant sound)",
+    "grammar": "Compound adj., n., nom. sing."
+  },
+  "अर्धमात्रकालं": {
+    "english": "Half-mora duration",
+    "grammar": "Compound adverbial acc. (अर्धमात्रकालम्)"
+  },
+  "अर्धमात्रम्": {
+    "english": "Half a matra / half duration",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "अर्धमात्रा": {
+    "english": "Half-matra / half a mora",
+    "grammar": "Compound noun, f., nom. sing."
+  },
+  "अर्धमात्रिक": {
+    "english": "Having half a matra",
+    "grammar": "Hindi phonetic adj."
+  },
+  "अर्धमात्रिकम्": {
+    "english": "Having half a mora (applied to consonants)",
+    "grammar": "Compound adj., n., nom. sing."
+  },
+  "अलग": {
+    "english": "Separate / distinct",
+    "grammar": "Hindi adj."
+  },
+  "अल्पकालिकः": {
+    "english": "Of short duration (hrasva vowel)",
+    "grammar": "Compound adj., m., nom. sing."
+  },
+  "अवग्रह": {
+    "english": "Avagraha symbol (ऽ)",
+    "grammar": "Hindi noun, m. (संस्कृत: अवग्रहः)"
+  },
+  "अवग्रहः": {
+    "english": "Avagraha symbol (ऽ) indicating elided 'a'",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "अवधानं": {
+    "english": "Attention / heed",
+    "grammar": "Noun, n., acc. sing. (अवधानम्)"
+  },
+  "आँ": {
+    "english": "Long nasalized vowel 'ā'",
+    "grammar": "Nasalized vowel (अनुनासिक स्वर)"
+  },
+  "आखुः": {
+    "english": "Mouse / rat",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "आधी": {
+    "english": "Half (feminine)",
+    "grammar": "Hindi adj., f. (संस्कृत: अर्धा)"
+  },
+  "आहत्य": {
+    "english": "In total / summing up",
+    "grammar": "Indeclinable participle / adverb (आ + हन् + ल्यप्)"
+  },
+  "आह्वयामः": {
+    "english": "We call out / invite / summon",
+    "grammar": "Verb, laṭ lakāra (present), 1st pers. plur. (आ + ह्वे)"
+  },
+  "ई": {
+    "english": "Long vowel 'ī'",
+    "grammar": "Vowel sound (दीर्घ स्वर)"
+  },
+  "उ": {
+    "english": "Short vowel 'u'",
+    "grammar": "Vowel sound (ह्रस्व स्वर)"
+  },
+  "उउऊउ": {
+    "english": "Rooster crow phonetic sound",
+    "grammar": "Onomatopoeia"
+  },
+  "उच्चारण": {
+    "english": "Pronunciation",
+    "grammar": "Hindi noun, n. (संस्कृत: उच्चारणम्)"
+  },
+  "उच्चारणे": {
+    "english": "In pronunciation / articulation",
+    "grammar": "Noun, n., loc. sing. (उच्चारण)"
+  },
+  "उच्चैः": {
+    "english": "Loudly / at high pitch",
+    "grammar": "Indeclinable adverb (अव्यय)"
+  },
+  "उत्साहपूर्वक": {
+    "english": "Enthusiastically",
+    "grammar": "Hindi adv. (संस्कृत: सोत्साहम्)"
+  },
+  "उदाहरण": {
+    "english": "Example / illustration",
+    "grammar": "Hindi noun, n. (संस्कृत: उदाहरणम्)"
+  },
+  "उपप्रकारः": {
+    "english": "Sub-type / secondary division",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "उपभेद": {
+    "english": "Sub-classification",
+    "grammar": "Hindi noun, m."
+  },
+  "उपभेदः": {
+    "english": "Sub-type / sub-division",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "उपभेदाः": {
+    "english": "Sub-types / subdivisions",
+    "grammar": "Noun, m., nom. plur."
+  },
+  "उपविभाग": {
+    "english": "Sub-division",
+    "grammar": "Hindi noun, m."
+  },
+  "ऊ": {
+    "english": "Long vowel 'ū'",
+    "grammar": "Vowel sound (दीर्घ स्वर)"
+  },
+  "ऊँ": {
+    "english": "Nasalized long 'ū'",
+    "grammar": "Nasalized vowel sound"
+  },
+  "ऊष्म": {
+    "english": "Sibilant / aspirate consonant",
+    "grammar": "Phonetic term"
+  },
+  "ऊष्माणः": {
+    "english": "Sibilants and aspirate (श्, ष्, स्, ह्)",
+    "grammar": "Noun, m., nom. plur. (ऊष्मन्)"
+  },
+  "ऋ": {
+    "english": "Vocalic 'ṛ' (short)",
+    "grammar": "Vowel sound (ह्रस्व स्वर)"
+  },
+  "ऌ": {
+    "english": "Vocalic 'ḷ' (short)",
+    "grammar": "Vowel sound (ह्रस्व स्वर)"
+  },
+  "ए": {
+    "english": "Vowel/Diphthong 'e'",
+    "grammar": "Diphthong vowel (सन्ध्यक्षर)"
+  },
+  "एकमात्र": {
+    "english": "One-mora / single duration",
+    "grammar": "Hindi phonetic adj."
+  },
+  "एकमात्रः": {
+    "english": "Single-mora / one-matra vowel (hrasva)",
+    "grammar": "Bahuvrihi compound adj., m., nom. sing."
+  },
+  "एकमात्रकालं": {
+    "english": "Duration of one mora",
+    "grammar": "Compound adverbial acc."
+  },
+  "एकमात्रो": {
+    "english": "Single-mora (sandhi form of एकमात्रः)",
+    "grammar": "Bahuvrihi compound adj., m., nom. sing."
+  },
+  "एकविधा": {
+    "english": "Of one kind / single type",
+    "grammar": "Compound adj., f., nom. sing."
+  },
+  "एवंप्रकारेण": {
+    "english": "In this manner / thus",
+    "grammar": "Compound adverb (एवम् + प्रकार)"
+  },
+  "ऐ": {
+    "english": "Diphthong 'ai'",
+    "grammar": "Diphthong vowel (सन्ध्यक्षर)"
+  },
+  "ऐँ": {
+    "english": "Nasalized diphthong 'ai'",
+    "grammar": "Nasalized diphthong vowel"
+  },
+  "ऐतिह्यम्": {
+    "english": "Tradition / historical lore",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "ओंकारस्य": {
+    "english": "Of the sacred syllable Om / Pranava",
+    "grammar": "Noun, m., gen. sing. (ओंकार)"
+  },
+  "औ": {
+    "english": "Diphthong 'au'",
+    "grammar": "Diphthong vowel (सन्ध्यक्षर)"
+  },
+  "ककडूक": {
+    "english": "Rooster crow onomatopoeia",
+    "grammar": "Onomatopoeic sound"
+  },
+  "कतिप्रकारकाः": {
+    "english": "Of how many kinds?",
+    "grammar": "Interrogative compound adj., m., nom. plur."
+  },
+  "कतिविधाः": {
+    "english": "Of how many types?",
+    "grammar": "Interrogative adj., m./f., nom. plur."
+  },
+  "कथ्यते": {
+    "english": "Is called / is stated",
+    "grammar": "Verb, passive present, 3rd pers. sing. (कथ् धातु)"
+  },
+  "कपोतः": {
+    "english": "Pigeon / dove",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "कबूतर": {
+    "english": "Pigeon",
+    "grammar": "Hindi noun, m. (संस्कृत: कपोतः)"
+  },
+  "कश्चिद्": {
+    "english": "A certain / some",
+    "grammar": "Indefinite pronoun, m., nom. sing."
+  },
+  "काँस्कान्": {
+    "english": "Whom all (with Vedic nasalization)",
+    "grammar": "Interrogative phrase with Anunasika (काँस् + कान्)"
+  },
+  "काकः": {
+    "english": "Crow",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "कार्यकलापः": {
+    "english": "Activity / exercise",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "कालस्य": {
+    "english": "Of time / duration",
+    "grammar": "Noun, m., gen. sing. (काल)"
+  },
+  "कालान्": {
+    "english": "Time durations / periods",
+    "grammar": "Noun, m., acc. plur. (काल)"
+  },
+  "कितना": {
+    "english": "How much / how great",
+    "grammar": "Hindi interrogative/exclamatory adj., m."
+  },
+  "कियान्": {
+    "english": "How much! / how great!",
+    "grammar": "Interrogative/exclamatory pron., m., nom. sing. (कियत्)"
+  },
+  "कुक्कुक्कूकु": {
+    "english": "Rooster crow onomatopoeia",
+    "grammar": "Onomatopoeia"
+  },
+  "कुक्कुटः": {
+    "english": "Rooster / cock",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "कुक्कुटध्वनेः": {
+    "english": "Of the rooster's crow",
+    "grammar": "Compound noun, m., gen. sing."
+  },
+  "कुक्कुटध्वनौ": {
+    "english": "In the rooster's crow",
+    "grammar": "Compound noun, m., loc. sing."
+  },
+  "कुक्कुटाः": {
+    "english": "Roosters",
+    "grammar": "Noun, m., nom. plur."
+  },
+  "कुमार": {
+    "english": "Kumar (boy / youth)",
+    "grammar": "Proper noun / noun, m."
+  },
+  "कूँ": {
+    "english": "Syllable 'kū' with nasalization",
+    "grammar": "Phonetic syllable (क् + ऊँ)"
+  },
+  "कृकवाकुः": {
+    "english": "Rooster / cock",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "कृषीवलः": {
+    "english": "Farmer / cultivator",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "कोकिलः": {
+    "english": "Cuckoo bird",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "कोपि": {
+    "english": "Anyone (spoken sandhi of कोऽपि)",
+    "grammar": "Sandhi phrase (कः + अपि)"
+  },
+  "कोयल": {
+    "english": "Cuckoo",
+    "grammar": "Hindi noun, f. (संस्कृत: कोकिलः)"
+  },
+  "कौआ": {
+    "english": "Crow",
+    "grammar": "Hindi noun, m. (संस्कृत: काकः / वायसः)"
+  },
+  "कौसल्या": {
+    "english": "Kausalya (mother of Rama)",
+    "grammar": "Proper noun, f., nom. sing."
+  },
+  "क्रमेण": {
+    "english": "In order / sequentially",
+    "grammar": "Noun, m., inst. sing. used as adv. (क्रम)"
+  },
+  "खनित्रम्": {
+    "english": "Spade / hoe / digging tool",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "ख्": {
+    "english": "Consonant 'kh' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "गणित": {
+    "english": "Mathematics",
+    "grammar": "Hindi noun, n. (संस्कृत: गणितम्)"
+  },
+  "गणितस्य": {
+    "english": "Of mathematics",
+    "grammar": "Noun, n., gen. sing. (गणित)"
+  },
+  "गायत्रीमहामन्त्रः": {
+    "english": "The supreme Gayatri mantra",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "गृहनीडः": {
+    "english": "House-sparrow / bird nesting in houses",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "गौरैया": {
+    "english": "Sparrow",
+    "grammar": "Hindi noun, f. (संस्कृत: चटका)"
+  },
+  "घटिका": {
+    "english": "Clock / water-clock / hour",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "घ्": {
+    "english": "Consonant 'gh' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "चटका": {
+    "english": "Female sparrow",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "चतुर्विधाः": {
+    "english": "Of four kinds / fourfold",
+    "grammar": "Compound adj., m./f., nom. plur."
+  },
+  "चत्वारः": {
+    "english": "Four (masculine)",
+    "grammar": "Numeral, m., nom. plur. (चतुर्)"
+  },
+  "चार्धमात्रिकम्": {
+    "english": "And having half a mora (च + अर्धमात्रिकम्)",
+    "grammar": "Sandhi phrase"
+  },
+  "चाष": {
+    "english": "Indian roller bird (Neelkanth)",
+    "grammar": "Hindi noun, m."
+  },
+  "चाषः": {
+    "english": "Indian roller bird / Blue jay (Neelkanth)",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "चाषस्तु": {
+    "english": "The roller bird indeed (चाषः + तु)",
+    "grammar": "Sandhi phrase"
+  },
+  "चिह्न": {
+    "english": "Sign / symbol",
+    "grammar": "Hindi noun, n. (संस्कृत: चिह्नम्)"
+  },
+  "चिह्नम्": {
+    "english": "Symbol / sign / mark",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "चिह्नस्य": {
+    "english": "Of the symbol / sign",
+    "grammar": "Noun, n., gen. sing. (चिह्न)"
+  },
+  "च्": {
+    "english": "Consonant 'c' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "छंद": {
+    "english": "Metre / prosody",
+    "grammar": "Hindi noun, m. (संस्कृत: छन्दः)"
+  },
+  "ज़ोर": {
+    "english": "Force / loudness",
+    "grammar": "Hindi noun, m."
+  },
+  "ज्ञातव्यः": {
+    "english": "Should be known / understood",
+    "grammar": "Future pass. part. (तव्यत्), m., nom. sing. (ज्ञा धातु)"
+  },
+  "ज्ञेयः": {
+    "english": "Should be known / recognized",
+    "grammar": "Future pass. part. (यत्), m., nom. sing. (ज्ञा धातु)"
+  },
+  "झूला": {
+    "english": "Swing",
+    "grammar": "Hindi noun, m. (संस्कृत: दोला / प्रेङ्खा)"
+  },
+  "ट्": {
+    "english": "Consonant 'ṭ' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "ठहाका": {
+    "english": "Boisterous laughter / roaring laugh",
+    "grammar": "Hindi noun, m. (संस्कृत: अट्टहासः)"
+  },
+  "ण्": {
+    "english": "Consonant 'ṇ' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "तत्सवितुर्वरेण्यम्": {
+    "english": "That adorable splendour of Savitr (Gayatri verse)",
+    "grammar": "Vedic mantra line"
+  },
+  "तयोः": {
+    "english": "Of those two",
+    "grammar": "Pronoun, m./f./n., gen./loc. dual (तद्)"
+  },
+  "तृतीयप्रकारः": {
+    "english": "Third type / kind",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "त्": {
+    "english": "Consonant 't' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "त्रयः": {
+    "english": "Three (masculine)",
+    "grammar": "Numeral, m., nom. plur. (त्रि)"
+  },
+  "त्रिप्रकारकाः": {
+    "english": "Of three kinds / threefold",
+    "grammar": "Compound adj., m., nom. plur."
+  },
+  "त्रिमात्र": {
+    "english": "Three-mora / pluta",
+    "grammar": "Hindi phonetic adj."
+  },
+  "त्रिमात्रं": {
+    "english": "Duration of three morae",
+    "grammar": "Compound adverbial acc. (त्रिमात्रम्)"
+  },
+  "त्रिमात्रः": {
+    "english": "Three-mora vowel (pluta)",
+    "grammar": "Bahuvrihi compound adj., m., nom. sing."
+  },
+  "त्रिमात्रकालं": {
+    "english": "Duration of three morae",
+    "grammar": "Compound adverbial acc."
+  },
+  "त्रिमात्रम्": {
+    "english": "Duration of three morae",
+    "grammar": "Compound noun/adv., n., nom./acc. sing."
+  },
+  "त्रिमात्रश्च": {
+    "english": "And three-mora vowel (त्रिमात्रः + च)",
+    "grammar": "Sandhi phrase"
+  },
+  "त्रिविधाः": {
+    "english": "Of three kinds / threefold",
+    "grammar": "Compound adj., m./f., nom. plur."
+  },
+  "त्रीन्": {
+    "english": "Three (masculine accusative)",
+    "grammar": "Numeral, m., acc. plur. (त्रि)"
+  },
+  "त्वेव": {
+    "english": "Indeed / certainly (तु + एव)",
+    "grammar": "Sandhi phrase"
+  },
+  "थ्": {
+    "english": "Consonant 'th' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "ददतु": {
+    "english": "Give! / pay! (imperative plural)",
+    "grammar": "Verb, loṭ lakāra, 3rd pers. plur. (दा धातु)"
+  },
+  "दर्शाता": {
+    "english": "Indicates / shows",
+    "grammar": "Hindi verb, m. sing."
+  },
+  "दीजिए": {
+    "english": "Please give / pay",
+    "grammar": "Hindi polite imperative"
+  },
+  "दीर्घस्वरः": {
+    "english": "Long vowel sound (two morae)",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "देखिए": {
+    "english": "Look! / behold!",
+    "grammar": "Hindi polite imperative"
+  },
+  "देखे": {
+    "english": "Saw (we)",
+    "grammar": "Hindi verb, past"
+  },
+  "दोला": {
+    "english": "Swing / litter",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "द्": {
+    "english": "Consonant 'd' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "द्रष्टुं": {
+    "english": "To see / to observe",
+    "grammar": "Infinitive of purpose (दृश् धातु + तुमुन्)"
+  },
+  "द्वाविंशतिः": {
+    "english": "Twenty-two (22)",
+    "grammar": "Numeral, f., nom. sing."
+  },
+  "द्वितीयप्रकारः": {
+    "english": "Second type / kind",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "द्विपदेन": {
+    "english": "In two words",
+    "grammar": "Compound noun, n., inst. sing. (द्विपद)"
+  },
+  "द्विमात्र": {
+    "english": "Two-mora / long vowel",
+    "grammar": "Hindi phonetic adj."
+  },
+  "द्विमात्रं": {
+    "english": "Duration of two morae",
+    "grammar": "Compound adverbial acc. (द्विमात्रम्)"
+  },
+  "द्विमात्रः": {
+    "english": "Two-mora vowel (dirgha)",
+    "grammar": "Bahuvrihi compound adj., m., nom. sing."
+  },
+  "द्विमात्रकालं": {
+    "english": "Duration of two morae",
+    "grammar": "Compound adverbial acc."
+  },
+  "द्विमात्रम्": {
+    "english": "Duration of two morae",
+    "grammar": "Compound noun/adv., n., nom./acc. sing."
+  },
+  "द्विमात्रो": {
+    "english": "Two-mora (sandhi form of द्विमात्रः)",
+    "grammar": "Bahuvrihi compound adj., m., nom. sing."
+  },
+  "ध्यातव्यं": {
+    "english": "Should be noted / kept in mind",
+    "grammar": "Future pass. part. (तव्यत्), n., nom. sing. (ध्यै धातु)"
+  },
+  "ध्वनयः": {
+    "english": "Sounds / phonetic noises",
+    "grammar": "Noun, m., nom. plur. (ध्वनि)"
+  },
+  "ध्वनि": {
+    "english": "Sound",
+    "grammar": "Hindi noun, m. (संस्कृत: ध्वनिः)"
+  },
+  "ध्वनिं": {
+    "english": "Sound / call",
+    "grammar": "Noun, m., acc. sing. (ध्वनिम्)"
+  },
+  "ध्वनिः": {
+    "english": "Sound / vocal call",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "ध्वनियाँ": {
+    "english": "Sounds",
+    "grammar": "Hindi noun, f. plur."
+  },
+  "ध्वनिषु": {
+    "english": "In sounds / calls",
+    "grammar": "Noun, m., loc. plur. (ध्वनि)"
+  },
+  "नकुलः": {
+    "english": "Mongoose",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "नकुलस्त्वर्धमात्रकम्": {
+    "english": "Mongoose sounds half a mora (नकुलः + तु + अर्धमात्रकम्)",
+    "grammar": "Sandhi phrase"
+  },
+  "नमस्ते": {
+    "english": "Salutations to you (नमः + ते)",
+    "grammar": "Greeting phrase"
+  },
+  "नवीनं": {
+    "english": "New / novel",
+    "grammar": "Adj., n., nom./acc. sing. (नवीनम्)"
+  },
+  "नामक": {
+    "english": "Named / entitled",
+    "grammar": "Hindi adj. (संस्कृत: नामकः)"
+  },
+  "नामानि": {
+    "english": "Names",
+    "grammar": "Noun, n., nom./acc. plur. (नामन्)"
+  },
+  "निदधतु": {
+    "english": "Place! / focus! (imperative)",
+    "grammar": "Verb, loṭ lakāra, 3rd pers. plur. (नि + धा धातु)"
+  },
+  "निदर्शनं": {
+    "english": "Example / illustration",
+    "grammar": "Noun, n., nom./acc. sing. (निदर्शनम्)"
+  },
+  "निर्दिष्टगणनायाः": {
+    "english": "Of specified count / prescribed measure",
+    "grammar": "Compound noun, f., gen. sing."
+  },
+  "नीलकंठ": {
+    "english": "Indian roller bird (Neelkanth)",
+    "grammar": "Hindi noun, m."
+  },
+  "नीलकण्ठ": {
+    "english": "Neelkanth bird",
+    "grammar": "Noun, m. stem"
+  },
+  "नीलकण्ठः": {
+    "english": "Neelkanth bird / Indian roller",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "नेवला": {
+    "english": "Mongoose",
+    "grammar": "Hindi noun, m. (संस्कृत: नकुलः)"
+  },
+  "न्": {
+    "english": "Consonant 'n' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "पक्षी": {
+    "english": "Bird",
+    "grammar": "Noun, m., nom. sing. (पक्षिन्)"
+  },
+  "पदच्छेद": {
+    "english": "Word division / parsing",
+    "grammar": "Hindi noun, m. (संस्कृत: पदच्छेदः)"
+  },
+  "पदच्छेदः": {
+    "english": "Word separation / parsing",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "परिचय": {
+    "english": "Introduction",
+    "grammar": "Hindi noun, m. (संस्कृत: परिचयः)"
+  },
+  "पवित्रचिह्नस्य": {
+    "english": "Of the sacred symbol",
+    "grammar": "Compound noun, n., gen. sing."
+  },
+  "पवित्रशब्दस्य": {
+    "english": "Of the sacred word",
+    "grammar": "Compound noun, m., gen. sing."
+  },
+  "पवित्रस्य": {
+    "english": "Of the sacred / holy",
+    "grammar": "Adj., m./n., gen. sing. (पवित्र)"
+  },
+  "पशुपक्षिणां": {
+    "english": "Of beasts and birds",
+    "grammar": "Compound noun, m., gen. plur."
+  },
+  "पश्यामः": {
+    "english": "We see / examine",
+    "grammar": "Verb, laṭ lakāra (present), 1st pers. plur. (दृश् धातु)"
+  },
+  "पाठ्यपुस्तक": {
+    "english": "Textbook",
+    "grammar": "Hindi noun, f. (संस्कृत: पाठ्यपुस्तकम्)"
+  },
+  "पाठ्यपुस्तके": {
+    "english": "In the textbook",
+    "grammar": "Noun, n., loc. sing. (पाठ्यपुस्तक)"
+  },
+  "पाणिनीयशिक्षायाः": {
+    "english": "Of Paniniya Shiksha (ancient phonetics treatise)",
+    "grammar": "Compound noun, f., gen. sing."
+  },
+  "पारावतः": {
+    "english": "Pigeon / dove",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "पिकः": {
+    "english": "Indian cuckoo bird",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "पुँस्कोकिलः": {
+    "english": "Male cuckoo bird",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "पुकारते": {
+    "english": "Call out",
+    "grammar": "Hindi verb, present"
+  },
+  "पुमान्": {
+    "english": "Male / masculine being",
+    "grammar": "Noun, m., nom. sing. (पुंस्)"
+  },
+  "पुरातनवृत्तान्तः": {
+    "english": "Ancient account / history",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "पृष्टवती": {
+    "english": "Asked (she asked a question)",
+    "grammar": "Past active part. (क्तवतु), f., nom. sing. (प्रच्छ् धातु)"
+  },
+  "प्": {
+    "english": "Consonant 'p' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "प्रकृतौ": {
+    "english": "In nature",
+    "grammar": "Noun, f., loc. sing. (प्रकृति)"
+  },
+  "प्रत्येकं": {
+    "english": "Every single / each",
+    "grammar": "Adverbial acc. (प्रत्येकम्)"
+  },
+  "प्रथमप्रकारः": {
+    "english": "First type / kind",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "प्रदर्शिता": {
+    "english": "Displayed / shown (feminine)",
+    "grammar": "Past pass. part., f., nom. sing. (प्र + दृश् + क्त + टाप्)"
+  },
+  "प्रदर्शिते": {
+    "english": "Shown / displayed (two matras)",
+    "grammar": "Past pass. part., f., nom. dual"
+  },
+  "प्रयुक्त": {
+    "english": "Employed / used",
+    "grammar": "Hindi participle (संस्कृत: प्रयुक्तः)"
+  },
+  "प्राचीनकालात्": {
+    "english": "Since ancient times",
+    "grammar": "Compound noun, m., abl. sing."
+  },
+  "प्रारंभ": {
+    "english": "Beginning",
+    "grammar": "Hindi noun, m. (संस्कृत: प्रारम्भः)"
+  },
+  "प्रारम्भे": {
+    "english": "At the beginning / in inception",
+    "grammar": "Noun, m., loc. sing. (प्रारम्भ)"
+  },
+  "प्रेङ्खा": {
+    "english": "Swing",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "प्लुत": {
+    "english": "Prolated / three-mora vowel",
+    "grammar": "Hindi phonetic term (संस्कृत: प्लुतः)"
+  },
+  "प्लुतः": {
+    "english": "Prolated vowel sound (three morae)",
+    "grammar": "Noun/Adj., m., nom. sing."
+  },
+  "प्लुतस्वरः": {
+    "english": "Prolated vowel sound (three morae)",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "प्लुतस्वरयुक्ताः": {
+    "english": "Having prolated vowels",
+    "grammar": "Compound adj., m., nom. plur."
+  },
+  "प्लुतस्वराणां": {
+    "english": "Of prolated vowels",
+    "grammar": "Compound noun, m., gen. plur."
+  },
+  "प्लुतो": {
+    "english": "Prolated vowel (sandhi form of प्लुतः)",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "फालः": {
+    "english": "Ploughshare / blade of spade",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "फावड़ा": {
+    "english": "Spade / shovel",
+    "grammar": "Hindi noun, m. (संस्कृत: खनित्रम्)"
+  },
+  "बताओ": {
+    "english": "Tell! (command)",
+    "grammar": "Hindi imperative"
+  },
+  "बस": {
+    "english": "Enough / stop",
+    "grammar": "Hindi particle (संस्कृत: अलम्)"
+  },
+  "बहूनां": {
+    "english": "Of many",
+    "grammar": "Adj., m./f./n., gen. plur. (बहु)"
+  },
+  "बाँग": {
+    "english": "Crow of rooster",
+    "grammar": "Hindi noun, f."
+  },
+  "बोल": {
+    "english": "Speak",
+    "grammar": "Hindi verb stem"
+  },
+  "बोलता": {
+    "english": "Speaks",
+    "grammar": "Hindi verb, m. sing."
+  },
+  "ब्": {
+    "english": "Consonant 'b' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "भरतः": {
+    "english": "Bharata (brother of Rama)",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "भवेद्": {
+    "english": "Would be / should be",
+    "grammar": "Verb, vidhiliṅ lakāra (optative), 3rd pers. sing. (भू धातु)"
+  },
+  "भारतीयभाषाः": {
+    "english": "Indian languages",
+    "grammar": "Compound noun, f., nom. plur."
+  },
+  "भाषाओं": {
+    "english": "Languages (oblique)",
+    "grammar": "Hindi noun, f. plur."
+  },
+  "भूर्भुवः": {
+    "english": "Earth and atmosphere (Vedic Vyahriti)",
+    "grammar": "Vedic chant phrase (भूः + भुवः)"
+  },
+  "भेद": {
+    "english": "Division / distinction",
+    "grammar": "Hindi noun, m. (संस्कृत: भेदः)"
+  },
+  "भेदः": {
+    "english": "Division / category / distinction",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "भेदाः": {
+    "english": "Divisions / varieties",
+    "grammar": "Noun, m., nom. plur."
+  },
+  "भेदान्": {
+    "english": "Divisions / categories",
+    "grammar": "Noun, m., acc. plur. (भेद)"
+  },
+  "भेदौ": {
+    "english": "Two divisions / two varieties",
+    "grammar": "Noun, m., nom./acc. dual (भेद)"
+  },
+  "भ्": {
+    "english": "Consonant 'bh' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "मध्ये": {
+    "english": "Between / in the midst of",
+    "grammar": "Noun, n., loc. sing. used as postposition (मध्य)"
+  },
+  "मनांसि": {
+    "english": "Minds / hearts",
+    "grammar": "Noun, n., nom./acc. plur. (मनस्)"
+  },
+  "मयूर": {
+    "english": "Peacock",
+    "grammar": "Hindi noun, m. (संस्कृत: मयूरः)"
+  },
+  "मयूरः": {
+    "english": "Peacock",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "महत्त्व": {
+    "english": "Importance / significance",
+    "grammar": "Hindi noun, n. (संस्कृत: महत्त्वम्)"
+  },
+  "महत्त्वपूर्ण": {
+    "english": "Important",
+    "grammar": "Hindi adj."
+  },
+  "महत्त्वपूर्णः": {
+    "english": "Important / momentous",
+    "grammar": "Adj., m., nom. sing."
+  },
+  "महत्त्वम्": {
+    "english": "Importance / significance",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "मात्रा": {
+    "english": "Matra / mora / phonetic duration",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "मात्रां": {
+    "english": "Duration / mora",
+    "grammar": "Noun, f., acc. sing. (मात्राम्)"
+  },
+  "मात्राः": {
+    "english": "Matras / morae (plural)",
+    "grammar": "Noun, f., nom./acc. plur."
+  },
+  "मात्राएँ": {
+    "english": "Matras (morae)",
+    "grammar": "Hindi noun, f. plur."
+  },
+  "मात्राओं": {
+    "english": "Matras (oblique)",
+    "grammar": "Hindi noun, f. plur."
+  },
+  "मात्राकोष्ठकम्": {
+    "english": "Matra table / mora chart",
+    "grammar": "Compound noun, n., nom. sing."
+  },
+  "मात्रागणना": {
+    "english": "Matra counting / mora reckoning",
+    "grammar": "Compound noun, f., nom. sing."
+  },
+  "मात्रागणनाक्रीडा": {
+    "english": "Matra counting game",
+    "grammar": "Compound noun, f., nom. sing."
+  },
+  "मात्रागणनायाः": {
+    "english": "Of matra counting",
+    "grammar": "Compound noun, f., gen. sing."
+  },
+  "मात्राणां": {
+    "english": "Of matras / morae",
+    "grammar": "Noun, f., gen. plur. (मात्रा)"
+  },
+  "मात्राणाम्": {
+    "english": "Of matras / morae",
+    "grammar": "Noun, f., gen. plur. (मात्रा)"
+  },
+  "मात्राम्": {
+    "english": "Duration of a mora",
+    "grammar": "Noun, f., acc. sing. (मात्रा)"
+  },
+  "मात्रे": {
+    "english": "Two matras / morae",
+    "grammar": "Noun, f., nom./acc. dual (मात्रा)"
+  },
+  "मुख्यौ": {
+    "english": "Two primary / main",
+    "grammar": "Adj., m., nom. dual (मुख्य)"
+  },
+  "मुर्गा": {
+    "english": "Rooster",
+    "grammar": "Hindi noun, m. (संस्कृत: कुक्कुटः)"
+  },
+  "मुर्गे": {
+    "english": "Rooster (oblique) / roosters",
+    "grammar": "Hindi noun, m."
+  },
+  "मुर्गों": {
+    "english": "Roosters (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "मेलयत": {
+    "english": "Match! / join! (imperative)",
+    "grammar": "Verb, loṭ lakāra, 2nd pers. plur. (मेल् धातु)"
+  },
+  "मोर": {
+    "english": "Peacock",
+    "grammar": "Hindi noun, m. (संस्कृत: मयूरः / शिखी)"
+  },
+  "याज्ञवल्क्यशिक्षायाः": {
+    "english": "Of the Yajnavalkya Shiksha treatise",
+    "grammar": "Compound noun, f., gen. sing."
+  },
+  "यान्": {
+    "english": "Which (masculine accusative plural)",
+    "grammar": "Relative pronoun, m., acc. plur. (यद्)"
+  },
+  "यौ": {
+    "english": "Which two (masculine)",
+    "grammar": "Relative pronoun, m., nom./acc. dual (यद्)"
+  },
+  "य्": {
+    "english": "Consonant 'y' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "रखना": {
+    "english": "To keep",
+    "grammar": "Hindi infinitive"
+  },
+  "रचना": {
+    "english": "Composition",
+    "grammar": "Hindi noun, f. (संस्कृत: रचना)"
+  },
+  "रुवन्ति": {
+    "english": "They crow / utter sounds",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. plur. (रु धातु)"
+  },
+  "रौति": {
+    "english": "Crows / sounds / roars",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. sing. (रु धातु)"
+  },
+  "लक्ष्मणः": {
+    "english": "Lakshmana (brother of Rama)",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "लघुकालप्रमाणः": {
+    "english": "Having short time measure",
+    "grammar": "Compound adj., m., nom. sing."
+  },
+  "लम्बकालिकः": {
+    "english": "Of long duration (dirgha)",
+    "grammar": "Compound adj., m., nom. sing."
+  },
+  "लम्बमानकालप्रमाणः": {
+    "english": "Having elongated time measure",
+    "grammar": "Compound adj., m., nom. sing."
+  },
+  "लम्बे": {
+    "english": "Long (oblique)",
+    "grammar": "Hindi adj."
+  },
+  "लुप्त": {
+    "english": "Elided / disappeared",
+    "grammar": "Hindi participle (संस्कृत: लुप्तः)"
+  },
+  "ल्": {
+    "english": "Consonant 'l' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "वदते": {
+    "english": "Utters / speaks",
+    "grammar": "Verb, laṭ lakāra (present, ātmanepada), 3rd pers. sing. (वद् धातु)"
+  },
+  "वर्णमात्रा": {
+    "english": "Morae of phonetic characters",
+    "grammar": "Compound noun, f."
+  },
+  "वर्णमाला": {
+    "english": "Alphabet / phonetic series",
+    "grammar": "Compound noun, f., nom. sing."
+  },
+  "वर्णमालायाः": {
+    "english": "Of the alphabet",
+    "grammar": "Compound noun, f., gen. sing."
+  },
+  "वर्णानां": {
+    "english": "Of characters / sounds",
+    "grammar": "Noun, m., gen. plur. (वर्ण)"
+  },
+  "वर्णानाम्": {
+    "english": "Of phonetic sounds / letters",
+    "grammar": "Noun, m., gen. plur. (वर्ण)"
+  },
+  "वर्णान्तरं": {
+    "english": "Another / different letter",
+    "grammar": "Compound noun, n., nom. sing. (वर्ण + अन्तर)"
+  },
+  "वर्णों": {
+    "english": "Characters / letters (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "वस्तुतः": {
+    "english": "In fact / in reality",
+    "grammar": "Indeclinable adverb (अव्यय)"
+  },
+  "वायसः": {
+    "english": "Crow",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "वास्तव": {
+    "english": "Reality / truth",
+    "grammar": "Hindi noun, m. (संस्कृत: वास्तवम्)"
+  },
+  "विकल्पाः": {
+    "english": "Options / alternatives",
+    "grammar": "Noun, m., nom. plur. (विकल्प)"
+  },
+  "विभाग": {
+    "english": "Division / section",
+    "grammar": "Hindi noun, m. (संस्कृत: विभागः)"
+  },
+  "विभिन्न": {
+    "english": "Different / various",
+    "grammar": "Hindi adj. (संस्कृत: विभिन्नः)"
+  },
+  "विरुवन्ति": {
+    "english": "They crow / call out loudly",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. plur. (वि + रु)"
+  },
+  "विरौति": {
+    "english": "Crows / calls out loudly",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. sing. (वि + रु)"
+  },
+  "विविधमात्राणाम्": {
+    "english": "Of diverse matras",
+    "grammar": "Compound noun, f., gen. plur."
+  },
+  "विविधानां": {
+    "english": "Of various / diverse",
+    "grammar": "Adj., f., gen. plur. (विविध)"
+  },
+  "विसर्गस्य": {
+    "english": "Of the Visarga",
+    "grammar": "Noun, m., gen. sing. (विसर्ग)"
+  },
+  "विहसितम्": {
+    "english": "Laughter / smiled",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "वेदमंत्र": {
+    "english": "Vedic mantra",
+    "grammar": "Hindi compound noun, m."
+  },
+  "वेदमन्त्रस्य": {
+    "english": "Of the Vedic mantra",
+    "grammar": "Compound noun, m., gen. sing."
+  },
+  "वो": {
+    "english": "Your / to you (enclitic Vedic form of युष्माकम्)",
+    "grammar": "Pronoun, gen. plur. (युष्मद्)"
+  },
+  "व्": {
+    "english": "Consonant 'v' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "व्यंजनों": {
+    "english": "Consonants (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "व्यञ्जनं": {
+    "english": "Consonant",
+    "grammar": "Noun, n., nom./acc. sing. (व्यञ्जनम्)"
+  },
+  "व्यञ्जनम्": {
+    "english": "Consonant (having half a mora)",
+    "grammar": "Noun, n., nom./acc. sing."
+  },
+  "व्यञ्जनवत्": {
+    "english": "Like a consonant",
+    "grammar": "Indeclinable affix / adverb"
+  },
+  "व्यञ्जनानां": {
+    "english": "Of consonants",
+    "grammar": "Noun, n., gen. plur. (व्यञ्जन)"
+  },
+  "व्यञ्जनानाम्": {
+    "english": "Of consonants",
+    "grammar": "Noun, n., gen. plur. (व्यञ्जन)"
+  },
+  "व्यञ्जनेषाम्": {
+    "english": "Of consonants",
+    "grammar": "Noun, n., gen. plur. (व्यञ्जन)"
+  },
+  "व्यञ्जनेषु": {
+    "english": "In/among consonants",
+    "grammar": "Noun, n., loc. plur. (व्यञ्जन)"
+  },
+  "व्याख्या": {
+    "english": "Explanation / commentary",
+    "grammar": "Noun, f., nom. sing."
+  },
+  "शक्नुमः": {
+    "english": "We can / are able to",
+    "grammar": "Verb, laṭ lakāra (present), 1st pers. plur. (शक् धातु)"
+  },
+  "शत्रुघ्नः": {
+    "english": "Shatrughna (brother of Rama)",
+    "grammar": "Proper noun, m., nom. sing."
+  },
+  "शब्दाः": {
+    "english": "Words",
+    "grammar": "Noun, m., nom. plur. (शब्द)"
+  },
+  "शब्दार्थविवरणम्": {
+    "english": "Detailed word meanings",
+    "grammar": "Compound noun, n., nom. sing."
+  },
+  "शिक्षार्थी": {
+    "english": "Student / learner",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "शिखी": {
+    "english": "Peacock (crested bird)",
+    "grammar": "Noun, m., nom. sing. (शिखिन्)"
+  },
+  "शुरुआत": {
+    "english": "Beginning",
+    "grammar": "Hindi noun, f."
+  },
+  "शोभनम्": {
+    "english": "Excellent / splendid",
+    "grammar": "Adj., n., nom./acc. sing."
+  },
+  "श्": {
+    "english": "Consonant 'ś' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "श्रद्धा": {
+    "english": "Shraddha (student name / faith)",
+    "grammar": "Proper noun, f., nom. sing."
+  },
+  "श्रद्धे": {
+    "english": "O Shraddha! (vocative)",
+    "grammar": "Proper noun, f., voc. sing."
+  },
+  "श्रोतुं": {
+    "english": "To hear / to listen",
+    "grammar": "Infinitive of purpose (श्रु धातु + तुमुन्)"
+  },
+  "श्लोकरचना": {
+    "english": "Versification / composing shlokas",
+    "grammar": "Compound noun, f., nom. sing."
+  },
+  "श्लोकरचनायां": {
+    "english": "In composing verses",
+    "grammar": "Compound noun, f., loc. sing."
+  },
+  "श्लोकरचनासमये": {
+    "english": "At the time of verse composition",
+    "grammar": "Compound noun, m., loc. sing."
+  },
+  "षष्ठकक्षायाः": {
+    "english": "Of the sixth grade / class",
+    "grammar": "Compound noun, f., gen. sing."
+  },
+  "ष्": {
+    "english": "Consonant 'ṣ' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "सँस्कर्ता": {
+    "english": "Consecrator / one who refines",
+    "grammar": "Noun with Anunasika, m., nom. sing. (संस्कर्ता)"
+  },
+  "सं": {
+    "english": "Together / completely (Vedic particle)",
+    "grammar": "Upasarga / prefix"
+  },
+  "संध्यक्षर": {
+    "english": "Diphthong / compound vowel",
+    "grammar": "Hindi phonetic noun"
+  },
+  "संयुक्त": {
+    "english": "Conjunct / combined",
+    "grammar": "Hindi adj. (संस्कृत: संयुक्तः)"
+  },
+  "संयुक्तव्यञ्जनयुक्ताः": {
+    "english": "Joined with conjunct consonants",
+    "grammar": "Compound adj., m., nom. plur."
+  },
+  "संवदध्वं": {
+    "english": "Speak together! (Vedic imperative)",
+    "grammar": "Vedic verb, loṭ lakāra, 2nd pers. plur."
+  },
+  "संशयः": {
+    "english": "Doubt / uncertainty",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "संस्कृतभाषायाः": {
+    "english": "Of Sanskrit language",
+    "grammar": "Compound noun, f., gen. sing."
+  },
+  "संस्कृतात्": {
+    "english": "From Sanskrit",
+    "grammar": "Proper noun, n., abl. sing. (संस्कृत)"
+  },
+  "सङ्गच्छध्वं": {
+    "english": "March together! / assemble together!",
+    "grammar": "Vedic verb, loṭ lakāra, 2nd pers. plur."
+  },
+  "सङ्गठनमन्त्रः": {
+    "english": "Unity / organization hymn (Rigveda 10.191)",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "सञ्जाताः": {
+    "english": "Became / transformed into",
+    "grammar": "Past pass. part., m., nom. plur. (सम् + जन् + क्त)"
+  },
+  "सन्दर्भयोः": {
+    "english": "In two contexts",
+    "grammar": "Noun, m., loc. dual (सन्दर्भ)"
+  },
+  "सन्धिनियमानुसारं": {
+    "english": "According to sandhi euphonic rules",
+    "grammar": "Compound adverb"
+  },
+  "सन्ध्यक्षराणि": {
+    "english": "Diphthongs / compound vowels (ए, ऐ, ओ, औ)",
+    "grammar": "Compound noun, n., nom. plur."
+  },
+  "समयस्य": {
+    "english": "Of time / duration",
+    "grammar": "Noun, m., gen. sing. (समय)"
+  },
+  "समयों": {
+    "english": "Times (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "समानाक्षर": {
+    "english": "Simple vowel",
+    "grammar": "Hindi phonetic noun"
+  },
+  "समानाक्षराणि": {
+    "english": "Simple monophthong vowels (अ, इ, उ, ऋ, ऌ)",
+    "grammar": "Compound noun, n., nom. plur."
+  },
+  "समावेश": {
+    "english": "Inclusion / integration",
+    "grammar": "Hindi noun, m. (संस्कृत: समावेशः)"
+  },
+  "समावेशः": {
+    "english": "Inclusion / synthesis / integration",
+    "grammar": "Noun, m., nom. sing."
+  },
+  "सम्यग्रीत्या": {
+    "english": "In a proper / accurate manner",
+    "grammar": "Compound noun, f., inst. sing."
+  },
+  "सरल": {
+    "english": "Simple / easy",
+    "grammar": "Hindi adj."
+  },
+  "सरलः": {
+    "english": "Simple / straightforward",
+    "grammar": "Adj., m., nom. sing."
+  },
+  "सरलता": {
+    "english": "Simplicity",
+    "grammar": "Hindi noun, f. (संस्कृत: सरलता)"
+  },
+  "सरलतार्थं": {
+    "english": "For the sake of simplicity",
+    "grammar": "Compound adverb (सरलता + अर्थम्)"
+  },
+  "सर्वाः": {
+    "english": "All (feminine)",
+    "grammar": "Pronoun, f., nom. plur. (सर्व)"
+  },
+  "साढ़े": {
+    "english": "And a half",
+    "grammar": "Hindi fractional numeral prefix"
+  },
+  "सामान्यं": {
+    "english": "General / common",
+    "grammar": "Adj., n., nom./acc. sing. (सामान्यम्)"
+  },
+  "सामान्यतः": {
+    "english": "Generally / commonly",
+    "grammar": "Indeclinable adverb (अव्यय)"
+  },
+  "सीता": {
+    "english": "Sita (consort of Rama)",
+    "grammar": "Proper noun, f., nom. sing."
+  },
+  "सुन": {
+    "english": "Hear / listen",
+    "grammar": "Hindi verb stem"
+  },
+  "सुष्ठु": {
+    "english": "Beautifully / very well",
+    "grammar": "Indeclinable adverb (अव्यय)"
+  },
+  "सूचिरदनः": {
+    "english": "Mongoose (needle-toothed)",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "सोत्साहम्": {
+    "english": "With enthusiasm / zealously",
+    "grammar": "Adverbial compound (स + उत्साहम्)"
+  },
+  "स्": {
+    "english": "Consonant 's' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "स्तः": {
+    "english": "Two are (dual of अस्ति)",
+    "grammar": "Verb, laṭ lakāra (present), 3rd pers. dual (अस् धातु)"
+  },
+  "स्पर्श": {
+    "english": "Stop / plosive consonant",
+    "grammar": "Phonetic term"
+  },
+  "स्पर्शाः": {
+    "english": "Stop consonants (25 plosives: k to m)",
+    "grammar": "Noun, m., nom. plur. (स्पर्श)"
+  },
+  "स्वः": {
+    "english": "Heaven / celestial realm (Svarga)",
+    "grammar": "Noun, indeclinable / nom. sing."
+  },
+  "स्वराः": {
+    "english": "Vowels",
+    "grammar": "Noun, m., nom. plur. (स्वर)"
+  },
+  "स्वराणां": {
+    "english": "Of vowels",
+    "grammar": "Noun, m., gen. plur. (स्वर)"
+  },
+  "स्वराणाम्": {
+    "english": "Of vowels",
+    "grammar": "Noun, m., gen. plur. (स्वर)"
+  },
+  "स्वरेषु": {
+    "english": "Among vowels / in vowels",
+    "grammar": "Noun, m., loc. plur. (स्वर)"
+  },
+  "स्वरों": {
+    "english": "Vowels (oblique)",
+    "grammar": "Hindi noun, m. plur."
+  },
+  "स्वल्प": {
+    "english": "Very small / brief",
+    "grammar": "Hindi adj."
+  },
+  "स्ववर्णमालां": {
+    "english": "Their own alphabet",
+    "grammar": "Compound noun, f., acc. sing."
+  },
+  "स्वीकृतवत्यः": {
+    "english": "Adopted / accepted (feminine plural)",
+    "grammar": "Past active part. (क्तवतु), f., nom. plur."
+  },
+  "ह्": {
+    "english": "Consonant 'h' with virama",
+    "grammar": "Consonant letter (हलन्त व्यञ्जन)"
+  },
+  "ह्रस्व": {
+    "english": "Short vowel / single mora",
+    "grammar": "Hindi phonetic adj."
+  },
+  "ह्रस्वः": {
+    "english": "Short vowel (single mora)",
+    "grammar": "Noun/Adj., m., nom. sing."
+  },
+  "ह्रस्वस्वरः": {
+    "english": "Short vowel sound",
+    "grammar": "Compound noun, m., nom. sing."
+  },
+  "ऽ": {
+    "english": "Avagraha mark (elided 'a')",
+    "grammar": "Orthographic symbol"
+  },
+  "ॐकार": {
+    "english": "Syllable Om",
+    "grammar": "Hindi noun, m. (संस्कृत: ओंकारः)"
+  },
+  "ॠ": {
+    "english": "Long vocalic 'ṝ'",
+    "grammar": "Vowel sound (दीर्घ स्वर)"
   }
 }
