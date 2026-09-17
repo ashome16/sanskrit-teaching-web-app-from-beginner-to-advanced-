@@ -276,6 +276,17 @@
   }
 }
 
+.faq-contact-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1.5px solid #d8ceba;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+  background: #fff;
+}
+
 .faq-contact-item {
   display: flex;
   align-items: flex-start;
@@ -305,4 +316,26 @@
   font-weight: 600;
   color: #2b2118;
   margin-top: 0.15rem;
+}
+
+.faq-contact-item-link {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #b3472f;
+  margin-top: 0.15rem;
+  text-decoration: none;
+  transition: color 0.15s ease, transform 0.15s ease;
+  word-break: break-all;
+}
+
+.faq-contact-item-link:hover {
+  color: #7f231c;
+  text-decoration: underline;
+}
+
+.faq-contact-item-hint {
+  font-size: 0.76rem;
+  color: #8c7f70;
+  margin-top: 0.2rem;
+  line-height: 1.3;
 }

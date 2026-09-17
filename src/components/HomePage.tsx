@@ -324,6 +324,19 @@ const HomePage: React.FC<HomePageProps> = ({
           Hero Section
           ------------------------------------------------------------------ */}
       <section className="home-hero">
+        {/* Gurukul Official Brand Crest */}
+        <div className="home-hero-crest">
+          <img
+            src="/logo.jpg"
+            alt="EdNet Learn Gurukul"
+            className="home-hero-logo"
+          />
+          <div className="home-hero-brand-details">
+            <h2 className="home-hero-org-title">EdNet Learn Gurukul</h2>
+            <div className="home-hero-org-subtitle">गुरुकुलम् · Sanskrit &amp; Vedic Studies</div>
+          </div>
+        </div>
+
         <div className="home-hero-badge">
           <span>🕉️</span>
           <span className="home-hero-badge-sanskrit">
@@ -332,16 +345,16 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
 
         <h1 className="home-hero-title">
-          Master Sanskrit Through Interactive Sound &amp; Stories
+          Master Sanskrit &amp; Vedic Mathematics
           <span className="home-hero-title-dev">
-            संस्कृत-शिक्षण-मञ्चः · सम्पूर्णं सरल-संस्कृतम्
+            संस्कृत-शिक्षण-मञ्चः · CBSE बोर्ड-पाठ्यक्रमः · सम्पूर्णं सरल-संस्कृतम्
           </span>
         </h1>
 
         <p className="home-hero-subtitle">
-          An intuitive, interactive learning platform designed for NCERT Class 7 school students,
-          beginners, and language enthusiasts. Experience word-by-word instant audio analysis,
-          gamified tile puzzles, complete grammar declensions, and trilingual meanings without friction.
+          An intuitive, interactive Gurukul learning platform tailored for <strong>CBSE Class 7 Sanskrit Board Exams</strong> (NCERT दीपकम),
+          beginners, and Vedic scholars. Experience word-by-word instant audio analysis, shloka anvaya,
+          gamified tile puzzles, complete grammar declensions, and speed Vedic Mathematics without friction.
         </p>
 
         <div className="home-hero-actions">
@@ -350,7 +363,7 @@ const HomePage: React.FC<HomePageProps> = ({
             className="home-btn-primary"
             onClick={() => onOpenReader('gsde101')}
           >
-            📖 Read Deepakam Class 7
+            📖 Read CBSE Deepakam Class 7
           </button>
           <button
             type="button"
@@ -509,17 +522,18 @@ const HomePage: React.FC<HomePageProps> = ({
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
                 <span className="home-feature-icon">📖</span>
-                <span className="home-feature-badge">NCERT Grade 7</span>
+                <span className="home-feature-badge">CBSE Board Exam · NCERT Class 7</span>
               </div>
-              <h3 className="home-feature-title">Interactive Deepakam Reader</h3>
+              <h3 className="home-feature-title">Interactive Deepakam Reader (CBSE Class 7)</h3>
               <p className="home-feature-desc">
-                Study the complete 15 lessons from Class 7 NCERT textbook 'दीपकम्'. Click any word to hear crystal-clear pronunciation,
-                inspect syllable breakdowns, and see trilingual meanings instantly without scrolling!
+                Study the complete 15 lessons from the prescribed CBSE/NCERT textbook 'दीपकम्'. Click any word to hear crystal-clear pronunciation,
+                inspect syllable breakdowns, see trilingual meanings, and master CBSE board question patterns!
               </p>
               <ul className="home-feature-points">
-                <li>Word-by-word instant dictionary lookup</li>
-                <li>Full sentence and paragraph audio auto-play</li>
-                <li>Clear Hindi &amp; English paragraph translations</li>
+                <li>100% CBSE Class 7 Sanskrit Board Exam Syllabus aligned</li>
+                <li>Shloka Anvaya (श्लोकान्वयः) &amp; exam question drills</li>
+                <li>Word-by-word instant dictionary lookup &amp; native audio</li>
+                <li>Parallel English &amp; Hindi translations for all paragraphs</li>
               </ul>
             </div>
             <button
@@ -527,7 +541,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-feature-btn"
               onClick={() => onOpenReader('gsde101')}
             >
-              Open Textbook Reader ▶
+              Open CBSE Textbook Reader ▶
             </button>
           </div>
 
@@ -651,11 +665,11 @@ const HomePage: React.FC<HomePageProps> = ({
           ------------------------------------------------------------------ */}
       <section className="home-curriculum-section">
         <div className="home-section-header">
-          <span className="home-section-tag">Full NCERT Curriculum</span>
-          <h2 className="home-section-title">Complete 15 Lessons Directory</h2>
+          <span className="home-section-tag">CBSE Board Exam &amp; NCERT Syllabus</span>
+          <h2 className="home-section-title">Complete 15 Lessons Directory · CBSE Class 7 (दीपकम्)</h2>
           <p className="home-section-subtitle">
-            Explore the entire NCERT Class 7 'दीपकम्' syllabus. Every chapter features full Sanskrit text,
-            Hindi translation, audio recitation, and complete word-by-word grammar analysis.
+            Explore the entire NCERT Class 7 'दीपकम्' syllabus mapped to CBSE Board Exam guidelines. Every chapter features full Sanskrit text,
+            parallel English &amp; Hindi translations, authentic audio recitation, and complete word-by-word grammar analysis for top exam scores.
           </p>
         </div>
 
@@ -802,12 +816,12 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="home-pathway-card">
             <div>
               <span className="home-pathway-badge home-pathway-badge--school">
-                School Curriculum
+                CBSE Board Exam
               </span>
-              <h3 className="home-pathway-title">🎒 NCERT Class 7 Student</h3>
+              <h3 className="home-pathway-title">🎒 CBSE Class 7 Student</h3>
               <p className="home-pathway-desc">
-                Follow the 15 Deepakam chapters sequentially. Read each shloka, play audio to perfect your recitation,
-                and click unfamiliar words to see their full grammatical analysis and Hindi meanings.
+                Follow the 15 Deepakam chapters sequentially. Master shloka recitation, anvaya, sandhi,
+                and exam question patterns with instant word-by-word grammatical breakdowns and translations.
               </p>
             </div>
             <button
@@ -815,7 +829,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-pathway-btn"
               onClick={() => onOpenReader('gsde101')}
             >
-              Start Chapter 1 (वन्दे भारतमातरम्) ▶
+              Start CBSE Chapter 1 (वन्दे भारतमातरम्) ▶
             </button>
           </div>
 
@@ -873,6 +887,14 @@ const HomePage: React.FC<HomePageProps> = ({
           Footer Call to Action
           ------------------------------------------------------------------ */}
       <footer className="home-footer-cta">
+        <div className="home-footer-brand-row">
+          <img src="/logo.jpg" alt="EdNet Learn Gurukul Logo" className="home-footer-logo" />
+          <div>
+            <div className="home-footer-brand-title">EdNet Learn Gurukul</div>
+            <span className="home-footer-brand-sub">गुरुकुलम् · CBSE Class 7 Sanskrit &amp; Vedic Mathematics</span>
+          </div>
+        </div>
+
         <div className="home-footer-shloka">
           भाषासु मुख्या मधुरा दिव्या गीर्वाणभारती ।
         </div>
@@ -880,9 +902,25 @@ const HomePage: React.FC<HomePageProps> = ({
           &ldquo;Among all languages, the divine tongue of Sanskrit is the foremost, sweet, and pure.&rdquo;
         </p>
 
+        {/* Customer Support Desk */}
+        <div className="home-footer-support">
+          <div className="home-footer-support-title">Customer &amp; Student Support</div>
+          <div className="home-footer-support-links">
+            <a href="mailto:care@ednetlearn.in" className="home-footer-support-link">
+              <span>📧</span> Learner Care: <strong>care@ednetlearn.in</strong>
+            </a>
+            <a href="mailto:admin@ednetlearn.in" className="home-footer-support-link">
+              <span>🏛️</span> Administration: <strong>admin@ednetlearn.in</strong>
+            </a>
+          </div>
+          <div className="home-footer-cbse-note">
+            Aligned with the Central Board of Secondary Education (CBSE) Class 7 Sanskrit Curriculum &amp; NCERT Textbook 'दीपकम'.
+          </div>
+        </div>
+
         <div className="home-footer-links">
           <button type="button" className="home-footer-link" onClick={() => onOpenReader('gsde101')}>
-            📖 Deepakam Textbook
+            📖 CBSE Deepakam Class 7
           </button>
           <button type="button" className="home-footer-link" onClick={onOpenBoard}>
             🧩 जोडो Tile Puzzle
@@ -893,6 +931,11 @@ const HomePage: React.FC<HomePageProps> = ({
           <button type="button" className="home-footer-link" onClick={onOpenGrammar}>
             📚 Grammar Reference
           </button>
+          {onOpenVedicMaths && (
+            <button type="button" className="home-footer-link" onClick={onOpenVedicMaths}>
+              📐 Vedic Mathematics
+            </button>
+          )}
         </div>
       </footer>
     </main>

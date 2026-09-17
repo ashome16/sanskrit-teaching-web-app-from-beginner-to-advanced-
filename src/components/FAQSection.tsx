@@ -35,9 +35,9 @@ const FAQ_DATA: FAQItem[] = [
   {
     id: 'faq-curriculum',
     category: 'curriculum',
-    question: 'What curriculum and grades are covered?',
+    question: 'How is the platform aligned with the CBSE Board Exam and NCERT curriculum?',
     answer:
-      'We currently feature the complete NCERT Class 7 Sanskrit curriculum (दीपकम-७) across 15 chapters and appendices, along with fundamental Varṇamālā phonetics, बारहखड़ी audio matrix, comprehensive Vyākaraṇa (Shabdarupani noun declensions & Dhatarupani verb conjugations), and Vedic Mathematics (वैदिक-गणितम्). Class 6 and Class 8 materials are actively in development.',
+      'Our curriculum is 100% aligned with the Central Board of Secondary Education (CBSE) syllabus for Class 7 Sanskrit, based directly on the prescribed NCERT textbook "दीपकम-७". Every chapter covers CBSE board exam requirements: shlokas with line-by-line anvaya (श्लोकान्वयः), word-meanings (शब्दार्थाः), sandhi-vichheda (सन्धि-विच्छेदः), vibhakti-pratyaya identification, short/long answer questions (प्रश्नोत्तराणि), and unseen passage comprehension. In addition, learners have full access to Varṇamālā phonetics, बारहखड़ी, Vyākaraṇa (Shabdarupani & Dhatarupani), and Vedic Mathematics (वैदिक-गणितम्).',
   },
   {
     id: 'faq-audio',
@@ -127,14 +127,14 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
           })}
         </div>
 
-        {/* Dummy Contact Info Card */}
+        {/* Official Customer Support Card */}
         <div className="faq-contact-card">
           <div className="faq-contact-header">
-            <span className="faq-contact-icon">📞</span>
+            <img src="/logo.jpg" alt="EdNet Learn Gurukul Logo" className="faq-contact-logo" />
             <div>
-              <h3 className="faq-contact-title">Need Assistance or Have Questions?</h3>
+              <h3 className="faq-contact-title">EdNet Learn Gurukul · Customer &amp; Student Support</h3>
               <p className="faq-contact-subtitle">
-                Contact our Sanskrit learning support team. <em>(Dummy contact info — will be edited later)</em>
+                Have questions regarding the CBSE Class 7 syllabus, Vedic Mathematics, subscription, or technical assistance? Connect directly with our team.
               </p>
             </div>
           </div>
@@ -143,8 +143,22 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
             <div className="faq-contact-item">
               <span className="faq-contact-item-icon">📧</span>
               <div className="faq-contact-item-content">
-                <span className="faq-contact-item-label">Email Support</span>
-                <span className="faq-contact-item-val">support@sanskrit-learning.org</span>
+                <span className="faq-contact-item-label">Learner Care &amp; Support</span>
+                <a href="mailto:care@ednetlearn.in" className="faq-contact-item-link">
+                  care@ednetlearn.in
+                </a>
+                <small className="faq-contact-item-hint">Student assistance, chapter questions, account support</small>
+              </div>
+            </div>
+
+            <div className="faq-contact-item">
+              <span className="faq-contact-item-icon">🏛️</span>
+              <div className="faq-contact-item-content">
+                <span className="faq-contact-item-label">Administration &amp; Billing</span>
+                <a href="mailto:admin@ednetlearn.in" className="faq-contact-item-link">
+                  admin@ednetlearn.in
+                </a>
+                <small className="faq-contact-item-hint">Invoicing, school subscriptions, official inquiries</small>
               </div>
             </div>
 
@@ -153,16 +167,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
               <div className="faq-contact-item-content">
                 <span className="faq-contact-item-label">WhatsApp / Phone</span>
                 <span className="faq-contact-item-val">+91 98765 43210</span>
-              </div>
-            </div>
-
-            <div className="faq-contact-item">
-              <span className="faq-contact-item-icon">📍</span>
-              <div className="faq-contact-item-content">
-                <span className="faq-contact-item-label">Office Address</span>
-                <span className="faq-contact-item-val">
-                  Sanskrit Shiksha Kendra, 108 Shanti Marg, New Delhi, India 110001
-                </span>
+                <small className="faq-contact-item-hint">Quick payment &amp; onboarding assistance</small>
               </div>
             </div>
 
@@ -171,6 +176,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
               <div className="faq-contact-item-content">
                 <span className="faq-contact-item-label">Support Hours</span>
                 <span className="faq-contact-item-val">Mon – Sat: 9:00 AM – 6:00 PM IST</span>
+                <small className="faq-contact-item-hint">Emails monitored daily with prompt resolution</small>
               </div>
             </div>
           </div>

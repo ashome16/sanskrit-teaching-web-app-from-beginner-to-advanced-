@@ -201,10 +201,13 @@ const Dashboard: React.FC = () => {
           type="button"
           className="dashboard-brand-btn"
           onClick={() => setActiveView('home')}
-          title="Go to Homepage"
+          title="EdNet Learn Gurukul - Go to Homepage"
         >
-          <span className="dashboard-brand-symbol">🕉️</span>
-          <span className="dashboard-title">Sanskrit Learning</span>
+          <img src="/logo.jpg" alt="EdNet Learn Gurukul Logo" className="dashboard-brand-logo-img" />
+          <div className="dashboard-brand-text-col">
+            <span className="dashboard-title">EdNet Learn Gurukul</span>
+            <span className="dashboard-brand-sub">संस्कृत-शिक्षणम् · CBSE / NCERT</span>
+          </div>
         </button>
         <nav className="dashboard-nav" aria-label="Main learning views">
           <button
@@ -232,20 +235,21 @@ const Dashboard: React.FC = () => {
           <div
             className={`dashboard-nav-group${activeView === 'reader' && lesson.id !== 'varnamala' ? ' dashboard-nav-group--active' : ''}`}
           >
-            <span className="dashboard-nav-group-label">NCERT Deepakam</span>
-            <div className="dashboard-nav-sub" role="group" aria-label="NCERT Deepakam grades">
+            <span className="dashboard-nav-group-label">CBSE · NCERT Deepakam</span>
+            <div className="dashboard-nav-sub" role="group" aria-label="CBSE & NCERT Deepakam grades">
               <button
                 type="button"
                 className={activeView === 'reader' && lesson.id !== 'varnamala' ? 'active' : ''}
                 onClick={() => openDeepakam()}
+                title="CBSE Class 7 Sanskrit Board Exam Syllabus"
               >
-                7th Grade Lessons
+                Class 7 (CBSE)
               </button>
-              <button type="button" className="dashboard-nav-soon" disabled aria-disabled="true" title="Coming later">
-                8th
+              <button type="button" className="dashboard-nav-soon" disabled aria-disabled="true" title="Class 8 CBSE - Coming soon">
+                8th (CBSE)
               </button>
-              <button type="button" className="dashboard-nav-soon" disabled aria-disabled="true" title="Coming later">
-                9th
+              <button type="button" className="dashboard-nav-soon" disabled aria-disabled="true" title="Class 9 CBSE - Coming soon">
+                9th (CBSE)
               </button>
             </div>
           </div>

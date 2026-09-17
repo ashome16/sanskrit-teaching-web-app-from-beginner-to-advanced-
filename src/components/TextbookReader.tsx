@@ -164,6 +164,13 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 
   return (
     <section className="textbook-reader">
+      {activeLessonId.startsWith('gsde') && (
+        <div className="textbook-cbse-banner">
+          <span className="textbook-cbse-pill">CBSE Board Exam Aligned</span>
+          <span className="textbook-cbse-title">NCERT Class 7 Sanskrit · दीपकम (Deepakam)</span>
+        </div>
+      )}
+
       <div className="textbook-lesson-select-row">
         <label htmlFor="lesson-select" className="textbook-lesson-select-label">
           Select Lesson

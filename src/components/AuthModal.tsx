@@ -87,10 +87,14 @@ const AuthModal: React.FC = () => {
 
         <header className="auth-modal-header">
           <div className="auth-modal-brand">
-            <span>🕉️</span> Sanskrit Learning Account
+            <img src="/logo.jpg" alt="EdNet Learn Gurukul" className="auth-modal-logo-img" />
+            <div className="auth-modal-brand-titles">
+              <span className="auth-modal-brand-name">EdNet Learn Gurukul</span>
+              <span className="auth-modal-brand-sub">संस्कृत-गुरुकुलम् · CBSE / NCERT Class 7</span>
+            </div>
           </div>
           <p className="auth-modal-subtitle">
-            Track your lessons, test pronunciation, and master Sanskrit step by step.
+            Track your lessons, test pronunciation, and master CBSE Class 7 Sanskrit step by step.
           </p>
         </header>
 

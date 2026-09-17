@@ -82,6 +82,14 @@ const PaymentModal: React.FC = () => {
             ✕
           </button>
 
+          <div className="payment-modal-brand-row">
+            <img src="/logo.jpg" alt="EdNet Learn Gurukul" className="payment-modal-brand-logo" />
+            <div>
+              <div className="payment-modal-brand-title">EdNet Learn Gurukul</div>
+              <div className="payment-modal-brand-sub">CBSE Class 7 Sanskrit &amp; Vedic Mathematics</div>
+            </div>
+          </div>
+
           <span className="payment-plan-badge">🌟 All-Access Monthly Pass</span>
           <h2 id="payment-modal-title" className="payment-modal-title">
             Unlock Full Sanskrit Platform
@@ -92,7 +100,7 @@ const PaymentModal: React.FC = () => {
             <span className="payment-price-period">/ month</span>
           </div>
           <p className="payment-trial-note">
-            Includes all 15 NCERT Class 7 Chapters, 5,800+ audio glosses, Jodo Puzzles, and Vedic Mathematics!
+            Includes all 15 CBSE/NCERT Class 7 Chapters, 5,800+ audio glosses, Jodo Puzzles, and Vedic Mathematics!
           </p>
         </div>
 
@@ -178,6 +186,10 @@ const PaymentModal: React.FC = () => {
                 >
                   Continue Learning ➔
                 </button>
+              </div>
+
+              <div style={{ marginTop: '1rem', textAlign: 'center', fontSize: '0.78rem', color: '#6b7280', borderTop: '1px solid #f3f4f6', paddingTop: '0.75rem' }}>
+                Need invoice or payment assistance? Email <a href="mailto:care@ednetlearn.in" style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}>care@ednetlearn.in</a> or <a href="mailto:admin@ednetlearn.in" style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}>admin@ednetlearn.in</a>
               </div>
             </div>
           </div>
@@ -439,6 +451,11 @@ const PaymentModal: React.FC = () => {
                   </div>
                 </div>
               )}
+
+              {/* Customer Support Notice */}
+              <div style={{ padding: '0.85rem 1.75rem', background: '#f8fafc', borderTop: '1px solid #e2e8f0', fontSize: '0.78rem', color: '#64748b', textAlign: 'center' }}>
+                Questions or support? Email <a href="mailto:care@ednetlearn.in" style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}>care@ednetlearn.in</a> · <a href="mailto:admin@ednetlearn.in" style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}>admin@ednetlearn.in</a>
+              </div>
             </div>
           </>
         )}
