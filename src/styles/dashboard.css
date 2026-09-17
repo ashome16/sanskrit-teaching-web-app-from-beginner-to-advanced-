@@ -8,6 +8,7 @@
   box-sizing: border-box;
   padding: 1.5rem;
   background: #f7f5f0;
+  overflow: hidden;
 }
 
 .dashboard-header {

@@ -570,6 +570,8 @@ const Board: React.FC<BoardProps> = ({
   const [welcomeOpen, setWelcomeOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [isChipsExpanded, setIsChipsExpanded] = useState(false);
+  const activeChipRef = useRef<HTMLButtonElement | null>(null);
   const [showHelp, setShowHelp] = useState<boolean>(() => {
     try {
       return localStorage.getItem('jodo-help-collapsed') !== 'true';
@@ -841,6 +843,16 @@ const Board: React.FC<BoardProps> = ({
         : [];
   const activeChipId = activeSectionChipId(sectionChips, puzzleIndex);
 
+  useEffect(() => {
+    if (!isChipsExpanded && activeChipRef.current) {
+      activeChipRef.current.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      });
+    }
+  }, [activeChipId, isChipsExpanded]);
+
   const jumpToSection = (start: number) => {
     if (start < 0 || !activePuzzles.length) return;
     const clamped = Math.max(0, Math.min(start, activePuzzles.length - 1));
@@ -867,86 +879,69 @@ const Board: React.FC<BoardProps> = ({
             <span className="board-nav-sep" aria-hidden="true">/</span>
           </>
         )}
+        <span className="board-nav-current">🧩 जोडो Tile Puzzle</span>
+      </nav>
+      <div className="board-site-shortcuts">
         {onNavigateToReader && (
-          <button type="button" className="board-nav-link" onClick={onNavigateToReader} title="Go to NCERT Deepakam Lessons">
-            📖 Deepakam Lessons
+          <button type="button" className="board-shortcut-btn" onClick={onNavigateToReader}>
+            📖 Deepakam Reader
           </button>
         )}
         {onNavigateToVarnamala && (
-          <>
-            <span className="board-nav-sep" aria-hidden="true">/</span>
-            <button type="button" className="board-nav-link" onClick={onNavigateToVarnamala} title="Go to Varṇamālā Alphabet">
-              🔤 Varṇamālā
-            </button>
-          </>
+          <button type="button" className="board-shortcut-btn" onClick={onNavigateToVarnamala}>
+            🔤 Varṇamālā
+          </button>
         )}
         {onNavigateToGrammar && (
-          <>
-            <span className="board-nav-sep" aria-hidden="true">/</span>
-            <button type="button" className="board-nav-link" onClick={onNavigateToGrammar} title="Go to Vyākaraṇa Grammar">
-              📚 Vyākaraṇa (Grammar)
-            </button>
-          </>
+          <button type="button" className="board-shortcut-btn" onClick={onNavigateToGrammar}>
+            📚 Grammar
+          </button>
         )}
-      </nav>
-      <div className="board-game-badge">
-        <span className="badge-icon">🧩</span>
-        <span>जोडो · Tile Puzzle</span>
       </div>
     </div>
 
-    {/* Clear User-Friendly Instructions Card */}
-    <div className="jodo-instructions-card">
-      <div
-        className="jodo-instructions-header"
-        onClick={toggleHelp}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggleHelp(); }}
-      >
-        <div className="jodo-instructions-title">
-          <span className="jodo-help-icon">💡</span>
-          <span><strong>How to Play जोडो (Interactive Tile Puzzle)</strong></span>
+    <div className="board-heading">
+      <div>
+        <p className="eyebrow">शब्द-निर्माण-क्रीडा · BUILD SANSKRIT WORDS</p>
+        <h2>जोडो · Tile Puzzle Studio</h2>
+        <p>Blend sounds into words, solve puzzles, and discover daily Sanskrit vocabulary.</p>
+      </div>
+      <div className="board-mark" aria-hidden="true">ॐ</div>
+    </div>
+
+    {/* Instructions Banner for Beginners (Collapsible) */}
+    <div className="jodo-guide-banner">
+      <div className="jodo-guide-header" onClick={toggleHelp} role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggleHelp(); }}>
+        <div className="jodo-guide-title">
+          <span className="jodo-guide-icon">💡</span>
+          <strong>How to Play जोडो (Instructions)</strong>
         </div>
-        <button type="button" className="jodo-help-toggle" aria-expanded={showHelp}>
-          {showHelp ? 'Hide Guide ▲' : 'Quick Guide ▼'}
+        <button type="button" className="jodo-guide-toggle-btn" aria-label={showHelp ? 'Hide Instructions' : 'Show Instructions'}>
+          {showHelp ? 'Hide ▲' : 'Show Help ▼'}
         </button>
       </div>
       {showHelp && (
-        <div className="jodo-steps-row">
-          <div className="jodo-step-card">
-            <div className="jodo-step-num">1</div>
-            <div className="jodo-step-text">
-              <strong>Read the Prompt</strong>
-              <span>Look at the target Sanskrit sound, syllable, or English clue.</span>
-            </div>
+        <div className="jodo-guide-content">
+          <div className="jodo-guide-step">
+            <span className="jodo-step-badge">Step 1</span>
+            <p><strong>Observe the target word</strong> displayed in large Sanskrit letters inside the puzzle card.</p>
           </div>
-          <div className="jodo-step-arrow" aria-hidden="true">➔</div>
-          <div className="jodo-step-card">
-            <div className="jodo-step-num">2</div>
-            <div className="jodo-step-text">
-              <strong>Tap the Tiles</strong>
-              <span>Click cream tiles to join letters (e.g. <code>क</code> + <code>आ</code> → <code>का</code>) or pick the matching word.</span>
-            </div>
+          <div className="jodo-guide-step">
+            <span className="jodo-step-badge">Step 2</span>
+            <p><strong>Tap cream tiles in sequence</strong> to blend consonants and vowel matras (e.g., tap <span className="jodo-sample-tile">क</span> then <span className="jodo-sample-tile">ा</span> to make <span className="jodo-sample-tile">का</span>).</p>
           </div>
-          <div className="jodo-step-arrow" aria-hidden="true">➔</div>
-          <div className="jodo-step-card">
-            <div className="jodo-step-num">3</div>
-            <div className="jodo-step-text">
-              <strong>Listen &amp; Advance</strong>
-              <span>Hear pronunciation, view sentence &amp; illustration, then click <strong>Next ▶</strong>!</span>
-            </div>
+          <div className="jodo-guide-step">
+            <span className="jodo-step-badge">Step 3</span>
+            <p><strong>Success!</strong> The illustration, meaning, and sentence will appear automatically. Tap <span className="jodo-sample-next">Next Puzzle ▶</span> to advance.</p>
           </div>
         </div>
       )}
     </div>
 
-    {/* Learning Shelves Navigation */}
-    <nav className="wing-nav" aria-label="Learning shelves">
+    <nav className="wing-nav" aria-label="Shelves">
       {shelfButtons.map((item) => (
         <button
           key={item.id}
-          type="button"
           className={activeShelf === item.id ? 'wing-button active' : 'wing-button'}
           onClick={() => chooseShelf(item.id)}
         >
@@ -966,18 +961,51 @@ const Board: React.FC<BoardProps> = ({
       </div>
     )}
 
+    {/* Compact Section Chips Bar — Single Row Carousel by Default to prevent vertical scrolling */}
     {sectionChips.length > 0 && (
-      <div className="board-sections" role="group" aria-label="Jump to section">
-        {sectionChips.map((chip) => (
-          <button
-            key={chip.id}
-            type="button"
-            className={activeChipId === chip.id ? 'board-section-chip active' : 'board-section-chip'}
-            onClick={() => jumpToSection(chip.start)}
-          >
-            {chip.label}
-          </button>
-        ))}
+      <div className="board-sections-container">
+        <div className="board-sections-header">
+          <div className="board-sections-meta">
+            <span className="board-sections-tag">अक्षर-विभागः · Jump to Letter:</span>
+            {activeChipId && (
+              <span className="board-active-chip-badge">
+                Current: <strong>{activeChipId}</strong> ({puzzleIndex + 1}/{activePuzzles.length})
+              </span>
+            )}
+          </div>
+          {sectionChips.length > 15 && (
+            <button
+              type="button"
+              className="board-chips-expand-btn"
+              onClick={() => setIsChipsExpanded(!isChipsExpanded)}
+              title={isChipsExpanded ? 'Collapse to single row' : 'View all letter chips'}
+            >
+              {isChipsExpanded ? '▲ Single Row' : `▼ All Letters (${sectionChips.length})`}
+            </button>
+          )}
+        </div>
+
+        <div
+          className={`board-sections ${isChipsExpanded ? 'board-sections--expanded' : 'board-sections--carousel'}`}
+          role="group"
+          aria-label="Jump to section"
+        >
+          {sectionChips.map((chip) => {
+            const isActive = activeChipId === chip.id;
+            return (
+              <button
+                key={chip.id}
+                ref={isActive ? activeChipRef : null}
+                type="button"
+                className={isActive ? 'board-section-chip active' : 'board-section-chip'}
+                onClick={() => jumpToSection(chip.start)}
+                title={`Jump to ${chip.label}`}
+              >
+                {chip.label}
+              </button>
+            );
+          })}
+        </div>
       </div>
     )}
 

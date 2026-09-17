@@ -2381,17 +2381,18 @@
   },
   "प्राप्तुम्": {
     "word": "प्राप्तुम्",
-    "base_english": "To attain",
+    "base_english": "To achieve / to obtain / to get (infinitive)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "To attain"
+        "meaning": "To achieve / to obtain / to get (infinitive)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "पाने के लिए"
+        "meaning": "पाने के लिए / प्राप्त करने के लिए (तुमुन्-प्रत्ययः)"
       }
-    }
+    },
+    "grammar": "प्र + आप् + तुमुन्"
   },
   "सः": {
     "word": "सः",
@@ -14514,17 +14515,18 @@
   },
   "वन्दे": {
     "word": "वन्दे",
-    "base_english": "I bow / I salute (vand dhātu, laṭ 1st singular)",
+    "base_english": "I greet / bow down / salute (verb, उत्तमपुरुष एकवचन)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "I bow / I salute (vand dhātu, laṭ 1st singular)"
+        "meaning": "I greet / bow down / salute (verb, उत्तमपुरुष एकवचन)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "मैं वन्दना करता हूँ / प्रणाम करता हूँ (वन्द् धातु, लट् उत्तमपुरुष एकवचन)"
+        "meaning": "प्रणाम करता/ती हूँ (वन्द् धातु, लट्-लकार उत्तमपुरुष एकवचन)"
       }
-    }
+    },
+    "grammar": "वन्द् धातु, लट्-लकारः, उत्तमपुरुषः, एकवचनम्"
   },
   "वन्दावहे": {
     "word": "वन्दावहे",
@@ -40191,17 +40193,18 @@
   },
   "जिज्ञासा": {
     "word": "जिज्ञासा",
-    "base_english": "Inquisitiveness / Desire to know (Hindi)",
+    "base_english": "Curiosity / desire to know",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Inquisitiveness / Desire to know (Hindi)"
+        "meaning": "Curiosity / desire to know"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "जिज्ञासा / जानने की इच्छा"
+        "meaning": "जानने की इच्छा"
       }
-    }
+    },
+    "grammar": "स्त्रीलिङ्गम्, प्रथमा-एकवचनम्"
   },
   "खजाना": {
     "word": "खजाना",
@@ -53157,5 +53160,605 @@
     "english": "Be auspicious (gloss for अस्तु)",
     "grammar": "Compound Hindi gloss",
     "hindi": "हो अथवा कल्याण हो"
+  },
+  "बहुत्र": {
+    "word": "बहुत्र",
+    "base_english": "In many places / everywhere (indeclinable)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In many places / everywhere (indeclinable)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अनेक स्थानों पर (अव्यय)"
+      }
+    },
+    "grammar": "अव्ययपदम्"
+  },
+  "शृणुमः": {
+    "word": "शृणुमः",
+    "base_english": "We listen / hear (verb, उत्तमपुरुष बहुवचन)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "We listen / hear (verb, उत्तमपुरुष बहुवचन)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "हम सुनते हैं (श्रु धातु, लट्-लकार उत्तमपुरुष बहुवचन)"
+      }
+    },
+    "grammar": "श्रु धातु, लट्-लकारः, उत्तमपुरुषः, बहुवचनम्"
+  },
+  "उपन्यासम्": {
+    "word": "उपन्यासम्",
+    "base_english": "Novel (accusative singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Novel (accusative singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "उपन्यास को (द्वितीया एकवचन)"
+      }
+    },
+    "grammar": "पुंलिङ्गम्, द्वितीया-एकवचनम्"
+  },
+  "रम्यम्": {
+    "word": "रम्यम्",
+    "base_english": "Pleasant / beautiful / charming",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Pleasant / beautiful / charming"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "रमणीय / सुन्दर (विशेषण)"
+      }
+    },
+    "grammar": "विशेषणम्, नपुंसकलिंगम्"
+  },
+  "आन्दोलने": {
+    "word": "आन्दोलने",
+    "base_english": "In the movement / campaign (locative singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the movement / campaign (locative singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "आन्दोलन में (सप्तमी एकवचन)"
+      }
+    },
+    "grammar": "नपुंसकलिंगम्, सप्तमी-एकवचनम्"
+  },
+  "वत्सला": {
+    "word": "वत्सला",
+    "base_english": "Affectionate / loving mother",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Affectionate / loving mother"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "स्नेहमयी / ममतामयी"
+      }
+    },
+    "grammar": "स्त्रीलिङ्गम्, प्रथमा-एकवचनम्"
+  },
+  "माहात्म्यम्": {
+    "word": "माहात्म्यम्",
+    "base_english": "Greatness / glory / grandeur",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Greatness / glory / grandeur"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "महिमा / महत्त्व / बड़प्पन"
+      }
+    },
+    "grammar": "नपुंसकलिंगम्, प्रथमा-एकवचनम्"
+  },
+  "मुकुटरूपेण": {
+    "word": "मुकुटरूपेण",
+    "base_english": "In the form of a crown / as a crown",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the form of a crown / as a crown"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मुकुट रूप से (तृतीया एकवचन)"
+      }
+    },
+    "grammar": "तृतीया-विभक्तिः, एकवचनम्"
+  },
+  "पर्वतराजः": {
+    "word": "पर्वतराजः",
+    "base_english": "The king of mountains (the Himalayas)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "The king of mountains (the Himalayas)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पर्वतों का राजा (हिमालय)"
+      }
+    },
+    "grammar": "पुंलिङ्गम्, प्रथमा-एकवचनम्"
+  },
+  "रत्नाकरः": {
+    "word": "रत्नाकरः",
+    "base_english": "Ocean / storehouse of jewels (sea)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Ocean / storehouse of jewels (sea)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सागर / समुद्र (रत्नों का भण्डार)"
+      }
+    },
+    "grammar": "पुंलिङ्गम्, प्रथमा-एकवचनम्"
+  },
+  "तीर्थक्षेत्राणि": {
+    "word": "तीर्थक्षेत्राणि",
+    "base_english": "Pilgrimage sites / sacred holy places",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Pilgrimage sites / sacred holy places"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तीर्थस्थल / पवित्र स्थान (प्रथमा/द्वितीया बहुवचन)"
+      }
+    },
+    "grammar": "नपुंसकलिंगम्, प्रथमा/द्वितीया बहुवचनम्"
+  },
+  "धूलिम्": {
+    "word": "धूलिम्",
+    "base_english": "Holy dust / sacred earth (accusative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Holy dust / sacred earth (accusative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "धूल को / पावन रज को (द्वितीया एकवचन)"
+      }
+    },
+    "grammar": "स्त्रीलिङ्गम्, द्वितीया-एकवचनम्"
+  },
+  "ललाटे": {
+    "word": "ललाटे",
+    "base_english": "On the forehead (locative singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "On the forehead (locative singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "माथे पर / मस्तक पर (सप्तमी एकवचन)"
+      }
+    },
+    "grammar": "नपुंसकलिंगम्, सप्तमी-एकवचनम्"
+  },
+  "सूचकः": {
+    "word": "सूचकः",
+    "base_english": "Indicator / symbol / signifier",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Indicator / symbol / signifier"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सूचित करने वाला / प्रतीक"
+      }
+    },
+    "grammar": "पुंलिङ्गम्, प्रथमा-एकवचनम्"
+  },
+  "केशरवर्णः": {
+    "word": "केशरवर्णः",
+    "base_english": "Saffron colour (symbolizing sacrifice & valor)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Saffron colour (symbolizing sacrifice & valor)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "केसरिया रंग (त्याग और शौर्य का प्रतीक)"
+      }
+    },
+    "grammar": "पुंलिङ्गम्, प्रथमा-एकवचनम्"
+  },
+  "कृषकबान्धवाः": {
+    "word": "कृषकबान्धवाः",
+    "base_english": "Farmer brothers / peasantry",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Farmer brothers / peasantry"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किसान भाई (प्रथमा बहुवचन)"
+      }
+    },
+    "grammar": "पुंलिङ्गम्, प्रथमा-बहुवचनम्"
+  },
+  "स्वेदबिन्दुभिः": {
+    "word": "स्वेदबिन्दुभिः",
+    "base_english": "By drops of sweat (instrumental plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By drops of sweat (instrumental plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पसीने की बूँदों से (तृतीया बहुवचन)"
+      }
+    },
+    "grammar": "पुंलिङ्गम्, तृतीया-बहुवचनम्"
+  },
+  "सिञ्चन्ति": {
+    "word": "सिञ्चन्ति",
+    "base_english": "They irrigate / sprinkle / water (verb)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "They irrigate / sprinkle / water (verb)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सींचते हैं (सिच् धातु, लट्-लकार प्रथमपुरुष बहुवचन)"
+      }
+    },
+    "grammar": "सिच् धातु, लट्-लकारः, प्रथमपुरुषः, बहुवचनम्"
+  },
+  "सस्यश्यामला": {
+    "word": "सस्यश्यामला",
+    "base_english": "Rich and green with bountiful crops",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Rich and green with bountiful crops"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "फसलों से हरी-भरी / शस्य-श्यामला"
+      }
+    },
+    "grammar": "स्त्रीलिङ्गम्, प्रथमा-एकवचनम्"
+  },
+  "आभा": {
+    "word": "आभा",
+    "base_english": "Lustre / radiance / glow",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Lustre / radiance / glow"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "चमक / कान्ति / शोभा"
+      }
+    },
+    "grammar": "स्त्रीलिङ्गम्, प्रथमा-एकवचनम्"
+  },
+  "अणुशास्त्रे": {
+    "word": "अणुशास्त्रे",
+    "base_english": "In atomic / nuclear science (locative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In atomic / nuclear science (locative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "परमाणु विज्ञान में (सप्तमी एकवचन)"
+      }
+    },
+    "grammar": "नपुंसकलिंगम्, सप्तमी-एकवचनम्"
+  },
+  "आयुधशास्त्रे": {
+    "word": "आयुधशास्त्रे",
+    "base_english": "In the science of weapons / defense technology",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the science of weapons / defense technology"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शस्त्रविज्ञान में / रक्षा तकनीक में (सप्तमी एकवचन)"
+      }
+    },
+    "grammar": "नपुंसकलिंगम्, सप्तमी-एकवचनम्"
+  },
+  "धवलम्": {
+    "word": "धवलम्",
+    "base_english": "Spotless white / pure white / bright",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Spotless white / pure white / bright"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "श्वेत / सफेद / निर्मल"
+      }
+    },
+    "grammar": "विशेषणम्, नपुंसकलिंगम्"
+  },
+  "घननीलवर्णस्य": {
+    "word": "घननीलवर्णस्य",
+    "base_english": "Of deep navy-blue colour (genitive)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of deep navy-blue colour (genitive)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "गहरे नीले रंग का (षष्ठी एकवचन)"
+      }
+    },
+    "grammar": "पुंलिङ्गम्, षष्ठी-एकवचनम्"
+  },
+  "अराः": {
+    "word": "अराः",
+    "base_english": "Spokes of a wheel (plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Spokes of a wheel (plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "तीलियाँ (चक्र की तीलियाँ, प्रथमा बहुवचन)"
+      }
+    },
+    "grammar": "पुंलिङ्गम्, प्रथमा-बहुवचनम्"
+  },
+  "कर्तव्यपथे": {
+    "word": "कर्तव्यपथे",
+    "base_english": "On the path of duty (locative)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "On the path of duty (locative)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कर्तव्य मार्ग पर (सप्तमी एकवचन)"
+      }
+    },
+    "grammar": "पुंलिङ्गम्, सप्तमी-एकवचनम्"
+  },
+  "सहमाना": {
+    "word": "सहमाना",
+    "base_english": "Enduring / bearing / tolerating (present participle)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Enduring / bearing / tolerating (present participle)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सहती हुई / सहन करती हुई (शानच्-प्रत्ययः)"
+      }
+    },
+    "grammar": "सह धातु + शानच्, स्त्रीलिङ्गम्"
+  },
+  "श्रान्तेः": {
+    "word": "श्रान्तेः",
+    "base_english": "Of tiredness / fatigue (genitive)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of tiredness / fatigue (genitive)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "थकान का / थकावट का (षष्ठी एकवचन)"
+      }
+    },
+    "grammar": "स्त्रीलिङ्गम्, षष्ठी-एकवचनम्"
+  },
+  "प्रमादस्य": {
+    "word": "प्रमादस्य",
+    "base_english": "Of carelessness / negligence / laziness (genitive)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of carelessness / negligence / laziness (genitive)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "असावधानता / आलस्य / प्रमाद का (षष्ठी एकवचन)"
+      }
+    },
+    "grammar": "पुंलिङ्गम्, षष्ठी-एकवचनम्"
+  },
+  "जेतुम्": {
+    "word": "जेतुम्",
+    "base_english": "To conquer / to win (infinitive)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "To conquer / to win (infinitive)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जीतने के लिए / विजय पाने के लिए (तुमुन्-प्रत्ययः)"
+      }
+    },
+    "grammar": "जि धातु + तुमुन्"
+  },
+  "कुन्देन्दुतुषारहारधवला": {
+    "word": "कुन्देन्दुतुषारहारधवला",
+    "base_english": "White like the jasmine flower, moon, and snow-garland",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "White like the jasmine flower, moon, and snow-garland"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "कुन्द के फूल, चन्द्रमा और बर्फ के हार जैसी श्वेत"
+      }
+    },
+    "grammar": "विशेषणम्, स्त्रीलिङ्गम्"
+  },
+  "शुभ्रवस्त्रावृता": {
+    "word": "शुभ्रवस्त्रावृता",
+    "base_english": "Clad in pure white garments",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Clad in pure white garments"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "श्वेत वस्त्रों से ढकी हुई / सुशोभित"
+      }
+    },
+    "grammar": "स्त्रीलिङ्गम्, प्रथमा-एकवचनम्"
+  },
+  "वीणावरदण्डमण्डितकरा": {
+    "word": "वीणावरदण्डमण्डितकरा",
+    "base_english": "Whose divine hands are adorned with the sacred lute (Veena)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Whose divine hands are adorned with the sacred lute (Veena)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "जिसके हाथ वीणा के श्रेष्ठ दण्ड से सुशोभित हैं"
+      }
+    },
+    "grammar": "स्त्रीलिङ्गम्, प्रथमा-एकवचनम्"
+  },
+  "श्वेतपद्मासना": {
+    "word": "श्वेतपद्मासना",
+    "base_english": "Seated on a pure white lotus",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Seated on a pure white lotus"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "श्वेत कमल के आसन पर विराजमान"
+      }
+    },
+    "grammar": "स्त्रीलिङ्गम्, प्रथमा-एकवचनम्"
+  },
+  "निःशेषजाड्यापहा": {
+    "word": "निःशेषजाड्यापहा",
+    "base_english": "Who completely removes all ignorance, inertia, and dullness",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Who completely removes all ignorance, inertia, and dullness"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मूर्खता, आलस्य और अज्ञान को पूरी तरह दूर करने वाली"
+      }
+    },
+    "grammar": "स्त्रीलिङ्गम्, सम्बोधनम्/प्रथमा"
+  },
+  "बुद्धिप्रदाम्": {
+    "word": "बुद्धिप्रदाम्",
+    "base_english": "Bestower of wisdom and intellect",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Bestower of wisdom and intellect"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "बुद्धि और ज्ञान देने वाली (द्वितीया एकवचन)"
+      }
+    },
+    "grammar": "स्त्रीलिङ्गम्, द्वितीया-एकवचनम्"
+  },
+  "जाड्यान्धकारापहाम्": {
+    "word": "जाड्यान्धकारापहाम्",
+    "base_english": "Dispeller of the darkness of ignorance",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Dispeller of the darkness of ignorance"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अज्ञान रूपी अंधकार को हरने वाली (द्वितीया)"
+      }
+    },
+    "grammar": "स्त्रीलिङ्गम्, द्वितीया-एकवचनम्"
+  },
+  "कामरूपिणि": {
+    "word": "कामरूपिणि",
+    "base_english": "One who takes desired forms / fulfills all noble wishes",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "One who takes desired forms / fulfills all noble wishes"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "इच्छित रूप धारण करने वाली / मनोकामना पूर्ण करने वाली"
+      }
+    },
+    "grammar": "स्त्रीलिङ्गम्, सम्बोधनम्"
+  },
+  "विद्यारम्भम्": {
+    "word": "विद्यारम्भम्",
+    "base_english": "Commencement of learning / beginning studies",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Commencement of learning / beginning studies"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "विद्या की शुरुआत / अध्ययन का आरम्भ"
+      }
+    },
+    "grammar": "पुंलिङ्गम्, द्वितीया-एकवचनम्"
+  },
+  "सिद्धिर्भवतु": {
+    "word": "सिद्धिर्भवतु",
+    "base_english": "May success and mastery attend",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "May success and mastery attend"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "सिद्धि (सफलता) प्राप्त हो (सिद्धिः + भवतु)"
+      }
+    },
+    "grammar": "सिद्धिः (प्रथमा) + भवतु (लोट्-लकारः)"
   }
 }

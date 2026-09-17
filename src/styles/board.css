@@ -515,13 +515,101 @@
 }
 
 /* Section jump chips under wing-nav (matra / Nature phases) */
-.board-sections {
+.board-sections-container {
+  margin: 0.35rem 0 0.5rem;
+  background: #ffffff;
+  border: 1px solid #ded6c8;
+  border-radius: 10px;
+  padding: 0.35rem 0.65rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.board-sections-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.board-sections-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.board-sections-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #8a7550;
+}
+
+.board-active-chip-badge {
+  font-size: 0.74rem;
+  color: #1f2937;
+  background: #fdf5e6;
+  border: 1px solid #fae1b8;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+}
+
+.board-active-chip-badge strong {
+  color: #b3472f;
+  font-size: 0.82rem;
+}
+
+.board-chips-expand-btn {
+  background: #fbf9f4;
+  border: 1px solid #dcd3c4;
+  border-radius: 6px;
+  padding: 0.18rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #5c4f3a;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.board-chips-expand-btn:hover {
+  background: #f0e6d4;
+  color: #273b35;
+  border-color: #b3472f;
+}
+
+/* Default Single Row Carousel: 100% Prevents vertical scroll blowout! */
+.board-sections--carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 0.3rem;
+  padding: 0.15rem 0.1rem 0.35rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.board-sections--carousel::-webkit-scrollbar {
+  height: 4px;
+}
+
+.board-sections--carousel::-webkit-scrollbar-thumb {
+  background: #d4c7b2;
+  border-radius: 999px;
+}
+
+/* Expanded Grid Mode when user explicitly expands */
+.board-sections--expanded {
   display: flex;
   flex-wrap: wrap;
-  gap: .28rem .32rem;
-  margin: .4rem 0 .1rem;
-  padding: 0 .05rem .15rem;
+  gap: 0.28rem 0.32rem;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 0.35rem 0.1rem;
 }
+
 .board-section-chip {
   background: #fffdf8;
   border: 1px solid #d8d0c3;
@@ -532,18 +620,26 @@
   font: 700 .78rem 'Noto Sans Devanagari', Georgia, serif;
   line-height: 1.2;
   padding: .28rem .55rem;
+  white-space: nowrap;
+  flex-shrink: 0;
   -webkit-tap-highlight-color: transparent;
+  transition: all 0.15s ease;
 }
+
 .board-section-chip:hover {
   border-color: #c4b8a8;
   color: #273b35;
+  background: #fff;
 }
+
 .board-section-chip.active {
-  border-color: #b3472f;
-  border-bottom-color: #f1c75b;
-  color: #9a3423;
-  box-shadow: inset 0 -2px 0 #f1c75b;
+  background: #273b35;
+  border-color: #273b35;
+  color: #f1c75b;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(39, 59, 53, 0.25);
 }
+
 @media (max-width: 600px) {
   .board-section-chip { font-size: .72rem; padding: .26rem .48rem; }
 }

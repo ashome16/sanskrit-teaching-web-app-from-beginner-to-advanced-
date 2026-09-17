@@ -511,7 +511,10 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               )}
 
               {sentence.meaning && (
-                <p className="textbook-sentence-meaning">{sentence.meaning}</p>
+                <div className="textbook-sentence-meaning-box">
+                  <span className="textbook-meaning-tag">अनुवादः · Meaning</span>
+                  <p className="textbook-sentence-meaning">{sentence.meaning}</p>
+                </div>
               )}
               {sentence.paragraphTranslation && (
                 <div className="textbook-paragraph-translation">

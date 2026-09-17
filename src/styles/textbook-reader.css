@@ -2,17 +2,18 @@
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-  padding: 1.75rem;
+  padding: 1.25rem 1.4rem;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  min-height: 0;
 }
 
 .textbook-lesson-select-row {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.65rem;
 }
 
 .textbook-lesson-select-label {
@@ -25,12 +26,12 @@
 
 .textbook-lesson-select {
   flex: 1;
-  padding: 0.5rem 0.7rem;
+  padding: 0.45rem 0.65rem;
   border-radius: 8px;
   border: 2px solid #5c4f3a;
   background: #f0e6d4;
   color: #1f1a14;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 600;
 }
 
@@ -38,26 +39,26 @@
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid #eee;
-  padding-bottom: 0.75rem;
-  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.85rem;
 }
 
 .textbook-reader-header h2 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: #2b2118;
 }
 
 .textbook-reader-source {
-  margin: 0.25rem 0 0;
-  font-size: 0.8rem;
+  margin: 0.2rem 0 0;
+  font-size: 0.78rem;
   color: #a08a5f;
 }
 
 .textbook-reader-progress {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: #888;
-  margin-top: 0.35rem;
+  margin-top: 0.25rem;
 }
 
 .textbook-sentence-block {
@@ -65,9 +66,9 @@
 }
 
 .textbook-sentence-sanskrit {
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  margin: 0 0 0.75rem;
+  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+  line-height: 1.55;
+  margin: 0 0 0.65rem;
   color: #1f1a14;
 }
 
@@ -216,10 +217,30 @@
   font-style: italic;
 }
 
+.textbook-sentence-meaning-box {
+  background: #fdfbf7;
+  border: 1px solid #e8dfcf;
+  border-left: 4px solid #b3472f;
+  border-radius: 8px;
+  padding: 0.65rem 0.95rem;
+  margin: 0.6rem 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+.textbook-meaning-tag {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #b3472f;
+  margin-bottom: 0.25rem;
+}
+
 .textbook-sentence-meaning {
-  font-size: 1.05rem;
-  color: #5b5348;
-  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: #2b2118;
   margin: 0;
 }
 
