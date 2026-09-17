@@ -923,3 +923,233 @@
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* --------------------------------------------------------------------------
+   The Architecture of Absolute Zero Styles
+   -------------------------------------------------------------------------- */
+.zero-essay-container {
+  background: #ffffff;
+  border: 1px solid #ebdccb;
+  border-radius: 18px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(120, 53, 15, 0.06);
+  margin-bottom: 3rem;
+}
+
+.zero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+}
+
+.zero-essay-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+}
+
+.zero-essay-subtitle {
+  font-size: 1.1rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Roman vs Decimal Comparison Widget */
+.roman-compare-card {
+  background: #fcf9f4;
+  border: 1.5px solid #fae8d4;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin: 1.75rem 0;
+}
+
+.roman-compare-header {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.roman-compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 700px) {
+  .roman-compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.roman-box {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.roman-box-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.roman-output-val {
+  font-size: 1.4rem;
+  font-weight: 900;
+  font-family: monospace;
+  color: #991b1b;
+  word-break: break-all;
+  margin-bottom: 0.35rem;
+}
+
+.decimal-output-val {
+  font-size: 1.4rem;
+  font-weight: 900;
+  font-family: monospace;
+  color: #15803d;
+  margin-bottom: 0.35rem;
+}
+
+.roman-note {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+/* Algebra Bridge Widget */
+.algebra-bridge-box {
+  background: linear-gradient(135deg, #fdfbf7 0%, #fffbeb 100%);
+  border: 1.5px solid #fde68a;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.algebra-bridge-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #92400e;
+  margin-bottom: 0.5rem;
+}
+
+.algebra-bridge-desc {
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+
+.algebra-bridge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 700px) {
+  .algebra-bridge-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.algebra-col-card {
+  background: #ffffff;
+  border: 1px solid #ebdccb;
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.algebra-col-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 0.4rem;
+}
+
+.algebra-math-formula {
+  font-family: 'SF Pro Display', -apple-system, monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #b45309;
+  margin-bottom: 0.4rem;
+}
+
+.algebra-coeff-chip {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #065f46;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  margin-top: 0.4rem;
+}
+
+/* Global Journey Timeline */
+.timeline-wrap {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 2rem;
+  border-left: 3px solid #fde68a;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.45rem;
+  top: 0.25rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #d97706;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 2px #fde68a;
+}
+
+.timeline-era {
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #b45309;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-who {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.35rem;
+}
+
+.timeline-desc {
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.6;
+}
+

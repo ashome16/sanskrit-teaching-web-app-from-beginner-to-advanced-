@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
   VEDIC_INTRO,
+  VEDIC_ZERO_ESSAY,
   VEDIC_SUTRAS,
   VEDIC_SUBSUTRAS,
   VEDIC_QUIZ_QUESTIONS,
@@ -9,7 +10,7 @@ import {
 import { playPronunciation } from '../utils/pronunciation';
 import '../styles/vedic-maths.css';
 
-type VedicTab = 'solvers' | 'sutras' | 'quiz' | 'essay';
+type VedicTab = 'solvers' | 'sutras' | 'quiz' | 'zero' | 'essay';
 type SolverKey = 'ekadhikena' | 'nikhilam-sub' | 'nikhilam-mul' | 'urdhva' | 'ekanyunena' | 'antya' | 'beejank';
 
 export interface VedicMathsProps {
@@ -35,6 +36,11 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
   const [beejankA, setBeejankA] = useState<number>(23);
   const [beejankB, setBeejankB] = useState<number>(45);
 
+  // Absolute Zero & Place Value States
+  const [romanInputNum, setRomanInputNum] = useState<number>(3888);
+  const [algebraConstA, setAlgebraConstA] = useState<number>(2);
+  const [algebraConstB, setAlgebraConstB] = useState<number>(3);
+
   // Sutra Directory States
   const [sutraSearch, setSutraSearch] = useState('');
   const [sutraFilter, setSutraFilter] = useState<string>('all');
@@ -45,6 +51,35 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
   const [quizScore, setQuizScore] = useState(0);
   const [showExplanation, setShowExplanation] = useState(false);
   const [quizFinished, setQuizFinished] = useState(false);
+
+  // Roman Numeral Helper
+  const getRoman = (num: number): string => {
+    if (num <= 0 || num > 3999) return 'Out of range (1–3999)';
+    const lookup: [number, string][] = [
+      [1000, 'M'],
+      [900, 'CM'],
+      [500, 'D'],
+      [400, 'CD'],
+      [100, 'C'],
+      [90, 'XC'],
+      [50, 'L'],
+      [40, 'XL'],
+      [10, 'X'],
+      [9, 'IX'],
+      [5, 'V'],
+      [4, 'IV'],
+      [1, 'I']
+    ];
+    let res = '';
+    let n = num;
+    for (const [v, sym] of lookup) {
+      while (n >= v) {
+        res += sym;
+        n -= v;
+      }
+    }
+    return res;
+  };
 
   // Filtered Sutras
   const filteredSutras = VEDIC_SUTRAS.filter((sutra) => {
@@ -71,7 +106,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
 
   // Quiz Handlers
   const handleSelectOption = (opt: string) => {
-    if (selectedOption !== null) return; // Prevent multiple answers
+    if (selectedOption !== null) return;
     setSelectedOption(opt);
     setShowExplanation(true);
     const currentQ = VEDIC_QUIZ_QUESTIONS[quizIndex];
@@ -152,7 +187,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
           <span className="vedic-hero-title-sa">वैदिक-गणितम्</span> · Vedic Mathematics
         </h1>
         <p className="vedic-hero-subtitle">
-          The Magic of Numbers: An ultra-efficient system of mental calculation that allows people to solve arithmetic and algebraic problems 10 to 15 times faster than conventional methods.
+          The Magic of Numbers &amp; The Architecture of Absolute Zero: An ultra-efficient system of mental calculation that allows people to solve arithmetic and algebraic problems 10 to 15 times faster than conventional methods.
         </p>
 
         {/* Tab Navigation */}
@@ -163,7 +198,15 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
             onClick={() => setActiveTab('solvers')}
           >
             <span>🧮</span>
-            <span>Interactive Solvers &amp; Visualizers</span>
+            <span>Interactive Solvers</span>
+          </button>
+          <button
+            type="button"
+            className={`vedic-tab-btn${activeTab === 'zero' ? ' active' : ''}`}
+            onClick={() => setActiveTab('zero')}
+          >
+            <span>🪐</span>
+            <span>Architecture of Absolute Zero</span>
           </button>
           <button
             type="button"
@@ -179,7 +222,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
             onClick={() => setActiveTab('quiz')}
           >
             <span>⚡</span>
-            <span>Speed Math Challenge (परीक्षा)</span>
+            <span>Speed Math Challenge</span>
           </button>
           <button
             type="button"
@@ -187,7 +230,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
             onClick={() => setActiveTab('essay')}
           >
             <span>📖</span>
-            <span>The Magic of Numbers (Overview)</span>
+            <span>The Magic of Numbers</span>
           </button>
         </div>
       </section>
@@ -482,7 +525,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
                 const base = 100;
                 const devA = nikMulA - base;
                 const devB = nikMulB - base;
-                const left = nikMulA + devB; // or nikMulB + devA
+                const left = nikMulA + devB;
                 const right = devA * devB;
                 const result = left * 100 + right;
 
@@ -979,7 +1022,212 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
         )}
 
         {/* ==================================================================
-            TAB 2: 16 SUTRAS & 13 SUB-SUTRAS DIRECTORY
+            TAB 2: THE ARCHITECTURE OF ABSOLUTE ZERO & PLACE VALUE
+            ================================================================== */}
+        {activeTab === 'zero' && (
+          <div className="zero-essay-container">
+            <div className="zero-badge-pill">
+              <span>॥ शून्यं सर्वप्रपञ्चस्य मूलम् ॥</span>
+              <span>·</span>
+              <span>The Architecture of Absolute Zero</span>
+            </div>
+
+            <h1 className="zero-essay-title">{VEDIC_ZERO_ESSAY.title}</h1>
+            <p className="zero-essay-subtitle">{VEDIC_ZERO_ESSAY.subtitle}</p>
+
+            {VEDIC_ZERO_ESSAY.intro.map((p, idx) => (
+              <p key={idx} className="vedic-essay-p">{p}</p>
+            ))}
+
+            {/* Section 1: The Birth of the Grid */}
+            <h2 className="vedic-essay-h2">{VEDIC_ZERO_ESSAY.birthGrid.title}</h2>
+            {VEDIC_ZERO_ESSAY.birthGrid.paragraphs.map((p, idx) => (
+              <p key={idx} className="vedic-essay-p">{p}</p>
+            ))}
+
+            {/* Interactive Roman vs Decimal Place-Value Tester */}
+            <div className="roman-compare-card">
+              <div className="roman-compare-header">
+                <span>🏛️ Interactive Grid Test: Roman Tally vs. Indian Decimal System</span>
+              </div>
+              <p style={{ fontSize: '0.9rem', color: '#4b5563', marginBottom: '1rem' }}>
+                Test any number to see why Roman numerals required immense paper real estate, while the Indian positional system represents numbers dynamically:
+              </p>
+
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center', marginBottom: '1rem' }}>
+                <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#6b7280' }}>Presets:</span>
+                {[333, 1984, 2026, 3888].map((val) => (
+                  <button
+                    key={val}
+                    type="button"
+                    className={`solver-preset-chip${romanInputNum === val ? ' active' : ''}`}
+                    onClick={() => setRomanInputNum(val)}
+                  >
+                    {val}
+                  </button>
+                ))}
+                <input
+                  type="number"
+                  min={1}
+                  max={3999}
+                  value={romanInputNum}
+                  onChange={(e) => setRomanInputNum(Math.min(3999, Math.max(1, parseInt(e.target.value, 10) || 1)))}
+                  style={{
+                    padding: '0.3rem 0.6rem',
+                    fontSize: '0.95rem',
+                    borderRadius: '6px',
+                    border: '1.5px solid #d1d5db',
+                    width: '100px',
+                    marginLeft: '0.5rem'
+                  }}
+                />
+              </div>
+
+              <div className="roman-compare-grid">
+                <div className="roman-box">
+                  <div className="roman-box-label">Roman Numeral (Fixed Tally System)</div>
+                  <div className="roman-output-val">{getRoman(romanInputNum)}</div>
+                  <div className="roman-note">
+                    Length: <strong>{getRoman(romanInputNum).length} static characters</strong> with no positional multiplication scaling.
+                  </div>
+                </div>
+
+                <div className="roman-box" style={{ background: '#f0fdf4', borderColor: '#bbf7d0' }}>
+                  <div className="roman-box-label" style={{ color: '#166534' }}>Indian Decimal Place-Value System</div>
+                  <div className="decimal-output-val">{romanInputNum.toLocaleString()}</div>
+                  <div className="roman-note" style={{ color: '#166534' }}>
+                    Length: <strong>{romanInputNum.toString().length} dynamic digits</strong> ={' '}
+                    {romanInputNum
+                      .toString()
+                      .split('')
+                      .map((d, i, arr) => `${d} × 10^${arr.length - 1 - i}`)
+                      .join(' + ')}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Section 2: Fluid Space & Visual Flow */}
+            <h2 className="vedic-essay-h2">{VEDIC_ZERO_ESSAY.fluidSpace.title}</h2>
+            {VEDIC_ZERO_ESSAY.fluidSpace.paragraphs.map((p, idx) => (
+              <p key={idx} className="vedic-essay-p">{p}</p>
+            ))}
+
+            <h2 className="vedic-essay-h2">{VEDIC_ZERO_ESSAY.visualFlow.title}</h2>
+            {VEDIC_ZERO_ESSAY.visualFlow.paragraphs.map((p, idx) => (
+              <p key={idx} className="vedic-essay-p">{p}</p>
+            ))}
+
+            {/* Section 3: The Universal Engine of Algebra (Base 10 vs Base x) */}
+            <h2 className="vedic-essay-h2">{VEDIC_ZERO_ESSAY.algebraEngine.title}</h2>
+            {VEDIC_ZERO_ESSAY.algebraEngine.paragraphs.map((p, idx) => (
+              <p key={idx} className="vedic-essay-p">{p}</p>
+            ))}
+
+            {/* Interactive Algebra Bridge */}
+            <div className="algebra-bridge-box">
+              <h3 className="algebra-bridge-title">
+                📐 Interactive Proof: Arithmetic is Base 10, Algebra is Base x
+              </h3>
+              <p className="algebra-bridge-desc">
+                Notice how the Vedic Sutra <em>Ūrdhva-Tiryagbhyām</em> generates the exact identical coefficient array whether the base is concrete 10 or unknown variable x:
+              </p>
+
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
+                <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#6b7280' }}>Try Coefficients:</span>
+                {[
+                  { a: 2, b: 3 },
+                  { a: 3, b: 4 },
+                  { a: 1, b: 5 },
+                  { a: 4, b: 5 }
+                ].map((item, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    className={`solver-preset-chip${algebraConstA === item.a && algebraConstB === item.b ? ' active' : ''}`}
+                    onClick={() => {
+                      setAlgebraConstA(item.a);
+                      setAlgebraConstB(item.b);
+                    }}
+                  >
+                    (x + {item.a})(x + {item.b})
+                  </button>
+                ))}
+              </div>
+
+              {(() => {
+                const a = algebraConstA;
+                const b = algebraConstB;
+                const sum = a + b;
+                const prod = a * b;
+                const arithNum1 = 10 + a;
+                const arithNum2 = 10 + b;
+                const arithAns = arithNum1 * arithNum2;
+
+                return (
+                  <div className="algebra-bridge-grid">
+                    <div className="algebra-col-card">
+                      <h4 className="algebra-col-title">Arithmetic (Base 10)</h4>
+                      <div className="algebra-math-formula">
+                        {arithNum1} × {arithNum2} = (10 + {a})(10 + {b})
+                      </div>
+                      <div style={{ fontSize: '0.92rem', color: '#374151', margin: '0.4rem 0' }}>
+                        = 1·(10²) + {sum}·(10) + {prod}
+                      </div>
+                      <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#15803d' }}>
+                        = {arithAns}
+                      </div>
+                      <div className="algebra-coeff-chip">
+                        Coefficients: [1, {sum}, {prod}]
+                      </div>
+                    </div>
+
+                    <div className="algebra-col-card">
+                      <h4 className="algebra-col-title">Algebra (Base x)</h4>
+                      <div className="algebra-math-formula">
+                        (x + {a})(x + {b})
+                      </div>
+                      <div style={{ fontSize: '0.92rem', color: '#374151', margin: '0.4rem 0' }}>
+                        = 1·(x²) + {sum}·(x) + {prod}
+                      </div>
+                      <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#b45309' }}>
+                        = x² + {sum}x + {prod}
+                      </div>
+                      <div className="algebra-coeff-chip" style={{ background: '#fef3c7', color: '#92400e' }}>
+                        Coefficients: [1, {sum}, {prod}]
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
+
+              <p style={{ fontSize: '0.92rem', color: '#4b5563', fontStyle: 'italic', margin: 0 }}>
+                {VEDIC_ZERO_ESSAY.algebraEngine.summary}
+              </p>
+            </div>
+
+            {/* Section 4: Global Journey */}
+            <h2 className="vedic-essay-h2">{VEDIC_ZERO_ESSAY.globalJourney.title}</h2>
+            <div className="timeline-wrap">
+              {VEDIC_ZERO_ESSAY.globalJourney.timeline.map((item, idx) => (
+                <div key={idx} className="timeline-item">
+                  <div className="timeline-era">{item.era}</div>
+                  <div className="timeline-who">{item.who}</div>
+                  <div className="timeline-desc">{item.description}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Section 5: Conclusion */}
+            <h2 className="vedic-essay-h2">{VEDIC_ZERO_ESSAY.conclusion.title}</h2>
+            {VEDIC_ZERO_ESSAY.conclusion.paragraphs.map((p, idx) => (
+              <p key={idx} className="vedic-essay-p">{p}</p>
+            ))}
+          </div>
+        )}
+
+        {/* ==================================================================
+            TAB 3: 16 SUTRAS & 13 SUB-SUTRAS DIRECTORY
             ================================================================== */}
         {activeTab === 'sutras' && (
           <div>
@@ -1041,7 +1289,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
 
                     <h3 className="sutra-card-sanskrit">{sutra.sanskrit}</h3>
                     <p className="sutra-card-iast">{sutra.transliteration}</p>
-                    <p className="sutra-card-meaning">"{sutra.meaning}"</p>
+                    <p className="sutra-card-meaning">&ldquo;{sutra.meaning}&rdquo;</p>
                     <p className="sutra-card-desc">{sutra.description}</p>
                   </div>
 
@@ -1096,7 +1344,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
         )}
 
         {/* ==================================================================
-            TAB 3: SPEED MATH QUIZ
+            TAB 4: SPEED MATH QUIZ
             ================================================================== */}
         {activeTab === 'quiz' && (
           <div className="quiz-container">
@@ -1207,7 +1455,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
         )}
 
         {/* ==================================================================
-            TAB 4: MAGIC OF NUMBERS ESSAY & CONTEXT
+            TAB 5: MAGIC OF NUMBERS ESSAY & CONTEXT
             ================================================================== */}
         {activeTab === 'essay' && (
           <div className="vedic-essay-wrap">
