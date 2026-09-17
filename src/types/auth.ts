@@ -11,6 +11,19 @@ export type SanskritGrade =
 
 export type PlanStatus = 'trial' | 'active' | 'expired';
 
+export type PaymentMethod = 'upi' | 'apple_pay' | 'gpay' | 'card';
+
+export interface PaymentTransaction {
+  id: string;
+  amountInr: number;
+  paymentMethod: PaymentMethod;
+  upiId?: string;
+  timestamp: number;
+  status: 'success' | 'failed' | 'pending';
+  planName: string;
+  billingPeriod: string;
+}
+
 export interface UserProfile {
   id: string;
   username: string;
@@ -24,6 +37,10 @@ export interface UserProfile {
   trialEndsAt: number;
   planStatus: PlanStatus;
   monthlyPriceInr: number;
+  subscriptionRenewsAt?: number;
+  activeSubscriptionSince?: number;
+  lastPaymentMethod?: PaymentMethod;
+  transactions?: PaymentTransaction[];
 }
 
 export interface UserAccount {

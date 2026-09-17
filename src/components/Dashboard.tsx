@@ -7,6 +7,7 @@ import Grammar from './Grammar';
 import VedicMaths from './VedicMaths';
 import AuthModal from './AuthModal';
 import UserProfileModal from './UserProfileModal';
+import PaymentModal from './PaymentModal';
 import { useAuthStore } from '../store/authStore';
 import { LESSONS as STATIC_LESSONS, fetchLatestChapters } from '../data/chapters';
 import { playPronunciation } from '../utils/pronunciation';
@@ -295,6 +296,9 @@ const Dashboard: React.FC = () => {
               {currentUser.planStatus === 'trial' && (
                 <span className="nav-trial-pill">{trialDaysLeft}d trial</span>
               )}
+              {currentUser.planStatus === 'active' && (
+                <span className="nav-trial-pill nav-active-pill" title="Subscription Active">⭐ Active</span>
+              )}
             </button>
           ) : (
             <button
@@ -354,6 +358,7 @@ const Dashboard: React.FC = () => {
 
       <AuthModal />
       <UserProfileModal />
+      <PaymentModal />
     </div>
   );
 };

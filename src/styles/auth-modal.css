@@ -572,3 +572,9 @@
   border-radius: 999px;
   text-transform: uppercase;
 }
+
+.nav-trial-pill.nav-active-pill {
+  background: #dcfce7;
+  border-color: #22c55e;
+  color: #15803d;
+}

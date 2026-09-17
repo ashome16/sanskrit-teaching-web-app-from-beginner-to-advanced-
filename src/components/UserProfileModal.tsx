@@ -19,6 +19,7 @@ const UserProfileModal: React.FC = () => {
     currentUser,
     isProfileModalOpen,
     closeProfileModal,
+    openPaymentModal,
     logout,
     updateProfile,
     deleteProfile,
@@ -134,20 +135,109 @@ const UserProfileModal: React.FC = () => {
             <div className="profile-membership-card">
               <div className="profile-membership-header">
                 <h3 className="profile-membership-title">
-                  {currentUser.planStatus === 'trial' ? '🎉 2 Weeks Free Access Active' : 'Membership Status'}
+                  {currentUser.planStatus === 'active'
+                    ? '🌟 Active Subscription'
+                    : currentUser.planStatus === 'trial'
+                    ? '🎉 2 Weeks Free Access Active'
+                    : '⚠️ Subscription Expired'}
                 </h3>
-                <span className="profile-membership-tag">
-                  {currentUser.planStatus === 'trial' ? `${trialDaysLeft} Days Remaining` : 'Active Plan'}
+                <span
+                  className="profile-membership-tag"
+                  style={{
+                    background:
+                      currentUser.planStatus === 'active'
+                        ? '#dcfce7'
+                        : currentUser.planStatus === 'trial'
+                        ? '#fef3c7'
+                        : '#fee2e2',
+                    color:
+                      currentUser.planStatus === 'active'
+                        ? '#15803d'
+                        : currentUser.planStatus === 'trial'
+                        ? '#92400e'
+                        : '#b91c1c',
+                  }}
+                >
+                  {currentUser.planStatus === 'active'
+                    ? 'Paid Active'
+                    : currentUser.planStatus === 'trial'
+                    ? `${trialDaysLeft} Days Left`
+                    : 'Expired'}
                 </span>
               </div>
               <p className="profile-membership-desc">
-                {currentUser.planStatus === 'trial'
+                {currentUser.planStatus === 'active'
+                  ? `Your all-access monthly plan is active. Renews on ${
+                      currentUser.subscriptionRenewsAt
+                        ? new Date(currentUser.subscriptionRenewsAt).toLocaleDateString('en-IN', {
+                            dateStyle: 'medium',
+                          })
+                        : 'next month'
+                    }.`
+                  : currentUser.planStatus === 'trial'
                   ? `Your 14-day free access is active. Enjoy unlimited access to all 15 Deepakam chapters, interactive audio exercises, and Jodo puzzles.`
-                  : `Your full access membership is active.`}
+                  : `Your trial has expired. Subscribe to regain full access to all 15 chapters and interactive audio features.`}
               </p>
               <div className="profile-membership-price">
-                Plan: ₹200 / month (billed monthly after 2 weeks free trial)
+                Plan: ₹200 / month · Supported via <strong>UPI, Apple Pay &amp; Google Pay</strong>
               </div>
+
+              <div style={{ marginTop: '0.9rem' }}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    closeProfileModal();
+                    openPaymentModal();
+                  }}
+                  style={{
+                    background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: '8px',
+                    padding: '0.55rem 1rem',
+                    fontSize: '0.85rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    boxShadow: '0 2px 8px rgba(180, 83, 9, 0.25)',
+                  }}
+                >
+                  <span>💳</span>
+                  <span>
+                    {currentUser.planStatus === 'active'
+                      ? 'Renew / Pay with UPI · Apple Pay · GPay'
+                      : 'Subscribe Now for ₹200 / mo (UPI, Apple Pay, GPay)'}
+                  </span>
+                </button>
+              </div>
+
+              {/* Past Transactions list if available */}
+              {currentUser.transactions && currentUser.transactions.length > 0 && (
+                <div style={{ marginTop: '1rem', borderTop: '1px dashed #d97706', paddingTop: '0.75rem' }}>
+                  <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#92400e', marginBottom: '0.35rem' }}>
+                    Recent Payments:
+                  </div>
+                  {currentUser.transactions.slice(0, 3).map((txn) => (
+                    <div
+                      key={txn.id}
+                      style={{
+                        fontSize: '0.75rem',
+                        color: '#4b5563',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        padding: '0.2rem 0',
+                      }}
+                    >
+                      <span>
+                        ₹{txn.amountInr} via {txn.paymentMethod.toUpperCase()} ({new Date(txn.timestamp).toLocaleDateString()})
+                      </span>
+                      <span style={{ color: '#15803d', fontWeight: 700 }}>✓ PAID ({txn.id})</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Actions */}

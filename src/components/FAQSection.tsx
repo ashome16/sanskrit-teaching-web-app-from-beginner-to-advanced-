@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { FAQItem } from '../types/auth';
+import { useAuthStore } from '../store/authStore';
 import '../styles/faq-section.css';
 
 const FAQ_DATA: FAQItem[] = [
@@ -15,7 +16,14 @@ const FAQ_DATA: FAQItem[] = [
     category: 'trial_pricing',
     question: 'What is the subscription plan after the 2-week trial?',
     answer:
-      'After your 14-day free access period, our plan is just ₹200 / month. This gives you continued unlimited access to all chapters, ongoing curriculum updates, interactive exercises, and your personalized learning streak and progress tracking.',
+      'After your 14-day free access period, our plan is just ₹200 / month. This gives you continued unlimited access to all chapters, ongoing curriculum updates, interactive exercises, Vedic Mathematics (वैदिक-गणितम्), and your personalized learning streak and progress tracking.',
+  },
+  {
+    id: 'faq-payment-methods',
+    category: 'trial_pricing',
+    question: 'What payment methods are supported for the ₹200/month plan?',
+    answer:
+      'We accept all major convenient payment methods: UPI (instant QR scan or VPA payment with Google Pay, PhonePe, Paytm, BHIM, Cred, and any bank UPI app), Apple Pay ( Pay on iOS and macOS Safari), and Google Pay (GPay). Payments are activated immediately upon confirmation with instant digital invoice receipts.',
   },
   {
     id: 'faq-account',
@@ -29,7 +37,7 @@ const FAQ_DATA: FAQItem[] = [
     category: 'curriculum',
     question: 'What curriculum and grades are covered?',
     answer:
-      'We currently feature the complete NCERT Class 7 Sanskrit curriculum (दीपकम-७) across 15 chapters and appendices, along with fundamental Varṇamālā phonetics, बारहखड़ी audio matrix, and comprehensive Vyākaraṇa (Shabdarupani noun declensions & Dhatarupani verb conjugations). Class 6 and Class 8 materials are actively in development.',
+      'We currently feature the complete NCERT Class 7 Sanskrit curriculum (दीपकम-७) across 15 chapters and appendices, along with fundamental Varṇamālā phonetics, बारहखड़ी audio matrix, comprehensive Vyākaraṇa (Shabdarupani noun declensions & Dhatarupani verb conjugations), and Vedic Mathematics (वैदिक-गणितम्). Class 6 and Class 8 materials are actively in development.',
   },
   {
     id: 'faq-audio',
@@ -46,6 +54,7 @@ interface FAQSectionProps {
 
 const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
   const [openItem, setOpenItem] = useState<string | null>('faq-trial');
+  const { currentUser, openPaymentModal } = useAuthStore();
 
   const toggleItem = (id: string) => {
     setOpenItem((prev) => (prev === id ? null : id));
@@ -74,11 +83,20 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
             <span className="faq-pricing-rate">₹200 <small>/ month</small></span>
             <span className="faq-pricing-rate-sub">billed monthly after 14-day free access</span>
           </div>
-          {onOpenRegister && (
-            <button type="button" className="faq-pricing-cta" onClick={onOpenRegister}>
-              Create Free Account & Start 2-Week Trial ➔
+          <div className="faq-pricing-actions">
+            {!currentUser && onOpenRegister && (
+              <button type="button" className="faq-pricing-cta" onClick={onOpenRegister}>
+                Create Free Account & Start 2-Week Trial ➔
+              </button>
+            )}
+            <button
+              type="button"
+              className="faq-pricing-pay-cta"
+              onClick={openPaymentModal}
+            >
+              💳 Subscribe / Pay ₹200 via UPI · Apple Pay · GPay
             </button>
-          )}
+          </div>
         </div>
 
         {/* FAQ Accordion */}

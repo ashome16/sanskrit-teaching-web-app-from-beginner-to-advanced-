@@ -5,6 +5,8 @@ import type {
   RegisterFormData,
   UpdateProfileFormData,
   PlanStatus,
+  PaymentMethod,
+  PaymentTransaction,
 } from '../types/auth';
 import type { UserProgress } from '../types';
 import { useAppStore } from './index';
@@ -33,6 +35,7 @@ interface AuthState {
   accounts: Record<string, UserAccount>;
   isAuthModalOpen: boolean;
   isProfileModalOpen: boolean;
+  isPaymentModalOpen: boolean;
   authModalInitialTab: 'login' | 'register';
   authError: string | null;
 
@@ -41,6 +44,8 @@ interface AuthState {
   closeAuthModal: () => void;
   openProfileModal: () => void;
   closeProfileModal: () => void;
+  openPaymentModal: () => void;
+  closePaymentModal: () => void;
   clearAuthError: () => void;
 
   register: (data: RegisterFormData) => { success: boolean; error?: string };
@@ -49,6 +54,7 @@ interface AuthState {
   updateProfile: (data: UpdateProfileFormData) => { success: boolean; error?: string };
   deleteProfile: (confirmationPassword: string) => { success: boolean; error?: string };
   getTrialDaysRemaining: () => number;
+  processPayment: (method: PaymentMethod, upiId?: string) => Promise<{ success: boolean; transaction?: PaymentTransaction; error?: string }>;
 }
 
 const loadStoredAccounts = (): Record<string, UserAccount> => {
@@ -67,7 +73,12 @@ const loadStoredSession = (accounts: Record<string, UserAccount>): UserProfile |
       const account = accounts[userId];
       // compute latest plan status
       const now = Date.now();
-      const status: PlanStatus = now <= account.profile.trialEndsAt ? 'trial' : 'expired';
+      let status: PlanStatus = 'expired';
+      if (account.profile.subscriptionRenewsAt && account.profile.subscriptionRenewsAt > now) {
+        status = 'active';
+      } else if (now <= account.profile.trialEndsAt) {
+        status = 'trial';
+      }
       return {
         ...account.profile,
         planStatus: status,
@@ -108,6 +119,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
     accounts: initialAccounts,
     isAuthModalOpen: false,
     isProfileModalOpen: false,
+    isPaymentModalOpen: false,
     authModalInitialTab: 'login',
     authError: null,
 
@@ -118,6 +130,9 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
     openProfileModal: () => set({ isProfileModalOpen: true }),
     closeProfileModal: () => set({ isProfileModalOpen: false }),
+
+    openPaymentModal: () => set({ isPaymentModalOpen: true }),
+    closePaymentModal: () => set({ isPaymentModalOpen: false }),
 
     clearAuthError: () => set({ authError: null }),
 
@@ -354,6 +369,59 @@ export const useAuthStore = create<AuthState>((set, get) => {
       const msLeft = currentUser.trialEndsAt - Date.now();
       if (msLeft <= 0) return 0;
       return Math.ceil(msLeft / (24 * 60 * 60 * 1000));
+    },
+
+    processPayment: async (method: PaymentMethod, upiId?: string) => {
+      const { currentUser, accounts } = get();
+      if (!currentUser) {
+        return { success: false, error: 'Please sign in or register to complete payment.' };
+      }
+      const currentAccount = accounts[currentUser.id];
+      if (!currentAccount) {
+        return { success: false, error: 'User account not found.' };
+      }
+
+      // Simulate gateway latency
+      await new Promise((resolve) => setTimeout(resolve, 750));
+
+      const now = Date.now();
+      const txnId = 'TXN_' + now.toString().slice(-7) + '_' + Math.random().toString(36).substring(2, 6).toUpperCase();
+      const newTransaction: PaymentTransaction = {
+        id: txnId,
+        amountInr: MONTHLY_PRICE_INR,
+        paymentMethod: method,
+        upiId: upiId || (method === 'upi' ? 'sanskritlearning@upi' : undefined),
+        timestamp: now,
+        status: 'success',
+        planName: 'Monthly Unlimited Access Pass',
+        billingPeriod: '30 Days',
+      };
+
+      const updatedProfile: UserProfile = {
+        ...currentUser,
+        planStatus: 'active',
+        activeSubscriptionSince: currentUser.activeSubscriptionSince || now,
+        subscriptionRenewsAt: now + 30 * 24 * 60 * 60 * 1000,
+        lastPaymentMethod: method,
+        transactions: [newTransaction, ...(currentUser.transactions || [])],
+      };
+
+      const updatedAccounts = {
+        ...accounts,
+        [currentUser.id]: {
+          ...currentAccount,
+          profile: updatedProfile,
+        },
+      };
+
+      saveAccounts(updatedAccounts);
+
+      set({
+        currentUser: updatedProfile,
+        accounts: updatedAccounts,
+      });
+
+      return { success: true, transaction: newTransaction };
     },
   };
 });
