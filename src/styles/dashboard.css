@@ -11,6 +11,31 @@
   overflow: hidden;
 }
 
+/* Full-Page Views (Board Studio, Home, Vedic Maths, Grammar, Quiz, Worksheets):
+   Naturally scrollable with sticky header, standard browser scrollbar, and unconstrained vertical scrolling */
+.dashboard.dashboard--scrollable,
+.dashboard:not(.dashboard--reader) {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1rem 1.5rem 4rem;
+  gap: 1rem;
+}
+
+.dashboard.dashboard--scrollable .dashboard-header,
+.dashboard:not(.dashboard--reader) .dashboard-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #f7f5f0;
+  padding: 0.6rem 0 0.8rem;
+  border-bottom: 1px solid rgba(220, 210, 195, 0.6);
+  margin-bottom: 0.5rem;
+}
+
 .dashboard-header {
   grid-column: 1 / -1;
   display: flex;
@@ -207,7 +232,11 @@
 
 .homepage-container,
 .grammar-page,
-.board-shell {
+.board-shell,
+.vedic-maths-container,
+.quiz-section,
+.worksheet-section {
   grid-column: 1 / -1;
   width: 100%;
+  min-height: 0;
 }

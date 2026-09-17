@@ -631,6 +631,7 @@ const Board: React.FC<BoardProps> = ({
   const [error, setError] = useState('');
   const [isChipsExpanded, setIsChipsExpanded] = useState(false);
   const activeChipRef = useRef<HTMLButtonElement | null>(null);
+  const puzzleBoardRef = useRef<HTMLElement | null>(null);
   const [showHelp, setShowHelp] = useState<boolean>(() => {
     try {
       return localStorage.getItem('jodo-help-collapsed') !== 'true';
@@ -730,6 +731,9 @@ const Board: React.FC<BoardProps> = ({
     setWrongAttempt(false);
     setChosen([]);
     localStorage.setItem('last-board-shelf', nextShelf);
+    setTimeout(() => {
+      puzzleBoardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 60);
   };
 
   const targetWord = ((activePuzzle?.answer ?? activePuzzle?.target) || '').normalize('NFC');
@@ -919,6 +923,9 @@ const Board: React.FC<BoardProps> = ({
     setChosen([]);
     setChecked(false);
     setWrongAttempt(false);
+    setTimeout(() => {
+      puzzleBoardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 60);
   };
 
   const activeStep = (checked && isCorrect) ? 2 : 1;
@@ -1089,7 +1096,7 @@ const Board: React.FC<BoardProps> = ({
         </div>
       </div>}
 
-      <section className="puzzle-board">
+      <section ref={puzzleBoardRef} className="puzzle-board">
         <div className="puzzle-meta">
           <span className="meta-skin">{displaySkin}</span>
           <span className="meta-sep" aria-hidden="true">·</span>
