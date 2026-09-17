@@ -33,16 +33,22 @@ type SectionJump = { index: number; label: string };
 
 const buildSectionJumps = (lesson: Lesson | undefined): SectionJump[] => {
   if (!lesson?.sentences?.length) return [];
-  const jumps: SectionJump[] = [{ index: 0, label: 'पाठः · Lesson text' }];
+  const jumps: SectionJump[] = [];
   lesson.sentences.forEach((item, index) => {
-    if (item.kind === 'glossary-header') {
+    if (item.kind === 'section-header') {
+      jumps.push({ index, label: 'प्रार्थना · Prayer' });
+    } else if (item.kind === 'chapter-header') {
+      jumps.push({ index, label: 'पाठः · Lesson text' });
+    } else if (item.kind === 'glossary-header') {
       jumps.push({ index, label: 'शब्दार्थ · Word meanings' });
     } else if (item.kind === 'exercise-header') {
       const short = (item.sanskrit || 'Exercise').replace(/\s+/g, ' ').trim();
-      // Skip the main umbrella title if numbered sections follow — keep all headers
       jumps.push({ index, label: short.length > 42 ? `${short.slice(0, 40)}…` : short });
     }
   });
+  if (!jumps.length || jumps[0].index !== 0) {
+    jumps.unshift({ index: 0, label: 'पाठः · Lesson text' });
+  }
   return jumps;
 };
 
@@ -207,13 +213,15 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                   || jump.label.startsWith('४') || jump.label.startsWith('५') || jump.label.startsWith('६')
                   || jump.label.startsWith('७') || jump.label.startsWith('८')
                   ? jump.label.split(' ')[0]
-                  : jump.label.startsWith('शब्दार्थ')
-                    ? 'शब्दार्थ'
-                    : jump.label.startsWith('वयम् अभ्यास')
-                      ? 'अभ्यास'
-                      : jump.label.startsWith('पाठ')
-                        ? 'पाठः'
-                        : jump.label.split('·')[0].trim().slice(0, 10)}
+                  : jump.label.startsWith('प्रार्थना')
+                    ? 'प्रार्थना'
+                    : jump.label.startsWith('शब्दार्थ')
+                      ? 'शब्दार्थ'
+                      : jump.label.startsWith('वयम् अभ्यास')
+                        ? 'अभ्यास'
+                        : jump.label.startsWith('पाठ')
+                          ? 'पाठः'
+                          : jump.label.split('·')[0].trim().slice(0, 10)}
               </button>
             ))}
           </div>
