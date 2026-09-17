@@ -150,6 +150,80 @@ export const VEDIC_ZERO_ESSAY = {
   }
 };
 
+export const VEDIC_LOGIC_LANGUAGE_ESSAY = {
+  title: 'The Logic and Language of Vedic Mathematics: Reconstructing Ancient Sound for Modern Calculation',
+  subtitle: 'Vedic Mathematics transforms complex arithmetic into rapid, visual, and rhythmic calculations through the mnemonic genius of classical Sanskrit.',
+  intro: [
+    'Vedic Mathematics is an ancient system of mental calculation based on 16 main sutras and 13 sub-sutras, originally recovered and structured by Swami Bharati Krishna Tirtha. These principles translate into standard algebraic expressions to provide efficient shortcuts for operations like squaring numbers ending in five, base multiplication, and vertical-crosswise multi-digit multiplication.',
+    'Developed in the early 20th century, this methodology transforms complex mathematical operations—such as multi-digit multiplication, division, and algebraic factoring—into rapid, visual, and rhythmic calculations.',
+    'The brilliance of the system lies in its linguistic architecture. By encoding mathematical laws into short, easily memorized Sanskrit phrases, it treats calculation not as a series of rigid operations, but as an adaptable pattern-recognition game.'
+  ],
+  sutraFramework: {
+    title: 'The 16 Core Sutras (सूत्र) and Sub-Sutras (उपसूत्र)',
+    desc: 'The word Sutra literally translates to "thread" or "aphorism." In traditional Indian pedagogy, a Sutra is designed to compress a vast amount of knowledge into a tiny, poetic phrase. The entire framework of Vedic Mathematics relies on 16 fundamental Sutras and 13 Sub-Sutras.',
+    keySutras: [
+      {
+        id: 1,
+        sanskrit: 'एकाधिकेन पूर्वेण',
+        transliteration: 'Ekādhikena Pūrveṇa',
+        meaning: 'By one more than the previous one.',
+        application: 'Quickly square numbers that end in 5, or multiply numbers where the last digits add up to 10.',
+        example: 'To square 35, take the "previous" digit (3), multiply it by "one more than itself" (3 × 4 = 12), and append the square of 5 (25). The answer is 1,225.'
+      },
+      {
+        id: 2,
+        sanskrit: 'निखिलं नवतश्चरमं दशतः',
+        transliteration: 'Nikhilam Navataścaramam Daśataḥ',
+        meaning: 'All from 9 and the last from 10.',
+        application: 'Rapid subtraction and base multiplication (multiplying numbers close to 10, 100, 1000, etc.).',
+        example: 'To subtract 764 from 1000, apply "all from 9" to the first digits (9 − 7 = 2, 9 − 6 = 3) and "the last from 10" to the final digit (10 − 4 = 6). The result is 236.'
+      },
+      {
+        id: 3,
+        sanskrit: 'ऊर्ध्व-तिर्यग्भ्याम्',
+        transliteration: 'Ūrdhva-Tiryagbhyām',
+        meaning: 'Vertically and crosswise.',
+        application: 'The master formula for general multiplication. It allows a practitioner to multiply any two numbers entirely in a single line of mental math, bypassing the need for columns of partial products.'
+      },
+      {
+        id: 4,
+        sanskrit: 'परावर्त्य योजयेत्',
+        transliteration: 'Parāvartya Yojayet',
+        meaning: 'Transpose and adjust (or Transpose and apply).',
+        application: 'Used extensively in advanced arithmetic and algebra for polynomial division, solving linear equations, and finding partial fractions.'
+      }
+    ]
+  },
+  historicalContext: {
+    title: 'The Historical Context: Vedic or Modern?',
+    intro: 'The system was brought to light by Swami Bharati Krishna Tirtha (1884–1960), a scholar and the Shankaracharya of Govardhan Math, who claimed to have reconstructed the formulae from the appendices of the Atharva Veda between 1911 and 1918.',
+    comparisonMatrix: [
+      {
+        dimension: 'Origin Chronology',
+        traditional: 'Derived directly from ancient Indian texts (c. 1500–500 BCE).',
+        academic: 'Formulated in the early 20th century (published in 1965).'
+      },
+      {
+        dimension: 'Textual Source',
+        traditional: 'Extracted from the Parishishtas (appendices) of the Atharva Veda.',
+        academic: 'Formulas do not appear in any known historical Vedic manuscript.'
+      },
+      {
+        dimension: 'Nature of the System',
+        traditional: 'A spiritual, holistic math paradigm embedded in ancient seers\' insights.',
+        academic: 'A brilliant modern synthesis of mental math, leveraging Sanskrit mnemonic structures.'
+      }
+    ],
+    synthesis: 'While historians note that the 16 Sutras are contemporary creations rather than ancient artifacts, this does not diminish their utility. Swami Bharati Krishna Tirtha successfully mapped complex arithmetic into the rhythmic, mnemonic structure of classical Sanskrit—a language historically optimized for oral preservation and mental processing.'
+  },
+  cognitiveLoad: {
+    title: 'Why the Sanskrit Structure Works: Shifting the Cognitive Load',
+    p1: 'Vedic Mathematics works because it shifts the cognitive load. Traditional western arithmetic requires heavy reliance on short-term memory to carry numbers and manage multi-step vertical columns.',
+    p2: 'In contrast, the Sanskrit Sutras act as cognitive triggers. Because the rules are poetic phrases, they trigger spatial and holistic patterns in the mind. The system allows a student to look at a problem globally, choose the most elegant Sutra based on the properties of the numbers, and solve it with minimal scratchpad work.',
+    conclusion: 'It remains one of the world\'s most enduring systems for cultivating mathematical agility and mental sharpness.'
+  }
+};
+
 export const VEDIC_SUTRAS: VedicSutra[] = [
   {
     id: 1,

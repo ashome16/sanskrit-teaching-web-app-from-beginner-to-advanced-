@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   VEDIC_INTRO,
   VEDIC_ZERO_ESSAY,
+  VEDIC_LOGIC_LANGUAGE_ESSAY,
   VEDIC_SUTRAS,
   VEDIC_SUBSUTRAS,
   VEDIC_QUIZ_QUESTIONS,
@@ -10,7 +11,7 @@ import {
 import { playPronunciation } from '../utils/pronunciation';
 import '../styles/vedic-maths.css';
 
-type VedicTab = 'solvers' | 'sutras' | 'quiz' | 'zero' | 'essay';
+type VedicTab = 'solvers' | 'zero' | 'logic' | 'sutras' | 'quiz' | 'essay';
 type SolverKey = 'ekadhikena' | 'nikhilam-sub' | 'nikhilam-mul' | 'urdhva' | 'ekanyunena' | 'antya' | 'beejank';
 
 export interface VedicMathsProps {
@@ -207,6 +208,14 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
           >
             <span>🪐</span>
             <span>Architecture of Absolute Zero</span>
+          </button>
+          <button
+            type="button"
+            className={`vedic-tab-btn${activeTab === 'logic' ? ' active' : ''}`}
+            onClick={() => setActiveTab('logic')}
+          >
+            <span>🗣️</span>
+            <span>Logic &amp; Language</span>
           </button>
           <button
             type="button"
@@ -1223,6 +1232,137 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
             {VEDIC_ZERO_ESSAY.conclusion.paragraphs.map((p, idx) => (
               <p key={idx} className="vedic-essay-p">{p}</p>
             ))}
+          </div>
+        )}
+
+        {/* ==================================================================
+            TAB: THE LOGIC AND LANGUAGE OF VEDIC MATHEMATICS
+            ================================================================== */}
+        {activeTab === 'logic' && (
+          <div className="logic-essay-container">
+            <div className="zero-badge-pill" style={{ background: '#ede9fe', color: '#5b21b6' }}>
+              <span>॥ सूत्रं ज्ञानाय मङ्गलम् ॥</span>
+              <span>·</span>
+              <span>The Linguistic Architecture of Calculation</span>
+            </div>
+
+            <h1 className="zero-essay-title">{VEDIC_LOGIC_LANGUAGE_ESSAY.title}</h1>
+            <p className="zero-essay-subtitle">{VEDIC_LOGIC_LANGUAGE_ESSAY.subtitle}</p>
+
+            {VEDIC_LOGIC_LANGUAGE_ESSAY.intro.map((p, idx) => (
+              <p key={idx} className="vedic-essay-p">{p}</p>
+            ))}
+
+            {/* Section 1: The 16 Core Sutras and Sub-Sutras */}
+            <h2 className="vedic-essay-h2">{VEDIC_LOGIC_LANGUAGE_ESSAY.sutraFramework.title}</h2>
+            <p className="vedic-essay-p">{VEDIC_LOGIC_LANGUAGE_ESSAY.sutraFramework.desc}</p>
+
+            <div className="anchor-sutras-grid">
+              {VEDIC_LOGIC_LANGUAGE_ESSAY.sutraFramework.keySutras.map((sutra) => (
+                <div key={sutra.id} className="anchor-sutra-card">
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                      <span className="sutra-card-num">Sutra {sutra.id}</span>
+                      <button
+                        type="button"
+                        onClick={() => playPronunciation(sutra.sanskrit)}
+                        title="Listen to Sanskrit pronunciation"
+                        style={{
+                          background: '#fef3c7',
+                          border: '1px solid #fde68a',
+                          borderRadius: '6px',
+                          cursor: 'pointer',
+                          fontSize: '0.85rem',
+                          padding: '0.15rem 0.45rem'
+                        }}
+                      >
+                        🔊
+                      </button>
+                    </div>
+                    <h3 className="anchor-sutra-title">{sutra.sanskrit}</h3>
+                    <div className="anchor-sutra-iast">{sutra.transliteration}</div>
+                    <div className="anchor-sutra-meaning">&ldquo;{sutra.meaning}&rdquo;</div>
+                    <div className="anchor-sutra-app">{sutra.application}</div>
+                  </div>
+                  {sutra.example && (
+                    <div className="anchor-sutra-ex">
+                      <strong>💡 Example:</strong> {sutra.example}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Section 2: Historical Context: Vedic or Modern? */}
+            <h2 className="vedic-essay-h2">{VEDIC_LOGIC_LANGUAGE_ESSAY.historicalContext.title}</h2>
+            <p className="vedic-essay-p">{VEDIC_LOGIC_LANGUAGE_ESSAY.historicalContext.intro}</p>
+
+            <div className="historical-matrix-wrap">
+              <table className="historical-matrix-table">
+                <thead>
+                  <tr>
+                    <th style={{ width: '22%' }}>Historical Dimension</th>
+                    <th style={{ width: '39%' }}>Traditional Vedic View</th>
+                    <th style={{ width: '39%' }}>Historical Academic View</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {VEDIC_LOGIC_LANGUAGE_ESSAY.historicalContext.comparisonMatrix.map((row, idx) => (
+                    <tr key={idx}>
+                      <td>
+                        <span className="matrix-dim-badge">{row.dimension}</span>
+                      </td>
+                      <td>
+                        <span className="matrix-trad-badge">Traditional Perspective</span>
+                        <div>{row.traditional}</div>
+                      </td>
+                      <td>
+                        <span className="matrix-acad-badge">Academic Perspective</span>
+                        <div>{row.academic}</div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="vedic-essay-quote">
+              &ldquo;{VEDIC_LOGIC_LANGUAGE_ESSAY.historicalContext.synthesis}&rdquo;
+            </div>
+
+            {/* Section 3: Why the Sanskrit Structure Works: Cognitive Load Shift */}
+            <h2 className="vedic-essay-h2">{VEDIC_LOGIC_LANGUAGE_ESSAY.cognitiveLoad.title}</h2>
+            <p className="vedic-essay-p">{VEDIC_LOGIC_LANGUAGE_ESSAY.cognitiveLoad.p1}</p>
+
+            <div className="cognitive-load-box">
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1e293b', marginBottom: '0.5rem' }}>
+                🧠 Cognitive Load: Western Columnar Arithmetic vs. Vedic Sanskrit Aphorisms
+              </h3>
+              <div className="cognitive-grid">
+                <div className="cognitive-card">
+                  <div className="cognitive-card-title" style={{ color: '#b91c1c' }}>
+                    <span>⚠️ Conventional Columnar Arithmetic</span>
+                  </div>
+                  <div className="cognitive-card-desc">
+                    High cognitive strain on working memory. Requires keeping multiple carries in mind, shifting partial product rows with placeholder zeroes, and performing multi-tier vertical addition. Focus is absorbed by scrap management rather than holistic problem structure.
+                  </div>
+                </div>
+
+                <div className="cognitive-card" style={{ borderColor: '#86efac', background: '#f0fdf4' }}>
+                  <div className="cognitive-card-title" style={{ color: '#15803d' }}>
+                    <span>✨ Vedic Sanskrit Cognitive Triggers</span>
+                  </div>
+                  <div className="cognitive-card-desc">
+                    Low working memory load. Short poetic Sanskrit aphorisms trigger spatial, geometric visualization and whole-number pattern recognition. Problems are perceived globally, processed in parallel, and solved in a single line.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p className="vedic-essay-p">{VEDIC_LOGIC_LANGUAGE_ESSAY.cognitiveLoad.p2}</p>
+            <p className="vedic-essay-p" style={{ fontWeight: 700, color: '#15803d' }}>
+              {VEDIC_LOGIC_LANGUAGE_ESSAY.cognitiveLoad.conclusion}
+            </p>
           </div>
         )}
 

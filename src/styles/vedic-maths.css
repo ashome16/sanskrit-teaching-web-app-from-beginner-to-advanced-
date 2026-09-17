@@ -1153,3 +1153,178 @@
   line-height: 1.6;
 }
 
+/* --------------------------------------------------------------------------
+   The Logic and Language of Vedic Mathematics Styles
+   -------------------------------------------------------------------------- */
+.logic-essay-container {
+  background: #ffffff;
+  border: 1px solid #ebdccb;
+  border-radius: 18px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(120, 53, 15, 0.06);
+  margin-bottom: 3rem;
+}
+
+.historical-matrix-wrap {
+  overflow-x: auto;
+  margin: 1.75rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.historical-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.historical-matrix-table th {
+  background: #fffbeb;
+  padding: 0.9rem 1.15rem;
+  text-align: left;
+  font-weight: 800;
+  color: #92400e;
+  border-bottom: 2px solid #fde68a;
+}
+
+.historical-matrix-table td {
+  padding: 1rem 1.15rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #374151;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.historical-matrix-table tr:nth-child(even) td {
+  background: #fdfbf7;
+}
+
+.matrix-dim-badge {
+  display: inline-block;
+  font-weight: 800;
+  color: #111827;
+}
+
+.matrix-trad-badge {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  margin-bottom: 0.35rem;
+}
+
+.matrix-acad-badge {
+  display: inline-block;
+  background: #e0e7ff;
+  color: #3730a3;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  margin-bottom: 0.35rem;
+}
+
+/* Anchor Sutras Grid */
+.anchor-sutras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 1.75rem 0;
+}
+
+.anchor-sutra-card {
+  background: #fdfbf7;
+  border: 1.5px solid #fae8d4;
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.anchor-sutra-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #78350f;
+  margin-bottom: 0.2rem;
+  font-family: 'Noto Serif Devanagari', Georgia, serif;
+}
+
+.anchor-sutra-iast {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-style: italic;
+  margin-bottom: 0.4rem;
+}
+
+.anchor-sutra-meaning {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.anchor-sutra-app {
+  font-size: 0.85rem;
+  color: #4b5563;
+  line-height: 1.45;
+  margin-bottom: 0.5rem;
+}
+
+.anchor-sutra-ex {
+  background: #ffffff;
+  border: 1px dashed #f59e0b;
+  border-radius: 8px;
+  padding: 0.65rem;
+  font-size: 0.82rem;
+  color: #92400e;
+}
+
+/* Cognitive Load Comparison */
+.cognitive-load-box {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1.5px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin: 1.75rem 0;
+}
+
+.cognitive-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 700px) {
+  .cognitive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cognitive-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.cognitive-card-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cognitive-card-desc {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+
