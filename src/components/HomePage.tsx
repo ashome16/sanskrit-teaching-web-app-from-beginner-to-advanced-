@@ -10,6 +10,8 @@ export interface HomePageProps {
   onOpenVarnamala: () => void;
   onOpenGrammar: () => void;
   onOpenVedicMaths?: () => void;
+  onOpenQuiz?: () => void;
+  onOpenWorksheets?: () => void;
 }
 
 interface DemoWord {
@@ -283,6 +285,8 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenVarnamala,
   onOpenGrammar,
   onOpenVedicMaths,
+  onOpenQuiz,
+  onOpenWorksheets,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
@@ -394,6 +398,25 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenVedicMaths}
             >
               📐 Vedic Maths (वैदिक-गणितम्)
+            </button>
+          )}
+          {onOpenQuiz && (
+            <button
+              type="button"
+              className="home-btn-accent"
+              style={{ background: '#059669', borderColor: '#059669', color: '#fff' }}
+              onClick={onOpenQuiz}
+            >
+              🎯 प्रश्नोत्तरी · Quiz
+            </button>
+          )}
+          {onOpenWorksheets && (
+            <button
+              type="button"
+              className="home-btn-secondary"
+              onClick={onOpenWorksheets}
+            >
+              📑 कार्यपत्रिकाः · Worksheets
             </button>
           )}
         </div>
@@ -934,6 +957,16 @@ const HomePage: React.FC<HomePageProps> = ({
           {onOpenVedicMaths && (
             <button type="button" className="home-footer-link" onClick={onOpenVedicMaths}>
               📐 Vedic Mathematics
+            </button>
+          )}
+          {onOpenQuiz && (
+            <button type="button" className="home-footer-link" onClick={onOpenQuiz}>
+              🎯 Sanskrit Quiz
+            </button>
+          )}
+          {onOpenWorksheets && (
+            <button type="button" className="home-footer-link" onClick={onOpenWorksheets}>
+              📑 Printable Worksheets
             </button>
           )}
         </div>

@@ -5,6 +5,8 @@ import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
 import Board from './Board';
 import Grammar from './Grammar';
 import VedicMaths from './VedicMaths';
+import QuizSection from './QuizSection';
+import WorksheetSection from './WorksheetSection';
 import AuthModal from './AuthModal';
 import UserProfileModal from './UserProfileModal';
 import PaymentModal from './PaymentModal';
@@ -36,9 +38,20 @@ const Dashboard: React.FC = () => {
   });
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [wordSelection, setWordSelection] = useState<WordSelection | null>(null);
-  const [activeView, setActiveView] = useState<'home' | 'board' | 'reader' | 'grammar' | 'vedic-maths'>(() => {
+  const [activeView, setActiveView] = useState<
+    'home' | 'board' | 'reader' | 'grammar' | 'vedic-maths' | 'quiz' | 'worksheets'
+  >(() => {
     const saved = localStorage.getItem('school-active-view');
-    if (saved === 'home' || saved === 'board' || saved === 'reader' || saved === 'grammar' || saved === 'vedic-maths') return saved;
+    if (
+      saved === 'home' ||
+      saved === 'board' ||
+      saved === 'reader' ||
+      saved === 'grammar' ||
+      saved === 'vedic-maths' ||
+      saved === 'quiz' ||
+      saved === 'worksheets'
+    )
+      return saved;
     return 'home';
   });
   const [grammarResetKey, setGrammarResetKey] = useState(0);
@@ -273,6 +286,24 @@ const Dashboard: React.FC = () => {
           </button>
           <button
             type="button"
+            className={`dashboard-nav-stacked${activeView === 'quiz' ? ' active' : ''}`}
+            onClick={() => setActiveView('quiz')}
+            title="Open Sanskrit & Vedic Maths Quiz (प्रश्नोत्तरी)"
+          >
+            <span className="dashboard-nav-primary">प्रश्नोत्तरी</span>
+            <span className="dashboard-nav-secondary">Quiz</span>
+          </button>
+          <button
+            type="button"
+            className={`dashboard-nav-stacked${activeView === 'worksheets' ? ' active' : ''}`}
+            onClick={() => setActiveView('worksheets')}
+            title="Open Printable Worksheets (कार्यपत्रिकाः)"
+          >
+            <span className="dashboard-nav-primary">कार्यपत्रिकाः</span>
+            <span className="dashboard-nav-secondary">Worksheets</span>
+          </button>
+          <button
+            type="button"
             className="dashboard-nav-faq"
             onClick={() => {
               setActiveView('home');
@@ -324,6 +355,8 @@ const Dashboard: React.FC = () => {
           onOpenVarnamala={openVarnamala}
           onOpenGrammar={handleOpenGrammar}
           onOpenVedicMaths={() => setActiveView('vedic-maths')}
+          onOpenQuiz={() => setActiveView('quiz')}
+          onOpenWorksheets={() => setActiveView('worksheets')}
         />
       )}
       {activeView === 'board' && (
@@ -340,6 +373,20 @@ const Dashboard: React.FC = () => {
       {activeView === 'vedic-maths' && (
         <VedicMaths
           onGoHome={() => setActiveView('home')}
+          onOpenReader={() => openDeepakam()}
+        />
+      )}
+      {activeView === 'quiz' && (
+        <QuizSection
+          onGoHome={() => setActiveView('home')}
+          onOpenWorksheets={() => setActiveView('worksheets')}
+          onOpenReader={() => openDeepakam()}
+        />
+      )}
+      {activeView === 'worksheets' && (
+        <WorksheetSection
+          onGoHome={() => setActiveView('home')}
+          onOpenQuiz={() => setActiveView('quiz')}
           onOpenReader={() => openDeepakam()}
         />
       )}
