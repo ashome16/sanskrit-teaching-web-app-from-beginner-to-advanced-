@@ -1,0 +1,58 @@
+import type { UserProgress } from './index';
+
+export type SanskritGrade =
+  | 'Beginner (प्रवेशः)'
+  | 'Class 6 (दीपकम-६)'
+  | 'Class 7 (दीपकम-७)'
+  | 'Class 8 (दीपकम-८)'
+  | 'Intermediate (परिचयः)'
+  | 'Advanced (कोविदः)'
+  | 'Enthusiast / Self-Learner';
+
+export type PlanStatus = 'trial' | 'active' | 'expired';
+
+export interface UserProfile {
+  id: string;
+  username: string;
+  email: string;
+  fullName: string;
+  avatar: string;
+  grade: SanskritGrade;
+  interests: string[];
+  createdAt: number;
+  lastLoginAt: number;
+  trialEndsAt: number;
+  planStatus: PlanStatus;
+  monthlyPriceInr: number;
+}
+
+export interface UserAccount {
+  profile: UserProfile;
+  passwordHash: string;
+  progress: UserProgress;
+}
+
+export interface RegisterFormData {
+  username: string;
+  email: string;
+  password: string;
+  fullName: string;
+  avatar?: string;
+  grade?: SanskritGrade;
+  interests?: string[];
+}
+
+export interface UpdateProfileFormData {
+  fullName?: string;
+  avatar?: string;
+  grade?: SanskritGrade;
+  interests?: string[];
+  email?: string;
+}
+
+export interface FAQItem {
+  id: string;
+  category: 'trial_pricing' | 'account' | 'curriculum' | 'features';
+  question: string;
+  answer: string;
+}

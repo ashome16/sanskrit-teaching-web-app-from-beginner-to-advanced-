@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { playPronunciation } from '../utils/pronunciation';
+import FAQSection from './FAQSection';
+import { useAuthStore } from '../store/authStore';
 import '../styles/home-page.css';
 
 export interface HomePageProps {
@@ -283,6 +285,7 @@ const HomePage: React.FC<HomePageProps> = ({
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const { openAuthModal } = useAuthStore();
 
   const categories = [
     { id: 'all', label: 'All Content', count: CHAPTERS_INFO.length },
@@ -793,6 +796,11 @@ const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
       </section>
+
+      {/* ------------------------------------------------------------------
+          FAQ & 2-Week Trial Pricing Section
+          ------------------------------------------------------------------ */}
+      <FAQSection onOpenRegister={() => openAuthModal('register')} />
 
       {/* ------------------------------------------------------------------
           Footer Call to Action

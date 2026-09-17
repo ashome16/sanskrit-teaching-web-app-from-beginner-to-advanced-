@@ -520,13 +520,13 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 
               {sentence.meaning && (
                 <div className="textbook-sentence-meaning-box">
-                  <span className="textbook-meaning-tag">अनुवादः · Meaning</span>
+                  <span className="textbook-meaning-tag">अनुवादः · English Translation</span>
                   <p className="textbook-sentence-meaning">{sentence.meaning}</p>
                 </div>
               )}
               {sentence.paragraphTranslation && (
                 <div className="textbook-paragraph-translation">
-                  <span className="textbook-paragraph-translation-label">English Paragraph Meaning</span>
+                  <span className="textbook-paragraph-translation-label">हिन्दी अनुवादः · Hindi Meaning</span>
                   <p className="textbook-paragraph-translation-text">{sentence.paragraphTranslation}</p>
                 </div>
               )}

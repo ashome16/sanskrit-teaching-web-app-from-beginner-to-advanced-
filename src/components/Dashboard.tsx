@@ -4,6 +4,9 @@ import TextbookReader from './TextbookReader';
 import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
 import Board from './Board';
 import Grammar from './Grammar';
+import AuthModal from './AuthModal';
+import UserProfileModal from './UserProfileModal';
+import { useAuthStore } from '../store/authStore';
 import { LESSONS as STATIC_LESSONS, fetchLatestChapters } from '../data/chapters';
 import { playPronunciation } from '../utils/pronunciation';
 import '../styles/dashboard.css';
@@ -37,6 +40,8 @@ const Dashboard: React.FC = () => {
     return 'home';
   });
   const [grammarResetKey, setGrammarResetKey] = useState(0);
+  const { currentUser, openAuthModal, openProfileModal, getTrialDaysRemaining } = useAuthStore();
+  const trialDaysLeft = getTrialDaysRemaining();
 
   const handleOpenGrammar = () => {
     setActiveView('grammar');
@@ -251,7 +256,47 @@ const Dashboard: React.FC = () => {
             <span className="dashboard-nav-primary">Vyākaraṇa</span>
             <span className="dashboard-nav-secondary">Grammar</span>
           </button>
+          <button
+            type="button"
+            className="dashboard-nav-faq"
+            onClick={() => {
+              setActiveView('home');
+              setTimeout(() => {
+                const el = document.getElementById('faq-section');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }, 120);
+            }}
+            title="View FAQ, 2-Week Trial & Pricing"
+          >
+            ❓ FAQ &amp; Plans
+          </button>
         </nav>
+
+        <div className="dashboard-header-user">
+          {currentUser ? (
+            <button
+              type="button"
+              className="nav-profile-chip"
+              onClick={openProfileModal}
+              title={`View profile for ${currentUser.fullName}`}
+            >
+              <span className="nav-profile-avatar">{currentUser.avatar}</span>
+              <span className="nav-profile-name">{currentUser.fullName.split(' ')[0]}</span>
+              {currentUser.planStatus === 'trial' && (
+                <span className="nav-trial-pill">{trialDaysLeft}d trial</span>
+              )}
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="nav-auth-btn"
+              onClick={() => openAuthModal('login')}
+            >
+              <span>👤</span>
+              <span>Sign In / Register</span>
+            </button>
+          )}
+        </div>
       </header>
 
       {activeView === 'home' && (
@@ -290,6 +335,8 @@ const Dashboard: React.FC = () => {
       />}
       {activeView === 'reader' && <WordAnalyzerCard selection={wordSelection} />}
 
+      <AuthModal />
+      <UserProfileModal />
     </div>
   );
 };
