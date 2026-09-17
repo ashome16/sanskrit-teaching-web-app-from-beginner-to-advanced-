@@ -57,17 +57,18 @@
   },
   "विद्यातपोभ्यां": {
     "word": "विद्यातपोभ्यां",
-    "base_english": "By knowledge and penance",
+    "base_english": "Through knowledge and penance/hard work (instrumental dual)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By knowledge and penance"
+        "meaning": "Through knowledge and penance/hard work (instrumental dual)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "ज्ञान और तपस्या के द्वारा"
+        "meaning": "ज्ञान और तपस्या/परिश्रम से (तृतीया द्विवचन)"
       }
-    }
+    },
+    "grammar": "द्वन्द्व समासः, तृतीया-द्विवचनम्"
   },
   "विद्या": {
     "word": "विद्या",
@@ -85,17 +86,18 @@
   },
   "सत्येन": {
     "word": "सत्येन",
-    "base_english": "By truth",
+    "base_english": "By truth / truthfulness (instrumental singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By truth"
+        "meaning": "By truth / truthfulness (instrumental singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "सच बोलने से / सत्य के द्वारा"
+        "meaning": "सत्य से / सच बोलने से"
       }
-    }
+    },
+    "grammar": "नपुंसकलिंगम्, तृतीया-एकवचनम्"
   },
   "मनः": {
     "word": "मनः",
@@ -186,19 +188,19 @@
   },
   "वपुषा": {
     "word": "वपुषा",
-    "base_english": "By physique / by body",
+    "base_english": "By healthy body / physique (instrumental singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By physique / by body"
+        "meaning": "By healthy body / physique (instrumental singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "शरीर से"
+        "meaning": "स्वस्थ शरीर से (तृतीया एकवचन)"
       }
     },
     "sanskrit_gloss": "शरीरेण",
-    "grammar": "वपुस् (शब्द) — तृतीया विभक्ति, एकवचन",
+    "grammar": "नपुंसकलिंगम् (वपुस्), तृतीया-एकवचनम्",
     "etymology": "वपुस् (शब्द) — तृतीया विभक्ति, एकवचन"
   },
   "सम्मानम्": {
@@ -220,45 +222,45 @@
   },
   "हातव्याः": {
     "word": "हातव्याः",
-    "base_english": "Worth discarding / should be given up",
+    "base_english": "Worth discarding / giving up / to be abandoned",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Worth discarding / should be given up"
+        "meaning": "Worth discarding / giving up / to be abandoned"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "छोड़ देने योग्य"
+        "meaning": "छोड़ देने योग्य / त्यागने योग्य"
       }
     },
     "sanskrit_gloss": "त्यक्तव्याः",
-    "grammar": "हा (त्यागना) + तव्यत् (प्रत्यय) — बहुवचन",
+    "grammar": "हा धातु + तव्यत् प्रत्ययः, पुंलिङ्गम् प्रथमा-बहुवचनम्",
     "etymology": "हा (त्यागना) + तव्यत् (प्रत्यय) — बहुवचन"
   },
   "भूतिम्": {
     "word": "भूतिम्",
-    "base_english": "Prosperity / wealth / welfare",
+    "base_english": "Prosperity / wealth / progress",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Prosperity / wealth / welfare"
+        "meaning": "Prosperity / wealth / progress"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "सुख-समृद्धि"
+        "meaning": "उन्नति / ऐश्वर्य / वैभव को"
       }
     },
     "sanskrit_gloss": "वैभवम् / ऐश्वर्यम्",
-    "grammar": "भू + क्तिन् (स्त्रीलिङ्ग, द्वितीया विभक्ति)",
+    "grammar": "स्त्रीलिङ्गम्, द्वितीया-एकवचनम्",
     "etymology": "भू + क्तिन् (स्त्रीलिङ्ग, द्वितीया विभक्ति)"
   },
   "तन्द्रा": {
     "word": "तन्द्रा",
-    "base_english": "Lassitude / drowsiness / exhaustion",
+    "base_english": "Drowsiness / lethargy / sluggishness",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Lassitude / drowsiness / exhaustion"
+        "meaning": "Drowsiness / lethargy / sluggishness"
       },
       "hi": {
         "label": "हिन्दी",
@@ -266,7 +268,7 @@
       }
     },
     "sanskrit_gloss": "अकर्मण्यता",
-    "grammar": "तन्द्र (तन्द्रि/तन्द्रा) — प्रथमा विभक्ति संज्ञा",
+    "grammar": "स्त्रीलिङ्गम्, प्रथमा-एकवचनम्",
     "etymology": "तन्द्र (तन्द्रि/तन्द्रा) — प्रथमा विभक्ति संज्ञा"
   },
   "दीर्घसूत्रता": {
@@ -279,11 +281,11 @@
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "काम टालने की आदत"
+        "meaning": "काम टालने की आदत / विलम्बकारिता"
       }
     },
     "sanskrit_gloss": "विलम्बकार्यप्रवृत्तिः",
-    "grammar": "दीर्घ + सूत्र + तल् (भाववाचक प्रत्यय)",
+    "grammar": "स्त्रीलिङ्गम्, प्रथमा-एकवचनम्",
     "etymology": "दीर्घ + सूत्र + तल् (भाववाचक प्रत्यय)"
   },
   "अवरोधकाः": {
@@ -322,28 +324,28 @@
   },
   "अद्भिः": {
     "word": "अद्भिः",
-    "base_english": "By water",
+    "base_english": "By water (instrumental plural of अप्)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By water"
+        "meaning": "By water (instrumental plural of अप्)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "पानी द्वारा / जलों से"
+        "meaning": "जल से / पानी द्वारा"
       }
     },
     "sanskrit_gloss": "जलैः",
-    "grammar": "अप् (जल) शब्द — तृतीया विभक्ति, बहुवचन",
+    "grammar": "अप् शब्दः, तृतीया-बहुवचनम्",
     "etymology": "अप् (जल) शब्द — तृतीया विभक्ति, बहुवचन"
   },
   "भूतात्मा": {
     "word": "भूतात्मा",
-    "base_english": "Soul / living entity",
+    "base_english": "The individual soul / living being / inner self",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Soul / living entity"
+        "meaning": "The individual soul / living being / inner self"
       },
       "hi": {
         "label": "हिन्दी",
@@ -351,7 +353,7 @@
       }
     },
     "sanskrit_gloss": "जीवः",
-    "grammar": "भूत + आत्मा (कर्मधारय समास)",
+    "grammar": "पुंलिङ्गम्, प्रथमा-एकवचनम्",
     "etymology": "भूत + आत्मा (कर्मधारय समास)"
   },
   "द्वन्द्वः": {
@@ -373,45 +375,45 @@
   },
   "वर्षम्": {
     "word": "वर्षम्",
-    "base_english": "A division of land / continent",
+    "base_english": "Country / landmass / division of earth",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "A division of land / continent"
+        "meaning": "Country / landmass / division of earth"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "धरती का टुकड़ा / देश"
+        "meaning": "देश / भूभाग (भारतवर्ष)"
       }
     },
     "sanskrit_gloss": "भूमेः विभागः",
-    "grammar": "वर्ष (नपुंसकलिङ्ग संज्ञा)",
+    "grammar": "नपुंसकलिंगम्, प्रथमा-एकवचनम्",
     "etymology": "वर्ष (नपुंसकलिङ्ग संज्ञा)"
   },
   "सन्ततिः": {
     "word": "सन्ततिः",
-    "base_english": "Progeny / offspring / children",
+    "base_english": "Progeny / offspring / population / citizens",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Progeny / offspring / children"
+        "meaning": "Progeny / offspring / population / citizens"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "संतान / बच्चे"
+        "meaning": "प्रजा / संतान / नागरिक"
       }
     },
     "sanskrit_gloss": "अपत्यम्",
-    "grammar": "सम् + तन् + क्तिन् (स्त्रीलिङ्ग संज्ञा)",
+    "grammar": "स्त्रीलिङ्गम्, प्रथमा-एकवचनम्",
     "etymology": "सम् + तन् + क्तिन् (स्त्रीलिङ्ग संज्ञा)"
   },
   "निपातेन": {
     "word": "निपातेन",
-    "base_english": "By falling",
+    "base_english": "By falling / by dripping (instrumental singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By falling"
+        "meaning": "By falling / by dripping (instrumental singular)"
       },
       "hi": {
         "label": "हिन्दी",
@@ -419,58 +421,58 @@
       }
     },
     "sanskrit_gloss": "पतनेन",
-    "grammar": "नि + पत् + घञ् — तृतीया विभक्ति, एकवचन",
+    "grammar": "पुंलिङ्गम्, तृतीया-एकवचनम्",
     "etymology": "नि + पत् + घञ् — तृतीया विभक्ति, एकवचन"
   },
   "हेतुः": {
     "word": "हेतुः",
-    "base_english": "Reason / cause",
+    "base_english": "Cause / principle / reason",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Reason / cause"
+        "meaning": "Cause / principle / reason"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "वजह"
+        "meaning": "कारण / नियम"
       }
     },
     "sanskrit_gloss": "कारणम्",
-    "grammar": "हेतु (पुँल्लिङ्ग संज्ञा)",
+    "grammar": "उकारान्त पुंलिङ्गम्, प्रथमा-एकवचनम्",
     "etymology": "हेतु (पुँल्लिङ्ग संज्ञा)"
   },
   "परिपृच्छति": {
     "word": "परिपृच्छति",
-    "base_english": "Humbly enquires / asks questions politely",
+    "base_english": "Enquires humbly / asks clarifying questions",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Humbly enquires / asks questions politely"
+        "meaning": "Enquires humbly / asks clarifying questions"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "आदरपूर्वक पूछता है"
+        "meaning": "आदरपूर्वक प्रश्न पूछता है"
       }
     },
     "sanskrit_gloss": "सादरं पृच्छति",
-    "grammar": "परि + प्रच्छ् (धातु) — लट् लकार, प्रथम पुरुष, एकवचन",
+    "grammar": "परि + प्रच्छ् धातु, लट्-लकारः, प्रथमपुरुषः, एकवचनम्",
     "etymology": "परि + प्रच्छ् (धातु) — लट् लकार, प्रथम पुरुष, एकवचन"
   },
   "उपाश्रयति": {
     "word": "उपाश्रयति",
-    "base_english": "Approaches / takes shelter of / goes near",
+    "base_english": "Approaches / seeks company of / takes shelter in",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Approaches / takes shelter of / goes near"
+        "meaning": "Approaches / seeks company of / takes shelter in"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "पास जाता है / शरण लेता है"
+        "meaning": "पास बैठता है / शरण लेता है / संगति करता है"
       }
     },
     "sanskrit_gloss": "समीपम् गच्छति",
-    "grammar": "उप + आ + श्रि (धातु) — लट् लकार, प्रथम पुरुष, एकवचन",
+    "grammar": "उप + आ + श्रि धातु, लट्-लकारः, प्रथमपुरुषः, एकवचनम्",
     "etymology": "उप + आ + श्रि (धातु) — लट् लकार, प्रथम पुरुष, एकवचन"
   },
   "सङ्गतिः": {
@@ -492,36 +494,36 @@
   },
   "तुष्यन्ति": {
     "word": "तुष्यन्ति",
-    "base_english": "Feeling satisfied / pleased",
+    "base_english": "Feel satisfied / pleased / happy (verb, 3rd plural)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Feeling satisfied / pleased"
+        "meaning": "Feel satisfied / pleased / happy (verb, 3rd plural)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "संतुष्ट होते हैं"
+        "meaning": "संतुष्ट / प्रसन्न होते हैं"
       }
     },
     "sanskrit_gloss": "सन्तोषम् अनुभवन्ति",
-    "grammar": "तुष् (धातु) — लट् लकार, प्रथम पुरुष, बहुवचन",
+    "grammar": "तुष् धातु, लट्-लकारः, प्रथमपुरुषः, बहुवचनम्",
     "etymology": "तुष् (धातु) — लट् लकार, प्रथम पुरुष, बहुवचन"
   },
   "रिपुः": {
     "word": "रिपुः",
-    "base_english": "Enemy",
+    "base_english": "Enemy / foe",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Enemy"
+        "meaning": "Enemy / foe"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "दुश्मन"
+        "meaning": "शत्रु / दुश्मन"
       }
     },
     "sanskrit_gloss": "शत्रुः",
-    "grammar": "रिपु (पुँल्लिङ्ग संज्ञा)",
+    "grammar": "उकारान्त पुंलिङ्गम्, प्रथमा-एकवचनम्",
     "etymology": "रिपु (पुँल्लिङ्ग संज्ञा)"
   },
   "पुण्यम्": {
@@ -543,19 +545,19 @@
   },
   "परपीडनम्": {
     "word": "परपीडनम्",
-    "base_english": "Bothering others / causing pain to others",
+    "base_english": "Hurting / tormenting / bothering others",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Bothering others / causing pain to others"
+        "meaning": "Hurting / tormenting / bothering others"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "दूसरों को सताना"
+        "meaning": "दूसरों को कष्ट पहुँचाना / सताना"
       }
     },
     "sanskrit_gloss": "अन्येभ्यः कष्टप्रदानम्",
-    "grammar": "पर + पीडनम् (षष्ठी तत्पुरुष समास)",
+    "grammar": "नपुंसकलिंगम्, प्रथमा / द्वितीया-एकवचनम्",
     "etymology": "पर + पीडनम् (षष्ठी तत्पुरुष समास)"
   },
   "द्वितीयः": {
@@ -1681,101 +1683,108 @@
   },
   "वस्त्रेण": {
     "word": "वस्त्रेण",
-    "base_english": "By good clothes",
+    "base_english": "By good clothes / appropriate attire (instrumental singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By good clothes"
+        "meaning": "By good clothes / appropriate attire (instrumental singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "अच्छे कपड़ों से"
+        "meaning": "अच्छे वस्त्रों से (तृतीया एकवचन)"
       }
-    }
+    },
+    "grammar": "नपुंसकलिंगम्, तृतीया-एकवचनम्"
   },
   "वाचा": {
     "word": "वाचा",
-    "base_english": "By speech",
+    "base_english": "By pleasant speech / polite voice (instrumental singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By speech"
+        "meaning": "By pleasant speech / polite voice (instrumental singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "मीठी वाणी/बोली से"
+        "meaning": "मधुर वाणी से (वाच् शब्द, तृतीया एकवचन)"
       }
-    }
+    },
+    "grammar": "स्त्रीलिङ्गम् (वाच्), तृतीया-एकवचनम्"
   },
   "विद्यया": {
     "word": "विद्यया",
-    "base_english": "By knowledge",
+    "base_english": "By education / knowledge (instrumental singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By knowledge"
+        "meaning": "By education / knowledge (instrumental singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "ज्ञान/विद्या से"
+        "meaning": "विद्या / ज्ञान से (तृतीया एकवचन)"
       }
-    }
+    },
+    "grammar": "आकारान्त स्त्रीलिङ्गम्, तृतीया-एकवचनम्"
   },
   "विनयेन": {
     "word": "विनयेन",
-    "base_english": "By humility",
+    "base_english": "By humility / politeness (instrumental singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By humility"
+        "meaning": "By humility / politeness (instrumental singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "नम्रता/शिष्टता से"
+        "meaning": "नम्रता / विनम्रता से (तृतीया एकवचन)"
       }
-    }
+    },
+    "grammar": "पुंलिङ्गम्, तृतीया-एकवचनम्"
   },
   "वकारैः": {
     "word": "वकारैः",
-    "base_english": "By the letters starting with 'Va'",
+    "base_english": "By attributes starting with the letter 'V' (instrumental plural)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By the letters starting with 'Va'"
+        "meaning": "By attributes starting with the letter 'V' (instrumental plural)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "'व' अक्षर से शुरू होने वाले शब्दों से"
+        "meaning": "'व' अक्षर से शुरू होने वाले गुणों से"
       }
-    }
+    },
+    "grammar": "पुंलिङ्गम्, तृतीया-बहुवचनम्"
   },
   "पञ्चभिः": {
     "word": "पञ्चभिः",
-    "base_english": "By five",
+    "base_english": "By five (instrumental)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By five"
+        "meaning": "By five (instrumental)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "पाँच"
+        "meaning": "पाँचों से (तृतीया)"
       }
-    }
+    },
+    "grammar": "संख्यावाचकपदम्, तृतीया"
   },
   "युक्तः": {
     "word": "युक्तः",
-    "base_english": "Possessing / Endowed with",
+    "base_english": "Endowed with / equipped with (adjective)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Possessing / Endowed with"
+        "meaning": "Endowed with / equipped with (adjective)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "जुड़ा हुआ / सहित"
+        "meaning": "सहित / युक्त"
       }
-    }
+    },
+    "grammar": "पुंलिङ्गम्, प्रथमा-एकवचनम्"
   },
   "नरः": {
     "word": "नरः",
@@ -1793,17 +1802,18 @@
   },
   "पूजितः": {
     "word": "पूजितः",
-    "base_english": "Respected / Worshipped",
+    "base_english": "Respected / worshipped / revered",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Respected / Worshipped"
+        "meaning": "Respected / worshipped / revered"
       },
       "hi": {
         "label": "हिन्दी",
         "meaning": "सम्मानित / पूजनीय"
       }
-    }
+    },
+    "grammar": "पुंलिङ्गम्, प्रथमा-एकवचनम्"
   },
   "अस्माकं": {
     "word": "अस्माकं",
@@ -2045,115 +2055,123 @@
   },
   "दोषाः": {
     "word": "दोषाः",
-    "base_english": "Flaws / Faults",
+    "base_english": "Flaws / defects / vices (nominative plural)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Flaws / Faults"
+        "meaning": "Flaws / defects / vices (nominative plural)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "कमियाँ / बुराइयाँ"
+        "meaning": "दोष / कमियाँ (प्रथमा बहुवचन)"
       }
-    }
+    },
+    "grammar": "पुंलिङ्गम्, प्रथमा-बहुवचनम्"
   },
   "पुरुषेण": {
     "word": "पुरुषेण",
-    "base_english": "By a person",
+    "base_english": "By a person / human being (instrumental singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By a person"
+        "meaning": "By a person / human being (instrumental singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "मनुष्य के द्वारा"
+        "meaning": "मनुष्य द्वारा (तृतीया एकवचन)"
       }
-    }
+    },
+    "grammar": "पुंलिङ्गम्, तृतीया-एकवचनम्"
   },
   "इह": {
     "word": "इह",
-    "base_english": "In this world",
+    "base_english": "Here / in this world (indeclinable)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "In this world"
+        "meaning": "Here / in this world (indeclinable)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "इस संसार में"
+        "meaning": "इस संसार में / यहाँ (अव्यय)"
       }
-    }
+    },
+    "grammar": "अव्ययपदम्"
   },
   "इच्छता": {
     "word": "इच्छता",
-    "base_english": "By one who desires",
+    "base_english": "By one who desires (instrumental singular of इच्छत्)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By one who desires"
+        "meaning": "By one who desires (instrumental singular of इच्छत्)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "चाहने वाले के द्वारा"
+        "meaning": "चाहने वाले मनुष्य द्वारा"
       }
-    }
+    },
+    "grammar": "इष् धातु + शतृ प्रत्ययः, तृतीया-एकवचनम्"
   },
   "निद्रा": {
     "word": "निद्रा",
-    "base_english": "Excessive sleep",
+    "base_english": "Excessive sleep / slumber",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Excessive sleep"
+        "meaning": "Excessive sleep / slumber"
       },
       "hi": {
         "label": "हिन्दी",
         "meaning": "अधिक सोना / नींद"
       }
-    }
+    },
+    "grammar": "स्त्रीलिङ्गम्, प्रथमा-एकवचनम्"
   },
   "भयम्": {
     "word": "भयम्",
-    "base_english": "Fear",
+    "base_english": "Fear / dread",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Fear"
+        "meaning": "Fear / dread"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "डर"
+        "meaning": "डर / भय"
       }
-    }
+    },
+    "grammar": "नपुंसकलिंगम्, प्रथमा-एकवचनम्"
   },
   "क्रोधः": {
     "word": "क्रोधः",
-    "base_english": "Anger",
+    "base_english": "Anger / wrath",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Anger"
+        "meaning": "Anger / wrath"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "गुस्सा"
+        "meaning": "गुस्सा / क्रोध"
       }
-    }
+    },
+    "grammar": "पुंलिङ्गम्, प्रथमा-एकवचनम्"
   },
   "आलस्यम्": {
     "word": "आलस्यम्",
-    "base_english": "Laziness",
+    "base_english": "Laziness / indolence / inactivity",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Laziness"
+        "meaning": "Laziness / indolence / inactivity"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "काम न करने की इच्छा / आलस"
+        "meaning": "आलस्य / काम न करना"
       }
-    }
+    },
+    "grammar": "नपुंसकलिंगम्, प्रथमा-एकवचनम्"
   },
   "अस्मासु": {
     "word": "अस्मासु",
@@ -2508,59 +2526,63 @@
   },
   "गात्राणि": {
     "word": "गात्राणि",
-    "base_english": "Limbs / Body parts",
+    "base_english": "Limbs of the body (nominative plural)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Limbs / Body parts"
+        "meaning": "Limbs of the body (nominative plural)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "शरीर के अंग / अंग-प्रत्यंग"
+        "meaning": "शरीर के अङ्ग (प्रथमा बहुवचन)"
       }
-    }
+    },
+    "grammar": "नपुंसकलिंगम्, प्रथमा-बहुवचनम्"
   },
   "शुध्यन्ति": {
     "word": "शुध्यन्ति",
-    "base_english": "Are purified / cleaned",
+    "base_english": "Become clean / cleansed (verb, 3rd plural)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Are purified / cleaned"
+        "meaning": "Become clean / cleansed (verb, 3rd plural)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "साफ होते हैं / शुद्ध होते हैं"
+        "meaning": "शुद्ध / साफ होते हैं"
       }
-    }
+    },
+    "grammar": "शुध् धातु, लट्-लकारः, प्रथमपुरुषः, बहुवचनम्"
   },
   "शुध्यति": {
     "word": "शुध्यति",
-    "base_english": "Is purified",
+    "base_english": "Is purified / becomes pure (verb, 3rd singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Is purified"
+        "meaning": "Is purified / becomes pure (verb, 3rd singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "पवित्र होता है"
+        "meaning": "पवित्र / शुद्ध होता है"
       }
-    }
+    },
+    "grammar": "शुध् धातु, लट्-लकारः, प्रथमपुरुषः, एकवचनम्"
   },
   "ज्ञानेन": {
     "word": "ज्ञानेन",
-    "base_english": "By wisdom / true knowledge",
+    "base_english": "By true knowledge / wisdom (instrumental singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By wisdom / true knowledge"
+        "meaning": "By true knowledge / wisdom (instrumental singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "आत्मज्ञान / विवेक के द्वारा"
+        "meaning": "सच्चे ज्ञान (विवेक) से"
       }
-    }
+    },
+    "grammar": "नपुंसकलिंगम्, तृतीया-एकवचनम्"
   },
   "प्रतिदिनम्": {
     "word": "प्रतिदिनम्",
@@ -2858,59 +2880,63 @@
   },
   "उत्तरम्": {
     "word": "उत्तरम्",
-    "base_english": "In the North",
+    "base_english": "To the north / situated north",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "In the North"
+        "meaning": "To the north / situated north"
       },
       "hi": {
         "label": "हिन्दी",
         "meaning": "उत्तर दिशा में"
       }
-    }
+    },
+    "grammar": "नपुंसकलिंगम्, प्रथमा-एकवचनम्"
   },
   "समुद्रस्य": {
     "word": "समुद्रस्य",
-    "base_english": "Of the ocean",
+    "base_english": "Of the ocean (genitive singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Of the ocean"
+        "meaning": "Of the ocean (genitive singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "समुद्र के / महासागर के"
+        "meaning": "समुद्र के (षष्ठी एकवचन)"
       }
-    }
+    },
+    "grammar": "पुंलिङ्गम्, षष्ठी-एकवचनम्"
   },
   "हिमाद्रेः": {
     "word": "हिमाद्रेः",
-    "base_english": "Of the Himalaya mountain",
+    "base_english": "Of the Himalayas / snowy mountain (genitive singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Of the Himalaya mountain"
+        "meaning": "Of the Himalayas / snowy mountain (genitive singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "हिमालय पर्वत के"
+        "meaning": "हिमालय पर्वत के (षष्ठी एकवचन)"
       }
-    }
+    },
+    "grammar": "इकारान्त पुंलिङ्गम्, षष्ठी-एकवचनम्"
   },
   "दक्षिणम्": {
     "word": "दक्षिणम्",
-    "base_english": "In the South",
+    "base_english": "To the south / southern",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "In the South"
+        "meaning": "To the south / southern"
       },
       "hi": {
         "label": "हिन्दी",
         "meaning": "दक्षिण दिशा में"
       }
-    }
+    },
+    "grammar": "नपुंसकलिंगम्, प्रथमा-एकवचनम्"
   },
   "तद्": {
     "word": "तद्",
@@ -2956,17 +2982,18 @@
   },
   "भारती": {
     "word": "भारती",
-    "base_english": "The children of Bharata",
+    "base_english": "Children / descendants / citizens of Mother India",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "The children of Bharata"
+        "meaning": "Children / descendants / citizens of Mother India"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "सरस्वती की संतान / भारत माता की संतान"
+        "meaning": "भारतमाता की संतानें / भारतीय"
       }
-    }
+    },
+    "grammar": "स्त्रीलिङ्गम्, प्रथमा-एकवचनम्"
   },
   "यत्र": {
     "word": "यत्र",
@@ -3222,45 +3249,48 @@
   },
   "क्रमशः": {
     "word": "क्रमशः",
-    "base_english": "Gradually / Step by step",
+    "base_english": "Gradually / step-by-step / slowly (indeclinable)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Gradually / Step by step"
+        "meaning": "Gradually / step-by-step / slowly (indeclinable)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "धीरे-धीरे / एक-एक करके"
+        "meaning": "धीरे-धीरे / क्रम से (अव्यय)"
       }
-    }
+    },
+    "grammar": "अव्ययपदम्"
   },
   "पूर्यते": {
     "word": "पूर्यते",
-    "base_english": "Is filled",
+    "base_english": "Gets filled up (passive verb, 3rd singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Is filled"
+        "meaning": "Gets filled up (passive verb, 3rd singular)"
       },
       "hi": {
         "label": "हिन्दी",
         "meaning": "भर जाता है"
       }
-    }
+    },
+    "grammar": "पूर् धातु, कर्मणि लट्-लकारः, प्रथमपुरुषः, एकवचनम्"
   },
   "घटः": {
     "word": "घटः",
-    "base_english": "The pot",
+    "base_english": "Earthen pot / pitcher",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "The pot"
+        "meaning": "Earthen pot / pitcher"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "घड़ा"
+        "meaning": "घड़ा / मटका"
       }
-    }
+    },
+    "grammar": "पुंलिङ्गम्, प्रथमा-एकवचनम्"
   },
   "सर्व": {
     "word": "सर्व",
@@ -3545,17 +3575,18 @@
   },
   "जलबिन्दु": {
     "word": "जलबिन्दु",
-    "base_english": "Water drop",
+    "base_english": "Drop of water / water-drop",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Water drop"
+        "meaning": "Drop of water / water-drop"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "पानी की बूंद"
+        "meaning": "पानी की बूँद"
       }
-    }
+    },
+    "grammar": "उकारान्त पुंलिङ्गम्"
   },
   "सर्वविद्यानां": {
     "word": "सर्वविद्यानां",
@@ -3573,17 +3604,18 @@
   },
   "सर्वविद्यानाम्": {
     "word": "सर्वविद्यानाम्",
-    "base_english": "Of all sciences/knowledge",
+    "base_english": "Of all branches of knowledge (genitive plural)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Of all sciences/knowledge"
+        "meaning": "Of all branches of knowledge (genitive plural)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "सभी प्रकार की विद्याओं/ज्ञान का"
+        "meaning": "सभी विद्याओं का (षष्ठी बहुवचन)"
       }
-    }
+    },
+    "grammar": "स्त्रीलिङ्गम्, षष्ठी-बहुवचनम्"
   },
   "चैव": {
     "word": "चैव",
@@ -3657,31 +3689,33 @@
   },
   "पण्डितान्": {
     "word": "पण्डितान्",
-    "base_english": "Scholars / Wise people",
+    "base_english": "Wise people / scholars (accusative plural)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Scholars / Wise people"
+        "meaning": "Wise people / scholars (accusative plural)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "विद्वान लोगों के / ज्ञानियों के"
+        "meaning": "विद्वानों के (द्वितीया बहुवचन)"
       }
-    }
+    },
+    "grammar": "पुंलिङ्गम्, द्वितीया-बहुवचनम्"
   },
   "दिवाकर": {
     "word": "दिवाकर",
-    "base_english": "By the rays of the sun",
+    "base_english": "Sun (one who creates the day)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By the rays of the sun"
+        "meaning": "Sun (one who creates the day)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "किरणैः — सूर्य की किरणों के द्वारा"
+        "meaning": "सूर्य / दिनकर"
       }
-    }
+    },
+    "grammar": "पुंलिङ्गम्"
   },
   "नलिनी": {
     "word": "नलिनी",
@@ -3713,17 +3747,18 @@
   },
   "विस्तारिता": {
     "word": "विस्तारिता",
-    "base_english": "Expanded / Blossomed",
+    "base_english": "Expanded / bloomed / broadened",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Expanded / Blossomed"
+        "meaning": "Expanded / bloomed / broadened"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "विकसित / खिली हुई"
+        "meaning": "विकसित / विस्तृत"
       }
-    }
+    },
+    "grammar": "स्त्रीलिङ्गम्, प्रथमा-एकवचनम्"
   },
   "आत्म": {
     "word": "आत्म",
@@ -4021,31 +4056,33 @@
   },
   "प्रदानेन": {
     "word": "प्रदानेन",
-    "base_english": "By speaking / giving",
+    "base_english": "By giving / speaking / uttering (instrumental singular)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "By speaking / giving"
+        "meaning": "By giving / speaking / uttering (instrumental singular)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "बोलने से / देने से"
+        "meaning": "बोलने से / प्रदान करने से"
       }
-    }
+    },
+    "grammar": "नपुंसकलिंगम्, तृतीया-एकवचनम्"
   },
   "जन्तवः": {
     "word": "जन्तवः",
-    "base_english": "Living beings",
+    "base_english": "Living beings / creatures (nominative plural)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Living beings"
+        "meaning": "Living beings / creatures (nominative plural)"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "प्राणी / जीव-जंतु"
+        "meaning": "प्राणी / जीव (प्रथमा बहुवचन)"
       }
-    }
+    },
+    "grammar": "उकारान्त पुंलिङ्गम्, प्रथमा-बहुवचनम्"
   },
   "तस्मात्": {
     "word": "तस्मात्",
@@ -4063,17 +4100,18 @@
   },
   "वक्तव्यम्": {
     "word": "वक्तव्यम्",
-    "base_english": "Should be spoken",
+    "base_english": "Ought to be spoken / should speak (tavyat participle)",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Should be spoken"
+        "meaning": "Ought to be spoken / should speak (tavyat participle)"
       },
       "hi": {
         "label": "हिन्दी",
         "meaning": "बोलना चाहिए"
       }
-    }
+    },
+    "grammar": "वच् धातु + तव्यत् प्रत्ययः"
   },
   "वचने": {
     "word": "वचने",
@@ -4091,17 +4129,18 @@
   },
   "दरिद्रता": {
     "word": "दरिद्रता",
-    "base_english": "Poverty / Miserliness",
+    "base_english": "Poverty / miserliness / holding back",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Poverty / Miserliness"
+        "meaning": "Poverty / miserliness / holding back"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "कंगाली / कंजूसी"
+        "meaning": "कंजूसी / गरीबी"
       }
-    }
+    },
+    "grammar": "स्त्रीलिङ्गम्, प्रथमा-एकवचनम्"
   },
   "पण्डितानुपाश्रयति": {
     "word": "पण्डितानुपाश्रयति",
@@ -4143,7 +4182,8 @@
         "label": "हिन्दी",
         "meaning": "कमल की पंखुड़ी"
       }
-    }
+    },
+    "grammar": "नपुंसकलिंगम्, प्रथमा-एकवचनम्"
   },
   "नलिनीदलमिव": {
     "word": "नलिनीदलमिव",
@@ -4175,17 +4215,18 @@
   },
   "प्रियवाक्य": {
     "word": "प्रियवाक्य",
-    "base_english": "Sweet words",
+    "base_english": "Sweet and pleasant speech",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Sweet words"
+        "meaning": "Sweet and pleasant speech"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "मीठे वचन / मधुर बोल"
+        "meaning": "मीठे / प्रिय वचन"
       }
-    }
+    },
+    "grammar": "नपुंसकलिंगम्"
   },
   "तस्मात्तदेव": {
     "word": "तस्मात्तदेव",
@@ -16402,17 +16443,18 @@
   },
   "परोपकारः": {
     "word": "परोपकारः",
-    "base_english": "Helping others / Altruism",
+    "base_english": "Helping others / benevolence / charity",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Helping others / Altruism"
+        "meaning": "Helping others / benevolence / charity"
       },
       "hi": {
         "label": "हिन्दी",
-        "meaning": "परोपकार / दूसरों की भलाई"
+        "meaning": "दूसरों की भलाई / परोपकार"
       }
-    }
+    },
+    "grammar": "पुंलिङ्गम्, प्रथमा-एकवचनम्"
   },
   "परोपकार": {
     "word": "परोपकार",
@@ -53760,5 +53802,185 @@
       }
     },
     "grammar": "सिद्धिः (प्रथमा) + भवतु (लोट्-लकारः)"
+  },
+  "किरणैः": {
+    "word": "किरणैः",
+    "base_english": "By rays / sunbeams (instrumental plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "By rays / sunbeams (instrumental plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "किरणों से (तृतीया बहुवचन)"
+      }
+    },
+    "grammar": "पुंलिङ्गम्, तृतीया-बहुवचनम्"
+  },
+  "शरीरस्थः": {
+    "word": "शरीरस्थः",
+    "base_english": "Residing in the body / internal",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Residing in the body / internal"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "शरीर में स्थित / रहने वाला"
+      }
+    },
+    "grammar": "उपपद तत्पुरुष समासः, प्रथमा-एकवचनम्"
+  },
+  "उद्यम": {
+    "word": "उद्यम",
+    "base_english": "Hard work / effort / diligence",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Hard work / effort / diligence"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "परिश्रम / मेहनत"
+      }
+    },
+    "grammar": "पुंलिङ्गम्"
+  },
+  "समः": {
+    "word": "समः",
+    "base_english": "Equal to / similar to",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Equal to / similar to"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "के समान / के बराबर"
+      }
+    },
+    "grammar": "विशेषणम्, पुंलिङ्गम्, प्रथमा-एकवचनम्"
+  },
+  "बन्धुः": {
+    "word": "बन्धुः",
+    "base_english": "Friend / relative / companion",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Friend / relative / companion"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "मित्र / भाई / सखा"
+      }
+    },
+    "grammar": "उकारान्त पुंलिङ्गम्, प्रथमा-एकवचनम्"
+  },
+  "अवसीदति": {
+    "word": "अवसीदति",
+    "base_english": "Grieves / sorrows / sinks down in distress (verb)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Grieves / sorrows / sinks down in distress (verb)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दुखी होता है / अवसाद को प्राप्त होता है"
+      }
+    },
+    "grammar": "अव + सद् धातु, लट्-लकारः, प्रथमपुरुषः, एकवचनम्"
+  },
+  "अष्टादश": {
+    "word": "अष्टादश",
+    "base_english": "Eighteen (18)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Eighteen (18)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अठारह (१८)"
+      }
+    },
+    "grammar": "संख्यावाचकपदम्"
+  },
+  "पुराणेषु": {
+    "word": "पुराणेषु",
+    "base_english": "In the Puranas (locative plural)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "In the Puranas (locative plural)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पुराणों में (सप्तमी बहुवचन)"
+      }
+    },
+    "grammar": "नपुंसकलिंगम्, सप्तमी-बहुवचनम्"
+  },
+  "व्यासस्य": {
+    "word": "व्यासस्य",
+    "base_english": "Of Sage Vyasa (genitive singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Of Sage Vyasa (genitive singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "महर्षि व्यास का (षष्ठी एकवचन)"
+      }
+    },
+    "grammar": "पुंलिङ्गम्, षष्ठी-एकवचनम्"
+  },
+  "द्वयम्": {
+    "word": "द्वयम्",
+    "base_english": "Pair / two (neuter)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Pair / two (neuter)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "दो (युगल)"
+      }
+    },
+    "grammar": "नपुंसकलिंगम्, प्रथमा-एकवचनम्"
+  },
+  "पुण्याय": {
+    "word": "पुण्याय",
+    "base_english": "For spiritual merit / virtue (dative singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For spiritual merit / virtue (dative singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पुण्य (सत्कर्म) के लिए (चतुर्थी एकवचन)"
+      }
+    },
+    "grammar": "नपुंसकलिंगम्, चतुर्थी-एकवचनम्"
+  },
+  "पापाय": {
+    "word": "पापाय",
+    "base_english": "For sin / demerit (dative singular)",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "For sin / demerit (dative singular)"
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "पाप के लिए (चतुर्थी एकवचन)"
+      }
+    },
+    "grammar": "नपुंसकलिंगम्, चतुर्थी-एकवचनम्"
   }
 }
