@@ -9,6 +9,7 @@ export interface HomePageProps {
   onOpenBoard: () => void;
   onOpenVarnamala: () => void;
   onOpenGrammar: () => void;
+  onOpenVedicMaths?: () => void;
 }
 
 interface DemoWord {
@@ -281,6 +282,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenBoard,
   onOpenVarnamala,
   onOpenGrammar,
+  onOpenVedicMaths,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
@@ -371,6 +373,16 @@ const HomePage: React.FC<HomePageProps> = ({
           >
             📚 Vyākaraṇa (Grammar)
           </button>
+          {onOpenVedicMaths && (
+            <button
+              type="button"
+              className="home-btn-primary"
+              style={{ background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)', boxShadow: '0 4px 12px rgba(180, 83, 9, 0.25)' }}
+              onClick={onOpenVedicMaths}
+            >
+              📐 Vedic Maths (वैदिक-गणितम्)
+            </button>
+          )}
         </div>
 
         {/* Live Platform Highlights */}
@@ -599,6 +611,38 @@ const HomePage: React.FC<HomePageProps> = ({
               Browse Grammar Shelf ▶
             </button>
           </div>
+
+          {/* Feature 5: Vedic Mathematics */}
+          <div className="home-feature-card">
+            <div className="home-feature-card-top">
+              <div className="home-feature-icon-row">
+                <span className="home-feature-icon">📐</span>
+                <span className="home-feature-badge" style={{ background: '#fef3c7', color: '#92400e' }}>
+                  Speed Math
+                </span>
+              </div>
+              <h3 className="home-feature-title">वैदिक-गणितम् (Vedic Mathematics)</h3>
+              <p className="home-feature-desc">
+                The Magic of Numbers: An ultra-efficient mental calculation system enabling arithmetic solutions 10 to 15 times
+                faster than conventional methods. Explore the 16 Sutras, interactive step-by-step visual solvers, and speed challenges!
+              </p>
+              <ul className="home-feature-points">
+                <li>16 Primary Sutras &amp; 13 Sub-Sutras with Sanskrit audio</li>
+                <li>Interactive step-by-step mental math solvers (Ekādhikena, Nikhilaṁ, Ūrdhva)</li>
+                <li>Speed Math Practice Challenge &amp; Beejank digital root verification</li>
+              </ul>
+            </div>
+            {onOpenVedicMaths && (
+              <button
+                type="button"
+                className="home-feature-btn"
+                style={{ background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)', color: '#ffffff' }}
+                onClick={onOpenVedicMaths}
+              >
+                Launch Vedic Mathematics ▶
+              </button>
+            )}
+          </div>
         </div>
       </section>
 
@@ -793,6 +837,29 @@ const HomePage: React.FC<HomePageProps> = ({
             >
               Explore Vyākaraṇa Shelf ▶
             </button>
+          </div>
+
+          <div className="home-pathway-card">
+            <div>
+              <span className="home-pathway-badge" style={{ background: '#fef3c7', color: '#92400e' }}>
+                Mental Fluency
+              </span>
+              <h3 className="home-pathway-title">⚡ Vedic Mental Math</h3>
+              <p className="home-pathway-desc">
+                Conquer arithmetic phobia and compute 10 to 15 times faster! Master the 16 Sutras, instant squaring,
+                lightning subtraction without borrowing, and digital root verification.
+              </p>
+            </div>
+            {onOpenVedicMaths && (
+              <button
+                type="button"
+                className="home-pathway-btn"
+                style={{ background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)', color: '#ffffff' }}
+                onClick={onOpenVedicMaths}
+              >
+                Start Vedic Maths ▶
+              </button>
+            )}
           </div>
         </div>
       </section>

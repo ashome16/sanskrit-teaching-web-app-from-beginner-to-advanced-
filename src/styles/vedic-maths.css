@@ -1,0 +1,925 @@
+/* ==========================================================================
+   Vedic Mathematics (वैदिक-गणितम्) Styling
+   ========================================================================== */
+
+.vedic-maths-container {
+  min-height: calc(100vh - 72px);
+  background: linear-gradient(180deg, #fdfbf7 0%, #faf5ee 100%);
+  color: #2c221a;
+  padding-bottom: 5rem;
+}
+
+/* Header & Breadcrumb */
+.vedic-header {
+  background: #ffffff;
+  border-bottom: 1px solid #ebdccb;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 10px rgba(120, 53, 15, 0.04);
+}
+
+.vedic-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.vedic-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.vedic-breadcrumb-btn {
+  background: none;
+  border: none;
+  color: #b45309;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.vedic-breadcrumb-btn:hover {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.vedic-breadcrumb-sep {
+  color: #9ca3af;
+}
+
+.vedic-breadcrumb-current {
+  color: #4b5563;
+  font-weight: 600;
+}
+
+.vedic-header-nav-btn {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vedic-header-nav-btn:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+/* Hero Section */
+.vedic-hero {
+  max-width: 1200px;
+  margin: 2rem auto 1.5rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.vedic-invocation-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.vedic-hero-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #1f2937;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.vedic-hero-title-sa {
+  color: #b45309;
+  font-family: 'Noto Serif Devanagari', Georgia, serif;
+}
+
+.vedic-hero-subtitle {
+  font-size: 1.1rem;
+  color: #4b5563;
+  max-width: 820px;
+  margin: 0 auto 1.75rem auto;
+  line-height: 1.6;
+}
+
+/* Main Navigation Tabs */
+.vedic-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.vedic-tab-btn {
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  color: #4b5563;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.65rem 1.25rem;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.vedic-tab-btn:hover {
+  border-color: #f59e0b;
+  color: #b45309;
+  background: #fffbeb;
+}
+
+.vedic-tab-btn.active {
+  background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
+  color: #ffffff;
+  border-color: #b45309;
+  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.25);
+}
+
+/* Section Content Wrappers */
+.vedic-content-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Solvers Studio
+   -------------------------------------------------------------------------- */
+.solver-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .solver-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.solver-sidebar {
+  background: #ffffff;
+  border: 1px solid #ebdccb;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 14px rgba(120, 53, 15, 0.05);
+}
+
+.solver-sidebar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.solver-menu-btn {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 1px solid transparent;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.solver-menu-btn:hover {
+  background: #fef3c7;
+  border-color: #fde68a;
+}
+
+.solver-menu-btn.active {
+  background: #fffbeb;
+  border-color: #d97706;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.15);
+}
+
+.solver-menu-sa {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #b45309;
+}
+
+.solver-menu-en {
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+.solver-card {
+  background: #ffffff;
+  border: 1px solid #ebdccb;
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px rgba(120, 53, 15, 0.06);
+}
+
+.solver-header {
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.solver-sutra-tag {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.solver-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.35rem;
+}
+
+.solver-meaning {
+  font-size: 0.95rem;
+  color: #4b5563;
+  font-style: italic;
+}
+
+/* Preset Chips */
+.solver-presets {
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.solver-presets-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.solver-preset-chip {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.solver-preset-chip:hover {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+.solver-preset-chip.active {
+  background: #d97706;
+  color: #ffffff;
+  border-color: #d97706;
+}
+
+/* Input Fields */
+.solver-inputs-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.solver-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.solver-input-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+.solver-input-group input {
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.5rem 0.85rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  color: #1f2937;
+  width: 140px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.solver-input-group input:focus {
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+}
+
+/* Visual Step-by-Step Display */
+.solver-visual-card {
+  background: #fcf9f4;
+  border: 1.5px solid #fae8d4;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.solver-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.solver-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.solver-step-num {
+  background: #b45309;
+  color: #ffffff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.solver-step-content {
+  flex: 1;
+}
+
+.solver-step-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.2rem;
+}
+
+.solver-step-calc {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #b45309;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, monospace;
+}
+
+/* Result Box */
+.solver-result-box {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 2px solid #fde68a;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.solver-result-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #92400e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.solver-result-val {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #78350f;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, monospace;
+}
+
+/* --------------------------------------------------------------------------
+   Sutras Directory
+   -------------------------------------------------------------------------- */
+.sutra-search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sutra-search-input {
+  flex: 1;
+  min-width: 260px;
+  max-width: 500px;
+  padding: 0.65rem 1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.sutra-search-input:focus {
+  border-color: #b45309;
+  box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.15);
+}
+
+.sutra-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.sutra-filter-chip {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #4b5563;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sutra-filter-chip:hover {
+  border-color: #b45309;
+  color: #b45309;
+}
+
+.sutra-filter-chip.active {
+  background: #b45309;
+  color: #ffffff;
+  border-color: #b45309;
+}
+
+.sutras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 500px) {
+  .sutras-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sutra-card {
+  background: #ffffff;
+  border: 1px solid #ebdccb;
+  border-radius: 14px;
+  padding: 1.35rem;
+  box-shadow: 0 3px 12px rgba(120, 53, 15, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sutra-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(120, 53, 15, 0.08);
+}
+
+.sutra-card-top {
+  margin-bottom: 0.75rem;
+}
+
+.sutra-card-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.sutra-card-num {
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+}
+
+.sutra-card-cat {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #f3f4f6;
+  color: #4b5563;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+}
+
+.sutra-card-sanskrit {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #78350f;
+  margin-bottom: 0.2rem;
+  font-family: 'Noto Serif Devanagari', Georgia, serif;
+}
+
+.sutra-card-iast {
+  font-size: 0.88rem;
+  color: #6b7280;
+  font-style: italic;
+  margin-bottom: 0.4rem;
+}
+
+.sutra-card-meaning {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.sutra-card-desc {
+  font-size: 0.85rem;
+  color: #4b5563;
+  line-height: 1.45;
+  margin-bottom: 1rem;
+}
+
+.sutra-card-example {
+  background: #fdfbf7;
+  border: 1px dashed #fcd34d;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.82rem;
+}
+
+.sutra-card-example-title {
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 0.35rem;
+}
+
+.sutra-card-example-steps {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin: 0 0 0.35rem 0;
+  color: #4b5563;
+}
+
+.sutra-card-example-ans {
+  font-weight: 700;
+  color: #15803d;
+}
+
+/* --------------------------------------------------------------------------
+   Sub-Sutras Section
+   -------------------------------------------------------------------------- */
+.subsutras-section {
+  background: #ffffff;
+  border: 1px solid #ebdccb;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 14px rgba(120, 53, 15, 0.04);
+}
+
+.subsutras-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 0.35rem;
+}
+
+.subsutras-subtitle {
+  font-size: 0.92rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.subsutras-table-wrap {
+  overflow-x: auto;
+}
+
+.subsutras-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.subsutras-table th {
+  background: #fffbeb;
+  color: #92400e;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #fde68a;
+}
+
+.subsutras-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #374151;
+}
+
+.subsutras-table tr:hover td {
+  background: #fdfbf7;
+}
+
+/* --------------------------------------------------------------------------
+   Speed Math Practice Quiz
+   -------------------------------------------------------------------------- */
+.quiz-container {
+  max-width: 760px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #ebdccb;
+  border-radius: 18px;
+  padding: 2.25rem;
+  box-shadow: 0 6px 24px rgba(120, 53, 15, 0.08);
+}
+
+.quiz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-progress-pill {
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+.quiz-score-pill {
+  background: #dcfce7;
+  color: #166534;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+.quiz-sutra-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #b45309;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.quiz-question-text {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  line-height: 1.35;
+}
+
+.quiz-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .quiz-options-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.quiz-option-btn {
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1f2937;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-option-btn:hover:not(:disabled) {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.quiz-option-btn.correct {
+  background: #dcfce7 !important;
+  border-color: #22c55e !important;
+  color: #15803d !important;
+}
+
+.quiz-option-btn.incorrect {
+  background: #fee2e2 !important;
+  border-color: #ef4444 !important;
+  color: #b91c1c !important;
+}
+
+.quiz-feedback-box {
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.quiz-feedback-box.correct {
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  color: #166534;
+}
+
+.quiz-feedback-box.incorrect {
+  background: #fef2f2;
+  border: 1.5px solid #fecaca;
+  color: #991b1b;
+}
+
+.quiz-feedback-title {
+  font-weight: 800;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.quiz-feedback-trick {
+  font-size: 0.92rem;
+  margin-bottom: 0.35rem;
+}
+
+.quiz-feedback-explanation {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.quiz-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.quiz-next-btn {
+  background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quiz-next-btn:hover {
+  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.3);
+  transform: translateY(-1px);
+}
+
+.quiz-complete-card {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.quiz-complete-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.quiz-complete-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-complete-score {
+  font-size: 1.2rem;
+  color: #b45309;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Introduction Essay & Modern Era Tab
+   -------------------------------------------------------------------------- */
+.vedic-essay-wrap {
+  background: #ffffff;
+  border: 1px solid #ebdccb;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 16px rgba(120, 53, 15, 0.05);
+}
+
+.vedic-essay-h2 {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin: 1.75rem 0 0.75rem 0;
+}
+
+.vedic-essay-h2:first-child {
+  margin-top: 0;
+}
+
+.vedic-essay-p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+
+.vedic-essay-quote {
+  background: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 12px 12px 0;
+  font-size: 1.05rem;
+  color: #92400e;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.benefit-card {
+  background: #fdfbf7;
+  border: 1px solid #fae8d4;
+  border-radius: 12px;
+  padding: 1.35rem;
+}
+
+.benefit-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.benefit-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 0.35rem;
+}
+
+.benefit-desc {
+  font-size: 0.88rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

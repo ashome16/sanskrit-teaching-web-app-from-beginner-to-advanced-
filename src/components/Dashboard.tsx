@@ -4,6 +4,7 @@ import TextbookReader from './TextbookReader';
 import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
 import Board from './Board';
 import Grammar from './Grammar';
+import VedicMaths from './VedicMaths';
 import AuthModal from './AuthModal';
 import UserProfileModal from './UserProfileModal';
 import { useAuthStore } from '../store/authStore';
@@ -34,9 +35,9 @@ const Dashboard: React.FC = () => {
   });
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [wordSelection, setWordSelection] = useState<WordSelection | null>(null);
-  const [activeView, setActiveView] = useState<'home' | 'board' | 'reader' | 'grammar'>(() => {
+  const [activeView, setActiveView] = useState<'home' | 'board' | 'reader' | 'grammar' | 'vedic-maths'>(() => {
     const saved = localStorage.getItem('school-active-view');
-    if (saved === 'home' || saved === 'board' || saved === 'reader' || saved === 'grammar') return saved;
+    if (saved === 'home' || saved === 'board' || saved === 'reader' || saved === 'grammar' || saved === 'vedic-maths') return saved;
     return 'home';
   });
   const [grammarResetKey, setGrammarResetKey] = useState(0);
@@ -258,6 +259,15 @@ const Dashboard: React.FC = () => {
           </button>
           <button
             type="button"
+            className={`dashboard-nav-stacked${activeView === 'vedic-maths' ? ' active' : ''}`}
+            onClick={() => setActiveView('vedic-maths')}
+            title="Open Vedic Mathematics (वैदिक-गणितम्)"
+          >
+            <span className="dashboard-nav-primary">वैदिक-गणितम्</span>
+            <span className="dashboard-nav-secondary">Vedic Maths</span>
+          </button>
+          <button
+            type="button"
             className="dashboard-nav-faq"
             onClick={() => {
               setActiveView('home');
@@ -305,6 +315,7 @@ const Dashboard: React.FC = () => {
           onOpenBoard={() => setActiveView('board')}
           onOpenVarnamala={openVarnamala}
           onOpenGrammar={handleOpenGrammar}
+          onOpenVedicMaths={() => setActiveView('vedic-maths')}
         />
       )}
       {activeView === 'board' && (
@@ -317,6 +328,12 @@ const Dashboard: React.FC = () => {
       )}
       {activeView === 'grammar' && (
         <Grammar key={grammarResetKey} onGoHome={() => setActiveView('home')} />
+      )}
+      {activeView === 'vedic-maths' && (
+        <VedicMaths
+          onGoHome={() => setActiveView('home')}
+          onOpenReader={() => openDeepakam()}
+        />
       )}
       {activeView === 'reader' && <TextbookReader
         lessons={lessons}
