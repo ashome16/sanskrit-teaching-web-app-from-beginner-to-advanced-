@@ -1,0 +1,226 @@
+.support-widget {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.support-widget-trigger {
+  background: #273b35;
+  color: #f1c75b;
+  border: 1.5px solid #f1c75b;
+  border-radius: 999px;
+  padding: 0.65rem 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.support-widget-trigger:hover {
+  background: #192723;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.support-trigger-icon {
+  font-size: 1.1rem;
+}
+
+.support-widget-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+  border: 1px solid #e2dbce;
+  width: 330px;
+  overflow: hidden;
+  animation: widget-pop 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes widget-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.support-card-header {
+  background: #273b35;
+  color: #fffdf8;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.support-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.support-card-icon {
+  font-size: 1.3rem;
+}
+
+.support-card-title {
+  margin: 0;
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: #f1c75b;
+  line-height: 1.2;
+}
+
+.support-card-subtitle {
+  font-size: 0.72rem;
+  color: #d8d2c4;
+}
+
+.support-card-close {
+  background: transparent;
+  border: none;
+  color: #d8d2c4;
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+
+.support-card-close:hover {
+  color: #ffffff;
+}
+
+.support-card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.support-card-desc {
+  font-size: 0.8rem;
+  color: #554d42;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.support-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.support-channel-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fbf9f5;
+  border: 1px solid #ebdcc5;
+  border-radius: 8px;
+  padding: 0.45rem 0.65rem;
+}
+
+.channel-icon {
+  font-size: 1.05rem;
+}
+
+.channel-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.channel-details strong {
+  font-size: 0.72rem;
+  color: #273b35;
+}
+
+.channel-details a {
+  font-size: 0.78rem;
+  color: #b3472f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.channel-details a:hover {
+  text-decoration: underline;
+}
+
+.channel-action-btn {
+  background: #f4ede0;
+  border: 1px solid #d4c4af;
+  color: #5c4e3e;
+  border-radius: 4px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.channel-action-btn:hover {
+  background: #273b35;
+  color: #f1c75b;
+}
+
+.support-quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.support-quick-btn {
+  background: #faf7f2;
+  border: 1px dashed #d8cebc;
+  border-radius: 6px;
+  padding: 0.4rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #273b35;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.support-quick-btn:hover {
+  background: #f5eee0;
+  border-color: #b3472f;
+  color: #b3472f;
+}
+
+.support-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  color: #8c8273;
+  padding-top: 0.5rem;
+  border-top: 1px solid #f0e9dc;
+}
+
+.support-secure-badge {
+  font-weight: 700;
+  color: #273b35;
+}
+
+@media (max-width: 600px) {
+  .support-widget {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  .support-widget-card {
+    width: calc(100vw - 2rem);
+  }
+}

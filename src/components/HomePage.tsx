@@ -425,19 +425,53 @@ const HomePage: React.FC<HomePageProps> = ({
         <div className="home-stats-grid">
           <div className="home-stat-item">
             <span className="home-stat-val">15</span>
-            <span className="home-stat-label">NCERT Chapters &amp; Appendices</span>
+            <span className="home-stat-label">NCERT Deepakam Chapters</span>
+          </div>
+          <div className="home-stat-item">
+            <span className="home-stat-val">2,200+</span>
+            <span className="home-stat-label">Interactive Tile Puzzles</span>
+          </div>
+          <div className="home-stat-item">
+            <span className="home-stat-val">16</span>
+            <span className="home-stat-label">Vedic Math Sutras</span>
           </div>
           <div className="home-stat-item">
             <span className="home-stat-val">5,160+</span>
-            <span className="home-stat-label">Words with Native Audio</span>
+            <span className="home-stat-label">Words with Sanskrit Audio</span>
           </div>
-          <div className="home-stat-item">
-            <span className="home-stat-val">7</span>
-            <span className="home-stat-label">Interactive Puzzle Shelves</span>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------
+          Trust & Academic Accreditation Bar
+          ------------------------------------------------------------------ */}
+      <section className="home-trust-banner" aria-label="Academic Standards">
+        <div className="home-trust-item">
+          <span className="home-trust-icon">🏛️</span>
+          <div className="home-trust-text">
+            <strong>CBSE Class 7 Syllabus</strong>
+            <span>Aligned with Board Exam pattern &amp; NCERT Textbook 'दीपकम'</span>
           </div>
-          <div className="home-stat-item">
-            <span className="home-stat-val">100%</span>
-            <span className="home-stat-label">Vocabulary Trilingual Gloss</span>
+        </div>
+        <div className="home-trust-item">
+          <span className="home-trust-icon">🇮🇳</span>
+          <div className="home-trust-text">
+            <strong>NEP 2020 Compliant</strong>
+            <span>Multidisciplinary Sanskrit &amp; computational thinking</span>
+          </div>
+        </div>
+        <div className="home-trust-item">
+          <span className="home-trust-icon">🎧</span>
+          <div className="home-trust-text">
+            <strong>Native Phonetic Speech</strong>
+            <span>Varnamala audio synthesis with authentic visarga echoes</span>
+          </div>
+        </div>
+        <div className="home-trust-item">
+          <span className="home-trust-icon">🛡️</span>
+          <div className="home-trust-text">
+            <strong>100% Verified &amp; Safe</strong>
+            <span>UPI, Google Pay, Apple Pay &amp; 14-day risk-free trial</span>
           </div>
         </div>
       </section>
@@ -905,72 +939,6 @@ const HomePage: React.FC<HomePageProps> = ({
           FAQ & 2-Week Trial Pricing Section
           ------------------------------------------------------------------ */}
       <FAQSection onOpenRegister={() => openAuthModal('register')} />
-
-      {/* ------------------------------------------------------------------
-          Footer Call to Action
-          ------------------------------------------------------------------ */}
-      <footer className="home-footer-cta">
-        <div className="home-footer-brand-row">
-          <img src="/logo.jpg" alt="EdNet Learn Gurukul Logo" className="home-footer-logo" />
-          <div>
-            <div className="home-footer-brand-title">EdNet Learn Gurukul</div>
-            <span className="home-footer-brand-sub">गुरुकुलम् · CBSE Class 7 Sanskrit &amp; Vedic Mathematics</span>
-          </div>
-        </div>
-
-        <div className="home-footer-shloka">
-          भाषासु मुख्या मधुरा दिव्या गीर्वाणभारती ।
-        </div>
-        <p className="home-footer-meaning">
-          &ldquo;Among all languages, the divine tongue of Sanskrit is the foremost, sweet, and pure.&rdquo;
-        </p>
-
-        {/* Customer Support Desk */}
-        <div className="home-footer-support">
-          <div className="home-footer-support-title">Customer &amp; Student Support</div>
-          <div className="home-footer-support-links">
-            <a href="mailto:care@ednetlearn.in" className="home-footer-support-link">
-              <span>📧</span> Learner Care: <strong>care@ednetlearn.in</strong>
-            </a>
-            <a href="mailto:admin@ednetlearn.in" className="home-footer-support-link">
-              <span>🏛️</span> Administration: <strong>admin@ednetlearn.in</strong>
-            </a>
-          </div>
-          <div className="home-footer-cbse-note">
-            Aligned with the Central Board of Secondary Education (CBSE) Class 7 Sanskrit Curriculum &amp; NCERT Textbook 'दीपकम'.
-          </div>
-        </div>
-
-        <div className="home-footer-links">
-          <button type="button" className="home-footer-link" onClick={() => onOpenReader('gsde101')}>
-            📖 CBSE Deepakam Class 7
-          </button>
-          <button type="button" className="home-footer-link" onClick={onOpenBoard}>
-            🧩 जोडो Tile Puzzle
-          </button>
-          <button type="button" className="home-footer-link" onClick={onOpenVarnamala}>
-            🔤 Varṇamālā Alphabet
-          </button>
-          <button type="button" className="home-footer-link" onClick={onOpenGrammar}>
-            📚 Grammar Reference
-          </button>
-          {onOpenVedicMaths && (
-            <button type="button" className="home-footer-link" onClick={onOpenVedicMaths}>
-              📐 Vedic Mathematics
-            </button>
-          )}
-          {onOpenQuiz && (
-            <button type="button" className="home-footer-link" onClick={onOpenQuiz}>
-              🎯 Sanskrit Quiz
-            </button>
-          )}
-          {onOpenWorksheets && (
-            <button type="button" className="home-footer-link" onClick={onOpenWorksheets}>
-              📑 Printable Worksheets
-            </button>
-          )}
-        </div>
-      </footer>
     </main>
   );
 };

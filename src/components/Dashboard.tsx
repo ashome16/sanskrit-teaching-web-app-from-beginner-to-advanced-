@@ -10,6 +10,8 @@ import WorksheetSection from './WorksheetSection';
 import AuthModal from './AuthModal';
 import UserProfileModal from './UserProfileModal';
 import PaymentModal from './PaymentModal';
+import Footer from './Footer';
+import SupportWidget from './SupportWidget';
 import { useAuthStore } from '../store/authStore';
 import { LESSONS as STATIC_LESSONS, fetchLatestChapters } from '../data/chapters';
 import { playPronunciation } from '../utils/pronunciation';
@@ -406,6 +408,24 @@ const Dashboard: React.FC = () => {
         isLastSentence={isLastSentence}
       />}
       {activeView === 'reader' && <WordAnalyzerCard selection={wordSelection} />}
+
+      {activeView !== 'reader' && (
+        <Footer
+          onOpenReader={(lessonId) => openDeepakam(lessonId)}
+          onOpenBoard={() => setActiveView('board')}
+          onOpenVarnamala={openVarnamala}
+          onOpenGrammar={handleOpenGrammar}
+          onOpenVedicMaths={() => setActiveView('vedic-maths')}
+          onOpenQuiz={() => setActiveView('quiz')}
+          onOpenWorksheets={() => setActiveView('worksheets')}
+          onOpenFAQ={() => setActiveView('home')}
+        />
+      )}
+
+      <SupportWidget
+        onOpenFAQ={() => setActiveView('home')}
+        onOpenWorksheets={() => setActiveView('worksheets')}
+      />
 
       <AuthModal />
       <UserProfileModal />
