@@ -6,7 +6,7 @@ import { playPronunciation } from '../utils/pronunciation';
 type ShelfId = 'prarambhah' | 'sariram' | 'ganitam' | 'bhugolah' | 'sanskritih' | 'krida' | 'prakrtih';
 
 interface ShelfButton { id: ShelfId; label: string; }
-interface BoardPuzzle { target: string; tiles: string[]; answer?: string; english: string; sentence?: string; highlight?: string; tapHighlight?: string; seed?: string; prompt?: string; gloss?: string; phase?: string; }
+interface BoardPuzzle { target: string; tiles: string[]; answer?: string; english: string; sentence?: string; highlight?: string; tapHighlight?: string; seed?: string; prompt?: string; gloss?: string; phase?: string; explanation?: string; }
 interface BoardShelfLine { shelf: string; native: string; skin: string; puzzles: BoardPuzzle[]; }
 interface PackLabel { title: string; gloss: string; }
 interface VisitorBlock { heading: 'h2' | 'h3' | 'p'; text: string; }
@@ -152,6 +152,65 @@ function highlightedSentence(sentence: string | undefined, highlight: string | u
     ? after
     : <>{after.slice(0, tapStart)}<span className="word-tap">{tapHighlight}</span>{after.slice(tapStart + (tapHighlight as string).length)}</>;
   return <>{before}<span className="word-focus">{highlight}</span>{afterNode}</>;
+}
+
+/** Render a Jodo puzzle sentence with an interactive blank / live-assembled tile slot. */
+function renderJodoSentenceWithSlot(
+  sentence: string | undefined,
+  target: string,
+  chosen: string[]
+): React.ReactNode {
+  const normSent = (sentence || '').normalize('NFC');
+  const normTarget = (target || '').normalize('NFC');
+  const matchIdx = normSent.indexOf(normTarget);
+
+  const slotNode = (
+    <span
+      className={`jodo-blank-slot ${
+        chosen.length === 0
+          ? 'jodo-blank-slot--empty'
+          : chosen.length === 1
+          ? 'jodo-blank-slot--partial'
+          : 'jodo-blank-slot--filled'
+      }`}
+      aria-label={chosen.length ? `Forming: ${glueTiles(chosen)}` : 'Blank to fill'}
+    >
+      {chosen.length === 0 ? (
+        <span className="jodo-blank-underscores">____</span>
+      ) : chosen.length === 1 ? (
+        <span className="jodo-blank-partial">
+          <span className="jodo-slot-first">{cleanTile(chosen[0])}</span>
+          <span className="jodo-slot-plus">+</span>
+          <span className="jodo-slot-q">?</span>
+        </span>
+      ) : (
+        <span className="jodo-blank-text">{glueTiles(chosen)}</span>
+      )}
+    </span>
+  );
+
+  if (!normSent) {
+    return slotNode;
+  }
+
+  if (matchIdx < 0) {
+    return (
+      <>
+        {slotNode} <span>{normSent}</span>
+      </>
+    );
+  }
+
+  const before = normSent.slice(0, matchIdx);
+  const after = normSent.slice(matchIdx + normTarget.length);
+
+  return (
+    <>
+      {before}
+      {slotNode}
+      {after}
+    </>
+  );
 }
 
 
@@ -700,10 +759,10 @@ const Board: React.FC<BoardProps> = ({
   );
   const wrongAttemptMessage = isMatchMeaningPhase
     ? 'Not that cream word — try another cream tile.'
-    : hasBlank
-      ? 'Not that cream tile — try another cream tile.'
-      : isJodoSkin
-        ? 'Not those tiles. Click the right letter and vowel (any order), or try another cream tile.'
+    : isJodoSkin
+      ? 'Not those tiles. Click the right letter and vowel (any order), or try another cream tile.'
+      : hasBlank
+        ? 'Not that cream tile — try another cream tile.'
         : 'Not that cream tile — try another cream tile.';
 
   /** Apply a new cream-tile selection and immediately reveal sentence/graphic if correct. */
@@ -1090,11 +1149,42 @@ const Board: React.FC<BoardProps> = ({
           </div>
         ) : (
           <>
-            <p className="puzzle-prompt">
-              {isMatchMeaningPhase
-                ? (activePuzzle.prompt ?? `Which word means · ${activePuzzle.gloss ?? activePuzzle.english}?`)
-                : (activePuzzle.prompt ?? activePuzzle.target)}
-            </p>
+            {isJodoSkin ? (
+              <div className="jodo-prompt-card">
+                <div className="jodo-goal-bar">
+                  <span className="jodo-goal-tag">🎯 जोडो (Join):</span>
+                  <span className="jodo-goal-target">{activePuzzle.target}</span>
+                  {activePuzzle.english && (
+                    <span className="jodo-goal-meaning" title="Meaning in English">
+                      ({activePuzzle.english})
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    className="jodo-sound-btn"
+                    onClick={() => playPronunciation(activePuzzle.target)}
+                    title={`Hear pronunciation for ${activePuzzle.target}`}
+                    aria-label={`Hear ${activePuzzle.target}`}
+                  >
+                    🔊
+                  </button>
+                </div>
+                <div className="jodo-sentence-line">
+                  {renderJodoSentenceWithSlot(activePuzzle.sentence, activePuzzle.target, chosen)}
+                </div>
+              </div>
+            ) : (
+              <div className="standard-prompt-block">
+                <p className="puzzle-prompt">
+                  {isMatchMeaningPhase
+                    ? (activePuzzle.prompt ?? `Which word means · ${activePuzzle.gloss ?? activePuzzle.english}?`)
+                    : (activePuzzle.prompt ?? activePuzzle.target)}
+                </p>
+                {isPrashnaPart && activePuzzle.english && (
+                  <p className="prashna-english-clue">({activePuzzle.english})</p>
+                )}
+              </div>
+            )}
 
             <div className="tile-row">
               {activePuzzle.tiles.map((tile, index) => (
@@ -1114,15 +1204,27 @@ const Board: React.FC<BoardProps> = ({
                 <div className="puzzle-graphic" aria-hidden="true">{puzzleGraphic}</div>
                 <p className="result-sanskrit">{highlightedSentence(activePuzzle.sentence, activePuzzle.highlight, activePuzzle.tapHighlight)}</p>
                 <p className="result-english">{activePuzzle.english}</p>
-                {isMatchMeaningPhase && (
+                <div className="result-audio-row">
                   <button
                     className="hear-button hear-button--inline"
                     type="button"
-                    onClick={() => playPronunciation(activePuzzle.target)}
+                    onClick={() => playPronunciation(activePuzzle.sentence || activePuzzle.target)}
+                    title="Hear complete sentence"
                   >
-                    🔊 Hear Pronunciation
+                    🔊 Hear Sentence
                   </button>
-                )}
+                  {isJodoSkin && activePuzzle.target && (
+                    <button
+                      className="hear-button hear-button--inline hear-button--subtle"
+                      type="button"
+                      onClick={() => playPronunciation(activePuzzle.target)}
+                      title={`Hear letter sound: ${activePuzzle.target}`}
+                    >
+                      🔊 Hear &apos;{activePuzzle.target}&apos;
+                    </button>
+                  )}
+                </div>
+                {activePuzzle.explanation && <p className="result-explanation">💡 {activePuzzle.explanation}</p>}
                 {activePuzzle.seed && <p className="result-seed">{activePuzzle.seed}</p>}
                 {hasNextPuzzle && <button ref={nextBtnRef} className="next-button" type="button" onClick={onNextOrAgain}>{isLastPuzzle ? 'Play Again ↺' : 'Next Puzzle ▶'}</button>}
               </div>
