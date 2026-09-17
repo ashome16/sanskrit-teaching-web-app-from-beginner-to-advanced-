@@ -31,6 +31,385 @@ export interface QuizQuestion {
   quickTrick: string;
 }
 
+export interface GuruParamparaMember {
+  id: string;
+  name: string;
+  sanskritName: string;
+  role: string;
+  period: string;
+  imageIcon: string;
+  badge: string;
+  description: string;
+  keyContributions: string[];
+  quote?: string;
+}
+
+export interface VedicArticleSection {
+  title: string;
+  sanskritTitle?: string;
+  paragraphs: string[];
+  highlight?: string;
+}
+
+export interface VedicArticle {
+  id: string;
+  slug: string;
+  title: string;
+  sanskritTitle: string;
+  subtitle: string;
+  readingTime: string;
+  badge: string;
+  sections: VedicArticleSection[];
+  quote?: string;
+  keyTakeaways: string[];
+}
+
+export const GURU_PARAMPARA: GuruParamparaMember[] = [
+  {
+    id: 'swamiji',
+    name: 'Jagadguru Swami Bharati Krishna Tirtha',
+    sanskritName: 'जगद्गुरु स्वामी भारतीकृष्णतीर्थ',
+    role: '143rd Shankaracharya of Govardhan Math, Puri · Reconstructor of Vedic Mathematics',
+    period: '1884 – 1960',
+    imageIcon: '🕉️',
+    badge: 'The Pioneer & Reconstructor',
+    description:
+      'A towering polymath who held master’s degrees in seven diverse subjects (including Sanskrit, Philosophy, Mathematics, History, and English). Between 1911 and 1918, Swamiji entered deep solitary meditation (tapasya) in the forests surrounding Sringeri. Immersed in the Parishishta (appendices) of the Atharva Veda, he uncovered and reconstructed the 16 core Sutras and 13 Sub-Sutras, revealing a unified computational philosophy.',
+    keyContributions: [
+      'Reconstructed the complete 16 Sutras & 13 Sub-Sutras after 8 years of intensive tapasya (1911–1918).',
+      'Authored 16 exhaustive volumes detailing higher arithmetic, algebra, spherical trigonometry, and calculus.',
+      'When the original 16 manuscripts were tragically lost, he rewrote the foundational introductory volume in his twilight years despite failing health and eyesight.',
+      'Conducted a historic tour of the United States in 1958, addressing world universities on self-realization and Vedic science.',
+      'Established Govardhan Math as a center for Vedic scientific rejuvenation.'
+    ],
+    quote: 'All mathematics is an organic whole, and the 16 Sutras are the natural pathways along which human intelligence naturally flows.'
+  },
+  {
+    id: 'manjula',
+    name: 'Srimati Manjula Trivedi',
+    sanskritName: 'श्रीमती मञ्जुला त्रिवेदी',
+    role: 'Devoted Disciple & Custodian of the Sole Surviving Manuscript',
+    period: 'Mid-20th Century',
+    imageIcon: '📜',
+    badge: 'The Guardian of the Flame',
+    description:
+      'Swamiji’s devoted disciple who played the single most critical historical role in preserving Vedic Mathematics for humanity. When Swamiji’s health declined in Mumbai, she lovingly transcribed his spoken dictations, safeguarded the sole surviving handwritten manuscript with fierce devotion, and navigated its posthumous publication.',
+    keyContributions: [
+      'Faithfully transcribed Swamiji\'s final spoken dictations and mathematical proofs during his illness.',
+      'Secured and preserved the single remaining introductory manuscript after 16 original volumes were lost.',
+      'Coordinated the landmark 1965 publication through Motilal Banarsidass Publishers in collaboration with Banaras Hindu University.',
+      'Penned the foundational historical preface documenting Swamiji\'s life, sadhana, and the miraculous survival of the work.'
+    ],
+    quote: 'Without her selfless devotion, this monumental wisdom would have been lost forever to the sands of time.'
+  },
+  {
+    id: 'dr-puri',
+    name: 'Dr. Narinder Puri',
+    sanskritName: 'डॉ. नरिन्दर पुरी',
+    role: 'Former Professor of Civil Engineering, University of Roorkee (IIT Roorkee)',
+    period: 'Late 20th Century',
+    imageIcon: '🏛️',
+    badge: 'The Academic Torchbearer',
+    description:
+      'A prominent disciple of Swamiji and a distinguished professor of Civil Engineering at Roorkee. Dr. Puri was instrumental in taking Vedic Mathematics out of spiritual hermitages and directly into mainstream academic lecture halls, engineering faculties, and scientific conferences during the 1980s.',
+    keyContributions: [
+      'Delivered hundreds of national and international university lectures proving the mathematical rigor of Vedic Sutras.',
+      'Demonstrated that Vedic matrix operations and Urdhva-Tiryagbhyam drastically cut computational steps in structural engineering mechanics.',
+      'Trained thousands of school and college educators across India, igniting modern Vedic math pedagogy.',
+      'Published early applied research on Vedic algorithms in numerical computing.'
+    ]
+  },
+  {
+    id: 'williams-glover',
+    name: 'Kenneth Williams & James Glover',
+    sanskritName: 'केनेथ विलियम्स एवं जेम्स ग्लोवर',
+    role: 'British Mathematicians, Authors & International Educators',
+    period: '1970s – Present',
+    imageIcon: '🌍',
+    badge: 'The Global Expansionists',
+    description:
+      'Encountering Swamiji\'s 1965 book in London, these British mathematicians recognized its universal psychological and pedagogical truth. They authored structured introductory and school textbook series, introduced Vedic Mathematics to classrooms across the UK, Europe, Australia, and North America, and founded global research symposiums.',
+    keyContributions: [
+      'Authored classic textbooks: "Discover Vedic Mathematics", "Vedic Mathematics for Schools" (Vols 1–3), and research on astronomy.',
+      'Integrated Vedic mental math into British curricula, showing that it dramatically boosts student confidence in GCSE and A-Level exams.',
+      'Established international online teacher training certifications, graduating educators from over 40 countries.'
+    ]
+  },
+  {
+    id: 'modern-gurukuls',
+    name: 'Modern Researchers & EdNet Learn Gurukul',
+    sanskritName: 'आधुनिक-संशोधकाः एवं एडनेट लर्न गुरुकुलम्',
+    role: 'Digital Educators, Computer Architects & Cryptography Engineers',
+    period: '21st Century · Today',
+    imageIcon: '💻',
+    badge: 'The Modern Digital Renaissance',
+    description:
+      'Today, Vedic Mathematics powers interactive digital learning platforms and cutting-edge VLSI (Very Large Scale Integration) microchip designs. Computer architects apply Urdhva-Tiryagbhyam and Nikhilam to build ultrafast, low-power binary multiplier circuits in AI processors, digital signal processors (DSP), and cryptographic hardware.',
+    keyContributions: [
+      'Design of high-speed Vedic multiplier chips in VLSI hardware, reducing gate latency and power consumption.',
+      'Interactive digital Gurukuls (such as EdNet Learn) offering gamified mental math to millions of CBSE and global students.',
+      'Eradicating math anxiety worldwide by cultivating holistic mental pattern recognition.'
+    ]
+  }
+];
+
+export const VEDIC_ARTICLES: VedicArticle[] = [
+  {
+    id: 'magic-intro',
+    slug: 'magic-of-numbers',
+    title: 'The Magic of Numbers: An Introduction to Vedic Mathematics',
+    sanskritTitle: '॥ सङ्ख्यानां विस्मयः वैदिक-गणित-परिचयश्च ॥',
+    subtitle: 'An ultra-efficient system of mental calculation enabling solutions 10 to 15 times faster than conventional methods.',
+    readingTime: '5 min read',
+    badge: 'Foundations & Overview',
+    sections: [
+      {
+        title: 'Beyond Scrap Work: Math as an Engaging Mental Game',
+        paragraphs: [
+          'Vedic Mathematics is a unique, ultra-efficient system of mental calculation that allows people to solve complex arithmetic and algebraic problems 10 to 15 times faster than conventional methods.',
+          'Grounded in a cohesive framework of natural mental processes, this system bypasses tedious scrap work, endless scratchpad margins, and finger counting to turn math into an engaging, visual game.',
+          'Whether you are a student preparing for competitive exams (CBSE, JEE, CAT, Olympiads), a professional looking to sharpen your analytical skills, or someone trying to conquer a lifelong fear of numbers, Vedic Mathematics offers a refreshing approach to numerical fluency.'
+        ],
+        highlight: 'Vedic Math does not teach memorized tricks; it awakens the human mind’s natural ability to recognize geometric symmetry in numbers.'
+      },
+      {
+        title: 'The Modern Resurgence of an Ancient Science',
+        paragraphs: [
+          'The modern system of Vedic Mathematics was compiled between 1911 and 1918 by Swami Bharati Krishna Tirtha (1884–1960), a brilliant scholar of Sanskrit, mathematics, and philosophy.',
+          'After spending years deeply analyzing ancient Indian texts—specifically commentaries linked to the Atharva Veda Parishishta—he reconstructed a unified mathematical architecture. He published his ground-breaking findings in his landmark book, Vedic Mathematics, in 1965.',
+          'Unlike standard column-by-column school math, Vedic Mathematics relies on 16 core Sutras (word-formulas) and 13 Sub-Sutras. These short, easy-to-remember Sanskrit aphorisms describe the way the human mind naturally computes numbers.'
+        ]
+      },
+      {
+        title: 'The Four Cognitive Pillars of Vedic Math',
+        paragraphs: [
+          '1. Eradicates Math Phobia: By replacing rigid, lengthy algorithms with flexible, single-line mental calculations, it transforms math anxiety into creative problem-solving confidence.',
+          '2. Minimal Memorization: You only need to know basic single-digit tables up to 9. The elegant sutra formulas handle multi-digit arithmetic dynamically.',
+          '3. Enhances Brain Agility: Acts as a workout gym for your mind, sharpening working memory, structural pattern visualization, and hemispheric brain coordination.',
+          '4. Built-in Instant Verification: Formulas feature rapid cross-checking tools (such as digital roots / बीजाङ्क Beejank) that verify calculation accuracy in under two seconds.'
+        ]
+      }
+    ],
+    quote: 'Unlike standard classroom math, this system relies on 16 core Sutras that describe the way the human mind naturally processes numbers, honoring a traditional Indian insight: that absolute truth, whether spiritual or mathematical, is inherently simple and harmonious.',
+    keyTakeaways: [
+      'Calculations run 10–15× faster than standard school methods.',
+      'Only requires basic multiplication tables up to 9 × 9.',
+      'Built-in instant proof checking using Digital Roots (Beejank).'
+    ]
+  },
+  {
+    id: 'birth-grid',
+    slug: 'birth-of-the-grid',
+    title: 'The Birth of the Grid: The Greatest Leap in Human Thought',
+    sanskritTitle: '॥ ग्रिड-व्यवस्थायाः जन्म स्थानमानस्य च प्रभावः ॥',
+    subtitle: 'The Evolution of the Numerical Grid, the Roman numeral tally crisis, and the revolutionary power of Decimal Place-Value & Shunya (Zero).',
+    readingTime: '7 min read',
+    badge: 'Historical Evolution',
+    sections: [
+      {
+        title: 'The Agony of Roman Numerals: A Fixed Tally System',
+        paragraphs: [
+          'Before the modern system took root, counting was an agonizingly physical chore. Roman numerals (I, V, X, L, C, D, M) were essentially a tally system on paper.',
+          'Writing a number like 3,888 required fifteen characters: MMMDCCCLXXXVIII. Because these symbols had fixed values regardless of where they stood, performing basic multiplication or division with Roman numerals was so incredibly difficult that it was reserved for specialized mathematical scholars and abacus masters.',
+          'In a tally system, symbols cannot interact dynamically. Every operation required cumbersome manual decomposition, making large-scale scientific computation virtually impossible.'
+        ],
+        highlight: 'Writing 3,888 in Roman numerals consumed 15 characters (MMMDCCCLXXXVIII). In the Indian decimal system, it takes just 4 digits.'
+      },
+      {
+        title: 'The Indian Breakthrough: Decimal Place-Value & Shunya (Zero)',
+        paragraphs: [
+          'The global paradigm shifted when ancient Indian mathematicians conceptualized the decimal place-value system alongside Shunya (Zero / शून्य).',
+          'By declaring that a symbol\'s value is entirely dictated by its position on a grid, humanity unlocked infinite computational scaling using only ten digits (0–9).',
+          'In the number 333, the three identical digits represent completely different magnitudes: 300 + 30 + 3. This simple conceptual breakthrough transformed numbers from rigid, static labels into dynamic, fluid entities.'
+        ]
+      },
+      {
+        title: 'The Global Transmission of the Numerical Grid',
+        paragraphs: [
+          'The mathematical architecture we take for granted today traveled an immense historical distance to reach us:',
+          '• Antiquity (India): Scholars like Aryabhata and Brahmagupta formalized the rules of Zero (शून्य) and refined the decimal notation system in seminal treatises such as Aryabhatiya and Brahmasphutasiddhanta.',
+          '• The Islamic Golden Age (Middle East): Persian mathematician Muhammad ibn Musa al-Khwarizmi studied these Indian texts, translating them into Arabic. His foundational treatise introduced decimal computation to the Western world, giving us the word "Algorithm", derived from his own name.',
+          '• The Renaissance (Europe): Italian mathematician Leonardo Fibonacci discovered this positional system while traveling through North Africa. Recognizing that it was infinitely superior to Roman numerals, he published Liber Abaci in 1202, finally convincing European merchants, scientists, and universities to adopt the Hindu-Arabic numeral system.'
+        ]
+      }
+    ],
+    quote: 'By declaring that a symbol\'s value is entirely dictated by its position, ancient Indian mathematicians unlocked infinite computational scaling with just ten digits.',
+    keyTakeaways: [
+      'Roman numerals were static tallies without positional multiplication scaling.',
+      'The Indian discovery of Shunya (Zero) and place-value allowed numbers to scale infinitely.',
+      'Traveled through Aryabhata → Al-Khwarizmi (Algorithm) → Fibonacci (Liber Abaci).'
+    ]
+  },
+  {
+    id: 'fluid-space',
+    slug: 'fluid-space-simultaneous-processing',
+    title: 'The Vedic Approach: Treating Place Value as Fluid Space',
+    sanskritTitle: '॥ स्थानमानस्य सातत्यं युगपत्-प्रक्रिया च ॥',
+    subtitle: 'Beyond rigid classroom columns: How simultaneous parallel processing in Ūrdhva-Tiryagbhyām transforms calculation into a visual dance.',
+    readingTime: '6 min read',
+    badge: 'Cognitive Architecture',
+    sections: [
+      {
+        title: 'Rigid School Columns vs. Continuous Fluid Space',
+        paragraphs: [
+          'While conventional school mathematics treats place value as a rigid set of isolated columns (Units, Tens, Hundreds), Vedic Mathematics treats it as a continuous, fluid continuum.',
+          'Grounded in a framework that allows people to solve complex arithmetic 10 to 15 times faster than conventional methods, this system bypasses tedious scrap work to turn math into an engaging, visual game.',
+          'The system\'s Sutras allow a mathematician to consciously manipulate positional boundaries to solve problems effortlessly.'
+        ],
+        highlight: 'School math forces you into isolated vertical silos. Vedic math treats place value as an open geometric playground.'
+      },
+      {
+        title: 'Simultaneous Parallel Processing in Ūrdhva-Tiryagbhyām',
+        paragraphs: [
+          'Consider the concept of Simultaneous Processing found in the Vertically and Crosswise (Ūrdhva-Tiryagbhyām) sutra.',
+          'In conventional long math, we multiply step-by-step, generate fragmented partial products, shift them awkwardly to the left with placeholder zeros, and then add them vertically.',
+          'Vedic math skips the scrap work entirely by calculating the units, tens, and hundreds columns simultaneously in parallel.'
+        ]
+      },
+      {
+        title: 'The Symmetrical Dance across Positional Space',
+        paragraphs: [
+          'When multiplying two 2-digit numbers, the Vedic system maps out a symmetrical dance across positional space. Instead of treating the digits as isolated steps, it visualizes the geometric interaction of the columns all at once.',
+          'Instead of treating the place values as static boxes, the Vedic method views them as a unified structural matrix. The carrying over of numbers becomes a smooth, fluid stream rather than a disjointed secondary operation.'
+        ]
+      }
+    ],
+    quote: 'Instead of treating place values as static boxes, the Vedic method views them as a unified structural matrix where carries flow like water.',
+    keyTakeaways: [
+      'Eliminates multiple rows of fragmented partial products.',
+      'Calculates units, tens, and hundreds simultaneously in parallel.',
+      'Direct one-line mental answers with flowing single-stream carries.'
+    ]
+  },
+  {
+    id: 'algebra-engine',
+    slug: 'universal-engine-of-algebra',
+    title: 'The Universal Engine of Algebra: Unifying Arithmetic & Polynomials',
+    sanskritTitle: '॥ बीजगणितस्य सार्वभौम-यन्त्रम् ॥',
+    subtitle: 'Arithmetic is Base 10, Algebra is Base x: Discover how the exact same sutra multiplies numbers and polynomials with identical coefficient vectors.',
+    readingTime: '6 min read',
+    badge: 'Mathematical Unification',
+    sections: [
+      {
+        title: 'Algebra is Simply Generalized Arithmetic',
+        paragraphs: [
+          'The most profound proof that Vedic math is a deep conceptual system rather than a bag of tricks is its seamless transition into Algebra.',
+          'Universally, arithmetic and algebra are not two distinct subjects—algebra is simply generalized arithmetic.',
+          'In arithmetic, our place-value base is 10. In algebra, our place-value base is x.'
+        ],
+        highlight: 'Vedic Sutras do not distinguish between concrete digits and algebraic unknowns: both obey identical spatial geometries.'
+      },
+      {
+        title: 'The Identical Coefficient Vector [1, 5, 6]',
+        paragraphs: [
+          'Because the Vedic Sutras operate on the pure structure of positional spacing, the exact same formula used to multiply numbers is used to multiply algebraic polynomials:',
+          '• Arithmetic (Base 10): 12 × 13 = (1 · 10 + 2)(1 · 10 + 3) = 100 + 50 + 6 = 156.',
+          '• Algebra (Base x): (x + 2)(x + 3) = (1 · x + 2)(1 · x + 3) = x² + 5x + 6.',
+          'Notice the identical coefficient structure: [1, 5, 6]. Vedic Mathematics recognizes this beautiful, fundamental truth.'
+        ]
+      },
+      {
+        title: 'Bridging Basic Counting and Abstract Mathematics',
+        paragraphs: [
+          'The system doesn\'t care whether your base column is a concrete ten or an unknown variable x; it maps out the structural space between the components identically.',
+          'This fluid grasp of place value bridges the gap between basic counting and abstract higher mathematics effortlessly.',
+          'Students who learn Vedic multiplication naturally grasp polynomial expansion, synthetic division, and matrix inversion without cognitive friction.'
+        ]
+      }
+    ],
+    quote: 'The system doesn\'t care whether your base column is a concrete ten or an unknown variable x; it maps out the structural space identically.',
+    keyTakeaways: [
+      'Arithmetic is Base 10; Algebra is Base x.',
+      '12 × 13 and (x+2)(x+3) share the exact same coefficient vector [1, 5, 6].',
+      'One single mental model governs both elementary arithmetic and higher algebra.'
+    ]
+  },
+  {
+    id: 'source-lineage',
+    slug: 'source-and-guru-parampara',
+    title: 'The Source & The Living Lineage: Swami Bharati Krishna Tirtha & Guru Parampara',
+    sanskritTitle: '॥ मूलस्रोतः गुरुपरम्परा च ॥',
+    subtitle: 'The master-disciple lineage that revived, preserved, and continues to propagate this cosmic science for humanity.',
+    readingTime: '8 min read',
+    badge: 'Sacred Lineage & History',
+    sections: [
+      {
+        title: 'Vedic Mathematics as Living Vidya',
+        paragraphs: [
+          'Vedic Mathematics is far more than an ultra-efficient system of mental calculation; it is a living stream of knowledge (Vidya) flowing through an ancient spiritual lineage.',
+          'To understand this science truly is to look beyond the numbers and see the Guru Parampara (the master-disciple lineage) that revived, preserved, and continues to propagate this cosmic science for the modern world.'
+        ],
+        highlight: 'Vidya survives not in ink alone, but through the unbroken devotion of a living Guru Parampara.'
+      },
+      {
+        title: 'The Tapasya of Swami Bharati Krishna Tirtha (1884–1960)',
+        paragraphs: [
+          'The modern architecture of Vedic Mathematics was reconstructed between 1911 and 1918 by Jagadguru Swami Bharati Krishna Tirtha (1884–1960), the 143rd Shankaracharya of the Govardhan Math in Puri.',
+          'A brilliant polymath with a profound mastery of Sanskrit, mathematics, and philosophy, Swamiji spent years in intense meditation (tapasya) and deep scriptural analysis in the forests of Sringeri.',
+          'Diving into the Parishishta (appendix) of the Atharva Veda, he decoded a unified mathematical system latent within the text.',
+          'Swamiji originally composed 16 comprehensive manuscript volumes outlining this science, but the manuscripts were tragically lost. Undeterred, in his final years, he rewrote an introductory volume. Published posthumously in 1965 as the landmark book Vedic Mathematics, it serves as the foundational text for the global resurgence we see today.'
+        ]
+      },
+      {
+        title: 'The Lineage of Continuity: Guarding and Expanding the Flame',
+        paragraphs: [
+          'A Guru’s work flourishes through their disciples. The survival and global reach of Vedic Mathematics are due to a dedicated Parampara—a chain of practitioners who took Swamiji’s vision and built upon it:',
+          '• Manjula Trivedi: As Swamiji’s devoted disciple, she lovingly transcribed his final dictations, took meticulous care of the sole surviving manuscript, and ensured its publication in 1965 through the Motilal Banarsidass publishers.',
+          '• Dr. Narinder Puri: A prominent disciple and former professor of Civil Engineering at the University of Roorkee, Dr. Puri was instrumental in taking Vedic Mathematics from religious hermitages to mainstream academic lecture halls during the 1980s.',
+          '• The Global Expansionists: Scholars like Kenneth Williams and James Glover from the UK encountered this knowledge and integrated it into schools globally, showing that the system transcended geographical and cultural boundaries.',
+          '• Modern Indian Researchers & Digital Gurukuls: Visionaries and math educators continue to expand the system, writing textbook series and launching digital platforms (like EdNet Learn Gurukul) to train millions of students and teachers worldwide.'
+        ]
+      }
+    ],
+    quote: 'Swamiji originally composed 16 volumes, but they were tragically lost. In his final years, despite failing eyesight, he rewrote the foundational introductory volume that sparked a worldwide renaissance.',
+    keyTakeaways: [
+      'Reconstructed during 8 years of tapasya in Sringeri forests (1911–1918).',
+      'Manjula Trivedi preserved the sole surviving manuscript and published it in 1965.',
+      'Expanded into universities by Dr. Narinder Puri and globally by Kenneth Williams & James Glover.'
+    ]
+  },
+  {
+    id: 'geometry-infinite',
+    slug: 'geometry-of-the-infinite',
+    title: 'The Geometry of the Infinite: Uniting the Secular and the Sacred',
+    sanskritTitle: '॥ अनन्तस्य ज्यामितिः लौकिक-पारलौकिक-समन्वयश्च ॥',
+    subtitle: 'Dismantling the modern wall between mathematics and spiritual metaphysics to perceive the structural symmetry of the cosmos.',
+    readingTime: '6 min read',
+    badge: 'Philosophy & Metaphysics',
+    sections: [
+      {
+        title: 'Dismantling the Wall Between Secular and Sacred',
+        paragraphs: [
+          'To understand the genesis of Vedic Mathematics, one must dismantle the modern wall separating the secular from the sacred.',
+          'In the ancient Vedic paradigm, mathematics meets spiritual metaphysics. Mathematics was never merely an economic tool for accounting; it was a sacred language designed to map the cosmos, construct Vedic fire altars (Sulba Sutras), and understand astronomical cycles.'
+        ],
+        highlight: '॥ गणितं ब्रह्मज्ञानस्य सोपानम् ॥ — Mathematics is the sacred staircase leading to the knowledge of the Absolute.'
+      },
+      {
+        title: 'Numbers Flowing Harmoniously Through Geometric Space',
+        paragraphs: [
+          'Vedic Mathematics is a profound tribute to the universal power of place value. It teaches us that numbers are not clunky items to be stacked and dragged across a page, but values that flow harmoniously through geometric space.',
+          'By unlocking the natural patterns inherent in our positional system, Swami Bharati Krishna Tirtha did not just invent a faster way to calculate. He revealed the deep, structural symmetry of numbers—offering a timeless manual for looking at the mathematical universe with absolute clarity.'
+        ]
+      },
+      {
+        title: 'From Forest Hermitages to Quantum Microchips',
+        paragraphs: [
+          'Today, computer scientists and semiconductor engineers are rediscovering what ancient rishis understood intuitively.',
+          'Vedic multiplication algorithms are now implemented directly into VLSI silicon chips to optimize binary multipliers in AI GPUs and digital signal processors, achieving unprecedented calculation speeds with minimal heat dissipation.',
+          'The ancient Sutras continue to guide humanity toward faster, cleaner, and more harmonious computation.'
+        ]
+      }
+    ],
+    quote: 'Swami Bharati Krishna Tirtha did not just invent a faster way to calculate. He revealed the deep structural symmetry of numbers—offering a timeless manual for looking at the universe with absolute clarity.',
+    keyTakeaways: [
+      'Unites practical computational speed with philosophical harmony.',
+      'Replaces rote calculation with geometric spatial flow.',
+      'Directly applied today in VLSI microchips, AI coprocessors, and quantum computing.'
+    ]
+  }
+];
+
 export const VEDIC_INTRO = {
   title: 'The Magic of Numbers: An Introduction to Vedic Mathematics',
   subtitle: 'An ultra-efficient system of mental calculation enabling solutions 10 to 15 times faster than conventional methods.',
@@ -84,8 +463,8 @@ export const VEDIC_ZERO_ESSAY = {
   fluidSpace: {
     title: 'The Vedic Approach: Treating Place Value as Fluid Space',
     paragraphs: [
-      'While conventional school mathematics treats place value as a rigid set of isolated columns (Units, Tens, Hundreds), Vedic Mathematics treats it as a continuous, fluid continuum. The Sutras allow a mathematician to consciously manipulate positional boundaries to solve problems.',
-      'Consider the concept of Simultaneous Processing found in the Vertically and Crosswise (Ūrdhva-Tiryagbhyām) sutra. In conventional long math, we multiply step-by-step, generate fragmented partial products, shift them awkwardly to the left with placeholder zeros, and then add them vertically.',
+      'While conventional school mathematics treats place value as a rigid set of isolated columns (Units, Tens, Hundreds), Vedic Mathematics treats it as a continuous, fluid continuum. Grounded in a framework that allows people to solve complex arithmetic 10 to 15 times faster than conventional methods, this system bypasses tedious scrap work to turn math into an engaging, visual game.',
+      'The system\'s Sutras allow a mathematician to consciously manipulate positional boundaries to solve problems. Consider the concept of Simultaneous Processing found in the Vertically and Crosswise (Ūrdhva-Tiryagbhyām) sutra. In conventional long math, we multiply step-by-step, generate fragmented partial products, shift them awkwardly to the left with placeholder zeros, and then add them vertically.',
       'Vedic math skips the scrap work entirely by calculating the units, tens, and hundreds columns simultaneously in parallel.'
     ]
   },
@@ -142,8 +521,9 @@ export const VEDIC_ZERO_ESSAY = {
     ]
   },
   conclusion: {
-    title: 'Conclusion: A Masterclass in Visual Harmony',
+    title: 'Conclusion: The Geometry of the Infinite',
     paragraphs: [
+      'To understand the genesis of Vedic Mathematics, one must dismantle the modern wall separating the secular from the sacred. In the ancient Vedic paradigm, mathematics meets spiritual metaphysics.',
       'Vedic Mathematics is a profound tribute to the universal power of place value. It teaches us that numbers are not clunky items to be stacked and dragged across a page, but values that flow harmoniously through geometric space.',
       'By unlocking the natural patterns inherent in our positional system, Swami Bharati Krishna Tirtha did not just invent a faster way to calculate. He revealed the deep, structural symmetry of numbers—offering a timeless manual for looking at the mathematical universe with absolute clarity.'
     ]
@@ -372,9 +752,10 @@ export const VEDIC_SUTRAS: VedicSutra[] = [
     example: {
       problem: 'Factor 2x² + 5x + 2',
       steps: [
-        'Differentiate with respect to x: 4x + 5',
-        'Discriminant Δ = 5² − 4(2)(2) = 25 − 16 = 9. √9 = 3',
-        '4x + 5 = ±3 ➔ 4x = −2 or −8 ➔ x = −1/2 or −2'
+        'Take first differential: d/dx(2x² + 5x + 2) = 4x + 5',
+        'Discriminant test: √(5² − 4×2×2) = √(25 − 16) = √9 = 3',
+        'Equate derivative to ± discriminant: 4x + 5 = ±3',
+        '4x + 5 = 3 ➔ 4x = −2 ➔ 2x + 1 = 0; 4x + 5 = −3 ➔ 4x = −8 ➔ x + 2 = 0'
       ],
       answer: '(2x + 1)(x + 2)'
     }
@@ -383,34 +764,34 @@ export const VEDIC_SUTRAS: VedicSutra[] = [
     id: 10,
     sanskrit: 'यावदूनम्',
     transliteration: 'Yāvadūnam',
-    meaning: 'By whatever the extent of its deficiency',
-    description: 'Instant squaring of numbers near base powers of 10 (e.g. 97², 93², 106²).',
+    meaning: 'By the deficiency',
+    description: 'Squaring numbers close to powers of 10 (e.g., 94², 106²).',
     category: 'squaring',
     example: {
-      problem: '97²',
+      problem: '94²',
       steps: [
-        'Base = 100. Deficiency d = 100 − 97 = 3',
-        'Left part: Subtract deficiency from number = 97 − 3 = 94',
-        'Right part: Square of deficiency = 3² = 09 (two digits for base 100)',
-        'Combine: 94 | 09'
+        'Base is 100. Deficiency is 100 − 94 = 6',
+        'Lessen number by deficiency: 94 − 6 = 88',
+        'Square the deficiency: 6² = 36',
+        'Append results: 88 | 36'
       ],
-      answer: '9,409'
+      answer: '8,836'
     }
   },
   {
     id: 11,
     sanskrit: 'व्यष्टिसमष्टिः',
-    transliteration: 'Vyaṣṭi-Samaṣṭiḥ',
-    meaning: 'By specific and general (part and whole)',
-    description: 'Used for solving polynomial systems and factoring biquadratics by isolating parts from whole expressions.',
+    transliteration: 'Vyaṣṭisamaṣṭiḥ',
+    meaning: 'Specific and general (Individual and Aggregate)',
+    description: 'Finding particular solutions from general forms and solving symmetric cubic equations.',
     category: 'algebra',
     example: {
-      problem: 'Factoring symmetric polynomials in cyclic terms',
+      problem: 'Factor x³ + 6x² + 11x + 6',
       steps: [
-        'Examine individual (vyaṣṭi) symmetry terms against the collective (samaṣṭi) sum',
-        'Deduce cyclic factors: (a + b), (b + c), (c + a)'
+        'Test specific roots through visual symmetry (x = −1)',
+        'Divide aggregate polynomial to yield quadratic: (x + 2)(x + 3)'
       ],
-      answer: 'Identifies factors without brute expansion'
+      answer: '(x + 1)(x + 2)(x + 3)'
     }
   },
   {
@@ -418,13 +799,12 @@ export const VEDIC_SUTRAS: VedicSutra[] = [
     sanskrit: 'शेषाण्यङ्केन चरमेण',
     transliteration: 'Śeṣāṇyaṅkena Carameṇa',
     meaning: 'The remainders by the last digit',
-    description: 'Converting rational vulgar fractions into recurring decimals using trailing remainder cycles.',
+    description: 'Converting fractions into recurring decimals without standard long division.',
     category: 'division',
     example: {
-      problem: '1/7 decimal expansion',
+      problem: '1/7 to decimal',
       steps: [
-        'Use the remainder series (3, 2, 6, 4, 5, 1)',
-        'Successive multiplication by last digit generates full cycle: 0.142857...'
+        'Multiply consecutive remainders dynamically from right to left'
       ],
       answer: '0.142857...'
     }
@@ -434,15 +814,15 @@ export const VEDIC_SUTRAS: VedicSutra[] = [
     sanskrit: 'सोपान्त्यद्वयमन्त्यम्',
     transliteration: 'Sopāntyadvayamantyam',
     meaning: 'The ultimate and twice the penultimate',
-    description: 'Solves specific fraction equations of the form 1/(AB) + 1/(AC) = 1/(AD) + 1/(BD).',
+    description: 'Solves specific linear rational equations rapidly without cross-multiplying.',
     category: 'algebra',
     example: {
-      problem: '1/(x+2)(x+3) + 1/(x+2)(x+4) = 1/(x+1)(x+4) + 1/(x+1)(x+3)',
+      problem: '1/(x+2) + 1/(x+3) = 1/(x+1) + 1/(x+4)',
       steps: [
-        'Apply formula: Penultimate terms + twice ultimate terms = 0',
-        'Reduces complex algebraic fractions to a linear 1st-degree equation'
+        'Recognize penultimate balance: (2 + 3) = (1 + 4) = 5',
+        'Apply formula directly to solve for x'
       ],
-      answer: 'Solves in 1 line'
+      answer: 'x = −2.5'
     }
   },
   {
@@ -450,52 +830,49 @@ export const VEDIC_SUTRAS: VedicSutra[] = [
     sanskrit: 'एकन्यूनेन पूर्वेण',
     transliteration: 'Ekanyūnena Pūrveṇa',
     meaning: 'By one less than the previous one',
-    description: 'Lightning mental multiplication of any number by a sequence of 9s (e.g. 9, 99, 999, 9999).',
+    description: 'Multiplying any number by strings of 9s (e.g., 99, 999, 9999) in under two seconds.',
     category: 'multiplication',
     example: {
       problem: '64 × 99',
       steps: [
-        'Left part: Subtract 1 from the number (64 − 1 = 63)',
-        'Right part: Subtract the left part from 99 (99 − 63 = 36)',
-        'Concatenate: 63 | 36'
+        'Subtract 1 from 64: Left part = 64 − 1 = 63',
+        'Subtract left part from 99: Right part = 99 − 63 = 36',
+        'Combine Left and Right parts: 63 | 36'
       ],
       answer: '6,336'
     }
   },
   {
     id: 15,
-    sanskrit: 'गुणितासमुच्चयः',
-    transliteration: 'Guṇitasamuccayaḥ',
-    meaning: 'The product of sums is the sum of products',
-    description: 'The famous Beejank (बीजाङ्क) Digital Root check to instantly verify if any multiplication or factorization is correct.',
-    category: 'general',
+    sanskrit: 'समुच्चयगुणितः',
+    transliteration: 'Samuccayaguṇitaḥ',
+    meaning: 'The product of the sum is the sum of the products',
+    description: 'Instant algebraic verification tool checking factorizations and expansions.',
+    category: 'algebra',
     example: {
-      problem: 'Check: 23 × 45 = 1035',
+      problem: 'Verify (x + 1)(x + 2) = x² + 3x + 2',
       steps: [
-        'Digital root of 23: 2 + 3 = 5',
-        'Digital root of 45: 4 + 5 = 9 (or 0)',
-        'Product of roots: 5 × 9 = 45 ➔ 4 + 5 = 9',
-        'Digital root of answer 1035: 1 + 0 + 3 + 5 = 9',
-        'Both match (9 = 9) ➔ Calculation is verified!'
+        'Substitute x = 1 into LHS: (1 + 1)(1 + 2) = 2 × 3 = 6',
+        'Substitute x = 1 into RHS: 1² + 3(1) + 2 = 1 + 3 + 2 = 6',
+        'LHS = RHS = 6 (Expansion is mathematically verified!)'
       ],
-      answer: 'Verified Correct (Digital Root = 9)'
+      answer: 'Verified Valid'
     }
   },
   {
     id: 16,
-    sanskrit: 'गुणकसमुच्चयः',
+    sanskrit: 'गुणाकसमुच्चयः',
     transliteration: 'Guṇakasamuccayaḥ',
-    meaning: 'The factors of the sum is equal to the sum of factors',
-    description: 'Verifying polynomial factorizations by substituting numerical values for variables.',
+    meaning: 'The all-factor factor',
+    description: 'Advanced polynomial factorization and quadratic root extraction.',
     category: 'algebra',
     example: {
-      problem: 'Verify: (x + 2)(x + 3) = x² + 5x + 6',
+      problem: 'Common factor extraction in polynomials',
       steps: [
-        'Set x = 1 in factors: (1 + 2)(1 + 3) = 3 × 4 = 12',
-        'Set x = 1 in expansion: 1² + 5(1) + 6 = 1 + 5 + 6 = 12',
-        'Both sums match (12 = 12) ➔ Factorization verified!'
+        'Identify aggregate coefficient factors',
+        'Extract root determinants across degrees'
       ],
-      answer: 'Verified Correct'
+      answer: 'Systematic roots'
     }
   }
 ];
@@ -506,42 +883,42 @@ export const VEDIC_SUBSUTRAS: VedicSubSutra[] = [
     sanskrit: 'आनुरूप्येण',
     transliteration: 'Ānurūpyeṇa',
     meaning: 'Proportionately',
-    application: 'Enables base-multiplication when numbers are near sub-bases like 50 (half of 100) or 200, 300, 500.'
+    application: 'Enables base multiplication and division when numbers are near working bases (such as 20, 50, 200, 500) rather than standard powers of 10.'
   },
   {
     id: 2,
     sanskrit: 'शिष्यते शेषसंज्ञः',
     transliteration: 'Śiṣyate Śeṣasaṁjñaḥ',
-    meaning: 'The remainder remains constant',
-    application: 'Used in remainder theorem arithmetic and division modulos.'
+    meaning: 'The remainder remains a constant',
+    application: 'Used in polynomial remainder theorem and cyclic division algorithms.'
   },
   {
     id: 3,
     sanskrit: 'आद्यमाद्येनान्त्यमन्त्येन',
     transliteration: 'Ādyamādyenāntyamantyena',
-    meaning: 'First by first and last by last',
-    application: 'Determines the first and last terms in algebraic factorizations and quadratic products immediately.'
+    meaning: 'The first by the first and the last by the last',
+    application: 'Instant verification of the first and last terms in polynomial multiplications and factoring.'
   },
   {
     id: 4,
     sanskrit: 'केवलैः सप्तकं गुण्यात्',
     transliteration: 'Kevalaiḥ Saptakaṁ Guṇyāt',
     meaning: 'For 7 the multiplicand is 143',
-    application: 'Shortcut for decimal conversion cycles involving 7.'
+    application: 'Shortcut for dividing and finding decimal cycles of denominator 7.'
   },
   {
     id: 5,
     sanskrit: 'वेष्टनम्',
     transliteration: 'Veṣṭanam',
     meaning: 'By osculation',
-    application: 'Lightning divisibility tests for prime numbers (7, 13, 17, 19, 29, etc.) without performing long division.'
+    application: 'Checking divisibility of any large number by prime numbers (7, 13, 17, 19, 23, 29).'
   },
   {
     id: 6,
     sanskrit: 'यावदूनं तावदूनम्',
     transliteration: 'Yāvadūnaṁ Tāvadūnam',
-    meaning: 'Lessen by the deficiency',
-    application: 'Used for finding cubes of numbers close to a base power of 10 (e.g. 98³).'
+    meaning: 'Lessen by the deficiency and square the deficiency',
+    application: 'Direct mental calculation for cubing numbers close to a base.'
   },
   {
     id: 7,
