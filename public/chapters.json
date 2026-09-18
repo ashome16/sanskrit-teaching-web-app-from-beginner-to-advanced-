@@ -1580,30 +1580,45 @@
           ]
         },
         {
-          "sanskrit": "वयं शब्दार्थान् जानीमः (शब्दार्थाः / Glossary)",
-          "meaning": "Exercise · Let us learn the vocabulary words (पृष्ठम् ८-९)",
+          "sanskrit": "वयं शब्दार्थान् जानीमः (पृष्ठम् ८-९)",
+          "meaning": "Let us learn the vocabulary (Pages 8–9)",
+          "paragraphTranslation": "आओ हम शब्दार्थ जानें",
           "words": [
             "वयं",
             "शब्दार्थान्",
             "जानीमः",
-            "(शब्दार्थाः",
-            "/",
-            "Glossary)"
+            "(",
+            "पृष्ठम्",
+            "८",
+            "-",
+            "९",
+            ")"
           ],
-          "category": "शब्दार्थ-शीर्षक",
           "kind": "glossary-header"
         },
         {
           "sanskrit": "वन्दे",
-          "meaning": "I greet / bow down",
+          "meaning": "I greet",
           "words": [
             "वन्दे"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "वन्दनं करोमि",
+          "sanskrit_gloss": "प्रणामं करोमि",
           "hindi_gloss": "प्रणाम करता/ती हूँ",
-          "paragraphTranslation": "वन्दनं करोमि · I greet / bow down · प्रणाम करता/ती हूँ"
+          "paragraphTranslation": "प्रणामं करोमि · I greet · प्रणाम करता/ती हूँ"
+        },
+        {
+          "sanskrit": "आलिङ्ग्य",
+          "meaning": "Having embraced",
+          "words": [
+            "आलिङ्ग्य"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "आलिङ्गनं कृत्वा",
+          "hindi_gloss": "आलिङ्गन करके",
+          "paragraphTranslation": "आलिङ्गनं कृत्वा · Having embraced · आलिङ्गन करके"
         },
         {
           "sanskrit": "बहुत्र",
@@ -1613,13 +1628,13 @@
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "अनेकेषु स्थानेषु",
+          "sanskrit_gloss": "बहुषु स्थानेषु",
           "hindi_gloss": "अनेक स्थानों पर",
-          "paragraphTranslation": "अनेकेषु स्थानेषु · In many places · अनेक स्थानों पर"
+          "paragraphTranslation": "बहुषु स्थानेषु · In many places · अनेक स्थानों पर"
         },
         {
           "sanskrit": "शृणुमः",
-          "meaning": "We listen / hear",
+          "meaning": "We listen",
           "words": [
             "शृणुमः"
           ],
@@ -1627,11 +1642,11 @@
           "kind": "glossary",
           "sanskrit_gloss": "श्रवणं कुर्मः",
           "hindi_gloss": "हम सुनते हैं",
-          "paragraphTranslation": "श्रवणं कुर्मः · We listen / hear · हम सुनते हैं"
+          "paragraphTranslation": "श्रवणं कुर्मः · We listen · हम सुनते हैं"
         },
         {
           "sanskrit": "जिज्ञासा",
-          "meaning": "Curiosity / desire to know",
+          "meaning": "Curiosity",
           "words": [
             "जिज्ञासा"
           ],
@@ -1639,275 +1654,301 @@
           "kind": "glossary",
           "sanskrit_gloss": "ज्ञातुम् इच्छा",
           "hindi_gloss": "जानने की इच्छा",
-          "paragraphTranslation": "ज्ञातुम् इच्छा · Curiosity / desire to know · जानने की इच्छा"
+          "paragraphTranslation": "ज्ञातुम् इच्छा · Curiosity · जानने की इच्छा"
         },
         {
           "sanskrit": "उपन्यासम्",
-          "meaning": "Novel (noun)",
+          "meaning": "Novel",
           "words": [
             "उपन्यासम्"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "दीर्घकथाग्रन्थम्",
+          "sanskrit_gloss": "बृहत्कथारूपम्",
           "hindi_gloss": "उपन्यास को",
-          "paragraphTranslation": "दीर्घकथाग्रन्थम् · Novel (noun) · उपन्यास को"
+          "paragraphTranslation": "बृहत्कथारूपम् · Novel · उपन्यास को"
         },
         {
           "sanskrit": "रम्यम्",
-          "meaning": "Pleasant / beautiful",
+          "meaning": "Pleasant",
           "words": [
             "रम्यम्"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "सुन्दरम् / मनोहरम्",
-          "hindi_gloss": "रमणीय / सुन्दर",
-          "paragraphTranslation": "सुन्दरम् / मनोहरम् · Pleasant / beautiful · रमणीय / सुन्दर"
+          "sanskrit_gloss": "सुन्दरम्",
+          "hindi_gloss": "रमणीय",
+          "paragraphTranslation": "सुन्दरम् · Pleasant · रमणीय"
         },
         {
           "sanskrit": "आन्दोलने",
-          "meaning": "In the movement / campaign",
+          "meaning": "In the movement",
           "words": [
             "आन्दोलने"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "सङ्ग्रामे / अभियाने",
+          "sanskrit_gloss": "क्रान्तौ",
           "hindi_gloss": "आन्दोलन में",
-          "paragraphTranslation": "सङ्ग्रामे / अभियाने · In the movement / campaign · आन्दोलन में"
-        },
-        {
-          "sanskrit": "सम्प्रति",
-          "meaning": "Now / at present",
-          "words": [
-            "सम्प्रति"
-          ],
-          "category": "शब्दार्थ",
-          "kind": "glossary",
-          "sanskrit_gloss": "इदानीम् / अधुना",
-          "hindi_gloss": "इस समय / अब",
-          "paragraphTranslation": "इदानीम् / अधुना · Now / at present · इस समय / अब"
+          "paragraphTranslation": "क्रान्तौ · In the movement · आन्दोलन में"
         },
         {
           "sanskrit": "वत्सला",
-          "meaning": "Affectionate / loving mother",
+          "meaning": "Loving",
           "words": [
             "वत्सला"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "स्नेहमयी",
-          "hindi_gloss": "स्नेहशीला / वात्सल्यमयी",
-          "paragraphTranslation": "स्नेहमयी · Affectionate / loving mother · स्नेहशीला / वात्सल्यमयी"
+          "sanskrit_gloss": "स्नेहयुक्ता",
+          "hindi_gloss": "स्नेहमयी",
+          "paragraphTranslation": "स्नेहयुक्ता · Loving · स्नेहमयी"
+        },
+        {
+          "sanskrit": "माहात्म्यम्",
+          "meaning": "Greatness",
+          "words": [
+            "माहात्म्यम्"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "महत्त्वम्",
+          "hindi_gloss": "महिमा",
+          "paragraphTranslation": "महत्त्वम् · Greatness · महिमा"
+        },
+        {
+          "sanskrit": "मुकुटरूपेण",
+          "meaning": "As a crown",
+          "words": [
+            "मुकुटरूपेण"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "किरीटरूपेण",
+          "hindi_gloss": "मुकुट रूप से",
+          "paragraphTranslation": "किरीटरूपेण · As a crown · मुकुट रूप से"
+        },
+        {
+          "sanskrit": "पर्वतराजः",
+          "meaning": "The King of mountains",
+          "words": [
+            "पर्वतराजः"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "पर्वतानां राजा",
+          "hindi_gloss": "पर्वतों का राजा",
+          "paragraphTranslation": "पर्वतानां राजा · The King of mountains · पर्वतों का राजा"
         },
         {
           "sanskrit": "रत्नाकरः",
-          "meaning": "Ocean (storehouse of jewels)",
+          "meaning": "Sea/Ocean",
           "words": [
             "रत्नाकरः"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "समुद्रः / सागरः",
-          "hindi_gloss": "समुद्र / रत्नों की खान",
-          "paragraphTranslation": "समुद्रः / सागरः · Ocean (storehouse of jewels) · समुद्र / रत्नों की खान"
-        },
-        {
-          "sanskrit": "प्रक्षालयति",
-          "meaning": "Washes / cleanses",
-          "words": [
-            "प्रक्षालयति"
-          ],
-          "category": "शब्दार्थ",
-          "kind": "glossary",
-          "sanskrit_gloss": "धावयति / स्वच्छं करोति",
-          "hindi_gloss": "धोता है",
-          "paragraphTranslation": "धावयति / स्वच्छं करोति · Washes / cleanses · धोता है"
-        },
-        {
-          "sanskrit": "विराजन्ते",
-          "meaning": "Shine / look splendid",
-          "words": [
-            "विराजन्ते"
-          ],
-          "category": "शब्दार्थ",
-          "kind": "glossary",
-          "sanskrit_gloss": "शोभन्ते",
-          "hindi_gloss": "शोभायमान हैं",
-          "paragraphTranslation": "शोभन्ते · Shine / look splendid · शोभायमान हैं"
-        },
-        {
-          "sanskrit": "पवित्राः",
-          "meaning": "Pure / sacred",
-          "words": [
-            "पवित्राः"
-          ],
-          "category": "शब्दार्थ",
-          "kind": "glossary",
-          "sanskrit_gloss": "पुनीताः / शुद्धाः",
-          "hindi_gloss": "पवित्र",
-          "paragraphTranslation": "पुनीताः / शुद्धाः · Pure / sacred · पवित्र"
+          "sanskrit_gloss": "समुद्रः",
+          "hindi_gloss": "सागर",
+          "paragraphTranslation": "समुद्रः · Sea/Ocean · सागर"
         },
         {
           "sanskrit": "तीर्थक्षेत्राणि",
-          "meaning": "Sacred places / holy pilgrim centers",
+          "meaning": "Holy places",
           "words": [
             "तीर्थक्षेत्राणि"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
           "sanskrit_gloss": "पुण्यक्षेत्राणि",
-          "hindi_gloss": "पवित्र स्थल / तीर्थ",
-          "paragraphTranslation": "पुण्यक्षेत्राणि · Sacred places / holy pilgrim centers · पवित्र स्थल / तीर्थ"
+          "hindi_gloss": "तीर्थस्थल",
+          "paragraphTranslation": "पुण्यक्षेत्राणि · Holy places · तीर्थस्थल"
         },
         {
-          "sanskrit": "विलसति",
-          "meaning": "Shines / glitters",
+          "sanskrit": "धूलिम्",
+          "meaning": "Dust",
           "words": [
-            "विलसति"
+            "धूलिम्"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "शोभते / राजते",
-          "hindi_gloss": "सुशोभित होता है",
-          "paragraphTranslation": "शोभते / राजते · Shines / glitters · सुशोभित होता है"
+          "sanskrit_gloss": "क्षितिकणम्",
+          "hindi_gloss": "धूल को",
+          "paragraphTranslation": "क्षितिकणम् · Dust · धूल को"
         },
         {
-          "sanskrit": "त्रिवर्णयुतः",
-          "meaning": "Tricolour / having three colours",
+          "sanskrit": "ललाटे",
+          "meaning": "On the forehead",
           "words": [
-            "त्रिवर्णयुतः"
+            "ललाटे"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "त्रिवर्णविशिष्टः",
-          "hindi_gloss": "तीन रंगों वाला",
-          "paragraphTranslation": "त्रिवर्णविशिष्टः · Tricolour / having three colours · तीन रंगों वाला"
+          "sanskrit_gloss": "भाले",
+          "hindi_gloss": "माथे पर",
+          "paragraphTranslation": "भाले · On the forehead · माथे पर"
+        },
+        {
+          "sanskrit": "विराजमानः",
+          "meaning": "Shining",
+          "words": [
+            "विराजमानः"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "शोभायमानः",
+          "hindi_gloss": "सुशोभित होता हुआ",
+          "paragraphTranslation": "शोभायमानः · Shining · सुशोभित होता हुआ"
         },
         {
           "sanskrit": "सूचकः",
-          "meaning": "Indicator / symbol",
+          "meaning": "Indicator",
           "words": [
             "सूचकः"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "द्योतकः / बोधकः",
-          "hindi_gloss": "बताने वाला / प्रतीक",
-          "paragraphTranslation": "द्योतकः / बोधकः · Indicator / symbol · बताने वाला / प्रतीक"
+          "sanskrit_gloss": "बोधकः",
+          "hindi_gloss": "सूचित करने वाला",
+          "paragraphTranslation": "बोधकः · Indicator · सूचित करने वाला"
         },
         {
-          "sanskrit": "अर्पितवन्तः",
-          "meaning": "Dedicated / offered",
+          "sanskrit": "केशरवर्णः",
+          "meaning": "Saffron colour",
           "words": [
-            "अर्पितवन्तः"
+            "केशरवर्णः"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "समर्पणं कृतवन्तः",
-          "hindi_gloss": "समर्पित किया",
-          "paragraphTranslation": "समर्पणं कृतवन्तः · Dedicated / offered · समर्पित किया"
+          "sanskrit_gloss": "केसरवर्णः",
+          "hindi_gloss": "केसरिया रंग",
+          "paragraphTranslation": "केसरवर्णः · Saffron colour · केसरिया रंग"
         },
         {
-          "sanskrit": "कृषकबान्धवाः",
-          "meaning": "Farmer brothers",
+          "sanskrit": "प्राप्तुम्",
+          "meaning": "To get",
           "words": [
-            "कृषकबान्धवाः"
+            "प्राप्तुम्"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "कृषीवलाः भ्रातरः",
+          "sanskrit_gloss": "लब्धुम्",
+          "hindi_gloss": "पाने के लिए",
+          "paragraphTranslation": "लब्धुम् · To get · पाने के लिए"
+        },
+        {
+          "sanskrit": "वक्तुम्",
+          "meaning": "To speak",
+          "words": [
+            "वक्तुम्"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "भाषितुम्",
+          "hindi_gloss": "बोलने के लिए",
+          "paragraphTranslation": "भाषितुम् · To speak · बोलने के लिए"
+        },
+        {
+          "sanskrit": "कृषक-बान्धवाः",
+          "meaning": "Our dear farmers",
+          "words": [
+            "कृषक",
+            "-",
+            "बान्धवाः"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "कृषीवल-बान्धवाः",
           "hindi_gloss": "किसान भाई",
-          "paragraphTranslation": "कृषीवलाः भ्रातरः · Farmer brothers · किसान भाई"
+          "paragraphTranslation": "कृषीवल-बान्धवाः · Our dear farmers · किसान भाई"
         },
         {
           "sanskrit": "स्वेदबिन्दुभिः",
-          "meaning": "With drops of sweat",
+          "meaning": "By sweat-drops",
           "words": [
             "स्वेदबिन्दुभिः"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "धर्मबिन्दुभिः / श्रमजलेन",
-          "hindi_gloss": "पसीने की बूँदों से",
-          "paragraphTranslation": "धर्मबिन्दुभिः / श्रमजलेन · With drops of sweat · पसीने की बूँदों से"
+          "sanskrit_gloss": "घर्मस्य जलकणैः",
+          "hindi_gloss": "पसीने की बूँदें",
+          "paragraphTranslation": "घर्मस्य जलकणैः · By sweat-drops · पसीने की बूँदें"
+        },
+        {
+          "sanskrit": "सिञ्चन्ति",
+          "meaning": "Sprinkle",
+          "words": [
+            "सिञ्चन्ति"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "सिञ्चनं कुर्वन्ति",
+          "hindi_gloss": "सींचते हैं",
+          "paragraphTranslation": "सिञ्चनं कुर्वन्ति · Sprinkle · सींचते हैं"
         },
         {
           "sanskrit": "सस्यश्यामला",
-          "meaning": "Green and rich with crops",
+          "meaning": "Densely covered with flora",
           "words": [
             "सस्यश्यामला"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "धान्यादिशस्यैः हरिता",
-          "hindi_gloss": "फसलों से हरी-भरी",
-          "paragraphTranslation": "धान्यादिशस्यैः हरिता · Green and rich with crops · फसलों से हरी-भरी"
+          "sanskrit_gloss": "सस्यैः घनश्यामा",
+          "hindi_gloss": "उपजों से हरी-भरी",
+          "paragraphTranslation": "सस्यैः घनश्यामा · Densely covered with flora · उपजों से हरी-भरी"
         },
         {
           "sanskrit": "आभा",
-          "meaning": "Glow / brilliance / luster",
+          "meaning": "Lustre",
           "words": [
             "आभा"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "कान्तिः / प्रकाशः",
-          "hindi_gloss": "चमक / शोभा",
-          "paragraphTranslation": "कान्तिः / प्रकाशः · Glow / brilliance / luster · चमक / शोभा"
-        },
-        {
-          "sanskrit": "द्योतकः",
-          "meaning": "Indicator / emblem",
-          "words": [
-            "द्योतकः"
-          ],
-          "category": "शब्दार्थ",
-          "kind": "glossary",
-          "sanskrit_gloss": "प्रकाशकः / सूचकः",
-          "hindi_gloss": "प्रतीक / संकेत करने वाला",
-          "paragraphTranslation": "प्रकाशकः / सूचकः · Indicator / emblem · प्रतीक / संकेत करने वाला"
+          "sanskrit_gloss": "कान्तिः",
+          "hindi_gloss": "चमक",
+          "paragraphTranslation": "कान्तिः · Lustre · चमक"
         },
         {
           "sanskrit": "अणुशास्त्रे",
-          "meaning": "In nuclear science",
+          "meaning": "In atomic science",
           "words": [
             "अणुशास्त्रे"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "परमाणुविज्ञाने",
+          "sanskrit_gloss": "परमाणुशास्त्रे",
           "hindi_gloss": "परमाणु विज्ञान में",
-          "paragraphTranslation": "परमाणुविज्ञाने · In nuclear science · परमाणु विज्ञान में"
+          "paragraphTranslation": "परमाणुशास्त्रे · In atomic science · परमाणु विज्ञान में"
+        },
+        {
+          "sanskrit": "आयुधशास्त्रे",
+          "meaning": "In science of weapons",
+          "words": [
+            "आयुधशास्त्रे"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "शस्त्रविज्ञाने",
+          "hindi_gloss": "शस्त्रविज्ञान में",
+          "paragraphTranslation": "शस्त्रविज्ञाने · In science of weapons · शस्त्रविज्ञान में"
         },
         {
           "sanskrit": "धवलम्",
-          "meaning": "White / bright / spotless",
+          "meaning": "White",
           "words": [
             "धवलम्"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "श्वेतम् / निर्मलम्",
-          "hindi_gloss": "सफेद / उज्ज्वल",
-          "paragraphTranslation": "श्वेतम् / निर्मलम् · White / bright / spotless · सफेद / उज्ज्वल"
-        },
-        {
-          "sanskrit": "परिपोषयति",
-          "meaning": "Nurtures / strengthens",
-          "words": [
-            "परिपोषयति"
-          ],
-          "category": "शब्दार्थ",
-          "kind": "glossary",
-          "sanskrit_gloss": "पोषयति / संवर्धयति",
-          "hindi_gloss": "पुष्ट करता है",
-          "paragraphTranslation": "पोषयति / संवर्धयति · Nurtures / strengthens · पुष्ट करता है"
+          "sanskrit_gloss": "शुक्लम्",
+          "hindi_gloss": "श्वेत",
+          "paragraphTranslation": "शुक्लम् · White · श्वेत"
         },
         {
           "sanskrit": "घननीलवर्णस्य",
-          "meaning": "Of navy blue colour",
+          "meaning": "Of navy-blue colour",
           "words": [
             "घननीलवर्णस्य"
           ],
@@ -1915,812 +1956,780 @@
           "kind": "glossary",
           "sanskrit_gloss": "गाढनीलवर्णस्य",
           "hindi_gloss": "गहरे नीले रंग का",
-          "paragraphTranslation": "गाढनीलवर्णस्य · Of navy blue colour · गहरे नीले रंग का"
+          "paragraphTranslation": "गाढनीलवर्णस्य · Of navy-blue colour · गहरे नीले रंग का"
         },
         {
           "sanskrit": "अराः",
-          "meaning": "Spokes (of a wheel)",
+          "meaning": "Spokes of a wheel",
           "words": [
             "अराः"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "नेमिदण्डाः",
+          "sanskrit_gloss": "चक्रस्य यष्टिकाः",
           "hindi_gloss": "तीलियाँ",
-          "paragraphTranslation": "नेमिदण्डाः · Spokes (of a wheel) · तीलियाँ"
+          "paragraphTranslation": "चक्रस्य यष्टिकाः · Spokes of a wheel · तीलियाँ"
         },
         {
-          "sanskrit": "विरामम्",
-          "meaning": "Break / pause / cessation",
+          "sanskrit": "कर्तव्यपथे",
+          "meaning": "On the path of duty",
           "words": [
-            "विरामम्"
+            "कर्तव्यपथे"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "विश्रामम्",
-          "hindi_gloss": "रुकना / विश्राम",
-          "paragraphTranslation": "विश्रामम् · Break / pause / cessation · रुकना / विश्राम"
-        },
-        {
-          "sanskrit": "सञ्चरति",
-          "meaning": "Moves / travels",
-          "words": [
-            "सञ्चरति"
-          ],
-          "category": "शब्दार्थ",
-          "kind": "glossary",
-          "sanskrit_gloss": "गतिं करोति",
-          "hindi_gloss": "चलता है / भ्रमण करता है",
-          "paragraphTranslation": "गतिं करोति · Moves / travels · चलता है / भ्रमण करता है"
+          "sanskrit_gloss": "कर्तव्यस्य मार्गे",
+          "hindi_gloss": "कर्तव्य मार्ग पर",
+          "paragraphTranslation": "कर्तव्यस्य मार्गे · On the path of duty · कर्तव्य मार्ग पर"
         },
         {
           "sanskrit": "सहमाना",
-          "meaning": "Enduring / bearing",
+          "meaning": "Bearing",
           "words": [
             "सहमाना"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
           "sanskrit_gloss": "सहनं कुर्वती",
-          "hindi_gloss": "सहन करती हुई",
-          "paragraphTranslation": "सहनं कुर्वती · Enduring / bearing · सहन करती हुई"
+          "hindi_gloss": "सहती हुई",
+          "paragraphTranslation": "सहनं कुर्वती · Bearing · सहती हुई"
         },
         {
           "sanskrit": "श्रान्तेः",
-          "meaning": "Of tiredness / fatigue",
+          "meaning": "Of tiredness",
           "words": [
             "श्रान्तेः"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
-          "sanskrit_gloss": "क्लान्तेः / खेदस्य",
+          "sanskrit_gloss": "क्लान्तेः",
           "hindi_gloss": "थकान का",
-          "paragraphTranslation": "क्लान्तेः / खेदस्य · Of tiredness / fatigue · थकान का"
+          "paragraphTranslation": "क्लान्तेः · Of tiredness · थकान का"
         },
         {
           "sanskrit": "प्रमादस्य",
-          "meaning": "Of carelessness / negligence",
+          "meaning": "Of carelessness",
           "words": [
             "प्रमादस्य"
           ],
           "category": "शब्दार्थ",
           "kind": "glossary",
           "sanskrit_gloss": "अनवधानतायाः",
-          "hindi_gloss": "लापरवाही / आलस्य का",
-          "paragraphTranslation": "अनवधानतायाः · Of carelessness / negligence · लापरवाही / आलस्य का"
+          "hindi_gloss": "असावधानता का",
+          "paragraphTranslation": "अनवधानतायाः · Of carelessness · असावधानता का"
         },
         {
-          "sanskrit": "वयम् अभ्यासं कुर्मः (हल किए गए अभ्यास प्रश्न / Solved Exercises)",
-          "meaning": "Chapter 1 Exercises and Answers (वयम् अभ्यासं कुर्मः)",
+          "sanskrit": "जेतुम्",
+          "meaning": "To win",
+          "words": [
+            "जेतुम्"
+          ],
+          "category": "शब्दार्थ",
+          "kind": "glossary",
+          "sanskrit_gloss": "विजयं प्राप्तुम्",
+          "hindi_gloss": "जीतने के लिए",
+          "paragraphTranslation": "विजयं प्राप्तुम् · To win · जीतने के लिए"
+        },
+        {
+          "sanskrit": "वयम् अभ्यासम् कुर्मः (पृष्ठम् १०-१३ / Solved Exercises)",
+          "meaning": "Chapter 1 Solved Exercises (Pages 10–13)",
           "words": [
             "वयम्",
-            "अभ्यासं",
-            "कुर्मः",
-            "(हल",
-            "किए",
-            "गए",
-            "अभ्यास",
-            "प्रश्न",
-            "/",
-            "Solved",
-            "Exercises)"
+            "अभ्यासम्",
+            "कुर्मः"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "१. अधः प्रदत्तानां प्रश्नानाम् एकपदेन उत्तरं लिखन्तु— (One-word answers)",
-          "meaning": "Answer the following questions in one word:",
+          "sanskrit": "१. अधः प्रदत्तानां प्रश्नानाम् एकपदेन पदद्वयेन वा उत्तरं लिखन्तु —",
+          "meaning": "1. Answer the following questions in one or two words:",
           "words": [
-            "१.",
+            "१",
+            ".",
             "अधः",
             "प्रदत्तानां",
             "प्रश्नानाम्",
             "एकपदेन",
+            "पदद्वयेन",
+            "वा",
             "उत्तरं",
-            "लिखन्तु—",
-            "(One-word",
-            "answers)"
+            "लिखन्तु",
+            "—"
           ],
-          "kind": "exercise-subheader"
+          "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) ‘आनन्दमठः’ इति उपन्यासः केन लिखितः? उत्तरम्: बङ्किमचन्द्र-चट्टोपाध्यायेन",
-          "meaning": "Who wrote the novel 'Anandamath'? -> Bankim Chandra Chattopadhyay",
+          "sanskrit": "(क) पर्वतराजः कः?",
+          "answer_sanskrit": "हिमालयः",
+          "meaning": "The king of mountains is Himalayas.",
           "words": [
-            "(क)",
-            "‘आनन्दमठः’",
-            "इति",
-            "उपन्यासः",
-            "केन",
-            "लिखितः?",
-            "उत्तरम्:",
-            "बङ्किमचन्द्र-चट्टोपाध्यायेन"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ख) ‘वन्दे मातरम्’ इति गीतस्य कः अर्थः? उत्तरम्: ‘अहं मातुः वन्दनं करोमि’",
-          "meaning": "What is the meaning of the song 'Vande Mataram'? -> 'I bow down to Mother'",
-          "words": [
-            "(ख)",
-            "‘वन्दे",
-            "मातरम्’",
-            "इति",
-            "गीतस्य",
+            "(",
+            "क",
+            ")",
+            "पर्वतराजः",
             "कः",
-            "अर्थः?",
-            "उत्तरम्:",
-            "‘अहं",
-            "मातुः",
-            "वन्दनं",
-            "करोमि’"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ग) भारतमातुः मस्तके मुकुटरूपेण कः शोभते? उत्तरम्: हिमालयः",
-          "meaning": "Who shines as a crown on Mother India's head? -> Himalayas",
-          "words": [
-            "(ग)",
-            "भारतमातुः",
-            "मस्तके",
-            "मुकुटरूपेण",
-            "कः",
-            "शोभते?",
-            "उत्तरम्:",
+            "?",
+            "उत्तरम्",
+            ":",
             "हिमालयः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) ध्वजस्थितः केशरवर्णः अस्मान् किं वक्तुं प्रेरयति? उत्तरम्: ‘जयतु सैनिकः’",
-          "meaning": "What does the saffron color inspire us to proclaim? -> 'Victory to the soldier!'",
+          "sanskrit": "(ख) समुद्रः कस्याः चरणौ प्रक्षालयति ?",
+          "answer_sanskrit": "भारतमातुः",
+          "meaning": "The ocean washes the feet of Mother India.",
           "words": [
-            "(घ)",
+            "(",
+            "ख",
+            ")",
+            "समुद्रः",
+            "कस्याः",
+            "चरणौ",
+            "प्रक्षालयति",
+            "?",
+            "उत्तरम्",
+            ":",
+            "भारतमातुः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) त्रिवर्णयुतः ध्वजः कुत्र विलसति ?",
+          "answer_sanskrit": "भारतमातुः हस्ते",
+          "meaning": "The tricolour flag shines in the hand of Mother India.",
+          "words": [
+            "(",
+            "ग",
+            ")",
+            "त्रिवर्णयुतः",
+            "ध्वजः",
+            "कुत्र",
+            "विलसति",
+            "?",
+            "उत्तरम्",
+            ":",
+            "भारतमातुः",
+            "हस्ते"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(घ) ध्वजस्थितः केशरवर्णः अस्मान् किं वक्तुं प्रेरयति ?",
+          "answer_sanskrit": "‘जयतु सैनिकः’",
+          "meaning": "The saffron colour motivates us to say 'Hail the Soldier'.",
+          "words": [
+            "(",
+            "घ",
+            ")",
             "ध्वजस्थितः",
             "केशरवर्णः",
             "अस्मान्",
             "किं",
             "वक्तुं",
-            "प्रेरयति?",
-            "उत्तरम्:",
-            "‘जयतु",
-            "सैनिकः’"
+            "प्रेरयति",
+            "?",
+            "उत्तरम्",
+            ":",
+            "‘",
+            "जयतु",
+            "सैनिकः",
+            "’"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) कृषकबान्धवाः भारतभूमिं कैः सिञ्चन्ति? उत्तरम्: स्व-स्वेदबिन्दुभिः",
-          "meaning": "With what do farmer brothers irrigate the land of India? -> With drops of their sweat",
+          "sanskrit": "(ङ) कृषकबान्धवाः भारतभूमिं कैः सिञ्चन्ति ?",
+          "answer_sanskrit": "स्व-स्वेदबिन्दुभिः",
+          "meaning": "The farmer brothers irrigate the Indian land with their sweat-drops.",
           "words": [
-            "(ङ)",
+            "(",
+            "ङ",
+            ")",
             "कृषकबान्धवाः",
             "भारतभूमिं",
             "कैः",
-            "सिञ्चन्ति?",
-            "उत्तरम्:",
-            "स्व-स्वेदबिन्दुभिः"
+            "सिञ्चन्ति",
+            "?",
+            "उत्तरम्",
+            ":",
+            "स्व",
+            "-",
+            "स्वेदबिन्दुभिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(च) केषां धवलं यशः राष्ट्रध्वजस्य मध्ये विलसति? उत्तरम्: वैज्ञानिकानाम्",
-          "meaning": "Whose bright glory shines in the middle of the national flag? -> Of the scientists",
+          "sanskrit": "(च) केषां धवलं यशः राष्ट्रध्वजस्य मध्ये विलसति ?",
+          "answer_sanskrit": "वैज्ञानिकानाम्",
+          "meaning": "The bright glory of scientists shines in the middle of the national flag.",
           "words": [
-            "(च)",
+            "(",
+            "च",
+            ")",
             "केषां",
             "धवलं",
             "यशः",
             "राष्ट्रध्वजस्य",
             "मध्ये",
-            "विलसति?",
-            "उत्तरम्:",
+            "विलसति",
+            "?",
+            "उत्तरम्",
+            ":",
             "वैज्ञानिकानाम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(छ) सूर्यः कं बिना नित्यं सञ्चरति? उत्तरम्: विरामम्",
-          "meaning": "Without what does the sun travel daily? -> Without a break",
+          "sanskrit": "(छ) सूर्यः कं विना नित्यं सञ्चरति ?",
+          "answer_sanskrit": "विरामम्",
+          "meaning": "The sun moves daily without a break.",
           "words": [
-            "(छ)",
+            "(",
+            "छ",
+            ")",
             "सूर्यः",
             "कं",
-            "बिना",
+            "विना",
             "नित्यं",
-            "सञ्चरति?",
-            "उत्तरम्:",
+            "सञ्चरति",
+            "?",
+            "उत्तरम्",
+            ":",
             "विरामम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "२. अधः प्रदत्तानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखन्तु— (Full-sentence answers)",
-          "meaning": "Answer the following questions in complete sentences:",
+          "sanskrit": "२. अधः प्रदत्तानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखन्तु —",
+          "meaning": "2. Answer the following questions in complete sentences:",
           "words": [
-            "२.",
+            "२",
+            ".",
             "अधः",
             "प्रदत्तानां",
             "प्रश्नानां",
             "पूर्णवाक्येन",
             "उत्तरं",
-            "लिखन्तु—",
-            "(Full-sentence",
-            "answers)"
+            "लिखन्तु",
+            "—"
           ],
-          "kind": "exercise-subheader"
+          "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) पवित्राः नद्यः काः? उत्तरम्: गङ्गा, यमुना, सरस्वती, सिन्धुः, ब्रह्मपुत्रः, गण्डकी, महानदी, नर्मदा, गोदावरी, कृष्णा, कावेरी इत्यादयः पवित्राः नद्यः सन्ति।",
-          "meaning": "Which are the holy rivers? -> Ganga, Yamuna, Saraswati, Sindhu, Brahmaputra, Gandaki, Mahanadi, Narmada, Godavari, Krishna, Kaveri, etc. are holy rivers.",
+          "sanskrit": "(क) पवित्राः नद्यः काः?",
+          "answer_sanskrit": "अत्र गङ्गा, यमुना, सरस्वती, सिन्धुः, ब्रह्मपुत्रः, गण्डकी, महानदी, नर्मदा, गोदावरी, कृष्णा, कावेरी इत्यादयः पवित्राः नद्यः प्रवहन्ति।",
+          "meaning": "Here sacred rivers such as Ganga, Yamuna, Saraswati, Sindhu, Brahmaputra, Gandaki, Mahanadi, Narmada, Godavari, Krishna, and Kaveri flow.",
           "words": [
-            "(क)",
+            "(",
+            "क",
+            ")",
             "पवित्राः",
             "नद्यः",
-            "काः?",
-            "उत्तरम्:",
-            "गङ्गा,",
-            "यमुना,",
-            "सरस्वती,",
-            "सिन्धुः,",
-            "ब्रह्मपुत्रः,",
-            "गण्डकी,",
-            "महानदी,",
-            "नर्मदा,",
-            "गोदावरी,",
-            "कृष्णा,",
-            "कावेरी",
-            "इत्यादयः",
-            "पवित्राः",
-            "नद्यः",
-            "सन्ति।"
+            "काः",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) विविधेभ्यः प्रदेशेभ्यः जनाः किमर्थम् आगच्छन्ति? उत्तरम्: विविधेभ्यः प्रदेशेभ्यः जनाः तीर्थक्षेत्राणां धूलिं ललाटे स्थापयितुं आगच्छन्ति।",
-          "meaning": "Why do people travel from various regions? -> People travel from various regions to apply the sacred dust of holy places on their foreheads.",
+          "sanskrit": "(ख) विविधेभ्यः प्रदेशेभ्यः जनाः किमर्थम् आगच्छन्ति ?",
+          "answer_sanskrit": "तीर्थक्षेत्राणां धूलिम् ललाटे स्थापयितुं विविधेभ्यः प्रदेशेभ्यः असंख्याः जनाः आगच्छन्ति।",
+          "meaning": "Countless people come from various regions to apply the sacred dust of pilgrim centers onto their foreheads.",
           "words": [
-            "(ख)",
+            "(",
+            "ख",
+            ")",
             "विविधेभ्यः",
             "प्रदेशेभ्यः",
             "जनाः",
             "किमर्थम्",
-            "आगच्छन्ति?",
-            "उत्तरम्:",
-            "विविधेभ्यः",
-            "प्रदेशेभ्यः",
-            "जनाः",
-            "तीर्थक्षेत्राणां",
-            "धूलिं",
-            "ललाटे",
-            "स्थापयितुं",
-            "आगच्छन्ति।"
+            "आगच्छन्ति",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) धर्मचक्रं किं भावं बोधयति? उत्तरम्: धर्मचक्रं ‘चलनीयं कर्तव्यपथे वै, न विरम, सततं चल’ इति भावं बोधयति।",
-          "meaning": "What ideal does the Dharma Chakra awaken? -> The Dharma Chakra awakens the spirit: 'One must move on the path of duty, do not pause, keep moving steadily.'",
+          "sanskrit": "(ग) धर्मचक्रं कं भावं बोधयति ?",
+          "answer_sanskrit": "धर्मचक्रम् ‘चलनीयं कर्तव्यपथे वै, न विरम, सततं चल’ इति भावं बोधयति।",
+          "meaning": "The Dharma Chakra signifies: 'Keep moving on the path of duty indeed, do not stop, move forward constantly'.",
           "words": [
-            "(ग)",
+            "(",
+            "ग",
+            ")",
             "धर्मचक्रं",
-            "किं",
+            "कं",
             "भावं",
-            "बोधयति?",
-            "उत्तरम्:",
-            "धर्मचक्रं",
-            "‘चलनीयं",
-            "कर्तव्यपथे",
-            "वै,",
-            "न",
-            "विरम,",
-            "सततं",
-            "चल’",
-            "इति",
-            "भावं",
-            "बोधयति।"
+            "बोधयति",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) कृषकबान्धवानां परिश्रमेण भारतभूमिः कथं सञ्जाता? उत्तरम्: कृषकबान्धवानां परिश्रमेण भारतभूमिः हरितवर्णमयी समृद्धा सस्यश्यामला च सञ्जाता।",
-          "meaning": "How has the land of India become through farmers' hard work? -> Through the hard work of farmers, the land of India has become green, prosperous, and abundant with crops.",
+          "sanskrit": "(घ) कृषकबान्धवानां परिश्रमेण भारतभूमिः कथं सञ्जाता?",
+          "answer_sanskrit": "कृषकबान्धवानां परिश्रमेण एव भारतभूमिः हरितवर्णमयी समृद्धा सस्यश्यामला च सञ्जाता।",
+          "meaning": "By the dedicated hard work of farmer brothers, India has become lush green, prosperous, and richly laden with vegetation.",
           "words": [
-            "(घ)",
+            "(",
+            "घ",
+            ")",
             "कृषकबान्धवानां",
             "परिश्रमेण",
             "भारतभूमिः",
             "कथं",
-            "सञ्जाता?",
-            "उत्तरम्:",
-            "कृषकबान्धवानां",
-            "परिश्रमेण",
-            "भारतभूमिः",
-            "हरितवर्णमयी",
-            "समृद्धा",
-            "सस्यश्यामला",
-            "च",
-            "सञ्जाता।"
+            "सञ्जाता",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) विज्ञानस्य केषु क्षेत्रेषु भारतीयैः यशः प्राप्तम्? उत्तरम्: अणुशास्त्रे, सङ्गणकशास्त्रे, चिकित्साशास्त्रे, अन्तरिक्षशास्त्रे, आयुधशास्त्रे इत्यादिषु क्षेत्रेषु भारतीयैः यशः प्राप्तम्।",
-          "meaning": "In which scientific fields have Indians achieved glory? -> In nuclear science, computer science, medical science, space science, defense science, etc.",
+          "sanskrit": "(ङ) विज्ञानस्य केषु क्षेत्रेषु भारतीयैः यशः प्राप्तम्?",
+          "answer_sanskrit": "अणुशास्त्रे, सङ्गणकशास्त्रे, चिकित्साशास्त्रे, अन्तरिक्षशास्त्रे, आयुधशास्त्रे इत्यादिषु विज्ञानस्य विभिन्नक्षेत्रेषु भारतीयैः वैज्ञानिकैः महत् यशः प्राप्तम् अस्ति।",
+          "meaning": "In various fields of science including atomic physics, computer science, medical sciences, space exploration, and defense technology, Indian scientists have earned great acclaim.",
           "words": [
-            "(ङ)",
+            "(",
+            "ङ",
+            ")",
             "विज्ञानस्य",
             "केषु",
             "क्षेत्रेषु",
             "भारतीयैः",
             "यशः",
-            "प्राप्तम्?",
-            "उत्तरम्:",
-            "अणुशास्त्रे,",
-            "सङ्गणकशास्त्रे,",
-            "चिकित्साशास्त्रे,",
-            "अन्तरिक्षशास्त्रे,",
-            "आयुधशास्त्रे",
-            "इत्यादिषु",
-            "क्षेत्रेषु",
-            "भारतीयैः",
-            "यशः",
-            "प्राप्तम्।"
+            "प्राप्तम्",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(च) अन्ते सर्वे किं गीतं गायन्ति? उत्तरम्: अन्ते सर्वे ‘वयं बालका भारतभक्ताः वयं बालिका भारतभक्ताः’ इति गीतं गायन्ति।",
-          "meaning": "What song do all sing at the end? -> At the end, all sing 'We boys are devotees of India, we girls are devotees of India.'",
+          "sanskrit": "(च) अन्ते सर्वे किं गीतं गायन्ति ?",
+          "answer_sanskrit": "अन्ते सर्वे मिलित्वा ‘वयं बालकाः भारतभक्ताः वयं बालिकाः भारतभक्ताः। वयं हि सर्वे भारतभक्ताः पृथ्वीं स्वर्गं जेतुं शक्ताः॥’ इति गीतं गायन्ति।",
+          "meaning": "In the end, all sing together: 'We boys are devotees of India, we girls are devotees of India. Indeed all of us devotees of India are capable of making earth into heaven!'",
           "words": [
-            "(च)",
+            "(",
+            "च",
+            ")",
             "अन्ते",
             "सर्वे",
             "किं",
             "गीतं",
-            "गायन्ति?",
-            "उत्तरम्:",
-            "अन्ते",
-            "सर्वे",
-            "‘वयं",
-            "बालका",
-            "भारतभक्ताः",
-            "वयं",
-            "बालिका",
-            "भारतभक्ताः’",
-            "इति",
-            "गीतं",
-            "गायन्ति।"
+            "गायन्ति",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "३. रेखाङ्कितानि पदानि आश्रित्य उदाहरणानुसारं प्रश्ननिर्माणं कुर्वन्तु— (Question Formation)",
-          "meaning": "Form questions based on the underlined words:",
+          "sanskrit": "३. रेखाङ्कितानि पदानि आश्रित्य उदाहरणानुसारं प्रश्ननिर्माणं कुर्वन्तु —",
+          "meaning": "3. Form questions using the underlined words as shown in the example:",
           "words": [
-            "३.",
+            "३",
+            ".",
             "रेखाङ्कितानि",
             "पदानि",
             "आश्रित्य",
             "उदाहरणानुसारं",
             "प्रश्ननिर्माणं",
-            "कुर्वन्तु—",
-            "(Question",
-            "Formation)"
+            "कुर्वन्तु",
+            "—"
           ],
-          "kind": "exercise-subheader"
+          "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) समुद्रः भारतमातुः चरणौ प्रक्षालयति। -> प्रश्नः: कः भारतमातुः चरणौ प्रक्षालयति?",
-          "meaning": "The ocean washes Mother India's feet. -> Who washes Mother India's feet?",
+          "sanskrit": "यथा – अस्माकं वत्सला भारतमाता।",
+          "answer_sanskrit": "केषां वत्सला भारतमाता?",
+          "meaning": "Example: Whose loving mother is Mother India?",
           "words": [
-            "(क)",
+            "यथा",
+            "–",
+            "अस्माकं",
+            "वत्सला",
+            "भारतमाता।",
+            "केषां",
+            "वत्सला",
+            "भारतमाता",
+            "?"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(क) समुद्रः भारतमातुः चरणौ प्रक्षालयति।",
+          "answer_sanskrit": "समुद्रः कस्याः चरणौ प्रक्षालयति?",
+          "meaning": "Whose feet does the ocean wash?",
+          "words": [
+            "(",
+            "क",
+            ")",
             "समुद्रः",
             "भारतमातुः",
             "चरणौ",
             "प्रक्षालयति।",
-            "->",
-            "प्रश्नः:",
-            "कः",
-            "भारतमातुः",
+            "समुद्रः",
+            "कस्याः",
             "चरणौ",
-            "प्रक्षालयति?"
+            "प्रक्षालयति",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) जनाः तीर्थक्षेत्राणाम् धूलिं ललाटे स्थापयन्ति। -> प्रश्नः: जनाः केषाम् धूलिं ललाटे स्थापयन्ति?",
-          "meaning": "People apply the dust of holy places on their forehead. -> Of what do people apply dust?",
+          "sanskrit": "(ख) जनाः तीर्थक्षेत्राणां धूलिं ललाटे स्थापयन्ति।",
+          "answer_sanskrit": "जनाः केषाम् धूलिं ललाटे स्थापयन्ति?",
+          "meaning": "Whose dust do people apply to their foreheads?",
           "words": [
-            "(ख)",
+            "(",
+            "ख",
+            ")",
             "जनाः",
-            "तीर्थक्षेत्राणाम्",
+            "तीर्थक्षेत्राणां",
             "धूलिं",
             "ललाटे",
             "स्थापयन्ति।",
-            "->",
-            "प्रश्नः:",
             "जनाः",
             "केषाम्",
             "धूलिं",
             "ललाटे",
-            "स्थापयन्ति?"
+            "स्थापयन्ति",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) वीराः भारतमातुः सर्वदा सेवां कृतवन्तः। -> प्रश्नः: के भारतमातुः सर्वदा सेवां कृतवन्तः?",
-          "meaning": "Heroes always served Mother India. -> Who always served Mother India?",
+          "sanskrit": "(ग) वीराः भारतमातुः सर्वदा सेवां कृतवन्तः।",
+          "answer_sanskrit": "के भारतमातुः सर्वदा सेवां कृतवन्तः?",
+          "meaning": "Who always rendered service to Mother India?",
           "words": [
-            "(ग)",
+            "(",
+            "ग",
+            ")",
             "वीराः",
             "भारतमातुः",
             "सर्वदा",
             "सेवां",
             "कृतवन्तः।",
-            "->",
-            "प्रश्नः:",
             "के",
             "भारतमातुः",
             "सर्वदा",
             "सेवां",
-            "कृतवन्तः?"
+            "कृतवन्तः",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) ‘जयतु कृषकः’ इति वक्तुम् अस्मान् प्रेरयति। -> प्रश्नः: किम् इति वक्तुम् अस्मान् प्रेरयति?",
-          "meaning": "It inspires us to say 'Victory to the farmer'. -> What does it inspire us to say?",
+          "sanskrit": "(घ) ‘जयतु कृषकः’ इति वक्तुम् अस्मान् प्रेरयति।",
+          "answer_sanskrit": "‘जयतु कृषकः’ इति वक्तुम् कान् प्रेरयति?",
+          "meaning": "Whom does it inspire to say 'Hail the farmer'?",
           "words": [
-            "(घ)",
-            "‘जयतु",
-            "कृषकः’",
+            "(",
+            "घ",
+            ")",
+            "‘",
+            "जयतु",
+            "कृषकः",
+            "’",
             "इति",
             "वक्तुम्",
             "अस्मान्",
             "प्रेरयति।",
-            "->",
-            "प्रश्नः:",
-            "किम्",
+            "‘",
+            "जयतु",
+            "कृषकः",
+            "’",
             "इति",
             "वक्तुम्",
-            "अस्मान्",
-            "प्रेरयति?"
+            "कान्",
+            "प्रेरयति",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) नदी कष्टानि सहमाना प्रवहति। -> प्रश्नः: नदी कानि सहमाना प्रवहति?",
-          "meaning": "The river flows enduring hardships. -> Enduring what does the river flow?",
+          "sanskrit": "(ङ) नदी कष्टानि सहमाना प्रवहति।",
+          "answer_sanskrit": "का कष्टानि सहमाना प्रवहति?",
+          "meaning": "Who flows enduring hardships?",
           "words": [
-            "(ङ)",
+            "(",
+            "ङ",
+            ")",
             "नदी",
             "कष्टानि",
             "सहमाना",
             "प्रवहति।",
-            "->",
-            "प्रश्नः:",
-            "नदी",
-            "कानि",
+            "का",
+            "कष्टानि",
             "सहमाना",
-            "प्रवहति?"
+            "प्रवहति",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(च) वयं गौरववर्धनार्थं प्रयत्नं कुर्मः। -> प्रश्नः: वयं किमर्थम् प्रयत्नं कुर्मः?",
-          "meaning": "We strive to enhance her glory. -> For what purpose do we strive?",
+          "sanskrit": "(च) वयं गौरववर्धनार्थं प्रयत्नं कुर्मः।",
+          "answer_sanskrit": "वयं किमर्थम् प्रयत्नं कुर्मः?",
+          "meaning": "For what purpose do we make effort?",
           "words": [
-            "(च)",
+            "(",
+            "च",
+            ")",
             "वयं",
             "गौरववर्धनार्थं",
             "प्रयत्नं",
             "कुर्मः।",
-            "->",
-            "प्रश्नः:",
             "वयं",
             "किमर्थम्",
             "प्रयत्नं",
-            "कुर्मः?"
+            "कुर्मः",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "४. अधः प्रदत्तानां शब्दानाम् उदाहरणानुसारं रिक्तस्थानेषु रूपाणि लिखन्तु— (Declensions)",
-          "meaning": "Fill in the declension forms according to the examples:",
+          "sanskrit": "४. अधः प्रदत्तानां शब्दानाम् उदाहरणानुसारं रिक्तस्थानेषु रूपाणि लिखन्तु —",
+          "meaning": "4. Fill in the missing word forms in the grid based on the case endings:",
           "words": [
-            "४.",
+            "४",
+            ".",
             "अधः",
             "प्रदत्तानां",
             "शब्दानाम्",
             "उदाहरणानुसारं",
             "रिक्तस्थानेषु",
             "रूपाणि",
-            "लिखन्तु—",
-            "(Declensions)"
+            "लिखन्तु",
+            "—"
           ],
-          "kind": "exercise-subheader"
+          "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) द्वितीया: चरणम् (एकवचनम्) — चरणौ (द्विवचनम्) — चरणान् (बहुवचनम्)",
+          "sanskrit": "(क) चरण (द्वितीया विभक्तिः)",
+          "answer_sanskrit": "एकवचनम्: चरणम् | द्विवचनम्: चरणौ | बहुवचनम्: चरणान्",
           "meaning": "Accusative case of 'चरण': चरणम्, चरणौ, चरणान्",
           "words": [
-            "(क)",
-            "द्वितीया:",
+            "(",
+            "क",
+            ")",
             "चरणम्",
-            "(एकवचनम्)",
-            "—",
             "चरणौ",
-            "(द्विवचनम्)",
-            "—",
             "चरणान्",
-            "(बहुवचनम्)"
+            "द्वितीया",
+            "विभक्तिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) प्रथमा: नदी (एकवचनम्) — नद्यौ (द्विवचनम्) — नद्यः (बहुवचनम्)",
+          "sanskrit": "(ख) नदी (प्रथमा विभक्तिः)",
+          "answer_sanskrit": "एकवचनम्: नदी | द्विवचनम्: नद्यौ | बहुवचनम्: नद्यः",
           "meaning": "Nominative case of 'नदी': नदी, नद्यौ, नद्यः",
           "words": [
-            "(ख)",
-            "प्रथमा:",
+            "(",
+            "ख",
+            ")",
             "नदी",
-            "(एकवचनम्)",
-            "—",
             "नद्यौ",
-            "(द्विवचनम्)",
-            "—",
             "नद्यः",
-            "(बहुवचनम्)"
+            "प्रथमा",
+            "विभक्तिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) सप्तमी: ललाटे (एकवचनम्) — ललाटयोः (द्विवचनम्) — ललाटेषु (बहुवचनम्)",
+          "sanskrit": "(ग) ललाट (सप्तमी विभक्तिः)",
+          "answer_sanskrit": "एकवचनम्: ललाटे | द्विवचनम्: ललाटयोः | बहुवचनम्: ललाटेषु",
           "meaning": "Locative case of 'ललाट': ललाटे, ललाटयोः, ललाटेषु",
           "words": [
-            "(ग)",
-            "सप्तमी:",
+            "(",
+            "ग",
+            ")",
             "ललाटे",
-            "(एकवचनम्)",
-            "—",
             "ललाटयोः",
-            "(द्विवचनम्)",
-            "—",
             "ललाटेषु",
-            "(बहुवचनम्)"
+            "सप्तमी",
+            "विभक्तिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) चतुर्थी: देशाय (एकवचनम्) — देशाभ्याम् (द्विवचनम्) — देशेभ्यः (बहुवचनम्)",
+          "sanskrit": "(घ) देश (चतुर्थी विभक्तिः)",
+          "answer_sanskrit": "एकवचनम्: देशाय | द्विवचनम्: देशाभ्याम् | बहुवचनम्: देशेभ्यः",
           "meaning": "Dative case of 'देश': देशाय, देशाभ्याम्, देशेभ्यः",
           "words": [
-            "(घ)",
-            "चतुर्थी:",
+            "(",
+            "घ",
+            ")",
             "देशाय",
-            "(एकवचनम्)",
-            "—",
             "देशाभ्याम्",
-            "(द्विवचनम्)",
-            "—",
             "देशेभ्यः",
-            "(बहुवचनम्)"
+            "चतुर्थी",
+            "विभक्तिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) प्रथमा: चक्रम् (एकवचनम्) — चक्रे (द्विवचनम्) — चक्राणि (बहुवचनम्)",
+          "sanskrit": "(ङ) चक्र (प्रथमा विभक्तिः)",
+          "answer_sanskrit": "एकवचनम्: चक्रम् | द्विवचनम्: चक्रे | बहुवचनम्: चक्राणि",
           "meaning": "Nominative case of 'चक्र': चक्रम्, चक्रे, चक्राणि",
           "words": [
-            "(ङ)",
-            "प्रथमा:",
+            "(",
+            "ङ",
+            ")",
             "चक्रम्",
-            "(एकवचनम्)",
-            "—",
             "चक्रे",
-            "(द्विवचनम्)",
-            "—",
             "चक्राणि",
-            "(बहुवचनम्)"
+            "प्रथमा",
+            "विभक्तिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(च) तृतीया: वैज्ञानिकेन (एकवचनम्) — वैज्ञानिकाभ्याम् (द्विवचनम्) — वैज्ञानिकैः (बहुवचनम्)",
+          "sanskrit": "(च) वैज्ञानिक (तृतीया विभक्तिः)",
+          "answer_sanskrit": "एकवचनम्: वैज्ञानिकेन | द्विवचनम्: वैज्ञानिकाभ्याम् | बहुवचनम्: वैज्ञानिकैः",
           "meaning": "Instrumental case of 'वैज्ञानिक': वैज्ञानिकेन, वैज्ञानिकाभ्याम्, वैज्ञानिकैः",
           "words": [
-            "(च)",
-            "तृतीया:",
+            "(",
+            "च",
+            ")",
             "वैज्ञानिकेन",
-            "(एकवचनम्)",
-            "—",
             "वैज्ञानिकाभ्याम्",
-            "(द्विवचनम्)",
-            "—",
             "वैज्ञानिकैः",
-            "(बहुवचनम्)"
+            "तृतीया",
+            "विभक्तिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(छ) प्रथमा: अहम् (एकवचनम्) — आवाम् (द्विवचनम्) — वयम् (बहुवचनम्)",
+          "sanskrit": "(छ) अस्मद् (प्रथमा विभक्तिः)",
+          "answer_sanskrit": "एकवचनम्: अहम् | द्विवचनम्: आवाम् | बहुवचनम्: वयम्",
           "meaning": "Nominative case of 'अस्मद्': अहम्, आवाम्, वयम्",
           "words": [
-            "(छ)",
-            "प्रथमा:",
+            "(",
+            "छ",
+            ")",
             "अहम्",
-            "(एकवचनम्)",
-            "—",
             "आवाम्",
-            "(द्विवचनम्)",
-            "—",
             "वयम्",
-            "(बहुवचनम्)"
+            "प्रथमा",
+            "विभक्तिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ज) षष्ठी: विज्ञानस्य (एकवचनम्) — विज्ञानयोः (द्विवचनम्) — विज्ञानानाम् (बहुवचनम्)",
+          "sanskrit": "(ज) विज्ञान (षष्ठी विभक्तिः)",
+          "answer_sanskrit": "एकवचनम्: विज्ञानस्य | द्विवचनम्: विज्ञानयोः | बहुवचनम्: विज्ञानानाम्",
           "meaning": "Genitive case of 'विज्ञान': विज्ञानस्य, विज्ञानयोः, विज्ञानानाम्",
           "words": [
-            "(ज)",
-            "षष्ठी:",
+            "(",
+            "ज",
+            ")",
             "विज्ञानस्य",
-            "(एकवचनम्)",
-            "—",
             "विज्ञानयोः",
-            "(द्विवचनम्)",
-            "—",
             "विज्ञानानाम्",
-            "(बहुवचनम्)"
+            "षष्ठी",
+            "विभक्तिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "५. अधः प्रदत्तानि वाक्यानि पठित्वा आङ्ग्लभाषायां अनुवादं कुर्वन्तु— (English Translation)",
-          "meaning": "Translate the sentences into English:",
+          "sanskrit": "५. अधः प्रदत्तानि वाक्यानि पठित्वा आङ्ग्लभाषायां अनुवादं कुर्वन्तु —",
+          "meaning": "5. Translate the sentences into English:",
           "words": [
-            "५.",
+            "५",
+            ".",
             "अधः",
-            "प्रदत्तानानि",
+            "प्रदत्तानि",
             "वाक्यानि",
             "पठित्वा",
             "आङ्ग्लभाषायां",
             "अनुवादं",
-            "कुर्वन्तु—",
-            "(English",
-            "Translation)"
+            "कुर्वन्तु",
+            "—"
           ],
-          "kind": "exercise-subheader"
+          "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) भारतभूमौ पवित्राः नद्यः प्रवहन्ति। -> Translation: Holy rivers flow in the land of India.",
-          "meaning": "Holy rivers flow in the land of India.",
+          "sanskrit": "(क) भारतभूमिं पवित्राः नद्यः प्रवहन्ति।",
+          "answer_sanskrit": "Holy rivers flow through the land of India.",
+          "meaning": "Translation: Holy rivers flow through the land of India.",
           "words": [
-            "(क)",
-            "भारतभूमौ",
+            "(",
+            "क",
+            ")",
+            "भारतभूमिं",
             "पवित्राः",
             "नद्यः",
-            "प्रवहन्ति।",
-            "->",
-            "Translation:",
-            "Holy",
-            "rivers",
-            "flow",
-            "in",
-            "the",
-            "land",
-            "of",
-            "India."
+            "प्रवहन्ति।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) भारतस्य मस्तके हिमालयः मुकुटरूपेण शोभते। -> Translation: The Himalayas shine like a crown on the head of India.",
-          "meaning": "The Himalayas shine like a crown on the head of India.",
+          "sanskrit": "(ख) भारतस्य मस्तके हिमालयः मुकुटूरूपेण शोभते।",
+          "answer_sanskrit": "The Himalayas shine like a crown on the head of India.",
+          "meaning": "Translation: The Himalayas shine like a crown on the head of India.",
           "words": [
-            "(ख)",
+            "(",
+            "ख",
+            ")",
             "भारतस्य",
             "मस्तके",
             "हिमालयः",
-            "मुकुटरूपेण",
-            "शोभते।",
-            "->",
-            "Translation:",
-            "The",
-            "Himalayas",
-            "shine",
-            "like",
-            "a",
-            "crown",
-            "on",
-            "the",
-            "head",
-            "of",
-            "India."
+            "मुकुटूरूपेण",
+            "शोभते।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) भारतभूमौ श्रेष्ठाः पर्वताः विराजन्ते। -> Translation: Great and majestic mountains stand grandly on the land of India.",
-          "meaning": "Great and majestic mountains stand grandly on the land of India.",
+          "sanskrit": "(ग) भारतभूमौ श्रेष्ठाः पर्वताः विराजन्ते।",
+          "answer_sanskrit": "Majestic mountains adorn the land of India.",
+          "meaning": "Translation: Majestic mountains adorn the land of India.",
           "words": [
-            "(ग)",
+            "(",
+            "ग",
+            ")",
             "भारतभूमौ",
             "श्रेष्ठाः",
             "पर्वताः",
-            "विराजन्ते।",
-            "->",
-            "Translation:",
-            "Great",
-            "and",
-            "majestic",
-            "mountains",
-            "stand",
-            "grandly",
-            "on",
-            "the",
-            "land",
-            "of",
-            "India."
+            "विराजन्ते।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) राष्ट्रध्वजे केशरः, श्वेतः, हरितः च वर्णाः सन्ति। -> Translation: Saffron, white, and green colours are present in the national flag.",
-          "meaning": "Saffron, white, and green colours are present in the national flag.",
+          "sanskrit": "(घ) राष्ट्रध्वजे केशरः, श्वेतः, हरितः च वर्णाः सन्ति।",
+          "answer_sanskrit": "There are Saffron, White, and Green colours in the national flag.",
+          "meaning": "Translation: There are Saffron, White, and Green colours in the national flag.",
           "words": [
-            "(घ)",
+            "(",
+            "घ",
+            ")",
             "राष्ट्रध्वजे",
-            "केशरः,",
-            "श्वेतः,",
+            "केशरः",
+            ",",
+            "श्वेतः",
+            ",",
             "हरितः",
             "च",
             "वर्णाः",
-            "सन्ति।",
-            "->",
-            "Translation:",
-            "Saffron,",
-            "white,",
-            "and",
-            "green",
-            "colours",
-            "are",
-            "present",
-            "in",
-            "the",
-            "national",
-            "flag."
+            "सन्ति।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) वयं भारते जन्म प्राप्तवन्तः। -> Translation: We have taken birth in India.",
-          "meaning": "We have taken birth in India.",
+          "sanskrit": "(ङ) वयं भारते जन्म प्राप्तवन्तः।",
+          "answer_sanskrit": "We are blessed to have taken birth in India.",
+          "meaning": "Translation: We are blessed to have taken birth in India.",
           "words": [
-            "(ङ)",
+            "(",
+            "ङ",
+            ")",
             "वयं",
             "भारते",
             "जन्म",
-            "प्राप्तवन्तः।",
-            "->",
-            "Translation:",
-            "We",
-            "have",
-            "taken",
-            "birth",
-            "in",
-            "India."
+            "प्राप्तवन्तः।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "६. अधः प्रदत्तानां शब्दानाम् उदाहरणानुसारं विभक्तिं वचनं च लिखन्तु— (Identify Case and Number)",
-          "meaning": "Identify the case (विभक्ति) and number (वचन) of the given words:",
+          "sanskrit": "६. अधः प्रदत्तानां शब्दानाम् उदाहरणानुसारं विभक्तिं वचनं च लिखन्तु —",
+          "meaning": "6. Write the correct grammatical Case and Number of the words:",
           "words": [
-            "६.",
+            "६",
+            ".",
             "अधः",
             "प्रदत्तानां",
             "शब्दानाम्",
@@ -2728,313 +2737,274 @@
             "विभक्तिं",
             "वचनं",
             "च",
-            "लिखन्तु—",
-            "(Identify",
-            "Case",
-            "and",
-            "Number)"
+            "लिखन्तु",
+            "—"
           ],
-          "kind": "exercise-subheader"
+          "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) भारतमाता -> प्रथमा विभक्तिः, एकवचनम्",
-          "meaning": "(क) भारतमाता is in प्रथमा विभक्तिः, एकवचनम्",
+          "sanskrit": "(क) भारतमाता",
+          "answer_sanskrit": "प्रथमाविभक्तिः, एकवचनम्",
+          "meaning": "Nominative singular (प्रथमाविभक्तिः, एकवचनम्)",
           "words": [
-            "(क)",
+            "(",
+            "क",
+            ")",
             "भारतमाता",
-            "->",
-            "प्रथमा",
-            "विभक्तिः,",
+            "प्रथमाविभक्तिः",
+            ",",
             "एकवचनम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) नद्यः -> प्रथमा विभक्तिः, बहुवचनम्",
-          "meaning": "(ख) नद्यः is in प्रथमा विभक्तिः, बहुवचनम्",
+          "sanskrit": "(ख) नद्यः",
+          "answer_sanskrit": "प्रथमाविभक्तिः, बहुवचनम्",
+          "meaning": "Nominative plural (प्रथमाविभक्तिः, बहुवचनम्)",
           "words": [
-            "(ख)",
+            "(",
+            "ख",
+            ")",
             "नद्यः",
-            "->",
-            "प्रथमा",
-            "विभक्तिः,",
+            "प्रथमाविभक्तिः",
+            ",",
             "बहुवचनम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) ललाटे -> सप्तमी विभक्तिः, एकवचनम्",
-          "meaning": "(ग) ललाटे is in सप्तमी विभक्तिः, एकवचनम्",
+          "sanskrit": "(ग) ललाटे",
+          "answer_sanskrit": "सप्तमीविभक्तिः, एकवचनम्",
+          "meaning": "Locative singular (सप्तमीविभक्तिः, एकवचनम्)",
           "words": [
-            "(ग)",
+            "(",
+            "ग",
+            ")",
             "ललाटे",
-            "->",
-            "सप्तमी",
-            "विभक्तिः,",
+            "सप्तमीविभक्तिः",
+            ",",
             "एकवचनम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) तीर्थक्षेत्राणाम् -> षष्ठी विभक्तिः, बहुवचनम्",
-          "meaning": "(घ) तीर्थक्षेत्राणाम् is in षष्ठी विभक्तिः, बहुवचनम्",
+          "sanskrit": "(घ) तीर्थक्षेत्राणाम्",
+          "answer_sanskrit": "षष्ठीविभक्तिः, बहुवचनम्",
+          "meaning": "Genitive plural (षष्ठीविभक्तिः, बहुवचनम्)",
           "words": [
-            "(घ)",
+            "(",
+            "घ",
+            ")",
             "तीर्थक्षेत्राणाम्",
-            "->",
-            "षष्ठी",
-            "विभक्तिः,",
+            "षष्ठीविभक्तिः",
+            ",",
             "बहुवचनम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) देशस्य -> षष्ठी विभक्तिः, एकवचनम्",
-          "meaning": "(ङ) देशस्य is in षष्ठी विभक्तिः, एकवचनम्",
+          "sanskrit": "(ङ) देशस्य",
+          "answer_sanskrit": "षष्ठीविभक्तिः, एकवचनम्",
+          "meaning": "Genitive singular (षष्ठीविभक्तिः, एकवचनम्)",
           "words": [
-            "(ङ)",
+            "(",
+            "ङ",
+            ")",
             "देशस्य",
-            "->",
-            "षष्ठी",
-            "विभक्तिः,",
+            "षष्ठीविभक्तिः",
+            ",",
             "एकवचनम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(च) बलिदानम् -> प्रथमा / द्वितीया विभक्तिः, एकवचनम्",
-          "meaning": "(च) बलिदानम् is in प्रथमा / द्वितीया विभक्तिः, एकवचनम्",
+          "sanskrit": "(च) बलिदानम्",
+          "answer_sanskrit": "द्वितीयाविभक्तिः / प्रथमाविभक्तिः, एकवचनम्",
+          "meaning": "Accusative / Nominative singular",
           "words": [
-            "(च)",
+            "(",
+            "च",
+            ")",
             "बलिदानम्",
-            "->",
-            "प्रथमा",
+            "द्वितीयाविभक्तिः",
             "/",
-            "द्वितीया",
-            "विभक्तिः,",
+            "प्रथमाविभक्तिः",
+            ",",
             "एकवचनम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(छ) कृषकबान्धवाः -> प्रथमा विभक्तिः, बहुवचनम्",
-          "meaning": "(छ) कृषकबान्धवाः is in प्रथमा विभक्तिः, बहुवचनम्",
+          "sanskrit": "(छ) कृषीवलबान्धवाः",
+          "answer_sanskrit": "प्रथमाविभक्तिः, बहुवचनम्",
+          "meaning": "Nominative plural (प्रथमाविभक्तिः, बहुवचनम्)",
           "words": [
-            "(छ)",
-            "कृषकबान्धवाः",
-            "->",
-            "प्रथमा",
-            "विभक्तिः,",
+            "(",
+            "छ",
+            ")",
+            "कृषीवलबान्धवाः",
+            "प्रथमाविभक्तिः",
+            ",",
             "बहुवचनम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ज) अस्मान् -> द्वितीया विभक्तिः, बहुवचनम्",
-          "meaning": "(ज) अस्मान् is in द्वितीया विभक्तिः, बहुवचनम्",
+          "sanskrit": "(ज) अस्मान्",
+          "answer_sanskrit": "द्वितीयाविभक्तिः, बहुवचनम्",
+          "meaning": "Accusative plural (द्वितीयाविभक्तिः, बहुवचनम्)",
           "words": [
-            "(ज)",
+            "(",
+            "ज",
+            ")",
             "अस्मान्",
-            "->",
-            "द्वितीया",
-            "विभक्तिः,",
+            "द्वितीयाविभक्तिः",
+            ",",
             "बहुवचनम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(झ) क्षेत्रेषु -> सप्तमी विभक्तिः, बहुवचनम्",
-          "meaning": "(झ) क्षेत्रेषु is in सप्तमी विभक्तिः, बहुवचनम्",
+          "sanskrit": "(झ) क्षेत्रेषु",
+          "answer_sanskrit": "सप्तमीविभक्तिः, बहुवचनम्",
+          "meaning": "Locative plural (सप्तमीविभक्तिः, बहुवचनम्)",
           "words": [
-            "(झ)",
+            "(",
+            "झ",
+            ")",
             "क्षेत्रेषु",
-            "->",
-            "सप्तमी",
-            "विभक्तिः,",
+            "सप्तमीविभक्तिः",
+            ",",
             "बहुवचनम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "७. पाठे प्रयुक्तानि क्रियापदानि रिक्तस्थानेषु लिखन्तु— (Verbs used in the chapter)",
-          "meaning": "Verbs used in Chapter 1: शृणुमः, जानीमः, वर्तते, अस्ति, शोभते, प्रक्षालयति, विराजन्ते, प्रवहन्ति",
+          "sanskrit": "७. पाठे प्रयुक्तानि क्रियापदानि रिक्तस्थानेषु लिखन्तु —",
+          "answer_sanskrit": "शृणुमः, जानीमः, अस्ति, वर्तते, लिखितवान्, करोति, शोभते, प्रक्षालयति, विराजन्ते, प्रवहन्ति, आगच्छन्ति, गायन्ति स्म, भवामः, विलसति, प्रयच्छन्ति, अर्पितवन्तः, सूचयति, प्रेरयति",
+          "meaning": "18 Chapter Verbs: We listen, know, is, exists, wrote, does, shines, washes, adorn, flow, arrive, were singing, we become, shines, give, dedicated, indicates, inspires.",
           "words": [
-            "७.",
+            "७",
+            ".",
             "पाठे",
             "प्रयुक्तानि",
             "क्रियापदानि",
-            "रिक्तस्थानेषु",
-            "लिखन्तु—",
-            "(Verbs",
-            "used",
-            "in",
-            "the",
-            "chapter)",
             ":",
-            "शृणुमः,",
-            "जानीमः,",
-            "वर्तते,",
-            "अस्ति,",
-            "शोभते,",
-            "प्रक्षालयति,",
-            "विराजन्ते,",
-            "प्रवहन्ति"
+            "शृणुमः",
+            "जानीमः",
+            "अस्ति",
+            "वर्तते",
+            "लिखितवान्",
+            "करोति",
+            "शोभते",
+            "प्रक्षालयति",
+            "विराजन्ते",
+            "प्रवहन्ति",
+            "आगच्छन्ति",
+            "गायन्ति",
+            "स्म",
+            "भवामः",
+            "विलसति",
+            "प्रयच्छन्ति",
+            "अर्पितवन्तः",
+            "सूचयति",
+            "प्रेरयति"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "८. लट्-लकारस्य रूपाणि लिखन्तु— (Present Tense Verb Matrices)",
-          "meaning": "Write the forms of present tense (लट्-लकारः) verbs:",
+          "sanskrit": "८. अधः प्रदत्तानां क्रियापदानां त्रिषु पुरुषेषु त्रिषु वचनेषु च लट्-लकारस्य रूपाणि लिखन्तु —",
+          "meaning": "8. Complete the Present Tense tables for the given root verbs:",
           "words": [
-            "८.",
-            "लट्-लकारस्य",
+            "८",
+            ".",
+            "अधः",
+            "प्रदत्तानां",
+            "क्रियापदानां",
+            "त्रिषु",
+            "पुरुषेषु",
+            "त्रिषु",
+            "वचनेषु",
+            "च",
+            "लट्",
+            "-",
+            "लकारस्य",
             "रूपाणि",
-            "लिखन्तु—",
-            "(Present",
-            "Tense",
-            "Verb",
-            "Matrices)"
+            "लिखन्तु",
+            "—"
           ],
-          "kind": "exercise-subheader"
+          "kind": "exercise-header"
         },
         {
-          "sanskrit": "1. भू (भवति) धातुः (To be / become) -> प्रथमपुरुषः: भवति / भवतः / भवन्ति | मध्यमपुरुषः: भवसि / भवथः / भवथ | उत्तमपुरुषः: भवामि / भवावः / भवामः",
-          "meaning": "1. भू (भवति) धातुः (To be / become): प्रथमपुरुषः: भवति / भवतः / भवन्ति | मध्यमपुरुषः: भवसि / भवथः / भवथ | उत्तमपुरुषः: भवामि / भवावः / भवामः",
+          "sanskrit": "1. भू धातु (भवति - To Be/Become)",
+          "answer_sanskrit": "प्रथमपुरुषः: भवति, भवतः, भवन्ति | मध्यमपुरुषः: भवसि, भवथः, भवथ | उत्तमपुरुषः: भवामि, भवावः, भवामः",
+          "meaning": "Conjugation of भू (भवति): Third person (भवति/भवतः/भवन्ति), Second person (भवसि/भवथः/भवथ), First person (भवामि/भवावः/भवामः).",
           "words": [
-            "1.",
             "भू",
-            "(भवति)",
-            "धातुः",
-            "(To",
-            "be",
-            "/",
-            "become)",
-            "->",
-            "प्रथमपुरुषः:",
+            "धातु",
             "भवति",
-            "/",
             "भवतः",
-            "/",
             "भवन्ति",
-            "|",
-            "मध्यमपुरुषः:",
             "भवसि",
-            "/",
             "भवथः",
-            "/",
             "भवथ",
-            "|",
-            "उत्तमपुरुषः:",
             "भवामि",
-            "/",
             "भवावः",
-            "/",
             "भवामः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "2. अस् (अस्ति) धातुः (To be) -> प्रथमपुरुषः: अस्ति / स्तः / सन्ति | मध्यमपुरुषः: असि / स्थः / स्थ | उत्तमपुरुषः: अस्मि / स्वः / स्मः",
-          "meaning": "2. अस् (अस्ति) धातुः (To be): प्रथमपुरुषः: अस्ति / स्तः / सन्ति | मध्यमपुरुषः: असि / स्थः / स्थ | उत्तमपुरुषः: अस्मि / स्वः / स्मः",
+          "sanskrit": "2. अस् धातु (अस्ति - To Be)",
+          "answer_sanskrit": "प्रथमपुरुषः: अस्ति, स्तः, सन्ति | मध्यमपुरुषः: असि, स्थः, स्थ | उत्तमपुरुषः: अस्मि, स्वः, स्मः",
+          "meaning": "Conjugation of अस् (अस्ति): Third person (अस्ति/स्तः/सन्ति), Second person (असि/स्थः/स्थ), First person (अस्मि/स्वः/स्मः).",
           "words": [
-            "2.",
             "अस्",
-            "(अस्ति)",
-            "धातुः",
-            "(To",
-            "be)",
-            "->",
-            "प्रथमपुरुषः:",
+            "धातु",
             "अस्ति",
-            "/",
             "स्तः",
-            "/",
             "सन्ति",
-            "|",
-            "मध्यमपुरुषः:",
             "असि",
-            "/",
             "स्थः",
-            "/",
             "स्थ",
-            "|",
-            "उत्तमपुरुषः:",
             "अस्मि",
-            "/",
             "स्वः",
-            "/",
             "स्मः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "3. इष् (इच्छति) धातुः (To wish / desire) -> प्रथमपुरुषः: इच्छति / इच्छतः / इच्छन्ति | मध्यमपुरुषः: इच्छसि / इच्छथः / इच्छथ | उत्तमपुरुषः: इच्छामि / इच्छावः / इच्छामः",
-          "meaning": "3. इष् (इच्छति) धातुः (To wish / desire): प्रथमपुरुषः: इच्छति / इच्छतः / इच्छन्ति | मध्यमपुरुषः: इच्छसि / इच्छथः / इच्छथ | उत्तमपुरुषः: इच्छामि / इच्छावः / इच्छामः",
+          "sanskrit": "3. इष् धातु (इच्छति - To Wish/Desire)",
+          "answer_sanskrit": "प्रथमपुरुषः: इच्छति, इच्छतः, इच्छन्ति | मध्यमपुरुषः: इच्छसि, इच्छथः, इच्छथ | उत्तमपुरुषः: इच्छामि, इच्छावः, इच्छामः",
+          "meaning": "Conjugation of इष् (इच्छति): Third person (इच्छति/इच्छतः/इच्छन्ति), Second person (इच्छसि/इच्छथः/इच्छथ), First person (इच्छामि/इच्छावः/इच्छामः).",
           "words": [
-            "3.",
             "इष्",
-            "(इच्छति)",
-            "धातुः",
-            "(To",
-            "wish",
-            "/",
-            "desire)",
-            "->",
-            "प्रथमपुरुषः:",
+            "धातु",
             "इच्छति",
-            "/",
             "इच्छतः",
-            "/",
             "इच्छन्ति",
-            "|",
-            "मध्यमपुरुषः:",
             "इच्छसि",
-            "/",
             "इच्छथः",
-            "/",
             "इच्छथ",
-            "|",
-            "उत्तमपुरुषः:",
             "इच्छामि",
-            "/",
             "इच्छावः",
-            "/",
             "इच्छामः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "4. आ + गम् (आगच्छति) धातुः (To come) -> प्रथमपुरुषः: आगच्छति / आगच्छतः / आगच्छन्ति | मध्यमपुरुषः: आगच्छसि / आगच्छथः / आगच्छथ | उत्तमपुरुषः: आगच्छामि / आगच्छावः / आगच्छामः",
-          "meaning": "4. आ + गम् (आगच्छति) धातुः (To come): प्रथमपुरुषः: आगच्छति / आगच्छतः / आगच्छन्ति | मध्यमपुरुषः: आगच्छसि / आगच्छथः / आगच्छथ | उत्तमपुरुषः: आगच्छामि / आगच्छावः / आगच्छामः",
+          "sanskrit": "4. गम् धातु + आ (आगच्छति - To Come)",
+          "answer_sanskrit": "प्रथमपुरुषः: आगच्छति, आगच्छतः, आगच्छन्ति | मध्यमपुरुषः: आगच्छसि, आगच्छथः, आगच्छथ | उत्तमपुरुषः: आगच्छामि, आगच्छावः, आगच्छामः",
+          "meaning": "Conjugation of आ + गम् (आगच्छति): Third person (आगच्छति/आगच्छतः/आगच्छन्ति), Second person (आगच्छसि/आगच्छथः/आगच्छथ), First person (आगच्छामि/आगच्छावः/आगच्छामः).",
           "words": [
-            "4.",
-            "आ",
-            "+",
-            "गम्",
-            "(आगच्छति)",
-            "धातुः",
-            "(To",
-            "come)",
-            "->",
-            "प्रथमपुरुषः:",
             "आगच्छति",
-            "/",
             "आगच्छतः",
-            "/",
             "आगच्छन्ति",
-            "|",
-            "मध्यमपुरुषः:",
             "आगच्छसि",
-            "/",
             "आगच्छथः",
-            "/",
             "आगच्छथ",
-            "|",
-            "उत्तमपुरुषः:",
             "आगच्छामि",
-            "/",
             "आगच्छावः",
-            "/",
             "आगच्छामः"
           ],
           "kind": "exercise-qa"
@@ -5103,8 +5073,8 @@
           "kind": "glossary"
         },
         {
-          "sanskrit": "वयं अभ्यासं कुर्मः",
-          "meaning": "Exercises with Complete Solutions",
+          "sanskrit": "वयं अभ्यासं कुर्मः (तृतीयः पाठः - मित्राय नमः / Solved Exercises)",
+          "meaning": "Exercises with Complete Solutions (वयं अभ्यासं कुर्मः)",
           "paragraphTranslation": "आओ हम सब अभ्यास करें",
           "words": [
             "वयं",
@@ -5117,7 +5087,8 @@
           "sanskrit": "१. अधोलिखितानां प्रश्नानाम् उत्तराणि एकपदेन लिखन्तु —",
           "meaning": "1. Answer the following questions in one word:",
           "words": [
-            "१.",
+            "१",
+            ".",
             "अधोलिखितानां",
             "प्रश्नानाम्",
             "उत्तराणि",
@@ -5128,12 +5099,17 @@
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) 'शुभं भवतु' इति कः वदति ?",
-          "meaning": "Who says 'May auspiciousness be upon you'? Answer: Acharya (The teacher).",
+          "sanskrit": "(क) 'शुभं भवतु' इति कः वदति?",
           "answer_sanskrit": "आचार्या",
+          "meaning": "Who says 'May auspiciousness be upon you'? Answer: The teacher (आचार्या).",
           "words": [
+            "(",
+            "क",
+            ")",
+            "'",
             "शुभं",
             "भवतु",
+            "'",
             "इति",
             "कः",
             "वदति",
@@ -5144,14 +5120,19 @@
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) योगिता आचार्यां 'किं शिक्षयतु' इति वदति ?",
-          "meaning": "What does Yogita ask the teacher to teach? Answer: Surya Namaskar.",
+          "sanskrit": "(ख) योगिता आचार्यां 'किं शिक्षयतु' इति वदति?",
           "answer_sanskrit": "सूर्यनमस्कारम्",
+          "meaning": "What does Yogita ask the teacher to teach? Answer: Surya Namaskar (सूर्यनमस्कारम्).",
           "words": [
+            "(",
+            "ख",
+            ")",
             "योगिता",
             "आचार्यां",
+            "'",
             "किं",
             "शिक्षयतु",
+            "'",
             "इति",
             "वदति",
             "?",
@@ -5162,24 +5143,31 @@
         },
         {
           "sanskrit": "(ग) सूर्यनमस्कारः कतीनाम् आसनानां समाहारः अस्ति?",
-          "meaning": "Surya Namaskar is a combination of how many asanas? Answer: Twelve (द्वादशानाम्).",
           "answer_sanskrit": "द्वादशानाम्",
+          "meaning": "Surya Namaskar is a combination of how many postures? Answer: Twelve (द्वादशानाम्).",
           "words": [
+            "(",
+            "ग",
+            ")",
             "सूर्यनमस्कारः",
             "कतीनाम्",
             "आसनानां",
             "समाहारः",
-            "अस्ति?",
+            "अस्ति",
+            "?",
             "उत्तरः",
             "द्वादशानाम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) केषु सूर्यनमस्कारः श्रेष्ठः ?",
-          "meaning": "Among what is Surya Namaskar the best? Answer: Among yogasanas (योगासनेषु).",
+          "sanskrit": "(घ) केषु सूर्यनमस्कारः श्रेष्ठः?",
           "answer_sanskrit": "योगासनेषु",
+          "meaning": "Among what is Surya Namaskar the best? Answer: Among yogasanas (योगासनेषु).",
           "words": [
+            "(",
+            "घ",
+            ")",
             "केषु",
             "सूर्यनमस्कारः",
             "श्रेष्ठः",
@@ -5190,10 +5178,13 @@
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) सूर्यनमस्कारेण जनाः कीदृशं शरीरं प्राप्नुवन्ति ?",
-          "meaning": "What kind of body do people attain through Surya Namaskar? Answer: A healthy body (स्वस्थम्).",
+          "sanskrit": "(ङ) सूर्यनमस्कारेण जनाः कीदृशं शरीरं प्राप्नुवन्ति?",
           "answer_sanskrit": "स्वस्थम्",
+          "meaning": "What kind of body do people attain through Surya Namaskar? Answer: Healthy (स्वस्थम्).",
           "words": [
+            "(",
+            "ङ",
+            ")",
             "सूर्यनमस्कारेण",
             "जनाः",
             "कीदृशं",
@@ -5209,7 +5200,8 @@
           "sanskrit": "२. अधोलिखितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखन्तु —",
           "meaning": "2. Answer the following questions in complete sentences:",
           "words": [
-            "२.",
+            "२",
+            ".",
             "अधोलिखितानां",
             "प्रश्नानाम्",
             "उत्तराणि",
@@ -5220,52 +5212,113 @@
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) सर्वे छात्राः आचार्यां किं पृच्छन्ति ?",
-          "meaning": "What do all the students ask the teacher?",
-          "answer_sanskrit": "सर्वे छात्राः आचार्यां पृच्छन्ति – \"आचार्ये ! किम् अद्य भवान् अस्मान् योगासनं शिक्षयति ?\"",
+          "sanskrit": "(क) सर्वे छात्राः आचार्यां किं पृच्छन्ति?",
+          "answer_sanskrit": "सर्वे छात्राः आचार्यां पृच्छन्ति - \"आचार्ये ! किम् अद्य भवान् अस्मान् योगासनं शिक्षयति?\"",
+          "meaning": "All students ask the teacher: 'Teacher! Will you teach us Yogasanas today?'",
           "words": [
+            "(",
+            "क",
+            ")",
             "सर्वे",
             "छात्राः",
             "आचार्यां",
             "किं",
             "पृच्छन्ति",
-            "?",
-            "उत्तरः",
-            "सर्वे",
-            "छात्राः",
-            "आचार्यां",
-            "पृच्छन्ति",
-            "–",
-            "\"आचार्ये",
-            "!",
-            "किम्",
-            "अद्य",
-            "भवान्",
-            "अस्मान्",
-            "योगासनं",
-            "शिक्षयति",
-            "?\""
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) सूर्यनमस्कारः इत्यनेन कः आशयः ?",
-          "meaning": "What is meant by Surya Namaskar?",
+          "sanskrit": "(ख) सूर्यनमस्कारः इत्यनेन कः आशयः?",
           "answer_sanskrit": "सूर्यनमस्कारः द्वादशानाम् आसनानां समाहारः अस्ति, यस्य प्रत्येकस्मात् पूर्वम् एकः मन्त्रः भवति।",
+          "meaning": "Surya Namaskar is a combination of twelve postures, before each of which there is a sacred mantra.",
           "words": [
+            "(",
+            "ख",
+            ")",
             "सूर्यनमस्कारः",
             "इत्यनेन",
             "कः",
             "आशयः",
-            "?",
-            "उत्तरः",
-            "सूर्यनमस्कारः",
-            "द्वादशानाम्",
-            "आसनानां",
-            "समाहारः",
-            "अस्ति,",
-            "यस्य",
+            "?"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) आचार्या कं श्लोकं पाठयति?",
+          "answer_sanskrit": "आचार्या एतं श्लोकं पाठयति - \"आदित्यस्य नमस्कारान् ये कुर्वन्ति दिने दिने। आयुः प्रज्ञा बलं वीर्यं तेजस्तेषां च जायते ॥\"",
+          "meaning": "The teacher teaches this shloka: 'For those who perform salutations to the Sun daily, their lifespan, intellect, strength, vitality, and radiance increase.'",
+          "words": [
+            "(",
+            "ग",
+            ")",
+            "आचार्या",
+            "कं",
+            "श्लोकं",
+            "पाठयति",
+            "?"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(घ) सूर्यनमस्कारस्य प्रथमः मन्त्रः कः?",
+          "answer_sanskrit": "सूर्यनमस्कारस्य प्रथमः मन्त्रः 'ॐ मित्राय नमः' इति अस्ति।",
+          "meaning": "The first mantra of Surya Namaskar is 'Om Mitraya Namah' (Salutations to the Friend of All).",
+          "words": [
+            "(",
+            "घ",
+            ")",
+            "सूर्यनमस्कारस्य",
+            "प्रथमः",
+            "मन्त्रः",
+            "कः",
+            "?"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ङ) सूर्यनमस्कारेण कीदृशं बलं वर्धते?",
+          "answer_sanskrit": "सूर्यनमस्कारेण शारीरिकं, मानसिकम्, आध्यात्मिकं च बलं वर्धते।",
+          "meaning": "Through Surya Namaskar, physical, mental, and spiritual strength increases.",
+          "words": [
+            "(",
+            "ङ",
+            ")",
+            "सूर्यनमस्कारेण",
+            "कीदृशं",
+            "बलं",
+            "वर्धते",
+            "?"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "३. पाठात् समुचितं पदं चित्वा अधः रिक्तस्थानानि पूरयन्तु —",
+          "meaning": "3. Fill in the blanks with appropriate words from the chapter:",
+          "words": [
+            "३",
+            ".",
+            "पाठात्",
+            "समुचितं",
+            "पदं",
+            "चित्वा",
+            "अधः",
+            "रिक्तस्थानानि",
+            "पूरयन्तु",
+            "—"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "(क) प्रत्येकस्मात् सूर्यनमस्कारात् पूर्वम् एकः मन्त्रः भवति।",
+          "answer_sanskrit": "मन्त्रः",
+          "meaning": "Before each Surya Namaskar posture, there is one mantra.",
+          "words": [
+            "(",
+            "क",
+            ")",
             "प्रत्येकस्मात्",
+            "सूर्यनमस्कारात्",
             "पूर्वम्",
             "एकः",
             "मन्त्रः",
@@ -5274,101 +5327,13 @@
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) आचार्या कं श्लोकं पाठयति ?",
-          "meaning": "Which shloka does the teacher recite?",
-          "answer_sanskrit": "आचार्या एतं श्लोकं पाठयति – \"आदित्यस्य नमस्कारान् ये कुर्वन्ति दिने दिने। आयुः प्रज्ञा बलं वीर्यं तेजस्तेषां च जायते ॥\"",
-          "words": [
-            "आचार्या",
-            "कं",
-            "श्लोकं",
-            "पाठयति",
-            "?",
-            "उत्तरः",
-            "आचार्या",
-            "एतं",
-            "श्लोकं",
-            "पाठयति"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(घ) सूर्यनमस्कारस्य प्रथमः मन्त्रः कः ?",
-          "meaning": "What is the first mantra of Surya Namaskar?",
-          "answer_sanskrit": "सूर्यनमस्कारस्य प्रथमः मन्त्रः 'ॐ मित्राय नमः' इति अस्ति।",
-          "words": [
-            "सूर्यनमस्कारस्य",
-            "प्रथमः",
-            "मन्त्रः",
-            "कः",
-            "?",
-            "उत्तरः",
-            "सूर्यनमस्कारस्य",
-            "प्रथमः",
-            "मन्त्रः",
-            "'ॐ",
-            "मित्राय",
-            "नमः'",
-            "इति",
-            "अस्ति।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ङ) सूर्यनमस्कारेण कीदृशं बलं वर्धते ?",
-          "meaning": "What kind of strength increases through Surya Namaskar?",
-          "answer_sanskrit": "सूर्यनमस्कारेण शारीरिकं, मानसिकम्, आध्यात्मिकं च बलं वर्धते।",
-          "words": [
-            "सूर्यनमस्कारेण",
-            "कीदृशं",
-            "बलं",
-            "वर्धते",
-            "?",
-            "उत्तरः",
-            "सूर्यनमस्कारेण",
-            "शारीरिकं",
-            "मानसिकम्",
-            "आध्यात्मिकं",
-            "च",
-            "बलं",
-            "वर्धते।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "३. पाठात् समुचितं पदं चित्वा रिक्तस्थानानि पूरयन्तु —",
-          "meaning": "3. Fill in the blanks with appropriate words from the lesson:",
-          "words": [
-            "३.",
-            "पाठात्",
-            "समुचितं",
-            "पदं",
-            "चित्वा",
-            "रिक्तस्थानानि",
-            "पूरयन्तु",
-            "—"
-          ],
-          "kind": "exercise-header"
-        },
-        {
-          "sanskrit": "(क) प्रत्येकस्मात् सूर्यनमस्कारात् पूर्वम् एकः मन्त्रः भवति ।",
-          "meaning": "(a) Before each posture of Surya Namaskar, there is one mantra.",
-          "answer_sanskrit": "मन्त्रः",
-          "words": [
-            "प्रत्येकस्मात्",
-            "सूर्यनमस्कारात्",
-            "पूर्वम्",
-            "एकः",
-            "मन्त्रः",
-            "भवति",
-            "।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
           "sanskrit": "(ख) वयं प्रतिदिनं सूर्यनमस्कारं करवाम।",
-          "meaning": "(b) Let us perform Surya Namaskar every day.",
           "answer_sanskrit": "करवाम",
+          "meaning": "Let us perform Surya Namaskar every day.",
           "words": [
+            "(",
+            "ख",
+            ")",
             "वयं",
             "प्रतिदिनं",
             "सूर्यनमस्कारं",
@@ -5378,9 +5343,12 @@
         },
         {
           "sanskrit": "(ग) स्वस्थं शरीरं स्वस्थं मनः च प्राप्नवाम।",
-          "meaning": "(c) Let us achieve a healthy body and a healthy mind.",
-          "answer_sanskrit": "स्वस्थम्",
+          "answer_sanskrit": "प्राप्नवाम",
+          "meaning": "May we attain a healthy body and a healthy mind.",
           "words": [
+            "(",
+            "ग",
+            ")",
             "स्वस्थं",
             "शरीरं",
             "स्वस्थं",
@@ -5392,9 +5360,12 @@
         },
         {
           "sanskrit": "(घ) एकेन श्लोकेन सूर्यनमस्कारस्य बहूनि प्रयोजनानि वदामि।",
-          "meaning": "(d) Through one shloka, I shall explain the multiple benefits of Surya Namaskar.",
           "answer_sanskrit": "प्रयोजनानि",
+          "meaning": "Through one shloka, I explain the numerous benefits of Surya Namaskar.",
           "words": [
+            "(",
+            "घ",
+            ")",
             "एकेन",
             "श्लोकेन",
             "सूर्यनमस्कारस्य",
@@ -5406,9 +5377,12 @@
         },
         {
           "sanskrit": "(ङ) आदित्यस्य नमस्कारान् ये कुर्वन्ति दिने दिने।",
-          "meaning": "(e) Those who perform salutations to the Sun day after day.",
-          "answer_sanskrit": "दिने दिने",
+          "answer_sanskrit": "नमस्कारान्",
+          "meaning": "Those who perform salutations to the Sun day after day.",
           "words": [
+            "(",
+            "ङ",
+            ")",
             "आदित्यस्य",
             "नमस्कारान्",
             "ये",
@@ -5419,21 +5393,28 @@
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "४. पाठे विद्यमानानां 'नमः' युक्तशब्दानां सङ्ग्रहः (चतुर्थी विभक्तिः) —",
-          "meaning": "4. Collection of words combined with 'Namah' in the Dative Case (चतुर्थी विभक्तिः):",
+          "sanskrit": "४. पाठे विद्यमानानां 'नमः' युक्तशब्दानां सङ्ग्रहं कृत्वा लिखन्तु — (द्वादश मन्त्राः)",
+          "meaning": "4. Collect the twelve Surya Namaskara mantras with 'नमः' (Chaturthi Vibhakti):",
           "words": [
-            "४.",
+            "४",
+            ".",
             "पाठे",
             "विद्यमानानां",
-            "'नमः'",
+            "'",
+            "नमः",
+            "'",
             "युक्तशब्दानां",
-            "सङ्ग्रहः"
+            "सङ्ग्रहं",
+            "कृत्वा",
+            "लिखन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "यथा – मित्राय नमः । (१) रवये नमः (२) सूर्याय नमः (३) भानवे नमः (४) खगाय नमः (५) पूष्णे नमः (६) हिरण्यगर्भाय नमः (७) मरीचये नमः (८) आदित्याय नमः (९) सवित्रे नमः (१०) अर्काय नमः (११) भास्कराय नमः (सर्वान्ते) सवितृसूर्यनारायणाय नमः।",
-          "meaning": "Surya Dative Forms: Mitraya, Ravaye, Suryaya, Bhanave, Khagaya, Pushne, Hiranyagarbhaya, Marichaye, Adityaya, Savitre, Arkaya, Bhaskaraya, Savitrusuryanarayanaya.",
+          "sanskrit": "सूर्यनमस्कारस्य द्वादश मन्त्राः (The 12 Solar Mantras in Chaturthi Vibhakti)",
+          "answer_sanskrit": "यथा - मित्राय नमः। (क) रवये नमः। (ख) सूर्याय नमः। (ग) भानवे नमः। (घ) खगाय नमः। (ङ) पूष्णे नमः। (च) हिरण्यगर्भाय नमः। (छ) मरीचये नमः। (ज) आदित्याय नमः। (झ) सवित्रे नमः। (ञ) अर्काय नमः। (ट) भास्कराय नमः। (सर्वान्ते - सवितृसूर्यनारायणाय नमः)",
+          "meaning": "All 12 solar names conjugated in Dative (चतुर्थी) case followed by 'नमः': मित्राय, रवये, सूर्याय, भानवे, खगाय, पूष्णे, हिरण्यगर्भाय, मरीचये, आदित्याय, सवित्रे, अर्काय, भास्कराय, सवितृसूर्यनारायणाय.",
           "words": [
             "मित्राय",
             "रवये",
@@ -5447,81 +5428,299 @@
             "सवित्रे",
             "अर्काय",
             "भास्कराय",
-            "सवितृसूर्यनारायणाय",
             "नमः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "५. उदाहरणानुसारं चतुर्थी-विभक्तियुक्त-पदानि उपयुज्य वाक्यानि —",
-          "meaning": "5. Form sentences using Dative case nouns with 'Namah':",
+          "sanskrit": "५. उदाहरणानुसारं कोष्ठकात् पदानि स्वीकृत्य वाक्यानि रचयन्तु — ('नमः' योगे चतुर्थी विभक्तिः)",
+          "meaning": "5. Construct sentences using words in Chaturthi Vibhakti with 'नमः':",
           "words": [
-            "५.",
+            "५",
+            ".",
             "उदाहरणानुसारं",
-            "चतुर्थी-विभक्तियुक्त-पदानि",
-            "उपयुज्य",
-            "वाक्यानि"
+            "कोष्ठकात्",
+            "पदानि",
+            "स्वीकृत्य",
+            "वाक्यानि",
+            "रचयन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "यथा – अग्नये नमः। (क) आचार्यायै नमः। (ख) त्रिवर्णध्वजाय नमः। (ग) जनकाय नमः। (घ) वृक्षाय नमः। (ङ) देव्यै नमः। (च) भगिन्यै नमः। (छ) मातामह्यै नमः। (ज) जनन्यै नमः। (झ) पृथिव्यै नमः। (ञ) नद्यै नमः।",
-          "meaning": "Salutations in Dative: To Teacher (आचार्यायै), Flag (त्रिवर्णध्वजाय), Father (जनकाय), Tree (वृक्षाय), Goddess (देव्यै), Sister (भगिन्यै), Grandmother (मातामह्यै), Mother (जनन्यै), Earth (पृथिव्यै), River (नद्यै).",
+          "sanskrit": "यथा - अग्नि → अग्नये नमः।",
+          "answer_sanskrit": "अग्नये नमः।",
+          "meaning": "Example: Salutations to Agni (अग्नये नमः).",
           "words": [
+            "यथा",
+            "अग्नि",
+            "अग्नये",
+            "नमः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(क) आचार्या →",
+          "answer_sanskrit": "आचार्यायै नमः।",
+          "meaning": "Salutations to the female teacher (आचार्यायै नमः).",
+          "words": [
+            "(",
+            "क",
+            ")",
             "आचार्यायै",
+            "नमः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ख) त्रिवर्णध्वज →",
+          "answer_sanskrit": "त्रिवर्णध्वजाय नमः।",
+          "meaning": "Salutations to the Tricolour Flag (त्रिवर्णध्वजाय नमः).",
+          "words": [
+            "(",
+            "ख",
+            ")",
             "त्रिवर्णध्वजाय",
+            "नमः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) जनक →",
+          "answer_sanskrit": "जनकाय नमः।",
+          "meaning": "Salutations to the father (जनकाय नमः).",
+          "words": [
+            "(",
+            "ग",
+            ")",
             "जनकाय",
+            "नमः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(घ) वृक्ष →",
+          "answer_sanskrit": "वृक्षाय नमः।",
+          "meaning": "Salutations to the tree (वृक्षाय नमः).",
+          "words": [
+            "(",
+            "घ",
+            ")",
             "वृक्षाय",
+            "नमः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ङ) देवी →",
+          "answer_sanskrit": "देव्यै नमः।",
+          "meaning": "Salutations to the Goddess (देव्यै नमः).",
+          "words": [
+            "(",
+            "ङ",
+            ")",
             "देव्यै",
+            "नमः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(च) भगिनी →",
+          "answer_sanskrit": "भगिन्यै नमः।",
+          "meaning": "Salutations to the sister (भगिन्यै नमः).",
+          "words": [
+            "(",
+            "च",
+            ")",
             "भगिन्यै",
+            "नमः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(छ) मातामही →",
+          "answer_sanskrit": "मातामह्यै नमः।",
+          "meaning": "Salutations to the maternal grandmother (मातामह्यै नमः).",
+          "words": [
+            "(",
+            "छ",
+            ")",
             "मातामह्यै",
+            "नमः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ज) जननी →",
+          "answer_sanskrit": "जनन्यै नमः।",
+          "meaning": "Salutations to the mother (जनन्यै नमः).",
+          "words": [
+            "(",
+            "ज",
+            ")",
             "जनन्यै",
+            "नमः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(झ) पृथिवी →",
+          "answer_sanskrit": "पृथिव्यै नमः।",
+          "meaning": "Salutations to the Mother Earth (पृथिव्यै नमः).",
+          "words": [
+            "(",
+            "झ",
+            ")",
             "पृथिव्यै",
+            "नमः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ञ) नदी →",
+          "answer_sanskrit": "नद्यै नमः।",
+          "meaning": "Salutations to the river (नद्यै नमः).",
+          "words": [
+            "(",
+            "ञ",
+            ")",
             "नद्यै",
             "नमः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "६. चतुर्थी-विभक्तेः रूपाणि प्रयुज्य वाक्यानि —",
-          "meaning": "6. Sentences with verb 'ददाति' (gives to) governing Dative Case (सम्प्रदाने चतुर्थी):",
+          "sanskrit": "६. कोष्ठके विद्यमानानां शब्दानां चतुर्थी-विभक्तेः रूपाणि प्रयुज्य वाक्यानि पुनः लिखन्तु —",
+          "meaning": "6. Rewrite sentences using the Dative (चतुर्थी) case forms of bracketed words:",
           "words": [
-            "६.",
-            "चतुर्थी-विभक्तेः",
+            "६",
+            ".",
+            "कोष्ठके",
+            "विद्यमानानां",
+            "शब्दानां",
+            "चतुर्थी",
+            "-",
+            "विभक्तेः",
             "रूपाणि",
             "प्रयुज्य",
-            "वाक्यानि"
+            "वाक्यानि",
+            "पुनः",
+            "लिखन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) माता याचकाय वस्त्रं ददाति। (ख) पौत्रः पितामह्यै औषधं ददाति। (ग) अहं भगिन्यै उपायनं ददामि। (घ) पिता सेविकायै वेतनं ददाति। (ङ) त्वं मित्राय पुष्पं ददासि। (च) देवः भक्ताय आशीर्वादं ददाति। (छ) आरक्षकः चोराय दण्डं ददाति।",
-          "meaning": "Examples: Mother gives clothes to the beggar. Grandson gives medicine to grandmother. I give a gift to sister. Father gives salary to maid. You give a flower to friend. God gives blessings to devotee. Police gives punishment to thief.",
+          "sanskrit": "यथा - सैनिकः (देश) जीवनं प्रयच्छति।",
+          "answer_sanskrit": "सैनिकः देशाय जीवनं प्रयच्छति।",
+          "meaning": "Example: The soldier dedicates his life to the nation (देशाय).",
           "words": [
+            "सैनिकः",
+            "देशाय",
+            "जीवनं",
+            "प्रयच्छति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(क) माता (याचक) वस्त्रं ददाति।",
+          "answer_sanskrit": "माता याचकाय वस्त्रं ददाति।",
+          "meaning": "Mother gives clothes to the beggar (याचकाय).",
+          "words": [
+            "(",
+            "क",
+            ")",
             "माता",
             "याचकाय",
             "वस्त्रं",
-            "ददाति",
+            "ददाति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ख) पौत्रः (पितामही) औषधं ददाति।",
+          "answer_sanskrit": "पौत्रः पितामह्यै औषधं ददाति।",
+          "meaning": "The grandson gives medicine to the grandmother (पितामह्यै).",
+          "words": [
+            "(",
+            "ख",
+            ")",
             "पौत्रः",
             "पितामह्यै",
             "औषधं",
-            "ददाति",
+            "ददाति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) अहं (भगिनी) उपायनं ददामि।",
+          "answer_sanskrit": "अहं भगिन्यै उपायनं ददामि।",
+          "meaning": "I present a gift to my sister (भगिन्यै).",
+          "words": [
+            "(",
+            "ग",
+            ")",
             "अहं",
             "भगिन्यै",
             "उपायनं",
-            "ददामि",
+            "ददामि"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(घ) पिता (सेविका) वेतनं ददाति।",
+          "answer_sanskrit": "पिता सेविकायै वेतनं ददाति।",
+          "meaning": "Father gives salary to the maidservant (सेविकायै).",
+          "words": [
+            "(",
+            "घ",
+            ")",
             "पिता",
             "सेविकायै",
             "वेतनं",
-            "ददाति",
+            "ददाति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ङ) त्वं (मित्र) पुष्पं ददासि।",
+          "answer_sanskrit": "त्वं मित्राय पुष्पं ददासि।",
+          "meaning": "You give a flower to your friend (मित्राय).",
+          "words": [
+            "(",
+            "ङ",
+            ")",
             "त्वं",
             "मित्राय",
             "पुष्पं",
-            "ददासि",
+            "ददासि"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(च) देवः (भक्त) आशीर्वादं ददाति।",
+          "answer_sanskrit": "देवः भक्ताय आशीर्वादं ददाति।",
+          "meaning": "God bestows blessings upon the devotee (भक्ताय).",
+          "words": [
+            "(",
+            "च",
+            ")",
             "देवः",
             "भक्ताय",
             "आशीर्वादं",
-            "ददाति",
+            "ददाति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(छ) आरक्षकः (चोर) दण्डं ददाति।",
+          "answer_sanskrit": "आरक्षकः चोराय दण्डं ददाति।",
+          "meaning": "The policeman administers punishment to the thief (चोराय).",
+          "words": [
+            "(",
+            "छ",
+            ")",
             "आरक्षकः",
             "चोराय",
             "दण्डं",
@@ -5530,61 +5729,224 @@
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "७. माता कस्मै / कस्यै धनं ददाति ? (सम्प्रदान-कारकम्)",
-          "meaning": "7. To whom does the mother give money? (Dative Case exercise):",
+          "sanskrit": "७. उदाहरणानुसारं माता कस्मै/कस्यै धनं ददाति इति वाक्यानि रचयन्तु —",
+          "meaning": "7. Construct sentences showing to whom Mother gives money using Chaturthi:",
           "words": [
-            "७.",
+            "७",
+            ".",
+            "उदाहरणानुसारं",
             "माता",
             "कस्मै",
+            "/",
             "कस्यै",
             "धनं",
-            "ददाति"
+            "ददाति",
+            "इति",
+            "वाक्यानि",
+            "रचयन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) माता पुत्र्यै धनं ददाति। (ख) माता पुत्राय धनं ददाति। (ग) माता पाचिकायै धनं ददाति। (घ) माता आपणिकाय धनं ददाति। (ङ) माता याचकाय धनं ददाति। (च) माता पितामह्यै धनं ददाति।",
-          "meaning": "Answers: Mother gives money to: daughter (पुत्र्यै), son (पुत्राय), cook (पाचिकायै), shopkeeper (आपणिकाय), beggar (याचकाय), grandmother (पितामह्यै).",
+          "sanskrit": "(क) यथा - माता (पुत्री) धनं ददाति।",
+          "answer_sanskrit": "माता पुत्र्यै धनं ददाति।",
+          "meaning": "Mother gives money to her daughter (पुत्र्यै).",
           "words": [
             "माता",
             "पुत्र्यै",
             "धनं",
-            "ददाति",
-            "पुत्राय",
-            "पाचिकायै",
-            "आपणिकाय",
-            "याचकाय",
-            "पितामह्यै"
+            "ददाति"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "८. परियोजनाकार्यम् (Subhashita Analysis)",
-          "meaning": "8. Project Work: Identifying Dative Case forms in the Subhashita",
+          "sanskrit": "(ख) माता (पुत्र) धनं ददाति।",
+          "answer_sanskrit": "माता पुत्राय धनं ददाति।",
+          "meaning": "Mother gives money to her son (पुत्राय).",
           "words": [
-            "८.",
-            "परियोजनाकार्यम्"
+            "माता",
+            "पुत्राय",
+            "धनं",
+            "ददाति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) माता (पाचिका) धनं ददाति।",
+          "answer_sanskrit": "माता पाचिकायै धनं ददाति।",
+          "meaning": "Mother gives money to the female cook (पाचिकायै).",
+          "words": [
+            "माता",
+            "पाचिकायै",
+            "धनं",
+            "ददाति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(घ) माता (आपणिक) धनं ददाति।",
+          "answer_sanskrit": "माता आपणिकाय धनं ददाति।",
+          "meaning": "Mother gives money to the shopkeeper (आपणिकाय).",
+          "words": [
+            "माता",
+            "आपणिकाय",
+            "धनं",
+            "ददाति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ङ) माता (याचक) धनं ददाति।",
+          "answer_sanskrit": "माता याचकाय धनं ददाति।",
+          "meaning": "Mother gives money to the beggar (याचकाय).",
+          "words": [
+            "माता",
+            "याचकाय",
+            "धनं",
+            "ददाति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(च) माता (पितामही) धनं ददाति।",
+          "answer_sanskrit": "माता पितामह्यै धनं ददाति।",
+          "meaning": "Mother gives money to grandmother (पितामह्यै).",
+          "words": [
+            "माता",
+            "पितामह्यै",
+            "धनं",
+            "ददाति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "८. उदाहरणानुसारं रिक्तस्थानेषु चतुर्थी-विभक्तेः रूपाणि लिखन्तु —",
+          "meaning": "8. Complete the noun declension grid for Chaturthi (Dative) Vibhakti:",
+          "words": [
+            "८",
+            ".",
+            "उदाहरणानुसारं",
+            "रिक्तस्थानेषु",
+            "चतुर्थी",
+            "-",
+            "विभक्तेः",
+            "रूपाणि",
+            "लिखन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "विद्या विवादाय धनं मदाय शक्तिः परेषां परिपीडनाय । खलस्य साधोर्विपरीतमेतत् ज्ञानाय दानाय च रक्षणाय ॥",
-          "meaning": "The knowledge of the wicked leads to dispute (विवादाय), wealth to arrogance (मदाय), and power to tormenting others (परिपीडनाय). For the virtuous it is the reverse: knowledge is for wisdom (ज्ञानाय), wealth for charity (दानाय), and strength for protection (रक्षणाय).",
-          "paragraphTranslation": "दुष्टों की विद्या विवाद के लिए, धन घमंड के लिए और शक्ति दूसरों को सताने के लिए होती है। इसके विपरीत सज्जनों की विद्या ज्ञान के लिए, धन दान के लिए और शक्ति दूसरों की रक्षा के लिए होती है।",
-          "answer_sanskrit": "चतुर्थी-पदानि: विवादाय, मदाय, परिपीडनाय, ज्ञानाय, दानाय, रक्षणाय।",
+          "sanskrit": "यथा - गणेश (पुंलिङ्गम्)",
+          "answer_sanskrit": "गणेशाय | गणेशाभ्याम् | गणेशेभ्यः",
+          "meaning": "Chaturthi of गणेश: गणेशाय (singular), गणेशाभ्याम् (dual), गणेशेभ्यः (plural).",
           "words": [
+            "गणेशाय",
+            "गणेशाभ्याम्",
+            "गणेशेभ्यः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(क) भक्त (पुंलिङ्गम्)",
+          "answer_sanskrit": "भक्ताय | भक्ताभ्याम् | भक्तेभ्यः",
+          "meaning": "Chaturthi of भक्त: भक्ताय, भक्ताभ्याम्, भक्तेभ्यः.",
+          "words": [
+            "भक्ताय",
+            "भक्ताभ्याम्",
+            "भक्तेभ्यः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ख) सेविका (आकारान्त-स्त्रीलिङ्गम्)",
+          "answer_sanskrit": "सेविकायै | सेविकाभ्याम् | सेविकाभ्यः",
+          "meaning": "Chaturthi of सेविका: सेविकायै, सेविकाभ्याम्, सेविकाभ्यः.",
+          "words": [
+            "सेविकायै",
+            "सेविकाभ्याम्",
+            "सेविकाभ्यः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) अनुजा (आकारान्त-स्त्रीलिङ्गम्)",
+          "answer_sanskrit": "अनुजायै | अनुजाभ्याम् | अनुजाभ्यः",
+          "meaning": "Chaturthi of अनुजा: अनुजायै, अनुजाभ्याम्, अनुजाभ्यः.",
+          "words": [
+            "अनुजायै",
+            "अनुजाभ्याम्",
+            "अनुजाभ्यः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(घ) गृहिणी (ईकारान्त-स्त्रीलिङ्गम्)",
+          "answer_sanskrit": "गृहिण्यै | गृहिणीभ्याम् | गृहिणीभ्यः",
+          "meaning": "Chaturthi of गृहिणी: गृहिण्यै, गृहिणीभ्याम्, गृहिणीभ्यः.",
+          "words": [
+            "गृहिण्यै",
+            "गृहिणीभ्याम्",
+            "गृहिणीभ्यः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ङ) कुमारी (ईकारान्त-स्त्रीलिङ्गम्)",
+          "answer_sanskrit": "कुमार्यै | कुमारीभ्याम् | कुमारीभ्यः",
+          "meaning": "Chaturthi of कुमारी: कुमार्यै, कुमारीभ्याम्, कुमारीभ्यः.",
+          "words": [
+            "कुमार्यै",
+            "कुमारीभ्याम्",
+            "कुमारीभ्यः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(च) वन (नपुंसकलिङ्गम्)",
+          "answer_sanskrit": "वनाय | वनाभ्याम् | वनेभ्यः",
+          "meaning": "Chaturthi of वन: वनाय, वनाभ्याम्, वनेभ्यः.",
+          "words": [
+            "वनाय",
+            "वनाभ्याम्",
+            "वनेभ्यः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(छ) मित्र (नपुंसकलिङ्गम्)",
+          "answer_sanskrit": "मित्राय | मित्राभ्याम् | मित्रेभ्यः",
+          "meaning": "Chaturthi of मित्र: मित्राय, मित्राभ्याम्, मित्रेभ्यः.",
+          "words": [
+            "मित्राय",
+            "मित्राभ्याम्",
+            "मित्रेभ्यः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "परियोजनाकार्यम् (Project Work - Subhashita Chaturthi Analysis)",
+          "meaning": "Identify all Dative (चतुर्थी) forms in the famous subhashita:",
+          "words": [
+            "परियोजनाकार्यम्",
             "विद्या",
             "विवादाय",
             "धनं",
+            "मदाय"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "श्लोकः — विद्या विवादाय धनं मदाय शक्तिः परेषां परिपीडनाय । खलस्य साधोर्विपरीतमेतत् ज्ञानाय दानाय च रक्षणाय ॥",
+          "answer_sanskrit": "१. विवादाय (for dispute) | २. मदाय (for pride/arrogance) | ३. परिपीडनाय (for tormenting others) | ४. ज्ञानाय (for wisdom) | ५. दानाय (for charity) | ६. रक्षणाय (for protection)",
+          "meaning": "Translation: Knowledge of the wicked leads to dispute (विवादाय), wealth to arrogance (मदाय), and power to oppressing others (परिपीडनाय). For the virtuous, it is opposite: knowledge is for wisdom (ज्ञानाय), wealth for charity (दानाय), and strength for protecting others (रक्षणाय).",
+          "words": [
+            "विवादाय",
             "मदाय",
-            "शक्तिः",
-            "परेषां",
             "परिपीडनाय",
-            "खलस्य",
-            "साधोर्विपरीतमेतत्",
             "ज्ञानाय",
             "दानाय",
-            "च",
             "रक्षणाय"
           ],
           "kind": "exercise-qa"
@@ -6132,22 +6494,37 @@
           "kind": "glossary"
         },
         {
-          "sanskrit": "४. अभ्यासः (अभ्यास कार्य)",
-          "meaning": "Exercises with Solved Answers",
-          "paragraphTranslation": "अभ्यास कार्य",
+          "sanskrit": "४. अभ्यासः (अभ्यास कार्य / Solved Exercises)",
+          "meaning": "Exercises and Grammar Solutions (अभ्यास कार्य)",
+          "paragraphTranslation": "आओ अभ्यास करें",
           "words": [
-            "अभ्यासः",
-            "अभ्यास",
-            "कार्य"
+            "४",
+            ".",
+            "अभ्यासः"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "प्रश्न २. अधः प्रदत्तानां प्रश्नानाम् एकपदेन पदद्वयेन वा उत्तरं लिखन्तु —",
-          "meaning": "Question 2: Answer the following questions in one or two words:",
+          "sanskrit": "१. गीतस्य साभिनयं कक्षायां गानं कुर्वन्तु।",
+          "answer_sanskrit": "कक्षायां शिक्षकस्य निर्देशानुसारं अभिनयसहितं \"एकः शृगालः वनं गच्छति...\" इति गीतस्य सानन्दं गानं कुर्वन्तु।",
+          "meaning": "1. Recite and sing the poem with actions and dramatization in the classroom.",
           "words": [
-            "प्रश्न",
+            "१",
+            ".",
+            "गीतस्य",
+            "साभिनयं",
+            "कक्षायां",
+            "गानं",
+            "कुर्वन्तु।"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "२. अधः प्रदत्तानां प्रश्नानाम् एकपदेन पदद्वयेन वा उत्तरं लिखन्तु —",
+          "meaning": "2. Answer the following questions in one or two words (with English meaning):",
+          "words": [
             "२",
+            ".",
             "अधः",
             "प्रदत्तानां",
             "प्रश्नानाम्",
@@ -6155,15 +6532,19 @@
             "पदद्वयेन",
             "वा",
             "उत्तरं",
-            "लिखन्तु"
+            "लिखन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
           "sanskrit": "(क) कः वनं गच्छति ?",
-          "meaning": "Who goes to the forest? Answer: The fox (शृगालः).",
           "answer_sanskrit": "शृगालः",
+          "meaning": "Who goes to the forest? Answer: The fox (शृगालः).",
           "words": [
+            "(",
+            "क",
+            ")",
             "कः",
             "वनं",
             "गच्छति",
@@ -6175,9 +6556,12 @@
         },
         {
           "sanskrit": "(ख) शृगालः कां पश्यति ?",
-          "meaning": "What does the fox see? Answer: The grapevine (द्राक्षालताम्).",
           "answer_sanskrit": "द्राक्षालताम्",
+          "meaning": "What does the fox see? Answer: The grapevine (द्राक्षालताम्).",
           "words": [
+            "(",
+            "ख",
+            ")",
             "शृगालः",
             "कां",
             "पश्यति",
@@ -6189,9 +6573,12 @@
         },
         {
           "sanskrit": "(ग) शृगालस्य मुखे किं जायते ?",
-          "meaning": "What comes into the mouth of the fox? Answer: Water / Saliva (रसः).",
           "answer_sanskrit": "रसः",
+          "meaning": "What arises in the fox's mouth? Answer: Water / saliva (रसः).",
           "words": [
+            "(",
+            "ग",
+            ")",
             "शृगालस्य",
             "मुखे",
             "किं",
@@ -6204,9 +6591,12 @@
         },
         {
           "sanskrit": "(घ) द्राक्षालतायां शृगालः किं पश्यति ?",
-          "meaning": "What does the fox see upon the grapevine? Answer: Grapes (द्राक्षाफलम्).",
           "answer_sanskrit": "द्राक्षाफलम्",
+          "meaning": "What does the fox see on the grapevine? Answer: Grapes (द्राक्षाफलम्).",
           "words": [
+            "(",
+            "घ",
+            ")",
             "द्राक्षालतायां",
             "शृगालः",
             "किं",
@@ -6219,9 +6609,12 @@
         },
         {
           "sanskrit": "(ङ) द्राक्षाफलं कुत्र दृश्यते ?",
-          "meaning": "Where are the grapes seen? Answer: High up upon the vines (उपरि उपरि लतासु).",
           "answer_sanskrit": "उपरि उपरि लतासु",
+          "meaning": "Where are the grapes seen? Answer: High up on the vines (उपरि उपरि लतासु).",
           "words": [
+            "(",
+            "ङ",
+            ")",
             "द्राक्षाफलं",
             "कुत्र",
             "दृश्यते",
@@ -6234,10 +6627,13 @@
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(च) किं शृगालः पुनः पुनः उत्पतति ?",
-          "meaning": "Does the fox leap again and again? Answer: Yes (आम्).",
+          "sanskrit": "(च) किं शृगालः पुनः पुनः उत्पतति ? (आम्/न)",
           "answer_sanskrit": "आम्",
+          "meaning": "Does the fox jump again and again? Answer: Yes (आम्).",
           "words": [
+            "(",
+            "च",
+            ")",
             "किं",
             "शृगालः",
             "पुनः",
@@ -6250,10 +6646,13 @@
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(छ) किं शृगालः द्राक्षाफलं प्राप्नोति ?",
-          "meaning": "Does the fox get the grapes? Answer: No (न).",
+          "sanskrit": "(छ) किं शृगालः द्राक्षाफलं प्राप्नोति ? (आम्/न)",
           "answer_sanskrit": "न",
+          "meaning": "Does the fox obtain the grapes? Answer: No (न).",
           "words": [
+            "(",
+            "छ",
+            ")",
             "किं",
             "शृगालः",
             "द्राक्षाफलं",
@@ -6265,181 +6664,198 @@
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "प्रश्न ३. अधः प्रदत्तानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखन्तु —",
-          "meaning": "Question 3: Answer the following questions in complete sentences:",
+          "sanskrit": "३. अधः प्रदत्तानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखन्तु —",
+          "meaning": "3. Answer the following questions in complete sentences (with English translation):",
           "words": [
-            "प्रश्न",
             "३",
+            ".",
             "अधः",
             "प्रदत्तानां",
             "प्रश्नानां",
             "पूर्णवाक्येन",
             "उत्तरं",
-            "लिखन्तु"
+            "लिखन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
           "sanskrit": "(क) शृगालः कथं वनं गच्छति ?",
-          "meaning": "How does the fox go to the forest?",
           "answer_sanskrit": "शृगालः पिपासया बुभुक्षया च वनं गच्छति।",
+          "meaning": "How/why does the fox go to the forest? Answer: Driven by thirst and hunger, the fox goes to the forest.",
           "words": [
+            "(",
+            "क",
+            ")",
             "शृगालः",
             "कथं",
             "वनं",
             "गच्छति",
-            "?",
-            "उत्तरः",
-            "शृगालः",
-            "पिपासया",
-            "बुभुक्षया",
-            "च",
-            "वनं",
-            "गच्छति।"
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
           "sanskrit": "(ख) वनं गत्वा शृगालस्य किं जायते ?",
-          "meaning": "Having reached the forest, what happens to the fox?",
           "answer_sanskrit": "वनं गत्वा शृगालः श्रान्तः खिन्नः च जायते, तस्य स्वेदः तृषा च जायते।",
+          "meaning": "What happens to the fox after going to the forest? Answer: Having gone to the forest, the fox becomes tired and sorrowful; sweat breaks out and thirst intensifies.",
           "words": [
+            "(",
+            "ख",
+            ")",
             "वनं",
             "गत्वा",
             "शृगालस्य",
             "किं",
             "जायते",
-            "?",
-            "उत्तरः",
-            "वनं",
-            "गत्वा",
-            "शृगालः",
-            "श्रान्तः",
-            "खिन्नः",
-            "च",
-            "जायते",
-            "तस्य",
-            "स्वेदः",
-            "तृषा",
-            "च",
-            "जायते।"
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
           "sanskrit": "(ग) शृगालः द्राक्षाफलं कुत्र पश्यति ?",
-          "meaning": "Where does the fox see the grapes?",
-          "answer_sanskrit": "शृगालः द्राक्षालतायाम् उपरि उपरि द्राक्षाफलं पश्यति।",
+          "answer_sanskrit": "शृगालः उपरि उपरि द्राक्षालतासु द्राक्षाफलं पश्यति।",
+          "meaning": "Where does the fox see the grapes? Answer: The fox sees the grapes high up hanging on the grapevines.",
           "words": [
+            "(",
+            "ग",
+            ")",
             "शृगालः",
             "द्राक्षाफलं",
             "कुत्र",
             "पश्यति",
-            "?",
-            "उत्तरः",
-            "शृगालः",
-            "द्राक्षालतायाम्",
-            "उपरि",
-            "उपरि",
-            "द्राक्षाफलं",
-            "पश्यति।"
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
           "sanskrit": "(घ) द्राक्षाफलं दृष्ट्वा कस्य मुखे रसः जायते ?",
-          "meaning": "Whose mouth waters upon seeing the grapes?",
           "answer_sanskrit": "द्राक्षाफलं दृष्ट्वा शृगालस्य मुखे रसः जायते।",
+          "meaning": "Seeing the grapes, in whose mouth does water emerge? Answer: Seeing the grapes, saliva waters in the mouth of the fox.",
           "words": [
+            "(",
+            "घ",
+            ")",
             "द्राक्षाफलं",
             "दृष्ट्वा",
             "कस्य",
             "मुखे",
             "रसः",
             "जायते",
-            "?",
-            "उत्तरः",
-            "द्राक्षाफलं",
-            "दृष्ट्वा",
-            "शृगालस्य",
-            "मुखे",
-            "रसः",
-            "जायते।"
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
           "sanskrit": "(ङ) अन्ते शृगालः किं वदति ?",
-          "meaning": "What does the fox say at the end?",
-          "answer_sanskrit": "अन्ते शृगालः वदति – \"आम्लं द्राक्षाफलम्\" इति।",
+          "answer_sanskrit": "अन्ते शृगालः वदति - \"आम्लं द्राक्षाफलम्\" इति।",
+          "meaning": "What does the fox say at last? Answer: In the end, the fox declares: 'The grapes are sour!'",
           "words": [
+            "(",
+            "ङ",
+            ")",
             "अन्ते",
             "शृगालः",
             "किं",
             "वदति",
-            "?",
-            "उत्तरः",
-            "अन्ते",
-            "शृगालः",
-            "वदति",
-            "–",
-            "\"आम्लं",
-            "द्राक्षाफलम्\"",
-            "इति।"
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "प्रश्न ४. लट्-लकार आत्मनेपद रूपाणि (Verb Conjugation Paradigms) —",
-          "meaning": "Question 4: Present Tense Atmanepada verb conjugation table and practice:",
+          "sanskrit": "४. उपरि प्रदत्तां मञ्जूषां दृष्ट्वा रिक्तस्थानेषु उचितक्रियापदानि लिखन्तु — (आत्मनेपद लट्-लकार तालिका)",
+          "meaning": "4. Fill in the Present Tense tables for Atmanepada verbs (वन्द्, पलाय्, जाय्):",
           "words": [
-            "प्रश्न",
             "४",
-            "लट्-लकार",
-            "आत्मनेपद",
-            "रूपाणि"
+            ".",
+            "उपरि",
+            "प्रदत्तां",
+            "मञ्जूषां",
+            "दृष्ट्वा",
+            "रिक्तस्थानेषु",
+            "उचितक्रियापदानि",
+            "लिखन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "लभ् धातुः (लभते — लभेते — लभन्ते / लभसे — लभेथे — लभध्वे / लभे — लभावहे — लभामहे) । वन्द् धातुः (वन्दते — वन्देते — वन्दन्ते / वन्दसे — वन्देथे — वन्दध्वे / वन्दे — वन्दावहे — वन्दामहे) । पलाय् धातुः (पलायते — पलायेते — पलायन्ते) । जन् धातुः (जायते — जायेते — जायन्ते)।",
-          "meaning": "Atmanepada Present Tense: Labh (receives), Vand (reveres), Palay (flees), Jan (is born / arises).",
+          "sanskrit": "(क) वन्द् धातु (वन्दना करना / To Salute, Revere):",
+          "answer_sanskrit": "प्रथमः पुरुषः: वन्दते | वन्देते | वन्दन्ते\nमध्यमः पुरुषः: वन्दसे | वन्देथे | वन्दध्वे\nउत्तमः पुरुषः: वन्दे | वन्दावहे | वन्दामहे",
+          "meaning": "Conjugation of वन्द्: 3rd person (वन्दते/वन्देते/वन्दन्ते), 2nd person (वन्दसे/वन्देथे/वन्दध्वे), 1st person (वन्दे/वन्दावहे/वन्दामहे).",
           "words": [
-            "लभते",
-            "लभेते",
-            "लभन्ते",
-            "लभसे",
-            "लभेथे",
-            "लभध्वे",
-            "लभे",
-            "लभावहे",
-            "लभामहे",
+            "वन्द्",
+            "धातु",
             "वन्दते",
             "वन्देते",
             "वन्दन्ते",
-            "पलायते",
-            "पलायेते",
-            "पलायन्ते",
-            "जायते",
-            "जायेते",
-            "जायन्ते"
+            "वन्दसे",
+            "वन्देथे",
+            "वन्दध्वे",
+            "वन्दे",
+            "वन्दावहे",
+            "वन्दामहे"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "प्रश्न ५. उदाहरणानुसारं द्विवचन-बहुवचनरूपाणि —",
-          "meaning": "Question 5: Dual and Plural forms of verbs:",
+          "sanskrit": "(ख) पलाय् धातु (भागना / To Flee, Run away):",
+          "answer_sanskrit": "प्रथमः पुरुषः: पलायते | पलायेते | पलायन्ते\nमध्यमः पुरुषः: पलायसे | पलायेथे | पलायध्वे\nउत्तमः पुरुषः: पलाये | पलायावहे | पलायामहे",
+          "meaning": "Conjugation of पलाय्: 3rd person (पलायते/पलायेते/पलायन्ते), 2nd person (पलायसे/पलायेथे/पलायध्वे), 1st person (पलाये/पलायावहे/पलायामहे).",
           "words": [
-            "प्रश्न",
+            "पलाय्",
+            "धातु",
+            "पलायते",
+            "पलायेते",
+            "पलायन्ते",
+            "पलायसे",
+            "पलायेथे",
+            "पलायध्वे",
+            "पलाये",
+            "पलायावहे",
+            "पलायामहे"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) जाय् धातु (उत्पन्न होना / To Arise, Be born):",
+          "answer_sanskrit": "प्रथमः पुरुषः: जायते | जायेते | जायन्ते\nमध्यमः पुरुषः: जायसे | जायेथे | जायध्वे\nउत्तमः पुरुषः: जाये | जायावहे | जायामहे",
+          "meaning": "Conjugation of जाय्: 3rd person (जायते/जायेते/जायन्ते), 2nd person (जायसे/जायेथे/जायध्वे), 1st person (जाये/जायावहे/जायामहे).",
+          "words": [
+            "जाय्",
+            "धातु",
+            "जायते",
+            "जायेते",
+            "जायन्ते",
+            "जायसे",
+            "जायेथे",
+            "जायध्वे",
+            "जाये",
+            "जायावहे",
+            "जायामहे"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "५. उदाहरणानुसारम् एकवचनरूपं दृष्ट्वा द्विवचन-बहुवचनरूपाणि लिखन्तु —",
+          "meaning": "5. Write the Dual and Plural forms based on the Singular Atmanepada forms:",
+          "words": [
             "५",
-            "उदाहरणानुसारं",
-            "द्विवचन-बहुवचनरूपाणि"
+            ".",
+            "उदाहरणानुसारम्",
+            "एकवचनरूपं",
+            "दृष्ट्वा",
+            "द्विवचन",
+            "बहुवचनरूपाणि",
+            "लिखन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(१) कम्पते — कम्पेते — कम्पन्ते । (२) वर्धते — वर्धेते — वर्धन्ते । (३) प्रकाशते — प्रकाशेते — प्रकाशन्ते । (४) याचते — याचेताम्/याचेते — याचन्ते । (५) वीक्षते — वीक्षेते — वीक्षन्ते । (६) शोभते — शोभेते — शोभन्ते ।",
-          "meaning": "Paradigms: Kampate (shakes), Vardhate (grows), Prakashate (shines), Yachate (requests), Veekshate (gazes), Shobhate (looks splendid).",
+          "sanskrit": "धातु-रूपाणि (कम्प्, वर्ध्, वृत्, प्र+काश्, वन्द्)",
+          "answer_sanskrit": "१. कम्प्: कम्पते | कम्पेते | कम्पन्ते (Trembles)\n२. वर्ध्: वर्धते | वर्धेते | वर्धन्ते (Grows)\n३. वृत्: वर्तसे | वर्तेथे | वर्तध्वे (You exist)\n४. प्र+काश्: प्रकाशते | प्रकाशेते | प्रकाशन्ते (Shines)\n५. वन्द् (उत्तम): वन्दे | वन्दावहे | वन्दामहे (I salute)",
+          "meaning": "Singular -> Dual -> Plural paradigms for roots kamp, vardh, vrit, pra-kash, and vand.",
           "words": [
             "कम्पते",
             "कम्पेते",
@@ -6447,15 +6863,38 @@
             "वर्धते",
             "वर्धेते",
             "वर्धन्ते",
+            "वर्तसे",
+            "वर्तेथे",
+            "वर्तध्वे",
             "प्रकाशते",
             "प्रकाशेते",
             "प्रकाशन्ते",
+            "वन्दे",
+            "वन्दावहे",
+            "वन्दामहे"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "धातु-रूपाणि (याच्, लज्ज्, वीक्ष्, सेव्, वन्द्, शुभ्)",
+          "answer_sanskrit": "६. याच्: याचते | याचेते | याचन्ते (Begs)\n७. लज्ज् (मध्यम): लज्जसे | लज्जेथे | लज्जध्वे (You feel shy)\n८. वीक्ष्: वीक्षते | वीक्षेते | वीक्षन्ते (Watches)\n९. सेव् (उत्तम): सेवे | सेवावहे | सेवामहे (I serve)\n१०. वन्द् (मध्यम): वन्दसे | वन्देथे | वन्दध्वे (You bow)\n११. शुभ्: शोभते | शोभेते | शोभन्ते (Shines)",
+          "meaning": "Singular -> Dual -> Plural paradigms for roots yach, lajj, veeksh, sev, vand, and shubh.",
+          "words": [
             "याचते",
             "याचेते",
             "याचन्ते",
+            "लज्जसे",
+            "लज्जेथे",
+            "लज्जध्वे",
             "वीक्षते",
             "वीक्षेते",
             "वीक्षन्ते",
+            "सेवे",
+            "सेवावहे",
+            "सेवामहे",
+            "वन्दसे",
+            "वन्देथे",
+            "वन्दध्वे",
             "शोभते",
             "शोभेते",
             "शोभन्ते"
@@ -6463,42 +6902,171 @@
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "प्रश्न ६ व ७. व्यावहारिक-वाक्यप्रयोगः (Sentence Completion Exercises) —",
-          "meaning": "Questions 6 & 7: Applied sentence formations and fill in the blanks:",
+          "sanskrit": "६. उदाहरणानुसारं वाक्यद्वयं लिखन्तु — (वचनानुसारं सही क्रियापद-प्रयोगः)",
+          "meaning": "6. Construct pairs of sentences applying singular and plural verb forms (with English):",
           "words": [
-            "प्रश्न",
             "६",
-            "व",
-            "७",
-            "व्यावहारिक-वाक्यप्रयोगः"
+            ".",
+            "उदाहरणानुसारं",
+            "वाक्यद्वयं",
+            "लिखन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) मूषकः मार्जारं दृष्ट्वा पलायते। (ख) रात्रिकाले मार्गदीपाः प्रकाशन्ते। (ग) अहं देवं वन्दे। (घ) त्वं किमर्थं लज्जसे ? (ङ) वयं देशं सेवामहे। (च) वृक्षः कम्पते, बालाः वर्धन्ते।",
-          "meaning": "Completed Sentences: (a) The mouse flees seeing the cat. (b) Street lights shine at night. (c) I bow to God. (d) Why do you feel shy? (e) We all serve our motherland. (f) The tree sways; the children grow.",
-          "paragraphTranslation": "(क) चूहा बिल्ली को देखकर भाग जाता है। (ख) रात में मार्गदीप चमकते हैं। (ग) मैं भगवान की वंदना करता हूँ। (घ) तुम क्यों शर्माते हो? (ङ) हम सब देश की सेवा करते हैं। (च) पेड़ काँपता है, बच्चे बढ़ते हैं।",
+          "sanskrit": "यथा - शत्रुः पलायते। / चोराः पलायन्ते।",
+          "answer_sanskrit": "The enemy flees. / The thieves flee.",
+          "meaning": "Example: Singular verb (पलायते) vs Plural verb (पलायन्ते).",
+          "words": [
+            "शत्रुः",
+            "पलायते",
+            "चोराः",
+            "पलायन्ते"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(क) वृक्षः (वर्ध) →",
+          "answer_sanskrit": "वृक्षः वर्धते। / बालाः वर्धन्ते।",
+          "meaning": "The tree grows (वृक्षः वर्धते) / Children grow (बालाः वर्धन्ते).",
+          "words": [
+            "वृक्षः",
+            "वर्धते",
+            "बालाः",
+            "वर्धन्ते"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ख) छात्रः (वन्द्) →",
+          "answer_sanskrit": "छात्रः वन्दते। / भक्ताः वन्दन्ते।",
+          "meaning": "The student bows (छात्रः वन्दते) / Devotees bow (भक्ताः वन्दन्ते).",
+          "words": [
+            "छात्रः",
+            "वन्दते",
+            "भक्ताः",
+            "वन्दन्ते"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) वैद्यः (वीक्ष) →",
+          "answer_sanskrit": "वैद्यः वीक्षते। / प्रेक्षकाः वीक्षन्ते।",
+          "meaning": "The doctor examines (वैद्यः वीक्षते) / Spectators watch (प्रेक्षकाः वीक्षन्ते).",
+          "words": [
+            "वैद्यः",
+            "वीक्षते",
+            "प्रेक्षकाः",
+            "वीक्षन्ते"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(घ) कर्मचारी (सेव्) →",
+          "answer_sanskrit": "कर्मचारी सेवते। / महिलाः सेवन्ते।",
+          "meaning": "The employee serves (कर्मचारी सेवते) / Women serve (महिलाः सेवन्ते).",
+          "words": [
+            "कर्मचारी",
+            "सेवते",
+            "महिलाः",
+            "सेवन्ते"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ङ) वृक्षः (कम्प्) →",
+          "answer_sanskrit": "वृक्षः कम्पते। / रुग्णाः कम्पन्ते।",
+          "meaning": "The tree shakes (वृक्षः कम्पते) / Sick patients tremble (रुग्णाः कम्पन्ते).",
+          "words": [
+            "वृक्षः",
+            "कम्पते",
+            "रुग्णाः",
+            "कम्पन्ते"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "७. उदाहरणं दृष्ट्वा वाक्यानि उचितरूपैः पूरयन्तु — (Fill in the blanks with correct verb forms)",
+          "meaning": "7. Complete sentences with appropriate Atmanepada forms (with English translations):",
+          "words": [
+            "७",
+            ".",
+            "उदाहरणं",
+            "दृष्ट्वा",
+            "वाक्यानि",
+            "उचितरूपैः",
+            "पूरयन्तु",
+            "—"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "(क) शुनकं दृष्ट्वा बालकस्य भयं (जाय्) →",
+          "answer_sanskrit": "शुनकं दृष्ट्वा बालकस्य भयं जायते।",
+          "meaning": "Seeing the dog, fear arises in the boy.",
+          "words": [
+            "शुनकं",
+            "दृष्ट्वा",
+            "बालकस्य",
+            "भयं",
+            "जायते"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ख) मूषकः मार्जारं दृष्ट्वा (पलाय्) →",
+          "answer_sanskrit": "मूषकः मार्जारं दृष्ट्वा पलायते।",
+          "meaning": "Seeing the cat, the mouse flees.",
           "words": [
             "मूषकः",
             "मार्जारं",
             "दृष्ट्वा",
-            "पलायते",
+            "पलायते"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) रात्रिकाले मार्गदीपाः (प्रकाश) →",
+          "answer_sanskrit": "रात्रिकाले मार्गदीपाः प्रकाशन्ते। (बहुवचन)",
+          "meaning": "At night, streetlights illuminate/shine brightly.",
+          "words": [
             "रात्रिकाले",
             "मार्गदीपाः",
-            "प्रकाशन्ते",
+            "प्रकाशन्ते"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(घ) अहं देवं (वन्द्) →",
+          "answer_sanskrit": "अहं देवं वन्दे। (उत्तम पुरुष एकवचन)",
+          "meaning": "I bow down and pray to God.",
+          "words": [
             "अहं",
             "देवं",
-            "वन्दे",
+            "वन्दे"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ङ) त्वं किमर्थं (लज्ज्) →",
+          "answer_sanskrit": "त्वं किमर्थं लज्जसे? (मध्यम पुरुष एकवचन)",
+          "meaning": "Why do you feel shy / ashamed?",
+          "words": [
             "त्वं",
             "किमर्थं",
-            "लज्जसे",
+            "लज्जसे"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(च) वयं देशं (सेव्) →",
+          "answer_sanskrit": "वयं देशं सेवामहे। (उत्तम पुरुष बहुवचन)",
+          "meaning": "We serve our motherland.",
+          "words": [
             "वयं",
             "देशं",
-            "सेवामहे",
-            "वृक्षः",
-            "कम्पते",
-            "बालाः",
-            "वर्धन्ते"
+            "सेवामहे"
           ],
           "kind": "exercise-qa"
         }
@@ -7558,6 +8126,168 @@
             "सर्वेषां",
             "पोषकः",
             "इति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "स्वास्थ्यरक्षणाय नियमाः (पृष्ठम् ५५ / Rules for Protecting Health)",
+          "meaning": "Rules and Guidelines for Protecting Health from Classical Ayurveda (Page 55)",
+          "paragraphTranslation": "स्वास्थ्य रक्षा के नियम",
+          "words": [
+            "स्वास्थ्यरक्षणाय",
+            "नियमाः"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "ब्राह्मे मुहूर्ते उत्तिष्ठेत् स्वस्थो रक्षार्थमायुषः ।\nसर्वमेव परित्यज्य शरीरमनुपालयेत् ॥ १ ॥",
+          "answer_label": "पदच्छेदः & आङ्ग्लानुवादः",
+          "answer_sanskrit": "ब्राह्मे मुहूर्ते (in early morning dawn, 1.5 hrs before sunrise) उत्तिष्ठेत् (should wake up) स्वस्थः (a healthy person) रक्षार्थम् (for the protection) आयुषः (of life longevity) । सर्वम् एव (everything else indeed) परित्यज्य (leaving aside) शरीरम् (the physical body) अनुपालयेत् (should nurture and care for) ॥",
+          "meaning": "English Translation: A healthy person should wake up during the Brahma Muhurta (early dawn) to protect their longevity. Leaving aside all other tasks, one must first take care of and nurture the physical body.",
+          "words": [
+            "ब्राह्मे",
+            "मुहूर्ते",
+            "उत्तिष्ठेत्",
+            "स्वस्थो",
+            "रक्षार्थमायुषः",
+            "सर्वमेव",
+            "परित्यज्य",
+            "शरीरमनुपालयेत्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "भोजनान्ते पिबेत् तक्रं वासरान्ते पिबेत्पयः ।\nनिशान्ते च पिबेत् वारि त्रिभी रोगो न जायते ॥ २ ॥",
+          "answer_label": "पदच्छेदः & आङ्ग्लानुवादः",
+          "answer_sanskrit": "भोजनान्ते (at meal's end) पिबेत् तक्रम् (drink buttermilk), वासरान्ते (at day's end / night) पिबेत् पयः (drink milk) । निशान्ते च (and at dawn / waking up) पिबेत् वारि (drink water) — त्रिभिः (by these three habits) रोगः न जायते (diseases never arise) ॥",
+          "meaning": "English Translation: One should drink buttermilk at the end of a meal, drink milk at the end of the day (before sleep), and drink water at the end of the night (upon waking up). By practicing these three habits, diseases never arise.",
+          "words": [
+            "भोजनान्ते",
+            "पिबेत्",
+            "तक्रं",
+            "वासरान्ते",
+            "पिबेत्पयः",
+            "निशान्ते",
+            "च",
+            "पिबेत्",
+            "वारि",
+            "त्रिभी",
+            "रोगो",
+            "न",
+            "जायते"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "परियोजनाकार्यम् — आयुर्वेदीयसस्यानि (पृष्ठम् ५६ / Health Protection via Ayurvedic Plants)",
+          "meaning": "Project Work: Health protection through medicinal flora (Page 56)",
+          "paragraphTranslation": "परियोजना कार्य - आयुर्वेदिक वनस्पतियाँ",
+          "words": [
+            "परियोजनाकार्यम्",
+            "आयुर्वेदीयसस्यानि"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "भवतां परिवेशे विद्यमानानाम् आयुर्वेदीयसस्यानां पदार्थानां च नामानि लिखन्तु । तेषां स्वास्थ्यरक्षणलाभान् लिखन्तु ।\nयथा – बिल्वं पाचनक्रियां वर्धते। लवङ्गं दन्तसमस्याः कासं च नाशयति ।",
+          "answer_label": "सस्यानि & लाभाः",
+          "answer_sanskrit": "१. बिल्वम् (Bael / Wood apple) — पाचनक्रियां वर्धयति (improves digestion)।\n२. लवङ्गम् (Clove) — दन्तसमस्याः कासं च नाशयति (cures toothache and cough)।\n३. तुलसी (Holy Basil) — कासस्य श्वासरोगाणां च शमनं करोति (relieves respiratory ailments)।\n४. हरिद्रा (Turmeric) — व्रणरोपणं करोति रोगप्रतिकारकशक्तिं च वर्धयति (heals wounds and boosts immunity)।",
+          "meaning": "English Translation: Write the names of Ayurvedic plants and substances in your surroundings along with their health benefits. For example: Bael fruit improves digestion; Clove cures dental issues and cough; Tulsi soothes coughs and respiratory issues; Turmeric heals wounds and strengthens immunity.",
+          "words": [
+            "भवतां",
+            "परिवेशे",
+            "विद्यमानानाम्",
+            "आयुर्वेदीयसस्यानां",
+            "पदार्थानां",
+            "च",
+            "नामानि",
+            "लिखन्तु",
+            "बिल्वं",
+            "पाचनक्रियां",
+            "वर्धते",
+            "लवङ्गं",
+            "दन्तसमस्याः",
+            "कासं",
+            "च",
+            "नाशयति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "अभ्यासः — चित्रसंयोजनम् (पृष्ठम् ५६ / Matching Sentences & Images)",
+          "meaning": "Exercise 4: Match Sanskrit service actions to corresponding pictures (Page 56)",
+          "paragraphTranslation": "अभ्यास - वाक्य और चित्रों का मिलान",
+          "words": [
+            "अभ्यासः",
+            "चित्रसंयोजनम्"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "१. धेनुमाता परमशिवा",
+          "answer_label": "अर्थः & चित्रसंयोजनम्",
+          "answer_sanskrit": "धेनुमाता (Mother cow) परमशिवा (highly auspicious and benevolent)। चित्रसंयोजनम्: ५ (५th picture showing a woman offering respects/prayers to a cow).",
+          "meaning": "English: Mother cow is highly auspicious and benevolent. Visual Match: Connects to the 5th picture showing a woman offering respects to a sacred cow.",
+          "words": [
+            "१",
+            ".",
+            "धेनुमाता",
+            "परमशिवा"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "२. नित्यं मातापित्रोः सेवा",
+          "answer_label": "अर्थः & चित्रसंयोजनम्",
+          "answer_sanskrit": "नित्यम् (daily) मातापित्रोः (of mother and father) सेवा (service and care)। चित्रसंयोजनम्: १ (१st picture showing a boy serving his elderly parents seated on a couch).",
+          "meaning": "English: Serving one's parents daily. Visual Match: Connects to the 1st picture showing a boy serving his elderly parents.",
+          "words": [
+            "२",
+            ".",
+            "नित्यं",
+            "मातापित्रोः",
+            "सेवा"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "३. रोगातुराणाम् उपचारः",
+          "answer_label": "अर्थः & चित्रसंयोजनम्",
+          "answer_sanskrit": "रोगातुराणाम् (of the sick/diseased people) उपचारः (nursing treatment and medical care)। चित्रसंयोजनम्: २ (२nd picture showing a nurse caring for a patient resting in a hospital bed).",
+          "meaning": "English: Medical care and nursing of the sick. Visual Match: Connects to the 2nd picture showing a healthcare nurse tending to a hospitalized patient.",
+          "words": [
+            "३",
+            ".",
+            "रोगातुराणाम्",
+            "उपचारः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "४. गृहकार्येषु भगिन्याः साहाय्यम्",
+          "answer_label": "अर्थः & चित्रसंयोजनम्",
+          "answer_sanskrit": "गृहकार्येषु (in household chores) भगिन्याः (of sister) साहाय्यम् (help and support)। चित्रसंयोजनम्: ३ (३rd picture showing a brother and sister sweeping and tidying up the floor together).",
+          "meaning": "English: Helping one's sister with household chores. Visual Match: Connects to the 3rd picture showing siblings cleaning and sweeping the home together.",
+          "words": [
+            "४",
+            ".",
+            "गृहकार्येषु",
+            "भगिन्याः",
+            "साहाय्यम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "५. परस्परं कार्यकरणे साहाय्यम्",
+          "answer_label": "अर्थः & चित्रसंयोजनम्",
+          "answer_sanskrit": "परस्परम् (mutually / each other) कार्यकरणे (in executing tasks) साहाय्यम् (cooperation and assistance)। चित्रसंयोजनम्: ४ (४th picture showing children collaboratively constructing a house using building blocks).",
+          "meaning": "English: Helping each other in doing work. Visual Match: Connects to the 4th picture showing children working together collaboratively.",
+          "words": [
+            "५",
+            ".",
+            "परस्परं",
+            "कार्यकरणे",
+            "साहाय्यम्"
           ],
           "kind": "exercise-qa"
         }
