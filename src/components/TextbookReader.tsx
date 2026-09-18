@@ -29,7 +29,7 @@ interface TextbookReaderProps {
 }
 
 const cleanWord = (value: string): string =>
-  value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९\.\/\\=+#*~_`]+/g, '').trim();
+  value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९./\\=+#*~_`]+/g, '').trim();
 
 type SectionJump = { index: number; label: string };
 
@@ -179,8 +179,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 
   useEffect(() => {
     // New page / lesson: stop any running Play-all.
-    stopPlayAll();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    stopPlayAllRef.current?.();
+    stopPlayAllRef.current = null;
+    stopPronunciation();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsPlayingAll((prev) => (prev ? false : prev));
   }, [activeLessonId, sentenceNumber]);
 
   const collectPlayAllItems = (): string[] => {
@@ -191,7 +194,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     // Fallback: split visible Sanskrit from the paragraph.
     return (sentence.sanskrit || '')
       .split(/\s+/)
-      .map((part) => part.replace(/[॥।,;:!?—–\-…\/()]+/g, ''))
+      .map((part) => part.replace(/[॥।,;:!?—–\-…/()]+/g, ''))
       .filter((part) => /[\u0900-\u097F]/.test(part));
   };
 
@@ -242,6 +245,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <span className="textbook-cbse-title">NCERT Class 7 Sanskrit · दीपकम (Deepakam)</span>
         </div>
       )}
+      {activeLessonId === 'grade8_prarthana' && (
+        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #f0fdf4 0%, #eff6ff 100%)', borderColor: '#86efac' }}>
+          <span className="textbook-cbse-pill" style={{ background: '#059669', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · प्रथमः पाठः / प्रार्थना — सरस्वतीप्रार्थना (Page 16)</span>
+        </div>
+      )}
 
       <div className="textbook-toolbar-row">
         <button
@@ -252,6 +261,30 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         >
           📜 चिह्न-परिचयः (Symbols Guide)
         </button>
+        {activeLessonId === 'grade8_prarthana' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Grade 8 Saraswati Prarthana Quizzes"
+              >
+                🎯 2 Quizzes (10 Qs)
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Grade 8 Saraswati Prarthana Printable Worksheet"
+              >
+                📑 Grade 8 Worksheet
+              </button>
+            )}
+          </>
+        )}
         {activeLessonId === 'gsde101' && (
           <>
             {onOpenQuiz && (
@@ -799,7 +832,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                     <div className="textbook-glossary-arth">
                       <p className="textbook-glossary-arth-sa">
                         {(sentence.answer_sanskrit || sentence.sanskrit_gloss || '').split(/(\s+)/).map((part, idx) => {
-                          const clean = part.replace(/[॥।,;:!?—–\-…\/()]+/g, '');
+                          const clean = part.replace(/[॥।,;:!?—–\-…/()]+/g, '');
                           const isWord = /[\u0900-\u097F]/.test(clean);
                           if (!isWord) return <span key={idx}>{part}</span>;
                           return (

@@ -21,7 +21,7 @@ export interface Worksheet {
   id: string;
   title: string;
   titleSanskrit: string;
-  category: 'cbse_ch' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14';
+  category: 'cbse_ch' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8';
   categoryLabel: string;
   grade: string;
   totalMarks: number;
@@ -50,6 +50,7 @@ export const WORKSHEET_CATEGORIES = [
   { id: 'grammar', label: 'Vyākaraṇa / Grammar (10 Worksheets · व्याकरण-पत्राणि)', icon: '📐' },
   { id: 'vedic_maths', label: 'Vedic Maths Drills (वैदिक-गणितम्)', icon: '⚡' },
   { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
+  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · सरस्वतीप्रार्थना)', icon: '🪕' },
 ] as const;
 
 export const WORKSHEETS: Worksheet[] = [
@@ -6841,6 +6842,160 @@ export const WORKSHEETS: Worksheet[] = [
         ]
       }
     ]
+  },
+
+  // ==========================================
+  // GRADE 8: सरस्वतीप्रार्थना (FIRST PRAYER · PAGE 16)
+  // ==========================================
+  {
+    id: 'ws-grade8-prarthana',
+    title: 'Grade 8 Worksheet 1: सरस्वतीप्रार्थना (First Prayer · Page 16)',
+    titleSanskrit: 'अष्टमकक्षा-कार्यपत्रिका १ · सरस्वतीप्रार्थना (मङ्गलाचरणम्)',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit (कक्षा-८)',
+    grade: 'CBSE Class 8 (रुचिरा-३)',
+    totalMarks: 25,
+    timeLimit: '30 Minutes',
+    description: 'Comprehensive assignment worksheet for Grade 8 introductory prayer: Shloka comprehension, word-by-word meanings, fill in the blanks, opposite words, and matching attributes.',
+    sections: [
+      {
+        sectionTitle: 'Section A: रिक्तस्थानानि पूरयत (Fill in the Blanks based on Text)',
+        sectionTitleSanskrit: 'खण्डः "क" · रिक्तस्थानपूर्तिः',
+        instructions: 'Complete the shloka lines with the precise word from the sacred text:',
+        totalMarks: 6,
+        questions: [
+          {
+            num: 1,
+            question: 'नादब्रह्ममयि जय वागीश्वरि ____________ ते गच्छामः ।',
+            questionSanskrit: 'नादब्रह्ममयि जय वागीश्वरि ____________ ते गच्छामः ।',
+            marks: 2,
+            type: 'fill',
+            options: ['(A) शरणं', '(B) चरणं', '(C) नमनं', '(D) सदनं'],
+            answer: 'शरणं (Śaraṇam)',
+            explanation: 'The full line is "नादब्रह्ममयि जय वागीश्वरि शरणं ते गच्छामः ॥" meaning we go to your shelter/refuge.',
+          },
+          {
+            num: 2,
+            question: 'आसीना भव ____________ कुन्दतुहिनशशिधवले ।',
+            questionSanskrit: 'आसीना भव ____________ कुन्दतुहिनशशिधवले ।',
+            marks: 2,
+            type: 'fill',
+            options: ['(A) मानसहंसे', '(B) पद्मासने', '(C) श्वेतहंसे', '(D) गगने'],
+            answer: 'मानसहंसे (Mānasahaṁse)',
+            explanation: 'The line is "आसीना भव मानसहंसे कुन्दतुहिनशशिधवले ॥" meaning be seated on the swan of the mind.',
+          },
+          {
+            num: 3,
+            question: 'मतिरास्तां नो तव पदकमले अयि ____________ ॥',
+            questionSanskrit: 'मतिरास्तां नो तव पदकमले अयि ____________ ॥',
+            marks: 2,
+            type: 'fill',
+            options: ['(A) कुण्ठाविषहारिणि', '(B) वीणापुस्तकधारिणि', '(C) सुरभारति', '(D) वागीश्वरि'],
+            answer: 'कुण्ठाविषहारिणि (Kuṇṭhāviṣahāriṇi)',
+            explanation: 'The line is "मतिरास्तां नो तव पदकमले अयि कुण्ठाविषहारिणि ॥" meaning O remover of the poison of dullness.',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: विपरीतार्थकपदानि लिखत (Contextual Antonyms / Opposite Words)',
+        sectionTitleSanskrit: 'खण्डः "ख" · विपरीतार्थकपदानि',
+        instructions: 'Write the exact contextual opposite words as per the textbook assignment:',
+        totalMarks: 6,
+        questions: [
+          {
+            num: 4,
+            question: 'Write the opposite word for: जडता (Dullness / Ignorance)',
+            questionSanskrit: '"जडता" इत्यस्य विपरीतार्थकं पदं किम्?',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'बुद्धिः / ज्ञानम् (Intellect / Knowledge)',
+            explanation: 'जडता (mental inertia / dullness) is countered by बुद्धिः (intellect) and ज्ञानम् (illumined knowledge).',
+          },
+          {
+            num: 5,
+            question: 'Write the opposite word for: हर (Remove / Destroy)',
+            questionSanskrit: '"हर" इत्यस्य विपरीतार्थकं पदं किम्?',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'कुरु (Create / Bring about / Do)',
+            explanation: 'हर means to destroy or take away; कुरु means to perform, cultivate, or bring about.',
+          },
+          {
+            num: 6,
+            question: 'Write the opposite word for: विमल (Pure / Spotless)',
+            questionSanskrit: '"विमल" इत्यस्य विपरीतार्थकं पदं किम्?',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'मलिन (Impure / Stained)',
+            explanation: 'विमल (विगतः मलः यस्मात् सः) is pure; its direct opposite is मलिन (impure or tarnished).',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section C: उचितं मेलनम् कुरुत (Match Text Elements to Descriptive Qualities)',
+        sectionTitleSanskrit: 'खण्डः "ग" · उचित-मेलनम्',
+        instructions: 'Match the epithets of Goddess Saraswati in Column A with their descriptive attributes in Column B:',
+        totalMarks: 6,
+        questions: [
+          {
+            num: 7,
+            question: '१. सुरभारति (Goddess of Speech)',
+            questionSanskrit: '१. सुरभारति',
+            marks: 2,
+            type: 'matching',
+            options: ['(क) वीणापुस्तकधारिणि', '(ख) भगवति', '(ग) कुन्दतुहिनशशि'],
+            answer: '(ख) भगवति (Divine Mother / Goddess)',
+            explanation: 'In the hymn, सुरभारति is hailed directly with हे भगवति ("जय जय हे भगवति सुरभारति").',
+          },
+          {
+            num: 8,
+            question: '२. धवला (Radiant Pure White)',
+            questionSanskrit: '२. धवला',
+            marks: 2,
+            type: 'matching',
+            options: ['(क) वीणापुस्तकधारिणि', '(ख) भगवति', '(ग) कुन्दतुहिनशशि'],
+            answer: '(ग) कुन्दतुहिनशशि (White as jasmine, snow, and moon)',
+            explanation: 'धवला matches with कुन्दतुहिनशशि as in "कुन्दतुहिनशशिधवले".',
+          },
+          {
+            num: 9,
+            question: '३. ललितकलामयि (Embodiment of Fine Arts)',
+            questionSanskrit: '३. ललितकलामयि',
+            marks: 2,
+            type: 'matching',
+            options: ['(क) वीणापुस्तकधारिणि', '(ख) भगवति', '(ग) कुन्दतुहिनशशि'],
+            answer: '(क) वीणापुस्तकधारिणि (Holding the musical lute and book)',
+            explanation: 'The embodiment of fine arts (ललितकलामयि) is celebrated as the holder of the veena and book (वीणापुस्तकधारिणि).',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section D: श्लोकार्थः भावानुवादः च (Verse Comprehension & Word Analysis)',
+        sectionTitleSanskrit: 'खण्डः "घ" · श्लोकार्थ-बोधः',
+        instructions: 'Explain the deeper spiritual and linguistic significance of the prayer:',
+        totalMarks: 7,
+        questions: [
+          {
+            num: 10,
+            question: 'Explain the meaning of "नवरसमधुरा कवितामुखरा स्मितरुचिरुचिराभरणा" in your own words.',
+            questionSanskrit: '"नवरसमधुरा कवितामुखरा" इत्यस्य भावं स्पष्टीकुरुत।',
+            marks: 4,
+            type: 'short_ans',
+            answer: 'Goddess Saraswati is melodious with the nine classical poetic sentiments (Śṛṅgāra, Vīra, Karuṇa, Adbhuta, Hāsya, Bhayānaka, Bībhatsa, Raudra, Śānta). She is eloquently expressed through beautiful poetry, and Her divine smile is Her greatest glowing ornament.',
+            explanation: 'This verse highlights Goddess Saraswati as the patroness of literature, aesthetics, and poetic expression.',
+          },
+          {
+            num: 11,
+            question: 'Which sacred symbols does Goddess Saraswati hold in Her hands as described in Verse 4 ("वीणापुस्तकधारिणि")?',
+            questionSanskrit: 'सरस्वती स्वहस्ते किं धारयति?',
+            marks: 3,
+            type: 'short_ans',
+            answer: 'वीणा (the musical lute representing fine arts, melody, and harmony) and पुस्तकम् (the sacred book / scripture representing intellect, sciences, and literature).',
+            explanation: "'वीणापुस्तकधारिणि' indicates that She presides over both the auditory/fine arts (Veena) and intellectual sciences (Pustaka).",
+          },
+        ],
+      },
+    ],
   },
 
 ];

@@ -277,6 +277,17 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     theme: 'Full verb conjugation paradigms for Parasmaipada, Atmanepada & Ubhayapada roots',
     grammarFocus: 'लट्, लोट्, लङ्, विधिलिङ्, लृट् लकाराः',
   },
+  {
+    id: 'grade8_prarthana',
+    num: 'Grade 8 · First Prayer',
+    title: 'सरस्वतीप्रार्थना (Page 16)',
+    english: 'Prayer to Goddess Saraswati (Jay Jaya He Bhagavati)',
+    icon: '🪕',
+    category: 'shlokas',
+    genreBadge: 'प्रार्थना · Sacred Hymn',
+    theme: 'Glorious invocation of Goddess Saraswati: embodiment of cosmic sound, fine arts, intellect, and knowledge',
+    grammarFocus: 'सम्बोधन-विभक्तिः, विशेषण-पदानि, विपरीतार्थक-शब्दाः',
+  },
 ];
 
 const HomePage: React.FC<HomePageProps> = ({
