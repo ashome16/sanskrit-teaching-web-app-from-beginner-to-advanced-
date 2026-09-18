@@ -1,0 +1,889 @@
+/* ==========================================================================
+   Linga & Vachana (Gender & Number System) Styles
+   ========================================================================== */
+
+.linga-vachana-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+  font-family: inherit;
+  color: #273b35;
+}
+
+/* Header */
+.lv-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  background: #ffffff;
+  border: 1px solid #e7dfd3;
+  border-radius: 16px;
+  padding: 2.25rem 1.75rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(39, 59, 53, 0.05);
+}
+
+.lv-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #fdf3e2;
+  color: #a35d07;
+  border: 1px solid #f6d8a3;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lv-title {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #273b35;
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+}
+
+.lv-subtitle {
+  font-size: 1.05rem;
+  color: #5c5348;
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.55;
+}
+
+/* Nav Tabs */
+.lv-nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  border-top: 1px solid #efe8dc;
+  padding-top: 1.25rem;
+}
+
+.lv-tab-btn {
+  background: #faf7f0;
+  border: 1.5px solid #ded6c8;
+  border-radius: 999px;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #4a4036;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lv-tab-btn:hover {
+  background: #ffffff;
+  border-color: #b3472f;
+  color: #b3472f;
+  transform: translateY(-1px);
+}
+
+.lv-tab-btn.active {
+  background: #273b35;
+  border-color: #273b35;
+  color: #f1c75b;
+  box-shadow: 0 4px 12px rgba(39, 59, 53, 0.25);
+}
+
+/* Section Wrapper */
+.lv-section {
+  animation: lvFadeIn 0.25s ease-out;
+}
+
+@keyframes lvFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lv-card-intro {
+  background: #ffffff;
+  border: 1px solid #e7dfd3;
+  border-radius: 14px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.lv-card-intro h2 {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #273b35;
+  margin: 0 0 0.4rem;
+}
+
+.lv-card-intro p {
+  font-size: 0.98rem;
+  color: #5c5348;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+}
+
+/* Pattern Chips */
+.lv-pattern-chips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.lv-pattern-chip {
+  background: #fdfbf7;
+  border: 1.5px solid #ded6c8;
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.lv-pattern-chip--masc {
+  border-left: 4px solid #1e3a8a;
+  background: #f8faff;
+}
+
+.lv-pattern-chip--fem {
+  border-left: 4px solid #b91c1c;
+  background: #fff8f8;
+}
+
+.lv-pattern-chip--neut {
+  border-left: 4px solid #15803d;
+  background: #f6fbf7;
+}
+
+.lv-chip-tag {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+.lv-pattern-chip strong {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.12rem;
+  color: #1e293b;
+}
+
+.lv-pattern-chip em {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Filter Row */
+.lv-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  border-top: 1px dashed #e8dfd2;
+}
+
+.lv-filter-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #6b6258;
+}
+
+.lv-filter-pill {
+  background: #faf7f0;
+  border: 1px solid #d4ccbd;
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #4a4036;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lv-filter-pill:hover {
+  border-color: #b3472f;
+  color: #b3472f;
+}
+
+.lv-filter-pill.active {
+  background: #b3472f;
+  border-color: #b3472f;
+  color: #ffffff;
+}
+
+/* Tables */
+.lv-table-container {
+  background: #ffffff;
+  border: 1px solid #e2dad0;
+  border-radius: 14px;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.lv-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 720px;
+}
+
+.lv-table thead {
+  background: #f7f3ec;
+  border-bottom: 2px solid #ded4c5;
+}
+
+.lv-table th {
+  padding: 1rem 1.15rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #273b35;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.lv-table td {
+  padding: 0.95rem 1.15rem;
+  border-bottom: 1px solid #eee7db;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.lv-row:last-child td {
+  border-bottom: none;
+}
+
+.lv-row:hover {
+  background: #fdfbf7;
+}
+
+.lv-cell-base strong {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.15rem;
+  color: #1f1a14;
+  display: block;
+}
+
+.lv-cell-sub {
+  font-size: 0.78rem;
+  color: #78716c;
+  display: block;
+}
+
+/* Badges */
+.lv-badge-gender {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.lv-badge--masc {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.lv-badge--fem {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.lv-badge--neut {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+/* Cell Word Box */
+.lv-cell-word-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.lv-sanskrit-word {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1b2823;
+  line-height: 1;
+}
+
+.lv-english-gloss {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Audio Buttons */
+.lv-audio-btn {
+  background: #f5eedf;
+  border: 1px solid #dfd2b5;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.lv-audio-btn:hover {
+  background: #ebd8b3;
+  transform: scale(1.12);
+}
+
+.lv-audio-btn-mini {
+  background: #f5eedf;
+  border: 1px solid #dfd2b5;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 0.68rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 0.45rem;
+}
+
+/* 3 Genders Cards Triplet */
+.lv-cards-triplet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.lv-feature-card {
+  background: #ffffff;
+  border: 1.5px solid #e3dbce;
+  border-radius: 14px;
+  padding: 1.65rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.lv-card--masc {
+  border-top: 5px solid #2563eb;
+}
+
+.lv-card--fem {
+  border-top: 5px solid #dc2626;
+}
+
+.lv-card--neut {
+  border-top: 5px solid #16a34a;
+}
+
+.lv-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.lv-card-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lv-card-head h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #273b35;
+  margin: 0;
+}
+
+.lv-card-ending-tag {
+  font-size: 0.8rem;
+  color: #64748b;
+  display: block;
+}
+
+.lv-card-text {
+  font-size: 0.92rem;
+  color: #554d42;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+}
+
+.lv-card-examples {
+  background: #faf7f0;
+  border: 1px solid #ebdcc8;
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.lv-card-examples h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #8c4228;
+  margin: 0 0 0.5rem;
+}
+
+.lv-card-examples ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.lv-card-examples li {
+  font-size: 0.92rem;
+  color: #2c251d;
+  display: flex;
+  align-items: center;
+}
+
+.lv-card-examples li strong {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.05rem;
+  margin-right: 0.35rem;
+}
+
+.lv-card-footer-tip {
+  font-size: 0.82rem;
+  color: #4a4036;
+  background: #fdfaf4;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  border: 1px dashed #d5c8b3;
+}
+
+/* Numbers Spotlight */
+.lv-vachana-spotlight {
+  background: #ffffff;
+  border: 1px solid #e5ddd0;
+  border-radius: 16px;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.lv-vachana-spotlight h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #273b35;
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+
+.lv-lead {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #5c5348;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+}
+
+.lv-vachana-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.lv-vachana-card {
+  background: #fdfbf7;
+  border: 1.5px solid #ded6c8;
+  border-radius: 12px;
+  padding: 1.75rem 1.4rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lv-vachana-card--highlight {
+  background: #fffdf5;
+  border-color: #d97706;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.12);
+}
+
+.lv-vachana-badge {
+  position: absolute;
+  top: -12px;
+  right: 18px;
+  background: #273b35;
+  color: #f1c75b;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 0.15rem 0.65rem;
+  border-radius: 999px;
+}
+
+.lv-vachana-card h3 {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #273b35;
+  margin: 0 0 0.25rem;
+}
+
+.lv-vachana-count {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #b3472f;
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+.lv-vachana-card p {
+  font-size: 0.92rem;
+  color: #554d42;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+.lv-example-box {
+  background: #ffffff;
+  border: 1px solid #ebdcc8;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.lv-example-box strong {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.05rem;
+  color: #273b35;
+}
+
+/* Pronouns Block */
+.lv-pronoun-tables {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.lv-pronoun-block h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #273b35;
+  margin: 0 0 0.75rem;
+}
+
+/* Code Badge */
+.lv-code-badge {
+  background: #fdf3e2;
+  color: #b45309;
+  border: 1px solid #f6d8a3;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-family: 'Noto Sans Devanagari', monospace;
+}
+
+/* Question Words */
+.lv-question-words-box {
+  margin-top: 2rem;
+  background: #ffffff;
+  border: 1px solid #e7dfd3;
+  border-radius: 14px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.lv-question-words-box h3 {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #273b35;
+  margin: 0 0 1rem;
+}
+
+.lv-qwords-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.lv-qword-card {
+  background: #faf7f0;
+  border: 1px solid #e5ddcf;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.lv-qword-card strong {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.15rem;
+  color: #8c4228;
+}
+
+.lv-qword-card span {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+/* Spot Errors Trainer */
+.lv-trainer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.lv-trainer-card {
+  background: #ffffff;
+  border: 1.5px solid #e2dad0;
+  border-radius: 12px;
+  padding: 1.35rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lv-trainer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.lv-trainer-num {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #b3472f;
+  letter-spacing: 0.04em;
+}
+
+.lv-trainer-type {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+}
+
+.lv-incorrect-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.lv-x-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.lv-incorrect-sanskrit {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #991b1b;
+  text-decoration: line-through;
+}
+
+.lv-incorrect-sub {
+  font-size: 0.82rem;
+  color: #7f1d1d;
+  font-style: italic;
+}
+
+.lv-btn-reveal {
+  background: #fbf8f2;
+  border: 1px solid #dcd3c4;
+  border-radius: 6px;
+  color: #273b35;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.55rem 0.85rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: all 0.15s ease;
+  margin-top: 0.4rem;
+}
+
+.lv-btn-reveal:hover {
+  background: #273b35;
+  color: #f1c75b;
+  border-color: #273b35;
+}
+
+.lv-correct-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  margin-top: 0.85rem;
+  animation: lvFadeIn 0.2s ease-out;
+}
+
+.lv-correct-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-bottom: 0.45rem;
+}
+
+.lv-check-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.lv-correct-sanskrit {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #166534;
+  display: block;
+}
+
+.lv-correct-meaning {
+  font-size: 0.82rem;
+  color: #14532d;
+  font-style: italic;
+}
+
+.lv-correct-rule {
+  font-size: 0.85rem;
+  color: #166534;
+  line-height: 1.45;
+  margin: 0.35rem 0 0;
+  border-top: 1px dashed #bbf7d0;
+  padding-top: 0.45rem;
+}
+
+/* Footer CTA */
+.lv-footer-cta {
+  margin-top: 3rem;
+  background: #273b35;
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  box-shadow: 0 6px 20px rgba(39, 59, 53, 0.2);
+}
+
+.lv-footer-left h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #f1c75b;
+  margin: 0 0 0.35rem;
+}
+
+.lv-footer-left p {
+  font-size: 0.95rem;
+  color: #d1ded8;
+  margin: 0;
+  max-width: 600px;
+  line-height: 1.45;
+}
+
+.lv-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.lv-btn-cta {
+  background: linear-gradient(135deg, #b3472f 0%, #d97706 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 14px rgba(179, 71, 47, 0.35);
+}
+
+.lv-btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(179, 71, 47, 0.45);
+}
+
+.lv-btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lv-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 960px) {
+  .lv-pattern-chips,
+  .lv-cards-triplet,
+  .lv-vachana-grid {
+    grid-template-columns: 1fr;
+  }
+  .lv-trainer-grid {
+    grid-template-columns: 1fr;
+  }
+  .lv-qwords-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .lv-title {
+    font-size: 1.75rem;
+  }
+  .lv-qwords-grid {
+    grid-template-columns: 1fr;
+  }
+  .lv-footer-cta {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .lv-footer-right {
+    justify-content: center;
+  }
+}

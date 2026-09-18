@@ -4,17 +4,19 @@ import { ARTICLES } from '../data/articleIndex';
 import { parseArticle, type ParsedArticle } from '../utils/articleParser';
 import ConjunctGames from './ConjunctGames';
 import SoundTeamsArticle from './SoundTeamsArticle';
+import LingaVachanaGuide from './LingaVachanaGuide';
 import '../styles/grammar.css';
 
-type GrammarTopic = 'home' | 'vibhakti' | 'samyukta' | 'sound-teams' | 'article';
+type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'samyukta' | 'sound-teams' | 'article';
 
 const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((response) => response.text());
 
 type GrammarProps = {
   onGoHome?: () => void;
+  onOpenWorksheets?: () => void;
 };
 
-const Grammar: React.FC<GrammarProps> = ({ onGoHome }) => {
+const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets }) => {
   const [topic, setTopic] = useState<GrammarTopic>('home');
   const [selectedCase, setSelectedCase] = useState(1);
   const [activeArticleId, setActiveArticleId] = useState<string | null>(null);
@@ -104,6 +106,20 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome }) => {
             </li>
           ))}
         </ul>
+      </section>
+    );
+  }
+
+  if (topic === 'linga-vachana') {
+    return (
+      <section className="grammar-page" aria-label="Gender and Number Guide">
+        <header className="grammar-page-header">
+          {renderBreadcrumb('लिङ्गं वचनं च · Gender & Number')}
+        </header>
+        <LingaVachanaGuide
+          onOpenWorksheets={onOpenWorksheets}
+          onGoBack={goBackToShelf}
+        />
       </section>
     );
   }
@@ -259,6 +275,19 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome }) => {
         <button type="button" className="grammar-card grammar-card--ready" onClick={() => setTopic('vibhakti')}>
           <span className="grammar-card-title">विभक्ति · Vibhakti</span>
           <span className="grammar-card-blurb">Eight noun cases — who does what to whom.</span>
+        </button>
+        <button
+          type="button"
+          className="grammar-card grammar-card--ready"
+          style={{ borderColor: '#d97706', background: 'linear-gradient(180deg, #ffffff 0%, #fffdf8 100%)' }}
+          onClick={() => setTopic('linga-vachana')}
+        >
+          <span className="grammar-card-title" style={{ color: '#b45309' }}>
+            ⚖️ लिङ्गं वचनं च · Gender &amp; Number
+          </span>
+          <span className="grammar-card-blurb">
+            Master the 3 Genders, 3 Numbers, Pronouns, and Subject-Verb agreement with interactive tools.
+          </span>
         </button>
         <button
           type="button"

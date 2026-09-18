@@ -380,6 +380,7 @@
   font-weight: 700;
   color: #111827;
   line-height: 1.45;
+  white-space: pre-line;
 }
 
 .ws-paper-q-marks {

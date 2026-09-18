@@ -370,7 +370,11 @@ const Dashboard: React.FC = () => {
         />
       )}
       {activeView === 'grammar' && (
-        <Grammar key={grammarResetKey} onGoHome={() => setActiveView('home')} />
+        <Grammar
+          key={grammarResetKey}
+          onGoHome={() => setActiveView('home')}
+          onOpenWorksheets={() => setActiveView('worksheets')}
+        />
       )}
       {activeView === 'vedic-maths' && (
         <VedicMaths
@@ -406,6 +410,8 @@ const Dashboard: React.FC = () => {
         onJumpToSentence={jumpToSentence}
         isFirstSentence={isFirstSentence}
         isLastSentence={isLastSentence}
+        onOpenQuiz={() => setActiveView('quiz')}
+        onOpenWorksheets={() => setActiveView('worksheets')}
       />}
       {activeView === 'reader' && <WordAnalyzerCard selection={wordSelection} />}
 

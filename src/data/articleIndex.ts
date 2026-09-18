@@ -58,4 +58,18 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: 'The Secret Code of Words',
     cardBlurb: 'Upsarg, Pratyaya, and the legendary 21 Sup-Pratyaya power-up stickers.',
   },
+  {
+    id: 'sanskrit-symbols-punctuation',
+    file: 'grammar/article-8.txt',
+    emoji: '🖋️',
+    cardTitle: 'चिह्न-परिचयः · Symbols & Punctuation',
+    cardBlurb: 'The roles of Daṇḍa (।), Double Daṇḍa (॥), Avagraha (ऽ), Anusvāra, and sacred script marks.',
+  },
+  {
+    id: 'linga-vachana-foundations',
+    file: 'grammar/article-9.txt',
+    emoji: '⚖️',
+    cardTitle: 'लिङ्गं वचनं च · Gender & Number Foundations',
+    cardBlurb: 'The 3 Genders, 3 Numbers, and the mathematical beauty of Sanskrit Subject-Verb agreement.',
+  },
 ];

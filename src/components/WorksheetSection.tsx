@@ -20,7 +20,53 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
   const filteredWorksheets =
     selectedCategory === 'all'
       ? WORKSHEETS
-      : WORKSHEETS.filter((ws) => ws.category === selectedCategory);
+      : selectedCategory === 'deep_ch1'
+      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch1'))
+      : selectedCategory === 'deep_ch2'
+      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch2'))
+      : selectedCategory === 'deep_ch3'
+      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch3'))
+      : selectedCategory === 'deep_ch4'
+      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch4'))
+      : selectedCategory === 'deep_ch5'
+      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch5'))
+      : selectedCategory === 'deep_ch6'
+      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch6'))
+      : selectedCategory === 'deep_ch7'
+      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch7'))
+      : selectedCategory === 'deep_ch8'
+      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch8'))
+      : selectedCategory === 'deep_ch9'
+      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch9'))
+      : selectedCategory === 'deep_ch10'
+      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch10'))
+      : selectedCategory === 'deep_ch11'
+      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch11'))
+      : selectedCategory === 'deep_ch12'
+      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch12'))
+      : selectedCategory === 'deep_ch13'
+      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch13'))
+      : selectedCategory === 'deep_ch14'
+      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch14'))
+      : WORKSHEETS.filter(
+          (ws) =>
+            ws.category === selectedCategory ||
+            (selectedCategory === 'cbse_ch' &&
+              (ws.id.startsWith('ws-ch1') ||
+                ws.id.startsWith('ws-ch2') ||
+                ws.id.startsWith('ws-ch3') ||
+                ws.id.startsWith('ws-ch4') ||
+                ws.id.startsWith('ws-ch5') ||
+                ws.id.startsWith('ws-ch6') ||
+                ws.id.startsWith('ws-ch7') ||
+                ws.id.startsWith('ws-ch8') ||
+                ws.id.startsWith('ws-ch9') ||
+                ws.id.startsWith('ws-ch10') ||
+                ws.id.startsWith('ws-ch11') ||
+                ws.id.startsWith('ws-ch12') ||
+                ws.id.startsWith('ws-ch13') ||
+                ws.id.startsWith('ws-ch14')))
+        );
 
   const handlePrint = () => {
     window.print();

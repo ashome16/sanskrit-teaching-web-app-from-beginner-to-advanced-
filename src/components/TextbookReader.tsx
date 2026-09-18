@@ -24,6 +24,8 @@ interface TextbookReaderProps {
   onJumpToSentence: (index: number) => void;
   isFirstSentence: boolean;
   isLastSentence: boolean;
+  onOpenQuiz?: () => void;
+  onOpenWorksheets?: () => void;
 }
 
 const cleanWord = (value: string): string =>
@@ -52,6 +54,73 @@ const buildSectionJumps = (lesson: Lesson | undefined): SectionJump[] => {
   return jumps;
 };
 
+interface SanskritSymbolItem {
+  symbol: string;
+  name: string;
+  role: string;
+  description: string;
+  example: string;
+}
+
+const SANSKRIT_SYMBOLS: SanskritSymbolItem[] = [
+  {
+    symbol: '।',
+    name: 'दण्डः (Daṇḍa)',
+    role: 'पूर्णविरामः · Single Bar',
+    description: 'Marks the end of a prose sentence, or the end of the first half (प्रथमार्ध / pāda) of a metric verse.',
+    example: 'समुद्रः भारतमातुः चरणौ प्रक्षालयति।'
+  },
+  {
+    symbol: '॥',
+    name: 'द्वि-दण्डः (Dvi-daṇḍa)',
+    role: 'महाविरामः · Double Bar',
+    description: 'Marks the completion of an entire metric stanza (श्लोक), hymn, or major thematic section.',
+    example: 'वन्दे मातरम्॥ सुजलां सुफलां मलयजशीतलाम्॥'
+  },
+  {
+    symbol: 'ऽ',
+    name: 'अवग्रहः (Avagraha)',
+    role: 'अकार-लोपः · Elided Vowel',
+    description: 'Denotes the elision of short "अ" when fused after words ending in "ए" or "ओ" (पूर्वरूप-सन्धि).',
+    example: 'कोऽपि (कः + अपि), सोऽपि (सः + अपि)'
+  },
+  {
+    symbol: 'ं',
+    name: 'अनुस्वारः (Anusvāra)',
+    role: 'नासिक्य-ध्वनिः · Nasal Resonance',
+    description: 'Pure nasal resonance placed over a syllable. Represents "म्" before consonants in running text.',
+    example: 'भारतम्, वन्दे, धर्मम्'
+  },
+  {
+    symbol: 'ः',
+    name: 'विसर्गः (Visarga)',
+    role: 'कण्ठ्य-श्वासः · Glottal Aspiration',
+    description: 'Two vertical dots creating a soft breath aspiration echoing the preceding vowel (रामः → ramaha).',
+    example: 'रामः, सूर्यः, प्रातः'
+  },
+  {
+    symbol: '्',
+    name: 'हलन्तः / विरामः (Halanta / Virāma)',
+    role: 'स्वर-लोपः · Pure Consonant',
+    description: 'Cancels the default short "a" vowel of a consonant letter, creating a pure half-consonant.',
+    example: 'क्, त्, म्, पठनम्'
+  },
+  {
+    symbol: 'ँ',
+    name: 'अनुनासिकः / चन्द्रबिन्दुः (Chandrabindu)',
+    role: 'नासिक्य-स्वरः · Nasalized Vowel',
+    description: 'Nasalizes the vowel itself through both mouth and nose simultaneously.',
+    example: 'हँस, अँ'
+  },
+  {
+    symbol: 'ॐ',
+    name: 'प्रणवः / ओंकारः (Praṇava / Oṁkāra)',
+    role: 'परब्रह्म-प्रतीकम् · Sacred Syllable Om',
+    description: 'The primordial sacred acoustic icon of Sanskrit and Vedic literature (अ + उ + म्).',
+    example: 'ॐ शान्तिः शान्तिः शान्तिः॥'
+  }
+];
+
 const TextbookReader: React.FC<TextbookReaderProps> = ({
   lessons,
   activeLessonId,
@@ -66,6 +135,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   onJumpToSentence,
   isFirstSentence,
   isLastSentence,
+  onOpenQuiz,
+  onOpenWorksheets,
 }) => {
   const activeLesson = lessons.find((lesson) => lesson.id === activeLessonId);
   const isVarnamala = activeLessonId === 'varnamala';
@@ -74,6 +145,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const tileLabel = (letter: string) =>
     activeLessonId === 'varnamala' ? varnamalaLabel(letter) : aksharaLabel(letter);
   const [isChartOpen, setIsChartOpen] = useState(false);
+  const [isSymbolsOpen, setIsSymbolsOpen] = useState(false);
   const [isPlayingAll, setIsPlayingAll] = useState(false);
   const [glosses, setGlosses] = useState<AnalyseRegistry>({});
   const stopPlayAllRef = useRef<(() => void) | null>(null);
@@ -170,6 +242,353 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <span className="textbook-cbse-title">NCERT Class 7 Sanskrit · दीपकम (Deepakam)</span>
         </div>
       )}
+
+      <div className="textbook-toolbar-row">
+        <button
+          type="button"
+          className="textbook-tool-btn textbook-tool-btn--symbols"
+          onClick={() => setIsSymbolsOpen(true)}
+          title="Sanskrit Punctuation & Orthographic Symbols Reference Guide"
+        >
+          📜 चिह्न-परिचयः (Symbols Guide)
+        </button>
+        {activeLessonId === 'gsde101' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Chapter 1 MCQs & Grammar Quizzes (35 questions)"
+              >
+                🎯 7 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Chapter 1 Printable Worksheets & Teacher Keys"
+              >
+                📑 7 Worksheets
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'gsde102' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Chapter 2 MCQs & Grammar Quizzes (35 questions)"
+              >
+                🎯 7 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Chapter 2 Printable Worksheets & Teacher Keys"
+              >
+                📑 7 Worksheets
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'gsde103' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Chapter 3 MCQs & Grammar Quizzes (35 questions)"
+              >
+                🎯 7 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Chapter 3 Printable Worksheets & Teacher Keys"
+              >
+                📑 7 Worksheets
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'gsde104' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Chapter 4 MCQs & Grammar Quizzes (35 questions)"
+              >
+                🎯 7 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Chapter 4 Printable Worksheets & Teacher Keys"
+              >
+                📑 7 Worksheets
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'gsde105' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Chapter 5 MCQs & Grammar Quizzes (35 questions)"
+              >
+                🎯 7 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Chapter 5 Printable Worksheets & Teacher Keys"
+              >
+                📑 7 Worksheets
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'gsde106' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Chapter 6 MCQs & Grammar Quizzes (35 questions)"
+              >
+                🎯 7 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Chapter 6 Printable Worksheets & Teacher Keys"
+              >
+                📑 7 Worksheets
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'gsde107' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Chapter 7 MCQs & Grammar Quizzes (35 questions)"
+              >
+                🎯 7 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Chapter 7 Printable Worksheets & Teacher Keys"
+              >
+                📑 8 Worksheets
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'gsde108' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Chapter 8 MCQs & Grammar Quizzes (35 questions)"
+              >
+                🎯 7 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Chapter 8 Printable Worksheets & Teacher Keys"
+              >
+                📑 7 Worksheets
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'gsde109' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Chapter 9 MCQs & Grammar Quizzes (35 questions)"
+              >
+                🎯 7 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Chapter 9 Printable Worksheets & Teacher Keys"
+              >
+                📑 7 Worksheets
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'gsde110' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Chapter 10 MCQs & Grammar Quizzes (35 questions)"
+              >
+                🎯 7 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Chapter 10 Printable Worksheets & Teacher Keys"
+              >
+                📑 7 Worksheets
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'gsde111' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Chapter 11 MCQs & Grammar Quizzes (35 questions)"
+              >
+                🎯 7 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Chapter 11 Printable Worksheets & Teacher Keys"
+              >
+                📑 7 Worksheets
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'gsde112' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Chapter 12 MCQs & Grammar Quizzes (35 questions)"
+              >
+                🎯 7 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Chapter 12 Printable Worksheets & Teacher Keys"
+              >
+                📑 7 Worksheets
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'gsde113' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Supplementary Lesson MCQs & Grammar Quizzes (35 questions)"
+              >
+                🎯 7 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Supplementary Lesson Printable Worksheets & Teacher Keys"
+              >
+                📑 7 Worksheets
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'gsde114' && (
+          <>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Appendix 1 MCQs & Grammar Quizzes (35 questions)"
+              >
+                🎯 7 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Appendix 1 Printable Worksheets & Teacher Keys"
+              >
+                📑 7 Worksheets
+              </button>
+            )}
+          </>
+        )}
+      </div>
 
       <div className="textbook-lesson-select-row">
         <label htmlFor="lesson-select" className="textbook-lesson-select-label">
@@ -560,6 +979,77 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           >
             Next ▶
           </button>
+        </div>
+      )}
+
+      {isSymbolsOpen && (
+        <div
+          className="symbols-modal-overlay"
+          onClick={() => setIsSymbolsOpen(false)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="symbols-modal-content" onClick={(e) => e.stopPropagation()}>
+            <header className="symbols-modal-header">
+              <div>
+                <h3>संस्कृत-विरामचिह्नानि · Sanskrit Symbols Reference</h3>
+                <p>Essential orthographic and punctuation symbols in classical Sanskrit</p>
+              </div>
+              <button
+                type="button"
+                className="symbols-modal-close"
+                onClick={() => setIsSymbolsOpen(false)}
+                aria-label="Close symbols reference"
+              >
+                ✕
+              </button>
+            </header>
+
+            <div className="symbols-modal-body">
+              <table className="symbols-table">
+                <thead>
+                  <tr>
+                    <th>चिह्नम्</th>
+                    <th>नाम व कार्यम्</th>
+                    <th>विवरणम् (Role)</th>
+                    <th>उदाहरणम् (Example)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {SANSKRIT_SYMBOLS.map((item) => (
+                    <tr key={item.symbol}>
+                      <td className="symbol-glyph">{item.symbol}</td>
+                      <td className="symbol-name-col">
+                        <span className="symbol-dev-name">{item.name}</span>
+                        <span className="symbol-role-badge">{item.role}</span>
+                      </td>
+                      <td>
+                        <p className="symbol-desc-text">{item.description}</p>
+                      </td>
+                      <td>
+                        <div className="symbol-example-box">
+                          <span>{item.example}</span>
+                          <button
+                            type="button"
+                            className="symbol-audio-btn"
+                            onClick={() => playPronunciation(item.example)}
+                            title="Listen"
+                            aria-label={`Listen to ${item.example}`}
+                          >
+                            🔊
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <footer className="symbols-modal-footer">
+              <span>Tip: In classical texts and manuscripts, Daṇḍa (।) and Dvi-daṇḍa (॥) demarcate syntactic boundaries and poetic half/full verses.</span>
+            </footer>
+          </div>
         </div>
       )}
     </section>

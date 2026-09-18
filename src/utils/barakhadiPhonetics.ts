@@ -86,7 +86,7 @@ export const barakhadiSpeechText = (akshara: string): string => {
   // Hyphenate long digraphs so engines keep aspiration / retroflex.
   const special: Record<string, string> = {
     // Pure vowels: avoid English letter names (a/i) and E-E for ee.
-    a: 'aaaah', aa: 'ahh', i: 'इ', ee: 'eeee', gi: 'गि', ti: 'ति', tee: 'ती', tu: 'तु', too: 'तू',
+    a: 'aaaah', aa: 'ahh', i: 'इ', ee: 'yee', gi: 'गि', ti: 'ति', tee: 'ती', tu: 'तु', too: 'तू',
     u: 'ooh', oo: 'ooooh',
     e: 'yay', ai: 'ai', o: 'o', au: 'au',
     gau: 'gaau',
@@ -106,7 +106,7 @@ export const barakhadiSpeechText = (akshara: string): string => {
     nna: 'nah', nnaa: 'n-naa', nni: 'n-ni', nnee: 'n-nee',
     shha: 'sh-ha', shhaa: 'sh-haa', shhi: 'sh-hi', shhee: 'sh-hee',
     chha: 'chha', chhaa: 'chhaa', chhi: 'chhi', chhee: 'chhee',
-    ksha: 'क्ष क्ष', jnya: 'ज्ञ ज्ञ', tra: 'त्र त्र', shra: 'sh-ra',
+    ksha: 'ksha', jnya: 'jnya', tra: 'त्र त्र', shra: 'sh-ra',
     li: 'li',
     kha: 'k-ha', khaa: 'k-haa', khi: 'k-hi', khee: 'k-hee',
     gha: 'gha', ghaa: 'g-haa', ghi: 'g-hi', ghee: 'g-hee',
@@ -180,11 +180,11 @@ export const varnamalaLabel = (akshara: string): string => {
 export const varnamalaSpeechText = (akshara: string): string => {
   const clean = akshara.normalize('NFC').trim();
   // Cues English voices will not read as letter names / E-E-E.
-  // अ short open; आ stays aaaah; इ = yi; ई = eel (one long ee).
+  // अ short open; आ stays aaaah; इ = yi; ई = yee (extended yee).
   if (clean === 'अ') return 'aaaah';
   if (clean === 'आ') return 'ahh';
   if (clean === 'इ') return 'इ';
-  if (clean === 'ई') return 'eeee';
+  if (clean === 'ई') return 'yee';
   if (clean === 'उ') return 'ooh';
   if (clean === 'ऊ') return 'ooooh';
   if (clean === 'ऋ') return 'rih';
@@ -212,8 +212,8 @@ export const varnamalaSpeechText = (akshara: string): string => {
   if (clean === 'त') return 'त';
   // ति–तु: English ti/tee/tu → tea; use Hindi letter voice.
   if (clean === 'ति' || clean === 'ती' || clean === 'तु' || clean === 'तू') return clean;
-  if (clean === 'क्ष') return 'क्ष क्ष';
-  if (clean === 'ज्ञ') return 'ज्ञ ज्ञ';
+  if (clean === 'क्ष') return 'ksha';
+  if (clean === 'ज्ञ') return 'jnya';
   if (clean === 'त्र') return 'त्र त्र';
   if (clean === 'गि') return 'गि';
   if (clean === 'थे') return 'थे';
@@ -246,7 +246,7 @@ export const varnamalaSpeechText = (akshara: string): string => {
     .replace(/ī/g, 'ee')
     .replace(/rii/g, 'ree');
   const special: Record<string, string> = {
-    a: 'aaaah', aa: 'ahh', i: 'इ', ee: 'eeee', gi: 'गि',
+    a: 'aaaah', aa: 'ahh', i: 'इ', ee: 'yee', gi: 'गि',
     u: 'ooh', oo: 'ooooh',
     e: 'yay', ai: 'ai', o: 'o', au: 'au',
     gau: 'gaau',

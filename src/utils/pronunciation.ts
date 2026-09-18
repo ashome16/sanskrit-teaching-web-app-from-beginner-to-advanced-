@@ -99,13 +99,11 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   const isChha = word === 'छ' || speech === 'छ';
   const isTtha = word === 'ठ' || speech === 'ठ';
   const isDdha = word === 'ढ' || speech === 'dhah';
-  const isKsha = word === 'क्ष' || speech === 'क्ष' || speech === 'क्ष क्ष';
-  const isLongEe = word === 'ई' || /^eeee$/i.test(speech);
+  const isKsha = word === 'क्ष' || speech === 'क्ष' || speech === 'ksha';
+  const isLongEe = word === 'ई' || /^yee+$/i.test(speech);
   const isRih = word === 'ऋ' || /^rih$/i.test(speech);
   const isReee = word === 'ॠ' || /^reee$/i.test(speech);
-  // ज्ञ/त्र speech is Devanagari so hi-IN path applies (not ASCII English).
-  // Doubled forms match क्ष presence pattern (volume already at API max).
-  const isGya = word === 'ज्ञ' || speech === 'ज्ञ' || speech === 'ज्ञ ज्ञ';
+  const isGya = word === 'ज्ञ' || speech === 'ज्ञ' || speech === 'jnya';
   const isTra = word === 'त्र' || speech === 'त्र' || speech === 'त्र त्र';
   const isLongUu = /ooooh$/i.test(speech);
   const isShortUu = /ooh$/i.test(speech) && !isLongUu;
@@ -118,9 +116,9 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
     : isTtha
       ? 0.5
       : isKsha || isGya || isTra
-        ? 0.7
+        ? 0.85
         : isLongEe
-          ? 0.55
+          ? 0.8
           : isRih || isReee
             ? 0.58
             : isLongUu
@@ -138,18 +136,16 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
                           : isChha
                             ? 0.9
                             : DEFAULT_RATE;
-  // SpeechSynthesis volume max is 1; क्ष/ज्ञ/त्र use higher pitch + double speech for presence.
+  // Natural pitch (1.0) for clean conjuncts and vowels
   utterance.pitch = isNgaWord
     ? 1.15
     : isTtha
       ? 1.35
-      : isKsha || isGya || isTra
-        ? 1.5
-        : isRih || isReee
+      : isRih || isReee
+        ? 1.12
+        : isDdha
           ? 1.12
-          : isDdha
-            ? 1.12
-            : 1;
+          : 1;
   utterance.volume = 1;
 };
 
