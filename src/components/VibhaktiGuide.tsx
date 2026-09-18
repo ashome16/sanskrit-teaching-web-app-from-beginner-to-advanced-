@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   BALAKA_VIBHAKTI_DATA,
   VIBHAKTI_MEMORY_TRICK_TABLE,
 } from '../data/vibhakti';
+import {
+  VIBHAKTI_30_QUESTIONS,
+  VIBHAKTI_PARTS,
+  type Vibhakti30Question,
+} from '../data/vibhaktiQuiz30';
 import { playPronunciation } from '../utils/pronunciation';
 import '../styles/vibhakti-interactive.css';
 
@@ -14,290 +19,6 @@ interface VibhaktiGuideProps {
 
 type TabKey = 'cases' | 'trick-table' | 'sentences' | 'interactive-view';
 
-interface InteractiveVibhaktiQuestion {
-  id: number;
-  topic: string;
-  question: string;
-  options: { key: 'A' | 'B' | 'C' | 'D'; label: string }[];
-  correctKey: 'A' | 'B' | 'C' | 'D';
-  correctLabel: string;
-  explanation: string;
-  audioTerm?: string;
-}
-
-const VIBHAKTI_10_QUESTIONS: InteractiveVibhaktiQuestion[] = [
-  {
-    "id": 1,
-    "topic": "प्रथमा विभक्ति (Nominative / Subject)",
-    "question": "In the simple Sanskrit sentence \"बालकः पठति\" (Balakah pathati - The boy reads), which word is in the Prathama Vibhakti (Nominative Case) representing the subject performing the action?",
-    "options": [
-      {
-        "key": "A",
-        "label": "बालकः (Balakah)"
-      },
-      {
-        "key": "B",
-        "label": "पठति (Pathati)"
-      },
-      {
-        "key": "C",
-        "label": "बालं (Balam)"
-      },
-      {
-        "key": "D",
-        "label": "बाले (Bale)"
-      }
-    ],
-    "correctKey": "A",
-    "correctLabel": "A) बालकः (Balakah)",
-    "explanation": "Correct! 'बालकः' is the subject of the sentence performing the action of reading, which requires the Prathama Vibhakti singular form.",
-    "audioTerm": "बालकः पठति"
-  },
-  {
-    "id": 2,
-    "topic": "द्वितीया विभक्ति (Accusative / Object)",
-    "question": "Which singular form of the masculine noun 'राम' (Rama) represents the Dvitiya Vibhakti (Accusative / Object case)?",
-    "options": [
-      {
-        "key": "A",
-        "label": "रामस्य (Ramasya)"
-      },
-      {
-        "key": "B",
-        "label": "रामाय (Ramaya)"
-      },
-      {
-        "key": "C",
-        "label": "रामम् (Ramam)"
-      },
-      {
-        "key": "D",
-        "label": "रामः (Ramah)"
-      }
-    ],
-    "correctKey": "C",
-    "correctLabel": "C) रामम् (Ramam)",
-    "explanation": "Correct! 'रामम्' is the singular object form (Dvitiya Vibhakti) indicating the target of an action.",
-    "audioTerm": "रामम्"
-  },
-  {
-    "id": 3,
-    "topic": "तृतीया विभक्ति (Instrumental / Means)",
-    "question": "What is the meaning or function of the Tritiya Vibhakti (Instrumental Case) singular form 'रामेण' (Ramena)?",
-    "options": [
-      {
-        "key": "A",
-        "label": "From Rama"
-      },
-      {
-        "key": "B",
-        "label": "By Rama / With Rama"
-      },
-      {
-        "key": "C",
-        "label": "Of Rama"
-      },
-      {
-        "key": "D",
-        "label": "For Rama"
-      }
-    ],
-    "correctKey": "B",
-    "correctLabel": "B) By Rama / With Rama",
-    "explanation": "Correct! The instrumental case ('रामेण') shows the instrument or agent by or with whom an action is performed.",
-    "audioTerm": "रामेण"
-  },
-  {
-    "id": 4,
-    "topic": "चतुर्थी विभक्ति (Dative / Purpose & Recipient)",
-    "question": "If you want to say \"giving a fruit for the boy\" or \"to the boy\" in Sanskrit, which Chaturthi Vibhakti singular form of 'बालक' (Balaka) should you use?",
-    "options": [
-      {
-        "key": "A",
-        "label": "बालकात् (Balakat)"
-      },
-      {
-        "key": "B",
-        "label": "बालके (Balake)"
-      },
-      {
-        "key": "C",
-        "label": "बालकस्य (Balakasya)"
-      },
-      {
-        "key": "D",
-        "label": "बालकाय (Balakaya)"
-      }
-    ],
-    "correctKey": "D",
-    "correctLabel": "D) बालकाय (Balakaya)",
-    "explanation": "Correct! 'बालकाय' is the dative case form (Chaturthi Vibhakti) used for recipients or purposes, ending in '-aya'.",
-    "audioTerm": "बालकाय"
-  },
-  {
-    "id": 5,
-    "topic": "पञ्चमी विभक्ति (Ablative / Separation)",
-    "question": "Which form of 'राम' (Rama) represents the Panchami Vibhakti (Ablative Case) indicating separation or \"from Rama\"?",
-    "options": [
-      {
-        "key": "A",
-        "label": "रामात् (Ramat)"
-      },
-      {
-        "key": "B",
-        "label": "रामे (Rame)"
-      },
-      {
-        "key": "C",
-        "label": "रामस्य (Ramasya)"
-      },
-      {
-        "key": "D",
-        "label": "रामाय (Ramaya)"
-      }
-    ],
-    "correctKey": "A",
-    "correctLabel": "A) रामात् (Ramat)",
-    "explanation": "Correct! 'रामात्' ends with a strong '-त्' sound, signifying the ablative case denoting origin or separation (\"from\").",
-    "audioTerm": "रामात्"
-  },
-  {
-    "id": 6,
-    "topic": "षष्ठी विभक्ति (Genitive / Possession)",
-    "question": "What does the Shashti Vibhakti (Genitive Case) singular form 'बालकस्य' (Balakasya) mean?",
-    "options": [
-      {
-        "key": "A",
-        "label": "O boy!"
-      },
-      {
-        "key": "B",
-        "label": "To the boy"
-      },
-      {
-        "key": "C",
-        "label": "Of the boy / Boy's"
-      },
-      {
-        "key": "D",
-        "label": "In the boy"
-      }
-    ],
-    "correctKey": "C",
-    "correctLabel": "C) Of the boy / Boy's",
-    "explanation": "Correct! The genitive case ('बालकस्य') indicates possession or a relationship like \"of\" or \"'s\".",
-    "audioTerm": "बालकस्य"
-  },
-  {
-    "id": 7,
-    "topic": "सप्तमी विभक्ति (Locative / Location)",
-    "question": "Where an action takes place (in, on, or at) uses the Saptami Vibhakti. What is the singular Saptami form for the noun 'राम' (Rama)?",
-    "options": [
-      {
-        "key": "A",
-        "label": "रामम् (Ramam)"
-      },
-      {
-        "key": "B",
-        "label": "रामे (Rame)"
-      },
-      {
-        "key": "C",
-        "label": "रामस्य (Ramasya)"
-      },
-      {
-        "key": "D",
-        "label": "रामात् (Ramat)"
-      }
-    ],
-    "correctKey": "B",
-    "correctLabel": "B) रामे (Rame)",
-    "explanation": "Correct! 'रामे' is the locative singular form indicating location (\"in/on Rama\").",
-    "audioTerm": "रामे"
-  },
-  {
-    "id": 8,
-    "topic": "सम्बोधन विभक्ति (Vocative / Calling)",
-    "question": "Which of the following best describes the purpose of the Sambodhana (Vocative Case) in Sanskrit?",
-    "options": [
-      {
-        "key": "A",
-        "label": "It indicates the direct object receiving an action."
-      },
-      {
-        "key": "B",
-        "label": "It indicates possession or relationship (like \"Rama's\")."
-      },
-      {
-        "key": "C",
-        "label": "It indicates the location or base where an action occurs."
-      },
-      {
-        "key": "D",
-        "label": "It is used to call or address a person directly (e.g., O Rama!)."
-      }
-    ],
-    "correctKey": "D",
-    "correctLabel": "D) It is used to call or address a person directly (e.g., O Rama!).",
-    "explanation": "Correct! Sambodhana is treated as the vocative expression used to call out or draw someone's attention directly.",
-    "audioTerm": "हे बालक"
-  },
-  {
-    "id": 9,
-    "topic": "Case Suffix Identification",
-    "question": "In the word 'बालकात्' (Balakat), which case suffix indicates movement or separation \"from\"?",
-    "options": [
-      {
-        "key": "A",
-        "label": "Panchami Vibhakti (Ablative)"
-      },
-      {
-        "key": "B",
-        "label": "Tritiya Vibhakti (Instrumental)"
-      },
-      {
-        "key": "C",
-        "label": "Saptami Vibhakti (Locative)"
-      },
-      {
-        "key": "D",
-        "label": "Prathama Vibhakti (Nominative)"
-      }
-    ],
-    "correctKey": "A",
-    "correctLabel": "A) Panchami Vibhakti (Ablative)",
-    "explanation": "Correct! 'बालकात्' belongs to the Panchami Vibhakti, denoting source or separation.",
-    "audioTerm": "बालकात्"
-  },
-  {
-    "id": 10,
-    "topic": "Case Meaning Match",
-    "question": "Match the meaning \"in/on Rama\" with the correct Saptami Vibhakti singular form:",
-    "options": [
-      {
-        "key": "A",
-        "label": "रामस्य (Ramasya)"
-      },
-      {
-        "key": "B",
-        "label": "रामम् (Ramam)"
-      },
-      {
-        "key": "C",
-        "label": "रामे (Rame)"
-      },
-      {
-        "key": "D",
-        "label": "रामात् (Ramat)"
-      }
-    ],
-    "correctKey": "C",
-    "correctLabel": "C) रामे (Rame)",
-    "explanation": "Correct! 'रामे' is the correct locative form representing \"in or on Rama\".",
-    "audioTerm": "रामे"
-  }
-];
-
 const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
   onGoBack,
   onOpenWorksheets,
@@ -306,7 +27,10 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
   const [activeTab, setActiveTab] = useState<TabKey>('interactive-view');
   const [selectedCaseNum, setSelectedCaseNum] = useState<number | null>(null);
 
-  // Interactive View sub-mode: 'step' (Question by question) or 'sheet' (All 10 questions)
+  // Part Filtering: 'all' | 'part1' | 'part2' | 'part3'
+  const [selectedPartId, setSelectedPartId] = useState<'all' | 'part1' | 'part2' | 'part3'>('all');
+
+  // Interactive View sub-mode: 'step' (Question by question) or 'sheet' (Full Test Sheet)
   const [interactiveMode, setInteractiveMode] = useState<'step' | 'sheet'>('step');
 
   // Step Mode State
@@ -320,28 +44,53 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
   const [sheetSubmitted, setSheetSubmitted] = useState<boolean>(false);
   const [showAnswerKey, setShowAnswerKey] = useState<boolean>(false);
 
-  const currentQ = VIBHAKTI_10_QUESTIONS[qIndex];
-  const stepScore = Object.entries(stepAnswers).filter(
-    ([id, ans]) => ans === VIBHAKTI_10_QUESTIONS[Number(id) - 1].correctKey
-  ).length;
+  // Filter questions based on selected part
+  const activeQuestions: Vibhakti30Question[] = useMemo(() => {
+    if (selectedPartId === 'all') return VIBHAKTI_30_QUESTIONS;
+    const partNum = selectedPartId === 'part1' ? 1 : selectedPartId === 'part2' ? 2 : 3;
+    return VIBHAKTI_30_QUESTIONS.filter((q) => q.part === partNum);
+  }, [selectedPartId]);
 
-  const sheetScore = Object.entries(sheetAnswers).filter(
-    ([id, ans]) => ans === VIBHAKTI_10_QUESTIONS[Number(id) - 1].correctKey
-  ).length;
+  const currentQ = activeQuestions[qIndex] || activeQuestions[0];
 
+  const handleSelectPart = (partId: 'all' | 'part1' | 'part2' | 'part3') => {
+    setSelectedPartId(partId);
+    setQIndex(0);
+    setStepChecked(false);
+    setStepCompleted(false);
+  };
+
+  // Step Mode Handlers
   const handleStepSelect = (key: 'A' | 'B' | 'C' | 'D') => {
     if (stepChecked) return;
     setStepAnswers((prev) => ({ ...prev, [currentQ.id]: key }));
     setStepChecked(true);
   };
 
+  const handleStepPrev = () => {
+    if (qIndex > 0) {
+      const prevIdx = qIndex - 1;
+      setQIndex(prevIdx);
+      const prevQ = activeQuestions[prevIdx];
+      setStepChecked(Boolean(stepAnswers[prevQ.id]));
+    }
+  };
+
   const handleStepNext = () => {
-    if (qIndex < VIBHAKTI_10_QUESTIONS.length - 1) {
-      setQIndex((i) => i + 1);
-      setStepChecked(false);
+    if (qIndex < activeQuestions.length - 1) {
+      const nextIdx = qIndex + 1;
+      setQIndex(nextIdx);
+      const nextQ = activeQuestions[nextIdx];
+      setStepChecked(Boolean(stepAnswers[nextQ.id]));
     } else {
       setStepCompleted(true);
     }
+  };
+
+  const handleJumpToQuestion = (idx: number) => {
+    setQIndex(idx);
+    const targetQ = activeQuestions[idx];
+    setStepChecked(Boolean(stepAnswers[targetQ.id]));
   };
 
   const resetStepQuiz = () => {
@@ -351,10 +100,29 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
     setStepCompleted(false);
   };
 
+  // Sheet Mode Handlers
   const handleSheetSelect = (qId: number, key: 'A' | 'B' | 'C' | 'D') => {
     if (sheetSubmitted) return;
     setSheetAnswers((prev) => ({ ...prev, [qId]: key }));
   };
+
+  const resetSheetQuiz = () => {
+    setSheetAnswers({});
+    setSheetSubmitted(false);
+  };
+
+  // Scores
+  const stepScore = activeQuestions.filter(
+    (q) => stepAnswers[q.id] === q.correctKey
+  ).length;
+
+  const sheetScore = activeQuestions.filter(
+    (q) => sheetAnswers[q.id] === q.correctKey
+  ).length;
+
+  const sheetAnsweredCount = activeQuestions.filter(
+    (q) => sheetAnswers[q.id] !== undefined
+  ).length;
 
   const displayedCases =
     selectedCaseNum === null
@@ -410,15 +178,23 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
 
         {/* Paradigm Word Callout */}
         <div className="vi-paradigm-callout">
-          <span>🌟 <strong>Standard Paradigm Noun:</strong></span>
-          <span><strong>बालक (Bālaka - Boy)</strong> — Masculine noun ending in short "a" (-अकारान्त पुंलिङ्ग).</span>
+          <span>🌟 <strong>Standard Paradigm Nouns:</strong></span>
+          <span><strong>बालक (Bālaka - Boy)</strong> &amp; <strong>राम (Rāma)</strong> — Masculine short "a"-stem (-अकारान्त पुंलिङ्ग).</span>
           <button
             type="button"
             className="vi-audio-btn"
             onClick={() => playPronunciation('बालक')}
-            title="Listen to pronunciation"
+            title="Listen to pronunciation of बालक"
           >
             🔊 बालक
+          </button>
+          <button
+            type="button"
+            className="vi-audio-btn"
+            onClick={() => playPronunciation('राम')}
+            title="Listen to pronunciation of राम"
+          >
+            🔊 राम
           </button>
         </div>
 
@@ -429,7 +205,7 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
             className={`vi-tab-btn ${activeTab === 'interactive-view' ? 'active' : ''}`}
             onClick={() => setActiveTab('interactive-view')}
           >
-            🎯 Interactive View (10 Qs Master Test)
+            🎯 Interactive View (30 Qs Master Test)
           </button>
           <button
             type="button"
@@ -450,34 +226,50 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
             className={`vi-tab-btn ${activeTab === 'sentences' ? 'active' : ''}`}
             onClick={() => setActiveTab('sentences')}
           >
-            🔍 All Sentences & Breakdown
+            🔍 All Sentences &amp; Breakdown
           </button>
         </nav>
       </header>
 
       {/* =========================================================================
-          TAB: INTERACTIVE VIEW (10 QUESTIONS MASTER TEST)
+          TAB: INTERACTIVE VIEW (30 QUESTIONS MASTER TEST)
          ========================================================================= */}
       {activeTab === 'interactive-view' && (
         <section aria-label="Interactive View - Vibhakti Basics Master Test">
+          {/* Part Filter Selection */}
+          <div className="vi-part-filters" role="tablist" aria-label="Filter by Part">
+            {VIBHAKTI_PARTS.map((part) => (
+              <button
+                key={part.id}
+                type="button"
+                className={`vi-part-filter-btn ${selectedPartId === part.id ? 'active' : ''}`}
+                onClick={() => handleSelectPart(part.id)}
+              >
+                <span>{part.icon}</span>
+                <span>{part.shortTitle}</span>
+                <span className="vi-part-count-pill">{part.count} Qs</span>
+              </button>
+            ))}
+          </div>
+
           {/* Sub-mode switcher */}
           <div className="vi-sub-toggle-bar">
             <span style={{ fontWeight: 700, color: '#374151', fontSize: '0.92rem' }}>
-              View Mode:
+              Mode:
             </span>
             <button
               type="button"
               className={`vi-sub-toggle-btn ${interactiveMode === 'step' ? 'active' : ''}`}
               onClick={() => setInteractiveMode('step')}
             >
-              ⚡ Step-by-Step Practice (1 by 1)
+              ⚡ Step-by-Step (1 by 1)
             </button>
             <button
               type="button"
               className={`vi-sub-toggle-btn ${interactiveMode === 'sheet' ? 'active' : ''}`}
               onClick={() => setInteractiveMode('sheet')}
             >
-              📄 Full 10-Question Test Sheet
+              📄 Full Test Sheet ({activeQuestions.length} Qs)
             </button>
             <button
               type="button"
@@ -492,17 +284,36 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
           {/* Answer Key Dropdown / Drawer */}
           {showAnswerKey && (
             <div style={{ background: '#fffbeb', border: '1.5px solid #fde68a', borderRadius: '12px', padding: '1.25rem 1.5rem', marginBottom: '1.5rem', boxShadow: '0 4px 12px rgba(217, 119, 6, 0.08)' }}>
-              <h3 style={{ margin: '0 0 0.85rem', color: '#92400e', fontSize: '1.15rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span>🔑</span>
-                <span>Answer Key and Explanations (10 Questions)</span>
-              </h3>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '0.85rem' }}>
-                {VIBHAKTI_10_QUESTIONS.map((q) => (
-                  <div key={q.id} style={{ background: '#ffffff', borderRadius: '8px', padding: '0.75rem 1rem', border: '1px solid #fcd34d' }}>
-                    <div style={{ fontWeight: 800, color: '#047857', fontSize: '0.95rem', marginBottom: '0.25rem' }}>
-                      {q.id}. {q.correctLabel}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <h3 style={{ margin: 0, color: '#92400e', fontSize: '1.15rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <span>🔑</span>
+                  <span>Answer Key &amp; Explanations ({activeQuestions.length} Questions)</span>
+                </h3>
+                <span style={{ fontSize: '0.85rem', color: '#78350f', fontWeight: 600 }}>
+                  Showing {selectedPartId === 'all' ? 'All 30 Questions' : selectedPartId.toUpperCase()}
+                </span>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '0.85rem' }}>
+                {activeQuestions.map((q) => (
+                  <div key={q.id} style={{ background: '#ffffff', borderRadius: '8px', padding: '0.85rem 1rem', border: '1px solid #fcd34d' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
+                      <span style={{ fontWeight: 800, color: '#047857', fontSize: '0.95rem' }}>
+                        {q.id}. {q.correctLabel}
+                      </span>
+                      <button
+                        type="button"
+                        className="vi-audio-btn"
+                        onClick={() => playPronunciation(q.audioTerm)}
+                        title={`Listen to ${q.audioTerm}`}
+                        style={{ padding: '0.15rem 0.45rem', fontSize: '0.75rem' }}
+                      >
+                        🔊 {q.audioTerm}
+                      </button>
                     </div>
-                    <div style={{ fontSize: '0.85rem', color: '#4b5563', lineHeight: 1.45 }}>
+                    <div style={{ fontSize: '0.82rem', color: '#6b7280', marginBottom: '0.35rem' }}>
+                      Topic: <strong>{q.topic}</strong>
+                    </div>
+                    <div style={{ fontSize: '0.86rem', color: '#4b5563', lineHeight: 1.45 }}>
                       <strong>Explanation:</strong> {q.explanation}
                     </div>
                   </div>
@@ -513,41 +324,73 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
 
           {/* Sub-view A: Step-by-Step Practice */}
           {interactiveMode === 'step' && (
-            <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+            <div style={{ maxWidth: '840px', margin: '0 auto' }}>
               {!stepCompleted ? (
                 <div>
-                  {/* Progress Bar */}
+                  {/* Progress Bar & Header */}
                   <div className="vi-progress-wrapper">
                     <div className="vi-progress-header">
-                      <span>Question {qIndex + 1} of {VIBHAKTI_10_QUESTIONS.length}</span>
-                      <span>Score: <strong style={{ color: '#059669' }}>{stepScore}</strong> / {qIndex + (stepChecked ? 1 : 0)}</span>
+                      <span>
+                        Question <strong>{qIndex + 1}</strong> of <strong>{activeQuestions.length}</strong> (Q#{currentQ.id})
+                      </span>
+                      <span>
+                        Score: <strong style={{ color: '#059669' }}>{stepScore}</strong> / {activeQuestions.filter((q) => stepAnswers[q.id] !== undefined).length}
+                      </span>
                     </div>
                     <div className="vi-progress-track">
                       <div
                         className="vi-progress-fill"
-                        style={{ width: `${((qIndex + 1) / VIBHAKTI_10_QUESTIONS.length) * 100}%` }}
+                        style={{ width: `${((qIndex + 1) / activeQuestions.length) * 100}%` }}
                       />
                     </div>
+                  </div>
+
+                  {/* Jump Dots */}
+                  <div className="vi-jump-dots">
+                    {activeQuestions.map((q, idx) => {
+                      const userAns = stepAnswers[q.id];
+                      let dotClass = 'vi-jump-dot';
+                      if (idx === qIndex) dotClass += ' current';
+                      if (userAns) {
+                        dotClass += userAns === q.correctKey ? ' correct' : ' wrong';
+                      }
+                      return (
+                        <button
+                          key={q.id}
+                          type="button"
+                          className={dotClass}
+                          onClick={() => handleJumpToQuestion(idx)}
+                          title={`Go to Question ${q.id}: ${q.topic}`}
+                        >
+                          {q.id}
+                        </button>
+                      );
+                    })}
                   </div>
 
                   {/* Question Box */}
                   <div className="vi-q-box">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
-                      <span className="vi-q-badge">{currentQ.topic}</span>
+                      <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                        <span className="vi-q-badge" style={{ background: '#ecfdf5', color: '#047857' }}>
+                          Part {currentQ.part}
+                        </span>
+                        <span className="vi-q-badge">{currentQ.topic}</span>
+                      </div>
                       {currentQ.audioTerm && (
                         <button
                           type="button"
                           className="vi-audio-btn"
-                          onClick={() => playPronunciation(currentQ.audioTerm!)}
-                          title="Listen to pronunciation"
+                          onClick={() => playPronunciation(currentQ.audioTerm)}
+                          title={`Pronounce: ${currentQ.audioTerm}`}
                         >
-                          🔊 Listen: {currentQ.audioTerm}
+                          🔊 Listen: <strong>{currentQ.audioTerm}</strong>
                         </button>
                       )}
                     </div>
 
                     <h2 className="vi-q-title">
-                      {qIndex + 1}. {currentQ.question}
+                      {currentQ.id}. {currentQ.question}
                     </h2>
 
                     {/* 4 Options Grid */}
@@ -555,7 +398,8 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
                       {currentQ.options.map((opt) => {
                         let btnClass = 'vi-q-opt-btn';
                         const userChoice = stepAnswers[currentQ.id];
-                        if (stepChecked) {
+                        const isChecked = Boolean(userChoice);
+                        if (isChecked) {
                           if (opt.key === currentQ.correctKey) {
                             btnClass += ' correct';
                           } else if (opt.key === userChoice) {
@@ -568,7 +412,7 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
                             type="button"
                             className={btnClass}
                             onClick={() => handleStepSelect(opt.key)}
-                            disabled={stepChecked}
+                            disabled={Boolean(userChoice)}
                           >
                             <span className="vi-q-opt-key">{opt.key}</span>
                             <span>{opt.label}</span>
@@ -577,33 +421,45 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
                       })}
                     </div>
 
-                    {/* Feedback & Next Button */}
-                    {stepChecked && (
-                      <div>
-                        <div
-                          className={`vi-drill-feedback ${
-                            stepAnswers[currentQ.id] === currentQ.correctKey ? 'correct' : 'wrong'
-                          }`}
-                        >
-                          <div style={{ fontWeight: 800, marginBottom: '0.35rem', fontSize: '1.05rem' }}>
-                            {stepAnswers[currentQ.id] === currentQ.correctKey
-                              ? '🎉 Correct!'
-                              : `❌ Not quite! Correct Answer: ${currentQ.correctLabel}`}
-                          </div>
-                          <div>{currentQ.explanation}</div>
+                    {/* Feedback Box */}
+                    {stepAnswers[currentQ.id] && (
+                      <div
+                        className={`vi-drill-feedback ${
+                          stepAnswers[currentQ.id] === currentQ.correctKey ? 'correct' : 'wrong'
+                        }`}
+                      >
+                        <div style={{ fontWeight: 800, marginBottom: '0.35rem', fontSize: '1.05rem' }}>
+                          {stepAnswers[currentQ.id] === currentQ.correctKey
+                            ? '🎉 Correct!'
+                            : `❌ Not quite! Correct Answer: ${currentQ.correctLabel}`}
                         </div>
-
-                        <div style={{ textAlign: 'center', marginTop: '1.25rem' }}>
-                          <button
-                            type="button"
-                            className="vi-footer-btn quiz"
-                            onClick={handleStepNext}
-                          >
-                            {qIndex < VIBHAKTI_10_QUESTIONS.length - 1 ? 'Next Question ➡️' : 'See Final Score 🏆'}
-                          </button>
-                        </div>
+                        <div>{currentQ.explanation}</div>
                       </div>
                     )}
+
+                    {/* Step Navigation Row */}
+                    <div className="vi-step-nav-row">
+                      <button
+                        type="button"
+                        className="vi-step-nav-btn"
+                        onClick={handleStepPrev}
+                        disabled={qIndex === 0}
+                      >
+                        ← Previous
+                      </button>
+
+                      <span style={{ fontSize: '0.88rem', color: '#6b7280', fontWeight: 600 }}>
+                        Question {qIndex + 1} of {activeQuestions.length}
+                      </span>
+
+                      <button
+                        type="button"
+                        className="vi-step-nav-btn primary"
+                        onClick={handleStepNext}
+                      >
+                        {qIndex < activeQuestions.length - 1 ? 'Next Question ➡️' : 'See Final Score 🏆'}
+                      </button>
+                    </div>
                   </div>
                 </div>
               ) : (
@@ -614,11 +470,15 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
                     Master Test Completed!
                   </h2>
                   <p style={{ fontSize: '1.15rem', color: '#4b5563', marginBottom: '1.5rem' }}>
-                    You scored <strong>{stepScore}</strong> out of <strong>{VIBHAKTI_10_QUESTIONS.length}</strong> ({Math.round((stepScore / VIBHAKTI_10_QUESTIONS.length) * 100)}%)
+                    You scored <strong>{stepScore}</strong> out of <strong>{activeQuestions.length}</strong> ({Math.round((stepScore / activeQuestions.length) * 100)}%)
                   </p>
 
                   <div style={{ display: 'inline-block', background: '#ecfdf5', color: '#065f46', border: '1px solid #a7f3d0', padding: '0.5rem 1.25rem', borderRadius: '999px', fontWeight: 700, fontSize: '0.95rem', marginBottom: '1.75rem' }}>
-                    {stepScore >= 9 ? '🌟 Outstanding! You have mastered Sanskrit Vibhakti basics!' : stepScore >= 7 ? '👍 Great job! Review the trick table to secure 100%.' : '📚 Good practice! Review the 8 cases and try again.'}
+                    {stepScore === activeQuestions.length
+                      ? '🌟 Perfect 100%! Outstanding mastery of Sanskrit Vibhakti basics!'
+                      : stepScore >= Math.round(activeQuestions.length * 0.8)
+                      ? '👍 Great job! You have a solid grasp of Sanskrit noun endings.'
+                      : '📚 Good effort! Review the 8 cases and memory trick table to boost your accuracy.'}
                   </div>
 
                   <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -627,15 +487,24 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
                       className="vi-footer-btn back"
                       onClick={resetStepQuiz}
                     >
-                      🔄 Retake Interactive Test
+                      🔄 Retake This Set
                     </button>
+                    {selectedPartId !== 'all' && (
+                      <button
+                        type="button"
+                        className="vi-footer-btn worksheet"
+                        onClick={() => handleSelectPart('all')}
+                      >
+                        🌟 Try All 30 Questions ▶
+                      </button>
+                    )}
                     {onOpenWorksheets && (
                       <button
                         type="button"
                         className="vi-footer-btn worksheet"
                         onClick={onOpenWorksheets}
                       >
-                        📑 Open Vibhakti Worksheet (PDF) ▶
+                        📑 Open Vibhakti Worksheets (PDF) ▶
                       </button>
                     )}
                     {onOpenQuiz && (
@@ -653,37 +522,64 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
             </div>
           )}
 
-          {/* Sub-view B: Full 10-Question Test Sheet */}
+          {/* Sub-view B: Full Test Sheet */}
           {interactiveMode === 'sheet' && (
             <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                <span style={{ fontWeight: 700, color: '#4b5563', fontSize: '0.95rem' }}>
-                  Answer all 10 questions below, then click "Submit & Check Answers":
-                </span>
-                {sheetSubmitted && (
-                  <span style={{ fontWeight: 800, color: '#059669', fontSize: '1.1rem' }}>
-                    Total Score: {sheetScore} / {VIBHAKTI_10_QUESTIONS.length} ({Math.round((sheetScore / VIBHAKTI_10_QUESTIONS.length) * 100)}%)
+              {/* Sheet Header & Score Banner */}
+              {sheetSubmitted ? (
+                <div className="vi-sheet-score-banner">
+                  <div>
+                    <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#065f46' }}>
+                      🏁 Test Result: {sheetScore} / {activeQuestions.length} ({Math.round((sheetScore / activeQuestions.length) * 100)}%)
+                    </div>
+                    <div style={{ fontSize: '0.92rem', color: '#047857', marginTop: '0.25rem' }}>
+                      {sheetScore === activeQuestions.length
+                        ? '🌟 Perfect score! You have mastered these case endings!'
+                        : sheetScore >= Math.round(activeQuestions.length * 0.75)
+                        ? '👏 Excellent work! Review any highlighted incorrect questions below.'
+                        : '📖 Keep practicing! Review the explanations below to master the endings.'}
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    className="vi-step-nav-btn primary"
+                    onClick={resetSheetQuiz}
+                  >
+                    🔄 Retake Sheet
+                  </button>
+                </div>
+              ) : (
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span style={{ fontWeight: 700, color: '#4b5563', fontSize: '0.95rem' }}>
+                    Select an answer for each question below, then click "Submit &amp; Check Answers":
                   </span>
-                )}
-              </div>
+                  <span style={{ fontWeight: 700, color: '#059669', fontSize: '0.9rem' }}>
+                    Answered: {sheetAnsweredCount} / {activeQuestions.length}
+                  </span>
+                </div>
+              )}
 
+              {/* Sheet Questions Cards */}
               <div className="vi-sheet-questions-list">
-                {VIBHAKTI_10_QUESTIONS.map((q) => {
+                {activeQuestions.map((q) => {
                   const userChoice = sheetAnswers[q.id];
                   const isCorrect = userChoice === q.correctKey;
                   return (
                     <div key={q.id} className="vi-sheet-q-card">
                       <div className="vi-sheet-q-header">
                         <span className="vi-sheet-q-num">{q.id}</span>
+                        <span className="vi-q-badge" style={{ background: '#f3f4f6', color: '#374151' }}>
+                          Part {q.part}
+                        </span>
                         <span className="vi-q-badge">{q.topic}</span>
                         {q.audioTerm && (
                           <button
                             type="button"
                             className="vi-audio-btn"
-                            onClick={() => playPronunciation(q.audioTerm!)}
-                            title="Listen"
+                            onClick={() => playPronunciation(q.audioTerm)}
+                            title={`Listen to ${q.audioTerm}`}
                           >
-                            🔊
+                            🔊 {q.audioTerm}
                           </button>
                         )}
                       </div>
@@ -741,19 +637,16 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
                     style={{ fontSize: '1.05rem', padding: '0.75rem 2rem' }}
                     onClick={() => setSheetSubmitted(true)}
                   >
-                    ✅ Submit & Check Answers
+                    ✅ Submit &amp; Check Answers ({sheetAnsweredCount} / {activeQuestions.length} answered)
                   </button>
                 ) : (
                   <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                     <button
                       type="button"
                       className="vi-footer-btn back"
-                      onClick={() => {
-                        setSheetAnswers({});
-                        setSheetSubmitted(false);
-                      }}
+                      onClick={resetSheetQuiz}
                     >
-                      🔄 Reset Sheet
+                      🔄 Retake Sheet
                     </button>
                     {onOpenWorksheets && (
                       <button
@@ -761,7 +654,7 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
                         className="vi-footer-btn worksheet"
                         onClick={onOpenWorksheets}
                       >
-                        📑 Print Official PDF Worksheet ▶
+                        📑 Print Official PDF Worksheets ▶
                       </button>
                     )}
                   </div>
@@ -772,7 +665,7 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
         </section>
       )}
 
-      {/* =========================================================================
+{/* =========================================================================
           TAB: THE 8 CASES DETAILED VIEW
          ========================================================================= */}
       {activeTab === 'cases' && (

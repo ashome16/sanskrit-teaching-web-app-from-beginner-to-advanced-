@@ -6245,151 +6245,602 @@ export const WORKSHEETS: Worksheet[] = [
   },
 
 
+  // =======================================
   // ==========================================
-  // GRAMMAR WORKSHEET 7: संस्कृत-विभक्ति-मूलम् (VIBHAKTI BASICS: CASES 1 TO 8)
+  // GRAMMAR WORKSHEET 7: विभक्ति-मूलम् (PART 1: FOUNDATIONAL CASES · 10 QS)
   // ==========================================
   {
-    id: 'ws-gram-vibhakti-basics',
-    title: 'Grammar Worksheet 7: संस्कृत-विभक्ति-मूलम् (Vibhakti Basics: Cases 1 to 8)',
-    titleSanskrit: 'संस्कृत-व्याकरण-कार्यपत्रिका ७ · विभक्ति-परिचयः (प्रथमा तः सम्बोधनम्)',
-    category: 'grammar',
-    categoryLabel: 'Vyākaraṇa / Grammar',
-    grade: 'Beginner to CBSE Class 7',
-    totalMarks: 25,
-    timeLimit: '40 Minutes',
-    description: 'Master all 8 noun cases (विभक्तयः) from Prathama to Sambodhana, with Kāraka roles, case markers, translations, and comprehensive review.',
-    sections: [
+    "id": "ws-gram-vibhakti-1",
+    "title": "Grammar Worksheet 7: विभक्ति-मूलम् (Part 1: Foundational Cases · बालक & राम)",
+    "titleSanskrit": "संस्कृत-व्याकरण-कार्यपत्रिका ७ · विभक्ति-मूलम् (प्रथमातः सम्बोधनपर्यन्तम्)",
+    "category": "grammar",
+    "categoryLabel": "Vyākaraṇa / Grammar",
+    "grade": "Beginner to CBSE Class 7",
+    "totalMarks": 30,
+    "timeLimit": "25 Minutes",
+    "description": "Master foundational Sanskrit noun endings (Cases 1 to 8) for standard masculine 'a'-stem nouns बालक and राम.",
+    "sections": [
       {
-        sectionTitle: 'Section A: प्रथमा, द्वितीया, तृतीया (Cases 1 to 3)',
-        sectionTitleSanskrit: 'खण्डः "क" · प्रथमा, द्वितीया, तृतीया विभक्तयः',
-        instructions: 'Choose the correct answer or complete the question based on Cases 1 to 3:',
-        totalMarks: 6,
-        questions: [
+        "sectionTitle": "Section A: प्रथमा, द्वितीया, तृतीया विभक्तयः (Cases 1 to 3)",
+        "sectionTitleSanskrit": "खण्डः \"क\" · प्रथमा, द्वितीया, तृतीया विभक्तयः",
+        "instructions": "Choose the correct form representing Nominative, Accusative, and Instrumental cases:",
+        "totalMarks": 9,
+        "questions": [
           {
-            num: 1,
-            question: 'In the simple Sanskrit sentence "बालकः पठति" (The boy reads), which word is in the प्रथमा विभक्ति (Nominative Case) representing the कर्ता (Subject)?',
-            questionSanskrit: '"बालकः पठति" वाक्ये कः शब्दः प्रथमा-विभक्तौ अस्ति?',
-            marks: 2,
-            type: 'mcq',
-            options: ['(A) बालकः (Balakah)', '(B) पठति (Pathati)', '(C) बालं (Balam)', '(D) बाले (Bale)'],
-            answer: '(A) बालकः (Balakah)',
-            explanation: "'बालकः' is the कर्ता (Subject) of the sentence performing the action of reading, requiring the प्रथमा विभक्ति singular form ending in विसर्गः (-ः).",
+            "num": 1,
+            "question": "Which of the following forms represents the masculine singular Prathama Vibhakti (Nominative Case) for the noun 'बालक' (boy)?",
+            "questionSanskrit": "बालक-शब्दस्य प्रथमा-विभक्तौ एकवचने किं रूपम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) बालकम् [Dvitiya Vibhakti / Accusative]",
+              "(B) बालकः [Prathama Vibhakti / Nominative Case]",
+              "(C) बालकेण [Tritiya Vibhakti / Instrumental]",
+              "(D) बालकाय [Chaturthi Vibhakti / Dative]"
+            ],
+            "answer": "(B) बालकः [Prathama Vibhakti / Nominative Case]",
+            "explanation": "Correct! 'बालकः' represents the nominative subject form in the singular."
           },
           {
-            num: 2,
-            question: "Which singular form of the masculine noun 'राम' (Rama) represents the द्वितीया विभक्ति (Accusative Case), indicating the कर्मन् (Direct Object)?",
-            questionSanskrit: "'राम' शब्दस्य द्वितीया-विभक्तौ कर्म-रूपं किम्?",
-            marks: 2,
-            type: 'mcq',
-            options: ['(A) रामस्य (Ramasya)', '(B) रामाय (Ramaya)', '(C) रामम् (Ramam)', '(D) रामः (Ramah)'],
-            answer: '(C) रामम् (Ramam)',
-            explanation: "'रामम्' is the singular object form (द्वितीया विभक्ति) indicating the target of an action, typically ending in -म् (-am).",
+            "num": 2,
+            "question": "Which singular form of the noun 'राम' (Rama) indicates the object receiving the action (Dvitiya Vibhakti / Accusative Case)?",
+            "questionSanskrit": "राम-शब्दस्य द्वितीया-विभक्तौ कर्म-कारक-रूपं किम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) रामः [Prathama Vibhakti / Nominative]",
+              "(B) रामेण [Tritiya Vibhakti / Instrumental]",
+              "(C) रामम् [Dvitiya Vibhakti / Accusative Case]",
+              "(D) रामाय [Chaturthi Vibhakti / Dative]"
+            ],
+            "answer": "(C) रामम् [Dvitiya Vibhakti / Accusative Case]",
+            "explanation": "Correct! 'रामम्' is the singular object form (Dvitiya Vibhakti)."
           },
           {
-            num: 3,
-            question: 'What is the meaning or function of the तृतीया विभक्ति (Instrumental Case) singular form "रामेण" (Ramena), denoting करणम् (Instrument or Means)?',
-            questionSanskrit: '"रामेण" इति तृतीया-विभक्ति-पदस्य कः अर्थः?',
-            marks: 2,
-            type: 'mcq',
-            options: ['(A) रामात् (From Rama)', '(B) रामेण (By Rama / With Rama)', '(C) रामस्य (Of Rama)', '(D) रामाय (For Rama)'],
-            answer: '(B) रामेण (By Rama / With Rama)',
-            explanation: "The instrumental case (तृतीया विभक्ति) denotes the instrument or companion by/with whom an action is performed (-एण / -ena).",
-          },
-        ],
+            "num": 3,
+            "question": "If you want to say an action is done \"by Rama\" or \"with Rama\" using the Tritiya Vibhakti (Instrumental Case), which singular form should you choose?",
+            "questionSanskrit": "\"रामेण\" इति तृतीया-विभक्ति-पदस्य कः अर्थः?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) रामेण [Tritiya Vibhakti / Instrumental Case]",
+              "(B) रामात् [Panchami Vibhakti / Ablative]",
+              "(C) रामस्य [Shashti Vibhakti / Genitive]",
+              "(D) रामे [Saptami Vibhakti / Locative]"
+            ],
+            "answer": "(A) रामेण [Tritiya Vibhakti / Instrumental Case]",
+            "explanation": "Correct! 'रामेण' is the correct instrumental singular form showing agency or accompaniment."
+          }
+        ]
       },
       {
-        sectionTitle: 'Section B: चतुर्थी, पञ्चमी, षष्ठी (Cases 4 to 6)',
-        sectionTitleSanskrit: 'खण्डः "ख" · चतुर्थी, पञ्चमी, षष्ठी विभक्तयः',
-        instructions: 'Choose the correct case form for Dative, Ablative, and Genitive meanings:',
-        totalMarks: 6,
-        questions: [
+        "sectionTitle": "Section B: चतुर्थी, पञ्चमी, षष्ठी विभक्तयः (Cases 4 to 6)",
+        "sectionTitleSanskrit": "खण्डः \"ख\" · चतुर्थी, पञ्चमी, षष्ठी विभक्तयः",
+        "instructions": "Select the correct case form for Dative, Ablative, and Genitive roles:",
+        "totalMarks": 9,
+        "questions": [
           {
-            num: 4,
-            question: "If you want to say 'giving a fruit for the boy' in Sanskrit, which चतुर्थी विभक्ति (Dative Case) singular form represents सम्प्रदानम् (Recipient)?",
-            questionSanskrit: "'बालक' शब्दस्य चतुर्थी-विभक्तौ सम्प्रदान-रूपं किम्?",
-            marks: 2,
-            type: 'mcq',
-            options: ['(A) बालकात् (Balakat)', '(B) बालके (Balake)', '(C) बालकस्य (Balakasya)', '(D) बालकाय (Balakaya)'],
-            answer: '(D) बालकाय (Balakaya)',
-            explanation: "'बालकाय' is the dative case form (चतुर्थी विभक्ति) used for the सम्प्रदानम् (Recipient: to/for), ending in -ाय (-aya).",
+            "num": 4,
+            "question": "Which singular form represents the Chaturthi Vibhakti (Dative Case) used for the recipient or purpose of giving, using the noun 'बालक' (boy)?",
+            "questionSanskrit": "\"बालक\" शब्दस्य चतुर्थी-विभक्तौ सम्प्रदान-रूपं किम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) बालकस्य [Shashti Vibhakti / Genitive]",
+              "(B) बालकात [Panchami Vibhakti / Ablative]",
+              "(C) बालके [Saptami Vibhakti / Locative]",
+              "(D) बालकाय [Chaturthi Vibhakti / Dative Case]"
+            ],
+            "answer": "(D) बालकाय [Chaturthi Vibhakti / Dative Case]",
+            "explanation": "Correct! 'बालकाय' is the dative case form indicating a recipient or purpose."
           },
           {
-            num: 5,
-            question: "Which form of 'राम' (Rama) represents the पञ्चमी विभक्ति (Ablative Case), indicating अपादानम् (Separation or Origin) ('from Rama')?",
-            questionSanskrit: "'राम' शब्दस्य पञ्चमी-विभक्तौ अपादान-रूपं किम्?",
-            marks: 2,
-            type: 'mcq',
-            options: ['(A) रामात् (Ramat)', '(B) रामे (Rame)', '(C) रामस्य (Ramasya)', '(D) रामाय (Ramaya)'],
-            answer: '(A) रामात् (Ramat)',
-            explanation: "'रामात्' ends with तकारः (-त्), signifying अपादानम् (Separation / moving away from a source).",
+            "num": 5,
+            "question": "Which form of 'राम' (Rama) denotes separation or origin (meaning \"from Rama\") corresponding to the Panchami Vibhakti (Ablative Case)?",
+            "questionSanskrit": "\"राम\" शब्दस्य पञ्चमी-विभक्तौ अपादान-रूपं किम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) रामात् [Panchami Vibhakti / Ablative Case]",
+              "(B) रामे [Saptami Vibhakti / Locative]",
+              "(C) रामस्य [Shashti Vibhakti / Genitive]",
+              "(D) रामाय [Chaturthi Vibhakti / Dative]"
+            ],
+            "answer": "(A) रामात् [Panchami Vibhakti / Ablative Case]",
+            "explanation": "Correct! 'रामात्' represents the ablative singular case signifying separation or source."
           },
           {
-            num: 6,
-            question: 'What does the षष्ठी विभक्ति (Genitive Case) singular form "बालकस्य" (Balakasya) mean, representing सम्बन्धः (Possession)?',
-            questionSanskrit: '"बालकस्य" इति षष्ठी-विभक्ति-पदस्य कः अर्थः?',
-            marks: 2,
-            type: 'mcq',
-            options: ['(A) हे बालक! (O boy!)', '(B) बालकाय (To/For the boy)', "(C) बालकस्य (Of the boy / Boy's)", '(D) बालके (In the boy)'],
-            answer: "(C) बालकस्य (Of the boy / Boy's)",
-            explanation: "The genitive case (षष्ठी विभक्ति) indicates सम्बन्धः (Possession or connection: 'of' or 's), ending in -स्य (-asya).",
-          },
-        ],
+            "num": 6,
+            "question": "To indicate possession or relationship, such as \"of Rama\" or \"Rama's\", which Shashti Vibhakti (Genitive Case) singular form is correct?",
+            "questionSanskrit": "\"राम\" शब्दस्य षष्ठी-विभक्तौ सम्बन्ध-रूपं किम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) रामम् [Dvitiya Vibhakti / Accusative]",
+              "(B) रामस्य [Shashti Vibhakti / Genitive Case]",
+              "(C) रामेण [Tritiya Vibhakti / Instrumental]",
+              "(D) रामात् [Panchami Vibhakti / Ablative]"
+            ],
+            "answer": "(B) रामस्य [Shashti Vibhakti / Genitive Case]",
+            "explanation": "Correct! 'रामस्य' indicates possession or association (\"of Rama\")."
+          }
+        ]
       },
       {
-        sectionTitle: 'Section C: सप्तमी, सम्बोधनम् (Cases 7 & 8)',
-        sectionTitleSanskrit: 'खण्डः "ग" · सप्तमी, सम्बोधन-विभक्तयः',
-        instructions: 'Identify the locative and vocative forms:',
-        totalMarks: 5,
-        questions: [
+        "sectionTitle": "Section C: सप्तमी, सम्बोधनम् (Cases 7 & 8)",
+        "sectionTitleSanskrit": "खण्डः \"ग\" · सप्तमी, सम्बोधन-विभक्तयः",
+        "instructions": "Identify the locative and vocative forms:",
+        "totalMarks": 6,
+        "questions": [
           {
-            num: 7,
-            question: "Where an action takes place in, on, or at uses सप्तमी विभक्ति (Locative Case) for अधिकरणम् (Location). What is the singular form for 'राम'?",
-            questionSanskrit: "'राम' शब्दस्य सप्तमी-विभक्तौ अधिकरण-रूपं किम्?",
-            marks: 2,
-            type: 'mcq',
-            options: ['(A) रामम् (Ramam)', '(B) रामे (Rame)', '(C) रामस्य (Ramasya)', '(D) रामात् (Ramat)'],
-            answer: '(B) रामे (Rame)',
-            explanation: "'रामे' is the locative singular form indicating the अधिकरणम् (Location: 'in or on Rama'), ending in -ए (-e).",
+            "num": 7,
+            "question": "Which singular word form represents the Saptami Vibhakti (Locative Case) meaning \"in/on the boy\" for 'बालक'?",
+            "questionSanskrit": "\"बालक\" शब्दस्य सप्तमी-विभक्तौ अधिकरण-रूपं किम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) बालके [Saptami Vibhakti / Locative Case]",
+              "(B) बालकाय [Chaturthi Vibhakti / Dative]",
+              "(C) बालकः [Prathama Vibhakti / Nominative]",
+              "(D) बालकम् [Dvitiya Vibhakti / Accusative]"
+            ],
+            "answer": "(A) बालके [Saptami Vibhakti / Locative Case]",
+            "explanation": "Correct! 'बालके' is the locative singular form designating place or time."
           },
           {
-            num: 8,
-            question: 'Which of the following best describes the purpose of the सम्बोधन विभक्ति (Vocative Case) used for आह्वानम् (Calling or Addressing)?',
-            questionSanskrit: 'आह्वानार्थे कस्य रूपस्य प्रयोगः भवति?',
-            marks: 3,
-            type: 'mcq',
-            options: ['(A) बालकम् (Direct Object)', '(B) बालकस्य (Possession)', '(C) बालके (Location)', '(D) हे बालक! (Calling / Addressing directly)'],
-            answer: '(D) हे बालक! (Calling / Addressing directly)',
-            explanation: "सम्बोधन विभक्ति (Vocative) is used to address or call out directly, often preceded by an interjection like 'हे' (He).",
-          },
-        ],
+            "num": 8,
+            "question": "Which of the following forms is used in Sambodhana (Vocative Case) to directly address or call out to Rama?",
+            "questionSanskrit": "आह्वानार्थे सम्बोधन-विभक्तौ किं रूपं प्रयुज्यते?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) रामस्य [Shashti Vibhakti / Genitive]",
+              "(B) रामेण [Tritiya Vibhakti / Instrumental]",
+              "(C) हे राम [Sambodhana / Vocative Case]",
+              "(D) रामात् [Panchami Vibhakti / Ablative]"
+            ],
+            "answer": "(C) हे राम [Sambodhana / Vocative Case]",
+            "explanation": "Correct! 'हे राम' represents direct address (Sambodhana)."
+          }
+        ]
       },
       {
-        sectionTitle: 'Section D: सर्व-विभक्ति-समीक्षा (Comprehensive Review & Identification)',
-        sectionTitleSanskrit: 'खण्डः "घ" · सर्व-विभक्ति-समीक्षा',
-        instructions: 'Determine the grammatical case and answer in complete precision:',
-        totalMarks: 8,
-        questions: [
+        "sectionTitle": "Section D: विभक्ति-प्रत्यय-समीक्षा (Suffix & Companionship Identification)",
+        "sectionTitleSanskrit": "खण्डः \"घ\" · विभक्ति-प्रत्यय-समीक्षा",
+        "instructions": "Determine the grammatical case and functional usage in context:",
+        "totalMarks": 6,
+        "questions": [
           {
-            num: 9,
-            question: 'In the word "बालकात्" (Balakat), which case suffix indicates movement or physical separation "from"?',
-            questionSanskrit: '"बालकात्" पदे का विभक्तिः कश्च भावः?',
-            marks: 4,
-            type: 'short_ans',
-            answer: 'पञ्चमी विभक्तिः (Ablative Case) — अपादानकारकम् (Separation from the boy)',
-            explanation: "'बालकात्' belongs to पञ्चमी विभक्ति (Ablative), denoting the origin or source of physical departure using suffix -आत्.",
+            "num": 9,
+            "question": "In the phrase 'रामेण सह' (with Rama), what is the specific case and grammatical name of the word 'रामेण'?",
+            "questionSanskrit": "\"रामेण सह\" इति प्रयोगे \"रामेण\" पदे का विभक्तिः?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) Prathama Vibhakti [Nominative Case]",
+              "(B) Chaturthi Vibhakti [Dative Case]",
+              "(C) Panchami Vibhakti [Ablative Case]",
+              "(D) Tritiya Vibhakti [Instrumental Case]"
+            ],
+            "answer": "(D) Tritiya Vibhakti [Instrumental Case]",
+            "explanation": "Correct! 'रामेण' is in the Tritiya Vibhakti (Instrumental Case) used here to express companionship with 'सह'."
           },
           {
-            num: 10,
-            question: 'Match the contextual meaning "in or on Rama" with its correct सप्तमी विभक्ति (Locative Case) singular form:',
-            questionSanskrit: '"In or on Rama" इत्यर्थे किं शुद्धं सप्तमी-रूपम्?',
-            marks: 4,
-            type: 'short_ans',
-            answer: 'रामे (Rame) — सप्तमी विभक्तिः एकवचनम् (अधिकरणकारकम्)',
-            explanation: "'रामे' is the correct locative form representing location or base (अधिकरणम्), ending with the singular -ए vowel sound.",
+            "num": 10,
+            "question": "Which vibhakti and case combination is represented by 'बालकात्' (Balakat)?",
+            "questionSanskrit": "\"बालकात्\" पदे का विभक्तिः कश्च भावः?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) Panchami Vibhakti [Ablative Case]",
+              "(B) Saptami Vibhakti [Locative Case]",
+              "(C) Shashti Vibhakti [Genitive Case]",
+              "(D) Tritiya Vibhakti [Instrumental Case]"
+            ],
+            "answer": "(A) Panchami Vibhakti [Ablative Case]",
+            "explanation": "Correct! 'बालकात्' is the singular form for the Panchami Vibhakti (Ablative Case)."
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRAMMAR WORKSHEET 8: विभक्ति-प्रयोगः (PART 2: SENTENCES & KĀRAKA ROLES · 10 QS)
+  // ==========================================
+  {
+    "id": "ws-gram-vibhakti-2",
+    "title": "Grammar Worksheet 8: विभक्ति-प्रयोगः (Part 2: Sentences & Kāraka Roles)",
+    "titleSanskrit": "संस्कृत-व्याकरण-कार्यपत्रिका ८ · वाक्येषु विभक्ति-कारक-प्रयोगः",
+    "category": "grammar",
+    "categoryLabel": "Vyākaraṇa / Grammar",
+    "grade": "Intermediate · CBSE Class 7-8",
+    "totalMarks": 30,
+    "timeLimit": "25 Minutes",
+    "description": "Analyze sentence roles, identifying Kāraka relations (Subject, Object, Instrument, Recipient, Origin, Location, and Address) in simple Sanskrit sentences.",
+    "sections": [
+      {
+        "sectionTitle": "Section A: कर्ता, कर्म, करण-कारकाणि (Cases 1 to 3 in Sentences)",
+        "sectionTitleSanskrit": "खण्डः \"क\" · कर्ता, कर्म, करण-कारकाणि",
+        "instructions": "Identify the Subject, Object, or Instrument word in given sentences:",
+        "totalMarks": 9,
+        "questions": [
+          {
+            "num": 1,
+            "question": "In the sentence \"रामः गच्छति\" (Ramah gacchati - Rama goes), which word represents the Karta (the doer or subject performing the action) in Prathama Vibhakti?",
+            "questionSanskrit": "\"रामः गच्छति\" वाक्ये कः शब्दः कर्ता (प्रथमा विभक्तिः) अस्ति?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) गच्छति",
+              "(B) रामः",
+              "(C) रामम्",
+              "(D) रामेण"
+            ],
+            "answer": "(B) रामः",
+            "explanation": "Correct! 'रामः' is the subject (Karta) performing the action of going, taking the nominative singular case."
           },
-        ],
+          {
+            "num": 2,
+            "question": "Which singular form of the masculine a-ending noun 'बालक' (boy) represents the Karman (direct object receiving the action) in Dvitiya Vibhakti?",
+            "questionSanskrit": "अकारान्त-पुंलिङ्ग-\"बालक\"-शब्दस्य द्वितीया-विभक्तौ कर्मपदं किम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) बालकः",
+              "(B) बालकेन",
+              "(C) बालकम्",
+              "(D) बालकाय"
+            ],
+            "answer": "(C) बालकम्",
+            "explanation": "Correct! 'बालकम्' is the singular object form (Dvitiya Vibhakti) indicating the target of an action."
+          },
+          {
+            "num": 3,
+            "question": "To express the instrument or means by which an action is done (Karanam) using the masculine noun 'राम', which singular form of the Tritiya Vibhakti should be used?",
+            "questionSanskrit": "\"रामेण कृतम्\" - करणे का विभक्तिः प्रयुक्ता?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) रामात्",
+              "(B) रामेण",
+              "(C) रामस्य",
+              "(D) रामे"
+            ],
+            "answer": "(B) रामेण",
+            "explanation": "Correct! 'रामेण' is the correct instrumental singular form showing agency or means, ending with '-ena' (-एण)."
+          }
+        ]
       },
-    ],
+      {
+        "sectionTitle": "Section B: सम्प्रदान, अपादान, सम्बन्ध-रूपाणि (Cases 4 to 6 in Context)",
+        "sectionTitleSanskrit": "खण्डः \"ख\" · सम्प्रदान, अपादान, सम्बन्ध-रूपाणि",
+        "instructions": "Identify the Dative, Ablative, and Genitive roles in sentences:",
+        "totalMarks": 9,
+        "questions": [
+          {
+            "num": 4,
+            "question": "Which Chaturthi Vibhakti singular form of the masculine noun 'राम' indicates the recipient or purpose of giving (Sampradana), meaning \"for Rama\" or \"to Rama\"?",
+            "questionSanskrit": "\"रामाय नमः / रामाय देहि\" - चतुर्थी-विभक्तौ किं रूपम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) रामात्",
+              "(B) रामस्य",
+              "(C) रामाय",
+              "(D) रामे"
+            ],
+            "answer": "(C) रामाय",
+            "explanation": "Correct! 'रामाय' is the dative case form (Chaturthi Vibhakti) used for recipients, ending in '-aya'."
+          },
+          {
+            "num": 5,
+            "question": "When describing separation or movement away from a source (Apadana) using the noun 'राम', which Panchami Vibhakti singular form indicates \"from Rama\"?",
+            "questionSanskrit": "अपादाने (पृथग्भावे) \"राम\" शब्दस्य किं रूपम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) रामात्",
+              "(B) रामे",
+              "(C) रामस्य",
+              "(D) रामाय"
+            ],
+            "answer": "(A) रामात्",
+            "explanation": "Correct! 'रामात्' ends with a crisp '-त्' sound, signifying the ablative case denoting origin or separation (\"from\")."
+          },
+          {
+            "num": 6,
+            "question": "What does the Shashti Vibhakti (Genitive Case) singular form 'बालकस्य' (Balakasya) signify in a sentence?",
+            "questionSanskrit": "\"बालकस्य\" इति षष्ठी-विभक्तौ कः अर्थः?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) Direct address to the boy",
+              "(B) Possession or relationship (of the boy / boy's)",
+              "(C) Location where the boy is",
+              "(D) The recipient given to the boy"
+            ],
+            "answer": "(B) Possession or relationship (of the boy / boy's)",
+            "explanation": "Correct! The genitive case ('बालकस्य') indicates ownership, association, or a relationship like \"of\" or \"'s\"."
+          }
+        ]
+      },
+      {
+        "sectionTitle": "Section C: अधिकरण, सम्बोधन-रूपाणि (Cases 7 & 8 in Sentences)",
+        "sectionTitleSanskrit": "खण्डः \"ग\" · अधिकरण, सम्बोधन-रूपाणि",
+        "instructions": "Identify location and direct address forms:",
+        "totalMarks": 6,
+        "questions": [
+          {
+            "num": 7,
+            "question": "Where an action takes place (in, on, or at) uses the Saptami Vibhakti (Adhikarana). What is the singular Saptami form for the masculine noun 'राम' (Rama)?",
+            "questionSanskrit": "अधिकरणे (आधारे) \"राम\" शब्दस्य सप्तमी-रूपं किम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) रामे",
+              "(B) रामम्",
+              "(C) रामस्य",
+              "(D) रामात्"
+            ],
+            "answer": "(A) रामे",
+            "explanation": "Correct! 'रामे' is the locative singular form indicating location (\"in or on Rama\")."
+          },
+          {
+            "num": 8,
+            "question": "Which of the following forms represents the Sambodhana (Vocative Case) singular for 'राम', used to call or address him directly?",
+            "questionSanskrit": "सम्बोधने (आह्वाने) \"राम\" शब्दस्य किं रूपम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) रामाय",
+              "(B) रामस्य",
+              "(C) हे राम",
+              "(D) रामेण"
+            ],
+            "answer": "(C) हे राम",
+            "explanation": "Correct! 'हे राम' represents direct address (Sambodhana), which is used to call out to someone."
+          }
+        ]
+      },
+      {
+        "sectionTitle": "Section D: वाक्य-विश्लेषणम् (Sentence Role Pairs & Companionship)",
+        "sectionTitleSanskrit": "खण्डः \"घ\" · वाक्य-विश्लेषणम्",
+        "instructions": "Analyze dual case roles and companionship expressions:",
+        "totalMarks": 6,
+        "questions": [
+          {
+            "num": 9,
+            "question": "In the sentence \"बालकः पुस्तकं पठति\" (The boy reads a book), what are the respective grammatical roles and cases of 'बालकः' (Balakah) and 'पुस्तकं' (pustakam)?",
+            "questionSanskrit": "\"बालकः पुस्तकं पठति\" वाक्ये कारक-युग्मं किम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) बालकः is Karman (Dvitiya) and पुस्तकं is Karta (Prathama)",
+              "(B) बालकः is Karta in Prathama and पुस्तकं is Karman in Dvitiya",
+              "(C) Both words are in the Saptami Vibhakti",
+              "(D) Both words are in the Panchami Vibhakti"
+            ],
+            "answer": "(B) बालकः is Karta in Prathama and पुस्तकं is Karman in Dvitiya",
+            "explanation": "Correct! 'बालकः' is the subject doer (Karta / Prathama) and 'पुस्तकं' is the object (Karman / Dvitiya)."
+          },
+          {
+            "num": 10,
+            "question": "If you want to say \"with the boy\" (expressing companionship/instrumentation using Tritiya Vibhakti) for the masculine noun 'बालक', which form is correct?",
+            "questionSanskrit": "\"सह बालक...\" - सहावबोधक-तृतीयायां किं रूपम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) बालकस्य",
+              "(B) बालकेन",
+              "(C) बालकाय",
+              "(D) बालके"
+            ],
+            "answer": "(B) बालकेन",
+            "explanation": "Correct! 'बालकेन' is the correct instrumental singular form (Tritiya Vibhakti) meaning \"by or with the boy\"."
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRAMMAR WORKSHEET 9: विभक्ति-विस्तारः (PART 3: APPLIED NOUNS - गज, वृक्ष, शिष्य · 10 QS)
+  // ==========================================
+  {
+    "id": "ws-gram-vibhakti-3",
+    "title": "Grammar Worksheet 9: विभक्ति-विस्तारः (Part 3: Applied Nouns - गज, वृक्ष, शिष्य)",
+    "titleSanskrit": "संस्कृत-व्याकरण-कार्यपत्रिका ९ · व्यावहारिक-शब्दाः (गज, वृक्ष, शिष्य)",
+    "category": "grammar",
+    "categoryLabel": "Vyākaraṇa / Grammar",
+    "grade": "Intermediate · CBSE Class 7-8",
+    "totalMarks": 30,
+    "timeLimit": "25 Minutes",
+    "description": "Apply Sanskrit Vibhakti endings to diverse masculine 'a'-stem vocabulary words: गज (elephant), वृक्ष (tree), and शिष्य (student).",
+    "sections": [
+      {
+        "sectionTitle": "Section A: गज, वृक्ष-शब्दयोः कर्ता कर्म च (Subject & Object Forms)",
+        "sectionTitleSanskrit": "खण्डः \"क\" · गज, वृक्ष-शब्दयोः कर्ता कर्म च",
+        "instructions": "Identify Prathama and Dvitiya forms for गज and वृक्ष:",
+        "totalMarks": 6,
+        "questions": [
+          {
+            "num": 1,
+            "question": "In the simple sentence \"गजः चलति\" (The elephant walks), which form acts as the subject (Karta) performing the action?",
+            "questionSanskrit": "\"गजः चलति\" वाक्ये कर्ता कः?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) गजम् [द्वितीया विभक्ति / Accusative Case]",
+              "(B) गजः [प्रथमा विभक्ति / Nominative Case]",
+              "(C) गजेण [तृतीया विभक्ति / Instrumental Case]",
+              "(D) गजाय [चतुर्थी विभक्ति / Dative Case]"
+            ],
+            "answer": "(B) गजः [प्रथमा विभक्ति / Nominative Case]",
+            "explanation": "Correct! 'गजः' is the nominative singular subject doing the action of walking."
+          },
+          {
+            "num": 2,
+            "question": "In the sentence \"बालकः वृक्षम् पश्यति\" (The boy sees the tree), which word represents the direct object receiving the action of seeing?",
+            "questionSanskrit": "\"बालकः वृक्षम् पश्यति\" वाक्ये कर्म किं पदम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) वृक्षः [प्रथमा विभक्ति / Nominative Case]",
+              "(B) वृक्षे [सप्तमी विभक्ति / Locative Case]",
+              "(C) वृक्षम् [द्वितीया विभक्ति / Accusative Case]",
+              "(D) वृक्षात् [पञ्चमी विभक्ति / Ablative Case]"
+            ],
+            "answer": "(C) वृक्षम् [द्वितीया विभक्ति / Accusative Case]",
+            "explanation": "Correct! 'वृक्षम्' is the objective case form (Dvitiya Vibhakti) ending with '-m' (म्)."
+          }
+        ]
+      },
+      {
+        "sectionTitle": "Section B: शिष्य, गज-शब्दयोः तृतीया चतुर्थी च (Instrument & Dative Forms)",
+        "sectionTitleSanskrit": "खण्डः \"ख\" · शिष्य, गज-शब्दयोः तृतीया चतुर्थी च",
+        "instructions": "Identify Tritiya and Chaturthi forms for शिष्य and गज:",
+        "totalMarks": 6,
+        "questions": [
+          {
+            "num": 3,
+            "question": "When expressing an action performed by or with a student, which singular form of 'शिष्य' belongs to the [तृतीया विभक्ति / Instrumental Case]?",
+            "questionSanskrit": "छात्रेण / शिष्येण सह करणे का विभक्तिः?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) शिष्येन [तृतीया विभक्ति / Instrumental Case]",
+              "(B) शिष्यस्य [षष्ठी विभक्ति / Genitive Case]",
+              "(C) शिष्ये [सप्तमी विभक्ति / Locative Case]",
+              "(D) शिष्यम् [द्वितीया विभक्ति / Accusative Case]"
+            ],
+            "answer": "(A) शिष्येन [तृतीया विभक्ति / Instrumental Case]",
+            "explanation": "Correct! 'शिष्येन' is the instrumental singular form indicating the agent or instrument (\"by the student\")."
+          },
+          {
+            "num": 4,
+            "question": "If you are giving grass to an elephant, which form of 'गज' correctly indicates the recipient (Sampradana) in the [चतुर्थी विभक्ति / Dative Case]?",
+            "questionSanskrit": "गजाय तृणं ददाति - सम्प्रदाने किं रूपम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) गजात् [पञ्चमी विभक्ति / Ablative Case]",
+              "(B) गजस्य [षष्ठी विभक्ति / Genitive Case]",
+              "(C) गजे [सप्तमी विभक्ति / Locative Case]",
+              "(D) गजाय [चतुर्थी विभक्ति / Dative Case]"
+            ],
+            "answer": "(D) गजाय [चतुर्थी विभक्ति / Dative Case]",
+            "explanation": "Correct! 'गजाय' is the dative case form ending in '-aya' (-आय), used when giving or offering to someone."
+          }
+        ]
+      },
+      {
+        "sectionTitle": "Section C: वृक्ष, शिष्य-शब्दयोः पञ्चमी षष्ठी सप्तमी च (Ablative, Genitive, Locative)",
+        "sectionTitleSanskrit": "खण्डः \"ग\" · वृक्ष, शिष्य-शब्दयोः पञ्चमी, षष्ठी, सप्तमी च",
+        "instructions": "Determine Panchami, Shashti, and Saptami cases for वृक्ष and शिष्य:",
+        "totalMarks": 9,
+        "questions": [
+          {
+            "num": 5,
+            "question": "In the context of a leaf falling from a tree (\"वृक्षात् पर्णम् पतति\"), which form expresses separation using the [पञ्चमी विभक्ति / Ablative Case]?",
+            "questionSanskrit": "\"वृक्षात् पर्णं पतति\" वाक्ये अपादानं किम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) वृक्षे [सप्तमी विभक्ति / Locative Case]",
+              "(B) वृक्षात् [पञ्चमी विभक्ति / Ablative Case]",
+              "(C) वृक्षस्य [षष्ठी विभक्ति / Genitive Case]",
+              "(D) वृक्षम् [द्वितीया विभक्ति / Accusative Case]"
+            ],
+            "answer": "(B) वृक्षात् [पञ्चमी विभक्ति / Ablative Case]",
+            "explanation": "Correct! 'वृक्षात्' is the ablative singular form denoting a starting point of separation (\"from the tree\")."
+          },
+          {
+            "num": 6,
+            "question": "To express the student's book (\"the book of the student\"), which singular form of 'शिष्य' correctly shows possession in the [षष्ठी विभक्ति / Genitive Case]?",
+            "questionSanskrit": "शिष्यस्य पुस्तकम् - सम्बन्धे का विभक्तिः?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) शिष्येण [तृतीया विभक्ति / Instrumental Case]",
+              "(B) शिष्याय [चतुर्थी विभक्ति / Dative Case]",
+              "(C) शिष्यस्य [षष्ठी विभक्ति / Genitive Case]",
+              "(D) शिष्यः [प्रथमा विभक्ति / Nominative Case]"
+            ],
+            "answer": "(C) शिष्यस्य [षष्ठी विभक्ति / Genitive Case]",
+            "explanation": "Correct! 'शिष्यस्य' is the genitive form indicating ownership or relationship (\"of the student\")."
+          },
+          {
+            "num": 7,
+            "question": "If a bird is sitting on a tree (\"वृक्षे खगः तिष्ठति\"), which word form denotes the location or base of the action in the [सप्तमी विभक्ति / Locative Case]?",
+            "questionSanskrit": "\"वृक्षे खगः तिष्ठति\" वाक्ये अधिकरणं किम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) वृक्षे [सप्तमी विभक्ति / Locative Case]",
+              "(B) वृक्षात् [पञ्चमी विभक्ति / Ablative Case]",
+              "(C) वृक्षस्य [षष्ठी विभक्ति / Genitive Case]",
+              "(D) वृक्षम् [द्वितीया विभक्ति / Accusative Case]"
+            ],
+            "answer": "(A) वृक्षे [सप्तमी विभक्ति / Locative Case]",
+            "explanation": "Correct! 'वृक्षे' is the locative singular form designating place or location (\"on/in the tree\")."
+          }
+        ]
+      },
+      {
+        "sectionTitle": "Section D: सम्बोधनम् सह-प्रयोगः च (Vocative, Companionship & Applied Roles)",
+        "sectionTitleSanskrit": "खण्डः \"घ\" · सम्बोधनम्, सह-प्रयोगः, कर्म च",
+        "instructions": "Select the correct form for direct address, companionship, and observation:",
+        "totalMarks": 9,
+        "questions": [
+          {
+            "num": 8,
+            "question": "When you want to call out or address a student directly (\"O student!\"), which form represents the [संबोधनम् / Vocative Case]?",
+            "questionSanskrit": "शिष्यम् आह्वातुं सम्बोधने किं पदम्?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) शिष्यः [प्रथमा विभक्ति / Nominative Case]",
+              "(B) शिष्यम् [द्वितीया विभक्ति / Accusative Case]",
+              "(C) शिष्याय [चतुर्थी विभक्ति / Dative Case]",
+              "(D) हे शिष्य [संबोधनम् / Vocative Case]"
+            ],
+            "answer": "(D) हे शिष्य [संबोधनम् / Vocative Case]",
+            "explanation": "Correct! 'हे शिष्य' is used for addressing or calling someone directly (Sambodhana)."
+          },
+          {
+            "num": 9,
+            "question": "In the phrase \"शिष्येन सह गच्छति\" (goes along with the student), the word 'शिष्येन' is used for companionship requiring the [तृतीया विभक्ति / Instrumental Case]. Which option is it?",
+            "questionSanskrit": "\"शिष्येन सह गच्छति\" वाक्ये \"शिष्येन\" पदे का विभक्तिः?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) शिष्यात् [पञ्चमी विभक्ति / Ablative Case]",
+              "(B) शिष्येन [तृतीया विभक्ति / Instrumental Case]",
+              "(C) शिष्ये [सप्तमी विभक्ति / Locative Case]",
+              "(D) शिष्यस्य [षष्ठी विभक्ति / Genitive Case]"
+            ],
+            "answer": "(B) शिष्येन [तृतीया विभक्ति / Instrumental Case]",
+            "explanation": "Correct! 'शिष्येन' is the instrumental form used alongside words like 'सह' (with)."
+          },
+          {
+            "num": 10,
+            "question": "In the context of looking at or observing an elephant (\"गजम् पश्यति\"), which word form represents the object in the [द्वितीया विभक्ति / Accusative Case]?",
+            "questionSanskrit": "\"गजम् पश्यति\" वाक्ये कर्मपदे का विभक्तिः?",
+            "marks": 3,
+            "type": "mcq",
+            "options": [
+              "(A) गजः [प्रथमा विभक्ति / Nominative Case]",
+              "(B) गजाय [चतुर्थी विभक्ति / Dative Case]",
+              "(C) गजम् [द्वितीया विभक्ति / Accusative Case]",
+              "(D) गजे [सप्तमी विभक्ति / Locative Case]"
+            ],
+            "answer": "(C) गजम् [द्वितीया विभक्ति / Accusative Case]",
+            "explanation": "Correct! 'गजम्' functions as the direct object of the verb 'pashyati' (sees), taking the accusative singular case."
+          }
+        ]
+      }
+    ]
   },
 
 ];
