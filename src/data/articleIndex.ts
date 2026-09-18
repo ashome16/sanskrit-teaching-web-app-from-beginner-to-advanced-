@@ -72,4 +72,11 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: 'लिङ्गं वचनं च · Gender & Number Foundations',
     cardBlurb: 'The 3 Genders, 3 Numbers, and the mathematical beauty of Sanskrit Subject-Verb agreement.',
   },
+  {
+    id: 'understanding-vibhaktis-balaka',
+    file: 'grammar/article-10.txt',
+    emoji: '🏛️',
+    cardTitle: 'Understanding Vibhaktis (Case Endings)',
+    cardBlurb: 'Master the 8 noun cases, kāraka roles, suffixes, and memory trick using Bālaka.',
+  },
 ];

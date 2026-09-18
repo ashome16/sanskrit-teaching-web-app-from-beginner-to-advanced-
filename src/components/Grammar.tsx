@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { VIBHAKTI_CASES } from '../data/vibhakti';
 import { ARTICLES } from '../data/articleIndex';
 import { parseArticle, type ParsedArticle } from '../utils/articleParser';
 import ConjunctGames from './ConjunctGames';
 import SoundTeamsArticle from './SoundTeamsArticle';
 import LingaVachanaGuide from './LingaVachanaGuide';
+import VibhaktiGuide from './VibhaktiGuide';
 import '../styles/grammar.css';
 
 type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'samyukta' | 'sound-teams' | 'article';
@@ -19,7 +19,6 @@ type GrammarProps = {
 
 const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQuiz }) => {
   const [topic, setTopic] = useState<GrammarTopic>('home');
-  const [selectedCase, setSelectedCase] = useState(1);
   const [activeArticleId, setActiveArticleId] = useState<string | null>(null);
   const [articles, setArticles] = useState<Record<string, ParsedArticle>>({});
   const [articleError, setArticleError] = useState(false);
@@ -78,64 +77,12 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQui
   if (topic === 'vibhakti') {
     return (
       <section className="grammar-page" aria-label="Vibhakti guide">
-        <header className="grammar-page-header">
-          {renderBreadcrumb('विभक्ति · Vibhakti')}
-          <h2 className="grammar-title">विभक्ति · Vibhakti</h2>
-          <p className="grammar-lead">The 8 noun cases at a glance — our first grammar brick.</p>
-        </header>
-        <ul className="grammar-vibhakti-list">
-          {VIBHAKTI_CASES.map((item) => (
-            <li
-              key={item.number}
-              className={`grammar-vibhakti-row${selectedCase === item.number ? ' selected' : ''}`}
-              onClick={() => setSelectedCase(item.number)}
-            >
-              <span className="grammar-vibhakti-number">{item.number}</span>
-              <div className="grammar-vibhakti-text">
-                <span className="grammar-vibhakti-name">
-                  {item.sanskrit} ({item.iast})
-                </span>
-                <span className="grammar-vibhakti-role">{item.role}</span>
-                <span className="grammar-vibhakti-description">{item.description}</span>
-              </div>
-              {selectedCase === item.number && (
-                <div className="grammar-vibhakti-example">
-                  <strong>{item.form}</strong>
-                  <span>{item.template}</span>
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
-        <footer className="grammar-article-footer" style={{ marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-          {onOpenQuiz && (
-            <button
-              type="button"
-              className="grammar-footer-btn"
-              style={{ background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)', color: '#fff', border: 'none' }}
-              onClick={onOpenQuiz}
-            >
-              🎯 Play Vibhakti Basics Quiz (10 Qs) ▶
-            </button>
-          )}
-          {onOpenWorksheets && (
-            <button
-              type="button"
-              className="grammar-footer-btn"
-              style={{ background: 'linear-gradient(135deg, #b3472f 0%, #d97706 100%)', color: '#fff', border: 'none' }}
-              onClick={onOpenWorksheets}
-            >
-              📑 Open Vibhakti Worksheet (PDF) ▶
-            </button>
-          )}
-          <button
-            type="button"
-            className="grammar-back grammar-footer-btn"
-            onClick={goBackToShelf}
-          >
-            ← Back to Grammar Shelf
-          </button>
-        </footer>
+        {renderBreadcrumb('विभक्ति-परिचयः · Vibhakti Guide')}
+        <VibhaktiGuide
+          onGoBack={goBackToShelf}
+          onOpenWorksheets={onOpenWorksheets}
+          onOpenQuiz={onOpenQuiz}
+        />
       </section>
     );
   }
@@ -303,9 +250,18 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQui
         </p>
       </header>
       <div className="grammar-shelf">
-        <button type="button" className="grammar-card grammar-card--ready" onClick={() => setTopic('vibhakti')}>
-          <span className="grammar-card-title">विभक्ति · Vibhakti</span>
-          <span className="grammar-card-blurb">Eight noun cases — who does what to whom.</span>
+        <button
+          type="button"
+          className="grammar-card grammar-card--ready"
+          style={{ borderColor: '#059669', background: 'linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%)' }}
+          onClick={() => setTopic('vibhakti')}
+        >
+          <span className="grammar-card-title" style={{ color: '#047857' }}>
+            🏛️ विभक्ति · Vibhakti Guide
+          </span>
+          <span className="grammar-card-blurb">
+            Understand all 8 Sanskrit noun cases, kāraka roles, suffixes, sentences, and memory trick with Bālaka.
+          </span>
         </button>
         <button
           type="button"
