@@ -47,7 +47,7 @@ export const WORKSHEET_CATEGORIES = [
   { id: 'deep_ch13', label: 'Supplementary: वर्णमात्रा-परिचयः (7 Sheets)', icon: '🔤' },
   { id: 'deep_ch14', label: 'Appendix 1: शब्दरूपाणि (7 Sheets)', icon: '📊' },
   { id: 'cbse_ch', label: 'CBSE Deepakam Chapters (पाठ-अभ्यासः)', icon: '📚' },
-  { id: 'grammar', label: 'Vyākaraṇa / Grammar (व्याकरण-पत्राणि)', icon: '📐' },
+  { id: 'grammar', label: 'Vyākaraṇa / Grammar (9 Worksheets · व्याकरण-पत्राणि)', icon: '📐' },
   { id: 'vedic_maths', label: 'Vedic Maths Drills (वैदिक-गणितम्)', icon: '⚡' },
   { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
 ] as const;

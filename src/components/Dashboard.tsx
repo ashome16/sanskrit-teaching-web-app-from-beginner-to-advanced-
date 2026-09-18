@@ -374,6 +374,7 @@ const Dashboard: React.FC = () => {
           key={grammarResetKey}
           onGoHome={() => setActiveView('home')}
           onOpenWorksheets={() => setActiveView('worksheets')}
+          onOpenQuiz={() => setActiveView('quiz')}
         />
       )}
       {activeView === 'vedic-maths' && (

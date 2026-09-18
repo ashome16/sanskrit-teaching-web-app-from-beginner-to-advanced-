@@ -14,9 +14,10 @@ const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((res
 type GrammarProps = {
   onGoHome?: () => void;
   onOpenWorksheets?: () => void;
+  onOpenQuiz?: () => void;
 };
 
-const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets }) => {
+const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQuiz }) => {
   const [topic, setTopic] = useState<GrammarTopic>('home');
   const [selectedCase, setSelectedCase] = useState(1);
   const [activeArticleId, setActiveArticleId] = useState<string | null>(null);
@@ -118,6 +119,7 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets }) => {
         </header>
         <LingaVachanaGuide
           onOpenWorksheets={onOpenWorksheets}
+          onOpenQuiz={onOpenQuiz}
           onGoBack={goBackToShelf}
         />
       </section>

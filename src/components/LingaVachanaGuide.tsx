@@ -4,6 +4,7 @@ import '../styles/linga-vachana.css';
 
 interface LingaVachanaGuideProps {
   onOpenWorksheets?: () => void;
+  onOpenQuiz?: () => void;
   onGoBack?: () => void;
 }
 
@@ -333,6 +334,7 @@ const SPOT_ERROR_ITEMS: SpotErrorItem[] = [
 
 export const LingaVachanaGuide: React.FC<LingaVachanaGuideProps> = ({
   onOpenWorksheets,
+  onOpenQuiz,
   onGoBack,
 }) => {
   const [activeTab, setActiveTab] = useState<TabKey>('matrix');
@@ -1074,16 +1076,26 @@ export const LingaVachanaGuide: React.FC<LingaVachanaGuideProps> = ({
         </section>
       )}
 
-      {/* Footer Banner with CTA to Worksheets */}
+      {/* Footer Banner with CTA to Worksheets & Quizzes */}
       <footer className="lv-footer-cta">
         <div className="lv-footer-left">
-          <h3>Ready to test yourself with printable worksheets?</h3>
+          <h3>Ready to test yourself with quizzes &amp; printable worksheets?</h3>
           <p>
-            We have prepared 5 dedicated, printable Sanskrit Grammar worksheets covering Gender matrices,
+            Practice with 8 interactive quizzes (63 questions) or print our 9 dedicated Sanskrit Grammar worksheets covering Gender matrices,
             Number variations, Interrogatives, and Subject-Verb agreement.
           </p>
         </div>
         <div className="lv-footer-right">
+          {onOpenQuiz && (
+            <button
+              type="button"
+              className="lv-btn-cta"
+              style={{ background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)', boxShadow: '0 4px 14px rgba(5, 150, 105, 0.35)' }}
+              onClick={onOpenQuiz}
+            >
+              🎯 Play Grammar Quizzes ▶
+            </button>
+          )}
           {onOpenWorksheets && (
             <button
               type="button"
