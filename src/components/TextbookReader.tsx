@@ -326,9 +326,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
                 onClick={onOpenWorksheets}
-                title="Go to Grade 8 Chapter 1 Worksheets (3 Solved Worksheets)"
+                title="Go to Grade 8 Chapter 1 Worksheets (5 Solved Worksheets)"
               >
-                📑 3 Worksheets (Comprehension & Grammar)
+                📑 5 Worksheets (Comprehension & Grammar)
               </button>
             )}
           </>

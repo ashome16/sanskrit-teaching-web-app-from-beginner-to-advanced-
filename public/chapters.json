@@ -12274,6 +12274,100 @@
             "पठाम",
             "पठामै"
           ]
+        },
+        {
+          "sanskrit": "॥ पठित-संवादः — क्रीडोत्सवे सामञ्जस्यस्य विजयः ॥",
+          "meaning": "Section: Seen Dialogue Passage — Victory through Harmony in the School Sports Tournament",
+          "words": [
+            "॥",
+            "पठित",
+            "संवादः",
+            "क्रीडोत्सवे",
+            "सामञ्जस्यस्य",
+            "विजयः",
+            "॥"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "छात्रः – आचार्य ! अस्माकं विद्यालयस्य क्रीडोत्सवे पादकन्दुक-क्रीडायां वयं विजयं प्राप्तवन्तः ।",
+          "meaning": "Student: Teacher! In our school sports festival, we attained victory in the football (soccer) tournament!",
+          "words": [
+            "छात्रः",
+            "आचार्य",
+            "अस्माकं",
+            "विद्यालयस्य",
+            "क्रीडोत्सवे",
+            "पादकन्दुक",
+            "क्रीडायां",
+            "वयं",
+            "विजयं",
+            "प्राप्तवन्तः",
+            "।"
+          ]
+        },
+        {
+          "sanskrit": "आचार्यः – वर्धापनानि, अभिनन्दनं भवताम् । अपि भवन्तः जानन्ति यत् भवतां प्रतिद्वन्द्विनः कथं पराजिताः ?",
+          "meaning": "Teacher: Congratulations and hearty greetings to you all! But do you know how your rivals were defeated?",
+          "words": [
+            "आचार्यः",
+            "वर्धापनानि",
+            "अभिनन्दनं",
+            "भवताम्",
+            "।",
+            "अपि",
+            "भवन्तः",
+            "जानन्ति",
+            "यत्",
+            "भवतां",
+            "प्रतिद्वन्द्विनः",
+            "कथं",
+            "पराजिताः"
+          ]
+        },
+        {
+          "sanskrit": "छात्रः – आम्, जानामि आचार्य ! अस्माकं दलस्य क्रीडकेषु परस्परं सम्यक् सामञ्जस्यम् आसीत्, किन्तु विपक्षि-दले तत् नासीत् ।",
+          "meaning": "Student: Yes, I know, Teacher! Among the players of our team there was perfect mutual harmony, but in the opponent team it was absent.",
+          "words": [
+            "छात्रः",
+            "आम्",
+            "जानामि",
+            "आचार्य",
+            "अस्माकं",
+            "दलस्य",
+            "क्रीडकेषु",
+            "परस्परं",
+            "सम्यक्",
+            "सामञ्जस्यम्",
+            "आसीत्",
+            "किन्तु",
+            "विपक्षि",
+            "दले",
+            "तत्",
+            "नासीत्",
+            "।"
+          ]
+        },
+        {
+          "sanskrit": "तस्य दलस्य क्रीडकेषु परस्परं मनोभेदः द्वेषभावः च आसीत् । ते अन्योन्यं सहयोगं न कृतवन्तः ।",
+          "meaning": "Among the players of that team, there was mutual psychological discord and malice; they did not cooperate with one another.",
+          "words": [
+            "तस्य",
+            "दलस्य",
+            "क्रीडकेषु",
+            "परस्परं",
+            "मनोभेदः",
+            "द्वेषभावः",
+            "च",
+            "आसीत्",
+            "।",
+            "ते",
+            "अन्योन्यं",
+            "सहयोगं",
+            "न",
+            "कृतवन्तः",
+            "।"
+          ]
         }
       ]
     }
