@@ -187,14 +187,14 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
             </div>
           ) : (
             filteredChapters.map((ch) => {
-              const isPrayer = ch.id === 'grade8_prarthana';
+              const isAvailable = ch.status === 'available' || ch.id === 'grade8_prarthana' || ch.id === 'grade8_ch1';
               const isSpeaking = speakingId === ch.id;
               const isVerseSpeaking = speakingId === `${ch.id}_verse`;
 
               return (
                 <div
                   key={ch.id}
-                  className={`g8-chapter-card ${isPrayer ? 'highlight' : ''}`}
+                  className={`g8-chapter-card ${isAvailable ? 'highlight' : ''}`}
                 >
                   <div className="g8-card-top-row">
                     <div className="g8-card-badges">
@@ -208,7 +208,7 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
                     </div>
 
                     <div className="g8-card-status">
-                      {isPrayer ? (
+                      {isAvailable ? (
                         <span className="g8-status-pill ready">✅ Available in App</span>
                       ) : (
                         <span className="g8-status-pill syllabus">📚 In Syllabus</span>
@@ -254,18 +254,18 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
                   </div>
 
                   <div className="g8-card-action-row">
-                    {isPrayer ? (
+                    {isAvailable ? (
                       <button
                         type="button"
                         className="g8-action-btn-primary"
                         onClick={() => {
                           onClose();
                           if (onSelectLesson) {
-                            onSelectLesson('grade8_prarthana');
+                            onSelectLesson(ch.id);
                           }
                         }}
                       >
-                        📖 Open Interactive Prayer Lesson ➔
+                        📖 Open Interactive Lesson ➔
                       </button>
                     ) : (
                       <span className="g8-card-ref-label">

@@ -59,19 +59,19 @@ export const GRADE_8_SYLLABUS: Grade8Chapter[] = [
     "icon": "🪕"
   },
   {
-    "id": "g8_ch01",
+    "id": "grade8_ch1",
     "num": "Chapter 1",
     "chNumber": "प्रथमः पाठः",
     "title": "संगच्छध्वं संवदध्वम्",
-    "englishTitle": "Let Us Walk Together, Speak Together",
-    "page": "Page 1",
+    "englishTitle": "Let Us Walk Together, Speak Together in Harmony",
+    "page": "Pages 2–8",
     "category": "shlokas",
     "genreBadge": "ऋग्वेद-मन्त्रः · Unity & Harmony",
     "theme": "The timeless Rigvedic Samjnana Sukta advocating universal unity, harmonious dialogue, collective purpose, and heart-to-heart solidarity.",
-    "grammarFocus": "लोट्-लकारः (Imperative Mood: संगच्छध्वम्, संवदध्वम्), अव्ययानि, लट्-लोट् भेदः",
-    "sampleVerse": "संगच्छध्वं संवदध्वं सं वो मनांसि जानताम् । देवा भागं यथा पूर्वे सञ्जानाना उपासते ॥",
-    "status": "in_curriculum",
-    "icon": "🤝"
+    "grammarFocus": "लोट्-लकारः (Imperative Mood), प्रश्ननिर्माणम् (किम-शब्दाः), लट्-लोट् परिवर्तनम्",
+    "sampleVerse": "संगच्छध्वं संवदध्वं सं वो मनांसि जानताम् । देवा भागं यथा पूर्वे संजानाना उपासते ॥",
+    "status": "available",
+    "icon": "🏛️"
   },
   {
     "id": "g8_ch02",

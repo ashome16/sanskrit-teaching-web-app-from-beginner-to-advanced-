@@ -253,6 +253,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · प्रथमः पाठः / प्रार्थना — सरस्वतीप्रार्थना (Page 16)</span>
         </div>
       )}
+      {activeLessonId === 'grade8_ch1' && (
+        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #f0fdf4 0%, #eff6ff 100%)', borderColor: '#86efac' }}>
+          <span className="textbook-cbse-pill" style={{ background: '#059669', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · प्रथमः पाठः — संगच्छध्वं संवदध्वम् (Pages 2–8)</span>
+        </div>
+      )}
 
       <div className="textbook-toolbar-row">
         <button
@@ -291,6 +297,38 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 title="Go to Grade 8 Saraswati Prarthana Printable Worksheet"
               >
                 📑 Grade 8 Worksheet
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'grade8_ch1' && (
+          <>
+            <button
+              type="button"
+              className="textbook-tool-btn textbook-tool-btn--syllabus"
+              onClick={() => setIsGrade8SyllabusOpen(true)}
+              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+            >
+              📜 पाठानुक्रमणिका (Class 8 Syllabus)
+            </button>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Grade 8 Chapter 1 Quizzes (15 questions)"
+              >
+                🎯 3 Quizzes (15 Qs)
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Grade 8 Chapter 1 Printable Worksheet"
+              >
+                📑 Grade 8 Ch 1 Worksheet
               </button>
             )}
           </>

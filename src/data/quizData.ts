@@ -1,6 +1,6 @@
 export interface QuizQuestionItem {
   id: string;
-  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana';
+  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1';
   categoryLabel: string;
   chapterRef?: string;
   subCategory?: string;
@@ -34,6 +34,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'vedic_maths', label: 'Vedic Mathematics (वैदिक-गणितम्)', icon: '⚡' },
   { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
   { id: 'grade8_prarthana', label: 'Grade 8: सरस्वतीप्रार्थना (2 Quizzes · 10 Qs)', icon: '🪕' },
+  { id: 'grade8_ch1', label: 'Grade 8 Ch 1: संगच्छध्वं संवदध्वम् (3 Quizzes · 15 Qs)', icon: '🏛️' },
 ] as const;
 
 export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
@@ -9111,6 +9112,287 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
     correctIndex: 0,
     explanation: 'In the textbook match exercise: धवला matches with (ग) कुन्दतुहिनशशि (pure white like jasmine, snow, and the moon).',
     difficulty: 'easy',
+    points: 10,
+  },
+
+
+  // ==========================================
+  // GRADE 8 CHAPTER 1: संगच्छध्वं संवदध्वम् (3 QUIZZES · 15 QUESTIONS)
+  // ==========================================
+
+  // --- Quiz 1: वैदिक-मन्त्राः शब्दार्थाः च (Mantra Comprehension & Word Meanings) ---
+  {
+    id: 'g8-ch1-q1-1',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: मन्त्राः शब्दार्थाः च',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 1: वैदिक-मन्त्राः शब्दार्थाः च',
+    question: "'सङ्गच्छध्वं संवदध्वम्' इत्यस्य कः अभिप्रायः? (What is the true meaning behind 'Sangacchadhvam Samvadadhvam'?)",
+    questionSanskrit: "'सङ्गच्छध्वं संवदध्वम्' इत्यस्य कः अभिप्रायः?",
+    options: [
+      '(अ) सर्वैः मिलित्वा अग्रे गन्तव्यम् एकस्वरेण च वदनीयम् (Progress together in unity & speak with one voice)',
+      '(ब) केवलम् एकान्ते निवसत (Live alone in solitude)',
+      '(स) परस्परं वाद-विवादं कुरुत (Engage in mutual disputations)'
+    ],
+    correctIndex: 0,
+    explanation: "'सङ्गच्छध्वं संवदध्वम्' इत्यस्य अभिप्रायः यत् सर्वैः मिलित्वा अग्रे गन्तव्यम् एकस्वरेण च वदनीयम्।",
+    difficulty: 'easy',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q1-2',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: मन्त्राः शब्दार्थाः च',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 1: वैदिक-मन्त्राः शब्दार्थाः च',
+    question: "अयं पाठः कस्मात् वेदात् सङ्कलितः अस्ति? (From which sacred Veda is this chapter compiled?)",
+    questionSanskrit: "अयं पाठः कस्मात् वेदात् सङ्कलितः अस्ति?",
+    options: [
+      '(अ) सामवेदात् (Samaveda)',
+      '(ब) ऋग्वेदात् (Rigveda)',
+      '(स) अथर्ववेदात् (Atharvaveda)'
+    ],
+    correctIndex: 1,
+    explanation: "अयं पाठः ऋग्वेदस्य दशममण्डलात् सङ्कलितः अस्ति (ऋग्वेद १०.१९१.२-४)।",
+    difficulty: 'easy',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q1-3',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: मन्त्राः शब्दार्थाः च',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 1: वैदिक-मन्त्राः शब्दार्थाः च',
+    question: "'देवा भागं यथा पूर्वे संजानाना उपासते' — अत्र 'उपासते' पदस्य कः अर्थः? (What is the meaning of 'upasate' here?)",
+    questionSanskrit: "अत्र 'उपासते' पदस्य कः अर्थः?",
+    options: [
+      '(अ) सेवन्ते / स्वीकुर्वन्ति (Devotedly attend to / accept duty)',
+      '(ब) उपरि उपविशन्ति (Sit high up)',
+      '(स) उपवासं कुर्वन्ति (Fast without food)'
+    ],
+    correctIndex: 0,
+    explanation: "'उपासते' इत्यस्य अर्थः सेवन्ते, गृह्णन्ति, स्वीकुर्वन्ति वा अस्ति।",
+    difficulty: 'medium',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q1-4',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: मन्त्राः शब्दार्थाः च',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 1: वैदिक-मन्त्राः शब्दार्थाः च',
+    question: "'समानी व आकूतिः' — अस्मिन् मन्त्रे 'आकूतिः' शब्दस्य कः अर्थः? (What is the meaning of 'akutih'?)",
+    questionSanskrit: "'आकूतिः' शब्दस्य कः अर्थः?",
+    options: [
+      '(अ) सङ्कल्पः / हार्दिकः विचारः (Noble intent / deep resolution)',
+      '(ब) आकारः (Physical shape)',
+      '(स) आभूषणम् (Ornaments)'
+    ],
+    correctIndex: 0,
+    explanation: "'आकूतिः' इत्युक्ते दृढसङ्कल्पः, मनोगतः अभीष्टः विचारः वा।",
+    difficulty: 'medium',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q1-5',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: मन्त्राः शब्दार्थाः च',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 1: वैदिक-मन्त्राः शब्दार्थाः च',
+    question: "सर्वेषां मनः कीदृशं भवेत्? (How should everyone's mind be according to the Vedic Sukta?)",
+    questionSanskrit: "सर्वेषां मनः कीदृशं भवेत्?",
+    options: [
+      '(अ) समानं सामञ्जस्ययुतं च (Equal, unified, and harmonious)',
+      '(ब) चञ्चलं भेदयुक्तं च (Fickle and divided)',
+      '(स) निद्रितम् (Dull and asleep)'
+    ],
+    correctIndex: 0,
+    explanation: "सर्वेषां मनः समानं (सामञ्जस्ययुतम्) भवेत् येन ऐक्यं तिष्ठेत्।",
+    difficulty: 'easy',
+    points: 10,
+  },
+
+  // --- Quiz 2: प्रश्ननिर्माणम् (Formulate Questions based on Underlined Words) ---
+  {
+    id: 'g8-ch1-q2-1',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: प्रश्ननिर्माणम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 2: प्रश्ननिर्माणम् (Question Framing)',
+    question: "'परमेश्वरः सर्वत्र व्याप्तः अस्ति।' — अत्र 'परमेश्वरः' पदम् आधृत्य प्रश्नवाचकं पदं किम्? (Choose question word for 'Parameshvarah')",
+    questionSanskrit: "'परमेश्वरः सर्वत्र व्याप्तः अस्ति।' — प्रश्ननिर्माणं कुरुत।",
+    options: [
+      '(अ) कः सर्वत्र व्याप्तः अस्ति ?',
+      '(ब) कम् सर्वत्र व्याप्तः अस्ति ?',
+      '(स) केन सर्वत्र व्याप्तः अस्ति ?'
+    ],
+    correctIndex: 0,
+    explanation: "'परमेश्वरः' प्रथमा-विभक्तिः एकवचनम् अस्ति, अतः 'कः' इति प्रश्नपदं प्रयुज्यते।",
+    difficulty: 'easy',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q2-2',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: प्रश्ननिर्माणम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 2: प्रश्ननिर्माणम् (Question Framing)',
+    question: "'वयम् ईश्वरं नमामः।' — अत्र 'ईश्वरम्' पदम् आधृत्य उचितः प्रश्नः कः? (Choose question word for 'Ishvaram')",
+    questionSanskrit: "'वयम् ईश्वरं नमामः।' — प्रश्ननिर्माणं कुरुत।",
+    options: [
+      '(अ) वयम् कम् नमामः ?',
+      '(ब) वयम् कः नमामः ?',
+      '(स) वयम् कस्मै नमामः ?'
+    ],
+    correctIndex: 0,
+    explanation: "'ईश्वरम्' द्वितीया-विभक्तिः एकवचनम् (कर्मकारकम्), अतः 'कम्' इति प्रयुज्यते।",
+    difficulty: 'easy',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q2-3',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: प्रश्ननिर्माणम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 2: प्रश्ननिर्माणम् (Question Framing)',
+    question: "'ईश्वरस्य प्रार्थनया शान्तिः प्राप्यते।' — अत्र 'शान्तिः' पदम् आधृत्य प्रश्ननिर्माणं कुरुत।",
+    questionSanskrit: "'ईश्वरस्य प्रार्थनया शान्तिः प्राप्यते।' — प्रश्नवाक्यं किम्?",
+    options: [
+      '(अ) ईश्वरस्य प्रार्थनया किम् प्राप्यते ?',
+      '(ब) ईश्वरस्य प्रार्थनया कः प्राप्यते ?',
+      '(स) ईश्वरस्य प्रार्थनया कुत्र प्राप्यते ?'
+    ],
+    correctIndex: 0,
+    explanation: "'शान्तिः' इत्यस्य स्थाने 'किम्' (अथवा का) इति प्रश्नपदं भवति।",
+    difficulty: 'medium',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q2-4',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: प्रश्ननिर्माणम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 2: प्रश्ननिर्माणम् (Question Framing)',
+    question: "'अहं समाजाय श्रमं करोमि।' — अत्र 'समाजाय' पदम् आधृत्य प्रश्नपदं किम्?",
+    questionSanskrit: "'अहं समाजाय श्रमं करोमि।' — प्रश्ननिर्माणं कुरुत।",
+    options: [
+      '(अ) अहं कस्मै श्रमं करोमि ?',
+      '(ब) अहं कस्मात् श्रमं करोमि ?',
+      '(स) अहं कस्य श्रमं करोमि ?'
+    ],
+    correctIndex: 0,
+    explanation: "'समाजाय' चतुर्थी-विभक्तिः एकवचनम्, अतः 'कस्मै' इति प्रश्नपदं प्रयुज्यते।",
+    difficulty: 'medium',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q2-5',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: प्रश्ननिर्माणम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 2: प्रश्ननिर्माणम् (Question Framing)',
+    question: "'अयं पाठः ऋग्वेदात् सङ्कलितः।' — अत्र 'ऋग्वेदात्' पदम् आधृत्य प्रश्नपदं किम्?",
+    questionSanskrit: "'अयं पाठः ऋग्वेदात् सङ्कलितः।' — प्रश्ननिर्माणं कुरुत।",
+    options: [
+      '(अ) अयं पाठः कस्मात् सङ्कलितः ?',
+      '(ब) अयं पाठः कुत्र सङ्कलितः ?',
+      '(स) अयं पाठः केन सङ्कलितः ?'
+    ],
+    correctIndex: 0,
+    explanation: "'ऋग्वेदात्' पञ्चमी-विभक्तिः एकवचनम्, अतः 'कस्मात्' (अथवा कुतः) इति प्रश्नपदं भवति।",
+    difficulty: 'easy',
+    points: 10,
+  },
+
+  // --- Quiz 3: लोट्-लकार-रूपाणि व्याकरणं च (Imperative Mood & Grammar) ---
+  {
+    id: 'g8-ch1-q3-1',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: लोट्-लकार-व्याकरणम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 3: लट्-लोट्-लकार-परिवर्तनम्',
+    question: "'बालकाः हसन्ति' — अस्य वाक्यस्य लोट्-लकारे रूपं किम् भवेत्? (Convert 'hasanti' to Lot Lakara)",
+    questionSanskrit: "'बालकाः हसन्ति' — लोट्-लकारे परिवर्तयत।",
+    options: [
+      '(अ) बालकाः हसन्तु',
+      '(ब) बालकाः हसेयुः',
+      '(स) बालकाः अहसन्'
+    ],
+    correctIndex: 0,
+    explanation: "लट् प्रथमपुरुष-बहुवचने 'हसन्ति' भवति, लोट् प्रथमपुरुष-बहुवचने च 'हसन्तु' इति भवति।",
+    difficulty: 'easy',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q3-2',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: लोट्-लकार-व्याकरणम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 3: लट्-लोट्-लकार-परिवर्तनम्',
+    question: "'युवां तत्र गच्छथः' — अस्य वाक्यस्य लोट्-लकारे शुद्धं रूपं किम्? (Convert 'gacchathah' to Lot Lakara)",
+    questionSanskrit: "'युवां तत्र गच्छथः' — लोट्-लकारे परिवर्तयत।",
+    options: [
+      '(अ) युवां तत्र गच्छतम्',
+      '(ब) युवां तत्र गच्छत',
+      '(स) युवां तत्र गच्छथ'
+    ],
+    correctIndex: 0,
+    explanation: "मध्यमपुरुष-द्विवचने लट्-लकारे 'गच्छथः' तथा लोट्-लकारे 'गच्छतम्' भवति।",
+    difficulty: 'medium',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q3-3',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: लोट्-लकार-व्याकरणम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 3: लट्-लोट्-लकार-परिवर्तनम्',
+    question: "'यूयं धावथ' — अस्य लोट्-लकारे शुद्धं रूपं किम्? (Convert 'dhavatha' to Lot Lakara)",
+    questionSanskrit: "'यूयं धावथ' — लोट्-लकारे परिवर्तयत।",
+    options: [
+      '(अ) यूयं धावत',
+      '(ब) यूयं धावन्तु',
+      '(स) यूयं धावथम्'
+    ],
+    correctIndex: 0,
+    explanation: "मध्यमपुरुष-बहुवचने लट्-लकारे 'धावथ' तथा लोट्-लकारे विसर्गरहितं 'धावत' इति रूपं भवति।",
+    difficulty: 'medium',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q3-4',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: लोट्-लकार-व्याकरणम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 3: लट्-लोट्-लकार-परिवर्तनम्',
+    question: "'आवां लिखावः' — अस्य लोट्-लकारे रूपं किम्? (Convert 'likhavah' to Lot Lakara)",
+    questionSanskrit: "'आवां लिखावः' — लोट्-लकारे परिवर्तयत।",
+    options: [
+      '(अ) आवां लिखावै (अथवा लिखाव)',
+      '(ब) आवां लिखतु',
+      '(स) आवां लिखेताम्'
+    ],
+    correctIndex: 0,
+    explanation: "उत्तमपुरुष-द्विवचने लट्-लकारे 'लिखावः' तथा लोट्-लकारे 'लिखावै' (आत्मनेपदे/वैदिके) अथवा परस्मैपदे 'लिखाव' भवति।",
+    difficulty: 'hard',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q3-5',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: लोट्-लकार-व्याकरणम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 3: लट्-लोट्-लकार-परिवर्तनम्',
+    question: "वैदिक-मन्त्रे प्रयुक्तयोः 'संगच्छध्वम्' तथा 'संवदध्वम्' इति पदयोः कः लकारः? (Which lakara is in 'sangacchadhvam' and 'samvadadhvam'?)",
+    questionSanskrit: "'संगच्छध्वम्' तथा 'संवदध्वम्' इति पदयोः कः लकारः?",
+    options: [
+      '(अ) लोट्-लकारः (Imperative Mood)',
+      '(ब) लट्-लकारः (Present Tense)',
+      '(स) लङ्-लकारः (Past Tense)'
+    ],
+    correctIndex: 0,
+    explanation: "'संगच्छध्वम्' 'संवदध्वम्' च लोट्-लकारस्य मध्यमपुरुष-बहुवचनस्य आत्मनेपद-रूपाणि सन्ति।",
+    difficulty: 'hard',
     points: 10,
   },
 

@@ -289,6 +289,17 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     theme: 'Glorious invocation of Goddess Saraswati: embodiment of cosmic sound, fine arts, intellect, and knowledge',
     grammarFocus: 'सम्बोधन-विभक्तिः, विशेषण-पदानि, विपरीतार्थक-शब्दाः',
   },
+  {
+    id: 'grade8_ch1',
+    num: 'Grade 8 · Chapter 1',
+    title: 'संगच्छध्वं संवदध्वम् (Pages 2–8)',
+    english: 'May We Walk Together, Speak Together in Harmony (Rigveda)',
+    icon: '🏛️',
+    category: 'shlokas',
+    genreBadge: 'ऋग्वेद-मन्त्रः · Vedic Hymn',
+    theme: 'The timeless Rigvedic hymn of universal solidarity: cultivating unified speech, harmony of thought, and collective cooperation.',
+    grammarFocus: 'लोट्-लकारः (Imperative Mood), प्रश्ननिर्माणम् (किम-शब्दाः), लट्-लोट् परिवर्तनम्',
+  },
 ];
 
 const HomePage: React.FC<HomePageProps> = ({
@@ -871,7 +882,7 @@ const HomePage: React.FC<HomePageProps> = ({
                     <span className="home-chapter-read-cta">
                       Read Lesson ➔
                     </span>
-                    {ch.id === 'grade8_prarthana' && (
+                    {(ch.id === 'grade8_prarthana' || ch.id === 'grade8_ch1') && (
                       <button
                         type="button"
                         style={{
