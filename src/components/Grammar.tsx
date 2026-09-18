@@ -107,6 +107,35 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQui
             </li>
           ))}
         </ul>
+        <footer className="grammar-article-footer" style={{ marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+          {onOpenQuiz && (
+            <button
+              type="button"
+              className="grammar-footer-btn"
+              style={{ background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)', color: '#fff', border: 'none' }}
+              onClick={onOpenQuiz}
+            >
+              🎯 Play Vibhakti Basics Quiz (10 Qs) ▶
+            </button>
+          )}
+          {onOpenWorksheets && (
+            <button
+              type="button"
+              className="grammar-footer-btn"
+              style={{ background: 'linear-gradient(135deg, #b3472f 0%, #d97706 100%)', color: '#fff', border: 'none' }}
+              onClick={onOpenWorksheets}
+            >
+              📑 Open Vibhakti Worksheet (PDF) ▶
+            </button>
+          )}
+          <button
+            type="button"
+            className="grammar-back grammar-footer-btn"
+            onClick={goBackToShelf}
+          >
+            ← Back to Grammar Shelf
+          </button>
+        </footer>
       </section>
     );
   }
