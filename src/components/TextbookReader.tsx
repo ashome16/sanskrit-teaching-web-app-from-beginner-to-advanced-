@@ -316,9 +316,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--quiz"
                 onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 1 Quizzes (15 questions)"
+                title="Go to Grade 8 Chapter 1 Quizzes (4 Quizzes · 25 questions)"
               >
-                🎯 3 Quizzes (15 Qs)
+                🎯 4 Quizzes (25 Qs)
               </button>
             )}
             {onOpenWorksheets && (
@@ -326,9 +326,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
                 onClick={onOpenWorksheets}
-                title="Go to Grade 8 Chapter 1 Printable Worksheet"
+                title="Go to Grade 8 Chapter 1 Worksheets (3 Solved Worksheets)"
               >
-                📑 Grade 8 Ch 1 Worksheet
+                📑 3 Worksheets (Comprehension & Grammar)
               </button>
             )}
           </>
