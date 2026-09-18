@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { playPronunciation } from '../utils/pronunciation';
 import FAQSection from './FAQSection';
+import { Grade8SyllabusModal } from './Grade8SyllabusModal';
 import { useAuthStore } from '../store/authStore';
 import '../styles/home-page.css';
 
@@ -303,6 +304,7 @@ const HomePage: React.FC<HomePageProps> = ({
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const { openAuthModal } = useAuthStore();
+  const [isGrade8ModalOpen, setIsGrade8ModalOpen] = useState<boolean>(false);
 
   const categories = [
     { id: 'all', label: 'All Content', count: CHAPTERS_INFO.length },
@@ -741,6 +743,35 @@ const HomePage: React.FC<HomePageProps> = ({
           </p>
         </div>
 
+        {/* Grade 8 Syllabus Quick Banner */}
+        <div
+          className="home-grade8-syllabus-banner"
+          onClick={() => setIsGrade8ModalOpen(true)}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') setIsGrade8ModalOpen(true);
+          }}
+        >
+          <div className="g8-banner-left">
+            <span className="g8-banner-badge">✨ NEW CURRICULUM ADDITION</span>
+            <h3 className="g8-banner-title">अष्टमकक्षा-पाठानुक्रमणिका · Grade 8 Sanskrit Complete Syllabus</h3>
+            <p className="g8-banner-desc">
+              Explore all 13 textbook chapters, introductory prayers, and grammatical appendices with exact page numbers (Page iii to 173).
+            </p>
+          </div>
+          <button
+            type="button"
+            className="g8-banner-cta-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsGrade8ModalOpen(true);
+            }}
+          >
+            📜 View Table of Contents ➔
+          </button>
+        </div>
+
         {/* Search & Category Filter Controls */}
         <div className="home-curriculum-controls">
           <div className="home-curriculum-search-wrap">
@@ -840,6 +871,27 @@ const HomePage: React.FC<HomePageProps> = ({
                     <span className="home-chapter-read-cta">
                       Read Lesson ➔
                     </span>
+                    {ch.id === 'grade8_prarthana' && (
+                      <button
+                        type="button"
+                        style={{
+                          background: '#fef3c7',
+                          color: '#92400e',
+                          border: '1px solid #fcd34d',
+                          borderRadius: '6px',
+                          padding: '0.2rem 0.6rem',
+                          fontSize: '0.76rem',
+                          fontWeight: 700,
+                          cursor: 'pointer',
+                        }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setIsGrade8ModalOpen(true);
+                        }}
+                      >
+                        📜 Class 8 Syllabus
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -950,6 +1002,12 @@ const HomePage: React.FC<HomePageProps> = ({
           FAQ & 2-Week Trial Pricing Section
           ------------------------------------------------------------------ */}
       <FAQSection onOpenRegister={() => openAuthModal('register')} />
+
+      <Grade8SyllabusModal
+        isOpen={isGrade8ModalOpen}
+        onClose={() => setIsGrade8ModalOpen(false)}
+        onSelectLesson={(lessonId) => onOpenReader(lessonId)}
+      />
     </main>
   );
 };

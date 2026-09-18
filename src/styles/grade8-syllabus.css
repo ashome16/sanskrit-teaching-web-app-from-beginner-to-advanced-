@@ -1,0 +1,556 @@
+/* ==========================================================================
+   Grade 8 Syllabus & Table of Contents (पाठानुक्रमणिका) Modal & Banner Styles
+   ========================================================================== */
+
+.g8-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.68);
+  backdrop-filter: blur(5px);
+  display: grid;
+  place-items: center;
+  z-index: 1200;
+  padding: 1rem;
+}
+
+.g8-modal {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 940px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.28);
+  overflow: hidden;
+  animation: g8ModalIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes g8ModalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.g8-modal-header {
+  padding: 1.25rem 1.75rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.g8-modal-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.g8-badge-grade {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.g8-modal-title-box h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0.15rem 0 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.g8-modal-title-box p {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.g8-modal-close-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  width: 2.1rem;
+  height: 2.1rem;
+  font-size: 1.15rem;
+  color: #64748b;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.g8-modal-close-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+/* Stats Summary Row */
+.g8-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.65rem;
+  padding: 0.75rem 1.75rem;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.g8-stat-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f8fafc;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.g8-stat-chip strong {
+  color: #059669;
+  font-weight: 800;
+}
+
+/* Toolbar & Filters */
+.g8-controls-bar {
+  padding: 0.85rem 1.75rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.g8-search-input {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 9px;
+  border: 1.5px solid #d1d5db;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+
+.g8-search-input:focus {
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+}
+
+.g8-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.g8-filter-btn {
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.g8-filter-btn:hover {
+  border-color: #cbd5e1;
+  background: #f1f5f9;
+}
+
+.g8-filter-btn.active {
+  background: #059669;
+  border-color: #059669;
+  color: #ffffff;
+}
+
+.g8-filter-count {
+  opacity: 0.85;
+  font-size: 0.78rem;
+}
+
+/* Content List */
+.g8-modal-body {
+  padding: 1.25rem 1.75rem;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.g8-empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.g8-chapter-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.g8-chapter-card:hover {
+  border-color: #a7f3d0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.g8-chapter-card.highlight {
+  border-color: #10b981;
+  background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.12);
+}
+
+.g8-card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.g8-card-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.g8-ch-num-badge {
+  background: #f1f5f9;
+  color: #1e293b;
+  font-weight: 800;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+
+.g8-ch-page-badge {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+.g8-ch-genre-badge {
+  background: #f8fafc;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+.g8-status-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.g8-status-pill.ready {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.g8-status-pill.syllabus {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.g8-card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.g8-card-title-sa {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  line-height: 1.35;
+}
+
+.g8-card-title-en {
+  font-size: 0.92rem;
+  color: #475569;
+  margin: 0 0 0.5rem;
+  font-style: italic;
+}
+
+.g8-card-theme {
+  font-size: 0.88rem;
+  color: #334155;
+  line-height: 1.5;
+  margin-bottom: 0.65rem;
+}
+
+.g8-card-grammar-box {
+  background: #f8fafc;
+  border-left: 3px solid #059669;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.82rem;
+  color: #1e293b;
+  margin-bottom: 0.65rem;
+}
+
+.g8-card-verse-box {
+  background: #fffbeb;
+  border: 1px dashed #fcd34d;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  color: #92400e;
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.g8-verse-inner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.g8-verse-heading {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #b45309;
+}
+
+.g8-verse-audio-btn {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 6px;
+  padding: 0.18rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #92400e;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.g8-verse-audio-btn:hover {
+  background: #fde68a;
+}
+
+.g8-verse-text {
+  font-weight: 600;
+}
+
+.g8-card-action-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.g8-card-ref-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+.g8-action-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  background: #059669;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.12s ease;
+}
+
+.g8-action-btn-primary:hover {
+  background: #047857;
+  transform: translateY(-1px);
+}
+
+.g8-audio-icon-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.g8-audio-icon-btn:hover {
+  background: #ecfdf5;
+  border-color: #10b981;
+  color: #047857;
+}
+
+/* Modal Footer */
+.g8-modal-footer {
+  padding: 0.9rem 1.75rem;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.g8-modal-footer-note {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+/* --------------------------------------------------------------------------
+   HomePage & Reader Grade 8 Syllabus Banners & Buttons
+   -------------------------------------------------------------------------- */
+.home-grade8-syllabus-banner {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #eff6ff 100%);
+  border: 1.5px solid #86efac;
+  border-radius: 12px;
+  padding: 1.1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.home-grade8-syllabus-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.14);
+  border-color: #34d399;
+}
+
+.g8-banner-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.g8-banner-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: #059669;
+  color: #ffffff;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+
+.g8-banner-title {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #064e3b;
+  margin: 0.1rem 0 0.2rem;
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+}
+
+.g8-banner-desc {
+  font-size: 0.86rem;
+  color: #374151;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.g8-banner-cta-btn {
+  flex-shrink: 0;
+  background: #059669;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(5, 150, 105, 0.25);
+  transition: background 0.15s ease;
+}
+
+.g8-banner-cta-btn:hover {
+  background: #047857;
+}
+
+/* Reader Toolbar Syllabus Button */
+.textbook-tool-btn--syllabus {
+  background: #ecfdf5 !important;
+  color: #065f46 !important;
+  border: 1px solid #a7f3d0 !important;
+  font-weight: 700 !important;
+}
+
+.textbook-tool-btn--syllabus:hover {
+  background: #d1fae5 !important;
+  border-color: #6ee7b7 !important;
+}
+
+@media (max-width: 768px) {
+  .home-grade8-syllabus-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .g8-banner-cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .g8-stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}

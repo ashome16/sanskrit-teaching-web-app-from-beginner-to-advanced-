@@ -81,6 +81,7 @@ const Dashboard: React.FC = () => {
     const id = lessons[lessonIndex]?.id;
     if (!id || !HIDDEN_DEEPAKAM_IDS.has(id)) return;
     const fallback = firstDeepakamIndex(lessons);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLessonIndex(fallback);
     setSentenceIndex(0);
     setWordSelection(null);
@@ -120,7 +121,7 @@ const Dashboard: React.FC = () => {
     lessonIndex === lastVisible && sentenceIndex === (lesson?.sentences.length ?? 1) - 1;
 
   const cleanWord = (value: string): string =>
-    value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९\.\/\\=+#*~_`]+/g, '').trim();
+    value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९./\\=+#*~_`]+/g, '').trim();
 
   const handleWordClick = (word: string) => {
     const cleaned = cleanWord(word) || word.trim();
@@ -254,13 +255,18 @@ const Dashboard: React.FC = () => {
             <div className="dashboard-nav-sub" role="group" aria-label="CBSE & NCERT Deepakam grades">
               <button
                 type="button"
-                className={activeView === 'reader' && lesson.id !== 'varnamala' ? 'active' : ''}
+                className={activeView === 'reader' && lesson.id !== 'varnamala' && lesson.id !== 'grade8_prarthana' ? 'active' : ''}
                 onClick={() => openDeepakam()}
                 title="CBSE Class 7 Sanskrit Board Exam Syllabus"
               >
                 Class 7 (CBSE)
               </button>
-              <button type="button" className="dashboard-nav-soon" disabled aria-disabled="true" title="Class 8 CBSE - Coming soon">
+              <button
+                type="button"
+                className={activeView === 'reader' && lesson.id === 'grade8_prarthana' ? 'active' : ''}
+                onClick={() => openDeepakam('grade8_prarthana')}
+                title="CBSE Class 8 Sanskrit Syllabus & Saraswati Prarthana"
+              >
                 8th (CBSE)
               </button>
               <button type="button" className="dashboard-nav-soon" disabled aria-disabled="true" title="Class 9 CBSE - Coming soon">

@@ -8,6 +8,7 @@ import {
   englishMeaningFromGloss,
   type AnalyseRegistry,
 } from '../utils/analyseGloss';
+import { Grade8SyllabusModal } from './Grade8SyllabusModal';
 import '../styles/textbook-reader.css';
 
 interface TextbookReaderProps {
@@ -146,6 +147,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     activeLessonId === 'varnamala' ? varnamalaLabel(letter) : aksharaLabel(letter);
   const [isChartOpen, setIsChartOpen] = useState(false);
   const [isSymbolsOpen, setIsSymbolsOpen] = useState(false);
+  const [isGrade8SyllabusOpen, setIsGrade8SyllabusOpen] = useState(false);
   const [isPlayingAll, setIsPlayingAll] = useState(false);
   const [glosses, setGlosses] = useState<AnalyseRegistry>({});
   const stopPlayAllRef = useRef<(() => void) | null>(null);
@@ -263,6 +265,14 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         </button>
         {activeLessonId === 'grade8_prarthana' && (
           <>
+            <button
+              type="button"
+              className="textbook-tool-btn textbook-tool-btn--syllabus"
+              onClick={() => setIsGrade8SyllabusOpen(true)}
+              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+            >
+              📜 पाठानुक्रमणिका (Class 8 Syllabus)
+            </button>
             {onOpenQuiz && (
               <button
                 type="button"
@@ -1085,6 +1095,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           </div>
         </div>
       )}
+
+      <Grade8SyllabusModal
+        isOpen={isGrade8SyllabusOpen}
+        onClose={() => setIsGrade8SyllabusOpen(false)}
+        onSelectLesson={(id) => onSelectLesson(id)}
+      />
     </section>
   );
 };
