@@ -316,9 +316,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--quiz"
                 onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 1 Quizzes (4 Quizzes · 25 questions)"
+                title="Go to Grade 8 Chapter 1 Quizzes (5 Quizzes · 35 questions)"
               >
-                🎯 4 Quizzes (25 Qs)
+                🎯 5 Quizzes (35 Qs)
               </button>
             )}
             {onOpenWorksheets && (
