@@ -12689,33 +12689,37 @@
     {
       "id": "gsde108",
       "fileName": "gsde108.txt",
-      "title": "Chapter 8: हितं मनोहारि च दुर्लभं वचः",
+      "title": "Chapter 8: हितं मनोहारि च दुर्लभं वचः (पाठः पृष्ठानि ८५–९० · अभ्यासः पृष्ठानि ९१–९५)",
       "sentences": [
         {
-          "sanskrit": "१. पाठस्य मूल-संवादः (हितोपदेशः एवं सूक्तयः)",
-          "meaning": "Dialogue: The Treasure of Wise Epigrams (Suktis)",
-          "paragraphTranslation": "मूल बातचीत: सूक्तियों की महिमा",
+          "kind": "section-header",
+          "sanskrit": "१. पाठः — भागः १: कक्षा-संवादः (Classroom Dialogue - पृष्ठम् ८५)",
+          "meaning": "Part 1: Classroom Dialogue - Meaning & Value of Sūktis (Page 85)",
+          "paragraphTranslation": "भाग १: कक्षा-संवाद — सूक्तियों का महत्त्व एवं जीवन-मूल्य (पृष्ठ ८५)",
           "words": [
-            "पाठस्य",
-            "मूल-संवादः"
-          ],
-          "kind": "section-header"
+            "१.",
+            "पाठः",
+            "भागः",
+            "१:",
+            "कक्षा-संवादः",
+            "पृष्ठम्",
+            "८५"
+          ]
         },
         {
-          "sanskrit": "छात्रः: आचार्य ! अद्य मम माता माम् एकां सूक्तिम् अपाठयत् — 'सत्यं वद, धर्मं चर' इति।",
-          "meaning": "Student: Teacher! Today my mother taught me an epigram (sukti) — 'Speak truth, practice righteousness.'",
-          "paragraphTranslation": "आचार्य! आज मेरी माता ने मुझे एक सूक्ति पढ़ाई— 'सत्य बोलो, धर्म का आचरण करो'।",
+          "sanskrit": "छात्रः — आचार्य ! अद्य मम माता माम् एकां सूक्तिं पाठितवती, 'सत्यं वद, धर्मं चर' इति।",
+          "meaning": "Student: Teacher! Today my mother taught me a wise saying, 'Speak the truth, practice righteousness.'",
+          "paragraphTranslation": "छात्र — आचार्य! आज मेरी माता ने मुझे एक सूक्ति पढ़ाई, 'सत्य बोलो, धर्म का आचरण करो'। (आचार्य = Teacher | अद्य = Today | मम = My | माता = Mother | माम् = To me | एकां = One | सूक्तिं = Wise saying | पाठितवती = Taught | सत्यं = Truth | वद = Speak | धर्मं = Righteousness | चर = Practice | इति = Thus)",
           "words": [
-            "छात्रः:",
+            "छात्रः",
             "आचार्य",
-            "!",
             "अद्य",
             "मम",
             "माता",
             "माम्",
             "एकां",
-            "सूक्तिम्",
-            "अपाठयत्",
+            "सूक्तिं",
+            "पाठितवती",
             "सत्यं",
             "वद",
             "धर्मं",
@@ -12724,278 +12728,1171 @@
           ]
         },
         {
-          "sanskrit": "छात्रा: आचार्य ! 'सूक्तिः' इत्युक्ते कः अभिप्रायः ?",
-          "meaning": "Student: Teacher! What is meant by the word 'Sukti'?",
-          "paragraphTranslation": "आचार्य! 'सूक्ति' कहने का क्या अभिप्राय है?",
+          "sanskrit": "छात्रा — आचार्य ! 'सूक्तिः' इत्युक्ते कः अभिप्रायः ?",
+          "meaning": "Student: Teacher! What is the meaning of 'Sūkti'?",
+          "paragraphTranslation": "छात्रा — आचार्य! 'सूक्ति' का क्या अर्थ होता है? (आचार्य = Teacher | सूक्तिः = Wise saying | इत्युक्ते = Means | कः = What | अभिप्रायः = Meaning)",
           "words": [
-            "छात्रा:",
+            "छात्रा",
             "आचार्य",
-            "!",
             "सूक्तिः",
             "इत्युक्ते",
             "कः",
-            "अभिप्रायः",
-            "?"
+            "अभिप्रायः"
           ]
         },
         {
-          "sanskrit": "आचार्यः: सुष्ठु उक्तिः इति सूक्तिः। सुवचनम् इत्यर्थः। अस्माकं संस्कृतसाहित्ये सूक्तीनां विशालः भाण्डागारः अस्ति। एताः सूक्तयः जीवने मार्गदर्शनं कुर्वन्ति।",
-          "meaning": "Teacher: 'Su-ukti' means well-spoken words or pearls of wisdom. In our Sanskrit literature there is a vast treasury of wise suktis that offer lifelong guidance.",
-          "paragraphTranslation": "सुन्दर और हितकारी वचन को सूक्ति कहते हैं। हमारे संस्कृत साहित्य में सूक्तियों का विशाल भंडार है, जो जीवन में सही मार्गदर्शन करती हैं।",
+          "sanskrit": "आचार्यः — सूक्तिः इत्युक्ते 'सुन्दरं वचनम्' । सूक्तिषु जीवनमूल्यानि निहितानि भवन्ति।",
+          "meaning": "Teacher: Sūkti means a 'beautiful saying'. Life values are contained within these sayings.",
+          "paragraphTranslation": "आचार्य — सूक्ति का अर्थ है 'सुन्दर वचन'। सूक्तियों में जीवन के मूल्य छिपे होते हैं। (सूक्तिः = Wise saying | इत्युक्ते = Means | सुन्दरं = Beautiful | वचनम् = Saying | सूक्तिषु = In wise sayings | जीवनमूल्यानि = Life values | निहितानि = Hidden/Contained | भवन्ति = Are)",
           "words": [
-            "आचार्यः:",
-            "सुष्ठु",
-            "उक्तिः",
-            "इति",
+            "आचार्यः",
             "सूक्तिः",
-            "सुवचनम्",
-            "इत्यर्थः",
-            "अस्माकं",
-            "संस्कृतसाहित्ये",
-            "सूक्तीनां",
-            "विशालः",
-            "भाण्डागारः",
-            "अस्ति",
+            "इत्युक्ते",
+            "सुन्दरं",
+            "वचनम्",
+            "सूक्तिषु",
+            "जीवनमूल्यानि",
+            "निहितानि",
+            "भवन्ति"
+          ]
+        },
+        {
+          "sanskrit": "छात्रः — महोदय ! सूक्तयः अस्मान् सन्मार्गं प्रति नयन्ति इति अहं श्रुतवान् ।",
+          "meaning": "Student: Sir! I have heard that wise sayings lead us onto the righteous path.",
+          "paragraphTranslation": "छात्र — महोदय! मैंने सुना है कि सूक्तियाँ हमें सही मार्ग पर ले जाती हैं। (महोदय = Sir | सूक्तयः = Wise sayings | अस्मान् = Us | सन्मार्गं प्रति = Towards the right path | नयन्ति = Lead | इति = Thus | अहं = I | श्रुतवान् = Have heard)",
+          "words": [
+            "छात्रः",
+            "महोदय",
+            "सूक्तयः",
+            "अस्मान्",
+            "सन्मार्गं",
+            "प्रति",
+            "नयन्ति",
+            "इति",
+            "अहं",
+            "श्रुतवान्"
+          ]
+        },
+        {
+          "sanskrit": "छात्रः — आचार्य ! अस्मासु कुतूहलं वर्धते। वयम् एताः सूक्तीः पठामः ।",
+          "meaning": "Student: Teacher! Our curiosity is growing. We want to read these sayings.",
+          "paragraphTranslation": "छात्र — आचार्य! हममें उत्सुकता बढ़ रही है। हम सब इन सूक्तियों को पढ़ेंगे। (आचार्य = Teacher | अस्मासु = In us / among us | कुतूहलं = Curiosity | वर्धते = Increases | वयम् = We | एताः = These | सूक्तीः = Wise sayings | पठामः = Read)",
+          "words": [
+            "छात्रः",
+            "आचार्य",
+            "अस्मासु",
+            "कुतूहलं",
+            "वर्धते",
+            "वयम्",
             "एताः",
+            "सूक्तीः",
+            "पठामः"
+          ]
+        },
+        {
+          "sanskrit": "आचार्यः — सत्यम्। सूक्तयः जीवने अस्माकं मार्गदर्शनं कुर्वन्ति । संस्कृतसाहित्ये सूक्तीनां भाण्डागारः अस्ति।",
+          "meaning": "Teacher: True. Wise sayings guide us in our life. There is a vast treasure-trove of wise sayings in Sanskrit literature.",
+          "paragraphTranslation": "आचार्य — सच है। सूक्तियाँ जीवन में हमारा मार्गदर्शन करती हैं। संस्कृत साहित्य में सूक्तियों का बड़ा भण्डार है। (सत्यम् = True | सूक्तयः = Wise sayings | जीवने = In life | अस्माकं = Our | मार्गदर्शनं = Guidance | कुर्वन्ति = Do | संस्कृतसाहित्ये = In Sanskrit literature | सूक्तीनां = Of wise sayings | भाण्डागारः = Treasure-trove | अस्ति = Is)",
+          "words": [
+            "आचार्यः",
+            "सत्यम्",
             "सूक्तयः",
             "जीवने",
+            "अस्माकं",
             "मार्गदर्शनं",
-            "कुर्वन्ति"
+            "कुर्वन्ति",
+            "संस्कृतसाहित्ये",
+            "सूक्तीनां",
+            "भाण्डागारः",
+            "अस्ति"
           ]
         },
         {
-          "sanskrit": "२. प्रसिद्ध-सूक्तयः (Universal Wisdom Verses)",
-          "meaning": "Celebrated Sanskrit Aphorisms and Epigrams",
-          "paragraphTranslation": "प्रसिद्ध संस्कृत सूक्तियाँ एवं उनके भावार्थ",
+          "sanskrit": "छात्राः — न केवलं पठामः अपितु स्मरामः, जीवने आचरामः च।",
+          "meaning": "Students: We shall not only read them, but also memorize them and practice them in our daily lives.",
+          "paragraphTranslation": "सभी छात्र — हम इन्हें न केवल पढ़ेंगे, बल्कि याद रखेंगे और अपने जीवन में आचरण में भी लाएंगे। (न केवलं = Not only | पठामः = Read | अपितु = But | स्मरामः = Remember | जीवने = In life | आचरामः च = And follow/practice)",
           "words": [
-            "प्रसिद्ध-सूक्तयः"
-          ],
-          "kind": "section-header"
-        },
-        {
-          "sanskrit": "१. हितं मनोहारि च दुर्लभं वचः । (किरातार्जुनीयम्)",
-          "meaning": "1. Words that are both wholesome/beneficial and charmingly pleasant are extremely rare in this world.",
-          "paragraphTranslation": "१. हितकारी और साथ ही मन को प्रिय लगने वाली वाणी अत्यंत दुर्लभ होती है। (भारवि - किरातार्जुनीयम्)",
-          "words": [
-            "हितं",
-            "मनोहारि",
-            "च",
-            "दुर्लभं",
-            "वचः",
-            "१"
+            "छात्राः",
+            "न",
+            "केवलं",
+            "पठामः",
+            "अपितु",
+            "स्मरामः",
+            "जीवने",
+            "आचरामः",
+            "च"
           ]
         },
         {
-          "sanskrit": "२. न रत्नमन्विष्यति मृग्यते हि तत् । (कुमारसम्भवम्)",
-          "meaning": "2. A precious gem does not go searching for an admirer; rather, worthy seekers seek out the gem.",
-          "paragraphTranslation": "२. रत्न किसी को ढूँढ़ने नहीं जाता, बल्कि रत्न को सब खोजते हैं। (कालिदास - कुमारसम्भवम्)",
+          "kind": "section-header",
+          "sanskrit": "भागः २: प्रसिद्ध-दश-सूक्तयः (Ten Universal Wisdom Sayings - पृष्ठानि ८६–९०)",
+          "meaning": "Part 2: Ten Universal Wisdom Sayings with Word-by-Word Meanings, Padachheda & Anvaya (Pages 86–90)",
+          "paragraphTranslation": "भाग २: प्रसिद्ध १० सूक्तियाँ — पदच्छेद, अन्वय, शब्दार्थ एवं हिन्दी-आंग्ल अनुवाद (पृष्ठ ८६–९०)",
           "words": [
+            "भागः",
+            "२:",
+            "प्रसिद्ध-दश-सूक्तयः",
+            "पृष्ठानि",
+            "८६–९०"
+          ]
+        },
+        {
+          "sanskrit": "सूक्तिः १ — माता भूमिः पुत्रोऽहं पृथिव्याः ॥१॥ (अथर्ववेदः १२.१.१२)",
+          "meaning": "Sūkti 1: The Earth is my mother and I am the son of this Earth. The Earth nurtures and protects us just like a mother. Therefore, this land is the mother of all of us and we are all her children. She is always worthy of worship.",
+          "paragraphTranslation": "पदच्छेदः: माता भूमिः पुत्रः अहम् पृथिव्याः। | अन्वयः: भूमिः माता (अस्ति) अहं पृथिव्याः पुत्रः (अस्मि)। | शब्दार्थाः: माता = Mother / माता | भूमिः = Earth / पृथ्वी | पुत्रः = Son / पुत्र | अहम् = I / मैं | पृथिव्याः = Of the earth / पृथ्वी का | हिन्दी: पृथ्वी मेरी माता है और मैं इस पृथ्वी का पुत्र हूँ। पृथ्वी माता की तरह हमारा लालन-पालन और पोषण करती है। इसलिए यह भूमि हम सबकी माता है और हम सब इसकी संतान हैं। यह सदा पूजनीय है।",
+          "words": [
+            "सूक्तिः",
+            "१",
+            "माता",
+            "भूमिः",
+            "पुत्रोऽहं",
+            "पृथिव्याः",
+            "अथर्ववेदः"
+          ]
+        },
+        {
+          "sanskrit": "सूक्तिः २ — न रत्नमन्विष्यति, मृग्यते हि तत् ॥२॥ (कुमारसम्भवम् ५.४५)",
+          "meaning": "Sūkti 2: A diamond or precious jewel never goes searching for a buyer; rather, it is always searched for by the seeker. Similarly, if we possess true virtues, those who appreciate good qualities will automatically find their way to us.",
+          "paragraphTranslation": "पदच्छेदः: न रत्नम् अन्विष्यति मृग्यते हि तत्। | अन्वयः: रत्नं न अन्विष्यति, तत् मृग्यते हि। | शब्दार्थाः: न = Not / नहीं | रत्नम् = Jewel / रत्न | अन्विष्यति = Searches / ढूँढ़ता है | मृग्यते = Is searched for / ढूँढ़ा जाता है | हि = Indeed / निश्चित ही | तत् = That / उसे | हिन्दी: रत्न कभी किसी खरीदार को नहीं ढूँढ़ता, बल्कि खरीदार ही रत्न को ढूँढ़ता है। इसी प्रकार यदि हमारे भीतर गुण हैं, तो गुणों को पहचानने वाले लोग स्वयं ही हमें ढूँढ़ते हुए हमारे पास आ जाते हैं।",
+          "words": [
+            "सूक्तिः",
+            "२",
             "न",
             "रत्नमन्विष्यति",
             "मृग्यते",
             "हि",
             "तत्",
-            "२"
+            "कुमारसम्भवम्"
           ]
         },
         {
-          "sanskrit": "३. शीलं परं भूषणम् ।",
-          "meaning": "3. Good character and noble conduct is the supreme ornament of a human being.",
-          "paragraphTranslation": "३. सदाचार और अच्छा चरित्र ही मनुष्य का सबसे श्रेष्ठ आभूषण है।",
+          "sanskrit": "सूक्तिः ३ — शरीरमाद्यं खलु धर्मसाधनम् ॥३॥ (कुमारसम्भवम् ५.३३)",
+          "meaning": "Sūkti 3: The body is indeed the first instrument for fulfilling one's duties and righteousness. If our body is healthy, only then can we perform our duties. Therefore, we must protect our health at all costs as the body is the fundamental tool for any virtuous action.",
+          "paragraphTranslation": "पदच्छेदः: शरीरम् आद्यम् खलु धर्मसाधनम् । | अन्वयः: शरीरं खलु आद्यं धर्मसाधनम् । | शब्दार्थाः: शरीरम् = Body / शरीर | आद्यम् = First / पहला | खलु = Indeed / निश्चित ही | धर्मसाधनम् = Instrument for duty / धर्म-पालन का साधन | हिन्दी: हमारा शरीर ही सभी कर्तव्यों और धर्म का पालन करने का पहला साधन है। यदि हमारा शरीर स्वस्थ रहेगा तभी हम अपने कर्तव्यों का पालन कर सकते हैं, इसलिए हमें अपने शरीर की रक्षा हर प्रकार से करनी चाहिए।",
           "words": [
-            "शीलं",
-            "परं",
-            "भूषणम्",
-            "३"
-          ]
-        },
-        {
-          "sanskrit": "४. शरीरमाद्यं खलु धर्मसाधनम् । (कुमारसम्भवम्)",
-          "meaning": "4. A healthy physical body is indeed the primary instrument for performing all duties and righteousness.",
-          "paragraphTranslation": "४. निश्चय ही शरीर ही सभी कर्तव्यों और धर्म को पूरा करने का पहला साधन है।",
-          "words": [
+            "सूक्तिः",
+            "३",
             "शरीरमाद्यं",
             "खलु",
             "धर्मसाधनम्",
-            "४"
+            "कुमारसम्भवम्"
           ]
         },
         {
-          "sanskrit": "५. गुणाः पूजास्थानं गुणिषु न च लिङ्गं न च वयः । (उत्तररामचरितम्)",
-          "meaning": "5. Among virtuous people, virtues alone command respect— neither gender nor age determines true worth.",
-          "paragraphTranslation": "५. गुणवानों में गुणों का ही आदर होता है, लिंग (स्त्री/पुरुष) या आयु का नहीं।",
+          "sanskrit": "सूक्तिः ४ — क्षणशः कणशश्चैव विद्यामर्थं च साधयेत् ॥४॥ (सुभाषितम्)",
+          "meaning": "Sūkti 4: One should acquire knowledge by utilizing every single moment, and accumulate wealth by saving every single particle. Not a single second should be wasted for learning. 'If you waste time, how can you get knowledge? If you discard small amounts, how can you accumulate wealth?'",
+          "paragraphTranslation": "पदच्छेदः: क्षणशः कणशः च एव विद्याम् अर्थम् च साधयेत्। | अन्वयः: क्षणशः (एव) विद्यां कणशः एव अर्थं च साधयेत् । | शब्दार्थाः: क्षणशः = Every single moment / प्रत्येक पल | कणशः = Every tiny particle / प्रत्येक छोटे अंश से | च एव = And also / और ही | विद्याम् = Knowledge / विद्या को | अर्थम् = Wealth / धन को | साधयेत् = Should acquire / अर्जित करना चाहिए | हिन्दी: ज्ञान प्राप्त करने के लिए समय के एक-एक क्षण का निरंतर उपयोग करना चाहिए। एक भी क्षण नष्ट नहीं करना चाहिए। इसी प्रकार यदि कोई धन एकत्र करना चाहता है तो उसे एक-एक पैसे का संग्रह करना चाहिए। 'क्षण छोड़ने से विद्या कहाँ और कण छोड़ने से धन कहाँ।'",
           "words": [
+            "सूक्तिः",
+            "४",
+            "क्षणशः",
+            "कणशश्चैव",
+            "विद्यामर्थं",
+            "च",
+            "साधयेत्"
+          ]
+        },
+        {
+          "sanskrit": "सूक्तिः ५ — सुखार्थिनः कुतो विद्या, कुतो विद्यार्थिनः सुखम् ॥५॥ (महाभारतम् / पञ्चतन्त्रम्)",
+          "meaning": "Sūkti 5: How can a person who always desires comfort and stays lazy ever acquire knowledge? Similarly, where is comfort for a true student? Therefore, anyone who wants to learn must give up laziness and worldly pleasures to study continuously.",
+          "paragraphTranslation": "पदच्छेदः: सुखार्थिनः कुतः विद्या कुतः विद्यार्थिनः सुखम् । | अन्वयः: सुखार्थिनः विद्या कुतः (भवेत्), विद्यार्थिनः सुखं कुतः (भवेत्) । | शब्दार्थाः: सुखार्थिनः = For seekers of comfort / सुख चाहने वाले को | कुतः = Where from / कहाँ | विद्या = Knowledge / ज्ञान | विद्यार्थिनः = For seekers of knowledge / छात्र को | सुखम् = Comfort / सुख | हिन्दी: जो व्यक्ति हमेशा सुख-आराम चाहता है, मेहनत नहीं करता और आलसी है, उसे विद्या कैसे मिल सकती है? और जो ज्ञान प्राप्त करना चाहता है उसे सुख कहाँ? इसलिए ज्ञान चाहने वाले को आलस्य और सुख का त्याग कर निरंतर पढ़ाई करनी चाहिए।",
+          "words": [
+            "सूक्तिः",
+            "५",
+            "सुखार्थिनः",
+            "कुतो",
+            "विद्या",
+            "कुतो",
+            "विद्यार्थिनः",
+            "सुखम्"
+          ]
+        },
+        {
+          "sanskrit": "सूक्तिः ६ — गुणाः पूजास्थानं गुणिषु न च लिङ्ग न च वयः ॥६॥ (उत्तररामचरितम् ४.११)",
+          "meaning": "Sūkti 6: Among virtuous people, it is their virtues alone that command respect. Neither gender nor age matters when it comes to honoring someone. A talented or highly virtuous individual deserves respect whether they are a child or an elder.",
+          "paragraphTranslation": "पदच्छेदः: गुणाः पूजास्थानं गुणिषु न च लिङ्गम् न च वयः। | अन्वयः: गुणिषु गुणाः (एव) पूजास्थानं (भवन्ति) लिङ्गं च न (भवति) वयः च न (भवति)। | शब्दार्थाः: गुणाः = Virtues / गुण | पूजास्थानं = Object of respect / आदर का पात्र | गुणिषु = Among virtuous people / गुणवानों में | न च = Neither / और न ही | लिङ्गम् = Gender / स्त्री या पुरुष होना | वयः = Age / आयु | हिन्दी: गुणी व्यक्तियों में उनके गुण ही आदर के वास्तविक पात्र होते हैं। सम्मान के लिए उनका स्त्री या पुरुष होना अथवा उनकी आयु छोटी या बड़ी होना मायने नहीं रखता। गुणवान व्यक्ति चाहे बच्चा हो या वृद्ध, वह हमेशा पूजनीय होता है।",
+          "words": [
+            "सूक्तिः",
+            "६",
             "गुणाः",
             "पूजास्थानं",
             "गुणिषु",
             "न",
             "च",
-            "लिङ्गं",
+            "लिङ्ग",
             "न",
             "च",
             "वयः",
-            "५"
+            "उत्तररामचरितम्"
           ]
         },
         {
-          "sanskrit": "६. क्रियासिद्धिः सत्त्वे भवति महतां नोपकरणे ।",
-          "meaning": "6. The success of noble deeds lies in the inner resolve and courage of great souls, not in outer equipment.",
-          "paragraphTranslation": "६. महान लोगों के कार्यों की सफलता उनके आत्मबल और संकल्प पर निर्भर करती है, बाहरी साधनों पर नहीं।",
+          "sanskrit": "सूक्तिः ७ — मा ब्रूहि दीनं वचः ॥७॥ (नीतिशतकम् ५१)",
+          "meaning": "Sūkti 7: Do not speak words of helplessness or self-pity in front of anyone. Society is full of different kinds of people; some genuinely help, while others merely boast or mock. A self-respecting person should not beg for assistance from just anyone.",
+          "paragraphTranslation": "पदच्छेदः: मा ब्रूहि दीनम् वचः। | अन्वयः: (त्वं) दीनं वचः मा ब्रूहि। | शब्दार्थाः: मा = Do not / मत | ब्रूहि = Speak / बोलो | दीनम् = Helpless or pitiful / बेचारगी भरे | वचः = Words / वचन | हिन्दी: कभी भी किसी के सामने लाचारी या बेचारगी भरे शब्द मत बोलो। समाज में हर प्रकार के लोग होते हैं, कुछ मदद करते हैं तो कुछ केवल झूठी बातें या मजाक बनाते हैं। इसलिए स्वाभिमानी व्यक्ति को हर किसी के सामने हाथ नहीं फैलाना चाहिए।",
           "words": [
-            "क्रियासिद्धिः",
-            "सत्त्वे",
-            "भवति",
-            "महतां",
-            "नोपकरणे",
-            "६"
-          ]
-        },
-        {
-          "sanskrit": "७. क्षणशः कणशश्चैव विद्यामर्थं च साधयेत् ।",
-          "meaning": "7. Every single moment should be utilized to acquire learning, and every tiny grain/penny to build wealth.",
-          "paragraphTranslation": "७. एक-एक पल का उपयोग विद्या के लिए और एक-एक कण का उपयोग धन संचय के लिए करना चाहिए।",
-          "words": [
-            "क्षणशः",
-            "कणशश्चैव",
-            "विद्यामर्थं",
-            "च",
-            "साधयेत्",
-            "७"
-          ]
-        },
-        {
-          "sanskrit": "३. शब्दार्थाः (कठिन शब्दों के अर्थ)",
-          "meaning": "Key Vocabulary Glossary",
-          "paragraphTranslation": "कठिन शब्दों के अर्थ",
-          "words": [
-            "शब्दार्थाः",
-            "कठिन",
-            "शब्दों",
-            "के",
-            "अर्थ"
-          ],
-          "kind": "glossary-header"
-        },
-        {
-          "sanskrit": "मनोहारि",
-          "meaning": "Pleasing to the mind / Charming",
-          "sanskrit_gloss": "चित्ताकर्षकम्",
-          "hindi_gloss": "मन को अच्छा लगने वाला",
-          "words": [
-            "मनोहारि",
-            "चित्ताकर्षकम्"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "दुर्लभम्",
-          "meaning": "Rare / Hard to find",
-          "sanskrit_gloss": "कठिनतया प्राप्यम्",
-          "hindi_gloss": "कठिनाई से प्राप्त होने वाला",
-          "words": [
-            "दुर्लभम्",
-            "कठिनतया",
-            "प्राप्यम्"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "भाण्डागारः",
-          "meaning": "Treasury / Storehouse",
-          "sanskrit_gloss": "कोषः / भण्डारः",
-          "hindi_gloss": "खजाना / भंडार",
-          "words": [
-            "भाण्डागारः",
-            "कोषः"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "धर्मसाधनम्",
-          "meaning": "Means of fulfilling righteousness",
-          "sanskrit_gloss": "कर्तव्यपालनसाधनम्",
-          "hindi_gloss": "धर्म पालन का माध्यम",
-          "words": [
-            "धर्मसाधनम्",
-            "कर्तव्यपालनसाधनम्"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "४. अभ्यासः (अभ्यास कार्य)",
-          "meaning": "Exercises with Solved Answers",
-          "paragraphTranslation": "अभ्यास कार्य",
-          "words": [
-            "अभ्यासः",
-            "अभ्यास",
-            "कार्य"
-          ],
-          "kind": "exercise-header"
-        },
-        {
-          "sanskrit": "(क) किं वचः दुर्लभं भवति ?",
-          "meaning": "What kind of speech is rare? Answer: Beneficial and pleasing words (हितं मनोहारि च वचः).",
-          "answer_sanskrit": "हितं मनोहारि च वचः",
-          "words": [
-            "किं",
+            "सूक्तिः",
+            "७",
+            "मा",
+            "ब्रूहि",
+            "दीनं",
             "वचः",
-            "दुर्लभं",
-            "भवति",
-            "?",
-            "उत्तरः",
+            "नीतिशतकम्"
+          ]
+        },
+        {
+          "sanskrit": "सूक्तिः ८ — यस्तु क्रियावान् पुरुषः स विद्वान् ॥८॥ (हितोपदेशः)",
+          "meaning": "Sūkti 8: A person who practicalizes their acquired knowledge through actions and behavior is a true scholar, not just someone who reads books. Knowledge without positive action is completely futile—'Knowledge is a heavy burden without practical application'.",
+          "paragraphTranslation": "पदच्छेदः: यः तु क्रियावान् पुरुषः सः विद्वान्। | अन्वयः: यः तु क्रियावान् पुरुषः सः विद्वान् (भवति)। | शब्दार्थाः: यः तु = The one who / जो तो | क्रियावान् = Action-oriented / कर्म करने वाला | पुरुषः = Person / मनुष्य | सः = He / वह | विद्वान् = Truly wise scholar / विद्वान | हिन्दी: जो व्यक्ति प्राप्त ज्ञान को अपने जीवन में उतारता है और कर्म करता है, वही वास्तव में सच्चा विद्वान होता है, न कि केवल किताबें पढ़ने वाला। बिना व्यावहारिक आचरण के ज्ञान बोझ के समान व्यर्थ हो जाता है—'क्रिया के बिना ज्ञान भार है'।",
+          "words": [
+            "सूक्तिः",
+            "८",
+            "यस्तु",
+            "क्रियावान्",
+            "पुरुषः",
+            "स",
+            "विद्वान्",
+            "हितोपदेशः"
+          ]
+        },
+        {
+          "sanskrit": "सूक्तिः ९ — शीलं परं भूषणम् ॥९॥ (नीतिशतकम् ५६)",
+          "meaning": "Sūkti 9: Good moral character and proper conduct are a human being's ultimate and most beautiful ornaments. Without righteous behavior, all other qualities and skills remain completely meaningless.",
+          "paragraphTranslation": "पदच्छेदः: शीलम् परम् भूषणम्। | अन्वयः: शीलं परं भूषणम् (अस्ति)। | शब्दार्थाः: शीलम् = Good conduct or character / अच्छा चरित्र | परम् = Greatest / सबसे बड़ा | भूषणम् = Ornament / आभूषण | हिन्दी: मनुष्य का अच्छा आचरण और चरित्र ही उसका सबसे उत्तम आभूषण होता है। अच्छे व्यवहार और सदाचार के बिना इंसान के बाकी सारे गुण बेकार हो जाते हैं।",
+          "words": [
+            "सूक्तिः",
+            "९",
+            "शीलं",
+            "परं",
+            "भूषणम्",
+            "नीतिशतकम्"
+          ]
+        },
+        {
+          "sanskrit": "सूक्तिः १० — हितं मनोहारि च दुर्लभं वचः ॥१०॥ (किरातार्जुनीयम् १.४)",
+          "meaning": "Sūkti 10: Words that are both deeply beneficial and sweet or pleasing to hear are exceedingly rare. Some speak words that help us but say them harshly, while others say pleasant things that hold no true benefit. Finding language that matches both criteria is difficult.",
+          "paragraphTranslation": "पदच्छेदः: हितम् मनोहारि च दुर्लभम् वचः । | अन्वयः: हितं मनोहारि च वचः दुर्लभं (भवति)। | शब्दार्थाः: हितम् = Beneficial / कल्याणकारी | मनोहारि = Pleasing to the heart / मन को अच्छा लगने वाला | च = And / और | दुर्लभम् = Rare / कठिनाई से मिलने वाला | वचः = Words / वाणी | हिन्दी: ऐसा वचन बहुत दुर्लभ होता है जो हमारे लिए फायदेमंद भी हो और सुनने में मीठा व प्रिय भी लगे। कुछ लोग भलाई की बात कहते हैं पर कड़वी भाषा में, और कुछ लोग मीठी बातें करते हैं पर वे हमारे हित में नहीं होतीं। दोनों खूबियों वाला वचन मिलना कठिन है।",
+          "words": [
+            "सूक्तिः",
+            "१०",
             "हितं",
             "मनोहारि",
             "च",
-            "वचः"
-          ],
-          "kind": "exercise-qa"
+            "दुर्लभं",
+            "वचः",
+            "किरातार्जुनीयम्"
+          ]
         },
         {
-          "sanskrit": "(ख) रत्नं किं करोति ?",
-          "meaning": "Does a gem search for an owner? Answer: It does not search; it is sought (न अन्विष्यति, मृग्यते).",
-          "answer_sanskrit": "न अन्विष्यति मृग्यते",
+          "kind": "glossary-header",
+          "sanskrit": "भाग २: वयं शब्दार्थान् जानीमः (शब्दार्थाः — पृष्ठम् ९१)",
+          "meaning": "Part 2: We Learn the Vocabulary (Page 91)",
+          "paragraphTranslation": "भाग २: हम शब्दार्थ सीखते हैं — पृष्ठ ९१",
           "words": [
-            "रत्नं",
-            "किं",
-            "करोति",
-            "?",
-            "उत्तरः",
-            "न",
-            "अन्विष्यति",
+            "भाग",
+            "२:",
+            "वयं",
+            "शब्दार्थान्",
+            "जानीमः",
+            "शब्दार्थाः",
+            "पृष्ठम्",
+            "९१"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "चर",
+          "sanskrit_gloss": "आचरणं कुरु",
+          "hindi_gloss": "आचरण करो",
+          "meaning": "(May you) follow / practice",
+          "paragraphTranslation": "आचरण करो (आचरणं कुरु)",
+          "words": [
+            "चर"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "इत्युक्ते",
+          "sanskrit_gloss": "इति कथने",
+          "hindi_gloss": "अर्थात्",
+          "meaning": "It means / That is to say",
+          "paragraphTranslation": "अर्थात् (इति कथने)",
+          "words": [
+            "इत्युक्ते"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "कुतूहलम्",
+          "sanskrit_gloss": "कौतुकम्",
+          "hindi_gloss": "उत्सुकता",
+          "meaning": "Curiosity / Eagerness",
+          "paragraphTranslation": "उत्सुकता (कौतुकम्)",
+          "words": [
+            "कुतूहलम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "भाण्डागारः",
+          "sanskrit_gloss": "कोषः",
+          "hindi_gloss": "भण्डार / खजाना",
+          "meaning": "Treasure-trove / Storehouse",
+          "paragraphTranslation": "भण्डार / खजाना (कोषः)",
+          "words": [
+            "भाण्डागारः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "अन्विष्यति",
+          "sanskrit_gloss": "अन्वेषणं करोति",
+          "hindi_gloss": "ढूँढ़ता है",
+          "meaning": "Searches for",
+          "paragraphTranslation": "ढूँढ़ता है (अन्वेषणं करोति)",
+          "words": [
+            "अन्विष्यति"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "मृग्यते",
+          "sanskrit_gloss": "अन्विष्यते",
+          "hindi_gloss": "ढूँढ़ा जाता है",
+          "meaning": "Is searched for / Sought",
+          "paragraphTranslation": "ढूँढ़ा जाता है (अन्विष्यते)",
+          "words": [
             "मृग्यते"
-          ],
-          "kind": "exercise-qa"
+          ]
         },
         {
-          "sanskrit": "(ग) मनुष्यस्य परं भूषणं किम् ?",
-          "meaning": "What is the supreme adornment of a human being? Answer: Good character (शीलं परं भूषणम्).",
-          "answer_sanskrit": "शीलम्",
+          "kind": "glossary",
+          "sanskrit": "आद्यम्",
+          "sanskrit_gloss": "प्रथमम्",
+          "hindi_gloss": "पहला / सर्वप्रथम",
+          "meaning": "First / Foremost",
+          "paragraphTranslation": "पहला / सर्वप्रथम (प्रथमम्)",
           "words": [
-            "मनुष्यस्य",
-            "परं",
-            "भूषणं",
-            "किम्",
-            "?",
-            "उत्तरः",
-            "शीलम्"
-          ],
-          "kind": "exercise-qa"
+            "आद्यम्"
+          ]
         },
         {
-          "sanskrit": "(घ) आद्यं धर्मसाधनं किम् ?",
-          "meaning": "What is the primary instrument of Dharma? Answer: The physical body (शरीरम्).",
-          "answer_sanskrit": "शरीरम्",
+          "kind": "glossary",
+          "sanskrit": "धर्मसाधनम्",
+          "sanskrit_gloss": "येन धर्मसिद्धिः भवति",
+          "hindi_gloss": "धर्म सिद्धि का साधन",
+          "meaning": "Instrument for performing Dharma/duty",
+          "paragraphTranslation": "धर्म सिद्धि का साधन (येन धर्मसिद्धिः भवति)",
+          "words": [
+            "धर्मसाधनम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "क्षणशः",
+          "sanskrit_gloss": "क्षणे क्षणे",
+          "hindi_gloss": "प्रत्येक पल में",
+          "meaning": "Every single moment / Second by second",
+          "paragraphTranslation": "प्रत्येक पल में (क्षणे क्षणे)",
+          "words": [
+            "क्षणशः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "कणशः",
+          "sanskrit_gloss": "कणे कणे",
+          "hindi_gloss": "प्रत्येक कण में / छोटे अंश से",
+          "meaning": "In every particle / Grain by grain",
+          "paragraphTranslation": "प्रत्येक कण में (कणे कणे)",
+          "words": [
+            "कणशः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "अर्थम्",
+          "sanskrit_gloss": "वित्तम्",
+          "hindi_gloss": "धन को",
+          "meaning": "Wealth / Money",
+          "paragraphTranslation": "धन को (वित्तम्)",
+          "words": [
+            "अर्थम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "साधयेत्",
+          "sanskrit_gloss": "सम्पादयेत्",
+          "hindi_gloss": "अर्जन करना चाहिए",
+          "meaning": "Should acquire / Should accomplish",
+          "paragraphTranslation": "अर्जन करना चाहिए (सम्पादयेत्)",
+          "words": [
+            "साधयेत्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "पणस्य",
+          "sanskrit_gloss": "नाणकस्य",
+          "hindi_gloss": "रुपये का / सिक्के का",
+          "meaning": "Of a coin / Of rupee",
+          "paragraphTranslation": "रुपये का (नाणकस्य)",
+          "words": [
+            "पणस्य"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "सुखार्थिनः",
+          "sanskrit_gloss": "सुखम् इच्छतः",
+          "hindi_gloss": "सुख चाहने वाले का",
+          "meaning": "Of the seeker of comfort/pleasure",
+          "paragraphTranslation": "सुख चाहने वाले का (सुखम् इच्छतः)",
+          "words": [
+            "सुखार्थिनः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "पूजास्थानम्",
+          "sanskrit_gloss": "श्रद्धायोग्यम्",
+          "hindi_gloss": "आदर का पात्र / वन्दनीय",
+          "meaning": "Object of respect / Worthy of reverence",
+          "paragraphTranslation": "आदर का पात्र (श्रद्धायोग्यम्)",
+          "words": [
+            "पूजास्थानम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "वयः",
+          "sanskrit_gloss": "अवस्था",
+          "hindi_gloss": "आयु / उम्र",
+          "meaning": "Age",
+          "paragraphTranslation": "आयु (अवस्था)",
+          "words": [
+            "वयः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "मा",
+          "sanskrit_gloss": "न",
+          "hindi_gloss": "मत / नहीं",
+          "meaning": "Do not / Not",
+          "paragraphTranslation": "मत (न)",
+          "words": [
+            "मा"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "ब्रूहि",
+          "sanskrit_gloss": "वद",
+          "hindi_gloss": "बोलो / कहो",
+          "meaning": "Speak / May you tell",
+          "paragraphTranslation": "बोलो (वद)",
+          "words": [
+            "ब्रूहि"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "दीनम्",
+          "sanskrit_gloss": "दैन्यम्",
+          "hindi_gloss": "लाचारी या बेचारगी भरे",
+          "meaning": "Helpless / Pitiful / Humble",
+          "paragraphTranslation": "दयनीय / बेचारगी भरे (दैन्यम्)",
+          "words": [
+            "दीनम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "विकत्थनम्",
+          "sanskrit_gloss": "गर्ववाणी",
+          "hindi_gloss": "मिथ्या आत्म-प्रशंसा / डींग हाँकना",
+          "meaning": "Boasting / False self-praise",
+          "paragraphTranslation": "मिथ्या आत्म-प्रशंसा (गर्ववाणी)",
+          "words": [
+            "विकत्थनम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "क्रियावान्",
+          "sanskrit_gloss": "क्रियाशीलः",
+          "hindi_gloss": "कर्म करने वाला / सक्रिय",
+          "meaning": "Action-oriented / Practical doer",
+          "paragraphTranslation": "सक्रिय / कर्मठ (क्रियाशीलः)",
+          "words": [
+            "क्रियावान्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "शीलम्",
+          "sanskrit_gloss": "आचरणम्",
+          "hindi_gloss": "अच्छा आचरण / चरित्र",
+          "meaning": "Good character / Moral conduct",
+          "paragraphTranslation": "चरित्र / सदाचार (आचरणम्)",
+          "words": [
+            "शीलम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "मनोहारि",
+          "sanskrit_gloss": "मनः हरति इति",
+          "hindi_gloss": "मन को अच्छा लगने वाला / प्रिय",
+          "meaning": "Pleasing to the heart / Charming",
+          "paragraphTranslation": "मन को भाने वाला (मनः हरति इति)",
+          "words": [
+            "मनोहारि"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "भाग ३: वयम् अभ्यासं कुर्मः (अभ्यास कार्यम् — पृष्ठानि ९२–९५)",
+          "meaning": "Part 3: Textbook Exercises & Solved Answer Key (Pages 92–95)",
+          "paragraphTranslation": "भाग ३: अभ्यास कार्य एवं सम्पूर्ण समाधान (पृष्ठ ९२–९५)",
+          "words": [
+            "भाग",
+            "३:",
+            "वयम्",
+            "अभ्यासं",
+            "कुर्मः",
+            "अभ्यास",
+            "कार्यम्",
+            "पृष्ठानि",
+            "९२–९५"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "१. अधोलिखितानि वाक्यानि पठित्वा 'आम्' अथवा 'न' इति वदन्तु लिखन्तु च — (पृष्ठम् ९२)",
+          "meaning": "Exercise 1: Read the following statements and state 'Yes' (आम्) or 'No' (न) (Page 92)",
+          "paragraphTranslation": "१. नीचे लिखे वाक्यों को पढ़कर 'हाँ' (आम्) अथवा 'नहीं' (न) बोलिए और लिखिए:",
+          "words": [
+            "१.",
+            "अधोलिखितानि",
+            "वाक्यानि",
+            "पठित्वा",
+            "आम्",
+            "न",
+            "पृष्ठम्",
+            "९२"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) किं वयं पृथिव्याः पुत्राः पुत्र्यः च स्मः ?\nउत्तरम्: आम्",
+          "meaning": "Q: Are we the sons and daughters of the Earth? -> Answer: Yes (आम्).",
+          "paragraphTranslation": "(क) क्या हम सब पृथ्वी के पुत्र और पुत्रियाँ हैं? -> उत्तर: आम् (हाँ, हम पृथ्वी की सन्तान हैं।)",
+          "words": [
+            "किं",
+            "वयं",
+            "पृथिव्याः",
+            "पुत्राः",
+            "पुत्र्यः",
+            "च",
+            "स्मः",
+            "उत्तरम्",
+            "आम्"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ख) किं रत्नम् अन्विष्यति ?\nउत्तरम्: न",
+          "meaning": "Q: Does a jewel search for a buyer? -> Answer: No (न).",
+          "paragraphTranslation": "(ख) क्या रत्न किसी को ढूँढ़ता है? -> उत्तर: न (नहीं, रत्न नहीं ढूँढ़ता बल्कि उसे ढूँढ़ा जाता है।)",
+          "words": [
+            "किं",
+            "रत्नम्",
+            "अन्विष्यति",
+            "उत्तरम्",
+            "न"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ग) किं शीलं श्रेष्ठम् आभूषणम् अस्ति ?\nउत्तरम्: आम्",
+          "meaning": "Q: Is moral character the supreme ornament? -> Answer: Yes (आम्).",
+          "paragraphTranslation": "(ग) क्या शील (सदाचार) सबसे श्रेष्ठ आभूषण है? -> उत्तर: आम् (हाँ)।",
+          "words": [
+            "किं",
+            "शीलं",
+            "श्रेष्ठम्",
+            "आभूषणम्",
+            "अस्ति",
+            "उत्तरम्",
+            "आम्"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(घ) किं शरीरम् आद्यं धर्मसाधनम् ?\nउत्तरम्: आम्",
+          "meaning": "Q: Is the body the primary instrument for dharma? -> Answer: Yes (आम्).",
+          "paragraphTranslation": "(घ) क्या शरीर धर्म-पालन का पहला साधन है? -> उत्तर: आम् (हाँ)।",
+          "words": [
+            "किं",
+            "शरीरम्",
+            "आद्यं",
+            "धर्मसाधनम्",
+            "उत्तरम्",
+            "आम्"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ङ) किं गुणानां सर्वदा एव आदरः भवति ?\nउत्तरम्: आम्",
+          "meaning": "Q: Are virtues always respected? -> Answer: Yes (आम्).",
+          "paragraphTranslation": "(ङ) क्या गुणों का हमेशा ही आदर होता है? -> उत्तर: आम् (हाँ)।",
+          "words": [
+            "किं",
+            "गुणानां",
+            "सर्वदा",
+            "एव",
+            "आदरः",
+            "भवति",
+            "उत्तरम्",
+            "आम्"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(च) किं क्रियाशीलः एव विद्वान् भवति ?\nउत्तरम्: आम्",
+          "meaning": "Q: Is the practical doer alone the true scholar? -> Answer: Yes (आम्).",
+          "paragraphTranslation": "(च) क्या कर्म करने वाला ही वास्तव में विद्वान होता है? -> उत्तर: आम् (हाँ)।",
+          "words": [
+            "किं",
+            "क्रियाशीलः",
+            "एव",
+            "विद्वान्",
+            "भवति",
+            "उत्तरम्",
+            "आम्"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(छ) किम् अस्माभिः केवलं मनोरञ्जकानि वाक्यानि वक्तव्यानि ?\nउत्तरम्: न",
+          "meaning": "Q: Should we speak only entertaining sentences? -> Answer: No (न).",
+          "paragraphTranslation": "(छ) क्या हमें केवल मन बहलाने वाले वाक्य ही बोलने चाहिए? -> उत्तर: न (नहीं, वचन हितकारी भी होने चाहिए।)",
+          "words": [
+            "किम्",
+            "अस्माभिः",
+            "केवलं",
+            "मनोरञ्जकानि",
+            "वाक्यानि",
+            "वक्तव्यानि",
+            "उत्तरम्",
+            "न"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ज) यः सदा सुखम् इच्छति, किं सः विद्यां प्राप्नोति ?\nउत्तरम्: न",
+          "meaning": "Q: Does a person who always seeks comfort acquire knowledge? -> Answer: No (न).",
+          "paragraphTranslation": "(ज) जो हमेशा सुख चाहता है, क्या वह विद्या प्राप्त कर पाता है? -> उत्तर: न (नहीं, सुखार्थी को विद्या कहाँ)।",
+          "words": [
+            "यः",
+            "सदा",
+            "सुखम्",
+            "इच्छति",
+            "किं",
+            "सः",
+            "विद्यां",
+            "प्राप्नोति",
+            "उत्तरम्",
+            "न"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "२. पाठस्य आधारेण प्रश्नानाम् उत्तराणि एकपदेन लिखन्तु — (पृष्ठम् ९२)",
+          "meaning": "Exercise 2: Answer the questions in one word based on the text (Page 92)",
+          "paragraphTranslation": "२. पाठ के आधार पर प्रश्नों के उत्तर एक पद (एक शब्द) में लिखिए:",
+          "words": [
+            "२.",
+            "पाठस्य",
+            "आधारेण",
+            "प्रश्नानाम्",
+            "उत्तराणि",
+            "एकपदेन",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "९२"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) आद्यं धर्मसाधनं किम् ?\nउत्तरम्: शरीरम्",
+          "meaning": "Q: What is the foremost instrument for duty/dharma? -> Answer: शरीरम् (The body).",
+          "paragraphTranslation": "(क) धर्म का पहला साधन क्या है? -> उत्तर: शरीरम् (शरीर)",
           "words": [
             "आद्यं",
             "धर्मसाधनं",
             "किम्",
-            "?",
-            "उत्तरः",
+            "उत्तरम्",
             "शरीरम्"
-          ],
-          "kind": "exercise-qa"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ख) कीदृशं वचः मा ब्रूहि ?\nउत्तरम्: दीनम्",
+          "meaning": "Q: What kind of speech should one not utter? -> Answer: दीनम् (Pitiful / Helpless words).",
+          "paragraphTranslation": "(ख) कैसा वचन नहीं बोलना चाहिए? -> उत्तर: दीनम् (लाचारी या बेचारगी भरा वचन)",
+          "words": [
+            "कीदृशं",
+            "वचः",
+            "मा",
+            "ब्रूहि",
+            "उत्तरम्",
+            "दीनम्"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ग) श्रेष्ठम् आभूषणं किम् अस्ति ?\nउत्तरम्: शीलम्",
+          "meaning": "Q: What is the highest ornament? -> Answer: शीलम् (Good character/conduct).",
+          "paragraphTranslation": "(ग) सबसे श्रेष्ठ आभूषण क्या है? -> उत्तर: शीलम् (अच्छा चरित्र / सदाचार)",
+          "words": [
+            "श्रेष्ठम्",
+            "आभूषणं",
+            "किम्",
+            "अस्ति",
+            "उत्तरम्",
+            "शीलम्"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(घ) सर्वेषां मनुष्याणां माता का अस्ति ?\nउत्तरम्: भूमिः / पृथ्वी",
+          "meaning": "Q: Who is the mother of all humans? -> Answer: भूमिः / पृथ्वी (The Earth).",
+          "paragraphTranslation": "(घ) सभी मनुष्यों की माता कौन है? -> उत्तर: भूमिः / पृथ्वी (धरती माता)",
+          "words": [
+            "सर्वेषां",
+            "मनुष्याणां",
+            "माता",
+            "का",
+            "अस्ति",
+            "उत्तरम्",
+            "भूमिः",
+            "पृथ्वी"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ङ) रत्नानाम् अन्वेषणं के कुर्वन्ति ?\nउत्तरम्: ग्राहकाः / गुणज्ञाः",
+          "meaning": "Q: Who searches for jewels? -> Answer: ग्राहकाः / गुणज्ञाः (The buyers / Appreciators of quality).",
+          "paragraphTranslation": "(ङ) रत्नों की खोज कौन करते हैं? -> उत्तर: ग्राहकाः / गुणज्ञाः (खरीदार / पारखी लोग)",
+          "words": [
+            "रत्नानाम्",
+            "अन्वेषणं",
+            "के",
+            "कुर्वन्ति",
+            "उत्तरम्",
+            "ग्राहकाः",
+            "गुणज्ञाः"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "३. प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखन्तु — (पृष्ठानि ९२, ९३)",
+          "meaning": "Exercise 3: Answer the questions in complete sentences (Pages 92, 93)",
+          "paragraphTranslation": "३. प्रश्नों के उत्तर पूरे वाक्य में लिखिए:",
+          "words": [
+            "३.",
+            "प्रश्नानाम्",
+            "उत्तराणि",
+            "पूर्णवाक्येन",
+            "लिखन्तु",
+            "पृष्ठानि",
+            "९२",
+            "९३"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) कः विद्वान् अस्ति ?\nउत्तरम्: यः क्रियावान् पुरुषः सः विद्वान् अस्ति।",
+          "meaning": "Q: Who is a true scholar? -> Answer: A person who practicalizes knowledge through action is a true scholar.",
+          "paragraphTranslation": "(क) विद्वान कौन है? -> उत्तर: यः क्रियावान् पुरुषः सः विद्वान् अस्ति। (जो कर्म करने वाला और व्यावहारिक आचरण करने वाला व्यक्ति है, वही वास्तव में विद्वान है।)",
+          "words": [
+            "कः",
+            "विद्वान्",
+            "अस्ति",
+            "उत्तरम्",
+            "यः",
+            "क्रियावान्",
+            "पुरुषः",
+            "सः",
+            "विद्वान्",
+            "अस्ति"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ख) गुणिषु पूजास्थानं किम् ?\nउत्तरम्: गुणिषु गुणाः एव पूजास्थानं भवन्ति।",
+          "meaning": "Q: What commands respect among virtuous people? -> Answer: Among virtuous people, their good virtues alone are the objects of respect.",
+          "paragraphTranslation": "(ख) गुणवानों में आदर का पात्र क्या होता है? -> उत्तर: गुणिषु गुणाः एव पूजास्थानं भवन्ति। (गुणवान लोगों में उनके गुण ही सम्मान के वास्तविक पात्र होते हैं।)",
+          "words": [
+            "गुणिषु",
+            "पूजास्थानं",
+            "किम्",
+            "उत्तरम्",
+            "गुणिषु",
+            "गुणाः",
+            "एव",
+            "पूजास्थानं",
+            "भवन्ति"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ग) कः विद्यां न प्राप्नोति ?\nउत्तरम्: सुखार्थी विद्यां न प्राप्नोति।",
+          "meaning": "Q: Who does not acquire knowledge? -> Answer: A seeker of comfort and luxury does not acquire knowledge.",
+          "paragraphTranslation": "(ग) कौन विद्या प्राप्त नहीं करता? -> उत्तर: सुखार्थी विद्यां न प्राप्नोति। (सुख और आराम चाहने वाला व्यक्ति विद्या प्राप्त नहीं कर सकता।)",
+          "words": [
+            "कः",
+            "विद्यां",
+            "न",
+            "प्राप्नोति",
+            "उत्तरम्",
+            "सुखार्थी",
+            "विद्यां",
+            "न",
+            "प्राप्नोति"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(घ) मनुष्यः विद्याम् अर्थं च कथं साधयेत् ?\nउत्तरम्: मनुष्यः क्षणशः विद्यां कणशः अर्थं च साधयेत्।",
+          "meaning": "Q: How should a person acquire knowledge and wealth? -> Answer: A person should acquire knowledge utilizing every moment, and wealth saving every particle.",
+          "paragraphTranslation": "(घ) मनुष्य को विद्या और धन का अर्जन कैसे करना चाहिए? -> उत्तर: मनुष्यः क्षणशः विद्यां कणशः अर्थं च साधयेत्। (मनुष्य को एक-एक पल का उपयोग करके विद्या और एक-एक पैसे का संचय करके धन कमाना चाहिए।)",
+          "words": [
+            "मनुष्यः",
+            "विद्याम्",
+            "अर्थं",
+            "च",
+            "कथं",
+            "साधयेत्",
+            "उत्तरम्",
+            "मनुष्यः",
+            "क्षणशः",
+            "विद्यां",
+            "कणशः",
+            "अर्थं",
+            "च",
+            "साधयेत्"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ङ) कीदृशं वचनं दुर्लभम् ?\nउत्तरम्: हितं मनोहारि च वचनं दुर्लभं भवति।",
+          "meaning": "Q: What kind of speech is rare? -> Answer: Speech that is both beneficial and pleasing to hear is rare.",
+          "paragraphTranslation": "(ङ) कैसा वचन दुर्लभ होता है? -> उत्तर: हितं मनोहारि च वचनं दुर्लभं भवति। (जो वचन कल्याणकारी भी हो और सुनने में प्रिय भी लगे, ऐसा वचन मिलना बहुत कठिन होता है।)",
+          "words": [
+            "कीदृशं",
+            "वचनं",
+            "दुर्लभम्",
+            "उत्तरम्",
+            "हितं",
+            "मनोहारि",
+            "च",
+            "वचनं",
+            "दुर्लभं",
+            "भवति"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "४. रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कुर्वन्तु — (पृष्ठम् ९३)",
+          "meaning": "Exercise 4: Frame questions based on the underlined words (Page 93)",
+          "paragraphTranslation": "४. रेखांकित पदों के आधार पर प्रश्न-निर्माण कीजिए:",
+          "words": [
+            "४.",
+            "रेखाङ्कितपदानि",
+            "आधृत्य",
+            "प्रश्ननिर्माणं",
+            "कुर्वन्तु",
+            "पृष्ठम्",
+            "९३"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) शीलम् परं भूषणम्।\nप्रश्नः: किम् परं भूषणम् ?\n(ख) मनुष्यः पृथिव्याः सन्तानः अस्ति।\nप्रश्नः: मनुष्यः कस्याः सन्तानः अस्ति ?\n(ग) गुणिषु लिङ्गं वयः च न महत्त्वपूर्णम्।\nप्रश्नः: केषु लिङ्गं वयः च न महत्त्वपूर्णम् ?\n(घ) हितकारकं मनोहारि च वचः दुर्लभं भवति।\nप्रश्नः: हितकारकं मनोहारि च किम् दुर्लभं भवति ?",
+          "meaning": "Form questions: (क) What is the highest ornament? (किम्) | (ख) Whose child is a human? (कस्याः) | (ग) Among whom are gender and age not important? (केषु) | (घ) What kind of beneficial and pleasing thing is rare? (किम्)",
+          "paragraphTranslation": "(क) शीलम् परं भूषणम्। -> प्रश्न: किम् परं भूषणम् ?\n(ख) मनुष्यः पृथिव्याः सन्तानः अस्ति। -> प्रश्न: मनुष्यः कस्याः सन्तानः अस्ति ?\n(ग) गुणिषु लिङ्गं वयः च न महत्त्वपूर्णम्। -> प्रश्न: केषु लिङ्गं वयः च न महत्त्वपूर्णम् ?\n(घ) हितकारकं मनोहारि च वचः दुर्लभं भवति। -> प्रश्न: हितकारकं मनोहारि च किम् दुर्लभं भवति ?",
+          "words": [
+            "शीलम्",
+            "परं",
+            "भूषणम्",
+            "किम्",
+            "पृथिव्याः",
+            "कस्याः",
+            "गुणिषु",
+            "केषु",
+            "वचः"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "५. पाठस्य आधारेण समुचितं मेलनं कुर्वन्तु — (पृष्ठम् ९३)",
+          "meaning": "Exercise 5: Match the columns based on the chapter (Page 93)",
+          "paragraphTranslation": "५. पाठ के आधार पर उचित मिलान कीजिए:",
+          "words": [
+            "५.",
+            "पाठस्य",
+            "आधारेण",
+            "समुचितं",
+            "मेलनं",
+            "कुर्वन्तु",
+            "पृष्ठम्",
+            "९३"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) क्षणशः कणशः साधयेत् ➔ विद्याम् अर्थं च\n(ख) सर्वश्रेष्ठम् आभूषणम् ➔ शीलम्\n(ग) रत्नं न अन्विष्यति, तत् ➔ मृग्यते\n(घ) आद्यं धर्मसाधनम् ➔ शरीरम्\n(ङ) हितकारकं मनोहारि च वचः ➔ दुर्लभम्\n(च) पूजास्थानम् ➔ गुणाः",
+          "meaning": "Matching pairs: (a) Acquire moment by moment -> Knowledge and wealth | (b) Foremost ornament -> Moral character | (c) Jewel does not search, it -> Is searched for | (d) Primary instrument of duty -> Body | (e) Beneficial and pleasing speech -> Rare | (f) Object of respect -> Virtues",
+          "paragraphTranslation": "उचित मिलान:\n(क) क्षणशः कणशः साधयेत् ➔ विद्याम् अर्थं च\n(ख) सर्वश्रेष्ठम् आभूषणम् ➔ शीलम्\n(ग) रत्नं न अन्विष्यति, तत् ➔ मृग्यते\n(घ) आद्यं धर्मसाधनम् ➔ शरीरम्\n(ङ) हितकारकं मनोहारि च वचः ➔ दुर्लभम्\n(च) पूजास्थानम् ➔ गुणाः",
+          "words": [
+            "क्षणशः",
+            "कणशः",
+            "साधयेत्",
+            "विद्याम्",
+            "अर्थं",
+            "च",
+            "सर्वश्रेष्ठम्",
+            "आभूषणम्",
+            "शीलम्",
+            "रत्नं",
+            "मृग्यते",
+            "धर्मसाधनम्",
+            "शरीरम्",
+            "दुर्लभम्",
+            "गुणाः"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "६. पाठात् अधोलिखितानां पदानां समानार्थकपदानि चित्वा लिखन्तु — (पृष्ठम् ९३)",
+          "meaning": "Exercise 6: Choose and write synonyms from the text for the following words (Page 93)",
+          "paragraphTranslation": "६. पाठ से नीचे लिखे पदों के पर्यायवाची (समानार्थक) पद चुनकर लिखिए:",
+          "words": [
+            "६.",
+            "पाठात्",
+            "अधोलिखितानां",
+            "पदानां",
+            "समानार्थकपदानि",
+            "चित्वा",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "९३"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) सुतः ➔ पुत्रः\n(ख) प्रथमम् ➔ आद्यम्\n(ग) धनम् ➔ अर्थम्\n(घ) अवस्था ➔ वयः\n(ङ) वचनम् ➔ वचः\n(च) आचरणम् ➔ शीलम् / चर",
+          "meaning": "Synonyms from text: (a) सुतः -> पुत्रः (Son) | (b) प्रथमम् -> आद्यम् (First) | (c) धनम् -> अर्थम् (Wealth) | (d) अवस्था -> वयः (Age) | (e) वचनम् -> वचः (Words/Speech) | (f) आचरणम् -> शीलम् / चर (Conduct)",
+          "paragraphTranslation": "समानार्थक शब्द:\n(क) सुतः ➔ पुत्रः (बेटा)\n(ख) प्रथमम् ➔ आद्यम् (पहला)\n(ग) धनम् ➔ अर्थम् (धन/दौलत)\n(घ) अवस्था ➔ वयः (उम्र/आयु)\n(ङ) वचनम् ➔ वचः (वाणी/वचन)\n(च) आचरणम् ➔ शीलम् / चर (आचरण/चरित्र)",
+          "words": [
+            "सुतः",
+            "पुत्रः",
+            "प्रथमम्",
+            "आद्यम्",
+            "धनम्",
+            "अर्थम्",
+            "अवस्था",
+            "वयः",
+            "वचनम्",
+            "वचः",
+            "आचरणम्",
+            "शीलम्"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "७. रेखाङ्कितपदानां विभक्तिं निर्दिशन्तु — (पृष्ठम् ९४)",
+          "meaning": "Exercise 7: Identify and state the case (Vibhakti) of the underlined words (Page 94)",
+          "paragraphTranslation": "७. रेखांकित पदों की विभक्ति बताइए:",
+          "words": [
+            "७.",
+            "रेखाङ्कितपदानां",
+            "विभक्तिं",
+            "निर्दिशन्तु",
+            "पृष्ठम्",
+            "९४"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) माता भूमिः पुत्रोऽहं पृथिव्याः। ➔ षष्ठी विभक्तिः (एकवचनम्)\n(ख) गुणाः पूजास्थानं गुणिषु न च लिङ्ग न च वयः। ➔ सप्तमी विभक्तिः (बहुवचनम्)\n(ग) शीलं परं भूषणम्। ➔ प्रथमा / द्वितीया विभक्तिः (एकवचनम्)\n(घ) क्षणशः कणशश्चैव विद्याम् अर्थं च साधयेत्। ➔ द्वितीया विभक्तिः (एकवचनम्)\n(ङ) सुखार्थिनः कुतो विद्या कुतो विद्यार्थिनः सुखम्। ➔ षष्ठी विभक्तिः (एकवचनम्)\n(च) हितं मनोहारि च दुर्लभं वचः। ➔ प्रथमा / द्वितीया विभक्तिः (एकवचनम्)",
+          "meaning": "Grammatical cases: (a) पृथिव्याः -> षष्ठी विभक्तिः (Genitive case singular) | (b) गुणिषु -> सप्तमी विभक्तिः (Locative case plural) | (c) भूषणम् -> प्रथमा/द्वितीया विभक्तिः (Nominative/Accusative singular) | (d) विद्याम् -> द्वितीया विभक्तिः (Accusative singular) | (e) सुखार्थिनः -> षष्ठी विभक्तिः (Genitive singular) | (f) वचः -> प्रथमा/द्वितीया विभक्तिः (Nominative/Accusative singular)",
+          "paragraphTranslation": "विभक्ति-परिचय:\n(क) पृथिव्याः ➔ षष्ठी विभक्तिः (सम्बन्ध कारक - पृथ्वी का)\n(ख) गुणिषु ➔ सप्तमी विभक्तिः (अधिकरण कारक - गुणवानों में)\n(ग) भूषणम् ➔ प्रथमा/द्वितीया विभक्तिः (आभूषण)\n(घ) विद्याम् ➔ द्वितीया विभक्तिः (कर्म कारक - विद्या को)\n(ङ) सुखार्थिनः ➔ षष्ठी विभक्तिः (सम्बन्ध कारक - सुख चाहने वाले का)\n(च) वचः ➔ प्रथमा/द्वितीया विभक्तिः (वचन)",
+          "words": [
+            "माता",
+            "पृथिव्याः",
+            "षष्ठी",
+            "गुणिषु",
+            "सप्तमी",
+            "भूषणम्",
+            "प्रथमा",
+            "विद्याम्",
+            "द्वितीया",
+            "सुखार्थिनः",
+            "वचः"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "८. अनुस्वारस्य स्थाने 'म्' लिखित्वा वाक्यानि पुनः लिखन्तु — (पृष्ठम् ९४)",
+          "meaning": "Exercise 8: Rewrite the sentences replacing Anusvara with 'म्' before vowels (Page 94)",
+          "paragraphTranslation": "८. स्वर से पहले अनुस्वार के स्थान पर 'म्' लिखकर वाक्यों को पुनः लिखिए:",
+          "words": [
+            "८.",
+            "अनुस्वारस्य",
+            "स्थाने",
+            "म्",
+            "लिखित्वा",
+            "वाक्यानि",
+            "पुनः",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "९४"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) न रत्नं अन्विष्यति। ➔ न रत्नम् अन्विष्यति।\n(ख) शरीरं आद्यं खलु धर्मसाधनम्। ➔ शरीरम् आद्यं खलु धर्मसाधनम्।\n(ग) वयं अद्यतनं पाठं पठामः। ➔ वयम् अद्यतनं पाठं पठामः।\n(घ) त्वं अस्माकं गृहं आगच्छ। ➔ त्वम् अस्माकं गृहम् आगच्छ।\n(ङ) अहं एकं प्रश्नं प्रष्टुं इच्छामि। ➔ अहम् एकं प्रश्नं प्रष्टुम् इच्छामि।\n(च) गुणं अर्जयितुं अधिकं प्रयत्नं करोतु। ➔ गुणम् अर्जयितुम् अधिकं प्रयत्नं करोतु।",
+          "meaning": "Sandhi rule application (M-kāra before vowels): (a) रत्नं अन्विष्यति -> रत्नम् अन्विष्यति | (b) शरीरं आद्यं -> शरीरम् आद्यं | (c) वयं अद्यतनं -> वयम् अद्यतनं | (d) त्वं अस्माकं गृहं आगच्छ -> त्वम् अस्माकं गृहम् आगच्छ | (e) अहं एकं... प्रष्टुं इच्छामि -> अहम् एकं... प्रष्टुम् इच्छामि | (f) गुणं अर्जयितुं अधिकं -> गुणम् अर्जयितुम् अधिकं",
+          "paragraphTranslation": "अनुस्वार-परिवर्तन (स्वर से पूर्व मकारान्त नियम):\n(क) न रत्नं अन्विष्यति। ➔ \"न रत्नम् अन्विष्यति।\"\n(ख) शरीरं आद्यं खलु धर्मसाधनम्। ➔ \"शरीरम् आद्यं खलु धर्मसाधनम्।\"\n(ग) वयं अद्यतनं पाठं पठामः। ➔ \"वयम् अद्यतनं पाठं पठामः।\"\n(घ) त्वं अस्माकं गृहं आगच्छ। ➔ \"त्वम् अस्माकं गृहम् आगच्छ।\"\n(ङ) अहं एकं प्रश्नं प्रष्टुं इच्छामि। ➔ \"अहम् एकं प्रश्नं प्रष्टुम् इच्छामि।\"\n(च) गुणं अर्जयितुं अधिकं प्रयत्नं करोतु। ➔ \"गुणम् अर्जयितुम् अधिकं प्रयत्नं करोतु।\"",
+          "words": [
+            "रत्नम्",
+            "अन्विष्यति",
+            "शरीरम्",
+            "आद्यं",
+            "वयम्",
+            "अद्यतनं",
+            "त्वम्",
+            "गृहम्",
+            "आगच्छ",
+            "अहम्",
+            "प्रष्टुम्",
+            "इच्छामि",
+            "गुणम्",
+            "अधिकं"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "भाग ४: ग्रन्थ-परिचयः — सूक्तीनां मूलग्रन्थाः (पृष्ठम् ९५)",
+          "meaning": "Part 4: Brief Introductions to the Original Classical Texts (Page 95)",
+          "paragraphTranslation": "भाग ४: ग्रन्थ-परिचय — सूक्तियों के मूल संस्कृत ग्रन्थों का परिचय (पृष्ठ ९५)",
+          "words": [
+            "भाग",
+            "४:",
+            "ग्रन्थ-परिचयः",
+            "सूक्तीनां",
+            "मूलग्रन्थाः",
+            "पृष्ठम्",
+            "९५"
+          ]
+        },
+        {
+          "sanskrit": "१. अथर्ववेदः — चतुरेषु वेदेषु चतुर्थः वेदः। अस्मिन् वेदे मन्त्राः, सामाजिकव्यवस्था, आयुर्वेदः, तत्त्वज्ञानं, प्राचीनानि विज्ञानानि च वर्णितानि सन्ति।",
+          "meaning": "1. Atharvaveda: One of the four main Vedas. It describes hymns, social systems, medical sciences (Ayurveda), philosophy, and early sciences.",
+          "paragraphTranslation": "१. अथर्ववेद: चार प्रमुख वेदों में से एक है। इसमें मन्त्र, सामाजिक व्यवस्था, आयुर्वेद (चिकित्सा विज्ञान), दर्शन और आरम्भिक विज्ञान का विशद वर्णन है।",
+          "words": [
+            "अथर्ववेदः",
+            "वेदेषु",
+            "चतुर्थः",
+            "वेदः",
+            "मन्त्राः",
+            "सामाजिकव्यवस्था",
+            "आयुर्वेदः",
+            "तत्त्वज्ञानं",
+            "विज्ञानानि"
+          ]
+        },
+        {
+          "sanskrit": "२. कुमारसम्भवम् — महाकवि-कालिदासेन विरचितं प्रसिद्धं महाकाव्यम् । अस्मिन् भगवान् शिव-पार्वत्योः दिव्यविवाहस्य कार्तिकेयस्य जन्मप्रसङ्गस्य च मनोहरं वर्णनम् अस्ति।",
+          "meaning": "2. Kumarasambhavam: Written by the great poet Kalidasa. It chronicles the holy wedding of Lord Shiva & Goddess Parvati and the birth of their son, Lord Kartikeya.",
+          "paragraphTranslation": "२. कुमारसम्भवम्: महाकवि कालिदास द्वारा रचित प्रसिद्ध महाकाव्य है। इसमें भगवान शिव और पार्वती के पवित्र विवाह और उनके पुत्र कार्तिकेय के जन्म का पावन वर्णन है।",
+          "words": [
+            "कुमारसम्भवम्",
+            "महाकवि",
+            "कालिदासेन",
+            "महाकाव्यम्",
+            "शिव",
+            "पार्वत्योः",
+            "विवाहस्य",
+            "कार्तिकेयस्य",
+            "जन्मप्रसङ्गस्य"
+          ]
+        },
+        {
+          "sanskrit": "३. पञ्चतन्त्रम् — पण्डित-विष्णुशर्मणा प्रणीतः नीतिग्रन्थः । अस्मिन् पञ्चसु भागेषु विभक्ताः रोचकाः पशु-पक्षिणां कथाः सन्ति, याभिः व्यावहारिकनीतेः शिक्षणं दीयते।",
+          "meaning": "3. Panchatantra: Written by Pandit Vishnu Sharma. It gives practical ethical and moral lessons through interesting animal stories divided into five segments.",
+          "paragraphTranslation": "३. पञ्चतन्त्रम्: पण्डित विष्णु शर्मा द्वारा रचित नीति ग्रन्थ है। इसमें पाँच तन्त्रों (भागों) में रोचक पशु-पक्षियों की कहानियों के माध्यम से व्यावहारिक जीवन एवं नीति की शिक्षा दी गई है।",
+          "words": [
+            "पञ्चतन्त्रम्",
+            "विष्णुशर्मणा",
+            "नीतिग्रन्थः",
+            "पञ्चसु",
+            "भागेषु",
+            "कथाः",
+            "व्यावहारिकनीतेः"
+          ]
+        },
+        {
+          "sanskrit": "४. उत्तररामचरितम् — महाकवि-भवभूतिना रचितं प्रसिद्धं नाटकम् । अस्मिन् श्रीरामस्य राज्याभिषेकानन्तरं जीवनस्य करुणरसप्रधानं चरितं चित्रितम् अस्ति।",
+          "meaning": "4. Uttararamacharitam: Written by Bhavabhuti. It is a famous play focusing on the life of Lord Rama after his royal coronation, celebrated for Karuna Rasa.",
+          "paragraphTranslation": "४. उत्तररामचरितम्: महाकवि भवभूति द्वारा रचित प्रसिद्ध नाटक है। यह श्रीराम के राज्याभिषेक के बाद के जीवन और सीता-परित्याग के करुण प्रसंगों पर आधारित एक उत्कृष्ट नाटक है।",
+          "words": [
+            "उत्तररामचरितम्",
+            "भवभूतिना",
+            "नाटकम्",
+            "श्रीरामस्य",
+            "राज्याभिषेकानन्तरं",
+            "करुणरसप्रधानं"
+          ]
+        },
+        {
+          "sanskrit": "५. नीतिशतकम् — उज्जयिन्याः नृप-भर्तृहरिणा विरचितः श्लोकसंग्रहः। अस्मिन् नीति-सदाचार-मानवस्वभाव-सम्बद्धाः शतं श्लोकाः सन्ति।",
+          "meaning": "5. Nitisatakam: Written by King Bhartrihari of Ujjain. It is a widely studied text containing a hundred couplets on the code of ethics and societal behavior.",
+          "paragraphTranslation": "५. नीतिशतकम्: उज्जयिनी के राजा भर्तृहरि द्वारा रचित नीति ग्रन्थ है। इसमें सौ श्लोकों में आचार-संहिता, मानवीय व्यवहार, सत्सङ्गति और नैतिक मूल्यों की शिक्षा दी गई है।",
+          "words": [
+            "नीतिशतकम्",
+            "भर्तृहरिणा",
+            "श्लोकसंग्रहः",
+            "नीति",
+            "सदाचार",
+            "मानवस्वभाव",
+            "शतं",
+            "श्लोकाः"
+          ]
+        },
+        {
+          "sanskrit": "६. किरातार्जुनीयम् — महाकवि-भारविणा विरचितं संस्कृत-साहित्यस्य बृहत्त्रयी-अन्तर्गतं महाकाव्यम् । अस्मिन् किरातवेषधारिणः शिवस्य अर्जुनस्य च मध्यं पाशुपतास्त्रप्राप्तये युद्धं वर्णितम् अस्ति।",
+          "meaning": "6. Kiratarjuniyam: An epic poem written by Bharavi belonging to the Brihat-trayi. It depicts the intense celestial duel between Lord Shiva (disguised as a Kirata hunter) and Arjuna for obtaining the Pashupatastra.",
+          "paragraphTranslation": "६. किरातार्जुनीयम्: महाकवि भारवि द्वारा रचित महाकाव्य है जो बृहत्त्रयी में गिना जाता है। इसमें किरात शिकारी का रूप धारण करने वाले भगवान शिव और पाण्डुपुत्र अर्जुन के बीच पाशुपतास्त्र की प्राप्ति हेतु हुए युद्ध का ओजस्वी वर्णन है।",
+          "words": [
+            "किरातार्जुनीयम्",
+            "भारविणा",
+            "बृहत्त्रयी",
+            "महाकाव्यम्",
+            "किरातवेषधारिणः",
+            "शिवस्य",
+            "अर्जुनस्य",
+            "पाशुपतास्त्रप्राप्तये"
+          ]
         }
-      ]
+      ],
+      "page_numbers": "85-95"
     },
     {
       "id": "gsde109",
