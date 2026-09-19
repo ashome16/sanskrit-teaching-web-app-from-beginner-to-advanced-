@@ -777,6 +777,10 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                                                     ? 'पूरणशब्दाः'
                                                     : jump.label.includes('सङ्ख्या')
                                                       ? 'सङ्ख्याः'
+                                                      : jump.label.includes('लङ्-लकार')
+                                                        ? 'लङ्-लकारः'
+                                                      : jump.label.includes('व्यूह') || jump.label.includes('सप्ताङ्ग')
+                                                        ? 'व्यूहरचना'
                                                       : jump.label.includes('विस्तार') || jump.label.includes('पुराण')
                                                         ? 'विस्तारः'
                                                         : jump.label.includes('लाभ')

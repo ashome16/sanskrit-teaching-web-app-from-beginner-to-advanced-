@@ -17544,316 +17544,1329 @@
     {
       "id": "gsde112",
       "fileName": "gsde112.txt",
-      "title": "Chapter 12: वीराङ्गना पन्नाधाया",
+      "title": "Chapter 12: द्वादशः पाठः : वीराङ्गना पन्नाधाया",
       "sentences": [
         {
-          "sanskrit": "१. पाठस्य मूल-संवादः / कथा (पन्नाधाय का महान् बलिदान)",
-          "meaning": "Historical Narrative: The Supreme Sacrifice of Heroic Panna Dhai",
-          "paragraphTranslation": "पन्नाधाय का अमर बलिदान एवं राष्ट्रभक्ति",
+          "sanskrit": "भाग १: पाठ्य-कथा — वीराङ्गना पन्नाधाया (पृष्ठम् १२७–१२९)",
+          "meaning": "Part 1: Historical Narrative — The Brave Heroine Panna Dhai (Pages 127–129)",
+          "paragraphTranslation": "भाग १: पाठ्य-कथा — वीराङ्गना पन्नाधाय (पृष्ठ १२७–१२९)",
           "words": [
-            "पाठस्य",
-            "मूल-संवादः"
+            "भाग",
+            "१",
+            "पाठ्य",
+            "कथा",
+            "वीराङ्गना",
+            "पन्नाधाया",
+            "पृष्ठम्",
+            "१२७",
+            "१२९"
           ],
           "kind": "section-header"
         },
         {
-          "sanskrit": "इयं भारतभूमिः वीराणां त्यागधनानां च भूमिः अस्ति। सर्वे भारतीयाः वदन्ति— \"इयं भूमिः अस्माकं माता\" इति। अथर्ववेदे अपि उक्तम्— 'माता भूमिः पुत्रोऽहं पृथिव्याः' इति।",
-          "meaning": "This land of Bharat is the sacred ground of brave heroes and great souls whose wealth was self-sacrifice. All Indians proclaim: 'This land is our divine mother!' In the Atharva Veda it is declared: 'Earth is my mother, and I am the son of Mother Earth.'",
-          "paragraphTranslation": "यह भारत भूमि वीरों और सर्वस्व दान करने वाले त्यागियों की भूमि है। सभी भारतीय कहते हैं— \"यह भूमि हमारी माता है\"। अथर्ववेद में भी कहा गया है— 'माता भूमिः पुत्रोऽहं पृथिव्याः' (भूमि मेरी माता है और मैं पृथ्वी का पुत्र हूँ)।",
+          "sanskrit": "एषा भारतभूमिः वीराणां त्यागधनानां भूमिः अस्ति। सर्वे भारतीयाः ‘एषा भूमिः अस्माकं माता’ इति वदन्ति। अथर्ववेदे ‘माता भूमिः पुत्रोऽहं पृथिव्याः’ इति उक्तम्।",
+          "meaning": "This land of India is the land of brave souls and icons of sacrifice. All Indians say, 'This land is our mother.' In the Atharvaveda, it is stated, 'Earth is my mother, and I am the son of the Earth.'",
+          "paragraphTranslation": "यह भारतभूमि वीरों और महान त्यागियों की धरती है। सभी भारतीय कहते हैं कि—'यह भूमि हमारी माता है।' अथर्ववेद में भी कहा गया है—'पृथ्वी मेरी माता है और मैं इस धरती का पुत्र हूँ।'",
           "words": [
-            "इयं",
+            "एषा",
             "भारतभूमिः",
             "वीराणां",
             "त्यागधनानां",
-            "च",
             "भूमिः",
-            "अस्ति",
+            "अस्ति।",
             "सर्वे",
             "भारतीयाः",
-            "वदन्ति",
-            "इयं",
+            "एषा",
             "भूमिः",
             "अस्माकं",
             "माता",
             "इति",
+            "वदन्ति।",
             "अथर्ववेदे",
-            "उक्तम्",
             "माता",
             "भूमिः",
             "पुत्रोऽहं",
-            "पृथिव्याः"
+            "पृथिव्याः",
+            "इति",
+            "उक्तम्।"
           ]
         },
         {
-          "sanskrit": "मातृभूमेः रक्षणाय भारतीयाः स्वसर्वस्वं समर्पितवन्तः। एतादृशानां भारतीयानां गणनायां महिलानाम् अपि महद् योगदानम् अस्ति। त्यागे शौर्ये च महिलाः शत्रुनिबर्हणाः आसन्।",
-          "meaning": "To protect the motherland, Indians have sacrificed their all. Among such patriots, the heroic contributions of women are immense. In valor and sacrifice, Indian women proved to be annihilators of enemy oppressors.",
-          "paragraphTranslation": "मातृभूमि की रक्षा के लिए भारतीयों ने अपना सब कुछ समर्पित कर दिया। ऐसे देशभक्तों में महिलाओं का भी बहुत बड़ा योगदान है। त्याग और वीरता में महिलाएँ शत्रुओं का संहार करने वाली थीं।",
+          "sanskrit": "मातृभूमेः रक्षणार्थं भारतीयाः सर्वस्वम् अर्पितवन्तः। एतादृशां भारतीयानां गणनायां महिलानां प्रभूतं योगदानम् अस्ति। त्यागे वीरतायां च महिलाः शत्रुनिबर्हणाः आसन्।",
+          "meaning": "Indians have sacrificed their everything to protect their motherland. In the counting of such glorious Indians, women hold an immense contribution. In sacrifice and valor, women were the ultimate destroyers of enemies.",
+          "paragraphTranslation": "मातृभूमि की रक्षा के लिए भारतीयों ने अपना सब कुछ न्योछावर कर दिया। ऐसे गौरवशाली भारतीयों की गिनती में महिलाओं का भी बहुत बड़ा योगदान है। त्याग और बहादुरी में महिलाएँ शत्रुओं का विनाश करने वाली रही हैं।",
           "words": [
             "मातृभूमेः",
-            "रक्षणाय",
+            "रक्षणार्थं",
             "भारतीयाः",
-            "स्वसर्वस्वं",
-            "समर्पितवन्तः",
-            "महिलानाम्",
-            "महद्",
+            "सर्वस्वम्",
+            "अर्पितवन्तः।",
+            "एतादृशां",
+            "भारतीयानां",
+            "गणनायां",
+            "महिलानां",
+            "प्रभूतं",
             "योगदानम्",
-            "अस्ति",
+            "अस्ति।",
             "त्यागे",
-            "शौर्ये",
+            "वीरतायां",
             "च",
             "महिलाः",
             "शत्रुनिबर्हणाः",
-            "आसन्"
+            "आसन्।"
           ]
         },
         {
-          "sanskrit": "एतासु वीराङ्गनासु राजस्थानस्य पन्नाधाया एका विशिष्टा वीराङ्गना आसीत्। सा साहसस्य, त्यागस्य, निष्ठायाः च अद्वितीया मूर्तिः आसीत्।",
-          "meaning": "Among these valiant heroines, Panna Dhai of Rajasthan was an extraordinary exemplar. She was the living embodiment of courage, sacrifice, and unswerving loyalty.",
-          "paragraphTranslation": "ऐसी ही वीर नारियों में राजस्थान की पन्नाधाय एक अद्वितीय वीराङ्गना थीं। वह साहस, त्याग और राष्ट्रनिष्ठा की सजीव मूर्ति थीं।",
+          "sanskrit": "एतादृशीषु वीराङ्गनासु राजस्थानस्य पन्नाधाया काचिद्विशिष्टा वीराङ्गना आसीत्। एषा साहसस्य त्यागस्य निष्ठायाः च अद्वितीया मूर्तिः आसीत्। अस्मीन पाठे तस्याः त्यागस्य पराक्रमस्य च वर्णनं कृतम्। एषा इतिहासस्य स्वर्णिमाक्षरैः लिखिता घटना अस्ति।",
+          "meaning": "Among such brave women, Panna Dhai of Rajasthan was exceptionally outstanding. She was a matchless embodiment of courage, sacrifice, and loyalty. This lesson describes her profound sacrifice and bravery. This historical event is forever inscribed in golden letters.",
+          "paragraphTranslation": "ऐसी ही वीर नारियों में राजस्थान की 'पन्नाधाय' एक बहुत ही विशिष्ट वीराङ्गना थीं। वह साहस, त्याग और निष्ठा की एक बेजोड़ मूरत थीं। इस पाठ में उनके इसी महान त्याग और बहादुरी का वर्णन किया गया है। यह इतिहास की सुनहरे अक्षरों में लिखी गई एक अमर घटना है।",
           "words": [
-            "एतासु",
+            "एतादृशीषु",
             "वीराङ्गनासु",
             "राजस्थानस्य",
             "पन्नाधाया",
-            "एका",
-            "विशिष्टा",
+            "काचिद्विशिष्टा",
             "वीराङ्गना",
-            "आसीत्",
-            "सा",
+            "आसीत्।",
+            "एषा",
             "साहसस्य",
             "त्यागस्य",
             "निष्ठायाः",
             "च",
             "अद्वितीया",
             "मूर्तिः",
-            "आसीत्"
+            "आसीत्।",
+            "अस्मीन",
+            "पाठे",
+            "तस्याः",
+            "त्यागस्य",
+            "पराक्रमस्य",
+            "च",
+            "वर्णनं",
+            "कृतम्।",
+            "एषा",
+            "इतिहासस्य",
+            "स्वर्णिमाक्षरैः",
+            "लिखिता",
+            "घटना",
+            "अस्ति।"
           ]
         },
         {
-          "sanskrit": "षोडशशताब्द्यां मेवाडनगरे महाराणा-सङ्ग्रामसिंहः नाम सुप्रसिद्धः राजा आसीत्। तस्य द्वौ पुत्रौ आस्ताम्— विक्रमादित्यः उदयसिंहः च। बनवीरः महाराणा-सङ्ग्रामसिंहस्य ज्येष्ठं पुत्रं विक्रमादित्यं छलेन हत्वा मेवाडस्य शासनम् अकरोत्।",
-          "meaning": "In the 16th century, the illustrious king Maharana Sangram Singh ruled Mewar. He had two young sons— Vikramaditya and Udai Singh. Banvir treacherously murdered the elder prince Vikramaditya and seized royal control over Mewar.",
-          "paragraphTranslation": "सोलहवीं शताब्दी में मेवाड़ में महाराणा संग्रामसिंह नाम के राजा थे। उनके दो पुत्र थे— विक्रमादित्य और उदयसिंह। बनवीर ने बड़े पुत्र विक्रमादित्य को धोखे से मारकर मेवाड़ पर कब्जा कर लिया।",
+          "sanskrit": "कथा — बनवीरस्य कुतन्त्रं पन्नाधायायाः च निर्णयः (पृष्ठम् १२८)",
+          "meaning": "The Treachery of Banveer & Panna's Quick Decision (Page 128)",
+          "paragraphTranslation": "कथा — बनवीर का कुतन्त्र एवं पन्नाधाय का निर्णय (पृष्ठ १२८)",
           "words": [
-            "षोडशशताब्द्यां",
+            "कथा",
+            "बनवीरस्य",
+            "कुतन्त्रं",
+            "पन्नाधायायाः",
+            "च",
+            "निर्णयः",
+            "पृष्ठम्",
+            "१२८"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "षोडशे शतके मेवाडनगरे महाराणा-सङ्ग्रामसिंहः इति सुविख्यातः महाराजः आसीत्। तस्य द्वौ पुत्रौ विक्रमादित्यः उदयसिंहः च आस्ताम्। महाराणासङ्ग्रामसिंहस्य भ्राता पृथ्वीराजः। बनवीरः पृथ्वीराजस्य अष्टादशसु पुत्रेषु अन्यतमः।",
+          "meaning": "In the sixteenth century, a highly renowned king named Maharanasangramasingha ruled Mewar. He had two sons, Vikramaditya and Udaysingha. King Sangramasingha's brother was Prithviraj. Banveer was one among the eighteen sons of Prithviraj.",
+          "paragraphTranslation": "सोलहवीं शताब्दी में मेवाड़ में महाराणा संग्राम सिंह (राणा सांगा) नाम के एक प्रसिद्ध राजा थे। उनके दो पुत्र थे—विक्रमादित्य और उदयसिंह। महाराणा संग्राम सिंह के भाई का नाम पृथ्वीराज था। बनवीर उसी पृथ्वीराज के 18 बेटों में से एक था।",
+          "words": [
+            "षोडशे",
+            "शतके",
             "मेवाडनगरे",
-            "महाराणा-सङ्ग्रामसिंहः",
-            "राजा",
-            "आसीत्",
+            "महाराणा",
+            "सङ्ग्रामसिंहः",
+            "इति",
+            "सुविख्यातः",
+            "महाराजः",
+            "आसीत्।",
             "तस्य",
             "द्वौ",
             "पुत्रौ",
             "विक्रमादित्यः",
             "उदयसिंहः",
             "च",
+            "आस्ताम्।",
+            "महाराणासङ्ग्रामसिंहस्य",
+            "भ्राता",
+            "पृथ्वीराजः।",
             "बनवीरः",
-            "विक्रमादित्यं",
-            "छलेन",
-            "हत्वा",
-            "शासनम्",
-            "अकरोत्"
+            "पृथ्वीराजस्य",
+            "अष्टादशसु",
+            "पुत्रेषु",
+            "अन्यतमः।"
           ]
         },
         {
-          "sanskrit": "अतः एकदा रात्रौ सः उदयसिंहं मारयितुं कुतन्त्रम् अरचयत्। तत् ज्ञात्वा पन्नाधाया उदयसिंहस्य शयनस्थाने स्वपुत्रं चन्दनं शायितवती। बनवीरः तत्र शयानं चन्दनम् एव उदयसिंहं मत्वा खड्गेन अमारयत्।",
-          "meaning": "One fateful night, Banvir plotted to murder child prince Udai Singh. Realizing the peril, Panna Dhai placed her own beloved infant son Chandan upon Udai Singh's royal bed. Mistaking Chandan for the prince, Banvir slew him with his sword.",
-          "paragraphTranslation": "एक रात बनवीर ने बालक उदयसिंह को मारने का षड्यंत्र रचा। यह जानकर पन्नाधाय ने उदयसिंह के पलंग पर अपने पुत्र चन्दन को सुला दिया। बनवीर ने सोए हुए चन्दन को ही उदयसिंह समझकर तलवार से मार डाला।",
+          "sanskrit": "सः बनवीरः महाराणासङ्ग्रामसिंहस्य प्रथमं पुत्रं विक्रमादित्यं छलेन मारयित्वा मेवाडस्य शासनम् अकरोत्। ततः परमपि सः दुष्टबुद्धिः अचिन्तयत् यत् – “अहम् एकः एव उत्तराधिकारी भवेयम्। न कोऽपि मम प्रतिस्पर्धी स्यात्” इति।",
+          "meaning": "Banveer treacherously murdered Vikramaditya, the eldest son of Rana Sanga, and grabbed the throne of Mewar. Even after this, the evil-minded man thought, 'I should be the sole ruler here. No rival should exist against me.'",
+          "paragraphTranslation": "उस दुष्ट बनवीर ने महाराणा संग्राम सिंह के बड़े बेटे विक्रमादित्य को धोखे से मारकर मेवाड़ की गद्दी हथिया ली। इसके बाद भी उस कपटी ने सोचा कि—'मैं ही यहाँ का अकेला राजा बना रहूँ, मेरा कोई प्रतिद्वंद्वी न बचे।'",
           "words": [
-            "एकदा",
+            "सः",
+            "बनवीरः",
+            "महाराणासङ्ग्रामसिंहस्य",
+            "प्रथमं",
+            "पुत्रं",
+            "विक्रमादित्यं",
+            "छलेन",
+            "मारयित्वा",
+            "मेवाडस्य",
+            "शासनम्",
+            "अकरोत्।",
+            "ततः",
+            "परमपि",
+            "सः",
+            "दुष्टबुद्धिः",
+            "अचिन्तयत्",
+            "यत्",
+            "अहम्",
+            "एकः",
+            "एव",
+            "उत्तराधिकारी",
+            "भवेयम्।",
+            "न",
+            "कोऽपि",
+            "मम",
+            "प्रतिस्पर्धी",
+            "स्यात्",
+            "इति।"
+          ]
+        },
+        {
+          "sanskrit": "अतः कदाचित् रात्रौ सः उदयसिंहं मारयितुं कुतन्त्रम् अरचयत्। तद् ज्ञात्वा पन्नाधाया उदयसिंहस्य शयनस्थाने स्वपुत्रं चन्दनं शायितवती। सा तस्य दुष्परिणामं जानाति स्म। बनवीरः उदयसिंहस्य शयनागारम् आगच्छत्। तत्र सुप्तः चन्दनः एव उदयसिंहः इति मत्वा बनवीरः चन्दनम् अमारयत्।",
+          "meaning": "Thus, one night he hatched a wicked plot to eliminate Udaysingha. Learning this, Panna Dhai put her own son Chandan to sleep on Udaysingha's bed. She knew the terrible consequences of her choice. Banveer entered Udaysingha's bedroom. Mistaking the sleeping Chandan for Udaysingha, Banveer murdered him.",
+          "paragraphTranslation": "इसलिए एक रात उसने छोटे राजकुमार उदयसिंह को भी जान से मारने का षड्यंत्र रचा। पन्नाधाय को इस गुप्त चाल का पता चल गया। उसने तुरंत उदयसिंह के पलंग पर अपने सगे बेटे चन्दन को सुला दिया। वह इसके भयानक अंजाम को अच्छी तरह जानती थी। बनवीर तलवार लेकर उदयसिंह के कमरे में घुसा। वहाँ बिस्तर पर सोए हुए चन्दन को ही उदयसिंह समझकर बनवीर ने उसे मौत के घाट उतार दिया।",
+          "words": [
+            "अतः",
+            "कदाचित्",
             "रात्रौ",
+            "सः",
             "उदयसिंहं",
             "मारयितुं",
             "कुतन्त्रम्",
-            "अरचयत्",
+            "अरचयत्।",
+            "तद्",
+            "ज्ञात्वा",
             "पन्नाधाया",
             "उदयसिंहस्य",
             "शयनस्थाने",
             "स्वपुत्रं",
             "चन्दनं",
-            "शायितवती",
+            "शायितवती।",
+            "सा",
+            "तस्य",
+            "दुष्परिणामं",
+            "जानाति",
+            "स्म।",
+            "बनवीरः",
+            "उदयसिंहस्य",
+            "शयनागारम्",
+            "आगच्छत्।",
+            "तत्र",
+            "सुप्तः",
+            "चन्दनः",
+            "एव",
+            "उदयसिंहः",
+            "इति",
+            "मत्वा",
             "बनवीरः",
             "चन्दनम्",
-            "एव",
-            "उदयसिंहं",
-            "मत्वा",
-            "खड्गेन",
-            "अमारयत्"
+            "अमारयत्।"
           ]
         },
         {
-          "sanskrit": "पन्नाधायायाः एषः निर्णयः अकल्पनीयः आसीत्। सा अजानात् यत्— 'व्यक्तिगतं हितं न, अपितु राष्ट्रहितम् एव सर्वोपरि अस्ति' इति।",
-          "meaning": "Panna Dhai's sublime decision transcends imagination. She knew and exemplified the supreme truth: 'Individual or familial interest is not paramount; the welfare of the motherland is above all!'",
-          "paragraphTranslation": "पन्नाधाय का यह निर्णय कल्पनातीत था। वह जानती थी कि— 'व्यक्तिगत हित नहीं, बल्कि राष्ट्रहित ही सर्वोपरि है'।",
+          "sanskrit": "कथा — पन्नाधायायाः त्यागस्य विजयः मेवाडस्य च गौरवम् (पृष्ठम् १२९)",
+          "meaning": "The Ultimate Triumph of Mewar & Supreme Sacrifice (Page 129)",
+          "paragraphTranslation": "कथा — पन्नाधाय के त्याग की विजय एवं मेवाड़ का गौरव (पृष्ठ १२९)",
+          "words": [
+            "कथा",
+            "पन्नाधायायाः",
+            "त्यागस्य",
+            "विजयः",
+            "मेवाडस्य",
+            "च",
+            "गौरवम्",
+            "पृष्ठम्",
+            "१२९"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "पन्नाधायायाः निर्णयः अकल्पनीयः आसीत्। ‘व्यक्तिहितं न, राष्ट्रहितम् एव श्रेष्ठम्’ इति सा जानाति स्म। तस्याः पुत्रस्तु दिवङ्गतः, परं सा मेवाडराज्यं बनवीरस्य कुतन्त्रात् अरक्षत्। कालान्तरे सः एव उदयसिंहः युद्धे बनवीरं हत्वा मेवाडराज्यस्य राजा अभवत्।",
+          "meaning": "Panna Dhai’s monumental decision was completely beyond human imagination. She deeply believed, 'National welfare is supreme to individual self-interest.' Though her own son died, she successfully guarded the kingdom of Mewar against Banveer's malicious plot. Later on, Udaysingha defeated Banveer in battle and became the lawful ruler of Mewar.",
+          "paragraphTranslation": "पन्नाधाय का यह फैसला मानवीय सोच और कल्पना से बिल्कुल परे था। वह जानती थी कि—'खुद के स्वार्थ से बड़ा देश का हित होता है।' उनका बेटा तो हमेशा के लिए चला गया, लेकिन उन्होंने मेवाड़ के राजवंश को बनवीर के खूनी चंगुल से बचा लिया। आगे चलकर यही राजकुमार उदयसिंह बड़े हुए और उन्होंने युद्ध में बनवीर को मारकर मेवाड़ का खोया राज्य वापस पाया।",
           "words": [
             "पन्नाधायायाः",
             "निर्णयः",
             "अकल्पनीयः",
-            "आसीत्",
-            "सा",
-            "अजानात्",
-            "व्यक्तिगतं",
-            "हितं",
+            "आसीत्।",
+            "व्यक्तिहितं",
             "न",
-            "अपितु",
             "राष्ट्रहितम्",
             "एव",
-            "सर्वोपरि",
-            "अस्ति"
-          ]
-        },
-        {
-          "sanskrit": "कालान्तरे सः एव उदयसिंहः युद्धे बनवीरं हत्वा मेवाडस्य राजा अभवत्। तस्य एव पुत्रः पराक्रमी योद्धा महाराणाप्रतापः आसीत्, यः स्वशौर्येण भारतीयानां हृदये चिरं स्थानम् अलभत।",
-          "meaning": "In due time, that very prince Udai Singh grew up, defeated the tyrant Banvir in battle, and ascended the throne of Mewar. And it was his heroic son Maharana Pratap whose indomitable courage carved an eternal place in the hearts of all Indians.",
-          "paragraphTranslation": "समय बीतने पर वही उदयसिंह युद्ध में बनवीर को मारकर मेवाड़ के राजा बने। और उन्हीं के पुत्र पराक्रमी महाराणा प्रताप हुए, जिन्होंने अपने शौर्य से भारत के इतिहास को अमर कर दिया।",
-          "words": [
+            "श्रेष्ठम्",
+            "इति",
+            "सा",
+            "जानाति",
+            "स्म।",
+            "तस्याः",
+            "पुत्रस्तु",
+            "दिवङ्गतः",
+            "परं",
+            "सा",
+            "मेवाडराज्यं",
+            "बनवीरस्य",
+            "कुतन्त्रात्",
+            "अरक्षत्।",
             "कालान्तरे",
+            "सः",
+            "एव",
             "उदयसिंहः",
             "युद्धे",
             "बनवीरं",
             "हत्वा",
+            "मेवाडराज्यस्य",
             "राजा",
-            "अभवत्",
-            "तस्य",
-            "पुत्रः",
-            "महाराणाप्रतापः",
-            "आसीत्",
-            "यः",
-            "भारतीयानां",
-            "हृदये",
-            "स्थानम्",
-            "अलभत"
+            "अभवत्।"
           ]
         },
         {
-          "sanskrit": "२. मुख्य शब्दार्थ (Key Word Meanings)",
-          "meaning": "Key Vocabulary Glossary",
-          "paragraphTranslation": "कठिन शब्दों के अर्थ",
+          "sanskrit": "तस्य पुत्रः एव पराक्रमी योद्धा महाराणाप्रतापः। सः प्रतापः शौर्येण भारतीयानां हृदये चिरं स्थानं प्राप्नोत्। कथ्यते एव – “यदि पन्नाधाया स्वपुत्रस्य बलिदानं न अकरिष्यत् तर्हि उदयसिंहः न अभविष्यत्। यदि उदयसिंहः न अभविष्यत् तर्हि महाराणाप्रतापः अपि न अभविष्यत्”।",
+          "meaning": "His son was the legendary valorous warrior, Maharana Pratap. Through his absolute bravery, Pratap secured an everlasting home in the hearts of all Indians. It is rightly stated: 'Had Panna Dhai not sacrificed her son, Udaysingha would not have survived. Had Udaysingha not survived, Maharana Pratap would never have existed.'",
+          "paragraphTranslation": "इन्हीं उदयसिंह के पुत्र महान पराक्रमी योद्धा महाराणा प्रताप हुए। महाराणा प्रताप ने अपनी बहादुरी से हर भारतीय के दिल में सदा के लिए अपनी जगह बनाई। सच ही कहा जाता है—'अगर पन्नाधाय अपने बेटे की कुर्बानी न देतीं, तो उदयसिंह जीवित न बचते। अगर उदयसिंह न होते, तो महाराणा प्रताप का जन्म भी न होता।'",
           "words": [
-            "मुख्य",
-            "शब्दार्थ"
+            "तस्य",
+            "पुत्रः",
+            "एव",
+            "पराक्रमी",
+            "योद्धा",
+            "महाराणाप्रतापः।",
+            "सः",
+            "प्रतापः",
+            "शौर्येण",
+            "भारतीयानां",
+            "हृदये",
+            "चिरं",
+            "स्थानं",
+            "प्राप्नोत्।",
+            "कथ्यते",
+            "एव",
+            "यदि",
+            "पन्नाधाया",
+            "स्वपुत्रस्य",
+            "बलिदानं",
+            "न",
+            "अकरिष्यत्",
+            "तर्हि",
+            "उदयसिंहः",
+            "न",
+            "अभविष्यत्।",
+            "यदि",
+            "उदयसिंहः",
+            "न",
+            "अभविष्यत्",
+            "तर्हि",
+            "महाराणाप्रतापः",
+            "अपि",
+            "न",
+            "अभविष्यत्",
+            "।"
+          ]
+        },
+        {
+          "sanskrit": "पन्नाधायायाः त्यागः शौर्यं च जगति आचन्द्रार्कं तिष्ठति। भारतीये इतिहासे वीराङ्गनानां गणनासु पन्नाधाया महत्तमं स्थानं प्राप्नोत्। पन्नाधायायाः बलिदानं सर्वान् शौर्यं, राष्ट्रभक्तिं, कर्तव्यनिष्ठां, बलिदानं, विवेकं च शिक्षयति। उच्यते एव − “यदि पन्नाधाया नाभविष्यत् तर्हि कुतो राणाप्रतापः”",
+          "meaning": "Panna Dhai's valor and sacrifice will shine globally as long as the sun and the moon endure. She occupies the highest status among the legendary women of Indian history. Her sacrifice teaches us courage, patriotism, devotion to duty, and wise vision. As the saying goes—'If Panna Dhai were not there, where would Rana Pratap be?'",
+          "paragraphTranslation": "पन्नाधाय का यह अनुपम त्याग दुनिया में तब तक अमर रहेगा जब तक सूरज और चाँद चमकते रहेंगे। भारतीय इतिहास में वीर महिलाओं की गिनती में उनका स्थान सबसे ऊँचा है। उनका जीवन हमें बहादुरी, देशभक्ति, कर्तव्यनिष्ठा और सही बुद्धि की सीख देता है। इसलिए ठीक ही कहा गया है—'यदि पन्नाधाय न होतीं, तो राणा प्रताप कहाँ से होते!'",
+          "words": [
+            "पन्नाधायायाः",
+            "त्यागः",
+            "शौर्यं",
+            "च",
+            "जगति",
+            "आचन्द्रार्कं",
+            "तिष्ठति।",
+            "भारतीये",
+            "इतिहासे",
+            "वीराङ्गनानां",
+            "गणनासु",
+            "पन्नाधाया",
+            "महत्तमं",
+            "स्थानं",
+            "प्राप्नोत्।",
+            "पन्नाधायायाः",
+            "बलिदानं",
+            "सर्वान्",
+            "शौर्यं",
+            "राष्ट्रभक्तिं",
+            "कर्तव्यनिष्ठां",
+            "बलिदानं",
+            "विवेकं",
+            "च",
+            "शिक्षयति।",
+            "उच्यते",
+            "एव",
+            "यदि",
+            "पन्नाधाया",
+            "नाभविष्यत्",
+            "तर्हि",
+            "कुतो",
+            "राणाप्रतापः"
+          ]
+        },
+        {
+          "sanskrit": "भाग २: वयं शब्दार्थान् जानीमः (शब्दार्थाः — पृष्ठम् १३०-१३१)",
+          "meaning": "Part 2: Vocabulary Extraction (Pages 130–131)",
+          "paragraphTranslation": "भाग २: शब्दार्थाः (पृष्ठ १३०–१३१)",
+          "words": [
+            "भाग",
+            "२",
+            "वयं",
+            "शब्दार्थान्",
+            "जानीमः",
+            "शब्दार्थाः",
+            "पृष्ठम्",
+            "१३०",
+            "१३१"
           ],
           "kind": "glossary-header"
         },
         {
           "sanskrit": "त्यागधनानाम्",
-          "meaning": "Of those whose wealth is selfless sacrifice",
-          "sanskrit_gloss": "बलिदानिनाम्",
-          "hindi_gloss": "बलिदानियों का / त्यागियों का",
+          "meaning": "Of people who sacrifice everything",
+          "paragraphTranslation": "बलिदानियों की (त्यागमूर्तीनाम्)",
           "words": [
-            "त्यागधनानाम्",
-            "बलिदानिनाम्"
+            "त्यागधनानाम्"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "sanskrit_gloss": "त्यागमूर्तीनाम्",
+          "hindi_gloss": "बलिदानियों की"
+        },
+        {
+          "sanskrit": "सर्वस्वम्",
+          "meaning": "One’s Everything",
+          "paragraphTranslation": "अपना सब कुछ (स्वीयं सम्पूर्णम्)",
+          "words": [
+            "सर्वस्वम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "स्वीयं सम्पूर्णम्",
+          "hindi_gloss": "अपना सब कुछ"
+        },
+        {
+          "sanskrit": "प्रभूतम्",
+          "meaning": "Abundant",
+          "paragraphTranslation": "अधिक (प्रचुरम्)",
+          "words": [
+            "प्रभूतम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "प्रचुरम्",
+          "hindi_gloss": "अधिक"
         },
         {
           "sanskrit": "शत्रुनिबर्हणाः",
-          "meaning": "Destroyers of oppressive enemies",
-          "sanskrit_gloss": "शत्रुविनाशिकाः",
-          "hindi_gloss": "शत्रुओं का संहार करने वाली",
+          "meaning": "Destroyers of enemies",
+          "paragraphTranslation": "शत्रुओं का विनाशक (अरिविनाशकाः)",
           "words": [
-            "शत्रुनिबर्हणाः",
-            "शत्रुविनाशिकाः"
+            "शत्रुनिबर्हणाः"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "sanskrit_gloss": "अरिविनाशकाः",
+          "hindi_gloss": "शत्रुओं का विनाशक"
+        },
+        {
+          "sanskrit": "वीराङ्गनासु",
+          "meaning": "Among brave women",
+          "paragraphTranslation": "वीर नारियों में (वीरनारीषु)",
+          "words": [
+            "वीराङ्गनासु"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "वीरनारीषु",
+          "hindi_gloss": "वीर नारियों में"
+        },
+        {
+          "sanskrit": "साहसस्य",
+          "meaning": "Of courage",
+          "paragraphTranslation": "साहस का (वीरतायाः)",
+          "words": [
+            "साहसस्य"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "वीरतायाः",
+          "hindi_gloss": "साहस का"
+        },
+        {
+          "sanskrit": "स्वर्णिमाक्षरैः",
+          "meaning": "With golden letters",
+          "paragraphTranslation": "सोने के अक्षरों से (सुवर्णाक्षरैः)",
+          "words": [
+            "स्वर्णिमाक्षरैः"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "सुवर्णाक्षरैः",
+          "hindi_gloss": "सोने के अक्षरों से"
+        },
+        {
+          "sanskrit": "षोडशे शतके",
+          "meaning": "In the sixteenth century",
+          "paragraphTranslation": "सोलहवीं शताब्दी में (षोडश-शताब्द्याम्)",
+          "words": [
+            "षोडशे शतके"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "षोडश-शताब्द्याम्",
+          "hindi_gloss": "सोलहवीं शताब्दी में"
+        },
+        {
+          "sanskrit": "छलेन",
+          "meaning": "By deception",
+          "paragraphTranslation": "कपट से (वञ्चनेन)",
+          "words": [
+            "छलेन"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "वञ्चनेन",
+          "hindi_gloss": "कपट से"
         },
         {
           "sanskrit": "कुतन्त्रम्",
-          "meaning": "Treacherous plot / Evil conspiracy",
-          "sanskrit_gloss": "षड्यन्त्रम्",
-          "hindi_gloss": "कुचक्र / षड्यंत्र",
+          "meaning": "Evil plot",
+          "paragraphTranslation": "षड्यन्त्र (कुचक्रम्)",
           "words": [
-            "कुतन्त्रम्",
-            "षड्यन्त्रम्"
+            "कुतन्त्रम्"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "sanskrit_gloss": "कुचक्रम्",
+          "hindi_gloss": "षड्यन्त्र"
         },
         {
-          "sanskrit": "दिवङ्गतः",
-          "meaning": "Attained heaven / Departed this life",
-          "sanskrit_gloss": "मृत्युं प्राप्तः",
-          "hindi_gloss": "स्वर्ग सिधार गया / दिवंगत",
+          "sanskrit": "अद्वितीयम्",
+          "meaning": "Matchless",
+          "paragraphTranslation": "सर्वोत्कृष्ट (अनुपमम्)",
           "words": [
-            "दिवङ्गतः",
-            "मृत्युं",
-            "प्राप्तः"
+            "अद्वितीयम्"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "sanskrit_gloss": "अनुपमम्",
+          "hindi_gloss": "सर्वोत्कृष्ट"
         },
         {
-          "sanskrit": "३. वयम् अभ्यासं कुर्मः (हल किए गए अभ्यास प्रश्न)",
-          "meaning": "Exercises with Solved Answers",
-          "paragraphTranslation": "अभ्यास कार्य",
+          "sanskrit": "धाया",
+          "meaning": "Wet Nurse",
+          "paragraphTranslation": "धाय / दाई (धात्री)",
           "words": [
-            "वयम्",
-            "अभ्यासं",
-            "कुर्मः"
+            "धाया"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "धात्री",
+          "hindi_gloss": "धाय / दाई"
+        },
+        {
+          "sanskrit": "आस्ताम्",
+          "meaning": "Two were present",
+          "paragraphTranslation": "दो थे (अभवताम्)",
+          "words": [
+            "आस्ताम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "अभवताम्",
+          "hindi_gloss": "दो थे"
+        },
+        {
+          "sanskrit": "अन्यतमः",
+          "meaning": "One of many",
+          "paragraphTranslation": "बहुतों में एक (बहुषु एकः)",
+          "words": [
+            "अन्यतमः"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "बहुषु एकः",
+          "hindi_gloss": "बहुतों में एक"
+        },
+        {
+          "sanskrit": "दुष्टबुद्धिः",
+          "meaning": "Evil minded",
+          "paragraphTranslation": "दुष्ट बुद्धि वाला (दुर्बुद्धिः)",
+          "words": [
+            "दुष्टबुद्धिः"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "दुर्बुद्धिः",
+          "hindi_gloss": "दुष्ट बुद्धि वाला"
+        },
+        {
+          "sanskrit": "प्रतिस्पर्धी",
+          "meaning": "Competitor",
+          "paragraphTranslation": "प्रतिद्वन्द्वी (स्पर्धालुः)",
+          "words": [
+            "प्रतिस्पर्धी"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "स्पर्धालुः",
+          "hindi_gloss": "प्रतिद्वन्द्वी"
+        },
+        {
+          "sanskrit": "मारयितुम्",
+          "meaning": "To kill",
+          "paragraphTranslation": "मारने के लिए (हन्तुम्)",
+          "words": [
+            "मारयितुम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "हन्तुम्",
+          "hindi_gloss": "मारने के लिए"
+        },
+        {
+          "sanskrit": "कदाचित्",
+          "meaning": "Sometime",
+          "paragraphTranslation": "कभी (कस्मिंश्चित् समये)",
+          "words": [
+            "कदाचित्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "कस्मिंश्चित् समये",
+          "hindi_gloss": "कभी"
+        },
+        {
+          "sanskrit": "शायितवती",
+          "meaning": "Put to sleep",
+          "paragraphTranslation": "सुलाया (शयनं कारितवती)",
+          "words": [
+            "शायितवती"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "शयनं कारितवती",
+          "hindi_gloss": "सुलाया"
+        },
+        {
+          "sanskrit": "दुष्परिणामम्",
+          "meaning": "Bad outcome",
+          "paragraphTranslation": "अनिष्ट को (कुपरिणामम्)",
+          "words": [
+            "दुष्परिणामम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "कुपरिणामम्",
+          "hindi_gloss": "अनिष्ट को"
+        },
+        {
+          "sanskrit": "शयनागारम्",
+          "meaning": "Bedroom",
+          "paragraphTranslation": "सोने के कक्ष को (शयनप्रकोष्ठम्)",
+          "words": [
+            "शयनागारम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "शयनप्रकोष्ठम्",
+          "hindi_gloss": "सोने के कक्ष को"
+        },
+        {
+          "sanskrit": "कल्पनातीतम्",
+          "meaning": "Beyond imagination",
+          "paragraphTranslation": "चिन्तन से परे (अकल्पनीयः)",
+          "words": [
+            "कल्पनातीतम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "अकल्पनीयः",
+          "hindi_gloss": "चिन्तन से परे"
+        },
+        {
+          "sanskrit": "व्यक्तिहितम्",
+          "meaning": "Self interest",
+          "paragraphTranslation": "स्वार्थ (निजहितम्)",
+          "words": [
+            "व्यक्तिहितम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "निजहितम्",
+          "hindi_gloss": "स्वार्थ"
+        },
+        {
+          "sanskrit": "राष्ट्रहितम्",
+          "meaning": "Nation's interest",
+          "paragraphTranslation": "राष्ट्र का हित (देशकल्याणम्)",
+          "words": [
+            "राष्ट्रहितम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "देशकल्याणम्",
+          "hindi_gloss": "राष्ट्र का हित"
+        },
+        {
+          "sanskrit": "श्रेष्ठम्",
+          "meaning": "Highest / Supreme",
+          "paragraphTranslation": "सर्वोपरि (शीर्ष-स्थानीयम्)",
+          "words": [
+            "श्रेष्ठम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "शीर्ष-स्थानीयम्",
+          "hindi_gloss": "सर्वोपरि"
+        },
+        {
+          "sanskrit": "कालान्तरे",
+          "meaning": "Later on",
+          "paragraphTranslation": "कुछ समय के बाद (परवर्ति-समये)",
+          "words": [
+            "कालान्तरे"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "परवर्ति-समये",
+          "hindi_gloss": "कुछ समय के बाद"
+        },
+        {
+          "sanskrit": "हत्वा",
+          "meaning": "Having killed",
+          "paragraphTranslation": "मारकर (मारयित्वा)",
+          "words": [
+            "हत्वा"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "मारयित्वा",
+          "hindi_gloss": "मारकर"
+        },
+        {
+          "sanskrit": "पराक्रमी",
+          "meaning": "Valorous",
+          "paragraphTranslation": "वीर (विक्रमी)",
+          "words": [
+            "पराक्रमी"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "विक्रमी",
+          "hindi_gloss": "वीर"
+        },
+        {
+          "sanskrit": "योद्धा",
+          "meaning": "Warrior",
+          "paragraphTranslation": "सैनिक (युद्धे समर्थः)",
+          "words": [
+            "योद्धा"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "युद्धे समर्थः",
+          "hindi_gloss": "सैनिक"
+        },
+        {
+          "sanskrit": "स्वसामर्थ्येन",
+          "meaning": "By one's own capability",
+          "paragraphTranslation": "स्वयं की शक्ति से (स्वस्य बलेन)",
+          "words": [
+            "स्वसामर्थ्येन"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "स्वस्य बलेन",
+          "hindi_gloss": "स्वयं की शक्ति से"
+        },
+        {
+          "sanskrit": "शौर्येण",
+          "meaning": "With bravery",
+          "paragraphTranslation": "शूरता से (शूरतायाः कारणेन)",
+          "words": [
+            "शौर्येण"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "शूरतायाः कारणेन",
+          "hindi_gloss": "शूरता से"
+        },
+        {
+          "sanskrit": "चिरम्",
+          "meaning": "For long time",
+          "paragraphTranslation": "बहुत काल तक (बहुकालम्)",
+          "words": [
+            "चिरम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "बहुकालम्",
+          "hindi_gloss": "बहुत काल तक"
+        },
+        {
+          "sanskrit": "जगति",
+          "meaning": "In the world",
+          "paragraphTranslation": "संसार में (विश्वे)",
+          "words": [
+            "जगति"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "विश्वे",
+          "hindi_gloss": "संसार में"
+        },
+        {
+          "sanskrit": "आचन्द्रार्कम्",
+          "meaning": "As long as the sun and moon are there",
+          "paragraphTranslation": "जब तक सूर्य और चन्द्र हैं (सूर्यस्य चन्द्रस्य च अस्तित्व-पर्यन्तम्)",
+          "words": [
+            "आचन्द्रार्कम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "सूर्यस्य चन्द्रस्य च अस्तित्व-पर्यन्तम्",
+          "hindi_gloss": "जब तक सूर्य और चन्द्र हैं"
+        },
+        {
+          "sanskrit": "गणनासु",
+          "meaning": "Amongst the consideration of",
+          "paragraphTranslation": "गिनतियों में (शृङ्खलासु)",
+          "words": [
+            "गणनासु"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "शृङ्खलासु",
+          "hindi_gloss": "गिनतियों में"
+        },
+        {
+          "sanskrit": "महत्तमम्",
+          "meaning": "Best among the greats",
+          "paragraphTranslation": "बहुतों में श्रेष्ठ (बहुषु श्रेष्ठम्)",
+          "words": [
+            "महत्तमम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "बहुषु श्रेष्ठम्",
+          "hindi_gloss": "बहुतों में श्रेष्ठ"
+        },
+        {
+          "sanskrit": "लङ्-लकारः — भूतकाल-क्रियारूपाणि (पृष्ठम् १३१-१३२)",
+          "meaning": "Past Tense Conjugation Matrix — Lang-Lakara (Pages 131–132)",
+          "paragraphTranslation": "व्याकरण-खण्ड: लङ्-लकार (भूतकाल) रूप-संरचना (पृष्ठ १३१–१३२)",
+          "words": [
+            "लङ्",
+            "लकारः",
+            "भूतकाल",
+            "क्रियारूपाणि",
+            "पृष्ठम्",
+            "१३१",
+            "१३२"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "लङ्-लकारः (भूतकालः) — आदर्श-तालिका (पठ् धातु — To Read):\n\n• प्रथमपुरुषः (Third Person):\n  - एकवचनम्: अपठत् (उसने पढ़ा / He read)\n  - द्विवचनम्: अपठताम् (उन दोनों ने पढ़ा / They two read)\n  - बहुवचनम्: अपठन् (उन सब ने पढ़ा / They all read)\n\n• मध्यमपुरुषः (Second Person):\n  - एकवचनम्: अपठः (तुमने पढ़ा / You read)\n  - द्विवचनम्: अपठतम् (तुम दोनों ने पढ़ा / You two read)\n  - बहुवचनम्: अपठत (तुम सब ने पढ़ा / You all read)\n\n• उत्तमपुरुषः (First Person):\n  - एकवचनम्: अपठम् (मैंने पढ़ा / I read)\n  - द्विवचनम्: अपठाव (हम दोनों ने पढ़ा / We two read)\n  - बहुवचनम्: अपठाम (हम सब ने पढ़ा / We all read)",
+          "meaning": "Lang-Lakara (Past Tense) paradigm for 'paṭh' (to read): अपठत्, अपठताम्, अपठन् | अपठः, अपठतम्, अपठत | अपठम्, अपठाव, अपठाम.",
+          "paragraphTranslation": "लङ्-लकार (भूतकाल) पठ् धातु रूप:\nप्रथमपुरुष: अपठत् | अपठताम् | अपठन्\nमध्यमपुरुष: अपठः | अपठतम् | अपठत\nउत्तमपुरुष: अपठम् | अपठाव | अपठाम",
+          "words": [
+            "लङ्-लकारः",
+            "अपठत्",
+            "अपठताम्",
+            "अपठन्",
+            "अपठः",
+            "अपठतम्",
+            "अपठत",
+            "अपठम्",
+            "अपठाव",
+            "अपठाम"
+          ]
+        },
+        {
+          "sanskrit": "भाग ३: अभ्यास-प्रश्नोत्तराणि (पृष्ठम् १३२-१३५)",
+          "meaning": "Part 3: Solved Exercises (Pages 132–135)",
+          "paragraphTranslation": "भाग ३: अभ्यास-प्रश्नोत्तर (पृष्ठ १३२–१३५)",
+          "words": [
+            "भाग",
+            "३",
+            "अभ्यास",
+            "प्रश्नोत्तराणि",
+            "पृष्ठम्",
+            "१३२",
+            "१३५"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "१. अधः प्रदत्तानां प्रश्नानाम् एकपदेन उत्तरं लिखन्तु (पृष्ठम् १३२)",
+          "meaning": "1. Answer the following questions in one word (Page 132)",
+          "paragraphTranslation": "१. निम्नलिखित प्रश्नों के उत्तर एक पद (शब्द) में लिखें (पृष्ठ १३२)",
+          "words": [
+            "१",
+            "अधः",
+            "प्रदत्तानां",
+            "प्रश्नानाम्",
+            "एकपदेन",
+            "उत्तरं",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "१३२"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) मेवाडनगरस्य राजा कः आसीत् ?",
-          "meaning": "Who was the celebrated king of Mewar? Answer: Maharana Sangram Singh (महाराणा-सङ्ग्रामसिंहः).",
-          "answer_sanskrit": "महाराणा-सङ्ग्रामसिंहः",
+          "sanskrit": "(क) राजस्थानस्य वीराङ्गनासु का सुविख्याता?",
+          "meaning": "Panna Dhai",
+          "paragraphTranslation": "पन्नाधाय",
           "words": [
-            "मेवाडनगरस्य",
-            "राजा",
-            "कः",
-            "आसीत्",
-            "?",
-            "उत्तरः",
-            "महाराणा-सङ्ग्रामसिंहः"
+            "क",
+            "राजस्थानस्य",
+            "वीराङ्गनासु",
+            "का",
+            "सुविख्याता"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "answer_sanskrit": "पन्नाधाया",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "पन्नाधाय"
         },
         {
-          "sanskrit": "(ख) पन्नाधाया कस्य शयनस्थाने स्वपुत्रं शायितवती ?",
-          "meaning": "On whose bed did Panna Dhai place her son? Answer: On Udai Singh's bed (उदयसिंहस्य शयनस्थाने).",
-          "answer_sanskrit": "उदयसिंहस्य शयनस्थाने",
+          "sanskrit": "(ख) उदयसिंहः कस्य पुत्रः?",
+          "meaning": "Of Maharana Sangram Singh (Rana Sanga)",
+          "paragraphTranslation": "महाराणा संग्राम सिंह के",
           "words": [
+            "ख",
+            "उदयसिंहः",
+            "कस्य",
+            "पुत्रः"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "महाराणा-सङ्ग्रामसिंहस्य",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "महाराणा संग्राम सिंह के"
+        },
+        {
+          "sanskrit": "(ग) बनवीरः कं मारयितुं कुतन्त्रम् अरचयत्?",
+          "meaning": "Udaysingha",
+          "paragraphTranslation": "उदयसिंह को",
+          "words": [
+            "ग",
+            "बनवीरः",
+            "कं",
+            "मारयितुं",
+            "कुतन्त्रम्",
+            "अरचयत्"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "उदयसिंहम्",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "उदयसिंह को"
+        },
+        {
+          "sanskrit": "(घ) कालान्तरे कः मेवाडस्य राजा अभवत्?",
+          "meaning": "Udaysingha",
+          "paragraphTranslation": "उदयसिंह",
+          "words": [
+            "घ",
+            "कालान्तरे",
+            "कः",
+            "मेवाडस्य",
+            "राजा",
+            "अभवत्"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "उदयसिंहः",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "उदयसिंह"
+        },
+        {
+          "sanskrit": "(ङ) पन्नाधायायाः निर्णयः कीदृशः आसीत्?",
+          "meaning": "Incredible / Beyond imagination",
+          "paragraphTranslation": "अकल्पनीय (कल्पना से परे)",
+          "words": [
+            "ङ",
+            "पन्नाधायायाः",
+            "निर्णयः",
+            "कीदृशः",
+            "आसीत्"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "अकल्पनीयः",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "अकल्पनीय (कल्पना से परे)"
+        },
+        {
+          "sanskrit": "(च) महाराणाप्रतापः केषां हृदये चिरं स्थानं प्राप्नोत्?",
+          "meaning": "In the hearts of Indians",
+          "paragraphTranslation": "भारतीयों के (हृदय में)",
+          "words": [
+            "च",
+            "महाराणाप्रतापः",
+            "केषां",
+            "हृदये",
+            "चिरं",
+            "स्थानं",
+            "प्राप्नोत्"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "भारतीयानाम्",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "भारतीयों के (हृदय में)"
+        },
+        {
+          "sanskrit": "२. अधः प्रदत्तानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखन्तु (पृष्ठम् १३२)",
+          "meaning": "2. Answer the following questions in full sentences (Page 132)",
+          "paragraphTranslation": "२. निम्नलिखित प्रश्नों के उत्तर पूर्ण वाक्य में लिखें (पृष्ठ १३२)",
+          "words": [
+            "२",
+            "अधः",
+            "प्रदत्तानां",
+            "प्रश्नानां",
+            "पूर्णवाक्येन",
+            "उत्तरं",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "१३२"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "(क) पन्नाधाया कस्य अद्वितीयं उदाहरणम् अस्ति?",
+          "meaning": "Panna Dhai is a matchless example of courage, sacrifice, and loyalty.",
+          "paragraphTranslation": "पन्नाधाय साहस, त्याग और निष्ठा का एक बेजोड़ (अद्वितीय) उदाहरण हैं।",
+          "words": [
+            "क",
             "पन्नाधाया",
             "कस्य",
-            "शयनस्थाने",
-            "स्वपुत्रं",
-            "शायितवती",
-            "?",
-            "उत्तरः",
-            "उदयसिंहस्य",
-            "शयनस्थाने"
+            "अद्वितीयं",
+            "उदाहरणम्",
+            "अस्ति"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "answer_sanskrit": "पन्नाधाया साहसस्य, त्यागस्य, निष्ठायाः च अद्वितीयं उदाहरणम् अस्ति।",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "पन्नाधाय साहस, त्याग और निष्ठा का एक बेजोड़ (अद्वितीय) उदाहरण हैं।"
         },
         {
-          "sanskrit": "(ग) पन्नाधायायाः पुत्रस्य नाम किम् आसीत् ?",
-          "meaning": "What was the name of Panna Dhai's son? Answer: Chandan (चन्दनः).",
-          "answer_sanskrit": "चन्दनः",
+          "sanskrit": "(ख) महाराणासङ्ग्रामसिंहस्य पुत्रौ कौ आस्ताम्?",
+          "meaning": "Vikramaditya and Udaysingha were the two sons of Maharana Sangram Singh.",
+          "paragraphTranslation": "महाराणा संग्राम सिंह के दो पुत्र विक्रमादित्य और उदयसिंह थे।",
           "words": [
-            "पन्नाधायायाः",
-            "पुत्रस्य",
-            "नाम",
+            "ख",
+            "महाराणासङ्ग्रामसिंहस्य",
+            "पुत्रौ",
+            "कौ",
+            "आस्ताम्"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "महाराणासङ्ग्रामसिंहस्य पुत्रौ विक्रमादित्यः उदयसिंहः च आस्ताम्।",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "महाराणा संग्राम सिंह के दो पुत्र विक्रमादित्य और उदयसिंह थे।"
+        },
+        {
+          "sanskrit": "(ग) दुष्टबुद्धिः बनवीरः किम् अचिन्तयत्?",
+          "meaning": "The evil-minded Banveer thought, 'I alone should be the sole successor; no competitor should exist against me.'",
+          "paragraphTranslation": "दुष्ट बुद्धि वाले बनवीर ने सोचा कि—'मैं ही यहाँ का अकेला राजा बना रहूँ, मेरा कोई प्रतिद्वंद्वी न बचे।'",
+          "words": [
+            "ग",
+            "दुष्टबुद्धिः",
+            "बनवीरः",
             "किम्",
-            "आसीत्",
-            "?",
-            "उत्तरः",
-            "चन्दनः"
+            "अचिन्तयत्"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "answer_sanskrit": "दुष्टबुद्धिः बनवीरः अचिन्तयत् यत् – “अहम् एकः एव उत्तराधिकारी भवेयम्, न कोऽपि मम प्रतिस्पर्धी स्यात्” इति।",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "दुष्ट बुद्धि वाले बनवीर ने सोचा कि—'मैं ही यहाँ का अकेला राजा बना रहूँ, मेरा कोई प्रतिद्वंद्वी न बचे।'"
         },
         {
-          "sanskrit": "(घ) उदयसिंहस्य पराक्रमी पुत्रः कः आसीत् ?",
-          "meaning": "Who was the heroic son of Udai Singh? Answer: Maharana Pratap (महाराणाप्रतापः).",
-          "answer_sanskrit": "महाराणाप्रतापः",
+          "sanskrit": "(घ) बनवीरस्य कुतन्त्रं ज्ञात्वा पन्नाधाया किम् अकरोत्?",
+          "meaning": "Upon discovering Banveer's evil conspiracy, Panna Dhai put her own son Chandan to sleep on Udaysingha's bed.",
+          "paragraphTranslation": "बनवीर के षड्यंत्र को जानकर पन्नाधाय ने उदयसिंह के पलंग पर अपने सगे बेटे चन्दन को सुला दिया।",
           "words": [
-            "उदयसिंहस्य",
-            "पराक्रमी",
-            "पुत्रः",
-            "कः",
-            "आसीत्",
-            "?",
-            "उत्तरः",
-            "महाराणाप्रतापः"
+            "घ",
+            "बनवीरस्य",
+            "कुतन्त्रं",
+            "ज्ञात्वा",
+            "पन्नाधाया",
+            "किम्",
+            "अकरोत्"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "answer_sanskrit": "बनवीरस्य कुतन्त्रं ज्ञात्वा पन्नाधाया उदयसिंहस्य शयनस्थाने स्वपुत्रं चन्दनं शायितवती।",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "बनवीर के षड्यंत्र को जानकर पन्नाधाय ने उदयसिंह के पलंग पर अपने सगे बेटे चन्दन को सुला दिया।"
+        },
+        {
+          "sanskrit": "(ङ) आचन्द्रार्कं किं तिष्ठति?",
+          "meaning": "Panna Dhai's sacrifice and valor will remain in the world as long as the sun and moon endure.",
+          "paragraphTranslation": "पन्नाधाय का त्याग और पराक्रम इस संसार में तब तक अमर रहेगा जब तक सूरज और चाँद रहेंगे।",
+          "words": [
+            "ङ",
+            "आचन्द्रार्कं",
+            "किं",
+            "तिष्ठति"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "पन्नाधायायाः त्यागः शौर्यं च जगति आचन्द्रार्कं तिष्ठति।",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "पन्नाधाय का त्याग और पराक्रम इस संसार में तब तक अमर रहेगा जब तक सूरज और चाँद रहेंगे।"
+        },
+        {
+          "sanskrit": "(च) पन्नाधायायाः बलिदानं किं शिक्षयति?",
+          "meaning": "Panna Dhai's supreme sacrifice teaches everyone valor, patriotism, devotion to duty, sacrifice, and wise judgment.",
+          "paragraphTranslation": "पन्नाधाय का बलिदान सभी को बहादुरी, देशभक्ति, कर्तव्यनिष्ठा, त्याग और सही विवेक की शिक्षा देता है।",
+          "words": [
+            "च",
+            "पन्नाधायायाः",
+            "बलिदानं",
+            "किं",
+            "शिक्षयति"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "पन्नाधायायाः बलिदानं सर्वान् शौर्यं, राष्ट्रभक्तिं, कर्तव्यनिष्ठां, बलिदानं, विवेकं च शिक्षयति।",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "पन्नाधाय का बलिदान सभी को बहादुरी, देशभक्ति, कर्तव्यनिष्ठा, त्याग और सही विवेक की शिक्षा देता है।"
+        },
+        {
+          "sanskrit": "३. उदाहरणानुसारम् उचितैः पदैः रिक्तस्थानानि पूरयन्तु (पृष्ठम् १३३)",
+          "meaning": "3. Complete the past tense verb blanks according to the pattern (Page 133)",
+          "paragraphTranslation": "३. उदाहरण के अनुसार उचित पदों से रिक्त स्थानों की पूर्ति करें (पृष्ठ १३३)",
+          "words": [
+            "३",
+            "उदाहरणानुसारम्",
+            "उचितैः",
+            "पदैः",
+            "रिक्तस्थानानि",
+            "पूरयन्तु",
+            "पृष्ठम्",
+            "१३३"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "३. लङ्-लकार-रिक्तस्थान-पूर्तिः (Past Tense Blank Completion Matrix):\n\n• (क) अमिलत् ➔ अमिलताम् ➔ अमिलन् (मिल् धातु — To Meet)\n• (ख) अवदत् ➔ अवदताम् ➔ अवदन् (वद् धातु — To Speak)\n• (ग) अखादः ➔ अखादतम् ➔ अखादत (खाद् धातु — To Eat)\n• (घ) अलिखत् ➔ अलिखताम् ➔ अलिखन् (लिख् धातु — To Write)\n• (ङ) अरक्षम् ➔ अरक्षाव ➔ अरक्षाम (रक्ष् धातु — To Protect)\n• (च) अपिबः ➔ अपिबतम् ➔ अपिबत (पा/पिब् धातु — To Drink)\n• (छ) अपृच्छम् ➔ अपृच्छाव ➔ अपृच्छाम (प्रच्छ्/पृच्छ् धातु — To Ask)\n• (ज) अमारयत् ➔ अमारयताम् ➔ अमारयन् (मृ/मारि धातु — To Kill)\n• (झ) अभवम् ➔ अभवाव ➔ अभवाम (भू/भव् धातु — To Be/Become)",
+          "meaning": "Exercise 3 Past Tense Solutions:\n(a) अमिलत् / अमिलताम् / अमिलन्\n(b) अवदत् / अवदताम् / अवदन्\n(c) अखादः / अखादतम् / अखादत\n(d) अलिखत् / अलिखताम् / अलिखन्\n(e) अरक्षम् / अरक्षाव / अरक्षाम\n(f) अपिबः / अपिबतम् / अपिबत\n(g) अपृच्छम् / अपृच्छाव / अपृच्छाम\n(h) अमारयत् / अमारयताम् / अमारयन्\n(i) अभवम् / अभवाव / अभवाम.",
+          "paragraphTranslation": "३. लङ्-लकार रूप पूर्ति:\n(क) अमिलत् — अमिलताम् — अमिलन्\n(ख) अवदत् — अवदताम् — अवदन्\n(ग) अखादः — अखादतम् — अखादत\n(घ) अलिखत् — अलिखताम् — अलिखन्\n(ङ) अरक्षम् — अरक्षाव — अरक्षाम\n(च) अपिबः — अपिबतम् — अपिबत\n(छ) अपृच्छम् — अपृच्छाव — अपृच्छाम\n(ज) अमारयत् — अमारयताम् — अमारयन्\n(झ) अभवम् — अभवाव — अभवाम",
+          "words": [
+            "अमिलत्",
+            "अवदत्",
+            "अखादः",
+            "अलिखत्",
+            "अरक्षम्",
+            "अपिबः",
+            "अपृच्छम्",
+            "अमारयत्",
+            "अभवम्"
+          ]
+        },
+        {
+          "sanskrit": "४. वाक्यानि पठित्वा उदाहरणानुसारं वचनपरिवर्तनं कुर्वन्तु (पृष्ठम् १३३)",
+          "meaning": "4. Change the grammatical number of sentences (Page 133)",
+          "paragraphTranslation": "४. वाक्यों को पढ़कर उदाहरण के अनुसार वचन परिवर्तन करें (पृष्ठ १३३)",
+          "words": [
+            "४",
+            "वाक्यानि",
+            "पठित्वा",
+            "उदाहरणानुसारं",
+            "वचनपरिवर्तनं",
+            "कुर्वन्तु",
+            "पृष्ठम्",
+            "१३३"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "४. वचन-परिवर्तनम् (Sentence Number Transformation):\n\n• (क) एकवचनम्: बालकः अपठत्।\n  ➔ द्विवचनम्: बालकौ अपठताम्। | बहुवचनम्: बालकाः अपठन्।\n\n• (ख) एकवचनम्: बालिका पद्यम् अलिखत्।\n  ➔ द्विवचनम्: बालिके पद्यम् अलिखताम्। | बहुवचनम्: बालिकाः पद्यम् अलिखन्।\n\n• (ग) एकवचनम्: शिक्षकः अवदत्।\n  ➔ द्विवचनम्: शिक्षकौ अवदताम्। | बहुवचनम्: शिक्षकाः अवदन्।\n\n• (घ) एकवचनम्: सा चित्रम् अपश्यत्।\n  ➔ द्विवचनम्: ते चित्रे अपश्यताम्। | बहुवचनम्: ताः चित्राणि अपश्यन्।\n\n• (ङ) एकवचनम्: त्वम् अक्रीडः।\n  ➔ द्विवचनम्: युवाम् अक्रीडतम्। | बहुवचनम्: यूयम् अक्रीडत।\n\n• (च) एकवचनम्: त्वं जलम् आनयः।\n  ➔ द्विवचनम्: युवां जलम् आनयतम्। | बहुवचनम्: यूयं जलम् आनयत।\n\n• (छ) एकवचनम्: अहं मन्दिरम् अगच्छम्।\n  ➔ द्विवचनम्: आवां मन्दिरम् अगच्छाव। | बहुवचनम्: वयं मन्दिरम् अगच्छाम।\n\n• (ज) एकवचनम्: अहं मधुरम् अखादम्।\n  ➔ द्विवचनम्: आवां मधुरम् अखादाव। | बहुवचनम्: वयं मधुरम् अखादाम।",
+          "meaning": "Exercise 4 Number Conversion:\n(b) बालिके अलिखताम् / बालिकाः अलिखन्\n(c) शिक्षकौ अवदताम् / शिक्षकाः अवदन्\n(d) ते चित्रे अपश्यताम् / ताः चित्राणि अपश्यन्\n(e) युवाम् अक्रीडतम् / यूयम् अक्रीडत\n(f) युवां जलम् आनयतम् / यूयं जलम् आनयत\n(g) आवां मन्दिरम् अगच्छाव / वयं मन्दिरम् अगच्छाम\n(h) आवां मधुरम् अखादाव / वयं मधुरम् अखादाम.",
+          "paragraphTranslation": "४. वचन परिवर्तन:\n(ख) बालिके पद्यम् अलिखताम्। / बालिकाः पद्यम् अलिखन्।\n(ग) शिक्षकौ अवदताम्। / शिक्षकाः अवदन्।\n(घ) ते चित्रे अपश्यताम्। / ताः चित्राणि अपश्यन्।\n(ङ) युवाम् अक्रीडतम्। / यूयम् अक्रीडत।\n(च) युवां जलम् आनयतम्। / यूयं जलम् आनयत।\n(छ) आवां मन्दिरम् अगच्छाव। / वयं मन्दिरम् अगच्छाम।\n(ज) आवां मधुरम् अखादाव। / वयं मधुरम् अखादाम।",
+          "words": [
+            "अपठताम्",
+            "अलिखताम्",
+            "अवदताम्",
+            "अपश्यताम्",
+            "अक्रीडतम्",
+            "आनयतम्",
+            "अगच्छाव",
+            "अखादाव"
+          ]
+        },
+        {
+          "sanskrit": "५. रेखाङ्कितानि पदानि आश्रित्य प्रश्ननिर्माणं कुर्वन्तु (पृष्ठम् १३३-१३४)",
+          "meaning": "5. Frame questions based on the underlined words (Pages 133–134)",
+          "paragraphTranslation": "५. रेखांकित पदों के आधार पर प्रश्न-निर्माण करें (पृष्ठ १३३–१३४)",
+          "words": [
+            "५",
+            "रेखाङ्कितानि",
+            "पदानि",
+            "आश्रित्य",
+            "प्रश्ननिर्माणं",
+            "कुर्वन्तु",
+            "पृष्ठम्",
+            "१३३",
+            "१३४"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "५. प्रश्न-निर्माणम् (Question Framing Solutions):\n\n• (क) सः अचिन्तयत्।\n  ➔ प्रश्नः: कः अचिन्तयत्? (Who thought? / किसने सोचा?)\n\n• (ख) शयनस्थाने चन्दनं शायितवती।\n  ➔ प्रश्नः: शयनस्थाने कम् शायितवती? (Whom did she make sleep on the bed? / शयनस्थान पर किसे सुलाया?)\n\n• (ग) राष्ट्रहितं श्रेष्ठम्।\n  ➔ प्रश्नः: किम् श्रेष्ठम्? (What is supreme? / क्या सर्वोपरि है?)\n\n• (घ) बनवीरः चन्दनम् अमारयत्।\n  ➔ प्रश्नः: बनवीरः कम् अमारयत्? (Whom did Banveer kill? / बनवीर ने किसे मार डाला?)\n\n• (ङ) तस्याः निर्णयः अकल्पनीयः आसीत्।\n  ➔ प्रश्नः: तस्याः निर्णयः कीदृशः आसीत्? (How was her decision? / उनका निर्णय कैसा था?)\n\n• (च) उदयसिंहः मेवाडस्य राजा अभवत्।\n  ➔ प्रश्नः: उदयसिंहः कस्य राजा अभवत्? (Of which place did Udaysingha become king? / उदयसिंह कहाँ के राजा बने?)\n\n• (छ) मम प्रतिस्पर्धी न स्यात्।\n  ➔ प्रश्नः: मम कः न स्यात्? (Who should not exist as my rival? / मेरा कौन न रहे?)",
+          "meaning": "Exercise 5 Question Framing:\n(a) कः अचिन्तयत्?\n(b) शयनस्थाने कम् शायितवती?\n(c) किम् श्रेष्ठम्?\n(d) बनवीरः कम् अमारयत्?\n(e) तस्याः निर्णयः कीदृशः आसीत्?\n(f) उदयसिंहः कस्य राजा अभवत्?\n(g) मम कः न स्यात्?",
+          "paragraphTranslation": "५. प्रश्न निर्माण:\n(क) कः अचिन्तयत्?\n(ख) शयनस्थाने कम् शायितवती?\n(ग) किम् श्रेष्ठम्?\n(घ) बनवीरः कम् अमारयत्?\n(ङ) तस्याः निर्णयः कीदृशः आसीत्?\n(च) उदयसिंहः कस्य राजा अभवत्?\n(छ) मम कः न स्यात्?",
+          "words": [
+            "कः",
+            "कम्",
+            "किम्",
+            "कीदृशः",
+            "कस्य"
+          ]
+        },
+        {
+          "sanskrit": "६. अधरानुसारम् अधः प्रदत्तानां पदानां सन्धिं कुर्वन्तु (पृष्ठम् १३४)",
+          "meaning": "6. Join the sandhi pairs according to Sanskrit euphonic rules (Page 134)",
+          "paragraphTranslation": "६. उदाहरण के अनुसार नीचे दिए गए पदों की सन्धि करें (पृष्ठ १३४)",
+          "words": [
+            "६",
+            "अधरानुसारम्",
+            "अधः",
+            "प्रदत्तानां",
+            "पदानां",
+            "सन्धिं",
+            "कुर्वन्तु",
+            "पृष्ठम्",
+            "१३४"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "६. सन्धि-कार्यम् (Sandhi Formations):\n\n• (क) मम + अपि ➔ ममापि (दीर्घस्वर-सन्धिः)\n• (ख) विद्या + अर्थी ➔ विद्यार्थी (दीर्घस्वर-सन्धिः)\n• (ग) सह + अनुभूतिः ➔ सहानुभूतिः (दीर्घस्वर-सन्धिः)\n• (घ) कवि + इन्द्रः ➔ कवीन्द्रः (दीर्घस्वर-सन्धिः)\n• (ङ) गिरि + ईशः ➔ गिरीशः (दीर्घस्वर-सन्धिः)\n• (च) वेद + अलङ्कारः ➔ वेदालङ्कारः (दीर्घस्वर-सन्धिः)\n• (छ) दैत्य + अरिः ➔ दैत्यारिः (दीर्घस्वर-सन्धिः)\n• (ज) सु + उक्तिः ➔ सूक्तिः (दीर्घस्वर-सन्धिः)",
+          "meaning": "Exercise 6 Sandhi Solutions: (a) ममापि, (b) विद्यार्थी, (c) सहानुभूतिः, (d) कवीन्द्रः, (e) गिरीशः, (f) वेदालङ्कारः, (g) दैत्यारिः, (h) सूक्तिः.",
+          "paragraphTranslation": "६. सन्धि रूप:\n(क) मम + अपि = ममापि\n(ख) विद्या + अर्थी = विद्यार्थी\n(ग) सह + अनुभूतिः = सहानुभूतिः\n(घ) कवि + इन्द्रः = कवीन्द्रः\n(ङ) गिरि + ईशः = गिरीशः\n(च) वेद + अलङ्कारः = वेदालङ्कारः\n(छ) दैत्य + अरिः = दैत्यारिः\n(ज) सु + उक्तिः = सूक्तिः",
+          "words": [
+            "ममापि",
+            "विद्यार्थी",
+            "सहानुभूतिः",
+            "कवीन्द्रः",
+            "गिरीशः",
+            "वेदालङ्कारः",
+            "दैत्यारिः",
+            "सूक्तिः"
+          ]
+        },
+        {
+          "sanskrit": "७. वाक्यानि वर्तमानकाले (लट् लकारे) परिवर्तयन्तु (पृष्ठम् १३४-१३५)",
+          "meaning": "7. Convert past tense sentences into present tense (Pages 134–135)",
+          "paragraphTranslation": "७. वाक्यों को भूतकाल से वर्तमानकाल (लट् लकार) में बदलें (पृष्ठ १३४–१३५)",
+          "words": [
+            "७",
+            "वाक्यानि",
+            "वर्तमानकाले",
+            "लट्",
+            "लकारे",
+            "परिवर्तयन्तु",
+            "पृष्ठम्",
+            "१३४",
+            "१३५"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "७. लङ्-लकारात लट्-लकारे परिवर्तनम् (Past to Present Tense):\n\n• (क) भूतकालः: उदयसिंहः वीरः आसीत्।\n  ➔ वर्तमानकालः: उदयसिंहः वीरः भवति / अस्ति।\n\n• (ख) भूतकालः: अहं तत् सर्वम् अपश्यम्।\n  ➔ वर्तमानकालः: अहं तत् सर्वं पश्यामि।\n\n• (ग) भूतकालः: बनवीरः कुतन्त्रम् अकरोत्।\n  ➔ वर्तमानकालः: बनवीरः कुतन्त्रं करोति।\n\n• (घ) भूतकालः: त्वं शयनस्थानम् अगच्छः।\n  ➔ वर्तमानकालः: त्वं शयनस्थानं गच्छसि।\n\n• (ङ) भूतकालः: ते कथाम् अपठन्।\n  ➔ वर्तमानकालः: ते कथां पठन्ति।\n\n• (च) भूतकालः: धात्री उदयसिंहम् अपृच्छत्।\n  ➔ वर्तमानकालः: धात्री उदयसिंहं पृच्छति।\n\n• (छ) भूतकालः: वयं शूराः अभवाम।\n  ➔ वर्तमानकालः: वयं शूराः भवामः / स्मः।",
+          "meaning": "Exercise 7 Present Tense Conversion:\n(a) आसीत् -> भवति / अस्ति\n(b) अपश्यम् -> पश्यामि\n(c) अकरोत् -> करोति\n(d) अगच्छः -> गच्छसि\n(e) अपठन् -> पठन्ति\n(f) अपृच्छत् -> पृच्छति\n(g) अभवाम -> भवामः / स्मः.",
+          "paragraphTranslation": "७. वर्तमानकाल (लट् लकार) में परिवर्तन:\n(क) उदयसिंहः वीरः आसीत्। ➔ उदयसिंहः वीरः भवति / अस्ति।\n(ख) अहं तत् सर्वम् अपश्यम्। ➔ अहं तत् सर्वं पश्यामि।\n(ग) बनवीरः कुतन्त्रम् अकरोत्। ➔ बनवीरः कुतन्त्रं करोति।\n(घ) त्वं शयनस्थानम् अगच्छः। ➔ त्वं शयनस्थानं गच्छसि।\n(ङ) ते कथाम् अपठन्। ➔ ते कथां पठन्ति।\n(च) धात्री उदयसिंहम् अपृच्छत्। ➔ धात्री उदयसिंहं पृच्छति।\n(छ) वयं शूराः अभवाम। ➔ वयं शूराः भवामः / स्मः।",
+          "words": [
+            "भवति",
+            "पश्यामि",
+            "करोति",
+            "गच्छसि",
+            "पठन्ति",
+            "पृच्छति",
+            "भवामः"
+          ]
+        },
+        {
+          "sanskrit": "भाग ४: योग्यताविस्तरः — क्तवतु-प्रत्यय-रूपाणि (पृष्ठम् १३५)",
+          "meaning": "Part 4: Advanced Extensions — Ktavatu Participle Mappings (Page 135)",
+          "paragraphTranslation": "भाग ४: योग्यताविस्तर — भूतकालिक क्तवतु-प्रत्यय प्रयोग (पृष्ठ १३५)",
+          "words": [
+            "भाग",
+            "४",
+            "योग्यताविस्तरः",
+            "क्तवतु",
+            "प्रत्यय",
+            "रूपाणि",
+            "पृष्ठम्",
+            "१३५"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "भूतकाले क्तवतु-प्रत्ययस्य प्रयोगः (Past Active Participles — तवत् / तवती):\nसंस्कृते भूतकालार्थे लङ्-लकारस्य स्थाने क्तवतु-प्रत्ययस्य (पुंल्लिङ्गे 'वान्', स्त्रीलिङ्गे 'वती') प्रयोगः सरलतायै क्रियते:\n\n• पठ् धातु:\n  - सः अपठत् ➔ सः पठितवान् (He read)\n  - सा अपठत् ➔ सा पठितवती (She read)\n\n• लिख् धातु:\n  - सः अलिखत् ➔ सः लिखितवान् (He wrote)\n  - सा अलिखत् ➔ सा लिखितवती (She wrote)\n\n• गम् धातु:\n  - सः अगच्छत् ➔ सः गतवान् (He went)\n  - सा अगच्छत् ➔ सा गतवती (She went)\n\n• खाद् धातु:\n  - सः अखादत् ➔ सः खादितवान् (He ate)\n  - सा अखादत् ➔ सा खादितवती (She ate)\n\n• क्रीड् धातु:\n  - सः अक्रीडत् ➔ सः क्रीडितवान् (He played)\n  - सा अक्रीडत् ➔ सा क्रीडितवती (She played)",
+          "meaning": "Ktavatu Participle Equivalences across genders:\nपठ्: पठितवान् / पठितवती\nलिख्: लिखितवान् / लिखितवती\nगम्: गतवान् / गतवती\nखाद्: खादितवान् / खादितवती\nक्रीड्: क्रीडितवान् / क्रीडितवती.",
+          "paragraphTranslation": "क्तवतु प्रत्यय प्रयोग (भूतकाल):\nपठ्: पठितवान् / पठितवती\nलिख्: लिखितवान् / लिखितवती\nगम्: गतवान् / गतवती\nखाद्: खादितवान् / खादितवती\nक्रीड्: क्रीडितवान् / क्रीडितवती",
+          "words": [
+            "क्तवतु-प्रत्ययः",
+            "पठितवान्",
+            "पठितवती",
+            "लिखितवान्",
+            "लिखितवती",
+            "गतवान्",
+            "गतवती",
+            "खादितवान्",
+            "खादितवती"
+          ]
+        },
+        {
+          "sanskrit": "भाग ५: राज्यस्य सप्ताङ्गानि एवं व्यूहरचना (पृष्ठम् १३६)",
+          "meaning": "Part 5: Ancient Governance & Classical Battle Formations (Page 136)",
+          "paragraphTranslation": "भाग ५: राज्य के सात अंग एवं प्राचीन व्यूहरचना (पृष्ठ १३६)",
+          "words": [
+            "भाग",
+            "५",
+            "राज्यस्य",
+            "सप्ताङ्गानि",
+            "एवं",
+            "व्यूहरचना",
+            "पृष्ठम्",
+            "१३६"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "१. राज्यस्य सप्त अङ्गानि (The Seven Limbs of a Sovereign State):\nप्राचीन-नीतिशास्त्रेषु (कौटिल्य-अर्थशास्त्रे मनुस्मृतौ च) राज्यस्य सप्त मौलिकानि अङ्गानि स्वीक्रियन्ते:\n\n• १. स्वामी (Swāmī) — राजा / शीर्ष-शासकः (The King / Sovereign Leader)\n• २. अमात्यः (Amātyaḥ) — मन्त्रिणः प्रशासकाः च (Ministers & Cabinet Administrators)\n• ३. सुहृत् (Suhṛt) — मित्रराज्यानि (Friendly Allied States / Allies)\n• ४. कोषः (Koṣaḥ) — राजकोषः धनसञ्चयः च (Treasury & Financial Reserves)\n• ५. राष्ट्रम् / जनपदः (Rāṣṭram) — भूभागः प्रजा च (Territory & Citizenry)\n• ६. दुर्गम् (Durgam) — सुदृढ-प्राचीराणि रक्षादुर्गाणि च (Fortifications & Forts)\n• ७. बलम् / दण्डः (Balam) — सैन्यशक्तिः सशस्त्र-सेना च (Armed Military Strength)",
+          "meaning": "The Seven Limbs of a State (Saptanga Theory of Statecraft): 1. Swami (King), 2. Amatya (Ministers), 3. Suhrt (Allies), 4. Kosha (Treasury), 5. Rashtra (Territory & Population), 6. Durga (Forts), 7. Bala (Army).",
+          "paragraphTranslation": "राज्य के सात अंग:\n१. स्वामी = राजा\n२. अमात्य = मन्त्री एवं अधिकारी\n३. सुहृत् = मित्र राज्य\n४. कोष = राजकोष / धन\n५. राष्ट्र = राज्य की भूमि व प्रजा\n६. दुर्ग = किला / रक्षा-प्राचीर\n७. बल = सेना व सैन्य शक्ति",
+          "words": [
+            "स्वामी",
+            "अमात्यः",
+            "सुहृत्",
+            "कोषः",
+            "राष्ट्रम्",
+            "दुर्गम्",
+            "बलम्",
+            "सप्ताङ्गानि"
+          ]
+        },
+        {
+          "sanskrit": "२. प्राचीनाः युद्ध-व्यूहाः (Ancient Classical Battle Formations — व्यूहरचना):\nमहाभारते प्राचीनयुद्धेषु च सैन्यानां विशेष-विन्यासाय विविधाः व्यूहाः रचयन्ते स्म:\n\n• १. चक्रव्यूहः (Cakravyūhaḥ) — चक्रवत् वर्तुल-परिक्रमयुक्तः दुर्गमः व्यूहः (Concentric circular labyrinth formation)\n• २. गरुडव्यूहः (Garuḍavyūhaḥ) — गरुड-पक्षिवत् प्रसारयुक्तः सैन्यव्यूहः (Eagle-shaped battlefield deployment)\n• ३. सर्पव्यूहः (Sarpavyūhaḥ) — सर्पवत् कुटिलगामी दीर्घव्यूहः (Winding serpentine combat line)\n• ४. मकरव्यूहः (Makaravyūhaḥ) — मकर-जलचरवत् सुदृढ-अग्रभागयुक्तः व्यूहः (Crocodile / sea-monster formation)\n• ५. अर्धचन्द्रव्यूहः (Ardhacandravyūhaḥ) — अर्धचन्द्राकारः शत्रुपरिवेष्टकः व्यूहः (Crescent-moon enveloping layout)\n• ६. वज्रव्यूहः (Vajravyūhaḥ) — वज्रवत् अभेद्यः कठोर-प्रहारकः व्यूहः (Diamond / Thunderbolt hard-strike line)",
+          "meaning": "Ancient Classical Battle Formations (Vyūha): Cakravyūha (Circular labyrinth), Garuḍavyūha (Eagle formation), Sarpavyūha (Serpent formation), Makaravyūha (Crocodile formation), Ardhacandravyūha (Crescent-moon formation), Vajravyūha (Thunderbolt formation).",
+          "paragraphTranslation": "प्राचीन युद्ध-व्यूह रचनाएँ:\n१. चक्रव्यूह = चक्र के समान गोलाकार व्यूह\n२. गरुडव्यूह = गरुड़ पक्षी के आकार का व्यूह\n३. सर्पव्यूह = साँप की तरह टेढ़ा-मेढ़ा चलने वाला व्यूह\n४. मकरव्यूह = मगरमच्छ के आकार का व्यूह\n५. अर्धचन्द्रव्यूह = आधे चाँद के आकार का व्यूह\n६. वज्रव्यूह = वज्र के समान अभेद्य व्यूह",
+          "words": [
+            "चक्रव्यूहः",
+            "गरुडव्यूहः",
+            "सर्पव्यूहः",
+            "मकरव्यूहः",
+            "अर्धचन्द्रव्यूहः",
+            "वज्रव्यूहः"
+          ]
+        },
+        {
+          "sanskrit": "भाग ६: परियोजनाकार्यम् (पृष्ठम् १३६)",
+          "meaning": "Part 6: Project Assignment Guidelines (Page 136)",
+          "paragraphTranslation": "भाग ६: परियोजनाकार्य (पृष्ठ १३६)",
+          "words": [
+            "भाग",
+            "६",
+            "परियोजनाकार्यम्",
+            "पृष्ठम्",
+            "१३६"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "परियोजनाकार्यम् — भारतीय-वीराङ्गनानां जीवन-चरित्र-सङ्कलनम्:\nभारतस्य प्रमुख-वीराङ्गनानां (यथा — झाँसी-राज्ञी लक्ष्मीबाई, चित्तौड-राज्ञी पद्मिनी, कित्तूर-राज्ञी चेन्नम्मा, काकतीय-साम्राज्यस्य महारानी रुद्रमादेवी च) चित्राणि सङ्गृह्य तासां त्यागस्य, शौर्यस्य, देशसेवा-योगदानस्य च संक्षिप्तं विवरणं स्वमातृभाषायां संस्कृते वा स्वपुस्तिकायां लिखन्तु।",
+          "meaning": "Project Work: Collect portraits and prepare a biographical portfolio exploring the valor and sacrifice of legendary Indian women leaders (Rani Lakshmibai of Jhansi, Rani Padmini of Chittor, Rani Chennamma of Kittur, and Queen Rudramadevi of Kakatiya Empire).",
+          "paragraphTranslation": "परियोजनाकार्य: भारत की प्रमुख वीर नारियों (जैसे— झाँसी की रानी लक्ष्मीबाई, चित्तौड़ की रानी पद्मिनी, कित्तूर की रानी चेन्नम्मा, और महारानी रुद्रमादेवी) के चित्र एकत्रित करें तथा उनके त्याग और शौर्य का संक्षिप्त परिचय अपनी स्क्रैपबुक में लिखें।",
+          "words": [
+            "परियोजनाकार्यम्",
+            "वीराङ्गनानां",
+            "लक्ष्मीबाई",
+            "पद्मिनी",
+            "चेन्नम्मा",
+            "रुद्रमादेवी",
+            "शौर्यस्य",
+            "त्यागस्य"
+          ]
         }
-      ]
+      ],
+      "page_numbers": "127-136"
     },
     {
       "id": "gsde113",
