@@ -5981,73 +5981,81 @@
       "title": "Chapter 4: न लभ्यते चेत् आम्लं द्राक्षाफलम् (पाठः पृष्ठानि ३९-४१)",
       "sentences": [
         {
-          "sanskrit": "१. पाठः — वर्गे संवादः अभिनय-गीतं च (पृष्ठानि ३९-४१)",
-          "meaning": "Lesson 4: Classroom Dialogue & Action Song: The Fox & Sour Grapes (Pages 39–41)",
+          "kind": "section-header",
+          "sanskrit": "१. पाठः — भागः १: कक्षा-संवादः (Part 1: Classroom Dialogue - पृष्ठम् ३९)",
+          "meaning": "Lesson 4: Classroom Dialogue: Introduction to Fox & Grapes (Page 39)",
+          "paragraphTranslation": "चतुर्थः पाठः — भाग १: कक्षा-संवादः (चित्र-दर्शन एवं द्राक्षाफल-कथा-प्रस्तावना - पृष्ठ ३९)",
           "words": [
             "१.",
             "पाठः",
             "—",
-            "वर्गे",
-            "संवादः",
-            "अभिनय-गीतं",
-            "च",
-            "(पृष्ठानि",
-            "३९-४१)"
-          ],
-          "paragraphTranslation": "चतुर्थः पाठः — न लभ्यते चेत् आम्लं द्राक्षाफलम् : कक्षा-संवादः एवं साभिनय-गीतम् (पृष्ठ ३९ से ४१)",
-          "kind": "section-header"
+            "भागः",
+            "१:",
+            "कक्षा-संवादः",
+            "(पृष्ठम्",
+            "३९)"
+          ]
         },
         {
-          "sanskrit": "प्रियच्छात्राः ! एतत् चित्रं पश्यन्तु। चित्रे किं किम् अस्ति ?",
-          "meaning": "Teacher: Dear students! Look at this picture. What all is there in the picture?",
+          "sanskrit": "शिक्षिका — प्रियच्छात्राः ! एतत् चित्रं पश्यन्तु। चित्रे किं किम् अस्ति ?",
+          "meaning": "Dear students! Look at this picture. What all is there in the picture? [पदच्छेद / Word-by-Word: प्रियच्छात्राः (प्रिय + छात्राः) = Dear students | एतत् = this | चित्रम् = picture | पश्यन्तु = look (you all) | चित्रे = in the picture | किम् किम् = what all | अस्ति = is there.]",
+          "paragraphTranslation": "शिक्षिका: प्रिय छात्रो! इस चित्र को देखिए। चित्र में क्या-क्या है?",
           "words": [
+            "शिक्षिका",
+            "—",
             "प्रियच्छात्राः",
             "!",
             "एतत्",
             "चित्रं",
-            "पश्यन्तु",
-            "।",
+            "पश्यन्तु।",
             "चित्रे",
             "किं",
             "किम्",
             "अस्ति",
             "?"
-          ],
-          "paragraphTranslation": "शिक्षक: प्रिय छात्रो! इस चित्र को देखिए। चित्र में क्या-क्या है?"
+          ]
         },
         {
-          "sanskrit": "महोदय ! चित्रे वृक्षः अस्ति।",
-          "meaning": "Student 1: Sir! There is a tree in the picture.",
+          "sanskrit": "छात्र १ — महोदय ! चित्रे वृक्षः अस्ति ।",
+          "meaning": "Teacher! There is a tree in the picture. [पदच्छेद / Word-by-Word: महोदय = Sir/Madam | चित्रे = in the picture | वृक्षः = a tree | अस्ति = is.]",
+          "paragraphTranslation": "छात्र १: महोदया! चित्र में एक पेड़ है।",
           "words": [
+            "छात्र",
+            "१",
+            "—",
             "महोदय",
             "!",
             "चित्रे",
             "वृक्षः",
             "अस्ति",
             "।"
-          ],
-          "paragraphTranslation": "छात्र १: महोदय! चित्र में एक पेड़ है।"
+          ]
         },
         {
-          "sanskrit": "महोदय ! शृगालः अस्ति। द्राक्षाफलानि अपि सन्ति।",
-          "meaning": "Student 2: Sir! There is a fox and there are grapes as well.",
+          "sanskrit": "छात्र २ — महोदय ! शृगालः अस्ति। द्राक्षाफलानि अपि सन्ति ।",
+          "meaning": "Teacher! There is a fox. Grapes are also there. [पदच्छेद / Word-by-Word: महोदय = Sir/Madam | शृगालः = a fox | अस्ति = is | द्राक्षाफलानि = grapes | अपि = also | सन्ति = are there.]",
+          "paragraphTranslation": "छात्र २: महोदया! एक लोमड़ी है और अंगूर भी हैं।",
           "words": [
+            "छात्र",
+            "२",
+            "—",
             "महोदय",
             "!",
             "शृगालः",
-            "अस्ति",
-            "।",
+            "अस्ति।",
             "द्राक्षाफलानि",
             "अपि",
             "सन्ति",
             "।"
-          ],
-          "paragraphTranslation": "छात्र २: महोदय! एक लोमड़ी भी है और अंगूर भी हैं।"
+          ]
         },
         {
-          "sanskrit": "बहु सम्यक् । शृगालः किं करोति ?",
-          "meaning": "Teacher: Very good. What is the fox doing?",
+          "sanskrit": "शिक्षिका — बहु सम्यक् । शृगालः किं करोति ?",
+          "meaning": "Very good. What is the fox doing? [पदच्छेद / Word-by-Word: बहु = very | सम्यक् = good/well | शृगालः = the fox | किम् = what | करोति = is doing.]",
+          "paragraphTranslation": "शिक्षिका: बहुत अच्छे। लोमड़ी क्या कर रही है?",
           "words": [
+            "शिक्षिका",
+            "—",
             "बहु",
             "सम्यक्",
             "।",
@@ -6055,44 +6063,51 @@
             "किं",
             "करोति",
             "?"
-          ],
-          "paragraphTranslation": "शिक्षक: बहुत अच्छे। लोमड़ी क्या कर रही है?"
+          ]
         },
         {
-          "sanskrit": "आचार्य ! शृगालः द्राक्षाफलानि खादितुम् इच्छति, किन्तु न शक्नोति।",
-          "meaning": "Student 3: Teacher! The fox wants to eat the grapes, but it is unable to do so.",
+          "sanskrit": "छात्र ३ — आचार्य ! शृगालः द्राक्षाफलानि खादितुम् इच्छति, किन्तु न शक्नोति ।",
+          "meaning": "Teacher! The fox wants to eat the grapes, but it is unable to do so. [पदच्छेद / Word-by-Word: आचार्य = Teacher | शृगालः = the fox | द्राक्षाफलानि = grapes | खादितुम् = to eat | इच्छति = wants | किन्तु = but | न = not | शक्नोति = is able to.]",
+          "paragraphTranslation": "छात्र ३: आचार्य! लोमड़ी अंगूर खाना चाहती है, लेकिन खा नहीं पा रही है।",
           "words": [
+            "छात्र",
+            "३",
+            "—",
             "आचार्य",
             "!",
             "शृगालः",
             "द्राक्षाफलानि",
             "खादितुम्",
-            "इच्छति",
-            ",",
+            "इच्छति,",
             "किन्तु",
             "न",
             "शक्नोति",
             "।"
-          ],
-          "paragraphTranslation": "छात्र ३: आचार्य! लोमड़ी अंगूर खाना चाहती है, लेकिन खा नहीं पा रही है।"
+          ]
         },
         {
-          "sanskrit": "अहो ! भवन्तः कथं जानन्ति ?",
-          "meaning": "Teacher: Oh! How do you all know this?",
+          "sanskrit": "शिक्षिका — अहो ! भवन्तः कथं जानन्ति ?",
+          "meaning": "Oh! How do you all know? [पदच्छेद / Word-by-Word: अहो = Oh | भवन्तः = you all | कथम् = how | जानन्ति = know.]",
+          "paragraphTranslation": "शिक्षिका: अरे वाह! आप सबको यह कैसे पता?",
           "words": [
+            "शिक्षिका",
+            "—",
             "अहो",
             "!",
             "भवन्तः",
             "कथं",
             "जानन्ति",
             "?"
-          ],
-          "paragraphTranslation": "शिक्षक: अरे वाह! आप सबको यह कैसे पता?"
+          ]
         },
         {
-          "sanskrit": "महोदय ! वयम् एतां कथां मातृभाषया श्रुतवन्तः।",
-          "meaning": "Student 4: Sir! We have heard this story in our mother tongue.",
+          "sanskrit": "छात्र ४ — महोदय ! वयम् एतां कथां मातृभाषया श्रुतवन्तः ।",
+          "meaning": "Teacher! We have heard this story in our mother tongue. [पदच्छेद / Word-by-Word: महोदय = Sir/Madam | वयं = we | एताम् = this | कथम् = story | मातृभाषया = in our mother tongue | श्रुतवन्तः = have heard.]",
+          "paragraphTranslation": "छात्र ४: महोदया! हमने यह कहानी अपनी मातृभाषा में सुनी है।",
           "words": [
+            "छात्र",
+            "४",
+            "—",
             "महोदय",
             "!",
             "वयम्",
@@ -6101,16 +6116,17 @@
             "मातृभाषया",
             "श्रुतवन्तः",
             "।"
-          ],
-          "paragraphTranslation": "छात्र ४: महोदय! हमने यह कहानी अपनी मातृभाषा में सुनी है।"
+          ]
         },
         {
-          "sanskrit": "बहु समीचीनम्। तर्हि संस्कृतभाषायाम् एतां कथां गीतरूपेण गायामः अभिनयं च कुर्मः।",
-          "meaning": "Teacher: Very nice! Then let us sing this story in the form of a song in the Sanskrit language and perform it through acting as well.",
+          "sanskrit": "शिक्षिका — बहु समीचीनम्। तर्हि संस्कृतभाषायाम् एतां कथां गीतरूपेण गायामः अभिनयं च कुर्मः।",
+          "meaning": "Very fine. Then let us sing this story in the form of a song in Sanskrit and act it out too. [पदच्छेद / Word-by-Word: बहु = very | समीचीनम् = fine/good | तर्हि = then | संस्कृतभाषायाम् = in the Sanskrit language | एताम् = this | कथाम् = story | गीतरूपेण = in the form of a song | गायामः = let us sing | अभिनियम् = acting/performance | च = and | कुर्मः = let us do.]",
+          "paragraphTranslation": "शिक्षिका: बहुत बढ़िया! तो फिर आइए, संस्कृत भाषा में इस कहानी को गीत के रूप में गाते हैं और इसका अभिनय भी करते हैं।",
           "words": [
+            "शिक्षिका",
+            "—",
             "बहु",
-            "समीचीनम्",
-            "।",
+            "समीचीनम्।",
             "तर्हि",
             "संस्कृतभाषायाम्",
             "एतां",
@@ -6119,88 +6135,129 @@
             "गायामः",
             "अभिनयं",
             "च",
-            "कुर्मः",
-            "।"
-          ],
-          "paragraphTranslation": "शिक्षक: बहुत बढ़िया! तो फिर आइए, संस्कृत भाषा में इस कहानी को गीत के रूप में गाते हैं और इसका अभिनय भी करते हैं।"
+            "कुर्मः।"
+          ]
         },
         {
-          "sanskrit": "अस्तु आचार्य ! कृपया पाठयतु।",
-          "meaning": "All Students: Alright Teacher! Please teach us.",
+          "sanskrit": "छात्राः — अस्तु आचार्य ! कृपया पाठयतु।",
+          "meaning": "Alright Teacher! Please teach us. [पदच्छेद / Word-by-Word: अस्तु = let it be so / alright | आचार्य = teacher | कृपया = please | पाठयतु = teach.]",
+          "paragraphTranslation": "छात्राः: ठीक है आचार्य! कृपया हमें पढ़ाइए।",
           "words": [
+            "छात्राः",
+            "—",
             "अस्तु",
             "आचार्य",
             "!",
             "कृपया",
-            "पाठयतु",
-            "।"
-          ],
-          "paragraphTranslation": "सभी छात्र: ठीक है आचार्य! कृपया हमें पढ़ाइए।"
+            "पाठयतु।"
+          ]
         },
         {
-          "sanskrit": "२. अभिनय-गीतम् (Action Song: न लभ्यते चेत् आम्लं द्राक्षाफलम्)",
-          "meaning": "Action Song: The Fox and the Sour Grapes (साभिनयं गानम्)",
+          "kind": "section-header",
+          "sanskrit": "भागः २: गीतम् - एकः शृगालः (Part 2: The Fox's Song - पृष्ठम् ४०-४१)",
+          "meaning": "Part 2: Action Song: The Fox and the Sour Grapes (Pages 40–41)",
+          "paragraphTranslation": "भाग २ : गीतम् — 'एकः शृगालः वनं गच्छति' (साभिनयं गानम् - पृष्ठ ४० से ४१)",
           "words": [
-            "२.",
-            "अभिनय-गीतम्",
-            "(Action",
-            "Song:",
-            "न",
-            "लभ्यते",
-            "चेत्",
-            "आम्लं",
-            "द्राक्षाफलम्)"
-          ],
-          "paragraphTranslation": "अभिनय-गीत: लोमड़ी और खट्टे अंगूर की कथा",
-          "kind": "section-header"
+            "भागः",
+            "२:",
+            "गीतम्",
+            "-",
+            "एकः",
+            "शृगालः",
+            "(पृष्ठम्",
+            "४०-४१)"
+          ]
         },
         {
-          "sanskrit": "एकः शृगालः वनं गच्छति। पिपासया बुभुक्षया वनं गच्छति। तत्र गच्छति, किमपि न लभते। इतोऽपि गच्छति, किमपि न लभते। श्रान्तः जायते, खिन्नः जायते। सः श्रान्तः जायते, खिन्नः जायते।",
-          "meaning": "A fox goes to the forest. Driven by thirst and hunger, it goes to the forest. It wanders there but finds nothing. It goes further, yet finds nothing. It becomes tired and sad.",
+          "sanskrit": "एकः शृगालः वनं गच्छति ।",
+          "meaning": "A fox goes to the forest. [पदच्छेद / Word-by-Word: एकः = one/a | शृगालः = fox | वनम् = to the forest | गच्छति = goes.]",
+          "paragraphTranslation": "एक लोमड़ी जंगल में जाती है।",
           "words": [
             "एकः",
             "शृगालः",
             "वनं",
             "गच्छति",
-            "।",
+            "।"
+          ]
+        },
+        {
+          "sanskrit": "पिपासा, तस्य बुभुक्षा ।",
+          "meaning": "It is thirsty and hungry. [पदच्छेद / Word-by-Word: पिपासा = thirst | तस्य = his/its | बुभुक्षा = hunger.]",
+          "paragraphTranslation": "उसे प्यास और भूख लगी है।",
+          "words": [
+            "पिपासा,",
+            "तस्य",
+            "बुभुक्षा",
+            "।"
+          ]
+        },
+        {
+          "sanskrit": "पिपासया बुभुक्षया वनं गच्छति ।",
+          "meaning": "Driven by thirst and hunger, it goes to the forest. [पदच्छेद / Word-by-Word: पिपासया = by thirst | बुभुक्षया = by hunger | वनम् = to the forest | गच्छति = goes.]",
+          "paragraphTranslation": "प्यास और भूख से व्याकुल होकर वह जंगल में जाती है।",
+          "words": [
             "पिपासया",
             "बुभुक्षया",
             "वनं",
             "गच्छति",
-            "।",
-            "तत्र",
-            "गच्छति",
-            ",",
-            "किमपि",
-            "न",
-            "लभते",
-            "।",
-            "इतोऽपि",
-            "गच्छति",
-            ",",
-            "किमपि",
-            "न",
-            "लभते",
-            "।",
-            "श्रान्तः",
-            "जायते",
-            ",",
-            "खिन्नः",
-            "जायते",
-            "।",
+            "।"
+          ]
+        },
+        {
+          "sanskrit": "सः वनं गच्छति, सः वनं गच्छति।",
+          "meaning": "It goes to the forest, it goes to the forest. [पदच्छेद / Word-by-Word: सः = he/it | वनम् = to the forest | गच्छति = goes.]",
+          "paragraphTranslation": "वह जंगल में जाती है, वह जंगल में जाती है।",
+          "words": [
             "सः",
+            "वनं",
+            "गच्छति,",
+            "सः",
+            "वनं",
+            "गच्छति।"
+          ]
+        },
+        {
+          "sanskrit": "तत्र गच्छति, किमपि न लभते ।",
+          "meaning": "It goes there, but finds nothing at all. [पदच्छेद / Word-by-Word: तत्र = there | गच्छति = goes | किमपि = anything | न = not | लभते = finds/gets.]",
+          "paragraphTranslation": "वह वहाँ जाती है, पर उसे कुछ भी प्राप्त नहीं होता।",
+          "words": [
+            "तत्र",
+            "गच्छति,",
+            "किमपि",
+            "न",
+            "लभते",
+            "।"
+          ]
+        },
+        {
+          "sanskrit": "इतोऽपि गच्छति, किमपि न लभते ।",
+          "meaning": "It goes further, yet finds nothing. [पदच्छेद / Word-by-Word: इतः + अपि = further also | गच्छति = goes | किमपि = anything | न = not | लभते = finds/gets.]",
+          "paragraphTranslation": "वह और भी आगे जाती है, फिर भी कुछ नहीं मिलता।",
+          "words": [
+            "इतोऽपि",
+            "गच्छति,",
+            "किमपि",
+            "न",
+            "लभते",
+            "।"
+          ]
+        },
+        {
+          "sanskrit": "श्रान्तः जायते, खिन्नः जायते ।",
+          "meaning": "It becomes tired, it becomes sad. [पदच्छेद / Word-by-Word: श्रान्तः = tired | जायते = becomes | खिन्नः = sad | जायते = becomes.]",
+          "paragraphTranslation": "वह थक जाती है, वह दुखी हो जाती है।",
+          "words": [
             "श्रान्तः",
-            "जायते",
-            ",",
+            "जायते,",
             "खिन्नः",
             "जायते",
             "।"
-          ],
-          "paragraphTranslation": "एक लोमड़ी जंगल में जाती है। वह प्यास और भूख से व्याकुल होकर जंगल में जाती है। वह वहाँ जाती है, लेकिन उसे कुछ भी प्राप्त नहीं होता। वह और आगे जाती है, फिर भी कुछ नहीं मिलता। वह थक जाती है और दुखी हो जाती है।"
+          ]
         },
         {
-          "sanskrit": "किं च करोति ? सः किं च करोति ? वामतः पश्यति, दक्षिणतः पश्यति। अग्रतः पश्यति, पृष्ठतः पश्यति। स्वेदः जायते, तृषा जायते। तस्य स्वेदः जायते, तृषा जायते।",
-          "meaning": "What does it do? What does it do? It looks to the left, it looks to the right. It looks ahead, it looks behind. It starts sweating, and its thirst increases.",
+          "sanskrit": "किं च करोति ? सः किं च करोति ?",
+          "meaning": "And what does it do? What does it do? [पदच्छेद / Word-by-Word: किम् = what | च = and | करोति = does | सः = it.]",
+          "paragraphTranslation": "वह क्या करती है? वह क्या करती है?",
           "words": [
             "किं",
             "च",
@@ -6210,38 +6267,49 @@
             "किं",
             "च",
             "करोति",
-            "?",
+            "?"
+          ]
+        },
+        {
+          "sanskrit": "वामतः पश्यति, दक्षिणतः पश्यति ।",
+          "meaning": "It looks to the left, it looks to the right. [पदच्छेद / Word-by-Word: वामतः = towards left | पश्यति = looks | दक्षिणतः = towards right | पश्यति = looks.]",
+          "paragraphTranslation": "वह बाईं ओर देखती है, दाईं ओर देखती है।",
+          "words": [
             "वामतः",
-            "पश्यति",
-            ",",
+            "पश्यति,",
             "दक्षिणतः",
             "पश्यति",
-            "।",
+            "।"
+          ]
+        },
+        {
+          "sanskrit": "अग्रतः पश्यति, पृष्ठतः पश्यति ।",
+          "meaning": "It looks ahead, it looks behind. [पदच्छेद / Word-by-Word: अग्रतः = in front/ahead | पश्यति = looks | पृष्ठतः = behind | पश्यति = looks.]",
+          "paragraphTranslation": "वह आगे देखती है, पीछे देखती है।",
+          "words": [
             "अग्रतः",
-            "पश्यति",
-            ",",
+            "पश्यति,",
             "पृष्ठतः",
             "पश्यति",
-            "।",
+            "।"
+          ]
+        },
+        {
+          "sanskrit": "स्वेदः जायते, तृषा जायते ।",
+          "meaning": "It starts sweating, and its thirst increases. [पदच्छेद / Word-by-Word: स्वेदः = sweat | जायते = happens/comes | तृषा = thirst | जायते = arises.]",
+          "paragraphTranslation": "उसे पसीना आ जाता है, उसकी प्यास बढ़ जाती है।",
+          "words": [
             "स्वेदः",
-            "जायते",
-            ",",
-            "तृषा",
-            "जायते",
-            "।",
-            "तस्य",
-            "स्वेदः",
-            "जायते",
-            ",",
+            "जायते,",
             "तृषा",
             "जायते",
             "।"
-          ],
-          "paragraphTranslation": "वह क्या करती है? वह क्या करती है? वह बाईं ओर देखती है, दाईं ओर देखती है। वह आगे देखती है, पीछे देखती है। उसे पसीना आ जाता है और प्यास बढ़ जाती है।"
+          ]
         },
         {
-          "sanskrit": "किं च पश्यति ? सः किं च पश्यति ? पश्यति द्राक्षालतां, सः पश्यति द्राक्षाफलम्। उपरि उपरि लतासु दृश्यते च तत्फलम्। अनुक्षणं तन्मुखे रसः जायते।",
-          "meaning": "What does it see? What does it see? It sees a grape-vine, it sees the grapes. The fruits are visible high up on the vines. Instantly, its mouth begins to water.",
+          "sanskrit": "किं च पश्यति ? सः किं च पश्यति ?",
+          "meaning": "And what does it see? What does it see? [पदच्छेद / Word-by-Word: किम् = what | च = and | पश्यति = sees | सः = it.]",
+          "paragraphTranslation": "और वह क्या देखती है? वह क्या देखती है?",
           "words": [
             "किं",
             "च",
@@ -6251,68 +6319,90 @@
             "किं",
             "च",
             "पश्यति",
-            "?",
+            "?"
+          ]
+        },
+        {
+          "sanskrit": "पश्यति द्राक्षालतां, सः पश्यति द्राक्षाफलम् ।",
+          "meaning": "It sees a grape-vine, it sees the grapes. [पदच्छेद / Word-by-Word: पश्यति = sees | द्राक्षालताम् = the grape-vine | सः = it | पश्यति = sees | द्राक्षाफलम् = the grape fruit (grapes).]",
+          "paragraphTranslation": "वह अंगूर की बेल देखती है, वह अंगूरों को देखती है।",
+          "words": [
             "पश्यति",
-            "द्राक्षालतां",
-            ",",
+            "द्राक्षालतां,",
             "सः",
             "पश्यति",
             "द्राक्षाफलम्",
-            "।",
+            "।"
+          ]
+        },
+        {
+          "sanskrit": "उपरि उपरि लतासु दृश्यते च तत्फलम् ।",
+          "meaning": "And that fruit is visible high up on the vines. [पदच्छेद / Word-by-Word: उपरि उपरि = higher and higher / up above | लतासु = on the vines | दृश्यते = is visible | च = and | तत्-फलम् = that fruit.]",
+          "paragraphTranslation": "बेलों पर ऊपर ही ऊपर वे फल दिखाई दे रहे हैं।",
+          "words": [
             "उपरि",
             "उपरि",
             "लतासु",
             "दृश्यते",
             "च",
             "तत्फलम्",
-            "।",
+            "।"
+          ]
+        },
+        {
+          "sanskrit": "अनुक्षणं तन्मुखे रसः जायते ।",
+          "meaning": "Instantly, its mouth begins to water. [पदच्छेद / Word-by-Word: अनुक्षणम् = instantly/immediately | तन्मुखे (तस्य + मुखे) = in its mouth | रसः = saliva/water | जायते = arises.]",
+          "paragraphTranslation": "उसी क्षण उसके मुँह में पानी (लार) आ जाता है।",
+          "words": [
             "अनुक्षणं",
             "तन्मुखे",
             "रसः",
             "जायते",
             "।"
-          ],
-          "paragraphTranslation": "वह क्या देखती है? वह क्या देखती है? वह अंगूर की बेल देखती है, वह अंगूरों को देखती है। बेलों पर ऊपर ही ऊपर वे फल दिखाई दे रहे हैं। उसी क्षण उसके मुँह में पानी आ जाता है।"
+          ]
         },
         {
-          "sanskrit": "किं च करोति ? सः किं च करोति ? एकवारम् उत्पतति, द्विवारम् उत्पतति। त्रिवारम् उत्पतति, पुनः पुनः उत्पतति। स्वेदः जायते, तस्य श्रमः जायते।",
-          "meaning": "What does it do? What does it do? It jumps once, it jumps twice. It jumps thrice, jumping repeatedly. It starts sweating and becomes exhausted.",
+          "sanskrit": "एकवारम् उत्पतति, द्विवारम् उत्पतति ।",
+          "meaning": "It jumps once, it jumps twice. [पदच्छेद / Word-by-Word: एकवारम् = once | उत्पतति = jumps up | द्विवारम् = twice | उत्पतति = jumps up.]",
+          "paragraphTranslation": "वह एक बार कूदती है, दो बार कूदती है।",
           "words": [
-            "किं",
-            "च",
-            "करोति",
-            "?",
-            "सः",
-            "किं",
-            "च",
-            "करोति",
-            "?",
             "एकवारम्",
-            "उत्पतति",
-            ",",
+            "उत्पतति,",
             "द्विवारम्",
             "उत्पतति",
-            "।",
+            "।"
+          ]
+        },
+        {
+          "sanskrit": "त्रिवारम् उत्पतति, पुनः पुनः उत्पतति ।",
+          "meaning": "It jumps thrice, jumping repeatedly. [पदच्छेद / Word-by-Word: त्रिवारम् = thrice | उत्पतति = jumps up | पुनः पुनः = again and again | उत्पतति = jumps up.]",
+          "paragraphTranslation": "वह तीन बार कूदती है, और बार-बार कूदती है।",
+          "words": [
             "त्रिवारम्",
-            "उत्पतति",
-            ",",
+            "उत्पतति,",
             "पुनः",
             "पुनः",
             "उत्पतति",
-            "।",
+            "।"
+          ]
+        },
+        {
+          "sanskrit": "स्वेदः जायते, तस्य श्रमः जायते ।",
+          "meaning": "It starts sweating, and it gets completely exhausted. [पदच्छेद / Word-by-Word: स्वेदः = sweat | जायते = comes | तस्य = its | श्रमः = fatigue/exhaustion | जायते = happens.]",
+          "paragraphTranslation": "उसे पसीना आ जाता है, और वह बहुत थक जाती है।",
+          "words": [
             "स्वेदः",
-            "जायते",
-            ",",
+            "जायते,",
             "तस्य",
             "श्रमः",
             "जायते",
             "।"
-          ],
-          "paragraphTranslation": "वह क्या करती है? वह क्या करती है? वह एक बार कूदती है, दो बार कूदती है। वह तीन बार कूदती है और बार-बार कूदती है। उसे पसीना आ जाता है और वह बहुत थक जाती है।"
+          ]
         },
         {
-          "sanskrit": "किं कथयति ? सः किं कथयति ? \"आम्लं द्राक्षाफलम्, आम्लं द्राक्षाफलम्\"। इत्येवं कथयति, सः पलायते॥",
-          "meaning": "What does it say? What does it say? \"The grapes are sour, the grapes are sour!\" Saying this, it runs away.",
+          "sanskrit": "किं कथयति ? सः किं कथयति ?",
+          "meaning": "What does it say? What does it say? [पदच्छेद / Word-by-Word: किम् = what | कथयति = says | सः = it.]",
+          "paragraphTranslation": "वह क्या कहती है? वह क्या कहती है?",
           "words": [
             "किं",
             "कथयति",
@@ -6320,253 +6410,372 @@
             "सः",
             "किं",
             "कथयति",
-            "?",
+            "?"
+          ]
+        },
+        {
+          "sanskrit": "\"आम्लं द्राक्षाफलम् आम्लं द्राक्षाफलम्\" ।",
+          "meaning": "\"The grapes are sour, the grapes are sour.\" [पदच्छेद / Word-by-Word: आम्लम् = sour | द्राक्षाफलम् = grape fruit.]",
+          "paragraphTranslation": "\"अंगूर खट्टे हैं, अंगूर खट्टे हैं।\"",
+          "words": [
             "\"आम्लं",
             "द्राक्षाफलम्",
-            ",",
             "आम्लं",
             "द्राक्षाफलम्\"",
-            "।",
-            "इत्येवं",
-            "कथयति",
-            ",",
-            "सः",
-            "पलायते॥"
-          ],
-          "paragraphTranslation": "वह क्या कहती है? वह क्या कहती है? \"अंगूर खट्टे हैं, अंगूर खट्टे हैं।\" ऐसा कहकर वह वहाँ से भाग जाती है।"
+            "।"
+          ]
         },
         {
-          "sanskrit": "२. वयं शब्दार्थान् जानीमः (पृष्ठम् ४१ / Vocabulary Glossary)",
-          "meaning": "Vocabulary Glossary (Sanskrit Explanation · Hindi Meaning · English Translation - Page 41)",
+          "sanskrit": "इत्येवं कथयति, सः पलायते ॥",
+          "meaning": "Saying thus, it runs away. [पदच्छेद / Word-by-Word: इति + एवम् = thus/in this manner | कथयति = says | सः = it | पलायते = runs away.]",
+          "paragraphTranslation": "ऐसा कहकर वह वहाँ से भाग जाती है।",
           "words": [
-            "३.",
+            "इत्येवं",
+            "कथयति,",
+            "सः",
+            "पलायते",
+            "॥"
+          ]
+        },
+        {
+          "kind": "glossary-header",
+          "sanskrit": "भाग २: वयं शब्दार्थान् जानीमः (Vocabulary / Shabd - पृष्ठम् ४२–४३)",
+          "meaning": "Vocabulary Glossary (Sanskrit Explanation · Hindi Meaning · English Translation - Pages 42–43)",
+          "paragraphTranslation": "भाग २: वयं शब्दार्थान् जानीमः (कठिन शब्दों के संस्कृत व्याख्या, हिन्दी एवं अंग्रेजी अर्थ - पृष्ठ ४२ से ४३)",
+          "words": [
+            "भाग",
+            "२:",
             "वयं",
             "शब्दार्थान्",
             "जानीमः",
             "(पृष्ठम्",
-            "४१",
-            "/",
-            "Vocabulary",
-            "Glossary)"
-          ],
-          "paragraphTranslation": "कठिन शब्दों के संस्कृत अर्थ, हिन्दी अनुवाद एवं अंग्रेजी अनुवाद",
-          "kind": "glossary-header"
+            "४२–४३)"
+          ]
         },
         {
-          "sanskrit": "पुनः पुनः",
-          "meaning": "Frequently / Again and again",
-          "words": [
-            "पुनः",
-            "पुनः"
-          ],
           "kind": "glossary",
-          "hindi_gloss": "बार-बार",
-          "sanskrit_gloss": "भूयो भूयः"
+          "sanskrit": "शृगालः",
+          "sanskrit_gloss": "लोमशा",
+          "hindi_gloss": "लोमड़ी",
+          "meaning": "Fox",
+          "words": [
+            "शृगालः"
+          ]
         },
         {
+          "kind": "glossary",
+          "sanskrit": "वनम्",
+          "sanskrit_gloss": "काननम् / अरण्यम्",
+          "hindi_gloss": "जंगल",
+          "meaning": "Forest",
+          "words": [
+            "वनम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "पिपासा",
+          "sanskrit_gloss": "पातुम् इच्छा",
+          "hindi_gloss": "प्यास",
+          "meaning": "Thirst",
+          "words": [
+            "पिपासा"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "बुभुक्षा",
+          "sanskrit_gloss": "भोक्तुम् इच्छा",
+          "hindi_gloss": "भूख",
+          "meaning": "Hunger",
+          "words": [
+            "बुभुक्षा"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "किमपि",
+          "sanskrit_gloss": "यत्किञ्चित्",
+          "hindi_gloss": "कुछ भी",
+          "meaning": "Anything",
+          "words": [
+            "किमपि"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "इतोऽपि",
+          "sanskrit_gloss": "अतः परमपि",
+          "hindi_gloss": "और भी / आगे भी",
+          "meaning": "More than this / Further",
+          "words": [
+            "इतोऽपि"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "लभते",
+          "sanskrit_gloss": "प्राप्नोति",
+          "hindi_gloss": "पाता है",
+          "meaning": "Gets / Obtains",
+          "words": [
+            "लभते"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "श्रान्तः",
+          "sanskrit_gloss": "क्लान्तः",
+          "hindi_gloss": "थका हुआ",
+          "meaning": "Tired",
+          "words": [
+            "श्रान्तः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "खिन्नः",
+          "sanskrit_gloss": "दुःखितः",
+          "hindi_gloss": "दुखी",
+          "meaning": "Sad",
+          "words": [
+            "खिन्नः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "जायते",
+          "sanskrit_gloss": "भवति",
+          "hindi_gloss": "होता है",
+          "meaning": "Becomes",
+          "words": [
+            "जायते"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "वामतः",
+          "sanskrit_gloss": "वामभागे",
+          "hindi_gloss": "बायीं ओर",
+          "meaning": "Towards left",
+          "words": [
+            "वामतः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "दक्षिणतः",
+          "sanskrit_gloss": "दक्षिणभागे",
+          "hindi_gloss": "दाहिनी ओर",
+          "meaning": "Towards right",
+          "words": [
+            "दक्षिणतः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "अग्रतः",
+          "sanskrit_gloss": "अग्रभागे",
+          "hindi_gloss": "आगे",
+          "meaning": "In front",
+          "words": [
+            "अग्रतः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "पृष्ठतः",
+          "sanskrit_gloss": "पृष्ठभागे",
+          "hindi_gloss": "पीछे",
+          "meaning": "Behind",
+          "words": [
+            "पृष्ठतः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "स्वेदः",
+          "sanskrit_gloss": "घर्मः",
+          "hindi_gloss": "पसीना",
+          "meaning": "Sweat",
+          "words": [
+            "स्वेदः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "तृषा",
+          "sanskrit_gloss": "पिपासा",
+          "hindi_gloss": "प्यास",
+          "meaning": "Thirst",
+          "words": [
+            "तृषा"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "द्राक्षालताम्",
+          "sanskrit_gloss": "द्राक्षाफलस्य वल्लीम्",
+          "hindi_gloss": "अंगूर की बेल",
+          "meaning": "Grape-vine",
+          "words": [
+            "द्राक्षालताम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "उपरि",
+          "sanskrit_gloss": "ऊर्ध्वभागे",
+          "hindi_gloss": "ऊपर",
+          "meaning": "Above / High up",
+          "words": [
+            "उपरि"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "दृश्यते",
+          "sanskrit_gloss": "अवलोक्यते",
+          "hindi_gloss": "देखा जाता है",
+          "meaning": "Seen",
+          "words": [
+            "दृश्यते"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "अनुक्षणम्",
+          "sanskrit_gloss": "क्षणाभ्यन्तरे",
+          "hindi_gloss": "उसी क्षण",
+          "meaning": "Immediately",
+          "words": [
+            "अनुक्षणम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "रसः",
+          "sanskrit_gloss": "लालारसः / मुखस्रावः",
+          "hindi_gloss": "लार / मुँह का पानी",
+          "meaning": "Saliva",
+          "words": [
+            "रसः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "एकवारम्",
+          "sanskrit_gloss": "सकृत्",
+          "hindi_gloss": "एक बार",
+          "meaning": "Once",
+          "words": [
+            "एकवारम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "द्विवारम्",
+          "sanskrit_gloss": "वारद्वयम् / द्विः",
+          "hindi_gloss": "दो बार",
+          "meaning": "Twice",
+          "words": [
+            "द्विवारम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "उत्पतति",
+          "sanskrit_gloss": "कूर्दते",
+          "hindi_gloss": "कूदता है",
+          "meaning": "Jumps",
+          "words": [
+            "उत्पतति"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "पुनः पुनः",
+          "sanskrit_gloss": "भूयो भूयः",
+          "hindi_gloss": "बार-बार",
+          "meaning": "Frequently / Repeatedly",
+          "words": [
+            "पुनः पुनः"
+          ]
+        },
+        {
+          "kind": "glossary",
           "sanskrit": "कथयति",
+          "sanskrit_gloss": "वदति",
+          "hindi_gloss": "कहता है",
           "meaning": "Tells / Says",
           "words": [
             "कथयति"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "कहता है / कहती है",
-          "sanskrit_gloss": "वदति"
+          ]
         },
         {
+          "kind": "glossary",
           "sanskrit": "आम्लम्",
-          "meaning": "Sour (taste)",
+          "sanskrit_gloss": "आम्लरसयुक्तम्",
+          "hindi_gloss": "खट्टा",
+          "meaning": "Sour",
           "words": [
             "आम्लम्"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "खट्टा",
-          "sanskrit_gloss": "आम्लरसयुक्तम्"
+          ]
         },
         {
+          "kind": "glossary",
           "sanskrit": "द्राक्षाफलम्",
+          "sanskrit_gloss": "मृद्वीकाफलम्",
+          "hindi_gloss": "अंगूर",
           "meaning": "Grapes",
           "words": [
             "द्राक्षाफलम्"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "अंगूर",
-          "sanskrit_gloss": "मृद्वीकाफलम्"
+          ]
         },
         {
+          "kind": "glossary",
           "sanskrit": "पलायते",
-          "meaning": "Runs away / Flees",
+          "sanskrit_gloss": "अन्यत्र धावति",
+          "hindi_gloss": "भाग जाता है",
+          "meaning": "Runs away",
           "words": [
             "पलायते"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "भाग जाता है / भागती है",
-          "sanskrit_gloss": "अन्यत्र धावति"
+          ]
         },
         {
-          "sanskrit": "शृगालः",
-          "meaning": "Fox / Jackal",
+          "kind": "exercise-header",
+          "sanskrit": "भाग ३: वयम् अभ्यासं कुर्मः (All Exercises with Answers - पृष्ठम् ४३–४५)",
+          "meaning": "Comprehensive Solved Exercises & Grammar Application (Pages 43–45)",
+          "paragraphTranslation": "भाग ३: वयम् अभ्यासं कुर्मः (सम्पूर्ण हल सहित अभ्यास कार्य एवं व्याकरण - पृष्ठ ४३ से ४५)",
           "words": [
-            "शृगालः"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "सियार / लोमड़ी",
-          "sanskrit_gloss": "गोमायुः / जम्बुकः"
-        },
-        {
-          "sanskrit": "पिपासा / तृषा",
-          "meaning": "Thirst / Desire for water",
-          "words": [
-            "पिपासा",
-            "/",
-            "तृषा"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "प्यास",
-          "sanskrit_gloss": "जलपानेच्छा / तृष्णा"
-        },
-        {
-          "sanskrit": "बुभुक्षा",
-          "meaning": "Hunger / Appetite",
-          "words": [
-            "बुभुक्षा"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "भूख",
-          "sanskrit_gloss": "भोजनेच्छा / क्षुधा"
-        },
-        {
-          "sanskrit": "इतोऽपि",
-          "meaning": "Further ahead / Even more",
-          "words": [
-            "इतोऽपि"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "और भी / आगे भी",
-          "sanskrit_gloss": "अग्रतः / इतः परम्"
-        },
-        {
-          "sanskrit": "श्रान्तः",
-          "meaning": "Tired / Fatigued",
-          "words": [
-            "श्रान्तः"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "थका हुआ",
-          "sanskrit_gloss": "क्लान्तः / श्रमितः"
-        },
-        {
-          "sanskrit": "खिन्नः",
-          "meaning": "Dejected / Disappointed / Sad",
-          "words": [
-            "खिन्नः"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "उदास / दुखी",
-          "sanskrit_gloss": "दुःखी / विषादग्रस्तः"
-        },
-        {
-          "sanskrit": "वामतः / दक्षिणतः",
-          "meaning": "To the left / To the right",
-          "words": [
-            "वामतः",
-            "/",
-            "दक्षिणतः"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "बाईं ओर / दाहिनी ओर",
-          "sanskrit_gloss": "वामभागे / दक्षिणभागे"
-        },
-        {
-          "sanskrit": "अग्रतः / पृष्ठतः",
-          "meaning": "In front / Behind",
-          "words": [
-            "अग्रतः",
-            "/",
-            "पृष्ठतः"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "आगे / पीछे",
-          "sanskrit_gloss": "पुरतः / पश्चात्"
-        },
-        {
-          "sanskrit": "स्वेदः / श्रमः",
-          "meaning": "Sweat / Perspiration / Fatigue",
-          "words": [
-            "स्वेदः",
-            "/",
-            "श्रमः"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "पसीना / परिश्रम की थकान",
-          "sanskrit_gloss": "श्रमजलम् / घर्मबिन्दुः / थकावट"
-        },
-        {
-          "sanskrit": "द्राक्षालताम्",
-          "meaning": "The Grapevine climber",
-          "words": [
-            "द्राक्षालताम्"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "अंगूर की बेल को",
-          "sanskrit_gloss": "द्राक्षावल्लीम्"
-        },
-        {
-          "sanskrit": "अनुक्षणम्",
-          "meaning": "Immediately / In an instant",
-          "words": [
-            "अनुक्षणम्"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "उसी क्षण / तुरंत",
-          "sanskrit_gloss": "तत्क्षणम् / शीघ्रम्"
-        },
-        {
-          "sanskrit": "उत्पतति",
-          "meaning": "Jumps up / Leaps",
-          "words": [
-            "उत्पतति"
-          ],
-          "kind": "glossary",
-          "hindi_gloss": "कूदता है / छलांग लगाता है",
-          "sanskrit_gloss": "उड्डीयते / कूर्दनं करोति"
-        },
-        {
-          "sanskrit": "३. वयम् अभ्यासं कुर्मः (अभ्यास कार्यम् / Solved Exercises - पृष्ठानि ४२-४६)",
-          "meaning": "Comprehensive Solved Exercises & Grammar Application (Pages 42–46)",
-          "words": [
-            "४.",
+            "भाग",
+            "३:",
             "वयम्",
             "अभ्यासं",
             "कुर्मः",
-            "(अभ्यास",
-            "कार्यम्",
-            "/",
-            "Solved",
-            "Exercises)"
-          ],
-          "kind": "exercise-header",
-          "hindi_gloss": "पाठ ४: न लभ्यते चेत् आम्लं द्राक्षाफलम् - सम्पूर्ण हल सहित अभ्यास (पृष्ठानि ४२-४६)"
+            "(पृष्ठम्",
+            "४३–४५)"
+          ]
         },
         {
+          "kind": "exercise-qa",
           "sanskrit": "१. गीतस्य साभिनयं कक्षायां गानं कुर्वन्तु।",
-          "meaning": "1. Sing and enact the poem with actions and dramatization in the classroom.",
+          "meaning": "1. Sing and enact the poem with actions and dramatization in the classroom. (Classroom dramatization activity)",
+          "paragraphTranslation": "१. गीत का अभिनय के साथ कक्षा में गान कीजिए। (यह कक्षा अभिनय की गतिविधि है।)",
           "words": [
             "१.",
             "गीतस्य",
             "साभिनयं",
             "कक्षायां",
             "गानं",
-            "कुर्वन्तु",
-            "।"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "१. कक्षा में अभिनय के साथ गीत गाने की गतिविधि है। शिक्षक के निर्देशानुसार छात्र भाव-भंगिमाओं के साथ 'एकः शृगालः वनं गच्छति...' गीत का सानन्द गान करें।",
-          "answer_sanskrit": "कक्षायां शिक्षकस्य निर्देशानुसारं अभिनयसहितं 'एकः शृगालः वनं गच्छति...' इति गीतस्य सानन्दं गानं कुर्वन्तु।"
+            "कुर्वन्तु।"
+          ]
         },
         {
-          "sanskrit": "२. अधः प्रदत्तानां प्रश्नानाम् एकपदेन पदद्वयेन वा उत्तरं लिखन्तु —",
+          "kind": "exercise-header",
+          "sanskrit": "२. अधः प्रदत्तानां प्रश्नानाम् एकपदेन पदद्वयेन वा उत्तरं लिखन्तु (Answer in one or two words):",
           "meaning": "2. Answer the following questions in one or two words:",
+          "paragraphTranslation": "२. नीचे दिए गए प्रश्नों के उत्तर एक या दो शब्दों में लिखिए:",
           "words": [
             "२.",
             "अधः",
@@ -6576,87 +6785,93 @@
             "पदद्वयेन",
             "वा",
             "उत्तरं",
-            "लिखन्तु",
-            "—"
-          ],
-          "kind": "exercise-header",
-          "hindi_gloss": "२. निम्नलिखित प्रश्नों के उत्तर एक या दो शब्दों में लिखिए:"
+            "लिखन्तु"
+          ]
         },
         {
-          "sanskrit": "(क) कः वनं गच्छति ?",
-          "meaning": "Who goes to the forest? Answer: The fox (शृगालः).",
+          "kind": "exercise-qa",
+          "sanskrit": "(क) कः वनं गच्छति ? → शृगालः",
+          "meaning": "Who goes to the forest? → The fox (शृगालः)",
+          "paragraphTranslation": "(क) कौन जंगल जाता है? → लोमड़ी (शृगालः)",
           "words": [
             "(क)",
             "कः",
             "वनं",
             "गच्छति",
-            "?"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "वन में कौन जाता है? उत्तर: सियार / लोमड़ी (शृगालः)।",
-          "answer_sanskrit": "शृगालः"
+            "?",
+            "→",
+            "शृगालः"
+          ]
         },
         {
-          "sanskrit": "(ख) शृगालः कां पश्यति ?",
-          "meaning": "What does the fox see? Answer: The grape-vine (द्राक्षालताम्).",
+          "kind": "exercise-qa",
+          "sanskrit": "(ख) शृगालः कां पश्यति ? → द्राक्षालताम्",
+          "meaning": "What does the fox see? → The grape-vine (द्राक्षालताम्)",
+          "paragraphTranslation": "(ख) लोमड़ी किसे देखती है? → अंगूर की बेल को (द्राक्षालताम्)",
           "words": [
             "(ख)",
             "शृगालः",
             "कां",
             "पश्यति",
-            "?"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "लोमड़ी क्या देखती है? उत्तर: अंगूर की बेल को (द्राक्षालताम्)।",
-          "answer_sanskrit": "द्राक्षालताम्"
+            "?",
+            "→",
+            "द्राक्षालताम्"
+          ]
         },
         {
-          "sanskrit": "(ग) शृगालस्य मुखे किं जायते ?",
-          "meaning": "What happens in the fox's mouth? Answer: Saliva / Watering (रसः).",
+          "kind": "exercise-qa",
+          "sanskrit": "(ग) शृगालस्य मुखे किं जायते ? → रसः",
+          "meaning": "What happens in the fox's mouth? → Saliva / Watering (रसः)",
+          "paragraphTranslation": "(ग) लोमड़ी के मुँह में क्या आ जाता है? → पानी / लार (रसः)",
           "words": [
             "(ग)",
             "शृगालस्य",
             "मुखे",
             "किं",
             "जायते",
-            "?"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "लोमड़ी के मुँह में क्या आ जाता है? उत्तर: पानी / रस (रसः)।",
-          "answer_sanskrit": "रसः"
+            "?",
+            "→",
+            "रसः"
+          ]
         },
         {
-          "sanskrit": "(घ) द्राक्षालतायां शृगालः किं पश्यति ?",
-          "meaning": "What does the fox see on the grape-vine? Answer: Grapes (द्राक्षाफलम्).",
+          "kind": "exercise-qa",
+          "sanskrit": "(घ) द्राक्षालतायां शृगालः किं पश्यति ? → द्राक्षाफलम्",
+          "meaning": "What does the fox see on the grape-vine? → Grapes (द्राक्षाफलम्)",
+          "paragraphTranslation": "(घ) अंगूर की बेल पर लोमड़ी क्या देखती है? → अंगूर (द्राक्षाफलम्)",
           "words": [
             "(घ)",
             "द्राक्षालतायां",
             "शृगालः",
             "किं",
             "पश्यति",
-            "?"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "अंगूर की बेल पर लोमड़ी क्या देखती है? उत्तर: अंगूर (द्राक्षाफलम्)।",
-          "answer_sanskrit": "द्राक्षाफलम्"
+            "?",
+            "→",
+            "द्राक्षाफलम्"
+          ]
         },
         {
-          "sanskrit": "(ङ) द्राक्षाफलं कुत्र दृश्यते ?",
-          "meaning": "Where are the grapes seen? Answer: High up on the vines (उपरि उपरि लतासु).",
+          "kind": "exercise-qa",
+          "sanskrit": "(ङ) द्राक्षाफलं कुत्र दृश्यते ? → उपरि उपरि लतासु",
+          "meaning": "Where are the grapes seen? → High up on the vines (उपरि उपरि लतासु)",
+          "paragraphTranslation": "(ङ) अंगूर कहाँ दिखाई देते हैं? → लताओं पर ऊपर ही ऊपर (उपरि उपरि लतासु)",
           "words": [
             "(ङ)",
             "द्राक्षाफलं",
             "कुत्र",
             "दृश्यते",
-            "?"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "अंगूर कहाँ दिखाई देते हैं? उत्तर: लताओं पर ऊपर ही ऊपर (उपरि उपरि लतासु)।",
-          "answer_sanskrit": "उपरि उपरि लतासु"
+            "?",
+            "→",
+            "उपरि",
+            "उपरि",
+            "लतासु"
+          ]
         },
         {
-          "sanskrit": "(च) किं शृगालः पुनः पुनः उत्पतति ? (आम्/न)",
-          "meaning": "Does the fox jump repeatedly? (Yes/No) Answer: Yes (आम्).",
+          "kind": "exercise-qa",
+          "sanskrit": "(च) किं शृगालः पुनः पुनः उत्पतति ? (आम्/न) → आम्",
+          "meaning": "Does the fox jump repeatedly? (Yes/No) → Yes (आम्)",
+          "paragraphTranslation": "(च) क्या लोमड़ी बार-बार कूदती है? (हाँ/नहीं) → हाँ (आम्)",
           "words": [
             "(च)",
             "किं",
@@ -6665,15 +6880,16 @@
             "पुनः",
             "उत्पतति",
             "?",
-            "(आम्/न)"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "क्या लोमड़ी बार-बार कूदती है? (हाँ/नहीं) उत्तर: हाँ (आम्)।",
-          "answer_sanskrit": "आम्"
+            "(आम्/न)",
+            "→",
+            "आम्"
+          ]
         },
         {
-          "sanskrit": "(छ) किं शृगालः द्राक्षाफलं प्राप्नोति ? (आम्/न)",
-          "meaning": "Does the fox get the grapes? (Yes/No) Answer: No (न).",
+          "kind": "exercise-qa",
+          "sanskrit": "(छ) किं शृगालः द्राक्षाफलं प्राप्नोति ? (आम्/न) → न",
+          "meaning": "Does the fox get the grapes? (Yes/No) → No (न)",
+          "paragraphTranslation": "(छ) क्या लोमड़ी अंगूर प्राप्त कर पाती है? (हाँ/नहीं) → नहीं (न)",
           "words": [
             "(छ)",
             "किं",
@@ -6681,15 +6897,16 @@
             "द्राक्षाफलं",
             "प्राप्नोति",
             "?",
-            "(आम्/न)"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "क्या लोमड़ी को अंगूर मिलते हैं? (हाँ/नहीं) उत्तर: नहीं (न)।",
-          "answer_sanskrit": "न"
+            "(आम्/न)",
+            "→",
+            "न"
+          ]
         },
         {
-          "sanskrit": "३. अधः प्रदत्तानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखन्तु —",
-          "meaning": "3. Answer the following questions in complete sentences:",
+          "kind": "exercise-header",
+          "sanskrit": "३. अधः प्रदत्तानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखन्तु (Answer in full sentences):",
+          "meaning": "3. Answer the following questions in full sentences:",
+          "paragraphTranslation": "३. नीचे दिए गए प्रश्नों के उत्तर पूर्ण वाक्य में लिखिए:",
           "words": [
             "३.",
             "अधः",
@@ -6697,30 +6914,35 @@
             "प्रश्नानां",
             "पूर्णवाक्येन",
             "उत्तरं",
-            "लिखन्तु",
-            "—"
-          ],
-          "kind": "exercise-header",
-          "hindi_gloss": "३. निम्नलिखित प्रश्नों के उत्तर पूर्ण वाक्य में लिखिए:"
+            "लिखन्तु"
+          ]
         },
         {
-          "sanskrit": "(क) शृगालः कथं वनं गच्छति ?",
-          "meaning": "How does the fox go to the forest? Answer: The fox goes to the forest out of hunger and thirst.",
+          "kind": "exercise-qa",
+          "sanskrit": "(क) शृगालः कथं वनं गच्छति ?\nउत्तरम्: शृगालः पिपासया बुभुक्षया च वनं गच्छति।",
+          "meaning": "How does the fox go to the forest? Answer: The fox goes to the forest out of hunger and thirst. (शृगालः पिपासया बुभुक्षया च वनं गच्छति।)",
+          "paragraphTranslation": "(क) लोमड़ी किस प्रकार वन जाती है? उत्तर: लोमड़ी प्यास और भूख से व्याकुल होकर वन जाती है।",
           "words": [
             "(क)",
             "शृगालः",
             "कथं",
             "वनं",
             "गच्छति",
-            "?"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "लोमड़ी कैसे वन जाती है? उत्तर: लोमड़ी प्यास और भूख से वन जाती है।",
-          "answer_sanskrit": "शृगालः पिपासया बुभुक्षया च वनं गच्छति।"
+            "?",
+            "उत्तरम्:",
+            "शृगालः",
+            "पिपासया",
+            "बुभुक्षया",
+            "च",
+            "वनं",
+            "गच्छति।"
+          ]
         },
         {
-          "sanskrit": "(ख) वनं गत्वा शृगालस्य किं जायते ?",
-          "meaning": "What happens to the fox after going to the forest? Answer: Upon entering the forest, the fox becomes tired and sad; it sweats and feels thirsty.",
+          "kind": "exercise-qa",
+          "sanskrit": "(ख) वनं गत्वा शृगालस्य किं जायते ?\nउत्तरम्: वनं गत्वा शृगालः श्रान्तः खिन्नः च जायते, तस्य स्वेदः तृषा च जायते।",
+          "meaning": "What happens to the fox after going to the forest? Answer: The fox becomes tired and sad; it sweats and feels thirsty. (तस्य स्वेदः तृषा च जायते।)",
+          "paragraphTranslation": "(ख) वन जाकर लोमड़ी का क्या होता है? उत्तर: वन जाकर लोमड़ी थक जाती है और दुखी हो जाती है, उसे पसीना आ जाता है और प्यास लगती है।",
           "words": [
             "(ख)",
             "वनं",
@@ -6728,30 +6950,48 @@
             "शृगालस्य",
             "किं",
             "जायते",
-            "?"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "वन जाकर लोमड़ी का क्या होता है? उत्तर: वन जाकर लोमड़ी थक जाती है और दुखी हो जाती है, उसे पसीना आ जाता है और प्यास लगती है।",
-          "answer_sanskrit": "वनं गत्वा शृगालः श्रान्तः खिन्नः च जायते, तस्य स्वेदः तृषा च जायते।"
+            "?",
+            "उत्तरम्:",
+            "वनं",
+            "गत्वा",
+            "शृगालः",
+            "श्रान्तः",
+            "खिन्नः",
+            "च",
+            "जायते,",
+            "तस्य",
+            "स्वेदः",
+            "तृषा",
+            "च",
+            "जायते।"
+          ]
         },
         {
-          "sanskrit": "(ग) शृगालः द्राक्षाफलं कुत्र पश्यति ?",
-          "meaning": "Where does the fox see the grapes? Answer: The fox sees the grapes hanging high up on the grape-vines.",
+          "kind": "exercise-qa",
+          "sanskrit": "(ग) शृगालः द्राक्षाफलं कुत्र पश्यति ?\nउत्तरम्: शृगालः उपरि उपरि द्राक्षालतासु द्राक्षाफलं पश्यति।",
+          "meaning": "Where does the fox see the grapes? Answer: The fox sees the grapes hanging high up on the grape-vines. (उपरि उपरि द्राक्षालतासु)",
+          "paragraphTranslation": "(ग) लोमड़ी अंगूर कहाँ देखती है? उत्तर: लोमड़ी लताओं पर ऊपर ही ऊपर अंगूर देखती है।",
           "words": [
             "(ग)",
             "शृगालः",
             "द्राक्षाफलं",
             "कुत्र",
             "पश्यति",
-            "?"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "लोमड़ी अंगूर कहाँ देखती है? उत्तर: लोमड़ी ऊपर-ऊपर अंगूर की बेलों पर अंगूर देखती है।",
-          "answer_sanskrit": "शृगालः उपरि उपरि द्राक्षालतासु द्राक्षाफलं पश्यति।"
+            "?",
+            "उत्तरम्:",
+            "शृगालः",
+            "उपरि",
+            "उपरि",
+            "द्राक्षालतासु",
+            "द्राक्षाफलं",
+            "पश्यति।"
+          ]
         },
         {
-          "sanskrit": "(घ) द्राक्षाफलं दृष्ट्वा कस्य मुखे रसः जायते ?",
-          "meaning": "Whose mouth waters upon seeing the grapes? Answer: On seeing the grapes, the fox's mouth begins to water.",
+          "kind": "exercise-qa",
+          "sanskrit": "(घ) द्राक्षाफलं दृष्ट्वा कस्य मुखे रसः जायते ?\nउत्तरम्: द्राक्षाफलं दृष्ट्वा शृगालस्य मुखे रसः जायते।",
+          "meaning": "Whose mouth waters upon seeing the grapes? Answer: On seeing the grapes, the fox's mouth begins to water. (शृगालस्य मुखे रसः जायते।)",
+          "paragraphTranslation": "(घ) अंगूर देखकर किसके मुँह में पानी आ जाता है? उत्तर: अंगूर देखकर लोमड़ी के मुँह में पानी आ जाता है।",
           "words": [
             "(घ)",
             "द्राक्षाफलं",
@@ -6760,293 +7000,320 @@
             "मुखे",
             "रसः",
             "जायते",
-            "?"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "अंगूर देखकर किसके मुँह में पानी आ जाता है? उत्तर: अंगूर देखकर लोमड़ी के मुँह में पानी आ जाता है।",
-          "answer_sanskrit": "द्राक्षाफलं दृष्ट्वा शृगालस्य मुखे रसः जायते।"
+            "?",
+            "उत्तरम्:",
+            "द्राक्षाफलं",
+            "दृष्ट्वा",
+            "शृगालस्य",
+            "मुखे",
+            "रसः",
+            "जायते।"
+          ]
         },
         {
-          "sanskrit": "(ङ) अन्ते शृगालः किं वदति ?",
-          "meaning": "What does the fox say at the end? Answer: At the end, the fox says, \"The grapes are sour.\"",
+          "kind": "exercise-qa",
+          "sanskrit": "(ङ) अन्ते शृगालः किं वदति ?\nउत्तरम्: अन्ते शृगालः \"आम्लं द्राक्षाफलम्\" इति वदति।",
+          "meaning": "What does the fox say at the end? Answer: At the end, the fox says, 'The grapes are sour.' (\"आम्लं द्राक्षाफलम्\" इति)",
+          "paragraphTranslation": "(ङ) अंत में लोमड़ी क्या कहती है? उत्तर: अंत में लोमड़ी कहती है— \"अंगूर खट्टे हैं\"।",
           "words": [
             "(ङ)",
             "अन्ते",
             "शृगालः",
             "किं",
             "वदति",
-            "?"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "अंत में लोमड़ी क्या कहती है? उत्तर: अंत में लोमड़ी कहती है - \"अंगूर खट्टे हैं।\" इति।",
-          "answer_sanskrit": "अन्ते शृगालः \"आम्लं द्राक्षाफलम्\" इति वदति।"
+            "?",
+            "उत्तरम्:",
+            "अन्ते",
+            "शृगालः",
+            "\"आम्लं",
+            "द्राक्षाफलम्\"",
+            "इति",
+            "वदति।"
+          ]
         },
         {
-          "sanskrit": "४. उपरि प्रदत्तां मञ्जूषां दृष्ट्वा रिक्तस्थानेषु उचितक्रियापदानि लिखन्तु — (आत्मनेपद लट्-लकार तालिका)",
+          "kind": "exercise-header",
+          "sanskrit": "४. रिक्तस्थानेषु उचितक्रियापदानि लिखन्तु (Fill in the blanks - लट् लकार / आत्मनेपद तालिका):",
           "meaning": "4. Fill in the blanks with appropriate verb forms (Ātmanepada Lat-Lakāra Present Tense):",
+          "paragraphTranslation": "४. रिक्त स्थानों में उचित क्रियापद लिखिए (लट् लकार आत्मनेपद तालिका):",
           "words": [
             "४.",
-            "उपरि",
-            "प्रदत्तां",
-            "मञ्जूषां",
-            "दृष्ट्वा",
             "रिक्तस्थानेषु",
             "उचितक्रियापदानि",
-            "लिखन्तु",
-            "—",
-            "(आत्मनेपद",
-            "लट्-लकार",
-            "तालिका)"
-          ],
-          "kind": "exercise-header",
-          "hindi_gloss": "४. रिक्त स्थानों में उचित क्रियापद लिखिए (आत्मनेपद लट्-लकार वर्तमान काल तालिका):"
+            "लिखन्तु"
+          ]
         },
         {
-          "sanskrit": "(क) वन्द् धातु (वन्दना करना / To bow, pray)",
-          "meaning": "Root वन्द् (To salute/pray) in Present Tense: 3rd Person: वन्दते | वन्देते | वन्दन्ते; 2nd Person: वन्दसे | वन्देथे | वन्दध्वे; 1st Person: वन्दे | वन्दावहे | वन्दामहे.",
+          "kind": "exercise-qa",
+          "sanskrit": "(क) वन्द् धातु:\nप्रथमः पुरुषः: वन्दते | वन्देते | वन्दन्ते\nमध्यमः पुरुषः: वन्दसे | वन्देथे | वन्दध्वे\nउत्तमः पुरुषः: वन्दे | वन्दावहे | वन्दामहे",
+          "meaning": "Root वन्द् (To bow, pray) Ātmanepada Present Tense:\n3rd Person: वन्दते | वन्देते | वन्दन्ते\n2nd Person: वन्दसे | वन्देथे | वन्दध्वे\n1st Person: वन्दे | वन्दावहे | वन्दामहे",
+          "paragraphTranslation": "(क) वन्द् धातु (प्रणाम करना) लट् लकार:\nप्रथम पुरुष: वन्दते | वन्देते | वन्दन्ते\nमध्यम पुरुष: वन्दसे | वन्देथे | वन्दध्वे\nउत्तम पुरुष: वन्दे | वन्दावहे | वन्दामहे",
           "words": [
             "(क)",
             "वन्द्",
-            "धातु",
-            "(वन्दना",
-            "करना",
-            "/",
-            "To",
-            "bow",
-            ",",
-            "pray)"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "वन्द् धातु (वन्दना करना/प्रणाम करना) लट्-लकार: प्रथम पुरुष: वन्दते | वन्देते | वन्दन्ते; मध्यम पुरुष: वन्दसे | वन्देथे | वन्दध्वे; उत्तम पुरुष: वन्दे | वन्दावहे | वन्दामहे।",
-          "answer_sanskrit": "प्रथमः पुरुषः: वन्दते | वन्देते | वन्दन्ते ॥ मध्यमः पुरुषः: वन्दसे | वन्देथे | वन्दध्वे ॥ उत्तमः पुरुषः: वन्दे | वन्दावहे | वन्दामहे"
+            "धातु:",
+            "वन्दते",
+            "|",
+            "वन्देते",
+            "|",
+            "वन्दन्ते",
+            "||",
+            "वन्दसे",
+            "|",
+            "वन्देथे",
+            "|",
+            "वन्दध्वे",
+            "||",
+            "वन्दे",
+            "|",
+            "वन्दावहे",
+            "|",
+            "वन्दामहे"
+          ]
         },
         {
-          "sanskrit": "(ख) पलाय् धातु (भागना / To run away, flee)",
-          "meaning": "Root पलाय् (To run away/flee) in Present Tense: 3rd Person: पलायते | पलायेते | पलायन्ते; 2nd Person: पलायसे | पलायेथे | पलायध्वे; 1st Person: पलाये | पलायावहे | पलायामहे.",
+          "kind": "exercise-qa",
+          "sanskrit": "(ख) पलाय् धातु:\nप्रथमः पुरुषः: पलायते | पलायेते | पलायन्ते\nमध्यमः पुरुषः: पलायसे | पलायेथे | पलायध्वे\nउत्तमः पुरुषः: पलाये | पलायावहे | पलायामहे",
+          "meaning": "Root पलाय् (To run away) Ātmanepada Present Tense:\n3rd Person: पलायते | पलायेते | पलायन्ते\n2nd Person: पलायसे | पलायेथे | पलायध्वे\n1st Person: पलाये | पलायावहे | पलायामहे",
+          "paragraphTranslation": "(ख) पलाय् धातु (भागना) लट् लकार:\nप्रथम पुरुष: पलायते | पलायेते | पलायन्ते\nमध्यम पुरुष: पलायसे | पलायेथे | पलायध्वे\nउत्तम पुरुष: पलाये | पलायावहे | पलायामहे",
           "words": [
             "(ख)",
             "पलाय्",
-            "धातु",
-            "(भागना",
-            "/",
-            "To",
-            "run",
-            "away",
-            ",",
-            "flee)"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "पलाय् धातु (भागना) लट्-लकार: प्रथम पुरुष: पलायते | पलायेते | पलायन्ते; मध्यम पुरुष: पलायसे | पलायेथे | पलायध्वे; उत्तम पुरुष: पलाये | पलायावहे | पलायामहे।",
-          "answer_sanskrit": "प्रथमः पुरुषः: पलायते | पलायेते | पलायन्ते ॥ मध्यमः पुरुषः: पलायसे | पलायेथे | पलायध्वे ॥ उत्तमः पुरुषः: पलाये | पलायावहे | पलायामहे"
+            "धातु:",
+            "पलायते",
+            "|",
+            "पलायेते",
+            "|",
+            "पलायन्ते",
+            "||",
+            "पलायसे",
+            "|",
+            "पलायेथे",
+            "|",
+            "पलायध्वे",
+            "||",
+            "पलाये",
+            "|",
+            "पलायावहे",
+            "|",
+            "पलायामहे"
+          ]
         },
         {
-          "sanskrit": "(ग) जाय् धातु (होना/उत्पन्न होना / To become, happen)",
-          "meaning": "Root जाय् (To arise/happen/be born) in Present Tense: 3rd Person: जायते | जायेते | जायन्ते; 2nd Person: जायसे | जायेथे | जायध्वे; 1st Person: जाये | जायावहे | जायामहे.",
+          "kind": "exercise-qa",
+          "sanskrit": "(ग) जाय् धातु:\nप्रथमः पुरुषः: जायते | जायेते | जायन्ते\nमध्यमः पुरुषः: जायसे | जायेथे | जायध्वे\nउत्तमः पुरुषः: जाये | जायावहे | जायामहे",
+          "meaning": "Root जाय् (To become, be born) Ātmanepada Present Tense:\n3rd Person: जायते | जायेते | जायन्ते\n2nd Person: जायसे | जायेथे | जायध्वे\n1st Person: जाये | जायावहे | जायामहे",
+          "paragraphTranslation": "(ग) जाय् धातु (होना/उत्पन्न होना) लट् लकार:\nप्रथम पुरुष: जायते | जायेते | जायन्ते\nमध्यम पुरुष: जायसे | जायेथे | जायध्वे\nउत्तम पुरुष: जाये | जायावहे | जायामहे",
           "words": [
             "(ग)",
             "जाय्",
-            "धातु",
-            "(होना/उत्पन्न",
-            "होना",
-            "/",
-            "To",
-            "become",
-            ",",
-            "happen)"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "जाय् (जन्) धातु (होना/उत्पन्न होना) लट्-लकार: प्रथम पुरुष: जायते | जायेते | जायन्ते; मध्यम पुरुष: जायसे | जायेथे | जायध्वे; उत्तम पुरुष: जाये | जायावहे | जायामहे।",
-          "answer_sanskrit": "प्रथमः पुरुषः: जायते | जायेते | जायन्ते ॥ मध्यमः पुरुषः: जायसे | जायेथे | जायध्वे ॥ उत्तमः पुरुषः: जाये | जायावहे | जायामहे"
+            "धातु:",
+            "जायते",
+            "|",
+            "जायेते",
+            "|",
+            "जायन्ते",
+            "||",
+            "जायसे",
+            "|",
+            "जायेथे",
+            "|",
+            "जायध्वे",
+            "||",
+            "जाये",
+            "|",
+            "जायावहे",
+            "|",
+            "जायामहे"
+          ]
         },
         {
-          "sanskrit": "५. उदाहरणानुसारम् एकवचनरूपं दृष्ट्वा द्विवचन बहुवचनरूपाणि लिखन्तु — (पुरुषानुसारं रूपपूर्तिः)",
+          "kind": "exercise-header",
+          "sanskrit": "५. एकवचनरूपं दृष्ट्वा द्विवचन बहुवचनरूपाणि लिखन्तु (Complete the Dual and Plural forms):",
           "meaning": "5. Look at the Singular form and write the Dual and Plural forms (Complete the verb tables):",
+          "paragraphTranslation": "५. एकवचन रूप देखकर द्विवचन और बहुवचन रूप लिखिए:",
           "words": [
             "५.",
-            "उदाहरणानुसारम्",
             "एकवचनरूपं",
             "दृष्ट्वा",
             "द्विवचन",
             "बहुवचनरूपाणि",
-            "लिखन्तु",
-            "—",
-            "(पुरुषानुसारं",
-            "रूपपूर्तिः)"
-          ],
-          "kind": "exercise-header",
-          "hindi_gloss": "५. उदाहरण के अनुसार एकवचन रूप देखकर द्विवचन और बहुवचन रूप लिखिए:"
+            "लिखन्तु"
+          ]
         },
         {
-          "sanskrit": "धातु-रूपाणि भाग १: कम्प्, वर्ध्, वृत्, प्र+काश्, वन्द् (एकवचनम् → द्विवचनम्, बहुवचनम्)",
-          "meaning": "Singular -> Dual -> Plural paradigms: 1. कम्प्: कम्पते | कम्पेते | कम्पन्ते (Shakes/trembles); 2. वर्ध्: वर्धते | वर्धेते | वर्धन्ते (Grows); 3. वृत्: वर्तसे | वर्तेथे | वर्तध्वे (You exist); 4. प्र+काश्: प्रकाशते | प्रकाशेते | प्रकाशन्ते (Shines); 5. वन्द्: वन्दे | वन्दावहे | वन्दामहे (I/we pray).",
+          "kind": "exercise-qa",
+          "sanskrit": "कम्प् — कम्पते | कम्पेते | कम्पन्ते (Shakes)\nवर्ध् — वर्धते | वर्धेते | वर्धन्ते (Grows)\nवृत् — वर्तसे | वर्तेथे | वर्तध्वे (Exists / You exist)\nप्र + काश् — प्रकाशते | प्रकाशेते | प्रकाशन्ते (Shines)\nवन्द् — वन्दे | वन्दावहे | वन्दामहे (Bows / Prays)\nयाच् — याचते | याचेते | याचन्ते (Requests)",
+          "meaning": "Singular -> Dual -> Plural verb conjugation (Part 1):\nकम्प्: कम्पते | कम्पेते | कम्पन्ते (Shakes)\nवर्ध्: वर्धते | वर्धेते | वर्धन्ते (Grows)\nवृत्: वर्तसे | वर्तेथे | वर्तध्वे (You exist)\nप्र+काश्: प्रकाशते | प्रकाशेते | प्रकाशन्ते (Shines)\nवन्द्: वन्दे | वन्दावहे | वन्दामहे (I/we pray)\nयाच्: याचते | याचेते | याचन्ते (Requests)",
+          "paragraphTranslation": "धातु-रूप पूर्ति (भाग १):\nकम्प्: कम्पते | कम्पेते | कम्पन्ते (कांपना)\nवर्ध्: वर्धते | वर्धेते | वर्धन्ते (बढ़ना)\nवृत्: वर्तसे | वर्तेथे | वर्तध्वे (होना/विद्यमान रहना)\nप्र+काश्: प्रकाशते | प्रकाशेते | प्रकाशन्ते (चमकना)\nवन्द्: वन्दे | वन्दावहे | वन्दामहे (प्रणाम करना)\nयाच्: याचते | याचेते | याचन्ते (मांगना/याचना करना)",
           "words": [
-            "धातु-रूपाणि",
-            "भाग",
-            "१:",
             "कम्प्",
-            ",",
+            "कम्पते",
+            "कम्पेते",
+            "कम्पन्ते",
             "वर्ध्",
-            ",",
+            "वर्धते",
+            "वर्धेते",
+            "वर्धन्ते",
             "वृत्",
-            ",",
-            "प्र+काश्",
-            ",",
-            "वन्द्",
-            "(एकवचनम्",
-            "→",
-            "द्विवचनम्",
-            ",",
-            "बहुवचनम्)"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "धातु-रूप (एकवचन -> द्विवचन -> बहुवचन): १. कम्प्: कम्पते | कम्पेते | कम्पन्ते (काँपता है); २. वर्ध्: वर्धते | वर्धेते | वर्धन्ते (बढ़ता है); ३. वृत्: वर्तसे | वर्तेथे | वर्तध्वे (तुम होते हो); ४. प्र+काश्: प्रकाशते | प्रकाशेते | प्रकाशन्ते (चमकता है); ५. वन्द्: वन्दे | वन्दावहे | वन्दामहे (मैं/हम वन्दना करते हैं)।",
-          "answer_sanskrit": "१. कम्प्: कम्पते | कम्पेते | कम्पन्ते ॥ २. वर्ध्: वर्धते | वर्धेते | वर्धन्ते ॥ ३. वृत्: वर्तसे | वर्तेथे | वर्तध्वे ॥ ४. प्र+काश्: प्रकाशते | प्रकाशेते | प्रकाशन्ते ॥ ५. वन्द्: वन्दे | वन्दावहे | वन्दामहे"
+            "वर्तसे",
+            "वर्तेथे",
+            "वर्तध्वे",
+            "प्रकाशते",
+            "प्रकाशेते",
+            "प्रकाशन्ते",
+            "वन्दे",
+            "वन्दावहे",
+            "वन्दामहे",
+            "याचते",
+            "याचेते",
+            "याचन्ते"
+          ]
         },
         {
-          "sanskrit": "धातु-रूपाणि भाग २: याच्, लज्ज्, वीक्ष्, सेव्, वन्द्, शुभ् (एकवचनम् → द्विवचनम्, बहुवचनम्)",
-          "meaning": "Singular -> Dual -> Plural paradigms: 6. याच्: याचते | याचेते | याचन्ते (Requests/begs); 7. लज्ज्: लज्जसे | लज्जेथे | लज्जध्वे (You feel shy); 8. वीक्ष्: वीक्षते | वीक्षेते | वीक्षन्ते (Observes/sees); 9. सेव्: सेवे | सेवावहे | सेवामहे (I/we serve); 10. वन्द्: वन्दसे | वन्देथे | वन्दध्वे (You pray); 11. शुभ्: शोभते | शोभेते | शोभन्ते (Looks beautiful).",
+          "kind": "exercise-qa",
+          "sanskrit": "लज्ज् — लज्जसे | लज्जेथे | लज्जध्वे (Feels shy)\nवीक्ष् — वीक्षते | वीक्षेते | वीक्षन्ते (Observes)\nसेव् — सेवे | सेवावहे | सेवामहे (Serves)\nवन्द् — वन्दसे | वन्देथे | वन्दध्वे (You pray)\nशुभ् — शोभते | शोभेते | शोभन्ते (Looks beautiful)",
+          "meaning": "Singular -> Dual -> Plural verb conjugation (Part 2):\nलज्ज्: लज्जसे | लज्जेथे | लज्जध्वे (You feel shy)\nवीक्ष्: वीक्षते | वीक्षेते | वीक्षन्ते (Observes)\nसेव्: सेवे | सेवावहे | सेवामहे (I/we serve)\nवन्द्: वन्दसे | वन्देथे | वन्दध्वे (You pray)\nशुभ्: शोभते | शोभेते | शोभन्ते (Looks beautiful)",
+          "paragraphTranslation": "धातु-रूप पूर्ति (भाग २):\nलज्ज्: लज्जसे | लज्जेथे | लज्जध्वे (शर्माना)\nवीक्ष्: वीक्षते | वीक्षेते | वीक्षन्ते (देखना)\nसेव्: सेवे | सेवावहे | सेवामहे (सेवा करना)\nवन्द्: वन्दसे | वन्देथे | वन्दध्वे (प्रणाम करना)\nशुभ्: शोभते | शोभेते | शोभन्ते (शोभा पाना)",
           "words": [
-            "धातु-रूपाणि",
-            "भाग",
-            "२:",
-            "याच्",
-            ",",
             "लज्ज्",
-            ",",
+            "लज्जसे",
+            "लज्जेथे",
+            "लज्जध्वे",
             "वीक्ष्",
-            ",",
+            "वीक्षते",
+            "वीक्षेते",
+            "वीक्षन्ते",
             "सेव्",
-            ",",
+            "सेवे",
+            "सेवावहे",
+            "सेवामहे",
             "वन्द्",
-            ",",
+            "वन्दसे",
+            "वन्देथे",
+            "वन्दध्वे",
             "शुभ्",
-            "(एकवचनम्",
-            "→",
-            "द्विवचनम्",
-            ",",
-            "बहुवचनम्)"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "धातु-रूप (एकवचन -> द्विवचन -> बहुवचन): ६. याच्: याचते | याचेते | याचन्ते (माँगता है); ७. लज्ज्: लज्जसे | लज्जेथे | लज्जध्वे (तुम लजाते/शर्माते हो); ८. वीक्ष्: वीक्षते | वीक्षेते | वीक्षन्ते (देखता है); ९. सेव्: सेवे | सेवावहे | सेवामहे (मैं/हम सेवा करते हैं); १०. वन्द्: वन्दसे | वन्देथे | वन्दध्वे (तुम वन्दना करते हो); ११. शुभ्: शोभते | शोभेते | शोभन्ते (सुशोभित होता है)।",
-          "answer_sanskrit": "६. याच्: याचते | याचेते | याचन्ते ॥ ७. लज्ज्: लज्जसे | लज्जेथे | लज्जध्वे ॥ ८. वीक्ष्: वीक्षते | वीक्षेते | वीक्षन्ते ॥ ९. सेव्: सेवे | सेवावहे | सेवामहे ॥ १०. वन्द्: वन्दसे | वन्देथे | वन्दध्वे ॥ ११. शुभ्: शोभते | शोभेते | शोभन्ते"
+            "शोभते",
+            "शोभेते",
+            "शोभन्ते"
+          ]
         },
         {
-          "sanskrit": "६. उदाहरणानुसारं वाक्यद्वयं लिखन्तु — (वचनानुसारं वाक्य-रचना)",
+          "kind": "exercise-header",
+          "sanskrit": "६. उदाहरणानुसारं वाक्यद्वयं लिखन्तु (Write pairs of sentences according to number):",
           "meaning": "6. Construct pairs of sentences applying singular and plural verb forms:",
+          "paragraphTranslation": "६. उदाहरण के अनुसार वचनानुसार दो-दो वाक्य बनाइए:",
           "words": [
             "६.",
             "उदाहरणानुसारं",
             "वाक्यद्वयं",
-            "लिखन्तु",
-            "—",
-            "(वचनानुसारं",
-            "वाक्य-रचना)"
-          ],
-          "kind": "exercise-header",
-          "hindi_gloss": "६. उदाहरण के अनुसार वचन के अनुसार वाक्य-युग्म बनाइए:"
+            "लिखन्तु"
+          ]
         },
         {
-          "sanskrit": "यथा - शत्रुः पलायते। / चोराः पलायन्ते।",
-          "meaning": "Example: Singular verb (शत्रुः पलायते - The enemy flees) vs Plural verb (चोराः पलायन्ते - Thieves flee).",
-          "words": [
-            "यथा",
-            "-",
-            "शत्रुः",
-            "पलायते",
-            "।",
-            "/",
-            "चोराः",
-            "पलायन्ते",
-            "।"
-          ],
           "kind": "exercise-qa",
-          "hindi_gloss": "उदाहरण: एकवचन: शत्रुः पलायते (शत्रु भागता है) / बहुवचन: चोराः पलायन्ते (चोर भागते हैं)।",
-          "answer_sanskrit": "एकवचनम्: शत्रुः पलायते। ॥ बहुवचनम्: चोराः पलायन्ते।"
-        },
-        {
-          "sanskrit": "(क) वृक्षः (वर्ध) →",
-          "meaning": "Singular: वृक्षः वर्धते। (The tree grows.) / Plural: बालाः वर्धन्ते। (The children grow.)",
+          "sanskrit": "(क) वृक्षः (वर्ध) → वृक्षः वर्धते। / बालाः वर्धन्ते।",
+          "meaning": "(क) Root वर्ध्: Singular: The tree grows (वृक्षः वर्धते।) | Plural: The children grow (बालाः वर्धन्ते।)",
+          "paragraphTranslation": "(क) वृक्षः (वर्ध) → एकवचन: वृक्षः वर्धते। (पेड़ बढ़ता है।) / बहुवचन: बालाः वर्धन्ते। (बच्चे बढ़ते हैं।)",
           "words": [
             "(क)",
             "वृक्षः",
             "(वर्ध)",
-            "→"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "एकवचन: वृक्षः वर्धते। (पेड़ बढ़ता है।) / बहुवचन: बालाः वर्धन्ते। (बच्चे बढ़ते हैं।)",
-          "answer_sanskrit": "वृक्षः वर्धते। / बालाः वर्धन्ते।"
+            "→",
+            "वृक्षः",
+            "वर्धते।",
+            "/",
+            "बालाः",
+            "वर्धन्ते।"
+          ]
         },
         {
-          "sanskrit": "(ख) छात्रः (वन्द्) →",
-          "meaning": "Singular: छात्रः वन्दते। (The student bows/prays.) / Plural: भक्ताः वन्दन्ते। (The devotees bow/pray.)",
+          "kind": "exercise-qa",
+          "sanskrit": "(ख) छात्रः (वन्द्) → छात्रः वन्दते। / भक्ताः वन्दन्ते।",
+          "meaning": "(ख) Root वन्द्: Singular: The student bows (छात्रः वन्दते।) | Plural: The devotees bow (भक्ताः वन्दन्ते।)",
+          "paragraphTranslation": "(ख) छात्रः (वन्द्) → एकवचन: छात्रः वन्दते। (छात्र प्रणाम करता है।) / बहुवचन: भक्ताः वन्दन्ते। (भक्त प्रणाम करते हैं।)",
           "words": [
             "(ख)",
             "छात्रः",
             "(वन्द्)",
-            "→"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "एकवचन: छात्रः वन्दते। (छात्र प्रणाम करता है।) / बहुवचन: भक्ताः वन्दन्ते। (भक्त प्रणाम करते हैं।)",
-          "answer_sanskrit": "छात्रः वन्दते। / भक्ताः वन्दन्ते।"
+            "→",
+            "छात्रः",
+            "वन्दते।",
+            "/",
+            "भक्ताः",
+            "वन्दन्ते।"
+          ]
         },
         {
-          "sanskrit": "(ग) वैद्यः (वीक्ष) →",
-          "meaning": "Singular: वैद्यः वीक्षते। (The doctor observes/examines.) / Plural: प्रेक्षकाः वीक्षन्ते। (The spectators watch.)",
+          "kind": "exercise-qa",
+          "sanskrit": "(ग) वैद्यः (वीक्ष) → वैद्यः वीक्षते। / प्रेक्षकाः वीक्षन्ते।",
+          "meaning": "(ग) Root वीक्ष्: Singular: The doctor examines (वैद्यः वीक्षते।) | Plural: The spectators watch (प्रेक्षकाः वीक्षन्ते।)",
+          "paragraphTranslation": "(ग) वैद्यः (वीक्ष) → एकवचन: वैद्यः वीक्षते। (वैद्य देखता/जांचता है।) / बहुवचन: प्रेक्षकाः वीक्षन्ते। (दर्शक देखते हैं।)",
           "words": [
             "(ग)",
             "वैद्यः",
             "(वीक्ष)",
-            "→"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "एकवचन: वैद्यः वीक्षते। (वैद्य देखता/जाँचता है।) / बहुवचन: प्रेक्षकाः वीक्षन्ते। (दर्शक देखते हैं।)",
-          "answer_sanskrit": "वैद्यः वीक्षते। / प्रेक्षकाः वीक्षन्ते।"
+            "→",
+            "वैद्यः",
+            "वीक्षते।",
+            "/",
+            "प्रेक्षकाः",
+            "वीक्षन्ते।"
+          ]
         },
         {
-          "sanskrit": "(घ) कर्मचारी (सेव्) →",
-          "meaning": "Singular: कर्मचारी सेवते। (The employee serves.) / Plural: महिलाः सेवन्ते। (The women serve.)",
+          "kind": "exercise-qa",
+          "sanskrit": "(घ) कर्मचारी (सेव्) → कर्मचारी सेवते। / महिलाः सेवन्ते।",
+          "meaning": "(घ) Root सेव्: Singular: The employee serves (कर्मचारी सेवते।) | Plural: The women serve (महिलाः सेवन्ते।)",
+          "paragraphTranslation": "(घ) कर्मचारी (सेव्) → एकवचन: कर्मचारी सेवते। (कर्मचारी सेवा करता है।) / बहुवचन: महिलाः सेवन्ते। (महिलाएँ सेवा करती हैं।)",
           "words": [
             "(घ)",
             "कर्मचारी",
             "(सेव्)",
-            "→"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "एकवचन: कर्मचारी सेवते। (कर्मचारी सेवा करता है।) / बहुवचन: महिलाः सेवन्ते। (महिलाएँ सेवा करती हैं।)",
-          "answer_sanskrit": "कर्मचारी सेवते। / महिलाः सेवन्ते।"
+            "→",
+            "कर्मचारी",
+            "सेवते।",
+            "/",
+            "महिलाः",
+            "सेवन्ते।"
+          ]
         },
         {
-          "sanskrit": "(ङ) वृक्षः (कम्प्) →",
-          "meaning": "Singular: वृक्षः कम्पते। (The tree shakes/trembles.) / Plural: रुग्णाः कम्पन्ते। (The patients shiver.)",
+          "kind": "exercise-qa",
+          "sanskrit": "(ङ) वृक्षः (कम्प्) → वृक्षः कम्पते। / रुग्णाः कम्पन्ते।",
+          "meaning": "(ङ) Root कम्प्: Singular: The tree shakes (वृक्षः कम्पते।) | Plural: The patients shiver (रुग्णाः कम्पन्ते।)",
+          "paragraphTranslation": "(ङ) वृक्षः (कम्प्) → एकवचन: वृक्षः कम्पते। (पेड़ हिलता है।) / बहुवचन: रुग्णाः कम्पन्ते। (रोगी कांपते हैं।)",
           "words": [
             "(ङ)",
             "वृक्षः",
             "(कम्प्)",
-            "→"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "एकवचन: वृक्षः कम्पते। (पेड़ हिलता/काँपता है।) / बहुवचन: रुग्णाः कम्पन्ते। (रोगी काँपते हैं।)",
-          "answer_sanskrit": "वृक्षः कम्पते। / रुग्णाः कम्पन्ते।"
+            "→",
+            "वृक्षः",
+            "कम्पते।",
+            "/",
+            "रुग्णाः",
+            "कम्पन्ते।"
+          ]
         },
         {
-          "sanskrit": "७. उदाहरणं दृष्ट्वा वाक्यानि उचितरूपैः पूरयन्तु — (क्रियापद-पूरणम्)",
+          "kind": "exercise-header",
+          "sanskrit": "७. उदाहरणं दृष्ट्वा वाक्यानि उचितरूपैः पूरयन्तु (Fill in the blanks with proper verb forms):",
           "meaning": "7. Fill in the blanks with proper verb forms (क्रियापद-पूरणम्):",
+          "paragraphTranslation": "७. उदाहरण देखकर वाक्यों में उचित क्रियापद भरिए:",
           "words": [
             "७.",
             "उदाहरणं",
             "दृष्ट्वा",
             "वाक्यानि",
             "उचितरूपैः",
-            "पूरयन्तु",
-            "—",
-            "(क्रियापद-पूरणम्)"
-          ],
-          "kind": "exercise-header",
-          "hindi_gloss": "७. उदाहरण देखकर रिक्त स्थानों की पूर्ति उचित क्रियापद रूप से कीजिए:"
+            "पूरयन्तु"
+          ]
         },
         {
-          "sanskrit": "(क) शुनकं दृष्ट्वा बालकस्य भयं (जाय्) →",
-          "meaning": "Question: शुनकं दृष्ट्वा बालकस्य भयं (जाय्) | Answer: शुनकं दृष्ट्वा बालकस्य भयं जायते। (English: On seeing the dog, the boy feels afraid.)",
+          "kind": "exercise-qa",
+          "sanskrit": "(क) शुनकं दृष्ट्वा बालकस्य भयं (जाय्) → शुनकं दृष्ट्वा बालकस्य भयं जायते।",
+          "meaning": "(क) On seeing the dog, the boy feels afraid. (शुनकं दृष्ट्वा बालकस्य भयं जायते।)",
+          "paragraphTranslation": "(क) कुत्ते को देखकर बालक को भय उत्पन्न होता है। → शुनकं दृष्ट्वा बालकस्य भयं जायते।",
           "words": [
             "(क)",
             "शुनकं",
@@ -7054,85 +7321,98 @@
             "बालकस्य",
             "भयं",
             "(जाय्)",
-            "→"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "कुत्ते को देखकर बालक को भय उत्पन्न होता है (भय लगता है)। उत्तर: जायते",
-          "answer_sanskrit": "शुनकं दृष्ट्वा बालकस्य भयं जायते।"
+            "→",
+            "शुनकं",
+            "दृष्ट्वा",
+            "बालकस्य",
+            "भयं",
+            "जायते।"
+          ]
         },
         {
-          "sanskrit": "(ख) मूषकः मार्जारं दृष्ट्वा (पलाय्) →",
-          "meaning": "Question: मूषकः मार्जारं दृष्ट्वा (पलाय्) | Answer: मूषकः मार्जारं दृष्ट्वा पलायते। (English: The mouse runs away on seeing the cat.)",
+          "kind": "exercise-qa",
+          "sanskrit": "(ख) मूषकः मार्जारं दृष्ट्वा (पलाय्) → मूषकः मार्जारं दृष्ट्वा पलायते।",
+          "meaning": "(ख) The mouse runs away on seeing the cat. (मूषकः मार्जारं दृष्ट्वा पलायते।)",
+          "paragraphTranslation": "(ख) चूहा बिल्ली को देखकर भाग जाता है। → मूषकः मार्जारं दृष्ट्वा पलायते।",
           "words": [
             "(ख)",
             "मूषकः",
             "मार्जारं",
             "दृष्ट्वा",
             "(पलाय्)",
-            "→"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "चूहा बिल्ली को देखकर भाग जाता है। उत्तर: पलायते",
-          "answer_sanskrit": "मूषकः मार्जारं दृष्ट्वा पलायते।"
+            "→",
+            "मूषकः",
+            "मार्जारं",
+            "दृष्ट्वा",
+            "पलायते।"
+          ]
         },
         {
-          "sanskrit": "(ग) रात्रिकाले मार्गदीपाः (प्रकाश) →",
-          "meaning": "Question: रात्रिकाले मार्गदीपाः (प्रकाश) | Answer: रात्रिकाले मार्गदीपाः प्रकाशन्ते। (English: Streetlights shine during the night.)",
+          "kind": "exercise-qa",
+          "sanskrit": "(ग) रात्रिकाले मार्गदीपाः (प्रकाश) → रात्रिकाले मार्गदीपाः प्रकाशन्ते।",
+          "meaning": "(ग) Streetlights shine during the night. (रात्रिकाले मार्गदीपाः प्रकाशन्ते।)",
+          "paragraphTranslation": "(ग) रात के समय स्ट्रीटलाइट्स चमकती हैं। → रात्रिकाले मार्गदीपाः प्रकाशन्ते।",
           "words": [
             "(ग)",
             "रात्रिकाले",
             "मार्गदीपाः",
             "(प्रकाश)",
-            "→"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "रात के समय मार्ग-दीप (स्ट्रीटलाइट्स) चमकते/जलते हैं। उत्तर: प्रकाशन्ते",
-          "answer_sanskrit": "रात्रिकाले मार्गदीपाः प्रकाशन्ते।"
+            "→",
+            "रात्रिकाले",
+            "मार्गदीपाः",
+            "प्रकाशन्ते।"
+          ]
         },
         {
-          "sanskrit": "(घ) अहं देवं (वन्द्) →",
-          "meaning": "Question: अहं देवं (वन्द्) | Answer: अहं देवं वन्दे। (English: I pray to God.)",
+          "kind": "exercise-qa",
+          "sanskrit": "(घ) अहं देवं (वन्द्) → अहं देवं वन्दे।",
+          "meaning": "(घ) I pray to God. (अहं देवं वन्दे।)",
+          "paragraphTranslation": "(घ) मैं भगवान को प्रणाम करता हूँ। → अहं देवं वन्दे।",
           "words": [
             "(घ)",
             "अहं",
             "देवं",
             "(वन्द्)",
-            "→"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "मैं भगवान को प्रणाम/वन्दना करता हूँ। उत्तर: वन्दे (उत्तम पुरुष एकवचन)",
-          "answer_sanskrit": "अहं देवं वन्दे।"
+            "→",
+            "अहं",
+            "देवं",
+            "वन्दे।"
+          ]
         },
         {
-          "sanskrit": "(ङ) त्वं किमर्थं (लज्ज्) →",
-          "meaning": "Question: त्वं किमर्थं (लज्ज्) | Answer: त्वं किमर्थं लज्जसे? (English: Why are you feeling shy?)",
+          "kind": "exercise-qa",
+          "sanskrit": "(ङ) त्वं किमर्थं (लज्ज्) → त्वं किमर्थं लज्जसे?",
+          "meaning": "(ङ) Why are you feeling shy? (त्वं किमर्थं लज्जसे?)",
+          "paragraphTranslation": "(ङ) तुम क्यों शर्मा रहे हो? → त्वं किमर्थं लज्जसे?",
           "words": [
             "(ङ)",
             "त्वं",
             "किमर्थं",
             "(लज्ज्)",
-            "→"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "तुम क्यों शरमा रहे हो? उत्तर: लज्जसे? (मध्यम पुरुष एकवचन)",
-          "answer_sanskrit": "त्वं किमर्थं लज्जसे?"
+            "→",
+            "त्वं",
+            "किमर्थं",
+            "लज्जसे?"
+          ]
         },
         {
-          "sanskrit": "(च) वयं देशं (सेव्) →",
-          "meaning": "Question: वयं देशं (सेव्) | Answer: वयं देशं सेवामहे। (English: We serve the nation.)",
+          "kind": "exercise-qa",
+          "sanskrit": "(च) वयं देशं (सेव्) → वयं देशं सेवामहे।",
+          "meaning": "(च) We serve the nation. (वयं देशं सेवामहे।)",
+          "paragraphTranslation": "(च) हम देश की सेवा करते हैं। → वयं देशं सेवामहे।",
           "words": [
             "(च)",
             "वयं",
             "देशं",
             "(सेव्)",
-            "→"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "हम सब देश की सेवा करते हैं। उत्तर: सेवामहे। (उत्तम पुरुष बहुवचन)",
-          "answer_sanskrit": "वयं देशं सेवामहे।"
+            "→",
+            "वयं",
+            "देशं",
+            "सेवामहे।"
+          ]
         }
       ],
-      "page_numbers": "39-46"
+      "page_numbers": "39-45"
     },
     {
       "id": "gsde105",
