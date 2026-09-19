@@ -3,7 +3,7 @@
 (पाठ ४ : न लभ्यते चेत् आम्लं द्राक्षाफलम् - न मिले तो अंगूर खट्टे / The Sour Grapes Fable)
 
 
-१. वर्गे संवादः (Classroom Introduction Dialogue - पृष्ठम् ३९)
+१. पाठः — वर्गे संवादः अभिनय-गीतं च (पृष्ठानि ३९-४१)
 
 [Page 39 - Opening Dialogue & Picture Discussion]
 
@@ -94,7 +94,7 @@ English: What does it do? What does it do? It jumps once, it jumps twice. It jum
 English: What does it say? What does it say? "The grapes are sour, the grapes are sour!" Saying this, it runs away.)
 
 
-३. वयं शब्दार्थान् जानीमः (पृष्ठम् ४१ / Vocabulary Glossary)
+२. वयं शब्दार्थान् जानीमः (पृष्ठम् ४१ / Vocabulary Glossary)
 
 शब्दः (Word) -> अर्थः (Sanskrit Meaning) | हिन्दी (Hindi) | English
 -------------------------------------------------------------------------------
@@ -117,7 +117,7 @@ English: What does it say? What does it say? "The grapes are sour, the grapes ar
 उत्पतति -> उड्डीयते / कूर्दनं करोति | कूदता है / छलांग लगाता है | Jumps up / Leaps
 
 
-४. वयम् अभ्यासं कुर्मः (पृष्ठानि ४२-४६ / Solved Exercises)
+३. वयम् अभ्यासं कुर्मः (पृष्ठानि ४२-४६ / Solved Exercises)
 
 १. गीतस्य साभिनयं कक्षायां गानं कुर्वन्तु।
 उत्तरम्: कक्षायां शिक्षकस्य निर्देशानुसारं अभिनयसहितं "एकः शृगालः वनं गच्छति..." इति गीतस्य सानन्दं गानं कुर्वन्तु।

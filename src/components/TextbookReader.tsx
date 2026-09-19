@@ -32,25 +32,33 @@ interface TextbookReaderProps {
 const cleanWord = (value: string): string =>
   value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९./\\=+#*~_`]+/g, '').trim();
 
-type SectionJump = { index: number; label: string };
+type SectionJump = { index: number; label: string; kind?: string };
 
 const buildSectionJumps = (lesson: Lesson | undefined): SectionJump[] => {
   if (!lesson?.sentences?.length) return [];
   const jumps: SectionJump[] = [];
+  const isPrayerAllowed = lesson.id === 'gsde101' || lesson.id === 'grade8_prarthana';
+
   lesson.sentences.forEach((item, index) => {
-    if (item.kind === 'section-header') {
-      jumps.push({ index, label: 'प्रार्थना · Prayer' });
-    } else if (item.kind === 'chapter-header') {
-      jumps.push({ index, label: 'पाठः · Lesson text' });
+    if (item.kind === 'section-header' || item.kind === 'chapter-header') {
+      let label = 'पाठः · Lesson text';
+      if (isPrayerAllowed && (item.sanskrit?.includes('प्रार्थना') || item.meaning?.toLowerCase().includes('prayer'))) {
+        label = 'प्रार्थना · Prayer';
+      } else if (item.sanskrit) {
+        const short = item.sanskrit.replace(/\s+/g, ' ').trim();
+        const sanitized = isPrayerAllowed ? short : short.replace(/प्रार्थना/g, 'पाठः').replace(/Prayer/gi, 'Lesson');
+        label = sanitized.length > 42 ? `${sanitized.slice(0, 40)}…` : sanitized;
+      }
+      jumps.push({ index, label, kind: item.kind });
     } else if (item.kind === 'glossary-header') {
-      jumps.push({ index, label: 'शब्दार्थ · Word meanings' });
+      jumps.push({ index, label: 'शब्दार्थ · Word meanings', kind: item.kind });
     } else if (item.kind === 'exercise-header') {
       const short = (item.sanskrit || 'Exercise').replace(/\s+/g, ' ').trim();
-      jumps.push({ index, label: short.length > 42 ? `${short.slice(0, 40)}…` : short });
+      jumps.push({ index, label: short.length > 42 ? `${short.slice(0, 40)}…` : short, kind: item.kind });
     }
   });
   if (!jumps.length || jumps[0].index !== 0) {
-    jumps.unshift({ index: 0, label: 'पाठः · Lesson text' });
+    jumps.unshift({ index: 0, label: isPrayerAllowed ? 'प्रार्थना · Prayer' : 'पाठः · Lesson text', kind: 'section-header' });
   }
   return jumps;
 };
@@ -719,19 +727,27 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 className={`textbook-jump-chip${currentJumpIndex === jump.index ? ' active' : ''}`}
                 onClick={() => onJumpToSentence(jump.index)}
               >
-                {jump.label.startsWith('१') || jump.label.startsWith('२') || jump.label.startsWith('३')
-                  || jump.label.startsWith('४') || jump.label.startsWith('५') || jump.label.startsWith('६')
-                  || jump.label.startsWith('७') || jump.label.startsWith('८')
-                  ? jump.label.split(' ')[0]
-                  : jump.label.startsWith('प्रार्थना')
-                    ? 'प्रार्थना'
-                    : jump.label.startsWith('शब्दार्थ')
-                      ? 'शब्दार्थ'
-                      : jump.label.startsWith('वयम् अभ्यास')
-                        ? 'अभ्यास'
-                        : jump.label.startsWith('पाठ')
-                          ? 'पाठः'
-                          : jump.label.split('·')[0].trim().slice(0, 10)}
+                {jump.index === 0
+                  ? ((activeLessonId === 'gsde101' || activeLessonId === 'grade8_prarthana') && (jump.label.includes('प्रार्थना') || jump.label.toLowerCase().includes('prayer')) ? 'प्रार्थना' : 'पाठः')
+                  : jump.label.includes('शब्दार्थ')
+                    ? 'शब्दार्थ'
+                    : jump.label.includes('अभ्यास')
+                      ? 'अभ्यास'
+                      : jump.kind === 'exercise-header' && (/^[०-९1-9१-९]/.test(jump.label))
+                        ? jump.label.split(' ')[0]
+                        : jump.label.includes('संवाद')
+                          ? 'संवादः'
+                          : jump.label.includes('गीत')
+                            ? 'गीतम्'
+                            : jump.label.includes('मन्त्र')
+                              ? 'मन्त्राः'
+                              : jump.label.includes('श्लोक')
+                                ? 'श्लोक'
+                                : jump.label.includes('कथा')
+                                  ? 'कथा'
+                                  : jump.label.includes('लाभ')
+                                    ? 'लाभाः'
+                                    : jump.label.split('·')[0].trim().slice(0, 10)}
               </button>
             ))}
           </div>

@@ -3015,15 +3015,31 @@
     {
       "id": "gsde102",
       "fileName": "gsde102.txt",
-      "title": "Chapter 2: नित्यं पिबामः सुभाषितरसम् (पाठः पृष्ठानि १५-२१)",
+      "title": "Chapter 2: नित्यं पिबामः सुभाषितरसम (पाठः पृष्ठानि १५-२१)",
       "sentences": [
         {
-          "sanskrit": "सुशीला: महोदय! अस्माकं विद्यालयस्य भित्तौ ‘अयोग्यः पुरुषो नास्ति योजकस्तत्र दुर्लभः’ इति लिखितम् अस्ति। अस्य कः भावः इति कृपया बोधयतु।",
-          "meaning": "Sushila: Sir! On our school wall, it is written: 'No man is completely useless; it is a coordinator/connector who is rare to find.' Please explain its meaning.",
-          "paragraphTranslation": "सुशीला: महोदय! हमारे विद्यालय की दीवार पर लिखा है— 'अयोग्यः पुरुषो नास्ति योजकस्तत्र दुर्लभः'। कृपया बताइए कि इसका क्या भाव है?",
+          "kind": "section-header",
+          "sanskrit": "१. पाठः — संवादः सुभाषितानि च (पृष्ठानि १५-२१)",
+          "meaning": "Lesson 2: Classroom Dialogue & Universal Subhashitas (Pages 15–21)",
+          "paragraphTranslation": "द्वितीयः पाठः : नित्यं पिबामः सुभाषितरसम — कक्षा-संवादः एवं जीवनोपयोगी सुभाषित-श्लोकाः (पृष्ठ १५ से २१)",
           "words": [
-            "सुशीला:",
-            "महोदय!",
+            "१.",
+            "पाठः",
+            "—",
+            "संवादः",
+            "सुभाषितानि",
+            "च",
+            "(पृष्ठानि",
+            "१५-२१)"
+          ]
+        },
+        {
+          "sanskrit": "महोदय ! अस्माकं विद्यालयस्य भित्तौ ‘अयोग्यः पुरुषो नास्ति योजकस्तत्र दुर्लभः’ इति लिखितम् अस्ति। अस्य कः भावः इति कृपया बोधयतु।",
+          "meaning": "Sir! On our school wall, it is written: 'No man is incompetent, but an organizer who can utilize him is rare.' Please explain its meaning. [Word-by-Word: महोदय = Sir | अस्माकम् = our | विद्यालयस्य = school's | भित्तौ = on the wall | अयोग्यः = incompetent | पुरुषः = man | न = not | अस्ति = is | योजकः = organizer/connector | तत्र = there | दुर्लभः = rare | इति = thus | लिखितम् = written | अस्ति = is | अस्य = its | कः = what | भावः = meaning | इति = thus | कृपया = please | बोधयतु = explain.]",
+          "paragraphTranslation": "महोदय! हमारे विद्यालय की दीवार पर ‘अयोग्यः पुरुषो नास्ति योजकस्तत्र दुर्लभः’ लिखा हुआ है। कृपया इसका क्या अर्थ है, हमें समझाइए।",
+          "words": [
+            "महोदय",
+            "!",
             "अस्माकं",
             "विद्यालयस्य",
             "भित्तौ",
@@ -3044,13 +3060,13 @@
           ]
         },
         {
-          "sanskrit": "शिक्षकः: भोः सुशीले! अस्य भावार्थः अस्ति यत् अस्मिन् जगति कोऽपि अयोग्यः नास्ति। सर्वे योग्याः सन्ति परन्तु प्रेरकस्य मार्गदर्शकस्य च अभावः अस्ति।",
-          "meaning": "Teacher: Oh Sushila! The meaning is that in this world, nobody is incompetent or useless. Everyone possesses capability, but there is a lack of someone who can inspire and guide them properly.",
-          "paragraphTranslation": "शिक्षक: अरे सुशीला! इसका भावार्थ है कि इस संसार में कोई भी मनुष्य सर्वथा अयोग्य नहीं है। सभी योग्य हैं, परन्तु उन्हें सही दिशा दिखाने वाले प्रेरक और मार्गदर्शक की कमी है।",
+          "sanskrit": "भोः सुशीले ! अस्य भावार्थः अस्ति यत् अस्मिन् जगति कोऽपि अयोग्यः नास्ति। सर्वे योग्याः सन्ति परन्तु प्रेरकस्य मार्गदर्शकस्य च अभावः अस्ति।",
+          "meaning": "O Sushila! Its meaning is that no one in this world is incapable. Everyone is capable, but there is a lack of an inspirer and a guide. [Word-by-Word: भोः = O | सुशीले = Sushila | अस्य = its | भावार्थः = core meaning | अस्ति = is | यत् = that | अस्मिन् = in this | जगति = world | कोऽपि (कः + अपि) = anyone | अयोग्यः = useless/incapable | न = not | अस्ति = is | सर्वे = all | योग्याः = capable | सन्ति = are | परन्तु = but | प्रेरकस्य = of an inspirer | मार्गदर्शकस्य = of a guide | च = and | अभावः = absence | अस्ति = is.]",
+          "paragraphTranslation": "हे सुशीला! इसका भावार्थ है कि इस संसार में कोई भी व्यक्ति अयोग्य नहीं है। सभी योग्य हैं, परन्तु प्रेरणा देने वाले और मार्ग दिखाने वाले का अभाव है।",
           "words": [
-            "शिक्षकः:",
             "भोः",
-            "सुशीले!",
+            "सुशीले",
+            "!",
             "अस्य",
             "भावार्थः",
             "अस्ति",
@@ -3072,20 +3088,28 @@
           ]
         },
         {
-          "sanskrit": "रमा: मान्यवर! अहम् अपि विद्यालयस्य परिसरे एतादृशं श्लोकं पठितवती। महोदय! सुभाषितानि इत्यनेन कः अभिप्रायः?",
-          "meaning": "Rama: Respected Sir! I also read a similar shloka on the school premises. Sir, what is meant by Subhashitani?",
-          "paragraphTranslation": "रमा: आदरणीय महोदय! मैंने भी विद्यालय परिसर में ऐसा ही श्लोक पढ़ा था। महोदय! \"सुभाषितानि\" से क्या अभिप्राय है?",
+          "sanskrit": "मान्यवर ! अहम् अपि विद्यालयस्य परिसरे एतादृशं श्लोकं पठितवती।",
+          "meaning": "Respected Sir! I have also read a similar verse on the school campus. [Word-by-Word: मान्यवर = Respected Sir | अहम् = I | अपि = also | विद्यालयस्य = school's | परिसरे = in the campus | एतादृशम् = such | श्लोकम् = shloka | पठितवती = read (feminine).]",
+          "paragraphTranslation": "मान्यवर! मैंने भी विद्यालय के परिसर में ऐसा ही श्लोक पढ़ा था।",
           "words": [
-            "रमा:",
-            "मान्यवर!",
+            "मान्यवर",
+            "!",
             "अहम्",
             "अपि",
             "विद्यालयस्य",
             "परिसरे",
             "एतादृशं",
             "श्लोकं",
-            "पठितवती।",
-            "महोदय!",
+            "पठितवती।"
+          ]
+        },
+        {
+          "sanskrit": "महोदय ! सुभाषितानि इत्यनेन कः अभिप्रायः?",
+          "meaning": "Sir! What is meant by the word 'Subhashitani'? [Word-by-Word: महोदय = Sir | सुभाषितानि = good sayings | इत्यनेन = by this | कः = what | अभिप्रायः = meaning/intent.]",
+          "paragraphTranslation": "महोदय! सुभाषित शब्द का क्या अभिप्राय (अर्थ) है?",
+          "words": [
+            "महोदय",
+            "!",
             "सुभाषितानि",
             "इत्यनेन",
             "कः",
@@ -3093,12 +3117,12 @@
           ]
         },
         {
-          "sanskrit": "शिक्षकः: रमे! एतानि सुभाषितानि सन्ति। अस्माकं चिन्तनविकासाय एव एतानि सुभाषितानि विद्यालयस्य परिसरे स्थापितानि। वत्स! मानवानां विविधमूल्यानां विकासाय श्रेष्ठजनैः उक्तानि सुवचनानि एव सुभाषितानि।",
-          "meaning": "Teacher: Rama! These are Subhashitas (wise sayings). These wise sayings are put up around the school premises to develop our thinking capacity. Child! The good and noble words spoken by great people for developing various human values are called Subhashitas.",
-          "paragraphTranslation": "शिक्षक: रमा! ये सुभाषित हैं। हमारे चिन्तन और विचारों के विकास के लिए ही ये सुभाषित विद्यालय परिसर में लगाए गए हैं। बेटी! मानवों के विविध जीवन-मूल्यों के विकास के लिए श्रेष्ठ और महापुरुषों द्वारा कहे गए सुंदर वचनों को ही 'सुभाषित' कहते हैं।",
+          "sanskrit": "रमे ! एतानि सुभाषितानि सन्ति। अस्माकं चिन्तनविकासाय एव एतानि सुभाषितानि विद्यालयस्य परिसरे स्थापितानि।",
+          "meaning": "O Rama! These are beautiful sayings. These verses are displayed across the school campus solely for the development of our thinking mind. [Word-by-Word: रमे = O Rama | एतानि = these | सुभाषितानि = good sayings | सन्ति = are | अस्माकम् = our | चिन्तन-विकासाय = for development of thinking | एव = only | एतानि = these | सुभाषितानि = good sayings | विद्यालयस्य = school's | परिसरे = in the campus | स्थापितानि = are placed/displayed.]",
+          "paragraphTranslation": "हे रमा! ये सुभाषित हैं। हमारे विचारों के विकास के लिए ही ये सुभाषित विद्यालय के परिसर में प्रदर्शित किए गए हैं।",
           "words": [
-            "शिक्षकः:",
-            "रमे!",
+            "रमे",
+            "!",
             "एतानि",
             "सुभाषितानि",
             "सन्ति।",
@@ -3109,8 +3133,16 @@
             "सुभाषितानि",
             "विद्यालयस्य",
             "परिसरे",
-            "स्थापितानि।",
-            "वत्स!",
+            "स्थापितानि।"
+          ]
+        },
+        {
+          "sanskrit": "वत्स ! मानवानां विविधमूल्यानां विकासाय श्रेष्ठजनैः उक्तानि सुवचनानि एव सुभाषितानि।",
+          "meaning": "Dear child! Beautiful words spoken by noble people for the development of human values are called Subhashitas. [Word-by-Word: वत्स = Dear child | मानवानाम् = of human beings | विविध-मूल्यानाम् = of various values | विकासाय = for the development | श्रेष्ठ-जनैः = by wise/noble people | उक्तानि = spoken | सुवचनानि = good words | एव = only | सुभाषितानि = subhashitas.]",
+          "paragraphTranslation": "हे बालक! मनुष्यों के विभिन्न जीवन-मूल्यों के विकास के लिए श्रेष्ठ और महान लोगों द्वारा कहे गए सुंदर वचनों को ही सुभाषित कहते हैं।",
+          "words": [
+            "वत्स",
+            "!",
             "मानवानां",
             "विविधमूल्यानां",
             "विकासाय",
@@ -3122,34 +3154,25 @@
           ]
         },
         {
-          "sanskrit": "सुरेशः: श्रीमन्! सुभाषितानां पठनेन कः लाभः? अहो, वयम् अपि सुभाषितानि पठितुम् इच्छामः। कृपया अस्मान् पाठयतु।",
-          "meaning": "Suresh: Respected Sir! What is the benefit of reading Subhashitas? Oh, we also wish to read Subhashitas. Please teach us.",
-          "paragraphTranslation": "सुरेश: श्रीमान्! सुभाषित पढ़ने से क्या लाभ होता है? अरे! हम भी सुभाषित पढ़ना चाहते हैं। कृपया हमें पढ़ाइए।",
+          "sanskrit": "श्रीमन् ! सुभाषितानां पठनेन कः लाभः?",
+          "meaning": "Sir! What is the benefit of reading Subhashitas? [Word-by-Word: श्रीमन् = Respected Sir | सुभाषितानाम् = of subhashitas | पठनेन = by reading | कः = what | लाभः = benefit.]",
+          "paragraphTranslation": "श्रीमान्! सुभाषितों को पढ़ने से क्या लाभ होता है?",
           "words": [
-            "सुरेशः:",
-            "श्रीमन्!",
+            "श्रीमन्",
+            "!",
             "सुभाषितानां",
             "पठनेन",
             "कः",
-            "लाभः?",
-            "अहो,",
-            "वयम्",
-            "अपि",
-            "सुभाषितानि",
-            "पठितुम्",
-            "इच्छामः।",
-            "कृपया",
-            "अस्मान्",
-            "पाठयतु।"
+            "लाभः?"
           ]
         },
         {
-          "sanskrit": "शिक्षकः: प्रियसुरेश! सुभाषितानां पठनेन अस्माकं नैतिकः सामाजिकः च विकासः भवति। अस्माभिः किं कर्तव्यं किञ्च न कर्तव्यम् इति सुभाषितानि बोधयन्ति। समीचीनम्, तर्हि वयं सुभाषितानां रसं पिबामः।",
-          "meaning": "Teacher: Dear Suresh! Reading Subhashitas fosters our moral and social development. Subhashitas guide us on what should be done and what should not be done. Splendid, then let us drink the nectar of Subhashitas.",
-          "paragraphTranslation": "शिक्षक: प्रिय सुरेश! सुभाषितों के अध्ययन से हमारा नैतिक और सामाजिक विकास होता है। हमें क्या करना चाहिए और क्या नहीं करना चाहिए, यह सुभाषित हमें सिखाते हैं। बहुत अच्छा, तो आइए हम सब सुभाषितों का रस पीते हैं।",
+          "sanskrit": "प्रियसुरेश ! सुभाषितानां पठनेन अस्माकं नैतिकः सामाजिकः च विकासः भवति। अस्माभिः किं कर्तव्यं किञ्च न कर्तव्यम् इति सुभाषितानि बोधयन्ति।",
+          "meaning": "Dear Suresh! Reading Subhashitas facilitates our moral and social development. They guide us on what we ought to do and what we must avoid. [Word-by-Word: प्रिय-सुरेश = Dear Suresh | सुभाषितानाम् = of subhashitas | पठनेन = by reading | अस्माकम् = our | नैतिकः = moral | सामाजिकः = social | च = and | विकासः = development | भवति = happens | अस्माभिः = by us | किम् = what | कर्तव्यम् = should be done | किम् = what | च = and | न = not | कर्तव्यम् = should be done | इति = thus | सुभाषितानि = subhashitas | बोधयन्ति = teach/make understand.]",
+          "paragraphTranslation": "प्रिय सुरेश! सुभाषितों के पढ़ने से हमारा नैतिक और सामाजिक विकास होता है। हमें क्या करना चाहिए और क्या नहीं करना चाहिए, यह हमें सुभाषित सिखाते हैं।",
           "words": [
-            "शिक्षकः:",
-            "प्रियसुरेश!",
+            "प्रियसुरेश",
+            "!",
             "सुभाषितानां",
             "पठनेन",
             "अस्माकं",
@@ -3166,7 +3189,30 @@
             "कर्तव्यम्",
             "इति",
             "सुभाषितानि",
-            "बोधयन्ति।",
+            "बोधयन्ति।"
+          ]
+        },
+        {
+          "sanskrit": "अहो, वयम् अपि सुभाषितानि पठितुम् इच्छामः। कृपया अस्मान् पाठयतु।",
+          "meaning": "Oh, we also want to read Subhashitas. Please teach us. [Word-by-Word: अहो = Oh | वयम् = we | अपि = also | सुभाषितानि = subhashitas | पठितुम् = to read | इच्छामः = want | कृपया = please | अस्मान् = us | पाठयतु = teach.]",
+          "paragraphTranslation": "अरे वाह, हम सब भी सुभाषितों को पढ़ना चाहते हैं। कृपया हमें पढ़ाइए।",
+          "words": [
+            "अहो,",
+            "वयम्",
+            "अपि",
+            "सुभाषितानि",
+            "पठितुम्",
+            "इच्छामः।",
+            "कृपया",
+            "अस्मान्",
+            "पाठयतु।"
+          ]
+        },
+        {
+          "sanskrit": "समीचीनम्, तर्हि वयं सुभाषितानां रसं पिबामः।",
+          "meaning": "Very well, then let us drink the sweet essence of Subhashitas. [Word-by-Word: समीचीनम् = Very well/good | तर्हि = then | वयम् = we | सुभाषितानाम् = of subhashitas | रसम् = essence/nectar | पिबामः = let us drink.]",
+          "paragraphTranslation": "बहुत अच्छा, तो फिर आइए हम सब मिलकर सुभाषितों के रस का पान करते हैं।",
+          "words": [
             "समीचीनम्,",
             "तर्हि",
             "वयं",
@@ -3176,76 +3222,70 @@
           ]
         },
         {
-          "sanskrit": "वस्त्रेण वपुषा वाचा विद्यया विनयेन च । वकारैः पञ्चभिर्युक्तो नरो भवति पूजितः ॥ १ ॥",
-          "meaning": "Shloka 1 · The Five V-Attributes (पञ्च वकाराः): A person who is endowed with these five attributes starting with the letter 'V'—Vastra (appropriate clothing), Vapu (a healthy physique), Vaak (polite and beneficial speech), Vidya (education/knowledge), and Vinaya (humility)—is respected and worshipped everywhere in the world.",
+          "sanskrit": "वस्त्रेण वपुषा वाचा विद्यया विनयेन च।\nवकारैः पञ्चभिर्युक्तो नरो भवति पूजितः ॥१॥",
+          "meaning": "Endowed with clean attire, a healthy physique, sweet speech, knowledge, and humility—a man possessing these five qualities starting with the letter 'V' is respected everywhere. [Word-by-Word: वस्त्रेण (Vastreṇa) = by clothes/attire | वपुषा (Vapuṣā) = by body/physique | वाचा (Vācā) = by speech/words | विद्यया (Vidyayā) = by education/knowledge | विनयेन (Vinayena) = by humility/discipline | च (Ca) = and | वकारैः (Vakāraiḥ) = by the letter 'Va' | पञ्चभिः (Pañcabhiḥ) = by five | युक्तः (Yuktaḥ) = endowed with | नरः (Naraḥ) = a man | भवति (Bhavati) = becomes | पूजितः (Pūjitaḥ) = respected/worshipped]",
+          "paragraphTranslation": "उचित वस्त्र, स्वस्थ शरीर, मधुर वाणी, उत्तम विद्या और विनम्रता—इन 'व' अक्षर से शुरू होने वाले पाँच गुणों से युक्त मनुष्य ही संसार में सम्मान (पूजा) पाता है।",
           "words": [
             "वस्त्रेण",
             "वपुषा",
             "वाचा",
             "विद्यया",
             "विनयेन",
-            "च",
-            "।",
+            "च।",
             "वकारैः",
             "पञ्चभिर्युक्तो",
             "नरो",
             "भवति",
             "पूजितः",
-            "॥",
-            "१",
-            "॥"
+            "॥१॥"
           ]
         },
         {
-          "sanskrit": "षड् दोषाः पुरुषेणेह हातव्या भूतिमिच्छता । निद्रा तन्द्रा भयं क्रोध आलस्यं दीर्घसूत्रता ॥ २ ॥",
-          "meaning": "Shloka 2 · The Six Flaws to Avoid (षड् दोषाः): A person who desires prosperity, wealth, and success in life must abandon six flaws: Nidra (excessive sleep), Tandra (drowsiness/lethargy), Bhayam (fear), Krodha (anger), Aalasya (laziness), and Dirghasutrata (procrastination / delaying tasks).",
+          "sanskrit": "षड् दोषाः पुरुषेणेह हातव्या भूतिमिच्छता।\nनिद्रा तन्द्रा भयं क्रोध आलस्यं दीर्घसूत्रता ॥२॥",
+          "meaning": "A person who desires prosperity and success in this world must abandon six flaws: excessive sleep, lethargy, fear, anger, laziness, and procrastination. [Word-by-Word: षड् (Ṣaḍ) = six | दोषाः (Doṣāḥ) = flaws/faults | पुरुषेण (Puruṣeṇa) = by a person | इह (Iha) = in this world | हातव्याः (Hātavyāḥ) = should be abandoned | भूतिम् (Bhūtim) = prosperity/wealth | इच्छता (Icchatā) = by one who desires | निद्रा (Nidrā) = excessive sleep | तन्द्रा (Tandrā) = drowsiness/lethargy | भयम् (Bhayam) = fear | क्रोधः (Krodhaḥ) = anger | आलस्यम् (Ālasyam) = laziness | दीर्घसूत्रता (Dīrghasūtratā) = procrastination]",
+          "paragraphTranslation": "जीवन में उन्नति और ऐश्वर्य चाहने वाले मनुष्य को नींद, सुस्ती, डर, गुस्सा, आलस्य और काम को टालने की आदत—इन छह दोषों को छोड़ देना चाहिए।",
           "words": [
             "षड्",
             "दोषाः",
             "पुरुषेणेह",
             "हातव्या",
-            "भूतिमिच्छता",
-            "।",
+            "भूतिमिच्छता।",
             "निद्रा",
             "तन्द्रा",
             "भयं",
             "क्रोध",
             "आलस्यं",
             "दीर्घसूत्रता",
-            "॥",
-            "२",
-            "॥"
+            "॥२॥"
           ]
         },
         {
-          "sanskrit": "अद्भिर्गात्राणि शुध्यन्ति मनः सत्येन शुध्यति । विद्यातपोभ्यां भूतात्मा बुद्धिर्ज्ञानेन शुध्यति ॥ ३ ॥",
-          "meaning": "Shloka 3 · Purification (शुद्धिकरणम्): The limbs of the body are cleansed by Ap (water); the mind is purified by Satya (truthfulness); the individual soul (Bhutatma) is purified through Vidya (knowledge) and Tapas (penance/hard work); and the intellect (Buddhi) is purified by Jnana (true wisdom).",
+          "sanskrit": "अद्भिर्गात्राणि शुध्यन्ति मनः सत्येन शुध्यति।\nविद्यातपोभ्यां भूतात्मा बुद्धिर्ज्ञानेन शुध्यति ॥३॥",
+          "meaning": "The physical limbs are cleansed by water, the mind is purified by speaking the truth, the inner soul is purified through knowledge and penance, and the intellect is purified by true wisdom. [Word-by-Word: अद्भिः (Adbhiḥ) = by water | गात्राणि (Gātrāṇi) = limbs/body parts | शुध्यन्ति (Śudhyanti) = are cleansed/purified | मनः (Manaḥ) = the mind | सत्येन (Satyena) = by truth | शुध्यति (Śudhyati) = is purified | विद्या-तपोभ्याम् (Vidyā-tapobhyām) = through knowledge and penance | भूतात्मा (Bhūtātmā) = individual soul | बुद्धिः (Buddhiḥ) = the intellect | ज्ञानेन (Jñānena) = by wisdom | शुध्यति (Śudhyati) = is purified]",
+          "paragraphTranslation": "जल से शरीर के अंग स्वच्छ होते हैं, सत्य से मन पवित्र होता है, विद्या और तपस्या से जीवात्मा शुद्ध होती है, और ज्ञान से बुद्धि निर्मल होती है।",
           "words": [
             "अद्भिर्गात्राणि",
             "शुध्यन्ति",
             "मनः",
             "सत्येन",
-            "शुध्यति",
-            "।",
+            "शुध्यति।",
             "विद्यातपोभ्यां",
             "भूतात्मा",
             "बुद्धिर्ज्ञानेन",
             "शुध्यति",
-            "॥",
-            "३",
-            "॥"
+            "॥३॥"
           ]
         },
         {
-          "sanskrit": "उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम् । वर्षं तद् भारतं नाम भारती यत्र सन्ततिः ॥ ४ ॥",
-          "meaning": "Shloka 4 · Geography of India (भारतस्य भौगोलिकं स्वरूपम्): The land mass situated to the north of the (Indian) ocean and to the south of the snowy mountains (the Himalayas) is called Bharatavarsham. The citizens residing here are famously known as Bharatiya.",
+          "sanskrit": "उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्।\nवर्षं तद् भारतं नाम भारती यत्र सन्ततिः ॥४॥",
+          "meaning": "The geographic land that lies north of the ocean and south of the snowy Himalayan mountains is named Bharata, and its citizens are its offspring. [Word-by-Word: उत्तरम् (Uttaram) = north | यत् (Yat) = which | समुद्रस्य (Samudrasya) = of the ocean | हिमाद्रेः (Himādreḥ) = of Himalayas | च (Ca) = and | एव (Eva) = indeed | दक्षिणम् (Dakṣiṇam) = south | वर्षम् (Varṣam) = land/country | तद् (Tad) = that | भारतं नाम (Bhārataṁ nāma) = named Bharata | भारती (Bhāratī) = Indians | यत्र (Yatra) = where | सन्ततिः (Santatiḥ) = offspring/citizens]",
+          "paragraphTranslation": "जो भूभाग हिंद महासागर के उत्तर में और हिमालय पर्वत के दक्षिण में स्थित है, उस देश का नाम भारतवर्ष है और हम सब उसकी संतानें (भारतीय) हैं।",
           "words": [
             "उत्तरं",
             "यत्",
             "समुद्रस्य",
             "हिमाद्रेश्चैव",
-            "दक्षिणम्",
-            "।",
+            "दक्षिणम्।",
             "वर्षं",
             "तद्",
             "भारतं",
@@ -3253,20 +3293,18 @@
             "भारती",
             "यत्र",
             "सन्ततिः",
-            "॥",
-            "४",
-            "॥"
+            "॥४॥"
           ]
         },
         {
-          "sanskrit": "जलबिन्दुनिपातेन क्रमशः पूर्यते घटः । स हेतुः सर्वविद्यानां धर्मस्य च धनस्य च ॥ ५ ॥",
-          "meaning": "Shloka 5 · The Power of Continuity (निरन्तरप्रयासः): Just as a pot gets completely filled drop by drop by the constant falling of water, similarly, through continuous practice and patience over time, a person acquires all types of Vidya (knowledge), Dharma (righteousness), and Dhana (wealth).",
+          "sanskrit": "जलबिन्दुनिपातेन क्रमशः पूर्यते घटः।\nस हेतुः सर्वविद्यानां धर्मस्य च धनस्य च ॥५॥",
+          "meaning": "Just as a pot is gradually filled by the continuous falling of single water drops, the same principle applies to the constant accumulation of knowledge, virtue, and wealth. [Word-by-Word: जलबिन्दु (Jalabindu) = water drops | निपातेन (Nipātena) = by falling | क्रमशः (Kramaśaḥ) = gradually | पूर्यते (Pūryate) = gets filled | घटः (Ghaṭaḥ) = the pot | सः (Saḥ) = that principle | हेतुः (Hetuḥ) = cause/secret source | सर्व-विद्यानाम् (Sarva-vidyānām) = of all knowledge | धर्मस्य (Dharmasya) = of virtue | च (Ca) = and | धनस्य (Dhanasya) = of wealth | च (Ca) = and]",
+          "paragraphTranslation": "जैसे पानी की एक-एक बूँद लगातार गिरने से घड़ा धीरे-धीरे भर जाता है, ठीक यही नियम सभी विद्याओं को सीखने, धर्म का संचय करने और धन कमाने पर लागू होता है।",
           "words": [
             "जलबिन्दुनिपातेन",
             "क्रमशः",
             "पूर्यते",
-            "घटः",
-            "।",
+            "घटः।",
             "स",
             "हेतुः",
             "सर्वविद्यानां",
@@ -3274,92 +3312,82 @@
             "च",
             "धनस्य",
             "च",
-            "॥",
-            "५",
-            "॥"
+            "॥५॥"
           ]
         },
         {
-          "sanskrit": "यः पठति लिखति पश्यति परिपृच्छति पण्डितानुपाश्रयति । तस्य दिवाकरकिरणैः नलिनीदलमिव विस्तारिता बुद्धिः ॥ ६ ॥",
-          "meaning": "Shloka 6 · Expansion of Intellect (बुद्धेः विकासः): One who constantly reads, writes, observes, asks clarifying questions, and seeks the shelter/company of wise people expands their intellect in the same manner as a lotus petal fully blooms when touched by the rays of Divakara (the sun).",
+          "sanskrit": "यः पठति लिखति पश्यति परिपृच्छति पण्डितानुपाश्रयति।\nतस्य दिवाकरकिरणैः नलिनीदलमिव विस्तारिता बुद्धिः ॥६॥",
+          "meaning": "The intellect of a person who reads, writes, observes carefully, asks questions, and seeks the company of wise scholars expands and blossoms just like a lotus petal opens up with the rays of the sun. [Word-by-Word: यः (Yaḥ) = he who | पठति (Paṭhati) = reads | लिखति (Likhati) = writes | पश्यति (Paśyati) = observes | परिपृच्छति (Paripṛcchati) = questions | पण्डितान् (Paṇḍitān) = scholars | उपाश्रयति (Upāśrayati) = approaches | तस्य (Tasya) = his | दिवाकर (Divākara) = sun | किरणैः (Kiraṇaiḥ) = by rays | नलिनीदलम् (Nalinīdalam) = lotus petal | इव (Iva) = like | विस्तारिता (Vistāritā) = expanded/bloomed | बुद्धिः (Buddhiḥ) = intellect]",
+          "paragraphTranslation": "जो व्यक्ति निरंतर पढ़ता है, लिखता है, ध्यान से देखता है, प्रश्न पूछता है और विद्वानों की संगति में बैठता है, उसकी बुद्धि सूर्य की किरणों से कमल के खिलने की भाँति विकसित हो जाती है।",
           "words": [
             "यः",
             "पठति",
             "लिखति",
             "पश्यति",
             "परिपृच्छति",
-            "पण्डितानुपाश्रयति",
-            "।",
+            "पण्डितानुपाश्रयति।",
             "तस्य",
             "दिवाकरकिरणैः",
             "नलिनीदलमिव",
             "विस्तारिता",
             "बुद्धिः",
-            "॥",
-            "६",
-            "॥"
+            "॥६॥"
           ]
         },
         {
-          "sanskrit": "प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः । तस्मात्तदेव वक्तव्यं वचने का दरिद्रता ॥ ७ ॥",
-          "meaning": "Shloka 7 · Sweet Speech (प्रियवाक्यम्): All living beings feel content and happy when sweet and pleasant words are spoken to them. Therefore, one should always speak sweetly; what is the point of being miserable or poor in using pleasant words?",
+          "sanskrit": "प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः।\nतस्मात्तदेव वक्तव्यं वचने का दरिद्रता ॥७॥",
+          "meaning": "Since all living creatures feel satisfied and happy by hearing sweet words, one should always speak pleasantly; why practice poverty when it comes to sweet words? [Word-by-Word: प्रियवाक्य (Priyavākya) = sweet words | प्रदानेन (Pradāneṇa) = by speaking | सर्वे (Sarve) = all | तुष्यन्ति (Tuṣyanti) = become happy | जन्तवः (Jantavaḥ) = creatures | तस्मात् (Tasmāt) = therefore | तद् (Tad) = that | एव (Eva) = only | वक्तव्यम् (Vaktavyam) = should be spoken | वचने (Vacane) = in speech | का (Kā) = what/why | दरिद्रता (Daridratā) = poverty]",
+          "paragraphTranslation": "मीठे वचन बोलने से संसार के सभी जीव संतुष्ट और सुखी होते हैं, इसलिए हमेशा मीठा ही बोलना चाहिए; मधुर बोलने में कंजूसी या गरीबी कैसी?",
           "words": [
             "प्रियवाक्यप्रदानेन",
             "सर्वे",
             "तुष्यन्ति",
-            "जन्तवः",
-            "।",
+            "जन्तवः।",
             "तस्मात्तदेव",
             "वक्तव्यं",
             "वचने",
             "का",
             "दरिद्रता",
-            "॥",
-            "७",
-            "॥"
+            "॥७॥"
           ]
         },
         {
-          "sanskrit": "आलस्यं हि मनुष्याणां शरीरस्थो महान् रिपुः । नास्त्युद्यमसमो बन्धुः कृत्वा यं नावसीदति ॥ ८ ॥",
-          "meaning": "Shloka 8 · Hard Work vs. Laziness (उद्यमः): Laziness is indeed the greatest enemy residing inside the human body. There is no true companion or friend equal to Udyama (hard work/effort), because a person who works hard never faces sorrow or grief.",
+          "sanskrit": "आलस्यं हि मनुष्याणां शरीरस्थो महान् रिपुः।\nनास्त्युद्यमसमो बन्धुः कृत्वा यं नावसीदति ॥८॥",
+          "meaning": "Laziness is indeed the greatest enemy residing right inside the human body. There is no true friend or relative equal to hard work, because a person who works hard never grieves or suffers. [Word-by-Word: आलस्यम् (Ālasyam) = laziness | हि (Hi) = indeed | मनुष्याणाम् (Manuṣyāṇām) = of human beings | शरीरस्थः (Śarīrasthaḥ) = residing within body | महान् (Mahān) = greatest | रिपुः (Ripuḥ) = enemy | न (Na) = not | अस्ति (Asti) = is | उद्यम-समः (Udyama-samaḥ) = equal to hard work | बन्धुः (Bandhuḥ) = friend | कृत्वा (Kṛtvā) = having done | यम् (Yam) = which | न (Na) = not | अवसीदति (Avasīdati) = suffers/grieves]",
+          "paragraphTranslation": "मनुष्यों के शरीर के भीतर रहने वाला आलस्य ही उसका सबसे बड़ा शत्रु है, और परिश्रम के समान उसका कोई दूसरा सच्चा मित्र नहीं है, क्योंकि मेहनत करने वाला व्यक्ति कभी दुखी नहीं होता।",
           "words": [
             "आलस्यं",
             "हि",
             "मनुष्याणां",
             "शरीरस्थो",
             "महान्",
-            "रिपुः",
-            "।",
+            "रिपुः।",
             "नास्त्युद्यमसमो",
             "बन्धुः",
             "कृत्वा",
             "यं",
             "नावसीदति",
-            "॥",
-            "८",
-            "॥"
+            "॥८॥"
           ]
         },
         {
-          "sanskrit": "अष्टादशपुराणेषु व्यासस्य वचनद्वयम् । परोपकारः पुण्याय पापाय परपीडनम् ॥ ९ ॥",
-          "meaning": "Shloka 9 · Helping Others (परोपकारः): Out of all the eighteen Puranas composed by Sage Vyasa, his entire message can be summed up in just two sentences: Paropakara (helping others) generates merit (Punya), while Parapeedanam (harming/hurting others) results in sin (Paapa).",
+          "sanskrit": "अष्टादशपुराणेषु व्यासस्य वचनद्वयम्।\nपरोपकारः पुण्याय पापाय परपीडनम् ॥९॥",
+          "meaning": "Across all the eighteen Puranas composed by Sage Vyasa, there are only two essential maxims: doing good to others brings spiritual merit, and causing pain to others leads to sin. [Word-by-Word: अष्टादश (Aṣṭādaśa) = eighteen | पुराणेषु (Purāṇeṣu) = in Puranas | व्यासस्य (Vyāsasya) = of Sage Vyasa | वचन-द्वयम् (Vacana-dvayam) = two maxims | परोपकारः (Paropakāraḥ) = benevolence | पुण्याय (Puṇyāya) = for spiritual merit | पापाय (Pāpāya) = for sin | परपीडनम् (Parapīḍanam) = causing pain to others]",
+          "paragraphTranslation": "महर्षि वेदव्यास द्वारा रचित अठारह पुराणों का मुख्य सार केवल दो बातों में सिमटा है— दूसरों की भलाई करने से पुण्य मिलता है और दूसरों को दुख पहुँचाने से पाप लगता है।",
           "words": [
             "अष्टादशपुराणेषु",
             "व्यासस्य",
-            "वचनद्वयम्",
-            "।",
+            "वचनद्वयम्।",
             "परोपकारः",
             "पुण्याय",
             "पापाय",
             "परपीडनम्",
-            "॥",
-            "९",
-            "॥"
+            "॥९॥"
           ]
         },
         {
-          "sanskrit": "वयं शब्दार्थान् जानीमः",
-          "meaning": "Exercise · Let us learn the word meanings (पृष्ठम् २२-२३)",
+          "sanskrit": "२. वयं शब्दार्थान् जानीमः (पृष्ठानि २२-२३)",
+          "meaning": "Vocabulary Glossary (Pages 22–23)",
           "words": [
             "वयम्",
             "शब्दार्थान्",
@@ -3669,8 +3697,8 @@
           "paragraphTranslation": "अन्येभ्यः कष्टप्रदानम् · Bothering others / causing pain to others · दूसरों को सताना"
         },
         {
-          "sanskrit": "वयम् अभ्यासम् कुर्मः (पृष्ठम् २३-२६ / Solved Exercises)",
-          "meaning": "Chapter 2 Exercises and Solutions (पृष्ठम् २३–२६)",
+          "sanskrit": "३. वयम् अभ्यासं कुर्मः (पृष्ठानि २३-२७ / Solved Exercises)",
+          "meaning": "Comprehensive Solved Exercises & Grammar Application (Pages 23–27)",
           "hindi_gloss": "अध्याय २: हल किए गए अभ्यास प्रश्न (पृष्ठ २३-२६)",
           "paragraphTranslation": "आओ हम सब अभ्यास करें",
           "words": [
@@ -4435,7 +4463,7 @@
           "kind": "exercise-qa"
         }
       ],
-      "page_numbers": "15-21"
+      "page_numbers": "15-27"
     },
     {
       "id": "gsde103",
@@ -4443,15 +4471,18 @@
       "title": "Chapter 3: मित्राय नमः (पाठः पृष्ठानि २९-३१)",
       "sentences": [
         {
-          "sanskrit": "संवादः — भाग १ (उद्यानम्)",
-          "meaning": "Dialogue — Part 1 (In the Park)",
-          "paragraphTranslation": "संवाद — भाग १ (उद्यान / बगीचा)",
+          "sanskrit": "१. पाठः — सूर्यनमस्कारः संवादः च (पृष्ठानि २९-३१)",
+          "meaning": "Lesson 3: Surya Namaskar Dialogue & Practice (Pages 29–31)",
+          "paragraphTranslation": "तृतीयः पाठः — मित्राय नमः : सूर्यनमस्कार-विधिः, कक्षा-संवादः तथा च द्वादश मन्त्राः (पृष्ठ २९ से ३१)",
           "words": [
-            "संवादः",
+            "१.",
+            "पाठः",
             "—",
-            "भाग",
-            "१",
-            "(उद्यानम्)"
+            "सूर्यनमस्कारः",
+            "संवादः",
+            "च",
+            "(पृष्ठानि",
+            "२९-३१)"
           ],
           "kind": "section-header"
         },
@@ -4954,8 +4985,8 @@
           ]
         },
         {
-          "sanskrit": "वयं शब्दार्थान् जानीमः",
-          "meaning": "Vocabulary Glossary · Key Words & Meanings",
+          "sanskrit": "२. वयं शब्दार्थान् जानीमः (पृष्ठम् ३२ / Vocabulary Glossary)",
+          "meaning": "Vocabulary Glossary · Key Words & Meanings (Page 32)",
           "paragraphTranslation": "हम शब्दार्थ जानते हैं",
           "words": [
             "वयं",
@@ -5063,8 +5094,8 @@
           "kind": "glossary"
         },
         {
-          "sanskrit": "वयं अभ्यासं कुर्मः (तृतीयः पाठः - मित्राय नमः / Solved Exercises)",
-          "meaning": "Exercises with Complete Solutions (वयं अभ्यासं कुर्मः)",
+          "sanskrit": "३. वयम् अभ्यासं कुर्मः (अभ्यास कार्यम् / Solved Exercises - पृष्ठानि ३२-३८)",
+          "meaning": "Comprehensive Solved Exercises & Grammar Application (Pages 32–38)",
           "paragraphTranslation": "आओ हम सब अभ्यास करें",
           "words": [
             "वयं",
@@ -5942,7 +5973,7 @@
           "kind": "exercise-qa"
         }
       ],
-      "page_numbers": "29-31"
+      "page_numbers": "29-38"
     },
     {
       "id": "gsde104",
@@ -5950,19 +5981,20 @@
       "title": "Chapter 4: न लभ्यते चेत् आम्लं द्राक्षाफलम् (पाठः पृष्ठानि ३९-४१)",
       "sentences": [
         {
-          "sanskrit": "वर्गे संवादः (कक्षा में बातचीत / Classroom Dialogue)",
-          "meaning": "Classroom Dialogue: Introduction to the Fox & Grapes (चित्र-दर्शन एवं कथा-प्रस्तावना)",
+          "sanskrit": "१. पाठः — वर्गे संवादः अभिनय-गीतं च (पृष्ठानि ३९-४१)",
+          "meaning": "Lesson 4: Classroom Dialogue & Action Song: The Fox & Sour Grapes (Pages 39–41)",
           "words": [
+            "१.",
+            "पाठः",
+            "—",
             "वर्गे",
             "संवादः",
-            "(कक्षा",
-            "में",
-            "बातचीत",
-            "/",
-            "Classroom",
-            "Dialogue)"
+            "अभिनय-गीतं",
+            "च",
+            "(पृष्ठानि",
+            "३९-४१)"
           ],
-          "paragraphTranslation": "कक्षा में संवाद: चित्र-दर्शन एवं कथा-प्रस्तावना (पृष्ठ ३९)",
+          "paragraphTranslation": "चतुर्थः पाठः — न लभ्यते चेत् आम्लं द्राक्षाफलम् : कक्षा-संवादः एवं साभिनय-गीतम् (पृष्ठ ३९ से ४१)",
           "kind": "section-header"
         },
         {
@@ -6304,8 +6336,8 @@
           "paragraphTranslation": "वह क्या कहती है? वह क्या कहती है? \"अंगूर खट्टे हैं, अंगूर खट्टे हैं।\" ऐसा कहकर वह वहाँ से भाग जाती है।"
         },
         {
-          "sanskrit": "३. वयं शब्दार्थान् जानीमः (पृष्ठम् ४१ / Vocabulary Glossary)",
-          "meaning": "Vocabulary Glossary (Sanskrit Explanation · Hindi Meaning · English Translation)",
+          "sanskrit": "२. वयं शब्दार्थान् जानीमः (पृष्ठम् ४१ / Vocabulary Glossary)",
+          "meaning": "Vocabulary Glossary (Sanskrit Explanation · Hindi Meaning · English Translation - Page 41)",
           "words": [
             "३.",
             "वयं",
@@ -6500,8 +6532,8 @@
           "sanskrit_gloss": "उड्डीयते / कूर्दनं करोति"
         },
         {
-          "sanskrit": "४. वयम् अभ्यासं कुर्मः (अभ्यास कार्यम् / Solved Exercises)",
-          "meaning": "Comprehensive Solved Exercises & Grammar Application (अभ्यास कार्य)",
+          "sanskrit": "३. वयम् अभ्यासं कुर्मः (अभ्यास कार्यम् / Solved Exercises - पृष्ठानि ४२-४६)",
+          "meaning": "Comprehensive Solved Exercises & Grammar Application (Pages 42–46)",
           "words": [
             "४.",
             "वयम्",
@@ -7100,7 +7132,7 @@
           "answer_sanskrit": "वयं देशं सेवामहे।"
         }
       ],
-      "page_numbers": "39-41"
+      "page_numbers": "39-46"
     },
     {
       "id": "gsde105",
