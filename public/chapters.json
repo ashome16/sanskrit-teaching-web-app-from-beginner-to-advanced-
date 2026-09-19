@@ -9397,7 +9397,7 @@
     {
       "id": "gsde106",
       "fileName": "gsde106.txt",
-      "title": "Chapter 6: क्रीडाम वयं श्लोकान्त्याक्षरीम्",
+      "title": "Chapter 6: क्रीडाम वयं श्लोकान्त्याक्षरीम् (पाठः पृष्ठानि ५७–६३ · अभ्यासः पृष्ठानि ६४–७०)",
       "sentences": [
         {
           "sanskrit": "१. पाठस्य मूल-संवादः (मूल बातचीत और अंत्याक्षरी के नियम)",
@@ -9793,180 +9793,560 @@
           ]
         },
         {
-          "sanskrit": "३. शब्दार्थाः (कठिन शब्दों के अर्थ)",
-          "meaning": "Key Vocabulary Glossary",
-          "paragraphTranslation": "कठिन शब्दों के अर्थ",
+          "kind": "glossary-header",
+          "sanskrit": "भाग २: वयं शब्दार्थान् जानीमः (शब्दार्थाः — पृष्ठानि ६४, ६५, ६६)",
+          "meaning": "Part 2: Chapter 6 Vocabulary Glossary (Pages 64–66)",
+          "paragraphTranslation": "भाग २: कठिन शब्दों के अर्थ (पृष्ठ ६४, ६५, ६६)",
           "words": [
+            "भाग",
+            "२",
+            "वयं",
+            "शब्दार्थान्",
+            "जानीमः",
             "शब्दार्थाः",
-            "कठिन",
-            "शब्दों",
-            "के",
-            "अर्थ"
-          ],
-          "kind": "glossary-header"
+            "पृष्ठानि",
+            "६४",
+            "६५",
+            "६६"
+          ]
         },
         {
-          "sanskrit": "अभिलषामः",
-          "meaning": "We desire / We wish",
-          "sanskrit_gloss": "इच्छामः",
-          "hindi_gloss": "चाहते हैं / इच्छा करते हैं",
+          "kind": "glossary",
+          "sanskrit": "ननु",
+          "sanskrit_gloss": "खलु",
+          "hindi_gloss": "है न",
+          "meaning": "Isn't it / Indeed",
           "words": [
-            "अभिलषामः",
-            "इच्छामः"
-          ],
-          "kind": "glossary"
+            "ननु",
+            "खलु"
+          ]
         },
         {
-          "sanskrit": "वृष्टिः",
-          "meaning": "Rainfall / Rain shower",
-          "sanskrit_gloss": "वर्षाम्",
-          "hindi_gloss": "वर्षा / बारिश",
+          "kind": "glossary",
+          "sanskrit": "रूपयौवनसम्पन्नाः",
+          "sanskrit_gloss": "सौन्दर्येण यौवनेन च युक्ताः",
+          "hindi_gloss": "सौन्दर्य और यौवन से सम्पन्न",
+          "meaning": "Handsome and youthful / Endowed with beauty and youth",
           "words": [
-            "वृष्टिः",
-            "वर्षाम्"
-          ],
-          "kind": "glossary"
+            "रूपयौवनसम्पन्नाः",
+            "सौन्दर्येण",
+            "यौवनेन",
+            "च",
+            "युक्ताः"
+          ]
         },
         {
-          "sanskrit": "गणद्वयम्",
-          "meaning": "Two groups / Two teams",
-          "sanskrit_gloss": "समूहद्वयम्",
-          "hindi_gloss": "दो टीमें / दो समूह",
+          "kind": "glossary",
+          "sanskrit": "विशालकुलसम्भवाः",
+          "sanskrit_gloss": "महति परिवारे जाताः",
+          "hindi_gloss": "विशिष्ट परिवार में जन्मे हुए",
+          "meaning": "Born in a high / prestigious family",
           "words": [
-            "गणद्वयम्",
-            "समूहद्वयम्"
-          ],
-          "kind": "glossary"
+            "विशालकुलसम्भवाः",
+            "महति",
+            "परिवारे",
+            "जाताः"
+          ]
         },
         {
+          "kind": "glossary",
+          "sanskrit": "निर्गन्धाः",
+          "sanskrit_gloss": "गन्धहीनाः",
+          "hindi_gloss": "गंधहीन (बिना खुशबू के)",
+          "meaning": "Without fragrance / Scentless",
+          "words": [
+            "निर्गन्धाः",
+            "गन्धहीनाः"
+          ]
+        },
+        {
+          "kind": "glossary",
           "sanskrit": "किंशुकाः",
-          "meaning": "Flame of the forest (Palasa flowers)",
-          "sanskrit_gloss": "पलाशपुष्पाणि",
-          "hindi_gloss": "पलाश के फूल (टेसू)",
+          "sanskrit_gloss": "पलाशवृक्षाः / पलाशपुष्पाणि",
+          "hindi_gloss": "ढाक या टेसू (पलाश) का पेड़",
+          "meaning": "Flame of the forest trees / Palash flowers",
           "words": [
             "किंशुकाः",
-            "पलाशपुष्पाणि"
-          ],
-          "kind": "glossary"
+            "पलाशवृक्षाः"
+          ]
         },
         {
-          "sanskrit": "काव्यशास्त्रविनोदेन",
-          "meaning": "Through delight in poetry and philosophy",
-          "sanskrit_gloss": "साहित्यानन्देन",
-          "hindi_gloss": "काव्य और शास्त्रों के मनोरंजन से",
-          "words": [
-            "काव्यशास्त्रविनोदेन",
-            "साहित्यानन्देन"
-          ],
-          "kind": "glossary"
-        },
-        {
+          "kind": "glossary",
           "sanskrit": "धीमताम्",
-          "meaning": "Of intelligent / Wise persons",
           "sanskrit_gloss": "बुद्धिमताम्",
           "hindi_gloss": "बुद्धिमान लोगों का",
+          "meaning": "Of intelligent / wise people",
           "words": [
             "धीमताम्",
             "बुद्धिमताम्"
-          ],
-          "kind": "glossary"
+          ]
         },
         {
-          "sanskrit": "मूर्खाणाम्",
-          "meaning": "Of foolish people",
-          "sanskrit_gloss": "अविवेकवताम्",
-          "hindi_gloss": "मूर्खों का",
+          "kind": "glossary",
+          "sanskrit": "व्यसनेन",
+          "sanskrit_gloss": "भोगविलासेन / दुर्व्यसनेन",
+          "hindi_gloss": "भोग-विलास / बुरी आदतों के द्वारा",
+          "meaning": "By addiction, bad habits, and vices",
           "words": [
-            "मूर्खाणाम्",
-            "अविवेकवताम्"
-          ],
-          "kind": "glossary"
+            "व्यसनेन",
+            "भोगविलासेन"
+          ]
         },
         {
+          "kind": "glossary",
+          "sanskrit": "मदाय",
+          "sanskrit_gloss": "गर्वाय / अहङ्काराय",
+          "hindi_gloss": "अभिमान (घमंड) के लिए",
+          "meaning": "For arrogance / For pride",
+          "words": [
+            "मदाय",
+            "गर्वाय"
+          ]
+        },
+        {
+          "kind": "glossary",
           "sanskrit": "परिपीडनाय",
-          "meaning": "For troubling / Harassing others",
-          "sanskrit_gloss": "क्लेशप्रदानाय",
-          "hindi_gloss": "दूसरों को सताने के लिए",
+          "sanskrit_gloss": "कष्टदानाय / पीडनाय",
+          "hindi_gloss": "कष्ट देने के लिए (दूसरों को सताने हेतु)",
+          "meaning": "For troubling / For oppressing others",
           "words": [
             "परिपीडनाय",
-            "क्लेशप्रदानाय"
-          ],
-          "kind": "glossary"
+            "कष्टदानाय"
+          ]
         },
         {
+          "kind": "glossary",
+          "sanskrit": "खलः",
+          "sanskrit_gloss": "दुष्टः / दुर्जनः",
+          "hindi_gloss": "दुर्जन / दुष्ट व्यक्ति",
+          "meaning": "Wicked person / Villain",
+          "words": [
+            "खलः",
+            "दुष्टः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "शीलम्",
+          "sanskrit_gloss": "वृत्तम् / सदाचारः",
+          "hindi_gloss": "चरित्र / सदाचार",
+          "meaning": "Character / Good conduct",
+          "words": [
+            "शीलम्",
+            "वृत्तम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "मर्त्यलोके",
+          "sanskrit_gloss": "पृथिव्याम् / मनुष्यलोके",
+          "hindi_gloss": "संसार (मृत्युलोक) में",
+          "meaning": "In this mortal world",
+          "words": [
+            "मर्त्यलोके",
+            "पृथिव्याम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "भुवि",
+          "sanskrit_gloss": "भूमौ / पृथिव्याम्",
+          "hindi_gloss": "धरती पर",
+          "meaning": "On the earth",
+          "words": [
+            "भुवि",
+            "भूमौ"
+          ]
+        },
+        {
+          "kind": "glossary",
           "sanskrit": "भारभूताः",
-          "meaning": "Becoming a mere burden",
-          "sanskrit_gloss": "भारस्वरूपाः",
-          "hindi_gloss": "धरती पर बोझ स्वरूप",
+          "sanskrit_gloss": "भारकराः / भारस्वरूपाः",
+          "hindi_gloss": "भार स्वरूप (बोझ)",
+          "meaning": "Becoming a burden",
           "words": [
             "भारभूताः",
-            "भारस्वरूपाः"
-          ],
-          "kind": "glossary"
+            "भारकराः"
+          ]
         },
         {
+          "kind": "glossary",
+          "sanskrit": "कठिनव्रतम्",
+          "sanskrit_gloss": "दीक्षा / सङ्कल्पपूर्वकं कर्म",
+          "hindi_gloss": "कठोर नियम का पालन",
+          "meaning": "Strict observance / Austere vow",
+          "words": [
+            "कठिनव्रतम्",
+            "दीक्षा",
+            "सङ्कल्पपूर्वकं",
+            "कर्म"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "वृत्तिः",
+          "sanskrit_gloss": "उद्योगः / जीविका",
+          "hindi_gloss": "आजीविका / रोज़गार",
+          "meaning": "Occupation / Livelihood",
+          "words": [
+            "वृत्तिः",
+            "उद्योगः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "लक्ष्मीः",
+          "sanskrit_gloss": "सम्पत् / धनम्",
+          "hindi_gloss": "सम्पत्ति / धन-वैभव",
+          "meaning": "Wealth / Fortune",
+          "words": [
+            "लक्ष्मीः",
+            "सम्पत्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "यशस्विनी",
+          "sanskrit_gloss": "कीर्तियुक्ता",
+          "hindi_gloss": "कीर्ति से युक्त / प्रसिद्ध",
+          "meaning": "Endowed with fame and renown",
+          "words": [
+            "यशस्विनी",
+            "कीर्तियुक्ता"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "तत्त्वज्ञानम्",
+          "sanskrit_gloss": "वास्तविकं ज्ञानम् / यथार्थज्ञानम्",
+          "hindi_gloss": "यथार्थ (सच्चा) ज्ञान",
+          "meaning": "Real knowledge / True wisdom",
+          "words": [
+            "तत्त्वज्ञानम्",
+            "वास्तविकं",
+            "ज्ञानम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "प्रच्छन्नगुप्तम्",
+          "sanskrit_gloss": "आवृतं रक्षितं च",
+          "hindi_gloss": "ढँका हुआ और सुरक्षित",
+          "meaning": "Covered and well-concealed / Secretly guarded",
+          "words": [
+            "प्रच्छन्नगुप्तम्",
+            "आवृतं",
+            "रक्षितं",
+            "च"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "भोगकरी",
+          "sanskrit_gloss": "भोग्यवस्तूनां प्रदात्री",
+          "hindi_gloss": "सुख-सुविधाओं को देने वाली",
+          "meaning": "That which gives materialistic pleasure / Enjoyment",
+          "words": [
+            "भोगकरी",
+            "भोग्यवस्तूनां",
+            "प्रदात्री"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "यशःसुखकरी",
+          "sanskrit_gloss": "या कीर्तिं सुखं च ददाति",
+          "hindi_gloss": "ख्याति तथा सुख देने वाली",
+          "meaning": "That which yields renown and happiness",
+          "words": [
+            "यशःसुखकरी",
+            "कीर्तिं",
+            "सुखं",
+            "ददाति"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "विदेशगमने",
+          "sanskrit_gloss": "अन्यदेशेषु भ्रमणसमये",
+          "hindi_gloss": "विदेश जाने पर / प्रवास के समय",
+          "meaning": "While travelling to foreign places",
+          "words": [
+            "विदेशगमने",
+            "अन्यदेशेषु",
+            "भ्रमणसमये"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "परा",
+          "sanskrit_gloss": "श्रेष्ठा / उत्तमा",
+          "hindi_gloss": "श्रेष्ठ / परम",
+          "meaning": "Great / Supreme",
+          "words": [
+            "परा",
+            "श्रेष्ठा"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "विद्याविहीनः",
+          "sanskrit_gloss": "ज्ञानरहितः / अज्ञानी",
+          "hindi_gloss": "विद्या-रहित / ज्ञानहीन",
+          "meaning": "Devoid of education / Ignorant",
+          "words": [
+            "विद्याविहीनः",
+            "ज्ञानरहितः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "पन्थाः",
+          "sanskrit_gloss": "मार्गः",
+          "hindi_gloss": "पथ / मार्ग / रास्ता",
+          "meaning": "The way / Route / Road",
+          "words": [
+            "पन्थाः",
+            "मार्गः"
+          ]
+        },
+        {
+          "kind": "glossary",
           "sanskrit": "कन्था",
-          "meaning": "A patched patchwork quilt",
-          "sanskrit_gloss": "जीर्णवस्त्रसीवनम्",
-          "hindi_gloss": "फटे कपड़ों की गुदड़ी / चादर",
+          "sanskrit_gloss": "पुरातनवस्त्रैः निर्मितम् आस्तरणम्",
+          "hindi_gloss": "जीर्ण-शीर्ण वस्त्रों से बनी मोटी चादर (गुदड़ी)",
+          "meaning": "Rug stitched from old rags / Patchwork quilt",
           "words": [
             "कन्था",
-            "जीर्णवस्त्रसीवनम्"
-          ],
-          "kind": "glossary"
+            "पुरातनवस्त्रैः",
+            "निर्मितम्",
+            "आस्तरणम्"
+          ]
         },
         {
+          "kind": "glossary",
+          "sanskrit": "वित्तम्",
+          "sanskrit_gloss": "धनम्",
+          "hindi_gloss": "धन / सम्पदा",
+          "meaning": "Money / Wealth",
+          "words": [
+            "वित्तम्",
+            "धनम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "सौख्यम्",
+          "sanskrit_gloss": "सुखम् / आनन्दः",
+          "hindi_gloss": "आनन्द / सुख",
+          "meaning": "Happiness / Comfort",
+          "words": [
+            "सौख्यम्",
+            "सुखम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "ध्रुवम्",
+          "sanskrit_gloss": "स्थिरम् / निश्चितम्",
+          "hindi_gloss": "निश्चित / स्थिर",
+          "meaning": "Certain / Definite / Constant",
+          "words": [
+            "ध्रुवम्",
+            "स्थिरम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "समाचरेत्",
+          "sanskrit_gloss": "करणीयम् / आचरेत्",
+          "hindi_gloss": "करना चाहिए / आचरण में लाना चाहिए",
+          "meaning": "Should do / Should practice",
+          "words": [
+            "समाचरेत्",
+            "करणीयम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "अनिवार्यम्",
+          "sanskrit_gloss": "अत्यन्तम् आवश्यकम्",
+          "hindi_gloss": "अत्यन्त आवश्यक / ज़रूरी",
+          "meaning": "Mandatory / Indispensable",
+          "words": [
+            "अनिवार्यम्",
+            "अत्यन्तम्",
+            "आवश्यकम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "ताराणाम्",
+          "sanskrit_gloss": "नक्षत्राणाम्",
+          "hindi_gloss": "नक्षत्रों / तारों का",
+          "meaning": "Of the stars",
+          "words": [
+            "ताराणाम्",
+            "नक्षत्राणाम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "भूषणम्",
+          "sanskrit_gloss": "अलङ्कारः / आभरणम्",
+          "hindi_gloss": "आभूषण / शोभा",
+          "meaning": "Ornament / Adornment",
+          "words": [
+            "भूषणम्",
+            "अलङ्कारः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "सुमम्",
+          "sanskrit_gloss": "कुसुमम् / पुष्पम्",
+          "hindi_gloss": "पुष्प / फूल",
+          "meaning": "Flower / Blossom",
+          "words": [
+            "सुमम्",
+            "कुसुमम्"
+          ]
+        },
+        {
+          "kind": "glossary",
           "sanskrit": "चोरहार्यम्",
-          "meaning": "Capable of being stolen by thieves",
-          "sanskrit_gloss": "चौरेण हर्तुं शक्यम्",
-          "hindi_gloss": "चोर द्वारा चुराने योग्य",
+          "sanskrit_gloss": "चोरेण हरणयोग्यम्",
+          "hindi_gloss": "चोर के द्वारा चुराने योग्य",
+          "meaning": "Can be stolen by thieves",
           "words": [
             "चोरहार्यम्",
-            "चौरेण",
-            "हर्तुं",
-            "शक्यम्"
-          ],
-          "kind": "glossary"
+            "चोरेण",
+            "हरणयोग्यम्"
+          ]
         },
         {
+          "kind": "glossary",
+          "sanskrit": "राजहार्यम्",
+          "sanskrit_gloss": "शासकेन हरणयोग्यम्",
+          "hindi_gloss": "राजा के द्वारा हरण करने योग्य (छीनने योग्य)",
+          "meaning": "Able to be seized / grabbed by kings",
+          "words": [
+            "राजहार्यम्",
+            "शासकेन",
+            "हरणयोग्यम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "वितरणेन",
+          "sanskrit_gloss": "सर्वेभ्यः प्रदानेन",
+          "hindi_gloss": "बाँटने से",
+          "meaning": "By distribution / By giving to all",
+          "words": [
+            "वितरणेन",
+            "सर्वेभ्यः",
+            "प्रदानेन"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "भ्रातृभाज्यम्",
+          "sanskrit_gloss": "भ्रातृ-भगिनीषु विभाजनयोग्यम्",
+          "hindi_gloss": "भाई-बहनों में बाँटने योग्य",
+          "meaning": "Fit to be partitioned amongst siblings",
+          "words": [
+            "भ्रातृभाज्यम्",
+            "भ्रातृ-भगिनीषु",
+            "विभाजनयोग्यम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "भारकारि",
+          "sanskrit_gloss": "भारभूतम् / भारजनकम्",
+          "hindi_gloss": "भार स्वरूप (बोझिल)",
+          "meaning": "Heavy / Burdensome",
+          "words": [
+            "भारकारि",
+            "भारभूतम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "व्यये कृते",
+          "sanskrit_gloss": "यदि व्ययः क्रियते",
+          "hindi_gloss": "खर्च करने पर",
+          "meaning": "When spent / By expenditure",
+          "words": [
+            "व्यये",
+            "कृते"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "विद्याधनम्",
+          "sanskrit_gloss": "विद्यानामकं धनम्",
+          "hindi_gloss": "विद्या रूपी धन",
+          "meaning": "Wealth in the form of knowledge",
+          "words": [
+            "विद्याधनम्",
+            "विद्यानामकं",
+            "धनम्"
+          ]
+        },
+        {
+          "kind": "glossary",
           "sanskrit": "सर्वधनप्रधानम्",
-          "meaning": "Foremost among all kinds of wealth",
-          "sanskrit_gloss": "सर्वश्रेष्ठं धनम्",
-          "hindi_gloss": "सभी धनों में सर्वश्रेष्ठ",
+          "sanskrit_gloss": "सर्वेषु धनेषु मुख्यम्",
+          "hindi_gloss": "सभी प्रकार के धनों में प्रमुख (सर्वश्रेष्ठ)",
+          "meaning": "Most important / Supreme amongst all kinds of wealth",
           "words": [
             "सर्वधनप्रधानम्",
-            "सर्वश्रेष्ठं",
-            "धनम्"
-          ],
-          "kind": "glossary"
+            "सर्वेषु",
+            "धनेषु",
+            "मुख्यम्"
+          ]
         },
         {
-          "sanskrit": "४. अभ्यासः (अभ्यास कार्य)",
-          "meaning": "Exercises with Solved Answers",
-          "paragraphTranslation": "अभ्यास कार्य",
+          "kind": "exercise-header",
+          "sanskrit": "भाग ३: वयम् अभ्यासं कुर्मः (अभ्यास कार्यम् — पृष्ठानि ६६–७०)",
+          "meaning": "Part 3: Complete Solved Exercises for Chapter 6 (Pages 66–70)",
+          "paragraphTranslation": "भाग ३: सम्पूर्ण हल सहित अभ्यास कार्य (पृष्ठ ६६ से ७०)",
           "words": [
-            "अभ्यासः",
+            "भाग",
+            "३",
+            "वयम्",
+            "अभ्यासं",
+            "कुर्मः",
             "अभ्यास",
-            "कार्य"
-          ],
-          "kind": "exercise-header"
+            "कार्यम्",
+            "पृष्ठानि",
+            "६६–७०"
+          ]
         },
         {
-          "sanskrit": "प्रश्न १. एकपदेन उत्तराणि लिखन्तु —",
-          "meaning": "Question 1: One-word answers:",
+          "kind": "exercise-header",
+          "sanskrit": "१. अधः प्रदत्तानां प्रश्नानाम् एकपदेन उत्तरं लिखन्तु — (पृष्ठम् ६६)",
+          "meaning": "1. Answer the following questions in one word (Page 66):",
+          "paragraphTranslation": "१. नीचे दिए गए प्रश्नों के उत्तर एक पद (एक शब्द) में लिखिए (पृष्ठ ६६):",
           "words": [
-            "प्रश्न",
-            "१",
+            "१.",
+            "अधः",
+            "प्रदत्तानां",
+            "प्रश्नानाम्",
             "एकपदेन",
-            "उत्तराणि",
+            "उत्तरं",
             "लिखन्तु"
-          ],
-          "kind": "exercise-header"
+          ]
         },
         {
-          "sanskrit": "(क) विद्याहीनाः कीदृशाः किंशुकाः इव न शोभन्ते ?",
-          "meaning": "Devoid of learning, people do not shine like what kind of Kimshuka flowers? Answer: Scentless (निर्गन्धाः).",
+          "kind": "exercise-qa",
+          "sanskrit": "(क) विद्याहीनाः कीदृशाः किंशुकाः इव न शोभन्ते?",
+          "answer_label": "उत्तरम्",
           "answer_sanskrit": "निर्गन्धाः",
+          "meaning": "Question: Without knowledge, people do not shine like what kind of Kimshuka (Palash) flowers?\nAnswer: निर्गन्धाः (Without fragrance / Scentless).",
+          "hindi_gloss": "(क) विद्याहीन लोग किस प्रकार के पलाश के फूलों की तरह शोभा नहीं पाते?\nउत्तर: निर्गन्धाः (बिना खुशबू वाले / गंधहीन)।",
+          "paragraphTranslation": "विद्याहीन मनुष्य गंधहीन पलाश के फूलों के समान शोभा नहीं पाते।",
           "words": [
             "विद्याहीनाः",
             "कीदृशाः",
@@ -9974,31 +10354,33 @@
             "इव",
             "न",
             "शोभन्ते",
-            "?",
-            "उत्तरः",
             "निर्गन्धाः"
-          ],
-          "kind": "exercise-qa"
+          ]
         },
         {
-          "sanskrit": "(ख) धीमतां कालः कथं गच्छति ?",
-          "meaning": "How does the time of the wise pass? Answer: In enjoyment of literature and science (काव्यशास्त्रविनोदेन).",
+          "kind": "exercise-qa",
+          "sanskrit": "(ख) धीमतां कालः कथं गच्छति?",
+          "answer_label": "उत्तरम्",
           "answer_sanskrit": "काव्यशास्त्रविनोदेन",
+          "meaning": "Question: How does the time of wise/intelligent people pass?\nAnswer: काव्यशास्त्रविनोदेन (By entertainment of poetry and scriptures).",
+          "hindi_gloss": "(ख) बुद्धिमान लोगों का समय कैसे बीतता है?\nउत्तर: काव्यशास्त्रविनोदेन (काव्य और शास्त्रों के अध्ययन व आनंद में)।",
+          "paragraphTranslation": "बुद्धिमान लोगों का समय काव्य और शास्त्र चर्चा के आनंद में बीतता है।",
           "words": [
             "धीमतां",
             "कालः",
             "कथं",
             "गच्छति",
-            "?",
-            "उत्तरः",
             "काव्यशास्त्रविनोदेन"
-          ],
-          "kind": "exercise-qa"
+          ]
         },
         {
-          "sanskrit": "(ग) केषां कालः निद्रया कलहेन वा गच्छति ?",
-          "meaning": "Whose time passes in sleep or quarrel? Answer: Of fools (मूर्खाणाम्).",
+          "kind": "exercise-qa",
+          "sanskrit": "(ग) केषां कालः निद्रया कलहेन वा गच्छति?",
+          "answer_label": "उत्तरम्",
           "answer_sanskrit": "मूर्खाणाम्",
+          "meaning": "Question: Whose time passes in sleep, dispute, or bad habits?\nAnswer: मूर्खाणाम् (Of fools / Of foolish people).",
+          "hindi_gloss": "(ग) किनका समय नींद, कलह या बुरी आदतों में बीतता है?\nउत्तर: मूर्खाणाम् (मूर्खों का)।",
+          "paragraphTranslation": "मूर्खों का समय निद्रा और कलह (झगड़े) में बीतता है।",
           "words": [
             "केषां",
             "कालः",
@@ -10006,177 +10388,372 @@
             "कलहेन",
             "वा",
             "गच्छति",
-            "?",
-            "उत्तरः",
             "मूर्खाणाम्"
-          ],
-          "kind": "exercise-qa"
+          ]
         },
         {
-          "sanskrit": "(घ) खलस्य विद्या किमर्थम् ?",
-          "meaning": "What is the knowledge of the wicked for? Answer: For arguments/dispute (विवादाय).",
+          "kind": "exercise-qa",
+          "sanskrit": "(घ) खलस्य विद्या किमर्थम्?",
+          "answer_label": "उत्तरम्",
           "answer_sanskrit": "विवादाय",
+          "meaning": "Question: For what purpose is the knowledge of the wicked?\nAnswer: विवादाय (For dispute / argument).",
+          "hindi_gloss": "(घ) दुष्ट (खल) व्यक्ति की विद्या किसलिए होती है?\nउत्तर: विवादाय (विवाद और झगड़ा करने के लिए)।",
+          "paragraphTranslation": "दुष्ट व्यक्ति की विद्या केवल विवाद और झगड़े के लिए होती है।",
           "words": [
             "खलस्य",
             "विद्या",
             "किमर्थम्",
-            "?",
-            "उत्तरः",
             "विवादाय"
-          ],
-          "kind": "exercise-qa"
+          ]
         },
         {
-          "sanskrit": "(ङ) सज्जनस्य विद्या किमर्थम् ?",
-          "meaning": "What is the knowledge of the good person for? Answer: For wisdom (ज्ञानाय).",
+          "kind": "exercise-qa",
+          "sanskrit": "(ङ) सज्जनस्य विद्या किमर्थम्?",
+          "answer_label": "उत्तरम्",
           "answer_sanskrit": "ज्ञानाय",
+          "meaning": "Question: For what purpose is the knowledge of a noble person?\nAnswer: ज्ञानाय (For acquiring wisdom and knowledge).",
+          "hindi_gloss": "(ङ) सज्जन व्यक्ति की विद्या किसलिए होती है?\nउत्तर: ज्ञानाय (सद्ज्ञान प्राप्त करने और बाँटने के लिए)।",
+          "paragraphTranslation": "सज्जन की विद्या ज्ञान और लोककल्याण के लिए होती है।",
           "words": [
             "सज्जनस्य",
             "विद्या",
             "किमर्थम्",
-            "?",
-            "उत्तरः",
             "ज्ञानाय"
-          ],
-          "kind": "exercise-qa"
+          ]
         },
         {
-          "sanskrit": "(च) चन्द्रः केषां भूषणम् अस्ति ?",
-          "meaning": "The moon is the ornament of what? Answer: Of the stars (ताराणाम्).",
+          "kind": "exercise-qa",
+          "sanskrit": "(च) चन्द्रः केषां भूषणम् अस्ति?",
+          "answer_label": "उत्तरम्",
           "answer_sanskrit": "ताराणाम्",
+          "meaning": "Question: The moon is the ornament of what?\nAnswer: ताराणाम् (Of the stars).",
+          "hindi_gloss": "(च) चन्द्रमा किसका आभूषण है?\nउत्तर: ताराणाम् (तारों और नक्षत्रों का)।",
+          "paragraphTranslation": "तारों का आभूषण चन्द्रमा है।",
           "words": [
             "चन्द्रः",
             "केषां",
             "भूषणम्",
             "अस्ति",
-            "?",
-            "उत्तरः",
             "ताराणाम्"
-          ],
-          "kind": "exercise-qa"
+          ]
         },
         {
-          "sanskrit": "(छ) सर्वधनप्रधानं किम् ?",
-          "meaning": "What is supreme among all forms of wealth? Answer: The wealth of learning (विद्याधनम्).",
+          "kind": "exercise-qa",
+          "sanskrit": "(छ) सर्वधनप्रधानं किम्?",
+          "answer_label": "उत्तरम्",
           "answer_sanskrit": "विद्याधनम्",
+          "meaning": "Question: What is supreme among all forms of wealth?\nAnswer: विद्याधनम् (The treasure of knowledge).",
+          "hindi_gloss": "(छ) सभी धनों में प्रधान (सर्वश्रेष्ठ) कौन सा धन है?\nउत्तर: विद्याधनम् (विद्या रूपी धन)।",
+          "paragraphTranslation": "विद्या का धन सभी धनों में सर्वश्रेष्ठ है।",
           "words": [
             "सर्वधनप्रधानं",
             "किम्",
-            "?",
-            "उत्तरः",
             "विद्याधनम्"
-          ],
-          "kind": "exercise-qa"
+          ]
         },
         {
-          "sanskrit": "प्रश्न २. पूर्णवाक्येन उत्तराणि —",
-          "meaning": "Question 2: Complete sentence answers:",
+          "kind": "exercise-header",
+          "sanskrit": "२. अधः प्रदत्तानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखन्तु — (पृष्ठम् ६७)",
+          "meaning": "2. Answer the following questions in complete sentences (Page 67):",
+          "paragraphTranslation": "२. नीचे दिए गए प्रश्नों के उत्तर पूर्ण वाक्य में लिखिए (पृष्ठ ६७):",
           "words": [
-            "प्रश्न",
-            "२",
+            "२.",
+            "अधः",
+            "प्रदत्तानां",
+            "प्रश्नानां",
             "पूर्णवाक्येन",
-            "उत्तराणि"
-          ],
-          "kind": "exercise-header"
+            "उत्तरं",
+            "लिखन्तु"
+          ]
         },
         {
-          "sanskrit": "(क) निर्गन्धाः किंशुकाः इव के न शोभन्ते ?",
-          "meaning": "Who do not look graceful like scentless Palasa flowers?",
-          "answer_sanskrit": "रूपयौवनसम्पन्नाः विशालकुलसम्भवाः च जनाः यदि विद्याहीनाः सन्ति, तर्हि ते निर्गन्धाः किंशुकाः इव न शोभन्ते।",
+          "kind": "exercise-qa",
+          "sanskrit": "(क) निर्गन्धाः किंशुकाः इव के न शोभन्ते?",
+          "answer_label": "पूर्णवाक्येन उत्तरम्",
+          "answer_sanskrit": "रूपयौवनसम्पन्नाः विशालकुलसम्भवाः अपि विद्याहीनाः जनाः निर्गन्धाः किंशुकाः इव न शोभन्ते।",
+          "meaning": "Question: Who do not shine just like scentless Palash flowers?\nAnswer: Even if endowed with beauty, youth, and high birth in a noble family, people devoid of education do not shine, just like scentless Palash flowers.",
+          "hindi_gloss": "(क) गंधहीन पलाश के फूलों की तरह कौन शोभा नहीं पाते?\nउत्तर: रूप और यौवन से संपन्न तथा उच्च कुल में जन्म लेने पर भी विद्याहीन मनुष्य सुगंध रहित पलाश के फूलों की तरह शोभा नहीं पाते।",
+          "paragraphTranslation": "रूपवान, युवा और उच्च कुल में उत्पन्न होने पर भी विद्याहीन मनुष्य गंधहीन पलाश के फूलों की भांति शोभा नहीं पाते।",
           "words": [
+            "रूपयौवनसम्पन्नाः",
+            "विशालकुलसम्भवाः",
+            "अपि",
+            "विद्याहीनाः",
+            "जनाः",
             "निर्गन्धाः",
             "किंशुकाः",
             "इव",
-            "के",
-            "न",
-            "शोभन्ते",
-            "?",
-            "उत्तरः",
-            "रूपयौवनसम्पन्नाः",
-            "विशालकुलसम्भवाः",
-            "विद्याहीनाः",
             "न",
             "शोभन्ते"
-          ],
-          "kind": "exercise-qa"
+          ]
         },
         {
-          "sanskrit": "(ख) मूर्खाणां कालः कथं गच्छति ?",
-          "meaning": "How does the time of foolish people pass?",
-          "answer_sanskrit": "मूर्खाणां कालः व्यसनेन, निद्रया, कलहेन वा गच्छति।",
+          "kind": "exercise-qa",
+          "sanskrit": "(ख) मूर्खाणां कालः कथं गच्छति?",
+          "answer_label": "पूर्णवाक्येन उत्तरम्",
+          "answer_sanskrit": "मूर्खाणां कालः व्यसनेन निद्रया कलहेन वा गच्छति।",
+          "meaning": "Question: How does the time of fools pass?\nAnswer: The time of foolish people passes in bad addictions, excessive sleep, or fighting and quarreling.",
+          "hindi_gloss": "(ख) मूर्खों का समय कैसे बीतता है?\nउत्तर: मूर्खों का समय बुरी आदतों (व्यसन), निद्रा (सोने) और कलह (झगड़े) में बीतता है।",
+          "paragraphTranslation": "मूर्खों का समय दुर्व्यसनों, सोने और आपस के कलह में व्यतीत होता है।",
           "words": [
-            "मूर्खाणां",
-            "कालः",
-            "कथं",
-            "गच्छति",
-            "?",
-            "उत्तरः",
             "मूर्खाणां",
             "कालः",
             "व्यसनेन",
             "निद्रया",
             "कलहेन",
             "वा",
-            "गच्छति।"
-          ],
-          "kind": "exercise-qa"
+            "गच्छति"
+          ]
         },
         {
-          "sanskrit": "(ग) दुर्जनः विद्यायाः धनस्य शक्तेः च उपयोगं कथं करोति ?",
-          "meaning": "How does a wicked person use learning, wealth, and strength?",
+          "kind": "exercise-qa",
+          "sanskrit": "(ग) दुर्जनः विद्यायाः धनस्य शक्तेः च उपयोगं कथं करोति?",
+          "answer_label": "पूर्णवाक्येन उत्तरम्",
           "answer_sanskrit": "दुर्जनः विद्यायाः उपयोगं विवादाय, धनस्य उपयोगं मदाय, शक्तेः च उपयोगं परेषां परिपीडनाय करोति।",
+          "meaning": "Question: How does a wicked person use knowledge, wealth, and power?\nAnswer: A wicked person uses knowledge for arguments, wealth for arrogance/pride, and power to oppress and torment others.",
+          "hindi_gloss": "(ग) दुर्जन विद्या, धन और शक्ति का उपयोग कैसे करता है?\nउत्तर: दुर्जन व्यक्ति विद्या का उपयोग विवाद (झगड़े) के लिए, धन का उपयोग घमंड (मद) के लिए, और शक्ति का उपयोग दूसरों को सताने (कष्ट देने) के लिए करता है।",
+          "paragraphTranslation": "दुर्जन विद्या को विवाद के लिए, धन को घमंड के लिए और शक्ति को दूसरों को पीड़ित करने के लिए इस्तेमाल करता है।",
           "words": [
-            "दुर्जनः",
-            "विद्यायाः",
-            "धनस्य",
-            "शक्तेः",
-            "च",
-            "उपयोगं",
-            "कथं",
-            "करोति",
-            "?",
-            "उत्तरः",
             "दुर्जनः",
             "विद्यायाः",
             "उपयोगं",
             "विवादाय",
             "धनस्य",
-            "उपयोगं",
             "मदाय",
             "शक्तेः",
-            "च",
-            "उपयोगं",
             "परेषां",
             "परिपीडनाय",
-            "करोति।"
-          ],
-          "kind": "exercise-qa"
+            "करोति"
+          ]
         },
         {
-          "sanskrit": "(घ) शनैः शनैः कानि साधनीयानि ?",
-          "meaning": "Which five things should be accomplished step by step?",
-          "answer_sanskrit": "पन्थाः (मार्गः), कन्था (वस्त्रसीवनम्), पर्वतलङ्घनम्, विद्या, वित्तं (धनम्) च एतानि पञ्च कार्याणि शनैः शनैः साधनीयानि।",
+          "kind": "exercise-qa",
+          "sanskrit": "(घ) कीदृशाः मनुष्याः भुवि भारभूताः भवन्ति?",
+          "answer_label": "पूर्णवाक्येन उत्तरम्",
+          "answer_sanskrit": "येषां न विद्या न तपो न दानं ज्ञानं न शीलं न गुणो न धर्मः, ते मनुष्याः भुवि भारभूताः भवन्ति।",
+          "meaning": "Question: What kind of humans become a burden upon this earth?\nAnswer: Those who possess neither knowledge, nor penance, nor charity, nor wisdom, nor character, nor virtue, nor righteousness—such people live merely as a burden on earth in human form.",
+          "hindi_gloss": "(घ) कैसे मनुष्य धरती पर बोझ स्वरूप होते हैं?\nउत्तर: जिनके पास न विद्या है, न तप, न दान, न ज्ञान, न अच्छा चरित्र, न गुण और न धर्म; ऐसे मनुष्य इस धरती पर भार (बोझ) रूप में पशुओं की भांति विचरण करते हैं।",
+          "paragraphTranslation": "जिनके पास विद्या, तप, दान, ज्ञान, शील, गुण और धर्म नहीं हैं, वे मनुष्य रूप में धरती पर भार हैं।",
           "words": [
-            "शनैः",
-            "शनैः",
-            "कानि",
-            "साधनीयानि",
-            "?",
-            "उत्तरः",
+            "येषां",
+            "न",
+            "विद्या",
+            "तपो",
+            "दानं",
+            "ज्ञानं",
+            "शीलं",
+            "गुणो",
+            "धर्मः",
+            "ते",
+            "मनुष्याः",
+            "भुवि",
+            "भारभूताः",
+            "भवन्ति"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ङ) शनैः शनैः कानि साधनीयानि?",
+          "answer_label": "पूर्णवाक्येन उत्तरम्",
+          "answer_sanskrit": "पन्थाः, कन्था, पर्वतलङ्घनं, विद्या, वित्तं च एतानि पञ्च शनैः शनैः साधनीयानि।",
+          "meaning": "Question: Which five things should be accomplished gradually step-by-step?\nAnswer: Travelling a path (पन्थाः), stitching a patchwork quilt (कन्था), crossing a mountain (पर्वतलङ्घनम्), acquiring knowledge (विद्या), and gathering wealth (वित्तम्)—these five must be accomplished patiently and gradually.",
+          "hindi_gloss": "(ङ) धीरे-धीरे किन पाँच बातों को सिद्ध करना चाहिए?\nउत्तर: मार्ग पार करना (पन्थाः), गुदड़ी सीना (कन्था), पर्वत लाँघना (पर्वतलङ्घनम्), विद्या प्राप्त करना (विद्या) और धन कमाना (वित्तम्)—इन पाँचों को धीरे-धीरे सिद्ध करना चाहिए।",
+          "paragraphTranslation": "रास्ता, गुदड़ी, पर्वत पार करना, विद्या और धन—ये पाँचों कार्य धीरे-धीरे सिद्ध किए जाते हैं।",
+          "words": [
             "पन्थाः",
             "कन्था",
-            "पर्वतलङ्घनम्",
+            "पर्वतलङ्घनं",
             "विद्या",
             "वित्तं",
             "च",
             "एतानि",
             "पञ्च",
-            "कार्याणि",
             "शनैः",
-            "शनैः",
-            "साधनीयानि।"
-          ],
-          "kind": "exercise-qa"
+            "साधनीयानि"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "३. उचितान् वाक्यांशान् परस्परं संयोजयन्तु — (पृष्ठम् ६७ / Match the verse halves)",
+          "meaning": "3. Match the appropriate verse lines and clauses together (Page 67):",
+          "paragraphTranslation": "३. श्लोकों के उचित वाक्यांशों का परस्पर सही मिलान कीजिए (पृष्ठ ६७):",
+          "words": [
+            "३.",
+            "उचितान्",
+            "वाक्यांशान्",
+            "परस्परं",
+            "संयोजयन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) तदा वृत्तिश्च कीर्तिश्च →\n(ख) खलस्य साधोर्विपरीतमेतत् →\n(ग) शनैर्विद्या शनैर्वित्तं →\n(घ) विद्याहीना न शोभन्ते →\n(ङ) न चोरहार्यं न च राजहार्यं →\n(च) विद्या राजसु पूज्यते →\n(छ) अतो धर्मार्थमोक्षेभ्यः →",
+          "answer_label": "उचित-संयोजनम्",
+          "answer_sanskrit": "(क) तदा वृत्तिश्च कीर्तिश्च → यदा विद्या भवेत्तव\n(ख) खलस्य साधोर्विपरीतमेतत् → ज्ञानाय दानाय च रक्षणाय\n(ग) शनैर्विद्या शनैर्वित्तं → पञ्चैतानि शनैः शनैः\n(घ) विद्याहीना न शोभन्ते → निर्गन्धा इव किंशुकाः\n(ङ) न चोरहार्यं न च राजहार्यं → न भ्रातृभाज्यं न च भारकारि\n(च) विद्या राजसु पूज्यते → न हि धनम्\n(छ) अतो धर्मार्थमोक्षेभ्यः → विद्याभ्यासं समाचरेत्",
+          "meaning": "Matching pairs from the Shlokas:\n(क) तदा वृत्तिश्च कीर्तिश्च → यदा विद्या भवेत्तव (Then you get livelihood and fame when knowledge is yours)\n(ख) खलस्य साधोर्विपरीतमेतत् → ज्ञानाय दानाय च रक्षणाय (For the righteous it is opposite: for wisdom, charity, and protection)\n(ग) शनैर्विद्या शनैर्वित्तं → पञ्चैतानि शनैः शनैः (Gradually learning, gradually wealth: these five step-by-step)\n(घ) विद्याहीना न शोभन्ते → निर्गन्धा इव किंशुकाः (Devoid of education they shine not, like fragrance-less flowers)\n(ङ) न चोरहार्यं न च राजहार्यं → न भ्रातृभाज्यं न च भारकारि (Cannot be stolen by thieves, nor seized by king, nor partitioned, nor heavy)\n(च) विद्या राजसु पूज्यते → न हि धनम् (Knowledge is revered among kings, not mere wealth)\n(छ) अतो धर्मार्थमोक्षेभ्यः → विद्याभ्यासं समाचरेत् (Therefore for virtue, wealth, and liberation, practice learning)",
+          "hindi_gloss": "श्लोक पंक्तियों का सही मिलान:\n(क) तदा वृत्तिश्च कीर्तिश्च → यदा विद्या भवेत्तव\n(ख) खलस्य साधोर्विपरीतमेतत् → ज्ञानाय दानाय च रक्षणाय\n(ग) शनैर्विद्या शनैर्वित्तं → पञ्चैतानि शनैः शनैः\n(घ) विद्याहीना न शोभन्ते → निर्गन्धा इव किंशुकाः\n(ङ) न चोरहार्यं न च राजहार्यं → न भ्रातृभाज्यं न च भारकारि\n(च) विद्या राजसु पूज्यते → न हि धनम्\n(छ) अतो धर्मार्थमोक्षेभ्यः → विद्याभ्यासं समाचरेत्",
+          "paragraphTranslation": "श्लोकों की अर्द्धालियों का परस्पर प्रामाणिक मिलान।",
+          "words": [
+            "तदा",
+            "वृत्तिश्च",
+            "कीर्तिश्च",
+            "यदा",
+            "विद्या",
+            "भवेत्तव",
+            "खलस्य",
+            "साधोर्विपरीतमेतत्",
+            "ज्ञानाय",
+            "दानाय",
+            "च",
+            "रक्षणाय"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "४. अधः रेखाङ्कितानि पदानि आश्रित्य प्रश्ननिर्माणं कुर्वन्तु — (पृष्ठानि ६७, ६८ / Question Formation)",
+          "meaning": "4. Form questions based on the underlined words (Pages 67–68):",
+          "paragraphTranslation": "४. रेखांकित पदों के आधार पर प्रश्न निर्माण कीजिए (पृष्ठ ६७, ६८):",
+          "words": [
+            "४.",
+            "अधः",
+            "रेखाङ्कितानि",
+            "पदानि",
+            "आश्रित्य",
+            "प्रश्ननिर्माणं",
+            "कुर्वन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) राजा पृथिव्याः भूषणं भवति।\n(ख) साधोः विद्या ज्ञानाय भवति।\n(ग) विद्या गुरूणां गुरुः।\n(घ) ते मर्त्यलोके भुवि भारभूताः भवन्ति।\n(ङ) विद्याहीनाः न शोभन्ते।\n(च) सर्वस्य लोचनं शास्त्रम्।\n(छ) विद्या राजसु पूज्यते।\n(ज) काव्यशास्त्रविनोदेन कालो गच्छति धीमताम्।",
+          "answer_label": "प्रश्ननिर्माणम्",
+          "answer_sanskrit": "(क) राजा कस्याः भूषणं भवति?\n(ख) कस्य विद्या ज्ञानाय भवति?\n(ग) विद्या केषां गुरुः?\n(घ) ते मर्त्यलोके कुत्र (कस्याम्) भारभूताः भवन्ति?\n(ङ) के न शोभन्ते?\n(च) सर्वस्य लोचनं किम्?\n(छ) विद्या केषु पूज्यते?\n(ज) केन (कथं) धीमतां कालो गच्छति?",
+          "meaning": "Question Formation:\n(क) राजा पृथिव्याः भूषणं भवति। → राजा कस्याः भूषणं भवति? (Whose ornament is the king?)\n(ख) साधोः विद्या ज्ञानाय भवति। → कस्य विद्या ज्ञानाय भवति? (Whose knowledge is for wisdom?)\n(ग) विद्या गुरूणां गुरुः। → विद्या केषां गुरुः? (Of whom is knowledge the guru?)\n(घ) ते मर्त्यलोके भुवि भारभूताः भवन्ति। → ते मर्त्यलोके कुत्र भारभूताः भवन्ति? (Where do they become a burden?)\n(ङ) विद्याहीनाः न शोभन्ते। → के न शोभन्ते? (Who do not shine?)\n(च) सर्वस्य लोचनं शास्त्रम्। → सर्वस्य लोचनं किम्? (What is the eye/vision of all?)\n(छ) विद्या राजसु पूज्यते। → विद्या केषु पूज्यते? (Among whom is knowledge revered?)\n(ज) काव्यशास्त्रविनोदेन कालो गच्छति धीमताम्। → केन धीमतां कालो गच्छति? (By what does the time of the wise pass?)",
+          "hindi_gloss": "प्रश्न निर्माण:\n(क) राजा पृथिव्याः भूषणं भवति। → राजा कस्याः भूषणं भवति?\n(ख) साधोः विद्या ज्ञानाय भवति। → कस्य विद्या ज्ञानाय भवति?\n(ग) विद्या गुरूणां गुरुः। → विद्या केषां गुरुः?\n(घ) ते मर्त्यलोके भुवि भारभूताः भवन्ति। → ते मर्त्यलोके कुत्र (कस्याम्) भारभूताः भवन्ति?\n(ङ) विद्याहीनाः न शोभन्ते। → के न शोभन्ते?\n(च) सर्वस्य लोचनं शास्त्रम्। → सर्वस्य लोचनं किम्?\n(छ) विद्या राजसु पूज्यते। → विद्या केषु पूज्यते?\n(ज) काव्यशास्त्रविनोदेन कालो गच्छति धीमताम्। → केन (कथं) धीमतां कालो गच्छति?",
+          "paragraphTranslation": "वाक्यों के रेखांकित पदों के आधार पर उचित प्रश्नवाचक पदों का प्रयोग।",
+          "words": [
+            "राजा",
+            "कस्याः",
+            "कस्य",
+            "केषां",
+            "कुत्र",
+            "के",
+            "किम्",
+            "केषु",
+            "केन",
+            "धीमताम्"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "५. मञ्जूषातः समुचितानि पदानि स्वीकृत्य रिक्तस्थानानि पूरयन्तु — (पृष्ठम् ६८)",
+          "meaning": "5. Fill in the blanks with appropriate words from the word box (Page 68):",
+          "paragraphTranslation": "५. मञ्जूषा (कोष्ठक) से उचित पद चुनकर रिक्त स्थान भरिए (पृष्ठ ६८):",
+          "words": [
+            "५.",
+            "मञ्जूषातः",
+            "समुचितानि",
+            "पदानि",
+            "स्वीकृत्य",
+            "रिक्तस्थानानि",
+            "पूरयन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "मञ्जूषा — [ रक्षणाय, मदाय, विवादाय, परिपीडनाय, ज्ञानाय, दानाय ]\n\nसज्जनस्य (Good Person):\n(क) शक्तिः → _______\n(ख) विद्या → _______\n(ग) धनम् → _______\n\nदुर्जनस्य (Wicked Person):\n(घ) शक्तिः → _______\n(ङ) विद्या → _______\n(च) धनम् → _______",
+          "answer_label": "पूरित-तालिका",
+          "answer_sanskrit": "सज्जनस्य (सज्जन के सद्गुण):\n(क) शक्तिः → रक्षणाय (Protection)\n(ख) विद्या → ज्ञानाय (Knowledge)\n(ग) धनम् → दानाय (Charity)\n\nदुर्जनस्य (दुर्जन के दुर्गुण):\n(घ) शक्तिः → परिपीडनाय (Troubling others)\n(ङ) विद्या → विवादाय (Arguments)\n(च) धनम् → मदाय (Pride / Arrogance)",
+          "meaning": "Contrast of Virtuous vs Wicked:\nVirtuous (सज्जनस्य):\n- Power (शक्तिः) is for Protection (रक्षणाय)\n- Knowledge (विद्या) is for Wisdom (ज्ञानाय)\n- Wealth (धनम्) is for Charity (दानाय)\n\nWicked (दुर्जनस्य):\n- Power (शक्तिः) is for Oppressing others (परिपीडनाय)\n- Knowledge (विद्या) is for Disputes (विवादाय)\n- Wealth (धनम्) is for Arrogance (मदाय)",
+          "hindi_gloss": "सज्जन और दुर्जन के स्वभाव का अंतर:\nसज्जन:\n- शक्ति → रक्षणाय (कमज़ोरों की रक्षा के लिए)\n- विद्या → ज्ञानाय (सद्ज्ञान के लिए)\n- धनम् → दानाय (दान और परोपकार के लिए)\n\nदुर्जन:\n- शक्ति → परिपीडनाय (दूसरों को कष्ट देने के लिए)\n- विद्या → विवादाय (झगड़ा करने के लिए)\n- धनम् → मदाय (घमंड करने के लिए)",
+          "paragraphTranslation": "सज्जन और दुर्जन के स्वभाव की तुलनात्मक तालिका।",
+          "words": [
+            "सज्जनस्य",
+            "दुर्जनस्य",
+            "शक्तिः",
+            "रक्षणाय",
+            "परिपीडनाय",
+            "विद्या",
+            "ज्ञानाय",
+            "विवादाय",
+            "धनम्",
+            "दानाय",
+            "मदाय"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "६. अधोलिखितानां पदानां विभक्तिं वचनं च लिखन्तु — (पृष्ठम् ६८)",
+          "meaning": "6. Identify and write the Case (विभक्ति) and Number (वचन) for the following words (Page 68):",
+          "paragraphTranslation": "६. निम्नलिखित पदों की विभक्ति और वचन लिखिए (पृष्ठ ६८):",
+          "words": [
+            "६.",
+            "अधोलिखितानां",
+            "पदानां",
+            "विभक्तिं",
+            "वचनं",
+            "च",
+            "लिखन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "यथा: ताराणाम् → षष्ठी विभक्तिः | बहुवचनम्\n\n(क) विद्याम् → _______\n(ख) धनस्य → _______\n(ग) कलहेन → _______\n(घ) नराणाम् → _______\n(ङ) मर्त्यलोके → _______\n(च) ज्ञानाय → _______\n(छ) राजसु → _______",
+          "answer_label": "विभक्ति-वचन-तालिका",
+          "answer_sanskrit": "(क) विद्याम् → द्वितीया विभक्तिः | एकवचनम्\n(ख) धनस्य → षष्ठी विभक्तिः | एकवचनम्\n(ग) कलहेन → तृतीया विभक्तिः | एकवचनम्\n(घ) नराणाम् → षष्ठी विभक्तिः | बहुवचनम्\n(ङ) मर्त्यलोके → सप्तमी विभक्तिः | एकवचनम्\n(च) ज्ञानाय → चतुर्थी विभक्तिः | एकवचनम्\n(छ) राजसु → सप्तमी विभक्तिः | बहुवचनम्",
+          "meaning": "Grammatical Declension Analysis:\n- Example: ताराणाम् → Genitive Case (षष्ठी), Plural (बहुवचनम्)\n(क) विद्याम् → Accusative Case (द्वितीया), Singular (एकवचनम्)\n(ख) धनस्य → Genitive Case (षष्ठी), Singular (एकवचनम्)\n(ग) कलहेन → Instrumental Case (तृतीया), Singular (एकवचनम्)\n(घ) नराणाम् → Genitive Case (षष्ठी), Plural (बहुवचनम्)\n(ङ) मर्त्यलोके → Locative Case (सप्तमी), Singular (एकवचनम्)\n(च) ज्ञानाय → Dative Case (चतुर्थी), Singular (एकवचनम्)\n(छ) राजसु → Locative Case (सप्तमी), Plural (बहुवचनम्)",
+          "hindi_gloss": "व्याकरण पद-परिचय:\n(क) विद्याम् → द्वितीया विभक्ति, एकवचन\n(ख) धनस्य → षष्ठी विभक्ति, एकवचन\n(ग) कलहेन → तृतीया विभक्ति, एकवचन\n(घ) नराणाम् → षष्ठी विभक्ति, बहुवचन\n(ङ) मर्त्यलोके → सप्तमी विभक्ति, एकवचन\n(च) ज्ञानाय → चतुर्थी विभक्ति, एकवचन\n(छ) राजसु → सप्तमी विभक्ति, बहुवचन",
+          "paragraphTranslation": "संस्कृत पदों का प्रामाणिक विभक्ति एवं वचन विश्लेषण।",
+          "words": [
+            "ताराणाम्",
+            "विद्याम्",
+            "धनस्य",
+            "कलहेन",
+            "नराणाम्",
+            "मर्त्यलोके",
+            "ज्ञानाय",
+            "राजसु",
+            "विभक्तिः",
+            "वचनम्"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "परियोजनाकार्यं गतिविधिः श्लोकपूर्तिश्च — (पृष्ठानि ६९, ७०)",
+          "meaning": "Project Work, Class Activities & Shloka Completion (Pages 69–70)",
+          "paragraphTranslation": "परियोजनाकार्य, कक्षीय गतिविधियाँ एवं श्लोक पूर्ति (पृष्ठ ६९ व ७०)",
+          "words": [
+            "परियोजनाकार्यं",
+            "गतिविधिः",
+            "श्लोकपूर्तिश्च",
+            "पृष्ठानि",
+            "६९",
+            "७०"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "३. वर्णलेखन्या अधोलिखितं श्लोकं पूरयन्तु — (Page 70 Verse Completion)\n\nक्षणशः कणशश्चैव विद्यामर्थं च साधयेत् ।\nक्षणे नष्टे कुतो विद्या कणे नष्टे कुतो धनम् ॥",
+          "answer_label": "श्लोक-भावार्थः",
+          "answer_sanskrit": "अन्वयः — क्षणशः एव विद्यां साधयेत्, कणशः च एव अर्थं साधयेत्। क्षणे नष्टे विद्या कुतः? कणे नष्टे धनं कुतः?",
+          "meaning": "English Translation of Verse:\nEvery single moment (क्षणशः) should be spent acquiring knowledge (विद्याम्), and every single grain/penny (कणशः) should be saved to gather wealth (अर्थम्). If moments are wasted (क्षणे नष्टे), how can one attain knowledge? If grains/pennies are wasted (कणे नष्टे), how can one accumulate wealth?",
+          "hindi_gloss": "श्लोक का भावार्थ:\nमनुष्य को प्रत्येक क्षण (पल-पल) का सदुपयोग विद्या प्राप्त करने में करना चाहिए, और प्रत्येक कण (पाई-पाई) का उपयोग धन संचित करने में करना चाहिए। समय (क्षण) नष्ट होने पर विद्या कैसे मिल सकती है? और कण (धन) नष्ट होने पर सम्पत्ति कैसे जुड़ सकती है?",
+          "paragraphTranslation": "समय के प्रत्येक क्षण का उपयोग विद्या के लिए और प्रत्येक कण का उपयोग धन के लिए करना चाहिए।",
+          "words": [
+            "क्षणशः",
+            "कणशः",
+            "च",
+            "एव",
+            "विद्याम्",
+            "अर्थं",
+            "साधयेत्",
+            "क्षणे",
+            "नष्टे",
+            "कुतो",
+            "विद्या",
+            "कणे",
+            "धनम्"
+          ]
         }
       ]
     },

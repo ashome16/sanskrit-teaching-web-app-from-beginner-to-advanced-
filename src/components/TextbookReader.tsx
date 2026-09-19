@@ -741,16 +741,16 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                             ? 'गीतम्'
                             : jump.label.includes('मन्त्र')
                               ? 'मन्त्राः'
-                              : jump.label.includes('श्लोक')
-                                ? 'श्लोक'
-                                : jump.label.includes('कथा')
-                                  ? 'कथा'
-                                  : jump.label.includes('लाभ')
-                                    ? 'लाभाः'
-                                    : jump.label.includes('स्वास्थ्य') || jump.label.includes('नियम')
-                                      ? 'स्वास्थ्य'
-                                      : jump.label.includes('परियोजना')
-                                        ? 'परियोजना'
+                              : jump.label.includes('परियोजना')
+                                ? 'परियोजना'
+                                : jump.label.includes('श्लोक')
+                                  ? 'श्लोक'
+                                  : jump.label.includes('कथा')
+                                    ? 'कथा'
+                                    : jump.label.includes('लाभ')
+                                      ? 'लाभाः'
+                                      : jump.label.includes('स्वास्थ्य') || jump.label.includes('नियम')
+                                        ? 'स्वास्थ्य'
                                         : jump.label.includes('पृष्ठम् ५६') || jump.label.includes('पृष्ठ ५६')
                                           ? 'पृष्ठ ५६'
                                           : jump.label.includes('पृष्ठम् ३८') || jump.label.includes('पृष्ठ ३८') || jump.label.includes('Page 38')
