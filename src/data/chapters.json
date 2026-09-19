@@ -13897,26 +13897,109 @@
     {
       "id": "gsde109",
       "fileName": "gsde109.txt",
-      "title": "Chapter 9: अन्नाद् भवन्ति भूतानि",
+      "title": "Chapter 9: अन्नाद् भवन्ति भूतानि (पाठः पृष्ठानि ९६–९८ · अभ्यासः पृष्ठानि ९९–१०३)",
       "sentences": [
         {
-          "sanskrit": "१. पाठस्य मूल-संवादः (माता और पुत्री के बीच बातचीत)",
-          "meaning": "Lesson Introduction: Dialogue on the Cosmic Cycle of Creation and Food",
-          "paragraphTranslation": "माता और पुत्री के बीच बातचीत: सृष्टि एवं अन्न की उत्पत्ति",
+          "kind": "section-header",
+          "sanskrit": "१. पाठः — भारतस्य ज्ञानपरम्परा सृष्टिक्रमः च (पृष्ठम् ९६)",
+          "meaning": "Part 1: India's Scientific Heritage & Sequence of Creation (Page 96)",
+          "paragraphTranslation": "भाग १: भारत की ज्ञान-परम्परा एवं सृष्टि की उत्पत्ति का क्रम (पृष्ठ ९६)",
           "words": [
-            "पाठस्य",
-            "मूल-संवादः"
-          ],
-          "kind": "section-header"
+            "१.",
+            "पाठः",
+            "भारतस्य",
+            "ज्ञानपरम्परा",
+            "सृष्टिक्रमः",
+            "च",
+            "पृष्ठम्",
+            "९६"
+          ]
         },
         {
-          "sanskrit": "पुत्री: अम्ब ! मम काचिद् जिज्ञासा अस्ति। वयं मनुष्याः प्राणिनः कीटाः च कथं भूलोके आगताः?",
-          "meaning": "Daughter: Mother! I have a question born of deep curiosity. How did we human beings, animals, and creatures arrive on this earth?",
-          "paragraphTranslation": "पुत्री - माँ! मेरी एक जिज्ञासा है। हम मनुष्य, पशु-पक्षी और कीड़े इस धरती पर कैसे आए?",
+          "sanskrit": "भारतस्य प्रतिष्ठे द्वे संस्कृतं संस्कृतिः च। भारतस्य विशिष्टं प्राचीनं ज्ञानं संस्कृताश्रितं वर्तते। संस्कृतिः अपि संस्कृताश्रिता भवति।",
+          "meaning": "India has two core pillars of glory—Sanskrit language and its Culture. India's profound ancient knowledge is rooted in Sanskrit. Our culture too is deeply based on Sanskrit.",
+          "paragraphTranslation": "भारत की दो गौरवपूर्ण प्रतिष्ठाएँ हैं—संस्कृत भाषा और उसकी संस्कृति। भारत का विशेष प्राचीन ज्ञान संस्कृत भाषा में सुरक्षित है। हमारी संस्कृति भी संस्कृत पर ही आश्रित है। (भारतस्य = Of India | प्रतिष्ठे द्वे = Two pillars of glory | संस्कृतं = Sanskrit | संस्कृतिः च = And culture | विशिष्टम् = Special/Profound | प्राचीनं ज्ञानम् = Ancient knowledge | संस्कृताश्रितं वर्तते = Is preserved in Sanskrit)",
           "words": [
-            "पुत्री:",
+            "भारतस्य",
+            "प्रतिष्ठे",
+            "द्वे",
+            "संस्कृतं",
+            "संस्कृतिः",
+            "च",
+            "विशिष्टं",
+            "प्राचीनं",
+            "ज्ञानं",
+            "संस्कृताश्रितं",
+            "वर्तते",
+            "भवति"
+          ]
+        },
+        {
+          "sanskrit": "अस्माकं प्राचीनाः ऋषिमुनयः, विद्वांसः, गणितज्ञाः, खगोलविज्ञानिनः, भूगर्भशास्त्रज्ञाः, शिल्पकलाप्रवराः, सङ्गीत-नाट्य-कलाविशारदाः, तन्त्रज्ञाननिपुणाः, आयुर्वेदादिवैद्यशास्त्रधुरन्धराः, जल-वायु-प्रकृति-वातावरणज्ञाः, वास्तु-स्थापत्यकलाप्रवराः, जीवशास्त्रस्य, रसायनशास्त्रस्य, लोहशास्त्रस्य च विज्ञातारः, राजनीतिज्ञाः, अर्थशास्त्रज्ञाः, मनोविज्ञानिनः, तर्कनिष्णाताः, पाकशास्त्रविशिष्टाः, सौन्दर्यशास्त्रज्ञाः, नीतिशास्त्रनिपुणाः, विधिविधानपारङ्गताः, धर्मशास्त्रप्रवीणाः, सृष्टिविज्ञानज्ञाः आचार्याः भारतवर्षस्य यशः चतसृषु दिक्षु विस्तारितवन्तः।",
+          "meaning": "Our ancient sages, scholars, mathematicians, astronomers, geologists, master sculptors, experts in music and drama, technologists, pioneers in Ayurveda and medicine, environmentalists, master architects, biologists, chemists, metallurgists, political thinkers, economists, psychologists, logicians, culinary experts, aestheticians, ethicists, legal scholars, experts in moral codes, and cosmologists spread the fame of India in all four directions.",
+          "paragraphTranslation": "हमारे प्राचीन ऋषि-मुनि, विद्वान, गणितज्ञ, खगोलशास्त्री, भूगर्भ वैज्ञानिक, मूर्तिकार व शिल्पी, संगीत-नाट्य विशेषज्ञ, प्रौद्योगिकीविद, आयुर्वेदाचार्य, पर्यावरणविद्, वास्तुविद, जीवविज्ञानी, रसायनशास्त्री, धातुशास्त्री, राजनीतिज्ञ, अर्थशास्त्री, मनोवैज्ञानिक, तर्कशास्त्री, पाकशास्त्रज्ञ, सौन्दर्यशास्त्री, नीतिज्ञ, विधिवेत्ता, धर्मशास्त्री और सृष्टि-विज्ञानी आचार्यों ने भारतवर्ष की कीर्ति को चारों दिशाओं में फैलाया।",
+          "words": [
+            "अस्माकं",
+            "प्राचीनाः",
+            "ऋषिमुनयः",
+            "विद्वांसः",
+            "गणितज्ञाः",
+            "खगोलविज्ञानिनः",
+            "भूगर्भशास्त्रज्ञाः",
+            "रसायनशास्त्रस्य",
+            "लोहशास्त्रस्य",
+            "अर्थशास्त्रज्ञाः",
+            "भारतवर्षस्य",
+            "यशः",
+            "चतसृषु",
+            "दिक्षु",
+            "विस्तारितवन्तः"
+          ]
+        },
+        {
+          "sanskrit": "अधुना अपि संस्कृतग्रन्थान् आश्रित्य अनेके जनाः वैज्ञानिकाः शोधं कुर्वन्तः सन्ति। भारतीयदर्शन-शास्त्रेषु सृष्टेः उत्पत्तिविषये नैके विचाराः प्रतिपादिताः सन्ति। एतादृशाः प्रमुखाः विचाराः वैदिकवाङ्मये लौकिकवाङ्मये च वर्तन्ते। तेषु सृष्टिक्रमस्य विषये वयं पठामः।",
+          "meaning": "Even today, many scholars and scientists conduct research drawing upon ancient Sanskrit texts. In Indian philosophy, numerous concepts regarding the origin of creation are propounded across Vedic and classical literature. In this lesson, we study the sequence of this creation.",
+          "paragraphTranslation": "आज भी आधुनिक वैज्ञानिक संस्कृत ग्रंथों के आधार पर अनेक शोध कर रहे हैं। भारतीय दर्शन-शास्त्रों में सृष्टि की उत्पत्ति के विषय में अनेक विचार प्रतिपादित हैं, जो वैदिक तथा लौकिक साहित्य में उपलब्ध हैं। इस पाठ में हम उसी सृष्टिक्रम के विषय में पढ़ते हैं।",
+          "words": [
+            "अधुना",
+            "अपि",
+            "संस्कृतग्रन्थान्",
+            "आश्रित्य",
+            "वैज्ञानिकाः",
+            "शोधं",
+            "कुर्वन्तः",
+            "सन्ति",
+            "भारतीयदर्शन-शास्त्रेषु",
+            "सृष्टेः",
+            "उत्पत्तिविषये",
+            "वैदिकवाङ्मये",
+            "लौकिकवाङ्मये",
+            "सृष्टिक्रमस्य",
+            "पठामः"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "भागः २: माता-पुत्री-संवादः — सृष्टेः उत्पत्तिक्रमः (पृष्ठानि ९६–९८)",
+          "meaning": "Part 2: Mother & Daughter Dialogue on the Cosmic Evolution of Life (Pages 96–98)",
+          "paragraphTranslation": "भाग २: माता और पुत्री के मध्य सृष्टि की उत्पत्ति एवं विकास पर संवाद (पृष्ठ ९६–९८)",
+          "words": [
+            "भागः",
+            "२:",
+            "माता-पुत्री-संवादः",
+            "सृष्टेः",
+            "उत्पत्तिक्रमः",
+            "पृष्ठानि",
+            "९६–९८"
+          ]
+        },
+        {
+          "sanskrit": "पुत्री — अम्ब ! मम काचिद् जिज्ञासा अस्ति। वयं मनुष्याः प्राणिनः कीटाः च कथं भूलोके आगताः?",
+          "meaning": "Daughter: Mother! I have a question out of curiosity. How did we humans, animals, and insects come to this Earth?",
+          "paragraphTranslation": "पुत्री — माँ! मेरे मन में एक जिज्ञासा है। हम मनुष्य, प्राणी और कीड़े-मकोड़े इस भूलोक पर कैसे आए? (अम्ब = Mother | मम = My | काचिद् जिज्ञासा = Some curiosity | वयं मनुष्याः = We humans | प्राणिनः कीटाः च = Animals and insects | कथं = How | भूलोके = On earth | आगताः = Came)",
+          "words": [
+            "पुत्री",
             "अम्ब",
-            "!",
             "मम",
             "काचिद्",
             "जिज्ञासा",
@@ -13928,73 +14011,69 @@
             "च",
             "कथं",
             "भूलोके",
-            "आगताः?"
+            "आगताः"
           ]
         },
         {
-          "sanskrit": "माता: वत्से ! तदर्थं भवती प्रथमं पृथिव्याः उत्पत्तिक्रमं जानीयात्।",
-          "meaning": "Mother: Dear child! For that you must first understand the cosmic sequence of earth's creation.",
-          "paragraphTranslation": "माता - बेटी! उसके लिए तुम्हें सबसे पहले पृथ्वी की उत्पत्ति का क्रम जानना चाहिए।",
+          "sanskrit": "माता — वत्से ! तदर्थं भवती प्रथमं पृथिव्याः उत्पत्तिक्रमं जानीयात्।",
+          "meaning": "Mother: Dear daughter! For that, you should first understand the sequential order of the Earth's creation.",
+          "paragraphTranslation": "माता — बेटी! उसके लिए तुम्हें सबसे पहले पृथ्वी की उत्पत्ति का क्रम समझना चाहिए। (वत्से = Dear child | तदर्थं = For that | भवती = You | प्रथमं = First | पृथिव्याः = Of earth | उत्पत्तिक्रमं = Sequence of origin | जानीयात् = Should know)",
           "words": [
-            "माता:",
+            "माता",
             "वत्से",
-            "!",
             "तदर्थं",
             "भवती",
             "प्रथमं",
             "पृथिव्याः",
             "उत्पत्तिक्रमं",
-            "जानीयात्।"
+            "जानीयात्"
           ]
         },
         {
-          "sanskrit": "पुत्री: अहो ! रोचकं स्यात् कृपया श्रावयतु।",
-          "meaning": "Daughter: Oh! That must be fascinating, please tell me!",
-          "paragraphTranslation": "पुत्री - अरे! यह तो बहुत दिलचस्प होगा, कृपया सुनाइए।",
+          "sanskrit": "पुत्री — अहो ! रोचकं स्यात् कृपया श्रावयतु।",
+          "meaning": "Daughter: Oh! That sounds very interesting, please tell me.",
+          "paragraphTranslation": "पुत्री — अरे वाह! यह तो बहुत रोचक होगा, कृपया मुझे सुनाइए। (रोचकं स्यात् = Would be interesting | कृपया श्रावयतु = Please narrate)",
           "words": [
-            "पुत्री:",
+            "पुत्री",
             "अहो",
-            "!",
             "रोचकं",
             "स्यात्",
             "कृपया",
-            "श्रावयतु।"
+            "श्रावयतु"
           ]
         },
         {
-          "sanskrit": "माता: अस्तु ! प्रथमं ब्रह्मणः आकाशस्य उत्पत्तिः अभवत्।",
-          "meaning": "Mother: Very well! First from Brahma (the primordial cosmic conscious energy), Akasha (space/ether) emerged.",
-          "paragraphTranslation": "माता - ठीक है! सबसे पहले ब्रह्म (परम चेतना) से आकाश उत्पन्न हुआ।",
+          "sanskrit": "माता — अस्तु ! प्रथमं ब्रह्मणः आकाशस्य उत्पत्तिः अभवत्।",
+          "meaning": "Mother: Alright! In the beginning, Space (Akasha) originated from the Supreme Brahma (Cosmic Consciousness).",
+          "paragraphTranslation": "माता — अच्छा! सबसे पहले 'ब्रह्म' से आकाश (अंतरिक्ष) की उत्पत्ति हुई। (ब्रह्मणः = From Brahma | आकाशस्य = Of space | उत्पत्तिः अभवत् = Originated)",
           "words": [
-            "माता:",
+            "माता",
             "अस्तु",
-            "!",
             "प्रथमं",
             "ब्रह्मणः",
             "आकाशस्य",
             "उत्पत्तिः",
-            "अभवत्।"
+            "अभवत्"
           ]
         },
         {
-          "sanskrit": "पुत्री: ब्रह्म इत्युक्ते किम् अम्ब ?",
-          "meaning": "Daughter: Mother, what does 'Brahma' mean?",
-          "paragraphTranslation": "पुत्री - माँ, ब्रह्म कहने का क्या मतलब है?",
+          "sanskrit": "पुत्री — ब्रह्म इत्युक्ते किम् अम्ब?",
+          "meaning": "Daughter: What does Brahma mean, Mother?",
+          "paragraphTranslation": "पुत्री — माँ, ब्रह्म का क्या मतलब होता है? (ब्रह्म इत्युक्ते = What is meant by Brahma | किम् अम्ब = What, mother)",
           "words": [
-            "पुत्री:",
+            "पुत्री",
             "ब्रह्म",
             "इत्युक्ते",
             "किम्",
-            "अम्ब",
-            "?"
+            "अम्ब"
           ]
         },
         {
-          "sanskrit": "माता: ब्रह्म इत्युक्ते चेतना-शक्तिः, ऊर्जा वा या सर्वत्र व्याप्ता अस्ति। यथा – आकाशः अणुः च सर्वत्र व्याप्तः अस्ति।",
-          "meaning": "Mother: Brahma means the omnipresent conscious power or energy that pervades everything, just as space and atomic particles permeate all reality.",
-          "paragraphTranslation": "माता - ब्रह्म का अर्थ है वह चेतना-शक्ति या ऊर्जा जो सब जगह फैली हुई है, जैसे आकाश और परमाणु सर्वत्र व्याप्त हैं।",
+          "sanskrit": "माता — ब्रह्म इत्युक्ते चेतना-शक्तिः, ऊर्जा वा या सर्वत्र व्याप्ता अस्ति। यथा – आकाशः अणुः च सर्वत्र व्याप्तः अस्ति।",
+          "meaning": "Mother: Brahma means that omnipresent conscious power or energy which pervades everything, just like how space and atoms exist everywhere.",
+          "paragraphTranslation": "माता — ब्रह्म का अर्थ है वह परम चेतना शक्ति या ऊर्जा जो सर्वत्र व्याप्त है, जैसे कि आकाश और परमाणु प्रत्येक स्थान में व्याप्त हैं। (चेतना-शक्तिः = Conscious power | ऊर्जा वा = Or energy | या सर्वत्र व्याप्ता अस्ति = Which is omnipresent | यथा = Just as | आकाशः अणुः च = Space and atom | सर्वत्र व्याप्तः अस्ति = Pervades everywhere)",
           "words": [
-            "माता:",
+            "माता",
             "ब्रह्म",
             "इत्युक्ते",
             "चेतना-शक्तिः",
@@ -14007,28 +14086,163 @@
             "यथा",
             "आकाशः",
             "अणुः",
-            "च",
-            "सर्वत्र",
-            "व्याप्तः",
-            "अस्ति"
+            "च"
           ]
         },
         {
-          "sanskrit": "माता: आकाशात् वायुः उत्पन्नः। वायोः अग्निः उत्पन्नः। अग्नेः जलस्य उत्पत्तिः अभवत्। जलात् पृथिव्याः उत्पत्तिः अभवत्।",
-          "meaning": "Mother: From space, Vayu (air/atmosphere) arose. From air, Agni (fire/energy) arose. From fire, Jala (water) arose. From water, Prithvi (earth/matter) formed.",
-          "paragraphTranslation": "माता - आकाश से वायु, वायु से अग्नि, अग्नि से जल, और जल से पृथ्वी (धरती) की उत्पत्ति हुई।",
+          "sanskrit": "पुत्री — अनन्तरम्?",
+          "meaning": "Daughter: What happened after that?",
+          "paragraphTranslation": "पुत्री — उसके बाद?",
           "words": [
-            "माता:",
-            "आकाशात्",
+            "पुत्री",
+            "अनन्तरम्"
+          ]
+        },
+        {
+          "sanskrit": "माता — आकाशाद् वायुः उत्पन्नः।",
+          "meaning": "Mother: From Space, Air originated.",
+          "paragraphTranslation": "माता — आकाश से वायु (हवा) उत्पन्न हुई।",
+          "words": [
+            "माता",
+            "आकाशाद्",
             "वायुः",
-            "उत्पन्नः",
+            "उत्पन्नः"
+          ]
+        },
+        {
+          "sanskrit": "पुत्री — अम्ब ! पृथिवी कदा उत्पन्ना?",
+          "meaning": "Daughter: Mother! When was the Earth created?",
+          "paragraphTranslation": "पुत्री — माँ! पृथ्वी कब बनी?",
+          "words": [
+            "पुत्री",
+            "अम्ब",
+            "पृथिवी",
+            "कदा",
+            "उत्पन्ना"
+          ]
+        },
+        {
+          "sanskrit": "माता — शृणोतु, वदामि। वायोः अग्निः उत्पन्नः।",
+          "meaning": "Mother: Listen, I will tell you. From Air, Fire (energy) originated.",
+          "paragraphTranslation": "माता — सुनो, बताती हूँ। वायु से अग्नि पैदा हुई।",
+          "words": [
+            "माता",
+            "शृणोतु",
+            "वदामि",
             "वायोः",
             "अग्निः",
-            "उत्पन्नः",
+            "उत्पन्नः"
+          ]
+        },
+        {
+          "sanskrit": "पुत्री — एतत् सर्वं किमर्थम् अम्ब? साक्षात् मनुष्याणाम् उत्पत्तिं वदतु।",
+          "meaning": "Daughter: Why all this detail, Mother? Please directly tell me how humans originated.",
+          "paragraphTranslation": "पुत्री — माँ, यह सब किसलिए? आप सीधे मनुष्यों के पैदा होने की बात बताइए न!",
+          "words": [
+            "पुत्री",
+            "एतत्",
+            "सर्वं",
+            "किमर्थम्",
+            "अम्ब",
+            "साक्षात्",
+            "मनुष्याणाम्",
+            "उत्पत्तिं",
+            "वदतु"
+          ]
+        },
+        {
+          "sanskrit": "माता — अयि वत्से ! एतत् सर्वं नास्ति चेत् कथं मनुष्याः प्राणिनः वा जीवन्ति?",
+          "meaning": "Mother: Oh dear! If these fundamental elements do not exist, how can humans or animals survive?",
+          "paragraphTranslation": "माता — अरे मेरी बच्ची! अगर यह सब नहीं होगा तो मनुष्य और प्राणी भला जीवित कैसे रहेंगे?",
+          "words": [
+            "माता",
+            "अयि",
+            "वत्से",
+            "एतत्",
+            "सर्वं",
+            "नास्ति",
+            "चेत्",
+            "कथं",
+            "मनुष्याः",
+            "प्राणिनः",
+            "वा",
+            "जीवन्ति"
+          ]
+        },
+        {
+          "sanskrit": "पुत्री — जलम् आहारः वायुः च अस्ति चेत् पर्याप्तं खलु!",
+          "meaning": "Daughter: If water, food, and air are available, that's completely enough for living!",
+          "paragraphTranslation": "पुत्री — पानी, भोजन और हवा हो तो जीवन के लिए पर्याप्त ही है न!",
+          "words": [
+            "पुत्री",
+            "जलम्",
+            "आहारः",
+            "वायुः",
+            "च",
+            "अस्ति",
+            "चेत्",
+            "पर्याप्तं",
+            "खलु"
+          ]
+        },
+        {
+          "sanskrit": "माता — आम्, अतः तेषामपि उत्पत्तिं जानातु।",
+          "meaning": "Mother: Yes, that's exactly why you need to know how they originated as well.",
+          "paragraphTranslation": "माता — हाँ, इसीलिए तो उनके बनने की प्रक्रिया को भी समझो।",
+          "words": [
+            "माता",
+            "आम्",
+            "अतः",
+            "तेषामपि",
+            "उत्पत्तिं",
+            "जानातु"
+          ]
+        },
+        {
+          "sanskrit": "पुत्री — तर्हि अग्नेः कस्य उत्पत्तिः अभवत्?",
+          "meaning": "Daughter: Then what originated from Fire?",
+          "paragraphTranslation": "पुत्री — तो फिर अग्नि से किसकी उत्पत्ति हुई?",
+          "words": [
+            "पुत्री",
+            "तर्हि",
+            "अग्नेः",
+            "कस्य",
+            "उत्पत्तिः",
+            "अभवत्"
+          ]
+        },
+        {
+          "sanskrit": "माता — अग्नेः जलस्य उत्पत्तिः अभवत्।",
+          "meaning": "Mother: From Fire, Water originated.",
+          "paragraphTranslation": "माता — अग्नि से जल (पानी) उत्पन्न हुआ।",
+          "words": [
+            "माता",
             "अग्नेः",
             "जलस्य",
             "उत्पत्तिः",
-            "अभवत्",
+            "अभवत्"
+          ]
+        },
+        {
+          "sanskrit": "पुत्री — जलात् मनुष्यस्य उत्पत्तिः खलु?",
+          "meaning": "Daughter: And from Water, humans were born, right?",
+          "paragraphTranslation": "पुत्री — जल से तो सीधे मनुष्य की उत्पत्ति हुई होगी न?",
+          "words": [
+            "पुत्री",
+            "जलात्",
+            "मनुष्यस्य",
+            "उत्पत्तिः",
+            "खलु"
+          ]
+        },
+        {
+          "sanskrit": "माता — नैव वत्से ! जलात् पृथिव्याः उत्पत्तिः अभवत्।",
+          "meaning": "Mother: Not at all, dear! From Water, the Earth originated.",
+          "paragraphTranslation": "माता — नहीं बेटी! जल से पृथ्वी (मिट्टी/धरा) का निर्माण हुआ।",
+          "words": [
+            "माता",
+            "नैव",
+            "वत्से",
             "जलात्",
             "पृथिव्याः",
             "उत्पत्तिः",
@@ -14036,18 +14250,56 @@
           ]
         },
         {
-          "sanskrit": "माता: पृथिव्याः ओषधीनां सस्यानां वृक्षादीनां च उत्पत्तिः अभवत्। सस्येभ्यः आहारस्य उत्पत्तिः अभवत्।",
-          "meaning": "Mother: From the fertile earth, herbs, crops, and trees blossomed. From agricultural crops, nutritious food (Anna) emerged.",
-          "paragraphTranslation": "माता - पृथ्वी से औषधियों, फसलों और पेड़-पौधों की उत्पत्ति हुई। फसलों और वनस्पतियों से आहार (अन्न) उत्पन्न हुआ।",
+          "sanskrit": "पुत्री — अहो ! सत्यम्, अहं विस्मृतवती एव। पृथिव्याः तु प्राणिनः मनुष्याः च उत्पन्नाः।",
+          "meaning": "Daughter: Oh, true! I completely forgot. Then from the Earth, animals and humans emerged.",
+          "paragraphTranslation": "पुत्री — अरे हाँ सचमुच, मैं तो भूल ही गई थी। फिर पृथ्वी से सारे जीव और इंसान पैदा हुए।",
           "words": [
-            "माता:",
+            "पुत्री",
+            "अहो",
+            "सत्यम्",
+            "अहं",
+            "विस्मृतवती",
+            "एव",
+            "पृथिव्याः",
+            "तु",
+            "प्राणिनः",
+            "मनुष्याः",
+            "च",
+            "उत्पन्नाः"
+          ]
+        },
+        {
+          "sanskrit": "माता — नहि नहि, पृथिव्याः ओषधीनां सस्यानां वृक्षादीनां च उत्पत्तिः अभवत्।",
+          "meaning": "Mother: No, no. From the Earth came herbs, vegetation, crops, and trees.",
+          "paragraphTranslation": "माता — नहीं-नहीं, पहले पृथ्वी से औषधियों (जड़ी-बूटियों), फसलों और पेड़-पौधों की उत्पत्ति हुई।",
+          "words": [
+            "माता",
+            "नहि",
             "पृथिव्याः",
             "ओषधीनां",
             "सस्यानां",
             "वृक्षादीनां",
             "च",
             "उत्पत्तिः",
-            "अभवत्",
+            "अभवत्"
+          ]
+        },
+        {
+          "sanskrit": "पुत्री — अहो अद्भुतम्!",
+          "meaning": "Daughter: Oh, truly amazing!",
+          "paragraphTranslation": "पुत्री — अरे, यह तो बहुत अद्भुत है!",
+          "words": [
+            "पुत्री",
+            "अहो",
+            "अद्भुतम्"
+          ]
+        },
+        {
+          "sanskrit": "माता — सस्येभ्यः आहारस्य उत्पत्तिः अभवत्।",
+          "meaning": "Mother: From vegetation and crops, food (grains) originated.",
+          "paragraphTranslation": "माता — फसलों और वनस्पतियों से अन्न (आहार) तैयार हुआ।",
+          "words": [
+            "माता",
             "सस्येभ्यः",
             "आहारस्य",
             "उत्पत्तिः",
@@ -14055,30 +14307,35 @@
           ]
         },
         {
-          "sanskrit": "पुत्री: आम्, आहारात् कीटाः, प्राणिनः, मनुष्याः उत्पन्नाः खलु अम्ब ?",
-          "meaning": "Daughter: Yes! And from that sustenance of food, all insects, creatures, and human beings are born and nourished, right Mother?",
-          "paragraphTranslation": "पुत्री - हाँ, अन्न (भोजन) से ही समस्त कीड़े, पशु-पक्षी और मनुष्य पैदा हुए और पलते हैं ना माँ?",
+          "sanskrit": "पुत्री — आम्, आहारस्य उत्पत्तेः परं भूमौ सर्वमपि आगतम् एव। आहारात् कीटाः, प्राणिनः, मनुष्याः उत्पन्नाः खलु अम्ब?",
+          "meaning": "Daughter: Yes! Once food came into existence, everything else followed on Earth. From food, insects, animals, and humans originated, right Mother?",
+          "paragraphTranslation": "पुत्री — हाँ! भोजन की उत्पत्ति के बाद पृथ्वी पर सब कुछ आ गया। अन्न से ही कीड़े, जानवर और मनुष्य उत्पन्न हुए, सही कहा न माँ?",
           "words": [
-            "पुत्री:",
+            "पुत्री",
             "आम्",
+            "आहारस्य",
+            "उत्पत्तेः",
+            "परं",
+            "भूमौ",
+            "सर्वमपि",
+            "आगतम्",
+            "एव",
             "आहारात्",
             "कीटाः",
             "प्राणिनः",
             "मनुष्याः",
             "उत्पन्नाः",
             "खलु",
-            "अम्ब",
-            "?"
+            "अम्ब"
           ]
         },
         {
-          "sanskrit": "माता: अहो ! मम पुत्री बहु चतुरा अस्ति। सत्यम् उक्तवती भवती।",
-          "meaning": "Mother: Splendid! My daughter is truly clever. You spoke the exact truth.",
-          "paragraphTranslation": "माता - अरे! मेरी बेटी बहुत बुद्धिमान है। तुमने बिल्कुल सच कहा।",
+          "sanskrit": "माता — अहो ! मम पुत्री बहु चतुरा अस्ति। सत्यम् उक्तवती भवती।",
+          "meaning": "Mother: Oh! My daughter is very clever. You have spoken the truth.",
+          "paragraphTranslation": "माता — वाह! मेरी बेटी बहुत बुद्धिमान है। तुमने बिल्कुल सही बात कही। (बहु चतुरा = Very clever | सत्यम् उक्तवती भवती = You said the truth)",
           "words": [
-            "माता:",
+            "माता",
             "अहो",
-            "!",
             "मम",
             "पुत्री",
             "बहु",
@@ -14086,49 +14343,58 @@
             "अस्ति",
             "सत्यम्",
             "उक्तवती",
-            "भवती।"
+            "भवती"
           ]
         },
         {
-          "sanskrit": "माता: श्रीमद्भगवद्गीतायाम् अपि भगवान् श्रीकृष्णः उक्तवान् —\n'अन्नाद् भवन्ति भूतानि पर्जन्यादन्नसम्भवः ।\nयज्ञाद् भवति पर्जन्यो यज्ञः कर्मसमुद्भवः ॥'",
-          "meaning": "Mother: In the Shrimad Bhagavad Gita, Lord Krishna similarly declares: 'From food all living beings arise; food is produced by rain; rain is generated by yajna (harmonious ecological sacrifice); and yajna is born of dutiful right action.'",
-          "paragraphTranslation": "माता - श्रीमद्भगवद्गीता में भी भगवान श्रीकृष्ण ने कहा है— 'अन्न से सभी प्राणी उत्पन्न होते हैं, अन्न की उत्पत्ति वर्षा से होती है, वर्षा यज्ञ से होती है और यज्ञ सत्कर्मों से उत्पन्न होता है।'",
+          "sanskrit": "पुत्री — अम्ब ! भवती एतत् सर्वं कथं जानाति?",
+          "meaning": "Daughter: Mother! How do you know all of this?",
+          "paragraphTranslation": "पुत्री — माँ! आप यह सब कैसे जानती हैं?",
           "words": [
-            "अन्नाद्",
-            "भवन्ति",
-            "भूतानि",
-            "पर्जन्यादन्नसम्भवः",
-            "यज्ञाद्",
-            "भवति",
-            "पर्जन्यो",
-            "यज्ञः",
-            "कर्मसमुद्भवः"
-          ]
-        },
-        {
-          "sanskrit": "पुत्री: अहो ! अहम् अपि उपनिषदं गीतां च पठामि अम्ब !",
-          "meaning": "Daughter: Oh marvelous! I too shall study the Upanishads and the Gita, Mother!",
-          "paragraphTranslation": "पुत्री - वाह माँ! मैं भी उपनिषद और गीता पढ़ूँगी!",
-          "words": [
-            "पुत्री:",
-            "अहो",
-            "!",
-            "अहम्",
-            "अपि",
-            "उपनिषदं",
-            "गीतां",
-            "च",
-            "पठामि",
+            "पुत्री",
             "अम्ब",
-            "!"
+            "भवती",
+            "एतत्",
+            "सर्वं",
+            "कथं",
+            "जानाति"
           ]
         },
         {
-          "sanskrit": "माता: अवश्यम् उपनिषद्-ग्रन्थाः पठनीयाः। यतः अस्माकं भारतस्य मौलिकं ज्ञानं तेषु निहितम् अस्ति।",
-          "meaning": "Mother: Certainly, the Upanishads must be studied, for the foundational wisdom of our Bharat is enshrined within them.",
-          "paragraphTranslation": "माता - उपनिषद् अवश्य पढ़ने चाहिए क्योंकि भारत का मूल ज्ञान उन्हीं में समाया हुआ है।",
+          "sanskrit": "माता — अहम् आधुनिकं रसायनशास्त्रम् उपनिषद्-ग्रन्थान् च पठितवती।",
+          "meaning": "Mother: I have studied modern Chemistry as well as our ancient Upanishads.",
+          "paragraphTranslation": "माता — मैंने आधुनिक रसायनशास्त्र (Chemistry) और हमारे प्राचीन उपनिषद् दोनों पढ़े हैं। (आधुनिकं रसायनशास्त्रम् = Modern chemistry | उपनिषद्-ग्रन्थान् = Upanishadic texts | पठितवती = Have read)",
           "words": [
-            "माता:",
+            "माता",
+            "अहम्",
+            "आधुनिकं",
+            "रसायनशास्त्रम्",
+            "उपनिषद्-ग्रन्थान्",
+            "च",
+            "पठितवती"
+          ]
+        },
+        {
+          "sanskrit": "पुत्री — अहो ! अहमपि उपनिषदं पठामि अम्ब !",
+          "meaning": "Daughter: Oh! I want to read the Upanishads too, Mother!",
+          "paragraphTranslation": "पुत्री — अरे वाह! माँ, मैं भी उपनिषद् पढ़ना चाहती हूँ!",
+          "words": [
+            "पुत्री",
+            "अहो",
+            "अहमपि",
+            "उपनिषदं",
+            "पठामि",
+            "अम्ब"
+          ]
+        },
+        {
+          "sanskrit": "माता — सत्यं वत्से ! अवश्यम् उपनिषद्-ग्रन्थाः पठनीयाः। यतः अस्माकं भारतस्य मौलिकं ज्ञानं तेषु निहितम् अस्ति। तेन अस्माकं जीवनस्य अपि उत्कर्षः भवति।",
+          "meaning": "Mother: Splendid, my child! Upanishadic texts must definitely be read because the foundational knowledge of our India is preserved in them. It leads to the true upliftment of our life.",
+          "paragraphTranslation": "माता — बिल्कुल सही निर्णय है बेटी! उपनिषदों को ज़रूर पढ़ना चाहिए क्योंकि भारत का मूल वास्तविक ज्ञान उन्हीं के अंदर छुपा है। इससे हमारे जीवन की भी उन्नति होती है। (अवश्यम् = Definitely | पठनीयाः = Must be read | मौलिकं ज्ञानं = Foundational knowledge | निहितम् अस्ति = Is preserved | उत्कर्षः भवति = Leads to elevation/upliftment)",
+          "words": [
+            "माता",
+            "सत्यं",
+            "वत्से",
             "अवश्यम्",
             "उपनिषद्-ग्रन्थाः",
             "पठनीयाः",
@@ -14139,90 +14405,250 @@
             "ज्ञानं",
             "तेषु",
             "निहितम्",
-            "अस्ति"
+            "अस्ति",
+            "तेन",
+            "जीवनस्य",
+            "अपि",
+            "उत्कर्षः",
+            "भवति"
           ]
         },
         {
-          "sanskrit": "२. शब्दार्थाः (Vocabulary Glossary)",
-          "meaning": "Key Vocabulary Glossary",
-          "paragraphTranslation": "कठिन शब्दों के अर्थ",
+          "kind": "glossary-header",
+          "sanskrit": "भाग २: वयं शब्दार्थान् जानीमः (शब्दार्थाः — पृष्ठम् ९८)",
+          "meaning": "Part 2: We Learn the Vocabulary (Page 98)",
+          "paragraphTranslation": "भाग २: हम शब्दार्थ सीखते हैं — पृष्ठ ९८",
           "words": [
+            "भाग",
+            "२:",
+            "वयं",
+            "शब्दार्थान्",
+            "जानीमः",
             "शब्दार्थाः",
-            "कठिन",
-            "शब्दों",
-            "के",
-            "अर्थ"
-          ],
-          "kind": "glossary-header"
+            "पृष्ठम्",
+            "९८"
+          ]
         },
         {
+          "kind": "glossary",
           "sanskrit": "भूतानि",
-          "meaning": "All living beings / creatures",
-          "sanskrit_gloss": "समस्तप्राणिनः",
-          "hindi_gloss": "समस्त जीव / प्राणी",
+          "sanskrit_gloss": "प्राणिनः",
+          "hindi_gloss": "समस्त प्राणिगण",
+          "meaning": "All living beings",
+          "paragraphTranslation": "समस्त प्राणिगण (प्राणिनः)",
           "words": [
-            "भूतानि",
-            "समस्तप्राणिनः"
-          ],
-          "kind": "glossary"
+            "भूतानि"
+          ]
         },
         {
-          "sanskrit": "अम्ब",
-          "meaning": "O Mother! (Vocative)",
-          "sanskrit_gloss": "हे मातः!",
-          "hindi_gloss": "हे माँ!",
+          "kind": "glossary",
+          "sanskrit": "अम्ब !",
+          "sanskrit_gloss": "भोः मातः!",
+          "hindi_gloss": "माँ!",
+          "meaning": "O Mother!",
+          "paragraphTranslation": "माँ! (भोः मातः!)",
           "words": [
-            "अम्ब",
-            "हे",
-            "मातः"
-          ],
-          "kind": "glossary"
+            "अम्ब"
+          ]
         },
         {
-          "sanskrit": "पर्जन्यः",
-          "meaning": "Rain cloud / Rainfall",
-          "sanskrit_gloss": "मेघः / वृष्टिः",
-          "hindi_gloss": "वर्षा / बादल",
+          "kind": "glossary",
+          "sanskrit": "ब्रह्म",
+          "sanskrit_gloss": "समष्टि-चिति-शक्तिः / सर्वव्याप्तः परमेश्वरः",
+          "hindi_gloss": "सर्वत्र व्याप्त चेतन शक्ति व ऊर्जा / सृष्टिकर्ता",
+          "meaning": "Omnipresent Conscious Power & Cosmic Energy",
+          "paragraphTranslation": "सर्वत्र व्याप्त चेतन शक्ति व ऊर्जा (समष्टि-चिति-शक्तिः)",
           "words": [
-            "पर्जन्यः",
-            "मेघः",
-            "वृष्टिः"
-          ],
-          "kind": "glossary"
+            "ब्रह्म"
+          ]
         },
         {
-          "sanskrit": "सस्येभ्यः",
-          "meaning": "From the harvested crops",
-          "sanskrit_gloss": "धान्यादिभ्यः",
-          "hindi_gloss": "फसलों से",
+          "kind": "glossary",
+          "sanskrit": "ब्रह्मणः",
+          "sanskrit_gloss": "सर्वव्याप्त-परमेश्वरात्",
+          "hindi_gloss": "सृष्टिकर्ता से",
+          "meaning": "From Universal Power & Creator",
+          "paragraphTranslation": "सृष्टिकर्ता से (सर्वव्याप्त-परमेश्वरात्)",
           "words": [
-            "सस्येभ्यः",
-            "धान्यादिभ्यः"
-          ],
-          "kind": "glossary"
+            "ब्रह्मणः"
+          ]
         },
         {
-          "sanskrit": "३. वयम् अभ्यासं कुर्मः (अभ्यास-प्रश्नोत्तराणि)",
-          "meaning": "Exercises with Solved Answers",
-          "paragraphTranslation": "अभ्यास कार्य",
+          "kind": "glossary",
+          "sanskrit": "काचित्",
+          "sanskrit_gloss": "का अपि",
+          "hindi_gloss": "कोई",
+          "meaning": "Some one / A certain",
+          "paragraphTranslation": "कोई (का अपि)",
           "words": [
+            "काचित्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "जिज्ञासा",
+          "sanskrit_gloss": "ज्ञातुम् इच्छा",
+          "hindi_gloss": "जानने की इच्छा",
+          "meaning": "Curiosity / Desire to know",
+          "paragraphTranslation": "जानने की इच्छा (ज्ञातुम् इच्छा)",
+          "words": [
+            "जिज्ञासा"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "तदर्थम्",
+          "sanskrit_gloss": "अतः",
+          "hindi_gloss": "इसलिए",
+          "meaning": "For that matter / Therefore",
+          "paragraphTranslation": "इसलिए (अतः)",
+          "words": [
+            "तदर्थम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "उत्पत्तिक्रमम्",
+          "sanskrit_gloss": "उत्पत्तेः क्रमम्",
+          "hindi_gloss": "उत्पत्ति का क्रम",
+          "meaning": "Order/sequence of origin",
+          "paragraphTranslation": "उत्पत्ति का क्रम (उत्पत्तेः क्रमम्)",
+          "words": [
+            "उत्पत्तिक्रमम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "जानीयात्",
+          "sanskrit_gloss": "अवगच्छेत्",
+          "hindi_gloss": "जानना चाहिए",
+          "meaning": "Should know / Should understand",
+          "paragraphTranslation": "जानना चाहिए (अवगच्छेत्)",
+          "words": [
+            "जानीयात्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "वत्से !",
+          "sanskrit_gloss": "हे पुत्रि !",
+          "hindi_gloss": "बेटी!",
+          "meaning": "Dear daughter!",
+          "paragraphTranslation": "बेटी! (हे पुत्रि !)",
+          "words": [
+            "वत्से"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "अग्नेः",
+          "sanskrit_gloss": "वह्नेः",
+          "hindi_gloss": "आग से",
+          "meaning": "From Fire",
+          "paragraphTranslation": "आग से (वह्नेः)",
+          "words": [
+            "अग्नेः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "विस्मृतवती",
+          "sanskrit_gloss": "न स्मृतवती",
+          "hindi_gloss": "भूल गयी",
+          "meaning": "Forgot",
+          "paragraphTranslation": "भूल गयी (न स्मृतवती)",
+          "words": [
+            "विस्मृतवती"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "ओषधीनाम्",
+          "sanskrit_gloss": "औषधोपयोगि-पादपानाम्",
+          "hindi_gloss": "जड़ी-बूटियों का",
+          "meaning": "Of herbs and medicinal plants",
+          "paragraphTranslation": "जड़ी-बूटियों का (औषधोपयोगि-पादपानाम्)",
+          "words": [
+            "ओषधीनाम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "उक्तवती",
+          "sanskrit_gloss": "अवदत्",
+          "hindi_gloss": "बोली / कहा",
+          "meaning": "She said / Spoke",
+          "paragraphTranslation": "बोली (अवदत्)",
+          "words": [
+            "उक्तवती"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "पठनीयम्",
+          "sanskrit_gloss": "पठेत्",
+          "hindi_gloss": "पढ़ना चाहिए",
+          "meaning": "Should be read",
+          "paragraphTranslation": "पढ़ना चाहिए (पठेत्)",
+          "words": [
+            "पठनीयम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "रसायनशास्त्रम्",
+          "sanskrit_gloss": "रसशास्त्रम्",
+          "hindi_gloss": "रसायन विज्ञान",
+          "meaning": "Chemistry",
+          "paragraphTranslation": "रसायनशास्त्र (रसशास्त्रम्)",
+          "words": [
+            "रसायनशास्त्रम्"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "भाग ३: वयम् अभ्यासं कुर्मः (अभ्यास कार्यम् — पृष्ठानि ९९–१०३)",
+          "meaning": "Part 3: Textbook Exercises & Solved Answer Key (Pages 99–103)",
+          "paragraphTranslation": "भाग ३: अभ्यास कार्य एवं सम्पूर्ण समाधान (पृष्ठ ९९–१०३)",
+          "words": [
+            "भाग",
+            "३:",
             "वयम्",
             "अभ्यासं",
-            "कुर्मः"
-          ],
-          "kind": "exercise-header"
+            "कुर्मः",
+            "अभ्यास",
+            "कार्यम्",
+            "पृष्ठानि",
+            "९९–१०३"
+          ]
         },
         {
-          "sanskrit": "(क) पुत्र्याः जिज्ञासा का ?",
-          "meaning": "What was the daughter's curious question? Answer: How did humans and creatures arrive on earth?",
-          "answer_sanskrit": "वयं मनुष्याः प्राणिनः कीटाः च कथं भूलोके आगताः इति।",
+          "kind": "exercise-header",
+          "sanskrit": "१. अधः प्रदत्तानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखन्तु — (पृष्ठम् ९९)",
+          "meaning": "Exercise 1: Answer the following questions in complete sentences (Page 99)",
+          "paragraphTranslation": "१. नीचे दिए गए प्रश्नों के उत्तर पूर्ण वाक्य में लिखिए:",
+          "words": [
+            "१.",
+            "अधः",
+            "प्रदत्तानां",
+            "प्रश्नानां",
+            "पूर्णवाक्येन",
+            "उत्तरं",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "९९"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) पुत्र्याः जिज्ञासा का?\nउत्तरम्: पुत्र्याः जिज्ञासा अस्ति यत् वयं मनुष्याः प्राणिनः कीटाः च कथं भूलोके आगताः इति।",
+          "meaning": "Q: What is the daughter's curiosity? -> Answer: The daughter's curiosity is about how humans, animals, and insects came onto this Earth.",
+          "paragraphTranslation": "(क) पुत्री की क्या जिज्ञासा है? -> उत्तर: पुत्र्याः जिज्ञासा अस्ति यत् वयं मनुष्याः प्राणिनः कीटाः च कथं भूलोके आगताः इति। (पुत्री की जानने की इच्छा यह है कि हम मनुष्य, प्राणी और कीड़े-मकोड़े इस पृथ्वी पर कैसे आए?)",
           "words": [
             "पुत्र्याः",
             "जिज्ञासा",
             "का",
-            "?",
-            "उत्तरः",
-            "वयं",
+            "उत्तरम्",
             "मनुष्याः",
             "प्राणिनः",
             "कीटाः",
@@ -14230,53 +14656,395 @@
             "कथं",
             "भूलोके",
             "आगताः"
-          ],
-          "kind": "exercise-qa"
+          ]
         },
         {
-          "sanskrit": "(ख) ब्रह्मणः कस्य उत्पत्तिः अभवत् ?",
-          "meaning": "What emerged from Brahma? Answer: Space (आकाशस्य).",
-          "answer_sanskrit": "आकाशस्य",
+          "kind": "exercise-qa",
+          "sanskrit": "(ख) कस्मात् आकाशस्य उत्पत्तिः अभवत्?\nउत्तरम्: ब्रह्मणः आकाशस्य उत्पत्तिः अभवत्।",
+          "meaning": "Q: From what did Space originate? -> Answer: Space (Akasha) originated from Brahma.",
+          "paragraphTranslation": "(ख) आकाश की उत्पत्ति किससे हुई? -> उत्तर: ब्रह्मणः आकाशस्य उत्पत्तिः अभवत्। (परब्रह्म परमेश्वर से आकाश की उत्पत्ति हुई।)",
           "words": [
-            "ब्रह्मणः",
+            "कस्मात्",
+            "आकाशस्य",
+            "उत्पत्तिः",
+            "अभवत्",
+            "उत्तरम्",
+            "ब्रह्मणः"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ग) अग्नेः कस्य उत्पत्तिः अभवत्?\nउत्तरम्: अग्नेः जलस्य उत्पत्तिः अभवत्।",
+          "meaning": "Q: What originated from Fire? -> Answer: From Fire, Water originated.",
+          "paragraphTranslation": "(ग) अग्नि से किसकी उत्पत्ति हुई? -> उत्तर: अग्नेः जलस्य उत्पत्तिः अभवत्। (अग्नि से जल की उत्पत्ति हुई।)",
+          "words": [
+            "अग्नेः",
             "कस्य",
             "उत्पत्तिः",
             "अभवत्",
-            "?",
-            "उत्तरः",
-            "आकाशस्य"
-          ],
-          "kind": "exercise-qa"
+            "उत्तरम्",
+            "जलस्य"
+          ]
         },
         {
-          "sanskrit": "(ग) भूतानि कस्मात् भवन्ति ?",
-          "meaning": "From what do all creatures arise? Answer: From food (अन्नात्).",
-          "answer_sanskrit": "अन्नात्",
+          "kind": "exercise-qa",
+          "sanskrit": "(घ) पृथिव्याः केषाम् उत्पत्तिः अभवत्?\nउत्तरम्: पृथिव्याः ओषधीनां सस्यानां वृक्षादीनां च उत्पत्तिः अभवत्।",
+          "meaning": "Q: What originated from the Earth? -> Answer: Herbs, crops, and trees originated from the Earth.",
+          "paragraphTranslation": "(घ) पृथ्वी से किसकी उत्पत्ति हुई? -> उत्तर: पृथिव्याः ओषधीनां सस्यानां वृक्षादीनां च उत्पत्तिः अभवत्। (पृथ्वी से औषधियों, फसलों और वृक्षों की उत्पत्ति हुई।)",
           "words": [
-            "भूतानि",
-            "कस्मात्",
-            "भवन्ति",
-            "?",
-            "उत्तरः",
-            "अन्नात्"
-          ],
-          "kind": "exercise-qa"
+            "पृथिव्याः",
+            "केषाम्",
+            "उत्पत्तिः",
+            "अभवत्",
+            "उत्तरम्",
+            "ओषधीनां",
+            "सस्यानां",
+            "वृक्षादीनां"
+          ]
         },
         {
-          "sanskrit": "(घ) अन्नसम्भवः कस्मात् भवति ?",
-          "meaning": "From what is food generated? Answer: From rain (पर्जन्यात्).",
-          "answer_sanskrit": "पर्जन्यात्",
+          "kind": "exercise-qa",
+          "sanskrit": "(ङ) आहारात् के उत्पन्नाः?\nउत्तरम्: आहारात् कीटाः, प्राणिनः, मनुष्याः च उत्पन्नाः।",
+          "meaning": "Q: Who originated from food? -> Answer: From food, insects, animals, and humans originated.",
+          "paragraphTranslation": "(ङ) अन्न (आहार) से कौन उत्पन्न हुए? -> उत्तर: आहारात् कीटाः, प्राणिनः, मनुष्याः च उत्पन्नाः। (अन्न से कीड़े, प्राणी और मनुष्य उत्पन्न हुए।)",
           "words": [
-            "अन्नसम्भवः",
+            "आहारात्",
+            "के",
+            "उत्पन्नाः",
+            "उत्तरम्",
+            "कीटाः",
+            "प्राणिनः",
+            "मनुष्याः",
+            "च"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(च) माता किं किं पठितवती?\nउत्तरम्: माता आधुनिकं रसायनशास्त्रम् उपनिषद्-ग्रन्थान् च पठितवती।",
+          "meaning": "Q: What all did the mother study? -> Answer: The mother studied modern Chemistry and Upanishadic literature.",
+          "paragraphTranslation": "(च) माँ ने क्या-क्या पढ़ा था? -> उत्तर: माता आधुनिकं रसायनशास्त्रम् उपनिषद्-ग्रन्थान् च पठितवती। (माँ ने आधुनिक रसायन विज्ञान और उपनिषद् दोनों पढ़े थे।)",
+          "words": [
+            "माता",
+            "किं",
+            "पठितवती",
+            "उत्तरम्",
+            "आधुनिकं",
+            "रसायनशास्त्रम्",
+            "उपनिषद्-ग्रन्थान्"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "२. पाठं पठित्वा रिक्तस्थानेषु समुचितं पदं लिखन्तु — (पृष्ठम् ९९)",
+          "meaning": "Exercise 2: Read the lesson and fill in the blanks with appropriate words (Page 99)",
+          "paragraphTranslation": "२. पाठ पढ़कर रिक्त स्थानों में उचित पद लिखिए:",
+          "words": [
+            "२.",
+            "पाठं",
+            "पठित्वा",
+            "रिक्तस्थानेषु",
+            "समुचितं",
+            "पदं",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "९९"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) अम्ब ! मम काचिद् जिज्ञासा अस्ति।\n(ख) प्रथमं ब्रह्मणः आकाशस्य उत्पत्तिः अभवत्।\n(ग) साक्षात् मनुष्याणाम् उत्पत्तिं वदतु।\n(घ) आहारात् कीटाः, प्राणिनः, मनुष्याः उत्पन्नाः खलु अम्ब?\n(ङ) अहम् आधुनिकं रसायनशास्त्रम् उपनिषद्-ग्रन्थान् च पठितवती।\n(च) अस्माकं मौलिकं ज्ञानं तेषु एव निहितम् अस्ति।",
+          "meaning": "Fill in the blanks: (a) जिज्ञासा | (b) आकाशस्य | (c) मनुष्याणाम् | (d) आहारात् | (e) रसायनशास्त्रम् | (f) मौलिकं",
+          "paragraphTranslation": "रिक्तस्थान-पूर्ति:\n(क) अम्ब ! मम काचिद् जिज्ञासा अस्ति। (जिज्ञासा)\n(ख) प्रथमं ब्रह्मणः आकाशस्य उत्पत्तिः अभवत्। (आकाशस्य)\n(ग) साक्षात् मनुष्याणाम् उत्पत्तिं वदतु। (मनुष्याणाम्)\n(घ) आहारात् कीटाः, प्राणिनः, मनुष्याः उत्पन्नाः खलु अम्ब? (आहारात्)\n(ङ) अहम् आधुनिकं रसायनशास्त्रम् उपनिषद्-ग्रन्थान् च पठितवती। (रसायनशास्त्रम्)\n(च) अस्माकं मौलिकं ज्ञानं तेषु एव निहितम् अस्ति। (मौलिकं)",
+          "words": [
+            "जिज्ञासा",
+            "आकाशस्य",
+            "मनुष्याणाम्",
+            "आहारात्",
+            "रसायनशास्त्रम्",
+            "मौलिकं"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "३. शब्दानां वचनपरिवर्तनं कुर्वन्तु — पञ्चमी विभक्तिः (पृष्ठानि ९९, १००)",
+          "meaning": "Exercise 3: Transform words across numbers in Panchami Vibhakti / Ablative Case (Pages 99, 100)",
+          "paragraphTranslation": "३. पञ्चमी विभक्ति (अपादान कारक) में शब्दों के वचन बदलिए (एकवचन, द्विवचन, बहुवचन):",
+          "words": [
+            "३.",
+            "शब्दानां",
+            "वचनपरिवर्तनं",
+            "कुर्वन्तु",
+            "पञ्चमी",
+            "विभक्तिः",
+            "पृष्ठानि",
+            "९९",
+            "१००"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "अकारान्त-पुंल्लिङ्ग-रूपाणि (पृष्ठम् ९९):\n• आहार ➔ एकवचनम्: आहारात् | द्विवचनम्: आहाराभ्याम् | बहुवचनम्: आहारेभ्यः\n• मनुष्य ➔ एकवचनम्: मनुष्यात् | द्विवचनम्: मनुष्याभ्याम् | बहुवचनम्: मनुष्येभ्यः\n• वृक्ष ➔ एकवचनम्: वृक्षात् | द्विवचनम्: वृक्षाभ्याम् | बहुवचनम्: वृक्षेभ्यः\n\nइकारान्त-पुंल्लिङ्ग-रूपाणि (पृष्ठम् १००):\n• अग्नि ➔ एकवचनम्: अग्नेः | द्विवचनम्: अग्निभ्याम् | बहुवचनम्: अग्निभ्यः\n• मुनि ➔ एकवचनम्: मुनेः | द्विवचनम्: मुनिभ्याम् | बहुवचनम्: मुनिभ्यः\n\nआकारान्त-स्त्रीलिङ्ग-रूपाणि (पृष्ठम् १००):\n• पेटिका ➔ एकवचनम्: पेटिकायाः | द्विवचनम्: पेटिकाभ्याम् | बहुवचनम्: पेटिकाभ्यः\n• वाटिका ➔ एकवचनम्: वाटिकायाः | द्विवचनम्: वाटिकाभ्याम् | बहुवचनम्: वाटिकाभ्यः\n• माला ➔ एकवचनम्: मालायाः | द्विवचनम्: मालाभ्याम् | बहुवचनम्: मालाभ्यः\n\nईकारान्त-स्त्रीलिङ्ग-रूपाणि (पृष्ठम् १००):\n• कूपी ➔ एकवचनम्: कूप्याः | द्विवचनम्: कूपीभ्याम् | बहुवचनम्: कूपीभ्यः\n• नदी ➔ एकवचनम्: नद्याः | द्विवचनम्: नदीभ्याम् | बहुवचनम्: नदीभ्यः\n• नगरी ➔ एकवचनम्: नगर्याः | द्विवचनम्: नगरीभ्याम् | बहुवचनम्: नगरीभ्यः",
+          "meaning": "Panchami Vibhakti declension paradigms across masculine and feminine nouns.",
+          "paragraphTranslation": "पञ्चमी विभक्ति रूप-सारणी (एकवचन | द्विवचन | बहुवचन):\n• आहार ➔ आहारात् | आहाराभ्याम् | आहारेभ्यः\n• मनुष्य ➔ मनुष्यात् | मनुष्याभ्याम् | मनुष्येभ्यः\n• वृक्ष ➔ वृक्षात् | वृक्षाभ्याम् | वृक्षेभ्यः\n• अग्नि ➔ अग्नेः | अग्निभ्याम् | अग्निभ्यः\n• मुनि ➔ मुनेः | मुनिभ्याम् | मुनिभ्यः\n• पेटिका ➔ पेटिकायाः | पेटिकाभ्याम् | पेटिकाभ्यः\n• वाटिका ➔ वाटिकायाः | वाटिकाभ्याम् | वाटिकाभ्यः\n• माला ➔ मालायाः | मालाभ्याम् | मालाभ्यः\n• कूपी ➔ कूप्याः | कूपीभ्याम् | कूपीभ्यः\n• नदी ➔ नद्याः | नदीभ्याम् | नदीभ्यः\n• नगरी ➔ नगर्याः | नगरीभ्याम् | नगरीभ्यः",
+          "words": [
+            "आहारात्",
+            "आहाराभ्याम्",
+            "आहारेभ्यः",
+            "मनुष्यात्",
+            "वृक्षात्",
+            "अग्नेः",
+            "मुनेः",
+            "पेटिकायाः",
+            "कूप्याः",
+            "नद्याः",
+            "नगर्याः"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "४. रेखाङ्कितानि पदानि आश्रित्य प्रश्ननिर्माणं कुर्वन्तु — (पृष्ठम् १००)",
+          "meaning": "Exercise 4: Frame questions based on the underlined words using कस्मात् or कुतः (Page 100)",
+          "paragraphTranslation": "४. रेखांकित पदों के आधार पर प्रश्न-निर्माण कीजिए (कस्मात् अथवा कुतः का प्रयोग करके):",
+          "words": [
+            "४.",
+            "रेखाङ्कितानि",
+            "पदानि",
+            "आश्रित्य",
+            "प्रश्ननिर्माणं",
+            "कुर्वन्तु",
+            "पृष्ठम्",
+            "१००"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ख) राजेशः विद्यालयात् पुस्तकम् आनयति।\nप्रश्नः १: राजेशः कस्मात् पुस्तकम् आनयति?\nप्रश्नः २: राजेशः कुतः पुस्तकम् आनयति?\n\n(ग) विकासः महेशात लेखनीं स्वीकृतवान्।\nप्रश्नः १: विकासः कस्मात् लेखनीं स्वीकृतवान्?\nप्रश्नः २: विकासः कुतः लेखनीं स्वीकृतवान्?\n\n(घ) माता गृहात् पुत्रं पश्यति।\nप्रश्नः १: माता कस्मात् पुत्रं पश्यति?\nप्रश्नः २: माता कुतः पुत्रं पश्यति?\n\n(ङ) हिमालयात गङ्गा प्रवहति।\nप्रश्नः १: कस्मात् गङ्गा प्रवहति?\nप्रश्नः २: कुतः गङ्गा प्रवहति?",
+          "meaning": "Form questions: (b) From where does Rajesh bring the book? (कस्मात् / कुतः) | (c) From whom did Vikas accept the pen? (कस्मात् / कुतः) | (d) From where does mother watch her son? (कस्मात् / कुतः) | (e) From where does the Ganga flow? (कस्मात् / कुतः)",
+          "paragraphTranslation": "प्रश्न-निर्माण:\n(ख) राजेशः विद्यालयात् पुस्तकम् आनयति। ➔ राजेशः कस्मात् / कुतः पुस्तकम् आनयति?\n(ग) विकासः महेशात लेखनीं स्वीकृतवान्। ➔ विकासः कस्मात् / कुतः लेखनीं स्वीकृतवान्?\n(घ) माता गृहात् पुत्रं पश्यति। ➔ माता कस्मात् / कुतः पुत्रं पश्यति?\n(ङ) हिमालयात गङ्गा प्रवहति। ➔ कस्मात् / कुतः गङ्गा प्रवहति?",
+          "words": [
+            "राजेशः",
+            "विद्यालयात्",
             "कस्मात्",
-            "भवति",
-            "?",
-            "उत्तरः",
-            "पर्जन्यात्"
-          ],
-          "kind": "exercise-qa"
+            "कुतः",
+            "महेशात",
+            "गृहात्",
+            "हिमालयात",
+            "गङ्गा"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "५. पर्यायपदानि चित्वा लिखन्तु — पदरञ्जनी (पृष्ठम् १०१)",
+          "meaning": "Exercise 5: Choose and write synonyms matching the crossword puzzle (Page 101)",
+          "paragraphTranslation": "५. पदरञ्जनी (वर्ग-पहेली) के आधार पर समानार्थक शब्द चुनकर लिखिए:",
+          "words": [
+            "५.",
+            "पर्यायपदानि",
+            "चित्वा",
+            "लिखन्तु",
+            "पदरञ्जनी",
+            "पृष्ठम्",
+            "१०१"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "वामतः दक्षिणम् (Left to Right / Across):\n• जन्म (३ अक्षराणि) ➔ उत्पत्तिः\n• मातः (२ अक्षरे) ➔ अम्ब\n• सत्यम् (२ अक्षरे) ➔ तथ्यम् / आम्\n• अपि (१ अक्षरम्) ➔ च\n• ओषधीनाम् (३ अक्षराणि) ➔ सस्यानाम्\n• तदर्थम् (२ अक्षरे) ➔ अतः\n• कस्मिन् समये (२ अक्षरे) ➔ कदा\n\nउपरिष्टात् अधः (Top to Bottom / Down):\n• उन्नतिः (३ अक्षराणि) ➔ उत्कर्षः\n• समाप्तम् (४ अक्षराणि) ➔ अवसानम् / पूर्णम्\n• गगनस्य (४ अक्षराणि) ➔ आकाशस्य\n• बुद्धिमती (३ अक्षराणि) ➔ चतुरा\n• सकलम् (२ अक्षरे) ➔ सर्वम्\n• ततः परम् (४ अक्षराणि) ➔ अनन्तरम्\n• किल (२ अक्षरे) ➔ खलु",
+          "meaning": "Crossword clues & synonyms: जन्म->उत्पत्तिः, मातः->अम्ब, सत्यम्->तथ्यम्, अपि->च, ओषधीनाम्->सस्यानाम्, तदर्थम्->अतः, कस्मिन् समये->कदा | उन्नतिः->उत्कर्षः, समाप्तम्->अवसानम्, गगनस्य->आकाशस्य, बुद्धिमती->चतुरा, सकलम्->सर्वम्, ततः परम्->अनन्तरम्, किल->खलु.",
+          "paragraphTranslation": "पदरञ्जनी समाधान:\nबाएँ से दाएँ:\n• जन्म (३ अक्षर) ➔ उत्पत्तिः\n• मातः (२ अक्षर) ➔ अम्ब\n• सत्यम् (२ अक्षर) ➔ तथ्यम् / आम्\n• अपि (१ अक्षर) ➔ च\n• ओषधीनाम् (३ अक्षर) ➔ सस्यानाम्\n• तदर्थम् (२ अक्षर) ➔ अतः\n• कस्मिन् समये (२ अक्षर) ➔ कदा\nऊपर से नीचे:\n• उन्नतिः (३ अक्षर) ➔ उत्कर्षः\n• समाप्तम् (४ अक्षर) ➔ अवसानम्\n• गगनस्य (४ अक्षर) ➔ आकाशस्य\n• बुद्धिमती (३ अक्षर) ➔ चतुरा\n• सकलम् (२ अक्षर) ➔ सर्वम्\n• ततः परम् (४ अक्षर) ➔ अनन्तरम्\n• किल (२ अक्षर) ➔ खलु",
+          "words": [
+            "उत्पत्तिः",
+            "अम्ब",
+            "तथ्यम्",
+            "सस्यानाम्",
+            "अतः",
+            "कदा",
+            "उत्कर्षः",
+            "आकाशस्य",
+            "चतुरा",
+            "सर्वम्",
+            "अनन्तरम्",
+            "खलु"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "६. कः कस्मात् विद्यां प्राप्तवान् इति पूर्णवाक्येन लिखन्तु — (पृष्ठानि १०१, १०२)",
+          "meaning": "Exercise 6: State who received knowledge from whom in complete sentences (Pages 101, 102)",
+          "paragraphTranslation": "६. किसने किससे विद्या प्राप्त की, इसे पूर्ण वाक्य में लिखिए (पञ्चमी विभक्ति का प्रयोग करके):",
+          "words": [
+            "६.",
+            "कः",
+            "कस्मात्",
+            "विद्यां",
+            "प्राप्तवान्",
+            "पूर्णवाक्येन",
+            "लिखन्तु",
+            "पृष्ठानि",
+            "१०१",
+            "१०२"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) उपमन्युः – अयोधौम्यः ➔ उपमन्युः अयोधौम्यात् विद्यां प्राप्तवान्। (यथा)\n(ख) पद्मपादः – शङ्कराचार्यः ➔ पद्मपादः शङ्कराचार्यात् विद्यां प्राप्तवान्।\n(ग) विवेकानन्दः – रामकृष्णः ➔ विवेकानन्दः रामकृष्णात् विद्यां प्राप्तवान्।\n(घ) रामः – वसिष्ठः ➔ रामः वसिष्ठात् विद्यां प्राप्तवान्।\n(घ-२) भीष्मः – परशुरामः ➔ भीष्मः परशुरामात् विद्यां प्राप्तवान्।\n(ङ) चन्द्रगुप्तः – चाणक्यः ➔ चन्द्रगुप्तः चाणक्यात् विद्यां प्राप्तवान्।\n(च) अर्जुनः – द्रोणाचार्यः ➔ अर्जुनः द्रोणाचार्यात् विद्यां प्राप्तवान्।",
+          "meaning": "Teacher-Disciple knowledge lineage: (a) Upamanyu from Ayodhaumya | (b) Padmapada from Shankaracharya | (c) Vivekananda from Ramakrishna | (d) Rama from Vashistha | (d-2) Bhishma from Parashurama | (e) Chandragupta from Chanakya | (f) Arjuna from Dronacharya.",
+          "paragraphTranslation": "गुरु-शिष्य विद्या-प्राप्ति वाक्य:\n(क) उपमन्युः अयोधौम्यात् विद्यां प्राप्तवान्। (उदाहरण)\n(ख) पद्मपादः शङ्कराचार्यात् विद्यां प्राप्तवान्।\n(ग) विवेकानन्दः रामकृष्णात् विद्यां प्राप्तवान्।\n(घ) रामः वसिष्ठात् विद्यां प्राप्तवान्।\n(घ-२) भीष्मः परशुरामात् विद्यां प्राप्तवान्।\n(ङ) चन्द्रगुप्तः चाणक्यात् विद्यां प्राप्तवान्।\n(च) अर्जुनः द्रोणाचार्यात् विद्यां प्राप्तवान्।",
+          "words": [
+            "पद्मपादः",
+            "शङ्कराचार्यात्",
+            "विवेकानन्दः",
+            "रामकृष्णात्",
+            "रामः",
+            "वसिष्ठात्",
+            "भीष्मः",
+            "परशुरामात्",
+            "चन्द्रगुप्तः",
+            "चाणक्यात्",
+            "अर्जुनः",
+            "द्रोणाचार्यात्",
+            "विद्यां",
+            "प्राप्तवान्"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "७. अधः प्रदत्तानि वाक्यानि पठित्वा अनुवादं कुर्वन्तु — (पृष्ठम् १०२)",
+          "meaning": "Exercise 7: Read the following sentences and translate them into English and Hindi (Page 102)",
+          "paragraphTranslation": "७. नीचे लिखे वाक्यों को पढ़कर हिन्दी और अंग्रेजी में अनुवाद कीजिए:",
+          "words": [
+            "७.",
+            "अधः",
+            "प्रदत्तानि",
+            "वाक्यानि",
+            "पठित्वा",
+            "अनुवादं",
+            "कुर्वन्तु",
+            "पृष्ठम्",
+            "१०२"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) राधा नगरात् आगच्छति।\n• English: Radha is coming from the city.\n• हिन्दी: राधा शहर से आ रही है।\n\n(ख) विनयः वृक्षात् पुष्पाणि चिनोति।\n• English: Vinay plucks flowers from the tree.\n• हिन्दी: विनय वृक्ष से फूल चुनता है।\n\n(ग) सन्दीपः कार्यालयात् गृहं गतवान्।\n• English: Sandeep went home from the office.\n• हिन्दी: संदीप कार्यालय से घर गया।\n\n(घ) भगिनी दूरात् वाहनं पश्यति।\n• English: The sister watches the vehicle from afar.\n• हिन्दी: बहन दूर से वाहन को देखती है।\n\n(ङ) महेशः शालायाः गृहम् आगतवान्।\n• English: Mahesh came home from school.\n• हिन्दी: महेश पाठशाला से घर आया।\n\n(च) बालः कपाटिकायाः धनं स्वीकरोति।\n• English: The boy takes money from the cupboard.\n• हिन्दी: बालक अलमारी से धन लेता है।",
+          "meaning": "Translations for 6 sentences demonstrating Ablative Case (Panchami Vibhakti / Separation 'से').",
+          "paragraphTranslation": "अनुवाद-कार्यम्:\n(क) राधा नगरात् आगच्छति। ➔ राधा शहर से आ रही है। / Radha is coming from the city.\n(ख) विनयः वृक्षात् पुष्पाणि चिनोति। ➔ विनय पेड़ से फूल चुनता है। / Vinay plucks flowers from the tree.\n(ग) सन्दीपः कार्यालयात् गृहं गतवान्। ➔ संदीप कार्यालय से घर गया। / Sandeep went home from the office.\n(घ) भगिनी दूरात् वाहनं पश्यति। ➔ बहन दूर से वाहन को देखती है। / The sister watches the vehicle from afar.\n(ङ) महेशः शालायाः गृहम् आगतवान्। ➔ महेश पाठशाला से घर आया। / Mahesh came home from school.\n(च) बालः कपाटिकायाः धनं स्वीकरोति। ➔ बालक अलमारी से धन लेता है। / The boy takes money from the cupboard.",
+          "words": [
+            "राधा",
+            "नगरात्",
+            "आगच्छति",
+            "विनयः",
+            "वृक्षात्",
+            "पुष्पाणि",
+            "सन्दीपः",
+            "कार्यालयात्",
+            "भगिनी",
+            "दूरात्",
+            "महेशः",
+            "शालायाः",
+            "कपाटिकायाः"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "भाग ४: द्रव्याणां स्थितयः — रसायनशास्त्रेण सह समन्वयः (पृष्ठम् १०३)",
+          "meaning": "Part 4: States of Matter — Correlation of Ancient Elements with Modern Chemistry (Page 103)",
+          "paragraphTranslation": "भाग ४: द्रव्यों की अवस्थाएँ — प्राचीन पञ्चमहाभूतों एवं आधुनिक रसायन विज्ञान का समन्वय (पृष्ठ १०३)",
+          "words": [
+            "भाग",
+            "४:",
+            "द्रव्याणां",
+            "स्थितयः",
+            "रसायनशास्त्रेण",
+            "समन्वयः",
+            "पृष्ठम्",
+            "१०३"
+          ]
+        },
+        {
+          "sanskrit": "द्रव्याणां चतस्रः मुख्याः स्थितयः सन्ति — घनः (Solid), द्रवः (Liquid), अनिलः (Gas), प्लाज्मा (Plasma) च।",
+          "meaning": "There are four primary states of matter recognized in physical science: Solid, Liquid, Gas, and Plasma.",
+          "paragraphTranslation": "भौतिक विज्ञान में द्रव्यों की चार मुख्य अवस्थाएँ मानी गई हैं — ठोस (Solid), द्रव (Liquid), गैस (Gas), और प्लाज्मा (Plasma)।",
+          "words": [
+            "द्रव्याणां",
+            "चतस्रः",
+            "मुख्याः",
+            "स्थितयः",
+            "सन्ति",
+            "घनः",
+            "द्रवः",
+            "अनिलः",
+            "प्लाज्मा"
+          ]
+        },
+        {
+          "sanskrit": "१. घनस्थितिः (Solid State) ➔ पृथिवी-तत्त्वेन सह सम्बद्धा (Linked to Earth Element): दृढा, निश्चिताकारवती च।",
+          "meaning": "1. Solid State: Corresponds to the Earth (Prithvi) element, possessing definite shape, mass, and rigid volume.",
+          "paragraphTranslation": "१. ठोस अवस्था (Solid) ➔ पृथ्वी-तत्व से सम्बद्ध: जिसका निश्चित आकार, भार और आयतन होता है।",
+          "words": [
+            "घनस्थितिः",
+            "पृथिवी-तत्त्वेन",
+            "सम्बद्धा",
+            "दृढा",
+            "निश्चिताकारवती"
+          ]
+        },
+        {
+          "sanskrit": "२. द्रवस्थितिः (Liquid State) ➔ जल-तत्त्वेन सह सम्बद्धा (Linked to Water Element): तरलता, प्रवाहशीलता, पात्रानुसार-आकारवती च।",
+          "meaning": "2. Liquid State: Corresponds to the Water (Jala) element, possessing fluidity, ability to flow, and taking the shape of its container.",
+          "paragraphTranslation": "२. द्रव अवस्था (Liquid) ➔ जल-तत्व से सम्बद्ध: जिसमें तरलता और प्रवाहशीलता होती है तथा यह पात्र का आकार ग्रहण करता है।",
+          "words": [
+            "द्रवस्थितिः",
+            "जल-तत्त्वेन",
+            "सम्बद्धा",
+            "तरलता",
+            "प्रवाहशीलता"
+          ]
+        },
+        {
+          "sanskrit": "३. वाष्पस्थितिः / अनिलस्थितिः (Gaseous State) ➔ वायु-तत्त्वेन सह सम्बद्धा (Linked to Air Element): सर्वत्र प्रसारी, अनिर्दिष्टाकारा च।",
+          "meaning": "3. Gaseous State: Corresponds to the Air (Vayu) element, freely expanding everywhere with indefinite shape and volume.",
+          "paragraphTranslation": "३. गैसीय अवस्था (Gas) ➔ वायु-तत्व से सम्बद्ध: जो सर्वत्र प्रसारित होने वाली और अनिर्दिष्ट आकार वाली होती है।",
+          "words": [
+            "वाष्पस्थितिः",
+            "अनिलस्थितिः",
+            "वायु-तत्त्वेन",
+            "सम्बद्धा",
+            "प्रसारी"
+          ]
+        },
+        {
+          "sanskrit": "४. प्लाज्मा-स्थितिः (Plasma State) ➔ अग्नि/ऊर्जा-तत्त्वेन सह सम्बद्धा (Linked to Cosmic Fire/Energy): अति-उच्च-ऊर्जा-युक्ता, आयनीकृत-कण-सम्पन्ना च।",
+          "meaning": "4. Plasma State: Corresponds to the Cosmic Fire and Radiant Energy (Agni) element, consisting of superheated, highly energized ionized particles found in stars and celestial lightning.",
+          "paragraphTranslation": "४. प्लाज्मा अवस्था (Plasma) ➔ अग्नि एवं ऊर्ज-तत्व से सम्बद्ध: जो अति-उच्च ऊर्जावान, आयनीकृत कणों से युक्त होती है, जैसे सूर्य, तारे और आकाशीय विद्युत में।",
+          "words": [
+            "प्लाज्मा-स्थितिः",
+            "अग्नि",
+            "ऊर्जा-तत्त्वेन",
+            "सम्बद्धा",
+            "आयनीकृत"
+          ]
+        },
+        {
+          "sanskrit": "एवं प्रकारेण उपनिषत्सु वर्णितः सृष्टिक्रमः (आकाशाद् वायुः, वायोः अग्निः, अग्नेः आपः, अद्भ्यः पृथिवी, पृथिव्या ओषधयः, ओषधीभ्योऽन्नम्, अन्नाद् रेतस्, रेतसः पुरुषः) आधुनिक-भौतिक-रसायनशास्त्रैः सह पूर्णतया वैज्ञानिकरूपेण संवदति।",
+          "meaning": "In this manner, the sequence of creation delineated in the Taittiriya Upanishad (Space -> Air -> Fire -> Water -> Earth -> Vegetation -> Food -> Life & Living Beings) aligns seamlessly and scientifically with modern physics and chemistry.",
+          "paragraphTranslation": "इस प्रकार तैत्तिरीयोपनिषद् में वर्णित सृष्टिक्रम (आकाश से वायु, वायु से अग्नि, अग्नि से जल, जल से पृथ्वी, पृथ्वी से औषधियाँ/वनस्पतियाँ, वनस्पतियों से अन्न, और अन्न से समस्त प्राणी) आधुनिक भौतिक एवं रसायन विज्ञान के साथ पूर्णतः वैज्ञानिक तालमेल रखता है।",
+          "words": [
+            "उपनिषत्सु",
+            "वर्णितः",
+            "सृष्टिक्रमः",
+            "आकाशाद्",
+            "वायोः",
+            "अग्नेः",
+            "पृथिव्या",
+            "अन्नाद्",
+            "पुरुषः",
+            "रसायनशास्त्रैः",
+            "वैज्ञानिकरूपेण"
+          ]
         }
-      ]
+      ],
+      "page_numbers": "96-103"
     },
     {
       "id": "gsde110",
