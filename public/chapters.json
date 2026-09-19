@@ -15049,71 +15049,231 @@
     {
       "id": "gsde110",
       "fileName": "gsde110.txt",
-      "title": "Chapter 10: दशमः कः ?",
+      "title": "Chapter 10: दशमः कः? (पाठः पृष्ठानि १०४–१०७ · अभ्यासः पृष्ठानि १०८–११४)",
       "sentences": [
         {
-          "sanskrit": "१. पाठस्य मूल-संवादः (कक्षा की भूमिका)",
-          "meaning": "Introduction: Sanskrit Olympiad Ranks and the Question of the Tenth",
-          "paragraphTranslation": "कक्षा की भूमिका: संस्कृत ओलम्पियाड और 'दसवाँ कौन है?'",
+          "kind": "section-header",
+          "sanskrit": "१. पाठः — भागः १: कक्षा-संवादः — संस्कृत-ओलम्पियाड्-परीक्षा (पृष्ठम् १०४)",
+          "meaning": "Part 1: Classroom Dialogue - Sanskrit Olympiad Results & Ranks (Page 104)",
+          "paragraphTranslation": "भाग १: कक्षा-संवाद — संस्कृत ओलम्पियाड परीक्षा परिणाम एवं स्थान (पृष्ठ १०४)",
           "words": [
-            "पाठस्य",
-            "मूल-संवादः"
-          ],
-          "kind": "section-header"
-        },
-        {
-          "sanskrit": "आचार्यः: अयि भोः ! गतसप्ताहे संस्कृत-ओलम्पियाड्-परीक्षा अभवत्। तत्र कः प्रथमं स्थानं प्राप्तवान् ?",
-          "meaning": "Teacher: Hello students! Last week was the Sanskrit Olympiad exam. Who secured first place there?",
-          "paragraphTranslation": "आचार्य - अरे ओ! पिछले सप्ताह संस्कृत ओलम्पियाड परीक्षा हुई थी। वहाँ किसने पहला स्थान प्राप्त किया?",
-          "words": [
-            "आचार्यः:",
-            "अयि",
-            "भोः",
-            "गतसप्ताहे",
+            "१.",
+            "पाठः",
+            "भागः",
+            "१:",
+            "कक्षा-संवादः",
             "संस्कृत-ओलम्पियाड्-परीक्षा",
-            "अभवत्",
-            "तत्र",
-            "कः",
-            "प्रथमं",
-            "स्थानं",
-            "प्राप्तवान्",
-            "?"
+            "पृष्ठम्",
+            "१०४"
           ]
         },
         {
-          "sanskrit": "छात्रः: महोदय ! विद्याधरः प्रथमं स्थानं प्राप्तवान्। सा प्रीतिः द्वितीया, तृतीया च हेमलता।",
-          "meaning": "Student: Sir! Vidyadhara won first place. Preeti was second, and Hemalata was third.",
-          "paragraphTranslation": "महोदय! विद्याधर ने पहला स्थान प्राप्त किया, प्रीति दूसरी और हेमलता तीसरी रही।",
+          "sanskrit": "शिक्षकः — अयि भोः! गतसप्ताहॆ संस्कृत-ओलम्पियाड्-परीक्षा अभवत्। तत्र के भागं गृहीतवन्तः? तत्र कः प्रथमं स्थानं प्राप्तवान्?",
+          "meaning": "Teacher: Hello everyone! Last week, the Sanskrit Olympiad exam took place. Who all participated in it? Who secured the first rank?",
+          "paragraphTranslation": "शिक्षक — अरे बच्चों! पिछले सप्ताह संस्कृत ओलम्पियाड परीक्षा हुई थी। उसमें किन-किन लोगों ने भाग लिया था? और प्रथम स्थान किसने प्राप्त किया? (गतसप्ताहे = Last week | अभवत् = Took place | भागं गृहीतवन्तः = Participated | कः = Who | प्रथमं स्थानम् = First rank | प्राप्तवान् = Achieved)",
           "words": [
-            "छात्रः:",
+            "शिक्षकः",
+            "अयि",
+            "भोः",
+            "गतसप्ताहॆ",
+            "संस्कृत-ओलम्पियाड्-परीक्षा",
+            "अभवत्",
+            "तत्र",
+            "के",
+            "भागं",
+            "गृहीतवन्तः",
+            "कः",
+            "प्रथमं",
+            "स्थानं",
+            "प्राप्तवान्"
+          ]
+        },
+        {
+          "sanskrit": "छात्रः १ — महोदय! विद्याधरः प्रथमं स्थानं प्राप्तवान्।",
+          "meaning": "Student 1: Sir! Vidyadhara secured the first rank.",
+          "paragraphTranslation": "छात्र १ — महोदय! विद्याधर ने प्रथम स्थान प्राप्त किया है।",
+          "words": [
+            "छात्रः",
+            "१",
             "महोदय",
             "विद्याधरः",
             "प्रथमं",
             "स्थानं",
-            "प्राप्तवान्",
-            "सा",
-            "प्रीतिः",
-            "द्वितीया",
-            "तृतीया",
-            "च",
-            "हेमलता।"
+            "प्राप्तवान्"
           ]
         },
         {
-          "sanskrit": "आचार्यः: अहो उत्तमम् ! तर्हि दशमः कोऽस्ति भोः ? चिन्ता मास्तु, वयं दशमस्य विषये एकां प्रसिद्धकथां पठामः।",
-          "meaning": "Teacher: Splendid! Then tell me, who is the tenth? Don't worry, let us read a famous classic story about the 'Tenth Boy'.",
-          "paragraphTranslation": "बहुत उत्तम! तो दसवाँ कौन है? चिंता मत करो, आज हम 'दसवें' के विषय में एक प्रसिद्ध कहानी पढ़ते हैं।",
+          "sanskrit": "छात्रः २ — महोदय! वयं सर्वे भागं गृहीतवन्तः।",
+          "meaning": "Student 2: Sir! All of us participated in it.",
+          "paragraphTranslation": "छात्र २ — महोदय! हम सबने उसमें भाग लिया था। (वयं सर्वे = All of us)",
           "words": [
-            "आचार्यः:",
+            "छात्रः",
+            "२",
+            "महोदय",
+            "वयं",
+            "सर्वे",
+            "भागं",
+            "गृहीतवन्तः"
+          ]
+        },
+        {
+          "sanskrit": "शिक्षकः — अभिनन्दनम्! अभिनन्दनम्! तर्हि द्वितीयः कः?",
+          "meaning": "Teacher: Congratulations! Well done! Then who is second?",
+          "paragraphTranslation": "शिक्षक — बधाई हो! बहुत-बहुत बधाई! तो फिर द्वितीय स्थान पर कौन है? (अभिनन्दनम् = Congratulations | तर्हि = Then | द्वितीयः = Second)",
+          "words": [
+            "शिक्षकः",
+            "अभिनन्दनम्",
+            "तर्हि",
+            "द्वितीयः",
+            "कः"
+          ]
+        },
+        {
+          "sanskrit": "छात्रः ३ — महोदय! सा प्रीतिः।",
+          "meaning": "Student 3: Sir! That is Preeti.",
+          "paragraphTranslation": "छात्र ३ — महोदय! वह प्रीति है।",
+          "words": [
+            "छात्रः",
+            "३",
+            "महोदय",
+            "सा",
+            "प्रीतिः"
+          ]
+        },
+        {
+          "sanskrit": "शिक्षकः — अरे! बहु सुन्दरम्। तस्याः अपि अभिनन्दनम्। तर्हि तृतीये स्थाने कः का वा अस्ति?",
+          "meaning": "Teacher: Oh! Very beautiful. Congratulations to her too. Then who (boy or girl) is in the third place?",
+          "paragraphTranslation": "शिक्षक — अरे वाह! बहुत बढ़िया। उसे भी बधाई। तो फिर तीसरे स्थान पर कौन (छात्र या छात्रा) है? (बहु सुन्दरम् = Very good | तस्याः = Her | तृतीये स्थाने = In third place | कः का वा = Who boy or girl)",
+          "words": [
+            "शिक्षकः",
+            "अरे",
+            "बहु",
+            "सुन्दरम्",
+            "तस्याः",
+            "अपि",
+            "अभिनन्दनम्",
+            "तर्हि",
+            "तृतीये",
+            "स्थाने",
+            "कः",
+            "का",
+            "वा",
+            "अस्ति"
+          ]
+        },
+        {
+          "sanskrit": "छात्रः ४ — महोदय! तृतीयं स्थानं हेमलता प्राप्तवती।",
+          "meaning": "Student 4: Sir! Hemalata achieved the third position.",
+          "paragraphTranslation": "छात्र ४ — महोदय! तृतीय स्थान हेमलता ने प्राप्त किया है।",
+          "words": [
+            "छात्रः",
+            "४",
+            "महोदय",
+            "तृतीयं",
+            "स्थानं",
+            "हेमलता",
+            "प्राप्तवती"
+          ]
+        },
+        {
+          "sanskrit": "शिक्षकः — अस्तु तस्याः अपि अभिनन्दनम्। अन्ये केऽपि किमपि स्थानं प्राप्तवन्तः किम्?",
+          "meaning": "Teacher: Good, congratulations to her as well. Did anyone else secure a rank too?",
+          "paragraphTranslation": "शिक्षक — अच्छा, उसे भी बधाई। क्या अन्य किसी को भी कोई स्थान मिला है? (अन्ये = Others | किमपि = Any)",
+          "words": [
+            "शिक्षकः",
+            "अस्तु",
+            "तस्याः",
+            "अपि",
+            "अभिनन्दनम्",
+            "अन्ये",
+            "केऽपि",
+            "किमपि",
+            "स्थानं",
+            "प्राप्तवन्तः",
+            "किम्"
+          ]
+        },
+        {
+          "sanskrit": "छात्रः ५ — महोदय! अहं चतुर्थः अस्मि।",
+          "meaning": "Student 5: Sir! I am fourth.",
+          "paragraphTranslation": "छात्र ५ — महोदय! मैं चौथे स्थान पर हूँ। (चतुर्थः = Fourth masculine)",
+          "words": [
+            "छात्रः",
+            "५",
+            "महोदय",
+            "अहं",
+            "चतुर्थः",
+            "अस्मि"
+          ]
+        },
+        {
+          "sanskrit": "छात्रः ६ — महोदय! अहं पञ्चमी अस्मि।",
+          "meaning": "Student 6: Sir! I am fifth.",
+          "paragraphTranslation": "छात्र ६ — महोदय! मैं पाँचवें स्थान पर हूँ। (पञ्चमी = Fifth feminine)",
+          "words": [
+            "छात्रः",
+            "६",
+            "महोदय",
+            "अहं",
+            "पञ्चमी",
+            "अस्मि"
+          ]
+        },
+        {
+          "sanskrit": "छात्रः ७ — महोदय! अहं नवमी अस्मि।",
+          "meaning": "Student 7: Sir! I am ninth.",
+          "paragraphTranslation": "छात्र ७ — महोदय! मैं नौवें स्थान पर हूँ। (नवमी = Ninth feminine)",
+          "words": [
+            "छात्रः",
+            "७",
+            "महोदय",
+            "अहं",
+            "नवमी",
+            "अस्मि"
+          ]
+        },
+        {
+          "sanskrit": "शिक्षकः — अहो उत्तमम्। भवद्भ्यः सर्वेभ्यः आशीर्वादाः। तर्हि दशमः कोऽस्ति भोः?",
+          "meaning": "Teacher: Oh, wonderful! Blessings to all of you. Then who is tenth, children?",
+          "paragraphTranslation": "शिक्षक — अरे बहुत उत्तम! आप सभी को मेरा आशीर्वाद। तो फिर दसवाँ कौन है बच्चों? (भवद्भ्यः = To you all | आशीर्वादाः = Blessings | दशमः = Tenth)",
+          "words": [
+            "शिक्षकः",
             "अहो",
             "उत्तमम्",
+            "भवद्भ्यः",
+            "सर्वेभ्यः",
+            "आशीर्वादाः",
             "तर्हि",
             "दशमः",
             "कोऽस्ति",
-            "भोः",
+            "भोः"
+          ]
+        },
+        {
+          "sanskrit": "छात्रः ८ — दशमस्य विषये वयं न जानीमः श्रीमन्!",
+          "meaning": "Student 8: We do not know about the tenth one, Sir!",
+          "paragraphTranslation": "छात्र ८ — श्रीमान्! दसवें के बारे में हम नहीं जानते। (दशमस्य विषये = Regarding tenth | न जानीमः = Do not know)",
+          "words": [
+            "छात्रः",
+            "८",
+            "दशमस्य",
+            "विषये",
+            "वयं",
+            "न",
+            "जानीमः",
+            "श्रीमन्"
+          ]
+        },
+        {
+          "sanskrit": "शिक्षकः — चिन्ता मास्तु, वयम् अद्य दशमस्य विषये एकां कथां पठामः।",
+          "meaning": "Teacher: Do not worry, today we will read a story about the tenth person.",
+          "paragraphTranslation": "शिक्षक — कोई चिंता की बात नहीं है, आज हम 'दसवें व्यक्ति' के विषय में ही एक रोचक कहानी पढ़ेंगे। (चिन्ता मास्तु = Don't worry | अद्य = Today | कथाम् = Story)",
+          "words": [
+            "शिक्षकः",
             "चिन्ता",
             "मास्तु",
-            "वयं",
+            "वयम्",
+            "अद्य",
             "दशमस्य",
             "विषये",
             "एकां",
@@ -15122,18 +15282,25 @@
           ]
         },
         {
-          "sanskrit": "२. मुख्यकथा (दसवाँ कौन है?)",
-          "meaning": "Main Story: Who is the Tenth? (The Allegory of Self-Forgetfulness)",
-          "paragraphTranslation": "मुख्य कथा: दसवाँ कौन है?",
+          "kind": "section-header",
+          "sanskrit": "भागः २: कथा — दशमः कः? (The Story of the Ten Boys - पृष्ठानि १०६, १०७)",
+          "meaning": "Part 2: Story - Who is the Tenth One? (Pages 106, 107)",
+          "paragraphTranslation": "भाग २: कहानी — दसवाँ कौन है? (पृष्ठ १०६, १०७)",
           "words": [
-            "मुख्यकथा"
-          ],
-          "kind": "section-header"
+            "भागः",
+            "२:",
+            "कथा",
+            "दशमः",
+            "कः",
+            "पृष्ठानि",
+            "१०६",
+            "१०७"
+          ]
         },
         {
-          "sanskrit": "एकदा दश बालकाः स्नानाय नदीम् अगच्छन्। ते नदीजले चिरं स्नानम् अकुर्वन्। ततः ते तीर्त्वा पारं गताः। तदा तेषां नायकः अपृच्छत् – अपि सर्वे बालकाः नदीम् उत्तीर्णाः ?",
-          "meaning": "Once, ten boys went to the river to bathe. They bathed in the river water for a long time. Then they swam across to the other shore. Their leader asked: 'Have all the boys safely crossed the river?'",
-          "paragraphTranslation": "एक बार दस बालक नहाने के लिए नदी पर गए। उन्होंने देर तक स्नान किया और तैरकर पार चले गए। तब उनके नेता ने पूछा– क्या सभी ने नदी पार कर ली?",
+          "sanskrit": "एकदा दश बालकाः स्नानाय नदीम् अगच्छन्। ते नदीजले चिरं स्नानम् अकुर्वन्। ततः ते तीर्त्वा पारं गताः।",
+          "meaning": "Once upon a time, ten boys went to a river to bathe. They bathed in the river water for a long time. Then they swam across to the other bank.",
+          "paragraphTranslation": "एक बार दस लड़के नहाने के लिए नदी पर गए। उन्होंने नदी के पानी में काफी देर तक स्नान किया। उसके बाद वे तैरकर नदी के पार चले गए। (एकदा = Once | दश बालकाः = Ten boys | स्नानाय = For bathing | नदीम् अगच्छन् = Went to river | चिरम् = For long time | तीर्त्वा = Having swum | पारं गताः = Crossed over)",
           "words": [
             "एकदा",
             "दश",
@@ -15147,10 +15314,16 @@
             "स्नानम्",
             "अकुर्वन्",
             "ततः",
-            "ते",
             "तीर्त्वा",
             "पारं",
-            "गताः",
+            "गताः"
+          ]
+        },
+        {
+          "sanskrit": "तदा तेषां नायकः अपृच्छत् – अपि सर्वे बालकाः नदीम् उत्तीर्णाः?",
+          "meaning": "Then their leader asked: 'Have all the boys crossed the river?'",
+          "paragraphTranslation": "तब उनके नायक (लीडर) ने पूछा— क्या सभी लड़कों ने नदी पार कर ली है? (नायकः = Leader | अपृच्छत् = Asked | उत्तीर्णाः = Crossed over)",
+          "words": [
             "तदा",
             "तेषां",
             "नायकः",
@@ -15163,9 +15336,9 @@
           ]
         },
         {
-          "sanskrit": "तदा कश्चित् बालकः सर्वान् पङ्क्तौ स्थापयित्वा अगणयत् – एकं, द्वे, त्रीणि, चत्वारि, पञ्च, षट्, सप्त, अष्ट, नव इति। सः आत्मानं न अगणयत्। अतः सः अवदत्- अरे वयं नव एव स्मः भोः! दशमः नास्ति। अपरः अपि बालकः पुनः आत्मानं त्यक्त्वा अन्यान् बालकान् अगणयत्। तदा अपि नव एव आसन्। अतः ते निश्चयम् अकुर्वन् यत् दशमः नद्यां मग्नः। ते विषण्णाः तूष्णीम् अतिष्ठन्।",
-          "meaning": "Then one boy lined up everyone and counted: 'One, two, three, four, five, six, seven, eight, nine.' He forgot to count himself! So he exclaimed: 'Alas! We are only nine! The tenth is missing.' Another boy counted, leaving himself out, and again found only nine. Convinced that the tenth companion had drowned in the river, they sat down weeping in silent grief.",
-          "paragraphTranslation": "तब एक बालक ने सबको कतार में खड़ा करके गिना– एक, दो, तीन, चार, पाँच, छह, सात, आठ, नौ। उसने खुद को नहीं गिना और बोला– हम तो नौ ही हैं, दसवाँ नहीं है! दूसरे बालक ने भी खुद को छोड़कर गिना तो नौ ही मिले। उन्होंने मान लिया कि दसवाँ नदी में डूब गया और दुखी होकर बैठ गए।",
+          "sanskrit": "तदा कश्चित् बालकः सर्वान् पङ्क्तौ स्थापयित्वा अगणयत – एकं, द्वे, त्रीणि, चत्वारि, पञ्च, षट्, सप्त, अष्ट, नव इति। सः आत्मानं न अगणयत्।",
+          "meaning": "Then a certain boy lined everyone up and counted: 'One, two, three, four, five, six, seven, eight, nine.' He did not count himself.",
+          "paragraphTranslation": "तब किसी एक लड़के ने सबको कतार में खड़ा करके गिनना शुरू किया— एक, दो, तीन, चार, पाँच, छह, सात, आठ, नौ। उसने स्वयं को नहीं गिना। (पङ्क्तौ = In a line | अगणयत = Counted | आत्मानम् = Himself | न अगणयत् = Did not count)",
           "words": [
             "तदा",
             "कश्चित्",
@@ -15173,7 +15346,7 @@
             "सर्वान्",
             "पङ्क्तौ",
             "स्थापयित्वा",
-            "अगणयत्",
+            "अगणयत",
             "एकं",
             "द्वे",
             "त्रीणि",
@@ -15183,29 +15356,72 @@
             "सप्त",
             "अष्ट",
             "नव",
+            "इति",
             "सः",
             "आत्मानं",
-            "न",
-            "अगणयत्",
+            "न"
+          ]
+        },
+        {
+          "sanskrit": "अतः सः अवदत्- अरे वयं नव एव स्मः भोः! दशमः नास्ति।",
+          "meaning": "Therefore he said: 'Oh, we are only nine! The tenth one is missing.'",
+          "paragraphTranslation": "इसलिए वह बोला— अरे! हम तो केवल नौ ही हैं! दसवाँ नहीं है। (नव एव स्मः = Are only nine | दशमः नास्ति = Tenth is not there)",
+          "words": [
+            "अतः",
+            "सः",
+            "अवदत्",
+            "अरे",
             "वयं",
             "नव",
             "एव",
             "स्मः",
+            "भोः",
             "दशमः",
-            "नास्ति",
+            "नास्ति"
+          ]
+        },
+        {
+          "sanskrit": "अपरः अपि बालकः पुनः आत्मानं त्यक्त्वा अन्यान् बालकान् अगणयत्। तदा अपि नव एव आसन्।",
+          "meaning": "Another boy also counted the other boys, omitting himself again. Even then, there were only nine.",
+          "paragraphTranslation": "दूसरे लड़के ने भी फिर से खुद को छोड़कर बाकी लड़कों को गिना। तब भी नौ ही लड़के थे। (अपरः अपि = Another also | त्यक्त्वा = Leaving out | अन्यान् = Others)",
+          "words": [
+            "अपरः",
+            "अपि",
+            "बालकः",
+            "पुनः",
+            "आत्मानं",
+            "त्यक्त्वा",
+            "अन्यान्",
+            "बालकान्",
+            "अगणयत्",
+            "तदा",
+            "नव",
+            "एव",
+            "आसन्"
+          ]
+        },
+        {
+          "sanskrit": "अतः ते निश्चयम् अकुर्वन् यत् दशमः नद्यां मग्नः। ते विषण्णाः तूष्णीम् अतिष्ठन्।",
+          "meaning": "Therefore, they concluded that the tenth boy had drowned in the river. They sat down silently in deep sorrow.",
+          "paragraphTranslation": "इसलिए उन्होंने यह पक्का निश्चय कर लिया कि दसवाँ लड़का नदी में डूब गया है। वे सब दुःखी होकर चुपचाप बैठ गए। (निश्चयम् अकुर्वन् = Decided/Concluded | नद्यां मग्नः = Drowned in river | विषण्णाः = Saddened | तूष्णीम् = Silently)",
+          "words": [
+            "अतः",
+            "ते",
+            "निश्चयम्",
+            "अकुर्वन्",
+            "यत्",
             "दशमः",
             "नद्यां",
             "मग्नः",
-            "ते",
             "विषण्णाः",
             "तूष्णीम्",
             "अतिष्ठन्"
           ]
         },
         {
-          "sanskrit": "तदा कश्चित् पथिकः तत्र आगच्छत्। सः तान् बालकान् दुःखितान् दृष्ट्वा अपृच्छत् – अयि बालकाः! युष्माकं दुःखस्य कारणं किम्? नायकः अकथयत् “वयं दश बालकाः स्नातुम् आगताः। इदानीं नव एव स्मः। एकः नद्यां मग्नः” इति।",
-          "meaning": "Just then a wise traveler arrived. Seeing the boys in tears, he asked: 'Children! What is the cause of your sorrow?' The leader replied: 'Ten of us came to bathe. Now we are only nine; one has drowned in the river.'",
-          "paragraphTranslation": "तभी एक राहगीर वहाँ आया। उसने दुखी बच्चों से पूछा– तुम्हारे दुःख का क्या कारण है? नेता ने कहा– हम दस नहाने आए थे, अब नौ ही हैं। एक डूब गया।",
+          "sanskrit": "तदा कश्चित् पथिकः तत्र आगच्छत्। सः तान् बालकान् दुःखितान् दृष्ट्वा अपृच्छत् – अयि बालकाः! युष्माकं दुःखस्य कारणं किम्?",
+          "meaning": "Just then, a traveler arrived there. Seeing the boys sorrowful, he asked: 'O boys! What is the cause of your sorrow?'",
+          "paragraphTranslation": "तभी वहाँ से कोई राहगीर (यात्री) गुजरा। उसने उन लड़कों को दुःखी देखकर पूछा— हे लड़को! तुम्हारे दुःख का क्या कारण है? (पथिकः = Traveler | दुःखितान् दृष्ट्वा = Seeing sad | युष्माकं = Your)",
           "words": [
             "तदा",
             "कश्चित्",
@@ -15218,10 +15434,21 @@
             "दुःखितान्",
             "दृष्ट्वा",
             "अपृच्छत्",
+            "अयि",
             "युष्माकं",
             "दुःखस्य",
             "कारणं",
-            "किम्",
+            "किम्"
+          ]
+        },
+        {
+          "sanskrit": "बालकानां नायकः अकथयत् “वयं दश बालकाः स्नातुम् आगताः। इदानीं नव एव स्मः। एकः नद्यां मग्नः” इति।",
+          "meaning": "The leader of the boys said: 'Ten of us came to bathe. Now we are only nine. One has drowned in the river.'",
+          "paragraphTranslation": "लड़कों के लीडर ने कहा— 'हम दस लड़के यहाँ नहाने आए थे। पर इस समय हम नौ ही हैं। एक नदी में डूब गया है।' (इदानीं = Now | नद्यां मग्नः = Drowned)",
+          "words": [
+            "बालकानां",
+            "नायकः",
+            "अकथयत्",
             "वयं",
             "दश",
             "बालकाः",
@@ -15238,9 +15465,9 @@
           ]
         },
         {
-          "sanskrit": "पथिकः तान् अगणयत्। तत्र दश बालकाः तु आसन्। सः नायकम् आदिशत् त्वं बालकान् गणय। सः नव बालकान् एव अगणयत्। तदा पथिकः अवदत् – 'दशमः त्वम् असि' इति। तत् श्रुत्वा सर्वे प्रहृष्टाः भूत्वा अकथयन् – 'दशमः प्राप्तः !' ततः सर्वे मिलित्वा आनन्देन गृहम् अगच्छन्।",
-          "meaning": "The traveler counted them and saw all ten were present. He instructed the leader: 'Count them again.' The boy counted nine companions. Then the traveler pointed at him and declared: 'Thou art the tenth!' (दशमः त्वम् असि). Hearing this, overjoyed, they shouted: 'The tenth is found!' and happily returned home together.",
-          "paragraphTranslation": "यात्री ने गिना तो दस थे। उसने नायक से गिनने को कहा। नायक ने फिर नौ ही गिने। तब यात्री ने कहा– 'दसवें तुम खुद हो!' यह सुनकर सब खुशी से नाच उठे और बोले– 'दसवाँ मिल गया!' फिर सब आनंद से घर लौट गए।",
+          "sanskrit": "पथिकः तान् अगणयत्। तत्र दश बालकाः तु आसन्। सः नायकम् आदिशत् त्वं बालकान् गणय। सः नव बालकान् एव अगणयत्।",
+          "meaning": "The traveler counted them. There were indeed ten boys. He directed the leader: 'You count the boys.' He again counted only nine boys.",
+          "paragraphTranslation": "राहगीर ने उन्हें गिना। वहाँ दस लड़के ही मौजूद थे। उसने उनके लीडर को आदेश दिया— 'तुम लड़कों को गिनो।' उसने फिर से केवल नौ लड़कों को ही गिना। (आदिशत् = Ordered | त्वं गणय = You count)",
           "words": [
             "पथिकः",
             "तान्",
@@ -15248,16 +15475,36 @@
             "तत्र",
             "दश",
             "बालकाः",
+            "तु",
             "आसन्",
             "सः",
             "नायकम्",
             "आदिशत्",
             "त्वं",
             "गणय",
+            "नव",
+            "एव"
+          ]
+        },
+        {
+          "sanskrit": "तदा पथिकः अवदत् – दशमः त्वम् असि इति।",
+          "meaning": "Then the traveler said: 'You yourself are the tenth one!'",
+          "paragraphTranslation": "तब राहगीर बोला— 'दसवें तुम स्वयं हो!' (दशमः त्वम् असि = You are the tenth one)",
+          "words": [
+            "तदा",
+            "पथिकः",
+            "अवदत्",
             "दशमः",
             "त्वम्",
             "असि",
-            "इति",
+            "इति"
+          ]
+        },
+        {
+          "sanskrit": "तत् श्रुत्वा सर्वे प्रहृष्टाः भूत्वा अकथयन् – दशमः प्राप्तः दशमः प्राप्तः इति। ततः सर्वे मिलित्वा आनन्देन गृहम् अगच्छन्।",
+          "meaning": "Hearing this, all of them became delighted and cheered: 'The tenth one is found, the tenth one is found!' Then they all returned home happily together.",
+          "paragraphTranslation": "यह सुनकर सभी बहुत खुश हुए और कहने लगे— 'दसवाँ मिल गया, दसवाँ मिल गया!' इसके बाद सभी मिलकर खुशी-खुशी अपने घर चले गए। (श्रुत्वा = Hearing | प्रहृष्टाः = Delighted | दशमः प्राप्तः = Tenth is found | आनन्देन = Happily | गृहम् अगच्छन् = Went home)",
+          "words": [
             "तत्",
             "श्रुत्वा",
             "सर्वे",
@@ -15266,144 +15513,571 @@
             "अकथयन्",
             "दशमः",
             "प्राप्तः",
-            "सर्वे",
+            "ततः",
+            "मिलित्वा",
             "आनन्देन",
             "गृहम्",
             "अगच्छन्"
           ]
         },
         {
-          "sanskrit": "३. पृथक् रूपेण शब्दार्थः (Word Meanings)",
-          "meaning": "Key Vocabulary Glossary",
-          "paragraphTranslation": "कठिन शब्दों के अर्थ",
+          "kind": "glossary-header",
+          "sanskrit": "भाग २: वयं शब्दार्थान् जानीमः (शब्दार्थाः — पृष्ठम् १०८)",
+          "meaning": "Part 2: We Learn the Vocabulary (Page 108)",
+          "paragraphTranslation": "भाग २: हम शब्दार्थ सीखते हैं — पृष्ठ १०८",
           "words": [
-            "शब्दार्थः",
-            "कठिन",
-            "शब्दों",
-            "के",
-            "अर्थ"
-          ],
-          "kind": "glossary-header"
+            "भाग",
+            "२:",
+            "वयं",
+            "शब्दार्थान्",
+            "जानीमः",
+            "शब्दार्थाः",
+            "पृष्ठम्",
+            "१०८"
+          ]
         },
         {
+          "kind": "glossary",
           "sanskrit": "तीर्त्वा",
-          "meaning": "Having swum across",
-          "sanskrit_gloss": "तरणं कृत्वा",
+          "sanskrit_gloss": "सन्तरणम् कृत्वा",
           "hindi_gloss": "तैरकर",
+          "meaning": "Having swum across",
+          "paragraphTranslation": "तैरकर (सन्तरणम् कृत्वा)",
           "words": [
-            "तीर्त्वा",
-            "तरणं",
-            "कृत्वा"
-          ],
-          "kind": "glossary"
+            "तीर्त्वा"
+          ]
         },
         {
+          "kind": "glossary",
+          "sanskrit": "स्नानाय",
+          "sanskrit_gloss": "स्नाननिमित्तम्",
+          "hindi_gloss": "नहाने के लिए",
+          "meaning": "For bathing",
+          "paragraphTranslation": "नहाने के लिए (स्नाननिमित्तम्)",
+          "words": [
+            "स्नानाय"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "चिरम्",
+          "sanskrit_gloss": "बहुकालपर्यन्तम्",
+          "hindi_gloss": "देर तक / काफी समय तक",
+          "meaning": "For a long time",
+          "paragraphTranslation": "देर तक (बहुकालपर्यन्तम्)",
+          "words": [
+            "चिरम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "उत्तीर्णाः",
+          "sanskrit_gloss": "पारं गताः",
+          "hindi_gloss": "पार हुए",
+          "meaning": "Crossed over",
+          "paragraphTranslation": "पार हुए (पारं गताः)",
+          "words": [
+            "उत्तीर्णाः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "अपरः",
+          "sanskrit_gloss": "अन्यः",
+          "hindi_gloss": "दूसरा",
+          "meaning": "Another / The other",
+          "paragraphTranslation": "दूसरा (अन्यः)",
+          "words": [
+            "अपरः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "स्वम्",
+          "sanskrit_gloss": "आत्मानम्",
+          "hindi_gloss": "स्वयं को",
+          "meaning": "Oneself / Self",
+          "paragraphTranslation": "स्वयं को (आत्मानम्)",
+          "words": [
+            "स्वम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "मग्नः",
+          "sanskrit_gloss": "विलीनः",
+          "hindi_gloss": "डूब गया",
+          "meaning": "Drowned / Submerged",
+          "paragraphTranslation": "डूब गया (विलीनः)",
+          "words": [
+            "मग्नः"
+          ]
+        },
+        {
+          "kind": "glossary",
           "sanskrit": "विषण्णाः",
-          "meaning": "Dejected / Grief-stricken",
-          "sanskrit_gloss": "दुःखिताः",
-          "hindi_gloss": "उदास / दुखी",
+          "sanskrit_gloss": "खिन्नाः",
+          "hindi_gloss": "दुःखी हुए",
+          "meaning": "Saddened / Depressed",
+          "paragraphTranslation": "दुःखी हुए (खिन्नाः)",
           "words": [
-            "विषण्णाः",
-            "दुःखिताः"
-          ],
-          "kind": "glossary"
+            "विषण्णाः"
+          ]
         },
         {
+          "kind": "glossary",
+          "sanskrit": "तूष्णीम्",
+          "sanskrit_gloss": "निःशब्दम्",
+          "hindi_gloss": "मौन / चुपचाप",
+          "meaning": "Silent / Quietly",
+          "paragraphTranslation": "मौन (निःशब्दम्)",
+          "words": [
+            "तूष्णीम्"
+          ]
+        },
+        {
+          "kind": "glossary",
           "sanskrit": "पथिकः",
-          "meaning": "Traveler / Passerby",
-          "sanskrit_gloss": "यात्री / पान्थः",
-          "hindi_gloss": "राहगीर / मुसाफिर",
+          "sanskrit_gloss": "मार्गगन्ता",
+          "hindi_gloss": "यात्री / राहगीर",
+          "meaning": "Traveller / Passerby",
+          "paragraphTranslation": "यात्री / राहगीर (मार्गगन्ता)",
           "words": [
-            "पथिकः",
-            "यात्री",
-            "पान्थः"
-          ],
-          "kind": "glossary"
+            "पथिकः"
+          ]
         },
         {
-          "sanskrit": "दशमः त्वम् असि",
-          "meaning": "Thou art the tenth! (Symbolic realization of the true self)",
-          "sanskrit_gloss": "दशमः जनः त्वमेव",
-          "hindi_gloss": "दसवें तुम खुद हो",
+          "kind": "glossary",
+          "sanskrit": "अगणयत्",
+          "sanskrit_gloss": "गणनाम् कृतवान्",
+          "hindi_gloss": "गिना / गणना की",
+          "meaning": "Counted",
+          "paragraphTranslation": "गिना (गणनाम् कृतवान्)",
           "words": [
-            "दशमः",
-            "त्वम्",
-            "असि"
-          ],
-          "kind": "glossary"
+            "अगणयत्"
+          ]
         },
         {
-          "sanskrit": "४. वयम् अभ्यासं कुर्मः (हल किए गए अभ्यास प्रश्न)",
-          "meaning": "Exercises with Solved Answers",
-          "paragraphTranslation": "अभ्यास कार्य",
+          "kind": "glossary",
+          "sanskrit": "प्रहृष्टाः",
+          "sanskrit_gloss": "आनन्दिताः",
+          "hindi_gloss": "प्रसन्न / अति आनंदित",
+          "meaning": "Delighted / Extremely joyful",
+          "paragraphTranslation": "प्रसन्न (आनन्दिताः)",
           "words": [
+            "प्रहृष्टाः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "कतमः",
+          "sanskrit_gloss": "कियत्-सङ्ख्यात्मकः",
+          "hindi_gloss": "कौन-सा",
+          "meaning": "Which one (of many)",
+          "paragraphTranslation": "कौन-सा (कियत्-सङ्ख्यात्मकः)",
+          "words": [
+            "कतमः"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "भाग ३: वयम् अभ्यासं कुर्मः (अभ्यास कार्यम् — पृष्ठानि १०८–११४)",
+          "meaning": "Part 3: Textbook Exercises & Solved Answer Key (Pages 108–114)",
+          "paragraphTranslation": "भाग ३: अभ्यास कार्य एवं सम्पूर्ण समाधान (पृष्ठ १०८–११४)",
+          "words": [
+            "भाग",
+            "३:",
             "वयम्",
             "अभ्यासं",
-            "कुर्मः"
-          ],
-          "kind": "exercise-header"
+            "कुर्मः",
+            "अभ्यास",
+            "कार्यम्",
+            "पृष्ठानि",
+            "१०८–११४"
+          ]
         },
         {
-          "sanskrit": "(क) कति बालकाः स्नातुं गताः ?",
-          "meaning": "How many boys went to bathe? Answer: Ten (दश बालकाः).",
-          "answer_sanskrit": "दश",
+          "kind": "section-header",
+          "sanskrit": "अत्र इदम् अवधेयम् — पूरणार्थक-शब्दाः (Ordinal Numbers Grammar Note - पृष्ठम् १०८)",
+          "meaning": "Grammar Note: Ordinal Numbers (Order and Sequence) across Genders (Page 108)",
+          "paragraphTranslation": "विशेष अवधेय: पूरणार्थक शब्द (क्रम या स्थान बताने वाले शब्द तीनों लिंगों में):",
           "words": [
-            "कति",
-            "बालकाः",
-            "स्नातुं",
-            "गताः",
-            "?",
-            "उत्तरः",
-            "दश"
-          ],
-          "kind": "exercise-qa"
+            "अत्र",
+            "इदम्",
+            "अवधेयम्",
+            "पूरणार्थक-शब्दाः",
+            "पृष्ठम्",
+            "१०८"
+          ]
         },
         {
-          "sanskrit": "(ख) बालकः कं न अगणयत् ?",
-          "meaning": "Whom did the counting boy forget to count? Answer: Himself (आत्मानम्).",
-          "answer_sanskrit": "आत्मानम्",
+          "sanskrit": "पूरणार्थक-शब्दानां रूप-त्रयम्:\n• एकम् (१) ➔ पुंल्लिङ्गे: प्रथमः | स्त्रीलिङ्गे: प्रथमा | नपुंसकलिङ्गे: प्रथमम्\n• द्वे (२) ➔ पुंल्लिङ्गे: द्वितीयः | स्त्रीलिङ्गे: द्वितीया | नपुंसकलिङ्गे: द्वितीयम्\n• त्रीणि (३) ➔ पुंल्लिङ्गे: तृतीयः | स्त्रीलिङ्गे: तृतीया | नपुंसकलिङ्गे: तृतीयम्",
+          "meaning": "Ordinal formation: 1st -> प्रथमः (Masc), प्रथमा (Fem), प्रथमम् (Neut) | 2nd -> द्वितीयः (Masc), द्वितीया (Fem), द्वितीयम् (Neut) | 3rd -> तृतीयः (Masc), तृतीया (Fem), तृतीयम् (Neut).",
+          "paragraphTranslation": "क्रमवाचक रूप:\n• १ ➔ प्रथमः / प्रथमा / प्रथमम्\n• २ ➔ द्वितीयः / द्वितीया / द्वितीयम्\n• ३ ➔ तृतीयः / तृतीया / तृतीयम्",
           "words": [
-            "बालकः",
-            "कं",
-            "न",
-            "अगणयत्",
-            "?",
-            "उत्तरः",
-            "आत्मानम्"
-          ],
-          "kind": "exercise-qa"
+            "प्रथमः",
+            "प्रथमा",
+            "प्रथमम्",
+            "द्वितीयः",
+            "द्वितीया",
+            "द्वितीयम्",
+            "तृतीयः",
+            "तृतीया",
+            "तृतीयम्"
+          ]
         },
         {
-          "sanskrit": "(ग) बालकान् कः अगणयत् ?",
-          "meaning": "Who enlightened the boys by counting correctly? Answer: The traveler (पथिकः).",
-          "answer_sanskrit": "पथिकः",
+          "kind": "exercise-header",
+          "sanskrit": "१. कोष्ठकात् समीचीनम् उत्तरं चित्वा लिखन्तु — (पृष्ठानि १०८, १०९)",
+          "meaning": "Exercise 1: Choose the correct answer from the brackets (Pages 108, 109)",
+          "paragraphTranslation": "१. कोष्ठक से सही उत्तर चुनकर लिखिए:",
           "words": [
-            "बालकान्",
-            "कः",
-            "अगणयत्",
-            "?",
-            "उत्तरः",
-            "पथिकः"
-          ],
-          "kind": "exercise-qa"
+            "१.",
+            "कोष्ठकात्",
+            "समीचीनम्",
+            "उत्तरं",
+            "चित्वा",
+            "लिखन्तु",
+            "पृष्ठानि",
+            "१०८",
+            "१०९"
+          ]
         },
         {
-          "sanskrit": "(घ) पथिकः किं वदति ?",
-          "meaning": "What does the traveler say? Answer: 'Thou art the tenth' (दशमः त्वम् असि).",
-          "answer_sanskrit": "दशमः त्वम् असि",
+          "kind": "exercise-qa",
+          "sanskrit": "(क) कति बालकाः स्नातुं गताः? (पञ्च, द्वादश, दश)\nउत्तरम्: दश\n\n(ख) कतमः बालकः नद्यां मग्नः इति निश्चयम् अकुर्वन्? (प्रथमः, दशमः, पञ्चमः)\nउत्तरम्: दशमः\n\n(ग) दशमः कः आसीत्? (नायकः, पथिकः, नदी)\nउत्तरम्: नायकः\n\n(घ) कः सम्यक् रूपेण बालकान् गणितवान्? (नायकः, पथिकः, बालकः)\nउत्तरम्: पथिकः\n\n(ङ) बालकाः कां तीर्त्वा पारं गताः? (पुष्करिणीम्, समुद्रम्, नदीम्)\nउत्तरम्: नदीम्",
+          "meaning": "Options: (a) How many boys went to bathe? -> दश (Ten) | (b) Which boy did they conclude drowned? -> दशमः (Tenth) | (c) Who was the tenth? -> नायकः (The leader himself) | (d) Who counted properly? -> पथिकः (The traveler) | (e) What did they swim across? -> नदीम् (The river).",
+          "paragraphTranslation": "(क) कितने लड़के नहाने गए थे? -> उत्तर: दश (दस)\n(ख) कौन-सा लड़का नदी में डूब गया, ऐसा निश्चय किया? -> उत्तर: दशमः (दसवाँ)\n(ग) दसवाँ कौन था? -> उत्तर: नायकः (नायक स्वयं)\n(घ) किसने लड़कों को सही से गिना? -> उत्तर: पथिकः (राहगीर ने)\n(ङ) लड़के क्या तैरकर पार गए? -> उत्तर: नदीम् (नदी को)",
           "words": [
-            "पथिकः",
-            "किं",
-            "वदति",
-            "?",
-            "उत्तरः",
+            "दश",
             "दशमः",
-            "त्वम्",
-            "असि"
-          ],
-          "kind": "exercise-qa"
+            "नायकः",
+            "पथिकः",
+            "नदीम्"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "२. पाठस्य आधारेण एकवाक्येन प्रश्नानाम् उत्तराणि लिखन्तु — (पृष्ठम् १०९)",
+          "meaning": "Exercise 2: Answer the questions in one sentence based on the text (Page 109)",
+          "paragraphTranslation": "२. पाठ के आधार पर एक वाक्य में प्रश्नों के उत्तर लिखिए:",
+          "words": [
+            "२.",
+            "पाठस्य",
+            "आधारेण",
+            "एकवाक्येन",
+            "प्रश्नानाम्",
+            "उत्तराणि",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "१०९"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) दश बालकाः किमर्थं नदीम् अगच्छन्?\nउत्तरम्: दश बालकाः स्नानाय नदीम् अगच्छन्।\n\n(ख) नायकः किम् अपृच्छत्?\nउत्तरम्: नायकः अपृच्छत् – \"अपि सर्वे बालकाः नदीम् उत्तीर्णाः?\"\n\n(ग) बालकाः स्नानाय कुत्र अगच्छन्?\nउत्तरम्: बालकाः स्नानाय नदीम् अगच्छन्।\n\n(घ) बालकाः किं निश्चयम् अकुर्वन्?\nउत्तरम्: बालकाः निश्चयम् अकुर्वन् यत् दशमः नद्यां मग्नः।\n\n(ङ) बालकाः कथं गृहम् अगच्छन्?\nउत्तरम्: बालकाः आनन्देन मिलित्वा गृहम् अगच्छन्।",
+          "meaning": "Single-sentence answers: (a) Ten boys went to river for bathing. | (b) Leader asked: 'Did all boys cross the river?' | (c) Boys went to the river to bathe. | (d) Boys concluded the tenth boy drowned. | (e) Boys went home happily together.",
+          "paragraphTranslation": "(क) दस लड़के नदी पर किसलिए गए? ➔ उत्तर: दश बालकाः स्नानाय नदीम् अगच्छन्।\n(ख) नायक ने क्या पूछा? ➔ उत्तर: नायकः अपृच्छत् – \"अपि सर्वे बालकाः नदीम् उत्तीर्णाः?\"\n(ग) लड़के नहाने के लिए कहाँ गए? ➔ उत्तर: बालकाः स्नानाय नदीम् अगच्छन्।\n(घ) लड़कों ने क्या निश्चय किया? ➔ उत्तर: बालकाः निश्चयम् अकुर्वन् यत् दशमः नद्यां मग्नः।\n(ङ) लड़के घर कैसे गए? ➔ उत्तर: बालकाः आनन्देन मिलित्वा गृहम् अगच्छन्।",
+          "words": [
+            "स्नानाय",
+            "उत्तीर्णाः",
+            "निश्चयम्",
+            "मग्नः",
+            "आनन्देन",
+            "मिलित्वा",
+            "गृहम्",
+            "अगच्छन्"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "३. पट्टिकातः उचितं विशेषणपदं योजयित्वा वाक्यानि रचयन्तु — अङ्गुलि-परिचयः (पृष्ठम् १०९)",
+          "meaning": "Exercise 3: Match fingers with correct ordinal adjectives (Page 109)",
+          "paragraphTranslation": "३. पट्टिका से उचित क्रमवाचक पद जोड़कर वाक्य बनाइए (हाथ की अंगुलियों का परिचय):",
+          "words": [
+            "३.",
+            "पट्टिकातः",
+            "उचितं",
+            "विशेषणपदं",
+            "योजयित्वा",
+            "वाक्यानि",
+            "रचयन्तु",
+            "पृष्ठम्",
+            "१०९"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "मञ्जूषा: प्रथमा, द्वितीया, तृतीया, चतुर्थी, पञ्चमी\n\n(क) करे द्वितीया अङ्गुलिः भवति तर्जनी।\n(ख) अनामिका चतुर्थी अङ्गुलिः भवति।\n(ग) करे प्रथमा अङ्गुलिः भवति अङ्गुष्ठः।\n(घ) कनिष्ठिका पञ्चमी अङ्गुलिः भवति।\n(ङ) करे तृतीया अङ्गुलिः भवति मध्यमा।",
+          "meaning": "Finger positions: (a) Index finger (तर्जनी) is 2nd | (b) Ring finger (अनामिका) is 4th | (c) Thumb (अङ्गुष्ठः) is 1st | (d) Little finger (कनिष्ठिका) is 5th | (e) Middle finger (मध्यमा) is 3rd.",
+          "paragraphTranslation": "अंगुलियों के क्रम:\n(क) करे द्वितीया अङ्गुलिः भवति तर्जनी। (तर्जनी = दूसरी अंगुली)\n(ख) अनामिका चतुर्थी अङ्गुलिः भवति। (अनामिका = चौथी अंगुली)\n(ग) करे प्रथमा अङ्गुलिः भवति अङ्गुष्ठः। (अङ्गुष्ठ = पहला अंगूठा)\n(घ) कनिष्ठिका पञ्चमी अङ्गुलिः भवति। (कनिष्ठिका = पाँचवीं छोटी अंगुली)\n(ङ) करे तृतीया अङ्गुलिः भवति मध्यमा। (मध्यमा = तीसरी बीच की अंगुली)",
+          "words": [
+            "तर्जनी",
+            "अनामिका",
+            "अङ्गुष्ठः",
+            "कनिष्ठिका",
+            "मध्यमा",
+            "प्रथमा",
+            "द्वितीया",
+            "तृतीया",
+            "चतुर्थी",
+            "पञ्चमी"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "४. पट्टिकां दृष्ट्वा प्रश्नानाम् उत्तराणि लिखन्तु — सप्ताहाह-दिवसाः (पृष्ठम् ११०)",
+          "meaning": "Exercise 4: Answer questions on days of the week using ordinals (Page 110)",
+          "paragraphTranslation": "४. सप्ताह के दिनों के आधार पर प्रश्नों के उत्तर लिखिए:",
+          "words": [
+            "४.",
+            "पट्टिकां",
+            "दृष्ट्वा",
+            "प्रश्नानाम्",
+            "उत्तराणि",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "११०"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) सप्ताहस्य प्रथमः दिवसः कः?\nउत्तरम्: रविवासरः\n\n(ख) सप्ताहस्य कतमः दिवसः रविवासरः अस्ति?\nउत्तरम्: प्रथमः दिवसः\n\n(ग) सप्ताहस्य षष्ठः दिवसः कः?\nउत्तरम्: शुक्रवासरः\n\n(घ) सप्ताहस्य कतमः दिवसः शनिवासरः अस्ति?\nउत्तरम्: सप्तमः दिवसः\n\n(ङ) सप्ताहस्य अन्तिमः दिवसः कः अस्ति?\nउत्तरम्: शनिवासरः",
+          "meaning": "Days of the week: (a) 1st day -> Sunday (रविवासरः) | (b) Which day is Sunday? -> 1st day (प्रथमः दिवसः) | (c) 6th day -> Friday (शुक्रवासरः) | (d) Which day is Saturday? -> 7th day (सप्तमः दिवसः) | (e) Final day -> Saturday (शनिवासरः).",
+          "paragraphTranslation": "(क) सप्ताह का पहला दिन कौन-सा है? -> उत्तर: रविवासरः (रविवार)\n(ख) रविवासर सप्ताह का कौन-सा दिन है? -> उत्तर: प्रथमः दिवसः (पहला दिन)\n(ग) सप्ताह का छठा दिन कौन-सा है? -> उत्तर: शुक्रवासरः (शुक्रवार)\n(घ) शनिवासर सप्ताह का कौन-सा दिन है? -> उत्तर: सप्तमः दिवसः (सातवाँ दिन)\n(ङ) सप्ताह का अंतिम दिन कौन-सा है? -> उत्तर: शनिवासरः (शनिवार)",
+          "words": [
+            "सप्ताहस्य",
+            "रविवासरः",
+            "प्रथमः",
+            "षष्ठः",
+            "शुक्रवासरः",
+            "शनिवासरः",
+            "सप्तमः",
+            "अन्तिमः"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "५. वाटिकां दृष्ट्वा प्रश्नानाम् उत्तराणि लिखन्तु — भारतीय-मासाः (पृष्ठानि ११०, १११)",
+          "meaning": "Exercise 5: Answer questions on traditional Indian calendar months (Pages 110, 111)",
+          "paragraphTranslation": "५. भारतीय महीनों (चैत्र आदि) के क्रम के आधार पर प्रश्नों के उत्तर लिखिए:",
+          "words": [
+            "५.",
+            "वाटिकां",
+            "दृष्ट्वा",
+            "प्रश्नानाम्",
+            "उत्तराणि",
+            "लिखन्तु",
+            "पृष्ठानि",
+            "११०",
+            "१११"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) मासेषु पञ्चमः मासः कः?\nउत्तरम्: श्रावणः\n\n(ख) मार्गशीर्षः कतमः मासः अस्ति?\nउत्तरम्: नवमः मासः\n\n(ग) मासेषु दशमः मासः कः?\nउत्तरम्: पौषः\n\n(घ) कार्त्तिकः कतमः मासः अस्ति?\nउत्तरम्: अष्टमः मासः\n\n(ङ) मासेषु अन्तिमः मासः कः?\nउत्तरम्: फाल्गुनः",
+          "meaning": "Indian months: (a) 5th month -> Shravana | (b) Which month is Margashirsha? -> 9th month | (c) 10th month -> Pausha | (d) Which month is Kartika? -> 8th month | (e) Last (12th) month -> Phalguna.",
+          "paragraphTranslation": "(क) भारतीय महीनों में पाँचवाँ महीना कौन-सा है? -> उत्तर: श्रावणः (सावन)\n(ख) मार्गशीर्ष कौन-सा महीना है? -> उत्तर: नवमः मासः (नौवाँ महीना)\n(ग) महीनों में दसवाँ महीना कौन-सा है? -> उत्तर: पौषः (पूस)\n(घ) कार्तिक कौन-सा महीना है? -> उत्तर: अष्टमः मासः (आठवाँ महीना)\n(ङ) महीनों में अंतिम (बारहवाँ) महीना कौन-सा है? -> उत्तर: फाल्गुनः (फागुन)",
+          "words": [
+            "मासेषु",
+            "पञ्चमः",
+            "श्रावणः",
+            "मार्गशीर्षः",
+            "नवमः",
+            "दशमः",
+            "पौषः",
+            "कार्त्तिकः",
+            "अष्टमः",
+            "फाल्गुनः"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "६. मञ्जूषां पश्यन्तु, उत्तरं लिखन्तु — आङ्ग्ल-मासाः (पृष्ठम् १११)",
+          "meaning": "Exercise 6: Answer questions on Gregorian English calendar months (Page 111)",
+          "paragraphTranslation": "६. अंग्रेजी (ग्रेगोरियन) महीनों के क्रम के आधार पर उत्तर लिखिए:",
+          "words": [
+            "६.",
+            "मञ्जूषां",
+            "पश्यन्तु",
+            "उत्तरं",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "१११"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) आङ्ग्लमासेषु दशमः मासः अक्तूबर-मासः।\n(ख) फरवरीमासः द्वितीयः मासः अस्ति।\n(ग) आङ्ग्लमासेषु अष्टमः मासः अगस्त-मासः।\n(घ) सितम्बरमासः नवमः मासः अस्ति।\n(ङ) आङ्ग्लमासेषु अन्तिमः मासः दिसम्बर-मासः।",
+          "meaning": "Gregorian months: (a) 10th month is October | (b) February is the 2nd month | (c) 8th month is August | (d) September is the 9th month | (e) Last month is December.",
+          "paragraphTranslation": "(क) आङ्ग्लमासों में दसवाँ महीना अक्तूबर-मास है।\n(ख) फरवरी-मास दूसरा महीना है।\n(ग) आङ्ग्लमासों में आठवाँ महीना अगस्त-मास है।\n(घ) सितम्बर-मास नौवाँ महीना है।\n(ङ) आङ्ग्लमासों में अंतिम महीना दिसम्बर-मास है।",
+          "words": [
+            "अक्तूबर",
+            "द्वितीयः",
+            "अगस्त",
+            "नवमः",
+            "दिसम्बर"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "७. गद्यांशे अङ्कानां स्थाने सङ्ख्यावाचकशब्दान् लिखन्तु — (पृष्ठम् १११)",
+          "meaning": "Exercise 7: Replace digits in the paragraph with appropriate Sanskrit number adjectives (Page 111)",
+          "paragraphTranslation": "७. गद्यांश में अंकों के स्थान पर संस्कृत संख्यावाचक शब्द लिखिए:",
+          "words": [
+            "७.",
+            "गद्यांशे",
+            "अङ्कानां",
+            "स्थाने",
+            "सङ्ख्यावाचकशब्दान्",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "१११"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "एका (१) पाठशाला अस्ति। तत्र त्रयः (३) अध्यापकाः सन्ति। साहित्यकक्षायां विंशतिः (२०) छात्राः सन्ति। एकस्मिन् दिने एकः (१) निरीक्षकः आगतवान्। तस्मिन् दिने साहित्यकक्षायां पञ्चदश (१५) छात्राः उपस्थिताः। पञ्च (५) अनुपस्थिताः। निरीक्षकः दश (१०) शब्दान् लेखितुम् उक्तवान्। द्वौ (२) छात्रौ सप्त (७) शब्दान् सम्यक् लिखितवन्तौ। एकः (१) छात्रः सर्वान् अपि दश (१०) शब्दान् सम्यक् लिखितवान्। अवशिष्टाः द्वादश (१२) छात्राः नव (९) शब्दान् सम्यक् लिखितवन्तः।",
+          "meaning": "There is 1 school. There are 3 teachers. In the literature class there are 20 students. One day, 1 inspector came. On that day, 15 students were present in the literature class; 5 were absent. The inspector asked them to write 10 words. 2 students wrote 7 words correctly. 1 student wrote all 10 words correctly. The remaining 12 students wrote 9 words correctly.",
+          "paragraphTranslation": "एक (एका) पाठशाला है। वहाँ तीन (त्रयः) अध्यापक हैं। साहित्य-कक्षा में बीस (विंशतिः) छात्र हैं। एक दिन एक (एकः) निरीक्षक आए। उस दिन साहित्य-कक्षा में पंद्रह (पञ्चदश) छात्र उपस्थित थे। पाँच (पञ्च) अनुपस्थित थे। निरीक्षक ने दस (दश) शब्द लिखने को कहा। दो (द्वौ) छात्रों ने सात (सप्त) शब्द सही लिखे। एक (एकः) छात्र ने पूरे दस (दश) शब्द सही लिखे। शेष बारह (द्वादश) छात्रों ने नौ (नव) शब्द सही लिखे।",
+          "words": [
+            "एका",
+            "त्रयः",
+            "विंशतिः",
+            "एकः",
+            "पञ्चदश",
+            "पञ्च",
+            "दश",
+            "द्वौ",
+            "सप्त",
+            "द्वादश",
+            "नव"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "भाग ४: पूरणशब्दाः — लिङ्गत्रये क्रमवाचक-तालिका (पृष्ठम् ११२)",
+          "meaning": "Part 4: Ordinal Reference Matrix across Masculine, Feminine, and Neuter (Page 112)",
+          "paragraphTranslation": "भाग ४: पूरण शब्द — तीनों लिंगों में १ से १० तक क्रमवाचक तालिका (पृष्ठ ११२)",
+          "words": [
+            "भाग",
+            "४:",
+            "पूरणशब्दाः",
+            "लिङ्गत्रये",
+            "क्रमवाचक-तालिका",
+            "पृष्ठम्",
+            "११२"
+          ]
+        },
+        {
+          "sanskrit": "सङ्ख्या १ तः १० पर्यन्तं पूरणशब्दाः (पुंल्लिङ्गम् | स्त्रीलिङ्गम् | नपुंसकलिङ्गम्):\n• १ ➔ प्रथमः | प्रथमा | प्रथमम्\n• २ ➔ द्वितीयः | द्वितीया | द्वितीयम्\n• ३ ➔ तृतीयः | तृतीया | तृतीयम्\n• ४ ➔ चतुर्थः | चतुर्थी | चतुर्थम्\n• ५ ➔ पञ्चमः | पञ्चमी | पञ्चमम्\n• ६ ➔ षष्ठः | षष्ठी | षष्ठम्\n• ७ ➔ सप्तमः | सप्तमी | सप्तमम्\n• ८ ➔ अष्टमः | अष्टमी | अष्टमम्\n• ९ ➔ नवमः | नवमी | नवमम्\n• १० ➔ दशमः | दशमी | दशमम्",
+          "meaning": "Ordinal matrix 1 to 10: 1st -> प्रथमः/प्रथमा/प्रथमम् | 2nd -> द्वितीयः/द्वितीया/द्वितीयम् | 3rd -> तृतीयः/तृतीया/तृतीयम् | 4th -> चतुर्थः/चतुर्थी/चतुर्थम् | 5th -> पञ्चमः/पञ्चमी/पञ्चमम् | 6th -> षष्ठः/षष्ठी/षष्ठम् | 7th -> सप्तमः/सप्तमी/सप्तमम् | 8th -> अष्टमः/अष्टमी/अष्टमम् | 9th -> नवमः/नवमी/नवमम् | 10th -> दशमः/दशमी/दशमम्.",
+          "paragraphTranslation": "क्रमसूचक तालिका (१ से १०):\n१ -> प्रथमः / प्रथमा / प्रथमम्\n२ -> द्वितीयः / द्वितीया / द्वितीयम्\n३ -> तृतीयः / तृतीया / तृतीयम्\n४ -> चतुर्थः / चतुर्थी / चतुर्थम्\n५ -> पञ्चमः / पञ्चमी / पञ्चमम्\n६ -> षष्ठः / षष्ठी / षष्ठम्\n७ -> सप्तमः / सप्तमी / सप्तमम्\n८ -> अष्टमः / अष्टमी / अष्टमम्\n९ -> नवमः / नवमी / नवमम्\n१० -> दशमः / दशमी / दशमम्",
+          "words": [
+            "प्रथमः",
+            "द्वितीयः",
+            "तृतीयः",
+            "चतुर्थः",
+            "पञ्चमः",
+            "षष्ठः",
+            "सप्तमः",
+            "अष्टमः",
+            "नवमः",
+            "दशमः"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "भाग ५: सङ्ख्यावाचकशब्दाः — १ तः १०० पर्यन्तम् (पृष्ठम् ११३)",
+          "meaning": "Part 5: Standard Sanskrit Counting Chart from 1 to 100 (Page 113)",
+          "paragraphTranslation": "भाग ५: संस्कृत संख्या गणना — १ से १०० तक (पृष्ठ ११३)",
+          "words": [
+            "भाग",
+            "५:",
+            "सङ्ख्यावाचकशब्दाः",
+            "पर्यन्तम्",
+            "पृष्ठम्",
+            "११३"
+          ]
+        },
+        {
+          "sanskrit": "दशक-सङ्ख्यावाचक-शब्दाः (Major Landmark Decades 1 to 100):\n• १० — दश (Ten)\n• २० — विंशतिः (Twenty)\n• ३० — त्रिंशत् (Thirty)\n• ४० — चत्वारिंशत् (Forty)\n• ५० — पञ्चाशत् (Fifty)\n• ६० — षष्टिः (Sixty)\n• ७० — सप्ततिः (Seventy)\n• ८० — अशीतिः (Eighty)\n• ९० — नवतिः (Ninety)\n• १०० — शतम् (Hundred)",
+          "meaning": "Key Sanskrit counting decade landmarks from 10 to 100: दश, विंशतिः, त्रिंशत्, चत्वारिंशत्, पञ्चाशत्, षष्टिः, सप्ततिः, अशीतिः, नवतिः, शतम्.",
+          "paragraphTranslation": "प्रमुख दशक संख्याएँ:\n१० = दश | २० = विंशतिः | ३० = त्रिंशत् | ४० = चत्वारिंशत् | ५० = पञ्चाशत् | ६० = षष्टिः | ७० = सप्ततिः | ८० = अशीतिः | ९० = नवतिः | १०० = शतम्",
+          "words": [
+            "दश",
+            "विंशतिः",
+            "त्रिंशत्",
+            "चत्वारिंशत्",
+            "पञ्चाशत्",
+            "षष्टिः",
+            "सप्ततिः",
+            "अशीतिः",
+            "नवतिः",
+            "शतम्"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "भाग ६: सङ्कटनाशनं श्रीगणेशस्तोत्रम् एवं परियोजनाकार्यम् (पृष्ठम् ११४)",
+          "meaning": "Part 6: Sankatanashana Shri Ganesha Stotram & Project Work (Page 114)",
+          "paragraphTranslation": "भाग ६: सङ्कटनाशनं श्रीगणेशस्तोत्रम् एवं परियोजनाकार्य — १ से ५ तक लिङ्गभेद (पृष्ठ ११४)",
+          "words": [
+            "भाग",
+            "६:",
+            "सङ्कटनाशनं",
+            "श्रीगणेशस्तोत्रम्",
+            "परियोजनाकार्यम्",
+            "पृष्ठम्",
+            "११४"
+          ]
+        },
+        {
+          "sanskrit": "सङ्कटनाशनं श्रीगणेशस्तोत्रम् (द्वादश नामानि पूरणवाचकक्रमसहितानि):\n\nप्रथमं वक्रतुण्डं च एकदन्तं द्वितीयकम् ।\nतृतीयं कृष्णपिङ्गाक्षं गजवक्त्रं चतुर्थकम् ॥\nलम्बोदरं पञ्चमं च षष्ठं विकटमेव च ।\nसप्तमं विघ्नराजेन्द्रं धूम्रवर्णं तथाष्टमम् ॥\nनवमं भालचन्द्रं च दशमं तु विनायकम् ।\nएकादशं गणपतिं द्वादशं तु गजाननम् ॥",
+          "meaning": "Sankata Nashana Ganesha Stotra: Celebrating the twelve names of Lord Ganesha in ordinal sequence (1st Vakratunda, 2nd Ekadanta, 3rd Krishnapingaksha, 4th Gajavaktra, 5th Lambodara, 6th Vikata, 7th Vighnarajendra, 8th Dhumravarna, 9th Bhalachandra, 10th Vinayaka, 11th Ganapati, 12th Gajanana).",
+          "paragraphTranslation": "भगवान् गणेश के बारह नामों का स्तोत्र क्रमवाचक पदों के साथ:\nपहला नाम वक्रतुण्ड, दूसरा एकदन्त, तीसरा कृष्णपिङ्गाक्ष, चौथा गजवक्त्र, पाँचवाँ लम्बोदर, छठा विकट, सातवाँ विघ्नराजेन्द्र, आठवाँ धूम्रवर्ण, नौवाँ भालचन्द्र, दसवाँ विनायक, ग्यारहवाँ गणपति और बारहवाँ गजानन है।",
+          "words": [
+            "प्रथमं",
+            "वक्रतुण्डं",
+            "एकदन्तं",
+            "द्वितीयकम्",
+            "तृतीयं",
+            "गजवक्त्रं",
+            "चतुर्थकम्",
+            "लम्बोदरं",
+            "पञ्चमं",
+            "षष्ठं",
+            "सप्तमं",
+            "धूम्रवर्णं",
+            "अष्टमम्",
+            "नवमं",
+            "दशमं",
+            "विनायकम्",
+            "गणपतिं",
+            "गजाननम्"
+          ]
+        },
+        {
+          "sanskrit": "परियोजनाकार्यम् — १ तः ५ पर्यन्तं सङ्ख्यानां लिङ्गानुसारं रूपाणि:\n• १ ➔ पुंल्लिङ्गे: एकः | स्त्रीलिङ्गे: एका | नपुंसकलिङ्गे: एकम्\n• २ ➔ पुंल्लिङ्गे: द्वौ | स्त्रीलिङ्गे: द्वे | नपुंसकलिङ्गे: द्वे\n• ३ ➔ पुंल्लिङ्गे: त्रयः | स्त्रीलिङ्गे: तिस्रः | नपुंसकलिङ्गे: त्रीणि\n• ४ ➔ पुंल्लिङ्गे: चत्वारः | स्त्रीलिङ्गे: चतस्रः | नपुंसकलिङ्गे: चत्वारि\n• ५ ➔ पुंल्लिङ्गे: पञ्च | स्त्रीलिङ्गे: पञ्च | नपुंसकलिङ्गे: पञ्च (पञ्चतः आरभ्य सर्वेषु लिङ्गेषु समानानि रूपाणि भवन्ति)",
+          "meaning": "Project Work: Numbers 1 to 4 vary by gender; from 5 onwards, numbers remain identical across all three genders.",
+          "paragraphTranslation": "परियोजनाकार्य: १ से ४ तक की संख्याएँ लिंग के अनुसार बदलती हैं; ५ से आगे सभी संख्याएँ तीनों लिंगों में एकसमान रहती हैं।\n१ = एकः / एका / एकम्\n२ = द्वौ / द्वे / द्वे\n३ = त्रयः / तिस्रः / त्रीणि\n४ = चत्वारः / चतस्रः / चत्वारि\n५ = पञ्च / पञ्च / पञ्च",
+          "words": [
+            "एकः",
+            "एका",
+            "एकम्",
+            "द्वौ",
+            "द्वे",
+            "त्रयः",
+            "तिस्रः",
+            "त्रीणि",
+            "चत्वारः",
+            "चतस्रः",
+            "चत्वारि",
+            "पञ्च"
+          ]
         }
-      ]
+      ],
+      "page_numbers": "104-114"
     },
     {
       "id": "gsde111",

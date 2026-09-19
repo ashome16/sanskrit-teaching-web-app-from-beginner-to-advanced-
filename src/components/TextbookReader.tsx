@@ -757,12 +757,20 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                                             ? 'सूक्तयः'
                                             : jump.label.includes('द्रव्य') || jump.label.includes('रसायन') || jump.label.includes('विज्ञान')
                                               ? 'विज्ञानम्'
-                                              : jump.label.includes('विस्तार') || jump.label.includes('पुराण')
-                                                ? 'विस्तारः'
-                                                : jump.label.includes('लाभ')
-                                                  ? 'लाभाः'
-                                                  : jump.label.includes('स्वास्थ्य') || jump.label.includes('नियम')
-                                                    ? 'स्वास्थ्य'
+                                              : jump.label.includes('स्तोत्र')
+                                                ? 'स्तोत्रम्'
+                                                : jump.label.includes('अवधेय')
+                                                  ? 'अवधेयम्'
+                                                  : jump.label.includes('पूरण')
+                                                    ? 'पूरणशब्दाः'
+                                                    : jump.label.includes('सङ्ख्या')
+                                                      ? 'सङ्ख्याः'
+                                                      : jump.label.includes('विस्तार') || jump.label.includes('पुराण')
+                                                        ? 'विस्तारः'
+                                                        : jump.label.includes('लाभ')
+                                                          ? 'लाभाः'
+                                                          : jump.label.includes('स्वास्थ्य') || jump.label.includes('नियम')
+                                                            ? 'स्वास्थ्य'
                                         : jump.label.includes('पृष्ठम् ५६') || jump.label.includes('पृष्ठ ५६')
                                           ? 'पृष्ठ ५६'
                                           : jump.label.includes('पृष्ठम् ३८') || jump.label.includes('पृष्ठ ३८') || jump.label.includes('Page 38')
