@@ -1,67 +1,108 @@
-Chapter 4: न लभ्यते चेत् आम्लं द्राक्षाफलम्
+चतुर्थः पाठः : न लभ्यते चेत् आम्लं द्राक्षाफलम् (पाठः पृष्ठानि ३९-४१)
 
-()
-
-
-=== वर्गे संवादः (कक्षा में बातचीत) ===
-(Classroom Dialogue: Introduction to the Fox & Grapes)
-आचार्यः: प्रियच्छात्राः ! एतत् चित्रं पश्यन्तु। चित्रे किं किम् अस्ति ?
-(Teacher: Dear students! Look at this picture. What all is there in the picture?)
-
-प्रथमः छात्रः: महोदय ! चित्रे वृक्षः अस्ति ।
-(First Student: Sir! There is a tree in the picture.)
-
-द्वितीयः छात्रः: महोदय ! शृगालः अस्ति। द्राक्षाफलानि अपि सन्ति ।
-(Second Student: Sir! There is a fox. There are also grapes.)
-
-आचार्यः: बहु सम्यक् । शृगालः किं करोति ?
-(Teacher: Very good. What is the fox doing?)
-
-तृतीयः छात्रः: आचार्य ! शृगालः द्राक्षाफलानि खादितुम् इच्छति, किन्तु न शक्नोति ।
-(Third Student: Teacher! The fox wants to eat the grapes, but cannot reach them.)
-
-आचार्यः: अहो ! भवन्तः कथं जानन्ति ?
-(Teacher: Oh! How do you all know this?)
-
-छात्राः: महोदय ! वयम् एतां कथां मातृभाषया श्रुतवन्तः ।
-(Students: Sir! We have heard this story in our mother tongue.)
-
-आचार्यः: बहु समीचीनम्। तर्हि संस्कृतभाषायाम् एतां कथां गीतरूपेण गायामः अभिनयं च कुर्मः।
-(Teacher: Very wonderful! Then let us sing this story in Sanskrit as an action-song and enact it.)
-
-छात्राः: अस्तु आचार्य ! कृपया पाठयतु।
-(Students: Yes, Teacher! Please teach us.)
+(पाठ ४ : न लभ्यते चेत् आम्लं द्राक्षाफलम् - न मिले तो अंगूर खट्टे / The Sour Grapes Fable)
 
 
-=== २. अभिनय-गीतम् — भाग १: शृगालस्य वनगमनम् ===
-(Action Song — Part 1: The Fox Enters the Forest)
-एकः शृगालः । एकः शृगालः वनं गच्छति । पिपासा, तस्य बुभुक्षा । पिपासया बुभुक्षया वनं गच्छति । सः वनं गच्छति, सः वनं गच्छति।
-(There is a fox. A fox wanders into the forest. He suffers from thirst and hunger. Driven by thirst and hunger, he goes into the wild forest. He goes into the forest, he goes into the forest.)
+१. वर्गे संवादः (Classroom Introduction Dialogue - पृष्ठम् ३९)
 
-तत्र गच्छति, किमपि न लभते । इतोऽपि गच्छति, किमपि न लभते । श्रान्तः जायते, खिन्नः जायते । सः श्रान्तः जायते, खिन्नः जायते । किं च करोति ? सः किं च करोति ?
-(He goes there, he finds nothing. He searches further, he finds nothing. He becomes exhausted, he becomes despondent. He becomes weary and sad. And what does he do? What does he do next?)
+[Page 39 - Opening Dialogue & Picture Discussion]
+
+प्रियच्छात्राः ! एतत् चित्रं पश्यन्तु। चित्रे किं किम् अस्ति ?
+(हिन्दी अनुवाद: शिक्षक: प्रिय छात्रो! इस चित्र को देखिए। चित्र में क्या-क्या है?
+English: Teacher: Dear students! Look at this picture. What all is there in the picture?)
+
+महोदय ! चित्रे वृक्षः अस्ति।
+(हिन्दी अनुवाद: छात्र १: महोदय! चित्र में एक पेड़ है।
+English: Student 1: Sir! There is a tree in the picture.)
+
+महोदय ! शृगालः अस्ति। द्राक्षाफलानि अपि सन्ति।
+(हिन्दी अनुवाद: छात्र २: महोदय! एक लोमड़ी भी है और अंगूर भी हैं।
+English: Student 2: Sir! There is a fox and there are grapes as well.)
+
+बहु सम्यक् । शृगालः किं करोति ?
+(हिन्दी अनुवाद: शिक्षक: बहुत अच्छे। लोमड़ी क्या कर रही है?
+English: Teacher: Very good. What is the fox doing?)
+
+आचार्य ! शृगालः द्राक्षाफलानि खादितुम् इच्छति, किन्तु न शक्नोति।
+(हिन्दी अनुवाद: छात्र ३: आचार्य! लोमड़ी अंगूर खाना चाहती है, लेकिन खा नहीं पा रही है।
+English: Student 3: Teacher! The fox wants to eat the grapes, but it is unable to do so.)
+
+अहो ! भवन्तः कथं जानन्ति ?
+(हिन्दी अनुवाद: शिक्षक: अरे वाह! आप सबको यह कैसे पता?
+English: Teacher: Oh! How do you all know this?)
+
+महोदय ! वयम् एतां कथां मातृभाषया श्रुतवन्तः।
+(हिन्दी अनुवाद: छात्र ४: महोदय! हमने यह कहानी अपनी मातृभाषा में सुनी है।
+English: Student 4: Sir! We have heard this story in our mother tongue.)
+
+बहु समीचीनम्। तर्हि संस्कृतभाषायाम् एतां कथां गीतरूपेण गायामः अभिनयं च कुर्मः।
+(हिन्दी अनुवाद: शिक्षक: बहुत बढ़िया! तो फिर आइए, संस्कृत भाषा में इस कहानी को गीत के रूप में गाते हैं और इसका अभिनय भी करते हैं।
+English: Teacher: Very nice! Then let us sing this story in the form of a song in the Sanskrit language and perform it through acting as well.)
+
+अस्तु आचार्य ! कृपया पाठयतु।
+(हिन्दी अनुवाद: सभी छात्र: ठीक है आचार्य! कृपया हमें पढ़ाइए।
+English: All Students: Alright Teacher! Please teach us.)
 
 
-=== अभिनय-गीतम् — भाग २: द्राक्षादर्शनम् ===
-(Action Song — Part 2: Spotting the Grapes)
-वामतः पश्यति, दक्षिणतः पश्यति । अग्रतः पश्यति, पृष्ठतः पश्यति । स्वेदः जायते, तृषा जायते । तस्य स्वेदः जायते, तृषा जायते । किं च पश्यति ? सः किं च पश्यति ?
-(He glances left, he glances right. He peers ahead, he looks behind. Sweat beads up, burning thirst rises. Sweat pours from him, thirst consumes him. And what does he spot? What does he see?)
+२. अभिनय-गीतम् (Action Song - पृष्ठानि ४०-४१)
 
-पश्यति द्राक्षालतां । सः पश्यति द्राक्षाफलम् । उपरि उपरि लतासु दृश्यते च तत्फलम् । अनुक्षणं तन्मुखे रसः जायते । किं च करोति ? सः किं च करोति ?
-(He catches sight of a grapevine! He beholds clusters of juicy grapes! High up upon the trellis vines hang those succulent fruits. Instantly his mouth waters with eager anticipation. And what does he do? What does he do now?)
+[Stanza 1: शृगालस्य वनगमनम्]
+एकः शृगालः वनं गच्छति।
+पिपासया बुभुक्षया वनं गच्छति।
+तत्र गच्छति, किमपि न लभते।
+इतोऽपि गच्छति, किमपि न लभते।
+श्रान्तः जायते, खिन्नः जायते।
+सः श्रान्तः जायते, खिन्नः जायते।
+
+(हिन्दी अनुवाद: एक लोमड़ी जंगल में जाती है। वह प्यास और भूख से व्याकुल होकर जंगल में जाती है। वह वहाँ जाती है, लेकिन उसे कुछ भी प्राप्त नहीं होता। वह और आगे जाती है, फिर भी कुछ नहीं मिलता। वह थक जाती है और दुखी हो जाती है।
+English: A fox goes to the forest. Driven by thirst and hunger, it goes to the forest. It wanders there but finds nothing. It goes further, yet finds nothing. It becomes tired and sad.)
+
+[Stanza 2: शृगालस्य भ्रमणम्]
+किं च करोति ? सः किं च करोति ?
+वामतः पश्यति, दक्षिणतः पश्यति।
+अग्रतः पश्यति, पृष्ठतः पश्यति।
+स्वेदः जायते, तृषा जायते।
+तस्य स्वेदः जायते, तृषा जायते।
+
+(हिन्दी अनुवाद: वह क्या करती है? वह क्या करती है? वह बाईं ओर देखती है, दाईं ओर देखती है। वह आगे देखती है, पीछे देखती है। उसे पसीना आ जाता है और प्यास बढ़ जाती है।
+English: What does it do? What does it do? It looks to the left, it looks to the right. It looks ahead, it looks behind. It starts sweating, and its thirst increases.)
+
+[Stanza 3: द्राक्षादर्शनम्]
+किं च पश्यति ? सः किं च पश्यति ?
+पश्यति द्राक्षालतां, सः पश्यति द्राक्षाफलम्।
+उपरि उपरि लतासु दृश्यते च तत्फलम्।
+अनुक्षणं तन्मुखे रसः जायते।
+
+(हिन्दी अनुवाद: वह क्या देखती है? वह क्या देखती है? वह अंगूर की बेल देखती है, वह अंगूरों को देखती है। बेलों पर ऊपर ही ऊपर वे फल दिखाई दे रहे हैं। उसी क्षण उसके मुँह में पानी आ जाता है।
+English: What does it see? What does it see? It sees a grape-vine, it sees the grapes. The fruits are visible high up on the vines. Instantly, its mouth begins to water.)
+
+[Stanza 4: उत्पतनप्रयासः]
+किं च करोति ? सः किं च करोति ?
+एकवारम् उत्पतति, द्विवारम् उत्पतति।
+त्रिवारम् उत्पतति, पुनः पुनः उत्पतति।
+स्वेदः जायते, तस्य श्रमः जायते।
+
+(हिन्दी अनुवाद: वह क्या करती है? वह क्या करती है? वह एक बार कूदती है, दो बार कूदती है। वह तीन बार कूदती है और बार-बार कूदती है। उसे पसीना आ जाता है और वह बहुत थक जाती है।
+English: What does it do? What does it do? It jumps once, it jumps twice. It jumps thrice, jumping repeatedly. It starts sweating and becomes exhausted.)
+
+[Stanza 5: आम्लं द्राक्षाफलम् - पलायनम्]
+किं कथयति ? सः किं कथयति ?
+"आम्लं द्राक्षाफलम्, आम्लं द्राक्षाफलम्"।
+इत्येवं कथयति, सः पलायते॥
+
+(हिन्दी अनुवाद: वह क्या कहती है? वह क्या कहती है? "अंगूर खट्टे हैं, अंगूर खट्टे हैं।" ऐसा कहकर वह वहाँ से भाग जाती है।
+English: What does it say? What does it say? "The grapes are sour, the grapes are sour!" Saying this, it runs away.)
 
 
-=== अभिनय-गीतम् — भाग ३: प्रयत्नः पलायनं च ===
-(Action Song — Part 3: The Leaping Effort and Retreat)
-एकवारम् उत्पतति, द्विवारम् उत्पतति । त्रिवारम् उत्पतति, पुनः पुनः उत्पतति । स्वेदः जायते, तस्य श्रमः जायते । किं कथयति ? सः किं कथयति ?
-(He leaps up once, he leaps twice! He leaps a third time, repeatedly he leaps into the air! Sweat breaks out, deep exhaustion overtakes him. What does he say? What does he proclaim?)
+३. वयं शब्दार्थान् जानीमः (पृष्ठम् ४१ / Vocabulary Glossary)
 
-“आम्लं द्राक्षाफलम् आम्लं द्राक्षाफलम्” । इत्येवं कथयति, सः पलायते । इत्येवं कथयति, सः पलायते ॥
-("Sour are the grapes! Sour are the grapes!" Declaring this proud excuse, he scurries away into the wilderness.)
-
-
-=== ३. शब्दार्थाः (कठिन शब्दों के अर्थ) ===
-(Key Vocabulary Glossary)
+शब्दः (Word) -> अर्थः (Sanskrit Meaning) | हिन्दी (Hindi) | English
+-------------------------------------------------------------------------------
+पुनः पुनः (Punaḥ punaḥ) -> भूयो भूयः (Bhūyo bhūyaḥ) | बार-बार | Frequently / Again and again
+कथयति (Kathayati) -> वदति (Vadati) | कहता है / कहती है | Tells / Says
+आम्लम् (Āmlam) -> आम्लरसयुक्तम् (Āmlarasayuktam) | खट्टा | Sour
+द्राक्षाफलम् (Drākṣāphalam) -> मृद्वीकाफलम् (Mṛdvīkāphalam) | अंगूर | Grapes
+पलायते (Palāyate) -> अन्यत्र धावति (Anyatra dhāvati) | भाग जाता है / भागती है | Runs away
 शृगालः -> गोमायुः / जम्बुकः | सियार / लोमड़ी | Fox / Jackal
 पिपासा / तृषा -> जलपानेच्छा / तृष्णा | प्यास | Thirst / Desire for water
 बुभुक्षा -> भोजनेच्छा / क्षुधा | भूख | Hunger / Appetite
@@ -70,135 +111,187 @@ Chapter 4: न लभ्यते चेत् आम्लं द्राक�
 खिन्नः -> दुःखी / विषादग्रस्तः | उदास / दुखी | Dejected / Disappointed
 वामतः / दक्षिणतः -> वामभागे / दक्षिणभागे | बाईं ओर / दाहिनी ओर | To the left / To the right
 अग्रतः / पृष्ठतः -> पुरतः / पश्चात् | आगे / पीछे | In front / Behind
-स्वेदः -> श्रमजलम् / धर्मबिन्दुः | पसीना | Sweat / Perspiration
+स्वेदः / श्रमः -> श्रमजलम् / घर्मबिन्दुः | पसीना / थकान | Sweat / Fatigue from exertion
 द्राक्षालताम् -> द्राक्षावल्लीम् | अंगूर की बेल को | The Grapevine climber
 अनुक्षणम् -> तत्क्षणम् / शीघ्रम् | उसी क्षण / तुरंत | Immediately / In an instant
 उत्पतति -> उड्डीयते / कूर्दनं करोति | कूदता है / छलांग लगाता है | Jumps up / Leaps
-आम्लम् -> आम्लरसयुक्तम् | खट्टा | Sour (taste)
-पलायते -> धावति / अपनयति | भाग जाता है | Runs away / Flees
 
-=== ४. अभ्यासः (अभ्यास कार्य / Solved Exercises) ===
-(Exercises and Grammar Solutions (अभ्यास कार्य))
+
+४. वयम् अभ्यासं कुर्मः (पृष्ठानि ४२-४६ / Solved Exercises)
+
 १. गीतस्य साभिनयं कक्षायां गानं कुर्वन्तु।
-  -> कक्षायां शिक्षकस्य निर्देशानुसारं अभिनयसहितं "एकः शृगालः वनं गच्छति..." इति गीतस्य सानन्दं गानं कुर्वन्तु।
-  (1. Recite and sing the poem with actions and dramatization in the classroom.)
+उत्तरम्: कक्षायां शिक्षकस्य निर्देशानुसारं अभिनयसहितं "एकः शृगालः वनं गच्छति..." इति गीतस्य सानन्दं गानं कुर्वन्तु।
+(हिन्दी: यह कक्षा में अभिनय के साथ गीत गाने की गतिविधि है। शिक्षक के निर्देशानुसार छात्र भाव-भंगिमाओं के साथ गीत का सानन्द गान करें।
+English: 1. Sing and enact the poem with actions and dramatization in the classroom.)
 
-=== २. अधः प्रदत्तानां प्रश्नानाम् एकपदेन पदद्वयेन वा उत्तरं लिखन्तु — ===
-(2. Answer the following questions in one or two words (with English meaning):)
+-------------------------------------------------------------------------------
+२. अधः प्रदत्तानां प्रश्नानाम् एकपदेन पदद्वयेन वा उत्तरं लिखन्तु (Answer in one or two words / एक या दो शब्दों में उत्तर लिखिए):
+
 (क) कः वनं गच्छति ?
-  -> शृगालः
-  (Who goes to the forest? Answer: The fox (शृगालः).)
+उत्तरम्: शृगालः
+(हिन्दी: वन में कौन जाता है? उत्तर: सियार / लोमड़ी
+English: Who goes to the forest? Answer: The fox (शृगालः))
+
 (ख) शृगालः कां पश्यति ?
-  -> द्राक्षालताम्
-  (What does the fox see? Answer: The grapevine (द्राक्षालताम्).)
+उत्तरम्: द्राक्षालताम्
+(हिन्दी: लोमड़ी क्या देखती है? उत्तर: अंगूर की बेल को
+English: What does the fox see? Answer: The grape-vine (द्राक्षालताम्))
+
 (ग) शृगालस्य मुखे किं जायते ?
-  -> रसः
-  (What arises in the fox's mouth? Answer: Water / saliva (रसः).)
+उत्तरम्: रसः
+(हिन्दी: लोमड़ी के मुँह में क्या आ जाता है? उत्तर: पानी / रस
+English: What happens in the fox's mouth? Answer: Saliva / Watering (रसः))
+
 (घ) द्राक्षालतायां शृगालः किं पश्यति ?
-  -> द्राक्षाफलम्
-  (What does the fox see on the grapevine? Answer: Grapes (द्राक्षाफलम्).)
+उत्तरम्: द्राक्षाफलम्
+(हिन्दी: अंगूर की बेल पर लोमड़ी क्या देखती है? उत्तर: अंगूर
+English: What does the fox see on the grape-vine? Answer: Grapes (द्राक्षाफलम्))
+
 (ङ) द्राक्षाफलं कुत्र दृश्यते ?
-  -> उपरि उपरि लतासु
-  (Where are the grapes seen? Answer: High up on the vines (उपरि उपरि लतासु).)
+उत्तरम्: उपरि उपरि लतासु
+(हिन्दी: अंगूर कहाँ दिखाई देते हैं? उत्तर: लताओं पर ऊपर ही ऊपर
+English: Where are the grapes seen? Answer: High up on the vines (उपरि उपरि लतासु))
+
 (च) किं शृगालः पुनः पुनः उत्पतति ? (आम्/न)
-  -> आम्
-  (Does the fox jump again and again? Answer: Yes (आम्).)
+उत्तरम्: आम्
+(हिन्दी: क्या लोमड़ी बार-बार कूदती है? उत्तर: हाँ
+English: Does the fox jump repeatedly? Answer: Yes (आम्))
+
 (छ) किं शृगालः द्राक्षाफलं प्राप्नोति ? (आम्/न)
-  -> न
-  (Does the fox obtain the grapes? Answer: No (न).)
+उत्तरम्: न
+(हिन्दी: क्या लोमड़ी को अंगूर मिलते हैं? उत्तर: नहीं
+English: Does the fox get the grapes? Answer: No (न))
 
-=== ३. अधः प्रदत्तानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखन्तु — ===
-(3. Answer the following questions in complete sentences (with English translation):)
+-------------------------------------------------------------------------------
+३. अधः प्रदत्तानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखन्तु (Answer in full sentences / पूर्ण वाक्य में उत्तर लिखिए):
+
 (क) शृगालः कथं वनं गच्छति ?
-  -> शृगालः पिपासया बुभुक्षया च वनं गच्छति।
-  (How/why does the fox go to the forest? Answer: Driven by thirst and hunger, the fox goes to the forest.)
-(ख) वनं गत्वा शृगालस्य किं जायते ?
-  -> वनं गत्वा शृगालः श्रान्तः खिन्नः च जायते, तस्य स्वेदः तृषा च जायते।
-  (What happens to the fox after going to the forest? Answer: Having gone to the forest, the fox becomes tired and sorrowful; sweat breaks out and thirst intensifies.)
-(ग) शृगालः द्राक्षाफलं कुत्र पश्यति ?
-  -> शृगालः उपरि उपरि द्राक्षालतासु द्राक्षाफलं पश्यति।
-  (Where does the fox see the grapes? Answer: The fox sees the grapes high up hanging on the grapevines.)
-(घ) द्राक्षाफलं दृष्ट्वा कस्य मुखे रसः जायते ?
-  -> द्राक्षाफलं दृष्ट्वा शृगालस्य मुखे रसः जायते।
-  (Seeing the grapes, in whose mouth does water emerge? Answer: Seeing the grapes, saliva waters in the mouth of the fox.)
-(ङ) अन्ते शृगालः किं वदति ?
-  -> अन्ते शृगालः वदति - "आम्लं द्राक्षाफलम्" इति।
-  (What does the fox say at last? Answer: In the end, the fox declares: 'The grapes are sour!')
+उत्तरम्: शृगालः पिपासया बुभुक्षया च वनं गच्छति।
+(हिन्दी: लोमड़ी कैसे वन जाती है? उत्तर: लोमड़ी प्यास और भूख से व्याकुल होकर वन जाती है।
+English: How does the fox go to the forest? Answer: The fox goes to the forest out of hunger and thirst.)
 
-=== ४. उपरि प्रदत्तां मञ्जूषां दृष्ट्वा रिक्तस्थानेषु उचितक्रियापदानि लिखन्तु — (आत्मनेपद लट्-लकार तालिका) ===
-(4. Fill in the Present Tense tables for Atmanepada verbs (वन्द्, पलाय्, जाय्):)
-(क) वन्द् धातु (वन्दना करना / To Salute, Revere):
-  -> प्रथमः पुरुषः: वन्दते | वन्देते | वन्दन्ते
+(ख) वनं गत्वा शृगालस्य किं जायते ?
+उत्तरम्: वनं गत्वा शृगालः श्रान्तः खिन्नः च जायते, तस्य स्वेदः तृषा च जायते।
+(हिन्दी: वन जाकर लोमड़ी का क्या होता है? उत्तर: वन जाकर लोमड़ी थक जाती है और दुखी हो जाती है, उसे पसीना आ जाता है और प्यास लगती है।
+English: What happens to the fox after going to the forest? Answer: Upon entering the forest, the fox becomes tired and sad; it sweats and feels thirsty.)
+
+(ग) शृगालः द्राक्षाफलं कुत्र पश्यति ?
+उत्तरम्: शृगालः उपरि उपरि द्राक्षालतासु द्राक्षाफलं पश्यति।
+(हिन्दी: लोमड़ी अंगूर कहाँ देखती है? उत्तर: लोमड़ी ऊपर-ऊपर अंगूर की बेलों पर अंगूर देखती है।
+English: Where does the fox see the grapes? Answer: The fox sees the grapes hanging high up on the grape-vines.)
+
+(घ) द्राक्षाफलं दृष्ट्वा कस्य मुखे रसः जायते ?
+उत्तरम्: द्राक्षाफलं दृष्ट्वा शृगालस्य मुखे रसः जायते।
+(हिन्दी: अंगूर देखकर किसके मुँह में पानी आ जाता है? उत्तर: अंगूर देखकर लोमड़ी के मुँह में पानी आ जाता है।
+English: Whose mouth waters upon seeing the grapes? Answer: On seeing the grapes, the fox's mouth begins to water.)
+
+(ङ) अन्ते शृगालः किं वदति ?
+उत्तरम्: अन्ते शृगालः "आम्लं द्राक्षाफलम्" इति वदति।
+(हिन्दी: अंत में लोमड़ी क्या कहती है? उत्तर: अंत में लोमड़ी कहती है - "अंगूर खट्टे हैं।"
+English: What does the fox say at the end? Answer: At the end, the fox says, "The grapes are sour.")
+
+-------------------------------------------------------------------------------
+४. उपरि प्रदत्तां मञ्जूषां दृष्ट्वा रिक्तस्थानेषु उचितक्रियापदानि लिखन्तु (आत्मनेपद लट्-लकार तालिका / Fill in the blanks with appropriate verb forms - Ātmanepada Lat-Lakāra):
+
+(क) वन्द् धातु (वन्दना करना / To bow, pray):
+प्रथमः पुरुषः: वन्दते | वन्देते | वन्दन्ते
 मध्यमः पुरुषः: वन्दसे | वन्देथे | वन्दध्वे
 उत्तमः पुरुषः: वन्दे | वन्दावहे | वन्दामहे
-  (Conjugation of वन्द्: 3rd person (वन्दते/वन्देते/वन्दन्ते), 2nd person (वन्दसे/वन्देथे/वन्दध्वे), 1st person (वन्दे/वन्दावहे/वन्दामहे).)
-(ख) पलाय् धातु (भागना / To Flee, Run away):
-  -> प्रथमः पुरुषः: पलायते | पलायेते | पलायन्ते
+(हिन्दी: प्रथम पुरुष: वह प्रणाम करता है | वे दोनों प्रणाम करते हैं | वे सब प्रणाम करते हैं; मध्यम पुरुष: तुम प्रणाम करते हो | तुम दोनों प्रणाम करते हो | तुम सब प्रणाम करते हो; उत्तम पुरुष: मैं प्रणाम करता हूँ | हम दोनों प्रणाम करते हैं | हम सब प्रणाम करते हैं।
+English: 3rd Person: He bows | They two bow | They all bow; 2nd Person: You bow | You two bow | You all bow; 1st Person: I bow | We two bow | We all bow.)
+
+(ख) पलाय् धातु (भागना / To run away, flee):
+प्रथमः पुरुषः: पलायते | पलायेते | पलायन्ते
 मध्यमः पुरुषः: पलायसे | पलायेथे | पलायध्वे
 उत्तमः पुरुषः: पलाये | पलायावहे | पलायामहे
-  (Conjugation of पलाय्: 3rd person (पलायते/पलायेते/पलायन्ते), 2nd person (पलायसे/पलायेथे/पलायध्वे), 1st person (पलाये/पलायावहे/पलायामहे).)
-(ग) जाय् धातु (उत्पन्न होना / To Arise, Be born):
-  -> प्रथमः पुरुषः: जायते | जायेते | जायन्ते
+(हिन्दी: प्रथम पुरुष: वह भागता है | वे दोनों भागते हैं | वे सब भागते हैं; मध्यम पुरुष: तुम भागते हो | तुम दोनों भागते हो | तुम सब भागते हो; उत्तम पुरुष: मैं भागता हूँ | हम दोनों भागते हैं | हम सब भागते हैं।
+English: 3rd Person: He flees | They two flee | They all flee; 2nd Person: You flee | You two flee | You all flee; 1st Person: I flee | We two flee | We all flee.)
+
+(ग) जाय् धातु (होना/उत्पन्न होना / To become, happen):
+प्रथमः पुरुषः: जायते | जायेते | जायन्ते
 मध्यमः पुरुषः: जायसे | जायेथे | जायध्वे
 उत्तमः पुरुषः: जाये | जायावहे | जायामहे
-  (Conjugation of जाय्: 3rd person (जायते/जायेते/जायन्ते), 2nd person (जायसे/जायेथे/जायध्वे), 1st person (जाये/जायावहे/जायामहे).)
+(हिन्दी: प्रथम पुरुष: उत्पन्न होता है | वे दोनों उत्पन्न होते हैं | वे सब उत्पन्न होते हैं; मध्यम पुरुष: तुम उत्पन्न होते हो | तुम दोनों उत्पन्न होते हो | तुम सब उत्पन्न होते हो; उत्तम पुरुष: मैं उत्पन्न होता हूँ | हम दोनों उत्पन्न होते हैं | हम सब उत्पन्न होते हैं।
+English: 3rd Person: It arises | They two arise | They all arise; 2nd Person: You arise | You two arise | You all arise; 1st Person: I arise | We two arise | We all arise.)
 
-=== ५. उदाहरणानुसारम् एकवचनरूपं दृष्ट्वा द्विवचन-बहुवचनरूपाणि लिखन्तु — ===
-(5. Write the Dual and Plural forms based on the Singular Atmanepada forms:)
-धातु-रूपाणि (कम्प्, वर्ध्, वृत्, प्र+काश्, वन्द्)
-  -> १. कम्प्: कम्पते | कम्पेते | कम्पन्ते (Trembles)
-२. वर्ध्: वर्धते | वर्धेते | वर्धन्ते (Grows)
-३. वृत्: वर्तसे | वर्तेथे | वर्तध्वे (You exist)
-४. प्र+काश्: प्रकाशते | प्रकाशेते | प्रकाशन्ते (Shines)
-५. वन्द् (उत्तम): वन्दे | वन्दावहे | वन्दामहे (I salute)
-  (Singular -> Dual -> Plural paradigms for roots kamp, vardh, vrit, pra-kash, and vand.)
-धातु-रूपाणि (याच्, लज्ज्, वीक्ष्, सेव्, वन्द्, शुभ्)
-  -> ६. याच्: याचते | याचेते | याचन्ते (Begs)
-७. लज्ज् (मध्यम): लज्जसे | लज्जेथे | लज्जध्वे (You feel shy)
-८. वीक्ष्: वीक्षते | वीक्षेते | वीक्षन्ते (Watches)
-९. सेव् (उत्तम): सेवे | सेवावहे | सेवामहे (I serve)
-१०. वन्द् (मध्यम): वन्दसे | वन्देथे | वन्दध्वे (You bow)
-११. शुभ्: शोभते | शोभेते | शोभन्ते (Shines)
-  (Singular -> Dual -> Plural paradigms for roots yach, lajj, veeksh, sev, vand, and shubh.)
+-------------------------------------------------------------------------------
+५. उदाहरणानुसारम् एकवचनरूपं दृष्ट्वा द्विवचन बहुवचनरूपाणि लिखन्तु (पुरुष के अनुसार रूप पूरे कीजिए / Complete Dual and Plural forms):
 
-=== ६. उदाहरणानुसारं वाक्यद्वयं लिखन्तु — (वचनानुसारं सही क्रियापद-प्रयोगः) ===
-(6. Construct pairs of sentences applying singular and plural verb forms (with English):)
+धातुः (Verb) | एकवचनम् (Singular) | द्विवचनम् (Dual) | बहुवचनम् (Plural) | English Meaning | हिन्दी अर्थ
+----------------------------------------------------------------------------------------------------------
+१. कम्प् | कम्पते | कम्पेते | कम्पन्ते | Shakes / Trembles | काँपता है
+२. वर्ध् | वर्धते | वर्धेते | वर्धन्ते | Grows | बढ़ता है
+३. वृत् | वर्तसे | वर्तेथे | वर्तध्वे | You exist | तुम होते हो
+४. प्र+काश् | प्रकाशते | प्रकाशेते | प्रकाशन्ते | Shines | चमकता है
+५. वन्द् | वन्दे | वन्दावहे | वन्दामहे | I pray / We pray | मैं/हम प्रणाम करते हैं
+६. याच् | याचते | याचेते | याचन्ते | Requests / Begs | माँगता है
+७. लज्ज् | लज्जसे | लज्जेथे | लज्जध्वे | You feel shy | तुम शर्माते हो
+८. वीक्ष् | वीक्षते | वीक्षेते | वीक्षन्ते | Observes / Sees | देखता है
+९. सेव् | सेवे | सेवावहे | सेवामहे | I serve / We serve | मैं/हम सेवा करते हैं
+१०. वन्द् | वन्दसे | वन्देथे | वन्दध्वे | You pray | तुम प्रणाम करते हो
+११. शुभ् | शोभते | शोभेते | शोभन्ते | Looks beautiful | सुशोभित होता है
+
+-------------------------------------------------------------------------------
+६. उदाहरणानुसारं वाक्यद्वयं लिखन्तु (वचन के अनुसार सही क्रियापद का प्रयोग कर वाक्य बनाइए / Write pairs of sentences according to number):
+
 यथा - शत्रुः पलायते। / चोराः पलायन्ते।
-  -> The enemy flees. / The thieves flee.
-  (Example: Singular verb (पलायते) vs Plural verb (पलायन्ते).)
-(क) वृक्षः (वर्ध) →
-  -> वृक्षः वर्धते। / बालाः वर्धन्ते।
-  (The tree grows (वृक्षः वर्धते) / Children grow (बालाः वर्धन्ते).)
-(ख) छात्रः (वन्द्) →
-  -> छात्रः वन्दते। / भक्ताः वन्दन्ते।
-  (The student bows (छात्रः वन्दते) / Devotees bow (भक्ताः वन्दन्ते).)
-(ग) वैद्यः (वीक्ष) →
-  -> वैद्यः वीक्षते। / प्रेक्षकाः वीक्षन्ते।
-  (The doctor examines (वैद्यः वीक्षते) / Spectators watch (प्रेक्षकाः वीक्षन्ते).)
-(घ) कर्मचारी (सेव्) →
-  -> कर्मचारी सेवते। / महिलाः सेवन्ते।
-  (The employee serves (कर्मचारी सेवते) / Women serve (महिलाः सेवन्ते).)
-(ङ) वृक्षः (कम्प्) →
-  -> वृक्षः कम्पते। / रुग्णाः कम्पन्ते।
-  (The tree shakes (वृक्षः कम्पते) / Sick patients tremble (रुग्णाः कम्पन्ते).)
+(Singular: शत्रुः पलायते - The enemy flees. / Plural: चोराः पलायन्ते - Thieves flee.)
+(हिन्दी: एकवचन: शत्रु भागता है। / बहुवचन: चोर भागते हैं।)
 
-=== ७. उदाहरणं दृष्ट्वा वाक्यानि उचितरूपैः पूरयन्तु — (Fill in the blanks with correct verb forms) ===
-(7. Complete sentences with appropriate Atmanepada forms (with English translations):)
-(क) शुनकं दृष्ट्वा बालकस्य भयं (जाय्) →
-  -> शुनकं दृष्ट्वा बालकस्य भयं जायते।
-  (Seeing the dog, fear arises in the boy.)
-(ख) मूषकः मार्जारं दृष्ट्वा (पलाय्) →
-  -> मूषकः मार्जारं दृष्ट्वा पलायते।
-  (Seeing the cat, the mouse flees.)
-(ग) रात्रिकाले मार्गदीपाः (प्रकाश) →
-  -> रात्रिकाले मार्गदीपाः प्रकाशन्ते। (बहुवचन)
-  (At night, streetlights illuminate/shine brightly.)
-(घ) अहं देवं (वन्द्) →
-  -> अहं देवं वन्दे। (उत्तम पुरुष एकवचन)
-  (I bow down and pray to God.)
-(ङ) त्वं किमर्थं (लज्ज्) →
-  -> त्वं किमर्थं लज्जसे? (मध्यम पुरुष एकवचन)
-  (Why do you feel shy / ashamed?)
-(च) वयं देशं (सेव्) →
-  -> वयं देशं सेवामहे। (उत्तम पुरुष बहुवचन)
-  (We serve our motherland.)
+(क) वृक्षः (वर्ध)
+Singular: वृक्षः वर्धते। (The tree grows.)
+Plural: बालाः वर्धन्ते। (The children grow.)
+(हिन्दी: एकवचन: पेड़ बढ़ता है। / बहुवचन: बच्चे बढ़ते हैं।)
+
+(ख) छात्रः (वन्द्)
+Singular: छात्रः वन्दते। (The student bows.)
+Plural: भक्ताः वन्दन्ते। (The devotees bow.)
+(हिन्दी: एकवचन: छात्र प्रणाम करता है। / बहुवचन: भक्त प्रणाम करते हैं।)
+
+(ग) वैद्यः (वीक्ष)
+Singular: वैद्यः वीक्षते। (The doctor observes.)
+Plural: प्रेक्षकाः वीक्षन्ते। (The spectators watch.)
+(हिन्दी: एकवचन: वैद्य देखता/जाँचता है। / बहुवचन: दर्शक देखते हैं।)
+
+(घ) कर्मचारी (सेव्)
+Singular: कर्मचारी सेवते। (The employee serves.)
+Plural: महिलाः सेवन्ते। (The women serve.)
+(हिन्दी: एकवचन: कर्मचारी सेवा करता है। / बहुवचन: महिलाएँ सेवा करती हैं।)
+
+(ङ) वृक्षः (कम्प्)
+Singular: वृक्षः कम्पते। (The tree shakes.)
+Plural: रुग्णाः कम्पन्ते। (The patients shiver.)
+(हिन्दी: एकवचन: वृक्ष काँपता/हिलता है। / बहुवचन: रोगी काँपते हैं।)
+
+-------------------------------------------------------------------------------
+७. उदाहरणं दृष्ट्वा वाक्यानि उचितरूपैः पूरयन्तु (रिक्त स्थानों की पूर्ति सही क्रियापद रूप से कीजिए / Fill in the blanks with proper verb forms):
+
+(क) शुनकं दृष्ट्वा बालकस्य भयं (जाय्)
+उत्तरम्: शुनकं दृष्ट्वा बालकस्य भयं जायते।
+(English: On seeing the dog, the boy feels afraid.)
+(हिन्दी: कुत्ते को देखकर बालक को भय उत्पन्न होता है।)
+
+(ख) मूषकः मार्जारं दृष्ट्वा (पलाय्)
+उत्तरम्: मूषकः मार्जारं दृष्ट्वा पलायते।
+(English: The mouse runs away on seeing the cat.)
+(हिन्दी: चूहा बिल्ली को देखकर भाग जाता है।)
+
+(ग) रात्रिकाले मार्गदीपाः (प्रकाश)
+उत्तरम्: रात्रिकाले मार्गदीपाः प्रकाशन्ते।
+(English: Streetlights shine during the night.)
+(हिन्दी: रात के समय मार्ग-दीप चमकते हैं।)
+
+(घ) अहं देवं (वन्द्)
+उत्तरम्: अहं देवं वन्दे।
+(English: I pray to God.)
+(हिन्दी: मैं भगवान की वन्दना करता हूँ।)
+
+(ङ) त्वं किमर्थं (लज्ज्)
+उत्तरम्: त्वं किमर्थं लज्जसे?
+(English: Why are you feeling shy?)
+(हिन्दी: तुम किसलिए शर्मा रहे हो?)
+
+(च) वयं देशं (सेव्)
+उत्तरम्: वयं देशं सेवामहे।
+(English: We serve the nation.)
+(हिन्दी: हम सब देश की सेवा करते हैं।)\n

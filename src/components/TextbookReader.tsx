@@ -244,7 +244,10 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
       {activeLessonId.startsWith('gsde') && (
         <div className="textbook-cbse-banner">
           <span className="textbook-cbse-pill">CBSE Board Exam Aligned</span>
-          <span className="textbook-cbse-title">NCERT Class 7 Sanskrit · दीपकम (Deepakam)</span>
+          <span className="textbook-cbse-title">
+            NCERT Class 7 Sanskrit · दीपकम (Deepakam)
+            {activeLesson?.page_numbers ? ` · पाठः पृष्ठानि (Pages ${activeLesson.page_numbers})` : ''}
+          </span>
         </div>
       )}
       {activeLessonId === 'grade8_prarthana' && (

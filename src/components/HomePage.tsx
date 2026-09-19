@@ -115,8 +115,8 @@ interface ChapterInfo {
 const CHAPTERS_INFO: ChapterInfo[] = [
   {
     id: 'gsde101',
-    num: 'Chapter 1',
-    title: 'वन्दे भारतमातरम्',
+    num: 'Chapter 1 (Pages 1–7)',
+    title: 'वन्दे भारतमातरम् (पाठः पृष्ठानि १-७)',
     english: 'Salutations to Mother India',
     icon: '🇮🇳',
     category: 'shlokas',
@@ -126,8 +126,8 @@ const CHAPTERS_INFO: ChapterInfo[] = [
   },
   {
     id: 'gsde102',
-    num: 'Chapter 2',
-    title: 'नित्यं पिबामः सुभाषितरसम्',
+    num: 'Chapter 2 (Pages 15–21)',
+    title: 'नित्यं पिबामः सुभाषितरसम् (पाठः पृष्ठानि १५-२१)',
     english: 'Daily Nectar of Wise Sayings',
     icon: '📜',
     category: 'shlokas',
@@ -137,8 +137,8 @@ const CHAPTERS_INFO: ChapterInfo[] = [
   },
   {
     id: 'gsde103',
-    num: 'Chapter 3',
-    title: 'मित्राय नमः',
+    num: 'Chapter 3 (Pages 29–31)',
+    title: 'मित्राय नमः (पाठः पृष्ठानि २९-३१)',
     english: 'Salutations to the Friend (Sun)',
     icon: '☀️',
     category: 'dialogue',
@@ -148,8 +148,8 @@ const CHAPTERS_INFO: ChapterInfo[] = [
   },
   {
     id: 'gsde104',
-    num: 'Chapter 4',
-    title: 'न लभ्यते चेत् आम्लं द्राक्षाफलम्',
+    num: 'Chapter 4 (Pages 39–41)',
+    title: 'न लभ्यते चेत् आम्लं द्राक्षाफलम् (पाठः पृष्ठानि ३९-४१)',
     english: 'Sour Grapes (Animal Fable)',
     icon: '🍇',
     category: 'stories',

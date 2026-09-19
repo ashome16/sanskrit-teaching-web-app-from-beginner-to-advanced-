@@ -17,6 +17,7 @@ export interface Lesson {
   id: string;
   fileName: string;
   title: string;
+  page_numbers?: string;
   sentences: LessonSentence[];
 }
 
