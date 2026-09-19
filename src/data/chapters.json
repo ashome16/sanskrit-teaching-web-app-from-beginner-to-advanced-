@@ -3668,8 +3668,10 @@
           "paragraphTranslation": "अन्येभ्यः कष्टप्रदानम् · Bothering others / causing pain to others · दूसरों को सताना"
         },
         {
-          "sanskrit": "वयम् अभ्यासम् कुर्मः",
-          "meaning": "Exercises · पृष्ठम् २३–२६ · with answers",
+          "sanskrit": "वयम् अभ्यासम् कुर्मः (पृष्ठम् २३-२६ / Solved Exercises)",
+          "meaning": "Chapter 2 Exercises and Solutions (पृष्ठम् २३–२६)",
+          "hindi_gloss": "अध्याय २: हल किए गए अभ्यास प्रश्न (पृष्ठ २३-२६)",
+          "paragraphTranslation": "आओ हम सब अभ्यास करें",
           "words": [
             "वयम्",
             "अभ्यासम्",
@@ -3678,770 +3680,756 @@
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "१. अधोलिखितानां प्रश्नानाम् उत्तराणि एकपदेन लिखन्तु— (One-word answers)",
-          "meaning": "Answer the following questions in one word:",
+          "sanskrit": "१. अधोलिखितानां प्रश्नानाम् उत्तराणि एकपदेन लिखन्तु —",
+          "meaning": "1. Answer the following questions in one word:",
+          "hindi_gloss": "१. निम्नलिखित प्रश्नों के उत्तर एक शब्द में लिखिए:",
           "words": [
-            "१.",
+            "१",
+            ".",
             "अधोलिखितानां",
             "प्रश्नानाम्",
             "उत्तराणि",
             "एकपदेन",
-            "लिखन्तु—",
-            "(One-word",
-            "answers)"
+            "लिखन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "नरः कतिभिः वकारैः पूजितः भवति? उत्तरम्: पञ्चभिः",
-          "meaning": "By how many V-attributes is a man respected? -> By five (पञ्चभिः)",
+          "sanskrit": "(क) नरः कतिभिः वकारैः पूजितः भवति?",
+          "answer_sanskrit": "पञ्चभिः",
+          "meaning": "How many 'V' attributes make a person respected? Answer: Five (पञ्चभिः).",
+          "hindi_gloss": "मनुष्य कितने वकारों से पूजित/सम्मानित होता है? उत्तर: पाँच (पञ्चभिः)।",
           "words": [
+            "(",
+            "क",
+            ")",
             "नरः",
             "कतिभिः",
             "वकारैः",
             "पूजितः",
-            "भवति?",
-            "उत्तरम्:",
+            "भवति",
+            "?",
+            "उत्तरम्",
+            ":",
             "पञ्चभिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "पुरुषेण कति दोषाः हातव्याः? उत्तरम्: षड्",
-          "meaning": "How many flaws should a man abandon? -> Six (षड्)",
+          "sanskrit": "(ख) पुरुषेण कति दोषाः हातव्याः?",
+          "answer_sanskrit": "षड्",
+          "meaning": "How many flaws/vices should be discarded by a person in this world? Answer: Six (षड्).",
+          "hindi_gloss": "उन्नति चाहने वाले पुरुष को कितने दोष त्याग देने चाहिए? उत्तर: छह (षड्)।",
           "words": [
+            "(",
+            "ख",
+            ")",
             "पुरुषेण",
             "कति",
             "दोषाः",
-            "हातव्याः?",
-            "उत्तरम्:",
+            "हातव्याः",
+            "?",
+            "उत्तरम्",
+            ":",
             "षड्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "बुद्धिः केन शुध्यति? उत्तरम्: ज्ञानेन",
-          "meaning": "By what is the intellect purified? -> By wisdom/knowledge (ज्ञानेन)",
+          "sanskrit": "(ग) बुद्धिः केन शुध्यति?",
+          "answer_sanskrit": "ज्ञानेन",
+          "meaning": "By what is the intellect purified? Answer: By knowledge (ज्ञानेन).",
+          "hindi_gloss": "बुद्धि किससे शुद्ध होती है? उत्तर: ज्ञान से (ज्ञानेन)।",
           "words": [
+            "(",
+            "ग",
+            ")",
             "बुद्धिः",
             "केन",
-            "शुध्यति?",
-            "उत्तरम्:",
+            "शुध्यति",
+            "?",
+            "उत्तरम्",
+            ":",
             "ज्ञानेन"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "जलबिन्दुनिपातेन क्रमशः कः पूर्यते? उत्तरम्: घटः",
-          "meaning": "What fills up gradually by falling water-drops? -> The earthen pot (घटः)",
+          "sanskrit": "(घ) जलबिन्दुनिपातेन क्रमशः कः पूर्यते?",
+          "answer_sanskrit": "घटः",
+          "meaning": "What is filled gradually by the falling of water drops? Answer: A pot (घटः).",
+          "hindi_gloss": "जल की बूँदों के लगातार गिरने से क्रमशः क्या भर जाता है? उत्तर: घड़ा (घटः)।",
           "words": [
+            "(",
+            "घ",
+            ")",
             "जलबिन्दुनिपातेन",
             "क्रमशः",
             "कः",
-            "पूर्यते?",
-            "उत्तरम्:",
+            "पूर्यते",
+            "?",
+            "उत्तरम्",
+            ":",
             "घटः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "आलस्यं केषां महान् रिपुः अस्ति? उत्तरम्: मनुष्याणाम्",
-          "meaning": "Of whom is laziness the greatest enemy? -> Of human beings (मनुष्याणाम्)",
+          "sanskrit": "(ङ) आलस्यं केषां महान् रिपुः अस्ति?",
+          "answer_sanskrit": "मनुष्याणाम्",
+          "meaning": "Of whom is laziness the greatest enemy? Answer: Of human beings (मनुष्याणाम्).",
+          "hindi_gloss": "आलस्य किनका सबसे बड़ा शत्रु है? उत्तर: मनुष्यों का (मनुष्याणाम्)।",
           "words": [
+            "(",
+            "ङ",
+            ")",
             "आलस्यं",
             "केषां",
             "महान्",
             "रिपुः",
-            "अस्ति?",
-            "उत्तरम्:",
+            "अस्ति",
+            "?",
+            "उत्तरम्",
+            ":",
             "मनुष्याणाम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "२. निम्नलिखितप्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखन्तु— (Full-sentence answers)",
-          "meaning": "Answer the following questions in complete sentences:",
+          "sanskrit": "२. निम्नालिखितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखन्तु —",
+          "meaning": "2. Answer the following questions in a full sentence:",
+          "hindi_gloss": "२. निम्नलिखित प्रश्नों के उत्तर पूर्ण वाक्य में लिखिए:",
           "words": [
-            "२.",
-            "निम्नलिखितप्रश्नानाम्",
+            "२",
+            ".",
+            "निम्नालिखितानां",
+            "प्रश्नानाम्",
             "उत्तराणि",
             "पूर्णवाक्येन",
-            "लिखन्तु—",
-            "(Full-sentence",
-            "answers)"
+            "लिखन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "नरः कथं पूजितो भवति? उत्तरम्: नरः वस्त्रेण, वपुषा, वाचा, विद्यया, विनयेन च इति पञ्चभिः वकारैः युक्तः पूजितः भवति।",
-          "meaning": "How does a man become respected? -> A man becomes respected when endowed with the five V-attributes: dress, physique, speech, knowledge, and humility.",
+          "sanskrit": "(क) नरः कथं पूजितो भवति?",
+          "answer_sanskrit": "नरः वस्त्रेण, वपुषा, वाचा, विद्यया, विनयेन च एतैः पञ्चभिः वकारैः युक्तः पूजितो भवति।",
+          "meaning": "How does a man become respected/honoured? -> A man becomes respected when he is endowed with these five 'V's: fine attire (Vastra), a healthy physique (Vapu), pleasant speech (Vach), knowledge (Vidya), and humility (Vinaya).",
+          "hindi_gloss": "मनुष्य किस प्रकार सम्मानित होता है? -> मनुष्य वस्त्र, सुंदर शरीर, मधुर वाणी, विद्या और विनय—इन पाँच 'व' से युक्त होकर सम्मानित होता है।",
           "words": [
+            "(",
+            "क",
+            ")",
             "नरः",
             "कथं",
             "पूजितो",
-            "भवति?",
-            "उत्तरम्:",
-            "नरः",
-            "वस्त्रेण,",
-            "वपुषा,",
-            "वाचा,",
-            "विद्यया,",
-            "विनयेन",
-            "च",
-            "इति",
-            "पञ्चभिः",
-            "वकारैः",
-            "युक्तः",
-            "पूजितः",
-            "भवति।"
+            "भवति",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "पुरुषेण के दोषाः हातव्याः? उत्तरम्: पुरुषेण निद्रा, तन्द्रा, भयं, क्रोधः, आलस्यं, दीर्घसूत्रता च इति षड् दोषाः हातव्याः।",
-          "meaning": "Which flaws must a man abandon? -> A man must abandon six flaws: excessive sleep, drowsiness, fear, anger, laziness, and procrastination.",
+          "sanskrit": "(ख) पुरुषेण के दोषाः हातव्याः?",
+          "answer_sanskrit": "पुरुषेण निद्रा, तन्द्रा, भयं, क्रोधः, आलस्यं, दीर्घसूत्रता च एते षड् दोषाः हातव्याः।",
+          "meaning": "Which flaws should be given up by a person? -> The six flaws that should be discarded by a person are sleep, lethargy, fear, anger, laziness, and procrastination.",
+          "hindi_gloss": "पुरुष को कौन-से दोष त्याग देने चाहिए? -> पुरुष को नींद, सुस्ती/ऊँघना, भय, क्रोध, आलस्य और काम टालने की आदत (दीर्घसूत्रता)—ये छह दोष त्याग देने चाहिए।",
           "words": [
+            "(",
+            "ख",
+            ")",
             "पुरुषेण",
             "के",
             "दोषाः",
-            "हातव्याः?",
-            "उत्तरम्:",
-            "पुरुषेण",
-            "निद्रा,",
-            "तन्द्रा,",
-            "भयं,",
-            "क्रोधः,",
-            "आलस्यं,",
-            "दीर्घसूत्रता",
-            "च",
-            "इति",
-            "षड्",
-            "दोषाः",
-            "हातव्याः।"
+            "हातव्याः",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "कस्य बुद्धिः विस्तारिता भवति? उत्तरम्: यः पठति, लिखति, पश्यति, परिपृच्छति, पण्डितान् उपाश्रयति च तस्य बुद्धिः विस्तारिता भवति।",
-          "meaning": "Whose intellect expands? -> The intellect of one who reads, writes, observes, inquires, and associates with wise scholars expands.",
+          "sanskrit": "(ग) कस्य बुद्धिः विस्तारिता भवति?",
+          "answer_sanskrit": "यः पठति, लिखति, पश्यति, परिपृच्छति, पण्डितान् उपाश्रयति च तस्य बुद्धिः विस्तारिता भवति।",
+          "meaning": "Whose intellect/mind becomes expanded? -> The intellect of a person who reads, writes, observes, questions, and takes refuge in wise scholars becomes expanded.",
+          "hindi_gloss": "किसकी बुद्धि का विस्तार होता है? -> जो पढ़ता है, लिखता है, देखता है, प्रश्न पूछता है और विद्वानों का आश्रय लेता है, उसकी बुद्धि विस्तृत होती है।",
           "words": [
+            "(",
+            "ग",
+            ")",
             "कस्य",
             "बुद्धिः",
             "विस्तारिता",
-            "भवति?",
-            "उत्तरम्:",
-            "यः",
-            "पठति,",
-            "लिखति,",
-            "पश्यति,",
-            "परिपृच्छति,",
-            "पण्डितान्",
-            "उपाश्रयति",
-            "च",
-            "तस्य",
-            "बुद्धिः",
-            "विस्तारिता",
-            "भवति।"
+            "भवति",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "किं कृत्वा मनुष्यः नावसीदति? उत्तरम्: उद्यमं (परिश्रमं) कृत्वा मनुष्यः नावसीदति।",
-          "meaning": "Doing what does a human being never face grief? -> By doing hard work (effort), a person never grieves.",
+          "sanskrit": "(घ) किं कृत्वा मनुष्यः नावसीदति?",
+          "answer_sanskrit": "उद्यमं (परिश्रमं) कृत्वा मनुष्यः नावसीदति।",
+          "meaning": "Doing what does a person never grieve/suffer? -> A person never suffers or grieves after putting in hard work/effort.",
+          "hindi_gloss": "क्या करके मनुष्य कभी दुखी नहीं होता? -> परिश्रम (उद्यम) करके मनुष्य कभी दुखी या निराश नहीं होता।",
           "words": [
+            "(",
+            "घ",
+            ")",
             "किं",
             "कृत्वा",
             "मनुष्यः",
-            "नावसीदति?",
-            "उत्तरम्:",
-            "उद्यमं",
-            "(परिश्रमं)",
-            "कृत्वा",
-            "मनुष्यः",
-            "नावसीदति।"
+            "नावसीदति",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "व्यासस्य वचनद्वयं किम्? उत्तरम्: व्यासस्य वचनद्वयम् अस्ति— ‘परोपकारः पुण्याय, पापाय परपीडनम्’ इति।",
-          "meaning": "What are the two sayings of Sage Vyasa? -> Sage Vyasa's two sayings are: 'Helping others brings merit, hurting others brings sin.'",
+          "sanskrit": "(ङ) व्यासस्य वचनद्वयं किम्?",
+          "answer_sanskrit": "व्यासस्य वचनद्वयम् अस्ति - \"परोपकारः पुण्याय, पापाय परपीडनम्\" इति।",
+          "meaning": "What are the two direct sayings of Sage Vyasa? -> The two maxims of Vyasa are: \"Helping others leads to spiritual merit, and hurting others leads to sin.\"",
+          "hindi_gloss": "महर्षि वेदव्यास के दो प्रमुख वचन क्या हैं? -> वेदव्यास के दो मुख्य वचन हैं: \"दूसरों की भलाई (परोपकार) करना पुण्य है, और दूसरों को सताना/दुख देना पाप है।\"",
           "words": [
+            "(",
+            "ङ",
+            ")",
             "व्यासस्य",
             "वचनद्वयं",
-            "किम्?",
-            "उत्तरम्:",
-            "व्यासस्य",
-            "वचनद्वयम्",
-            "अस्ति—",
-            "‘परोपकारः",
-            "पुण्याय,",
-            "पापाय",
-            "परपीडनम्’",
-            "इति।"
+            "किम्",
+            "?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "३. उदाहरणानुसारं श्लोकांशान् यथोचितं योजयन्तु— (Match the shloka halves)",
-          "meaning": "Match the verse segments correctly according to the text:",
+          "sanskrit": "३. उदाहरणानुसारं श्लोकांशान् यथोचितं योजयन्तु —",
+          "meaning": "3. Match the parts of the Shlokas appropriately:",
+          "hindi_gloss": "३. उदाहरण के अनुसार श्लोक के दोनों भागों का सही मिलान कीजिए:",
           "words": [
-            "३.",
+            "३",
+            ".",
             "उदाहरणानुसारं",
             "श्लोकांशान्",
             "यथोचितं",
-            "योजयन्तु—",
-            "(Match",
-            "the",
-            "shloka",
-            "halves)"
+            "योजयन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) विद्यया वपुषा वाचा वस्त्रेण विनयेन च ➡️ वकारैः पञ्चभिर्युक्तो नरो भवति पूजितः॥",
-          "meaning": "Endowed with knowledge, physique, speech, dress, and humility ➡️ A man endowed with these five V-attributes is respected.",
+          "sanskrit": "(क) विद्यया वपुषा वाचा वस्त्रेण विनयेन च।",
+          "answer_label": "योजनम्",
+          "answer_sanskrit": "→ वकारैः पञ्चभिर्युक्तो नरो भवति पूजितः ॥",
+          "meaning": "Endowed with knowledge, body, speech, dress, and humility, a man possessing these five 'V's is respected.",
+          "hindi_gloss": "विद्या, सुंदर शरीर, मधुर वाणी, उत्तम वस्त्र और विनम्रता—इन पाँच 'व' से युक्त मनुष्य संसार में सम्मान पाता है।",
           "words": [
-            "(क)",
             "विद्यया",
             "वपुषा",
             "वाचा",
             "वस्त्रेण",
             "विनयेन",
             "च",
-            "➡️",
             "वकारैः",
             "पञ्चभिर्युक्तो",
             "नरो",
             "भवति",
-            "पूजितः॥"
+            "पूजितः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) षड्दोषाः पुरुषेणेह हातव्या भूतिमिच्छता ➡️ निद्रा तन्द्रा भयं क्रोध आलस्यं दीर्घसूत्रता॥",
-          "meaning": "Six flaws must be abandoned by one desiring prosperity ➡️ Sleep, drowsiness, fear, anger, laziness, and procrastination.",
+          "sanskrit": "(ख) षड्दोषाः पुरुषेणेह हातव्या भूतिमिच्छता।",
+          "answer_label": "योजनम्",
+          "answer_sanskrit": "→ निद्रा तन्द्रा भयं क्रोध आलस्यं दीर्घसूत्रता ॥",
+          "meaning": "Six flaws should be abandoned in this world by one desiring prosperity: sleep, lethargy, fear, anger, laziness, and procrastination.",
+          "hindi_gloss": "उन्नति चाहने वाले मनुष्य को छह दोष त्यागने चाहिए: नींद, ऊँघना, भय, क्रोध, आलस्य और काम टालना।",
           "words": [
-            "(ख)",
             "षड्दोषाः",
             "पुरुषेणेह",
             "हातव्या",
             "भूतिमिच्छता",
-            "➡️",
             "निद्रा",
             "तन्द्रा",
             "भयं",
             "क्रोध",
             "आलस्यं",
-            "दीर्घसूत्रता॥"
+            "दीर्घसूत्रता"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) अद्भिर्गात्राणि शुध्यन्ति मनः सत्येन शुध्यति ➡️ विद्यातपोभ्यां भूतात्मा बुद्धिर्ज्ञानेन शुध्यति॥",
-          "meaning": "Limbs are cleansed by water, mind by truth ➡️ Soul is cleansed by knowledge and penance, intellect by wisdom.",
+          "sanskrit": "(ग) अद्भिर्गात्राणि शुध्यन्ति मनः सत्येन शुध्यति।",
+          "answer_label": "योजनम्",
+          "answer_sanskrit": "→ विद्यातपोभ्यां भूतात्मा बुद्धिर्ज्ञानेन शुध्यति ॥",
+          "meaning": "Limbs are purified by water, mind by truth, soul by knowledge and penance, and intellect by wisdom.",
+          "hindi_gloss": "शरीर के अंग जल से शुद्ध होते हैं, मन सत्य से शुद्ध होता है, जीवात्मा विद्या और तपस्या से शुद्ध होती है, तथा बुद्धि ज्ञान से शुद्ध होती है।",
           "words": [
-            "(ग)",
             "अद्भिर्गात्राणि",
             "शुध्यन्ति",
             "मनः",
             "सत्येन",
             "शुध्यति",
-            "➡️",
             "विद्यातपोभ्यां",
             "भूतात्मा",
             "बुद्धिर्ज्ञानेन",
-            "शुध्यति॥"
+            "शुध्यति"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम् ➡️ वर्षं तद्भारतं नाम भारती यत्र सन्ततिः॥",
-          "meaning": "North of the ocean and south of the snowy Himalayas ➡️ That country is named Bharat, where the progeny is Bharatiya.",
+          "sanskrit": "(घ) उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्।",
+          "answer_label": "योजनम्",
+          "answer_sanskrit": "→ वर्षं तद् भारतं नाम भारती यत्र सन्ततिः ॥",
+          "meaning": "The country that lies to the north of the ocean and south of the snowy mountains is named Bharata, and its citizens are Bharati.",
+          "hindi_gloss": "जो समुद्र के उत्तर में और हिमालय के दक्षिण में स्थित है, उस देश का नाम भारत है और हम सब उसकी सन्तान (भारती) हैं।",
           "words": [
-            "(घ)",
             "उत्तरं",
             "यत्",
             "समुद्रस्य",
             "हिमाद्रेश्चैव",
             "दक्षिणम्",
-            "➡️",
             "वर्षं",
-            "तद्भारतं",
+            "तद्",
+            "भारतं",
             "नाम",
             "भारती",
             "यत्र",
-            "सन्ततिः॥"
+            "सन्ततिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) जलबिन्दुनिपातेन क्रमशः पूर्यते घटः ➡️ स हेतुः सर्वविद्यानां धर्मस्य च धनस्य च॥",
-          "meaning": "Drop by drop of water the pot fills gradually ➡️ That same rule applies to all knowledge, righteousness, and wealth.",
+          "sanskrit": "(ङ) जलबिन्दुनिपातेन क्रमशः पूर्यते घटः।",
+          "answer_label": "योजनम्",
+          "answer_sanskrit": "→ स हेतुः सर्वविद्यानां धर्मस्य च धनस्य च ॥",
+          "meaning": "A pot is gradually filled by falling drops of water; the same rule applies to the steady collection of knowledge, virtue, and wealth.",
+          "hindi_gloss": "जल की बूँदों के लगातार टपकने से धीरे-धीरे घड़ा भर जाता है; यही नियम सभी विद्याओं, धर्म और धन के संचय पर भी लागू होता है।",
           "words": [
-            "(ङ)",
             "जलबिन्दुनिपातेन",
             "क्रमशः",
             "पूर्यते",
             "घटः",
-            "➡️",
             "स",
             "हेतुः",
             "सर्वविद्यानां",
             "धर्मस्य",
             "च",
             "धनस्य",
-            "च॥"
+            "च"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "४. निम्नालिखितानां वाक्यानां समानार्थकान् श्लोकांशान् पाठात् चित्वा लिखन्तु— (Find corresponding lines)",
-          "meaning": "Pick and write the corresponding verse lines that convey the same meaning:",
+          "sanskrit": "४. निम्नालिखितानां वाक्यानां समानार्थकान् श्लोकांशान् पाठात् चित्वा लिखन्तु —",
+          "meaning": "4. Find the matching Shloka lines from the text for the given sentences:",
+          "hindi_gloss": "४. निम्नलिखित वाक्यों के समान अर्थ वाले श्लोकांश पाठ से चुनकर लिखिए:",
           "words": [
-            "४.",
+            "४",
+            ".",
             "निम्नालिखितानां",
             "वाक्यानां",
             "समानार्थकान्",
             "श्लोकांशान्",
             "पाठात्",
             "चित्वा",
-            "लिखन्तु—",
-            "(Find",
-            "corresponding",
-            "lines)"
+            "लिखन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) मधुरवाण्या सर्वे प्रसन्नाः भवन्ति। ➡️ श्लोकांशः: ‘प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः।’",
-          "meaning": "All become happy through sweet speech ➡️ 'By offering sweet words all living beings are pleased.'",
+          "sanskrit": "(क) मधुरवाण्या सर्वे प्रसन्नाः भवन्ति।",
+          "answer_label": "श्लोकांशः",
+          "answer_sanskrit": "प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः।",
+          "meaning": "Everyone is pleased by sweet words. -> Shloka: \"All living beings are satisfied by pleasant speech.\"",
+          "hindi_gloss": "मधुर वाणी बोलने से सभी प्रसन्न होते हैं। -> श्लोकांश: \"प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः।\" (मीठी वाणी बोलने से सभी प्राणी संतुष्ट होते हैं)",
           "words": [
-            "(क)",
             "मधुरवाण्या",
             "सर्वे",
             "प्रसन्नाः",
-            "भवन्ति।",
-            "➡️",
-            "श्लोकांशः:",
-            "‘प्रियवाक्यप्रदानेन",
+            "भवन्ति",
+            "प्रियवाक्यप्रदानेन",
             "सर्वे",
             "तुष्यन्ति",
-            "जन्तवः।’"
+            "जन्तवः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) परिश्रमेण तुल्यः बान्धवः नास्ति। ➡️ श्लोकांशः: ‘नास्त्युद्यमसमो बन्धुः’",
-          "meaning": "There is no friend equal to hard work ➡️ 'There is no companion/friend equal to enterprise/effort.'",
+          "sanskrit": "(ख) परिश्रमेण तुल्यः बान्धवः नास्ति।",
+          "answer_label": "श्लोकांशः",
+          "answer_sanskrit": "नास्त्युद्यमसमो बन्धुः।",
+          "meaning": "There is no relative or friend equal to hard work. -> Shloka: \"There is no friend like industry/exertion.\"",
+          "hindi_gloss": "परिश्रम (मेहनत) के समान कोई मित्र या बन्धु नहीं है। -> श्लोकांश: \"नास्त्युद्यमसमो बन्धुः।\" (परिश्रम के समान कोई सच्चा मित्र नहीं)",
           "words": [
-            "(ख)",
             "परिश्रमेण",
             "तुल्यः",
             "बान्धवः",
-            "नास्ति।",
-            "➡️",
-            "श्लोकांशः:",
-            "‘नास्त्युद्यमसमो",
-            "बन्धुः’"
+            "नास्ति",
+            "नास्त्युद्यमसमो",
+            "बन्धुः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) परोपकारेण मानवस्य पुण्यार्जनं भवति। ➡️ श्लोकांशः: ‘परोपकारः पुण्याय’",
-          "meaning": "Through helping others, humans earn merit ➡️ 'Benevolence is for spiritual merit.'",
+          "sanskrit": "(ग) परोपकारेण मानवस्य पुण्यार्जनं भवति।",
+          "answer_label": "श्लोकांशः",
+          "answer_sanskrit": "परोपकारः पुण्याय।",
+          "meaning": "A human being earns spiritual merit by doing good to others. -> Shloka: \"Benevolence is for earning merit.\"",
+          "hindi_gloss": "दूसरों की भलाई करने से मनुष्य को पुण्य प्राप्त होता है। -> श्लोकांश: \"परोपकारः पुण्याय।\" (परोपकार पुण्य के लिए होता है)",
           "words": [
-            "(ग)",
             "परोपकारेण",
             "मानवस्य",
             "पुण्यार्जनं",
-            "भवति।",
-            "➡️",
-            "श्लोकांशः:",
-            "‘परोपकारः",
-            "पुण्याय’"
+            "भवति",
+            "परोपकारः",
+            "पुण्याय"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) हिन्दमहासागरात् हिमालयपर्यन्तं भारतवर्षम्। ➡️ श्लोकांशः: ‘उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्।’",
-          "meaning": "From the Indian ocean up to the Himalayas is Bharatavarsha ➡️ 'North of the ocean and south of the snowy Himalayas.'",
+          "sanskrit": "(घ) हिन्दमहासागरात् हिमालयपर्यन्तं भारतवर्षम्।",
+          "answer_label": "श्लोकांशः",
+          "answer_sanskrit": "उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्।",
+          "meaning": "The land spanning from the Indian Ocean up to the Himalayas is Bharatvarsha. -> Shloka: \"That which is north of the ocean and south of the Himalayas.\"",
+          "hindi_gloss": "हिन्द महासागर से लेकर हिमालय तक फैला भूभाग भारतवर्ष है। -> श्लोकांश: \"उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्।\" (जो समुद्र के उत्तर और हिमालय के दक्षिण में है)",
           "words": [
-            "(घ)",
             "हिन्दमहासागरात्",
             "हिमालयपर्यन्तं",
-            "भारतवर्षम्।",
-            "➡️",
-            "श्लोकांशः:",
-            "‘उत्तरं",
+            "भारतवर्षम्",
+            "उत्तरं",
             "यत्",
             "समुद्रस्य",
             "हिमाद्रेश्चैव",
-            "दक्षिणम्।’"
+            "दक्षिणम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "५. अधोलिखितानां शब्दानाम् उदाहरणानुसारं पर्यायपदानि लिखन्तु— (Synonyms from Amarakosha)",
-          "meaning": "Write synonyms for the given words according to the example (वपुः = शरीरम्):",
+          "sanskrit": "५. अधोलिखितानां शब्दानाम् उदाहरणानुसारं पर्यायपदानि लिखन्तु —",
+          "meaning": "5. Write the synonyms for the following words:",
+          "hindi_gloss": "५. निम्नलिखित शब्दों के पर्यायवाची (समानार्थक) शब्द लिखिए:",
           "words": [
-            "५.",
+            "५",
+            ".",
             "अधोलिखितानां",
             "शब्दानाम्",
             "उदाहरणानुसारं",
             "पर्यायपदानि",
-            "लिखन्तु—",
-            "(Synonyms",
-            "from",
-            "Amarakosha)"
+            "लिखन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) जलम् ➡️ पर्यायपदानि: अद्भिः / वारि / तोयम् / सलिलम्",
-          "meaning": "Synonyms of जलम् (Water): अद्भिः / वारि / तोयम् / सलिलम्",
+          "sanskrit": "यथा - वपुः",
+          "answer_sanskrit": "शरीरम् / कायः / तनुः / देहः",
+          "meaning": "Body (वपुः -> शरीरम्)",
+          "hindi_gloss": "शरीर / देह / काया / तन",
           "words": [
-            "(क)",
-            "जलम्",
-            "➡️",
-            "पर्यायपदानि:",
-            "अद्भिः",
-            "/",
-            "वारि",
-            "/",
-            "तोयम्",
-            "/",
-            "सलिलम्"
+            "यथा",
+            "वपुः",
+            "शरीरम्",
+            "कायः",
+            "तनुः",
+            "देहः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) लोचनम् ➡️ पर्यायपदानि: नेत्रम् / चक्षुः / नयनम् / दृष्टिः",
-          "meaning": "Synonyms of लोचनम् (Eye): नेत्रम् / चक्षुः / नयनम् / दृष्टिः",
+          "sanskrit": "(क) जलम्",
+          "answer_sanskrit": "वारि / तोयम् / सलिलम् / नीरम् / अद्भिः",
+          "meaning": "Water (वारि / तोयम्)",
+          "hindi_gloss": "पानी / नीर / तोय / वारि",
           "words": [
-            "(ख)",
+            "जलम्",
+            "वारि",
+            "तोयम्",
+            "सलिलम्",
+            "नीरम्",
+            "अद्भिः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ख) लोचनम्",
+          "answer_sanskrit": "नेत्रम् / चक्षुः / नयनम् / दृष्टिः",
+          "meaning": "Eye (नेत्रम् / चक्षुः)",
+          "hindi_gloss": "आँख / नेत्र / नयन / चक्षु",
+          "words": [
             "लोचनम्",
-            "➡️",
-            "पर्यायपदानि:",
             "नेत्रम्",
-            "/",
             "चक्षुः",
-            "/",
             "नयनम्",
-            "/",
             "दृष्टिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) धनम् ➡️ पर्यायपदानि: द्रव्यम् / वसु / वित्तम् / अर्थः",
-          "meaning": "Synonyms of धनम् (Wealth): द्रव्यम् / वसु / वित्तम् / अर्थः",
+          "sanskrit": "(ग) धनम्",
+          "answer_sanskrit": "द्रव्यम् / वित्तम् / अर्थः / वसु",
+          "meaning": "Wealth (द्रव्यम् / वित्तम्)",
+          "hindi_gloss": "धन / दौलत / सम्पत्ति / वित्त",
           "words": [
-            "(ग)",
             "धनम्",
-            "➡️",
-            "पर्यायपदानि:",
             "द्रव्यम्",
-            "/",
-            "वसु",
-            "/",
             "वित्तम्",
-            "/",
-            "अर्थः"
+            "अर्थः",
+            "वसु"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) बुद्धिः ➡️ पर्यायपदानि: मनीषा / प्रज्ञा / मतिः / धीः",
-          "meaning": "Synonyms of बुद्धिः (Intellect): मनीषा / प्रज्ञा / मतिः / धीः",
+          "sanskrit": "(घ) बुद्धिः",
+          "answer_sanskrit": "मनीषा / प्रज्ञा / मतिः / धीः",
+          "meaning": "Intellect / Wisdom (मनीषा / प्रज्ञा)",
+          "hindi_gloss": "बुद्धि / प्रज्ञा / मति / समझ",
           "words": [
-            "(घ)",
             "बुद्धिः",
-            "➡️",
-            "पर्यायपदानि:",
             "मनीषा",
-            "/",
             "प्रज्ञा",
-            "/",
             "मतिः",
-            "/",
             "धीः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) रिपुः ➡️ पर्यायपदानि: शत्रुः / वैरी / अरिः / विपक्षी",
-          "meaning": "Synonyms of रिपुः (Enemy): शत्रुः / वैरी / अरिः / विपक्षी",
+          "sanskrit": "(ङ) रिपुः",
+          "answer_sanskrit": "शत्रुः / वैरी / अरिः / विपक्षी",
+          "meaning": "Enemy (शत्रुः / वैरी)",
+          "hindi_gloss": "शत्रु / दुश्मन / वैरी",
           "words": [
-            "(ङ)",
             "रिपुः",
-            "➡️",
-            "पर्यायपदानि:",
             "शत्रुः",
-            "/",
             "वैरी",
-            "/",
             "अरिः",
-            "/",
             "विपक्षी"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "६. अधः रिक्तस्थानानि तृतीयाविभक्तेः समुचितरूपैः पूरयन्तु— (Complete Instrumental Case tables)",
-          "meaning": "Fill in the blanks with appropriate 3rd case (तृतीया विभक्तिः) forms: singular, dual, plural:",
+          "sanskrit": "६. अधः रिक्तस्थानानि तृतीयाविभक्तेः समुचितरूपैः पूरयन्तु —",
+          "meaning": "6. Fill in the blanks with appropriate Instrumental Case (तृतीया विभक्ति) forms:",
+          "hindi_gloss": "६. नीचे दिए गए शब्दों के तृतीया विभक्ति के रूपों से रिक्त स्थान भरिए:",
           "words": [
-            "६.",
+            "६",
+            ".",
             "अधः",
             "रिक्तस्थानानि",
             "तृतीयाविभक्तेः",
             "समुचितरूपैः",
-            "पूरयन्तु—",
-            "(Complete",
-            "Instrumental",
-            "Case",
-            "tables)"
+            "पूरयन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "सुधाखण्डः ➡️ सुधाखण्डेन (एक.) — सुधाखण्डाभ्याम् (द्वि.) — सुधाखण्डैः (बहु.)",
-          "meaning": "Instrumental case of सुधाखण्ड (Chalk): सुधाखण्डेन, सुधाखण्डाभ्याम्, सुधाखण्डैः",
+          "sanskrit": "सुधाखण्ड (Chalk)",
+          "answer_sanskrit": "सुधाखण्डेन (एकवचनम्) | सुधाखण्डाभ्याम् (द्विवचनम्) | सुधाखण्डैः (बहुवचनम्)",
+          "meaning": "By/with piece(s) of chalk",
+          "hindi_gloss": "चाक के टुकड़े से / दो टुकड़ों से / कई टुकड़ों द्वारा",
           "words": [
-            "सुधाखण्डः",
-            "➡️",
             "सुधाखण्डेन",
-            "(एक.)",
-            "—",
             "सुधाखण्डाभ्याम्",
-            "(द्वि.)",
-            "—",
-            "सुधाखण्डैः",
-            "(बहु.)"
+            "सुधाखण्डैः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "वृक्षः ➡️ वृक्षेण (एक.) — वृक्षाभ्याम् (द्वि.) — वृक्षैः (बहु.)",
-          "meaning": "Instrumental case of वृक्ष (Tree): वृक्षेण, वृक्षाभ्याम्, वृक्षैः",
+          "sanskrit": "वृक्ष (Tree)",
+          "answer_sanskrit": "वृक्षेण (एकवचनम्) | वृक्षाभ्याम् (द्विवचनम्) | वृक्षैः (बहुवचनम्)",
+          "meaning": "By/with the tree(s)",
+          "hindi_gloss": "पेड़ से / दो पेड़ों से / बहुत-से पेड़ों द्वारा",
           "words": [
-            "वृक्षः",
-            "➡️",
             "वृक्षेण",
-            "(एक.)",
-            "—",
             "वृक्षाभ्याम्",
-            "(द्वि.)",
-            "—",
-            "वृक्षैः",
-            "(बहु.)"
+            "वृक्षैः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "लता ➡️ लतया (एक.) — लताभ्याम् (द्वि.) — लताभिः (बहु.)",
-          "meaning": "Instrumental case of लता (Creeper): लतया, लताभ्याम्, लताभिः",
+          "sanskrit": "लता (Creeper)",
+          "answer_sanskrit": "लतया (एकवचनम्) | लताभ्याम् (द्विवचनम्) | लताभिः (बहुवचनम्)",
+          "meaning": "By/with the creeper(s)",
+          "hindi_gloss": "बेल से / दो बेलों से / बहुत-सी बेलों द्वारा",
           "words": [
-            "लता",
-            "➡️",
             "लतया",
-            "(एक.)",
-            "—",
             "लताभ्याम्",
-            "(द्वि.)",
-            "—",
-            "लताभिः",
-            "(बहु.)"
+            "लताभिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "देशः ➡️ देशेन (एक.) — देशाभ्याम् (द्वि.) — देशैः (बहु.)",
-          "meaning": "Instrumental case of देश (Country): देशेन, देशाभ्याम्, देशैः",
+          "sanskrit": "देश (Country)",
+          "answer_sanskrit": "देशेन (एकवचनम्) | देशाभ्याम् (द्विवचनम्) | देशैः (बहुवचनम्)",
+          "meaning": "By/with the country(ies)",
+          "hindi_gloss": "देश से / दो देशों से / देशों द्वारा",
           "words": [
-            "देशः",
-            "➡️",
             "देशेन",
-            "(एक.)",
-            "—",
             "देशाभ्याम्",
-            "(द्वि.)",
-            "—",
-            "देशैः",
-            "(बहु.)"
+            "देशैः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "पुण्यम् ➡️ पुण्येण (एक.) — पुण्याभ्याम् (द्वि.) — पुण्यैः (बहु.)",
-          "meaning": "Instrumental case of पुण्य (Merit): पुण्येण, पुण्याभ्याम्, पुण्यैः",
+          "sanskrit": "पुण्य (Spiritual Merit)",
+          "answer_sanskrit": "पुण्येन (एकवचनम्) | पुण्याभ्याम् (द्विवचनम्) | पुण्यैः (बहुवचनम्)",
+          "meaning": "By/with spiritual merit(s)",
+          "hindi_gloss": "पुण्य से / दो पुण्यों से / पुण्यों द्वारा",
           "words": [
-            "पुण्यम्",
-            "➡️",
-            "पुण्येण",
-            "(एक.)",
-            "—",
+            "पुण्येन",
             "पुण्याभ्याम्",
-            "(द्वि.)",
-            "—",
-            "पुण्यैः",
-            "(बहु.)"
+            "पुण्यैः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "विनयः ➡️ विनयेन (एक.) — विनयाभ्याम् (द्वि.) — विनयैः (बहु.)",
-          "meaning": "Instrumental case of विनय (Humility): विनयेन, विनयाभ्याम्, विनयैः",
+          "sanskrit": "विनय (Humility)",
+          "answer_sanskrit": "विनयेन (एकवचनम्) | विनयाभ्याम् (द्विवचनम्) | विनयैः (बहुवचनम्)",
+          "meaning": "By/with humility",
+          "hindi_gloss": "विनम्रता से / दोनों की नम्रता से / विनम्रताओं द्वारा",
           "words": [
-            "विनयः",
-            "➡️",
             "विनयेन",
-            "(एक.)",
-            "—",
             "विनयाभ्याम्",
-            "(द्वि.)",
-            "—",
-            "विनयैः",
-            "(बहु.)"
+            "विनयैः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "७. कोष्ठके पदानि विलिख्य सुभाषितं पूरयन्तु— (Reconstruct verses from words)",
-          "meaning": "Complete the verses by writing the words in order:",
+          "sanskrit": "७. कोष्ठके पदानि विलिख्य सुभाषितं पूरयन्तु —",
+          "meaning": "7. Complete the verses by writing the words in order:",
+          "hindi_gloss": "७. कोष्ठक में दिए गए पदों को सही क्रम में लिखकर श्लोक पूरे कीजिए:",
           "words": [
-            "७.",
+            "७",
+            ".",
             "कोष्ठके",
             "पदानि",
             "विलिख्य",
             "सुभाषितं",
-            "पूरयन्तु—",
-            "(Reconstruct",
-            "verses",
-            "from",
-            "words)"
+            "पूरयन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "सुभाषितम् ४: उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्। वर्षं तद्भारतं नाम भारती यत्र सन्ततिः॥",
-          "meaning": "Completed Shloka 4: North of the ocean and south of the Himalayas lies the land named Bharat, where the citizens are Bharatiya.",
+          "sanskrit": "सुभाषितम् ४ (उत्तरं यत् समुद्रस्य...)",
+          "answer_sanskrit": "उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्। वर्षं तद् भारतं नाम भारती यत्र सन्ततिः॥",
+          "meaning": "Completed Shloka 4: North of the ocean and south of the Himalayas lies the land named Bharat, where the citizens are Bharati.",
+          "hindi_gloss": "सुभाषित ४: जो देश समुद्र के उत्तर तथा हिमालय के दक्षिण में स्थित है, उसका नाम भारत है तथा वहाँ की संतान भारती (भारतीय) है।",
           "words": [
-            "सुभाषितम्",
-            "४:",
             "उत्तरं",
             "यत्",
             "समुद्रस्य",
             "हिमाद्रेश्चैव",
-            "दक्षिणम्।",
+            "दक्षिणम्",
             "वर्षं",
-            "तद्भारतं",
+            "तद्",
+            "भारतं",
             "नाम",
             "भारती",
             "यत्र",
-            "सन्ततिः॥"
+            "सन्ततिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "सुभाषितम् ७: प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः। तस्मात्तदेव वक्तव्यं वचने का दरिद्रता॥",
+          "sanskrit": "सुभाषितम् ७ (प्रियवाक्यप्रदानेन...)",
+          "answer_sanskrit": "प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः। तस्मात्तदेव वक्तव्यं वचने का दरिद्रता॥",
           "meaning": "Completed Shloka 7: By speaking sweet words all creatures are pleased; therefore one should speak only that, why be miserly in speech?",
+          "hindi_gloss": "सुभाषित ७: मीठी वाणी बोलने से सभी जीव प्रसन्न होते हैं, इसलिए सदा मीठे वचन ही बोलने चाहिए; बोलने में भला कैसी कंजूसी?",
           "words": [
-            "सुभाषितम्",
-            "७:",
             "प्रियवाक्यप्रदानेन",
             "सर्वे",
             "तुष्यन्ति",
-            "जन्तवः।",
+            "जन्तवः",
             "तस्मात्तदेव",
             "वक्तव्यं",
             "वचने",
             "का",
-            "दरिद्रता॥"
+            "दरिद्रता"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "८. उपर्युक्तानि सुभाषितानि पठित्वा रिक्तस्थानानि पूरयन्तु— (Fill in the blanks)",
-          "meaning": "Read the verses and fill in the blanks with the correct words:",
+          "sanskrit": "८. उपर्युक्तानि सुभाषितानि पठित्वा रिक्तस्थानानि पूरयन्तु —",
+          "meaning": "8. Fill in the blanks based on the Shlokas read:",
+          "hindi_gloss": "८. उपर्युक्त सुभाषितों को पढ़कर रिक्त स्थान भरिए:",
           "words": [
-            "८.",
+            "८",
+            ".",
             "उपर्युक्तानि",
             "सुभाषितानि",
             "पठित्वा",
             "रिक्तस्थानानि",
-            "पूरयन्तु—",
-            "(Fill",
-            "in",
-            "the",
-            "blanks)"
+            "पूरयन्तु",
+            "—"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) आलस्यं हि मनुष्याणां शरीरस्थो महान् रिपुः।",
+          "sanskrit": "(क) आलस्यं हि मनुष्याणां _______ महान् रिपुः।",
+          "answer_sanskrit": "आलस्यं हि मनुष्याणां शरीरस्थो महान् रिपुः।",
           "meaning": "Laziness is indeed the greatest enemy residing inside the human body.",
+          "hindi_gloss": "आलस्य निश्चित रूप से मनुष्य के शरीर में स्थित उसका सबसे बड़ा शत्रु है। (रिक्तस्थान: शरीरस्थो)",
           "words": [
-            "(क)",
             "आलस्यं",
             "हि",
             "मनुष्याणां",
             "शरीरस्थो",
             "महान्",
-            "रिपुः।"
+            "रिपुः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) तस्मात्तदेव वक्तव्यं वचने का दरिद्रता।",
-          "meaning": "Therefore one should speak sweet words, why be poor in speech?",
+          "sanskrit": "(ख) तस्मात्तदेव वक्तव्यं _______ का दरिद्रता।",
+          "answer_sanskrit": "तस्मात्तदेव वक्तव्यं वचने का दरिद्रता।",
+          "meaning": "Therefore, that alone (sweet speech) should be spoken, why be poor in words?",
+          "hindi_gloss": "इसलिए वही (मधुर वाणी) बोलनी चाहिए, बोलने में दरिद्रता (कंजूसी) कैसी? (रिक्तस्थान: वचने)",
           "words": [
-            "(ख)",
             "तस्मात्तदेव",
             "वक्तव्यं",
             "वचने",
             "का",
-            "दरिद्रता।"
+            "दरिद्रता"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) यः पठति लिखति पश्यति परिपृच्छति पण्डितानुपाश्रयति।",
-          "meaning": "One who reads, writes, observes, asks questions, and associates with scholars.",
+          "sanskrit": "(ग) यः पठति लिखति पृच्छति _______।",
+          "answer_sanskrit": "यः पठति लिखति पृच्छति पण्डितानुपाश्रयति।",
+          "meaning": "He who reads, writes, questions, and takes refuge in/learns from wise scholars.",
+          "hindi_gloss": "जो पढ़ता है, लिखता है, प्रश्न पूछता है और विद्वानों का आश्रय लेता है। (रिक्तस्थान: पण्डितानुपाश्रयति)",
           "words": [
-            "(ग)",
             "यः",
             "पठति",
             "लिखति",
-            "पश्यति",
-            "परिपृच्छति",
-            "पण्डितानुपाश्रयति।"
+            "पृच्छति",
+            "पण्डितानुपाश्रयति"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) स हेतुः सर्वविद्यानां धर्मस्य च धनस्य च।",
-          "meaning": "That is the principle of gaining all knowledge, righteousness, and wealth.",
+          "sanskrit": "(घ) स हेतुः _______ धर्मस्य च धनस्य च।",
+          "answer_sanskrit": "स हेतुः सर्वविद्यानां धर्मस्य च धनस्य च।",
+          "meaning": "That is the secret source of all learning, of righteousness, and of wealth.",
+          "hindi_gloss": "वही सभी विद्याओं, धर्म तथा धन के संचय का कारण (नियम) है। (रिक्तस्थान: सर्वविद्यानां)",
           "words": [
-            "(घ)",
             "स",
             "हेतुः",
             "सर्वविद्यानां",
             "धर्मस्य",
             "च",
             "धनस्य",
-            "च।"
+            "च"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) विद्यातपोभ्यां भूतात्मा बुद्धिर्ज्ञानेन शुध्यति।",
-          "meaning": "Through learning and penance the soul is purified, the intellect by wisdom.",
+          "sanskrit": "(ङ) विद्यातपोभ्यां भूतात्मा _______ शुध्यति।",
+          "answer_sanskrit": "विद्यातपोभ्यां भूतात्मा बुद्धिर्ज्ञानेन शुध्यति।",
+          "meaning": "The individual soul is purified by learning and penance, and the intellect is purified by knowledge.",
+          "hindi_gloss": "जीवात्मा विद्या और तपस्या से शुद्ध होती है, तथा बुद्धि ज्ञान से शुद्ध होती है। (रिक्तस्थान: बुद्धिर्ज्ञानेन)",
           "words": [
-            "(ङ)",
             "विद्यातपोभ्यां",
             "भूतात्मा",
             "बुद्धिर्ज्ञानेन",
-            "शुध्यति।"
+            "शुध्यति"
           ],
           "kind": "exercise-qa"
         }

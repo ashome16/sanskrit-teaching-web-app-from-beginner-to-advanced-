@@ -862,6 +862,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 <>
                   <p className="textbook-glossary-title">{sentence.sanskrit}</p>
                   <p className="textbook-glossary-subtitle">{sentence.meaning}</p>
+                  {sentence.hindi_gloss ? (
+                    <p className="textbook-glossary-arth-hi" style={{ marginTop: '.25rem' }}>
+                      {sentence.hindi_gloss}
+                    </p>
+                  ) : null}
                 </>
               ) : sentence.kind === 'exercise-qa' ? (
                 <>
@@ -900,6 +905,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                         })}
                       </p>
                       {sentence.meaning ? <p className="textbook-glossary-arth-en">{sentence.meaning}</p> : null}
+                      {sentence.hindi_gloss ? <p className="textbook-glossary-arth-hi">{sentence.hindi_gloss}</p> : null}
                     </div>
                   </div>
                 </>

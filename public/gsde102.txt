@@ -137,218 +137,196 @@ English: Out of all the eighteen Puranas composed by Sage Vyasa, his entire mess
 
 ३. वयम् अभ्यासं कुर्मः (हल किए गए अभ्यास प्रश्न / Solved Exercises)
 
-१. अधोलिखितानां प्रश्नानाम् उत्तराणि एकपदेन लिखन्तु— (One-word answers)
-(क) नरः कतिभिः वकारैः पूजितः भवति? -> पञ्चभिः (By five)
-(ख) पुरुषेण कति दोषाः हातव्याः? -> षड् (Six)
-(ग) बुद्धिः केन शुध्यति? -> ज्ञानेन (By knowledge/wisdom)
-(घ) जलबिन्दुनिपातेन क्रमशः कः पूर्यते? -> घटः (The earthen pot)
-(ङ) आलस्यं केषां महान् रिपुः अस्ति? -> मनुष्याणाम् (Of human beings)
+१. अधोलिखितानां प्रश्नानाम् उत्तराणि एकपदेन लिखन्तु — (Answer the following questions in one word / एक शब्द में उत्तर लिखिए):
+(क) नरः कतिभिः वकारैः पूजितः भवति?
+  -> उत्तरम्: पञ्चभिः
+  (English: How many 'V' attributes make a person respected? -> Five)
+  (हिन्दी: मनुष्य कितने वकारों से पूजित/सम्मानित होता है? -> पाँच)
 
-२. निम्नलिखितप्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखन्तु— (Full-sentence answers)
+(ख) पुरुषेण कति दोषाः हातव्याः?
+  -> उत्तरम्: षड्
+  (English: How many flaws/vices should be discarded by a person in this world? -> Six)
+  (हिन्दी: उन्नति चाहने वाले पुरुष को कितने दोष त्याग देने चाहिए? -> छह)
+
+(ग) बुद्धिः केन शुध्यति?
+  -> उत्तरम्: ज्ञानेन
+  (English: By what is the intellect purified? -> By knowledge)
+  (हिन्दी: बुद्धि किससे शुद्ध होती है? -> ज्ञान से)
+
+(घ) जलबिन्दुनिपातेन क्रमशः कः पूर्यते?
+  -> उत्तरम्: घटः
+  (English: What is filled gradually by the falling of water drops? -> A pot)
+  (हिन्दी: जल की बूँदों के लगातार गिरने से क्रमशः क्या भर जाता है? -> घड़ा)
+
+(ङ) आलस्यं केषां महान् रिपुः अस्ति?
+  -> उत्तरम्: मनुष्याणाम्
+  (English: Of whom is laziness the greatest enemy? -> Of human beings)
+  (हिन्दी: आलस्य किनका सबसे बड़ा शत्रु है? -> मनुष्यों का)
+
+
+२. निम्नालिखितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखन्तु — (Answer in full sentences / पूर्ण वाक्य में उत्तर लिखिए):
 (क) नरः कथं पूजितो भवति?
-उत्तरम्: नरः वस्त्रेण, वपुषा, वाचा, विद्यया, विनयेन च इति पञ्चभिः वकारैः युक्तः पूजितः भवति।
-(Translation: A man becomes respected when endowed with the five V-attributes: dress, physique, speech, knowledge, and humility.)
+  -> उत्तरम्: नरः वस्त्रेण, वपुषा, वाचा, विद्यया, विनयेन च एतैः पञ्चभिः वकारैः युक्तः पूजितो भवति।
+  (English: How does a man become respected/honoured? -> A man becomes respected when he is endowed with these five 'V's: fine attire [Vastra], healthy physique [Vapu], pleasant speech [Vach], knowledge [Vidya], and humility [Vinaya].)
+  (हिन्दी: मनुष्य किस प्रकार सम्मानित होता है? -> मनुष्य वस्त्र, सुंदर शरीर, मधुर वाणी, विद्या और विनय—इन पाँच 'व' से युक्त होकर सम्मानित होता है।)
+
 (ख) पुरुषेण के दोषाः हातव्याः?
-उत्तरम्: पुरुषेण निद्रा, तन्द्रा, भयं, क्रोधः, आलस्यं, दीर्घसूत्रता च इति षड् दोषाः हातव्याः।
-(Translation: A man desiring prosperity must abandon six flaws: excessive sleep, drowsiness, fear, anger, laziness, and procrastination.)
+  -> उत्तरम्: पुरुषेण निद्रा, तन्द्रा, भयं, क्रोधः, आलस्यं, दीर्घसूत्रता च एते षड् दोषाः हातव्याः।
+  (English: Which flaws should be given up by a person? -> The six flaws that should be discarded by a person are sleep, lethargy, fear, anger, laziness, and procrastination.)
+  (हिन्दी: पुरुष को कौन-से दोष त्याग देने चाहिए? -> पुरुष को नींद, सुस्ती/ऊँघना, भय, क्रोध, आलस्य और काम टालने की आदत [दीर्घसूत्रता]—ये छह दोष त्याग देने चाहिए।)
+
 (ग) कस्य बुद्धिः विस्तारिता भवति?
-उत्तरम्: यः पठति, लिखति, पश्यति, परिपृच्छति, पण्डितान् उपाश्रयति च तस्य बुद्धिः विस्तारिता भवति।
-(Translation: The intellect of one who reads, writes, observes, inquires, and associates with wise scholars expands.)
+  -> उत्तरम्: यः पठति, लिखति, पश्यति, परिपृच्छति, पण्डितान् उपाश्रयति च तस्य बुद्धिः विस्तारिता भवति।
+  (English: Whose intellect/mind becomes expanded? -> The intellect of a person who reads, writes, observes, questions, and takes refuge in wise scholars becomes expanded.)
+  (हिन्दी: किसकी बुद्धि का विस्तार होता है? -> जो पढ़ता है, लिखता है, देखता है, प्रश्न पूछता है और विद्वानों का आश्रय लेता है, उसकी बुद्धि विस्तृत होती है।)
+
 (घ) किं कृत्वा मनुष्यः नावसीदति?
-उत्तरम्: उद्यमं (परिश्रमं) कृत्वा मनुष्यः नावसीदति।
-(Translation: By doing hard work (effort), a person never grieves or faces sorrow.)
+  -> उत्तरम्: उद्यमं (परिश्रमं) कृत्वा मनुष्यः नावसीदति।
+  (English: Doing what does a person never grieve/suffer? -> A person never suffers or grieves after putting in hard work/effort.)
+  (हिन्दी: क्या करके मनुष्य कभी दुखी नहीं होता? -> परिश्रम [उद्यम] करके मनुष्य कभी दुखी या निराश नहीं होता।)
+
 (ङ) व्यासस्य वचनद्वयं किम्?
-उत्तरम्: व्यासस्य वचनद्वयम् अस्ति— ‘परोपकारः पुण्याय, पापाय परपीडनम्’ इति।
-(Translation: Sage Vyasa's two sayings are: 'Helping others brings merit, hurting others brings sin.')
-
-३. उदाहरणानुसारं श्लोकांशान् यथोचितं योजयन्तु— (Match the shloka halves)
-(क) विद्यया वपुषा वाचा वस्त्रेण विनयेन च ➡️ वकारैः पञ्चभिर्युक्तो नरो भवति पूजितः॥
-(ख) षड्दोषाः पुरुषेणेह हातव्या भूतिमिच्छता ➡️ निद्रा तन्द्रा भयं क्रोध आलस्यं दीर्घसूत्रता॥
-(ग) अद्भिर्गात्राणि शुध्यन्ति मनः सत्येन शुध्यति ➡️ विद्यातपोभ्यां भूतात्मा बुद्धिर्ज्ञानेन शुध्यति॥
-(घ) उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम् ➡️ वर्षं तद्भारतं नाम भारती यत्र सन्ततिः॥
-(ङ) जलबिन्दुनिपातेन क्रमशः पूर्यते घटः ➡️ स हेतुः सर्वविद्यानां धर्मस्य च धनस्य च॥
-
-४. निम्नालिखितानां वाक्यानां समानार्थकान् श्लोकांशान् पाठात् चित्वा लिखन्तु— (Find corresponding lines)
-(क) मधुरवाण्या सर्वे प्रसन्नाः भवन्ति। ➡️ श्लोकांशः: ‘प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः।’
-(ख) परिश्रमेण तुल्यः बान्धवः नास्ति। ➡️ श्लोकांशः: ‘नास्त्युद्यमसमो बन्धुः’
-(ग) परोपकारेण मानवस्य पुण्यार्जनं भवति। ➡️ श्लोकांशः: ‘परोपकारः पुण्याय’
-(घ) हिन्दमहासागरात् हिमालयपर्यन्तं भारतवर्षम्। ➡️ श्लोकांशः: ‘उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्।’
-
-५. अधोलिखितानां शब्दानाम् उदाहरणानुसारं पर्यायपदानि लिखन्तु— (Synonyms from Amarakosha)
-(यथा: वपुः = शरीरम्)
-(क) जलम् ➡️ पर्यायपदानि: अद्भिः / वारि / तोयम् / सलिलम्
-(ख) लोचनम् ➡️ पर्यायपदानि: नेत्रम् / चक्षुः / नयनम् / दृष्टिः
-(ग) धनम् ➡️ पर्यायपदानि: द्रव्यम् / वसु / वित्तम् / अर्थः
-(घ) बुद्धिः ➡️ पर्यायपदानि: मनीषा / प्रज्ञा / मतिः / धीः
-(ङ) रिपुः ➡️ पर्यायपदानि: शत्रुः / वैरी / अरिः / विपक्षी
-
-६. अधः रिक्तस्थानानि तृतीयाविभक्तेः समुचितरूपैः पूरयन्तु— (Complete Instrumental Case tables)
-[प्रातिपदिकम् : एकवचनम् — द्विवचनम् — बहुवचनम्]
-• सुधाखण्डः ➡️ सुधाखण्डेन — सुधाखण्डाभ्याम् — सुधाखण्डैः
-• वृक्षः ➡️ वृक्षेण — वृक्षाभ्याम् — वृक्षैः
-• लता ➡️ लतया — लताभ्याम् — लताभिः
-• देशः ➡️ देशेन — देशाभ्याम् — देशैः
-• पुण्यम् ➡️ पुण्येण — पुण्याभ्याम् — पुण्यैः
-• विनयः ➡️ विनयेन — विनयाभ्याम् — विनयैः
-
-७. कोष्ठके पदानि विलिख्य सुभाषितं पूरयन्तु— (Reconstruct verses from words)
-सुभाषितम् ४: उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्। वर्षं तद्भारतं नाम भारती यत्र सन्ततिः॥
-(Meaning: North of the ocean and south of the Himalayas lies the land named Bharat, where the citizens are Bharatiya.)
-सुभाषितम् ७: प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः। तस्मात्तदेव वक्तव्यं वचने का दरिद्रता॥
-(Meaning: By speaking sweet words all creatures are pleased; therefore one should speak only that, why be miserly in speech?)
-
-८. उपर्युक्तानि सुभाषितानि पठित्वा रिक्तस्थानानि पूरयन्तु— (Fill in the blanks)
-(क) आलस्यं हि मनुष्याणां [शरीरस्थो महान् रिपुः]।
-(ख) तस्मात्तदेव [वक्तव्यं] वचने का दरिद्रता।
-(ग) यः पठति लिखति [पश्यति परि]पृच्छति पण्डितानुपाश्रयति।
-(घ) स हेतुः सर्वविद्यानां [धर्मस्य च धनस्य च]।
-(ङ) विद्यातपोभ्यां भूतात्मा [बुद्धिर्ज्ञानेन शुध्यति]।
+  -> उत्तरम्: व्यासस्य वचनद्वयम् अस्ति - "परोपकारः पुण्याय, पापाय परपीडनम्" इति।
+  (English: What are the two direct sayings of Sage Vyasa? -> The two maxims of Vyasa are: "Helping others leads to spiritual merit, and hurting others leads to sin.")
+  (हिन्दी: महर्षि वेदव्यास के दो प्रमुख वचन क्या हैं? -> वेदव्यास के दो मुख्य वचन हैं: "दूसरों की भलाई [परोपकार] करना पुण्य है, और दूसरों को सताना/दुख देना पाप है।")
 
 
-४. श्लोकानां पदच्छेदः शब्दार्थः च (Word-to-word Breakdown of All 9 Subhashitas)
+३. उदाहरणानुसारं श्लोकांशान् यथोचितं योजयन्तु — (Match the Shloka parts / श्लोकांशों का उचित मिलान कीजिए):
+(क) विद्यया वपुषा वाचा वस्त्रेण विनयेन च।
+  -> वकारैः पञ्चभिर्युक्तो नरो भवति पूजितः ॥
+  (English: Endowed with knowledge, body, speech, dress, and humility, a man possessing these five 'V's is respected.)
+  (हिन्दी: विद्या, सुंदर शरीर, मधुर वाणी, उत्तम वस्त्र और विनम्रता—इन पाँच 'व' से युक्त मनुष्य संसार में सम्मान पाता है।)
 
-🌸 श्लोक १ (Verse 1)
-वस्त्रेण वपुषा वाचा विद्यया विनयेन च ।
-वकारैः पञ्चभिर्युक्तो नरो भवति पूजितः ॥
-• वस्त्रेण (Vastrena): अच्छे वस्त्रों से / By good clothes
-• वपुषा (Vapusha): स्वस्थ शरीर से / By a healthy physique
-• वाचा (Vaacha): मधुर वाणी से / By pleasant speech
-• विद्यया (Vidyaya): विद्या/ज्ञान से / By education/knowledge
-• विनयेन (Vinayena): नम्रता से / By humility/politeness
-• च (Cha): और / And
-• वकारैः (Vakaaraih): 'व' अक्षर से शुरू होने वाले गुणों से / By attributes starting with 'V'
-• पञ्चभिः (Panchabhih): पाँच / Five
-• युक्तः (Yuktah): युक्त (सहित) / Endowed with
-• नरः (Narah): मनुष्य / A man
-• भवति (Bhavati): होता है / Becomes
-• पूजितः (Poojitah): सम्मानित (पूजनीय) / Respected (worshipped)
+(ख) षड्दोषाः पुरुषेणेह हातव्या भूतिमिच्छता।
+  -> निद्रा तन्द्रा भयं क्रोध आलस्यं दीर्घसूत्रता ॥
+  (English: Six flaws should be abandoned in this world by one desiring prosperity: sleep, lethargy, fear, anger, laziness, and procrastination.)
+  (हिन्दी: उन्नति चाहने वाले मनुष्य को छह दोष त्यागने चाहिए: नींद, ऊँघना, भय, क्रोध, आलस्य और काम टालना।)
 
-🌸 श्लोक २ (Verse 2)
-षड् दोषाः पुरुषेणेह हातव्या भूतिमिच्छता ।
-निद्रा तन्द्रा भयं क्रोध आलस्यं दीर्घसूत्रता ॥
-• षड् (Shad): छः / Six
-• दोषाः (Doshaah): कमियाँ (दोष) / Flaws (defects)
-• पुरुषेण (Purushena): मनुष्य के द्वारा / By a person
-• इह (Iha): इस संसार में / In this world
-• हातव्याः (Haatavyaah): छोड़ देने चाहिए / Worth abandoning
-• भूतिम् (Bhootim): उन्नति/वैभव को / Prosperity/wealth
-• इच्छता (Ichchhataa): चाहने वाले के द्वारा / By one desiring
-• निद्रा (Nidraa): अधिक सोना / Excessive sleep
-• तन्द्रा (Tandraa): ऊँघना (सुस्ती) / Drowsiness (lethargy)
-• भयम् (Bhayam): डर / Fear
-• क्रोधः (Krodhah): गुस्सा / Anger
-• आलस्यम् (Aalasyam): काम न करना / Laziness
-• दीर्घसूत्रता (Deerghasootrataa): काम टालने की आदत / Procrastination
+(ग) अद्भिर्गात्राणि शुध्यन्ति मनः सत्येन शुध्यति।
+  -> विद्यातपोभ्यां भूतात्मा बुद्धिर्ज्ञानेन शुध्यति ॥
+  (English: Limbs are purified by water, mind by truth, soul by knowledge and penance, and intellect by wisdom.)
+  (हिन्दी: शरीर के अंग जल से शुद्ध होते हैं, मन सत्य से शुद्ध होता है, जीवात्मा विद्या और तपस्या से शुद्ध होती है, तथा बुद्धि ज्ञान से शुद्ध होती है।)
 
-🌸 श्लोक ३ (Verse 3)
-अद्भिर्गात्राणि शुध्यन्ति मनः सत्येन शुध्यति ।
-विद्यातपोभ्यां भूतात्मा बुद्धिर्ज्ञानेन शुध्यति ॥
-• अद्भिः (Adbhih): जल से / By water
-• गात्राणि (Gaatraani): शरीर के अङ्ग / Limbs of the body
-• शुध्यन्ति (Shudhyanti): शुद्ध (साफ) होते हैं / Get cleansed
-• मनः (Manah): मन / Mind
-• सत्येन (Satyena): सच बोलने से / By truthfulness
-• शुध्यति (Shudhyati): पवित्र होता है / Is purified
-• विद्यातपोभ्यां (Vidya-tapobhyaam): ज्ञान और परिश्रम/तपस्या से / Through learning and penance
-• भूतात्मा (Bhootatmaa): जीवात्मा / The individual soul
-• बुद्धिः (Buddhih): बुद्धि / Intellect
-• ज्ञानेन (Jnaanena): सच्चे ज्ञान (विवेक) से / By true wisdom
+(घ) उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्।
+  -> वर्षं तद् भारतं नाम भारती यत्र सन्ततिः ॥
+  (English: The country that lies to the north of the ocean and south of the snowy mountains is named Bharata, and its citizens are Bharati.)
+  (हिन्दी: जो समुद्र के उत्तर में और हिमालय के दक्षिण में स्थित है, उस देश का नाम भारत है और हम सब उसकी सन्तान [भारती] हैं।)
 
-🌸 श्लोक ४ (Verse 4)
-उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम् ।
-वर्षं तद् भारतं नाम भारती यत्र सन्ततिः ॥
-• उत्तरम् (Uttaram): उत्तर में / In the north
-• यत् (Yat): जो / Which
-• समुद्रस्य (Samudrasya): समुद्र के / Of the ocean
-• हिमाद्रेः (Himaadreh): हिमालय पर्वत के / Of the snowy mountains
-• च (Cha): और / And
-• एव (Eva): ही / Only
-• दक्षिणम् (Dakshinam): दक्षिण में / In the south
-• वर्षम् (Varsham): देश (भूभाग) / Country (landmass)
-• तद् (Tad): वह / That
-• भारतम् (Bhaaratam): भारत / Bharat
-• नाम (Naama): नाम का / Named
-• भारती (Bhaaratee): भारतमाता की संतानें / Children of India
-• यत्र (Yatra): जहाँ / Where
-• सन्ततिः (Santatih): प्रजा (नागरिक) / Progeny (citizens)
+(ङ) जलबिन्दुनिपातेन क्रमशः पूर्यते घटः।
+  -> स हेतुः सर्वविद्यानां धर्मस्य च धनस्य च ॥
+  (English: A pot is gradually filled by falling drops of water; the same rule applies to the steady collection of knowledge, virtue, and wealth.)
+  (हिन्दी: जल की बूँदों के लगातार टपकने से धीरे-धीरे घड़ा भर जाता है; यही नियम सभी विद्याओं, धर्म और धन के संचय पर भी लागू होता है।)
 
-🌸 श्लोक ५ (Verse 5)
-जलबिन्दुनिपातेन क्रमशः पूर्यते घटः ।
-स हेतुः सर्वविद्यानां धर्मस्य च धनस्य च ॥
-• जलबिन्दु (Jalabindu): पानी की बूँद / Water-drop
-• निपातेन (Nipaatena): गिरने से / By falling
-• क्रमशः (Kramashah): धीरे-धीरे / Gradually
-• पूर्यते (Pooryate): भर जाता है / Fills up
-• घटः (Ghatah): घड़ा / Earthen pot
-• सः (Sah): वही (नियम) / That same rule
-• हेतुः (Hetuh): कारण / Cause (reason)
-• सर्वविद्यानाम् (Sarvavidyaanaam): सब प्रकार की विद्याओं का / Of all branches of knowledge
-• धर्मस्य (Dharmasya): धर्म का / Of righteousness
-• च (Cha): और / And
-• धनस्य (Dhanasya): धन का / Of wealth
 
-🌸 श्लोक ६ (Verse 6)
-यः पठति लिखति पश्यति परिपृच्छति पण्डितानुपाश्रयति ।
-तस्य दिवाकरकिरणैः नलिनीदलमिव विस्तारिता बुद्धिः ॥
-• यः (Yah): जो / One who
-• पठति (Pathati): पढ़ता है / Reads
-• लिखति (Likhati): लिखता है / Writes
-• पश्यति (Pashyati): देखता (निरीक्षण करता) है / Observes
-• परिपृच्छति (Pariprichchhati): प्रश्न पूछता है / Inquires (asks questions)
-• पण्डितान् (Panditaan): विद्वानों के / Of wise people
-• उपाश्रयति (Upaashrayati): पास बैठता है (शरण लेता है) / Seeks the company of
-• तस्य (Tasya): उसकी / His
-• दिवाकर (Divakara): सूर्य की / Of the sun
-• किरणैः (Kiranaih): किरणों से / By the rays
-• नलिनीदलम् (Nalinidalam): कमल की पंखुड़ी / Lotus petal
-• इव (Iva): की तरह / Like
-• विस्तारिता (Vistaaritaa): विकसित (विस्तृत) / Expanded (bloomed)
-• बुद्धिः (Buddhih): बुद्धि / Intellect
+४. निम्नालिखितानां वाक्यानां समानार्थकान् श्लोकांशान् पाठात् चित्वा लिखन्तु — (Find matching Shloka lines / समानार्थक श्लोकांश चुनकर लिखिए):
+(क) मधुरवाण्या सर्वे प्रसन्नाः भवन्ति।
+  -> श्लोकांशः: प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः।
+  (English: Everyone is pleased by sweet words. -> Shloka: "All living beings are satisfied by pleasant speech.")
+  (हिन्दी: मधुर वाणी बोलने से सभी प्रसन्न होते हैं। -> श्लोकांश: "प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः।" [मीठी वाणी बोलने से सभी प्राणी संतुष्ट होते हैं])
 
-🌸 श्लोक ७ (Verse 7)
-प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः ।
-तस्मात्तदेव वक्तव्यं वचने का दरिद्रता ॥
-• प्रियवाक्य (Priyavaakya): मीठे वचन / Sweet words
-• प्रदानेन (Pradaanena): बोलने से / By speaking
-• सर्वे (Sarve): सभी / All
-• तुष्यन्ति (Tushyanti): प्रसन्न होते हैं / Feel satisfied
-• जन्तवः (Jantavah): प्राणी (जीव) / Living beings
-• तस्मात् (Tasmaat): इसलिए / Therefore
-• तद् (Tad): वह / That
-• एव (Eva): ही / Only
-• वक्तव्यम् (Vaktavyam): बोलना चाहिए / Ought to be spoken
-• वचने (Vachane): बोलने में / In speech
-• का (Kaa): कैसी? / What kind of?
-• दरिद्रता (Daridrataa): कञ्जूसी (ग़रीबी) / Poverty (miserliness)
+(ख) परिश्रमेण तुल्यः बान्धवः नास्ति।
+  -> श्लोकांशः: नास्त्युद्यमसमो बन्धुः।
+  (English: There is no relative or friend equal to hard work. -> Shloka: "There is no friend like industry/exertion.")
+  (हिन्दी: परिश्रम [मेहनत] के समान कोई मित्र या बन्धु नहीं है। -> श्लोकांश: "नास्त्युद्यमसमो बन्धुः।" [परिश्रम के समान कोई सच्चा मित्र नहीं])
 
-🌸 श्लोक ८ (Verse 8)
-आलस्यं हि मनुष्याणां शरीरस्थो महान् रिपुः ।
-नास्त्युद्यमसमो बन्धुः कृत्वा यं नावसीदति ॥
-• आलस्यम् (Aalasyam): आलस्य (काम न करना) / Laziness
-• हि (Hi): निश्चित रूप से / Indeed
-• मनुष्याणाम् (Manushyaanaam): मनुष्यों का / Of human beings
-• शरीरस्थः (Shareerasthah): शरीर में रहने वाला / Residing in the body
-• महान् (Mahaan): सबसे बड़ा / Greatest
-• रिपुः (Ripuh): शत्रु / Enemy
-• न (Na): नहीं / Not
-• अस्ति (Asti): है / Is
-• उद्यम (Udyama): मेहनत (परिश्रम) / Hard work
-• समः (Samah): के बराबर / Equal to
-• बन्धुः (Bandhuh): मित्र (भाई) / Relative (friend)
-• कृत्वा (Kritvaa): करके / Having done
-• यम् (Yam): जिसको (मेहनत को) / Whom (effort)
-• न (Na): नहीं / Not
-• अवसीदति (Avaseedati): दुखी होता है / Sorrows (grieves)
+(ग) परोपकारेण मानवस्य पुण्यार्जनं भवति।
+  -> श्लोकांशः: परोपकारः पुण्याय।
+  (English: A human being earns spiritual merit by doing good to others. -> Shloka: "Benevolence is for earning merit.")
+  (हिन्दी: दूसरों की भलाई करने से मनुष्य को पुण्य प्राप्त होता है। -> श्लोकांश: "परोपकारः पुण्याय।" [परोपकार पुण्य के लिए होता है])
 
-🌸 श्लोक ९ (Verse 9)
-अष्टादशपुराणेषु व्यासस्य वचनद्वयम् ।
-परोपकारः पुण्याय पापाय परपीडनम् ॥
-• अष्टादश (Ashtaadasha): अठारह (18) / Eighteen
-• पुराणेषु (Puraaneshu): पुराणों में / In the Puranas
-• व्यासस्य (Vyaasasya): महर्षि व्यास का / Of Sage Vyasa
-• वचन (Vachana): कथन (बातें) / Statements
-• द्वयम् (Dvayam): दो / Two
-• परोपकारः (Paropakaarah): दूसरों की भलाई करना / Helping others
-• पुण्याय (Punyaaya): पुण्य (अच्छे फल) के लिए / For spiritual merit
-• पापाय (Paapaaya): पाप के लिए / For sin
-• परपीडनम् (Parapeedanam): दूसरों को दुख पहुँचाना / Hurting others
+(घ) हिन्दमहासागरात् हिमालयपर्यन्तं भारतवर्षम्।
+  -> श्लोकांशः: उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्।
+  (English: The land spanning from the Indian Ocean up to the Himalayas is Bharatvarsha. -> Shloka: "That which is north of the ocean and south of the Himalayas.")
+  (हिन्दी: हिन्द महासागर से लेकर हिमालय तक फैला भूभाग भारतवर्ष है। -> श्लोकांश: "उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्।" [जो समुद्र के उत्तर और हिमालय के दक्षिण में है])
+
+
+५. अधोलिखितानां शब्दानाम् उदाहरणानुसारं पर्यायपदानि लिखन्तु — (Write synonyms / समानार्थी शब्द लिखिए):
+यथा - वपुः -> शरीरम् / कायः / तनुः / देहः
+  (English: Body) (हिन्दी: शरीर / देह / काया / तन)
+
+(क) जलम् -> वारि / तोयम् / सलिलम् / नीरम् / अद्भिः
+  (English: Water) (हिन्दी: पानी / नीर / तोय / वारि)
+
+(ख) लोचनम् -> नेत्रम् / चक्षुः / नयनम् / दृष्टिः
+  (English: Eye) (हिन्दी: आँख / नेत्र / नयन / चक्षु)
+
+(ग) धनम् -> द्रव्यम् / वित्तम् / अर्थः / वसु
+  (English: Wealth) (हिन्दी: धन / दौलत / सम्पत्ति / वित्त)
+
+(घ) बुद्धिः -> मनीषा / प्रज्ञा / मतिः / धीः
+  (English: Intellect / Wisdom) (हिन्दी: बुद्धि / प्रज्ञा / मति / समझ)
+
+(ङ) रिपुः -> शत्रुः / वैरी / अरिः / विपक्षी
+  (English: Enemy) (हिन्दी: शत्रु / दुश्मन / वैरी)
+
+
+६. अधः रिक्तस्थानानि तृतीयाविभक्तेः समुचितरूपैः पूरयन्तु — (Instrumental Case / तृतीया विभक्ति रूप तालिका):
+सुधाखण्ड (Chalk):
+  -> सुधाखण्डेन (एकवचनम्) | सुधाखण्डाभ्याम् (द्विवचनम्) | सुधाखण्डैः (बहुवचनम्)
+  (English: By/with piece[s] of chalk)
+  (हिन्दी: चाक के टुकड़े से / दो टुकड़ों से / कई टुकड़ों द्वारा)
+
+वृक्ष (Tree):
+  -> वृक्षेण (एकवचनम्) | वृक्षाभ्याम् (द्विवचनम्) | वृक्षैः (बहुवचनम्)
+  (English: By/with the tree[s])
+  (हिन्दी: पेड़ से / दो पेड़ों से / बहुत-से पेड़ों द्वारा)
+
+लता (Creeper):
+  -> लतया (एकवचनम्) | लताभ्याम् (द्विवचनम्) | लताभिः (बहुवचनम्)
+  (English: By/with the creeper[s])
+  (हिन्दी: बेल से / दो बेलों से / बेलों द्वारा)
+
+देश (Country):
+  -> देशेन (एकवचनम्) | देशाभ्याम् (द्विवचनम्) | देशैः (बहुवचनम्)
+  (English: By/with the country[ies])
+  (हिन्दी: देश से / दो देशों से / देशों द्वारा)
+
+पुण्य (Spiritual Merit):
+  -> पुण्येन (एकवचनम्) | पुण्याभ्याम् (द्विवचनम्) | पुण्यैः (बहुवचनम्)
+  (English: By/with spiritual merit[s])
+  (हिन्दी: पुण्य से / दो पुण्यों से / पुण्यों द्वारा)
+
+विनय (Humility):
+  -> विनयेन (एकवचनम्) | विनयाभ्याम् (द्विवचनम्) | विनयैः (बहुवचनम्)
+  (English: By/with humility)
+  (हिन्दी: विनम्रता से / दोनों की नम्रता से / विनम्रताओं द्वारा)
+
+
+७. कोष्ठके पदानि विलिख्य सुभाषितं पूरयन्तु — (Reconstruct verses / सुभाषित पूर्ण कीजिए):
+सुभाषितम् ४:
+  -> उत्तरं यत् समुद्रस्य हिमाद्रेश्चैव दक्षिणम्। वर्षं तद् भारतं नाम भारती यत्र सन्ततिः॥
+  (English: The land to the north of the ocean and south of the Himalayas is named Bharat, where the children are Bharati.)
+  (हिन्दी: जो देश समुद्र के उत्तर तथा हिमालय के दक्षिण में स्थित है, उसका नाम भारत है तथा वहाँ की संतान भारती [भारतीय] है।)
+
+सुभाषितम् ७:
+  -> प्रियवाक्यप्रदानेन सर्वे तुष्यन्ति जन्तवः। तस्मात्तदेव वक्तव्यं वचने का दरिद्रता॥
+  (English: All living beings are pleased by sweet words; therefore speak only pleasant words, why be poor in speech?)
+  (हिन्दी: मीठी वाणी बोलने से सभी जीव प्रसन्न होते हैं, इसलिए सदा मीठे वचन ही बोलने चाहिए; बोलने में भला कैसी कंजूसी?)
+
+
+८. उपर्युक्तानि सुभाषितानि पठित्वा रिक्तस्थानानि पूरयन्तु — (Fill in the blanks based on Shlokas / रिक्त स्थान भरिए):
+(क) आलस्यं हि मनुष्याणां _______ महान् रिपुः।
+  -> उत्तरम्: शरीरस्थो
+  (English: Laziness is indeed the greatest enemy residing inside the human body.)
+  (हिन्दी: आलस्य निश्चित रूप से मनुष्य के शरीर में स्थित उसका सबसे बड़ा शत्रु है।)
+
+(ख) तस्मात्तदेव वक्तव्यं _______ का दरिद्रता।
+  -> उत्तरम्: वचने
+  (English: Therefore, that alone [sweet speech] should be spoken, why be poor in words?)
+  (हिन्दी: इसलिए वही [मधुर वाणी] बोलनी चाहिए, बोलने में दरिद्रता [कंजूसी] कैसी?)
+
+(ग) यः पठति लिखति पृच्छति _______।
+  -> उत्तरम्: पण्डितानुपाश्रयति
+  (English: He who reads, writes, questions, and takes refuge in/learns from wise scholars.)
+  (हिन्दी: जो पढ़ता है, लिखता है, देखता है, प्रश्न पूछता है और विद्वानों का आश्रय लेता है।)
+
+(घ) स हेतुः _______ धर्मस्य च धनस्य च।
+  -> उत्तरम्: सर्वविद्यानां
+  (English: That is the secret source of all learning, of righteousness, and of wealth.)
+  (हिन्दी: वही सभी विद्याओं, धर्म तथा धन के संचय का कारण [नियम] है।)
+
+(ङ) विद्यातपोभ्यां भूतात्मा _______ शुध्यति।
+  -> उत्तरम्: बुद्धिर्ज्ञानेन
+  (English: The individual soul is purified by learning and penance, and the intellect is purified by knowledge.)
+  (हिन्दी: जीवात्मा विद्या और तपस्या से शुद्ध होती है, तथा बुद्धि ज्ञान से शुद्ध होती है।)
+
