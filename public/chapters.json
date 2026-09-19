@@ -7105,24 +7105,28 @@
     {
       "id": "gsde105",
       "fileName": "gsde105.txt",
-      "title": "Chapter 5: सेवा हि परमो धर्मः",
+      "title": "Chapter 5: सेवा हि परमो धर्मः (पाठः पृष्ठानि ४७-५०)",
       "sentences": [
         {
-          "sanskrit": "१. कक्षायां संवादः (कक्षा में बातचीत)",
-          "meaning": "Classroom Dialogue: Essential Values for Success",
-          "paragraphTranslation": "कक्षा में संवाद: मानवीय गुण एवं सफलता",
+          "sanskrit": "१. कक्षायां संवादः (Classroom Dialogue - पृष्ठम् ४७-४८)",
+          "meaning": "Classroom Dialogue: Value of Humane Qualities in Life (पृष्ठम् ४७-४८)",
           "words": [
+            "१.",
             "कक्षायां",
-            "संवादः"
+            "संवादः",
+            "(Classroom",
+            "Dialogue",
+            "-",
+            "पृष्ठम्",
+            "४७-४८)"
           ],
+          "paragraphTranslation": "कक्षा में संवाद: जीवन में मानवीय गुणों का महत्त्व (पृष्ठ ४७ - ४८)",
           "kind": "section-header"
         },
         {
-          "sanskrit": "आचार्या: प्रियच्छात्राः ! जीवने सफलतायै मानवः किं किम् अर्जयेत् ?",
-          "meaning": "Teacher: Dear students! What all should a human being acquire to achieve success in life?",
-          "paragraphTranslation": "प्रिय छात्रो! जीवन में सफलता के लिए मनुष्य को क्या-क्या अर्जित करना चाहिए?",
+          "sanskrit": "प्रियच्छात्राः ! जीवने सफलतायै मानवः किं किम् अर्जयेत् ?",
+          "meaning": "Dear students! What all should a human earn for success in life?",
           "words": [
-            "आचार्या:",
             "प्रियच्छात्राः",
             "!",
             "जीवने",
@@ -7132,14 +7136,13 @@
             "किम्",
             "अर्जयेत्",
             "?"
-          ]
+          ],
+          "paragraphTranslation": "शिक्षक: प्रिय छात्रो! जीवन में सफलता के लिए मनुष्य को क्या-क्या कमाना चाहिए?"
         },
         {
-          "sanskrit": "छात्राः: विद्याम् ! उपाधिम् ! पदवीम् ! धनम् !",
-          "meaning": "Students (diverse voices): Knowledge! Degrees! High positions! Wealth!",
-          "paragraphTranslation": "विद्या! उपाधि (डिग्री)! पद/प्रतिष्ठा! धन!",
+          "sanskrit": "विद्याम् ! उपाधिम् ! पदवीम् ! धनम् !",
+          "meaning": "Students: Knowledge! Degree! Position! Wealth!",
           "words": [
-            "छात्राः:",
             "विद्याम्",
             "!",
             "उपाधिम्",
@@ -7148,70 +7151,76 @@
             "!",
             "धनम्",
             "!"
-          ]
+          ],
+          "paragraphTranslation": "छात्र: विद्या! उपाधि (डिग्री)! पदवी! धन!"
         },
         {
-          "sanskrit": "आचार्या: किम् एतदेव पर्याप्तम् ?",
-          "meaning": "Teacher: Is this alone sufficient?",
-          "paragraphTranslation": "क्या इतना ही पर्याप्त है?",
+          "sanskrit": "किम् एतदेव पर्याप्तम् ?",
+          "meaning": "Teacher: Is this much alone sufficient?",
           "words": [
-            "आचार्या:",
             "किम्",
             "एतदेव",
             "पर्याप्तम्",
             "?"
-          ]
+          ],
+          "paragraphTranslation": "शिक्षक: क्या केवल इतना ही पर्याप्त है?"
         },
         {
-          "sanskrit": "एकः छात्रः: अन्यत् किम् आवश्यकं महोदये ?",
-          "meaning": "A Student: What else is necessary, respected Teacher?",
-          "paragraphTranslation": "और क्या आवश्यक है महोदया?",
+          "sanskrit": "अन्यत् किम् आवश्यकं महोदये ?",
+          "meaning": "Student: What else is necessary, Madam?",
           "words": [
-            "एकः",
-            "छात्रः:",
             "अन्यत्",
             "किम्",
             "आवश्यकं",
             "महोदये",
             "?"
-          ]
+          ],
+          "paragraphTranslation": "छात्र: महोदया! और क्या आवश्यक है?"
         },
         {
-          "sanskrit": "आचार्या: मानवीयाः गुणाः अपि आवश्यकाः भोः ! यथा सिद्धार्थस्य जीवने विद्या, धनं, पदं च सर्वमपि आसीत्। किन्तु मानवीयगुणैः एव सः महात्मा बुद्धः जातः ।",
-          "meaning": "Teacher: Humane virtues are also essential, dear ones! Just as in Siddhartha's life, there was learning, wealth, and royal rank; yet it was through noble human virtues alone that he became Gautama Buddha.",
-          "paragraphTranslation": "अरे! मानवीय गुण भी आवश्यक हैं! जैसे सिद्धार्थ के जीवन में विद्या, धन और पद सब कुछ था। किन्तु मानवीय गुणों के कारण ही वे महात्मा बुद्ध बने।",
+          "sanskrit": "\"मानवीयाः गुणाः अपि आवश्यकाः भोः !\"",
+          "meaning": "Teacher: \"Human qualities are also necessary, dear students!\"",
           "words": [
-            "आचार्या:",
             "मानवीयाः",
             "गुणाः",
             "अपि",
             "आवश्यकाः",
             "भोः",
+            "!"
+          ],
+          "paragraphTranslation": "शिक्षक: \"हे छात्रों! मानवीय गुण भी आवश्यक हैं।\""
+        },
+        {
+          "sanskrit": "यथा सिद्धार्थस्य जीवने विद्या, धनं, पदं च सर्वमपि आसीत्। किन्तु मानवीयगुणैः एव सः महात्मा बुद्धः जातः।",
+          "meaning": "Teacher: Just as in Siddhartha's life, there was knowledge, wealth, and status—everything. But only due to humane qualities did he become Mahatma Buddha.",
+          "words": [
             "यथा",
             "सिद्धार्थस्य",
             "जीवने",
             "विद्या",
+            ",",
             "धनं",
+            ",",
             "पदं",
             "च",
             "सर्वमपि",
             "आसीत्",
+            "।",
             "किन्तु",
             "मानवीयगुणैः",
             "एव",
             "सः",
             "महात्मा",
             "बुद्धः",
-            "जातः"
-          ]
+            "जातः",
+            "।"
+          ],
+          "paragraphTranslation": "शिक्षक: जैसे सिद्धार्थ के जीवन में विद्या, धन और पद सबकुछ था। परन्तु केवल मानवीय गुणों के कारण ही वे महात्मा बुद्ध बने।"
         },
         {
-          "sanskrit": "एकः छात्रः: आर्ये ! के ते मानवीयाः गुणाः ?",
-          "meaning": "A Student: Revered Madam! Which are those humane virtues?",
-          "paragraphTranslation": "आचार्या जी! वे मानवीय गुण कौन से हैं?",
+          "sanskrit": "आर्ये ! के ते मानवीयाः गुणाः ?",
+          "meaning": "Student: Respected Teacher! What are those humane qualities?",
           "words": [
-            "एकः",
-            "छात्रः:",
             "आर्ये",
             "!",
             "के",
@@ -7219,40 +7228,46 @@
             "मानवीयाः",
             "गुणाः",
             "?"
-          ]
+          ],
+          "paragraphTranslation": "छात्र: आदरणीया! वे मानवीय गुण कौन-से हैं?"
         },
         {
-          "sanskrit": "आचार्या: सत्यं, करुणा, उदारता, सेवा, परोपकारः, अक्रोधः इत्यादयः मानवीयाः गुणाः सन्ति। अद्य एतैः गुणैः सम्बद्धाम् एकां कथां पठामः।",
-          "meaning": "Teacher: Truth, compassion, generosity, selfless service, benevolence, and freedom from anger are such human virtues. Today let us read a story related to these qualities.",
-          "paragraphTranslation": "सत्य, करुणा, उदारता, सेवा, परोपकार, क्रोध न करना आदि मानवीय गुण हैं। आज हम इन गुणों से संबंधित एक कहानी पढ़ते हैं।",
+          "sanskrit": "\"सत्यं, करुणा, उदारता, सेवा, परोपकारः, अक्रोधः इत्यादयः मानवीयाः गुणाः सन्ति। अद्य एतैः गुणैः सम्बद्धाम् एकां कथां पठामः।\"",
+          "meaning": "Teacher: \"Truth, compassion, generosity, service, benevolence, and absence of anger are humane qualities. Today we will read a story related to these qualities.\"",
           "words": [
-            "आचार्या:",
             "सत्यं",
+            ",",
             "करुणा",
+            ",",
             "उदारता",
+            ",",
             "सेवा",
+            ",",
             "परोपकारः",
+            ",",
             "अक्रोधः",
             "इत्यादयः",
             "मानवीयाः",
             "गुणाः",
             "सन्ति",
+            "।",
             "अद्य",
             "एतैः",
             "गुणैः",
             "सम्बद्धाम्",
             "एकां",
             "कथां",
-            "पठामः"
-          ]
+            "पठामः",
+            "।"
+          ],
+          "paragraphTranslation": "शिक्षक: \"सत्य, करुणा, उदारता, सेवा, परोपकार, क्रोध न करना आदि मानवीय गुण हैं। आज हम इन गुणों से संबंधित एक कहानी पढ़ेंगे।\""
         },
         {
-          "sanskrit": "छात्राः: आम्, मान्ये ! वयम् अपि पठितुम् इच्छामः ।",
-          "meaning": "Students: Yes, respected teacher! We too wish to read it.",
-          "paragraphTranslation": "हाँ, आदरणीया! हम सब भी पढ़ना चाहते हैं।",
+          "sanskrit": "आम्, मान्ये ! वयम् अपि पठितुम् इच्छामः।",
+          "meaning": "Students: Yes, Madam! We also want to read it.",
           "words": [
-            "छात्राः:",
             "आम्",
+            ",",
             "मान्ये",
             "!",
             "वयम्",
@@ -7260,24 +7275,32 @@
             "पठितुम्",
             "इच्छामः",
             "।"
-          ]
+          ],
+          "paragraphTranslation": "छात्र: हाँ आदरणीया! हम सब भी पढ़ना चाहते हैं।"
         },
         {
-          "sanskrit": "२. मुख्यकथा : नागार्जुनस्य सहायकपरीक्षा — भाग १: सहायकस्य आवश्यकता",
-          "meaning": "Main Story: Nagarjuna's Assistant Selection — Part 1: The Need for an Assistant",
-          "paragraphTranslation": "मुख्य कथा: नागार्जुन के सहायक की परीक्षा — भाग १: सहायक की आवश्यकता",
+          "sanskrit": "२. मुख्यकथा : नागार्जुनस्य सहायकपरीक्षा (The Story of Nagarjuna - पृष्ठम् ४९-५०)",
+          "meaning": "The Story of Nagarjuna: Testing an Assistant for the Medical Work (पृष्ठम् ४९-५०)",
           "words": [
+            "२.",
+            "मुख्यकथा",
+            ":",
             "नागार्जुनस्य",
             "सहायकपरीक्षा",
-            "सहायकस्य",
-            "आवश्यकता"
+            "(The",
+            "Story",
+            "of",
+            "Nagarjuna",
+            "-",
+            "पृष्ठम्",
+            "४९-५०)"
           ],
+          "paragraphTranslation": "मुख्य कथा: नागार्जुन के सहायक की परीक्षा (पृष्ठ ४९ - ५०)",
           "kind": "section-header"
         },
         {
-          "sanskrit": "नागार्जुनः प्रसिद्धः रसायनशास्त्रज्ञः चिकित्सकः च आसीत्। सः अहोरात्रं प्रयोगशालायां कार्यं करोति स्म। एकदा सः महाराजं निवेदितवान् \"महाराज ! मम चिकित्साकार्याय एकः सहायकः आवश्यकः\" इति। राजा एतद् अङ्गीकृतवान् उक्तवान् च 'अस्तु, अहं व्यवस्थां करोमि। श्वः केचन योग्याः युवकाः आगमिष्यन्ति। भवान् परीक्षां कृत्वा तेषु युवकेषु कमपि योग्यं स्वीकरोतु' इति ।",
-          "meaning": "Nagarjuna was an illustrious chemist and physician. He worked day and night in his laboratory. Once he requested the King: 'O King! An assistant is required for my medical work.' The King accepted this request and stated: 'Very well, I shall arrange it. Tomorrow some qualified youths will arrive. You may examine them and select whichever youth is truly worthy.'",
-          "paragraphTranslation": "नागार्जुन एक प्रसिद्ध रसायनशास्त्री और चिकित्सक (वैद्य) थे। वे दिन-रात प्रयोगशाला में काम करते थे। एक बार उन्होंने महाराज से निवेदन किया, \"महाराज! मेरे चिकित्सा कार्य के लिए एक सहायक की आवश्यकता है।\" राजा ने इसे स्वीकार किया और कहा, \"ठीक है, मैं व्यवस्था करता हूँ। कल कुछ योग्य युवक आएँगे। आप परीक्षा लेकर उन युवकों में से किसी योग्य व्यक्ति को चुन लीजिए।\"",
+          "sanskrit": "नागार्जुनः प्रसिद्धः रसायनशास्त्रज्ञः चिकित्सकः च आसीत्। सः अहोरात्रं प्रयोगशालायां कार्यं करोति स्म। एकदा सः महाराजं निवेदितवान् \"महाराज ! मम चिकित्साकार्याय एकः सहायकः आवश्यकः\" इति। राजा एतद् अङ्गीकृतवान् उक्तवान् च 'अस्तु, अहं व्यवस्थां करोमि। श्वः केचन योग्याः युवकाः आगमिष्यन्ति। भवान् परीक्षां कृत्वा तेषु युवकेषु कमपि योग्यं स्वीकरोतु' इति।",
+          "meaning": "Nagarjuna was a famous chemist and physician. He used to work day and night in the laboratory. Once he requested the King, \"Your Majesty! An assistant is required for my medical work.\" The King accepted this and said, \"Alright, I will make arrangements. Tomorrow some capable young men will come. You take an exam and accept whoever is qualified among those young men.\"",
           "words": [
             "नागार्जुनः",
             "प्रसिद्धः",
@@ -7285,37 +7308,44 @@
             "चिकित्सकः",
             "च",
             "आसीत्",
+            "।",
             "सः",
             "अहोरात्रं",
             "प्रयोगशालायां",
             "कार्यं",
             "करोति",
             "स्म",
+            "।",
             "एकदा",
             "सः",
             "महाराजं",
             "निवेदितवान्",
             "महाराज",
+            "!",
             "मम",
             "चिकित्साकार्याय",
             "एकः",
             "सहायकः",
             "आवश्यकः",
             "इति",
+            "।",
             "राजा",
             "एतद्",
             "अङ्गीकृतवान्",
             "उक्तवान्",
             "च",
-            "अस्तु",
+            "'अस्तु",
+            ",",
             "अहं",
             "व्यवस्थां",
             "करोमि",
+            "।",
             "श्वः",
             "केचन",
             "योग्याः",
             "युवकाः",
             "आगमिष्यन्ति",
+            "।",
             "भवान्",
             "परीक्षां",
             "कृत्वा",
@@ -7323,40 +7353,34 @@
             "युवकेषु",
             "कमपि",
             "योग्यं",
-            "स्वीकरोतु",
-            "इति"
-          ]
-        },
-        {
-          "sanskrit": "मुख्यकथा — भाग २: परीक्षायाः कार्यम् (The Test Assignment)",
-          "meaning": "Main Story — Part 2: The Practical Chemical Test",
-          "paragraphTranslation": "मुख्य कथा — भाग २: परीक्षा का कार्य",
-          "words": [
-            "परीक्षायाः",
-            "कार्यम्"
+            "स्वीकरोतु'",
+            "इति",
+            "।"
           ],
-          "kind": "section-header"
+          "paragraphTranslation": "नागार्जुन एक प्रसिद्ध रसायनशास्त्री और चिकित्सक थे। वह रात-दिन प्रयोगशाला में काम करते थे। एक बार उन्होंने महाराज से निवेदन किया, \"महाराज! मेरी चिकित्सा के कार्य के लिए एक सहायक की आवश्यकता है।\" राजा ने इसे स्वीकार कर लिया और कहा, \"ठीक है, मैं व्यवस्था करता हूँ। कल कुछ योग्य युवक आएँगे। आप परीक्षा लेकर उन युवकों में से किसी भी योग्य युवक को स्वीकार कर लें।\""
         },
         {
-          "sanskrit": "अन्यस्मिन् दिने द्वौ युवकौ आगतवन्तौ। नागार्जुनः द्वयोः विद्याभ्यासविषये पृष्टवान्। द्वयोः अपि विद्याभ्यासविषयः समानः एव आसीत्। तदा नागार्जुनः तौ एकं विशिष्टं रसायनं निर्माय आगच्छताम् इति सूचितवान्। तदर्थं दिनद्वयस्य अवसरं दत्तवान्। \"गमनसमये राजमार्गेण गच्छताम्” इत्यपि सूचितवान् ।",
-          "meaning": "The next day, two young men arrived. Nagarjuna inquired about their academic backgrounds; both possessed identical scholarly education. Then Nagarjuna instructed them to prepare a specific medicinal formulation and return with it. For this he granted a period of two days. He also instructed: 'While travelling, you must proceed via the highway.'",
-          "paragraphTranslation": "अगले दिन दो युवक आए। नागार्जुन ने दोनों की पढ़ाई के विषय में पूछा। दोनों की पढ़ाई का विषय बिल्कुल समान था। तब नागार्जुन ने उन दोनों को एक विशेष रसायन (औषधि) बनाकर आने का निर्देश दिया। इसके लिए उन्होंने दो दिन का समय दिया। साथ ही यह भी निर्देश दिया कि \"जाते समय राजमार्ग (मुख्य सड़क) से ही जाना।\"",
+          "sanskrit": "अन्यस्मिन् दिने द्वौ युवकौ आगतवन्तौ। नागार्जुनः द्वयोः विद्याभ्यासविषये पृष्टवान्। द्वयोः अपि विद्याभ्यासविषयः समानः एव आसीत्। तदा नागार्जुनः तौ एकं विशिष्टं रसायनं निर्माय आगच्छताम् इति सूचितवान्। तदर्थं दिनद्वयस्य अवसरं दत्तवान्। \"गमनसमये राजमार्गेण गच्छताम्” इत्यपि सूचितवान्।",
+          "meaning": "On the next day, two young men arrived. Nagarjuna asked about their educational background. The educational qualifications of both were exactly the same. Then Nagarjuna instructed them to prepare a specific chemical compound (medicine) and return. He gave them a time frame of two days for this task. He also specifically instructed them: \"While going, travel by the highway.\"",
           "words": [
             "अन्यस्मिन्",
             "दिने",
             "द्वौ",
             "युवकौ",
             "आगतवन्तौ",
+            "।",
             "नागार्जुनः",
             "द्वयोः",
             "विद्याभ्यासविषये",
             "पृष्टवान्",
+            "।",
             "द्वयोः",
             "अपि",
             "विद्याभ्यासविषयः",
             "समानः",
             "एव",
             "आसीत्",
+            "।",
             "तदा",
             "नागार्जुनः",
             "तौ",
@@ -7367,32 +7391,24 @@
             "आगच्छताम्",
             "इति",
             "सूचितवान्",
+            "।",
             "तदर्थं",
             "दिनद्वयस्य",
             "अवसरं",
             "दत्तवान्",
+            "।",
             "गमनसमये",
             "राजमार्गेण",
             "गच्छताम्",
             "इत्यपि",
-            "सूचितवान्"
-          ]
-        },
-        {
-          "sanskrit": "मुख्यकथा — भाग ३: प्रथमस्य युवकस्य आगमनम् (Arrival of First Youth)",
-          "meaning": "Main Story — Part 3: The First Youth Returns with the Potion",
-          "paragraphTranslation": "मुख्य कथा — भाग ३: पहले युवक का आगमन",
-          "words": [
-            "प्रथमस्य",
-            "युवकस्य",
-            "आगमनम्"
+            "सूचितवान्",
+            "।"
           ],
-          "kind": "section-header"
+          "paragraphTranslation": "अगले दिन दो युवक आए। नागार्जुन ने दोनों की पढ़ाई के विषय में पूछा। दोनों की पढ़ाई का विषय बिल्कुल समान ही था। तब नागार्जुन ने उन दोनों को एक विशेष रसायन (औषधि) बनाकर आने का निर्देश दिया। इसके लिए उन्होंने दो दिन का समय दिया। उन्होंने यह भी निर्देश दिया कि \"जाते समय राजमार्ग (मुख्य सड़क) से ही जाएँ।\""
         },
         {
-          "sanskrit": "दिनद्वयानन्तरं नागार्जुनस्य समीपे प्रथमः युवकः आगतवान्। \"औषधनिर्माणे किमपि कष्टं न अभवत् खलु ?” इति नागार्जुनः पृष्टवान्। युवकः स्वनिष्ठां दर्शयितुं स्वगृहस्य समस्याः वर्णितवान् - \"पितुः उदरवेदना, मातुः ज्वरः च आसीत्। तथापि अहं तत्सर्वं परित्यज्य औषधं निर्मितवान्” इति उक्त्वा नागार्जुनाय रसायनं दत्तवान् ।",
-          "meaning": "Two days later, the first youth arrived before Nagarjuna. 'I trust there was no hardship in preparing the medicine?' Nagarjuna asked. To demonstrate his devotion, the young man described the difficulties at his home: 'My father had severe stomach pain and my mother had a fever. Nevertheless, setting all that aside, I prepared the medicine,' and handed over the formulation to Nagarjuna.",
-          "paragraphTranslation": "दो दिन बाद नागार्जुन के पास पहला युवक आया। नागार्जुन ने पूछा, \"औषधि बनाने में कोई कष्ट तो नहीं हुआ ना?\" युवक ने अपनी निष्ठा दिखाने के लिए अपने घर की समस्याएँ बतानी शुरू कीं– \"पिताजी के पेट में दर्द था और माताजी को बुखार था। फिर भी मैं वह सब छोड़कर औषधि बनाता रहा,\" ऐसा कहकर उसने नागार्जुन को रसायन सौंप दिया।",
+          "sanskrit": "दिनद्वयानन्तरं नागार्जुनस्य समीपे प्रथमः युवकः आगतवान्। \"औषधनिर्माण किमपि कष्टं न अभवत् खलु ?” इति नागार्जुनः पृष्टवान्। युवकः स्वनिष्ठां दर्शयितुं स्वगृहस्य समस्याः वर्णितवान् - \"पितुः उदरवेदना, मातुः ज्वरः च आसीत्। तथापि अहं तत्सर्वं परित्यज्य औषधं निर्मितवान्” इति उक्त्वा नागार्जुनाय रसायनं दत्तवान्।",
+          "meaning": "After two days, the first young man came to Nagarjuna. Nagarjuna asked, \"There was no trouble in making the medicine, right?\" To show his extreme dedication, the young man described his domestic problems: \"My father had a stomach ache and my mother had a fever. Even then, leaving all that aside, I prepared the medicine,\" saying so, he handed the chemical compound to Nagarjuna.",
           "words": [
             "दिनद्वयानन्तरं",
             "नागार्जुनस्य",
@@ -7400,27 +7416,33 @@
             "प्रथमः",
             "युवकः",
             "आगतवान्",
-            "औषधनिर्माणे",
+            "।",
+            "औषधनिर्माण",
             "किमपि",
             "कष्टं",
             "न",
             "अभवत्",
             "खलु",
+            "?",
             "इति",
             "नागार्जुनः",
             "पृष्टवान्",
+            "।",
             "युवकः",
             "स्वनिष्ठां",
             "दर्शयितुं",
             "स्वगृहस्य",
             "समस्याः",
             "वर्णितवान्",
+            "-",
             "पितुः",
             "उदरवेदना",
+            ",",
             "मातुः",
             "ज्वरः",
             "च",
             "आसीत्",
+            "।",
             "तथापि",
             "अहं",
             "तत्सर्वं",
@@ -7431,36 +7453,29 @@
             "उक्त्वा",
             "नागार्जुनाय",
             "रसायनं",
-            "दत्तवान्"
-          ]
-        },
-        {
-          "sanskrit": "मुख्यकथा — भाग ४: द्वितीयस्य युवकस्य आगमनम् (Arrival of Second Youth)",
-          "meaning": "Main Story — Part 4: The Second Youth Returns Empty-Handed",
-          "paragraphTranslation": "मुख्य कथा — भाग ४: दूसरे युवक का आगमन",
-          "words": [
-            "द्वितीयस्य",
-            "युवकस्य",
-            "आगमनम्"
+            "दत्तवान्",
+            "।"
           ],
-          "kind": "section-header"
+          "paragraphTranslation": "दो दिनों के बाद पहला युवक नागार्जुन के पास आया। नागार्जुन ने पूछा, \"दवा बनाने में कोई कष्ट तो नहीं हुआ ना?\" युवक ने अपनी निष्ठा दिखाने के लिए अपने घर की समस्याएँ बतानी शुरू कीं— \"पिताजी के पेट में दर्द था और माताजी को बुखार था। फिर भी मैं वह सब छोड़कर औषधि बनाकर लाया हूँ।\" ऐसा कहकर उसने नागार्जुन को रसायन दे दिया।"
         },
         {
-          "sanskrit": "तदभ्यन्तरे द्वितीयः युवकः अपि आगतवान्। सः खिन्नः आसीत्। तमपि नागार्जुनः पृष्टवान्। तदा युवकः उक्तवान् “अहम् औषधं निर्मातुं न शक्तवान्” इति। \"किमर्थं न शक्तवान्?\" इति नागार्जुनः पृच्छति। युवकः उक्तवान् – “राजमार्गे अहं कञ्चित् रोगिणं दृष्टवान्। तस्य परिस्थितिः शोचनीया आसीत्। अहं तं स्वगृहं नीतवान्। दिनद्वयं तस्य एव सेवायां निरतः आसम्। अद्य प्रातः सः स्वस्थः अभवत्। अहं ततः साक्षात् अत्र आगतवान्। रसायननिर्माणार्थं समयम् एव न प्राप्तवान्” इति।",
-          "meaning": "Meanwhile the second young man also arrived. He was sad and dejected. Nagarjuna asked him as well. The youth confessed: 'I was unable to prepare the medicine.' 'Why could you not?' inquired Nagarjuna. The youth explained: 'On the highway I saw a sick traveler whose condition was deplorable. I brought him to my home and spent two days attending to his care. This morning he regained his health. I have come straight here from there, leaving no time to formulate the chemical compound.'",
-          "paragraphTranslation": "इसी बीच दूसरा युवक भी आ गया। वह बहुत दुखी था। नागार्जुन ने उससे भी पूछा। तब युवक ने कहा, \"मैं औषधि नहीं बना सका।\" नागार्जुन ने पूछा, \"क्यों नहीं बना सके?\" युवक ने कहा– \"राजमार्ग पर मैंने एक रोगी को देखा। उसकी हालत बहुत दयनीय थी। मैं उसे अपने घर ले गया। दो दिन तक मैं उसकी ही सेवा में लगा रहा। आज सुबह वह स्वस्थ हुआ। मैं वहाँ से सीधे यहाँ आ रहा हूँ। इसलिए मुझे रसायन बनाने का समय ही नहीं मिला।\"",
+          "sanskrit": "तदभ्यन्तरे द्वितीयः युवकः अपि आगतवान्। सः खिन्नः आसीत्। तमपि नागार्जुनः पृष्टवान्। तदा युवकः उक्तवान् “अहम् औषधं निर्मातुं न शक्तवान्” इति। “किमर्थं न शक्तवान्?\" इति नागार्जुनः पृच्छति।",
+          "meaning": "Meanwhile, the second young man also arrived. He looked deeply sad. Nagarjuna questioned him too. Then the young man said, \"I was unable to prepare the medicine.\" \"Why were you unable to?\" Nagarjuna asked.",
           "words": [
             "तदभ्यन्तरे",
             "द्वितीयः",
             "युवकः",
             "अपि",
             "आगतवान्",
+            "।",
             "सः",
             "खिन्नः",
             "आसीत्",
+            "।",
             "तमपि",
             "नागार्जुनः",
             "पृष्टवान्",
+            "।",
             "तदा",
             "युवकः",
             "उक्तवान्",
@@ -7470,65 +7485,73 @@
             "न",
             "शक्तवान्",
             "इति",
+            "।",
             "किमर्थं",
             "न",
             "शक्तवान्",
+            "?",
             "इति",
             "नागार्जुनः",
             "पृच्छति",
+            "।"
+          ],
+          "paragraphTranslation": "इसी बीच दूसरा युवक भी वहाँ आ गया। वह बहुत दुखी था। नागार्जुन ने उससे भी पूछा। तब युवक ने कहा, \"मैं औषधि बनाने में असमर्थ रहा।\" नागार्जुन ने पूछा, \"क्यों नहीं बना सके?\""
+        },
+        {
+          "sanskrit": "युवकः उक्तवान् – “राजमार्गे अहं कञ्चित् रोगिणं दृष्टवान्। तस्य परिस्थितिः शोचनीया आसीत्। अहं तं स्वगृहं नीतवान्। दिनद्वयं तस्य एव सेवायां निरतः आसम्। अद्य प्रातः सः स्वस्थः अभवत्। अहं ततः साक्षात् अत्र आगतवान्। रसायननिर्माणार्थं समयम् एव न प्राप्तवान्” इति।",
+          "meaning": "The young man replied— \"On the highway, I saw a sick man. His condition was miserable. I took him to my house. For two days, I remained entirely engaged in his service. This morning he recovered and became healthy. I came directly here from there. I simply got no time to prepare the chemical compound.\"",
+          "words": [
             "युवकः",
             "उक्तवान्",
+            "–",
             "राजमार्गे",
             "अहं",
             "कञ्चित्",
             "रोगिणं",
             "दृष्टवान्",
+            "।",
             "तस्य",
             "परिस्थितिः",
             "शोचनीया",
             "आसीत्",
+            "।",
             "अहं",
             "तं",
             "स्वगृहं",
             "नीतवान्",
+            "।",
             "दिनद्वयं",
             "तस्य",
             "एव",
             "सेवायां",
             "निरतः",
             "आसम्",
+            "।",
             "अद्य",
             "प्रातः",
             "सः",
             "स्वस्थः",
             "अभवत्",
+            "।",
             "अहं",
             "ततः",
             "साक्षात्",
             "अत्र",
             "आगतवान्",
+            "।",
             "रसायननिर्माणार्थं",
             "समयम्",
             "एव",
             "न",
             "प्राप्तवान्",
-            "इति"
-          ]
-        },
-        {
-          "sanskrit": "मुख्यकथा — भाग ५: नागार्जुनस्य निर्णयः (The Verdict of Nagarjuna)",
-          "meaning": "Main Story — Part 5: The Wise Decision: Service Over Mechanical Task",
-          "paragraphTranslation": "मुख्य कथा — भाग ५: नागार्जुन का विवेकपूर्ण निर्णय",
-          "words": [
-            "नागार्जुनस्य",
-            "निर्णयः"
+            "इति",
+            "।"
           ],
-          "kind": "section-header"
+          "paragraphTranslation": "युवक ने कहा— \"राजमार्ग पर मैंने एक रोगी को देखा। उसकी स्थिति बहुत दयनीय थी। मैं उसे अपने घर ले गया। दो दिन तक मैं उसकी ही सेवा में लगा रहा। आज सुबह वह ठीक हो गया। मैं वहाँ से सीधा यहाँ आ गया। रसायन बनाने के लिए मुझे समय ही नहीं मिला।\""
         },
         {
-          "sanskrit": "तदनन्तरं नागार्जुनः द्वितीयं युवकं सहायकत्वेन स्वीकृतवान्। राजा एतं वृत्तान्तं श्रुत्वा आश्चर्यं प्रकटितवान्। सः नागार्जुनं पृष्टवान् – “प्रथमः युवकः औषधं कृत्वा आनीतवान्। द्वितीयः तथा न कृतवान्। तथापि भवान् किमर्थं द्वितीयं चितवान् ?” नागार्जुनः अवदत् – “द्वितीयः अपि औषधनिर्माणे कुशलः अस्ति। किन्तु तेन समयः न प्राप्तः, यतः सः सेवायां निरतः आसीत्। तं रोगिणम् अहं पूर्वमेव मार्गे दृष्टवान्। अतः 'राजमार्गेण गन्तव्यम्' इति अहं युवकद्वयं सूचितवान्। प्रथमः रोगिणं दृष्ट्वा अपि अग्रे गतवान्। सः यन्त्रवत् कार्यं करोति। तस्मिन् सेवायाः भावना नास्ति। सेवाभावनां विना चिकित्सकः कथं भवेत् ? अतः अहं द्वितीयस्य चयनं कृतवान्\" इति।",
-          "meaning": "Thereupon Nagarjuna accepted the second youth as his assistant. Hearing this account, the King expressed surprise and asked: 'The first youth prepared and brought the remedy; the second failed to do so. Why then did you choose the second?' Nagarjuna answered: 'The second youth is equally skilled in medicine, but had no time because he was devoted to saving a life. I had already placed that sick man on the highway, which is why I instructed both to take that route. The first saw the dying man and walked right past like an unfeeling machine without compassion. Without the spirit of service, how can anyone be a true healer? Hence, I selected the second youth.'",
-          "paragraphTranslation": "इसके बाद नागार्जुन ने दूसरे युवक को सहायक के रूप में चुन लिया। राजा यह वृत्तांत सुनकर चकित रह गए। उन्होंने नागार्जुन से पूछा– \"पहला युवक औषधि बनाकर लाया। दूसरे ने ऐसा नहीं किया। फिर भी आपने दूसरे को क्यों चुना?\" नागार्जुन ने उत्तर दिया– \"दूसरा युवक भी औषधि बनाने में कुशल है। लेकिन उसे समय नहीं मिला क्योंकि वह सेवा में व्यस्त था। उस रोगी को मैंने पहले ही रास्ते में देख लिया था। इसीलिए मैंने दोनों युवकों को 'राजमार्ग से जाने' के लिए कहा था। पहले युवक ने रोगी को देखा, फिर भी आगे बढ़ गया। वह एक मशीन की तरह काम करता है। उसमें सेवा की भावना नहीं है। सेवा भावना के बिना कोई चिकित्सक (डॉक्टर) कैसे बन सकता है? इसलिए मैंने दूसरे युवक का चयन किया।\"",
+          "sanskrit": "तदनन्तरं नागार्जुनः द्वितीयं युवकं सहायकत्वेन स्वीकृतवान्। राजा एतं वृत्तान्तं श्रुत्वा आश्चर्यं प्रकटितवान्। सः नागार्जुनं पृष्टवान् – “प्रथमः युवकः औषधं कृत्वा आनीतवान्। द्वितीयः तथा न कृतवान्। तथापि भवान् किमर्थं द्वितीयं चितवान्”? ",
+          "meaning": "After that, Nagarjuna accepted the second young man as his assistant. Hearing this account, the King expressed surprise. He asked Nagarjuna— \"The first young man made and brought the medicine. The second one did not do so. Even then, why did you select the second one?\"",
           "words": [
             "तदनन्तरं",
             "नागार्जुनः",
@@ -7536,442 +7559,604 @@
             "युवकं",
             "सहायकत्वेन",
             "स्वीकृतवान्",
+            "।",
             "राजा",
             "एतं",
             "वृत्तान्तं",
             "श्रुत्वा",
             "आश्चर्यं",
             "प्रकटितवान्",
+            "।",
             "सः",
             "नागार्जुनं",
             "पृष्टवान्",
+            "–",
             "प्रथमः",
             "युवकः",
             "औषधं",
             "कृत्वा",
             "आनीतवान्",
+            "।",
             "द्वितीयः",
             "तथा",
             "न",
             "कृतवान्",
+            "।",
             "तथापि",
             "भवान्",
             "किमर्थं",
             "द्वितीयं",
             "चितवान्",
+            "?"
+          ],
+          "paragraphTranslation": "इसके बाद नागार्जुन ने दूसरे युवक को सहायक के रूप में चुन लिया। राजा ने जब यह बात सुनी तो उन्हें बहुत आश्चर्य हुआ। उन्होंने नागार्जुन से पूछा— \"पहला युवक दवा बनाकर लाया। दूसरे ने ऐसा नहीं किया। फिर भी आपने दूसरे युवक को क्यों चुना?\""
+        },
+        {
+          "sanskrit": "नागार्जुनः अवदत् – “द्वितीयः अपि औषधनिर्माणे कुशलः अस्ति। किन्तु तेन समयः न प्राप्तः। यतः सः सेवायां निरतः आसीत्। तं रोगिणम् अहं पूर्वमेव मार्गे दृष्टवान्। अतः 'राजमार्गेण गन्तव्यम्' इति अहं युवकद्वयं सूचितवान्। प्रथमः रोगिणं दृष्ट्वा अपि अग्रे गतवान्। सः यन्त्रवत् कार्यं करोति। तस्मिन् सेवायाः भावना नास्ति। सेवाभावनां विना चिकित्सकः कथं भवेत् ? अतः अहं द्वितीयस्य चयनं कृतवान्\" इति।",
+          "meaning": "Nagarjuna said— \"The second one is also skilled in making medicine. But he did not get the time because he was devoted to serving someone. I had already seen that sick man on the road beforehand. That is why I instructed the pair of young men to travel by the highway. The first one went ahead despite seeing the sick man. He works like a machine. There is no feeling of service in him. Without a spirit of service, how can someone be a doctor? Therefore, I made the choice of the second one.\"",
+          "words": [
             "नागार्जुनः",
             "अवदत्",
+            "–",
             "द्वितीयः",
             "अपि",
             "औषधनिर्माणे",
             "कुशलः",
             "अस्ति",
+            "।",
             "किन्तु",
             "तेन",
             "समयः",
             "न",
             "प्राप्तः",
+            "।",
             "यतः",
             "सः",
             "सेवायां",
             "निरतः",
             "आसीत्",
+            "।",
             "तं",
             "रोगिणम्",
             "अहं",
             "पूर्वमेव",
             "मार्गे",
             "दृष्टवान्",
+            "।",
             "अतः",
-            "राजमार्गेण",
-            "गन्तव्यम्",
+            "'राजमार्गेण",
+            "गन्तव्यम्'",
             "इति",
             "अहं",
             "युवकद्वयं",
             "सूचितवान्",
+            "।",
             "प्रथमः",
             "रोगिणं",
             "दृष्ट्वा",
             "अपि",
             "अग्रे",
             "गतवान्",
+            "।",
             "सः",
             "यन्त्रवत्",
             "कार्यं",
             "करोति",
+            "।",
             "तस्मिन्",
             "सेवायाः",
             "भावना",
             "नास्ति",
+            "।",
             "सेवाभावनां",
             "विना",
             "चिकित्सकः",
             "कथं",
             "भवेत्",
+            "?",
             "अतः",
             "अहं",
             "द्वितीयस्य",
             "चयनं",
             "कृतवान्",
-            "इति"
-          ]
+            "इति",
+            "।"
+          ],
+          "paragraphTranslation": "नागार्जुन ने उत्तर दिया— \"दूसरा युवक भी औषधि बनाने में कुशल है। लेकिन उसे समय नहीं मिला क्योंकि वह सेवा में व्यस्त था। उस रोगी को मैंने पहले ही मार्ग में देख लिया था। इसलिए मैंने दोनों युवकों को राजमार्ग से जाने के लिए कहा था। पहला युवक रोगी को देखकर भी आगे बढ़ गया। वह मशीन की तरह काम करता है। उसमें सेवा की भावना नहीं है। सेवा भावना के बिना कोई चिकित्सक कैसे हो सकता है? इसलिए मैंने दूसरे युवक का चयन किया।\""
         },
         {
-          "sanskrit": "३. शब्दार्थाः (कठिन शब्दों के अर्थ)",
-          "meaning": "Key Vocabulary Glossary",
-          "paragraphTranslation": "कठिन शब्दों के अर्थ",
+          "sanskrit": "३. वयम् शब्दार्थान् जानीमः (पृष्ठम् ५१ / Vocabulary Table)",
+          "meaning": "Vocabulary Table: Key Words with Sanskrit Meaning, Hindi Translation & English Meaning",
           "words": [
-            "शब्दार्थाः",
-            "कठिन",
-            "शब्दों",
-            "के",
-            "अर्थ"
+            "३.",
+            "वयम्",
+            "शब्दार्थान्",
+            "जानीमः",
+            "(पृष्ठम्",
+            "५१",
+            "/",
+            "Vocabulary",
+            "Table)"
           ],
+          "paragraphTranslation": "कठिन शब्दों के संस्कृत अर्थ, हिन्दी अनुवाद एवं अंग्रेजी अनुवाद (पृष्ठ ५१)",
           "kind": "glossary-header"
         },
         {
           "sanskrit": "उपाधिम्",
-          "meaning": "Academic degree / credential",
-          "sanskrit_gloss": "शैक्षणिकपदवीम्",
-          "hindi_gloss": "डिग्री / उपाधि",
+          "meaning": "Degree",
           "words": [
-            "उपाधिम्",
-            "शैक्षणिकपदवीम्"
+            "उपाधिम्"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "hindi_gloss": "उपाधि को (डिग्री)",
+          "sanskrit_gloss": "नामचिह्नम्"
         },
         {
           "sanskrit": "पदवीम्",
-          "meaning": "Designation / Position / Rank",
-          "sanskrit_gloss": "पदस्थानम् / अधिकारम्",
-          "hindi_gloss": "पद / पदवी",
+          "meaning": "Designation / Position",
           "words": [
-            "पदवीम्",
-            "पदस्थानम्"
+            "पदवीम्"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "hindi_gloss": "पदवी",
+          "sanskrit_gloss": "पदनाम"
         },
         {
           "sanskrit": "मानवीयाः",
-          "meaning": "Humane / Humanitarian attributes",
-          "sanskrit_gloss": "मानवोचितगुणाः",
-          "hindi_gloss": "मानवीय गुण",
+          "meaning": "Humane",
           "words": [
-            "मानवीयाः",
-            "मानवोचितगुणाः"
+            "मानवीयाः"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "hindi_gloss": "मानवों में होने वाले",
+          "sanskrit_gloss": "मानवे भवितव्याः"
         },
         {
           "sanskrit": "रसायनशास्त्रज्ञः",
-          "meaning": "Chemist / Alchemist",
-          "sanskrit_gloss": "रसविद्याविशारदः",
-          "hindi_gloss": "रसायन शास्त्र का ज्ञाता",
+          "meaning": "Chemist / Chemistry expert",
           "words": [
-            "रसायनशास्त्रज्ञः",
-            "रसविद्याविशारदः"
+            "रसायनशास्त्रज्ञः"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "hindi_gloss": "रसायन शास्त्र का विशेषज्ञ",
+          "sanskrit_gloss": "यः औषधशास्त्रं जानाति"
         },
         {
           "sanskrit": "चिकित्सकः",
-          "meaning": "Physician / Doctor / Vaidya",
-          "sanskrit_gloss": "वैद्यः / भिषक्",
-          "hindi_gloss": "चिकित्सक / वैद्य",
+          "meaning": "Physician / Doctor",
           "words": [
-            "चिकित्सकः",
-            "वैद्यः",
-            "भिषक्"
+            "चिकित्सकः"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "hindi_gloss": "वैद्य",
+          "sanskrit_gloss": "भिषक्"
         },
         {
           "sanskrit": "प्रयोगशालायाम्",
           "meaning": "In the laboratory",
-          "sanskrit_gloss": "शोधशालायाम्",
-          "hindi_gloss": "प्रयोगशाला में",
           "words": [
-            "प्रयोगशालायाम्",
-            "शोधशालायाम्"
+            "प्रयोगशालायाम्"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "hindi_gloss": "प्रयोगशाला में",
+          "sanskrit_gloss": "अनुसन्धान-परीक्षण-कक्षे"
+        },
+        {
+          "sanskrit": "अहोरात्रम्",
+          "meaning": "Day and night continuously",
+          "words": [
+            "अहोरात्रम्"
+          ],
+          "kind": "glossary",
+          "hindi_gloss": "रात-दिन लगातार",
+          "sanskrit_gloss": "अहः (Day) + रात्रिः (Night)"
+        },
+        {
+          "sanskrit": "निवेदितवान्",
+          "meaning": "Requested / Submitted an appeal",
+          "words": [
+            "निवेदितवान्"
+          ],
+          "kind": "glossary",
+          "hindi_gloss": "निवेदन किया",
+          "sanskrit_gloss": "प्रार्थितवान्"
         },
         {
           "sanskrit": "अङ्गीकृतवान्",
-          "meaning": "Accepted / Approved",
-          "sanskrit_gloss": "स्वीकृतवान्",
-          "hindi_gloss": "स्वीकार किया",
+          "meaning": "Accepted / Agreed to",
           "words": [
-            "अङ्गीकृतवान्",
-            "स्वीकृतवान्"
+            "अङ्गीकृतवान्"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "hindi_gloss": "स्वीकार किया",
+          "sanskrit_gloss": "स्वीकृतवान्"
         },
         {
-          "sanskrit": "राजमार्गः",
-          "meaning": "Main road / Highway",
-          "sanskrit_gloss": "प्रधानमार्गः",
-          "hindi_gloss": "मुख्य सड़क / राजमार्ग",
+          "sanskrit": "व्यवस्थाम्",
+          "meaning": "Arrangement",
+          "words": [
+            "व्यवस्थाम्"
+          ],
+          "kind": "glossary",
+          "hindi_gloss": "व्यवस्था को",
+          "sanskrit_gloss": "प्रबन्धनम्"
+        },
+        {
+          "sanskrit": "श्वः",
+          "meaning": "Tomorrow",
+          "words": [
+            "श्वः"
+          ],
+          "kind": "glossary",
+          "hindi_gloss": "कल (आने वाला कल)",
+          "sanskrit_gloss": "आगामि-दिवसे"
+        },
+        {
+          "sanskrit": "अन्यस्मिन् दिने",
+          "meaning": "On another day",
+          "words": [
+            "अन्यस्मिन्",
+            "दिने"
+          ],
+          "kind": "glossary",
+          "hindi_gloss": "अगले दिन / दूसरे दिन",
+          "sanskrit_gloss": "अपरस्मिन् दिवसे"
+        },
+        {
+          "sanskrit": "आगतवन्तौ",
+          "meaning": "Both arrived (dual form)",
+          "words": [
+            "आगतवन्तौ"
+          ],
+          "kind": "glossary",
+          "hindi_gloss": "दोनों आए",
+          "sanskrit_gloss": "द्वौ आगतौ"
+        },
+        {
+          "sanskrit": "निर्माय",
+          "meaning": "Having prepared / Having made",
+          "words": [
+            "निर्माय"
+          ],
+          "kind": "glossary",
+          "hindi_gloss": "बनाकर",
+          "sanskrit_gloss": "रचयित्वा"
+        },
+        {
+          "sanskrit": "आगच्छताम्",
+          "meaning": "Both should come back",
+          "words": [
+            "आगच्छताम्"
+          ],
+          "kind": "glossary",
+          "hindi_gloss": "दोनों आएँ",
+          "sanskrit_gloss": "आगम्यताम्"
+        },
+        {
+          "sanskrit": "अवसरम्",
+          "meaning": "Time window / Opportunity",
+          "words": [
+            "अवसरम्"
+          ],
+          "kind": "glossary",
+          "hindi_gloss": "समय / अवसर",
+          "sanskrit_gloss": "समयम्"
+        },
+        {
+          "sanskrit": "राजमार्गः / राजमार्गेण",
+          "meaning": "Highway / By the main highway",
           "words": [
             "राजमार्गः",
-            "प्रधानमार्गः"
+            "/",
+            "राजमार्गेण"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "hindi_gloss": "राजमार्ग / मुख्य सड़क से",
+          "sanskrit_gloss": "मुख्यमार्गः / मुख्यमार्गेण"
         },
         {
           "sanskrit": "खिन्नः",
-          "meaning": "Sorrowful / Dejected",
-          "sanskrit_gloss": "विषादयुक्तः",
-          "hindi_gloss": "उदास / दुखी",
+          "meaning": "Sad / Heavy-hearted",
           "words": [
-            "खिन्नः",
-            "विषादयुक्तः"
+            "खिन्नः"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "hindi_gloss": "दुःखी",
+          "sanskrit_gloss": "दुःखितः"
+        },
+        {
+          "sanskrit": "(अहम्) शक्तवान्",
+          "meaning": "(I) could do / Was capable of",
+          "words": [
+            "(अहम्)",
+            "शक्तवान्"
+          ],
+          "kind": "glossary",
+          "hindi_gloss": "(मैं) कर सका",
+          "sanskrit_gloss": "समर्थः अभवम्"
         },
         {
           "sanskrit": "रोगिणम्",
-          "meaning": "Sick person / Patient",
-          "sanskrit_gloss": "रुग्णं जनम्",
-          "hindi_gloss": "बीमार व्यक्ति को",
+          "meaning": "Sick person",
           "words": [
-            "रोगिणम्",
-            "रुग्णं",
-            "जनम्"
+            "रोगिणम्"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "hindi_gloss": "रोगी को",
+          "sanskrit_gloss": "अस्वस्थम्"
         },
         {
           "sanskrit": "शोचनीया",
-          "meaning": "Pitiable / Miserable condition",
-          "sanskrit_gloss": "दयनीया",
-          "hindi_gloss": "दयनीय",
+          "meaning": "Miserable / Pitiful",
           "words": [
-            "शोचनीया",
-            "दयनीया"
+            "शोचनीया"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "hindi_gloss": "दुःखदायी / दयनीय",
+          "sanskrit_gloss": "दयनीया"
         },
         {
           "sanskrit": "निरतः",
-          "meaning": "Engrossed / Dedicated to",
-          "sanskrit_gloss": "सल्लग्नः / तत्परः",
-          "hindi_gloss": "लीन / तत्पर",
+          "meaning": "Engrossed / Busy / Immersed in",
           "words": [
-            "निरतः",
-            "सल्लग्नः",
-            "तत्परः"
+            "निरतः"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "hindi_gloss": "मग्न / लगा हुआ",
+          "sanskrit_gloss": "लीनः"
+        },
+        {
+          "sanskrit": "वृत्तान्तम्",
+          "meaning": "Anecdote / Narrative / Account",
+          "words": [
+            "वृत्तान्तम्"
+          ],
+          "kind": "glossary",
+          "hindi_gloss": "घटना / प्रसङ्ग को",
+          "sanskrit_gloss": "घटनाम्"
+        },
+        {
+          "sanskrit": "चितवान्",
+          "meaning": "Chose / Selected",
+          "words": [
+            "चितवान्"
+          ],
+          "kind": "glossary",
+          "hindi_gloss": "चुना",
+          "sanskrit_gloss": "चयनं कृतवान्"
         },
         {
           "sanskrit": "यन्त्रवत्",
           "meaning": "Like a machine / Mechanically",
-          "sanskrit_gloss": "यन्त्रमिव / अचेतनतया",
-          "hindi_gloss": "मशीन की तरह",
           "words": [
-            "यन्त्रवत्",
-            "यन्त्रमिव"
+            "यन्त्रवत्"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "hindi_gloss": "यन्त्र की भाँति / मशीन की तरह",
+          "sanskrit_gloss": "यन्त्रम् इव"
         },
         {
-          "sanskrit": "४. अभ्यासः (अभ्यास कार्य)",
-          "meaning": "Exercises with Solved Answers",
-          "paragraphTranslation": "अभ्यास कार्य",
+          "sanskrit": "कषायम्",
+          "meaning": "Herbal decoction",
           "words": [
-            "अभ्यासः",
-            "अभ्यास",
-            "कार्य"
+            "कषायम्"
           ],
-          "kind": "exercise-header"
+          "kind": "glossary",
+          "hindi_gloss": "काढ़ा को",
+          "sanskrit_gloss": "क्वाथम्"
         },
         {
-          "sanskrit": "प्रश्न १. अधोलिखितानां प्रश्नानाम् एकपदेन पदद्वयेन वा उत्तराणि —",
-          "meaning": "Question 1: Answer in one or two words:",
+          "sanskrit": "४. वयम् अभ्यासं कुर्मः (अभ्यास कार्यम् / Solved Exercises - पृष्ठानि ५२-५६)",
+          "meaning": "Comprehensive Solved Exercises & Grammar Application (Pages 52–56)",
           "words": [
-            "प्रश्न",
-            "१",
+            "४.",
+            "वयम्",
+            "अभ्यासं",
+            "कुर्मः",
+            "(अभ्यास",
+            "कार्यम्",
+            "/",
+            "Solved",
+            "Exercises",
+            "-",
+            "पृष्ठानि",
+            "५२-५६)"
+          ],
+          "kind": "exercise-header",
+          "hindi_gloss": "पाठ ५: सेवा हि परमो धर्मः - सम्पूर्ण हल सहित अभ्यास (पृष्ठानि ५२-५६)"
+        },
+        {
+          "sanskrit": "१. अधोलिखितानां प्रश्नानाम् एकपदेन पदद्वयेन वा उत्तराणि लिखन्तु —",
+          "meaning": "1. Answer the following questions in one or two words:",
+          "words": [
+            "१.",
             "अधोलिखितानां",
             "प्रश्नानाम्",
             "एकपदेन",
             "पदद्वयेन",
             "वा",
-            "उत्तराणि"
+            "उत्तराणि",
+            "लिखन्तु",
+            "—"
           ],
-          "kind": "exercise-header"
+          "kind": "exercise-header",
+          "hindi_gloss": "१. निम्नलिखित प्रश्नों के उत्तर एक या दो शब्दों में लिखिए:"
         },
         {
           "sanskrit": "(क) कः प्रसिद्धः चिकित्सकः आसीत् ?",
-          "meaning": "Who was the renowned physician? Answer: Nagarjuna (नागार्जुनः).",
-          "answer_sanskrit": "नागार्जुनः",
+          "meaning": "Who was a famous physician? Answer: Nagarjuna (नागार्जुनः).",
           "words": [
+            "(क)",
             "कः",
             "प्रसिद्धः",
             "चिकित्सकः",
             "आसीत्",
-            "?",
-            "उत्तरः",
-            "नागार्जुनः"
+            "?"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "प्रसिद्ध चिकित्सक कौन थे? उत्तर: नागार्जुन (नागार्जुनः)।",
+          "answer_sanskrit": "नागार्जुनः"
         },
         {
           "sanskrit": "(ख) अन्यस्मिन् दिवसे कौ आगतौ ?",
-          "meaning": "Who came on the next day? Answer: Two young men (द्वौ युवकौ).",
-          "answer_sanskrit": "द्वौ युवकौ",
+          "meaning": "Who came on the other day? Answer: Two young men (द्वौ युवकौ).",
           "words": [
+            "(ख)",
             "अन्यस्मिन्",
             "दिवसे",
             "कौ",
             "आगतौ",
-            "?",
-            "उत्तरः",
-            "द्वौ",
-            "युवकौ"
+            "?"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "अगले दिन कौन आए? उत्तर: दो युवक (द्वौ युवकौ)।",
+          "answer_sanskrit": "द्वौ युवकौ"
         },
         {
           "sanskrit": "(ग) कः खिन्नः आसीत् ?",
-          "meaning": "Who was dejected and sorrowful? Answer: The second youth (द्वितीयः युवकः).",
-          "answer_sanskrit": "द्वितीयः युवकः",
+          "meaning": "Who was sad/heavy-hearted? Answer: The second young man (द्वितीयः युवकः).",
           "words": [
+            "(ग)",
             "कः",
             "खिन्नः",
             "आसीत्",
-            "?",
-            "उत्तरः",
-            "द्वितीयः",
-            "युवकः"
+            "?"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "दुखी कौन था? उत्तर: दूसरा युवक (द्वितीयः युवकः)।",
+          "answer_sanskrit": "द्वितीयः युवकः"
         },
         {
           "sanskrit": "(घ) रुग्णस्य परिस्थितिः कथम् आसीत् ?",
-          "meaning": "What was the patient's condition? Answer: Pitiable / Deplorable (शोचनीया).",
-          "answer_sanskrit": "शोचनीया",
+          "meaning": "How was the condition of the sick man? Answer: Pitiful / Miserable (शोचनीया).",
           "words": [
+            "(घ)",
             "रुग्णस्य",
             "परिस्थितिः",
             "कथम्",
             "आसीत्",
-            "?",
-            "उत्तरः",
-            "शोचनीया"
+            "?"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "रोगी की स्थिति कैसी थी? उत्तर: दयनीय / शोचनीय (शोचनीया)।",
+          "answer_sanskrit": "शोचनीया"
         },
         {
           "sanskrit": "(ङ) नागार्जुनः सहायकरूपेण कं चितवान् ?",
-          "meaning": "Whom did Nagarjuna select as his assistant? Answer: The second youth (द्वितीयं युवकम्).",
-          "answer_sanskrit": "द्वितीयं युवकम्",
+          "meaning": "Whom did Nagarjuna choose as an assistant? Answer: The second young man (द्वितीयं युवकम्).",
           "words": [
+            "(ङ)",
             "नागार्जुनः",
             "सहायकरूपेण",
             "कं",
             "चितवान्",
-            "?",
-            "उत्तरः",
-            "द्वितीयं",
-            "युवकम्"
+            "?"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "नागार्जुन ने सहायक के रूप में किसे चुना? उत्तर: दूसरे युवक को (द्वितीयं युवकम्)।",
+          "answer_sanskrit": "द्वितीयं युवकम्"
         },
         {
           "sanskrit": "(च) कां विना चिकित्सकः न भवति ?",
-          "meaning": "Without what can one not become a true healer? Answer: The spirit of service (सेवाभावनाम्).",
-          "answer_sanskrit": "सेवाभावनाम्",
+          "meaning": "Without what cannot someone become a true physician? Answer: Spirit of service (सेवाभावनाम्).",
           "words": [
+            "(च)",
             "कां",
             "विना",
             "चिकित्सकः",
             "न",
             "भवति",
-            "?",
-            "उत्तरः",
-            "सेवाभावनाम्"
+            "?"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "किसके बिना कोई चिकित्सक नहीं हो सकता? उत्तर: सेवा भावना के बिना (सेवाभावनाम्)।",
+          "answer_sanskrit": "सेवाभावनाम्"
         },
         {
           "sanskrit": "(छ) नागार्जुनः युवकौ केन मार्गेण गन्तुं सूचितवान् ?",
-          "meaning": "By which route did Nagarjuna instruct them to travel? Answer: By the highway (राजमार्गेण).",
-          "answer_sanskrit": "राजमार्गेण",
+          "meaning": "By which path did Nagarjuna instruct the two youths to travel? Answer: Via the highway (राजमार्गेण).",
           "words": [
+            "(छ)",
             "नागार्जुनः",
             "युवकौ",
             "केन",
             "मार्गेण",
             "गन्तुं",
             "सूचितवान्",
-            "?",
-            "उत्तरः",
-            "राजमार्गेण"
+            "?"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "नागार्जुन ने दोनों युवकों को किस मार्ग से जाने का निर्देश दिया? उत्तर: राजमार्ग से (राजमार्गेण)।",
+          "answer_sanskrit": "राजमार्गेण"
         },
         {
-          "sanskrit": "प्रश्न २. पूर्णवाक्येन उत्तराणि —",
-          "meaning": "Question 2: Complete sentence answers:",
+          "sanskrit": "२. अधोलिखितानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखन्तु —",
+          "meaning": "2. Answer the following questions in full sentences:",
           "words": [
-            "प्रश्न",
-            "२",
+            "२.",
+            "अधोलिखितानां",
+            "प्रश्नानां",
             "पूर्णवाक्येन",
-            "उत्तराणि"
+            "उत्तरं",
+            "लिखन्तु",
+            "—"
           ],
-          "kind": "exercise-header"
+          "kind": "exercise-header",
+          "hindi_gloss": "२. निम्नलिखित प्रश्नों के उत्तर पूर्ण वाक्य में लिखिए:"
         },
         {
           "sanskrit": "(क) अहोरात्रं नागार्जुनः कुत्र कार्यं करोति स्म ?",
-          "meaning": "Where did Nagarjuna work day and night?",
-          "answer_sanskrit": "नागार्जुनः अहोरात्रं प्रयोगशालायां कार्यं करोति स्म।",
+          "meaning": "Where did Nagarjuna work day and night? Answer: Nagarjuna used to work day and night in the laboratory.",
           "words": [
+            "(क)",
             "अहोरात्रं",
             "नागार्जुनः",
             "कुत्र",
             "कार्यं",
             "करोति",
             "स्म",
-            "?",
-            "उत्तरः",
-            "नागार्जुनः",
-            "अहोरात्रं",
-            "प्रयोगशालायां",
-            "कार्यं",
-            "करोति",
-            "स्म।"
+            "?"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "नागार्जुन दिन-रात कहाँ काम करते थे? उत्तर: नागार्जुन दिन-रात प्रयोगशाला में काम करते थे।",
+          "answer_sanskrit": "अहोरात्रं नागार्जुनः प्रयोगशालायां कार्यं करोति स्म।"
         },
         {
           "sanskrit": "(ख) नागार्जुनः महाराजं किं निवेदितवान् ?",
-          "meaning": "What did Nagarjuna request the King?",
-          "answer_sanskrit": "नागार्जुनः महाराजं निवेदितवान् – “महाराज ! मम चिकित्साकार्याय एकः सहायकः आवश्यकः” इति।",
+          "meaning": "What did Nagarjuna request the king? Answer: Nagarjuna requested the king, \"Your Majesty! An assistant is required for my medical work.\"",
           "words": [
+            "(ख)",
             "नागार्जुनः",
             "महाराजं",
             "किं",
             "निवेदितवान्",
-            "?",
-            "उत्तरः",
-            "नागार्जुनः",
-            "महाराजं",
-            "निवेदितवान्",
-            "मम",
-            "चिकित्साकार्याय",
-            "एकः",
-            "सहायकः",
-            "आवश्यकः",
-            "इति"
+            "?"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "नागार्जुन ने महाराज से क्या निवेदन किया? उत्तर: नागार्जुन ने महाराज से निवेदन किया - \"महाराज! मेरे चिकित्सा-कार्य के लिए एक सहायक आवश्यक है।\"",
+          "answer_sanskrit": "नागार्जुनः महाराजं निवेदितवान् - \"महाराज ! मम चिकित्साकार्याय एकः सहायकः आवश्यकः\" इति।"
         },
         {
-          "sanskrit": "(ग) द्वितीयः युवकः राजमार्गे रोगिणं दृष्ट्वा किं कृतवान् ?",
-          "meaning": "What did the second youth do on seeing the sick traveler on the highway?",
-          "answer_sanskrit": "द्वितीयः युवकः राजमार्गे रोगिणं दृष्ट्वा तं स्वगृहं नीतवान् दिनद्वयं च तस्य सेवायां निरतः आसीत्।",
+          "sanskrit": "(ग) प्रथमः युवकः कथं कार्यं कृतवान् ?",
+          "meaning": "How did the first young man work? Answer: The first young man disregarded his domestic issues, worked mechanically like a machine, and made the medicine.",
           "words": [
+            "(ग)",
+            "प्रथमः",
+            "युवकः",
+            "कथं",
+            "कार्यं",
+            "कृतवान्",
+            "?"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "पहले युवक ने कैसे काम किया? उत्तर: पहले युवक ने अपने घर की समस्याओं को छोड़कर मशीन की तरह काम किया और औषधि बनाई।",
+          "answer_sanskrit": "प्रथमः युवकः स्वगृहस्य समस्याः परित्यज्य यन्त्रवत् कार्यं कृतवान् औषधं च निर्मितवान्।"
+        },
+        {
+          "sanskrit": "(घ) द्वितीयः युवकः राजमार्गे रोगिणं दृष्ट्वा किं कृतवान् ?",
+          "meaning": "What did the second young man do upon seeing the sick man on the highway? Answer: On finding a sick man on the highway, the second young man took him home and spent two days looking after him.",
+          "words": [
+            "(घ)",
             "द्वितीयः",
             "युवकः",
             "राजमार्गे",
@@ -7979,169 +8164,395 @@
             "दृष्ट्वा",
             "किं",
             "कृतवान्",
-            "?",
-            "उत्तरः",
-            "द्वितीयः",
-            "युवकः",
-            "राजमार्गे",
-            "रोगिणं",
-            "दृष्ट्वा",
-            "तं",
-            "स्वगृहं",
-            "नीतवान्",
-            "दिनद्वयं",
-            "च",
-            "तस्य",
-            "सेवायां",
-            "निरतः",
-            "आसीत्।"
+            "?"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "दूसरे युवक ने राजमार्ग पर रोगी को देखकर क्या किया? उत्तर: दूसरे युवक ने राजमार्ग पर रोगी को देखकर उसे अपने घर ले गया और दो दिन तक उसकी सेवा की।",
+          "answer_sanskrit": "द्वितीयः युवकः राजमार्गे रोगिणं दृष्ट्वा तं स्वगृहं नीतवान् दिनद्वयं च तस्य सेवां कृतवान्।"
         },
         {
-          "sanskrit": "(घ) सेवायाः भावनां विना किं न भवेत् ?",
-          "meaning": "Without the spirit of service, what can one not become?",
-          "answer_sanskrit": "सेवायाः भावनां विना चिकित्सकः न भवेत्।",
+          "sanskrit": "(ङ) सेवायाः भावनां विना किं न भवेत् ?",
+          "meaning": "What cannot happen without a spirit of service? Answer: Without a spirit of service, an individual cannot become a true physician.",
           "words": [
+            "(ङ)",
             "सेवायाः",
             "भावनां",
             "विना",
             "किं",
             "न",
             "भवेत्",
-            "?",
-            "उत्तरः",
-            "सेवायाः",
-            "भावनां",
-            "विना",
-            "चिकित्सकः",
-            "न",
-            "भवेत्।"
+            "?"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "सेवा की भावना के बिना क्या नहीं हो सकता? उत्तर: सेवा की भावना के बिना कोई सच्चा चिकित्सक नहीं हो सकता।",
+          "answer_sanskrit": "सेवायाः भावनां विना चिकित्सकः न भवेत्।"
         },
         {
-          "sanskrit": "प्रश्न ३ व ४. क्तवतु प्रत्यय रूपाणि (Past Active Participle - वान् / वती) —",
-          "meaning": "Questions 3 & 4: Past Active Participle (Ktavatu suffix) forms in Masculine and Feminine:",
+          "sanskrit": "३. उदाहरणानुसारम् अधोलिखितानां पदानां स्त्रीलिङ्गरूपाणि लिखन्तु — (क्तवतु-प्रत्यय स्त्रीलिङ्गम्)",
+          "meaning": "3. Convert Masculine Active Past Participles (क्तवतु) into Feminine equivalents (Singular and Plural):",
           "words": [
-            "प्रश्न",
-            "३",
-            "व",
-            "४",
-            "क्तवतु",
-            "प्रत्यय",
-            "रूपाणि"
+            "३.",
+            "उदाहरणानुसारम्",
+            "अधोलिखितानां",
+            "पदानां",
+            "स्त्रीलिङ्गरूपाणि",
+            "लिखन्तु",
+            "—",
+            "(क्तवतु-प्रत्यय",
+            "स्त्रीलिङ्गम्)"
           ],
-          "kind": "exercise-header"
+          "kind": "exercise-header",
+          "hindi_gloss": "३. उदाहरण के अनुसार पुंलिङ्ग क्तवतु शब्दों के स्त्रीलिङ्ग रूप (एकवचन व बहुवचन) लिखिए:"
         },
         {
-          "sanskrit": "पुंलिङ्गम् / स्त्रीलिङ्गम्: (१) पठितवान् — पठितवती (२) गतवान् — गतवती (३) लिखितवान् — लिखितवती (४) खादितवान् — खादितवती (५) क्रीडितवान् — क्रीडितवती (६) हसितवान् — हसितवती (७) निवेदितवान् — निवेदितवती (८) सूचितवान् — सूचितवती।",
-          "meaning": "Past Participle Pairs: Pathitavan / Pathitavati (studied), Gatavan / Gatavati (went), Likhitavan / Likhitavati (wrote), Khaditavan / Khaditavati (ate), Kriditavan / Kriditavati (played), Hasitavan / Hasitavati (laughed), Niveditavan / Niveditavati (requested), Suchitavan / Suchitavati (informed).",
+          "sanskrit": "स्त्रीलिङ्गरूपाणि भाग १: (क) पठितवान्, (ख) गतवान्, (ग) लिखितवान्, (घ) खादितवान्",
+          "meaning": "Feminine conversions (Singular / Plural): (a) पठितवान् -> पठितवती / पठितवत्यः [She read]; (b) गतवान् -> गतवती / गतवत्यः [She went]; (c) लिखितवान् -> लिखितवती / लिखितवत्यः [She wrote]; (d) खादितवान् -> खादितवती / खादितवत्यः [She ate].",
           "words": [
+            "स्त्रीलिङ्गरूपाणि",
+            "भाग",
+            "१:",
+            "(क)",
             "पठितवान्",
-            "पठितवती",
+            ",",
+            "(ख)",
             "गतवान्",
-            "गतवती",
+            ",",
+            "(ग)",
             "लिखितवान्",
-            "लिखितवती",
-            "खादितवान्",
-            "खादितवती",
+            ",",
+            "(घ)",
+            "खादितवान्"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "स्त्रीलिङ्ग रूप (एकवचन | बहुवचन): (क) पठितवान् → पठितवती | पठितवत्यः (उसने पढ़ा); (ख) गतवान् → गतवती | गतवत्यः (वह गई); (ग) लिखितवान् → लिखितवती | लिखितवत्यः (उसने लिखा); (घ) खादितवान् → खादितवती | खादितवत्यः (उसने खाया)।",
+          "answer_sanskrit": "(क) पठितवान् → पठितवती | पठितवत्यः ॥ (ख) गतवान् → गतवती | गतवत्यः ॥ (ग) लिखितवान् → लिखितवती | लिखितवत्यः ॥ (घ) खादितवान् → खादितवती | खादितवत्यः"
+        },
+        {
+          "sanskrit": "स्त्रीलिङ्गरूपाणि भाग २: (ङ) क्रीडितवान्, (च) हसितवान्, (छ) निवेदितवान्, (ज) सूचितवान्",
+          "meaning": "Feminine conversions (Singular / Plural): (e) क्रीडितवान् -> क्रीडितवती / क्रीडितवत्यः [She played]; (f) हसितवान् -> हसितवती / हसितवत्यः [She laughed]; (g) निवेदितवान् -> निवेदितवती / निवेदितवत्यः [She requested]; (h) सूचितवान् -> सूचितवती / सूचितवत्यः [She indicated].",
+          "words": [
+            "स्त्रीलिङ्गरूपाणि",
+            "भाग",
+            "२:",
+            "(ङ)",
             "क्रीडितवान्",
-            "क्रीडितवती",
+            ",",
+            "(च)",
             "हसितवान्",
-            "हसितवती",
+            ",",
+            "(छ)",
             "निवेदितवान्",
-            "निवेदितवती",
-            "सूचितवान्",
-            "सूचितवती"
+            ",",
+            "(ज)",
+            "सूचितवान्"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "स्त्रीलिङ्ग रूप (एकवचन | बहुवचन): (ङ) क्रीडितवान् → क्रीडितवती | क्रीडितवत्यः (वह खेली); (च) हसितवान् → हसितवती | हसितवत्यः (वह हँसी); (छ) निवेदितवान् → निवेदितवती | निवेदितवत्यः (उसने निवेदन किया); (ज) सूचितवान् → सूचितवती | सूचितवत्यः (उसने सूचित किया)।",
+          "answer_sanskrit": "(ङ) क्रीडितवान् → क्रीडितवती | क्रीडितवत्यः ॥ (च) हसितवान् → हसितवती | हसितवत्यः ॥ (छ) निवेदितवान् → निवेदितवती | निवेदितवत्यः ॥ (ज) सूचितवान् → सूचितवती | सूचितवत्यः"
         },
         {
-          "sanskrit": "प्रश्न ५. लट्-लकारात् क्तवतु-प्रयोगे रूपपरिवर्तनम् —",
-          "meaning": "Question 5: Sentence transformations from Present Tense to Past Participle:",
+          "sanskrit": "४. उदाहरणानुसारम् अधोलिखितानां पदानां पुंलिङ्गरूपाणि लिखन्तु — (स्त्रीलिङ्गम् → पुंलिङ्गम्)",
+          "meaning": "4. Convert Feminine Active Past Participles into Masculine equivalents (Singular and Plural):",
           "words": [
-            "प्रश्न",
-            "५",
-            "लट्-लकारात्",
+            "४.",
+            "उदाहरणानुसारम्",
+            "अधोलिखितानां",
+            "पदानां",
+            "पुंलिङ्गरूपाणि",
+            "लिखन्तु",
+            "—",
+            "(स्त्रीलिङ्गम्",
+            "→",
+            "पुंलिङ्गम्)"
+          ],
+          "kind": "exercise-header",
+          "hindi_gloss": "४. उदाहरण के अनुसार स्त्रीलिङ्ग क्तवतु शब्दों के पुंलिङ्ग रूप (एकवचन व बहुवचन) लिखिए:"
+        },
+        {
+          "sanskrit": "पुंलिङ्गरूपाणि: (क) पठितवती, (ख) कृतवती, (ग) दृष्टवती, (घ) दत्तवती, (ङ) प्रक्षालितवती, (च) धावितवती",
+          "meaning": "Masculine conversions (Singular / Plural): (a) पठितवती -> पठितवान् / पठितवन्तः [He read]; (b) कृतवती -> कृतवान् / कृतवन्तः [He did]; (c) दृष्टवती -> दृष्टवान् / दृष्टवन्तः [He saw]; (d) दत्तवती -> दत्तवान् / दत्तवन्तः [He gave]; (e) प्रक्षालितवती -> प्रक्षालितवान् / प्रक्षालितवन्तः [He washed]; (f) धावितवती -> धावितवान् / धावितवन्तः [He ran].",
+          "words": [
+            "पुंलिङ्गरूपाणि:",
+            "(क)",
+            "पठितवती",
+            ",",
+            "(ख)",
+            "कृतवती",
+            ",",
+            "(ग)",
+            "दृष्टवती",
+            ",",
+            "(घ)",
+            "दत्तवती",
+            ",",
+            "(ङ)",
+            "प्रक्षालितवती",
+            ",",
+            "(च)",
+            "धावितवती"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "पुंलिङ्ग रूप (एकवचन | बहुवचन): (क) पठितवती → पठितवान् | पठितवन्तः (उसने पढ़ा); (ख) कृतवती → कृतवान् | कृतवन्तः (उसने किया); (ग) दृष्टवती → दृष्टवान् | दृष्टवन्तः (उसने देखा); (घ) दत्तवती → दत्तवान् | दत्तवन्तः (उसने दिया); (ङ) प्रक्षालितवती → प्रक्षालितवान् | प्रक्षालितवन्तः (उसने धोया); (च) धावितवती → धावितवान् | धावितवन्तः (वह दौड़ा)।",
+          "answer_sanskrit": "(क) पठितवती → पठितवान् | पठितवन्तः ॥ (ख) कृतवती → कृतवान् | कृतवन्तः ॥ (ग) दृष्टवती → दृष्टवान् | दृष्टवन्तः ॥ (घ) दत्तवती → दत्तवान् | दत्तवन्तः ॥ (ङ) प्रक्षालितवती → प्रक्षालितवान् | प्रक्षालितवन्तः ॥ (च) धावितवती → धावितवान् | धावितवन्तः"
+        },
+        {
+          "sanskrit": "५. उदाहरणानुसारं वाक्यानि परिवर्तयन्तु — (लट्-लकारतः क्तवतु-प्रयोगे रूपपरिवर्तनम्)",
+          "meaning": "5. Convert Present Tense sentences into Past Tense using 'क्तवतु' forms:",
+          "words": [
+            "५.",
+            "उदाहरणानुसारं",
+            "वाक्यानि",
+            "परिवर्तयन्तु",
+            "—",
+            "(लट्-लकारतः",
             "क्तवतु-प्रयोगे",
-            "रूपपरिवर्तनम्"
+            "रूपपरिवर्तनम्)"
           ],
-          "kind": "exercise-header"
+          "kind": "exercise-header",
+          "hindi_gloss": "५. उदाहरण के अनुसार लट्-लकार (वर्तमान काल) के वाक्यों को क्तवतु-प्रत्यय (भूतकाल) में बदलिए:"
         },
         {
-          "sanskrit": "(क) युवकः आपणं गच्छति → युवकः आपणं गतवान्। (ख) सः रोटिकां खादति → सः रोटिकां खादितवान्। (ग) महिला वस्त्रं ददाति → महिला वस्त्रं दत्तवती। (घ) बालकः द्विचक्रिकातः पतति → बालकः द्विचक्रिकातः पतितवान्। (ङ) पितामही चलच्चित्रं पश्यति → पितामही चलच्चित्रं दृष्टवती।",
-          "meaning": "Transformations: Youth goes to market → Youth went to market. He eats bread → He ate bread. Woman gives clothes → Woman gave clothes. Boy falls from bicycle → Boy fell from bicycle. Grandmother watches movie → Grandmother watched movie.",
+          "sanskrit": "(क) युवकः आपणं गच्छति।",
+          "meaning": "Present: युवकः आपणं गच्छति। -> Past: युवकः आपणं गतवान्। (The youth went to the market)",
           "words": [
+            "(क)",
             "युवकः",
             "आपणं",
-            "गतवान्",
+            "गच्छति",
+            "।"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "युवक बाज़ार जाता है। → युवक बाज़ार गया (युवकः आपणं गतवान्)।",
+          "answer_sanskrit": "युवकः आपणं गतवान्।"
+        },
+        {
+          "sanskrit": "(ख) सः रोटिकां खादति।",
+          "meaning": "Present: सः रोटिकां खादति। -> Past: सः रोटिकां खादितवान्। (He ate the roti)",
+          "words": [
+            "(ख)",
             "सः",
             "रोटिकां",
-            "खादितवान्",
+            "खादति",
+            "।"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "वह रोटी खाता है। → उसने रोटी खाई (सः रोटिकां खादितवान्)।",
+          "answer_sanskrit": "सः रोटिकां खादितवान्।"
+        },
+        {
+          "sanskrit": "(ग) महिला वस्त्रं ददाति।",
+          "meaning": "Present: महिला वस्त्रं ददाति। -> Past: महिला वस्त्रं दत्तवती। (The lady gave the cloth)",
+          "words": [
+            "(ग)",
             "महिला",
             "वस्त्रं",
-            "दत्तवती",
+            "ददाति",
+            "।"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "महिला वस्त्र देती है। → महिला ने वस्त्र दिया (महिला वस्त्रं दत्तवती)।",
+          "answer_sanskrit": "महिला वस्त्रं दत्तवती।"
+        },
+        {
+          "sanskrit": "(घ) बालकः द्विचक्रिकातः पतति।",
+          "meaning": "Present: बालकः द्विचक्रिकातः पतति। -> Past: बालकः द्विचक्रिकातः पतितवान्। (The boy fell from the bicycle)",
+          "words": [
+            "(घ)",
             "बालकः",
             "द्विचक्रिकातः",
-            "पतितवान्",
+            "पतति",
+            "।"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "बालक साइकिल से गिरता है। → बालक साइकिल से गिरा (बालकः द्विचक्रिकातः पतितवान्)।",
+          "answer_sanskrit": "बालकः द्विचक्रिकातः पतितवान्।"
+        },
+        {
+          "sanskrit": "(ङ) पितामही चलच्चित्रं पश्यति।",
+          "meaning": "Present: पितामही चलच्चित्रं पश्यति। -> Past: पितामही चलच्चित्रं दृष्टवती। (The grandmother watched the movie)",
+          "words": [
+            "(ङ)",
             "पितामही",
             "चलच्चित्रं",
-            "दृष्टवती"
+            "पश्यति",
+            "।"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "दादी जी फ़िल्म देखती हैं। → दादी जी ने फ़िल्म देखी (पितामही चलच्चित्रं दृष्टवती)।",
+          "answer_sanskrit": "पितामही चलच्चित्रं दृष्टवती।"
         },
         {
-          "sanskrit": "प्रश्न ६. 'स्म' अव्ययप्रयोगेण आदर्श-कृषकस्य अनुच्छेदः —",
-          "meaning": "Question 6: Narrative reading using 'Sma' particle for habitual past tense:",
+          "sanskrit": "(च) अहं गृहपाठं लिखामि।",
+          "meaning": "Present: अहं गृहपाठं लिखामि। -> Past: अहं गृहपाठं लिखितवान् / लिखितवती। (I wrote the homework)",
           "words": [
-            "प्रश्न",
-            "६",
-            "स्म",
-            "अव्ययप्रयोगेण",
-            "आदर्श-कृषकस्य",
-            "अनुच्छेदः"
+            "(च)",
+            "अहं",
+            "गृहपाठं",
+            "लिखामि",
+            "।"
           ],
-          "kind": "exercise-header"
+          "kind": "exercise-qa",
+          "hindi_gloss": "मैं गृहकार्य लिखता/लिखती हूँ। → मैंने गृहकार्य लिखा (अहं गृहपाठं लिखितवान् / लिखितवती)।",
+          "answer_sanskrit": "अहं गृहपाठं लिखितवान् / लिखितवती।"
         },
         {
-          "sanskrit": "कृषकः प्रतिदिनं कृषिक्षेत्रं गच्छति स्म। जलसेचनं करोति स्म। सः क्षेत्रे गोमयं योजयति स्म, न तु कृतकान् पदार्थान्। अतः व्रीहेः गुणवत्ता अधिका भवति स्म। कीटानां निवारणार्थं जैवौषधं स्थापयति स्म। सः कृषिकार्यं सम्यक् जानाति स्म। सः सर्वान् वदति स्म — \"कृषकः न दीनः न च दरिद्रः, परं सर्वेषां पोषकः\" इति।",
-          "meaning": "An Ideal Farmer: The farmer used to go to his fields daily and irrigate them. He would add organic cow dung rather than artificial chemicals. Hence grain quality was superior. For pests he applied organic pest remedies. He knew farming deeply. He proudly proclaimed to all: 'A farmer is neither miserable nor poor, but the nourisher of all mankind!'",
-          "paragraphTranslation": "किसान प्रतिदिन खेत जाता था और सिंचाई करता था। वह जैविक खाद डालता था। धान की गुणवत्ता उत्तम होती थी। वह अभिमान से कहता था: 'किसान दीन अथवा दरिद्र नहीं, बल्कि सबका अन्नदाता और पोषक है!'",
+          "sanskrit": "(छ) त्वं कुत्र गच्छसि ?",
+          "meaning": "Present: त्वं कुत्र गच्छसि ? -> Past: त्वं कुत्र गतवान् / गतवती ? (Where did you go?)",
+          "words": [
+            "(छ)",
+            "त्वं",
+            "कुत्र",
+            "गच्छसि",
+            "?"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "तुम कहाँ जाते/जाती हो? → तुम कहाँ गए / गईं? (त्वं कुत्र गतवान् / गतवती ?)",
+          "answer_sanskrit": "त्वं कुत्र गतवान् / गतवती ?"
+        },
+        {
+          "sanskrit": "(ज) अश्वाः वने धावन्ति।",
+          "meaning": "Present: अश्वाः वने धावन्ति। -> Past: अश्वाः वने धावितवन्तः। (The horses ran in the forest)",
+          "words": [
+            "(ज)",
+            "अश्वाः",
+            "वने",
+            "धावन्ति",
+            "।"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "घोड़े जंगल में दौड़ते हैं। → घोड़े जंगल में दौड़े (अश्वाः वने धावितवन्तः)।",
+          "answer_sanskrit": "अश्वाः वने धावितवन्तः।"
+        },
+        {
+          "sanskrit": "(झ) बालिकाः शीघ्रम् आगच्छन्ति।",
+          "meaning": "Present: बालिकाः शीघ्रम् आगच्छन्ति। -> Past: बालिकाः शीघ्रम् आगतवत्यः। (The girls came quickly)",
+          "words": [
+            "(झ)",
+            "बालिकाः",
+            "शीघ्रम्",
+            "आगच्छन्ति",
+            "।"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "बालिकाएँ जल्दी आती हैं। → बालिकाएँ जल्दी आईं (बालिकाः शीघ्रम् आगतवत्यः)।",
+          "answer_sanskrit": "बालिकाः शीघ्रम् आगतवत्यः।"
+        },
+        {
+          "sanskrit": "(ञ) वयं समुद्रतीरे पयोहिमं खादामः।",
+          "meaning": "Present: वयं समुद्रतीरे पयोहिमं खादामः। -> Past: वयं समुद्रतीरे पयोहिमं खादितवन्तः / खादितवत्यः। (We ate ice-cream at the seashore)",
+          "words": [
+            "(ञ)",
+            "वयं",
+            "समुद्रतीरे",
+            "पयोहिमं",
+            "खादामः",
+            "।"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "हम समुद्र तट पर आइसक्रीम खाते हैं। → हमने समुद्र तट पर आइसक्रीम खाई (वयं समुद्रतीरे पयोहिमं खादितवन्तः / खादितवत्यः)।",
+          "answer_sanskrit": "वयं समुद्रतीरे पयोहिमं खादितवन्तः / खादितवत्यः।"
+        },
+        {
+          "sanskrit": "६. 'स्म' इति अव्ययपदम् उपयुज्य अनुच्छेदं पुनः लिखन्तु — (आदर्शकृषकस्य जीवनम्)",
+          "meaning": "6. Rewrite the passage using present tense verb forms combined with 'स्म' particle to build a past tense narrative (Title: The Life of an Ideal Farmer):",
+          "words": [
+            "६.",
+            "'स्म'",
+            "इति",
+            "अव्ययपदम्",
+            "उपयुज्य",
+            "अनुच्छेदं",
+            "पुनः",
+            "लिखन्तु",
+            "—",
+            "(आदर्शकृषकस्य",
+            "जीवनम्)"
+          ],
+          "kind": "exercise-header",
+          "hindi_gloss": "६. 'स्म' अव्यय पद का प्रयोग करके अनुच्छेद को भूतकाल के रूप में लिखिए (शीर्षक: आदर्श किसान का जीवन):"
+        },
+        {
+          "sanskrit": "कृषकः प्रतिदिनं कृषिक्षेत्रं गच्छति स्म। जलसेचनं करोति स्म। सः क्षेत्रे गोमयं योजयति स्म, न तु कृतकान् पदार्थान्। अतः व्रीहेः गुणवत्ता अधिका भवति स्म। कीटानां निवारणार्थं जैवौषधं स्थापयति स्म। सः कृषिकार्यं सम्यक् जानाति स्म। अतः अन्ये कृषकाः संशयेन पृच्छन्ति स्म। सः स्वाभिमानेन जीवति स्म। अतः 'अहं कृषकः भूमिपुत्रः' इति साभिमानं वदति स्म। जनाः जालपुटमाध्यमेन तस्य तण्डुलं क्रीणन्ति स्म। एवं तस्य परिवारस्य सर्वे जनाः कृषिकार्येण ससुखं जीवन्ति स्म। सः सर्वान् वदति स्म \"कृषकः न दीनः न च दरिद्रः, परं सर्वेषां पोषकः\" इति।",
+          "meaning": "The farmer used to go to the agricultural field every day. He used to irrigate the crops. He used to add cow dung to the field, and not artificial fertilizers. Therefore, the quality of the paddy used to be superior. He used to apply organic pesticides to eliminate pests. He knew agricultural work very well. Hence, other farmers used to ask him whenever they had doubts. He lived with self-respect. Therefore, he proudly used to declare, 'I am a farmer, the son of the soil.' People used to purchase his rice via online web portals. In this way, all members of his family lived happily through agriculture. He used to tell everyone: 'A farmer is neither helpless nor poor, but the nourisher of everyone.'",
           "words": [
             "कृषकः",
             "प्रतिदिनं",
             "कृषिक्षेत्रं",
             "गच्छति",
             "स्म",
+            "।",
             "जलसेचनं",
             "करोति",
             "स्म",
+            "।",
             "सः",
             "क्षेत्रे",
             "गोमयं",
             "योजयति",
             "स्म",
+            ",",
             "न",
             "तु",
             "कृतकान्",
             "पदार्थान्",
+            "।",
             "अतः",
             "व्रीहेः",
             "गुणवत्ता",
             "अधिका",
             "भवति",
             "स्म",
+            "।",
             "कीटानां",
             "निवारणार्थं",
             "जैवौषधं",
             "स्थापयति",
             "स्म",
+            "।",
             "सः",
             "कृषिकार्यं",
             "सम्यक्",
             "जानाति",
             "स्म",
+            "।",
+            "अतः",
+            "अन्ये",
+            "कृषकाः",
+            "संशयेन",
+            "पृच्छन्ति",
+            "स्म",
+            "।",
+            "सः",
+            "स्वाभिमानेन",
+            "जीवति",
+            "स्म",
+            "।",
+            "अतः",
+            "'अहं",
+            "कृषकः",
+            "भूमिपुत्रः'",
+            "इति",
+            "साभिमानं",
+            "वदति",
+            "स्म",
+            "।",
+            "जनाः",
+            "जालपुटमाध्यमेन",
+            "तस्य",
+            "तण्डुलं",
+            "क्रीणन्ति",
+            "स्म",
+            "।",
+            "एवं",
+            "तस्य",
+            "परिवारस्य",
+            "सर्वे",
+            "जनाः",
+            "कृषिकार्येण",
+            "ससुखं",
+            "जीवन्ति",
+            "स्म",
+            "।",
             "सः",
             "सर्वान्",
             "वदति",
@@ -8152,51 +8563,143 @@
             "न",
             "च",
             "दरिद्रः",
+            ",",
             "परं",
             "सर्वेषां",
             "पोषकः",
-            "इति"
+            "इति",
+            "।"
           ],
-          "kind": "exercise-qa"
+          "paragraphTranslation": "किसान प्रतिदिन खेत में जाता था। वह सिंचाई करता था। वह खेत में गोबर की खाद डालता था, कृत्रिम (रासायनिक) पदार्थ नहीं। इसलिए धान की गुणवत्ता बहुत अधिक होती थी। कीटों की रोकथाम के लिए वह जैविक कीटनाशक डालता था। वह खेती का काम अच्छी तरह जानता था, इसलिए अन्य किसान संदेह होने पर उससे पूछते थे। वह स्वाभिमान से जीता था और गर्व से कहता था— 'मैं किसान हूँ, धरती का पुत्र हूँ।' लोग इंटरनेट (वेबसाइट) के माध्यम से उसके चावल खरीदते थे। इस प्रकार उसके परिवार के सभी लोग कृषि कार्य से सुखपूर्वक रहते थे। वह सभी से कहता था— 'किसान न तो दीन है और न ही दरिद्र, बल्कि वह सबका पोषक (पालनहार) है।'"
+        },
+        {
+          "sanskrit": "७. अभ्यासः — वाक्य-चित्र-संयोजनम् (पृष्ठम् ५६ / Structural Image-to-Sentence Connection Layout)",
+          "meaning": "7. Connect each service-oriented Sanskrit statement to its corresponding visual illustration (Page 56):",
+          "words": [
+            "७.",
+            "अभ्यासः",
+            "—",
+            "वाक्य-चित्र-संयोजनम्",
+            "(पृष्ठम्",
+            "५६",
+            "/",
+            "Structural",
+            "Image-to-Sentence",
+            "Connection",
+            "Layout)"
+          ],
+          "kind": "exercise-header",
+          "hindi_gloss": "७. सेवा से संबंधित निम्नलिखित वाक्यों को उनके सही चित्र से मिलाइए (पृष्ठ ५६):"
+        },
+        {
+          "sanskrit": "१. धेनुमाता परमशिवा",
+          "meaning": "English: Mother cow is highly auspicious and benevolent. (Matches Visual Card 5: A woman reverently offering respects and prayers to the cow.)",
+          "words": [
+            "१.",
+            "धेनुमाता",
+            "परमशिवा"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "१. धेनुमाता परमशिवा → गौमाता परम कल्याणकारी और शुभ हैं। (चित्र ५: महिला द्वारा गौमाता का पूजन एवं सेवा)",
+          "answer_sanskrit": "→ Connect to Visual Card 5 (Woman offering prayers to the holy cow)"
+        },
+        {
+          "sanskrit": "२. नित्यं मातापित्रोः सेवा",
+          "meaning": "English: Serving one's parents daily. (Matches Visual Card 1: A young boy taking care of his elderly parents seated on a sofa.)",
+          "words": [
+            "२.",
+            "नित्यं",
+            "मातापित्रोः",
+            "सेवा"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "२. नित्यं मातापित्रोः सेवा → प्रतिदिन माता-पिता की सेवा करना। (चित्र १: बालक द्वारा सोफ़े पर बैठे माता-पिता की सेवा)",
+          "answer_sanskrit": "→ Connect to Visual Card 1 (Boy taking care of his parents seated on a sofa)"
+        },
+        {
+          "sanskrit": "३. रोगातुराणाम् उपचारः",
+          "meaning": "English: Medical care and nursing of the sick. (Matches Visual Card 2: A nurse providing medical support and care to a patient in a hospital room.)",
+          "words": [
+            "३.",
+            "रोगातुराणाम्",
+            "उपचारः"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "३. रोगातुराणाम् उपचारः → बीमार व्यक्तियों की चिकित्सा और देखभाल। (चित्र २: नर्स द्वारा अस्पताल में रोगी की सेवा एवं उपचार)",
+          "answer_sanskrit": "→ Connect to Visual Card 2 (Nurse providing medical support to a patient in a medical room)"
+        },
+        {
+          "sanskrit": "४. गृहकार्येषु भगिन्याः साहाय्यम्",
+          "meaning": "English: Helping one's sister with household chores. (Matches Visual Card 3: Brother and sister sweeping the room together.)",
+          "words": [
+            "४.",
+            "गृहकार्येषु",
+            "भगिन्याः",
+            "साहाय्यम्"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "४. गृहकार्येषु भगिन्याः साहाय्यम् → घर के कार्यों में बहन की सहायता करना। (चित्र ३: भाई और बहन मिलकर घर की सफ़ाई करते हुए)",
+          "answer_sanskrit": "→ Connect to Visual Card 3 (Brother sweeping the room side-by-side with his sister)"
+        },
+        {
+          "sanskrit": "५. परस्परं कार्यकरणे साहाय्यम्",
+          "meaning": "English: Helping each other mutually in performing work. (Matches Visual Card 4: A group of kids building a creative modular puzzle structure together.)",
+          "words": [
+            "५.",
+            "परस्परं",
+            "कार्यकरणे",
+            "साहाय्यम्"
+          ],
+          "kind": "exercise-qa",
+          "hindi_gloss": "५. परस्परं कार्यकरणे साहाय्यम् → आपस में काम करने में एक-दूसरे की मदद करना। (चित्र ४: बच्चों का समूह मिलकर खिलौनों/ब्लॉक्स से रचना बनाते हुए)",
+          "answer_sanskrit": "→ Connect to Visual Card 4 (A group of kids building a creative modular puzzle structure together)"
         },
         {
           "sanskrit": "स्वास्थ्यरक्षणाय नियमाः (पृष्ठम् ५५ / Rules for Protecting Health)",
-          "meaning": "Rules and Guidelines for Protecting Health from Classical Ayurveda (Page 55)",
-          "paragraphTranslation": "स्वास्थ्य रक्षा के नियम",
+          "meaning": "Rules for Protecting Health from Page 55 (दिनचर्या-नियमाः)",
           "words": [
             "स्वास्थ्यरक्षणाय",
-            "नियमाः"
+            "नियमाः",
+            "(पृष्ठम्",
+            "५५",
+            "/",
+            "Rules",
+            "for",
+            "Protecting",
+            "Health)"
           ],
+          "paragraphTranslation": "स्वास्थ्य रक्षा के नियम (पृष्ठ ५५): दिनचर्या एवं आरोग्य के श्लोक",
           "kind": "section-header"
         },
         {
-          "sanskrit": "ब्राह्मे मुहूर्ते उत्तिष्ठेत् स्वस्थो रक्षार्थमायुषः ।\nसर्वमेव परित्यज्य शरीरमनुपालयेत् ॥ १ ॥",
-          "answer_label": "पदच्छेदः & आङ्ग्लानुवादः",
-          "answer_sanskrit": "ब्राह्मे मुहूर्ते (in early morning dawn, 1.5 hrs before sunrise) उत्तिष्ठेत् (should wake up) स्वस्थः (a healthy person) रक्षार्थम् (for the protection) आयुषः (of life longevity) । सर्वम् एव (everything else indeed) परित्यज्य (leaving aside) शरीरम् (the physical body) अनुपालयेत् (should nurture and care for) ॥",
-          "meaning": "English Translation: A healthy person should wake up during the Brahma Muhurta (early dawn) to protect their longevity. Leaving aside all other tasks, one must first take care of and nurture the physical body.",
+          "sanskrit": "ब्राह्मे मुहूर्ते उत्तिष्ठेत् स्वस्थो रक्षार्थमायुषः । सर्वमेव परित्यज्य शरीरमनुपालयेत् ॥",
+          "meaning": "A healthy person should wake up during the Brahma Muhurta (early dawn) to protect their longevity. Leaving aside all other tasks, one must first take care of and nurture the physical body.",
           "words": [
             "ब्राह्मे",
             "मुहूर्ते",
             "उत्तिष्ठेत्",
             "स्वस्थो",
             "रक्षार्थमायुषः",
+            "।",
             "सर्वमेव",
             "परित्यज्य",
-            "शरीरमनुपालयेत्"
+            "शरीरमनुपालयेत्",
+            "॥"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "स्वस्थ मनुष्य को अपनी आयु (दीर्घायु) की रक्षा के लिए ब्रह्ममुहूर्त (सूर्योदय से पूर्व) में उठना चाहिए। बाकी सब कुछ छोड़कर सबसे पहले अपने शरीर की रक्षा और पालन करना चाहिए।",
+          "answer_sanskrit": "अन्वयः: स्वस्थः जनः आयुषः रक्षार्थं ब्राह्मे मुहूर्ते उत्तिष्ठेत्। सर्वमेव परित्यज्य शरीरम् अनुपालयेत्।"
         },
         {
-          "sanskrit": "भोजनान्ते पिबेत् तक्रं वासरान्ते पिबेत्पयः ।\nनिशान्ते च पिबेत् वारि त्रिभी रोगो न जायते ॥ २ ॥",
-          "answer_label": "पदच्छेदः & आङ्ग्लानुवादः",
-          "answer_sanskrit": "भोजनान्ते (at meal's end) पिबेत् तक्रम् (drink buttermilk), वासरान्ते (at day's end / night) पिबेत् पयः (drink milk) । निशान्ते च (and at dawn / waking up) पिबेत् वारि (drink water) — त्रिभिः (by these three habits) रोगः न जायते (diseases never arise) ॥",
-          "meaning": "English Translation: One should drink buttermilk at the end of a meal, drink milk at the end of the day (before sleep), and drink water at the end of the night (upon waking up). By practicing these three habits, diseases never arise.",
+          "sanskrit": "भोजनान्ते पिबेत् तक्रं वासरान्ते पिबेत्पयः । निशान्ते च पिबेत् वारि त्रिभी रोगो न जायते ॥",
+          "meaning": "One should drink buttermilk at the end of a meal, drink milk at the end of the day (night), and drink water at the end of the night (early dawn). By practicing these three habits, diseases never arise.",
           "words": [
             "भोजनान्ते",
             "पिबेत्",
             "तक्रं",
             "वासरान्ते",
             "पिबेत्पयः",
+            "।",
             "निशान्ते",
             "च",
             "पिबेत्",
@@ -8204,25 +8707,33 @@
             "त्रिभी",
             "रोगो",
             "न",
-            "जायते"
+            "जायते",
+            "॥"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "भोजन के अंत में छाछ पीनी चाहिए, दिन के अंत (रात को सोने से पूर्व) में दूध पीना चाहिए, और रात के अंत (सुबह उठकर) में पानी पीना चाहिए; इन तीन नियमों से कभी रोग उत्पन्न नहीं होता।",
+          "answer_sanskrit": "अन्वयः: भोजनान्ते तक्रं पिबेत्, वासरान्ते पयः पिबेत्, निशान्ते च वारि पिबेत्; एतैः त्रिभिः रोगः न जायते।"
         },
         {
-          "sanskrit": "परियोजनाकार्यम् — आयुर्वेदीयसस्यानि (पृष्ठम् ५६ / Health Protection via Ayurvedic Plants)",
-          "meaning": "Project Work: Health protection through medicinal flora (Page 56)",
-          "paragraphTranslation": "परियोजना कार्य - आयुर्वेदिक वनस्पतियाँ",
+          "sanskrit": "परियोजनाकार्यम् — आयुर्वेदीयसस्यानि (पृष्ठम् ५६ / Ayurvedic Plants Project)",
+          "meaning": "Project Work: Health Protection through Ayurvedic Plants & Natural Substances (Page 56)",
           "words": [
             "परियोजनाकार्यम्",
-            "आयुर्वेदीयसस्यानि"
+            "—",
+            "आयुर्वेदीयसस्यानि",
+            "(पृष्ठम्",
+            "५६",
+            "/",
+            "Ayurvedic",
+            "Plants",
+            "Project)"
           ],
+          "paragraphTranslation": "परियोजना कार्य: परिवेश में उपस्थित औषधीय पौधे एवं उनके स्वास्थ्य लाभ (पृष्ठ ५६)",
           "kind": "section-header"
         },
         {
-          "sanskrit": "भवतां परिवेशे विद्यमानानाम् आयुर्वेदीयसस्यानां पदार्थानां च नामानि लिखन्तु । तेषां स्वास्थ्यरक्षणलाभान् लिखन्तु ।\nयथा – बिल्वं पाचनक्रियां वर्धते। लवङ्गं दन्तसमस्याः कासं च नाशयति ।",
-          "answer_label": "सस्यानि & लाभाः",
-          "answer_sanskrit": "१. बिल्वम् (Bael / Wood apple) — पाचनक्रियां वर्धयति (improves digestion)।\n२. लवङ्गम् (Clove) — दन्तसमस्याः कासं च नाशयति (cures toothache and cough)।\n३. तुलसी (Holy Basil) — कासस्य श्वासरोगाणां च शमनं करोति (relieves respiratory ailments)।\n४. हरिद्रा (Turmeric) — व्रणरोपणं करोति रोगप्रतिकारकशक्तिं च वर्धयति (heals wounds and boosts immunity)।",
-          "meaning": "English Translation: Write the names of Ayurvedic plants and substances in your surroundings along with their health benefits. For example: Bael fruit improves digestion; Clove cures dental issues and cough; Tulsi soothes coughs and respiratory issues; Turmeric heals wounds and strengthens immunity.",
+          "sanskrit": "भवतां परिवेशे विद्यमानानाम् आयुर्वेदीयसस्यानां पदार्थानां च नामानि लिखन्तु । तेषां स्वास्थ्यरक्षणलाभान् लिखन्तु । यथा – बिल्वं पाचनक्रियां वर्धते। लवङ्गं दन्तसमस्याः कासं च नाशयति ।",
+          "meaning": "Write the names of Ayurvedic plants and natural substances present in your surroundings. Write down their benefits for health protection. For example: Bael fruit improves digestion. Clove cures tooth problems and cough.",
           "words": [
             "भवतां",
             "परिवेशे",
@@ -8232,96 +8743,30 @@
             "च",
             "नामानि",
             "लिखन्तु",
+            "।",
+            "तेषां",
+            "स्वास्थ्यरक्षणलाभान्",
+            "लिखन्तु",
+            "।",
+            "यथा",
+            "–",
             "बिल्वं",
             "पाचनक्रियां",
             "वर्धते",
+            "।",
             "लवङ्गं",
             "दन्तसमस्याः",
             "कासं",
             "च",
-            "नाशयति"
+            "नाशयति",
+            "।"
           ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "अभ्यासः — चित्रसंयोजनम् (पृष्ठम् ५६ / Matching Sentences & Images)",
-          "meaning": "Exercise 4: Match Sanskrit service actions to corresponding pictures (Page 56)",
-          "paragraphTranslation": "अभ्यास - वाक्य और चित्रों का मिलान",
-          "words": [
-            "अभ्यासः",
-            "चित्रसंयोजनम्"
-          ],
-          "kind": "exercise-header"
-        },
-        {
-          "sanskrit": "१. धेनुमाता परमशिवा",
-          "answer_label": "अर्थः & चित्रसंयोजनम्",
-          "answer_sanskrit": "धेनुमाता (Mother cow) परमशिवा (highly auspicious and benevolent)। चित्रसंयोजनम्: ५ (५th picture showing a woman offering respects/prayers to a cow).",
-          "meaning": "English: Mother cow is highly auspicious and benevolent. Visual Match: Connects to the 5th picture showing a woman offering respects to a sacred cow.",
-          "words": [
-            "१",
-            ".",
-            "धेनुमाता",
-            "परमशिवा"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "२. नित्यं मातापित्रोः सेवा",
-          "answer_label": "अर्थः & चित्रसंयोजनम्",
-          "answer_sanskrit": "नित्यम् (daily) मातापित्रोः (of mother and father) सेवा (service and care)। चित्रसंयोजनम्: १ (१st picture showing a boy serving his elderly parents seated on a couch).",
-          "meaning": "English: Serving one's parents daily. Visual Match: Connects to the 1st picture showing a boy serving his elderly parents.",
-          "words": [
-            "२",
-            ".",
-            "नित्यं",
-            "मातापित्रोः",
-            "सेवा"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "३. रोगातुराणाम् उपचारः",
-          "answer_label": "अर्थः & चित्रसंयोजनम्",
-          "answer_sanskrit": "रोगातुराणाम् (of the sick/diseased people) उपचारः (nursing treatment and medical care)। चित्रसंयोजनम्: २ (२nd picture showing a nurse caring for a patient resting in a hospital bed).",
-          "meaning": "English: Medical care and nursing of the sick. Visual Match: Connects to the 2nd picture showing a healthcare nurse tending to a hospitalized patient.",
-          "words": [
-            "३",
-            ".",
-            "रोगातुराणाम्",
-            "उपचारः"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "४. गृहकार्येषु भगिन्याः साहाय्यम्",
-          "answer_label": "अर्थः & चित्रसंयोजनम्",
-          "answer_sanskrit": "गृहकार्येषु (in household chores) भगिन्याः (of sister) साहाय्यम् (help and support)। चित्रसंयोजनम्: ३ (३rd picture showing a brother and sister sweeping and tidying up the floor together).",
-          "meaning": "English: Helping one's sister with household chores. Visual Match: Connects to the 3rd picture showing siblings cleaning and sweeping the home together.",
-          "words": [
-            "४",
-            ".",
-            "गृहकार्येषु",
-            "भगिन्याः",
-            "साहाय्यम्"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "५. परस्परं कार्यकरणे साहाय्यम्",
-          "answer_label": "अर्थः & चित्रसंयोजनम्",
-          "answer_sanskrit": "परस्परम् (mutually / each other) कार्यकरणे (in executing tasks) साहाय्यम् (cooperation and assistance)। चित्रसंयोजनम्: ४ (४th picture showing children collaboratively constructing a house using building blocks).",
-          "meaning": "English: Helping each other in doing work. Visual Match: Connects to the 4th picture showing children working together collaboratively.",
-          "words": [
-            "५",
-            ".",
-            "परस्परं",
-            "कार्यकरणे",
-            "साहाय्यम्"
-          ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "hindi_gloss": "अपने परिवेश में उपलब्ध औषधीय पौधों और पदार्थों के नाम तथा उनके स्वास्थ्य लाभ लिखिए। जैसे— बेल पाचन क्रिया को बढ़ाता है। लौंग दाँतों की समस्या और खाँसी को ठीक करती है। तुलसी— खाँसी व जुकाम ठीक करती है; हल्दी— रोग प्रतिरोधक क्षमता बढ़ाती है; नीम— रक्त साफ़ करता है।",
+          "answer_sanskrit": "उदाहरणम्: १. तुलसी — कासं श्वाससमस्यां च नाशयति। २. हरिद्रा — व्रणशोधनं करोति रोगप्रतिरोधकशक्तिं वर्धयति च। ३. निम्बः — रक्तशुद्धिं करोति त्वग्रोगान् नाशयति च। ४. बिल्वम् — पाचनक्रियां वर्धयति। ५. लवङ्गम् — दन्तसमस्याः कासं च नाशयति।"
         }
-      ]
+      ],
+      "page_numbers": "47-50"
     },
     {
       "id": "gsde106",

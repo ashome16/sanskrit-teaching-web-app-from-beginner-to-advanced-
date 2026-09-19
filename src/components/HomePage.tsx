@@ -159,8 +159,8 @@ const CHAPTERS_INFO: ChapterInfo[] = [
   },
   {
     id: 'gsde105',
-    num: 'Chapter 5',
-    title: 'सेवा हि परमो धर्मः',
+    num: 'Chapter 5 (Pages 47–50)',
+    title: 'सेवा हि परमो धर्मः (पाठः पृष्ठानि ४७-५०)',
     english: 'Service is the Highest Virtue',
     icon: '🤝',
     category: 'stories',
