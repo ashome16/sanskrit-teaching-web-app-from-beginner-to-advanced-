@@ -747,7 +747,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                                   ? 'कथा'
                                   : jump.label.includes('लाभ')
                                     ? 'लाभाः'
-                                    : jump.label.split('·')[0].trim().slice(0, 10)}
+                                    : jump.label.includes('परियोजना')
+                                      ? 'परियोजना'
+                                      : jump.label.includes('पृष्ठम् ३८') || jump.label.includes('पृष्ठ ३८') || jump.label.includes('Page 38')
+                                        ? 'पृष्ठ ३८'
+                                        : jump.label.split('·')[0].trim().slice(0, 10)}
               </button>
             ))}
           </div>

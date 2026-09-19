@@ -5947,30 +5947,145 @@
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "परियोजनाकार्यम् (Project Work - Subhashita Chaturthi Analysis)",
-          "meaning": "Identify all Dative (चतुर्थी) forms in the famous subhashita:",
+          "kind": "section-header",
+          "sanskrit": "अतिरिक्तम् अध्ययनम् — पृष्ठम् ३८: धातु-रूपाणि",
+          "meaning": "Additional Study (Page 38): Verb Conjugations of 'Dā' (दा-धातुः - To Give)",
+          "paragraphTranslation": "अतिरिक्त अध्ययन (पृष्ठ ३८): 'दा' (देना) धातु के रूप — उच्चैः पठन्तु अवगच्छन्तु च",
+          "words": [
+            "अतिरिक्तम्",
+            "अध्ययनम्",
+            "पृष्ठम्",
+            "३८",
+            "उच्चैः",
+            "पठन्तु",
+            "अवगच्छन्तु",
+            "च"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "दा-धातुः (परस्मैपदम्), लट्-लकारः (वर्तमानकालः)\nप्रथमपुरुषः: ददाति | दत्तः | ददति\nमध्यमपुरुषः: ददासि | दत्थः | दत्थ\nउत्तमपुरुषः: ददामि | दद्वः | दद्मः",
+          "answer_label": "अर्थसहितम्",
+          "answer_sanskrit": "प्रथमपुरुषः: ददाति (He/She gives) | दत्तः (They two give) | ददति (They all give)\nमध्यमपुरुषः: ददासि (You give) | दत्थः (You two give) | दत्थ (You all give)\nउत्तमपुरुषः: ददामि (I give) | दद्वः (We two give) | दद्मः (We all give)",
+          "meaning": "Verb 'Dā' (To Give) – Parasmaipadam, Lat-Lakāra (Present Tense):\nThird Person: ददाति (He/She/It gives) | दत्तः (They two give) | ददति (They all give)\nSecond Person: ददासि (You give) | दत्थः (You two give) | दत्थ (You all give)\nFirst Person: ददामि (I give) | दद्वः (We two give) | दद्मः (We all give)",
+          "hindi_gloss": "'दा' धातु (देना), लट्-लकार (वर्तमान काल):\nप्रथम पुरुष: ददाति (वह देता है) | दत्तः (वे दोनों देते हैं) | ददति (वे सब देते हैं)\nमध्यम पुरुष: ददासि (तुम देते हो) | दत्थः (तुम दोनों देते हो) | दत्थ (तुम सब देते हो)\nउत्तम पुरुष: ददामि (मैं देता हूँ) | दद्वः (हम दोनों देते हैं) | दद्मः (हम सब देते हैं)",
+          "paragraphTranslation": "'दा' धातु (देना), लट्-लकार (वर्तमान काल):\nप्रथम पुरुष: ददाति (वह देता है) | दत्तः (वे दोनों देते हैं) | ददति (वे सब देते हैं)\nमध्यम पुरुष: ददासि (तुम देते हो) | दत्थः (तुम दोनों देते हो) | दत्थ (तुम सब देते हो)\nउत्तम पुरुष: ददामि (मैं देता हूँ) | दद्वः (हम दोनों देते हैं) | दद्मः (हम सब देते हैं)",
+          "words": [
+            "दा-धातुः",
+            "परस्मैपदम्",
+            "लट्-लकारः",
+            "ददाति",
+            "दत्तः",
+            "ददति",
+            "ददासि",
+            "दत्थः",
+            "दत्थ",
+            "ददामि",
+            "दद्वः",
+            "दद्मः"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "दा-धातुः (परस्मैपदम्), लोट्-लकारः (आज्ञार्थः / Imperative Mood)\nप्रथमपुरुषः: ददातु | दत्ताम् | ददतु\nमध्यमपुरुषः: देहि | दत्तम् | दत्त\nउत्तमपुरुषः: ददानि | ददाव | ददाम",
+          "answer_label": "अर्थसहितम्",
+          "answer_sanskrit": "प्रथमपुरुषः: ददातु (Let him/her give) | दत्ताम् (Let them two give) | ददतु (Let them all give)\nमध्यमपुरुषः: देहि (You give!) | दत्तम् (You two give!) | दत्त (You all give!)\nउत्तमपुरुषः: ददानि (Let me give) | ददाव (Let us two give) | ददाम (Let us all give)",
+          "meaning": "Verb 'Dā' (To Give) – Parasmaipadam, Lot-Lakāra (Imperative Mood / Command / Request):\nThird Person: ददातु (Let him/her/it give) | दत्ताम् (Let them two give) | ददतु (Let them all give)\nSecond Person: देहि (You give!) | दत्तम् (You two give!) | दत्त (You all give!)\nFirst Person: ददानि (Let me give) | ददाव (Let us two give) | ददाम (Let us all give)",
+          "hindi_gloss": "'दा' धातु (देना), लोट्-लकार (आज्ञार्थक):\nप्रथम पुरुष: ददातु (वह दे) | दत्ताम् (वे दोनों दें) | ददतु (वे सब दें)\nमध्यम पुरुष: देहि (तुम दो!) | दत्तम् (तुम दोनों दो!) | दत्त (तुम सब दो!)\nउत्तम पुरुष: ददानि (मैं दूँ) | ददाव (हम दोनों दें) | ददाम (हम सब दें)",
+          "paragraphTranslation": "'दा' धातु (देना), लोट्-लकार (आज्ञार्थक):\nप्रथम पुरुष: ददातु (वह दे) | दत्ताम् (वे दोनों दें) | ददतु (वे सब दें)\nमध्यम पुरुष: देहि (तुम दो!) | दत्तम् (तुम दोनों दो!) | दत्त (तुम सब दो!)\nउत्तम पुरुष: ददानि (मैं दूँ) | ददाव (हम दोनों दें) | ददाम (हम सब दें)",
+          "words": [
+            "दा-धातुः",
+            "परस्मैपदम्",
+            "लोट्-लकारः",
+            "ददातु",
+            "दत्ताम्",
+            "ददतु",
+            "देहि",
+            "दत्तम्",
+            "दत्त",
+            "ददानि",
+            "ददाव",
+            "ददाम"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "परियोजनाकार्यम् — पृष्ठम् ३८ (Project Work & Shloka)",
+          "meaning": "Project Work (Page 38): Surya Namaskar Activities & Subhashita Chaturthi Vibhakti Analysis",
+          "paragraphTranslation": "परियोजनाकार्यम् (पृष्ठ ३८): सूर्यनमस्कार अभ्यास एवं सुभाषित चतुर्थी विभक्ति विश्लेषण",
           "words": [
             "परियोजनाकार्यम्",
+            "पृष्ठम्",
+            "३८",
+            "सूर्यनमस्कारस्य",
+            "अभ्यासः",
+            "सुभाषितम्"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "प्रश्नः १ — सूर्यनमस्कारस्य द्वादशानाम् आसनानां भित्तिपत्राणि रचयन्तु। मन्त्रान् अपि लिखन्तु ।",
+          "answer_label": "उत्तरम् / मन्त्राः",
+          "answer_sanskrit": "द्वादश-सूर्यनमस्कार-मन्त्राः आसनानि च:\n१. ॐ मित्राय नमः (प्रणामासनम्)\n२. ॐ रवये नमः (हस्तउत्तानासनम्)\n३. ॐ सूर्याय नमः (पादहस्तासनम्)\n४. ॐ भानवे नमः (अश्वसञ्चालनासनम्)\n५. ॐ खगाय नमः (पर्वतासनम्)\n६. ॐ पूष्णे नमः (अष्टाङ्गनमस्कारः)\n७. ॐ हिरण्यगर्भाय नमः (भुजङ्गासनम्)\n८. ॐ मरीचये नमः (पर्वतासनम्)\n९. ॐ आदित्याय नमः (अश्वसञ्चालनासनम्)\n१०. ॐ सवित्रे नमः (पादहस्तासनम्)\n११. ॐ अर्काय नमः (हस्तउत्तानासनम्)\n१२. ॐ भास्कराय नमः (प्रणामासनम्)",
+          "meaning": "Question 1: Make posters of the twelve postures of Sun Salutation (Surya Namaskar). Also write their mantras.\nAnswer: The 12 Surya Namaskar mantras with corresponding postures:\n1. Om Mitrāya Namaḥ (Pranamasana)\n2. Om Ravaye Namaḥ (Hasta Uttanasana)\n3. Om Sūryāya Namaḥ (Pada Hastasana)\n4. Om Bhānave Namaḥ (Ashwa Sanchalanasana)\n5. Om Khagāya Namaḥ (Parvatasana / Dandasana)\n6. Om Pūṣṇe Namaḥ (Ashtanga Namaskara)\n7. Om Hiraṇyagarbhāya Namaḥ (Bhujangasana)\n8. Om Marīcaye Namaḥ (Parvatasana)\n9. Om Ādityāya Namaḥ (Ashwa Sanchalanasana)\n10. Om Savitre Namaḥ (Pada Hastasana)\n11. Om Arkāya Namaḥ (Hasta Uttanasana)\n12. Om Bhāskarāya Namaḥ (Pranamasana)",
+          "hindi_gloss": "प्रश्न १: सूर्य नमस्कार के बारह आसनों के पोस्टर (भित्तिपत्र) बनाइए और मंत्र भी लिखिए।\nउत्तर: बारह सूर्य नमस्कार मंत्र एवं आसन:\n१. ॐ मित्राय नमः (प्रणामासन)\n२. ॐ रवये नमः (हस्तउत्तानासन)\n३. ॐ सूर्याय नमः (पादहस्तासन)\n४. ॐ भानवे नमः (अश्वसञ्चालनासन)\n५. ॐ खगाय नमः (पर्वतासन)\n६. ॐ पूष्णे नमः (अष्टाङ्गनमस्कार)\n७. ॐ हिरण्यगर्भाय नमः (भुजङ्गासन)\n८. ॐ मरीचये नमः (पर्वतासन)\n९. ॐ आदित्याय नमः (अश्वसञ्चालनासन)\n१०. ॐ सवित्रे नमः (पादहस्तासन)\n११. ॐ अर्काय नमः (हस्तउत्तानासन)\n१२. ॐ भास्कराय नमः (प्रणामासन)",
+          "paragraphTranslation": "प्रश्न १: सूर्य नमस्कार के बारह आसनों के पोस्टर बनाइए और मंत्र भी लिखिए।",
+          "words": [
+            "प्रश्नः",
+            "१",
+            "सूर्यनमस्कारस्य",
+            "द्वादशानाम्",
+            "आसनानां",
+            "भित्तिपत्राणि",
+            "रचयन्तु",
+            "मन्त्रान्",
+            "अपि",
+            "लिखन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "प्रश्नः २ — प्रतिदिनं सकुटुम्बं सूर्यनमस्कारस्य अभ्यासं कुर्वन्तु ।",
+          "answer_label": "सङ्कल्पः",
+          "answer_sanskrit": "सङ्कल्पः — वयं स्वास्थ्यलाभाय प्रतिदिनं प्रातःकाले सकुटुम्बं सूर्यनमस्कारस्य अभ्यासं कुर्मः।",
+          "meaning": "Question 2: Practice Sun Salutation daily along with your family members.\nResolution: We resolve to practice Surya Namaskar daily in the morning with our family members for good health.",
+          "hindi_gloss": "प्रश्न २: प्रतिदिन अपने परिवार के साथ मिलकर सूर्य नमस्कार का अभ्यास कीजिए।\nसंकल्प: हम उत्तम स्वास्थ्य के लिए प्रतिदिन प्रातःकाल सपरिवार सूर्य नमस्कार का अभ्यास करेंगे।",
+          "paragraphTranslation": "प्रश्न २: प्रतिदिन अपने परिवार के साथ मिलकर सूर्य नमस्कार का अभ्यास कीजिए।",
+          "words": [
+            "प्रश्नः",
+            "२",
+            "प्रतिदिनं",
+            "सकुटुम्बं",
+            "सूर्यनमस्कारस्य",
+            "अभ्यासं",
+            "कुर्वन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "श्लोकः —\nविद्या विवादाय धनं मदाय शक्तिः परेषां परिपीडनाय ।\nखलस्य साधोर्विपरीतमेतत् ज्ञानाय दानाय च रक्षणाय ॥\n\nप्रश्नः — अस्मिन् श्लोके विद्यमानानि चतुर्थी-विभक्त्यन्तरूपाणि चित्वा लिखन्तु ।",
+          "answer_label": "उत्तरम् (चतुर्थी-रूपाणि)",
+          "answer_sanskrit": "१. विवादाय (विवाद के लिए / For argument)\n२. मदाय (घमंड के लिए / For pride & arrogance)\n३. परिपीडनाय (दूसरों को सताने के लिए / For troubling others)\n४. ज्ञानाय (ज्ञान के लिए / For knowledge)\n५. दानाय (दान के लिए / For charity & giving)\n६. रक्षणाय (रक्षा के लिए / For protection)",
+          "meaning": "The Shloka:\nविद्या विवादाय धनं मदाय शक्तिः परेषां परिपीडनाय ।\nखलस्य साधोर्विपरीतमेतत् ज्ञानाय दानाय च रक्षणाय ॥\n\nEnglish Meaning of the Shloka:\nFor a wicked person (खलस्य), knowledge is used for arguments (विवादाय), wealth for pride/arrogance (मदाय), and power to trouble others (परिपीडनाय). But for a good person (साधोः), it is the opposite—their knowledge is used for wisdom/learning (ज्ञानाय), wealth for charity (दानाय), and power for protecting others (रक्षणाय).\n\nThe Question: Pick out and write the words that are in the Dative Case (चतुर्थी-विभक्ति) from this verse.\n\n💡 Answer (The words ending in Chaturthi Vibhakti):\n1. विवादाय (For argument)\n2. मदाय (For pride/arrogance)\n3. परिपीडनाय (For troubling/oppressing others)\n4. ज्ञानाय (For knowledge)\n5. दानाय (For charity/giving)\n6. रक्षणाय (For protection)",
+          "hindi_gloss": "श्लोक का अर्थ:\nदुष्ट व्यक्ति (खल) की विद्या विवाद (झगड़ा करने) के लिए, धन घमंड (मद) के लिए, और शक्ति दूसरों को पीड़ित करने (सताने) के लिए होती है। इसके विपरीत सज्जन (साधु) की विद्या ज्ञान के लिए, धन दान के लिए और शक्ति दूसरों की रक्षा के लिए होती है।\n\nप्रश्न: इस श्लोक में विद्यमान चतुर्थी विभक्ति के रूपों को चुनकर लिखिए।\n\n💡 उत्तर (चतुर्थी-विभक्त्यन्तरूपाणि):\n१. विवादाय (विवाद के लिए)\n२. मदाय (घमंड के लिए)\n३. परिपीडनाय (दूसरों को कष्ट देने के लिए)\n४. ज्ञानाय (ज्ञान के लिए)\n५. दानाय (दान के लिए)\n६. रक्षणाय (रक्षा के लिए)",
+          "paragraphTranslation": "सुभाषितम् एवं चतुर्थी-विभक्ति अभ्यास: दुष्ट और सज्जन के स्वभाव में अंतर (विद्या, धन और शक्ति का सदुपयोग व दुरुपयोग)।",
+          "words": [
             "विद्या",
             "विवादाय",
             "धनं",
-            "मदाय"
-          ],
-          "kind": "exercise-header"
-        },
-        {
-          "sanskrit": "श्लोकः — विद्या विवादाय धनं मदाय शक्तिः परेषां परिपीडनाय । खलस्य साधोर्विपरीतमेतत् ज्ञानाय दानाय च रक्षणाय ॥",
-          "answer_sanskrit": "१. विवादाय (for dispute) | २. मदाय (for pride/arrogance) | ३. परिपीडनाय (for tormenting others) | ४. ज्ञानाय (for wisdom) | ५. दानाय (for charity) | ६. रक्षणाय (for protection)",
-          "meaning": "Translation: Knowledge of the wicked leads to dispute (विवादाय), wealth to arrogance (मदाय), and power to oppressing others (परिपीडनाय). For the virtuous, it is opposite: knowledge is for wisdom (ज्ञानाय), wealth for charity (दानाय), and strength for protecting others (रक्षणाय).",
-          "words": [
-            "विवादाय",
             "मदाय",
+            "शक्तिः",
+            "परेषां",
             "परिपीडनाय",
+            "खलस्य",
+            "साधोः",
+            "विपरीतम्",
+            "एतत्",
             "ज्ञानाय",
             "दानाय",
+            "च",
             "रक्षणाय"
-          ],
-          "kind": "exercise-qa"
+          ]
         }
       ],
       "page_numbers": "29-38"
@@ -7409,6 +7524,147 @@
             "वयं",
             "देशं",
             "सेवामहे।"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "अतिरिक्तम् अध्ययनम् — पृष्ठम् ३८: धातु-रूपाणि",
+          "meaning": "Additional Study (Page 38): Verb Conjugations of 'Dā' (दा-धातुः - To Give)",
+          "paragraphTranslation": "अतिरिक्त अध्ययन (पृष्ठ ३८): 'दा' (देना) धातु के रूप — उच्चैः पठन्तु अवगच्छन्तु च",
+          "words": [
+            "अतिरिक्तम्",
+            "अध्ययनम्",
+            "पृष्ठम्",
+            "३८",
+            "उच्चैः",
+            "पठन्तु",
+            "अवगच्छन्तु",
+            "च"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "दा-धातुः (परस्मैपदम्), लट्-लकारः (वर्तमानकालः)\nप्रथमपुरुषः: ददाति | दत्तः | ददति\nमध्यमपुरुषः: ददासि | दत्थः | दत्थ\nउत्तमपुरुषः: ददामि | दद्वः | दद्मः",
+          "answer_label": "अर्थसहितम्",
+          "answer_sanskrit": "प्रथमपुरुषः: ददाति (He/She gives) | दत्तः (They two give) | ददति (They all give)\nमध्यमपुरुषः: ददासि (You give) | दत्थः (You two give) | दत्थ (You all give)\nउत्तमपुरुषः: ददामि (I give) | दद्वः (We two give) | दद्मः (We all give)",
+          "meaning": "Verb 'Dā' (To Give) – Parasmaipadam, Lat-Lakāra (Present Tense):\nThird Person: ददाति (He/She/It gives) | दत्तः (They two give) | ददति (They all give)\nSecond Person: ददासि (You give) | दत्थः (You two give) | दत्थ (You all give)\nFirst Person: ददामि (I give) | दद्वः (We two give) | दद्मः (We all give)",
+          "hindi_gloss": "'दा' धातु (देना), लट्-लकार (वर्तमान काल):\nप्रथम पुरुष: ददाति (वह देता है) | दत्तः (वे दोनों देते हैं) | ददति (वे सब देते हैं)\nमध्यम पुरुष: ददासि (तुम देते हो) | दत्थः (तुम दोनों देते हो) | दत्थ (तुम सब देते हो)\nउत्तम पुरुष: ददामि (मैं देता हूँ) | दद्वः (हम दोनों देते हैं) | दद्मः (हम सब देते हैं)",
+          "paragraphTranslation": "'दा' धातु (देना), लट्-लकार (वर्तमान काल):\nप्रथम पुरुष: ददाति (वह देता है) | दत्तः (वे दोनों देते हैं) | ददति (वे सब देते हैं)\nमध्यम पुरुष: ददासि (तुम देते हो) | दत्थः (तुम दोनों देते हो) | दत्थ (तुम सब देते हो)\nउत्तम पुरुष: ददामि (मैं देता हूँ) | दद्वः (हम दोनों देते हैं) | दद्मः (हम सब देते हैं)",
+          "words": [
+            "दा-धातुः",
+            "परस्मैपदम्",
+            "लट्-लकारः",
+            "ददाति",
+            "दत्तः",
+            "ददति",
+            "ददासि",
+            "दत्थः",
+            "दत्थ",
+            "ददामि",
+            "दद्वः",
+            "दद्मः"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "दा-धातुः (परस्मैपदम्), लोट्-लकारः (आज्ञार्थः / Imperative Mood)\nप्रथमपुरुषः: ददातु | दत्ताम् | ददतु\nमध्यमपुरुषः: देहि | दत्तम् | दत्त\nउत्तमपुरुषः: ददानि | ददाव | ददाम",
+          "answer_label": "अर्थसहितम्",
+          "answer_sanskrit": "प्रथमपुरुषः: ददातु (Let him/her give) | दत्ताम् (Let them two give) | ददतु (Let them all give)\nमध्यमपुरुषः: देहि (You give!) | दत्तम् (You two give!) | दत्त (You all give!)\nउत्तमपुरुषः: ददानि (Let me give) | ददाव (Let us two give) | ददाम (Let us all give)",
+          "meaning": "Verb 'Dā' (To Give) – Parasmaipadam, Lot-Lakāra (Imperative Mood / Command / Request):\nThird Person: ददातु (Let him/her/it give) | दत्ताम् (Let them two give) | ददतु (Let them all give)\nSecond Person: देहि (You give!) | दत्तम् (You two give!) | दत्त (You all give!)\nFirst Person: ददानि (Let me give) | ददाव (Let us two give) | ददाम (Let us all give)",
+          "hindi_gloss": "'दा' धातु (देना), लोट्-लकार (आज्ञार्थक):\nप्रथम पुरुष: ददातु (वह दे) | दत्ताम् (वे दोनों दें) | ददतु (वे सब दें)\nमध्यम पुरुष: देहि (तुम दो!) | दत्तम् (तुम दोनों दो!) | दत्त (तुम सब दो!)\nउत्तम पुरुष: ददानि (मैं दूँ) | ददाव (हम दोनों दें) | ददाम (हम सब दें)",
+          "paragraphTranslation": "'दा' धातु (देना), लोट्-लकार (आज्ञार्थक):\nप्रथम पुरुष: ददातु (वह दे) | दत्ताम् (वे दोनों दें) | ददतु (वे सब दें)\nमध्यम पुरुष: देहि (तुम दो!) | दत्तम् (तुम दोनों दो!) | दत्त (तुम सब दो!)\nउत्तम पुरुष: ददानि (मैं दूँ) | ददाव (हम दोनों दें) | ददाम (हम सब दें)",
+          "words": [
+            "दा-धातुः",
+            "परस्मैपदम्",
+            "लोट्-लकारः",
+            "ददातु",
+            "दत्ताम्",
+            "ददतु",
+            "देहि",
+            "दत्तम्",
+            "दत्त",
+            "ददानि",
+            "ददाव",
+            "ददाम"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "परियोजनाकार्यम् — पृष्ठम् ३८ (Project Work & Shloka)",
+          "meaning": "Project Work (Page 38): Surya Namaskar Activities & Subhashita Chaturthi Vibhakti Analysis",
+          "paragraphTranslation": "परियोजनाकार्यम् (पृष्ठ ३८): सूर्यनमस्कार अभ्यास एवं सुभाषित चतुर्थी विभक्ति विश्लेषण",
+          "words": [
+            "परियोजनाकार्यम्",
+            "पृष्ठम्",
+            "३८",
+            "सूर्यनमस्कारस्य",
+            "अभ्यासः",
+            "सुभाषितम्"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "प्रश्नः १ — सूर्यनमस्कारस्य द्वादशानाम् आसनानां भित्तिपत्राणि रचयन्तु। मन्त्रान् अपि लिखन्तु ।",
+          "answer_label": "उत्तरम् / मन्त्राः",
+          "answer_sanskrit": "द्वादश-सूर्यनमस्कार-मन्त्राः आसनानि च:\n१. ॐ मित्राय नमः (प्रणामासनम्)\n२. ॐ रवये नमः (हस्तउत्तानासनम्)\n३. ॐ सूर्याय नमः (पादहस्तासनम्)\n४. ॐ भानवे नमः (अश्वसञ्चालनासनम्)\n५. ॐ खगाय नमः (पर्वतासनम्)\n६. ॐ पूष्णे नमः (अष्टाङ्गनमस्कारः)\n७. ॐ हिरण्यगर्भाय नमः (भुजङ्गासनम्)\n८. ॐ मरीचये नमः (पर्वतासनम्)\n९. ॐ आदित्याय नमः (अश्वसञ्चालनासनम्)\n१०. ॐ सवित्रे नमः (पादहस्तासनम्)\n११. ॐ अर्काय नमः (हस्तउत्तानासनम्)\n१२. ॐ भास्कराय नमः (प्रणामासनम्)",
+          "meaning": "Question 1: Make posters of the twelve postures of Sun Salutation (Surya Namaskar). Also write their mantras.\nAnswer: The 12 Surya Namaskar mantras with corresponding postures:\n1. Om Mitrāya Namaḥ (Pranamasana)\n2. Om Ravaye Namaḥ (Hasta Uttanasana)\n3. Om Sūryāya Namaḥ (Pada Hastasana)\n4. Om Bhānave Namaḥ (Ashwa Sanchalanasana)\n5. Om Khagāya Namaḥ (Parvatasana / Dandasana)\n6. Om Pūṣṇe Namaḥ (Ashtanga Namaskara)\n7. Om Hiraṇyagarbhāya Namaḥ (Bhujangasana)\n8. Om Marīcaye Namaḥ (Parvatasana)\n9. Om Ādityāya Namaḥ (Ashwa Sanchalanasana)\n10. Om Savitre Namaḥ (Pada Hastasana)\n11. Om Arkāya Namaḥ (Hasta Uttanasana)\n12. Om Bhāskarāya Namaḥ (Pranamasana)",
+          "hindi_gloss": "प्रश्न १: सूर्य नमस्कार के बारह आसनों के पोस्टर (भित्तिपत्र) बनाइए और मंत्र भी लिखिए।\nउत्तर: बारह सूर्य नमस्कार मंत्र एवं आसन:\n१. ॐ मित्राय नमः (प्रणामासन)\n२. ॐ रवये नमः (हस्तउत्तानासन)\n३. ॐ सूर्याय नमः (पादहस्तासन)\n४. ॐ भानवे नमः (अश्वसञ्चालनासन)\n५. ॐ खगाय नमः (पर्वतासन)\n६. ॐ पूष्णे नमः (अष्टाङ्गनमस्कार)\n७. ॐ हिरण्यगर्भाय नमः (भुजङ्गासन)\n८. ॐ मरीचये नमः (पर्वतासन)\n९. ॐ आदित्याय नमः (अश्वसञ्चालनासन)\n१०. ॐ सवित्रे नमः (पादहस्तासन)\n११. ॐ अर्काय नमः (हस्तउत्तानासन)\n१२. ॐ भास्कराय नमः (प्रणामासन)",
+          "paragraphTranslation": "प्रश्न १: सूर्य नमस्कार के बारह आसनों के पोस्टर बनाइए और मंत्र भी लिखिए।",
+          "words": [
+            "प्रश्नः",
+            "१",
+            "सूर्यनमस्कारस्य",
+            "द्वादशानाम्",
+            "आसनानां",
+            "भित्तिपत्राणि",
+            "रचयन्तु",
+            "मन्त्रान्",
+            "अपि",
+            "लिखन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "प्रश्नः २ — प्रतिदिनं सकुटुम्बं सूर्यनमस्कारस्य अभ्यासं कुर्वन्तु ।",
+          "answer_label": "सङ्कल्पः",
+          "answer_sanskrit": "सङ्कल्पः — वयं स्वास्थ्यलाभाय प्रतिदिनं प्रातःकाले सकुटुम्बं सूर्यनमस्कारस्य अभ्यासं कुर्मः।",
+          "meaning": "Question 2: Practice Sun Salutation daily along with your family members.\nResolution: We resolve to practice Surya Namaskar daily in the morning with our family members for good health.",
+          "hindi_gloss": "प्रश्न २: प्रतिदिन अपने परिवार के साथ मिलकर सूर्य नमस्कार का अभ्यास कीजिए।\nसंकल्प: हम उत्तम स्वास्थ्य के लिए प्रतिदिन प्रातःकाल सपरिवार सूर्य नमस्कार का अभ्यास करेंगे।",
+          "paragraphTranslation": "प्रश्न २: प्रतिदिन अपने परिवार के साथ मिलकर सूर्य नमस्कार का अभ्यास कीजिए।",
+          "words": [
+            "प्रश्नः",
+            "२",
+            "प्रतिदिनं",
+            "सकुटुम्बं",
+            "सूर्यनमस्कारस्य",
+            "अभ्यासं",
+            "कुर्वन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "श्लोकः —\nविद्या विवादाय धनं मदाय शक्तिः परेषां परिपीडनाय ।\nखलस्य साधोर्विपरीतमेतत् ज्ञानाय दानाय च रक्षणाय ॥\n\nप्रश्नः — अस्मिन् श्लोके विद्यमानानि चतुर्थी-विभक्त्यन्तरूपाणि चित्वा लिखन्तु ।",
+          "answer_label": "उत्तरम् (चतुर्थी-रूपाणि)",
+          "answer_sanskrit": "१. विवादाय (विवाद के लिए / For argument)\n२. मदाय (घमंड के लिए / For pride & arrogance)\n३. परिपीडनाय (दूसरों को सताने के लिए / For troubling others)\n४. ज्ञानाय (ज्ञान के लिए / For knowledge)\n५. दानाय (दान के लिए / For charity & giving)\n६. रक्षणाय (रक्षा के लिए / For protection)",
+          "meaning": "The Shloka:\nविद्या विवादाय धनं मदाय शक्तिः परेषां परिपीडनाय ।\nखलस्य साधोर्विपरीतमेतत् ज्ञानाय दानाय च रक्षणाय ॥\n\nEnglish Meaning of the Shloka:\nFor a wicked person (खलस्य), knowledge is used for arguments (विवादाय), wealth for pride/arrogance (मदाय), and power to trouble others (परिपीडनाय). But for a good person (साधोः), it is the opposite—their knowledge is used for wisdom/learning (ज्ञानाय), wealth for charity (दानाय), and power for protecting others (रक्षणाय).\n\nThe Question: Pick out and write the words that are in the Dative Case (चतुर्थी-विभक्ति) from this verse.\n\n💡 Answer (The words ending in Chaturthi Vibhakti):\n1. विवादाय (For argument)\n2. मदाय (For pride/arrogance)\n3. परिपीडनाय (For troubling/oppressing others)\n4. ज्ञानाय (For knowledge)\n5. दानाय (For charity/giving)\n6. रक्षणाय (For protection)",
+          "hindi_gloss": "श्लोक का अर्थ:\nदुष्ट व्यक्ति (खल) की विद्या विवाद (झगड़ा करने) के लिए, धन घमंड (मद) के लिए, और शक्ति दूसरों को पीड़ित करने (सताने) के लिए होती है। इसके विपरीत सज्जन (साधु) की विद्या ज्ञान के लिए, धन दान के लिए और शक्ति दूसरों की रक्षा के लिए होती है।\n\nप्रश्न: इस श्लोक में विद्यमान चतुर्थी विभक्ति के रूपों को चुनकर लिखिए।\n\n💡 उत्तर (चतुर्थी-विभक्त्यन्तरूपाणि):\n१. विवादाय (विवाद के लिए)\n२. मदाय (घमंड के लिए)\n३. परिपीडनाय (दूसरों को कष्ट देने के लिए)\n४. ज्ञानाय (ज्ञान के लिए)\n५. दानाय (दान के लिए)\n६. रक्षणाय (रक्षा के लिए)",
+          "paragraphTranslation": "सुभाषितम् एवं चतुर्थी-विभक्ति अभ्यास: दुष्ट और सज्जन के स्वभाव में अंतर (विद्या, धन और शक्ति का सदुपयोग व दुरुपयोग)।",
+          "words": [
+            "विद्या",
+            "विवादाय",
+            "धनं",
+            "मदाय",
+            "शक्तिः",
+            "परेषां",
+            "परिपीडनाय",
+            "खलस्य",
+            "साधोः",
+            "विपरीतम्",
+            "एतत्",
+            "ज्ञानाय",
+            "दानाय",
+            "च",
+            "रक्षणाय"
           ]
         }
       ],

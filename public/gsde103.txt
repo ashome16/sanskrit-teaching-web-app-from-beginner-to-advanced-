@@ -295,8 +295,51 @@
   -> मित्राय | मित्राभ्याम् | मित्रेभ्यः
   (Chaturthi of मित्र: मित्राय, मित्राभ्याम्, मित्रेभ्यः.)
 
-=== परियोजनाकार्यम् (Project Work - Subhashita Chaturthi Analysis) ===
-(Identify all Dative (चतुर्थी) forms in the famous subhashita:)
-श्लोकः — विद्या विवादाय धनं मदाय शक्तिः परेषां परिपीडनाय । खलस्य साधोर्विपरीतमेतत् ज्ञानाय दानाय च रक्षणाय ॥
-  -> १. विवादाय (for dispute) | २. मदाय (for pride/arrogance) | ३. परिपीडनाय (for tormenting others) | ४. ज्ञानाय (for wisdom) | ५. दानाय (for charity) | ६. रक्षणाय (for protection)
-  (Translation: Knowledge of the wicked leads to dispute (विवादाय), wealth to arrogance (मदाय), and power to oppressing others (परिपीडनाय). For the virtuous, it is opposite: knowledge is for wisdom (ज्ञानाय), wealth for charity (दानाय), and strength for protecting others (रक्षणाय).)
+=== अतिरिक्तम् अध्ययनम् — पृष्ठम् ३८: धातु-रूपाणि परियोजनाकार्यं च ===
+(Extra Page 38: Verb Tables, Project Work & Subhashita)
+
+१. उच्चैः पठन्तु अवगच्छन्तु च (Read aloud and understand):
+दा-धातुः (परस्मैपदम्), लट्-लकारः | Verb 'Dā' (To Give) – Present Tense
+प्रथमपुरुषः (Third Person): ददाति (He/She/It gives) | दत्तः (They two give) | ददति (They all give)
+मध्यमपुरुषः (Second Person): ददासि (You give) | दत्थः (You two give) | दत्थ (You all give)
+उत्तमपुरुषः (First Person): ददामि (I give) | दद्वः (We two give) | दद्मः (We all give)
+
+दा-धातुः (परस्मैपदम्), लोट्-लकारः | Verb 'Dā' (To Give) – Imperative Mood (Command/Request)
+प्रथमपुरुषः (Third Person): ददातु (Let him/her/it give) | दत्ताम् (Let them two give) | ददतु (Let them all give)
+मध्यमपुरुषः (Second Person): देहि (You give!) | दत्तम् (You two give!) | दत्त (You all give!)
+उत्तमपुरुषः (First Person): ददानि (Let me give) | ददाव (Let us two give) | ददाम (Let us all give)
+
+२. परियोजनाकार्यम् (Project Work - Surya Namaskar):
+Question 1:
+Sanskrit: सूर्यनमस्कारस्य द्वादशानाम् आसनानां भित्तिपत्राणि रचयन्तु। मन्त्रान् अपि लिखन्तु ।
+English: Make posters of the twelve postures of Sun Salutation (Surya Namaskar). Also write their mantras.
+उत्तरम् / मन्त्राः:
+१. ॐ मित्राय नमः (प्रणामासनम्) | २. ॐ रवये नमः (हस्तउत्तानासनम्) | ३. ॐ सूर्याय नमः (पादहस्तासनम्)
+४. ॐ भानवे नमः (अश्वसञ्चालनासनम्) | ५. ॐ खगाय नमः (पर्वतासनम्) | ६. ॐ पूष्णे नमः (अष्टाङ्गनमस्कारः)
+७. ॐ हिरण्यगर्भाय नमः (भुजङ्गासनम्) | ८. ॐ मरीचये नमः (पर्वतासनम्) | ९. ॐ आदित्याय नमः (अश्वसञ्चालनासनम्)
+१०. ॐ सवित्रे नमः (पादहस्तासनम्) | ११. ॐ अर्काय नमः (हस्तउत्तानासनम्) | १२. ॐ भास्कराय नमः (प्रणामासनम्)
+
+Question 2:
+Sanskrit: प्रतिदिनं सकुटुम्बं सूर्यनमस्कारस्य अभ्यासं कुर्वन्तु ।
+English: Practice Sun Salutation daily along with your family members.
+सङ्कल्पः: वयं स्वास्थ्यलाभाय प्रतिदिनं प्रातःकाले सकुटुम्बं सूर्यनमस्कारस्य अभ्यासं कुर्मः।
+
+३. श्लोक-अभ्यासः (Shloka Exercise & Answer - 🎯 Solved):
+The Shloka:
+विद्या विवादाय धनं मदाय शक्तिः परेषां परिपीडनाय ।
+खलस्य साधोर्विपरीतमेतत् ज्ञानाय दानाय च रक्षणाय ॥
+
+English Meaning of the Shloka:
+For a wicked person (खलस्य), knowledge is used for arguments (विवादाय), wealth for pride/arrogance (मदाय), and power to trouble others (परिपीडनाय). But for a good person (साधोः), it is the opposite—their knowledge is used for wisdom/learning (ज्ञानाय), wealth for charity (दानाय), and power for protecting others (रक्षणाय).
+
+The Question:
+Sanskrit: अस्मिन् श्लोके विद्यमानानि चतुर्थी-विभक्त्यन्तरूपाणि चित्वा लिखन्तु ।
+English: Pick out and write the words that are in the Dative Case (चतुर्थी-विभक्ति) from this verse.
+
+💡 Answer (चतुर्थी-विभक्त्यन्तरूपाणि):
+१. विवादाय (For argument / विवाद के लिए)
+२. मदाय (For pride & arrogance / घमंड के लिए)
+३. परिपीडनाय (For troubling & oppressing others / दूसरों को सताने के लिए)
+४. ज्ञानाय (For knowledge / ज्ञान के लिए)
+५. दानाय (For charity & giving / दान के लिए)
+६. रक्षणाय (For protection / रक्षा के लिए)
