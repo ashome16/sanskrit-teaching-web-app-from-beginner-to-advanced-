@@ -10760,57 +10760,58 @@
     {
       "id": "gsde107",
       "fileName": "gsde107.txt",
-      "title": "Chapter 7: ईशावास्यम् इदं सर्वम्",
+      "title": "Chapter 7: ईशावास्यम् इदं सर्वम् (पाठः पृष्ठानि ७१–७५ · अभ्यासः पृष्ठानि ७६–८४)",
       "sentences": [
         {
-          "sanskrit": "१. पाठस्य मूल-संवादः (कक्षा की भूमिका)",
-          "meaning": "Classroom Introduction: Is God Everywhere?",
-          "paragraphTranslation": "कक्षा की भूमिका: ईश्वर की सर्वव्यापकता",
+          "kind": "section-header",
+          "sanskrit": "१. पाठः — भागः १: कक्षा-संवादः (Classroom Dialogue - पृष्ठम् ७१)",
+          "meaning": "Part 1: Classroom Dialogue - Omnipresence of God (Page 71)",
+          "paragraphTranslation": "भाग १: कक्षा में संवाद — 'ईशावास्यमिदं सर्वम्' (पृष्ठ ७१)",
           "words": [
-            "पाठस्य",
-            "मूल-संवादः"
-          ],
-          "kind": "section-header"
+            "१.",
+            "पाठः",
+            "भागः",
+            "१:",
+            "कक्षा-संवादः",
+            "पृष्ठम्",
+            "७१"
+          ]
         },
         {
-          "sanskrit": "अध्यापिका: अयि भोः बालाः ! किं भवन्तः जानन्ति 'ईश्वरः कुत्र अस्ति' ?",
-          "meaning": "Teacher: Hello dear children! Do you know where God resides?",
-          "paragraphTranslation": "अरे ओ बच्चों! क्या आप सब जानते हैं कि ईश्वर कहाँ है?",
+          "sanskrit": "शिक्षिका — अयि भोः बालाः ! किं भवन्तः जानन्ति 'ईश्वरः कुत्र अस्ति' ?",
+          "meaning": "Teacher: Oh children! Do you know where God is?",
+          "paragraphTranslation": "शिक्षिका — अरे बच्चों! क्या आप जानते हैं कि ईश्वर कहाँ है?",
           "words": [
-            "अध्यापिका:",
+            "शिक्षिका",
             "अयि",
             "भोः",
             "बालाः",
-            "!",
             "किं",
             "भवन्तः",
             "जानन्ति",
             "ईश्वरः",
             "कुत्र",
-            "अस्ति",
-            "?"
+            "अस्ति"
           ]
         },
         {
-          "sanskrit": "छात्रः: मान्ये ! ईश्वरः देवालये भवति ।",
-          "meaning": "Student: Respected teacher! God lives in the temple.",
-          "paragraphTranslation": "महोदया! ईश्वर मंदिर में होता है।",
+          "sanskrit": "छात्रा — मान्ये ! ईश्वरः देवालये भवति ।",
+          "meaning": "Student 1: Respected Madam! God is in the temple.",
+          "paragraphTranslation": "छात्रा — मान्ये! ईश्वर मन्दिर में होता है।",
           "words": [
-            "छात्रः:",
+            "छात्रा",
             "मान्ये",
-            "!",
             "ईश्वरः",
             "देवालये",
-            "भवति",
-            "।"
+            "भवति"
           ]
         },
         {
-          "sanskrit": "अध्यापिका: वत्साः ! ईश्वरः न केवलं देवालये अपितु सर्वत्र व्याप्तः अस्ति। किम् 'ईशावास्यमिदं सर्वं' इति न श्रुतवन्तः ?",
-          "meaning": "Teacher: Dear children! God is not only in temples, but omnipresent everywhere. Have you not heard the sacred Upanishadic truth: 'All this is pervaded by God'?",
-          "paragraphTranslation": "बच्चों! ईश्वर न केवल मंदिर में बल्कि सब जगह समाया हुआ है। क्या आपने 'ईशावास्यमिदं सर्वं' नहीं सुना है?",
+          "sanskrit": "शिक्षिका — वत्साः ! ईश्वरः न केवलं देवालये अपितु सर्वत्र व्याप्तः अस्ति।",
+          "meaning": "Teacher: Children! God is not only in the temple but is present everywhere.",
+          "paragraphTranslation": "शिक्षिका — बच्चों! ईश्वर न केवल मन्दिर में बल्कि हर जगह व्याप्त है।",
           "words": [
-            "अध्यापिका:",
+            "शिक्षिका",
             "वत्साः",
             "ईश्वरः",
             "न",
@@ -10819,37 +10820,62 @@
             "अपितु",
             "सर्वत्र",
             "व्याप्तः",
-            "अस्ति",
+            "अस्ति"
+          ]
+        },
+        {
+          "sanskrit": "छात्रः — तत् कथम् आचार्य ?",
+          "meaning": "Student 2: How is that, Teacher?",
+          "paragraphTranslation": "छात्र — वह कैसे आचार्य?",
+          "words": [
+            "छात्रः",
+            "तत्",
+            "कथम्",
+            "आचार्य"
+          ]
+        },
+        {
+          "sanskrit": "शिक्षिका — किम् 'ईशावास्यमिदं सर्वं' इति न श्रुतवन्तः ?",
+          "meaning": "Teacher: Have you not heard 'Isha vasyam idam sarvam' (Everything is pervaded by God)?",
+          "paragraphTranslation": "शिक्षिका — क्या आपने 'ईशावास्यमिदं सर्वं' नहीं सुना है?",
+          "words": [
+            "शिक्षिका",
             "किम्",
             "ईशावास्यमिदं",
             "सर्वं",
             "इति",
             "न",
-            "श्रुतवन्तः",
-            "?"
+            "श्रुतवन्तः"
           ]
         },
         {
-          "sanskrit": "छात्राः: नैव आर्ये ! तस्य कः अर्थः ?",
-          "meaning": "Students: No, revered teacher! What does that mean?",
-          "paragraphTranslation": "नहीं आचार्या जी! उसका क्या अर्थ है?",
+          "sanskrit": "छात्रः — नैव आर्य ! तस्य कः अर्थः ? मान्ये ! ईश्वरः वृक्षे, कक्षायां, शिलायां, क्रीडाङ्गणे चापि अस्ति किम् ?",
+          "meaning": "Student 3: No, Respected Teacher! What does it mean? Is God also in the tree, in the classroom, in the stone, and in the playground?",
+          "paragraphTranslation": "छात्र — नहीं आर्य! उसका क्या अर्थ है? क्या ईश्वर पेड़ में, कक्षा में, पत्थर में और खेल के मैदान में भी है?",
           "words": [
-            "छात्राः:",
+            "छात्रः",
             "नैव",
-            "आर्ये",
-            "!",
+            "आर्य",
             "तस्य",
             "कः",
             "अर्थः",
-            "?"
+            "मान्ये",
+            "ईश्वरः",
+            "वृक्षे",
+            "कक्षायां",
+            "शिलायां",
+            "क्रीडाङ्गणे",
+            "चापि",
+            "अस्ति",
+            "किम्"
           ]
         },
         {
-          "sanskrit": "अध्यापिका: एतत् सर्वं जगत् ईशेन व्याप्तम् अस्ति। ईश्वरः सर्वत्र अस्ति। पुरा कश्चन भवादृशः अल्पवयस्कः बालः 'ईश्वरः सर्वत्र अस्ति' इति दर्शितवान्। इदानीं भक्तप्रह्लादस्य नाटकं पठामः।",
-          "meaning": "Teacher: All this moving universe is enveloped and filled by the Divine Spirit. Long ago, a young child like you demonstrated that God is everywhere. Now let us read the dramatic play of Bhakta Prahlada.",
-          "paragraphTranslation": "यह सारा संसार ईश्वर से व्याप्त है। प्राचीन काल में आप जैसा ही एक छोटा बालक था जिसने दिखाया था कि 'ईश्वर सब जगह है'। अब हम भक्त प्रह्लाद का नाटक पढ़ते हैं।",
+          "sanskrit": "शिक्षिका — एतत् सर्वं जगत् ईशेन व्याप्तम् अस्ति। ईश्वरः सर्वत्र अस्ति इति अर्थः ।",
+          "meaning": "Teacher: This entire world is pervaded by God. It means God is everywhere.",
+          "paragraphTranslation": "शिक्षिका — यह सारा संसार ईश्वर से व्याप्त है। इसका अर्थ है कि ईश्वर सब जगह है।",
           "words": [
-            "अध्यापिका:",
+            "शिक्षिका",
             "एतत्",
             "सर्वं",
             "जगत्",
@@ -10859,61 +10885,151 @@
             "ईश्वरः",
             "सर्वत्र",
             "अस्ति",
+            "इति",
+            "अर्थः"
+          ]
+        },
+        {
+          "sanskrit": "शिक्षिका — आम्, ईश्वरः सर्वत्र अस्ति। पुरा कश्चन भवादृशः अल्पवयस्कः बालः 'ईश्वरः सर्वत्र अस्ति' इति दर्शितवान्। इदानीं तमेव प्रसङ्गं पठामः। अनन्तरम् अभिनयसहितं नाटकमपि करिष्यामः।",
+          "meaning": "Teacher: Yes, God is everywhere. Long ago, a young boy like you demonstrated that God is everywhere. Now let us read that incident. Afterward, we will perform a play based on it.",
+          "paragraphTranslation": "शिक्षिका — हाँ, ईश्वर सब जगह है। प्राचीन काल में आप जैसा ही एक छोटा बालक था जिसने यह दिखाया था कि ईश्वर सब जगह है। अब हम उसी प्रसंग को पढ़ते हैं। बाद में हम अभिनय के साथ नाटक भी करेंगे।",
+          "words": [
+            "शिक्षिका",
+            "आम्",
+            "ईश्वरः",
+            "सर्वत्र",
+            "अस्ति",
             "पुरा",
             "कश्चन",
+            "भवादृशः",
             "अल्पवयस्कः",
             "बालः",
             "दर्शितवान्",
             "इदानीं",
-            "भक्तप्रह्लादस्य",
-            "नाटकं",
-            "पठामः"
+            "तमेव",
+            "प्रसङ्गं",
+            "पठामः",
+            "अनन्तरम्",
+            "अभिनयसहितं",
+            "नाटकमपि",
+            "करिष्यामः"
           ]
         },
         {
-          "sanskrit": "२. नाटकम् : भक्तप्रह्लादकथा — दृश्य १ : हिरण्यकशिपोः सभा",
-          "meaning": "Play: Bhakta Prahlada — Scene 1: The Royal Court of Hiranyakashipu",
-          "paragraphTranslation": "नाटक: भक्त प्रह्लाद — दृश्य १: हिरण्यकशिपु की राजसभा",
+          "kind": "section-header",
+          "sanskrit": "भागः २: नाटकम् — दृश्यम् १: हिरण्यकशिपोः सभा (Scene 1: Court of Hiranyakashipu - पृष्ठम् ७२)",
+          "meaning": "Part 2: Drama - Scene 1: The Court of Hiranyakashipu (Page 72)",
+          "paragraphTranslation": "भाग २: नाटक — दृश्य १: हिरण्यकशिपु की राजसभा (पृष्ठ ७२)",
           "words": [
+            "भागः",
+            "२:",
             "नाटकम्",
-            "भक्तप्रह्लादकथा",
-            "दृश्य",
-            "१",
+            "दृश्यम्",
+            "१:",
             "हिरण्यकशिपोः",
-            "सभा"
-          ],
-          "kind": "section-header"
+            "सभा",
+            "पृष्ठम्",
+            "७२"
+          ]
         },
         {
-          "sanskrit": "राजभटः: अयि भोः सावधानाः तिष्ठन्तु। राजाधिराजः त्रैलोक्याधिपतिः दैत्यराजः हिरण्यकशिपुः आगच्छति।",
-          "meaning": "Royal Guard: Attention everyone! The sovereign emperor, lord of the three realms, king of demons Hiranyakashipu is arriving!",
-          "paragraphTranslation": "अरे ओ, सब सावधान हो जाओ। राजाओं के राजा, तीनों लोकों के स्वामी, दैत्यराज हिरण्यकशिपु पधार रहे हैं।",
+          "sanskrit": "राजभटः — अयि भोः सावधानाः तिष्ठन्तु। राजाधिराजः राजगम्भीरः त्रैलोक्याधिपतिः देवाधिदेवः दैत्यराजः हिरण्यकशिपुः आगच्छति।",
+          "meaning": "Guard: Oh attendents, be alert! The King of Kings, majestically grave, Lord of the three worlds, God of Gods, Demon King Hiranyakashipu is arriving.",
+          "paragraphTranslation": "राजभट — अरे भाइयों! सावधान रहें। राजाधिराज, राजगम्भीर, त्रैलोक्याधिपति, देवाधिदेव, दैत्यराज हिरण्यकशिपु पधार रहे हैं।",
           "words": [
-            "राजभटः:",
+            "राजभटः",
             "अयि",
             "भोः",
             "सावधानाः",
             "तिष्ठन्तु",
             "राजाधिराजः",
+            "राजगम्भीरः",
             "त्रैलोक्याधिपतिः",
+            "देवाधिदेवः",
             "दैत्यराजः",
             "हिरण्यकशिपुः",
             "आगच्छति"
           ]
         },
         {
-          "sanskrit": "हिरण्यकशिपुः: ह ह ह ह.... अहम् एव सर्वशक्तिमान् अस्मि । अहम् अमरः अस्मि । सर्वत्र जनाः मामेव ध्यायन्ति खलु !",
-          "meaning": "Hiranyakashipu: Ha ha ha! I alone am all-powerful! I am immortal! Everywhere subjects meditate upon me alone, do they not?",
-          "paragraphTranslation": "हाहाहा... मैं ही सबसे शक्तिशाली हूँ। मैं अमर हूँ। सब जगह लोग मेरा ही ध्यान करते हैं ना!",
+          "sanskrit": "सभासदः — विजयतां महाराज ! विजयताम्।",
+          "meaning": "Courtiers: Victory to the great King! Victory!",
+          "paragraphTranslation": "सभासद — महाराज की जय हो! जय हो!",
           "words": [
-            "हिरण्यकशिपुः:",
+            "सभासदः",
+            "विजयतां",
+            "महाराज",
+            "विजयताम्"
+          ]
+        },
+        {
+          "sanskrit": "हिरण्यकशिपुः — ह ह ह ह.... अहम् एव सर्वशक्तिमान् अस्मि । अहम् अमरः अस्मि ।",
+          "meaning": "Hiranyakashipu: Ha ha ha ha... (with loud laughter) I alone am all-powerful. I am immortal.",
+          "paragraphTranslation": "हिरण्यकशिपु — हा हा हा हा... मैं ही सर्वशक्तिमान हूँ। मैं अमर हूँ।",
+          "words": [
+            "हिरण्यकशिपुः",
+            "ह",
             "अहम्",
             "एव",
             "सर्वशक्तिमान्",
             "अस्मि",
             "अहम्",
             "अमरः",
-            "अस्मि",
+            "अस्मि"
+          ]
+        },
+        {
+          "sanskrit": "मन्त्री — सत्यं दैत्यराज ! सुराः असुराः यक्ष-गन्धर्व-किन्नराः भवतः सर्वे भीताः तिष्ठन्ति ।",
+          "meaning": "Minister: True, Demon King! Deities, demons, Yakshas, Gandharvas, and Kinnaras all remain terrified of you.",
+          "paragraphTranslation": "मन्त्री — सत्य है दैत्यराज! सुर, असुर, यक्ष, गन्धर्व, किन्नर सभी आपसे भयभीत रहते हैं।",
+          "words": [
+            "मन्त्री",
+            "सत्यं",
+            "दैत्यराज",
+            "सुराः",
+            "असुराः",
+            "यक्ष-गन्धर्व-किन्नराः",
+            "भवतः",
+            "सर्वे",
+            "भीताः",
+            "तिष्ठन्ति"
+          ]
+        },
+        {
+          "sanskrit": "दैत्यपुरोहितः — भगवन् ! देशे सर्वत्र भवतः एव पूजा भवति। अन्यदेवतानाम् पूजाराधनं न भवति। इतः परं यज्ञभागादिकम् अपि देवेभ्यः न केऽपि दास्यन्ति।",
+          "meaning": "Priest: My Lord! Everywhere in the country, you alone are worshipped. Chanting and rituals for other gods have stopped. From now on, no one will offer sacrificial shares to the gods.",
+          "paragraphTranslation": "दैत्यपुरोहित — भगवन! देश में हर जगह आपकी ही पूजा होती है। अन्य देवताओं की आराधना नहीं होती। अब से कोई भी देवताओं को यज्ञ का भाग नहीं देगा।",
+          "words": [
+            "दैत्यपुरोहितः",
+            "भगवन्",
+            "देशे",
+            "सर्वत्र",
+            "भवतः",
+            "एव",
+            "पूजा",
+            "भवति",
+            "अन्यदेवतानाम्",
+            "पूजाराधनं",
+            "न",
+            "भवति",
+            "इतः",
+            "परं",
+            "यज्ञभागादिकम्",
+            "अपि",
+            "देवेभ्यः",
+            "दास्यन्ति"
+          ]
+        },
+        {
+          "sanskrit": "हिरण्यकशिपुः — साधु साधु। अयि भोः मन्त्रिन् ! सर्वत्र जनाः मामेव ध्यायन्ति खलु !",
+          "meaning": "Hiranyakashipu: Excellent, excellent! Oh Minister, people meditate only on me everywhere, right?",
+          "paragraphTranslation": "हिरण्यकशिपु — बहुत अच्छा! अरे मन्त्री! सब जगह लोग मेरा ही ध्यान करते हैं ना!",
+          "words": [
+            "हिरण्यकशिपुः",
+            "साधु",
+            "अयि",
+            "भोः",
+            "मन्त्रिन्",
             "सर्वत्र",
             "जनाः",
             "मामेव",
@@ -10922,368 +11038,1651 @@
           ]
         },
         {
-          "sanskrit": "मन्त्री: सत्यं देव ! किन्तु... भवतः पुत्रः प्रह्लादः अहर्निशं भवतः शत्रोः विष्णोः गुणगानं करोति।",
-          "meaning": "Minister: True, O Lord! Yet... your own son Prahlada sings day and night the praises of your sworn enemy, Lord Vishnu (Hari).",
-          "paragraphTranslation": "सत्य है देव! लेकिन... आपका पुत्र प्रह्लाद दिन-रात आपके शत्रु भगवान विष्णु का गुणगान करता है।",
+          "sanskrit": "मन्त्री — देव ! सर्वत्र भवतः एव नामकीर्तनं भवति, किन्तु .......... (अधोमुखः मौनं तिष्ठति ।)",
+          "meaning": "Minister: My Lord! Your name is chanted everywhere, but... (stands silently with head bowed down).",
+          "paragraphTranslation": "मन्त्री — देव! सब जगह आपका ही नाम-कीर्तन होता है, किन्तु... (सिर झुकाकर मौन खड़ा रहता है।)",
           "words": [
-            "मन्त्री:",
-            "सत्यं",
+            "मन्त्री",
             "देव",
-            "किन्तु",
+            "सर्वत्र",
             "भवतः",
-            "पुत्रः",
+            "एव",
+            "नामकीर्तनं",
+            "भवति",
+            "किन्तु",
+            "अधोमुखः",
+            "मौनं",
+            "तिष्ठति"
+          ]
+        },
+        {
+          "sanskrit": "हिरण्यकशिपुः — (सक्रोधम्) आः ! जानामि जानामि। भवान् मम पुत्रस्य विषये वक्तुम् इच्छति खलु ।",
+          "meaning": "Hiranyakashipu: (Angrily) Ah! I know, I know. You want to talk about my son, don't you?",
+          "paragraphTranslation": "हिरण्यकशिपु — (क्रोध से) आ:! जानता हूँ, जानता हूँ। आप मेरे पुत्र के विषय में बोलना चाहते हैं ना।",
+          "words": [
+            "हिरण्यकशिपुः",
+            "सक्रोधम्",
+            "आः",
+            "जानामि",
+            "भवान्",
+            "मम",
+            "पुत्रस्य",
+            "विषये",
+            "वक्तुम्",
+            "इच्छति",
+            "खलु"
+          ]
+        },
+        {
+          "sanskrit": "मन्त्री — (मन्दध्वनिना) सत्यं देव !",
+          "meaning": "Minister: (In a low voice) True, My Lord!",
+          "paragraphTranslation": "मन्त्री — (धीमी आवाज में) सत्य है देव!",
+          "words": [
+            "मन्त्री",
+            "मन्दध्वनिना",
+            "सत्यं",
+            "देव"
+          ]
+        },
+        {
+          "sanskrit": "हिरण्यकशिपुः — मम पुत्रकः एव मम शत्रुः अस्ति । कुलकलङ्कः सः प्रह्लादः अहर्निशं मम शत्रोः हरेः गुणगानं करोति ।",
+          "meaning": "Hiranyakashipu: My own little son has become my enemy. That family disgrace, Prahlada, sings praises of my enemy, Hari, day and night.",
+          "paragraphTranslation": "हिरण्यकशिपु — मेरा बेटा ही मेरा शत्रु बन गया है। कुल को कलंकित करने वाला वह प्रह्लाद दिन-रात मेरे शत्रु हरि का गुणगान करता है।",
+          "words": [
+            "हिरण्यकशिपुः",
+            "मम",
+            "पुत्रकः",
+            "एव",
+            "शत्रुः",
+            "अस्ति",
+            "कुलकलङ्कः",
+            "सः",
             "प्रह्लादः",
             "अहर्निशं",
-            "भवतः",
-            "शत्रोः",
-            "विष्णोः",
+            "हरेः",
             "गुणगानं",
             "करोति"
           ]
         },
         {
-          "sanskrit": "हिरण्यकशिपुः: (सक्रोधम्) आः ! सः कुलकलङ्कः ! तम् आनयन्तु अत्र !",
-          "meaning": "Hiranyakashipu: (In fury) Ah! That stain upon our clan! Bring him before me this instant!",
-          "paragraphTranslation": "(क्रोध में) आह! वह कुल का कलंक! उसे तुरंत यहाँ लाओ!",
+          "sanskrit": "सेनापतिः — स्वामिन् ! गजस्य पद-दलनेन अपि सः जीवति।",
+          "meaning": "General: Master! He survived even after being trampled by elephants.",
+          "paragraphTranslation": "सेनापति — स्वामी! हाथी के पैरों तले कुचलने पर भी वह जीवित रहा।",
+          "words": [
+            "सेनापतिः",
+            "स्वामिन्",
+            "गजस्य",
+            "पद-दलनेन",
+            "अपि",
+            "सः",
+            "जीवति"
+          ]
+        },
+        {
+          "sanskrit": "हिरण्यकशिपुः — अहो महदाश्चर्यम् !",
+          "meaning": "Hiranyakashipu: Oh, what a great wonder!",
+          "paragraphTranslation": "हिरण्यकशिपु — ओहो! महान आश्चर्य है!",
           "words": [
             "हिरण्यकशिपुः",
+            "अहो",
+            "महदाश्चर्यम्"
+          ]
+        },
+        {
+          "sanskrit": "सेनापतिः — भवदाज्ञया वयम् उत्तुङ्गशिखरात् तं पातितवन्तः । तथापि सः न मृतः ।",
+          "meaning": "General: By your command, we threw him down from the highest mountain peaks, yet he did not die.",
+          "paragraphTranslation": "सेनापति — आपकी आज्ञा से हमने उसे ऊँचे पर्वत के शिखर से नीचे गिराया, फिर भी वह नहीं मरा।",
+          "words": [
+            "सेनापतिः",
+            "भवदाज्ञया",
+            "वयम्",
+            "उत्तुङ्गशिखरात्",
+            "तं",
+            "पातितवन्तः",
+            "तथापि",
+            "सः",
+            "न",
+            "मृतः"
+          ]
+        },
+        {
+          "sanskrit": "मन्त्री — रज्ज्वा बद्ध्वा समुद्रमध्ये क्षिप्तवन्तः । तथापि....",
+          "meaning": "Minister: We tied him with ropes and cast him into the middle of the ocean, yet...",
+          "paragraphTranslation": "मन्त्री — रस्सी से बाँधकर समुद्र के बीच में फेंक दिया, फिर भी...",
+          "words": [
+            "मन्त्री",
+            "रज्ज्वा",
+            "बद्ध्वा",
+            "समुद्रमध्ये",
+            "क्षिप्तवन्तः",
+            "तथापि"
+          ]
+        },
+        {
+          "sanskrit": "हिरण्यकशिपुः — (हस्तौ मर्दयन् सक्रोधम्) आः ... किं करवाणि, किं करवाणि एतस्य । (किञ्चिद् विचिन्त्य) आस्तां तावत्। उपायः मया चिन्तितः । द्रक्ष्यामि सः कथं जीविष्यति इति। (वदन् सभातः निर्गतः ।) (सर्वे निष्क्रान्ताः)",
+          "meaning": "Hiranyakashipu: (Rubbing his hands in rage) Ah! What should I do, what should I do with him? (Thinking for a moment) Let it be for now. I have thought of a plan. I shall see how he survives. (Leaves the court; all exit)",
+          "paragraphTranslation": "हिरण्यकशिपु — (क्रोध से हाथ मलते हुए) आ:... क्या करूँ इसका! (कुछ सोचकर) रहने दो अभी। मैंने एक उपाय सोच लिया है। देखूँगा वह कैसे जीवित बचेगा। (सभा से निकल जाता है; सब चले जाते हैं।)",
+          "words": [
+            "हिरण्यकशिपुः",
+            "हस्तौ",
+            "मर्दयन्",
             "सक्रोधम्",
-            "आः",
-            "सः",
-            "कुलकलङ्कः",
-            "तम्",
-            "आनयन्तु",
-            "अत्र"
+            "किं",
+            "करवाणि",
+            "विचिन्त्य",
+            "उपायः",
+            "चिन्तितः",
+            "द्रक्ष्यामि",
+            "जीविष्यति",
+            "निर्गतः",
+            "निष्क्रान्ताः"
           ]
         },
         {
-          "sanskrit": "दृश्य २ : हिरण्यकशिपु-प्रह्लादयोः संवादः (The Confrontation)",
-          "meaning": "Scene 2: Confrontation between Hiranyakashipu and Prahlada",
-          "paragraphTranslation": "दृश्य २: हिरण्यकशिपु और प्रह्लाद का संवाद",
-          "words": [
-            "दृश्य",
-            "२",
-            "संवादः"
-          ],
-          "kind": "section-header"
-        },
-        {
-          "sanskrit": "हिरण्यकशिपुः: प्रह्लाद ! कः श्रेष्ठः ? अहम् उत तव हरिः ?",
-          "meaning": "Hiranyakashipu: Prahlada! Who is supreme? Am I greater, or your Hari?",
-          "paragraphTranslation": "प्रह्लाद! कौन श्रेष्ठ है? मैं या तुम्हारा हरि?",
-          "words": [
-            "हिरण्यकशिपुः:",
-            "प्रह्लाद",
-            "!",
-            "कः",
-            "श्रेष्ठः",
-            "?",
-            "अहम्",
-            "उत",
-            "तव",
-            "हरिः",
-            "?"
-          ]
-        },
-        {
-          "sanskrit": "प्रह्लादः: तात ! हरिः एव सर्वशक्तिमान्, सर्वव्यापी, जगत्पालकः च। सः सर्वत्र अस्ति।",
-          "meaning": "Prahlada: Respected Father! Lord Hari alone is all-powerful, omnipresent, and the protector of the cosmos. He exists everywhere.",
-          "paragraphTranslation": "पिता जी! हरि ही सर्वशक्तिमान, सर्वव्यापी और संसार के पालनकर्ता हैं। वे सब जगह हैं।",
-          "words": [
-            "प्रह्लादः:",
-            "तात",
-            "!",
-            "हरिः",
-            "एव",
-            "सर्वशक्तिमान्",
-            "सर्वव्यापी",
-            "जगत्पालकः",
-            "च",
-            "सः",
-            "सर्वत्र",
-            "अस्ति।"
-          ]
-        },
-        {
-          "sanskrit": "हिरण्यकशिपुः: (क्रोधेन गर्जति) सर्वत्र अस्ति ? तर्हि अस्मिन् स्तम्भे अपि अस्ति किम् ?",
-          "meaning": "Hiranyakashipu: (Roaring in rage) Everywhere? Then is He present inside this stone pillar as well?",
-          "paragraphTranslation": "(क्रोध से गरजते हुए) सब जगह है? तो क्या इस खंभे में भी है?",
-          "words": [
-            "हिरण्यकशिपुः:",
-            "सर्वत्र",
-            "अस्ति",
-            "?",
-            "तर्हि",
-            "अस्मिन्",
-            "स्तम्भे",
-            "अपि",
-            "अस्ति",
-            "किम्",
-            "?"
-          ]
-        },
-        {
-          "sanskrit": "प्रह्लादः: आम् तात ! अस्मिन् स्तम्भे अपि भगवान् अस्ति।",
-          "meaning": "Prahlada: Yes, Father! The Supreme Lord is present right here in this pillar too.",
-          "paragraphTranslation": "हाँ पिता जी! इस खंभे में भी भगवान हैं।",
-          "words": [
-            "प्रह्लादः:",
-            "आम्",
-            "तात",
-            "!",
-            "अस्मिन्",
-            "स्तम्भे",
-            "अपि",
-            "भगवान्",
-            "अस्ति।"
-          ]
-        },
-        {
-          "sanskrit": "हिरण्यकशिपुः: (गदया स्तम्भं प्रहरति) पश्यामि अधुना तव हरिम् !",
-          "meaning": "Hiranyakashipu: (Strikes the pillar with his heavy mace) I shall see your Hari now!",
-          "paragraphTranslation": "(गदा से खंभे पर वार करता है) देखता हूँ अभी तुम्हारे हरि को!",
+          "sanskrit": "हिरण्यकशिपुः — अयि भोः अनुजे ! होलिके !! होलिके !!! कुत्र असि त्वम् ? इत इतः ।",
+          "meaning": "Hiranyakashipu: Oh younger sister! Holika! Holika! Where are you? Come here, come here.",
+          "paragraphTranslation": "हिरण्यकशिपु — अरे छोटी बहन! होलिका! होलिका! तुम कहाँ हो? इधर आओ, इधर आओ।",
           "words": [
             "हिरण्यकशिपुः",
-            "गदया",
-            "स्तम्भं",
-            "प्रहरति",
-            "पश्यामि",
-            "अधुना",
-            "तव",
-            "हरिम्"
+            "अयि",
+            "भोः",
+            "अनुजे",
+            "होलिके",
+            "कुत्र",
+            "असि",
+            "त्वम्",
+            "इत",
+            "इतः"
           ]
         },
         {
-          "sanskrit": "दृश्य ३ : नृसिंहस्य प्रादुर्भावः (Appearance of Lord Narasimha)",
-          "meaning": "Scene 3: The Divine Manifestation of Lord Narasimha",
-          "paragraphTranslation": "दृश्य ३: भगवान नृसिंह का प्राकट्य",
+          "sanskrit": "होलिका — प्रणमामि भ्रातः ! कथं मां स्मरसि ? किमर्थं दुःखितः भासि ? किं कारणम् अस्य दुःखस्य ? वद भ्रातः ! वद ।",
+          "meaning": "Holika: I salute you, brother! Why do you summon me? Why do you look so sad? What is the cause of this grief? Tell me, brother, tell me.",
+          "paragraphTranslation": "होलिका — प्रणाम भाई! मुझे कैसे याद किया? तुम दुःखी क्यों लग रहे हो? इस दुःख का क्या कारण है? बताओ भाई, बताओ।",
           "words": [
-            "दृश्य",
-            "३",
-            "नृसिंहस्य",
-            "प्रादुर्भावः"
-          ],
-          "kind": "section-header"
-        },
-        {
-          "sanskrit": "(स्तम्भात् भयानकगर्जनपूर्वकं भगवान् नृसिंहः आविर्भवति। सः हिरण्यकशिपुं देहल्याम् उपवेश्य नखैः विदारयति।)",
-          "meaning": "(With a deafening cosmic roar, Lord Narasimha emerges from the cracked pillar. Placing Hiranyakashipu upon the threshold at twilight, He destroys the tyrant with His claws.)",
-          "paragraphTranslation": "(खंभे से भयंकर गर्जना के साथ भगवान नृसिंह प्रकट होते हैं। वे हिरण्यकशिपु को देहरी पर बिठाकर नाखूनों से उसका संहार करते हैं।)",
-          "words": [
-            "स्तम्भात्",
-            "भयानकगर्जनपूर्वकं",
-            "भगवान्",
-            "नृसिंहः",
-            "आविर्भवति",
-            "सः",
-            "हिरण्यकशिपुं",
-            "देहल्याम्",
-            "उपवेश्य",
-            "नखैः",
-            "विदारयति"
+            "होलिका",
+            "प्रणमामि",
+            "भ्रातः",
+            "कथं",
+            "मां",
+            "स्मरसि",
+            "किमर्थं",
+            "दुःखितः",
+            "भासि",
+            "किं",
+            "कारणम्",
+            "अस्य",
+            "दुःखस्य",
+            "वद"
           ]
         },
         {
-          "sanskrit": "भगवान् नृसिंहः: प्रह्लाद ! वरं वृणीष्व। तव भक्त्या अहम् अतिप्रसन्नः अस्मि।",
-          "meaning": "Lord Narasimha: Prahlada, my child! Ask for a boon. I am deeply pleased with your unshakeable devotion.",
-          "paragraphTranslation": "भगवान नृसिंह: प्रह्लाद! वरदान माँगो। तुम्हारी भक्ति से मैं बहुत प्रसन्न हूँ।",
+          "sanskrit": "हिरण्यकशिपुः — अनुजे ! त्वं जानासि एव, मम पुत्रः एव मम शत्रुः जातः । (क्षीणस्वरेण सर्वं वृत्तान्तं कथयति)",
+          "meaning": "Hiranyakashipu: Sister! You know it well, my son himself has become my enemy. (Narrates the whole account in a low voice.)",
+          "paragraphTranslation": "हिरण्यकशिपु — बहन! तुम जानती ही हो, मेरा पुत्र ही मेरा शत्रु बन गया है। (धीमी आवाज में सारा वृत्तान्त सुनाता है।)",
           "words": [
-            "भगवान्",
-            "नृसिंहः:",
-            "प्रह्लाद",
-            "!",
-            "वरं",
-            "वृणीष्व",
-            "तव",
-            "भक्त्या",
-            "अहम्",
-            "अतिप्रसन्नः",
-            "अस्मि।"
-          ]
-        },
-        {
-          "sanskrit": "प्रह्लादः: भगवन् ! मह्यं किमपि वरं मास्तु। केवलं भवति मे अचला भक्तिः स्यात्। मम पितुः सद्गतिः भवतु।",
-          "meaning": "Prahlada: O Supreme Lord! I ask for no worldly boons. Grant only that my devotion to You remains forever steadfast, and may my father attain liberation.",
-          "paragraphTranslation": "प्रह्लाद: हे भगवन्! मुझे कोई सांसारिक वरदान नहीं चाहिए। केवल आपमें मेरी अविचल भक्ति रहे और मेरे पिता को सद्गति मिले।",
-          "words": [
-            "प्रह्लादः:",
-            "भगवन्",
-            "!",
-            "मह्यं",
-            "किमपि",
-            "वरं",
-            "मास्तु",
-            "केवलं",
-            "भवति",
-            "मे",
-            "अचला",
-            "भक्तिः",
-            "स्यात्",
+            "हिरण्यकशिपुः",
+            "अनुजे",
+            "त्वं",
+            "जानासि",
             "मम",
-            "पितुः",
-            "सद्गतिः",
-            "भवतु।"
+            "पुत्रः",
+            "शत्रुः",
+            "जातः",
+            "क्षीणस्वरेण",
+            "वृत्तान्तं",
+            "कथयति"
           ]
         },
         {
-          "sanskrit": "ईशावास्यम् इदं सर्वं यत्किञ्च जगत्यां जगत् । तेन त्यक्तेन भुञ्जीथा मा गृधः कस्यस्विद् धनम् ॥",
-          "meaning": "Isha Upanishad (Verse 1): Everything animate and inanimate within this cosmic universe is pervaded by God. Enjoy and protect creation through detached renunciation; do not covet anyone else's wealth.",
-          "paragraphTranslation": "इस संसार में जो कुछ भी चराचर जगत् है, वह सब ईश्वर से व्याप्त है। त्याग भाव से इसका उपभोग करो और किसी के धन का लालच मत करो।",
+          "kind": "section-header",
+          "sanskrit": "दृश्यम् २: होलिका-प्रह्लादयोः प्रसङ्गः (Scene 2: Holika & Prahlada - पृष्ठम् ७३)",
+          "meaning": "Part 2: Drama - Scene 2: Holika & Prahlada (Page 73)",
+          "paragraphTranslation": "दृश्य २: होलिका और प्रह्लाद का प्रसंग — अग्नि-परीक्षा (पृष्ठ ७३)",
           "words": [
+            "दृश्यम्",
+            "२:",
+            "होलिका-प्रह्लादयोः",
+            "प्रसङ्गः",
+            "पृष्ठम्",
+            "७३"
+          ]
+        },
+        {
+          "sanskrit": "होलिका — भ्रातः ! अलं चिन्तया, ब्रह्मणः वरप्रसादात् अग्निः मां न दहति, अहं ज्वालयिष्यामि प्रह्लादम् । आश्वस्तो भव । (होलिका प्रह्लादकक्षं प्रविशति)",
+          "meaning": "Holika: Brother! Do not worry. By Lord Brahma's boon, fire cannot burn me. I will burn Prahlada. Rest assured. (Holika enters Prahlada's room)",
+          "paragraphTranslation": "होलिका — भाई! चिंता मत करो, ब्रह्मा के वरदान से अग्नि मुझे नहीं जलाती, मैं प्रह्लाद को जला दूँगी। आश्वस्त रहो। (होलिका प्रह्लाद के कक्ष में प्रवेश करती है)",
+          "words": [
+            "होलिका",
+            "भ्रातः",
+            "अलं",
+            "चिन्तया",
+            "ब्रह्मणः",
+            "वरप्रसादात्",
+            "अग्निः",
+            "मां",
+            "न",
+            "दहति",
+            "ज्वालयिष्यामि",
+            "प्रह्लादम्",
+            "आश्वस्तो",
+            "भव",
+            "प्रविशति"
+          ]
+        },
+        {
+          "sanskrit": "प्रह्लादः — (होलिकां दृष्ट्वा) पितृष्वसः ! (आलिङ्गति)",
+          "meaning": "Prahlada: (Seeing Holika) Aunt! (He embraces her)",
+          "paragraphTranslation": "प्रह्लाद — (होलिका को देखकर) बुआ जी! (गले मिलता है)",
+          "words": [
+            "प्रह्लादः",
+            "होलिकां",
+            "दृष्ट्वा",
+            "पितृष्वसः",
+            "आलिङ्गति"
+          ]
+        },
+        {
+          "sanskrit": "होलिका — अयि भोः प्रह्लाद ! आगच्छ, आवां क्रीडिष्यावः ।",
+          "meaning": "Holika: Oh Prahlada! Come, let us play.",
+          "paragraphTranslation": "होलिका — अरे प्रह्लाद! आओ, हम दोनों खेलेंगे।",
+          "words": [
+            "होलिका",
+            "अयि",
+            "भोः",
+            "प्रह्लाद",
+            "आगच्छ",
+            "आवां",
+            "क्रीडिष्यावः"
+          ]
+        },
+        {
+          "sanskrit": "प्रह्लादः — (सहर्षम्) बाढम् । प्रथमं त्वं माम् अन्विष्यसि । (सहर्षम्) साधु।",
+          "meaning": "Prahlada: (Happily) Yes, definitely! Holika: First, you must search for me. Prahlada: Fine!",
+          "paragraphTranslation": "प्रह्लाद — (प्रसन्नता से) अवश्य! होलिका: पहले तुम मुझे ढूँढोगे। प्रह्लाद: ठीक है।",
+          "words": [
+            "प्रह्लादः",
+            "सहर्षम्",
+            "बाढम्",
+            "प्रथमं",
+            "त्वं",
+            "माम्",
+            "अन्विष्यसि",
+            "साधु"
+          ]
+        },
+        {
+          "sanskrit": "होलिका — (प्रह्लादस्य नेत्रयोः पट्टिकां बध्नाति । किञ्चित् दूरे अग्निं प्रज्वालयति स्वयम् अग्नौ उपविश्य करतलध्वनिना आह्वयति) अत्र, अहम् अत्र अस्मि, इत इतः ।",
+          "meaning": "Holika ties a cloth over Prahlada's eyes, lights a fire nearby, sits in it, and calls him by clapping: 'Here, I am here! This way, this way!'",
+          "paragraphTranslation": "होलिका प्रह्लाद की आँखों पर पट्टी बाँधती है, थोड़ी दूर पर आग जलाती है और खुद आग में बैठकर तालियाँ बजाकर बुलाती है: 'यहाँ, मैं यहाँ हूँ, इस ओर!'",
+          "words": [
+            "होलिका",
+            "नेत्रयोः",
+            "पट्टिकां",
+            "बध्नाति",
+            "अग्निं",
+            "प्रज्वालयति",
+            "उपविश्य",
+            "करतलध्वनिना",
+            "आह्वयति",
+            "इत",
+            "इतः"
+          ]
+        },
+        {
+          "sanskrit": "प्रह्लादः — अहो तापम् अनुभवामि खलु अहम्। (प्रह्लादः अग्निकुण्डस्य समीपम् गच्छति । होलिका तम् अङ्के स्वीकरोति ।)",
+          "meaning": "Prahlada: Oh, I am feeling a lot of heat! (Prahlada goes near the fire pit. Holika takes him into her lap.)",
+          "paragraphTranslation": "प्रह्लाद — ओहो! मुझे बहुत गर्मी महसूस हो रही है। (प्रह्लाद अग्निकुण्ड के पास जाता है। होलिका उसे गोद में ले लेती है।)",
+          "words": [
+            "प्रह्लादः",
+            "अहो",
+            "तापम्",
+            "अनुभवामि",
+            "खलु",
+            "अहम्",
+            "अग्निकुण्डस्य",
+            "समीपम्",
+            "गच्छति",
+            "अङ्के",
+            "स्वीकरोति"
+          ]
+        },
+        {
+          "sanskrit": "होलिका — ह.....ह....ह... प्रह्लाद ! अहं तव मृत्युः अस्मि । अहं त्वाम् अग्नये दास्यामि।",
+          "meaning": "Holika: Ha... Ha... Ha... Prahlada! I am your death. I will offer you to the fire!",
+          "paragraphTranslation": "होलिका — हा... हा... हा... प्रह्लाद! मैं तुम्हारी मृत्यु हूँ। मैं तुम्हें आग के हवाले कर दूँगी।",
+          "words": [
+            "होलिका",
+            "ह",
+            "प्रह्लाद",
+            "अहं",
+            "तव",
+            "मृत्युः",
+            "अस्मि",
+            "त्वाम्",
+            "अग्नये",
+            "दास्यामि"
+          ]
+        },
+        {
+          "sanskrit": "प्रह्लादः — (करौ बद्ध्वा हरिं स्मरति) ॐ नमो नारायणाय, ॐ नमो नारायणाय, ॐ नमो नारायणाय.... (नारायणस्य कृपया प्रह्लादः रक्षितः भवति । ब्रह्मणः वरस्य दुरुपयोगकारणात् अग्निः होलिकाम् एव ज्वालयति । होलिका अग्निदाहात् आर्तनादं कुर्वती प्राणान् त्यजति ।)",
+          "meaning": "Prahlada: (Joining hands, prays) Om Namo Narayanaya... (By Lord Narayana's grace, Prahlada is protected. Due to misuse of the boon, fire burns Holika instead. Screaming in agony, Holika perishes.)",
+          "paragraphTranslation": "प्रह्लाद — (हाथ जोड़कर हरि का स्मरण करता है) ॐ नमो नारायणाय... (नारायण की कृपा से प्रह्लाद बच जाता है और वरदान के दुरुपयोग के कारण आग होलिका को ही जला देती है। होलिका चीखते हुए प्राण त्याग देती है।)",
+          "words": [
+            "प्रह्लादः",
+            "करौ",
+            "बद्ध्वा",
+            "हरिं",
+            "स्मरति",
+            "ॐ",
+            "नमो",
+            "नारायणाय",
+            "रक्षितः",
+            "दुरुपयोगकारणात्",
+            "होलिकाम्",
+            "ज्वालयति",
+            "आर्तनादं",
+            "प्राणान्",
+            "त्यजति"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "दृश्यम् ३: स्तम्भात् नृसिंहस्य प्रादुर्भावः (Scene 3: Pillar & Appearance of Narasimha - पृष्ठम् ७४)",
+          "meaning": "Part 2: Drama - Scene 3: The Pillar and Emergence of Lord Narasimha (Page 74)",
+          "paragraphTranslation": "दृश्य ३: खम्भे से भगवान नृसिंह का प्राकट्य (पृष्ठ ७४)",
+          "words": [
+            "दृश्यम्",
+            "३:",
+            "स्तम्भात्",
+            "नृसिंहस्य",
+            "प्रादुर्भावः",
+            "पृष्ठम्",
+            "७४"
+          ]
+        },
+        {
+          "sanskrit": "दैत्याः — अहो ! किमेतत् ? होलिका एव दग्धा। (ततः प्रविशति प्रह्लादः हिरण्यकशिपुः च) प्रह्लादः — ॐ नमो नारायणाय, ॐ नमो नारायणाय...",
+          "meaning": "Demons: Oh! What is this? Holika herself got burnt! (Prahlada and Hiranyakashipu enter) Prahlada: Om Namo Narayanaya...",
+          "paragraphTranslation": "राक्षस — अरे! यह क्या हुआ? होलिका ही जल गई! (प्रह्लाद और हिरण्यकशिपु प्रवेश करते हैं) प्रह्लाद — ॐ नमो नारायणाय...",
+          "words": [
+            "दैत्याः",
+            "अहो",
+            "किमेतत्",
+            "होलिका",
+            "दग्धा",
+            "प्रविशति",
+            "प्रह्लादः",
+            "हिरण्यकशिपुः",
+            "ॐ",
+            "नमो",
+            "नारायणाय"
+          ]
+        },
+        {
+          "sanskrit": "हिरण्यकशिपुः — (सक्रोधं दन्तान् विघट्टयन्) आः, नारायण ! नारायण ! दर्शय, कुत्र अस्ति तव नारायणः ? प्रह्लादः — तात ! श्रीहरिः तु सर्वत्र अस्ति।",
+          "meaning": "Hiranyakashipu: (Grinding teeth in fury) Ah, Narayana! Narayana! Show me, where is your Narayana? Prahlada: Father! Sri Hari is everywhere.",
+          "paragraphTranslation": "हिरण्यकशिपु — (क्रोध से दाँत पीसते हुए) आ:, नारायण! नारायण! दिखा, कहाँ है तेरा नारायण? प्रह्लाद — पिता जी! श्रीहरि तो सब जगह हैं।",
+          "words": [
+            "हिरण्यकशिपुः",
+            "सक्रोधं",
+            "दन्तान्",
+            "विघट्टयन्",
+            "दर्शय",
+            "कुत्र",
+            "अस्ति",
+            "नारायणः",
+            "प्रह्लादः",
+            "तात",
+            "श्रीहरिः",
+            "सर्वत्र"
+          ]
+        },
+        {
+          "sanskrit": "हिरण्यकशिपुः — किं ते हरिः अत्र अस्ति? तत्र अस्ति ? सोपानेषु अस्ति ? अथवा अस्मिन् स्तम्भे अस्ति ? प्रह्लादः — नूनं हरिः सर्वत्र अस्ति। अस्मिन् स्तम्भे अपि अस्ति ।",
+          "meaning": "Hiranyakashipu: Is your Hari here? Is he there? In the stairs? Or in this pillar? Prahlada: Surely, Hari is everywhere. He is in this pillar as well.",
+          "paragraphTranslation": "हिरण्यकशिपु — क्या तेरा हरि यहाँ है? वहाँ है? सीढ़ियों में है? या इस खम्भे में है? प्रह्लाद — निश्चित रूप से हरि सब जगह हैं। इस खम्भे में भी हैं।",
+          "words": [
+            "हिरण्यकशिपुः",
+            "किं",
+            "हरिः",
+            "अत्र",
+            "तत्र",
+            "सोपानेषु",
+            "स्तम्भे",
+            "प्रह्लादः",
+            "नूनं",
+            "सर्वत्र",
+            "अपि"
+          ]
+        },
+        {
+          "sanskrit": "हिरण्यकशिपुः — आः, मूढ ! पश्य पश्य, अनेन खड्गेन स्तम्भं भक्ष्यामि। प्रह्लादः — ॐ नमो नारायणाय... (हिरण्यकशिपुः स्तम्भं प्रहरति । महता गर्जनेन नृसिंहः स्तम्भात् बहिः आगच्छति)",
+          "meaning": "Hiranyakashipu: Ah, you fool! Look, I will smash this pillar with this sword! (Strikes the pillar. With a thunderous roar, Lord Narasimha emerges from inside the pillar.)",
+          "paragraphTranslation": "हिरण्यकशिपु — आ:, मूर्ख! देख, मैं इस तलवार से खम्भे को तोड़ डालूँगा। (खम्भे पर प्रहार करता है। भारी गर्जना के साथ नृसिंह खम्भे से बाहर आते हैं।)",
+          "words": [
+            "हिरण्यकशिपुः",
+            "मूढ",
+            "पश्य",
+            "खड्गेन",
+            "स्तम्भं",
+            "भक्ष्यामि",
+            "प्रह्लादः",
+            "प्रहरति",
+            "महता",
+            "गर्जनेन",
+            "नृसिंहः",
+            "स्तम्भात्",
+            "बहिः",
+            "आगच्छति"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "दृश्यम् ४: हिरण्यकशिपोः वधः — ईशावास्यम् इदं सर्वम् (Scene 4: Narasimha Slaying Hiranyakashipu - पृष्ठम् ७५)",
+          "meaning": "Part 2: Drama - Scene 4: Slaying of Hiranyakashipu and Supreme Conclusion (Page 75)",
+          "paragraphTranslation": "दृश्य ४: नृसिंह द्वारा हिरण्यकशिपु वध एवं 'ईशावास्यमिदं सर्वम्' का सिद्धान्त (पृष्ठ ७५)",
+          "words": [
+            "दृश्यम्",
+            "४:",
+            "हिरण्यकशिपोः",
+            "वधः",
             "ईशावास्यम्",
             "इदं",
-            "सर्वं",
-            "यत्किञ्च",
-            "जगत्यां",
-            "जगत्",
-            "तेन",
-            "त्यक्तेन",
-            "भुञ्जीथा",
-            "मा",
-            "गृधः",
-            "कस्यस्विद्",
-            "धनम्"
+            "सर्वम्",
+            "पृष्ठम्",
+            "७५"
           ]
         },
         {
-          "sanskrit": "३. शब्दार्थाः (कठिन शब्दों के अर्थ)",
-          "meaning": "Key Vocabulary Glossary",
-          "paragraphTranslation": "कठिन शब्दों के अर्थ",
+          "sanskrit": "नृसिंहः — (क्रोधेन सिंहगर्जनं कुर्वन्) रे पापात्मन् ! अद्य तव मृत्युः सन्निहितः । कालोऽहं तव। हिरण्यकशिपुः — आः, असत्यवादिन् ! अहं ब्रह्मदेवात् वरं प्राप्य अमरः अस्मि । त्वाम् एव मृत्युलोकं प्रेषयिष्यामि।",
+          "meaning": "Narasimha: (Roaring fiercely) O sinner! Today your death has arrived. I am your Death! Hiranyakashipu: Ah, liar! Having obtained a boon from Brahma, I am immortal. I will send you to death!",
+          "paragraphTranslation": "नृसिंह — (सिंह जैसी गर्जना करते हुए) रे पापात्मा! आज तेरी मृत्यु निकट आ गई है। मैं तेरा काल हूँ। हिरण्यकशिपु — आ:, झूठे! मैं ब्रह्मा जी से वरदान पाकर अमर हूँ। मैं तुझे ही यमलोक भेज दूँगा।",
           "words": [
-            "शब्दार्थाः",
-            "कठिन",
-            "शब्दों",
-            "के",
-            "अर्थ"
-          ],
-          "kind": "glossary-header"
+            "नृसिंहः",
+            "सिंहगर्जनं",
+            "पापात्मन्",
+            "मृत्युः",
+            "सन्निहितः",
+            "कालोऽहं",
+            "हिरण्यकशिपुः",
+            "असत्यवादिन्",
+            "ब्रह्मदेवात्",
+            "वरं",
+            "अमरः",
+            "मृत्युलोकं",
+            "प्रेषयिष्यामि"
+          ]
         },
         {
+          "sanskrit": "नृसिंहः — (तस्मिन् सन्ध्याकाले हिरण्यकशिपुं केशेषु गृहीत्वा कर्षति, देहल्यां तं गृह्णाति) रे मूर्ख ! अधम ! त्वं ब्रह्मदेवात् वरं प्राप्तवान् असि, तं वरम् अनुल्लङ्घय अहं त्वां मारयिष्यामि। मूढ ! पश्य, न त्वमसि भुवि, न च स्वर्गे; न वा पाताले, न च आकाशे; न गृहाभ्यन्तरे, बहिर्भागे वा; नायं दिवसो, न वा रात्रिः; नाहं मनुष्यो, न च पशुः; न अस्त्रेण, न च शस्त्रेण; निजनखैः तव वक्षःस्थलं विदीर्य हनिष्यामि ।",
+          "meaning": "At twilight, Narasimha drags him by the hair onto the threshold: 'O fool! Without violating Brahma's boon, I will kill you. Look: you are neither on earth nor heaven; neither in netherworld nor sky; neither indoors nor outdoors; it is neither day nor night; I am neither man nor beast; neither weapons nor missiles; with my claws tearing your chest, I shall slay you!'",
+          "paragraphTranslation": "संध्याकाल में नृसिंह उसे देहरी (चौखट) पर पकड़ते हैं: 'मूर्ख! ब्रह्मा के वरदान का उल्लंघन किए बिना मैं तुझे मारूँगा। देख, न तू धरती पर है न स्वर्ग में, न पाताल में न आकाश में, न घर के अन्दर न बाहर, न दिन है न रात, न मैं मनुष्य हूँ न पशु, न अस्त्र से न शस्त्र से; अपने नाखूनों से तेरी छाती चीरकर तुझे मार डालूँगा!'",
+          "words": [
+            "सन्ध्याकाले",
+            "केशेषु",
+            "कर्षति",
+            "देहल्यां",
+            "वरम्",
+            "अनुल्लङ्घय",
+            "मारयिष्यामि",
+            "भुवि",
+            "स्वर्गे",
+            "पाताले",
+            "आकाशे",
+            "गृहाभ्यन्तरे",
+            "बहिर्भागे",
+            "दिवसः",
+            "रात्रिः",
+            "मनुष्यः",
+            "पशुः",
+            "अस्त्रेण",
+            "शस्त्रेण",
+            "निजनखैः",
+            "वक्षःस्थलं",
+            "विदीर्य",
+            "हनिष्यामि"
+          ]
+        },
+        {
+          "sanskrit": "हिरण्यकशिपुः — (भीतः) प्रभो ! क्षमस्व मां, क्षमस्व । नृसिंहः — अधम ! न तेऽपराधः क्षम्यः। (सिंहगर्जनं कुर्वन् हिरण्यकशिपोः वक्षःस्थलं भिनत्ति ।)",
+          "meaning": "Hiranyakashipu: (Terrified) O Lord! Forgive me, forgive me! Narasimha: Wretch! Your crime is unforgivable! (Roaring like a lion, tears open Hiranyakashipu's chest.)",
+          "paragraphTranslation": "हिरण्यकशिपु — (डरकर) प्रभु! मुझे क्षमा कर दो, क्षमा कर दो। नृसिंह — नीच! तेरा अपराध क्षमा योग्य नहीं है। (गर्जना करते हुए हिरण्यकशिपु की छाती चीर देते हैं।)",
+          "words": [
+            "हिरण्यकशिपुः",
+            "भीतः",
+            "प्रभो",
+            "क्षमस्व",
+            "नृसिंहः",
+            "अधम",
+            "अपराधः",
+            "क्षम्यः",
+            "सिंहगर्जनं",
+            "वक्षःस्थलं",
+            "भिनत्ति"
+          ]
+        },
+        {
+          "sanskrit": "अध्यापिका — एवं बालः प्रह्लादः ईश्वरः सर्वत्र अस्ति इति दर्शितवान् । अत एव उच्यते, 'ईशावास्यम् इदं सर्वम्' इति ।",
+          "meaning": "Teacher: In this way, the young boy Prahlada proved that God is everywhere. That is why it is said, 'The entire universe is pervaded by God.'",
+          "paragraphTranslation": "शिक्षिका — इस प्रकार बालक प्रह्लाद ने दिखाया कि ईश्वर सब जगह है। इसीलिए कहा जाता है— 'ईशावास्यम् इदं सर्वम्' (यह सब ईश्वर से व्याप्त है)।",
+          "words": [
+            "अध्यापिका",
+            "बालः",
+            "प्रह्लादः",
+            "ईश्वरः",
+            "सर्वत्र",
+            "अस्ति",
+            "दर्शितवान्",
+            "उच्यते",
+            "ईशावास्यम्",
+            "इदं",
+            "सर्वम्"
+          ]
+        },
+        {
+          "kind": "glossary-header",
+          "sanskrit": "भाग २: वयं शब्दार्थान् जानीमः (शब्दार्थाः — पृष्ठानि ७६, ७७)",
+          "meaning": "Part 2: Chapter 7 Comprehensive Vocabulary Glossary (Pages 76–77)",
+          "paragraphTranslation": "भाग २: कठिन शब्दों के अर्थ (पृष्ठ ७६ व ७७)",
+          "words": [
+            "भाग",
+            "२:",
+            "वयं",
+            "शब्दार्थान्",
+            "जानीमः",
+            "शब्दार्थाः",
+            "पृष्ठानि",
+            "७६",
+            "७७"
+          ]
+        },
+        {
+          "kind": "glossary",
           "sanskrit": "ईशावास्यम्",
-          "meaning": "Pervaded / Inhabited by the Divine",
           "sanskrit_gloss": "ईश्वरेण व्याप्तम्",
           "hindi_gloss": "ईश्वर से व्याप्त",
+          "meaning": "Pervaded by God",
           "words": [
             "ईशावास्यम्",
             "ईश्वरेण",
             "व्याप्तम्"
-          ],
-          "kind": "glossary"
+          ]
         },
         {
+          "kind": "glossary",
+          "sanskrit": "राजगम्भीरः",
+          "sanskrit_gloss": "राजसु गम्भीरः",
+          "hindi_gloss": "राजाओं में कुशलतम / गम्भीर",
+          "meaning": "Majestically grave / The best among Kings",
+          "words": [
+            "राजगम्भीरः",
+            "राजसु",
+            "गम्भीरः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "कश्चन",
+          "sanskrit_gloss": "कोऽपि जनः",
+          "hindi_gloss": "कोई व्यक्ति (पुल्लिंग)",
+          "meaning": "Someone / A certain person",
+          "words": [
+            "कश्चन",
+            "कोऽपि",
+            "जनः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "विजयताम्",
+          "sanskrit_gloss": "जयतु",
+          "hindi_gloss": "विजयी होवे / जय हो",
+          "meaning": "Let him be victorious",
+          "words": [
+            "विजयताम्",
+            "जयतु"
+          ]
+        },
+        {
+          "kind": "glossary",
           "sanskrit": "सर्वशक्तिमान्",
-          "meaning": "Almighty / All-powerful",
-          "sanskrit_gloss": "सर्वसमर्थः",
-          "hindi_gloss": "सबसे शक्तिशाली",
+          "sanskrit_gloss": "सर्वसामर्थ्यवान्",
+          "hindi_gloss": "सबसे अधिक शक्तिशाली",
+          "meaning": "All-powerful / Omnipotent",
           "words": [
             "सर्वशक्तिमान्",
-            "सर्वसमर्थः"
-          ],
-          "kind": "glossary"
+            "सर्वसामर्थ्यवान्"
+          ]
         },
         {
+          "kind": "glossary",
+          "sanskrit": "यक्षाः",
+          "sanskrit_gloss": "कुबेरस्य अनुचराः",
+          "hindi_gloss": "यक्ष (देवयोनि विशेष)",
+          "meaning": "Yakshas (Demi-god attendants of Kubera)",
+          "words": [
+            "यक्षाः",
+            "कुबेरस्य",
+            "अनुचराः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "गन्धर्वाः",
+          "sanskrit_gloss": "दिव्यगायकाः",
+          "hindi_gloss": "गन्धर्व (दिव्य गायक)",
+          "meaning": "Gandharvas (Celestial musicians)",
+          "words": [
+            "गन्धर्वाः",
+            "दिव्यगायकाः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "किन्नराः",
+          "sanskrit_gloss": "किम्पुरुषाः / देवानां जातिविशेषः",
+          "hindi_gloss": "किन्नर (देवयोनि विशेष)",
+          "meaning": "Kinnaras (Demi-gods)",
+          "words": [
+            "किन्नराः",
+            "किम्पुरुषाः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "यज्ञभागः",
+          "sanskrit_gloss": "हविः",
+          "hindi_gloss": "यज्ञ की आहुति / यज्ञ का भाग",
+          "meaning": "Share of sacrificial offerings",
+          "words": [
+            "यज्ञभागः",
+            "हविः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "आराधनम्",
+          "sanskrit_gloss": "पूजनम्",
+          "hindi_gloss": "पूजा / उपासना",
+          "meaning": "Worship / Adoration",
+          "words": [
+            "आराधनम्",
+            "पूजनम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "दास्यन्ति",
+          "sanskrit_gloss": "दानं करिष्यन्ति",
+          "hindi_gloss": "देंगे",
+          "meaning": "Shall give / Will offer",
+          "words": [
+            "दास्यन्ति",
+            "दानं",
+            "करिष्यन्ति"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "ध्यायन्ति",
+          "sanskrit_gloss": "चिन्तयन्ति",
+          "hindi_gloss": "ध्यान करते हैं",
+          "meaning": "Meditate upon / Think of",
+          "words": [
+            "ध्यायन्ति",
+            "चिन्तयन्ति"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "नामकीर्तनम्",
+          "sanskrit_gloss": "स्तुतिः",
+          "hindi_gloss": "नाम जपना / स्तुति करना",
+          "meaning": "Singing praises of the name",
+          "words": [
+            "नामकीर्तनम्",
+            "स्तुतिः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "सक्रोधम्",
+          "sanskrit_gloss": "कोपेन सह",
+          "hindi_gloss": "क्रोध सहित",
+          "meaning": "With anger / Furiously",
+          "words": [
+            "सक्रोधम्",
+            "कोपेन",
+            "सह"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "खलु",
+          "sanskrit_gloss": "अव्ययम् (ननु)",
+          "hindi_gloss": "निश्चित रूप से",
+          "meaning": "Indeed / Certainly",
+          "words": [
+            "खलु",
+            "ननु"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "कुलकलङ्कः",
+          "sanskrit_gloss": "कुलपातकः",
+          "hindi_gloss": "वंश को कलंकित करने वाला",
+          "meaning": "One who brings ill-fame to family lineage",
+          "words": [
+            "कुलकलङ्कः",
+            "कुलपातकः"
+          ]
+        },
+        {
+          "kind": "glossary",
           "sanskrit": "अहर्निशम्",
-          "meaning": "Day and night / Continuously",
-          "sanskrit_gloss": "अहोरात्रम् / सततं",
+          "sanskrit_gloss": "अहोरात्रः",
           "hindi_gloss": "दिन-रात / निरंतर",
+          "meaning": "Day and night / Continuously",
           "words": [
             "अहर्निशम्",
-            "अहोरात्रम्"
-          ],
-          "kind": "glossary"
+            "अहोरात्रः"
+          ]
         },
         {
-          "sanskrit": "स्तम्भे",
-          "meaning": "In the pillar / column",
-          "sanskrit_gloss": "खम्भे / प्रस्तरे",
-          "hindi_gloss": "खंभे में",
+          "kind": "glossary",
+          "sanskrit": "पद-दलनेन",
+          "sanskrit_gloss": "पदकुट्टनेन",
+          "hindi_gloss": "पैरों के द्वारा कुचलने से",
+          "meaning": "By trampling under feet",
           "words": [
-            "स्तम्भे",
-            "प्रस्तरे"
-          ],
-          "kind": "glossary"
+            "पद-दलनेन",
+            "पदकुट्टनेन"
+          ]
         },
         {
+          "kind": "glossary",
+          "sanskrit": "उत्तुङ्गशिखरात्",
+          "sanskrit_gloss": "उन्नतपर्वतस्य अग्रभागात्",
+          "hindi_gloss": "ऊँचे पर्वत के शिखर से",
+          "meaning": "From the peak of a high mountain",
+          "words": [
+            "उत्तुङ्गशिखरात्",
+            "उन्नतपर्वतस्य"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "रज्ज्वा",
+          "sanskrit_gloss": "वराटकेन / रज्जुना",
+          "hindi_gloss": "रस्सी के द्वारा",
+          "meaning": "By a rope",
+          "words": [
+            "रज्ज्वा",
+            "वराटकेन"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "बद्ध्वा",
+          "sanskrit_gloss": "निबध्य",
+          "hindi_gloss": "बाँधकर",
+          "meaning": "Having tied",
+          "words": [
+            "बद्ध्वा",
+            "निबध्य"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "क्षिप्तवन्तः",
+          "sanskrit_gloss": "त्यक्तवन्तः / प्रक्षिप्तवन्तः",
+          "hindi_gloss": "फेंक दिया",
+          "meaning": "(They) Threw",
+          "words": [
+            "क्षिप्तवन्तः",
+            "त्यक्तवन्तः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "विचिन्त्य",
+          "sanskrit_gloss": "चिन्तनं कृत्वा",
+          "hindi_gloss": "सोचकर",
+          "meaning": "Having thought",
+          "words": [
+            "विचिन्त्य",
+            "चिन्तनं"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "द्रक्ष्यामि",
+          "sanskrit_gloss": "अवलोकयिष्यामि",
+          "hindi_gloss": "देखूँगा",
+          "meaning": "I shall see",
+          "words": [
+            "द्रक्ष्यामि",
+            "अवलोकयिष्यामि"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "निष्क्रान्तः",
+          "sanskrit_gloss": "निर्गतः",
+          "hindi_gloss": "निकल गया / बाहर गया",
+          "meaning": "Went out / Exited",
+          "words": [
+            "निष्क्रान्तः",
+            "निर्गतः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "भासि",
+          "sanskrit_gloss": "प्रतीयसे",
+          "hindi_gloss": "लग रहे हो / प्रतीत होते हो",
+          "meaning": "You seem / appear",
+          "words": [
+            "भासि",
+            "प्रतीयसे"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "वृत्तान्तम्",
+          "sanskrit_gloss": "वार्ताम् / वृत्तां",
+          "hindi_gloss": "वृत्तान्त या घटना को",
+          "meaning": "Account or anecdote",
+          "words": [
+            "वृत्तान्तम्",
+            "वार्ताम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "अलं चिन्तया",
+          "sanskrit_gloss": "चिन्तां मा कुरु",
+          "hindi_gloss": "चिंता मत करो",
+          "meaning": "Do not worry / Stop worrying",
+          "words": [
+            "अलं",
+            "चिन्तया"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "पितृष्वसः !",
+          "sanskrit_gloss": "पितुः भगिनि !",
+          "hindi_gloss": "हे बुआ जी !",
+          "meaning": "Oh Paternal Aunt (Father's sister)!",
+          "words": [
+            "पितृष्वसः",
+            "पितुः",
+            "भगिनि"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "बाढम्",
+          "sanskrit_gloss": "निश्चयेन",
+          "hindi_gloss": "अवश्य / निश्चय ही",
+          "meaning": "Certainly / Absolutely",
+          "words": [
+            "बाढम्",
+            "निश्चयेन"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "अन्विष्यसि",
+          "sanskrit_gloss": "मार्गयिष्यसि / अन्वेषणं करिष्यसि",
+          "hindi_gloss": "ढूँढ़ोगे / खोजोगे",
+          "meaning": "You shall search / look for",
+          "words": [
+            "अन्विष्यसि",
+            "मार्गयिष्यसि"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "करतलध्वनिना",
+          "sanskrit_gloss": "तालिकावादनेन",
+          "hindi_gloss": "ताली बजा करके",
+          "meaning": "By clapping hands",
+          "words": [
+            "करतलध्वनिना",
+            "तालिकावादनेन"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "प्रज्वालयति",
+          "sanskrit_gloss": "उद्दीपयति",
+          "hindi_gloss": "जलाता है / प्रज्वलित करता है",
+          "meaning": "Kindles / Lights a fire",
+          "words": [
+            "प्रज्वालयति",
+            "उद्दीपयति"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "इत इतः",
+          "sanskrit_gloss": "अनेन मार्गेण",
+          "hindi_gloss": "इस ओर / इधर",
+          "meaning": "This way / Come here",
+          "words": [
+            "इत",
+            "इतः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "आर्तनादम्",
+          "sanskrit_gloss": "चीत्कार-क्रन्दनम्",
+          "hindi_gloss": "चिल्लाकर रोना / आर्त पुकार",
+          "meaning": "Cry of distress / Agonized scream",
+          "words": [
+            "आर्तनादम्",
+            "चीत्कार-क्रन्दनम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "भञ्क्ष्यामि",
+          "sanskrit_gloss": "भग्नं करिष्यामि / भञ्जयिष्यामि",
+          "hindi_gloss": "तोड़ दूँगा",
+          "meaning": "I shall break / smash",
+          "words": [
+            "भञ्क्ष्यामि",
+            "भग्नं"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "सन्निहितः",
+          "sanskrit_gloss": "समागतः / निकटवर्ती",
+          "hindi_gloss": "पास आया / उपस्थित हुआ",
+          "meaning": "Has arrived near / Imminent",
+          "words": [
+            "सन्निहितः",
+            "समागतः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "कालोऽहम्",
+          "sanskrit_gloss": "यमः अहम् / मृत्युः अहम्",
+          "hindi_gloss": "मैं मृत्यु (काल) हूँ",
+          "meaning": "I am Death / Time",
+          "words": [
+            "कालोऽहम्",
+            "यमः",
+            "अहम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "मृत्युलोकम्",
+          "sanskrit_gloss": "यमपुरम्",
+          "hindi_gloss": "यमलोक",
+          "meaning": "Realm of death",
+          "words": [
+            "मृत्युलोकम्",
+            "यमपुरम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "कर्षति",
+          "sanskrit_gloss": "आकर्षति / आकर्षयति",
+          "hindi_gloss": "खींचता है",
+          "meaning": "Pulls / Drags",
+          "words": [
+            "कर्षति",
+            "आकर्षति"
+          ]
+        },
+        {
+          "kind": "glossary",
           "sanskrit": "देहल्याम्",
-          "meaning": "Upon the threshold / door sill",
-          "sanskrit_gloss": "द्वारदेहलीमध्ये",
-          "hindi_gloss": "चौखट / देहरी पर",
+          "sanskrit_gloss": "द्वारतले / देहल्यां",
+          "hindi_gloss": "देहरी में / चौखट पर",
+          "meaning": "On the threshold",
           "words": [
             "देहल्याम्",
-            "द्वारदेहलीमध्ये"
-          ],
-          "kind": "glossary"
+            "द्वारतले"
+          ]
         },
         {
-          "sanskrit": "४. अभ्यासः (अभ्यास कार्य)",
-          "meaning": "Exercises with Solved Answers",
-          "paragraphTranslation": "अभ्यास कार्य",
+          "kind": "glossary",
+          "sanskrit": "निजनखैः",
+          "sanskrit_gloss": "स्वस्य करजैः",
+          "hindi_gloss": "अपने नाखूनों से",
+          "meaning": "By my own claws / nails",
           "words": [
-            "अभ्यासः",
-            "अभ्यास",
-            "कार्य"
-          ],
-          "kind": "exercise-header"
+            "निजनखैः",
+            "स्वस्य",
+            "करजैः"
+          ]
         },
         {
+          "kind": "glossary",
+          "sanskrit": "अधम !",
+          "sanskrit_gloss": "हे क्षुद्रजन / हे नीच !",
+          "hindi_gloss": "हे नीच व्यक्ति !",
+          "meaning": "O vile / lowly person!",
+          "words": [
+            "अधम",
+            "नीच"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "क्षम्यः",
+          "sanskrit_gloss": "सोढव्यः / क्षन्तव्यः",
+          "hindi_gloss": "क्षमा करने योग्य",
+          "meaning": "Forgivable / Pardonable",
+          "words": [
+            "क्षम्यः",
+            "सोढव्यः"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "वक्षःस्थलम्",
+          "sanskrit_gloss": "उरःस्थलम्",
+          "hindi_gloss": "छाती",
+          "meaning": "Chest",
+          "words": [
+            "वक्षःस्थलम्",
+            "उरःस्थलम्"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "भिनत्ति",
+          "sanskrit_gloss": "विदीर्णं करोति",
+          "hindi_gloss": "चीरता है / विदीर्ण करता है",
+          "meaning": "Tears apart / Splits",
+          "words": [
+            "भिनत्ति",
+            "विदीर्णं"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "भाग ३: वयम् अभ्यासं कुर्मः (अभ्यास कार्यम् — पृष्ठानि ७९–८२)",
+          "meaning": "Part 3: Complete Solved Exercises for Chapter 7 (Pages 79–82)",
+          "paragraphTranslation": "भाग ३: सम्पूर्ण हल सहित अभ्यास कार्य (पृष्ठ ७९ से ८२)",
+          "words": [
+            "भाग",
+            "३:",
+            "वयम्",
+            "अभ्यासं",
+            "कुर्मः",
+            "अभ्यास",
+            "कार्यम्",
+            "पृष्ठानि",
+            "७९–८२"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "१. अधः प्रदत्तानां प्रश्नानाम् एकपदेन उत्तराणि लिखन्तु — (पृष्ठम् ७९)",
+          "meaning": "1. Answer the following questions in one word (Page 79):",
+          "paragraphTranslation": "१. नीचे दिए गए प्रश्नों के उत्तर एक पद में लिखिए (पृष्ठ ७९):",
+          "words": [
+            "१.",
+            "अधः",
+            "प्रदत्तानां",
+            "प्रश्नानाम्",
+            "एकपदेन",
+            "उत्तराणि",
+            "लिखन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
           "sanskrit": "(क) दैत्यराजः कः ?",
-          "meaning": "Who is the king of demons? Answer: Hiranyakashipu (हिरण्यकशिपुः).",
+          "answer_label": "उत्तरम्",
           "answer_sanskrit": "हिरण्यकशिपुः",
+          "meaning": "Question: Who is the king of demons?\nAnswer: हिरण्यकशिपुः (Hiranyakashipu).",
+          "hindi_gloss": "(क) दैत्यों का राजा कौन है?\nउत्तर: हिरण्यकशिपुः (हिरण्यकशिपु)।",
+          "paragraphTranslation": "दैत्यराज हिरण्यकशिपु है।",
           "words": [
             "दैत्यराजः",
             "कः",
-            "?",
-            "उत्तरः",
             "हिरण्यकशिपुः"
-          ],
-          "kind": "exercise-qa"
+          ]
         },
         {
-          "sanskrit": "(ख) प्रह्लादः कस्य गुणगानं करोति स्म ?",
-          "meaning": "Whose praises did Prahlada sing? Answer: Of Lord Vishnu / Hari (विष्णोः / हरेः).",
-          "answer_sanskrit": "विष्णोः",
+          "kind": "exercise-qa",
+          "sanskrit": "(ख) के हिरण्यकशिपुं ध्यायन्ति?",
+          "answer_label": "उत्तरम्",
+          "answer_sanskrit": "जनाः",
+          "meaning": "Question: Who meditate upon Hiranyakashipu?\nAnswer: जनाः (People).",
+          "hindi_gloss": "(ख) कौन लोग हिरण्यकशिपु का ध्यान करते हैं?\nउत्तर: जनाः (लोग / प्रजा)।",
+          "paragraphTranslation": "सभी लोग हिरण्यकशिपु का ध्यान करते हैं।",
           "words": [
-            "प्रह्लादः",
+            "के",
+            "हिरण्यकशिपुं",
+            "ध्यायन्ति",
+            "जनाः"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ग) किम् देवेभ्यः न दास्यन्ति ?",
+          "answer_label": "उत्तरम्",
+          "answer_sanskrit": "यज्ञभागादिकम्",
+          "meaning": "Question: What will no one offer to the gods anymore?\nAnswer: यज्ञभागादिकम् (Sacrificial shares).",
+          "hindi_gloss": "(ग) देवताओं को क्या नहीं दिया जाएगा?\nउत्तर: यज्ञभागादिकम् (यज्ञ का भाग आदि)।",
+          "paragraphTranslation": "देवताओं को यज्ञ-भाग आदि नहीं दिया जाएगा।",
+          "words": [
+            "किम्",
+            "देवेभ्यः",
+            "न",
+            "दास्यन्ति",
+            "यज्ञभागादिकम्"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(घ) कस्य दलनेन अपि सः जीवति ?",
+          "answer_label": "उत्तरम्",
+          "answer_sanskrit": "गजस्य",
+          "meaning": "Question: Even under the trampling of what does Prahlada survive?\nAnswer: गजस्य (Of an elephant).",
+          "hindi_gloss": "(घ) किसके कुचलने पर भी वह जीवित रहा?\nउत्तर: गजस्य (हाथी के)।",
+          "paragraphTranslation": "हाथी के पैरों तले कुचलने पर भी प्रह्लाद जीवित रहा।",
+          "words": [
             "कस्य",
-            "गुणगानं",
-            "करोति",
-            "स्म",
-            "?",
-            "उत्तरः",
-            "विष्णोः"
-          ],
-          "kind": "exercise-qa"
+            "दलनेन",
+            "अपि",
+            "सः",
+            "जीवति",
+            "गजस्य"
+          ]
         },
         {
-          "sanskrit": "(ग) भगवान् नृसिंहः कुतः आविर्भवति ?",
-          "meaning": "From where did Lord Narasimha emerge? Answer: From the pillar (स्तम्भात्).",
-          "answer_sanskrit": "स्तम्भात्",
+          "kind": "exercise-qa",
+          "sanskrit": "(ङ) राक्षसाः कुतः प्रह्लादं पातितवन्तः ?",
+          "answer_label": "उत्तरम्",
+          "answer_sanskrit": "उत्तुङ्गशिखरात्",
+          "meaning": "Question: From where did the demons throw Prahlada down?\nAnswer: उत्तुङ्गशिखरात् (From the highest mountain peaks).",
+          "hindi_gloss": "(ङ) राक्षसों ने प्रह्लाद को कहाँ से नीचे गिराया?\nउत्तर: उत्तुङ्गशिखरात् (ऊँचे पर्वत के शिखर से)।",
+          "paragraphTranslation": "राक्षसों ने प्रह्लाद को ऊँचे पर्वत शिखर से नीचे गिराया।",
           "words": [
-            "भगवान्",
-            "नृसिंहः",
+            "राक्षसाः",
             "कुतः",
-            "आविर्भवति",
-            "?",
-            "उत्तरः",
-            "स्तम्भात्"
-          ],
-          "kind": "exercise-qa"
+            "प्रह्लादं",
+            "पातितवन्तः",
+            "उत्तुङ्गशिखरात्"
+          ]
         },
         {
-          "sanskrit": "(घ) ईश्वरः कुत्र अस्ति ?",
-          "meaning": "Where is God? Answer: Everywhere (सर्वत्र व्याप्तः).",
-          "answer_sanskrit": "सर्वत्र व्याप्तः अस्ति",
+          "kind": "exercise-qa",
+          "sanskrit": "(च) हिरण्यकशिपुः कस्मात् वरं प्राप्तवान् ?",
+          "answer_label": "उत्तरम्",
+          "answer_sanskrit": "ब्रह्मदेवात्",
+          "meaning": "Question: From whom did Hiranyakashipu obtain a boon?\nAnswer: ब्रह्मदेवात् (From Lord Brahma).",
+          "hindi_gloss": "(च) हिरण्यकशिपु ने किससे वरदान प्राप्त किया था?\nउत्तर: ब्रह्मदेवात् (ब्रह्मा जी से)।",
+          "paragraphTranslation": "हिरण्यकशिपु ने ब्रह्मा जी से वरदान प्राप्त किया था।",
           "words": [
-            "ईश्वरः",
+            "हिरण्यकशिपुः",
+            "कस्मात्",
+            "वरं",
+            "प्राप्तवान्",
+            "ब्रह्मदेवात्"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(छ) हरिः कुत्र अस्ति इति कः वदति ?",
+          "answer_label": "उत्तरम्",
+          "answer_sanskrit": "प्रह्लादः",
+          "meaning": "Question: Who says that Hari is everywhere?\nAnswer: प्रह्लादः (Prahlada).",
+          "hindi_gloss": "(छ) हरि सब जगह हैं, ऐसा कौन कहता है?\nउत्तर: प्रह्लादः (प्रह्लाद)।",
+          "paragraphTranslation": "प्रह्लाद कहता है कि भगवान श्रीहरि सर्वत्र हैं।",
+          "words": [
+            "हरिः",
             "कुत्र",
             "अस्ति",
-            "?",
-            "उत्तरः",
-            "सर्वत्र",
-            "व्याप्तः",
-            "अस्ति"
-          ],
-          "kind": "exercise-qa"
+            "इति",
+            "कः",
+            "वदति",
+            "प्रह्लादः"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "२. अधः प्रदत्तानां प्रश्नानाम् पूर्णवाक्येन उत्तराणि लिखन्तु — (पृष्ठम् ८०)",
+          "meaning": "2. Answer the following questions in complete sentences (Page 80):",
+          "paragraphTranslation": "२. नीचे दिए गए प्रश्नों के उत्तर पूर्ण वाक्य में लिखिए (पृष्ठ ८०):",
+          "words": [
+            "२.",
+            "अधः",
+            "प्रदत्तानां",
+            "प्रश्नानाम्",
+            "पूर्णवाक्येन",
+            "उत्तराणि",
+            "लिखन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) के भीताः तिष्ठन्ति ?",
+          "answer_label": "पूर्णवाक्येन उत्तरम्",
+          "answer_sanskrit": "सुराः, असुराः, यक्ष-गन्धर्व-किन्नराः च सर्वे हिरण्यकशिपोः भीताः तिष्ठन्ति।",
+          "meaning": "Question: Who remain terrified?\nAnswer: Deities, demons, Yakshas, Gandharvas, and Kinnaras—all remain terrified of Hiranyakashipu.",
+          "hindi_gloss": "(क) कौन भयभीत रहते हैं?\nउत्तर: देव, असुर, यक्ष, गन्धर्व और किन्नर सभी हिरण्यकशिपु से भयभीत रहते हैं।",
+          "paragraphTranslation": "सुर, असुर, यक्ष, गन्धर्व और किन्नर सभी हिरण्यकशिपु से डरते हैं।",
+          "words": [
+            "सुराः",
+            "असुराः",
+            "यक्ष-गन्धर्व-किन्नराः",
+            "च",
+            "सर्वे",
+            "हिरण्यकशिपोः",
+            "भीताः",
+            "तिष्ठन्ति"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ख) प्रह्लादः अहर्निशं किं करोति ?",
+          "answer_label": "पूर्णवाक्येन उत्तरम्",
+          "answer_sanskrit": "प्रह्लादः अहर्निशं हरेः गुणगानं करोति।",
+          "meaning": "Question: What does Prahlada do day and night?\nAnswer: Prahlada sings the praises of Lord Hari day and night.",
+          "hindi_gloss": "(ख) प्रह्लाद दिन-रात क्या करता है?\nउत्तर: प्रह्लाद दिन-रात भगवान श्रीहरि का गुणगान करता है।",
+          "paragraphTranslation": "प्रह्लाद दिन-रात श्रीहरि का गुणगान करता है।",
+          "words": [
+            "प्रह्लादः",
+            "अहर्निशं",
+            "हरेः",
+            "गुणगानं",
+            "करोति"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ग) प्रह्लादं कथं समुद्रे क्षिप्तवन्तः ?",
+          "answer_label": "पूर्णवाक्येन उत्तरम्",
+          "answer_sanskrit": "प्रह्लादं रज्ज्वा बद्ध्वा समुद्रमध्ये क्षिप्तवन्तः।",
+          "meaning": "Question: How was Prahlada cast into the sea?\nAnswer: Prahlada was tied with ropes and thrown into the middle of the sea.",
+          "hindi_gloss": "(ग) प्रह्लाद को समुद्र में कैसे फेंका गया?\nउत्तर: प्रह्लाद को रस्सी से बाँधकर समुद्र के बीच में फेंक दिया गया।",
+          "paragraphTranslation": "प्रह्लाद को रस्सियों से बाँधकर समुद्र के बीच फेंक दिया गया।",
+          "words": [
+            "प्रह्लादं",
+            "रज्ज्वा",
+            "बद्ध्वा",
+            "समुद्रमध्ये",
+            "क्षिप्तवन्तः"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(घ) नृसिंहः कथं बहिः आगच्छति ?",
+          "answer_label": "पूर्णवाक्येन उत्तरम्",
+          "answer_sanskrit": "यदा हिरण्यकशिपुः स्तम्भं प्रहरति, तदा महता गर्जनेन नृसिंहः स्तम्भात् बहिः आगच्छति।",
+          "meaning": "Question: How does Lord Narasimha emerge outside?\nAnswer: When Hiranyakashipu strikes the pillar, Lord Narasimha emerges outside from within the pillar with a tremendous roar.",
+          "hindi_gloss": "(घ) नृसिंह बाहर कैसे आते हैं?\nउत्तर: जब हिरण्यकशिपु खम्भे पर प्रहार करता है, तब भारी गर्जना के साथ नृसिंह खम्भे से बाहर आते हैं।",
+          "paragraphTranslation": "जब हिरण्यकशिपु खम्भे पर प्रहार करता है, तब नृसिंह खम्भे से बाहर आते हैं।",
+          "words": [
+            "यदा",
+            "हिरण्यकशिपुः",
+            "स्तम्भं",
+            "प्रहरति",
+            "महता",
+            "गर्जनेन",
+            "नृसिंहः",
+            "स्तम्भात्",
+            "बहिः",
+            "आगच्छति"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(ङ) हिरण्यकशिपुः केन स्तम्भं भक्ष्यामि (भञ्जयिष्यामि) इति वदति ?",
+          "answer_label": "पूर्णवाक्येन उत्तरम्",
+          "answer_sanskrit": "हिरण्यकशिपुः खड्गेन स्तम्भं भक्ष्यामि इति वदति।",
+          "meaning": "Question: With what does Hiranyakashipu say he will smash the pillar?\nAnswer: Hiranyakashipu says he will smash the pillar with his sword.",
+          "hindi_gloss": "(ङ) हिरण्यकशिपु किससे खम्भे को तोड़ने की बात कहता है?\nउत्तर: हिरण्यकशिपु तलवार (खड्ग) से खम्भे को तोड़ने की बात कहता है।",
+          "paragraphTranslation": "हिरण्यकशिपु तलवार से खम्भे को तोड़ने की बात कहता है।",
+          "words": [
+            "हिरण्यकशिपुः",
+            "खड्गेन",
+            "स्तम्भं",
+            "भक्ष्यामि",
+            "इति",
+            "वदति"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "३. उदाहरणानुसारं रिक्तस्थानानि पूरयन्तु — तृतीया विभक्तिः (पृष्ठम् ८०)",
+          "meaning": "3. Fill in the blanks with Instrumental Case forms (तृतीया विभक्तिः - Singular, Dual, Plural) (Page 80):",
+          "paragraphTranslation": "३. उदाहरण के अनुसार तृतीया विभक्ति के एकवचन, द्विवचन और बहुवचन रूप लिखिए (पृष्ठ ८०):",
+          "words": [
+            "३.",
+            "उदाहरणानुसारं",
+            "रिक्तस्थानानि",
+            "पूरयन्तु",
+            "तृतीया",
+            "विभक्तिः"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "तृतीया विभक्ति रूप-तालिका:\n(क) राम → रामेण | रामाभ्याम् | रामैः\n(ख) चमस → _______\n(ग) आचार्य → _______\n(घ) आसन्द → _______\n(ङ) बालिका → _______\n(च) पेटिका → _______\n(छ) मित्र → _______\n(ज) वस्त्र → _______",
+          "answer_label": "पूरित-तालिका",
+          "answer_sanskrit": "(क) राम → रामेण | रामाभ्याम् | रामैः\n(ख) चमस → चमसेन | चमसाभ्याम् | चमसैः\n(ग) आचार्य → आचार्येण | आचार्याभ्याम् | आचार्यैः\n(घ) आसन्द → आसन्देन | आसन्दाभ्याम् | आसन्दैः\n(ङ) बालिका → बालिकया | बालिकाभ्याम् | बालिकाभिः\n(च) पेटिका → पेटिकया | पेटिकाभ्याम् | पेटिकाभिः\n(छ) मित्र → मित्रेण | मित्राभ्याम् | मित्रैः\n(ज) वस्त्र → वस्त्रेण | वस्त्राभ्याम् | वस्त्रैः",
+          "meaning": "Instrumental Case (तृतीया विभक्तिः) Forms:\n(क) राम: रामेण | रामाभ्याम् | रामैः\n(ख) चमस (spoon): चमसेन | चमसाभ्याम् | चमसैः\n(ग) आचार्य (teacher): आचार्येण | आचार्याभ्याम् | आचार्यैः\n(घ) आसन्द (chair): आसन्देन | आसन्दाभ्याम् | आसन्दैः\n(ङ) बालिका (girl): बालिकया | बालिकाभ्याम् | बालिकाभिः\n(च) पेटिका (box): पेटिकया | पेटिकाभ्याम् | पेटिकाभिः\n(छ) मित्र (friend): मित्रेण | मित्राभ्याम् | मित्रैः\n(ज) वस्त्र (cloth): वस्त्रेण | वस्त्राभ्याम् | वस्त्रैः",
+          "hindi_gloss": "तृतीया विभक्ति तालिका:\n(क) राम → रामेण | रामाभ्याम् | रामैः\n(ख) चमस (चम्मच) → चमसेन | चमसाभ्याम् | चमसैः\n(ग) आचार्य → आचार्येण | आचार्याभ्याम् | आचार्यैः\n(घ) आसन्द (कुर्सी) → आसन्देन | आसन्दाभ्याम् | आसन्दैः\n(ङ) बालिका → बालिकया | बालिकाभ्याम् | बालिकाभिः\n(च) पेटिका (पेटी) → पेटिकया | पेटिकाभ्याम् | पेटिकाभिः\n(छ) मित्र → मित्रेण | मित्राभ्याम् | मित्रैः\n(ज) वस्त्र → वस्त्रेण | वस्त्राभ्याम् | वस्त्रैः",
+          "paragraphTranslation": "अकारान्त पुल्लिंग, आकारान्त स्त्रीलिंग और अकारान्त नपुंसकलिंग तृतीया विभक्ति रूपाणि।",
+          "words": [
+            "रामेण",
+            "चमसेन",
+            "आचार्येण",
+            "आसन्देन",
+            "बालिकया",
+            "पेटिकया",
+            "मित्रेण",
+            "वस्त्रेण"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "४. उदाहरणानुसारं रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कुर्वन्तु — (पृष्ठानि ८०, ८१)",
+          "meaning": "4. Form questions based on the underlined words (Pages 80–81):",
+          "paragraphTranslation": "४. रेखांकित पदों के आधार पर प्रश्न निर्माण कीजिए (पृष्ठ ८०, ८१):",
+          "words": [
+            "४.",
+            "उदाहरणानुसारं",
+            "रेखाङ्कितपदानि",
+            "आधृत्य",
+            "प्रश्ननिर्माणं",
+            "कुर्वन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) हिरण्यकशिपुः आगच्छति।\n(ख) सुरासुराः सर्वे भीताः भविष्यन्ति।\n(ग) दैत्यराजः खड्गेन प्रहरति।\n(घ) अहं प्रह्लादं मारयिष्यामि।\n(ङ) तात ! हरिस्तु सर्वत्र अस्ति।\n(च) पुत्रस्य विषये वक्तुम् इच्छति।\n(छ) नृसिंहः निजनखैः हिरण्यकशिपुं मारितवान्।",
+          "answer_label": "प्रश्ननिर्माणम्",
+          "answer_sanskrit": "(क) कः आगच्छति ?\n(ख) के सर्वे भीताः भविष्यन्ति ?\n(ग) दैत्यराजः केन प्रहरति ?\n(घ) अहं कं मारयिष्यामि ?\n(ङ) तात ! कः तु सर्वत्र अस्ति ?\n(च) कस्य विषये वक्तुम् इच्छति ?\n(छ) नृसिंहः कैः हिरण्यकशिपुं मारितवान् ?",
+          "meaning": "Question Formations:\n(क) हिरण्यकशिपुः आगच्छति। → कः आगच्छति ? (Who comes?)\n(ख) सुरासुराः सर्वे भीताः भविष्यन्ति। → के सर्वे भीताः भविष्यन्ति ? (Who all will be terrified?)\n(ग) दैत्यराजः खड्गेन प्रहरति। → दैत्यराजः केन प्रहरति ? (With what does he strike?)\n(घ) अहं प्रह्लादं मारयिष्यामि। → अहं कं मारयिष्यामि ? (Whom will I kill?)\n(ङ) तात ! हरिस्तु सर्वत्र अस्ति। → तात ! कः तु सर्वत्र अस्ति ? (Who is everywhere?)\n(च) पुत्रस्य विषये वक्तुम् इच्छति। → कस्य विषये वक्तुम् इच्छति ? (About whom does he want to speak?)\n(छ) नृसिंहः निजनखैः हिरण्यकशिपुं मारितवान्। → नृसिंहः कैः हिरण्यकशिपुं मारितवान् ? (With what did Narasimha slay Hiranyakashipu?)",
+          "hindi_gloss": "प्रश्न निर्माण:\n(क) हिरण्यकशिपुः आगच्छति। → कः आगच्छति ?\n(ख) सुरासुराः सर्वे भीताः भविष्यन्ति। → के सर्वे भीताः भविष्यन्ति ?\n(ग) दैत्यराजः खड्गेन प्रहरति। → दैत्यराजः केन प्रहरति ?\n(घ) अहं प्रह्लादं मारयिष्यामि। → अहं कं मारयिष्यामि ?\n(ङ) तात ! हरिस्तु सर्वत्र अस्ति। → तात ! कः तु सर्वत्र अस्ति ?\n(च) पुत्रस्य विषये वक्तुम् इच्छति। → कस्य विषये वक्तुम् इच्छति ?\n(छ) नृसिंहः निजनखैः हिरण्यकशिपुं मारितवान्। → नृसिंहः कैः हिरण्यकशिपुं मारितवान् ?",
+          "paragraphTranslation": "उचित प्रश्नवाचक शब्दों का प्रयोग करके वाक्य प्रश्न में बदले गए।",
+          "words": [
+            "कः",
+            "के",
+            "केन",
+            "कं",
+            "कस्य",
+            "कैः",
+            "आगच्छति",
+            "प्रहरति",
+            "मारयिष्यामि"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "५. अधः प्रदत्तेषु रिक्तस्थानेषु तृतीया-विभक्त्यन्तानि रूपाणि लिखन्तु — (पृष्ठम् ८१)",
+          "meaning": "5. Fill in the blanks with Instrumental Case (तृतीया विभक्ति) forms (Page 81):",
+          "paragraphTranslation": "५. कोष्ठक में दिए गए शब्दों के तृतीया विभक्ति रूप से रिक्त स्थान भरिए (पृष्ठ ८१):",
+          "words": [
+            "५.",
+            "अधः",
+            "प्रदत्तेषु",
+            "रिक्तस्थानेषु",
+            "तृतीया-विभक्त्यन्तानि",
+            "रूपाणि",
+            "लिखन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) अहं मम _______ (खड्ग) स्तम्भं भक्ष्यामि।\n(ख) प्रह्लादः गजस्य _______ (पददलन) अपि जीवति।\n(ग) सर्वे जनाः _______ (नारायण) अनुगृहीताः।\n(घ) _______ (निजनख) तव वक्षःस्थलं विदीर्य मारयिष्यामि।\n(ङ) बालिकाः _______ (शिक्षिका) सह चर्चा कुर्वन्ति।",
+          "answer_label": "पूरित-वाक्यानि",
+          "answer_sanskrit": "(क) अहं मम खड्गेन (खड्ग) स्तम्भं भक्ष्यामि।\n(ख) प्रह्लादः गजस्य पददलनेन (पददलन) अपि जीवति।\n(ग) सर्वे जनाः नारायणेन (नारायण) अनुगृहीताः।\n(घ) निजनखैः (निजनख) तव वक्षःस्थलं विदीर्य मारयिष्यामि।\n(ङ) बालिकाः शिक्षिकया (शिक्षिका) सह चर्चा कुर्वन्ति।",
+          "meaning": "Completed Sentences:\n(क) खड्ग → खड्गेन (With sword)\n(ख) पददलन → पददलनेन (By trampling under feet)\n(ग) नारायण → नारायणेन (By Lord Narayana)\n(घ) निजनख → निजनखैः (With own claws / plural)\n(ङ) शिक्षिका → शिक्षिकया (With the female teacher)",
+          "hindi_gloss": "रिक्त स्थान पूर्ति (तृतीया विभक्ति):\n(क) खड्गेन (तलवार से)\n(ख) पददलनेन (पैरों तले कुचलने से)\n(ग) नारायणेन (नारायण के द्वारा)\n(घ) निजनखैः (अपने नाखूनों से)\n(ङ) शिक्षिकया (शिक्षिका के साथ)",
+          "paragraphTranslation": "तृतीया विभक्ति पदों द्वारा वाक्यों की व्याकरणसम्मत पूर्ति।",
+          "words": [
+            "खड्गेन",
+            "पददलनेन",
+            "नारायणेन",
+            "निजनखैः",
+            "शिक्षिकया"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "६. उदाहरणानुसारं संयोज्य लिखन्तु — गुण-सन्धिः (पृष्ठम् ८१)",
+          "meaning": "6. Join the words according to the rules of Guna Sandhi (Page 81):",
+          "paragraphTranslation": "६. उदाहरण के अनुसार गुण-सन्धि करके लिखिए (पृष्ठ ८१):",
+          "words": [
+            "६.",
+            "उदाहरणानुसारं",
+            "संयोज्य",
+            "लिखन्तु",
+            "गुण-सन्धिः"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) रमा + ईशः = _______ (ख) सुर + ईश्वरः = _______\n(ग) नाग + इन्द्रः = _______ (घ) गज + इन्द्रः = _______\n(ङ) माता + इव = _______ (च) राम + इति = _______\n(छ) पर + उपकारः = _______ (ज) मम + उपरि = _______\n(झ) सूर्य + उदयः = _______ (ञ) रामेण + उक्तम् = _______\n(ट) तस्य + उपरि = _______",
+          "answer_label": "सन्धि-रूपाणि",
+          "answer_sanskrit": "(क) रमा + ईशः = रमेशः\n(ख) सुर + ईश्वरः = सुरेश्वरः\n(ग) नाग + इन्द्रः = नागेन्द्रः\n(घ) गज + इन्द्रः = गजेन्द्रः\n(ङ) माता + इव = मातेव\n(च) राम + इति = रामेति\n(छ) पर + उपकारः = परोपकारः\n(ज) मम + उपरि = ममोपरि\n(झ) सूर्य + उदयः = सूर्योदयः\n(ञ) रामेण + उक्तम् = रामेणोक्तम्\n(ट) तस्य + उपरि = तस्योपरि",
+          "meaning": "Guna Sandhi Rules (अ/आ + इ/ई = ए; अ/आ + उ/ऊ = ओ):\n(क) रमा + ईशः = रमेशः\n(ख) सुर + ईश्वरः = सुरेश्वरः\n(ग) नाग + इन्द्रः = नागेन्द्रः\n(घ) गज + इन्द्रः = गजेन्द्रः\n(ङ) माता + इव = मातेव\n(च) राम + इति = रामेति\n(छ) पर + उपकारः = परोपकारः\n(ज) मम + उपरि = ममोपरि\n(झ) सूर्य + उदयः = सूर्योदयः\n(ञ) रामेण + उक्तम् = रामेणोक्तम्\n(ट) तस्य + उपरि = तस्योपरि",
+          "hindi_gloss": "गुण सन्धि नियम (अ/आ + इ/ई = ए; अ/आ + उ/ऊ = ओ):\n(क) रमेशः (ख) सुरेश्वरः (ग) नागेन्द्रः (घ) गजेन्द्रः (ङ) मातेव (च) रामेति (छ) परोपकारः (ज) ममोपरि (झ) सूर्योदयः (ञ) रामेणोक्तम् (ट) तस्योपरि।",
+          "paragraphTranslation": "गुण सन्धि के सभी उदाहरणों का यथार्थ संधिकृत रूप।",
+          "words": [
+            "रमेशः",
+            "सुरेश्वरः",
+            "नागेन्द्रः",
+            "गजेन्द्रः",
+            "मातेव",
+            "रामेति",
+            "परोपकारः",
+            "ममोपरि",
+            "सूर्योदयः",
+            "रामेणोक्तम्",
+            "तस्योपरि"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "७. उदाहरणानुसारं वाक्यानि वर्तमानकालतः भविष्यत्-काले परिवर्तयन्तु — (पृष्ठम् ८२)",
+          "meaning": "7. Transform sentences from Present Tense (लट्) to Future Tense (लृट्) (Page 82):",
+          "paragraphTranslation": "७. उदाहरण के अनुसार वाक्यों को वर्तमान काल से भविष्यत् काल (लृट् लकार) में बदलिए (पृष्ठ ८२):",
+          "words": [
+            "७.",
+            "उदाहरणानुसारं",
+            "वाक्यानि",
+            "वर्तमानकालतः",
+            "भविष्यत्-काले",
+            "परिवर्तयन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) सा आपणं गच्छति। → _______\n(ख) रमा क्रीडाङ्गणे क्रीडति। → _______\n(ग) बालाः फलानि खादन्ति। → _______\n(घ) ताः योगासनं कुर्वन्ति। → _______\n(ङ) अहं नित्यं पठामि। → _______\n(च) त्वं कस्मिन् विषये वदसि ? → _______\n(छ) आवां पाठं लिखावः। → _______\n(ज) यूयं शालां गच्छथ। → _______\n(झ) ते बालिके वैद्ये भवतः। → _______\n(ञ) वयं श्लोकान् स्मरामः। → _______",
+          "answer_label": "परिवर्तित-वाक्यानि",
+          "answer_sanskrit": "(क) सा आपणं गच्छति। → सा आपणं गमिष्यति ।\n(ख) रमा क्रीडाङ्गणे क्रीडति। → रमा क्रीडाङ्गणे क्रीडिष्यति।\n(ग) बालाः फलानि खादन्ति। → बालाः फलानि खादिष्यन्ति।\n(घ) ताः योगासनं कुर्वन्ति। → ताः योगासनं करिष्यन्ति।\n(ङ) अहं नित्यं पठामि। → अहं नित्यं पठिष्यामि।\n(च) त्वं कस्मिन् विषये वदसि ? → त्वं कस्मिन् विषये वदिष्यसि ?\n(छ) आवां पाठं लिखावः। → आवां पाठं लेखिष्यावः।\n(ज) यूयं शालां गच्छथ। → यूयं शालां गमिष्यथ।\n(झ) ते बालिके वैद्ये भवतः। → ते बालिके वैद्ये भविष्यतः।\n(ञ) वयं श्लोकान् स्मरामः। → वयं श्लोकान् स्मरिष्यामः।",
+          "meaning": "Present (लट्) to Future (लृट्) Tense Transformation:\n(क) गच्छति → गमिष्यति (Will go)\n(ख) क्रीडति → क्रीडिष्यति (Will play)\n(ग) खादन्ति → खादिष्यन्ति (Will eat)\n(घ) कुर्वन्ति → करिष्यन्ति (Will do)\n(ङ) पठामि → पठिष्यामि (Will read)\n(च) वदसि → वदिष्यसि (Will speak)\n(छ) लिखावः → लेखिष्यावः (We two will write)\n(ज) गच्छथ → गमिष्यथ (You all will go)\n(झ) भवतः → भविष्यतः (They two will become)\n(ञ) स्मरामः → स्मरिष्यामः (We will remember)",
+          "hindi_gloss": "लट् से लृट् लकार परिवर्तन:\n(क) गमिष्यति (ख) क्रीडिष्यति (ग) खादिष्यन्ति (घ) करिष्यन्ति (ङ) पठिष्यामि (च) वदिष्यसि (छ) लेखिष्यावः (ज) गमिष्यथ (झ) भविष्यतः (ञ) स्मरिष्यामः।",
+          "paragraphTranslation": "वर्तमानकालिक क्रियापदों का भविष्यत्कालिक क्रियापदों में रूपान्तरण।",
+          "words": [
+            "गमिष्यति",
+            "क्रीडिष्यति",
+            "खादिष्यन्ति",
+            "करिष्यन्ति",
+            "पठिष्यामि",
+            "वदिष्यसि",
+            "लेखिष्यावः",
+            "गमिष्यथ",
+            "भविष्यतः",
+            "स्मरिष्यामः"
+          ]
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "८. उदाहरणानुसारं रिक्तस्थानानि पूरयन्तु — लृट्-लकारः (पृष्ठम् ८२)",
+          "meaning": "8. Complete the Singular, Dual, and Plural forms in Future Tense (लृट्-लकारः) (Page 82):",
+          "paragraphTranslation": "८. उदाहरण के अनुसार लृट् लकार (भविष्यत् काल) के एकवचन, द्विवचन और बहुवचन रूप पूरे कीजिए (पृष्ठ ८२):",
+          "words": [
+            "८.",
+            "उदाहरणानुसारं",
+            "रिक्तस्थानानि",
+            "पूरयन्तु",
+            "लृट्-लकारः"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "(क) बालकः कार्यं करिष्यति। → बालकौ कार्यं _______ | बालकाः कार्यं _______\n(ख) सः शालां गमिष्यति। → तौ शालां _______ | ते शालां _______\n(ग) त्वं श्लोकं वदिष्यसि। → युवां श्लोकं _______ | यूयं श्लोकं _______\n(घ) अहं पुस्तकं दास्यामि। → आवां पुस्तकानि _______ | वयं पुस्तकानि _______\n(ङ) छात्रा प्रदर्शनीं द्रक्ष्यति। → छात्रे प्रदर्शनीं _______ | छात्राः प्रदर्शनीं _______\n(च) अहं भगवद्गीतां श्रोष्यामि। → आवां भगवद्गीतां _______ | वयं भगवद्गीतां _______\n(छ) बालिका कथां लेखिष्यति। → बालिके कथां _______ | बालिकाः कथां _______\n(ज) त्वं किं खादिष्यसि ? → युवां किं _______ ? | यूयं किं _______ ?",
+          "answer_label": "लृट्-लकार तालिका",
+          "answer_sanskrit": "(क) एकवचनम्: बालकः कार्यं करिष्यति। | द्विवचनम्: बालकौ कार्यं करिष्यतः । | बहुवचनम्: बालकाः कार्यं करिष्यन्ति।\n(ख) एकवचनम्: सः शालां गमिष्यति। | द्विवचनम्: तौ शालां गमिष्यतः। | बहुवचनम्: ते शालां गमिष्यन्ति।\n(ग) एकवचनम्: त्वं श्लोकं वदिष्यसि। | द्विवचनम्: युवां श्लोकं वदिष्यथः। | बहुवचनम्: यूयं श्लोकं वदिष्यथ।\n(घ) एकवचनम्: अहं पुस्तकं दास्यामि। | द्विवचनम्: आवां पुस्तकानि दास्यावः। | बहुवचनम्: वयं पुस्तकानि दास्यामः।\n(ङ) एकवचनम्: छात्रा प्रदर्शनीं द्रक्ष्यति। | द्विवचनम्: छात्रे प्रदर्शनीं द्रक्ष्यतः। | बहुवचनम्: छात्राः प्रदर्शनीं द्रक्ष्यन्ति।\n(च) एकवचनम्: अहं भगवद्गीतां श्रोष्यामि। | द्विवचनम्: आवां भगवद्गीतां श्रोष्यावः। | बहुवचनम्: वयं भगवद्गीतां श्रोष्यामः।\n(छ) एकवचनम्: बालिका कथां लेखिष्यति। | द्विवचनम्: बालिके कथां लेखिष्यतः। | बहुवचनम्: बालिकाः कथां लेखिष्यन्ति।\n(ज) एकवचनम्: त्वं किं खादिष्यसि ? | द्विवचनम्: युवां किं खादिष्यथः ? | बहुवचनम्: यूयं किं खादिष्यथ ?",
+          "meaning": "Future Tense (लृट् लकार) Declension Grid:\n(क) करिष्यति | करिष्यतः | करिष्यन्ति\n(ख) गमिष्यति | गमिष्यतः | गमिष्यन्ति\n(ग) वदिष्यसि | वदिष्यथः | वदिष्यथ\n(घ) दास्यामि | दास्यावः | दास्यामः\n(ङ) द्रक्ष्यति | द्रक्ष्यतः | द्रक्ष्यन्ति\n(च) श्रोष्यामि | श्रोष्यावः | श्रोष्यामः\n(छ) लेखिष्यति | लेखिष्यतः | लेखिष्यन्ति\n(ज) खादिष्यसि | खादिष्यथः | खादिष्यथ",
+          "hindi_gloss": "लृट् लकार वचन रूप:\n(क) करिष्यति | करिष्यतः | करिष्यन्ति (करेगा)\n(ख) गमिष्यति | गमिष्यतः | गमिष्यन्ति (जाएगा)\n(ग) वदिष्यसि | वदिष्यथः | वदिष्यथ (बोलेगा)\n(घ) दास्यामि | दास्यावः | दास्यामः (दूँगा)\n(ङ) द्रक्ष्यति | द्रक्ष्यतः | द्रक्ष्यन्ति (देखेगा)\n(च) श्रोष्यामि | श्रोष्यावः | श्रोष्यामः (सुनूँगा)\n(छ) लेखिष्यति | लेखिष्यतः | लेखिष्यन्ति (लिखेगी)\n(ज) खादिष्यसि | खादिष्यथः | खादिष्यथ (खाएगा)",
+          "paragraphTranslation": "लृट् लकार के प्रथम, मध्यम और उत्तम पुरुष के एकवचन, द्विवचन और बहुवचन रूप।",
+          "words": [
+            "करिष्यति",
+            "करिष्यतः",
+            "करिष्यन्ति",
+            "गमिष्यति",
+            "वदिष्यसि",
+            "दास्यामि",
+            "द्रक्ष्यति",
+            "श्रोष्यामि",
+            "लेखिष्यति",
+            "खादिष्यसि"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "भाग ४: योग्यता-विस्तारः — नृसिंहावतारः अष्टादशपुराणानि च (पृष्ठानि ८३, ८४)",
+          "meaning": "Part 4: Extended Learning (Yogyata Vistara) - Context of Narasimha Avatar and the 18 Puranas (Pages 83–84)",
+          "paragraphTranslation": "भाग ४: योग्यता-विस्तार — नृसिंहावतार का ऐतिहासिक सन्दर्भ एवं अष्टादश महापुराण (पृष्ठ ८३ व ८४)",
+          "words": [
+            "भाग",
+            "४:",
+            "योग्यता-विस्तारः",
+            "नृसिंहावतारः",
+            "अष्टादशपुराणानि",
+            "पृष्ठानि",
+            "८३",
+            "८४"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "नृसिंहावतारस्य प्रसङ्गः ऐतिहासिकं महत्त्वं च (Context of Narasimha Avatar):",
+          "answer_label": "विस्तृत-विवरणम्",
+          "answer_sanskrit": "१. अस्य प्रवृत्तस्य विवरणं नृसिंहपुराणे श्रीमद्भागवतपुराणे च वर्तते। अनयोः पुराणयोः रचयिता महर्षि-वेदव्यासः।\n२. बिहारराज्ये पूर्णियामण्डले बनमनखी-ग्रामे 'सिकलीगढ़ धरहरा' नाम्ना ऐतिहासिकं प्रसिद्धं स्थानम् अस्ति।\n३. अत्रैव भगवान् नृसिंहः प्रादुर्भूतः इति जनविश्वासः अस्ति। अत्रैव हिरण्यकशिपोः वधं कृत्वा प्रह्लादं रक्षितवान्।\n४. अद्यापि अत्र 'माणिक्यस्तम्भः' नाम विशालः स्तम्भः अस्ति।\n५. अत्रैव हिरण्यकशिपोः अनुजायाः होलिकायाः दहनम् अभवत्। तस्मात् कालात् आरभ्य भारते होलिका-महोत्सवः (वसन्त-नवसस्येष्टिः) आचर्यते।",
+          "meaning": "Key Cultural Facts of Narasimha Avatar:\n1. Described in Narasimha Purana and Srimad Bhagavata Purana, composed by Sage Vedavyasa.\n2. In Bihar state, Purnia district, Banmankhi village, there is a historical site named Sikligarh Dharhara.\n3. Popular belief holds that Lord Narasimha manifested at this very site and protected Prahlada by slaying Hiranyakashipu.\n4. Even today, a massive ancient pillar named 'Manikya Stambh' stands at this location.\n5. Holika was consumed by fire here, originating the national festival of Holi, celebrated in Vedic tradition as Vasantotsava (Spring Festival of the new crop).",
+          "hindi_gloss": "नृसिंहावतार का सन्दर्भ एवं ऐतिहासिकता:\n१. इस प्रसंग का वर्णन नृसिंहपुराण और श्रीमद्भागवत पुराण में है, जिनके रचयिता महर्षि वेदव्यास हैं।\n२. बिहार राज्य के पूर्णिया जिले के बनमनखी गाँव में 'सिकलीगढ़ धरहरा' नामक ऐतिहासिक स्थल है।\n३. जनविश्वास है कि इसी स्थान पर भगवान नृसिंह प्रकट हुए थे और हिरण्यकशिपु का वध कर प्रह्लाद की रक्षा की थी।\n४. आज भी यहाँ 'माणिक्य स्तम्भ' नामक विशाल स्तम्भ विद्यमान है।\n५. यहीं होलिका का दहन हुआ था, जिसके बाद से पूरे भारत में होलिका-महोत्सव (होली) मनाया जाता है। वैदिक काल में इसे 'वासन्तीय-नवसस्येष्टि' (नवान्न पर्व) भी कहा जाता था।",
+          "paragraphTranslation": "नृसिंहावतार एवं होलिका दहन का ऐतिहासिक व सांस्कृतिक परिचय।",
+          "words": [
+            "नृसिंहपुराणे",
+            "श्रीमद्भागवतपुराणे",
+            "वेदव्यासः",
+            "सिकलीगढ़",
+            "माणिक्यस्तम्भः",
+            "होलिकोत्सवः"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "अष्टादशपुराण-स्मरणश्लोकः (18 Puranas Mnemonic Shloka):\n\nमद्वयं भद्वयं चैव ब्रत्रयं वचतुष्टयम् ।\nअनापलिंगकूस्कानि पुराणानि प्रचक्षते ॥",
+          "answer_label": "श्लोक-व्याख्या",
+          "answer_sanskrit": "अन्वयः — मद्वयं (मत्स्य, मार्कण्डेय), भद्वयं (भागवत, भविष्य), ब्रत्रयं (ब्रह्म, ब्रह्माण्ड, ब्रह्मवैवर्त), वचतुष्टयम् (वायु, वराह, वामन, विष्णु), अनापलिंगकूस्कानि (अग्नि, नारद, पद्म, लिङ्ग, गरुड, कूर्म, स्कन्द) च पुराणानि प्रचक्षते।",
+          "meaning": "Mnemonic verse for memorizing the 18 Puranas:\n'Ma' two times, 'Bha' two times, 'Bra' three times, 'Va' four times, and the initials A-Nā-Pa-Liṅ-Kū-Ska designate the eighteen Puranas.",
+          "hindi_gloss": "अठारह महापुराणों को याद रखने का प्रसिद्ध श्लोक:\n'म' से दो (मत्स्य, मार्कण्डेय), 'भ' से दो (भागवत, भविष्य), 'ब्र' से तीन (ब्रह्म, ब्रह्माण्ड, ब्रह्मवैवर्त), 'व' से चार (वायु, वराह, वामन, विष्णु), तथा अ-ना-प-लिंग-कू-स्क से छह (अग्नि, नारद, पद्म, लिंग, गरुड, कूर्म, स्कन्द)।",
+          "paragraphTranslation": "अठारह महापुराणों के नाम सरलता से याद रखने का प्राचीन सूत्र-श्लोक।",
+          "words": [
+            "मद्वयं",
+            "भद्वयं",
+            "ब्रत्रयं",
+            "वचतुष्टयम्",
+            "अनापलिंगकूस्कानि",
+            "पुराणानि",
+            "प्रचक्षते"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "अष्टादश-महापुराणानि (The Complete 18 Mahapuranas Directory):\n१. मत्स्यपुराणम् | २. मार्कण्डेयपुराणम् | ३. भागवतपुराणम् | ४. भविष्यपुराणम्\n५. ब्रह्मपुराणम् | ६. ब्रह्माण्डपुराणम् | ७. ब्रह्मवैवर्तपुराणम्\n८. वायुपुराणम् | ९. वराहपुराणम् | १०. वामनपुराणम् | ११. विष्णुपुराणम्\n१२. अग्निपुराणम् | १३. नारदपुराणम् | १४. पद्मपुराणम् | १५. लिङ्गपुराणम्\n१६. गरुडपुराणम् | १७. कूर्मपुराणम् | १८. स्कन्दपुराणम्",
+          "answer_label": "अष्टादश-पुराणानि",
+          "answer_sanskrit": "मद्वयम्: १. मत्स्यपुराणम्, २. मार्कण्डेयपुराणम्\nभद्वयम्: ३. भागवतपुराणम्, ४. भविष्यपुराणम्\nब्रत्रयम्: ५. ब्रह्मपुराणम्, ६. ब्रह्माण्डपुराणम्, ७. ब्रह्मवैवर्तपुराणम्\nवचतुष्टयम्: ८. वायुपुराणम्, ९. वराहपुराणम्, १०. वामनपुराणम्, ११. विष्णुपुराणम्\nअनापलिङ्गकूस्कानि: १२. अग्निपुराणम्, १३. नारदपुराणम्, १४. पद्मपुराणम्, १५. लिङ्गपुराणम्, १६. गरुडपुराणम्, १७. कूर्मपुराणम्, १८. स्कन्दपुराणम्",
+          "meaning": "List of the 18 Major Puranas:\n1. Matsya, 2. Markandeya, 3. Bhagavata, 4. Bhavishya, 5. Brahma, 6. Brahmanda, 7. Brahmavaivarta, 8. Vayu, 9. Varaha, 10. Vamana, 11. Vishnu, 12. Agni, 13. Narada, 14. Padma, 15. Linga, 16. Garuda, 17. Kurma, 18. Skanda.",
+          "hindi_gloss": "१८ महापुराणों की प्रामाणिक सूची:\n१. मत्स्यपुराण २. मार्कण्डेयपुराण ३. भागवतपुराण ४. भविष्यपुराण ५. ब्रह्मपुराण ६. ब्रह्माण्डपुराण ७. ब्रह्मवैवर्तपुराण ८. वायुपुराण ९. वराहपुराण १०. वामनपुराण ११. विष्णुपुराण १२. अग्निपुराण १३. नारदपुराण १४. पद्मपुराण १५. लिङ्गपुराण १६. गरुडपुराण १७. कूर्मपुराण १८. स्कन्दपुराण।",
+          "paragraphTranslation": "अष्टादश महापुराणों की पूर्ण नामावली।",
+          "words": [
+            "मत्स्यपुराणम्",
+            "मार्कण्डेयपुराणम्",
+            "भागवतपुराणम्",
+            "भविष्यपुराणम्",
+            "ब्रह्मपुराणम्",
+            "ब्रह्माण्डपुराणम्",
+            "ब्रह्मवैवर्तपुराणम्",
+            "वायुपुराणम्",
+            "विष्णुपुराणम्",
+            "अग्निपुराणम्",
+            "स्कन्दपुराणम्"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "परियोजनाकार्यम् — पृष्ठम् ८४ (Project Work)",
+          "meaning": "Project Work (Page 84): The Sixteen Samskaras and Stories from Puranas",
+          "paragraphTranslation": "परियोजनाकार्यम् (पृष्ठ ८४): षोडश संस्कार एवं पौराणिक कथा-सङ्ग्रह",
+          "words": [
+            "परियोजनाकार्यम्",
+            "पृष्ठम्",
+            "८४",
+            "षोडश-संस्काराः",
+            "पौराणिककथा"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "प्रश्नः १ — माता-पित्रोः शिक्षकस्य च साहाय्येन मानवानां षोडश-संस्काराणां नामानि लिखन्तु।",
+          "answer_label": "षोडश-संस्काराः",
+          "answer_sanskrit": "मानवजीवनस्य षोडश-संस्काराः:\n१. गर्भाधानम् (Garbhadhana)\n२. पुंसवनम् (Pumsavana)\n३. सीमन्तोन्नयनम् (Simantonnayana)\n४. जातकर्म (Jatakarma)\n५. नामकरणम् (Namakarana)\n६. निष्क्रमणम् (Nishkramana)\n७. अन्नप्राशनम् (Annaprashana)\n८. चूडाकर्म / मुण्डनम् (Chudakarma / Mundana)\n९. कर्णवेधः (Karnavedha)\n१०. विद्यारम्भः (Vidyarambha)\n११. उपनयनम् / यज्ञोपवीतम् (Upanayana)\n१२. वेदारम्भः (Vedarambha)\n१३. केशान्तः / गोदानम् (Keshanta / Godana)\n१४. समावर्तनम् (Samavartana)\n१५. विवाहः (Vivaha)\n१६. अन्त्येष्टिः (Antyeshti)",
+          "meaning": "Question 1: Write down the names of the sixteen life-stage rituals (Shodasha Samskaras) of human life with the help of parents and teachers.\nAnswer: The 16 Samskaras from birth to beyond:\n1. Garbhadhana, 2. Pumsavana, 3. Simantonnayana, 4. Jatakarma, 5. Namakarana, 6. Nishkramana, 7. Annaprashana, 8. Chudakarma, 9. Karnavedha, 10. Vidyarambha, 11. Upanayana, 12. Vedarambha, 13. Keshanta, 14. Samavartana, 15. Vivaha, 16. Antyeshti.",
+          "hindi_gloss": "प्रश्न १: माता-पिता और शिक्षक की सहायता से मनुष्य के १६ संस्कारों के नाम लिखिए।\nउत्तर: १. गर्भाधान २. पुंसवन ३. सीमन्तोन्नयन ४. जातकर्म ५. नामकरण ६. निष्क्रमण ७. अन्नप्राशन ८. चूडाकर्म (मुंडन) ९. कर्णवेध १०. विद्यारम्भ ११. उपनयन (जनेऊ) १२. वेदारम्भ १३. केशान्त (गोदान) १४. समावर्तन १५. विवाह १६. अन्त्येष्टि।",
+          "paragraphTranslation": "भारतीय संस्कृति के षोडश (सोलह) संस्कारों की प्रामाणिक सूची।",
+          "words": [
+            "षोडश-संस्काराः",
+            "गर्भाधानम्",
+            "नामकरणम्",
+            "अन्नप्राशनम्",
+            "उपनयनम्",
+            "वेदारम्भः",
+            "विवाहः",
+            "अन्त्येष्टिः"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "प्रश्नः २ — पुराणेभ्यः कामपि एकां कथां संगृह्य लिखन्तु, कक्षायां श्रावयन्तु च।",
+          "answer_label": "कथा-सङ्ग्रहः (ध्रुवचरितम्)",
+          "answer_sanskrit": "विष्णुपुराणात् भक्तध्रुवस्य कथा:\nउत्तानपादस्य राजा आसीत्। तस्य सुनीतिः सुरुचिः इति द्वे भार्ये आस्ताम्। सुरुच्याः वचनेन सुनीतेः पुत्रः ध्रुवः पितुः अङ्के उपवेष्टुं न प्राप्नोत्। पञ्चवर्षीयः ध्रुवः वनं गत्वा भगवन्तं विष्णुं ध्यायन् कठोरं तपः अकरोत्। तस्य अनन्यभक्त्या प्रसन्नः श्रीहरिः प्रादुर्भूय तस्मै 'ध्रुवतारा' इति अचलपदं प्रादात्। अद्यापि सः आकाशे उत्तरे दिशि प्रकाशते।",
+          "meaning": "Question 2: Collect any one story from the Puranas, write it down, and narrate it to the class.\nAnswer: Story of Devotee Dhruva (from Vishnu Purana):\nKing Uttanapada had two queens, Suniti and Suruchi. Due to Suruchi's harsh words, Suniti's 5-year-old son Dhruva was forbidden to sit in his father's lap. The young boy went into the forest and undertook rigorous penance meditating on Lord Vishnu. Pleased by his unswerving devotion, Lord Vishnu appeared and blessed him with an eternal station as the Pole Star (Dhruva Tara), which shines unmoving in the northern sky.",
+          "hindi_gloss": "प्रश्न २: पुराणों से कोई एक कथा संकलित करके लिखिए और कक्षा में सुनाइए।\nउत्तर: विष्णुपुराण से भक्त ध्रुव की कथा:\nराजा उत्तानपाद के पुत्र ध्रुव को सौतेली माँ सुरुचि ने पिता की गोद में बैठने से रोक दिया। पाँच वर्ष के बालक ध्रुव ने वन में जाकर भगवान विष्णु की कठोर तपस्या की। उनकी अटूट भक्ति से प्रसन्न होकर भगवान विष्णु ने उन्हें उत्तर दिशा में आकाश में अमर और अचल 'ध्रुव तारा' का स्थान प्रदान किया।",
+          "paragraphTranslation": "विष्णुपुराण की प्रसिद्ध भक्त ध्रुव की प्रेरक कथा।",
+          "words": [
+            "विष्णुपुराणात्",
+            "भक्तध्रुवस्य",
+            "कथा",
+            "उत्तानपादस्य",
+            "तपः",
+            "ध्रुवतारा"
+          ]
         }
       ]
     },

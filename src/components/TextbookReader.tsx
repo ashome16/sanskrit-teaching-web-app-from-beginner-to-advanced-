@@ -747,10 +747,16 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                                   ? 'श्लोक'
                                   : jump.label.includes('कथा')
                                     ? 'कथा'
-                                    : jump.label.includes('लाभ')
-                                      ? 'लाभाः'
-                                      : jump.label.includes('स्वास्थ्य') || jump.label.includes('नियम')
-                                        ? 'स्वास्थ्य'
+                                    : jump.label.includes('दृश्य')
+                                      ? (jump.label.match(/दृश्यम्\s*([०-९1-9१-९]+)/) ? `दृश्य ${jump.label.match(/दृश्यम्\s*([०-९1-9१-९]+)/)![1]}` : 'दृश्यम्')
+                                      : jump.label.includes('नाटक')
+                                        ? 'नाटकम्'
+                                        : jump.label.includes('विस्तार') || jump.label.includes('पुराण')
+                                          ? 'विस्तारः'
+                                          : jump.label.includes('लाभ')
+                                            ? 'लाभाः'
+                                            : jump.label.includes('स्वास्थ्य') || jump.label.includes('नियम')
+                                              ? 'स्वास्थ्य'
                                         : jump.label.includes('पृष्ठम् ५६') || jump.label.includes('पृष्ठ ५६')
                                           ? 'पृष्ठ ५६'
                                           : jump.label.includes('पृष्ठम् ३८') || jump.label.includes('पृष्ठ ३८') || jump.label.includes('Page 38')
