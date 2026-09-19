@@ -735,15 +735,27 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                       ? 'अभ्यास'
                       : jump.kind === 'exercise-header' && (/^[०-९1-9१-९]/.test(jump.label))
                         ? jump.label.split(' ')[0]
-                        : jump.label.includes('संवाद')
-                          ? 'संवादः'
-                          : jump.label.includes('गीत')
-                            ? 'गीतम्'
-                            : jump.label.includes('मन्त्र')
-                              ? 'मन्त्राः'
-                              : jump.label.includes('परियोजना')
-                                ? 'परियोजना'
-                                : jump.label.includes('श्लोक')
+                        : jump.label.includes('भौगोलिक')
+                          ? 'भूगोलः'
+                          : jump.label.includes('कारागार')
+                            ? 'कारागारः'
+                            : jump.label.includes('पर्यटन')
+                              ? 'पर्यटनम्'
+                              : jump.label.includes('जलक्रीडा')
+                                ? 'जलक्रीडा'
+                                : jump.label.includes('आजीविका')
+                                  ? 'आजीविका'
+                                  : jump.label.includes('प्रशस्ति')
+                                    ? 'प्रशस्तिः'
+                                    : jump.label.includes('संवाद')
+                                      ? 'संवादः'
+                                      : jump.label.includes('गीत')
+                                        ? 'गीतम्'
+                                        : jump.label.includes('मन्त्र')
+                                          ? 'मन्त्राः'
+                                          : jump.label.includes('परियोजना')
+                                            ? 'परियोजना'
+                                            : jump.label.includes('श्लोक')
                                   ? 'श्लोक'
                                   : jump.label.includes('कथा')
                                     ? 'कथा'

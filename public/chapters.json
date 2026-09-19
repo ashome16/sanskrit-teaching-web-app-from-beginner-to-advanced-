@@ -16082,122 +16082,654 @@
     {
       "id": "gsde111",
       "fileName": "gsde111.txt",
-      "title": "Chapter 11: द्वीपेषु रम्यः द्वीपोऽण्डमानः",
+      "title": "Chapter 11: एकादशः पाठः : द्वीपेषु रम्यः द्वीपोऽण्डमानः",
       "sentences": [
         {
-          "sanskrit": "१. पाठस्य मूल-संवादः (अण्डमान द्वीप की महिमा)",
-          "meaning": "Classroom Introduction: The Scenic Andaman and Nicobar Islands",
-          "paragraphTranslation": "अण्डमान द्वीप की प्राकृतिक सुषमा और देशभक्ति",
+          "sanskrit": "भाग १: कक्षा-संवादः — पाठ-प्रवेशः (पृष्ठम् ११५)",
+          "meaning": "Part 1: Classroom Dialogue — Lesson Introduction (Page 115)",
+          "paragraphTranslation": "भाग १: कक्षा-संवाद — पाठ-प्रवेश (पृष्ठ ११५)",
           "words": [
-            "पाठस्य",
-            "मूल-संवादः"
+            "भाग",
+            "१",
+            "कक्षा",
+            "संवादः",
+            "पाठ",
+            "प्रवेशः",
+            "पृष्ठम्",
+            "११५"
           ],
           "kind": "section-header"
         },
         {
-          "sanskrit": "अध्यापिका: छात्राः ! एतत् चित्रं पश्यन्तु। एतत् आकर्षकं खलु ? एतत् स्थानं कुत्र अस्ति जानन्ति किम् ?",
-          "meaning": "Teacher: Students! Look at this breathtaking picture. How stunning it is! Do you know where this paradise is located?",
-          "paragraphTranslation": "अध्यापिका - छात्रो! इस चित्र को देखो। यह आकर्षक है ना? यह स्थान कहाँ है, क्या आप सब जानते हैं?",
+          "sanskrit": "अध्यापिका – छात्राः ! एतत् चित्रं पश्यन्तु। एतत् आकर्षकं खलु?",
+          "meaning": "Teacher: Students! Look at this picture. It is very attractive, isn't it?",
+          "paragraphTranslation": "अध्यापिका: बच्चों! इस चित्र को देखो। यह बहुत आकर्षक है न?",
           "words": [
-            "अध्यापिका:",
+            "अध्यापिका",
             "छात्राः",
-            "!",
             "एतत्",
             "चित्रं",
             "पश्यन्तु",
-            "एतत्",
             "आकर्षकं",
-            "खलु",
+            "खलु"
+          ]
+        },
+        {
+          "sanskrit": "छात्राः – आम् आचार्य ! बहु आकर्षकम् अस्ति।",
+          "meaning": "Students: Yes Teacher! It is extremely attractive.",
+          "paragraphTranslation": "छात्र: हाँ आचार्य! यह बहुत ही आकर्षक है।",
+          "words": [
+            "छात्राः",
+            "आम्",
+            "आचार्य",
+            "बहु",
+            "आकर्षकम्",
+            "अस्ति"
+          ]
+        },
+        {
+          "sanskrit": "अध्यापिका – एतत् स्थानं कुत्र अस्ति, भवन्तः जानन्ति किम्?",
+          "meaning": "Teacher: Do you know where this place is?",
+          "paragraphTranslation": "अध्यापिका: क्या आप जानते हैं कि यह स्थान कहाँ है?",
+          "words": [
+            "अध्यापिका",
             "एतत्",
             "स्थानं",
             "कुत्र",
             "अस्ति",
+            "भवन्तः",
             "जानन्ति",
-            "किम्",
-            "?"
+            "किम्"
           ]
         },
         {
-          "sanskrit": "अध्यापिका: एतत् स्थानम् अस्माकं देशस्य अण्डमान-निकोबार-द्वीपसमूहः अस्ति। अस्य राजधानी पोर्ट ब्लेयर (Port Blair) अस्ति।",
-          "meaning": "Teacher: This beautiful place is our nation's Andaman and Nicobar archipelago! Its capital is Port Blair.",
-          "paragraphTranslation": "अध्यापिका - यह स्थान हमारे देश का अण्डमान-निकोबार द्वीपसमूह है। इसकी राजधानी पोर्ट ब्लेयर है।",
+          "sanskrit": "छात्राः – नैव आचार्य !",
+          "meaning": "Students: Not at all, Teacher!",
+          "paragraphTranslation": "छात्र: नहीं आचार्य! (बिल्कुल नहीं जानते)।",
           "words": [
-            "अध्यापिका:",
+            "छात्राः",
+            "नैव",
+            "आचार्य"
+          ]
+        },
+        {
+          "sanskrit": "अध्यापिका – सावधानं पश्यन्तु। एतत् स्थानम् अस्माकं देशस्य कश्चन रमणीयः द्वीपः अस्ति। एतस्य विषयॆ किञ्चित् अद्य जानीमः।",
+          "meaning": "Teacher: Look carefully. This place is a beautiful island belonging to our country. Today we shall learn something about it.",
+          "paragraphTranslation": "अध्यापिका: ध्यान से देखो। यह स्थान हमारे देश का एक बहुत ही सुंदर द्वीप है। आज हम इसके बारे में कुछ बातें जानेंगे।",
+          "words": [
+            "अध्यापिका",
+            "सावधानं",
+            "पश्यन्तु",
             "एतत्",
             "स्थानम्",
             "अस्माकं",
             "देशस्य",
-            "अण्डमान-निकोबार-द्वीपसमूहः",
+            "कश्चन",
+            "रमणीयः",
+            "द्वीपः",
             "अस्ति",
-            "अस्य",
-            "राजधानी",
-            "पोर्ट",
-            "ब्लेयर",
-            "अस्ति।"
+            "एतस्य",
+            "विषये",
+            "किञ्चित्",
+            "अद्य",
+            "जानीमः"
           ]
         },
         {
-          "sanskrit": "अध्यापिका: अत्रैव ऐतिहासिकं सेल्यूलर-कारागारं (Cellular Jail) वर्तते, यत् पूर्वं 'कालापानी' इति नाम्ना प्रसिद्धम् आसीत्। तत्र स्वातन्त्र्यवीराः सावरकर-महोदय-प्रभृतयः देशभक्ताः कारावासं सोढवन्तः।",
-          "meaning": "Teacher: Right here stands the historic Cellular Jail, historically known as 'Kalapani', where patriotic freedom fighters including Swatantryaveer Savarkar endured imprisonment for India's independence.",
-          "paragraphTranslation": "अध्यापिका - यहीं ऐतिहासिक सेल्यूलर जेल है, जो पहले 'कालापानी' नाम से प्रसिद्ध थी। वहाँ वीर सावरकर जैसे देशभक्तों ने कारावास भोगा था।",
+          "sanskrit": "कक्षा-संवादः — भौगोलिकम् ऐतिहासिकं च स्वरूपम् (पृष्ठम् ११६)",
+          "meaning": "Classroom Dialogue — Geographical & Historical Identity (Page 116)",
+          "paragraphTranslation": "कक्षा-संवाद — भौगोलिक एवं ऐतिहासिक स्वरूप (पृष्ठ ११६)",
           "words": [
-            "अत्रैव",
+            "कक्षा",
+            "संवादः",
+            "भौगोलिकम्",
             "ऐतिहासिकं",
-            "सेल्यूलर-कारागारं",
-            "वर्तते",
-            "यत्",
-            "कालापानी",
-            "इति",
-            "नाम्ना",
-            "प्रसिद्धम्",
-            "आसीत्",
-            "स्वातन्त्र्यवीराः",
-            "सावरकर-महोदय-प्रभृतयः",
-            "देशभक्ताः",
-            "कारावासं",
-            "सोढवन्तः"
+            "च",
+            "स्वरूपम्",
+            "पृष्ठम्",
+            "११६"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "अध्यापिका – (भारतस्य मानचित्रे अण्डमान-द्वीपसमूहं दर्शयन्ती) एषः भारतस्य अष्टसु केन्द्रशासितप्रदेशेषु अन्यतमः अण्डमान-द्वीपसमूहः अस्ति। एतस्य राजधानी 'श्रीविजयपुरम्' अस्ति। पूर्वम् आङ्ग्लशासनेन अस्य नाम 'पोर्ट-ब्लेयर्' इति दत्तम् आसीत्।",
+          "meaning": "Teacher: (Showing the Andaman Islands on the map of India) This is the Andaman group of islands, which is one of the eight Union Territories of India. Its capital is 'Sri Vijaya Puram'. Previously, under British rule, it was named 'Port Blair'.",
+          "paragraphTranslation": "अध्यापिका: (भारत के नक्शे पर अण्डमान द्वीप समूह दिखाते हुए) यह भारत के आठ केन्द्रशासित प्रदेशों में से एक अण्डमान-निकोबार द्वीप समूह है। इसकी राजधानी 'श्रीविजयपुरम्' है। पहले ब्रिटिश शासनकाल में इसका नाम 'पोर्ट ब्लेयर' रखा गया था।",
+          "words": [
+            "अध्यापिका",
+            "भारतस्य",
+            "मानचित्रे",
+            "अण्डमान-द्वीपसमूहं",
+            "दर्शयन्ती",
+            "एषः",
+            "अष्टसु",
+            "केन्द्रशासितप्रदेशेषु",
+            "अन्यतमः",
+            "राजधानी",
+            "श्रीविजयपुरम्",
+            "आङ्ग्लशासनेन",
+            "पोर्ट-ब्लेयर्"
           ]
         },
         {
-          "sanskrit": "राजर्षिः: महोदये ! अहम् एकदा तत्र अगच्छम्। तत्र राधानगर-तटस्य विशिष्टं स्थानम् अस्ति। तत्रत्यः श्वेतरेणुः, नीलं निर्मलं जलं, प्रवालशृङ्खलाः (Coral Reefs) च अविस्मरणीयाः सन्ति।",
-          "meaning": "Rajarshi: Respected Madam! I once traveled there with my father. Radhanagar Beach is extraordinary— its powdery white sands, turquoise crystal-clear waters, and colorful coral reefs are unforgettable!",
-          "paragraphTranslation": "राजर्षि - महोदया! मैं एक बार वहाँ गया था। राधानगर तट अत्यंत सुंदर है— सफेद रेत, नीला साफ पानी और मूँगे की चट्टानें (कोरल रीफ) कभी न भूलने वाली हैं।",
+          "sanskrit": "सर्वे उत्साहिताः बालाः – महोदये ! वयम् एतस्य विषये किञ्चित् अधिकं ज्ञातुम् इच्छामः।",
+          "meaning": "All Excited Children: Madam! We wish to know more about this place.",
+          "paragraphTranslation": "सभी उत्साहित बच्चे: महोदया! हम इसके बारे में कुछ और बातें जानना चाहते हैं।",
           "words": [
-            "राजर्षिः:",
+            "सर्वे",
+            "उत्साहिताः",
+            "बालाः",
+            "महोदये",
+            "वयम्",
+            "विषये",
+            "किञ्चित्",
+            "अधिकं",
+            "ज्ञातुम्",
+            "इच्छामः"
+          ]
+        },
+        {
+          "sanskrit": "अध्यापिका – अस्तु। भोः सूर्यांश ! भवान् किमपि वक्तुम् इच्छति ? इति प्रतिभाति।",
+          "meaning": "Teacher: Alright. Suryaansh! It looks like you want to say something?",
+          "paragraphTranslation": "अध्यापिका: अच्छा। सूर्यांश! ऐसा लगता है कि तुम कुछ कहना चाहते हो?",
+          "words": [
+            "अध्यापिका",
+            "अस्तु",
+            "भोः",
+            "सूर्यांश",
+            "भवान्",
+            "किमपि",
+            "वक्तुम्",
+            "इच्छति",
+            "प्रतिभाति"
+          ]
+        },
+        {
+          "sanskrit": "सूर्यांशः – सत्यं महोदये ! ह्यः भवती एतस्य पाठस्य विषये सङ्केतं दत्तवती। तदा अहं गृहं गत्वा जालपुटे एतस्य अन्वेषणम् अकरवम्।",
+          "meaning": "Suryaansh: True, Madam! Yesterday you gave a hint about this chapter. So I went home and searched about it on the internet website.",
+          "paragraphTranslation": "सूर्यांश: सच है महोदया! कल आपने इस पाठ के बारे में संकेत (हिंट) दिया था। तब मैंने घर जाकर इंटरनेट वेबसाइट पर इसके बारे में खोजबीन की।",
+          "words": [
+            "सूर्यांशः",
+            "सत्यं",
+            "महोदये",
+            "ह्यः",
+            "भवती",
+            "पाठस्य",
+            "सङ्केतं",
+            "दत्तवती",
+            "गृहं",
+            "गत्वा",
+            "जालपुटे",
+            "अन्वेषणम्",
+            "अकरवम्"
+          ]
+        },
+        {
+          "sanskrit": "अध्यापिका – समीचीनं सूर्यांश ! भवान् किम् अन्विष्टवान् तत्र ?",
+          "meaning": "Teacher: Excellent, Suryaansh! What did you find there?",
+          "paragraphTranslation": "अध्यापिका: बहुत बढ़िया सूर्यांश! तुमने वहाँ क्या ढूँढ़ा?",
+          "words": [
+            "अध्यापिका",
+            "समीचीनं",
+            "सूर्यांश",
+            "भवान्",
+            "किम्",
+            "अन्विष्टवान्",
+            "तत्र"
+          ]
+        },
+        {
+          "sanskrit": "सूर्यांशः – महोदये ! रामायणकाले अस्य द्वीपस्य नाम 'हण्डुकमान्' आसीत्। एषः शब्दः प्रायः 'हनूमान्' इति शब्दस्य परिवर्तितं रूपम्। प्रथमशताब्द्याम् अस्य नाम 'अगादेमन्' इति आसीत्। ततः परं 'अङ्गादेमन्' जातम् इति सर्वकारस्य आधिकारिक-जालपुटे अहं दृष्टवान्।",
+          "meaning": "Suryaansh: Madam! During the Ramayana era, this island's name was 'Handukmaan'. This word is probably a modified form of 'Hanuman'. In the first century, its name was 'Agademan', which later became 'Angademan'. I saw this on the official government website.",
+          "paragraphTranslation": "सूर्यांश: महोदया! रामायण काल में इस द्वीप का नाम 'हण्डुकमान्' था। यह शब्द शायद 'हनूमान' शब्द का ही बदला हुआ रूप है। पहली शताब्दी में इसका नाम 'अगादेमन्' था, जो बाद में 'अङ्गादेमन्' हो गया। ऐसा मैंने सरकारी ऑफिशियल वेबसाइट पर देखा।",
+          "words": [
+            "सूर्यांशः",
+            "रामायणकाले",
+            "हण्डुकमान्",
+            "हनूमान्",
+            "परिवर्तितं",
+            "रूपम्",
+            "प्रथमशताब्द्याम्",
+            "अगादेमन्",
+            "अङ्गादेमन्",
+            "सर्वकारस्य",
+            "आधिकारिक-जालपुटे",
+            "दृष्टवान्"
+          ]
+        },
+        {
+          "sanskrit": "दीपेशः – अहो ! अस्य नाम्नः इतिहासः अद्भुतः अस्ति। किन्नु खलु भारतस्य इतिहासे अस्य द्वीपस्य काचित् विशिष्टा भूमिका अस्ति ?",
+          "meaning": "Deepesh: Wow! The history of its name is amazing. Does this island play any special role in Indian history?",
+          "paragraphTranslation": "दीपेश: अरे वाह! इसके नाम का इतिहास तो बड़ा अनोखा है। क्या भारत के इतिहास में इस द्वीप का कोई खास रोल रहा है?",
+          "words": [
+            "दीपेशः",
+            "अहो",
+            "नाम्नः",
+            "इतिहासः",
+            "अद्भुतः",
+            "इतिहासे",
+            "विशिष्टा",
+            "भूमिका",
+            "अस्ति"
+          ]
+        },
+        {
+          "sanskrit": "अध्यापिका – आम्, महती भूमिका अस्ति अस्य द्वीपस्य।",
+          "meaning": "Teacher: Yes, this island has played a massive historical role.",
+          "paragraphTranslation": "अध्यापिका: हाँ, भारत के इतिहास में इस द्वीप की बहुत बड़ी भूमिका है।",
+          "words": [
+            "अध्यापिका",
+            "आम्",
+            "महती",
+            "भूमिका",
+            "अस्ति",
+            "द्वीपस्य"
+          ]
+        },
+        {
+          "sanskrit": "कक्षा-संवादः — सेल्युलर्-कारागारः जनजातयः च (पृष्ठम् ११७)",
+          "meaning": "Classroom Dialogue — Cellular Jail & Tribal Habitats (Page 117)",
+          "paragraphTranslation": "कक्षा-संवाद — सेल्युलर जेल एवं जनजातियाँ (पृष्ठ ११७)",
+          "words": [
+            "कक्षा",
+            "संवादः",
+            "सेल्युलर्",
+            "कारागारः",
+            "जनजातयः",
+            "च",
+            "पृष्ठम्",
+            "११७"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "दीपा – कीदृशी भूमिका महोदये ! कृपया सूचयतु।",
+          "meaning": "Deepa: What kind of role, Madam? Please tell us.",
+          "paragraphTranslation": "दीपा: कैसी भूमिका महोदया? कृपया बताइए।",
+          "words": [
+            "दीपा",
+            "कीदृशी",
+            "भूमिका",
+            "महोदये",
+            "कृपया",
+            "सूचयतु"
+          ]
+        },
+        {
+          "sanskrit": "अध्यापिका – अस्मिन् द्वीपे 'सेल्युलर्' इति कारागारम् अस्ति। अस्य कारागारस्य अपरं नाम 'कालापानी' इत्यपि अस्ति।",
+          "meaning": "Teacher: There is a prison called 'Cellular Jail' on this island. Another name for this prison is 'Kaala Paani'.",
+          "paragraphTranslation": "अध्यापिका: इस द्वीप पर 'सेल्युलर' नाम की एक जेल है। इस जेल का दूसरा नाम 'कालापानी' भी है।",
+          "words": [
+            "अध्यापिका",
+            "अस्मिन्",
+            "द्वीपे",
+            "सेल्युलर्",
+            "कारागारम्",
+            "अपरं",
+            "नाम",
+            "कालापानी"
+          ]
+        },
+        {
+          "sanskrit": "सुधीरः – (साश्चर्यम्) आचार्ये ! अस्य कः अभिप्रायः ?",
+          "meaning": "Sudhir: (With surprise) Teacher! What does that imply?",
+          "paragraphTranslation": "सुधीर: (आश्चर्य के साथ) आचार्य! इसका क्या मतलब है?",
+          "words": [
+            "सुधीरः",
+            "साश्चर्यम्",
+            "आचार्ये",
+            "अभिप्रायः"
+          ]
+        },
+        {
+          "sanskrit": "सुरेखा – 'कालापानी' इति शब्दं श्रुत्वा एव भीतिः भवति।",
+          "meaning": "Surekha: Just hearing the word 'Kaala Paani' induces fear.",
+          "paragraphTranslation": "सुरेखा: 'कालापानी' शब्द सुनते ही डर लगने लगता है।",
+          "words": [
+            "सुरेखा",
+            "कालापानी",
+            "शब्दं",
+            "श्रुत्वा",
+            "भीतिः",
+            "भवति"
+          ]
+        },
+        {
+          "sanskrit": "अध्यापिका – सत्यमेव। भारतस्य स्वातन्त्र्यार्थं युद्धरतानां क्रान्तिकारिणां दमनार्थं ब्रिटिशजनैः निर्मितं त्रितलात्मकम् एतत् कारागारम्। अत्रैव महान् देशभक्तः स्वातन्त्र्यवीरः सावरकरः मातृभूमेः रक्षणाय दश वर्षाणि यावत् कल्पनातीतं घोरं कष्टं सोढवान्।",
+          "meaning": "Teacher: Absolutely true. This three-storied jail was constructed by the British to crush the revolutionaries fighting for India's freedom. It was right here that the great patriot Swatantraveer Savarkar endured unimaginable and horrifying tortures for ten long years to protect the motherland.",
+          "paragraphTranslation": "अध्यापिका: बिल्कुल सच। भारत की आज़ादी के लिए लड़ने वाले क्रांतिकारियों को दबाने के लिए अंग्रेजों द्वारा बनाई गई यह एक तीन मंजिला जेल थी। यहीं पर महान देशभक्त स्वातन्त्र्यवीर सावरकर ने मातृभूमि की रक्षा के लिए 10 सालों तक सोच से परे भयानक कष्टों को सहन किया था।",
+          "words": [
+            "अध्यापिका",
+            "सत्यमेव",
+            "स्वातन्त्र्यार्थं",
+            "युद्धरतानां",
+            "क्रान्तिकारिणां",
+            "दमनार्थं",
+            "ब्रिटिशजनैः",
+            "निर्मितं",
+            "त्रितलात्मकम्",
+            "कारागारम्",
+            "सावरकरः",
+            "मातृभूमेः",
+            "कल्पनातीतं",
+            "घोरं",
+            "कष्टं",
+            "सोढवान्"
+          ]
+        },
+        {
+          "sanskrit": "मुकुन्दः – अहो ! धन्याः ते स्वातन्त्र्यवीराः। तेषां बलिदानेन एव वयं सुखेन जीवामः।",
+          "meaning": "Mukund: Oh! Blessed are those freedom fighters. It is purely due to their sacrifices that we live peacefully today.",
+          "paragraphTranslation": "मुकुन्द: ओहो! धन्य हैं वे वीर स्वतंत्रता सेनानी। उनके बलिदान के कारण ही आज हम सब चैन से जी रहे हैं।",
+          "words": [
+            "मुकुन्दः",
+            "अहो",
+            "धन्याः",
+            "स्वातन्त्र्यवीराः",
+            "बलिदानेन",
+            "सुखेन",
+            "जीवामः"
+          ]
+        },
+        {
+          "sanskrit": "सूर्यांशः – आचार्ये ! एतत् स्थानं 'यूनेस्को' संस्थायाः वैश्विकसम्पदः सूच्याम् अपि संरक्षितम्।",
+          "meaning": "Suryaansh: Teacher! This place is also preserved in UNESCO's World Heritage List.",
+          "paragraphTranslation": "सूर्यांश: आचार्य! यह स्थान 'यूनेस्को' (UNESCO) संस्था की वर्ल्ड हेरिटेज साइट लिस्ट में भी सुरक्षित है।",
+          "words": [
+            "सूर्यांशः",
+            "आचार्ये",
+            "यूनेस्को",
+            "संस्थायाः",
+            "वैश्विकसम्पदः",
+            "सूच्याम्",
+            "संरक्षितम्"
+          ]
+        },
+        {
+          "sanskrit": "ऋचा – महोदये ! किम् अस्मिन् द्वीपे जनाः अपि निवसन्ति ?",
+          "meaning": "Richa: Madam! Do normal people also live on this island?",
+          "paragraphTranslation": "ऋचा: महोदया! क्या इस टापू पर आम लोग भी रहते हैं?",
+          "words": [
+            "ऋचा",
+            "महोदये",
+            "अस्मिन्",
+            "द्वीपे",
+            "जनाः",
+            "निवसन्ति"
+          ]
+        },
+        {
+          "sanskrit": "अध्यापिका – आम्, तत्र काश्चन अण्डमानी, ओङ्गी, जारवा, सेण्टिनली इत्यादयः विशिष्टाः जनजातयः निवसन्ति। अण्डमानी-ओङ्गी-जारवा-जनजातीनाम् आजीविकायै सर्वकारः...",
+          "meaning": "Teacher: Yes, specific tribes such as the Andamanese, Onges, Jarawas, and Sentinelese reside there. For the livelihood of these tribes, the government...",
+          "paragraphTranslation": "अध्यापिका: हाँ, वहाँ अण्डमानी, ओङ्गी, जारवा और सेण्टिनली जैसी कुछ खास जनजातियाँ रहती हैं। इन जनजातियों के रोज़गार के लिए सरकार ने...",
+          "words": [
+            "अध्यापिका",
+            "आम्",
+            "अण्डमानी",
+            "ओङ्गी",
+            "जारवा",
+            "सेण्टिनली",
+            "विशिष्टाः",
+            "जनजातयः",
+            "निवसन्ति",
+            "आजीविकायै",
+            "सर्वकारः"
+          ]
+        },
+        {
+          "sanskrit": "कक्षा-संवादः — पर्यटनं पारदर्शि-समुद्रतटं च (पृष्ठम् ११८)",
+          "meaning": "Classroom Dialogue — Tourism & Transparent Beaches (Page 118)",
+          "paragraphTranslation": "कक्षा-संवाद — पर्यटन एवं पारदर्शी समुद्रतट (पृष्ठ ११८)",
+          "words": [
+            "कक्षा",
+            "संवादः",
+            "पर्यटनं",
+            "पारदर्शि",
+            "समुद्रतटं",
+            "च",
+            "पृष्ठम्",
+            "११८"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "अध्यापिका – ...नारिकेलस्य उद्यानानां निर्माणम् अकरोत्। सेण्टिनली-जनजातीयाः समाजात् दूरे तिष्ठन्ति। तेषां जनसंख्या अपि स्वल्पा एव।",
+          "meaning": "Teacher: ...built coconut plantations. The Sentinelese tribe lives completely isolated from modern society. Their population is extremely small.",
+          "paragraphTranslation": "अध्यापिका: ...नारियल के बगीचे बनवाए हैं। सेण्टिनली जनजाति के लोग मुख्य समाज से दूर रहते हैं और उनकी आबादी बहुत कम है।",
+          "words": [
+            "अध्यापिका",
+            "नारिकेलस्य",
+            "उद्यानानां",
+            "निर्माणम्",
+            "अकरोत्",
+            "सेण्टिनली-जनजातीयाः",
+            "समाजात्",
+            "दूरे",
+            "तिष्ठन्ति",
+            "जनसंख्या",
+            "स्वल्पा"
+          ]
+        },
+        {
+          "sanskrit": "सुरुचिः – महोदये ! अत्र भ्रमणाय विशिष्टानि स्थानानि कानि ?",
+          "meaning": "Suruchi: Madam! What are the primary tourist places to visit here?",
+          "paragraphTranslation": "सुरुचि: महोदया! यहाँ घूमने के लिए मुख्य जगहें कौन-सी हैं?",
+          "words": [
+            "सुरुचिः",
+            "महोदये",
+            "भ्रमणाय",
+            "विशिष्टानि",
+            "स्थानानि",
+            "कानि"
+          ]
+        },
+        {
+          "sanskrit": "अध्यापिका – भवत्सु कोऽपि अस्मिन् विषये कथयितुम् इच्छति ?",
+          "meaning": "Teacher: Does anyone among you wish to speak about this?",
+          "paragraphTranslation": "अध्यापिका: क्या आप लोगों में से कोई इस बारे में बताना चाहता है?",
+          "words": [
+            "अध्यापिका",
+            "भवत्सु",
+            "कोऽपि",
+            "विषये",
+            "कथयितुम्",
+            "इच्छति"
+          ]
+        },
+        {
+          "sanskrit": "राजर्षिः – आम् महोदये ! अहं वक्तुम् इच्छामि। अहम् एकदा पित्रा सह भ्रमणाय तत्र अगच्छम्। वयं तत्र सर्वत्र प्रकृतेः हारित्यं नीलसमुद्रं च दृष्टवन्तः।",
+          "meaning": "Rajarshi: Yes Madam! I would like to say. Once I went there for a vacation with my father. We witnessed green nature and blue ocean everywhere.",
+          "paragraphTranslation": "राजर्षि: हाँ महोदया! मैं बताना चाहता हूँ। मैं एक बार अपने पिताजी के साथ वहाँ घूमने गया था। हमने वहाँ चारों तरफ प्रकृति की हरियाली और नीला समंदर देखा।",
+          "words": [
+            "राजर्षिः",
+            "आम्",
+            "महोदये",
+            "वक्तुम्",
+            "पित्रा",
+            "सह",
+            "भ्रमणाय",
+            "प्रकृतेः",
+            "हारित्यं",
+            "नीलसमुद्रं",
+            "दृष्टवन्तः"
+          ]
+        },
+        {
+          "sanskrit": "राजर्षिः – वयं महात्मगान्धि-मरीन-राष्ट्रियम् उद्यानम्, नॉर्थ-बे-द्वीपम्, समुद्रिका-नौसेना-समुद्रीय-सङ्ग्रहालयं, कालापत्थर-तटम्, विजयनगर-तटं च दृष्टवन्तः।",
+          "meaning": "Rajarshi: We saw Mahatma Gandhi Marine National Park, North Bay Island, Samudrika Naval Marine Museum, Kalapathar Beach, and Vijayanagar Beach.",
+          "paragraphTranslation": "राजर्षि: हमने महात्मा गांधी मरीन नेशनल पार्क, नॉर्थ-बे आइलैंड, समुद्रिका नेवी मरीन म्यूजियम, कालापत्थर बीच और विजयनगर बीच देखा।",
+          "words": [
+            "राजर्षिः",
+            "महात्मगान्धि-मरीन-राष्ट्रियम्",
+            "उद्यानम्",
+            "नॉर्थ-बे-द्वीपम्",
+            "समुद्रिका-नौसेना-समुद्रीय-सङ्ग्रहालयं",
+            "कालापत्थर-तटम्",
+            "विजयनगर-तटं",
+            "दृष्टवन्तः"
+          ]
+        },
+        {
+          "sanskrit": "राजर्षिः – तत्र भारतस्य समुद्रतटेषु राधानगर-तटस्य अत्यन्तं विशिष्टं स्थानम् अस्ति। तत्रत्यः श्वेतरेणुः, नीलं निर्मलं जलं, पारदर्शि समुद्रतलं च अविस्मरणीयम् अस्ति।",
+          "meaning": "Rajarshi: Among all sea beaches in India, Radhanagar Beach holds a very special position. Its white sand, clean blue water, and transparent ocean floor are unforgettable.",
+          "paragraphTranslation": "राजर्षि: भारत के सभी समुद्र तटों में राधानगर बीच का एक बहुत खास मुकाम है। वहाँ की सफ़ेद रेत (बालू), नीला साफ पानी और पारदर्शी समंदर का तल वाकई कभी न भूलने जैसा है।",
+          "words": [
+            "राजर्षिः",
+            "समुद्रतटेषु",
             "राधानगर-तटस्य",
             "विशिष्टं",
             "स्थानम्",
-            "अस्ति",
             "श्वेतरेणुः",
             "नीलं",
             "निर्मलं",
             "जलं",
-            "प्रवालशृङ्खलाः",
-            "अविस्मरणीयाः",
-            "सन्ति"
+            "पारदर्शि",
+            "समुद्रतलं",
+            "अविस्मरणीयम्"
           ]
         },
         {
-          "sanskrit": "अध्यापिका: अस्तु, वयम् अवश्यमेव तत्र शैक्षिकभ्रमणार्थं गमिष्यामः। अधुना वयं मिलित्वा गायामहः—",
-          "meaning": "Teacher: Splendid! We shall certainly organize an educational trip there. Now let us all sing together in tribute:",
-          "paragraphTranslation": "अध्यापिका - बहुत अच्छा, हम सब शैक्षणिक टूर पर वहाँ ज़रूर जाएँगे। अब हम सब मिलकर गाते हैं—",
+          "sanskrit": "कक्षा-संवादः — जलक्रीडाः साहसिक्यः गतिविधयः च (पृष्ठम् ११९)",
+          "meaning": "Classroom Dialogue — Water Sports Adventures (Page 119)",
+          "paragraphTranslation": "कक्षा-संवाद — जलक्रीड़ा एवं साहसिक गतिविधियाँ (पृष्ठ ११९)",
           "words": [
-            "अध्यापिका:",
+            "कक्षा",
+            "संवादः",
+            "जलक्रीडाः",
+            "साहसिक्यः",
+            "गतिविधयः",
+            "च",
+            "पृष्ठम्",
+            "११९"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "अध्यापिका – उत्तमम्, राजर्षे ! किं भवान् स्वराजद्वीपं दृष्टवान् ?",
+          "meaning": "Teacher: Splendid, Rajarshi! Did you visit Swaraj Island?",
+          "paragraphTranslation": "अध्यापिका: बहुत अच्छे राजर्षि! क्या तुमने स्वराज द्वीप (हैवलॉक) देखा?",
+          "words": [
+            "अध्यापिका",
+            "उत्तमम्",
+            "राजर्षे",
+            "स्वराजद्वीपं",
+            "दृष्टवान्"
+          ]
+        },
+        {
+          "sanskrit": "राजर्षिः – न स्मरामि महोदये !",
+          "meaning": "Rajarshi: I do not remember, Madam!",
+          "paragraphTranslation": "राजर्षि: मुझे याद नहीं है महोदया!",
+          "words": [
+            "राजर्षिः",
+            "स्मरामि",
+            "महोदये"
+          ]
+        },
+        {
+          "sanskrit": "अध्यापिका – स्वराजद्वीपे एलीफेण्टा-तटे, नॉर्थ-बे-अन्तरीपे च सिन्धुतलविहारं स्कूबाडाइविङ्ग, स्नॉर्कलिङ्ग् इत्यादयः विविधाः गतिविधयः चलन्ति। समुद्रस्य अन्तर्भागः विविधवर्णैः मत्स्यैः कच्छपैः अन्यैः जलचरैः प्रवालशृङ्खलाभिः च अलङ्कृतः इव दृश्यते।",
+          "meaning": "Teacher: At Elephant Beach and North Bay on Swaraj Island, various activities like Sea Walk, Scuba Diving, and Snorkeling take place. The underwater world looks completely decorated with colorful fish, sea turtles, marine creatures, and extensive coral reefs.",
+          "paragraphTranslation": "अध्यापिका: स्वराज द्वीप के एलीफेंटा बीच और नॉर्थ-बे पर सी-वॉक, स्कूबा डाइविंग और स्नॉर्कलिंग जैसी कई एडवेंचर गतिविधियाँ होती हैं। समंदर का अंदरूनी हिस्सा रंग-बिरंगी मछलियों, कछुओं, समुद्री जीवों और मूँगे की खूबसूरत चट्टानों (कोरल रीफ) से सजा हुआ दिखाई देता है।",
+          "words": [
+            "अध्यापिका",
+            "स्वराजद्वीपे",
+            "एलीफेण्टा-तटे",
+            "नॉर्थ-बे-अन्तरीपे",
+            "सिन्धुतलविहारं",
+            "स्कूबाडाइविङ्ग",
+            "स्नॉर्कलिङ्ग्",
+            "गतिविधयः",
+            "विविधवर्णैः",
+            "मत्स्यैः",
+            "कच्छपैः",
+            "जलचरैः",
+            "प्रवालशृङ्खलाभिः",
+            "अलङ्कृतः"
+          ]
+        },
+        {
+          "sanskrit": "कक्षा-संवादः — आजीविका एवं देशगौरव-श्लोकः (पृष्ठम् १२०)",
+          "meaning": "Classroom Dialogue — Local Commerce & Patriotic Verse (Page 120)",
+          "paragraphTranslation": "कक्षा-संवाद — आजीविका एवं देशगौरव-श्लोक (पृष्ठ १२०)",
+          "words": [
+            "कक्षा",
+            "संवादः",
+            "आजीविका",
+            "एवं",
+            "देशगौरव",
+            "श्लोकः",
+            "पृष्ठम्",
+            "१२०"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "छात्राः – महोदये ! अण्डमान-जनाः आजीविकार्थं किं कुर्वन्ति ?",
+          "meaning": "Students: Madam! What do the people of Andaman do to earn their livelihood?",
+          "paragraphTranslation": "छात्र: महोदया! अण्डमान के लोग रोज़ी-रोटी के लिए क्या काम करते हैं?",
+          "words": [
+            "छात्राः",
+            "महोदये",
+            "अण्डमान-जनाः",
+            "आजीविकार्थं",
+            "किं",
+            "कुर्वन्ति"
+          ]
+        },
+        {
+          "sanskrit": "अध्यापिका – तत्र मुक्तामालाः, शुक्तिशिल्पानि, नारिकेल-शिल्पानि, उपस्कराः च इत्यादीनाम् उत्पादनेन वाणिज्येन च तेषाम् आजीविका चलति। केचन कृषिकार्येण मत्स्यव्यापारेण च जीविकां निर्वहन्ति।",
+          "meaning": "Teacher: Their livelihood is sustained by the manufacture and trade of pearl necklaces, seashell crafts, coconut-shell handicrafts, and spices. Some earn their living through agriculture and the fishing trade.",
+          "paragraphTranslation": "अध्यापिका: वहाँ मोतियों की मालाएँ, सीप की कलाकृतियाँ, नारियल के छिलकों के शोपीस और मसालों के उत्पादन व व्यापार से लोगों की आजीविका चलती है। कुछ लोग खेती और मछली पकड़ने के व्यापार से भी अपना जीवन-यापन करते हैं।",
+          "words": [
+            "अध्यापिका",
+            "मुक्तामालाः",
+            "शुक्तिशिल्पानि",
+            "नारिकेल-शिल्पानि",
+            "उपस्कराः",
+            "उत्पादनेन",
+            "वाणिज्येन",
+            "आजीविका",
+            "कृषिकार्येण",
+            "मत्स्यव्यापारेण",
+            "निर्वहन्ति"
+          ]
+        },
+        {
+          "sanskrit": "छात्राः – आचार्ये ! अस्य वर्णनं श्रुत्वा चित्राणि च दृष्ट्वा अस्माकं मनसि तत्र भ्रमणाय उत्सुकता जागरिता।",
+          "meaning": "Students: Teacher! Hearing this description and looking at these photos, an intense curiosity to travel there has awakened in our minds.",
+          "paragraphTranslation": "छात्र: आचार्य! इसके बारे में सुनकर और तस्वीरें देखकर हमारे मन में वहाँ घूमने की बड़ी उत्सुकता जाग उठी है।",
+          "words": [
+            "छात्राः",
+            "आचार्ये",
+            "वर्णनं",
+            "श्रुत्वा",
+            "चित्राणि",
+            "दृष्ट्वा",
+            "मनसि",
+            "भ्रमणाय",
+            "उत्सुकता",
+            "जागरिता"
+          ]
+        },
+        {
+          "sanskrit": "अध्यापिका – अस्तु, वयम् अवश्यमेव तत्र शैक्षिकभ्रमणार्थं गमिष्यामः। अधुना वयं मिलित्वा गायामः –",
+          "meaning": "Teacher: Alright, we will definitely go there for an educational tour. Now, let us sing together—",
+          "paragraphTranslation": "अध्यापिका: बहुत अच्छा, हम सब शैक्षिक टूर (Educational Tour) के लिए वहाँ ज़रूर जाएँगे। अब हम सब मिलकर गाते हैं—",
+          "words": [
+            "अध्यापिका",
+            "अस्तु",
             "वयम्",
-            "अवश्यमेव",
-            "तत्र",
             "शैक्षिकभ्रमणार्थं",
             "गमिष्यामः",
             "अधुना",
-            "वयं",
             "मिलित्वा",
-            "गायामहः"
+            "गायामः"
           ]
         },
         {
-          "sanskrit": "हुतात्मनां पूततपः स्थलीयं विनायकादिस्तुतिभाजनानाम्। स्वराष्ट्रधर्मं ननु शिक्षयन्ती सुदर्शनीया भुवि तीर्थकल्पा ॥",
-          "meaning": "Verse on Andaman: This is the sacred ground of heroic martyrs who gave their lives for freedom; worthy of highest reverence like Vinayak Damodar Savarkar. Teaching us devotion to our motherland, this sacred island is revered like a holy pilgrimage place on earth.",
-          "paragraphTranslation": "यह वीर शहीदों की पवित्र तपस्या की भूमि है, जो सावरकर जैसे राष्ट्रभक्तों की स्तुति का पात्र है। यह धरती हमें राष्ट्रधर्म सिखाती है और इस पृथ्वी पर एक पवित्र तीर्थ के समान दर्शनीय है।",
+          "sanskrit": "हुतात्मनां पूततपः स्थलीयं विनायकादिस्तुतिभाजनानाम् ।\nस्वराष्ट्रधर्मं ननु शिक्षयन्ती सुदर्शनीया भुवि तीर्थकल्पा ॥",
+          "meaning": "Verse: This land, which is the sacred place of penance of martyrs like Veer Savarkar, teaches us our duty towards our nation. It is highly scenic and holds the sanctity of a pilgrimage site on Earth.",
+          "paragraphTranslation": "श्लोक-भावार्थ: वीर सावरकर जैसे महान स्वतंत्रता सेनानियों और शहीदों की पवित्र तपस्या का केंद्र यह अण्डमान द्वीप, अपने देश के गौरव की शिक्षा देता हुआ इस धरती पर एक बेहद खूबसूरत तीर्थ स्थल के समान विराजमान है।",
           "words": [
             "हुतात्मनां",
             "पूततपः",
@@ -16212,137 +16744,802 @@
           ]
         },
         {
-          "sanskrit": "२. पृथक् रूपेण शब्दार्थः (Word Meanings)",
-          "meaning": "Key Vocabulary Glossary",
-          "paragraphTranslation": "कठिन शब्दों के अर्थ",
+          "sanskrit": "भाग २: वयं शब्दार्थान् जानीमः (शब्दार्थाः — पृष्ठम् १२१)",
+          "meaning": "Part 2: Vocabulary Extraction (Page 121)",
+          "paragraphTranslation": "भाग २: शब्दार्थाः (पृष्ठ १२१)",
           "words": [
-            "शब्दार्थः",
-            "कठिन",
-            "शब्दों",
-            "के",
-            "अर्थ"
+            "भाग",
+            "२",
+            "वयं",
+            "शब्दार्थान्",
+            "जानीमः",
+            "शब्दार्थाः",
+            "पृष्ठम्",
+            "१२१"
           ],
           "kind": "glossary-header"
         },
         {
           "sanskrit": "द्वीपः",
-          "meaning": "Island (land surrounded by water)",
-          "sanskrit_gloss": "जलवेष्टितभूमिः",
-          "hindi_gloss": "टापू / द्वीप",
+          "meaning": "Island",
+          "paragraphTranslation": "टापू (अन्तरीपः)",
           "words": [
-            "द्वीपः",
-            "जलवेष्टितभूमिः"
+            "द्वीपः"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "sanskrit_gloss": "अन्तरीपः",
+          "hindi_gloss": "टापू"
+        },
+        {
+          "sanskrit": "आकर्षकम्",
+          "meaning": "Attractive",
+          "paragraphTranslation": "मनमोहक (रमणीयम् / मनोहरम्)",
+          "words": [
+            "आकर्षकम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "रमणीयम् / मनोहरम्",
+          "hindi_gloss": "मनमोहक"
+        },
+        {
+          "sanskrit": "जालपुटे",
+          "meaning": "On the website",
+          "paragraphTranslation": "वेबसाइट पर (अन्तर्जाले)",
+          "words": [
+            "जालपुटे"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "अन्तर्जाले",
+          "hindi_gloss": "वेबसाइट पर"
+        },
+        {
+          "sanskrit": "अन्वेषणम्",
+          "meaning": "Search",
+          "paragraphTranslation": "खोज (सन्धानम्)",
+          "words": [
+            "अन्वेषणम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "सन्धानम्",
+          "hindi_gloss": "खोज"
+        },
+        {
+          "sanskrit": "स्वातन्त्र्यार्थम्",
+          "meaning": "For freedom",
+          "paragraphTranslation": "स्वतन्त्रता के लिये (स्वाधीनतार्थम्)",
+          "words": [
+            "स्वातन्त्र्यार्थम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "स्वाधीनतार्थम्",
+          "hindi_gloss": "स्वतन्त्रता के लिये"
+        },
+        {
+          "sanskrit": "युद्धरतानाम्",
+          "meaning": "Of the people engrossed in battle",
+          "paragraphTranslation": "लड़ाई में लगे हुए लोगों के (सङ्घर्षरतानाम्)",
+          "words": [
+            "युद्धरतानाम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "सङ्घर्षरतानाम्",
+          "hindi_gloss": "लड़ाई में लगे हुए लोगों के"
+        },
+        {
+          "sanskrit": "कल्पनातीतम्",
+          "meaning": "Beyond imagination",
+          "paragraphTranslation": "चिन्तन से परे (विचारातीतम्)",
+          "words": [
+            "कल्पनातीतम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "विचारातीतम्",
+          "hindi_gloss": "चिन्तन से परे"
+        },
+        {
+          "sanskrit": "घोरम्",
+          "meaning": "Terrific / Dreadful",
+          "paragraphTranslation": "भयानक (भीषणम्)",
+          "words": [
+            "घोरम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "भीषणम्",
+          "hindi_gloss": "भयानक"
+        },
+        {
+          "sanskrit": "वैश्विकसम्पदः",
+          "meaning": "Of world heritage",
+          "paragraphTranslation": "विश्व-धरोहर का (विश्वन्यासस्य)",
+          "words": [
+            "वैश्विकसम्पदः"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "विश्वन्यासस्य",
+          "hindi_gloss": "विश्व-धरोहर का"
+        },
+        {
+          "sanskrit": "सोढवान्",
+          "meaning": "Bore / Endured",
+          "paragraphTranslation": "सहन किया (सहनम् कृतवान्)",
+          "words": [
+            "सोढवान्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "सहनम् कृतवान्",
+          "hindi_gloss": "सहन किया"
+        },
+        {
+          "sanskrit": "सूच्याम्",
+          "meaning": "In the List",
+          "paragraphTranslation": "सूची में (तालिकायाम्)",
+          "words": [
+            "सूच्याम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "तालिकायाम्",
+          "hindi_gloss": "सूची में"
+        },
+        {
+          "sanskrit": "कारागारम्",
+          "meaning": "Prison",
+          "paragraphTranslation": "कारागृह / जेल (बन्धनगृहम्)",
+          "words": [
+            "कारागारम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "बन्धनगृहम्",
+          "hindi_gloss": "कारागृह / जेल"
+        },
+        {
+          "sanskrit": "त्रितलात्मकम्",
+          "meaning": "Three-storied",
+          "paragraphTranslation": "तीन तल का (त्रिस्तरीयम्)",
+          "words": [
+            "त्रितलात्मकम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "त्रिस्तरीयम्",
+          "hindi_gloss": "तीन तल का"
+        },
+        {
+          "sanskrit": "यावत्",
+          "meaning": "Until / For the duration of",
+          "paragraphTranslation": "तक (पर्यन्तम्)",
+          "words": [
+            "यावत्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "पर्यन्तम्",
+          "hindi_gloss": "तक"
+        },
+        {
+          "sanskrit": "जनजातिः",
+          "meaning": "Tribal community",
+          "paragraphTranslation": "वनवासी / आदिवासी (गणजातिः)",
+          "words": [
+            "जनजातिः"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "गणजातिः",
+          "hindi_gloss": "वनवासी / आदिवासी"
         },
         {
           "sanskrit": "श्वेतरेणुः",
-          "meaning": "White sand of the beaches",
-          "sanskrit_gloss": "श्वेतवालुका",
-          "hindi_gloss": "सफेद रेत",
+          "meaning": "White sand",
+          "paragraphTranslation": "श्वेत बालू / सफेद रेत (धवलधूलिः)",
           "words": [
-            "श्वेतरेणुः",
-            "श्वेतवालुका"
+            "श्वेतरेणुः"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "sanskrit_gloss": "धवलधूलिः",
+          "hindi_gloss": "श्वेत बालू / सफेद रेत"
         },
         {
-          "sanskrit": "प्रवालशृङ्खलाः",
-          "meaning": "Coral Reefs in oceanic ecosystems",
-          "sanskrit_gloss": "विद्रुममालाः",
-          "hindi_gloss": "मूँगे की चट्टानें",
+          "sanskrit": "पारदर्शी",
+          "meaning": "Transparent",
+          "paragraphTranslation": "आर-पार दिखने वाला (तलदर्शी)",
           "words": [
-            "प्रवालशृङ्खलाः",
-            "विद्रुममालाः"
+            "पारदर्शी"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "sanskrit_gloss": "तलदर्शी",
+          "hindi_gloss": "आर-पार दिखने वाला"
         },
         {
-          "sanskrit": "हुतात्मनाम्",
-          "meaning": "Of heroic martyrs who sacrificed everything",
-          "sanskrit_gloss": "बलिदानिनाम्",
-          "hindi_gloss": "शहीदों का / बलिदानियों का",
+          "sanskrit": "हारित्यम्",
+          "meaning": "Greenery",
+          "paragraphTranslation": "हरियाली (हरितस्य भावः)",
           "words": [
-            "हुतात्मनाम्",
-            "बलिदानिनाम्"
+            "हारित्यम्"
           ],
-          "kind": "glossary"
+          "kind": "glossary",
+          "sanskrit_gloss": "हरितस्य भावः",
+          "hindi_gloss": "हरियाली"
         },
         {
-          "sanskrit": "३. वयम् अभ्यासं कुर्मः (हल किए गए अभ्यास प्रश्न)",
-          "meaning": "Exercises with Solved Answers",
-          "paragraphTranslation": "अभ्यास कार्य",
+          "sanskrit": "मुक्तामालाः",
+          "meaning": "Pearl necklaces",
+          "paragraphTranslation": "मोतियों की मालाएँ (मौक्तिकमालाः)",
           "words": [
-            "वयम्",
-            "अभ्यासं",
-            "कुर्मः"
+            "मुक्तामालाः"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "मौक्तिकमालाः",
+          "hindi_gloss": "मोतियों की मालाएँ"
+        },
+        {
+          "sanskrit": "नारिकेलम्",
+          "meaning": "Coconut",
+          "paragraphTranslation": "नारियल (श्रीफलम्)",
+          "words": [
+            "नारिकेलम्"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "श्रीफलम्",
+          "hindi_gloss": "नारियल"
+        },
+        {
+          "sanskrit": "उपस्कराः",
+          "meaning": "Seasoning / Spices",
+          "paragraphTranslation": "मसाले (वेसवाराः)",
+          "words": [
+            "उपस्कराः"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "वेसवाराः",
+          "hindi_gloss": "मसाले"
+        },
+        {
+          "sanskrit": "शिल्पानि",
+          "meaning": "Sculpture / Handicrafts",
+          "paragraphTranslation": "शिल्पकला / हस्तशिल्प (चित्रकलादि-कर्माणि)",
+          "words": [
+            "शिल्पानि"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "चित्रकलादि-कर्माणि",
+          "hindi_gloss": "शिल्पकला / हस्तशिल्प"
+        },
+        {
+          "sanskrit": "कच्छपः",
+          "meaning": "Tortoise / Turtle",
+          "paragraphTranslation": "कछुआ (कूर्मः)",
+          "words": [
+            "कच्छपः"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "कूर्मः",
+          "hindi_gloss": "कछुआ"
+        },
+        {
+          "sanskrit": "प्रवालप्रस्तरैः",
+          "meaning": "By the coral reefs",
+          "paragraphTranslation": "मूँगे की चट्टानों से (विद्रुम-शिलाभिः)",
+          "words": [
+            "प्रवालप्रस्तरैः"
+          ],
+          "kind": "glossary",
+          "sanskrit_gloss": "विद्रुम-शिलाभिः",
+          "hindi_gloss": "मूँगे की चट्टानों से"
+        },
+        {
+          "sanskrit": "भाग ३: अभ्यास-प्रश्नोत्तराणि (पृष्ठम् १२२-१२४)",
+          "meaning": "Part 3: Textbook Solved Exercises (Pages 122–124)",
+          "paragraphTranslation": "भाग ३: अभ्यास-प्रश्नोत्तर (पृष्ठ १२२-१२४)",
+          "words": [
+            "भाग",
+            "३",
+            "अभ्यास",
+            "प्रश्नोत्तराणि",
+            "पृष्ठम्",
+            "१२२",
+            "१२४"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "१. पाठं पठित्वा अधोलिखितानि पदानि परस्परं मेलयन्तु (पृष्ठम् १२२)",
+          "meaning": "1. Match the columns based on the lesson (Page 122)",
+          "paragraphTranslation": "१. पाठ पढ़कर निम्नलिखित पदों का परस्पर सही मिलान करें (पृष्ठ १२२)",
+          "words": [
+            "१",
+            "पाठं",
+            "पठित्वा",
+            "अधोलिखितानि",
+            "पदानि",
+            "परस्परं",
+            "मेलयन्तु",
+            "पृष्ठम्",
+            "१२२"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) अण्डमान-द्वीपसमूहस्य राजधानी का ?",
-          "meaning": "What is the capital of Andaman and Nicobar Islands? Answer: Port Blair (पोर्ट ब्लेयर).",
-          "answer_sanskrit": "पोर्ट ब्लेयर",
+          "sanskrit": "१. परस्पर-मेलनम् (Column Matching Solutions):\n• हान्दुमान् ➔ अण्डमानः (रामायणकालीनं प्राचीनं नाम)\n• कालापानी ➔ सेल्यूलरकारागारः (सेल्युलर-कारागारस्य प्रसिद्धम् अपरं नाम)\n• जारवा ➔ जनजातिः (अण्डमानस्य विशिष्टा मूल-जनजातिः)\n• स्वराजद्वीपः ➔ एलीफेण्टा (एलीफेण्टा-तटयुक्तः प्रसिद्धः द्वीपः)\n• राधानगरतटः ➔ श्वेतरेणुः (धवलबालुकायुक्तः पारदर्शिजलवान् तटः)\n• स्वातन्त्र्यवीरः ➔ सावरकरः (दश वर्षाणि यावत् घोरकष्टसोढा महापुरुषः)",
+          "meaning": "Exercise 1 Matches: हान्दुमान् -> अण्डमानः; कालापानी -> सेल्यूलरकारागारः; जारवा -> जनजातिः; स्वराजद्वीपः -> एलीफेण्टा; राधानगरतटः -> श्वेतरेणुः; स्वातन्त्र्यवीरः -> सावरकरः.",
+          "paragraphTranslation": "१. सही मिलान:\n• हान्दुमान् ➔ अण्डमानः\n• कालापानी ➔ सेल्यूलरकारागारः\n• जारवा ➔ जनजातिः\n• स्वराजद्वीपः ➔ एलीफेण्टा\n• राधानगरतटः ➔ श्वेतरेणुः\n• स्वातन्त्र्यवीरः ➔ सावरकरः",
           "words": [
-            "अण्डमान-द्वीपसमूहस्य",
-            "राजधानी",
-            "का",
-            "?",
-            "उत्तरः",
-            "पोर्ट",
-            "ब्लेयर"
-          ],
-          "kind": "exercise-qa"
+            "हान्दुमान्",
+            "अण्डमानः",
+            "कालापानी",
+            "सेल्यूलरकारागारः",
+            "जारवा",
+            "जनजातिः",
+            "स्वराजद्वीपः",
+            "एलीफेण्टा",
+            "राधानगरतटः",
+            "श्वेतरेणुः",
+            "स्वातन्त्र्यवीरः",
+            "सावरकरः"
+          ]
         },
         {
-          "sanskrit": "(ख) सेल्यूलर-कारागारं पूर्वं केन नाम्ना प्रसिद्धम् आसीत् ?",
-          "meaning": "By what name was Cellular Jail historically famous? Answer: Kalapani (कालापानी).",
-          "answer_sanskrit": "कालापानी",
+          "sanskrit": "२. अधोलिखितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखन्तु (पृष्ठम् १२२)",
+          "meaning": "2. Answer the following questions in complete sentences (Page 122)",
+          "paragraphTranslation": "२. निम्नलिखित प्रश्नों के उत्तर पूर्ण वाक्य में लिखें (पृष्ठ १२२)",
           "words": [
-            "सेल्यूलर-कारागारं",
-            "पूर्वं",
-            "केन",
-            "नाम्ना",
-            "प्रसिद्धम्",
-            "आसीत्",
-            "?",
-            "उत्तरः",
-            "कालापानी"
+            "२",
+            "अधोलिखितानां",
+            "प्रश्नानाम्",
+            "उत्तराणि",
+            "पूर्णवाक्येन",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "१२२"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-header"
         },
         {
-          "sanskrit": "(ग) अण्डमानद्वीपे कस्य तटस्य विशिष्टं स्थानम् अस्ति ?",
-          "meaning": "Which beach holds a special world renown? Answer: Radhanagar Beach (राधानगर-तटस्य).",
-          "answer_sanskrit": "राधानगर-तटस्य",
+          "sanskrit": "(क) रामायणकाले अण्डमानद्वीपस्य नाम किम् आसीत् ?",
+          "meaning": "During the Ramayana era, the island was named 'Handukmaan'.",
+          "paragraphTranslation": "रामायण काल में अण्डमान द्वीप का नाम 'हण्डुकमान्' था।",
           "words": [
+            "क",
+            "रामायणकाले",
+            "अण्डमानद्वीपस्य",
+            "नाम",
+            "किम्",
+            "आसीत्"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "रामायणकाले अण्डमानद्वीपस्य नाम 'हण्डुकमान्' आसीत्।",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "रामायण काल में अण्डमान द्वीप का नाम 'हण्डुकमान्' था।"
+        },
+        {
+          "sanskrit": "(ख) स्वातन्त्र्यवीरः सावरकरः कति वर्षाणि कष्टं सोढवान् ?",
+          "meaning": "Swatantraveer Savarkar bore hardships for ten years.",
+          "paragraphTranslation": "स्वातन्त्र्यवीर सावरकर ने दस वर्षों तक कष्ट सहा।",
+          "words": [
+            "ख",
+            "स्वातन्त्र्यवीरः",
+            "सावरकरः",
+            "कति",
+            "वर्षाणि",
+            "कष्टं",
+            "सोढवान्"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "स्वातन्त्र्यवीरः सावरकरः दश वर्षाणि यावत् कष्टं सोढवान्।",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "स्वातन्त्र्यवीर सावरकर ने दस वर्षों तक कष्ट सहा।"
+        },
+        {
+          "sanskrit": "(ग) अण्डमानद्वीपे काः जनजातयः निवसन्ति ?",
+          "meaning": "The Andamanese, Onges, Jarawas, and Sentinelese tribes live in the Andaman islands.",
+          "paragraphTranslation": "अण्डमान द्वीप पर अण्डमानी, ओङ्गी, जारवा और सेण्टिनली आदि जनजातियाँ रहती हैं।",
+          "words": [
+            "ग",
             "अण्डमानद्वीपे",
-            "कस्य",
-            "तटस्य",
-            "विशिष्टं",
-            "स्थानम्",
-            "अस्ति",
-            "?",
-            "उत्तरः",
-            "राधानगर-तटस्य"
+            "काः",
+            "जनजातयः",
+            "निवसन्ति"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "answer_sanskrit": "अण्डमानद्वीपे अण्डमानी, ओङ्गी, जारवा, सेण्टिनली इत्यादयः जनजातयः निवसन्ति।",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "अण्डमान द्वीप पर अण्डमानी, ओङ्गी, जारवा और सेण्टिनली आदि जनजातियाँ रहती हैं।"
         },
         {
-          "sanskrit": "(घ) अण्डमानभूमिः कीदृशी अस्ति ?",
-          "meaning": "What kind of sacred land is Andaman? Answer: Sacred like a pilgrimage of martyrs (तीर्थकल्पा हुतात्मनां पूततपः स्थली).",
-          "answer_sanskrit": "तीर्थकल्पा",
+          "sanskrit": "(घ) अण्डमानद्वीपे आजीविकार्थं जनाः किं कुर्वन्ति ?",
+          "meaning": "People sustain their livelihood through crafts, trade, agriculture, and fishing.",
+          "paragraphTranslation": "अण्डमान द्वीप पर लोग मोतियों की माला, सीप शिल्प और नारियल शिल्प के उत्पादन व व्यापार, तथा खेती और मछली के व्यापार से आजीविका चलाते हैं।",
           "words": [
-            "अण्डमानभूमिः",
-            "कीदृशी",
-            "अस्ति",
-            "?",
-            "उत्तरः",
-            "तीर्थकल्पा"
+            "घ",
+            "अण्डमानद्वीपे",
+            "आजीविकार्थं",
+            "जनाः",
+            "किं",
+            "कुर्वन्ति"
           ],
-          "kind": "exercise-qa"
+          "kind": "exercise-qa",
+          "answer_sanskrit": "अण्डमानद्वीपे आजीविकार्थं जनाः मुक्तामाला-शुक्तिशिल्प-नारिकेलशिल्पानाम् उत्पादनेन वाणिज्येन, कृषिकार्येण मत्स्यव्यापारेण च जीविकाम् निर्वहन्ति।",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "अण्डमान द्वीप पर लोग मोतियों की माला, सीप शिल्प और नारियल शिल्प के उत्पादन व व्यापार, तथा खेती और मछली के व्यापार से आजीविका चलाते हैं।"
+        },
+        {
+          "sanskrit": "(ङ) अन्ते सर्वे मिलित्वा कं श्लोकं गायन्ति ?",
+          "meaning": "At the end, everyone together sings the patriotic verse: 'Hutātmanāṁ pūtatapaḥ sthalīyaṁ...'",
+          "paragraphTranslation": "अंत में सभी मिलकर यह श्लोक गाते हैं— \"हुतात्मनां पूततपः स्थलीयं विनायकादिस्तुतिभाजनानाम्...\"।",
+          "words": [
+            "ङ",
+            "अन्ते",
+            "सर्वे",
+            "मिलित्वा",
+            "कं",
+            "श्लोकं",
+            "गायन्ति"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "अन्ते सर्वे मिलित्वा \"हुतात्मनां पूततपः स्थलीयं विनायकादिस्तुतिभाजनानाम् । स्वराष्ट्रधर्मं ननु शिक्षयन्ती सुदर्शनीया भुवि तीर्थकल्पा ॥\" इति श्लोकं गायन्ति।",
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "अंत में सभी मिलकर यह श्लोक गाते हैं— \"हुतात्मनां पूततपः स्थलीयं विनायकादिस्तुतिभाजनानाम्...\"।"
+        },
+        {
+          "sanskrit": "३. पाठं दृष्ट्वा रिक्तस्थानानि पूरयन्तु (पृष्ठम् १२२)",
+          "meaning": "3. Fill in the blanks based on the textbook lesson (Page 122)",
+          "paragraphTranslation": "३. पाठ के आधार पर रिक्त स्थानों की पूर्ति करें (पृष्ठ १२२)",
+          "words": [
+            "३",
+            "पाठं",
+            "दृष्ट्वा",
+            "रिक्तस्थानानि",
+            "पूरयन्तु",
+            "पृष्ठम्",
+            "१२२"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "३. रिक्तस्थान-पूर्तिः (Fill in the blanks):\n• (क) अण्डमानद्वीपस्य राजधानी 'श्रीविजयपुरम्' अस्ति।\n• (ख) सूर्यांशः गृहं गत्वा जालपुटे अण्डमानस्य अन्वेषणम् अकरवम्।\n• (ग) प्रथमशताब्द्याम् अस्य नाम 'अगादेमन्' इति आसीत्।\n• (घ) अस्मिन् द्वीपे 'सेल्युलर्' इति कारागारम् अस्ति।\n• (ङ) वयं स्वातन्त्र्यवीराणां बलिदानेन एव सुखेन जीवामः।\n• (च) 'सेल्युलर्' कारागारं 'यूनेस्को' संस्थायाः वैश्विकसम्पदः सूच्यां संरक्षितम्।\n• (छ) कृषिकार्येण मत्स्यव्यापारेण च जीविकां निर्वहन्ति।",
+          "meaning": "Exercise 3 Fill in blanks:\n(a) राजधानी 'श्रीविजयपुरम्'\n(b) जालपुटे अन्वेषणम् अकरवम्\n(c) प्रथमशताब्द्याम् 'अगादेमन्'\n(d) 'सेल्युलर्' कारागारम्\n(e) बलिदानेन सुखेन जीवामः\n(f) वैश्विकसम्पदः सूच्यां संरक्षितम्\n(g) कृषिकार्येण मत्स्यव्यापारेण",
+          "paragraphTranslation": "३. रिक्त स्थानों की पूर्ति:\n(क) अण्डमान की राजधानी 'श्रीविजयपुरम्' है।\n(ख) सूर्यांश ने वेबसाइट पर खोज की।\n(ग) पहली शताब्दी में नाम 'अगादेमन्' था।\n(घ) इस द्वीप पर 'सेल्युलर' जेल है।\n(ङ) स्वतंत्रता सेनानियों के बलिदान से हम सुख से जी रहे हैं।\n(च) सेल्युलर जेल यूनेस्को विश्व धरोहर सूची में संरक्षित है।\n(छ) खेती और मछली के व्यापार से आजीविका चलाते हैं।",
+          "words": [
+            "श्रीविजयपुरम्",
+            "जालपुटे",
+            "अन्वेषणम्",
+            "अगादेमन्",
+            "सेल्युलर्",
+            "कारागारम्",
+            "बलिदानेन",
+            "वैश्विकसम्पदः",
+            "सूच्यां",
+            "कृषिकार्येण",
+            "मत्स्यव्यापारेण"
+          ]
+        },
+        {
+          "sanskrit": "४. विशेषण-विशेष्यपदानां मेलनं कृत्वा रिक्तस्थानानि पूरयन्तु (पृष्ठम् १२३)",
+          "meaning": "4. Match adjective and noun pairs and complete phrases (Page 123)",
+          "paragraphTranslation": "४. विशेषण और विशेष्य पदों का मेल करके रिक्त स्थान भरें (पृष्ठ १२३)",
+          "words": [
+            "४",
+            "विशेषण",
+            "विशेष्यपदानां",
+            "मेलनं",
+            "कृत्वा",
+            "रिक्तस्थानानि",
+            "पूरयन्तु",
+            "पृष्ठम्",
+            "१२३"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "४. विशेषण-विशेष्य-युगलानि (Adjective-Noun Agreements):\n• (क) नीलम् + समुद्रम् ➔ नीलं समुद्रम् (Blue ocean / नीला समुद्र)\n• (ख) सुन्दरतमेषु + समुद्रतटेषु ➔ सुन्दरतमेषु समुद्रतटेषु (Among most beautiful beaches / सबसे सुंदर समुद्रतटों में)\n• (ग) स्वीयाः + रीतिपरम्पराः ➔ स्वीयाः रीतिपरम्पराः (Their own traditional customs / अपनी रीति-परंपराएँ)\n• (घ) विविधवर्णाः + मत्स्याः ➔ विविधवर्णाः मत्स्याः (Multi-colored fishes / विभिन्न रंगों की मछलियाँ)\n• (ङ) स्थानीये + आपणे ➔ स्थानीये आपणे (In the local market / स्थानीय बाज़ार में)\n• (च) प्रथमम् + स्थानम् ➔ प्रथमं स्थानम् (First position / पहला स्थान)",
+          "meaning": "Exercise 4 Adjective-Noun matches:\n(a) नीलं समुद्रम्\n(b) सुन्दरतमेषु समुद्रतटेषु\n(c) स्वीयाः रीतिपरम्पराः\n(d) विविधवर्णाः मत्स्याः\n(e) स्थानीये आपणे\n(f) प्रथमं स्थानम्",
+          "paragraphTranslation": "४. विशेषण-विशेष्य मिलान:\n(क) नीलं समुद्रम् = नीला समुद्र\n(ख) सुन्दरतमेषु समुद्रतटेषु = सबसे सुंदर समुद्र तटों में\n(ग) स्वीयाः रीतिपरम्पराः = अपनी रीति-परंपराएँ\n(घ) विविधवर्णाः मत्स्याः = रंग-बिरंगी मछलियाँ\n(ङ) स्थानीये आपणे = स्थानीय बाज़ार में\n(च) प्रथमं स्थानम् = पहला स्थान",
+          "words": [
+            "नीलम्",
+            "समुद्रम्",
+            "सुन्दरतमेषु",
+            "समुद्रतटेषु",
+            "स्वीयाः",
+            "रीतिपरम्पराः",
+            "विविधवर्णाः",
+            "मत्स्याः",
+            "स्थानीये",
+            "आपणे",
+            "प्रथमम्",
+            "स्थानम्"
+          ]
+        },
+        {
+          "sanskrit": "५. पट्टिकातः समुचितानि पदानि चित्वा विशेषणानुसारं विशेष्यपदं लिखन्तु (पृष्ठम् १२३)",
+          "meaning": "5. Select suitable substantive nouns according to adjectives (Page 123)",
+          "paragraphTranslation": "५. मंजूषा से उपयुक्त विशेष्य पद चुनकर विशेषण के अनुसार लिखें (पृष्ठ १२३)",
+          "words": [
+            "५",
+            "पट्टिकातः",
+            "समुचितानि",
+            "पदानि",
+            "चित्वा",
+            "विशेषणानुसारं",
+            "विशेष्यपदं",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "१२३"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "५. विशेष्यपद-संयोजनम् (Substantive Noun Placement Matrix):\nमञ्जूषा: [वृक्षान्, गुरुकुलम्, गृहे, तटस्य, पाठशालां, पुस्तकानि, शाटिकायां, गजाय, युवती, मार्गः]\n\n• (क) नूतने गृहे — नए घर में (In the new house)\n• (ख) पवित्रं गुरुकुलम् — पवित्र गुरुकुल (Sacred ancient school)\n• (ग) रक्तायां शाटिकायां — लाल साड़ी में (In the red saree)\n• (घ) उत्तमानि पुस्तकानि — उत्तम पुस्तकें (Excellent books)\n• (ङ) सुदीर्घः मार्गः — बहुत लंबा मार्ग (Extremely long path)\n• (च) सुन्दरी युवती — सुंदर युवती (Beautiful young lady)\n• (छ) उन्नतान् वृक्षान् — ऊँचे वृक्षों को (Tall trees)\n• (ज) विशालां पाठशालां — बड़ी पाठशाला को (Spacious school)\n• (झ) स्थूलाय गजाय — विशाल हाथी के लिए (For the huge elephant)\n• (ञ) तस्य तटस्य — उस तट का (Of that beach/shore)",
+          "meaning": "Exercise 5 Solutions: (a) नूतने गृहे, (b) पवित्रं गुरुकुलम्, (c) रक्तायां शाटिकायां, (d) उत्तमानि पुस्तकानि, (e) सुदीर्घः मार्गः, (f) सुन्दरी युवती, (g) उन्नतान् वृक्षान्, (h) विशालां पाठशालां, (i) स्थूलाय गजाय, (j) तस्य तटस्य.",
+          "paragraphTranslation": "५. विशेष्य पद संयोजन:\n(क) नूतने गृहे\n(ख) पवित्रं गुरुकुलम्\n(ग) रक्तायां शाटिकायां\n(घ) उत्तमानि पुस्तकानि\n(ङ) सुदीर्घः मार्गः\n(च) सुन्दरी युवती\n(छ) उन्नतान् वृक्षान्\n(ज) विशालां पाठशालां\n(झ) स्थूलाय गजाय\n(ञ) तस्य तटस्य",
+          "words": [
+            "गृहे",
+            "गुरुकुलम्",
+            "शाटिकायां",
+            "पुस्तकानि",
+            "मार्गः",
+            "युवती",
+            "वृक्षान्",
+            "पाठशालां",
+            "गजाय",
+            "तटस्य"
+          ]
+        },
+        {
+          "sanskrit": "६. सर्वनामविशेषणपदानि चित्वा वाक्यानि पूरयन्तु (पृष्ठम् १२३-१२४)",
+          "meaning": "6. Select pronominal adjectives to complete the sentences (Pages 123–124)",
+          "paragraphTranslation": "६. सर्वनाम विशेषण पद चुनकर वाक्य पूरे करें (पृष्ठ १२३-१२४)",
+          "words": [
+            "६",
+            "सर्वनामविशेषणपदानि",
+            "चित्वा",
+            "वाक्यानि",
+            "पूरयन्तु",
+            "पृष्ठम्",
+            "१२३",
+            "१२४"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "६. सर्वनामविशेषणैः वाक्यपूर्तिः (भाग १: क तः ङ — पृष्ठम् १२३):\nमञ्जूषा: [ते, तस्मिन्, तत्, तेषां, एषा, तौ, तस्यै, ताः, तेन, सः]\n\n• (क) तत् पुष्पाणाम् उद्यानम् अस्ति। (That is a flower garden / वह फूलों का बगीचा है।)\n• (ख) एषा वृद्धा आपणं गच्छति। (This elderly woman goes to the shop / यह वृद्धा बाज़ार जा रही है।)\n• (ग) तस्मिन् चित्रे चन्द्रयानम् अस्ति। (Chandrayaan is in that picture / उस चित्र में चंद्रयान है।)\n• (घ) सः शिक्षकः संस्कृतं पाठयति। (That teacher teaches Sanskrit / वह शिक्षक संस्कृत पढ़ाता है।)\n• (ङ) ते बालकाः जलं पिबन्ति। (Those boys are drinking water / वे लड़के पानी पी रहे हैं।)",
+          "meaning": "Exercise 6 (Part 1, a to e): (a) तत् पुष्पाणाम् उद्यानम्; (b) एषा वृद्धा आपणं; (c) तस्मिन् चित्रे चन्द्रयानम्; (d) सः शिक्षकः संस्कृतं; (e) ते बालकाः जलं पिबन्ति.",
+          "paragraphTranslation": "६. सर्वनाम विशेषण वाक्य (क से ङ):\n(क) तत् पुष्पाणाम् उद्यानम् अस्ति।\n(ख) एषा वृद्धा आपणं गच्छति।\n(ग) तस्मिन् चित्रे चन्द्रयानम् अस्ति।\n(घ) सः शिक्षकः संस्कृतं पाठयति।\n(ङ) ते बालकाः जलं पिबन्ति।",
+          "words": [
+            "तत्",
+            "उद्यानम्",
+            "एषा",
+            "वृद्धा",
+            "तस्मिन्",
+            "चित्रे",
+            "सः",
+            "शिक्षकः",
+            "ते",
+            "बालकाः"
+          ]
+        },
+        {
+          "sanskrit": "६. सर्वनामविशेषणैः वाक्यपूर्तिः (भाग २: च तः ञ — पृष्ठम् १२४):\n• (च) तत् पुष्पम् आकर्षकम् अस्ति। (That flower is attractive / वह फूल आकर्षक है।)\n• (छ) ते कन्दुकेन क्रीडन्ति। (They are playing with a ball / वे सब गेंद से खेल रहे हैं।)\n• (ज) ताः शिक्षिकाः गीतं शिक्षयन्ति। (Those female teachers teach songs / वे शिक्षिकाएँ गीत सिखाती हैं।)\n• (झ) तौ मयूरौ नृत्यतः। (Those two peacocks are dancing / वे दो मोर नाच रहे हैं।)\n• (ञ) तस्यै बालिकायै पुस्तकानि यच्छ। (Give books to that girl / उस बालिका को पुस्तकें दो।)",
+          "meaning": "Exercise 6 (Part 2, f to j): (f) तत् पुष्पम् आकर्षकम्; (g) ते कन्दुकेन क्रीडन्ति; (h) ताः शिक्षिकाः गीतं शिक्षयन्ति; (i) तौ मयूरौ नृत्यतः; (j) तस्यै बालिकायै पुस्तकानि यच्छ.",
+          "paragraphTranslation": "६. सर्वनाम विशेषण वाक्य (च से ञ):\n(च) तत् पुष्पम् आकर्षकम् अस्ति।\n(छ) ते कन्दुकेन क्रीडन्ति।\n(ज) ताः शिक्षिकाः गीतं शिक्षयन्ति।\n(झ) तौ मयूरौ नृत्यतः।\n(ञ) तस्यै बालिकायै पुस्तकानि यच्छ।",
+          "words": [
+            "तत्",
+            "पुष्पम्",
+            "ते",
+            "कन्दुकेन",
+            "ताः",
+            "शिक्षिकाः",
+            "तौ",
+            "मयूरौ",
+            "तस्यै",
+            "बालिकायै"
+          ]
+        },
+        {
+          "sanskrit": "७. पाठे प्रयुक्तानि अव्ययपदानि क्रियापदानि च चित्वा लिखन्तु (पृष्ठम् १२४)",
+          "meaning": "7. Identify and list indeclinables and verbs used in the text (Page 124)",
+          "paragraphTranslation": "७. पाठ में प्रयुक्त अव्यय पद और क्रिया पद चुनकर लिखें (पृष्ठ १२४)",
+          "words": [
+            "७",
+            "पाठे",
+            "प्रयुक्तानि",
+            "अव्ययपदानि",
+            "क्रियापदानि",
+            "च",
+            "चित्वा",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "१२४"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "७. अव्ययपदानि क्रियापदानि च (Segregated Indeclinables & Verbs):\n\n१. अव्ययपदानि (Indeclinables):\n• च (and / और)\n• अपि (also / भी)\n• यतः (because / क्योंकि)\n• तत्र (there / वहाँ)\n• ह्यः (yesterday / बीता कल)\n• तदा (then / तब)\n• इदानीम् (now / अब)\n• एव (indeed/only / ही)\n• सदा (always / हमेशा)\n• कश्चन (someone/a certain / कोई)\n\n२. क्रियापदानि (Verbs):\n• पश्यन्तु (look / देखो)\n• अस्ति (is / है)\n• इच्छामः (we wish / चाहते हैं)\n• अकरवम् (I did / मैंने किया)\n• दृष्टवान् (saw / देखा)\n• निवसन्ति (reside / रहते हैं)\n• चलन्ति (operate/run / चलती हैं)\n• गमिष्यामः (we will go / जाएँगे)\n• गायामः (we sing / गाते हैं)",
+          "meaning": "Exercise 7 Segregation:\n• Indeclinables: च, अपि, यतः, तत्र, ह्यः, तदा, इदानीम्, एव, सदा, कश्चन.\n• Verbs: पश्यन्तु, अस्ति, इच्छामः, अकरवम्, दृष्टवान्, निवसन्ति, चलन्ति, गमिष्यामः, गायामः.",
+          "paragraphTranslation": "७. अव्यय और क्रिया पद:\n• अव्यय: च, अपि, यतः, तत्र, ह्यः, तदा, इदानीम्, एव, सदा, कश्चन।\n• क्रिया: पश्यन्तु, अस्ति, इच्छामः, अकरवम्, दृष्टवान्, निवसन्ति, चलन्ति, गमिष्यामः, गायामः।",
+          "words": [
+            "अव्ययपदानि",
+            "क्रियापदानि",
+            "पश्यन्तु",
+            "अस्ति",
+            "इच्छामः",
+            "अकरवम्",
+            "दृष्टवान्",
+            "निवसन्ति",
+            "चलन्ति",
+            "गमिष्यामः",
+            "गायामः"
+          ]
+        },
+        {
+          "sanskrit": "८. पदानां स्वरूपं सावधानं दृष्ट्वा उदाहरणानुसारं लिखन्तु (पृष्ठम् १२४)",
+          "meaning": "8. Form compound words (Shashthi Tatpurusha Samasa) (Page 124)",
+          "paragraphTranslation": "८. पदों के स्वरूप को ध्यान से देखकर उदाहरण के अनुसार षष्ठी तत्पुरुष समास बनाएँ (पृष्ठ १२४)",
+          "words": [
+            "८",
+            "पदानां",
+            "स्वरूपं",
+            "सावधानं",
+            "दृष्ट्वा",
+            "उदाहरणानुसारं",
+            "लिखन्तु",
+            "पृष्ठम्",
+            "१२४"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "८. षष्ठी-तत्पुरुष-समास-रचना (Compound Word Formation):\nनियमः — पूर्वपदस्य षष्ठी-विभक्ति-लोपं कृत्वा उत्तरपदेन सह समस्तपद-निर्माणम्:\n\n• (क) द्वीपानां समूहः ➔ द्वीपसमूहः (Archipelago / द्वीपों का समूह)\n• (ख) रामायणस्य काले ➔ रामायणकाले (In Ramayana era / रामायण के समय में)\n• (ग) भारतस्य भूमिः ➔ भारतभूमिः (Land of India / भारत-भूमि)\n• (घ) उद्योगस्य विषयः ➔ उद्योगविषयः (Subject of industry / उद्योग का विषय)\n• (ङ) देशस्य भक्तः ➔ देशभक्तः (Patriot / देश का भक्त)\n• (च) समुद्रस्य तलम् ➔ समुद्रतलम् (Sea floor / समुद्र का तल)",
+          "meaning": "Exercise 8 Compound Formation (षष्ठी तत्पुरुष समास):\n(a) द्वीपानां समूहः -> द्वीपसमूहः\n(b) रामायणस्य काले -> रामायणकाले\n(c) भारतस्य भूमिः -> भारतभूमिः\n(d) उद्योगस्य विषयः -> उद्योगविषयः\n(e) देशस्य भक्तः -> देशभक्तः\n(f) समुद्रस्य तलम् -> समुद्रतलम्.",
+          "paragraphTranslation": "८. समास रचना (षष्ठी तत्पुरुष):\n(क) द्वीपानां समूहः ➔ द्वीपसमूहः\n(ख) रामायणस्य काले ➔ रामायणकाले\n(ग) भारतस्य भूमिः ➔ भारतभूमिः\n(घ) उद्योगस्य विषयः ➔ उद्योगविषयः\n(ङ) देशस्य भक्तः ➔ देशभक्तः\n(च) समुद्रस्य तलम् ➔ समुद्रतलम्",
+          "words": [
+            "द्वीपसमूहः",
+            "रामायणकाले",
+            "भारतभूमिः",
+            "उद्योगविषयः",
+            "देशभक्तः",
+            "समुद्रतलम्"
+          ]
+        },
+        {
+          "sanskrit": "भाग ४: योग्यताविस्तरः (पृष्ठम् १२५)",
+          "meaning": "Part 4: Advanced Conceptual Extensions (Page 125)",
+          "paragraphTranslation": "भाग ४: योग्यताविस्तर — नाम-परिवर्तनं गभीर-समुद्र-शब्दावली च (पृष्ठ १२५)",
+          "words": [
+            "भाग",
+            "४",
+            "योग्यताविस्तरः",
+            "पृष्ठम्",
+            "१२५"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "राजधानी-नामपरिवर्तनम् — 'पोर्ट-ब्लेयर्' ➔ 'श्रीविजयपुरम्':\nभारतसर्वकारेण औपनिवेशिक-चिह्नानां दूरीकरणाय अण्डमान-निकोबार-द्वीपसमूहस्य राजधान्याः 'पोर्ट-ब्लेयर्' इति नाम परिवर्तयित्वा 'श्रीविजयपुरम्' (Sri Vijaya Puram) इति आधिकारिकरूपेण घोषितम्। एतत् नाम स्वातन्त्र्यसङ्ग्रामस्य विजयप्रतीकं राष्ट्रियगौरवस्य च परिचायकम् अस्ति।",
+          "meaning": "Capital Renaming: The Government of India officially renamed the capital from colonial 'Port Blair' to 'Sri Vijaya Puram' to honor national self-respect and the victory of the freedom struggle.",
+          "paragraphTranslation": "राजधानी का नाम परिवर्तन: भारत सरकार ने औपनिवेशिक दास्यता के प्रतीक को समाप्त कर अण्डमान-निकोबार की राजधानी 'पोर्ट ब्लेयर' का नाम आधिकारिक रूप से 'श्रीविजयपुरम्' (Sri Vijaya Puram) घोषित किया है। यह नाम स्वाधीनता संग्राम की विजय और राष्ट्र के स्वाभिमान का प्रतीक है।",
+          "words": [
+            "राजधानी",
+            "पोर्ट-ब्लेयर्",
+            "श्रीविजयपुरम्",
+            "भारतसर्वकारेण",
+            "औपनिवेशिक",
+            "स्वातन्त्र्यसङ्ग्रामस्य",
+            "विजयप्रतीकं"
+          ]
+        },
+        {
+          "sanskrit": "गभीर-समुद्र-साहसिक-शब्दावली (Deep Sea Definitions in Sanskrit):\n• स्कूबा-डैविङ्ग् (Scuba Diving) — गभीर-जल-प्लवनम् (गहरे समुद्र में ऑक्सीजन सिलेंडर के साथ गोताखोरी)\n• स्नॉर्कलिङ्ग् (Snorkeling) — नलिका-प्लवनम् (श्वसन-नलिका की सहायता से जल की सतह पर तैरना)\n• सिन्धु-तल-विहारः (Sea Walk) — समुद्र-तल-विचरणम् (समुद्र के तल पर पैदल चलकर रंग-बिरंगे जलीय जीवों का प्रत्यक्ष दर्शन)",
+          "meaning": "Deep Sea Adventure Terms in Sanskrit: Scuba Diving (गभीर-जल-प्लवनम्), Snorkeling (नलिका-प्लवनम्), and Sea Walk (सिन्धु-तल-विहारः / seabed walking).",
+          "paragraphTranslation": "समुद्री साहसिक गतिविधियों की संस्कृत शब्दावली:\n• स्कूबा-डाइविंग = गभीर-जल-प्लवनम्\n• स्नॉर्कलिंग = नलिका-प्लवनम्\n• सी-वॉक = सिन्धु-तल-विहारः",
+          "words": [
+            "स्कूबा-डैविङ्ग्",
+            "स्नॉर्कलिङ्ग्",
+            "सिन्धु-तल-विहारः",
+            "गभीर-जल-प्लवनम्",
+            "नलिका-प्लवनम्"
+          ]
+        },
+        {
+          "sanskrit": "अण्डमानस्य द्वीपानाम् ऐतिहासिकं नामपरिवर्तनम् (Historical Island Renaming Matrix):\n• रॉस-द्वीपः (Ross Island) ➔ नेताजीसुभाषचन्द्रबोसद्वीपः (Netaji Subhash Chandra Bose Island)\n• नील-द्वीपः (Neil Island) ➔ शहीदद्वीपः (Shaheed Island)\n• हैवलॉक्-द्वीपः (Havelock Island) ➔ स्वराजद्वीपः (Swaraj Island)",
+          "meaning": "Historical Island Renaming Matrix: Ross Island renamed to Netaji Subhash Chandra Bose Island; Neil Island renamed to Shaheed Island; Havelock Island renamed to Swaraj Island.",
+          "paragraphTranslation": "द्वीपों का ऐतिहासिक नामकरण:\n• रॉस द्वीप ➔ नेताजी सुभाषचंद्र बोस द्वीप\n• नील द्वीप ➔ शहीद द्वीप\n• हैवलॉक द्वीप ➔ स्वराज द्वीप",
+          "words": [
+            "रॉस-द्वीपः",
+            "नेताजीसुभाषचन्द्रबोसद्वीपः",
+            "नील-द्वीपः",
+            "शहीदद्वीपः",
+            "हैवलॉक्-द्वीपः",
+            "स्वराजद्वीपः"
+          ]
+        },
+        {
+          "sanskrit": "भाग ५: अण्डमान-प्रशस्तिः (पृष्ठम् १२६)",
+          "meaning": "Part 5: Praise Poetry of Andaman (Page 126)",
+          "paragraphTranslation": "भाग ५: अण्डमान-प्रशस्ति (पृष्ठ १२६)",
+          "words": [
+            "भाग",
+            "५",
+            "अण्डमान",
+            "प्रशस्तिः",
+            "पृष्ठम्",
+            "१२६"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "अण्डमान-प्रशस्तिः — प्रथमः श्लोकः:\n\nविभात्यवाच्याम्बुधिगर्भशोभी,\nपुत्रः कनिष्ठः ननु भारतस्य ।\nसुनीलवारिश्रितस्निग्धगात्रः,\nद्वीपेषु रम्यः द्वीपोऽण्डमानः ॥",
+          "meaning": "Resplendent in the lap of the southern ocean, verily the youngest son of Mother India, with a glossy body bathed in deep blue waters, the Andaman is the most beautiful among all islands.",
+          "paragraphTranslation": "अण्डमान-प्रशस्ति (पहला श्लोक):\nदक्षिण समुद्र के गर्भ में सुशोभित, भारत माता के सबसे छोटे पुत्र के समान, गहरे नीले जल से सिंचित स्निग्ध शरीर वाला यह अण्डमान द्वीप, सभी द्वीपों में सबसे सुंदर और मनमोहक सुशोभित हो रहा है।",
+          "words": [
+            "विभात्यवाच्याम्बुधिगर्भशोभी",
+            "पुत्रः",
+            "कनिष्ठः",
+            "ननु",
+            "भारतस्य",
+            "सुनीलवारिश्रितस्निग्धगात्रः",
+            "द्वीपेषु",
+            "रम्यः",
+            "द्वीपोऽण्डमानः"
+          ]
+        },
+        {
+          "sanskrit": "अण्डमान-प्रशस्तिः — द्वितीयः श्लोकः:\n\nहरितविपिनरम्यैः संवृतो द्वीपवृन्दैः,\nलसति परमवाच्यां नीलसिन्धोस्तटस्थः ।\nप्रथितभुवि निकोबार्-सेल्युलर्-लोकलोके,\nप्रकृतिकृतिपरोऽयं राजते मेऽण्डमानः ॥",
+          "meaning": "Surrounded by picturesque emerald green forest islands, standing upon the shores of the deep blue southern sea, celebrated across the world through Nicobar and the historic Cellular Jail, this wondrous creation of Nature—my Andaman—shines in glorious majesty.",
+          "paragraphTranslation": "अण्डमान-प्रशस्ति (दूसरा श्लोक):\nहरे-भरे रमणीय वनों से आच्छादित द्वीप-समूहों से घिरा हुआ, सुदूर दक्षिण में नीले महासागर के तट पर सुशोभित, विश्व-प्रसिद्ध निकोबार तथा सेल्युलर जेल के कारण लोक-प्रसिद्ध, प्रकृति की अद्भुत कृति यह मेरा अण्डमान गौरव से सुशोभित है।",
+          "words": [
+            "हरितविपिनरम्यैः",
+            "संवृतो",
+            "द्वीपवृन्दैः",
+            "लसति",
+            "नीलसिन्धोस्तटस्थः",
+            "निकोबार्",
+            "सेल्युलर्",
+            "प्रकृतिकृतिपरोऽयं",
+            "राजते",
+            "मेऽण्डमानः"
+          ]
+        },
+        {
+          "sanskrit": "भाग ६: परियोजनाकार्यम् (पृष्ठम् १२६)",
+          "meaning": "Part 6: Project Guidelines (Page 126)",
+          "paragraphTranslation": "भाग ६: परियोजनाकार्य (पृष्ठ १२६)",
+          "words": [
+            "भाग",
+            "६",
+            "परियोजनाकार्यम्",
+            "पृष्ठम्",
+            "१२६"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "परियोजना १ — तटीयक्षेत्राणां रमणीयचित्राणां सङ्कलनम्:\nभारतस्य विभिन्नानां समुद्रतटानां (यथा राधानगरतटस्य, कालापत्थरतटस्य, विजयनगरतटस्य), प्रवालभित्तीनां (Coral Reefs), जलचराणां च नयनाभिराम-चित्राणि सङ्गृह्य स्वपुस्तिकायां लेपयन्तु।",
+          "meaning": "Project 1 — Collection of Coastal Zone Images: Collect scenic landscape photographs of Indian beaches (e.g., Radhanagar Beach, Kalapathar Beach, Vijayanagar Beach), coral reefs, and vibrant marine life, and assemble them in your notebook.",
+          "paragraphTranslation": "परियोजना १: भारत के विभिन्न सुंदर समुद्र तटों (जैसे राधानगर, कालापत्थर, विजयनगर), मूँगे की चट्टानों और समुद्री जीवों के सुंदर चित्रों को एकत्रित करके अपनी स्क्रैपबुक में चिपकाएँ।",
+          "words": [
+            "परियोजना",
+            "तटीयक्षेत्राणां",
+            "चित्राणां",
+            "सङ्कलनम्",
+            "राधानगरतटस्य",
+            "कालापत्थरतटस्य",
+            "विजयनगरतटस्य",
+            "प्रवालभित्तीनां"
+          ]
+        },
+        {
+          "sanskrit": "परियोजना २ — पारिवारिक/शैक्षिक-भ्रमणस्य सविस्तरं विवरणम्:\nभवद्भिः स्वकुटुम्बेन सह अथवा विद्यालयेन सह कृतस्य कस्यचित् तटीयक्षेत्रस्य (समुद्रतटस्य) पर्वतीयक्षेत्रस्य वा भ्रमणस्य स्वानुभवं संस्कृते सरलवाक्यैः लिखन्तु।",
+          "meaning": "Project 2 — Travelogue Writing: Write a detailed summary paragraph or reflective experience in simple Sanskrit sentences about any coastal area or hill station you visited with your family or school.",
+          "paragraphTranslation": "परियोजना २: अपने परिवार या विद्यालय के साथ की गई किसी तटीय क्षेत्र (समुद्र तट) या पर्वतीय क्षेत्र (हिल स्टेशन) की यात्रा का अपना अनुभव सरल संस्कृत वाक्यों में लिखें।",
+          "words": [
+            "परियोजना",
+            "पारिवारिक",
+            "शैक्षिक-भ्रमणस्य",
+            "विवरणम्",
+            "स्वकुटुम्बेन",
+            "तटीयक्षेत्रस्य",
+            "पर्वतीयक्षेत्रस्य",
+            "स्वानुभवं"
+          ]
         }
-      ]
+      ],
+      "page_numbers": "115-126"
     },
     {
       "id": "gsde112",
