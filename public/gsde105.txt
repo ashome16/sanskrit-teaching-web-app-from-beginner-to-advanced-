@@ -87,245 +87,6 @@ English Translation: After that, Nagarjuna accepted the second young man as his 
 
 (हिन्दी अनुवाद: नागार्जुन ने उत्तर दिया— "दूसरा युवक भी औषधि बनाने में कुशल है। लेकिन उसे समय नहीं मिला क्योंकि वह सेवा में व्यस्त था। उस रोगी को मैंने पहले ही मार्ग में देख लिया था। इसलिए मैंने दोनों युवकों को राजमार्ग से जाने के लिए कहा था। पहला युवक रोगी को देखकर भी आगे बढ़ गया। वह मशीन की तरह काम करता है। उसमें सेवा की भावना नहीं है। सेवा भावना के बिना कोई चिकित्सक कैसे हो सकता है? इसलिए मैंने दूसरे युवक का चयन किया।"
 English Translation: Nagarjuna said— "The second one is also skilled in making medicine. But he did not get the time because he was devoted to serving someone. I had already seen that sick man on the road beforehand. That is why I instructed the pair of young men to travel by the highway. The first one went ahead despite seeing the sick man. He works like a machine. There is no feeling of service in him. Without a spirit of service, how can someone be a doctor? Therefore, I made the choice of the second one.")
-
--------------------------------------------------------------------------------
-पद-विश्लेषणम् (Word-to-Word Analysis)
-- रसायनशास्त्रज्ञः (Rasāyanaśāstrajñaḥ): रसायन (Chemistry) + शास्त्रज्ञः (Expert) → Chemistry Expert
-- अहोरात्रम् (Ahorātram): अहः (Day) + रात्रिः (Night) → Day and night continuously
-- निवेदितवान् (Niveditavān): Requested / Submitted an appeal
-- अङ्गीकृतवान् (Aṅgīkṛtavān): Accepted / Agreed to
-- श्वः (Śvaḥ): Tomorrow
-- आगतवन्तौ (Āgatavantau): Both arrived (dual form)
-- निर्माय (Nirmāya): Having prepared / Having made
-- आगच्छताम् (Āgacchatām): Both should come back (imperative verb form)
-- अवसरम् (Avasaram): Time window / Opportunity
-- राजमार्गेण (Rājamārgeṇa): By the main highway
-- खिन्नः (Khinnaḥ): Sad / Heavy-hearted
-- शक्तवान् (Śaktavān): Was capable of / Managed to do
-- शोचनीया (Śocanīyā): Miserable / Pitiful
-- निरतः (Nirataḥ): Fully busy / Immersed in
-- वृत्तान्तम् (Vṛttāntam): Narrative / Account of an incident
-- चितवान् (Citavān): Chose / Selected
-- यन्त्रवत् (Yantravat): Like an automated machine / Mechanically
-- चिकित्सकः (Cikitsakaḥ): Physician / Medical expert
-
-
-३. वयम् शब्दार्थान् जानीमः (Vocabulary Table - पृष्ठम् ५१)
-
-शब्दः (Word) -> अर्थः (Sanskrit Meaning) | हिन्दी (Hindi) | English
--------------------------------------------------------------------------------
-उपाधिम् -> नामचिह्नम् | उपाधि को (डिग्री) | Degree
-पदवीम् -> पदनाम | पदवी | Designation / Position
-मानवीयाः -> मानवे भवितव्याः | मानवों में होने वाले | Humane
-रसायनशास्त्रज्ञः -> यः औषधशास्त्रं जानाति | रसायन शास्त्र का विशेषज्ञ | Chemist
-चिकित्सकः -> भिषक् | वैद्य / डॉक्टर | Physician / Doctor
-प्रयोगशालायाम् -> अनुसन्धान-परीक्षण-कक्षे | प्रयोगशाला में | In the laboratory
-अहोरात्रम् -> अहः च रात्रिः च | रात-दिन लगातार | Day and night continuously
-निवेदितवान् -> प्रार्थितवान् | निवेदन किया | Requested / Submitted an appeal
-अङ्गीकृतवान् -> स्वीकृतवान् | स्वीकार किया | Accepted / Agreed to
-व्यवस्थाम् -> प्रबन्धनम् | व्यवस्था को | Arrangement
-श्वः -> आगामि-दिवसे | कल (आने वाला कल) | Tomorrow
-अन्यस्मिन् दिने -> अपरस्मिन् दिवसे | अगले दिन / दूसरे दिन | On another day
-आगतवन्तौ -> द्वौ आगतौ | दोनों आए | Both arrived (dual form)
-निर्माय -> रचयित्वा / कृत्वा | बनाकर | Having prepared / Having made
-आगच्छताम् -> आगम्यताम् | दोनों आएँ | Both should come back
-अवसरम् -> समयम् | समय / अवसर | Time window / Opportunity
-राजमार्गः / राजमार्गेण -> मुख्यमार्गः / मुख्यमार्गेण | राजमार्ग / राजमार्ग से | Highway / By the main highway
-खिन्नः -> दुःखितः | दुःखी / उदास | Sad / Heavy-hearted
-(अहम्) शक्तवान् -> समर्थः अभवम् | (मैं) कर सका | (I) could do / Was capable of
-रोगिणम् -> अस्वस्थम् | रोगी को | Sick person
-शोचनीया -> दयनीया | दुःखदायी / दयनीय | Miserable / Pitiful
-निरतः -> लीनः / संलग्नः | मग्न / लगा हुआ | Engrossed / Busy / Immersed in
-वृत्तान्तम् -> घटनाम् / प्रसङ्गम् | घटना / प्रसङ्ग को | Anecdote / Narrative / Account
-चितवान् -> चयनं कृतवान् | चुना | Chose / Selected
-यन्त्रवत् -> यन्त्रम् इव | यन्त्र की भाँति / मशीन की तरह | Like a machine / Mechanically
-कषायम् -> क्वाथम् | काढ़ा को | Herbal decoction
-
-
-४. वयम् अभ्यासं कुर्मः (Solved Exercises - पृष्ठानि ५२–५६)
-
-१. अधोलिखितानां प्रश्नानाम् एकपदेन पदद्वयेन वा उत्तराणि लिखन्तु (Answer in one or two words):
-
-(क) कः प्रसिद्धः चिकित्सकः आसीत् ?
-उत्तरम्: नागार्जुनः
-(हिन्दी: प्रसिद्ध चिकित्सक कौन थे? उत्तर: नागार्जुन
-English: Who was a famous physician? Answer: Nagarjuna)
-
-(ख) अन्यस्मिन् दिवसे कौ आगतौ ?
-उत्तरम्: द्वौ युवकौ
-(हिन्दी: अगले दिन कौन आए? उत्तर: दो युवक
-English: Who came on the other day? Answer: Two young men)
-
-(ग) कः खिन्नः आसीत् ?
-उत्तरम्: द्वितीयः युवकः
-(हिन्दी: दुखी कौन था? उत्तर: दूसरा युवक
-English: Who was sad? Answer: The second young man)
-
-(घ) रुग्णस्य परिस्थितिः कथम् आसीत् ?
-उत्तरम्: शोचनीया
-(हिन्दी: रोगी की स्थिति कैसी थी? उत्तर: दयनीय / शोचनीय
-English: How was the condition of the sick man? Answer: Pitiful / Miserable)
-
-(ङ) नागार्जुनः सहायकरूपेण कं चितवान् ?
-उत्तरम्: द्वितीयं युवकम्
-(हिन्दी: नागार्जुन ने सहायक के रूप में किसे चुना? उत्तर: दूसरे युवक को
-English: Whom did Nagarjuna choose as an assistant? Answer: The second young man)
-
-(च) कां विना चिकित्सकः न भवति ?
-उत्तरम्: सेवाभावनाम्
-(हिन्दी: किसके बिना कोई चिकित्सक नहीं हो सकता? उत्तर: सेवा भावना के बिना
-English: Without what cannot someone become a true physician? Answer: Spirit of service)
-
-(छ) नागार्जुनः युवकौ केन मार्गेण गन्तुं सूचितवान् ?
-उत्तरम्: राजमार्गेण
-(हिन्दी: नागार्जुन ने दोनों युवकों को किस मार्ग से जाने का निर्देश दिया? उत्तर: राजमार्ग से
-English: By which path did Nagarjuna instruct the two youths to travel? Answer: Via the highway)
-
--------------------------------------------------------------------------------
-२. अधोलिखितानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखन्तु (Answer in full sentences):
-
-(क) अहोरात्रं नागार्जुनः कुत्र कार्यं करोति स्म ?
-उत्तरम्: अहोरात्रं नागार्जुनः प्रयोगशालायां कार्यं करोति स्म।
-(हिन्दी: नागार्जुन दिन-रात कहाँ काम करते थे? उत्तर: नागार्जुन दिन-रात प्रयोगशाला में काम करते थे।
-English: Nagarjuna used to work day and night in the laboratory.)
-
-(ख) नागार्जुनः महाराजं किं निवेदितवान् ?
-उत्तरम्: नागार्जुनः महाराजं निवेदितवान् - "महाराज ! मम चिकित्साकार्याय एकः सहायकः आवश्यकः" इति।
-(हिन्दी: नागार्जुन ने महाराज से क्या निवेदन किया? उत्तर: नागार्जुन ने महाराज से निवेदन किया - "महाराज! मेरे चिकित्सा-कार्य के लिए एक सहायक आवश्यक है।"
-English: Nagarjuna requested the king, "Your Majesty! An assistant is required for my medical work.")
-
-(ग) प्रथमः युवकः कथं कार्यं कृतवान् ?
-उत्तरम्: प्रथमः युवकः स्वगृहस्य समस्याः परित्यज्य यन्त्रवत् कार्यं कृतवान् औषधं च निर्मितवान्।
-(हिन्दी: पहले युवक ने कैसे काम किया? उत्तर: पहले युवक ने अपने घर की समस्याओं को छोड़कर मशीन की तरह काम किया और औषधि बनाई।
-English: The first young man disregarded his domestic issues, worked mechanically like a machine, and made the medicine.)
-
-(घ) द्वितीयः युवकः राजमार्गे रोगिणं दृष्ट्वा किं कृतवान् ?
-उत्तरम्: द्वितीयः युवकः राजमार्गे रोगिणं दृष्ट्वा तं स्वगृहं नीतवान् दिनद्वयं च तस्य सेवां कृतवान्।
-(हिन्दी: दूसरे युवक ने राजमार्ग पर रोगी को देखकर क्या किया? उत्तर: दूसरे युवक ने राजमार्ग पर रोगी को देखकर उसे अपने घर ले गया और दो दिन तक उसकी सेवा की।
-English: On finding a sick man on the highway, the second young man took him home and spent two days looking after him.)
-
-(ङ) सेवायाः भावनां विना किं न भवेत् ?
-उत्तरम्: सेवायाः भावनां विना चिकित्सकः न भवेत्।
-(हिन्दी: सेवा की भावना के बिना क्या नहीं हो सकता? उत्तर: सेवा की भावना के बिना कोई सच्चा चिकित्सक नहीं हो सकता।
-English: Without a spirit of service, an individual cannot become a true physician.)
-
--------------------------------------------------------------------------------
-३. उदाहरणानुसारम् अधोलिखितानां पदानां स्त्रीलिङ्गरूपाणि लिखन्तु (Convert Masculine Active Past Participles into Feminine equivalents):
-
-पुंलिङ्गम् | स्त्रीलिङ्गम् एकवचनम् | स्त्रीलिङ्गम् बहुवचनम् | हिन्दी | English (Singular context)
-----------------------------------------------------------------------------------------------------------
-(क) पठितवान् | पठितवती | पठितवत्यः | उसने पढ़ा | She read
-(ख) गतवान् | गतवती | गतवत्यः | वह गई | She went
-(ग) लिखितवान् | लिखितवती | लिखितवत्यः | उसने लिखा | She wrote
-(घ) खादितवान् | खादितवती | खादितवत्यः | उसने खाया | She ate
-(ङ) क्रीडितवान् | क्रीडितवती | क्रीडितवत्यः | वह खेली | She played
-(च) हसितवान् | हसितवती | हसितवत्यः | वह हँसी | She laughed
-(छ) निवेदितवान् | निवेदितवती | निवेदितवत्यः | उसने निवेदन किया | She requested
-(ज) सूचितवान् | सूचितवती | सूचितवत्यः | उसने सूचित किया | She indicated
-
--------------------------------------------------------------------------------
-४. उदाहरणानुसारम् अधोलिखितानां पदानां पुंलिङ्गरूपाणि लिखन्तु (Convert Feminine variants into Masculine variants):
-
-स्त्रीलिङ्गम् एकवचनम् | पुंलिङ्गम् एकवचनम् | पुंलिङ्गम् बहुवचनम् | हिन्दी | English (Singular context)
-----------------------------------------------------------------------------------------------------------
-(क) पठितवती | पठितवान् | पठितवन्तः | उसने पढ़ा | He read
-(ख) कृतवती | कृतवान् | कृतवन्तः | उसने किया | He did
-(ग) दृष्टवती | दृष्टवान् | दृष्टवन्तः | उसने देखा | He saw
-(घ) दत्तवती | दत्तवान् | दत्तवन्तः | उसने दिया | He gave
-(ङ) प्रक्षालितवती | प्रक्षालितवान् | प्रक्षालितवन्तः | उसने धोया | He washed
-(च) धावितवती | धावितवान् | धावितवन्तः | वह दौड़ा | He ran
-
--------------------------------------------------------------------------------
-५. उदाहरणानुसारं वाक्यानि परिवर्तयन्तु (Convert Present Tense sentences into Past Tense using 'क्तवतु' forms):
-
-(क) युवकः आपणं गच्छति।
-उत्तरम्: युवकः आपणं गतवान्।
-(हिन्दी: युवक बाज़ार जाता है। → युवक बाज़ार गया।
-English: The youth went to the market)
-
-(ख) सः रोटिकां खादति।
-उत्तरम्: सः रोटिकां खादितवान्।
-(हिन्दी: वह रोटी खाता है। → उसने रोटी खाई।
-English: He ate the roti)
-
-(ग) महिला वस्त्रं ददाति।
-उत्तरम्: महिला वस्त्रं दत्तवती।
-(हिन्दी: महिला वस्त्र देती है। → महिला ने वस्त्र दिया।
-English: The lady gave the cloth)
-
-(घ) बालकः द्विचक्रिकातः पतति।
-उत्तरम्: बालकः द्विचक्रिकातः पतितवान्।
-(हिन्दी: बालक साइकिल से गिरता है। → बालक साइकिल से गिरा।
-English: The boy fell from the bicycle)
-
-(ङ) पितामही चलच्चित्रं पश्यति।
-उत्तरम्: पितामही चलच्चित्रं दृष्टवती।
-(हिन्दी: दादी जी फ़िल्म देखती हैं। → दादी जी ने फ़िल्म देखी।
-English: The grandmother watched the movie)
-
-(च) अहं गृहपाठं लिखामि।
-उत्तरम्: अहं गृहपाठं लिखितवान् / लिखितवती।
-(हिन्दी: मैं गृहकार्य लिखता/लिखती हूँ। → मैंने गृहकार्य लिखा।
-English: I wrote the homework)
-
-(छ) त्वं कुत्र गच्छसि ?
-उत्तरम्: त्वं कुत्र गतवान् / गतवती ?
-(हिन्दी: तुम कहाँ जाते/जाती हो? → तुम कहाँ गए / गईं?
-English: Where did you go?)
-
-(ज) अश्वाः वने धावन्ति।
-उत्तरम्: अश्वाः वने धावितवन्तः।
-(हिन्दी: घोड़े जंगल में दौड़ते हैं। → घोड़े जंगल में दौड़े।
-English: The horses ran in the forest)
-
-(झ) बालिकाः शीघ्रम् आगच्छन्ति।
-उत्तरम्: बालिकाः शीघ्रम् आगतवत्यः।
-(हिन्दी: बालिकाएँ जल्दी आती हैं। → बालिकाएँ जल्दी आईं।
-English: The girls came quickly)
-
-(ञ) वयं समुद्रतीरे पयोहिमं खादामः।
-उत्तरम्: वयं समुद्रतीरे पयोहिमं खादितवन्तः / खादितवत्यः।
-(हिन्दी: हम समुद्र तट पर आइसक्रीम खाते हैं। → हमने समुद्र तट पर आइसक्रीम खाई।
-English: We ate ice-cream at the seashore)
-
--------------------------------------------------------------------------------
-६. 'स्म' इति अव्ययपदम् उपयुज्य अनुच्छेदं पुनः लिखन्तु (Rewrite passage using present tense verb forms combined with 'स्म' particle):
-
-शीर्षकम्: आदर्शकृषकस्य जीवनम् (Title: The Life of an Ideal Farmer / आदर्श किसान का जीवन)
-
-कृषकः प्रतिदिनं कृषिक्षेत्रं गच्छति स्म। जलसेचनं करोति स्म। सः क्षेत्रे गोमयं योजयति स्म, न तु कृतकान् पदार्थान्। अतः व्रीहेः गुणवत्ता अधिका भवति स्म। कीटानां निवारणार्थं जैवौषधं स्थापयति स्म। सः कृषिकार्यं सम्यक् जानाति स्म। अतः अन्ये कृषकाः संशयेन पृच्छन्ति स्म। सः स्वाभिमानेन जीवति स्म। अतः 'अहं कृषकः भूमिपुत्रः' इति साभिमानं वदति स्म। जनाः जालपुटमाध्यमेन तस्य तण्डुलं क्रीणन्ति स्म। एवं तस्य परिवारस्य सर्वे जनाः कृषिकार्येण ससुखं जीवन्ति स्म। सः सर्वान् वदति स्म "कृषकः न दीनः न च दरिद्रः, परं सर्वेषां पोषकः" इति।
-
-(हिन्दी अनुवाद: किसान प्रतिदिन खेत में जाता था। वह सिंचाई करता था। वह खेत में गोबर की खाद डालता था, कृत्रिम (रासायनिक) पदार्थ नहीं। इसलिए धान की गुणवत्ता बहुत अधिक होती थी। कीटों की रोकथाम के लिए वह जैविक कीटनाशक डालता था। वह खेती का काम अच्छी तरह जानता था, इसलिए अन्य किसान संदेह होने पर उससे पूछते थे। वह स्वाभिमान से जीता था और गर्व से कहता था— 'मैं किसान हूँ, धरती का पुत्र हूँ।' लोग इंटरनेट (वेबसाइट) के माध्यम से उसके चावल खरीदते थे। इस प्रकार उसके परिवार के सभी लोग कृषि कार्य से सुखपूर्वक रहते थे। वह सभी से कहता था— 'किसान न तो दीन है और न ही दरिद्र, बल्कि वह सबका पोषक (पालनहार) है।'
-English Translation: The farmer used to go to the agricultural field every day. He used to irrigate the crops. He used to add cow dung to the field, and not artificial fertilizers. Therefore, the quality of the paddy used to be superior. He used to apply organic pesticides to eliminate pests. He knew agricultural work very well. Hence, other farmers used to ask him whenever they had doubts. He lived with self-respect. Therefore, he proudly used to declare, 'I am a farmer, the son of the soil.' People used to purchase his rice via online web portals. In this way, all members of his family lived happily through agriculture. He used to tell everyone: 'A farmer is neither helpless nor poor, but the nourisher of everyone.')
-
--------------------------------------------------------------------------------
-७. अभ्यासः (Exercise 4 - Page 56: Structural Image-to-Sentence Connection Layout)
-
-१. धेनुमाता परमशिवा
-उत्तरम्: → Connect to Visual Card 5 (Woman offering prayers to the holy cow)
-(हिन्दी: गौमाता परम कल्याणकारी और शुभ हैं। - चित्र ५ से मिलान)
-English: Mother cow is highly auspicious and benevolent. (Matches Visual Card 5: A woman reverently offering respects to a cow.)
-
-२. नित्यं मातापित्रोः सेवा
-उत्तरम्: → Connect to Visual Card 1 (Boy taking care of his parents seated on a sofa)
-(हिन्दी: प्रतिदिन माता-पिता की सेवा करना। - चित्र १ से मिलान)
-English: Serving one's parents daily. (Matches Visual Card 1: A young boy taking care of his elderly parents seated on a sofa.)
-
-३. रोगातुराणाम् उपचारः
-उत्तरम्: → Connect to Visual Card 2 (Nurse providing medical support to a patient in a medical room)
-(हिन्दी: बीमार व्यक्तियों की चिकित्सा और देखभाल। - चित्र २ से मिलान)
-English: Medical care and nursing of the sick. (Matches Visual Card 2: A nurse providing medical support and care to a patient in a hospital room.)
-
-४. गृहकार्येषु भगिन्याः साहाय्यम्
-उत्तरम्: → Connect to Visual Card 3 (Brother sweeping the room side-by-side with his sister)
-(हिन्दी: घर के कार्यों में बहन की सहायता करना। - चित्र ३ से मिलान)
-English: Helping one's sister with household chores. (Matches Visual Card 3: Brother and sister cleaning and sweeping the room together.)
-
-५. परस्परं कार्यकरणे साहाय्यम्
-उत्तरम्: → Connect to Visual Card 4 (A group of kids building a creative modular puzzle structure together)
-(हिन्दी: आपस में काम करने में एक-दूसरे की मदद करना। - चित्र ४ से मिलान)
-English: Helping each other mutually in performing work. (Matches Visual Card 4: A group of kids building a creative modular puzzle structure together.)
-
 -------------------------------------------------------------------------------
 ५. स्वास्थ्यरक्षणाय नियमाः (पृष्ठम् ५५ / Rules for Protecting Health)
 
@@ -333,7 +94,7 @@ English: Helping each other mutually in performing work. (Matches Visual Card 4:
 ब्राह्मे मुहूर्ते उत्तिष्ठेत् स्वस्थो रक्षार्थमायुषः ।
 सर्वमेव परित्यज्य शरीरमनुपालयेत् ॥
 (हिन्दी अनुवाद: स्वस्थ मनुष्य को अपनी आयु की रक्षा के लिए ब्रह्ममुहूर्त में उठना चाहिए। बाकी सब कुछ छोड़कर सबसे पहले अपने शरीर की रक्षा और पालन करना चाहिए।
-English Translation: A healthy person should wake up during the Brahma Muhurta (early dawn) to protect their long life. Leaving aside all other tasks, one must first take care of and nurture the physical body.)
+English Translation: A healthy person should wake up during the Brahma Muhurta (early dawn) to protect their longevity. Leaving aside all other tasks, one must first take care of and nurture the physical body.)
 
 श्लोक २:
 भोजनान्ते पिबेत् तक्रं वासरान्ते पिबेत्पयः ।
@@ -342,9 +103,57 @@ English Translation: A healthy person should wake up during the Brahma Muhurta (
 English Translation: One should drink buttermilk at the end of a meal, drink milk at the end of the day (before sleeping), and drink water at the end of the night (upon waking up). By practicing these three habits, diseases never arise.)
 
 -------------------------------------------------------------------------------
-६. परियोजनाकार्यम् — आयुर्वेदीयसस्यानि (पृष्ठम् ५६ / Ayurvedic Plants Project)
+६. अतिरिक्तम् अध्ययनम् — पृष्ठम् ५६: वाक्य-चित्र-संयोजनम् (Page 56 Picture Matching)
 
-भवतां परिवेशे विद्यमानानाम् आयुर्वेदीयसस्यानां पदार्थानां च नामानि लिखन्तु । तेषां स्वास्थ्यरक्षणलाभान् लिखन्तु ।
-यथा – बिल्वं पाचनक्रियां वर्धते। लवङ्गं दन्तसमस्याः कासं च नाशयति ।
-(हिन्दी अनुवाद: अपने परिवेश में उपलब्ध औषधीय पौधों और पदार्थों के नाम तथा उनके स्वास्थ्य लाभ लिखिए। जैसे— बेल पाचन क्रिया को बढ़ाता है। लौंग दाँतों की समस्या और खाँसी को ठीक करती है।
-English Translation: Write the names of Ayurvedic plants and natural substances present in your surroundings. Write down their benefits for health protection. For example: Bael fruit improves digestion. Clove cures tooth problems and cough.)\n
+४. अधः कानिचन चित्राणि वाक्यानि च सन्ति। चित्राणि पश्यन्तु, वाक्यानि पठन्तु। इदानीम् उचितं वाक्यं चित्रेण सह योजयन्तु।
+(Below are some pictures and sentences. Look at the pictures and read the sentences. Now, match the correct sentence with its corresponding picture.)
+
+💡 Completed Matches (From Top to Bottom):
+चित्रम् १ (Boy feeding a cow) —
+  -> धेनुमाता परमशिवा
+  (English: Mother Cow is highly auspicious/sacred. | हिन्दी: गौमाता परम कल्याणकारी और पवित्र हैं।)
+
+चित्रम् २ (Boy bowing down to his parents) —
+  -> नित्यं मातापित्रोः सेवा
+  (English: Daily service to one's parents. | हिन्दी: प्रतिदिन माता-पिता की सेवा करना।)
+
+चित्रम् ३ (Doctor treating a patient in bed) —
+  -> रोगातुराणाम् उपचारः
+  (English: Treatment/care of the sick and suffering. | हिन्दी: रोगियों व पीड़ितों का उपचार एवं सेवा।)
+
+चित्रम् ४ (Brother helping his sister clean/wipe the floor) —
+  -> गृहकार्येषु भगिन्याः साहाय्यम्
+  (English: Helping one's sister with household chores. | हिन्दी: घर के कार्यों में बहन की सहायता करना।)
+
+चित्रम् ५ (Two boys building/carrying blocks together) —
+  -> परस्परं कार्यकरणे साहाय्यम्
+  (English: Helping each other in doing work - Mutual cooperation. | हिन्दी: आपस में काम करने में एक-दूसरे की मदद करना।)
+
+-------------------------------------------------------------------------------
+७. परियोजनाकार्यम् — पृष्ठम् ५६ (Page 56 Project Work)
+
+Question 1:
+Sanskrit: परहितार्थं सेवारतानां प्रेरकाणां महात्मनां जीवनसम्बद्धां कथां सङ्गृह्णन्तु ।
+English: Collect stories related to the lives of great souls who dedicated themselves to the service of others.
+उत्तरम् / कथा-सङ्ग्रहः:
+परहितार्थं स्वप्राणान् अपि त्यक्तवन्तः महर्षि-दधीचि-महोदयः, रुग्णानां दीनानां च सेवायां जीवनं समर्पितवती मदर-टेरेसा-महोदया, दरिद्रनारायणसेवायाः सन्देशप्रदाता स्वामी-विवेकानन्दः च। तेषां सेवागाथाः अस्मान् प्रेरयन्ति।
+(हिन्दी: महर्षि दधीचि, मदर टेरेसा एवं स्वामी विवेकानन्द के परोपकारी जीवन प्रसंग।)
+
+Question 2:
+Sanskrit: अस्माकं समाजे कुटुम्बे वा सेवाकार्यं कुर्वतः जनद्वयस्य विवरणं लिखन्तु ।
+English: Write down brief details about two people who perform acts of service in our society or within your family.
+उत्तरम् / विवरणम्:
+१. अस्माकं कुटुम्बे पितामहः — सः प्रतिदिनं ग्रामस्य निर्धनेभ्यः बालकेभ्यः विनामूल्यं पाठयति, पुस्तकानि च ददाति।
+२. अस्माकं समाजे 'रमेशः' नाम चिकित्सकः — सः प्रतिसप्ताहं निर्धनानां रुग्णानां निःशुल्कम् उपचारं करोति औषधानि च वितरति।
+(हिन्दी: परिवार में दादाजी द्वारा निःशुल्क शिक्षण तथा समाज में डॉक्टर रमेश द्वारा निःशुल्क चिकित्सा सेवा।)
+
+Question 3:
+Sanskrit: भवतां परिवेशे विद्यमानानाम् आयुर्वेदीयसस्यानां पदार्थानां च नामानि लिखन्तु । तेषां स्वास्थ्यरक्षणलाभान् लिखन्तु । यथा – बिल्वं पाचनक्रियां वर्धते। लवङ्गं दन्तसमस्याः कासं च नाशयति ।
+English: Write the names of Ayurvedic plants and ingredients found in your surroundings. Write their health protection benefits. For example—Bael (बिल्व) improves digestion. Clove (लवङ्ग) destroys tooth problems and cough.
+उत्तरम् / आयुर्वेदीयसस्यानि:
+१. तुलसी — कासं प्रतिश्यायं (जुकामम्) च नाशयति, रोगप्रतिरोधकशक्तिं वर्धयति।
+२. हरिद्रा (हल्दी) — व्रणरोपणं करोति, शोथं (सूजनम्) नाशयति।
+३. निम्बः (नीम) — रक्तशोधनं करोति, कृमीन् त्वग्रोगान् च नाशयति।
+४. बिल्वम् (बेल) — पाचनक्रियां वर्धयति, उदररोगान् शमयति।
+५. लवङ्गम् (लौंग) — दन्तवेदनां कासं च नाशयति।
+(हिन्दी: तुलसी (खाँसी-जुकाम निवारक), हल्दी (घाव व सूजन निवारक), नीम (रक्तशोधक), बेल (पाचनवर्धक) और लौंग (दन्तवेदना निवारक)।)

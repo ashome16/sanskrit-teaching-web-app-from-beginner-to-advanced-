@@ -9141,168 +9141,239 @@
           "paragraphTranslation": "किसान प्रतिदिन खेत में जाता था। वह सिंचाई करता था। वह खेत में गोबर की खाद डालता था, कृत्रिम (रासायनिक) पदार्थ नहीं। इसलिए धान की गुणवत्ता बहुत अधिक होती थी। कीटों की रोकथाम के लिए वह जैविक कीटनाशक डालता था। वह खेती का काम अच्छी तरह जानता था, इसलिए अन्य किसान संदेह होने पर उससे पूछते थे। वह स्वाभिमान से जीता था और गर्व से कहता था— 'मैं किसान हूँ, धरती का पुत्र हूँ।' लोग इंटरनेट (वेबसाइट) के माध्यम से उसके चावल खरीदते थे। इस प्रकार उसके परिवार के सभी लोग कृषि कार्य से सुखपूर्वक रहते थे। वह सभी से कहता था— 'किसान न तो दीन है और न ही दरिद्र, बल्कि वह सबका पोषक (पालनहार) है।'"
         },
         {
-          "sanskrit": "७. अभ्यासः — वाक्य-चित्र-संयोजनम् (पृष्ठम् ५६ / Structural Image-to-Sentence Connection Layout)",
-          "meaning": "7. Connect each service-oriented Sanskrit statement to its corresponding visual illustration (Page 56):",
-          "words": [
-            "७.",
-            "अभ्यासः",
-            "—",
-            "वाक्य-चित्र-संयोजनम्",
-            "(पृष्ठम्",
-            "५६",
-            "/",
-            "Structural",
-            "Image-to-Sentence",
-            "Connection",
-            "Layout)"
-          ],
-          "kind": "exercise-header",
-          "hindi_gloss": "७. सेवा से संबंधित निम्नलिखित वाक्यों को उनके सही चित्र से मिलाइए (पृष्ठ ५६):"
-        },
-        {
-          "sanskrit": "१. धेनुमाता परमशिवा",
-          "meaning": "English: Mother cow is highly auspicious and benevolent. (Matches Visual Card 5: A woman reverently offering respects and prayers to the cow.)",
-          "words": [
-            "१.",
-            "धेनुमाता",
-            "परमशिवा"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "१. धेनुमाता परमशिवा → गौमाता परम कल्याणकारी और शुभ हैं। (चित्र ५: महिला द्वारा गौमाता का पूजन एवं सेवा)",
-          "answer_sanskrit": "→ Connect to Visual Card 5 (Woman offering prayers to the holy cow)"
-        },
-        {
-          "sanskrit": "२. नित्यं मातापित्रोः सेवा",
-          "meaning": "English: Serving one's parents daily. (Matches Visual Card 1: A young boy taking care of his elderly parents seated on a sofa.)",
-          "words": [
-            "२.",
-            "नित्यं",
-            "मातापित्रोः",
-            "सेवा"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "२. नित्यं मातापित्रोः सेवा → प्रतिदिन माता-पिता की सेवा करना। (चित्र १: बालक द्वारा सोफ़े पर बैठे माता-पिता की सेवा)",
-          "answer_sanskrit": "→ Connect to Visual Card 1 (Boy taking care of his parents seated on a sofa)"
-        },
-        {
-          "sanskrit": "३. रोगातुराणाम् उपचारः",
-          "meaning": "English: Medical care and nursing of the sick. (Matches Visual Card 2: A nurse providing medical support and care to a patient in a hospital room.)",
-          "words": [
-            "३.",
-            "रोगातुराणाम्",
-            "उपचारः"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "३. रोगातुराणाम् उपचारः → बीमार व्यक्तियों की चिकित्सा और देखभाल। (चित्र २: नर्स द्वारा अस्पताल में रोगी की सेवा एवं उपचार)",
-          "answer_sanskrit": "→ Connect to Visual Card 2 (Nurse providing medical support to a patient in a medical room)"
-        },
-        {
-          "sanskrit": "४. गृहकार्येषु भगिन्याः साहाय्यम्",
-          "meaning": "English: Helping one's sister with household chores. (Matches Visual Card 3: Brother and sister sweeping the room together.)",
-          "words": [
-            "४.",
-            "गृहकार्येषु",
-            "भगिन्याः",
-            "साहाय्यम्"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "४. गृहकार्येषु भगिन्याः साहाय्यम् → घर के कार्यों में बहन की सहायता करना। (चित्र ३: भाई और बहन मिलकर घर की सफ़ाई करते हुए)",
-          "answer_sanskrit": "→ Connect to Visual Card 3 (Brother sweeping the room side-by-side with his sister)"
-        },
-        {
-          "sanskrit": "५. परस्परं कार्यकरणे साहाय्यम्",
-          "meaning": "English: Helping each other mutually in performing work. (Matches Visual Card 4: A group of kids building a creative modular puzzle structure together.)",
-          "words": [
-            "५.",
-            "परस्परं",
-            "कार्यकरणे",
-            "साहाय्यम्"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "५. परस्परं कार्यकरणे साहाय्यम् → आपस में काम करने में एक-दूसरे की मदद करना। (चित्र ४: बच्चों का समूह मिलकर खिलौनों/ब्लॉक्स से रचना बनाते हुए)",
-          "answer_sanskrit": "→ Connect to Visual Card 4 (A group of kids building a creative modular puzzle structure together)"
-        },
-        {
+          "kind": "section-header",
           "sanskrit": "स्वास्थ्यरक्षणाय नियमाः (पृष्ठम् ५५ / Rules for Protecting Health)",
-          "meaning": "Rules for Protecting Health from Page 55 (दिनचर्या-नियमाः)",
+          "meaning": "Rules for Protecting Health from Page 55 (दिनचर्या-नियमाः):",
+          "paragraphTranslation": "स्वास्थ्य रक्षा के नियम (पृष्ठ ५५): दिनचर्या एवं आरोग्य के श्लोक",
           "words": [
             "स्वास्थ्यरक्षणाय",
             "नियमाः",
-            "(पृष्ठम्",
+            "पृष्ठम्",
             "५५",
-            "/",
-            "Rules",
-            "for",
-            "Protecting",
-            "Health)"
-          ],
-          "paragraphTranslation": "स्वास्थ्य रक्षा के नियम (पृष्ठ ५५): दिनचर्या एवं आरोग्य के श्लोक",
-          "kind": "section-header"
+            "दिनचर्या",
+            "आरोग्यम्"
+          ]
         },
         {
-          "sanskrit": "ब्राह्मे मुहूर्ते उत्तिष्ठेत् स्वस्थो रक्षार्थमायुषः । सर्वमेव परित्यज्य शरीरमनुपालयेत् ॥",
+          "kind": "exercise-qa",
+          "sanskrit": "ब्राह्मे मुहूर्ते उत्तिष्ठेत् स्वस्थो रक्षार्थमायुषः ।\nसर्वमेव परित्यज्य शरीरमनुपालयेत् ॥",
+          "answer_label": "अन्वयः भावार्थश्च",
+          "answer_sanskrit": "अन्वयः: स्वस्थः जनः आयुषः रक्षार्थं ब्राह्मे मुहूर्ते उत्तिष्ठेत्। सर्वमेव परित्यज्य शरीरम् अनुपालयेत्।",
           "meaning": "A healthy person should wake up during the Brahma Muhurta (early dawn) to protect their longevity. Leaving aside all other tasks, one must first take care of and nurture the physical body.",
+          "hindi_gloss": "स्वस्थ मनुष्य को अपनी आयु (दीर्घायु) की रक्षा के लिए ब्रह्ममुहूर्त (सूर्योदय से पूर्व) में उठना चाहिए। बाकी सब कुछ छोड़कर सबसे पहले अपने शरीर की रक्षा और पालन करना चाहिए।",
+          "paragraphTranslation": "स्वस्थ मनुष्य को अपनी दीर्घायु के लिए ब्रह्ममुहूर्त में उठकर सर्वप्रथम शरीर की रक्षा करनी चाहिए।",
           "words": [
             "ब्राह्मे",
             "मुहूर्ते",
             "उत्तिष्ठेत्",
             "स्वस्थो",
-            "रक्षार्थमायुषः",
-            "।",
-            "सर्वमेव",
+            "रक्षार्थम्",
+            "आयुषः",
+            "सर्वम्",
+            "एव",
             "परित्यज्य",
-            "शरीरमनुपालयेत्",
-            "॥"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "स्वस्थ मनुष्य को अपनी आयु (दीर्घायु) की रक्षा के लिए ब्रह्ममुहूर्त (सूर्योदय से पूर्व) में उठना चाहिए। बाकी सब कुछ छोड़कर सबसे पहले अपने शरीर की रक्षा और पालन करना चाहिए।",
-          "answer_sanskrit": "अन्वयः: स्वस्थः जनः आयुषः रक्षार्थं ब्राह्मे मुहूर्ते उत्तिष्ठेत्। सर्वमेव परित्यज्य शरीरम् अनुपालयेत्।"
+            "शरीरम्",
+            "अनुपालयेत्"
+          ]
         },
         {
-          "sanskrit": "भोजनान्ते पिबेत् तक्रं वासरान्ते पिबेत्पयः । निशान्ते च पिबेत् वारि त्रिभी रोगो न जायते ॥",
+          "kind": "exercise-qa",
+          "sanskrit": "भोजनान्ते पिबेत् तक्रं वासरान्ते पिबेत्पयः ।\nनिशान्ते च पिबेत् वारि त्रिभी रोगो न जायते ॥",
+          "answer_label": "अन्वयः भावार्थश्च",
+          "answer_sanskrit": "अन्वयः: भोजनान्ते तक्रं पिबेत्, वासरान्ते पयः पिबेत्, निशान्ते च वारि पिबेत्; एतैः त्रिभिः रोगः न जायते।",
           "meaning": "One should drink buttermilk at the end of a meal, drink milk at the end of the day (night), and drink water at the end of the night (early dawn). By practicing these three habits, diseases never arise.",
+          "hindi_gloss": "भोजन के अंत में छाछ पीनी चाहिए, दिन के अंत (रात को सोने से पूर्व) में दूध पीना चाहिए, और रात के अंत (सुबह उठकर) में पानी पीना चाहिए; इन तीन नियमों से कभी रोग उत्पन्न नहीं होता।",
+          "paragraphTranslation": "भोजनोपरांत छाछ, सायंकाल दूध और प्रातःकाल जल पीने से मनुष्य सदैव निरोगी रहता है।",
           "words": [
             "भोजनान्ते",
             "पिबेत्",
             "तक्रं",
             "वासरान्ते",
-            "पिबेत्पयः",
-            "।",
+            "पिबेत्",
+            "पयः",
             "निशान्ते",
             "च",
             "पिबेत्",
             "वारि",
-            "त्रिभी",
-            "रोगो",
+            "त्रिभिः",
+            "रोगः",
             "न",
-            "जायते",
-            "॥"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "भोजन के अंत में छाछ पीनी चाहिए, दिन के अंत (रात को सोने से पूर्व) में दूध पीना चाहिए, और रात के अंत (सुबह उठकर) में पानी पीना चाहिए; इन तीन नियमों से कभी रोग उत्पन्न नहीं होता।",
-          "answer_sanskrit": "अन्वयः: भोजनान्ते तक्रं पिबेत्, वासरान्ते पयः पिबेत्, निशान्ते च वारि पिबेत्; एतैः त्रिभिः रोगः न जायते।"
+            "जायते"
+          ]
         },
         {
-          "sanskrit": "परियोजनाकार्यम् — आयुर्वेदीयसस्यानि (पृष्ठम् ५६ / Ayurvedic Plants Project)",
-          "meaning": "Project Work: Health Protection through Ayurvedic Plants & Natural Substances (Page 56)",
+          "kind": "section-header",
+          "sanskrit": "अतिरिक्तम् अध्ययनम् — पृष्ठम् ५६: वाक्य-चित्र-संयोजनम्\n४. अधः कानिचन चित्राणि वाक्यानि च सन्ति। चित्राणि पश्यन्तु, वाक्यानि पठन्तु। इदानीम् उचितं वाक्यं चित्रेण सह योजयन्तु।",
+          "meaning": "Additional Study (Page 56): 4. Picture Matching Exercise — Look at the pictures and read the sentences. Now, match the correct sentence with its corresponding picture:",
+          "paragraphTranslation": "अतिरिक्त अध्ययन (पृष्ठ ५६): ४. चित्र-वाक्य संयोजन अभ्यास — नीचे दिए गए चित्रों को देखकर उचित वाक्य का मिलान कीजिए:",
+          "words": [
+            "अतिरिक्तम्",
+            "अध्ययनम्",
+            "पृष्ठम्",
+            "५६",
+            "वाक्य-चित्र-संयोजनम्",
+            "४.",
+            "अधः",
+            "कानिचन",
+            "चित्राणि",
+            "वाक्यानि",
+            "च",
+            "सन्ति",
+            "पश्यन्तु",
+            "पठन्तु",
+            "इदानीम्",
+            "उचितं",
+            "वाक्यं",
+            "चित्रेण",
+            "सह",
+            "योजयन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "चित्रम् १ (Boy feeding a cow) —\nधेनुमाता परमशिवा",
+          "answer_label": "उचित-संयोजनम्",
+          "answer_sanskrit": "चित्रम् १ (बालकः धेनवे घासं ददाति) → धेनुमाता परमशिवा",
+          "meaning": "Picture 1 (Boy feeding a cow) matches: 'धेनुमाता परमशिवा' — Mother Cow is highly auspicious and sacred.",
+          "hindi_gloss": "चित्र १ (बालक द्वारा गाय को चारा खिलाना) → धेनुमाता परमशिवा (गौमाता परम कल्याणकारी और पवित्र हैं)।",
+          "paragraphTranslation": "चित्र १: बालक द्वारा गाय को भोजन कराना → धेनुमाता परमशिवा (गौमाता परम कल्याणकारी हैं)।",
+          "words": [
+            "चित्रम्",
+            "१",
+            "धेनुमाता",
+            "परमशिवा"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "चित्रम् २ (Boy bowing down to his parents) —\nनित्यं मातापित्रोः सेवा",
+          "answer_label": "उचित-संयोजनम्",
+          "answer_sanskrit": "चित्रम् २ (बालकः मातापित्रोः पादवन्दनं करोति) → नित्यं मातापित्रोः सेवा",
+          "meaning": "Picture 2 (Boy bowing down to his parents) matches: 'नित्यं मातापित्रोः सेवा' — Daily service to one's parents.",
+          "hindi_gloss": "चित्र २ (बालक द्वारा माता-पिता के चरण स्पर्श व सेवा) → नित्यं मातापित्रोः सेवा (प्रतिदिन माता-पिता की सेवा करना)।",
+          "paragraphTranslation": "चित्र २: बालक द्वारा माता-पिता के चरण छूना → नित्यं मातापित्रोः सेवा (प्रतिदिन माता-पिता की सेवा करना)।",
+          "words": [
+            "चित्रम्",
+            "२",
+            "नित्यं",
+            "मातापित्रोः",
+            "सेवा"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "चित्रम् ३ (Doctor treating a patient in bed) —\nरोगातुराणाम् उपचारः",
+          "answer_label": "उचित-संयोजनम्",
+          "answer_sanskrit": "चित्रम् ३ (चिकित्सकः शय्यास्थस्य आतुरस्य उपचारं करोति) → रोगातुराणाम् उपचारः",
+          "meaning": "Picture 3 (Doctor treating a patient in bed) matches: 'रोगातुराणाम् उपचारः' — Treatment and care of the sick and suffering.",
+          "hindi_gloss": "चित्र ३ (चिकित्सक द्वारा शय्या पर रोगी का उपचार) → रोगातुराणाम् उपचारः (बीमार व पीड़ित व्यक्तियों की चिकित्सा और देखभाल)।",
+          "paragraphTranslation": "चित्र ३: डॉक्टर द्वारा बिस्तर पर मरीज़ का इलाज → रोगातुराणाम् उपचारः (रोगियों की चिकित्सा और देखभाल)।",
+          "words": [
+            "चित्रम्",
+            "३",
+            "रोगातुराणाम्",
+            "उपचारः"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "चित्रम् ४ (Brother helping his sister clean/wipe the floor) —\nगृहकार्येषु भगिन्याः साहाय्यम्",
+          "answer_label": "उचित-संयोजनम्",
+          "answer_sanskrit": "चित्रम् ४ (भ्राता भगिन्या सह सम्मार्जनं करोति) → गृहकार्येषु भगिन्याः साहाय्यम्",
+          "meaning": "Picture 4 (Brother helping his sister clean/wipe the floor) matches: 'गृहकार्येषु भगिन्याः साहाय्यम्' — Helping one's sister with household chores.",
+          "hindi_gloss": "चित्र ४ (भाई द्वारा बहन के साथ मिलकर फ़र्श की सफ़ाई) → गृहकार्येषु भगिन्याः साहाय्यम् (घर के कार्यों में बहन की सहायता करना)।",
+          "paragraphTranslation": "चित्र ४: भाई द्वारा बहन के साथ मिलकर फ़र्श की सफ़ाई → गृहकार्येषु भगिन्याः साहाय्यम् (घरेलू कामों में बहन की मदद करना)।",
+          "words": [
+            "चित्रम्",
+            "४",
+            "गृहकार्येषु",
+            "भगिन्याः",
+            "साहाय्यम्"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "चित्रम् ५ (Two boys building/carrying blocks together) —\nपरस्परं कार्यकरणे साहाय्यम्",
+          "answer_label": "उचित-संयोजनम्",
+          "answer_sanskrit": "चित्रम् ५ (बालकद्वयं मिलित्वा काष्ठखण्डान् वहतः) → परस्परं कार्यकरणे साहाय्यम्",
+          "meaning": "Picture 5 (Two boys building/carrying blocks together) matches: 'परस्परं कार्यकरणे साहाय्यम्' — Helping each other in doing work (Mutual cooperation).",
+          "hindi_gloss": "चित्र ५ (दो बालक मिलकर ब्लॉक/सामग्री उठाना व निर्माण करना) → परस्परं कार्यकरणे साहाय्यम् (आपस में काम करने में एक-दूसरे की मदद करना)।",
+          "paragraphTranslation": "चित्र ५: दो बालक मिलकर ब्लॉक निर्माण करना → परस्परं कार्यकरणे साहाय्यम् (आपसी सहयोग से कार्य करना)।",
+          "words": [
+            "चित्रम्",
+            "५",
+            "परस्परं",
+            "कार्यकरणे",
+            "साहाय्यम्"
+          ]
+        },
+        {
+          "kind": "section-header",
+          "sanskrit": "परियोजनाकार्यम् — पृष्ठम् ५६ (Project Work)",
+          "meaning": "Project Work (Page 56): Service to Society, Role Models, and Ayurvedic Medicinal Plants",
+          "paragraphTranslation": "परियोजनाकार्यम् (पृष्ठ ५६): परोपकारी महापुरुषों की जीवन कथाएँ, समाज-सेवक और आयुर्वेदिक औषधीय पौधे",
           "words": [
             "परियोजनाकार्यम्",
-            "—",
-            "आयुर्वेदीयसस्यानि",
-            "(पृष्ठम्",
+            "पृष्ठम्",
             "५६",
-            "/",
-            "Ayurvedic",
-            "Plants",
-            "Project)"
-          ],
-          "paragraphTranslation": "परियोजना कार्य: परिवेश में उपस्थित औषधीय पौधे एवं उनके स्वास्थ्य लाभ (पृष्ठ ५६)",
-          "kind": "section-header"
+            "सेवाकार्यम्",
+            "महात्मानः",
+            "आयुर्वेदीयसस्यानि"
+          ]
         },
         {
-          "sanskrit": "भवतां परिवेशे विद्यमानानाम् आयुर्वेदीयसस्यानां पदार्थानां च नामानि लिखन्तु । तेषां स्वास्थ्यरक्षणलाभान् लिखन्तु । यथा – बिल्वं पाचनक्रियां वर्धते। लवङ्गं दन्तसमस्याः कासं च नाशयति ।",
-          "meaning": "Write the names of Ayurvedic plants and natural substances present in your surroundings. Write down their benefits for health protection. For example: Bael fruit improves digestion. Clove cures tooth problems and cough.",
+          "kind": "exercise-qa",
+          "sanskrit": "प्रश्नः १ — परहितार्थं सेवारतानां प्रेरकाणां महात्मनां जीवनसम्बद्धां कथां सङ्गृह्णन्तु ।",
+          "answer_label": "उत्तरम् / कथा-सङ्ग्रहः",
+          "answer_sanskrit": "उत्तरम्: परहितार्थं स्वप्राणान् अपि त्यक्तवन्तः महर्षि-दधीचि-महोदयः, रुग्णानां दीनानां च सेवायां जीवनं समर्पितवती मदर-टेरेसा-महोदया, दरिद्रनारायणसेवायाः सन्देशप्रदाता स्वामी-विवेकानन्दः च। तेषां सेवागाथाः अस्मान् प्रेरयन्ति।",
+          "meaning": "Question 1: Collect stories related to the lives of great souls who dedicated themselves to the service of others.\nAnswer: Great souls such as Maharshi Dadhichi who sacrificed his life for the welfare of all, Mother Teresa who dedicated her life to nursing the sick and destitute, and Swami Vivekananda who preached service to God in the poor (Daridra Narayana). Their life stories inspire us.",
+          "hindi_gloss": "प्रश्न १: दूसरों के हित के लिए सेवा में लगे प्रेरक महापुरुषों के जीवन से संबंधित कहानियाँ संकलित कीजिए।\nउत्तर: महर्षि दधीचि (जिन्होंने लोककल्याण के लिए अपनी अस्थियों का दान दिया), मदर टेरेसा (जिन्होंने कुष्ठरोगियों और असहायों की सेवा में जीवन बिताया), तथा स्वामी विवेकानन्द (जिन्होंने 'नर सेवा ही नारायण सेवा' का मंत्र दिया) के प्रेरक जीवन प्रसंग अनुकरणीय हैं।",
+          "paragraphTranslation": "प्रश्न १: दूसरों के हित के लिए सेवा में लगे प्रेरक महापुरुषों के जीवन से संबंधित कहानियाँ संकलित कीजिए।",
           "words": [
+            "प्रश्नः",
+            "१",
+            "परहितार्थं",
+            "सेवारतानां",
+            "प्रेरकाणां",
+            "महात्मनां",
+            "जीवनसम्बद्धां",
+            "कथां",
+            "सङ्गृह्णन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "प्रश्नः २ — अस्माकं समाजे कुटुम्बे वा सेवाकार्यं कुर्वतः जनद्वयस्य विवरणं लिखन्तु ।",
+          "answer_label": "उत्तरम् / विवरणम्",
+          "answer_sanskrit": "उत्तरम्: १. अस्माकं कुटुम्बे पितामहः — सः प्रतिदिनं ग्रामस्य निर्धनेभ्यः बालकेभ्यः विनामूल्यं पाठयति, पुस्तकानि च ददाति। २. अस्माकं समाजे 'रमेशः' नाम चिकित्सकः — सः प्रतिसप्ताहं निर्धनानां रुग्णानां निःशुल्कम् उपचारं करोति औषधानि च वितरति।",
+          "meaning": "Question 2: Write down brief details about two people who perform acts of service in our society or within your family.\nAnswer: 1. In our family, my grandfather — he teaches poor village children free of cost every day and gives them books. 2. In our society, a doctor named Dr. Ramesh — he conducts free medical checkups every week for needy patients and distributes medicines free of charge.",
+          "hindi_gloss": "प्रश्न २: हमारे समाज में अथवा परिवार में सेवा-कार्य करने वाले दो व्यक्तियों का संक्षिप्त विवरण लिखिए।\nउत्तर: १. हमारे परिवार में दादाजी — वे प्रतिदिन गाँव के निर्धन बच्चों को निःशुल्क पढ़ाते हैं और उन्हें पुस्तकें देते हैं। २. हमारे समाज में डॉक्टर रमेश — वे प्रत्येक सप्ताह निर्धन रोगियों की निःशुल्क चिकित्सा करते हैं और दवाइयाँ बाँटते हैं।",
+          "paragraphTranslation": "प्रश्न २: हमारे समाज में अथवा परिवार में सेवा-कार्य करने वाले दो व्यक्तियों का संक्षिप्त विवरण लिखिए।",
+          "words": [
+            "प्रश्नः",
+            "२",
+            "अस्माकं",
+            "समाजे",
+            "कुटुम्बे",
+            "वा",
+            "सेवाकार्यं",
+            "कुर्वतः",
+            "जनद्वयस्य",
+            "विवरणं",
+            "लिखन्तु"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "प्रश्नः ३ — भवतां परिवेशे विद्यमानानाम् आयुर्वेदीयसस्यानां पदार्थानां च नामानि लिखन्तु । तेषां स्वास्थ्यरक्षणलाभान् लिखन्तु । यथा – बिल्वं पाचनक्रियां वर्धते। लवङ्गं दन्तसमस्याः कासं च नाशयति ।",
+          "answer_label": "उत्तरम् / आयुर्वेदीयसस्यानि",
+          "answer_sanskrit": "उदाहरणानि:\n१. तुलसी — कासं प्रतिश्यायं (जुकामम्) च नाशयति, रोगप्रतिरोधकशक्तिं वर्धयति।\n२. हरिद्रा (हल्दी) — व्रणरोपणं करोति, शोथं (सूजनम्) नाशयति, रोगनिवारकं भवति।\n३. निम्बः (नीम) — रक्तशोधनं करोति, कृमीन् त्वग्रोगान् च नाशयति।\n४. बिल्वम् (बेल) — पाचनक्रियां वर्धयति, उदररोगान् शमयति।\n५. लवङ्गम् (लौंग) — दन्तवेदनां कासं च नाशयति।",
+          "meaning": "Question 3: Write the names of Ayurvedic plants and ingredients found in your surroundings. Write their health protection benefits. For example—Bael (बिल्व) improves digestion. Clove (लवङ्ग) destroys tooth problems and cough.\nAnswer Examples:\n1. Tulsi (Holy Basil) — Cures cough, cold, and boosts immunity.\n2. Haridra (Turmeric) — Heals wounds, reduces inflammation, and acts as an antiseptic.\n3. Nimba (Neem) — Purifies blood, destroys intestinal worms, and treats skin conditions.\n4. Bilva (Bael) — Enhances digestion and relieves gastrointestinal ailments.\n5. Lavanga (Clove) — Relieves toothaches and eliminates cough.",
+          "hindi_gloss": "प्रश्न ३: अपने परिवेश में उपलब्ध आयुर्वेदिक औषधीय पौधों और पदार्थों के नाम तथा उनके स्वास्थ्य लाभ लिखिए। जैसे— बेल पाचन क्रिया को बढ़ाता है। लौंग दाँतों की समस्या और खाँसी को नष्ट करती है।\nउत्तर: १. तुलसी — खाँसी, जुकाम और बुखार को दूर करती है, रोग प्रतिरोधक क्षमता बढ़ाती है।\n२. हरिद्रा (हल्दी) — घाव ठीक करती है, सूजन कम करती है।\n३. नीम — खून साफ़ करता है और त्वचा रोगों को ठीक करता है।\n४. बेल — पाचन शक्ति को बढ़ाता है।\n५. लौंग — दाँत के दर्द और खाँसी से राहत दिलाती है।",
+          "paragraphTranslation": "प्रश्न ३: अपने परिवेश में उपलब्ध औषधीय पौधों और पदार्थों के नाम तथा उनके स्वास्थ्य लाभ लिखिए।",
+          "words": [
+            "प्रश्नः",
+            "३",
             "भवतां",
             "परिवेशे",
             "विद्यमानानाम्",
@@ -9311,27 +9382,14 @@
             "च",
             "नामानि",
             "लिखन्तु",
-            "।",
-            "तेषां",
-            "स्वास्थ्यरक्षणलाभान्",
-            "लिखन्तु",
-            "।",
-            "यथा",
-            "–",
             "बिल्वं",
             "पाचनक्रियां",
             "वर्धते",
-            "।",
             "लवङ्गं",
             "दन्तसमस्याः",
             "कासं",
-            "च",
-            "नाशयति",
-            "।"
-          ],
-          "kind": "exercise-qa",
-          "hindi_gloss": "अपने परिवेश में उपलब्ध औषधीय पौधों और पदार्थों के नाम तथा उनके स्वास्थ्य लाभ लिखिए। जैसे— बेल पाचन क्रिया को बढ़ाता है। लौंग दाँतों की समस्या और खाँसी को ठीक करती है। तुलसी— खाँसी व जुकाम ठीक करती है; हल्दी— रोग प्रतिरोधक क्षमता बढ़ाती है; नीम— रक्त साफ़ करता है।",
-          "answer_sanskrit": "उदाहरणम्: १. तुलसी — कासं श्वाससमस्यां च नाशयति। २. हरिद्रा — व्रणशोधनं करोति रोगप्रतिरोधकशक्तिं वर्धयति च। ३. निम्बः — रक्तशुद्धिं करोति त्वग्रोगान् नाशयति च। ४. बिल्वम् — पाचनक्रियां वर्धयति। ५. लवङ्गम् — दन्तसमस्याः कासं च नाशयति।"
+            "नाशयति"
+          ]
         }
       ],
       "page_numbers": "47-50"
