@@ -50,7 +50,7 @@ export const WORKSHEET_CATEGORIES = [
   { id: 'grammar', label: 'Vyākaraṇa / Grammar (10 Worksheets · व्याकरण-पत्राणि)', icon: '📐' },
   { id: 'vedic_maths', label: 'Vedic Maths Drills (वैदिक-गणितम्)', icon: '⚡' },
   { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
-  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 58 Worksheets)', icon: '🪕' },
+  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 63 Worksheets)', icon: '🪕' },
 ] as const;
 
 export const WORKSHEETS: Worksheet[] = [
@@ -10944,6 +10944,332 @@ export const WORKSHEETS: Worksheet[] = [
           "type": "short_ans",
           "answer": "कल्पः (यज्ञविधि-कर्मकाण्ड-प्रतिपादकम् अङ्गम्)",
           "explanation": "कल्पवेदाङ्गः वेदपुरुषस्य हस्तौ मन्यते, यतो हि एष कर्मकाण्डस्य यागविधीनां च हस्तवत् सम्पादनं करोति।"
+        }
+      ]
+    }
+  ]
+}
+,
+{
+  "id": "ws-grade8-ch13-ws1",
+  "title": "Chapter 13 · Worksheet 1: Anatomy of Speech Production (ध्वन्युत्पादक-शारीरिकतन्त्राणि)",
+  "titleSanskrit": "त्रयोदशः पाठः · कार्यपत्रिका १: ध्वन्युत्पादक-शारीरिकतन्त्र-परिज्ञानम्",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Identifying the four bodily systems involved in voice production and their functional roles (Pages 146–147).",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Bodily Systems Identification",
+      "sectionTitleSanskrit": "खण्डः 'क' · शरीरतन्त्र-परिज्ञानम्",
+      "instructions": "Identify the physiological systems corresponding to the anatomical regions:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "नाभिप्रदेशे स्थिताः मांसपेश्यः कम् बल-तन्त्रम् इति कथ्यते? (What system is formed by abdominal muscles in the navel region?)",
+          "questionSanskrit": "नाभिप्रदेशे स्थिताः मांसपेश्यः किं तन्त्रम्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "मांसपेशी-बल-तन्त्रम् (Muscular-pressure System)",
+          "explanation": "नाभिप्रदेशे स्थिताः मांसपेश्यः 'मांसपेशी-बल-तन्त्रम्' भूत्वा उरसि आघातं नोदयन्ति।"
+        },
+        {
+          "num": 2,
+          "question": "उरः (छाती/फेफड़े) कस्य बल-तन्त्रस्य रूपेण वायुम् ऊर्ध्वं निःसारयति? (What pressure system expels lung air upward from the chest?)",
+          "questionSanskrit": "उरसि किम् बल-तन्त्रं भवति?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "वायु-बल-तन्त्रम् (Air-pressure System)",
+          "explanation": "उरः (वक्षःस्थलं) 'वायु-बल-तन्त्रम्' अस्ति, यत् श्वासकोशस्य वायुम् ऊर्ध्वं कण्ठबिलं प्रति निःसारयति।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Vocal Tract Cavities & Systems",
+      "sectionTitleSanskrit": "खण्डः 'ख' · कण्ठ-आस्य-तन्त्रम्",
+      "instructions": "Answer the questions on phonatory and articulatory systems:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "कण्ठ-बिलः (Larynx / Voice-box) कस्य तन्त्रस्य रूपेण कार्यं करोति? (What system does the larynx represent?)",
+          "questionSanskrit": "कण्ठ-बिलः किं तन्त्रम् अस्ति?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "ध्वनि-तन्त्रम् (Phonatory & Resonatory System)",
+          "explanation": "कण्ठ-बिलः (स्वरतन्त्रीयुक्तं स्थानम्) 'ध्वनि-तन्त्रम्' कथ्यते यत्र वायुना शब्दध्वनिः जन्यते।"
+        },
+        {
+          "num": 4,
+          "question": "आस्यस्य (Head / Articulatory System) अभ्यन्तरे द्वे गुहे के भवतः? (Which two cavities exist inside the Asya?)",
+          "questionSanskrit": "आस्यस्य अभ्यन्तरे द्वे गुहे के?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "(क) मुखम् (Oral cavity), (ख) नासिका (Nasal cavity) च",
+          "explanation": "आस्यस्य (उच्चारण-तन्त्रस्य) अभ्यन्तरे मुखं नासिका च इति उभौ भवतः।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch13-ws2",
+  "title": "Chapter 13 · Worksheet 2: Sthana, Karana & The Flute Metaphor (स्थान-करण-विवेकः)",
+  "titleSanskrit": "त्रयोदशः पाठः · कार्यपत्रिका २: स्थान-करण-मुरली-दृष्टान्तः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Distinguishing between fixed places of articulation (स्थानम्) and dynamic tools (करणम्) using the flute analogy (Pages 148–149).",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Sthana & Karana Definitions",
+      "sectionTitleSanskrit": "खण्डः 'क' · स्थान-करण-लक्षणम्",
+      "instructions": "Define Sthana and Karana based on text mechanisms:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "वर्णस्य उच्चारणसमये यस्मिन् स्थले ध्वनिः प्रकटीभवति, तत् किं कथ्यते? (What is the fixed spot where sound manifests called?)",
+          "questionSanskrit": "यस्मिन् स्थले ध्वनिः प्रकटीभवति, तत् किम्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "स्थानम् (Place of Articulation)",
+          "explanation": "आस्ये मुखे नासिकायां वा यस्मिन् स्थले वायुः वर्णरूपेण प्रकटीभवति, तत् 'स्थानम्' इति उच्यते।"
+        },
+        {
+          "num": 2,
+          "question": "स्थानं स्पृशन् समीपं वा गच्छन् आस्यस्य गतिशीलः भागः किं कथ्यते? (What is the mobile part approaching a place called?)",
+          "questionSanskrit": "स्थानं स्पृशन् भागः किं कथ्यते?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "करणम् (Active Tool of Articulation)",
+          "explanation": "उच्चारणसमये आस्यस्य यः भागः स्थानं स्पृशति स्थानस्य समीपं वा याति, सः 'करणम्' इति कथ्यते।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Flute Metaphor Matching",
+      "sectionTitleSanskrit": "खण्डः 'ख' · मुरली-दृष्टान्त-मेलनम्",
+      "instructions": "Map the components of the flute (मुरली) to the articulatory tract:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "मुरल्याः अङ्गुलिच्छिद्राणि आस्यस्य कस्य अङ्गस्य इव व्यवहरन्ति? (What do the flute's finger-holes behave like?)",
+          "questionSanskrit": "मुरल्याः अङ्गुलिच्छिद्राणि कस्य इव व्यवहरन्ति?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "स्थानानि इव (Like the Places of Articulation)",
+          "explanation": "छिद्राणि निश्चितानि स्थानानि सन्ति, अतः तानि आस्यस्य उच्चारण-स्थानानि इव व्यवहरन्ति।"
+        },
+        {
+          "num": 4,
+          "question": "मुरलीं वादयन्त्यः अङ्गुलयः आस्यस्य कस्य अङ्गस्य इव व्यवहरन्ति? (What do the active playing fingers behave like?)",
+          "questionSanskrit": "मुरलीं वादयन्त्यः अङ्गुलयः कस्य इव व्यवहरन्ति?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "करणानि इव (Like the Active Articulators / Tools)",
+          "explanation": "यथा गतिशीलाः अङ्गुलयः छिद्राणि स्पृशन्ति, तथैव मुखस्य गतिशील-भागाः करणानाम् इव व्यवहरन्ति।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch13-ws3",
+  "title": "Chapter 13 · Worksheet 3: Tongue Dynamics in Articulation (जिह्वायाः भूमिका)",
+  "titleSanskrit": "त्रयोदशः पाठः · कार्यपत्रिका ३: जिह्वा-करण-प्रक्रिया",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Analyzing how the tongue functions dynamically across Palatal, Retroflex, and Dental sounds (Pages 149–150).",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Tongue Regions for Palatal and Retroflex",
+      "sectionTitleSanskrit": "खण्डः 'क' · तालव्य-मूर्धन्य-जिह्वा-भागाः",
+      "instructions": "Identify which anatomical section of the tongue articulates with which place:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "तालव्यानां वर्णानाम् उच्चारणे तालु-स्थानं स्पृशन् जिह्वायाः कः भागः करणं भवति? (Which tongue section articulates with the palate?)",
+          "questionSanskrit": "तालव्येषु जिह्वायाः कः भागः करणम्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "जिह्वा-मध्यः (Middle of the tongue)",
+          "explanation": "तालु-स्थाने जिह्वायाः मध्यभागः (जिह्वा-मध्यः) करणत्वेन कार्यं करोति।"
+        },
+        {
+          "num": 2,
+          "question": "मूर्धन्यानां वर्णानाम् उच्चारणे मूर्धा-स्थानं प्रति जिह्वायाः कः भागः करणं भवति? (Which tongue section articulates with Murdha?)",
+          "questionSanskrit": "मूर्धन्येषु जिह्वायाः कः भागः करणम्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "जिह्वा-उपाग्रः (Sub-tip / Near-tip of the tongue)",
+          "explanation": "मूर्धा-स्थाने जिह्वायाः अग्रात् पूर्वभागः अर्थात् 'जिह्वा-उपाग्रः' करणं भवति।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Dental Articulation & Tongue Inactivity",
+      "sectionTitleSanskrit": "खण्डः 'ख' · दन्त्य-उच्चारणं निष्क्रियजिह्वा च",
+      "instructions": "Explain dental articulation and cases where tongue remains inactive:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "दन्त्यानां वर्णानाम् उच्चारणे दन्तं स्पृशन् जिह्वायाः कः भागः करणं भवति? (Which tongue part touches teeth for dentals?)",
+          "questionSanskrit": "दन्त्येषु जिह्वायाः कः भागः करणम्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "जिह्वा-अग्रः (Absolute tip of the tongue)",
+          "explanation": "दन्त्यवर्णानाम् उच्चारणे जिह्वायाः अग्रभागः (जिह्वाग्रम्) दन्तस्थानं स्पृशति।"
+        },
+        {
+          "num": 4,
+          "question": "केषां त्रयाणां वर्णानाम् उच्चारणे जिह्वा प्रायः निष्क्रिया (Passive) भवति? (In which 3 classes does the tongue remain passive?)",
+          "questionSanskrit": "केषु त्रिषु वर्गेषु जिह्वा निष्क्रिया भवति?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "कण्ठ्यानाम्, ओष्ठ्यानाम्, नासिक्यानां च वर्णानाम् (Guttural, Labial, and Nasal sounds)",
+          "explanation": "कण्ठ, ओष्ठ और नासिका में स्व-स्थान ही करण होता है, अतः यहाँ जिह्वा सुप्त/निष्क्रिय रहती है।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch13-ws4",
+  "title": "Chapter 13 · Worksheet 4: Articulatory Spatial Order (बहिष्ठात् अन्तः स्थानक्रमः)",
+  "titleSanskrit": "त्रयोदशः पाठः · कार्यपत्रिका ४: स्थानानां बहिष्ठात् अन्तः क्रमः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Arranging oral places of articulation from outermost to innermost and spatial analysis (Page 156).",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Outermost and Innermost Extremities",
+      "sectionTitleSanskrit": "खण्डः 'क' · बाह्यतम-आन्तरिकतम-स्थाने",
+      "instructions": "Identify the anatomical extremities of the vocal tract:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "मुखे उपलभ्यमानेषु स्थानेषु बाह्यतमं (सबके बाहर) स्थानं किम् अस्ति? (What is the outermost place of articulation?)",
+          "questionSanskrit": "बाह्यतमं स्थानं किम्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "ओष्ठः (Lips / Labial place)",
+          "explanation": "मुखस्य बहिष्ठात् प्रथमं तथा बाह्यतमं स्थानम् 'ओष्ठः' अस्ति।"
+        },
+        {
+          "num": 2,
+          "question": "मुखे उपलभ्यमानेषु स्थानेषु आन्तरिकतमं (सबके अंदर) स्थानं किम् अस्ति? (What is the innermost place of articulation?)",
+          "questionSanskrit": "आन्तरिकतमं स्थानं किम्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "कण्ठः (Throat / Guttural place)",
+          "explanation": "मुखस्य गभीरतमं तथा आन्तरिकतमं स्थानं 'कण्ठः' भवति।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Complete Spatial Order & Sequential Analysis",
+      "sectionTitleSanskrit": "खण्डः 'ख' · पञ्चस्थानानां सम्पूर्ण-क्रमः",
+      "instructions": "Write the sequence from outside to inside and determine intermediate locations:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "ओष्ठ्यात् कण्ठ्यं प्रति पञ्चानां मुखस्थानानां सम्पूर्णं क्रमं लिखत। (Write the 5 oral places from lips to throat.)",
+          "questionSanskrit": "बहिष्ठात् अन्तः सम्पूर्णः क्रमः कः?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "१. ओष्ठः ➔ २. दन्तः ➔ ३. मूर्धा ➔ ४. तालु ➔ ५. कण्ठः",
+          "explanation": "बाहर से अंदर का क्रम: ओष्ठ ➔ दन्त ➔ मूर्धा ➔ तालु ➔ कण्ठ।"
+        },
+        {
+          "num": 4,
+          "question": "'मूर्धा' स्थानं कयोः द्वयोः स्थानयोः मध्ये तिष्ठति? (Between which two places does Murdha lie?)",
+          "questionSanskrit": "'मूर्धा' कयोः मध्ये वर्तते?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "दन्त-तालुयोः मध्ये (Between Teeth and Palate)",
+          "explanation": "मूर्धा दन्तस्य तालुनश्च मध्ये शीर्षभागे अवस्थितम् अस्ति।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch13-ws5",
+  "title": "Chapter 13 · Worksheet 5: Self-Tooling Sounds & Verification (स्वस्थानकरण-परीक्षणम्)",
+  "titleSanskrit": "त्रयोदशः पाठः · कार्यपत्रिका ५: स्वस्थानकरण-विवेकः सत्य-असत्यञ्च",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Self-tooling articulation in Labial, Guttural, and Nasal sounds, and textual validation (आम्/न) based on Page 155.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Self-Tooling Analysis (स्वस्थानकरणम्)",
+      "sectionTitleSanskrit": "खण्डः 'क' · स्वस्थानकरण-परिज्ञानम्",
+      "instructions": "Analyze the mechanics where an organ acts as its own tool:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "'ओष्ठ्याः वर्णाः' इत्यत्र कः स्थानं भवति कश्च करणं भवति? (In labial letters, which is place and which is tool?)",
+          "questionSanskrit": "ओष्ठ्येषु किं स्थानं किं च करणम्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "उत्तरोष्ठः स्थानम्, अधरोष्ठः च करणम् (Upper lip is Sthana, Lower lip is Karana)",
+          "explanation": "ओष्ठ्यवर्णानाम् उच्चारणे उपरितन-ओष्ठः स्थानं भवति अधस्तन-ओष्ठश्च करणं भवति।"
+        },
+        {
+          "num": 2,
+          "question": "'स्वस्थानकरणः' इत्यस्य कः अभिप्रायः? (What is the meaning of 'Sva-sthana-karana'?)",
+          "questionSanskrit": "'स्वस्थानकरणः' इत्यनेन किं ज्ञायते?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "यस्य वर्णस्य निजस्थानस्य एव कश्चित् भागः करणं भवति (Part of its own organ acts as tool)",
+          "explanation": "निजस्थानस्य परभागः पूर्वभागं स्पृशति, पृथक् जिह्वायाः उपयोगः न क्रियते।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Textual Fact Verification (आम् / न)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · सत्य-असत्य-परीक्षणम्",
+      "instructions": "Verify each statement from Chapter 13 as आम् (True) or न (False):",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "'श्वासकोशस्थितः वायुः ऊर्ध्वं चरन् पूर्वम् आस्यं प्राप्नोति।' — इदं वाक्यं शुद्धं वा? (आम् / न)",
+          "questionSanskrit": "वायुः पूर्वम् आस्यं प्राप्नोति वा?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "न (प्रथमं कण्ठ-बिलं प्राप्नोति)",
+          "explanation": "वायुः फेफड़ों से निकलकर पहले कण्ठ-बिल (Larynx) पहुँचता है, उसके बाद आस्य में।"
+        },
+        {
+          "num": 4,
+          "question": "'आस्यस्य अभ्यन्तरे वर्णानाम् उत्पत्त्यर्थम् आभ्यन्तर-प्रयत्नः आवश्यकः अस्ति।' — आम् अथवा न?",
+          "questionSanskrit": "आभ्यन्तर-प्रयत्नः आवश्यकः अस्ति वा?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "आम् (स्थानम्, करणम्, आभ्यन्तर-प्रयत्नश्चेति त्रयम् आवश्यकम्)",
+          "explanation": "वर्णानाम् उत्पत्तौ स्थानम्, करणम्, आभ्यन्तरप्रयत्नश्चेति त्रीणि तत्त्वानि आवश्यकानि भवन्ति।"
         }
       ]
     }

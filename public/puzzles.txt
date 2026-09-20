@@ -2320,3 +2320,19 @@
 जोडो|अनर्थज्ञः|अनर्थज्ञः|अ,न,र,्,थ,ज,्,ञः,क|अनर्थज्ञः श्लोकस्य अर्थं न जानाति।|ignorant of the meaning|Reciter who chants without comprehending word sense.
 जोडो|वेदाङ्गम्|वेदाङ्गम्|व,े,द,ा,ङ,्,गम्,प|वेदानां षट् अङ्गानि वेदाङ्गानि कथ्यन्ते।|limb of the Veda|Six ancillary disciplines auxiliary to Vedic studies.
 जोडो|व्याकरणम्|व्याकरणम्|व,्,य,ा,क,र,णम्,स|मुखं व्याकरणं स्मृतं वेदपुरुषस्य।|science of grammar|Regarded as the mouth and face of the personified Veda.
+
+# ========================================================
+# GRADE 8 DEEPAKAM VOCABULARY TILES (Chapter 13: वर्णोच्चारण-शिक्षा १)
+# ========================================================
+जोडो|ध्वनितन्त्रम्|ध्वनितन्त्रम्|ध,्,व,न,ि,त,न,्,त,्,रम्|कण्ठबिलः ध्वनि-तन्त्रम् अस्ति।|phonatory system|Laryngeal sound producing system.
+जोडो|कण्ठबिलम्|कण्ठबिलम्|क,ण,्,ठ,ब,ि,लम्,प|वायुः कण्ठबिलं प्राप्य आस्ये प्रविशति।|larynx / voice-box|Voice-box through which vocal air passes.
+जोडो|नाभिप्रदेशः|नाभिप्रदेशः|न,ा,भ,ि,प,्,र,द,े,शः|नाभिप्रदेशे मांसपेशीबलतन्त्रं भवति।|navel region|Abdominal area initiating voice pressure.
+जोडो|उरः|उरः|उ,रः,प,स,क,त|उरः वायुबलतन्त्रं श्वासकोशयुक्तं भवति।|chest / thorax|Thoracic air-pressure organ containing lungs.
+जोडो|स्थानम्|स्थानम्|स,्,थ,ा,नम्,प,स|आस्ये षट् उच्चारणस्थानानि सन्ति।|place of articulation|Fixed point where speech sounds manifest.
+जोडो|करणम्|करणम्|क,र,णम्,प,स,त|स्थानं स्पृशन् भागः करणं भवति।|active tool of articulation|Dynamic articulator moving toward a place.
+जोडो|मुरली|मुरली|म,ु,र,ल,ी,क,प|स्थाननिदर्शनार्थं मुरली समुचितम् उदाहरणम्।|flute|Wind instrument exemplifying speech acoustics.
+जोडो|अङ्गुलयः|अङ्गुलयः|अ,ङ,्,ग,ु,ल,यः,प|मुरल्याः अङ्गुलयः करणानि इव सन्ति।|fingers|Playing fingers acting like mobile articulators.
+जोडो|जिह्वाग्रम्|जिह्वाग्रम्|ज,ि,ह,्,व,ा,ग,्,रम्|दन्त्यवर्णानाम् उच्चारणे जिह्वाग्रं करणम्।|tip of the tongue|Foremost tip of tongue for dental sounds.
+जोडो|जिह्वामध्यम्|जिह्वामध्यम्|ज,ि,ह,्,व,ा,म,ध,्,यम्|तालव्येषु जिह्वामध्यं करणं भवति।|middle of the tongue|Central surface of tongue for palatal sounds.
+जोडो|स्वस्थानम्|स्वस्थानम्|स,्,व,स,्,थ,ा,नम्|ओष्ठ्यवर्णानां स्वस्थानम् एव करणम्।|one's own organ place|Self-tooling organ region for speech sound.
+जोडो|ओष्ठः|ओष्ठः|ओ,ष,्,ठः,क,प,स|मुखस्य बाह्यतमं स्थानम् ओष्ठः अस्ति।|lip|Outermost articulatory organ of the oral tract.

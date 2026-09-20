@@ -1,0 +1,242 @@
+================================================================================
+NCERT / CBSE CLASS 8 SANSKRIT (दीपकम्)
+त्रयोदशः पाठः (Chapter 13): वर्णोच्चारण-शिक्षा १ (Pages 146–156)
+================================================================================
+
+--------------------------------------------------------------------------------
+📖 COMPLETE LESSON EXTRACTION & TRANSLATIONS
+--------------------------------------------------------------------------------
+
+📝 Pages 146–147 (The Anatomy of Voice Production / ध्वन्युत्पादने शारीरिक-तन्त्राणि)
+--------------------------------------------------------------------------------
+[Sanskrit Text]
+शब्दानां सम्यक् शुद्धं च उच्चारणं नितान्तं महत्त्वपूर्णम् अस्ति इति वयं पूर्वस्मिन् पाठे दृष्टवन्तः। कस्यचित् शब्दस्य सम्यग्-उच्चारणार्थं, तस्य शब्दस्य प्रत्येक-वर्णस्य शुद्धं निर्दुष्टम् उच्चारणं भवेत्। अतः प्रत्येक-वर्णस्य शुद्धम् उच्चारणं कथं भवतीति अत्र ज्ञास्यामः।
+
+वर्णानां स्वर-व्यञ्जनादीनां विविध-भेद-उपभेदानां विषये वयं पूर्वासु कक्षासु ज्ञातवन्तः। तत्र आस्ये षट् उच्चारण-स्थानानि अपि वयं दृष्टवन्तः। परन्तु, वर्णानाम् उच्चारणे केवलम् आस्यस्य एव उपयोगः भवति इति न। वर्णानाम् उच्चारणार्थम् आस्येन सह शरीरस्य इतरेषाम् अपि अङ्गानाम् उपयोगः भवति, यथा —
+
+१. नाभि-प्रदेशः (Navel-region / Abdominal Muscles) — मांसपेशी-बल-तन्त्रम् (Muscular-pressure System)
+२. उरः (Chest / Lungs & Diaphragm) — वायु-बल-तन्त्रम् (Air-pressure System)
+३. कण्ठ-बिलः (Voice-box / Larynx / Vocal-cords) — ध्वनि-तन्त्रम् (Phonatory & Resonatory System)
+४. आस्यम् (Head / Mouth & Nose) — उच्चारण-तन्त्रम् (Articulatory System)
+
+आस्यस्य अभ्यन्तरे — (क) मुखम् (Mouth / Oral cavity), (ख) नासिका (Nose / Nasal cavity) — च उभौ भवतः।
+
+यदा वयं कञ्चित् शब्दं वर्णं वा उच्चारयितुम् इच्छामः, तदा —
+• सर्वप्रथमं नाभि-प्रदेशे स्थिताः मांसपेश्यः उरः नोदयन्ति।
+• उरः पुनः श्वासकोश-स्थितं वायुम् ऊर्ध्वं निःसारयति।
+• सः वायुः ऊर्ध्वं सरन् कण्ठ-बिलं प्राप्नोति।
+• ततः, सः वायुः पुनः ऊर्ध्वं सरन् आस्यं प्रविशति।
+• आस्यस्य अभ्यन्तरं प्रविश्य, मुखे, नासिकायां च स्थितेषु षट्सु उच्चारण-स्थानेषु वर्णानुसारं स्वकीयं स्थानं प्राप्य, सः वायुः तस्मिन् स्थाने वर्णरूपेण प्रकटीभवति।
+
+[Hindi Translation]
+शब्दों का सही और शुद्ध उच्चारण अत्यंत महत्त्वपूर्ण है, यह हमने पिछले पाठ में देखा है। किसी भी शब्द के सही उच्चारण के लिए, उस शब्द के प्रत्येक वर्ण (अक्षर) का शुद्ध और दोषरहित उच्चारण होना चाहिए। इसलिए, प्रत्येक वर्ण का शुद्ध उच्चारण कैसे होता है, यह हम यहाँ जानेंगे।
+वर्णों के स्वर, व्यञ्जन आदि विभिन्न भेद-उपभेदों के बारे में हम पिछली कक्षाओं में जान चुके हैं। वहाँ हमने मुख (आस्य) में छह उच्चारण स्थानों को भी देखा था। परन्तु, वर्णों के उच्चारण में केवल मुख का ही उपयोग होता है, ऐसा नहीं है। वर्णों के उच्चारण के लिए मुख के साथ-साथ शरीर के अन्य अंगों का भी उपयोग होता है, जैसे —
+१. नाभि-क्षेत्र (पेट की मांसपेशियाँ): मांसपेशी-बल-प्रणाली (Muscular-pressure System)
+२. छाती (फेफड़े और डायाफ्राम): वायु-बल-प्रणाली (Air-pressure System)
+३. कण्ठ-विवर (वॉइस-बॉक्स / स्वरयंत्र): ध्वनि-प्रणाली (Phonatory & Resonatory System)
+४. आस्य (सिर / मुख और नाक): उच्चारण-प्रणाली (Articulatory System)
+आस्य के भीतर — (क) मुख-गुहा (Oral cavity) और (ख) नासिका-गुहा (Nasal cavity) — ये दोनों होते हैं।
+जब हम किसी शब्द या वर्ण का उच्चारण करना चाहते हैं, तब —
+• सबसे पहले नाभि-प्रदेश में स्थित मांसपेशियाँ छाती (उरः) पर दबाव डालती हैं।
+• छाती फिर फेफड़ों में स्थित वायु को ऊपर की ओर धकेलती है।
+• वह वायु ऊपर की ओर बढ़ते हुए स्वरयंत्र (कण्ठ-बिल) तक पहुँचती है।
+• इसके बाद, वह वायु और ऊपर बढ़कर मुख/सिर क्षेत्र (आस्य) में प्रवेश करती है।
+• मुख के भीतर प्रवेश करके, मुख और नासिका में स्थित छह उच्चारण स्थानों में से संबंधित वर्ण के अनुसार अपना स्थान पाकर, वह वायु उस स्थान पर वर्ण (ध्वनि) के रूप में प्रकट होती है।
+
+[English Translation]
+We saw in the previous lesson that the correct and pure pronunciation of words is highly important. For the proper pronunciation of any word, every single letter (varna) of that word must have a flawless and faultless articulation. Therefore, we shall understand here how the correct pronunciation of each letter takes place.
+We have learned about the various classifications and sub-classifications of letters, such as vowels and consonants, in previous classes. There, we also observed six places of articulation inside the head cavity (Asya). However, it is not that only the mouth is utilized in the pronunciation of letters. Along with the mouth cavity, other parts of the body are also used for the pronunciation of letters, such as:
+1. Navel Region (Abdominal Muscles): Muscular-pressure System
+2. Chest (Lungs & Diaphragm): Air-pressure System
+3. Voice-Box (Larynx / Vocal Cords): Phonatory & Resonatory System
+4. Asya (Head - Mouth & Nose): Articulatory System
+Inside the Asya — (a) Mouth / Oral cavity, and (b) Nose / Nasal cavity — both are present.
+Whenever we intend to pronounce any word or letter:
+• First of all, the muscles located in the navel region exert pressure on the chest.
+• The chest then pushes the air located within the lungs upward.
+• Moving upward, that air reaches the voice-box (larynx).
+• Thereafter, advancing further upward, that air enters the mouth/head zone (Asya).
+• Upon entering the interior of the Asya, matching its designated path among the six articulatory places situated within the mouth and nose, that air manifests as a distinct letter at that specific location.
+
+[Word-by-Word Meanings]
+• शब्दानाम् (śabdānām): of words
+• सम्यक् (samyak): accurate / properly
+• शुद्धम् (śuddham): pure / flawless
+• उच्चारणम् (uccāraṇam): pronunciation / articulation
+• नितान्तम् (nitāntam): exceedingly / highly
+• महत्त्वपूर्णम् (mahattvapūrṇam): important
+• अस्ति (asti): is
+• इति (iti): thus
+• वयम् (vayam): we
+• पूर्वस्मिन् (pūrvasmin): in the previous
+• पाठे (pāṭhe): in the lesson
+• दृष्टवन्तः (dṛṣṭavantaḥ): have seen / observed
+• कस्यचित् (kasyacit): of any
+• शब्दस्य (śabdasya): of a word
+• सम्यग्-उच्चारणार्थम् (samyag-uccāraṇārtham): for the correct pronunciation
+• तस्य (tasya): of that
+• प्रत्येक-वर्णस्य (pratyeka-varṇasya): of every individual phoneme/letter
+• निर्दुष्टम् (nirduṣṭam): faultless / defect-free
+• भवेत् (bhavet): should be
+• अतः (ataḥ): therefore
+• कथम् (katham): how
+• ज्ञास्यामः (jñāsyāmaḥ): we shall know / understand
+• नाभि-प्रदेशः (nābhi-pradeśaḥ): navel region / abdomen
+• मांसपेशी-बल-तन्त्रम् (māṁsapeśī-bala-tantram): muscular pressure system
+• उरः (uraḥ): chest / thoracic cavity
+• वायु-बल-तन्त्रम् (vāyu-bala-tantram): air pressure system
+• कण्ठ-बिलः (kaṇṭha-bilaḥ): larynx / voice box
+• ध्वनि-तन्त्रम् (dhvani-tantram): phonatory & acoustic system
+• आस्यम् (āsyam): head cavity (oral + nasal)
+• उच्चारण-तन्त्रम् (uccāraṇa-tantram): articulatory system
+• नोदयन्ति (nodayanti): they push / exert pressure upon
+• निःसारयति (niḥsārayati): expels / pushes out
+• सरन् (saran): moving / streaming forward
+• प्रकटीभवति (prakaṭībhavati): manifests / appears
+
+
+📝 Pages 147–151 (The Mechanisms: Sthana & Karana / स्थानं करणञ्च)
+--------------------------------------------------------------------------------
+[Sanskrit Text]
+आस्यस्य अभ्यन्तरे वर्णानाम् उत्पत्त्यर्थं वस्तुतः त्रीणि तत्त्वानि आवश्यकानि भवन्ति — (क) प्रथमम् – स्थानम्, (ख) द्वितीयम् – करणम्, (ग) तृतीयम् – आभ्यन्तर-प्रयत्नः। अस्मिन् पाठे 'स्थानस्य', 'करणस्य' च चर्चा कुर्मः।
+
+(क) स्थानम् (Place of Articulation):
+वर्णस्य उच्चारण-समये, श्वासकोशतः ऊर्ध्वं सरन् वायुः, कण्ठ-बिल-माध्यमेन आस्यस्य अभ्यन्तरं प्रविश्य, तत्र मुखे नासिकायां वा यस्मिन् स्थले वर्णरूपेण प्रकटीभवति, तत् - 'स्थानम्' इति उच्यते। आस्ये – षट् स्थानानि वयं दृष्टवन्तः, मुखे — कण्ठः, तालु, मूर्धा, दन्तः, ओष्ठः च इति पञ्च स्थानानि। नासिकायां — नासिका – इत्येव षष्ठं स्थानम्।
+स्थानस्य सम्यक् कार्य-निदर्शनार्थं ‘मुरली’ समुचितम् उदाहरणम् अस्ति। मुरल्याः 'अङ्गुलिच्छिद्राणि' आस्यस्य ‘स्थानानि’ इव व्यवहरन्ति।
+
+(ख) करणम् (Active Tool of Articulation):
+वर्णस्य उच्चारण-समये, आस्यस्य यः भागः स्थानं स्पृशति, स्थानस्य समीपं वा याति, सः भागः - 'करणम्' इति कथ्यते। मुरलीं वादयन्त्यः 'अङ्गुलयः' आस्यस्य करणानि इव व्यवहरन्ति।
+
+१. तालु, मूर्धा, दन्तः च — एतेषु त्रिषु स्थानेषु 'जिह्वा' करणं भवति।
+• तालव्याः वर्णाः — तालु स्थानम्, जिह्वा-मध्यः करणम्।
+• मूर्धन्याः वर्णाः — मूर्धा स्थानम्, जिह्वा-उपाग्रः करणम्।
+• दन्त्याः वर्णाः — दन्तः स्थानम्, जिह्वा-अग्रः करणम्।
+
+२. कण्ठः, ओष्ठः, नासिका च — एतेषु त्रिषु स्थानेषु 'स्व-स्थानम्' एव करणं भवति। एतेषां वर्णानाम् उच्चारणे जिह्वा प्रायः निष्क्रिया भवति।
+• कण्ठ्याः वर्णाः — कण्ठः स्थानम्, कण्ठस्य अग्र-भागः करणम् (पृष्ठ-भागं प्रति)।
+• ओष्ठ्याः वर्णाः — उत्तरोष्ठः स्थानम्, अधरोष्ठः करणम् (ओष्ठः एव करणम्)।
+• नासिक्याः वर्णाः — नासिका-मूलस्य उपरि-भागः स्थानम्, नासिका-मूलस्य अधो-भागः करणम् (नासिका एव करणम्)।
+
+[Hindi Translation]
+मुख (आस्य) के भीतर वर्णों की उत्पत्ति के लिए वास्तव में तीन तत्त्व आवश्यक होते हैं — (क) पहला - स्थान, (ख) दूसरा - करण, (ग) तीसरा - आभ्यन्तर प्रयत्न। इस पाठ में हम 'स्थान' और 'करण' की चर्चा करेंगे।
+(क) स्थान (Place of Articulation): वर्ण के उच्चारण के समय, फेफड़ों से ऊपर की ओर बढ़ती हुई वायु, स्वरयंत्र के माध्यम से मुख के भीतर प्रवेश करके, मुख या नाक के जिस स्थान पर वर्ण के रूप में प्रकट होती है, उसे 'स्थान' कहा जाता है। मुख क्षेत्र में छह स्थान होते हैं; मुख के भीतर — कण्ठ, तालु, मूर्धा, दन्त और ओष्ठ ये पांच स्थान हैं। और नाक में — नासिका यह छठा स्थान है।
+स्थान के कार्य को अच्छी तरह समझाने के लिए 'बाँसुरी' (मुरली) एक सटीक उदाहरण है। बाँसुरी के 'उँगलियों के छेद' मुख के 'स्थानों' की तरह काम करते हैं।
+(ख) करण (Instrument/Tool of Articulation): वर्ण के उच्चारण के समय, मुख का जो भाग 'स्थान' को छूता है या 'स्थान' के पास जाता है, उस गतिशील भाग को 'करण' कहा जाता है। बाँसुरी बजाती हुई 'उँगलियाँ' मुख के 'करणों' की तरह काम करती हैं।
+तालु, मूर्धा और दन्त — इन तीन स्थानों में 'जीभ' (जिह्वा) करण होती है।
+• तालव्य वर्ण — तालु स्थान है, जीभ का मध्य भाग (जिह्वा-मध्य) करण है।
+• मूर्धन्य वर्ण — मूर्धा स्थान है, जीभ का अग्रभाग से थोड़ा पहले का भाग (जिह्वा-उपाग्र) करण है।
+• दन्त्य वर्ण — दन्त स्थान है, जीभ की नोक (जिह्वा-अग्र) करण है।
+कण्ठ, ओष्ठ और नासिका — इन तीन स्थानों में 'स्व-स्थान' (खुद का स्थान) ही करण होता है। इन वर्णों के उच्चारण में जीभ प्रायः सुप्त (निष्क्रिय) रहती है।
+• कण्ठ्य वर्ण — कण्ठ स्थान है और कण्ठ का अगला भाग ही करण है।
+• ओष्ठ्य वर्ण — ऊपरी होंठ स्थान है और निचला होंठ करण है (यानी होंठ ही होंठ को छूता है)।
+• नासिक्य वर्ण — नासिका का ऊपरी भाग स्थान है और नासिका का निचला भाग ही करण है।
+
+[English Translation]
+Inside the Asya, three structural elements are essential for the production of speech sounds — (a) First: Sthana (Place), (b) Second: Karana (Instrument), and (c) Third: Abhyantara Prayatna (Internal Effort). In this lesson, we discuss 'Sthana' and 'Karana'.
+(a) Sthana (Place of Articulation): At the time of pronouncing a sound, the air moving upward from the lungs passes through the larynx, enters the oral cavity, and manifests as a sound at a particular spot in the mouth or nose; that spot is called 'Sthana'. We have observed six places inside the Asya: inside the mouth — Guttural (Kantha), Palatal (Talu), Retroflex (Murdha), Dental (Danta), and Labial (Oshtha); and within the nose — Nasal (Nasika) is the sixth place.
+To understand the mechanism of Sthana, a flute (Murali) is an excellent example. The 'finger-holes' of the flute behave exactly like the 'Sthana' of the vocal tract.
+(b) Karana (Tool of Articulation): At the time of articulation, the mobile part of the vocal tract that touches or approaches a fixed point (Sthana) is called 'Karana'. The active 'fingers' playing the flute act like the 'Karana' of our speech system.
+For Palate (Talu), Murdha, and Teeth (Danta) — the Tongue (Jihva) acts as the dynamic tool (Karana).
+• Palatal Letters — Palate is the place, the middle of the tongue (Jihva-madhya) is the tool.
+• Retroflex Letters — Murdha is the place, the near-tip of the tongue (Jihva-upagra) is the tool.
+• Dental Letters — Teeth are the place, the absolute tip of the tongue (Jihva-agra) is the tool.
+For Throat (Kantha), Lips (Oshtha), and Nose (Nasika) — their own localized region (Sva-sthana) functions as the tool. The tongue remains completely passive during the pronunciation of these letters.
+• Guttural Letters — Throat is the place, the forward part of the throat acts as the tool.
+• Labial Letters — The upper lip is the place, and the lower lip acts as the tool.
+• Nasal Letters — The upper nasal base is the place, and the lower nasal base behaves as its own tool.
+
+[Word-by-Word Meanings]
+• आस्यस्य (āsyasya): of the oral/head cavity
+• अभ्यन्तरे (abhyantare): inside / within
+• उत्पत्त्यर्थम् (utpatty-artham): for the production / generation
+• त्रीणि (trīṇi): three
+• तत्त्वानि (tattvāni): factors / elements
+• स्थानम् (sthānam): fixed point / place of articulation
+• करणम् (karaṇam): active articulator / tool of articulation
+• आभ्यन्तर-प्रयत्नः (ābhyantara-prayatnaḥ): internal articulatory effort
+• श्वासकोशतः (śvāsakośataḥ): from the lungs
+• कण्ठ-बिल-माध्यमेन (kaṇṭha-bila-mādhyamena): through the larynx / voice box
+• मुरली (muralī): flute
+• अङ्गुलिच्छिद्राणि (aṅgulicchidrāṇi): finger holes
+• अङ्गुलयः (aṅgulayaḥ): fingers
+• स्पृशति (spṛśati): touches
+• समीपं याति (samīpaṁ yāti): approaches closely
+• जिह्वा (jihvā): tongue
+• जिह्वा-मध्यः (jihvā-madhyaḥ): middle surface of the tongue
+• जिह्वा-उपाग्रः (jihvā-upāgraḥ): sub-tip / near-tip of the tongue
+• जिह्वा-अग्रः (jihvā-agraḥ): absolute tip of the tongue
+• स्व-स्थानम् (sva-sthānam): its own localized organ part
+• उत्तरोष्ठः (uttaroṣṭhaḥ): upper lip
+• अधरोष्ठः (adharoṣṭhaḥ): lower lip
+• निष्क्रिया (niṣkriyā): inactive / passive
+
+
+--------------------------------------------------------------------------------
+🔤 TECHNICAL VOCABULARIES & GLOSSARY (Pages 152–154)
+--------------------------------------------------------------------------------
+१. नितान्तम् — अत्यन्तम् | अतीव / बहुत अधिक | Exceedingly / Highly
+२. निर्दोषम् / निर्दुष्टम् — दोष-रहितम् / शुद्धम् | दोष-रहित / शुद्ध | Impeccable / Faultless
+३. नोदयन्ति — अभिपीडयन्ति | दबाते हैं / धक्का देते हैं | Press / Push
+४. निःसारयति — बहिः प्रेषयति | बाहर निकालता है | Pushes out / Expels
+५. सरन् — चरन् | बढ़ता हुआ / गति करता हुआ | Moving / Streaming forward
+६. प्रकटीभवति — उत्पद्यते | प्रकट/उत्पन्न होता है | Appears / Is produced
+७. मुरली — वंशी | बाँसुरी | Flute
+८. शिक्षा — वर्णोच्चारण-शास्त्रम् | उच्चारण का विज्ञान | Phonetics / Acoustic science
+९. कण्ठ-बिलम् — स्वरयन्त्रम् | स्वरतंत्री / वॉइस-बॉक्स | Voice-box / Larynx
+१०. उरः — वक्षः | छाती | Chest / Thorax
+११. स्थानम् — आस्ये उच्चारणस्य स्थलम् | उच्चारण का निश्चित स्थल | Fixed Place of Articulation
+१२. करणम् — आस्ये उच्चारणस्य उपकरणम् | उच्चारण का गतिशील साधन | Active Tool of Articulation
+१३. स्वस्थानकरणः — निजस्थानस्य पर-भागः एव करणं यस्य | जिसका अपना ही भाग करण हो | Self-tooling articulation
+१४. व्यञ्जनम् — अचम् प्रति पराश्रितः वर्णः | स्वर पर आश्रित अक्षर | Consonant
+१५. स्वरः — स्वयं राजन्ते इति स्वराः | स्वतन्त्र ध्वनि | Vowel
+
+
+--------------------------------------------------------------------------------
+📝 CHAPTER EXERCISES WITH SOLUTIONS (अभ्यासः - Pages 155–156)
+--------------------------------------------------------------------------------
+
+१. अधोलिखितप्रश्नानाम् उत्तराणि एकपदेन द्विपदेन वा उत्तरत (One or two words):
+(क) उरसि किम् तन्त्रं भवति?
+उत्तरम्: वायु-बल-तन्त्रम् (Air-pressure system)
+(ख) नाभिप्रदेशे स्थिताः मांसपेश्यः किं नोदयन्ति?
+उत्तरम्: उरः (वक्षः / Chest)
+(ग) आस्यस्य आभ्यन्तरे वर्णानाम् उत्पत्त्यर्थं द्वितीयं तत्त्वं किम् अस्ति?
+उत्तरम्: करणम् (Active Tool of Articulation)
+(घ) आस्ये कति स्थानानि सन्ति?
+उत्तरम्: षट् (६) स्थानानि (Six places)
+(ङ) स्थानस्य कार्यनिदर्शनार्थं किं समुचितम् उदाहरणम् अस्ति?
+उत्तरम्: मुरली (बाँसुरी / Flute)
+(च) करणानि मुरल्याः कस्य भागम् इव व्यवहरन्ति?
+उत्तरम्: अङ्गुलयः इव (Like the fingers)
+
+२. अधोलिखितप्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखत (Full Sanskrit sentences):
+(क) करणं किं भवति?
+उत्तरम्: वर्णस्य उच्चारण-समये, आस्यस्य यः भागः स्थानं स्पृशति, स्थानस्य समीपं वा याति, सः भागः 'करणम्' इति कथ्यते।
+(ख) उरः श्वासकोशस्थितं वायुं कुत्र निःसारयति?
+उत्तरम्: उरः श्वासकोशस्थितं वायुम् ऊर्ध्वं कण्ठ-बिलं प्रति निःसारयति।
+(ग) मुरल्याः अङ्गुलिच्छिद्राणि कीदृशं व्यवहरन्ति?
+उत्तरम्: मुरल्याः अङ्गुलिच्छिद्राणि आस्यस्य 'स्थानानि' इव व्यवहरन्ति।
+(घ) केषां वर्णानाम् उच्चारणे जिह्वा प्रायः निष्क्रिया भवति?
+उत्तरम्: कण्ठ्यानां, ओष्ठ्यानां, नासिक्यानां च वर्णानाम् उच्चारणे जिह्वा प्रायः निष्क्रिया भवति।
+(ङ) तालव्यानां, मूर्धन्यानां, दन्त्यानां च वर्णानाम् उच्चारणार्थं सामान्यं करणं किम् अस्ति?
+उत्तरम्: तालव्यानां, मूर्धन्यानां, दन्त्यानां च वर्णानाम् उच्चारणार्थं सामान्यं करणं 'जिह्वा' अस्ति।
+(च) कण्ठ्यानां, ओष्ठ्यानां, नासिक्यानां च वर्णानाम् उच्चारणार्थं स्थानस्य करणस्य च मध्ये किं भवति?
+उत्तरम्: कण्ठ्यानां, ओष्ठ्यानां, नासिक्यानां च वर्णानाम् उच्चारणार्थं स्व-स्थानम् एव करणं भवति।
+
+३. अधोलिखितेषु वाक्येषु 'आम्' / 'न' इति लिखित्वा उचितभावं सूचयत (True or False):
+(क) श्वासकोशस्थितः वायुः ऊर्ध्वं चरन् पूर्वम् आस्यं प्राप्नोति। → न (प्रथमं कण्ठ-बिलं प्राप्नोति)
+(ख) सर्वप्रथमं नाभि-प्रदेशे स्थिताः मांसपेश्यः कण्ठं नोदयन्ति। → न (उरः नोदयन्ति)
+(ग) आस्यस्य आभ्यन्तरे वर्णानाम् उत्पत्त्यर्थम् आभ्यन्तर-प्रयत्नः आवश्यकम् अस्ति। → आम्
+(घ) तालव्य-वर्णानाम् उच्चारणार्थं दन्तः स्थानं स्पृशति। → न (जिह्वा तालु स्पृशति)
+(ङ) मूर्धन्यानां वर्णानाम् उच्चारणार्थं जिह्वा स्थानं स्पृशति। → आम् (जिह्वा-उपाग्रः मूर्धानं स्पृशति)
+(च) तत्तत्स्थानस्य एव कश्चित् पूर्वभागः, तत्तत्स्थानस्य परभागं स्पृशति। → आम् (स्वस्थानकरणेषु)
+
+४. मुखे उपलभ्यमानानि स्थानानि बहिष्ठात् अन्तः यथाक्रमं (विपरीत-क्रमेण) लिखन्तु (Page 156):
+उत्तरम् (बहिष्ठात् अन्तः क्रमः / Outermost to Innermost order):
+१. ओष्ठः (गाष्ठ्यः / बाह्यतमम्)
+२. दन्तः (दन्त्यानि)
+३. मूर्धा (मूर्धन्यम्)
+४. तालु (तालव्यम्)
+५. कण्ठः (आन्तरिकतमम्)
+
+================================================================================

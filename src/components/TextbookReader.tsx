@@ -336,6 +336,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (Pages 137–145)</span>
         </div>
       )}
+      {activeLessonId === 'grade8_ch13' && (
+        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #ecfeff 0%, #f0fdfa 100%)', borderColor: '#67e8f9' }}>
+          <span className="textbook-cbse-pill" style={{ background: '#0891b2', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १ (Pages 146–156)</span>
+        </div>
+      )}
 
       <div className="textbook-toolbar-row">
         <button
@@ -758,6 +764,38 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 title="Go to Grade 8 Chapter 12 Printable Worksheets"
               >
                 📑 5 Worksheets (Pronunciation & Shiksha)
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'grade8_ch13' && (
+          <>
+            <button
+              type="button"
+              className="textbook-tool-btn textbook-tool-btn--syllabus"
+              onClick={() => setIsGrade8SyllabusOpen(true)}
+              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+            >
+              📜 पाठानुक्रमणिका (Class 8 Syllabus)
+            </button>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Grade 8 Chapter 13 Quizzes"
+              >
+                🎯 2 Quizzes (8 Qs)
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Grade 8 Chapter 13 Printable Worksheets"
+              >
+                📑 5 Worksheets (Voice Anatomy & Sthana-Karana)
               </button>
             )}
           </>

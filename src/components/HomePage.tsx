@@ -421,6 +421,17 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     theme: 'Paniniya Shiksha principles: the Vritrasura/Indrashatru accent parable, maternal tigress grip metaphor, 6 attributes of ideal readers, and 6 flaws of poor readers.',
     grammarFocus: 'तृतीया-विभक्तिः (प्रयोगेण), कर्मणि-लट् (महीयते), वर्णोच्चारणम्, पाठकगुणाः, सन्धि-विच्छेदः',
   },
+  {
+    id: 'grade8_ch13',
+    num: 'Grade 8 · Chapter 13',
+    title: 'वर्णोच्चारण-शिक्षा १ (Pages 146–156)',
+    english: 'Science of Sound Articulation 1 (Anatomy & Places)',
+    icon: '🔤',
+    category: 'grammar',
+    genreBadge: 'ध्वनिविज्ञानम् · Places & Tools of Articulation',
+    theme: 'Anatomy of voice production: 4 bodily systems (muscular, air-pressure, phonatory, articulatory), 6 places (स्थानम्) with flute-holes analogy, and active tools (करणम्) with playing-fingers analogy.',
+    grammarFocus: 'ध्वनिविज्ञानम्, षडुच्चारणस्थानानि (कण्ठ, तालु, मूर्धा, दन्त, ओष्ठ, नासिका), करणम् (जिह्वा, स्वस्थानकरणम्)',
+  },
 ];
 
 const HomePage: React.FC<HomePageProps> = ({

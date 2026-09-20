@@ -239,18 +239,18 @@ export const GRADE_8_SYLLABUS: Grade8Chapter[] = [
     "icon": "🗣️"
   },
   {
-    "id": "g8_ch13",
+    "id": "grade8_ch13",
     "num": "Chapter 13",
     "chNumber": "त्रयोदशः पाठः",
-    "title": "वर्णोच्चारण-शिक्षा १ (परिशिष्टम् १)",
-    "englishTitle": "Science of Articulation · Appendix 1",
-    "page": "Page 146",
+    "title": "वर्णोच्चारण-शिक्षा १",
+    "englishTitle": "Science of Sound Articulation 1 (Anatomy & Places)",
+    "page": "Pages 146–156",
     "category": "grammar",
-    "genreBadge": "ध्वनिविज्ञानम् · Places of Articulation",
-    "theme": "Detailed phonetic classification of the 8 articulation places (उरस्, कण्ठ, मूर्धा, जिह्वामूल, दन्त, नासिका, ओष्ठ, तालु) and internal/external efforts.",
-    "grammarFocus": "अष्टौ उच्चारणस्थानानि, आभ्यन्तर-बाह्य-प्रयत्नाः, सङ्ज्ञा-सूत्राणि",
-    "sampleVerse": "अष्टौ स्थानानि वर्णानामुरः कण्ठः शिरस्तथा । जिह्वामूलं च दन्ताश्च नासिकौष्ठौ च तालु च ॥",
-    "status": "in_curriculum",
+    "genreBadge": "ध्वनिविज्ञानम् · Places & Tools of Articulation",
+    "theme": "Anatomy of voice production and phonetics: 4 bodily systems (muscular, air-pressure, phonatory, articulatory), 6 places (स्थानम्) with the flute-holes analogy, and active tools (करणम्) with the playing-fingers analogy.",
+    "grammarFocus": "ध्वनिविज्ञानम्, षडुच्चारणस्थानानि (कण्ठ, तालु, मूर्धा, दन्त, ओष्ठ, नासिका), करणम् (जिह्वा, स्वस्थानकरणम्), बाह्य-आभ्यन्तर-क्रमः",
+    "sampleVerse": "मुरल्याः अङ्गुलिच्छिद्राणि आस्यस्य स्थानानि इव, मुरलीं वादयन्त्यः अङ्गुलयः आस्यस्य करणानि इव व्यवहरन्ति।",
+    "status": "available",
     "icon": "🔤"
   },
   {
