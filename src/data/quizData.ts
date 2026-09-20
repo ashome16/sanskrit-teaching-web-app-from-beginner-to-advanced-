@@ -1,6 +1,6 @@
 export interface QuizQuestionItem {
   id: string;
-  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4' | 'grade8_ch5' | 'grade8_ch6' | 'grade8_ch7' | 'grade8_ch8' | 'grade8_ch9';
+  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4' | 'grade8_ch5' | 'grade8_ch6' | 'grade8_ch7' | 'grade8_ch8' | 'grade8_ch9' | 'grade8_ch10';
   categoryLabel: string;
   chapterRef?: string;
   subCategory?: string;
@@ -43,6 +43,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade8_ch7', label: 'Grade 8 Ch 7: मञ्जुलमञ्जूषा सुन्दरसुरभाषा (2 Quizzes · 8 Qs)', icon: '💎' },
   { id: 'grade8_ch8', label: 'Grade 8 Ch 8: पश्यत कोणमैशान्यं भारतस्य मनोहरम् (2 Quizzes · 8 Qs)', icon: '🏞️' },
   { id: 'grade8_ch9', label: 'Grade 8 Ch 9: कोऽरुक्? कोऽरुक्? कोऽरुक्? (2 Quizzes · 8 Qs)', icon: '🌿' },
+  { id: 'grade8_ch10', label: 'Grade 8 Ch 10: सन्निमित्ते वरं त्यागः (2 Quizzes · 8 Qs)', icon: '⚖️' },
 ] as const;
 
 export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
@@ -12178,4 +12179,156 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
   "difficulty": "medium",
   "points": 10
 },
+{
+  "id": "g8-ch10-q1-1",
+  "category": "grade8_ch10",
+  "categoryLabel": "Grade 8 Ch 10: वाक्यान्वयः पदविन्यासश्च",
+  "chapterRef": "Grade 8: दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः)",
+  "subCategory": "Quiz 1: Sanskrit Sentence Word Order & Prose (अन्वयः)",
+  "question": "संस्कृतवाक्ये कर्तृ-कर्म-क्रियादिपदानां क्रमः कीदृशः भवति? (What is the order of Subject-Object-Verb words in a Sanskrit sentence?)",
+  "questionSanskrit": "संस्कृतवाक्ये कर्तृ-कर्म-क्रियादिपदानां क्रमः कीदृशः भवति?",
+  "options": [
+    "A) सर्वदा निश्चितः भवति",
+    "B) मुक्तः पदविन्यासक्रमः (स्वेच्छानुसारम्)",
+    "C) केवलं आङ्ग्लभाषावत् भवति",
+    "D) क्रिया पदं सर्वदा आदौ एव भवति"
+  ],
+  "correctIndex": 1,
+  "explanation": "संस्कृते पदानां विन्यासक्रमः मुक्तः (free word order) भवति, यतोहि कारकाणां सम्बन्धबोधः विभक्तिप्रत्ययैः एव सिद्ध्यति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch10-q1-2",
+  "category": "grade8_ch10",
+  "categoryLabel": "Grade 8 Ch 10: वाक्यान्वयः पदविन्यासश्च",
+  "chapterRef": "Grade 8: दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः)",
+  "subCategory": "Quiz 1: Sanskrit Sentence Word Order & Prose (अन्वयः)",
+  "question": "'शोभावती नाम काचन नगरी आसीत्' इत्यस्य पाठगद्यक्रमानुसारं मूलवाक्यं किम् अस्ति?",
+  "questionSanskrit": "'शोभावती नाम काचन नगरी आसीत्' इत्यस्य पाठक्रमः कः अस्ति?",
+  "options": [
+    "A) नगरी आसीत् शोभावती नाम",
+    "B) आसीत् शोभावती नाम काचन नगरी",
+    "C) काचन नगरी शोभावती आसीत् नाम",
+    "D) नाम शोभावती नगरी आसीत्"
+  ],
+  "correctIndex": 1,
+  "explanation": "पाठे गद्यारम्भे लिखितम्: 'आसीत् शोभावती नाम काचन नगरी।' अर्थात् क्रियापदम् आदौ प्रयुक्तम्।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch10-q1-3",
+  "category": "grade8_ch10",
+  "categoryLabel": "Grade 8 Ch 10: वाक्यान्वयः पदविन्यासश्च",
+  "chapterRef": "Grade 8: दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः)",
+  "subCategory": "Quiz 1: Sanskrit Sentence Word Order & Prose (अन्वयः)",
+  "question": "गद्यभागे श्लोकेषु वा वाक्यानां सुबोधाय यथार्थार्थबोधाय च कस्य महती आवश्यकता भवति?",
+  "questionSanskrit": "वाक्यानां यथार्थार्थबोधाय कस्य महती आवश्यकता भवति?",
+  "options": [
+    "A) केवलं सन्धेः",
+    "B) अन्वयस्य (पदानां विभक्तिं विलोक्य सम्बन्धस्थापनम्)",
+    "C) श्लोकगायनस्य",
+    "D) समासाभावस्य"
+  ],
+  "correctIndex": 1,
+  "explanation": "अन्वयस्य अर्थः अस्ति पदानां परस्परसम्बन्धानुसारं व्याकरणसम्मतक्रमस्थापनम्। अनेन एव गूढवाक्यस्य अर्थः सुस्पष्टः भवति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch10-q1-4",
+  "category": "grade8_ch10",
+  "categoryLabel": "Grade 8 Ch 10: वाक्यान्वयः पदविन्यासश्च",
+  "chapterRef": "Grade 8: दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः)",
+  "subCategory": "Quiz 1: Sanskrit Sentence Word Order & Prose (अन्वयः)",
+  "question": "'निक्षिपति च तदवशिष्टं पत्न्याः हस्ते।' – अत्र 'पत्न्याः' पदे का विभक्तिः वर्तते?",
+  "questionSanskrit": "'पत्न्याः' पदे का विभक्तिः वर्तते?",
+  "options": [
+    "A) द्वितीया",
+    "B) षष्ठी / पञ्चमी",
+    "C) सप्तमी",
+    "D) प्रथमा"
+  ],
+  "correctIndex": 1,
+  "explanation": "ईकारान्त-स्त्रीलिङ्ग-पत्नी-शब्दस्य षष्ठी-एकवचने पञ्चमी-एकवचने च 'पत्न्याः' (पत्नी के / of the wife) रूपं भवति। अत्र षष्ठी-सम्बन्धः अस्ति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch10-q2-1",
+  "category": "grade8_ch10",
+  "categoryLabel": "Grade 8 Ch 10: भूतकाल-प्रयोगाः",
+  "chapterRef": "Grade 8: दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः)",
+  "subCategory": "Quiz 2: Expression of Past Tense (भूतकाल-प्रयोगाः)",
+  "question": "लट्-लकारस्य (Present Tense) क्रियापदेन सह कस्य अव्ययस्य योजनं कृत्वा भूतकालस्य (Past Tense) अर्थः प्रदर्श्यते?",
+  "questionSanskrit": "लट्-लकारस्य क्रियापदेन सह कस्य अव्ययस्य योगेन भूतकालः सिद्ध्यति?",
+  "options": [
+    "A) च",
+    "B) अपि",
+    "C) स्म",
+    "D) इति"
+  ],
+  "correctIndex": 2,
+  "explanation": "पाठे 'प्रतिवसति स्म' (रहता था) इति प्रयोगः अस्ति। लट्-लकारक्रियापदेन सह 'स्म' योजनेन भूतकालः द्योत्यते।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch10-q2-2",
+  "category": "grade8_ch10",
+  "categoryLabel": "Grade 8 Ch 10: भूतकाल-प्रयोगाः",
+  "chapterRef": "Grade 8: दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः)",
+  "subCategory": "Quiz 2: Expression of Past Tense (भूतकाल-प्रयोगाः)",
+  "question": "'राजा करुणरोदनध्वनिं श्रुतवान्' – अत्र 'श्रुतवान्' पदे कः प्रत्ययः प्रयुक्तः अस्ति?",
+  "questionSanskrit": "'श्रुतवान्' इति पदे कः प्रत्ययः प्रयुक्तः अस्ति?",
+  "options": [
+    "A) क्त",
+    "B) क्तवतु",
+    "C) ल्यप्",
+    "D) तुमुन्"
+  ],
+  "correctIndex": 1,
+  "explanation": "श्रु + क्तवतु = श्रुतवान् (सुना / heard), अयं कर्तृवाच्ये भूतकालिकः कृदन्तः प्रत्ययः अस्ति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch10-q2-3",
+  "category": "grade8_ch10",
+  "categoryLabel": "Grade 8 Ch 10: भूतकाल-प्रयोगाः",
+  "chapterRef": "Grade 8: दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः)",
+  "subCategory": "Quiz 2: Expression of Past Tense (भूतकाल-प्रयोगाः)",
+  "question": "'नरपतिः नगरीद्वारात् बहिः निरगच्छत्।' – 'निरगच्छत्' पदे कः लकारः अस्ति?",
+  "questionSanskrit": "'निरगच्छत्' पदे कः लकारः अस्ति?",
+  "options": [
+    "A) लट् लकारः",
+    "B) लङ् लकारः",
+    "C) लृट् लकारः",
+    "D) लोट् लकारः"
+  ],
+  "correctIndex": 1,
+  "explanation": "'निरगच्छत्' पदे निर् उपसर्गपूर्वक-गम् धातोः लङ्-लकारः (अनद्यतन-भूतकालः) प्रथमपुरुषः एकवचनम् अस्ति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch10-q2-4",
+  "category": "grade8_ch10",
+  "categoryLabel": "Grade 8 Ch 10: भूतकाल-प्रयोगाः",
+  "chapterRef": "Grade 8: दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः)",
+  "subCategory": "Quiz 2: Expression of Past Tense (भूतकाल-प्रयोगाः)",
+  "question": "'नियोजितः, निर्गतः' इत्यत्र कः भूतकालिकः प्रत्ययः प्रयुक्तः, यस्य प्रयोगः कर्मवाच्ये भाववाच्ये च बहुशः भवति?",
+  "questionSanskrit": "'नियोजितः, निर्गतः' इत्यत्र कः प्रत्ययः अस्ति?",
+  "options": [
+    "A) क्तवतु",
+    "B) शतृ",
+    "C) क्त",
+    "D) शानच्"
+  ],
+  "correctIndex": 2,
+  "explanation": "नि + युज् + क्त = नियोजितः (नियुक्त किया गया), निर् + गम् + क्त = निर्गतः (निकला)। अत्र क्त-प्रत्ययः (Past Participle) प्रयुक्तः।",
+  "difficulty": "medium",
+  "points": 10
+}
 ];

@@ -388,6 +388,17 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     theme: 'Lord Dhanvantari and Vagbhata: the threefold health axioms—Hitabhuk, Mitabhuk, Ritubhuk—and daily regimens.',
     grammarFocus: 'पूर्वरूप-सन्धिः (कोऽरुक् = कः + अरुक्), विशेषण-विशेष्य-मेलनम्, दिनचर्या-नियमाः',
   },
+  {
+    id: 'grade8_ch10',
+    num: 'Grade 8 · Chapter 10',
+    title: 'सन्निमित्ते वरं त्यागः (क-भागः) (Pages 111–122)',
+    english: 'Better to Sacrifice for a Noble Cause (Part 1)',
+    icon: '⚖️',
+    category: 'stories',
+    genreBadge: 'नीतिकथा · Noble Sacrifice',
+    theme: 'Hitopadesha tale of prince Viravara: righteous fourfold division of salary, unmatched loyalty to King Shudraka, and encounter with weeping Rajalaxmi.',
+    grammarFocus: 'अन्वय-रचना, भूतकालिक-प्रयोगाः (स्म, क्त, क्तवतु, लङ्), सन्धि-विच्छेदः, सर्वनामपदानि',
+  },
 ];
 
 const HomePage: React.FC<HomePageProps> = ({

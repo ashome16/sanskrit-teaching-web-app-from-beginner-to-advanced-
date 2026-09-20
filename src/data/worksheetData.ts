@@ -50,7 +50,7 @@ export const WORKSHEET_CATEGORIES = [
   { id: 'grammar', label: 'Vyākaraṇa / Grammar (10 Worksheets · व्याकरण-पत्राणि)', icon: '📐' },
   { id: 'vedic_maths', label: 'Vedic Maths Drills (वैदिक-गणितम्)', icon: '⚡' },
   { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
-  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 43 Worksheets)', icon: '🪕' },
+  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 48 Worksheets)', icon: '🪕' },
 ] as const;
 
 export const WORKSHEETS: Worksheet[] = [
@@ -9969,6 +9969,331 @@ export const WORKSHEETS: Worksheet[] = [
           "type": "short_ans",
           "answer": "यह प्रार्थना केवल अपने लिए नहीं, अपितु सम्पूर्ण संसार के सभी प्राणियों के सुख, नीरोगिता (स्वास्थ्य), मंगल और दुःखमुक्ति की कामना करती है। यह भारतीय संस्कृति की 'वसुधैव कुटुम्बकम्' और 'सर्वे सन्तु निरामयाः' की उदात्त भावना को प्रकट करती है।",
           "explanation": "भारतीय-संस्कृतेः सर्वकल्याणकारिणी भावना।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch10-ws1",
+  "title": "Chapter 10 · Worksheet 1: Reading & Factual Recall",
+  "titleSanskrit": "दशमः पाठः · कार्यपत्रिका १: पाठ्यांश-अवबोधनम्",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Comprehension on Viravara's appointment, daily duty, and noble fourfold salary distribution (Page 112).",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Textual Comprehension (Page 112)",
+      "sectionTitleSanskrit": "खण्डः 'क' · गद्यांशावबोधनम्",
+      "instructions": "Read the passage and answer the following questions:\n'राजपुत्रः प्रतिदिनं प्रभाते राजदर्शनादनन्तरं स्ववेतनस्य यच्छति देवेभ्यः अर्धम्। स्थितस्य चार्द्धं दरिद्रेभ्यो ददाति, निक्षिपति च तदवशिष्टं भोज्यविलासव्ययार्थं पत्न्याः हस्ते।'",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "वीरवरः स्ववेतनस्य कियत् भागं दरिद्रेभ्यः ददाति स्म? (What fraction of his salary did Viravara give to the poor?)",
+          "questionSanskrit": "वीरवरः स्ववेतनस्य कियत् भागं दरिद्रेभ्यः यच्छति स्म?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "चतुर्थांशम् (एक-चौथाई भाग / One-fourth of the total salary)",
+          "explanation": "वेतनस्य अर्धं देवेभ्यः (५०%), स्थितस्य अर्धम् अर्थात् २५% (चतुर्थांशं) दरिद्रेभ्यः अयच्छत्।"
+        },
+        {
+          "num": 2,
+          "question": "कस्य हस्ते सः अवशिष्टं धनं निक्षिपति? (In whose hands did he deposit the remaining money?)",
+          "questionSanskrit": "कस्य हस्ते सः अवशिष्टं धनं निक्षिपति स्म?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "पत्न्याः हस्ते (अपनी पत्नी के हाथ में भोजन और पारिवारिक व्यय के लिए)",
+          "explanation": "भोज्यविलासव्ययार्थं पत्न्याः हस्ते निक्षिपति स्म।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Vocabulary & Fact Recall",
+      "sectionTitleSanskrit": "खण्डः 'ख' · शब्दार्थः तथ्यस्मरणं च",
+      "instructions": "Answer the factual questions based on the lesson:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "'प्रातः' इति पदस्य कः समानार्थकः शब्दः गद्यांशे प्रयुक्तः?",
+          "questionSanskrit": "'प्रातः' इति पदस्य कः समानार्थकः शब्दः अत्र प्रयुक्तः?",
+          "marks": 5,
+          "type": "fill",
+          "answer": "प्रभाते",
+          "explanation": "गद्यांशे 'प्रतिदिनं प्रभाते राजदर्शनादनन्तरं' इति पदं वर्तते।"
+        },
+        {
+          "num": 4,
+          "question": "वीरवरस्य प्रतिदिनं वेतनं कियत् आसीत् तथा तस्य सामग्री का आसीत्?",
+          "questionSanskrit": "वीरवरस्य वर्तनं सामग्री च का आसीत्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "वर्तनम्: प्रतिदिनं सुवर्णशतचतुष्टयं (४०० स्वर्ण मुद्राएँ); सामग्री: द्वौ बाहू एष खड्गश्च (दो भुजाएँ और तलवार)।",
+          "explanation": "वीरवरः अवदत्—'प्रतिदिनं सुवर्णशतचतुष्टयं देव! इमौ बाहू, एष खड्गश्च सामग्री।'"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch10-ws2",
+  "title": "Chapter 10 · Worksheet 2: Syntax & Unscrambling",
+  "titleSanskrit": "दशमः पाठः · कार्यपत्रिका २: वाक्यान्वयः पदक्रमश्च",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Reordering scrambled Sanskrit words into grammatically coherent prose based on Pages 116–117.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Prose Unscrambling",
+      "sectionTitleSanskrit": "खण्डः 'क' · पदक्रम-संयोजनम्",
+      "instructions": "Rearrange the scrambled words into correct Sanskrit prose order:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "Rearrange: 'नगरी / काचन / शोभावती / आसीत् / नाम।'",
+          "questionSanskrit": "क्रमं संयोजयत: नगरी / काचन / शोभावती / आसीत् / नाम।",
+          "marks": 5,
+          "type": "fill",
+          "answer": "शोभावती नाम काचन नगरी आसीत्। (अथवा: आसीत् शोभावती नाम काचन नगरी।)",
+          "explanation": "पाठे गद्यारम्भे 'आसीत् शोभावती नाम काचन नगरी' इति वाक्यम् अस्ति।"
+        },
+        {
+          "num": 2,
+          "question": "Rearrange: 'खड्गश्च / इमौ / एष / बाहू।'",
+          "questionSanskrit": "क्रमं संयोजयत: खड्गश्च / इमौ / एष / बाहू।",
+          "marks": 5,
+          "type": "fill",
+          "answer": "इमौ बाहू एष खड्गश्च।",
+          "explanation": "इमौ बाहू (द्विवचनम्) एष खड्गश्च (एकवचनम्)।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Interrogative & Dialogue Structure",
+      "sectionTitleSanskrit": "खण्डः 'ख' · प्रश्नवाचक-संवाद-रचना",
+      "instructions": "Reorder and punctuate the sentences accurately:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "Rearrange: 'द्वारि / तिष्ठति / कोऽत्र ?'",
+          "questionSanskrit": "क्रमं संयोजयत: द्वारि / तिष्ठति / कोऽत्र ?",
+          "marks": 5,
+          "type": "fill",
+          "answer": "कोऽत्र द्वारि तिष्ठति?",
+          "explanation": "कः + अत्र = कोऽत्र। राजा अर्द्धरात्रे अपृच्छत्: 'कोऽत्र द्वारि तिष्ठति?'"
+        },
+        {
+          "num": 4,
+          "question": "Rearrange: 'गन्तुमर्हति / नैष / एकाकी / राजपुत्रः / तिमिरे।'",
+          "questionSanskrit": "क्रमं संयोजयत: गन्तुमर्हति / नैष / एकाकी / राजपुत्रः / तिमिरे।",
+          "marks": 5,
+          "type": "fill",
+          "answer": "एष राजपुत्रः अस्मिन् तिमिरे एकाकी गन्तुं न अर्हति। (नैष राजपुत्र एकाकी गन्तुमर्हति सूचिभेद्ये तिमिरेऽस्मिन्।)",
+          "explanation": "राजा स्वगतम् अवदत्—'नैष गन्तुमर्हति राजपुत्र एकाकी सूचिभेद्ये तिमिरेऽस्मिन्।'"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch10-ws3",
+  "title": "Chapter 10 · Worksheet 3: Past Tense Recognition",
+  "titleSanskrit": "दशमः पाठः · कार्यपत्रिका ३: भूतकाल-विवेकः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Mastering three distinct Sanskrit mechanisms for past tense: लङ्-लकार, लट् + स्म, and क्त/क्तवतु प्रत्यय (Page 117).",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Mechanism Identification",
+      "sectionTitleSanskrit": "खण्डः 'क' · भूतकाल-रीति-परिज्ञानम्",
+      "instructions": "Identify whether the past tense is expressed via 'लट् + स्म', 'लङ् लकार', or 'कृदन्तः प्रत्ययः':",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "'प्रतिवसति स्म' इत्यत्र भूतकालस्य कः प्रयोगः अस्ति?",
+          "questionSanskrit": "'प्रतिवसति स्म' – कः प्रयोगः?",
+          "marks": 5,
+          "type": "grammar",
+          "answer": "लट्-लकारस्य क्रियापदेन सह 'स्म' अव्ययस्य प्रयोगः (Past habitual meaning)",
+          "explanation": "प्रतिवसति (लट्) + स्म = प्रतिवसति स्म (रहता था / used to reside)।"
+        },
+        {
+          "num": 2,
+          "question": "'उपागच्छत्' तथा 'निरगच्छत्' पदयोः कः लकारः अस्ति?",
+          "questionSanskrit": "'उपागच्छत्', 'निरगच्छत्' – कः लकारः?",
+          "marks": 5,
+          "type": "grammar",
+          "answer": "लङ्-लकारः (Past Tense), प्रथमपुरुषः एकवचनम्",
+          "explanation": "उप + आगच्छत् = उपागच्छत्; निर् + अगच्छत् = निरगच्छत् (गम् धातोः लङ्-लकारे रूपाणि)।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Participle Past Forms (क्त / क्तवतु)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · भूतकालिक-कृदन्त-प्रत्ययाः",
+      "instructions": "Analyze the morphological roots and suffixes of the past participles:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "'राजा करुणरोदनध्वनिं श्रुतवान्' – 'श्रुतवान्' पदे कः प्रत्ययः प्रयुक्तः?",
+          "questionSanskrit": "'श्रुतवान्' पदे प्रकृति-प्रत्ययौ लिखत।",
+          "marks": 5,
+          "type": "grammar",
+          "answer": "श्रु (धातुः) + क्तवतु (प्रत्ययः) = श्रुतवान् (सुना / listened to)",
+          "explanation": "क्तवतु-प्रत्ययः कर्तृवाच्ये भूतकालं सूचयति (तवत् शेषः)। पुंलिङ्गे 'श्रुतवान्' रूपं भवति।"
+        },
+        {
+          "num": 4,
+          "question": "'नियोजितः' तथा 'निर्गतः' पदयोः कः भूतकालिकः प्रत्ययः अस्ति?",
+          "questionSanskrit": "'नियोजितः', 'निर्गतः' पदयोः प्रत्ययं निर्देशत।",
+          "marks": 5,
+          "type": "grammar",
+          "answer": "क्त-प्रत्ययः (Past Passive Participle)",
+          "explanation": "नि + युज् + क्त = नियोजितः; निर् + गम् + क्त = निर्गतः। अयम् प्रत्ययः कर्मणि भावे च प्रयुज्यते।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch10-ws4",
+  "title": "Chapter 10 · Worksheet 4: Textual Dialogue Fill-ins",
+  "titleSanskrit": "दशमः पाठः · कार्यपत्रिका ४: पाठगत-संवाद-पूर्तिः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Completing authentic dialogue exchanges between King Shudraka, Viravara, and Goddess Rajalaxmi.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Royal Court Dialogues (Page 112)",
+      "sectionTitleSanskrit": "खण्डः 'क' · राजसभा-संवादः",
+      "instructions": "Fill in the exact blanks from the court interview dialogue:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "राजा – किं ते वर्तनम्?\nवीरवरः – प्रतिदिनं ______________________ देव !",
+          "questionSanskrit": "संवादं पूरयत: प्रतिदिनं ______________________ देव !",
+          "marks": 5,
+          "type": "fill",
+          "answer": "सुवर्णशतचतुष्टयं",
+          "explanation": "वीरवरः ४०० स्वर्णमुद्राणां वेतनम् अयाचत।"
+        },
+        {
+          "num": 2,
+          "question": "राजा – का ते सामग्री?\nवीरवरः – इमौ बाहू, ______________________।",
+          "questionSanskrit": "संवादं पूरयत: इमौ बाहू, ______________________।",
+          "marks": 5,
+          "type": "fill",
+          "answer": "एष खड्गश्च",
+          "explanation": "वीरवरस्य सामग्री: 'इमौ बाहू, एष खड्गश्च'।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Midnight Encounter with Rajalaxmi (Pages 113–114)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · राजलक्ष्मी-वीरवर-संवादः",
+      "instructions": "Fill in the dialogue blanks from the midnight confrontation outside the city:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "वीरवरः – का त्वमम्ब ! किमर्थं विलपसि?\nराजलक्ष्मीः – अहमेतस्य भूपालस्य शूद्रकस्य ______________________ अस्मि।",
+          "questionSanskrit": "संवादं पूरयत: अहमेतस्य भूपालस्य शूद्रकस्य ______________ अस्मि।",
+          "marks": 5,
+          "type": "fill",
+          "answer": "राजलक्ष्मीरस्मि (राजलक्ष्मीः)",
+          "explanation": "राजलक्ष्मीः शूद्रकस्य समृद्धिरूपिणी देवी आसीत्।"
+        },
+        {
+          "num": 4,
+          "question": "राजलक्ष्मीः – यदि त्वया स्वस्य सर्वतः प्रियं वस्तु उपहारः क्रियेत, तदा पुनर्जीविष्यति राजा शूद्रको वर्षाणां ______________________।",
+          "questionSanskrit": "संवादं पूरयत: तदा पुनर्जीविष्यति राजा शूद्रको वर्षाणां ______।",
+          "marks": 5,
+          "type": "fill",
+          "answer": "शतम्",
+          "explanation": "यदि प्रियतमस्य वस्तु उपहारः भगवत्यै सर्वमङ्गलायै क्रियेत, तर्हि राजा शूद्रकः वर्षशतं जीवेत्।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch10-ws5",
+  "title": "Chapter 10 · Worksheet 5: Word Breakdown & Sandhi",
+  "titleSanskrit": "दशमः पाठः · कार्यपत्रिका ५: पदच्छेदः सन्धि-विच्छेदश्च",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Syntactic word separation (पदच्छेदः) and Sandhi splits based on Pages 120 and 122.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Continuous Text Padaccheda",
+      "sectionTitleSanskrit": "खण्डः 'क' · पदच्छेद-कौशलम् (Page 122)",
+      "instructions": "Separate the conjunct running sentences into individual functional grammatical words:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "Separate into individual words:\n'वृत्त्यर्थमागतो राजपुत्रोऽस्मि।'\nपदच्छेदः: ______________ + ______________ + ______________ + ______________",
+          "questionSanskrit": "'वृत्त्यर्थमागतो राजपुत्रोऽस्मि' इत्यस्य पदच्छेदं कुरुत।",
+          "marks": 5,
+          "type": "fill",
+          "answer": "वृत्त्यर्थम् + आगतः + राजपुत्रः + अस्मि",
+          "explanation": "वृत्त्यर्थम् + आगतः (दीर्घ/संयोग) + राजपुत्रः + अस्मि (विसर्गस्य उत्वं पूर्वरूपं च = राजपुत्रोऽस्मि)।"
+        },
+        {
+          "num": 2,
+          "question": "Separate into individual words:\n'एकैवात्र प्रवृत्तिः सा चातीव दुःसाध्या।'\nपदच्छेदः: _______ + _______ + _______ + _______ + _______ + _______ + _______ + _______",
+          "questionSanskrit": "'एकैवात्र प्रवृत्तिः सा चातीव दुःसाध्या' इत्यस्य पदच्छेदं कुरुत।",
+          "marks": 5,
+          "type": "fill",
+          "answer": "एका + एव + अत्र + प्रवृत्तिः + सा + च + अतीव + दुःसाध्या",
+          "explanation": "एका + एव (वृद्धिः = एकैव) + अत्र (सवर्णदीर्घः = एकैवात्र) + प्रवृत्तिः + सा + च + अतीव (दीर्घः = चातीव) + दुःसाध्या।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Essential Sandhi Splits (Page 120)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · पाठगत-सन्धि-विच्छेदः",
+      "instructions": "Complete the Sandhi splits from textbook exercise 4:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "सन्धि-विच्छेदं कुरुत: (क) अथैकदा, (ख) कस्मादपि, (ग) चार्द्धम्",
+          "questionSanskrit": "सन्धि-विच्छेदं लिखत: अथैकदा, कस्मादपि, चार्द्धम्।",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "अथैकदा = अथ + एकदा; कस्मादपि = कस्मात् + अपि; चार्द्धम् = च + अर्द्धम्",
+          "explanation": "अथ+एकदा (वृद्धि-सन्धिः); कस्मात्+अपि (जश्त्व-सन्धिः); च+अर्द्धम् (सवर्णदीर्घ-सन्धिः)।"
+        },
+        {
+          "num": 4,
+          "question": "सन्धि-विच्छेदं कुरुत: (क) राजलक्ष्मीरस्मि, (ख) अस्त्यत्र, (ग) कश्चिदुपायो",
+          "questionSanskrit": "सन्धि-विच्छेदं लिखत: राजलक्ष्मीरस्मि, अस्त्यत्र, कश्चिदुपायो।",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "राजलक्ष्मीरस्मि = राजलक्ष्मीः + अस्मि; अस्त्यत्र = अस्ति + अत्र; कश्चिदुपायो = कश्चित् + उपायः",
+          "explanation": "राजलक्ष्मीः+अस्मि (विसर्गस्य रुत्वम्); अस्ति+अत्र (यण्-सन्धिः); कश्चित्+उपायः (जश्त्व-सन्धिः)।"
         }
       ]
     }

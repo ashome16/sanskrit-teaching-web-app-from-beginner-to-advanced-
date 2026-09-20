@@ -2272,3 +2272,19 @@
 जोडो|बुभुक्षा|बुभुक्षा|ब,ु,भ,ु,क,्,ष,ा|बुभुक्षायाम् एव भोजनं कुर्यात्।|hunger / desire to eat|Eat only when truly hungry.
 जोडो|चरकः|चरकः|च,र,कः,प,स,त|महर्षिः चरकः हितभुक् वदति।|Sage Charaka|Ancient master physician.
 जोडो|व्यायामः|व्यायामः|व,्,य,ा,य,ा,मः|प्रातरुत्थाय व्यायामः करणीयः।|exercise / physical drill|Daily morning exercise.
+# ========================================================
+# GRADE 8 DEEPAKAM VOCABULARY TILES (Chapter 10: वीरवरकथा)
+# ========================================================
+जोडो|शूद्रकः|शूद्रकः|श,ू,द,्,र,कः,प|शूद्रकः महापराक्रमी राजा आसीत्।|King Shudraka|Valiant king of Shobhavati.
+जोडो|वीरवरः|वीरवरः|व,ी,र,व,रः,क,प|वीरवरः कर्तव्यनिष्ठः राजपुत्रः आसीत्।|Prince Viravara|Devoted hero of the Hitopadesha.
+जोडो|शोभावती|शोभावती|श,ो,भ,ा,व,त,ी|शोभावती नाम काचन नगरी आसीत्।|city of Shobhavati|Flourishing capital of King Shudraka.
+जोडो|वेदरता|वेदरता|व,े,द,र,त,ा,क|वेदरता वीरवरस्य पत्नी आसीत्।|Vedarata|Noble and devoted wife of Viravara.
+जोडो|शक्तिधरः|शक्तिधरः|श,क,्,त,ि,ध,रः|शक्तिधरः वीरवरस्य सुतः आसीत्।|Shaktidhara|Virtuous young son of Viravara.
+जोडो|वीरवती|वीरवती|व,ी,र,व,त,ी,क|वीरवती वीरवरस्य कन्या आसीत्।|Viravati|Beloved daughter of Viravara.
+जोडो|राजद्वारम्|राजद्वारम्|र,ा,ज,द,्,व,ा,रम्|वीरवरः राजद्वारम् अहर्निशं रक्षति।|palace gateway|Royal gate guarded day and night.
+जोडो|दौवारिकः|दौवारिकः|द,ौ,व,ा,र,ि,कः|दौवारिकः वीरवरं राज्ञः समीपम् अनयत्।|doorkeeper / gatekeeper|Sentry escorting visitors to the court.
+जोडो|राजलक्ष्मीः|राजलक्ष्मीः|र,ा,ज,ल,क,्,ष,्,म,ीः|अहं शूद्रकस्य राजलक्ष्मीरस्मि।|Goddess of Royal Fortune|Sovereign prosperity of the realm.
+जोडो|सर्वमङ्गला|सर्वमङ्गला|स,र,्,व,म,ङ,्,ग,ल,ा|भगवत्यै सर्वमङ्गलायै उपहारः देयः।|Goddess Sarvamangala|Auspicious Goddess Durga.
+जोडो|स्वामिभक्तिः|स्वामिभक्तिः|स,्,व,ा,म,ि,भ,क,्,त,िः|वीरवरस्य स्वामिभक्तिः अनुकरणीया।|loyalty to one's master|Supreme dedication to duty.
+जोडो|सुवर्णशतम्|सुवर्णशतम्|स,ु,व,र,्,ण,श,तम्|सुवर्णशतचतुष्टयं प्रतिदिनं वर्तनम्।|hundreds of gold coins|Royal wage requested by Viravara.
+

@@ -318,6 +318,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · नवमः पाठः — कोऽरुक्? कोऽरुक्? कोऽरुक्? (Pages 97–105)</span>
         </div>
       )}
+      {activeLessonId === 'grade8_ch10' && (
+        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #fdf2f8 0%, #eff6ff 100%)', borderColor: '#fbcfe8' }}>
+          <span className="textbook-cbse-pill" style={{ background: '#db2777', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः) (Pages 111–122)</span>
+        </div>
+      )}
 
       <div className="textbook-toolbar-row">
         <button
@@ -644,6 +650,38 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 title="Go to Grade 8 Chapter 9 Printable Worksheets"
               >
                 📑 5 Worksheets (Ayurveda & Health Rules)
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'grade8_ch10' && (
+          <>
+            <button
+              type="button"
+              className="textbook-tool-btn textbook-tool-btn--syllabus"
+              onClick={() => setIsGrade8SyllabusOpen(true)}
+              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+            >
+              📜 पाठानुक्रमणिका (Class 8 Syllabus)
+            </button>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Grade 8 Chapter 10 Quizzes"
+              >
+                🎯 2 Quizzes (8 Qs)
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Grade 8 Chapter 10 Printable Worksheets"
+              >
+                📑 5 Worksheets (Viravara Story & Past Tense)
               </button>
             )}
           </>

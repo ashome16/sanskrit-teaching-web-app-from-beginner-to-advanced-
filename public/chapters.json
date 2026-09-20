@@ -34081,6 +34081,595 @@
           "kind": "exercise-note"
         }
       ]
+    },
+    {
+      "id": "grade8_ch10",
+      "fileName": "grade8_ch10.txt",
+      "title": "दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः)",
+      "page_numbers": "111-122",
+      "sentences": [
+        {
+          "sanskrit": "॥ दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः) ॥",
+          "meaning": "Chapter 10: Better is Sacrifice for a Noble Cause (Part 1) · Hitopadesha Viravara Story (Pages 111–122)",
+          "paragraphTranslation": "दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः) (पृष्ठ १११–१२२)",
+          "words": [
+            "दशमः",
+            "पाठः",
+            "सन्निमित्ते",
+            "वरं",
+            "त्यागः",
+            "क-भागः"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "संस्कृतवाङ्मये कथासाहित्यस्य विशिष्टं स्थानम् अस्ति। कथानां द्वारा अतीव मनोरञ्जकतया जीवनसम्बद्धाः विविधाः उपदेशाः, प्रेरणाः हि एतस्य साहित्यस्य प्रयोजनम्।",
+          "meaning": "In Sanskrit literature, story literature holds a distinct and special place. Providing diverse life-related lessons and inspirations in an entertaining manner is the primary goal of this literature.",
+          "paragraphTranslation": "संस्कृत साहित्य में कथा साहित्य का एक विशिष्ट स्थान है। कहानियों के माध्यम से अत्यंत मनोरंजक तरीके से जीवन से जुड़े विविध उपदेश और प्रेरणा देना ही इस साहित्य का उद्देश्य है।",
+          "words": [
+            "संस्कृतवाङ्मये",
+            "कथासाहित्यस्य",
+            "विशिष्टं",
+            "स्थानम्",
+            "अस्ति",
+            "कथानां",
+            "द्वारा",
+            "मनोरञ्जकतया",
+            "जीवनसम्बद्धाः",
+            "उपदेशाः",
+            "प्रेरणाः"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "प्रस्तुतं पाठः ‘हितोपदेशः’ इत्यस्मात्कथाग्रन्थात् स्वीकृतः। राज्ञः शूद्रकस्य सेवायां नियुक्तस्य कस्यचित् वीरवरनामकस्य कर्तव्यनिष्ठस्य राजपुत्रस्य वैशिष्ट्यस्य वर्णनं कथायामत्र वर्तते।",
+          "meaning": "The present lesson is extracted from the story collection 'Hitopadesha'. It describes the exceptional qualities of a dutiful prince named Viravara, appointed in the service of King Shudraka.",
+          "paragraphTranslation": "प्रस्तुत पाठ 'हितोपदेश' नामक कथा ग्रन्थ से लिया गया है। राजा शूद्रक की सेवा में नियुक्त वीरवर नामक कर्तव्यनिष्ठ राजकुमार की विशेषताओं का वर्णन इस कहानी में है।",
+          "words": [
+            "प्रस्तुतं",
+            "पाठः",
+            "हितोपदेशः",
+            "राज्ञः",
+            "शूद्रकस्य",
+            "वीरवरनामकस्य",
+            "कर्तव्यनिष्ठस्य",
+            "राजपुत्रस्य",
+            "वर्णनं",
+            "वर्तते"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "सः राज्ञः राष्ट्रस्य च रक्षणाय स्वप्राणान् अपि अर्पयितुम् उद्यतः अभवत्। तस्य स्वामिभक्तिः राष्ट्राय समर्पणभावः च प्रेरणार्हः। पठनीया इयं वीरवरकथा। अनुकरणीयः अयं वीरवरः।",
+          "meaning": "He became ready to sacrifice even his own life for the protection of the king and country. His master-devotion and national surrender are truly inspiring. This story of Viravara is worthy of study and imitation.",
+          "paragraphTranslation": "वह राजा और राष्ट्र की रक्षा के लिए अपने प्राणों की आहुति देने को भी तैयार हो गया। उसकी स्वामिभक्ति और राष्ट्र-समर्पण प्रेरणादायक है। यह वीरवर अनुकरण करने योग्य है।",
+          "words": [
+            "राज्ञः",
+            "राष्ट्रस्य",
+            "स्वप्राणान्",
+            "अर्पयितुम्",
+            "उद्यतः",
+            "स्वामिभक्तिः",
+            "समर्पणभावः",
+            "वीरवरकथा",
+            "अनुकरणीयः"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "आसीत् शोभावती नाम काचन नगरी। तत्र शूद्रको नाम महापराक्रमी नानाशास्त्रवित् पूतचरित्रः महीपतिः प्रतिवसति स्म।",
+          "meaning": "There was a certain city named Shobhavati. A highly valiant king named Shudraka, proficient in various scriptures and of pristine character, lived there.",
+          "paragraphTranslation": "शोभावती नाम की कोई नगरी थी। वहाँ शूद्रक नाम का महान पराक्रमी, अनेक शास्त्रों का ज्ञाता और पवित्र चरित्र वाला राजा रहता था।",
+          "words": [
+            "आसीत्",
+            "शोभावती",
+            "नाम",
+            "काचन",
+            "नगरी",
+            "शूद्रकः",
+            "महापराक्रमी",
+            "नानाशास्त्रवित्",
+            "पूतचरित्रः",
+            "महीपतिः",
+            "प्रतिवसति",
+            "स्म"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "अथैकदा वीरवरनामा राजपुत्रः वृत्त्यर्थं कस्मादपि देशाद् राजद्वारमुपागच्छत्।",
+          "meaning": "Then once, a prince named Viravara arrived at the royal palace gate from some distant land seeking livelihood.",
+          "paragraphTranslation": "इसके बाद एक समय वीरवर नाम का राजकुमार आजीविका (नौकरी) के लिए किसी देश से राजद्वार पर आया।",
+          "words": [
+            "अथैकदा",
+            "वीरवरनामा",
+            "राजपुत्रः",
+            "वृत्त्यर्थं",
+            "कस्मादपि",
+            "देशात्",
+            "राजद्वारम्",
+            "उपागच्छत्"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "तेन सह वेदरता नाम तस्य पत्नी, शक्तिधरो नाम सुतः, वीरवती नाम कन्या च समायाताः।",
+          "meaning": "Along with him arrived his wife named Vedarata, his son named Shaktidhara, and his daughter named Viravati.",
+          "paragraphTranslation": "उसके साथ वेदरता नाम की उसकी पत्नी, शक्तिधर नाम का पुत्र और वीरवती नाम की कन्या भी आए।",
+          "words": [
+            "तेन",
+            "सह",
+            "वेदरता",
+            "नाम",
+            "पत्नी",
+            "शक्तिधरः",
+            "सुतः",
+            "वीरवती",
+            "कन्या",
+            "समायाताः"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "वीरवरः – (प्रतिहारं वीक्ष्य) भोः प्रतिहार ! वृत्त्यर्थमागतो राजपुत्रोऽस्मि, तस्मान्नय मां स्वामिनः समीपम्। (ततो दौवारिकः तं प्रभोः समीपम् अनयत्।)",
+          "meaning": "Viravara – (Addressing the gatekeeper) O gatekeeper! I am a prince who has arrived seeking employment, hence lead me to the presence of the master. (Then the doorkeeper led him to the king.)",
+          "paragraphTranslation": "वीरवर – (द्वारपाल को देखकर) हे द्वारपाल! मैं आजीविका के लिए आया राजकुमार हूँ, अतः मुझे स्वामी के पास ले चलो। (तब द्वारपाल उसे राजा के पास ले गया।)",
+          "words": [
+            "वीरवरः",
+            "प्रतिहारं",
+            "वीक्ष्य",
+            "भोः",
+            "प्रतिहार",
+            "वृत्त्यर्थम्",
+            "आगतः",
+            "राजपुत्रः",
+            "अस्मि",
+            "दौवारिकः",
+            "प्रभोः",
+            "समीपम्",
+            "अनयत्"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "वीरवरः – (प्रणामपुरस्सरं सविनयम्) देव ! यदि सौभाग्येन अहं भवतः सेवायां नियोजितः तर्हि यदादिश्यते तत् श्रद्धया पालयिष्यामि।",
+          "meaning": "Viravara – (Bowing with humility) My Lord! If by good fortune I am appointed in your service, then whatever is commanded, I shall faithfully obey.",
+          "paragraphTranslation": "वीरवर – (प्रणाम करके विनम्रतापूर्वक) देव! यदि सौभाग्य से मैं आपकी सेवा में नियुक्त किया जाता हूँ, तो जो भी आज्ञा दी जाएगी, उसका श्रद्धापूर्वक पालन करूँगा।",
+          "words": [
+            "प्रणामपुरस्सरं",
+            "सविनयम्",
+            "देव",
+            "सौभाग्येन",
+            "सेवायां",
+            "नियोजितः",
+            "यदादिश्यते",
+            "श्रद्धया",
+            "पालयिष्यामि"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "राजा – किं ते वर्तनम्? वीरवरः – प्रतिदिनं सुवर्णशतचतुष्टयं देव !",
+          "meaning": "King – What is your daily salary? Viravara – Four hundred gold coins daily, my Lord!",
+          "paragraphTranslation": "राजा – तुम्हारा वेतन क्या है? वीरवर – चार सौ स्वर्ण मुद्राएँ प्रतिदिन, देव!",
+          "words": [
+            "राजा",
+            "किं",
+            "ते",
+            "वर्तनम्",
+            "वीरवरः",
+            "प्रतिदिनं",
+            "सुवर्णशतचतुष्टयं",
+            "देव"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "राजा – का ते सामग्री? वीरवरः – इमौ बाहू, एष खड्गश्च। राजा – नैतच्छक्यम् ! (तत् श्रुत्वा वीरवरः राजानं प्रणम्य राजसभातः निर्गतः।)",
+          "meaning": "King – What are your assets and weapons? Viravara – These two arms and this sword. King – This is impossible! (Hearing this, Viravara bowed to the king and exited the royal hall.)",
+          "paragraphTranslation": "राजा – तुम्हारी सामग्री क्या है? वीरवर – ये दो भुजाएँ और यह तलवार। राजा – यह संभव नहीं है! (यह सुनकर वीरवर राजा को प्रणाम कर राजसभा से बाहर निकल गया।)",
+          "words": [
+            "का",
+            "ते",
+            "सामग्री",
+            "इमौ",
+            "बाहू",
+            "एष",
+            "खड्गः",
+            "च",
+            "नैतत्",
+            "शक्यम्",
+            "प्रणम्य",
+            "राजसभातः",
+            "निर्गतः"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "मन्त्री – (तदालोक्य) देव ! दिनचतुष्टयस्य वेतनार्पणेन प्रथमं परीक्ष्यतां स्वरूपमस्य वेतनार्थिनो राजपुत्रस्य, किमुपपन्नमेतत् वेतनं न वेति।",
+          "meaning": "Minister – (Seeing this) My Lord! By granting four days' salary, first let the character and capability of this job-seeking prince be tested, whether this salary is justified or not.",
+          "paragraphTranslation": "मंत्री – (यह देखकर) देव! चार दिनों का वेतन देकर पहले इस राजकुमार के वास्तविक स्वरूप की परीक्षा की जानी चाहिए कि यह वेतन उचित है या नहीं।",
+          "words": [
+            "मन्त्री",
+            "तदालोक्य",
+            "दिनचतुष्टयस्य",
+            "वेतनार्पणेन",
+            "परीक्ष्यतां",
+            "स्वरूपम्",
+            "वेतनार्थिनः",
+            "किमुपपन्नम्",
+            "वेतनं",
+            "वा",
+            "इति"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "अथ मन्त्रिणां वचनात् ताम्बूलदानेन नियोजितोऽसौ राजपुत्रो वीरवरो नरपतिना।",
+          "meaning": "Then, upon the advice of the ministers, the king appointed prince Viravara by conferring royal betel-leaf (tāmbūla).",
+          "paragraphTranslation": "तब मंत्रियों के कथन पर राजा ने ताम्बूल देकर राजकुमार वीरवर को सेवा में नियुक्त कर लिया।",
+          "words": [
+            "अथ",
+            "मन्त्रिणां",
+            "वचनात्",
+            "ताम्बूलदानेन",
+            "नियोजितः",
+            "असौ",
+            "राजपुत्रः",
+            "वीरवरः",
+            "नरपतिना"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "स च राजपुत्रः प्रतिदिनं प्रभाते राजदर्शनादनन्तरं स्ववेतनस्य यच्छति देवेभ्यः अर्धम्। स्थितस्य चार्द्धं दरिद्रेभ्यो ददाति, निक्षिपति च तदवशिष्टं भोज्यविलासव्ययार्थं पत्न्याः हस्ते।",
+          "meaning": "Every morning after greeting the king, that prince offered half of his salary to the gods; half of the remainder (one-fourth of total) he gave to the poor, and placed the rest into his wife's hands for food and household expenses.",
+          "paragraphTranslation": "वह राजकुमार प्रतिदिन प्रातः राजा के दर्शन के बाद वेतन का आधा भाग देवताओं को अर्पित करता था, बचे हुए का आधा (चौथाई भाग) गरीबों को देता था, और शेष पत्नी के हाथ में भोजन-व्यवस्था के लिए सौंपता था।",
+          "words": [
+            "प्रतिदिनं",
+            "प्रभाते",
+            "राजदर्शनात्",
+            "स्ववेतनस्य",
+            "देवेभ्यः",
+            "अर्धम्",
+            "दरिद्रेभ्यः",
+            "निक्षिपति",
+            "भोज्यविलासव्ययार्थं",
+            "पत्न्याः",
+            "हस्ते"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "धृतायुधः सः राजद्वारमहर्निशं सेवते। यदा राजा स्वयमादिशति तदा याति स्वगृहम्।",
+          "meaning": "Armed with his weapons, he guarded the royal gate day and night. Only when the king himself instructed, did he return to his home.",
+          "paragraphTranslation": "शस्त्र धारण किए वह दिन-रात राजद्वार की रक्षा करता था। जब राजा स्वयं आज्ञा देते थे तभी वह अपने घर जाता था।",
+          "words": [
+            "धृतायुधः",
+            "राजद्वारम्",
+            "अहर्निशं",
+            "सेवते",
+            "यदा",
+            "राजा",
+            "स्वयम्",
+            "आदिशति",
+            "तदा",
+            "याति",
+            "स्वगृहम्"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "अथैकदा कृष्णचतुर्दश्याम् अर्द्धरात्रे स राजा श्रुतवान् करुणरोदनध्वनिं कञ्चन। राजा – कोऽत्र द्वारि तिष्ठति? वीरवरः – सेवको वीरवरोऽत्र द्वारि वर्ते देव !",
+          "meaning": "Then once, at midnight on Krishna Chaturdashi, the king heard a sorrowful weeping sound. King – Who stands here at the gate? Viravara – Servant Viravara is present at the gate, my Lord!",
+          "paragraphTranslation": "एक बार कृष्ण चतुर्दशी की आधी रात को राजा ने किसी के करुण रोने की ध्वनि सुनी। राजा – यहाँ द्वार पर कौन है? वीरवर – देव! सेवक वीरवर द्वार पर उपस्थित है!",
+          "words": [
+            "कृष्णचतुर्दश्याम्",
+            "अर्द्धरात्रे",
+            "राजा",
+            "श्रुतवान्",
+            "करुणरोदनध्वनिं",
+            "द्वारि",
+            "तिष्ठति",
+            "सेवकः",
+            "वीरवरः",
+            "वर्ते"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "राजा – क्रन्दनमनुसर राजपुत्र ! वीरवरः – यथादिशति देवः। (ततोऽसौ तद्रोदनस्वरम् अनुसरन् प्रचलितः।)",
+          "meaning": "King – Follow that cry, O Prince! Viravara – As my Lord commands. (Then he set off tracking that weeping sound.)",
+          "paragraphTranslation": "राजा – राजकुमार, उस रोने की आवाज़ का पता लगाओ! वीरवर – जैसी देव की आज्ञा। (वह उस रोने की ध्वनि के पीछे चल पड़ा।)",
+          "words": [
+            "क्रन्दनम्",
+            "अनुसर",
+            "राजपुत्र",
+            "यथादिशति",
+            "देवः",
+            "तद्रोदनस्वरम्",
+            "अनुसरन्",
+            "प्रचलितः"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "राजा – (स्वगतम्) नैष गन्तुमर्हति राजपुत्र एकाकी सूचिभेद्ये तिमिरेऽस्मिन्। तस्मात् अहमपि गच्छामि पृष्ठतोऽस्य, निरूपयामि च किमेतदिति।",
+          "meaning": "King – (To himself) It is not fitting for this prince to wander alone in this needle-piercing impenetrable darkness. Hence I too shall follow behind him and investigate what this is.",
+          "paragraphTranslation": "राजा – (मन में) इस राजकुमार का इस घने अंधकार में अकेले जाना उचित नहीं है। अतः मैं भी इसके पीछे चलता हूँ और देखता हूँ कि क्या बात है।",
+          "words": [
+            "स्वगतम्",
+            "एकाकी",
+            "सूचिभेद्ये",
+            "तिमिरे",
+            "पृष्ठतः",
+            "निरूपयामि",
+            "किमेतत्"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "ततो नरपतिः खड्गपाणिः तस्य अनुसरणक्रमेण बहिः निरगच्छत् नगरीद्वारात्। अथ गच्छता राजपुत्रेण बहिः नगरादालोकिता रोदनपरा कापि सुन्दरी दिव्याभरणभूषिता।",
+          "meaning": "Then the king, sword in hand, went outside the city gate following his tracks. As the prince proceeded outside the city, he saw a beautiful lady adorned with celestial ornaments weeping bitterly.",
+          "paragraphTranslation": "तब राजा हाथ में तलवार लेकर उसका पीछा करते हुए नगरद्वार से बाहर निकले। राजकुमार ने नगर के बाहर दिव्य आभूषणों से सजी एक रोती हुई सुन्दरी को देखा।",
+          "words": [
+            "नरपतिः",
+            "खड्गपाणिः",
+            "अनुसरणक्रमेण",
+            "नगरीद्वारात्",
+            "निरगच्छत्",
+            "नगरात्",
+            "आलोकिता",
+            "रोदनपरा",
+            "दिव्याभरणभूषिता"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "वीरवरः – का त्वमम्ब ! किमर्थं विलपसि? राजलक्ष्मीः – वत्स ! अहमेतस्य भूपालस्य शूद्रकस्य राजलक्ष्मीरस्मि। चिरमेतस्य भुजच्छायायां समुद्गता सुखेन निवसामि।",
+          "meaning": "Viravara – Who are you, Mother? Why are you weeping? Rajalaxmi – Child! I am the Royal Prosperity (Rajalaxmi) of this king Shudraka. For a long time under the protection of his arms I have dwelt happily.",
+          "paragraphTranslation": "वीरवर – हे माँ! तुम कौन हो? किसलिए विलाप कर रही हो? राजलक्ष्मी – वत्स! मैं राजा शूद्रक की राजलक्ष्मी हूँ। दीर्घकाल से इसकी भुजाओं की छाया में सुखपूर्वक निवास कर रही हूँ।",
+          "words": [
+            "का",
+            "त्वम्",
+            "अम्ब",
+            "किमर्थं",
+            "विलपसि",
+            "भूपालस्य",
+            "शूद्रकस्य",
+            "राजलक्ष्मीः",
+            "भुजच्छायायां",
+            "सुखेन",
+            "निवसामि"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "साम्प्रतन्तु देव्या अपराधेनाद्य प्रभृति तृतीये दिवसे राजा पञ्चत्वं यास्यति, तदाहमनाथा भविष्यामि। तदिदानीं नात्र स्थास्यामीति क्रन्दामि।",
+          "meaning": "Rajalaxmi – But now, owing to a cosmic fault, on the third day from today the king will pass away, leaving me destitute. Knowing I cannot remain here, I weep.",
+          "paragraphTranslation": "राजलक्ष्मी – परंतु अब प्रारब्ध के दोष से आज से तीसरे दिन राजा की मृत्यु हो जाएगी, तब मैं अनाथ हो जाऊँगी। अब यहाँ नहीं रह पाऊँगी, इसलिए रो रही हूँ।",
+          "words": [
+            "साम्प्रतम्",
+            "अपराधेन",
+            "तृतीये",
+            "दिवसे",
+            "राजा",
+            "पञ्चत्वं",
+            "यास्यति",
+            "अनाथा",
+            "भविष्यामि",
+            "स्थास्यामि",
+            "क्रन्दामि"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "वीरवरः – (तदाकर्ण्य प्रणिपत्य) भगवति ! अस्त्यत्र कश्चिदुपायो येन भगवत्याः पुनेरिह चिरवासो भवति, सुचिरं जीवति च स्वामी?",
+          "meaning": "Viravara – (Hearing this and bowing) O Goddess! Is there any remedy by which your stay here may remain permanent, and our master may live long?",
+          "paragraphTranslation": "वीरवर – (प्रणाम करके) भगवती! क्या कोई ऐसा उपाय है जिससे आपका यहाँ स्थायी वास हो और हमारे स्वामी दीर्घायु हों?",
+          "words": [
+            "तदाकर्ण्य",
+            "प्रणिपत्य",
+            "भगवति",
+            "अस्त्यत्र",
+            "कश्चित्",
+            "उपायः",
+            "चिरवासः",
+            "सुचिरं",
+            "जीवति",
+            "स्वामी"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "राजलक्ष्मीः – अस्ति वत्स ! एकैवात्र प्रवृत्तिः, सा चातीव दुःसाध्या। वीरवरः – (साष्टाङ्गं नमस्कृत्य) अम्ब ! कथय, कः सः उपायः दुःसाध्यः?",
+          "meaning": "Rajalaxmi – There is, child! But there is only one remedy, and that is exceedingly arduous. Viravara – (Prostrating completely) Mother! Pray speak, what is that difficult remedy?",
+          "paragraphTranslation": "राजलक्ष्मी – उपाय है वत्स! परंतु एक ही उपाय है और वह अत्यंत कठिन है। वीरवर – (साष्टांग प्रणाम करके) माँ! कहिए, वह कठिन उपाय क्या है?",
+          "words": [
+            "प्रवृत्तिः",
+            "अतीव",
+            "दुःसाध्या",
+            "साष्टाङ्गं",
+            "नमस्कृत्य",
+            "कथय",
+            "उपायः"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "राजलक्ष्मीः – श्रूयतां पुत्र ! यदि त्वया स्वस्य सर्वतः प्रियं वस्तु सहासवदनेन भगवत्यै सर्वमङ्गलायै उपहारः क्रियेत, तदा पुनर्जीविष्यति राजा शूद्रको वर्षाणां शतम्, अहञ्च सुखेन निवत्स्यामि। (ततः सा तत्क्षणादेव गताऽदृश्यतां तत्सम्मुखात्।)",
+          "meaning": "Rajalaxmi – Hear, son! If you sacrifice your most precious possession with a smiling face to Goddess Sarvamangala, then King Shudraka shall live for a hundred years, and I will dwell here happily. (Then she instantly vanished from before his eyes.)",
+          "paragraphTranslation": "राजलक्ष्मी – सुनो पुत्र! यदि तुम अपनी सबसे प्रिय वस्तु को हंसते हुए मुख से भगवती सर्वमंगला (दुर्गा जी) को अर्पित कर दो, तो राजा शूद्रक सौ वर्षों तक जीवित रहेंगे और मैं सुख से रहूँगी। (और वह तुरंत गायब हो गई।)",
+          "words": [
+            "श्रूयतां",
+            "पुत्र",
+            "सर्वतः",
+            "प्रियं",
+            "सहासवदनेन",
+            "सर्वमङ्गलायै",
+            "उपहारः",
+            "पुनर्जीविष्यति",
+            "वर्षाणां",
+            "शतम्",
+            "तत्क्षणात्",
+            "अदृश्यताम्"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – महीपतिः (राजा), नानाशास्त्रवित् (अनेक शास्त्रों का ज्ञाता), पूतचरित्रः (पवित्र चरित्र वाला), वृत्त्यर्थम् (आजीविका के लिए)।",
+          "meaning": "Glossary 1: Mahipatih (King), Nanashastravit (Knowing multiple sciences), Putacharitrah (Of pure character), Vrittyartham (For employment).",
+          "paragraphTranslation": "शब्दार्थ: महीपतिः = राजा, नानाशास्त्रवित् = शास्त्रों का ज्ञाता, पूतचरित्रः = पवित्र चरित्र वाला, वृत्त्यर्थम् = आजीविका हेतु।",
+          "words": [
+            "महीपतिः",
+            "नानाशास्त्रवित्",
+            "पूतचरित्रः",
+            "वृत्त्यर्थम्"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – प्रतिहारम्/दौवारिकः (द्वारपाल), वर्तनम् (वेतनम् / तन्ख्वाह), सुवर्णशतचतुष्टयम् (४०० स्वर्ण मुद्राएँ), आलोक्य (दृष्ट्वा)।",
+          "meaning": "Glossary 2: Pratiharam / Dauvarikah (Doorkeeper), Vartanam (Salary), Suvarnashatachatusthayam (400 gold coins), Alokya (Having seen).",
+          "paragraphTranslation": "शब्दार्थ: दौवारिकः = द्वारपाल, वर्तनम् = वेतन, सुवर्णशतचतुष्टयम् = ४०० स्वर्ण मुद्राएँ, आलोक्य = देखकर।",
+          "words": [
+            "प्रतिहारम्",
+            "दौवारिकः",
+            "वर्तनम्",
+            "सुवर्णशतचतुष्टयम्",
+            "आलोक्य"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – धृतायुधः (शस्त्रयुक्तः), अहर्निशम् (दिन-रात), सूचिभेद्ये तिमिरे (अत्यंत घने अंधकार में), खड्गपाणिः (हाथ में तलवार लिए)।",
+          "meaning": "Glossary 3: Dhritayudhah (Armed), Aharnisham (Day and night), Suchibhedye timire (In impenetrable darkness), Khadgapānih (With sword in hand).",
+          "paragraphTranslation": "शब्दार्थ: धृतायुधः = शस्त्रधारी, अहर्निशम् = दिन-रात, सूचिभेद्ये तिमिरे = घोर अंधकार में, खड्गपाणिः = हाथ में तलवार लिए।",
+          "words": [
+            "धृतायुधः",
+            "अहर्निशम्",
+            "सूचिभेद्ये",
+            "तिमिरे",
+            "खड्गपाणिः"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – पञ्चत्वम् (मृत्युम्), अनाथा (बिना रक्षक के), दुःसाध्या (अत्यंत कठिन), सहासवदनेन (हंसते हुए मुख से), तत्क्षणादेव (उसी क्षण)।",
+          "meaning": "Glossary 4: Panchatvam (Death), Anāthā (Helpless/without protector), Duhsādhyā (Extremely difficult), Sahāsavadanena (With smiling face), Tatkshanādeva (Instantly).",
+          "paragraphTranslation": "शब्दार्थ: पञ्चत्वम् = मृत्यु, अनाथा = बेसहारा, दुःसाध्या = अत्यंत दुष्कर, सहासवदनेन = मुस्कुराते चेहरे से, तत्क्षणादेव = तत्काल।",
+          "words": [
+            "पञ्चत्वम्",
+            "अनाथा",
+            "दुःसाध्या",
+            "सहासवदनेन",
+            "तत्क्षणादेव"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "१. आम् अथवा न – (क) किं वीरवरः राजपुत्रः आसीत्? (आम्) (ख) 'किं ते वर्तनम्?' इति किं शूद्रकः अपृच्छत्? (आम्) (ग) किं वीरवरं राज्ञः समीपं दौवारिकः अनयत्? (आम्)",
+          "meaning": "Exercise 1 (True/False): (a) Was Viravara a prince? (Yes) (b) Did Shudraka ask 'What is your salary?' (Yes) (c) Did the doorkeeper lead Viravara to the king? (Yes)",
+          "paragraphTranslation": "अभ्यास १ (हाँ या ना): क- आम्, ख- आम्, ग- आम्।",
+          "words": [
+            "आम्",
+            "अथवा",
+            "न",
+            "वीरवरः",
+            "राजपुत्रः",
+            "शूद्रकः",
+            "दौवारिकः"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "आम् / आम् / आम्",
+          "hindi_gloss": "हाँ, हाँ, हाँ"
+        },
+        {
+          "sanskrit": "१. आम् अथवा न – (घ) किं राजा शूद्रकः साक्षात् दृष्ट्वा एव वृत्तिम् अयच्छत्? (न) (ङ) किं वीरवरः स्ववेतनस्य चतुर्थं भागम् एव पत्न्यै यच्छति स्म? (आम्) (छ) किं करुणरोदनध्वनिः दिवसे श्रुतः? (न)",
+          "meaning": "Exercise 1 (True/False): (d) Did Shudraka hire immediately on sight? (No, tested first) (e) Did Viravara give 1/4th of salary to his wife? (Yes) (f) Was the weeping heard during daytime? (No, at midnight)",
+          "paragraphTranslation": "अभ्यास १ (हाँ या ना): घ- न, ङ- आम्, छ- न।",
+          "words": [
+            "वृत्तिम्",
+            "चतुर्थं",
+            "भागम्",
+            "पत्न्यै",
+            "करुणरोदनध्वनिः"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "न / आम् / न",
+          "hindi_gloss": "नहीं, हाँ, नहीं"
+        },
+        {
+          "sanskrit": "२. पूर्णवाक्येन – (क) शूद्रकः कीदृशः राजा आसीत्? उत्तरम्: शूद्रकः महापराक्रमी, नानाशास्त्रवित्, पूतचरित्रः च महीपतिः आसीत्।",
+          "meaning": "Q2 (a): What kind of king was Shudraka? Ans: King Shudraka was highly valorous, learned in various sciences, and possessed a pure noble character.",
+          "paragraphTranslation": "प्र २ (क): शूद्रक कैसा राजा था? उत्तर: शूद्रक महापराक्रमी, अनेक शास्त्रों का ज्ञाता और पवित्र चरित्र वाला राजा था।",
+          "words": [
+            "शूद्रकः",
+            "महापराक्रमी",
+            "नानाशास्त्रवित्",
+            "पूतचरित्रः",
+            "महीपतिः"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "शूद्रकः महापराक्रमी नानाशास्त्रवित् पूतचरित्रः च महीपतिः आसीत्।",
+          "hindi_gloss": "शूद्रक पराक्रमी और पूतचरित्र राजा था।"
+        },
+        {
+          "sanskrit": "२. पूर्णवाक्येन – (ग) 'का ते सामग्री?' इति प्रश्नस्य उत्तरं वीरवरः किम् अयच्छत्? उत्तरम्: 'इमौ बाहू, एष खड्गश्च मम सामग्री' इति वीरवरः अयच्छत्।",
+          "meaning": "Q2 (c): What did Viravara reply to 'What is your equipment?' Ans: Viravara replied: 'These two arms and this sword are my equipment.'",
+          "paragraphTranslation": "प्र २ (ग): 'का ते सामग्री?' का उत्तर वीरवर ने क्या दिया? उत्तर: 'ये दो भुजाएँ और यह तलवार मेरी सामग्री हैं।'",
+          "words": [
+            "सामग्री",
+            "इमौ",
+            "बाहू",
+            "खड्गश्च"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "इमौ बाहू एष खड्गश्च मम सामग्री इति अयच्छत्।",
+          "hindi_gloss": "मेरी दो भुजाएँ और तलवार ही मेरी सामग्री हैं।"
+        },
+        {
+          "sanskrit": "२. पूर्णवाक्येन – (ङ) वीरवरः स्ववेतनस्य अर्धं केभ्यः यच्छति स्म? उत्तरम्: वीरवरः स्ववेतनस्य अर्धं देवेभ्यः यच्छति स्म।",
+          "meaning": "Q2 (e): To whom did Viravara give half of his salary? Ans: Viravara gave half of his salary to the gods.",
+          "paragraphTranslation": "प्र २ (ङ): वीरवर अपने वेतन का आधा भाग किसे देता था? उत्तर: वीरवर अपने वेतन का आधा भाग देवताओं को अर्पित करता था।",
+          "words": [
+            "स्ववेतनस्य",
+            "अर्धं",
+            "देवेभ्यः",
+            "यच्छति"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "वीरवरः स्ववेतनस्य अर्धं देवेभ्यः यच्छति स्म।",
+          "hindi_gloss": "देवताओं को अर्पित करता था।"
+        },
+        {
+          "sanskrit": "४. सन्धि-विच्छेदः – अथैकदा = अथ + एकदा, वृत्त्यर्थम् = वृत्ति + अर्थम्, कस्मादपि = कस्मात् + अपि, राजपुत्रोऽस्मि = राजपुत्रः + अस्मि, तदालोक्य = तत् + आलोक्य, चार्द्धं = च + अर्द्धम्।",
+          "meaning": "Exercise 4: Sandhi Splits: Athaikadā = Atha + Ekadā; Vrittyartham = Vritti + Artham; Kasmādapi = Kasmāt + Api; Rajaputro'smi = Rajaputrah + Asmi; Tadālokya = Tat + Ālokya; Chārdham = Cha + Ardham.",
+          "paragraphTranslation": "सन्धि-विच्छेद अभ्यास।",
+          "words": [
+            "अथैकदा",
+            "वृत्त्यर्थम्",
+            "कस्मादपि",
+            "राजपुत्रोऽस्मि",
+            "तदालोक्य",
+            "चार्द्धं"
+          ],
+          "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "५. सर्वनामपदानि – 'ततः असौ प्रचलितः' (वीरवराय), 'अहम् अपि गच्छामि पृष्ठतोऽस्य' (शूद्रकाय), 'एतस्य भुजच्छायायां सुखेन निवसामि' (शूद्रकाय), 'सा चातीव दुःसाध्या' (उपायस्य कृते)।",
+          "meaning": "Exercise 5: Contextual Pronoun Referents in Dative (Chaturthi): Asau -> to Viravara; Aham -> to King Shudraka; Etasya -> to King Shudraka; Sa -> to the arduous remedy.",
+          "paragraphTranslation": "सर्वनाम पदों का चतुर्थी विभक्ति में प्रयोग/संदर्भ।",
+          "words": [
+            "सर्वनामपदानि",
+            "वीरवराय",
+            "शूद्रकाय",
+            "उपायस्य",
+            "कृते"
+          ],
+          "kind": "exercise-note"
+        }
+      ]
     }
   ],
   "chapters": [
@@ -46783,6 +47372,595 @@
             "शुकम्",
             "सात्त्विकं",
             "भोजनम्"
+          ],
+          "kind": "exercise-note"
+        }
+      ]
+    },
+    {
+      "id": "grade8_ch10",
+      "fileName": "grade8_ch10.txt",
+      "title": "दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः)",
+      "page_numbers": "111-122",
+      "sentences": [
+        {
+          "sanskrit": "॥ दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः) ॥",
+          "meaning": "Chapter 10: Better is Sacrifice for a Noble Cause (Part 1) · Hitopadesha Viravara Story (Pages 111–122)",
+          "paragraphTranslation": "दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः) (पृष्ठ १११–१२२)",
+          "words": [
+            "दशमः",
+            "पाठः",
+            "सन्निमित्ते",
+            "वरं",
+            "त्यागः",
+            "क-भागः"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "संस्कृतवाङ्मये कथासाहित्यस्य विशिष्टं स्थानम् अस्ति। कथानां द्वारा अतीव मनोरञ्जकतया जीवनसम्बद्धाः विविधाः उपदेशाः, प्रेरणाः हि एतस्य साहित्यस्य प्रयोजनम्।",
+          "meaning": "In Sanskrit literature, story literature holds a distinct and special place. Providing diverse life-related lessons and inspirations in an entertaining manner is the primary goal of this literature.",
+          "paragraphTranslation": "संस्कृत साहित्य में कथा साहित्य का एक विशिष्ट स्थान है। कहानियों के माध्यम से अत्यंत मनोरंजक तरीके से जीवन से जुड़े विविध उपदेश और प्रेरणा देना ही इस साहित्य का उद्देश्य है।",
+          "words": [
+            "संस्कृतवाङ्मये",
+            "कथासाहित्यस्य",
+            "विशिष्टं",
+            "स्थानम्",
+            "अस्ति",
+            "कथानां",
+            "द्वारा",
+            "मनोरञ्जकतया",
+            "जीवनसम्बद्धाः",
+            "उपदेशाः",
+            "प्रेरणाः"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "प्रस्तुतं पाठः ‘हितोपदेशः’ इत्यस्मात्कथाग्रन्थात् स्वीकृतः। राज्ञः शूद्रकस्य सेवायां नियुक्तस्य कस्यचित् वीरवरनामकस्य कर्तव्यनिष्ठस्य राजपुत्रस्य वैशिष्ट्यस्य वर्णनं कथायामत्र वर्तते।",
+          "meaning": "The present lesson is extracted from the story collection 'Hitopadesha'. It describes the exceptional qualities of a dutiful prince named Viravara, appointed in the service of King Shudraka.",
+          "paragraphTranslation": "प्रस्तुत पाठ 'हितोपदेश' नामक कथा ग्रन्थ से लिया गया है। राजा शूद्रक की सेवा में नियुक्त वीरवर नामक कर्तव्यनिष्ठ राजकुमार की विशेषताओं का वर्णन इस कहानी में है।",
+          "words": [
+            "प्रस्तुतं",
+            "पाठः",
+            "हितोपदेशः",
+            "राज्ञः",
+            "शूद्रकस्य",
+            "वीरवरनामकस्य",
+            "कर्तव्यनिष्ठस्य",
+            "राजपुत्रस्य",
+            "वर्णनं",
+            "वर्तते"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "सः राज्ञः राष्ट्रस्य च रक्षणाय स्वप्राणान् अपि अर्पयितुम् उद्यतः अभवत्। तस्य स्वामिभक्तिः राष्ट्राय समर्पणभावः च प्रेरणार्हः। पठनीया इयं वीरवरकथा। अनुकरणीयः अयं वीरवरः।",
+          "meaning": "He became ready to sacrifice even his own life for the protection of the king and country. His master-devotion and national surrender are truly inspiring. This story of Viravara is worthy of study and imitation.",
+          "paragraphTranslation": "वह राजा और राष्ट्र की रक्षा के लिए अपने प्राणों की आहुति देने को भी तैयार हो गया। उसकी स्वामिभक्ति और राष्ट्र-समर्पण प्रेरणादायक है। यह वीरवर अनुकरण करने योग्य है।",
+          "words": [
+            "राज्ञः",
+            "राष्ट्रस्य",
+            "स्वप्राणान्",
+            "अर्पयितुम्",
+            "उद्यतः",
+            "स्वामिभक्तिः",
+            "समर्पणभावः",
+            "वीरवरकथा",
+            "अनुकरणीयः"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "आसीत् शोभावती नाम काचन नगरी। तत्र शूद्रको नाम महापराक्रमी नानाशास्त्रवित् पूतचरित्रः महीपतिः प्रतिवसति स्म।",
+          "meaning": "There was a certain city named Shobhavati. A highly valiant king named Shudraka, proficient in various scriptures and of pristine character, lived there.",
+          "paragraphTranslation": "शोभावती नाम की कोई नगरी थी। वहाँ शूद्रक नाम का महान पराक्रमी, अनेक शास्त्रों का ज्ञाता और पवित्र चरित्र वाला राजा रहता था।",
+          "words": [
+            "आसीत्",
+            "शोभावती",
+            "नाम",
+            "काचन",
+            "नगरी",
+            "शूद्रकः",
+            "महापराक्रमी",
+            "नानाशास्त्रवित्",
+            "पूतचरित्रः",
+            "महीपतिः",
+            "प्रतिवसति",
+            "स्म"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "अथैकदा वीरवरनामा राजपुत्रः वृत्त्यर्थं कस्मादपि देशाद् राजद्वारमुपागच्छत्।",
+          "meaning": "Then once, a prince named Viravara arrived at the royal palace gate from some distant land seeking livelihood.",
+          "paragraphTranslation": "इसके बाद एक समय वीरवर नाम का राजकुमार आजीविका (नौकरी) के लिए किसी देश से राजद्वार पर आया।",
+          "words": [
+            "अथैकदा",
+            "वीरवरनामा",
+            "राजपुत्रः",
+            "वृत्त्यर्थं",
+            "कस्मादपि",
+            "देशात्",
+            "राजद्वारम्",
+            "उपागच्छत्"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "तेन सह वेदरता नाम तस्य पत्नी, शक्तिधरो नाम सुतः, वीरवती नाम कन्या च समायाताः।",
+          "meaning": "Along with him arrived his wife named Vedarata, his son named Shaktidhara, and his daughter named Viravati.",
+          "paragraphTranslation": "उसके साथ वेदरता नाम की उसकी पत्नी, शक्तिधर नाम का पुत्र और वीरवती नाम की कन्या भी आए।",
+          "words": [
+            "तेन",
+            "सह",
+            "वेदरता",
+            "नाम",
+            "पत्नी",
+            "शक्तिधरः",
+            "सुतः",
+            "वीरवती",
+            "कन्या",
+            "समायाताः"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "वीरवरः – (प्रतिहारं वीक्ष्य) भोः प्रतिहार ! वृत्त्यर्थमागतो राजपुत्रोऽस्मि, तस्मान्नय मां स्वामिनः समीपम्। (ततो दौवारिकः तं प्रभोः समीपम् अनयत्।)",
+          "meaning": "Viravara – (Addressing the gatekeeper) O gatekeeper! I am a prince who has arrived seeking employment, hence lead me to the presence of the master. (Then the doorkeeper led him to the king.)",
+          "paragraphTranslation": "वीरवर – (द्वारपाल को देखकर) हे द्वारपाल! मैं आजीविका के लिए आया राजकुमार हूँ, अतः मुझे स्वामी के पास ले चलो। (तब द्वारपाल उसे राजा के पास ले गया।)",
+          "words": [
+            "वीरवरः",
+            "प्रतिहारं",
+            "वीक्ष्य",
+            "भोः",
+            "प्रतिहार",
+            "वृत्त्यर्थम्",
+            "आगतः",
+            "राजपुत्रः",
+            "अस्मि",
+            "दौवारिकः",
+            "प्रभोः",
+            "समीपम्",
+            "अनयत्"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "वीरवरः – (प्रणामपुरस्सरं सविनयम्) देव ! यदि सौभाग्येन अहं भवतः सेवायां नियोजितः तर्हि यदादिश्यते तत् श्रद्धया पालयिष्यामि।",
+          "meaning": "Viravara – (Bowing with humility) My Lord! If by good fortune I am appointed in your service, then whatever is commanded, I shall faithfully obey.",
+          "paragraphTranslation": "वीरवर – (प्रणाम करके विनम्रतापूर्वक) देव! यदि सौभाग्य से मैं आपकी सेवा में नियुक्त किया जाता हूँ, तो जो भी आज्ञा दी जाएगी, उसका श्रद्धापूर्वक पालन करूँगा।",
+          "words": [
+            "प्रणामपुरस्सरं",
+            "सविनयम्",
+            "देव",
+            "सौभाग्येन",
+            "सेवायां",
+            "नियोजितः",
+            "यदादिश्यते",
+            "श्रद्धया",
+            "पालयिष्यामि"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "राजा – किं ते वर्तनम्? वीरवरः – प्रतिदिनं सुवर्णशतचतुष्टयं देव !",
+          "meaning": "King – What is your daily salary? Viravara – Four hundred gold coins daily, my Lord!",
+          "paragraphTranslation": "राजा – तुम्हारा वेतन क्या है? वीरवर – चार सौ स्वर्ण मुद्राएँ प्रतिदिन, देव!",
+          "words": [
+            "राजा",
+            "किं",
+            "ते",
+            "वर्तनम्",
+            "वीरवरः",
+            "प्रतिदिनं",
+            "सुवर्णशतचतुष्टयं",
+            "देव"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "राजा – का ते सामग्री? वीरवरः – इमौ बाहू, एष खड्गश्च। राजा – नैतच्छक्यम् ! (तत् श्रुत्वा वीरवरः राजानं प्रणम्य राजसभातः निर्गतः।)",
+          "meaning": "King – What are your assets and weapons? Viravara – These two arms and this sword. King – This is impossible! (Hearing this, Viravara bowed to the king and exited the royal hall.)",
+          "paragraphTranslation": "राजा – तुम्हारी सामग्री क्या है? वीरवर – ये दो भुजाएँ और यह तलवार। राजा – यह संभव नहीं है! (यह सुनकर वीरवर राजा को प्रणाम कर राजसभा से बाहर निकल गया।)",
+          "words": [
+            "का",
+            "ते",
+            "सामग्री",
+            "इमौ",
+            "बाहू",
+            "एष",
+            "खड्गः",
+            "च",
+            "नैतत्",
+            "शक्यम्",
+            "प्रणम्य",
+            "राजसभातः",
+            "निर्गतः"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "मन्त्री – (तदालोक्य) देव ! दिनचतुष्टयस्य वेतनार्पणेन प्रथमं परीक्ष्यतां स्वरूपमस्य वेतनार्थिनो राजपुत्रस्य, किमुपपन्नमेतत् वेतनं न वेति।",
+          "meaning": "Minister – (Seeing this) My Lord! By granting four days' salary, first let the character and capability of this job-seeking prince be tested, whether this salary is justified or not.",
+          "paragraphTranslation": "मंत्री – (यह देखकर) देव! चार दिनों का वेतन देकर पहले इस राजकुमार के वास्तविक स्वरूप की परीक्षा की जानी चाहिए कि यह वेतन उचित है या नहीं।",
+          "words": [
+            "मन्त्री",
+            "तदालोक्य",
+            "दिनचतुष्टयस्य",
+            "वेतनार्पणेन",
+            "परीक्ष्यतां",
+            "स्वरूपम्",
+            "वेतनार्थिनः",
+            "किमुपपन्नम्",
+            "वेतनं",
+            "वा",
+            "इति"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "अथ मन्त्रिणां वचनात् ताम्बूलदानेन नियोजितोऽसौ राजपुत्रो वीरवरो नरपतिना।",
+          "meaning": "Then, upon the advice of the ministers, the king appointed prince Viravara by conferring royal betel-leaf (tāmbūla).",
+          "paragraphTranslation": "तब मंत्रियों के कथन पर राजा ने ताम्बूल देकर राजकुमार वीरवर को सेवा में नियुक्त कर लिया।",
+          "words": [
+            "अथ",
+            "मन्त्रिणां",
+            "वचनात्",
+            "ताम्बूलदानेन",
+            "नियोजितः",
+            "असौ",
+            "राजपुत्रः",
+            "वीरवरः",
+            "नरपतिना"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "स च राजपुत्रः प्रतिदिनं प्रभाते राजदर्शनादनन्तरं स्ववेतनस्य यच्छति देवेभ्यः अर्धम्। स्थितस्य चार्द्धं दरिद्रेभ्यो ददाति, निक्षिपति च तदवशिष्टं भोज्यविलासव्ययार्थं पत्न्याः हस्ते।",
+          "meaning": "Every morning after greeting the king, that prince offered half of his salary to the gods; half of the remainder (one-fourth of total) he gave to the poor, and placed the rest into his wife's hands for food and household expenses.",
+          "paragraphTranslation": "वह राजकुमार प्रतिदिन प्रातः राजा के दर्शन के बाद वेतन का आधा भाग देवताओं को अर्पित करता था, बचे हुए का आधा (चौथाई भाग) गरीबों को देता था, और शेष पत्नी के हाथ में भोजन-व्यवस्था के लिए सौंपता था।",
+          "words": [
+            "प्रतिदिनं",
+            "प्रभाते",
+            "राजदर्शनात्",
+            "स्ववेतनस्य",
+            "देवेभ्यः",
+            "अर्धम्",
+            "दरिद्रेभ्यः",
+            "निक्षिपति",
+            "भोज्यविलासव्ययार्थं",
+            "पत्न्याः",
+            "हस्ते"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "धृतायुधः सः राजद्वारमहर्निशं सेवते। यदा राजा स्वयमादिशति तदा याति स्वगृहम्।",
+          "meaning": "Armed with his weapons, he guarded the royal gate day and night. Only when the king himself instructed, did he return to his home.",
+          "paragraphTranslation": "शस्त्र धारण किए वह दिन-रात राजद्वार की रक्षा करता था। जब राजा स्वयं आज्ञा देते थे तभी वह अपने घर जाता था।",
+          "words": [
+            "धृतायुधः",
+            "राजद्वारम्",
+            "अहर्निशं",
+            "सेवते",
+            "यदा",
+            "राजा",
+            "स्वयम्",
+            "आदिशति",
+            "तदा",
+            "याति",
+            "स्वगृहम्"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "अथैकदा कृष्णचतुर्दश्याम् अर्द्धरात्रे स राजा श्रुतवान् करुणरोदनध्वनिं कञ्चन। राजा – कोऽत्र द्वारि तिष्ठति? वीरवरः – सेवको वीरवरोऽत्र द्वारि वर्ते देव !",
+          "meaning": "Then once, at midnight on Krishna Chaturdashi, the king heard a sorrowful weeping sound. King – Who stands here at the gate? Viravara – Servant Viravara is present at the gate, my Lord!",
+          "paragraphTranslation": "एक बार कृष्ण चतुर्दशी की आधी रात को राजा ने किसी के करुण रोने की ध्वनि सुनी। राजा – यहाँ द्वार पर कौन है? वीरवर – देव! सेवक वीरवर द्वार पर उपस्थित है!",
+          "words": [
+            "कृष्णचतुर्दश्याम्",
+            "अर्द्धरात्रे",
+            "राजा",
+            "श्रुतवान्",
+            "करुणरोदनध्वनिं",
+            "द्वारि",
+            "तिष्ठति",
+            "सेवकः",
+            "वीरवरः",
+            "वर्ते"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "राजा – क्रन्दनमनुसर राजपुत्र ! वीरवरः – यथादिशति देवः। (ततोऽसौ तद्रोदनस्वरम् अनुसरन् प्रचलितः।)",
+          "meaning": "King – Follow that cry, O Prince! Viravara – As my Lord commands. (Then he set off tracking that weeping sound.)",
+          "paragraphTranslation": "राजा – राजकुमार, उस रोने की आवाज़ का पता लगाओ! वीरवर – जैसी देव की आज्ञा। (वह उस रोने की ध्वनि के पीछे चल पड़ा।)",
+          "words": [
+            "क्रन्दनम्",
+            "अनुसर",
+            "राजपुत्र",
+            "यथादिशति",
+            "देवः",
+            "तद्रोदनस्वरम्",
+            "अनुसरन्",
+            "प्रचलितः"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "राजा – (स्वगतम्) नैष गन्तुमर्हति राजपुत्र एकाकी सूचिभेद्ये तिमिरेऽस्मिन्। तस्मात् अहमपि गच्छामि पृष्ठतोऽस्य, निरूपयामि च किमेतदिति।",
+          "meaning": "King – (To himself) It is not fitting for this prince to wander alone in this needle-piercing impenetrable darkness. Hence I too shall follow behind him and investigate what this is.",
+          "paragraphTranslation": "राजा – (मन में) इस राजकुमार का इस घने अंधकार में अकेले जाना उचित नहीं है। अतः मैं भी इसके पीछे चलता हूँ और देखता हूँ कि क्या बात है।",
+          "words": [
+            "स्वगतम्",
+            "एकाकी",
+            "सूचिभेद्ये",
+            "तिमिरे",
+            "पृष्ठतः",
+            "निरूपयामि",
+            "किमेतत्"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "ततो नरपतिः खड्गपाणिः तस्य अनुसरणक्रमेण बहिः निरगच्छत् नगरीद्वारात्। अथ गच्छता राजपुत्रेण बहिः नगरादालोकिता रोदनपरा कापि सुन्दरी दिव्याभरणभूषिता।",
+          "meaning": "Then the king, sword in hand, went outside the city gate following his tracks. As the prince proceeded outside the city, he saw a beautiful lady adorned with celestial ornaments weeping bitterly.",
+          "paragraphTranslation": "तब राजा हाथ में तलवार लेकर उसका पीछा करते हुए नगरद्वार से बाहर निकले। राजकुमार ने नगर के बाहर दिव्य आभूषणों से सजी एक रोती हुई सुन्दरी को देखा।",
+          "words": [
+            "नरपतिः",
+            "खड्गपाणिः",
+            "अनुसरणक्रमेण",
+            "नगरीद्वारात्",
+            "निरगच्छत्",
+            "नगरात्",
+            "आलोकिता",
+            "रोदनपरा",
+            "दिव्याभरणभूषिता"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "वीरवरः – का त्वमम्ब ! किमर्थं विलपसि? राजलक्ष्मीः – वत्स ! अहमेतस्य भूपालस्य शूद्रकस्य राजलक्ष्मीरस्मि। चिरमेतस्य भुजच्छायायां समुद्गता सुखेन निवसामि।",
+          "meaning": "Viravara – Who are you, Mother? Why are you weeping? Rajalaxmi – Child! I am the Royal Prosperity (Rajalaxmi) of this king Shudraka. For a long time under the protection of his arms I have dwelt happily.",
+          "paragraphTranslation": "वीरवर – हे माँ! तुम कौन हो? किसलिए विलाप कर रही हो? राजलक्ष्मी – वत्स! मैं राजा शूद्रक की राजलक्ष्मी हूँ। दीर्घकाल से इसकी भुजाओं की छाया में सुखपूर्वक निवास कर रही हूँ।",
+          "words": [
+            "का",
+            "त्वम्",
+            "अम्ब",
+            "किमर्थं",
+            "विलपसि",
+            "भूपालस्य",
+            "शूद्रकस्य",
+            "राजलक्ष्मीः",
+            "भुजच्छायायां",
+            "सुखेन",
+            "निवसामि"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "साम्प्रतन्तु देव्या अपराधेनाद्य प्रभृति तृतीये दिवसे राजा पञ्चत्वं यास्यति, तदाहमनाथा भविष्यामि। तदिदानीं नात्र स्थास्यामीति क्रन्दामि।",
+          "meaning": "Rajalaxmi – But now, owing to a cosmic fault, on the third day from today the king will pass away, leaving me destitute. Knowing I cannot remain here, I weep.",
+          "paragraphTranslation": "राजलक्ष्मी – परंतु अब प्रारब्ध के दोष से आज से तीसरे दिन राजा की मृत्यु हो जाएगी, तब मैं अनाथ हो जाऊँगी। अब यहाँ नहीं रह पाऊँगी, इसलिए रो रही हूँ।",
+          "words": [
+            "साम्प्रतम्",
+            "अपराधेन",
+            "तृतीये",
+            "दिवसे",
+            "राजा",
+            "पञ्चत्वं",
+            "यास्यति",
+            "अनाथा",
+            "भविष्यामि",
+            "स्थास्यामि",
+            "क्रन्दामि"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "वीरवरः – (तदाकर्ण्य प्रणिपत्य) भगवति ! अस्त्यत्र कश्चिदुपायो येन भगवत्याः पुनेरिह चिरवासो भवति, सुचिरं जीवति च स्वामी?",
+          "meaning": "Viravara – (Hearing this and bowing) O Goddess! Is there any remedy by which your stay here may remain permanent, and our master may live long?",
+          "paragraphTranslation": "वीरवर – (प्रणाम करके) भगवती! क्या कोई ऐसा उपाय है जिससे आपका यहाँ स्थायी वास हो और हमारे स्वामी दीर्घायु हों?",
+          "words": [
+            "तदाकर्ण्य",
+            "प्रणिपत्य",
+            "भगवति",
+            "अस्त्यत्र",
+            "कश्चित्",
+            "उपायः",
+            "चिरवासः",
+            "सुचिरं",
+            "जीवति",
+            "स्वामी"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "राजलक्ष्मीः – अस्ति वत्स ! एकैवात्र प्रवृत्तिः, सा चातीव दुःसाध्या। वीरवरः – (साष्टाङ्गं नमस्कृत्य) अम्ब ! कथय, कः सः उपायः दुःसाध्यः?",
+          "meaning": "Rajalaxmi – There is, child! But there is only one remedy, and that is exceedingly arduous. Viravara – (Prostrating completely) Mother! Pray speak, what is that difficult remedy?",
+          "paragraphTranslation": "राजलक्ष्मी – उपाय है वत्स! परंतु एक ही उपाय है और वह अत्यंत कठिन है। वीरवर – (साष्टांग प्रणाम करके) माँ! कहिए, वह कठिन उपाय क्या है?",
+          "words": [
+            "प्रवृत्तिः",
+            "अतीव",
+            "दुःसाध्या",
+            "साष्टाङ्गं",
+            "नमस्कृत्य",
+            "कथय",
+            "उपायः"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "राजलक्ष्मीः – श्रूयतां पुत्र ! यदि त्वया स्वस्य सर्वतः प्रियं वस्तु सहासवदनेन भगवत्यै सर्वमङ्गलायै उपहारः क्रियेत, तदा पुनर्जीविष्यति राजा शूद्रको वर्षाणां शतम्, अहञ्च सुखेन निवत्स्यामि। (ततः सा तत्क्षणादेव गताऽदृश्यतां तत्सम्मुखात्।)",
+          "meaning": "Rajalaxmi – Hear, son! If you sacrifice your most precious possession with a smiling face to Goddess Sarvamangala, then King Shudraka shall live for a hundred years, and I will dwell here happily. (Then she instantly vanished from before his eyes.)",
+          "paragraphTranslation": "राजलक्ष्मी – सुनो पुत्र! यदि तुम अपनी सबसे प्रिय वस्तु को हंसते हुए मुख से भगवती सर्वमंगला (दुर्गा जी) को अर्पित कर दो, तो राजा शूद्रक सौ वर्षों तक जीवित रहेंगे और मैं सुख से रहूँगी। (और वह तुरंत गायब हो गई।)",
+          "words": [
+            "श्रूयतां",
+            "पुत्र",
+            "सर्वतः",
+            "प्रियं",
+            "सहासवदनेन",
+            "सर्वमङ्गलायै",
+            "उपहारः",
+            "पुनर्जीविष्यति",
+            "वर्षाणां",
+            "शतम्",
+            "तत्क्षणात्",
+            "अदृश्यताम्"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – महीपतिः (राजा), नानाशास्त्रवित् (अनेक शास्त्रों का ज्ञाता), पूतचरित्रः (पवित्र चरित्र वाला), वृत्त्यर्थम् (आजीविका के लिए)।",
+          "meaning": "Glossary 1: Mahipatih (King), Nanashastravit (Knowing multiple sciences), Putacharitrah (Of pure character), Vrittyartham (For employment).",
+          "paragraphTranslation": "शब्दार्थ: महीपतिः = राजा, नानाशास्त्रवित् = शास्त्रों का ज्ञाता, पूतचरित्रः = पवित्र चरित्र वाला, वृत्त्यर्थम् = आजीविका हेतु।",
+          "words": [
+            "महीपतिः",
+            "नानाशास्त्रवित्",
+            "पूतचरित्रः",
+            "वृत्त्यर्थम्"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – प्रतिहारम्/दौवारिकः (द्वारपाल), वर्तनम् (वेतनम् / तन्ख्वाह), सुवर्णशतचतुष्टयम् (४०० स्वर्ण मुद्राएँ), आलोक्य (दृष्ट्वा)।",
+          "meaning": "Glossary 2: Pratiharam / Dauvarikah (Doorkeeper), Vartanam (Salary), Suvarnashatachatusthayam (400 gold coins), Alokya (Having seen).",
+          "paragraphTranslation": "शब्दार्थ: दौवारिकः = द्वारपाल, वर्तनम् = वेतन, सुवर्णशतचतुष्टयम् = ४०० स्वर्ण मुद्राएँ, आलोक्य = देखकर।",
+          "words": [
+            "प्रतिहारम्",
+            "दौवारिकः",
+            "वर्तनम्",
+            "सुवर्णशतचतुष्टयम्",
+            "आलोक्य"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – धृतायुधः (शस्त्रयुक्तः), अहर्निशम् (दिन-रात), सूचिभेद्ये तिमिरे (अत्यंत घने अंधकार में), खड्गपाणिः (हाथ में तलवार लिए)।",
+          "meaning": "Glossary 3: Dhritayudhah (Armed), Aharnisham (Day and night), Suchibhedye timire (In impenetrable darkness), Khadgapānih (With sword in hand).",
+          "paragraphTranslation": "शब्दार्थ: धृतायुधः = शस्त्रधारी, अहर्निशम् = दिन-रात, सूचिभेद्ये तिमिरे = घोर अंधकार में, खड्गपाणिः = हाथ में तलवार लिए।",
+          "words": [
+            "धृतायुधः",
+            "अहर्निशम्",
+            "सूचिभेद्ये",
+            "तिमिरे",
+            "खड्गपाणिः"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – पञ्चत्वम् (मृत्युम्), अनाथा (बिना रक्षक के), दुःसाध्या (अत्यंत कठिन), सहासवदनेन (हंसते हुए मुख से), तत्क्षणादेव (उसी क्षण)।",
+          "meaning": "Glossary 4: Panchatvam (Death), Anāthā (Helpless/without protector), Duhsādhyā (Extremely difficult), Sahāsavadanena (With smiling face), Tatkshanādeva (Instantly).",
+          "paragraphTranslation": "शब्दार्थ: पञ्चत्वम् = मृत्यु, अनाथा = बेसहारा, दुःसाध्या = अत्यंत दुष्कर, सहासवदनेन = मुस्कुराते चेहरे से, तत्क्षणादेव = तत्काल।",
+          "words": [
+            "पञ्चत्वम्",
+            "अनाथा",
+            "दुःसाध्या",
+            "सहासवदनेन",
+            "तत्क्षणादेव"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "१. आम् अथवा न – (क) किं वीरवरः राजपुत्रः आसीत्? (आम्) (ख) 'किं ते वर्तनम्?' इति किं शूद्रकः अपृच्छत्? (आम्) (ग) किं वीरवरं राज्ञः समीपं दौवारिकः अनयत्? (आम्)",
+          "meaning": "Exercise 1 (True/False): (a) Was Viravara a prince? (Yes) (b) Did Shudraka ask 'What is your salary?' (Yes) (c) Did the doorkeeper lead Viravara to the king? (Yes)",
+          "paragraphTranslation": "अभ्यास १ (हाँ या ना): क- आम्, ख- आम्, ग- आम्।",
+          "words": [
+            "आम्",
+            "अथवा",
+            "न",
+            "वीरवरः",
+            "राजपुत्रः",
+            "शूद्रकः",
+            "दौवारिकः"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "आम् / आम् / आम्",
+          "hindi_gloss": "हाँ, हाँ, हाँ"
+        },
+        {
+          "sanskrit": "१. आम् अथवा न – (घ) किं राजा शूद्रकः साक्षात् दृष्ट्वा एव वृत्तिम् अयच्छत्? (न) (ङ) किं वीरवरः स्ववेतनस्य चतुर्थं भागम् एव पत्न्यै यच्छति स्म? (आम्) (छ) किं करुणरोदनध्वनिः दिवसे श्रुतः? (न)",
+          "meaning": "Exercise 1 (True/False): (d) Did Shudraka hire immediately on sight? (No, tested first) (e) Did Viravara give 1/4th of salary to his wife? (Yes) (f) Was the weeping heard during daytime? (No, at midnight)",
+          "paragraphTranslation": "अभ्यास १ (हाँ या ना): घ- न, ङ- आम्, छ- न।",
+          "words": [
+            "वृत्तिम्",
+            "चतुर्थं",
+            "भागम्",
+            "पत्न्यै",
+            "करुणरोदनध्वनिः"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "न / आम् / न",
+          "hindi_gloss": "नहीं, हाँ, नहीं"
+        },
+        {
+          "sanskrit": "२. पूर्णवाक्येन – (क) शूद्रकः कीदृशः राजा आसीत्? उत्तरम्: शूद्रकः महापराक्रमी, नानाशास्त्रवित्, पूतचरित्रः च महीपतिः आसीत्।",
+          "meaning": "Q2 (a): What kind of king was Shudraka? Ans: King Shudraka was highly valorous, learned in various sciences, and possessed a pure noble character.",
+          "paragraphTranslation": "प्र २ (क): शूद्रक कैसा राजा था? उत्तर: शूद्रक महापराक्रमी, अनेक शास्त्रों का ज्ञाता और पवित्र चरित्र वाला राजा था।",
+          "words": [
+            "शूद्रकः",
+            "महापराक्रमी",
+            "नानाशास्त्रवित्",
+            "पूतचरित्रः",
+            "महीपतिः"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "शूद्रकः महापराक्रमी नानाशास्त्रवित् पूतचरित्रः च महीपतिः आसीत्।",
+          "hindi_gloss": "शूद्रक पराक्रमी और पूतचरित्र राजा था।"
+        },
+        {
+          "sanskrit": "२. पूर्णवाक्येन – (ग) 'का ते सामग्री?' इति प्रश्नस्य उत्तरं वीरवरः किम् अयच्छत्? उत्तरम्: 'इमौ बाहू, एष खड्गश्च मम सामग्री' इति वीरवरः अयच्छत्।",
+          "meaning": "Q2 (c): What did Viravara reply to 'What is your equipment?' Ans: Viravara replied: 'These two arms and this sword are my equipment.'",
+          "paragraphTranslation": "प्र २ (ग): 'का ते सामग्री?' का उत्तर वीरवर ने क्या दिया? उत्तर: 'ये दो भुजाएँ और यह तलवार मेरी सामग्री हैं।'",
+          "words": [
+            "सामग्री",
+            "इमौ",
+            "बाहू",
+            "खड्गश्च"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "इमौ बाहू एष खड्गश्च मम सामग्री इति अयच्छत्।",
+          "hindi_gloss": "मेरी दो भुजाएँ और तलवार ही मेरी सामग्री हैं।"
+        },
+        {
+          "sanskrit": "२. पूर्णवाक्येन – (ङ) वीरवरः स्ववेतनस्य अर्धं केभ्यः यच्छति स्म? उत्तरम्: वीरवरः स्ववेतनस्य अर्धं देवेभ्यः यच्छति स्म।",
+          "meaning": "Q2 (e): To whom did Viravara give half of his salary? Ans: Viravara gave half of his salary to the gods.",
+          "paragraphTranslation": "प्र २ (ङ): वीरवर अपने वेतन का आधा भाग किसे देता था? उत्तर: वीरवर अपने वेतन का आधा भाग देवताओं को अर्पित करता था।",
+          "words": [
+            "स्ववेतनस्य",
+            "अर्धं",
+            "देवेभ्यः",
+            "यच्छति"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "वीरवरः स्ववेतनस्य अर्धं देवेभ्यः यच्छति स्म।",
+          "hindi_gloss": "देवताओं को अर्पित करता था।"
+        },
+        {
+          "sanskrit": "४. सन्धि-विच्छेदः – अथैकदा = अथ + एकदा, वृत्त्यर्थम् = वृत्ति + अर्थम्, कस्मादपि = कस्मात् + अपि, राजपुत्रोऽस्मि = राजपुत्रः + अस्मि, तदालोक्य = तत् + आलोक्य, चार्द्धं = च + अर्द्धम्।",
+          "meaning": "Exercise 4: Sandhi Splits: Athaikadā = Atha + Ekadā; Vrittyartham = Vritti + Artham; Kasmādapi = Kasmāt + Api; Rajaputro'smi = Rajaputrah + Asmi; Tadālokya = Tat + Ālokya; Chārdham = Cha + Ardham.",
+          "paragraphTranslation": "सन्धि-विच्छेद अभ्यास।",
+          "words": [
+            "अथैकदा",
+            "वृत्त्यर्थम्",
+            "कस्मादपि",
+            "राजपुत्रोऽस्मि",
+            "तदालोक्य",
+            "चार्द्धं"
+          ],
+          "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "५. सर्वनामपदानि – 'ततः असौ प्रचलितः' (वीरवराय), 'अहम् अपि गच्छामि पृष्ठतोऽस्य' (शूद्रकाय), 'एतस्य भुजच्छायायां सुखेन निवसामि' (शूद्रकाय), 'सा चातीव दुःसाध्या' (उपायस्य कृते)।",
+          "meaning": "Exercise 5: Contextual Pronoun Referents in Dative (Chaturthi): Asau -> to Viravara; Aham -> to King Shudraka; Etasya -> to King Shudraka; Sa -> to the arduous remedy.",
+          "paragraphTranslation": "सर्वनाम पदों का चतुर्थी विभक्ति में प्रयोग/संदर्भ।",
+          "words": [
+            "सर्वनामपदानि",
+            "वीरवराय",
+            "शूद्रकाय",
+            "उपायस्य",
+            "कृते"
           ],
           "kind": "exercise-note"
         }

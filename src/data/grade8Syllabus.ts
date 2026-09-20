@@ -194,18 +194,18 @@ export const GRADE_8_SYLLABUS: Grade8Chapter[] = [
     "icon": "🌿"
   },
   {
-    "id": "g8_ch10",
+    "id": "grade8_ch10",
     "num": "Chapter 10",
     "chNumber": "दशमः पाठः",
     "title": "सन्निमित्ते वरं त्यागः (क-भागः)",
     "englishTitle": "Better to Sacrifice for a Noble Cause (Part 1)",
-    "page": "Page 111",
+    "page": "Pages 111–122",
     "category": "stories",
     "genreBadge": "नीतिकथा · Noble Sacrifice",
-    "theme": "First half of the renowned Sanskrit moral narrative showing why sacrificing worldly wealth for truth, virtue, and altruism is supreme.",
-    "grammarFocus": "सप्तमी-विभक्तिः (सन्निमित्ते), क्त-प्रत्ययः, कारक-सम्बन्धः",
-    "sampleVerse": "सन्निमित्ते वरं त्यागो विनाशे नियते सति । सतां धर्मेण जीवनं नश्वरं तु धनं स्मृतम् ॥",
-    "status": "in_curriculum",
+    "theme": "From Hitopadesha: The inspiring tale of prince Viravara, his supreme loyalty to King Shudraka, righteous fourfold salary division, and readiness to sacrifice for the sovereign before Rajalaxmi.",
+    "grammarFocus": "अन्वय-रचना, भूतकालिक-प्रयोगाः (स्म, क्त, क्तवतु, लङ्), सन्धि-विच्छेदः, सर्वनामपदानि (चतुर्थी)",
+    "sampleVerse": "सन्निमित्ते वरं त्यागो विनाशे नियते सति । यदि त्वया स्वस्य सर्वतः प्रियं वस्तु उपहारः क्रियेत, तदा पुनर्जीविष्यति राजा शूद्रको वर्षाणां शतम्॥",
+    "status": "available",
     "icon": "⚖️"
   },
   {
