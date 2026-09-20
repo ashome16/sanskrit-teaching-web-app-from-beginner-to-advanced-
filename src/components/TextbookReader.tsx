@@ -270,6 +270,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · प्रथमः पाठः — संगच्छध्वं संवदध्वम् (Pages 2–8)</span>
         </div>
       )}
+      {activeLessonId === 'grade8_ch2' && (
+        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #f0fdf4 0%, #eff6ff 100%)', borderColor: '#86efac' }}>
+          <span className="textbook-cbse-pill" style={{ background: '#059669', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · द्वितीयः पाठः — अल्पानामपि वस्तूनां संहतिः कार्यसाधिका (Pages 10–22)</span>
+        </div>
+      )}
 
       <div className="textbook-toolbar-row">
         <button
@@ -340,6 +346,38 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 title="Go to Grade 8 Chapter 1 Worksheets (5 Solved Worksheets)"
               >
                 📑 5 Worksheets (Comprehension & Grammar)
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'grade8_ch2' && (
+          <>
+            <button
+              type="button"
+              className="textbook-tool-btn textbook-tool-btn--syllabus"
+              onClick={() => setIsGrade8SyllabusOpen(true)}
+              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+            >
+              📜 पाठानुक्रमणिका (Class 8 Syllabus)
+            </button>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Grade 8 Chapter 2 Quizzes"
+              >
+                🎯 3 Quizzes (15 Qs)
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Grade 8 Chapter 2 Printable Worksheet"
+              >
+                📑 Grade 8 Chapter 2 Worksheet
               </button>
             )}
           </>

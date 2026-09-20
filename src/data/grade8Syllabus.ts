@@ -74,18 +74,18 @@ export const GRADE_8_SYLLABUS: Grade8Chapter[] = [
     "icon": "🏛️"
   },
   {
-    "id": "g8_ch02",
+    "id": "grade8_ch2",
     "num": "Chapter 2",
     "chNumber": "द्वितीयः पाठः",
     "title": "अल्पानामपि वस्तूनां संहतिः कार्यसाधिका",
-    "englishTitle": "Even Small Things United Achieve Great Deeds",
-    "page": "Page 10",
+    "englishTitle": "Unity of Small Things Accomplishes the Task",
+    "page": "Pages 10–22",
     "category": "stories",
     "genreBadge": "नीतिकथा · Animal Fable",
     "theme": "Celebrated Hitopadesha fable of the united flock of doves lifting the hunter's snare through collective solidarity.",
-    "grammarFocus": "षष्ठी-विभक्तिः (अल्पानाम्, वस्तूनाम्), क्त्वा-प्रत्ययः, गुणवाचक-विशेषणानि",
-    "sampleVerse": "अल्पानामपि वस्तूनां संहतिः कार्यसाधिका । तृणैर्गुणत्वमापन्नैर्बध्यन्ते मत्तदन्तिनः ॥",
-    "status": "in_curriculum",
+    "grammarFocus": "ल्यप्-प्रत्ययः (वि + कॄ + ल्यप् = विकीर्य), सन्धिविच्छेदः, षष्ठी-विभक्तिः",
+    "sampleVerse": "लघूनामपि वस्तूनां संहतिः कार्यसाधिका । एकचित्तीभूय जालमादाय उड्डीयताम् ॥",
+    "status": "available",
     "icon": "🕊️"
   },
   {

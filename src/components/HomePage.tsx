@@ -300,6 +300,17 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     theme: 'The timeless Rigvedic hymn of universal solidarity: cultivating unified speech, harmony of thought, and collective cooperation.',
     grammarFocus: 'लोट्-लकारः (Imperative Mood), प्रश्ननिर्माणम् (किम-शब्दाः), लट्-लोट् परिवर्तनम्',
   },
+  {
+    id: 'grade8_ch2',
+    num: 'Grade 8 · Chapter 2',
+    title: 'अल्पानामपि वस्तूनां संहतिः कार्यसाधिका (Pages 10–22)',
+    english: 'Unity of Small Things Accomplishes the Task (Hitopadesha)',
+    icon: '🕊️',
+    category: 'stories',
+    genreBadge: 'नीतिकथा · Moral Fable',
+    theme: 'The celebrated Hitopadesha fable of the united flock of doves lifting the hunter\'s snare through collective solidarity.',
+    grammarFocus: 'ल्यप्-प्रत्ययः, सन्धिविच्छेदः, षष्ठी-विभक्तिः',
+  },
 ];
 
 const HomePage: React.FC<HomePageProps> = ({
@@ -882,7 +893,7 @@ const HomePage: React.FC<HomePageProps> = ({
                     <span className="home-chapter-read-cta">
                       Read Lesson ➔
                     </span>
-                    {(ch.id === 'grade8_prarthana' || ch.id === 'grade8_ch1') && (
+                    {(ch.id === 'grade8_prarthana' || ch.id === 'grade8_ch1' || ch.id === 'grade8_ch2') && (
                       <button
                         type="button"
                         style={{
