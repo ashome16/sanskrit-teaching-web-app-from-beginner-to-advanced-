@@ -72,6 +72,7 @@ const Dashboard: React.FC = () => {
     currentUser,
     openAuthModal,
     openProfileModal,
+    openAdminModal,
     getTrialDaysRemaining,
     accessMode,
     pendingRedirectView,
@@ -448,7 +449,7 @@ const Dashboard: React.FC = () => {
           </button>
         </nav>
 
-        <div className="dashboard-header-user">
+        <div className="dashboard-header-user" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
           {currentUser ? (
             <button
               type="button"
@@ -475,6 +476,30 @@ const Dashboard: React.FC = () => {
               <span>Sign In / Register</span>
             </button>
           )}
+
+          <button
+            type="button"
+            className="nav-admin-header-btn"
+            onClick={openAdminModal}
+            title="Open Platform Administration Portal"
+            style={{
+              padding: '0.35rem 0.65rem',
+              fontSize: '0.78rem',
+              fontWeight: 700,
+              background: '#0f172a',
+              color: '#f8fafc',
+              border: '1px solid #334155',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.3rem',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            <span>🛡️</span>
+            <span>Admin</span>
+          </button>
         </div>
       </header>
 

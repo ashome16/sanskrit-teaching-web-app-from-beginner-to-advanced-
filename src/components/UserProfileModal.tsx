@@ -20,6 +20,7 @@ const UserProfileModal: React.FC = () => {
     isProfileModalOpen,
     closeProfileModal,
     openPaymentModal,
+    openAdminModal,
     logout,
     updateProfile,
     deleteProfile,
@@ -266,25 +267,56 @@ const UserProfileModal: React.FC = () => {
               >
                 🚪 Log Out
               </button>
+            </div>
 
-              {/* Danger Zone */}
-              <div className="profile-danger-zone">
-                <div className="profile-danger-title">Danger Zone</div>
-                <p className="profile-danger-desc">
-                  Once deleted, your profile, learning streak, and completed lessons will be permanently wiped.
-                </p>
-                <button
-                  type="button"
-                  className="profile-btn-delete"
-                  onClick={() => {
-                    setDeletePassword('');
-                    setDeleteError(null);
-                    setMode('delete');
-                  }}
-                >
-                  🗑️ Delete Profile & Account
-                </button>
-              </div>
+            {/* Admin Portal Quick Access */}
+            <div style={{ marginTop: '0.85rem' }}>
+              <button
+                type="button"
+                onClick={() => {
+                  closeProfileModal();
+                  openAdminModal();
+                }}
+                style={{
+                  width: '100%',
+                  background: '#0f172a',
+                  color: '#f8fafc',
+                  border: '1px solid #334155',
+                  borderRadius: '8px',
+                  padding: '0.6rem 1rem',
+                  fontSize: '0.84rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '0.45rem',
+                }}
+                title="Open Platform Administration Portal"
+              >
+                <span>🛡️</span>
+                <span>Open Admin Portal (Setup UPI &amp; Platform Settings)</span>
+              </button>
+            </div>
+
+            {/* Danger Zone */}
+            <div className="profile-danger-zone">
+              <div className="profile-danger-title">Danger Zone</div>
+              <p className="profile-danger-desc">
+                Once deleted, your profile, learning streak, and completed lessons will be permanently wiped.
+              </p>
+              <button
+                type="button"
+                className="profile-btn-delete"
+                onClick={() => {
+                  setDeletePassword('');
+                  setDeleteError(null);
+                  setMode('delete');
+                }}
+              >
+                🗑️ Delete Profile &amp; Account
+              </button>
+            </div>
 
               {/* Customer Support Info */}
               <div style={{ marginTop: '1.25rem', padding: '0.75rem', background: '#fdfaf3', borderRadius: '10px', border: '1px solid #ebdcc5', fontSize: '0.76rem', color: '#6b5e50', textAlign: 'center' }}>
@@ -292,7 +324,6 @@ const UserProfileModal: React.FC = () => {
                 <div>Learner Care: <a href="mailto:care@ednetlearn.in" style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}>care@ednetlearn.in</a></div>
                 <div>Administration: <a href="mailto:admin@ednetlearn.in" style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}>admin@ednetlearn.in</a></div>
               </div>
-            </div>
           </>
         )}
 
