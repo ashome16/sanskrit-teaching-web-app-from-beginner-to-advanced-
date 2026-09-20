@@ -20,7 +20,7 @@ const ADMIN_SESSION_KEY = 'ednet_admin_session_v1';
 const ACCESS_MODE_KEY = 'sanskrit_access_mode_v1';
 const UPI_VPA_KEY = 'sanskrit_upi_vpa_v1';
 const UPI_PAYEE_KEY = 'sanskrit_upi_payee_v1';
-export const DEFAULT_UPI_VPA = 'ednetlearn@upi';
+export const DEFAULT_UPI_VPA = '7075296749@upi';
 export const DEFAULT_UPI_PAYEE = 'EdNet Learn Gurukul';
 
 const getStoredAccessMode = (): AccessControlMode => {
@@ -35,7 +35,9 @@ const getStoredAccessMode = (): AccessControlMode => {
 
 const getStoredUpiVpa = (): string => {
   try {
-    return localStorage.getItem(UPI_VPA_KEY) || DEFAULT_UPI_VPA;
+    const val = localStorage.getItem(UPI_VPA_KEY);
+    if (val && val !== 'ednetlearn@upi' && val !== 'sanskritlearning@upi') return val;
+    return DEFAULT_UPI_VPA;
   } catch {
     return DEFAULT_UPI_VPA;
   }

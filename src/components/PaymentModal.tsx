@@ -67,7 +67,7 @@ const PaymentModal: React.FC = () => {
     setErrorMessage(null);
 
     try {
-      const res = await submitManualUpiPayment(utrNumber.trim(), upiVpa || 'sanskritlearning@upi');
+      const res = await submitManualUpiPayment(utrNumber.trim(), upiVpa || storeUpiVpa);
       setIsProcessing(false);
       if (res.success && res.transaction) {
         setCompletedTxn(res.transaction);
@@ -326,68 +326,24 @@ const PaymentModal: React.FC = () => {
               {selectedMethod === 'upi' && (
                 <div className="upi-box">
                   <div className="upi-qr-card">
-                    {/* SVG QR Code */}
-                    <svg
-                      className="upi-qr-svg"
-                      viewBox="0 0 100 100"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      {/* Outer border & Finder patterns */}
-                      <rect width="100" height="100" fill="#ffffff" />
-                      {/* Top-Left Finder */}
-                      <rect x="6" y="6" width="26" height="26" rx="4" fill="#1f2937" />
-                      <rect x="10" y="10" width="18" height="18" rx="2" fill="#ffffff" />
-                      <rect x="14" y="14" width="10" height="10" rx="1" fill="#b45309" />
-
-                      {/* Top-Right Finder */}
-                      <rect x="68" y="6" width="26" height="26" rx="4" fill="#1f2937" />
-                      <rect x="72" y="10" width="18" height="18" rx="2" fill="#ffffff" />
-                      <rect x="76" y="14" width="10" height="10" rx="1" fill="#b45309" />
-
-                      {/* Bottom-Left Finder */}
-                      <rect x="6" y="68" width="26" height="26" rx="4" fill="#1f2937" />
-                      <rect x="10" y="72" width="18" height="18" rx="2" fill="#ffffff" />
-                      <rect x="14" y="76" width="10" height="10" rx="1" fill="#b45309" />
-
-                      {/* Decorative Matrix Grid Dots */}
-                      <rect x="36" y="10" width="6" height="6" fill="#374151" />
-                      <rect x="46" y="10" width="6" height="6" fill="#374151" />
-                      <rect x="56" y="10" width="6" height="6" fill="#374151" />
-
-                      <rect x="36" y="20" width="6" height="6" fill="#374151" />
-                      <rect x="46" y="26" width="6" height="6" fill="#b45309" />
-                      <rect x="56" y="20" width="6" height="6" fill="#374151" />
-
-                      <rect x="10" y="36" width="6" height="6" fill="#374151" />
-                      <rect x="20" y="36" width="6" height="6" fill="#374151" />
-                      <rect x="10" y="46" width="6" height="6" fill="#374151" />
-                      <rect x="20" y="56" width="6" height="6" fill="#374151" />
-
-                      <rect x="72" y="36" width="6" height="6" fill="#374151" />
-                      <rect x="82" y="46" width="6" height="6" fill="#374151" />
-                      <rect x="72" y="56" width="6" height="6" fill="#374151" />
-
-                      <rect x="36" y="68" width="6" height="6" fill="#374151" />
-                      <rect x="46" y="68" width="6" height="6" fill="#374151" />
-                      <rect x="56" y="78" width="6" height="6" fill="#374151" />
-                      <rect x="46" y="86" width="6" height="6" fill="#374151" />
-
-                      {/* Center Embellishment (Sanskrit Om / Rupee Badge) */}
-                      <circle cx="50" cy="50" r="13" fill="#b45309" />
-                      <text
-                        x="50"
-                        y="55"
-                        textAnchor="middle"
-                        fill="#ffffff"
-                        fontSize="13"
-                        fontWeight="bold"
-                        fontFamily="serif"
-                      >
-                        ₹
-                      </text>
-                    </svg>
-                    <span className="upi-qr-caption">Scan with Any UPI App to Pay ₹200</span>
+                    <img
+                      src={`https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=8&data=${encodeURIComponent(
+                        `upi://pay?pa=${storeUpiVpa}&pn=${encodeURIComponent(storeUpiPayee)}&am=200.00&cu=INR&tn=Monthly%20Access%20Pass`
+                      )}`}
+                      alt={`Scan to pay ₹200 via UPI to ${storeUpiVpa}`}
+                      style={{
+                        width: '160px',
+                        height: '160px',
+                        borderRadius: '10px',
+                        border: '1px solid #e2e8f0',
+                        background: '#ffffff',
+                        padding: '6px',
+                        display: 'block',
+                        margin: '0 auto',
+                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
+                      }}
+                    />
+                    <span className="upi-qr-caption">Scan with Any UPI App (GPay, PhonePe, Paytm, BHIM)</span>
                   </div>
 
                   <div className="upi-id-pill">
@@ -449,7 +405,7 @@ const PaymentModal: React.FC = () => {
                   <button
                     type="button"
                     className="payment-primary-btn"
-                    onClick={() => handlePay('upi', upiVpa || 'sanskritlearning@upi')}
+                    onClick={() => handlePay('upi', upiVpa || storeUpiVpa)}
                   >
                     <span>⚡</span>
                     <span>Verify &amp; Pay ₹200 via UPI</span>
