@@ -20740,340 +20740,643 @@
     {
       "id": "grade8_prarthana",
       "fileName": "grade8_prarthana.txt",
-      "title": "Grade 8: प्रथमः पाठः / प्रार्थना — सरस्वतीप्रार्थना (Page 16)",
+      "title": "Grade 8: प्रार्थना — सरस्वतीप्रार्थना (या कुन्देन्दुतुषारहारधवला)",
       "sentences": [
         {
+          "kind": "section-header",
           "sanskrit": "॥ सरस्वतीप्रार्थना ॥",
-          "meaning": "Prayer to Goddess Saraswati · Grade 8 (Text from Page 16)",
+          "meaning": "Prayer to Goddess Saraswati · Grade 8 (Saraswati Vandana)",
+          "paragraphTranslation": "सरस्वती वन्दना (या कुन्देन्दुतुषारहारधवला)",
           "words": [
             "॥",
             "सरस्वतीप्रार्थना",
             "॥"
-          ],
-          "kind": "section-header"
+          ]
         },
         {
+          "kind": "chapter-header",
           "sanskrit": "श्लोक १ (Verse 1)",
-          "meaning": "Verse 1: Invocation of Surabharati & Vagishvari",
+          "meaning": "Verse 1: Invocation of Goddess Saraswati (या कुन्देन्दुतुषारहारधवला)",
+          "paragraphTranslation": "श्लोक १: माँ सरस्वती की वन्दना",
           "words": [
             "श्लोक",
             "१"
-          ],
-          "kind": "chapter-header"
-        },
-        {
-          "sanskrit": "जय जय हे भगवति सुरभारति तव चरणौ प्रणमामः । नादब्रह्ममयि जय वागीश्वरि शरणं ते गच्छामः ॥ १ ॥",
-          "meaning": "Hail, hail to you, O Goddess of Speech (Saraswati)! We bow down at your two lotus feet. O embodiment of the cosmic sound (Naada Brahman), victorious ruler of speech, we seek refuge in you.",
-          "words": [
-            "जय",
-            "जय",
-            "हे",
-            "भगवति",
-            "सुरभारति",
-            "तव",
-            "चरणौ",
-            "प्रणमामः",
-            "।",
-            "नादब्रह्ममयि",
-            "जय",
-            "वागीश्वरि",
-            "शरणं",
-            "ते",
-            "गच्छामः",
-            "॥",
-            "१",
-            "॥"
           ]
         },
         {
+          "sanskrit": "या कुन्देन्दुतुषारहारधवला या शुभ्रवस्त्रावृता । या वीणावरदण्डमण्डितकरा या श्वेतपद्मासना ॥ या ब्रह्माच्युतशङ्करप्रभृतिभिर्देवैः सदा वन्दिता । सा मां पातु सरस्वती भगवती निःशेषजाड्यापहा ॥ १ ॥",
+          "meaning": "Verse 1: May that Goddess Saraswati protect me, She who is as white as the Kunda flower, the moon, and a snowy garland; Who is draped in pure white attire; Whose hands are adorned with the beautiful staff of the Veena; Who sits gracefully on a white lotus throne; and Who is eternally worshipped by Brahma, Vishnu, and Shiva. May She completely eliminate my mental inertia and ignorance.\n(Roman: Yā Kundendu-Tuṣāra-Hāra-Dhavalā Yā Śubhra-Vastrā-Vṛtā | Yā Vīṇā-Vara-Daṇḍa-Maṇḍita-Karā Yā Śveta-Padmā-Sanā || Yā Brahmāacyuta-Śaṅkara-Prabhṛtibhir-Devaiḥ Sadā Vanditā | Sā Māṁ Pātu Sarasvatī Bhagavatī Niḥśeṣa-Jāḍyā-Pahā || 1 ||)",
+          "paragraphTranslation": "श्लोक १ (सरल भावार्थ): जो देवी कुन्द के फूल, चंद्रमा, और बर्फ के हार जैसी श्वेत हैं; जो शुभ्र (सफेद) वस्त्र धारण करती हैं; जिनके हाथ श्रेष्ठ वीणादंड से सुशोभित हैं; जो श्वेत कमल के आसन पर विराजमान हैं; जिनकी ब्रह्मा, विष्णु और महेश आदि सभी देवता सदा वन्दना करते हैं—वे सम्पूर्ण अज्ञान और जड़ता को दूर करने वाली भगवती सरस्वती मेरी रक्षा करें।",
+          "words": [
+            "या",
+            "कुन्देन्दुतुषारहारधवला",
+            "या",
+            "शुभ्रवस्त्रावृता",
+            "या",
+            "वीणावरदण्डमण्डितकरा",
+            "या",
+            "श्वेतपद्मासना",
+            "या",
+            "ब्रह्माच्युतशङ्करप्रभृतिभिर्देवैः",
+            "सदा",
+            "वन्दिता",
+            "सा",
+            "मां",
+            "पातु",
+            "सरस्वती",
+            "भगवती",
+            "निःशेषजाड्यापहा",
+            "१"
+          ]
+        },
+        {
+          "kind": "chapter-header",
           "sanskrit": "श्लोक २ (Verse 2)",
-          "meaning": "Verse 2: Supreme Refuge & Poetic Grace",
+          "meaning": "Verse 2: Meditation on Goddess Sharada (शुक्लां ब्रह्मविचारसारपरमाम्)",
+          "paragraphTranslation": "श्लोक २: भगवती शारदा की स्तुति",
           "words": [
             "श्लोक",
             "२"
-          ],
-          "kind": "chapter-header"
-        },
-        {
-          "sanskrit": "त्वमसि शरण्या त्रिभुवनधन्या सुरमुनिवन्दितचरणा । नवरसमधुरा कवितामुखरा स्मितरुचिरुचिराभरणा ॥ २ ॥",
-          "meaning": "You are the giver of shelter, the most blessed in all the three worlds, whose feet are worshipped by gods and sages. You are sweet with the nine poetic sentiments (Navarasas), eloquently expressive through poetry, and adorned with the bright luster of a beautiful smile.",
-          "words": [
-            "त्वमसि",
-            "शरण्या",
-            "त्रिभुवनधन्या",
-            "सुरमुनिवन्दितचरणा",
-            "।",
-            "नवरसमधुरा",
-            "कवितामुखरा",
-            "स्मितरुचिरुचिराभरणा",
-            "॥",
-            "२",
-            "॥"
           ]
         },
         {
-          "sanskrit": "श्लोक ३ (Verse 3)",
-          "meaning": "Verse 3: Purity & Awakening of Intellect",
+          "sanskrit": "शुक्लां ब्रह्मविचारसारपरमामाद्यां जगद्व्यापिनीं । वीणापुस्तकधारिणीमभयदां जाड्यान्धकारापहाम् ॥ हस्ते स्फाटिकमालिकां विदधतीं पद्मासने संस्थितां । वन्दे तां परमेश्वरीं भगवतीं बुद्धिप्रदां शारदाम् ॥ २ ॥",
+          "meaning": "Verse 2: I bow to that supreme Goddess Sharada, Who is pure white in complexion, Who represents the absolute essence of spiritual reflection, and Who pervades the entire universe. She holds the Veena, the holy book of wisdom, and grants the gesture of fearlessness, completely destroying the darkness of ignorance. Holding a crystal rosary in Her hand and seated firmly upon a lotus, She is the supreme dispenser of intellect and wisdom.\n(Roman: Śuklāṁ Brahma-Vicāra-Sāra-Paramām-Ādyāṁ Jagad-Vyāpinīṁ | Vīṇā-Pustaka-Dhāriṇīm-Abhayadāṁ Jāḍyāndha-Kārā-Pahām || Haste Sphāṭika-Mālikāṁ Vidadhatīṁ Padmāsane Saṁsthitāṁ | Vande Tāṁ Parameśvarīṁ Bhagavatīṁ Buddhi-Pradāṁ Śāradām || 2 ||)",
+          "paragraphTranslation": "श्लोक २ (सरल भावार्थ): श्वेत वर्ण वाली, ब्रह्मविचार के परम तत्व में लीन रहने वाली, आदि शक्ति, सम्पूर्ण जगत में व्याप्त रहने वाली, हाथों में वीणा, पुस्तक और अभयमुद्रा धारण करने वाली, अज्ञान के अंधकार को नष्ट करने वाली, हाथ में स्फटिक की माला धारण करने वाली, कमल के आसन पर सुशोभित और बुद्धि प्रदान करने वाली उन परमेश्वरी भगवती शारदा की मैं वन्दना करता हूँ।",
           "words": [
-            "श्लोक",
-            "३"
-          ],
-          "kind": "chapter-header"
-        },
-        {
-          "sanskrit": "आसीना भव मानसहंसे कुन्दतुहिनशशिधवले । हर जडतां कुरु बुद्धिविकासं सितपङ्कजतनुविमले ॥ ३ ॥",
-          "meaning": "Be seated upon the swan of our mind (and lake Manasarovar), O Goddess radiant white as jasmine, snow, and the moon! Dispel all our mental inertia and dullness, and awaken our wisdom, O Goddess spotless as a white lotus!",
-          "words": [
-            "आसीना",
-            "भव",
-            "मानसहंसे",
-            "कुन्दतुहिनशशिधवले",
-            "।",
-            "हर",
-            "जडतां",
-            "कुरु",
-            "बुद्धिविकासं",
-            "सितपङ्कजतनुविमले",
-            "॥",
-            "३",
-            "॥"
+            "शुक्लां",
+            "ब्रह्मविचारसारपरमामाद्यां",
+            "जगद्व्यापिनीं",
+            "वीणापुस्तकधारिणीमभयदां",
+            "जाड्यान्धकारापहाम्",
+            "हस्ते",
+            "स्फाटिकमालिकां",
+            "विदधतीं",
+            "पद्मासने",
+            "संस्थितां",
+            "वन्दे",
+            "तां",
+            "परमेश्वरीं",
+            "भगवतीं",
+            "बुद्धिप्रदां",
+            "शारदाम्",
+            "२"
           ]
         },
         {
-          "sanskrit": "श्लोक ४ (Verse 4)",
-          "meaning": "Verse 4: Embodiment of Fine Arts & Wisdom",
-          "words": [
-            "श्लोक",
-            "४"
-          ],
-          "kind": "chapter-header"
-        },
-        {
-          "sanskrit": "ललितकलामयि ज्ञानविभामयि वीणापुस्तकधारिणि । मतिरास्तां नो तव पदकमले अयि कुण्ठाविषहारिणि ॥ ४ ॥",
-          "meaning": "O embodiment of fine arts, filled with the radiant light of knowledge, holding the sacred veena and book! May our mind and intellect ever rest at your lotus feet, O destroyer of the poison of dullness and negativity!",
-          "words": [
-            "ललितकलामयि",
-            "ज्ञानविभामयि",
-            "वीणापुस्तकधारिणि",
-            "।",
-            "मतिरास्तां",
-            "नो",
-            "तव",
-            "पदकमले",
-            "अयि",
-            "कुण्ठाविषहारिणि",
-            "॥",
-            "४",
-            "॥"
-          ]
-        },
-        {
-          "sanskrit": "पदच्छेदः शब्दार्थाः च · Word-by-Word Meanings",
-          "meaning": "Word-by-word grammatical analysis and vocabulary from the hymn",
+          "kind": "glossary-header",
+          "sanskrit": "पदच्छेदः शब्दार्थाः च · Word-to-Word Meanings",
+          "meaning": "Word-to-Word Meanings & Lexical Breakdown",
+          "paragraphTranslation": "पदच्छेद एवं शब्दार्थ (विस्तृत व्याख्या)",
           "words": [
             "पदच्छेदः",
             "शब्दार्थाः",
             "च"
+          ]
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "या",
+          "meaning": "Who",
+          "paragraphTranslation": "जो (या (सर्वनाम))",
+          "words": [
+            "या"
           ],
-          "kind": "glossary-header"
+          "sanskrit_gloss": "या (सर्वनाम)",
+          "hindi_gloss": "जो"
         },
         {
-          "sanskrit": "जय जय (Victory/Hail) · हे भगवति (O Goddess) · सुरभारति (Goddess of Speech) · तव (Your) · चरणौ (At the two feet) · प्रणमामः (We bow down)",
-          "meaning": "Jaya jaya = Victory/Hail to you; He bhagavati = O Goddess; Surabharati = Goddess of speech / Saraswati; Tava = Your; Charanau = At the two feet; Pranamamah = We bow down.",
+          "kind": "glossary",
+          "sanskrit": "कुन्देन्दुतुषारहारधवला",
+          "meaning": "Pure white like a garland of jasmine flowers, the moon, and snow",
+          "paragraphTranslation": "कुंद के फूल, चन्द्रमा, और बर्फ के हार जैसी श्वेत (कुन्द-इन्दु-तुषार-हार-धवला)",
           "words": [
-            "जय",
-            "भगवति",
-            "सुरभारति",
-            "तव",
-            "चरणौ",
-            "प्रणमामः"
-          ]
+            "कुन्देन्दुतुषारहारधवला"
+          ],
+          "sanskrit_gloss": "कुन्द-इन्दु-तुषार-हार-धवला",
+          "hindi_gloss": "कुंद के फूल, चन्द्रमा, और बर्फ के हार जैसी श्वेत"
         },
         {
-          "sanskrit": "नादब्रह्ममयि (Cosmic Sound Embodiment) · जय वागीश्वरि (Victory to Master of Speech) · शरणम् (Refuge) · ते (To you) · गच्छामः (We go)",
-          "meaning": "Nadabrahmamayi = Embodiment of cosmic sound / Naada Brahman; Jaya vagishvari = Victory to master of speech; Sharanam = Shelter / refuge; Te = Your / to you; Gachhamah = We go.",
+          "kind": "glossary",
+          "sanskrit": "शुभ्रवस्त्रावृता",
+          "meaning": "Clothed in clean, pure white garments",
+          "paragraphTranslation": "श्वेत वस्त्रों से ढकी हुई (शुभ्र-वस्त्र-आवृता)",
           "words": [
-            "नादब्रह्ममयि",
-            "वागीश्वरि",
-            "शरणम्",
-            "ते",
-            "गच्छामः"
-          ]
+            "शुभ्रवस्त्रावृता"
+          ],
+          "sanskrit_gloss": "शुभ्र-वस्त्र-आवृता",
+          "hindi_gloss": "श्वेत वस्त्रों से ढकी हुई"
         },
         {
-          "sanskrit": "त्वम् (You) · असि (Are) · शरण्या (Giver of refuge) · त्रिभुवनधन्या (Blessed in 3 worlds) · सुरमुनिवन्दितचरणा (Worshipped by gods and sages)",
-          "meaning": "Tvam = You; Asi = Are; Sharanya = Giver of refuge; Tribhuvanadhanya = Most blessed/glorious in all 3 worlds; Suramunivanditacharana = Whose feet are worshipped by gods (Sura) and sages (Muni).",
+          "kind": "glossary",
+          "sanskrit": "वीणावरदण्डमण्डितकरा",
+          "meaning": "Whose hands are adorned with the divine staff of the Veena",
+          "paragraphTranslation": "हाथों में श्रेष्ठ वीणा-दंड से सुशोभित (वीणा-वर-दण्ड-मण्डित-करा)",
           "words": [
-            "त्वम्",
-            "असि",
-            "शरण्या",
-            "त्रिभुवनधन्या",
-            "सुरमुनिवन्दितचरणा"
-          ]
+            "वीणावरदण्डमण्डितकरा"
+          ],
+          "sanskrit_gloss": "वीणा-वर-दण्ड-मण्डित-करा",
+          "hindi_gloss": "हाथों में श्रेष्ठ वीणा-दंड से सुशोभित"
         },
         {
-          "sanskrit": "नवरसमधुरा (Sweet with 9 rasas) · कवितामुखरा (Expressive in poetry) · स्मितरुचिरुचिराभरणा (Adorned with radiant smile)",
-          "meaning": "Navarasamadhura = Sweet with the nine poetic emotions (Rasas); Kavitamukhara = Expressive through poetry; Smitaruchiruchirabharana = Adorned with a bright, beautiful smile that acts as ornament.",
+          "kind": "glossary",
+          "sanskrit": "श्वेतपद्मासना",
+          "meaning": "Seated upon a pure white lotus throne",
+          "paragraphTranslation": "सफेद कमल के आसन पर विराजमान (श्वेत-पद्म-आसना)",
           "words": [
-            "नवरसमधुरा",
-            "कवितामुखरा",
-            "स्मितरुचिरुचिराभरणा"
-          ]
+            "श्वेतपद्मासना"
+          ],
+          "sanskrit_gloss": "श्वेत-पद्म-आसना",
+          "hindi_gloss": "सफेद कमल के आसन पर विराजमान"
         },
         {
-          "sanskrit": "आसीना (Seated) · भव (Be/Become) · मानसहंसे (On mind-swan) · कुन्दतुहिनशशिधवले (White like jasmine, snow, moon) · हर (Remove) · जडताम् (Dullness/Ignorance)",
-          "meaning": "Asina = Seated; Bhava = Be/become; Manasahanse = On the swan of the mind (or Manasarovar lake); Kundatuhinashashidhavale = Pure white like jasmine (Kunda), snow (Tuhina), and moon (Shashi); Hara = Remove/destroy; Jadatam = Dullness/ignorance.",
+          "kind": "glossary",
+          "sanskrit": "ब्रह्माच्युतशङ्करप्रभृतिभिः",
+          "meaning": "By Brahma, Vishnu (Acyuta), Shiva, and other supreme deities",
+          "paragraphTranslation": "ब्रह्मा, विष्णु (अच्युत), और शिव आदि के द्वारा (ब्रह्मा-अच्युत-शङ्कर-प्रभृतिभिः)",
           "words": [
-            "आसीना",
-            "भव",
-            "मानसहंसे",
-            "कुन्दतुहिनशशिधवले",
-            "हर",
-            "जडताम्"
-          ]
+            "ब्रह्माच्युतशङ्करप्रभृतिभिः"
+          ],
+          "sanskrit_gloss": "ब्रह्मा-अच्युत-शङ्कर-प्रभृतिभिः",
+          "hindi_gloss": "ब्रह्मा, विष्णु (अच्युत), और शिव आदि के द्वारा"
         },
         {
-          "sanskrit": "कुरु (Do/Bring about) · बुद्धिविकासम् (Expansion of intellect) · सितपङ्कजतनुविमले (Pure body like white lotus)",
-          "meaning": "Kuru = Do/bring about; Buddhivikasam = Expansion of intellect/wisdom; Sitapankajatanuvimale = Having a body pure like a white lotus.",
+          "kind": "glossary",
+          "sanskrit": "देवैः",
+          "meaning": "By the gods",
+          "paragraphTranslation": "देवताओं के द्वारा (सुरैः / अमरैः)",
           "words": [
-            "कुरु",
-            "बुद्धिविकासम्",
-            "सितपङ्कजतनुविमले"
-          ]
+            "देवैः"
+          ],
+          "sanskrit_gloss": "सुरैः / अमरैः",
+          "hindi_gloss": "देवताओं के द्वारा"
         },
         {
-          "sanskrit": "ललितकलामयि (Fine arts embodiment) · ज्ञानविभामयि (Knowledge radiance) · वीणापुस्तकधारिणि (Holder of lute and book)",
-          "meaning": "Lalitakalamayi = Embodiment of fine arts; Jnanavibhamayi = Filled with radiance of knowledge; Veanapustakadharini = Holder of the musical lute (Veena) and books.",
+          "kind": "glossary",
+          "sanskrit": "सदा",
+          "meaning": "Always / Eternally",
+          "paragraphTranslation": "हमेशा / सर्वदा (सर्वदा / नित्यम्)",
           "words": [
-            "ललितकलामयि",
-            "ज्ञानविभामयि",
-            "वीणापुस्तकधारिणि"
-          ]
+            "सदा"
+          ],
+          "sanskrit_gloss": "सर्वदा / नित्यम्",
+          "hindi_gloss": "हमेशा / सर्वदा"
         },
         {
-          "sanskrit": "मतिः (Intellect/Mind) · आस्ताम् (May stay) · नः (Our) · तव पदकमले (At your lotus feet) · अयि (Oh!) · कुण्ठाविषहारिणि (Reliever of dullness poison)",
-          "meaning": "Matih = Intellect/mind; Astam = May it remain/stay; Nah = Our; Tava padakamale = At your lotus feet; Ayi = Oh!; Kunthavishaharini = Giver of relief from the poison of dullness / negativity.",
+          "kind": "glossary",
+          "sanskrit": "वन्दिता",
+          "meaning": "Worshipped or praised",
+          "paragraphTranslation": "पूजित या वन्दना की जाने वाली (पूजिता / स्तुता)",
           "words": [
-            "मतिः",
-            "आस्ताम्",
-            "नः",
-            "पदकमले",
-            "अयि",
-            "कुण्ठाविषहारिणि"
-          ]
+            "वन्दिता"
+          ],
+          "sanskrit_gloss": "पूजिता / स्तुता",
+          "hindi_gloss": "पूजित या वन्दना की जाने वाली"
         },
         {
+          "kind": "glossary",
+          "sanskrit": "सा",
+          "meaning": "She",
+          "paragraphTranslation": "वह (सा देवी)",
+          "words": [
+            "सा"
+          ],
+          "sanskrit_gloss": "सा देवी",
+          "hindi_gloss": "वह"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "मां",
+          "meaning": "Me",
+          "paragraphTranslation": "मेरी / मुझे (माम्)",
+          "words": [
+            "मां"
+          ],
+          "sanskrit_gloss": "माम्",
+          "hindi_gloss": "मेरी / मुझे"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "पातु",
+          "meaning": "Please protect",
+          "paragraphTranslation": "रक्षा करें (रक्षतु)",
+          "words": [
+            "पातु"
+          ],
+          "sanskrit_gloss": "रक्षतु",
+          "hindi_gloss": "रक्षा करें"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "सरस्वती भगवती",
+          "meaning": "Divine Goddess Saraswati",
+          "paragraphTranslation": "देवी भगवती सरस्वती (देवी सरस्वती)",
+          "words": [
+            "सरस्वती",
+            "भगवती"
+          ],
+          "sanskrit_gloss": "देवी सरस्वती",
+          "hindi_gloss": "देवी भगवती सरस्वती"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "निःशेषजाड्यापहा",
+          "meaning": "Destroyer of all absolute ignorance and mental sluggishness",
+          "paragraphTranslation": "मानसिक जड़ता और अज्ञान को पूरी तरह से नष्ट करने वाली (निःशेष-जाड्य-अपहा)",
+          "words": [
+            "निःशेषजाड्यापहा"
+          ],
+          "sanskrit_gloss": "निःशेष-जाड्य-अपहा",
+          "hindi_gloss": "मानसिक जड़ता और अज्ञान को पूरी तरह से नष्ट करने वाली"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "शुक्लाम्",
+          "meaning": "Possessing a pure white complexion",
+          "paragraphTranslation": "श्वेत वर्ण वाली (श्वेतवर्णाम्)",
+          "words": [
+            "शुक्लाम्"
+          ],
+          "sanskrit_gloss": "श्वेतवर्णाम्",
+          "hindi_gloss": "श्वेत वर्ण वाली"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "ब्रह्मविचारसारपरमाम्",
+          "meaning": "The supreme essence of the meditative realization of Brahman",
+          "paragraphTranslation": "परब्रह्म के विचार के सार में परम श्रेष्ठ (ब्रह्म-विचार-सार-परमाम्)",
+          "words": [
+            "ब्रह्मविचारसारपरमाम्"
+          ],
+          "sanskrit_gloss": "ब्रह्म-विचार-सार-परमाम्",
+          "hindi_gloss": "परब्रह्म के विचार के सार में परम श्रेष्ठ"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "आद्याम्",
+          "meaning": "The primal, original power",
+          "paragraphTranslation": "आदि शक्ति, सनातन (मूलशक्तिम् / सनातनीम्)",
+          "words": [
+            "आद्याम्"
+          ],
+          "sanskrit_gloss": "मूलशक्तिम् / सनातनीम्",
+          "hindi_gloss": "आदि शक्ति, सनातन"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "जगद्व्यापिनीम्",
+          "meaning": "Pervading the entire cosmic universe",
+          "paragraphTranslation": "पूरे संसार में व्याप्त (सर्वत्र-व्याप्ताम्)",
+          "words": [
+            "जगद्व्यापिनीम्"
+          ],
+          "sanskrit_gloss": "सर्वत्र-व्याप्ताम्",
+          "hindi_gloss": "पूरे संसार में व्याप्त"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "वीणापुस्तकधारिणीम्",
+          "meaning": "Carrying the stringed lute (Veena) and the book of knowledge",
+          "paragraphTranslation": "हाथ में वीणा और पुस्तक धारण करने वाली (वीणां पुस्तकं च धारयन्तीम्)",
+          "words": [
+            "वीणापुस्तकधारिणीम्"
+          ],
+          "sanskrit_gloss": "वीणां पुस्तकं च धारयन्तीम्",
+          "hindi_gloss": "हाथ में वीणा और पुस्तक धारण करने वाली"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "अभयदाम्",
+          "meaning": "Bestowing fearlessness upon her devotees",
+          "paragraphTranslation": "अभय (निडरता) का दान देने वाली (अभय-प्रदाम्)",
+          "words": [
+            "अभयदाम्"
+          ],
+          "sanskrit_gloss": "अभय-प्रदाम्",
+          "hindi_gloss": "अभय (निडरता) का दान देने वाली"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "जाड्यान्धकारापहाम्",
+          "meaning": "Dispeller of the dense darkness of mental dullness",
+          "paragraphTranslation": "अज्ञान रूपी अंधकार को दूर भगाने वाली (जाड्य-अन्धकार-अपहाम्)",
+          "words": [
+            "जाड्यान्धकारापहाम्"
+          ],
+          "sanskrit_gloss": "जाड्य-अन्धकार-अपहाम्",
+          "hindi_gloss": "अज्ञान रूपी अंधकार को दूर भगाने वाली"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "हस्ते",
+          "meaning": "In her hand",
+          "paragraphTranslation": "हाथ में (करे)",
+          "words": [
+            "हस्ते"
+          ],
+          "sanskrit_gloss": "करे",
+          "hindi_gloss": "हाथ में"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "स्फाटिकमालिकाम्",
+          "meaning": "A rosary made of pure quartz crystals",
+          "paragraphTranslation": "स्फटिक (Crystal) की माला (स्फटिक-रचितां मालाम्)",
+          "words": [
+            "स्फाटिकमालिकाम्"
+          ],
+          "sanskrit_gloss": "स्फटिक-रचितां मालाम्",
+          "hindi_gloss": "स्फटिक (Crystal) की माला"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "विदधतीम्",
+          "meaning": "Holding or wearing",
+          "paragraphTranslation": "धारण किए हुए (धारयन्तीम्)",
+          "words": [
+            "विदधतीम्"
+          ],
+          "sanskrit_gloss": "धारयन्तीम्",
+          "hindi_gloss": "धारण किए हुए"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "पद्मासने",
+          "meaning": "On a lotus seat",
+          "paragraphTranslation": "कमल के आसन पर (कमलासने)",
+          "words": [
+            "पद्मासने"
+          ],
+          "sanskrit_gloss": "कमलासने",
+          "hindi_gloss": "कमल के आसन पर"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "संस्थिताम्",
+          "meaning": "Firmly established or seated",
+          "paragraphTranslation": "अच्छी तरह से बैठी हुई (सुस्थिताम् / उपविष्टाम्)",
+          "words": [
+            "संस्थिताम्"
+          ],
+          "sanskrit_gloss": "सुस्थिताम् / उपविष्टाम्",
+          "hindi_gloss": "अच्छी तरह से बैठी हुई"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "वन्दे",
+          "meaning": "I offer my reverent prayers / I bow",
+          "paragraphTranslation": "मैं वन्दना करता हूँ (प्रणमामि)",
+          "words": [
+            "वन्दे"
+          ],
+          "sanskrit_gloss": "प्रणमामि",
+          "hindi_gloss": "मैं वन्दना करता हूँ"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "ताम्",
+          "meaning": "To her",
+          "paragraphTranslation": "उन (तां देवीम्)",
+          "words": [
+            "ताम्"
+          ],
+          "sanskrit_gloss": "तां देवीम्",
+          "hindi_gloss": "उन"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "परमेश्वरीम् भगवतीम्",
+          "meaning": "The ultimate divine Goddess",
+          "paragraphTranslation": "परम ऐश्वर्यशाली भगवती (सर्वोत्कृष्टाम् ईश्वरीम्)",
+          "words": [
+            "परमेश्वरीम्",
+            "भगवतीम्"
+          ],
+          "sanskrit_gloss": "सर्वोत्कृष्टाम् ईश्वरीम्",
+          "hindi_gloss": "परम ऐश्वर्यशाली भगवती"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "बुद्धिप्रदाम्",
+          "meaning": "Giver of intellect and wisdom",
+          "paragraphTranslation": "बुद्धि प्रदान करने वाली (प्रज्ञादात्रीम्)",
+          "words": [
+            "बुद्धिप्रदाम्"
+          ],
+          "sanskrit_gloss": "प्रज्ञादात्रीम्",
+          "hindi_gloss": "बुद्धि प्रदान करने वाली"
+        },
+        {
+          "kind": "glossary",
+          "sanskrit": "शारदाम्",
+          "meaning": "Goddess Sharada",
+          "paragraphTranslation": "माँ शारदा (सरस्वती) (सरस्वतीम्)",
+          "words": [
+            "शारदाम्"
+          ],
+          "sanskrit_gloss": "सरस्वतीम्",
+          "hindi_gloss": "माँ शारदा (सरस्वती)"
+        },
+        {
+          "kind": "exercise-header",
           "sanskrit": "१. रिक्तस्थानानि पूरयत (Fill in the Blanks based on Text)",
           "meaning": "Exercise 1: Fill in the missing words from the sacred verses",
+          "paragraphTranslation": "अभ्यास १: श्लोकों के आधार पर रिक्त स्थानों की पूर्ति कीजिए",
           "words": [
             "रिक्तस्थानानि",
             "पूरयत"
+          ]
+        },
+        {
+          "kind": "exercise-qa",
+          "sanskrit": "१. या कुन्देन्दुतुषारहारधवला या [ शुभ्रवस्त्रावृता ] ।",
+          "answer_sanskrit": "शुभ्रवस्त्रावृता",
+          "meaning": "1. Who is white as jasmine, moon, and snow, and who is [ draped in pure white attire (शुभ्रवस्त्रावृता) ].",
+          "paragraphTranslation": "१. जो कुंद के फूल, चन्द्रमा और बर्फ के हार जैसी श्वेत हैं और [ श्वेत वस्त्रों से ढकी हुई (शुभ्रवस्त्रावृता) ] हैं।",
+          "words": [
+            "१.",
+            "या",
+            "कुन्देन्दुतुषारहारधवला",
+            "या",
+            "शुभ्रवस्त्रावृता"
           ],
-          "kind": "exercise-header"
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "शुभ्रवस्त्रावृता"
         },
         {
-          "sanskrit": "१. नादब्रह्ममयि जय वागीश्वरि [ शरणं ] ते गच्छामः ।",
-          "meaning": "1. O embodiment of cosmic sound, victorious master of speech, we go to your [ refuge (शरणं) ].",
+          "kind": "exercise-qa",
+          "sanskrit": "२. या ब्रह्माच्युतशङ्करप्रभृतिभिर्देवैः सदा [ वन्दिता ] ।",
+          "answer_sanskrit": "वन्दिता",
+          "meaning": "2. Who is eternally [ worshipped (वन्दिता) ] by Brahma, Vishnu, and Shiva.",
+          "paragraphTranslation": "२. जिनकी ब्रह्मा, विष्णु और महेश आदि देवों द्वारा सदा [ वन्दना (वन्दिता) ] की जाती है।",
           "words": [
-            "नादब्रह्ममयि",
-            "जय",
-            "वागीश्वरि",
-            "शरणं",
-            "ते",
-            "गच्छामः"
-          ]
+            "२.",
+            "या",
+            "ब्रह्माच्युतशङ्करप्रभृतिभिर्देवैः",
+            "सदा",
+            "वन्दिता"
+          ],
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "वन्दिता"
         },
         {
-          "sanskrit": "२. आसीना भव [ मानसहंसे ] कुन्दतुहिनशशिधवले ।",
-          "meaning": "2. Be seated on [ the swan of our mind (मानसहंसे) ], O Goddess pure white as jasmine, snow, and the moon.",
+          "kind": "exercise-qa",
+          "sanskrit": "३. सा मां पातु सरस्वती भगवती [ निःशेषजाड्यापहा ] ॥",
+          "answer_sanskrit": "निःशेषजाड्यापहा",
+          "meaning": "3. May that Goddess Saraswati protect me, who is [ the complete destroyer of all ignorance (निःशेषजाड्यापहा) ].",
+          "paragraphTranslation": "३. वे भगवती सरस्वती मेरी रक्षा करें जो [ सम्पूर्ण अज्ञान को नष्ट करने वाली (निःशेषजाड्यापहा) ] हैं।",
           "words": [
-            "आसीना",
-            "भव",
-            "मानसहंसे",
-            "कुन्दतुहिनशशिधवले"
-          ]
+            "३.",
+            "सा",
+            "मां",
+            "पातु",
+            "सरस्वती",
+            "भगवती",
+            "निःशेषजाड्यापहा"
+          ],
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "निःशेषजाड्यापहा"
         },
         {
-          "sanskrit": "३. मतिरास्तां नो तव पदकमले अयि [ कुण्ठाविषहारिणि ] ॥",
-          "meaning": "3. May our intellect ever abide at your lotus feet, O [ reliever of the poison of dullness (कुण्ठाविषहारिणि) ]!",
+          "kind": "exercise-qa",
+          "sanskrit": "४. वीणापुस्तकधारिणीमभयदां [ जाड्यान्धकारापहाम् ] ॥",
+          "answer_sanskrit": "जाड्यान्धकारापहाम्",
+          "meaning": "4. Holding the Veena and book, bestowing fearlessness, and [ dispelling the darkness of dullness (जाड्यान्धकारापहाम्) ].",
+          "paragraphTranslation": "४. वीणा, पुस्तक और अभयमुद्रा धारण करने वाली तथा [ अज्ञान के अंधकार को दूर करने वाली (जाड्यान्धकारापहाम्) ]।",
           "words": [
-            "मतिरास्तां",
-            "नो",
-            "तव",
-            "पदकमले",
-            "अयि",
-            "कुण्ठाविषहारिणि"
-          ]
+            "४.",
+            "वीणापुस्तकधारिणीमभयदां",
+            "जाड्यान्धकारापहाम्"
+          ],
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "जाड्यान्धकारापहाम्"
         },
         {
-          "sanskrit": "२. विपरीतार्थकपदानि लिखत (Write Opposite Words as per Context)",
-          "meaning": "Exercise 2: Contextual Antonyms from the text",
+          "kind": "exercise-qa",
+          "sanskrit": "५. वन्दे तां परमेश्वरीं भगवतीं [ बुद्धिप्रदां ] शारदाम् ॥",
+          "answer_sanskrit": "बुद्धिप्रदाम्",
+          "meaning": "5. I bow to that supreme Goddess Sharada who is [ the dispenser of intellect (बुद्धिप्रदां) ].",
+          "paragraphTranslation": "५. मैं उन परमेश्वरी भगवती शारदा की वन्दना करता हूँ जो [ बुद्धि प्रदान करने वाली (बुद्धिप्रदां) ] हैं।",
+          "words": [
+            "५.",
+            "वन्दे",
+            "तां",
+            "परमेश्वरीं",
+            "भगवतीं",
+            "बुद्धिप्रदां",
+            "शारदाम्"
+          ],
+          "answer_label": "उत्तरम्",
+          "hindi_gloss": "बुद्धिप्रदाम्"
+        },
+        {
+          "kind": "exercise-header",
+          "sanskrit": "२. विपरीतार्थकपदानि लिखत (Contextual Antonyms)",
+          "meaning": "Exercise 2: Write Opposite Words as per Context",
+          "paragraphTranslation": "अभ्यास २: प्रसंगानुकूल विलोम पद लिखिए",
           "words": [
             "विपरीतार्थकपदानि",
             "लिखत"
-          ],
-          "kind": "exercise-header"
+          ]
         },
         {
-          "sanskrit": "जडता (Dullness / Ignorance) ↔ बुद्धिः / ज्ञानम् (Intellect / Knowledge)",
-          "meaning": "Antonym 1: Jadata (Dullness/Ignorance) <-> Buddhih / Jnanam (Intellect/Knowledge).",
+          "sanskrit": "धवला / शुक्ला (White / Pure) ↔ कृष्णा / मलिना (Dark / Impure)",
+          "meaning": "Antonym 1: Dhavala / Shukla (Pure White) <-> Krishna / Malina (Dark / Impure).",
+          "paragraphTranslation": "विलोम १: धवला / शुक्ला (श्वेत) ↔ कृष्णा / मलिना (काली / मैली)",
           "words": [
-            "जडता",
+            "धवला",
+            "शुक्ला",
+            "कृष्णा",
+            "मलिना"
+          ]
+        },
+        {
+          "sanskrit": "जाड्यम् (Dullness / Ignorance) ↔ बुद्धिः / ज्ञानम् (Intellect / Knowledge)",
+          "meaning": "Antonym 2: Jadyam (Dullness / Inertia) <-> Buddhih / Jnanam (Intellect / Wisdom).",
+          "paragraphTranslation": "विलोम २: जाड्यम् (अज्ञान / जड़ता) ↔ बुद्धिः / ज्ञानम् (विवेक / प्रज्ञा)",
+          "words": [
+            "जाड्यम्",
             "बुद्धिः",
             "ज्ञानम्"
           ]
         },
         {
-          "sanskrit": "हर (Remove / Destroy) ↔ कुरु (Create / Bring about)",
-          "meaning": "Antonym 2: Hara (Remove/Destroy) <-> Kuru (Create/Bring about).",
+          "sanskrit": "अन्धकारः (Darkness) ↔ प्रकाशः / ज्योतिः (Light / Radiance)",
+          "meaning": "Antonym 3: Andhakarah (Darkness) <-> Prakashah / Jyotih (Light).",
+          "paragraphTranslation": "विलोम ३: अन्धकारः ↔ प्रकाशः / ज्योतिः",
           "words": [
-            "हर",
-            "कुरु"
+            "अन्धकारः",
+            "प्रकाशः",
+            "ज्योतिः"
           ]
         },
         {
-          "sanskrit": "विमल (Pure) ↔ मलिन (Impure)",
-          "meaning": "Antonym 3: Vimala (Pure) <-> Malina (Impure).",
+          "sanskrit": "अभयम् (Fearlessness) ↔ भयम् (Fear)",
+          "meaning": "Antonym 4: Abhayam (Fearlessness) <-> Bhayam (Fear).",
+          "paragraphTranslation": "विलोम ४: अभयम् ↔ भयम्",
           "words": [
-            "विमल",
-            "मलिन"
+            "अभयम्",
+            "भयम्"
           ]
         },
         {
-          "sanskrit": "३. उचितं मेलनम् कुरुत (Match Text Elements to Descriptive Qualities)",
-          "meaning": "Exercise 3: Match Column A to Column B attributes",
+          "kind": "exercise-header",
+          "sanskrit": "३. उचितं मेलनम् कुरुत (Match Attributes to Divine Qualities)",
+          "meaning": "Exercise 3: Match Attributes to Divine Qualities",
+          "paragraphTranslation": "अभ्यास ३: परस्पर सही मिलान कीजिए",
           "words": [
             "उचितं",
             "मेलनम्",
             "कुरुत"
-          ],
-          "kind": "exercise-header"
-        },
-        {
-          "sanskrit": "१. सुरभारति ➡️ (ख) भगवति (Goddess of Speech ➡️ Divine Mother)",
-          "meaning": "Match 1: Surabharati matches with Bhagavati (O Divine Goddess).",
-          "words": [
-            "सुरभारति",
-            "भगवति"
           ]
         },
         {
-          "sanskrit": "२. धवला ➡️ (ग) कुन्दतुहिनशशि (White / Radiant ➡️ Jasmine, Snow, and Moon)",
-          "meaning": "Match 2: Dhavala matches with Kundatuhinashashi (Pure white like jasmine, snow, and moon).",
+          "sanskrit": "१. कुन्देन्दुतुषारहारधवला ➡️ (ग) सरस्वती भगवती (White like jasmine, moon, and snow)",
+          "meaning": "Match 1: Kundendutusharaharadhavala matches with Saraswati Bhagavati.",
+          "paragraphTranslation": "मिलान १: कुन्देन्दुतुषारहारधवला ➡️ (ग) सरस्वती भगवती",
           "words": [
-            "धवला",
-            "कुन्दतुहिनशशि"
+            "१.",
+            "कुन्देन्दुतुषारहारधवला",
+            "सरस्वती",
+            "भगवती"
           ]
         },
         {
-          "sanskrit": "३. ललितकलामयि ➡️ (क) वीणापुस्तकधारिणि (Fine Arts Embodiment ➡️ Holder of Veena & Book)",
-          "meaning": "Match 3: Lalitakalamayi matches with Veanapustakadharini (Holding lute and sacred scriptures).",
+          "sanskrit": "२. वीणावरदण्डमण्डितकरा ➡️ (घ) हस्ते वीणा शोभते (Adorned with the divine staff of Veena)",
+          "meaning": "Match 2: Veena-vara-danda-mandita-kara matches with holding the Veena.",
+          "paragraphTranslation": "मिलान २: वीणावरदण्डमण्डितकरा ➡️ (घ) हस्ते वीणा शोभते",
           "words": [
-            "ललितकलामयि",
-            "वीणापुस्तकधारिणि"
+            "२.",
+            "वीणावरदण्डमण्डितकरा",
+            "हस्ते",
+            "वीणा",
+            "शोभते"
+          ]
+        },
+        {
+          "sanskrit": "३. हस्ते स्फाटिकमालिकाम् ➡️ (क) अक्षमालाधारिणी (Holding crystal rosary in hand)",
+          "meaning": "Match 3: Haste Sphatikamalikam matches with holding rosary of knowledge.",
+          "paragraphTranslation": "मिलान ३: हस्ते स्फाटिकमालिकाम् ➡️ (क) अक्षमालाधारिणी",
+          "words": [
+            "३.",
+            "हस्ते",
+            "स्फाटिकमालिकाम्",
+            "अक्षमालाधारिणी"
+          ]
+        },
+        {
+          "sanskrit": "४. बुद्धिप्रदा ➡️ (ख) ज्ञानदात्री शारदा (Dispenser of intellect and wisdom)",
+          "meaning": "Match 4: Buddhiprada matches with Goddess Sharada.",
+          "paragraphTranslation": "मिलान ४: बुद्धिप्रदा ➡️ (ख) ज्ञानदात्री शारदा",
+          "words": [
+            "४.",
+            "बुद्धिप्रदा",
+            "ज्ञानदात्री",
+            "शारदा"
           ]
         }
-      ]
+      ],
+      "page_numbers": "16"
     },
     {
       "id": "grade8_ch1",
