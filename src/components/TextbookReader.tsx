@@ -785,7 +785,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 onClick={onOpenQuiz}
                 title="Go to Grade 8 Chapter 13 Quizzes"
               >
-                🎯 2 Quizzes (8 Qs)
+                🎯 2 Quizzes (10 Qs)
               </button>
             )}
             {onOpenWorksheets && (

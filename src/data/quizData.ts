@@ -46,7 +46,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade8_ch10', label: 'Grade 8 Ch 10: सन्निमित्ते वरं त्यागः (2 Quizzes · 8 Qs)', icon: '⚖️' },
   { id: 'grade8_ch11', label: 'Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख) (2 Quizzes · 8 Qs)', icon: '🕊️' },
   { id: 'grade8_ch12', label: 'Grade 8 Ch 12: सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (2 Quizzes · 8 Qs)', icon: '🗣️' },
-  { id: 'grade8_ch13', label: 'Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (2 Quizzes · 8 Qs)', icon: '🔤' },
+  { id: 'grade8_ch13', label: 'Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (2 Quizzes · 10 Qs)', icon: '🔤' },
 ] as const;
 
 export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
@@ -12643,153 +12643,181 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
 {
   "id": "g8-ch13-q1-1",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: ध्वन्युत्पादने शारीरिक-तन्त्राणि",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी १)",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "Quiz 1: Anatomy of Voice Production",
-  "question": "उरसि (छाती / वक्षःस्थले) श्वासकोशस्थितं वायुम् ऊर्ध्वं निःसारयितुं किम् तन्त्रं कार्यं करोति? (Which bodily system functions in the chest to expel lung air upward?)",
-  "questionSanskrit": "उरसि किम् तन्त्रं भवति?",
+  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – बहुविकल्पीय-प्रश्नाः (MCQs)",
+  "question": "आस्यस्य अभ्यन्तरे वर्णानाम् उत्पत्त्यर्थं कति तत्त्वानि आवश्यकानि भवन्ति?",
+  "questionSanskrit": "आस्यस्य अभ्यन्तरे वर्णानाम् उत्पत्त्यर्थं कति तत्त्वानि आवश्यकानि भवन्ति?",
   "options": [
-    "A) मांसपेशी-बल-तन्त्रम्",
-    "B) वायु-बल-तन्त्रम् (Air-pressure System)",
-    "C) उच्चारण-तन्त्रम्",
-    "D) केवलं नासिका-तन्त्रम्"
+    "(अ) द्वे (२)",
+    "(ब) त्रीणि (३ — स्थानम्, करणम्, आभ्यन्तर-प्रयत्नः)",
+    "(स) चत्वारि (४)",
+    "(द) पञ्च (५)"
   ],
   "correctIndex": 1,
-  "explanation": "उरः (छाती/श्वासकोशः) 'वायु-बल-तन्त्रम्' (Air-pressure system) भवति, यत् वायुम् ऊर्ध्वं निःसारयति।",
+  "explanation": "आस्यस्य अभ्यन्तरे वर्णानाम् उत्पत्त्यर्थं त्रीणि तत्त्वानि आवश्यकानि भवन्ति — (क) स्थानम्, (ख) करणम्, (ग) आभ्यन्तर-प्रयत्नश्च।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch13-q1-2",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: ध्वन्युत्पादने शारीरिक-तन्त्राणि",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी १)",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "Quiz 1: Anatomy of Voice Production",
-  "question": "ध्वन्युत्पादने सर्वप्रथमं नाभि-प्रदेशे स्थिताः मांसपेश्यः किं नोदयन्ति (दबाव डालते हैं)? (In voice production, what do abdominal muscles in the navel region exert pressure upon first?)",
-  "questionSanskrit": "नाभिप्रदेशे स्थिताः मांसपेश्यः किं नोदयन्ति?",
+  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – बहुविकल्पीय-प्रश्नाः (MCQs)",
+  "question": "\"जिह्वाग्रेण - ______\" रिक्तस्थानं पूरयत:",
+  "questionSanskrit": "\"जिह्वाग्रेण - ______\" रिक्तस्थानं पूरयत।",
   "options": [
-    "A) कण्ठम्",
-    "B) उरः (वक्षः / Chest)",
-    "C) जिह्वाम्",
-    "D) दन्तम्"
+    "(अ) तालव्यानाम्",
+    "(ब) मूर्धन्यानाम्",
+    "(स) दन्त्यानाम्",
+    "(द) ओष्ठ्यानाम्"
   ],
-  "correctIndex": 1,
-  "explanation": "सर्वप्रथमं नाभिप्रदेशे स्थिताः मांसपेश्यः उरः (वक्षःस्थलं) नोदयन्ति, येन श्वासकोशस्य वायुः ऊर्ध्वं सरति।",
-  "difficulty": "medium",
+  "correctIndex": 2,
+  "explanation": "दन्त्य-वर्णानाम् उच्चारणार्थं जिह्वायाः अग्रभागः (जिह्वाग्रम्) दन्तस्थानं स्पृशति, अतः 'जिह्वाग्रेण दन्त्यानाम्'।",
+  "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch13-q1-3",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: ध्वन्युत्पादने शारीरिक-तन्त्राणि",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी १)",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "Quiz 1: Anatomy of Voice Production",
-  "question": "कण्ठ-बिलः (Larynx / Voice-box) कस्य तन्त्रस्य रूपेण कार्यं करोति? (What system does the larynx/voice-box function as?)",
-  "questionSanskrit": "कण्ठ-बिलः कस्य तन्त्रस्य रूपेण कार्यं करोति?",
+  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – बहुविकल्पीय-प्रश्नाः (MCQs)",
+  "question": "कण्ठ-बिलः (Voice-box / Larynx) कस्य तन्त्रस्य भागः अस्ति?",
+  "questionSanskrit": "कण्ठ-बिलः कस्य तन्त्रस्य भागः अस्ति?",
   "options": [
-    "A) ध्वनि-तन्त्रम् (Phonatory & Resonatory System)",
-    "B) मांसपेशी-बल-तन्त्रम्",
-    "C) वायु-बल-तन्त्रम्",
-    "D) केवलं घ्राण-तन्त्रम्"
+    "(अ) मांसपेशी-बल-तन्त्रम्",
+    "(ब) वायु-बल-तन्त्रम्",
+    "(स) ध्वनि-तन्त्रम् (Phonatory & Resonatory System)",
+    "(द) उच्चारण-तन्त्रम्"
   ],
-  "correctIndex": 0,
-  "explanation": "कण्ठ-बिलः (स्वरयन्त्रम्/Larynx) 'ध्वनि-तन्त्रम्' (Phonatory & Resonatory system) अस्ति, यत्र वायुना ध्वनिः उत्पद्यते।",
+  "correctIndex": 2,
+  "explanation": "कण्ठ-बिलः (स्वरयन्त्रम्/Larynx) 'ध्वनि-तन्त्रम्' कथ्यते, यत्र वायुना शब्दध्वनिः उत्पद्यते।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch13-q1-4",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: ध्वन्युत्पादने शारीरिक-तन्त्राणि",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी १)",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "Quiz 1: Anatomy of Voice Production",
-  "question": "आस्यस्य (Head/Oral-Nasal Cavity) अभ्यन्तरे कति उच्चारण-स्थानानि सन्ति? (How many places of articulation are inside the Asya?)",
-  "questionSanskrit": "आस्ये कति उच्चारण-स्थानानि सन्ति?",
+  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – बहुविकल्पीय-प्रश्नाः (MCQs)",
+  "question": "अधोलिखितेषु कः वर्णः 'स्वस्थानकरणः' नास्ति?",
+  "questionSanskrit": "अधोलिखितेषु कः वर्णः 'स्वस्थानकरणः' नास्ति?",
   "options": [
-    "A) चत्वारि (४)",
-    "B) पञ्च (५)",
-    "C) षट् (६ — कण्ठः, तालु, मूर्धा, दन्तः, ओष्ठः, नासिका च)",
-    "D) अष्टौ (८)"
+    "(अ) कण्ठ्यः",
+    "(ब) तालव्यः (अस्य करणं जिह्वा भवति)",
+    "(स) ओष्ठ्यः",
+    "(द) नासिक्यः"
   ],
-  "correctIndex": 2,
-  "explanation": "आस्ये षट् स्थानानि भवन्ति — मुखे पञ्च (कण्ठः, तालु, मूर्धा, दन्तः, ओष्ठः) नासिकायां च नासिका इति षष्ठम्।",
-  "difficulty": "easy",
+  "correctIndex": 1,
+  "explanation": "कण्ठ, ओष्ठ और नासिका में स्व-स्थान करण होता है, किन्तु तालव्य-वर्णानाम् उच्चारणे जिह्वा-मध्यः करणं भवति, अतः तालव्यः स्वस्थानकरणः नास्ति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q1-5",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी १)",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – बहुविकल्पीय-प्रश्नाः (MCQs)",
+  "question": "श्वासकोशस्थितः वायुः ऊर्ध्वं सरन् सर्वप्रथमं कुत्र गच्छति?",
+  "questionSanskrit": "श्वासकोशस्थितः वायुः ऊर्ध्वं सरन् सर्वप्रथमं कुत्र गच्छति?",
+  "options": [
+    "(अ) आस्यम्",
+    "(ब) कण्ठ-बिलम् (Voice-box / Larynx)",
+    "(स) नासिकाम्",
+    "(द) ओष्ठम्"
+  ],
+  "correctIndex": 1,
+  "explanation": "उरः श्वासकोशस्थितं वायुम् ऊर्ध्वं निःसारयति, सः वायुः ऊर्ध्वं सरन् सर्वप्रथमं कण्ठ-बिलं प्राप्नोति, ततः आस्यं प्रविशति।",
+  "difficulty": "medium",
   "points": 10
 },
 {
   "id": "g8-ch13-q2-1",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: स्थानं करणञ्च (Places & Active Articulators)",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी २)",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "Quiz 2: Articulatory Mechanisms: Sthana & Karana",
-  "question": "मुरली-दृष्टान्ते मुरल्याः 'अङ्गुलिच्छिद्राणि' आस्यस्य कस्य अङ्गस्य इव व्यवहरन्ति? (In the flute analogy, what do finger-holes behave like?)",
-  "questionSanskrit": "मुरल्याः अङ्गुलिच्छिद्राणि कस्य इव व्यवहरन्ति?",
+  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – आम् / न (True or False)",
+  "question": "वर्णानाम् उच्चारणे केवलम् आस्यस्य एव उपयोगः भवति। (आम् / न)",
+  "questionSanskrit": "वर्णानाम् उच्चारणे केवलम् आस्यस्य एव उपयोगः भवति।",
   "options": [
-    "A) करणानाम् इव",
-    "B) स्थानानाम् इव (Like the Places of Articulation)",
-    "C) जिह्वायाः इव",
-    "D) श्वासकोशस्य इव"
+    "A) आम् (True)",
+    "B) न (False)"
   ],
   "correctIndex": 1,
-  "explanation": "मुरल्याः अङ्गुलिच्छिद्राणि निश्चितानि सन्ति, अतः तानि आस्यस्य 'स्थानानि' (Places of Articulation) इव व्यवहरन्ति।",
+  "explanation": "न (असत्यम्)। वर्णानाम् उच्चारणे आस्येन सह शरीरस्य इतरेषाम् अपि अङ्गानां (नाभि, उरः, कण्ठ-बिलादीनाम्) उपयोगः भवति।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch13-q2-2",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: स्थानं करणञ्च (Places & Active Articulators)",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी २)",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "Quiz 2: Articulatory Mechanisms: Sthana & Karana",
-  "question": "मुरलीं वादयन्त्यः 'अङ्गुलयः' आस्यस्य कस्य तत्त्वस्य इव व्यवहरन्ति? (What do the active moving fingers playing the flute behave like?)",
-  "questionSanskrit": "मुरलीं वादयन्त्यः अङ्गुलयः कस्य इव व्यवहरन्ति?",
+  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – आम् / न (True or False)",
+  "question": "तालव्य-वर्णानाम् उच्चारणार्थं जिह्वा-उपाग्रः करणं भवति। (आम् / न)",
+  "questionSanskrit": "तालव्य-वर्णानाम् उच्चारणार्थं जिह्वा-उपाग्रः करणं भवति।",
   "options": [
-    "A) करणानाम् इव (Like Karana / Active articulators)",
-    "B) स्थानानाम् इव",
-    "C) नासिकायाः इव",
-    "D) कण्ठस्य इव"
+    "A) आम् (True)",
+    "B) न (False)"
   ],
-  "correctIndex": 0,
-  "explanation": "यथा गतिशील-अङ्गुलयः छिद्राणि स्पृशन्ति तथा आस्यस्य गतिशील-भागाः करणानि (Karana) भूत्वा स्थानं स्पृशन्ति।",
-  "difficulty": "easy",
+  "correctIndex": 1,
+  "explanation": "न (असत्यम्)। तालव्य-वर्णानां कृते जिह्वा-मध्यः करणं भवति, मूर्धन्य-वर्णानां कृते जिह्वा-उपाग्रः भवति।",
+  "difficulty": "medium",
   "points": 10
 },
 {
   "id": "g8-ch13-q2-3",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: स्थानं करणञ्च (Places & Active Articulators)",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी २)",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "Quiz 2: Articulatory Mechanisms: Sthana & Karana",
-  "question": "दन्त्यानां वर्णानाम् (Dental letters) उच्चारणसमये जिह्वायाः कः भागः करणं भवति? (Which part of the tongue is the Karana for dental letters?)",
-  "questionSanskrit": "दन्त्यवर्णानाम् उच्चारणे जिह्वायाः कः भागः करणम्?",
+  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – आम् / न (True or False)",
+  "question": "ओष्ठ्यानां वर्णानाम् उच्चारणे जिह्वा प्रायः निष्क्रिया भवति। (आम् / न)",
+  "questionSanskrit": "ओष्ठ्यानां वर्णानाम् उच्चारणे जिह्वा प्रायः निष्क्रिया भवति।",
   "options": [
-    "A) जिह्वा-मूलम्",
-    "B) जिह्वा-मध्यः",
-    "C) जिह्वा-उपाग्रः",
-    "D) जिह्वा-अग्रः (Tip of the tongue)"
+    "A) आम् (True)",
+    "B) न (False)"
   ],
-  "correctIndex": 3,
-  "explanation": "दन्त्यानां वर्णानाम् उच्चारणे दन्तः स्थानं भवति, जिह्वायाः अग्रभागः (जिह्वाग्रम्) च करणं भवति।",
-  "difficulty": "medium",
+  "correctIndex": 0,
+  "explanation": "आम् (सत्यम्)। ओष्ठ्य-वर्णानाम् उच्चारणे स्वस्थानम् (अधरोष्ठः) एव करणं भवति, अत्र जिह्वा निष्क्रिया सुप्ता च तिष्ठति।",
+  "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch13-q2-4",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: स्थानं करणञ्च (Places & Active Articulators)",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी २)",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "Quiz 2: Articulatory Mechanisms: Sthana & Karana",
-  "question": "मुखे उपलभ्यमानानां स्थानानां 'बहिष्ठात् अन्तः' (बाहर से अंदर) समुचितः क्रमः कः? (What is the correct sequence of articulatory places from outside to inside?)",
-  "questionSanskrit": "स्थानानां बहिष्ठात् अन्तः क्रमः कः?",
+  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – आम् / न (True or False)",
+  "question": "व्यञ्जन-वर्णाः उच्चारणार्थं स्वरं प्रति पराश्रिताः भवन्ति। (आम् / न)",
+  "questionSanskrit": "व्यञ्जन-वर्णाः उच्चारणार्थं स्वरं प्रति पराश्रिताः भवन्ति।",
   "options": [
-    "A) कण्ठः ➔ तालु ➔ मूर्धा ➔ दन्तः ➔ ओष्ठः",
-    "B) ओष्ठः ➔ दन्तः ➔ मूर्धा ➔ तालु ➔ कण्ठः",
-    "C) दन्तः ➔ ओष्ठः ➔ कण्ठः ➔ मूर्धा ➔ तालु",
-    "D) मूर्धा ➔ कण्ठः ➔ तालु ➔ दन्तः ➔ ओष्ठः"
+    "A) आम् (True)",
+    "B) न (False)"
   ],
-  "correctIndex": 1,
-  "explanation": "बाह्यतः आन्तरिक-क्रमेण सर्वप्रथमम् ओष्ठः, ततो दन्तः, ततो मूर्धा, ततस्तालु, अन्ते च कण्ठः भवति।",
-  "difficulty": "medium",
+  "correctIndex": 0,
+  "explanation": "आम् (सत्यम्)। 'अन्वग् भवति व्यञ्जनम्' अर्थात् व्यञ्जनानि उच्चारणे स्वतन्त्राणि न भवन्ति, तानि स्वरम् आश्रित्यैव उच्चार्यन्ते।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q2-5",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी २)",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – आम् / न (True or False)",
+  "question": "नासिका-स्थानस्य कृते नासिका एव करणं भवति। (आम् / न)",
+  "questionSanskrit": "नासिका-स्थानस्य कृते नासिका एव करणं भवति।",
+  "options": [
+    "A) आम् (True)",
+    "B) न (False)"
+  ],
+  "correctIndex": 0,
+  "explanation": "आम् (सत्यम्)। नासिक्याः वर्णाः स्वस्थानकरणाः सन्ति — नासिका-मूलस्य उपरिभागः स्थानं, अधोभागश्च करणं भवति।",
+  "difficulty": "easy",
   "points": 10
 }
 ];
