@@ -50,7 +50,7 @@ export const WORKSHEET_CATEGORIES = [
   { id: 'grammar', label: 'Vyākaraṇa / Grammar (10 Worksheets · व्याकरण-पत्राणि)', icon: '📐' },
   { id: 'vedic_maths', label: 'Vedic Maths Drills (वैदिक-गणितम्)', icon: '⚡' },
   { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
-  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 6 Worksheets)', icon: '🪕' },
+  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 11 Worksheets)', icon: '🪕' },
 ] as const;
 
 export const WORKSHEETS: Worksheet[] = [
@@ -7505,6 +7505,386 @@ export const WORKSHEETS: Worksheet[] = [
             type: 'short_ans',
             answer: 'चित्तं कीदृशम् अस्तु? (अथवा: किम् सौमनस्यपूर्णम् अस्तु?)',
             explanation: "'सौमनस्यपूर्णम्' विशेषणम् अस्ति, अतः 'कीदृशम्' प्रयुज्यते। यदि 'चित्तम्' रेखाङ्कितं तर्हि 'किम्' प्रयुज्यते।",
+          },
+        ],
+      },
+    ],
+  },
+
+
+  // ==========================================
+  // GRADE 8 CH 2 WORKSHEET 1: Prose Comprehension & Context
+  // ==========================================
+  {
+    id: 'ws-grade8-ch2-ws1',
+    title: 'Chapter 2 Worksheet 1: Prose Comprehension & Context (पठित-अवबोधनम्)',
+    titleSanskrit: 'द्वितीयः पाठः कार्यपत्रिका १: गद्यांशावबोधनम् — अल्पानामपि वस्तूनां संहतिः',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '45 Mins',
+    description: 'Extract-based analysis from Page 12: Godavari tree, Chitragriva, the hunter, chronological sequencing (घटनाक्रमः), and vocabulary fill-in-the-blanks.',
+    sections: [
+      {
+        sectionTitle: 'Section A: Extract-Based Questions (पठित-अवबोधनम्)',
+        sectionTitleSanskrit: 'खण्डः "क" · पठित-अवबोधनम्',
+        instructions: 'Read the passage below from page 12 carefully and answer the questions:\n\n"अस्ति गोदावरीतीरे एको विशालः शाल्मलीतरुः। तत्र प्रतिदिनं दूरदेशात् पक्षिणः आगत्य निवसन्ति स्म। अथ कदाचित् तत्र कश्चिद् व्याधस्तण्डुलकणान्विकीर्य जालं विस्तीर्य च प्रच्छन्नो भूत्वा स्थितः। तस्मिन्नेव काले चित्रग्रीवनामा कपोतराजः सपरिवारः आकाशमार्गे गच्छति स्म। केचन कपोताः वनमध्ये तण्डुलकणान् अवलोक्य लोभाकृष्टाः अभवन्।"',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'गोदावरीतीरे कः वृक्षः आसीत्? (Which tree was located on the banks of Godavari?)',
+            questionSanskrit: 'गोदावरीतीरे कः वृक्षः आसीत्?',
+            marks: 1,
+            type: 'short_ans',
+            answer: 'शाल्मलीतरुः (शाल्मलीवृक्षः)',
+            explanation: 'गद्यांशे स्पष्टम् उक्तम् — "अस्ति गोदावरीतीरे एको विशालः शाल्मलीतरुः।"',
+          },
+          {
+            num: 2,
+            question: 'कपोतराजस्य नाम किम् आसीत्? (What was the name of the king of doves?)',
+            questionSanskrit: 'कपोतराजस्य नाम किम् आसीत्?',
+            marks: 1,
+            type: 'short_ans',
+            answer: 'चित्रग्रीवः',
+            explanation: 'कपोतानां राजा चित्रग्रीवः आसीत्।',
+          },
+          {
+            num: 3,
+            question: 'व्याधः (शिकारी) वने किं कृतवान्? (What did the hunter do in the forest?)',
+            questionSanskrit: 'व्याधः वने किं कृतवान्?',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'व्याधः वने तण्डुलकणान् विकीर्य जालं विस्तीर्य च प्रच्छन्नो भूत्वा अतिष्ठत्।',
+            explanation: 'व्याधेन कपोतानां बन्धनार्थं तण्डुलकणाः विकीर्णाः जालं च विस्तीर्णम्।',
+          },
+          {
+            num: 4,
+            question: 'कपोताः किमर्थं लोभाकृष्टाः अभवन्? (Why were the doves attracted by greed?)',
+            questionSanskrit: 'कपोताः किमर्थं लोभाकृष्टाः अभवन्?',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'कपोताः वनमध्ये भूमौ पतितान् तण्डुलकणान् अवलोक्य लोभाकृष्टाः अभवन्।',
+            explanation: 'निर्जने वने तण्डुलकणान् दृष्ट्वा कपोताः खादन-लोभेन आकृष्टाः अभवन्।',
+          },
+          {
+            num: 5,
+            question: "'विशालः शाल्मलीतरुः' – अत्र विशेषणपदं किम्?",
+            questionSanskrit: "'विशालः शाल्मलीतरुः' – विशेषणपदं किम्?",
+            marks: 1,
+            type: 'mcq',
+            options: ['(क) विशालः', '(ख) शाल्मलीतरुः', '(ग) तरुः', '(घ) गोदावरीतीरे'],
+            answer: '(क) विशालः',
+            explanation: "'शाल्मलीतरुः' विशेष्यपदम् अस्ति, तस्य गुणं वर्णयन् 'विशालः' विशेषणपदम् अस्ति।",
+          },
+          {
+            num: 6,
+            question: "गद्यांशे 'वृक्षः' इत्यर्थे किं पदं प्रयुक्तम्?",
+            questionSanskrit: "गद्यांशे 'वृक्षः' इत्यर्थे किं पदं प्रयुक्तम्?",
+            marks: 1,
+            type: 'mcq',
+            options: ['(क) व्याधः', '(ख) तरुः', '(ग) जालम्', '(घ) विस्तीर्य'],
+            answer: '(ख) तरुः',
+            explanation: "'तरुः' वृक्षस्य पर्यायवाचकं पदम् अस्ति।",
+          },
+          {
+            num: 7,
+            question: "'पक्षिणः' इति कर्तृपदस्य क्रियापदं किम्?",
+            questionSanskrit: "'पक्षिणः' इति कर्तृपदस्य क्रियापदं किम्?",
+            marks: 1,
+            type: 'mcq',
+            options: ['(क) निवसन्ति स्म', '(ख) आगत्य', '(ग) गच्छति स्म', '(घ) अभवन्'],
+            answer: '(क) निवसन्ति स्म',
+            explanation: "'पक्षिणः आगत्य निवसन्ति स्म' — अत्र 'पक्षिणः' कर्तुः मुख्यं क्रियापदं 'निवसन्ति स्म' अस्ति।",
+          },
+          {
+            num: 8,
+            question: "'समीपदेशात्' इति पदस्य विलोमपदं गद्यांशात् चित्वा लिखत:",
+            questionSanskrit: "'समीपदेशात्' इति पदस्य विलोमपदं गद्यांशात् चित्वा लिखत:",
+            marks: 1,
+            type: 'mcq',
+            options: ['(क) निर्जने', '(ख) दूरदेशात्', '(ग) वनमध्ये', '(घ) आकाशमार्गे'],
+            answer: '(ख) दूरदेशात्',
+            explanation: "'समीपदेशात्' (पास के देश से) इत्यस्य विलोमपदं 'दूरदेशात्' (दूर देश से) भवति।",
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: Textual Sequencing & Vocabulary (घटनाक्रमः रिक्तस्थानपूर्तिः च)',
+        sectionTitleSanskrit: 'खण्डः "ख" · घटनाक्रमः रिक्तस्थानपूर्तिः च',
+        instructions: 'Rearrange sentences chronologically and fill in blanks from textbook terms:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 9,
+            question: 'घटनाक्रमानुसारं लिखत (Rearrange in chronological story order):\n(क) सर्वे कपोताः भूमौ अवतीर्य जालेन बद्धाः अभवन्।\n(ख) हिरण्यकः स्वदन्तबलेन सर्वेषां कपोतानां बन्धनानि च्छिन्नवान्।\n(ग) चित्रग्रीवः कपोतान् अवदत् यत् अविचारितं कर्म न कर्तव्यम्।\n(घ) सर्वे पक्षिणः एकचित्तीभूय जालमादाय उत्पतिताः।\n(ङ) वने कश्चिद् व्याधः तण्डुलकणान् विकीर्य जालं विस्तीर्य स्थितः।',
+            questionSanskrit: 'घटनाक्रमानुसारं वाक्यानि पुनर्लिखत:',
+            marks: 5,
+            type: 'short_ans',
+            answer: '१. वने कश्चिद् व्याधः तण्डुलकणान् विकीर्य जालं विस्तीर्य स्थितः।\n२. चित्रग्रीवः कपोतान् अवदत् यत् अविचारितं कर्म न कर्तव्यम्।\n३. सर्वे कपोताः भूमौ अवतीर्य जालेन बद्धाः अभवन्।\n४. सर्वे पक्षिणः एकचित्तीभूय जालमादाय उत्पतिताः।\n५. हिरण्यकः स्वदन्तबलेन सर्वेषां कपोतानां बन्धनानि च्छिन्नवान्।',
+            explanation: 'कथायाः क्रमः: व्याधस्य जालग्रसारणम् ➔ चित्रग्रीवस्य निषेधः ➔ कपोतानां बन्धनम् ➔ जालमादाय उड्डयनम् ➔ हिरण्यकेन पाशकर्तनम्।',
+          },
+          {
+            num: 10,
+            question: 'रिक्तस्थानानि पूरयत (Fill in the blanks using terms from page 21 [ विस्मयः / हिरण्यको / अवपातभयात् / जालमादाय / पश्चात् ]):\n१. सर्वैः एकचित्तीभूय ______________ उड्डीयताम्।\n२. जालापहारकान् तान् अवलोक्य व्याधः ______________ अधावत्।\n३. गण्डकीतीरे ______________ नाम मूषकराजः निवसति।\n४. हिरण्यकः कपोतानाम् ______________ चकितस्तूष्णीं स्थितः।\n५. यतोहि विपत्काले ______________ एव कापुरुषलक्षणम्।',
+            questionSanskrit: 'कोष्ठकात् उचितं पदं चित्वा रिक्तस्थानानि पूरयत:',
+            marks: 5,
+            type: 'fill',
+            options: ['१. जालमादाय', '२. पश्चात्', '३. हिरण्यको', '४. अवपातभयात्', '५. विस्मयः'],
+            answer: '१. जालमादाय, २. पश्चात्, ३. हिरण्यको, ४. अवपातभयात्, ५. विस्मयः',
+            explanation: 'पाठान्तर्गतवाक्यानि: जालमादाय उड्डीयताम्; पश्चाद् अधावत्; हिरण्यको नाम मूषकराजः; अवपातभयात् चकितस्तूष्णीं स्थितः; विपत्काले विस्मयः एव कापुरुषलक्षणम्।',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ==========================================
+  // GRADE 8 CH 2 WORKSHEET 2: Verse Analysis & Application
+  // ==========================================
+  {
+    id: 'ws-grade8-ch2-ws2',
+    title: 'Chapter 2 Worksheet 2: Verse Analysis & Application (श्लोकार्थः अन्वयः च)',
+    titleSanskrit: 'द्वितीयः पाठः कार्यपत्रिका २: श्लोकावबोधनम् — विपदि धैर्यम्',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '40 Mins',
+    description: 'Hitopadesha classic verse analysis: विपदि धैर्यमथाभ्युदये क्षमा, word breakdown, anvaya completion, matching terms, and Hitopadesha literary history.',
+    sections: [
+      {
+        sectionTitle: 'Section A: Shloka Textual Analysis (श्लोक-विश्लेषणम्)',
+        sectionTitleSanskrit: 'खण्डः "क" · श्लोक-विश्लेषणम्',
+        instructions: 'Analyze the structural verse from page 12 and resolve the queries:\n\n"विपदि धैर्यमथाभ्युदये क्षमा, सदसि वाक्पटुता युधि विक्रमः।\nयशसि चाभिरुचिर्व्यसनं श्रुतौ, प्रकृतिसिद्धमिदं हि महात्मनाम्॥ २ ॥"',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'महात्मनां कुत्र विक्रमः भवति? (Where do noble souls exhibit valor?)',
+            questionSanskrit: 'महात्मनां कुत्र विक्रमः भवति?',
+            marks: 1,
+            type: 'short_ans',
+            answer: 'युधि (युद्धे)',
+            explanation: 'श्लोके उक्तम् — "युधि विक्रमः" अर्थात् युद्धे महात्मनां पराक्रमः भवति।',
+          },
+          {
+            num: 2,
+            question: 'महात्मनां कस्मिन् विषये अभिरुचिः भवति? (In what do noble souls cultivate keen interest?)',
+            questionSanskrit: 'महात्मनां कस्मिन् विषये अभिरुचिः भवति?',
+            marks: 1,
+            type: 'short_ans',
+            answer: 'यशसि (कीर्तौ)',
+            explanation: '"यशसि चाभिरुचिः" — महात्मनाम् अभिरुचिः सत्कीर्तौ भवति।',
+          },
+          {
+            num: 3,
+            question: 'महात्मनां स्वभावे (प्रकृतौ) कानि लक्षणानि सिद्धानि भवन्ति? (Which virtues are naturally inherent in great souls?)',
+            questionSanskrit: 'महात्मनां स्वभावे कानि लक्षणानि सिद्धानि भवन्ति?',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'विपत्तौ धैर्यम्, उन्नतौ क्षमा, सभायां वाक्पटुता, युद्धे पराक्रमः, यशसि प्रीतिः, शास्त्रेषु च अनुरागः महात्मनां स्वभावे सिद्धानि भवन्ति।',
+            explanation: 'एतानि षड् लक्षणानि महात्मनां प्रकृतिसिद्धानि (स्वाभाविकाः गुणाः) सन्ति।',
+          },
+          {
+            num: 4,
+            question: "'विपदि' तथा 'अभ्युदये' महात्मनः किं कुर्वन्ति? (What do great souls practice in adversity and prosperity?)",
+            questionSanskrit: "'विपदि' तथा 'अभ्युदये' महात्मनः किं कुर्वन्ति?",
+            marks: 2,
+            type: 'short_ans',
+            answer: 'महात्मनः विपदि (संकटे) धैर्यम् अवलम्बन्ते तथा अभ्युदये (समृद्धौ) क्षमाभावं प्रदर्शयन्ति।',
+            explanation: 'आपत्काले धैर्यं तथा समृद्धिकाले क्षमाशीलता महात्मनां मुख्यं भूषणम् अस्ति।',
+          },
+          {
+            num: 5,
+            question: 'अन्वय-पूर्तिः (Complete the structural verse alignment using [ क्षमा / धैर्यम् / श्रुतौ / महात्मनाम् ]):\n"अथ विपदि (१) ______________ , अभ्युदये (२) ______________ , सदसि वाक्पटुता, युधि विक्रमः, यशसि अभिरुचिः, (३) ______________ व्यसनं च, इदं हि (४) ______________ प्रकृतिसिद्धं भवति।"',
+            questionSanskrit: 'उचितपदैः अन्वय-पूर्तिं कुरुत:',
+            marks: 4,
+            type: 'fill',
+            options: ['(१) धैर्यम्', '(२) क्षमा', '(३) श्रुतौ', '(४) महात्मनाम्'],
+            answer: '(१) धैर्यम्, (२) क्षमा, (३) श्रुतौ, (४) महात्मनाम्',
+            explanation: 'श्लोकस्यान्वयः: विपदि धैर्यम्, अभ्युदये क्षमा, सदसि वाक्पटुता, युधि विक्रमः, यशसि अभिरुचिः, श्रुतौ व्यसनं च, इदं हि महात्मनां प्रकृतिसिद्धम्।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: Practical Vocabulary & Literary Context (शब्दार्यः ग्रन्थपरिचयः च)',
+        sectionTitleSanskrit: 'खण्डः "ख" · शब्दार्थाः ग्रन्थपरिचयः च',
+        instructions: 'Match the poetic terms with contextual meanings and answer literary background questions:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 6,
+            question: 'परस्परं मेलनम् (Match text terms with their meanings):\n(क) विपदि ➔ ?\n(ख) अभ्युदये ➔ ?\n(ग) सदसि ➔ ?\n(घ) युधि ➔ ?\n(ङ) श्रुतौ ➔ ?',
+            questionSanskrit: 'पदानि अर्थैः सह योजयत:',
+            marks: 5,
+            type: 'matching',
+            options: ['(क) विपदि ➔ (४) संकटे', '(ख) अभ्युदये ➔ (५) उन्नतौ / समृद्धौ', '(ग) सदसि ➔ (२) सभायाम्', '(घ) युधि ➔ (१) युद्धे', '(ङ) श्रुतौ ➔ (३) शास्त्रेषु'],
+            answer: '(क)-(४) संकटे, (ख)-(५) उन्नतौ/समृद्धौ, (ग)-(२) सभायाम्, (घ)-(१) युद्धे, (ङ)-(३) शास्त्रेषु',
+            explanation: 'विपदि = संकटे (in adversity); अभ्युदये = समृद्धौ (in prosperity); सदसि = सभायाम् (in assembly); युधि = युद्धे (in battle); श्रुतौ = वेदेषु/शास्त्रेषु (in sacred scriptures).',
+          },
+          {
+            num: 7,
+            question: 'लघुपाठ्यविवरणम् (Hitopadesha literary history):\n१. हितोपदेशग्रन्थस्य लेखकः कः अस्ति? ➔ ________________________\n२. हितोपदेशे कति प्रकरणानि सन्ति? ➔ ________________________\n३. अयं पाठः हितोपदेशस्य कस्मात् प्रकरणात् स्वीकृतः? ➔ ________________________',
+            questionSanskrit: 'ग्रन्थपरिचयाधारित-प्रश्नानाम् उत्तराणि लिखत:',
+            marks: 5,
+            type: 'short_ans',
+            answer: '१. नारायणपण्डितः (Pandit Narayana); २. चत्वारि (४) प्रकरणानि (मित्रलाभः, सुहृद्भेदः, विग्रहः, सन्धिः); ३. मित्रलाभ-प्रकरणात् (From Mitralabha)',
+            explanation: 'हितोपदेशस्य रचयिता नारायणपण्डितः अस्ति, यस्मिन् चत्वारि प्रकरणानि सन्ति। एषा कथा मित्रलाभ-प्रकरणे आगच्छति।',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ==========================================
+  // GRADE 8 CH 2 WORKSHEET 3: Lyap-Pratyaya Structural Mechanics
+  // ==========================================
+  {
+    id: 'ws-grade8-ch2-ws3',
+    title: 'Chapter 2 Worksheet 3: Lyap-Pratyaya Structural Mechanics (ल्यप्-प्रत्ययः)',
+    titleSanskrit: 'द्वितीयः पाठः कार्यपत्रिका ३: ल्यप्-प्रत्ययः संयोगः विभागः च',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '45 Mins',
+    description: 'Deep dive into Page 18-19 grammar tables: combining Prefix + Dhatu + Lyap, isolating root components, and mastering gerund rules.',
+    sections: [
+      {
+        sectionTitle: 'Section A: Direct Grammatical Math Synthesis (ल्यप्-प्रत्यय-संयोजनम्)',
+        sectionTitleSanskrit: 'खण्डः "क" · प्रत्यय-संयोगः',
+        instructions: 'Combine the core structural blocks into a unified Lyap-Pratyaya output word:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'प्रत्ययसंयोगं कुरुत (Combine Prefix + Root + Lyap):\n१. आ + गम् + ल्यप् ➔ ___________________________\n२. उत् + स्था + ल्यप् ➔ ___________________________\n३. प्र + नम् + ल्यप् ➔ ___________________________\n४. वि + स्मृ + ल्यप् ➔ ___________________________\n५. अव + लोक् + ल्यप् ➔ ___________________________\n६. वि + कॄ + ल्यप् ➔ ___________________________\n७. अव + तृ + ल्यप् ➔ ___________________________\n८. वि + स्तॄ + ल्यप् ➔ ___________________________\n९. अव + लम्ब् + ल्यप् ➔ ___________________________\n१०. निर् + मा + ल्यप् ➔ ___________________________',
+            questionSanskrit: 'ल्यप्-प्रत्यय-संयोगेन पदानि रचयत:',
+            marks: 10,
+            type: 'grammar',
+            answer: '१. आगत्य, २. उत्थाय, ३. प्रणम्य (प्रणत्य), ४. विस्मृत्य, ५. अवलोक्य, ६. विकीर्य, ७. अवतीर्य, ८. विस्तीर्य, ९. अवलम्ब्य, १०. निर्माय',
+            explanation: 'ल्यप्-प्रत्ययस्य "य" अवशिष्यते। धातुपूर्वे उपसर्गसद्भावे क्त्वा-स्थाने ल्यप् भवति।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: Morphological Component Isolation (प्रकृति-प्रत्यय-विभागः)',
+        sectionTitleSanskrit: 'खण्डः "ख" · प्रकृति-प्रत्यय-विभागः',
+        instructions: 'Deconstruct action words into clean Prefix + Dhatu + Pratyaya parameters:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 2,
+            question: 'अवयव-विभागं कुरुत (Isolate Prefix + Verb + Suffix):\n१. आनीय ➔ ___________ + ___________ + ___________\n२. उपकृत्य ➔ ___________ + ___________ + ___________\n३. निश्चित्य ➔ ___________ + ___________ + ___________\n४. प्रक्षाल्य ➔ ___________ + ___________ + ___________\n५. विस्तीर्य ➔ ___________ + ___________ + ___________',
+            questionSanskrit: 'पदानां प्रकृति-प्रत्यय-विभागं कुरुत:',
+            marks: 10,
+            type: 'grammar',
+            answer: '१. आ + नी + ल्यप्; २. उप + कृ + ल्यप्; ३. निस् (निर्) + चि + ल्यप्; ४. प्र + क्षल् + ल्यप्; ५. वि + स्तॄ + ल्यप्',
+            explanation: 'आनीय = आ + नी + ल्यप्; उपकृत्य = उप + कृ + ल्यप्; निश्चित्य = निस् + चि + ल्यप्; प्रक्षाल्य = प्र + क्षल् + ल्यप्; विस्तीर्य = वि + स्तॄ + ल्यप्।',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ==========================================
+  // GRADE 8 CH 2 WORKSHEET 4: Visarga Sandhi Transformation Patterns
+  // ==========================================
+  {
+    id: 'ws-grade8-ch2-ws4',
+    title: 'Chapter 2 Worksheet 4: Visarga Sandhi Transformation Patterns (विसर्गसन्धिः)',
+    titleSanskrit: 'द्वितीयः पाठः कार्यपत्रिका ४: विसर्गसन्धिः नियमाः संयोगाः विच्छेदाः च',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '40 Mins',
+    description: 'Phonetics & Visarga rules from Page 17: sibilants (श्/स्), Utva (ओ), and Avagraha (ऽ) join and split operations.',
+    sections: [
+      {
+        sectionTitle: 'Section A: Joining Operations (सन्धिं कुरुत)',
+        sectionTitleSanskrit: 'खण्डः "क" · सन्धिं कुरुत',
+        instructions: 'Perform character transitions according to explicit textbook mechanics rules:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'सन्धिं कुरुत (Apply Visarga Sandhi rules):\n१. कः + चित् ➔ ___________________________\n२. प्रतीकारः + चिन्त्यताम् ➔ ___________________________\n३. देवदत्तः + छलेन ➔ ___________________________\n४. चकितः + तूष्णीम् ➔ ___________________________\n५. नीतिः + तावत् ➔ ___________________________\n६. हिरण्यकः + नाम ➔ ___________________________\n७. व्याधः + निवृत्तः ➔ ___________________________\n८. कुतः + अत्र ➔ ___________________________\n९. हितः + अपि ➔ ___________________________\n१०. सः + अस्माकम् ➔ ___________________________',
+            questionSanskrit: 'सन्धिं कुरुत:',
+            marks: 10,
+            type: 'grammar',
+            answer: '१. कश्चित्, २. प्रतीकारश्चिन्त्यताम्, ३. देवदत्तश्छलेन, ४. चकितस्तूष्णीम्, ५. नीतिस्तावत्, ६. हिरण्यको नाम, ७. व्याधो निवृत्तः, ८. कुतोऽत्र, ९. हितोऽपि, १०. सोऽस्माकम्',
+            explanation: 'च/छ परे विसर्गस्य श्; त/थ परे विसर्गस्य स्; घोषव्यञ्जने परे विसर्गस्य ओ; अकारे परे विसर्गस्य ओ तथा अकारस्य अवग्रहः (ऽ)।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: Disjoining Operations (सन्धि-विच्छेदं कुरुत)',
+        sectionTitleSanskrit: 'खण्डः "ख" · सन्धि-विच्छेदम्',
+        instructions: 'Isolate compound variables back into their base lexical formats:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 2,
+            question: 'सन्धिविच्छेदं कुरुत:\n१. चित्रग्रीवोऽवदत् ➔ ____________________ + ____________________\n२. बालकोऽत्र ➔ ____________________ + ____________________\n३. उपायश्चिन्तनीयः ➔ ____________________ + ____________________\n४. व्याधस्तत्र ➔ ____________________ + ____________________\n५. हिरण्यकोऽप्याह ➔ ____________________ + ____________________ + ____________________\n६. मूषकराजोगण्डकीतीरे ➔ ____________________ + ____________________',
+            questionSanskrit: 'पदानां सन्धिविच्छेदं कुरुत:',
+            marks: 10,
+            type: 'grammar',
+            answer: '१. चित्रग्रीवः + अवदत्; २. बालकः + अत्र; ३. उपायः + चिन्तनीयः; ४. व्याधः + तत्र; ५. हिरण्यकः + अपि + आह; ६. मूषकराजः + गण्डकीतीरे',
+            explanation: 'ओऽ ➔ ः + अ; श् ➔ ः; स् ➔ ः; ओ + घोषवर्ण ➔ ः + घोषवर्ण; हिरण्यकोऽप्याह = हिरण्यकः + अपि + आह।',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ==========================================
+  // GRADE 8 CH 2 WORKSHEET 5: Case Matching & Compound Parsing
+  // ==========================================
+  {
+    id: 'ws-grade8-ch2-ws5',
+    title: 'Chapter 2 Worksheet 5: Case Matching & Compound Parsing (समास-विग्रहः)',
+    titleSanskrit: 'द्वितीयः पाठः कार्यपत्रिका ५: समस्तपदानि वाक्य-संयोजनम् च',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '40 Mins',
+    description: 'Sourced directly from Page 21 Exercise 7: Samasa formation, target case inflections, and sentence merging using the Lyap-Pratyaya structure.',
+    sections: [
+      {
+        sectionTitle: 'Section A: Complex Target Samasa Conversions (समस्तपद-रचना)',
+        sectionTitleSanskrit: 'खण्डः "क" · समस्तपद-विभक्ति-रूपाणि',
+        instructions: 'Provide the correct combined compound term and its specific contextual case inflection form:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'समस्तपदानि विभक्ति-रूपाणि च लिखत (Form compound and declined form):\n१. गण्डक्याः तीरम् ➔ समस्तपदम्: ______________ ➔ (सप्तमी विभक्तिः): गण्डकीतीरे\n२. तण्डुलानां कणाः ➔ समस्तपदम्: ______________ ➔ (द्वितीया बहुवचनम्): ______________\n३. जालस्य अपहारकाः ➔ समस्तपदम्: ______________ ➔ (द्वितीया बहुवचनम्): ______________\n४. अवपातात् भयम् ➔ समस्तपदम्: ______________ ➔ (पञ्चमी विभक्तिः): ______________\n५. कापुरुषाणां लक्षणम् ➔ समस्तपदम्: ______________ ➔ (सप्तमी विभक्तिः): ______________',
+            questionSanskrit: 'समस्तपदानि विभक्त्यनुसारं लिखत:',
+            marks: 10,
+            type: 'grammar',
+            answer: '१. गण्डकीतीरम् (गण्डकीतीरे); २. तण्डुलकणाः ➔ तण्डुलकणान्; ३. जालापहारकाः ➔ जालापहारकान्; ४. अवपातभयम् ➔ अवपातभयात्; ५. कापुरुषलक्षणम् ➔ कापुरुषलक्षणे (वा कापुरुषलक्षणम्)',
+            explanation: 'षष्ठी/पञ्चमी तत्पुरुष-समासः: तण्डुलानां कणाः = तण्डुलकणाः (द्वितीया-बहुवचने तण्डुलकणान्); जालस्य अपहारकाः = जालापहारकाः (जालापहारकान्); अवपातात् भयम् = अवपातभयम् (अवपातभयात्); कापुरुषाणां लक्षणम् = कापुरुषलक्षणम्।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: Multi-Sentence Active Verb Conversions (ल्यप्-प्रत्ययेन वाक्य-संयोजनम्)',
+        sectionTitleSanskrit: 'खण्डः "ख" · वाक्य-संयोजनम्',
+        instructions: 'Re-factor multi-action clauses using the unified Lyap-Pratyaya structure (Page 20, Exercise 3):',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 2,
+            question: 'ल्यप्-प्रत्ययं प्रयुज्य वाक्यद्वयं योजयत:\n१. भक्तः मन्दिरम् आगच्छति। पूजां करोति। ➔ __________________________________________________________________\n२. माता भोजनं निर्माति। पुत्राय ददाति। ➔ __________________________________________________________________\n३. रमा पुस्तकं स्वीकरोति। विद्यालयं गच्छति। ➔ __________________________________________________________________\n४. अहं गृहम् आगच्छामि। भोजनं करोमि। ➔ __________________________________________________________________',
+            questionSanskrit: 'वाक्यानि योजयत:',
+            marks: 10,
+            type: 'grammar',
+            answer: '१. भक्तः मन्दिरम् आगत्य पूजां करोति।\n२. माता भोजनं निर्माय पुत्राय ददाति।\n३. रमा पुस्तकं स्वीकृत्य विद्यालयं गच्छति।\n४. अहं गृहम् आगत्य भोजनं करोमि।',
+            explanation: 'आ + गम् + ल्यप् = आगत्य; निर् + मा + ल्यप् = निर्माय; स्वी + कृ + ल्यप् = स्वीकृत्य; आ + गम् + ल्यप् = आगत्य।',
           },
         ],
       },

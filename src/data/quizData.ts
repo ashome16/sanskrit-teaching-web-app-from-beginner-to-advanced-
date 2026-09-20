@@ -35,7 +35,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
   { id: 'grade8_prarthana', label: 'Grade 8: सरस्वतीप्रार्थना (2 Quizzes · 10 Qs)', icon: '🪕' },
   { id: 'grade8_ch1', label: 'Grade 8 Ch 1: संगच्छध्वं संवदध्वम् (7 Quizzes · 45 Qs)', icon: '🏛️' },
-  { id: 'grade8_ch2', label: 'Grade 8 Ch 2: अल्पानामपि वस्तूनां संहतिः (3 Quizzes · 15 Qs)', icon: '🕊️' },
+  { id: 'grade8_ch2', label: 'Grade 8 Ch 2: अल्पानामपि वस्तूनां संहतिः (5 Quizzes · 21 Qs)', icon: '🕊️' },
 ] as const;
 
 export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
@@ -10318,6 +10318,125 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
     ],
     correctIndex: 0,
     explanation: '"प्रतीकारः" means finding a practical remedy or countermeasure to resolve an impending crisis.',
+    difficulty: 'easy',
+    points: 10,
+  },
+
+
+  // --- Quiz 4: Lyap-Pratyaya Structure Mechanics (ल्यप-प्रत्ययः · 3 Qs) ---
+  {
+    id: 'g8-ch2-q4-1',
+    category: 'grade8_ch2',
+    categoryLabel: 'Grade 8 Ch 2: अल्पानामपि वस्तूनां संहतिः',
+    chapterRef: 'Grade 8: द्वितीयः पाठः — अल्पानामपि वस्तूनां संहतिः कार्यसाधिका',
+    subCategory: 'Quiz 4: Lyap-Pratyaya Structure Mechanics',
+    question: "Sanskrit grammar rules state that when a root verb is preceded by a prefix (उपसर्गः), which suffix replaces the standard past-gerund suffix 'क्त्वा'?",
+    questionSanskrit: "यदा धातोः पूर्वम् उपसर्गः भवति, तदा 'क्त्वा' स्थाने कः प्रत्ययः प्रयुज्यते?",
+    options: [
+      'A) शतृ-प्रत्ययः',
+      'B) ल्यप-प्रत्ययः',
+      'C) तव्यत्-प्रत्ययः',
+      'D) तुमुन्-प्रत्ययः'
+    ],
+    correctIndex: 1,
+    explanation: "Correct! According to the rule on Page 17, if a prefix is attached before the Dhatu, 'क्त्वा' is replaced by 'ल्यप्', leaving only the terminal component 'य'. (Hint: Look closely at the suffix system analyzed in the grey box on page 17 of Chapter 2.)",
+    difficulty: 'easy',
+    points: 10,
+  },
+  {
+    id: 'g8-ch2-q4-2',
+    category: 'grade8_ch2',
+    categoryLabel: 'Grade 8 Ch 2: अल्पानामपि वस्तूनां संहतिः',
+    chapterRef: 'Grade 8: द्वितीयः पाठः — अल्पानामपि वस्तूनां संहतिः कार्यसाधिका',
+    subCategory: 'Quiz 4: Lyap-Pratyaya Structure Mechanics',
+    question: "What is the correct synthesized output word string when you combine the grammar variables: प्र + नम् + ल्यप्?",
+    questionSanskrit: "'प्र + नम् + ल्यप्' इत्यस्य संयुक्तं रूपं किम्?",
+    options: [
+      'A) प्रनम्य',
+      'B) प्रणम्य (अथवा प्रणत्य)',
+      'C) प्रनमित्वा',
+      'D) प्रनमन'
+    ],
+    correctIndex: 1,
+    explanation: "Correct! As documented in the textbook verb table on Page 18, it resolves to either 'प्रणम्य' or 'प्रणत्य'. Due to internal phonetic rules triggered by 'प्र', the dental nasal 'न' changes to retroflex 'ण'.",
+    difficulty: 'medium',
+    points: 10,
+  },
+  {
+    id: 'g8-ch2-q4-3',
+    category: 'grade8_ch2',
+    categoryLabel: 'Grade 8 Ch 2: अल्पानामपि वस्तूनां संहतिः',
+    chapterRef: 'Grade 8: द्वितीयः पाठः — अल्पानामपि वस्तूनां संहतिः कार्यसाधिका',
+    subCategory: 'Quiz 4: Lyap-Pratyaya Structure Mechanics',
+    question: 'In the sentence "व्याधः जालं विस्तीर्य प्रच्छन्नो भूत्वा स्थितः", what are the internal components of the word "विस्तीर्य"?',
+    questionSanskrit: '"विस्तीर्य" इति पदस्य प्रकृति-प्रत्ययः कः?',
+    options: [
+      'A) वि + स्तार् + क्त्वा',
+      'B) वि + स्तॄ + ल्यप्',
+      'C) वि + तीर्य + ल्यप्',
+      'D) वि + स्थि + ल्यप्'
+    ],
+    correctIndex: 1,
+    explanation: "Correct! The root is 'स्तॄ' (to spread), with prefix 'वि' and suffix 'ल्यप्', forming 'विस्तीर्य' (having spread). (Hint: Check page 19 of the textbook, under the fifth entry row within the active grammar table map.)",
+    difficulty: 'medium',
+    points: 10,
+  },
+
+  // --- Quiz 5: Visarga Sandhi Transition Rules (विसर्गसन्धिः · 3 Qs) ---
+  {
+    id: 'g8-ch2-q5-1',
+    category: 'grade8_ch2',
+    categoryLabel: 'Grade 8 Ch 2: अल्पानामपि वस्तूनां संहतिः',
+    chapterRef: 'Grade 8: द्वितीयः पाठः — अल्पानामपि वस्तूनां संहतिः कार्यसाधिका',
+    subCategory: 'Quiz 5: Visarga Sandhi Transition Rules',
+    question: "According to the rules on page 17, when a trailing visarga is immediately followed by a 'च' or 'छ' character, what does the visarga transform into?",
+    questionSanskrit: "विसर्गात् परं 'च' वा 'छ' वर्णे सति विसर्गस्य किं परिवर्तनं भवति?",
+    options: [
+      'A) सकारः (स्)',
+      'B) शकारः (श्)',
+      'C) ओकारः (ओ)',
+      'D) र् (रेफः)'
+    ],
+    correctIndex: 1,
+    explanation: "Correct! The visarga shifts to an unvoiced palatal sibilant 'श्' when followed by palatal stops 'च' or 'छ' (e.g., कः + चित् = कश्चित्). (Hint: Look at the examples 'प्रतीकारः + चिन्त्यताम्' or 'कः + चित्' explicitly highlighted in the textbook guidelines.)",
+    difficulty: 'easy',
+    points: 10,
+  },
+  {
+    id: 'g8-ch2-q5-2',
+    category: 'grade8_ch2',
+    categoryLabel: 'Grade 8 Ch 2: अल्पानामपि वस्तूनां संहतिः',
+    chapterRef: 'Grade 8: द्वितीयः पाठः — अल्पानामपि वस्तूनां संहतिः कार्यसाधिका',
+    subCategory: 'Quiz 5: Visarga Sandhi Transition Rules',
+    question: "What is the correct Sandhi output when joining the segment inputs: 'हिरण्यकः + नाम'?",
+    questionSanskrit: "'हिरण्यकः + नाम' इत्यस्य सन्धिपदं किम्?",
+    options: [
+      'A) हिरण्यकस्नाम',
+      'B) हिरण्यकश्चनाम',
+      'C) हिरण्यको नाम',
+      'D) हिरण्यकऽनाम'
+    ],
+    correctIndex: 2,
+    explanation: "Correct! When a visarga is preceded by an 'अ' sound and followed by a class-3/4/5 voiced consonant (like 'न'), the combination resolves to an 'ओ' sound. (Hint: Review the third bullet point parameter block listed under the Visarga rules on Page 17.)",
+    difficulty: 'medium',
+    points: 10,
+  },
+  {
+    id: 'g8-ch2-q5-3',
+    category: 'grade8_ch2',
+    categoryLabel: 'Grade 8 Ch 2: अल्पानामपि वस्तूनां संहतिः',
+    chapterRef: 'Grade 8: द्वितीयः पाठः — अल्पानामपि वस्तूनां संहतिः कार्यसाधिका',
+    subCategory: 'Quiz 5: Visarga Sandhi Transition Rules',
+    question: "Join the following terms using the textbook's dual-vowel visarga framework: 'कुतः + अत्र'.",
+    questionSanskrit: "'कुतः + अत्र' इत्यस्य सन्धिपदं किम्?",
+    options: [
+      'A) कुतोऽत्र',
+      'B) कुतस्तत्र',
+      'C) कुतःअत्र',
+      'D) कुतश्चात्र'
+    ],
+    correctIndex: 0,
+    explanation: "Correct! When an 'अ' sound sits on both sides of a visarga boundary, the visarga turns to 'ओ' and the second 'अ' drops out, replaced by an avagraha 'ऽ'. (Hint: Look for the final rule row summary entry on page 17, which matches the textbook example 'सः + अस्माकम् = सोऽस्माकम्'.)",
     difficulty: 'easy',
     points: 10,
   },
