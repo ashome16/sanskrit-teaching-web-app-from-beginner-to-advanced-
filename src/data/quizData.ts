@@ -34,7 +34,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'vedic_maths', label: 'Vedic Mathematics (वैदिक-गणितम्)', icon: '⚡' },
   { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
   { id: 'grade8_prarthana', label: 'Grade 8: सरस्वतीप्रार्थना (2 Quizzes · 10 Qs)', icon: '🪕' },
-  { id: 'grade8_ch1', label: 'Grade 8 Ch 1: संगच्छध्वं संवदध्वम् (5 Quizzes · 35 Qs)', icon: '🏛️' },
+  { id: 'grade8_ch1', label: 'Grade 8 Ch 1: संगच्छध्वं संवदध्वम् (6 Quizzes · 40 Qs)', icon: '🏛️' },
   { id: 'grade8_ch2', label: 'Grade 8 Ch 2: अल्पानामपि वस्तूनां संहतिः (3 Quizzes · 15 Qs)', icon: '🕊️' },
 ] as const;
 
@@ -9830,6 +9830,103 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
     correctIndex: 2,
     explanation: "Correct! 'हविषा' is the instrumental singular (तृतीया विभक्ति एकवचन) form of the neuter consonant-ending noun 'हविष्'.",
     difficulty: 'medium',
+    points: 10,
+  },
+
+  // --- Quiz 6: Laṭ to Loṭ Transformations (Interactive Assessment · 5 Qs) ---
+  {
+    id: 'g8-ch1-q6-1',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: संगच्छध्वं संवदध्वम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 6: Laṭ to Loṭ Transformations',
+    question: 'Transform the sentence "यूयम् पाठं पठथ" (You all read the lesson) from Present Tense (Lat-Lakara) to Imperative Mood (Lot-Lakara).',
+    questionSanskrit: 'परिवर्तयत: "यूयम् पाठं पठथ" (लोट्-लकारे)',
+    options: [
+      'A) यूयम् पाठं पठन्तु',
+      'B) यूयम् पाठं पठत',
+      'C) यूयम् पाठं पठात',
+      'D) यूयम् पाठं पठामः'
+    ],
+    correctIndex: 1,
+    explanation: "Correct! For the subject 'यूयम्' (Madhyama Purusha Bahuvachana) in Lot-Lakara, the correct target ending is '-त' (पठत).",
+    difficulty: 'easy',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q6-2',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: संगच्छध्वं संवदध्वम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 6: Laṭ to Loṭ Transformations',
+    question: 'Change the sentence "आवाम् विद्यालयं गच्छावः" (We two go to school) into the Imperative Mood (Lot-Lakara).',
+    questionSanskrit: 'परिवर्तयत: "आवाम् विद्यालयं गच्छावः" (लोट्-लकारे)',
+    options: [
+      'A) आवाम् विद्यालयं गच्छताम्',
+      'B) आवाम् विद्यालयं गच्छाम',
+      'C) आवाम् विद्यालयं गच्छाव',
+      'D) आवाम् विद्यालयं गच्छथः'
+    ],
+    correctIndex: 2,
+    explanation: "Correct! For 'आवाम्' (Uttama Purusha Dvivachana) in Lot-Lakara, the appropriate suffix is '-आव' (गच्छाव).",
+    difficulty: 'medium',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q6-3',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: संगच्छध्वं संवदध्वम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 6: Laṭ to Loṭ Transformations',
+    question: 'What is the correct Imperative Mood (Lot-Lakara) form for the sentence "वयम् चित्रं पश्यामः" (We all see the picture)?',
+    questionSanskrit: 'परिवर्तयत: "वयम् चित्रं पश्यामः" (लोट्-लकारे)',
+    options: [
+      'A) वयम् चित्रं पश्याम',
+      'B) वयम् चित्रं पश्यन्तु',
+      'C) वयम् चित्रं पश्यानि',
+      'D) वयम् चित्रं पश्यत'
+    ],
+    correctIndex: 0,
+    explanation: "Correct! For 'वयम्' (Uttama Purusha Bahuvachana) in Lot-Lakara, the target ending is '-आम', making it 'पश्याम'.",
+    difficulty: 'medium',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q6-4',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: संगच्छध्वं संवदध्वम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 6: Laṭ to Loṭ Transformations',
+    question: 'Convert the Lat-Lakara sentence "त्वम् जलं पिबसि" (You drink water) into the Lot-Lakara (Imperative) form.',
+    questionSanskrit: 'परिवर्तयत: "त्वम् जलं पिबसि" (लोट्-लकारे)',
+    options: [
+      'A) त्वम् जलं पिबतु',
+      'B) त्वम् जलं पिबत',
+      'C) त्वम् जलं पिबाम',
+      'D) त्वम् जलं पिब'
+    ],
+    correctIndex: 3,
+    explanation: "Correct! For 'त्वम्' (Madhyama Purusha Ekavachana) in Lot-Lakara, there is no additional suffix, leaving just the bare root/base 'पिब'.",
+    difficulty: 'easy',
+    points: 10,
+  },
+  {
+    id: 'g8-ch1-q6-5',
+    category: 'grade8_ch1',
+    categoryLabel: 'Grade 8 Ch 1: संगच्छध्वं संवदध्वम्',
+    chapterRef: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम्',
+    subCategory: 'Quiz 6: Laṭ to Loṭ Transformations',
+    question: 'Transform the sentence "अहम् गृहं गच्छामि" (I go home) from Lat-Lakara to Lot-Lakara.',
+    questionSanskrit: 'परिवर्तयत: "अहम् गृहं गच्छामि" (लोट्-लकारे)',
+    options: [
+      'A) अहम् गृहं गच्छाव',
+      'B) अहम् गृहं गच्छानि',
+      'C) अहम् गृहं गच्छतु',
+      'D) अहम् गृहं गच्छाम'
+    ],
+    correctIndex: 1,
+    explanation: "Correct! For 'अहम्' (Uttama Purusha Ekavachana) in Lot-Lakara, the correct target ending is '-आनि', transforming 'गच्छामि' to 'गच्छानि'.",
+    difficulty: 'easy',
     points: 10,
   },
 
