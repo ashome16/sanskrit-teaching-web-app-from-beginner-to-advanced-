@@ -2304,3 +2304,19 @@
 जोडो|क्षुद्रजन्तवः|क्षुद्रजन्तवः|क,्,ष,ु,द,्,र,ज,न,्,त,वः|मादृशाः क्षुद्रजन्तवः जायन्ते म्रियन्ते च।|insignificant creatures|Mortal beings born and perishing constantly.
 
 
+
+# ========================================================
+# GRADE 8 DEEPAKAM VOCABULARY TILES (Chapter 12: सम्यग्वर्णप्रयोगेण)
+# ========================================================
+जोडो|ब्रह्मलोकः|ब्रह्मलोकः|ब,्,र,ह,्,म,ल,ो,कः|सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते।|abode of Brahma|The highest spiritual realm attained by pristine speech.
+जोडो|व्याघ्री|व्याघ्री|व,्,य,ा,घ,्,र,ी,क|व्याघ्री यथा हरेत्पुत्रान् दंष्ट्राभ्याम्।|tigress|Maternal tigress carrying her cubs safely.
+जोडो|इन्द्रशत्रुः|इन्द्रशत्रुः|इ,न,्,द,्,र,श,त,्,र,ुः|इन्द्रशत्रुर्वर्धस्व इति आहुतिमन्त्रः आसीत्।|slayer of Indra / Indra's enemy|Vritrasura who mispronounced the sacrificial mantra.
+जोडो|ऋत्विजः|ऋत्विजः|ऋ,त,्,व,ि,जः,प,स|ऋत्विजः मन्त्रे स्वरपरिवर्तनम् अकुर्वन्।|sacrificial priests|Priests conducting the solemn Vedic yajna.
+जोडो|अक्षरव्यक्तिः|अक्षरव्यक्तिः|अ,क,्,ष,र,व,्,य,क,्,त,िः|अक्षरव्यक्तिः पाठकस्य श्रेष्ठः गुणः।|distinct articulation of letters|Clear and distinct utterance of phonemes.
+जोडो|सुस्वरः|सुस्वरः|स,ु,स,्,व,रः,क,प|माधुर्यम् अक्षरव्यक्तिः पदच्छेदस्तु सुस्वरः।|melodious pleasing tone|Pleasing and harmonious voice modulation.
+जोडो|पदच्छेदः|पदच्छेदः|प,द,च,्,छ,े,दः,क|श्लोकवाचने उचितः पदच्छेदः आवश्यकः।|separation of words|Proper pause and splitting between adjacent words.
+जोडो|शिरःकम्पी|शिरःकम्पी|श,ि,रः,क,म,्,प,ी,त|गीती शीघ्री शिरःकम्पी च पाठकाधमः।|head-shaker|Defective reader who shakes head excessively while reciting.
+जोडो|लिखितपाठकः|लिखितपाठकः|ल,ि,ख,ि,त,प,ा,ठ,कः|लिखितपाठकः अधमपाठकः गण्यते।|verbatim paper-reader|Reader who recites only by staring rigidly at written text.
+जोडो|अनर्थज्ञः|अनर्थज्ञः|अ,न,र,्,थ,ज,्,ञः,क|अनर्थज्ञः श्लोकस्य अर्थं न जानाति।|ignorant of the meaning|Reciter who chants without comprehending word sense.
+जोडो|वेदाङ्गम्|वेदाङ्गम्|व,े,द,ा,ङ,्,गम्,प|वेदानां षट् अङ्गानि वेदाङ्गानि कथ्यन्ते।|limb of the Veda|Six ancillary disciplines auxiliary to Vedic studies.
+जोडो|व्याकरणम्|व्याकरणम्|व,्,य,ा,क,र,णम्,स|मुखं व्याकरणं स्मृतं वेदपुरुषस्य।|science of grammar|Regarded as the mouth and face of the personified Veda.

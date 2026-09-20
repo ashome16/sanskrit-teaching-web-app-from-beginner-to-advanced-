@@ -410,6 +410,17 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     theme: 'Viravara\'s family sacrifice at the temple of Sarvamangala, King Shudraka\'s boundless devotion to his servant, divine resurrection, and coronation over Karnataka.',
     grammarFocus: 'वाच्य-प्रकरणम् (कर्तृवाच्य, कर्मवाच्य, भाववाच्य), अकर्मक-सकर्मक-धातवः, सन्धिकार्यम्',
   },
+  {
+    id: 'grade8_ch12',
+    num: 'Grade 8 · Chapter 12',
+    title: 'सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (Pages 137–145)',
+    english: 'Through Perfect Pronunciation One Attains Glory in Brahmaloka',
+    icon: '🗣️',
+    category: 'grammar',
+    genreBadge: 'पाणिनीय-शिक्षा · Articulation & Reader Qualities',
+    theme: 'Paniniya Shiksha principles: the Vritrasura/Indrashatru accent parable, maternal tigress grip metaphor, 6 attributes of ideal readers, and 6 flaws of poor readers.',
+    grammarFocus: 'तृतीया-विभक्तिः (प्रयोगेण), कर्मणि-लट् (महीयते), वर्णोच्चारणम्, पाठकगुणाः, सन्धि-विच्छेदः',
+  },
 ];
 
 const HomePage: React.FC<HomePageProps> = ({

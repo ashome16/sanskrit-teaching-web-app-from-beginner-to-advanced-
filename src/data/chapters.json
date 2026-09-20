@@ -35142,6 +35142,324 @@
           "kind": "exercise-note"
         }
       ]
+    },
+    {
+      "id": "grade8_ch12",
+      "fileName": "grade8_ch12.txt",
+      "title": "द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते",
+      "page_numbers": "137-145",
+      "sentences": [
+        {
+          "sanskrit": "॥ द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते ॥",
+          "meaning": "Chapter 12: Through Flawless Pronunciation One is Revered in the Realm of Brahma (Pages 137–145)",
+          "paragraphTranslation": "द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (पृष्ठ १३७–१४५)",
+          "words": [
+            "द्वादशः",
+            "पाठः",
+            "सम्यग्वर्णप्रयोगेण",
+            "ब्रह्मलोके",
+            "महीयते"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "पाणिनीय-शिक्षायाः ग्रन्थात् संगृहीतः अयं पाठः संस्कृतभाषायाः उच्चारणशास्त्रस्य (ध्वनिविज्ञानस्य) महत्त्वं विशदयति। भाषायां वर्णानां, स्वराणां, मात्राणां च शुद्धोच्चारणं परमावश्यकम्।",
+          "meaning": "Drawn from Paniniya Shiksha, this lesson elucidates the vital importance of Sanskrit phonetics and orthoepy. Flawless pronunciation of sounds, vowels, and matras is essential.",
+          "paragraphTranslation": "पाणिनीय शिक्षा ग्रन्थ से संगृहीत यह पाठ संस्कृत के उच्चारण-शास्त्र के महत्त्व को समझाता है। भाषा में वर्णों, स्वरों और मात्राओं का शुद्ध उच्चारण परमावश्यक है।",
+          "words": [
+            "पाणिनीय-शिक्षायाः",
+            "उच्चारणशास्त्रस्य",
+            "ध्वनिविज्ञानस्य",
+            "महत्त्वं",
+            "शुद्धोच्चारणं",
+            "परमावश्यकम्"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "छात्राः – नमस्ते आचार्य ! अद्य वयम् एकां कथां श्रोतुम् इच्छामः। आचार्यः – नमस्ते छात्राः ! देवानां राजा इन्द्रः, असुराणां च राजा आसीत् वृत्रासुरः।",
+          "meaning": "Students – Salutations Teacher! Today we wish to listen to a story. Teacher – Salutations students! Indra was king of the gods, and Vritrasura was king of the demons.",
+          "paragraphTranslation": "छात्र – नमस्ते आचार्य जी! आज हम एक कहानी सुनना चाहते हैं। आचार्य – नमस्ते छात्रों! देवताओं के राजा इन्द्र और असुरों के राजा वृत्रासुर थे।",
+          "words": [
+            "छात्राः",
+            "नमस्ते",
+            "आचार्य",
+            "कथां",
+            "श्रोतुम्",
+            "इच्छामः",
+            "इन्द्रः",
+            "वृत्रासुरः"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "स्वस्य बलं वर्धयितुम् इन्द्रं जेतुं च वृत्रासुरः यज्ञं कारितवान्। यज्ञे आहुतिमन्त्रः आसीत् — ‘इन्द्रशत्रुर्वर्धस्व’ इति।",
+          "meaning": "To increase his own might and conquer Indra, Vritrasura performed a Vedic sacrifice. The offering chant was: 'Indrashatrurvardhasva'.",
+          "paragraphTranslation": "अपना बल बढ़ाने और इन्द्र को जीतने के लिए वृत्रासुर ने यज्ञ करवाया। यज्ञ का मन्त्र था—'इन्द्रशत्रुर्वर्धस्व'।",
+          "words": [
+            "बलं",
+            "वर्धयितुम्",
+            "इन्द्रं",
+            "जेतुं",
+            "वृत्रासुरः",
+            "यज्ञं",
+            "कारितवान्",
+            "आहुतिमन्त्रः",
+            "इन्द्रशत्रुर्वर्धस्व"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "यज्ञावसाने वृत्रासुरो बली भूत्वा जनान् पीडयिष्यति इति विचार्य ऋत्विजः मन्त्रे स्वरं परिवर्तितवन्तः। स्वरपरिवर्तनेन अर्थः परिवर्तितः।",
+          "meaning": "Thinking that Vritrasura would terrorize people upon becoming invincible, the priests changed the pitch-accent in the mantra. By changing the accent, the meaning completely inverted.",
+          "paragraphTranslation": "वृत्रासुर बलवान होकर लोगों को सताएगा, यह सोचकर पुरोहितों (ऋत्विजों) ने मन्त्र के स्वर को बदल दिया। स्वर बदलने से अर्थ बदल गया।",
+          "words": [
+            "यज्ञावसाने",
+            "बली",
+            "भूत्वा",
+            "ऋत्विजः",
+            "स्वरं",
+            "परिवर्तितवन्तः",
+            "स्वरपरिवर्तनेन",
+            "अर्थः"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "परिणामतः वृत्रासुरस्य स्थाने इन्द्रस्य बलं वर्धितम्। बलवान् इन्द्रः वज्रेण वृत्रासुरं मारितवान्। अतः शुद्धोच्चारणम् अनिवार्यम् अस्ति।",
+          "meaning": "Consequently, instead of Vritrasura, Indra's strength multiplied, and mighty Indra slew Vritrasura with his thunderbolt. Hence, pristine pronunciation is imperative.",
+          "paragraphTranslation": "परिणामस्वरूप वृत्रासुर के स्थान पर इन्द्र का बल बढ़ गया और इन्द्र ने वज्र से वृत्रासुर का वध किया। अतः शुद्ध उच्चारण अनिवार्य है।",
+          "words": [
+            "परिणामतः",
+            "इन्द्रस्य",
+            "बलं",
+            "वर्धितम्",
+            "वज्रेण",
+            "मारितवान्",
+            "शुद्धोच्चारणम्"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "यद्यपि बहु नाधीषे तथापि पठ पुत्र व्याकरणम्। स्वजनः श्वजनो माभूत् सकलं शकलं सकृत् शकृत् ॥ १ ॥",
+          "meaning": "Even if you do not study vast subjects, my son, at least study grammar; so that your kin (svajana) does not become a dog (shvajana), the whole (sakalam) does not become a broken piece (shakalam), and once (sakrit) does not become dung (shakrit)!",
+          "paragraphTranslation": "हे पुत्र! यदि तुम बहुत अधिक नहीं पढ़ते हो, तो भी व्याकरण अवश्य पढ़ो; ताकि 'स्वजन' (अपने लोग) कहीं 'श्वजन' (कुत्ता) न बन जाए, 'सकल' (सम्पूर्ण) 'शकल' (टुकड़ा) न बने, और 'सकृत्' (एक बार) 'शकृत्' (विष्ठा) न बन जाए!",
+          "words": [
+            "यद्यपि",
+            "बहु",
+            "नाधीषे",
+            "तथापि",
+            "पठ",
+            "पुत्र",
+            "व्याकरणम्",
+            "स्वजनः",
+            "श्वजनः",
+            "माभूत्",
+            "सकलं",
+            "शकलं",
+            "सकृत्",
+            "शकृत्"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "श्लोक-अन्वयः — पुत्र ! यद्यपि बहु न अधीषे तथापि व्याकरणं पठ। येन स्वजनः श्वजनः, सकलं शकलं, सकृत् शकृत् च मा अभूत्।",
+          "meaning": "Verse 1 Anvaya: O son! Even if you don't master many disciplines, do study grammar so that phonetic corruption never degrades svajana into shvajana, sakalam into shakalam, and sakrit into shakrit.",
+          "paragraphTranslation": "अन्वय: हे पुत्र! बहुत शास्त्र न पढ़ने पर भी व्याकरण अवश्य पढ़ो, जिससे स्वजन-श्वजन आदि उच्चारण दोष न हों।",
+          "words": [
+            "पुत्र",
+            "यद्यपि",
+            "बहु",
+            "अधीषे",
+            "व्याकरणं",
+            "पठ",
+            "स्वजनः",
+            "श्वजनः",
+            "सकलं",
+            "शकलं"
+          ],
+          "kind": "shloka-analysis"
+        },
+        {
+          "sanskrit": "व्याघ्री यथा हरेत् पुत्रान् दंष्ट्राभ्यां न च पीडयेत्। भीता पतनभेदाभ्यां तद्वद् वर्णान् प्रयोजयेत् ॥ २ ॥",
+          "meaning": "Just as a tigress carries her cubs between her sharp fangs without hurting them, fearful of dropping them or piercing them, in that exact manner one should articulate sounds.",
+          "paragraphTranslation": "जैसे बाघिन गिरने और दाँत चुभने के भय से अपने बच्चों को दाँतों में पकड़कर ले जाती है पर कष्ट नहीं पहुँचाती, वैसे ही वर्णों का संतुलित उच्चारण करना चाहिए।",
+          "words": [
+            "व्याघ्री",
+            "यथा",
+            "हरेत्",
+            "पुत्रान्",
+            "दंष्ट्राभ्यां",
+            "पीडयेत्",
+            "भीता",
+            "पतनभेदाभ्यां",
+            "तद्वद्",
+            "वर्णान्",
+            "प्रयोजयेत्"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "श्लोक-अन्वयः — यथा पतनभेदाभ्यां भीता व्याघ्री दंष्ट्राभ्यां पुत्रान् हरेत् न च पीडयेत्, तद्वत् वर्णान् प्रयोजयेत्।",
+          "meaning": "Verse 2 Anvaya: As the tigress holds her young gently with her sharp teeth without harming them, so should speech sounds be pronounced with perfect balance—neither forced nor slack.",
+          "paragraphTranslation": "अन्वय: जैसे बाघिन दाँतों से बच्चों को बिना कष्ट दिए ले जाती है, वैसे ही मनुष्य वर्णों का उच्चारण करे।",
+          "words": [
+            "पतनभेदाभ्यां",
+            "भीता",
+            "व्याघ्री",
+            "दंष्ट्राभ्यां",
+            "पुत्रान्",
+            "हरेत्",
+            "वर्णान्",
+            "प्रयोजयेत्"
+          ],
+          "kind": "shloka-analysis"
+        },
+        {
+          "sanskrit": "एवं वर्णाः प्रयोक्तव्या नाव्यक्ता न च पीडिताः। सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते ॥ ३ ॥",
+          "meaning": "In this manner sounds should be pronounced: neither indistinct nor over-stressed. Through flawless articulation of phonemes, one is exalted in the realm of Brahma.",
+          "paragraphTranslation": "इस प्रकार वर्णों का उच्चारण न तो अस्पष्ट (अव्यक्त) होना चाहिए और न ही दबाकर (पीडित)। सही वर्णोच्चारण करने वाला ब्रह्मलोक में सम्मानित होता है।",
+          "words": [
+            "एवं",
+            "वर्णाः",
+            "प्रयोक्तव्याः",
+            "नाव्यक्ता",
+            "पीडिताः",
+            "सम्यग्वर्णप्रयोगेण",
+            "ब्रह्मलोके",
+            "महीयते"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "माधुर्यमक्षरव्यक्तिः पदच्छेदस्तु सुस्वरः। धैर्यं लयसमर्थं च षडेते पाठका गुणाः ॥ ४ ॥",
+          "meaning": "Sweetness, clear diction of syllables, proper word splitting, a melodious voice, patience, and rhythmic mastery—these six are the virtues of an excellent reader.",
+          "paragraphTranslation": "मधुरता, अक्षरों की स्पष्टता, सही पदच्छेद, सुरीला स्वर, धैर्य और लय का सामर्थ्य — ये छह उत्तम पाठक के गुण हैं।",
+          "words": [
+            "माधुर्यम्",
+            "अक्षरव्यक्तिः",
+            "पदच्छेदः",
+            "सुस्वरः",
+            "धैर्यं",
+            "लयसमर्थं",
+            "षडेते",
+            "पाठका",
+            "गुणाः"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "गीती शीघ्री शिरःकम्पी तथा लिखितपाठकः। अनर्थज्ञोऽल्पकण्ठश्च षडेते पाठकाधमाः ॥ ५ ॥",
+          "meaning": "Singing like a tune, reading hastily, shaking the head, reading mechanically from text without internalization, not understanding the meaning, and speaking with a feeble voice—these six are the worst reader traits.",
+          "paragraphTranslation": "गाकर पढ़ना, बहुत तेज़ पढ़ना, सिर हिलाना, केवल लिखी पोथी रटना, अर्थ न जानना और दुर्बल कंठ होना — ये छह निकृष्ट पाठक के दोष हैं।",
+          "words": [
+            "गीती",
+            "शीघ्री",
+            "शिरःकम्पी",
+            "लिखितपाठकः",
+            "अनर्थज्ञः",
+            "अल्पकण्ठः",
+            "षडेते",
+            "पाठकाधमाः"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – ऋत्विजः (पुरोहिताः), अधीषे (पठसि), श्वजनः (कुत्ता / dog), सकलम् (सम्पूर्णम् / entire), शकलम् (टुकड़ा / fragment)।",
+          "meaning": "Glossary 1: Ritvijah (Sacrificial priests), Adhishe (You study), Shvajanah (Dog), Sakalam (Whole), Shakalam (Piece).",
+          "paragraphTranslation": "शब्दार्थ: ऋत्विजः = पुरोहित, अधीषे = पढ़ते हो, श्वजनः = कुत्ता, सकलम् = सम्पूर्ण, शकलम् = टुकड़ा।",
+          "words": [
+            "ऋत्विजः",
+            "अधीषे",
+            "श्वजनः",
+            "सकलम्",
+            "शकलम्"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – सकृत् (एक बार / once), शकृत् (मल / विष्ठा), अव्यक्ताः (अस्पष्टाः), पीडिताः (अत्यधिक दबाया हुआ), महीयते (सम्मानित होता है)।",
+          "meaning": "Glossary 2: Sakrit (Once), Shakrit (Dung/feces), Avyaktah (Indistinct), Pīditāh (Strained/over-pressed), Mahīyate (Is revered).",
+          "paragraphTranslation": "शब्दार्थ: सकृत् = एक बार, शकृत् = मल, अव्यक्ताः = अस्पष्ट, पीडिताः = दबाया हुआ, महीयते = पूजा जाता है।",
+          "words": [
+            "सकृत्",
+            "शकृत्",
+            "अव्यक्ताः",
+            "पीडिताः",
+            "महीयते"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – अक्षरव्यक्तिः (अक्षरों की स्पष्टता), शीघ्री (तेज़ पढ़ने वाला), शिरःकम्पी (सिर हिलाने वाला), अनर्थज्ञः (अर्थ न जानने वाला), अल्पकण्ठः (धीमे स्वर वाला)।",
+          "meaning": "Glossary 3: Aksharavyaktih (Clarity of syllables), Shīghrī (Hasty reader), Shirahkampi (Head shaker), Anarthajnah (Ignorant of meaning), Alpakanthah (Feeble voiced).",
+          "paragraphTranslation": "शब्दार्थ: अक्षरव्यक्तिः = स्पष्ट उच्चारण, शीघ्री = शीघ्र पढ़ने वाला, शिरःकम्पी = सिर हिलाने वाला, अनर्थज्ञः = अर्थहीन, अल्पकण्ठः = दुर्बल कंठ।",
+          "words": [
+            "अक्षरव्यक्तिः",
+            "शीघ्री",
+            "शिरःकम्पी",
+            "अनर्थज्ञः",
+            "अल्पकण्ठः"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "२. एकपदेन उत्तराणि – (क) पाठकाः केषां सम्यक् प्रयोगं कुर्युः? → वर्णानाम्। (ख) किम् अवश्यमेव पठनीयम्? → व्याकरणम्। (ग) ब्रह्मलोके केन सम्मानं भवति? → सम्यग्वर्णप्रयोगेण। (घ) अधमाः पाठकाः कति? → षट् (६)।",
+          "meaning": "Exercise 2: One-word Answers: (a) Sounds/letters (Varnānām); (b) Grammar (Vyākaranam); (c) By accurate pronunciation (Samyag-varnaprayogena); (d) Six (Shat).",
+          "paragraphTranslation": "अभ्यास २ (एक शब्द में उत्तर): क- वर्णानाम्, ख- व्याकरणम्, ग- सम्यग्वर्णप्रयोगेण, घ- षट्।",
+          "words": [
+            "वर्णानाम्",
+            "व्याकरणम्",
+            "सम्यग्वर्णप्रयोगेण",
+            "षट्"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "वर्णानाम् / व्याकरणम् / सम्यग्वर्णप्रयोगेण / षट्",
+          "hindi_gloss": "वर्णों का / व्याकरण / शुद्ध उच्चारण से / छह"
+        },
+        {
+          "sanskrit": "३. पूर्णवाक्येन – (क) व्याघ्री दंष्ट्राभ्यां कान् नयति? उत्तरम्: व्याघ्री दंष्ट्राभ्यां पुत्रान् नयति। (ख) वर्णाः कथं प्रयोक्तव्याः? उत्तरम्: वर्णाः नाव्यक्ताः न च पीडिताः प्रयोक्तव्याः।",
+          "meaning": "Exercise 3: Full sentence answers: (a) Whom does the tigress carry with teeth? Ans: Her cubs (putran); (b) How should letters be pronounced? Ans: Neither indistinct nor oppressed.",
+          "paragraphTranslation": "अभ्यास ३ (पूर्ण वाक्य में उत्तर): क- व्याघ्री पुत्रान् नयति; ख- नाव्यक्ताः न च पीडिताः प्रयोक्तव्याः।",
+          "words": [
+            "व्याघ्री",
+            "पुत्रान्",
+            "नाव्यक्ताः",
+            "पीडिताः"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "व्याघ्री दंष्ट्राभ्यां पुत्रान् नयति / वर्णाः नाव्यक्ताः न च पीडिताः प्रयोक्तव्याः",
+          "hindi_gloss": "बच्चों को ले जाती है / न अस्पष्ट न पीडित"
+        },
+        {
+          "sanskrit": "४. वर्गीकरणम् – गुणाः: अक्षरव्यक्तिः, लयसमर्थम्, माधुर्यम्, पदच्छेदः, धैर्यम्, सुस्वरः। दोषाः: शीघ्री, लिखितपाठकः, अनर्थज्ञः, अल्पकण्ठः, गीती, शिरःकम्पी।",
+          "meaning": "Exercise 4: Classification of Reader Qualities (Gunas: Clarity, Rhythm, Sweetness, Word-split, Patience, Melodious) vs Demerits (Doshas: Rushed, Mechanical, Meaningless, Weak-voiced, Sing-song, Head-shaking).",
+          "paragraphTranslation": "पाठक के ६ गुण और ६ दोषों का वर्गीकरण।",
+          "words": [
+            "वर्गीकरणम्",
+            "गुणाः",
+            "दोषाः",
+            "अक्षरव्यक्तिः",
+            "शीघ्री",
+            "सुस्वरः"
+          ],
+          "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "६. सत्यम् / असत्यम् – (क) गानसहितपठनं पाठकानां दोषः भवति। (सत्यम्) (ख) माधुर्यं नाम अक्षराणाम् उच्चारणे स्पष्टता अस्ति। (असत्यम्) (ङ) व्याघ्री यथा पुत्रान् हरति तथा वर्णान् प्रयोजयेत्। (सत्यम्)",
+          "meaning": "Exercise 6: True/False: (a) Singing reading is a flaw (True); (b) Sweetness means syllable clarity (False, that is Aksharavyaktih); (e) Tigress analogy for pronunciation (True).",
+          "paragraphTranslation": "सत्य/असत्य अभ्यास।",
+          "words": [
+            "सत्यम्",
+            "असत्यम्",
+            "गानसहितपठनं",
+            "माधुर्यं"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "सत्यम् / असत्यम् / सत्यम्",
+          "hindi_gloss": "सत्य, असत्य, सत्य"
+        }
+      ]
     }
   ],
   "chapters": [
@@ -48907,6 +49225,324 @@
             "समग्रकर्णाटप्रदेशम्"
           ],
           "kind": "exercise-note"
+        }
+      ]
+    },
+    {
+      "id": "grade8_ch12",
+      "fileName": "grade8_ch12.txt",
+      "title": "द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते",
+      "page_numbers": "137-145",
+      "sentences": [
+        {
+          "sanskrit": "॥ द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते ॥",
+          "meaning": "Chapter 12: Through Flawless Pronunciation One is Revered in the Realm of Brahma (Pages 137–145)",
+          "paragraphTranslation": "द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (पृष्ठ १३७–१४५)",
+          "words": [
+            "द्वादशः",
+            "पाठः",
+            "सम्यग्वर्णप्रयोगेण",
+            "ब्रह्मलोके",
+            "महीयते"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "पाणिनीय-शिक्षायाः ग्रन्थात् संगृहीतः अयं पाठः संस्कृतभाषायाः उच्चारणशास्त्रस्य (ध्वनिविज्ञानस्य) महत्त्वं विशदयति। भाषायां वर्णानां, स्वराणां, मात्राणां च शुद्धोच्चारणं परमावश्यकम्।",
+          "meaning": "Drawn from Paniniya Shiksha, this lesson elucidates the vital importance of Sanskrit phonetics and orthoepy. Flawless pronunciation of sounds, vowels, and matras is essential.",
+          "paragraphTranslation": "पाणिनीय शिक्षा ग्रन्थ से संगृहीत यह पाठ संस्कृत के उच्चारण-शास्त्र के महत्त्व को समझाता है। भाषा में वर्णों, स्वरों और मात्राओं का शुद्ध उच्चारण परमावश्यक है।",
+          "words": [
+            "पाणिनीय-शिक्षायाः",
+            "उच्चारणशास्त्रस्य",
+            "ध्वनिविज्ञानस्य",
+            "महत्त्वं",
+            "शुद्धोच्चारणं",
+            "परमावश्यकम्"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "छात्राः – नमस्ते आचार्य ! अद्य वयम् एकां कथां श्रोतुम् इच्छामः। आचार्यः – नमस्ते छात्राः ! देवानां राजा इन्द्रः, असुराणां च राजा आसीत् वृत्रासुरः।",
+          "meaning": "Students – Salutations Teacher! Today we wish to listen to a story. Teacher – Salutations students! Indra was king of the gods, and Vritrasura was king of the demons.",
+          "paragraphTranslation": "छात्र – नमस्ते आचार्य जी! आज हम एक कहानी सुनना चाहते हैं। आचार्य – नमस्ते छात्रों! देवताओं के राजा इन्द्र और असुरों के राजा वृत्रासुर थे।",
+          "words": [
+            "छात्राः",
+            "नमस्ते",
+            "आचार्य",
+            "कथां",
+            "श्रोतुम्",
+            "इच्छामः",
+            "इन्द्रः",
+            "वृत्रासुरः"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "स्वस्य बलं वर्धयितुम् इन्द्रं जेतुं च वृत्रासुरः यज्ञं कारितवान्। यज्ञे आहुतिमन्त्रः आसीत् — ‘इन्द्रशत्रुर्वर्धस्व’ इति।",
+          "meaning": "To increase his own might and conquer Indra, Vritrasura performed a Vedic sacrifice. The offering chant was: 'Indrashatrurvardhasva'.",
+          "paragraphTranslation": "अपना बल बढ़ाने और इन्द्र को जीतने के लिए वृत्रासुर ने यज्ञ करवाया। यज्ञ का मन्त्र था—'इन्द्रशत्रुर्वर्धस्व'।",
+          "words": [
+            "बलं",
+            "वर्धयितुम्",
+            "इन्द्रं",
+            "जेतुं",
+            "वृत्रासुरः",
+            "यज्ञं",
+            "कारितवान्",
+            "आहुतिमन्त्रः",
+            "इन्द्रशत्रुर्वर्धस्व"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "यज्ञावसाने वृत्रासुरो बली भूत्वा जनान् पीडयिष्यति इति विचार्य ऋत्विजः मन्त्रे स्वरं परिवर्तितवन्तः। स्वरपरिवर्तनेन अर्थः परिवर्तितः।",
+          "meaning": "Thinking that Vritrasura would terrorize people upon becoming invincible, the priests changed the pitch-accent in the mantra. By changing the accent, the meaning completely inverted.",
+          "paragraphTranslation": "वृत्रासुर बलवान होकर लोगों को सताएगा, यह सोचकर पुरोहितों (ऋत्विजों) ने मन्त्र के स्वर को बदल दिया। स्वर बदलने से अर्थ बदल गया।",
+          "words": [
+            "यज्ञावसाने",
+            "बली",
+            "भूत्वा",
+            "ऋत्विजः",
+            "स्वरं",
+            "परिवर्तितवन्तः",
+            "स्वरपरिवर्तनेन",
+            "अर्थः"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "परिणामतः वृत्रासुरस्य स्थाने इन्द्रस्य बलं वर्धितम्। बलवान् इन्द्रः वज्रेण वृत्रासुरं मारितवान्। अतः शुद्धोच्चारणम् अनिवार्यम् अस्ति।",
+          "meaning": "Consequently, instead of Vritrasura, Indra's strength multiplied, and mighty Indra slew Vritrasura with his thunderbolt. Hence, pristine pronunciation is imperative.",
+          "paragraphTranslation": "परिणामस्वरूप वृत्रासुर के स्थान पर इन्द्र का बल बढ़ गया और इन्द्र ने वज्र से वृत्रासुर का वध किया। अतः शुद्ध उच्चारण अनिवार्य है।",
+          "words": [
+            "परिणामतः",
+            "इन्द्रस्य",
+            "बलं",
+            "वर्धितम्",
+            "वज्रेण",
+            "मारितवान्",
+            "शुद्धोच्चारणम्"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "यद्यपि बहु नाधीषे तथापि पठ पुत्र व्याकरणम्। स्वजनः श्वजनो माभूत् सकलं शकलं सकृत् शकृत् ॥ १ ॥",
+          "meaning": "Even if you do not study vast subjects, my son, at least study grammar; so that your kin (svajana) does not become a dog (shvajana), the whole (sakalam) does not become a broken piece (shakalam), and once (sakrit) does not become dung (shakrit)!",
+          "paragraphTranslation": "हे पुत्र! यदि तुम बहुत अधिक नहीं पढ़ते हो, तो भी व्याकरण अवश्य पढ़ो; ताकि 'स्वजन' (अपने लोग) कहीं 'श्वजन' (कुत्ता) न बन जाए, 'सकल' (सम्पूर्ण) 'शकल' (टुकड़ा) न बने, और 'सकृत्' (एक बार) 'शकृत्' (विष्ठा) न बन जाए!",
+          "words": [
+            "यद्यपि",
+            "बहु",
+            "नाधीषे",
+            "तथापि",
+            "पठ",
+            "पुत्र",
+            "व्याकरणम्",
+            "स्वजनः",
+            "श्वजनः",
+            "माभूत्",
+            "सकलं",
+            "शकलं",
+            "सकृत्",
+            "शकृत्"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "श्लोक-अन्वयः — पुत्र ! यद्यपि बहु न अधीषे तथापि व्याकरणं पठ। येन स्वजनः श्वजनः, सकलं शकलं, सकृत् शकृत् च मा अभूत्।",
+          "meaning": "Verse 1 Anvaya: O son! Even if you don't master many disciplines, do study grammar so that phonetic corruption never degrades svajana into shvajana, sakalam into shakalam, and sakrit into shakrit.",
+          "paragraphTranslation": "अन्वय: हे पुत्र! बहुत शास्त्र न पढ़ने पर भी व्याकरण अवश्य पढ़ो, जिससे स्वजन-श्वजन आदि उच्चारण दोष न हों।",
+          "words": [
+            "पुत्र",
+            "यद्यपि",
+            "बहु",
+            "अधीषे",
+            "व्याकरणं",
+            "पठ",
+            "स्वजनः",
+            "श्वजनः",
+            "सकलं",
+            "शकलं"
+          ],
+          "kind": "shloka-analysis"
+        },
+        {
+          "sanskrit": "व्याघ्री यथा हरेत् पुत्रान् दंष्ट्राभ्यां न च पीडयेत्। भीता पतनभेदाभ्यां तद्वद् वर्णान् प्रयोजयेत् ॥ २ ॥",
+          "meaning": "Just as a tigress carries her cubs between her sharp fangs without hurting them, fearful of dropping them or piercing them, in that exact manner one should articulate sounds.",
+          "paragraphTranslation": "जैसे बाघिन गिरने और दाँत चुभने के भय से अपने बच्चों को दाँतों में पकड़कर ले जाती है पर कष्ट नहीं पहुँचाती, वैसे ही वर्णों का संतुलित उच्चारण करना चाहिए।",
+          "words": [
+            "व्याघ्री",
+            "यथा",
+            "हरेत्",
+            "पुत्रान्",
+            "दंष्ट्राभ्यां",
+            "पीडयेत्",
+            "भीता",
+            "पतनभेदाभ्यां",
+            "तद्वद्",
+            "वर्णान्",
+            "प्रयोजयेत्"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "श्लोक-अन्वयः — यथा पतनभेदाभ्यां भीता व्याघ्री दंष्ट्राभ्यां पुत्रान् हरेत् न च पीडयेत्, तद्वत् वर्णान् प्रयोजयेत्।",
+          "meaning": "Verse 2 Anvaya: As the tigress holds her young gently with her sharp teeth without harming them, so should speech sounds be pronounced with perfect balance—neither forced nor slack.",
+          "paragraphTranslation": "अन्वय: जैसे बाघिन दाँतों से बच्चों को बिना कष्ट दिए ले जाती है, वैसे ही मनुष्य वर्णों का उच्चारण करे।",
+          "words": [
+            "पतनभेदाभ्यां",
+            "भीता",
+            "व्याघ्री",
+            "दंष्ट्राभ्यां",
+            "पुत्रान्",
+            "हरेत्",
+            "वर्णान्",
+            "प्रयोजयेत्"
+          ],
+          "kind": "shloka-analysis"
+        },
+        {
+          "sanskrit": "एवं वर्णाः प्रयोक्तव्या नाव्यक्ता न च पीडिताः। सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते ॥ ३ ॥",
+          "meaning": "In this manner sounds should be pronounced: neither indistinct nor over-stressed. Through flawless articulation of phonemes, one is exalted in the realm of Brahma.",
+          "paragraphTranslation": "इस प्रकार वर्णों का उच्चारण न तो अस्पष्ट (अव्यक्त) होना चाहिए और न ही दबाकर (पीडित)। सही वर्णोच्चारण करने वाला ब्रह्मलोक में सम्मानित होता है।",
+          "words": [
+            "एवं",
+            "वर्णाः",
+            "प्रयोक्तव्याः",
+            "नाव्यक्ता",
+            "पीडिताः",
+            "सम्यग्वर्णप्रयोगेण",
+            "ब्रह्मलोके",
+            "महीयते"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "माधुर्यमक्षरव्यक्तिः पदच्छेदस्तु सुस्वरः। धैर्यं लयसमर्थं च षडेते पाठका गुणाः ॥ ४ ॥",
+          "meaning": "Sweetness, clear diction of syllables, proper word splitting, a melodious voice, patience, and rhythmic mastery—these six are the virtues of an excellent reader.",
+          "paragraphTranslation": "मधुरता, अक्षरों की स्पष्टता, सही पदच्छेद, सुरीला स्वर, धैर्य और लय का सामर्थ्य — ये छह उत्तम पाठक के गुण हैं।",
+          "words": [
+            "माधुर्यम्",
+            "अक्षरव्यक्तिः",
+            "पदच्छेदः",
+            "सुस्वरः",
+            "धैर्यं",
+            "लयसमर्थं",
+            "षडेते",
+            "पाठका",
+            "गुणाः"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "गीती शीघ्री शिरःकम्पी तथा लिखितपाठकः। अनर्थज्ञोऽल्पकण्ठश्च षडेते पाठकाधमाः ॥ ५ ॥",
+          "meaning": "Singing like a tune, reading hastily, shaking the head, reading mechanically from text without internalization, not understanding the meaning, and speaking with a feeble voice—these six are the worst reader traits.",
+          "paragraphTranslation": "गाकर पढ़ना, बहुत तेज़ पढ़ना, सिर हिलाना, केवल लिखी पोथी रटना, अर्थ न जानना और दुर्बल कंठ होना — ये छह निकृष्ट पाठक के दोष हैं।",
+          "words": [
+            "गीती",
+            "शीघ्री",
+            "शिरःकम्पी",
+            "लिखितपाठकः",
+            "अनर्थज्ञः",
+            "अल्पकण्ठः",
+            "षडेते",
+            "पाठकाधमाः"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – ऋत्विजः (पुरोहिताः), अधीषे (पठसि), श्वजनः (कुत्ता / dog), सकलम् (सम्पूर्णम् / entire), शकलम् (टुकड़ा / fragment)।",
+          "meaning": "Glossary 1: Ritvijah (Sacrificial priests), Adhishe (You study), Shvajanah (Dog), Sakalam (Whole), Shakalam (Piece).",
+          "paragraphTranslation": "शब्दार्थ: ऋत्विजः = पुरोहित, अधीषे = पढ़ते हो, श्वजनः = कुत्ता, सकलम् = सम्पूर्ण, शकलम् = टुकड़ा।",
+          "words": [
+            "ऋत्विजः",
+            "अधीषे",
+            "श्वजनः",
+            "सकलम्",
+            "शकलम्"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – सकृत् (एक बार / once), शकृत् (मल / विष्ठा), अव्यक्ताः (अस्पष्टाः), पीडिताः (अत्यधिक दबाया हुआ), महीयते (सम्मानित होता है)।",
+          "meaning": "Glossary 2: Sakrit (Once), Shakrit (Dung/feces), Avyaktah (Indistinct), Pīditāh (Strained/over-pressed), Mahīyate (Is revered).",
+          "paragraphTranslation": "शब्दार्थ: सकृत् = एक बार, शकृत् = मल, अव्यक्ताः = अस्पष्ट, पीडिताः = दबाया हुआ, महीयते = पूजा जाता है।",
+          "words": [
+            "सकृत्",
+            "शकृत्",
+            "अव्यक्ताः",
+            "पीडिताः",
+            "महीयते"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – अक्षरव्यक्तिः (अक्षरों की स्पष्टता), शीघ्री (तेज़ पढ़ने वाला), शिरःकम्पी (सिर हिलाने वाला), अनर्थज्ञः (अर्थ न जानने वाला), अल्पकण्ठः (धीमे स्वर वाला)।",
+          "meaning": "Glossary 3: Aksharavyaktih (Clarity of syllables), Shīghrī (Hasty reader), Shirahkampi (Head shaker), Anarthajnah (Ignorant of meaning), Alpakanthah (Feeble voiced).",
+          "paragraphTranslation": "शब्दार्थ: अक्षरव्यक्तिः = स्पष्ट उच्चारण, शीघ्री = शीघ्र पढ़ने वाला, शिरःकम्पी = सिर हिलाने वाला, अनर्थज्ञः = अर्थहीन, अल्पकण्ठः = दुर्बल कंठ।",
+          "words": [
+            "अक्षरव्यक्तिः",
+            "शीघ्री",
+            "शिरःकम्पी",
+            "अनर्थज्ञः",
+            "अल्पकण्ठः"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "२. एकपदेन उत्तराणि – (क) पाठकाः केषां सम्यक् प्रयोगं कुर्युः? → वर्णानाम्। (ख) किम् अवश्यमेव पठनीयम्? → व्याकरणम्। (ग) ब्रह्मलोके केन सम्मानं भवति? → सम्यग्वर्णप्रयोगेण। (घ) अधमाः पाठकाः कति? → षट् (६)।",
+          "meaning": "Exercise 2: One-word Answers: (a) Sounds/letters (Varnānām); (b) Grammar (Vyākaranam); (c) By accurate pronunciation (Samyag-varnaprayogena); (d) Six (Shat).",
+          "paragraphTranslation": "अभ्यास २ (एक शब्द में उत्तर): क- वर्णानाम्, ख- व्याकरणम्, ग- सम्यग्वर्णप्रयोगेण, घ- षट्।",
+          "words": [
+            "वर्णानाम्",
+            "व्याकरणम्",
+            "सम्यग्वर्णप्रयोगेण",
+            "षट्"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "वर्णानाम् / व्याकरणम् / सम्यग्वर्णप्रयोगेण / षट्",
+          "hindi_gloss": "वर्णों का / व्याकरण / शुद्ध उच्चारण से / छह"
+        },
+        {
+          "sanskrit": "३. पूर्णवाक्येन – (क) व्याघ्री दंष्ट्राभ्यां कान् नयति? उत्तरम्: व्याघ्री दंष्ट्राभ्यां पुत्रान् नयति। (ख) वर्णाः कथं प्रयोक्तव्याः? उत्तरम्: वर्णाः नाव्यक्ताः न च पीडिताः प्रयोक्तव्याः।",
+          "meaning": "Exercise 3: Full sentence answers: (a) Whom does the tigress carry with teeth? Ans: Her cubs (putran); (b) How should letters be pronounced? Ans: Neither indistinct nor oppressed.",
+          "paragraphTranslation": "अभ्यास ३ (पूर्ण वाक्य में उत्तर): क- व्याघ्री पुत्रान् नयति; ख- नाव्यक्ताः न च पीडिताः प्रयोक्तव्याः।",
+          "words": [
+            "व्याघ्री",
+            "पुत्रान्",
+            "नाव्यक्ताः",
+            "पीडिताः"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "व्याघ्री दंष्ट्राभ्यां पुत्रान् नयति / वर्णाः नाव्यक्ताः न च पीडिताः प्रयोक्तव्याः",
+          "hindi_gloss": "बच्चों को ले जाती है / न अस्पष्ट न पीडित"
+        },
+        {
+          "sanskrit": "४. वर्गीकरणम् – गुणाः: अक्षरव्यक्तिः, लयसमर्थम्, माधुर्यम्, पदच्छेदः, धैर्यम्, सुस्वरः। दोषाः: शीघ्री, लिखितपाठकः, अनर्थज्ञः, अल्पकण्ठः, गीती, शिरःकम्पी।",
+          "meaning": "Exercise 4: Classification of Reader Qualities (Gunas: Clarity, Rhythm, Sweetness, Word-split, Patience, Melodious) vs Demerits (Doshas: Rushed, Mechanical, Meaningless, Weak-voiced, Sing-song, Head-shaking).",
+          "paragraphTranslation": "पाठक के ६ गुण और ६ दोषों का वर्गीकरण।",
+          "words": [
+            "वर्गीकरणम्",
+            "गुणाः",
+            "दोषाः",
+            "अक्षरव्यक्तिः",
+            "शीघ्री",
+            "सुस्वरः"
+          ],
+          "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "६. सत्यम् / असत्यम् – (क) गानसहितपठनं पाठकानां दोषः भवति। (सत्यम्) (ख) माधुर्यं नाम अक्षराणाम् उच्चारणे स्पष्टता अस्ति। (असत्यम्) (ङ) व्याघ्री यथा पुत्रान् हरति तथा वर्णान् प्रयोजयेत्। (सत्यम्)",
+          "meaning": "Exercise 6: True/False: (a) Singing reading is a flaw (True); (b) Sweetness means syllable clarity (False, that is Aksharavyaktih); (e) Tigress analogy for pronunciation (True).",
+          "paragraphTranslation": "सत्य/असत्य अभ्यास।",
+          "words": [
+            "सत्यम्",
+            "असत्यम्",
+            "गानसहितपठनं",
+            "माधुर्यं"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "सत्यम् / असत्यम् / सत्यम्",
+          "hindi_gloss": "सत्य, असत्य, सत्य"
         }
       ]
     }

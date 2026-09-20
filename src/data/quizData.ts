@@ -1,6 +1,6 @@
 export interface QuizQuestionItem {
   id: string;
-  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4' | 'grade8_ch5' | 'grade8_ch6' | 'grade8_ch7' | 'grade8_ch8' | 'grade8_ch9' | 'grade8_ch10' | 'grade8_ch11';
+  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4' | 'grade8_ch5' | 'grade8_ch6' | 'grade8_ch7' | 'grade8_ch8' | 'grade8_ch9' | 'grade8_ch10' | 'grade8_ch11' | 'grade8_ch12';
   categoryLabel: string;
   chapterRef?: string;
   subCategory?: string;
@@ -45,6 +45,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade8_ch9', label: 'Grade 8 Ch 9: कोऽरुक्? कोऽरुक्? कोऽरुक्? (2 Quizzes · 8 Qs)', icon: '🌿' },
   { id: 'grade8_ch10', label: 'Grade 8 Ch 10: सन्निमित्ते वरं त्यागः (2 Quizzes · 8 Qs)', icon: '⚖️' },
   { id: 'grade8_ch11', label: 'Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख) (2 Quizzes · 8 Qs)', icon: '🕊️' },
+  { id: 'grade8_ch12', label: 'Grade 8 Ch 12: सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (2 Quizzes · 8 Qs)', icon: '🗣️' },
 ] as const;
 
 export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
@@ -12481,6 +12482,159 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
   ],
   "correctIndex": 2,
   "explanation": "प्र उपसर्गपूर्वक-दा (यच्छ्) धातोः लङ्-लकारे प्रथमपुरुषैकवचने 'प्रायच्छत्' (प्र + अयच्छत् / आयच्छत् = प्रायच्छत्) रूपं भवति।",
+  "difficulty": "medium",
+  "points": 10
+}
+,
+{
+  "id": "g8-ch12-q1-1",
+  "category": "grade8_ch12",
+  "categoryLabel": "Grade 8 Ch 12: उच्चारण-शास्त्रम् (Phonetics & Intonation)",
+  "chapterRef": "Grade 8: द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते",
+  "subCategory": "Quiz 1: Phonetics & Intonation Principles",
+  "question": "वर्णोच्चारणं कीदृशं न कर्तव्यम् इति पाठे व्याघ्री-दृष्टान्तेन स्पष्टीकृतम्? (How should letter pronunciation not be done according to the tigress analogy?)",
+  "questionSanskrit": "वर्णोच्चारणं कीदृशं न कर्तव्यम् इति व्याघ्री-दृष्टान्तेन स्पष्टीकृतम्?",
+  "options": [
+    "A) अतिस्पष्टं न भवेत्",
+    "B) अतिकठोररूपेण अतिशैथिल्येण वा न भवेत् (Neither too harsh nor too loose)",
+    "C) मन्दगत्या न भवेत्",
+    "D) सर्वदा गानरूपेण भवेत्"
+  ],
+  "correctIndex": 1,
+  "explanation": "यथा व्याघ्री स्वपुत्रान् दन्ताभ्यां पीडनं विना पतनभयं विना च नयति, तथैव वर्णानाम् उच्चारणं न तु अतिकठोरं न च अतीव शिथिलं कर्तव्यम्।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch12-q1-2",
+  "category": "grade8_ch12",
+  "categoryLabel": "Grade 8 Ch 12: उच्चारण-शास्त्रम् (Phonetics & Intonation)",
+  "chapterRef": "Grade 8: द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते",
+  "subCategory": "Quiz 1: Phonetics & Intonation Principles",
+  "question": "'सम्यग्वर्णप्रयोगेण' मनुष्यः कुत्र सम्मानं लभते (महीयते)? (Where is one honored by the proper use of letters?)",
+  "questionSanskrit": "'सम्यग्वर्णप्रयोगेण' कुत्र महीयते?",
+  "options": [
+    "A) पाताललोके",
+    "B) ब्रह्मलोके",
+    "C) केवलं नगरे",
+    "D) असुरलोके"
+  ],
+  "correctIndex": 1,
+  "explanation": "पाणिनीयशिक्षायाम् उक्तम्—'सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते' अर्थात् शुद्धोच्चारणेन मनुष्यः ब्रह्मलोके पूजितः भवति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch12-q1-3",
+  "category": "grade8_ch12",
+  "categoryLabel": "Grade 8 Ch 12: उच्चारण-शास्त्रम् (Phonetics & Intonation)",
+  "chapterRef": "Grade 8: द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते",
+  "subCategory": "Quiz 1: Phonetics & Intonation Principles",
+  "question": "'अव्यक्ताः' वर्णाः इति पदस्य व्याकरणशास्त्रे कः अर्थः वर्तते? (What does 'avyakta' letters mean in grammar?)",
+  "questionSanskrit": "'अव्यक्ताः' वर्णाः इत्यस्य कः अर्थः?",
+  "options": [
+    "A) अतीव तीक्ष्णाः",
+    "B) अस्पष्टाः (आवश्यकता से कम प्रयत्न वाले / Inaudibly faint & indistinct)",
+    "C) सुस्वराः",
+    "D) मधुराः"
+  ],
+  "correctIndex": 1,
+  "explanation": "'अव्यक्ताः' इत्युक्ते अस्पष्टाः वर्णाः, येषां श्रवणेन वर्णस्वरूपं स्पष्टतया न ज्ञायते (यत्नशैथिल्यात् अप्रकाशिताः)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch12-q1-4",
+  "category": "grade8_ch12",
+  "categoryLabel": "Grade 8 Ch 12: उच्चारण-शास्त्रम् (Phonetics & Intonation)",
+  "chapterRef": "Grade 8: द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते",
+  "subCategory": "Quiz 1: Phonetics & Intonation Principles",
+  "question": "मन्त्रोच्चारणे कस्य परिवर्तनेन अर्थविपर्यासः (अर्थपरिवर्तनं) सम्भवति? (By altering what does change/distortion of meaning occur in mantras?)",
+  "questionSanskrit": "मन्त्रोच्चारणे कस्य परिवर्तनेन अर्थविपर्यासः सम्भवति?",
+  "options": [
+    "A) केवलं पुस्तकानाम्",
+    "B) स्वरस्य (Accent / Intonation - उदात्त-अनुदात्त-स्वरितस्य)",
+    "C) करताडनस्य",
+    "D) मञ्चस्य"
+  ],
+  "correctIndex": 1,
+  "explanation": "स्वरस्य (उदात्त-अनुदात्तादेः) भेदेन मन्त्रस्यार्थः विपरीतो भवति, यथेन्द्रशत्रुः स्वरापराधात् वृत्रासुरस्य नाशकः जातः।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch12-q2-1",
+  "category": "grade8_ch12",
+  "categoryLabel": "Grade 8 Ch 12: षड्वेदाङ्गानि व्याकरणञ्च (Vedangas & Grammar)",
+  "chapterRef": "Grade 8: द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते",
+  "subCategory": "Quiz 2: The Six Vedangas & Philology",
+  "question": "वेदानां कति अङ्गानि सन्ति (वेदाङ्गानि कति)? (How many Vedangas are there?)",
+  "questionSanskrit": "वेदाङ्गानि कति सन्ति?",
+  "options": [
+    "A) चत्वारि (४)",
+    "B) पञ्च (५)",
+    "C) षट् (६ - शिक्षा, कल्पः, व्याकरणम्, निरुक्तम्, छन्दः, ज्योतिषम्)",
+    "D) अष्ट (८)"
+  ],
+  "correctIndex": 2,
+  "explanation": "वेदाङ्गानि षट् सन्ति—शिक्षा, कल्पः, व्याकरणम्, निरुक्तम्, छन्दः, ज्योतिषं चेति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch12-q2-2",
+  "category": "grade8_ch12",
+  "categoryLabel": "Grade 8 Ch 12: षड्वेदाङ्गानि व्याकरणञ्च (Vedangas & Grammar)",
+  "chapterRef": "Grade 8: द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते",
+  "subCategory": "Quiz 2: The Six Vedangas & Philology",
+  "question": "'शिक्षा घ्राणं तु वेदस्य मुखं ___________ स्मृतम्' — रिक्तस्थानं पूरयत (Page 145).",
+  "questionSanskrit": "'शिक्षा घ्राणं तु वेदस्य मुखं ___________ स्मृतम्' — किं पदम्?",
+  "options": [
+    "A) कल्पं",
+    "B) व्याकरणं",
+    "C) निरुक्तं",
+    "D) ज्योतिषं"
+  ],
+  "correctIndex": 1,
+  "explanation": "पाणिनीयशिक्षायाम् उक्तम्—'मुखं व्याकरणं स्मृतम्'। वेदपुरुषस्य मुखं व्याकरणम् उच्यते।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch12-q2-3",
+  "category": "grade8_ch12",
+  "categoryLabel": "Grade 8 Ch 12: षड्वेदाङ्गानि व्याकरणञ्च (Vedangas & Grammar)",
+  "chapterRef": "Grade 8: द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते",
+  "subCategory": "Quiz 2: The Six Vedangas & Philology",
+  "question": "'यद्यपि' इति पदे कः सन्धिः वर्तते? (Which Sandhi is present in 'yadyapi'?)",
+  "questionSanskrit": "'यद्यपि' इति पदे कः सन्धिः अस्ति?",
+  "options": [
+    "A) दीर्घसन्धिः",
+    "B) गुणसन्धिः",
+    "C) यण्सन्धिः (यदि + अपि = यद्यपि, इको यणचि)",
+    "D) वृद्धिसन्धिः"
+  ],
+  "correctIndex": 2,
+  "explanation": "यदि + अपि = यद्यपि। अत्र 'इको यणचि' सूत्रेण इ-कारस्य स्थाने य्-कारः भवति, अतः यण्-सन्धिः।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch12-q2-4",
+  "category": "grade8_ch12",
+  "categoryLabel": "Grade 8 Ch 12: षड्वेदाङ्गानि व्याकरणञ्च (Vedangas & Grammar)",
+  "chapterRef": "Grade 8: द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते",
+  "subCategory": "Quiz 2: The Six Vedangas & Philology",
+  "question": "'मा अभूत्' इति क्रियापदसमूहः कस्य कालस्य बोधं कारयति? (What tense does the verbal phrase 'maa abhuut' denote?)",
+  "questionSanskrit": "'मा अभूत्' कस्य कालस्य बोधकम्?",
+  "options": [
+    "A) वर्तमानकालस्य",
+    "B) भविष्यत्कालस्य",
+    "C) भूतकालस्य (लुङ्/लङ् लकारः - Past tense)",
+    "D) आज्ञाकालस्य"
+  ],
+  "correctIndex": 2,
+  "explanation": "'अभूत्' इति भू-धातोः लुङ्-लकारे (सामान्यभूते) प्रथमपुरुषैकवचनस्य रूपमस्ति, 'मा' योगे निषेधार्थकम्।",
   "difficulty": "medium",
   "points": 10
 }

@@ -224,18 +224,18 @@ export const GRADE_8_SYLLABUS: Grade8Chapter[] = [
     "icon": "🕊️"
   },
   {
-    "id": "g8_ch12",
+    "id": "grade8_ch12",
     "num": "Chapter 12",
     "chNumber": "द्वादशः पाठः",
     "title": "सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते",
     "englishTitle": "Through Perfect Pronunciation One Attains Glory in Brahmaloka",
-    "page": "Page 137",
+    "page": "Pages 137–145",
     "category": "grammar",
-    "genreBadge": "पाणिनीय-शिक्षा · Phonetics & Mantra",
-    "theme": "Paniniya Shiksha's sacred doctrine on pristine pronunciation: accurate articulation of vowels, consonants, accents, and matras elevates consciousness.",
-    "grammarFocus": "तृतीया-विभक्तिः (प्रयोगेण), कर्मणि-लट् (महीयते), वर्णोच्चारण-शास्त्रम्",
-    "sampleVerse": "मन्त्रो हीनः स्वरतो वर्णतो वा मिथ्याप्रयुक्तो न तमर्थमाह । स वाग्वज्रो यजमानं हिनस्ति यथेन्द्रशत्रुः स्वरतोऽपराधात् ॥",
-    "status": "in_curriculum",
+    "genreBadge": "पाणिनीय-शिक्षा · Phonetics & Reader Qualities",
+    "theme": "Paniniya Shiksha's doctrine on pristine pronunciation: the tale of Vritrasura/Indrashatru accent error, tigress carrying cubs metaphor for gentle yet firm articulation, 6 qualities of ideal readers (पाठकगुणाः), and 6 defects of poor readers (पाठकाधमाः).",
+    "grammarFocus": "तृतीया-विभक्तिः (प्रयोगेण), कर्मणि-लट् (महीयते), पाठकगुणाः (गीती शीघ्री etc.), सन्धिः, पदच्छेदः, श्लोकान्वयः",
+    "sampleVerse": "व्याघ्री यथा हरेत्पुत्रान् दंष्ट्राभ्यां न च पीडयेत् । भीता पतनभेदाभ्यां तद्वद्वर्णान् प्रयोजयेत् ॥ — गीती शीघ्री शिरःकम्पी तथा लिखितपाठकः । अनर्थज्ञोऽल्पकण्ठश्च षडेते पाठकाधमाः ॥",
+    "status": "available",
     "icon": "🗣️"
   },
   {
