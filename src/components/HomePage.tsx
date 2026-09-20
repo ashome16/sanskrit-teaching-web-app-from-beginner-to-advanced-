@@ -399,6 +399,17 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     theme: 'Hitopadesha tale of prince Viravara: righteous fourfold division of salary, unmatched loyalty to King Shudraka, and encounter with weeping Rajalaxmi.',
     grammarFocus: 'अन्वय-रचना, भूतकालिक-प्रयोगाः (स्म, क्त, क्तवतु, लङ्), सन्धि-विच्छेदः, सर्वनामपदानि',
   },
+  {
+    id: 'grade8_ch11',
+    num: 'Grade 8 · Chapter 11',
+    title: 'सन्निमित्ते वरं त्यागः (ख-भागः) (Pages 124–135)',
+    english: 'Better to Sacrifice for a Noble Cause (Part 2)',
+    icon: '🕊️',
+    category: 'stories',
+    genreBadge: 'नीतिकथा · Supreme Sacrifice',
+    theme: 'Viravara\'s family sacrifice at the temple of Sarvamangala, King Shudraka\'s boundless devotion to his servant, divine resurrection, and coronation over Karnataka.',
+    grammarFocus: 'वाच्य-प्रकरणम् (कर्तृवाच्य, कर्मवाच्य, भाववाच्य), अकर्मक-सकर्मक-धातवः, सन्धिकार्यम्',
+  },
 ];
 
 const HomePage: React.FC<HomePageProps> = ({

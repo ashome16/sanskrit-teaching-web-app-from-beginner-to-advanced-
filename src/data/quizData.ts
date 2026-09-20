@@ -1,6 +1,6 @@
 export interface QuizQuestionItem {
   id: string;
-  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4' | 'grade8_ch5' | 'grade8_ch6' | 'grade8_ch7' | 'grade8_ch8' | 'grade8_ch9' | 'grade8_ch10';
+  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4' | 'grade8_ch5' | 'grade8_ch6' | 'grade8_ch7' | 'grade8_ch8' | 'grade8_ch9' | 'grade8_ch10' | 'grade8_ch11';
   categoryLabel: string;
   chapterRef?: string;
   subCategory?: string;
@@ -44,6 +44,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade8_ch8', label: 'Grade 8 Ch 8: पश्यत कोणमैशान्यं भारतस्य मनोहरम् (2 Quizzes · 8 Qs)', icon: '🏞️' },
   { id: 'grade8_ch9', label: 'Grade 8 Ch 9: कोऽरुक्? कोऽरुक्? कोऽरुक्? (2 Quizzes · 8 Qs)', icon: '🌿' },
   { id: 'grade8_ch10', label: 'Grade 8 Ch 10: सन्निमित्ते वरं त्यागः (2 Quizzes · 8 Qs)', icon: '⚖️' },
+  { id: 'grade8_ch11', label: 'Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख) (2 Quizzes · 8 Qs)', icon: '🕊️' },
 ] as const;
 
 export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
@@ -12328,6 +12329,158 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
   ],
   "correctIndex": 2,
   "explanation": "नि + युज् + क्त = नियोजितः (नियुक्त किया गया), निर् + गम् + क्त = निर्गतः (निकला)। अत्र क्त-प्रत्ययः (Past Participle) प्रयुक्तः।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q1-1",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: वाच्य-प्रकरणम् (Active & Passive)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 1: Grammatical Voice Structure (वाच्य-प्रकरणम्)",
+  "question": "कर्तृवाच्ये वाक्ये कर्तृपदस्य का विभक्तिः भवति? (Which case is the subject in Active Voice?)",
+  "questionSanskrit": "कर्तृवाच्ये वाक्ये कर्तृपदस्य का विभक्तिः भवति?",
+  "options": [
+    "A) द्वितीया",
+    "B) तृतीया",
+    "C) प्रथमा",
+    "D) चतुर्थी"
+  ],
+  "correctIndex": 2,
+  "explanation": "कर्तृवाच्ये कर्तुः प्राधान्यं भवति, अतः कर्तरि प्रथमा विभक्तिः, कर्मणि द्वितीया, क्रियापदं च कर्तृपदानुसारि भवति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q1-2",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: वाच्य-प्रकरणम् (Active & Passive)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 1: Grammatical Voice Structure (वाच्य-प्रकरणम्)",
+  "question": "कर्मवाच्ये क्रियापदस्य रूपं कथं निर्मीयते? (How is the verb structured in Sanskrit Passive Voice?)",
+  "questionSanskrit": "कर्मवाच्ये क्रियापदस्य रूपं कथं भवति?",
+  "options": [
+    "A) धातुः + शतृ प्रत्ययः",
+    "B) धातुः + य + आत्मनेपदम् (ते/न्ते)",
+    "C) केवलं परस्मैपदम्",
+    "D) धातुः + क्त्वा प्रत्ययः"
+  ],
+  "correctIndex": 1,
+  "explanation": "कर्मवाच्ये धातोः परतः 'य' प्रत्ययः युज्यते पश्चात् आत्मनेपदस्य प्रत्ययाः (ते, एते, न्ते) योज्यन्ते; यथा—पठ् + य + ते = पठ्यते, गम् + य + ते = गम्यते।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q1-3",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: वाच्य-प्रकरणम् (Active & Passive)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 1: Grammatical Voice Structure (वाच्य-प्रकरणम्)",
+  "question": "'अस्माभिः ग्रामः गम्यते' – वाक्यमिदं कस्य वाच्यस्य उदाहरणम् अस्ति?",
+  "questionSanskrit": "'अस्माभिः ग्रामः गम्यते' – इदं कस्य वाच्यस्य वाक्यम्?",
+  "options": [
+    "A) कर्तृवाच्यस्य",
+    "B) भाववाच्यस्य",
+    "C) कर्मवाच्यस्य",
+    "D) किमपि न"
+  ],
+  "correctIndex": 2,
+  "explanation": "अत्र कर्तरि तृतीया (अस्माभिः), कर्मणि प्रथमा (ग्रामः), क्रियापदं च कर्मानुसारि (गम्यते) अस्ति, अतः इदं कर्मवाच्यम् (Passive Voice)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q1-4",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: वाच्य-प्रकरणम् (Active & Passive)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 1: Grammatical Voice Structure (वाच्य-प्रकरणम्)",
+  "question": "भाववाच्ये कस्य पदस्य सर्वथा अभावः भवति? (Which element is completely absent in Impersonal Voice?)",
+  "questionSanskrit": "भाववाच्ये कस्य पदस्य अभावः भवति?",
+  "options": [
+    "A) कर्तृपदस्य",
+    "B) कर्मपदस्य",
+    "C) क्रियापदस्य",
+    "D) अव्ययपदस्य"
+  ],
+  "correctIndex": 1,
+  "explanation": "भाववाच्यस्य प्रयोगः केवलम् अकर्मकधातुभिः सह भवति, यत्र कर्मपदस्य सर्वथा अभावः भवति; क्रियापदं च सर्वदा प्रथमपुरुषस्य एकवचने एव भवति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q2-1",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: अकर्मकधातवः सन्धिकार्यञ्च",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 2: Intransitive Verbs & Sandhi Rules",
+  "question": "'हस, क्रन्द्, स्था, स्ना' इत्यादयः धातवः कीदृशाः कथ्यन्ते?",
+  "questionSanskrit": "'हस, क्रन्द्, स्था' धातवः कीदृशाः भवन्ति?",
+  "options": [
+    "A) सकर्मकधातवः",
+    "B) अकर्मकधातवः",
+    "C) उभयपदिनः",
+    "D) विकर्णधातवः"
+  ],
+  "correctIndex": 1,
+  "explanation": "एतेषां धातूनां व्यापारस्य फलं कर्तरि एव विश्राम्यति, कर्मणः आवश्यकता न भवति, अतः एते अकर्मकधातवः (Intransitive Verbs) सन्ति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q2-2",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: अकर्मकधातवः सन्धिकार्यञ्च",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 2: Intransitive Verbs & Sandhi Rules",
+  "question": "'ततः + ते' इत्यस्य शुद्धं सन्धियुक्तं पदं किम् अस्ति?",
+  "questionSanskrit": "'ततः + ते' इत्यस्य सन्धिपदं किम्?",
+  "options": [
+    "A) ततोते",
+    "B) ततस्ते",
+    "C) ततःते",
+    "D) तत्ताते"
+  ],
+  "correctIndex": 1,
+  "explanation": "विसर्जनीयस्य सः—तवर्गे परे विसर्गस्य सत्वं (स्) भवति; अतः ततः + ते = ततस्ते।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q2-3",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: अकर्मकधातवः सन्धिकार्यञ्च",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 2: Intransitive Verbs & Sandhi Rules",
+  "question": "'शूद्रकोऽपि' इत्यस्य शुद्धः सन्धि-विच्छेदः कः अस्ति?",
+  "questionSanskrit": "'शूद्रकोऽपि' इत्यस्य विच्छेदः कः?",
+  "options": [
+    "A) शूद्रकः + अपि",
+    "B) शूद्रको + पि",
+    "C) शूद्रकम् + अपि",
+    "D) शूद्रके + अपि"
+  ],
+  "correctIndex": 0,
+  "explanation": "शूद्रकः + अपि—अतो रोरप्लुतादप्लुते सूत्रेण विसर्गस्य उत्वे 'शूद्रको', एङः पदान्तादति सूत्रेण पूर्वरूपे च 'शूद्रकोऽपि' निष्पद्यते।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q2-4",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: अकर्मकधातवः सन्धिकार्यञ्च",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 2: Intransitive Verbs & Sandhi Rules",
+  "question": "'महीपतिस्तस्मै प्रायच्छत् समग्रकर्णाटप्रदेशम्' – 'प्रायच्छत्' पदे कः उपसर्गः प्रयुक्तः अस्ति?",
+  "questionSanskrit": "'प्रायच्छत्' पदे कः उपसर्गः अस्ति?",
+  "options": [
+    "A) प्रति",
+    "B) परा",
+    "C) प्र",
+    "D) परि"
+  ],
+  "correctIndex": 2,
+  "explanation": "प्र उपसर्गपूर्वक-दा (यच्छ्) धातोः लङ्-लकारे प्रथमपुरुषैकवचने 'प्रायच्छत्' (प्र + अयच्छत् / आयच्छत् = प्रायच्छत्) रूपं भवति।",
   "difficulty": "medium",
   "points": 10
 }

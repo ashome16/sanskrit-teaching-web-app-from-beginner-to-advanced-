@@ -50,7 +50,7 @@ export const WORKSHEET_CATEGORIES = [
   { id: 'grammar', label: 'Vyākaraṇa / Grammar (10 Worksheets · व्याकरण-पत्राणि)', icon: '📐' },
   { id: 'vedic_maths', label: 'Vedic Maths Drills (वैदिक-गणितम्)', icon: '⚡' },
   { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
-  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 48 Worksheets)', icon: '🪕' },
+  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 53 Worksheets)', icon: '🪕' },
 ] as const;
 
 export const WORKSHEETS: Worksheet[] = [
@@ -10294,6 +10294,331 @@ export const WORKSHEETS: Worksheet[] = [
           "type": "short_ans",
           "answer": "राजलक्ष्मीरस्मि = राजलक्ष्मीः + अस्मि; अस्त्यत्र = अस्ति + अत्र; कश्चिदुपायो = कश्चित् + उपायः",
           "explanation": "राजलक्ष्मीः+अस्मि (विसर्गस्य रुत्वम्); अस्ति+अत्र (यण्-सन्धिः); कश्चित्+उपायः (जश्त्व-सन्धिः)।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch11-ws1",
+  "title": "Chapter 11 · Worksheet 1: Voice (वाच्य) Conversion Rules",
+  "titleSanskrit": "एकादशः पाठः · कार्यपत्रिका १: वाच्य-भेद-परिज्ञानम्",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Distinguishing between कर्तृवाच्य (Active Voice) and कर्मवाच्य (Passive Voice) constructions based on Pages 128–129.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Identifying Sentence Voice (Active vs Passive)",
+      "sectionTitleSanskrit": "खण्डः 'क' · वाच्य-निर्धारणम्",
+      "instructions": "Identify whether each sentence is in कर्तृवाच्यम् (Active) or कर्मवाच्यम् (Passive):",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "'बालकः ग्रामं गच्छति।' – अत्र कः वाच्यः अस्ति? (Identify the voice)",
+          "questionSanskrit": "'बालकः ग्रामं गच्छति' – कः वाच्यः?",
+          "marks": 5,
+          "type": "grammar",
+          "answer": "कर्तृवाच्यम् (Active Voice)",
+          "explanation": "कर्तरि प्रथमा (बालकः), कर्मणि द्वितीया (ग्रामं), क्रियापदं च कर्त्रनुसारि परस्मैपदे (गच्छति) अस्ति।"
+        },
+        {
+          "num": 2,
+          "question": "'बालकेन ग्रामः गम्यते।' – अत्र कः वाच्यः अस्ति?",
+          "questionSanskrit": "'बालकेन ग्रामः गम्यते' – कः वाच्यः?",
+          "marks": 5,
+          "type": "grammar",
+          "answer": "कर्मवाच्यम् (Passive Voice)",
+          "explanation": "कर्तरि तृतीया (बालकेन), कर्मणि प्रथमा (ग्रामः), क्रिया च कर्मानुसारिणी 'य' प्रत्ययसहिता आत्मनेपदे (गम्यते) अस्ति।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: First-Person Voice Analysis",
+      "sectionTitleSanskrit": "खण्डः 'ख' · उत्तमपुरुष-वाक्य-विश्लेषणम्",
+      "instructions": "Analyze the case endings and verb forms:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "'मया चित्रं दृश्यते।' – अत्र कः वाच्यः अस्ति?",
+          "questionSanskrit": "'मया चित्रं दृश्यते' – कः वाच्यः?",
+          "marks": 5,
+          "type": "grammar",
+          "answer": "कर्मवाच्यम् (Passive Voice)",
+          "explanation": "अस्मद्-शब्दस्य तृतीया (मया), कर्मणि प्रथमा (चित्रं), क्रिया च आत्मनेपदे (दृश्यते) अस्ति।"
+        },
+        {
+          "num": 4,
+          "question": "'अहम् अखिलसंवादं अवर्णयम्।' – अत्र कः वाच्यः अस्ति?",
+          "questionSanskrit": "'अहम् अखिलसंवादं अवर्णयम्' – कः वाच्यः?",
+          "marks": 5,
+          "type": "grammar",
+          "answer": "कर्तृवाच्यम् (Active Voice)",
+          "explanation": "अहम् (प्रथमा), अखिलसंवादं (द्वितीया), अवर्णयम् (लङ्-लकारः उत्तमपुरुषः एकवचनम्) कर्तृवाच्यस्य लक्षणम् अस्ति।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch11-ws2",
+  "title": "Chapter 11 · Worksheet 2: Case Agreement in Passive & Impersonal Voices",
+  "titleSanskrit": "एकादशः पाठः · कार्यपत्रिका २: तृतीया-विभक्ति-कारक-नियमः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Subject inflection in Instrumental case (तृतीया विभक्तिः) for Karma-vachya and Bhava-vachya constructions.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Singular Agent Pronoun and Noun Agreement",
+      "sectionTitleSanskrit": "खण्डः 'क' · एकवचन-कर्तृपद-प्रयोगः",
+      "instructions": "Fill in the blank with the correct Instrumental case (तृतीया विभक्ति) form:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "______________ हस्यते। (बालकः / बालकेन)",
+          "questionSanskrit": "रिक्तस्थानं पूरयत: ______________ हस्यते।",
+          "marks": 5,
+          "type": "fill",
+          "answer": "बालकेन",
+          "explanation": "भाववाच्ये कर्तरि तृतीया विभक्तिः भवति (बालकेन हस्यते = बालक द्वारा हँसा जाता है)।"
+        },
+        {
+          "num": 2,
+          "question": "______________ ग्रन्थः पठ्यते। (त्वम् / त्वया)",
+          "questionSanskrit": "रिक्तस्थानं पूरयत: ______________ ग्रन्थः पठ्यते।",
+          "marks": 5,
+          "type": "fill",
+          "answer": "त्वया",
+          "explanation": "युष्मद्-शब्दस्य तृतीया-एकवचने 'त्वया' रूपं भवति।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: First-Person Agent Agreement",
+      "sectionTitleSanskrit": "खण्डः 'ख' · अस्मद्-शब्द-प्रयोगः",
+      "instructions": "Select the correct form of the agent for passive sentences:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "______________ कथा श्रूयते। (अहम् / मया)",
+          "questionSanskrit": "रिक्तस्थानं पूरयत: ______________ कथा श्रूयते।",
+          "marks": 5,
+          "type": "fill",
+          "answer": "मया",
+          "explanation": "अस्मद्-शब्दस्य तृतीया-एकवचने 'मया' रूपं भवति (मया कथा श्रूयते = मेरे द्वारा कहानी सुनी जाती है)।"
+        },
+        {
+          "num": 4,
+          "question": "______________ ग्रामः गम्यते। (अस्माभिः / वयम्)",
+          "questionSanskrit": "रिक्तस्थानं पूरयत: ______________ ग्रामः गम्यते।",
+          "marks": 5,
+          "type": "fill",
+          "answer": "अस्माभिः",
+          "explanation": "अस्मद्-शब्दस्य तृतीया-बहुवचने 'अस्माभिः' रूपं भवति (हमारे द्वारा गाँव जाया जाता है)।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch11-ws3",
+  "title": "Chapter 11 · Worksheet 3: Textual Verse Comprehension",
+  "titleSanskrit": "एकादशः पाठः · कार्यपत्रिका ३: श्लोकावबोधनम् (Page 135)",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Deep literary, grammatical, and moral comprehension of Shloka 1 recited by Shaktidhara.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Verse Meaning & Purpose",
+      "sectionTitleSanskrit": "खण्डः 'क' · श्लोकार्थः उद्देश्यञ्च",
+      "instructions": "Read Shloka 1 and answer the questions:\n'धनानि जीवितञ्चैव परार्थे प्राज्ञ उत्सृजेत्। सन्निमित्ते वरं त्यागो विनाशे नियते सति ॥'",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "प्राज्ञः किमर्थं धनानि जीवितं च उत्सृजेत्? (For what purpose should the wise sacrifice wealth and life?)",
+          "questionSanskrit": "प्राज्ञः किमर्थं धनं जीवनं च त्यजेत्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "परार्थे (परोपकारार्थम् / दूसरों के कल्याण और राष्ट्रहित के लिए)",
+          "explanation": "श्लोके स्पष्टम् उक्तम्—'धनानि जीवितञ्चैव परार्थे प्राज्ञ उत्सृजेत्'।"
+        },
+        {
+          "num": 2,
+          "question": "अस्मिन् श्लोके 'बुद्धिमान्' इति पदस्य कः पर्यायवाची शब्दः प्रयुक्तः?",
+          "questionSanskrit": "'बुद्धिमान्' इत्यर्थे कः शब्दः अस्ति?",
+          "marks": 5,
+          "type": "fill",
+          "answer": "प्राज्ञः",
+          "explanation": "प्रकर्षेण जानाति इति प्राज्ञः (धीमान् / बुद्धिमान्)।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Verbal Analysis & Core Axiom",
+      "sectionTitleSanskrit": "खण्डः 'ख' · क्रियापदं नीतिसिद्धान्तश्च",
+      "instructions": "Answer the analytical questions based on the verse:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "अस्मिन् श्लोके 'उत्सृजेत्' क्रियापदस्य कः अर्थः कश्च लकारः?",
+          "questionSanskrit": "'उत्सृजेत्' पदस्य अर्थः लकारश्च कः?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "अर्थः: त्याग करना चाहिए (Should sacrifice / give up); लकारः: विधिलिङ्-लकारः प्रथमपुरुषः एकवचनम् (उत् + सृज् धातुः)।",
+          "explanation": "विधिलिङ्-लकारः प्रेरणार्थे वा विध्यर्थे प्रयुज्यते।"
+        },
+        {
+          "num": 4,
+          "question": "विनाशे नियते सति किं वरम्? (When demise is certain, what is superior?)",
+          "questionSanskrit": "विनाशे नियते सति किं वरम्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "सन्निमित्ते त्यागः वरम् (सत्कार्य अथवा महान् उद्देश्य के लिए त्याग करना ही श्रेष्ठ है)।",
+          "explanation": "नश्वरस्य शरीरस्य धनस्य च सन्मार्गे त्यागः एव श्रेष्ठः भवति।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch11-ws4",
+  "title": "Chapter 11 · Worksheet 4: True or False (आम् / न)",
+  "titleSanskrit": "एकादशः पाठः · कार्यपत्रिका ४: सत्यासत्य-विवेकः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Evaluating factual statements from Chapter 11 with 'आम्' (True) or 'न' (False).",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Character & Narrative Accuracy",
+      "sectionTitleSanskrit": "खण्डः 'क' · पात्र-कथा-सत्यता",
+      "instructions": "Write 'आम्' for true statements or 'न' for false statements:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "किं शक्तिधरः वीरवरस्य भ्राता आसीत्? (Was Shaktidhara Viravara's brother?)",
+          "questionSanskrit": "किं शक्तिधरः वीरवरस्य भ्राता आसीत्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "न (शक्तिधरः वीरवरस्य पुत्रः आसीत्)",
+          "explanation": "शक्तिधरः वीरवरस्य प्रियतमः सुतः (बेटा) आसीत्, न तु भ्राता।"
+        },
+        {
+          "num": 2,
+          "question": "किं राजा शूद्रकः वीरवराय समग्रकर्णाटप्रदेशम् अयच्छत्?",
+          "questionSanskrit": "किं राजा वीरवराय समग्रकर्णाटप्रदेशम् अयच्छत्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "आम् (हाँ / True)",
+          "explanation": "राजा परमां प्रीतिं गत्वा समग्रकर्णाटप्रदेशं राजपुत्राय वीरवराय प्रायच्छत्।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Temple Climax & Divine Reaction",
+      "sectionTitleSanskrit": "खण्डः 'ख' · देव्यनुग्रहः समर्पणञ्च",
+      "instructions": "Evaluate the divine intervention statements:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "किं देवी सर्वमङ्गला राजा शूद्रकस्य उपरि क्रुद्धा अभवत्?",
+          "questionSanskrit": "किं देवी सर्वमङ्गला शूद्रकस्य उपरि क्रुद्धा अभवत्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "न (देवी परं प्रसन्ना अभवत्)",
+          "explanation": "देवी शूद्रकस्य सत्त्वोत्कर्षेण भृत्यवात्सल्येन च परं प्रीता अभवत्।"
+        },
+        {
+          "num": 4,
+          "question": "किं वीरवरः स्वामिहितार्थं स्वपुत्रस्य समर्पणम् अकरोत्?",
+          "questionSanskrit": "किं वीरवरः स्वामिहितार्थं स्वपुत्रस्य समर्पणम् अकरोत्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "आम् (हाँ / True)",
+          "explanation": "वीरवरः स्वामिनः शूद्रकस्य प्राणरक्षार्थं स्वपुत्रम् आत्मानं च देव्यै समर्पितवान्।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch11-ws5",
+  "title": "Chapter 11 · Worksheet 5: Character & Dialogue Context Matching",
+  "titleSanskrit": "एकादशः पाठः · कार्यपत्रिका ५: पात्र-संवाद-मेलनम्",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "30 Minutes",
+  "description": "Matching dramatic textual dialogues with the respective characters in Hitopadesha.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Dialogue Attribution",
+      "sectionTitleSanskrit": "खण्डः 'क' · संवाद-पात्र-सम्बन्धः",
+      "instructions": "Match each dialogue statement with the character who spoke it:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "'जानाम्यहं भवतः सर्वप्रियं वस्तु।' – इदं वाक्यं कः अवदत्?",
+          "questionSanskrit": "'जानाम्यहं भवतः सर्वप्रियं वस्तु' – कः अवदत्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "शक्तिधरः (वीरवरस्य पुत्रः)",
+          "explanation": "शक्तिधरः पितुः वचनं श्रुत्वा सानन्दम् अवदत् यत् अहमेव भवतः प्रियतमः।"
+        },
+        {
+          "num": 2,
+          "question": "'यद्येवम् अस्मत्कुलोचितं नाचरितव्यं तर्हि गृहीतस्वामिवर्तनस्य कथं निस्तारो भवेत्?' – इदं वाक्यं का अवदत्?",
+          "questionSanskrit": "'गृहीतस्वामिवर्तनस्य कथं निस्तारो भवेत्' – का अवदत्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "वेदरता (वीरवरस्य पत्नी)",
+          "explanation": "वीरवरस्य पत्नी वेदरता स्वामिनः वेतनऋणस्य विमुक्तये कुलोचित-समर्पणस्य समर्थनम् अकरोत्।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Devotional Invocations",
+      "sectionTitleSanskrit": "खण्डः 'ख' · मन्दिर-संवाद-मेलनम्",
+      "instructions": "Attribute the temple speeches correctly:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "'भगवति ! प्रसीद, विजयतां महाराजः शूद्रकः, गृह्यतामेष मद्दत्त उपहारः।' – इदं कः अवदत्?",
+          "questionSanskrit": "'विजयतां महाराजः शूद्रकः' – कः अवदत्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "वीरवरः",
+          "explanation": "वीरवरः सर्वमङ्गलायाः मन्दिरे पूजां कृत्वा स्वामिनः विजयाय पुत्रोपहारं समर्पयन् इदम् अवदत्।"
+        },
+        {
+          "num": 4,
+          "question": "'वत्स ! प्रसन्ना भवामि त्वयि, अलं साहसेन। नेदानीं राज्यभङ्गस्ते भविष्यति।' – इदं का अवदत्?",
+          "questionSanskrit": "'अलं साहसेन' – का अवदत्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "देवी सर्वमङ्गला (भगवती)",
+          "explanation": "राजा शूद्रकस्य करं धृत्वा भगवती सर्वमङ्गला प्रत्यक्षं भूत्वा वरम् अयच्छत्।"
         }
       ]
     }

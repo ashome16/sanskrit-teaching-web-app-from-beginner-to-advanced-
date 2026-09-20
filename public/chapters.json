@@ -34670,6 +34670,478 @@
           "kind": "exercise-note"
         }
       ]
+    },
+    {
+      "id": "grade8_ch11",
+      "fileName": "grade8_ch11.txt",
+      "title": "एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+      "page_numbers": "124-135",
+      "sentences": [
+        {
+          "sanskrit": "॥ एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः) ॥",
+          "meaning": "Chapter 11: Better is Sacrifice for a Noble Cause (Part 2) · The Supreme Sacrifice of Viravara (Pages 124–135)",
+          "paragraphTranslation": "एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः) (पृष्ठ १२४–१३५)",
+          "words": [
+            "एकादशः",
+            "पाठः",
+            "सन्निमित्ते",
+            "वरं",
+            "त्यागः",
+            "ख-भागः"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "प्रस्तुतः पाठः 'हितोपदेशः' इत्यस्मात् कथाग्रन्थात् स्वीकृतः। अत्र वीरवरकथायाः द्वितीयः भागः (ख-भागः) वर्तते। अस्मिन् भागे वीरवरस्य तस्य परिवारस्य च स्वामिभक्तेः, राष्ट्रहितसमर्पणस्य, परोपकारस्य च पराकाष्ठा वर्णिता।",
+          "meaning": "The present lesson is taken from the classical tale-collection 'Hitopadesha'. Here the second part of Viravara's story depicts the zenith of master-loyalty, national self-sacrifice, and noble altruism.",
+          "paragraphTranslation": "प्रस्तुत पाठ 'हितोपदेश' ग्रन्थ से लिया गया है। इसमें वीरवर और उसके परिवार की स्वामिभक्ति, राष्ट्रहित में समर्पण और परोपकार की पराकाष्ठा का वर्णन है।",
+          "words": [
+            "प्रस्तुतः",
+            "पाठः",
+            "हितोपदेशः",
+            "वीरवरकथायाः",
+            "द्वितीयः",
+            "भागः",
+            "स्वामिभक्तेः",
+            "राष्ट्रहितसमर्पणस्य",
+            "परोपकारस्य",
+            "पराकाष्ठा"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "वीरवरः नाम कश्चित् राजपुरुषः राज्ञः शूद्रकस्य सेवकरूपेण नियुक्तः। तस्मै वेतनं सुवर्णशतचतुष्टयं दीयते। प्राप्तवेतनस्य अर्धं सः देवकार्ये नियोजयति।",
+          "meaning": "A warrior prince named Viravara was appointed in the service of King Shudraka. A daily wage of four hundred gold coins was granted to him. He dedicated half of that salary to religious and pious deeds.",
+          "paragraphTranslation": "वीरवर नाम का राजपुरुष राजा शूद्रक के सेवक रूप में नियुक्त हुआ। उसे ४०० स्वर्ण मुद्राएँ वेतन मिलता था। वह वेतन का आधा भाग देवकार्यों में लगाता था।",
+          "words": [
+            "वीरवरः",
+            "राजपुरुषः",
+            "शूद्रकस्य",
+            "सेवकरूपेण",
+            "नियुक्तः",
+            "वेतनं",
+            "सुवर्णशतचतुष्टयं",
+            "देवकार्ये",
+            "नियोजयति"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "एकचतुर्थांशं दरिद्रेभ्यः वण्टयति (विभजति)। अवशिष्टं च एकचतुर्थांशं स्वपत्न्याः हस्ते अर्पयति। स्वखड्गम् आदाय अहर्निशं राजद्वारे रक्षकरूपेण स्थित्वा सः सेवां करोति।",
+          "meaning": "He distributed one-fourth to the destitute poor and handed the remaining one-fourth to his wife. With sword in hand, he guarded the palace gate day and night.",
+          "paragraphTranslation": "एक-चौथाई भाग वह गरीबों में बाँटता था और शेष एक-चौथाई अपनी पत्नी के हाथ में सौंपता था। तलवार लिए वह दिन-रात राजद्वार पर रक्षा करता था।",
+          "words": [
+            "एकचतुर्थांशं",
+            "दरिद्रेभ्यः",
+            "वण्टयति",
+            "अवशिष्टं",
+            "स्वपत्न्याः",
+            "हस्ते",
+            "अर्पयति",
+            "स्वखड्गम्",
+            "अहर्निशं",
+            "रक्षकरूपेण",
+            "सेवां"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "एकदा रात्रौ राज्ञः आदेशेन कञ्चित् करुणक्रन्दनध्वनिम् अनुसृत्य सः नगराद् बहिः गच्छति, एकां दिव्याभरणभूषितां कामपि रोदनपरां सुन्दरीं च पश्यति। सा राज्ञः शूद्रकस्य राजलक्ष्मीः अस्ति।",
+          "meaning": "Once at night by king's royal order, following a sorrowful lamentation, he went outside the city and encountered a weeping lady clad in divine jewels: Goddess Rajalaxmi of King Shudraka.",
+          "paragraphTranslation": "एक रात राजा की आज्ञा से रोने की आवाज़ का पीछा करते हुए वह नगर से बाहर गया और दिव्य आभूषणों से सजी रोती हुई स्त्री को देखा, जो राजा शूद्रक की राजलक्ष्मी थी।",
+          "words": [
+            "राज्ञः",
+            "आदेशेन",
+            "करुणक्रन्दनध्वनिम्",
+            "नगरात्",
+            "बहिः",
+            "दिव्याभरणभूषितां",
+            "रोदनपरां",
+            "सुन्दरीं",
+            "राजलक्ष्मीः"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "ततः राजलक्ष्मीः अतीव दुःसाध्यम् उपायं सूचयति। तस्याः अनुसारं यदि वीरवरः स्वस्य सर्वप्रियं वस्तु देव्यै सर्वमङ्गलायै उपहाररूपेण समर्पयति, तर्हि तस्य राजा चिरं वर्षशतं जीविष्यति।",
+          "meaning": "Then Rajalaxmi revealed an extremely arduous remedy: if Viravara sacrifices his dearest possession to Goddess Sarvamangala, his king will live for a hundred years.",
+          "paragraphTranslation": "तब राजलक्ष्मी ने अत्यंत कठिन उपाय बताया कि यदि वीरवर अपनी सबसे प्रिय वस्तु भगवती सर्वमंगला को अर्पित कर दे, तो राजा सौ वर्षों तक जीवित रहेंगे।",
+          "words": [
+            "राजलक्ष्मीः",
+            "दुःसाध्यम्",
+            "उपायं",
+            "सर्वप्रियं",
+            "वस्तु",
+            "सर्वमङ्गलायै",
+            "उपहाररूपेण",
+            "समर्पयति",
+            "वर्षशतं",
+            "जीविष्यति"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "अथ राजपुत्रो वीरवरो स्वावासं गत्वा निद्रालसां पत्नीं पुत्रं दुहितरञ्च प्राबोधयत् अखिलराजलक्ष्मीसंवादं च अवर्णयत्।",
+          "meaning": "Thereupon, prince Viravara returned home, woke his slumbering wife, son, and daughter, and narrated the complete dialogue with Goddess Rajalaxmi.",
+          "paragraphTranslation": "इसके बाद राजकुमार वीरवर ने घर जाकर नींद से अलसाई पत्नी, पुत्र और पुत्री को जगाया और राजलक्ष्मी का सारा संवाद बताया।",
+          "words": [
+            "स्वावासं",
+            "गत्वा",
+            "निद्रालसां",
+            "पत्नीं",
+            "पुत्रं",
+            "दुहितरञ्च",
+            "प्राबोधयत्",
+            "अखिलराजलक्ष्मीसंवादं",
+            "अवर्णयत्"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "शक्तिधरः – (तच्छ्रुत्वा सानन्दम्) हे पितः ! जानाम्यहं भवतः सर्वप्रियं वस्तु। तद् अहमेव भवतः प्रियतमः इति सर्वविदितः। धन्योऽहं स्वामिजीवितरक्षार्थं यदि विनियुक्तः। तत् कोऽधुना विलम्बस्तात ?",
+          "meaning": "Shaktidhara – (Hearing this with joy) O Father! I know your most beloved treasure. That I alone am your dearest is known to all. I am truly blessed if utilized to save the master's life. Then why delay, dear father?",
+          "paragraphTranslation": "शक्तिधर – (सुनकर प्रसन्नतापूर्वक) हे पिता जी! मैं आपकी सबसे प्रिय वस्तु को जानता हूँ। मैं ही आपका सबसे प्रिय हूँ, यह सर्वविदित है। मैं धन्य हूँ यदि स्वामी की रक्षा हेतु मेरा उपयोग हो। तो अब देरी क्यों?",
+          "words": [
+            "शक्तिधरः",
+            "तच्छ्रुत्वा",
+            "सानन्दम्",
+            "पितः",
+            "जानाम्यहं",
+            "सर्वप्रियं",
+            "प्रियतमः",
+            "धन्योऽहं",
+            "स्वामिजीवितरक्षार्थं",
+            "विलम्बस्तात"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "धनानि जीवितञ्चैव परार्थे प्राज्ञ उत्सृजेत्। सन्निमित्ते वरं त्यागो विनाशे नियते सति ॥ १ ॥",
+          "meaning": "A wise man should willingly give up his wealth and even his life for the benefit of others. When destruction is inevitable, sacrifice for a noble cause is far superior.",
+          "paragraphTranslation": "बुद्धिमान व्यक्ति को दूसरों की भलाई के लिए अपने धन और जीवन का त्याग कर देना चाहिए। जब विनाश निश्चित हो, तो श्रेष्ठ उद्देश्य (सन्निमित्त) के लिए त्याग करना ही उत्तम है।",
+          "words": [
+            "धनानि",
+            "जीवितञ्चैव",
+            "परार्थे",
+            "प्राज्ञः",
+            "उत्सृजेत्",
+            "सन्निमित्ते",
+            "वरं",
+            "त्यागः",
+            "विनाशे",
+            "नियते",
+            "सति"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "श्लोक-अन्वयः — प्राज्ञः धनानि जीवितं च एव परार्थे उत्सृजेत्। विनाशे नियते सति सन्निमित्ते त्यागः वरम्।",
+          "meaning": "Anvaya: The wise person ought to relinquish wealth and life itself for the sake of others. When demise is destined, surrender for a noble cause is truly glorious.",
+          "paragraphTranslation": "अन्वय: बुद्धिमान् मनुष्य दूसरों के हित के लिए धन और जीवन का त्याग करे। विनाश अवश्यम्भावी होने पर शुभ कार्य हेतु त्याग ही श्रेष्ठ है।",
+          "words": [
+            "प्राज्ञः",
+            "धनानि",
+            "जीवितं",
+            "परार्थे",
+            "उत्सृजेत्",
+            "विनाशे",
+            "नियते",
+            "सन्निमित्ते",
+            "त्यागः",
+            "वरम्"
+          ],
+          "kind": "shloka-analysis"
+        },
+        {
+          "sanskrit": "वेदरता – यद्येवम् अस्मत्कुलोचितं नाचरितव्यं तर्हि गृहीतस्वामिवर्तनस्य कथं निस्तारो भवेत्? वीरवती – धन्याहं यस्या ईदृशो जनको भ्राता च। एष एव गृहीतस्वामिवर्तनस्य निस्तारस्य उपायः।",
+          "meaning": "Vedarata (Wife) – If we do not act according to our family honour, how shall we redeem our debt to the master's wages? Viravati (Daughter) – Blessed am I with such a noble father and brother! This alone is the true redemption.",
+          "paragraphTranslation": "वेदरता – यदि हम कुलानुकूल आचरण नहीं करेंगे, तो राजा के वेतन का ऋण कैसे उतरेगा? वीरवती – मैं धन्य हूँ जिसके ऐसे पिता और भाई हैं। यही वेतन-ऋण से मुक्ति का मार्ग है।",
+          "words": [
+            "वेदरता",
+            "अस्मत्कुलोचितं",
+            "नाचरितव्यं",
+            "गृहीतस्वामिवर्तनस्य",
+            "निस्तारः",
+            "वीरवती",
+            "धन्याहं",
+            "जनको",
+            "भ्राता"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "ततस्ते सर्वे सर्वमङ्गलाया आयतनं गताः। वीरवरः – (देवीपूजां विधाय) भगवति ! प्रसीद, विजयतां महाराजः शूद्रकः, गृह्यतामेष मद्दत्त उपहारः।",
+          "meaning": "Then they all went to the temple court of Goddess Sarvamangala. Viravara – (Worshipping the Goddess) O Mother! Be gracious, may King Shudraka triumph, accept this offering presented by me!",
+          "paragraphTranslation": "तब वे सब भगवती सर्वमंगला के मंदिर पहुँचे। वीरवर ने देवी की पूजा करके कहा—भगवती! प्रसन्न हों, महाराज शूद्रक विजयी हों, मेरा यह उपहार स्वीकार करें।",
+          "words": [
+            "सर्वमङ्गलायाः",
+            "आयतनं",
+            "गताः",
+            "देवीपूजां",
+            "विधाय",
+            "भगवति",
+            "प्रसीद",
+            "विजयतां",
+            "महाराजः",
+            "शूद्रकः",
+            "गृह्यताम्",
+            "उपहारः"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "वीरवरः – कृतो मया गृहीतस्वामिवर्तनस्य निस्तारो स्वपुत्रसमर्पणेन। अधुना पुत्रवियुक्तस्य मे जीवनं निष्फलम्। (ततः सः आत्मानमपि देव्यै समर्पितवान्। पत्न्या दुहित्रा च तदेवाचरितम्।)",
+          "meaning": "Viravara – I have repaid the debt of my master's wages by offering my son. Now, bereft of my child, my life is empty. (Then he offered his own life to the Goddess, and his wife and daughter followed suit.)",
+          "paragraphTranslation": "वीरवर – मैंने पुत्र का समर्पण कर स्वामी के वेतन का ऋण चुका दिया। अब पुत्र के बिना मेरा जीवन व्यर्थ है। (उसने स्वयं को भी समर्पित कर दिया, और पत्नी व पुत्री ने भी वही किया।)",
+          "words": [
+            "गृहीतस्वामिवर्तनस्य",
+            "निस्तारः",
+            "स्वपुत्रसमर्पणेन",
+            "पुत्रवियुक्तस्य",
+            "जीवनं",
+            "निष्फलम्",
+            "आत्मानम्",
+            "समर्पितवान्",
+            "पत्न्या",
+            "दुहित्रा"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "जायन्ते च म्रियन्ते च मादृशाः क्षुद्रजन्तवः। अनेन सदृशो लोके न भूतो न भविष्यति ॥ २ ॥",
+          "meaning": "Insignificant creatures like me are born and die in abundance, but someone comparable to this noble Viravara has never existed in this world, nor ever will.",
+          "paragraphTranslation": "मेरे जैसे क्षुद्र प्राणी तो पैदा होते और मरते रहते हैं, किंतु इस वीरवर के समान त्यागी न संसार में पहले हुआ है और न कभी भविष्य में होगा।",
+          "words": [
+            "जायन्ते",
+            "म्रियन्ते",
+            "मादृशाः",
+            "क्षुद्रजन्तवः",
+            "अनेन",
+            "सदृशः",
+            "लोके",
+            "न",
+            "भूतः",
+            "भविष्यति"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "राजा – तदेतत्परित्यक्तेन मम राज्येनापि किं प्रयोजनम्। हे मातः ! सर्वमङ्गले ! गृहाण मे सर्वस्वम्। नेष्टं मे राज्यं न च जीवितं वा।",
+          "meaning": "King Shudraka – Bereft of such a hero, what purpose does my kingdom serve? O Mother Sarvamangala! Take my everything; I desire neither realm nor breath.",
+          "paragraphTranslation": "राजा शूद्रक – इस वीरवर के बिना मेरे इस राज्य का क्या प्रयोजन? हे माता सर्वमंगला! मेरा सर्वस्व स्वीकार करें, मुझे न राज्य चाहिए और न जीवन।",
+          "words": [
+            "परित्यक्तेन",
+            "राज्येन",
+            "प्रयोजनम्",
+            "सर्वमङ्गले",
+            "गृहाण",
+            "सर्वस्वम्",
+            "नेष्टं",
+            "जीवितं"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "देवी – (राज्ञः करं धृत्वा) वत्स ! प्रसन्ना भवामि त्वयि, अलं साहसेन। नेदानीं राज्यभङ्गस्ते भविष्यति।",
+          "meaning": "Goddess – (Catching the King's hand) Child! I am immensely pleased with you; enough of this rashness! Your kingdom will experience no ruin.",
+          "paragraphTranslation": "देवी – (राजा का हाथ पकड़कर) वत्स! मैं तुम पर प्रसन्न हूँ, दुस्साहस मत करो। तुम्हारे राज्य का नाश नहीं होगा।",
+          "words": [
+            "करं",
+            "धृत्वा",
+            "वत्स",
+            "प्रसन्ना",
+            "भवामि",
+            "अलं",
+            "साहसेन",
+            "राज्यभङ्गः",
+            "भविष्यति"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "राजा – भगवति ! यदि मयि कृपा भगवत्या जाता, तदा ममायुःशेषेणापि प्रत्यावर्तेत राजपुत्रो वीरवरः सह पुत्रेण पत्न्या दुहित्रा च। अन्यथा मया यथाप्राप्ता गतिर्गन्तव्या जगदम्ब !",
+          "meaning": "King – O Goddess! If your grace shines upon me, then by my remaining lifespan let prince Viravara be restored to life along with his son, wife, and daughter! Otherwise, I must embrace death!",
+          "paragraphTranslation": "राजा – भगवती! यदि मुझ पर कृपा है, तो मेरी बची आयु लेकर वीरवर को उसके परिवार सहित जीवित कर दीजिए, अन्यथा मैं भी प्राण त्याग दूँगा।",
+          "words": [
+            "कृपा",
+            "ममायुःशेषेण",
+            "प्रत्यावर्तेत",
+            "राजपुत्रः",
+            "वीरवरः",
+            "पुत्रेण",
+            "पत्न्या",
+            "दुहित्रा",
+            "जगदम्ब"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "देवी – वत्स ! अनेन ते सत्त्वोत्कर्षेण भृत्यवात्सल्येन च परं प्रीतास्मि। तद् गच्छ, विजयी भव। अयमपि सपरिवारो जयतु राजपुत्र आदर्शचरितो वीरवरः। (ततो देवी गताऽदर्शनम्।)",
+          "meaning": "Goddess – Child! By this pinnacle of your nobility and fatherly affection toward your servant, I am overjoyed. Go, be victorious! May ideal Viravara also triumph with his family! (Then the Goddess vanished.)",
+          "paragraphTranslation": "देवी – वत्स! तुम्हारे इस सात्त्विक त्याग और सेवक-स्नेह से मैं परम प्रसन्न हूँ। विजयी होओ! वीरवर भी सपरिवार जीवित होकर विजयी हो। (देवी अंतर्ध्यान हो गईं।)",
+          "words": [
+            "सत्त्वोत्कर्षेण",
+            "भृत्यवात्सल्येन",
+            "प्रीतास्मि",
+            "विजयी",
+            "भव",
+            "सपरिवारः",
+            "जयतु",
+            "आदर्शचरितः",
+            "अदर्शनम्"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "अन्येद्युः वीरवरो पुनः द्वारि सेवानिरतोऽभवत्। राजा – का वार्ता राजपुत्र ! वीरवरः – देव ! सा रोदनपरा नारी मद्दर्शनाददृश्यतां गता। न हि कापि वार्ताऽन्या स्वामिन् !",
+          "meaning": "The next day, Viravara resumed guarding the gate. King – What is the news, O Prince? Viravara – My Lord! That weeping woman vanished upon my sight; there is no other news, Master!",
+          "paragraphTranslation": "अगले दिन वीरवर पुनः राजद्वार पर सेवा में तत्पर हुआ। राजा – क्या समाचार है राजकुमार? वीरवर – देव! वह रोती हुई स्त्री मेरे देखते ही गायब हो गई। और कोई बात नहीं है स्वामी!",
+          "words": [
+            "अन्येद्युः",
+            "द्वारि",
+            "सेवानिरतः",
+            "का",
+            "वार्ता",
+            "राजपुत्र",
+            "मद्दर्शनात्",
+            "अदृश्यतां",
+            "गता",
+            "स्वामिन्"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "ततः परमां प्रीतिं गतो महीपतिस्तस्मै प्रायच्छत् समग्रकर्णाटप्रदेशं राजपुत्राय वीरवराय।",
+          "meaning": "Overwhelmed with supreme joy and gratitude, the King bestowed the entire Karnataka realm upon prince Viravara as a sovereign reward.",
+          "paragraphTranslation": "तब परम प्रसन्न होकर राजा शूद्रक ने राजकुमार वीरवर को पुरस्कार स्वरूप सम्पूर्ण कर्णाट प्रदेश प्रदान कर दिया।",
+          "words": [
+            "परमां",
+            "प्रीतिं",
+            "महीपतिः",
+            "प्रायच्छत्",
+            "समग्रकर्णाटप्रदेशं",
+            "राजपुत्राय",
+            "वीरवराय"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – आवासम् (गृहम् / घर), निद्रालसाम् (नींद से अलसाई हुई), दुहितरम् (पुत्रीम् / बेटी को), अवर्णयत् (वर्णन किया)।",
+          "meaning": "Glossary 1: Avasam (Residence), Nidralasam (Languid with sleep), Duhitaram (Daughter), Avarnayat (Narrated).",
+          "paragraphTranslation": "शब्दार्थ: आवासम् = घर, निद्रालसाम् = नींद से अलसाई, दुहितरम् = बेटी को, अवर्णयत् = वर्णन किया।",
+          "words": [
+            "आवासम्",
+            "निद्रालसाम्",
+            "दुहितरम्",
+            "अवर्णयत्"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – परमश्लाघ्यः (अत्यंत प्रशंसनीय), उत्सृजेत् (त्यागना चाहिए), सन्निमित्ते (शुभ कार्य के लिए), वरम् (श्रेष्ठ / श्रेयस्कर)।",
+          "meaning": "Glossary 2: Paramashlaghyah (Highly praiseworthy), Utsrijet (Should sacrifice), Sannimitte (For a noble cause), Varam (Superior/better).",
+          "paragraphTranslation": "शब्दार्थ: परमश्लाघ्यः = अत्यंत प्रशंसनीय, उत्सृजेत् = त्याग करना चाहिए, सन्निमित्ते = सदुद्देश्य हेतु, वरम् = श्रेष्ठ।",
+          "words": [
+            "परमश्लाघ्यः",
+            "उत्सृजेत्",
+            "सन्निमित्ते",
+            "वरम्"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – निस्तारः (ऋण से मुक्ति), आयतनम् (मंदिर-प्राङ्गणम्), प्रत्यक्षीभूता (प्रत्यक्ष प्रकट होकर), राज्यभङ्गः (राज्य का पतन)।",
+          "meaning": "Glossary 3: Nistarah (Repayment of debt), Ayatanam (Temple precinct), Pratyakshibhuta (Manifesting visibly), Rajyabhangah (Ruin of kingdom).",
+          "paragraphTranslation": "शब्दार्थ: निस्तारः = ऋणमुक्ति, आयतनम् = मंदिर-परिसर, प्रत्यक्षीभूता = प्रत्यक्ष प्रकट होकर, राज्यभङ्गः = राज्यनाश।",
+          "words": [
+            "निस्तारः",
+            "आयतनम्",
+            "प्रत्यक्षीभूता",
+            "राज्यभङ्गः"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – सत्त्वोत्कर्षेण (सात्त्विक भाव की पराकाष्ठा से), भृत्यवात्सल्येन (सेवक के प्रति स्नेह से), समग्रकर्णाटप्रदेशम् (सम्पूर्ण कर्नाटक राज्य)।",
+          "meaning": "Glossary 4: Sattvotkarshena (Excellence of spiritual purity), Bhrityavatsalyena (Affection toward servant), Samagrakarnatapradesham (Entire Karnataka territory).",
+          "paragraphTranslation": "शब्दार्थ: सत्त्वोत्कर्षेण = सात्त्विक पराकाष्ठा से, भृत्यवात्सल्येन = सेवक-प्रेम से, समग्रकर्णाटप्रदेशम् = सम्पूर्ण कर्नाटक।",
+          "words": [
+            "सत्त्वोत्कर्षेण",
+            "भृत्यवात्सल्येन",
+            "समग्रकर्णाटप्रदेशम्"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "१. प्रश्ननिर्माणम् – (क) वीरवरो पत्नीं पुत्रं दुहितरञ्च प्राबोधयत्। → कः पत्नीं पुत्रं दुहितरञ्च प्राबोधयत्? (ख) ततस्ते सर्वे सर्वमङ्गलायाः आयतनं गताः। → ततस्ते सर्वे कस्याः आयतनं गताः?",
+          "meaning": "Exercise 1: Question formation: (a) Who awakened wife, son and daughter? (Kah); (b) To whose temple did they go? (Kasyah).",
+          "paragraphTranslation": "अभ्यास १ (प्रश्न निर्माण): क- कः; ख- कस्याः।",
+          "words": [
+            "प्रश्ननिर्माणम्",
+            "कः",
+            "कस्याः",
+            "प्राबोधयत्",
+            "आयतनं"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "कः / कस्याः",
+          "hindi_gloss": "कौन / किसकी"
+        },
+        {
+          "sanskrit": "१. प्रश्ननिर्माणम् – (ग) वीरवरः वर्तनस्य निस्तारं पुत्रोत्सर्गेण अकरोत्। → कथम् / केन? (घ) राजा स्वप्रासादं प्राविशत्। → कुत्र / किम्? (ङ) महीपतिः समग्रकर्णाटप्रदेशम् अयच्छत्। → किम्?",
+          "meaning": "Exercise 1: Question formation: (c) How did Viravara repay? (Katham/Kena); (d) Where did the king enter? (Kutra/Kim); (e) What did the king give? (Kim).",
+          "paragraphTranslation": "अभ्यास १: ग- कथम्/केन; घ- कुत्र/किम्; ङ- किम्।",
+          "words": [
+            "पुत्रोत्सर्गेण",
+            "स्वप्रासादं",
+            "समग्रकर्णाटप्रदेशम्"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "कथम् / कुत्र / किम्",
+          "hindi_gloss": "कैसे / कहाँ / क्या"
+        },
+        {
+          "sanskrit": "२. प्रश्नानाम् उत्तराणि – (क) वीरवरः किम् अवर्णयत्? उत्तरम्: वीरवरः स्वावासं गत्वा अखिलराजलक्ष्मीसंवादं अवर्णयत्। (ख) प्राज्ञः धनानि जीवितञ्च केभ्यः उत्सृजेत्? उत्तरम्: परार्थे उत्सृजेत्।",
+          "meaning": "Exercise 2: Q&A: (a) What did Viravara narrate? Ans: The entire Rajalaxmi dialogue; (b) For whom should the wise sacrifice wealth and life? Ans: For the sake of others (pararthe).",
+          "paragraphTranslation": "अभ्यास २: क- अखिलराजलक्ष्मीसंवादं; ख- परार्थे।",
+          "words": [
+            "अखिलराजलक्ष्मीसंवादं",
+            "परार्थे",
+            "उत्सृजेत्"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "अखिलराजलक्ष्मीसंवादं अवर्णयत् / परार्थे उत्सृजेत्",
+          "hindi_gloss": "राजलक्ष्मी संवाद / दूसरों के लिए"
+        },
+        {
+          "sanskrit": "५ & ६. पदच्छेदः सन्धिकार्यञ्च – यद्येवमस्मत्कुलोचितम् = यदि + एवम् + अस्मत् + कुलोचितम्, तच्छ्रुत्वा = तत् + श्रुत्वा, धन्योऽहम् = धन्यः + अहम्, जीवितञ्चैव = जीवितम् + च + एव।",
+          "meaning": "Exercises 5 & 6: Padaccheda and Sandhi rules: Yadyevam = Yadi + Evam; Tacchrutva = Tat + Shrutva; Dhanyo'ham = Dhanyah + Aham; Jivitanchaiva = Jivitam + Cha + Eva.",
+          "paragraphTranslation": "पदच्छेद एवं सन्धि अभ्यास।",
+          "words": [
+            "पदच्छेदः",
+            "सन्धिकार्यञ्च",
+            "यद्येवमस्मत्कुलोचितम्",
+            "तच्छ्रुत्वा",
+            "धन्योऽहम्",
+            "जीवितञ्चैव"
+          ],
+          "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "७. घटनाक्रम-संयोजनम् – १. वीरवरो गृहं गत्वा वार्ताम् अकथयत्। २. शक्तिधरः समर्पणाय सिद्धः। ३. वीरवरः सर्वस्वसमर्पणम् अकरोत्। ४. राजापि सर्वस्वसमर्पणाय सिद्धः। ५. भगवती प्रसन्ना भूत्वा सर्वान् अजीवयत्। ६. राजा समग्रकर्णाटप्रदेशम् अयच्छत्।",
+          "meaning": "Exercise 7: Chronological sequence of narrative events from family awakening to sacrifice, divine restoration, and Karnataka province coronation.",
+          "paragraphTranslation": "कथा का सही घटनाक्रम।",
+          "words": [
+            "घटनाक्रम-संयोजनम्",
+            "वीरवरो",
+            "शक्तिधरः",
+            "सर्वस्वसमर्पणम्",
+            "भगवती",
+            "समग्रकर्णाटप्रदेशम्"
+          ],
+          "kind": "exercise-note"
+        }
+      ]
     }
   ],
   "chapters": [
@@ -47961,6 +48433,478 @@
             "शूद्रकाय",
             "उपायस्य",
             "कृते"
+          ],
+          "kind": "exercise-note"
+        }
+      ]
+    },
+    {
+      "id": "grade8_ch11",
+      "fileName": "grade8_ch11.txt",
+      "title": "एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+      "page_numbers": "124-135",
+      "sentences": [
+        {
+          "sanskrit": "॥ एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः) ॥",
+          "meaning": "Chapter 11: Better is Sacrifice for a Noble Cause (Part 2) · The Supreme Sacrifice of Viravara (Pages 124–135)",
+          "paragraphTranslation": "एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः) (पृष्ठ १२४–१३५)",
+          "words": [
+            "एकादशः",
+            "पाठः",
+            "सन्निमित्ते",
+            "वरं",
+            "त्यागः",
+            "ख-भागः"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "प्रस्तुतः पाठः 'हितोपदेशः' इत्यस्मात् कथाग्रन्थात् स्वीकृतः। अत्र वीरवरकथायाः द्वितीयः भागः (ख-भागः) वर्तते। अस्मिन् भागे वीरवरस्य तस्य परिवारस्य च स्वामिभक्तेः, राष्ट्रहितसमर्पणस्य, परोपकारस्य च पराकाष्ठा वर्णिता।",
+          "meaning": "The present lesson is taken from the classical tale-collection 'Hitopadesha'. Here the second part of Viravara's story depicts the zenith of master-loyalty, national self-sacrifice, and noble altruism.",
+          "paragraphTranslation": "प्रस्तुत पाठ 'हितोपदेश' ग्रन्थ से लिया गया है। इसमें वीरवर और उसके परिवार की स्वामिभक्ति, राष्ट्रहित में समर्पण और परोपकार की पराकाष्ठा का वर्णन है।",
+          "words": [
+            "प्रस्तुतः",
+            "पाठः",
+            "हितोपदेशः",
+            "वीरवरकथायाः",
+            "द्वितीयः",
+            "भागः",
+            "स्वामिभक्तेः",
+            "राष्ट्रहितसमर्पणस्य",
+            "परोपकारस्य",
+            "पराकाष्ठा"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "वीरवरः नाम कश्चित् राजपुरुषः राज्ञः शूद्रकस्य सेवकरूपेण नियुक्तः। तस्मै वेतनं सुवर्णशतचतुष्टयं दीयते। प्राप्तवेतनस्य अर्धं सः देवकार्ये नियोजयति।",
+          "meaning": "A warrior prince named Viravara was appointed in the service of King Shudraka. A daily wage of four hundred gold coins was granted to him. He dedicated half of that salary to religious and pious deeds.",
+          "paragraphTranslation": "वीरवर नाम का राजपुरुष राजा शूद्रक के सेवक रूप में नियुक्त हुआ। उसे ४०० स्वर्ण मुद्राएँ वेतन मिलता था। वह वेतन का आधा भाग देवकार्यों में लगाता था।",
+          "words": [
+            "वीरवरः",
+            "राजपुरुषः",
+            "शूद्रकस्य",
+            "सेवकरूपेण",
+            "नियुक्तः",
+            "वेतनं",
+            "सुवर्णशतचतुष्टयं",
+            "देवकार्ये",
+            "नियोजयति"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "एकचतुर्थांशं दरिद्रेभ्यः वण्टयति (विभजति)। अवशिष्टं च एकचतुर्थांशं स्वपत्न्याः हस्ते अर्पयति। स्वखड्गम् आदाय अहर्निशं राजद्वारे रक्षकरूपेण स्थित्वा सः सेवां करोति।",
+          "meaning": "He distributed one-fourth to the destitute poor and handed the remaining one-fourth to his wife. With sword in hand, he guarded the palace gate day and night.",
+          "paragraphTranslation": "एक-चौथाई भाग वह गरीबों में बाँटता था और शेष एक-चौथाई अपनी पत्नी के हाथ में सौंपता था। तलवार लिए वह दिन-रात राजद्वार पर रक्षा करता था।",
+          "words": [
+            "एकचतुर्थांशं",
+            "दरिद्रेभ्यः",
+            "वण्टयति",
+            "अवशिष्टं",
+            "स्वपत्न्याः",
+            "हस्ते",
+            "अर्पयति",
+            "स्वखड्गम्",
+            "अहर्निशं",
+            "रक्षकरूपेण",
+            "सेवां"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "एकदा रात्रौ राज्ञः आदेशेन कञ्चित् करुणक्रन्दनध्वनिम् अनुसृत्य सः नगराद् बहिः गच्छति, एकां दिव्याभरणभूषितां कामपि रोदनपरां सुन्दरीं च पश्यति। सा राज्ञः शूद्रकस्य राजलक्ष्मीः अस्ति।",
+          "meaning": "Once at night by king's royal order, following a sorrowful lamentation, he went outside the city and encountered a weeping lady clad in divine jewels: Goddess Rajalaxmi of King Shudraka.",
+          "paragraphTranslation": "एक रात राजा की आज्ञा से रोने की आवाज़ का पीछा करते हुए वह नगर से बाहर गया और दिव्य आभूषणों से सजी रोती हुई स्त्री को देखा, जो राजा शूद्रक की राजलक्ष्मी थी।",
+          "words": [
+            "राज्ञः",
+            "आदेशेन",
+            "करुणक्रन्दनध्वनिम्",
+            "नगरात्",
+            "बहिः",
+            "दिव्याभरणभूषितां",
+            "रोदनपरां",
+            "सुन्दरीं",
+            "राजलक्ष्मीः"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "ततः राजलक्ष्मीः अतीव दुःसाध्यम् उपायं सूचयति। तस्याः अनुसारं यदि वीरवरः स्वस्य सर्वप्रियं वस्तु देव्यै सर्वमङ्गलायै उपहाररूपेण समर्पयति, तर्हि तस्य राजा चिरं वर्षशतं जीविष्यति।",
+          "meaning": "Then Rajalaxmi revealed an extremely arduous remedy: if Viravara sacrifices his dearest possession to Goddess Sarvamangala, his king will live for a hundred years.",
+          "paragraphTranslation": "तब राजलक्ष्मी ने अत्यंत कठिन उपाय बताया कि यदि वीरवर अपनी सबसे प्रिय वस्तु भगवती सर्वमंगला को अर्पित कर दे, तो राजा सौ वर्षों तक जीवित रहेंगे।",
+          "words": [
+            "राजलक्ष्मीः",
+            "दुःसाध्यम्",
+            "उपायं",
+            "सर्वप्रियं",
+            "वस्तु",
+            "सर्वमङ्गलायै",
+            "उपहाररूपेण",
+            "समर्पयति",
+            "वर्षशतं",
+            "जीविष्यति"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "अथ राजपुत्रो वीरवरो स्वावासं गत्वा निद्रालसां पत्नीं पुत्रं दुहितरञ्च प्राबोधयत् अखिलराजलक्ष्मीसंवादं च अवर्णयत्।",
+          "meaning": "Thereupon, prince Viravara returned home, woke his slumbering wife, son, and daughter, and narrated the complete dialogue with Goddess Rajalaxmi.",
+          "paragraphTranslation": "इसके बाद राजकुमार वीरवर ने घर जाकर नींद से अलसाई पत्नी, पुत्र और पुत्री को जगाया और राजलक्ष्मी का सारा संवाद बताया।",
+          "words": [
+            "स्वावासं",
+            "गत्वा",
+            "निद्रालसां",
+            "पत्नीं",
+            "पुत्रं",
+            "दुहितरञ्च",
+            "प्राबोधयत्",
+            "अखिलराजलक्ष्मीसंवादं",
+            "अवर्णयत्"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "शक्तिधरः – (तच्छ्रुत्वा सानन्दम्) हे पितः ! जानाम्यहं भवतः सर्वप्रियं वस्तु। तद् अहमेव भवतः प्रियतमः इति सर्वविदितः। धन्योऽहं स्वामिजीवितरक्षार्थं यदि विनियुक्तः। तत् कोऽधुना विलम्बस्तात ?",
+          "meaning": "Shaktidhara – (Hearing this with joy) O Father! I know your most beloved treasure. That I alone am your dearest is known to all. I am truly blessed if utilized to save the master's life. Then why delay, dear father?",
+          "paragraphTranslation": "शक्तिधर – (सुनकर प्रसन्नतापूर्वक) हे पिता जी! मैं आपकी सबसे प्रिय वस्तु को जानता हूँ। मैं ही आपका सबसे प्रिय हूँ, यह सर्वविदित है। मैं धन्य हूँ यदि स्वामी की रक्षा हेतु मेरा उपयोग हो। तो अब देरी क्यों?",
+          "words": [
+            "शक्तिधरः",
+            "तच्छ्रुत्वा",
+            "सानन्दम्",
+            "पितः",
+            "जानाम्यहं",
+            "सर्वप्रियं",
+            "प्रियतमः",
+            "धन्योऽहं",
+            "स्वामिजीवितरक्षार्थं",
+            "विलम्बस्तात"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "धनानि जीवितञ्चैव परार्थे प्राज्ञ उत्सृजेत्। सन्निमित्ते वरं त्यागो विनाशे नियते सति ॥ १ ॥",
+          "meaning": "A wise man should willingly give up his wealth and even his life for the benefit of others. When destruction is inevitable, sacrifice for a noble cause is far superior.",
+          "paragraphTranslation": "बुद्धिमान व्यक्ति को दूसरों की भलाई के लिए अपने धन और जीवन का त्याग कर देना चाहिए। जब विनाश निश्चित हो, तो श्रेष्ठ उद्देश्य (सन्निमित्त) के लिए त्याग करना ही उत्तम है।",
+          "words": [
+            "धनानि",
+            "जीवितञ्चैव",
+            "परार्थे",
+            "प्राज्ञः",
+            "उत्सृजेत्",
+            "सन्निमित्ते",
+            "वरं",
+            "त्यागः",
+            "विनाशे",
+            "नियते",
+            "सति"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "श्लोक-अन्वयः — प्राज्ञः धनानि जीवितं च एव परार्थे उत्सृजेत्। विनाशे नियते सति सन्निमित्ते त्यागः वरम्।",
+          "meaning": "Anvaya: The wise person ought to relinquish wealth and life itself for the sake of others. When demise is destined, surrender for a noble cause is truly glorious.",
+          "paragraphTranslation": "अन्वय: बुद्धिमान् मनुष्य दूसरों के हित के लिए धन और जीवन का त्याग करे। विनाश अवश्यम्भावी होने पर शुभ कार्य हेतु त्याग ही श्रेष्ठ है।",
+          "words": [
+            "प्राज्ञः",
+            "धनानि",
+            "जीवितं",
+            "परार्थे",
+            "उत्सृजेत्",
+            "विनाशे",
+            "नियते",
+            "सन्निमित्ते",
+            "त्यागः",
+            "वरम्"
+          ],
+          "kind": "shloka-analysis"
+        },
+        {
+          "sanskrit": "वेदरता – यद्येवम् अस्मत्कुलोचितं नाचरितव्यं तर्हि गृहीतस्वामिवर्तनस्य कथं निस्तारो भवेत्? वीरवती – धन्याहं यस्या ईदृशो जनको भ्राता च। एष एव गृहीतस्वामिवर्तनस्य निस्तारस्य उपायः।",
+          "meaning": "Vedarata (Wife) – If we do not act according to our family honour, how shall we redeem our debt to the master's wages? Viravati (Daughter) – Blessed am I with such a noble father and brother! This alone is the true redemption.",
+          "paragraphTranslation": "वेदरता – यदि हम कुलानुकूल आचरण नहीं करेंगे, तो राजा के वेतन का ऋण कैसे उतरेगा? वीरवती – मैं धन्य हूँ जिसके ऐसे पिता और भाई हैं। यही वेतन-ऋण से मुक्ति का मार्ग है।",
+          "words": [
+            "वेदरता",
+            "अस्मत्कुलोचितं",
+            "नाचरितव्यं",
+            "गृहीतस्वामिवर्तनस्य",
+            "निस्तारः",
+            "वीरवती",
+            "धन्याहं",
+            "जनको",
+            "भ्राता"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "ततस्ते सर्वे सर्वमङ्गलाया आयतनं गताः। वीरवरः – (देवीपूजां विधाय) भगवति ! प्रसीद, विजयतां महाराजः शूद्रकः, गृह्यतामेष मद्दत्त उपहारः।",
+          "meaning": "Then they all went to the temple court of Goddess Sarvamangala. Viravara – (Worshipping the Goddess) O Mother! Be gracious, may King Shudraka triumph, accept this offering presented by me!",
+          "paragraphTranslation": "तब वे सब भगवती सर्वमंगला के मंदिर पहुँचे। वीरवर ने देवी की पूजा करके कहा—भगवती! प्रसन्न हों, महाराज शूद्रक विजयी हों, मेरा यह उपहार स्वीकार करें।",
+          "words": [
+            "सर्वमङ्गलायाः",
+            "आयतनं",
+            "गताः",
+            "देवीपूजां",
+            "विधाय",
+            "भगवति",
+            "प्रसीद",
+            "विजयतां",
+            "महाराजः",
+            "शूद्रकः",
+            "गृह्यताम्",
+            "उपहारः"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "वीरवरः – कृतो मया गृहीतस्वामिवर्तनस्य निस्तारो स्वपुत्रसमर्पणेन। अधुना पुत्रवियुक्तस्य मे जीवनं निष्फलम्। (ततः सः आत्मानमपि देव्यै समर्पितवान्। पत्न्या दुहित्रा च तदेवाचरितम्।)",
+          "meaning": "Viravara – I have repaid the debt of my master's wages by offering my son. Now, bereft of my child, my life is empty. (Then he offered his own life to the Goddess, and his wife and daughter followed suit.)",
+          "paragraphTranslation": "वीरवर – मैंने पुत्र का समर्पण कर स्वामी के वेतन का ऋण चुका दिया। अब पुत्र के बिना मेरा जीवन व्यर्थ है। (उसने स्वयं को भी समर्पित कर दिया, और पत्नी व पुत्री ने भी वही किया।)",
+          "words": [
+            "गृहीतस्वामिवर्तनस्य",
+            "निस्तारः",
+            "स्वपुत्रसमर्पणेन",
+            "पुत्रवियुक्तस्य",
+            "जीवनं",
+            "निष्फलम्",
+            "आत्मानम्",
+            "समर्पितवान्",
+            "पत्न्या",
+            "दुहित्रा"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "जायन्ते च म्रियन्ते च मादृशाः क्षुद्रजन्तवः। अनेन सदृशो लोके न भूतो न भविष्यति ॥ २ ॥",
+          "meaning": "Insignificant creatures like me are born and die in abundance, but someone comparable to this noble Viravara has never existed in this world, nor ever will.",
+          "paragraphTranslation": "मेरे जैसे क्षुद्र प्राणी तो पैदा होते और मरते रहते हैं, किंतु इस वीरवर के समान त्यागी न संसार में पहले हुआ है और न कभी भविष्य में होगा।",
+          "words": [
+            "जायन्ते",
+            "म्रियन्ते",
+            "मादृशाः",
+            "क्षुद्रजन्तवः",
+            "अनेन",
+            "सदृशः",
+            "लोके",
+            "न",
+            "भूतः",
+            "भविष्यति"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "राजा – तदेतत्परित्यक्तेन मम राज्येनापि किं प्रयोजनम्। हे मातः ! सर्वमङ्गले ! गृहाण मे सर्वस्वम्। नेष्टं मे राज्यं न च जीवितं वा।",
+          "meaning": "King Shudraka – Bereft of such a hero, what purpose does my kingdom serve? O Mother Sarvamangala! Take my everything; I desire neither realm nor breath.",
+          "paragraphTranslation": "राजा शूद्रक – इस वीरवर के बिना मेरे इस राज्य का क्या प्रयोजन? हे माता सर्वमंगला! मेरा सर्वस्व स्वीकार करें, मुझे न राज्य चाहिए और न जीवन।",
+          "words": [
+            "परित्यक्तेन",
+            "राज्येन",
+            "प्रयोजनम्",
+            "सर्वमङ्गले",
+            "गृहाण",
+            "सर्वस्वम्",
+            "नेष्टं",
+            "जीवितं"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "देवी – (राज्ञः करं धृत्वा) वत्स ! प्रसन्ना भवामि त्वयि, अलं साहसेन। नेदानीं राज्यभङ्गस्ते भविष्यति।",
+          "meaning": "Goddess – (Catching the King's hand) Child! I am immensely pleased with you; enough of this rashness! Your kingdom will experience no ruin.",
+          "paragraphTranslation": "देवी – (राजा का हाथ पकड़कर) वत्स! मैं तुम पर प्रसन्न हूँ, दुस्साहस मत करो। तुम्हारे राज्य का नाश नहीं होगा।",
+          "words": [
+            "करं",
+            "धृत्वा",
+            "वत्स",
+            "प्रसन्ना",
+            "भवामि",
+            "अलं",
+            "साहसेन",
+            "राज्यभङ्गः",
+            "भविष्यति"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "राजा – भगवति ! यदि मयि कृपा भगवत्या जाता, तदा ममायुःशेषेणापि प्रत्यावर्तेत राजपुत्रो वीरवरः सह पुत्रेण पत्न्या दुहित्रा च। अन्यथा मया यथाप्राप्ता गतिर्गन्तव्या जगदम्ब !",
+          "meaning": "King – O Goddess! If your grace shines upon me, then by my remaining lifespan let prince Viravara be restored to life along with his son, wife, and daughter! Otherwise, I must embrace death!",
+          "paragraphTranslation": "राजा – भगवती! यदि मुझ पर कृपा है, तो मेरी बची आयु लेकर वीरवर को उसके परिवार सहित जीवित कर दीजिए, अन्यथा मैं भी प्राण त्याग दूँगा।",
+          "words": [
+            "कृपा",
+            "ममायुःशेषेण",
+            "प्रत्यावर्तेत",
+            "राजपुत्रः",
+            "वीरवरः",
+            "पुत्रेण",
+            "पत्न्या",
+            "दुहित्रा",
+            "जगदम्ब"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "देवी – वत्स ! अनेन ते सत्त्वोत्कर्षेण भृत्यवात्सल्येन च परं प्रीतास्मि। तद् गच्छ, विजयी भव। अयमपि सपरिवारो जयतु राजपुत्र आदर्शचरितो वीरवरः। (ततो देवी गताऽदर्शनम्।)",
+          "meaning": "Goddess – Child! By this pinnacle of your nobility and fatherly affection toward your servant, I am overjoyed. Go, be victorious! May ideal Viravara also triumph with his family! (Then the Goddess vanished.)",
+          "paragraphTranslation": "देवी – वत्स! तुम्हारे इस सात्त्विक त्याग और सेवक-स्नेह से मैं परम प्रसन्न हूँ। विजयी होओ! वीरवर भी सपरिवार जीवित होकर विजयी हो। (देवी अंतर्ध्यान हो गईं।)",
+          "words": [
+            "सत्त्वोत्कर्षेण",
+            "भृत्यवात्सल्येन",
+            "प्रीतास्मि",
+            "विजयी",
+            "भव",
+            "सपरिवारः",
+            "जयतु",
+            "आदर्शचरितः",
+            "अदर्शनम्"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "अन्येद्युः वीरवरो पुनः द्वारि सेवानिरतोऽभवत्। राजा – का वार्ता राजपुत्र ! वीरवरः – देव ! सा रोदनपरा नारी मद्दर्शनाददृश्यतां गता। न हि कापि वार्ताऽन्या स्वामिन् !",
+          "meaning": "The next day, Viravara resumed guarding the gate. King – What is the news, O Prince? Viravara – My Lord! That weeping woman vanished upon my sight; there is no other news, Master!",
+          "paragraphTranslation": "अगले दिन वीरवर पुनः राजद्वार पर सेवा में तत्पर हुआ। राजा – क्या समाचार है राजकुमार? वीरवर – देव! वह रोती हुई स्त्री मेरे देखते ही गायब हो गई। और कोई बात नहीं है स्वामी!",
+          "words": [
+            "अन्येद्युः",
+            "द्वारि",
+            "सेवानिरतः",
+            "का",
+            "वार्ता",
+            "राजपुत्र",
+            "मद्दर्शनात्",
+            "अदृश्यतां",
+            "गता",
+            "स्वामिन्"
+          ],
+          "kind": "dialogue"
+        },
+        {
+          "sanskrit": "ततः परमां प्रीतिं गतो महीपतिस्तस्मै प्रायच्छत् समग्रकर्णाटप्रदेशं राजपुत्राय वीरवराय।",
+          "meaning": "Overwhelmed with supreme joy and gratitude, the King bestowed the entire Karnataka realm upon prince Viravara as a sovereign reward.",
+          "paragraphTranslation": "तब परम प्रसन्न होकर राजा शूद्रक ने राजकुमार वीरवर को पुरस्कार स्वरूप सम्पूर्ण कर्णाट प्रदेश प्रदान कर दिया।",
+          "words": [
+            "परमां",
+            "प्रीतिं",
+            "महीपतिः",
+            "प्रायच्छत्",
+            "समग्रकर्णाटप्रदेशं",
+            "राजपुत्राय",
+            "वीरवराय"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – आवासम् (गृहम् / घर), निद्रालसाम् (नींद से अलसाई हुई), दुहितरम् (पुत्रीम् / बेटी को), अवर्णयत् (वर्णन किया)।",
+          "meaning": "Glossary 1: Avasam (Residence), Nidralasam (Languid with sleep), Duhitaram (Daughter), Avarnayat (Narrated).",
+          "paragraphTranslation": "शब्दार्थ: आवासम् = घर, निद्रालसाम् = नींद से अलसाई, दुहितरम् = बेटी को, अवर्णयत् = वर्णन किया।",
+          "words": [
+            "आवासम्",
+            "निद्रालसाम्",
+            "दुहितरम्",
+            "अवर्णयत्"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – परमश्लाघ्यः (अत्यंत प्रशंसनीय), उत्सृजेत् (त्यागना चाहिए), सन्निमित्ते (शुभ कार्य के लिए), वरम् (श्रेष्ठ / श्रेयस्कर)।",
+          "meaning": "Glossary 2: Paramashlaghyah (Highly praiseworthy), Utsrijet (Should sacrifice), Sannimitte (For a noble cause), Varam (Superior/better).",
+          "paragraphTranslation": "शब्दार्थ: परमश्लाघ्यः = अत्यंत प्रशंसनीय, उत्सृजेत् = त्याग करना चाहिए, सन्निमित्ते = सदुद्देश्य हेतु, वरम् = श्रेष्ठ।",
+          "words": [
+            "परमश्लाघ्यः",
+            "उत्सृजेत्",
+            "सन्निमित्ते",
+            "वरम्"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – निस्तारः (ऋण से मुक्ति), आयतनम् (मंदिर-प्राङ्गणम्), प्रत्यक्षीभूता (प्रत्यक्ष प्रकट होकर), राज्यभङ्गः (राज्य का पतन)।",
+          "meaning": "Glossary 3: Nistarah (Repayment of debt), Ayatanam (Temple precinct), Pratyakshibhuta (Manifesting visibly), Rajyabhangah (Ruin of kingdom).",
+          "paragraphTranslation": "शब्दार्थ: निस्तारः = ऋणमुक्ति, आयतनम् = मंदिर-परिसर, प्रत्यक्षीभूता = प्रत्यक्ष प्रकट होकर, राज्यभङ्गः = राज्यनाश।",
+          "words": [
+            "निस्तारः",
+            "आयतनम्",
+            "प्रत्यक्षीभूता",
+            "राज्यभङ्गः"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – सत्त्वोत्कर्षेण (सात्त्विक भाव की पराकाष्ठा से), भृत्यवात्सल्येन (सेवक के प्रति स्नेह से), समग्रकर्णाटप्रदेशम् (सम्पूर्ण कर्नाटक राज्य)।",
+          "meaning": "Glossary 4: Sattvotkarshena (Excellence of spiritual purity), Bhrityavatsalyena (Affection toward servant), Samagrakarnatapradesham (Entire Karnataka territory).",
+          "paragraphTranslation": "शब्दार्थ: सत्त्वोत्कर्षेण = सात्त्विक पराकाष्ठा से, भृत्यवात्सल्येन = सेवक-प्रेम से, समग्रकर्णाटप्रदेशम् = सम्पूर्ण कर्नाटक।",
+          "words": [
+            "सत्त्वोत्कर्षेण",
+            "भृत्यवात्सल्येन",
+            "समग्रकर्णाटप्रदेशम्"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "१. प्रश्ननिर्माणम् – (क) वीरवरो पत्नीं पुत्रं दुहितरञ्च प्राबोधयत्। → कः पत्नीं पुत्रं दुहितरञ्च प्राबोधयत्? (ख) ततस्ते सर्वे सर्वमङ्गलायाः आयतनं गताः। → ततस्ते सर्वे कस्याः आयतनं गताः?",
+          "meaning": "Exercise 1: Question formation: (a) Who awakened wife, son and daughter? (Kah); (b) To whose temple did they go? (Kasyah).",
+          "paragraphTranslation": "अभ्यास १ (प्रश्न निर्माण): क- कः; ख- कस्याः।",
+          "words": [
+            "प्रश्ननिर्माणम्",
+            "कः",
+            "कस्याः",
+            "प्राबोधयत्",
+            "आयतनं"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "कः / कस्याः",
+          "hindi_gloss": "कौन / किसकी"
+        },
+        {
+          "sanskrit": "१. प्रश्ननिर्माणम् – (ग) वीरवरः वर्तनस्य निस्तारं पुत्रोत्सर्गेण अकरोत्। → कथम् / केन? (घ) राजा स्वप्रासादं प्राविशत्। → कुत्र / किम्? (ङ) महीपतिः समग्रकर्णाटप्रदेशम् अयच्छत्। → किम्?",
+          "meaning": "Exercise 1: Question formation: (c) How did Viravara repay? (Katham/Kena); (d) Where did the king enter? (Kutra/Kim); (e) What did the king give? (Kim).",
+          "paragraphTranslation": "अभ्यास १: ग- कथम्/केन; घ- कुत्र/किम्; ङ- किम्।",
+          "words": [
+            "पुत्रोत्सर्गेण",
+            "स्वप्रासादं",
+            "समग्रकर्णाटप्रदेशम्"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "कथम् / कुत्र / किम्",
+          "hindi_gloss": "कैसे / कहाँ / क्या"
+        },
+        {
+          "sanskrit": "२. प्रश्नानाम् उत्तराणि – (क) वीरवरः किम् अवर्णयत्? उत्तरम्: वीरवरः स्वावासं गत्वा अखिलराजलक्ष्मीसंवादं अवर्णयत्। (ख) प्राज्ञः धनानि जीवितञ्च केभ्यः उत्सृजेत्? उत्तरम्: परार्थे उत्सृजेत्।",
+          "meaning": "Exercise 2: Q&A: (a) What did Viravara narrate? Ans: The entire Rajalaxmi dialogue; (b) For whom should the wise sacrifice wealth and life? Ans: For the sake of others (pararthe).",
+          "paragraphTranslation": "अभ्यास २: क- अखिलराजलक्ष्मीसंवादं; ख- परार्थे।",
+          "words": [
+            "अखिलराजलक्ष्मीसंवादं",
+            "परार्थे",
+            "उत्सृजेत्"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "अखिलराजलक्ष्मीसंवादं अवर्णयत् / परार्थे उत्सृजेत्",
+          "hindi_gloss": "राजलक्ष्मी संवाद / दूसरों के लिए"
+        },
+        {
+          "sanskrit": "५ & ६. पदच्छेदः सन्धिकार्यञ्च – यद्येवमस्मत्कुलोचितम् = यदि + एवम् + अस्मत् + कुलोचितम्, तच्छ्रुत्वा = तत् + श्रुत्वा, धन्योऽहम् = धन्यः + अहम्, जीवितञ्चैव = जीवितम् + च + एव।",
+          "meaning": "Exercises 5 & 6: Padaccheda and Sandhi rules: Yadyevam = Yadi + Evam; Tacchrutva = Tat + Shrutva; Dhanyo'ham = Dhanyah + Aham; Jivitanchaiva = Jivitam + Cha + Eva.",
+          "paragraphTranslation": "पदच्छेद एवं सन्धि अभ्यास।",
+          "words": [
+            "पदच्छेदः",
+            "सन्धिकार्यञ्च",
+            "यद्येवमस्मत्कुलोचितम्",
+            "तच्छ्रुत्वा",
+            "धन्योऽहम्",
+            "जीवितञ्चैव"
+          ],
+          "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "७. घटनाक्रम-संयोजनम् – १. वीरवरो गृहं गत्वा वार्ताम् अकथयत्। २. शक्तिधरः समर्पणाय सिद्धः। ३. वीरवरः सर्वस्वसमर्पणम् अकरोत्। ४. राजापि सर्वस्वसमर्पणाय सिद्धः। ५. भगवती प्रसन्ना भूत्वा सर्वान् अजीवयत्। ६. राजा समग्रकर्णाटप्रदेशम् अयच्छत्।",
+          "meaning": "Exercise 7: Chronological sequence of narrative events from family awakening to sacrifice, divine restoration, and Karnataka province coronation.",
+          "paragraphTranslation": "कथा का सही घटनाक्रम।",
+          "words": [
+            "घटनाक्रम-संयोजनम्",
+            "वीरवरो",
+            "शक्तिधरः",
+            "सर्वस्वसमर्पणम्",
+            "भगवती",
+            "समग्रकर्णाटप्रदेशम्"
           ],
           "kind": "exercise-note"
         }

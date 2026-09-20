@@ -324,6 +324,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः) (Pages 111–122)</span>
         </div>
       )}
+      {activeLessonId === 'grade8_ch11' && (
+        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #fdf4ff 0%, #eff6ff 100%)', borderColor: '#f0abfc' }}>
+          <span className="textbook-cbse-pill" style={{ background: '#c026d3', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः) (Pages 124–135)</span>
+        </div>
+      )}
 
       <div className="textbook-toolbar-row">
         <button
@@ -682,6 +688,38 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 title="Go to Grade 8 Chapter 10 Printable Worksheets"
               >
                 📑 5 Worksheets (Viravara Story & Past Tense)
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'grade8_ch11' && (
+          <>
+            <button
+              type="button"
+              className="textbook-tool-btn textbook-tool-btn--syllabus"
+              onClick={() => setIsGrade8SyllabusOpen(true)}
+              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+            >
+              📜 पाठानुक्रमणिका (Class 8 Syllabus)
+            </button>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Grade 8 Chapter 11 Quizzes"
+              >
+                🎯 2 Quizzes (8 Qs)
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Grade 8 Chapter 11 Printable Worksheets"
+              >
+                📑 5 Worksheets (Voice Conversion & Hitopadesha)
               </button>
             )}
           </>

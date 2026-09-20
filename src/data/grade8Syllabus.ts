@@ -209,18 +209,18 @@ export const GRADE_8_SYLLABUS: Grade8Chapter[] = [
     "icon": "⚖️"
   },
   {
-    "id": "g8_ch11",
+    "id": "grade8_ch11",
     "num": "Chapter 11",
     "chNumber": "एकादशः पाठः",
     "title": "सन्निमित्ते वरं त्यागः (ख-भागः)",
     "englishTitle": "Better to Sacrifice for a Noble Cause (Part 2)",
-    "page": "Page 124",
+    "page": "Pages 124–135",
     "category": "stories",
     "genreBadge": "नीतिकथा · Noble Sacrifice",
-    "theme": "Culmination of the story of righteous sacrifice: virtue and noble reputation endure forever while physical bodies inevitably perish.",
-    "grammarFocus": "लङ्-लकारः (Past Tense), तुमुन्-प्रत्ययः, सम्भाषण-वाक्यानि",
-    "sampleVerse": "कीर्तिर्यस्य स जीवति — यः परोपकाराय स्वार्थं त्यजति, स एव लोके अमरः भवति।",
-    "status": "in_curriculum",
+    "theme": "Hitopadesha conclusion: Viravara's family sacrifice at Goddess Sarvamangala's temple, King Shudraka's profound affection for his servant (भृत्यवात्सल्य), divine restoration of the family, and coronation over Karnataka.",
+    "grammarFocus": "वाच्य-प्रकरणम् (कर्तृवाच्य, कर्मवाच्य, भाववाच्य), अकर्मक-सकर्मक-धातवः, सन्धिकार्यम्, पदच्छेदः",
+    "sampleVerse": "धनानि जीवितञ्चैव परार्थे प्राज्ञ उत्सृजेत्। सन्निमित्ते वरं त्यागो विनाशे नियते सति ॥ — जायन्ते च म्रियन्ते च मादृशाः क्षुद्रजन्तवः। अनेन सदृशो लोके न भूतो न भविष्यति ॥",
+    "status": "available",
     "icon": "🕊️"
   },
   {

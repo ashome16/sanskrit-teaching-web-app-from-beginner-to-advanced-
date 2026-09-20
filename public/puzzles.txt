@@ -2287,4 +2287,20 @@
 जोडो|सर्वमङ्गला|सर्वमङ्गला|स,र,्,व,म,ङ,्,ग,ल,ा|भगवत्यै सर्वमङ्गलायै उपहारः देयः।|Goddess Sarvamangala|Auspicious Goddess Durga.
 जोडो|स्वामिभक्तिः|स्वामिभक्तिः|स,्,व,ा,म,ि,भ,क,्,त,िः|वीरवरस्य स्वामिभक्तिः अनुकरणीया।|loyalty to one's master|Supreme dedication to duty.
 जोडो|सुवर्णशतम्|सुवर्णशतम्|स,ु,व,र,्,ण,श,तम्|सुवर्णशतचतुष्टयं प्रतिदिनं वर्तनम्।|hundreds of gold coins|Royal wage requested by Viravara.
+# ========================================================
+# GRADE 8 DEEPAKAM VOCABULARY TILES (Chapter 11: सन्निमित्ते त्यागः ख)
+# ========================================================
+जोडो|सन्निमित्ते|सन्निमित्ते|स,न,्,न,ि,म,ि,त,्,त,े|सन्निमित्ते वरं त्यागः।|for a noble cause|Sacrifice for a righteous purpose.
+जोडो|परार्थे|परार्थे|प,र,ा,र,्,थ,े|परार्थे प्राज्ञः जीवनं त्यजेत्।|for the sake of others|Selfless altruistic welfare.
+जोडो|प्राज्ञः|प्राज्ञः|प,्,र,ा,ज,्,ञः,क|प्राज्ञः धीमान् जनः अस्ति।|wise person|One endowed with supreme wisdom.
+जोडो|उत्सृजेत्|उत्सृजेत्|उ,त,्,स,ृ,ज,े,त्|धनानि जीवितञ्चैव उत्सृजेत्।|should sacrifice / give up|Righteous relinquishment.
+जोडो|भृत्यवात्सल्यम्|भृत्यवात्सल्यम्|भ,ृ,त,्,य,व,ा,त,्,स,ल,्,यम्|राज्ञः भृत्यवात्सल्यं प्रशंसनीयम्।|affection toward servant|Compassionate paternal love for servant.
+जोडो|सत्त्वोत्कर्षः|सत्त्वोत्कर्षः|स,त,्,त,्,व,ो,त,्,क,र,्,षः|शूद्रकस्य सत्त्वोत्कर्षः महान्।|excellence of spiritual purity|Pinnacle of noble virtue and purity.
+जोडो|कर्णाटप्रदेशः|कर्णाटप्रदेशः|क,र,्,ण,ा,ट,प,्,र,द,े,शः|समग्रकर्णाटप्रदेशं वीरवराय अयच्छत्।|Karnataka territory|The southern realm bestowed upon Viravara.
+जोडो|राज्यभङ्गः|राज्यभङ्गः|र,ा,ज,्,य,भ,ङ,्,गः|नेदानीं राज्यभङ्गस्ते भविष्यति।|ruin / downfall of kingdom|Destruction of sovereign realm.
+जोडो|प्रत्यक्षीभूता|प्रत्यक्षीभूता|प,्,र,त,्,य,क,्,ष,ी,भ,ू,त,ा|भगवती सर्वमङ्गला प्रत्यक्षीभूता।|becoming visibly manifest|Divine revelation of the Goddess.
+जोडो|निस्तारः|निस्तारः|न,ि,स,्,त,ा,रः,क|गृहीतस्वामिवर्तनस्य निस्तारः जातः।|repayment of debt / release|Redemption from master's wage obligation.
+जोडो|निद्रालसाम्|निद्रालसाम्|न,ि,द,्,र,ा,ल,स,ाम्|निद्रालसां पत्नीं प्राबोधयत्।|languid with sleep|Waking from peaceful slumber.
+जोडो|क्षुद्रजन्तवः|क्षुद्रजन्तवः|क,्,ष,ु,द,्,र,ज,न,्,त,वः|मादृशाः क्षुद्रजन्तवः जायन्ते म्रियन्ते च।|insignificant creatures|Mortal beings born and perishing constantly.
+
 
