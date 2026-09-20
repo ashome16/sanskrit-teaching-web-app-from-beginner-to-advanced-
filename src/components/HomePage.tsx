@@ -322,6 +322,17 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     theme: 'Priceless classical epigrams on virtue, humility, discriminating true friends, testing gold vs humans, eight noble qualities, and human effort.',
     grammarFocus: 'सुभाषित-मञ्जरी, विसर्गसन्धिः (नम्रास्तरवः), यण्-सन्धिः (अभ्युपैति)',
   },
+  {
+    id: 'grade8_ch4',
+    num: 'Grade 8 · Chapter 4',
+    title: 'प्रणम्यो देशभक्तोऽयं गोपबन्धुर्महामनाः (Pages 36–44)',
+    english: 'The Venerable Patriot Gopabandhu Das, the Great-Souled',
+    icon: '🇮🇳',
+    category: 'stories',
+    genreBadge: 'चरितम् · Patriotic Biography',
+    theme: 'The moving life of Utkalmani Pandit Gopabandhu Das: selfless flood relief in Odisha, Satyavadi open-air forest school, and total devotion to Bharat.',
+    grammarFocus: 'यत्-तद् सर्वनाम-प्रयोगाः, अनीयर्/ण्यत्-प्रत्ययः (प्रणम्यः), विसर्ग-उत्व-सन्धिः',
+  },
 ];
 
 const HomePage: React.FC<HomePageProps> = ({
@@ -904,7 +915,7 @@ const HomePage: React.FC<HomePageProps> = ({
                     <span className="home-chapter-read-cta">
                       Read Lesson ➔
                     </span>
-                    {(ch.id === 'grade8_prarthana' || ch.id === 'grade8_ch1' || ch.id === 'grade8_ch2' || ch.id === 'grade8_ch3') && (
+                    {(ch.id === 'grade8_prarthana' || ch.id === 'grade8_ch1' || ch.id === 'grade8_ch2' || ch.id === 'grade8_ch3' || ch.id === 'grade8_ch4') && (
                       <button
                         type="button"
                         style={{

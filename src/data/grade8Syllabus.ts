@@ -104,18 +104,18 @@ export const GRADE_8_SYLLABUS: Grade8Chapter[] = [
     "icon": "🍯"
   },
   {
-    "id": "g8_ch04",
+    "id": "grade8_ch4",
     "num": "Chapter 4",
     "chNumber": "चतुर्थः पाठः",
     "title": "प्रणम्यो देशभक्तोऽयं गोपबन्धुर्महामनाः",
     "englishTitle": "The Venerable Patriot Gopabandhu Das",
-    "page": "Page 36",
+    "page": "Pages 36–44",
     "category": "stories",
     "genreBadge": "चरितम् · Patriotic Biography",
-    "theme": "The moving and heroic life of Utkalmani Pandit Gopabandhu Das: his supreme self-sacrifice, humanitarian relief, and love for Bharat.",
-    "grammarFocus": "यत्-तद् सर्वनाम-प्रयोगाः, अनीयर्-प्रत्ययः (प्रणम्यः), भूतकालिक-क्रियापदानि",
-    "sampleVerse": "मिश्रतु मे देहः भारतभूमौ, देशवासिनां कल्याणाय भवतु मे जीवनम्।",
-    "status": "in_curriculum",
+    "theme": "The moving and heroic life of Utkalmani Pandit Gopabandhu Das: his supreme self-sacrifice, unconditional humanitarian flood relief in Odisha, the Satyavadi open-air forest school, and unyielding love for Bharat.",
+    "grammarFocus": "यत्-तद् सर्वनाम-प्रयोगाः, अनीयर्/ण्यत्-प्रत्ययः (प्रणम्यः), भूतकालिक-लङ्-लकारः, विसर्ग-उत्व-सन्धिः",
+    "sampleVerse": "मम वपुः देशहिताय पततु, देशस्य प्रगत्यै मम सर्वस्वं लीनं भवतु।",
+    "status": "available",
     "icon": "🇮🇳"
   },
   {

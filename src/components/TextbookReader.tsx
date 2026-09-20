@@ -282,6 +282,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · तृतीयः पाठः — सुभाषितरसं पीत्वा जीवनं सफलं कुरु (Pages 24–35)</span>
         </div>
       )}
+      {activeLessonId === 'grade8_ch4' && (
+        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #fff7ed 0%, #eff6ff 100%)', borderColor: '#fdba74' }}>
+          <span className="textbook-cbse-pill" style={{ background: '#ea580c', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · चतुर्थः पाठः — प्रणम्यो देशभक्तोऽयं गोपबन्धुर्महामनाः (Pages 36–44)</span>
+        </div>
+      )}
 
       <div className="textbook-toolbar-row">
         <button
@@ -416,6 +422,38 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 title="Go to Grade 8 Printable Worksheets"
               >
                 📑 Grade 8 Worksheets
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'grade8_ch4' && (
+          <>
+            <button
+              type="button"
+              className="textbook-tool-btn textbook-tool-btn--syllabus"
+              onClick={() => setIsGrade8SyllabusOpen(true)}
+              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+            >
+              📜 पाठानुक्रमणिका (Class 8 Syllabus)
+            </button>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Grade 8 Chapter 4 Quizzes"
+              >
+                🎯 4 Quizzes (20 Qs)
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Grade 8 Chapter 4 Printable Worksheets"
+              >
+                📑 5 Worksheets (Humanitarian Service & Biography)
               </button>
             )}
           </>

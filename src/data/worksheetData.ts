@@ -50,7 +50,7 @@ export const WORKSHEET_CATEGORIES = [
   { id: 'grammar', label: 'Vyākaraṇa / Grammar (10 Worksheets · व्याकरण-पत्राणि)', icon: '📐' },
   { id: 'vedic_maths', label: 'Vedic Maths Drills (वैदिक-गणितम्)', icon: '⚡' },
   { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
-  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 16 Worksheets)', icon: '🪕' },
+  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 21 Worksheets)', icon: '🪕' },
 ] as const;
 
 export const WORKSHEETS: Worksheet[] = [
@@ -8240,6 +8240,359 @@ export const WORKSHEETS: Worksheet[] = [
             type: 'short_ans',
             answer: 'अस्य श्लोकस्य मुख्यः सन्देशः अस्ति यत् मनुष्येण केवलं भाग्याश्रितेन भूत्वा न स्थातव्यम्। यथा रथः एकस्मिन् चक्रे स्थातुं चलितुं च न शक्नोति, तथैव मानवजीवनस्य रथः केवलं भाग्येन न सिध्यति। पुरुषार्थः (परिश्रमः) एव मुख्यं चक्रम् अस्ति। यदा वयं कर्म कुर्मः तदैव भाग्यम् अपि सहाय्यं करोति। अतः सर्वदा उद्योगी प्रयत्नशीलः च भवितव्यम्।',
             explanation: 'परिश्रम ही जीवन-रथ का मुख्य पहिया है, बिना कर्म के भाग्य कभी फलित नहीं होता।',
+          },
+        ],
+      },
+    ],
+  },
+  // ==========================================
+  // GRADE 8 CH 4 WORKSHEET 1: Disaster Relief & Humanitarian Compassion
+  // ==========================================
+  {
+    id: 'ws-grade8-ch4-ws1',
+    title: 'Chapter 4 Worksheet 1: Disaster Relief & Humanitarian Compassion (पठित-संवादावबोधनम् विपत्काले सेवा च)',
+    titleSanskrit: 'चतुर्थः पाठः कार्यपत्रिका १: संवाद-अवबोधनम् विपत्काले सेवा च',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '45 Mins',
+    description: 'Sourced from Pages 36–37: Classroom discussion on Kendrapara flood relief, national compassion, and selfless humanitarian duty.',
+    sections: [
+      {
+        sectionTitle: 'Section A: पठित-संवादावबोधनम् (Extract-Based Dialogue Comprehension)',
+        sectionTitleSanskrit: 'खण्डः "क" · पठित-संवादः',
+        instructions: 'Read the classroom dialogue between teachers and students from Pages 36–37 and answer:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'एकपदेन उत्तरत:\n(क) कस्यां नद्यां भयङ्करः जलप्लावः सम्भूतः?\n(ख) विपत्काले किं परमो धर्मः भवति?',
+            questionSanskrit: 'एकपदेन उत्तरत:',
+            marks: 2,
+            type: 'short_ans',
+            answer: '(क) महानद्याम्\n(ख) सेवा (पीडितानां रक्षणम्/साहाय्यम्)',
+            explanation: 'संवादे स्पष्टं लिखितं यत् ओडिशा-राज्यस्य केन्द्रापडा-जनपदे महानद्यां भयङ्करः जलप्लावः सम्भूतः तथा विपत्काले सेवा एव परमो धर्मः।',
+          },
+          {
+            num: 2,
+            question: 'पूर्णवाक्येन उत्तरत:\n(क) वार्तापत्रे जलप्लावस्य विषये किं पठितम् आसीत्?\n(ख) ओडिशा-वासिनः केषां कृते सम्प्रति आक्रन्दनं कुर्वन्ति?',
+            questionSanskrit: 'पूर्णवाक्येन उत्तरत:',
+            marks: 4,
+            type: 'short_ans',
+            answer: '(क) वार्तापत्रे पठितं यत् तत्र सर्वत्र जलमेव जलं दृश्यते, गृह-पशु-वृक्षाः प्रवाहाद् नष्टाः अभवन् तथा चिकित्सालयाः घायलैः पूर्णाः सन्ति।\n(ख) ओडिशा-वासिनः भोजनस्य, शुद्धपेयजलस्य, वस्त्राणां, औषधीनां च कृते आक्रन्दनं कुर्वन्ति।',
+            explanation: 'पाठ्यपुस्तके पृष्ठ ३६ संवादे उल्लिखितम्।',
+          },
+          {
+            num: 3,
+            question: 'निर्देशानुसारम् उत्तरत:\n(क) "गृह-पशु-वृक्षाः प्रवाहाद् नष्टाः अभवन्।" — अत्र कर्तृपदं किम्?\n(ख) "विपत्काले" इति पदस्य विलोमपदं किम्?',
+            questionSanskrit: 'निर्देशानुसारम् उत्तरत:',
+            marks: 4,
+            type: 'short_ans',
+            answer: '(क) गृह-पशु-वृक्षाः\n(ख) सम्पत्काले (सुखकाले)',
+            explanation: 'क्रियायाः कर्ता गृह-पशु-वृक्षाः अस्ति। विपत् कालस्य विलोमः सम्पत् कालः।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: सेवा-भावः संकल्परचना च (Civic Consciousness & Service Action)',
+        sectionTitleSanskrit: 'खण्डः "ख" · सेवा-भावः संकल्परचना च',
+        instructions: 'Reflect upon personal duties and community engagement during crises:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 4,
+            question: 'संवादे छात्राः बाढ़पीडितानां साहाय्यार्थं कानि कानि वस्तूनि दातुम् इच्छन्ति? तेषां सूचीं संस्कृतेन लिखत।',
+            questionSanskrit: 'साहाय्य-सामग्रीणां सूचीं लिखत:',
+            marks: 5,
+            type: 'short_ans',
+            answer: 'छात्रैः बाढ़पीडितानां कृते एतानि वस्तूनि समर्पयितुं निश्चितानि:\n१. स्व-पॉकेट-व्ययात् धनम् (Money from pocket allowance)\n२. नूतनानि वस्त्राणि कम्बलानि च (New clothes and blankets)\n३. शुष्क-आहारः (बिस्कुटानि, चूर्णानि च) (Dry packaged food)\n४. प्राथमिक-चिकित्सायाः औषधानि (First-aid medicines)\n५. शुद्ध-पेयजलस्य कूप्यः (Bottles of clean drinking water)',
+            explanation: 'विद्यार्थी आपदा के समय व्यक्तिगत बचत और आवश्यक सामग्री जुटाकर समाज-सेवा का संकल्प लेते हैं।',
+          },
+          {
+            num: 5,
+            question: '"विपत्काले सेवा एव परमो धर्मः" — अस्य सूक्तेः भावं संक्षेपेण पञ्चवाक्येषु हिन्दीभाषया संस्कृतेन वा विशदयत।',
+            questionSanskrit: 'सूक्तेः भावार्थं लिखत:',
+            marks: 5,
+            type: 'short_ans',
+            answer: 'भावार्थः:\n१. मानवजीवनस्य सार्थकता परोपकारे एव निहितम् अस्ति।\n२. यदा समाजः प्रकृतिक-आपदाभिः ग्रसितः भवति, तदा केवलं सहानुभूतिः पर्याप्ता न, अपितु क्रियाशीलं साहाय्यम् आवश्यकम्।\n३. दीनानां आक्रन्दने ईश्वरस्य आह्वानं भवति; तेषां अश्रुमार्जनं साक्षात् ईश्वरपूजा अस्ति।\n४. स्वाहितं विस्मृत्य पीडितानां कृते सर्वस्वसमर्पणं सर्वश्रेष्ठः मानवीयः सद्गुणः।\n५. उत्कलमणि-गोपबन्धुदासस्य जीवनम् अस्य सूक्तेः प्रत्यक्षम् उदाहरणं विद्यते।',
+            explanation: 'कष्ट के समय मनुष्य की सेवा ही सबसे महान पूजा और राष्ट्रधर्म है।',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ==========================================
+  // GRADE 8 CH 4 WORKSHEET 2: Biography & Sublime Sacrifice
+  // ==========================================
+  {
+    id: 'ws-grade8-ch4-ws2',
+    title: 'Chapter 4 Worksheet 2: Biography & Sublime Sacrifice of Gopabandhu Das (उत्कलमणि-चरितम् त्यागस्य आदर्शः च)',
+    titleSanskrit: 'चतुर्थः पाठः कार्यपत्रिका २: उत्कलमणेः जीवनगाथा त्यागस्य चरमोत्कर्षः च',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '45 Mins',
+    description: 'Sourced from Pages 38–40: Utkalmani Gopabandhu Das, Satyavadi Vana Vidyalaya, supreme sacrifice for flood victims, and national motto.',
+    sections: [
+      {
+        sectionTitle: 'Section A: जीवन-परिचयः ऐतिहासिक-तथ्यानि च (Life Chronology & Facts)',
+        sectionTitleSanskrit: 'खण्डः "क" · जीवन-परिचयः',
+        instructions: 'Fill in the blanks and answer questions based on the biographical details of Gopabandhu Das:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'रिक्तस्थानानि पूरयत (मञ्जूषा: दैत्यारिदासः, सुबर्णपुरे, १९०९, उत्कलमणिः):\n१. गोपबन्धुदासस्य जन्म १८७७ तमे वर्षे ओडिशायाः पुरी-जनपदस्य ____________ ग्रामे अभवत्।\n२. तस्य पितुः नाम ____________ आसीत्।\n३. सः साखीगोपाल-स्थाने ____________ तमे वर्षे "सत्यवादी वनविद्यालयः" इति स्थापितवान्।\n४. ओडिशायाः जनाः तं प्रेम्णा "____________" इति नाम्ना स्मरन्ति।',
+            questionSanskrit: 'रिक्तस्थानानि पूरयत:',
+            marks: 4,
+            type: 'fill',
+            answer: '१. सुबर्णपुरे; २. दैत्यारिदासः; ३. १९०९; ४. उत्कलमणिः',
+            explanation: 'पाठ्यपुस्तके पृष्ठ ३८ उल्लिखित-जीवनवृत्तम्।',
+          },
+          {
+            num: 2,
+            question: 'पूर्णवाक्येन उत्तरत:\n(क) गोपबन्धुदासः केषां साहाय्यार्थं स्वजीवनम् अर्पितवान्?\n(ख) यदा तस्य पुत्रः तीव्रेण ज्वरेण मरणोन्मुखः आसीत्, तदा गोपबन्धुः किम् अवदत्?',
+            questionSanskrit: 'पूर्णवाक्येन उत्तरत:',
+            marks: 6,
+            type: 'short_ans',
+            answer: '(क) गोपबन्धुदासः दीन-दुःखिनां, विपत्तिग्रस्तानां, जलप्लाव-दुर्भिक्ष-पीडितानां च साहाय्यार्थं स्वजीवनम् अर्पितवान्।\n(ख) यदा तस्य पुत्रः तीव्रेण ज्वरेण आक्रान्तः आसीत्, तदा सः अवदत् — "मम एकस्य पुत्रस्य रक्षणापेक्षया सहस्राणां देशवासिनां प्राणानां रक्षणं मम प्रथमं कर्तव्यम् अस्ति।"',
+            explanation: 'गोपबन्धु ने अपने बीमार पुत्र को छोड़कर बाढ़ पीड़ितों की रक्षा को प्राथमिकता दी।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: राष्ट्रिय-वचनं त्यागस्य भावार्थः च (National Motto & Renunciation)',
+        sectionTitleSanskrit: 'खण्डः "ख" · राष्ट्रिय-वचनं त्यागस्य भावार्थः च',
+        instructions: 'Analyze the immortal words and legacy of Gopabandhu Das:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 3,
+            question: 'गोपबन्धुदासस्य अमरं राष्ट्रिय-वचनं संस्कृतेन लिखित्वा तस्य हिन्दी-भावार्थं स्पष्टीकुरुत:\n"मम वपुः देशहिताय पततु, देशस्य प्रगत्यै मम सर्वस्वं लीनं भवतु।"',
+            questionSanskrit: 'राष्ट्रिय-वचनस्य भावार्थं लिखत:',
+            marks: 5,
+            type: 'short_ans',
+            answer: 'मूल-संस्कृतवचनम्: "मम वपुः देशहिताय पततु, देशस्य प्रगत्यै मम सर्वस्वं लीनं भवतु।"\n\nहिन्दी-भावार्थ: "मेरा यह नश्वर शरीर देश के कल्याण के लिए न्योछावर हो जाए, और देश की प्रगति तथा उत्थान के लिए मेरा सर्वस्व विलीन (समर्पित) हो जाए।"\n\nविशेष सन्देश: यह वाक्य व्यक्तिगत स्वार्थ, परिवार-मोह और शारीरिक सुखों से ऊपर उठकर मातृभूमि और समाज के प्रति अनन्य भक्ति की पराकाष्ठा को दर्शाता है।',
+            explanation: 'उत्कलमणि का यह आदर्श वाक्य देश-प्रेम और निस्वार्थ सेवा का अमर मन्त्र है।',
+          },
+          {
+            num: 4,
+            question: 'गोपबन्धुदासः "दीनबन्धुः" इति नाम्ना किमर्थं ख्यातः जातः? तस्य जीवनस्य प्रमुखं सन्देशं लिखत।',
+            questionSanskrit: '"दीनबन्धुः" इति नाम्नः सार्थकतां लिखत:',
+            marks: 5,
+            type: 'short_ans',
+            answer: 'गोपबन्धुदासः आजीवनं दीनानां, दरिद्राणां, कृषकाणां, प्राकृतिक-आपदा-ग्रस्तानां च आक्रन्दनं निवारयितुं अहोरात्रं सेवारतः आसीत्। सः स्वसुखं, धनं, परिवारं च तृणवत् त्यक्त्वा दरिद्र-नारायणस्य सेवायाम् एव ईश्वरस्य साक्षात्कारम् अकरोत्। अत एव जनाः तं "दीनबन्धुः" (दीनानां बन्धुः) तथा "उत्कलमणिः" (ओडिशायाः शिरोमणिः) इति नाम्ना गौरवपूर्वकं पूजयन्ति।\nतस्य जीवनस्य सन्देशः अस्ति — "मानवसेवा एव साक्षात् ईश्वरसेवा।"',
+            explanation: 'दीनों और असहायों की निरंतर सेवा के कारण उन्हें दीनबन्धु कहा गया।',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ==========================================
+  // GRADE 8 CH 4 WORKSHEET 3: Vocabulary, Synonyms & Antonyms
+  // ==========================================
+  {
+    id: 'ws-grade8-ch4-ws3',
+    title: 'Chapter 4 Worksheet 3: Vocabulary, Synonyms & Antonyms (शब्दार्थाः पर्याय-विलोम-पदानि च)',
+    titleSanskrit: 'चतुर्थः पाठः कार्यपत्रिका ३: पाठगत-शब्दावली पर्याय-विलोम-पदानि च',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '45 Mins',
+    description: 'Sourced from Pages 41–42: 12 key vocabulary words, Sanskrit synonyms, antonyms, compound breakdown, and context sentences.',
+    sections: [
+      {
+        sectionTitle: 'Section A: शब्दार्थ-मेलनम् पर्यायाः च (Vocabulary & Synonym Matching)',
+        sectionTitleSanskrit: 'खण्डः "क" · शब्दार्थ-मेलनम्',
+        instructions: 'Match the vocabulary words with their meanings and write synonyms/antonyms:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'स्तम्भयोः समुचितं मेलनं कुरुत (Match Columns):\nस्तम्भ "क" : (क) जलप्लावः, (ख) दुर्भिक्षः, (ग) वपुः, (घ) अकुण्ठम्, (ङ) संभूतः\nस्तम्भ "ख" : १. शरीरम्/देहः, २. बाढ़ (Inundation), ३. उत्पन्नः/जातः, ४. अकालः (Famine), ५. निःसङ्कोचं/तत्परतया',
+            questionSanskrit: 'समुचितं मेलनं कुरुत:',
+            marks: 5,
+            type: 'matching',
+            answer: '(क) -> २ (बाढ़ / Flood); (ख) -> ४ (अकालः / Famine); (ग) -> १ (शरीरम् / Body); (घ) -> ५ (निःसङ्कोचं / Wholeheartedly); (ङ) -> ३ (उत्पन्नः / Happened)',
+            explanation: 'पाठ्यपुस्तकस्य पृष्ठ ४१–४२ शब्दार्थाः।',
+          },
+          {
+            num: 2,
+            question: 'अधोलिखितानां पदानां पाठानुसारं विलोमपदानि लिखत:\n(१) विपत्काले x ____________\n(२) नष्टाः x ____________\n(३) मेधावी x ____________\n(४) लीनम् x ____________\n(५) देशहिताय x ____________',
+            questionSanskrit: 'विलोमपदानि लिखत:',
+            marks: 5,
+            type: 'fill',
+            answer: '(१) सम्पत्काले; (२) संरक्षिताः (उत्पन्नाः); (३) मन्दबुद्धिः (मूर्खः); (४) प्रकटम् (विशिष्टम्); (५) देशाहिताय (स्वहिताय)',
+            explanation: 'शब्दों के विपरीतार्थक रूप।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: वाक्यप्रयोगः सन्दर्भज्ञानं च (Sentence Construction & Grammar)',
+        sectionTitleSanskrit: 'खण्डः "ख" · वाक्यप्रयोगः सन्दर्भज्ञानं च',
+        instructions: 'Use the vocabulary words in meaningful Sanskrit sentences and analyze compound terms:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 3,
+            question: 'अधोलिखितानां पदानां स्ववाक्येषु शुद्ध-संस्कृतप्रयोगं कुरुत:\n(क) अकुण्ठम्\n(ख) दुर्भिक्षः\n(ग) परमो धर्मः',
+            questionSanskrit: 'संस्कृतवाक्येषु प्रयोगं कुरुत:',
+            marks: 6,
+            type: 'short_ans',
+            answer: '(क) अकुण्ठम् — गोपबन्धुदासः आपदा-पीडितानां कृते अकुण्ठं धनं साहाय्यं च अयच्छत्।\n(ख) दुर्भिक्षः — यदा दुर्भिक्षः आपतति, तदा वयं दरिद्रेभ्यः अन्नदानं कुर्मः।\n(ग) परमो धर्मः — विपत्काले दीनानां सेवा एव परमो धर्मः अस्ति।',
+            explanation: 'पाठगत-शब्दानां व्याकरणसम्मतः वाक्यप्रयोगः।',
+          },
+          {
+            num: 4,
+            question: '"दीनबन्धुः" तथा "उत्कलमणिः" इति पदयोः सामासिक-विग्रहं कृत्वा समासस्य नाम लिखत।',
+            questionSanskrit: 'समास-विग्रहं कुरुत:',
+            marks: 4,
+            type: 'short_ans',
+            answer: '१. दीनबन्धुः = दीनानां बन्धुः (षष्ठी तत्पुरुष-समासः)\n२. उत्कलमणिः = उत्कलस्य मणिः (षष्ठी तत्पुरुष-समासः)',
+            explanation: 'दोनों पद संबंध-कारक (षष्ठी विभक्ति) के तत्पुरुष समास हैं।',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ==========================================
+  // GRADE 8 CH 4 WORKSHEET 4: Sandhi Rules & Grammar Mechanics
+  // ==========================================
+  {
+    id: 'ws-grade8-ch4-ws4',
+    title: 'Chapter 4 Worksheet 4: Sandhi Rules & Grammar Mechanics (विसर्ग-उत्व-सन्धिः अनीयर्/ण्यत्-प्रत्ययः च)',
+    titleSanskrit: 'चतुर्थः पाठः कार्यपत्रिका ४: सन्धि-नियमाः कृदन्त-प्रत्ययाः च',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '45 Mins',
+    description: 'Sourced from Pages 36–44: Visarga Utva and Purvarupa Sandhi, Kriddhanta suffixes (-अनीयर्, -ण्यत्), and case endings.',
+    sections: [
+      {
+        sectionTitle: 'Section A: सन्धिकार्यम् (Sandhi Splitting & Joining)',
+        sectionTitleSanskrit: 'खण्डः "क" · सन्धिकार्यम्',
+        instructions: 'Split or join the following Sandhi words following Sanskrit phonetic rules:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'सन्धिविच्छेदं कुरुत:\n(क) प्रणम्योऽयम् = ____________ + ____________\n(ख) समादृतोऽस्ति = ____________ + ____________\n(ग) धन्योऽयम् = ____________ + ____________\n(घ) देशहिताय = ____________ + ____________\n(ङ) कोऽपि = ____________ + ____________',
+            questionSanskrit: 'सन्धिविच्छेदं कुरुत:',
+            marks: 5,
+            type: 'grammar',
+            answer: '(क) प्रणम्यः + अयम्\n(ख) समादृतः + अस्ति\n(ग) धन्यः + अयम्\n(घ) देश + हिताय (वा देशस्य + हिताय)\n(ङ) कः + अपि',
+            explanation: 'विसर्गस्य उत्वं तथा अवग्रहरूपेण पूर्वरूपम्।',
+          },
+          {
+            num: 2,
+            question: 'सन्धिं कुरुत (Join the Sandhi):\n(क) भक्तः + अयम् = ____________\n(ख) रामः + अवदत् = ____________\n(ग) बालः + अयम् = ____________\n(घ) सः + अपि = ____________\n(ङ) नरः + अयम् = ____________',
+            questionSanskrit: 'सन्धिं कुरुत:',
+            marks: 5,
+            type: 'grammar',
+            answer: '(क) भक्तोऽयम्\n(ख) रामोऽवदत्\n(ग) बालोऽयम्\n(घ) सोऽपि\n(ङ) नरोऽयम्',
+            explanation: 'अतो रोरप्लुतादप्लुते (विसर्ग का उत्व और अ का अवग्रह ऽ)।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: प्रत्यय-परिचयः कारक-विभक्तयः च (Suffixes & Grammatical Cases)',
+        sectionTitleSanskrit: 'खण्डः "ख" · प्रत्ययाः कारकाणि च',
+        instructions: 'Analyze the verbal suffixes and identify grammatical cases in text sentences:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 3,
+            question: 'धातु-प्रत्यय-विभागं कुरुत वा योजयत:\n(क) प्रणम्यः = प्र + नम् + ____________\n(ख) सेवनीयः = सेव् + ____________\n(ग) स्मरणीयः = स्मृ + ____________\n(घ) आगत्य = आ + गम् + ____________',
+            questionSanskrit: 'धातु-प्रत्ययौ पृथक् कुरुत योजयत वा:',
+            marks: 4,
+            type: 'grammar',
+            answer: '(क) ण्यत् (यत्); (ख) अनीयर्; (ग) अनीयर्; (घ) ल्यप्',
+            explanation: 'कृत्य-प्रत्ययाः (योग्य अर्थ में ण्यत्/अनीयर्) तथा पूर्वकालिक ल्यप्।',
+          },
+          {
+            num: 4,
+            question: 'अधोलिखितवाक्येषु रेखाङ्कितपदानां विभक्तिं वचनं च लिखत:\n(क) "महानद्यां भयङ्करः जलप्लावः सम्भूतः।" (महानद्याम्)\n(ख) "मम वपुः देशहिताय पततु।" (देशहिताय)\n(ग) "चिकित्सालयाः घायलैः पूर्णाः सन्ति।" (घायलैः)',
+            questionSanskrit: 'विभक्तिं वचनं च लिखत:',
+            marks: 6,
+            type: 'grammar',
+            answer: '(क) महानद्याम्: सप्तमी विभक्तिः, एकवचनम् (अधिकरणकारकम्)\n(ख) देशहिताय: चतुर्थी विभक्तिः, एकवचनम् (सम्प्रदानकारकम्)\n(ग) घायलैः: तृतीया विभक्तिः, बहुवचनम् (करणकारकम्/सहार्थे)',
+            explanation: 'महानदी (नदीवत् सप्तमी एकवचन), देशहित (अकारान्त चतुर्थी एकवचन), घायल (अकारान्त तृतीया बहुवचन)।',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ==========================================
+  // GRADE 8 CH 4 WORKSHEET 5: Textbook Exercises & Question Formulation
+  // ==========================================
+  {
+    id: 'ws-grade8-ch4-ws5',
+    title: 'Chapter 4 Worksheet 5: Textbook Exercises & Question Formulation (अभ्यासकार्यम् प्रश्ननिर्माणम् च)',
+    titleSanskrit: 'चतुर्थः पाठः कार्यपत्रिका ५: पाठ्यपुस्तक-अभ्यासकार्यम् प्रश्ननिर्माणम् च',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '45 Mins',
+    description: 'Sourced from Pages 43–44: Solved questions (Q1–Q5), interrogative question formulation, and textbook exercise completion.',
+    sections: [
+      {
+        sectionTitle: 'Section A: पाठ्यपुस्तक-अभ्यास-प्रश्नोत्तराणि (Textbook Solved Questions)',
+        sectionTitleSanskrit: 'खण्डः "क" · अभ्यास-प्रश्नाः',
+        instructions: 'Answer the textbook questions accurately in Sanskrit:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'एकपदेन उत्तरत:\n(क) गोपबन्धुदासस्य जन्म कस्मिन् ग्रामे अभवत्?\n(ख) तस्य पितुः नाम किम् आसीत्?\n(ग) १९०९ तमे वर्षे सः कस्य विद्यालयस्य स्थापनाम् अकरोत्?\n(घ) गोपबन्धु महोदयानुसारं का एव ईश्वरसेवा अस्ति?\n(ङ) गोपबन्धोः पुत्रः कया पीडितः आसीत्?',
+            questionSanskrit: 'एकपदेन उत्तरत:',
+            marks: 5,
+            type: 'short_ans',
+            answer: '(क) सुबर्णपुर-ग्रामे\n(ख) दैत्यारिदासः\n(ग) सत्यवादी वनविद्यालयस्य\n(घ) मानवसेवा\n(ङ) तीव्रेण ज्वरेण (ज्वरपीडया)',
+            explanation: 'पाठ्यपुस्तके पृष्ठ ४३ अभ्यासकार्यम् प्रश्न १।',
+          },
+          {
+            num: 2,
+            question: 'पूर्णवाक्येन उत्तरत:\n(क) गोपबन्धुदासः केषां कृते अकुण्ठं सेवाकार्यम् अकरोत्?\n(ख) सत्यवादी वनविद्यालयः कुत्र स्थापितः आसीत्?',
+            questionSanskrit: 'पूर्णवाक्येन उत्तरत:',
+            marks: 5,
+            type: 'short_ans',
+            answer: '(क) गोपबन्धुदासः जलप्लाव-दुर्भिक्ष-पीडितानां दीनानां च कृते अकुण्ठं सेवाकार्यम् अकरोत्।\n(ख) सत्यवादी वनविद्यालयः ओडिशायाः पुरी-समीपे साखीगोपाल-स्थाने स्थापितः आसीत्।',
+            explanation: 'पाठ्यपुस्तके पृष्ठ ४३ अभ्यासकार्यम् प्रश्न २।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: प्रश्ननिर्माणम् रिक्तस्थानपूर्तिः च (Question Construction & Cloze Test)',
+        sectionTitleSanskrit: 'खण्डः "ख" · प्रश्ननिर्माणम् रिक्तस्थानपूर्तिः च',
+        instructions: 'Formulate questions for underlined terms and complete sentences with words from the box:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 3,
+            question: 'रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कुरुत:\n(क) महानद्यां भयङ्करः जलप्लावः सम्भूतः।\n(ख) गोपबन्धोः जन्म सुबर्णपुर-ग्रामे अभवत्।\n(ग) मानवसेवा एव ईश्वरसेवा अस्ति।\n(घ) १९०९ तमे वर्षे विद्यालयः स्थापितः।\n(ङ) मम वपुः देशहिताय पततु।',
+            questionSanskrit: 'प्रश्ननिर्माणं कुरुत:',
+            marks: 5,
+            type: 'grammar',
+            answer: '(क) कस्यां भयङ्करः जलप्लावः सम्भूतः?\n(ख) गोपबन्धोः जन्म कस्मिन् ग्रामे (कुत्र) अभवत्?\n(ग) का एव ईश्वरसेवा अस्ति?\n(घ) कस्मिन् वर्षे (कदा) विद्यालयः स्थापितः?\n(ङ) मम वपुः कस्मै पततु?',
+            explanation: 'महानद्याम् -> कस्याम्, सुबर्णपुर-ग्रामे -> कस्मिन् ग्रामे/कुत्र, मानवसेवा -> का, १९०९ तमे वर्षे -> कस्मिन् वर्षे/कदा, देशहिताय -> कस्मै।',
+          },
+          {
+            num: 4,
+            question: 'मञ्जूषातः पदानि चित्वा रिक्तस्थानानि पूरयत (मञ्जूषा: अकुण्ठम्, जलप्लावः, वनविद्यालयः, ईश्वरसेवा, परमो धर्मः):\n(क) महानद्यां भयङ्करः ____________ सम्भूतः।\n(ख) विपत्काले सेवा एव ____________।\n(ग) गोपबन्धुः दीनानां कृते ____________ साहाय्यम् अकरोत्।\n(घ) साखीगोपाले सत्यवादी ____________ स्थापितः।\n(ङ) मानवसेवा एव वास्तविकः ____________ भवति।',
+            questionSanskrit: 'रिक्तस्थानानि पूरयत:',
+            marks: 5,
+            type: 'fill',
+            answer: '(क) जलप्लावः; (ख) परमो धर्मः; (ग) अकुण्ठम्; (घ) वनविद्यालयः; (ङ) ईश्वरसेवा',
+            explanation: 'पाठ्यपुस्तके पृष्ठ ४४ अभ्यासकार्यम् प्रश्न ४।',
           },
         ],
       },
