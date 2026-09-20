@@ -50,7 +50,7 @@ export const WORKSHEET_CATEGORIES = [
   { id: 'grammar', label: 'Vyākaraṇa / Grammar (10 Worksheets · व्याकरण-पत्राणि)', icon: '📐' },
   { id: 'vedic_maths', label: 'Vedic Maths Drills (वैदिक-गणितम्)', icon: '⚡' },
   { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
-  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 28 Worksheets)', icon: '🪕' },
+  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 43 Worksheets)', icon: '🪕' },
 ] as const;
 
 export const WORKSHEETS: Worksheet[] = [
@@ -9005,4 +9005,973 @@ export const WORKSHEETS: Worksheet[] = [
       }
     ]
   },
+{
+  "id": "ws-grade8-ch7-ws1",
+  "title": "Worksheet 1: Dialogue Comprehension (श्रावणी-पूर्णिमा & संस्कृतदिवसः)",
+  "titleSanskrit": "सप्तमः पाठः कार्यपत्रिका १: श्रावणी-पूर्णिमा & संस्कृतदिवसः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Extract-based reading from Omita and her sister's conversation regarding Sanskrit Day celebration, school programs, and song competition.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Dialogue Extraction & Short Answers",
+      "sectionTitleSanskrit": "खण्डः 'क' · संवाद-अवबोधनम्",
+      "instructions": "Read the conversation extract and answer:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "I. एकपदेन उत्तरत (Answer in one word):\n(क) श्रावणी-पूर्णिमायाम् कः उत्सवः भवति?\n(ख) भगिनी कस्यां प्रतियोगितायां भागं ग्रहीष्यति?\n(ग) कस्य आमंत्रणपत्रं भगिनी ददाति?",
+          "questionSanskrit": "एकपदेन उत्तरत:",
+          "marks": 6,
+          "type": "short_ans",
+          "answer": "(क) संस्कृतदिवसः (संस्कृतसप्ताहः)\n(ख) गीतगायनप्रतियोगितायाम्\n(ग) निमन्त्रणपत्रम्",
+          "explanation": "पाठान्तर्गत-संवादे स्पष्टं यत् श्रावणीपूर्णिमायाम् संस्कृतदिवसः भवति, भगिनी च गीतप्रतियोगितायां भागं गृह्णाति।"
+        },
+        {
+          "num": 2,
+          "question": "II. पूर्णवाक्येन उत्तरत:\nसंस्कृतसप्ताहः कथम् आचर्यते? विद्यालये का योजना कृता?",
+          "questionSanskrit": "पूर्णवाक्येन उत्तरत:",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "संस्कृतदिवसम् अधिकृत्य आसप्ताहं विविधकार्यक्रमाणां योजना विद्यालये रचिता अस्ति।",
+          "explanation": "संस्कृतदिवसस्य महत्ता पाठे वर्णिता।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Vocabulary and Grammar in Context",
+      "sectionTitleSanskrit": "खण्डः 'ख' · भाषिककार्यम्",
+      "instructions": "Choose the correct grammatical form:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "१. 'गास्यति' इति पदे कः लकारः?\n(A) लट् (B) लृट् (C) लोट् (D) लङ्\n\n२. 'अहम् अपि आगन्तुम् इच्छामि' इत्यत्र 'आगन्तुम्' पदे कः प्रत्ययः?\n(A) क्त्वा (B) तुमुन् (C) ल्यप् (D) शतृ",
+          "questionSanskrit": "व्याकरण-विकल्पं चिनुत:",
+          "marks": 5,
+          "type": "mcq",
+          "options": [
+            "१. (B) लृट् लकारः, २. (B) तुमुन्",
+            "१. (A) लट्, २. (A) क्त्वा",
+            "१. (C) लोट्, २. (C) ल्यप्"
+          ],
+          "answer": "१. (B) लृट् लकारः (भविष्यत्कालः)\n२. (B) तुमुन् प्रत्ययः (आ + गम् + तुमुन् = आगन्तुम्)",
+          "explanation": "गास्यति = लृट्लकारः; आगन्तुम् = तुमुन्-प्रत्ययः।"
+        },
+        {
+          "num": 4,
+          "question": "Fill in the blanks from the dialogue:\n(क) वयम् एतम् ______________ आचरामः। (आसप्ताहम् / प्रतिदिनम्)\n(ख) भवती ______________। (अनुगायतु / पठतु)",
+          "questionSanskrit": "रिक्तस्थानं पूरयत:",
+          "marks": 5,
+          "type": "fill",
+          "answer": "(क) आसप्ताहम्; (ख) अनुगायतु",
+          "explanation": "पाठानुरूप-रिक्तस्थानपूर्तिः।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch7-ws2",
+  "title": "Worksheet 2: Verse Analysis & Blanks (श्लोक-विश्लेषणं रिक्तस्थानपूर्तिः च)",
+  "titleSanskrit": "सप्तमः पाठः कार्यपत्रिका २: श्लोक-विश्लेषणं रिक्तस्थानपूर्तिः च",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Fill missing poetic terms from Shlokas 1–4, explore Anvaya, and understand aesthetic and philosophical dimensions of Sanskrit.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Shloka Text Fill-in-the-Blanks",
+      "sectionTitleSanskrit": "खण्डः 'क' · श्लोकांश-पूरणम्",
+      "instructions": "Complete the shloka phrases with the exact textbook terms:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "Fill in the missing words from the shlokas:\n१. वेदव्यास-वाल्मीकि-___________ कालिदास-बाणादिकवीनाम्।\n२. वैद्य-___________-शास्त्रादि-विहारा विजयते धरायां सुन्दरसुरभाषा।\n३. अयि मातस्तव ___________ मम वचनातीता।\n४. नवरस-रुचिरा ___________ वेदविषय-वेदान्त-विचारा।",
+          "questionSanskrit": "श्लोकेषु रिक्तस्थानानि पूरयत:",
+          "marks": 6,
+          "type": "fill",
+          "answer": "१. मुनीनां; २. व्योम; ३. पोषणक्षमता; ४. अलङ्कृति-धारा",
+          "explanation": "पाठे श्लोक १, २, ४ इत्येतेभ्यः पदानि सन्ति।"
+        },
+        {
+          "num": 2,
+          "question": "Explain the meaning of 'नवरस-रुचिरा' and list any four rasas in Sanskrit.",
+          "questionSanskrit": "'नवरस-रुचिरा' इत्यस्य भावार्थं चतुरः रसान् च लिखत:",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "'नवरस-रुचिरा' अर्थात् नौ रसों से मनोहर। चत्वारः रसाः: शृङ्गारः, हास्यः, वीरः, शान्तः च।",
+          "explanation": "साहित्ये नवरसाः भवन्ति येन काव्यं रुचिरा भवति।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Anvaya & Verse Translation",
+      "sectionTitleSanskrit": "खण्डः 'ख' · अन्वयः अनुवादः च",
+      "instructions": "Rearrange the anvaya and translate:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "Translate Verse 1 into English or Hindi:\n'मुनिवरविकसितकविवरविलसित-मञ्जुलमञ्जूषा सुन्दरसुरभाषा। अयि मातस्तव पोषणक्षमता मम वचनातीता सुन्दरसुरभाषा॥'",
+          "questionSanskrit": "श्लोकस्य अनुवादं कुरुत:",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "हे श्रेष्ठ मुनियों द्वारा विकसित और कवियों द्वारा सुशोभित देववाणी संस्कृत! तुम सुंदर ज्ञान की मंजूषा (पेटी) हो। हे माता! तुम्हारी सबको पोषण देने की क्षमता मेरी वाणी से सर्वथा परे है। (O beautiful divine language Sanskrit, expanded by noble sages and adorned by poets! You are a lovely jewel-box of wisdom. Your nurturing power is beyond words).",
+          "explanation": "श्लोक १ इत्यस्य सरलार्थः।"
+        },
+        {
+          "num": 4,
+          "question": "Which great authors and poets are mentioned in Verse 2 as finding hope of life in Sanskrit?",
+          "questionSanskrit": "द्वितीये श्लोके केषां मुनीनां कवीनां च नामानि सन्ति?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "मुनयः: वेदव्यासः, वाल्मीकिः च। कवयः: कालिदासः, बाणभट्टः च।",
+          "explanation": "श्लोक २: वेदव्यास-वाल्मीकि-मुनीनां कालिदास-बाणादिकवीनाम्।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch7-ws3",
+  "title": "Worksheet 3: Compound Identification (समास-बोधः)",
+  "titleSanskrit": "सप्तमः पाठः कार्यपत्रिका ३: समास-बोधः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Analyze Samasa formations, compound splitting (विग्रह), and identify Tatpurusha, Karmadharaya, and Dvigu paradigms from Chapter 7.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Compound Splitting (समास-विग्रहः)",
+      "sectionTitleSanskrit": "खण्डः 'क' · समास-विग्रहः",
+      "instructions": "Break the following compound words into their separate components:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "Break or combine the compounds:\n१. सुरभाषा = _________________\n२. पोषणक्षमता = _________________\n३. वचनातीता = _________________\n४. मञ्जुलमञ्जूषा = _________________",
+          "questionSanskrit": "समास-विग्रहं कुरुत:",
+          "marks": 8,
+          "type": "grammar",
+          "answer": "१. सुराणां भाषा (षष्ठी तत्पुरुषः)\n२. पोषणस्य क्षमता (षष्ठी तत्पुरुषः)\n३. वचनम् अतीता (द्वितीया तत्पुरुषः)\n४. मञ्जुला मञ्जूषा (कर्मधारयः)",
+          "explanation": "पाठे पृष्ठ ८०-८२ अनुसारं समासविग्रहः।"
+        },
+        {
+          "num": 2,
+          "question": "In the compound 'नवरसरुचिरा', what does 'नवरस' signify?\n(A) One Rasa (B) Nine Rasas (C) New Rasa",
+          "questionSanskrit": "'नवरस' पदे कः भावः?",
+          "marks": 2,
+          "type": "mcq",
+          "options": [
+            "(A) One Rasa",
+            "(B) Nine Rasas (नवानां रसानां समाहारः)",
+            "(C) New Rasa"
+          ],
+          "answer": "(B) Nine Rasas (नवानां रसानां समाहारः)",
+          "explanation": "अत्र 'नव' इति संख्यावाचकम् अस्ति (९ रसाः)।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Samasa Principles & Applied Usage",
+      "sectionTitleSanskrit": "खण्डः 'ख' · समास-सिद्धान्त-प्रयोगः",
+      "instructions": "Identify the Samasa category for each word:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "Identify the type of Samasa for each:\n(क) सुरभाषा ➔ ______________ (तत्पुरुषः / द्वन्द्वः)\n(ख) सुन्दरसुरभाषा ➔ ______________ (कर्मधारयः / द्विगुः)\n(ग) पञ्चवटी ➔ ______________ (द्विगुः / बहुव्रीहिः)\n(घ) पीताम्बरः ➔ ______________ (बहुव्रीहिः / अव्ययीभावः)",
+          "questionSanskrit": "समास-नाम लिखत:",
+          "marks": 6,
+          "type": "grammar",
+          "answer": "(क) षष्ठी तत्पुरुषः; (ख) कर्मधारयः; (ग) द्विगुः; (घ) बहुव्रीहिः",
+          "explanation": "शुद्ध-समास-वर्गीकरणम्।"
+        },
+        {
+          "num": 4,
+          "question": "Define Samasa (समास) in simple Sanskrit or English and give one example.",
+          "questionSanskrit": "समासस्य लक्षणम् एकम् उदाहरणं च लिखत:",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "'समसनं समासः'—अनेकेषां पदानां मिलित्वा एकपदीभवनं समासः कथ्यते। यथा—देवस्य आलयः = देवालयः। (Samasa is the compounding or contraction of multiple related words into a single compound word).",
+          "explanation": "समासस्य शास्त्रीयं लक्षणम्।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch7-ws4",
+  "title": "Worksheet 4: Case & Grammatical Matching (विभक्ति-वचन-मेलनम्)",
+  "titleSanskrit": "सप्तमः पाठः कार्यपत्रिका ४: विभक्ति-वचन-मेलनम्",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Declensions, case endings (Vibhakti), number (Vachana), and grammatical identification of nouns from Chapter 7.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Grammatical Matching",
+      "sectionTitleSanskrit": "खण्डः 'क' · विभक्ति-मेलनम्",
+      "instructions": "Match the words with their correct Vibhakti and Vachana:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "Match the word with its grammatical description:\n१. शास्त्रेषु ➔ (a) Genitive Singular (षष्ठी, एकवचन)\n२. जनानाम् ➔ (b) Locative Plural (सप्तमी, बहुवचन)\n३. जीवनस्य ➔ (c) Genitive Plural (षष्ठी, बहुवचन)\n४. धरायाम् ➔ (d) Locative Singular (सप्तमी, एकवचन)",
+          "questionSanskrit": "विभक्ति-वचनानां मेलनं कुरुत:",
+          "marks": 6,
+          "type": "matching",
+          "answer": "१-(b), २-(c), ३-(a), ४-(d)",
+          "explanation": "शास्त्रेषु = सप्तमी बहुवचन; जनानाम् = षष्ठी बहुवचन; जीवनस्य = षष्ठी एकवचन; धरायाम् = सप्तमी एकवचन।"
+        },
+        {
+          "num": 2,
+          "question": "Identify the Vibhakti and Vachana of:\n(क) मातः ➔ ______________________\n(ख) तव ➔ ______________________\n(ग) मञ्जूषा ➔ ______________________\n(घ) संस्कृतिः ➔ ______________________",
+          "questionSanskrit": "विभक्तिं वचनं च लिखत:",
+          "marks": 4,
+          "type": "grammar",
+          "answer": "(क) मातः: सम्बोधनम्, एकवचनम्\n(ख) तव: षष्ठी, एकवचनम्\n(ग) मञ्जूषा: प्रथमा, एकवचनम्\n(घ) संस्कृतिः: प्रथमा, एकवचनम्",
+          "explanation": "पाठान्तर्गत-पदानां व्याकरण-रूपम्।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Interrogative Sentence Construction (प्रश्ननिर्माणम्)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · प्रश्ननिर्माणम्",
+      "instructions": "Frame questions for the underlined terms:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "Frame interrogative sentences (Page 82 Q3):\n१. मुनिगणाः <u>संस्कृतभाषायाः</u> विकासं कृतवन्तः।\n२. <u>सामान्यजनानां</u> जीवनं काव्यैः प्रभावितम् अस्ति।\n३. <u>कवयः</u> अपि उपादेयानि काव्यानि रचितवन्तः।\n४. संस्कृतभाषा <u>धरायाम्</u> विहरति।\n५. संस्कृतभाषा <u>विविधभाषाः</u> परिपोषयति।",
+          "questionSanskrit": "प्रश्ननिर्माणं कुरुत:",
+          "marks": 10,
+          "type": "grammar",
+          "answer": "१. मुनिगणाः कस्याः विकासं कृतवन्तः?\n२. केषाम् जीवनं काव्यैः प्रभावितम् अस्ति?\n३. के अपि उपादेयानि काव्यानि रचितवन्तः?\n४. संस्कृतभाषा कुत्र (कस्याम्) विहरति?\n५. संस्कृतभाषा काः परिपोषयति?",
+          "explanation": "संस्कृतभाषायाः (स्त्रीलिङ्ग षष्ठी एक० -> कस्याः); सामान्यजनानाम् (पुल्लिङ्ग षष्ठी बहु० -> केषाम्); कवयः (प्रथमा बहु० -> के); धरायाम् (सप्तमी -> कुत्र/कस्याम्); विविधभाषाः (स्त्रीलिङ्ग द्वितीया बहु० -> काः)।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch7-ws5",
+  "title": "Worksheet 5: Sanskrit Prose Writing (सुन्दरसुरभाषा-रचना)",
+  "titleSanskrit": "सप्तमः पाठः कार्यपत्रिका ५: सुन्दरसुरभाषा-रचना",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Compose short descriptive sentences on the glory of Sanskrit using textual vocabulary and articulate its cultural and scientific value.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Sentence Construction with Prompt Words",
+      "sectionTitleSanskrit": "खण्डः 'क' · पदैः वाक्यरचना",
+      "instructions": "Write 3 simple and grammatically correct Sanskrit sentences using the given words:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "Write 3 Sanskrit sentences using: 'सुन्दरसुरभाषा', 'धरायाम्', and 'ज्ञानपेटिका (मञ्जूषा)':\n१. सुन्दरसुरभाषा: ____________________________________\n२. धरायाम्: ____________________________________\n३. ज्ञानपेटिका / मञ्जूषा: ____________________________________",
+          "questionSanskrit": "पदैः वाक्यनिर्माणं कुरुत:",
+          "marks": 6,
+          "type": "grammar",
+          "answer": "१. संस्कृतभाषा संसारस्य सुन्दरसुरभाषा अस्ति।\n२. देववाणी संस्कृतं धरायां सर्वत्र विजयते।\n३. संस्कृतभाषा समस्तज्ञानानाम् एका श्रेष्ठा ज्ञानपेटिका (मञ्जूषा) वर्तते।",
+          "explanation": "सरल-संस्कृत-वाक्यरचना।"
+        },
+        {
+          "num": 2,
+          "question": "Name any two sciences (शास्त्राणि) mentioned in Verse 4 that Sanskrit encompasses.",
+          "questionSanskrit": "चतुर्थे श्लोके उल्लिखितयोः द्वयोः शास्त्रयोः नामनी लिखत:",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "१. वैद्यशास्त्रम् (चिकित्सा-विज्ञानम् / आयुर्वेदः)\n२. व्योमशास्त्रम् (खगोल-विज्ञानम् / अन्तरिक्षशास्त्रम्)",
+          "explanation": "श्लोक ४: 'वैद्य-व्योम-शास्त्रादि-विहारा विजयते धरायां सुन्दरसुरभाषा'।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Reading & Value Reflection",
+      "sectionTitleSanskrit": "खण्डः 'ख' · संस्कृतस्य वैश्विकं महत्त्वम्",
+      "instructions": "Explain Sanskrit's role as a unifying cultural treasure:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "Explain why the poet calls Sanskrit 'मुनिवरविकसित-कविवरविलसित-मञ्जुलमञ्जूषा' in 3-4 lines.",
+          "questionSanskrit": "'मञ्जुलमञ्जूषा' इत्यस्य वैशिष्ट्यं लिखत:",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "ऋषिभिः मुनिभिश्च वेदानाम् उपनिषदां च गहनज्ञानं संस्कृते निबद्धम्, कालिदासादिभिः कविवरैः च अनुपमैः काव्यैः इयं भाषा सुशोभिता। अतः इयं सर्वज्ञानानां सुरभिता पेटिका (मञ्जूषा) अस्ति। (Sages developed philosophical wisdom in Sanskrit, while master poets embellished it with sublime aesthetic literature, making it a radiant casket of universal knowledge).",
+          "explanation": "पाठस्य मूल-भावार्थः।"
+        },
+        {
+          "num": 4,
+          "question": "Multiple Choice Questions (Page 83 Q8):\n(क) 'मञ्जुलमञ्जूषा' इत्यस्य अर्थः कः?\n(i) पेटी (ii) मनोहररूपेण संकलिता (iii) भोजनम्\n(ख) सुन्दरसुरभाषा कुत्र विजयते?\n(i) नभसि (ii) धरायाम् (iii) वने",
+          "questionSanskrit": "उचितं विकल्पं चिनुत:",
+          "marks": 5,
+          "type": "mcq",
+          "options": [
+            "(क) (ii) मनोहररूपेण संकलिता, (ख) (ii) धरायाम्",
+            "(क) (i) पेटी, (ख) (i) नभसि"
+          ],
+          "answer": "(क) मनोहररूपेण संकलिता\n(ख) धरायाम् (पृथिव्याम्)",
+          "explanation": "पाठान्तर्गत-विकल्पाः।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch8-ws1",
+  "title": "Worksheet 1: Comprehension & Text-Based Questions (भगिनीसप्तकम्)",
+  "titleSanskrit": "अष्टमः पाठः कार्यपत्रिका १: भगिनीसप्तकम् पूर्वोत्तरपरिचयः च",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Mnemonic shloka reading, state identification of the Seven Sisters and Brother Sikkim, and geographic-cultural understanding of Northeast India.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Mnemonic Shloka Extraction",
+      "sectionTitleSanskrit": "खण्डः 'क' · श्लोक-अवबोधनम्",
+      "instructions": "Read the mnemonic verse and answer the questions below:\n\n'अद्वयं मत्रयं चैव न-त्रि-युक्तं तथाद्वयम्।\nसप्तराज्यसमूहोऽयं भगिनीसप्तकं मतम्॥\nतेन युक्तो लघुः भ्राता सिक्किमः इति विश्रुतः।\nपश्यत कोणमैशान्यं भारतस्य मनोहरम्॥'",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "I. प्रश्नानाम् उत्तराणि लिखत:\n१. 'मत्रयम्' इति पदेन कति राज्यानां बोधः भवति?\n२. 'भगिनीसप्तकम्' इति समूहे कति राज्यानि सन्ति?\n३. 'अद्वयम्' इति पदस्य कानि राज्यानि नामानि पाठे आगतानि?",
+          "questionSanskrit": "श्लोकाधारित-प्रश्नोत्तराणि:",
+          "marks": 6,
+          "type": "short_ans",
+          "answer": "१. त्रयाणाम् (३) राज्यानाम् (मणिपुरम्, मिजोरमः, मेघालयः च)।\n२. सप्त (७) राज्यानि।\n३. अरुणाचलप्रदेशः च असमः।",
+          "explanation": "अद्वयम् = अरुणाचल, असम; मत्रयम् = मणिपुर, मिजोरम, मेघालय; न-त्रि = नागालैंड, त्रिपुरा।"
+        },
+        {
+          "num": 2,
+          "question": "II. Translate the following lines into English or Hindi:\n\"भगिनीसप्तके इमानि राज्यानि क्षेत्रपरिमाणैः लघूनि वर्तन्ते तथापि गुणगौरवदृष्ट्या बृहत्तराणि प्रतीयन्ते।\"",
+          "questionSanskrit": "सरलार्थं लिखत:",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "भगिनीसप्तक के ये राज्य क्षेत्रफल की दृष्टि से छोटे हैं, फिर भी गुण और गौरव की दृष्टि से बहुत बड़े प्रतीत होते हैं। (In the Seven Sisters, these states are small in terms of surface area, yet they appear very significant and grand in terms of their virtues and glory).",
+          "explanation": "पाठे अष्टमपाठस्य मुख्यवाक्यम्।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Geography & Rivers of Northeast India",
+      "sectionTitleSanskrit": "खण्डः 'ख' · भूगोलः नद्यः च",
+      "instructions": "Answer based on Page 85 textbook facts:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "Which two prominent rivers flow through these northeastern states?\n(A) Ganga and Yamuna (B) Barak and Brahmaputra (C) Narmada and Godavari",
+          "questionSanskrit": "एतेषु राज्येषु के प्रमुखे नद्यौ प्रवहति?",
+          "marks": 5,
+          "type": "mcq",
+          "options": [
+            "(A) Ganga and Yamuna",
+            "(B) Barak and Brahmaputra (बराक-ब्रह्मपुत्रादि-नद्यः)",
+            "(C) Narmada and Godavari"
+          ],
+          "answer": "(B) Barak and Brahmaputra (बराक-ब्रह्मपुत्रादि-नद्यः)",
+          "explanation": "पाठे उक्तम्: 'एतेषु बराक-ब्रह्मपुत्रादि-नद्यः प्रवहन्ति'।"
+        },
+        {
+          "num": 4,
+          "question": "How many total states and union territories are there in India as stated by Swara?\n(क) राज्यानि: ______________\n(ख) केन्द्रशासितप्रदेशाः: ______________",
+          "questionSanskrit": "भारते कति राज्यानि केन्द्रशासितप्रदेशाः च सन्ति?",
+          "marks": 5,
+          "type": "fill",
+          "answer": "(क) अष्टाविंशतिः (२८); (ख) अष्ट (८)",
+          "explanation": "अस्माकं देशे अष्टाविंशतिः राज्यानि तथा अष्ट केन्द्रशासितप्रदेशाः सन्ति।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch8-ws2",
+  "title": "Worksheet 2: Vocabulary & Word Meanings (पूर्वोत्तर-शब्दावली)",
+  "titleSanskrit": "अष्टमः पाठः कार्यपत्रिका २: पूर्वोत्तर-शब्दावली",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Vocabulary mastery: matching synonyms, contextual blanks, and antonym recognition for 26 Chapter 8 terms.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Sanskrit-English Matching",
+      "sectionTitleSanskrit": "खण्डः 'क' · शब्दार्थ-मेलनम्",
+      "instructions": "Match the Sanskrit word with its correct English meaning:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "Match the following:\n१. वैचित्र्यम् ➔ (a) Abundance\n२. प्राचुर्यम् ➔ (b) Uniqueness\n३. स्वाधीनाः ➔ (c) Independent\n४. निष्णाताः ➔ (d) Experts / Masters",
+          "questionSanskrit": "उचित-अर्थैः सह मेलयत:",
+          "marks": 6,
+          "type": "matching",
+          "answer": "१-(b) Uniqueness, २-(a) Abundance, ३-(c) Independent, ४-(d) Experts / Masters",
+          "explanation": "वैचित्र्यम् = विशेषता; प्राचुर्यम् = आधिक्यम्; स्वाधीनाः = स्वतन्त्राः; निष्णाताः = निपुणाः।"
+        },
+        {
+          "num": 2,
+          "question": "Fill in the blanks with the correct option:\n(क) अस्मिन् प्रदेशे ______________ वृक्षाणां प्राचुर्यं विद्यते। (आम्र / वंश)\n(ख) इमानि राज्यानि भ्रमणार्थं ______________ सन्ति। (नरकसदृशानि / स्वर्गसदृशानि)",
+          "questionSanskrit": "उचितपदैः रिक्तस्थानं पूरयत:",
+          "marks": 4,
+          "type": "fill",
+          "answer": "(क) वंश; (ख) स्वर्गसदृशानि",
+          "explanation": "पूर्वोत्तरराज्येषु बाँस (वंश) वृक्षाणां प्राचुर्यम् अस्ति, भ्रमणाय च स्वर्गसदृशानि सन्ति।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Antonyms & Odd-One-Out",
+      "sectionTitleSanskrit": "खण्डः 'ख' · विलोमपदानि भिन्नप्रकृतिकपदानि च",
+      "instructions": "Choose antonyms and pick the odd word out:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "Find the antonym based on the chapter:\n१. 'लघूनि' इति पदस्य विलोमपदम्: __________________\n२. 'अल्पता' इति पदस्य विलोमपदम्: __________________\n३. 'पराधीनाः' इति पदस्य विलोमपदम्: __________________",
+          "questionSanskrit": "विलोमपदानि लिखत:",
+          "marks": 6,
+          "type": "grammar",
+          "answer": "१. बृहत्तराणि; २. प्राचुर्यम्; ३. स्वाधीनाः",
+          "explanation": "पाठान्तर्गत-विलोमशब्दाः।"
+        },
+        {
+          "num": 4,
+          "question": "Pick the odd word out (भिन्नप्रकृतिकं पदं चिनुत - Page 90 Q8):\n(क) गच्छति, पठति, धावति, अहसत्, क्रीडति ➔ ______________\n(ख) छात्रः, सेवकः, शिक्षकः, लेखिका, क्रीडकः ➔ ______________",
+          "questionSanskrit": "भिन्नप्रकृतिकं पदं चिनुत:",
+          "marks": 4,
+          "type": "grammar",
+          "answer": "(क) अहसत् (लङ्लकारः / भूतकालः, अन्ये लट्लकारे सन्ति)\n(ख) लेखिका (स्त्रीलिङ्गम्, अन्ये पुल्लिङ्गे सन्ति)",
+          "explanation": "अभ्यासप्रश्न ८ इत्यस्य शुद्ध-समाधानम्।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch8-ws3",
+  "title": "Worksheet 3: Question Formation (प्रश्ननिर्माणम्)",
+  "titleSanskrit": "अष्टमः पाठः कार्यपत्रिका ३: प्रश्ननिर्माणम्",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Transform declarative sentences into grammatically accurate Sanskrit questions using appropriate Kim pronoun paradigms (Page 89 Q4).",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Question Construction Practice",
+      "sectionTitleSanskrit": "खण्डः 'क' · प्रश्ननिर्माण-अभ्यासः",
+      "instructions": "Transform the underlined words into appropriate interrogative pronouns:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "Frame interrogative questions:\n१. एतानि राज्यानि भ्रमणार्थं <u>स्वर्गसदृशानि</u> सन्ति।\n२. <u>गारो-खासी-नागा-मिजो</u> जनजातीयाः अत्र निवसन्ति।\n३. अत्र <u>वंशोद्योगः</u> अन्तर्राष्ट्रीयख्यातिम् अवाप्तोऽस्ति।\n४. मम <u>भगिनी</u> कथयति यत् भारते २८ राज्यानि सन्ति।\n५. <u>सिक्किमः</u> लघुः भ्राता इति विश्रुतः।",
+          "questionSanskrit": "रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कुरुत:",
+          "marks": 10,
+          "type": "grammar",
+          "answer": "१. एतानि राज्यानि भ्रमणार्थं कीदृशानि सन्ति?\n२. काः (के) जनजातीयाः अत्र निवसन्ति?\n३. अत्र कः अन्तर्राष्ट्रीयख्यातिम् अवाप्तोऽस्ति?\n४. मम का कथयति यत् भारते २८ राज्यानि सन्ति?\n५. कः लघुः भ्राता इति विश्रुतः?",
+          "explanation": "स्वर्गसदृशानि (कीदृशानि); जनजातीयाः (काः/के); वंशोद्योगः (कः); भगिनी (का); सिक्किमः (कः)।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Full Sentence Answers (पूर्णवाक्येन उत्तरत)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · पूर्णवाक्येन उत्तरत",
+      "instructions": "Answer in complete Sanskrit sentences:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 2,
+          "question": "इमानि राज्यानि सप्तभगिन्यः इति किमर्थं कथ्यन्ते?",
+          "questionSanskrit": "इमानि राज्यानि सप्तभगिन्यः इति किमर्थं कथ्यन्ते?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "सामाजिक-सांस्कृतिक-परिदृश्यानां साम्याद् भौगोलिकवैशिष्ट्यात् च इमानि राज्यानि सप्तभगिन्यः इति कथ्यन्ते।",
+          "explanation": "पाठे अध्यापिकायाः वचनम्।"
+        },
+        {
+          "num": 3,
+          "question": "वंशवृक्षवस्तूनां उपयोगः कुत्र कुत्र क्रियते?",
+          "questionSanskrit": "वंशवृक्षवस्तूनां उपयोगः कुत्र कुत्र क्रियते?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "आवस्त्राभूषणेभ्यः गृहनिर्माणपर्यन्तं प्रायः वंशवृक्षनिर्मितानां वस्तूनां उपयोगः क्रियते।",
+          "explanation": "बाँस उद्योगस्य बहुआयामी उपयोगः।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch8-ws4",
+  "title": "Worksheet 4: Nature and Suffix (प्रकृति-प्रत्यय-सम्बन्धः)",
+  "titleSanskrit": "अष्टमः पाठः कार्यपत्रिका ४: प्रकृति-प्रत्यय-सम्बन्धः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Break and synthesize verbal roots and suffixes: Tumun, Aniyar, Lyap, and Kta from Chapter 8.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Root and Suffix Analysis",
+      "sectionTitleSanskrit": "खण्डः 'क' · प्रकृति-प्रत्यय-विभागः",
+      "instructions": "Break or combine root and suffix (Page 89 Q3):",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "Complete the formulas:\n१. पठ् + अनीयर् = ______________\n२. गन्तुम् = ______________ + ______________\n३. वि + श्रु + क्त = ______________\n४. अति + रिच् + ल्यप् = ______________\n५. ज्ञा + तुमुन् = ______________",
+          "questionSanskrit": "प्रकृति-प्रत्ययविभागं कुरुत:",
+          "marks": 10,
+          "type": "grammar",
+          "answer": "१. पठनीयम्\n२. गम् + तुमुन्\n३. विश्रुतः\n४. अतिरिच्य\n५. ज्ञातुम्",
+          "explanation": "तुमुन् (निमित्तार्थे), अनीयर् (योग्यार्थे), ल्यप् (उपसर्गयुक्ते क्त्वा स्थाने), क्त (भूतकाले)।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Applied Suffix Exercises",
+      "sectionTitleSanskrit": "खण्डः 'ख' · प्रत्यय-प्रयोगः",
+      "instructions": "Select the sentence with correct suffix usage:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 2,
+          "question": "Which word means 'in order to know'?\n(A) ज्ञातुम् (B) पठनीयम् (C) विश्रुतः (D) गन्तुम्",
+          "questionSanskrit": "'जानने के लिए' इत्यर्थे किं पदम्?",
+          "marks": 5,
+          "type": "mcq",
+          "options": [
+            "(A) ज्ञातुम् (ज्ञा + तुमुन्)",
+            "(B) पठनीयम्",
+            "(C) विश्रुतः",
+            "(D) गन्तुम्"
+          ],
+          "answer": "(A) ज्ञातुम् (ज्ञा + तुमुन्)",
+          "explanation": "ज्ञा धातोः तुमुन् प्रत्यये 'ज्ञातुम्' भवति।"
+        },
+        {
+          "num": 3,
+          "question": "Fill in: 'वयं भ्रमणाय तत्रैव ______________ इच्छामः।' (गन्तुम् / पठितुम्)",
+          "questionSanskrit": "उचितं पदं चिनुत:",
+          "marks": 5,
+          "type": "fill",
+          "answer": "गन्तुम्",
+          "explanation": "भ्रमणाय गमनम् एव उचितम् (गम् + तुमुन् = गन्तुम्)।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch8-ws5",
+  "title": "Worksheet 5: Textual True/False & Cultural Reflection (आम् / न)",
+  "titleSanskrit": "अष्टमः पाठः कार्यपत्रिका ५: सत्यासत्य-निर्णयः सांस्कृतिक-वैशिष्ट्यं च",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Evaluate historical and geographic statements as 'आम्' (True) or 'न' (False) and synthesize tribal cultural heritage.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: True / False Evaluation",
+      "sectionTitleSanskrit": "खण्डः 'क' · सत्यासत्य-विवेकः",
+      "instructions": "Write 'आम्' for True and 'न' for False statements:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "Write 'आम्' or 'न':\n१. अरुणाचलप्रदेशे सूर्यस्य अरुणोदयः सर्वप्रथमं भवति। [ ]\n२. पूर्वोत्तरराज्येषु किमपि खनिजद्रव्यं न प्राप्यते। [ ]\n३. प्राचीनकाले सप्तभगिन्यः कस्यापि शासकस्य अधीनाः आसन्। [ ]\n४. हस्तशिल्पानां बाहुल्यं पूर्वोत्तरभारते अस्ति। [ ]\n५. अस्माकं देशे नव केन्द्रशासितप्रदेशाः सन्ति। [ ]",
+          "questionSanskrit": "आम् अथवा न लिखत:",
+          "marks": 10,
+          "type": "grammar",
+          "answer": "१. आम् (True - First sunrise in Arunachal)\n२. न (False - Rich in natural minerals and coal in Meghalaya)\n३. न (False - They were historically independent/स्वाधीनाः)\n४. आम् (True - Abundance of bamboo handicrafts)\n५. न (False - India has 8 Union Territories)",
+          "explanation": "पाठान्तर्गत-तथ्यानाम् आधारः।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Tribal Heritage & Cultural Reflection",
+      "sectionTitleSanskrit": "खण्डः 'ख' · जनजाति-संस्कृतिः",
+      "instructions": "Summarize the tribal arts and lifestyle:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 2,
+          "question": "Name any four tribes residing in Northeast India mentioned in the text.",
+          "questionSanskrit": "पाठे आगतानां चतसृणां जनजातीनां नामानि लिखत:",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "१. गारो; २. खासी; ३. नागा; ४. मिजो (लेप्चा अपि)।",
+          "explanation": "पाठे उक्तम्: 'गारो-खासी-नागा-मिजो-लेप्चा-प्रभृतयः बहवः जनजातीयाः अत्र निवसन्ति'।"
+        },
+        {
+          "num": 3,
+          "question": "Why has the bamboo craft of Northeast India attained international fame?",
+          "questionSanskrit": "पूर्वोत्तरस्य वंशोद्योगः कथम् अन्तर्राष्ट्रीयख्यातिम् अवाप्तः?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "अत्र वंशवृक्षाणां प्राचुर्यात् उत्तमानि वस्त्राणि, आभूषणानि, कलाकृतयः, गृहनिर्माणवस्तूनि च निपुणहस्तशिल्पिभिः रच्यन्ते, अतः अयम् उद्योगः अन्तर्राष्ट्रीयख्यातिम् अवाप्तः।",
+          "explanation": "बाँस शिल्पस्य कौशलं वैश्विकं स्थानं प्राप्तवान्।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch9-ws1",
+  "title": "Worksheet 1: Comprehensive Reading (गरिष्ठद्रव्याणि सुपाच्यानि च)",
+  "titleSanskrit": "नवमः पाठः कार्यपत्रिका १: गरिष्ठद्रव्याणि सुपाच्यानि च",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Extract-based reading from Vagbhata's explanation of food mass, digestibility, and moderation in dietary substances.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Prose Comprehension",
+      "sectionTitleSanskrit": "खण्डः 'क' · गद्यांश-अवबोधनम्",
+      "instructions": "Read the line and answer the questions below:\n\n\"गरिष्ठद्रव्याणि अपि अल्पमात्रं सेवनेन सुपाच्यानि भवन्ति, लघुद्रव्याणि चापि अतिमात्रं सेवनेन हानिकराणि जायन्ते।\"",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "I. Answer based on the line:\n(क) कीदृशानि द्रव्याणि अल्पमात्रं सेवनेन सुपाच्यानि भवन्ति?\n(ख) लघुद्रव्याणि कति सेवनेन हानिकराणि जायन्ते?\n(ग) 'सुपाच्यानि' इति पदस्य कः विलोमशब्दः अत्र अस्ति?",
+          "questionSanskrit": "प्रश्नानाम् उत्तराणि लिखत:",
+          "marks": 6,
+          "type": "short_ans",
+          "answer": "(क) गरिष्ठद्रव्याणि\n(ख) अतिमात्रं सेवनेन\n(ग) हानिकराणि (अथवा गरिष्ठम् / अपाच्यानि)",
+          "explanation": "पङ्क्तौ स्पष्टम् उक्तम् यत् गरिष्ठद्रव्याणि अल्पमात्रेण सुपाच्यानि भवन्ति, लघुद्रव्याणि च अतिमात्रेण हानिकराणि जायन्ते।"
+        },
+        {
+          "num": 2,
+          "question": "II. What is the main factor determining whether food is light or heavy to digest according to Verse 2?\n(A) Taste (B) Quantity (मात्रा) (C) Price",
+          "questionSanskrit": "द्रव्याणां गुरुलाघवे किं कारणम् उद्दिष्टम्?",
+          "marks": 4,
+          "type": "mcq",
+          "options": [
+            "(A) Taste (रसः)",
+            "(B) Quantity (मात्राकारणम्)",
+            "(C) Price (मूल्यम्)"
+          ],
+          "answer": "(B) Quantity (मात्राकारणम्)",
+          "explanation": "श्लोक २: 'मात्राकारणमुद्दिष्टं द्रव्याणां गुरुलाघवे'।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Word Meanings & Food Quality",
+      "sectionTitleSanskrit": "खण्डः 'ख' · शब्दार्थाः आहारगुणाः च",
+      "instructions": "Identify Ayurvedic food attributes:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "Match the term with its meaning:\n१. गरिष्ठम् ➔ (a) Easily digestible\n२. सुपाच्यम् ➔ (b) Heavy / hard to digest\n३. अतिमात्रम् ➔ (c) In excessive quantity\n४. अल्पमात्रम् ➔ (d) In small measure",
+          "questionSanskrit": "मेलनं कुरुत:",
+          "marks": 6,
+          "type": "matching",
+          "answer": "१-(b), २-(a), ३-(c), ४-(d)",
+          "explanation": "गरिष्ठम् = भारी; सुपाच्यम् = आसानी से पचने वाला; अतिमात्रम् = बहुत अधिक; अल्पमात्रम् = कम।"
+        },
+        {
+          "num": 4,
+          "question": "According to Ayurveda, why is eating excessively hot food harmful?",
+          "questionSanskrit": "अत्युष्णं भोजनं किमर्थं हितकरं न भवति?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "अत्युष्णभोजनेन मुखे दाहः भवेत्, पाचनशक्तिश्च नश्यति, अतः अत्युष्णं भोजनं हितकरं न भवति।",
+          "explanation": "पाठे माता वदति—'मुखे दाहः भवेत्, अपि च अत्युष्णं भोजनं हितकरं न भवति'।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch9-ws2",
+  "title": "Worksheet 2: Grammar - Adjective Agreement (विशेषण-प्रयोगः)",
+  "titleSanskrit": "नवमः पाठः कार्यपत्रिका २: विशेषण-प्रयोगः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Master Sanskrit adjective-noun agreement in gender, number, and case across sentences (Page 103 grammar rule).",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Fill in with Correct Adjective",
+      "sectionTitleSanskrit": "खण्डः 'क' · विशेषण-पूरणम्",
+      "instructions": "Fill in the blanks with the correct form of the adjective in brackets:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "Fill in the blank with the correct form:\n१. ______________ बालकः पठति। (उत्तम / उत्तमा / उत्तमम्)\n२. वाग्भटः ______________ वाणीम् अशृणोत्। (मधुरः / मधुरा / मधुराम्)\n३. अहम् ______________ पुस्तकं क्रीणामि। (एकः / एका / एकम्)\n४. ______________ वैद्याः रोगं शमयन्ति। (उत्तमाः / उत्तमम् / उत्तमा)",
+          "questionSanskrit": "कोष्ठकात् उचितं विशेषणपदं चित्वा लिखत:",
+          "marks": 8,
+          "type": "grammar",
+          "answer": "१. उत्तमः बालकः\n२. मधुराम् वाणीम्\n३. एकम् पुस्तकम्\n४. उत्तमाः वैद्याः",
+          "explanation": "विशेष्यस्य लिङ्ग-वचन-विभक्त्यनुसारं विशेषणस्य रूपं भवति।"
+        },
+        {
+          "num": 2,
+          "question": "In 'मनोहरा वाटिका', which word is the noun (विशेष्य)?\n(A) मनोहरा (B) वाटिका",
+          "questionSanskrit": "'मनोहरा वाटिका' इत्यत्र विशेष्यपदं किम्?",
+          "marks": 2,
+          "type": "mcq",
+          "options": [
+            "(A) मनोहरा",
+            "(B) वाटिका"
+          ],
+          "answer": "(B) वाटिका",
+          "explanation": "वाटिका संज्ञापदम् (विशेष्यम्), मनोहरा तस्य विशेषणम्।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Textual Adjective-Noun Matching",
+      "sectionTitleSanskrit": "खण्डः 'ख' · विशेषण-विशेष्य-मेलनम्",
+      "instructions": "Match the pairs from Pages 104–105 of Chapter 9:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "Match the adjective with its noun from the text:\n१. विभिन्नानाम् ➔ (a) फलानि\n२. विशाले ➔ (b) व्याधीनाम्\n३. मधुराणि ➔ (c) प्राङ्गणे\n४. उत्कृष्टेन ➔ (d) आयुर्वेदज्ञानेन",
+          "questionSanskrit": "पाठान्तर्गत-पदानां मेलनं कुरुत:",
+          "marks": 6,
+          "type": "matching",
+          "answer": "१-(b) व्याधीनाम्, २-(c) प्राङ्गणे, ३-(a) फलानि, ४-(d) आयुर्वेदज्ञानेन",
+          "explanation": "पाठे प्रयुक्तानि विशेषण-विशेष्य-युगलानि।"
+        },
+        {
+          "num": 4,
+          "question": "Identify the gender, number, and case of 'सात्त्विकं भोजनम्'.",
+          "questionSanskrit": "'सात्त्विकं भोजनम्' पदस्य लिङ्गं, वचनं, विभक्तिं च लिखत:",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "लिङ्गम्: नपुंसकलिङ्गम्; वचनम्: एकवचनम्; विभक्तिः: प्रथमा / द्वितीया विभक्तिः।",
+          "explanation": "भोजनम् नपुंसकलिङ्गैकवचने, तदनुरूपं सात्त्विकम्।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch9-ws3",
+  "title": "Worksheet 3: Dietary Category Identification (हितभुक्, मितभुक्, ऋतुभुक्)",
+  "titleSanskrit": "नवमः पाठः कार्यपत्रिका ३: आहारवर्ग-परिचयः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Classify modern lifestyle habits into Hitabhuk, Mitabhuk, or Ritubhuk, and apply Ayurvedic dietary wisdom.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Categorization of Habits",
+      "sectionTitleSanskrit": "खण्डः 'क' · आहार-वर्गीकरणम्",
+      "instructions": "Classify the following food habits into हितभुक्, मितभुक्, or ऋतुभुक्:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "Classify into हितभुक्, मितभुक्, or ऋतुभुक्:\n१. Eating fresh mangoes only during the summer season. ➔ ______________\n२. Avoiding oily fast food to prevent future illnesses. ➔ ______________\n३. Eating only half a bowl of heavy sweets instead of overeating. ➔ ______________\n४. Having warm soup in winter and cool water in summer. ➔ ______________",
+          "questionSanskrit": "उचितं वर्गं लिखत:",
+          "marks": 8,
+          "type": "grammar",
+          "answer": "१. ऋतुभुक्\n२. हितभुक्\n३. मितभुक्\n४. ऋतुभुक्",
+          "explanation": "ऋतु-अनुकूलम् = ऋतुभुक्; स्वास्थ्यरक्षकम् = हितभुक्; परिमित-मात्रम् = मितभुक्।"
+        },
+        {
+          "num": 2,
+          "question": "What does Sage Charaka teach about 'हितभुक्' in Verse 1?",
+          "questionSanskrit": "महर्षिः चरकः 'हितभुक्' विषये किं कथयति?",
+          "marks": 2,
+          "type": "short_ans",
+          "answer": "मनुष्य को नित्य ऐसा भोजन करना चाहिए जो वर्तमान स्वास्थ्य की रक्षा करे और भावी रोगों को उत्पन्न न होने दे।",
+          "explanation": "श्लोक १: 'स्वास्थ्यं येनानुवर्तते, अजातानां विकाराणामनुत्पत्तिकरं च यत्'।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: The Six Indian Seasons (षट् ऋतवः)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · षड्-ऋतवः स्वास्थ्यं च",
+      "instructions": "Explore the seasonal health doctrine:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "Name the six seasons (षट् ऋतवः) mentioned in the chapter.",
+          "questionSanskrit": "पाठे वर्णितानां षण्णाम् ऋतूनां नामानि लिखत:",
+          "marks": 6,
+          "type": "short_ans",
+          "answer": "१. ग्रीष्मः; २. वर्षा; ३. शरद्; ४. हेमन्तः; ५. शिशिरः; ६. वसन्तः।",
+          "explanation": "पाठे उक्तम्: 'ग्रीष्मः, वर्षा, शरद्, शिशिरः, हेमन्तः, वसन्तः चेति षट् ऋतवः भवन्ति'।"
+        },
+        {
+          "num": 4,
+          "question": "According to Verse 3, what two things increase when one eats according to seasonal suitability?\n(A) Anger and sleep (B) Strength and complexion (बलं वर्णश्च) (C) Wealth and fame",
+          "questionSanskrit": "ऋत्वनुकूल-भोजनेन किं वर्धते?",
+          "marks": 4,
+          "type": "mcq",
+          "options": [
+            "(A) Anger and sleep",
+            "(B) Strength and complexion (बलं वर्णश्च)",
+            "(C) Wealth and fame"
+          ],
+          "answer": "(B) Strength and complexion (बलं वर्णश्च)",
+          "explanation": "श्लोक ३: 'तस्याशिताद्यादाहारात् बलं वर्णश्च वर्धते'।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch9-ws4",
+  "title": "Worksheet 4: Textual True / False (आम् / न)",
+  "titleSanskrit": "नवमः पाठः कार्यपत्रिका ४: सत्यासत्य-निर्णयः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Determine textual veracity with 'आम्' or 'न' and explore the story of Lord Dhanvantari and physician Vagbhata.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: True / False Evaluation",
+      "sectionTitleSanskrit": "खण्डः 'क' · सत्यासत्य-परीक्षा",
+      "instructions": "Write 'आम्' for True and 'न' for False statements:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "Write 'आम्' or 'न':\n१. भगवान् धन्वन्तरिः काकरूपं धृत्वा भ्रमति स्म। [ ]\n२. वाग्भट्टः चरकसंहितायाः रचनां कृतवान्। [ ]\n३. ग्रीष्म-वर्षा-शरद-शिशिर-हेमन्त-वसन्ताः षट् ऋतवः सन्ति। [ ]\n४. अत्यधिकं भोजनं स्वास्थ्यप्रदं भवति। [ ]\n५. वाग्भटः शुकस्य प्रश्ने त्रीणि उत्तराणि प्राददात्। [ ]",
+          "questionSanskrit": "आम् अथवा न लिखत:",
+          "marks": 10,
+          "type": "grammar",
+          "answer": "१. न (False - He assumed शुकरूपम् / parrot form)\n२. न (False - Vagbhata wrote Ashtanga Hridayam; Charaka wrote Charaka Samhita)\n३. आम् (True - Six Indian seasons)\n४. न (False - Overeating is harmful)\n५. आम् (True - Hitabhuk, Mitabhuk, Ritubhuk)",
+          "explanation": "पाठान्तर्गत-तथ्यानां समीक्षा।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Story Comprehension (कथा-अवबोधनम्)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · कथा-अवबोधनम्",
+      "instructions": "Answer based on the Dhanvantari-Vagbhata story:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 2,
+          "question": "Why did Lord Dhanvantari travel across India disguised as a parrot?",
+          "questionSanskrit": "भगवान् धन्वन्तरिः किमर्थं शुकरूपं धृत्वा अभ्रमत्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "'भारतवर्षे वैद्याः विभिन्नानां व्याधीनां शमनं कतरं कुर्वन्ति' इति ज्ञातुम् उत्तमस्य वैद्यस्य अन्वेषणाय च भगवान् धन्वन्तरिः अभ्रमत्।",
+          "explanation": "पाठे स्पष्टम् उल्लिखितम्।"
+        },
+        {
+          "num": 3,
+          "question": "What instruction did Lord Dhanvantari give to Vagbhata before disappearing?",
+          "questionSanskrit": "धन्वन्तरिः अन्तर्हितः पूर्वं वाग्भटं किम् उक्तवान्?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "'त्वम् अवश्यमेव आयुर्वेद-अष्टाङ्गविचार-सारभूतं तन्त्रं विरचयेः' इति धन्वन्तरिः वाग्भटम् उक्तवान्।",
+          "explanation": "अष्टाङ्गहृदयस्य रचनायाः आदेशः।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-ch9-ws5",
+  "title": "Worksheet 5: Daily Health Routine Plan & Universal Wellbeing (दिनचर्या शान्तिमन्त्रः च)",
+  "titleSanskrit": "नवमः पाठः कार्यपत्रिका ५: दिनचर्या शान्तिमन्त्रः च",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "45 Mins",
+  "description": "Four golden rules of morning regimen from Verse 4, universal health prayer from Verse 5, and holistic lifestyle planning.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Daily Health Regimen Matching (Verse 4)",
+      "sectionTitleSanskrit": "खण्डः 'क' · दिनचर्या-सूत्राणि",
+      "instructions": "Match the daily healthy activity with its Sanskrit term from Verse 4:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 1,
+          "question": "Match the activity with the Sanskrit phrase:\n१. Waking early and exercising ➔ (a) बुभुक्षायाञ्च भोजनम्\n२. Cleaning your teeth daily ➔ (b) व्यायामः प्रातरुत्थाय\n३. Bathing with pure clean water ➔ (c) नित्यं दन्तविशोधनम्\n४. Eating only when genuinely hungry ➔ (d) स्वच्छजलेन सुस्नानम्",
+          "questionSanskrit": "श्लोक ४ अनुसारं मेलयत:",
+          "marks": 6,
+          "type": "matching",
+          "answer": "१-(b), २-(c), ३-(d), ४-(a)",
+          "explanation": "श्लोक ४: 'व्यायामः प्रातरुत्थाय, नित्यं दन्तविशोधनम्। स्वच्छजलेन सुस्नानं, बुभुक्षायाञ्च भोजनम्॥'"
+        },
+        {
+          "num": 2,
+          "question": "Fill in the blank from Verse 4:\n'स्वच्छजलेन सुस्नानं, ______________ भोजनम्।'\n(A) बुभुक्षायाञ्च (B) रात्रौ (C) प्रातः",
+          "questionSanskrit": "श्लोकांशं पूरयत:",
+          "marks": 4,
+          "type": "fill",
+          "answer": "बुभुक्षायाञ्च",
+          "explanation": "भूख लगने पर ही भोजन करना चाहिए (बुभुक्षायाञ्च भोजनम्)।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Universal Peace Prayer (Verse 5)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · सर्वे भवन्तु सुखिनः",
+      "instructions": "Explain and recite the universal health prayer:",
+      "totalMarks": 10,
+      "questions": [
+        {
+          "num": 3,
+          "question": "Complete the timeless prayer:\n'सर्वे भवन्तु सुखिनः, सर्वे सन्तु ______________।\nसर्वे भद्राणि पश्यन्तु, मा कश्चिद् ______________॥'",
+          "questionSanskrit": "प्रार्थनां पूरयत:",
+          "marks": 5,
+          "type": "fill",
+          "answer": "निरामयाः; दुःखभाग्भवेत्",
+          "explanation": "सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः। सर्वे भद्राणि पश्यन्तु मा कश्चिद् दुःखभाग्भवेत्॥"
+        },
+        {
+          "num": 4,
+          "question": "What is the universal message of this prayer for human health and society?",
+          "questionSanskrit": "अस्याः प्रार्थनायाः कः सन्देशः?",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "यह प्रार्थना केवल अपने लिए नहीं, अपितु सम्पूर्ण संसार के सभी प्राणियों के सुख, नीरोगिता (स्वास्थ्य), मंगल और दुःखमुक्ति की कामना करती है। यह भारतीय संस्कृति की 'वसुधैव कुटुम्बकम्' और 'सर्वे सन्तु निरामयाः' की उदात्त भावना को प्रकट करती है।",
+          "explanation": "भारतीय-संस्कृतेः सर्वकल्याणकारिणी भावना।"
+        }
+      ]
+    }
+  ]
+},
 ];

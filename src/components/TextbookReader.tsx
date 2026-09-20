@@ -300,6 +300,24 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम् (Pages 61–66)</span>
         </div>
       )}
+      {activeLessonId === 'grade8_ch7' && (
+        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #eff6ff 0%, #faf5ff 100%)', borderColor: '#bfdbfe' }}>
+          <span className="textbook-cbse-pill" style={{ background: '#2563eb', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा (Pages 75–83)</span>
+        </div>
+      )}
+      {activeLessonId === 'grade8_ch8' && (
+        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #ecfdf5 0%, #f0fdf4 100%)', borderColor: '#a7f3d0' }}>
+          <span className="textbook-cbse-pill" style={{ background: '#059669', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम् (Pages 85–88)</span>
+        </div>
+      )}
+      {activeLessonId === 'grade8_ch9' && (
+        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #fefce8 0%, #f0fdf4 100%)', borderColor: '#fde047' }}>
+          <span className="textbook-cbse-pill" style={{ background: '#ca8a04', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · नवमः पाठः — कोऽरुक्? कोऽरुक्? कोऽरुक्? (Pages 97–105)</span>
+        </div>
+      )}
 
       <div className="textbook-toolbar-row">
         <button
@@ -530,6 +548,102 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 title="Go to Grade 8 Chapter 6 Printable Worksheets"
               >
                 📑 2 Worksheets (Digital India & Passive Voice)
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'grade8_ch7' && (
+          <>
+            <button
+              type="button"
+              className="textbook-tool-btn textbook-tool-btn--syllabus"
+              onClick={() => setIsGrade8SyllabusOpen(true)}
+              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+            >
+              📜 पाठानुक्रमणिका (Class 8 Syllabus)
+            </button>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Grade 8 Chapter 7 Quizzes"
+              >
+                🎯 2 Quizzes (8 Qs)
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Grade 8 Chapter 7 Printable Worksheets"
+              >
+                📑 5 Worksheets (Sanskrit Glory & Verses)
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'grade8_ch8' && (
+          <>
+            <button
+              type="button"
+              className="textbook-tool-btn textbook-tool-btn--syllabus"
+              onClick={() => setIsGrade8SyllabusOpen(true)}
+              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+            >
+              📜 पाठानुक्रमणिका (Class 8 Syllabus)
+            </button>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Grade 8 Chapter 8 Quizzes"
+              >
+                🎯 2 Quizzes (8 Qs)
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Grade 8 Chapter 8 Printable Worksheets"
+              >
+                📑 5 Worksheets (Seven Sisters & Geography)
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'grade8_ch9' && (
+          <>
+            <button
+              type="button"
+              className="textbook-tool-btn textbook-tool-btn--syllabus"
+              onClick={() => setIsGrade8SyllabusOpen(true)}
+              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+            >
+              📜 पाठानुक्रमणिका (Class 8 Syllabus)
+            </button>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Grade 8 Chapter 9 Quizzes"
+              >
+                🎯 2 Quizzes (8 Qs)
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Grade 8 Chapter 9 Printable Worksheets"
+              >
+                📑 5 Worksheets (Ayurveda & Health Rules)
               </button>
             )}
           </>

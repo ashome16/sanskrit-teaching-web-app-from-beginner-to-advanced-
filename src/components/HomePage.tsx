@@ -355,6 +355,39 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     theme: 'India\'s digital revolution: from oral Shruti and palm leaves to modern computers, smartphones, cashless transactions, and green paperless living.',
     grammarFocus: 'कर्मवाच्य-प्रयोगाः (पठ्यते, लिख्यते, कृत्यन्ते), ल्युट्-प्रत्ययः, पारिभाषिक-शब्दाः',
   },
+  {
+    id: 'grade8_ch7',
+    num: 'Grade 8 · Chapter 7',
+    title: 'मञ्जुलमञ्जूषा सुन्दरसुरभाषा (Pages 75–83)',
+    english: 'The Charming Treasury of the Divine Sanskrit Language',
+    icon: '💎',
+    category: 'shlokas',
+    genreBadge: 'काव्यम् · Linguistic Glory',
+    theme: 'Sanskrit Day celebration, Valmiki-Vyasa-Kalidasa-Bana literature, nine rasas, and scientific heritage.',
+    grammarFocus: 'सन्धयः, समास-परिचयः (तत्पुरुष, कर्मधारय), नवरसाः, सम्बोधन-रूपाणि',
+  },
+  {
+    id: 'grade8_ch8',
+    num: 'Grade 8 · Chapter 8',
+    title: 'पश्यत कोणमैशान्यं भारतस्य मनोहरम् (Pages 85–88)',
+    english: 'Behold the Enchanting Northeast Corner of India',
+    icon: '🏞️',
+    category: 'dialogue',
+    genreBadge: 'भूगोलः · Geography & Culture',
+    theme: 'The Seven Sisters and Brother Sikkim, Barak-Brahmaputra rivers, tribal arts, and bamboo craftsmanship.',
+    grammarFocus: 'प्रत्ययाः (तुमुन्, अनीयर्, ल्यप्, क्त), विशेषण-विशेष्य-सम्बन्धः, षष्ठी-विभक्तिः',
+  },
+  {
+    id: 'grade8_ch9',
+    num: 'Grade 8 · Chapter 9',
+    title: 'कोऽरुक् ? कोऽरुक् ? कोऽरुक् ? (Pages 97–105)',
+    english: 'Who is Free from Disease? (Ayurvedic Health Riddle)',
+    icon: '🌿',
+    category: 'dialogue',
+    genreBadge: 'आयुर्वेदः · Holistic Health',
+    theme: 'Lord Dhanvantari and Vagbhata: the threefold health axioms—Hitabhuk, Mitabhuk, Ritubhuk—and daily regimens.',
+    grammarFocus: 'पूर्वरूप-सन्धिः (कोऽरुक् = कः + अरुक्), विशेषण-विशेष्य-मेलनम्, दिनचर्या-नियमाः',
+  },
 ];
 
 const HomePage: React.FC<HomePageProps> = ({
@@ -937,7 +970,7 @@ const HomePage: React.FC<HomePageProps> = ({
                     <span className="home-chapter-read-cta">
                       Read Lesson ➔
                     </span>
-                    {(ch.id === 'grade8_prarthana' || ch.id === 'grade8_ch1' || ch.id === 'grade8_ch2' || ch.id === 'grade8_ch3' || ch.id === 'grade8_ch4' || ch.id === 'grade8_ch5' || ch.id === 'grade8_ch6') && (
+                    {ch.id.startsWith('grade8_') && (
                       <button
                         type="button"
                         style={{

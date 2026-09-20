@@ -2238,3 +2238,37 @@
 जोडो|मुद्राहीन|मुद्राहीन|म,ु,द,्र,ा,ह,ी,न|मुद्राहीन-विनिमयः सुगमः अस्ति।|cashless|Cashless transactions.
 जोडो|टङ्कणयन्त्रम्|टङ्कणयन्त्रम्|ट,ङ्,क,ण,य,न्,त्रम्|टङ्कणयन्त्रेण सामग्री सुरक्षिता।|typewriter|The typewriter machine.
 जोडो|पर्यावरणम्|पर्यावरणम्|प,र्,य,ा,व,र,णम्|पर्यावरणसंरक्षणं कर्तव्यम्।|environment|Environmental protection.
+# ========================================================
+# GRADE 8 DEEPAKAM VOCABULARY TILES (Chapters 7, 8, 9)
+# ========================================================
+जोडो|सुरभाषा|सुरभाषा|स,ु,र,भ,ा,ष,ा|संस्कृतं सुन्दरसुरभाषा अस्ति।|divine language (Sanskrit)|Language of the deities.
+जोडो|मञ्जूषा|मञ्जूषा|म,ञ्,ज,ू,ष,ा|ज्ञानस्य मञ्जूषा वर्तते।|treasury box / casket|Exquisite jewel casket of wisdom.
+जोडो|वेदव्यासः|वेदव्यासः|व,े,द,व,्,य,ा,सः|वेदव्यासः महाभारतं रचितवान्।|Sage Vedavyasa|Great composer of the Mahabharata.
+जोडो|वाल्मीकिः|वाल्मीकिः|व,ा,ल,्,म,ी,क,िः|वाल्मीकिः आदिकविः अस्ति।|Sage Valmiki|First poet and composer of Ramayana.
+जोडो|कालिदासः|कालिदासः|क,ा,ल,ि,द,ा,सः|कालिदासः महाकविः अस्ति।|Great poet Kalidasa|Foremost Sanskrit classical dramatist.
+जोडो|बाणभट्टः|बाणभट्टः|ब,ा,ण,भ,ट,्,टः|बाणभट्टः कादम्बरीं लिखितवान्।|Poet Banabhatta|Master of classical Sanskrit prose.
+जोडो|नवरसाः|नवरसाः|न,व,र,स,ाः,क,प|साहित्ये नवरसाः सन्ति।|nine poetic sentiments|Nine aesthetic rasas of literature.
+जोडो|व्योमशास्त्रम्|व्योमशास्त्रम्|व,्,य,ो,म,श,ा,स,्,त,्रम्|व्योमशास्त्रे ग्रहाणां विचारः।|astronomy / space science|Study of celestial bodies.
+जोडो|ऐशान्यकोणः|ऐशान्यकोणः|ऐ,श,ा,न,्,य,क,ो,णः|ऐशान्यकोणः पूर्वोत्तरदिशा अस्ति।|Northeast corner|Northeastern geographical direction.
+जोडो|सप्तभगिन्यः|सप्तभगिन्यः|स,प,्,त,भ,ग,ि,न,्,यः|सप्तभगिन्यः पूर्वोत्तरे सन्ति।|Seven Sisters|The seven northeastern sister states.
+जोडो|सिक्किमः|सिक्किमः|स,ि,क,्,क,ि,मः|सिक्किमः लघुः भ्राता अस्ति।|Sikkim state|Brother state to the Seven Sisters.
+जोडो|अरुणाचलः|अरुणाचलः|अ,र,ु,ण,ा,च,लः|अरुणाचले अरुणोदयः प्रथमं भवति।|Arunachal Pradesh|Land of the dawn-lit mountains.
+जोडो|असमः|असमः|अ,स,मः,क,प,त|असमः ब्रह्मपुत्रतटे विराजते।|Assam state|Northeastern state of the Brahmaputra.
+जोडो|मणिपुरम्|मणिपुरम्|म,ण,ि,प,ु,रम्,क|मणिपुरं रम्यं राज्यम् अस्ति।|Manipur state|Jeweled land in the Northeast.
+जोडो|मेघालयः|मेघालयः|म,े,घ,ा,ल,यः|मेघालयः मेघानाम् आलयः अस्ति।|Meghalaya state|Abode of the clouds.
+जोडो|मिजोरमः|मिजोरमः|म,ि,ज,ो,र,मः|मिजोरमः पर्वतप्रदेशः अस्ति।|Mizoram state|Land of rolling hills.
+जोडो|नागालैण्डम्|नागालैण्डम्|न,ा,ग,ा,ल,ै,ण,्,डम्|नागालैण्डं पूर्वोत्तरे अस्ति।|Nagaland state|Home of vibrant festivals.
+जोडो|त्रिपुरा|त्रिपुरा|त,्,र,ि,प,ु,र,ा|त्रिपुरा सुन्दरं राज्यम् अस्ति।|Tripura state|Rich historical northeastern realm.
+जोडो|वंशवृक्षः|वंशवृक्षः|व,ं,श,व,ृ,क,्,षः|पूर्वोत्तरे वंशवृक्षाणां प्राचुर्यम्।|bamboo tree|Abundant bamboo groves.
+जोडो|हस्तशिल्पम्|हस्तशिल्पम्|ह,स,्,त,श,ि,ल,्,पम्|हस्तशिल्पस्य बाहुल्यं वर्तते।|handicraft|Artisanal craft of cane and bamboo.
+जोडो|कोऽरुक्|कोऽरुक्|क,ो,ऽ,र,ु,क्,स|कोऽरुक् इति शुकः अपृच्छत्।|Who is healthy / disease-free?|Ayurvedic health riddle.
+जोडो|धन्वन्तरिः|धन्वन्तरिः|ध,न,्,व,न,्,त,र,िः|धन्वन्तरिः आयुर्वेदस्य देवः अस्ति।|Lord Dhanvantari|Divine physician and founder of Ayurveda.
+जोडो|वाग्भटः|वाग्भटः|व,ा,ग,्,भ,टः,स,म|वाग्भटः महान् वैद्यः आसीत्।|Physician Vagbhata|Author of Ashtanga Hridaya.
+जोडो|शुकः|शुकः|श,ु,कः,प,त,म|शुकः मधुरं वदति।|parrot|Bird speaking human words.
+जोडो|हितभुक्|हितभुक्|ह,ि,त,भ,ु,क्,स|हितभुक् स्वास्थ्यं रक्षति।|one who eats wholesome food|Consumer of nutritious food.
+जोडो|मितभुक्|मितभुक्|म,ि,त,भ,ु,क्,स|मितभुक् मात्रानुसारं खादति।|one who eats moderate quantity|Consumer of measured portions.
+जोडो|ऋतुभुक्|ऋतुभुक्|ऋ,त,ु,भ,ु,क्,स|ऋतुभुक् ऋत्वनुकूलं भोजनं करोति।|one who eats seasonal food|Consumer of seasonally compatible diet.
+जोडो|निरामयाः|निरामयाः|न,ि,र,ा,म,य,ाः|सर्वे सन्तु निरामयाः।|free from illness / healthy|May all remain disease-free.
+जोडो|बुभुक्षा|बुभुक्षा|ब,ु,भ,ु,क,्,ष,ा|बुभुक्षायाम् एव भोजनं कुर्यात्।|hunger / desire to eat|Eat only when truly hungry.
+जोडो|चरकः|चरकः|च,र,कः,प,स,त|महर्षिः चरकः हितभुक् वदति।|Sage Charaka|Ancient master physician.
+जोडो|व्यायामः|व्यायामः|व,्,य,ा,य,ा,मः|प्रातरुत्थाय व्यायामः करणीयः।|exercise / physical drill|Daily morning exercise.

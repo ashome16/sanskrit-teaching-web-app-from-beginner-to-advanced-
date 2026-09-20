@@ -1,6 +1,6 @@
 export interface QuizQuestionItem {
   id: string;
-  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4' | 'grade8_ch5' | 'grade8_ch6';
+  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4' | 'grade8_ch5' | 'grade8_ch6' | 'grade8_ch7' | 'grade8_ch8' | 'grade8_ch9';
   categoryLabel: string;
   chapterRef?: string;
   subCategory?: string;
@@ -40,6 +40,9 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade8_ch4', label: 'Grade 8 Ch 4: प्रणम्यो देशभक्तोऽयं (6 Quizzes · 25 Qs)', icon: '🇮🇳' },
   { id: 'grade8_ch5', label: 'Grade 8 Ch 5: गीता सुगीता कर्तव्या (2 Quizzes · 10 Qs)', icon: '🕉️' },
   { id: 'grade8_ch6', label: 'Grade 8 Ch 6: डिजिभारतम्-युगपरिवर्तनम् (2 Quizzes · 10 Qs)', icon: '💻' },
+  { id: 'grade8_ch7', label: 'Grade 8 Ch 7: मञ्जुलमञ्जूषा सुन्दरसुरभाषा (2 Quizzes · 8 Qs)', icon: '💎' },
+  { id: 'grade8_ch8', label: 'Grade 8 Ch 8: पश्यत कोणमैशान्यं भारतस्य मनोहरम् (2 Quizzes · 8 Qs)', icon: '🏞️' },
+  { id: 'grade8_ch9', label: 'Grade 8 Ch 9: कोऽरुक्? कोऽरुक्? कोऽरुक्? (2 Quizzes · 8 Qs)', icon: '🌿' },
 ] as const;
 
 export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
@@ -11719,4 +11722,460 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
     "difficulty": "hard",
     "points": 10
   },
+{
+  "id": "g8-ch7-q1-1",
+  "category": "grade8_ch7",
+  "categoryLabel": "Grade 8 Ch 7: समास-परिचयः",
+  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+  "subCategory": "Quiz 1: Compounds (समास) Theme",
+  "question": "'सुराणां भाषा = सुरभाषा'— अत्र कः समासः अस्ति? (Which compound is 'सुरभाषा'?)",
+  "questionSanskrit": "'सुराणां भाषा = सुरभाषा'— अत्र कः समासः अस्ति?",
+  "options": [
+    "A) अव्ययीभावः",
+    "B) तत्पुरुषः",
+    "C) द्विगुः",
+    "D) द्वन्द्वः"
+  ],
+  "correctIndex": 1,
+  "explanation": "षष्ठीविभक्तियुक्तपदस्य उत्तरपदेन सह समासे षष्ठी-तत्पुरुष-समासः भवति (सुराणां भाषा = सुरभाषा)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch7-q1-2",
+  "category": "grade8_ch7",
+  "categoryLabel": "Grade 8 Ch 7: समास-परिचयः",
+  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+  "subCategory": "Quiz 1: Compounds (समास) Theme",
+  "question": "'पञ्चवटी' (पञ्चानां वटानां समाहारः) इत्यत्र कः समासः भवति?",
+  "questionSanskrit": "'पञ्चवटी' (पञ्चानां वटानां समाहारः) इत्यत्र कः समासः भवति?",
+  "options": [
+    "A) बहुव्रीहिः",
+    "B) तत्पुरुषः",
+    "C) द्विगुः",
+    "D) कर्मधारयः"
+  ],
+  "correctIndex": 2,
+  "explanation": "संख्यापूर्वो द्विगुः—यस्मिन् समासे पूर्वपदं संख्यावाचकं भवति समाहारार्थे च प्रयुज्यते, सः द्विगु-समासः भवति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch7-q1-3",
+  "category": "grade8_ch7",
+  "categoryLabel": "Grade 8 Ch 7: समास-परिचयः",
+  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+  "subCategory": "Quiz 1: Compounds (समास) Theme",
+  "question": "समासे प्रायेण द्वयोः ततोऽधिकानां वा पदानां किं क्रियते?",
+  "questionSanskrit": "समासे प्रायेण द्वयोः ततोऽधिकानां वा पदानां किं क्रियते?",
+  "options": [
+    "A) विस्तारः",
+    "B) संक्षिप्तीकरणम्",
+    "C) परिवर्तनम्",
+    "D) लोपः"
+  ],
+  "correctIndex": 1,
+  "explanation": "'समसनं समासः'—अनेकपदानां मिलित्वा एकपदीभवनं संक्षिप्तीकरणं वा समासः उच्यते।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch7-q1-4",
+  "category": "grade8_ch7",
+  "categoryLabel": "Grade 8 Ch 7: समास-परिचयः",
+  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+  "subCategory": "Quiz 1: Compounds (समास) Theme",
+  "question": "'पीतम् अम्बरं यस्य सः = पीताम्बरः' इत्यत्र कस्य पदस्य प्राधान्यं भवति?",
+  "questionSanskrit": "'पीतम् अम्बरं यस्य सः = पीताम्बरः' इत्यत्र कस्य पदस्य प्राधान्यं भवति?",
+  "options": [
+    "A) पूर्वपदस्य",
+    "B) उत्तरपदस्य",
+    "C) अन्यपदस्य",
+    "D) उभयपदस्य"
+  ],
+  "correctIndex": 2,
+  "explanation": "बहुव्रीहिसमासे अन्यपदार्थस्य (अत्र श्रीकृष्णस्य/विष्णोः) प्राधान्यं भवति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch7-q2-1",
+  "category": "grade8_ch7",
+  "categoryLabel": "Grade 8 Ch 7: लकार-वाक्यसंरचना",
+  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+  "subCategory": "Quiz 2: Verb Tenses & Sentence Structure",
+  "question": "In the dialogue 'अहं तु गीतगायनप्रतियोगितायां भागं ग्रहीष्यामि', which Lakāra (tense) is 'ग्रहीष्यामि'?",
+  "questionSanskrit": "'ग्रहीष्यामि' क्रियापदे कः लकारः अस्ति?",
+  "options": [
+    "A) लट् लकारः",
+    "B) लृट् लकारः",
+    "C) लङ् लकारः",
+    "D) लोट् लकारः"
+  ],
+  "correctIndex": 1,
+  "explanation": "ग्रहीष्यामि (ग्रह् धातुः + लृट्लकारः + उत्तमपुरुषः + एकवचनम्) भविष्यत्कालार्थे लृट्लकारस्य प्रयोगः अस्ति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch7-q2-2",
+  "category": "grade8_ch7",
+  "categoryLabel": "Grade 8 Ch 7: लकार-वाक्यसंरचना",
+  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+  "subCategory": "Quiz 2: Verb Tenses & Sentence Structure",
+  "question": "'भवती अनुगायतु'— अत्र 'अनुगायतु' क्रियापदस्य कः पुरुषः अस्ति?",
+  "questionSanskrit": "'भवती अनुगायतु'— अत्र 'अनुगायतु' क्रियापदस्य कः पुरुषः अस्ति?",
+  "options": [
+    "A) उत्तमपुरुषः",
+    "B) मध्यमपुरुषः",
+    "C) प्रथमपुरुषः",
+    "D) कोऽपि न"
+  ],
+  "correctIndex": 2,
+  "explanation": "'भवत्' शब्दस्य योगे सर्वदा प्रथमपुरुषस्य क्रिया प्रयुज्यते। अनुगायतु लोट्लकारे प्रथमपुरुषैकवचने अस्ति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch7-q2-3",
+  "category": "grade8_ch7",
+  "categoryLabel": "Grade 8 Ch 7: लकार-वाक्यसंरचना",
+  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+  "subCategory": "Quiz 2: Verb Tenses & Sentence Structure",
+  "question": "'धरायाम्' इति पदे का विभक्तिः प्रयुक्ता?",
+  "questionSanskrit": "'धरायाम्' इति पदे का विभक्तिः प्रयुक्ता?",
+  "options": [
+    "A) द्वितीया",
+    "B) पञ्चमी",
+    "C) सप्तमी",
+    "D) तृतीया"
+  ],
+  "correctIndex": 2,
+  "explanation": "आकारान्त-स्त्रीलिङ्ग 'धरा' शब्दस्य सप्तमी-विभक्तौ एकवचने 'धरायाम्' (पृथिव्याम्) इति रूपं भवति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch7-q2-4",
+  "category": "grade8_ch7",
+  "categoryLabel": "Grade 8 Ch 7: लकार-वाक्यसंरचना",
+  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+  "subCategory": "Quiz 2: Verb Tenses & Sentence Structure",
+  "question": "'विजयते' इति क्रियापदस्य विलोमप्रवृत्तिः पाठाधारेण का भवितुं शक्नोति?",
+  "questionSanskrit": "'विजयते' इति क्रियापदस्य विपरीतार्थकं पदं किम्?",
+  "options": [
+    "A) शोभन्ते",
+    "B) पराजयते",
+    "C) प्रवहन्ति",
+    "D) विहरति"
+  ],
+  "correctIndex": 1,
+  "explanation": "'वि + जि' (विजयते = जीतता है) इत्यस्य विपरीतार्थकं पदं 'परा + जि' (पराजयते = हारता है) भवति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch8-q1-1",
+  "category": "grade8_ch8",
+  "categoryLabel": "Grade 8 Ch 8: प्रत्ययाः वाक्यसंरचना च",
+  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+  "subCategory": "Quiz 1: Suffixes & Sentence Structures",
+  "question": "'पठनीयम्' इत्यत्र कः प्रत्ययः अस्ति? (Which suffix is in 'पठनीयम्'?)",
+  "questionSanskrit": "'पठनीयम्' इत्यत्र कः प्रत्ययः अस्ति?",
+  "options": [
+    "A) तुमुन्",
+    "B) अनीयर्",
+    "C) क्त",
+    "D) ल्यप्"
+  ],
+  "correctIndex": 1,
+  "explanation": "योग्यार्थे चाहिए-अर्थे च अनीयर्-प्रत्ययः प्रयुज्यते (पठ् + अनीयर् = पठनीयम्)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch8-q1-2",
+  "category": "grade8_ch8",
+  "categoryLabel": "Grade 8 Ch 8: प्रत्ययाः वाक्यसंरचना च",
+  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+  "subCategory": "Quiz 1: Suffixes & Sentence Structures",
+  "question": "'ल्यप्' प्रत्ययस्य उदाहरणं किमस्ति? (Which is an example of Lyap suffix?)",
+  "questionSanskrit": "'ल्यप्' प्रत्ययस्य उदाहरणं किमस्ति?",
+  "options": [
+    "A) गन्तुम्",
+    "B) अतिरिच्य",
+    "C) विश्रुतः",
+    "D) प्रवहन्ति"
+  ],
+  "correctIndex": 1,
+  "explanation": "उपसर्गयुक्ते धातौ क्त्वा स्थाने ल्यप् प्रत्ययः भवति (अति + रिच् + ल्यप् = अतिरिच्य)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch8-q1-3",
+  "category": "grade8_ch8",
+  "categoryLabel": "Grade 8 Ch 8: प्रत्ययाः वाक्यसंरचना च",
+  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+  "subCategory": "Quiz 1: Suffixes & Sentence Structures",
+  "question": "'यूयं जानीथ'– अत्र 'जानीथ' इति क्रियापदस्य कः लकारः? (What tense is 'जानीथ'?)",
+  "questionSanskrit": "'यूयं जानीथ'– अत्र 'जानीथ' इति क्रियापदस्य कः लकारः?",
+  "options": [
+    "A) लट् लकारः",
+    "B) लृट् लकारः",
+    "C) लङ् लकारः",
+    "D) लोट् लकारः"
+  ],
+  "correctIndex": 0,
+  "explanation": "ज्ञा (जानाना) धातोः लट्लकारे मध्यमपुरुष-बहुवचने 'जानीथ' इति रूपं भवति यत् 'यूयम्' इत्यनेन सम्बद्धम्।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch8-q1-4",
+  "category": "grade8_ch8",
+  "categoryLabel": "Grade 8 Ch 8: प्रत्ययाः वाक्यसंरचना च",
+  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+  "subCategory": "Quiz 1: Suffixes & Sentence Structures",
+  "question": "'मम भगिनी कथयति'– वाक्ये सर्वनामपदं किमस्ति? (What is the pronoun here?)",
+  "questionSanskrit": "'मम भगिनी कथयति'– अस्मिन् वाक्ये सर्वनामपदं किम्?",
+  "options": [
+    "A) भगिनी",
+    "B) मम",
+    "C) कथयति",
+    "D) कोऽपि न"
+  ],
+  "correctIndex": 1,
+  "explanation": "'मम' (मेरा) अस्मद्-सर्वनामशब्दस्य षष्ठी-विभक्तौ एकवचनस्य रूपम् अस्ति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch8-q2-1",
+  "category": "grade8_ch8",
+  "categoryLabel": "Grade 8 Ch 8: विशेषण-विशेष्यं विभक्तिः च",
+  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+  "subCategory": "Quiz 2: Adjective-Noun & Case Endings",
+  "question": "'संस्कृतिविशिष्टायां भारतभूमौ'– अत्र विशेषणपदं किम्?",
+  "questionSanskrit": "'संस्कृतिविशिष्टायां भारतभूमौ'– अत्र विशेषणपदं किम्?",
+  "options": [
+    "A) भारतभूमौ",
+    "B) संस्कृतिविशिष्टायाम्",
+    "C) संस्कृतिः",
+    "D) भूमौ"
+  ],
+  "correctIndex": 1,
+  "explanation": "विशेष्यपदं 'भारतभूमौ' (सप्तमी एक०), अतः तस्य विशेषणम् अपि 'संस्कृतिविशिष्टायाम्' सप्तमी एकवचने अस्ति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch8-q2-2",
+  "category": "grade8_ch8",
+  "categoryLabel": "Grade 8 Ch 8: विशेषण-विशेष्यं विभक्तिः च",
+  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+  "subCategory": "Quiz 2: Adjective-Noun & Case Endings",
+  "question": "'स्वदेशस्य' इति पदे का विभक्तिः अस्ति?",
+  "questionSanskrit": "'स्वदेशस्य' इति पदे का विभक्तिः अस्ति?",
+  "options": [
+    "A) द्वितीया",
+    "B) चतुर्थी",
+    "C) षष्ठी",
+    "D) सप्तमी"
+  ],
+  "correctIndex": 2,
+  "explanation": "अकारान्त-पुल्लिङ्ग 'स्वदेश' शब्दस्य षष्ठी-विभक्तौ एकवचने 'स्वदेशस्य' (अपने देश का) रूपं भवति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch8-q2-3",
+  "category": "grade8_ch8",
+  "categoryLabel": "Grade 8 Ch 8: विशेषण-विशेष्यं विभक्तिः च",
+  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+  "subCategory": "Quiz 2: Adjective-Noun & Case Endings",
+  "question": "'भगिनीसप्तकम्' इति पदे कः समासः भवितुं शक्नोति?",
+  "questionSanskrit": "'भगिनीसप्तकम्' इति पदे कः समासः भवितुं शक्नोति?",
+  "options": [
+    "A) द्वन्द्वः",
+    "B) द्विगुः / तत्पुरुषः",
+    "C) अव्ययीभावः",
+    "D) बहुव्रीहिः"
+  ],
+  "correctIndex": 1,
+  "explanation": "सप्तानां भगिनीनां समाहारः इति विग्रहे संख्यापूर्वत्वात् द्विगु-तत्पुरुषः समासः भवति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch8-q2-4",
+  "category": "grade8_ch8",
+  "categoryLabel": "Grade 8 Ch 8: विशेषण-विशेष्यं विभक्तिः च",
+  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+  "subCategory": "Quiz 2: Adjective-Noun & Case Endings",
+  "question": "'लघूनि' इति पदस्य विलोमपदं पाठाधारितं किम्?",
+  "questionSanskrit": "'लघूनि' इति पदस्य विलोमपदं पाठाधारितं किम्?",
+  "options": [
+    "A) प्रथितः",
+    "B) बृहत्तराणि",
+    "C) समृद्धानि",
+    "D) लघुकानि"
+  ],
+  "correctIndex": 1,
+  "explanation": "पाठे उक्तम्—'यद्यपि क्षेत्रपरिमाणैः इमानि लघूनि वर्तन्ते तथापि गुणगौरवदृष्ट्या बृहत्तराणि प्रतीयन्ते'। अतः लघूनि इत्यस्य विलोमं 'बृहत्तराणि' अस्ति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch9-q1-1",
+  "category": "grade8_ch9",
+  "categoryLabel": "Grade 8 Ch 9: विशेषण-विशेष्य-सम्बन्धः",
+  "chapterRef": "Grade 8: नवमः पाठः — कोऽरुक्? कोऽरुक्? कोऽरुक्?",
+  "subCategory": "Quiz 1: Adjective-Noun Agreement Rules",
+  "question": "विशेष्यस्य यत् लिङ्गं, वचनं, विभक्तिः च भवति, विशेषणस्य किं भवति?",
+  "questionSanskrit": "विशेष्यस्य यत् लिङ्गं, वचनं, विभक्तिः च भवति, विशेषणस्य किं भवति?",
+  "options": [
+    "A) सर्वदा भिन्नं भवति",
+    "B) तदेव भवति",
+    "C) केवलं लिङ्गं समानं भवति",
+    "D) किमपि न"
+  ],
+  "correctIndex": 1,
+  "explanation": "नियमः: 'यल्लिङ्गं यद्वचनं या च विभक्तिर्विशेष्यस्य, तल्लिङ्गं तद्वचनं सैव विभक्तिर्विशेषणस्यापि।'",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch9-q1-2",
+  "category": "grade8_ch9",
+  "categoryLabel": "Grade 8 Ch 9: विशेषण-विशेष्य-सम्बन्धः",
+  "chapterRef": "Grade 8: नवमः पाठः — कोऽरुक्? कोऽरुक्? कोऽरुक्?",
+  "subCategory": "Quiz 1: Adjective-Noun Agreement Rules",
+  "question": "'मधुरां वाणीम्' इत्यत्र 'वाणीम्' द्वितीया विभक्तौ अस्ति, अतः 'मधुराम्' कस्यां विभक्तौ अस्ति?",
+  "questionSanskrit": "'मधुरां वाणीम्' इत्यत्र 'मधुराम्' कस्यां विभक्तौ अस्ति?",
+  "options": [
+    "A) प्रथमा",
+    "B) तृतीया",
+    "C) द्वितीया",
+    "D) षष्ठी"
+  ],
+  "correctIndex": 2,
+  "explanation": "विशेष्यपदं 'वाणीम्' द्वितीया-विभक्तौ अस्ति, अतः तस्य विशेषणम् 'मधुराम्' अपि द्वितीया-विभक्तौ अस्ति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch9-q1-3",
+  "category": "grade8_ch9",
+  "categoryLabel": "Grade 8 Ch 9: विशेषण-विशेष्य-सम्बन्धः",
+  "chapterRef": "Grade 8: नवमः पाठः — कोऽरुक्? कोऽरुक्? कोऽरुक्?",
+  "subCategory": "Quiz 1: Adjective-Noun Agreement Rules",
+  "question": "'एकं चित्रम्'– अत्र 'चित्रम्' नपुंसकलिङ्गे अस्ति, अतः 'एक' शब्दस्य किं रूपं प्रयुक्तम्?",
+  "questionSanskrit": "'एकं चित्रम्'– अत्र 'एक' शब्दस्य किं रूपं प्रयुक्तम्?",
+  "options": [
+    "A) एकः",
+    "B) एका",
+    "C) एकम्",
+    "D) एकाः"
+  ],
+  "correctIndex": 2,
+  "explanation": "संख्यावाचक-विशेषणम् 'एक' नपुंसकलिङ्गे 'एकम्' भवति (यथा एकं चित्रम्, एकं फलम्)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch9-q1-4",
+  "category": "grade8_ch9",
+  "categoryLabel": "Grade 8 Ch 9: विशेषण-विशेष्य-सम्बन्धः",
+  "chapterRef": "Grade 8: नवमः पाठः — कोऽरुक्? कोऽरुक्? कोऽरुक्?",
+  "subCategory": "Quiz 1: Adjective-Noun Agreement Rules",
+  "question": "'मनोहरा वाटिका'– अस्मिन् युगलपदे विशेष्यपदं किम् अस्ति?",
+  "questionSanskrit": "'मनोहरा वाटिका'– अस्मिन् युगलपदे विशेष्यपदं किम् अस्ति?",
+  "options": [
+    "A) मनोहरा",
+    "B) वाटिका",
+    "C) पर्वतः",
+    "D) उद्यानम"
+  ],
+  "correctIndex": 1,
+  "explanation": "'वाटिका' संज्ञापदं (विशेष्यम्) अस्ति, 'मनोहरा' तु तस्य गुणबोधकं विशेषणम् अस्ति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch9-q2-1",
+  "category": "grade8_ch9",
+  "categoryLabel": "Grade 8 Ch 9: स्वास्थ्यसूत्राणि शब्दार्थाः च",
+  "chapterRef": "Grade 8: नवमः पाठः — कोऽरुक्? कोऽरुक्? कोऽरुक्?",
+  "subCategory": "Quiz 2: Health Slokas & Vocabulary",
+  "question": "'कोऽरुक्' इति पदस्य सन्धि-विच्छेदः कः अस्ति?",
+  "questionSanskrit": "'कोऽरुक्' इति पदस्य सन्धि-विच्छेदः कः अस्ति?",
+  "options": [
+    "A) को + रुक्",
+    "B) कः + अरुक्",
+    "C) कोः + रुक्",
+    "D) कम् + अरुक्"
+  ],
+  "correctIndex": 1,
+  "explanation": "विसर्ग-सन्धौ अतो रोरप्लुतादप्लुते सूत्रेण कः + अरुक् = कोऽरुक् (विसर्गस्य उत्वं पूर्वरूपं च)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch9-q2-2",
+  "category": "grade8_ch9",
+  "categoryLabel": "Grade 8 Ch 9: स्वास्थ्यसूत्राणि शब्दार्थाः च",
+  "chapterRef": "Grade 8: नवमः पाठः — कोऽरुक्? कोऽरुक्? कोऽरुक्?",
+  "subCategory": "Quiz 2: Health Slokas & Vocabulary",
+  "question": "'निरामयाः' इति पदस्य कः सरलार्थः अस्ति? (What does 'Niramayah' mean?)",
+  "questionSanskrit": "'निरामयाः' इति पदस्य कः सरलार्थः अस्ति?",
+  "options": [
+    "A) रोगिणः",
+    "B) नीरोगिणः (स्वस्थाः)",
+    "C) दुःखिनः",
+    "D) वैद्याः"
+  ],
+  "correctIndex": 1,
+  "explanation": "'निरामयाः' इत्युक्ते आमय-रहिताः अर्थात् नीरोगिणः स्वस्थाः जनाः।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch9-q2-3",
+  "category": "grade8_ch9",
+  "categoryLabel": "Grade 8 Ch 9: स्वास्थ्यसूत्राणि शब्दार्थाः च",
+  "chapterRef": "Grade 8: नवमः पाठः — कोऽरुक्? कोऽरुक्? कोऽरुक्?",
+  "subCategory": "Quiz 2: Health Slokas & Vocabulary",
+  "question": "'बुभुक्षा' इति पदस्य कः अर्थः अस्ति? (What is the meaning of 'Bubhuksha'?)",
+  "questionSanskrit": "'बुभुक्षा' इति पदस्य कः अर्थः अस्ति?",
+  "options": [
+    "A) प्यास (Thirst)",
+    "B) भूख (Hunger)",
+    "C) नींद (Sleep)",
+    "D) क्रोध (Anger)"
+  ],
+  "correctIndex": 1,
+  "explanation": "भोक्तुम् इच्छा बुभुक्षा अर्थात् क्षुधा (Hunger / भूख)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch9-q2-4",
+  "category": "grade8_ch9",
+  "categoryLabel": "Grade 8 Ch 9: स्वास्थ्यसूत्राणि शब्दार्थाः च",
+  "chapterRef": "Grade 8: नवमः पाठः — कोऽरुक्? कोऽरुक्? कोऽरुक्?",
+  "subCategory": "Quiz 2: Health Slokas & Vocabulary",
+  "question": "भगवद्गीतानुसारं 'दुःखशोकामयप्रदाः' आहाराः कीदृशाः कथ्यन्ते?",
+  "questionSanskrit": "गीतानुसारं 'दुःखशोकामयप्रदाः' आहाराः कीदृशाः भवन्ति?",
+  "options": [
+    "A) सात्त्विक आहाराः",
+    "B) राजस आहाराः",
+    "C) तामसिक आहाराः",
+    "D) पथ्य आहाराः"
+  ],
+  "correctIndex": 1,
+  "explanation": "भगवद्गीतायां १७.९ श्लोके उक्तम्: 'कट्वम्ललवणात्युष्णतीक्ष्णरूक्षविदाहिनः। आहारा राजसस्येष्टा दुःखशोकामयप्रदाः॥'",
+  "difficulty": "medium",
+  "points": 10
+},
 ];
