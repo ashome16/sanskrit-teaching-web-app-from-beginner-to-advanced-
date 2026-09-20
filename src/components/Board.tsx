@@ -863,6 +863,17 @@ const Board: React.FC<BoardProps> = ({
     setWrongAttempt(false);
   }, [puzzleIndex, activeShelf]);
 
+  /** Navigate to previous puzzle on this shelf. */
+  const goPrev = () => {
+    if (!activePuzzles.length) return;
+    setPuzzleIndexByShelf((current) => {
+      const idx = current[activeShelf] ?? 0;
+      if (idx <= 0) return current;
+      return { ...current, [activeShelf]: idx - 1 };
+    });
+    resetPuzzleUi();
+  };
+
   /** Advance without wrapping — used by Next and auto-advance. */
   const goNext = () => {
     if (!activePuzzles.length) return;
@@ -1024,6 +1035,11 @@ const Board: React.FC<BoardProps> = ({
           <span className="shelf-banner-title">{activeShelfInfo.title}</span>
           <span className="shelf-banner-desc">{activeShelfInfo.desc}</span>
         </div>
+        <div className="shelf-banner-count">
+          <span className="shelf-count-badge">
+            🧩 {activePuzzles.length} Puzzles
+          </span>
+        </div>
       </div>
     )}
 
@@ -1098,15 +1114,48 @@ const Board: React.FC<BoardProps> = ({
 
       <section ref={puzzleBoardRef} className="puzzle-board">
         <div className="puzzle-meta">
-          <span className="meta-skin">{displaySkin}</span>
-          <span className="meta-sep" aria-hidden="true">·</span>
-          <span className="meta-hint">{isLearnPhase
-            ? 'Learn the word'
-            : isJodoSkin
-              ? 'जोडो · Join tiles'
-              : '1 tile → Next'}</span>
-          <span className="meta-sep" aria-hidden="true">·</span>
-          <span className="meta-progress">{puzzleIndex + 1} / {activePuzzles.length}</span>
+          <div className="meta-left">
+            <span className="meta-skin-badge">{displaySkin}</span>
+            <span className="meta-hint-pill">
+              {isLearnPhase
+                ? '📖 Learn word'
+                : isJodoSkin
+                  ? '🎯 जोडो · Join tiles'
+                  : '👆 1 tile → Next'}
+            </span>
+          </div>
+          <div className="puzzle-nav-controls">
+            <button
+              type="button"
+              className="puzzle-nav-arrow"
+              onClick={goPrev}
+              disabled={puzzleIndex <= 0}
+              title="Previous Puzzle (पूर्वतन-पहेलिका)"
+              aria-label="Previous Puzzle"
+            >
+              ◀
+            </button>
+            <span className="meta-progress">
+              <strong>{puzzleIndex + 1}</strong> <span className="meta-total">/ {activePuzzles.length}</span>
+            </span>
+            <button
+              type="button"
+              className="puzzle-nav-arrow"
+              onClick={goNext}
+              disabled={puzzleIndex + 1 >= activePuzzles.length}
+              title="Next Puzzle (अग्रिम-पहेलिका)"
+              aria-label="Next Puzzle"
+            >
+              ▶
+            </button>
+          </div>
+        </div>
+
+        <div className="puzzle-progress-track" aria-hidden="true">
+          <div
+            className="puzzle-progress-bar"
+            style={{ width: `${Math.min(100, Math.round(((puzzleIndex + 1) / Math.max(1, activePuzzles.length)) * 100))}%` }}
+          />
         </div>
 
         {!isLearnPhase && !isJodoSkin && (
