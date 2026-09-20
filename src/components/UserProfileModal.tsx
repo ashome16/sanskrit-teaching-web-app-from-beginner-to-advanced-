@@ -20,7 +20,6 @@ const UserProfileModal: React.FC = () => {
     isProfileModalOpen,
     closeProfileModal,
     openPaymentModal,
-    openAdminModal,
     logout,
     updateProfile,
     deleteProfile,
@@ -266,36 +265,6 @@ const UserProfileModal: React.FC = () => {
                 onClick={logout}
               >
                 🚪 Log Out
-              </button>
-            </div>
-
-            {/* Admin Portal Quick Access */}
-            <div style={{ marginTop: '0.85rem' }}>
-              <button
-                type="button"
-                onClick={() => {
-                  closeProfileModal();
-                  openAdminModal();
-                }}
-                style={{
-                  width: '100%',
-                  background: '#0f172a',
-                  color: '#f8fafc',
-                  border: '1px solid #334155',
-                  borderRadius: '8px',
-                  padding: '0.6rem 1rem',
-                  fontSize: '0.84rem',
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '0.45rem',
-                }}
-                title="Open Platform Administration Portal"
-              >
-                <span>🛡️</span>
-                <span>Open Admin Portal (Setup UPI &amp; Platform Settings)</span>
               </button>
             </div>
 

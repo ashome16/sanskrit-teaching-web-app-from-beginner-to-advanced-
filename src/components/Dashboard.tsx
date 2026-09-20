@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import HomePage from './HomePage';
 import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
 import AuthModal from './AuthModal';
@@ -136,6 +136,53 @@ const Dashboard: React.FC = () => {
   const handleOpenGrammar = () => {
     navigateToView('grammar');
   };
+
+  // Hidden / Secret trigger for Admin Portal:
+  // 1. Triple-clicking the Gurukul brand logo
+  // 2. Secret URL parameter: ?admin or #admin
+  // 3. Secret keyboard shortcut: Ctrl + Shift + A (or Cmd + Shift + A on Mac)
+  const logoClicksRef = useRef<{ count: number; lastTime: number }>({ count: 0, lastTime: 0 });
+
+  const handleBrandClick = () => {
+    setActiveView('home');
+    const now = Date.now();
+    if (now - logoClicksRef.current.lastTime < 700) {
+      logoClicksRef.current.count += 1;
+      if (logoClicksRef.current.count >= 3) {
+        logoClicksRef.current.count = 0;
+        openAdminModal();
+      }
+    } else {
+      logoClicksRef.current.count = 1;
+    }
+    logoClicksRef.current.lastTime = now;
+  };
+
+  useEffect(() => {
+    const checkSecretUrl = () => {
+      try {
+        const url = new URL(window.location.href);
+        if (url.searchParams.has('admin') || window.location.hash === '#admin') {
+          openAdminModal();
+        }
+      } catch {}
+    };
+    checkSecretUrl();
+    window.addEventListener('hashchange', checkSecretUrl);
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'a' || e.key === 'A')) {
+        e.preventDefault();
+        openAdminModal();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('hashchange', checkSecretUrl);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [openAdminModal]);
 
   // Seamlessly resume user's journey after registration or login
   useEffect(() => {
@@ -339,7 +386,7 @@ const Dashboard: React.FC = () => {
         <button
           type="button"
           className="dashboard-brand-btn"
-          onClick={() => setActiveView('home')}
+          onClick={handleBrandClick}
           title="EdNet Learn Gurukul - Go to Homepage"
         >
           <img src="/logo.jpg" alt="EdNet Learn Gurukul Logo" className="dashboard-brand-logo-img" />
@@ -476,30 +523,6 @@ const Dashboard: React.FC = () => {
               <span>Sign In / Register</span>
             </button>
           )}
-
-          <button
-            type="button"
-            className="nav-admin-header-btn"
-            onClick={openAdminModal}
-            title="Open Platform Administration Portal"
-            style={{
-              padding: '0.35rem 0.65rem',
-              fontSize: '0.78rem',
-              fontWeight: 700,
-              background: '#0f172a',
-              color: '#f8fafc',
-              border: '1px solid #334155',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.3rem',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            <span>🛡️</span>
-            <span>Admin</span>
-          </button>
         </div>
       </header>
 

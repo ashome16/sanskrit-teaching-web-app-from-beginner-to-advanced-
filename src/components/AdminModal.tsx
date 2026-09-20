@@ -209,10 +209,6 @@ const AdminModal: React.FC = () => {
                   Authenticate &amp; Enter Portal ➔
                 </button>
               </form>
-
-              <div style={{ marginTop: '1.5rem', fontSize: '0.78rem', color: '#94a3b8' }}>
-                Default key: <code>ednetadmin2026</code> (changeable in portal settings)
-              </div>
             </div>
           </div>
         ) : (
