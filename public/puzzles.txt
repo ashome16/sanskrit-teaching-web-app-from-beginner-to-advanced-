@@ -2197,3 +2197,44 @@
 मेलः|गृहम्|वसति|वसति,पिबति,पठति|अहं गृहे वसामि।|a house|परिवेशः. Prompt गृहम्, tap वसति.
 मेलः|वस्त्रम्|धारयति|धारयति,वसति,पिबति|अहं वस्त्रं धारयामि।|cloth|परिवेशः. Prompt वस्त्रम्, tap धारयति.
 मेलः|सूर्यः|आकाशः|आकाशः,नदी,गृहम्|सूर्यः आकाशे अस्ति।|the sun|Naksha. Prompt सूर्यः, tap आकाशः.
+
+# ========================================================
+# GRADE 8 DEEPAKAM VOCABULARY TILES (Chapters 1 to 6)
+# ========================================================
+जोडो|मन्त्रः|मन्त्रः|म,न्,त्रः,क,प,स|ऋग्वेदस्य मन्त्रः अस्ति।|Rigvedic verse|मन्त्रः is a sacred hymn.
+जोडो|ऐक्यम्|ऐक्यम्|ऐ,क,यम्,स,म,त|सर्वेषाम् ऐक्यं भवतु।|unity|ऐक्यम् signifies unity.
+जोडो|सङ्कल्पः|सङ्कल्पः|स,ङ्क,ल,पः,म,त|उत्तमः सङ्कल्पः करणीयः।|resolve / determination|A noble resolve.
+जोडो|संवदध्वम्|संवदध्वम्|सं,व,द,ध्वम्,क,म|सर्वे संवदध्वम्।|speak together in harmony|Rigvedic call for dialogue.
+जोडो|देवाः|देवाः|द,े,व,ाः,म,क|देवाः भागम् उपासते।|the deities|The gods receive their portion.
+जोडो|समानम्|समानम्|स,म,ा,नम्,प,क|समानं मनः भवतु।|equal / united|United in thought.
+जोडो|संहतिः|संहतिः|सं,ह,तिः,क,म,प|वस्तूनां संहतिः कार्यसाधिका।|solidarity / unity|Strength in unity.
+जोडो|कपोतः|कपोतः|क,प,ो,तः,म,स|कपोतः आकाशे उड्डीयते।|dove / pigeon|The dove flies.
+जोडो|व्याधः|व्याधः|व,्य,ा,धः,क,म|व्याधः जालं प्रसारयति।|hunter|The hunter casts the net.
+जोडो|जालकम्|जालकम्|ज,ा,ल,कम्,स,प|पक्षिणः जालकम् आदाय उत्थिताः।|net / snare|The snare.
+जोडो|तण्डुलः|तण्डुलः|त,ण्,डु,लः,क,म|भूमिभागे तण्डुलाः विकीर्णाः।|rice grains|Scattered grains of rice.
+जोडो|मित्रम्|मित्रम्|म,ि,त्रम्,स,प,क|मित्रं विपत्तौ साहाय्यं करोति।|friend|A true friend helps in adversity.
+जोडो|सुभाषितम्|सुभाषितम्|सु,भ,ा,षि,तम्,क|सुभाषितं मधुरं भवति।|wise epigram / proverb|Wise poetic saying.
+जोडो|सुवर्णम्|सुवर्णम्|सु,व,र्,णम्,क,प|सुवर्णं निकषे परीक्ष्यते।|gold|Pure gold is tested on touchstone.
+जोडो|विद्या|विद्या|व,ि,द,्य,ा,स|विद्या ददाति विनयम्।|knowledge / learning|Wisdom bestows humility.
+जोडो|तरवः|तरवः|त,र,वः,क,म,स|फलोद्गमैः तरवः नम्राः भवन्ति।|trees|Trees bow down with ripe fruits.
+जोडो|गुणाः|गुणाः|ग,ु,ण,ाः,म,प|गुणाः सर्वत्र पूज्यन्ते।|virtues / good qualities|Virtues are revered everywhere.
+जोडो|धैर्यम्|धैर्यम्|ध,ै,र्,यम्,क,स|विपदि धैर्यम् आवश्यकम्।|courage / patience|Courage in distress.
+जोडो|देशभक्तः|देशभक्तः|द,े,श,भ,क,्तः|गोपबन्धुः देशभक्तः आसीत्।|patriot|Noble patriot.
+जोडो|गोपबन्धुः|गोपबन्धुः|ग,ो,प,ब,न्,धुः|गोपबन्धुः उत्कलमणिः कथ्यते।|Gopabandhu|Utkalmani Gopabandhu.
+जोडो|उत्कलमणिः|उत्कलमणिः|उ,त्,क,ल,म,णिः|उत्कलमणिः महामनाः अस्ति।|Jewel of Utkal (Odisha)|Title given by Acharya Ray.
+जोडो|जलप्लावः|जलप्लावः|ज,ल,प,्ल,ा,वः|महानद्यां भयङ्करः जलप्लावः जातः।|flood / inundation|Severe flood in Odisha.
+जोडो|लोकसेवा|लोकसेवा|ल,ो,क,स,े,व,ा|सः लोकसेवायै जीवनम् अयच्छत्।|public service|Selfless humanitarian service.
+जोडो|सुआण्डो|सुआण्डो|स,ु,आ,ण्,ड,ो|गोपबन्धोः जन्म सुआण्डो-ग्रामे अभवत्।|Suando village|Birthplace of Gopabandhu.
+जोडो|सुगीता|सुगीता|स,ु,ग,ी,त,ा|गीता सुगीता कर्तव्या।|well-studied / well-sung|The Gita should be sung well.
+जोडो|पद्मनाभः|पद्मनाभः|प,द्,म,न,ा,भः|पद्मनाभस्य मुखात् गीता निःसृता।|Lord Vishnu (Padmanabha)|The Lord with the lotus navel.
+जोडो|श्रद्धावान्|श्रद्धावान्|श,्र,द,्ध,ा,व,ान्|श्रद्धावान् लभते ज्ञानम्।|faithful person|One possessing faith attains wisdom.
+जोडो|स्थितधीः|स्थितधीः|स,्थि,त,ध,ीः,क|मुनिः स्थितधीः उच्यते।|of steady wisdom|Sage of unshakable intellect.
+जोडो|शान्तिः|शान्तिः|श,ा,न्,तिः,क,म|ज्ञानं लब्ध्वा परां शान्तिम् अधिगच्छति।|supreme peace|Transcendental peace.
+जोडो|सम्मोहः|सम्मोहः|स,म्,म,ो,हः,क|क्रोधाद्भवति सम्मोहः।|delusion / confusion|Anger breeds delusion.
+जोडो|स्वाध्यायः|स्वाध्यायः|स,्व,ा,ध,्य,ा,यः|स्वाध्यायेन ज्ञानं वर्धते।|scripture self-study|Austerity of study.
+जोडो|डिजिभारतम्|डिजिभारतम्|ड,ि,ज,ि,भ,ा,र,तम्|डिजिभारतम् युगपरिवर्तनम् अस्ति।|Digital India|Digital India transformation.
+जोडो|सङ्गणकम्|सङ्गणकम्|स,ङ्,ग,ण,कम्,प|सर्वाणि कार्याणि सङ्गणकेन भवन्ति।|computer|Computer device.
+जोडो|चलदूरभाषः|चलदूरभाषः|च,ल,द,ू,र,भ,ा,षः|हस्ते चलदूरभाषः अस्ति।|mobile phone|Mobile phone device.
+जोडो|मुद्राहीन|मुद्राहीन|म,ु,द,्र,ा,ह,ी,न|मुद्राहीन-विनिमयः सुगमः अस्ति।|cashless|Cashless transactions.
+जोडो|टङ्कणयन्त्रम्|टङ्कणयन्त्रम्|ट,ङ्,क,ण,य,न्,त्रम्|टङ्कणयन्त्रेण सामग्री सुरक्षिता।|typewriter|The typewriter machine.
+जोडो|पर्यावरणम्|पर्यावरणम्|प,र्,य,ा,व,र,णम्|पर्यावरणसंरक्षणं कर्तव्यम्।|environment|Environmental protection.

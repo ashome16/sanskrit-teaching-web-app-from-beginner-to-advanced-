@@ -1,17 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import HomePage from './HomePage';
-import TextbookReader from './TextbookReader';
 import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
-import Board from './Board';
-import Grammar from './Grammar';
-import VedicMaths from './VedicMaths';
-import QuizSection from './QuizSection';
-import WorksheetSection from './WorksheetSection';
 import AuthModal from './AuthModal';
 import UserProfileModal from './UserProfileModal';
 import PaymentModal from './PaymentModal';
+import AdminModal from './AdminModal';
 import Footer from './Footer';
 import SupportWidget from './SupportWidget';
+
+// Lazy-loaded heavy modules for fast initial homepage performance
+const TextbookReader = lazy(() => import('./TextbookReader'));
+const Board = lazy(() => import('./Board'));
+const Grammar = lazy(() => import('./Grammar'));
+const VedicMaths = lazy(() => import('./VedicMaths'));
+const QuizSection = lazy(() => import('./QuizSection'));
+const WorksheetSection = lazy(() => import('./WorksheetSection'));
+
+const ViewLoader = () => (
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '5rem 1rem', minHeight: '60vh', color: '#273b35' }}>
+    <div style={{ width: '42px', height: '42px', border: '3px solid #e2e8f0', borderTopColor: '#273b35', borderRadius: '50%', animation: 'spin 0.75s linear infinite' }} />
+    <div style={{ marginTop: '1.25rem', fontWeight: 700, fontSize: '0.95rem', color: '#475569' }}>Loading Gurukul Learning Module...</div>
+    <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+  </div>
+);
 import { useAuthStore } from '../store/authStore';
 import { LESSONS as STATIC_LESSONS, fetchLatestChapters } from '../data/chapters';
 import { playPronunciation } from '../utils/pronunciation';
@@ -367,59 +378,62 @@ const Dashboard: React.FC = () => {
           onOpenWorksheets={() => setActiveView('worksheets')}
         />
       )}
-      {activeView === 'board' && (
-        <Board
-          onNavigateToHome={() => setActiveView('home')}
-          onNavigateToReader={() => openDeepakam()}
-          onNavigateToVarnamala={openVarnamala}
-          onNavigateToGrammar={handleOpenGrammar}
-        />
-      )}
-      {activeView === 'grammar' && (
-        <Grammar
-          key={grammarResetKey}
-          onGoHome={() => setActiveView('home')}
-          onOpenWorksheets={() => setActiveView('worksheets')}
+      <Suspense fallback={<ViewLoader />}>
+        {activeView === 'board' && (
+          <Board
+            onNavigateToHome={() => setActiveView('home')}
+            onNavigateToReader={() => openDeepakam()}
+            onNavigateToVarnamala={openVarnamala}
+            onNavigateToGrammar={handleOpenGrammar}
+          />
+        )}
+        {activeView === 'grammar' && (
+          <Grammar
+            key={grammarResetKey}
+            onGoHome={() => setActiveView('home')}
+            onOpenWorksheets={() => setActiveView('worksheets')}
+            onOpenQuiz={() => setActiveView('quiz')}
+          />
+        )}
+        {activeView === 'vedic-maths' && (
+          <VedicMaths
+            onGoHome={() => setActiveView('home')}
+            onOpenReader={() => openDeepakam()}
+          />
+        )}
+        {activeView === 'quiz' && (
+          <QuizSection
+            onGoHome={() => setActiveView('home')}
+            onOpenWorksheets={() => setActiveView('worksheets')}
+            onOpenReader={() => openDeepakam()}
+          />
+        )}
+        {activeView === 'worksheets' && (
+          <WorksheetSection
+            onGoHome={() => setActiveView('home')}
+            onOpenQuiz={() => setActiveView('quiz')}
+            onOpenReader={() => openDeepakam()}
+          />
+        )}
+        {activeView === 'reader' && <TextbookReader
+          lessons={lessons}
+          activeLessonId={lesson.id}
+          onSelectLesson={handleSelectLesson}
+          sentence={sentence}
+          sentenceNumber={sentenceIndex + 1}
+          totalSentences={lesson.sentences.length}
+          activeWord={wordSelection?.text || ''}
+          onWordClick={handleWordClick}
+          onNext={goNext}
+          onPrevious={goPrevious}
+          onJumpToSentence={jumpToSentence}
+          isFirstSentence={isFirstSentence}
+          isLastSentence={isLastSentence}
           onOpenQuiz={() => setActiveView('quiz')}
-        />
-      )}
-      {activeView === 'vedic-maths' && (
-        <VedicMaths
-          onGoHome={() => setActiveView('home')}
-          onOpenReader={() => openDeepakam()}
-        />
-      )}
-      {activeView === 'quiz' && (
-        <QuizSection
-          onGoHome={() => setActiveView('home')}
           onOpenWorksheets={() => setActiveView('worksheets')}
-          onOpenReader={() => openDeepakam()}
-        />
-      )}
-      {activeView === 'worksheets' && (
-        <WorksheetSection
-          onGoHome={() => setActiveView('home')}
-          onOpenQuiz={() => setActiveView('quiz')}
-          onOpenReader={() => openDeepakam()}
-        />
-      )}
-      {activeView === 'reader' && <TextbookReader
-        lessons={lessons}
-        activeLessonId={lesson.id}
-        onSelectLesson={handleSelectLesson}
-        sentence={sentence}
-        sentenceNumber={sentenceIndex + 1}
-        totalSentences={lesson.sentences.length}
-        activeWord={wordSelection?.text || ''}
-        onWordClick={handleWordClick}
-        onNext={goNext}
-        onPrevious={goPrevious}
-        onJumpToSentence={jumpToSentence}
-        isFirstSentence={isFirstSentence}
-        isLastSentence={isLastSentence}
-        onOpenQuiz={() => setActiveView('quiz')}
-        onOpenWorksheets={() => setActiveView('worksheets')}
-      />}
+        />}
+      </Suspense>
+
       {activeView === 'reader' && <WordAnalyzerCard selection={wordSelection} />}
 
       {activeView !== 'reader' && (
@@ -443,6 +457,7 @@ const Dashboard: React.FC = () => {
       <AuthModal />
       <UserProfileModal />
       <PaymentModal />
+      <AdminModal />
     </div>
   );
 };

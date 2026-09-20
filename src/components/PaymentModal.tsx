@@ -10,10 +10,12 @@ const PaymentModal: React.FC = () => {
     currentUser,
     openAuthModal,
     processPayment,
+    submitManualUpiPayment,
   } = useAuthStore();
 
   const [selectedMethod, setSelectedMethod] = useState<PaymentMethod>('upi');
   const [upiVpa, setUpiVpa] = useState('');
+  const [utrNumber, setUtrNumber] = useState('');
   const [isCopied, setIsCopied] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [completedTxn, setCompletedTxn] = useState<PaymentTransaction | null>(null);
@@ -48,6 +50,31 @@ const PaymentModal: React.FC = () => {
     } catch {
       setIsProcessing(false);
       setErrorMessage('Network error while processing payment. Please try again.');
+    }
+  };
+
+  const handleSubmitUtr = async () => {
+    if (!utrNumber.trim()) return;
+    if (!currentUser) {
+      closePaymentModal();
+      openAuthModal('login');
+      return;
+    }
+
+    setIsProcessing(true);
+    setErrorMessage(null);
+
+    try {
+      const res = await submitManualUpiPayment(utrNumber.trim(), upiVpa || 'sanskritlearning@upi');
+      setIsProcessing(false);
+      if (res.success && res.transaction) {
+        setCompletedTxn(res.transaction);
+      } else {
+        setErrorMessage(res.error || 'Could not record UTR. Please try again.');
+      }
+    } catch {
+      setIsProcessing(false);
+      setErrorMessage('Network error while saving UTR. Please try again.');
     }
   };
 
@@ -122,10 +149,16 @@ const PaymentModal: React.FC = () => {
           /* Receipt & Success State */
           <div className="payment-modal-body">
             <div className="payment-success-box">
-              <div className="payment-success-icon">✓</div>
-              <h3 className="payment-success-title">Payment Successful!</h3>
+              <div className="payment-success-icon" style={completedTxn.status === 'pending' ? { background: '#fef3c7', color: '#b45309' } : undefined}>
+                {completedTxn.status === 'pending' ? '⏳' : '✓'}
+              </div>
+              <h3 className="payment-success-title">
+                {completedTxn.status === 'pending' ? 'UTR Submitted for Verification!' : 'Payment Successful!'}
+              </h3>
               <p className="payment-success-sub">
-                Your monthly subscription is now active. Thank you for learning Sanskrit!
+                {completedTxn.status === 'pending'
+                  ? 'Your transaction has been submitted to the administration desk. You will receive active access once verified.'
+                  : 'Your monthly subscription is now active. Thank you for learning Sanskrit!'}
               </p>
 
               <div className="payment-receipt-card">
@@ -133,6 +166,14 @@ const PaymentModal: React.FC = () => {
                   <span className="receipt-label">Receipt / Order ID</span>
                   <span className="receipt-val">{completedTxn.id}</span>
                 </div>
+                {completedTxn.utrNumber && (
+                  <div className="receipt-row">
+                    <span className="receipt-label">UPI UTR / Ref Number</span>
+                    <span className="receipt-val" style={{ fontWeight: 700, color: '#1f2937' }}>
+                      {completedTxn.utrNumber}
+                    </span>
+                  </div>
+                )}
                 <div className="receipt-row">
                   <span className="receipt-label">Amount Paid</span>
                   <span className="receipt-val">₹{completedTxn.amountInr}.00</span>
@@ -388,6 +429,49 @@ const PaymentModal: React.FC = () => {
                     <span>⚡</span>
                     <span>Verify &amp; Pay ₹200 via UPI</span>
                   </button>
+
+                  <div style={{ margin: '1.25rem 0 0.75rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <div style={{ flex: 1, height: '1px', background: '#e5e7eb' }} />
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#9ca3af', letterSpacing: '0.05em' }}>
+                      OR MANUAL UTR CONFIRMATION
+                    </span>
+                    <div style={{ flex: 1, height: '1px', background: '#e5e7eb' }} />
+                  </div>
+
+                  <div className="upi-input-wrap">
+                    <label htmlFor="upi-utr-input" className="upi-input-label">
+                      Paid already? Enter 12-digit UPI UTR / Ref Number:
+                    </label>
+                    <div style={{ display: 'flex', gap: '0.5rem' }}>
+                      <input
+                        id="upi-utr-input"
+                        type="text"
+                        className="upi-input-field"
+                        placeholder="e.g. 425619874521"
+                        value={utrNumber}
+                        onChange={(e) => setUtrNumber(e.target.value)}
+                      />
+                      <button
+                        type="button"
+                        onClick={handleSubmitUtr}
+                        disabled={!utrNumber.trim() || isProcessing}
+                        style={{
+                          background: '#273b35',
+                          color: '#ffffff',
+                          border: 'none',
+                          borderRadius: '8px',
+                          padding: '0.5rem 1rem',
+                          fontWeight: 700,
+                          fontSize: '0.82rem',
+                          cursor: utrNumber.trim() && !isProcessing ? 'pointer' : 'not-allowed',
+                          whiteSpace: 'nowrap',
+                          opacity: utrNumber.trim() && !isProcessing ? 1 : 0.6,
+                        }}
+                      >
+                        Submit UTR
+                      </button>
+                    </div>
+                  </div>
                 </div>
               )}
 

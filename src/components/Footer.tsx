@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { LegalModals, type LegalModalType } from './LegalModals';
+import { useAuthStore } from '../store/authStore';
 import '../styles/footer.css';
 
 export interface FooterProps {
@@ -23,6 +24,7 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenWorksheets,
   onOpenFAQ,
 }) => {
+  const { openAdminModal } = useAuthStore();
   const [legalModal, setLegalModal] = useState<LegalModalType>(null);
   const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
 
@@ -237,6 +239,16 @@ export const Footer: React.FC<FooterProps> = ({
               onClick={() => setLegalModal('refund')}
             >
               Refund &amp; Cancellation Policy
+            </button>
+            <span className="legal-sep">·</span>
+            <button
+              type="button"
+              className="footer-legal-btn"
+              onClick={openAdminModal}
+              style={{ color: '#d97706', fontWeight: 700 }}
+              title="Access Platform Administration Portal"
+            >
+              🔐 Admin Portal
             </button>
           </div>
         </div>

@@ -13,6 +13,25 @@ import { useAppStore } from './index';
 
 const ACCOUNTS_STORAGE_KEY = 'sanskrit_accounts_v1';
 const SESSION_STORAGE_KEY = 'sanskrit_current_session_v1';
+const ADMIN_PASSCODE_KEY = 'ednet_admin_passcode_v1';
+const DEFAULT_ADMIN_PASSCODE = 'ednetadmin2026';
+const ADMIN_SESSION_KEY = 'ednet_admin_session_v1';
+
+const getStoredAdminPasscode = (): string => {
+  try {
+    return localStorage.getItem(ADMIN_PASSCODE_KEY) || DEFAULT_ADMIN_PASSCODE;
+  } catch {
+    return DEFAULT_ADMIN_PASSCODE;
+  }
+};
+
+const getStoredAdminSession = (): boolean => {
+  try {
+    return localStorage.getItem(ADMIN_SESSION_KEY) === 'true';
+  } catch {
+    return false;
+  }
+};
 
 const TWO_WEEKS_MS = 14 * 24 * 60 * 60 * 1000;
 const MONTHLY_PRICE_INR = 200;
@@ -55,6 +74,24 @@ interface AuthState {
   deleteProfile: (confirmationPassword: string) => { success: boolean; error?: string };
   getTrialDaysRemaining: () => number;
   processPayment: (method: PaymentMethod, upiId?: string) => Promise<{ success: boolean; transaction?: PaymentTransaction; error?: string }>;
+
+  // Admin Portal & Manual Payments
+  isAdminModalOpen: boolean;
+  isAdminLoggedIn: boolean;
+  openAdminModal: () => void;
+  closeAdminModal: () => void;
+  adminLogin: (passcode: string) => boolean;
+  adminLogout: () => void;
+  getAdminPasscode: () => string;
+  setAdminPasscode: (newPasscode: string) => boolean;
+  setUserPlanStatus: (userId: string, status: PlanStatus, durationDays?: number) => boolean;
+  deleteUserAccountByAdmin: (userId: string) => boolean;
+  approveTransaction: (userId: string, transactionId: string) => boolean;
+  rejectTransaction: (userId: string, transactionId: string) => boolean;
+  exportAllAccounts: () => string;
+  importAccounts: (jsonData: string) => { success: boolean; count: number; error?: string };
+  getAllAccountsList: () => UserAccount[];
+  submitManualUpiPayment: (utrNumber: string, upiId?: string) => Promise<{ success: boolean; transaction?: PaymentTransaction; error?: string }>;
 }
 
 const loadStoredAccounts = (): Record<string, UserAccount> => {
@@ -416,6 +453,234 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
       saveAccounts(updatedAccounts);
 
+      set({
+        currentUser: updatedProfile,
+        accounts: updatedAccounts,
+      });
+
+      return { success: true, transaction: newTransaction };
+    },
+
+    // Admin State & Methods
+    isAdminModalOpen: false,
+    isAdminLoggedIn: getStoredAdminSession(),
+
+    openAdminModal: () => set({ isAdminModalOpen: true }),
+    closeAdminModal: () => set({ isAdminModalOpen: false }),
+
+    adminLogin: (passcode: string) => {
+      const correct = getStoredAdminPasscode();
+      if (passcode.trim() === correct.trim()) {
+        try {
+          localStorage.setItem(ADMIN_SESSION_KEY, 'true');
+        } catch {}
+        set({ isAdminLoggedIn: true });
+        return true;
+      }
+      return false;
+    },
+
+    adminLogout: () => {
+      try {
+        localStorage.removeItem(ADMIN_SESSION_KEY);
+      } catch {}
+      set({ isAdminLoggedIn: false });
+    },
+
+    getAdminPasscode: () => getStoredAdminPasscode(),
+
+    setAdminPasscode: (newPasscode: string) => {
+      if (!newPasscode || newPasscode.trim().length < 4) return false;
+      try {
+        localStorage.setItem(ADMIN_PASSCODE_KEY, newPasscode.trim());
+        return true;
+      } catch {
+        return false;
+      }
+    },
+
+    getAllAccountsList: () => {
+      const { accounts } = get();
+      return Object.values(accounts);
+    },
+
+    setUserPlanStatus: (userId: string, status: PlanStatus, durationDays = 30) => {
+      const { accounts, currentUser } = get();
+      const account = accounts[userId];
+      if (!account) return false;
+
+      const now = Date.now();
+      let subscriptionRenewsAt: number | undefined = undefined;
+      let trialEndsAt = account.profile.trialEndsAt;
+
+      if (status === 'active') {
+        subscriptionRenewsAt = now + durationDays * 24 * 60 * 60 * 1000;
+      } else if (status === 'trial') {
+        trialEndsAt = now + durationDays * 24 * 60 * 60 * 1000;
+      }
+
+      const updatedProfile: UserProfile = {
+        ...account.profile,
+        planStatus: status,
+        subscriptionRenewsAt,
+        trialEndsAt,
+        activeSubscriptionSince: status === 'active' ? (account.profile.activeSubscriptionSince || now) : account.profile.activeSubscriptionSince,
+      };
+
+      const updatedAccounts = {
+        ...accounts,
+        [userId]: {
+          ...account,
+          profile: updatedProfile,
+        },
+      };
+
+      saveAccounts(updatedAccounts);
+
+      const nextCurrent = currentUser && currentUser.id === userId ? updatedProfile : currentUser;
+      set({ accounts: updatedAccounts, currentUser: nextCurrent });
+      return true;
+    },
+
+    deleteUserAccountByAdmin: (userId: string) => {
+      const { accounts, currentUser } = get();
+      if (!accounts[userId]) return false;
+
+      const nextAccounts = { ...accounts };
+      delete nextAccounts[userId];
+      saveAccounts(nextAccounts);
+
+      let nextCurrent = currentUser;
+      if (currentUser && currentUser.id === userId) {
+        saveSession(null);
+        nextCurrent = null;
+      }
+
+      set({ accounts: nextAccounts, currentUser: nextCurrent });
+      return true;
+    },
+
+    approveTransaction: (userId: string, transactionId: string) => {
+      const { accounts, currentUser } = get();
+      const account = accounts[userId];
+      if (!account || !account.profile.transactions) return false;
+
+      const now = Date.now();
+      const txns = account.profile.transactions.map((t) =>
+        t.id === transactionId ? { ...t, status: 'success' as const, notes: 'Approved by Administrator' } : t
+      );
+
+      const updatedProfile: UserProfile = {
+        ...account.profile,
+        planStatus: 'active',
+        activeSubscriptionSince: account.profile.activeSubscriptionSince || now,
+        subscriptionRenewsAt: (account.profile.subscriptionRenewsAt && account.profile.subscriptionRenewsAt > now ? account.profile.subscriptionRenewsAt : now) + 30 * 24 * 60 * 60 * 1000,
+        transactions: txns,
+      };
+
+      const updatedAccounts = {
+        ...accounts,
+        [userId]: {
+          ...account,
+          profile: updatedProfile,
+        },
+      };
+
+      saveAccounts(updatedAccounts);
+      const nextCurrent = currentUser && currentUser.id === userId ? updatedProfile : currentUser;
+      set({ accounts: updatedAccounts, currentUser: nextCurrent });
+      return true;
+    },
+
+    rejectTransaction: (userId: string, transactionId: string) => {
+      const { accounts, currentUser } = get();
+      const account = accounts[userId];
+      if (!account || !account.profile.transactions) return false;
+
+      const txns = account.profile.transactions.map((t) =>
+        t.id === transactionId ? { ...t, status: 'failed' as const, notes: 'Declined by Administrator' } : t
+      );
+
+      const updatedProfile: UserProfile = {
+        ...account.profile,
+        transactions: txns,
+      };
+
+      const updatedAccounts = {
+        ...accounts,
+        [userId]: {
+          ...account,
+          profile: updatedProfile,
+        },
+      };
+
+      saveAccounts(updatedAccounts);
+      const nextCurrent = currentUser && currentUser.id === userId ? updatedProfile : currentUser;
+      set({ accounts: updatedAccounts, currentUser: nextCurrent });
+      return true;
+    },
+
+    exportAllAccounts: () => {
+      const { accounts } = get();
+      return JSON.stringify(accounts, null, 2);
+    },
+
+    importAccounts: (jsonData: string) => {
+      try {
+        const parsed = JSON.parse(jsonData);
+        if (!parsed || typeof parsed !== 'object') {
+          return { success: false, count: 0, error: 'Invalid JSON data format.' };
+        }
+        const { accounts } = get();
+        const merged = { ...accounts, ...parsed };
+        saveAccounts(merged);
+        set({ accounts: merged });
+        return { success: true, count: Object.keys(parsed).length };
+      } catch (err: any) {
+        return { success: false, count: 0, error: err?.message || 'JSON parsing failed.' };
+      }
+    },
+
+    submitManualUpiPayment: async (utrNumber: string, upiId?: string) => {
+      const { currentUser, accounts } = get();
+      if (!currentUser) {
+        return { success: false, error: 'Please sign in or register to submit payment.' };
+      }
+      const currentAccount = accounts[currentUser.id];
+      if (!currentAccount) {
+        return { success: false, error: 'User account not found.' };
+      }
+
+      const now = Date.now();
+      const txnId = 'UPI_' + now.toString().slice(-7) + '_' + Math.random().toString(36).substring(2, 6).toUpperCase();
+      const newTransaction: PaymentTransaction = {
+        id: txnId,
+        amountInr: MONTHLY_PRICE_INR,
+        paymentMethod: 'upi',
+        upiId: upiId || 'care@ednetlearn.in',
+        utrNumber: utrNumber.trim(),
+        timestamp: now,
+        status: 'pending',
+        planName: 'Monthly Unlimited Access Pass',
+        billingPeriod: '30 Days',
+        notes: 'Submitted via UTR verification. Awaiting Admin Approval.',
+      };
+
+      const updatedProfile: UserProfile = {
+        ...currentUser,
+        lastPaymentMethod: 'upi',
+        transactions: [newTransaction, ...(currentUser.transactions || [])],
+      };
+
+      const updatedAccounts = {
+        ...accounts,
+        [currentUser.id]: {
+          ...currentAccount,
+          profile: updatedProfile,
+        },
+      };
+
+      saveAccounts(updatedAccounts);
       set({
         currentUser: updatedProfile,
         accounts: updatedAccounts,

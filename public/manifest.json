@@ -1,0 +1,24 @@
+{
+  "name": "EdNet Learn Gurukul · Sanskrit & Vedic Maths",
+  "short_name": "EdNet Learn",
+  "description": "Interactive Sanskrit Learning Platform for CBSE / NCERT Deepakam, Vedic Mathematics, Worksheets & Jodo Tile Puzzles.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#273b35",
+  "theme_color": "#273b35",
+  "orientation": "portrait",
+  "categories": ["education", "books", "kids"],
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "192x192 512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

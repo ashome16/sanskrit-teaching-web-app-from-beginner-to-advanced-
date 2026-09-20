@@ -18,10 +18,12 @@ export interface PaymentTransaction {
   amountInr: number;
   paymentMethod: PaymentMethod;
   upiId?: string;
+  utrNumber?: string;
   timestamp: number;
   status: 'success' | 'failed' | 'pending';
   planName: string;
   billingPeriod: string;
+  notes?: string;
 }
 
 export interface UserProfile {
