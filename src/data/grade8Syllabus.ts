@@ -254,12 +254,27 @@ export const GRADE_8_SYLLABUS: Grade8Chapter[] = [
     "icon": "🔤"
   },
   {
+    "id": "grade8_app1",
+    "num": "Appendix 1",
+    "chNumber": "परिशिष्टम् १",
+    "title": "व्याकरणम् (उपसर्गाः, प्रत्ययाः, कारकाणि, सन्धयः)",
+    "englishTitle": "Comprehensive Grammar (Prefixes, Suffixes, Cases & Sandhi)",
+    "page": "Pages 159–165",
+    "category": "grammar",
+    "genreBadge": "व्याकरणम् · Prefixes, Suffixes & Cases",
+    "theme": "Core Paninian grammatical structures: 22 Upasargas with semantic shifts and hri derivatives, Krit suffixes (ktva, lyap, tumun, ktavatu past active participle), 6 Karakas, Upapada case rules, and vowel/consonant Sandhis.",
+    "grammarFocus": "उपसर्गाः (२२), क्त्वा, ल्यप्, तुमुन्, क्तवतु (त्रिषु लिङ्गेषु), षट् कारकाणि, उपपद-विभक्तयः, अयादि-पूर्वरूप-व्यञ्जन-सन्धयः",
+    "sampleVerse": "उपसर्गेण धात्वर्थो बलादन्यत्र नीयते । प्रहाराहारसंहारविहारपरिहारवत् ॥ — क्रियान्वयि कारकम् ।",
+    "status": "available",
+    "icon": "📐"
+  },
+  {
     "id": "g8_app2",
     "num": "Appendix 2",
     "chNumber": "परिशिष्टम् २",
     "title": "व्याकरणम् (शब्दरूपाणि)",
     "englishTitle": "Grammar: Noun Declension Paradigms",
-    "page": "Page 159 / 166",
+    "page": "Pages 166–172",
     "category": "grammar",
     "genreBadge": "शब्दरूपाणि · Noun Paradigms",
     "theme": "Comprehensive declension tables for masculine, feminine, neuter vowel and consonant stems, pronouns (अस्मद्, युष्मद्, तद्, किम्), and numerals.",

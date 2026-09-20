@@ -1,6 +1,6 @@
 export interface QuizQuestionItem {
   id: string;
-  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4' | 'grade8_ch5' | 'grade8_ch6' | 'grade8_ch7' | 'grade8_ch8' | 'grade8_ch9' | 'grade8_ch10' | 'grade8_ch11' | 'grade8_ch12' | 'grade8_ch13';
+  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4' | 'grade8_ch5' | 'grade8_ch6' | 'grade8_ch7' | 'grade8_ch8' | 'grade8_ch9' | 'grade8_ch10' | 'grade8_ch11' | 'grade8_ch12' | 'grade8_ch13' | 'grade8_app1';
   categoryLabel: string;
   chapterRef?: string;
   subCategory?: string;
@@ -47,6 +47,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade8_ch11', label: 'Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख) (2 Quizzes · 8 Qs)', icon: '🕊️' },
   { id: 'grade8_ch12', label: 'Grade 8 Ch 12: सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (2 Quizzes · 8 Qs)', icon: '🗣️' },
   { id: 'grade8_ch13', label: 'Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (2 Quizzes · 10 Qs)', icon: '🔤' },
+  { id: 'grade8_app1', label: 'Grade 8 App 1: व्याकरणम् (2 Quizzes · 10 Qs)', icon: '📐' },
 ] as const;
 
 export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
@@ -12817,6 +12818,187 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
   ],
   "correctIndex": 0,
   "explanation": "आम् (सत्यम्)। नासिक्याः वर्णाः स्वस्थानकरणाः सन्ति — नासिका-मूलस्य उपरिभागः स्थानं, अधोभागश्च करणं भवति।",
+  "difficulty": "easy",
+  "points": 10
+}
+,
+{
+  "id": "g8-app1-q1-1",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी १)",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – प्रत्ययाः एवं उपसर्गाः (MCQ Type)",
+  "question": "यदा धातुः उपसर्गेण युक्तः भवति, तदा 'क्त्वा' स्थाने कः प्रत्ययः भवति?",
+  "questionSanskrit": "यदा धातुः उपसर्गेण युक्तः भवति, तदा क्त्वा स्थाने कः प्रत्ययः भवति?",
+  "options": [
+    "A) तुमुन्",
+    "B) ल्यप्",
+    "C) क्तवतु",
+    "D) घञ्"
+  ],
+  "correctIndex": 1,
+  "explanation": "यदा धातुः उपसर्गेण युक्तः भवति, तदा क्त्वा-प्रत्ययस्य स्थाने ल्यप्-प्रत्ययः भवति (यथा — सम् + पूज् + ल्यप् = सम्पूज्य)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app1-q1-2",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी १)",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – प्रत्ययाः एवं उपसर्गाः (MCQ Type)",
+  "question": "'शयनम्' इति पदे कः सन्धिः अस्ति?",
+  "questionSanskrit": "'शयनम्' इति पदे कः सन्धिः अस्ति?",
+  "options": [
+    "A) दीर्घः",
+    "B) गुणः",
+    "C) अयादिः",
+    "D) पूर्वरूपः"
+  ],
+  "correctIndex": 2,
+  "explanation": "शे + अनम् = शयनम्। ए-कारस्य स्थाने 'अय्' आदेशः भवति, अतः अत्र अयादि-सन्धिः अस्ति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app1-q1-3",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी १)",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – प्रत्ययाः एवं उपसर्गाः (MCQ Type)",
+  "question": "'प्रत्यागच्छति' इति पदे कति उपसर्गाः सन्ति?",
+  "questionSanskrit": "'प्रत्यागच्छति' इति पदे कति उपसर्गाः सन्ति?",
+  "options": [
+    "A) एकः (1)",
+    "B) द्वौ (2)",
+    "C) त्रयः (3)",
+    "D) चत्वारः (4)"
+  ],
+  "correctIndex": 1,
+  "explanation": "प्रति + आ + गच्छति = प्रत्यागच्छति। अत्र 'प्रति' तथा 'आ' इति द्वौ उपसर्गौ स्तः।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app1-q1-4",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी १)",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – प्रत्ययाः एवं उपसर्गाः (MCQ Type)",
+  "question": "'श्रुतवती' इति पदे कः प्रत्ययः अस्ति?",
+  "questionSanskrit": "'श्रुतवती' इति पदे कः प्रत्ययः अस्ति?",
+  "options": [
+    "A) क्त्वा",
+    "B) तुमुन्",
+    "C) क्तवतु",
+    "D) ल्यप्"
+  ],
+  "correctIndex": 2,
+  "explanation": "श्रु + क्तवतु = श्रुतवान् (पुं.), श्रुतवती (स्त्री.), श्रुतवत् (नपुं.)। अतः अत्र क्तवतु-प्रत्ययः अस्ति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app1-q1-5",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी १)",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – प्रत्ययाः एवं उपसर्गाः (MCQ Type)",
+  "question": "'रामम् वन्दे' इत्यत्र मकारस्य अनुस्वारः केन सन्धिना भवति?",
+  "questionSanskrit": "'रामम् वन्दे' इत्यत्र मकारस्य अनुस्वारः केन सन्धिना भवति?",
+  "options": [
+    "A) जश्त्व-सन्धिना",
+    "B) श्चुत्व-सन्धिना",
+    "C) अनुस्वार-सन्धिना",
+    "D) परसवर्ण-सन्धिना"
+  ],
+  "correctIndex": 2,
+  "explanation": "'मोऽनुस्वारः' सूत्रेण पदान्तस्य मकारस्य व्यञ्जने परे अनुस्वारः (रामं वन्दे) भवति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app1-q2-1",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी २)",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – कारकाणि एवं सन्धयः (True / False - आम् / न)",
+  "question": "क्रियायाः सम्पादने यत् प्रकृष्टं साधनं भवति तत् कर्म-कारकम्। (आम् / न)",
+  "questionSanskrit": "क्रियायाः सम्पादने यत् प्रकृष्टं साधनं भवति तत् कर्म-कारकम्।",
+  "options": [
+    "A) आम् (True)",
+    "B) न (False)"
+  ],
+  "correctIndex": 1,
+  "explanation": "न (असत्यम्)। 'साधकतमं करणम्' — क्रियायाः सिद्धौ यत् सर्वाधिकं साहाय्यकं साधनं भवति तत् करण-कारकं भवति, कर्म तु 'कर्तुरीप्सिततमं कर्म'।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app1-q2-2",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी २)",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – कारकाणि एवं सन्धयः (True / False - आम् / न)",
+  "question": "'नमः' इति पदस्य प्रयोगे सर्वदा चतुर्थी विभक्तिः भवति। (आम् / न)",
+  "questionSanskrit": "'नमः' इति पदस्य प्रयोगे सर्वदा चतुर्थी विभक्तिः भवति।",
+  "options": [
+    "A) आम् (True)",
+    "B) न (False)"
+  ],
+  "correctIndex": 0,
+  "explanation": "आम् (सत्यम्)। 'नमःस्वस्तिस्वाहास्वधालंवषड्योगाच्च' सूत्रेण नमः-योगे चतुर्थी विभक्तिः भवति (यथा — श्रीगणेशाय नमः, गुरवे नमः)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app1-q2-3",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी २)",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – कारकाणि एवं सन्धयः (True / False - आम् / न)",
+  "question": "पूर्वरूप सन्धौ 'अ' वर्णस्य स्थाने अवग्रह चिन्हं (ऽ) प्रयुज्यते। (आम् / न)",
+  "questionSanskrit": "पूर्वरूप सन्धौ 'अ' वर्णस्य स्थाने अवग्रह चिन्हं (ऽ) प्रयुज्यते।",
+  "options": [
+    "A) आम् (True)",
+    "B) न (False)"
+  ],
+  "correctIndex": 0,
+  "explanation": "आम् (सत्यम्)। एङः पदान्तादति — पदान्ते ए/ओ अनन्तरं ह्रस्व 'अ' आगच्छति चेत् पूर्वरूपं भवति, 'अ' वर्णस्य स्थाने अवग्रहः (ऽ) दीयते (यथा — ते + अपि = तेऽपि)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app1-q2-4",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी २)",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – कारकाणि एवं सन्धयः (True / False - आम् / न)",
+  "question": "'णत्व-विधाने' ऋ, र, ष वर्णानां पश्चात् 'न' इत्यस्य 'ण' भवति। (आम् / न)",
+  "questionSanskrit": "'णत्व-विधाने' ऋ, र, ष वर्णानां पश्चात् 'न' इत्यस्य 'ण' भवति।",
+  "options": [
+    "A) आम् (True)",
+    "B) न (False)"
+  ],
+  "correctIndex": 0,
+  "explanation": "आम् (सत्यम्)। 'रषाभ्यां नो णः समानपदे' सूत्रेण ऋ, ॠ, र्, ष् वर्णानां पश्चात् 'न्' वर्णस्य 'ण्' भवति (यथा — रामेण, विष्णवे)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app1-q2-5",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी २)",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – कारकाणि एवं सन्धयः (True / False - आम् / न)",
+  "question": "'तच्चित्रम्' इति पदे जश्त्व-सन्धिः अस्ति। (आम् / न)",
+  "questionSanskrit": "'तच्चित्रम्' इति पदे जश्त्व-सन्धिः अस्ति।",
+  "options": [
+    "A) आम् (True)",
+    "B) न (False)"
+  ],
+  "correctIndex": 1,
+  "explanation": "न (असत्यम्)। तत् + चित्रम् = तच्चित्रम्। अत्र 'स्तोः श्चुना श्चुः' सूत्रेण श्चुत्व-सन्धिः (त् ➔ च्) अस्ति, जश्त्वं न।",
   "difficulty": "easy",
   "points": 10
 }

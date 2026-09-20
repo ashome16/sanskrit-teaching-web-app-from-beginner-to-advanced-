@@ -342,6 +342,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १ (Pages 146–156)</span>
         </div>
       )}
+      {activeLessonId === 'grade8_app1' && (
+        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #fef3c7 0%, #ede9fe 100%)', borderColor: '#f59e0b' }}>
+          <span className="textbook-cbse-pill" style={{ background: '#b45309', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · परिशिष्टम् १ — व्याकरणम् (Pages 159–165)</span>
+        </div>
+      )}
 
       <div className="textbook-toolbar-row">
         <button
@@ -796,6 +802,38 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 title="Go to Grade 8 Chapter 13 Printable Worksheets"
               >
                 📑 5 Worksheets (Voice Anatomy & Sthana-Karana)
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'grade8_app1' && (
+          <>
+            <button
+              type="button"
+              className="textbook-tool-btn textbook-tool-btn--syllabus"
+              onClick={() => setIsGrade8SyllabusOpen(true)}
+              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+            >
+              📜 पाठानुक्रमणिका (Class 8 Syllabus)
+            </button>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Grade 8 Appendix 1 Grammar Quizzes"
+              >
+                🎯 2 Quizzes (10 Qs)
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Grade 8 Appendix 1 Printable Worksheets"
+              >
+                📑 5 Worksheets (Grammar & Sandhi)
               </button>
             )}
           </>

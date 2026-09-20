@@ -2336,3 +2336,19 @@
 जोडो|जिह्वामध्यम्|जिह्वामध्यम्|ज,ि,ह,्,व,ा,म,ध,्,यम्|तालव्येषु जिह्वामध्यं करणं भवति।|middle of the tongue|Central surface of tongue for palatal sounds.
 जोडो|स्वस्थानम्|स्वस्थानम्|स,्,व,स,्,थ,ा,नम्|ओष्ठ्यवर्णानां स्वस्थानम् एव करणम्।|one's own organ place|Self-tooling organ region for speech sound.
 जोडो|ओष्ठः|ओष्ठः|ओ,ष,्,ठः,क,प,स|मुखस्य बाह्यतमं स्थानम् ओष्ठः अस्ति।|lip|Outermost articulatory organ of the oral tract.
+
+# ========================================================
+# GRADE 8 DEEPAKAM VOCABULARY TILES (Appendix 1: व्याकरणम्)
+# ========================================================
+जोडो|उपसर्गः|उपसर्गः|उ,प,स,र,्,गः,क|द्वाविंशतिः उपसर्गाः सन्ति।|prefix|Verbal prefix altering root meaning.
+जोडो|प्रत्ययः|प्रत्ययः|प,्,र,त,्,य,यः,स|धातोः परं प्रत्ययः योज्यते।|suffix|Affix attached after verbal roots.
+जोडो|क्त्वा|क्त्वा|क,्,त,्,व,ा,प,स|बालकः पठित्वा लिखति।|having done (suffix)|Prior sequential action participle suffix.
+जोडो|ल्यप्|ल्यप्|ल,्,य,प,्,क,त|शिष्यः प्रणम्य पठति।|having done (prefix suffix)|Prefix-bound replacement for ktva suffix.
+जोडो|तुमुन्|तुमुन्|त,ु,म,ु,न,्,प,स|पठितुं विद्यालयं गच्छति।|in order to (suffix)|Infinitive suffix denoting purpose.
+जोडो|क्तवतु|क्तवतु|क,्,त,व,त,ु,प,स|सः कार्यं कृतवान्।|having done (past participle)|Past active participial suffix across three genders.
+जोडो|कारकम्|कारकम्|क,ा,र,कम्,प,स,त|क्रियान्वयि कारकं भवति।|case / syntactic governor|Direct syntactic relation between noun and action.
+जोडो|सम्प्रदानम्|सम्प्रदानम्|स,म,्,प,्,र,द,ा,नम्|दानस्य पात्रं सम्प्रदानं भवति।|dative case / recipient|Recipient or beneficiary in giving action.
+जोडो|अपादानम्|अपादानम्|अ,प,ा,द,ा,नम्,स|वृक्षात् पत्रं पतति।|ablative case / separation|Point of departure or separation.
+जोडो|उपपदम्|उपपदम्|उ,प,प,दम्,प,स,त|विशेषपदयोगे उपपदविभक्तिः भवति।|secondary governing word|Case assigned due to proximity of a specific word.
+जोडो|अयादिः|अयादिः|अ,य,ा,द,िः,क,प|शे अधिक अनम् शयनम् अयादिसन्धिः।|ayadi sandhi|Sandhi substituting ay, av, aay, aav.
+जोडो|पूर्वरूपम्|पूर्वरूपम्|प,ू,र,्,व,र,ू,पम्|ते अधिक अपि तेऽपि पूर्वरूपम्।|purvarupa sandhi|Sandhi preserving preceding vowel with avagraha.

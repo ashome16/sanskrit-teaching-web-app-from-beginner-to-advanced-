@@ -50,7 +50,7 @@ export const WORKSHEET_CATEGORIES = [
   { id: 'grammar', label: 'Vyākaraṇa / Grammar (10 Worksheets · व्याकरण-पत्राणि)', icon: '📐' },
   { id: 'vedic_maths', label: 'Vedic Maths Drills (वैदिक-गणितम्)', icon: '⚡' },
   { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
-  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 63 Worksheets)', icon: '🪕' },
+  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 68 Worksheets)', icon: '🪕' },
 ] as const;
 
 export const WORKSHEETS: Worksheet[] = [
@@ -11315,6 +11315,377 @@ export const WORKSHEETS: Worksheet[] = [
           "type": "short_ans",
           "answer": "व्यञ्जन-वर्णाः उच्चारणार्थं स्वरं प्रति पराश्रिताः भवन्ति।",
           "explanation": "व्यञ्जनानि स्वयं विना स्वरम् उच्चारयितुं न शक्यन्ते, अतः तानि स्वरम् अनुगच्छन्ति।"
+        }
+      ]
+    }
+  ]
+}
+,
+{
+  "id": "ws-grade8-app1-ws1",
+  "title": "Appendix 1 · Worksheet 1: उपसर्ग-प्रकरणम् (Verbal Prefixes & Meaning Shifts)",
+  "titleSanskrit": "परिशिष्टम् १ · कार्यपत्रिका १: उपसर्ग-प्रकरणम्",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Worksheet exploring the 22 Sanskrit verbal prefixes (उपसर्गाः), their position before roots, meaning shifts, and voice changes.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Prefix Count & Formation (उपसर्ग-परिचयः)",
+      "sectionTitleSanskrit": "खण्डः 'क' · उपसर्ग-परिचयः",
+      "instructions": "Answer the foundational prefix identification questions:",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. संस्कृत भाषायां कति उपसर्गाः भवन्ति? (How many verbal prefixes are there in Sanskrit?)",
+          "questionSanskrit": "संस्कृत भाषायां कति उपसर्गाः भवन्ति?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "द्वाविंशतिः (२२ / Twenty-two)",
+          "explanation": "संस्कृतव्याकरणे द्वाविंशतिः (२२) उपसर्गाः स्वीकृताः सन्ति।"
+        },
+        {
+          "num": 2,
+          "question": "२. 'आगच्छति' इति पदे कः उपसर्गः अस्ति?",
+          "questionSanskrit": "'आगच्छति' इति पदे कः उपसर्गः अस्ति?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "आङ् (आ) उपसर्गः",
+          "explanation": "आ + गच्छति = आगच्छति। अत्र 'आङ्' (आ) उपसर्गः अस्ति।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Position, Root & Morphological Shift (उपसर्ग-प्रयोगः रूपान्तरं च)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · उपसर्ग-प्रयोगः रूपान्तरं च",
+      "instructions": "Analyze the prefix position, root derivation, and voice transformations:",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 3,
+          "question": "३. उपसर्गाः धातोः ______ (पूर्वं / अनन्तरं) भवन्ति।",
+          "questionSanskrit": "उपसर्गाः धातोः ______ (पूर्वं / अनन्तरं) भवन्ति।",
+          "marks": 4,
+          "type": "fill",
+          "answer": "पूर्वम् (Before)",
+          "explanation": "उपसर्गाः सर्वदा धातोः पूर्वं योज्यन्ते।"
+        },
+        {
+          "num": 4,
+          "question": "४. 'प्रहारः' इत्यत्र कः धातुः अस्ति?",
+          "questionSanskrit": "'प्रहारः' इत्यत्र कः धातुः अस्ति?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "हृ (हरणार्थकः) धातुः",
+          "explanation": "प्र + हृ + घञ् = प्रहारः। अत्र मूलधातुः 'हृ' अस्ति।"
+        },
+        {
+          "num": 5,
+          "question": "५. 'वि + जयति' इत्यस्य संयुक्तं रूपं किम्?",
+          "questionSanskrit": "'वि + जयति' इत्यस्य संयुक्तं रूपं किम्?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "विजयते (आत्मनेपदम्)",
+          "explanation": "वि-उपसर्गस्य सम्बन्धेन 'जि' धातुः परस्मैपदात् आत्मनेपदे परिवर्तते — विजयते।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-app1-ws2",
+  "title": "Appendix 1 · Worksheet 2: क्त्वा एवं ल्यप् प्रत्ययौ (Ktvā & Lyap Suffix Formations)",
+  "titleSanskrit": "परिशिष्टम् १ · कार्यपत्रिका २: क्त्वा एवं ल्यप् प्रत्ययौ",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Drills on sequential action past indeclinable participles: standard Ktva and prefix-bound Lyap substitutions.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Ktva Suffix Joining (क्त्वा-प्रत्यय-संयोजनम्)",
+      "sectionTitleSanskrit": "खण्डः 'क' · क्त्वा-प्रत्यय-संयोजनम्",
+      "instructions": "Combine the verbal roots with Ktva suffix:",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. पठ् + क्त्वा = ____________",
+          "questionSanskrit": "पठ् + क्त्वा = ____________",
+          "marks": 4,
+          "type": "fill",
+          "answer": "पठित्वा (After reading)",
+          "explanation": "पठ् + क्त्वा = पठित्वा (पठनं कृत्वा)।"
+        },
+        {
+          "num": 2,
+          "question": "२. लिख् + क्त्वा = ____________",
+          "questionSanskrit": "लिख् + क्त्वा = ____________",
+          "marks": 4,
+          "type": "fill",
+          "answer": "लिखित्वा (After writing)",
+          "explanation": "लिख् + क्त्वा = लिखित्वा (लेखनं कृत्वा)।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Lyap Suffix Joining (ल्यप्-प्रत्यय-संयोजनम्)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · ल्यप्-प्रत्यय-संयोजनम्",
+      "instructions": "Combine the prefixed roots with Lyap suffix:",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 3,
+          "question": "३. वि + ज्ञा + ल्यप् = ____________",
+          "questionSanskrit": "वि + ज्ञा + ल्यप् = ____________",
+          "marks": 4,
+          "type": "fill",
+          "answer": "विज्ञाय (After knowing)",
+          "explanation": "उपसर्गयुक्तधातोः परं ल्यप् भवति — वि + ज्ञा + ल्यप् = विज्ञाय।"
+        },
+        {
+          "num": 4,
+          "question": "४. सम् + पूज् + ल्यप् = ____________",
+          "questionSanskrit": "सम् + पूज् + ल्यप् = ____________",
+          "marks": 4,
+          "type": "fill",
+          "answer": "सम्पूज्य (After worshipping)",
+          "explanation": "सम् + पूज् + ल्यप् = सम्पूज्य (पूजां कृत्वा)।"
+        },
+        {
+          "num": 5,
+          "question": "५. आ + नी + ल्यप् = ____________",
+          "questionSanskrit": "आ + नी + ल्यप् = ____________",
+          "marks": 4,
+          "type": "fill",
+          "answer": "आनीय (After bringing)",
+          "explanation": "आ + नी + ल्यप् = आनीय (आनयनं कृत्वा)।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-app1-ws3",
+  "title": "Appendix 1 · Worksheet 3: तुमुन् एवं क्तवतु प्रत्ययौ (Purpose & Past Active Participle)",
+  "titleSanskrit": "परिशिष्टम् १ · कार्यपत्रिका ३: तुमुन् एवं क्तवतु प्रत्ययौ",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Mastery drills on purpose infinitive suffix Tumun and past active participial suffix Ktavatu across masculine and feminine genders.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Tumun Purpose Infinitive (तुमुन्-प्रत्यय-प्रयोगः)",
+      "sectionTitleSanskrit": "खण्डः 'क' · तुमुन्-प्रत्यय-प्रयोगः",
+      "instructions": "Analyze and identify Tumun suffix formations:",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. 'गन्तुम्' इति पदे कः धातुः कः च प्रत्ययः?",
+          "questionSanskrit": "'गन्तुम्' इति पदे कः धातुः कः च प्रत्ययः?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "गम् (धातुः) + तुमुन् (प्रत्ययः)",
+          "explanation": "गम् + तुमुन् = गन्तुम् (गमनार्थम्)।"
+        },
+        {
+          "num": 2,
+          "question": "२. निमित्तार्थे (प्रयोजनार्थे) कः प्रत्ययः प्रयुज्यते?",
+          "questionSanskrit": "निमित्तार्थे (प्रयोजनार्थे) कः प्रत्ययः प्रयुज्यते?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "तुमुन्-प्रत्ययः",
+          "explanation": "क्रियार्थायां क्रियायाम् उपपदे निमित्तार्थे तुमुन्-प्रत्ययः भवति।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Ktavatu & Practical Usage (क्तवतु-प्रत्यय-रूपाणि प्रयोगश्च)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · क्तवतु-प्रत्यय-रूपाणि प्रयोगश्च",
+      "instructions": "Determine grammatical gender and complete sentences:",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 3,
+          "question": "३. 'कृतवान्' इति पदं कस्मिन् लिङ्गे अस्ति?",
+          "questionSanskrit": "'कृतवान्' इति पदं कस्मिन् लिङ्गे अस्ति?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "पुल्लिंगे (Masculine)",
+          "explanation": "कृ + क्तवतु = कृतवान् (पुं.), कृतवती (स्त्री.), कृतवत् (नपुं.)।"
+        },
+        {
+          "num": 4,
+          "question": "४. 'हस् + क्तवतु' इत्यस्य स्त्रीलिंगे रूपं किं भवति?",
+          "questionSanskrit": "'हस् + क्तवतु' इत्यस्य स्त्रीलिंगे रूपं किं भवति?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "हसितवती (Feminine)",
+          "explanation": "हस् + क्तवतु स्त्रीलिंगे 'हसितवती' भवति।"
+        },
+        {
+          "num": 5,
+          "question": "५. बालकः भोजनं ______ (खाद् + तुमुन्) आगच्छति।",
+          "questionSanskrit": "बालकः भोजनं ______ (खाद् + तुमुन्) आगच्छति।",
+          "marks": 4,
+          "type": "fill",
+          "answer": "खादितुम् (To eat)",
+          "explanation": "खाद् + तुमुन् = खादितुम् (भोक्तुम् आगच्छति)।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-app1-ws4",
+  "title": "Appendix 1 · Worksheet 4: कारक एवं उपपद-विभक्तिः (Kāraka & Special Governing Cases)",
+  "titleSanskrit": "परिशिष्टम् १ · कार्यपत्रिका ४: कारक एवं उपपद-विभक्तिः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Rigorous case selection exercises testing Karaka dependencies (Apadana, Adhikarana) and Upapada requirements (namas, ubhayatah, alam).",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Upapada Special Case Demands (उपपद-विभक्ति-चयनम्)",
+      "sectionTitleSanskrit": "खण्डः 'क' · उपपद-विभक्ति-चयनम्",
+      "instructions": "Select the grammatically mandatory case dictated by the special word:",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. ______ (गुरवे / गुरुम्) नमः।",
+          "questionSanskrit": "______ (गुरवे / गुरुम्) नमः।",
+          "marks": 4,
+          "type": "fill",
+          "answer": "गुरवे (चतुर्थी, नमः योगे)",
+          "explanation": "'नमः' पदस्य योगे चतुर्थी विभक्तिः भवति — गुरवे नमः।"
+        },
+        {
+          "num": 2,
+          "question": "२. मार्गं ______ (उभयतः / सह) वृक्षाः सन्ति।",
+          "questionSanskrit": "मार्गं ______ (उभयतः / सह) वृक्षाः सन्ति।",
+          "marks": 4,
+          "type": "fill",
+          "answer": "उभयतः (द्वितीया योगे)",
+          "explanation": "'उभयतः' पदस्य योगे द्वितीया विभक्तिः (मार्गम्) भवति।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Karaka Syntactic Case Applications (कारक-विभक्ति-प्रयोगः)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · कारक-विभक्ति-प्रयोगः",
+      "instructions": "Choose the appropriate case reflecting the verbal action relationship:",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 3,
+          "question": "३. ______ (वृक्षस्य / वृक्षात्) पत्रं पतति।",
+          "questionSanskrit": "______ (वृक्षस्य / वृक्षात्) पत्रं पतति।",
+          "marks": 4,
+          "type": "fill",
+          "answer": "वृक्षात् (पञ्चमी, अपादाने)",
+          "explanation": "ध्रुवमपायेऽपादानम् — यतः वियोगः भवति तत्र अपादाने पञ्चमी (वृक्षात्) भवति।"
+        },
+        {
+          "num": 4,
+          "question": "४. अलं ______ (कोलाहलात् / कोलाहलेन)।",
+          "questionSanskrit": "अलं ______ (कोलाहलात् / कोलाहलेन)।",
+          "marks": 4,
+          "type": "fill",
+          "answer": "कोलाहलेन (तृतीया, अलम् योगे)",
+          "explanation": "निषेधार्थक 'अलम्' योगे तृतीया विभक्तिः भवति — अलं कोलाहलेन।"
+        },
+        {
+          "num": 5,
+          "question": "५. छात्राः ______ (विद्यालयम् / विद्यालये) पठन्ति।",
+          "questionSanskrit": "छात्राः ______ (विद्यालयम् / विद्यालये) पठन्ति।",
+          "marks": 4,
+          "type": "fill",
+          "answer": "विद्यालये (सप्तमी, अधिकरणे)",
+          "explanation": "आधारोऽधिकरणम् — क्रियायाः आधारे अधिकरण-कारके सप्तमी (विद्यालये) भवति।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-app1-ws5",
+  "title": "Appendix 1 · Worksheet 5: सन्धि-प्रकरणम् (Ayadi, Purvarupa, Jashtva & Shchutva)",
+  "titleSanskrit": "परिशिष्टम् १ · कार्यपत्रिका ५: सन्धि-प्रकरणम्",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
+  "grade": "Grade 8 (Deepakam)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Sandhi joining and identification drills covering Ayadi, Purvarupa with Avagraha, Jashtva consonant voicing, and Shchutva palatalization.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Vowel Sandhis: Ayadi & Purvarupa (स्वर-सन्धयः)",
+      "sectionTitleSanskrit": "खण्डः 'क' · स्वर-सन्धयः (अयादि एवं पूर्वरूप)",
+      "instructions": "Identify vowel substitutions and sandhi rules:",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. अयादि सन्धौ 'ओ' वर्णस्य स्थाने कः आदेशः भवति?",
+          "questionSanskrit": "अयादि सन्धौ 'ओ' वर्णस्य स्थाने कः आदेशः भवति?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "अव् (अव-आदेशः)",
+          "explanation": "एचोऽयवायावः — ओ-कारस्य स्थाने 'अव्' भवति (यथा भो + अनम् = भवनम्)।"
+        },
+        {
+          "num": 2,
+          "question": "२. 'तेऽपि' इत्यत्र कः सन्धिः अस्ति?",
+          "questionSanskrit": "'तेऽपि' इत्यत्र कः सन्धिः अस्ति?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "पूर्वरूप-सन्धिः",
+          "explanation": "ते + अपि = तेऽपि। एङः पदान्तादति इति सूत्रेण पूर्वरूप-सन्धिः भवति।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Consonant Sandhis & Sandhi Practice (व्यञ्जन-सन्धयः पूर्वरूपञ्च)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · व्यञ्जन-सन्धयः पूर्वरूपञ्च",
+      "instructions": "Execute sandhi combinations according to Jashtva, Shchutva, and Purvarupa rules:",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 3,
+          "question": "३. 'वाक् + अर्थौ' इत्यस्य जश्त्व सन्धिं कुरुत।",
+          "questionSanskrit": "'वाक् + अर्थौ' इत्यस्य जश्त्व सन्धिं कुरुत।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "वागर्थौ",
+          "explanation": "झलां जशोऽन्ते — पदान्त-क्-कारस्य स्थाने तृतीय-वर्णः 'ग्' भवति — वागर्थौ।"
+        },
+        {
+          "num": 4,
+          "question": "४. 'मनस् + चञ्चलम्' इत्यस्य श्चुत्व रूपं किम्?",
+          "questionSanskrit": "'मनस् + चञ्चलम्' इत्यस्य श्चुत्व रूपं किम्?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "मनश्चञ्चलम्",
+          "explanation": "स्तोः श्चुना श्चुः — सकारस्य तालव्य-शकारः भवति — मनश्चञ्चलम्।"
+        },
+        {
+          "num": 5,
+          "question": "५. 'नमो + अस्तु' इत्यस्य पूर्वरूप सन्धिं कुरुत।",
+          "questionSanskrit": "'नमो + अस्तु' इत्यस्य पूर्वरूप सन्धिं कुरुत।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "नमोऽस्तु",
+          "explanation": "ओ-कारात् परस्य अ-कारस्य पूर्वरूपे अवग्रहः (ऽ) भवति — नमोऽस्तु।"
         }
       ]
     }
