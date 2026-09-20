@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuthStore, DEFAULT_AVATARS, SANSKRIT_INTERESTS_LIST } from '../store/authStore';
 import type { SanskritGrade } from '../types/auth';
 import '../styles/auth-modal.css';
@@ -22,9 +22,14 @@ const AuthModal: React.FC = () => {
     register,
     authError,
     clearAuthError,
+    pendingRedirectView,
   } = useAuthStore();
 
   const [activeTab, setActiveTab] = useState<'login' | 'register'>(authModalInitialTab);
+
+  useEffect(() => {
+    setActiveTab(authModalInitialTab);
+  }, [authModalInitialTab, isAuthModalOpen]);
 
   // Login form state
   const [loginIdentifier, setLoginIdentifier] = useState('');
@@ -102,9 +107,11 @@ const AuthModal: React.FC = () => {
         <div className="auth-trial-banner">
           <span className="auth-trial-icon">🎉</span>
           <div className="auth-trial-text">
-            <div className="auth-trial-title">2 Weeks Free Access Included</div>
+            <div className="auth-trial-title">
+              {pendingRedirectView ? 'Sign Up for 14 Days Free Unrestricted Access' : '2 Weeks Free Access Included'}
+            </div>
             <p className="auth-trial-desc">
-              All new profiles get 14 days of unrestricted access. Continued learning at ₹200 / month thereafter.
+              Create your free student profile to unlock all 15 CBSE chapters, quizzes, worksheets, and puzzles immediately.
             </p>
           </div>
         </div>

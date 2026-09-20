@@ -68,13 +68,117 @@ const Dashboard: React.FC = () => {
     return 'home';
   });
   const [grammarResetKey, setGrammarResetKey] = useState(0);
-  const { currentUser, openAuthModal, openProfileModal, getTrialDaysRemaining } = useAuthStore();
+  const {
+    currentUser,
+    openAuthModal,
+    openProfileModal,
+    getTrialDaysRemaining,
+    accessMode,
+    pendingRedirectView,
+    pendingRedirectLessonId,
+    setPendingRedirect,
+  } = useAuthStore();
   const trialDaysLeft = getTrialDaysRemaining();
 
-  const handleOpenGrammar = () => {
-    setActiveView('grammar');
-    setGrammarResetKey((k) => k + 1);
+  // Check whether a view or specific chapter is gated behind account registration
+  const isContentGated = (targetView: string, targetLessonId?: string): boolean => {
+    if (currentUser) return false;
+    if (accessMode === 'open_access') return false;
+    if (accessMode === 'strict_gate') {
+      return targetView !== 'home';
+    }
+    // smart_freemium mode (default & recommended):
+    if (targetView === 'home') return false;
+    if (targetView === 'reader') {
+      const lessonToCheck = targetLessonId || lessons[lessonIndex]?.id;
+      // Varṇamālā and Chapter 1 (gsde101) are free for guests!
+      if (lessonToCheck === 'varnamala' || lessonToCheck === 'gsde101') {
+        return false;
+      }
+      return true;
+    }
+    // Gated in smart_freemium: board (Tile Puzzle), grammar, vedic-maths, quiz, worksheets
+    return true;
   };
+
+  const checkAccess = (
+    targetView: 'home' | 'board' | 'reader' | 'grammar' | 'vedic-maths' | 'quiz' | 'worksheets',
+    targetLessonId?: string
+  ): boolean => {
+    if (isContentGated(targetView, targetLessonId)) {
+      setPendingRedirect(targetView, targetLessonId);
+      openAuthModal('register');
+      return false;
+    }
+    return true;
+  };
+
+  const navigateToView = (
+    view: 'home' | 'board' | 'reader' | 'grammar' | 'vedic-maths' | 'quiz' | 'worksheets',
+    lessonId?: string
+  ) => {
+    if (view === 'home') {
+      setActiveView('home');
+      return;
+    }
+    if (view === 'reader') {
+      openDeepakam(lessonId);
+      return;
+    }
+    if (!checkAccess(view, lessonId)) return;
+    if (view === 'grammar') {
+      setGrammarResetKey((k) => k + 1);
+    }
+    setActiveView(view);
+  };
+
+  const handleOpenGrammar = () => {
+    navigateToView('grammar');
+  };
+
+  // Seamlessly resume user's journey after registration or login
+  useEffect(() => {
+    if (currentUser && pendingRedirectView) {
+      const target = pendingRedirectView as 'home' | 'board' | 'reader' | 'grammar' | 'vedic-maths' | 'quiz' | 'worksheets';
+      const targetLesson = pendingRedirectLessonId;
+      setPendingRedirect(null, undefined);
+      if (target === 'reader') {
+        openDeepakam(targetLesson);
+      } else if (
+        target === 'home' ||
+        target === 'board' ||
+        target === 'grammar' ||
+        target === 'vedic-maths' ||
+        target === 'quiz' ||
+        target === 'worksheets'
+      ) {
+        if (target === 'grammar') {
+          setGrammarResetKey((k) => k + 1);
+        }
+        setActiveView(target);
+      }
+    }
+  }, [currentUser, pendingRedirectView, pendingRedirectLessonId]);
+
+  // Guard against stale localStorage pointing to gated content for guest visitors
+  useEffect(() => {
+    if (!currentUser) {
+      if (accessMode === 'strict_gate' && activeView !== 'home') {
+        setActiveView('home');
+      } else if (accessMode === 'smart_freemium') {
+        if (activeView !== 'home' && activeView !== 'reader') {
+          setActiveView('home');
+        } else if (activeView === 'reader') {
+          const currId = lessons[lessonIndex]?.id;
+          if (currId && currId !== 'varnamala' && currId !== 'gsde101') {
+            const defaultFreeIdx = firstDeepakamIndex(lessons);
+            setLessonIndex(defaultFreeIdx >= 0 ? defaultFreeIdx : 0);
+            setSentenceIndex(0);
+          }
+        }
+      }
+    }
+  }, [accessMode, currentUser]);
 
   useEffect(() => {
     localStorage.setItem('school-active-view', activeView);
@@ -143,6 +247,7 @@ const Dashboard: React.FC = () => {
 
   const handleSelectLesson = (nextLessonId: string) => {
     if (HIDDEN_DEEPAKAM_IDS.has(nextLessonId)) return;
+    if (!checkAccess('reader', nextLessonId)) return;
     const nextIndex = lessons.findIndex((item) => item.id === nextLessonId);
     if (nextIndex === -1) return;
     setLessonIndex(nextIndex);
@@ -156,6 +261,8 @@ const Dashboard: React.FC = () => {
     } else {
       const next = findNextVisibleLesson(lessonIndex, 1);
       if (next !== lessonIndex) {
+        const nextId = lessons[next]?.id;
+        if (!checkAccess('reader', nextId)) return;
         setLessonIndex(next);
         setSentenceIndex(0);
       }
@@ -169,6 +276,8 @@ const Dashboard: React.FC = () => {
     } else {
       const prev = findNextVisibleLesson(lessonIndex, -1);
       if (prev !== lessonIndex) {
+        const prevId = lessons[prev]?.id;
+        if (!checkAccess('reader', prevId)) return;
         setLessonIndex(prev);
         setSentenceIndex(lessons[prev].sentences.length - 1);
       }
@@ -184,6 +293,7 @@ const Dashboard: React.FC = () => {
   };
 
   const openVarnamala = () => {
+    if (!checkAccess('reader', 'varnamala')) return;
     const idx = lessons.findIndex((item) => item.id === 'varnamala');
     if (idx >= 0) {
       setLessonIndex(idx);
@@ -194,22 +304,23 @@ const Dashboard: React.FC = () => {
   };
 
   const openDeepakam = (lessonId?: string) => {
-    if (lessonId) {
-      const idx = lessons.findIndex((item) => item.id === lessonId);
-      if (idx >= 0) {
-        setLessonIndex(idx);
-        setSentenceIndex(0);
-        setWordSelection(null);
-        setActiveView('reader');
-        return;
-      }
+    const targetId =
+      lessonId || (firstDeepakamIndex(lessons) >= 0 ? lessons[firstDeepakamIndex(lessons)].id : 'gsde101');
+    if (!checkAccess('reader', targetId)) return;
+    const idx = lessons.findIndex((item) => item.id === targetId);
+    if (idx >= 0) {
+      setLessonIndex(idx);
+      setSentenceIndex(0);
+      setWordSelection(null);
+      setActiveView('reader');
+      return;
     }
     const current = lessons[lessonIndex];
     const guideIds = new Set(['varnamala', 'barakhadi', 'samyukta', 'numbers']);
     if (!current || guideIds.has(current.id) || HIDDEN_DEEPAKAM_IDS.has(current.id)) {
-      const idx = firstDeepakamIndex(lessons);
-      if (idx >= 0) {
-        setLessonIndex(idx);
+      const fallbackIdx = firstDeepakamIndex(lessons);
+      if (fallbackIdx >= 0) {
+        setLessonIndex(fallbackIdx);
         setSentenceIndex(0);
         setWordSelection(null);
       }
@@ -255,7 +366,7 @@ const Dashboard: React.FC = () => {
           <button
             type="button"
             className={activeView === 'board' ? 'active' : ''}
-            onClick={() => setActiveView('board')}
+            onClick={() => navigateToView('board')}
           >
             जोडो · Tile Puzzle
           </button>
@@ -297,7 +408,7 @@ const Dashboard: React.FC = () => {
           <button
             type="button"
             className={`dashboard-nav-stacked${activeView === 'vedic-maths' ? ' active' : ''}`}
-            onClick={() => setActiveView('vedic-maths')}
+            onClick={() => navigateToView('vedic-maths')}
             title="Open Vedic Mathematics (वैदिक-गणितम्)"
           >
             <span className="dashboard-nav-primary">वैदिक-गणितम्</span>
@@ -306,7 +417,7 @@ const Dashboard: React.FC = () => {
           <button
             type="button"
             className={`dashboard-nav-stacked${activeView === 'quiz' ? ' active' : ''}`}
-            onClick={() => setActiveView('quiz')}
+            onClick={() => navigateToView('quiz')}
             title="Open Sanskrit & Vedic Maths Quiz (प्रश्नोत्तरी)"
           >
             <span className="dashboard-nav-primary">प्रश्नोत्तरी</span>
@@ -315,7 +426,7 @@ const Dashboard: React.FC = () => {
           <button
             type="button"
             className={`dashboard-nav-stacked${activeView === 'worksheets' ? ' active' : ''}`}
-            onClick={() => setActiveView('worksheets')}
+            onClick={() => navigateToView('worksheets')}
             title="Open Printable Worksheets (कार्यपत्रिकाः)"
           >
             <span className="dashboard-nav-primary">कार्यपत्रिकाः</span>
@@ -369,13 +480,13 @@ const Dashboard: React.FC = () => {
 
       {activeView === 'home' && (
         <HomePage
-          onOpenReader={openDeepakam}
-          onOpenBoard={() => setActiveView('board')}
+          onOpenReader={(lessonId) => openDeepakam(lessonId)}
+          onOpenBoard={() => navigateToView('board')}
           onOpenVarnamala={openVarnamala}
           onOpenGrammar={handleOpenGrammar}
-          onOpenVedicMaths={() => setActiveView('vedic-maths')}
-          onOpenQuiz={() => setActiveView('quiz')}
-          onOpenWorksheets={() => setActiveView('worksheets')}
+          onOpenVedicMaths={() => navigateToView('vedic-maths')}
+          onOpenQuiz={() => navigateToView('quiz')}
+          onOpenWorksheets={() => navigateToView('worksheets')}
         />
       )}
       <Suspense fallback={<ViewLoader />}>
@@ -391,8 +502,8 @@ const Dashboard: React.FC = () => {
           <Grammar
             key={grammarResetKey}
             onGoHome={() => setActiveView('home')}
-            onOpenWorksheets={() => setActiveView('worksheets')}
-            onOpenQuiz={() => setActiveView('quiz')}
+            onOpenWorksheets={() => navigateToView('worksheets')}
+            onOpenQuiz={() => navigateToView('quiz')}
           />
         )}
         {activeView === 'vedic-maths' && (
@@ -404,14 +515,14 @@ const Dashboard: React.FC = () => {
         {activeView === 'quiz' && (
           <QuizSection
             onGoHome={() => setActiveView('home')}
-            onOpenWorksheets={() => setActiveView('worksheets')}
+            onOpenWorksheets={() => navigateToView('worksheets')}
             onOpenReader={() => openDeepakam()}
           />
         )}
         {activeView === 'worksheets' && (
           <WorksheetSection
             onGoHome={() => setActiveView('home')}
-            onOpenQuiz={() => setActiveView('quiz')}
+            onOpenQuiz={() => navigateToView('quiz')}
             onOpenReader={() => openDeepakam()}
           />
         )}
@@ -429,8 +540,8 @@ const Dashboard: React.FC = () => {
           onJumpToSentence={jumpToSentence}
           isFirstSentence={isFirstSentence}
           isLastSentence={isLastSentence}
-          onOpenQuiz={() => setActiveView('quiz')}
-          onOpenWorksheets={() => setActiveView('worksheets')}
+          onOpenQuiz={() => navigateToView('quiz')}
+          onOpenWorksheets={() => navigateToView('worksheets')}
         />}
       </Suspense>
 
@@ -439,19 +550,19 @@ const Dashboard: React.FC = () => {
       {activeView !== 'reader' && (
         <Footer
           onOpenReader={(lessonId) => openDeepakam(lessonId)}
-          onOpenBoard={() => setActiveView('board')}
+          onOpenBoard={() => navigateToView('board')}
           onOpenVarnamala={openVarnamala}
           onOpenGrammar={handleOpenGrammar}
-          onOpenVedicMaths={() => setActiveView('vedic-maths')}
-          onOpenQuiz={() => setActiveView('quiz')}
-          onOpenWorksheets={() => setActiveView('worksheets')}
+          onOpenVedicMaths={() => navigateToView('vedic-maths')}
+          onOpenQuiz={() => navigateToView('quiz')}
+          onOpenWorksheets={() => navigateToView('worksheets')}
           onOpenFAQ={() => setActiveView('home')}
         />
       )}
 
       <SupportWidget
         onOpenFAQ={() => setActiveView('home')}
-        onOpenWorksheets={() => setActiveView('worksheets')}
+        onOpenWorksheets={() => navigateToView('worksheets')}
       />
 
       <AuthModal />

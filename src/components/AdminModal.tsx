@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuthStore } from '../store/authStore';
+import type { AccessControlMode } from '../types/auth';
 import '../styles/admin-modal.css';
 
 const AdminModal: React.FC = () => {
@@ -17,11 +18,21 @@ const AdminModal: React.FC = () => {
     exportAllAccounts,
     importAccounts,
     setAdminPasscode,
+    accessMode,
+    setAccessMode,
+    upiVpa,
+    upiPayeeName,
+    setUpiConfig,
   } = useAuthStore();
 
-  const [activeTab, setActiveTab] = useState<'overview' | 'students' | 'payments' | 'backup'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'students' | 'payments' | 'settings' | 'backup'>('overview');
   const [passcodeInput, setPasscodeInput] = useState('');
   const [authError, setAuthError] = useState<string | null>(null);
+
+  // Settings State
+  const [upiVpaInput, setUpiVpaInput] = useState(upiVpa);
+  const [upiPayeeInput, setUpiPayeeInput] = useState(upiPayeeName);
+  const [settingsSuccessMsg, setSettingsSuccessMsg] = useState<string | null>(null);
 
   // Search & Filter
   const [searchQuery, setSearchQuery] = useState('');
@@ -35,6 +46,21 @@ const AdminModal: React.FC = () => {
   const [importResult, setImportResult] = useState<{ success: boolean; count: number; error?: string } | null>(null);
 
   if (!isAdminModalOpen) return null;
+
+  const handleSaveUpiConfig = (e: React.FormEvent) => {
+    e.preventDefault();
+    setUpiConfig(upiVpaInput, upiPayeeInput);
+    setSettingsSuccessMsg('UPI Configuration successfully saved and live in checkout!');
+    setTimeout(() => setSettingsSuccessMsg(null), 3500);
+  };
+
+  const handleAccessModeChange = (mode: AccessControlMode) => {
+    setAccessMode(mode);
+    setSettingsSuccessMsg(
+      `Access mode updated to "${mode === 'smart_freemium' ? 'Smart Freemium' : mode === 'strict_gate' ? 'Strict Gate' : 'Open Access'}"!`
+    );
+    setTimeout(() => setSettingsSuccessMsg(null), 3500);
+  };
 
   const handleAdminAuthSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -217,10 +243,21 @@ const AdminModal: React.FC = () => {
               </button>
               <button
                 type="button"
+                className={`admin-nav-tab${activeTab === 'settings' ? ' active' : ''}`}
+                onClick={() => {
+                  setUpiVpaInput(upiVpa);
+                  setUpiPayeeInput(upiPayeeName);
+                  setActiveTab('settings');
+                }}
+              >
+                ⚙️ Platform &amp; Gate Settings
+              </button>
+              <button
+                type="button"
                 className={`admin-nav-tab${activeTab === 'backup' ? ' active' : ''}`}
                 onClick={() => setActiveTab('backup')}
               >
-                💾 Backup &amp; Settings
+                💾 Backup &amp; Passcode
               </button>
             </div>
 
@@ -522,7 +559,278 @@ const AdminModal: React.FC = () => {
                 </div>
               )}
 
-              {/* TAB 4: BACKUP & SETTINGS */}
+              {/* TAB 4: PLATFORM SETTINGS */}
+              {activeTab === 'settings' && (
+                <div className="admin-settings-panel">
+                  {settingsSuccessMsg && (
+                    <div
+                      style={{
+                        background: '#dcfce7',
+                        border: '1px solid #86efac',
+                        color: '#15803d',
+                        padding: '0.75rem 1rem',
+                        borderRadius: '8px',
+                        fontWeight: 700,
+                        fontSize: '0.88rem',
+                        marginBottom: '1.25rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                      }}
+                    >
+                      <span>✓</span>
+                      <span>{settingsSuccessMsg}</span>
+                    </div>
+                  )}
+
+                  {/* Section 1: Access Control & Freemium Gating */}
+                  <div style={{ background: '#f8fafc', padding: '1.25rem', borderRadius: '12px', border: '1px solid #e2e8f0', marginBottom: '1.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                      <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <span>🚪</span> Access Control &amp; Paywall Gating
+                      </h3>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 700, padding: '0.2rem 0.65rem', borderRadius: '999px', background: accessMode === 'smart_freemium' ? '#dcfce7' : accessMode === 'strict_gate' ? '#fef3c7' : '#e0e7ff', color: accessMode === 'smart_freemium' ? '#15803d' : accessMode === 'strict_gate' ? '#92400e' : '#3730a3' }}>
+                        Mode: {accessMode.replace('_', ' ').toUpperCase()}
+                      </span>
+                    </div>
+                    <p style={{ margin: '0 0 1rem 0', fontSize: '0.85rem', color: '#64748b', lineHeight: 1.5 }}>
+                      Control how guest visitors experience the Gurukul platform and when they are guided to create an account for their 14-day free trial.
+                    </p>
+
+                    <div style={{ display: 'grid', gap: '0.85rem' }}>
+                      {/* Option 1: Smart Freemium */}
+                      <label
+                        onClick={() => handleAccessModeChange('smart_freemium')}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '0.85rem',
+                          padding: '1rem',
+                          borderRadius: '10px',
+                          border: `2px solid ${accessMode === 'smart_freemium' ? '#15803d' : '#cbd5e1'}`,
+                          background: accessMode === 'smart_freemium' ? '#f0fdf4' : '#ffffff',
+                          cursor: 'pointer',
+                          transition: 'all 0.15s ease',
+                        }}
+                      >
+                        <input
+                          type="radio"
+                          name="accessMode"
+                          value="smart_freemium"
+                          checked={accessMode === 'smart_freemium'}
+                          onChange={() => handleAccessModeChange('smart_freemium')}
+                          style={{ marginTop: '0.2rem' }}
+                        />
+                        <div style={{ flex: 1 }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
+                            <strong style={{ fontSize: '0.92rem', color: '#0f172a' }}>
+                              🌟 Smart Freemium Preview (Recommended)
+                            </strong>
+                            <span style={{ background: '#bbf7d0', color: '#14532d', fontSize: '0.7rem', fontWeight: 800, padding: '0.1rem 0.45rem', borderRadius: '4px' }}>
+                              BEST CONVERSION
+                            </span>
+                          </div>
+                          <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: 1.45 }}>
+                            <strong>Home</strong>, <strong>Varṇamālā (Alphabet)</strong>, and <strong>Chapter 1 (वन्दे भारतमातरम्)</strong> are 100% free with no login barrier. When guests click Chapter 2–15, Jodo Tile Puzzle, Grammar, Vedic Maths, Quizzes, or Worksheets, they are prompted to create a free account to activate their <strong>14-day unrestricted trial</strong>.
+                          </p>
+                        </div>
+                      </label>
+
+                      {/* Option 2: Strict Gate */}
+                      <label
+                        onClick={() => handleAccessModeChange('strict_gate')}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '0.85rem',
+                          padding: '1rem',
+                          borderRadius: '10px',
+                          border: `2px solid ${accessMode === 'strict_gate' ? '#b45309' : '#cbd5e1'}`,
+                          background: accessMode === 'strict_gate' ? '#fffbeb' : '#ffffff',
+                          cursor: 'pointer',
+                          transition: 'all 0.15s ease',
+                        }}
+                      >
+                        <input
+                          type="radio"
+                          name="accessMode"
+                          value="strict_gate"
+                          checked={accessMode === 'strict_gate'}
+                          onChange={() => handleAccessModeChange('strict_gate')}
+                          style={{ marginTop: '0.2rem' }}
+                        />
+                        <div style={{ flex: 1 }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
+                            <strong style={{ fontSize: '0.92rem', color: '#0f172a' }}>
+                              🔒 Strict Login Gate
+                            </strong>
+                          </div>
+                          <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: 1.45 }}>
+                            Only the Homepage and FAQs are publicly visible. Clicking any learning module (Varṇamālā, reader, quizzes, worksheets, etc.) immediately opens the registration modal requiring the visitor to start their 14-day free trial.
+                          </p>
+                        </div>
+                      </label>
+
+                      {/* Option 3: Open Access */}
+                      <label
+                        onClick={() => handleAccessModeChange('open_access')}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '0.85rem',
+                          padding: '1rem',
+                          borderRadius: '10px',
+                          border: `2px solid ${accessMode === 'open_access' ? '#4338ca' : '#cbd5e1'}`,
+                          background: accessMode === 'open_access' ? '#eef2ff' : '#ffffff',
+                          cursor: 'pointer',
+                          transition: 'all 0.15s ease',
+                        }}
+                      >
+                        <input
+                          type="radio"
+                          name="accessMode"
+                          value="open_access"
+                          checked={accessMode === 'open_access'}
+                          onChange={() => handleAccessModeChange('open_access')}
+                          style={{ marginTop: '0.2rem' }}
+                        />
+                        <div style={{ flex: 1 }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
+                            <strong style={{ fontSize: '0.92rem', color: '#0f172a' }}>
+                              🌐 Open Access (No Paywall Gate)
+                            </strong>
+                          </div>
+                          <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: 1.45 }}>
+                            Entire curriculum and all tools are fully accessible without registration. Visitors can still optionally register to track points and streak.
+                          </p>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Section 2: UPI Gateway & Payee Settings */}
+                  <div style={{ background: '#f8fafc', padding: '1.25rem', borderRadius: '12px', border: '1px solid #e2e8f0', marginBottom: '1.5rem' }}>
+                    <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <span>📱</span> UPI Payment Gateway &amp; Direct Bank Account
+                    </h3>
+                    <p style={{ margin: '0 0 1rem 0', fontSize: '0.85rem', color: '#64748b', lineHeight: 1.5 }}>
+                      Configure the receiver UPI ID / VPA and merchant business name displayed on the payment modal and generated in the QR code for ₹200 / month subscriptions.
+                    </p>
+
+                    <form onSubmit={handleSaveUpiConfig}>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginBottom: '1rem' }}>
+                        <div>
+                          <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem' }}>
+                            Receiver UPI ID / VPA:
+                          </label>
+                          <input
+                            type="text"
+                            value={upiVpaInput}
+                            onChange={(e) => setUpiVpaInput(e.target.value)}
+                            placeholder="e.g. yourbusiness@okhdfcbank or upiid@upi"
+                            required
+                            style={{
+                              width: '100%',
+                              padding: '0.65rem 0.8rem',
+                              borderRadius: '8px',
+                              border: '1px solid #cbd5e1',
+                              fontSize: '0.9rem',
+                              fontFamily: 'monospace',
+                            }}
+                          />
+                          <span style={{ fontSize: '0.72rem', color: '#64748b' }}>
+                            Current active: <code>{upiVpa}</code>. Replace with your personal or business UPI handle.
+                          </span>
+                        </div>
+
+                        <div>
+                          <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem' }}>
+                            Payee Business / Trust Name:
+                          </label>
+                          <input
+                            type="text"
+                            value={upiPayeeInput}
+                            onChange={(e) => setUpiPayeeInput(e.target.value)}
+                            placeholder="e.g. EdNet Learn Gurukul"
+                            required
+                            style={{
+                              width: '100%',
+                              padding: '0.65rem 0.8rem',
+                              borderRadius: '8px',
+                              border: '1px solid #cbd5e1',
+                              fontSize: '0.9rem',
+                            }}
+                          />
+                          <span style={{ fontSize: '0.72rem', color: '#64748b' }}>
+                            Name shown inside GPay, PhonePe, or Paytm when the student opens the link.
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Live Intent String Preview */}
+                      <div style={{ background: '#ffffff', padding: '0.75rem', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '1rem' }}>
+                        <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', marginBottom: '0.25rem' }}>
+                          LIVE UPI INTENT URL (USED FOR MOBILE APP 1-CLICK CHECKOUT &amp; QR CODE):
+                        </div>
+                        <code style={{ fontSize: '0.75rem', color: '#15803d', wordBreak: 'break-all' }}>
+                          upi://pay?pa={upiVpaInput}&amp;pn={encodeURIComponent(upiPayeeInput)}&amp;am=200.00&amp;cu=INR&amp;tn=Monthly%20Access%20Pass
+                        </code>
+                      </div>
+
+                      <button
+                        type="submit"
+                        style={{
+                          background: '#15803d',
+                          color: '#ffffff',
+                          border: 'none',
+                          borderRadius: '8px',
+                          padding: '0.65rem 1.25rem',
+                          fontWeight: 700,
+                          fontSize: '0.88rem',
+                          cursor: 'pointer',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.4rem',
+                        }}
+                      >
+                        <span>💾</span>
+                        <span>Save UPI Configuration</span>
+                      </button>
+                    </form>
+                  </div>
+
+                  {/* Section 3: Custom Domain & Routing Tips */}
+                  <div style={{ background: '#f8fafc', padding: '1.25rem', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                    <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <span>🌐</span> Custom Domain &amp; Hosting Deployment Tips
+                    </h3>
+                    <div style={{ fontSize: '0.84rem', color: '#475569', lineHeight: 1.55 }}>
+                      <p style={{ margin: '0 0 0.6rem 0' }}>
+                        <strong>Connected your domain name?</strong> Here is what you need to know for smooth production operations:
+                      </p>
+                      <ul style={{ margin: '0 0 0.75rem 1.25rem', padding: 0 }}>
+                        <li style={{ marginBottom: '0.4rem' }}>
+                          <strong>Single-Page App (SPA) Rewrites:</strong> Because this is a Vite/React application, make sure your hosting server directs all URLs to <code>/index.html</code> so that browser refreshes do not 404.
+                          <br />
+                          <em style={{ fontSize: '0.78rem', color: '#64748b' }}>• Netlify: a <code>_redirects</code> file with <code>/*    /index.html   200</code></em>
+                          <br />
+                          <em style={{ fontSize: '0.78rem', color: '#64748b' }}>• Vercel: <code>"rewrites": [{`{"source": "/(.*)", "destination": "/"}`}]</code></em>
+                          <br />
+                          <em style={{ fontSize: '0.78rem', color: '#64748b' }}>• Apache/cPanel: <code>.htaccess</code> rewrite to <code>index.html</code></em>
+                        </li>
+                        <li style={{ marginBottom: '0.4rem' }}>
+                          <strong>14-Day Free Trial:</strong> All new students who register get 14 days of unlimited access without paying upfront. When their trial concludes, the system invites them to subscribe for ₹200 / month.
+                        </li>
+                        <li>
+                          <strong>Payment Flow:</strong> When students transfer ₹200 via UPI and submit their 12-digit UTR, you will see it in the <strong>Payments &amp; UTRs</strong> tab where you can click <strong>Approve &amp; Activate</strong>.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* TAB 5: BACKUP & PASSCODE */}
               {activeTab === 'backup' && (
                 <div>
                   {/* Export */}

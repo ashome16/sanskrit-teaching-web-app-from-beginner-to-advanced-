@@ -11,6 +11,8 @@ const PaymentModal: React.FC = () => {
     openAuthModal,
     processPayment,
     submitManualUpiPayment,
+    upiVpa: storeUpiVpa,
+    upiPayeeName: storeUpiPayee,
   } = useAuthStore();
 
   const [selectedMethod, setSelectedMethod] = useState<PaymentMethod>('upi');
@@ -24,7 +26,7 @@ const PaymentModal: React.FC = () => {
   if (!isPaymentModalOpen) return null;
 
   const handleCopyUpi = () => {
-    navigator.clipboard.writeText('sanskritlearning@upi');
+    navigator.clipboard.writeText(storeUpiVpa);
     setIsCopied(true);
     setTimeout(() => setIsCopied(false), 2000);
   };
@@ -389,7 +391,7 @@ const PaymentModal: React.FC = () => {
                   </div>
 
                   <div className="upi-id-pill">
-                    <span className="upi-id-text">sanskritlearning@upi</span>
+                    <span className="upi-id-text">{storeUpiVpa}</span>
                     <button
                       type="button"
                       className="upi-copy-btn"
@@ -397,6 +399,29 @@ const PaymentModal: React.FC = () => {
                     >
                       {isCopied ? '✓ Copied' : 'Copy VPA'}
                     </button>
+                  </div>
+
+                  <div style={{ textAlign: 'center', marginTop: '0.4rem' }}>
+                    <a
+                      href={`upi://pay?pa=${encodeURIComponent(storeUpiVpa)}&pn=${encodeURIComponent(storeUpiPayee)}&am=200.00&cu=INR&tn=Monthly%20Access%20Pass`}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '0.4rem',
+                        background: 'linear-gradient(135deg, #15803d 0%, #166534 100%)',
+                        color: '#ffffff',
+                        padding: '0.45rem 0.95rem',
+                        borderRadius: '8px',
+                        fontSize: '0.82rem',
+                        fontWeight: 700,
+                        textDecoration: 'none',
+                        boxShadow: '0 2px 6px rgba(21, 128, 61, 0.25)',
+                      }}
+                    >
+                      <span>⚡</span>
+                      <span>Open in GPay / PhonePe / Paytm</span>
+                    </a>
                   </div>
 
                   <div className="upi-apps-row">

@@ -13,6 +13,14 @@ export type PlanStatus = 'trial' | 'active' | 'expired';
 
 export type PaymentMethod = 'upi' | 'apple_pay' | 'gpay' | 'card';
 
+export type AccessControlMode = 'smart_freemium' | 'strict_gate' | 'open_access';
+
+export interface PlatformSettings {
+  accessMode: AccessControlMode;
+  upiVpa: string;
+  upiPayeeName: string;
+}
+
 export interface PaymentTransaction {
   id: string;
   amountInr: number;

@@ -7,6 +7,7 @@ import type {
   PlanStatus,
   PaymentMethod,
   PaymentTransaction,
+  AccessControlMode,
 } from '../types/auth';
 import type { UserProgress } from '../types';
 import { useAppStore } from './index';
@@ -16,6 +17,37 @@ const SESSION_STORAGE_KEY = 'sanskrit_current_session_v1';
 const ADMIN_PASSCODE_KEY = 'ednet_admin_passcode_v1';
 const DEFAULT_ADMIN_PASSCODE = 'ednetadmin2026';
 const ADMIN_SESSION_KEY = 'ednet_admin_session_v1';
+const ACCESS_MODE_KEY = 'sanskrit_access_mode_v1';
+const UPI_VPA_KEY = 'sanskrit_upi_vpa_v1';
+const UPI_PAYEE_KEY = 'sanskrit_upi_payee_v1';
+export const DEFAULT_UPI_VPA = 'ednetlearn@upi';
+export const DEFAULT_UPI_PAYEE = 'EdNet Learn Gurukul';
+
+const getStoredAccessMode = (): AccessControlMode => {
+  try {
+    const val = localStorage.getItem(ACCESS_MODE_KEY);
+    if (val === 'strict_gate' || val === 'open_access' || val === 'smart_freemium') return val;
+    return 'smart_freemium';
+  } catch {
+    return 'smart_freemium';
+  }
+};
+
+const getStoredUpiVpa = (): string => {
+  try {
+    return localStorage.getItem(UPI_VPA_KEY) || DEFAULT_UPI_VPA;
+  } catch {
+    return DEFAULT_UPI_VPA;
+  }
+};
+
+const getStoredUpiPayee = (): string => {
+  try {
+    return localStorage.getItem(UPI_PAYEE_KEY) || DEFAULT_UPI_PAYEE;
+  } catch {
+    return DEFAULT_UPI_PAYEE;
+  }
+};
 
 const getStoredAdminPasscode = (): string => {
   try {
@@ -92,6 +124,16 @@ interface AuthState {
   importAccounts: (jsonData: string) => { success: boolean; count: number; error?: string };
   getAllAccountsList: () => UserAccount[];
   submitManualUpiPayment: (utrNumber: string, upiId?: string) => Promise<{ success: boolean; transaction?: PaymentTransaction; error?: string }>;
+
+  // Platform Configuration & Access Control
+  accessMode: AccessControlMode;
+  upiVpa: string;
+  upiPayeeName: string;
+  pendingRedirectView: string | null;
+  pendingRedirectLessonId?: string;
+  setAccessMode: (mode: AccessControlMode) => void;
+  setUpiConfig: (vpa: string, payeeName: string) => void;
+  setPendingRedirect: (view: string | null, lessonId?: string) => void;
 }
 
 const loadStoredAccounts = (): Record<string, UserAccount> => {
@@ -170,8 +212,35 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
     openPaymentModal: () => set({ isPaymentModalOpen: true }),
     closePaymentModal: () => set({ isPaymentModalOpen: false }),
-
     clearAuthError: () => set({ authError: null }),
+
+    // Platform Configuration & Access Control
+    accessMode: getStoredAccessMode(),
+    upiVpa: getStoredUpiVpa(),
+    upiPayeeName: getStoredUpiPayee(),
+    pendingRedirectView: null,
+    pendingRedirectLessonId: undefined,
+
+    setAccessMode: (mode: AccessControlMode) => {
+      try {
+        localStorage.setItem(ACCESS_MODE_KEY, mode);
+      } catch {}
+      set({ accessMode: mode });
+    },
+
+    setUpiConfig: (vpa: string, payeeName: string) => {
+      const cleanVpa = (vpa || DEFAULT_UPI_VPA).trim();
+      const cleanPayee = (payeeName || DEFAULT_UPI_PAYEE).trim();
+      try {
+        localStorage.setItem(UPI_VPA_KEY, cleanVpa);
+        localStorage.setItem(UPI_PAYEE_KEY, cleanPayee);
+      } catch {}
+      set({ upiVpa: cleanVpa, upiPayeeName: cleanPayee });
+    },
+
+    setPendingRedirect: (view: string | null, lessonId?: string) => {
+      set({ pendingRedirectView: view, pendingRedirectLessonId: lessonId });
+    },
 
     register: (data: RegisterFormData) => {
       const { accounts } = get();
@@ -427,7 +496,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
         id: txnId,
         amountInr: MONTHLY_PRICE_INR,
         paymentMethod: method,
-        upiId: upiId || (method === 'upi' ? 'sanskritlearning@upi' : undefined),
+        upiId: upiId || (method === 'upi' ? get().upiVpa : undefined),
         timestamp: now,
         status: 'success',
         planName: 'Monthly Unlimited Access Pass',
@@ -657,7 +726,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
         id: txnId,
         amountInr: MONTHLY_PRICE_INR,
         paymentMethod: 'upi',
-        upiId: upiId || 'care@ednetlearn.in',
+        upiId: upiId || get().upiVpa,
         utrNumber: utrNumber.trim(),
         timestamp: now,
         status: 'pending',
