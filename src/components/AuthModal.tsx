@@ -23,6 +23,7 @@ const AuthModal: React.FC = () => {
     authError,
     clearAuthError,
     pendingRedirectView,
+    setPendingRedirect,
   } = useAuthStore();
 
   const [activeTab, setActiveTab] = useState<'login' | 'register'>(authModalInitialTab);
@@ -30,6 +31,11 @@ const AuthModal: React.FC = () => {
   useEffect(() => {
     setActiveTab(authModalInitialTab);
   }, [authModalInitialTab, isAuthModalOpen]);
+
+  const handleBackToPreview = () => {
+    setPendingRedirect(null, undefined);
+    closeAuthModal();
+  };
 
   // Login form state
   const [loginIdentifier, setLoginIdentifier] = useState('');
@@ -181,13 +187,39 @@ const AuthModal: React.FC = () => {
               Log In ➔
             </button>
 
-            <button
-              type="button"
-              className="auth-guest-btn"
-              onClick={closeAuthModal}
+            <div
+              style={{
+                marginTop: '1rem',
+                padding: '0.85rem 1rem',
+                background: '#f8fafc',
+                borderRadius: '8px',
+                border: '1px solid #e2e8f0',
+                textAlign: 'center',
+              }}
             >
-              Continue as Guest (Explore Free Lessons)
-            </button>
+              <div style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.45, marginBottom: '0.5rem' }}>
+                📖 <strong>Free Guest Preview:</strong> You can explore the <strong>Varṇamālā (Alphabet)</strong> and <strong>Chapter 1</strong> for free. To access Chapters 2–15, Quizzes, Worksheets, or Vedic Maths, please log in or create an account.
+              </div>
+              <button
+                type="button"
+                onClick={handleBackToPreview}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  color: '#b45309',
+                  fontWeight: 700,
+                  fontSize: '0.82rem',
+                  cursor: 'pointer',
+                  textDecoration: 'underline',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.35rem',
+                }}
+              >
+                <span>←</span>
+                <span>Return to Free Chapter 1 Preview</span>
+              </button>
+            </div>
           </form>
         ) : (
           /* Registration Form */
@@ -309,13 +341,39 @@ const AuthModal: React.FC = () => {
               Start 2-Week Free Trial ➔
             </button>
 
-            <button
-              type="button"
-              className="auth-guest-btn"
-              onClick={closeAuthModal}
+            <div
+              style={{
+                marginTop: '1rem',
+                padding: '0.85rem 1rem',
+                background: '#f8fafc',
+                borderRadius: '8px',
+                border: '1px solid #e2e8f0',
+                textAlign: 'center',
+              }}
             >
-              Continue as Guest
-            </button>
+              <div style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.45, marginBottom: '0.5rem' }}>
+                📖 <strong>Free Guest Preview:</strong> You can explore the <strong>Varṇamālā (Alphabet)</strong> and <strong>Chapter 1</strong> for free. To access Chapters 2–15, Quizzes, Worksheets, or Vedic Maths, please log in or create an account.
+              </div>
+              <button
+                type="button"
+                onClick={handleBackToPreview}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  color: '#b45309',
+                  fontWeight: 700,
+                  fontSize: '0.82rem',
+                  cursor: 'pointer',
+                  textDecoration: 'underline',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.35rem',
+                }}
+              >
+                <span>←</span>
+                <span>Return to Free Chapter 1 Preview</span>
+              </button>
+            </div>
           </form>
         )}
       </div>
