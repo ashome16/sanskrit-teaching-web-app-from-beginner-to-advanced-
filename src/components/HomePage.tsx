@@ -333,6 +333,28 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     theme: 'The moving life of Utkalmani Pandit Gopabandhu Das: selfless flood relief in Odisha, Satyavadi open-air forest school, and total devotion to Bharat.',
     grammarFocus: 'यत्-तद् सर्वनाम-प्रयोगाः, अनीयर्/ण्यत्-प्रत्ययः (प्रणम्यः), विसर्ग-उत्व-सन्धिः',
   },
+  {
+    id: 'grade8_ch5',
+    num: 'Grade 8 · Chapter 5',
+    title: 'गीता सुगीता कर्तव्या (Pages 49–58)',
+    english: 'The Gita Should Be Well-Studied and Practiced',
+    icon: '🕉️',
+    category: 'shlokas',
+    genreBadge: 'श्रीमद्भगवद्गीता · Spiritual Wisdom',
+    theme: 'Foundational teachings of the Bhagavad Gita: steady intellect (Sthitadhi), sense restraint, selfless action, holy speech, and mastery over anger.',
+    grammarFocus: 'तव्यत्-प्रत्ययः (कर्तव्या), क्तवतु-प्रत्ययः, विसर्ग-उत्व-पूर्वरूप-सन्धयः',
+  },
+  {
+    id: 'grade8_ch6',
+    num: 'Grade 8 · Chapter 6',
+    title: 'डिजिभारतम् – युगपरिवर्तनम् (Pages 61–66)',
+    english: 'Digital India – An Epochal Transformation',
+    icon: '💻',
+    category: 'dialogue',
+    genreBadge: 'विज्ञान-प्रौद्योगिकी · Modern Era',
+    theme: 'India\'s digital revolution: from oral Shruti and palm leaves to modern computers, smartphones, cashless transactions, and green paperless living.',
+    grammarFocus: 'कर्मवाच्य-प्रयोगाः (पठ्यते, लिख्यते, कृत्यन्ते), ल्युट्-प्रत्ययः, पारिभाषिक-शब्दाः',
+  },
 ];
 
 const HomePage: React.FC<HomePageProps> = ({
@@ -915,7 +937,7 @@ const HomePage: React.FC<HomePageProps> = ({
                     <span className="home-chapter-read-cta">
                       Read Lesson ➔
                     </span>
-                    {(ch.id === 'grade8_prarthana' || ch.id === 'grade8_ch1' || ch.id === 'grade8_ch2' || ch.id === 'grade8_ch3' || ch.id === 'grade8_ch4') && (
+                    {(ch.id === 'grade8_prarthana' || ch.id === 'grade8_ch1' || ch.id === 'grade8_ch2' || ch.id === 'grade8_ch3' || ch.id === 'grade8_ch4' || ch.id === 'grade8_ch5' || ch.id === 'grade8_ch6') && (
                       <button
                         type="button"
                         style={{

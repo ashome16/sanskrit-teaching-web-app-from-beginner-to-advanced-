@@ -1,6 +1,6 @@
 export interface QuizQuestionItem {
   id: string;
-  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4';
+  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4' | 'grade8_ch5' | 'grade8_ch6';
   categoryLabel: string;
   chapterRef?: string;
   subCategory?: string;
@@ -38,6 +38,8 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade8_ch2', label: 'Grade 8 Ch 2: अल्पानामपि वस्तूनां संहतिः (5 Quizzes · 21 Qs)', icon: '🕊️' },
   { id: 'grade8_ch3', label: 'Grade 8 Ch 3: सुभाषितरसं पीत्वा (4 Quizzes · 21 Qs)', icon: '🍯' },
   { id: 'grade8_ch4', label: 'Grade 8 Ch 4: प्रणम्यो देशभक्तोऽयं (6 Quizzes · 25 Qs)', icon: '🇮🇳' },
+  { id: 'grade8_ch5', label: 'Grade 8 Ch 5: गीता सुगीता कर्तव्या (2 Quizzes · 10 Qs)', icon: '🕉️' },
+  { id: 'grade8_ch6', label: 'Grade 8 Ch 6: डिजिभारतम्-युगपरिवर्तनम् (2 Quizzes · 10 Qs)', icon: '💻' },
 ] as const;
 
 export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
@@ -11332,5 +11334,389 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
     explanation: "Correct! It is a compound combining the genitive noun 'भोजनस्य' (of food) with 'अतिदौर्लभ्यम्' (extreme scarcity) via standard Dirgha Savarna Sandhi. (Hint: Used in Gopabandhu's humorous address during the teachers' dinner).",
     difficulty: "medium",
     points: 10,
+  },
+
+  // ==========================================
+  // GRADE 8 CHAPTER 5 & 6 QUIZZES
+  // ==========================================
+  {
+    "id": "g8-ch5-q1-1",
+    "category": "grade8_ch5",
+    "categoryLabel": "Grade 8 Ch 5: स्थितधी-सदाचार-शब्दावली",
+    "chapterRef": "Grade 8: पञ्चमः पाठः — गीता सुगीता कर्तव्या",
+    "subCategory": "Quiz 1: Sthitadhi & Moral Formations",
+    "question": "In the verse \"गीता सुगीता कर्तव्या किमन्यैः शास्त्रविस्तरैः\", what is the grammatical formation of the word \"कर्तव्या\"?",
+    "questionSanskrit": "'सुगीता कर्तव्या' इत्यत्र 'कर्तव्या' इति पदे कः धातुः कश्च प्रत्ययः?",
+    "options": [
+      "A) कृ धातुः + तव्यत् प्रत्ययः + टाप् (स्त्रीलिङ्गम्)",
+      "B) कृ धातुः + अनीयर् प्रत्ययः",
+      "C) कृ धातुः + क्त प्रत्ययः",
+      "D) कृ धातुः + शतृ प्रत्ययः"
+    ],
+    "correctIndex": 0,
+    "explanation": "कृ धातोः कर्मणि तव्यत्-प्रत्यये कृते 'कर्तव्य' इति प्रातिपदिकं भवति। 'गीता' इति स्त्रीलिङ्गपदस्य विशेषणत्वात् टाप्-प्रत्यये 'कर्तव्या' इति रूपं सिध्यति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch5-q1-2",
+    "category": "grade8_ch5",
+    "categoryLabel": "Grade 8 Ch 5: स्थितधी-सदाचार-शब्दावली",
+    "chapterRef": "Grade 8: पञ्चमः पाठः — गीता सुगीता कर्तव्या",
+    "subCategory": "Quiz 1: Sthitadhi & Moral Formations",
+    "question": "What is the compound analysis (Samasa Vigraha) of the term \"स्थितधीः\"?",
+    "questionSanskrit": "'स्थितधीः' इति पदस्य समासविग्रहः कः?",
+    "options": [
+      "A) स्थिता धीः यस्य सः (बहुव्रीहिः)",
+      "B) स्थिता च सा धीः (कर्मधारयः)",
+      "C) स्थितायाः धीः (तत्पुरुषः)",
+      "D) स्थितं धियं यः (द्वन्द्वः)"
+    ],
+    "correctIndex": 0,
+    "explanation": "'स्थिता धीः (बुद्धिः) यस्य सः स्थितधीः' — अन्यपदप्रधानः बहुव्रीहिसमासः अस्ति। यस्य बुद्धिः सुखेषु दुःखेषु च अचला वर्तते, सः स्थितधीः मुनिः कथ्यते।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch5-q1-3",
+    "category": "grade8_ch5",
+    "categoryLabel": "Grade 8 Ch 5: स्थितधी-सदाचार-शब्दावली",
+    "chapterRef": "Grade 8: पञ्चमः पाठः — गीता सुगीता कर्तव्या",
+    "subCategory": "Quiz 1: Sthitadhi & Moral Formations",
+    "question": "According to the Bhagavad Gita (श्रद्धावांल्लभते ज्ञानम्...), who attains divine wisdom?",
+    "questionSanskrit": "गीतायाः अनुसारं कः ज्ञानं लभते?",
+    "options": [
+      "A) श्रद्धावान् तत्परः संयतेन्द्रियः च जनः",
+      "B) धनवान् बलवान् च जनः",
+      "C) केवलं शास्त्रज्ञानी मनुष्यः",
+      "D) विगतस्पृहः विना श्रद्धावान्"
+    ],
+    "correctIndex": 0,
+    "explanation": "'श्रद्धावांल्लभते ज्ञानं तत्परः संयतेन्द्रियः' — यः जनः श्रद्धावान्, साधनतत्परः, वशीकृतेन्द्रियः च भवति, स एव यथार्थं ज्ञानं प्राप्नोति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch5-q1-4",
+    "category": "grade8_ch5",
+    "categoryLabel": "Grade 8 Ch 5: स्थितधी-सदाचार-शब्दावली",
+    "chapterRef": "Grade 8: पञ्चमः पाठः — गीता सुगीता कर्तव्या",
+    "subCategory": "Quiz 1: Sthitadhi & Moral Formations",
+    "question": "In the causal destruction sequence (क्रोधाद्भवति सम्मोहः...), what immediately arises from anger (क्रोधात्)?",
+    "questionSanskrit": "गीतानुसारं क्रोधात् साक्षात् किं सञ्जायते?",
+    "options": [
+      "A) सम्मोहः (Delusion / loss of discrimination)",
+      "B) स्मृतिविभ्रमः (Loss of memory)",
+      "C) बुद्धिनाशः (Destruction of intellect)",
+      "D) प्रणश्यति (Perishing)"
+    ],
+    "correctIndex": 0,
+    "explanation": "श्लोकक्रमानुसारेण: क्रोधात् सम्मोहः जायते, सम्मोहात् स्मृतिविभ्रमः, स्मृतिभ्रंशात् बुद्धिनाशः, बुद्धिनाशात् च मनुष्यः प्रणश्यति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch5-q1-5",
+    "category": "grade8_ch5",
+    "categoryLabel": "Grade 8 Ch 5: स्थितधी-सदाचार-शब्दावली",
+    "chapterRef": "Grade 8: पञ्चमः पाठः — गीता सुगीता कर्तव्या",
+    "subCategory": "Quiz 1: Sthitadhi & Moral Formations",
+    "question": "Which four attributes define \"वाङ्मयं तपः\" (austerity of speech) as described in Shloka 7?",
+    "questionSanskrit": "'वाङ्मयं तपः' इत्यत्र वाणी कीदृशी भवेत्?",
+    "options": [
+      "A) अनुद्वेगकरम्, सत्यम्, प्रियम्, हितं च (स-स्वाध्यायम्)",
+      "B) कटु, स्पष्टं, तीव्रं, गम्भीरं च",
+      "C) केवलं मधुरं मृषा च",
+      "D) दीर्घम्, आकर्षकं, पाण्डित्यपूर्णं च"
+    ],
+    "correctIndex": 0,
+    "explanation": "गीतायाः १७.१५ श्लोके प्रोक्तम्: 'अनुद्वेगकरं वाक्यं सत्यं प्रियहितं च यत् । स्वाध्यायाभ्यसनं चैव वाङ्मयं तप उच्यते ॥'",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch5-q2-1",
+    "category": "grade8_ch5",
+    "categoryLabel": "Grade 8 Ch 5: सन्धि-प्रत्यय-विचक्षणता",
+    "chapterRef": "Grade 8: पञ्चमः पाठः — गीता सुगीता कर्तव्या",
+    "subCategory": "Quiz 2: Sandhi Rules & Suffixes",
+    "question": "What is the correct Sandhi splitting of \"मुखपद्माद्विनिःसृता\"?",
+    "questionSanskrit": "'मुखपद्माद्विनिःसृता' इत्यस्य पदस्य उचितः सन्धिविच्छेदः कः?",
+    "options": [
+      "A) मुखपद्मात् + विनिःसृता (झलां जशोऽन्ते - जश्त्वसन्धिः)",
+      "B) मुखपद्माद् + विनिःसृता",
+      "C) मुखपद्मे + विनिःसृता",
+      "D) मुखपद्म + विनिःसृता"
+    ],
+    "correctIndex": 0,
+    "explanation": "पदान्ते विद्यमानस्य 'त्' इत्यस्य वर्णस्य वकारे परे जश्त्वसन्धिनियमेन तकारस्य स्थाने तृतीयवर्णः 'द्' भवति, अतः 'मुखपद्मात् + विनिःसृता = मुखपद्माद्विनिःसृता'।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch5-q2-2",
+    "category": "grade8_ch5",
+    "categoryLabel": "Grade 8 Ch 5: सन्धि-प्रत्यय-विचक्षणता",
+    "chapterRef": "Grade 8: पञ्चमः पाठः — गीता सुगीता कर्तव्या",
+    "subCategory": "Quiz 2: Sandhi Rules & Suffixes",
+    "question": "What are the root verb (Dhatu) and suffix (Pratyaya) in the word \"लब्ध्वा\"?",
+    "questionSanskrit": "'लब्ध्वा' इति पदे कः धातुः कश्च प्रत्ययः?",
+    "options": [
+      "A) लभ् धातुः + क्त्वा प्रत्ययः",
+      "B) लब्ध् धातुः + वा प्रत्ययः",
+      "C) लभ् धातुः + ल्यप् प्रत्ययः",
+      "D) ला धातुः + क्तवतु प्रत्ययः"
+    ],
+    "correctIndex": 0,
+    "explanation": "लभ् धातोः क्त्वा-प्रत्यये कृते भषस्तथोर्धोऽधः नियमेन तकारस्य धकारे भकारस्य बकारे च 'लब्ध्वा' (प्राप्त करके / having attained) इति रूपं भवति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch5-q2-3",
+    "category": "grade8_ch5",
+    "categoryLabel": "Grade 8 Ch 5: सन्धि-प्रत्यय-विचक्षणता",
+    "chapterRef": "Grade 8: पञ्चमः पाठः — गीता सुगीता कर्तव्या",
+    "subCategory": "Quiz 2: Sandhi Rules & Suffixes",
+    "question": "Identify the Sandhi rule in \"स्वाध्यायाभ्यसनम्\":",
+    "questionSanskrit": "'स्वाध्यायाभ्यसनम्' इत्यत्र कः सन्धिनियमः प्रयुक्तः?",
+    "options": [
+      "A) स्वाध्याय + अभ्यसनम् (सवर्णदीर्घसन्धिः - अ + अ = आ)",
+      "B) स्वा + ध्यायाभ्यसनम् (गुणसन्धिः)",
+      "C) स्वाध्याये + अभ्यसनम् (अयादिसन्धिः)",
+      "D) स्वाध्यायात् + अभ्यसनम् (जश्त्वसन्धिः)"
+    ],
+    "correctIndex": 0,
+    "explanation": "'स्वाध्याय' पदस्य अन्ते अकारः, 'अभ्यसनम्' पदस्य आरम्भे अकारः, उभयोः स्थाने 'अकः सवर्णे दीर्घः' सूत्रेण 'आ' इति दीर्घैकादेशः भवति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch5-q2-4",
+    "category": "grade8_ch5",
+    "categoryLabel": "Grade 8 Ch 5: सन्धि-प्रत्यय-विचक्षणता",
+    "chapterRef": "Grade 8: पञ्चमः पाठः — गीता सुगीता कर्तव्या",
+    "subCategory": "Quiz 2: Sandhi Rules & Suffixes",
+    "question": "In \"बुभुक्षितोऽहम्\", explain the transformation from the original words \"बुभुक्षितः + अहम्\":",
+    "questionSanskrit": "'बुभुक्षितोऽहम्' इत्यत्र सन्धिकार्यं कथं भवति?",
+    "options": [
+      "A) Visarga turns to 'उ' (अतो रोरप्लुतादप्लुते) giving 'ओ', then 'अ' becomes Avagraha 'ऽ'",
+      "B) Visarga is dropped and Gunadesha occurs",
+      "C) Yan Sandhi converts Visarga to 'र्'",
+      "D) Vriddhi Sandhi creates 'औ'"
+    ],
+    "correctIndex": 0,
+    "explanation": "अतो रोरप्लुतादप्लुते सूत्रेण विसर्गस्य स्थाने उत्वे 'बुभुक्षित + उ = बुभुक्षितो' भवति, तदनन्तरम् 'एङः पदान्तादति' इति पूर्वरूपसन्धौ अकारस्य अवग्रहः (ऽ) भवति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch5-q2-5",
+    "category": "grade8_ch5",
+    "categoryLabel": "Grade 8 Ch 5: सन्धि-प्रत्यय-विचक्षणता",
+    "chapterRef": "Grade 8: पञ्चमः पाठः — गीता सुगीता कर्तव्या",
+    "subCategory": "Quiz 2: Sandhi Rules & Suffixes",
+    "question": "What is the exact antonym (विलोमपदम्) of \"अचिरेण\" (without delay / swiftly) as taught in Chapter 5?",
+    "questionSanskrit": "पाठानुसारं 'अचिरेण' इत्यस्य पदस्य विलोमपदं किम्?",
+    "options": [
+      "A) चिरेण (With delay / slowly)",
+      "B) शीघ्रम् (Quickly)",
+      "C) द्रुतम् (Swiftly)",
+      "D) क्षिप्रम् (Immediately)"
+    ],
+    "correctIndex": 0,
+    "explanation": "'अचिरेण' इत्यस्य अर्थः 'शीघ्रम् / अविलम्बेन'। अतः अस्य विलोमपदं 'चिरेण' (विलम्बेन / बहुकालेन) भवति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch6-q1-1",
+    "category": "grade8_ch6",
+    "categoryLabel": "Grade 8 Ch 6: सङ्गणक-प्रविधि-शब्दावली",
+    "chapterRef": "Grade 8: षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम्",
+    "subCategory": "Quiz 1: Sanganaka Tools & Tech Vocabulary",
+    "question": "What is the Sanskrit term for \"Mobile Phone\" used throughout Chapter 6?",
+    "questionSanskrit": "पाठानुसारं 'Mobile Phone' इत्यस्य कृते कः संस्कृतशब्दः प्रयुक्तः?",
+    "options": [
+      "A) चलदूरभाषयन्त्रम्",
+      "B) दूरदर्शनम्",
+      "C) सङ्गणकम्",
+      "D) टङ्कणयन्त्रम्"
+    ],
+    "correctIndex": 0,
+    "explanation": "'चलदूरभाषयन्त्रम्' (चल + दूरभाष + यन्त्रम् = Mobile Telephone Device) इति संस्कृतपदं मोबाइल-फोन-यन्त्राय प्रयुज्यते।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch6-q1-2",
+    "category": "grade8_ch6",
+    "categoryLabel": "Grade 8 Ch 6: सङ्गणक-प्रविधि-शब्दावली",
+    "chapterRef": "Grade 8: षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम्",
+    "subCategory": "Quiz 1: Sanganaka Tools & Tech Vocabulary",
+    "question": "Which device is referred to as \"सङ्गणकम्\" in Sanskrit?",
+    "questionSanskrit": "'सङ्गणकम्' इति पदं कस्य आधुनिक-यन्त्रस्य कृते प्रयुक्तम्?",
+    "options": [
+      "A) कम्प्यूटर (Computer)",
+      "B) टाइपराइटर (Typewriter)",
+      "C) टेलीविजन (Television)",
+      "D) प्रिण्टर (Printer)"
+    ],
+    "correctIndex": 0,
+    "explanation": "गणनां करोति इति सङ्गणकम् (Computer)। टङ्कणयन्त्रं Typewriter अस्ति, दूरदर्शनं Television अस्ति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch6-q1-3",
+    "category": "grade8_ch6",
+    "categoryLabel": "Grade 8 Ch 6: सङ्गणक-प्रविधि-शब्दावली",
+    "chapterRef": "Grade 8: षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम्",
+    "subCategory": "Quiz 1: Sanganaka Tools & Tech Vocabulary",
+    "question": "How was knowledge traditionally preserved and transmitted in ancient India prior to paper and printing?",
+    "questionSanskrit": "प्राचीनकाले ज्ञानस्य आदान-प्रदानं कथम् आसीत्, विद्या च कया परम्परया गृह्यते स्म?",
+    "options": [
+      "A) मौखिकम् आसीत्, विद्या च श्रुतिपरम्परया गृह्यते स्म",
+      "B) सङ्गणकमाध्यमेन सञ्चितम् आसीत्",
+      "C) मुद्रितपुस्तकैः गृह्यते स्म",
+      "D) टङ्कणयन्त्रेण लिख्यते स्म"
+    ],
+    "correctIndex": 0,
+    "explanation": "पाठे स्पष्टम् उल्लिखितम् — 'प्राचीनकाले ज्ञानस्य आदान-प्रदानं मौखिकम् आसीत्, विद्या च श्रुतिपरम्परया गृह्यते स्म'।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch6-q1-4",
+    "category": "grade8_ch6",
+    "categoryLabel": "Grade 8 Ch 6: सङ्गणक-प्रविधि-शब्दावली",
+    "chapterRef": "Grade 8: षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम्",
+    "subCategory": "Quiz 1: Sanganaka Tools & Tech Vocabulary",
+    "question": "What is the meaning of the Sanskrit term \"मुद्राहीन-विनिमयः\"?",
+    "questionSanskrit": "'मुद्राहीन-विनिमयः' इत्यस्य आङ्ग्लभाषायां कः अर्थः भवति?",
+    "options": [
+      "A) Cashless Transaction (Digital Payment)",
+      "B) Coin Minting",
+      "C) Currency Devaluation",
+      "D) Barter System of Goods"
+    ],
+    "correctIndex": 0,
+    "explanation": "मुद्रारहितः विनिमयः यत्र भौतिक-रुपयाणां स्थाने डिजिटल-माध्यमेन (Debit/Credit/UPI) व्यवहारः भवति, सः 'Cashless Transaction' कथ्यते।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch6-q1-5",
+    "category": "grade8_ch6",
+    "categoryLabel": "Grade 8 Ch 6: सङ्गणक-प्रविधि-शब्दावली",
+    "chapterRef": "Grade 8: षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम्",
+    "subCategory": "Quiz 1: Sanganaka Tools & Tech Vocabulary",
+    "question": "In the sentence \"वस्त्रपुटके रुपयाणाम् आवश्यकता न भविष्यति\", what does \"वस्त्रपुटके\" mean?",
+    "questionSanskrit": "'वस्त्रपुटके' इत्यस्य पदस्य कः आशयः?",
+    "options": [
+      "A) In the pocket of clothes (जेब में)",
+      "B) In the suitcase (पेटिकायाम्)",
+      "C) In the bank vault (कोषागारे)",
+      "D) On the table (उत्पीठिकायाम्)"
+    ],
+    "correctIndex": 0,
+    "explanation": "वस्त्रस्य पुटकः (पुटिका/स्यूतिका) = जेब (Pocket)। यदा सर्वाणि कार्याणि चलदूरभाषयन्त्रेण भवन्ति, तदा जेब में रूपयों को रखने की आवश्यकता नहीं रहती।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch6-q2-1",
+    "category": "grade8_ch6",
+    "categoryLabel": "Grade 8 Ch 6: कर्मवाच्य-प्रयोग-कौशलम्",
+    "chapterRef": "Grade 8: षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम्",
+    "subCategory": "Quiz 2: Passive Voice & Verbal Syntaxes",
+    "question": "In \"अद्य सम्पूर्णविश्वे डिजिभारतम् इत्यस्य चर्चा श्रूयते\", what voice is the verb \"श्रूयते\" in?",
+    "questionSanskrit": "'श्रूयते' इति क्रियापदं कस्मिन् वाच्ये अस्ति?",
+    "options": [
+      "A) कर्मवाच्ये (Passive voice — श्रु + यक् + ते)",
+      "B) कर्तृवाच्ये (Active voice — लट् परस्मैपदम्)",
+      "C) भाववाच्ये केवलम् अकर्मकधातोः",
+      "D) णिजन्तवाच्ये"
+    ],
+    "correctIndex": 0,
+    "explanation": "श्रु धातोः कर्मवाच्ये लट्लकारे आत्मनेपदे 'यक्' प्रत्यये कृते 'श्रूयते' (सुनी जाती है / is heard) इति रूपं भवति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch6-q2-2",
+    "category": "grade8_ch6",
+    "categoryLabel": "Grade 8 Ch 6: कर्मवाच्य-प्रयोग-कौशलम्",
+    "chapterRef": "Grade 8: षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम्",
+    "subCategory": "Quiz 2: Passive Voice & Verbal Syntaxes",
+    "question": "In \"विद्या श्रुतिपरम्परया गृह्यते स्म\", what is the root verb (धातु) of \"गृह्यते\"?",
+    "questionSanskrit": "'गृह्यते' इति क्रियापदे कः मूलधातुः?",
+    "options": [
+      "A) ग्रह् धातुः (ग्रह् उपादाने / to take, receive)",
+      "B) गृह् धातुः",
+      "C) गृ धातुः",
+      "D) घ्रा धातुः"
+    ],
+    "correctIndex": 0,
+    "explanation": "ग्रह् धातोः कर्मवाच्ये यक्-प्रत्यये सम्प्रसारणे ऋकारः भूत्वा 'गृह्यते' (ग्रहण की जाती है / is received) इति रूपं सिध्यति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch6-q2-3",
+    "category": "grade8_ch6",
+    "categoryLabel": "Grade 8 Ch 6: कर्मवाच्य-प्रयोग-कौशलम्",
+    "chapterRef": "Grade 8: षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम्",
+    "subCategory": "Quiz 2: Passive Voice & Verbal Syntaxes",
+    "question": "Transform the active voice sentence \"जनाः सङ्गणकेन पुस्तकानि पठन्ति\" into passive voice (कर्मवाच्य):",
+    "questionSanskrit": "'जनाः सङ्गणकेन पुस्तकानि पठन्ति' अस्य वाक्यस्य कर्मवाच्ये रूपं किं भवति?",
+    "options": [
+      "A) जनैः सङ्गणकेन पुस्तकानि पठ्यन्ते।",
+      "B) जनाः सङ्गणकेन पुस्तकानि पठ्यते।",
+      "C) जनैः सङ्गणकस्य पुस्तकानि पठति।",
+      "D) जनेन सङ्गणकेन पुस्तकं पठ्यते।"
+    ],
+    "correctIndex": 0,
+    "explanation": "कर्मवाच्ये कर्तरि तृतीया (जनाः -> जनैः), कर्मणि प्रथमा (पुस्तकानि -> पुस्तकानि बहुवचने), क्रिया च कर्मानुसारिणी भवति (पठ् + यक् + अन्ते = पठ्यन्ते)।",
+    "difficulty": "hard",
+    "points": 10
+  },
+  {
+    "id": "g8-ch6-q2-4",
+    "category": "grade8_ch6",
+    "categoryLabel": "Grade 8 Ch 6: कर्मवाच्य-प्रयोग-कौशलम्",
+    "chapterRef": "Grade 8: षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम्",
+    "subCategory": "Quiz 2: Passive Voice & Verbal Syntaxes",
+    "question": "In \"कम्प्यूटरमाध्यमेन समाचारपत्राणि लिख्यन्ते\", which word is the grammatical object (कर्मपदम्) in the nominative case?",
+    "questionSanskrit": "'समाचारपत्राणि लिख्यन्ते' इत्यत्र कर्मवाच्ये प्रथमाविभक्तियुक्तं कर्मपदं किम्?",
+    "options": [
+      "A) समाचारपत्राणि",
+      "B) कम्प्यूटरमाध्यमेन",
+      "C) लिख्यन्ते",
+      "D) अद्य"
+    ],
+    "correctIndex": 0,
+    "explanation": "कर्मवाच्ये उक्तकर्मणि प्रथमा विभक्तिः भवति। अत्र 'समाचारपत्राणि' इति प्रथमाविभक्तौ बहुवचने अस्ति, तदनुसारमेव क्रिया 'लिख्यन्ते' अस्ति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch6-q2-5",
+    "category": "grade8_ch6",
+    "categoryLabel": "Grade 8 Ch 6: कर्मवाच्य-प्रयोग-कौशलम्",
+    "chapterRef": "Grade 8: षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम्",
+    "subCategory": "Quiz 2: Passive Voice & Verbal Syntaxes",
+    "question": "In the passive clause \"वृक्षाः कृत्यन्ते स्म\", which active voice verb form corresponds to the subject \"जनाः\"?",
+    "questionSanskrit": "'वृक्षाः कृत्यन्ते स्म' इत्यस्य कर्तृवाच्ये 'जनाः वृक्षान्...' क्रियापदं किं भवेत्?",
+    "options": [
+      "A) अकर्तयन् / कृन्तन्ति स्म (कटाई करते थे)",
+      "B) कृत्यन्ते",
+      "C) अकरोत्",
+      "D) कर्तिष्यन्ति"
+    ],
+    "correctIndex": 0,
+    "explanation": "कृत्/कर्त् धातोः कर्तृवाच्ये लङ्लकारे प्रथमपुरुषबहुवचने 'अकर्तयन्' अथवा लटि स्म-योगे 'कृन्तन्ति स्म' इति रूपं भवति।",
+    "difficulty": "hard",
+    "points": 10
   },
 ];

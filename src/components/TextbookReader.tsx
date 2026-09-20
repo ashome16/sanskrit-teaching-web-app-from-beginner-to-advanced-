@@ -288,6 +288,18 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · चतुर्थः पाठः — प्रणम्यो देशभक्तोऽयं गोपबन्धुर्महामनाः (Pages 36–44)</span>
         </div>
       )}
+      {activeLessonId === 'grade8_ch5' && (
+        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #faf5ff 0%, #eff6ff 100%)', borderColor: '#d8b4fe' }}>
+          <span className="textbook-cbse-pill" style={{ background: '#9333ea', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · पञ्चमः पाठः — गीता सुगीता कर्तव्या (Pages 49–58)</span>
+        </div>
+      )}
+      {activeLessonId === 'grade8_ch6' && (
+        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #f0fdf4 0%, #eff6ff 100%)', borderColor: '#86efac' }}>
+          <span className="textbook-cbse-pill" style={{ background: '#16a34a', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम् (Pages 61–66)</span>
+        </div>
+      )}
 
       <div className="textbook-toolbar-row">
         <button
@@ -454,6 +466,70 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 title="Go to Grade 8 Chapter 4 Printable Worksheets"
               >
                 📑 5 Worksheets (Humanitarian Service & Biography)
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'grade8_ch5' && (
+          <>
+            <button
+              type="button"
+              className="textbook-tool-btn textbook-tool-btn--syllabus"
+              onClick={() => setIsGrade8SyllabusOpen(true)}
+              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+            >
+              📜 पाठानुक्रमणिका (Class 8 Syllabus)
+            </button>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Grade 8 Chapter 5 Quizzes"
+              >
+                🎯 2 Quizzes (10 Qs)
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Grade 8 Chapter 5 Printable Worksheets"
+              >
+                📑 5 Worksheets (Bhagavad Gita Wisdom)
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'grade8_ch6' && (
+          <>
+            <button
+              type="button"
+              className="textbook-tool-btn textbook-tool-btn--syllabus"
+              onClick={() => setIsGrade8SyllabusOpen(true)}
+              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+            >
+              📜 पाठानुक्रमणिका (Class 8 Syllabus)
+            </button>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Grade 8 Chapter 6 Quizzes"
+              >
+                🎯 2 Quizzes (10 Qs)
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Grade 8 Chapter 6 Printable Worksheets"
+              >
+                📑 2 Worksheets (Digital India & Passive Voice)
               </button>
             )}
           </>
