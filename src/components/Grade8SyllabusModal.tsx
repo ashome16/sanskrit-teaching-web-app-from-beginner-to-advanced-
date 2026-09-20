@@ -187,7 +187,7 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
             </div>
           ) : (
             filteredChapters.map((ch) => {
-              const isAvailable = ch.status === 'available' || ch.id === 'grade8_prarthana' || ch.id === 'grade8_ch1' || ch.id === 'grade8_ch2';
+              const isAvailable = ch.status === 'available' || ch.id === 'grade8_prarthana' || ch.id === 'grade8_ch1' || ch.id === 'grade8_ch2' || ch.id === 'grade8_ch3';
               const isSpeaking = speakingId === ch.id;
               const isVerseSpeaking = speakingId === `${ch.id}_verse`;
 

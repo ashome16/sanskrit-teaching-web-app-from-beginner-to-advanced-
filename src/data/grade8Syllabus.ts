@@ -89,18 +89,18 @@ export const GRADE_8_SYLLABUS: Grade8Chapter[] = [
     "icon": "🕊️"
   },
   {
-    "id": "g8_ch03",
+    "id": "grade8_ch3",
     "num": "Chapter 3",
     "chNumber": "तृतीयः पाठः",
     "title": "सुभाषितरसं पीत्वा जीवनं सफलं कुरु",
     "englishTitle": "Drink the Nectar of Subhashitas to Make Life Fruitful",
-    "page": "Page 24",
+    "page": "Pages 24–35",
     "category": "shlokas",
     "genreBadge": "सुभाषितानि · Life Wisdom",
-    "theme": "Priceless classical maxims on virtuous association, relentless industry, charitable deeds, and self-restraint.",
-    "grammarFocus": "क्त्वा/ल्यप् प्रत्ययौ (पीत्वा, संश्रित्य), लोट्-लकारः (कुरु), सुभाषित-अन्वयः",
-    "sampleVerse": "सुभाषितरसं पीत्वा जीवनं सफलं कुरु । सन्मार्गेण चरन् नित्यं कीर्तिं लोके समर्जयेत् ॥",
-    "status": "in_curriculum",
+    "theme": "Timeless classical epigrams on genuine virtue, natural humility of the great, testing pure gold vs human character, eight illuminating qualities, and unyielding human effort.",
+    "grammarFocus": "सुभाषित-मञ्जरी, विसर्गसन्धिः (नम्रास्तरवः), यण्-सन्धिः (अभ्युपैति), तत्पुरुषसमासः",
+    "sampleVerse": "गायन्ति देवाः किल गीतकानि धन्यास्तु ते भारतभूमिभागे । स्वर्गापवर्गास्पदमार्गभूते भवन्ति भूयः पुरुषाः सुरत्वात् ॥",
+    "status": "available",
     "icon": "🍯"
   },
   {

@@ -276,6 +276,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · द्वितीयः पाठः — अल्पानामपि वस्तूनां संहतिः कार्यसाधिका (Pages 10–22)</span>
         </div>
       )}
+      {activeLessonId === 'grade8_ch3' && (
+        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #fefce8 0%, #eff6ff 100%)', borderColor: '#fde047' }}>
+          <span className="textbook-cbse-pill" style={{ background: '#d97706', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · तृतीयः पाठः — सुभाषितरसं पीत्वा जीवनं सफलं कुरु (Pages 24–35)</span>
+        </div>
+      )}
 
       <div className="textbook-toolbar-row">
         <button
@@ -378,6 +384,38 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 title="Go to Grade 8 Chapter 2 Printable Worksheet"
               >
                 📑 Grade 8 Chapter 2 Worksheet
+              </button>
+            )}
+          </>
+        )}
+        {activeLessonId === 'grade8_ch3' && (
+          <>
+            <button
+              type="button"
+              className="textbook-tool-btn textbook-tool-btn--syllabus"
+              onClick={() => setIsGrade8SyllabusOpen(true)}
+              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+            >
+              📜 पाठानुक्रमणिका (Class 8 Syllabus)
+            </button>
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Grade 8 Chapter 3 Quizzes"
+              >
+                🎯 4 Quizzes (21 Qs)
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-tool-btn textbook-tool-btn--ws"
+                onClick={onOpenWorksheets}
+                title="Go to Grade 8 Printable Worksheets"
+              >
+                📑 Grade 8 Worksheets
               </button>
             )}
           </>

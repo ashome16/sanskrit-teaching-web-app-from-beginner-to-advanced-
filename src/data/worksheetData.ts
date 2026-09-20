@@ -50,7 +50,7 @@ export const WORKSHEET_CATEGORIES = [
   { id: 'grammar', label: 'Vyākaraṇa / Grammar (10 Worksheets · व्याकरण-पत्राणि)', icon: '📐' },
   { id: 'vedic_maths', label: 'Vedic Maths Drills (वैदिक-गणितम्)', icon: '⚡' },
   { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
-  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 11 Worksheets)', icon: '🪕' },
+  { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 16 Worksheets)', icon: '🪕' },
 ] as const;
 
 export const WORKSHEETS: Worksheet[] = [
@@ -7891,4 +7891,358 @@ export const WORKSHEETS: Worksheet[] = [
     ],
   },
 
+
+  // ==========================================
+  // GRADE 8 CH 3 WORKSHEET 1: Subhashita Comprehension
+  // ==========================================
+  {
+    id: 'ws-grade8-ch3-ws1',
+    title: 'Chapter 3 Worksheet 1: Subhashita Comprehension & Verse Analysis (पठित-श्लोकावबोधनम्)',
+    titleSanskrit: 'तृतीयः पाठः कार्यपत्रिका १: श्लोकार्थ-अवबोधनम् अन्वयः च',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '45 Mins',
+    description: 'Sourced from Pages 25–26: Shloka comprehension of verses 2 and 3, word-to-word evaluation, and complete Anvaya fill-ins.',
+    sections: [
+      {
+        sectionTitle: 'Section A: Extract-Based Questions (पठित-अवबोधनम्)',
+        sectionTitleSanskrit: 'खण्डः "क" · पठित-अवबोधनम्',
+        instructions: 'Read the two shlokas below carefully and answer the following questions: \nगुणी गुणं वेत्ति न वेत्ति निर्गुणः बली बलं वेत्ति न वेत्ति निर्बलः।\nपिको वसन्तस्य गुणं न वायसः करी च सिंहस्य बलं न मूषकः॥\nभवन्ति नम्रास्तरवः फलोद्गमैः नवाम्बुभिर्दूरविलम्बिनो घनाः।\nअनुद्धताः सत्पुरुषाः समृद्धिभिः स्वभाव एवैष परोपकारिणाम्॥',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'एकपदेन उत्तरत (Answer in one word):\n१. कः वसन्तस्य गुणं वेत्ति?\n२. फलोद्गमैः के नम्राः भवन्ति?\n३. कः सिंहस्य बलं वेत्ति?\n४. समृद्धिकाले के अनुद्धताः भवन्ति?',
+            questionSanskrit: 'एकपदेन उत्तरत:',
+            marks: 4,
+            type: 'short_ans',
+            answer: '१. पिकः (कोयल); २. तरवः (वृक्षाः); ३. करी (गजः); ४. सत्पुरुषाः (सज्जनाः)',
+            explanation: 'पिकः वसन्तस्य गुणं वेत्ति; तरवः फलोद्गमैः नम्राः भवन्ति; करी सिंहस्य बलं वेत्ति; सत्पुरुषाः समृद्धिभिः अनुद्धताः भवन्ति।',
+          },
+          {
+            num: 2,
+            question: 'पूर्णवाक्येन उत्तरत (Answer in complete sentence):\n१. परोपकारिणां स्वभावः कीदृशः भवति?\n२. कः गुणं बलं च न जानाति?',
+            questionSanskrit: 'पूर्णवाक्येन उत्तरत:',
+            marks: 4,
+            type: 'short_ans',
+            answer: '१. परोपकारिणां स्वभावः समृद्धिभिः अपि नम्राः अनुद्धताः च भवितुम् एव अस्ति।\n२. निर्गुणः गुणं न वेत्ति, निर्बलः च बलं न वेत्ति।',
+            explanation: 'सज्जनाः प्रचुरसम्पत्तौ अपि अहङ्कारशून्याः भवन्ति; अयोग्यः जनः अन्यस्य योग्यतां ज्ञातुं न शक्नोति।',
+          },
+          {
+            num: 3,
+            question: 'निर्देशानुसारम् उत्तरत (Answer as directed):\n१. "वृक्षाः" इत्यस्य पर्यायपदं श्लोके किम् प्रयुक्तम्?\n२. "उद्धताः" (अहङ्कारिणः) इत्यस्य विलोमपदं किम्?',
+            questionSanskrit: 'निर्देशानुसारम् उत्तरत:',
+            marks: 2,
+            type: 'short_ans',
+            answer: '१. तरवः; २. अनुद्धताः',
+            explanation: 'तरवः = वृक्षाः / पादपाः; अनुद्धताः = नम्राः (उद्धताः इत्यस्य विलोमपदम्)।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: Anvaya Fill-in-the-Blanks (अन्वय-रिक्तस्थान-पूर्तिः)',
+        sectionTitleSanskrit: 'खण्डः "ख" · अन्वय-पूर्तिः',
+        instructions: 'Complete the Anvaya for Shloka 1 and Shloka 8 using the appropriate words:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 4,
+            question: 'मञ्जूषातः पदानि चित्वा अन्वयं पूरयत:\n[ देवाः, पुरुषाः, सुरत्वात्, गीतकानि ]\nअन्वयः १: भारतभूमिभागे ये भवन्ति ते धन्याः इति ______ (१) ______ (२) गायन्ति किल। स्वर्गापवर्गास्पदमार्गभूते तु ______ (३) भूयः ______ (४) भवन्ति।',
+            questionSanskrit: 'अन्वयं पूरयत (मन्त्र १):',
+            marks: 5,
+            type: 'fill',
+            answer: '१. देवाः, २. गीतकानि, ३. सुरत्वात्, ४. पुरुषाः',
+            explanation: 'देवाः गीतकानि गायन्ति किल; सुरत्वात् भूयः पुरुषाः भवन्ति।',
+          },
+          {
+            num: 5,
+            question: 'मञ्जूषातः पदानि चित्वा अन्वयं पूरयत:\n[ गतिः, सिध्यति, एकेन, पुरुषकारेण ]\nअन्वयः २: यथा हि ______ (१) चक्रेण रथस्य ______ (२) न भवेत्, एवं ______ (३) विना दैवं न ______ (४)।',
+            questionSanskrit: 'अन्वयं पूरयत (मन्त्र ८):',
+            marks: 5,
+            type: 'fill',
+            answer: '१. एकेन, २. गतिः, ३. पुरुषकारेण, ४. सिध्यति',
+            explanation: 'यथा हि एकेन चक्रेण रथस्य गतिः न भवेत्, एवं पुरुषकारेण विना दैवं न सिध्यति।',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ==========================================
+  // GRADE 8 CH 3 WORKSHEET 2: Virtues & Character Testing
+  // ==========================================
+  {
+    id: 'ws-grade8-ch3-ws2',
+    title: 'Chapter 3 Worksheet 2: Virtues & Character Testing (सद्गुणाः कनकपरीक्षा च)',
+    titleSanskrit: 'तृतीयः पाठः कार्यपत्रिका २: अष्टौ गुणाः कनकपरीक्षा च',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '40 Mins',
+    description: 'Sourced from Pages 27–28: Analysis of the fourfold test of gold/humans and the eight illuminating virtues.',
+    sections: [
+      {
+        sectionTitle: 'Section A: The Fourfold Testing Criteria (कनक-परीक्षा पुरुष-परीक्षा च)',
+        sectionTitleSanskrit: 'खण्डः "क" · चतुर्विधा परीक्षा',
+        instructions: 'Compare the testing of gold with the testing of human character (Shloka 4):',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'कनकस्य पुरुषस्य च परीक्षायाः चतुर्विधान् उपायान् लिखत:\n(क) कनकं कैः चतुर्भिः परीक्ष्यते? ➔ १. ____________ २. ____________ ३. ____________ ४. ____________\n(ख) पुरुषः कैः चतुर्भिः परीक्ष्यते? ➔ १. ____________ २. ____________ ३. ____________ ४. ____________',
+            questionSanskrit: 'परीक्षा-उपायान् लिखत:',
+            marks: 6,
+            type: 'short_ans',
+            answer: '(क) कनकस्य परीक्षा: १. निघर्षणेन (घिसकर), २. छेदनेन (काटकर), ३. तापेन (तपाकर), ४. ताडनेन (पीटकर)।\n(ख) पुरुषस्य परीक्षा: १. कुलेन (वंश/परिवार), २. शीलेन (सदाचार/स्वभाव), ३. गुणेन (सद्गुण), ४. कर्मणा (सत्कर्म)।',
+            explanation: 'यथा निघर्षण-च्छेदन-ताप-ताडनैः कनकं परीक्ष्यते, तथा कुलेन शीलेन गुणेन कर्मणा पुरुषः परीक्ष्यते।',
+          },
+          {
+            num: 2,
+            question: 'कनक-परीक्षायाः पुरुष-परीक्षायाः च मध्ये का समानता अस्ति? संक्षेपेण लिखत।',
+            questionSanskrit: 'समानतां वर्णयत:',
+            marks: 4,
+            type: 'short_ans',
+            answer: 'यथा बाह्यचमकं दृष्ट्वा सुवर्णस्य शुद्धता न ज्ञायते, अपितु कठोरपरीक्षणेन एव ज्ञायते; तथैव केवलं बाह्यरूपं दृष्ट्वा मनुष्यस्य श्रेष्ठता न ज्ञायते, अपितु तस्य कुलेन, शीलेन, सद्गुणैः, सत्कर्मभिः च तस्य वास्तविकं मूल्यं निर्धार्यते।',
+            explanation: 'आंतरिक गुणों और कर्मों की कसौटी पर ही वास्तविक श्रेष्ठता प्रमाणित होती है।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: The Eight Illuminating Virtues (अष्टौ गुणाः)',
+        sectionTitleSanskrit: 'खण्डः "ख" · अष्टगुणानां परिचयः',
+        instructions: 'Analyze the eight virtues from Shloka 5 that bring renown and honor to an individual:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 3,
+            question: 'श्लोकोक्तान् अष्टौ गुणान् लिखत तेषां च अर्थं स्पष्टीकुरुत:\n१. प्रज्ञा = ______________\n२. कौल्यम् = ______________\n३. दमः = ______________\n४. श्रुतम् = ______________\n५. पराक्रमः = ______________\n६. अबहुभाषिता = ______________\n७. दानं यथाशक्ति = ______________\n८. कृतज्ञता = ______________',
+            questionSanskrit: 'अष्टौ गुणान् तेषामर्थं च लिखत:',
+            marks: 8,
+            type: 'short_ans',
+            answer: '१. प्रज्ञा = तीव्र बुद्धि/विवेक (Wisdom); २. कौल्यम् = कुलीनता/उत्तम कुल के संस्कार (Noble lineage); ३. दमः = इन्द्रियसंयम (Sense control); ४. श्रुतम् = शास्त्रज्ञान/विद्या (Scriptural learning); ५. पराक्रमः = वीरता/साहस (Valor); ६. अबहुभाषिता = मितभाषिता/सार्थक बोलना (Reticence/measured speech); ७. दानं यथाशक्ति = सामर्थ्यानुसार दान (Charity per capacity); ८. कृतज्ञता = उपकार मानना (Gratitude)।',
+            explanation: 'अष्टौ गुणाः पुरुषं दीपयन्ति प्रज्ञा च कौल्यं च दमः श्रुतं च पराक्रमश्चाबहुभाषिता च दानं यथाशक्ति कृतज्ञता च।',
+          },
+          {
+            num: 4,
+            question: '"अबहुभाषिता" इति गुणस्य समाजे किं महत्त्वम् अस्ति?',
+            questionSanskrit: 'अबहुभाषितायाः महत्त्वं किम्?',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'व्यर्थं बहुभाषणेन समयस्य शक्तिनाशः भवति तथा च वचनस्य प्रभावः नश्यति। मितभाषी जनः यद् वदति तत् सारगर्भितं सत्यं च भवति, अतः समाजे सर्वत्र आदरं प्राप्नोति।',
+            explanation: 'कम और नापा-तुला सार्थक बोलना ही वाणी की श्रेष्ठ शोभा है।',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ==========================================
+  // GRADE 8 CH 3 WORKSHEET 3: Vocabulary & Synonyms
+  // ==========================================
+  {
+    id: 'ws-grade8-ch3-ws3',
+    title: 'Chapter 3 Worksheet 3: Complete Vocabulary & Synonyms (शब्दार्थाः पर्यायाः विलोमाः च)',
+    titleSanskrit: 'तृतीयः पाठः कार्यपत्रिका ३: शब्दार्थाः भाषाभ्यासः च',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '40 Mins',
+    description: 'Sourced from Pages 30–31: Vocabulary drill, synonyms, antonyms, and word usage from the 46 key terms.',
+    sections: [
+      {
+        sectionTitle: 'Section A: पर्यायाणां मेलनम् (Matching Synonyms)',
+        sectionTitleSanskrit: 'खण्डः "क" · समानार्थक-पदानि',
+        instructions: 'Match the Sanskrit words in Column A with their authentic synonyms in Column B:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'स्तम्भयोः मेलनं कुरुत:\n(क) अपवर्गः ➔ ____________\n(ख) करी ➔ ____________\n(ग) घनाः ➔ ____________\n(घ) कनकम् ➔ ____________\n(ङ) प्रज्ञा ➔ ____________\n(च) अङ्गारः ➔ ____________\n(छ) दैवम् ➔ ____________\n(ज) अनुद्धताः ➔ ____________\n(मञ्जूषा: मेघाः, सुवर्णम्, निर्वाणम्/मोक्षः, गजः, विशेषज्ञानम्/बुद्धिः, दग्धकाष्ठः, भाग्यम्, गर्वशून्याः)',
+            questionSanskrit: 'पर्यायपदानि मेलयत:',
+            marks: 8,
+            type: 'short_ans',
+            answer: '(क) अपवर्गः ➔ निर्वाणम् / मोक्षः; (ख) करी ➔ गजः; (ग) घनाः ➔ मेघाः; (घ) कनकम् ➔ सुवर्णम्; (ङ) प्रज्ञा ➔ विशेषज्ञानम् / बुद्धिः; (च) अङ्गारः ➔ दग्धकाष्ठः; (छ) दैवम् ➔ भाग्यम्; (ज) अनुद्धताः ➔ गर्वशून्याः।',
+            explanation: 'पाठ्यपुस्तकस्य पृष्ठ ३०–३१ आधारेण पर्यायपदानि।',
+          },
+          {
+            num: 2,
+            question: 'अधोलिखितानां पदानां हिन्द्यर्थं लिखत:\n१. दूरविलम्बिनः = ______________\n२. अबहुभाषिता = ______________',
+            questionSanskrit: 'हिन्द्यर्थं लिखत:',
+            marks: 2,
+            type: 'short_ans',
+            answer: '१. दूरविलम्बिनः = दूर से नीचे झुके हुए (बादल); २. अबहुभाषिता = कम और नापा-तुला बोलना (मितभाषिता)।',
+            explanation: 'दूरविलम्बिनः = दूरात् अधः अवनताः; अबहुभाषिता = मितभाषिता।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: विलोम-पदानि (Antonyms Matching)',
+        sectionTitleSanskrit: 'खण्डः "ख" · विपरीतार्थक-पदानि',
+        instructions: 'Provide the exact antonyms for the following words found in the chapter:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 3,
+            question: 'विलोमपदानि लिखत:\n१. गुणी ➔ ______________\n२. बली ➔ ______________\n३. नम्राः ➔ ______________\n४. सत्पुरुषः ➔ ______________\n५. उष्णः ➔ ______________\n६. सत्यम् ➔ ______________\n७. सख्यम् ➔ ______________\n८. कृतज्ञता ➔ ______________',
+            questionSanskrit: 'विलोमपदानि लिखत:',
+            marks: 8,
+            type: 'short_ans',
+            answer: '१. गुणी ➔ निर्गुणः; २. बली ➔ निर्बलः; ३. नम्राः ➔ उद्धताः (कठोराः); ४. सत्पुरुषः ➔ दुर्जनः; ५. उष्णः ➔ शीतः; ६. सत्यम् ➔ असत्यम् (छलम्); ७. सख्यम् ➔ शत्रुता; ८. कृतज्ञता ➔ कृतघ्नता।',
+            explanation: 'गुणी x निर्गुणः; बली x निर्बलः; सत्पुरुषः x दुर्जनः; उष्णः x शीतः; कृतज्ञता x कृतघ्नता।',
+          },
+          {
+            num: 4,
+            question: '"कृतज्ञता" तथा "कृतघ्नता" अनयोः पदयोः कः भेदः?',
+            questionSanskrit: 'भेदं स्पष्टीकुरुत:',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'कृतज्ञता नाम कृतानाम् उपकाराणां स्मरणम् आदरपूर्वकं स्वीकारः च। कृतघ्नता नाम उपकारं विस्मृत्य उपकारिणः एव अहितचिन्तनम्। कृतज्ञता देवगुणः अस्ति, कृतघ्नता तु महापातकम्।',
+            explanation: 'उपकार मानने का भाव कृतज्ञता है, उपकार भूलना कृतघ्नता है।',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ==========================================
+  // GRADE 8 CH 3 WORKSHEET 4: Sandhi Rules & Word Splits
+  // ==========================================
+  {
+    id: 'ws-grade8-ch3-ws4',
+    title: 'Chapter 3 Worksheet 4: Sandhi Rules & Word Splits (सन्धिविच्छेदः नियमाः च)',
+    titleSanskrit: 'तृतीयः पाठः कार्यपत्रिका ४: विसर्ग-यण्-सन्धयः पदच्छेदः च',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '40 Mins',
+    description: 'Sourced from Pages 32–33: Sandhi transformations (Visarga Sandhi, Yan Sandhi) and Padaccheda mastery.',
+    sections: [
+      {
+        sectionTitle: 'Section A: विसर्गसन्धि-अभ्यासः (Visarga Sandhi Transitions)',
+        sectionTitleSanskrit: 'खण्डः "क" · विसर्गसन्धिः',
+        instructions: 'Split or join the following terms following the Visarga rules from Page 32:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'सन्धिविच्छेदं कुरुत (Split the Sandhi):\n१. नम्रास्तरवः = ____________ + ____________\n२. धन्यास्तु = ____________ + ____________\n३. उष्णो दहति = ____________ + ____________\n४. पराक्रमश्चाबहुभाषिता = पराक्रमः + ____________ + अबहुभाषिता',
+            questionSanskrit: 'सन्धिविच्छेदं कुरुत:',
+            marks: 5,
+            type: 'grammar',
+            answer: '१. नम्राः + तरवः; २. धन्याः + तु; ३. उष्णः + दहति; ४. च (पराक्रमः + च + अबहुभाषिता)',
+            explanation: 'विसर्ग के बाद त्/थ् आने पर विसर्ग का स् होता है (नम्रास्तरवः, धन्यास्तु)। अ के बाद विसर्ग और घोषवर्ण आने पर ओ होता है (उष्णो दहति)।',
+          },
+          {
+            num: 2,
+            question: 'सन्धिं कुरुत (Join the Sandhi):\n१. सत्पुरुषाः + समृद्धिभिः = __________________\n२. शीतः + च = __________________\n३. गतिः + भवेत् = __________________\n४. स्वभावः + एव = __________________',
+            questionSanskrit: 'सन्धिं कुरुत:',
+            marks: 5,
+            type: 'grammar',
+            answer: '१. सत्पुरुषाः समृद्धिभिः (अथवा सत्पुरुषा समृद्धिभिः); २. शीतश्च; ३. गतिर्भवेत्; ४. स्वभाव एव (विसर्गलोपः)',
+            explanation: 'शीतः + च = शीतश्च (विसर्गस्य श्); गतिः + भवेत् = गतिर्भवेत् (विसर्गस्य र्); स्वभावः + एव = स्वभाव एव (अः + असमान स्वर ➔ विसर्गलोपः)।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: यण् एवं स्वर-सन्धयः (Yan & Vowel Sandhi)',
+        sectionTitleSanskrit: 'खण्डः "ख" · यण्-स्वर-सन्धयः',
+        instructions: 'Analyze the internal vowel junctions according to the textbook grammar box:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 3,
+            question: 'सन्धिविच्छेदं कुरुत:\n१. अभ्युपैति = ____________ + ____________ + ____________\n२. ह्येकेन = ____________ + ____________\n३. स्वभाव एवैषः = स्वभावः + एव + ____________\n४. तद्यच्छलम् = तत् + ____________ + छलम्',
+            questionSanskrit: 'सन्धिविच्छेदं कुरुत:',
+            marks: 6,
+            type: 'grammar',
+            answer: '१. अभि + उप + एति; २. हि + एकेन; ३. एषः; ४. यत्',
+            explanation: 'अभि + उप + एति = अभ्युपैति (यण् + वृद्धि); हि + एकेन = ह्येकेन (यण् सन्धि: इ -> य्); एव + एषः = एवैषः (वृद्धि सन्धि); तत् + यत् + छलम् = तद्यच्छलम्।',
+          },
+          {
+            num: 4,
+            question: '"अभ्युपैति" इति पदे घटितयोः द्वयोः सन्ध्योः नामनी लिखत।',
+            questionSanskrit: 'सन्धिद्वयं निर्दिशत:',
+            marks: 4,
+            type: 'grammar',
+            answer: '१. यण्-सन्धिः: अभि + उप ➔ अभ्युप (इकारस्य स्थाने यकारः)\n२. वृद्धि-सन्धिः: उप + एति ➔ उपैति (अ + ए ➔ ऐ)\nसंयुक्तं रूपम्: अभ्युपैति।',
+            explanation: 'अभ्युपैति पदे प्रथमं यण् सन्धिः ततः वृद्धि सन्धिः भवति।',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ==========================================
+  // GRADE 8 CH 3 WORKSHEET 5: Exercises & Life Wisdom
+  // ==========================================
+  {
+    id: 'ws-grade8-ch3-ws5',
+    title: 'Chapter 3 Worksheet 5: Exercises & Life Wisdom Application (अभ्यासकार्यम् जीवनमूल्यानि च)',
+    titleSanskrit: 'तृतीयः पाठः कार्यपत्रिका ५: पाठ्यपुस्तक-अभ्यासकार्यम् नैतिकशिक्षा च',
+    category: 'grade8',
+    categoryLabel: 'Grade 8 Sanskrit · CBSE Deepakam',
+    grade: 'CBSE Grade 8 (Deepakam Framework)',
+    totalMarks: 20,
+    timeLimit: '45 Mins',
+    description: 'Sourced from Pages 32–35: Solved textbook questions, metaphorical analysis of charcoal and chariot, and ethical application.',
+    sections: [
+      {
+        sectionTitle: 'Section A: पाठ्यपुस्तक-अभ्यास-प्रश्नोत्तराणि (Textbook Solved Questions)',
+        sectionTitleSanskrit: 'खण्डः "क" · अभ्यास-प्रश्नाः',
+        instructions: 'Answer the following textbook questions in complete sentences with proper grammar:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'पूर्णवाक्येन उत्तरत:\n(क) सत्यम् कदा सत्यम् न भवति?\n(ख) दैवं कदा न सिध्यति?\n(ग) केन सह सख्यं प्रीतिं च न कुर्यात्?',
+            questionSanskrit: 'पूर्णवाक्येन उत्तरत:',
+            marks: 6,
+            type: 'short_ans',
+            answer: '(क) यद् सत्यम् छलम् अभ्युपैति (कपटयुक्तं भवति) तत् कदापि सत्यम् न भवति।\n(ख) पुरुषकारेण (कठिनपरिश्रमेण) विना दैवं न सिध्यति।\n(ग) दुर्जनेन (दुष्टमनुष्येण) सह सख्यं प्रीतिं च कदापि न कुर्यात्।',
+            explanation: 'पृष्ठ ३२–३३ अभ्यासकार्यम् प्रश्न २ आधारेण।',
+          },
+          {
+            num: 2,
+            question: 'रिक्तस्थानानि पूरयत (मञ्जूषा: फलोद्गमैः, श्रुतम्, गुणं, शीलेन):\n१. गुणी ____________ वेत्ति न वेत्ति निर्गुणः।\n२. भवन्ति नम्राः तरवः ____________।\n३. पुरुषः परीक्ष्यते कुलेन ____________ गुणेन कर्मणा।\n४. गुणाः पुरुषं दीपयन्ति – प्रज्ञा, कौल्यं, दमः ____________।',
+            questionSanskrit: 'रिक्तस्थानानि पूरयत:',
+            marks: 4,
+            type: 'fill',
+            answer: '१. गुणं; २. फलोद्गमैः; ३. शीलेन; ४. श्रुतम्',
+            explanation: 'पृष्ठ ३३ प्रश्न ४ अभ्यासकार्यम्।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: उपमा-सौन्दर्यम् नैतिकशिक्षा च (Metaphor & Ethical Wisdom)',
+        sectionTitleSanskrit: 'खण्डः "ख" · उपमा-सौन्दर्यम् जीवनमूल्यानि च',
+        instructions: 'Explain the profound allegorical lessons taught in the subhashitas:',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 3,
+            question: '"उष्णो दहति चाङ्गारः शीतः कृष्णायते करम्" — अत्र दुर्जनस्य तुलना अङ्गारेण सह किमर्थं कृता? अस्याः उपमायाः भावार्थं स्पष्टीकुरुत।',
+            questionSanskrit: 'अङ्गार-उपमां स्पष्टीकुरुत:',
+            marks: 5,
+            type: 'short_ans',
+            answer: 'अङ्गारः (कोयला) यदा प्रज्वलितः उष्णः च भवति तदा स्पर्शमात्रेण हस्तं दग्धं करोति। यदा सः शीतः भवति तदा अपि हस्तं मलिनेन कालिमेन कृष्णायते। तथैव दुष्टजनः यदि क्रुद्धः भवेत् तर्हि प्रत्यक्षं विनाशं करोति, यदि च मित्ररूपेण तिष्ठेत् तर्हि अपकीर्तिं कलङ्कं च ददाति। अतः दुर्जनेन सह न मैत्री न च विरोधः करणीयः, अपितु दूरात् एव त्याज्यः।',
+            explanation: 'दुष्ट व्यक्ति हर हाल में नुकसानदेह होता है—क्रोधी होकर जलाता है और मित्र बनकर चरित्र कलंकित करता है।',
+          },
+          {
+            num: 4,
+            question: '"यथा ह्येकेन चक्रेण न रथस्य गतिर्भवेत् । एवं पुरुषकारेण विना दैवं न सिध्यति ॥" — अस्य श्लोकस्य नैतिकः सन्देशः कः? अस्माकं जीवने अस्य किं महत्त्वम्?',
+            questionSanskrit: 'नैतिकसन्देशं लिखत:',
+            marks: 5,
+            type: 'short_ans',
+            answer: 'अस्य श्लोकस्य मुख्यः सन्देशः अस्ति यत् मनुष्येण केवलं भाग्याश्रितेन भूत्वा न स्थातव्यम्। यथा रथः एकस्मिन् चक्रे स्थातुं चलितुं च न शक्नोति, तथैव मानवजीवनस्य रथः केवलं भाग्येन न सिध्यति। पुरुषार्थः (परिश्रमः) एव मुख्यं चक्रम् अस्ति। यदा वयं कर्म कुर्मः तदैव भाग्यम् अपि सहाय्यं करोति। अतः सर्वदा उद्योगी प्रयत्नशीलः च भवितव्यम्।',
+            explanation: 'परिश्रम ही जीवन-रथ का मुख्य पहिया है, बिना कर्म के भाग्य कभी फलित नहीं होता।',
+          },
+        ],
+      },
+    ],
+  },
 ];

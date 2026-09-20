@@ -311,6 +311,17 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     theme: 'The celebrated Hitopadesha fable of the united flock of doves lifting the hunter\'s snare through collective solidarity.',
     grammarFocus: 'ल्यप्-प्रत्ययः, सन्धिविच्छेदः, षष्ठी-विभक्तिः',
   },
+  {
+    id: 'grade8_ch3',
+    num: 'Grade 8 · Chapter 3',
+    title: 'सुभाषितरसं पीत्वा जीवनं सफलं कुरु (Pages 24–35)',
+    english: 'Drinking the Nectar of Epigrams, Make Life Successful (Subhashitas)',
+    icon: '🍯',
+    category: 'shlokas',
+    genreBadge: 'सुभाषितानि · Moral Epigrams',
+    theme: 'Priceless classical epigrams on virtue, humility, discriminating true friends, testing gold vs humans, eight noble qualities, and human effort.',
+    grammarFocus: 'सुभाषित-मञ्जरी, विसर्गसन्धिः (नम्रास्तरवः), यण्-सन्धिः (अभ्युपैति)',
+  },
 ];
 
 const HomePage: React.FC<HomePageProps> = ({
@@ -893,7 +904,7 @@ const HomePage: React.FC<HomePageProps> = ({
                     <span className="home-chapter-read-cta">
                       Read Lesson ➔
                     </span>
-                    {(ch.id === 'grade8_prarthana' || ch.id === 'grade8_ch1' || ch.id === 'grade8_ch2') && (
+                    {(ch.id === 'grade8_prarthana' || ch.id === 'grade8_ch1' || ch.id === 'grade8_ch2' || ch.id === 'grade8_ch3') && (
                       <button
                         type="button"
                         style={{
