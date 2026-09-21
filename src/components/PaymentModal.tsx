@@ -3,6 +3,28 @@ import { useAuthStore } from '../store/authStore';
 import type { PaymentTransaction } from '../types/auth';
 import '../styles/payment-modal.css';
 
+function buildUpiPayUri(vpa: string, payee: string): string {
+  // Manual encode — URLSearchParams uses "+" for spaces, which breaks UPI apps.
+  return (
+    `upi://pay?pa=${encodeURIComponent(vpa)}` +
+    `&pn=${encodeURIComponent(payee)}` +
+    `&am=200.00&cu=INR&tn=${encodeURIComponent('EdNet Monthly Access')}`
+  );
+}
+
+/** Detect phones/tablets where a UPI app can handle upi:// — never use on desktop (WhatsApp hijack). */
+function isMobileUpiCapable(): boolean {
+  if (typeof navigator === 'undefined') return false;
+  const ua = navigator.userAgent || '';
+  const mobileUa =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua);
+  const coarsePointer =
+    typeof window !== 'undefined' &&
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(pointer: coarse)').matches;
+  return mobileUa || (coarsePointer && /Android|iPhone|iPad|iPod/i.test(ua));
+}
+
 const PaymentModal: React.FC = () => {
   const {
     isPaymentModalOpen,
@@ -16,6 +38,7 @@ const PaymentModal: React.FC = () => {
 
   const [utrNumber, setUtrNumber] = useState('');
   const [isCopied, setIsCopied] = useState(false);
+  const [desktopPayTip, setDesktopPayTip] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [pendingTxn, setPendingTxn] = useState<PaymentTransaction | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -37,10 +60,33 @@ const PaymentModal: React.FC = () => {
         })
       : '';
 
-  const handleCopyUpi = () => {
-    navigator.clipboard.writeText(storeUpiVpa);
-    setIsCopied(true);
-    setTimeout(() => setIsCopied(false), 2000);
+  const handleCopyUpi = async () => {
+    try {
+      await navigator.clipboard.writeText(storeUpiVpa);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch {
+      setIsCopied(false);
+    }
+  };
+
+  const handleSmartPay = async () => {
+    setErrorMessage(null);
+    if (isMobileUpiCapable()) {
+      // Mobile: open official UPI collect intent (PhonePe / GPay / BHIM). No fake success.
+      window.location.href = buildUpiPayUri(storeUpiVpa, storeUpiPayee);
+      return;
+    }
+    // Desktop: never fire upi:// (WhatsApp hijacks). Copy VPA + tip only.
+    try {
+      await navigator.clipboard.writeText(storeUpiVpa);
+      setIsCopied(true);
+      setDesktopPayTip(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch {
+      setDesktopPayTip(true);
+      setErrorMessage(`Could not copy automatically. Please copy this UPI ID: ${storeUpiVpa}`);
+    }
   };
 
   const handleSubmitUtr = async () => {
@@ -79,7 +125,19 @@ const PaymentModal: React.FC = () => {
     setPendingTxn(null);
     setErrorMessage(null);
     setIsProcessing(false);
+    setDesktopPayTip(false);
+    setUtrNumber('');
     closePaymentModal();
+  };
+
+  const goRegister = () => {
+    handleClose();
+    openAuthModal('register');
+  };
+
+  const goLogin = () => {
+    handleClose();
+    openAuthModal('login');
   };
 
   return (
@@ -110,7 +168,14 @@ const PaymentModal: React.FC = () => {
             </div>
           </div>
 
-          {trialActive ? (
+          {!currentUser ? (
+            <>
+              <span className="payment-plan-badge">🆓 Start with a free account</span>
+              <h2 id="payment-modal-title" className="payment-modal-title">
+                Create an account first
+              </h2>
+            </>
+          ) : trialActive ? (
             <>
               <span className="payment-plan-badge">🎉 Free Trial Active</span>
               <h2 id="payment-modal-title" className="payment-modal-title">
@@ -135,7 +200,68 @@ const PaymentModal: React.FC = () => {
           )}
         </div>
 
-        {trialActive ? (
+        {/* 1) Guest: account-first gate only — no QR / Copy VPA / UTR */}
+        {!currentUser ? (
+          <div className="payment-modal-body">
+            <div className="payment-success-box" style={{ padding: '1.5rem 1.75rem' }}>
+              <div
+                className="payment-success-icon"
+                style={{ background: '#fef3c7', color: '#b45309' }}
+              >
+                👤
+              </div>
+              <h3 className="payment-success-title">Account required</h3>
+              <p className="payment-success-sub" style={{ maxWidth: '28rem', margin: '0 auto' }}>
+                Please create a free account first. You get a 14-day free trial. After you sign up,
+                you can subscribe and pay via UPI when needed.
+              </p>
+              <div
+                style={{
+                  marginTop: '1.35rem',
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '0.65rem',
+                  justifyContent: 'center',
+                }}
+              >
+                <button
+                  type="button"
+                  className="receipt-done-btn"
+                  onClick={goRegister}
+                  style={{
+                    background: 'linear-gradient(135deg, #15803d 0%, #166534 100%)',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: '8px',
+                    padding: '0.7rem 1.35rem',
+                    fontWeight: 700,
+                    fontSize: '0.9rem',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Create free account
+                </button>
+                <button
+                  type="button"
+                  onClick={goLogin}
+                  style={{
+                    background: '#ffffff',
+                    color: '#273b35',
+                    border: '2px solid #273b35',
+                    borderRadius: '8px',
+                    padding: '0.65rem 1.25rem',
+                    fontWeight: 700,
+                    fontSize: '0.9rem',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Sign in
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : trialActive ? (
+          /* 2) Logged in + active trial: no UPI form */
           <div className="payment-modal-body">
             <div className="payment-success-box" style={{ padding: '1.5rem 1.75rem' }}>
               <div
@@ -192,7 +318,7 @@ const PaymentModal: React.FC = () => {
             </p>
           </div>
         ) : pendingTxn ? (
-          /* Short acknowledgment only — no receipt card / Reference ID / PAID UI */
+          /* Short acknowledgment only — no fake receipt / PAID UI */
           <div className="payment-modal-body">
             <div className="payment-success-box" style={{ padding: '1.5rem 1.75rem' }}>
               <div
@@ -239,43 +365,8 @@ const PaymentModal: React.FC = () => {
             </div>
           </div>
         ) : (
+          /* 3) Logged in + trial ended / needs pay: QR + smart Pay + Copy VPA + UTR */
           <>
-            {!currentUser && (
-              <div
-                style={{
-                  background: '#fef3c7',
-                  borderBottom: '1px solid #fde68a',
-                  padding: '0.75rem 1.75rem',
-                  fontSize: '0.85rem',
-                  color: '#92400e',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                }}
-              >
-                <span>ℹ️ Sign in or register to link this subscription to your account.</span>
-                <button
-                  type="button"
-                  onClick={() => {
-                    closePaymentModal();
-                    openAuthModal('login');
-                  }}
-                  style={{
-                    background: '#92400e',
-                    color: '#ffffff',
-                    border: 'none',
-                    borderRadius: '6px',
-                    padding: '0.2rem 0.6rem',
-                    fontSize: '0.75rem',
-                    fontWeight: 700,
-                    cursor: 'pointer',
-                  }}
-                >
-                  Sign In
-                </button>
-              </div>
-            )}
-
             {errorMessage && (
               <div
                 style={{
@@ -319,22 +410,23 @@ const PaymentModal: React.FC = () => {
                   }}
                 >
                   <li>
-                    Pay <strong>₹200</strong> to the UPI ID shown below — on phone: open any UPI
-                    app and pay to this UPI ID (or scan the QR); on computer: scan the QR with
-                    your phone.
+                    Pay <strong>₹200</strong> to the UPI ID shown below — on phone: tap{' '}
+                    <strong>Pay ₹200 with UPI app</strong> or scan the QR; on computer: scan the
+                    QR or use the Pay button to copy the UPI ID.
                   </li>
                   <li>
                     Then enter the <strong>12-digit UTR / Ref</strong> from your UPI app.
                   </li>
                   <li>
-                    Tap <strong>Submit UTR</strong> — Premium unlocks only after we verify the payment.
+                    Tap <strong>Submit UTR</strong> — Premium unlocks only after we verify the
+                    payment.
                   </li>
                 </ol>
 
                 <div className="upi-qr-card">
                   <img
                     src={`https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=8&data=${encodeURIComponent(
-                      `upi://pay?pa=${storeUpiVpa}&pn=${encodeURIComponent(storeUpiPayee)}&am=200.00&cu=INR&tn=Monthly%20Access%20Pass`
+                      buildUpiPayUri(storeUpiVpa, storeUpiPayee)
                     )}`}
                     alt={`Scan to pay ₹200 via UPI to ${storeUpiVpa}`}
                     style={{
@@ -359,19 +451,72 @@ const PaymentModal: React.FC = () => {
                       lineHeight: 1.4,
                     }}
                   >
-                    On phone: open any UPI app → Pay to this UPI ID (or scan the QR). On
-                    computer: scan the QR with your phone. Premium unlocks after we verify
-                    your payment (usually within a few hours).
+                    On phone: open any UPI app → Pay to this UPI ID (or scan the QR). On computer:
+                    scan the QR with your phone. Premium unlocks after we verify your payment
+                    (usually within a few hours).
                   </p>
                 </div>
 
                 <div className="upi-id-pill">
                   <span className="upi-id-text">{storeUpiVpa}</span>
                   <button type="button" className="upi-copy-btn" onClick={handleCopyUpi}>
-                    {isCopied ? '✓ Copied' : 'Copy VPA'}
+                    {isCopied && !desktopPayTip ? '✓ Copied' : isCopied ? '✓ Copied' : 'Copy VPA'}
                   </button>
                 </div>
 
+                {/* Smart Pay: mobile → upi:// intent; desktop → copy VPA (never raw upi:// link) */}
+                <div style={{ marginTop: '1rem', textAlign: 'center' }}>
+                  <button
+                    type="button"
+                    onClick={handleSmartPay}
+                    style={{
+                      width: '100%',
+                      maxWidth: '22rem',
+                      background: 'linear-gradient(135deg, #0f766e 0%, #0d9488 100%)',
+                      color: '#ffffff',
+                      border: 'none',
+                      borderRadius: '10px',
+                      padding: '0.75rem 1.1rem',
+                      fontWeight: 700,
+                      fontSize: '0.92rem',
+                      cursor: 'pointer',
+                      boxShadow: '0 2px 10px rgba(13, 148, 136, 0.28)',
+                    }}
+                  >
+                    Pay ₹200 with UPI app
+                  </button>
+                  <p
+                    style={{
+                      margin: '0.45rem auto 0',
+                      maxWidth: '22rem',
+                      fontSize: '0.72rem',
+                      color: '#64748b',
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    Official UPI collect — we unlock access after we see your payment.
+                  </p>
+                  {desktopPayTip && (
+                    <p
+                      role="status"
+                      style={{
+                        margin: '0.75rem auto 0',
+                        maxWidth: '24rem',
+                        padding: '0.65rem 0.85rem',
+                        background: '#ecfdf5',
+                        border: '1px solid #a7f3d0',
+                        borderRadius: '8px',
+                        fontSize: '0.82rem',
+                        color: '#065f46',
+                        lineHeight: 1.45,
+                        textAlign: 'left',
+                      }}
+                    >
+                      UPI ID copied. Open GPay / PhonePe / any UPI app on your phone → Pay ₹200 to{' '}
+                      <strong>{storeUpiVpa}</strong>. Then paste the UTR below.
+                    </p>
+                  )}
+                </div>
 
                 <div className="upi-input-wrap" style={{ marginTop: '1.1rem' }}>
                   <label htmlFor="upi-utr-input" className="upi-input-label">
@@ -386,7 +531,9 @@ const PaymentModal: React.FC = () => {
                       className="upi-input-field"
                       placeholder="e.g. 425619874521"
                       value={utrNumber}
-                      onChange={(e) => setUtrNumber(e.target.value.replace(/[^\d]/g, '').slice(0, 12))}
+                      onChange={(e) =>
+                        setUtrNumber(e.target.value.replace(/[^\d]/g, '').slice(0, 12))
+                      }
                     />
                     <button
                       type="button"
@@ -401,7 +548,9 @@ const PaymentModal: React.FC = () => {
                         fontWeight: 700,
                         fontSize: '0.82rem',
                         cursor:
-                          utrNumber.trim().length === 12 && !isProcessing ? 'pointer' : 'not-allowed',
+                          utrNumber.trim().length === 12 && !isProcessing
+                            ? 'pointer'
+                            : 'not-allowed',
                         whiteSpace: 'nowrap',
                         opacity: utrNumber.trim().length === 12 && !isProcessing ? 1 : 0.6,
                       }}
