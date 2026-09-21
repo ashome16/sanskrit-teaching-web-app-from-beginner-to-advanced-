@@ -23,7 +23,7 @@ const FAQ_DATA: FAQItem[] = [
     category: 'trial_pricing',
     question: 'What payment methods are supported for the ₹200/month plan?',
     answer:
-      'We accept all major convenient payment methods: UPI (instant QR scan or VPA payment with Google Pay, PhonePe, Paytm, BHIM, Cred, and any bank UPI app), Apple Pay ( Pay on iOS and macOS Safari), and Google Pay (GPay). Payments are activated immediately upon confirmation with instant digital invoice receipts.',
+      'Pay ₹200 via UPI only: scan the QR or pay to our VPA using Google Pay, PhonePe, Paytm, BHIM, Cred, or any bank UPI app, then submit your 12-digit UTR / Ref number. Premium access unlocks after we verify your payment (usually within a few hours).',
   },
   {
     id: 'faq-account',
@@ -94,7 +94,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
               className="faq-pricing-pay-cta"
               onClick={openPaymentModal}
             >
-              💳 Subscribe / Pay ₹200 via UPI · Apple Pay · GPay
+              💳 Subscribe / Pay ₹200 via UPI
             </button>
           </div>
         </div>

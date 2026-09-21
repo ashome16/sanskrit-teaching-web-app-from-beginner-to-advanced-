@@ -98,7 +98,7 @@ export const LegalModals: React.FC<LegalModalsProps> = ({ activeModal, onClose }
             <section className="legal-modal-section">
               <h3>3. Payment Information Security</h3>
               <p>
-                Payment processing for Gurukul memberships is performed securely via encrypted gateways (UPI, GPay, Apple Pay, Net Banking, and Debit/Credit Cards). EdNet Learn does not store your bank credentials, UPI PINs, or CVVs on our servers.
+                Gurukul memberships are paid via UPI to our published VPA / QR. After you submit your UTR, access is unlocked once we verify the transfer. EdNet Learn does not store your bank credentials, UPI PINs, or CVVs.
               </p>
             </section>
 

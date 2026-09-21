@@ -605,57 +605,13 @@ export const useAuthStore = create<AuthState>((set, get) => {
       return Math.ceil(msLeft / (24 * 60 * 60 * 1000));
     },
 
-    processPayment: async (method: PaymentMethod, upiId?: string) => {
-      const { currentUser, accounts } = get();
-      if (!currentUser) {
-        return { success: false, error: 'Please sign in or register to complete payment.' };
-      }
-      const currentAccount = accounts[currentUser.id];
-      if (!currentAccount) {
-        return { success: false, error: 'User account not found.' };
-      }
-
-      // Simulate gateway latency
-      await new Promise((resolve) => setTimeout(resolve, 750));
-
-      const now = Date.now();
-      const txnId = 'TXN_' + now.toString().slice(-7) + '_' + Math.random().toString(36).substring(2, 6).toUpperCase();
-      const newTransaction: PaymentTransaction = {
-        id: txnId,
-        amountInr: MONTHLY_PRICE_INR,
-        paymentMethod: method,
-        upiId: upiId || (method === 'upi' ? get().upiVpa : undefined),
-        timestamp: now,
-        status: 'success',
-        planName: 'Monthly Unlimited Access Pass',
-        billingPeriod: '30 Days',
+    // Client-side auto-activation disabled: Premium unlocks only after admin verifies UPI.
+    processPayment: async (_method: PaymentMethod, _upiId?: string) => {
+      return {
+        success: false,
+        error:
+          'Please pay via UPI QR and submit your UTR. Access unlocks after verification.',
       };
-
-      const updatedProfile: UserProfile = {
-        ...currentUser,
-        planStatus: 'active',
-        activeSubscriptionSince: currentUser.activeSubscriptionSince || now,
-        subscriptionRenewsAt: now + 30 * 24 * 60 * 60 * 1000,
-        lastPaymentMethod: method,
-        transactions: [newTransaction, ...(currentUser.transactions || [])],
-      };
-
-      const updatedAccounts = {
-        ...accounts,
-        [currentUser.id]: {
-          ...currentAccount,
-          profile: updatedProfile,
-        },
-      };
-
-      saveAccounts(updatedAccounts);
-
-      set({
-        currentUser: updatedProfile,
-        accounts: updatedAccounts,
-      });
-
-      return { success: true, transaction: newTransaction };
     },
 
     // Admin State & Methods

@@ -188,7 +188,7 @@ const UserProfileModal: React.FC = () => {
                   : `Your trial has expired. Subscribe to regain full access to all 15 chapters and interactive audio features.`}
               </p>
               <div className="profile-membership-price">
-                Plan: ₹200 / month · Supported via <strong>UPI, Apple Pay &amp; Google Pay</strong>
+                Plan: ₹200 / month · Pay via <strong>UPI / QR</strong>
               </div>
 
               <div style={{ marginTop: '0.9rem' }}>
@@ -216,8 +216,8 @@ const UserProfileModal: React.FC = () => {
                   <span>💳</span>
                   <span>
                     {currentUser.planStatus === 'active'
-                      ? 'Renew / Pay with UPI · Apple Pay · GPay'
-                      : 'Subscribe Now for ₹200 / mo (UPI, Apple Pay, GPay)'}
+                      ? 'Renew / Pay with UPI'
+                      : 'Subscribe Now for ₹200 / mo (UPI)'}
                   </span>
                 </button>
               </div>

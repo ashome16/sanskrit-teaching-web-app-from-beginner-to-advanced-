@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuthStore } from '../store/authStore';
-import type { PaymentMethod, PaymentTransaction } from '../types/auth';
+import type { PaymentTransaction } from '../types/auth';
 import '../styles/payment-modal.css';
 
 const PaymentModal: React.FC = () => {
@@ -9,18 +9,15 @@ const PaymentModal: React.FC = () => {
     closePaymentModal,
     currentUser,
     openAuthModal,
-    processPayment,
     submitManualUpiPayment,
     upiVpa: storeUpiVpa,
     upiPayeeName: storeUpiPayee,
   } = useAuthStore();
 
-  const [selectedMethod, setSelectedMethod] = useState<PaymentMethod>('upi');
-  const [upiVpa, setUpiVpa] = useState('');
   const [utrNumber, setUtrNumber] = useState('');
   const [isCopied, setIsCopied] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [completedTxn, setCompletedTxn] = useState<PaymentTransaction | null>(null);
+  const [pendingTxn, setPendingTxn] = useState<PaymentTransaction | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   if (!isPaymentModalOpen) return null;
@@ -31,30 +28,6 @@ const PaymentModal: React.FC = () => {
     setTimeout(() => setIsCopied(false), 2000);
   };
 
-  const handlePay = async (method: PaymentMethod, vpa?: string) => {
-    if (!currentUser) {
-      closePaymentModal();
-      openAuthModal('login');
-      return;
-    }
-
-    setIsProcessing(true);
-    setErrorMessage(null);
-
-    try {
-      const res = await processPayment(method, vpa || upiVpa);
-      setIsProcessing(false);
-      if (res.success && res.transaction) {
-        setCompletedTxn(res.transaction);
-      } else {
-        setErrorMessage(res.error || 'Payment could not be completed. Please try again.');
-      }
-    } catch {
-      setIsProcessing(false);
-      setErrorMessage('Network error while processing payment. Please try again.');
-    }
-  };
-
   const handleSubmitUtr = async () => {
     if (!utrNumber.trim()) return;
     if (!currentUser) {
@@ -63,14 +36,21 @@ const PaymentModal: React.FC = () => {
       return;
     }
 
+    const digits = utrNumber.trim().replace(/\s+/g, '');
+    if (!/^\d{12}$/.test(digits)) {
+      setErrorMessage('Please enter the 12-digit UTR / Ref number from your UPI app.');
+      return;
+    }
+
     setIsProcessing(true);
     setErrorMessage(null);
 
     try {
-      const res = await submitManualUpiPayment(utrNumber.trim(), upiVpa || storeUpiVpa);
+      const res = await submitManualUpiPayment(digits, storeUpiVpa);
       setIsProcessing(false);
       if (res.success && res.transaction) {
-        setCompletedTxn(res.transaction);
+        setPendingTxn(res.transaction);
+        setUtrNumber('');
       } else {
         setErrorMessage(res.error || 'Could not record UTR. Please try again.');
       }
@@ -81,15 +61,13 @@ const PaymentModal: React.FC = () => {
   };
 
   const handleClose = () => {
-    setCompletedTxn(null);
+    setPendingTxn(null);
     setErrorMessage(null);
     setIsProcessing(false);
     closePaymentModal();
   };
 
-  const handlePrint = () => {
-    window.print();
-  };
+  const upiDeepLink = `upi://pay?pa=${encodeURIComponent(storeUpiVpa)}&pn=${encodeURIComponent(storeUpiPayee)}&am=200.00&cu=INR&tn=Monthly%20Access%20Pass`;
 
   return (
     <div className="payment-modal-backdrop" onClick={handleClose}>
@@ -133,111 +111,98 @@ const PaymentModal: React.FC = () => {
           </p>
         </div>
 
-        {/* Processing State */}
         {isProcessing ? (
           <div className="payment-processing-box">
             <div className="payment-spinner" />
-            <h3 className="payment-processing-text">
-              {selectedMethod === 'upi' && 'Verifying UPI Transaction...'}
-              {selectedMethod === 'apple_pay' && 'Authorizing with Apple Pay...'}
-              {selectedMethod === 'gpay' && 'Connecting to Google Pay...'}
-              {selectedMethod === 'card' && 'Securing Card Transaction...'}
-            </h3>
+            <h3 className="payment-processing-text">Submitting your UTR…</h3>
             <p className="payment-processing-sub">
-              Please do not close this window. Confirming with payment gateway...
+              Please wait while we record your payment reference for verification.
             </p>
           </div>
-        ) : completedTxn ? (
-          /* Receipt & Success State */
+        ) : pendingTxn ? (
+          /* Pending acknowledgment only — no fake paid receipt */
           <div className="payment-modal-body">
             <div className="payment-success-box">
-              <div className="payment-success-icon" style={completedTxn.status === 'pending' ? { background: '#fef3c7', color: '#b45309' } : undefined}>
-                {completedTxn.status === 'pending' ? '⏳' : '✓'}
+              <div
+                className="payment-success-icon"
+                style={{ background: '#fef3c7', color: '#b45309' }}
+              >
+                ⏳
               </div>
-              <h3 className="payment-success-title">
-                {completedTxn.status === 'pending' ? 'UTR Submitted for Verification!' : 'Payment Successful!'}
-              </h3>
+              <h3 className="payment-success-title">UTR received — pending verification</h3>
               <p className="payment-success-sub">
-                {completedTxn.status === 'pending'
-                  ? 'Your transaction has been submitted to the administration desk. You will receive active access once verified.'
-                  : 'Your monthly subscription is now active. Thank you for learning Sanskrit!'}
+                UTR received — we will unlock access after verifying your payment. Your plan stays on
+                trial/expired until an admin confirms the UPI transfer.
               </p>
 
               <div className="payment-receipt-card">
                 <div className="receipt-row">
-                  <span className="receipt-label">Receipt / Order ID</span>
-                  <span className="receipt-val">{completedTxn.id}</span>
+                  <span className="receipt-label">Reference ID</span>
+                  <span className="receipt-val">{pendingTxn.id}</span>
                 </div>
-                {completedTxn.utrNumber && (
+                {pendingTxn.utrNumber && (
                   <div className="receipt-row">
-                    <span className="receipt-label">UPI UTR / Ref Number</span>
+                    <span className="receipt-label">UTR / Ref Number</span>
                     <span className="receipt-val" style={{ fontWeight: 700, color: '#1f2937' }}>
-                      {completedTxn.utrNumber}
+                      {pendingTxn.utrNumber}
                     </span>
                   </div>
                 )}
                 <div className="receipt-row">
-                  <span className="receipt-label">Amount Paid</span>
-                  <span className="receipt-val">₹{completedTxn.amountInr}.00</span>
+                  <span className="receipt-label">Amount (to verify)</span>
+                  <span className="receipt-val">₹{pendingTxn.amountInr}.00</span>
                 </div>
                 <div className="receipt-row">
-                  <span className="receipt-label">Payment Method</span>
-                  <span className="receipt-val" style={{ textTransform: 'uppercase' }}>
-                    {completedTxn.paymentMethod.replace('_', ' ')}
+                  <span className="receipt-label">Status</span>
+                  <span className="receipt-val" style={{ color: '#b45309', fontWeight: 700 }}>
+                    Pending admin verification
                   </span>
                 </div>
-                {completedTxn.upiId && (
-                  <div className="receipt-row">
-                    <span className="receipt-label">UPI VPA</span>
-                    <span className="receipt-val">{completedTxn.upiId}</span>
-                  </div>
-                )}
                 <div className="receipt-row">
-                  <span className="receipt-label">Date &amp; Time</span>
+                  <span className="receipt-label">Submitted</span>
                   <span className="receipt-val">
-                    {new Date(completedTxn.timestamp).toLocaleString('en-IN', {
+                    {new Date(pendingTxn.timestamp).toLocaleString('en-IN', {
                       dateStyle: 'medium',
                       timeStyle: 'short',
                     })}
                   </span>
                 </div>
-                <div className="receipt-row">
-                  <span className="receipt-label">Access Validity</span>
-                  <span className="receipt-val" style={{ color: '#15803d' }}>
-                    Active for 30 Days (Until{' '}
-                    {new Date(completedTxn.timestamp + 30 * 24 * 60 * 60 * 1000).toLocaleDateString(
-                      'en-IN',
-                      { dateStyle: 'medium' }
-                    )}
-                    )
-                  </span>
-                </div>
               </div>
 
               <div className="payment-receipt-actions">
-                <button
-                  type="button"
-                  className="receipt-print-btn"
-                  onClick={handlePrint}
-                >
-                  🖨️ Print Receipt
-                </button>
-                <button
-                  type="button"
-                  className="receipt-done-btn"
-                  onClick={handleClose}
-                >
-                  Continue Learning ➔
+                <button type="button" className="receipt-done-btn" onClick={handleClose}>
+                  Close
                 </button>
               </div>
 
-              <div style={{ marginTop: '1rem', textAlign: 'center', fontSize: '0.78rem', color: '#6b7280', borderTop: '1px solid #f3f4f6', paddingTop: '0.75rem' }}>
-                Need invoice or payment assistance? Email <a href="mailto:care@ednetlearn.in" style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}>care@ednetlearn.in</a> or <a href="mailto:admin@ednetlearn.in" style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}>admin@ednetlearn.in</a>
+              <div
+                style={{
+                  marginTop: '1rem',
+                  textAlign: 'center',
+                  fontSize: '0.78rem',
+                  color: '#6b7280',
+                  borderTop: '1px solid #f3f4f6',
+                  paddingTop: '0.75rem',
+                }}
+              >
+                Questions? Email{' '}
+                <a
+                  href="mailto:care@ednetlearn.in"
+                  style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}
+                >
+                  care@ednetlearn.in
+                </a>{' '}
+                or{' '}
+                <a
+                  href="mailto:admin@ednetlearn.in"
+                  style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}
+                >
+                  admin@ednetlearn.in
+                </a>
               </div>
             </div>
           </div>
         ) : (
-          /* Payment Methods & Flow */
           <>
             {!currentUser && (
               <div
@@ -290,236 +255,177 @@ const PaymentModal: React.FC = () => {
               </div>
             )}
 
-            {/* Payment Method Selector Tabs */}
-            <div className="payment-methods-grid">
-              <button
-                type="button"
-                className={`payment-method-tab${selectedMethod === 'upi' ? ' active' : ''}`}
-                onClick={() => setSelectedMethod('upi')}
-              >
-                <span className="pm-tab-icon">📱</span>
-                <span className="pm-tab-label">UPI / QR</span>
-              </button>
-
-              <button
-                type="button"
-                className={`payment-method-tab${selectedMethod === 'apple_pay' ? ' active' : ''}`}
-                onClick={() => setSelectedMethod('apple_pay')}
-              >
-                <span className="pm-tab-icon">🍏</span>
-                <span className="pm-tab-label">Apple Pay</span>
-              </button>
-
-              <button
-                type="button"
-                className={`payment-method-tab${selectedMethod === 'gpay' ? ' active' : ''}`}
-                onClick={() => setSelectedMethod('gpay')}
-              >
-                <span className="pm-tab-icon">🌐</span>
-                <span className="pm-tab-label">Google Pay</span>
-              </button>
+            <div
+              style={{
+                padding: '0.65rem 1.75rem',
+                borderBottom: '1px solid #e2e8f0',
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                color: '#273b35',
+                background: '#f8fafc',
+              }}
+            >
+              📱 Pay via UPI / QR only
             </div>
 
-            {/* Payment Body Content */}
             <div className="payment-modal-body">
-              {/* UPI Tab */}
-              {selectedMethod === 'upi' && (
-                <div className="upi-box">
-                  <div className="upi-qr-card">
-                    <img
-                      src={`https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=8&data=${encodeURIComponent(
-                        `upi://pay?pa=${storeUpiVpa}&pn=${encodeURIComponent(storeUpiPayee)}&am=200.00&cu=INR&tn=Monthly%20Access%20Pass`
-                      )}`}
-                      alt={`Scan to pay ₹200 via UPI to ${storeUpiVpa}`}
-                      style={{
-                        width: '160px',
-                        height: '160px',
-                        borderRadius: '10px',
-                        border: '1px solid #e2e8f0',
-                        background: '#ffffff',
-                        padding: '6px',
-                        display: 'block',
-                        margin: '0 auto',
-                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
-                      }}
-                    />
-                    <span className="upi-qr-caption">Scan with Any UPI App (GPay, PhonePe, Paytm, BHIM)</span>
-                  </div>
+              <div className="upi-box">
+                <ol
+                  style={{
+                    margin: '0 0 1rem 0',
+                    padding: '0.75rem 0.75rem 0.75rem 1.75rem',
+                    background: '#f8fafc',
+                    border: '1px solid #e2e8f0',
+                    borderRadius: '10px',
+                    fontSize: '0.88rem',
+                    color: '#334155',
+                    lineHeight: 1.55,
+                  }}
+                >
+                  <li>
+                    Pay <strong>₹200</strong> to the UPI ID shown below (scan QR or open your UPI app).
+                  </li>
+                  <li>
+                    Then enter the <strong>12-digit UTR / Ref</strong> from your UPI app.
+                  </li>
+                  <li>
+                    Tap <strong>Submit UTR</strong> — Premium unlocks only after we verify the payment.
+                  </li>
+                </ol>
 
-                  <div className="upi-id-pill">
-                    <span className="upi-id-text">{storeUpiVpa}</span>
-                    <button
-                      type="button"
-                      className="upi-copy-btn"
-                      onClick={handleCopyUpi}
-                    >
-                      {isCopied ? '✓ Copied' : 'Copy VPA'}
-                    </button>
-                  </div>
+                <div className="upi-qr-card">
+                  <img
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=8&data=${encodeURIComponent(
+                      `upi://pay?pa=${storeUpiVpa}&pn=${encodeURIComponent(storeUpiPayee)}&am=200.00&cu=INR&tn=Monthly%20Access%20Pass`
+                    )}`}
+                    alt={`Scan to pay ₹200 via UPI to ${storeUpiVpa}`}
+                    style={{
+                      width: '160px',
+                      height: '160px',
+                      borderRadius: '10px',
+                      border: '1px solid #e2e8f0',
+                      background: '#ffffff',
+                      padding: '6px',
+                      display: 'block',
+                      margin: '0 auto',
+                      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
+                    }}
+                  />
+                  <span className="upi-qr-caption">Scan with Any UPI App (GPay, PhonePe, Paytm, BHIM)</span>
+                  <p
+                    style={{
+                      margin: '0.55rem 0 0 0',
+                      fontSize: '0.75rem',
+                      color: '#64748b',
+                      textAlign: 'center',
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    Premium unlocks only after we confirm your UPI payment (usually within a few hours).
+                  </p>
+                </div>
 
-                  <div style={{ textAlign: 'center', marginTop: '0.4rem' }}>
-                    <a
-                      href={`upi://pay?pa=${encodeURIComponent(storeUpiVpa)}&pn=${encodeURIComponent(storeUpiPayee)}&am=200.00&cu=INR&tn=Monthly%20Access%20Pass`}
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '0.4rem',
-                        background: 'linear-gradient(135deg, #15803d 0%, #166534 100%)',
-                        color: '#ffffff',
-                        padding: '0.45rem 0.95rem',
-                        borderRadius: '8px',
-                        fontSize: '0.82rem',
-                        fontWeight: 700,
-                        textDecoration: 'none',
-                        boxShadow: '0 2px 6px rgba(21, 128, 61, 0.25)',
-                      }}
-                    >
-                      <span>⚡</span>
-                      <span>Open in GPay / PhonePe / Paytm</span>
-                    </a>
-                  </div>
+                <div className="upi-id-pill">
+                  <span className="upi-id-text">{storeUpiVpa}</span>
+                  <button type="button" className="upi-copy-btn" onClick={handleCopyUpi}>
+                    {isCopied ? '✓ Copied' : 'Copy VPA'}
+                  </button>
+                </div>
 
-                  <div className="upi-apps-row">
-                    <span className="upi-app-badge">GPay</span>
-                    <span className="upi-app-badge">PhonePe</span>
-                    <span className="upi-app-badge">Paytm</span>
-                    <span className="upi-app-badge">BHIM</span>
-                    <span className="upi-app-badge">Cred</span>
-                  </div>
-
-                  <div className="upi-input-wrap">
-                    <label htmlFor="upi-vpa-input" className="upi-input-label">
-                      Or enter your personal UPI ID / VPA:
-                    </label>
-                    <input
-                      id="upi-vpa-input"
-                      type="text"
-                      className="upi-input-field"
-                      placeholder="e.g. yourname@okhdfcbank"
-                      value={upiVpa}
-                      onChange={(e) => setUpiVpa(e.target.value)}
-                    />
-                  </div>
-
-                  <button
-                    type="button"
-                    className="payment-primary-btn"
-                    onClick={() => handlePay('upi', upiVpa || storeUpiVpa)}
+                <div style={{ textAlign: 'center', marginTop: '0.4rem' }}>
+                  <a
+                    href={upiDeepLink}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.4rem',
+                      background: 'linear-gradient(135deg, #15803d 0%, #166534 100%)',
+                      color: '#ffffff',
+                      padding: '0.45rem 0.95rem',
+                      borderRadius: '8px',
+                      fontSize: '0.82rem',
+                      fontWeight: 700,
+                      textDecoration: 'none',
+                      boxShadow: '0 2px 6px rgba(21, 128, 61, 0.25)',
+                    }}
                   >
                     <span>⚡</span>
-                    <span>Verify &amp; Pay ₹200 via UPI</span>
-                  </button>
+                    <span>Open in GPay / PhonePe / Paytm</span>
+                  </a>
+                </div>
 
-                  <div style={{ margin: '1.25rem 0 0.75rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <div style={{ flex: 1, height: '1px', background: '#e5e7eb' }} />
-                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#9ca3af', letterSpacing: '0.05em' }}>
-                      OR MANUAL UTR CONFIRMATION
-                    </span>
-                    <div style={{ flex: 1, height: '1px', background: '#e5e7eb' }} />
-                  </div>
+                <div className="upi-apps-row">
+                  <span className="upi-app-badge">GPay</span>
+                  <span className="upi-app-badge">PhonePe</span>
+                  <span className="upi-app-badge">Paytm</span>
+                  <span className="upi-app-badge">BHIM</span>
+                  <span className="upi-app-badge">Cred</span>
+                </div>
 
-                  <div className="upi-input-wrap">
-                    <label htmlFor="upi-utr-input" className="upi-input-label">
-                      Paid already? Enter 12-digit UPI UTR / Ref Number:
-                    </label>
-                    <div style={{ display: 'flex', gap: '0.5rem' }}>
-                      <input
-                        id="upi-utr-input"
-                        type="text"
-                        className="upi-input-field"
-                        placeholder="e.g. 425619874521"
-                        value={utrNumber}
-                        onChange={(e) => setUtrNumber(e.target.value)}
-                      />
-                      <button
-                        type="button"
-                        onClick={handleSubmitUtr}
-                        disabled={!utrNumber.trim() || isProcessing}
-                        style={{
-                          background: '#273b35',
-                          color: '#ffffff',
-                          border: 'none',
-                          borderRadius: '8px',
-                          padding: '0.5rem 1rem',
-                          fontWeight: 700,
-                          fontSize: '0.82rem',
-                          cursor: utrNumber.trim() && !isProcessing ? 'pointer' : 'not-allowed',
-                          whiteSpace: 'nowrap',
-                          opacity: utrNumber.trim() && !isProcessing ? 1 : 0.6,
-                        }}
-                      >
-                        Submit UTR
-                      </button>
-                    </div>
+                <div className="upi-input-wrap" style={{ marginTop: '1.1rem' }}>
+                  <label htmlFor="upi-utr-input" className="upi-input-label">
+                    Enter your 12-digit UPI UTR / Ref Number, then tap Submit UTR:
+                  </label>
+                  <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    <input
+                      id="upi-utr-input"
+                      type="text"
+                      inputMode="numeric"
+                      maxLength={12}
+                      className="upi-input-field"
+                      placeholder="e.g. 425619874521"
+                      value={utrNumber}
+                      onChange={(e) => setUtrNumber(e.target.value.replace(/[^\d]/g, '').slice(0, 12))}
+                    />
+                    <button
+                      type="button"
+                      onClick={handleSubmitUtr}
+                      disabled={utrNumber.trim().length !== 12 || isProcessing}
+                      style={{
+                        background: '#273b35',
+                        color: '#ffffff',
+                        border: 'none',
+                        borderRadius: '8px',
+                        padding: '0.5rem 1rem',
+                        fontWeight: 700,
+                        fontSize: '0.82rem',
+                        cursor:
+                          utrNumber.trim().length === 12 && !isProcessing ? 'pointer' : 'not-allowed',
+                        whiteSpace: 'nowrap',
+                        opacity: utrNumber.trim().length === 12 && !isProcessing ? 1 : 0.6,
+                      }}
+                    >
+                      Submit UTR
+                    </button>
                   </div>
                 </div>
-              )}
+              </div>
 
-              {/* Apple Pay Tab */}
-              {selectedMethod === 'apple_pay' && (
-                <div className="apple-pay-container">
-                  <div style={{ marginBottom: '1.25rem' }}>
-                    <span style={{ fontSize: '3rem' }}>🍏</span>
-                    <h4 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#111827', margin: '0.5rem 0 0.25rem 0' }}>
-                      Apple Pay Direct Checkout
-                    </h4>
-                    <p style={{ fontSize: '0.9rem', color: '#4b5563' }}>
-                      Enjoy seamless, private, and secure 1-click subscription with Touch ID, Face ID, or your Apple Watch.
-                    </p>
-                  </div>
-
-                  <button
-                    type="button"
-                    className="apple-pay-btn"
-                    onClick={() => handlePay('apple_pay')}
-                  >
-                    <span> Pay</span>
-                    <span>₹200.00</span>
-                  </button>
-
-                  <div className="apple-pay-features">
-                    🔒 Protected by Secure Enclave · No card numbers shared
-                  </div>
-                </div>
-              )}
-
-              {/* Google Pay Tab */}
-              {selectedMethod === 'gpay' && (
-                <div className="gpay-container">
-                  <div style={{ marginBottom: '1.25rem' }}>
-                    <span style={{ fontSize: '3rem' }}>🌐</span>
-                    <h4 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#111827', margin: '0.5rem 0 0.25rem 0' }}>
-                      Google Pay Instant Checkout
-                    </h4>
-                    <p style={{ fontSize: '0.9rem', color: '#4b5563' }}>
-                      Fast, simple checkout using the payment cards and UPI handles saved in your Google Account.
-                    </p>
-                  </div>
-
-                  <button
-                    type="button"
-                    className="gpay-btn"
-                    onClick={() => handlePay('gpay')}
-                  >
-                    <span style={{ color: '#4285f4', fontWeight: 900 }}>G</span>
-                    <span style={{ color: '#ea4335', fontWeight: 900 }}>o</span>
-                    <span style={{ color: '#fbbc05', fontWeight: 900 }}>o</span>
-                    <span style={{ color: '#4285f4', fontWeight: 900 }}>g</span>
-                    <span style={{ color: '#34a853', fontWeight: 900 }}>l</span>
-                    <span style={{ color: '#ea4335', fontWeight: 900 }}>e</span>
-                    <span style={{ color: '#5f6368', marginLeft: '3px' }}>Pay · ₹200</span>
-                  </button>
-
-                  <div style={{ marginTop: '1.25rem', fontSize: '0.85rem', color: '#6b7280' }}>
-                    🛡️ Multi-layer security with tokenized device verification
-                  </div>
-                </div>
-              )}
-
-              {/* Customer Support Notice */}
-              <div style={{ padding: '0.85rem 1.75rem', background: '#f8fafc', borderTop: '1px solid #e2e8f0', fontSize: '0.78rem', color: '#64748b', textAlign: 'center' }}>
-                Questions or support? Email <a href="mailto:care@ednetlearn.in" style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}>care@ednetlearn.in</a> · <a href="mailto:admin@ednetlearn.in" style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}>admin@ednetlearn.in</a>
+              <div
+                style={{
+                  padding: '0.85rem 1.75rem',
+                  background: '#f8fafc',
+                  borderTop: '1px solid #e2e8f0',
+                  fontSize: '0.78rem',
+                  color: '#64748b',
+                  textAlign: 'center',
+                }}
+              >
+                Questions or support? Email{' '}
+                <a
+                  href="mailto:care@ednetlearn.in"
+                  style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}
+                >
+                  care@ednetlearn.in
+                </a>{' '}
+                ·{' '}
+                <a
+                  href="mailto:admin@ednetlearn.in"
+                  style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}
+                >
+                  admin@ednetlearn.in
+                </a>
               </div>
             </div>
           </>

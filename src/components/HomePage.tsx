@@ -647,7 +647,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <span className="home-trust-icon">🛡️</span>
           <div className="home-trust-text">
             <strong>100% Verified &amp; Safe</strong>
-            <span>UPI, Google Pay, Apple Pay &amp; 14-day risk-free trial</span>
+            <span>UPI payment &amp; 14-day risk-free trial</span>
           </div>
         </div>
       </section>
