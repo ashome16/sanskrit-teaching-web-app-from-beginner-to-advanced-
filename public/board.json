@@ -46685,6 +46685,3066 @@
         "prompt": "____ द्वौ स्तः।"
       },
       {
+        "target": "ण्ह्या",
+        "tiles": [
+          "ण्ह्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The nhy-form looks lovely.",
+        "explanation": "ण्ह्य plus आ makes ण्ह्या.",
+        "sentence": "ण्ह्या रूपं शोभते।",
+        "highlight": "ण्ह्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "ण्ह्यि",
+        "tiles": [
+          "ण्ह्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A nhyi-bird calls.",
+        "explanation": "ण्ह्य plus इ makes ण्ह्यि.",
+        "sentence": "ण्ह्यि खगः कूजति।",
+        "highlight": "ण्ह्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "ण्ह्यी",
+        "tiles": [
+          "ण्ह्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two nhyi-forms are there.",
+        "explanation": "ण्ह्य plus ई makes ण्ह्यी.",
+        "sentence": "ण्ह्यी द्वौ स्तः।",
+        "highlight": "ण्ह्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ण्ह्यु",
+        "tiles": [
+          "ण्ह्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the nhyu.",
+        "explanation": "ण्ह्य plus उ makes ण्ह्यु.",
+        "sentence": "ण्ह्यु बालकः पश्यति।",
+        "highlight": "ण्ह्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "ण्ह्यू",
+        "tiles": [
+          "ण्ह्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two nhyu-forms are there.",
+        "explanation": "ण्ह्य plus ऊ makes ण्ह्यू.",
+        "sentence": "ण्ह्यू द्वौ स्तः।",
+        "highlight": "ण्ह्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ण्ह्ये",
+        "tiles": [
+          "ण्ह्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at nhye.",
+        "explanation": "ण्ह्य plus ए makes ण्ह्ये.",
+        "sentence": "ण्ह्ये पुष्पं विकसति।",
+        "highlight": "ण्ह्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "ण्ह्यै",
+        "tiles": [
+          "ण्ह्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With nhyai the breeze blows.",
+        "explanation": "ण्ह्य plus ऐ makes ण्ह्यै.",
+        "sentence": "ण्ह्यैः सह पवनः वहति।",
+        "highlight": "ण्ह्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "ण्ह्यो",
+        "tiles": [
+          "ण्ह्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The nhyo is lovely.",
+        "explanation": "ण्ह्य plus ओ makes ण्ह्यो.",
+        "sentence": "ण्ह्यो रम्यः अस्ति।",
+        "highlight": "ण्ह्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "ण्ह्यौ",
+        "tiles": [
+          "ण्ह्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two nhyau-forms are there.",
+        "explanation": "ण्ह्य plus औ makes ण्ह्यौ.",
+        "sentence": "ण्ह्यौ द्वौ स्तः।",
+        "highlight": "ण्ह्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "द्भ्र्या",
+        "tiles": [
+          "द्भ्र्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The dbhry-form looks lovely.",
+        "explanation": "द्भ्र्य plus आ makes द्भ्र्या.",
+        "sentence": "द्भ्र्या रूपं शोभते।",
+        "highlight": "द्भ्र्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "द्भ्र्यि",
+        "tiles": [
+          "द्भ्र्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A dbhryi-bird calls.",
+        "explanation": "द्भ्र्य plus इ makes द्भ्र्यि.",
+        "sentence": "द्भ्र्यि खगः कूजति।",
+        "highlight": "द्भ्र्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "द्भ्र्यी",
+        "tiles": [
+          "द्भ्र्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two dbhryi-forms are there.",
+        "explanation": "द्भ्र्य plus ई makes द्भ्र्यी.",
+        "sentence": "द्भ्र्यी द्वौ स्तः।",
+        "highlight": "द्भ्र्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "द्भ्र्यु",
+        "tiles": [
+          "द्भ्र्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the dbhryu.",
+        "explanation": "द्भ्र्य plus उ makes द्भ्र्यु.",
+        "sentence": "द्भ्र्यु बालकः पश्यति।",
+        "highlight": "द्भ्र्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "द्भ्र्यू",
+        "tiles": [
+          "द्भ्र्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two dbhryu-forms are there.",
+        "explanation": "द्भ्र्य plus ऊ makes द्भ्र्यू.",
+        "sentence": "द्भ्र्यू द्वौ स्तः।",
+        "highlight": "द्भ्र्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "द्भ्र्ये",
+        "tiles": [
+          "द्भ्र्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at dbhrye.",
+        "explanation": "द्भ्र्य plus ए makes द्भ्र्ये.",
+        "sentence": "द्भ्र्ये पुष्पं विकसति।",
+        "highlight": "द्भ्र्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "द्भ्र्यै",
+        "tiles": [
+          "द्भ्र्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With dbhryai the breeze blows.",
+        "explanation": "द्भ्र्य plus ऐ makes द्भ्र्यै.",
+        "sentence": "द्भ्र्यैः सह पवनः वहति।",
+        "highlight": "द्भ्र्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "द्भ्र्यो",
+        "tiles": [
+          "द्भ्र्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The dbhryo is lovely.",
+        "explanation": "द्भ्र्य plus ओ makes द्भ्र्यो.",
+        "sentence": "द्भ्र्यो रम्यः अस्ति।",
+        "highlight": "द्भ्र्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "द्भ्र्यौ",
+        "tiles": [
+          "द्भ्र्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two dbhryau-forms are there.",
+        "explanation": "द्भ्र्य plus औ makes द्भ्र्यौ.",
+        "sentence": "द्भ्र्यौ द्वौ स्तः।",
+        "highlight": "द्भ्र्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ष्भ्या",
+        "tiles": [
+          "ष्भ्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The sbhy-form looks lovely.",
+        "explanation": "ष्भ्य plus आ makes ष्भ्या.",
+        "sentence": "ष्भ्या रूपं शोभते।",
+        "highlight": "ष्भ्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "ष्भ्यि",
+        "tiles": [
+          "ष्भ्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A sbhyi-bird calls.",
+        "explanation": "ष्भ्य plus इ makes ष्भ्यि.",
+        "sentence": "ष्भ्यि खगः कूजति।",
+        "highlight": "ष्भ्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "ष्भ्यी",
+        "tiles": [
+          "ष्भ्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two sbhyi-forms are there.",
+        "explanation": "ष्भ्य plus ई makes ष्भ्यी.",
+        "sentence": "ष्भ्यी द्वौ स्तः।",
+        "highlight": "ष्भ्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ष्भ्यु",
+        "tiles": [
+          "ष्भ्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the sbhyu.",
+        "explanation": "ष्भ्य plus उ makes ष्भ्यु.",
+        "sentence": "ष्भ्यु बालकः पश्यति।",
+        "highlight": "ष्भ्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "ष्भ्यू",
+        "tiles": [
+          "ष्भ्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two sbhyu-forms are there.",
+        "explanation": "ष्भ्य plus ऊ makes ष्भ्यू.",
+        "sentence": "ष्भ्यू द्वौ स्तः।",
+        "highlight": "ष्भ्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ष्भ्ये",
+        "tiles": [
+          "ष्भ्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at sbhye.",
+        "explanation": "ष्भ्य plus ए makes ष्भ्ये.",
+        "sentence": "ष्भ्ये पुष्पं विकसति।",
+        "highlight": "ष्भ्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "ष्भ्यै",
+        "tiles": [
+          "ष्भ्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With sbhyai the breeze blows.",
+        "explanation": "ष्भ्य plus ऐ makes ष्भ्यै.",
+        "sentence": "ष्भ्यैः सह पवनः वहति।",
+        "highlight": "ष्भ्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "ष्भ्यो",
+        "tiles": [
+          "ष्भ्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The sbhyo is lovely.",
+        "explanation": "ष्भ्य plus ओ makes ष्भ्यो.",
+        "sentence": "ष्भ्यो रम्यः अस्ति।",
+        "highlight": "ष्भ्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "ष्भ्यौ",
+        "tiles": [
+          "ष्भ्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two sbhyau-forms are there.",
+        "explanation": "ष्भ्य plus औ makes ष्भ्यौ.",
+        "sentence": "ष्भ्यौ द्वौ स्तः।",
+        "highlight": "ष्भ्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ह्भ्या",
+        "tiles": [
+          "ह्भ्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The hbhy-form looks lovely.",
+        "explanation": "ह्भ्य plus आ makes ह्भ्या.",
+        "sentence": "ह्भ्या रूपं शोभते।",
+        "highlight": "ह्भ्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "ह्भ्यि",
+        "tiles": [
+          "ह्भ्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A hbhyi-bird calls.",
+        "explanation": "ह्भ्य plus इ makes ह्भ्यि.",
+        "sentence": "ह्भ्यि खगः कूजति।",
+        "highlight": "ह्भ्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "ह्भ्यी",
+        "tiles": [
+          "ह्भ्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two hbhyi-forms are there.",
+        "explanation": "ह्भ्य plus ई makes ह्भ्यी.",
+        "sentence": "ह्भ्यी द्वौ स्तः।",
+        "highlight": "ह्भ्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ह्भ्यु",
+        "tiles": [
+          "ह्भ्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the hbhyu.",
+        "explanation": "ह्भ्य plus उ makes ह्भ्यु.",
+        "sentence": "ह्भ्यु बालकः पश्यति।",
+        "highlight": "ह्भ्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "ह्भ्यू",
+        "tiles": [
+          "ह्भ्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two hbhyu-forms are there.",
+        "explanation": "ह्भ्य plus ऊ makes ह्भ्यू.",
+        "sentence": "ह्भ्यू द्वौ स्तः।",
+        "highlight": "ह्भ्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ह्भ्ये",
+        "tiles": [
+          "ह्भ्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at hbhye.",
+        "explanation": "ह्भ्य plus ए makes ह्भ्ये.",
+        "sentence": "ह्भ्ये पुष्पं विकसति।",
+        "highlight": "ह्भ्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "ह्भ्यै",
+        "tiles": [
+          "ह्भ्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With hbhyai the breeze blows.",
+        "explanation": "ह्भ्य plus ऐ makes ह्भ्यै.",
+        "sentence": "ह्भ्यैः सह पवनः वहति।",
+        "highlight": "ह्भ्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "ह्भ्यो",
+        "tiles": [
+          "ह्भ्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The hbhyo is lovely.",
+        "explanation": "ह्भ्य plus ओ makes ह्भ्यो.",
+        "sentence": "ह्भ्यो रम्यः अस्ति।",
+        "highlight": "ह्भ्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "ह्भ्यौ",
+        "tiles": [
+          "ह्भ्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two hbhyau-forms are there.",
+        "explanation": "ह्भ्य plus औ makes ह्भ्यौ.",
+        "sentence": "ह्भ्यौ द्वौ स्तः।",
+        "highlight": "ह्भ्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ब्स्या",
+        "tiles": [
+          "ब्स्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The bsy-form looks lovely.",
+        "explanation": "ब्स्य plus आ makes ब्स्या.",
+        "sentence": "ब्स्या रूपं शोभते।",
+        "highlight": "ब्स्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "ब्स्यि",
+        "tiles": [
+          "ब्स्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A bsyi-bird calls.",
+        "explanation": "ब्स्य plus इ makes ब्स्यि.",
+        "sentence": "ब्स्यि खगः कूजति।",
+        "highlight": "ब्स्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "ब्स्यी",
+        "tiles": [
+          "ब्स्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two bsyi-forms are there.",
+        "explanation": "ब्स्य plus ई makes ब्स्यी.",
+        "sentence": "ब्स्यी द्वौ स्तः।",
+        "highlight": "ब्स्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ब्स्यु",
+        "tiles": [
+          "ब्स्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the bsyu.",
+        "explanation": "ब्स्य plus उ makes ब्स्यु.",
+        "sentence": "ब्स्यु बालकः पश्यति।",
+        "highlight": "ब्स्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "ब्स्यू",
+        "tiles": [
+          "ब्स्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two bsyu-forms are there.",
+        "explanation": "ब्स्य plus ऊ makes ब्स्यू.",
+        "sentence": "ब्स्यू द्वौ स्तः।",
+        "highlight": "ब्स्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ब्स्ये",
+        "tiles": [
+          "ब्स्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at bsye.",
+        "explanation": "ब्स्य plus ए makes ब्स्ये.",
+        "sentence": "ब्स्ये पुष्पं विकसति।",
+        "highlight": "ब्स्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "ब्स्यै",
+        "tiles": [
+          "ब्स्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With bsyai the breeze blows.",
+        "explanation": "ब्स्य plus ऐ makes ब्स्यै.",
+        "sentence": "ब्स्यैः सह पवनः वहति।",
+        "highlight": "ब्स्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "ब्स्यो",
+        "tiles": [
+          "ब्स्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The bsyo is lovely.",
+        "explanation": "ब्स्य plus ओ makes ब्स्यो.",
+        "sentence": "ब्स्यो रम्यः अस्ति।",
+        "highlight": "ब्स्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "ब्स्यौ",
+        "tiles": [
+          "ब्स्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two bsyau-forms are there.",
+        "explanation": "ब्स्य plus औ makes ब्स्यौ.",
+        "sentence": "ब्स्यौ द्वौ स्तः।",
+        "highlight": "ब्स्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "च्म्या",
+        "tiles": [
+          "च्म्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The cmy-form looks lovely.",
+        "explanation": "च्म्य plus आ makes च्म्या.",
+        "sentence": "च्म्या रूपं शोभते।",
+        "highlight": "च्म्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "च्म्यि",
+        "tiles": [
+          "च्म्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A cmyi-bird calls.",
+        "explanation": "च्म्य plus इ makes च्म्यि.",
+        "sentence": "च्म्यि खगः कूजति।",
+        "highlight": "च्म्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "च्म्यी",
+        "tiles": [
+          "च्म्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two cmyi-forms are there.",
+        "explanation": "च्म्य plus ई makes च्म्यी.",
+        "sentence": "च्म्यी द्वौ स्तः।",
+        "highlight": "च्म्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "च्म्यु",
+        "tiles": [
+          "च्म्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the cmyu.",
+        "explanation": "च्म्य plus उ makes च्म्यु.",
+        "sentence": "च्म्यु बालकः पश्यति।",
+        "highlight": "च्म्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "च्म्यू",
+        "tiles": [
+          "च्म्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two cmyu-forms are there.",
+        "explanation": "च्म्य plus ऊ makes च्म्यू.",
+        "sentence": "च्म्यू द्वौ स्तः।",
+        "highlight": "च्म्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "च्म्ये",
+        "tiles": [
+          "च्म्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at cmye.",
+        "explanation": "च्म्य plus ए makes च्म्ये.",
+        "sentence": "च्म्ये पुष्पं विकसति।",
+        "highlight": "च्म्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "च्म्यै",
+        "tiles": [
+          "च्म्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With cmyai the breeze blows.",
+        "explanation": "च्म्य plus ऐ makes च्म्यै.",
+        "sentence": "च्म्यैः सह पवनः वहति।",
+        "highlight": "च्म्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "च्म्यो",
+        "tiles": [
+          "च्म्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The cmyo is lovely.",
+        "explanation": "च्म्य plus ओ makes च्म्यो.",
+        "sentence": "च्म्यो रम्यः अस्ति।",
+        "highlight": "च्म्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "च्म्यौ",
+        "tiles": [
+          "च्म्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two cmyau-forms are there.",
+        "explanation": "च्म्य plus औ makes च्म्यौ.",
+        "sentence": "च्म्यौ द्वौ स्तः।",
+        "highlight": "च्म्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ल्स्या",
+        "tiles": [
+          "ल्स्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The lsy-form looks lovely.",
+        "explanation": "ल्स्य plus आ makes ल्स्या.",
+        "sentence": "ल्स्या रूपं शोभते।",
+        "highlight": "ल्स्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "ल्स्यि",
+        "tiles": [
+          "ल्स्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A lsyi-bird calls.",
+        "explanation": "ल्स्य plus इ makes ल्स्यि.",
+        "sentence": "ल्स्यि खगः कूजति।",
+        "highlight": "ल्स्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "ल्स्यी",
+        "tiles": [
+          "ल्स्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two lsyi-forms are there.",
+        "explanation": "ल्स्य plus ई makes ल्स्यी.",
+        "sentence": "ल्स्यी द्वौ स्तः।",
+        "highlight": "ल्स्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ल्स्यु",
+        "tiles": [
+          "ल्स्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the lsyu.",
+        "explanation": "ल्स्य plus उ makes ल्स्यु.",
+        "sentence": "ल्स्यु बालकः पश्यति।",
+        "highlight": "ल्स्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "ल्स्यू",
+        "tiles": [
+          "ल्स्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two lsyu-forms are there.",
+        "explanation": "ल्स्य plus ऊ makes ल्स्यू.",
+        "sentence": "ल्स्यू द्वौ स्तः।",
+        "highlight": "ल्स्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ल्स्ये",
+        "tiles": [
+          "ल्स्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at lsye.",
+        "explanation": "ल्स्य plus ए makes ल्स्ये.",
+        "sentence": "ल्स्ये पुष्पं विकसति।",
+        "highlight": "ल्स्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "ल्स्यै",
+        "tiles": [
+          "ल्स्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With lsyai the breeze blows.",
+        "explanation": "ल्स्य plus ऐ makes ल्स्यै.",
+        "sentence": "ल्स्यैः सह पवनः वहति।",
+        "highlight": "ल्स्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "ल्स्यो",
+        "tiles": [
+          "ल्स्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The lsyo is lovely.",
+        "explanation": "ल्स्य plus ओ makes ल्स्यो.",
+        "sentence": "ल्स्यो रम्यः अस्ति।",
+        "highlight": "ल्स्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "ल्स्यौ",
+        "tiles": [
+          "ल्स्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two lsyau-forms are there.",
+        "explanation": "ल्स्य plus औ makes ल्स्यौ.",
+        "sentence": "ल्स्यौ द्वौ स्तः।",
+        "highlight": "ल्स्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ग्न्या",
+        "tiles": [
+          "ग्न्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The gny-form looks lovely.",
+        "explanation": "ग्न्य plus आ makes ग्न्या.",
+        "sentence": "ग्न्या रूपं शोभते।",
+        "highlight": "ग्न्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "ग्न्यि",
+        "tiles": [
+          "ग्न्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A gnyi-bird calls.",
+        "explanation": "ग्न्य plus इ makes ग्न्यि.",
+        "sentence": "ग्न्यि खगः कूजति।",
+        "highlight": "ग्न्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "ग्न्यी",
+        "tiles": [
+          "ग्न्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two gnyi-forms are there.",
+        "explanation": "ग्न्य plus ई makes ग्न्यी.",
+        "sentence": "ग्न्यी द्वौ स्तः।",
+        "highlight": "ग्न्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ग्न्यु",
+        "tiles": [
+          "ग्न्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the gnyu.",
+        "explanation": "ग्न्य plus उ makes ग्न्यु.",
+        "sentence": "ग्न्यु बालकः पश्यति।",
+        "highlight": "ग्न्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "ग्न्यू",
+        "tiles": [
+          "ग्न्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two gnyu-forms are there.",
+        "explanation": "ग्न्य plus ऊ makes ग्न्यू.",
+        "sentence": "ग्न्यू द्वौ स्तः।",
+        "highlight": "ग्न्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ग्न्ये",
+        "tiles": [
+          "ग्न्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at gnye.",
+        "explanation": "ग्न्य plus ए makes ग्न्ये.",
+        "sentence": "ग्न्ये पुष्पं विकसति।",
+        "highlight": "ग्न्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "ग्न्यै",
+        "tiles": [
+          "ग्न्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With gnyai the breeze blows.",
+        "explanation": "ग्न्य plus ऐ makes ग्न्यै.",
+        "sentence": "ग्न्यैः सह पवनः वहति।",
+        "highlight": "ग्न्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "ग्न्यो",
+        "tiles": [
+          "ग्न्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The gnyo is lovely.",
+        "explanation": "ग्न्य plus ओ makes ग्न्यो.",
+        "sentence": "ग्न्यो रम्यः अस्ति।",
+        "highlight": "ग्न्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "ग्न्यौ",
+        "tiles": [
+          "ग्न्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two gnyau-forms are there.",
+        "explanation": "ग्न्य plus औ makes ग्न्यौ.",
+        "sentence": "ग्न्यौ द्वौ स्तः।",
+        "highlight": "ग्न्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "प्म्या",
+        "tiles": [
+          "प्म्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The pmy-form looks lovely.",
+        "explanation": "प्म्य plus आ makes प्म्या.",
+        "sentence": "प्म्या रूपं शोभते।",
+        "highlight": "प्म्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "प्म्यि",
+        "tiles": [
+          "प्म्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A pmyi-bird calls.",
+        "explanation": "प्म्य plus इ makes प्म्यि.",
+        "sentence": "प्म्यि खगः कूजति।",
+        "highlight": "प्म्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "प्म्यी",
+        "tiles": [
+          "प्म्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two pmyi-forms are there.",
+        "explanation": "प्म्य plus ई makes प्म्यी.",
+        "sentence": "प्म्यी द्वौ स्तः।",
+        "highlight": "प्म्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "प्म्यु",
+        "tiles": [
+          "प्म्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the pmyu.",
+        "explanation": "प्म्य plus उ makes प्म्यु.",
+        "sentence": "प्म्यु बालकः पश्यति।",
+        "highlight": "प्म्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "प्म्यू",
+        "tiles": [
+          "प्म्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two pmyu-forms are there.",
+        "explanation": "प्म्य plus ऊ makes प्म्यू.",
+        "sentence": "प्म्यू द्वौ स्तः।",
+        "highlight": "प्म्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "प्म्ये",
+        "tiles": [
+          "प्म्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at pmye.",
+        "explanation": "प्म्य plus ए makes प्म्ये.",
+        "sentence": "प्म्ये पुष्पं विकसति।",
+        "highlight": "प्म्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "प्म्यै",
+        "tiles": [
+          "प्म्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With pmyai the breeze blows.",
+        "explanation": "प्म्य plus ऐ makes प्म्यै.",
+        "sentence": "प्म्यैः सह पवनः वहति।",
+        "highlight": "प्म्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "प्म्यो",
+        "tiles": [
+          "प्म्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The pmyo is lovely.",
+        "explanation": "प्म्य plus ओ makes प्म्यो.",
+        "sentence": "प्म्यो रम्यः अस्ति।",
+        "highlight": "प्म्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "प्म्यौ",
+        "tiles": [
+          "प्म्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two pmyau-forms are there.",
+        "explanation": "प्म्य plus औ makes प्म्यौ.",
+        "sentence": "प्म्यौ द्वौ स्तः।",
+        "highlight": "प्म्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ब्म्या",
+        "tiles": [
+          "ब्म्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The bmy-form looks lovely.",
+        "explanation": "ब्म्य plus आ makes ब्म्या.",
+        "sentence": "ब्म्या रूपं शोभते।",
+        "highlight": "ब्म्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "ब्म्यि",
+        "tiles": [
+          "ब्म्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A bmyi-bird calls.",
+        "explanation": "ब्म्य plus इ makes ब्म्यि.",
+        "sentence": "ब्म्यि खगः कूजति।",
+        "highlight": "ब्म्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "ब्म्यी",
+        "tiles": [
+          "ब्म्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two bmyi-forms are there.",
+        "explanation": "ब्म्य plus ई makes ब्म्यी.",
+        "sentence": "ब्म्यी द्वौ स्तः।",
+        "highlight": "ब्म्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ब्म्यु",
+        "tiles": [
+          "ब्म्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the bmyu.",
+        "explanation": "ब्म्य plus उ makes ब्म्यु.",
+        "sentence": "ब्म्यु बालकः पश्यति।",
+        "highlight": "ब्म्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "ब्म्यू",
+        "tiles": [
+          "ब्म्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two bmyu-forms are there.",
+        "explanation": "ब्म्य plus ऊ makes ब्म्यू.",
+        "sentence": "ब्म्यू द्वौ स्तः।",
+        "highlight": "ब्म्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ब्म्ये",
+        "tiles": [
+          "ब्म्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at bmye.",
+        "explanation": "ब्म्य plus ए makes ब्म्ये.",
+        "sentence": "ब्म्ये पुष्पं विकसति।",
+        "highlight": "ब्म्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "ब्म्यै",
+        "tiles": [
+          "ब्म्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With bmyai the breeze blows.",
+        "explanation": "ब्म्य plus ऐ makes ब्म्यै.",
+        "sentence": "ब्म्यैः सह पवनः वहति।",
+        "highlight": "ब्म्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "ब्म्यो",
+        "tiles": [
+          "ब्म्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The bmyo is lovely.",
+        "explanation": "ब्म्य plus ओ makes ब्म्यो.",
+        "sentence": "ब्म्यो रम्यः अस्ति।",
+        "highlight": "ब्म्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "ब्म्यौ",
+        "tiles": [
+          "ब्म्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two bmyau-forms are there.",
+        "explanation": "ब्म्य plus औ makes ब्म्यौ.",
+        "sentence": "ब्म्यौ द्वौ स्तः।",
+        "highlight": "ब्म्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ण्म्या",
+        "tiles": [
+          "ण्म्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The nmy-form looks lovely.",
+        "explanation": "ण्म्य plus आ makes ण्म्या.",
+        "sentence": "ण्म्या रूपं शोभते।",
+        "highlight": "ण्म्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "ण्म्यि",
+        "tiles": [
+          "ण्म्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A nmyi-bird calls.",
+        "explanation": "ण्म्य plus इ makes ण्म्यि.",
+        "sentence": "ण्म्यि खगः कूजति।",
+        "highlight": "ण्म्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "ण्म्यी",
+        "tiles": [
+          "ण्म्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two nmyi-forms are there.",
+        "explanation": "ण्म्य plus ई makes ण्म्यी.",
+        "sentence": "ण्म्यी द्वौ स्तः।",
+        "highlight": "ण्म्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ण्म्यु",
+        "tiles": [
+          "ण्म्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the nmyu.",
+        "explanation": "ण्म्य plus उ makes ण्म्यु.",
+        "sentence": "ण्म्यु बालकः पश्यति।",
+        "highlight": "ण्म्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "ण्म्यू",
+        "tiles": [
+          "ण्म्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two nmyu-forms are there.",
+        "explanation": "ण्म्य plus ऊ makes ण्म्यू.",
+        "sentence": "ण्म्यू द्वौ स्तः।",
+        "highlight": "ण्म्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ण्म्ये",
+        "tiles": [
+          "ण्म्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at nmye.",
+        "explanation": "ण्म्य plus ए makes ण्म्ये.",
+        "sentence": "ण्म्ये पुष्पं विकसति।",
+        "highlight": "ण्म्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "ण्म्यै",
+        "tiles": [
+          "ण्म्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With nmyai the breeze blows.",
+        "explanation": "ण्म्य plus ऐ makes ण्म्यै.",
+        "sentence": "ण्म्यैः सह पवनः वहति।",
+        "highlight": "ण्म्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "ण्म्यो",
+        "tiles": [
+          "ण्म्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The nmyo is lovely.",
+        "explanation": "ण्म्य plus ओ makes ण्म्यो.",
+        "sentence": "ण्म्यो रम्यः अस्ति।",
+        "highlight": "ण्म्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "ण्म्यौ",
+        "tiles": [
+          "ण्म्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two nmyau-forms are there.",
+        "explanation": "ण्म्य plus औ makes ण्म्यौ.",
+        "sentence": "ण्म्यौ द्वौ स्तः।",
+        "highlight": "ण्म्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "म्भ्या",
+        "tiles": [
+          "म्भ्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The mbhy-form looks lovely.",
+        "explanation": "म्भ्य plus आ makes म्भ्या.",
+        "sentence": "म्भ्या रूपं शोभते।",
+        "highlight": "म्भ्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "म्भ्यि",
+        "tiles": [
+          "म्भ्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A mbhyi-bird calls.",
+        "explanation": "म्भ्य plus इ makes म्भ्यि.",
+        "sentence": "म्भ्यि खगः कूजति।",
+        "highlight": "म्भ्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "म्भ्यी",
+        "tiles": [
+          "म्भ्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two mbhyi-forms are there.",
+        "explanation": "म्भ्य plus ई makes म्भ्यी.",
+        "sentence": "म्भ्यी द्वौ स्तः।",
+        "highlight": "म्भ्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "म्भ्यु",
+        "tiles": [
+          "म्भ्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the mbhyu.",
+        "explanation": "म्भ्य plus उ makes म्भ्यु.",
+        "sentence": "म्भ्यु बालकः पश्यति।",
+        "highlight": "म्भ्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "म्भ्यू",
+        "tiles": [
+          "म्भ्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two mbhyu-forms are there.",
+        "explanation": "म्भ्य plus ऊ makes म्भ्यू.",
+        "sentence": "म्भ्यू द्वौ स्तः।",
+        "highlight": "म्भ्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "म्भ्ये",
+        "tiles": [
+          "म्भ्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at mbhye.",
+        "explanation": "म्भ्य plus ए makes म्भ्ये.",
+        "sentence": "म्भ्ये पुष्पं विकसति।",
+        "highlight": "म्भ्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "म्भ्यै",
+        "tiles": [
+          "म्भ्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With mbhyai the breeze blows.",
+        "explanation": "म्भ्य plus ऐ makes म्भ्यै.",
+        "sentence": "म्भ्यैः सह पवनः वहति।",
+        "highlight": "म्भ्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "म्भ्यो",
+        "tiles": [
+          "म्भ्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The mbhyo is lovely.",
+        "explanation": "म्भ्य plus ओ makes म्भ्यो.",
+        "sentence": "म्भ्यो रम्यः अस्ति।",
+        "highlight": "म्भ्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "म्भ्यौ",
+        "tiles": [
+          "म्भ्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two mbhyau-forms are there.",
+        "explanation": "म्भ्य plus औ makes म्भ्यौ.",
+        "sentence": "म्भ्यौ द्वौ स्तः।",
+        "highlight": "म्भ्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ह्ण्या",
+        "tiles": [
+          "ह्ण्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The hny-form looks lovely.",
+        "explanation": "ह्ण्य plus आ makes ह्ण्या.",
+        "sentence": "ह्ण्या रूपं शोभते।",
+        "highlight": "ह्ण्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "ह्ण्यि",
+        "tiles": [
+          "ह्ण्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A hnyi-bird calls.",
+        "explanation": "ह्ण्य plus इ makes ह्ण्यि.",
+        "sentence": "ह्ण्यि खगः कूजति।",
+        "highlight": "ह्ण्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "ह्ण्यी",
+        "tiles": [
+          "ह्ण्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two hnyi-forms are there.",
+        "explanation": "ह्ण्य plus ई makes ह्ण्यी.",
+        "sentence": "ह्ण्यी द्वौ स्तः।",
+        "highlight": "ह्ण्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ह्ण्यु",
+        "tiles": [
+          "ह्ण्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the hnyu.",
+        "explanation": "ह्ण्य plus उ makes ह्ण्यु.",
+        "sentence": "ह्ण्यु बालकः पश्यति।",
+        "highlight": "ह्ण्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "ह्ण्यू",
+        "tiles": [
+          "ह्ण्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two hnyu-forms are there.",
+        "explanation": "ह्ण्य plus ऊ makes ह्ण्यू.",
+        "sentence": "ह्ण्यू द्वौ स्तः।",
+        "highlight": "ह्ण्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ह्ण्ये",
+        "tiles": [
+          "ह्ण्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at hnye.",
+        "explanation": "ह्ण्य plus ए makes ह्ण्ये.",
+        "sentence": "ह्ण्ये पुष्पं विकसति।",
+        "highlight": "ह्ण्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "ह्ण्यै",
+        "tiles": [
+          "ह्ण्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With hnyai the breeze blows.",
+        "explanation": "ह्ण्य plus ऐ makes ह्ण्यै.",
+        "sentence": "ह्ण्यैः सह पवनः वहति।",
+        "highlight": "ह्ण्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "ह्ण्यो",
+        "tiles": [
+          "ह्ण्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The hnyo is lovely.",
+        "explanation": "ह्ण्य plus ओ makes ह्ण्यो.",
+        "sentence": "ह्ण्यो रम्यः अस्ति।",
+        "highlight": "ह्ण्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "ह्ण्यौ",
+        "tiles": [
+          "ह्ण्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two hnyau-forms are there.",
+        "explanation": "ह्ण्य plus औ makes ह्ण्यौ.",
+        "sentence": "ह्ण्यौ द्वौ स्तः।",
+        "highlight": "ह्ण्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "त्स्न्या",
+        "tiles": [
+          "त्स्न्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The tsny-form looks lovely.",
+        "explanation": "त्स्न्य plus आ makes त्स्न्या.",
+        "sentence": "त्स्न्या रूपं शोभते।",
+        "highlight": "त्स्न्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "त्स्न्यि",
+        "tiles": [
+          "त्स्न्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A tsnyi-bird calls.",
+        "explanation": "त्स्न्य plus इ makes त्स्न्यि.",
+        "sentence": "त्स्न्यि खगः कूजति।",
+        "highlight": "त्स्न्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "त्स्न्यी",
+        "tiles": [
+          "त्स्न्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two tsnyi-forms are there.",
+        "explanation": "त्स्न्य plus ई makes त्स्न्यी.",
+        "sentence": "त्स्न्यी द्वौ स्तः।",
+        "highlight": "त्स्न्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "त्स्न्यु",
+        "tiles": [
+          "त्स्न्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the tsnyu.",
+        "explanation": "त्स्न्य plus उ makes त्स्न्यु.",
+        "sentence": "त्स्न्यु बालकः पश्यति।",
+        "highlight": "त्स्न्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "त्स्न्यू",
+        "tiles": [
+          "त्स्न्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two tsnyu-forms are there.",
+        "explanation": "त्स्न्य plus ऊ makes त्स्न्यू.",
+        "sentence": "त्स्न्यू द्वौ स्तः।",
+        "highlight": "त्स्न्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "त्स्न्ये",
+        "tiles": [
+          "त्स्न्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at tsnye.",
+        "explanation": "त्स्न्य plus ए makes त्स्न्ये.",
+        "sentence": "त्स्न्ये पुष्पं विकसति।",
+        "highlight": "त्स्न्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "त्स्न्यै",
+        "tiles": [
+          "त्स्न्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With tsnyai the breeze blows.",
+        "explanation": "त्स्न्य plus ऐ makes त्स्न्यै.",
+        "sentence": "त्स्न्यैः सह पवनः वहति।",
+        "highlight": "त्स्न्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "त्स्न्यो",
+        "tiles": [
+          "त्स्न्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The tsnyo is lovely.",
+        "explanation": "त्स्न्य plus ओ makes त्स्न्यो.",
+        "sentence": "त्स्न्यो रम्यः अस्ति।",
+        "highlight": "त्स्न्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "त्स्न्यौ",
+        "tiles": [
+          "त्स्न्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two tsnyau-forms are there.",
+        "explanation": "त्स्न्य plus औ makes त्स्न्यौ.",
+        "sentence": "त्स्न्यौ द्वौ स्तः।",
+        "highlight": "त्स्न्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "र्ण्या",
+        "tiles": [
+          "र्ण्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The rny-form looks lovely.",
+        "explanation": "र्ण्य plus आ makes र्ण्या.",
+        "sentence": "र्ण्या रूपं शोभते।",
+        "highlight": "र्ण्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "र्ण्यि",
+        "tiles": [
+          "र्ण्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A rnyi-bird calls.",
+        "explanation": "र्ण्य plus इ makes र्ण्यि.",
+        "sentence": "र्ण्यि खगः कूजति।",
+        "highlight": "र्ण्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "र्ण्यी",
+        "tiles": [
+          "र्ण्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two rnyi-forms are there.",
+        "explanation": "र्ण्य plus ई makes र्ण्यी.",
+        "sentence": "र्ण्यी द्वौ स्तः।",
+        "highlight": "र्ण्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "र्ण्यु",
+        "tiles": [
+          "र्ण्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the rnyu.",
+        "explanation": "र्ण्य plus उ makes र्ण्यु.",
+        "sentence": "र्ण्यु बालकः पश्यति।",
+        "highlight": "र्ण्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "र्ण्यू",
+        "tiles": [
+          "र्ण्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two rnyu-forms are there.",
+        "explanation": "र्ण्य plus ऊ makes र्ण्यू.",
+        "sentence": "र्ण्यू द्वौ स्तः।",
+        "highlight": "र्ण्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "र्ण्ये",
+        "tiles": [
+          "र्ण्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at rnye.",
+        "explanation": "र्ण्य plus ए makes र्ण्ये.",
+        "sentence": "र्ण्ये पुष्पं विकसति।",
+        "highlight": "र्ण्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "र्ण्यै",
+        "tiles": [
+          "र्ण्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With rnyai the breeze blows.",
+        "explanation": "र्ण्य plus ऐ makes र्ण्यै.",
+        "sentence": "र्ण्यैः सह पवनः वहति।",
+        "highlight": "र्ण्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "र्ण्यो",
+        "tiles": [
+          "र्ण्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The rnyo is lovely.",
+        "explanation": "र्ण्य plus ओ makes र्ण्यो.",
+        "sentence": "र्ण्यो रम्यः अस्ति।",
+        "highlight": "र्ण्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "र्ण्यौ",
+        "tiles": [
+          "र्ण्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two rnyau-forms are there.",
+        "explanation": "र्ण्य plus औ makes र्ण्यौ.",
+        "sentence": "र्ण्यौ द्वौ स्तः।",
+        "highlight": "र्ण्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ष्ण्या",
+        "tiles": [
+          "ष्ण्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The sny-form looks lovely.",
+        "explanation": "ष्ण्य plus आ makes ष्ण्या.",
+        "sentence": "ष्ण्या रूपं शोभते।",
+        "highlight": "ष्ण्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "ष्ण्यि",
+        "tiles": [
+          "ष्ण्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A snyi-bird calls.",
+        "explanation": "ष्ण्य plus इ makes ष्ण्यि.",
+        "sentence": "ष्ण्यि खगः कूजति।",
+        "highlight": "ष्ण्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "ष्ण्यी",
+        "tiles": [
+          "ष्ण्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two snyi-forms are there.",
+        "explanation": "ष्ण्य plus ई makes ष्ण्यी.",
+        "sentence": "ष्ण्यी द्वौ स्तः।",
+        "highlight": "ष्ण्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ष्ण्यु",
+        "tiles": [
+          "ष्ण्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the snyu.",
+        "explanation": "ष्ण्य plus उ makes ष्ण्यु.",
+        "sentence": "ष्ण्यु बालकः पश्यति।",
+        "highlight": "ष्ण्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "ष्ण्यू",
+        "tiles": [
+          "ष्ण्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two snyu-forms are there.",
+        "explanation": "ष्ण्य plus ऊ makes ष्ण्यू.",
+        "sentence": "ष्ण्यू द्वौ स्तः।",
+        "highlight": "ष्ण्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ष्ण्ये",
+        "tiles": [
+          "ष्ण्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at snye.",
+        "explanation": "ष्ण्य plus ए makes ष्ण्ये.",
+        "sentence": "ष्ण्ये पुष्पं विकसति।",
+        "highlight": "ष्ण्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "ष्ण्यै",
+        "tiles": [
+          "ष्ण्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With snyai the breeze blows.",
+        "explanation": "ष्ण्य plus ऐ makes ष्ण्यै.",
+        "sentence": "ष्ण्यैः सह पवनः वहति।",
+        "highlight": "ष्ण्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "ष्ण्यो",
+        "tiles": [
+          "ष्ण्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The snyo is lovely.",
+        "explanation": "ष्ण्य plus ओ makes ष्ण्यो.",
+        "sentence": "ष्ण्यो रम्यः अस्ति।",
+        "highlight": "ष्ण्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "ष्ण्यौ",
+        "tiles": [
+          "ष्ण्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two snyau-forms are there.",
+        "explanation": "ष्ण्य plus औ makes ष्ण्यौ.",
+        "sentence": "ष्ण्यौ द्वौ स्तः।",
+        "highlight": "ष्ण्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "त्त्र्या",
+        "tiles": [
+          "त्त्र्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The ttry-form looks lovely.",
+        "explanation": "त्त्र्य plus आ makes त्त्र्या.",
+        "sentence": "त्त्र्या रूपं शोभते।",
+        "highlight": "त्त्र्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "त्त्र्यि",
+        "tiles": [
+          "त्त्र्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A ttryi-bird calls.",
+        "explanation": "त्त्र्य plus इ makes त्त्र्यि.",
+        "sentence": "त्त्र्यि खगः कूजति।",
+        "highlight": "त्त्र्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "त्त्र्यी",
+        "tiles": [
+          "त्त्र्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two ttryi-forms are there.",
+        "explanation": "त्त्र्य plus ई makes त्त्र्यी.",
+        "sentence": "त्त्र्यी द्वौ स्तः।",
+        "highlight": "त्त्र्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "त्त्र्यु",
+        "tiles": [
+          "त्त्र्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the ttryu.",
+        "explanation": "त्त्र्य plus उ makes त्त्र्यु.",
+        "sentence": "त्त्र्यु बालकः पश्यति।",
+        "highlight": "त्त्र्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "त्त्र्यू",
+        "tiles": [
+          "त्त्र्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two ttryu-forms are there.",
+        "explanation": "त्त्र्य plus ऊ makes त्त्र्यू.",
+        "sentence": "त्त्र्यू द्वौ स्तः।",
+        "highlight": "त्त्र्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "त्त्र्ये",
+        "tiles": [
+          "त्त्र्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at ttrye.",
+        "explanation": "त्त्र्य plus ए makes त्त्र्ये.",
+        "sentence": "त्त्र्ये पुष्पं विकसति।",
+        "highlight": "त्त्र्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "त्त्र्यै",
+        "tiles": [
+          "त्त्र्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With ttryai the breeze blows.",
+        "explanation": "त्त्र्य plus ऐ makes त्त्र्यै.",
+        "sentence": "त्त्र्यैः सह पवनः वहति।",
+        "highlight": "त्त्र्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "त्त्र्यो",
+        "tiles": [
+          "त्त्र्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The ttryo is lovely.",
+        "explanation": "त्त्र्य plus ओ makes त्त्र्यो.",
+        "sentence": "त्त्र्यो रम्यः अस्ति।",
+        "highlight": "त्त्र्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "त्त्र्यौ",
+        "tiles": [
+          "त्त्र्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two ttryau-forms are there.",
+        "explanation": "त्त्र्य plus औ makes त्त्र्यौ.",
+        "sentence": "त्त्र्यौ द्वौ स्तः।",
+        "highlight": "त्त्र्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ग्ध्र्या",
+        "tiles": [
+          "ग्ध्र्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The gdhry-form looks lovely.",
+        "explanation": "ग्ध्र्य plus आ makes ग्ध्र्या.",
+        "sentence": "ग्ध्र्या रूपं शोभते।",
+        "highlight": "ग्ध्र्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "ग्ध्र्यि",
+        "tiles": [
+          "ग्ध्र्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A gdhryi-bird calls.",
+        "explanation": "ग्ध्र्य plus इ makes ग्ध्र्यि.",
+        "sentence": "ग्ध्र्यि खगः कूजति।",
+        "highlight": "ग्ध्र्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "ग्ध्र्यी",
+        "tiles": [
+          "ग्ध्र्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two gdhryi-forms are there.",
+        "explanation": "ग्ध्र्य plus ई makes ग्ध्र्यी.",
+        "sentence": "ग्ध्र्यी द्वौ स्तः।",
+        "highlight": "ग्ध्र्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ग्ध्र्यु",
+        "tiles": [
+          "ग्ध्र्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the gdhryu.",
+        "explanation": "ग्ध्र्य plus उ makes ग्ध्र्यु.",
+        "sentence": "ग्ध्र्यु बालकः पश्यति।",
+        "highlight": "ग्ध्र्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "ग्ध्र्यू",
+        "tiles": [
+          "ग्ध्र्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two gdhryu-forms are there.",
+        "explanation": "ग्ध्र्य plus ऊ makes ग्ध्र्यू.",
+        "sentence": "ग्ध्र्यू द्वौ स्तः।",
+        "highlight": "ग्ध्र्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ग्ध्र्ये",
+        "tiles": [
+          "ग्ध्र्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at gdhrye.",
+        "explanation": "ग्ध्र्य plus ए makes ग्ध्र्ये.",
+        "sentence": "ग्ध्र्ये पुष्पं विकसति।",
+        "highlight": "ग्ध्र्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "ग्ध्र्यै",
+        "tiles": [
+          "ग्ध्र्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With gdhryai the breeze blows.",
+        "explanation": "ग्ध्र्य plus ऐ makes ग्ध्र्यै.",
+        "sentence": "ग्ध्र्यैः सह पवनः वहति।",
+        "highlight": "ग्ध्र्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "ग्ध्र्यो",
+        "tiles": [
+          "ग्ध्र्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The gdhryo is lovely.",
+        "explanation": "ग्ध्र्य plus ओ makes ग्ध्र्यो.",
+        "sentence": "ग्ध्र्यो रम्यः अस्ति।",
+        "highlight": "ग्ध्र्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "ग्ध्र्यौ",
+        "tiles": [
+          "ग्ध्र्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two gdhryau-forms are there.",
+        "explanation": "ग्ध्र्य plus औ makes ग्ध्र्यौ.",
+        "sentence": "ग्ध्र्यौ द्वौ स्तः।",
+        "highlight": "ग्ध्र्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ब्ध्र्या",
+        "tiles": [
+          "ब्ध्र्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The bdhry-form looks lovely.",
+        "explanation": "ब्ध्र्य plus आ makes ब्ध्र्या.",
+        "sentence": "ब्ध्र्या रूपं शोभते।",
+        "highlight": "ब्ध्र्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "ब्ध्र्यि",
+        "tiles": [
+          "ब्ध्र्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A bdhryi-bird calls.",
+        "explanation": "ब्ध्र्य plus इ makes ब्ध्र्यि.",
+        "sentence": "ब्ध्र्यि खगः कूजति।",
+        "highlight": "ब्ध्र्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "ब्ध्र्यी",
+        "tiles": [
+          "ब्ध्र्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two bdhryi-forms are there.",
+        "explanation": "ब्ध्र्य plus ई makes ब्ध्र्यी.",
+        "sentence": "ब्ध्र्यी द्वौ स्तः।",
+        "highlight": "ब्ध्र्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ब्ध्र्यु",
+        "tiles": [
+          "ब्ध्र्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the bdhryu.",
+        "explanation": "ब्ध्र्य plus उ makes ब्ध्र्यु.",
+        "sentence": "ब्ध्र्यु बालकः पश्यति।",
+        "highlight": "ब्ध्र्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "ब्ध्र्यू",
+        "tiles": [
+          "ब्ध्र्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two bdhryu-forms are there.",
+        "explanation": "ब्ध्र्य plus ऊ makes ब्ध्र्यू.",
+        "sentence": "ब्ध्र्यू द्वौ स्तः।",
+        "highlight": "ब्ध्र्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "ब्ध्र्ये",
+        "tiles": [
+          "ब्ध्र्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at bdhrye.",
+        "explanation": "ब्ध्र्य plus ए makes ब्ध्र्ये.",
+        "sentence": "ब्ध्र्ये पुष्पं विकसति।",
+        "highlight": "ब्ध्र्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "ब्ध्र्यै",
+        "tiles": [
+          "ब्ध्र्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With bdhryai the breeze blows.",
+        "explanation": "ब्ध्र्य plus ऐ makes ब्ध्र्यै.",
+        "sentence": "ब्ध्र्यैः सह पवनः वहति।",
+        "highlight": "ब्ध्र्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "ब्ध्र्यो",
+        "tiles": [
+          "ब्ध्र्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The bdhryo is lovely.",
+        "explanation": "ब्ध्र्य plus ओ makes ब्ध्र्यो.",
+        "sentence": "ब्ध्र्यो रम्यः अस्ति।",
+        "highlight": "ब्ध्र्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "ब्ध्र्यौ",
+        "tiles": [
+          "ब्ध्र्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two bdhryau-forms are there.",
+        "explanation": "ब्ध्र्य plus औ makes ब्ध्र्यौ.",
+        "sentence": "ब्ध्र्यौ द्वौ स्तः।",
+        "highlight": "ब्ध्र्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "त्क्र्या",
+        "tiles": [
+          "त्क्र्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The tkry-form looks lovely.",
+        "explanation": "त्क्र्य plus आ makes त्क्र्या.",
+        "sentence": "त्क्र्या रूपं शोभते।",
+        "highlight": "त्क्र्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "त्क्र्यि",
+        "tiles": [
+          "त्क्र्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A tkryi-bird calls.",
+        "explanation": "त्क्र्य plus इ makes त्क्र्यि.",
+        "sentence": "त्क्र्यि खगः कूजति।",
+        "highlight": "त्क्र्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "त्क्र्यी",
+        "tiles": [
+          "त्क्र्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two tkryi-forms are there.",
+        "explanation": "त्क्र्य plus ई makes त्क्र्यी.",
+        "sentence": "त्क्र्यी द्वौ स्तः।",
+        "highlight": "त्क्र्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "त्क्र्यु",
+        "tiles": [
+          "त्क्र्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the tkryu.",
+        "explanation": "त्क्र्य plus उ makes त्क्र्यु.",
+        "sentence": "त्क्र्यु बालकः पश्यति।",
+        "highlight": "त्क्र्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "त्क्र्यू",
+        "tiles": [
+          "त्क्र्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two tkryu-forms are there.",
+        "explanation": "त्क्र्य plus ऊ makes त्क्र्यू.",
+        "sentence": "त्क्र्यू द्वौ स्तः।",
+        "highlight": "त्क्र्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "त्क्र्ये",
+        "tiles": [
+          "त्क्र्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at tkrye.",
+        "explanation": "त्क्र्य plus ए makes त्क्र्ये.",
+        "sentence": "त्क्र्ये पुष्पं विकसति।",
+        "highlight": "त्क्र्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "त्क्र्यै",
+        "tiles": [
+          "त्क्र्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With tkryai the breeze blows.",
+        "explanation": "त्क्र्य plus ऐ makes त्क्र्यै.",
+        "sentence": "त्क्र्यैः सह पवनः वहति।",
+        "highlight": "त्क्र्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "त्क्र्यो",
+        "tiles": [
+          "त्क्र्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The tkryo is lovely.",
+        "explanation": "त्क्र्य plus ओ makes त्क्र्यो.",
+        "sentence": "त्क्र्यो रम्यः अस्ति।",
+        "highlight": "त्क्र्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "त्क्र्यौ",
+        "tiles": [
+          "त्क्र्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two tkryau-forms are there.",
+        "explanation": "त्क्र्य plus औ makes त्क्र्यौ.",
+        "sentence": "त्क्र्यौ द्वौ स्तः।",
+        "highlight": "त्क्र्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -84451,7 +87511,6 @@
         "english": "The beautiful cloud is seen.",
         "highlight": "मौग्ध्यमेघः"
       },
-
       {
         "prompt": "____ वहति।",
         "target": "आह्स्यपवनः",
@@ -85501,7 +88560,2108 @@
         "sentence": "स्तन्भ्यगिरिः विशालः अस्ति।",
         "english": "The calmable mountain is huge.",
         "highlight": "स्तन्भ्यगिरिः"
-      },      {
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "प्रण्ह्यपवनः",
+        "tiles": [
+          "प्रण्ह्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "प्रण्ह्यपवनः वहति।",
+        "english": "The humble breeze blows.",
+        "highlight": "प्रण्ह्यपवनः"
+      },
+      {
+        "prompt": "____ तिष्ठति।",
+        "target": "प्रण्ह्यतरुः",
+        "tiles": [
+          "प्रण्ह्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "प्रण्ह्यतरुः तिष्ठति।",
+        "english": "The humble tree stands.",
+        "highlight": "प्रण्ह्यतरुः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "प्रण्ह्यखगः",
+        "tiles": [
+          "प्रण्ह्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "प्रण्ह्यखगः कूजति।",
+        "english": "The humble bird chirps.",
+        "highlight": "प्रण्ह्यखगः"
+      },
+      {
+        "prompt": "____ वर्षति।",
+        "target": "प्रण्ह्यमेघः",
+        "tiles": [
+          "प्रण्ह्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "प्रण्ह्यमेघः वर्षति।",
+        "english": "The humble cloud rains.",
+        "highlight": "प्रण्ह्यमेघः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "प्रण्ह्यसरः",
+        "tiles": [
+          "प्रण्ह्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "प्रण्ह्यसरः शीतलः।",
+        "english": "The humble lake is cool.",
+        "highlight": "प्रण्ह्यसरः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "प्रण्ह्यपुष्पम्",
+        "tiles": [
+          "प्रण्ह्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "प्रण्ह्यपुष्पम् विकसति।",
+        "english": "The humble flower blooms.",
+        "highlight": "प्रण्ह्यपुष्पम्"
+      },
+      {
+        "prompt": "____ उच्चैः अस्ति।",
+        "target": "प्रण्ह्यगिरिः",
+        "tiles": [
+          "प्रण्ह्यगिरिः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "प्रण्ह्यगिरिः उच्चैः अस्ति।",
+        "english": "The humble mountain is high.",
+        "highlight": "प्रण्ह्यगिरिः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "उद्भ्र्यपवनः",
+        "tiles": [
+          "उद्भ्र्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उद्भ्र्यपवनः वहति।",
+        "english": "The agitated breeze blows.",
+        "highlight": "उद्भ्र्यपवनः"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "उद्भ्र्यमेघः",
+        "tiles": [
+          "उद्भ्र्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उद्भ्र्यमेघः गर्जति।",
+        "english": "The agitated cloud thunders.",
+        "highlight": "उद्भ्र्यमेघः"
+      },
+      {
+        "prompt": "____ चञ्चलः अस्ति।",
+        "target": "उद्भ्र्यसरः",
+        "tiles": [
+          "उद्भ्र्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उद्भ्र्यसरः चञ्चलः अस्ति।",
+        "english": "The agitated lake is restless.",
+        "highlight": "उद्भ्र्यसरः"
+      },
+      {
+        "prompt": "____ कम्पते।",
+        "target": "उद्भ्र्यतरुः",
+        "tiles": [
+          "उद्भ्र्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उद्भ्र्यतरुः कम्पते।",
+        "english": "The agitated tree shakes.",
+        "highlight": "उद्भ्र्यतरुः"
+      },
+      {
+        "prompt": "____ उत्पतति।",
+        "target": "उद्भ्र्यखगः",
+        "tiles": [
+          "उद्भ्र्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उद्भ्र्यखगः उत्पतति।",
+        "english": "The agitated bird flies up.",
+        "highlight": "उद्भ्र्यखगः"
+      },
+      {
+        "prompt": "____ भ्रमति।",
+        "target": "उद्भ्र्यसिंहः",
+        "tiles": [
+          "उद्भ्र्यसिंहः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उद्भ्र्यसिंहः भ्रमति।",
+        "english": "The agitated lion roams.",
+        "highlight": "उद्भ्र्यसिंहः"
+      },
+      {
+        "prompt": "____ पतति।",
+        "target": "उद्भ्र्यपुष्पम्",
+        "tiles": [
+          "उद्भ्र्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उद्भ्र्यपुष्पम् पतति।",
+        "english": "The agitated flower falls.",
+        "highlight": "उद्भ्र्यपुष्पम्"
+      },
+      {
+        "prompt": "____ तिष्ठति।",
+        "target": "निष्भ्यतरुः",
+        "tiles": [
+          "निष्भ्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "निष्भ्यतरुः तिष्ठति।",
+        "english": "The bare tree stands.",
+        "highlight": "निष्भ्यतरुः"
+      },
+      {
+        "prompt": "____ शान्तं अस्ति।",
+        "target": "निष्भ्यवनम्",
+        "tiles": [
+          "निष्भ्यवनम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "निष्भ्यवनम् शान्तं अस्ति।",
+        "english": "The bare forest is calm.",
+        "highlight": "निष्भ्यवनम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "निष्भ्यपवनः",
+        "tiles": [
+          "निष्भ्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "निष्भ्यपवनः वहति।",
+        "english": "The bare breeze blows.",
+        "highlight": "निष्भ्यपवनः"
+      },
+      {
+        "prompt": "____ दृश्यते।",
+        "target": "निष्भ्यगिरिः",
+        "tiles": [
+          "निष्भ्यगिरिः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "निष्भ्यगिरिः दृश्यते।",
+        "english": "The bare mountain is seen.",
+        "highlight": "निष्भ्यगिरिः"
+      },
+      {
+        "prompt": "____ दीर्घः अस्ति।",
+        "target": "निष्भ्यमार्गः",
+        "tiles": [
+          "निष्भ्यमार्गः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "निष्भ्यमार्गः दीर्घः अस्ति।",
+        "english": "The bare path is long.",
+        "highlight": "निष्भ्यमार्गः"
+      },
+      {
+        "prompt": "____ चलति।",
+        "target": "निष्भ्यमेघः",
+        "tiles": [
+          "निष्भ्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "निष्भ्यमेघः चलति।",
+        "english": "The bare cloud moves.",
+        "highlight": "निष्भ्यमेघः"
+      },
+      {
+        "prompt": "____ अत्र अस्ति।",
+        "target": "निष्भ्यसरः",
+        "tiles": [
+          "निष्भ्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "निष्भ्यसरः अत्र अस्ति।",
+        "english": "The bare lake is here.",
+        "highlight": "निष्भ्यसरः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "आह्भ्यपवनः",
+        "tiles": [
+          "आह्भ्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "आह्भ्यपवनः वहति।",
+        "english": "The invoked breeze blows.",
+        "highlight": "आह्भ्यपवनः"
+      },
+      {
+        "prompt": "____ गायति।",
+        "target": "आह्भ्यखगः",
+        "tiles": [
+          "आह्भ्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "आह्भ्यखगः गायति।",
+        "english": "The invoked bird sings.",
+        "highlight": "आह्भ्यखगः"
+      },
+      {
+        "prompt": "____ वर्षति।",
+        "target": "आह्भ्यमेघः",
+        "tiles": [
+          "आह्भ्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "आह्भ्यमेघः वर्षति।",
+        "english": "The invoked cloud rains.",
+        "highlight": "आह्भ्यमेघः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "आह्भ्यसरः",
+        "tiles": [
+          "आह्भ्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "आह्भ्यसरः शीतलः।",
+        "english": "The invoked lake is cool.",
+        "highlight": "आह्भ्यसरः"
+      },
+      {
+        "prompt": "____ वर्धते।",
+        "target": "आह्भ्यतरुः",
+        "tiles": [
+          "आह्भ्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "आह्भ्यतरुः वर्धते।",
+        "english": "The invoked tree grows.",
+        "highlight": "आह्भ्यतरुः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "आह्भ्यकमलम्",
+        "tiles": [
+          "आह्भ्यकमलम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "आह्भ्यकमलम् विकसति।",
+        "english": "The invoked lotus blooms.",
+        "highlight": "आह्भ्यकमलम्"
+      },
+      {
+        "prompt": "____ विशालः अस्ति।",
+        "target": "आह्भ्यगिरिः",
+        "tiles": [
+          "आह्भ्यगिरिः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "आह्भ्यगिरिः विशालः अस्ति।",
+        "english": "The invoked mountain is huge.",
+        "highlight": "आह्भ्यगिरिः"
+      },
+      {
+        "prompt": "____ विभाति।",
+        "target": "शुब्स्यसूर्यः",
+        "tiles": [
+          "शुब्स्यसूर्यः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "शुब्स्यसूर्यः विभाति।",
+        "english": "The bright sun shines.",
+        "highlight": "शुब्स्यसूर्यः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "शुब्स्यपुष्पम्",
+        "tiles": [
+          "शुब्स्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "शुब्स्यपुष्पम् विकसति।",
+        "english": "The bright flower blooms.",
+        "highlight": "शुब्स्यपुष्पम्"
+      },
+      {
+        "prompt": "____ सुन्दरं अस्ति।",
+        "target": "शुब्स्यकमलम्",
+        "tiles": [
+          "शुब्स्यकमलम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "शुब्स्यकमलम् सुन्दरं अस्ति।",
+        "english": "The bright lotus is beautiful.",
+        "highlight": "शुब्स्यकमलम्"
+      },
+      {
+        "prompt": "____ स्वच्छः अस्ति।",
+        "target": "शुब्स्यसरः",
+        "tiles": [
+          "शुब्स्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "शुब्स्यसरः स्वच्छः अस्ति।",
+        "english": "The bright lake is clean.",
+        "highlight": "शुब्स्यसरः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "शुब्स्यपवनः",
+        "tiles": [
+          "शुब्स्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "शुब्स्यपवनः वहति।",
+        "english": "The bright breeze blows.",
+        "highlight": "शुब्स्यपवनः"
+      },
+      {
+        "prompt": "____ दृश्यते।",
+        "target": "शुब्स्यमेघः",
+        "tiles": [
+          "शुब्स्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "शुब्स्यमेघः दृश्यते।",
+        "english": "The bright cloud is seen.",
+        "highlight": "शुब्स्यमेघः"
+      },
+      {
+        "prompt": "____ शोभते।",
+        "target": "शुब्स्यतरुः",
+        "tiles": [
+          "शुब्स्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "शुब्स्यतरुः शोभते।",
+        "english": "The bright tree looks beautiful.",
+        "highlight": "शुब्स्यतरुः"
+      },
+      {
+        "prompt": "____ उच्चैः अस्ति।",
+        "target": "उच्म्यगिरिः",
+        "tiles": [
+          "उच्म्यगिरिः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उच्म्यगिरिः उच्चैः अस्ति।",
+        "english": "The high mountain is high.",
+        "highlight": "उच्म्यगिरिः"
+      },
+      {
+        "prompt": "____ वर्धते।",
+        "target": "उच्म्यतरुः",
+        "tiles": [
+          "उच्म्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उच्म्यतरुः वर्धते।",
+        "english": "The high tree grows.",
+        "highlight": "उच्म्यतरुः"
+      },
+      {
+        "prompt": "____ दृश्यते।",
+        "target": "उच्म्यमेघः",
+        "tiles": [
+          "उच्म्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उच्म्यमेघः दृश्यते।",
+        "english": "The high cloud is seen.",
+        "highlight": "उच्म्यमेघः"
+      },
+      {
+        "prompt": "____ उत्पतति।",
+        "target": "उच्म्यखगः",
+        "tiles": [
+          "उच्म्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उच्म्यखगः उत्पतति।",
+        "english": "The high bird flies up.",
+        "highlight": "उच्म्यखगः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "उच्म्यपवनः",
+        "tiles": [
+          "उच्म्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उच्म्यपवनः वहति।",
+        "english": "The high breeze blows.",
+        "highlight": "उच्म्यपवनः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "उच्म्यसरः",
+        "tiles": [
+          "उच्म्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उच्म्यसरः शीतलः।",
+        "english": "The high lake is cool.",
+        "highlight": "उच्म्यसरः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "उच्म्यपुष्पम्",
+        "tiles": [
+          "उच्म्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उच्म्यपुष्पम् विकसति।",
+        "english": "The high flower blooms.",
+        "highlight": "उच्म्यपुष्पम्"
+      },
+      {
+        "prompt": "____ शोभते।",
+        "target": "फल्स्यतरुः",
+        "tiles": [
+          "फल्स्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "फल्स्यतरुः शोभते।",
+        "english": "The fruiting tree looks beautiful.",
+        "highlight": "फल्स्यतरुः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "फल्स्यपुष्पम्",
+        "tiles": [
+          "फल्स्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "फल्स्यपुष्पम् विकसति।",
+        "english": "The fruiting flower blooms.",
+        "highlight": "फल्स्यपुष्पम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "फल्स्यपवनः",
+        "tiles": [
+          "फल्स्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "फल्स्यपवनः वहति।",
+        "english": "The fruiting breeze blows.",
+        "highlight": "फल्स्यपवनः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "फल्स्यसरः",
+        "tiles": [
+          "फल्स्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "फल्स्यसरः शीतलः।",
+        "english": "The fruiting lake is cool.",
+        "highlight": "फल्स्यसरः"
+      },
+      {
+        "prompt": "____ उपविशति।",
+        "target": "फल्स्यखगः",
+        "tiles": [
+          "फल्स्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "फल्स्यखगः उपविशति।",
+        "english": "The fruiting bird sits.",
+        "highlight": "फल्स्यखगः"
+      },
+      {
+        "prompt": "____ वर्षति।",
+        "target": "फल्स्यमेघः",
+        "tiles": [
+          "फल्स्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "फल्स्यमेघः वर्षति।",
+        "english": "The fruiting cloud rains.",
+        "highlight": "फल्स्यमेघः"
+      },
+      {
+        "prompt": "____ सुन्दरं अस्ति।",
+        "target": "फल्स्यकमलम्",
+        "tiles": [
+          "फल्स्यकमलम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "फल्स्यकमलम् सुन्दरं अस्ति।",
+        "english": "The fruiting lotus is beautiful.",
+        "highlight": "फल्स्यकमलम्"
+      },
+      {
+        "prompt": "____ उच्चैः अस्ति।",
+        "target": "अग्न्यगिरिः",
+        "tiles": [
+          "अग्न्यगिरिः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "अग्न्यगिरिः उच्चैः अस्ति।",
+        "english": "The fire-mountain is high.",
+        "highlight": "अग्न्यगिरिः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "अग्न्यपवनः",
+        "tiles": [
+          "अग्न्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "अग्न्यपवनः वहति।",
+        "english": "The fire-breeze blows.",
+        "highlight": "अग्न्यपवनः"
+      },
+      {
+        "prompt": "____ गर्जति।",
+        "target": "अग्न्यमेघः",
+        "tiles": [
+          "अग्न्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "अग्न्यमेघः गर्जति।",
+        "english": "The fire-cloud thunders.",
+        "highlight": "अग्न्यमेघः"
+      },
+      {
+        "prompt": "____ तिष्ठति।",
+        "target": "अग्न्यतरुः",
+        "tiles": [
+          "अग्न्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "अग्न्यतरुः तिष्ठति।",
+        "english": "The fire-tree stands.",
+        "highlight": "अग्न्यतरुः"
+      },
+      {
+        "prompt": "____ उष्णः अस्ति।",
+        "target": "अग्न्यसरः",
+        "tiles": [
+          "अग्न्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "अग्न्यसरः उष्णः अस्ति।",
+        "english": "The fire-lake is hot.",
+        "highlight": "अग्न्यसरः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "अग्न्यपुष्पम्",
+        "tiles": [
+          "अग्न्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "अग्न्यपुष्पम् विकसति।",
+        "english": "The fire-flower blooms.",
+        "highlight": "अग्न्यपुष्पम्"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "अग्न्यखगः",
+        "tiles": [
+          "अग्न्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "अग्न्यखगः कूजति।",
+        "english": "The fire-bird chirps.",
+        "highlight": "अग्न्यखगः"
+      },
+      {
+        "prompt": "____ उपविशति।",
+        "target": "सुप्म्यखगः",
+        "tiles": [
+          "सुप्म्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सुप्म्यखगः उपविशति।",
+        "english": "The sleepy bird sits.",
+        "highlight": "सुप्म्यखगः"
+      },
+      {
+        "prompt": "____ निद्रायते।",
+        "target": "सुप्म्यसिंहः",
+        "tiles": [
+          "सुप्म्यसिंहः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सुप्म्यसिंहः निद्रायते।",
+        "english": "The sleepy lion sleeps.",
+        "highlight": "सुप्म्यसिंहः"
+      },
+      {
+        "prompt": "____ मन्दं वहति।",
+        "target": "सुप्म्यपवनः",
+        "tiles": [
+          "सुप्म्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सुप्म्यपवनः मन्दं वहति।",
+        "english": "The sleepy breeze blows softly.",
+        "highlight": "सुप्म्यपवनः"
+      },
+      {
+        "prompt": "____ शान्तः अस्ति।",
+        "target": "सुप्म्यसरः",
+        "tiles": [
+          "सुप्म्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सुप्म्यसरः शान्तः अस्ति।",
+        "english": "The sleepy lake is calm.",
+        "highlight": "सुप्म्यसरः"
+      },
+      {
+        "prompt": "____ मीलति।",
+        "target": "सुप्म्यकमलम्",
+        "tiles": [
+          "सुप्म्यकमलम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सुप्म्यकमलम् मीलति।",
+        "english": "The sleepy lotus closes.",
+        "highlight": "सुप्म्यकमलम्"
+      },
+      {
+        "prompt": "____ तिष्ठति।",
+        "target": "सुप्म्यतरुः",
+        "tiles": [
+          "सुप्म्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सुप्म्यतरुः तिष्ठति।",
+        "english": "The sleepy tree stands.",
+        "highlight": "सुप्म्यतरुः"
+      },
+      {
+        "prompt": "____ दृश्यते।",
+        "target": "सुप्म्यमेघः",
+        "tiles": [
+          "सुप्म्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सुप्म्यमेघः दृश्यते।",
+        "english": "The sleepy cloud is seen.",
+        "highlight": "सुप्म्यमेघः"
+      },
+      {
+        "prompt": "____ विभाति।",
+        "target": "शुब्म्यसूर्यः",
+        "tiles": [
+          "शुब्म्यसूर्यः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "शुब्म्यसूर्यः विभाति।",
+        "english": "The bright sun shines.",
+        "highlight": "शुब्म्यसूर्यः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "शुब्म्यपुष्पम्",
+        "tiles": [
+          "शुब्म्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "शुब्म्यपुष्पम् विकसति।",
+        "english": "The bright flower blooms.",
+        "highlight": "शुब्म्यपुष्पम्"
+      },
+      {
+        "prompt": "____ सुन्दरं अस्ति।",
+        "target": "शुब्म्यकमलम्",
+        "tiles": [
+          "शुब्म्यकमलम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "शुब्म्यकमलम् सुन्दरं अस्ति।",
+        "english": "The bright lotus is beautiful.",
+        "highlight": "शुब्म्यकमलम्"
+      },
+      {
+        "prompt": "____ स्वच्छः अस्ति।",
+        "target": "शुब्म्यसरः",
+        "tiles": [
+          "शुब्म्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "शुब्म्यसरः स्वच्छः अस्ति।",
+        "english": "The bright lake is clean.",
+        "highlight": "शुब्म्यसरः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "शुब्म्यपवनः",
+        "tiles": [
+          "शुब्म्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "शुब्म्यपवनः वहति।",
+        "english": "The bright breeze blows.",
+        "highlight": "शुब्म्यपवनः"
+      },
+      {
+        "prompt": "____ दृश्यते।",
+        "target": "शुब्म्यमेघः",
+        "tiles": [
+          "शुब्म्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "शुब्म्यमेघः दृश्यते।",
+        "english": "The bright cloud is seen.",
+        "highlight": "शुब्म्यमेघः"
+      },
+      {
+        "prompt": "____ शोभते।",
+        "target": "शुब्म्यतरुः",
+        "tiles": [
+          "शुब्म्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "शुब्म्यतरुः शोभते।",
+        "english": "The bright tree looks beautiful.",
+        "highlight": "शुब्म्यतरुः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "प्रण्म्यपवनः",
+        "tiles": [
+          "प्रण्म्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "प्रण्म्यपवनः वहति।",
+        "english": "The gentle breeze blows.",
+        "highlight": "प्रण्म्यपवनः"
+      },
+      {
+        "prompt": "____ तिष्ठति।",
+        "target": "प्रण्म्यतरुः",
+        "tiles": [
+          "प्रण्म्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "प्रण्म्यतरुः तिष्ठति।",
+        "english": "The humble tree stands.",
+        "highlight": "प्रण्म्यतरुः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "प्रण्म्यखगः",
+        "tiles": [
+          "प्रण्म्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "प्रण्म्यखगः कूजति।",
+        "english": "The humble bird chirps.",
+        "highlight": "प्रण्म्यखगः"
+      },
+      {
+        "prompt": "____ वर्षति।",
+        "target": "प्रण्म्यमेघः",
+        "tiles": [
+          "प्रण्म्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "प्रण्म्यमेघः वर्षति।",
+        "english": "The humble cloud rains.",
+        "highlight": "प्रण्म्यमेघः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "प्रण्म्यसरः",
+        "tiles": [
+          "प्रण्म्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "प्रण्म्यसरः शीतलः।",
+        "english": "The humble lake is cool.",
+        "highlight": "प्रण्म्यसरः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "प्रण्म्यपुष्पम्",
+        "tiles": [
+          "प्रण्म्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "प्रण्म्यपुष्पम् विकसति।",
+        "english": "The humble flower blooms.",
+        "highlight": "प्रण्म्यपुष्पम्"
+      },
+      {
+        "prompt": "____ उच्चैः अस्ति।",
+        "target": "प्रण्म्यगिरिः",
+        "tiles": [
+          "प्रण्म्यगिरिः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "प्रण्म्यगिरिः उच्चैः अस्ति।",
+        "english": "The humble mountain is high.",
+        "highlight": "प्रण्म्यगिरिः"
+      },
+      {
+        "prompt": "____ दृश्यते।",
+        "target": "सम्भ्यमेघः",
+        "tiles": [
+          "सम्भ्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सम्भ्यमेघः दृश्यते।",
+        "english": "The gathered cloud is seen.",
+        "highlight": "सम्भ्यमेघः"
+      },
+      {
+        "prompt": "____ उत्पतति।",
+        "target": "सम्भ्यखगः",
+        "tiles": [
+          "सम्भ्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सम्भ्यखगः उत्पतति।",
+        "english": "The gathered bird flies up.",
+        "highlight": "सम्भ्यखगः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "सम्भ्यपवनः",
+        "tiles": [
+          "सम्भ्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सम्भ्यपवनः वहति।",
+        "english": "The gathered breeze blows.",
+        "highlight": "सम्भ्यपवनः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "सम्भ्यसरः",
+        "tiles": [
+          "सम्भ्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सम्भ्यसरः शीतलः।",
+        "english": "The gathered lake is cool.",
+        "highlight": "सम्भ्यसरः"
+      },
+      {
+        "prompt": "____ वर्धते।",
+        "target": "सम्भ्यतरुः",
+        "tiles": [
+          "सम्भ्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सम्भ्यतरुः वर्धते।",
+        "english": "The gathered tree grows.",
+        "highlight": "सम्भ्यतरुः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "सम्भ्यपुष्पम्",
+        "tiles": [
+          "सम्भ्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सम्भ्यपुष्पम् विकसति।",
+        "english": "The gathered flower blooms.",
+        "highlight": "सम्भ्यपुष्पम्"
+      },
+      {
+        "prompt": "____ विशालः अस्ति।",
+        "target": "सम्भ्यगिरिः",
+        "tiles": [
+          "सम्भ्यगिरिः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सम्भ्यगिरिः विशालः अस्ति।",
+        "english": "The massive mountain is huge.",
+        "highlight": "सम्भ्यगिरिः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "अह्ण्यपवनः",
+        "tiles": [
+          "अह्ण्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "अह्ण्यपवनः वहति।",
+        "english": "The daytime breeze blows.",
+        "highlight": "अह्ण्यपवनः"
+      },
+      {
+        "prompt": "____ दृश्यते।",
+        "target": "अह्ण्यमेघः",
+        "tiles": [
+          "अह्ण्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "अह्ण्यमेघः दृश्यते।",
+        "english": "The daytime cloud is seen.",
+        "highlight": "अह्ण्यमेघः"
+      },
+      {
+        "prompt": "____ विभाति।",
+        "target": "अह्ण्यसूर्यः",
+        "tiles": [
+          "अह्ण्यसूर्यः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "अह्ण्यसूर्यः विभाति।",
+        "english": "The daytime sun shines.",
+        "highlight": "अह्ण्यसूर्यः"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "अह्ण्यसरः",
+        "tiles": [
+          "अह्ण्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "अह्ण्यसरः शीतलः।",
+        "english": "The daytime lake is cool.",
+        "highlight": "अह्ण्यसरः"
+      },
+      {
+        "prompt": "____ शोभते।",
+        "target": "अह्ण्यतरुः",
+        "tiles": [
+          "अह्ण्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "अह्ण्यतरुः शोभते।",
+        "english": "The daytime tree looks beautiful.",
+        "highlight": "अह्ण्यतरुः"
+      },
+      {
+        "prompt": "____ गायति।",
+        "target": "अह्ण्यखगः",
+        "tiles": [
+          "अह्ण्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "अह्ण्यखगः गायति।",
+        "english": "The daytime bird sings.",
+        "highlight": "अह्ण्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "अह्ण्यकमलम्",
+        "tiles": [
+          "अह्ण्यकमलम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "अह्ण्यकमलम् विकसति।",
+        "english": "The daytime lotus blooms.",
+        "highlight": "अह्ण्यकमलम्"
+      },
+      {
+        "prompt": "____ दृश्यते।",
+        "target": "उत्स्न्यमेघः",
+        "tiles": [
+          "उत्स्न्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उत्स्न्यमेघः दृश्यते।",
+        "english": "The rising cloud is seen.",
+        "highlight": "उत्स्न्यमेघः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "उत्स्न्यपवनः",
+        "tiles": [
+          "उत्स्न्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उत्स्न्यपवनः वहति।",
+        "english": "The surging breeze blows.",
+        "highlight": "उत्स्न्यपवनः"
+      },
+      {
+        "prompt": "____ चञ्चलः अस्ति।",
+        "target": "उत्स्न्यसरः",
+        "tiles": [
+          "उत्स्न्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उत्स्न्यसरः चञ्चलः अस्ति।",
+        "english": "The surging lake is restless.",
+        "highlight": "उत्स्न्यसरः"
+      },
+      {
+        "prompt": "____ वर्धते।",
+        "target": "उत्स्न्यतरुः",
+        "tiles": [
+          "उत्स्न्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उत्स्न्यतरुः वर्धते।",
+        "english": "The rising tree grows.",
+        "highlight": "उत्स्न्यतरुः"
+      },
+      {
+        "prompt": "____ उत्पतति।",
+        "target": "उत्स्न्यखगः",
+        "tiles": [
+          "उत्स्न्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उत्स्न्यखगः उत्पतति।",
+        "english": "The rising bird flies up.",
+        "highlight": "उत्स्न्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "उत्स्न्यपुष्पम्",
+        "tiles": [
+          "उत्स्न्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उत्स्न्यपुष्पम् विकसति।",
+        "english": "The rising flower blooms.",
+        "highlight": "उत्स्न्यपुष्पम्"
+      },
+      {
+        "prompt": "____ उच्चैः अस्ति।",
+        "target": "उत्स्न्यगिरिः",
+        "tiles": [
+          "उत्स्न्यगिरिः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उत्स्न्यगिरिः उच्चैः अस्ति।",
+        "english": "The rising mountain is high.",
+        "highlight": "उत्स्न्यगिरिः"
+      },
+      {
+        "prompt": "____ विभाति।",
+        "target": "पूर्ण्यचन्द्रः",
+        "tiles": [
+          "पूर्ण्यचन्द्रः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "पूर्ण्यचन्द्रः विभाति।",
+        "english": "The full moon shines.",
+        "highlight": "पूर्ण्यचन्द्रः"
+      },
+      {
+        "prompt": "____ स्वच्छः अस्ति।",
+        "target": "पूर्ण्यसरः",
+        "tiles": [
+          "पूर्ण्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "पूर्ण्यसरः स्वच्छः अस्ति।",
+        "english": "The perfect lake is clean.",
+        "highlight": "पूर्ण्यसरः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "पूर्ण्यपुष्पम्",
+        "tiles": [
+          "पूर्ण्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "पूर्ण्यपुष्पम् विकसति।",
+        "english": "The perfect flower blooms.",
+        "highlight": "पूर्ण्यपुष्पम्"
+      },
+      {
+        "prompt": "____ सुन्दरं अस्ति।",
+        "target": "पूर्ण्यकमलम्",
+        "tiles": [
+          "पूर्ण्यकमलम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "पूर्ण्यकमलम् सुन्दरं अस्ति।",
+        "english": "The perfect lotus is beautiful.",
+        "highlight": "पूर्ण्यकमलम्"
+      },
+      {
+        "prompt": "____ गायति।",
+        "target": "पूर्ण्यखगः",
+        "tiles": [
+          "पूर्ण्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "पूर्ण्यखगः गायति।",
+        "english": "The perfect bird sings.",
+        "highlight": "पूर्ण्यखगः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "पूर्ण्यपवनः",
+        "tiles": [
+          "पूर्ण्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "पूर्ण्यपवनः वहति।",
+        "english": "The perfect breeze blows.",
+        "highlight": "पूर्ण्यपवनः"
+      },
+      {
+        "prompt": "____ शोभते।",
+        "target": "पूर्ण्यतरुः",
+        "tiles": [
+          "पूर्ण्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "पूर्ण्यतरुः शोभते।",
+        "english": "The perfect tree looks beautiful.",
+        "highlight": "पूर्ण्यतरुः"
+      },
+      {
+        "prompt": "____ वर्षति।",
+        "target": "कृष्ण्यमेघः",
+        "tiles": [
+          "कृष्ण्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "कृष्ण्यमेघः वर्षति।",
+        "english": "The dark cloud rains.",
+        "highlight": "कृष्ण्यमेघः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "कृष्ण्यपवनः",
+        "tiles": [
+          "कृष्ण्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "कृष्ण्यपवनः वहति।",
+        "english": "The dark breeze blows.",
+        "highlight": "कृष्ण्यपवनः"
+      },
+      {
+        "prompt": "____ गभीरः अस्ति।",
+        "target": "कृष्ण्यसरः",
+        "tiles": [
+          "कृष्ण्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "कृष्ण्यसरः गभीरः अस्ति।",
+        "english": "The dark lake is deep.",
+        "highlight": "कृष्ण्यसरः"
+      },
+      {
+        "prompt": "____ तिष्ठति।",
+        "target": "कृष्ण्यतरुः",
+        "tiles": [
+          "कृष्ण्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "कृष्ण्यतरुः तिष्ठति।",
+        "english": "The dark tree stands.",
+        "highlight": "कृष्ण्यतरुः"
+      },
+      {
+        "prompt": "____ कूजति।",
+        "target": "कृष्ण्यखगः",
+        "tiles": [
+          "कृष्ण्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "कृष्ण्यखगः कूजति।",
+        "english": "The dark bird chirps.",
+        "highlight": "कृष्ण्यखगः"
+      },
+      {
+        "prompt": "____ घोरं अस्ति।",
+        "target": "कृष्ण्यवनम्",
+        "tiles": [
+          "कृष्ण्यवनम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "कृष्ण्यवनम् घोरं अस्ति।",
+        "english": "The dark forest is dense.",
+        "highlight": "कृष्ण्यवनम्"
+      },
+      {
+        "prompt": "____ भ्रमति।",
+        "target": "कृष्ण्यसिंहः",
+        "tiles": [
+          "कृष्ण्यसिंहः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "कृष्ण्यसिंहः भ्रमति।",
+        "english": "The dark lion roams.",
+        "highlight": "कृष्ण्यसिंहः"
+      },
+      {
+        "prompt": "____ अत्र अस्ति।",
+        "target": "सत्त्र्यतरुः",
+        "tiles": [
+          "सत्त्र्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सत्त्र्यतरुः अत्र अस्ति।",
+        "english": "The clustered tree is here.",
+        "highlight": "सत्त्र्यतरुः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "सत्त्र्यपुष्पम्",
+        "tiles": [
+          "सत्त्र्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सत्त्र्यपुष्पम् विकसति।",
+        "english": "The clustered flower blooms.",
+        "highlight": "सत्त्र्यपुष्पम्"
+      },
+      {
+        "prompt": "____ सुन्दरं अस्ति।",
+        "target": "सत्त्र्यकमलम्",
+        "tiles": [
+          "सत्त्र्यकमलम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सत्त्र्यकमलम् सुन्दरं अस्ति।",
+        "english": "The clustered lotus is beautiful.",
+        "highlight": "सत्त्र्यकमलम्"
+      },
+      {
+        "prompt": "____ उत्पतति।",
+        "target": "सत्त्र्यखगः",
+        "tiles": [
+          "सत्त्र्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सत्त्र्यखगः उत्पतति।",
+        "english": "The clustered bird flies up.",
+        "highlight": "सत्त्र्यखगः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "सत्त्र्यपवनः",
+        "tiles": [
+          "सत्त्र्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सत्त्र्यपवनः वहति।",
+        "english": "The clustered breeze blows.",
+        "highlight": "सत्त्र्यपवनः"
+      },
+      {
+        "prompt": "____ दृश्यते।",
+        "target": "सत्त्र्यमेघः",
+        "tiles": [
+          "सत्त्र्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सत्त्र्यमेघः दृश्यते।",
+        "english": "The clustered cloud is seen.",
+        "highlight": "सत्त्र्यमेघः"
+      },
+      {
+        "prompt": "____ उच्चैः अस्ति।",
+        "target": "सत्त्र्यगिरिः",
+        "tiles": [
+          "सत्त्र्यगिरिः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "सत्त्र्यगिरिः उच्चैः अस्ति।",
+        "english": "The clustered mountain is high.",
+        "highlight": "सत्त्र्यगिरिः"
+      },
+      {
+        "prompt": "____ श्वेतः अस्ति।",
+        "target": "दुग्ध्र्यमेघः",
+        "tiles": [
+          "दुग्ध्र्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "दुग्ध्र्यमेघः श्वेतः अस्ति।",
+        "english": "The milky cloud is white.",
+        "highlight": "दुग्ध्र्यमेघः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "दुग्ध्र्यपुष्पम्",
+        "tiles": [
+          "दुग्ध्र्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "दुग्ध्र्यपुष्पम् विकसति।",
+        "english": "The milky flower blooms.",
+        "highlight": "दुग्ध्र्यपुष्पम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "दुग्ध्र्यपवनः",
+        "tiles": [
+          "दुग्ध्र्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "दुग्ध्र्यपवनः वहति।",
+        "english": "The milky breeze blows.",
+        "highlight": "दुग्ध्र्यपवनः"
+      },
+      {
+        "prompt": "____ सुन्दरं अस्ति।",
+        "target": "दुग्ध्र्यकमलम्",
+        "tiles": [
+          "दुग्ध्र्यकमलम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "दुग्ध्र्यकमलम् सुन्दरं अस्ति।",
+        "english": "The milky lotus is beautiful.",
+        "highlight": "दुग्ध्र्यकमलम्"
+      },
+      {
+        "prompt": "____ स्वच्छः अस्ति।",
+        "target": "दुग्ध्र्यसरः",
+        "tiles": [
+          "दुग्ध्र्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "दुग्ध्र्यसरः स्वच्छः अस्ति।",
+        "english": "The milky lake is clean.",
+        "highlight": "दुग्ध्र्यसरः"
+      },
+      {
+        "prompt": "____ गायति।",
+        "target": "दुग्ध्र्यखगः",
+        "tiles": [
+          "दुग्ध्र्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "दुग्ध्र्यखगः गायति।",
+        "english": "The milky bird sings.",
+        "highlight": "दुग्ध्र्यखगः"
+      },
+      {
+        "prompt": "____ शोभते।",
+        "target": "दुग्ध्र्यतरुः",
+        "tiles": [
+          "दुग्ध्र्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "दुग्ध्र्यतरुः शोभते।",
+        "english": "The milky tree looks beautiful.",
+        "highlight": "दुग्ध्र्यतरुः"
+      },
+      {
+        "prompt": "____ उच्चैः अस्ति।",
+        "target": "लब्ध्र्यगिरिः",
+        "tiles": [
+          "लब्ध्र्यगिरिः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "लब्ध्र्यगिरिः उच्चैः अस्ति।",
+        "english": "The reachable mountain is high.",
+        "highlight": "लब्ध्र्यगिरिः"
+      },
+      {
+        "prompt": "____ अत्र अस्ति।",
+        "target": "लब्ध्र्यसरः",
+        "tiles": [
+          "लब्ध्र्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "लब्ध्र्यसरः अत्र अस्ति।",
+        "english": "The reachable lake is here.",
+        "highlight": "लब्ध्र्यसरः"
+      },
+      {
+        "prompt": "____ वर्धते।",
+        "target": "लब्ध्र्यतरुः",
+        "tiles": [
+          "लब्ध्र्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "लब्ध्र्यतरुः वर्धते।",
+        "english": "The reachable tree grows.",
+        "highlight": "लब्ध्र्यतरुः"
+      },
+      {
+        "prompt": "____ उपविशति।",
+        "target": "लब्ध्र्यखगः",
+        "tiles": [
+          "लब्ध्र्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "लब्ध्र्यखगः उपविशति।",
+        "english": "The reachable bird sits.",
+        "highlight": "लब्ध्र्यखगः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "लब्ध्र्यपुष्पम्",
+        "tiles": [
+          "लब्ध्र्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "लब्ध्र्यपुष्पम् विकसति।",
+        "english": "The reachable flower blooms.",
+        "highlight": "लब्ध्र्यपुष्पम्"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "लब्ध्र्यपवनः",
+        "tiles": [
+          "लब्ध्र्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "लब्ध्र्यपवनः वहति।",
+        "english": "The reachable breeze blows.",
+        "highlight": "लब्ध्र्यपवनः"
+      },
+      {
+        "prompt": "____ दृश्यते।",
+        "target": "लब्ध्र्यमेघः",
+        "tiles": [
+          "लब्ध्र्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "लब्ध्र्यमेघः दृश्यते।",
+        "english": "The reachable cloud is seen.",
+        "highlight": "लब्ध्र्यमेघः"
+      },
+      {
+        "prompt": "____ उत्पतति।",
+        "target": "उत्क्र्यखगः",
+        "tiles": [
+          "उत्क्र्यखगः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उत्क्र्यखगः उत्पतति।",
+        "english": "The soaring bird flies up.",
+        "highlight": "उत्क्र्यखगः"
+      },
+      {
+        "prompt": "____ चलति।",
+        "target": "उत्क्र्यमेघः",
+        "tiles": [
+          "उत्क्र्यमेघः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उत्क्र्यमेघः चलति।",
+        "english": "The high-rising cloud moves.",
+        "highlight": "उत्क्र्यमेघः"
+      },
+      {
+        "prompt": "____ वहति।",
+        "target": "उत्क्र्यपवनः",
+        "tiles": [
+          "उत्क्र्यपवनः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उत्क्र्यपवनः वहति।",
+        "english": "The soaring breeze blows.",
+        "highlight": "उत्क्र्यपवनः"
+      },
+      {
+        "prompt": "____ तिष्ठति।",
+        "target": "उत्क्र्यतरुः",
+        "tiles": [
+          "उत्क्र्यतरुः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उत्क्र्यतरुः तिष्ठति।",
+        "english": "The high-rising tree stands.",
+        "highlight": "उत्क्र्यतरुः"
+      },
+      {
+        "prompt": "____ विकसति।",
+        "target": "उत्क्र्यपुष्पम्",
+        "tiles": [
+          "उत्क्र्यपुष्पम्",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उत्क्र्यपुष्पम् विकसति।",
+        "english": "The high-rising flower blooms.",
+        "highlight": "उत्क्र्यपुष्पम्"
+      },
+      {
+        "prompt": "____ शीतलः।",
+        "target": "उत्क्र्यसरः",
+        "tiles": [
+          "उत्क्र्यसरः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उत्क्र्यसरः शीतलः।",
+        "english": "The high-rising lake is cool.",
+        "highlight": "उत्क्र्यसरः"
+      },
+      {
+        "prompt": "____ उच्चैः अस्ति।",
+        "target": "उत्क्र्यगिरिः",
+        "tiles": [
+          "उत्क्र्यगिरिः",
+          "वृक्षः",
+          "पुष्पम्",
+          "मेघः",
+          "सिंहः",
+          "पवनः"
+        ],
+        "sentence": "उत्क्र्यगिरिः उच्चैः अस्ति।",
+        "english": "The high-rising mountain is high.",
+        "highlight": "उत्क्र्यगिरिः"
+      },
+      {
         "phase": "learn",
         "target": "गजः",
         "prompt": "Learn · गजः",
