@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { GRADE_8_SYLLABUS, type Grade8Chapter } from '../data/grade8Syllabus';
+import { useAuthStore } from '../store/authStore';
 import '../styles/grade8-syllabus.css';
 
 interface Grade8SyllabusModalProps {
@@ -15,6 +16,7 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
   onClose,
   onSelectLesson,
 }) => {
+  const { isAdminLoggedIn } = useAuthStore();
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState<FilterCategory>('all');
   const [speakingId, setSpeakingId] = useState<string | null>(null);
@@ -167,6 +169,14 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
 
         {/* Modal Body / Chapter Cards */}
         <div className="g8-modal-body">
+          {!isAdminLoggedIn && (
+            <div className="g8-upcoming-overlay-note" role="status">
+              <strong>UPCOMING · शीघ्रम्</strong>
+              <span>
+                Class 8 Sanskrit is coming soon for students. Chapter cards below are a syllabus preview only — lessons are not yet open.
+              </span>
+            </div>
+          )}
           {filteredChapters.length === 0 ? (
             <div className="g8-empty-state">
               <span style={{ fontSize: '2.5rem' }}>🔍</span>
@@ -187,7 +197,8 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
             </div>
           ) : (
             filteredChapters.map((ch) => {
-              const isAvailable = ch.status === 'available' || ch.id.startsWith('grade8_');
+              const isAvailable =
+                isAdminLoggedIn && (ch.status === 'available' || ch.id.startsWith('grade8_'));
               const isSpeaking = speakingId === ch.id;
               const isVerseSpeaking = speakingId === `${ch.id}_verse`;
 
@@ -211,7 +222,9 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
                       {isAvailable ? (
                         <span className="g8-status-pill ready">✅ Available in App</span>
                       ) : (
-                        <span className="g8-status-pill syllabus">📚 In Syllabus</span>
+                        <span className="g8-status-pill syllabus">
+                          {isAdminLoggedIn ? '📚 In Syllabus' : '⏳ UPCOMING · शीघ्रम्'}
+                        </span>
                       )}
                     </div>
                   </div>
@@ -269,7 +282,9 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
                       </button>
                     ) : (
                       <span className="g8-card-ref-label">
-                        NCERT Prescribed Text · {ch.page}
+                        {isAdminLoggedIn
+                          ? `NCERT Prescribed Text · ${ch.page}`
+                          : 'Coming soon · Class 8 content is being prepared'}
                       </span>
                     )}
                   </div>

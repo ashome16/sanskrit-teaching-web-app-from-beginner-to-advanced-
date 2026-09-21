@@ -554,3 +554,51 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* Public upcoming Grade 8 banner (non-clickable) */
+.home-grade8-syllabus-banner--upcoming {
+  cursor: default;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #f8fafc 100%);
+  border-color: #fcd34d;
+  box-shadow: 0 4px 12px rgba(146, 64, 14, 0.08);
+}
+
+.home-grade8-syllabus-banner--upcoming:hover {
+  transform: none;
+  box-shadow: 0 4px 12px rgba(146, 64, 14, 0.08);
+  border-color: #fcd34d;
+}
+
+.g8-banner-badge--upcoming {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.g8-banner-cta-btn--soon {
+  opacity: 0.75;
+  cursor: default;
+  pointer-events: none;
+  background: #f8fafc;
+  color: #78716c;
+  border: 1px dashed #d6d3d1;
+}
+
+.g8-upcoming-overlay-note {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: 10px;
+  color: #78350f;
+  font-size: 0.9rem;
+}
+
+.g8-upcoming-overlay-note strong {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

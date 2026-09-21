@@ -78,6 +78,7 @@ const Dashboard: React.FC = () => {
     pendingRedirectView,
     pendingRedirectLessonId,
     setPendingRedirect,
+    isAdminLoggedIn,
   } = useAuthStore();
   const trialDaysLeft = getTrialDaysRemaining();
 
@@ -250,6 +251,23 @@ const Dashboard: React.FC = () => {
     setWordSelection(null);
   }, [lessonIndex, lessons]);
 
+  // Public: if saved/current lesson is Class 8, bounce to Class 7 (or Varṇamālā).
+  useEffect(() => {
+    if (isAdminLoggedIn) return;
+    const id = lessons[lessonIndex]?.id;
+    if (!id || !id.startsWith('grade8_')) return;
+    const fallback = firstDeepakamIndex(lessons);
+    const varna = lessons.findIndex((item) => item.id === 'varnamala');
+    const next = fallback >= 0 ? fallback : varna >= 0 ? varna : 0;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setLessonIndex(next);
+    setSentenceIndex(0);
+    setWordSelection(null);
+    if (activeView === 'reader') {
+      // stay on reader at Class 7 / varnamala
+    }
+  }, [isAdminLoggedIn, lessonIndex, lessons, activeView]);
+
   useEffect(() => {
     let cancelled = false;
     fetchLatestChapters()
@@ -354,6 +372,10 @@ const Dashboard: React.FC = () => {
   const openDeepakam = (lessonId?: string) => {
     const targetId =
       lessonId || (firstDeepakamIndex(lessons) >= 0 ? lessons[firstDeepakamIndex(lessons)].id : 'gsde101');
+    // Public visitors: Class 8 is upcoming — do not open grade8_* lessons
+    if (typeof targetId === 'string' && targetId.startsWith('grade8_') && !isAdminLoggedIn) {
+      return;
+    }
     if (!checkAccess('reader', targetId)) return;
     const idx = lessons.findIndex((item) => item.id === targetId);
     if (idx >= 0) {
@@ -425,20 +447,35 @@ const Dashboard: React.FC = () => {
             <div className="dashboard-nav-sub" role="group" aria-label="CBSE & NCERT Deepakam grades">
               <button
                 type="button"
-                className={activeView === 'reader' && lesson.id !== 'varnamala' && lesson.id !== 'grade8_prarthana' ? 'active' : ''}
+                className={activeView === 'reader' && lesson.id !== 'varnamala' && !lesson.id.startsWith('grade8_') ? 'active' : ''}
                 onClick={() => openDeepakam()}
                 title="CBSE Class 7 Sanskrit Board Exam Syllabus"
               >
                 Class 7 (CBSE)
               </button>
-              <button
-                type="button"
-                className={activeView === 'reader' && lesson.id === 'grade8_prarthana' ? 'active' : ''}
-                onClick={() => openDeepakam('grade8_prarthana')}
-                title="CBSE Class 8 Sanskrit Syllabus & Saraswati Prarthana"
-              >
-                8th (CBSE)
-              </button>
+              {isAdminLoggedIn ? (
+                <button
+                  type="button"
+                  className={activeView === 'reader' && lesson.id.startsWith('grade8_') ? 'active' : ''}
+                  onClick={() => openDeepakam('grade8_prarthana')}
+                  title="Admin preview · CBSE Class 8 Sanskrit"
+                >
+                  8th (CBSE)
+                  <span className="dashboard-nav-admin-chip" title="Visible only while admin is logged in">
+                    Admin preview · Class 8
+                  </span>
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="dashboard-nav-soon"
+                  disabled
+                  aria-disabled="true"
+                  title="Class 8 CBSE — Upcoming"
+                >
+                  8th (CBSE)
+                </button>
+              )}
               <button type="button" className="dashboard-nav-soon" disabled aria-disabled="true" title="Class 9 CBSE - Coming soon">
                 9th (CBSE)
               </button>

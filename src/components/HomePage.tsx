@@ -457,18 +457,22 @@ const HomePage: React.FC<HomePageProps> = ({
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const { openAuthModal } = useAuthStore();
+  const { openAuthModal, isAdminLoggedIn } = useAuthStore();
   const [isGrade8ModalOpen, setIsGrade8ModalOpen] = useState<boolean>(false);
 
+  const visibleChapters = CHAPTERS_INFO.filter(
+    (ch) => isAdminLoggedIn || !ch.id.startsWith('grade8_')
+  );
+
   const categories = [
-    { id: 'all', label: 'All Content', count: CHAPTERS_INFO.length },
-    { id: 'stories', label: '📖 Stories & Fables', count: CHAPTERS_INFO.filter((c) => c.category === 'stories').length },
-    { id: 'shlokas', label: '📜 Shlokas & Wisdom', count: CHAPTERS_INFO.filter((c) => c.category === 'shlokas').length },
-    { id: 'dialogue', label: '💬 Dialogues & Culture', count: CHAPTERS_INFO.filter((c) => c.category === 'dialogue').length },
-    { id: 'grammar', label: '📐 Grammar Reference', count: CHAPTERS_INFO.filter((c) => c.category === 'grammar').length },
+    { id: 'all', label: 'All Content', count: visibleChapters.length },
+    { id: 'stories', label: '📖 Stories & Fables', count: visibleChapters.filter((c) => c.category === 'stories').length },
+    { id: 'shlokas', label: '📜 Shlokas & Wisdom', count: visibleChapters.filter((c) => c.category === 'shlokas').length },
+    { id: 'dialogue', label: '💬 Dialogues & Culture', count: visibleChapters.filter((c) => c.category === 'dialogue').length },
+    { id: 'grammar', label: '📐 Grammar Reference', count: visibleChapters.filter((c) => c.category === 'grammar').length },
   ];
 
-  const filteredChapters = CHAPTERS_INFO.filter((ch) => {
+  const filteredChapters = visibleChapters.filter((ch) => {
     const matchesCategory = curriculumCategory === 'all' || ch.category === curriculumCategory;
     const query = searchQuery.trim().toLowerCase();
     if (!query) return matchesCategory;
@@ -483,6 +487,11 @@ const HomePage: React.FC<HomePageProps> = ({
 
     return matchesCategory && matchesSearch;
   });
+
+  const openGrade8Syllabus = () => {
+    if (!isAdminLoggedIn) return;
+    setIsGrade8ModalOpen(true);
+  };
 
   const handleDemoClick = (demo: DemoWord) => {
     setSelectedDemo(demo);
@@ -1059,34 +1068,53 @@ const HomePage: React.FC<HomePageProps> = ({
           </p>
         </div>
 
-        {/* Grade 8 Syllabus Quick Banner */}
-        <div
-          className="home-grade8-syllabus-banner"
-          onClick={() => setIsGrade8ModalOpen(true)}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') setIsGrade8ModalOpen(true);
-          }}
-        >
-          <div className="g8-banner-left">
-            <span className="g8-banner-badge">✨ NEW CURRICULUM ADDITION</span>
-            <h3 className="g8-banner-title">अष्टमकक्षा-पाठानुक्रमणिका · Grade 8 Sanskrit Complete Syllabus</h3>
-            <p className="g8-banner-desc">
-              Explore all 13 textbook chapters, introductory prayers, and grammatical appendices with exact page numbers (Page iii to 173).
-            </p>
-          </div>
-          <button
-            type="button"
-            className="g8-banner-cta-btn"
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsGrade8ModalOpen(true);
+        {/* Grade 8 Syllabus Quick Banner — upcoming for public; full for admin preview */}
+        {isAdminLoggedIn ? (
+          <div
+            className="home-grade8-syllabus-banner"
+            onClick={openGrade8Syllabus}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') openGrade8Syllabus();
             }}
           >
-            📜 View Table of Contents ➔
-          </button>
-        </div>
+            <div className="g8-banner-left">
+              <span className="g8-banner-badge">✨ NEW CURRICULUM ADDITION</span>
+              <h3 className="g8-banner-title">अष्टमकक्षा-पाठानुक्रमणिका · Grade 8 Sanskrit Complete Syllabus</h3>
+              <p className="g8-banner-desc">
+                Explore all 13 textbook chapters, introductory prayers, and grammatical appendices with exact page numbers (Page iii to 173).
+              </p>
+            </div>
+            <button
+              type="button"
+              className="g8-banner-cta-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                openGrade8Syllabus();
+              }}
+            >
+              📜 View Table of Contents ➔
+            </button>
+          </div>
+        ) : (
+          <div
+            className="home-grade8-syllabus-banner home-grade8-syllabus-banner--upcoming"
+            role="status"
+            aria-label="Class 8 CBSE Sanskrit — Upcoming"
+          >
+            <div className="g8-banner-left">
+              <span className="g8-banner-badge g8-banner-badge--upcoming">UPCOMING · शीघ्रम्</span>
+              <h3 className="g8-banner-title">अष्टमकक्षा · Class 8 Sanskrit (CBSE) — Coming Soon</h3>
+              <p className="g8-banner-desc">
+                Class 8 Deepakam chapters, quizzes, and worksheets are being prepared. Class 7 remains fully available now.
+              </p>
+            </div>
+            <span className="g8-banner-cta-btn g8-banner-cta-btn--soon" aria-hidden="true">
+              🔒 Coming Soon
+            </span>
+          </div>
+        )}
 
         {/* Search & Category Filter Controls */}
         <div className="home-curriculum-controls">
@@ -1319,11 +1347,13 @@ const HomePage: React.FC<HomePageProps> = ({
           ------------------------------------------------------------------ */}
       <FAQSection onOpenRegister={() => openAuthModal('register')} />
 
-      <Grade8SyllabusModal
-        isOpen={isGrade8ModalOpen}
-        onClose={() => setIsGrade8ModalOpen(false)}
-        onSelectLesson={(lessonId) => onOpenReader(lessonId)}
-      />
+      {isAdminLoggedIn && (
+        <Grade8SyllabusModal
+          isOpen={isGrade8ModalOpen}
+          onClose={() => setIsGrade8ModalOpen(false)}
+          onSelectLesson={(lessonId) => onOpenReader(lessonId)}
+        />
+      )}
     </main>
   );
 };

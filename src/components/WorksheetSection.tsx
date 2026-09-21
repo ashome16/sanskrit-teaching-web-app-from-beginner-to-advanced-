@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { WORKSHEETS, WORKSHEET_CATEGORIES, type Worksheet } from '../data/worksheetData';
+import { useAuthStore } from '../store/authStore';
 import '../styles/worksheet-section.css';
 
 interface WorksheetSectionProps {
@@ -16,39 +17,53 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeWorksheet, setActiveWorksheet] = useState<Worksheet | null>(null);
   const [showAnswerKey, setShowAnswerKey] = useState<boolean>(false);
+  const { isAdminLoggedIn } = useAuthStore();
+
+  const visibleCategories = useMemo(
+    () => WORKSHEET_CATEGORIES.filter((cat) => isAdminLoggedIn || cat.id !== 'grade8'),
+    [isAdminLoggedIn]
+  );
+
+  const publicWorksheets = useMemo(
+    () =>
+      isAdminLoggedIn
+        ? WORKSHEETS
+        : WORKSHEETS.filter((ws) => ws.category !== 'grade8' && !ws.id.startsWith('ws-grade8-')),
+    [isAdminLoggedIn]
+  );
 
   const filteredWorksheets =
     selectedCategory === 'all'
-      ? WORKSHEETS
+      ? publicWorksheets
       : selectedCategory === 'deep_ch1'
-      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch1'))
+      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch1'))
       : selectedCategory === 'deep_ch2'
-      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch2'))
+      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch2'))
       : selectedCategory === 'deep_ch3'
-      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch3'))
+      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch3'))
       : selectedCategory === 'deep_ch4'
-      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch4'))
+      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch4'))
       : selectedCategory === 'deep_ch5'
-      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch5'))
+      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch5'))
       : selectedCategory === 'deep_ch6'
-      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch6'))
+      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch6'))
       : selectedCategory === 'deep_ch7'
-      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch7'))
+      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch7'))
       : selectedCategory === 'deep_ch8'
-      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch8'))
+      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch8'))
       : selectedCategory === 'deep_ch9'
-      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch9'))
+      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch9'))
       : selectedCategory === 'deep_ch10'
-      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch10'))
+      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch10'))
       : selectedCategory === 'deep_ch11'
-      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch11'))
+      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch11'))
       : selectedCategory === 'deep_ch12'
-      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch12'))
+      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch12'))
       : selectedCategory === 'deep_ch13'
-      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch13'))
+      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch13'))
       : selectedCategory === 'deep_ch14'
-      ? WORKSHEETS.filter((ws) => ws.id.startsWith('ws-ch14'))
-      : WORKSHEETS.filter(
+      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch14'))
+      : publicWorksheets.filter(
           (ws) =>
             ws.category === selectedCategory ||
             (selectedCategory === 'cbse_ch' &&
@@ -110,7 +125,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
         <>
           {/* Category Tabs */}
           <div className="worksheet-categories-bar">
-            {WORKSHEET_CATEGORIES.map((cat) => (
+            {visibleCategories.map((cat) => (
               <button
                 key={cat.id}
                 type="button"

@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { QUIZ_CATEGORIES, QUIZ_QUESTIONS, type QuizQuestionItem } from '../data/quizData';
 import { playPronunciation } from '../utils/pronunciation';
 import { useAppStore } from '../store';
+import { useAuthStore } from '../store/authStore';
 import '../styles/quiz-section.css';
 
 interface QuizSectionProps {
@@ -26,80 +27,95 @@ const QuizSection: React.FC<QuizSectionProps> = ({
   const [showReview, setShowReview] = useState<boolean>(false);
 
   const { recordQuizAttempt } = useAppStore();
+  const { isAdminLoggedIn } = useAuthStore();
+
+  const visibleCategories = useMemo(
+    () =>
+      QUIZ_CATEGORIES.filter((cat) => isAdminLoggedIn || !cat.id.startsWith('grade8')),
+    [isAdminLoggedIn]
+  );
+
+  const publicQuestions = useMemo(
+    () =>
+      isAdminLoggedIn
+        ? QUIZ_QUESTIONS
+        : QUIZ_QUESTIONS.filter((q) => !String(q.category).startsWith('grade8')),
+    [isAdminLoggedIn]
+  );
 
   const filteredQuestions = useMemo(() => {
-    if (selectedCategory === 'all') return QUIZ_QUESTIONS;
+    if (selectedCategory === 'all') return publicQuestions;
     if (selectedCategory === 'deep_ch1') {
-      return QUIZ_QUESTIONS.filter(
+      return publicQuestions.filter(
         (q) => q.chapterRef?.includes('Chapter 1') || q.chapterRef?.includes('वन्दे भारतमातरम्')
       );
     }
     if (selectedCategory === 'deep_ch2') {
-      return QUIZ_QUESTIONS.filter(
+      return publicQuestions.filter(
         (q) => q.category === 'deep_ch2' || q.chapterRef?.includes('Chapter 2') || q.chapterRef?.includes('नित्यं पिबाम')
       );
     }
     if (selectedCategory === 'deep_ch3') {
-      return QUIZ_QUESTIONS.filter(
+      return publicQuestions.filter(
         (q) => q.category === 'deep_ch3' || q.chapterRef?.includes('Chapter 3') || q.chapterRef?.includes('मित्राय नमः')
       );
     }
     if (selectedCategory === 'deep_ch4') {
-      return QUIZ_QUESTIONS.filter(
+      return publicQuestions.filter(
         (q) => q.category === 'deep_ch4' || q.chapterRef?.includes('Chapter 4') || q.chapterRef?.includes('द्राक्षाफलम्')
       );
     }
     if (selectedCategory === 'deep_ch5') {
-      return QUIZ_QUESTIONS.filter(
+      return publicQuestions.filter(
         (q) => q.category === 'deep_ch5' || q.chapterRef?.includes('Chapter 5') || q.chapterRef?.includes('सेवा हि परमो धर्मः')
       );
     }
     if (selectedCategory === 'deep_ch6') {
-      return QUIZ_QUESTIONS.filter(
+      return publicQuestions.filter(
         (q) => q.category === 'deep_ch6' || q.chapterRef?.includes('Chapter 6') || q.chapterRef?.includes('श्लोकान्त्याक्षरीम्')
       );
     }
     if (selectedCategory === 'deep_ch7') {
-      return QUIZ_QUESTIONS.filter(
+      return publicQuestions.filter(
         (q) => q.category === 'deep_ch7' || q.chapterRef?.includes('Chapter 7') || q.chapterRef?.includes('ईशावास्यम्')
       );
     }
     if (selectedCategory === 'deep_ch8') {
-      return QUIZ_QUESTIONS.filter(
+      return publicQuestions.filter(
         (q) => q.category === 'deep_ch8' || q.chapterRef?.includes('Chapter 8') || q.chapterRef?.includes('हितं मनोहारि')
       );
     }
     if (selectedCategory === 'deep_ch9') {
-      return QUIZ_QUESTIONS.filter(
+      return publicQuestions.filter(
         (q) => q.category === 'deep_ch9' || q.chapterRef?.includes('Chapter 9') || q.chapterRef?.includes('अन्नाद् भवन्ति')
       );
     }
     if (selectedCategory === 'deep_ch10') {
-      return QUIZ_QUESTIONS.filter(
+      return publicQuestions.filter(
         (q) => q.category === 'deep_ch10' || q.chapterRef?.includes('Chapter 10') || q.chapterRef?.includes('दशमः कः')
       );
     }
     if (selectedCategory === 'deep_ch11') {
-      return QUIZ_QUESTIONS.filter(
+      return publicQuestions.filter(
         (q) => q.category === 'deep_ch11' || q.chapterRef?.includes('Chapter 11') || q.chapterRef?.includes('द्वीपोऽण्डमानः') || q.chapterRef?.includes('अण्डमान')
       );
     }
     if (selectedCategory === 'deep_ch12') {
-      return QUIZ_QUESTIONS.filter(
+      return publicQuestions.filter(
         (q) => q.category === 'deep_ch12' || q.chapterRef?.includes('Chapter 12') || q.chapterRef?.includes('पन्नाधाया')
       );
     }
     if (selectedCategory === 'deep_ch13') {
-      return QUIZ_QUESTIONS.filter(
+      return publicQuestions.filter(
         (q) => q.category === 'deep_ch13' || q.chapterRef?.includes('वर्णमात्रा')
       );
     }
     if (selectedCategory === 'deep_ch14') {
-      return QUIZ_QUESTIONS.filter(
+      return publicQuestions.filter(
         (q) => q.category === 'deep_ch14' || q.chapterRef?.includes('शब्दरूपाणि')
       );
     }
-    return QUIZ_QUESTIONS.filter(
+    return publicQuestions.filter(
       (q) =>
         q.category === selectedCategory ||
         (selectedCategory === 'cbse_deepakam' &&
@@ -118,7 +134,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
             q.category === 'deep_ch13' ||
             q.category === 'deep_ch14'))
     );
-  }, [selectedCategory]);
+  }, [selectedCategory, publicQuestions]);
 
   const availableSubQuizzes = useMemo(() => {
     const list: { title: string; count: number }[] = [];
@@ -134,7 +150,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
   }, [filteredQuestions]);
 
   const startSpecificQuiz = (subCategoryTitle: string) => {
-    const specificQuestions = QUIZ_QUESTIONS.filter((q) => q.subCategory === subCategoryTitle);
+    const specificQuestions = publicQuestions.filter((q) => q.subCategory === subCategoryTitle);
     if (specificQuestions.length === 0) return;
     setActiveQuestions(specificQuestions);
     setCurrentIndex(0);
@@ -238,7 +254,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
         <>
           {/* Category Filter Bar */}
           <div className="quiz-categories-bar">
-            {QUIZ_CATEGORIES.map((cat) => (
+            {visibleCategories.map((cat) => (
               <button
                 key={cat.id}
                 type="button"

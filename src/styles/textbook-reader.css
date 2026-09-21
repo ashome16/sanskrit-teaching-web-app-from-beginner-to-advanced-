@@ -792,3 +792,24 @@
   text-align: right;
   border-radius: 0 0 12px 12px;
 }
+
+.textbook-grade8-upcoming-banner {
+  background: linear-gradient(90deg, #fffbeb 0%, #fef3c7 100%) !important;
+  border-color: #fcd34d !important;
+}
+
+.textbook-grade8-upcoming-note {
+  margin: 1.25rem 1rem 2rem;
+  padding: 1.1rem 1.25rem;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  color: #78350f;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 52rem;
+}
+
+.textbook-grade8-upcoming-note p {
+  margin: 0;
+}

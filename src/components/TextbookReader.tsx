@@ -8,6 +8,7 @@ import {
   englishMeaningFromGloss,
   type AnalyseRegistry,
 } from '../utils/analyseGloss';
+import { useAuthStore } from '../store/authStore';
 import { Grade8SyllabusModal } from './Grade8SyllabusModal';
 import '../styles/textbook-reader.css';
 
@@ -147,6 +148,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   onOpenQuiz,
   onOpenWorksheets,
 }) => {
+  const { isAdminLoggedIn } = useAuthStore();
+  const isGrade8Lesson = activeLessonId.startsWith('grade8_');
   const activeLesson = lessons.find((lesson) => lesson.id === activeLessonId);
   const isVarnamala = activeLessonId === 'varnamala';
   const isGroupedLesson = isVarnamala || activeLessonId === 'numbers' || activeLessonId === 'barakhadi';
@@ -247,6 +250,28 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     }
     return best;
   })();
+
+  // Public visitors should not see Class 8 content (admin preview only).
+  if (isGrade8Lesson && !isAdminLoggedIn) {
+    return (
+      <section className="textbook-reader">
+        <div className="textbook-cbse-banner textbook-grade8-upcoming-banner">
+          <span className="textbook-cbse-pill" style={{ background: '#92400e', color: '#ffffff' }}>
+            UPCOMING · शीघ्रम्
+          </span>
+          <span className="textbook-cbse-title">
+            Class 8 Sanskrit (CBSE) is coming soon. Please continue with Class 7 Deepakam for now.
+          </span>
+        </div>
+        <div className="textbook-grade8-upcoming-note">
+          <p>
+            अष्टमकक्षा-पाठ्यांशः शीघ्रम् एव उपलभ्यते। Class 8 chapters, quizzes, and worksheets will open here when ready.
+            Class 7 remains fully available from the dashboard.
+          </p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="textbook-reader">
