@@ -82,8 +82,6 @@ const PaymentModal: React.FC = () => {
     closePaymentModal();
   };
 
-  const upiDeepLink = `upi://pay?pa=${encodeURIComponent(storeUpiVpa)}&pn=${encodeURIComponent(storeUpiPayee)}&am=200.00&cu=INR&tn=Monthly%20Access%20Pass`;
-
   return (
     <div className="payment-modal-backdrop" onClick={handleClose}>
       <div
@@ -321,7 +319,9 @@ const PaymentModal: React.FC = () => {
                   }}
                 >
                   <li>
-                    Pay <strong>₹200</strong> to the UPI ID shown below (scan QR or open your UPI app).
+                    Pay <strong>₹200</strong> to the UPI ID shown below — on phone: open any UPI
+                    app and pay to this UPI ID (or scan the QR); on computer: scan the QR with
+                    your phone.
                   </li>
                   <li>
                     Then enter the <strong>12-digit UTR / Ref</strong> from your UPI app.
@@ -349,7 +349,7 @@ const PaymentModal: React.FC = () => {
                       boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
                     }}
                   />
-                  <span className="upi-qr-caption">Scan with any UPI app</span>
+                  <span className="upi-qr-caption">Scan this QR with your phone&apos;s UPI app</span>
                   <p
                     style={{
                       margin: '0.55rem 0 0 0',
@@ -359,7 +359,9 @@ const PaymentModal: React.FC = () => {
                       lineHeight: 1.4,
                     }}
                   >
-                    Premium unlocks only after we confirm your UPI payment (usually within a few hours).
+                    On phone: open any UPI app → Pay to this UPI ID (or scan the QR). On
+                    computer: scan the QR with your phone. Premium unlocks after we verify
+                    your payment (usually within a few hours).
                   </p>
                 </div>
 
@@ -370,28 +372,6 @@ const PaymentModal: React.FC = () => {
                   </button>
                 </div>
 
-                <div style={{ textAlign: 'center', marginTop: '0.4rem' }}>
-                  <a
-                    href={upiDeepLink}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '0.4rem',
-                      background: 'linear-gradient(135deg, #15803d 0%, #166534 100%)',
-                      color: '#ffffff',
-                      padding: '0.45rem 0.95rem',
-                      borderRadius: '8px',
-                      fontSize: '0.82rem',
-                      fontWeight: 700,
-                      textDecoration: 'none',
-                      boxShadow: '0 2px 6px rgba(21, 128, 61, 0.25)',
-                    }}
-                  >
-                    <span>⚡</span>
-                    <span>Open UPI app to pay</span>
-                  </a>
-                </div>
 
                 <div className="upi-input-wrap" style={{ marginTop: '1.1rem' }}>
                   <label htmlFor="upi-utr-input" className="upi-input-label">
