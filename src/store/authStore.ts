@@ -71,6 +71,16 @@ const getStoredAdminSession = (): boolean => {
 
 const TWO_WEEKS_MS = 14 * 24 * 60 * 60 * 1000;
 const MONTHLY_PRICE_INR = 200;
+const PAID_ACCESS_DAYS = 30;
+
+/** Resolve plan status from trial + paid expiry (planExpiresAt / subscriptionRenewsAt). */
+export const computePlanStatus = (profile: Pick<UserProfile, 'trialEndsAt' | 'planExpiresAt' | 'subscriptionRenewsAt'>, now = Date.now()): PlanStatus => {
+  const paidUntil = profile.planExpiresAt || profile.subscriptionRenewsAt;
+  if (paidUntil && paidUntil > now) return 'active';
+  if (now <= profile.trialEndsAt) return 'trial';
+  return 'expired';
+};
+
 
 export const DEFAULT_AVATARS = [
   '🧘', '🪷', '📜', '🏹', '🐘', '🦚', '🌞', '🕉️', '📚', '🌺', '🕊️', '💎'
@@ -137,6 +147,19 @@ interface AuthState {
   importAccounts: (jsonData: string) => { success: boolean; count: number; error?: string };
   getAllAccountsList: () => UserAccount[];
   submitManualUpiPayment: (utrNumber: string, upiId?: string) => Promise<{ success: boolean; transaction?: PaymentTransaction; error?: string }>;
+  /** After Razorpay /verify succeeds — store real ids and grant 30 days access. */
+  activateRazorpayPayment: (payload: {
+    paymentId: string;
+    orderId: string;
+    signature: string;
+  }) => Promise<{ success: boolean; transaction?: PaymentTransaction; error?: string }>;
+
+  /** Banner/modal when paid (or trial) period has ended — shown on login / session restore. */
+  showAccessExpiredAlert: boolean;
+  accessExpiredOn: number | null;
+  dismissAccessExpiredAlert: () => void;
+  /** Recompute planStatus from stored dates; may open expiry alert. */
+  refreshPlanStatus: () => void;
 
   // Platform Configuration & Access Control
   accessMode: AccessControlMode;
@@ -163,14 +186,8 @@ const loadStoredSession = (accounts: Record<string, UserAccount>): UserProfile |
     const userId = localStorage.getItem(SESSION_STORAGE_KEY);
     if (userId && accounts[userId]) {
       const account = accounts[userId];
-      // compute latest plan status
       const now = Date.now();
-      let status: PlanStatus = 'expired';
-      if (account.profile.subscriptionRenewsAt && account.profile.subscriptionRenewsAt > now) {
-        status = 'active';
-      } else if (now <= account.profile.trialEndsAt) {
-        status = 'trial';
-      }
+      const status = computePlanStatus(account.profile, now);
       return {
         ...account.profile,
         planStatus: status,
@@ -205,6 +222,17 @@ const saveSession = (userId: string | null) => {
 export const useAuthStore = create<AuthState>((set, get) => {
   const initialAccounts = loadStoredAccounts();
   const initialUser = loadStoredSession(initialAccounts);
+  const _now = Date.now();
+  const _paidUntil = initialUser
+    ? initialUser.planExpiresAt || initialUser.subscriptionRenewsAt
+    : undefined;
+  const _endedOn =
+    initialUser && typeof _paidUntil === 'number' && _paidUntil <= _now
+      ? _paidUntil
+      : initialUser && initialUser.planStatus === 'expired'
+        ? initialUser.trialEndsAt
+        : null;
+  const _showExpired = !!initialUser && initialUser.planStatus === 'expired' && typeof _endedOn === 'number';
 
   return {
     currentUser: initialUser,
@@ -212,6 +240,8 @@ export const useAuthStore = create<AuthState>((set, get) => {
     isAuthModalOpen: false,
     isProfileModalOpen: false,
     isPaymentModalOpen: false,
+    showAccessExpiredAlert: _showExpired,
+    accessExpiredOn: _showExpired ? (_endedOn as number) : null,
     authModalInitialTab: 'login',
     authError: null,
 
@@ -503,7 +533,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
       }
 
       const now = Date.now();
-      const status: PlanStatus = now <= foundAccount.profile.trialEndsAt ? 'trial' : 'expired';
+      const status = computePlanStatus(foundAccount.profile, now);
       const updatedProfile: UserProfile = {
         ...foundAccount.profile,
         lastLoginAt: now,
@@ -523,11 +553,22 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
       useAppStore.getState().setUserId(updatedProfile.id);
 
+      const paidUntil = updatedProfile.planExpiresAt || updatedProfile.subscriptionRenewsAt;
+      const endedOn =
+        typeof paidUntil === 'number' && paidUntil <= now
+          ? paidUntil
+          : status === 'expired'
+            ? updatedProfile.trialEndsAt
+            : null;
+      const showExpired = status === 'expired' && typeof endedOn === 'number';
+
       set({
         accounts: updatedAccounts,
         currentUser: updatedProfile,
         isAuthModalOpen: false,
         authError: null,
+        showAccessExpiredAlert: showExpired,
+        accessExpiredOn: showExpired ? endedOn : null,
       });
 
       return { success: true };
@@ -535,7 +576,12 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
     logout: () => {
       saveSession(null);
-      set({ currentUser: null, isProfileModalOpen: false });
+      set({
+        currentUser: null,
+        isProfileModalOpen: false,
+        showAccessExpiredAlert: false,
+        accessExpiredOn: null,
+      });
     },
 
     updateProfile: (data: UpdateProfileFormData) => {
@@ -681,20 +727,24 @@ export const useAuthStore = create<AuthState>((set, get) => {
       let subscriptionRenewsAt: number | undefined = undefined;
       let trialEndsAt = account.profile.trialEndsAt;
 
+      let planExpiresAt: number | undefined = account.profile.planExpiresAt;
       if (status === 'active') {
         subscriptionRenewsAt = now + durationDays * 24 * 60 * 60 * 1000;
+        planExpiresAt = subscriptionRenewsAt;
       } else if (status === 'trial') {
         trialEndsAt = now + durationDays * 24 * 60 * 60 * 1000;
       } else if (status === 'expired') {
         // Force past trial/sub so reload does not resurrect "trial" from trialEndsAt.
         trialEndsAt = now - 60_000;
         subscriptionRenewsAt = undefined;
+        planExpiresAt = undefined;
       }
 
       const updatedProfile: UserProfile = {
         ...account.profile,
         planStatus: status,
         subscriptionRenewsAt,
+        planExpiresAt,
         trialEndsAt,
         activeSubscriptionSince: status === 'active' ? (account.profile.activeSubscriptionSince || now) : account.profile.activeSubscriptionSince,
       };
@@ -766,7 +816,16 @@ export const useAuthStore = create<AuthState>((set, get) => {
         ...account.profile,
         planStatus: 'active',
         activeSubscriptionSince: account.profile.activeSubscriptionSince || now,
-        subscriptionRenewsAt: (account.profile.subscriptionRenewsAt && account.profile.subscriptionRenewsAt > now ? account.profile.subscriptionRenewsAt : now) + 30 * 24 * 60 * 60 * 1000,
+        planExpiresAt: (account.profile.planExpiresAt && account.profile.planExpiresAt > now
+          ? account.profile.planExpiresAt
+          : (account.profile.subscriptionRenewsAt && account.profile.subscriptionRenewsAt > now
+            ? account.profile.subscriptionRenewsAt
+            : now)) + 30 * 24 * 60 * 60 * 1000,
+        subscriptionRenewsAt: (account.profile.planExpiresAt && account.profile.planExpiresAt > now
+          ? account.profile.planExpiresAt
+          : (account.profile.subscriptionRenewsAt && account.profile.subscriptionRenewsAt > now
+            ? account.profile.subscriptionRenewsAt
+            : now)) + 30 * 24 * 60 * 60 * 1000,
         transactions: txns,
       };
 
@@ -879,6 +938,105 @@ export const useAuthStore = create<AuthState>((set, get) => {
       });
 
       return { success: true, transaction: newTransaction };
+    },
+
+    activateRazorpayPayment: async ({ paymentId, orderId, signature }) => {
+      const { currentUser, accounts } = get();
+      if (!currentUser) {
+        return { success: false, error: 'Please sign in or register to activate access.' };
+      }
+      const currentAccount = accounts[currentUser.id];
+      if (!currentAccount) {
+        return { success: false, error: 'User account not found.' };
+      }
+      if (!paymentId || !orderId || !signature) {
+        return { success: false, error: 'Missing Razorpay payment / order / signature.' };
+      }
+
+      const now = Date.now();
+      const expiresAt = now + PAID_ACCESS_DAYS * 24 * 60 * 60 * 1000;
+
+      const newTransaction: PaymentTransaction = {
+        id: paymentId,
+        amountInr: MONTHLY_PRICE_INR,
+        paymentMethod: 'razorpay',
+        razorpayPaymentId: paymentId,
+        razorpayOrderId: orderId,
+        razorpaySignature: signature,
+        timestamp: now,
+        status: 'success',
+        planName: 'All-Access Monthly Pass',
+        billingPeriod: `${PAID_ACCESS_DAYS} Days`,
+        notes: 'Verified via Razorpay one-time Checkout signature.',
+      };
+
+      const updatedProfile: UserProfile = {
+        ...currentUser,
+        planStatus: 'active',
+        lastPaymentMethod: 'razorpay',
+        razorpayOrderId: orderId,
+        activeSubscriptionSince: currentUser.activeSubscriptionSince || now,
+        planExpiresAt: expiresAt,
+        subscriptionRenewsAt: expiresAt,
+        transactions: [newTransaction, ...(currentUser.transactions || [])],
+      };
+
+      const updatedAccounts = {
+        ...accounts,
+        [currentUser.id]: {
+          ...currentAccount,
+          profile: updatedProfile,
+        },
+      };
+
+      saveAccounts(updatedAccounts);
+      set({
+        currentUser: updatedProfile,
+        accounts: updatedAccounts,
+        showAccessExpiredAlert: false,
+        accessExpiredOn: null,
+      });
+
+      return { success: true, transaction: newTransaction };
+    },
+
+    dismissAccessExpiredAlert: () => {
+      set({ showAccessExpiredAlert: false });
+    },
+
+    refreshPlanStatus: () => {
+      const { currentUser, accounts } = get();
+      if (!currentUser) {
+        set({ showAccessExpiredAlert: false, accessExpiredOn: null });
+        return;
+      }
+      const account = accounts[currentUser.id];
+      if (!account) return;
+      const now = Date.now();
+      const status = computePlanStatus(account.profile, now);
+      const paidUntil = account.profile.planExpiresAt || account.profile.subscriptionRenewsAt;
+      // Prefer paid end date; fall back to trial end when trial lapsed with no pay.
+      const endedOn =
+        typeof paidUntil === 'number' && paidUntil <= now
+          ? paidUntil
+          : status === 'expired'
+            ? account.profile.trialEndsAt
+            : null;
+      const updatedProfile: UserProfile = { ...account.profile, planStatus: status };
+      const updatedAccounts = {
+        ...accounts,
+        [currentUser.id]: { ...account, profile: updatedProfile },
+      };
+      saveAccounts(updatedAccounts);
+
+      const showExpired = status === 'expired' && typeof endedOn === 'number';
+
+      set({
+        accounts: updatedAccounts,
+        currentUser: updatedProfile,
+        showAccessExpiredAlert: showExpired ? true : false,
+        accessExpiredOn: showExpired ? endedOn : null,
+      });
     },
   };
 });

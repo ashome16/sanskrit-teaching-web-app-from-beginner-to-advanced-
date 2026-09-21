@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { FAQItem } from '../types/auth';
 import { useAuthStore } from '../store/authStore';
+import { RAZORPAY_CTA_LABEL, RAZORPAY_TRUST_NOTICE } from '../utils/razorpayCheckout';
 import '../styles/faq-section.css';
 
 const FAQ_DATA: FAQItem[] = [
@@ -23,7 +24,7 @@ const FAQ_DATA: FAQItem[] = [
     category: 'trial_pricing',
     question: 'What payment methods are supported for the ₹200/month plan?',
     answer:
-      'Pay ₹200 via UPI only: scan the QR or pay to our VPA using Google Pay, PhonePe, Paytm, BHIM, Cred, or any bank UPI app, then submit your 12-digit UTR / Ref number. Premium access unlocks after we verify your payment (usually within a few hours).',
+      'Pay ₹200 once via Razorpay Standard Checkout (UPI, cards, netbanking) — no auto-debit. Access lasts 30 days; renew anytime with another one-time payment. As a backup, you can also pay by UPI ID / QR and submit your 12-digit UTR for manual verification.',
   },
   {
     id: 'faq-account',
@@ -110,11 +111,27 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
             >
               {trialActive
                 ? `🎉 Trial active until ${trialEndsLabel} · Subscribe after trial`
-                : '💳 Subscribe / Pay ₹200 via UPI'}
+                : RAZORPAY_CTA_LABEL}
             </button>
+            {!trialActive && (
+              <p
+                style={{
+                  margin: 0,
+                  flex: '1 1 16rem',
+                  maxWidth: '26rem',
+                  fontSize: '0.8rem',
+                  color: '#475569',
+                  lineHeight: 1.45,
+                  fontWeight: 600,
+                  textAlign: 'left',
+                }}
+              >
+                {RAZORPAY_TRUST_NOTICE}
+              </p>
+            )}
             {trialActive && (
               <p style={{ margin: '0.55rem 0 0', fontSize: '0.82rem', color: '#92400e', fontWeight: 600 }}>
-                Your free trial is on ({trialDaysLeft} day{trialDaysLeft === 1 ? '' : 's'} left). Payment via UPI opens when the trial ends.
+                Your free trial is on ({trialDaysLeft} day{trialDaysLeft === 1 ? '' : 's'} left). One-time Razorpay pay opens when the trial ends (admin can preview).
               </p>
             )}
           </div>

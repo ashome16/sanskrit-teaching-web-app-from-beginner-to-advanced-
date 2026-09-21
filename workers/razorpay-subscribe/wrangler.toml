@@ -1,0 +1,12 @@
+name = "razorpay-subscribe"
+main = "src/index.js"
+compatibility_date = "2026-09-21"
+
+# Set secrets (never commit):
+#   npx wrangler secret put RAZORPAY_KEY_SECRET
+[vars]
+RAZORPAY_KEY_ID = "rzp_test_TemQRGluBPDb0O"
+RAZORPAY_PLAN_ID = "plan_TemGs0Xzlbqpu6"
+RAZORPAY_TOTAL_COUNT = "12"
+RAZORPAY_START_AT = "1791225000"
+RAZORPAY_AMOUNT_PAISE = "20000"

@@ -30,3 +30,8 @@ public/numbers.txt
 .env
 .env.*
 !.env.example
+!.env.production
+
+# Worker deps
+workers/**/node_modules
+_kalpana_batches/

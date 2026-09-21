@@ -11,7 +11,7 @@ export type SanskritGrade =
 
 export type PlanStatus = 'trial' | 'active' | 'expired';
 
-export type PaymentMethod = 'upi' | 'apple_pay' | 'gpay' | 'card';
+export type PaymentMethod = 'upi' | 'apple_pay' | 'gpay' | 'card' | 'razorpay';
 
 export type AccessControlMode = 'smart_freemium' | 'strict_gate' | 'open_access';
 
@@ -27,6 +27,14 @@ export interface PaymentTransaction {
   paymentMethod: PaymentMethod;
   upiId?: string;
   utrNumber?: string;
+  /** Razorpay payment id (pay_…) after Standard Checkout success */
+  razorpayPaymentId?: string;
+  /** Razorpay order id (order_…) for one-time Checkout */
+  razorpayOrderId?: string;
+  /** Legacy / unused subscription id (sub_…) — not used for main one-time path */
+  razorpaySubscriptionId?: string;
+  /** Razorpay HMAC signature returned by checkout */
+  razorpaySignature?: string;
   timestamp: number;
   status: 'success' | 'failed' | 'pending';
   planName: string;
@@ -47,9 +55,16 @@ export interface UserProfile {
   trialEndsAt: number;
   planStatus: PlanStatus;
   monthlyPriceInr: number;
+  /** Paid access ends at this unix-ms (one-time Razorpay → +30 days). Alias of subscription end. */
+  planExpiresAt?: number;
+  /** Kept in sync with planExpiresAt for older UI that reads renews-at */
   subscriptionRenewsAt?: number;
   activeSubscriptionSince?: number;
   lastPaymentMethod?: PaymentMethod;
+  /** Last successful Razorpay order id */
+  razorpayOrderId?: string;
+  /** Unused for one-time path (subscription scaffolding only) */
+  razorpaySubscriptionId?: string;
   transactions?: PaymentTransaction[];
 }
 

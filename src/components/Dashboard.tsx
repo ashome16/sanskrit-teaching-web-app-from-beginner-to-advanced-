@@ -4,6 +4,7 @@ import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
 import AuthModal from './AuthModal';
 import UserProfileModal from './UserProfileModal';
 import PaymentModal from './PaymentModal';
+import AccessExpiredBanner from './AccessExpiredBanner';
 import AdminModal from './AdminModal';
 import Footer from './Footer';
 import SupportWidget from './SupportWidget';
@@ -74,6 +75,7 @@ const Dashboard: React.FC = () => {
     openProfileModal,
     openAdminModal,
     getTrialDaysRemaining,
+    refreshPlanStatus,
     accessMode,
     pendingRedirectView,
     pendingRedirectLessonId,
@@ -81,6 +83,11 @@ const Dashboard: React.FC = () => {
     isAdminLoggedIn,
   } = useAuthStore();
   const trialDaysLeft = getTrialDaysRemaining();
+
+  useEffect(() => {
+    refreshPlanStatus();
+  }, [currentUser?.id, refreshPlanStatus]);
+
 
   // Check whether a view or specific chapter is gated behind account registration
   const isContentGated = (targetView: string, targetLessonId?: string): boolean => {
@@ -404,6 +411,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className={`dashboard dashboard--${activeView}${activeView !== 'reader' ? ' dashboard--scrollable' : ''}`}>
+      <AccessExpiredBanner />
       <header className="dashboard-header">
         <button
           type="button"
