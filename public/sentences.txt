@@ -2304,3 +2304,31 @@
 रञ्ज्यसरः स्वच्छः अस्ति।|The pleasing lake is clean.|रञ्ज्यसरः|nature
 रञ्ज्यखगः गायति।|The pleasing bird sings.|रञ्ज्यखगः|nature
 रञ्ज्यतरुः शोभते।|The pleasing tree looks beautiful.|रञ्ज्यतरुः|nature
+पूर्व्यतरुः तिष्ठति।|The ancient tree stands.|पूर्व्यतरुः|nature
+पूर्व्यपवनः वहति।|The ancient breeze blows.|पूर्व्यपवनः|nature
+पूर्व्यखगः गायति।|The ancient bird sings.|पूर्व्यखगः|nature
+पूर्व्यमेघः वर्षति।|The ancient cloud rains.|पूर्व्यमेघः|nature
+पूर्व्यकमलम् विकसति।|The ancient lotus blooms.|पूर्व्यकमलम्|nature
+पूर्व्यसरः शीतलः।|The ancient lake is cool.|पूर्व्यसरः|nature
+पूर्व्यगिरिः उच्चैः अस्ति।|The ancient mountain is high.|पूर्व्यगिरिः|nature
+गर्भ्यसरः गभीरः अस्ति।|The deep lake is deep.|गर्भ्यसरः|nature
+गर्भ्यतरुः वर्धते।|The central tree grows.|गर्भ्यतरुः|nature
+गर्भ्यपुष्पम् विकसति।|The inner flower blooms.|गर्भ्यपुष्पम्|nature
+गर्भ्यकमलम् सुन्दरं अस्ति।|The central lotus is beautiful.|गर्भ्यकमलम्|nature
+गर्भ्यखगः उपविशति।|The inner bird sits.|गर्भ्यखगः|nature
+गर्भ्यपवनः मन्दं वहति।|The central breeze blows softly.|गर्भ्यपवनः|nature
+गर्भ्यमेघः दृश्यते।|The inner cloud is seen.|गर्भ्यमेघः|nature
+वर्ग्यतरुः अत्र अस्ति।|The clustered tree is here.|वर्ग्यतरुः|nature
+वर्ग्यपुष्पम् विकसति।|The clustered flower blooms.|वर्ग्यपुष्पम्|nature
+वर्ग्यकमलम् सुन्दरं अस्ति।|The clustered lotus is beautiful.|वर्ग्यकमलम्|nature
+वर्ग्यखगः उत्पतति।|The clustered bird flies up.|वर्ग्यखगः|nature
+वर्ग्यपवनः वहति।|The clustered breeze blows.|वर्ग्यपवनः|nature
+वर्ग्यमेघः दृश्यते।|The clustered cloud is seen.|वर्ग्यमेघः|nature
+वर्ग्यगिरिः उच्चैः अस्ति।|The clustered mountain is high.|वर्ग्यगिरिः|nature
+हर्म्यतरुः शोभते।|The high-perched tree looks beautiful.|हर्म्यतरुः|nature
+हर्म्यपवनः वहति।|The high-perched breeze blows.|हर्म्यपवनः|nature
+हर्म्यखगः गायति।|The high-perched bird sings.|हर्म्यखगः|nature
+हर्म्यकमलम् सुन्दरं अस्ति।|The high-perched lotus is beautiful.|हर्म्यकमलम्|nature
+हर्म्यसरः स्वच्छः अस्ति।|The high-perched lake is clean.|हर्म्यसरः|nature
+हर्म्यमेघः दृश्यते।|The high-perched cloud is seen.|हर्म्यमेघः|nature
+हर्म्यपुष्पम् विकसति।|The high-perched flower blooms.|हर्म्यपुष्पम्|nature
