@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthStore, DEFAULT_AVATARS, SANSKRIT_INTERESTS_LIST } from '../store/authStore';
 import type { SanskritGrade } from '../types/auth';
+import { isEmailJsConfigured } from '../utils/sendPasswordResetEmail';
 import '../styles/auth-modal.css';
 
 const GRADES_LIST: SanskritGrade[] = [
@@ -26,6 +27,7 @@ const AuthModal: React.FC = () => {
     setPendingRedirect,
     requestPasswordResetOtp,
     verifyOtpAndResetPassword,
+    isAdminLoggedIn,
   } = useAuthStore();
 
   const [activeTab, setActiveTab] = useState<'login' | 'register' | 'forgot_password'>(authModalInitialTab);
@@ -50,7 +52,7 @@ const AuthModal: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [otpStep, setOtpStep] = useState<1 | 2>(1);
   const [resendCooldown, setResendCooldown] = useState(0);
-  const [lastDispatchedOtp, setLastDispatchedOtp] = useState<string | null>(null);
+  const [resetInfoMessage, setResetInfoMessage] = useState<string | null>(null);
   const [resetSuccessMessage, setResetSuccessMessage] = useState<string | null>(null);
   const [localError, setLocalError] = useState<string | null>(null);
 
@@ -79,6 +81,7 @@ const AuthModal: React.FC = () => {
     clearAuthError();
     setLocalError(null);
     setResetSuccessMessage(null);
+    setResetInfoMessage(null);
     setActiveTab(tab);
     if (tab === 'forgot_password') {
       setOtpStep(1);
@@ -86,29 +89,38 @@ const AuthModal: React.FC = () => {
       setOtpInput('');
       setNewPassword('');
       setConfirmPassword('');
-      setLastDispatchedOtp(null);
+      setResetInfoMessage(null);
     }
   };
 
-  const handleRequestOtp = (e: React.FormEvent) => {
+  const buildResetInfoMessage = (emailConfigured: boolean) => {
+    if (emailConfigured) {
+      return 'If an account exists for that email/username, a reset code will be sent to the registered email.';
+    }
+    return 'If an account exists for that email/username, a reset code will be sent to the registered email. Email setup pending — contact care@ednetlearn.in for help, or ask admin to reset your password (Admin → Students → Reset PW).';
+  };
+
+  const handleRequestOtp = async (e: React.FormEvent) => {
     e.preventDefault();
     clearAuthError();
     setLocalError(null);
-    const res = requestPasswordResetOtp(forgotIdentifier);
-    if (res.success && res.otp) {
-      setLastDispatchedOtp(res.otp);
+    setResetInfoMessage(null);
+    const res = await requestPasswordResetOtp(forgotIdentifier);
+    if (res.success) {
+      // Never display OTP on screen.
+      setResetInfoMessage(buildResetInfoMessage(res.emailConfigured));
       setOtpStep(2);
       setResendCooldown(60);
     }
   };
 
-  const handleResendOtp = () => {
+  const handleResendOtp = async () => {
     if (resendCooldown > 0) return;
     clearAuthError();
     setLocalError(null);
-    const res = requestPasswordResetOtp(forgotIdentifier);
-    if (res.success && res.otp) {
-      setLastDispatchedOtp(res.otp);
+    const res = await requestPasswordResetOtp(forgotIdentifier);
+    if (res.success) {
+      setResetInfoMessage(buildResetInfoMessage(res.emailConfigured));
       setResendCooldown(60);
     }
   };
@@ -536,8 +548,11 @@ const AuthModal: React.FC = () => {
                     lineHeight: 1.55,
                   }}
                 >
-                  <strong>No phone or SMS needed.</strong> Enter your registered username or email → we show a{' '}
-                  <strong>reset code on this screen</strong> → enter that code with your new password.
+                  Enter your registered username or email. If an account exists, a{' '}
+                  <strong>6-digit reset code will be sent to your registered email</strong>{' '}
+                  (never shown on this screen). If email delivery is not configured yet, contact{' '}
+                  <strong>care@ednetlearn.in</strong> or ask an admin to use{' '}
+                  <strong>Admin → Students → Reset PW</strong>.
                 </div>
 
                 <div className="auth-form-group">
@@ -562,60 +577,70 @@ const AuthModal: React.FC = () => {
               </>
             ) : (
               <>
-                {/* On-screen reset code (not SMS) */}
-                <div className="auth-otp-dispatch-card">
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
-                    <span style={{ fontSize: '1.35rem' }}>🔑</span>
-                    <div style={{ flex: 1 }}>
-                      <div style={{ fontWeight: 800, fontSize: '0.88rem', color: '#1e3a8a' }}>
-                        Your reset code (shown here — not sent by SMS):
-                      </div>
-                      <div style={{ fontSize: '0.8rem', color: '#3b82f6', marginTop: '0.15rem' }}>
-                        Copy or Auto-Fill the code below, then set a new password.
-                      </div>
-                      {lastDispatchedOtp && (
-                        <div style={{ marginTop: '0.6rem', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                          <span
-                            style={{
-                              fontFamily: 'monospace',
-                              fontSize: '1.35rem',
-                              fontWeight: 900,
-                              letterSpacing: '0.2em',
-                              background: '#ffffff',
-                              padding: '0.25rem 0.65rem',
-                              borderRadius: '6px',
-                              border: '1.5px dashed #93c5fd',
-                              color: '#1d4ed8',
-                            }}
-                          >
-                            {lastDispatchedOtp}
-                          </span>
-                          <button
-                            type="button"
-                            onClick={() => setOtpInput(lastDispatchedOtp)}
-                            style={{
-                              background: '#1d4ed8',
-                              color: '#ffffff',
-                              border: 'none',
-                              padding: '0.35rem 0.75rem',
-                              borderRadius: '6px',
-                              fontSize: '0.78rem',
-                              fontWeight: 700,
-                              cursor: 'pointer',
-                            }}
-                          >
-                            ⚡ Auto-Fill Code
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  </div>
+                <div
+                  style={{
+                    margin: '0 0 1.1rem 0',
+                    padding: '0.85rem 1rem',
+                    background: '#eff6ff',
+                    border: '1px solid #bfdbfe',
+                    borderRadius: '10px',
+                    fontSize: '0.86rem',
+                    color: '#1e3a8a',
+                    lineHeight: 1.55,
+                  }}
+                >
+                  <strong>Enter the 6-digit code sent to your registered email.</strong>
+                  {' '}
+                  Codes are never shown on this screen.
+                  {!isAdminLoggedIn && (
+                    <>
+                      {' '}
+                      If you did not receive email, contact <strong>care@ednetlearn.in</strong> or use{' '}
+                      <strong>Admin → Reset PW</strong> for recovery.
+                    </>
+                  )}
                 </div>
 
-                {/* 6-Digit OTP Input */}
+                {isAdminLoggedIn && !isEmailJsConfigured() && (
+                  <div
+                    style={{
+                      margin: '0 0 1.1rem 0',
+                      padding: '0.75rem 1rem',
+                      background: '#fffbeb',
+                      border: '1px solid #fcd34d',
+                      borderRadius: '10px',
+                      fontSize: '0.8rem',
+                      color: '#92400e',
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    Email delivery not connected yet — set VITE_EMAILJS_SERVICE_ID / TEMPLATE_ID / PUBLIC_KEY
+                    (free EmailJS → Zoho Mail SMTP). Until then, use <strong>Admin → Students → Reset PW</strong>.
+                    Never display OTP codes on screen.
+                  </div>
+                )}
+
+                {resetInfoMessage && (
+                  <div
+                    style={{
+                      margin: '0 0 1.1rem 0',
+                      padding: '0.75rem 1rem',
+                      background: '#f8fafc',
+                      border: '1px solid #e2e8f0',
+                      borderRadius: '10px',
+                      fontSize: '0.82rem',
+                      color: '#334155',
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {resetInfoMessage}
+                  </div>
+                )}
+
+                {/* 6-Digit OTP Input — user types code from email only */}
                 <div className="auth-form-group">
                   <label className="auth-label" htmlFor="otp-code-input">
-                    Enter reset code *
+                    Enter the 6-digit code sent to your registered email *
                   </label>
                   <input
                     id="otp-code-input"
@@ -637,7 +662,7 @@ const AuthModal: React.FC = () => {
                       onClick={handleResendOtp}
                       disabled={resendCooldown > 0}
                     >
-                      {resendCooldown > 0 ? `New code in ${resendCooldown}s` : 'Resend (regenerate on-screen code)'}
+                      {resendCooldown > 0 ? `Resend available in ${resendCooldown}s` : 'Resend code to email'}
                     </button>
                   </div>
                 </div>

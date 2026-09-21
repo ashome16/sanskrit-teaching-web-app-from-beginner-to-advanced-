@@ -12,6 +12,7 @@ import type {
 } from '../types/auth';
 import type { UserProgress } from '../types';
 import { useAppStore } from './index';
+import { sendPasswordResetEmail as sendPasswordResetEmailApi, isEmailJsConfigured } from '../utils/sendPasswordResetEmail';
 
 const ACCOUNTS_STORAGE_KEY = 'sanskrit_accounts_v1';
 const SESSION_STORAGE_KEY = 'sanskrit_current_session_v1';
@@ -104,9 +105,11 @@ interface AuthState {
 
   // OTP & Password Recovery
   activeOtpSession: OtpSession | null;
-  requestPasswordResetOtp: (identifier: string) => { success: boolean; otp?: string; email?: string; error?: string };
+  requestPasswordResetOtp: (identifier: string) => Promise<{ success: boolean; emailConfigured: boolean; error?: string }>;
   verifyOtpAndResetPassword: (identifier: string, otp: string, newPassword: string) => { success: boolean; error?: string };
   clearOtpSession: () => void;
+  /** EmailJS free tier → Zoho Mail SMTP. No-ops when VITE_EMAILJS_* env vars are missing. */
+  sendPasswordResetEmail: (email: string, otp: string) => Promise<{ configured: boolean; error?: string }>;
 
   register: (data: RegisterFormData) => { success: boolean; error?: string };
   login: (usernameOrEmail: string, password: string) => { success: boolean; error?: string };
@@ -229,14 +232,19 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
     clearOtpSession: () => set({ activeOtpSession: null }),
 
-    requestPasswordResetOtp: (identifier: string) => {
+    // Free EmailJS + Zoho Mail (ednetlearn.in). Reads VITE_EMAILJS_* — never invent credentials.
+    sendPasswordResetEmail: async (email: string, otp: string) => {
+      return sendPasswordResetEmailApi(email, otp);
+    },
+
+    requestPasswordResetOtp: async (identifier: string) => {
       const { accounts } = get();
       const cleanId = (identifier || '').trim().toLowerCase();
 
       if (!cleanId) {
         const error = 'Please enter your registered username or email address.';
         set({ authError: error });
-        return { success: false, error };
+        return { success: false, emailConfigured: false, error };
       }
 
       const account = Object.values(accounts).find(
@@ -245,13 +253,14 @@ export const useAuthStore = create<AuthState>((set, get) => {
           acc.profile.email.toLowerCase() === cleanId
       );
 
+      // Do not reveal whether the account exists. Only create a real OTP session when found.
       if (!account) {
-        const error = 'No account found matching that username or email address.';
-        set({ authError: error });
-        return { success: false, error };
+        set({ authError: null });
+        // Mirror configured flag for UI copy without leaking existence or sending mail.
+        return { success: true, emailConfigured: isEmailJsConfigured() };
       }
 
-      // Generate a secure 6-digit OTP code
+      // Generate a secure 6-digit OTP — store in activeOtpSession only; never return to UI.
       const otp = Math.floor(100000 + Math.random() * 900000).toString();
       const expiresAt = Date.now() + 10 * 60 * 1000; // 10 minutes validity
 
@@ -265,7 +274,12 @@ export const useAuthStore = create<AuthState>((set, get) => {
       };
 
       set({ activeOtpSession: session, authError: null });
-      return { success: true, otp, email: account.profile.email };
+
+      // Send via EmailJS when VITE_EMAILJS_* are set; otherwise configured:false (admin Reset PW path).
+      const sendResult = await get().sendPasswordResetEmail(account.profile.email, otp);
+
+      // Never return otp to the caller (must not appear on screen).
+      return { success: true, emailConfigured: sendResult.configured };
     },
 
     verifyOtpAndResetPassword: (identifier: string, otp: string, newPassword: string) => {

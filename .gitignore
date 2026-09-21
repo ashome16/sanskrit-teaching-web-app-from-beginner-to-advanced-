@@ -25,3 +25,8 @@ dist-ssr
 
 # Not board data. संख्या is a later door.
 public/numbers.txt
+
+# Env secrets (EmailJS etc.)
+.env
+.env.*
+!.env.example
