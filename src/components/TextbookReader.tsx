@@ -268,7 +268,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
       {activeLessonId === 'grade8_ch1' && (
         <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #f0fdf4 0%, #eff6ff 100%)', borderColor: '#86efac' }}>
           <span className="textbook-cbse-pill" style={{ background: '#059669', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · प्रथमः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (Pages 137–144)</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · प्रथमः पाठः — संगच्छध्वं संवदध्वम् (Pages 2–8)</span>
         </div>
       )}
       {activeLessonId === 'grade8_ch2' && (
@@ -397,9 +397,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--quiz"
                 onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 1 Quizzes (उच्चारण-शास्त्रम्)"
+                title="Go to Grade 8 Chapter 1 Quizzes (5 Quizzes · 35 questions)"
               >
-                🎯 Quizzes (उच्चारण-शास्त्रम्)
+                🎯 5 Quizzes (35 Qs)
               </button>
             )}
             {onOpenWorksheets && (
@@ -407,9 +407,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
                 onClick={onOpenWorksheets}
-                title="Go to Grade 8 Chapter 1 Worksheets (Pronunciation · 5 Sheets)"
+                title="Go to Grade 8 Chapter 1 Worksheets (5 Solved Worksheets)"
               >
-                📑 5 Worksheets (उच्चारण-शिक्षा)
+                📑 5 Worksheets (Comprehension & Grammar)
               </button>
             )}
           </>

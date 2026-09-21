@@ -1,296 +1,232 @@
-अष्टमकक्षा (Class 8) · संस्कृत-पाठ्यपुस्तकम्
-प्रथमः पाठः : सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते
-द्विगु-समासयुक्तः / शिक्षा-प्रधानः · उच्चारण-शास्त्रम्
-(Chapter 12 content placed as Grade 8 Chapter 1 per curriculum update)
+अष्टमकक्षा (Class 8) · संस्कृत-पाठ्यपुस्तकम् 'दीपकम्'
+प्रथमः पाठः : संगच्छध्वं संवदध्वम् (Walk Together, Speak Together)
+ऋग्वेद-संहिता (मण्डलम् १०, सूक्तम् १९१, मन्त्राः २–४) · पृष्ठानि २ तः ८
 ================================================================================
 
-📖 Complete Lesson Extraction & Translations
+📖 PART 1: Full Lesson & Translations
+🏫 Section A: Introductory Classroom Dialogue (कक्षा-संवादः)
+--------------------------------------------------------------------------------
+छात्राः – नमस्ते आचार्य! अस्माकं विद्यालयस्य क्रीडोत्सवे पादकन्दुक-क्रीडायां वयं विजयं प्राप्तवन्तः।
+आचार्यः – वर्धापनानि, अभिनन्दनं भवताम्। अपि भवन्तः जानन्ति यत् भवतां प्रतिद्वन्द्विनः कथं पराजिताः?
+छात्रः १ – आम्, जानामि आचार्य! अस्माकं दलस्य क्रीडकेषु परस्परं सम्यक् सामञ्जस्यम् आसीत्, किन्तु विपक्षी-दले तत् नासीत्।
+छात्रः २ – सत्यम् आचार्य! तस्य दलस्य क्रीडकेषु परस्परं मनोभेदः द्वेषभावः च आसीत्। ते अन्योन्यं सहयोगं न कृतवन्तः।
+आचार्यः – तर्हि वदन्तु, विजयप्राप्त्यर्थं किं किम् आवश्यकम्?
+छात्राः – मिलित्वा कार्यकरणम्, एकता, परस्परं सामञ्जस्यं च आवश्यकम्।
+आचार्यः – सत्यम् एव उक्तम्। एष एव सन्देशः वेदे 'संगच्छध्वं संवदध्वम्' इत्येवं प्रदत्तः।
+छात्राः – आचार्य! कस्मात् वेदात् गृहीतः एष सन्देशः? कः च अस्य अभिप्रायः?
+आचार्यः – ऋग्वेदे - 'संज्ञान-सूक्तस्य' एषः मन्त्रांशः। एतत् 'संघटन-सूक्तम्' इत्यपि प्रख्यातम्। आगच्छन्तु, वयम् अस्य सूक्तस्य प्रसिद्धान् त्रीन् मन्त्रान् पठामः।
 
-📝 Page 137 (Introductory Dialogue & Mythological Anecdote)
+हिंदी अनुवाद:
+छात्राः – नमस्ते आचार्य! अस्माकं विद्यालयस्य क्रीडोत्सवे पादकन्दुक-क्रीडायां वयं विजयं प्राप्तवन्तः।
+👉 Hindi: छात्र – नमस्ते आचार्य! हमारे विद्यालय के खेल उत्सव में फुटबॉल खेल में हम सब विजयी हुए हैं।
 
-Sanskrit Text:
+आचार्यः – वर्धापनानि, अभिनन्दनं भवताम्। अपि भवन्तः जानन्ति यत् भवतां प्रतिद्वन्द्विनः कथं पराजिताः?
+👉 Hindi: आचार्य – आप सभी को बधाई और शुभकामनाएँ। क्या आप जानते हैं कि आपके प्रतिद्वंद्वी कैसे हार गए?
 
-नमस्ते आचार्य ! अद्य वयम् एकां कथां श्रोतुम् इच्छामः । कृपया कथां श्रावयति वा महोदय !
-"नमस्ते छात्राः ! भवतां मनोरञ्जनार्थम् आदौ कथाश्रवणम् । अनन्तरं पाठनम् । तर्हि सावधानं शृण्वन्तु ।
+छात्र १: हाँ, मैं जानता हूँ आचार्य! हमारी टीम के खिलाड़ियों में आपस में बहुत अच्छा तालमेल (सामञ्जस्य) था, लेकिन विरोधी टीम में ऐसा नहीं था।
+छात्र २: सत्य है आचार्य! उस टीम के खिलाड़ियों में आपस में मतभेद और द्वेष की भावना थी। उन्होंने एक-दूसरे का सहयोग नहीं किया।
 
-देवानां राजा इन्द्रः, असुराणां च राजा आसीत् वृत्रासुरः । देवानाम् असुराणां च मध्ये सर्वदा वैरभावः भवति एव। स्वस्य बलं वर्धयितुम् इन्द्रं जेतुं च वृत्रासुरः यज्ञं कारितवान् । यज्ञे आहुतिमन्त्रः आसीत् — ‘इन्द्रशत्रुर्वर्धस्व’ इति। यज्ञावसाने वृत्रासुरो बली भूत्वा जनान् पीडयिष्यति इति विचार्य ऋत्विजः मन्त्रे स्वरं परिवर्तितवन्तः। स्वरपरिवर्तनेन अर्थः परिवर्तितः। परिणामतः वृत्रासुरस्य स्थाने इन्द्रस्य बलं वर्धितम्। बलवान् इन्द्रः वज्रेण वृत्रासुरं मारितवान्।
+आचार्यः – तर्हि वदन्तु, विजयप्राप्त्यर्थं किं किम् आवश्यकम्?
+👉 Hindi: आचार्य – तो बताइए, विजय प्राप्त करने के लिए क्या-क्या आवश्यक है?
 
-बहु सुन्दरी कथा महोदय !
-तर्हि वयमपि पठनकाले भाषणकाले च स्पष्टं शुद्धं च उच्चारणं कुर्मः ।
-त्वं यथार्थं भाषसे हिमानि ! शुद्धोच्चारणस्य सन्दर्भ एव अधुना एतं विषयं पठामः ।
-
-Hindi Translation:
-
-छात्र – नमस्ते आचार्य जी! आज हम सब एक कहानी सुनना चाहते हैं। महोदय, कृपया हमें कोई कहानी सुनाइए।
-आचार्य – नमस्ते छात्रों! आप सबके मनोरंजन के लिए पहले कहानी श्रवण होगा, उसके बाद पढ़ाई। तो फिर ध्यान से सुनिए।
-
-देवताओं के राजा इन्द्र थे और असुरों के राजा वृत्रासुर थे। देवताओं और असुरों के बीच हमेशा शत्रुता (वैरभाव) रहती ही है। अपना बल बढ़ाने के लिए और इन्द्र को जीतने के लिए वृत्रासुर ने एक यज्ञ करवाया। यज्ञ में आहुति का मन्त्र था — 'इन्द्रशत्रुर्वर्धस्व'। यज्ञ की समाप्ति पर वृत्रासुर बलवान होकर लोगों को सताएगा, ऐसा सोचकर ऋत्विजों (पुरोहितों) ने मन्त्र के स्वर को बदल दिया। स्वर बदलने से पूरा अर्थ ही बदल गया। परिणामतः वृत्रासुर के स्थान पर इन्द्र का बल बढ़ गया। तब शक्तिशाली इन्द्र ने वज्र से वृत्रासुर को मार डाला।
-
-हिमानि – बहुत सुंदर कहानी है महोदय! तो फिर हम सब भी पढ़ने के समय और बोलने के समय स्पष्ट और शुद्ध उच्चारण करेंगे।
-आचार्य – तुम बिल्कुल सही कह रही हो हिमानि! शुद्ध उच्चारण के संदर्भ में ही अब हम इस विषय को पढ़ते हैं।
+छात्राः – मिलित्वा कार्यकरणम्, एकता, परस्परं सामञ्जस्यं च आवश्यकम्।
+👉 Hindi: छात्र – मिलकर कार्य करना, एकता और आपस में अच्छा तालमेल (सामंजस्य) आवश्यक है।
+आचार्य: बिल्कुल सही कहा। यही संदेश वेद में 'संगच्छध्वं संवदध्वम्' (साथ चलो, साथ बोलो) के रूप में दिया गया है।
+छात्र: आचार्य! यह संदेश किस वेद से लिया गया है? और इसका क्या अर्थ है?
+आचार्य: यह ऋग्वेद के 'संज्ञान-सूक्त' का एक मंत्रांश है। इसे 'संघटन-सूक्त' के नाम से भी जाना जाता है। आइए, हम इस सूक्त के तीन प्रसिद्ध मंत्रों को पढ़ते हैं।
 
 English Translation:
-
-Students – Salutations, Teacher! Today we wish to listen to a story. Sir, please narrate a story to us!
-Teacher – Salutations, students! For your entertainment, first, there will be storytelling, followed by the lesson. So listen attentively.
-
-The king of the gods was Indra, and the king of the demons was Vritrasura. There is always enmity between the gods and the demons. To increase his strength and conquer Indra, Vritrasura performed a sacrificial ritual (Yajna). The offering mantra in the ritual was— 'Indrashatrurvardhasva'. Fearing that Vritrasura would become powerful at the completion of the sacrifice and terrorize people, the priests (Ritvijas) changed the accent/tone in the mantra. Due to the alteration of the vocal pitch, the meaning completely inverted. Consequently, instead of Vritrasura, Indra's power multiplied. The mighty Indra then slew Vritrasura with his thunderbolt (Vajra).
-
-Himani – A very beautiful story, Sir! Therefore, we too will make clear and accurate pronunciations while reading and speaking.
-Teacher – You speak the truth, Himani! It is precisely in the context of correct pronunciation that we shall study this text now.
-
-📝 Page 138-139 (Verses & Intonation Frameworks)
-
-श्लोकः १ (Verse 1):
-
-यद्यपि बहु नाधीषे तथापि पठ पुत्र व्याकरणम्।
-स्वजनः श्वजनो माभूत् सकलं शकलं सकृत् शकृत् ॥ १ ॥
-
-पदच्छेदः – यद्यपि बहु न अधीषे तथापि पठ पुत्र व्याकरणम् स्वजनः श्वजनः मा अभूत् सकलम् शकलम् सकृत् शकृत्।
-
-अन्वयः – पुत्र ! यद्यपि बहु न अधीषे तथापि व्याकरणं पठ। येन स्वजनः श्वजनः (इति) सकलं शकलं (इति) सकृत् शकृत् (इति) च मा अभूत्।
-
-Hindi Translation: हे पुत्र! यदि तुम बहुत अधिक विषयों का अध्ययन नहीं भी करते हो, तो भी व्याकरण अवश्य पढ़ो; ताकि (उच्चारण दोष के कारण) 'स्वजन' (अपने आत्मीय जन) कहीं 'श्वजन' (कुत्ता) न बन जाए, 'सकल' (सम्पूर्ण) कहीं 'शकल' (टुकड़ा) न बन जाए, और 'सकृत्' (एक बार) कहीं 'शकृत्' (विष्ठा/मल) न बन जाए!
-
-English Translation: O son! Even if you do not study many vast subjects, at least study grammar; so that (due to incorrect pronunciation) your 'svajana' (own family/kin) does not turn into 'shvajana' (a dog), 'sakalam' (entire/whole) does not become 'shakalam' (a broken piece), and 'sakrit' (once) does not turn into 'shakrit' (excrement).
-
-श्लोकः २ (Verse 2):
-
-व्याघ्री यथा हरेत् पुत्रान् दंष्ट्राभ्यां न च पीडयेत् ।
-भीता पतनभेदाभ्यां तद्वद् वर्णान् प्रयोजयेत् ॥ २ ॥
-
-पदच्छेदः – व्याघ्री यथा हरेत् पुत्रान् दंष्ट्राभ्याम् न च पीडयेत् भीता पतनभेदाभ्याम् तद्वद् वर्णान् प्रयोजयेत्।
-
-अन्वयः – यथा पतनभेदाभ्यां भीता व्याघ्री दंष्ट्राभ्यां पुत्रान् हरेत् न च पीडयेत् तद्वत् (जनः) वर्णान् प्रयोजयेत्।
-
-Hindi Translation: जैसे अपने बच्चों को गिरने या दाँतों के चुभने के भय से डरी हुई बाघिन उन्हें अपने तीखे दाँतों से पकड़कर ले जाती है पर कष्ट नहीं देती; वैसे ही मनुष्य को वर्णों का उच्चारण करना चाहिए (न तो अत्यधिक कठोरता से और न ही अत्यधिक ढीलेपन से)।
-
-English Translation: Just as a tigress carries her cubs between her sharp fangs, terrified of either dropping them or hurting them, yet without causing them any pain, in the exact same manner one should articulate words and letters (neither with too much force nor with excessive laxity).
-
-श्लोकः ३ (Verse 3):
-
-एवं वर्णाः प्रयोक्तव्या नाव्यक्ता न च पीडिताः ।
-सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते ॥ ३ ॥
-
-पदच्छेदः – एवं वर्णाः प्रयोक्तव्याः न अव्यक्ताः न च पीडिताः सम्यग् वर्णप्रयोगेण ब्रह्मलोके महीयते।
-
-अन्वयः – एवम् अव्यक्ताः पीडिताः च वर्णाः न प्रयोक्तव्याः। सम्यक् वर्णप्रयोगेण (सः) ब्रह्मलोके महीयते।
-
-Hindi Translation: इसी प्रकार, वर्णों का उच्चारण न तो अस्पष्ट (अव्यक्त) होना चाहिए और न ही अत्यधिक दबाकर (पीडित) किया जाना चाहिए। वर्णों का सही और सुप्राकृतिक उच्चारण करने वाला व्यक्ति ब्रह्मलोक में आदर/सम्मान प्राप्त करता है।
-
-English Translation: Thus, letters should be articulated neither indistinctly (unclear) nor under distress (forced heavily). By the flawless employment of articulation, a person is highly revered in the realm of Brahma (Brahmaloka).
-
-श्लोकः ४ (Verse 4):
-
-माधुर्यमक्षरव्यक्तिः पदच्छेदस्तु सुस्वरः ।
-धैर्यं लयसमर्थं च षडेते पाठका गुणाः ॥ ४ ॥
-
-पदच्छेदः – माधुर्यम् अक्षरव्यक्तिः पदच्छेदः तु सुस्वरः धैर्यं लयसमर्थं च षट् एते पाठका गुणाः।
-
-अन्वयः – माधुर्यम् अक्षरव्यक्तिः पदच्छेदः तु सुस्वरः धैर्यं लयसमर्थं च एते षट् पाठकाः गुणाः (भवन्ति)।
-
-Hindi Translation: मधुरता (माधुर्य), अक्षरों की स्पष्टता, सही स्थान पर पदों का विभाजन (पदच्छेद), सुंदर स्वर, धैर्य और लय के साथ सामंजस्य बिठाने की क्षमता — ये छह उत्तम पाठक के गुण होते हैं।
-
-English Translation: Sweetness of delivery, clarity of syllables, appropriate splitting of words, a pleasant melodious tone, patience, and rhythmic compatibility—these six are the essential traits of an excellent reader.
-
-श्लोकः ५ (Verse 5):
-
-गीती शीघ्री शिरःकम्पी तथा लिखितपाठकः ।
-अनर्थज्ञोऽल्पकण्ठश्च षडेते पाठकाधमाः ॥ ५ ॥
-
-पदच्छेदः – गीती शीघ्री शिरः कम्पी तथा लिखितपाठकः अनर्थज्ञः अल्पकण्ठः च षट् एते पाठकाधमाः।
-
-अन्वयः – गीती शीघ्री शिरः कम्पी लिखितपाठकः अनर्थज्ञः अल्पकण्ठः च एते षट् पाठकाधमाः भवन्ति।
-
-Hindi Translation: गाकर पढ़ने वाला, बहुत तेज़ भागकर पढ़ने वाला, सिर हिला-हिलाकर पढ़ने वाला, बिना समझे केवल लिखी हुई चीज़ों को पढ़ने वाला, अर्थ को न जानने वाला और अत्यंत मंद या क्षीण कंठ वाला — ये छह निकृष्ट (अधम) पाठक माने गए हैं।
-
-English Translation: Singing like a song, reading too quickly, shaking or nodding the head while reading, depending purely on written text, reading without understanding the meaning, and delivering in a feeble or weak voice—these six are classified as the worst categories of readers.
-
-🔤 Word-to-Word Meanings & Shabdarth (Pages 140-141)
-
-संस्कृत पद | शब्दार्थ / पर्याय | हिंदी अर्थ | English Meaning
-ऋत्विजः | पुरोहिताः | पुरोहित / यज्ञ कराने वाले | Priests
-करताडनम् | करताडनध्वनिः | ताली बजाना | Clapping sound
-अधीषे | पठसि | तुम पढ़ते हो | You read
-श्वजनः | शुनकः / कुक्कुरः | कुत्ता | Dog
-सकलम् | सम्पूर्णम् / पूर्णम् | पूरा / अखण्ड | Entire / Whole
-शकलम् | खण्डम् | टुकड़ा | Fragment / Piece
-सकृत् | एकवारम् | एक बार | Once
-शकृत् | मलम् / विष्ठाम् | मल / गोबर | Feces
-अव्यक्ताः | अस्पष्टाः | अस्पष्ट | Indistinct / Unclear
-पीडिताः | बाधिताः / अधिकप्रयत्नयुक्ताः | अत्यधिक दबाया हुआ | Over-stressed
-महीयते | पूज्यते / सम्मानं लभते | सम्मानित होता है | Respected
-दंष्ट्राभ्याम् | दन्ताभ्याम् | दो तीखे दाँतों से | With the sharp fangs
-अक्षरव्यक्तिः | अक्षराणां स्फुटता | अक्षरों की स्पष्टता | Clarity of syllables
-शीघ्री | यः वेगेन पठति | तेज़ गति से पढ़ने वाला | Fast reader
-शिरःकम्पी | यः शिरः चालयन् पठति | सिर हिलाकर पढ़ने वाला | Shaking the head
-अनर्थज्ञः | यः अर्थं न जानाति | जो अर्थ को नहीं जानता | Who ignores the meaning
-अल्पकण्ठः | दुर्बलध्वनियुक्तः | धीमे/दुर्बल कंठ वाला | Weak-voiced
-
-📝 Chapter Exercises with Solutions (अभ्यासः - Pages 142-144)
-
-२. अधोलिखितानां प्रश्नानाम् एकपदेन उत्तराणि लिखत — (एक शब्द में उत्तर दें)
-
-(क) पाठकाः केषां सम्यक् प्रयोगं कुर्युः?
-उत्तरम्: वर्णानाम्
-
-(ख) किम् अवश्यमेव पठनीयम्?
-उत्तरम्: व्याकरणम्
-
-(ग) ब्रह्मलोके केन सम्मानं भवति?
-उत्तरम्: सम्यग्वर्णप्रयोगेण
-
-(घ) अधमाः पाठकाः कति भवन्ति?
-उत्तरम्: षट् (६)
-
-(ङ) धैर्यं केषां गुणः?
-उत्तरम्: पाठकानाम्
-
-३. अधोलिखितानां प्रश्नानाम् पूर्णवाक्येन उत्तराणि लिखत — (पूर्ण वाक्य में उत्तर दें)
-
-(क) व्याघ्री दंष्ट्राभ्यां कान् नयति?
-उत्तरम्: व्याघ्री दंष्ट्राभ्यां पुत्रान् नयति।
-
-(ख) वर्णाः कथं प्रयोक्तव्याः?
-उत्तरम्: वर्णाः नाव्यक्ताः न च पीडिताः प्रयोक्तव्याः।
-
-(ग) पाठकानां षड्-गुणाः के भवन्ति?
-उत्तरम्: पाठकानां षड्-गुणाः माधुर्यम्, अक्षरव्यक्तिः, पदच्छेदः, सुस्वरः, धैर्यं, लयसमर्थं च भवन्ति।
-
-(घ) के अधमाः पाठकाः भवन्ति?
-उत्तरम्: गीती, शीघ्री, शिरःकम्पी, लिखितपाठकः, अनर्थज्ञः, अल्पकण्ठः च एते षट् अधमाः पाठकाः भवन्ति।
-
-(ङ) 'स्वजनः' 'श्वजनः' च इत्यनयोः अर्थदृष्ट्या कः भेदः?
-उत्तरम्: 'स्वजनः' इत्यस्य अर्थः बन्धुः अस्ति, परन्तु 'श्वजनः' इत्यस्य अर्थः शुनकः अस्ति।
-
-(च) 'सकलं' 'शकलं' च इत्यनयोः अर्थदृष्ट्या कः भेदः?
-उत्तरम्: 'सकलं' इत्यस्य अर्थः सम्पूर्णम् अस्ति, परन्तु 'शकलं' इत्यस्य अर्थः खण्डम् अस्ति।
-
-४. अधोलिखितानि लक्षणानि पाठकस्य गुणाः वा दोषाः वा इति विभजत — (गुण और दोषों का वर्गीकरण - Page 143)
-
-गुणाः (Qualities): अक्षरव्यक्तिः, लयसमर्थम्, माधुर्यम्, पदच्छेदः, धैर्यम्, सुस्वरः
-दोषाः (Demerits): शीघ्री, लिखितपाठकः, अनर्थज्ञः, अल्पकण्ठः, गीती, शिरःकम्पी
-
-५. श्लोकानुसारं रिक्तस्थानानि उचितैः शब्दैः पूरयत — (श्लोक रिक्त स्थान पूर्ति - Page 144)
-
-(क) भीता पतनभेदाभ्यां तद्वद् वर्णान् प्रयोजयेत्।
-(ख) धैर्यं लयसमर्थं च षडेते पाठका गुणाः।
-(ग) गीती शीघ्री शिरःकम्पी तथा लिखितपाठकः।
-(घ) एवं वर्णाः प्रयोक्तव्या नाव्यक्ता न च पीडिताः।
-(ङ) स्वजनः श्वजनो माभूत् सकलं शकलं सकृत् शकृत्।
-
-६. अधोलिखितानि वाक्यानि सत्यम् वा असत्यम् वा इति लिखत — (सत्य / असत्य - Page 144)
-
-यथा — पदच्छेदः पाठकानां गुणः अस्ति। → सत्यम्
-(क) गानसहितपठनं पाठकानां दोषः भवति। → सत्यम्
-(ख) माधुर्यं नाम अक्षराणाम् उच्चारणे स्पष्टता अस्ति। → असत्यम्
-(ग) शकृत् नाम एकवारम् इति अर्थः अस्ति। → असत्यम्
-(घ) अव्यक्ताः वर्णाः प्रयोक्तव्याः भवन्ति। → असत्यम्
-(ङ) व्याघ्री यथा पुत्रान् हरति तथा वर्णान् प्रयोजयेत्। → सत्यम्
-
-📝 5 Chapter-Based Worksheets (अभ्यास-पत्रिकाः)
-
-📄 Worksheet 1: Minimal Pairs Exploration (वर्ण-भेद विवेकः)
-
-Choose the correct word based on the target contextual meaning provided in brackets:
-1. सः मम ______________ अस्ति। (Family relative - स्वजनः / श्वजनः)
-2. पात्रे अन्नस्य ______________ अस्ति। (Piece/Fragment - सकलम् / शकलम्)
-3. अहम् ______________ तत्र गतवान्। (Once - सकृत् / शकृत्)
-4. गगने ______________ मण्डलम् दृश्यते। (Full/Entire - सकलम् / शकलम्)
-
-📄 Worksheet 2: Identify the Reader Profile
-
-Read the student behavior and tag them as उत्तमपाठकः (Good reader) or अधमपाठकः (Poor reader):
-1. Ramesh shakes his head vigorously while reading a text line. → _________________
-2. Sunita pauses perfectly at commas and full stops (पदच्छेदः). → _________________
-3. Akhil reads sentences at an extremely rapid velocity (शीघ्री). → _________________
-4. Priya delivers the shlokas with accurate sound dynamics and clarity. → _________________
-
-📄 Worksheet 3: Textual Comprehension Passage
-
-Q1. Read the provided contextual baseline snippet and answer the questions below:
-"स्वरपरिवर्तनेन अर्थः परिवर्तितः। परिणामतः वृत्रासुरस्य स्थाने इन्द्रस्य बलं वर्धितम्।"
-1. मन्त्रेषु कस्य परिवर्तनेन अर्थः परिवर्तितः?
-2. यज्ञस्य आयोजनं कः कृतवान्?
-3. कस्य बलं वर्धितम्?
-
-📄 Worksheet 4: Prose Disassembly (पदच्छेदः)
-
-Split the following combined continuous expressions into individual separated words:
-1. 'यद्यपि बहु नाधीषे' = ______________ + ______________ + ______________
-2. 'षडेते' = ______________ + ______________
-3. 'नाव्यक्ता' = ______________ + ______________
-
-📄 Worksheet 5: The Six Vedangas Mapping (Page 142)
-
-Match the Vedanga branch with its correct foundational functional linguistic definitions:
-शिक्षा (a) भाषायाः नियमाः (Grammar rules)
-व्याकरणम् (b) वर्णानाम् उच्चारणविधिः (Phonetics/Acoustics)
-ज्योतिषम् (c) सूर्य-चन्द्र-नक्षत्राणां गतिः (Astronomy)
-
-🧠 2 Grammar Theme Quizzes
-
-🏆 Quiz 1: Phonetics & Intonation Principles (उच्चारण-शास्त्रम्)
-
-1. वर्णोच्चारणं कीदृशं न कर्तव्यम् इति पाठे व्याघ्री-दृष्टान्तेन स्पष्टीकृतम्?
-(A) अतिस्पष्टं न भवेत्
-(B) अतिकठोररूपेण अतिशैथिल्येण वा न भवेत्
-(C) मन्दगत्या न भवेत्
-(D) सर्वदा गानरूपेण भवेत्
-
-2. 'सम्यग्वर्णप्रयोगेण' मनुष्यः कुत्र सम्मानं लभते (महीयते)?
-(A) पाताललोके
-(B) ब्रह्मलोके
-(C) केवलं नगरे
-(D) असुरलोके
-
-3. 'अव्यक्ताः' वर्णाः इति पदस्य व्याकरणशास्त्रे कः अर्थः वर्तते?
-(A) अतीव तीक्ष्णाः
-(B) अस्पष्टाः (आवश्यकता से कम प्रयत्न वाले)
-(C) सुस्वराः
-(D) मधुराः
-
-4. मन्त्रोच्चारणे कस्य परिवर्तनेन अर्थविपर्यासः (अर्थपरिवर्तनं) सम्भवति?
-(A) केवलं पुस्तकानाम्
-(B) स्वरस्य (Accent/Intonation)
-(C) करताडनस्य
-(D) मञ्चस्य
-
-🏆 Quiz 2: The Six Vedangas & Philology
-
-1. वेदानां कति अङ्गानि सन्ति (वेदाङ्गानि कति)?
-(A) चत्वारि (४)
-(B) पञ्च (५)
-(C) षट् (६)
-(D) अष्ट (८)
-
-2. 'शिक्षा घ्राणं तु वेदस्य मुखं ___________ स्मृतम्'— रिक्तस्थानं पूरयत।
-(A) कल्पं
-(B) व्याकरणं
-(C) निरुक्तं
-(D) ज्योतिषं
-
-3. 'यद्यपि' इति पदे कः सन्धिः वर्तते?
-(A) दीर्घसन्धिः
-(B) गुणसन्धिः
-(C) यण्सन्धिः
-(D) वृद्धिसन्धिः
-
-4. 'मा अभूत्' इति क्रियापदसमूहः कस्य कालस्य बोधं कारयति?
-(A) वर्तमानकालस्य
-(B) भविष्यत्कालस्य
-(C) भूतकालस्य (लुङ्/लङ् लकारः)
-(D) आज्ञाकालस्य
-
-🔑 Answer Keys for Worksheets & Quizzes
-
-📄 Worksheets Answer Key
-Worksheet 1: 1. स्वजनः, 2. शकलम्, 3. सकृत्, 4. सकलम्.
-Worksheet 2: 1. अधमपाठकः, 2. उत्तमपाठकः, 3. अधमपाठकः, 4. उत्तमपाठकः.
-Worksheet 3: 1. स्वरस्य परिवर्तनेन, 2. वृत्रासुरः, 3. इन्द्रस्य.
-Worksheet 4: 1. यदि + अपि + बहु + न + अधीषे, 2. षट् + एते, 3. न + अव्यक्ताः.
-Worksheet 5: 1-b, 2-a, 3-c.
-
-🏆 Quizzes Answer Key
-Quiz 1: 1-(B), 2-(B), 3-(B), 4-(B).
-Quiz 2: 1-(C), 2-(B), 3-(C), 4-(C).
+Students: Salutations, Teacher! We won the football match in our school's sports festival.
+Teacher: Congratulations and blessings to you all. Do you know why your opponents were defeated?
+Student 1: Yes, I know, Teacher! There was excellent harmony and coordination among the players of our team, but it was missing in the opposing team.
+Student 2: True, Teacher! The players of that team had mutual differences and hatred. They did not cooperate with one another.
+Teacher: Then tell me, what is necessary to achieve victory?
+Students: Working together, unity, and mutual harmony are necessary.
+Teacher: Well said. This exact message is given in the Vedas as 'Walk together, speak together'.
+Students: Teacher, from which Veda is this message taken? And what does it mean?
+Teacher: This is a part of the 'Saṁjñāna-Sūkta' from the Rigveda. It is also famously known as the 'Saṅghaṭana-Sūkta' (Hymn of Unity). Come, let us read three famous mantras of this hymn.
+
+================================================================================
+🕉️ Section B: Core Rigvedic Mantras (ऋग्वैदिक-मन्त्राः)
+================================================================================
+
+🔸 Mantra 1
+संगच्छध्वं संवदध्वं सं वो मनांसि जानताम् ।
+देवा भागं यथा पूर्वे संजानाना उपासते ॥ १ ॥
+
+पदच्छेदः: संगच्छध्वम्, संवदध्वम्, सम्, वः, मनांसि, जानताम्, देवाः, भागम्, यथा, पूर्वे, संजानानाः, उपासते।
+अन्वयः: (यूयम्) संगच्छध्वं संवदध्वं वः मनांसि संजानताम्। यथा पूर्वे देवाः भागं संजानानाः उपासते।
+
+English Word-to-Word Meaning:
+• संगच्छध्वम् (Saṁgacchadhvam): Walk together in harmony
+• संवदध्वम् (Saṁvadadhvam): Speak together in one voice / concord
+• वः (Vaḥ): Your
+• मनांसि (Manāṁsi): Minds
+• जानताम् (Jānatām): May understand / know similarly
+• यथा (Yathā): Just as
+• पूर्वे (Pūrve): In ancient times / the beginning of creation
+• देवाः (Devāḥ): Deities / Cosmic forces (like Fire, Wind, Sun)
+• भागम् (Bhāgam): Their respective shares of sacrificial offerings / duties
+• संजानानाः (Saṁjānānāḥ): Being of one mind / in total harmony
+• उपासते (Upāsate): Devotedly accepted and performed their tasks
+
+Hindi Translation:
+Line 1 Hindi: तुम सब मिलकर एक साथ आगे बढ़ो (साथ चलो), आपस में प्रेम से बातचीत करो (एक स्वर में बोलो) और तुम्हारे मन एक समान होकर एक-दूसरे को जानें।
+Line 2 Hindi: जिस प्रकार प्राचीन काल में देवता एकमत होकर यज्ञ के अपने-अपने भाग को स्वीकार करते हुए अपने कर्तव्यों का निर्वाह करते थे, (वैसे ही तुम भी मिलकर रहो)।
+
+English Translation:
+O humans! Walk together in harmony, speak together in one voice, and let your minds be unified in understanding. Just as the ancient deities in complete agreement and harmony accepted their respective shares of offerings and performed their cosmic duties, you too should live and work together in unity.
+
+--------------------------------------------------------------------------------
+🔸 Mantra 2
+समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम् ।
+समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि ॥ २ ॥
+
+पदच्छेदः: समानः, मन्त्रः, समितिः, समानी, समानम्, मनः, सह, चित्तम्, एषाम्, समानम्, मन्त्रम्, अभिमन्त्रये, वः, समानेन, वः, हविषा, जुहोमि।
+अन्वयः: एषां मन्त्रः समानः, समितिः समानी, मनः समानं, चित्तं सह (अस्तु)। वः समानं मन्त्रम् अभिमन्त्रये वः समानेन हविषा जुहोमि।
+
+English Word-to-Word Meaning:
+• एषाम् (Eṣām): Of these / of all of you
+• समानः (Samānaḥ) / समानी (Samānī): Common / Unified / Equal
+• मन्त्रः (Mantraḥ): Thought / contemplation / counsel
+• समितिः (Samitiḥ): Assembly / gathering / resolution
+• मनः (Manaḥ): Mind / feelings
+• सह (Saha): Together / united
+• चित्तम् (Cittam): Consciousness / inner heart / intellect
+• मन्त्रम् (Mantram): United resolve / advice
+• अभिमन्त्रये (Abhimantraye): I consecrate / sanctify and instill
+• वः (Vaḥ): To you
+• समानेन (Samānena): With a common / shared
+• हविषा (Haviṣā): Sacrificial offering / prayers
+• जुहोमि (Juhomi): I offer / perform the sacred ritual
+
+Hindi Translation:
+Line 1 Hindi: इन (सब मनुष्यों) के विचार समान हों, इनकी सभाएँ (लक्ष्य) समान हों, इनका मन सौहार्दपूर्ण हो और इनका अंतःकरण (बुद्धिजन्य ज्ञान) एक साथ एकीकृत हो।
+Line 2 Hindi: मैं तुम सबको एक समान उद्देश्य से संस्कारित करता हूँ और तुम्हें एक समान यज्ञीय आहुति (सामूहिक प्रार्थना) से जोड़ता हूँ।
+
+English Translation:
+Let your deliberations be unified, let your assemblies and resolutions be common, let your minds be harmonious, and let your hearts beat together in unison. I consecrate you all with a common collective purpose and offer a shared prayer for your absolute unity.
+
+--------------------------------------------------------------------------------
+🔸 Mantra 3
+समानी व आकूतिः समाना हृदयानि वः ।
+समानमस्तु वो मनो यथा वः सुसहासति ॥ ३ ॥
+
+पदच्छेदः: समानी, वः, आकूतिः, समाना, हृदयानि, वः, समानम्, अस्तु, वः, मनः, यथा, वः, सु, सह, असति।
+अन्वयः: (हे मानवाः !) वः आकूतिः समानी (अस्तु)। वः हृदयानि समाना (सन्तु)। यथा वः सह सु असति, (तथा) वः मनः समानम् अस्तु।
+
+English Word-to-Word Meaning:
+• वः (Vaḥ): Your
+• आकूतिः (Ākūtiḥ): Intention / resolve / determination
+• समानी (Samānī) / समाना (Samānā) / समानम् (Samānam): Similar / harmonious
+• हृदयानि (Hṛdayāni): Hearts
+• अस्तु (Astu): May it be
+• मनः (Manaḥ): Mind
+• यथा (Yathā): So that / in order that
+• सह (Saha): Together
+• सु (Su): Excellent / beautifully
+• असति (Asati): May exist / happens
+
+Hindi Translation:
+Line 1 Hindi: हे मनुष्यों! तुम्हारा संकल्प (दृढ़ निश्चय) एक समान हो, तुम्हारे हृदय सामंजस्यपूर्ण (आपसी सद्भाव से युक्त) हों।
+Line 2 Hindi: और तुम्हारा मन एक जैसा हो, जिससे तुम्हारा यह संगठन (साथ रहना) अत्यंत सुंदर और सुदृढ़ हो सके।
+
+English Translation:
+O humans! Let your determinations be common, let your hearts be full of mutual harmony, and let your minds think in alignment, so that your collective co-existence and unity may be beautifully perfect.
+
+================================================================================
+📚 PART 2: Complete Vocabulary (Shabdarth - शब्दार्थाः)
+================================================================================
+Sanskrit Word    | Literal Meaning/Synonyms     | Hindi Meaning                  | English Meaning
+--------------------------------------------------------------------------------------------------------------
+संगच्छध्वम्      | मिलित्वा गच्छत               | मिलकर चलो                      | May you walk together
+संवदध्वम्        | एकस्वरेण वदत                 | सहमतिपूर्वक बोलें              | May you speak in one voice
+समवेतस्वरेण      | सम्मिलित-स्वरेण              | सम्मिलित ध्वनि से              | By chanting in unison
+मनांसि           | चित्तानि                     | मनों को                        | Minds
+जानताम्          | जानन्तु                      | जानें                          | May you know / understand
+देवाः            | ब्रह्माण्डीय-शक्तयः          | सृष्टि की मूलभूत शक्तियाँ      | Cosmic forces / Celestial entities
+संजानानाः        | एकमनसः भूत्वा                | एक विचार वाले होकर             | Being amicable / In agreement
+उपासते           | सेवन्ते                      | श्रद्धापूर्वक कर्तव्य निर्वहण  | Devotedly performing duties
+अभ्युदयं         | अभिवृद्धिः                   | लौकिक उन्नति                   | Elevation and prosperity
+मन्त्रः          | विचारः / चिन्तनम्            | विचार / चिन्तन                 | Contemplation / Thought
+समितिः           | समाना प्राप्तिः              | समान सिद्धि / सभा              | Common resolutions / Assembly
+वः               | युष्मभ्यम्                   | तुम्हारे लिए / तुम्हारा        | For you / Your
+अभिमन्त्रये      | संस्कृत्य प्रचारयामि         | अभिमन्त्रित करके प्रकट करता हूँ | Consecrate and propagate
+हविषा            | प्रार्थनापूर्वकेण समर्पणेन   | प्रार्थनापूर्वक यज्ञाहुति द्वारा | By oblatory prayers
+जुहोमि           | ज्ञानकर्ममयं यज्ञं साधयामि   | दिव्य यज्ञ कर्म को साधता हूँ   | Performing divine offerings
+आकूतिः           | सङ्कल्पः                     | संकल्प / इच्छा                 | Resolution / Intent
+सु सह असति       | सुसङ्घटितः भवेत्             | सुसङ्घटित हो                   | May you be beautifully united
+संहिता           | मूलमन्त्रपाठः                | मूल वैदिक मन्त्र पाठ           | Original Vedic text
+ब्रह्मणा         | सृष्टिकर्त्रा परमेश्वरेण     | निर्माता परमात्मा के द्वारा    | By the creator of the universe
+निरवहन्          | निर्वाहम् अकुर्वन्           | निर्वाह किया                   | Took responsibility
+
+================================================================================
+📝 PART 3: Chapter Exercises & Solved Answers (अभ्यासकार्यम्)
+================================================================================
+
+Q1. संज्ञानसूक्तं सस्वरं पठत स्मरत लिखत च।
+(Recite the Saṁjñāna-Sūkta rhythmically, memorize it, and write it down.)
+Answer: This is a student classroom activity based on writing out Mantras 1, 2, and 3 accurately.
+
+Q2. अधोलिखितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखत -
+(Answer the following questions in complete sentences)
+(क) सर्वेषां मनः कीदृशं भवेत्?
+Sanskrit Answer: सर्वेषां मनः समानं सामञ्जस्ययुतं च भवेत्।
+English Meaning: Everyone's mind should be harmonious and unified in thought.
+(ख) सङ्गच्छध्वं संवदध्वम् इत्यस्य कः अभिप्रायः?
+Sanskrit Answer: सङ्गच्छध्वं संवदध्वम् इत्यस्य अभिप्रायः अस्ति यत् हे मानवाः! यूयं सर्वे समाजे मिलित्वा अग्रे गच्छत तथा परस्परं सम्यक् विचारविनिमयं कुर्वन्तः एकस्वरेण वदत।
+English Meaning: It means: O humans! You all should walk together progressively in society and exchange your thoughts constructively, speaking in one collective voice.
+(ग) सर्वे किं परित्यज्य ऐक्यभावेन जीवेयुः?
+Sanskrit Answer: सर्वे परस्परं मनोभेदं द्वेषभावं वैमनस्यं च परित्यज्य ऐक्यभावेन जीवेयुः।
+English Meaning: Everyone should discard mental differences, hatred, and hostility to live together in unity.
+(घ) अस्मिन् पाठे का प्रेरणा अस्ति?
+Sanskrit Answer: अस्मिन् पाठे संघटितरूपेण सहजीवनस्य, एकतायाः, परस्परं सामञ्जस्यस्य च प्रेरणा अस्ति।
+English Meaning: This lesson inspires collective co-existence, absolute unity, and mutual harmony.
+
+Q3. रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कुरुत
+(Construct questions based on the underlined target terms)
+(क) परमेश्वरः सर्वत्र व्याप्तः अस्ति। ➡️ कः सर्वत्र व्याप्तः अस्ति? (Who is all-pervading?)
+(ख) वयम् ईश्वरं नमामः। ➡️ वयं कम् नमामः? (Whom do we bow down to?)
+(ग) वयम् ऐक्यभावेन जीवामः। ➡️ वयं कथम् / केन भावेन जीवामः? (How / in what spirit do we live?)
+(घ) ईश्वरस्य प्रार्थनया शान्तिः प्राप्यते। ➡️ ईश्वरस्य कया शान्तिः प्राप्यते? (Through what is peace obtained from God?)
+(ङ) अहं समाजाय श्रमं करोमि। ➡️ अहं कस्मै श्रमं करोमि? (For whom do I perform labor?)
+(च) अयं पाठः ऋग्वेदात् सङ्कलितः। ➡️ अयं पाठः कस्मात् सङ्कलितः? (From where is this lesson compiled?)
+(छ) वेदस्य अपरं नाम श्रुतिः। ➡️ वेदस्य अपरं नाम किम्? (What is the other name of the Veda?)
+(ज) मन्त्राः वेदेषु भवन्ति। ➡️ मन्त्राः केषु भवन्ति? (In what do mantras exist?)
+
+Q4. पट्टिकातः शब्दान् चित्वा अधोलिखितेषु मन्त्रेषु रिक्तस्थानानि पूरयत -
+(Fill in the blanks using terms from the option box)
+(क) सङ्गच्छध्वं संवदध्वं सं वो मनांसि जानताम् । देवा भागं यथा पूर्वे संजानाना उपासते॥
+(ख) समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम् । समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि॥
+(ग) समानी व आकूतिः समाना हृदयानि वः । समानमस्तु वो मनो यथा वः सुसहासति॥
+
+Q5. पाठे प्रयुक्तान् शब्दान् भावानुसारं परस्परं योजयत -
+(Match the terms with their appropriate textual meanings)
+(क) संगच्छध्वम् ➔ मिलित्वा चलत (Walk together)
+(ख) संवदध्वम् ➔ एकस्वरेण वदत (Speak in one voice)
+(ग) मनः ➔ चित्तम् (Mind / Consciousness)
+(घ) उपासते ➔ सेवन्ते (Devotedly worship / serve)
+(ङ) वसूनि ➔ धनानि (Wealth / Riches)
+(च) विश्वानि ➔ समस्तानि (All / Entire)
+(छ) आकूतिः ➔ सङ्कल्पः (Determination / Intent)
+
+Q6. उदाहरणानुसारेण लट्-लकारस्य वाक्यानि लोट्-लकारेण परिवर्तयत -
+(Convert the sentences from Present Tense (Laṭ) to Imperative Mood (Loṭ))
+Example: बालिकाः नृत्यन्ति ➔ बालिकाः नृत्यन्तु
+(क) बालकाः हसन्ति। ➔ बालकाः हसन्तु (Let the boys laugh)
+(ख) युवां तत्र गच्छथः। ➔ युवां तत्र गच्छतम् (You two go there)
+(ग) यूयं धावथ। ➔ यूयं धावत (All of you run)
+(घ) आवां लिखावः। ➔ आवां लिखाव (Let us two write)
+(ङ) वयं पठामः। ➔ वयं पठाम (Let us all read)
+
+================================================================================
+🏛️ PART 4: Vedic Heritage & Structural Context (योग्यताविस्तरः)
+================================================================================
+१. ऋग्वेदस्य अन्तिममण्डलस्य (१०) अन्तिमं सूक्तं 'संज्ञान-सूक्तम्' (१९१) इति प्रख्यातम् अस्ति।
+२. ऋग्वेदे आहत्य १० मण्डलानि, १०२८ सूक्तानि, १०,५५२ मन्त्राः च सन्ति।
+३. वेदस्य अपरं नाम 'श्रुतिः' अपि कथ्यते, यतो हि प्राचीने काले गुरुमुखात् श्रुत्वा एव एतेषां संरक्षणम् अभवत्।
+४. सन्धि-नियमाः:
+   • सम् + गच्छते = सङ्गच्छते
+   • मनः + सह = मनो सह (मनः सह)
+   • न + आसीत् = नासीत्
+   • मन्त्र + अंशः = मन्त्रांशः
