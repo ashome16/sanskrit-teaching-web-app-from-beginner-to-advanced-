@@ -2479,3 +2479,38 @@
 गूड्ढ्यपुष्पम् विकसति।|The mysterious flower blooms.|गूड्ढ्यपुष्पम्|nature
 गूड्ढ्यपवनः मन्दं वहति।|The hidden breeze blows softly.|गूड्ढ्यपवनः|nature
 गूड्ढ्यमेघः दृश्यते।|The mysterious cloud is seen.|गूड्ढ्यमेघः|nature
+पट्ठ्यतरुः तिष्ठति।|The study-tree stands.|पट्ठ्यतरुः|nature
+पट्ठ्यपवनः वहति।|The study-breeze blows.|पट्ठ्यपवनः|nature
+पट्ठ्यखगः कूजति।|The study-bird chirps.|पट्ठ्यखगः|nature
+पट्ठ्यसरः शीतलः।|The study-lake is cool.|पट्ठ्यसरः|nature
+पट्ठ्यकमलम् विकसति।|The study-lotus blooms.|पट्ठ्यकमलम्|nature
+पट्ठ्यमेघः दृश्यते।|The study-cloud is seen.|पट्ठ्यमेघः|nature
+पट्ठ्यगिरिः उच्चैः अस्ति।|The study-mountain is high.|पट्ठ्यगिरिः|nature
+उत्थ्यमेघः दृश्यते।|The rising cloud is seen.|उत्थ्यमेघः|nature
+उत्थ्यपवनः वहति।|The surging breeze blows.|उत्थ्यपवनः|nature
+उत्थ्यसरः चञ्चलः अस्ति।|The surging lake is restless.|उत्थ्यसरः|nature
+उत्थ्यतरुः वर्धते।|The rising tree grows.|उत्थ्यतरुः|nature
+उत्थ्यखगः उत्पतति।|The rising bird flies up.|उत्थ्यखगः|nature
+उत्थ्यपुष्पम् विकसति।|The rising flower blooms.|उत्थ्यपुष्पम्|nature
+उत्थ्यगिरिः उच्चैः अस्ति।|The rising mountain is high.|उत्थ्यगिरिः|nature
+भञ्ज्यतरुः कम्पते।|The fragile tree shakes.|भञ्ज्यतरुः|nature
+भञ्ज्यपुष्पम् पतति।|The fragile flower falls.|भञ्ज्यपुष्पम्|nature
+भञ्ज्यकमलम् मीलति।|The fragile lotus closes.|भञ्ज्यकमलम्|nature
+भञ्ज्यपवनः वहति।|The fragile breeze blows.|भञ्ज्यपवनः|nature
+भञ्ज्यखगः उपविशति।|The fragile bird sits.|भञ्ज्यखगः|nature
+भञ्ज्यसरः अत्र अस्ति।|The fragile lake is here.|भञ्ज्यसरः|nature
+भञ्ज्यमेघः दृश्यते।|The fragile cloud is seen.|भञ्ज्यमेघः|nature
+आप्स्यतरुः अत्र अस्ति।|The reachable tree is here.|आप्स्यतरुः|nature
+आप्स्यपुष्पम् विकसति।|The reachable flower blooms.|आप्स्यपुष्पम्|nature
+आप्स्यकमलम् सुन्दरं अस्ति।|The reachable lotus is beautiful.|आप्स्यकमलम्|nature
+आप्स्यसरः शीतलः।|The reachable lake is cool.|आप्स्यसरः|nature
+आप्स्यखगः उपविशति।|The reachable bird sits.|आप्स्यखगः|nature
+आप्स्यपवनः वहति।|The reachable breeze blows.|आप्स्यपवनः|nature
+आप्स्यमेघः दृश्यते।|The reachable cloud is seen.|आप्स्यमेघः|nature
+मौग्ध्यपुष्पम् विकसति।|The charming flower blooms.|मौग्ध्यपुष्पम्|nature
+मौग्ध्यकमलम् सुन्दरं अस्ति।|The charming lotus is beautiful.|मौग्ध्यकमलम्|nature
+मौग्ध्यसरः स्वच्छः अस्ति।|The charming lake is clean.|मौग्ध्यसरः|nature
+मौग्ध्यखगः गायति।|The innocent bird sings.|मौग्ध्यखगः|nature
+मौग्ध्यपवनः मन्दं वहति।|The gentle breeze blows softly.|मौग्ध्यपवनः|nature
+मौग्ध्यतरुः शोभते।|The charming tree looks beautiful.|मौग्ध्यतरुः|nature
+मौग्ध्यमेघः दृश्यते।|The beautiful cloud is seen.|मौग्ध्यमेघः|nature
