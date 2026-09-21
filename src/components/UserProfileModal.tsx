@@ -213,40 +213,26 @@ const UserProfileModal: React.FC = () => {
                     boxShadow: '0 2px 8px rgba(180, 83, 9, 0.25)',
                   }}
                 >
-                  <span>💳</span>
+                  <span>{currentUser.planStatus === 'trial' ? '🎉' : '💳'}</span>
                   <span>
                     {currentUser.planStatus === 'active'
                       ? 'Renew / Pay with UPI'
+                      : currentUser.planStatus === 'trial'
+                      ? `Trial active until ${
+                          currentUser.trialEndsAt
+                            ? new Date(currentUser.trialEndsAt).toLocaleDateString('en-IN', {
+                                day: 'numeric',
+                                month: 'short',
+                                year: 'numeric',
+                              })
+                            : `${trialDaysLeft} days left`
+                        }`
                       : 'Subscribe Now for ₹200 / mo (UPI)'}
                   </span>
                 </button>
               </div>
 
-              {/* Past Transactions list if available */}
-              {currentUser.transactions && currentUser.transactions.length > 0 && (
-                <div style={{ marginTop: '1rem', borderTop: '1px dashed #d97706', paddingTop: '0.75rem' }}>
-                  <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#92400e', marginBottom: '0.35rem' }}>
-                    Recent Payments:
-                  </div>
-                  {currentUser.transactions.slice(0, 3).map((txn) => (
-                    <div
-                      key={txn.id}
-                      style={{
-                        fontSize: '0.75rem',
-                        color: '#4b5563',
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        padding: '0.2rem 0',
-                      }}
-                    >
-                      <span>
-                        ₹{txn.amountInr} via {txn.paymentMethod.toUpperCase()} ({new Date(txn.timestamp).toLocaleDateString()})
-                      </span>
-                      <span style={{ color: '#15803d', fontWeight: 700 }}>✓ PAID ({txn.id})</span>
-                    </div>
-                  ))}
-                </div>
-              )}
+              {/* Recent Payments hidden for students — avoids fake ✓ PAID / pending receipt UI */}
             </div>
 
             {/* Actions */}

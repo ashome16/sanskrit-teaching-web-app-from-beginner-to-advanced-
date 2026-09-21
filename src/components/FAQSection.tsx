@@ -54,7 +54,21 @@ interface FAQSectionProps {
 
 const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
   const [openItem, setOpenItem] = useState<string | null>('faq-trial');
-  const { currentUser, openPaymentModal } = useAuthStore();
+  const { currentUser, openPaymentModal, getTrialDaysRemaining } = useAuthStore();
+  const trialActive =
+    !!currentUser &&
+    currentUser.planStatus === 'trial' &&
+    typeof currentUser.trialEndsAt === 'number' &&
+    currentUser.trialEndsAt > Date.now();
+  const trialDaysLeft = getTrialDaysRemaining();
+  const trialEndsLabel =
+    trialActive && currentUser?.trialEndsAt
+      ? new Date(currentUser.trialEndsAt).toLocaleDateString('en-IN', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric',
+        })
+      : '';
 
   const toggleItem = (id: string) => {
     setOpenItem((prev) => (prev === id ? null : id));
@@ -94,8 +108,15 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
               className="faq-pricing-pay-cta"
               onClick={openPaymentModal}
             >
-              💳 Subscribe / Pay ₹200 via UPI
+              {trialActive
+                ? `🎉 Trial active until ${trialEndsLabel} · Subscribe after trial`
+                : '💳 Subscribe / Pay ₹200 via UPI'}
             </button>
+            {trialActive && (
+              <p style={{ margin: '0.55rem 0 0', fontSize: '0.82rem', color: '#92400e', fontWeight: 600 }}>
+                Your free trial is on ({trialDaysLeft} day{trialDaysLeft === 1 ? '' : 's'} left). Payment via UPI opens when the trial ends.
+              </p>
+            )}
           </div>
         </div>
 

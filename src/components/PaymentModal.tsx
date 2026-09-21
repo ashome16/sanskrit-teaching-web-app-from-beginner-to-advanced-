@@ -22,6 +22,21 @@ const PaymentModal: React.FC = () => {
 
   if (!isPaymentModalOpen) return null;
 
+  const trialActive =
+    !!currentUser &&
+    currentUser.planStatus === 'trial' &&
+    typeof currentUser.trialEndsAt === 'number' &&
+    currentUser.trialEndsAt > Date.now();
+
+  const trialEndsFormatted =
+    trialActive && currentUser?.trialEndsAt
+      ? new Date(currentUser.trialEndsAt).toLocaleDateString('en-IN', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric',
+        })
+      : '';
+
   const handleCopyUpi = () => {
     navigator.clipboard.writeText(storeUpiVpa);
     setIsCopied(true);
@@ -97,21 +112,80 @@ const PaymentModal: React.FC = () => {
             </div>
           </div>
 
-          <span className="payment-plan-badge">🌟 All-Access Monthly Pass</span>
-          <h2 id="payment-modal-title" className="payment-modal-title">
-            Unlock Full Sanskrit Platform
-          </h2>
+          {trialActive ? (
+            <>
+              <span className="payment-plan-badge">🎉 Free Trial Active</span>
+              <h2 id="payment-modal-title" className="payment-modal-title">
+                Your free trial is activated
+              </h2>
+            </>
+          ) : (
+            <>
+              <span className="payment-plan-badge">🌟 All-Access Monthly Pass</span>
+              <h2 id="payment-modal-title" className="payment-modal-title">
+                Unlock Full Sanskrit Platform
+              </h2>
 
-          <div className="payment-modal-price-row">
-            <span className="payment-price-currency">₹200</span>
-            <span className="payment-price-period">/ month</span>
-          </div>
-          <p className="payment-trial-note">
-            Includes all 15 CBSE/NCERT Class 7 Chapters, 5,800+ audio glosses, Jodo Puzzles, and Vedic Mathematics!
-          </p>
+              <div className="payment-modal-price-row">
+                <span className="payment-price-currency">₹200</span>
+                <span className="payment-price-period">/ month</span>
+              </div>
+              <p className="payment-trial-note">
+                Includes all 15 CBSE/NCERT Class 7 Chapters, 5,800+ audio glosses, Jodo Puzzles, and Vedic Mathematics!
+              </p>
+            </>
+          )}
         </div>
 
-        {isProcessing ? (
+        {trialActive ? (
+          <div className="payment-modal-body">
+            <div className="payment-success-box" style={{ padding: '1.5rem 1.75rem' }}>
+              <div
+                className="payment-success-icon"
+                style={{ background: '#fef3c7', color: '#b45309' }}
+              >
+                ✨
+              </div>
+              <h3 className="payment-success-title">Enjoy your free trial</h3>
+              <p className="payment-success-sub" style={{ maxWidth: '28rem', margin: '0 auto' }}>
+                Your free trial is active until <strong>{trialEndsFormatted}</strong>. Enjoy
+                learning — you can subscribe and pay via UPI when the trial ends.
+              </p>
+              <p
+                style={{
+                  margin: '0.85rem auto 0',
+                  maxWidth: '26rem',
+                  fontSize: '0.85rem',
+                  color: '#6b7280',
+                  lineHeight: 1.5,
+                  textAlign: 'center',
+                }}
+              >
+                No payment is needed right now. Keep exploring chapters, audio, and puzzles until
+                your trial ends.
+              </p>
+              <div style={{ marginTop: '1.25rem', textAlign: 'center' }}>
+                <button
+                  type="button"
+                  className="receipt-done-btn"
+                  onClick={handleClose}
+                  style={{
+                    background: 'linear-gradient(135deg, #15803d 0%, #166534 100%)',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: '8px',
+                    padding: '0.65rem 1.4rem',
+                    fontWeight: 700,
+                    fontSize: '0.9rem',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Continue Learning
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : isProcessing ? (
           <div className="payment-processing-box">
             <div className="payment-spinner" />
             <h3 className="payment-processing-text">Submitting your UTR…</h3>
@@ -120,61 +194,25 @@ const PaymentModal: React.FC = () => {
             </p>
           </div>
         ) : pendingTxn ? (
-          /* Pending acknowledgment only — no fake paid receipt */
+          /* Short acknowledgment only — no receipt card / Reference ID / PAID UI */
           <div className="payment-modal-body">
-            <div className="payment-success-box">
+            <div className="payment-success-box" style={{ padding: '1.5rem 1.75rem' }}>
               <div
                 className="payment-success-icon"
                 style={{ background: '#fef3c7', color: '#b45309' }}
               >
                 ⏳
               </div>
-              <h3 className="payment-success-title">UTR received — pending verification</h3>
-              <p className="payment-success-sub">
-                UTR received — we will unlock access after verifying your payment. Your plan stays on
-                trial/expired until an admin confirms the UPI transfer.
+              <h3 className="payment-success-title">UTR recorded</h3>
+              <p className="payment-success-sub" style={{ maxWidth: '28rem', margin: '0 auto' }}>
+                Thanks — we recorded your UTR and will unlock access after verifying your UPI
+                payment.
               </p>
-
-              <div className="payment-receipt-card">
-                <div className="receipt-row">
-                  <span className="receipt-label">Reference ID</span>
-                  <span className="receipt-val">{pendingTxn.id}</span>
-                </div>
-                {pendingTxn.utrNumber && (
-                  <div className="receipt-row">
-                    <span className="receipt-label">UTR / Ref Number</span>
-                    <span className="receipt-val" style={{ fontWeight: 700, color: '#1f2937' }}>
-                      {pendingTxn.utrNumber}
-                    </span>
-                  </div>
-                )}
-                <div className="receipt-row">
-                  <span className="receipt-label">Amount (to verify)</span>
-                  <span className="receipt-val">₹{pendingTxn.amountInr}.00</span>
-                </div>
-                <div className="receipt-row">
-                  <span className="receipt-label">Status</span>
-                  <span className="receipt-val" style={{ color: '#b45309', fontWeight: 700 }}>
-                    Pending admin verification
-                  </span>
-                </div>
-                <div className="receipt-row">
-                  <span className="receipt-label">Submitted</span>
-                  <span className="receipt-val">
-                    {new Date(pendingTxn.timestamp).toLocaleString('en-IN', {
-                      dateStyle: 'medium',
-                      timeStyle: 'short',
-                    })}
-                  </span>
-                </div>
-              </div>
-
-              <div className="payment-receipt-actions">
+              <div style={{ marginTop: '1.25rem', textAlign: 'center' }}>
                 <button type="button" className="receipt-done-btn" onClick={handleClose}>
                   Close
                 </button>
               </div>
-
               <div
                 style={{
                   marginTop: '1rem',
@@ -311,7 +349,7 @@ const PaymentModal: React.FC = () => {
                       boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
                     }}
                   />
-                  <span className="upi-qr-caption">Scan with Any UPI App (GPay, PhonePe, Paytm, BHIM)</span>
+                  <span className="upi-qr-caption">Scan with any UPI app</span>
                   <p
                     style={{
                       margin: '0.55rem 0 0 0',
@@ -351,16 +389,8 @@ const PaymentModal: React.FC = () => {
                     }}
                   >
                     <span>⚡</span>
-                    <span>Open in GPay / PhonePe / Paytm</span>
+                    <span>Open UPI app to pay</span>
                   </a>
-                </div>
-
-                <div className="upi-apps-row">
-                  <span className="upi-app-badge">GPay</span>
-                  <span className="upi-app-badge">PhonePe</span>
-                  <span className="upi-app-badge">Paytm</span>
-                  <span className="upi-app-badge">BHIM</span>
-                  <span className="upi-app-badge">Cred</span>
                 </div>
 
                 <div className="upi-input-wrap" style={{ marginTop: '1.1rem' }}>
