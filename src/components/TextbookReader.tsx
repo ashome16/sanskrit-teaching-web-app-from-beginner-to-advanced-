@@ -154,7 +154,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const tileLabel = (letter: string) =>
     activeLessonId === 'varnamala' ? varnamalaLabel(letter) : aksharaLabel(letter);
   const [isChartOpen, setIsChartOpen] = useState(false);
-  const [isSoundVideoOpen, setIsSoundVideoOpen] = useState(false);
+  const [isSoundVideoOpen, setIsSoundVideoOpen] = useState(true);
   const [isSymbolsOpen, setIsSymbolsOpen] = useState(false);
   const [isGrade8SyllabusOpen, setIsGrade8SyllabusOpen] = useState(false);
   const [isPlayingAll, setIsPlayingAll] = useState(false);

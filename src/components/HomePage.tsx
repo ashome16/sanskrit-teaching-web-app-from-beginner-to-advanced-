@@ -729,6 +729,168 @@ const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* ------------------------------------------------------------------
+          Featured Video Masterclasses Section
+          ------------------------------------------------------------------ */}
+      <section className="home-videos-section" aria-label="Featured Video Masterclasses" style={{
+        padding: '3rem 1.5rem',
+        maxWidth: '1200px',
+        margin: '0 auto',
+      }}>
+        <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+          <span style={{
+            display: 'inline-block',
+            background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)',
+            color: '#92400e',
+            fontWeight: 800,
+            fontSize: '0.8rem',
+            padding: '0.35rem 0.85rem',
+            borderRadius: '999px',
+            textTransform: 'uppercase',
+            letterSpacing: '0.06em',
+            marginBottom: '0.75rem',
+          }}>
+            🎥 Curated Video Masterclasses
+          </span>
+          <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.6rem 0' }}>
+            The Science of Sound &amp; Shapes
+          </h2>
+          <p style={{ fontSize: '1rem', color: '#64748b', maxWidth: '650px', margin: '0 auto', lineHeight: 1.55 }}>
+            Watch these curated documentary masterclasses exploring the neurological precision of Sanskrit phonetics and the ancient geometry of Vedic mathematics.
+          </p>
+        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '2rem',
+        }}>
+          {/* Video 1: Science of Sound */}
+          <div style={{
+            background: '#ffffff',
+            borderRadius: '16px',
+            border: '1px solid #e2e8f0',
+            boxShadow: '0 6px 24px rgba(0, 0, 0, 0.06)',
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'column',
+          }}>
+            <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', height: 0, background: '#090d16' }}>
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/tkvYjNZSsZA?start=32&rel=0"
+                title="Sanskrit: The Science of Sound"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <div style={{ padding: '1.25rem 1.5rem', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <span style={{
+                  display: 'inline-block',
+                  background: '#f3e8ff',
+                  color: '#7e22ce',
+                  fontSize: '0.72rem',
+                  fontWeight: 800,
+                  padding: '0.2rem 0.55rem',
+                  borderRadius: '6px',
+                  marginBottom: '0.5rem',
+                }}>
+                  SANSKRIT PHONETICS &amp; NEURO-ACOUSTICS
+                </span>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
+                  Sanskrit: The Science of Sound
+                </h3>
+                <p style={{ fontSize: '0.86rem', color: '#64748b', lineHeight: 1.5, margin: 0 }}>
+                  Discover how the 5 vocal articulation points (Kaṇṭhya to Oṣṭhya), acoustic vibrations, and resonance stimulate cranial reflexes in the human nervous system.
+                </p>
+              </div>
+              <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span style={{ fontSize: '0.78rem', color: '#94a3b8' }}>Curated by Conscious Cosmos</span>
+                <button
+                  type="button"
+                  onClick={onOpenVarnamala}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#b45309',
+                    fontWeight: 700,
+                    fontSize: '0.82rem',
+                    cursor: 'pointer',
+                    textDecoration: 'underline',
+                  }}
+                >
+                  Explore in Varṇamālā ➔
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Video 2: Vedic Geometry */}
+          <div style={{
+            background: '#ffffff',
+            borderRadius: '16px',
+            border: '1px solid #e2e8f0',
+            boxShadow: '0 6px 24px rgba(0, 0, 0, 0.06)',
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'column',
+          }}>
+            <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', height: 0, background: '#090d16' }}>
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/bp9m53Tp6xg?start=11&rel=0"
+                title="Vedic Geometry: The Science Of Shapes"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <div style={{ padding: '1.25rem 1.5rem', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <span style={{
+                  display: 'inline-block',
+                  background: '#ecfdf5',
+                  color: '#065f46',
+                  fontSize: '0.72rem',
+                  fontWeight: 800,
+                  padding: '0.2rem 0.55rem',
+                  borderRadius: '6px',
+                  marginBottom: '0.5rem',
+                }}>
+                  ŚULBA SŪTRAS &amp; SACRED GEOMETRY
+                </span>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
+                  Vedic Geometry: The Science of Shapes
+                </h3>
+                <p style={{ fontSize: '0.86rem', color: '#64748b', lineHeight: 1.5, margin: 0 }}>
+                  Explore how ancient Indian mathematicians used cords, geometric transformations, and Baudhāyana's Theorem centuries before Pythagoras to design sacred altars.
+                </p>
+              </div>
+              <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span style={{ fontSize: '0.78rem', color: '#94a3b8' }}>Curated by Conscious Cosmos</span>
+                {onOpenVedicMaths && (
+                  <button
+                    type="button"
+                    onClick={onOpenVedicMaths}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: '#b45309',
+                      fontWeight: 700,
+                      fontSize: '0.82rem',
+                      cursor: 'pointer',
+                      textDecoration: 'underline',
+                    }}
+                  >
+                    Explore Vedic Maths ➔
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------
           Core Features Grid
           ------------------------------------------------------------------ */}
       <section className="home-features-section">
