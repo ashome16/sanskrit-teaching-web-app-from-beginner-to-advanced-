@@ -20821,91 +20821,92 @@
     {
       "id": "grade8_ch1",
       "fileName": "grade8_ch1.txt",
-      "title": "Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम् (Pages 2–8)",
+      "title": "Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम् (Pages 1–9)",
+      "page_numbers": "Pages 1–9",
       "sentences": [
         {
           "sanskrit": "॥ प्रथमः पाठः — संगच्छध्वं संवदध्वम् ॥",
-          "meaning": "Chapter 1: Walk Together, Speak Together · Rigveda Samhita (Pages 2–8)",
-          "paragraphTranslation": "प्रथमः पाठः — संगच्छध्वं संवदध्वम् (पृष्ठ २–८)",
+          "meaning": "Chapter 1: Walk Together, Speak Together · Rigveda Saṁhitā (Pages 1–9)",
           "words": [
             "॥",
             "प्रथमः",
             "पाठः",
+            "—",
             "संगच्छध्वं",
             "संवदध्वम्",
             "॥"
           ],
+          "paragraphTranslation": "प्रथमः पाठः — संगच्छध्वं संवदध्वम् (पृष्ठ १–९)",
           "kind": "section-header"
         },
         {
           "sanskrit": "अयं पाठः ऋग्वेदस्य दशममण्डलात् सङ्कलितस्य 'संज्ञान-सूक्तस्य' (संघटन-सूक्तस्य) प्रसिद्धः मन्त्रांशः अस्ति। अत्र मानवकल्याणाय ऐक्यभावस्य, परस्परसामञ्जस्यस्य, सहकार्यस्य च उदात्तः सन्देशः दीयते।",
-          "meaning": "This chapter is from the renowned 'Saṁjñāna-Sūkta' (also known as 'Saṅghaṭana-Sūkta' or Hymn of Unity) from the 10th Mandala of Rigveda, delivering the noble message of universal solidarity, mutual harmony, and collective co-existence for human welfare.",
-          "paragraphTranslation": "यह पाठ ऋग्वेद के दसवें मण्डल से संकलित 'संज्ञान-सूक्त' (संघटन-सूक्त) का प्रसिद्ध अंश है। यहाँ मानव कल्याण हेतु एकता, आपसी तालमेल और सहयोग का उदात्त संदेश दिया गया है।",
+          "meaning": "This chapter is drawn from the renowned 'Saṁjñāna-Sūkta' (also known as Saṅghaṭana-Sūkta / Hymn of Unity) of Rigveda Mandala 10, delivering the noble message of solidarity, mutual harmony, and collective co-existence.",
           "words": [
             "अयं",
             "पाठः",
             "ऋग्वेदस्य",
             "दशममण्डलात्",
             "सङ्कलितस्य",
-            "संज्ञान",
-            "सूक्तस्य",
-            "संघटन",
-            "सूक्तस्य",
+            "'संज्ञान-सूक्तस्य'",
+            "(संघटन-सूक्तस्य)",
             "प्रसिद्धः",
             "मन्त्रांशः",
-            "अस्ति",
+            "अस्ति।",
             "अत्र",
             "मानवकल्याणाय",
-            "ऐक्यभावस्य",
-            "परस्परसामञ्जस्यस्य",
+            "ऐक्यभावस्य,",
+            "परस्परसामञ्जस्यस्य,",
             "सहकार्यस्य",
             "च",
             "उदात्तः",
             "सन्देशः",
-            "दीयते"
-          ]
+            "दीयते।"
+          ],
+          "paragraphTranslation": "यह पाठ ऋग्वेद के दसवें मण्डल से संकलित 'संज्ञान-सूक्त' (संघटन-सूक्त) का प्रसिद्ध अंश है। यहाँ एकता, आपसी तालमेल और सहयोग का उदात्त संदेश दिया गया है।"
         },
         {
           "sanskrit": "भागः १: पाठ-प्रवेशः — कक्षा-संवादः (Introductory Classroom Dialogue)",
           "meaning": "Part 1: Lesson Introduction — Classroom Dialogue on Victory through Mutual Harmony",
-          "paragraphTranslation": "भाग १: पाठ-प्रवेश — खेल उत्सव में विजय और एकता पर कक्षा-संवाद",
           "words": [
             "भागः",
-            "१",
-            "पाठ",
-            "प्रवेशः",
-            "कक्षा",
-            "संवादः"
+            "१:",
+            "पाठ-प्रवेशः",
+            "—",
+            "कक्षा-संवादः",
+            "(Introductory",
+            "Classroom",
+            "Dialogue)"
           ],
+          "paragraphTranslation": "भाग १: पाठ-प्रवेश — खेल उत्सव में विजय और एकता पर कक्षा-संवाद",
           "kind": "chapter-header"
         },
         {
-          "sanskrit": "छात्राः – नमस्ते आचार्य! अस्माकं विद्यालयस्य क्रीडोत्सवे पादकन्दुक-क्रीडायां वयं विजयं प्राप्तवन्तः।",
-          "meaning": "Students: Salutations, Teacher! We won the football match in our school's sports festival.",
-          "paragraphTranslation": "छात्र – नमस्ते आचार्य! हमारे विद्यालय के खेल उत्सव में फुटबॉल खेल में हम सब विजयी हुए हैं।",
+          "sanskrit": "छात्राः – नमस्ते आचार्य ! अस्माकं विद्यालयस्य क्रीडोत्सवे पादकन्दुक-क्रीडायां वयं विजयं प्राप्तवन्तः।",
+          "meaning": "Students – Salutations, Teacher! In our school's sports festival, we have won the football match.",
           "words": [
             "छात्राः",
+            "–",
             "नमस्ते",
             "आचार्य",
             "!",
             "अस्माकं",
             "विद्यालयस्य",
             "क्रीडोत्सवे",
-            "पादकन्दुक",
-            "क्रीडायां",
+            "पादकन्दुक-क्रीडायां",
             "वयं",
             "विजयं",
             "प्राप्तवन्तः।"
-          ]
+          ],
+          "paragraphTranslation": "छात्र – नमस्ते आचार्य जी! हमारे विद्यालय के खेल उत्सव में फुटबॉल (पादकन्दुक) के खेल में हम सबने जीत हासिल की है।"
         },
         {
           "sanskrit": "आचार्यः – वर्धापनानि, अभिनन्दनं भवताम्। अपि भवन्तः जानन्ति यत् भवतां प्रतिद्वन्द्विनः कथं पराजिताः?",
-          "meaning": "Teacher: Congratulations and blessings to you all. Do you know why your opponents were defeated?",
-          "paragraphTranslation": "आचार्य – आप सभी को बधाई और शुभकामनाएँ। क्या आप जानते हैं कि आपके प्रतिद्वंद्वी कैसे हार गए?",
+          "meaning": "Teacher – Congratulations and blessings to you all. Do you know why your opponents were defeated?",
           "words": [
             "आचार्यः",
-            "वर्धापनानि",
-            ",",
+            "–",
+            "वर्धापनानि,",
             "अभिनन्दनं",
             "भवताम्।",
             "अपि",
@@ -20915,19 +20916,18 @@
             "भवतां",
             "प्रतिद्वन्द्विनः",
             "कथं",
-            "पराजिताः",
-            "?"
-          ]
+            "पराजिताः?"
+          ],
+          "paragraphTranslation": "आचार्य – आप सबको बधाई और शुभकामनाएँ। क्या आप जानते हैं कि आपके प्रतिद्वंद्वी क्यों हार गए?"
         },
         {
-          "sanskrit": "छात्रः १ – आम्, जानामि आचार्य! अस्माकं दलस्य क्रीडकेषु परस्परं सम्यक् सामञ्जस्यम् आसीत्, किन्तु विपक्षी-दले तत् नासीत्।",
-          "meaning": "Student 1: Yes, I know, Teacher! There was excellent harmony and coordination among the players of our team, but it was missing in the opposing team.",
-          "paragraphTranslation": "छात्र 1: हाँ, मैं जानता हूँ आचार्य! हमारी टीम के खिलाड़ियों में आपस में बहुत अच्छा तालमेल (सामञ्जस्य) था, लेकिन विरोधी टीम में ऐसा नहीं था।",
+          "sanskrit": "छात्रः १ – आम्, जानामि आचार्य ! अस्माकं दलस्य क्रीडकेषु परस्परं सम्यक् सामञ्जस्यम् आसीत्, किन्तु विपक्षी-दले तत् नासीत्।",
+          "meaning": "Student 1 – Yes, I know, Teacher! There was excellent harmony among our players, but it was missing in the opposing team.",
           "words": [
             "छात्रः",
             "१",
-            "आम्",
-            ",",
+            "–",
+            "आम्,",
             "जानामि",
             "आचार्य",
             "!",
@@ -20937,22 +20937,21 @@
             "परस्परं",
             "सम्यक्",
             "सामञ्जस्यम्",
-            "आसीत्",
-            ",",
+            "आसीत्,",
             "किन्तु",
-            "विपक्षी",
-            "दले",
+            "विपक्षी-दले",
             "तत्",
             "नासीत्।"
-          ]
+          ],
+          "paragraphTranslation": "छात्र १ – हाँ, मैं जानता हूँ आचार्य जी! हमारी टीम के खिलाड़ियों में आपस में बहुत अच्छा तालमेल था, लेकिन विपक्षी टीम में ऐसा नहीं था।"
         },
         {
-          "sanskrit": "छात्रः २ – सत्यम् आचार्य! तस्य दलस्य क्रीडकेषु परस्परं मनोभेदः द्वेषभावः च आसीत्। ते अन्योन्यं सहयोगं न कृतवन्तः।",
-          "meaning": "Student 2: True, Teacher! The players of that team had mutual differences and hatred. They did not cooperate with one another.",
-          "paragraphTranslation": "छात्र 2: सत्य है आचार्य! उस टीम के खिलाड़ियों में आपस में मतभेद और द्वेष की भावना थी। उन्होंने एक-दूसरे का सहयोग नहीं किया।",
+          "sanskrit": "छात्रः २ – सत्यम् आचार्य ! तस्य दलस्य क्रीडकेषु परस्परं मनोभेदः द्वेषभावः च आसीत्। ते अन्योन्यं सहयोगं न कृतवन्तः।",
+          "meaning": "Student 2 – True, Teacher! That team had mental conflicts and hatred; they did not cooperate with one another.",
           "words": [
             "छात्रः",
             "२",
+            "–",
             "सत्यम्",
             "आचार्य",
             "!",
@@ -20969,47 +20968,45 @@
             "सहयोगं",
             "न",
             "कृतवन्तः।"
-          ]
+          ],
+          "paragraphTranslation": "छात्र २ – सच है आचार्य जी! उस टीम के खिलाड़ियों में वैचारिक मतभेद और द्वेष था। उन्होंने एक-दूसरे का सहयोग नहीं किया।"
         },
         {
-          "sanskrit": "आचार्यः – तर्हि वदन्तु, विजयप्राप्त्यर्थं किं किम् आवश्यकम्?",
-          "meaning": "Teacher: Then tell me, what is necessary to achieve victory?",
-          "paragraphTranslation": "आचार्य – तो बताइए, विजय प्राप्त करने के लिए क्या-क्या आवश्यक है?",
+          "sanskrit": "आचार्यः – तर्हि वदन्तु, विजयप्राप्त्यर्थं किम् आवश्यकम्?",
+          "meaning": "Teacher – Then tell me, what is required to achieve victory?",
           "words": [
             "आचार्यः",
+            "–",
             "तर्हि",
-            "वदन्तु",
-            ",",
+            "वदन्तु,",
             "विजयप्राप्त्यर्थं",
-            "किं",
             "किम्",
-            "आवश्यकम्",
-            "?"
-          ]
+            "आवश्यकम्?"
+          ],
+          "paragraphTranslation": "आचार्य – तो बताइए, जीत हासिल करने के लिए क्या आवश्यक है?"
         },
         {
           "sanskrit": "छात्राः – मिलित्वा कार्यकरणम्, एकता, परस्परं सामञ्जस्यं च आवश्यकम्।",
-          "meaning": "Students: Working together, unity, and mutual harmony are necessary.",
-          "paragraphTranslation": "छात्र – मिलकर कार्य करना, एकता और आपस में अच्छा तालमेल (सामंजस्य) आवश्यक है।",
+          "meaning": "Students – Working together, unity, and mutual harmony are required.",
           "words": [
             "छात्राः",
+            "–",
             "मिलित्वा",
-            "कार्यकरणम्",
-            ",",
-            "एकता",
-            ",",
+            "कार्यकरणम्,",
+            "एकता,",
             "परस्परं",
             "सामञ्जस्यं",
             "च",
             "आवश्यकम्।"
-          ]
+          ],
+          "paragraphTranslation": "छात्र – मिलकर काम करना, एकता और आपस में अच्छा तालमेल आवश्यक है।"
         },
         {
           "sanskrit": "आचार्यः – सत्यम् एव उक्तम्। एष एव सन्देशः वेदे 'संगच्छध्वं संवदध्वम्' इत्येवं प्रदत्तः।",
-          "meaning": "Teacher: Well said. This exact message is given in the Vedas as 'Walk together, speak together'.",
-          "paragraphTranslation": "आचार्य: बिल्कुल सही कहा। यही संदेश वेद में 'संगच्छध्वं संवदध्वम्' (साथ चलो, साथ बोलो) के रूप में दिया गया है।",
+          "meaning": "Teacher – Well said. This exact message is delivered in the Vedas as 'Sangachhadhvam Samvadadhvam'.",
           "words": [
             "आचार्यः",
+            "–",
             "सत्यम्",
             "एव",
             "उक्तम्।",
@@ -21017,57 +21014,50 @@
             "एव",
             "सन्देशः",
             "वेदे",
-            "'",
-            "संगच्छध्वं",
-            "संवदध्वम्",
-            "'",
+            "'संगच्छध्वं",
+            "संवदध्वम्'",
             "इत्येवं",
             "प्रदत्तः।"
-          ]
+          ],
+          "paragraphTranslation": "आचार्य – बिल्कुल सही कहा। यही संदेश वेदों में 'संगच्छध्वं संवदध्वम्' के रूप में दिया गया है।"
         },
         {
-          "sanskrit": "छात्राः – आचार्य! कस्मात् वेदात् गृहीतः एष सन्देशः? कः च अस्य अभिप्रायः?",
-          "meaning": "Students: Teacher, from which Veda is this message taken? And what does it mean?",
-          "paragraphTranslation": "छात्र: आचार्य! यह संदेश किस वेद से लिया गया है? और इसका क्या अर्थ है?",
+          "sanskrit": "छात्रः ३ – आचार्य ! कस्मात् वेदात् गृहीतः एष सन्देशः? कः च अस्य अभिप्रायः?",
+          "meaning": "Student 3 – Teacher! From which Veda has this message been taken? And what is its real intent?",
           "words": [
-            "छात्राः",
+            "छात्रः",
+            "३",
+            "–",
             "आचार्य",
             "!",
             "कस्मात्",
             "वेदात्",
             "गृहीतः",
             "एष",
-            "सन्देशः",
-            "?",
+            "सन्देशः?",
             "कः",
             "च",
             "अस्य",
-            "अभिप्रायः",
-            "?"
-          ]
+            "अभिप्रायः?"
+          ],
+          "paragraphTranslation": "छात्र ३ – आचार्य जी! यह संदेश किस वेद से लिया गया है? और इसका क्या अर्थ है?"
         },
         {
           "sanskrit": "आचार्यः – ऋग्वेदे - 'संज्ञान-सूक्तस्य' एषः मन्त्रांशः। एतत् 'संघटन-सूक्तम्' इत्यपि प्रख्यातम्। आगच्छन्तु, वयम् अस्य सूक्तस्य प्रसिद्धान् त्रीन् मन्त्रान् पठामः।",
-          "meaning": "Teacher: This is a part of the 'Saṁjñāna-Sūkta' from the Rigveda. It is also famously known as the 'Saṅghaṭana-Sūkta' (Hymn of Unity). Come, let us read three famous mantras of this hymn.",
-          "paragraphTranslation": "आचार्य: यह ऋग्वेद के 'संज्ञान-सूक्त' का एक मंत्रांश है। इसे 'संघटन-सूक्त' के नाम से भी जाना जाता है। आइए, हम इस सूक्त के तीन प्रसिद्ध मंत्रों को पढ़ते हैं।",
+          "meaning": "Teacher – This is part of the 'Samjnana-Sukta' from Rigveda, also known as 'Sanghatana-Sukta'. Come, let us read its three famous mantras.",
           "words": [
             "आचार्यः",
+            "–",
             "ऋग्वेदे",
-            "'",
-            "संज्ञान",
-            "सूक्तस्य",
-            "'",
+            "-",
+            "'संज्ञान-सूक्तस्य'",
             "एषः",
             "मन्त्रांशः।",
             "एतत्",
-            "'",
-            "संघटन",
-            "सूक्तम्",
-            "'",
+            "'संघटन-सूक्तम्'",
             "इत्यपि",
             "प्रख्यातम्।",
-            "आगच्छन्तु",
-            ",",
+            "आगच्छन्तु,",
             "वयम्",
             "अस्य",
             "सूक्तस्य",
@@ -21075,29 +21065,29 @@
             "त्रीन्",
             "मन्त्रान्",
             "पठामः।"
-          ]
+          ],
+          "paragraphTranslation": "आचार्य – यह ऋग्वेद के 'संज्ञान-सूक्त' का मन्त्रांश है। इसे 'संघटन-सूक्त' भी कहते हैं। आइए, तीन प्रसिद्ध मन्त्र पढ़ते हैं।"
         },
         {
-          "sanskrit": "भागः २: ऋग्वैदिक-मन्त्राः (संज्ञान-सूक्तम् / संघटन-सूक्तम् — Rigveda 10.191.2-4)",
-          "meaning": "Part 2: Core Rigvedic Mantras — The Universal Hymn of Unity and Harmonious Coexistence",
-          "paragraphTranslation": "भाग २: मूल ऋग्वैदिक मन्त्र — संज्ञान-सूक्त (संघटन-सूक्त)",
+          "sanskrit": "भागः २: ऋग्वैदिक-मन्त्राः — संज्ञान-सूक्तम् / संघटन-सूक्तम् (Rigveda 10.191.2–4)",
+          "meaning": "Part 2: Three Rigvedic Unity Mantras with Padaccheda, Anvaya, and Translations",
           "words": [
             "भागः",
-            "२",
-            "ऋग्वैदिक",
-            "मन्त्राः",
-            "संज्ञान",
-            "सूक्तम्",
-            "संघटन",
-            "सूक्तम्"
+            "२:",
+            "ऋग्वैदिक-मन्त्राः",
+            "—",
+            "संज्ञान-सूक्तम्",
+            "/",
+            "संघटन-सूक्तम्",
+            "(Rigveda",
+            "10.191.2–4)"
           ],
+          "paragraphTranslation": "भाग २: ऋग्वैदिक मन्त्र — संज्ञान-सूक्त (ऋग्वेद १०.१९१.२–४)",
           "kind": "chapter-header"
         },
         {
           "sanskrit": "संगच्छध्वं संवदध्वं सं वो मनांसि जानताम् । देवा भागं यथा पूर्वे संजानाना उपासते ॥ १ ॥",
-          "meaning": "O humans! Walk together in harmony, speak together in one voice, and let your minds be unified in understanding. Just as the ancient deities in complete agreement and harmony accepted their respective shares of offerings and performed their cosmic duties, you too should live and work together in unity.",
-          "paragraphTranslation": "Line 1 Hindi: तुम सब मिलकर एक साथ आगे बढ़ो (साथ चलो), आपस में प्रेम से बातचीत करो (एक स्वर में बोलो) और तुम्हारे मन एक समान होकर एक-दूसरे को जानें।\nLine 2 Hindi: जिस प्रकार प्राचीन काल में देवता एकमत होकर यज्ञ के अपने-अपने भाग को स्वीकार करते हुए अपने कर्तव्यों का निर्वाह करते थे, (वैसे ही तुम भी मिलकर रहो)।",
-          "transliteration": "Saṁgacchadhvaṁ saṁvadadhvaṁ saṁ vo manāṁsi jānatām | Devā bhāgaṁ yathā pūrve saṁjānānā upāsate || 1 ||",
+          "meaning": "O humans! May you walk together, speak in unison, and grasp thoughts collectively — just as the ancient deities in harmony accepted their sacrificial offerings.",
           "words": [
             "संगच्छध्वं",
             "संवदध्वं",
@@ -21115,26 +21105,27 @@
             "॥",
             "१",
             "॥"
-          ]
+          ],
+          "paragraphTranslation": "(वेद के ऋषि आङ्गिरस मनुष्यों को उपदेश देते हैं) हे मनुष्यों! तुम सब मिलकर एक साथ आगे बढ़ो, एक स्वर में प्रेम से बोलो और अपने मनों को एक समान रूप से समझो। जिस प्रकार प्राचीन काल में देवता एकमत होकर यज्ञ के अपने-अपने भाग को प्रेमपूर्वक स्वीकार करते थे, वैसे ही तुम भी मिलकर रहो।",
+          "kind": "shloka"
         },
         {
           "sanskrit": "मन्त्र १ — पदच्छेदः अन्वयः च",
           "meaning": "Mantra 1: Word Split (Padaccheda) and Syntax Order (Anvaya)",
-          "paragraphTranslation": "पदच्छेदः: संगच्छध्वम्, संवदध्वम्, सम्, वः, मनांसि, जानताम्, देवाः, भागम्, यथा, पूर्वे, संजानानाः, उपासते।\nअन्वयः: (यूयम्) संगच्छध्वं संवदध्वं वः मनांसि संजानताम्। यथा पूर्वे देवाः भागं संजानानाः उपासते।",
           "words": [
             "मन्त्र",
             "१",
+            "—",
             "पदच्छेदः",
             "अन्वयः",
             "च"
           ],
+          "paragraphTranslation": "पदच्छेदः – संगच्छध्वम् संवदध्वम् सम् वः मनांसि जानताम् देवाः भागम् यथा पूर्वे संजानानाः उपासते।\nअन्वयः – (यूयम्) संगच्छध्वं संवदध्वं वः मनांसि संजानताम्। यथा पूर्वे देवाः भागं संजानानाः उपासते।",
           "kind": "exercise-note"
         },
         {
           "sanskrit": "समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम् । समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि ॥ २ ॥",
-          "meaning": "Let your deliberations be unified, let your assemblies and resolutions be common, let your minds be harmonious, and let your hearts beat together in unison. I consecrate you all with a common collective purpose and offer a shared prayer for your absolute unity.",
-          "paragraphTranslation": "Line 1 Hindi: इन (सब मनुष्यों) के विचार समान हों, इनकी सभाएँ (लक्ष्य) समान हों, इनका मन सौहार्दपूर्ण हो और इनका अंतःकरण (बुद्धिजन्य ज्ञान) एक साथ एकीकृत हो।\nLine 2 Hindi: मैं तुम सबको एक समान उद्देश्य से संस्कारित करता हूँ और तुम्हें एक समान यज्ञीय आहुति (सामूहिक प्रार्थना) से जोड़ता हूँ।",
-          "transliteration": "Samāno mantraḥ samitiḥ samānī samānaṁ manaḥ saha cittameṣām | Samānaṁ mantramabhimantraye vaḥ samānena vo haviṣā juhomi || 2 ||",
+          "meaning": "May your deliberations be uniform, assemblies common, and minds and intellect in unison. I consecrate you with common purposes and unified offerings.",
           "words": [
             "समानो",
             "मन्त्रः",
@@ -21155,26 +21146,27 @@
             "॥",
             "२",
             "॥"
-          ]
+          ],
+          "paragraphTranslation": "तुम सबके विचार समान हों, तुम्हारी सभाएँ एक समान हों, तुम्हारे मन और बुद्धि एक साथ जुड़े हों। मैं तुम्हें समान विचारों से अभिमन्त्रित करता हूँ और सामूहिक आहुति के साथ यज्ञ सिद्ध करता हूँ।",
+          "kind": "shloka"
         },
         {
           "sanskrit": "मन्त्र २ — पदच्छेदः अन्वयः च",
           "meaning": "Mantra 2: Word Split (Padaccheda) and Syntax Order (Anvaya)",
-          "paragraphTranslation": "पदच्छेदः: समानः, मन्त्रः, समितिः, समानी, समानम्, मनः, सह, चित्तम्, एषाम्, समानम्, मन्त्रम्, अभिमन्त्रये, वः, समानेन, वः, हविषा, जुहोमि।\nअन्वयः: एषां मन्त्रः समानः, समितिः समानी, मनः समानं, चित्तं सह (अस्तु)। वः समानं मन्त्रम् अभिमन्त्रये वः समानेन हविषा जुहोमि।",
           "words": [
             "मन्त्र",
             "२",
+            "—",
             "पदच्छेदः",
             "अन्वयः",
             "च"
           ],
+          "paragraphTranslation": "पदच्छेदः – समानः मन्त्रः समितिः समानी समानम् मनः सह चित्तम् एषाम् समानम् मन्त्रम् अभिमन्त्रये वः समानेन वः हविषा जुहोमि।\nअन्वयः – एषां मन्त्रः समानः, समितिः समानी, मनः समानं, चित्तं सह (अस्तु)। वः समानं मन्त्रम् अभिमन्त्रये वः समानेन हविषा जुहोमि।",
           "kind": "exercise-note"
         },
         {
           "sanskrit": "समानी व आकूतिः समाना हृदयानि वः । समानमस्तु वो मनो यथा वः सुसहासति ॥ ३ ॥",
-          "meaning": "O humans! Let your determinations be common, let your hearts be full of mutual harmony, and let your minds think in alignment, so that your collective co-existence and unity may be beautifully perfect.",
-          "paragraphTranslation": "Line 1 Hindi: हे मनुष्यों! तुम्हारा संकल्प (दृढ़ निश्चय) एक समान हो, तुम्हारे हृदय सामंजस्यपूर्ण (आपसी सद्भाव से युक्त) हों।\nLine 2 Hindi: और तुम्हारा मन एक जैसा हो, जिससे तुम्हारा यह संगठन (साथ रहना) अत्यंत सुंदर और सुदृढ़ हो सके।",
-          "transliteration": "Samānī va ākūtiḥ samānā hṛdayāni vaḥ | Samānamastu vo mano yathā vaḥ susahāsati || 3 ||",
+          "meaning": "May your resolutions be identical, hearts beat in harmony, and minds think as one, so your collective unit functions in excellence.",
           "words": [
             "समानी",
             "व",
@@ -21192,19 +21184,22 @@
             "॥",
             "३",
             "॥"
-          ]
+          ],
+          "paragraphTranslation": "तुम्हारे संकल्प समान हों, हृदय सौहार्द से भरे हों, और मन एक समान तालमेल वाले हों, जिससे तुम्हारा सामूहिक संगठन सुदृढ़ बना रहे।",
+          "kind": "shloka"
         },
         {
           "sanskrit": "मन्त्र ३ — पदच्छेदः अन्वयः च",
           "meaning": "Mantra 3: Word Split (Padaccheda) and Syntax Order (Anvaya)",
-          "paragraphTranslation": "पदच्छेदः: समानी, वः, आकूतिः, समाना, हृदयानि, वः, समानम्, अस्तु, वः, मनः, यथा, वः, सु, सह, असति।\nअन्वयः: (हे मानवाः !) वः आकूतिः समानी (अस्तु)। वः हृदयानि समाना (सन्तु)। यथा वः सह सु असति, (तथा) वः मनः समानम् अस्तु।",
           "words": [
             "मन्त्र",
             "३",
+            "—",
             "पदच्छेदः",
             "अन्वयः",
             "च"
           ],
+          "paragraphTranslation": "पदच्छेदः – समानी वः आकूतिः समाना हृदयानि वः समानम् अस्तु वः मनः यथा वः सु सह असति।\nअन्वयः – (हे मानवाः !) वः आकूतिः समानी (अस्तु)। वः हृदयानि समाना (सन्तु)। यथा वः सह सु असति, (तथा) वः मनः समानम् अस्तु।",
           "kind": "exercise-note"
         },
         {
@@ -21212,31 +21207,30 @@
           "meaning": "Comprehensive Vocabulary Guide with Sanskrit Synonyms, Hindi Meanings, and English Translations",
           "words": [
             "शब्दार्थाः",
-            "Complete",
+            "(Complete",
             "Vocabulary",
-            "Synonyms"
+            "&",
+            "Synonyms)"
           ],
           "kind": "glossary-header"
         },
         {
           "sanskrit": "संगच्छध्वम्",
-          "sanskrit_gloss": "मिलित्वा गच्छत / चलत",
+          "sanskrit_gloss": "मिलित्वा गच्छत",
           "hindi_gloss": "मिलकर चलो",
-          "meaning": "May you walk together in harmony",
+          "meaning": "May you walk together",
           "words": [
             "संगच्छध्वम्",
             "मिलित्वा",
-            "गच्छत",
-            "/",
-            "चलत"
+            "गच्छत"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "संवदध्वम्",
           "sanskrit_gloss": "एकस्वरेण वदत",
-          "hindi_gloss": "सहमतिपूर्वक बोलें (एक स्वर में बोलें)",
-          "meaning": "May you speak together in one voice",
+          "hindi_gloss": "एक स्वर में (सहमति से) बोलो",
+          "meaning": "May you speak in one voice",
           "words": [
             "संवदध्वम्",
             "एकस्वरेण",
@@ -21247,20 +21241,19 @@
         {
           "sanskrit": "समवेतस्वरेण",
           "sanskrit_gloss": "सम्मिलित-स्वरेण",
-          "hindi_gloss": "सम्मिलित ध्वनि से (एक साथ स्वर मिलाकर)",
+          "hindi_gloss": "सामूहिक स्वर से",
           "meaning": "By chanting in unison",
           "words": [
             "समवेतस्वरेण",
-            "सम्मिलित",
-            "स्वरेण"
+            "सम्मिलित-स्वरेण"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "मनांसि",
           "sanskrit_gloss": "चित्तानि",
-          "hindi_gloss": "मनों को (हृदय और चित्त)",
-          "meaning": "Minds / Thoughts",
+          "hindi_gloss": "मनों को",
+          "meaning": "Minds",
           "words": [
             "मनांसि",
             "चित्तानि"
@@ -21269,90 +21262,68 @@
         },
         {
           "sanskrit": "जानताम्",
-          "sanskrit_gloss": "जानन्तु / अवगच्छन्तु",
+          "sanskrit_gloss": "जानन्तु",
           "hindi_gloss": "जानें / समझें",
-          "meaning": "May you know / understand similarly",
+          "meaning": "May you know / grasp",
           "words": [
             "जानताम्",
-            "जानन्तु",
-            "/",
-            "अवगच्छन्तु"
+            "जानन्तु"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "देवाः",
-          "sanskrit_gloss": "ब्रह्माण्डीय-शक्तयः / सुराः",
-          "hindi_gloss": "सृष्टि की मूलभूत शक्तियाँ / देवता",
-          "meaning": "Cosmic forces / Celestial deities",
+          "sanskrit_gloss": "ब्रह्माण्डीय-शक्तयः",
+          "hindi_gloss": "ब्रह्मांडीय शक्तियाँ / देवता",
+          "meaning": "Cosmic forces / Celestial entities",
           "words": [
             "देवाः",
-            "ब्रह्माण्डीय",
-            "शक्तयः",
-            "/",
-            "सुराः"
+            "ब्रह्माण्डीय-शक्तयः"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "संजानानाः",
-          "sanskrit_gloss": "एकमनसः भूत्वा / ऐक्यभावेन",
-          "hindi_gloss": "एक विचार वाले होकर / एकमत होकर",
-          "meaning": "Being amicable / In total agreement",
+          "sanskrit_gloss": "एकमनसः भूत्वा",
+          "hindi_gloss": "एकमत होकर",
+          "meaning": "Being amicable / In agreement",
           "words": [
             "संजानानाः",
             "एकमनसः",
-            "भूत्वा",
-            "/",
-            "ऐक्यभावेन"
+            "भूत्वा"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "उपासते",
-          "sanskrit_gloss": "सेवन्ते / गृह्णन्ति",
-          "hindi_gloss": "श्रद्धापूर्वक कर्तव्य निर्वहण / स्वीकार करते हैं",
-          "meaning": "Devotedly performing duties / Accepting offerings",
+          "sanskrit_gloss": "सेवन्ते / निर्वहन्ति",
+          "hindi_gloss": "श्रद्धापूर्वक कर्तव्य निभाते हैं",
+          "meaning": "Devotedly performing duty",
           "words": [
             "उपासते",
             "सेवन्ते",
             "/",
-            "गृह्णन्ति"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "अभ्युदयम्",
-          "sanskrit_gloss": "अभिवृद्धिः / लौकिकोन्नतिः",
-          "hindi_gloss": "लौकिक उन्नति और समृद्धि",
-          "meaning": "Elevation and worldly prosperity",
-          "words": [
-            "अभ्युदयम्",
-            "अभिवृद्धिः",
-            "/",
-            "लौकिकोन्नतिः"
+            "निर्वहन्ति"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "मन्त्रः",
-          "sanskrit_gloss": "विचारः / चिन्तनम् / परामर्शः",
-          "hindi_gloss": "विचार / चिन्तन / परामर्श",
-          "meaning": "Contemplation / Thought / Deliberation",
+          "sanskrit_gloss": "विचारः / चिन्तनम्",
+          "hindi_gloss": "विचार / सोच",
+          "meaning": "Contemplation / Thought",
           "words": [
             "मन्त्रः",
             "विचारः",
             "/",
-            "चिन्तनम्",
-            "/",
-            "परामर्शः"
+            "चिन्तनम्"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "समितिः",
           "sanskrit_gloss": "समाना प्राप्तिः / सभा",
-          "hindi_gloss": "समान सिद्धि / सभा (परिषद)",
+          "hindi_gloss": "साझा लक्ष्य / सभा",
           "meaning": "Common resolutions / Assembly",
           "words": [
             "समितिः",
@@ -21365,157 +21336,70 @@
         },
         {
           "sanskrit": "वः",
-          "sanskrit_gloss": "युष्मभ्यम् / युष्माकम्",
+          "sanskrit_gloss": "युष्मभ्यम्",
           "hindi_gloss": "तुम्हारे लिए / तुम्हारा",
           "meaning": "For you / Your",
           "words": [
             "वः",
-            "युष्मभ्यम्",
-            "/",
-            "युष्माकम्"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "अभिमन्त्रये",
-          "sanskrit_gloss": "संस्कृत्य प्रचारयामि / उपदिशामि",
-          "hindi_gloss": "अभिमन्त्रित करके प्रकट करता हूँ / संस्कारित करता हूँ",
-          "meaning": "Consecrate and propagate / Instill",
-          "words": [
-            "अभिमन्त्रये",
-            "संस्कृत्य",
-            "प्रचारयामि",
-            "/",
-            "उपदिशामि"
+            "युष्मभ्यम्"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "हविषा",
-          "sanskrit_gloss": "प्रार्थनापूर्वकेण समर्पणेन / हविर्द्रव्येण",
-          "hindi_gloss": "प्रार्थनापूर्वक यज्ञाहुति द्वारा",
-          "meaning": "By oblatory prayers / Sacrificial offerings",
+          "sanskrit_gloss": "प्रार्थनापूर्वक-समर्पणेन",
+          "hindi_gloss": "यज्ञाहुति द्वारा / समर्पण से",
+          "meaning": "By oblatory prayers",
           "words": [
             "हविषा",
-            "प्रार्थनापूर्वकेण",
-            "समर्पणेन",
-            "/",
-            "हविर्द्रव्येण"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "जुहोमि",
-          "sanskrit_gloss": "ज्ञानकर्ममयं यज्ञं साधयामि / हवनं करोमि",
-          "hindi_gloss": "दिव्य यज्ञ कर्म को साधता हूँ / आहुति देता हूँ",
-          "meaning": "Performing divine offerings / Sacred rituals",
-          "words": [
-            "जुहोमि",
-            "ज्ञानकर्ममयं",
-            "यज्ञं",
-            "साधयामि",
-            "/",
-            "हवनं",
-            "करोमि"
+            "प्रार्थनापूर्वक-समर्पणेन"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "आकूतिः",
-          "sanskrit_gloss": "सङ्कल्पः / अभीप्सितम्",
-          "hindi_gloss": "संकल्प / उच्च अभिलाषा",
-          "meaning": "Noble resolution / Intent",
+          "sanskrit_gloss": "सङ्कल्पः",
+          "hindi_gloss": "दृढ़ निश्चय / संकल्प",
+          "meaning": "Resolution / Intent",
           "words": [
             "आकूतिः",
-            "सङ्कल्पः",
-            "/",
-            "अभीप्सितम्"
+            "सङ्कल्पः"
           ],
           "kind": "glossary"
         },
         {
-          "sanskrit": "सु सह असति",
-          "sanskrit_gloss": "सुसङ्घटितः भवेत् / शोभनं सहजीवनं स्यात्",
-          "hindi_gloss": "सुसङ्घटित हो / सुंदर सहअस्तित्व हो",
-          "meaning": "May you be beautifully united / Harmonious coexistence",
+          "sanskrit": "सुसह असति",
+          "sanskrit_gloss": "सुसङ्घटितः भवेत्",
+          "hindi_gloss": "अच्छी तरह संगठित हो",
+          "meaning": "May you be united strongly",
           "words": [
-            "सु",
-            "सह",
+            "सुसह",
             "असति",
             "सुसङ्घटितः",
-            "भवेत्",
-            "/",
-            "शोभनं",
-            "सहजीवनं",
-            "स्यात्"
+            "भवेत्"
           ],
           "kind": "glossary"
         },
         {
-          "sanskrit": "संहिता",
-          "sanskrit_gloss": "मूलमन्त्रपाठः",
-          "hindi_gloss": "मूल वैदिक मन्त्र पाठ",
-          "meaning": "Original Vedic text / Collection",
-          "words": [
-            "संहिता",
-            "मूलमन्त्रपाठः"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "ब्रह्मणा",
-          "sanskrit_gloss": "सृष्टिकर्त्रा परमेश्वरेण",
-          "hindi_gloss": "निर्माता परमात्मा के द्वारा",
-          "meaning": "By the creator of the universe",
-          "words": [
-            "ब्रह्मणा",
-            "सृष्टिकर्त्रा",
-            "परमेश्वरेण"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "निरवहन्",
-          "sanskrit_gloss": "निर्वाहम् अकुर्वन्",
-          "hindi_gloss": "निर्वाह किया (दायित्व निभाया)",
-          "meaning": "Took responsibility / Carried out duties",
-          "words": [
-            "निरवहन्",
-            "निर्वाहम्",
-            "अकुर्वन्"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "पाठ्यपुस्तकस्य अभ्यासाः (Solved Textbook Exercises)",
-          "meaning": "Complete Solved Exercises for Chapter 1 with Detailed Sanskrit Answers and English Meanings",
+          "sanskrit": "पाठ्यपुस्तकस्य अभ्यासाः (Solved Textbook Exercises · Pages 7–8)",
+          "meaning": "Complete Solved Exercises for Chapter 1 with Detailed Sanskrit Answers",
           "words": [
             "पाठ्यपुस्तकस्य",
             "अभ्यासाः",
-            "Solved",
-            "Exercises"
+            "(Solved",
+            "Textbook",
+            "Exercises",
+            "·",
+            "Pages",
+            "7–8)"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "प्रश्नः १: संज्ञानसूक्तं सस्वरं पठत स्मरत लिखत च।",
-          "answer_sanskrit": "संज्ञान-सूक्तस्य (ऋग्वेद १०.१९१.२-४) त्रयः मन्त्राः सस्वरं पठनीयाः, कण्ठस्थीकरणीयाः, अभ्यासपुस्तिकायां च लेखनीयाः:\n१. संगच्छध्वं संवदध्वं सं वो मनांसि जानताम् । देवा भागं यथा पूर्वे संजानाना उपासते ॥\n२. समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम् । समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि ॥\n३. समानी व आकूतिः समाना हृदयानि वः । समानमस्तु वो मनो यथा वः सुसहासति ॥",
-          "meaning": "Recite the three mantras of the Samjnana Sukta rhythmically, memorize them, and write them down accurately in the notebook.",
-          "hindi_gloss": "संज्ञान-सूक्त के तीनों मन्त्रों का सस्वर पाठ करें, उन्हें याद करें और अपनी अभ्यास पुस्तिका में लिखें।",
+          "sanskrit": "२. अधोलिखितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखत",
+          "meaning": "Answer the following questions in complete sentences",
           "words": [
-            "संज्ञानसूक्तं",
-            "सस्वरं",
-            "पठत",
-            "स्मरत",
-            "लिखत",
-            "च"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "प्रश्नः २: अधोलिखितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखत —",
-          "meaning": "Answer the following questions in complete Sanskrit sentences",
-          "words": [
+            "२.",
             "अधोलिखितानां",
             "प्रश्नानाम्",
             "उत्तराणि",
@@ -21526,130 +21410,68 @@
         },
         {
           "sanskrit": "(क) सर्वेषां मनः कीदृशं भवेत्?",
-          "answer_sanskrit": "सर्वेषां मनः समानं सामञ्जस्ययुतं च भवेत्।",
-          "meaning": "Everyone's mind should be harmonious and unified in thought.",
-          "hindi_gloss": "सभी का मन समान और सामंजस्यपूर्ण (एक विचार वाला) होना चाहिए।",
+          "answer_sanskrit": "सर्वेषां मनः समानं (सामञ्जस्ययुतम् एकरूपं च) भवेत्।",
+          "meaning": "Everyone's mind should be equal (harmonious and uniform).",
+          "hindi_gloss": "सभी का मन समान (सामंजस्ययुक्त और एकरूप) होना चाहिए।",
           "words": [
-            "(",
-            "क",
-            ")",
+            "(क)",
             "सर्वेषां",
             "मनः",
             "कीदृशं",
-            "भवेत्",
-            "?",
-            "सर्वेषां",
-            "मनः",
-            "समानं",
-            "सामञ्जस्ययुतं",
-            "च",
-            "भवेत्।"
+            "भवेत्?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) 'सङ्गच्छध्वं संवदध्वम्' इत्यस्य कः अभिप्रायः?",
-          "answer_sanskrit": "सङ्गच्छध्वं संवदध्वम् इत्यस्य अभिप्रायः अस्ति यत् हे मानवाः! यूयं सर्वे समाजे मिलित्वा अग्रे गच्छत तथा परस्परं सम्यक् विचारविनिमयं कुर्वन्तः एकस्वरेण वदत।",
-          "meaning": "It means: O humans! You all should walk together progressively in society and exchange your thoughts constructively, speaking in one collective voice.",
-          "hindi_gloss": "'सङ्गच्छध्वं संवदध्वम्' का अर्थ है कि हे मनुष्यों! तुम सब समाज में मिलकर आगे बढ़ो और आपस में विचारों का आदान-प्रदान करते हुए एक स्वर में बोलो।",
+          "sanskrit": "(ख) सङ्गच्छध्वं संवदध्वम् इत्यस्य कः अभिप्रायः?",
+          "answer_sanskrit": "सङ्गच्छध्वं संवदध्वम् इत्यस्य अभिप्रायः अस्ति यत् मानवाः मिलित्वा अग्रे गच्छन्तु तथा च परस्परं विचारविनिमयं कुर्वन्तः एकस्वरेण वदन्तु।",
+          "meaning": "Humans should advance together and, exchanging thoughts, speak with one voice.",
+          "hindi_gloss": "मनुष्य मिलकर आगे बढ़ें तथा विचार-विनिमय करते हुए एक स्वर में बोलें।",
           "words": [
-            "(",
-            "ख",
-            ")",
-            "'",
+            "(ख)",
             "सङ्गच्छध्वं",
             "संवदध्वम्",
-            "'",
             "इत्यस्य",
             "कः",
-            "अभिप्रायः",
-            "?",
-            "सङ्गच्छध्वं",
-            "संवदध्वम्",
-            "इत्यस्य",
-            "अभिप्रायः",
-            "अस्ति",
-            "यत्",
-            "हे",
-            "मानवाः",
-            "!",
-            "यूयं",
-            "सर्वे",
-            "समाजे",
-            "मिलित्वा",
-            "अग्रे",
-            "गच्छत",
-            "तथा",
-            "परस्परं",
-            "सम्यक्",
-            "विचारविनिमयं",
-            "कुर्वन्तः",
-            "एकस्वरेण",
-            "वदत।"
+            "अभिप्रायः?"
           ],
           "kind": "exercise-qa"
         },
         {
           "sanskrit": "(ग) सर्वे किं परित्यज्य ऐक्यभावेन जीवेयुः?",
-          "answer_sanskrit": "सर्वे परस्परं मनोभेदं द्वेषभावं वैमनस्यं च परित्यज्य ऐक्यभावेन जीवेयुः।",
-          "meaning": "Everyone should discard mental differences, hatred, and hostility to live together in unity.",
-          "hindi_gloss": "सभी को आपस के मतभेद, द्वेष और वैमनस्य को त्यागकर एकता के भाव से जीना चाहिए।",
+          "answer_sanskrit": "सर्वे वैमनस्यं (मनोभेदं) परित्यज्य ऐक्यभावेन जीवेयुः।",
+          "meaning": "All should abandon discord (mental conflict) and live in unity.",
+          "hindi_gloss": "सभी वैमनस्य (मनोभेद) छोड़कर एकता से जीएँ।",
           "words": [
-            "(",
-            "ग",
-            ")",
+            "(ग)",
             "सर्वे",
             "किं",
             "परित्यज्य",
             "ऐक्यभावेन",
-            "जीवेयुः",
-            "?",
-            "सर्वे",
-            "परस्परं",
-            "मनोभेदं",
-            "द्वेषभावं",
-            "वैमनस्यं",
-            "च",
-            "परित्यज्य",
-            "ऐक्यभावेन",
-            "जीवेयुः।"
+            "जीवेयुः?"
           ],
           "kind": "exercise-qa"
         },
         {
           "sanskrit": "(घ) अस्मिन् पाठे का प्रेरणा अस्ति?",
-          "answer_sanskrit": "अस्मिन् पाठे संघटितरूपेण सहजीवनस्य, एकतायाः, परस्परं सामञ्जस्यस्य च प्रेरणा अस्ति।",
-          "meaning": "This lesson inspires collective co-existence, absolute unity, and mutual harmony.",
-          "hindi_gloss": "इस पाठ में संगठित होकर साथ जीने, एकता और आपसी तालमेल की प्रेरणा है।",
+          "answer_sanskrit": "अस्मिन् पाठे सङ्घटितरूपेण सहजीवनस्य, एकतायाः, परस्परं सामञ्जस्यस्य च प्रेरणा अस्ति।",
+          "meaning": "Inspiration for organized co-existence, unity, and mutual harmony.",
+          "hindi_gloss": "संगठित सहजीवन, एकता और परस्पर सामंजस्य की प्रेरणा।",
           "words": [
-            "(",
-            "घ",
-            ")",
+            "(घ)",
             "अस्मिन्",
             "पाठे",
             "का",
             "प्रेरणा",
-            "अस्ति",
-            "?",
-            "अस्मिन्",
-            "पाठे",
-            "संघटितरूपेण",
-            "सहजीवनस्य",
-            ",",
-            "एकतायाः",
-            ",",
-            "परस्परं",
-            "सामञ्जस्यस्य",
-            "च",
-            "प्रेरणा",
-            "अस्ति।"
+            "अस्ति?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "प्रश्नः ३: रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कुरुत —",
-          "meaning": "Formulate questions using interrogative pronouns based on the underlined terms",
+          "sanskrit": "३. रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कुरुत",
+          "meaning": "Form questions based on the underlined words",
           "words": [
+            "३.",
             "रेखाङ्कितपदानि",
             "आधृत्य",
             "प्रश्ननिर्माणं",
@@ -21658,210 +21480,111 @@
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) परमेश्वरः सर्वत्र व्याप्तः अस्ति। (रेखाङ्कितम्: परमेश्वरः)",
+          "sanskrit": "(क) परमेश्वरः सर्वत्र व्याप्तः अस्ति।",
           "answer_sanskrit": "कः सर्वत्र व्याप्तः अस्ति?",
-          "meaning": "Who is all-pervading? (Target: Parameshvara)",
-          "hindi_gloss": "कौन सर्वत्र व्याप्त है?",
+          "meaning": "Who is present everywhere?",
           "words": [
-            "(",
-            "क",
-            ")",
+            "(क)",
             "परमेश्वरः",
             "सर्वत्र",
             "व्याप्तः",
-            "अस्ति।",
-            "(",
-            "रेखाङ्कितम्",
-            "परमेश्वरः",
-            ")",
-            "कः",
-            "सर्वत्र",
-            "व्याप्तः",
-            "अस्ति",
-            "?"
+            "अस्ति।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) वयम् ईश्वरं नमामः। (रेखाङ्कितम्: ईश्वरम्)",
+          "sanskrit": "(ख) वयम् ईश्वरं नमामः।",
           "answer_sanskrit": "वयं कम् नमामः?",
-          "meaning": "Whom do we bow down to? (Target: Ishvaram)",
-          "hindi_gloss": "हम किसको नमन करते हैं?",
+          "meaning": "Whom do we salute?",
           "words": [
-            "(",
-            "ख",
-            ")",
+            "(ख)",
             "वयम्",
             "ईश्वरं",
-            "नमामः।",
-            "(",
-            "रेखाङ्कितम्",
-            "ईश्वरम्",
-            ")",
-            "वयं",
-            "कम्",
-            "नमामः",
-            "?"
+            "नमामः।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) वयम् ऐक्यभावेन जीवामः। (रेखाङ्कितम्: ऐक्यभावेन)",
-          "answer_sanskrit": "वयं कथम् / केन भावेन जीवामः?",
-          "meaning": "How / in what spirit do we live? (Target: Aikyabhavena)",
-          "hindi_gloss": "हम किस भाव से / कैसे जीते हैं?",
+          "sanskrit": "(ग) वयम् ऐक्यभावेन जीवामः।",
+          "answer_sanskrit": "वयं कथम् / केन जीवामः?",
+          "meaning": "How do we live?",
           "words": [
-            "(",
-            "ग",
-            ")",
+            "(ग)",
             "वयम्",
             "ऐक्यभावेन",
-            "जीवामः।",
-            "(",
-            "रेखाङ्कितम्",
-            "ऐक्यभावेन",
-            ")",
-            "वयं",
-            "कथम्",
-            "/",
-            "केन",
-            "भावेन",
-            "जीवामः",
-            "?"
+            "जीवामः।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) ईश्वरस्य प्रार्थनया शान्तिः प्राप्यते। (रेखाङ्कितम्: प्रार्थनया)",
-          "answer_sanskrit": "ईश्वरस्य कया शान्तिः प्राप्यते?",
-          "meaning": "Through what is peace obtained from God? (Target: Prarthanaya)",
-          "hindi_gloss": "ईश्वर की किसके द्वारा शान्ति प्राप्त होती है?",
+          "sanskrit": "(घ) ईश्वरस्य प्रार्थनया शान्तिः प्राप्यते।",
+          "answer_sanskrit": "ईश्वरस्य प्रार्थनया का प्राप्यते?",
+          "meaning": "By what is peace obtained?",
           "words": [
-            "(",
-            "घ",
-            ")",
+            "(घ)",
             "ईश्वरस्य",
             "प्रार्थनया",
             "शान्तिः",
-            "प्राप्यते।",
-            "(",
-            "रेखाङ्कितम्",
-            "प्रार्थनया",
-            ")",
-            "ईश्वरस्य",
-            "कया",
-            "शान्तिः",
-            "प्राप्यते",
-            "?"
+            "प्राप्यते।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) अहं समाजाय श्रमं करोमि। (रेखाङ्कितम्: समाजाय)",
+          "sanskrit": "(ङ) अहं समाजाय श्रमं करोमि।",
           "answer_sanskrit": "अहं कस्मै श्रमं करोमि?",
-          "meaning": "For whom do I perform labor? (Target: Samajaya)",
-          "hindi_gloss": "मैं किसके लिए श्रम करता हूँ?",
+          "meaning": "For whom do I labour?",
           "words": [
-            "(",
-            "ङ",
-            ")",
+            "(ङ)",
             "अहं",
             "समाजाय",
             "श्रमं",
-            "करोमि।",
-            "(",
-            "रेखाङ्कितम्",
-            "समाजाय",
-            ")",
-            "अहं",
-            "कस्मै",
-            "श्रमं",
-            "करोमि",
-            "?"
+            "करोमि।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(च) अयं पाठः ऋग्वेदात् सङ्कलितः। (रेखाङ्कितम्: ऋग्वेदात्)",
+          "sanskrit": "(च) अयं पाठः ऋग्वेदात् सङ्कलितः।",
           "answer_sanskrit": "अयं पाठः कस्मात् सङ्कलितः?",
-          "meaning": "From where is this lesson compiled? (Target: Rigvedat)",
-          "hindi_gloss": "यह पाठ किससे संकलित है?",
+          "meaning": "From what is this lesson compiled?",
           "words": [
-            "(",
-            "च",
-            ")",
+            "(च)",
             "अयं",
             "पाठः",
             "ऋग्वेदात्",
-            "सङ्कलितः।",
-            "(",
-            "रेखाङ्कितम्",
-            "ऋग्वेदात्",
-            ")",
-            "अयं",
-            "पाठः",
-            "कस्मात्",
-            "सङ्कलितः",
-            "?"
+            "सङ्कलितः।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(छ) वेदस्य अपरं नाम श्रुतिः। (रेखाङ्कितम्: श्रुतिः)",
+          "sanskrit": "(छ) वेदस्य अपरं नाम श्रुतिः।",
           "answer_sanskrit": "वेदस्य अपरं नाम किम्?",
-          "meaning": "What is the other name of the Veda? (Target: Shrutih)",
-          "hindi_gloss": "वेद का दूसरा नाम क्या है?",
+          "meaning": "What is the other name of Veda?",
           "words": [
-            "(",
-            "छ",
-            ")",
+            "(छ)",
             "वेदस्य",
             "अपरं",
             "नाम",
-            "श्रुतिः।",
-            "(",
-            "रेखाङ्कितम्",
-            "श्रुतिः",
-            ")",
-            "वेदस्य",
-            "अपरं",
-            "नाम",
-            "किम्",
-            "?"
+            "श्रुतिः।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ज) मन्त्राः वेदेषु भवन्ति। (रेखाङ्कितम्: वेदेषु)",
+          "sanskrit": "(ज) मन्त्राः वेदेषु भवन्ति।",
           "answer_sanskrit": "मन्त्राः केषु भवन्ति?",
-          "meaning": "In what do mantras exist? (Target: Vedeshu)",
-          "hindi_gloss": "मन्त्र किसमें होते हैं?",
+          "meaning": "What exist in the Vedas?",
           "words": [
-            "(",
-            "ज",
-            ")",
+            "(ज)",
             "मन्त्राः",
             "वेदेषु",
-            "भवन्ति।",
-            "(",
-            "रेखाङ्कितम्",
-            "वेदेषु",
-            ")",
-            "मन्त्राः",
-            "केषु",
-            "भवन्ति",
-            "?"
+            "भवन्ति।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "प्रश्नः ४: पट्टिकातः शब्दान् चित्वा अधोलिखितेषु मन्त्रेषु रिक्तस्थानानि पूरयत —",
-          "meaning": "Fill in the blanks in the following mantras using terms from the option box",
+          "sanskrit": "४. मन्त्रेषु रिक्तस्थानानि पूरयत",
+          "meaning": "Complete the mantras by filling the blanks (Page 8)",
           "words": [
-            "पट्टिकातः",
-            "शब्दान्",
-            "चित्वा",
-            "अधोलिखितेषु",
+            "४.",
             "मन्त्रेषु",
             "रिक्तस्थानानि",
             "पूरयत"
@@ -21869,48 +21592,31 @@
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) सङ्गच्छध्वं संवदध्वं सं वो मनांसि जानताम् । देवा भागं यथा पूर्वे ________ उपासते॥",
-          "answer_sanskrit": "देवा भागं यथा पूर्वे संजानाना उपासते॥ (रिक्तस्थानम्: संजानानाः)",
-          "meaning": "Just as ancient gods accepted their share being in complete harmony (saṁjānānāḥ).",
-          "hindi_gloss": "रिक्तस्थान: संजानानाः (एकमत होकर)",
+          "sanskrit": "(क) सङ्गच्छध्वं संवदध्वं सं वो मनांसि जानताम्। देवा भागं यथा पूर्वे संजानाना उपासते।",
+          "answer_sanskrit": "सङ्गच्छध्वं संवदध्वं सं वो मनांसि जानताम्। देवा भागं यथा पूर्वे संजानाना उपासते।",
+          "meaning": "Complete mantra form from the textbook",
           "words": [
-            "(",
-            "क",
-            ")",
+            "(क)",
             "सङ्गच्छध्वं",
             "संवदध्वं",
             "सं",
             "वो",
             "मनांसि",
-            "जानताम्",
-            "।",
-            "देवा",
-            "भागं",
-            "यथा",
-            "पूर्वे",
-            "उपासते॥",
+            "जानताम्।",
             "देवा",
             "भागं",
             "यथा",
             "पूर्वे",
             "संजानाना",
-            "उपासते॥",
-            "(",
-            "रिक्तस्थानम्",
-            "संजानानाः",
-            ")"
+            "उपासते।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम् । समानं मन्त्रमभिमन्त्रये वः ________ वो हविषा जुहोमि॥",
-          "answer_sanskrit": "समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि॥ (रिक्तस्थानम्: समानेन)",
-          "meaning": "I consecrate you with a unified purpose and offer sacrifice with common oblation (samānena).",
-          "hindi_gloss": "रिक्तस्थान: समानेन (समान आहुति द्वारा)",
+          "sanskrit": "(ख) समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम्। समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि।",
+          "answer_sanskrit": "समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम्। समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि।",
+          "meaning": "Complete mantra form from the textbook",
           "words": [
-            "(",
-            "ख",
-            ")",
             "समानो",
             "मन्त्रः",
             "समितिः",
@@ -21918,74 +21624,42 @@
             "समानं",
             "मनः",
             "सह",
-            "चित्तमेषाम्",
-            "।",
-            "समानं",
-            "मन्त्रमभिमन्त्रये",
-            "वः",
-            "वो",
-            "हविषा",
-            "जुहोमि॥",
+            "चित्तमेषाम्।",
             "समानं",
             "मन्त्रमभिमन्त्रये",
             "वः",
             "समानेन",
             "वो",
             "हविषा",
-            "जुहोमि॥",
-            "(",
-            "रिक्तस्थानम्",
-            "समानेन",
-            ")"
-          ],
-          "kind": "exercise-qa",
-          "paragraphTranslation": "Line 1 Hindi: इन (सब मनुष्यों) के विचार समान हों, इनकी सभाएँ (लक्ष्य) समान हों, इनका मन सौहार्दपूर्ण हो और इनका अंतःकरण (बुद्धिजन्य ज्ञान) एक साथ एकीकृत हो।\nLine 2 Hindi: मैं तुम सबको एक समान उद्देश्य से संस्कारित करता हूँ और तुम्हें एक समान यज्ञीय आहुति (सामूहिक प्रार्थना) से जोड़ता हूँ।"
-        },
-        {
-          "sanskrit": "(ग) समानी व आकूतिः समाना हृदयानि वः । समानमस्तु वो मनो यथा वः ________॥",
-          "answer_sanskrit": "समानमस्तु वो मनो यथा वः सुसहासति॥ (रिक्तस्थानम्: सुसहासति / सु सह असति)",
-          "meaning": "May your minds be united so that your collective co-existence may be beautifully perfect (susahāsati).",
-          "hindi_gloss": "रिक्तस्थान: सुसहासति (सुसङ्गठित हो)",
-          "words": [
-            "(",
-            "ग",
-            ")",
-            "समानी",
-            "व",
-            "आकूतिः",
-            "समाना",
-            "हृदयानि",
-            "वः",
-            "।",
-            "समानमस्तु",
-            "वो",
-            "मनो",
-            "यथा",
-            "वः",
-            "॥",
-            "समानमस्तु",
-            "वो",
-            "मनो",
-            "यथा",
-            "वः",
-            "सुसहासति॥",
-            "(",
-            "रिक्तस्थानम्",
-            "सुसहासति",
-            "/",
-            "सु",
-            "सह",
-            "असति",
-            ")"
+            "जुहोमि।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "प्रश्नः ५: पाठे प्रयुक्तान् शब्दान् भावानुसारं परस्परं योजयत —",
-          "meaning": "Match the textual terms with their appropriate textual meanings",
+          "sanskrit": "(ग) समानी व आकूतिः समाना हृद्यानि वः। समानमस्तु वो मनो यथा वः सुसहासति।",
+          "answer_sanskrit": "समानी व आकूतिः समाना हृद्यानि वः। समानमस्तु वो मनो यथा वः सुसहासति।",
+          "meaning": "Complete mantra form from the textbook",
           "words": [
-            "पाठे",
-            "प्रयुक्तान्",
+            "समानी",
+            "व",
+            "आकूतिः",
+            "समाना",
+            "हृद्यानि",
+            "वः।",
+            "समानमस्तु",
+            "वो",
+            "मनो",
+            "यथा",
+            "वः",
+            "सुसहासति।"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "५. शब्दान् भावानुसारं परस्परं योजयत",
+          "meaning": "Match the words according to their meanings (Page 8)",
+          "words": [
+            "५.",
             "शब्दान्",
             "भावानुसारं",
             "परस्परं",
@@ -21994,451 +21668,207 @@
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) संगच्छध्वम् ➡️ मिलित्वा चलत",
-          "answer_sanskrit": "संगच्छध्वम् ➡️ मिलित्वा चलत (May you walk together in harmony)",
-          "meaning": "Saṁgacchadhvam matches with Militvā calata.",
-          "hindi_gloss": "संगच्छध्वम् ➔ मिलकर चलो",
+          "sanskrit": "संगच्छध्वम् → मिलित्वा चलत",
+          "answer_sanskrit": "मिलित्वा चलत",
+          "meaning": "संगच्छध्वम् matches with मिलित्वा चलत",
+          "hindi_gloss": "संगच्छध्वम् = मिलित्वा चलत",
           "words": [
-            "(",
-            "क",
-            ")",
-            "संगच्छध्वम्",
-            "➡",
-            "️",
-            "मिलित्वा",
-            "चलत",
-            "संगच्छध्वम्",
-            "➡",
-            "️",
-            "मिलित्वा",
-            "चलत",
-            "(",
-            "May",
-            "you",
-            "walk",
-            "together",
-            "in",
-            "harmony",
-            ")"
+            "संगच्छध्वम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) संवदध्वम् ➡️ एकस्वरेण वदत",
-          "answer_sanskrit": "संवदध्वम् ➡️ एकस्वरेण वदत (May you speak together in concord)",
-          "meaning": "Saṁvadadhvam matches with Ekasvareṇa vadata.",
-          "hindi_gloss": "संवदध्वम् ➔ एक स्वर में बोलो",
+          "sanskrit": "संवदध्वम् → एकस्वरेण वदत",
+          "answer_sanskrit": "एकस्वरेण वदत",
+          "meaning": "संवदध्वम् matches with एकस्वरेण वदत",
+          "hindi_gloss": "संवदध्वम् = एकस्वरेण वदत",
           "words": [
-            "(",
-            "ख",
-            ")",
-            "संवदध्वम्",
-            "➡",
-            "️",
-            "एकस्वरेण",
-            "वदत",
-            "संवदध्वम्",
-            "➡",
-            "️",
-            "एकस्वरेण",
-            "वदत",
-            "(",
-            "May",
-            "you",
-            "speak",
-            "together",
-            "in",
-            "concord",
-            ")"
+            "संवदध्वम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) मनः ➡️ चित्तम्",
-          "answer_sanskrit": "मनः ➡️ चित्तम् (Mind / Inner consciousness)",
-          "meaning": "Manaḥ matches with Cittam.",
-          "hindi_gloss": "मनः ➔ चित्त",
+          "sanskrit": "मनः → चित्तम्",
+          "answer_sanskrit": "चित्तम्",
+          "meaning": "मनः matches with चित्तम्",
+          "hindi_gloss": "मनः = चित्तम्",
           "words": [
-            "(",
-            "ग",
-            ")",
-            "मनः",
-            "➡",
-            "️",
-            "चित्तम्",
-            "मनः",
-            "➡",
-            "️",
-            "चित्तम्",
-            "(",
-            "Mind",
-            "/",
-            "Inner",
-            "consciousness",
-            ")"
+            "मनः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) उपासते ➡️ सेवन्ते",
-          "answer_sanskrit": "उपासते ➡️ सेवन्ते (Devotedly attend to / worship)",
-          "meaning": "Upāsate matches with Sevante.",
-          "hindi_gloss": "उपासते ➔ सेवा करते हैं / कर्तव्य निभाते हैं",
+          "sanskrit": "उपासते → सेवन्ते",
+          "answer_sanskrit": "सेवन्ते",
+          "meaning": "उपासते matches with सेवन्ते",
+          "hindi_gloss": "उपासते = सेवन्ते",
           "words": [
-            "(",
-            "घ",
-            ")",
-            "उपासते",
-            "➡",
-            "️",
-            "सेवन्ते",
-            "उपासते",
-            "➡",
-            "️",
-            "सेवन्ते",
-            "(",
-            "Devotedly",
-            "attend",
-            "to",
-            "/",
-            "worship",
-            ")"
+            "उपासते"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) वसूनि ➡️ धनानि",
-          "answer_sanskrit": "वसूनि ➡️ धनानि (Wealth / Riches)",
-          "meaning": "Vasūni matches with Dhanāni.",
-          "hindi_gloss": "वसूनि ➔ धन-सम्पत्ति",
+          "sanskrit": "वसूनि → धनानि",
+          "answer_sanskrit": "धनानि",
+          "meaning": "वसूनि matches with धनानि",
+          "hindi_gloss": "वसूनि = धनानि",
           "words": [
-            "(",
-            "ङ",
-            ")",
-            "वसूनि",
-            "➡",
-            "️",
-            "धनानि",
-            "वसूनि",
-            "➡",
-            "️",
-            "धनानि",
-            "(",
-            "Wealth",
-            "/",
-            "Riches",
-            ")"
+            "वसूनि"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(च) विश्वानि ➡️ समस्तानि",
-          "answer_sanskrit": "विश्वानि ➡️ समस्तानि (All / Entire)",
-          "meaning": "Viśvāni matches with Samastāni.",
-          "hindi_gloss": "विश्वानि ➔ समस्त / सब",
+          "sanskrit": "विश्वानि → समस्तानि",
+          "answer_sanskrit": "समस्तानि",
+          "meaning": "विश्वानि matches with समस्तानि",
+          "hindi_gloss": "विश्वानि = समस्तानि",
           "words": [
-            "(",
-            "च",
-            ")",
-            "विश्वानि",
-            "➡",
-            "️",
-            "समस्तानि",
-            "विश्वानि",
-            "➡",
-            "️",
-            "समस्तानि",
-            "(",
-            "All",
-            "/",
-            "Entire",
-            ")"
+            "विश्वानि"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(छ) आकूतिः ➡️ सङ्कल्पः",
-          "answer_sanskrit": "आकूतिः ➡️ सङ्कल्पः (Noble determination / Intent)",
-          "meaning": "Ākūtiḥ matches with Saṅkalpaḥ.",
-          "hindi_gloss": "आकूतिः ➔ संकल्प",
+          "sanskrit": "आकूतिः → सङ्कल्पः",
+          "answer_sanskrit": "सङ्कल्पः",
+          "meaning": "आकूतिः matches with सङ्कल्पः",
+          "hindi_gloss": "आकूतिः = सङ्कल्पः",
           "words": [
-            "(",
-            "छ",
-            ")",
-            "आकूतिः",
-            "➡",
-            "️",
-            "सङ्कल्पः",
-            "आकूतिः",
-            "➡",
-            "️",
-            "सङ्कल्पः",
-            "(",
-            "Noble",
-            "determination",
-            "/",
-            "Intent",
-            ")"
+            "आकूतिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "प्रश्नः ६: उदाहरणानुसारेण लट्-लकारस्य वाक्यानि लोट्-लकारेण परिवर्तयत —",
-          "meaning": "Convert sentences from Present Tense (Laṭ-lakāra) to Imperative Mood (Loṭ-lakāra)",
+          "sanskrit": "६. लट्-लकारस्य वाक्यानि लोट्-लकारेण परिवर्तयत",
+          "meaning": "Transform present-tense (Laṭ) sentences into imperative (Loṭ)",
           "words": [
-            "उदाहरणानुसारेण",
-            "लट्",
-            "लकारस्य",
+            "६.",
+            "लट्-लकारस्य",
             "वाक्यानि",
-            "लोट्",
-            "लकारेण",
+            "लोट्-लकारेण",
             "परिवर्तयत"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "यथा: बालिकाः नृत्यन्ति ➡️ बालिकाः नृत्यन्तु (Let the girls dance)",
-          "answer_sanskrit": "बालिकाः नृत्यन्तु",
-          "meaning": "Example: Girls dance -> Let the girls dance",
-          "hindi_gloss": "यथा: बालिकाएँ नाचती हैं ➔ बालिकाएँ नाचें",
+          "sanskrit": "बालकाः हसन्ति →",
+          "answer_sanskrit": "बालकाः हसन्तु",
+          "meaning": "Transform: बालकाः हसन्ति → बालकाः हसन्तु",
           "words": [
-            "यथा",
-            "बालिकाः",
-            "नृत्यन्ति",
-            "➡",
-            "️",
-            "बालिकाः",
-            "नृत्यन्तु",
-            "(",
-            "Let",
-            "the",
-            "girls",
-            "dance",
-            ")",
-            "बालिकाः",
-            "नृत्यन्तु"
+            "बालकाः",
+            "हसन्ति"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(क) बालकाः हसन्ति।",
-          "answer_sanskrit": "बालकाः हसन्तु।",
-          "meaning": "Boys laugh -> Let the boys laugh (Imperative: Loṭ)",
-          "hindi_gloss": "बालक हँसते हैं ➔ बालक हँसें (बालकाः हसन्तु)",
+          "sanskrit": "युवां तत्र गच्छथः →",
+          "answer_sanskrit": "युवां तत्र गच्छतम्",
+          "meaning": "Transform: युवां तत्र गच्छथः → युवां तत्र गच्छतम्",
           "words": [
-            "(",
-            "क",
-            ")",
-            "बालकाः",
-            "हसन्ति।",
-            "बालकाः",
-            "हसन्तु।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ख) युवां तत्र गच्छथः।",
-          "answer_sanskrit": "युवां तत्र गच्छतम्।",
-          "meaning": "You two go there -> May you two go there / Go there!",
-          "hindi_gloss": "तुम दोनों वहाँ जाते हो ➔ तुम दोनों वहाँ जाओ (युवां तत्र गच्छतम्)",
-          "words": [
-            "(",
-            "ख",
-            ")",
             "युवां",
             "तत्र",
-            "गच्छथः।",
-            "युवां",
-            "तत्र",
-            "गच्छतम्।"
+            "गच्छथः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) यूयं धावथ।",
-          "answer_sanskrit": "यूयं धावत।",
-          "meaning": "You all run -> Run, all of you!",
-          "hindi_gloss": "तुम सब दौड़ते हो ➔ तुम सब दौड़ो (यूयं धावत)",
+          "sanskrit": "यूयं धावथ →",
+          "answer_sanskrit": "यूयं धावत",
+          "meaning": "Transform: यूयं धावथ → यूयं धावत",
           "words": [
-            "(",
-            "ग",
-            ")",
             "यूयं",
-            "धावथ।",
-            "यूयं",
-            "धावत।"
+            "धावथ"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) आवां लिखावः।",
-          "answer_sanskrit": "आवां लिखाव। (लिखावै)",
-          "meaning": "We two write -> Let us two write!",
-          "hindi_gloss": "हम दोनों लिखते हैं ➔ हम दोनों लिखें (आवां लिखाव)",
+          "sanskrit": "आवां लिखावः →",
+          "answer_sanskrit": "आवां लिखाव",
+          "meaning": "Transform: आवां लिखावः → आवां लिखाव",
           "words": [
-            "(",
-            "घ",
-            ")",
             "आवां",
-            "लिखावः।",
-            "आवां",
-            "लिखाव।",
-            "(",
-            "लिखावै",
-            ")"
+            "लिखावः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) वयं पठामः।",
-          "answer_sanskrit": "वयं पठाम। (पठामै)",
-          "meaning": "We all read -> Let us all read!",
-          "hindi_gloss": "हम सब पढ़ते हैं ➔ हम सब पढ़ें (वयं पठाम)",
+          "sanskrit": "वयं पठामः →",
+          "answer_sanskrit": "वयं पठाम",
+          "meaning": "Transform: वयं पठामः → वयं पठाम",
           "words": [
-            "(",
-            "ङ",
-            ")",
             "वयं",
-            "पठामः।",
-            "वयं",
-            "पठाम।",
-            "(",
-            "पठामै",
-            ")"
+            "पठामः"
           ],
           "kind": "exercise-qa"
         },
         {
           "sanskrit": "भागः ४: योग्यताविस्तरः — वैदिक-परम्परा (Vedic Heritage & Context)",
-          "meaning": "Part 4: Vedic Heritage, Textual Background, and Linguistic Reflections",
-          "paragraphTranslation": "भाग ४: योग्यता-विस्तार — वैदिक परम्परा एवं भाषा-चिन्तन",
+          "meaning": "Part 4: Extended Competence — Vedic Structure Recognition",
           "words": [
             "भागः",
-            "४",
+            "४:",
             "योग्यताविस्तरः",
-            "वैदिक",
-            "परम्परा"
+            "—",
+            "वैदिक-परम्परा",
+            "(Vedic",
+            "Heritage",
+            "&",
+            "Context)"
           ],
+          "paragraphTranslation": "भाग ४: योग्यताविस्तर — वैदिक परम्परा",
           "kind": "chapter-header"
         },
         {
-          "sanskrit": "१. ऋग्वेदस्य अन्तिममण्डलस्य (दशममण्डलस्य) अन्तिमं सूक्तं 'संज्ञान-सूक्तम्' (१९१) इति प्रख्यातम् अस्ति। अस्मिन् सूक्ते आहत्य चत्वारः मन्त्राः सन्ति।",
-          "meaning": "1. The final hymn of the final (10th) Mandala of Rigveda is famous as the 'Saṁjñāna-Sūkta' (Hymn 191). It contains four mantras in total, advocating universal unity.",
-          "paragraphTranslation": "१. ऋग्वेद के अंतिम (१०वें) मण्डल का अंतिम सूक्त 'संज्ञान-सूक्त' (सूक्त १९१) कहलाता है। इसमें कुल ४ मन्त्र हैं जो सार्वभौमिक एकता का उद्घोष करते हैं।",
+          "sanskrit": "१. ऋग्वेदस्य अन्तिममण्डलस्य (दशममण्डलस्य) अन्तिमं सूक्तं 'संज्ञान-सूक्तम्' / 'संघटन-सूक्तम्' अस्ति।",
+          "meaning": "The final sukta of Rigveda's 10th Mandala is the Samjnana / Sanghatana Sukta.",
           "words": [
-            "१",
-            ".",
+            "१.",
             "ऋग्वेदस्य",
             "अन्तिममण्डलस्य",
-            "(",
-            "दशममण्डलस्य",
-            ")",
+            "(दशममण्डलस्य)",
             "अन्तिमं",
             "सूक्तं",
-            "'",
-            "संज्ञान",
-            "सूक्तम्",
-            "'",
-            "(",
-            "१९१",
-            ")",
-            "इति",
-            "प्रख्यातम्",
-            "अस्ति।",
-            "अस्मिन्",
-            "सूक्ते",
-            "आहत्य",
-            "चत्वारः",
-            "मन्त्राः",
-            "सन्ति।"
-          ]
+            "'संज्ञान-सूक्तम्'",
+            "/",
+            "'संघटन-सूक्तम्'",
+            "अस्ति।"
+          ],
+          "paragraphTranslation": "ऋग्वेद के अन्तिम (दशम) मण्डल का अन्तिम सूक्त 'संज्ञान-सूक्त / संघटन-सूक्त' है।"
         },
         {
-          "sanskrit": "२. सम्पूर्णे ऋग्वेदे आहत्य १० मण्डलानि, १०२८ सूक्तानि, १०,५५२ मन्त्राः च सन्ति। ऋग्वेदः मानवजातेः प्राचीनतमः उपलब्धः ग्रन्थः अस्ति।",
-          "meaning": "2. In the entire Rigveda, there are 10 Mandalas, 1,028 Suktas, and 10,552 Mantras. The Rigveda is the oldest extant literary heritage of humankind.",
-          "paragraphTranslation": "२. सम्पूर्ण ऋग्वेद में १० मण्डल, १०२८ सूक्त और १०,५५२ मन्त्र हैं। ऋग्वेद मानव सभ्यता का प्राचीनतम उपलब्ध ग्रन्थ है।",
+          "sanskrit": "२. सम्पूर्णे ऋग्वेदे आहत्य १० मण्डलानि, १०२८ सूक्तानि, १०,५५२ मन्त्राः सन्ति।",
+          "meaning": "The complete Rigveda comprises 10 mandalas, 1028 suktas, and 10,552 mantras.",
           "words": [
-            "२",
-            ".",
+            "२.",
             "सम्पूर्णे",
             "ऋग्वेदे",
             "आहत्य",
             "१०",
-            "मण्डलानि",
-            ",",
+            "मण्डलानि,",
             "१०२८",
-            "सूक्तानि",
-            ",",
-            "१०",
-            ",",
-            "५५२",
+            "सूक्तानि,",
+            "१०,५५२",
             "मन्त्राः",
-            "च",
-            "सन्ति।",
-            "ऋग्वेदः",
-            "मानवजातेः",
-            "प्राचीनतमः",
-            "उपलब्धः",
-            "ग्रन्थः",
-            "अस्ति।"
-          ]
+            "सन्ति।"
+          ],
+          "paragraphTranslation": "सम्पूर्ण ऋग्वेद में कुल १० मण्डल, १०२८ सूक्त और १०,५५२ मन्त्र हैं।"
         },
         {
-          "sanskrit": "३. सन्धि-नियमाः: सम् + गच्छते = सङ्गच्छते (अनुस्वार-परसवर्ण-सन्धिः) | मनः + सह = मनो सह (विसर्ग-उकार-सन्धिः) | न + आसीत् = नासीत् (दीर्घ-सन्धिः) | मन्त्र + अंशः = मन्त्रांशः (दीर्घ-सन्धिः)।",
-          "meaning": "3. Key Sandhi Rules: Sam + gacchate = Saṅgacchate | Manaḥ + saha = Mano saha | Na + āsīt = Nāsīt | Mantra + aṁśaḥ = Mantrāṁśaḥ.",
-          "paragraphTranslation": "३. प्रमुख सन्धि-नियम: सम् + गच्छते = सङ्गच्छते | मनः + सह = मनो सह | न + आसीत् = नासीत् | मन्त्र + अंशः = मन्त्रांशः।",
+          "sanskrit": "'संज्ञान-सूक्तस्य' अपरं प्रख्यातं नाम 'संघटन-सूक्तम्' अस्ति। अस्य ऋषिः आङ्गिरसः।",
+          "meaning": "The Samjnana Sukta is also famously called Sanghatana Sukta; its seer is Angirasa.",
           "words": [
-            "३",
-            ".",
-            "सन्धि",
-            "नियमाः",
-            "सम्",
-            "+",
-            "गच्छते",
-            "=",
-            "सङ्गच्छते",
-            "(",
-            "अनुस्वार",
-            "परसवर्ण",
-            "सन्धिः",
-            ")",
-            "|",
-            "मनः",
-            "+",
-            "सह",
-            "=",
-            "मनो",
-            "सह",
-            "(",
-            "विसर्ग",
-            "उकार",
-            "सन्धिः",
-            ")",
-            "|",
-            "न",
-            "+",
-            "आसीत्",
-            "=",
-            "नासीत्",
-            "(",
-            "दीर्घ",
-            "सन्धिः",
-            ")",
-            "|",
-            "मन्त्र",
-            "+",
-            "अंशः",
-            "=",
-            "मन्त्रांशः",
-            "(",
-            "दीर्घ",
-            "सन्धिः",
-            ")",
-            "।"
-          ]
+            "'संज्ञान-सूक्तस्य'",
+            "अपरं",
+            "प्रख्यातं",
+            "नाम",
+            "'संघटन-सूक्तम्'",
+            "अस्ति।",
+            "अस्य",
+            "ऋषिः",
+            "आङ्गिरसः।"
+          ],
+          "paragraphTranslation": "'संज्ञान-सूक्त' का अपर प्रसिद्ध नाम 'संघटन-सूक्त' है; इसके ऋषि आङ्गिरस हैं।"
         }
-      ],
-      "page_numbers": "2-8"
+      ]
     },
     {
       "id": "grade8_ch2",
@@ -35572,91 +35002,92 @@
     {
       "id": "grade8_ch1",
       "fileName": "grade8_ch1.txt",
-      "title": "Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम् (Pages 2–8)",
+      "title": "Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम् (Pages 1–9)",
+      "page_numbers": "Pages 1–9",
       "sentences": [
         {
           "sanskrit": "॥ प्रथमः पाठः — संगच्छध्वं संवदध्वम् ॥",
-          "meaning": "Chapter 1: Walk Together, Speak Together · Rigveda Samhita (Pages 2–8)",
-          "paragraphTranslation": "प्रथमः पाठः — संगच्छध्वं संवदध्वम् (पृष्ठ २–८)",
+          "meaning": "Chapter 1: Walk Together, Speak Together · Rigveda Saṁhitā (Pages 1–9)",
           "words": [
             "॥",
             "प्रथमः",
             "पाठः",
+            "—",
             "संगच्छध्वं",
             "संवदध्वम्",
             "॥"
           ],
+          "paragraphTranslation": "प्रथमः पाठः — संगच्छध्वं संवदध्वम् (पृष्ठ १–९)",
           "kind": "section-header"
         },
         {
           "sanskrit": "अयं पाठः ऋग्वेदस्य दशममण्डलात् सङ्कलितस्य 'संज्ञान-सूक्तस्य' (संघटन-सूक्तस्य) प्रसिद्धः मन्त्रांशः अस्ति। अत्र मानवकल्याणाय ऐक्यभावस्य, परस्परसामञ्जस्यस्य, सहकार्यस्य च उदात्तः सन्देशः दीयते।",
-          "meaning": "This chapter is from the renowned 'Saṁjñāna-Sūkta' (also known as 'Saṅghaṭana-Sūkta' or Hymn of Unity) from the 10th Mandala of Rigveda, delivering the noble message of universal solidarity, mutual harmony, and collective co-existence for human welfare.",
-          "paragraphTranslation": "यह पाठ ऋग्वेद के दसवें मण्डल से संकलित 'संज्ञान-सूक्त' (संघटन-सूक्त) का प्रसिद्ध अंश है। यहाँ मानव कल्याण हेतु एकता, आपसी तालमेल और सहयोग का उदात्त संदेश दिया गया है।",
+          "meaning": "This chapter is drawn from the renowned 'Saṁjñāna-Sūkta' (also known as Saṅghaṭana-Sūkta / Hymn of Unity) of Rigveda Mandala 10, delivering the noble message of solidarity, mutual harmony, and collective co-existence.",
           "words": [
             "अयं",
             "पाठः",
             "ऋग्वेदस्य",
             "दशममण्डलात्",
             "सङ्कलितस्य",
-            "संज्ञान",
-            "सूक्तस्य",
-            "संघटन",
-            "सूक्तस्य",
+            "'संज्ञान-सूक्तस्य'",
+            "(संघटन-सूक्तस्य)",
             "प्रसिद्धः",
             "मन्त्रांशः",
-            "अस्ति",
+            "अस्ति।",
             "अत्र",
             "मानवकल्याणाय",
-            "ऐक्यभावस्य",
-            "परस्परसामञ्जस्यस्य",
+            "ऐक्यभावस्य,",
+            "परस्परसामञ्जस्यस्य,",
             "सहकार्यस्य",
             "च",
             "उदात्तः",
             "सन्देशः",
-            "दीयते"
-          ]
+            "दीयते।"
+          ],
+          "paragraphTranslation": "यह पाठ ऋग्वेद के दसवें मण्डल से संकलित 'संज्ञान-सूक्त' (संघटन-सूक्त) का प्रसिद्ध अंश है। यहाँ एकता, आपसी तालमेल और सहयोग का उदात्त संदेश दिया गया है।"
         },
         {
           "sanskrit": "भागः १: पाठ-प्रवेशः — कक्षा-संवादः (Introductory Classroom Dialogue)",
           "meaning": "Part 1: Lesson Introduction — Classroom Dialogue on Victory through Mutual Harmony",
-          "paragraphTranslation": "भाग १: पाठ-प्रवेश — खेल उत्सव में विजय और एकता पर कक्षा-संवाद",
           "words": [
             "भागः",
-            "१",
-            "पाठ",
-            "प्रवेशः",
-            "कक्षा",
-            "संवादः"
+            "१:",
+            "पाठ-प्रवेशः",
+            "—",
+            "कक्षा-संवादः",
+            "(Introductory",
+            "Classroom",
+            "Dialogue)"
           ],
+          "paragraphTranslation": "भाग १: पाठ-प्रवेश — खेल उत्सव में विजय और एकता पर कक्षा-संवाद",
           "kind": "chapter-header"
         },
         {
-          "sanskrit": "छात्राः – नमस्ते आचार्य! अस्माकं विद्यालयस्य क्रीडोत्सवे पादकन्दुक-क्रीडायां वयं विजयं प्राप्तवन्तः।",
-          "meaning": "Students: Salutations, Teacher! We won the football match in our school's sports festival.",
-          "paragraphTranslation": "छात्र – नमस्ते आचार्य! हमारे विद्यालय के खेल उत्सव में फुटबॉल खेल में हम सब विजयी हुए हैं।",
+          "sanskrit": "छात्राः – नमस्ते आचार्य ! अस्माकं विद्यालयस्य क्रीडोत्सवे पादकन्दुक-क्रीडायां वयं विजयं प्राप्तवन्तः।",
+          "meaning": "Students – Salutations, Teacher! In our school's sports festival, we have won the football match.",
           "words": [
             "छात्राः",
+            "–",
             "नमस्ते",
             "आचार्य",
             "!",
             "अस्माकं",
             "विद्यालयस्य",
             "क्रीडोत्सवे",
-            "पादकन्दुक",
-            "क्रीडायां",
+            "पादकन्दुक-क्रीडायां",
             "वयं",
             "विजयं",
             "प्राप्तवन्तः।"
-          ]
+          ],
+          "paragraphTranslation": "छात्र – नमस्ते आचार्य जी! हमारे विद्यालय के खेल उत्सव में फुटबॉल (पादकन्दुक) के खेल में हम सबने जीत हासिल की है।"
         },
         {
           "sanskrit": "आचार्यः – वर्धापनानि, अभिनन्दनं भवताम्। अपि भवन्तः जानन्ति यत् भवतां प्रतिद्वन्द्विनः कथं पराजिताः?",
-          "meaning": "Teacher: Congratulations and blessings to you all. Do you know why your opponents were defeated?",
-          "paragraphTranslation": "आचार्य – आप सभी को बधाई और शुभकामनाएँ। क्या आप जानते हैं कि आपके प्रतिद्वंद्वी कैसे हार गए?",
+          "meaning": "Teacher – Congratulations and blessings to you all. Do you know why your opponents were defeated?",
           "words": [
             "आचार्यः",
-            "वर्धापनानि",
-            ",",
+            "–",
+            "वर्धापनानि,",
             "अभिनन्दनं",
             "भवताम्।",
             "अपि",
@@ -35666,19 +35097,18 @@
             "भवतां",
             "प्रतिद्वन्द्विनः",
             "कथं",
-            "पराजिताः",
-            "?"
-          ]
+            "पराजिताः?"
+          ],
+          "paragraphTranslation": "आचार्य – आप सबको बधाई और शुभकामनाएँ। क्या आप जानते हैं कि आपके प्रतिद्वंद्वी क्यों हार गए?"
         },
         {
-          "sanskrit": "छात्रः १ – आम्, जानामि आचार्य! अस्माकं दलस्य क्रीडकेषु परस्परं सम्यक् सामञ्जस्यम् आसीत्, किन्तु विपक्षी-दले तत् नासीत्।",
-          "meaning": "Student 1: Yes, I know, Teacher! There was excellent harmony and coordination among the players of our team, but it was missing in the opposing team.",
-          "paragraphTranslation": "छात्र 1: हाँ, मैं जानता हूँ आचार्य! हमारी टीम के खिलाड़ियों में आपस में बहुत अच्छा तालमेल (सामञ्जस्य) था, लेकिन विरोधी टीम में ऐसा नहीं था।",
+          "sanskrit": "छात्रः १ – आम्, जानामि आचार्य ! अस्माकं दलस्य क्रीडकेषु परस्परं सम्यक् सामञ्जस्यम् आसीत्, किन्तु विपक्षी-दले तत् नासीत्।",
+          "meaning": "Student 1 – Yes, I know, Teacher! There was excellent harmony among our players, but it was missing in the opposing team.",
           "words": [
             "छात्रः",
             "१",
-            "आम्",
-            ",",
+            "–",
+            "आम्,",
             "जानामि",
             "आचार्य",
             "!",
@@ -35688,22 +35118,21 @@
             "परस्परं",
             "सम्यक्",
             "सामञ्जस्यम्",
-            "आसीत्",
-            ",",
+            "आसीत्,",
             "किन्तु",
-            "विपक्षी",
-            "दले",
+            "विपक्षी-दले",
             "तत्",
             "नासीत्।"
-          ]
+          ],
+          "paragraphTranslation": "छात्र १ – हाँ, मैं जानता हूँ आचार्य जी! हमारी टीम के खिलाड़ियों में आपस में बहुत अच्छा तालमेल था, लेकिन विपक्षी टीम में ऐसा नहीं था।"
         },
         {
-          "sanskrit": "छात्रः २ – सत्यम् आचार्य! तस्य दलस्य क्रीडकेषु परस्परं मनोभेदः द्वेषभावः च आसीत्। ते अन्योन्यं सहयोगं न कृतवन्तः।",
-          "meaning": "Student 2: True, Teacher! The players of that team had mutual differences and hatred. They did not cooperate with one another.",
-          "paragraphTranslation": "छात्र 2: सत्य है आचार्य! उस टीम के खिलाड़ियों में आपस में मतभेद और द्वेष की भावना थी। उन्होंने एक-दूसरे का सहयोग नहीं किया।",
+          "sanskrit": "छात्रः २ – सत्यम् आचार्य ! तस्य दलस्य क्रीडकेषु परस्परं मनोभेदः द्वेषभावः च आसीत्। ते अन्योन्यं सहयोगं न कृतवन्तः।",
+          "meaning": "Student 2 – True, Teacher! That team had mental conflicts and hatred; they did not cooperate with one another.",
           "words": [
             "छात्रः",
             "२",
+            "–",
             "सत्यम्",
             "आचार्य",
             "!",
@@ -35720,47 +35149,45 @@
             "सहयोगं",
             "न",
             "कृतवन्तः।"
-          ]
+          ],
+          "paragraphTranslation": "छात्र २ – सच है आचार्य जी! उस टीम के खिलाड़ियों में वैचारिक मतभेद और द्वेष था। उन्होंने एक-दूसरे का सहयोग नहीं किया।"
         },
         {
-          "sanskrit": "आचार्यः – तर्हि वदन्तु, विजयप्राप्त्यर्थं किं किम् आवश्यकम्?",
-          "meaning": "Teacher: Then tell me, what is necessary to achieve victory?",
-          "paragraphTranslation": "आचार्य – तो बताइए, विजय प्राप्त करने के लिए क्या-क्या आवश्यक है?",
+          "sanskrit": "आचार्यः – तर्हि वदन्तु, विजयप्राप्त्यर्थं किम् आवश्यकम्?",
+          "meaning": "Teacher – Then tell me, what is required to achieve victory?",
           "words": [
             "आचार्यः",
+            "–",
             "तर्हि",
-            "वदन्तु",
-            ",",
+            "वदन्तु,",
             "विजयप्राप्त्यर्थं",
-            "किं",
             "किम्",
-            "आवश्यकम्",
-            "?"
-          ]
+            "आवश्यकम्?"
+          ],
+          "paragraphTranslation": "आचार्य – तो बताइए, जीत हासिल करने के लिए क्या आवश्यक है?"
         },
         {
           "sanskrit": "छात्राः – मिलित्वा कार्यकरणम्, एकता, परस्परं सामञ्जस्यं च आवश्यकम्।",
-          "meaning": "Students: Working together, unity, and mutual harmony are necessary.",
-          "paragraphTranslation": "छात्र – मिलकर कार्य करना, एकता और आपस में अच्छा तालमेल (सामंजस्य) आवश्यक है।",
+          "meaning": "Students – Working together, unity, and mutual harmony are required.",
           "words": [
             "छात्राः",
+            "–",
             "मिलित्वा",
-            "कार्यकरणम्",
-            ",",
-            "एकता",
-            ",",
+            "कार्यकरणम्,",
+            "एकता,",
             "परस्परं",
             "सामञ्जस्यं",
             "च",
             "आवश्यकम्।"
-          ]
+          ],
+          "paragraphTranslation": "छात्र – मिलकर काम करना, एकता और आपस में अच्छा तालमेल आवश्यक है।"
         },
         {
           "sanskrit": "आचार्यः – सत्यम् एव उक्तम्। एष एव सन्देशः वेदे 'संगच्छध्वं संवदध्वम्' इत्येवं प्रदत्तः।",
-          "meaning": "Teacher: Well said. This exact message is given in the Vedas as 'Walk together, speak together'.",
-          "paragraphTranslation": "आचार्य: बिल्कुल सही कहा। यही संदेश वेद में 'संगच्छध्वं संवदध्वम्' (साथ चलो, साथ बोलो) के रूप में दिया गया है।",
+          "meaning": "Teacher – Well said. This exact message is delivered in the Vedas as 'Sangachhadhvam Samvadadhvam'.",
           "words": [
             "आचार्यः",
+            "–",
             "सत्यम्",
             "एव",
             "उक्तम्।",
@@ -35768,57 +35195,50 @@
             "एव",
             "सन्देशः",
             "वेदे",
-            "'",
-            "संगच्छध्वं",
-            "संवदध्वम्",
-            "'",
+            "'संगच्छध्वं",
+            "संवदध्वम्'",
             "इत्येवं",
             "प्रदत्तः।"
-          ]
+          ],
+          "paragraphTranslation": "आचार्य – बिल्कुल सही कहा। यही संदेश वेदों में 'संगच्छध्वं संवदध्वम्' के रूप में दिया गया है।"
         },
         {
-          "sanskrit": "छात्राः – आचार्य! कस्मात् वेदात् गृहीतः एष सन्देशः? कः च अस्य अभिप्रायः?",
-          "meaning": "Students: Teacher, from which Veda is this message taken? And what does it mean?",
-          "paragraphTranslation": "छात्र: आचार्य! यह संदेश किस वेद से लिया गया है? और इसका क्या अर्थ है?",
+          "sanskrit": "छात्रः ३ – आचार्य ! कस्मात् वेदात् गृहीतः एष सन्देशः? कः च अस्य अभिप्रायः?",
+          "meaning": "Student 3 – Teacher! From which Veda has this message been taken? And what is its real intent?",
           "words": [
-            "छात्राः",
+            "छात्रः",
+            "३",
+            "–",
             "आचार्य",
             "!",
             "कस्मात्",
             "वेदात्",
             "गृहीतः",
             "एष",
-            "सन्देशः",
-            "?",
+            "सन्देशः?",
             "कः",
             "च",
             "अस्य",
-            "अभिप्रायः",
-            "?"
-          ]
+            "अभिप्रायः?"
+          ],
+          "paragraphTranslation": "छात्र ३ – आचार्य जी! यह संदेश किस वेद से लिया गया है? और इसका क्या अर्थ है?"
         },
         {
           "sanskrit": "आचार्यः – ऋग्वेदे - 'संज्ञान-सूक्तस्य' एषः मन्त्रांशः। एतत् 'संघटन-सूक्तम्' इत्यपि प्रख्यातम्। आगच्छन्तु, वयम् अस्य सूक्तस्य प्रसिद्धान् त्रीन् मन्त्रान् पठामः।",
-          "meaning": "Teacher: This is a part of the 'Saṁjñāna-Sūkta' from the Rigveda. It is also famously known as the 'Saṅghaṭana-Sūkta' (Hymn of Unity). Come, let us read three famous mantras of this hymn.",
-          "paragraphTranslation": "आचार्य: यह ऋग्वेद के 'संज्ञान-सूक्त' का एक मंत्रांश है। इसे 'संघटन-सूक्त' के नाम से भी जाना जाता है। आइए, हम इस सूक्त के तीन प्रसिद्ध मंत्रों को पढ़ते हैं।",
+          "meaning": "Teacher – This is part of the 'Samjnana-Sukta' from Rigveda, also known as 'Sanghatana-Sukta'. Come, let us read its three famous mantras.",
           "words": [
             "आचार्यः",
+            "–",
             "ऋग्वेदे",
-            "'",
-            "संज्ञान",
-            "सूक्तस्य",
-            "'",
+            "-",
+            "'संज्ञान-सूक्तस्य'",
             "एषः",
             "मन्त्रांशः।",
             "एतत्",
-            "'",
-            "संघटन",
-            "सूक्तम्",
-            "'",
+            "'संघटन-सूक्तम्'",
             "इत्यपि",
             "प्रख्यातम्।",
-            "आगच्छन्तु",
-            ",",
+            "आगच्छन्तु,",
             "वयम्",
             "अस्य",
             "सूक्तस्य",
@@ -35826,29 +35246,29 @@
             "त्रीन्",
             "मन्त्रान्",
             "पठामः।"
-          ]
+          ],
+          "paragraphTranslation": "आचार्य – यह ऋग्वेद के 'संज्ञान-सूक्त' का मन्त्रांश है। इसे 'संघटन-सूक्त' भी कहते हैं। आइए, तीन प्रसिद्ध मन्त्र पढ़ते हैं।"
         },
         {
-          "sanskrit": "भागः २: ऋग्वैदिक-मन्त्राः (संज्ञान-सूक्तम् / संघटन-सूक्तम् — Rigveda 10.191.2-4)",
-          "meaning": "Part 2: Core Rigvedic Mantras — The Universal Hymn of Unity and Harmonious Coexistence",
-          "paragraphTranslation": "भाग २: मूल ऋग्वैदिक मन्त्र — संज्ञान-सूक्त (संघटन-सूक्त)",
+          "sanskrit": "भागः २: ऋग्वैदिक-मन्त्राः — संज्ञान-सूक्तम् / संघटन-सूक्तम् (Rigveda 10.191.2–4)",
+          "meaning": "Part 2: Three Rigvedic Unity Mantras with Padaccheda, Anvaya, and Translations",
           "words": [
             "भागः",
-            "२",
-            "ऋग्वैदिक",
-            "मन्त्राः",
-            "संज्ञान",
-            "सूक्तम्",
-            "संघटन",
-            "सूक्तम्"
+            "२:",
+            "ऋग्वैदिक-मन्त्राः",
+            "—",
+            "संज्ञान-सूक्तम्",
+            "/",
+            "संघटन-सूक्तम्",
+            "(Rigveda",
+            "10.191.2–4)"
           ],
+          "paragraphTranslation": "भाग २: ऋग्वैदिक मन्त्र — संज्ञान-सूक्त (ऋग्वेद १०.१९१.२–४)",
           "kind": "chapter-header"
         },
         {
           "sanskrit": "संगच्छध्वं संवदध्वं सं वो मनांसि जानताम् । देवा भागं यथा पूर्वे संजानाना उपासते ॥ १ ॥",
-          "meaning": "O humans! Walk together in harmony, speak together in one voice, and let your minds be unified in understanding. Just as the ancient deities in complete agreement and harmony accepted their respective shares of offerings and performed their cosmic duties, you too should live and work together in unity.",
-          "paragraphTranslation": "Line 1 Hindi: तुम सब मिलकर एक साथ आगे बढ़ो (साथ चलो), आपस में प्रेम से बातचीत करो (एक स्वर में बोलो) और तुम्हारे मन एक समान होकर एक-दूसरे को जानें।\nLine 2 Hindi: जिस प्रकार प्राचीन काल में देवता एकमत होकर यज्ञ के अपने-अपने भाग को स्वीकार करते हुए अपने कर्तव्यों का निर्वाह करते थे, (वैसे ही तुम भी मिलकर रहो)।",
-          "transliteration": "Saṁgacchadhvaṁ saṁvadadhvaṁ saṁ vo manāṁsi jānatām | Devā bhāgaṁ yathā pūrve saṁjānānā upāsate || 1 ||",
+          "meaning": "O humans! May you walk together, speak in unison, and grasp thoughts collectively — just as the ancient deities in harmony accepted their sacrificial offerings.",
           "words": [
             "संगच्छध्वं",
             "संवदध्वं",
@@ -35866,26 +35286,27 @@
             "॥",
             "१",
             "॥"
-          ]
+          ],
+          "paragraphTranslation": "(वेद के ऋषि आङ्गिरस मनुष्यों को उपदेश देते हैं) हे मनुष्यों! तुम सब मिलकर एक साथ आगे बढ़ो, एक स्वर में प्रेम से बोलो और अपने मनों को एक समान रूप से समझो। जिस प्रकार प्राचीन काल में देवता एकमत होकर यज्ञ के अपने-अपने भाग को प्रेमपूर्वक स्वीकार करते थे, वैसे ही तुम भी मिलकर रहो।",
+          "kind": "shloka"
         },
         {
           "sanskrit": "मन्त्र १ — पदच्छेदः अन्वयः च",
           "meaning": "Mantra 1: Word Split (Padaccheda) and Syntax Order (Anvaya)",
-          "paragraphTranslation": "पदच्छेदः: संगच्छध्वम्, संवदध्वम्, सम्, वः, मनांसि, जानताम्, देवाः, भागम्, यथा, पूर्वे, संजानानाः, उपासते।\nअन्वयः: (यूयम्) संगच्छध्वं संवदध्वं वः मनांसि संजानताम्। यथा पूर्वे देवाः भागं संजानानाः उपासते।",
           "words": [
             "मन्त्र",
             "१",
+            "—",
             "पदच्छेदः",
             "अन्वयः",
             "च"
           ],
+          "paragraphTranslation": "पदच्छेदः – संगच्छध्वम् संवदध्वम् सम् वः मनांसि जानताम् देवाः भागम् यथा पूर्वे संजानानाः उपासते।\nअन्वयः – (यूयम्) संगच्छध्वं संवदध्वं वः मनांसि संजानताम्। यथा पूर्वे देवाः भागं संजानानाः उपासते।",
           "kind": "exercise-note"
         },
         {
           "sanskrit": "समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम् । समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि ॥ २ ॥",
-          "meaning": "Let your deliberations be unified, let your assemblies and resolutions be common, let your minds be harmonious, and let your hearts beat together in unison. I consecrate you all with a common collective purpose and offer a shared prayer for your absolute unity.",
-          "paragraphTranslation": "Line 1 Hindi: इन (सब मनुष्यों) के विचार समान हों, इनकी सभाएँ (लक्ष्य) समान हों, इनका मन सौहार्दपूर्ण हो और इनका अंतःकरण (बुद्धिजन्य ज्ञान) एक साथ एकीकृत हो।\nLine 2 Hindi: मैं तुम सबको एक समान उद्देश्य से संस्कारित करता हूँ और तुम्हें एक समान यज्ञीय आहुति (सामूहिक प्रार्थना) से जोड़ता हूँ।",
-          "transliteration": "Samāno mantraḥ samitiḥ samānī samānaṁ manaḥ saha cittameṣām | Samānaṁ mantramabhimantraye vaḥ samānena vo haviṣā juhomi || 2 ||",
+          "meaning": "May your deliberations be uniform, assemblies common, and minds and intellect in unison. I consecrate you with common purposes and unified offerings.",
           "words": [
             "समानो",
             "मन्त्रः",
@@ -35906,26 +35327,27 @@
             "॥",
             "२",
             "॥"
-          ]
+          ],
+          "paragraphTranslation": "तुम सबके विचार समान हों, तुम्हारी सभाएँ एक समान हों, तुम्हारे मन और बुद्धि एक साथ जुड़े हों। मैं तुम्हें समान विचारों से अभिमन्त्रित करता हूँ और सामूहिक आहुति के साथ यज्ञ सिद्ध करता हूँ।",
+          "kind": "shloka"
         },
         {
           "sanskrit": "मन्त्र २ — पदच्छेदः अन्वयः च",
           "meaning": "Mantra 2: Word Split (Padaccheda) and Syntax Order (Anvaya)",
-          "paragraphTranslation": "पदच्छेदः: समानः, मन्त्रः, समितिः, समानी, समानम्, मनः, सह, चित्तम्, एषाम्, समानम्, मन्त्रम्, अभिमन्त्रये, वः, समानेन, वः, हविषा, जुहोमि।\nअन्वयः: एषां मन्त्रः समानः, समितिः समानी, मनः समानं, चित्तं सह (अस्तु)। वः समानं मन्त्रम् अभिमन्त्रये वः समानेन हविषा जुहोमि।",
           "words": [
             "मन्त्र",
             "२",
+            "—",
             "पदच्छेदः",
             "अन्वयः",
             "च"
           ],
+          "paragraphTranslation": "पदच्छेदः – समानः मन्त्रः समितिः समानी समानम् मनः सह चित्तम् एषाम् समानम् मन्त्रम् अभिमन्त्रये वः समानेन वः हविषा जुहोमि।\nअन्वयः – एषां मन्त्रः समानः, समितिः समानी, मनः समानं, चित्तं सह (अस्तु)। वः समानं मन्त्रम् अभिमन्त्रये वः समानेन हविषा जुहोमि।",
           "kind": "exercise-note"
         },
         {
           "sanskrit": "समानी व आकूतिः समाना हृदयानि वः । समानमस्तु वो मनो यथा वः सुसहासति ॥ ३ ॥",
-          "meaning": "O humans! Let your determinations be common, let your hearts be full of mutual harmony, and let your minds think in alignment, so that your collective co-existence and unity may be beautifully perfect.",
-          "paragraphTranslation": "Line 1 Hindi: हे मनुष्यों! तुम्हारा संकल्प (दृढ़ निश्चय) एक समान हो, तुम्हारे हृदय सामंजस्यपूर्ण (आपसी सद्भाव से युक्त) हों।\nLine 2 Hindi: और तुम्हारा मन एक जैसा हो, जिससे तुम्हारा यह संगठन (साथ रहना) अत्यंत सुंदर और सुदृढ़ हो सके।",
-          "transliteration": "Samānī va ākūtiḥ samānā hṛdayāni vaḥ | Samānamastu vo mano yathā vaḥ susahāsati || 3 ||",
+          "meaning": "May your resolutions be identical, hearts beat in harmony, and minds think as one, so your collective unit functions in excellence.",
           "words": [
             "समानी",
             "व",
@@ -35943,19 +35365,22 @@
             "॥",
             "३",
             "॥"
-          ]
+          ],
+          "paragraphTranslation": "तुम्हारे संकल्प समान हों, हृदय सौहार्द से भरे हों, और मन एक समान तालमेल वाले हों, जिससे तुम्हारा सामूहिक संगठन सुदृढ़ बना रहे।",
+          "kind": "shloka"
         },
         {
           "sanskrit": "मन्त्र ३ — पदच्छेदः अन्वयः च",
           "meaning": "Mantra 3: Word Split (Padaccheda) and Syntax Order (Anvaya)",
-          "paragraphTranslation": "पदच्छेदः: समानी, वः, आकूतिः, समाना, हृदयानि, वः, समानम्, अस्तु, वः, मनः, यथा, वः, सु, सह, असति।\nअन्वयः: (हे मानवाः !) वः आकूतिः समानी (अस्तु)। वः हृदयानि समाना (सन्तु)। यथा वः सह सु असति, (तथा) वः मनः समानम् अस्तु।",
           "words": [
             "मन्त्र",
             "३",
+            "—",
             "पदच्छेदः",
             "अन्वयः",
             "च"
           ],
+          "paragraphTranslation": "पदच्छेदः – समानी वः आकूतिः समाना हृदयानि वः समानम् अस्तु वः मनः यथा वः सु सह असति।\nअन्वयः – (हे मानवाः !) वः आकूतिः समानी (अस्तु)। वः हृदयानि समाना (सन्तु)। यथा वः सह सु असति, (तथा) वः मनः समानम् अस्तु।",
           "kind": "exercise-note"
         },
         {
@@ -35963,31 +35388,30 @@
           "meaning": "Comprehensive Vocabulary Guide with Sanskrit Synonyms, Hindi Meanings, and English Translations",
           "words": [
             "शब्दार्थाः",
-            "Complete",
+            "(Complete",
             "Vocabulary",
-            "Synonyms"
+            "&",
+            "Synonyms)"
           ],
           "kind": "glossary-header"
         },
         {
           "sanskrit": "संगच्छध्वम्",
-          "sanskrit_gloss": "मिलित्वा गच्छत / चलत",
+          "sanskrit_gloss": "मिलित्वा गच्छत",
           "hindi_gloss": "मिलकर चलो",
-          "meaning": "May you walk together in harmony",
+          "meaning": "May you walk together",
           "words": [
             "संगच्छध्वम्",
             "मिलित्वा",
-            "गच्छत",
-            "/",
-            "चलत"
+            "गच्छत"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "संवदध्वम्",
           "sanskrit_gloss": "एकस्वरेण वदत",
-          "hindi_gloss": "सहमतिपूर्वक बोलें (एक स्वर में बोलें)",
-          "meaning": "May you speak together in one voice",
+          "hindi_gloss": "एक स्वर में (सहमति से) बोलो",
+          "meaning": "May you speak in one voice",
           "words": [
             "संवदध्वम्",
             "एकस्वरेण",
@@ -35998,20 +35422,19 @@
         {
           "sanskrit": "समवेतस्वरेण",
           "sanskrit_gloss": "सम्मिलित-स्वरेण",
-          "hindi_gloss": "सम्मिलित ध्वनि से (एक साथ स्वर मिलाकर)",
+          "hindi_gloss": "सामूहिक स्वर से",
           "meaning": "By chanting in unison",
           "words": [
             "समवेतस्वरेण",
-            "सम्मिलित",
-            "स्वरेण"
+            "सम्मिलित-स्वरेण"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "मनांसि",
           "sanskrit_gloss": "चित्तानि",
-          "hindi_gloss": "मनों को (हृदय और चित्त)",
-          "meaning": "Minds / Thoughts",
+          "hindi_gloss": "मनों को",
+          "meaning": "Minds",
           "words": [
             "मनांसि",
             "चित्तानि"
@@ -36020,90 +35443,68 @@
         },
         {
           "sanskrit": "जानताम्",
-          "sanskrit_gloss": "जानन्तु / अवगच्छन्तु",
+          "sanskrit_gloss": "जानन्तु",
           "hindi_gloss": "जानें / समझें",
-          "meaning": "May you know / understand similarly",
+          "meaning": "May you know / grasp",
           "words": [
             "जानताम्",
-            "जानन्तु",
-            "/",
-            "अवगच्छन्तु"
+            "जानन्तु"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "देवाः",
-          "sanskrit_gloss": "ब्रह्माण्डीय-शक्तयः / सुराः",
-          "hindi_gloss": "सृष्टि की मूलभूत शक्तियाँ / देवता",
-          "meaning": "Cosmic forces / Celestial deities",
+          "sanskrit_gloss": "ब्रह्माण्डीय-शक्तयः",
+          "hindi_gloss": "ब्रह्मांडीय शक्तियाँ / देवता",
+          "meaning": "Cosmic forces / Celestial entities",
           "words": [
             "देवाः",
-            "ब्रह्माण्डीय",
-            "शक्तयः",
-            "/",
-            "सुराः"
+            "ब्रह्माण्डीय-शक्तयः"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "संजानानाः",
-          "sanskrit_gloss": "एकमनसः भूत्वा / ऐक्यभावेन",
-          "hindi_gloss": "एक विचार वाले होकर / एकमत होकर",
-          "meaning": "Being amicable / In total agreement",
+          "sanskrit_gloss": "एकमनसः भूत्वा",
+          "hindi_gloss": "एकमत होकर",
+          "meaning": "Being amicable / In agreement",
           "words": [
             "संजानानाः",
             "एकमनसः",
-            "भूत्वा",
-            "/",
-            "ऐक्यभावेन"
+            "भूत्वा"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "उपासते",
-          "sanskrit_gloss": "सेवन्ते / गृह्णन्ति",
-          "hindi_gloss": "श्रद्धापूर्वक कर्तव्य निर्वहण / स्वीकार करते हैं",
-          "meaning": "Devotedly performing duties / Accepting offerings",
+          "sanskrit_gloss": "सेवन्ते / निर्वहन्ति",
+          "hindi_gloss": "श्रद्धापूर्वक कर्तव्य निभाते हैं",
+          "meaning": "Devotedly performing duty",
           "words": [
             "उपासते",
             "सेवन्ते",
             "/",
-            "गृह्णन्ति"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "अभ्युदयम्",
-          "sanskrit_gloss": "अभिवृद्धिः / लौकिकोन्नतिः",
-          "hindi_gloss": "लौकिक उन्नति और समृद्धि",
-          "meaning": "Elevation and worldly prosperity",
-          "words": [
-            "अभ्युदयम्",
-            "अभिवृद्धिः",
-            "/",
-            "लौकिकोन्नतिः"
+            "निर्वहन्ति"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "मन्त्रः",
-          "sanskrit_gloss": "विचारः / चिन्तनम् / परामर्शः",
-          "hindi_gloss": "विचार / चिन्तन / परामर्श",
-          "meaning": "Contemplation / Thought / Deliberation",
+          "sanskrit_gloss": "विचारः / चिन्तनम्",
+          "hindi_gloss": "विचार / सोच",
+          "meaning": "Contemplation / Thought",
           "words": [
             "मन्त्रः",
             "विचारः",
             "/",
-            "चिन्तनम्",
-            "/",
-            "परामर्शः"
+            "चिन्तनम्"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "समितिः",
           "sanskrit_gloss": "समाना प्राप्तिः / सभा",
-          "hindi_gloss": "समान सिद्धि / सभा (परिषद)",
+          "hindi_gloss": "साझा लक्ष्य / सभा",
           "meaning": "Common resolutions / Assembly",
           "words": [
             "समितिः",
@@ -36116,157 +35517,70 @@
         },
         {
           "sanskrit": "वः",
-          "sanskrit_gloss": "युष्मभ्यम् / युष्माकम्",
+          "sanskrit_gloss": "युष्मभ्यम्",
           "hindi_gloss": "तुम्हारे लिए / तुम्हारा",
           "meaning": "For you / Your",
           "words": [
             "वः",
-            "युष्मभ्यम्",
-            "/",
-            "युष्माकम्"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "अभिमन्त्रये",
-          "sanskrit_gloss": "संस्कृत्य प्रचारयामि / उपदिशामि",
-          "hindi_gloss": "अभिमन्त्रित करके प्रकट करता हूँ / संस्कारित करता हूँ",
-          "meaning": "Consecrate and propagate / Instill",
-          "words": [
-            "अभिमन्त्रये",
-            "संस्कृत्य",
-            "प्रचारयामि",
-            "/",
-            "उपदिशामि"
+            "युष्मभ्यम्"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "हविषा",
-          "sanskrit_gloss": "प्रार्थनापूर्वकेण समर्पणेन / हविर्द्रव्येण",
-          "hindi_gloss": "प्रार्थनापूर्वक यज्ञाहुति द्वारा",
-          "meaning": "By oblatory prayers / Sacrificial offerings",
+          "sanskrit_gloss": "प्रार्थनापूर्वक-समर्पणेन",
+          "hindi_gloss": "यज्ञाहुति द्वारा / समर्पण से",
+          "meaning": "By oblatory prayers",
           "words": [
             "हविषा",
-            "प्रार्थनापूर्वकेण",
-            "समर्पणेन",
-            "/",
-            "हविर्द्रव्येण"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "जुहोमि",
-          "sanskrit_gloss": "ज्ञानकर्ममयं यज्ञं साधयामि / हवनं करोमि",
-          "hindi_gloss": "दिव्य यज्ञ कर्म को साधता हूँ / आहुति देता हूँ",
-          "meaning": "Performing divine offerings / Sacred rituals",
-          "words": [
-            "जुहोमि",
-            "ज्ञानकर्ममयं",
-            "यज्ञं",
-            "साधयामि",
-            "/",
-            "हवनं",
-            "करोमि"
+            "प्रार्थनापूर्वक-समर्पणेन"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "आकूतिः",
-          "sanskrit_gloss": "सङ्कल्पः / अभीप्सितम्",
-          "hindi_gloss": "संकल्प / उच्च अभिलाषा",
-          "meaning": "Noble resolution / Intent",
+          "sanskrit_gloss": "सङ्कल्पः",
+          "hindi_gloss": "दृढ़ निश्चय / संकल्प",
+          "meaning": "Resolution / Intent",
           "words": [
             "आकूतिः",
-            "सङ्कल्पः",
-            "/",
-            "अभीप्सितम्"
+            "सङ्कल्पः"
           ],
           "kind": "glossary"
         },
         {
-          "sanskrit": "सु सह असति",
-          "sanskrit_gloss": "सुसङ्घटितः भवेत् / शोभनं सहजीवनं स्यात्",
-          "hindi_gloss": "सुसङ्घटित हो / सुंदर सहअस्तित्व हो",
-          "meaning": "May you be beautifully united / Harmonious coexistence",
+          "sanskrit": "सुसह असति",
+          "sanskrit_gloss": "सुसङ्घटितः भवेत्",
+          "hindi_gloss": "अच्छी तरह संगठित हो",
+          "meaning": "May you be united strongly",
           "words": [
-            "सु",
-            "सह",
+            "सुसह",
             "असति",
             "सुसङ्घटितः",
-            "भवेत्",
-            "/",
-            "शोभनं",
-            "सहजीवनं",
-            "स्यात्"
+            "भवेत्"
           ],
           "kind": "glossary"
         },
         {
-          "sanskrit": "संहिता",
-          "sanskrit_gloss": "मूलमन्त्रपाठः",
-          "hindi_gloss": "मूल वैदिक मन्त्र पाठ",
-          "meaning": "Original Vedic text / Collection",
-          "words": [
-            "संहिता",
-            "मूलमन्त्रपाठः"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "ब्रह्मणा",
-          "sanskrit_gloss": "सृष्टिकर्त्रा परमेश्वरेण",
-          "hindi_gloss": "निर्माता परमात्मा के द्वारा",
-          "meaning": "By the creator of the universe",
-          "words": [
-            "ब्रह्मणा",
-            "सृष्टिकर्त्रा",
-            "परमेश्वरेण"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "निरवहन्",
-          "sanskrit_gloss": "निर्वाहम् अकुर्वन्",
-          "hindi_gloss": "निर्वाह किया (दायित्व निभाया)",
-          "meaning": "Took responsibility / Carried out duties",
-          "words": [
-            "निरवहन्",
-            "निर्वाहम्",
-            "अकुर्वन्"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "पाठ्यपुस्तकस्य अभ्यासाः (Solved Textbook Exercises)",
-          "meaning": "Complete Solved Exercises for Chapter 1 with Detailed Sanskrit Answers and English Meanings",
+          "sanskrit": "पाठ्यपुस्तकस्य अभ्यासाः (Solved Textbook Exercises · Pages 7–8)",
+          "meaning": "Complete Solved Exercises for Chapter 1 with Detailed Sanskrit Answers",
           "words": [
             "पाठ्यपुस्तकस्य",
             "अभ्यासाः",
-            "Solved",
-            "Exercises"
+            "(Solved",
+            "Textbook",
+            "Exercises",
+            "·",
+            "Pages",
+            "7–8)"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "प्रश्नः १: संज्ञानसूक्तं सस्वरं पठत स्मरत लिखत च।",
-          "answer_sanskrit": "संज्ञान-सूक्तस्य (ऋग्वेद १०.१९१.२-४) त्रयः मन्त्राः सस्वरं पठनीयाः, कण्ठस्थीकरणीयाः, अभ्यासपुस्तिकायां च लेखनीयाः:\n१. संगच्छध्वं संवदध्वं सं वो मनांसि जानताम् । देवा भागं यथा पूर्वे संजानाना उपासते ॥\n२. समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम् । समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि ॥\n३. समानी व आकूतिः समाना हृदयानि वः । समानमस्तु वो मनो यथा वः सुसहासति ॥",
-          "meaning": "Recite the three mantras of the Samjnana Sukta rhythmically, memorize them, and write them down accurately in the notebook.",
-          "hindi_gloss": "संज्ञान-सूक्त के तीनों मन्त्रों का सस्वर पाठ करें, उन्हें याद करें और अपनी अभ्यास पुस्तिका में लिखें।",
+          "sanskrit": "२. अधोलिखितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखत",
+          "meaning": "Answer the following questions in complete sentences",
           "words": [
-            "संज्ञानसूक्तं",
-            "सस्वरं",
-            "पठत",
-            "स्मरत",
-            "लिखत",
-            "च"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "प्रश्नः २: अधोलिखितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखत —",
-          "meaning": "Answer the following questions in complete Sanskrit sentences",
-          "words": [
+            "२.",
             "अधोलिखितानां",
             "प्रश्नानाम्",
             "उत्तराणि",
@@ -36277,130 +35591,68 @@
         },
         {
           "sanskrit": "(क) सर्वेषां मनः कीदृशं भवेत्?",
-          "answer_sanskrit": "सर्वेषां मनः समानं सामञ्जस्ययुतं च भवेत्।",
-          "meaning": "Everyone's mind should be harmonious and unified in thought.",
-          "hindi_gloss": "सभी का मन समान और सामंजस्यपूर्ण (एक विचार वाला) होना चाहिए।",
+          "answer_sanskrit": "सर्वेषां मनः समानं (सामञ्जस्ययुतम् एकरूपं च) भवेत्।",
+          "meaning": "Everyone's mind should be equal (harmonious and uniform).",
+          "hindi_gloss": "सभी का मन समान (सामंजस्ययुक्त और एकरूप) होना चाहिए।",
           "words": [
-            "(",
-            "क",
-            ")",
+            "(क)",
             "सर्वेषां",
             "मनः",
             "कीदृशं",
-            "भवेत्",
-            "?",
-            "सर्वेषां",
-            "मनः",
-            "समानं",
-            "सामञ्जस्ययुतं",
-            "च",
-            "भवेत्।"
+            "भवेत्?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) 'सङ्गच्छध्वं संवदध्वम्' इत्यस्य कः अभिप्रायः?",
-          "answer_sanskrit": "सङ्गच्छध्वं संवदध्वम् इत्यस्य अभिप्रायः अस्ति यत् हे मानवाः! यूयं सर्वे समाजे मिलित्वा अग्रे गच्छत तथा परस्परं सम्यक् विचारविनिमयं कुर्वन्तः एकस्वरेण वदत।",
-          "meaning": "It means: O humans! You all should walk together progressively in society and exchange your thoughts constructively, speaking in one collective voice.",
-          "hindi_gloss": "'सङ्गच्छध्वं संवदध्वम्' का अर्थ है कि हे मनुष्यों! तुम सब समाज में मिलकर आगे बढ़ो और आपस में विचारों का आदान-प्रदान करते हुए एक स्वर में बोलो।",
+          "sanskrit": "(ख) सङ्गच्छध्वं संवदध्वम् इत्यस्य कः अभिप्रायः?",
+          "answer_sanskrit": "सङ्गच्छध्वं संवदध्वम् इत्यस्य अभिप्रायः अस्ति यत् मानवाः मिलित्वा अग्रे गच्छन्तु तथा च परस्परं विचारविनिमयं कुर्वन्तः एकस्वरेण वदन्तु।",
+          "meaning": "Humans should advance together and, exchanging thoughts, speak with one voice.",
+          "hindi_gloss": "मनुष्य मिलकर आगे बढ़ें तथा विचार-विनिमय करते हुए एक स्वर में बोलें।",
           "words": [
-            "(",
-            "ख",
-            ")",
-            "'",
+            "(ख)",
             "सङ्गच्छध्वं",
             "संवदध्वम्",
-            "'",
             "इत्यस्य",
             "कः",
-            "अभिप्रायः",
-            "?",
-            "सङ्गच्छध्वं",
-            "संवदध्वम्",
-            "इत्यस्य",
-            "अभिप्रायः",
-            "अस्ति",
-            "यत्",
-            "हे",
-            "मानवाः",
-            "!",
-            "यूयं",
-            "सर्वे",
-            "समाजे",
-            "मिलित्वा",
-            "अग्रे",
-            "गच्छत",
-            "तथा",
-            "परस्परं",
-            "सम्यक्",
-            "विचारविनिमयं",
-            "कुर्वन्तः",
-            "एकस्वरेण",
-            "वदत।"
+            "अभिप्रायः?"
           ],
           "kind": "exercise-qa"
         },
         {
           "sanskrit": "(ग) सर्वे किं परित्यज्य ऐक्यभावेन जीवेयुः?",
-          "answer_sanskrit": "सर्वे परस्परं मनोभेदं द्वेषभावं वैमनस्यं च परित्यज्य ऐक्यभावेन जीवेयुः।",
-          "meaning": "Everyone should discard mental differences, hatred, and hostility to live together in unity.",
-          "hindi_gloss": "सभी को आपस के मतभेद, द्वेष और वैमनस्य को त्यागकर एकता के भाव से जीना चाहिए।",
+          "answer_sanskrit": "सर्वे वैमनस्यं (मनोभेदं) परित्यज्य ऐक्यभावेन जीवेयुः।",
+          "meaning": "All should abandon discord (mental conflict) and live in unity.",
+          "hindi_gloss": "सभी वैमनस्य (मनोभेद) छोड़कर एकता से जीएँ।",
           "words": [
-            "(",
-            "ग",
-            ")",
+            "(ग)",
             "सर्वे",
             "किं",
             "परित्यज्य",
             "ऐक्यभावेन",
-            "जीवेयुः",
-            "?",
-            "सर्वे",
-            "परस्परं",
-            "मनोभेदं",
-            "द्वेषभावं",
-            "वैमनस्यं",
-            "च",
-            "परित्यज्य",
-            "ऐक्यभावेन",
-            "जीवेयुः।"
+            "जीवेयुः?"
           ],
           "kind": "exercise-qa"
         },
         {
           "sanskrit": "(घ) अस्मिन् पाठे का प्रेरणा अस्ति?",
-          "answer_sanskrit": "अस्मिन् पाठे संघटितरूपेण सहजीवनस्य, एकतायाः, परस्परं सामञ्जस्यस्य च प्रेरणा अस्ति।",
-          "meaning": "This lesson inspires collective co-existence, absolute unity, and mutual harmony.",
-          "hindi_gloss": "इस पाठ में संगठित होकर साथ जीने, एकता और आपसी तालमेल की प्रेरणा है।",
+          "answer_sanskrit": "अस्मिन् पाठे सङ्घटितरूपेण सहजीवनस्य, एकतायाः, परस्परं सामञ्जस्यस्य च प्रेरणा अस्ति।",
+          "meaning": "Inspiration for organized co-existence, unity, and mutual harmony.",
+          "hindi_gloss": "संगठित सहजीवन, एकता और परस्पर सामंजस्य की प्रेरणा।",
           "words": [
-            "(",
-            "घ",
-            ")",
+            "(घ)",
             "अस्मिन्",
             "पाठे",
             "का",
             "प्रेरणा",
-            "अस्ति",
-            "?",
-            "अस्मिन्",
-            "पाठे",
-            "संघटितरूपेण",
-            "सहजीवनस्य",
-            ",",
-            "एकतायाः",
-            ",",
-            "परस्परं",
-            "सामञ्जस्यस्य",
-            "च",
-            "प्रेरणा",
-            "अस्ति।"
+            "अस्ति?"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "प्रश्नः ३: रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कुरुत —",
-          "meaning": "Formulate questions using interrogative pronouns based on the underlined terms",
+          "sanskrit": "३. रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कुरुत",
+          "meaning": "Form questions based on the underlined words",
           "words": [
+            "३.",
             "रेखाङ्कितपदानि",
             "आधृत्य",
             "प्रश्ननिर्माणं",
@@ -36409,210 +35661,111 @@
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) परमेश्वरः सर्वत्र व्याप्तः अस्ति। (रेखाङ्कितम्: परमेश्वरः)",
+          "sanskrit": "(क) परमेश्वरः सर्वत्र व्याप्तः अस्ति।",
           "answer_sanskrit": "कः सर्वत्र व्याप्तः अस्ति?",
-          "meaning": "Who is all-pervading? (Target: Parameshvara)",
-          "hindi_gloss": "कौन सर्वत्र व्याप्त है?",
+          "meaning": "Who is present everywhere?",
           "words": [
-            "(",
-            "क",
-            ")",
+            "(क)",
             "परमेश्वरः",
             "सर्वत्र",
             "व्याप्तः",
-            "अस्ति।",
-            "(",
-            "रेखाङ्कितम्",
-            "परमेश्वरः",
-            ")",
-            "कः",
-            "सर्वत्र",
-            "व्याप्तः",
-            "अस्ति",
-            "?"
+            "अस्ति।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) वयम् ईश्वरं नमामः। (रेखाङ्कितम्: ईश्वरम्)",
+          "sanskrit": "(ख) वयम् ईश्वरं नमामः।",
           "answer_sanskrit": "वयं कम् नमामः?",
-          "meaning": "Whom do we bow down to? (Target: Ishvaram)",
-          "hindi_gloss": "हम किसको नमन करते हैं?",
+          "meaning": "Whom do we salute?",
           "words": [
-            "(",
-            "ख",
-            ")",
+            "(ख)",
             "वयम्",
             "ईश्वरं",
-            "नमामः।",
-            "(",
-            "रेखाङ्कितम्",
-            "ईश्वरम्",
-            ")",
-            "वयं",
-            "कम्",
-            "नमामः",
-            "?"
+            "नमामः।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) वयम् ऐक्यभावेन जीवामः। (रेखाङ्कितम्: ऐक्यभावेन)",
-          "answer_sanskrit": "वयं कथम् / केन भावेन जीवामः?",
-          "meaning": "How / in what spirit do we live? (Target: Aikyabhavena)",
-          "hindi_gloss": "हम किस भाव से / कैसे जीते हैं?",
+          "sanskrit": "(ग) वयम् ऐक्यभावेन जीवामः।",
+          "answer_sanskrit": "वयं कथम् / केन जीवामः?",
+          "meaning": "How do we live?",
           "words": [
-            "(",
-            "ग",
-            ")",
+            "(ग)",
             "वयम्",
             "ऐक्यभावेन",
-            "जीवामः।",
-            "(",
-            "रेखाङ्कितम्",
-            "ऐक्यभावेन",
-            ")",
-            "वयं",
-            "कथम्",
-            "/",
-            "केन",
-            "भावेन",
-            "जीवामः",
-            "?"
+            "जीवामः।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) ईश्वरस्य प्रार्थनया शान्तिः प्राप्यते। (रेखाङ्कितम्: प्रार्थनया)",
-          "answer_sanskrit": "ईश्वरस्य कया शान्तिः प्राप्यते?",
-          "meaning": "Through what is peace obtained from God? (Target: Prarthanaya)",
-          "hindi_gloss": "ईश्वर की किसके द्वारा शान्ति प्राप्त होती है?",
+          "sanskrit": "(घ) ईश्वरस्य प्रार्थनया शान्तिः प्राप्यते।",
+          "answer_sanskrit": "ईश्वरस्य प्रार्थनया का प्राप्यते?",
+          "meaning": "By what is peace obtained?",
           "words": [
-            "(",
-            "घ",
-            ")",
+            "(घ)",
             "ईश्वरस्य",
             "प्रार्थनया",
             "शान्तिः",
-            "प्राप्यते।",
-            "(",
-            "रेखाङ्कितम्",
-            "प्रार्थनया",
-            ")",
-            "ईश्वरस्य",
-            "कया",
-            "शान्तिः",
-            "प्राप्यते",
-            "?"
+            "प्राप्यते।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) अहं समाजाय श्रमं करोमि। (रेखाङ्कितम्: समाजाय)",
+          "sanskrit": "(ङ) अहं समाजाय श्रमं करोमि।",
           "answer_sanskrit": "अहं कस्मै श्रमं करोमि?",
-          "meaning": "For whom do I perform labor? (Target: Samajaya)",
-          "hindi_gloss": "मैं किसके लिए श्रम करता हूँ?",
+          "meaning": "For whom do I labour?",
           "words": [
-            "(",
-            "ङ",
-            ")",
+            "(ङ)",
             "अहं",
             "समाजाय",
             "श्रमं",
-            "करोमि।",
-            "(",
-            "रेखाङ्कितम्",
-            "समाजाय",
-            ")",
-            "अहं",
-            "कस्मै",
-            "श्रमं",
-            "करोमि",
-            "?"
+            "करोमि।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(च) अयं पाठः ऋग्वेदात् सङ्कलितः। (रेखाङ्कितम्: ऋग्वेदात्)",
+          "sanskrit": "(च) अयं पाठः ऋग्वेदात् सङ्कलितः।",
           "answer_sanskrit": "अयं पाठः कस्मात् सङ्कलितः?",
-          "meaning": "From where is this lesson compiled? (Target: Rigvedat)",
-          "hindi_gloss": "यह पाठ किससे संकलित है?",
+          "meaning": "From what is this lesson compiled?",
           "words": [
-            "(",
-            "च",
-            ")",
+            "(च)",
             "अयं",
             "पाठः",
             "ऋग्वेदात्",
-            "सङ्कलितः।",
-            "(",
-            "रेखाङ्कितम्",
-            "ऋग्वेदात्",
-            ")",
-            "अयं",
-            "पाठः",
-            "कस्मात्",
-            "सङ्कलितः",
-            "?"
+            "सङ्कलितः।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(छ) वेदस्य अपरं नाम श्रुतिः। (रेखाङ्कितम्: श्रुतिः)",
+          "sanskrit": "(छ) वेदस्य अपरं नाम श्रुतिः।",
           "answer_sanskrit": "वेदस्य अपरं नाम किम्?",
-          "meaning": "What is the other name of the Veda? (Target: Shrutih)",
-          "hindi_gloss": "वेद का दूसरा नाम क्या है?",
+          "meaning": "What is the other name of Veda?",
           "words": [
-            "(",
-            "छ",
-            ")",
+            "(छ)",
             "वेदस्य",
             "अपरं",
             "नाम",
-            "श्रुतिः।",
-            "(",
-            "रेखाङ्कितम्",
-            "श्रुतिः",
-            ")",
-            "वेदस्य",
-            "अपरं",
-            "नाम",
-            "किम्",
-            "?"
+            "श्रुतिः।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ज) मन्त्राः वेदेषु भवन्ति। (रेखाङ्कितम्: वेदेषु)",
+          "sanskrit": "(ज) मन्त्राः वेदेषु भवन्ति।",
           "answer_sanskrit": "मन्त्राः केषु भवन्ति?",
-          "meaning": "In what do mantras exist? (Target: Vedeshu)",
-          "hindi_gloss": "मन्त्र किसमें होते हैं?",
+          "meaning": "What exist in the Vedas?",
           "words": [
-            "(",
-            "ज",
-            ")",
+            "(ज)",
             "मन्त्राः",
             "वेदेषु",
-            "भवन्ति।",
-            "(",
-            "रेखाङ्कितम्",
-            "वेदेषु",
-            ")",
-            "मन्त्राः",
-            "केषु",
-            "भवन्ति",
-            "?"
+            "भवन्ति।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "प्रश्नः ४: पट्टिकातः शब्दान् चित्वा अधोलिखितेषु मन्त्रेषु रिक्तस्थानानि पूरयत —",
-          "meaning": "Fill in the blanks in the following mantras using terms from the option box",
+          "sanskrit": "४. मन्त्रेषु रिक्तस्थानानि पूरयत",
+          "meaning": "Complete the mantras by filling the blanks (Page 8)",
           "words": [
-            "पट्टिकातः",
-            "शब्दान्",
-            "चित्वा",
-            "अधोलिखितेषु",
+            "४.",
             "मन्त्रेषु",
             "रिक्तस्थानानि",
             "पूरयत"
@@ -36620,48 +35773,31 @@
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) सङ्गच्छध्वं संवदध्वं सं वो मनांसि जानताम् । देवा भागं यथा पूर्वे ________ उपासते॥",
-          "answer_sanskrit": "देवा भागं यथा पूर्वे संजानाना उपासते॥ (रिक्तस्थानम्: संजानानाः)",
-          "meaning": "Just as ancient gods accepted their share being in complete harmony (saṁjānānāḥ).",
-          "hindi_gloss": "रिक्तस्थान: संजानानाः (एकमत होकर)",
+          "sanskrit": "(क) सङ्गच्छध्वं संवदध्वं सं वो मनांसि जानताम्। देवा भागं यथा पूर्वे संजानाना उपासते।",
+          "answer_sanskrit": "सङ्गच्छध्वं संवदध्वं सं वो मनांसि जानताम्। देवा भागं यथा पूर्वे संजानाना उपासते।",
+          "meaning": "Complete mantra form from the textbook",
           "words": [
-            "(",
-            "क",
-            ")",
+            "(क)",
             "सङ्गच्छध्वं",
             "संवदध्वं",
             "सं",
             "वो",
             "मनांसि",
-            "जानताम्",
-            "।",
-            "देवा",
-            "भागं",
-            "यथा",
-            "पूर्वे",
-            "उपासते॥",
+            "जानताम्।",
             "देवा",
             "भागं",
             "यथा",
             "पूर्वे",
             "संजानाना",
-            "उपासते॥",
-            "(",
-            "रिक्तस्थानम्",
-            "संजानानाः",
-            ")"
+            "उपासते।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम् । समानं मन्त्रमभिमन्त्रये वः ________ वो हविषा जुहोमि॥",
-          "answer_sanskrit": "समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि॥ (रिक्तस्थानम्: समानेन)",
-          "meaning": "I consecrate you with a unified purpose and offer sacrifice with common oblation (samānena).",
-          "hindi_gloss": "रिक्तस्थान: समानेन (समान आहुति द्वारा)",
+          "sanskrit": "(ख) समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम्। समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि।",
+          "answer_sanskrit": "समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम्। समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि।",
+          "meaning": "Complete mantra form from the textbook",
           "words": [
-            "(",
-            "ख",
-            ")",
             "समानो",
             "मन्त्रः",
             "समितिः",
@@ -36669,74 +35805,42 @@
             "समानं",
             "मनः",
             "सह",
-            "चित्तमेषाम्",
-            "।",
-            "समानं",
-            "मन्त्रमभिमन्त्रये",
-            "वः",
-            "वो",
-            "हविषा",
-            "जुहोमि॥",
+            "चित्तमेषाम्।",
             "समानं",
             "मन्त्रमभिमन्त्रये",
             "वः",
             "समानेन",
             "वो",
             "हविषा",
-            "जुहोमि॥",
-            "(",
-            "रिक्तस्थानम्",
-            "समानेन",
-            ")"
-          ],
-          "kind": "exercise-qa",
-          "paragraphTranslation": "Line 1 Hindi: इन (सब मनुष्यों) के विचार समान हों, इनकी सभाएँ (लक्ष्य) समान हों, इनका मन सौहार्दपूर्ण हो और इनका अंतःकरण (बुद्धिजन्य ज्ञान) एक साथ एकीकृत हो।\nLine 2 Hindi: मैं तुम सबको एक समान उद्देश्य से संस्कारित करता हूँ और तुम्हें एक समान यज्ञीय आहुति (सामूहिक प्रार्थना) से जोड़ता हूँ।"
-        },
-        {
-          "sanskrit": "(ग) समानी व आकूतिः समाना हृदयानि वः । समानमस्तु वो मनो यथा वः ________॥",
-          "answer_sanskrit": "समानमस्तु वो मनो यथा वः सुसहासति॥ (रिक्तस्थानम्: सुसहासति / सु सह असति)",
-          "meaning": "May your minds be united so that your collective co-existence may be beautifully perfect (susahāsati).",
-          "hindi_gloss": "रिक्तस्थान: सुसहासति (सुसङ्गठित हो)",
-          "words": [
-            "(",
-            "ग",
-            ")",
-            "समानी",
-            "व",
-            "आकूतिः",
-            "समाना",
-            "हृदयानि",
-            "वः",
-            "।",
-            "समानमस्तु",
-            "वो",
-            "मनो",
-            "यथा",
-            "वः",
-            "॥",
-            "समानमस्तु",
-            "वो",
-            "मनो",
-            "यथा",
-            "वः",
-            "सुसहासति॥",
-            "(",
-            "रिक्तस्थानम्",
-            "सुसहासति",
-            "/",
-            "सु",
-            "सह",
-            "असति",
-            ")"
+            "जुहोमि।"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "प्रश्नः ५: पाठे प्रयुक्तान् शब्दान् भावानुसारं परस्परं योजयत —",
-          "meaning": "Match the textual terms with their appropriate textual meanings",
+          "sanskrit": "(ग) समानी व आकूतिः समाना हृद्यानि वः। समानमस्तु वो मनो यथा वः सुसहासति।",
+          "answer_sanskrit": "समानी व आकूतिः समाना हृद्यानि वः। समानमस्तु वो मनो यथा वः सुसहासति।",
+          "meaning": "Complete mantra form from the textbook",
           "words": [
-            "पाठे",
-            "प्रयुक्तान्",
+            "समानी",
+            "व",
+            "आकूतिः",
+            "समाना",
+            "हृद्यानि",
+            "वः।",
+            "समानमस्तु",
+            "वो",
+            "मनो",
+            "यथा",
+            "वः",
+            "सुसहासति।"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "५. शब्दान् भावानुसारं परस्परं योजयत",
+          "meaning": "Match the words according to their meanings (Page 8)",
+          "words": [
+            "५.",
             "शब्दान्",
             "भावानुसारं",
             "परस्परं",
@@ -36745,451 +35849,207 @@
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) संगच्छध्वम् ➡️ मिलित्वा चलत",
-          "answer_sanskrit": "संगच्छध्वम् ➡️ मिलित्वा चलत (May you walk together in harmony)",
-          "meaning": "Saṁgacchadhvam matches with Militvā calata.",
-          "hindi_gloss": "संगच्छध्वम् ➔ मिलकर चलो",
+          "sanskrit": "संगच्छध्वम् → मिलित्वा चलत",
+          "answer_sanskrit": "मिलित्वा चलत",
+          "meaning": "संगच्छध्वम् matches with मिलित्वा चलत",
+          "hindi_gloss": "संगच्छध्वम् = मिलित्वा चलत",
           "words": [
-            "(",
-            "क",
-            ")",
-            "संगच्छध्वम्",
-            "➡",
-            "️",
-            "मिलित्वा",
-            "चलत",
-            "संगच्छध्वम्",
-            "➡",
-            "️",
-            "मिलित्वा",
-            "चलत",
-            "(",
-            "May",
-            "you",
-            "walk",
-            "together",
-            "in",
-            "harmony",
-            ")"
+            "संगच्छध्वम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) संवदध्वम् ➡️ एकस्वरेण वदत",
-          "answer_sanskrit": "संवदध्वम् ➡️ एकस्वरेण वदत (May you speak together in concord)",
-          "meaning": "Saṁvadadhvam matches with Ekasvareṇa vadata.",
-          "hindi_gloss": "संवदध्वम् ➔ एक स्वर में बोलो",
+          "sanskrit": "संवदध्वम् → एकस्वरेण वदत",
+          "answer_sanskrit": "एकस्वरेण वदत",
+          "meaning": "संवदध्वम् matches with एकस्वरेण वदत",
+          "hindi_gloss": "संवदध्वम् = एकस्वरेण वदत",
           "words": [
-            "(",
-            "ख",
-            ")",
-            "संवदध्वम्",
-            "➡",
-            "️",
-            "एकस्वरेण",
-            "वदत",
-            "संवदध्वम्",
-            "➡",
-            "️",
-            "एकस्वरेण",
-            "वदत",
-            "(",
-            "May",
-            "you",
-            "speak",
-            "together",
-            "in",
-            "concord",
-            ")"
+            "संवदध्वम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) मनः ➡️ चित्तम्",
-          "answer_sanskrit": "मनः ➡️ चित्तम् (Mind / Inner consciousness)",
-          "meaning": "Manaḥ matches with Cittam.",
-          "hindi_gloss": "मनः ➔ चित्त",
+          "sanskrit": "मनः → चित्तम्",
+          "answer_sanskrit": "चित्तम्",
+          "meaning": "मनः matches with चित्तम्",
+          "hindi_gloss": "मनः = चित्तम्",
           "words": [
-            "(",
-            "ग",
-            ")",
-            "मनः",
-            "➡",
-            "️",
-            "चित्तम्",
-            "मनः",
-            "➡",
-            "️",
-            "चित्तम्",
-            "(",
-            "Mind",
-            "/",
-            "Inner",
-            "consciousness",
-            ")"
+            "मनः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) उपासते ➡️ सेवन्ते",
-          "answer_sanskrit": "उपासते ➡️ सेवन्ते (Devotedly attend to / worship)",
-          "meaning": "Upāsate matches with Sevante.",
-          "hindi_gloss": "उपासते ➔ सेवा करते हैं / कर्तव्य निभाते हैं",
+          "sanskrit": "उपासते → सेवन्ते",
+          "answer_sanskrit": "सेवन्ते",
+          "meaning": "उपासते matches with सेवन्ते",
+          "hindi_gloss": "उपासते = सेवन्ते",
           "words": [
-            "(",
-            "घ",
-            ")",
-            "उपासते",
-            "➡",
-            "️",
-            "सेवन्ते",
-            "उपासते",
-            "➡",
-            "️",
-            "सेवन्ते",
-            "(",
-            "Devotedly",
-            "attend",
-            "to",
-            "/",
-            "worship",
-            ")"
+            "उपासते"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) वसूनि ➡️ धनानि",
-          "answer_sanskrit": "वसूनि ➡️ धनानि (Wealth / Riches)",
-          "meaning": "Vasūni matches with Dhanāni.",
-          "hindi_gloss": "वसूनि ➔ धन-सम्पत्ति",
+          "sanskrit": "वसूनि → धनानि",
+          "answer_sanskrit": "धनानि",
+          "meaning": "वसूनि matches with धनानि",
+          "hindi_gloss": "वसूनि = धनानि",
           "words": [
-            "(",
-            "ङ",
-            ")",
-            "वसूनि",
-            "➡",
-            "️",
-            "धनानि",
-            "वसूनि",
-            "➡",
-            "️",
-            "धनानि",
-            "(",
-            "Wealth",
-            "/",
-            "Riches",
-            ")"
+            "वसूनि"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(च) विश्वानि ➡️ समस्तानि",
-          "answer_sanskrit": "विश्वानि ➡️ समस्तानि (All / Entire)",
-          "meaning": "Viśvāni matches with Samastāni.",
-          "hindi_gloss": "विश्वानि ➔ समस्त / सब",
+          "sanskrit": "विश्वानि → समस्तानि",
+          "answer_sanskrit": "समस्तानि",
+          "meaning": "विश्वानि matches with समस्तानि",
+          "hindi_gloss": "विश्वानि = समस्तानि",
           "words": [
-            "(",
-            "च",
-            ")",
-            "विश्वानि",
-            "➡",
-            "️",
-            "समस्तानि",
-            "विश्वानि",
-            "➡",
-            "️",
-            "समस्तानि",
-            "(",
-            "All",
-            "/",
-            "Entire",
-            ")"
+            "विश्वानि"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(छ) आकूतिः ➡️ सङ्कल्पः",
-          "answer_sanskrit": "आकूतिः ➡️ सङ्कल्पः (Noble determination / Intent)",
-          "meaning": "Ākūtiḥ matches with Saṅkalpaḥ.",
-          "hindi_gloss": "आकूतिः ➔ संकल्प",
+          "sanskrit": "आकूतिः → सङ्कल्पः",
+          "answer_sanskrit": "सङ्कल्पः",
+          "meaning": "आकूतिः matches with सङ्कल्पः",
+          "hindi_gloss": "आकूतिः = सङ्कल्पः",
           "words": [
-            "(",
-            "छ",
-            ")",
-            "आकूतिः",
-            "➡",
-            "️",
-            "सङ्कल्पः",
-            "आकूतिः",
-            "➡",
-            "️",
-            "सङ्कल्पः",
-            "(",
-            "Noble",
-            "determination",
-            "/",
-            "Intent",
-            ")"
+            "आकूतिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "प्रश्नः ६: उदाहरणानुसारेण लट्-लकारस्य वाक्यानि लोट्-लकारेण परिवर्तयत —",
-          "meaning": "Convert sentences from Present Tense (Laṭ-lakāra) to Imperative Mood (Loṭ-lakāra)",
+          "sanskrit": "६. लट्-लकारस्य वाक्यानि लोट्-लकारेण परिवर्तयत",
+          "meaning": "Transform present-tense (Laṭ) sentences into imperative (Loṭ)",
           "words": [
-            "उदाहरणानुसारेण",
-            "लट्",
-            "लकारस्य",
+            "६.",
+            "लट्-लकारस्य",
             "वाक्यानि",
-            "लोट्",
-            "लकारेण",
+            "लोट्-लकारेण",
             "परिवर्तयत"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "यथा: बालिकाः नृत्यन्ति ➡️ बालिकाः नृत्यन्तु (Let the girls dance)",
-          "answer_sanskrit": "बालिकाः नृत्यन्तु",
-          "meaning": "Example: Girls dance -> Let the girls dance",
-          "hindi_gloss": "यथा: बालिकाएँ नाचती हैं ➔ बालिकाएँ नाचें",
+          "sanskrit": "बालकाः हसन्ति →",
+          "answer_sanskrit": "बालकाः हसन्तु",
+          "meaning": "Transform: बालकाः हसन्ति → बालकाः हसन्तु",
           "words": [
-            "यथा",
-            "बालिकाः",
-            "नृत्यन्ति",
-            "➡",
-            "️",
-            "बालिकाः",
-            "नृत्यन्तु",
-            "(",
-            "Let",
-            "the",
-            "girls",
-            "dance",
-            ")",
-            "बालिकाः",
-            "नृत्यन्तु"
+            "बालकाः",
+            "हसन्ति"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(क) बालकाः हसन्ति।",
-          "answer_sanskrit": "बालकाः हसन्तु।",
-          "meaning": "Boys laugh -> Let the boys laugh (Imperative: Loṭ)",
-          "hindi_gloss": "बालक हँसते हैं ➔ बालक हँसें (बालकाः हसन्तु)",
+          "sanskrit": "युवां तत्र गच्छथः →",
+          "answer_sanskrit": "युवां तत्र गच्छतम्",
+          "meaning": "Transform: युवां तत्र गच्छथः → युवां तत्र गच्छतम्",
           "words": [
-            "(",
-            "क",
-            ")",
-            "बालकाः",
-            "हसन्ति।",
-            "बालकाः",
-            "हसन्तु।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ख) युवां तत्र गच्छथः।",
-          "answer_sanskrit": "युवां तत्र गच्छतम्।",
-          "meaning": "You two go there -> May you two go there / Go there!",
-          "hindi_gloss": "तुम दोनों वहाँ जाते हो ➔ तुम दोनों वहाँ जाओ (युवां तत्र गच्छतम्)",
-          "words": [
-            "(",
-            "ख",
-            ")",
             "युवां",
             "तत्र",
-            "गच्छथः।",
-            "युवां",
-            "तत्र",
-            "गच्छतम्।"
+            "गच्छथः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) यूयं धावथ।",
-          "answer_sanskrit": "यूयं धावत।",
-          "meaning": "You all run -> Run, all of you!",
-          "hindi_gloss": "तुम सब दौड़ते हो ➔ तुम सब दौड़ो (यूयं धावत)",
+          "sanskrit": "यूयं धावथ →",
+          "answer_sanskrit": "यूयं धावत",
+          "meaning": "Transform: यूयं धावथ → यूयं धावत",
           "words": [
-            "(",
-            "ग",
-            ")",
             "यूयं",
-            "धावथ।",
-            "यूयं",
-            "धावत।"
+            "धावथ"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) आवां लिखावः।",
-          "answer_sanskrit": "आवां लिखाव। (लिखावै)",
-          "meaning": "We two write -> Let us two write!",
-          "hindi_gloss": "हम दोनों लिखते हैं ➔ हम दोनों लिखें (आवां लिखाव)",
+          "sanskrit": "आवां लिखावः →",
+          "answer_sanskrit": "आवां लिखाव",
+          "meaning": "Transform: आवां लिखावः → आवां लिखाव",
           "words": [
-            "(",
-            "घ",
-            ")",
             "आवां",
-            "लिखावः।",
-            "आवां",
-            "लिखाव।",
-            "(",
-            "लिखावै",
-            ")"
+            "लिखावः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) वयं पठामः।",
-          "answer_sanskrit": "वयं पठाम। (पठामै)",
-          "meaning": "We all read -> Let us all read!",
-          "hindi_gloss": "हम सब पढ़ते हैं ➔ हम सब पढ़ें (वयं पठाम)",
+          "sanskrit": "वयं पठामः →",
+          "answer_sanskrit": "वयं पठाम",
+          "meaning": "Transform: वयं पठामः → वयं पठाम",
           "words": [
-            "(",
-            "ङ",
-            ")",
             "वयं",
-            "पठामः।",
-            "वयं",
-            "पठाम।",
-            "(",
-            "पठामै",
-            ")"
+            "पठामः"
           ],
           "kind": "exercise-qa"
         },
         {
           "sanskrit": "भागः ४: योग्यताविस्तरः — वैदिक-परम्परा (Vedic Heritage & Context)",
-          "meaning": "Part 4: Vedic Heritage, Textual Background, and Linguistic Reflections",
-          "paragraphTranslation": "भाग ४: योग्यता-विस्तार — वैदिक परम्परा एवं भाषा-चिन्तन",
+          "meaning": "Part 4: Extended Competence — Vedic Structure Recognition",
           "words": [
             "भागः",
-            "४",
+            "४:",
             "योग्यताविस्तरः",
-            "वैदिक",
-            "परम्परा"
+            "—",
+            "वैदिक-परम्परा",
+            "(Vedic",
+            "Heritage",
+            "&",
+            "Context)"
           ],
+          "paragraphTranslation": "भाग ४: योग्यताविस्तर — वैदिक परम्परा",
           "kind": "chapter-header"
         },
         {
-          "sanskrit": "१. ऋग्वेदस्य अन्तिममण्डलस्य (दशममण्डलस्य) अन्तिमं सूक्तं 'संज्ञान-सूक्तम्' (१९१) इति प्रख्यातम् अस्ति। अस्मिन् सूक्ते आहत्य चत्वारः मन्त्राः सन्ति।",
-          "meaning": "1. The final hymn of the final (10th) Mandala of Rigveda is famous as the 'Saṁjñāna-Sūkta' (Hymn 191). It contains four mantras in total, advocating universal unity.",
-          "paragraphTranslation": "१. ऋग्वेद के अंतिम (१०वें) मण्डल का अंतिम सूक्त 'संज्ञान-सूक्त' (सूक्त १९१) कहलाता है। इसमें कुल ४ मन्त्र हैं जो सार्वभौमिक एकता का उद्घोष करते हैं।",
+          "sanskrit": "१. ऋग्वेदस्य अन्तिममण्डलस्य (दशममण्डलस्य) अन्तिमं सूक्तं 'संज्ञान-सूक्तम्' / 'संघटन-सूक्तम्' अस्ति।",
+          "meaning": "The final sukta of Rigveda's 10th Mandala is the Samjnana / Sanghatana Sukta.",
           "words": [
-            "१",
-            ".",
+            "१.",
             "ऋग्वेदस्य",
             "अन्तिममण्डलस्य",
-            "(",
-            "दशममण्डलस्य",
-            ")",
+            "(दशममण्डलस्य)",
             "अन्तिमं",
             "सूक्तं",
-            "'",
-            "संज्ञान",
-            "सूक्तम्",
-            "'",
-            "(",
-            "१९१",
-            ")",
-            "इति",
-            "प्रख्यातम्",
-            "अस्ति।",
-            "अस्मिन्",
-            "सूक्ते",
-            "आहत्य",
-            "चत्वारः",
-            "मन्त्राः",
-            "सन्ति।"
-          ]
+            "'संज्ञान-सूक्तम्'",
+            "/",
+            "'संघटन-सूक्तम्'",
+            "अस्ति।"
+          ],
+          "paragraphTranslation": "ऋग्वेद के अन्तिम (दशम) मण्डल का अन्तिम सूक्त 'संज्ञान-सूक्त / संघटन-सूक्त' है।"
         },
         {
-          "sanskrit": "२. सम्पूर्णे ऋग्वेदे आहत्य १० मण्डलानि, १०२८ सूक्तानि, १०,५५२ मन्त्राः च सन्ति। ऋग्वेदः मानवजातेः प्राचीनतमः उपलब्धः ग्रन्थः अस्ति।",
-          "meaning": "2. In the entire Rigveda, there are 10 Mandalas, 1,028 Suktas, and 10,552 Mantras. The Rigveda is the oldest extant literary heritage of humankind.",
-          "paragraphTranslation": "२. सम्पूर्ण ऋग्वेद में १० मण्डल, १०२८ सूक्त और १०,५५२ मन्त्र हैं। ऋग्वेद मानव सभ्यता का प्राचीनतम उपलब्ध ग्रन्थ है।",
+          "sanskrit": "२. सम्पूर्णे ऋग्वेदे आहत्य १० मण्डलानि, १०२८ सूक्तानि, १०,५५२ मन्त्राः सन्ति।",
+          "meaning": "The complete Rigveda comprises 10 mandalas, 1028 suktas, and 10,552 mantras.",
           "words": [
-            "२",
-            ".",
+            "२.",
             "सम्पूर्णे",
             "ऋग्वेदे",
             "आहत्य",
             "१०",
-            "मण्डलानि",
-            ",",
+            "मण्डलानि,",
             "१०२८",
-            "सूक्तानि",
-            ",",
-            "१०",
-            ",",
-            "५५२",
+            "सूक्तानि,",
+            "१०,५५२",
             "मन्त्राः",
-            "च",
-            "सन्ति।",
-            "ऋग्वेदः",
-            "मानवजातेः",
-            "प्राचीनतमः",
-            "उपलब्धः",
-            "ग्रन्थः",
-            "अस्ति।"
-          ]
+            "सन्ति।"
+          ],
+          "paragraphTranslation": "सम्पूर्ण ऋग्वेद में कुल १० मण्डल, १०२८ सूक्त और १०,५५२ मन्त्र हैं।"
         },
         {
-          "sanskrit": "३. सन्धि-नियमाः: सम् + गच्छते = सङ्गच्छते (अनुस्वार-परसवर्ण-सन्धिः) | मनः + सह = मनो सह (विसर्ग-उकार-सन्धिः) | न + आसीत् = नासीत् (दीर्घ-सन्धिः) | मन्त्र + अंशः = मन्त्रांशः (दीर्घ-सन्धिः)।",
-          "meaning": "3. Key Sandhi Rules: Sam + gacchate = Saṅgacchate | Manaḥ + saha = Mano saha | Na + āsīt = Nāsīt | Mantra + aṁśaḥ = Mantrāṁśaḥ.",
-          "paragraphTranslation": "३. प्रमुख सन्धि-नियम: सम् + गच्छते = सङ्गच्छते | मनः + सह = मनो सह | न + आसीत् = नासीत् | मन्त्र + अंशः = मन्त्रांशः।",
+          "sanskrit": "'संज्ञान-सूक्तस्य' अपरं प्रख्यातं नाम 'संघटन-सूक्तम्' अस्ति। अस्य ऋषिः आङ्गिरसः।",
+          "meaning": "The Samjnana Sukta is also famously called Sanghatana Sukta; its seer is Angirasa.",
           "words": [
-            "३",
-            ".",
-            "सन्धि",
-            "नियमाः",
-            "सम्",
-            "+",
-            "गच्छते",
-            "=",
-            "सङ्गच्छते",
-            "(",
-            "अनुस्वार",
-            "परसवर्ण",
-            "सन्धिः",
-            ")",
-            "|",
-            "मनः",
-            "+",
-            "सह",
-            "=",
-            "मनो",
-            "सह",
-            "(",
-            "विसर्ग",
-            "उकार",
-            "सन्धिः",
-            ")",
-            "|",
-            "न",
-            "+",
-            "आसीत्",
-            "=",
-            "नासीत्",
-            "(",
-            "दीर्घ",
-            "सन्धिः",
-            ")",
-            "|",
-            "मन्त्र",
-            "+",
-            "अंशः",
-            "=",
-            "मन्त्रांशः",
-            "(",
-            "दीर्घ",
-            "सन्धिः",
-            ")",
-            "।"
-          ]
+            "'संज्ञान-सूक्तस्य'",
+            "अपरं",
+            "प्रख्यातं",
+            "नाम",
+            "'संघटन-सूक्तम्'",
+            "अस्ति।",
+            "अस्य",
+            "ऋषिः",
+            "आङ्गिरसः।"
+          ],
+          "paragraphTranslation": "'संज्ञान-सूक्त' का अपर प्रसिद्ध नाम 'संघटन-सूक्त' है; इसके ऋषि आङ्गिरस हैं।"
         }
-      ],
-      "page_numbers": "2-8"
+      ]
     },
     {
       "id": "grade8_ch2",

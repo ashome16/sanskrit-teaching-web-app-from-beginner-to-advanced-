@@ -64,7 +64,7 @@ export const GRADE_8_SYLLABUS: Grade8Chapter[] = [
     "chNumber": "प्रथमः पाठः",
     "title": "संगच्छध्वं संवदध्वम्",
     "englishTitle": "Let Us Walk Together, Speak Together in Harmony",
-    "page": "Pages 2–8",
+    "page": "Pages 1–9",
     "category": "shlokas",
     "genreBadge": "ऋग्वेद-मन्त्रः · Unity & Harmony",
     "theme": "The timeless Rigvedic Samjnana Sukta advocating universal unity, harmonious dialogue, collective purpose, and heart-to-heart solidarity.",

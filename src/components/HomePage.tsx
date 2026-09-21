@@ -292,7 +292,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
   {
     id: 'grade8_ch1',
     num: 'Grade 8 · Chapter 1',
-    title: 'संगच्छध्वं संवदध्वम् (Pages 2–8)',
+    title: 'संगच्छध्वं संवदध्वम् (Pages 1–9)',
     english: 'May We Walk Together, Speak Together in Harmony (Rigveda)',
     icon: '🏛️',
     category: 'shlokas',

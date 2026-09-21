@@ -1,232 +1,240 @@
 अष्टमकक्षा (Class 8) · संस्कृत-पाठ्यपुस्तकम् 'दीपकम्'
 प्रथमः पाठः : संगच्छध्वं संवदध्वम् (Walk Together, Speak Together)
-ऋग्वेद-संहिता (मण्डलम् १०, सूक्तम् १९१, मन्त्राः २–४) · पृष्ठानि २ तः ८
+ऋग्वेद-संहिता (मण्डलम् १०, सूक्तम् १९१, मन्त्राः २–४) · पृष्ठानि १ तः ९
 ================================================================================
 
-📖 PART 1: Full Lesson & Translations
-🏫 Section A: Introductory Classroom Dialogue (कक्षा-संवादः)
---------------------------------------------------------------------------------
-छात्राः – नमस्ते आचार्य! अस्माकं विद्यालयस्य क्रीडोत्सवे पादकन्दुक-क्रीडायां वयं विजयं प्राप्तवन्तः।
+📖 Complete Lesson Extraction & Translations
+
+📝 Page 1 (Introductory Dialogue)
+
+Sanskrit Text:
+
+छात्राः – नमस्ते आचार्य ! अस्माकं विद्यालयस्य क्रीडोत्सवे पादकन्दुक-क्रीडायां वयं विजयं प्राप्तवन्तः।
 आचार्यः – वर्धापनानि, अभिनन्दनं भवताम्। अपि भवन्तः जानन्ति यत् भवतां प्रतिद्वन्द्विनः कथं पराजिताः?
-छात्रः १ – आम्, जानामि आचार्य! अस्माकं दलस्य क्रीडकेषु परस्परं सम्यक् सामञ्जस्यम् आसीत्, किन्तु विपक्षी-दले तत् नासीत्।
-छात्रः २ – सत्यम् आचार्य! तस्य दलस्य क्रीडकेषु परस्परं मनोभेदः द्वेषभावः च आसीत्। ते अन्योन्यं सहयोगं न कृतवन्तः।
-आचार्यः – तर्हि वदन्तु, विजयप्राप्त्यर्थं किं किम् आवश्यकम्?
+छात्रः १ – आम्, जानामि आचार्य ! अस्माकं दलस्य क्रीडकेषु परस्परं सम्यक् सामञ्जस्यम् आसीत्, किन्तु विपक्षी-दले तत् नासीत्।
+छात्रः २ – सत्यम् आचार्य ! तस्य दलस्य क्रीडकेषु परस्परं मनोभेदः द्वेषभावः च आसीत्। ते अन्योन्यं सहयोगं न कृतवन्तः।
+आचार्यः – तर्हि वदन्तु, विजयप्राप्त्यर्थं किम् आवश्यकम्?
 छात्राः – मिलित्वा कार्यकरणम्, एकता, परस्परं सामञ्जस्यं च आवश्यकम्।
 आचार्यः – सत्यम् एव उक्तम्। एष एव सन्देशः वेदे 'संगच्छध्वं संवदध्वम्' इत्येवं प्रदत्तः।
-छात्राः – आचार्य! कस्मात् वेदात् गृहीतः एष सन्देशः? कः च अस्य अभिप्रायः?
+छात्रः ३ – आचार्य ! कस्मात् वेदात् गृहीतः एष सन्देशः? कः च अस्य अभिप्रायः?
 आचार्यः – ऋग्वेदे - 'संज्ञान-सूक्तस्य' एषः मन्त्रांशः। एतत् 'संघटन-सूक्तम्' इत्यपि प्रख्यातम्। आगच्छन्तु, वयम् अस्य सूक्तस्य प्रसिद्धान् त्रीन् मन्त्रान् पठामः।
 
-हिंदी अनुवाद:
-छात्राः – नमस्ते आचार्य! अस्माकं विद्यालयस्य क्रीडोत्सवे पादकन्दुक-क्रीडायां वयं विजयं प्राप्तवन्तः।
-👉 Hindi: छात्र – नमस्ते आचार्य! हमारे विद्यालय के खेल उत्सव में फुटबॉल खेल में हम सब विजयी हुए हैं।
+Hindi Translation:
 
-आचार्यः – वर्धापनानि, अभिनन्दनं भवताम्। अपि भवन्तः जानन्ति यत् भवतां प्रतिद्वन्द्विनः कथं पराजिताः?
-👉 Hindi: आचार्य – आप सभी को बधाई और शुभकामनाएँ। क्या आप जानते हैं कि आपके प्रतिद्वंद्वी कैसे हार गए?
-
-छात्र १: हाँ, मैं जानता हूँ आचार्य! हमारी टीम के खिलाड़ियों में आपस में बहुत अच्छा तालमेल (सामञ्जस्य) था, लेकिन विरोधी टीम में ऐसा नहीं था।
-छात्र २: सत्य है आचार्य! उस टीम के खिलाड़ियों में आपस में मतभेद और द्वेष की भावना थी। उन्होंने एक-दूसरे का सहयोग नहीं किया।
-
-आचार्यः – तर्हि वदन्तु, विजयप्राप्त्यर्थं किं किम् आवश्यकम्?
-👉 Hindi: आचार्य – तो बताइए, विजय प्राप्त करने के लिए क्या-क्या आवश्यक है?
-
-छात्राः – मिलित्वा कार्यकरणम्, एकता, परस्परं सामञ्जस्यं च आवश्यकम्।
-👉 Hindi: छात्र – मिलकर कार्य करना, एकता और आपस में अच्छा तालमेल (सामंजस्य) आवश्यक है।
-आचार्य: बिल्कुल सही कहा। यही संदेश वेद में 'संगच्छध्वं संवदध्वम्' (साथ चलो, साथ बोलो) के रूप में दिया गया है।
-छात्र: आचार्य! यह संदेश किस वेद से लिया गया है? और इसका क्या अर्थ है?
-आचार्य: यह ऋग्वेद के 'संज्ञान-सूक्त' का एक मंत्रांश है। इसे 'संघटन-सूक्त' के नाम से भी जाना जाता है। आइए, हम इस सूक्त के तीन प्रसिद्ध मंत्रों को पढ़ते हैं।
+छात्र – नमस्ते आचार्य जी! हमारे विद्यालय के खेल उत्सव में फुटबॉल (पादकन्दुक) के खेल में हम सबने जीत हासिल की है।
+आचार्य – आप सबको बधाई और शुभकामनाएँ। क्या आप जानते हैं कि आपके प्रतिद्वंद्वी (विपक्षी टीम) क्यों हार गए?
+छात्र १ – हाँ, मैं जानता हूँ आचार्य जी! हमारी टीम के खिलाड़ियों में आपस में बहुत अच्छा तालमेल (सामंजस्य) था, लेकिन विपक्षी टीम में ऐसा नहीं था।
+छात्र २ – सच है आचार्य जी! उस टीम के खिलाड़ियों में आपस में वैचारिक मतभेद और द्वेष की भावना थी। उन्होंने एक-दूसरे का सहयोग नहीं किया।
+आचार्य – तो बताइए, जीत हासिल करने के लिए क्या-क्या आवश्यक है?
+छात्र – मिलकर काम करना, एकता और आपस में अच्छा तालमेल आवश्यक है।
+आचार्य – बिल्कुल सही कहा। यही संदेश वेदों में 'संगच्छध्वं संवदध्वम्' (साथ चलो, साथ बोलो) के रूप में दिया गया है।
+छात्र ३ – आचार्य जी! यह संदेश किस वेद से लिया गया है? और इसका क्या अर्थ है?
+आचार्य – यह ऋग्वेद के 'संज्ञान-सूक्त' का मन्त्र का अंश है। इसे 'संघटन-सूक्त' (एकता का सूक्त) के नाम से भी जाना जाता है। आइए, हम इस सूक्त के प्रसिद्ध तीन मन्त्रों को पढ़ते हैं।
 
 English Translation:
-Students: Salutations, Teacher! We won the football match in our school's sports festival.
-Teacher: Congratulations and blessings to you all. Do you know why your opponents were defeated?
-Student 1: Yes, I know, Teacher! There was excellent harmony and coordination among the players of our team, but it was missing in the opposing team.
-Student 2: True, Teacher! The players of that team had mutual differences and hatred. They did not cooperate with one another.
-Teacher: Then tell me, what is necessary to achieve victory?
-Students: Working together, unity, and mutual harmony are necessary.
-Teacher: Well said. This exact message is given in the Vedas as 'Walk together, speak together'.
-Students: Teacher, from which Veda is this message taken? And what does it mean?
-Teacher: This is a part of the 'Saṁjñāna-Sūkta' from the Rigveda. It is also famously known as the 'Saṅghaṭana-Sūkta' (Hymn of Unity). Come, let us read three famous mantras of this hymn.
 
-================================================================================
-🕉️ Section B: Core Rigvedic Mantras (ऋग्वैदिक-मन्त्राः)
-================================================================================
+Students – Salutations, Teacher! In our school's sports festival, we have won the football match.
+Teacher – Congratulations and blessings to you all. Do you know why your opponents were defeated?
+Student 1 – Yes, I know, Teacher! There was excellent harmony and coordination among the players of our team, but it was missing in the opposing team.
+Student 2 – True, Teacher! The players of that team had mental conflicts and feelings of hatred towards each other. They did not cooperate with one another.
+Teacher – Then tell me, what is required to achieve victory?
+Students – Working together, unity, and mutual harmony are required.
+Teacher – Well said. This exact message is delivered in the Vedas as 'Sangachhadhvam Samvadadhvam' (Walk together, speak together).
+Student 3 – Teacher! From which Veda has this message been taken? And what is its real intent?
+Teacher – This is a part of the 'Samjnana-Sukta' from Rigveda. It is also famously known as 'Sanghatana-Sukta' (The Hymn of Unity). Come, let us read three famous mantras of this Sukta.
 
-🔸 Mantra 1
+📝 Page 2-4 (Vedic Mantras & Their Hidden Intentions)
+
+मन्त्रः १ (Mantra 1):
+
 संगच्छध्वं संवदध्वं सं वो मनांसि जानताम् ।
 देवा भागं यथा पूर्वे संजानाना उपासते ॥ १ ॥
 
-पदच्छेदः: संगच्छध्वम्, संवदध्वम्, सम्, वः, मनांसि, जानताम्, देवाः, भागम्, यथा, पूर्वे, संजानानाः, उपासते।
-अन्वयः: (यूयम्) संगच्छध्वं संवदध्वं वः मनांसि संजानताम्। यथा पूर्वे देवाः भागं संजानानाः उपासते।
+पदच्छेदः – संगच्छध्वम् संवदध्वम् सम् वः मनांसि जानताम् देवाः भागम् यथा पूर्वे संजानानाः उपासते।
 
-English Word-to-Word Meaning:
-• संगच्छध्वम् (Saṁgacchadhvam): Walk together in harmony
-• संवदध्वम् (Saṁvadadhvam): Speak together in one voice / concord
-• वः (Vaḥ): Your
-• मनांसि (Manāṁsi): Minds
-• जानताम् (Jānatām): May understand / know similarly
-• यथा (Yathā): Just as
-• पूर्वे (Pūrve): In ancient times / the beginning of creation
-• देवाः (Devāḥ): Deities / Cosmic forces (like Fire, Wind, Sun)
-• भागम् (Bhāgam): Their respective shares of sacrificial offerings / duties
-• संजानानाः (Saṁjānānāḥ): Being of one mind / in total harmony
-• उपासते (Upāsate): Devotedly accepted and performed their tasks
+अन्वयः – (यूयम्) संगच्छध्वं संवदध्वं वः मनांसि संजानताम्। यथा पूर्वे देवाः भागं संजानानाः उपासते।
 
-Hindi Translation:
-Line 1 Hindi: तुम सब मिलकर एक साथ आगे बढ़ो (साथ चलो), आपस में प्रेम से बातचीत करो (एक स्वर में बोलो) और तुम्हारे मन एक समान होकर एक-दूसरे को जानें।
-Line 2 Hindi: जिस प्रकार प्राचीन काल में देवता एकमत होकर यज्ञ के अपने-अपने भाग को स्वीकार करते हुए अपने कर्तव्यों का निर्वाह करते थे, (वैसे ही तुम भी मिलकर रहो)।
+Hindi Translation: (वेद के ऋषि आङ्गिरस मनुष्यों को उपदेश देते हैं) हे मनुष्यों! तुम सब मिलकर एक साथ आगे बढ़ो, एक स्वर में प्रेम से बोलो और अपने मनों को एक समान रूप से समझो। जिस प्रकार प्राचीन काल में देवता एकमत होकर यज्ञ के अपने-अपने भाग को प्रेमपूर्वक स्वीकार करते थे, वैसे ही तुम भी मिलकर रहो।
 
-English Translation:
-O humans! Walk together in harmony, speak together in one voice, and let your minds be unified in understanding. Just as the ancient deities in complete agreement and harmony accepted their respective shares of offerings and performed their cosmic duties, you too should live and work together in unity.
+English Translation: (Sage Angirasa instructs humanity) O humans! May you walk together in harmony, may you speak in unison with one voice, and may your minds grasp thoughts collectively. Just as the ancient deities in absolute harmony accepted their respective sacrificial offerings, so should you live in complete coordination.
 
---------------------------------------------------------------------------------
-🔸 Mantra 2
+मन्त्रः २ (Mantra 2):
+
 समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम् ।
 समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि ॥ २ ॥
 
-पदच्छेदः: समानः, मन्त्रः, समितिः, समानी, समानम्, मनः, सह, चित्तम्, एषाम्, समानम्, मन्त्रम्, अभिमन्त्रये, वः, समानेन, वः, हविषा, जुहोमि।
-अन्वयः: एषां मन्त्रः समानः, समितिः समानी, मनः समानं, चित्तं सह (अस्तु)। वः समानं मन्त्रम् अभिमन्त्रये वः समानेन हविषा जुहोमि।
+पदच्छेदः – समानः मन्त्रः समितिः समानी समानम् मनः सह चित्तम् एषाम् समानम् मन्त्रम् अभिमन्त्रये वः समानेन वः हविषा जुहोमि।
 
-English Word-to-Word Meaning:
-• एषाम् (Eṣām): Of these / of all of you
-• समानः (Samānaḥ) / समानी (Samānī): Common / Unified / Equal
-• मन्त्रः (Mantraḥ): Thought / contemplation / counsel
-• समितिः (Samitiḥ): Assembly / gathering / resolution
-• मनः (Manaḥ): Mind / feelings
-• सह (Saha): Together / united
-• चित्तम् (Cittam): Consciousness / inner heart / intellect
-• मन्त्रम् (Mantram): United resolve / advice
-• अभिमन्त्रये (Abhimantraye): I consecrate / sanctify and instill
-• वः (Vaḥ): To you
-• समानेन (Samānena): With a common / shared
-• हविषा (Haviṣā): Sacrificial offering / prayers
-• जुहोमि (Juhomi): I offer / perform the sacred ritual
+अन्वयः – एषां मन्त्रः समानः, समितिः समानी, मनः समानं, चित्तं सह (अस्तु)। वः समानं मन्त्रम् अभिमन्त्रये वः समानेन हविषा जुहोमि।
 
-Hindi Translation:
-Line 1 Hindi: इन (सब मनुष्यों) के विचार समान हों, इनकी सभाएँ (लक्ष्य) समान हों, इनका मन सौहार्दपूर्ण हो और इनका अंतःकरण (बुद्धिजन्य ज्ञान) एक साथ एकीकृत हो।
-Line 2 Hindi: मैं तुम सबको एक समान उद्देश्य से संस्कारित करता हूँ और तुम्हें एक समान यज्ञीय आहुति (सामूहिक प्रार्थना) से जोड़ता हूँ।
+Hindi Translation: तुम सबके विचार (मन्त्र) समान हों, तुम्हारी सभाएँ (समिति) निष्पक्ष और एक समान हों, तुम्हारे मन और तुम्हारी बुद्धि (चित्त) एक साथ जुड़े हों। मैं तुम्हें समान विचारों से अभिमन्त्रित करता हूँ और एक सामूहिक आहुति (हवि) के साथ तुम्हारे यज्ञ कार्य को सिद्ध करता हूँ।
 
-English Translation:
-Let your deliberations be unified, let your assemblies and resolutions be common, let your minds be harmonious, and let your hearts beat together in unison. I consecrate you all with a common collective purpose and offer a shared prayer for your absolute unity.
+English Translation: May your deliberations be uniform, may your assemblies be common, and may your minds and intellect function in absolute unison. I consecrate you all with common purposes and perform this divine ritual with unified offerings for you.
 
---------------------------------------------------------------------------------
-🔸 Mantra 3
+मन्त्रः ३ (Mantra 3):
+
 समानी व आकूतिः समाना हृदयानि वः ।
 समानमस्तु वो मनो यथा वः सुसहासति ॥ ३ ॥
 
-पदच्छेदः: समानी, वः, आकूतिः, समाना, हृदयानि, वः, समानम्, अस्तु, वः, मनः, यथा, वः, सु, सह, असति।
-अन्वयः: (हे मानवाः !) वः आकूतिः समानी (अस्तु)। वः हृदयानि समाना (सन्तु)। यथा वः सह सु असति, (तथा) वः मनः समानम् अस्तु।
+पदच्छेदः – समानी वः आकूतिः समाना हृदयानि वः समानम् अस्तु वः मनः यथा वः सु सह असति।
 
-English Word-to-Word Meaning:
-• वः (Vaḥ): Your
-• आकूतिः (Ākūtiḥ): Intention / resolve / determination
-• समानी (Samānī) / समाना (Samānā) / समानम् (Samānam): Similar / harmonious
-• हृदयानि (Hṛdayāni): Hearts
-• अस्तु (Astu): May it be
-• मनः (Manaḥ): Mind
-• यथा (Yathā): So that / in order that
-• सह (Saha): Together
-• सु (Su): Excellent / beautifully
-• असति (Asati): May exist / happens
+अन्वयः – (हे मानवाः !) वः आकूतिः समानी (अस्तु)। वः हृदयानि समाना (सन्तु)। यथा वः सह सु असति, (तथा) वः मनः समानम् अस्तु।
 
-Hindi Translation:
-Line 1 Hindi: हे मनुष्यों! तुम्हारा संकल्प (दृढ़ निश्चय) एक समान हो, तुम्हारे हृदय सामंजस्यपूर्ण (आपसी सद्भाव से युक्त) हों।
-Line 2 Hindi: और तुम्हारा मन एक जैसा हो, जिससे तुम्हारा यह संगठन (साथ रहना) अत्यंत सुंदर और सुदृढ़ हो सके।
+Hindi Translation: तुम्हारे संकल्प (आकूति) समान हों, तुम्हारे हृदय परस्पर सौहार्द से भरे हों, और तुम्हारे मन एक समान तालमेल वाले हों, जिससे तुम्हारा यह सामूहिक संगठन उत्कृष्ट और सुदृढ़ बना रहे।
 
-English Translation:
-O humans! Let your determinations be common, let your hearts be full of mutual harmony, and let your minds think in alignment, so that your collective co-existence and unity may be beautifully perfect.
+English Translation: May your resolutions be identical, may your hearts beat in complete harmony, and may your minds think together as one, so that your collective unit functions in supreme excellence.
 
-================================================================================
-📚 PART 2: Complete Vocabulary (Shabdarth - शब्दार्थाः)
-================================================================================
-Sanskrit Word    | Literal Meaning/Synonyms     | Hindi Meaning                  | English Meaning
---------------------------------------------------------------------------------------------------------------
-संगच्छध्वम्      | मिलित्वा गच्छत               | मिलकर चलो                      | May you walk together
-संवदध्वम्        | एकस्वरेण वदत                 | सहमतिपूर्वक बोलें              | May you speak in one voice
-समवेतस्वरेण      | सम्मिलित-स्वरेण              | सम्मिलित ध्वनि से              | By chanting in unison
-मनांसि           | चित्तानि                     | मनों को                        | Minds
-जानताम्          | जानन्तु                      | जानें                          | May you know / understand
-देवाः            | ब्रह्माण्डीय-शक्तयः          | सृष्टि की मूलभूत शक्तियाँ      | Cosmic forces / Celestial entities
-संजानानाः        | एकमनसः भूत्वा                | एक विचार वाले होकर             | Being amicable / In agreement
-उपासते           | सेवन्ते                      | श्रद्धापूर्वक कर्तव्य निर्वहण  | Devotedly performing duties
-अभ्युदयं         | अभिवृद्धिः                   | लौकिक उन्नति                   | Elevation and prosperity
-मन्त्रः          | विचारः / चिन्तनम्            | विचार / चिन्तन                 | Contemplation / Thought
-समितिः           | समाना प्राप्तिः              | समान सिद्धि / सभा              | Common resolutions / Assembly
-वः               | युष्मभ्यम्                   | तुम्हारे लिए / तुम्हारा        | For you / Your
-अभिमन्त्रये      | संस्कृत्य प्रचारयामि         | अभिमन्त्रित करके प्रकट करता हूँ | Consecrate and propagate
-हविषा            | प्रार्थनापूर्वकेण समर्पणेन   | प्रार्थनापूर्वक यज्ञाहुति द्वारा | By oblatory prayers
-जुहोमि           | ज्ञानकर्ममयं यज्ञं साधयामि   | दिव्य यज्ञ कर्म को साधता हूँ   | Performing divine offerings
-आकूतिः           | सङ्कल्पः                     | संकल्प / इच्छा                 | Resolution / Intent
-सु सह असति       | सुसङ्घटितः भवेत्             | सुसङ्घटित हो                   | May you be beautifully united
-संहिता           | मूलमन्त्रपाठः                | मूल वैदिक मन्त्र पाठ           | Original Vedic text
-ब्रह्मणा         | सृष्टिकर्त्रा परमेश्वरेण     | निर्माता परमात्मा के द्वारा    | By the creator of the universe
-निरवहन्          | निर्वाहम् अकुर्वन्           | निर्वाह किया                   | Took responsibility
+🔤 Word-to-Word Meanings & Shabdarth (Pages 5)
 
-================================================================================
-📝 PART 3: Chapter Exercises & Solved Answers (अभ्यासकार्यम्)
-================================================================================
+संस्कृत पद | शब्दार्थ / पर्याय | हिंदी अर्थ | English Meaning
+संगच्छध्वम् | मिलित्वा गच्छत | मिलकर चलो | May you walk together
+संवदध्वम् | एकस्वरेण वदत | एक स्वर में (सहमति से) बोलो | May you speak in one voice
+समवेतस्वरेण | सम्मिलित-स्वरेण | सामूहिक स्वर से | By chanting in unison
+मनांसि | चित्तानि | मनों को | Minds
+जानताम् | जानन्तु | जानें / समझें | May you know / grasp
+देवाः | ब्रह्माण्डीय-शक्तयः | ब्रह्मांडीय शक्तियाँ / देवता | Cosmic forces / Celestial entities
+संजानानाः | एकमनसः भूत्वा | एकमत होकर | Being amicable / In agreement
+उपासते | सेवन्ते / निर्वहन्ति | श्रद्धापूर्वक कर्तव्य निभाते हैं | Devotedly performing duty
+मन्त्रः | विचारः / चिन्तनम् | विचार / सोच | Contemplation / Thought
+समितिः | समाना प्राप्तिः / सभा | साझा लक्ष्य / सभा | Common resolutions / Assembly
+वः | युष्मभ्यम् | तुम्हारे लिए / तुम्हारा | For you / Your
+हविषा | प्रार्थनापूर्वक-समर्पणेन | यज्ञाहुति द्वारा / समर्पण से | By oblatory prayers
+आकूतिः | सङ्कल्पः | दृढ़ निश्चय / संकल्प | Resolution / Intent
+सुसह असति | सुसङ्घटितः भवेत् | अच्छी तरह संगठित हो | May you be united strongly
 
-Q1. संज्ञानसूक्तं सस्वरं पठत स्मरत लिखत च।
-(Recite the Saṁjñāna-Sūkta rhythmically, memorize it, and write it down.)
-Answer: This is a student classroom activity based on writing out Mantras 1, 2, and 3 accurately.
+📝 Chapter Exercises with Solutions (अभ्यासः - Pages 7-8)
 
-Q2. अधोलिखितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखत -
-(Answer the following questions in complete sentences)
+२. अधोलिखितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखत — (पूर्ण वाक्य में उत्तर दें)
+
 (क) सर्वेषां मनः कीदृशं भवेत्?
-Sanskrit Answer: सर्वेषां मनः समानं सामञ्जस्ययुतं च भवेत्।
-English Meaning: Everyone's mind should be harmonious and unified in thought.
+उत्तरम्: सर्वेषां मनः समानं (सामञ्जस्ययुतम् एकरूपं च) भवेत्।
+
 (ख) सङ्गच्छध्वं संवदध्वम् इत्यस्य कः अभिप्रायः?
-Sanskrit Answer: सङ्गच्छध्वं संवदध्वम् इत्यस्य अभिप्रायः अस्ति यत् हे मानवाः! यूयं सर्वे समाजे मिलित्वा अग्रे गच्छत तथा परस्परं सम्यक् विचारविनिमयं कुर्वन्तः एकस्वरेण वदत।
-English Meaning: It means: O humans! You all should walk together progressively in society and exchange your thoughts constructively, speaking in one collective voice.
+उत्तरम्: सङ्गच्छध्वं संवदध्वम् इत्यस्य अभिप्रायः अस्ति यत् मानवाः मिलित्वा अग्रे गच्छन्तु तथा च परस्परं विचारविनिमयं कुर्वन्तः एकस्वरेण वदन्तु।
+
 (ग) सर्वे किं परित्यज्य ऐक्यभावेन जीवेयुः?
-Sanskrit Answer: सर्वे परस्परं मनोभेदं द्वेषभावं वैमनस्यं च परित्यज्य ऐक्यभावेन जीवेयुः।
-English Meaning: Everyone should discard mental differences, hatred, and hostility to live together in unity.
+उत्तरम्: सर्वे वैमनस्यं (मनोभेदं) परित्यज्य ऐक्यभावेन जीवेयुः।
+
 (घ) अस्मिन् पाठे का प्रेरणा अस्ति?
-Sanskrit Answer: अस्मिन् पाठे संघटितरूपेण सहजीवनस्य, एकतायाः, परस्परं सामञ्जस्यस्य च प्रेरणा अस्ति।
-English Meaning: This lesson inspires collective co-existence, absolute unity, and mutual harmony.
+उत्तरम्: अस्मिन् पाठे सङ्घटितरूपेण सहजीवनस्य, एकतायाः, परस्परं सामञ्जस्यस्य च प्रेरणा अस्ति।
 
-Q3. रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कुरुत
-(Construct questions based on the underlined target terms)
-(क) परमेश्वरः सर्वत्र व्याप्तः अस्ति। ➡️ कः सर्वत्र व्याप्तः अस्ति? (Who is all-pervading?)
-(ख) वयम् ईश्वरं नमामः। ➡️ वयं कम् नमामः? (Whom do we bow down to?)
-(ग) वयम् ऐक्यभावेन जीवामः। ➡️ वयं कथम् / केन भावेन जीवामः? (How / in what spirit do we live?)
-(घ) ईश्वरस्य प्रार्थनया शान्तिः प्राप्यते। ➡️ ईश्वरस्य कया शान्तिः प्राप्यते? (Through what is peace obtained from God?)
-(ङ) अहं समाजाय श्रमं करोमि। ➡️ अहं कस्मै श्रमं करोमि? (For whom do I perform labor?)
-(च) अयं पाठः ऋग्वेदात् सङ्कलितः। ➡️ अयं पाठः कस्मात् सङ्कलितः? (From where is this lesson compiled?)
-(छ) वेदस्य अपरं नाम श्रुतिः। ➡️ वेदस्य अपरं नाम किम्? (What is the other name of the Veda?)
-(ज) मन्त्राः वेदेषु भवन्ति। ➡️ मन्त्राः केषु भवन्ति? (In what do mantras exist?)
+३. रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कुरुत — (प्रश्न निर्माण)
 
-Q4. पट्टिकातः शब्दान् चित्वा अधोलिखितेषु मन्त्रेषु रिक्तस्थानानि पूरयत -
-(Fill in the blanks using terms from the option box)
-(क) सङ्गच्छध्वं संवदध्वं सं वो मनांसि जानताम् । देवा भागं यथा पूर्वे संजानाना उपासते॥
-(ख) समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम् । समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि॥
-(ग) समानी व आकूतिः समाना हृदयानि वः । समानमस्तु वो मनो यथा वः सुसहासति॥
+(क) परमेश्वरः सर्वत्र व्याप्तः अस्ति। → कः सर्वत्र व्याप्तः अस्ति?
+(ख) वयम् ईश्वरं नमामः। → वयम् कम् नमामः?
+(ग) वयम् ऐक्यभावेन जीवामः। → वयं कथम् / केन जीवामः?
+(घ) ईश्वरस्य प्रार्थनया शान्तिः प्राप्यते। → ईश्वरस्य प्रार्थनया का प्राप्यते?
+(ङ) अहं समाजाय श्रमं करोमि। → अहं कस्मै श्रमं करोमि?
+(च) अयं पाठः ऋग्वेदात् सङ्कलितः। → अयं पाठः कस्मात् सङ्कलितः?
+(छ) वेदस्य अपरं नाम श्रुतिः। → वेदस्य अपरं नाम किम्?
+(ज) मन्त्राः वेदेषु भवन्ति। → मन्त्राः केषु भवन्ति?
 
-Q5. पाठे प्रयुक्तान् शब्दान् भावानुसारं परस्परं योजयत -
-(Match the terms with their appropriate textual meanings)
-(क) संगच्छध्वम् ➔ मिलित्वा चलत (Walk together)
-(ख) संवदध्वम् ➔ एकस्वरेण वदत (Speak in one voice)
-(ग) मनः ➔ चित्तम् (Mind / Consciousness)
-(घ) उपासते ➔ सेवन्ते (Devotedly worship / serve)
-(ङ) वसूनि ➔ धनानि (Wealth / Riches)
-(च) विश्वानि ➔ समस्तानि (All / Entire)
-(छ) आकूतिः ➔ सङ्कल्पः (Determination / Intent)
+४. मन्त्रेषु रिक्तस्थानानि पूरयत — (मन्त्रों में रिक्त स्थान भरें - Page 8)
 
-Q6. उदाहरणानुसारेण लट्-लकारस्य वाक्यानि लोट्-लकारेण परिवर्तयत -
-(Convert the sentences from Present Tense (Laṭ) to Imperative Mood (Loṭ))
-Example: बालिकाः नृत्यन्ति ➔ बालिकाः नृत्यन्तु
-(क) बालकाः हसन्ति। ➔ बालकाः हसन्तु (Let the boys laugh)
-(ख) युवां तत्र गच्छथः। ➔ युवां तत्र गच्छतम् (You two go there)
-(ग) यूयं धावथ। ➔ यूयं धावत (All of you run)
-(घ) आवां लिखावः। ➔ आवां लिखाव (Let us two write)
-(ङ) वयं पठामः। ➔ वयं पठाम (Let us all read)
+(क) सङ्गच्छध्वं संवदध्वं सं वो मनांसि जानताम्। देवा भागं यथा पूर्वे संजानाना उपासते।
+(ख) समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम्। समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि।
+(ग) समानी व आकूतिः समाना हृद्यानि वः। समानमस्तु वो मनो यथा वः सुसहासति।
 
-================================================================================
-🏛️ PART 4: Vedic Heritage & Structural Context (योग्यताविस्तरः)
-================================================================================
-१. ऋग्वेदस्य अन्तिममण्डलस्य (१०) अन्तिमं सूक्तं 'संज्ञान-सूक्तम्' (१९१) इति प्रख्यातम् अस्ति।
-२. ऋग्वेदे आहत्य १० मण्डलानि, १०२८ सूक्तानि, १०,५५२ मन्त्राः च सन्ति।
-३. वेदस्य अपरं नाम 'श्रुतिः' अपि कथ्यते, यतो हि प्राचीने काले गुरुमुखात् श्रुत्वा एव एतेषां संरक्षणम् अभवत्।
-४. सन्धि-नियमाः:
-   • सम् + गच्छते = सङ्गच्छते
-   • मनः + सह = मनो सह (मनः सह)
-   • न + आसीत् = नासीत्
-   • मन्त्र + अंशः = मन्त्रांशः
+५. शब्दान् भावानुसारं परस्परं योजयत — (सही मिलान करें - Page 8)
+
+(क) संगच्छध्वम् → मिलित्वा चलत
+(ख) संवदध्वम् → एकस्वरेण वदत
+(ग) मनः → चित्तम्
+(घ) उपासते → सेवन्ते
+(ङ) वसूनि → धनानि
+(च) विश्वानि → समस्तानि
+(छ) आकूतिः → सङ्कल्पः
+
+६. लट्-लकारस्य वाक्यानि लोट्-लकारेण परिवर्तयत — (वर्तमानकाल से आज्ञाकाल में बदलें - Page 8)
+
+यथा — बालिकाः नृत्यन्ति → बालिकाः नृत्यन्तु
+(क) बालकाः हसन्ति → बालकाः हसन्तु
+(ख) युवां तत्र गच्छथः → युवां तत्र गच्छतम्
+(ग) यूयं धावथ → यूयं धावत
+(घ) आवां लिखावः → आवां लिखाव
+(ङ) वयं पठामः → वयं पठाम
+
+📝 5 Chapter-Based Worksheets (अभ्यास-पत्रिकाः)
+
+📄 Worksheet 1: Vedic Structure Recognition
+Answer based on the 'Yogyatavistara' section on page 9:
+1. ऋग्वेदस्य अन्तिममण्डलात् सङ्कलितं सूक्तं किम्?
+2. ऋग्वेदे आहत्य कति मन्त्राः सन्ति?
+3. 'संज्ञान-सूक्तस्य' अपरं प्रख्यातं नाम किम्?
+
+📄 Worksheet 2: Conjugation Drills (लोट्-लकार अभ्यासः)
+Complete the following for 'गम्' root based on page 6:
+1. प्रथमपुरुषः (एकवचनम्) परस्मैपदी = गच्छतु; आत्मनेपदी = ______________
+2. मध्यमपुरुषः (बहुवचनम्) परस्मैपदी = गच्छत; आत्मनेपदी = ______________
+3. उत्तमपुरुषः (एकवचनम्) परस्मैपदी = गच्छानि; आत्मनेपदी = ______________
+
+📄 Worksheet 3: True / False (आम् / न)
+Write 'आम्' for True and 'न' for False:
+1. ऋग्वेदः विश्वस्य प्राचीनतमं साहित्यं मन्यते। [ ]
+2. देवाः परस्परं मनोभेदं कृत्वा स्वं स्वं कर्म निरवहन्। [ ]
+3. आकूतिः इति पदस्य अर्थः 'बुद्धिः' भवति। [ ]
+4. 'संज्ञान-सूक्तस्य' ऋषिः आङ्गिरसः अस्ति। [ ]
+
+📄 Worksheet 4: Pronominal Alternative Forms (वैकल्पिक-रूपाणि)
+Fill in using अस्मद् / युष्मद् alternative forms (pages 6-7):
+1. नमः तुभ्यम् = नमः ______________ (मे / ते)
+2. देहि मह्यं वरम् = देहि ______________ वरम्। (मा / मे)
+3. अहं त्वां मोक्षयिष्यामि = अहं ______________ मोक्षयिष्यामि। (त्वा / मा)
+
+📄 Worksheet 5: Metre Recitation Scansion
+Identify the correct words to complete Mantra 3:
+"समानी व ______________, समाना ______________ वः। समानमस्तु वो मनो यथा वः ______________॥"
+
+🧠 2 Grammar Theme Quizzes
+
+🏆 Quiz 1: Parasmaipada vs. Atmanepada Transformation Rules
+
+1. सामान्यतया गम्-धातुः परस्मैपदी अस्ति, परन्तु कस्य उपसर्गस्य योजनेन सः आत्मनेपदी भवति?
+(A) प्र
+(B) सम्
+(C) अनु
+(D) प्रति
+
+2. लोट्-लकारे मध्यमपुरुषस्य बहुवचने 'संगच्छध्वम्' इति रूपं कुत्र सिध्यति?
+(A) परस्मैपदी रूपे
+(B) आत्मनेपदी रूपे
+(C) उभयपदी रूपे
+(D) कोऽपि न
+
+3. 'यूयम् उपविशत'— अस्मिन् वाक्ये लोट्-लकारः कस्य अर्थे प्रयुक्तः?
+(A) आशीर्वादार्थे
+(B) आमन्त्रणार्थे
+(C) आज्ञार्थे
+(D) प्रश्नार्थे
+
+4. 'गच्छन्तु' इति पदं गम्-धातोः कस्य पुरुषस्य कस्य वचनस्य रूपम् अस्ति?
+(A) प्रथमपुरुषः, एकवचनम्
+(B) मध्यमपुरुषः, बहुवचनम्
+(C) प्रथमपुरुषः, बहुवचनम्
+(D) उत्तमपुरुषः, द्विवचनम्
+
+🏆 Quiz 2: Rigveda Analytics & Pronouns
+
+1. ऋग्वेदे कति मण्डलानि विभक्तानि सन्ति?
+(A) अष्ट (८)
+(B) दश (१०)
+(C) चतुर्दश (१४)
+(D) द्वादश (१२)
+
+2. 'युष्मद्' शब्दस्य षष्ठी-विभक्तेः एकवचने वैकल्पिकं रूपं किम् भवति?
+(A) मा
+(B) मे
+(C) ते
+(D) त्वा
+
+3. 'देवा भागं यथा पूर्वे'— अत्र 'पूर्वे' इति पदस्य कः भावार्थः?
+(A) पूर्वदिशायाम्
+(B) सृष्टेः प्रारम्भकाले (प्राचीनकाले)
+(C) अनन्तरकाले
+(D) भोजनपूर्वे
+
+4. 'हविषा' इति पदे का विभक्तिः प्रयुक्ता अस्ति?
+(A) प्रथमा
+(B) तृतीया
+(C) षष्ठी
+(D) सप्तमी
