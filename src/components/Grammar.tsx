@@ -7,7 +7,7 @@ import LingaVachanaGuide from './LingaVachanaGuide';
 import VibhaktiGuide from './VibhaktiGuide';
 import '../styles/grammar.css';
 
-type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'samyukta' | 'sound-teams' | 'article';
+type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'samyukta' | 'sound-teams' | 'science-of-sound' | 'article';
 
 const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((response) => response.text());
 
@@ -129,6 +129,123 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQui
           </p>
         </header>
         <SoundTeamsArticle />
+      </section>
+    );
+  }
+
+  if (topic === 'science-of-sound') {
+    return (
+      <section className="grammar-page" aria-label="Sanskrit Science of Sound">
+        <header className="grammar-page-header">
+          {renderBreadcrumb('ध्वनि-विज्ञानम् · Science of Sound')}
+          <h2 className="grammar-title">संस्कृतम् · ध्वनि-विज्ञानम्</h2>
+          <p className="grammar-lead">
+            The Science of Sound: Neuro-acoustic precision, resonant vibrations, and anatomical vocal science of the Sanskrit language.
+          </p>
+        </header>
+
+        <div
+          style={{
+            maxWidth: '850px',
+            margin: '0 auto 2rem auto',
+            background: '#ffffff',
+            borderRadius: '16px',
+            border: '1px solid #e2e8f0',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
+            overflow: 'hidden',
+          }}
+        >
+          <div
+            style={{
+              position: 'relative',
+              width: '100%',
+              paddingBottom: '56.25%',
+              height: 0,
+              background: '#090d16',
+            }}
+          >
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/tkvYjNZSsZA?start=32&rel=0"
+              title="Sanskrit: The Science of Sound"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 0,
+              }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+          <div
+            style={{
+              padding: '1.25rem 1.5rem',
+              background: '#fafaf9',
+              borderTop: '1px solid #f0ece1',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: '0.75rem',
+            }}
+          >
+            <div>
+              <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#1c1917' }}>
+                🎥 Masterclass: Sanskrit: The Science of Sound
+              </div>
+              <div style={{ fontSize: '0.85rem', color: '#78716c', marginTop: '0.2rem' }}>
+                Curated Documentary by <strong>Conscious Cosmos</strong> · Timestamp: starts at 0:32
+              </div>
+            </div>
+            <a
+              href="https://www.youtube.com/watch?v=tkvYjNZSsZA&t=32s"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                background: '#dc2626',
+                color: '#ffffff',
+                padding: '0.5rem 1rem',
+                borderRadius: '8px',
+                fontWeight: 700,
+                fontSize: '0.85rem',
+                textDecoration: 'none',
+              }}
+            >
+              <span>▶ Watch on YouTube</span>
+            </a>
+          </div>
+        </div>
+
+        <article className="grammar-article" style={{ maxWidth: '850px', margin: '0 auto' }}>
+          <h3 className="grammar-article-subheading">🧠 Key Concepts Explored in this Documentary</h3>
+          <ul className="grammar-article-list">
+            <li>
+              <strong>The 5 Anatomical Vocal Points (उच्चारण-स्थानानि):</strong> Sanskrit organizes letters geometrically along the human vocal tract from back to front: Kaṇṭhya (कण्ठ्य - Throat), Tālavya (तालव्य - Palate), Mūrdhanya (मूर्धन्य - Roof of mouth), Dantya (दन्त्य - Teeth), and Oṣṭhya (ओष्ठ्य - Lips).
+            </li>
+            <li>
+              <strong>Effort and Breath Dynamics (आभ्यन्तर-प्रयत्न):</strong> How internal aspiration (alpaprāṇa vs. mahāprāṇa) and voicing (ghoṣa vs. aghoṣa) stimulate distinct neurological pathways.
+            </li>
+            <li>
+              <strong>Acoustic Resonance &amp; Cymatics:</strong> The physical geometric vibrations created by Sanskrit frequencies and why ancient mantras follow exact mathematical harmonics.
+            </li>
+          </ul>
+
+          <footer className="grammar-article-footer">
+            <button type="button" className="grammar-back grammar-footer-btn" onClick={goBackToShelf}>
+              ← Back to All Grammar Articles
+            </button>
+            {onGoHome && (
+              <button type="button" className="grammar-home grammar-footer-btn" onClick={onGoHome}>
+                ← Return to Deepakam Lessons
+              </button>
+            )}
+          </footer>
+        </article>
       </section>
     );
   }
@@ -285,6 +402,19 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQui
           <span className="grammar-card-blurb">
             Vowels, consonants, sliders, hissers, and fusion blocks — how every letter finds its
             squad.
+          </span>
+        </button>
+        <button
+          type="button"
+          className="grammar-card grammar-card--ready"
+          style={{ borderColor: '#8b5cf6', background: 'linear-gradient(180deg, #ffffff 0%, #faf5ff 100%)' }}
+          onClick={() => setTopic('science-of-sound')}
+        >
+          <span className="grammar-card-title" style={{ color: '#7c3aed' }}>
+            🎥 Sanskrit: The Science of Sound · ध्वनि-विज्ञानम्
+          </span>
+          <span className="grammar-card-blurb">
+            Masterclass Video: Explore the neuro-acoustic precision, 5 vocal articulation points, and resonant frequencies of Sanskrit.
           </span>
         </button>
         <button type="button" className="grammar-card grammar-card--ready" onClick={() => setTopic('samyukta')}>

@@ -154,6 +154,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const tileLabel = (letter: string) =>
     activeLessonId === 'varnamala' ? varnamalaLabel(letter) : aksharaLabel(letter);
   const [isChartOpen, setIsChartOpen] = useState(false);
+  const [isSoundVideoOpen, setIsSoundVideoOpen] = useState(false);
   const [isSymbolsOpen, setIsSymbolsOpen] = useState(false);
   const [isGrade8SyllabusOpen, setIsGrade8SyllabusOpen] = useState(false);
   const [isPlayingAll, setIsPlayingAll] = useState(false);
@@ -1373,6 +1374,97 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                   loading="lazy"
                 />
               </div>
+            </div>
+          )}
+
+          {isVarnamala && (
+            <div className="varnamala-chart-toggle-wrap" style={{ marginTop: '0.65rem' }}>
+              <button
+                type="button"
+                className="varnamala-chart-toggle"
+                onClick={() => setIsSoundVideoOpen((open) => !open)}
+                aria-expanded={isSoundVideoOpen}
+                style={{
+                  background: 'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
+                  borderColor: '#c4b5fd',
+                  color: '#5b21b6',
+                  fontWeight: 700,
+                }}
+              >
+                <span>🎥 Watch Video Masterclass: Sanskrit: The Science of Sound (ध्वनि-विज्ञानम्)</span>
+                <span className="varnamala-chart-toggle-arrow">{isSoundVideoOpen ? '▲' : '▼'}</span>
+              </button>
+              {isSoundVideoOpen && (
+                <div
+                  style={{
+                    marginTop: '0.75rem',
+                    background: '#ffffff',
+                    borderRadius: '14px',
+                    border: '1px solid #ddd6fe',
+                    overflow: 'hidden',
+                    boxShadow: '0 4px 14px rgba(91, 33, 182, 0.08)',
+                  }}
+                >
+                  <div
+                    style={{
+                      position: 'relative',
+                      width: '100%',
+                      paddingBottom: '56.25%',
+                      height: 0,
+                      background: '#090d16',
+                    }}
+                  >
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/tkvYjNZSsZA?start=32&rel=0"
+                      title="Sanskrit: The Science of Sound"
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        border: 0,
+                      }}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                  <div
+                    style={{
+                      padding: '0.9rem 1.25rem',
+                      background: '#faf5ff',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      flexWrap: 'wrap',
+                      gap: '0.5rem',
+                      borderTop: '1px solid #ede9fe',
+                    }}
+                  >
+                    <div style={{ fontSize: '0.85rem', color: '#5b21b6', lineHeight: 1.45 }}>
+                      <strong>Sanskrit: The Science of Sound</strong> · Video by <em>Conscious Cosmos</em>
+                      <br />
+                      <span style={{ color: '#6b7280', fontSize: '0.78rem' }}>
+                        Explore the neurological, vocal tract, and acoustic science behind Sanskrit phonetics.
+                      </span>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/watch?v=tkvYjNZSsZA&t=32s"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        fontSize: '0.8rem',
+                        color: '#6d28d9',
+                        fontWeight: 700,
+                        textDecoration: 'underline',
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
+                      Open on YouTube ↗
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
           )}
           {activeLesson.sentences.map((group, groupIdx) => (

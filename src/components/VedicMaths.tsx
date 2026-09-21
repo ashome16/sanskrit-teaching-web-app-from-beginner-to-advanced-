@@ -12,7 +12,7 @@ import {
 import { playPronunciation } from '../utils/pronunciation';
 import '../styles/vedic-maths.css';
 
-type VedicTab = 'solvers' | 'articles' | 'zero' | 'fluid' | 'algebra' | 'parampara' | 'logic' | 'sutras' | 'quiz' | 'essay';
+type VedicTab = 'solvers' | 'articles' | 'zero' | 'fluid' | 'algebra' | 'geometry' | 'parampara' | 'logic' | 'sutras' | 'quiz' | 'essay';
 type SolverKey = 'ekadhikena' | 'nikhilam-sub' | 'nikhilam-mul' | 'urdhva' | 'ekanyunena' | 'antya' | 'beejank';
 
 export interface VedicMathsProps {
@@ -244,6 +244,14 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
           >
             <span>📐</span>
             <span>Universal Algebra Engine</span>
+          </button>
+          <button
+            type="button"
+            className={`vedic-tab-btn${activeTab === 'geometry' ? ' active' : ''}`}
+            onClick={() => setActiveTab('geometry')}
+          >
+            <span>🔺</span>
+            <span>Vedic Geometry</span>
           </button>
           <button
             type="button"
@@ -1657,6 +1665,134 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
               >
                 📖 Read Full Algebra Article in Masterclass
               </button>
+            </div>
+          </div>
+        )}
+
+        {/* ==================================================================
+            TAB: VEDIC GEOMETRY & THE SCIENCE OF SHAPES (शुल्बसूत्राणि)
+            ================================================================== */}
+        {activeTab === 'geometry' && (
+          <div className="zero-essay-container">
+            <div className="zero-badge-pill" style={{ background: '#ecfdf5', color: '#065f46' }}>
+              <span>॥ शुल्बसूत्राणि · रेखागणितम् ॥</span>
+              <span>·</span>
+              <span>The Sacred Science of Shapes</span>
+            </div>
+
+            <h1 className="zero-essay-title">Vedic Geometry: The Science of Shapes</h1>
+            <p className="zero-essay-subtitle">
+              Centuries before Euclidean geometry arose in the Mediterranean, ancient Indian master-geometers documented the Śulba Sūtras (शुल्बसूत्राणि)—using ropes, pegs, and exact geometric transformations to construct monumental fire altars, squares, circles, and Pythagorean triples.
+            </p>
+
+            {/* Video Player Box */}
+            <div
+              style={{
+                background: '#ffffff',
+                borderRadius: '16px',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
+                overflow: 'hidden',
+                margin: '2rem 0',
+              }}
+            >
+              <div
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  paddingBottom: '56.25%',
+                  height: 0,
+                  background: '#090d16',
+                }}
+              >
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/bp9m53Tp6xg?start=11&rel=0"
+                  title="Vedic Geometry: The Science Of Shapes"
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    border: 0,
+                  }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+              <div
+                style={{
+                  padding: '1.25rem 1.5rem',
+                  background: '#fafaf9',
+                  borderTop: '1px solid #f0ece1',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  flexWrap: 'wrap',
+                  gap: '0.75rem',
+                }}
+              >
+                <div>
+                  <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#1c1917' }}>
+                    🎥 Masterclass: Vedic Geometry — The Science of Shapes
+                  </div>
+                  <div style={{ fontSize: '0.85rem', color: '#78716c', marginTop: '0.2rem' }}>
+                    Curated Documentary by <strong>Conscious Cosmos</strong> · Timestamp: starts at 0:11
+                  </div>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=bp9m53Tp6xg&t=11s"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    background: '#dc2626',
+                    color: '#ffffff',
+                    padding: '0.5rem 1rem',
+                    borderRadius: '8px',
+                    fontWeight: 700,
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <span>▶ Watch on YouTube</span>
+                </a>
+              </div>
+            </div>
+
+            {/* In-depth geometric cards */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginTop: '1.5rem' }}>
+              <div style={{ background: '#ffffff', padding: '1.5rem', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>📐</div>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
+                  The Śulba Sūtras (शुल्बसूत्राणि)
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
+                  <em>"Śulba"</em> literally means a measuring cord or rope. The texts of <em>Baudhāyana, Āpastamba, Kātyāyana</em>, and <em>Mānava</em> documented exact geometric algorithms used to lay out coordinates and right angles on the earth.
+                </p>
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '1.5rem', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>🔺</div>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
+                  Baudhāyana’s Theorem (Pre-Pythagoras)
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
+                  <em>"दीर्घचतुरश्रस्याक्ष्णया रज्जुः..."</em> Baudhāyana explicitly proved that the diagonal of a rectangle produces by itself both areas which the sides produce separately, centuries before Pythagoras.
+                </p>
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '1.5rem', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>⭕</div>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
+                  Circle &amp; Square Transformations (Circling the Square)
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
+                  Because Vedic altars had to possess identical surface area regardless of whether their geometry was circular (Gārhapatya) or square (Āhavanīya), Vedic seers devised formulas to convert squares to circles and vice versa.
+                </p>
+              </div>
             </div>
           </div>
         )}
