@@ -20741,2264 +20741,618 @@
       "id": "grade8_prarthana",
       "fileName": "grade8_prarthana.txt",
       "title": "Grade 8: प्रार्थना — सरस्वतीप्रार्थना (या कुन्देन्दुतुषारहारधवला)",
+      "page_numbers": "मङ्गलाचरणम्",
       "sentences": [
         {
-          "kind": "section-header",
           "sanskrit": "॥ सरस्वतीप्रार्थना ॥",
-          "meaning": "Prayer to Goddess Saraswati · Grade 8 (Saraswati Vandana)",
-          "paragraphTranslation": "सरस्वती वन्दना (या कुन्देन्दुतुषारहारधवला)",
+          "meaning": "Saraswati Prayer",
+          "paragraphTranslation": "Opening mangalācaraṇa to Goddess Saraswati.",
           "words": [
             "॥",
             "सरस्वतीप्रार्थना",
             "॥"
-          ]
+          ],
+          "kind": "section-header"
         },
         {
-          "kind": "chapter-header",
           "sanskrit": "श्लोक १ (Verse 1)",
-          "meaning": "Verse 1: Invocation of Goddess Saraswati (या कुन्देन्दुतुषारहारधवला)",
-          "paragraphTranslation": "श्लोक १: माँ सरस्वती की वन्दना",
+          "meaning": "Verse 1",
+          "paragraphTranslation": "First sacred verse of the Saraswati Vandana.",
           "words": [
             "श्लोक",
-            "१"
-          ]
+            "१",
+            "(Verse",
+            "1)"
+          ],
+          "kind": "chapter-header"
         },
         {
           "sanskrit": "या कुन्देन्दुतुषारहारधवला या शुभ्रवस्त्रावृता । या वीणावरदण्डमण्डितकरा या श्वेतपद्मासना ॥ या ब्रह्माच्युतशङ्करप्रभृतिभिर्देवैः सदा वन्दिता । सा मां पातु सरस्वती भगवती निःशेषजाड्यापहा ॥ १ ॥",
-          "meaning": "Verse 1: May that Goddess Saraswati protect me, She who is as white as the Kunda flower, the moon, and a snowy garland; Who is draped in pure white attire; Whose hands are adorned with the beautiful staff of the Veena; Who sits gracefully on a white lotus throne; and Who is eternally worshipped by Brahma, Vishnu, and Shiva. May She completely eliminate my mental inertia and ignorance.\n(Roman: Yā Kundendu-Tuṣāra-Hāra-Dhavalā Yā Śubhra-Vastrā-Vṛtā | Yā Vīṇā-Vara-Daṇḍa-Maṇḍita-Karā Yā Śveta-Padmā-Sanā || Yā Brahmāacyuta-Śaṅkara-Prabhṛtibhir-Devaiḥ Sadā Vanditā | Sā Māṁ Pātu Sarasvatī Bhagavatī Niḥśeṣa-Jāḍyā-Pahā || 1 ||)",
-          "paragraphTranslation": "श्लोक १ (सरल भावार्थ): जो देवी कुन्द के फूल, चंद्रमा, और बर्फ के हार जैसी श्वेत हैं; जो शुभ्र (सफेद) वस्त्र धारण करती हैं; जिनके हाथ श्रेष्ठ वीणादंड से सुशोभित हैं; जो श्वेत कमल के आसन पर विराजमान हैं; जिनकी ब्रह्मा, विष्णु और महेश आदि सभी देवता सदा वन्दना करते हैं—वे सम्पूर्ण अज्ञान और जड़ता को दूर करने वाली भगवती सरस्वती मेरी रक्षा करें।",
+          "meaning": "May Goddess Saraswati, white as jasmine-moon-snow garland, protect me.",
+          "paragraphTranslation": "May that Goddess Saraswati protect me — She who is white as the kunda flower, the moon, and a snowy garland; draped in pure white; whose hands bear the veena-staff; seated on a white lotus; eternally worshipped by Brahma, Vishnu, and Shiva — the complete destroyer of ignorance.",
           "words": [
             "या",
             "कुन्देन्दुतुषारहारधवला",
             "या",
             "शुभ्रवस्त्रावृता",
+            "।",
             "या",
             "वीणावरदण्डमण्डितकरा",
             "या",
             "श्वेतपद्मासना",
+            "॥",
             "या",
             "ब्रह्माच्युतशङ्करप्रभृतिभिर्देवैः",
             "सदा",
             "वन्दिता",
+            "।",
             "सा",
             "मां",
             "पातु",
             "सरस्वती",
             "भगवती",
             "निःशेषजाड्यापहा",
-            "१"
-          ]
+            "॥",
+            "१",
+            "॥"
+          ],
+          "kind": "shloka"
         },
         {
-          "kind": "chapter-header",
           "sanskrit": "श्लोक २ (Verse 2)",
-          "meaning": "Verse 2: Meditation on Goddess Sharada (शुक्लां ब्रह्मविचारसारपरमाम्)",
-          "paragraphTranslation": "श्लोक २: भगवती शारदा की स्तुति",
+          "meaning": "Verse 2",
+          "paragraphTranslation": "Second sacred verse praising Sharada.",
           "words": [
             "श्लोक",
-            "२"
-          ]
+            "२",
+            "(Verse",
+            "2)"
+          ],
+          "kind": "chapter-header"
         },
         {
           "sanskrit": "शुक्लां ब्रह्मविचारसारपरमामाद्यां जगद्व्यापिनीं । वीणापुस्तकधारिणीमभयदां जाड्यान्धकारापहाम् ॥ हस्ते स्फाटिकमालिकां विदधतीं पद्मासने संस्थितां । वन्दे तां परमेश्वरीं भगवतीं बुद्धिप्रदां शारदाम् ॥ २ ॥",
-          "meaning": "Verse 2: I bow to that supreme Goddess Sharada, Who is pure white in complexion, Who represents the absolute essence of spiritual reflection, and Who pervades the entire universe. She holds the Veena, the holy book of wisdom, and grants the gesture of fearlessness, completely destroying the darkness of ignorance. Holding a crystal rosary in Her hand and seated firmly upon a lotus, She is the supreme dispenser of intellect and wisdom.\n(Roman: Śuklāṁ Brahma-Vicāra-Sāra-Paramām-Ādyāṁ Jagad-Vyāpinīṁ | Vīṇā-Pustaka-Dhāriṇīm-Abhayadāṁ Jāḍyāndha-Kārā-Pahām || Haste Sphāṭika-Mālikāṁ Vidadhatīṁ Padmāsane Saṁsthitāṁ | Vande Tāṁ Parameśvarīṁ Bhagavatīṁ Buddhi-Pradāṁ Śāradām || 2 ||)",
-          "paragraphTranslation": "श्लोक २ (सरल भावार्थ): श्वेत वर्ण वाली, ब्रह्मविचार के परम तत्व में लीन रहने वाली, आदि शक्ति, सम्पूर्ण जगत में व्याप्त रहने वाली, हाथों में वीणा, पुस्तक और अभयमुद्रा धारण करने वाली, अज्ञान के अंधकार को नष्ट करने वाली, हाथ में स्फटिक की माला धारण करने वाली, कमल के आसन पर सुशोभित और बुद्धि प्रदान करने वाली उन परमेश्वरी भगवती शारदा की मैं वन्दना करता हूँ।",
+          "meaning": "I bow to Goddess Sharada, bestower of intellect.",
+          "paragraphTranslation": "I bow to that supreme Goddess Sharada — pure white, essence of spiritual reflection, pervading the universe; holding veena and book, granting fearlessness, destroying darkness of ignorance; holding a crystal rosary, seated on a lotus — the supreme dispenser of intellect.",
           "words": [
             "शुक्लां",
             "ब्रह्मविचारसारपरमामाद्यां",
             "जगद्व्यापिनीं",
+            "।",
             "वीणापुस्तकधारिणीमभयदां",
             "जाड्यान्धकारापहाम्",
+            "॥",
             "हस्ते",
             "स्फाटिकमालिकां",
             "विदधतीं",
             "पद्मासने",
             "संस्थितां",
+            "।",
             "वन्दे",
             "तां",
             "परमेश्वरीं",
             "भगवतीं",
             "बुद्धिप्रदां",
             "शारदाम्",
-            "२"
-          ]
-        },
-        {
-          "kind": "glossary-header",
-          "sanskrit": "पदच्छेदः शब्दार्थाः च · Word-to-Word Meanings",
-          "meaning": "Word-to-Word Meanings & Lexical Breakdown",
-          "paragraphTranslation": "पदच्छेद एवं शब्दार्थ (विस्तृत व्याख्या)",
-          "words": [
-            "पदच्छेदः",
-            "शब्दार्थाः",
-            "च"
-          ]
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "या",
-          "meaning": "Who",
-          "paragraphTranslation": "जो (या (सर्वनाम))",
-          "words": [
-            "या"
+            "॥",
+            "२",
+            "॥"
           ],
-          "sanskrit_gloss": "या (सर्वनाम)",
-          "hindi_gloss": "जो"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "कुन्देन्दुतुषारहारधवला",
-          "meaning": "Pure white like a garland of jasmine flowers, the moon, and snow",
-          "paragraphTranslation": "कुंद के फूल, चन्द्रमा, और बर्फ के हार जैसी श्वेत (कुन्द-इन्दु-तुषार-हार-धवला)",
-          "words": [
-            "कुन्देन्दुतुषारहारधवला"
-          ],
-          "sanskrit_gloss": "कुन्द-इन्दु-तुषार-हार-धवला",
-          "hindi_gloss": "कुंद के फूल, चन्द्रमा, और बर्फ के हार जैसी श्वेत"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "शुभ्रवस्त्रावृता",
-          "meaning": "Clothed in clean, pure white garments",
-          "paragraphTranslation": "श्वेत वस्त्रों से ढकी हुई (शुभ्र-वस्त्र-आवृता)",
-          "words": [
-            "शुभ्रवस्त्रावृता"
-          ],
-          "sanskrit_gloss": "शुभ्र-वस्त्र-आवृता",
-          "hindi_gloss": "श्वेत वस्त्रों से ढकी हुई"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "वीणावरदण्डमण्डितकरा",
-          "meaning": "Whose hands are adorned with the divine staff of the Veena",
-          "paragraphTranslation": "हाथों में श्रेष्ठ वीणा-दंड से सुशोभित (वीणा-वर-दण्ड-मण्डित-करा)",
-          "words": [
-            "वीणावरदण्डमण्डितकरा"
-          ],
-          "sanskrit_gloss": "वीणा-वर-दण्ड-मण्डित-करा",
-          "hindi_gloss": "हाथों में श्रेष्ठ वीणा-दंड से सुशोभित"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "श्वेतपद्मासना",
-          "meaning": "Seated upon a pure white lotus throne",
-          "paragraphTranslation": "सफेद कमल के आसन पर विराजमान (श्वेत-पद्म-आसना)",
-          "words": [
-            "श्वेतपद्मासना"
-          ],
-          "sanskrit_gloss": "श्वेत-पद्म-आसना",
-          "hindi_gloss": "सफेद कमल के आसन पर विराजमान"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "ब्रह्माच्युतशङ्करप्रभृतिभिः",
-          "meaning": "By Brahma, Vishnu (Acyuta), Shiva, and other supreme deities",
-          "paragraphTranslation": "ब्रह्मा, विष्णु (अच्युत), और शिव आदि के द्वारा (ब्रह्मा-अच्युत-शङ्कर-प्रभृतिभिः)",
-          "words": [
-            "ब्रह्माच्युतशङ्करप्रभृतिभिः"
-          ],
-          "sanskrit_gloss": "ब्रह्मा-अच्युत-शङ्कर-प्रभृतिभिः",
-          "hindi_gloss": "ब्रह्मा, विष्णु (अच्युत), और शिव आदि के द्वारा"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "देवैः",
-          "meaning": "By the gods",
-          "paragraphTranslation": "देवताओं के द्वारा (सुरैः / अमरैः)",
-          "words": [
-            "देवैः"
-          ],
-          "sanskrit_gloss": "सुरैः / अमरैः",
-          "hindi_gloss": "देवताओं के द्वारा"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "सदा",
-          "meaning": "Always / Eternally",
-          "paragraphTranslation": "हमेशा / सर्वदा (सर्वदा / नित्यम्)",
-          "words": [
-            "सदा"
-          ],
-          "sanskrit_gloss": "सर्वदा / नित्यम्",
-          "hindi_gloss": "हमेशा / सर्वदा"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "वन्दिता",
-          "meaning": "Worshipped or praised",
-          "paragraphTranslation": "पूजित या वन्दना की जाने वाली (पूजिता / स्तुता)",
-          "words": [
-            "वन्दिता"
-          ],
-          "sanskrit_gloss": "पूजिता / स्तुता",
-          "hindi_gloss": "पूजित या वन्दना की जाने वाली"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "सा",
-          "meaning": "She",
-          "paragraphTranslation": "वह (सा देवी)",
-          "words": [
-            "सा"
-          ],
-          "sanskrit_gloss": "सा देवी",
-          "hindi_gloss": "वह"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "मां",
-          "meaning": "Me",
-          "paragraphTranslation": "मेरी / मुझे (माम्)",
-          "words": [
-            "मां"
-          ],
-          "sanskrit_gloss": "माम्",
-          "hindi_gloss": "मेरी / मुझे"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "पातु",
-          "meaning": "Please protect",
-          "paragraphTranslation": "रक्षा करें (रक्षतु)",
-          "words": [
-            "पातु"
-          ],
-          "sanskrit_gloss": "रक्षतु",
-          "hindi_gloss": "रक्षा करें"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "सरस्वती भगवती",
-          "meaning": "Divine Goddess Saraswati",
-          "paragraphTranslation": "देवी भगवती सरस्वती (देवी सरस्वती)",
-          "words": [
-            "सरस्वती",
-            "भगवती"
-          ],
-          "sanskrit_gloss": "देवी सरस्वती",
-          "hindi_gloss": "देवी भगवती सरस्वती"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "निःशेषजाड्यापहा",
-          "meaning": "Destroyer of all absolute ignorance and mental sluggishness",
-          "paragraphTranslation": "मानसिक जड़ता और अज्ञान को पूरी तरह से नष्ट करने वाली (निःशेष-जाड्य-अपहा)",
-          "words": [
-            "निःशेषजाड्यापहा"
-          ],
-          "sanskrit_gloss": "निःशेष-जाड्य-अपहा",
-          "hindi_gloss": "मानसिक जड़ता और अज्ञान को पूरी तरह से नष्ट करने वाली"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "शुक्लाम्",
-          "meaning": "Possessing a pure white complexion",
-          "paragraphTranslation": "श्वेत वर्ण वाली (श्वेतवर्णाम्)",
-          "words": [
-            "शुक्लाम्"
-          ],
-          "sanskrit_gloss": "श्वेतवर्णाम्",
-          "hindi_gloss": "श्वेत वर्ण वाली"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "ब्रह्मविचारसारपरमाम्",
-          "meaning": "The supreme essence of the meditative realization of Brahman",
-          "paragraphTranslation": "परब्रह्म के विचार के सार में परम श्रेष्ठ (ब्रह्म-विचार-सार-परमाम्)",
-          "words": [
-            "ब्रह्मविचारसारपरमाम्"
-          ],
-          "sanskrit_gloss": "ब्रह्म-विचार-सार-परमाम्",
-          "hindi_gloss": "परब्रह्म के विचार के सार में परम श्रेष्ठ"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "आद्याम्",
-          "meaning": "The primal, original power",
-          "paragraphTranslation": "आदि शक्ति, सनातन (मूलशक्तिम् / सनातनीम्)",
-          "words": [
-            "आद्याम्"
-          ],
-          "sanskrit_gloss": "मूलशक्तिम् / सनातनीम्",
-          "hindi_gloss": "आदि शक्ति, सनातन"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "जगद्व्यापिनीम्",
-          "meaning": "Pervading the entire cosmic universe",
-          "paragraphTranslation": "पूरे संसार में व्याप्त (सर्वत्र-व्याप्ताम्)",
-          "words": [
-            "जगद्व्यापिनीम्"
-          ],
-          "sanskrit_gloss": "सर्वत्र-व्याप्ताम्",
-          "hindi_gloss": "पूरे संसार में व्याप्त"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "वीणापुस्तकधारिणीम्",
-          "meaning": "Carrying the stringed lute (Veena) and the book of knowledge",
-          "paragraphTranslation": "हाथ में वीणा और पुस्तक धारण करने वाली (वीणां पुस्तकं च धारयन्तीम्)",
-          "words": [
-            "वीणापुस्तकधारिणीम्"
-          ],
-          "sanskrit_gloss": "वीणां पुस्तकं च धारयन्तीम्",
-          "hindi_gloss": "हाथ में वीणा और पुस्तक धारण करने वाली"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "अभयदाम्",
-          "meaning": "Bestowing fearlessness upon her devotees",
-          "paragraphTranslation": "अभय (निडरता) का दान देने वाली (अभय-प्रदाम्)",
-          "words": [
-            "अभयदाम्"
-          ],
-          "sanskrit_gloss": "अभय-प्रदाम्",
-          "hindi_gloss": "अभय (निडरता) का दान देने वाली"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "जाड्यान्धकारापहाम्",
-          "meaning": "Dispeller of the dense darkness of mental dullness",
-          "paragraphTranslation": "अज्ञान रूपी अंधकार को दूर भगाने वाली (जाड्य-अन्धकार-अपहाम्)",
-          "words": [
-            "जाड्यान्धकारापहाम्"
-          ],
-          "sanskrit_gloss": "जाड्य-अन्धकार-अपहाम्",
-          "hindi_gloss": "अज्ञान रूपी अंधकार को दूर भगाने वाली"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "हस्ते",
-          "meaning": "In her hand",
-          "paragraphTranslation": "हाथ में (करे)",
-          "words": [
-            "हस्ते"
-          ],
-          "sanskrit_gloss": "करे",
-          "hindi_gloss": "हाथ में"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "स्फाटिकमालिकाम्",
-          "meaning": "A rosary made of pure quartz crystals",
-          "paragraphTranslation": "स्फटिक (Crystal) की माला (स्फटिक-रचितां मालाम्)",
-          "words": [
-            "स्फाटिकमालिकाम्"
-          ],
-          "sanskrit_gloss": "स्फटिक-रचितां मालाम्",
-          "hindi_gloss": "स्फटिक (Crystal) की माला"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "विदधतीम्",
-          "meaning": "Holding or wearing",
-          "paragraphTranslation": "धारण किए हुए (धारयन्तीम्)",
-          "words": [
-            "विदधतीम्"
-          ],
-          "sanskrit_gloss": "धारयन्तीम्",
-          "hindi_gloss": "धारण किए हुए"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "पद्मासने",
-          "meaning": "On a lotus seat",
-          "paragraphTranslation": "कमल के आसन पर (कमलासने)",
-          "words": [
-            "पद्मासने"
-          ],
-          "sanskrit_gloss": "कमलासने",
-          "hindi_gloss": "कमल के आसन पर"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "संस्थिताम्",
-          "meaning": "Firmly established or seated",
-          "paragraphTranslation": "अच्छी तरह से बैठी हुई (सुस्थिताम् / उपविष्टाम्)",
-          "words": [
-            "संस्थिताम्"
-          ],
-          "sanskrit_gloss": "सुस्थिताम् / उपविष्टाम्",
-          "hindi_gloss": "अच्छी तरह से बैठी हुई"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "वन्दे",
-          "meaning": "I offer my reverent prayers / I bow",
-          "paragraphTranslation": "मैं वन्दना करता हूँ (प्रणमामि)",
-          "words": [
-            "वन्दे"
-          ],
-          "sanskrit_gloss": "प्रणमामि",
-          "hindi_gloss": "मैं वन्दना करता हूँ"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "ताम्",
-          "meaning": "To her",
-          "paragraphTranslation": "उन (तां देवीम्)",
-          "words": [
-            "ताम्"
-          ],
-          "sanskrit_gloss": "तां देवीम्",
-          "hindi_gloss": "उन"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "परमेश्वरीम् भगवतीम्",
-          "meaning": "The ultimate divine Goddess",
-          "paragraphTranslation": "परम ऐश्वर्यशाली भगवती (सर्वोत्कृष्टाम् ईश्वरीम्)",
-          "words": [
-            "परमेश्वरीम्",
-            "भगवतीम्"
-          ],
-          "sanskrit_gloss": "सर्वोत्कृष्टाम् ईश्वरीम्",
-          "hindi_gloss": "परम ऐश्वर्यशाली भगवती"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "बुद्धिप्रदाम्",
-          "meaning": "Giver of intellect and wisdom",
-          "paragraphTranslation": "बुद्धि प्रदान करने वाली (प्रज्ञादात्रीम्)",
-          "words": [
-            "बुद्धिप्रदाम्"
-          ],
-          "sanskrit_gloss": "प्रज्ञादात्रीम्",
-          "hindi_gloss": "बुद्धि प्रदान करने वाली"
-        },
-        {
-          "kind": "glossary",
-          "sanskrit": "शारदाम्",
-          "meaning": "Goddess Sharada",
-          "paragraphTranslation": "माँ शारदा (सरस्वती) (सरस्वतीम्)",
-          "words": [
-            "शारदाम्"
-          ],
-          "sanskrit_gloss": "सरस्वतीम्",
-          "hindi_gloss": "माँ शारदा (सरस्वती)"
-        },
-        {
-          "kind": "exercise-header",
-          "sanskrit": "१. रिक्तस्थानानि पूरयत (Fill in the Blanks based on Text)",
-          "meaning": "Exercise 1: Fill in the missing words from the sacred verses",
-          "paragraphTranslation": "अभ्यास १: श्लोकों के आधार पर रिक्त स्थानों की पूर्ति कीजिए",
-          "words": [
-            "रिक्तस्थानानि",
-            "पूरयत"
-          ]
-        },
-        {
-          "kind": "exercise-qa",
-          "sanskrit": "१. या कुन्देन्दुतुषारहारधवला या [ शुभ्रवस्त्रावृता ] ।",
-          "answer_sanskrit": "शुभ्रवस्त्रावृता",
-          "meaning": "1. Who is white as jasmine, moon, and snow, and who is [ draped in pure white attire (शुभ्रवस्त्रावृता) ].",
-          "paragraphTranslation": "१. जो कुंद के फूल, चन्द्रमा और बर्फ के हार जैसी श्वेत हैं और [ श्वेत वस्त्रों से ढकी हुई (शुभ्रवस्त्रावृता) ] हैं।",
-          "words": [
-            "१.",
-            "या",
-            "कुन्देन्दुतुषारहारधवला",
-            "या",
-            "शुभ्रवस्त्रावृता"
-          ],
-          "answer_label": "उत्तरम्",
-          "hindi_gloss": "शुभ्रवस्त्रावृता"
-        },
-        {
-          "kind": "exercise-qa",
-          "sanskrit": "२. या ब्रह्माच्युतशङ्करप्रभृतिभिर्देवैः सदा [ वन्दिता ] ।",
-          "answer_sanskrit": "वन्दिता",
-          "meaning": "2. Who is eternally [ worshipped (वन्दिता) ] by Brahma, Vishnu, and Shiva.",
-          "paragraphTranslation": "२. जिनकी ब्रह्मा, विष्णु और महेश आदि देवों द्वारा सदा [ वन्दना (वन्दिता) ] की जाती है।",
-          "words": [
-            "२.",
-            "या",
-            "ब्रह्माच्युतशङ्करप्रभृतिभिर्देवैः",
-            "सदा",
-            "वन्दिता"
-          ],
-          "answer_label": "उत्तरम्",
-          "hindi_gloss": "वन्दिता"
-        },
-        {
-          "kind": "exercise-qa",
-          "sanskrit": "३. सा मां पातु सरस्वती भगवती [ निःशेषजाड्यापहा ] ॥",
-          "answer_sanskrit": "निःशेषजाड्यापहा",
-          "meaning": "3. May that Goddess Saraswati protect me, who is [ the complete destroyer of all ignorance (निःशेषजाड्यापहा) ].",
-          "paragraphTranslation": "३. वे भगवती सरस्वती मेरी रक्षा करें जो [ सम्पूर्ण अज्ञान को नष्ट करने वाली (निःशेषजाड्यापहा) ] हैं।",
-          "words": [
-            "३.",
-            "सा",
-            "मां",
-            "पातु",
-            "सरस्वती",
-            "भगवती",
-            "निःशेषजाड्यापहा"
-          ],
-          "answer_label": "उत्तरम्",
-          "hindi_gloss": "निःशेषजाड्यापहा"
-        },
-        {
-          "kind": "exercise-qa",
-          "sanskrit": "४. वीणापुस्तकधारिणीमभयदां [ जाड्यान्धकारापहाम् ] ॥",
-          "answer_sanskrit": "जाड्यान्धकारापहाम्",
-          "meaning": "4. Holding the Veena and book, bestowing fearlessness, and [ dispelling the darkness of dullness (जाड्यान्धकारापहाम्) ].",
-          "paragraphTranslation": "४. वीणा, पुस्तक और अभयमुद्रा धारण करने वाली तथा [ अज्ञान के अंधकार को दूर करने वाली (जाड्यान्धकारापहाम्) ]।",
-          "words": [
-            "४.",
-            "वीणापुस्तकधारिणीमभयदां",
-            "जाड्यान्धकारापहाम्"
-          ],
-          "answer_label": "उत्तरम्",
-          "hindi_gloss": "जाड्यान्धकारापहाम्"
-        },
-        {
-          "kind": "exercise-qa",
-          "sanskrit": "५. वन्दे तां परमेश्वरीं भगवतीं [ बुद्धिप्रदां ] शारदाम् ॥",
-          "answer_sanskrit": "बुद्धिप्रदाम्",
-          "meaning": "5. I bow to that supreme Goddess Sharada who is [ the dispenser of intellect (बुद्धिप्रदां) ].",
-          "paragraphTranslation": "५. मैं उन परमेश्वरी भगवती शारदा की वन्दना करता हूँ जो [ बुद्धि प्रदान करने वाली (बुद्धिप्रदां) ] हैं।",
-          "words": [
-            "५.",
-            "वन्दे",
-            "तां",
-            "परमेश्वरीं",
-            "भगवतीं",
-            "बुद्धिप्रदां",
-            "शारदाम्"
-          ],
-          "answer_label": "उत्तरम्",
-          "hindi_gloss": "बुद्धिप्रदाम्"
-        },
-        {
-          "kind": "exercise-header",
-          "sanskrit": "२. विपरीतार्थकपदानि लिखत (Contextual Antonyms)",
-          "meaning": "Exercise 2: Write Opposite Words as per Context",
-          "paragraphTranslation": "अभ्यास २: प्रसंगानुकूल विलोम पद लिखिए",
-          "words": [
-            "विपरीतार्थकपदानि",
-            "लिखत"
-          ]
-        },
-        {
-          "sanskrit": "धवला / शुक्ला (White / Pure) ↔ कृष्णा / मलिना (Dark / Impure)",
-          "meaning": "Antonym 1: Dhavala / Shukla (Pure White) <-> Krishna / Malina (Dark / Impure).",
-          "paragraphTranslation": "विलोम १: धवला / शुक्ला (श्वेत) ↔ कृष्णा / मलिना (काली / मैली)",
-          "words": [
-            "धवला",
-            "शुक्ला",
-            "कृष्णा",
-            "मलिना"
-          ]
-        },
-        {
-          "sanskrit": "जाड्यम् (Dullness / Ignorance) ↔ बुद्धिः / ज्ञानम् (Intellect / Knowledge)",
-          "meaning": "Antonym 2: Jadyam (Dullness / Inertia) <-> Buddhih / Jnanam (Intellect / Wisdom).",
-          "paragraphTranslation": "विलोम २: जाड्यम् (अज्ञान / जड़ता) ↔ बुद्धिः / ज्ञानम् (विवेक / प्रज्ञा)",
-          "words": [
-            "जाड्यम्",
-            "बुद्धिः",
-            "ज्ञानम्"
-          ]
-        },
-        {
-          "sanskrit": "अन्धकारः (Darkness) ↔ प्रकाशः / ज्योतिः (Light / Radiance)",
-          "meaning": "Antonym 3: Andhakarah (Darkness) <-> Prakashah / Jyotih (Light).",
-          "paragraphTranslation": "विलोम ३: अन्धकारः ↔ प्रकाशः / ज्योतिः",
-          "words": [
-            "अन्धकारः",
-            "प्रकाशः",
-            "ज्योतिः"
-          ]
-        },
-        {
-          "sanskrit": "अभयम् (Fearlessness) ↔ भयम् (Fear)",
-          "meaning": "Antonym 4: Abhayam (Fearlessness) <-> Bhayam (Fear).",
-          "paragraphTranslation": "विलोम ४: अभयम् ↔ भयम्",
-          "words": [
-            "अभयम्",
-            "भयम्"
-          ]
-        },
-        {
-          "kind": "exercise-header",
-          "sanskrit": "३. उचितं मेलनम् कुरुत (Match Attributes to Divine Qualities)",
-          "meaning": "Exercise 3: Match Attributes to Divine Qualities",
-          "paragraphTranslation": "अभ्यास ३: परस्पर सही मिलान कीजिए",
-          "words": [
-            "उचितं",
-            "मेलनम्",
-            "कुरुत"
-          ]
-        },
-        {
-          "sanskrit": "१. कुन्देन्दुतुषारहारधवला ➡️ (ग) सरस्वती भगवती (White like jasmine, moon, and snow)",
-          "meaning": "Match 1: Kundendutusharaharadhavala matches with Saraswati Bhagavati.",
-          "paragraphTranslation": "मिलान १: कुन्देन्दुतुषारहारधवला ➡️ (ग) सरस्वती भगवती",
-          "words": [
-            "१.",
-            "कुन्देन्दुतुषारहारधवला",
-            "सरस्वती",
-            "भगवती"
-          ]
-        },
-        {
-          "sanskrit": "२. वीणावरदण्डमण्डितकरा ➡️ (घ) हस्ते वीणा शोभते (Adorned with the divine staff of Veena)",
-          "meaning": "Match 2: Veena-vara-danda-mandita-kara matches with holding the Veena.",
-          "paragraphTranslation": "मिलान २: वीणावरदण्डमण्डितकरा ➡️ (घ) हस्ते वीणा शोभते",
-          "words": [
-            "२.",
-            "वीणावरदण्डमण्डितकरा",
-            "हस्ते",
-            "वीणा",
-            "शोभते"
-          ]
-        },
-        {
-          "sanskrit": "३. हस्ते स्फाटिकमालिकाम् ➡️ (क) अक्षमालाधारिणी (Holding crystal rosary in hand)",
-          "meaning": "Match 3: Haste Sphatikamalikam matches with holding rosary of knowledge.",
-          "paragraphTranslation": "मिलान ३: हस्ते स्फाटिकमालिकाम् ➡️ (क) अक्षमालाधारिणी",
-          "words": [
-            "३.",
-            "हस्ते",
-            "स्फाटिकमालिकाम्",
-            "अक्षमालाधारिणी"
-          ]
-        },
-        {
-          "sanskrit": "४. बुद्धिप्रदा ➡️ (ख) ज्ञानदात्री शारदा (Dispenser of intellect and wisdom)",
-          "meaning": "Match 4: Buddhiprada matches with Goddess Sharada.",
-          "paragraphTranslation": "मिलान ४: बुद्धिप्रदा ➡️ (ख) ज्ञानदात्री शारदा",
-          "words": [
-            "४.",
-            "बुद्धिप्रदा",
-            "ज्ञानदात्री",
-            "शारदा"
-          ]
+          "kind": "shloka"
         }
-      ],
-      "page_numbers": "16"
+      ]
     },
     {
       "id": "grade8_ch1",
       "fileName": "grade8_ch1.txt",
-      "title": "Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम् (Pages 2–8)",
+      "title": "Grade 8: प्रथमः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (Pages 137–144)",
+      "page_numbers": "137-144",
       "sentences": [
         {
-          "sanskrit": "॥ प्रथमः पाठः — संगच्छध्वं संवदध्वम् ॥",
-          "meaning": "Chapter 1: Walk Together, Speak Together · Rigveda Samhita (Pages 2–8)",
-          "paragraphTranslation": "प्रथमः पाठः — संगच्छध्वं संवदध्वम् (पृष्ठ २–८)",
+          "sanskrit": "॥ प्रथमः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते ॥",
+          "meaning": "Chapter 1: By Correct Pronunciation One Is Honoured in Brahmaloka",
+          "paragraphTranslation": "Paniniya Shiksha lesson on pristine pronunciation (Pages 137–144).",
           "words": [
             "॥",
             "प्रथमः",
             "पाठः",
-            "संगच्छध्वं",
-            "संवदध्वम्",
+            "—",
+            "सम्यग्वर्णप्रयोगेण",
+            "ब्रह्मलोके",
+            "महीयते",
             "॥"
           ],
           "kind": "section-header"
         },
         {
-          "sanskrit": "अयं पाठः ऋग्वेदस्य दशममण्डलात् सङ्कलितस्य 'संज्ञान-सूक्तस्य' (संघटन-सूक्तस्य) प्रसिद्धः मन्त्रांशः अस्ति। अत्र मानवकल्याणाय ऐक्यभावस्य, परस्परसामञ्जस्यस्य, सहकार्यस्य च उदात्तः सन्देशः दीयते।",
-          "meaning": "This chapter is from the renowned 'Saṁjñāna-Sūkta' (also known as 'Saṅghaṭana-Sūkta' or Hymn of Unity) from the 10th Mandala of Rigveda, delivering the noble message of universal solidarity, mutual harmony, and collective co-existence for human welfare.",
-          "paragraphTranslation": "यह पाठ ऋग्वेद के दसवें मण्डल से संकलित 'संज्ञान-सूक्त' (संघटन-सूक्त) का प्रसिद्ध अंश है। यहाँ मानव कल्याण हेतु एकता, आपसी तालमेल और सहयोग का उदात्त संदेश दिया गया है।",
+          "sanskrit": "पाणिनीय-शिक्षायाः ग्रन्थात् संगृहीतः अयं पाठः संस्कृतभाषायाः उच्चारणशास्त्रं पाठयति।",
+          "meaning": "This lesson from Paniniya Shiksha teaches Sanskrit phonetics.",
+          "paragraphTranslation": "Drawn from पाणिनीय-शिक्षा; focuses on correct articulation of varṇas.",
           "words": [
+            "पाणिनीय-शिक्षायाः",
+            "ग्रन्थात्",
+            "संगृहीतः",
             "अयं",
             "पाठः",
-            "ऋग्वेदस्य",
-            "दशममण्डलात्",
-            "सङ्कलितस्य",
-            "संज्ञान",
-            "सूक्तस्य",
-            "संघटन",
-            "सूक्तस्य",
-            "प्रसिद्धः",
-            "मन्त्रांशः",
-            "अस्ति",
-            "अत्र",
-            "मानवकल्याणाय",
-            "ऐक्यभावस्य",
-            "परस्परसामञ्जस्यस्य",
-            "सहकार्यस्य",
-            "च",
-            "उदात्तः",
-            "सन्देशः",
-            "दीयते"
-          ]
-        },
-        {
-          "sanskrit": "भागः १: पाठ-प्रवेशः — कक्षा-संवादः (Introductory Classroom Dialogue)",
-          "meaning": "Part 1: Lesson Introduction — Classroom Dialogue on Victory through Mutual Harmony",
-          "paragraphTranslation": "भाग १: पाठ-प्रवेश — खेल उत्सव में विजय और एकता पर कक्षा-संवाद",
-          "words": [
-            "भागः",
-            "१",
-            "पाठ",
-            "प्रवेशः",
-            "कक्षा",
-            "संवादः"
+            "संस्कृतभाषायाः",
+            "उच्चारणशास्त्रं",
+            "पाठयति।"
           ],
-          "kind": "chapter-header"
+          "kind": "section-header"
         },
         {
-          "sanskrit": "छात्राः – नमस्ते आचार्य! अस्माकं विद्यालयस्य क्रीडोत्सवे पादकन्दुक-क्रीडायां वयं विजयं प्राप्तवन्तः।",
-          "meaning": "Students: Salutations, Teacher! We won the football match in our school's sports festival.",
-          "paragraphTranslation": "छात्र – नमस्ते आचार्य! हमारे विद्यालय के खेल उत्सव में फुटबॉल खेल में हम सब विजयी हुए हैं।",
+          "sanskrit": "छात्राः – नमस्ते आचार्य ! अद्य वयम् एकां कथां श्रोतुम् इच्छामः। आचार्यः – नमस्ते छात्राः ! भवतां मनोरञ्जनार्थम् आदौ कथाश्रवणम्, अनन्तरं पाठनम्।",
+          "meaning": "Students request a story; the teacher agrees to narrate first, then teach.",
+          "paragraphTranslation": "Students: Salutations, Teacher! Today we wish to hear a story. Teacher: Salutations! For your delight, first storytelling, then the lesson.",
           "words": [
             "छात्राः",
+            "–",
             "नमस्ते",
             "आचार्य",
             "!",
-            "अस्माकं",
-            "विद्यालयस्य",
-            "क्रीडोत्सवे",
-            "पादकन्दुक",
-            "क्रीडायां",
-            "वयं",
-            "विजयं",
-            "प्राप्तवन्तः।"
-          ]
-        },
-        {
-          "sanskrit": "आचार्यः – वर्धापनानि, अभिनन्दनं भवताम्। अपि भवन्तः जानन्ति यत् भवतां प्रतिद्वन्द्विनः कथं पराजिताः?",
-          "meaning": "Teacher: Congratulations and blessings to you all. Do you know why your opponents were defeated?",
-          "paragraphTranslation": "आचार्य – आप सभी को बधाई और शुभकामनाएँ। क्या आप जानते हैं कि आपके प्रतिद्वंद्वी कैसे हार गए?",
-          "words": [
-            "आचार्यः",
-            "वर्धापनानि",
-            ",",
-            "अभिनन्दनं",
-            "भवताम्।",
-            "अपि",
-            "भवन्तः",
-            "जानन्ति",
-            "यत्",
-            "भवतां",
-            "प्रतिद्वन्द्विनः",
-            "कथं",
-            "पराजिताः",
-            "?"
-          ]
-        },
-        {
-          "sanskrit": "छात्रः १ – आम्, जानामि आचार्य! अस्माकं दलस्य क्रीडकेषु परस्परं सम्यक् सामञ्जस्यम् आसीत्, किन्तु विपक्षी-दले तत् नासीत्।",
-          "meaning": "Student 1: Yes, I know, Teacher! There was excellent harmony and coordination among the players of our team, but it was missing in the opposing team.",
-          "paragraphTranslation": "छात्र 1: हाँ, मैं जानता हूँ आचार्य! हमारी टीम के खिलाड़ियों में आपस में बहुत अच्छा तालमेल (सामञ्जस्य) था, लेकिन विरोधी टीम में ऐसा नहीं था।",
-          "words": [
-            "छात्रः",
-            "१",
-            "आम्",
-            ",",
-            "जानामि",
-            "आचार्य",
-            "!",
-            "अस्माकं",
-            "दलस्य",
-            "क्रीडकेषु",
-            "परस्परं",
-            "सम्यक्",
-            "सामञ्जस्यम्",
-            "आसीत्",
-            ",",
-            "किन्तु",
-            "विपक्षी",
-            "दले",
-            "तत्",
-            "नासीत्।"
-          ]
-        },
-        {
-          "sanskrit": "छात्रः २ – सत्यम् आचार्य! तस्य दलस्य क्रीडकेषु परस्परं मनोभेदः द्वेषभावः च आसीत्। ते अन्योन्यं सहयोगं न कृतवन्तः।",
-          "meaning": "Student 2: True, Teacher! The players of that team had mutual differences and hatred. They did not cooperate with one another.",
-          "paragraphTranslation": "छात्र 2: सत्य है आचार्य! उस टीम के खिलाड़ियों में आपस में मतभेद और द्वेष की भावना थी। उन्होंने एक-दूसरे का सहयोग नहीं किया।",
-          "words": [
-            "छात्रः",
-            "२",
-            "सत्यम्",
-            "आचार्य",
-            "!",
-            "तस्य",
-            "दलस्य",
-            "क्रीडकेषु",
-            "परस्परं",
-            "मनोभेदः",
-            "द्वेषभावः",
-            "च",
-            "आसीत्।",
-            "ते",
-            "अन्योन्यं",
-            "सहयोगं",
-            "न",
-            "कृतवन्तः।"
-          ]
-        },
-        {
-          "sanskrit": "आचार्यः – तर्हि वदन्तु, विजयप्राप्त्यर्थं किं किम् आवश्यकम्?",
-          "meaning": "Teacher: Then tell me, what is necessary to achieve victory?",
-          "paragraphTranslation": "आचार्य – तो बताइए, विजय प्राप्त करने के लिए क्या-क्या आवश्यक है?",
-          "words": [
-            "आचार्यः",
-            "तर्हि",
-            "वदन्तु",
-            ",",
-            "विजयप्राप्त्यर्थं",
-            "किं",
-            "किम्",
-            "आवश्यकम्",
-            "?"
-          ]
-        },
-        {
-          "sanskrit": "छात्राः – मिलित्वा कार्यकरणम्, एकता, परस्परं सामञ्जस्यं च आवश्यकम्।",
-          "meaning": "Students: Working together, unity, and mutual harmony are necessary.",
-          "paragraphTranslation": "छात्र – मिलकर कार्य करना, एकता और आपस में अच्छा तालमेल (सामंजस्य) आवश्यक है।",
-          "words": [
-            "छात्राः",
-            "मिलित्वा",
-            "कार्यकरणम्",
-            ",",
-            "एकता",
-            ",",
-            "परस्परं",
-            "सामञ्जस्यं",
-            "च",
-            "आवश्यकम्।"
-          ]
-        },
-        {
-          "sanskrit": "आचार्यः – सत्यम् एव उक्तम्। एष एव सन्देशः वेदे 'संगच्छध्वं संवदध्वम्' इत्येवं प्रदत्तः।",
-          "meaning": "Teacher: Well said. This exact message is given in the Vedas as 'Walk together, speak together'.",
-          "paragraphTranslation": "आचार्य: बिल्कुल सही कहा। यही संदेश वेद में 'संगच्छध्वं संवदध्वम्' (साथ चलो, साथ बोलो) के रूप में दिया गया है।",
-          "words": [
-            "आचार्यः",
-            "सत्यम्",
-            "एव",
-            "उक्तम्।",
-            "एष",
-            "एव",
-            "सन्देशः",
-            "वेदे",
-            "'",
-            "संगच्छध्वं",
-            "संवदध्वम्",
-            "'",
-            "इत्येवं",
-            "प्रदत्तः।"
-          ]
-        },
-        {
-          "sanskrit": "छात्राः – आचार्य! कस्मात् वेदात् गृहीतः एष सन्देशः? कः च अस्य अभिप्रायः?",
-          "meaning": "Students: Teacher, from which Veda is this message taken? And what does it mean?",
-          "paragraphTranslation": "छात्र: आचार्य! यह संदेश किस वेद से लिया गया है? और इसका क्या अर्थ है?",
-          "words": [
-            "छात्राः",
-            "आचार्य",
-            "!",
-            "कस्मात्",
-            "वेदात्",
-            "गृहीतः",
-            "एष",
-            "सन्देशः",
-            "?",
-            "कः",
-            "च",
-            "अस्य",
-            "अभिप्रायः",
-            "?"
-          ]
-        },
-        {
-          "sanskrit": "आचार्यः – ऋग्वेदे - 'संज्ञान-सूक्तस्य' एषः मन्त्रांशः। एतत् 'संघटन-सूक्तम्' इत्यपि प्रख्यातम्। आगच्छन्तु, वयम् अस्य सूक्तस्य प्रसिद्धान् त्रीन् मन्त्रान् पठामः।",
-          "meaning": "Teacher: This is a part of the 'Saṁjñāna-Sūkta' from the Rigveda. It is also famously known as the 'Saṅghaṭana-Sūkta' (Hymn of Unity). Come, let us read three famous mantras of this hymn.",
-          "paragraphTranslation": "आचार्य: यह ऋग्वेद के 'संज्ञान-सूक्त' का एक मंत्रांश है। इसे 'संघटन-सूक्त' के नाम से भी जाना जाता है। आइए, हम इस सूक्त के तीन प्रसिद्ध मंत्रों को पढ़ते हैं।",
-          "words": [
-            "आचार्यः",
-            "ऋग्वेदे",
-            "'",
-            "संज्ञान",
-            "सूक्तस्य",
-            "'",
-            "एषः",
-            "मन्त्रांशः।",
-            "एतत्",
-            "'",
-            "संघटन",
-            "सूक्तम्",
-            "'",
-            "इत्यपि",
-            "प्रख्यातम्।",
-            "आगच्छन्तु",
-            ",",
+            "अद्य",
             "वयम्",
-            "अस्य",
-            "सूक्तस्य",
-            "प्रसिद्धान्",
-            "त्रीन्",
-            "मन्त्रान्",
-            "पठामः।"
-          ]
-        },
-        {
-          "sanskrit": "भागः २: ऋग्वैदिक-मन्त्राः (संज्ञान-सूक्तम् / संघटन-सूक्तम् — Rigveda 10.191.2-4)",
-          "meaning": "Part 2: Core Rigvedic Mantras — The Universal Hymn of Unity and Harmonious Coexistence",
-          "paragraphTranslation": "भाग २: मूल ऋग्वैदिक मन्त्र — संज्ञान-सूक्त (संघटन-सूक्त)",
-          "words": [
-            "भागः",
-            "२",
-            "ऋग्वैदिक",
-            "मन्त्राः",
-            "संज्ञान",
-            "सूक्तम्",
-            "संघटन",
-            "सूक्तम्"
+            "एकां",
+            "कथां",
+            "श्रोतुम्",
+            "इच्छामः।",
+            "आचार्यः",
+            "–",
+            "नमस्ते",
+            "छात्राः",
+            "!",
+            "भवतां",
+            "मनोरञ्जनार्थम्",
+            "आदौ",
+            "कथाश्रवणम्,",
+            "अनन्तरं",
+            "पाठनम्।"
           ],
-          "kind": "chapter-header"
+          "kind": "dialogue"
         },
         {
-          "sanskrit": "संगच्छध्वं संवदध्वं सं वो मनांसि जानताम् । देवा भागं यथा पूर्वे संजानाना उपासते ॥ १ ॥",
-          "meaning": "O humans! Walk together in harmony, speak together in one voice, and let your minds be unified in understanding. Just as the ancient deities in complete agreement and harmony accepted their respective shares of offerings and performed their cosmic duties, you too should live and work together in unity.",
-          "paragraphTranslation": "Line 1 Hindi: तुम सब मिलकर एक साथ आगे बढ़ो (साथ चलो), आपस में प्रेम से बातचीत करो (एक स्वर में बोलो) और तुम्हारे मन एक समान होकर एक-दूसरे को जानें।\nLine 2 Hindi: जिस प्रकार प्राचीन काल में देवता एकमत होकर यज्ञ के अपने-अपने भाग को स्वीकार करते हुए अपने कर्तव्यों का निर्वाह करते थे, (वैसे ही तुम भी मिलकर रहो)।",
-          "transliteration": "Saṁgacchadhvaṁ saṁvadadhvaṁ saṁ vo manāṁsi jānatām | Devā bhāgaṁ yathā pūrve saṁjānānā upāsate || 1 ||",
+          "sanskrit": "देवानां राजा इन्द्रः, असुराणां च राजा आसीत् वृत्रासुरः। स्वस्य बलं वर्धयितुम् इन्द्रं जेतुं च वृत्रासुरः यज्ञं कारितवान्। यज्ञे आहुतिमन्त्रः आसीत् — \"इन्द्रशत्रुर्वर्धस्व\" इति।",
+          "meaning": "Indra vs Vritrasura; the offering mantra was Indrashatrurvardhasva.",
+          "paragraphTranslation": "The king of the gods was Indra; of the demons, Vritrasura. To grow strong and conquer Indra, Vritrasura had a yajna performed. The offering mantra was \"इन्द्रशत्रुर्वर्धस्व\".",
           "words": [
-            "संगच्छध्वं",
-            "संवदध्वं",
-            "सं",
-            "वो",
-            "मनांसि",
-            "जानताम्",
-            "।",
-            "देवा",
-            "भागं",
-            "यथा",
-            "पूर्वे",
-            "संजानाना",
-            "उपासते",
+            "देवानां",
+            "राजा",
+            "इन्द्रः,",
+            "असुराणां",
+            "च",
+            "राजा",
+            "आसीत्",
+            "वृत्रासुरः।",
+            "स्वस्य",
+            "बलं",
+            "वर्धयितुम्",
+            "इन्द्रं",
+            "जेतुं",
+            "च",
+            "वृत्रासुरः",
+            "यज्ञं",
+            "कारितवान्।",
+            "यज्ञे",
+            "आहुतिमन्त्रः",
+            "आसीत्",
+            "—",
+            "\"इन्द्रशत्रुर्वर्धस्व\"",
+            "इति।"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "यज्ञावसाने वृत्रासुरो बली भूत्वा जनान् पीडयिष्यति इति विचार्य ऋत्विजः मन्त्रे स्वरं परिवर्तितवन्तः। स्वरपरिवर्तनेन अर्थः परिवर्तितः।",
+          "meaning": "Priests changed the accent; meaning inverted.",
+          "paragraphTranslation": "Fearing Vritrasura would terrorize people after the rite, the priests altered the mantra accent. Due to स्वरपरिवर्तनम्, the meaning completely changed.",
+          "words": [
+            "यज्ञावसाने",
+            "वृत्रासुरो",
+            "बली",
+            "भूत्वा",
+            "जनान्",
+            "पीडयिष्यति",
+            "इति",
+            "विचार्य",
+            "ऋत्विजः",
+            "मन्त्रे",
+            "स्वरं",
+            "परिवर्तितवन्तः।",
+            "स्वरपरिवर्तनेन",
+            "अर्थः",
+            "परिवर्तितः।"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "परिणामतः वृत्रासुरस्य स्थाने इन्द्रस्य बलं वर्धितम्। बलवान् इन्द्रः वज्रेण वृत्रासुरं मारितवान्।",
+          "meaning": "Indra’s power grew; he slew Vritrasura with the vajra.",
+          "paragraphTranslation": "Consequently Indra’s strength multiplied instead, and mighty Indra slew Vritrasura with his thunderbolt.",
+          "words": [
+            "परिणामतः",
+            "वृत्रासुरस्य",
+            "स्थाने",
+            "इन्द्रस्य",
+            "बलं",
+            "वर्धितम्।",
+            "बलवान्",
+            "इन्द्रः",
+            "वज्रेण",
+            "वृत्रासुरं",
+            "मारितवान्।"
+          ],
+          "kind": "sentence"
+        },
+        {
+          "sanskrit": "यद्यपि बहु नाधीषे तथापि पठ पुत्र व्याकरणम्। स्वजनः श्वजनो माभूत् सकलं शकलं सकृत् शकृत् ॥ १ ॥",
+          "meaning": "Even if you study little, son, study grammar — lest kin become “dog”, whole become fragment, once become filth.",
+          "paragraphTranslation": "O son! Even if you do not study many subjects, at least study grammar; so that स्वजनः does not become श्वजनः, सकलम् not शकलम्, सकृत् not शकृत्.",
+          "words": [
+            "यद्यपि",
+            "बहु",
+            "नाधीषे",
+            "तथापि",
+            "पठ",
+            "पुत्र",
+            "व्याकरणम्।",
+            "स्वजनः",
+            "श्वजनो",
+            "माभूत्",
+            "सकलं",
+            "शकलं",
+            "सकृत्",
+            "शकृत्",
             "॥",
             "१",
             "॥"
-          ]
-        },
-        {
-          "sanskrit": "मन्त्र १ — पदच्छेदः अन्वयः च",
-          "meaning": "Mantra 1: Word Split (Padaccheda) and Syntax Order (Anvaya)",
-          "paragraphTranslation": "पदच्छेदः: संगच्छध्वम्, संवदध्वम्, सम्, वः, मनांसि, जानताम्, देवाः, भागम्, यथा, पूर्वे, संजानानाः, उपासते।\nअन्वयः: (यूयम्) संगच्छध्वं संवदध्वं वः मनांसि संजानताम्। यथा पूर्वे देवाः भागं संजानानाः उपासते।",
-          "words": [
-            "मन्त्र",
-            "१",
-            "पदच्छेदः",
-            "अन्वयः",
-            "च"
           ],
-          "kind": "exercise-note"
+          "kind": "shloka"
         },
         {
-          "sanskrit": "समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम् । समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि ॥ २ ॥",
-          "meaning": "Let your deliberations be unified, let your assemblies and resolutions be common, let your minds be harmonious, and let your hearts beat together in unison. I consecrate you all with a common collective purpose and offer a shared prayer for your absolute unity.",
-          "paragraphTranslation": "Line 1 Hindi: इन (सब मनुष्यों) के विचार समान हों, इनकी सभाएँ (लक्ष्य) समान हों, इनका मन सौहार्दपूर्ण हो और इनका अंतःकरण (बुद्धिजन्य ज्ञान) एक साथ एकीकृत हो।\nLine 2 Hindi: मैं तुम सबको एक समान उद्देश्य से संस्कारित करता हूँ और तुम्हें एक समान यज्ञीय आहुति (सामूहिक प्रार्थना) से जोड़ता हूँ।",
-          "transliteration": "Samāno mantraḥ samitiḥ samānī samānaṁ manaḥ saha cittameṣām | Samānaṁ mantramabhimantraye vaḥ samānena vo haviṣā juhomi || 2 ||",
+          "sanskrit": "श्लोक-अन्वयः — पुत्र ! यद्यपि बहु न अधीषे तथापि व्याकरणं पठ। येन स्वजनः श्वजनः सकलं शकलं सकृत् शकृत् च मा अभूत्।",
+          "meaning": "Anvaya of Verse 1",
+          "paragraphTranslation": "Word-order unfolding of the grammar exhortation verse.",
           "words": [
-            "समानो",
-            "मन्त्रः",
-            "समितिः",
-            "समानी",
-            "समानं",
-            "मनः",
-            "सह",
-            "चित्तमेषाम्",
-            "।",
-            "समानं",
-            "मन्त्रमभिमन्त्रये",
-            "वः",
-            "समानेन",
-            "वो",
-            "हविषा",
-            "जुहोमि",
-            "॥",
-            "२",
-            "॥"
-          ]
-        },
-        {
-          "sanskrit": "मन्त्र २ — पदच्छेदः अन्वयः च",
-          "meaning": "Mantra 2: Word Split (Padaccheda) and Syntax Order (Anvaya)",
-          "paragraphTranslation": "पदच्छेदः: समानः, मन्त्रः, समितिः, समानी, समानम्, मनः, सह, चित्तम्, एषाम्, समानम्, मन्त्रम्, अभिमन्त्रये, वः, समानेन, वः, हविषा, जुहोमि।\nअन्वयः: एषां मन्त्रः समानः, समितिः समानी, मनः समानं, चित्तं सह (अस्तु)। वः समानं मन्त्रम् अभिमन्त्रये वः समानेन हविषा जुहोमि।",
-          "words": [
-            "मन्त्र",
-            "२",
-            "पदच्छेदः",
-            "अन्वयः",
-            "च"
+            "श्लोक-अन्वयः",
+            "—",
+            "पुत्र",
+            "!",
+            "यद्यपि",
+            "बहु",
+            "न",
+            "अधीषे",
+            "तथापि",
+            "व्याकरणं",
+            "पठ।",
+            "येन",
+            "स्वजनः",
+            "श्वजनः",
+            "सकलं",
+            "शकलं",
+            "सकृत्",
+            "शकृत्",
+            "च",
+            "मा",
+            "अभूत्।"
           ],
-          "kind": "exercise-note"
+          "kind": "shloka-analysis"
         },
         {
-          "sanskrit": "समानी व आकूतिः समाना हृदयानि वः । समानमस्तु वो मनो यथा वः सुसहासति ॥ ३ ॥",
-          "meaning": "O humans! Let your determinations be common, let your hearts be full of mutual harmony, and let your minds think in alignment, so that your collective co-existence and unity may be beautifully perfect.",
-          "paragraphTranslation": "Line 1 Hindi: हे मनुष्यों! तुम्हारा संकल्प (दृढ़ निश्चय) एक समान हो, तुम्हारे हृदय सामंजस्यपूर्ण (आपसी सद्भाव से युक्त) हों।\nLine 2 Hindi: और तुम्हारा मन एक जैसा हो, जिससे तुम्हारा यह संगठन (साथ रहना) अत्यंत सुंदर और सुदृढ़ हो सके।",
-          "transliteration": "Samānī va ākūtiḥ samānā hṛdayāni vaḥ | Samānamastu vo mano yathā vaḥ susahāsati || 3 ||",
+          "sanskrit": "व्याघ्री यथा हरेत् पुत्रान् दंष्ट्राभ्यां न च पीडयेत्। भीता पतनभेदाभ्यां तद्वद् वर्णान् प्रयोजयेत् ॥ २ ॥",
+          "meaning": "Articulate letters as a tigress carries cubs — firm yet unhurtful.",
+          "paragraphTranslation": "Just as a tigress carries cubs between fangs without hurting them, fearing drop or bite-wound, so should one employ varṇas.",
           "words": [
-            "समानी",
-            "व",
-            "आकूतिः",
-            "समाना",
-            "हृदयानि",
-            "वः",
-            "।",
-            "समानमस्तु",
-            "वो",
-            "मनो",
+            "व्याघ्री",
             "यथा",
-            "वः",
-            "सुसहासति",
+            "हरेत्",
+            "पुत्रान्",
+            "दंष्ट्राभ्यां",
+            "न",
+            "च",
+            "पीडयेत्।",
+            "भीता",
+            "पतनभेदाभ्यां",
+            "तद्वद्",
+            "वर्णान्",
+            "प्रयोजयेत्",
+            "॥",
+            "२",
+            "॥"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "श्लोक-अन्वयः — यथा पतनभेदाभ्यां भीता व्याघ्री दंष्ट्राभ्यां पुत्रान् हरेत् न च पीडयेत् तद्वत् वर्णान् प्रयोजयेत्।",
+          "meaning": "Anvaya of Verse 2",
+          "paragraphTranslation": "Word-order unfolding of the tigress metaphor.",
+          "words": [
+            "श्लोक-अन्वयः",
+            "—",
+            "यथा",
+            "पतनभेदाभ्यां",
+            "भीता",
+            "व्याघ्री",
+            "दंष्ट्राभ्यां",
+            "पुत्रान्",
+            "हरेत्",
+            "न",
+            "च",
+            "पीडयेत्",
+            "तद्वत्",
+            "वर्णान्",
+            "प्रयोजयेत्।"
+          ],
+          "kind": "shloka-analysis"
+        },
+        {
+          "sanskrit": "एवं वर्णाः प्रयोक्तव्या नाव्यक्ता न च पीडिताः। सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते ॥ ३ ॥",
+          "meaning": "Letters must be neither indistinct nor forced; by correct use one is honoured in Brahmaloka.",
+          "paragraphTranslation": "Thus letters should be articulated neither unclearly nor under distress. By flawless employment of articulation one is revered in Brahmaloka.",
+          "words": [
+            "एवं",
+            "वर्णाः",
+            "प्रयोक्तव्या",
+            "नाव्यक्ता",
+            "न",
+            "च",
+            "पीडिताः।",
+            "सम्यग्वर्णप्रयोगेण",
+            "ब्रह्मलोके",
+            "महीयते",
             "॥",
             "३",
             "॥"
-          ]
-        },
-        {
-          "sanskrit": "मन्त्र ३ — पदच्छेदः अन्वयः च",
-          "meaning": "Mantra 3: Word Split (Padaccheda) and Syntax Order (Anvaya)",
-          "paragraphTranslation": "पदच्छेदः: समानी, वः, आकूतिः, समाना, हृदयानि, वः, समानम्, अस्तु, वः, मनः, यथा, वः, सु, सह, असति।\nअन्वयः: (हे मानवाः !) वः आकूतिः समानी (अस्तु)। वः हृदयानि समाना (सन्तु)। यथा वः सह सु असति, (तथा) वः मनः समानम् अस्तु।",
-          "words": [
-            "मन्त्र",
-            "३",
-            "पदच्छेदः",
-            "अन्वयः",
-            "च"
           ],
-          "kind": "exercise-note"
+          "kind": "shloka"
         },
         {
-          "sanskrit": "शब्दार्थाः (Complete Vocabulary & Synonyms)",
-          "meaning": "Comprehensive Vocabulary Guide with Sanskrit Synonyms, Hindi Meanings, and English Translations",
+          "sanskrit": "माधुर्यमक्षरव्यक्तिः पदच्छेदस्तु सुस्वरः। धैर्यं लयसमर्थं च षडेते पाठका गुणाः ॥ ४ ॥",
+          "meaning": "Six reader virtues: sweetness, syllable clarity, word-splitting, pleasant tone, patience, rhythm.",
+          "paragraphTranslation": "Sweetness, clarity of syllables, proper पदच्छेद, pleasant tone, patience, and rhythmic compatibility — these six are qualities of an excellent reader.",
+          "words": [
+            "माधुर्यमक्षरव्यक्तिः",
+            "पदच्छेदस्तु",
+            "सुस्वरः।",
+            "धैर्यं",
+            "लयसमर्थं",
+            "च",
+            "षडेते",
+            "पाठका",
+            "गुणाः",
+            "॥",
+            "४",
+            "॥"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "गीती शीघ्री शिरःकम्पी तथा लिखितपाठकः। अनर्थज्ञोऽल्पकण्ठश्च षडेते पाठकाधमाः ॥ ५ ॥",
+          "meaning": "Six poor-reader faults: sing-song, haste, head-shaking, mere reading, no meaning, weak voice.",
+          "paragraphTranslation": "Singing while reading, reading too fast, shaking the head, depending only on writing, ignoring meaning, and a feeble voice — these six are the worst readers.",
+          "words": [
+            "गीती",
+            "शीघ्री",
+            "शिरःकम्पी",
+            "तथा",
+            "लिखितपाठकः।",
+            "अनर्थज्ञोऽल्पकण्ठश्च",
+            "षडेते",
+            "पाठकाधमाः",
+            "॥",
+            "५",
+            "॥"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – ऋत्विजः (पुरोहिताः), अधीषे (पठसि), श्वजनः (कुत्ता / dog), सकलम् (सम्पूर्णम्), शकलम् (खण्डम्), सकृत् (एक बार), शकृत् (मल / विष्ठा)।",
+          "meaning": "Key vocabulary from the lesson (set 1).",
+          "paragraphTranslation": "Word meanings for the Indra story and Verse 1 minimal pairs.",
           "words": [
             "शब्दार्थाः",
-            "Complete",
-            "Vocabulary",
-            "Synonyms"
-          ],
-          "kind": "glossary-header"
-        },
-        {
-          "sanskrit": "संगच्छध्वम्",
-          "sanskrit_gloss": "मिलित्वा गच्छत / चलत",
-          "hindi_gloss": "मिलकर चलो",
-          "meaning": "May you walk together in harmony",
-          "words": [
-            "संगच्छध्वम्",
-            "मिलित्वा",
-            "गच्छत",
+            "–",
+            "ऋत्विजः",
+            "(पुरोहिताः),",
+            "अधीषे",
+            "(पठसि),",
+            "श्वजनः",
+            "(कुत्ता",
             "/",
-            "चलत"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "संवदध्वम्",
-          "sanskrit_gloss": "एकस्वरेण वदत",
-          "hindi_gloss": "सहमतिपूर्वक बोलें (एक स्वर में बोलें)",
-          "meaning": "May you speak together in one voice",
-          "words": [
-            "संवदध्वम्",
-            "एकस्वरेण",
-            "वदत"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "समवेतस्वरेण",
-          "sanskrit_gloss": "सम्मिलित-स्वरेण",
-          "hindi_gloss": "सम्मिलित ध्वनि से (एक साथ स्वर मिलाकर)",
-          "meaning": "By chanting in unison",
-          "words": [
-            "समवेतस्वरेण",
-            "सम्मिलित",
-            "स्वरेण"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "मनांसि",
-          "sanskrit_gloss": "चित्तानि",
-          "hindi_gloss": "मनों को (हृदय और चित्त)",
-          "meaning": "Minds / Thoughts",
-          "words": [
-            "मनांसि",
-            "चित्तानि"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "जानताम्",
-          "sanskrit_gloss": "जानन्तु / अवगच्छन्तु",
-          "hindi_gloss": "जानें / समझें",
-          "meaning": "May you know / understand similarly",
-          "words": [
-            "जानताम्",
-            "जानन्तु",
+            "dog),",
+            "सकलम्",
+            "(सम्पूर्णम्),",
+            "शकलम्",
+            "(खण्डम्),",
+            "सकृत्",
+            "(एक",
+            "बार),",
+            "शकृत्",
+            "(मल",
             "/",
-            "अवगच्छन्तु"
+            "विष्ठा)।"
           ],
-          "kind": "glossary"
+          "kind": "vocabulary"
         },
         {
-          "sanskrit": "देवाः",
-          "sanskrit_gloss": "ब्रह्माण्डीय-शक्तयः / सुराः",
-          "hindi_gloss": "सृष्टि की मूलभूत शक्तियाँ / देवता",
-          "meaning": "Cosmic forces / Celestial deities",
+          "sanskrit": "शब्दार्थाः – अव्यक्ताः (अस्पष्टाः), पीडिताः (अधिकप्रयत्नयुक्ताः), महीयते (पूज्यते), अक्षरव्यक्तिः (अक्षरों की स्पष्टता), शीघ्री (तेज़ पढ़ने वाला), शिरःकम्पी, अनर्थज्ञः, अल्पकण्ठः।",
+          "meaning": "Key vocabulary from the lesson (set 2).",
+          "paragraphTranslation": "Word meanings for reader qualities and defects.",
           "words": [
-            "देवाः",
-            "ब्रह्माण्डीय",
-            "शक्तयः",
-            "/",
-            "सुराः"
+            "शब्दार्थाः",
+            "–",
+            "अव्यक्ताः",
+            "(अस्पष्टाः),",
+            "पीडिताः",
+            "(अधिकप्रयत्नयुक्ताः),",
+            "महीयते",
+            "(पूज्यते),",
+            "अक्षरव्यक्तिः",
+            "(अक्षरों",
+            "की",
+            "स्पष्टता),",
+            "शीघ्री",
+            "(तेज़",
+            "पढ़ने",
+            "वाला),",
+            "शिरःकम्पी,",
+            "अनर्थज्ञः,",
+            "अल्पकण्ठः।"
           ],
-          "kind": "glossary"
+          "kind": "vocabulary"
         },
         {
-          "sanskrit": "संजानानाः",
-          "sanskrit_gloss": "एकमनसः भूत्वा / ऐक्यभावेन",
-          "hindi_gloss": "एक विचार वाले होकर / एकमत होकर",
-          "meaning": "Being amicable / In total agreement",
+          "sanskrit": "२. एकपदेन उत्तराणि – (क) पाठकाः केषां सम्यक् प्रयोगं कुर्युः? → वर्णानाम् (ख) किम् अवश्यमेव पठनीयम्? → व्याकरणम् (ग) ब्रह्मलोके केन सम्मानं भवति? → सम्यग्वर्णप्रयोगेण (घ) अधमाः पाठकाः कति? → षट् (ङ) धैर्यं केषां गुणः? → पाठकानाम्",
+          "meaning": "One-word answers from the textbook अभ्यासः.",
+          "paragraphTranslation": "Textbook exercise 2 — one-word answers.",
           "words": [
-            "संजानानाः",
-            "एकमनसः",
-            "भूत्वा",
-            "/",
-            "ऐक्यभावेन"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "उपासते",
-          "sanskrit_gloss": "सेवन्ते / गृह्णन्ति",
-          "hindi_gloss": "श्रद्धापूर्वक कर्तव्य निर्वहण / स्वीकार करते हैं",
-          "meaning": "Devotedly performing duties / Accepting offerings",
-          "words": [
-            "उपासते",
-            "सेवन्ते",
-            "/",
-            "गृह्णन्ति"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "अभ्युदयम्",
-          "sanskrit_gloss": "अभिवृद्धिः / लौकिकोन्नतिः",
-          "hindi_gloss": "लौकिक उन्नति और समृद्धि",
-          "meaning": "Elevation and worldly prosperity",
-          "words": [
-            "अभ्युदयम्",
-            "अभिवृद्धिः",
-            "/",
-            "लौकिकोन्नतिः"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "मन्त्रः",
-          "sanskrit_gloss": "विचारः / चिन्तनम् / परामर्शः",
-          "hindi_gloss": "विचार / चिन्तन / परामर्श",
-          "meaning": "Contemplation / Thought / Deliberation",
-          "words": [
-            "मन्त्रः",
-            "विचारः",
-            "/",
-            "चिन्तनम्",
-            "/",
-            "परामर्शः"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "समितिः",
-          "sanskrit_gloss": "समाना प्राप्तिः / सभा",
-          "hindi_gloss": "समान सिद्धि / सभा (परिषद)",
-          "meaning": "Common resolutions / Assembly",
-          "words": [
-            "समितिः",
-            "समाना",
-            "प्राप्तिः",
-            "/",
-            "सभा"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "वः",
-          "sanskrit_gloss": "युष्मभ्यम् / युष्माकम्",
-          "hindi_gloss": "तुम्हारे लिए / तुम्हारा",
-          "meaning": "For you / Your",
-          "words": [
-            "वः",
-            "युष्मभ्यम्",
-            "/",
-            "युष्माकम्"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "अभिमन्त्रये",
-          "sanskrit_gloss": "संस्कृत्य प्रचारयामि / उपदिशामि",
-          "hindi_gloss": "अभिमन्त्रित करके प्रकट करता हूँ / संस्कारित करता हूँ",
-          "meaning": "Consecrate and propagate / Instill",
-          "words": [
-            "अभिमन्त्रये",
-            "संस्कृत्य",
-            "प्रचारयामि",
-            "/",
-            "उपदिशामि"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "हविषा",
-          "sanskrit_gloss": "प्रार्थनापूर्वकेण समर्पणेन / हविर्द्रव्येण",
-          "hindi_gloss": "प्रार्थनापूर्वक यज्ञाहुति द्वारा",
-          "meaning": "By oblatory prayers / Sacrificial offerings",
-          "words": [
-            "हविषा",
-            "प्रार्थनापूर्वकेण",
-            "समर्पणेन",
-            "/",
-            "हविर्द्रव्येण"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "जुहोमि",
-          "sanskrit_gloss": "ज्ञानकर्ममयं यज्ञं साधयामि / हवनं करोमि",
-          "hindi_gloss": "दिव्य यज्ञ कर्म को साधता हूँ / आहुति देता हूँ",
-          "meaning": "Performing divine offerings / Sacred rituals",
-          "words": [
-            "जुहोमि",
-            "ज्ञानकर्ममयं",
-            "यज्ञं",
-            "साधयामि",
-            "/",
-            "हवनं",
-            "करोमि"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "आकूतिः",
-          "sanskrit_gloss": "सङ्कल्पः / अभीप्सितम्",
-          "hindi_gloss": "संकल्प / उच्च अभिलाषा",
-          "meaning": "Noble resolution / Intent",
-          "words": [
-            "आकूतिः",
-            "सङ्कल्पः",
-            "/",
-            "अभीप्सितम्"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "सु सह असति",
-          "sanskrit_gloss": "सुसङ्घटितः भवेत् / शोभनं सहजीवनं स्यात्",
-          "hindi_gloss": "सुसङ्घटित हो / सुंदर सहअस्तित्व हो",
-          "meaning": "May you be beautifully united / Harmonious coexistence",
-          "words": [
-            "सु",
-            "सह",
-            "असति",
-            "सुसङ्घटितः",
-            "भवेत्",
-            "/",
-            "शोभनं",
-            "सहजीवनं",
-            "स्यात्"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "संहिता",
-          "sanskrit_gloss": "मूलमन्त्रपाठः",
-          "hindi_gloss": "मूल वैदिक मन्त्र पाठ",
-          "meaning": "Original Vedic text / Collection",
-          "words": [
-            "संहिता",
-            "मूलमन्त्रपाठः"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "ब्रह्मणा",
-          "sanskrit_gloss": "सृष्टिकर्त्रा परमेश्वरेण",
-          "hindi_gloss": "निर्माता परमात्मा के द्वारा",
-          "meaning": "By the creator of the universe",
-          "words": [
-            "ब्रह्मणा",
-            "सृष्टिकर्त्रा",
-            "परमेश्वरेण"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "निरवहन्",
-          "sanskrit_gloss": "निर्वाहम् अकुर्वन्",
-          "hindi_gloss": "निर्वाह किया (दायित्व निभाया)",
-          "meaning": "Took responsibility / Carried out duties",
-          "words": [
-            "निरवहन्",
-            "निर्वाहम्",
-            "अकुर्वन्"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "पाठ्यपुस्तकस्य अभ्यासाः (Solved Textbook Exercises)",
-          "meaning": "Complete Solved Exercises for Chapter 1 with Detailed Sanskrit Answers and English Meanings",
-          "words": [
-            "पाठ्यपुस्तकस्य",
-            "अभ्यासाः",
-            "Solved",
-            "Exercises"
-          ],
-          "kind": "exercise-header"
-        },
-        {
-          "sanskrit": "प्रश्नः १: संज्ञानसूक्तं सस्वरं पठत स्मरत लिखत च।",
-          "answer_sanskrit": "संज्ञान-सूक्तस्य (ऋग्वेद १०.१९१.२-४) त्रयः मन्त्राः सस्वरं पठनीयाः, कण्ठस्थीकरणीयाः, अभ्यासपुस्तिकायां च लेखनीयाः:\n१. संगच्छध्वं संवदध्वं सं वो मनांसि जानताम् । देवा भागं यथा पूर्वे संजानाना उपासते ॥\n२. समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम् । समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि ॥\n३. समानी व आकूतिः समाना हृदयानि वः । समानमस्तु वो मनो यथा वः सुसहासति ॥",
-          "meaning": "Recite the three mantras of the Samjnana Sukta rhythmically, memorize them, and write them down accurately in the notebook.",
-          "hindi_gloss": "संज्ञान-सूक्त के तीनों मन्त्रों का सस्वर पाठ करें, उन्हें याद करें और अपनी अभ्यास पुस्तिका में लिखें।",
-          "words": [
-            "संज्ञानसूक्तं",
-            "सस्वरं",
-            "पठत",
-            "स्मरत",
-            "लिखत",
-            "च"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "प्रश्नः २: अधोलिखितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखत —",
-          "meaning": "Answer the following questions in complete Sanskrit sentences",
-          "words": [
-            "अधोलिखितानां",
-            "प्रश्नानाम्",
+            "२.",
+            "एकपदेन",
             "उत्तराणि",
-            "पूर्णवाक्येन",
-            "लिखत"
-          ],
-          "kind": "exercise-header"
-        },
-        {
-          "sanskrit": "(क) सर्वेषां मनः कीदृशं भवेत्?",
-          "answer_sanskrit": "सर्वेषां मनः समानं सामञ्जस्ययुतं च भवेत्।",
-          "meaning": "Everyone's mind should be harmonious and unified in thought.",
-          "hindi_gloss": "सभी का मन समान और सामंजस्यपूर्ण (एक विचार वाला) होना चाहिए।",
-          "words": [
-            "(",
-            "क",
-            ")",
-            "सर्वेषां",
-            "मनः",
-            "कीदृशं",
-            "भवेत्",
-            "?",
-            "सर्वेषां",
-            "मनः",
-            "समानं",
-            "सामञ्जस्ययुतं",
-            "च",
-            "भवेत्।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ख) 'सङ्गच्छध्वं संवदध्वम्' इत्यस्य कः अभिप्रायः?",
-          "answer_sanskrit": "सङ्गच्छध्वं संवदध्वम् इत्यस्य अभिप्रायः अस्ति यत् हे मानवाः! यूयं सर्वे समाजे मिलित्वा अग्रे गच्छत तथा परस्परं सम्यक् विचारविनिमयं कुर्वन्तः एकस्वरेण वदत।",
-          "meaning": "It means: O humans! You all should walk together progressively in society and exchange your thoughts constructively, speaking in one collective voice.",
-          "hindi_gloss": "'सङ्गच्छध्वं संवदध्वम्' का अर्थ है कि हे मनुष्यों! तुम सब समाज में मिलकर आगे बढ़ो और आपस में विचारों का आदान-प्रदान करते हुए एक स्वर में बोलो।",
-          "words": [
-            "(",
-            "ख",
-            ")",
-            "'",
-            "सङ्गच्छध्वं",
-            "संवदध्वम्",
-            "'",
-            "इत्यस्य",
-            "कः",
-            "अभिप्रायः",
-            "?",
-            "सङ्गच्छध्वं",
-            "संवदध्वम्",
-            "इत्यस्य",
-            "अभिप्रायः",
-            "अस्ति",
-            "यत्",
-            "हे",
-            "मानवाः",
-            "!",
-            "यूयं",
-            "सर्वे",
-            "समाजे",
-            "मिलित्वा",
-            "अग्रे",
-            "गच्छत",
-            "तथा",
-            "परस्परं",
+            "–",
+            "(क)",
+            "पाठकाः",
+            "केषां",
             "सम्यक्",
-            "विचारविनिमयं",
-            "कुर्वन्तः",
-            "एकस्वरेण",
-            "वदत।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ग) सर्वे किं परित्यज्य ऐक्यभावेन जीवेयुः?",
-          "answer_sanskrit": "सर्वे परस्परं मनोभेदं द्वेषभावं वैमनस्यं च परित्यज्य ऐक्यभावेन जीवेयुः।",
-          "meaning": "Everyone should discard mental differences, hatred, and hostility to live together in unity.",
-          "hindi_gloss": "सभी को आपस के मतभेद, द्वेष और वैमनस्य को त्यागकर एकता के भाव से जीना चाहिए।",
-          "words": [
-            "(",
-            "ग",
-            ")",
-            "सर्वे",
-            "किं",
-            "परित्यज्य",
-            "ऐक्यभावेन",
-            "जीवेयुः",
-            "?",
-            "सर्वे",
-            "परस्परं",
-            "मनोभेदं",
-            "द्वेषभावं",
-            "वैमनस्यं",
-            "च",
-            "परित्यज्य",
-            "ऐक्यभावेन",
-            "जीवेयुः।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(घ) अस्मिन् पाठे का प्रेरणा अस्ति?",
-          "answer_sanskrit": "अस्मिन् पाठे संघटितरूपेण सहजीवनस्य, एकतायाः, परस्परं सामञ्जस्यस्य च प्रेरणा अस्ति।",
-          "meaning": "This lesson inspires collective co-existence, absolute unity, and mutual harmony.",
-          "hindi_gloss": "इस पाठ में संगठित होकर साथ जीने, एकता और आपसी तालमेल की प्रेरणा है।",
-          "words": [
-            "(",
-            "घ",
-            ")",
-            "अस्मिन्",
-            "पाठे",
-            "का",
-            "प्रेरणा",
-            "अस्ति",
-            "?",
-            "अस्मिन्",
-            "पाठे",
-            "संघटितरूपेण",
-            "सहजीवनस्य",
-            ",",
-            "एकतायाः",
-            ",",
-            "परस्परं",
-            "सामञ्जस्यस्य",
-            "च",
-            "प्रेरणा",
-            "अस्ति।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "प्रश्नः ३: रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कुरुत —",
-          "meaning": "Formulate questions using interrogative pronouns based on the underlined terms",
-          "words": [
-            "रेखाङ्कितपदानि",
-            "आधृत्य",
-            "प्रश्ननिर्माणं",
-            "कुरुत"
-          ],
-          "kind": "exercise-header"
-        },
-        {
-          "sanskrit": "(क) परमेश्वरः सर्वत्र व्याप्तः अस्ति। (रेखाङ्कितम्: परमेश्वरः)",
-          "answer_sanskrit": "कः सर्वत्र व्याप्तः अस्ति?",
-          "meaning": "Who is all-pervading? (Target: Parameshvara)",
-          "hindi_gloss": "कौन सर्वत्र व्याप्त है?",
-          "words": [
-            "(",
-            "क",
-            ")",
-            "परमेश्वरः",
-            "सर्वत्र",
-            "व्याप्तः",
-            "अस्ति।",
-            "(",
-            "रेखाङ्कितम्",
-            "परमेश्वरः",
-            ")",
-            "कः",
-            "सर्वत्र",
-            "व्याप्तः",
-            "अस्ति",
-            "?"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ख) वयम् ईश्वरं नमामः। (रेखाङ्कितम्: ईश्वरम्)",
-          "answer_sanskrit": "वयं कम् नमामः?",
-          "meaning": "Whom do we bow down to? (Target: Ishvaram)",
-          "hindi_gloss": "हम किसको नमन करते हैं?",
-          "words": [
-            "(",
-            "ख",
-            ")",
-            "वयम्",
-            "ईश्वरं",
-            "नमामः।",
-            "(",
-            "रेखाङ्कितम्",
-            "ईश्वरम्",
-            ")",
-            "वयं",
-            "कम्",
-            "नमामः",
-            "?"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ग) वयम् ऐक्यभावेन जीवामः। (रेखाङ्कितम्: ऐक्यभावेन)",
-          "answer_sanskrit": "वयं कथम् / केन भावेन जीवामः?",
-          "meaning": "How / in what spirit do we live? (Target: Aikyabhavena)",
-          "hindi_gloss": "हम किस भाव से / कैसे जीते हैं?",
-          "words": [
-            "(",
-            "ग",
-            ")",
-            "वयम्",
-            "ऐक्यभावेन",
-            "जीवामः।",
-            "(",
-            "रेखाङ्कितम्",
-            "ऐक्यभावेन",
-            ")",
-            "वयं",
-            "कथम्",
-            "/",
-            "केन",
-            "भावेन",
-            "जीवामः",
-            "?"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(घ) ईश्वरस्य प्रार्थनया शान्तिः प्राप्यते। (रेखाङ्कितम्: प्रार्थनया)",
-          "answer_sanskrit": "ईश्वरस्य कया शान्तिः प्राप्यते?",
-          "meaning": "Through what is peace obtained from God? (Target: Prarthanaya)",
-          "hindi_gloss": "ईश्वर की किसके द्वारा शान्ति प्राप्त होती है?",
-          "words": [
-            "(",
-            "घ",
-            ")",
-            "ईश्वरस्य",
-            "प्रार्थनया",
-            "शान्तिः",
-            "प्राप्यते।",
-            "(",
-            "रेखाङ्कितम्",
-            "प्रार्थनया",
-            ")",
-            "ईश्वरस्य",
-            "कया",
-            "शान्तिः",
-            "प्राप्यते",
-            "?"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ङ) अहं समाजाय श्रमं करोमि। (रेखाङ्कितम्: समाजाय)",
-          "answer_sanskrit": "अहं कस्मै श्रमं करोमि?",
-          "meaning": "For whom do I perform labor? (Target: Samajaya)",
-          "hindi_gloss": "मैं किसके लिए श्रम करता हूँ?",
-          "words": [
-            "(",
-            "ङ",
-            ")",
-            "अहं",
-            "समाजाय",
-            "श्रमं",
-            "करोमि।",
-            "(",
-            "रेखाङ्कितम्",
-            "समाजाय",
-            ")",
-            "अहं",
-            "कस्मै",
-            "श्रमं",
-            "करोमि",
-            "?"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(च) अयं पाठः ऋग्वेदात् सङ्कलितः। (रेखाङ्कितम्: ऋग्वेदात्)",
-          "answer_sanskrit": "अयं पाठः कस्मात् सङ्कलितः?",
-          "meaning": "From where is this lesson compiled? (Target: Rigvedat)",
-          "hindi_gloss": "यह पाठ किससे संकलित है?",
-          "words": [
-            "(",
-            "च",
-            ")",
-            "अयं",
-            "पाठः",
-            "ऋग्वेदात्",
-            "सङ्कलितः।",
-            "(",
-            "रेखाङ्कितम्",
-            "ऋग्वेदात्",
-            ")",
-            "अयं",
-            "पाठः",
-            "कस्मात्",
-            "सङ्कलितः",
-            "?"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(छ) वेदस्य अपरं नाम श्रुतिः। (रेखाङ्कितम्: श्रुतिः)",
-          "answer_sanskrit": "वेदस्य अपरं नाम किम्?",
-          "meaning": "What is the other name of the Veda? (Target: Shrutih)",
-          "hindi_gloss": "वेद का दूसरा नाम क्या है?",
-          "words": [
-            "(",
-            "छ",
-            ")",
-            "वेदस्य",
-            "अपरं",
-            "नाम",
-            "श्रुतिः।",
-            "(",
-            "रेखाङ्कितम्",
-            "श्रुतिः",
-            ")",
-            "वेदस्य",
-            "अपरं",
-            "नाम",
+            "प्रयोगं",
+            "कुर्युः?",
+            "→",
+            "वर्णानाम्",
+            "(ख)",
             "किम्",
-            "?"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ज) मन्त्राः वेदेषु भवन्ति। (रेखाङ्कितम्: वेदेषु)",
-          "answer_sanskrit": "मन्त्राः केषु भवन्ति?",
-          "meaning": "In what do mantras exist? (Target: Vedeshu)",
-          "hindi_gloss": "मन्त्र किसमें होते हैं?",
-          "words": [
-            "(",
-            "ज",
-            ")",
-            "मन्त्राः",
-            "वेदेषु",
-            "भवन्ति।",
-            "(",
-            "रेखाङ्कितम्",
-            "वेदेषु",
-            ")",
-            "मन्त्राः",
-            "केषु",
-            "भवन्ति",
-            "?"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "प्रश्नः ४: पट्टिकातः शब्दान् चित्वा अधोलिखितेषु मन्त्रेषु रिक्तस्थानानि पूरयत —",
-          "meaning": "Fill in the blanks in the following mantras using terms from the option box",
-          "words": [
-            "पट्टिकातः",
-            "शब्दान्",
-            "चित्वा",
-            "अधोलिखितेषु",
-            "मन्त्रेषु",
-            "रिक्तस्थानानि",
-            "पूरयत"
-          ],
-          "kind": "exercise-header"
-        },
-        {
-          "sanskrit": "(क) सङ्गच्छध्वं संवदध्वं सं वो मनांसि जानताम् । देवा भागं यथा पूर्वे ________ उपासते॥",
-          "answer_sanskrit": "देवा भागं यथा पूर्वे संजानाना उपासते॥ (रिक्तस्थानम्: संजानानाः)",
-          "meaning": "Just as ancient gods accepted their share being in complete harmony (saṁjānānāḥ).",
-          "hindi_gloss": "रिक्तस्थान: संजानानाः (एकमत होकर)",
-          "words": [
-            "(",
-            "क",
-            ")",
-            "सङ्गच्छध्वं",
-            "संवदध्वं",
-            "सं",
-            "वो",
-            "मनांसि",
-            "जानताम्",
-            "।",
-            "देवा",
-            "भागं",
-            "यथा",
-            "पूर्वे",
-            "उपासते॥",
-            "देवा",
-            "भागं",
-            "यथा",
-            "पूर्वे",
-            "संजानाना",
-            "उपासते॥",
-            "(",
-            "रिक्तस्थानम्",
-            "संजानानाः",
-            ")"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ख) समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम् । समानं मन्त्रमभिमन्त्रये वः ________ वो हविषा जुहोमि॥",
-          "answer_sanskrit": "समानं मन्त्रमभिमन्त्रये वः समानेन वो हविषा जुहोमि॥ (रिक्तस्थानम्: समानेन)",
-          "meaning": "I consecrate you with a unified purpose and offer sacrifice with common oblation (samānena).",
-          "hindi_gloss": "रिक्तस्थान: समानेन (समान आहुति द्वारा)",
-          "words": [
-            "(",
-            "ख",
-            ")",
-            "समानो",
-            "मन्त्रः",
-            "समितिः",
-            "समानी",
-            "समानं",
-            "मनः",
-            "सह",
-            "चित्तमेषाम्",
-            "।",
-            "समानं",
-            "मन्त्रमभिमन्त्रये",
-            "वः",
-            "वो",
-            "हविषा",
-            "जुहोमि॥",
-            "समानं",
-            "मन्त्रमभिमन्त्रये",
-            "वः",
-            "समानेन",
-            "वो",
-            "हविषा",
-            "जुहोमि॥",
-            "(",
-            "रिक्तस्थानम्",
-            "समानेन",
-            ")"
+            "अवश्यमेव",
+            "पठनीयम्?",
+            "→",
+            "व्याकरणम्",
+            "(ग)",
+            "ब्रह्मलोके",
+            "केन",
+            "सम्मानं",
+            "भवति?",
+            "→",
+            "सम्यग्वर्णप्रयोगेण",
+            "(घ)",
+            "अधमाः",
+            "पाठकाः",
+            "कति?",
+            "→",
+            "षट्",
+            "(ङ)",
+            "धैर्यं",
+            "केषां",
+            "गुणः?",
+            "→",
+            "पाठकानाम्"
           ],
           "kind": "exercise-qa",
-          "paragraphTranslation": "Line 1 Hindi: इन (सब मनुष्यों) के विचार समान हों, इनकी सभाएँ (लक्ष्य) समान हों, इनका मन सौहार्दपूर्ण हो और इनका अंतःकरण (बुद्धिजन्य ज्ञान) एक साथ एकीकृत हो।\nLine 2 Hindi: मैं तुम सबको एक समान उद्देश्य से संस्कारित करता हूँ और तुम्हें एक समान यज्ञीय आहुति (सामूहिक प्रार्थना) से जोड़ता हूँ।"
+          "answer_sanskrit": "वर्णानाम्; व्याकरणम्; सम्यग्वर्णप्रयोगेण; षट्; पाठकानाम्",
+          "hindi_gloss": "एक-शब्द उत्तर"
         },
         {
-          "sanskrit": "(ग) समानी व आकूतिः समाना हृदयानि वः । समानमस्तु वो मनो यथा वः ________॥",
-          "answer_sanskrit": "समानमस्तु वो मनो यथा वः सुसहासति॥ (रिक्तस्थानम्: सुसहासति / सु सह असति)",
-          "meaning": "May your minds be united so that your collective co-existence may be beautifully perfect (susahāsati).",
-          "hindi_gloss": "रिक्तस्थान: सुसहासति (सुसङ्गठित हो)",
+          "sanskrit": "३. पूर्णवाक्येन – (क) व्याघ्री दंष्ट्राभ्यां पुत्रान् नयति। (ख) वर्णाः नाव्यक्ताः न च पीडिताः प्रयोक्तव्याः। (ग) माधुर्यम्, अक्षरव्यक्तिः, पदच्छेदः, सुस्वरः, धैर्यं, लयसमर्थं च। (घ) गीती शीघ्री शिरःकम्पी लिखितपाठकः अनर्थज्ञः अल्पकण्ठः च।",
+          "meaning": "Full-sentence answers from the textbook अभ्यासः.",
+          "paragraphTranslation": "Textbook exercise 3 — complete-sentence answers.",
           "words": [
-            "(",
-            "ग",
-            ")",
-            "समानी",
-            "व",
-            "आकूतिः",
-            "समाना",
-            "हृदयानि",
-            "वः",
-            "।",
-            "समानमस्तु",
-            "वो",
-            "मनो",
-            "यथा",
-            "वः",
-            "॥",
-            "समानमस्तु",
-            "वो",
-            "मनो",
-            "यथा",
-            "वः",
-            "सुसहासति॥",
-            "(",
-            "रिक्तस्थानम्",
-            "सुसहासति",
-            "/",
-            "सु",
-            "सह",
-            "असति",
-            ")"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "प्रश्नः ५: पाठे प्रयुक्तान् शब्दान् भावानुसारं परस्परं योजयत —",
-          "meaning": "Match the textual terms with their appropriate textual meanings",
-          "words": [
-            "पाठे",
-            "प्रयुक्तान्",
-            "शब्दान्",
-            "भावानुसारं",
-            "परस्परं",
-            "योजयत"
-          ],
-          "kind": "exercise-header"
-        },
-        {
-          "sanskrit": "(क) संगच्छध्वम् ➡️ मिलित्वा चलत",
-          "answer_sanskrit": "संगच्छध्वम् ➡️ मिलित्वा चलत (May you walk together in harmony)",
-          "meaning": "Saṁgacchadhvam matches with Militvā calata.",
-          "hindi_gloss": "संगच्छध्वम् ➔ मिलकर चलो",
-          "words": [
-            "(",
-            "क",
-            ")",
-            "संगच्छध्वम्",
-            "➡",
-            "️",
-            "मिलित्वा",
-            "चलत",
-            "संगच्छध्वम्",
-            "➡",
-            "️",
-            "मिलित्वा",
-            "चलत",
-            "(",
-            "May",
-            "you",
-            "walk",
-            "together",
-            "in",
-            "harmony",
-            ")"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ख) संवदध्वम् ➡️ एकस्वरेण वदत",
-          "answer_sanskrit": "संवदध्वम् ➡️ एकस्वरेण वदत (May you speak together in concord)",
-          "meaning": "Saṁvadadhvam matches with Ekasvareṇa vadata.",
-          "hindi_gloss": "संवदध्वम् ➔ एक स्वर में बोलो",
-          "words": [
-            "(",
-            "ख",
-            ")",
-            "संवदध्वम्",
-            "➡",
-            "️",
-            "एकस्वरेण",
-            "वदत",
-            "संवदध्वम्",
-            "➡",
-            "️",
-            "एकस्वरेण",
-            "वदत",
-            "(",
-            "May",
-            "you",
-            "speak",
-            "together",
-            "in",
-            "concord",
-            ")"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ग) मनः ➡️ चित्तम्",
-          "answer_sanskrit": "मनः ➡️ चित्तम् (Mind / Inner consciousness)",
-          "meaning": "Manaḥ matches with Cittam.",
-          "hindi_gloss": "मनः ➔ चित्त",
-          "words": [
-            "(",
-            "ग",
-            ")",
-            "मनः",
-            "➡",
-            "️",
-            "चित्तम्",
-            "मनः",
-            "➡",
-            "️",
-            "चित्तम्",
-            "(",
-            "Mind",
-            "/",
-            "Inner",
-            "consciousness",
-            ")"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(घ) उपासते ➡️ सेवन्ते",
-          "answer_sanskrit": "उपासते ➡️ सेवन्ते (Devotedly attend to / worship)",
-          "meaning": "Upāsate matches with Sevante.",
-          "hindi_gloss": "उपासते ➔ सेवा करते हैं / कर्तव्य निभाते हैं",
-          "words": [
-            "(",
-            "घ",
-            ")",
-            "उपासते",
-            "➡",
-            "️",
-            "सेवन्ते",
-            "उपासते",
-            "➡",
-            "️",
-            "सेवन्ते",
-            "(",
-            "Devotedly",
-            "attend",
-            "to",
-            "/",
-            "worship",
-            ")"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ङ) वसूनि ➡️ धनानि",
-          "answer_sanskrit": "वसूनि ➡️ धनानि (Wealth / Riches)",
-          "meaning": "Vasūni matches with Dhanāni.",
-          "hindi_gloss": "वसूनि ➔ धन-सम्पत्ति",
-          "words": [
-            "(",
-            "ङ",
-            ")",
-            "वसूनि",
-            "➡",
-            "️",
-            "धनानि",
-            "वसूनि",
-            "➡",
-            "️",
-            "धनानि",
-            "(",
-            "Wealth",
-            "/",
-            "Riches",
-            ")"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(च) विश्वानि ➡️ समस्तानि",
-          "answer_sanskrit": "विश्वानि ➡️ समस्तानि (All / Entire)",
-          "meaning": "Viśvāni matches with Samastāni.",
-          "hindi_gloss": "विश्वानि ➔ समस्त / सब",
-          "words": [
-            "(",
-            "च",
-            ")",
-            "विश्वानि",
-            "➡",
-            "️",
-            "समस्तानि",
-            "विश्वानि",
-            "➡",
-            "️",
-            "समस्तानि",
-            "(",
-            "All",
-            "/",
-            "Entire",
-            ")"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(छ) आकूतिः ➡️ सङ्कल्पः",
-          "answer_sanskrit": "आकूतिः ➡️ सङ्कल्पः (Noble determination / Intent)",
-          "meaning": "Ākūtiḥ matches with Saṅkalpaḥ.",
-          "hindi_gloss": "आकूतिः ➔ संकल्प",
-          "words": [
-            "(",
-            "छ",
-            ")",
-            "आकूतिः",
-            "➡",
-            "️",
-            "सङ्कल्पः",
-            "आकूतिः",
-            "➡",
-            "️",
-            "सङ्कल्पः",
-            "(",
-            "Noble",
-            "determination",
-            "/",
-            "Intent",
-            ")"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "प्रश्नः ६: उदाहरणानुसारेण लट्-लकारस्य वाक्यानि लोट्-लकारेण परिवर्तयत —",
-          "meaning": "Convert sentences from Present Tense (Laṭ-lakāra) to Imperative Mood (Loṭ-lakāra)",
-          "words": [
-            "उदाहरणानुसारेण",
-            "लट्",
-            "लकारस्य",
-            "वाक्यानि",
-            "लोट्",
-            "लकारेण",
-            "परिवर्तयत"
-          ],
-          "kind": "exercise-header"
-        },
-        {
-          "sanskrit": "यथा: बालिकाः नृत्यन्ति ➡️ बालिकाः नृत्यन्तु (Let the girls dance)",
-          "answer_sanskrit": "बालिकाः नृत्यन्तु",
-          "meaning": "Example: Girls dance -> Let the girls dance",
-          "hindi_gloss": "यथा: बालिकाएँ नाचती हैं ➔ बालिकाएँ नाचें",
-          "words": [
-            "यथा",
-            "बालिकाः",
-            "नृत्यन्ति",
-            "➡",
-            "️",
-            "बालिकाः",
-            "नृत्यन्तु",
-            "(",
-            "Let",
-            "the",
-            "girls",
-            "dance",
-            ")",
-            "बालिकाः",
-            "नृत्यन्तु"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(क) बालकाः हसन्ति।",
-          "answer_sanskrit": "बालकाः हसन्तु।",
-          "meaning": "Boys laugh -> Let the boys laugh (Imperative: Loṭ)",
-          "hindi_gloss": "बालक हँसते हैं ➔ बालक हँसें (बालकाः हसन्तु)",
-          "words": [
-            "(",
-            "क",
-            ")",
-            "बालकाः",
-            "हसन्ति।",
-            "बालकाः",
-            "हसन्तु।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ख) युवां तत्र गच्छथः।",
-          "answer_sanskrit": "युवां तत्र गच्छतम्।",
-          "meaning": "You two go there -> May you two go there / Go there!",
-          "hindi_gloss": "तुम दोनों वहाँ जाते हो ➔ तुम दोनों वहाँ जाओ (युवां तत्र गच्छतम्)",
-          "words": [
-            "(",
-            "ख",
-            ")",
-            "युवां",
-            "तत्र",
-            "गच्छथः।",
-            "युवां",
-            "तत्र",
-            "गच्छतम्।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ग) यूयं धावथ।",
-          "answer_sanskrit": "यूयं धावत।",
-          "meaning": "You all run -> Run, all of you!",
-          "hindi_gloss": "तुम सब दौड़ते हो ➔ तुम सब दौड़ो (यूयं धावत)",
-          "words": [
-            "(",
-            "ग",
-            ")",
-            "यूयं",
-            "धावथ।",
-            "यूयं",
-            "धावत।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(घ) आवां लिखावः।",
-          "answer_sanskrit": "आवां लिखाव। (लिखावै)",
-          "meaning": "We two write -> Let us two write!",
-          "hindi_gloss": "हम दोनों लिखते हैं ➔ हम दोनों लिखें (आवां लिखाव)",
-          "words": [
-            "(",
-            "घ",
-            ")",
-            "आवां",
-            "लिखावः।",
-            "आवां",
-            "लिखाव।",
-            "(",
-            "लिखावै",
-            ")"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ङ) वयं पठामः।",
-          "answer_sanskrit": "वयं पठाम। (पठामै)",
-          "meaning": "We all read -> Let us all read!",
-          "hindi_gloss": "हम सब पढ़ते हैं ➔ हम सब पढ़ें (वयं पठाम)",
-          "words": [
-            "(",
-            "ङ",
-            ")",
-            "वयं",
-            "पठामः।",
-            "वयं",
-            "पठाम।",
-            "(",
-            "पठामै",
-            ")"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "भागः ४: योग्यताविस्तरः — वैदिक-परम्परा (Vedic Heritage & Context)",
-          "meaning": "Part 4: Vedic Heritage, Textual Background, and Linguistic Reflections",
-          "paragraphTranslation": "भाग ४: योग्यता-विस्तार — वैदिक परम्परा एवं भाषा-चिन्तन",
-          "words": [
-            "भागः",
-            "४",
-            "योग्यताविस्तरः",
-            "वैदिक",
-            "परम्परा"
-          ],
-          "kind": "chapter-header"
-        },
-        {
-          "sanskrit": "१. ऋग्वेदस्य अन्तिममण्डलस्य (दशममण्डलस्य) अन्तिमं सूक्तं 'संज्ञान-सूक्तम्' (१९१) इति प्रख्यातम् अस्ति। अस्मिन् सूक्ते आहत्य चत्वारः मन्त्राः सन्ति।",
-          "meaning": "1. The final hymn of the final (10th) Mandala of Rigveda is famous as the 'Saṁjñāna-Sūkta' (Hymn 191). It contains four mantras in total, advocating universal unity.",
-          "paragraphTranslation": "१. ऋग्वेद के अंतिम (१०वें) मण्डल का अंतिम सूक्त 'संज्ञान-सूक्त' (सूक्त १९१) कहलाता है। इसमें कुल ४ मन्त्र हैं जो सार्वभौमिक एकता का उद्घोष करते हैं।",
-          "words": [
-            "१",
-            ".",
-            "ऋग्वेदस्य",
-            "अन्तिममण्डलस्य",
-            "(",
-            "दशममण्डलस्य",
-            ")",
-            "अन्तिमं",
-            "सूक्तं",
-            "'",
-            "संज्ञान",
-            "सूक्तम्",
-            "'",
-            "(",
-            "१९१",
-            ")",
-            "इति",
-            "प्रख्यातम्",
-            "अस्ति।",
-            "अस्मिन्",
-            "सूक्ते",
-            "आहत्य",
-            "चत्वारः",
-            "मन्त्राः",
-            "सन्ति।"
-          ]
-        },
-        {
-          "sanskrit": "२. सम्पूर्णे ऋग्वेदे आहत्य १० मण्डलानि, १०२८ सूक्तानि, १०,५५२ मन्त्राः च सन्ति। ऋग्वेदः मानवजातेः प्राचीनतमः उपलब्धः ग्रन्थः अस्ति।",
-          "meaning": "2. In the entire Rigveda, there are 10 Mandalas, 1,028 Suktas, and 10,552 Mantras. The Rigveda is the oldest extant literary heritage of humankind.",
-          "paragraphTranslation": "२. सम्पूर्ण ऋग्वेद में १० मण्डल, १०२८ सूक्त और १०,५५२ मन्त्र हैं। ऋग्वेद मानव सभ्यता का प्राचीनतम उपलब्ध ग्रन्थ है।",
-          "words": [
-            "२",
-            ".",
-            "सम्पूर्णे",
-            "ऋग्वेदे",
-            "आहत्य",
-            "१०",
-            "मण्डलानि",
-            ",",
-            "१०२८",
-            "सूक्तानि",
-            ",",
-            "१०",
-            ",",
-            "५५२",
-            "मन्त्राः",
-            "च",
-            "सन्ति।",
-            "ऋग्वेदः",
-            "मानवजातेः",
-            "प्राचीनतमः",
-            "उपलब्धः",
-            "ग्रन्थः",
-            "अस्ति।"
-          ]
-        },
-        {
-          "sanskrit": "३. सन्धि-नियमाः: सम् + गच्छते = सङ्गच्छते (अनुस्वार-परसवर्ण-सन्धिः) | मनः + सह = मनो सह (विसर्ग-उकार-सन्धिः) | न + आसीत् = नासीत् (दीर्घ-सन्धिः) | मन्त्र + अंशः = मन्त्रांशः (दीर्घ-सन्धिः)।",
-          "meaning": "3. Key Sandhi Rules: Sam + gacchate = Saṅgacchate | Manaḥ + saha = Mano saha | Na + āsīt = Nāsīt | Mantra + aṁśaḥ = Mantrāṁśaḥ.",
-          "paragraphTranslation": "३. प्रमुख सन्धि-नियम: सम् + गच्छते = सङ्गच्छते | मनः + सह = मनो सह | न + आसीत् = नासीत् | मन्त्र + अंशः = मन्त्रांशः।",
-          "words": [
-            "३",
-            ".",
-            "सन्धि",
-            "नियमाः",
-            "सम्",
-            "+",
-            "गच्छते",
-            "=",
-            "सङ्गच्छते",
-            "(",
-            "अनुस्वार",
-            "परसवर्ण",
-            "सन्धिः",
-            ")",
-            "|",
-            "मनः",
-            "+",
-            "सह",
-            "=",
-            "मनो",
-            "सह",
-            "(",
-            "विसर्ग",
-            "उकार",
-            "सन्धिः",
-            ")",
-            "|",
+            "३.",
+            "पूर्णवाक्येन",
+            "–",
+            "(क)",
+            "व्याघ्री",
+            "दंष्ट्राभ्यां",
+            "पुत्रान्",
+            "नयति।",
+            "(ख)",
+            "वर्णाः",
+            "नाव्यक्ताः",
             "न",
-            "+",
-            "आसीत्",
+            "च",
+            "पीडिताः",
+            "प्रयोक्तव्याः।",
+            "(ग)",
+            "माधुर्यम्,",
+            "अक्षरव्यक्तिः,",
+            "पदच्छेदः,",
+            "सुस्वरः,",
+            "धैर्यं,",
+            "लयसमर्थं",
+            "च।",
+            "(घ)",
+            "गीती",
+            "शीघ्री",
+            "शिरःकम्पी",
+            "लिखितपाठकः",
+            "अनर्थज्ञः",
+            "अल्पकण्ठः",
+            "च।"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "पुत्रान् नयति; नाव्यक्ता न च पीडिताः; षड् गुणाः; षट् अधमाः",
+          "hindi_gloss": "पूर्ण-वाक्य उत्तर"
+        },
+        {
+          "sanskrit": "४. वर्गीकरणम् – गुणाः: अक्षरव्यक्तिः, लयसमर्थम्, माधुर्यम्, पदच्छेदः, धैर्यम्, सुस्वरः। दोषाः: शीघ्री, लिखितपाठकः, अनर्थज्ञः, अल्पकण्ठः, गीती, शिरःकम्पी।",
+          "meaning": "Classify reader qualities vs defects.",
+          "paragraphTranslation": "Textbook exercise 4 — guṇa / doṣa sorting.",
+          "words": [
+            "४.",
+            "वर्गीकरणम्",
+            "–",
+            "गुणाः:",
+            "अक्षरव्यक्तिः,",
+            "लयसमर्थम्,",
+            "माधुर्यम्,",
+            "पदच्छेदः,",
+            "धैर्यम्,",
+            "सुस्वरः।",
+            "दोषाः:",
+            "शीघ्री,",
+            "लिखितपाठकः,",
+            "अनर्थज्ञः,",
+            "अल्पकण्ठः,",
+            "गीती,",
+            "शिरःकम्पी।"
+          ],
+          "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "६. सत्यम् / असत्यम् – (क) गानसहितपठनं दोषः। (सत्यम्) (ख) माधुर्यं = अक्षरस्पष्टता। (असत्यम्) (ग) शकृत् = एकवारम्। (असत्यम्) (घ) अव्यक्ताः वर्णाः प्रयोक्तव्याः। (असत्यम्) (ङ) व्याघ्रीवत् वर्णान् प्रयोजयेत्। (सत्यम्)",
+          "meaning": "True/False from the textbook अभ्यासः.",
+          "paragraphTranslation": "Textbook exercise 6 — satyam / asatyam.",
+          "words": [
+            "६.",
+            "सत्यम्",
+            "/",
+            "असत्यम्",
+            "–",
+            "(क)",
+            "गानसहितपठनं",
+            "दोषः।",
+            "(सत्यम्)",
+            "(ख)",
+            "माधुर्यं",
             "=",
-            "नासीत्",
-            "(",
-            "दीर्घ",
-            "सन्धिः",
-            ")",
-            "|",
-            "मन्त्र",
-            "+",
-            "अंशः",
+            "अक्षरस्पष्टता।",
+            "(असत्यम्)",
+            "(ग)",
+            "शकृत्",
             "=",
-            "मन्त्रांशः",
-            "(",
-            "दीर्घ",
-            "सन्धिः",
-            ")",
-            "।"
-          ]
+            "एकवारम्।",
+            "(असत्यम्)",
+            "(घ)",
+            "अव्यक्ताः",
+            "वर्णाः",
+            "प्रयोक्तव्याः।",
+            "(असत्यम्)",
+            "(ङ)",
+            "व्याघ्रीवत्",
+            "वर्णान्",
+            "प्रयोजयेत्।",
+            "(सत्यम्)"
+          ],
+          "kind": "exercise-qa",
+          "answer_sanskrit": "सत्यम्; असत्यम्; असत्यम्; असत्यम्; सत्यम्",
+          "hindi_gloss": "सत्यम् / असत्यम्"
         }
-      ],
-      "page_numbers": "2-8"
+      ]
     },
     {
       "id": "grade8_ch2",

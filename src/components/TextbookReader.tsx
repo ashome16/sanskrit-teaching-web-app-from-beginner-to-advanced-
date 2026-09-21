@@ -262,13 +262,13 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
       {activeLessonId === 'grade8_prarthana' && (
         <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #f0fdf4 0%, #eff6ff 100%)', borderColor: '#86efac' }}>
           <span className="textbook-cbse-pill" style={{ background: '#059669', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · प्रथमः पाठः / प्रार्थना — सरस्वतीप्रार्थना (Page 16)</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · प्रार्थना — सरस्वतीप्रार्थना (मङ्गलाचरणम्)</span>
         </div>
       )}
       {activeLessonId === 'grade8_ch1' && (
         <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #f0fdf4 0%, #eff6ff 100%)', borderColor: '#86efac' }}>
           <span className="textbook-cbse-pill" style={{ background: '#059669', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · प्रथमः पाठः — संगच्छध्वं संवदध्वम् (Pages 2–8)</span>
+          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · प्रथमः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (Pages 137–144)</span>
         </div>
       )}
       {activeLessonId === 'grade8_ch2' && (
@@ -379,16 +379,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 🎯 2 Quizzes (10 Qs)
               </button>
             )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
-                title="Go to Grade 8 Saraswati Prarthana Printable Worksheet"
-              >
-                📑 Grade 8 Worksheet
-              </button>
-            )}
+
           </>
         )}
         {activeLessonId === 'grade8_ch1' && (
@@ -406,9 +397,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--quiz"
                 onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 1 Quizzes (5 Quizzes · 35 questions)"
+                title="Go to Grade 8 Chapter 1 Quizzes (उच्चारण-शास्त्रम्)"
               >
-                🎯 5 Quizzes (35 Qs)
+                🎯 Quizzes (उच्चारण-शास्त्रम्)
               </button>
             )}
             {onOpenWorksheets && (
@@ -416,9 +407,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
                 onClick={onOpenWorksheets}
-                title="Go to Grade 8 Chapter 1 Worksheets (5 Solved Worksheets)"
+                title="Go to Grade 8 Chapter 1 Worksheets (Pronunciation · 5 Sheets)"
               >
-                📑 5 Worksheets (Comprehension & Grammar)
+                📑 5 Worksheets (उच्चारण-शिक्षा)
               </button>
             )}
           </>
