@@ -2332,3 +2332,10 @@
 हर्म्यसरः स्वच्छः अस्ति।|The high-perched lake is clean.|हर्म्यसरः|nature
 हर्म्यमेघः दृश्यते।|The high-perched cloud is seen.|हर्म्यमेघः|nature
 हर्म्यपुष्पम् विकसति।|The high-perched flower blooms.|हर्म्यपुष्पम्|nature
+पवनः तान्ब्यथयति।|The breeze shakes them.|तान्ब्यथयति|nature
+मेघः तान्ब्यथयति।|The cloud disturbs them.|तान्ब्यथयति|nature
+खगः तान्ब्यथयति।|The bird disturbs them.|तान्ब्यथयति|nature
+तरुः तान्ब्यथयति।|The tree shakes them.|तान्ब्यथयति|nature
+सिंहः तान्ब्यथयति।|The lion disturbs them.|तान्ब्यथयति|nature
+गिरिः तान्ब्यथयति।|The mountain shakes them.|तान्ब्यथयति|nature
+सरः तान्ब्यथयति।|The lake disturbs them.|तान्ब्यथयति|nature
