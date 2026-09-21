@@ -7,10 +7,10 @@
 जोडो|सा|सा|स,आ,क,म,इ,उ|सा बालिका पठति।|she|सा is she.
 जोडो|बालः|बालः|ब,आ,लः,क,म,स|बालः पठति।|the boy reads|Visarga stays on लः.
 जोडो|पा|पा|प,आ,क,म,इ,उ|पात्रे जलम् अस्ति।|Water is in the vessel.|प plus आ makes पा.
-जोडो|ना|ना|न,आ,प,क,इ,उ|नदी वेगेन वहति।|The river flows swiftly.|न plus आ makes ना.
+जोडो|ना|ना|न,आ,प,क,इ,उ|नाविकः तरति।|The boatman crosses.|न plus आ makes ना.
 जोडो|रा|रा|र,आ,न,प,इ,उ|राजा अत्र उपविशति।|The king sits here.|र plus आ makes रा.
 जोडो|गा|गा|ग,आ,र,न,इ,उ|बालकः गायति।|The boy sings.|ग plus आ makes गा.
-जोडो|ला|ला|ल,आ,ग,र,इ,उ|लता हरिता अस्ति।|The creeper is green.|ल plus आ makes ला.
+जोडो|ला|ला|ल,आ,ग,र,इ,उ|माला कण्ठे अस्ति।|A garland is on the neck.|ल plus आ makes ला.
 जोडो|कि|कि|क,इ,ख,ग,आ,उ|किरणः सूर्यात् पतति।|A ray falls from the sun.|क plus इ makes कि.
 जोडो|मि|मि|म,इ,क,प,आ,उ|मित्रम् अत्र आगच्छति।|A friend comes here.|म plus इ makes मि.
 जोडो|सि|सि|स,इ,क,म,आ,उ|सिता फलं ददाति।|Sita gives fruit.|स plus इ makes सि.
@@ -56,11 +56,11 @@
 जोडो|सृ|सृ|स,ऋ,क,म,आ,उ|सृष्टिः अद्भुता अस्ति।|Creation is wonderful.|स plus ऋ makes सृ.
 जोडो|पृ|पृ|प,ऋ,क,म,आ,उ|पृथ्वी अन्नं ददाति।|The earth gives food.|प plus ऋ makes पृ.
 जोडो|नृ|नृ|न,ऋ,प,क,आ,उ|नृपः राज्यं पालयति।|The king protects the kingdom.|न plus ऋ makes नृ.
-जोडो|कं|कं|क,अं,ख,ग,आ,उ|कन्दुकः पतति।|The ball falls.|क plus अं makes कं.
-जोडो|मं|मं|म,अं,क,प,आ,उ|मन्दं गजः चलति।|The elephant walks slowly.|म plus अं makes मं.
-जोडो|सं|सं|स,अं,क,म,आ,उ|सन्देशः आयति।|A message comes.|स plus अं makes सं.
-जोडो|पं|पं|प,अं,क,म,आ,उ|पम्पा रम्या अस्ति।|Pampa is lovely.|प plus अं makes पं.
-जोडो|नं|नं|न,अं,प,क,आ,उ|नन्दः हसति।|Nanda smiles.|न plus अं makes नं.
+जोडो|कं|कं|क,अं,ख,ग,आ,उ|कं बालकं पश्यसि?|Whom do you see?|क plus अं makes कं.
+जोडो|मं|मं|म,अं,क,प,आ,उ|प्रथमं बालकः पठति।|First, the boy reads.|म plus अं makes मं.
+जोडो|सं|सं|स,अं,क,म,आ,उ|संसारः विशालः अस्ति।|The world is vast.|स plus अं makes सं.
+जोडो|पं|पं|प,अं,क,म,आ,उ|पुष्पं विकसति।|The flower blooms.|प plus अं makes पं.
+जोडो|नं|नं|न,अं,प,क,आ,उ|गगनं नीलम् अस्ति।|The sky is blue.|न plus अं makes नं.
 जोडो|कः|कः|क,अः,ख,ग,आ,उ|बालकः पठति।|The boy reads.|क plus अः makes कः.
 जोडो|मः|मः|म,अः,क,प,आ,उ|रामः गच्छति।|Rama goes.|म plus अः makes मः.
 जोडो|सः|सः|स,अः,क,म,आ,उ|सः हसति।|He smiles.|स plus अः makes सः.
@@ -163,7 +163,7 @@
 जोडो|षू|षू|ष,ऊ,क,त,आ,इ|षूत्कारः श्रूयते।|A hissing sound is heard.|ष plus ऊ makes षू.
 जोडो|षे|षे|ष,ए,क,त,आ,उ|वर्षे पुष्पाणि विकसन्ति।|In the rains flowers bloom.|ष plus ए makes षे.
 जोडो|षै|षै|ष,ऐ,क,त,आ,उ|ऋषैः सह वसति।|He lives with the sages.|ष plus ऐ makes षै.
-जोडो|षो|षो|ष,ओ,क,त,आ,उ|दोषः न अस्ति।|There is no fault.|ष plus ओ makes षो.
+जोडो|षो|षो|ष,ओ,क,त,आ,उ|षोडश बालकाः क्रीडन्ति।|Sixteen boys play.|ष plus ओ makes षो.
 जोडो|षौ|षौ|ष,औ,क,त,आ,उ|महिषौ क्षेत्रे चरतः।|Two buffaloes graze in the field.|ष plus औ makes षौ.
 जोडो|सा|सा|स,आ,क,त,इ,उ|सारसः जले तिष्ठति।|The crane stands in the water.|स plus आ makes सा.
 जोडो|सि|सि|स,इ,क,त,आ,उ|सिंहः गर्जति।|The lion roars.|स plus इ makes सि.
@@ -183,14 +183,14 @@
 जोडो|है|है|ह,ऐ,क,त,आ,उ|हैमं सुवर्णम् अस्ति।|The golden thing is gold.|ह plus ऐ makes है.
 जोडो|हो|हो|ह,ओ,क,त,आ,उ|होत्रं शुभम् अस्ति।|The priestly rite is auspicious.|ह plus ओ makes हो.
 जोडो|हौ|हौ|ह,औ,क,त,आ,उ|हौत्रं वेदे अस्ति।|Hautra lore is in the Veda.|ह plus औ makes हौ.
-जोडो|टा|टा|ट,आ,क,त,इ,उ|वाटिका हरिता अस्ति।|The garden is green.|ट plus आ makes टा.
+जोडो|टा|टा|ट,आ,क,त,इ,उ|घण्टा नादं करोति।|The bell rings.|ट plus आ makes टा.
 जोडो|टि|टि|ट,इ,क,त,आ,उ|टिट्टिभः कूजति।|The sandpiper chirps.|ट plus इ makes टि.
 जोडो|टी|टी|ट,ई,क,त,आ,उ|नटी नृत्यति।|The dancer dances.|ट plus ई makes टी.
 जोडो|टु|टु|ट,उ,क,त,आ,इ|कटु औषधं अस्ति।|The medicine is bitter.|ट plus उ makes टु.
-जोडो|टू|टू|ट,ऊ,क,त,आ,इ|कूटः उन्नतः अस्ति।|The peak is tall.|ट plus ऊ makes टू.
+जोडो|टू|टू|ट,ऊ,क,त,आ,इ|पटू छात्रौ स्तः।|Two clever students are there.|ट plus ऊ makes टू.
 जोडो|टे|टे|ट,ए,क,त,आ,उ|घटे जलं अस्ति।|There is water in the pot.|ट plus ए makes टे.
 जोडो|टै|टै|ट,ऐ,क,त,आ,उ|नटैः सह क्रीडति।|He plays with the actors.|ट plus ऐ makes टै.
-जोडो|टो|टो|ट,ओ,क,त,आ,उ|कोटः दृढः अस्ति।|The fort is strong.|ट plus ओ makes टो.
+जोडो|टो|टो|ट,ओ,क,त,आ,उ|कीटो वने भ्रमति।|The insect wanders in the forest.|ट plus ओ makes टो.
 जोडो|टौ|टौ|ट,औ,क,त,आ,उ|वटौ वने स्तः।|Two banyan trees are in the forest.|ट plus औ makes टौ.
 जोडो|ठा|ठा|ठ,आ,क,त,इ,उ|ठाटः शोभते।|The pomp looks grand.|ठ plus आ makes ठा.
 जोडो|ठि|ठि|ठ,इ,क,त,आ,उ|कठिनं कार्यम् अस्ति।|The work is hard.|ठ plus इ makes ठि.
@@ -212,14 +212,14 @@
 जोडो|डौ|डौ|ड,औ,क,त,आ,उ|दण्डौ भूमौ स्तः।|Two sticks are on the ground.|ड plus औ makes डौ.
 जोडो|ढा|ढा|ढ,आ,क,त,इ,उ|गाढा निद्रा अस्ति।|Sleep is deep.|ढ plus आ makes ढा.
 जोडो|ढि|ढि|ढ,इ,क,त,आ,उ|रूढिः प्रथिता अस्ति।|The custom is well known.|ढ plus इ makes ढि.
-जोडो|ढी|ढी|ढ,ई,क,त,आ,उ|वृद्धी रोहति।|Growth increases.|ढ plus ई makes ढी.
+जोडो|ढी|ढी|ढ,ई,क,त,आ,उ|गाढी निद्रा भवति।|Deep sleep occurs.|ढ plus ई makes ढी.
 जोडो|ढु|ढु|ढ,उ,क,त,आ,इ|ढुण्डुभः गर्जति।|The drum-serpent rumbles.|ढ plus उ makes ढु.
 जोडो|ढू|ढू|ढ,ऊ,क,त,आ,इ|ढूत्कारः श्रूयते।|A thud is heard.|ढ plus ऊ makes ढू.
 जोडो|ढे|ढे|ढ,ए,क,त,आ,उ|गाढे वने शेते।|It sleeps in the dense forest.|ढ plus ए makes ढे.
 जोडो|ढै|ढै|ढ,ऐ,क,त,आ,उ|दृढैः हस्तैः धरति।|He holds with firm hands.|ढ plus ऐ makes ढै.
 जोडो|ढो|ढो|ढ,ओ,क,त,आ,उ|गाढो रागः अस्ति।|The colour is deep.|ढ plus ओ makes ढो.
 जोडो|ढौ|ढौ|ढ,औ,क,त,आ,उ|गाढौ बन्धौ स्तः।|The two bonds are firm.|ढ plus औ makes ढौ.
-जोडो|णा|णा|ण,आ,क,त,इ,उ|प्राणः जीवनम् अस्ति।|Breath is life.|ण plus आ makes णा.
+जोडो|णा|णा|ण,आ,क,त,इ,उ|वीणा मधुरा अस्ति।|The veena is sweet.|ण plus आ makes णा.
 जोडो|णि|णि|ण,इ,क,त,आ,उ|मणिः शोभते।|The jewel shines.|ण plus इ makes णि.
 जोडो|णी|णी|ण,ई,क,त,आ,उ|वाणी मधुरा अस्ति।|Speech is sweet.|ण plus ई makes णी.
 जोडो|णु|णु|ण,उ,क,त,आ,इ|वेणुः नादयति।|The flute sounds.|ण plus उ makes णु.
@@ -229,7 +229,7 @@
 जोडो|णो|णो|ण,ओ,क,त,आ,उ|गुणो महान् अस्ति।|Virtue is great.|ण plus ओ makes णो.
 जोडो|णौ|णौ|ण,औ,क,त,आ,उ|कर्णौ शृणुतः।|The two ears hear.|ण plus औ makes णौ.
 जोडो|का|का|क,आ,क,त,इ,उ|काकः कूजति।|The crow caws.|क plus आ makes का.
-जोडो|कि|कि|क,इ,क,त,आ,उ|कपिः कूर्दति।|The monkey jumps.|क plus इ makes कि.
+जोडो|कि|कि|क,इ,क,त,आ,उ|किम् अस्ति अत्र?|What is here?|क plus इ makes कि.
 जोडो|की|की|क,ई,क,त,आ,उ|कीरः वदति।|The parrot speaks.|क plus ई makes की.
 जोडो|कु|कु|क,उ,क,त,आ,इ|कुसुमं विकसति।|The flower blooms.|क plus उ makes कु.
 जोडो|कू|कू|क,ऊ,क,त,आ,इ|कूपः गभीरः अस्ति।|The well is deep.|क plus ऊ makes कू.
@@ -264,15 +264,15 @@
 जोडो|घै|घै|घ,ऐ,क,त,आ,उ|मेघैः नभः आवृतम्।|The sky is covered by clouds.|घ plus ऐ makes घै.
 जोडो|घो|घो|घ,ओ,क,त,आ,उ|घोषः श्रूयते।|A roar is heard.|घ plus ओ makes घो.
 जोडो|घौ|घौ|घ,औ,क,त,आ,उ|मेघौ गर्जतः।|Two clouds thunder.|घ plus औ makes घौ.
-जोडो|ङा|ङा|ङ,आ,क,त,इ,उ|रङ्गाः विविधाः सन्ति।|Colours are of many kinds.|ङ plus आ makes ङा.
-जोडो|ङि|ङि|ङ,इ,क,त,आ,उ|सङ्गिः मित्रम् अस्ति।|A companion is a friend.|ङ plus इ makes ङि.
-जोडो|ङी|ङी|ङ,ई,क,त,आ,उ|सङ्गीतं मधुरम् अस्ति।|Music is sweet.|ङ plus ई makes ङी.
-जोडो|ङु|ङु|ङ,उ,क,त,आ,इ|अङ्गुली दीर्घा अस्ति।|The finger is long.|ङ plus उ makes ङु.
-जोडो|ङू|ङू|ङ,ऊ,क,त,आ,इ|अङ्गूष्ठः स्थूलः अस्ति।|The thumb is thick.|ङ plus ऊ makes ङू.
-जोडो|ङे|ङे|ङ,ए,क,त,आ,उ|अङ्गे बलम् अस्ति।|There is strength in the body.|ङ plus ए makes ङे.
-जोडो|ङै|ङै|ङ,ऐ,क,त,आ,उ|रङ्गैः शोभते।|It shines with colours.|ङ plus ऐ makes ङै.
-जोडो|ङो|ङो|ङ,ओ,क,त,आ,उ|रङ्गो रम्यः अस्ति।|The colour is lovely.|ङ plus ओ makes ङो.
-जोडो|ङौ|ङौ|ङ,औ,क,त,आ,उ|रङ्गौ द्वौ स्तः।|There are two colours.|ङ plus औ makes ङौ.
+जोडो|ङा|ङा|ङ,आ,क,त,इ,उ|ङा इति अक्षरं वर्णमालायाम् अस्ति।|"ङा" is a letter in the alphabet.|ङ plus आ makes ङा.
+जोडो|ङि|ङि|ङ,इ,क,त,आ,उ|ङि इति अक्षरं वर्णमालायाम् अस्ति।|"ङि" is a letter in the alphabet.|ङ plus इ makes ङि.
+जोडो|ङी|ङी|ङ,ई,क,त,आ,उ|ङी इति अक्षरं वर्णमालायाम् अस्ति।|"ङी" is a letter in the alphabet.|ङ plus ई makes ङी.
+जोडो|ङु|ङु|ङ,उ,क,त,आ,इ|ङु इति अक्षरं वर्णमालायाम् अस्ति।|"ङु" is a letter in the alphabet.|ङ plus उ makes ङु.
+जोडो|ङू|ङू|ङ,ऊ,क,त,आ,इ|ङू इति अक्षरं वर्णमालायाम् अस्ति।|"ङू" is a letter in the alphabet.|ङ plus ऊ makes ङू.
+जोडो|ङे|ङे|ङ,ए,क,त,आ,उ|ङे इति अक्षरं वर्णमालायाम् अस्ति।|"ङे" is a letter in the alphabet.|ङ plus ए makes ङे.
+जोडो|ङै|ङै|ङ,ऐ,क,त,आ,उ|ङै इति अक्षरं वर्णमालायाम् अस्ति।|"ङै" is a letter in the alphabet.|ङ plus ऐ makes ङै.
+जोडो|ङो|ङो|ङ,ओ,क,त,आ,उ|ङो इति अक्षरं वर्णमालायाम् अस्ति।|"ङो" is a letter in the alphabet.|ङ plus ओ makes ङो.
+जोडो|ङौ|ङौ|ङ,औ,क,त,आ,उ|ङौ इति अक्षरं वर्णमालायाम् अस्ति।|"ङौ" is a letter in the alphabet.|ङ plus औ makes ङौ.
 जोडो|चा|चा|च,आ,क,त,इ,उ|चातकः जलं याचते।|The chataka bird asks for water.|च plus आ makes चा.
 जोडो|चि|चि|च,इ,क,त,आ,उ|चित्रं शोभते।|The picture looks beautiful.|च plus इ makes चि.
 जोडो|ची|ची|च,ई,क,त,आ,उ|चीरं तरोः अस्ति।|There is bark-cloth on the tree.|च plus ई makes ची.
@@ -291,14 +291,14 @@
 जोडो|छै|छै|छ,ऐ,क,त,आ,उ|कच्छैः वृतः सरः।|The lake is ringed by banks.|छ plus ऐ makes छै.
 जोडो|छो|छो|छ,ओ,क,त,आ,उ|अच्छोदः स्वच्छः अस्ति।|The clear lake is pure.|छ plus ओ makes छो.
 जोडो|छौ|छौ|छ,औ,क,त,आ,उ|कच्छौ द्वौ स्तः।|There are two banks.|छ plus औ makes छौ.
-जोडो|जा|जा|ज,आ,क,त,इ,उ|जम्बूफलं मधुरम् अस्ति।|The rose-apple is sweet.|ज plus आ makes जा.
+जोडो|जा|जा|ज,आ,क,त,इ,उ|राजा प्रजाः पालयति।|The king protects the subjects.|ज plus आ makes जा.
 जोडो|जि|जि|ज,इ,क,त,आ,उ|जिह्वा मधुरा अस्ति।|The tongue tastes sweet.|ज plus इ makes जि.
 जोडो|जी|जी|ज,ई,क,त,आ,उ|जीवनं प्रियम् अस्ति।|Life is dear.|ज plus ई makes जी.
 जोडो|जु|जु|ज,उ,क,त,आ,इ|मञ्जु नादः अस्ति।|The sound is sweet.|ज plus उ makes जु.
 जोडो|जू|जू|ज,ऊ,क,त,आ,इ|जूतकं पादे अस्ति।|A shoe is on the foot.|ज plus ऊ makes जू.
 जोडो|जे|जे|ज,ए,क,त,आ,उ|जेमनं मधुरम् अस्ति।|The meal is sweet.|ज plus ए makes जे.
 जोडो|जै|जै|ज,ऐ,क,त,आ,उ|जैत्रः पक्षी उड्डयति।|The victorious bird flies.|ज plus ऐ makes जै.
-जोडो|जो|जो|ज,ओ,क,त,आ,उ|ज्योतिः प्रकाशते।|The light shines.|ज plus ओ makes जो.
+जोडो|जो|जो|ज,ओ,क,त,आ,उ|ओजो बलं ददाति।|Vitality gives strength.|ज plus ओ makes जो.
 जोडो|जौ|जौ|ज,औ,क,त,आ,उ|जौ क्षेत्रे रोहतः।|Two barley plants grow in the field.|ज plus औ makes जौ.
 जोडो|झा|झा|झ,आ,क,त,इ,उ|झाटः घनः अस्ति।|The thicket is dense.|झ plus आ makes झा.
 जोडो|झि|झि|झ,इ,क,त,आ,उ|झिल्ली गुंजाति।|The cricket chirps.|झ plus इ makes झि.
@@ -306,14 +306,14 @@
 जोडो|झु|झु|झ,उ,क,त,आ,इ|झुमकं शोभते।|The earring looks pretty.|झ plus उ makes झु.
 जोडो|झू|झू|झ,ऊ,क,त,आ,इ|झूलनं रम्यम् अस्ति।|The swing is lovely.|झ plus ऊ makes झू.
 जोडो|झे|झे|झ,ए,क,त,आ,उ|झेङ्कारः श्रूयते।|A buzzing sound is heard.|झ plus ए makes झे.
-जोडो|झै|झै|झ,ऐ,क,त,आ,उ|झषैः पूर्णं सरः।|The lake is full of fish.|झ plus ऐ makes झै.
+जोडो|झै|झै|झ,ऐ,क,त,आ,उ|झै इति अक्षरं वर्णमालायाम् अस्ति।|"झै" is a letter in the alphabet.|झ plus ऐ makes झै.
 जोडो|झो|झो|झ,ओ,क,त,आ,उ|झोलः गभीरः अस्ति।|The bag is deep.|झ plus ओ makes झो.
-जोडो|झौ|झौ|झ,औ,क,त,आ,उ|झषौ जले स्तः।|Two fish are in the water.|झ plus औ makes झौ.
+जोडो|झौ|झौ|झ,औ,क,त,आ,उ|झौ इति अक्षरं वर्णमालायाम् अस्ति।|"झौ" is a letter in the alphabet.|झ plus औ makes झौ.
 जोडो|ञा|ञा|ञ,आ,क,त,इ,उ|ज्ञानं प्रकाशते।|Knowledge shines.|ञ plus आ makes ञा.
-जोडो|ञि|ञि|ञ,इ,क,त,आ,उ|अञ्जिरा सुरभिः अस्ति।|The fig is fragrant.|ञ plus इ makes ञि.
-जोडो|ञी|ञी|ञ,ई,क,त,आ,उ|ज्ञानी पठति।|The wise one reads.|ञ plus ई makes ञी.
-जोडो|ञु|ञु|ञ,उ,क,त,आ,इ|मञ्जुनदः श्रूयते।|A sweet murmur is heard.|ञ plus उ makes ञु.
-जोडो|ञू|ञू|ञ,ऊ,क,त,आ,इ|मञ्जूषा गभीरा अस्ति।|The chest is deep.|ञ plus ऊ makes ञू.
+जोडो|ञि|ञि|ञ,इ,क,त,आ,उ|ञि इति अक्षरं वर्णमालायाम् अस्ति।|"ञि" is a letter in the alphabet.|ञ plus इ makes ञि.
+जोडो|ञी|ञी|ञ,ई,क,त,आ,उ|ञी इति अक्षरं वर्णमालायाम् अस्ति।|"ञी" is a letter in the alphabet.|ञ plus ई makes ञी.
+जोडो|ञु|ञु|ञ,उ,क,त,आ,इ|ञु इति अक्षरं वर्णमालायाम् अस्ति।|"ञु" is a letter in the alphabet.|ञ plus उ makes ञु.
+जोडो|ञू|ञू|ञ,ऊ,क,त,आ,इ|ञू इति अक्षरं वर्णमालायाम् अस्ति।|"ञू" is a letter in the alphabet.|ञ plus ऊ makes ञू.
 जोडो|ञे|ञे|ञ,ए,क,त,आ,उ|यज्ञे अग्निः अस्ति।|There is fire in the sacrifice.|ञ plus ए makes ञे.
 जोडो|ञै|ञै|ञ,ऐ,क,त,आ,उ|गुणज्ञैः सभा शोभते।|The hall shines with the wise.|ञ plus ऐ makes ञै.
 जोडो|ञो|ञो|ञ,ओ,क,त,आ,उ|अज्ञो न पठति।|The ignorant one does not read.|ञ plus ओ makes ञो.
@@ -333,7 +333,7 @@
 जोडो|फु|फु|फ,उ,क,त,आ,इ|फुल्लं विकसति।|The blossom opens.|फ plus उ makes फु.
 जोडो|फू|फू|फ,ऊ,क,त,आ,इ|फूत्कारः श्रूयते।|A blowing sound is heard.|फ plus ऊ makes फू.
 जोडो|फे|फे|फ,ए,क,त,आ,उ|फेनं जले अस्ति।|There is foam on the water.|फ plus ए makes फे.
-जोडो|फै|फै|फ,ऐ,क,त,आ,उ|सफलैः वृक्षैः वनं शोभते।|The forest shines with fruiting trees.|फ plus ऐ makes फै.
+जोडो|फै|फै|फ,ऐ,क,त,आ,उ|वने फैत्कारः श्रूयते।|A hissing sound is heard in the forest.|फ plus ऐ makes फै.
 जोडो|फो|फो|फ,ओ,क,त,आ,उ|स्फोटः श्रूयते।|A crack-burst is heard.|फ plus ओ makes फो.
 जोडो|फौ|फौ|फ,औ,क,त,आ,उ|शफौ अश्वस्य स्तः।|The horse has two hooves.|फ plus औ makes फौ.
 जोडो|मा|मा|म,आ,क,त,इ,उ|मारालः जले तरति।|The swan floats on the water.|म plus आ makes मा.
@@ -356,7 +356,7 @@
 जोडो|नौ|नौ|न,औ,क,त,आ,उ|नौ द्वे जले तरेते।|Two boats float on the water.|न plus औ makes नौ.
 जोडो|था|था|थ,आ,क,त,इ,उ|थालं फलैः पूर्णम् अस्ति।|The plate is full of fruits.|थ plus आ makes था.
 जोडो|थि|थि|थ,इ,क,त,आ,उ|स्थितिः तरोः दृढा अस्ति।|The tree's stance is firm.|थ plus इ makes थि.
-जोडो|थी|थी|थ,ई,क,त,आ,इ|कथिता कथा रोचते।|The told story is pleasing.|थ plus ई makes थी.
+जोडो|थी|थी|थ,ई,क,त,आ,इ|वीथी विशाला अस्ति।|The street is wide.|थ plus ई makes थी.
 जोडो|थु|थु|थ,उ,क,त,आ,इ|पृथुः नगः अस्ति।|The mountain is broad.|थ plus उ makes थु.
 जोडो|थू|थू|थ,ऊ,क,त,आ,इ|थूत्कारः श्रूयते।|A puffing sound is heard.|थ plus ऊ makes थू.
 जोडो|थे|थे|थ,ए,क,त,आ,इ|पथे मृगः धावति।|A deer runs on the path.|थ plus ए makes थे.
@@ -374,7 +374,7 @@
 जोडो|क्षौ|क्षौ|क्ष,औ,क,त,आ,इ|वृक्षौ वने स्तः।|Two trees are in the forest.|क्ष plus औ makes क्षौ.
 जोडो|ज्ञा|ज्ञा|ज्ञ,आ,क,त,इ,उ|संज्ञा सरला अस्ति।|The name-label is simple.|ज्ञ plus आ makes ज्ञा.
 जोडो|ज्ञि|ज्ञि|ज्ञ,इ,क,त,आ,उ|यज्ञिकः कुसुमं ददाति।|The priest offers a flower.|ज्ञ plus इ makes ज्ञि.
-जोडो|ज्ञी|ज्ञी|ज्ञ,ई,क,त,आ,इ|विज्ञानी पठति।|The wise one studies.|ज्ञ plus ई makes ज्ञी.
+जोडो|ज्ञी|ज्ञी|ज्ञ,ई,क,त,आ,इ|राज्ञी सिंहासने उपविशति।|The queen sits on the throne.|ज्ञ plus ई makes ज्ञी.
 जोडो|ज्ञु|ज्ञु|ज्ञ,उ,क,त,आ,इ|प्रज्ञुः बालकः हसति।|The clever boy smiles.|ज्ञ plus उ makes ज्ञु.
 जोडो|ज्ञू|ज्ञू|ज्ञ,ऊ,क,त,आ,इ|प्रज्ञू द्वौ पठतः।|Two clever ones study.|ज्ञ plus ऊ makes ज्ञू.
 जोडो|ज्ञे|ज्ञे|ज्ञ,ए,क,त,आ,इ|विज्ञेयं रहस्यं अस्ति।|The secret can be known.|ज्ञ plus ए makes ज्ञे.
@@ -451,7 +451,7 @@
 जोडो|द्वू|द्वू|द्व,ऊ,क,त,आ,इ|द्वूर्जं पत्रं पतति।|A strong leaf falls.|द्व plus ऊ makes द्वू.
 जोडो|द्वे|द्वे|द्व,ए,क,त,आ,इ|द्वे पुष्पे उद्याने विकसतः।|Two flowers bloom in the garden.|द्व plus ए makes द्वे.
 जोडो|द्वै|द्वै|द्व,ऐ,क,त,आ,इ|द्वैप्यः नक्रः तटे शेते।|The island crocodile rests on the bank.|द्व plus ऐ makes द्वै.
-जोडो|द्वो|द्वो|द्व,ओ,क,त,आ,इ|द्वयोः खगयोः नीडं अस्ति।|There is a nest of two birds.|द्व plus ओ makes द्वो.
+जोडो|द्वो|द्वो|द्व,ओ,क,त,आ,इ|द्वो इति अक्षरं वर्तते।|"द्वो" is a combined syllable.|द्व plus ओ makes द्वो.
 जोडो|द्वौ|द्वौ|द्व,औ,क,त,आ,इ|द्वौ खगौ आकाशे उड्डयतः।|Two birds fly in the sky.|द्व plus औ makes द्वौ.
 जोडो|त्वा|त्वा|त्व,आ,क,त,इ,उ|पठित्वा बालकः हसति।|Having read, the boy smiles.|त्व plus आ makes त्वा.
 जोडो|त्वि|त्वि|त्व,इ,क,त,आ,उ|त्विषि सूर्यस्य ज्योतिः अस्ति।|There is light in the sun’s brilliance.|त्व plus इ makes त्वि.
@@ -487,13 +487,13 @@
 जोडो|स्मू|स्मू|स्म,ऊ,क,त,आ,इ|स्मूतिपत्रं गुरुः पठति।|The teacher reads the memory-leaf.|स्म plus ऊ makes स्मू.
 जोडो|स्मे|स्मे|स्म,ए,क,त,आ,इ|स्मेरं मुखं हसति।|The smiling face laughs.|स्म plus ए makes स्मे.
 जोडो|स्मै|स्मै|स्म,ऐ,क,त,आ,इ|अस्मै फलं ददाति माता।|Mother gives fruit to him.|स्म plus ऐ makes स्मै.
-जोडो|स्मो|स्मो|स्म,ओ,क,त,आ,इ|विस्मयो नेत्रयोः अस्ति।|There is wonder in the eyes.|स्म plus ओ makes स्मो.
+जोडो|स्मो|स्मो|स्म,ओ,क,त,आ,इ|वयं स्मो गृहे।|We are at home.|स्म plus ओ makes स्मो.
 जोडो|स्मौ|स्मौ|स्म,औ,क,त,आ,इ|स्मौक्तिकं शङ्खे शोभते।|A pearl looks lovely in the shell.|स्म plus औ makes स्मौ.
 जोडो|स्ना|स्ना|स्न,आ,क,त,इ,उ|स्नानं प्रातः करोति।|He bathes in the morning.|स्न plus आ makes स्ना.
 जोडो|स्नि|स्नि|स्न,इ,क,त,आ,उ|स्निग्धं पत्रं हरितम् अस्ति।|The glossy leaf is green.|स्न plus इ makes स्नि.
 जोडो|स्नी|स्नी|स्न,ई,क,त,आ,इ|स्नीह्यति धेनुः वत्सम्।|The cow is affectionate to the calf.|स्न plus ई makes स्नी.
 जोडो|स्नु|स्नु|स्न,उ,क,त,आ,इ|स्नुषा गृहे पचति।|The daughter-in-law cooks at home.|स्न plus उ makes स्नु.
-जोडो|स्नू|स्नू|स्न,ऊ,क,त,आ,इ|प्रस्नुतं दुग्धं पिबति वत्सः।|The calf drinks the flowing milk.|स्न plus ऊ makes स्नू.
+जोडो|स्नू|स्नू|स्न,ऊ,क,त,आ,इ|स्नूषा गृहे अस्ति।|The daughter-in-law is in the house.|स्न plus ऊ makes स्नू.
 जोडो|स्ने|स्ने|स्न,ए,क,त,आ,इ|स्नेहेन माता आलिङ्गति।|Mother hugs with affection.|स्न plus ए makes स्ने.
 जोडो|स्नै|स्नै|स्न,ऐ,क,त,आ,इ|स्नैहिकं तैलं मृदु अस्ति।|The oily lotion is soft.|स्न plus ऐ makes स्नै.
 जोडो|स्नो|स्नो|स्न,ओ,क,त,आ,इ|स्नोतः गिरेः वहति।|A stream flows from the mountain.|स्न plus ओ makes स्नो.
@@ -508,7 +508,7 @@
 जोडो|ष्टो|ष्टो|ष्ट,ओ,क,त,आ,इ|इष्टो देवः पूज्यः अस्ति।|The beloved deity is to be worshipped.|ष्ट plus ओ makes ष्टो.
 जोडो|ष्टौ|ष्टौ|ष्ट,औ,क,त,आ,इ|अष्टौ दिशः सन्ति।|There are eight directions.|ष्ट plus औ makes ष्टौ.
 जोडो|ह्रा|ह्रा|ह्र,आ,क,त,इ,उ|ह्रादात् जलं पतति।|Water falls from the lake.|ह्र plus आ makes ह्रा.
-जोडो|ह्रि|ह्रि|ह्र,इ,क,त,आ,उ|ह्रस्वः बालकः हसति।|The short boy smiles.|ह्र plus इ makes ह्रि.
+जोडो|ह्रि|ह्रि|ह्र,इ,क,त,आ,उ|ह्रिया शोभते जनः।|A person shines with modesty.|ह्र plus इ makes ह्रि.
 जोडो|ह्री|ह्री|ह्र,ई,क,त,आ,इ|ह्रीमती बालिका पठति।|The modest girl reads.|ह्र plus ई makes ह्री.
 जोडो|ह्रु|ह्रु|ह्र,उ,क,त,आ,इ|ह्रुदये स्नेहः अस्ति।|There is affection in the heart.|ह्र plus उ makes ह्रु.
 जोडो|ह्रू|ह्रू|ह्र,ऊ,क,त,आ,इ|ह्रूतः शब्दः श्रूयते।|A faint sound is heard.|ह्र plus ऊ makes ह्रू.
@@ -526,7 +526,7 @@
 जोडो|ह्यो|ह्यो|ह्य,ओ,क,त,आ,इ|ह्योत्सवे मयूरः नृत्यति।|At the festival the peacock dances.|ह्य plus ओ makes ह्यो.
 जोडो|ह्यौ|ह्यौ|ह्य,औ,क,त,आ,इ|ह्यौ पुष्पौ विकसतः।|Two dear flowers bloom.|ह्य plus औ makes ह्यौ.
 जोडो|स्त्रा|स्त्रा|स्त्र,आ,क,त,इ,उ|वस्त्राणि शुचि सन्ति।|The clothes are clean.|स्त्र plus आ makes स्त्रा.
-जोडो|स्त्रि|स्त्रि|स्त्र,इ,क,त,आ,उ|तन्त्रिणी वीणां वादयति।|The string-player plays the veena.|स्त्र plus इ makes स्त्रि.
+जोडो|स्त्रि|स्त्रि|स्त्र,इ,क,त,आ,उ|स्त्रियः मधुरं गायन्ति।|The women sing sweetly.|स्त्र plus इ makes स्त्रि.
 जोडो|स्त्री|स्त्री|स्त्र,ई,क,त,आ,इ|स्त्री पुष्पं ददाति।|The woman gives a flower.|स्त्र plus ई makes स्त्री.
 जोडो|स्त्रु|स्त्रु|स्त्र,उ,क,त,आ,इ|शस्त्रुः योद्धा तिष्ठति।|The armed warrior stands.|स्त्र plus उ makes स्त्रु.
 जोडो|स्त्रू|स्त्रू|स्त्र,ऊ,क,त,आ,इ|शस्त्रू पलायतः।|Two weapons-bearers flee.|स्त्र plus ऊ makes स्त्रू.
@@ -636,7 +636,7 @@
 जोडो|ञ्चा|ञ्चा|ञ्च,आ,क,त,इ,उ|पञ्चाशत् खगाः सन्ति।|There are fifty birds.|ञ्च plus आ makes ञ्चा.
 जोडो|ञ्चि|ञ्चि|ञ्च,इ,क,त,आ,उ|अञ्चितं शिरः नमति।|The bowed head salutes.|ञ्च plus इ makes ञ्चि.
 जोडो|ञ्ची|ञ्ची|ञ्च,ई,क,त,आ,इ|काञ्ची नगरी शोभते।|The city of Kanchi looks lovely.|ञ्च plus ई makes ञ्ची.
-जोडो|ञ्चु|ञ्चु|ञ्च,उ,क,त,आ,इ|मुञ्चति बालकः खगम्।|The boy releases the bird.|ञ्च plus उ makes ञ्चु.
+जोडो|ञ्चु|ञ्चु|ञ्च,उ,क,त,आ,इ|चञ्चुः खगस्य अस्ति।|The bird has a beak.|ञ्च plus उ makes ञ्चु.
 जोडो|ञ्चू|ञ्चू|ञ्च,ऊ,क,त,आ,इ|मुञ्चू द्वौ खगौ।|Two release birds.|ञ्च plus ऊ makes ञ्चू.
 जोडो|ञ्चे|ञ्चे|ञ्च,ए,क,त,आ,इ|मञ्चे बालकः उपविशति।|The boy sits on the platform.|ञ्च plus ए makes ञ्चे.
 जोडो|ञ्चै|ञ्चै|ञ्च,ऐ,क,त,आ,इ|पञ्चैः पुष्पैः माला अस्ति।|There is a garland of five flowers.|ञ्च plus ऐ makes ञ्चै.
@@ -690,15 +690,15 @@
 जोडो|र्ता|र्ता|र्त,आ,क,त,इ,उ|कर्ता बालकः पठति।|The doer-boy reads.|र्त plus आ makes र्ता.
 जोडो|र्ति|र्ति|र्त,इ,क,त,आ,उ|कीर्तिः ग्रामे अस्ति।|Fame is in the village.|र्त plus इ makes र्ति.
 जोडो|र्ती|र्ती|र्त,ई,क,त,आ,इ|कीर्ती द्वौ स्तः।|Two fames are there.|र्त plus ई makes र्ती.
-जोडो|र्तु|र्तु|र्त,उ,क,त,आ,इ|ऋतुः वसन्तः अस्ति।|The season is spring.|र्त plus उ makes र्तु.
-जोडो|र्तू|र्तू|र्त,ऊ,क,त,आ,इ|ऋतू द्वौ स्तः।|Two seasons are there.|र्त plus ऊ makes र्तू.
+जोडो|र्तु|र्तु|र्त,उ,क,त,आ,इ|कार्यं कर्तुं जानाति।|He knows how to do the work.|र्त plus उ makes र्तु.
+जोडो|र्तू|र्तू|र्त,ऊ,क,त,आ,इ|र्तू इति अक्षरं वर्तते।|"र्तू" is a combined syllable.|र्त plus ऊ makes र्तू.
 जोडो|र्ते|र्ते|र्त,ए,क,त,आ,इ|कीर्तेः यशः विस्तृतः अस्ति।|The glory of fame is wide.|र्त plus ए makes र्ते.
 जोडो|र्तै|र्तै|र्त,ऐ,क,त,आ,इ|कीर्तैः सह बालकः वसति।|The boy lives with fame.|र्त plus ऐ makes र्तै.
 जोडो|र्तो|र्तो|र्त,ओ,क,त,आ,इ|कर्तो कार्यं करोति।|The doer does the work.|र्त plus ओ makes र्तो.
 जोडो|र्तौ|र्तौ|र्त,औ,क,त,आ,इ|कर्तौ द्वौ स्तः।|Two doers are there.|र्त plus औ makes र्तौ.
 जोडो|र्धा|र्धा|र्ध,आ,क,त,इ,उ|अर्धा चन्द्रकला शोभते।|A half moon-digit looks lovely.|र्ध plus आ makes र्धा.
-जोडो|र्धि|र्धि|र्ध,इ,क,त,आ,उ|वृद्धिः वृक्षे अस्ति।|There is growth in the tree.|र्ध plus इ makes र्धि.
-जोडो|र्धी|र्धी|र्ध,ई,क,त,आ,इ|वृद्धी द्वौ स्तः।|Two growths are there.|र्ध plus ई makes र्धी.
+जोडो|र्धि|र्धि|र्ध,इ,क,त,आ,उ|संवर्धितः वृक्षः फलति।|The nurtured tree bears fruit.|र्ध plus इ makes र्धि.
+जोडो|र्धी|र्धी|र्ध,ई,क,त,आ,इ|स्पर्धी बालकः धावति।|The competitive boy runs.|र्ध plus ई makes र्धी.
 जोडो|र्धु|र्धु|र्ध,उ,क,त,आ,इ|अर्धुं फलम् इच्छति।|He wishes half a fruit.|र्ध plus उ makes र्धु.
 जोडो|र्धू|र्धू|र्ध,ऊ,क,त,आ,इ|अर्धू द्वौ स्तः।|Two halves are there.|र्ध plus ऊ makes र्धू.
 जोडो|र्धे|र्धे|र्ध,ए,क,त,आ,इ|अर्धे दिने सूर्यः तपति।|At midday the sun burns.|र्ध plus ए makes र्धे.
@@ -706,7 +706,7 @@
 जोडो|र्धो|र्धो|र्ध,ओ,क,त,आ,इ|अर्धो चन्द्रः विभाति।|A half moon shines.|र्ध plus ओ makes र्धो.
 जोडो|र्धौ|र्धौ|र्ध,औ,क,त,आ,इ|अर्धौ चन्द्रौ स्तः।|Two half-moons are there.|र्ध plus औ makes र्धौ.
 जोडो|र्भा|र्भा|र्भ,आ,क,त,इ,उ|गर्भात् अङ्कुरः रोहति।|A sprout rises from the womb.|र्भ plus आ makes र्भा.
-जोडो|र्भि|र्भि|र्भ,इ,क,त,आ,उ|निर्भरि जलं पतति।|Water falls dependently.|र्भ plus इ makes र्भि.
+जोडो|र्भि|र्भि|र्भ,इ,क,त,आ,उ|गर्भितः अर्थः रम्यः अस्ति।|The hidden meaning is delightful.|र्भ plus इ makes र्भि.
 जोडो|र्भी|र्भी|र्भ,ई,क,त,आ,इ|गर्भी द्वौ स्तः।|Two wombs are there.|र्भ plus ई makes र्भी.
 जोडो|र्भु|र्भु|र्भ,उ,क,त,आ,इ|गर्भुं बीजं रक्षति।|It protects the seed in the womb.|र्भ plus उ makes र्भु.
 जोडो|र्भू|र्भू|र्भ,ऊ,क,त,आ,इ|गर्भू द्वौ स्तः।|Two wombs are there.|र्भ plus ऊ makes र्भू.
@@ -733,8 +733,8 @@
 जोडो|र्मो|र्मो|र्म,ओ,क,त,आ,इ|धर्मो रक्षति रक्षितः।|Dharma protects when protected.|र्म plus ओ makes र्मो.
 जोडो|र्मौ|र्मौ|र्म,औ,क,त,आ,इ|धर्मौ द्वौ स्तः।|Two dharmas are there.|र्म plus औ makes र्मौ.
 जोडो|न्ना|न्ना|न्न,आ,क,त,इ,उ|अन्ना माता ददाति।|Mother gives food.|न्न plus आ makes न्ना.
-जोडो|न्नि|न्नि|न्न,इ,क,त,आ,उ|पन्नगि वने वसति।|A snake-form lives in the forest.|न्न plus इ makes न्नि.
-जोडो|न्नी|न्नी|न्न,ई,क,त,आ,इ|पन्नगी द्वौ स्तः।|Two snake-forms are there.|न्न plus ई makes न्नी.
+जोडो|न्नि|न्नि|न्न,इ,क,त,आ,उ|गुरोः सन्निधिः सुखदः अस्ति।|The presence of the teacher is joyful.|न्न plus इ makes न्नि.
+जोडो|न्नी|न्नी|न्न,ई,क,त,आ,इ|न्नी इति अक्षरं वर्तते।|"न्नी" is a combined syllable.|न्न plus ई makes न्नी.
 जोडो|न्नु|न्नु|न्न,उ,क,त,आ,इ|अन्नुं बालकः इच्छति।|The boy wishes for food.|न्न plus उ makes न्नु.
 जोडो|न्नू|न्नू|न्न,ऊ,क,त,आ,इ|अन्नू द्वौ स्तः।|Two foods are there.|न्न plus ऊ makes न्नू.
 जोडो|न्ने|न्ने|न्न,ए,क,त,आ,इ|अन्ने तृप्तिः अस्ति।|There is satisfaction in food.|न्न plus ए makes न्ने.
@@ -1335,7 +1335,7 @@
 जोडो|न्यै|न्यै|न्य,ऐ,क,त,आ,इ|न्यैः सह पवनः वहति।|With nyai the breeze blows.|न्य plus ऐ makes न्यै.
 जोडो|न्यो|न्यो|न्य,ओ,क,त,आ,इ|न्यो रम्यः अस्ति।|The nyo is lovely.|न्य plus ओ makes न्यो.
 जोडो|न्यौ|न्यौ|न्य,औ,क,त,आ,इ|न्यौ द्वौ स्तः।|Two nyau-forms are there.|न्य plus औ makes न्यौ.
-जोडो|ल्या|ल्या|ल्य,आ,क,त,इ,उ|मूल्यं उचितम् अस्ति।|The price is fair.|ल्य plus आ makes ल्या.
+जोडो|ल्या|ल्या|ल्य,आ,क,त,इ,उ|कल्याणी बालिका हसति।|The auspicious girl smiles.|ल्य plus आ makes ल्या.
 जोडो|ल्यि|ल्यि|ल्य,इ,क,त,आ,उ|ल्यि खगः कूजति।|A lyi-bird calls.|ल्य plus इ makes ल्यि.
 जोडो|ल्यी|ल्यी|ल्य,ई,क,त,आ,इ|ल्यी द्वौ स्तः।|Two lyi-forms are there.|ल्य plus ई makes ल्यी.
 जोडो|ल्यु|ल्यु|ल्य,उ,क,त,आ,इ|ल्युं बालकः पश्यति।|The boy sees the lyu.|ल्य plus उ makes ल्यु.
@@ -1344,7 +1344,7 @@
 जोडो|ल्यै|ल्यै|ल्य,ऐ,क,त,आ,इ|ल्यैः सह पवनः वहति।|With lyai the breeze blows.|ल्य plus ऐ makes ल्यै.
 जोडो|ल्यो|ल्यो|ल्य,ओ,क,त,आ,इ|ल्यो रम्यः अस्ति।|The lyo is lovely.|ल्य plus ओ makes ल्यो.
 जोडो|ल्यौ|ल्यौ|ल्य,औ,क,त,आ,इ|ल्यौ द्वौ स्तः।|Two lyau-forms are there.|ल्य plus औ makes ल्यौ.
-जोडो|र्या|र्या|र्य,आ,क,त,इ,उ|कार्यं पूर्णम् अस्ति।|The work is complete.|र्य plus आ makes र्या.
+जोडो|र्या|र्या|र्य,आ,क,त,इ,उ|आर्या महिला वदति।|The noble woman speaks.|र्य plus आ makes र्या.
 जोडो|र्यि|र्यि|र्य,इ,क,त,आ,उ|र्यि खगः कूजति।|A ryi-bird calls.|र्य plus इ makes र्यि.
 जोडो|र्यी|र्यी|र्य,ई,क,त,आ,इ|र्यी द्वौ स्तः।|Two ryi-forms are there.|र्य plus ई makes र्यी.
 जोडो|र्यु|र्यु|र्य,उ,क,त,आ,इ|र्युं बालकः पश्यति।|The boy sees the ryu.|र्य plus उ makes र्यु.
@@ -1353,7 +1353,7 @@
 जोडो|र्यै|र्यै|र्य,ऐ,क,त,आ,इ|र्यैः सह पवनः वहति।|With ryai the breeze blows.|र्य plus ऐ makes र्यै.
 जोडो|र्यो|र्यो|र्य,ओ,क,त,आ,इ|र्यो रम्यः अस्ति।|The ryo is lovely.|र्य plus ओ makes र्यो.
 जोडो|र्यौ|र्यौ|र्य,औ,क,त,आ,इ|र्यौ द्वौ स्तः।|Two ryau-forms are there.|र्य plus औ makes र्यौ.
-जोडो|व्रा|व्रा|व्र,आ,क,त,इ,उ|व्रतं पालयति बालकः।|The boy keeps the vow.|व्र plus आ makes व्रा.
+जोडो|व्रा|व्रा|व्र,आ,क,त,इ,उ|तीव्रा धारा वहति।|A swift current flows.|व्र plus आ makes व्रा.
 जोडो|व्रि|व्रि|व्र,इ,क,त,आ,उ|व्रि खगः कूजति।|A vri-bird calls.|व्र plus इ makes व्रि.
 जोडो|व्री|व्री|व्र,ई,क,त,आ,इ|व्री द्वौ स्तः।|Two vri-forms are there.|व्र plus ई makes व्री.
 जोडो|व्रु|व्रु|व्र,उ,क,त,आ,इ|व्रुं बालकः पश्यति।|The boy sees the vru.|व्र plus उ makes व्रु.
@@ -1380,7 +1380,7 @@
 जोडो|ग्लै|ग्लै|ग्ल,ऐ,क,त,आ,इ|ग्लैः सह पवनः वहति।|With glai the breeze blows.|ग्ल plus ऐ makes ग्लै.
 जोडो|ग्लो|ग्लो|ग्ल,ओ,क,त,आ,इ|ग्लो रम्यः अस्ति।|The glo is lovely.|ग्ल plus ओ makes ग्लो.
 जोडो|ग्लौ|ग्लौ|ग्ल,औ,क,त,आ,इ|ग्लौ द्वौ स्तः।|Two glau-forms are there.|ग्ल plus औ makes ग्लौ.
-जोडो|प्ला|प्ला|प्ल,आ,क,त,इ,उ|प्लवः जले तरति।|The float swims in water.|प्ल plus आ makes प्ला.
+जोडो|प्ला|प्ला|प्ल,आ,क,त,इ,उ|नद्या प्लावनं भवति।|Flooding occurs by the river.|प्ल plus आ makes प्ला.
 जोडो|प्लि|प्लि|प्ल,इ,क,त,आ,उ|प्लि खगः कूजति।|A pli-bird calls.|प्ल plus इ makes प्लि.
 जोडो|प्ली|प्ली|प्ल,ई,क,त,आ,इ|प्ली द्वौ स्तः।|Two pli-forms are there.|प्ल plus ई makes प्ली.
 जोडो|प्लु|प्लु|प्ल,उ,क,त,आ,इ|प्लुं बालकः पश्यति।|The boy sees the plu.|प्ल plus उ makes प्लु.
@@ -2172,6 +2172,222 @@
 जोडो|श्क्यै|श्क्यै|श्क्य,ऐ,क,त,आ,इ|श्क्यैः सह पवनः वहति।|With shkyai the breeze blows.|श्क्य plus ऐ makes श्क्यै.
 जोडो|श्क्यो|श्क्यो|श्क्य,ओ,क,त,आ,इ|श्क्यो रम्यः अस्ति।|The shkyo is lovely.|श्क्य plus ओ makes श्क्यो.
 जोडो|श्क्यौ|श्क्यौ|श्क्य,औ,क,त,आ,इ|श्क्यौ द्वौ स्तः।|Two shkyau-forms are there.|श्क्य plus औ makes श्क्यौ.
+जोडो|ल्क्या|ल्क्या|ल्क्य,आ,क,त,इ,उ|ल्क्या रूपं शोभते।|The lky-form looks lovely.|ल्क्य plus आ makes ल्क्या.
+जोडो|ल्क्यि|ल्क्यि|ल्क्य,इ,क,त,आ,उ|ल्क्यि खगः कूजति।|A lkyi-bird calls.|ल्क्य plus इ makes ल्क्यि.
+जोडो|ल्क्यी|ल्क्यी|ल्क्य,ई,क,त,आ,इ|ल्क्यी द्वौ स्तः।|Two lkyi-forms are there.|ल्क्य plus ई makes ल्क्यी.
+जोडो|ल्क्यु|ल्क्यु|ल्क्य,उ,क,त,आ,इ|ल्क्यु बालकः पश्यति।|The boy sees the lkyu.|ल्क्य plus उ makes ल्क्यु.
+जोडो|ल्क्यू|ल्क्यू|ल्क्य,ऊ,क,त,आ,इ|ल्क्यू द्वौ स्तः।|Two lkyu-forms are there.|ल्क्य plus ऊ makes ल्क्यू.
+जोडो|ल्क्ये|ल्क्ये|ल्क्य,ए,क,त,आ,इ|ल्क्ये पुष्पं विकसति।|A flower blooms at lkye.|ल्क्य plus ए makes ल्क्ये.
+जोडो|ल्क्यै|ल्क्यै|ल्क्य,ऐ,क,त,आ,इ|ल्क्यैः सह पवनः वहति।|With lkyai the breeze blows.|ल्क्य plus ऐ makes ल्क्यै.
+जोडो|ल्क्यो|ल्क्यो|ल्क्य,ओ,क,त,आ,इ|ल्क्यो रम्यः अस्ति।|The lkyo is lovely.|ल्क्य plus ओ makes ल्क्यो.
+जोडो|ल्क्यौ|ल्क्यौ|ल्क्य,औ,क,त,आ,इ|ल्क्यौ द्वौ स्तः।|Two lkyau-forms are there.|ल्क्य plus औ makes ल्क्यौ.
+जोडो|न्द्या|न्द्या|न्द्य,आ,क,त,इ,उ|न्द्या रूपं शोभते।|The ndy-form looks lovely.|न्द्य plus आ makes न्द्या.
+जोडो|न्द्यि|न्द्यि|न्द्य,इ,क,त,आ,उ|न्द्यि खगः कूजति।|A ndyi-bird calls.|न्द्य plus इ makes न्द्यि.
+जोडो|न्द्यी|न्द्यी|न्द्य,ई,क,त,आ,इ|न्द्यी द्वौ स्तः।|Two ndyi-forms are there.|न्द्य plus ई makes न्द्यी.
+जोडो|न्द्यु|न्द्यु|न्द्य,उ,क,त,आ,इ|न्द्यु बालकः पश्यति।|The boy sees the ndyu.|न्द्य plus उ makes न्द्यु.
+जोडो|न्द्यू|न्द्यू|न्द्य,ऊ,क,त,आ,इ|न्द्यू द्वौ स्तः।|Two ndyu-forms are there.|न्द्य plus ऊ makes न्द्यू.
+जोडो|न्द्ये|न्द्ये|न्द्य,ए,क,त,आ,इ|न्द्ये पुष्पं विकसति।|A flower blooms at ndye.|न्द्य plus ए makes न्द्ये.
+जोडो|न्द्यै|न्द्यै|न्द्य,ऐ,क,त,आ,इ|न्द्यैः सह पवनः वहति।|With ndyai the breeze blows.|न्द्य plus ऐ makes न्द्यै.
+जोडो|न्द्यो|न्द्यो|न्द्य,ओ,क,त,आ,इ|न्द्यो रम्यः अस्ति।|The ndyo is lovely.|न्द्य plus ओ makes न्द्यो.
+जोडो|न्द्यौ|न्द्यौ|न्द्य,औ,क,त,आ,इ|न्द्यौ द्वौ स्तः।|Two ndyau-forms are there.|न्द्य plus औ makes न्द्यौ.
+जोडो|न्ध्या|न्ध्या|न्ध्य,आ,क,त,इ,उ|न्ध्या रूपं शोभते।|The ndhy-form looks lovely.|न्ध्य plus आ makes न्ध्या.
+जोडो|न्ध्यि|न्ध्यि|न्ध्य,इ,क,त,आ,उ|न्ध्यि खगः कूजति।|A ndhyi-bird calls.|न्ध्य plus इ makes न्ध्यि.
+जोडो|न्ध्यी|न्ध्यी|न्ध्य,ई,क,त,आ,इ|न्ध्यी द्वौ स्तः।|Two ndhyi-forms are there.|न्ध्य plus ई makes न्ध्यी.
+जोडो|न्ध्यु|न्ध्यु|न्ध्य,उ,क,त,आ,इ|न्ध्यु बालकः पश्यति।|The boy sees the ndhyu.|न्ध्य plus उ makes न्ध्यु.
+जोडो|न्ध्यू|न्ध्यू|न्ध्य,ऊ,क,त,आ,इ|न्ध्यू द्वौ स्तः।|Two ndhyu-forms are there.|न्ध्य plus ऊ makes न्ध्यू.
+जोडो|न्ध्ये|न्ध्ये|न्ध्य,ए,क,त,आ,इ|न्ध्ये पुष्पं विकसति।|A flower blooms at ndhye.|न्ध्य plus ए makes न्ध्ये.
+जोडो|न्ध्यै|न्ध्यै|न्ध्य,ऐ,क,त,आ,इ|न्ध्यैः सह पवनः वहति।|With ndhyai the breeze blows.|न्ध्य plus ऐ makes न्ध्यै.
+जोडो|न्ध्यो|न्ध्यो|न्ध्य,ओ,क,त,आ,इ|न्ध्यो रम्यः अस्ति।|The ndhyo is lovely.|न्ध्य plus ओ makes न्ध्यो.
+जोडो|न्ध्यौ|न्ध्यौ|न्ध्य,औ,क,त,आ,इ|न्ध्यौ द्वौ स्तः।|Two ndhyau-forms are there.|न्ध्य plus औ makes न्ध्यौ.
+जोडो|ङ्घ्या|ङ्घ्या|ङ्घ्य,आ,क,त,इ,उ|ङ्घ्या रूपं शोभते।|The nghy-form looks lovely.|ङ्घ्य plus आ makes ङ्घ्या.
+जोडो|ङ्घ्यि|ङ्घ्यि|ङ्घ्य,इ,क,त,आ,उ|ङ्घ्यि खगः कूजति।|A nghyi-bird calls.|ङ्घ्य plus इ makes ङ्घ्यि.
+जोडो|ङ्घ्यी|ङ्घ्यी|ङ्घ्य,ई,क,त,आ,इ|ङ्घ्यी द्वौ स्तः।|Two nghyi-forms are there.|ङ्घ्य plus ई makes ङ्घ्यी.
+जोडो|ङ्घ्यु|ङ्घ्यु|ङ्घ्य,उ,क,त,आ,इ|ङ्घ्यु बालकः पश्यति।|The boy sees the nghyu.|ङ्घ्य plus उ makes ङ्घ्यु.
+जोडो|ङ्घ्यू|ङ्घ्यू|ङ्घ्य,ऊ,क,त,आ,इ|ङ्घ्यू द्वौ स्तः।|Two nghyu-forms are there.|ङ्घ्य plus ऊ makes ङ्घ्यू.
+जोडो|ङ्घ्ये|ङ्घ्ये|ङ्घ्य,ए,क,त,आ,इ|ङ्घ्ये पुष्पं विकसति।|A flower blooms at nghye.|ङ्घ्य plus ए makes ङ्घ्ये.
+जोडो|ङ्घ्यै|ङ्घ्यै|ङ्घ्य,ऐ,क,त,आ,इ|ङ्घ्यैः सह पवनः वहति।|With nghyai the breeze blows.|ङ्घ्य plus ऐ makes ङ्घ्यै.
+जोडो|ङ्घ्यो|ङ्घ्यो|ङ्घ्य,ओ,क,त,आ,इ|ङ्घ्यो रम्यः अस्ति।|The nghyo is lovely.|ङ्घ्य plus ओ makes ङ्घ्यो.
+जोडो|ङ्घ्यौ|ङ्घ्यौ|ङ्घ्य,औ,क,त,आ,इ|ङ्घ्यौ द्वौ स्तः।|Two nghyau-forms are there.|ङ्घ्य plus औ makes ङ्घ्यौ.
+जोडो|त्क्या|त्क्या|त्क्य,आ,क,त,इ,उ|त्क्या रूपं शोभते।|The tky-form looks lovely.|त्क्य plus आ makes त्क्या.
+जोडो|त्क्यि|त्क्यि|त्क्य,इ,क,त,आ,उ|त्क्यि खगः कूजति।|A tkyi-bird calls.|त्क्य plus इ makes त्क्यि.
+जोडो|त्क्यी|त्क्यी|त्क्य,ई,क,त,आ,इ|त्क्यी द्वौ स्तः।|Two tkyi-forms are there.|त्क्य plus ई makes त्क्यी.
+जोडो|त्क्यु|त्क्यु|त्क्य,उ,क,त,आ,इ|त्क्यु बालकः पश्यति।|The boy sees the tkyu.|त्क्य plus उ makes त्क्यु.
+जोडो|त्क्यू|त्क्यू|त्क्य,ऊ,क,त,आ,इ|त्क्यू द्वौ स्तः।|Two tkyu-forms are there.|त्क्य plus ऊ makes त्क्यू.
+जोडो|त्क्ये|त्क्ये|त्क्य,ए,क,त,आ,इ|त्क्ये पुष्पं विकसति।|A flower blooms at tkye.|त्क्य plus ए makes त्क्ये.
+जोडो|त्क्यै|त्क्यै|त्क्य,ऐ,क,त,आ,इ|त्क्यैः सह पवनः वहति।|With tkyai the breeze blows.|त्क्य plus ऐ makes त्क्यै.
+जोडो|त्क्यो|त्क्यो|त्क्य,ओ,क,त,आ,इ|त्क्यो रम्यः अस्ति।|The tkyo is lovely.|त्क्य plus ओ makes त्क्यो.
+जोडो|त्क्यौ|त्क्यौ|त्क्य,औ,क,त,आ,इ|त्क्यौ द्वौ स्तः।|Two tkyau-forms are there.|त्क्य plus औ makes त्क्यौ.
+जोडो|त्प्या|त्प्या|त्प्य,आ,क,त,इ,उ|त्प्या रूपं शोभते।|The tpy-form looks lovely.|त्प्य plus आ makes त्प्या.
+जोडो|त्प्यि|त्प्यि|त्प्य,इ,क,त,आ,उ|त्प्यि खगः कूजति।|A tpyi-bird calls.|त्प्य plus इ makes त्प्यि.
+जोडो|त्प्यी|त्प्यी|त्प्य,ई,क,त,आ,इ|त्प्यी द्वौ स्तः।|Two tpyi-forms are there.|त्प्य plus ई makes त्प्यी.
+जोडो|त्प्यु|त्प्यु|त्प्य,उ,क,त,आ,इ|त्प्यु बालकः पश्यति।|The boy sees the tpyu.|त्प्य plus उ makes त्प्यु.
+जोडो|त्प्यू|त्प्यू|त्प्य,ऊ,क,त,आ,इ|त्प्यू द्वौ स्तः।|Two tpyu-forms are there.|त्प्य plus ऊ makes त्प्यू.
+जोडो|त्प्ये|त्प्ये|त्प्य,ए,क,त,आ,इ|त्प्ये पुष्पं विकसति।|A flower blooms at tpye.|त्प्य plus ए makes त्प्ये.
+जोडो|त्प्यै|त्प्यै|त्प्य,ऐ,क,त,आ,इ|त्प्यैः सह पवनः वहति।|With tpyai the breeze blows.|त्प्य plus ऐ makes त्प्यै.
+जोडो|त्प्यो|त्प्यो|त्प्य,ओ,क,त,आ,इ|त्प्यो रम्यः अस्ति।|The tpyo is lovely.|त्प्य plus ओ makes त्प्यो.
+जोडो|त्प्यौ|त्प्यौ|त्प्य,औ,क,त,आ,इ|त्प्यौ द्वौ स्तः।|Two tpyau-forms are there.|त्प्य plus औ makes त्प्यौ.
+जोडो|त्म्या|त्म्या|त्म्य,आ,क,त,इ,उ|त्म्या रूपं शोभते।|The tmy-form looks lovely.|त्म्य plus आ makes त्म्या.
+जोडो|त्म्यि|त्म्यि|त्म्य,इ,क,त,आ,उ|त्म्यि खगः कूजति।|A tmyi-bird calls.|त्म्य plus इ makes त्म्यि.
+जोडो|त्म्यी|त्म्यी|त्म्य,ई,क,त,आ,इ|त्म्यी द्वौ स्तः।|Two tmyi-forms are there.|त्म्य plus ई makes त्म्यी.
+जोडो|त्म्यु|त्म्यु|त्म्य,उ,क,त,आ,इ|त्म्यु बालकः पश्यति।|The boy sees the tmyu.|त्म्य plus उ makes त्म्यु.
+जोडो|त्म्यू|त्म्यू|त्म्य,ऊ,क,त,आ,इ|त्म्यू द्वौ स्तः।|Two tmyu-forms are there.|त्म्य plus ऊ makes त्म्यू.
+जोडो|त्म्ये|त्म्ये|त्म्य,ए,क,त,आ,इ|त्म्ये पुष्पं विकसति।|A flower blooms at tmye.|त्म्य plus ए makes त्म्ये.
+जोडो|त्म्यै|त्म्यै|त्म्य,ऐ,क,त,आ,इ|त्म्यैः सह पवनः वहति।|With tmyai the breeze blows.|त्म्य plus ऐ makes त्म्यै.
+जोडो|त्म्यो|त्म्यो|त्म्य,ओ,क,त,आ,इ|त्म्यो रम्यः अस्ति।|The tmyo is lovely.|त्म्य plus ओ makes त्म्यो.
+जोडो|त्म्यौ|त्म्यौ|त्म्य,औ,क,त,आ,इ|त्म्यौ द्वौ स्तः।|Two tmyau-forms are there.|त्म्य plus औ makes त्म्यौ.
+जोडो|द्ग्या|द्ग्या|द्ग्य,आ,क,त,इ,उ|द्ग्या रूपं शोभते।|The dgy-form looks lovely.|द्ग्य plus आ makes द्ग्या.
+जोडो|द्ग्यि|द्ग्यि|द्ग्य,इ,क,त,आ,उ|द्ग्यि खगः कूजति।|A dgyi-bird calls.|द्ग्य plus इ makes द्ग्यि.
+जोडो|द्ग्यी|द्ग्यी|द्ग्य,ई,क,त,आ,इ|द्ग्यी द्वौ स्तः।|Two dgyi-forms are there.|द्ग्य plus ई makes द्ग्यी.
+जोडो|द्ग्यु|द्ग्यु|द्ग्य,उ,क,त,आ,इ|द्ग्यु बालकः पश्यति।|The boy sees the dgyu.|द्ग्य plus उ makes द्ग्यु.
+जोडो|द्ग्यू|द्ग्यू|द्ग्य,ऊ,क,त,आ,इ|द्ग्यू द्वौ स्तः।|Two dgyu-forms are there.|द्ग्य plus ऊ makes द्ग्यू.
+जोडो|द्ग्ये|द्ग्ये|द्ग्य,ए,क,त,आ,इ|द्ग्ये पुष्पं विकसति।|A flower blooms at dgye.|द्ग्य plus ए makes द्ग्ये.
+जोडो|द्ग्यै|द्ग्यै|द्ग्य,ऐ,क,त,आ,इ|द्ग्यैः सह पवनः वहति।|With dgyai the breeze blows.|द्ग्य plus ऐ makes द्ग्यै.
+जोडो|द्ग्यो|द्ग्यो|द्ग्य,ओ,क,त,आ,इ|द्ग्यो रम्यः अस्ति।|The dgyo is lovely.|द्ग्य plus ओ makes द्ग्यो.
+जोडो|द्ग्यौ|द्ग्यौ|द्ग्य,औ,क,त,आ,इ|द्ग्यौ द्वौ स्तः।|Two dgyau-forms are there.|द्ग्य plus औ makes द्ग्यौ.
+जोडो|द्ब्या|द्ब्या|द्ब्य,आ,क,त,इ,उ|द्ब्या रूपं शोभते।|The dby-form looks lovely.|द्ब्य plus आ makes द्ब्या.
+जोडो|द्ब्यि|द्ब्यि|द्ब्य,इ,क,त,आ,उ|द्ब्यि खगः कूजति।|A dbyi-bird calls.|द्ब्य plus इ makes द्ब्यि.
+जोडो|द्ब्यी|द्ब्यी|द्ब्य,ई,क,त,आ,इ|द्ब्यी द्वौ स्तः।|Two dbyi-forms are there.|द्ब्य plus ई makes द्ब्यी.
+जोडो|द्ब्यु|द्ब्यु|द्ब्य,उ,क,त,आ,इ|द्ब्यु बालकः पश्यति।|The boy sees the dbyu.|द्ब्य plus उ makes द्ब्यु.
+जोडो|द्ब्यू|द्ब्यू|द्ब्य,ऊ,क,त,आ,इ|द्ब्यू द्वौ स्तः।|Two dbyu-forms are there.|द्ब्य plus ऊ makes द्ब्यू.
+जोडो|द्ब्ये|द्ब्ये|द्ब्य,ए,क,त,आ,इ|द्ब्ये पुष्पं विकसति।|A flower blooms at dbye.|द्ब्य plus ए makes द्ब्ये.
+जोडो|द्ब्यै|द्ब्यै|द्ब्य,ऐ,क,त,आ,इ|द्ब्यैः सह पवनः वहति।|With dbyai the breeze blows.|द्ब्य plus ऐ makes द्ब्यै.
+जोडो|द्ब्यो|द्ब्यो|द्ब्य,ओ,क,त,आ,इ|द्ब्यो रम्यः अस्ति।|The dbyo is lovely.|द्ब्य plus ओ makes द्ब्यो.
+जोडो|द्ब्यौ|द्ब्यौ|द्ब्य,औ,क,त,आ,इ|द्ब्यौ द्वौ स्तः।|Two dbyau-forms are there.|द्ब्य plus औ makes द्ब्यौ.
+जोडो|ह्न्या|ह्न्या|ह्न्य,आ,क,त,इ,उ|ह्न्या रूपं शोभते।|The hny-form looks lovely.|ह्न्य plus आ makes ह्न्या.
+जोडो|ह्न्यि|ह्न्यि|ह्न्य,इ,क,त,आ,उ|ह्न्यि खगः कूजति।|A hnyi-bird calls.|ह्न्य plus इ makes ह्न्यि.
+जोडो|ह्न्यी|ह्न्यी|ह्न्य,ई,क,त,आ,इ|ह्न्यी द्वौ स्तः।|Two hnyi-forms are there.|ह्न्य plus ई makes ह्न्यी.
+जोडो|ह्न्यु|ह्न्यु|ह्न्य,उ,क,त,आ,इ|ह्न्यु बालकः पश्यति।|The boy sees the hnyu.|ह्न्य plus उ makes ह्न्यु.
+जोडो|ह्न्यू|ह्न्यू|ह्न्य,ऊ,क,त,आ,इ|ह्न्यू द्वौ स्तः।|Two hnyu-forms are there.|ह्न्य plus ऊ makes ह्न्यू.
+जोडो|ह्न्ये|ह्न्ये|ह्न्य,ए,क,त,आ,इ|ह्न्ये पुष्पं विकसति।|A flower blooms at hnye.|ह्न्य plus ए makes ह्न्ये.
+जोडो|ह्न्यै|ह्न्यै|ह्न्य,ऐ,क,त,आ,इ|ह्न्यैः सह पवनः वहति।|With hnyai the breeze blows.|ह्न्य plus ऐ makes ह्न्यै.
+जोडो|ह्न्यो|ह्न्यो|ह्न्य,ओ,क,त,आ,इ|ह्न्यो रम्यः अस्ति।|The hnyo is lovely.|ह्न्य plus ओ makes ह्न्यो.
+जोडो|ह्न्यौ|ह्न्यौ|ह्न्य,औ,क,त,आ,इ|ह्न्यौ द्वौ स्तः।|Two hnyau-forms are there.|ह्न्य plus औ makes ह्न्यौ.
+जोडो|ह्म्या|ह्म्या|ह्म्य,आ,क,त,इ,उ|ह्म्या रूपं शोभते।|The hmy-form looks lovely.|ह्म्य plus आ makes ह्म्या.
+जोडो|ह्म्यि|ह्म्यि|ह्म्य,इ,क,त,आ,उ|ह्म्यि खगः कूजति।|A hmyi-bird calls.|ह्म्य plus इ makes ह्म्यि.
+जोडो|ह्म्यी|ह्म्यी|ह्म्य,ई,क,त,आ,इ|ह्म्यी द्वौ स्तः।|Two hmyi-forms are there.|ह्म्य plus ई makes ह्म्यी.
+जोडो|ह्म्यु|ह्म्यु|ह्म्य,उ,क,त,आ,इ|ह्म्यु बालकः पश्यति।|The boy sees the hmyu.|ह्म्य plus उ makes ह्म्यु.
+जोडो|ह्म्यू|ह्म्यू|ह्म्य,ऊ,क,त,आ,इ|ह्म्यू द्वौ स्तः।|Two hmyu-forms are there.|ह्म्य plus ऊ makes ह्म्यू.
+जोडो|ह्म्ये|ह्म्ये|ह्म्य,ए,क,त,आ,इ|ह्म्ये पुष्पं विकसति।|A flower blooms at hmye.|ह्म्य plus ए makes ह्म्ये.
+जोडो|ह्म्यै|ह्म्यै|ह्म्य,ऐ,क,त,आ,इ|ह्म्यैः सह पवनः वहति।|With hmyai the breeze blows.|ह्म्य plus ऐ makes ह्म्यै.
+जोडो|ह्म्यो|ह्म्यो|ह्म्य,ओ,क,त,आ,इ|ह्म्यो रम्यः अस्ति।|The hmyo is lovely.|ह्म्य plus ओ makes ह्म्यो.
+जोडो|ह्म्यौ|ह्म्यौ|ह्म्य,औ,क,त,आ,इ|ह्म्यौ द्वौ स्तः।|Two hmyau-forms are there.|ह्म्य plus औ makes ह्म्यौ.
+जोडो|म्प्या|म्प्या|म्प्य,आ,क,त,इ,उ|म्प्या रूपं शोभते।|The mpy-form looks lovely.|म्प्य plus आ makes म्प्या.
+जोडो|म्प्यि|म्प्यि|म्प्य,इ,क,त,आ,उ|म्प्यि खगः कूजति।|A mpyi-bird calls.|म्प्य plus इ makes म्प्यि.
+जोडो|म्प्यी|म्प्यी|म्प्य,ई,क,त,आ,इ|म्प्यी द्वौ स्तः।|Two mpyi-forms are there.|म्प्य plus ई makes म्प्यी.
+जोडो|म्प्यु|म्प्यु|म्प्य,उ,क,त,आ,इ|म्प्यु बालकः पश्यति।|The boy sees the mpyu.|म्प्य plus उ makes म्प्यु.
+जोडो|म्प्यू|म्प्यू|म्प्य,ऊ,क,त,आ,इ|म्प्यू द्वौ स्तः।|Two mpyu-forms are there.|म्प्य plus ऊ makes म्प्यू.
+जोडो|म्प्ये|म्प्ये|म्प्य,ए,क,त,आ,इ|म्प्ये पुष्पं विकसति।|A flower blooms at mpye.|म्प्य plus ए makes म्प्ये.
+जोडो|म्प्यै|म्प्यै|म्प्य,ऐ,क,त,आ,इ|म्प्यैः सह पवनः वहति।|With mpyai the breeze blows.|म्प्य plus ऐ makes म्प्यै.
+जोडो|म्प्यो|म्प्यो|म्प्य,ओ,क,त,आ,इ|म्प्यो रम्यः अस्ति।|The mpyo is lovely.|म्प्य plus ओ makes म्प्यो.
+जोडो|म्प्यौ|म्प्यौ|म्प्य,औ,क,त,आ,इ|म्प्यौ द्वौ स्तः।|Two mpyau-forms are there.|म्प्य plus औ makes म्प्यौ.
+जोडो|म्ब्या|म्ब्या|म्ब्य,आ,क,त,इ,उ|म्ब्या रूपं शोभते।|The mby-form looks lovely.|म्ब्य plus आ makes म्ब्या.
+जोडो|म्ब्यि|म्ब्यि|म्ब्य,इ,क,त,आ,उ|म्ब्यि खगः कूजति।|A mbyi-bird calls.|म्ब्य plus इ makes म्ब्यि.
+जोडो|म्ब्यी|म्ब्यी|म्ब्य,ई,क,त,आ,इ|म्ब्यी द्वौ स्तः।|Two mbyi-forms are there.|म्ब्य plus ई makes म्ब्यी.
+जोडो|म्ब्यु|म्ब्यु|म्ब्य,उ,क,त,आ,इ|म्ब्यु बालकः पश्यति।|The boy sees the mbyu.|म्ब्य plus उ makes म्ब्यु.
+जोडो|म्ब्यू|म्ब्यू|म्ब्य,ऊ,क,त,आ,इ|म्ब्यू द्वौ स्तः।|Two mbyu-forms are there.|म्ब्य plus ऊ makes म्ब्यू.
+जोडो|म्ब्ये|म्ब्ये|म्ब्य,ए,क,त,आ,इ|म्ब्ये पुष्पं विकसति।|A flower blooms at mbye.|म्ब्य plus ए makes म्ब्ये.
+जोडो|म्ब्यै|म्ब्यै|म्ब्य,ऐ,क,त,आ,इ|म्ब्यैः सह पवनः वहति।|With mbyai the breeze blows.|म्ब्य plus ऐ makes म्ब्यै.
+जोडो|म्ब्यो|म्ब्यो|म्ब्य,ओ,क,त,आ,इ|म्ब्यो रम्यः अस्ति।|The mbyo is lovely.|म्ब्य plus ओ makes म्ब्यो.
+जोडो|म्ब्यौ|म्ब्यौ|म्ब्य,औ,क,त,आ,इ|म्ब्यौ द्वौ स्तः।|Two mbyau-forms are there.|म्ब्य plus औ makes म्ब्यौ.
+जोडो|त्स्या|त्स्या|त्स्य,आ,क,त,इ,उ|त्स्या रूपं शोभते।|The tsy-form looks lovely.|त्स्य plus आ makes त्स्या.
+जोडो|त्स्यि|त्स्यि|त्स्य,इ,क,त,आ,उ|त्स्यि खगः कूजति।|A tsyi-bird calls.|त्स्य plus इ makes त्स्यि.
+जोडो|त्स्यी|त्स्यी|त्स्य,ई,क,त,आ,इ|त्स्यी द्वौ स्तः।|Two tsyi-forms are there.|त्स्य plus ई makes त्स्यी.
+जोडो|त्स्यु|त्स्यु|त्स्य,उ,क,त,आ,इ|त्स्यु बालकः पश्यति।|The boy sees the tsyu.|त्स्य plus उ makes त्स्यु.
+जोडो|त्स्यू|त्स्यू|त्स्य,ऊ,क,त,आ,इ|त्स्यू द्वौ स्तः।|Two tsyu-forms are there.|त्स्य plus ऊ makes त्स्यू.
+जोडो|त्स्ये|त्स्ये|त्स्य,ए,क,त,आ,इ|त्स्ये पुष्पं विकसति।|A flower blooms at tsye.|त्स्य plus ए makes त्स्ये.
+जोडो|त्स्यै|त्स्यै|त्स्य,ऐ,क,त,आ,इ|त्स्यैः सह पवनः वहति।|With tsyai the breeze blows.|त्स्य plus ऐ makes त्स्यै.
+जोडो|त्स्यो|त्स्यो|त्स्य,ओ,क,त,आ,इ|त्स्यो रम्यः अस्ति।|The tsyo is lovely.|त्स्य plus ओ makes त्स्यो.
+जोडो|त्स्यौ|त्स्यौ|त्स्य,औ,क,त,आ,इ|त्स्यौ द्वौ स्तः।|Two tsyau-forms are there.|त्स्य plus औ makes त्स्यौ.
+जोडो|द्स्या|द्स्या|द्स्य,आ,क,त,इ,उ|द्स्या रूपं शोभते।|The dsy-form looks lovely.|द्स्य plus आ makes द्स्या.
+जोडो|द्स्यि|द्स्यि|द्स्य,इ,क,त,आ,उ|द्स्यि खगः कूजति।|A dsyi-bird calls.|द्स्य plus इ makes द्स्यि.
+जोडो|द्स्यी|द्स्यी|द्स्य,ई,क,त,आ,इ|द्स्यी द्वौ स्तः।|Two dsyi-forms are there.|द्स्य plus ई makes द्स्यी.
+जोडो|द्स्यु|द्स्यु|द्स्य,उ,क,त,आ,इ|द्स्यु बालकः पश्यति।|The boy sees the dsyu.|द्स्य plus उ makes द्स्यु.
+जोडो|द्स्यू|द्स्यू|द्स्य,ऊ,क,त,आ,इ|द्स्यू द्वौ स्तः।|Two dsyu-forms are there.|द्स्य plus ऊ makes द्स्यू.
+जोडो|द्स्ये|द्स्ये|द्स्य,ए,क,त,आ,इ|द्स्ये पुष्पं विकसति।|A flower blooms at dsye.|द्स्य plus ए makes द्स्ये.
+जोडो|द्स्यै|द्स्यै|द्स्य,ऐ,क,त,आ,इ|द्स्यैः सह पवनः वहति।|With dsyai the breeze blows.|द्स्य plus ऐ makes द्स्यै.
+जोडो|द्स्यो|द्स्यो|द्स्य,ओ,क,त,आ,इ|द्स्यो रम्यः अस्ति।|The dsyo is lovely.|द्स्य plus ओ makes द्स्यो.
+जोडो|द्स्यौ|द्स्यौ|द्स्य,औ,क,त,आ,इ|द्स्यौ द्वौ स्तः।|Two dsyau-forms are there.|द्स्य plus औ makes द्स्यौ.
+जोडो|ष्व्या|ष्व्या|ष्व्य,आ,क,त,इ,उ|ष्व्या रूपं शोभते।|The shvy-form looks lovely.|ष्व्य plus आ makes ष्व्या.
+जोडो|ष्व्यि|ष्व्यि|ष्व्य,इ,क,त,आ,उ|ष्व्यि खगः कूजति।|A shvyi-bird calls.|ष्व्य plus इ makes ष्व्यि.
+जोडो|ष्व्यी|ष्व्यी|ष्व्य,ई,क,त,आ,इ|ष्व्यी द्वौ स्तः।|Two shvyi-forms are there.|ष्व्य plus ई makes ष्व्यी.
+जोडो|ष्व्यु|ष्व्यु|ष्व्य,उ,क,त,आ,इ|ष्व्यु बालकः पश्यति।|The boy sees the shvyu.|ष्व्य plus उ makes ष्व्यु.
+जोडो|ष्व्यू|ष्व्यू|ष्व्य,ऊ,क,त,आ,इ|ष्व्यू द्वौ स्तः।|Two shvyu-forms are there.|ष्व्य plus ऊ makes ष्व्यू.
+जोडो|ष्व्ये|ष्व्ये|ष्व्य,ए,क,त,आ,इ|ष्व्ये पुष्पं विकसति।|A flower blooms at shvye.|ष्व्य plus ए makes ष्व्ये.
+जोडो|ष्व्यै|ष्व्यै|ष्व्य,ऐ,क,त,आ,इ|ष्व्यैः सह पवनः वहति।|With shvyai the breeze blows.|ष्व्य plus ऐ makes ष्व्यै.
+जोडो|ष्व्यो|ष्व्यो|ष्व्य,ओ,क,त,आ,इ|ष्व्यो रम्यः अस्ति।|The shvyo is lovely.|ष्व्य plus ओ makes ष्व्यो.
+जोडो|ष्व्यौ|ष्व्यौ|ष्व्य,औ,क,त,आ,इ|ष्व्यौ द्वौ स्तः।|Two shvyau-forms are there.|ष्व्य plus औ makes ष्व्यौ.
+जोडो|श्व्या|श्व्या|श्व्य,आ,क,त,इ,उ|श्व्या रूपं शोभते।|The shvy2-form looks lovely.|श्व्य plus आ makes श्व्या.
+जोडो|श्व्यि|श्व्यि|श्व्य,इ,क,त,आ,उ|श्व्यि खगः कूजति।|A shvy2i-bird calls.|श्व्य plus इ makes श्व्यि.
+जोडो|श्व्यी|श्व्यी|श्व्य,ई,क,त,आ,इ|श्व्यी द्वौ स्तः।|Two shvy2i-forms are there.|श्व्य plus ई makes श्व्यी.
+जोडो|श्व्यु|श्व्यु|श्व्य,उ,क,त,आ,इ|श्व्यु बालकः पश्यति।|The boy sees the shvy2u.|श्व्य plus उ makes श्व्यु.
+जोडो|श्व्यू|श्व्यू|श्व्य,ऊ,क,त,आ,इ|श्व्यू द्वौ स्तः।|Two shvy2u-forms are there.|श्व्य plus ऊ makes श्व्यू.
+जोडो|श्व्ये|श्व्ये|श्व्य,ए,क,त,आ,इ|श्व्ये पुष्पं विकसति।|A flower blooms at shvy2e.|श्व्य plus ए makes श्व्ये.
+जोडो|श्व्यै|श्व्यै|श्व्य,ऐ,क,त,आ,इ|श्व्यैः सह पवनः वहति।|With shvy2ai the breeze blows.|श्व्य plus ऐ makes श्व्यै.
+जोडो|श्व्यो|श्व्यो|श्व्य,ओ,क,त,आ,इ|श्व्यो रम्यः अस्ति।|The shvy2o is lovely.|श्व्य plus ओ makes श्व्यो.
+जोडो|श्व्यौ|श्व्यौ|श्व्य,औ,क,त,आ,इ|श्व्यौ द्वौ स्तः।|Two shvy2au-forms are there.|श्व्य plus औ makes श्व्यौ.
+जोडो|ल्ग्या|ल्ग्या|ल्ग्य,आ,क,त,इ,उ|ल्ग्या रूपं शोभते।|The lgy-form looks lovely.|ल्ग्य plus आ makes ल्ग्या.
+जोडो|ल्ग्यि|ल्ग्यि|ल्ग्य,इ,क,त,आ,उ|ल्ग्यि खगः कूजति।|A lgyi-bird calls.|ल्ग्य plus इ makes ल्ग्यि.
+जोडो|ल्ग्यी|ल्ग्यी|ल्ग्य,ई,क,त,आ,इ|ल्ग्यी द्वौ स्तः।|Two lgyi-forms are there.|ल्ग्य plus ई makes ल्ग्यी.
+जोडो|ल्ग्यु|ल्ग्यु|ल्ग्य,उ,क,त,आ,इ|ल्ग्यु बालकः पश्यति।|The boy sees the lgyu.|ल्ग्य plus उ makes ल्ग्यु.
+जोडो|ल्ग्यू|ल्ग्यू|ल्ग्य,ऊ,क,त,आ,इ|ल्ग्यू द्वौ स्तः।|Two lgyu-forms are there.|ल्ग्य plus ऊ makes ल्ग्यू.
+जोडो|ल्ग्ये|ल्ग्ये|ल्ग्य,ए,क,त,आ,इ|ल्ग्ये पुष्पं विकसति।|A flower blooms at lgye.|ल्ग्य plus ए makes ल्ग्ये.
+जोडो|ल्ग्यै|ल्ग्यै|ल्ग्य,ऐ,क,त,आ,इ|ल्ग्यैः सह पवनः वहति।|With lgyai the breeze blows.|ल्ग्य plus ऐ makes ल्ग्यै.
+जोडो|ल्ग्यो|ल्ग्यो|ल्ग्य,ओ,क,त,आ,इ|ल्ग्यो रम्यः अस्ति।|The lgyo is lovely.|ल्ग्य plus ओ makes ल्ग्यो.
+जोडो|ल्ग्यौ|ल्ग्यौ|ल्ग्य,औ,क,त,आ,इ|ल्ग्यौ द्वौ स्तः।|Two lgyau-forms are there.|ल्ग्य plus औ makes ल्ग्यौ.
+जोडो|ल्म्या|ल्म्या|ल्म्य,आ,क,त,इ,उ|ल्म्या रूपं शोभते।|The lmy-form looks lovely.|ल्म्य plus आ makes ल्म्या.
+जोडो|ल्म्यि|ल्म्यि|ल्म्य,इ,क,त,आ,उ|ल्म्यि खगः कूजति।|A lmyi-bird calls.|ल्म्य plus इ makes ल्म्यि.
+जोडो|ल्म्यी|ल्म्यी|ल्म्य,ई,क,त,आ,इ|ल्म्यी द्वौ स्तः।|Two lmyi-forms are there.|ल्म्य plus ई makes ल्म्यी.
+जोडो|ल्म्यु|ल्म्यु|ल्म्य,उ,क,त,आ,इ|ल्म्यु बालकः पश्यति।|The boy sees the lmyu.|ल्म्य plus उ makes ल्म्यु.
+जोडो|ल्म्यू|ल्म्यू|ल्म्य,ऊ,क,त,आ,इ|ल्म्यू द्वौ स्तः।|Two lmyu-forms are there.|ल्म्य plus ऊ makes ल्म्यू.
+जोडो|ल्म्ये|ल्म्ये|ल्म्य,ए,क,त,आ,इ|ल्म्ये पुष्पं विकसति।|A flower blooms at lmye.|ल्म्य plus ए makes ल्म्ये.
+जोडो|ल्म्यै|ल्म्यै|ल्म्य,ऐ,क,त,आ,इ|ल्म्यैः सह पवनः वहति।|With lmyai the breeze blows.|ल्म्य plus ऐ makes ल्म्यै.
+जोडो|ल्म्यो|ल्म्यो|ल्म्य,ओ,क,त,आ,इ|ल्म्यो रम्यः अस्ति।|The lmyo is lovely.|ल्म्य plus ओ makes ल्म्यो.
+जोडो|ल्म्यौ|ल्म्यौ|ल्म्य,औ,क,त,आ,इ|ल्म्यौ द्वौ स्तः।|Two lmyau-forms are there.|ल्म्य plus औ makes ल्म्यौ.
+जोडो|र्क्या|र्क्या|र्क्य,आ,क,त,इ,उ|र्क्या रूपं शोभते।|The rky-form looks lovely.|र्क्य plus आ makes र्क्या.
+जोडो|र्क्यि|र्क्यि|र्क्य,इ,क,त,आ,उ|र्क्यि खगः कूजति।|A rkyi-bird calls.|र्क्य plus इ makes र्क्यि.
+जोडो|र्क्यी|र्क्यी|र्क्य,ई,क,त,आ,इ|र्क्यी द्वौ स्तः।|Two rkyi-forms are there.|र्क्य plus ई makes र्क्यी.
+जोडो|र्क्यु|र्क्यु|र्क्य,उ,क,त,आ,इ|र्क्यु बालकः पश्यति।|The boy sees the rkyu.|र्क्य plus उ makes र्क्यु.
+जोडो|र्क्यू|र्क्यू|र्क्य,ऊ,क,त,आ,इ|र्क्यू द्वौ स्तः।|Two rkyu-forms are there.|र्क्य plus ऊ makes र्क्यू.
+जोडो|र्क्ये|र्क्ये|र्क्य,ए,क,त,आ,इ|र्क्ये पुष्पं विकसति।|A flower blooms at rkye.|र्क्य plus ए makes र्क्ये.
+जोडो|र्क्यै|र्क्यै|र्क्य,ऐ,क,त,आ,इ|र्क्यैः सह पवनः वहति।|With rkyai the breeze blows.|र्क्य plus ऐ makes र्क्यै.
+जोडो|र्क्यो|र्क्यो|र्क्य,ओ,क,त,आ,इ|र्क्यो रम्यः अस्ति।|The rkyo is lovely.|र्क्य plus ओ makes र्क्यो.
+जोडो|र्क्यौ|र्क्यौ|र्क्य,औ,क,त,आ,इ|र्क्यौ द्वौ स्तः।|Two rkyau-forms are there.|र्क्य plus औ makes र्क्यौ.
+जोडो|र्प्या|र्प्या|र्प्य,आ,क,त,इ,उ|र्प्या रूपं शोभते।|The rpy-form looks lovely.|र्प्य plus आ makes र्प्या.
+जोडो|र्प्यि|र्प्यि|र्प्य,इ,क,त,आ,उ|र्प्यि खगः कूजति।|A rpyi-bird calls.|र्प्य plus इ makes र्प्यि.
+जोडो|र्प्यी|र्प्यी|र्प्य,ई,क,त,आ,इ|र्प्यी द्वौ स्तः।|Two rpyi-forms are there.|र्प्य plus ई makes र्प्यी.
+जोडो|र्प्यु|र्प्यु|र्प्य,उ,क,त,आ,इ|र्प्यु बालकः पश्यति।|The boy sees the rpyu.|र्प्य plus उ makes र्प्यु.
+जोडो|र्प्यू|र्प्यू|र्प्य,ऊ,क,त,आ,इ|र्प्यू द्वौ स्तः।|Two rpyu-forms are there.|र्प्य plus ऊ makes र्प्यू.
+जोडो|र्प्ये|र्प्ये|र्प्य,ए,क,त,आ,इ|र्प्ये पुष्पं विकसति।|A flower blooms at rpye.|र्प्य plus ए makes र्प्ये.
+जोडो|र्प्यै|र्प्यै|र्प्य,ऐ,क,त,आ,इ|र्प्यैः सह पवनः वहति।|With rpyai the breeze blows.|र्प्य plus ऐ makes र्प्यै.
+जोडो|र्प्यो|र्प्यो|र्प्य,ओ,क,त,आ,इ|र्प्यो रम्यः अस्ति।|The rpyo is lovely.|र्प्य plus ओ makes र्प्यो.
+जोडो|र्प्यौ|र्प्यौ|र्प्य,औ,क,त,आ,इ|र्प्यौ द्वौ स्तः।|Two rpyau-forms are there.|र्प्य plus औ makes र्प्यौ.
+जोडो|र्त्या|र्त्या|र्त्य,आ,क,त,इ,उ|र्त्या रूपं शोभते।|The rty-form looks lovely.|र्त्य plus आ makes र्त्या.
+जोडो|र्त्यि|र्त्यि|र्त्य,इ,क,त,आ,उ|र्त्यि खगः कूजति।|A rtyi-bird calls.|र्त्य plus इ makes र्त्यि.
+जोडो|र्त्यी|र्त्यी|र्त्य,ई,क,त,आ,इ|र्त्यी द्वौ स्तः।|Two rtyi-forms are there.|र्त्य plus ई makes र्त्यी.
+जोडो|र्त्यु|र्त्यु|र्त्य,उ,क,त,आ,इ|र्त्यु बालकः पश्यति।|The boy sees the rtyu.|र्त्य plus उ makes र्त्यु.
+जोडो|र्त्यू|र्त्यू|र्त्य,ऊ,क,त,आ,इ|र्त्यू द्वौ स्तः।|Two rtyu-forms are there.|र्त्य plus ऊ makes र्त्यू.
+जोडो|र्त्ये|र्त्ये|र्त्य,ए,क,त,आ,इ|र्त्ये पुष्पं विकसति।|A flower blooms at rtye.|र्त्य plus ए makes र्त्ये.
+जोडो|र्त्यै|र्त्यै|र्त्य,ऐ,क,त,आ,इ|र्त्यैः सह पवनः वहति।|With rtyai the breeze blows.|र्त्य plus ऐ makes र्त्यै.
+जोडो|र्त्यो|र्त्यो|र्त्य,ओ,क,त,आ,इ|र्त्यो रम्यः अस्ति।|The rtyo is lovely.|र्त्य plus ओ makes र्त्यो.
+जोडो|र्त्यौ|र्त्यौ|र्त्य,औ,क,त,आ,इ|र्त्यौ द्वौ स्तः।|Two rtyau-forms are there.|र्त्य plus औ makes र्त्यौ.
+जोडो|र्ध्या|र्ध्या|र्ध्य,आ,क,त,इ,उ|र्ध्या रूपं शोभते।|The rdhy-form looks lovely.|र्ध्य plus आ makes र्ध्या.
+जोडो|र्ध्यि|र्ध्यि|र्ध्य,इ,क,त,आ,उ|र्ध्यि खगः कूजति।|A rdhyi-bird calls.|र्ध्य plus इ makes र्ध्यि.
+जोडो|र्ध्यी|र्ध्यी|र्ध्य,ई,क,त,आ,इ|र्ध्यी द्वौ स्तः।|Two rdhyi-forms are there.|र्ध्य plus ई makes र्ध्यी.
+जोडो|र्ध्यु|र्ध्यु|र्ध्य,उ,क,त,आ,इ|र्ध्यु बालकः पश्यति।|The boy sees the rdhyu.|र्ध्य plus उ makes र्ध्यु.
+जोडो|र्ध्यू|र्ध्यू|र्ध्य,ऊ,क,त,आ,इ|र्ध्यू द्वौ स्तः।|Two rdhyu-forms are there.|र्ध्य plus ऊ makes र्ध्यू.
+जोडो|र्ध्ये|र्ध्ये|र्ध्य,ए,क,त,आ,इ|र्ध्ये पुष्पं विकसति।|A flower blooms at rdhye.|र्ध्य plus ए makes र्ध्ये.
+जोडो|र्ध्यै|र्ध्यै|र्ध्य,ऐ,क,त,आ,इ|र्ध्यैः सह पवनः वहति।|With rdhyai the breeze blows.|र्ध्य plus ऐ makes र्ध्यै.
+जोडो|र्ध्यो|र्ध्यो|र्ध्य,ओ,क,त,आ,इ|र्ध्यो रम्यः अस्ति।|The rdhyo is lovely.|र्ध्य plus ओ makes र्ध्यो.
+जोडो|र्ध्यौ|र्ध्यौ|र्ध्य,औ,क,त,आ,इ|र्ध्यौ द्वौ स्तः।|Two rdhyau-forms are there.|र्ध्य plus औ makes र्ध्यौ.
+जोडो|न्ज्या|न्ज्या|न्ज्य,आ,क,त,इ,उ|न्ज्या रूपं शोभते।|The njy-form looks lovely.|न्ज्य plus आ makes न्ज्या.
+जोडो|न्ज्यि|न्ज्यि|न्ज्य,इ,क,त,आ,उ|न्ज्यि खगः कूजति।|A njyi-bird calls.|न्ज्य plus इ makes न्ज्यि.
+जोडो|न्ज्यी|न्ज्यी|न्ज्य,ई,क,त,आ,इ|न्ज्यी द्वौ स्तः।|Two njyi-forms are there.|न्ज्य plus ई makes न्ज्यी.
+जोडो|न्ज्यु|न्ज्यु|न्ज्य,उ,क,त,आ,इ|न्ज्यु बालकः पश्यति।|The boy sees the njyu.|न्ज्य plus उ makes न्ज्यु.
+जोडो|न्ज्यू|न्ज्यू|न्ज्य,ऊ,क,त,आ,इ|न्ज्यू द्वौ स्तः।|Two njyu-forms are there.|न्ज्य plus ऊ makes न्ज्यू.
+जोडो|न्ज्ये|न्ज्ये|न्ज्य,ए,क,त,आ,इ|न्ज्ये पुष्पं विकसति।|A flower blooms at njye.|न्ज्य plus ए makes न्ज्ये.
+जोडो|न्ज्यै|न्ज्यै|न्ज्य,ऐ,क,त,आ,इ|न्ज्यैः सह पवनः वहति।|With njyai the breeze blows.|न्ज्य plus ऐ makes न्ज्यै.
+जोडो|न्ज्यो|न्ज्यो|न्ज्य,ओ,क,त,आ,इ|न्ज्यो रम्यः अस्ति।|The njyo is lovely.|न्ज्य plus ओ makes न्ज्यो.
+जोडो|न्ज्यौ|न्ज्यौ|न्ज्य,औ,क,त,आ,इ|न्ज्यौ द्वौ स्तः।|Two njyau-forms are there.|न्ज्य plus औ makes न्ज्यौ.
 रिक्तम्|गकारः ____ स्थानस्य अस्ति।|कण्ठस्य|कण्ठस्य,तालस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|गकारः कण्ठस्य स्थानस्य अस्ति।|ga is a throat-letter|A letter is a place on the nāda-path.
 रिक्तम्|चकारः ____ स्थानस्य अस्ति।|तालस्य|तालस्य,कण्ठस्य,दन्तस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|चकारः तालस्य स्थानस्य अस्ति।|ca is a palate-letter|Same path, next seat.
 रिक्तम्|तकारः ____ स्थानस्य अस्ति।|दन्तस्य|दन्तस्य,कण्ठस्य,तालस्य,ओष्ठस्य,मूर्ध्नः,नासिकायाः|तकारः दन्तस्य स्थानस्य अस्ति।|ta is a teeth-letter|Same path, teeth.
@@ -2197,3 +2413,158 @@
 मेलः|गृहम्|वसति|वसति,पिबति,पठति|अहं गृहे वसामि।|a house|परिवेशः. Prompt गृहम्, tap वसति.
 मेलः|वस्त्रम्|धारयति|धारयति,वसति,पिबति|अहं वस्त्रं धारयामि।|cloth|परिवेशः. Prompt वस्त्रम्, tap धारयति.
 मेलः|सूर्यः|आकाशः|आकाशः,नदी,गृहम्|सूर्यः आकाशे अस्ति।|the sun|Naksha. Prompt सूर्यः, tap आकाशः.
+
+# ========================================================
+# GRADE 8 DEEPAKAM VOCABULARY TILES (Chapters 1 to 6)
+# ========================================================
+जोडो|मन्त्रः|मन्त्रः|म,न्,त्रः,क,प,स|ऋग्वेदस्य मन्त्रः अस्ति।|Rigvedic verse|मन्त्रः is a sacred hymn.
+जोडो|ऐक्यम्|ऐक्यम्|ऐ,क,यम्,स,म,त|सर्वेषाम् ऐक्यं भवतु।|unity|ऐक्यम् signifies unity.
+जोडो|सङ्कल्पः|सङ्कल्पः|स,ङ्क,ल,पः,म,त|उत्तमः सङ्कल्पः करणीयः।|resolve / determination|A noble resolve.
+जोडो|संवदध्वम्|संवदध्वम्|सं,व,द,ध्वम्,क,म|सर्वे संवदध्वम्।|speak together in harmony|Rigvedic call for dialogue.
+जोडो|देवाः|देवाः|द,े,व,ाः,म,क|देवाः भागम् उपासते।|the deities|The gods receive their portion.
+जोडो|समानम्|समानम्|स,म,ा,नम्,प,क|समानं मनः भवतु।|equal / united|United in thought.
+जोडो|संहतिः|संहतिः|सं,ह,तिः,क,म,प|वस्तूनां संहतिः कार्यसाधिका।|solidarity / unity|Strength in unity.
+जोडो|कपोतः|कपोतः|क,प,ो,तः,म,स|कपोतः आकाशे उड्डीयते।|dove / pigeon|The dove flies.
+जोडो|व्याधः|व्याधः|व,्य,ा,धः,क,म|व्याधः जालं प्रसारयति।|hunter|The hunter casts the net.
+जोडो|जालकम्|जालकम्|ज,ा,ल,कम्,स,प|पक्षिणः जालकम् आदाय उत्थिताः।|net / snare|The snare.
+जोडो|तण्डुलः|तण्डुलः|त,ण्,डु,लः,क,म|भूमिभागे तण्डुलाः विकीर्णाः।|rice grains|Scattered grains of rice.
+जोडो|मित्रम्|मित्रम्|म,ि,त्रम्,स,प,क|मित्रं विपत्तौ साहाय्यं करोति।|friend|A true friend helps in adversity.
+जोडो|सुभाषितम्|सुभाषितम्|सु,भ,ा,षि,तम्,क|सुभाषितं मधुरं भवति।|wise epigram / proverb|Wise poetic saying.
+जोडो|सुवर्णम्|सुवर्णम्|सु,व,र्,णम्,क,प|सुवर्णं निकषे परीक्ष्यते।|gold|Pure gold is tested on touchstone.
+जोडो|विद्या|विद्या|व,ि,द,्य,ा,स|विद्या ददाति विनयम्।|knowledge / learning|Wisdom bestows humility.
+जोडो|तरवः|तरवः|त,र,वः,क,म,स|फलोद्गमैः तरवः नम्राः भवन्ति।|trees|Trees bow down with ripe fruits.
+जोडो|गुणाः|गुणाः|ग,ु,ण,ाः,म,प|गुणाः सर्वत्र पूज्यन्ते।|virtues / good qualities|Virtues are revered everywhere.
+जोडो|धैर्यम्|धैर्यम्|ध,ै,र्,यम्,क,स|विपदि धैर्यम् आवश्यकम्।|courage / patience|Courage in distress.
+जोडो|देशभक्तः|देशभक्तः|द,े,श,भ,क,्तः|गोपबन्धुः देशभक्तः आसीत्।|patriot|Noble patriot.
+जोडो|गोपबन्धुः|गोपबन्धुः|ग,ो,प,ब,न्,धुः|गोपबन्धुः उत्कलमणिः कथ्यते।|Gopabandhu|Utkalmani Gopabandhu.
+जोडो|उत्कलमणिः|उत्कलमणिः|उ,त्,क,ल,म,णिः|उत्कलमणिः महामनाः अस्ति।|Jewel of Utkal (Odisha)|Title given by Acharya Ray.
+जोडो|जलप्लावः|जलप्लावः|ज,ल,प,्ल,ा,वः|महानद्यां भयङ्करः जलप्लावः जातः।|flood / inundation|Severe flood in Odisha.
+जोडो|लोकसेवा|लोकसेवा|ल,ो,क,स,े,व,ा|सः लोकसेवायै जीवनम् अयच्छत्।|public service|Selfless humanitarian service.
+जोडो|सुआण्डो|सुआण्डो|स,ु,आ,ण्,ड,ो|गोपबन्धोः जन्म सुआण्डो-ग्रामे अभवत्।|Suando village|Birthplace of Gopabandhu.
+जोडो|सुगीता|सुगीता|स,ु,ग,ी,त,ा|गीता सुगीता कर्तव्या।|well-studied / well-sung|The Gita should be sung well.
+जोडो|पद्मनाभः|पद्मनाभः|प,द्,म,न,ा,भः|पद्मनाभस्य मुखात् गीता निःसृता।|Lord Vishnu (Padmanabha)|The Lord with the lotus navel.
+जोडो|श्रद्धावान्|श्रद्धावान्|श,्र,द,्ध,ा,व,ान्|श्रद्धावान् लभते ज्ञानम्।|faithful person|One possessing faith attains wisdom.
+जोडो|स्थितधीः|स्थितधीः|स,्थि,त,ध,ीः,क|मुनिः स्थितधीः उच्यते।|of steady wisdom|Sage of unshakable intellect.
+जोडो|शान्तिः|शान्तिः|श,ा,न्,तिः,क,म|ज्ञानं लब्ध्वा परां शान्तिम् अधिगच्छति।|supreme peace|Transcendental peace.
+जोडो|सम्मोहः|सम्मोहः|स,म्,म,ो,हः,क|क्रोधाद्भवति सम्मोहः।|delusion / confusion|Anger breeds delusion.
+जोडो|स्वाध्यायः|स्वाध्यायः|स,्व,ा,ध,्य,ा,यः|स्वाध्यायेन ज्ञानं वर्धते।|scripture self-study|Austerity of study.
+जोडो|डिजिभारतम्|डिजिभारतम्|ड,ि,ज,ि,भ,ा,र,तम्|डिजिभारतम् युगपरिवर्तनम् अस्ति।|Digital India|Digital India transformation.
+जोडो|सङ्गणकम्|सङ्गणकम्|स,ङ्,ग,ण,कम्,प|सर्वाणि कार्याणि सङ्गणकेन भवन्ति।|computer|Computer device.
+जोडो|चलदूरभाषः|चलदूरभाषः|च,ल,द,ू,र,भ,ा,षः|हस्ते चलदूरभाषः अस्ति।|mobile phone|Mobile phone device.
+जोडो|मुद्राहीन|मुद्राहीन|म,ु,द,्र,ा,ह,ी,न|मुद्राहीन-विनिमयः सुगमः अस्ति।|cashless|Cashless transactions.
+जोडो|टङ्कणयन्त्रम्|टङ्कणयन्त्रम्|ट,ङ्,क,ण,य,न्,त्रम्|टङ्कणयन्त्रेण सामग्री सुरक्षिता।|typewriter|The typewriter machine.
+जोडो|पर्यावरणम्|पर्यावरणम्|प,र्,य,ा,व,र,णम्|पर्यावरणसंरक्षणं कर्तव्यम्।|environment|Environmental protection.
+# ========================================================
+# GRADE 8 DEEPAKAM VOCABULARY TILES (Chapters 7, 8, 9)
+# ========================================================
+जोडो|सुरभाषा|सुरभाषा|स,ु,र,भ,ा,ष,ा|संस्कृतं सुन्दरसुरभाषा अस्ति।|divine language (Sanskrit)|Language of the deities.
+जोडो|मञ्जूषा|मञ्जूषा|म,ञ्,ज,ू,ष,ा|ज्ञानस्य मञ्जूषा वर्तते।|treasury box / casket|Exquisite jewel casket of wisdom.
+जोडो|वेदव्यासः|वेदव्यासः|व,े,द,व,्,य,ा,सः|वेदव्यासः महाभारतं रचितवान्।|Sage Vedavyasa|Great composer of the Mahabharata.
+जोडो|वाल्मीकिः|वाल्मीकिः|व,ा,ल,्,म,ी,क,िः|वाल्मीकिः आदिकविः अस्ति।|Sage Valmiki|First poet and composer of Ramayana.
+जोडो|कालिदासः|कालिदासः|क,ा,ल,ि,द,ा,सः|कालिदासः महाकविः अस्ति।|Great poet Kalidasa|Foremost Sanskrit classical dramatist.
+जोडो|बाणभट्टः|बाणभट्टः|ब,ा,ण,भ,ट,्,टः|बाणभट्टः कादम्बरीं लिखितवान्।|Poet Banabhatta|Master of classical Sanskrit prose.
+जोडो|नवरसाः|नवरसाः|न,व,र,स,ाः,क,प|साहित्ये नवरसाः सन्ति।|nine poetic sentiments|Nine aesthetic rasas of literature.
+जोडो|व्योमशास्त्रम्|व्योमशास्त्रम्|व,्,य,ो,म,श,ा,स,्,त,्रम्|व्योमशास्त्रे ग्रहाणां विचारः।|astronomy / space science|Study of celestial bodies.
+जोडो|ऐशान्यकोणः|ऐशान्यकोणः|ऐ,श,ा,न,्,य,क,ो,णः|ऐशान्यकोणः पूर्वोत्तरदिशा अस्ति।|Northeast corner|Northeastern geographical direction.
+जोडो|सप्तभगिन्यः|सप्तभगिन्यः|स,प,्,त,भ,ग,ि,न,्,यः|सप्तभगिन्यः पूर्वोत्तरे सन्ति।|Seven Sisters|The seven northeastern sister states.
+जोडो|सिक्किमः|सिक्किमः|स,ि,क,्,क,ि,मः|सिक्किमः लघुः भ्राता अस्ति।|Sikkim state|Brother state to the Seven Sisters.
+जोडो|अरुणाचलः|अरुणाचलः|अ,र,ु,ण,ा,च,लः|अरुणाचले अरुणोदयः प्रथमं भवति।|Arunachal Pradesh|Land of the dawn-lit mountains.
+जोडो|असमः|असमः|अ,स,मः,क,प,त|असमः ब्रह्मपुत्रतटे विराजते।|Assam state|Northeastern state of the Brahmaputra.
+जोडो|मणिपुरम्|मणिपुरम्|म,ण,ि,प,ु,रम्,क|मणिपुरं रम्यं राज्यम् अस्ति।|Manipur state|Jeweled land in the Northeast.
+जोडो|मेघालयः|मेघालयः|म,े,घ,ा,ल,यः|मेघालयः मेघानाम् आलयः अस्ति।|Meghalaya state|Abode of the clouds.
+जोडो|मिजोरमः|मिजोरमः|म,ि,ज,ो,र,मः|मिजोरमः पर्वतप्रदेशः अस्ति।|Mizoram state|Land of rolling hills.
+जोडो|नागालैण्डम्|नागालैण्डम्|न,ा,ग,ा,ल,ै,ण,्,डम्|नागालैण्डं पूर्वोत्तरे अस्ति।|Nagaland state|Home of vibrant festivals.
+जोडो|त्रिपुरा|त्रिपुरा|त,्,र,ि,प,ु,र,ा|त्रिपुरा सुन्दरं राज्यम् अस्ति।|Tripura state|Rich historical northeastern realm.
+जोडो|वंशवृक्षः|वंशवृक्षः|व,ं,श,व,ृ,क,्,षः|पूर्वोत्तरे वंशवृक्षाणां प्राचुर्यम्।|bamboo tree|Abundant bamboo groves.
+जोडो|हस्तशिल्पम्|हस्तशिल्पम्|ह,स,्,त,श,ि,ल,्,पम्|हस्तशिल्पस्य बाहुल्यं वर्तते।|handicraft|Artisanal craft of cane and bamboo.
+जोडो|कोऽरुक्|कोऽरुक्|क,ो,ऽ,र,ु,क्,स|कोऽरुक् इति शुकः अपृच्छत्।|Who is healthy / disease-free?|Ayurvedic health riddle.
+जोडो|धन्वन्तरिः|धन्वन्तरिः|ध,न,्,व,न,्,त,र,िः|धन्वन्तरिः आयुर्वेदस्य देवः अस्ति।|Lord Dhanvantari|Divine physician and founder of Ayurveda.
+जोडो|वाग्भटः|वाग्भटः|व,ा,ग,्,भ,टः,स,म|वाग्भटः महान् वैद्यः आसीत्।|Physician Vagbhata|Author of Ashtanga Hridaya.
+जोडो|शुकः|शुकः|श,ु,कः,प,त,म|शुकः मधुरं वदति।|parrot|Bird speaking human words.
+जोडो|हितभुक्|हितभुक्|ह,ि,त,भ,ु,क्,स|हितभुक् स्वास्थ्यं रक्षति।|one who eats wholesome food|Consumer of nutritious food.
+जोडो|मितभुक्|मितभुक्|म,ि,त,भ,ु,क्,स|मितभुक् मात्रानुसारं खादति।|one who eats moderate quantity|Consumer of measured portions.
+जोडो|ऋतुभुक्|ऋतुभुक्|ऋ,त,ु,भ,ु,क्,स|ऋतुभुक् ऋत्वनुकूलं भोजनं करोति।|one who eats seasonal food|Consumer of seasonally compatible diet.
+जोडो|निरामयाः|निरामयाः|न,ि,र,ा,म,य,ाः|सर्वे सन्तु निरामयाः।|free from illness / healthy|May all remain disease-free.
+जोडो|बुभुक्षा|बुभुक्षा|ब,ु,भ,ु,क,्,ष,ा|बुभुक्षायाम् एव भोजनं कुर्यात्।|hunger / desire to eat|Eat only when truly hungry.
+जोडो|चरकः|चरकः|च,र,कः,प,स,त|महर्षिः चरकः हितभुक् वदति।|Sage Charaka|Ancient master physician.
+जोडो|व्यायामः|व्यायामः|व,्,य,ा,य,ा,मः|प्रातरुत्थाय व्यायामः करणीयः।|exercise / physical drill|Daily morning exercise.
+# ========================================================
+# GRADE 8 DEEPAKAM VOCABULARY TILES (Chapter 10: वीरवरकथा)
+# ========================================================
+जोडो|शूद्रकः|शूद्रकः|श,ू,द,्,र,कः,प|शूद्रकः महापराक्रमी राजा आसीत्।|King Shudraka|Valiant king of Shobhavati.
+जोडो|वीरवरः|वीरवरः|व,ी,र,व,रः,क,प|वीरवरः कर्तव्यनिष्ठः राजपुत्रः आसीत्।|Prince Viravara|Devoted hero of the Hitopadesha.
+जोडो|शोभावती|शोभावती|श,ो,भ,ा,व,त,ी|शोभावती नाम काचन नगरी आसीत्।|city of Shobhavati|Flourishing capital of King Shudraka.
+जोडो|वेदरता|वेदरता|व,े,द,र,त,ा,क|वेदरता वीरवरस्य पत्नी आसीत्।|Vedarata|Noble and devoted wife of Viravara.
+जोडो|शक्तिधरः|शक्तिधरः|श,क,्,त,ि,ध,रः|शक्तिधरः वीरवरस्य सुतः आसीत्।|Shaktidhara|Virtuous young son of Viravara.
+जोडो|वीरवती|वीरवती|व,ी,र,व,त,ी,क|वीरवती वीरवरस्य कन्या आसीत्।|Viravati|Beloved daughter of Viravara.
+जोडो|राजद्वारम्|राजद्वारम्|र,ा,ज,द,्,व,ा,रम्|वीरवरः राजद्वारम् अहर्निशं रक्षति।|palace gateway|Royal gate guarded day and night.
+जोडो|दौवारिकः|दौवारिकः|द,ौ,व,ा,र,ि,कः|दौवारिकः वीरवरं राज्ञः समीपम् अनयत्।|doorkeeper / gatekeeper|Sentry escorting visitors to the court.
+जोडो|राजलक्ष्मीः|राजलक्ष्मीः|र,ा,ज,ल,क,्,ष,्,म,ीः|अहं शूद्रकस्य राजलक्ष्मीरस्मि।|Goddess of Royal Fortune|Sovereign prosperity of the realm.
+जोडो|सर्वमङ्गला|सर्वमङ्गला|स,र,्,व,म,ङ,्,ग,ल,ा|भगवत्यै सर्वमङ्गलायै उपहारः देयः।|Goddess Sarvamangala|Auspicious Goddess Durga.
+जोडो|स्वामिभक्तिः|स्वामिभक्तिः|स,्,व,ा,म,ि,भ,क,्,त,िः|वीरवरस्य स्वामिभक्तिः अनुकरणीया।|loyalty to one's master|Supreme dedication to duty.
+जोडो|सुवर्णशतम्|सुवर्णशतम्|स,ु,व,र,्,ण,श,तम्|सुवर्णशतचतुष्टयं प्रतिदिनं वर्तनम्।|hundreds of gold coins|Royal wage requested by Viravara.
+# ========================================================
+# GRADE 8 DEEPAKAM VOCABULARY TILES (Chapter 11: सन्निमित्ते त्यागः ख)
+# ========================================================
+जोडो|सन्निमित्ते|सन्निमित्ते|स,न,्,न,ि,म,ि,त,्,त,े|सन्निमित्ते वरं त्यागः।|for a noble cause|Sacrifice for a righteous purpose.
+जोडो|परार्थे|परार्थे|प,र,ा,र,्,थ,े|परार्थे प्राज्ञः जीवनं त्यजेत्।|for the sake of others|Selfless altruistic welfare.
+जोडो|प्राज्ञः|प्राज्ञः|प,्,र,ा,ज,्,ञः,क|प्राज्ञः धीमान् जनः अस्ति।|wise person|One endowed with supreme wisdom.
+जोडो|उत्सृजेत्|उत्सृजेत्|उ,त,्,स,ृ,ज,े,त्|धनानि जीवितञ्चैव उत्सृजेत्।|should sacrifice / give up|Righteous relinquishment.
+जोडो|भृत्यवात्सल्यम्|भृत्यवात्सल्यम्|भ,ृ,त,्,य,व,ा,त,्,स,ल,्,यम्|राज्ञः भृत्यवात्सल्यं प्रशंसनीयम्।|affection toward servant|Compassionate paternal love for servant.
+जोडो|सत्त्वोत्कर्षः|सत्त्वोत्कर्षः|स,त,्,त,्,व,ो,त,्,क,र,्,षः|शूद्रकस्य सत्त्वोत्कर्षः महान्।|excellence of spiritual purity|Pinnacle of noble virtue and purity.
+जोडो|कर्णाटप्रदेशः|कर्णाटप्रदेशः|क,र,्,ण,ा,ट,प,्,र,द,े,शः|समग्रकर्णाटप्रदेशं वीरवराय अयच्छत्।|Karnataka territory|The southern realm bestowed upon Viravara.
+जोडो|राज्यभङ्गः|राज्यभङ्गः|र,ा,ज,्,य,भ,ङ,्,गः|नेदानीं राज्यभङ्गस्ते भविष्यति।|ruin / downfall of kingdom|Destruction of sovereign realm.
+जोडो|प्रत्यक्षीभूता|प्रत्यक्षीभूता|प,्,र,त,्,य,क,्,ष,ी,भ,ू,त,ा|भगवती सर्वमङ्गला प्रत्यक्षीभूता।|becoming visibly manifest|Divine revelation of the Goddess.
+जोडो|निस्तारः|निस्तारः|न,ि,स,्,त,ा,रः,क|गृहीतस्वामिवर्तनस्य निस्तारः जातः।|repayment of debt / release|Redemption from master's wage obligation.
+जोडो|निद्रालसाम्|निद्रालसाम्|न,ि,द,्,र,ा,ल,स,ाम्|निद्रालसां पत्नीं प्राबोधयत्।|languid with sleep|Waking from peaceful slumber.
+जोडो|क्षुद्रजन्तवः|क्षुद्रजन्तवः|क,्,ष,ु,द,्,र,ज,न,्,त,वः|मादृशाः क्षुद्रजन्तवः जायन्ते म्रियन्ते च।|insignificant creatures|Mortal beings born and perishing constantly.
+
+
+
+# ========================================================
+# GRADE 8 DEEPAKAM VOCABULARY TILES (Chapter 12: सम्यग्वर्णप्रयोगेण)
+# ========================================================
+जोडो|ब्रह्मलोकः|ब्रह्मलोकः|ब,्,र,ह,्,म,ल,ो,कः|सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते।|abode of Brahma|The highest spiritual realm attained by pristine speech.
+जोडो|व्याघ्री|व्याघ्री|व,्,य,ा,घ,्,र,ी,क|व्याघ्री यथा हरेत्पुत्रान् दंष्ट्राभ्याम्।|tigress|Maternal tigress carrying her cubs safely.
+जोडो|इन्द्रशत्रुः|इन्द्रशत्रुः|इ,न,्,द,्,र,श,त,्,र,ुः|इन्द्रशत्रुर्वर्धस्व इति आहुतिमन्त्रः आसीत्।|slayer of Indra / Indra's enemy|Vritrasura who mispronounced the sacrificial mantra.
+जोडो|ऋत्विजः|ऋत्विजः|ऋ,त,्,व,ि,जः,प,स|ऋत्विजः मन्त्रे स्वरपरिवर्तनम् अकुर्वन्।|sacrificial priests|Priests conducting the solemn Vedic yajna.
+जोडो|अक्षरव्यक्तिः|अक्षरव्यक्तिः|अ,क,्,ष,र,व,्,य,क,्,त,िः|अक्षरव्यक्तिः पाठकस्य श्रेष्ठः गुणः।|distinct articulation of letters|Clear and distinct utterance of phonemes.
+जोडो|सुस्वरः|सुस्वरः|स,ु,स,्,व,रः,क,प|माधुर्यम् अक्षरव्यक्तिः पदच्छेदस्तु सुस्वरः।|melodious pleasing tone|Pleasing and harmonious voice modulation.
+जोडो|पदच्छेदः|पदच्छेदः|प,द,च,्,छ,े,दः,क|श्लोकवाचने उचितः पदच्छेदः आवश्यकः।|separation of words|Proper pause and splitting between adjacent words.
+जोडो|शिरःकम्पी|शिरःकम्पी|श,ि,रः,क,म,्,प,ी,त|गीती शीघ्री शिरःकम्पी च पाठकाधमः।|head-shaker|Defective reader who shakes head excessively while reciting.
+जोडो|लिखितपाठकः|लिखितपाठकः|ल,ि,ख,ि,त,प,ा,ठ,कः|लिखितपाठकः अधमपाठकः गण्यते।|verbatim paper-reader|Reader who recites only by staring rigidly at written text.
+जोडो|अनर्थज्ञः|अनर्थज्ञः|अ,न,र,्,थ,ज,्,ञः,क|अनर्थज्ञः श्लोकस्य अर्थं न जानाति।|ignorant of the meaning|Reciter who chants without comprehending word sense.
+जोडो|वेदाङ्गम्|वेदाङ्गम्|व,े,द,ा,ङ,्,गम्,प|वेदानां षट् अङ्गानि वेदाङ्गानि कथ्यन्ते।|limb of the Veda|Six ancillary disciplines auxiliary to Vedic studies.
+जोडो|व्याकरणम्|व्याकरणम्|व,्,य,ा,क,र,णम्,स|मुखं व्याकरणं स्मृतं वेदपुरुषस्य।|science of grammar|Regarded as the mouth and face of the personified Veda.
+
+# ========================================================
+# GRADE 8 DEEPAKAM VOCABULARY TILES (Chapter 13: वर्णोच्चारण-शिक्षा १)
+# ========================================================
+जोडो|ध्वनितन्त्रम्|ध्वनितन्त्रम्|ध,्,व,न,ि,त,न,्,त,्,रम्|कण्ठबिलः ध्वनि-तन्त्रम् अस्ति।|phonatory system|Laryngeal sound producing system.
+जोडो|कण्ठबिलम्|कण्ठबिलम्|क,ण,्,ठ,ब,ि,लम्,प|वायुः कण्ठबिलं प्राप्य आस्ये प्रविशति।|larynx / voice-box|Voice-box through which vocal air passes.
+जोडो|नाभिप्रदेशः|नाभिप्रदेशः|न,ा,भ,ि,प,्,र,द,े,शः|नाभिप्रदेशे मांसपेशीबलतन्त्रं भवति।|navel region|Abdominal area initiating voice pressure.
+जोडो|उरः|उरः|उ,रः,प,स,क,त|उरः वायुबलतन्त्रं श्वासकोशयुक्तं भवति।|chest / thorax|Thoracic air-pressure organ containing lungs.
+जोडो|स्थानम्|स्थानम्|स,्,थ,ा,नम्,प,स|आस्ये षट् उच्चारणस्थानानि सन्ति।|place of articulation|Fixed point where speech sounds manifest.
+जोडो|करणम्|करणम्|क,र,णम्,प,स,त|स्थानं स्पृशन् भागः करणं भवति।|active tool of articulation|Dynamic articulator moving toward a place.
+जोडो|मुरली|मुरली|म,ु,र,ल,ी,क,प|स्थाननिदर्शनार्थं मुरली समुचितम् उदाहरणम्।|flute|Wind instrument exemplifying speech acoustics.
+जोडो|अङ्गुलयः|अङ्गुलयः|अ,ङ,्,ग,ु,ल,यः,प|मुरल्याः अङ्गुलयः करणानि इव सन्ति।|fingers|Playing fingers acting like mobile articulators.
+जोडो|जिह्वाग्रम्|जिह्वाग्रम्|ज,ि,ह,्,व,ा,ग,्,रम्|दन्त्यवर्णानाम् उच्चारणे जिह्वाग्रं करणम्।|tip of the tongue|Foremost tip of tongue for dental sounds.
+जोडो|जिह्वामध्यम्|जिह्वामध्यम्|ज,ि,ह,्,व,ा,म,ध,्,यम्|तालव्येषु जिह्वामध्यं करणं भवति।|middle of the tongue|Central surface of tongue for palatal sounds.
+जोडो|स्वस्थानम्|स्वस्थानम्|स,्,व,स,्,थ,ा,नम्|ओष्ठ्यवर्णानां स्वस्थानम् एव करणम्।|one's own organ place|Self-tooling organ region for speech sound.
+जोडो|ओष्ठः|ओष्ठः|ओ,ष,्,ठः,क,प,स|मुखस्य बाह्यतमं स्थानम् ओष्ठः अस्ति।|lip|Outermost articulatory organ of the oral tract.
+
+# ========================================================
+# GRADE 8 DEEPAKAM VOCABULARY TILES (Appendix 1: व्याकरणम्)
+# ========================================================
+जोडो|उपसर्गः|उपसर्गः|उ,प,स,र,्,गः,क|द्वाविंशतिः उपसर्गाः सन्ति।|prefix|Verbal prefix altering root meaning.
+जोडो|प्रत्ययः|प्रत्ययः|प,्,र,त,्,य,यः,स|धातोः परं प्रत्ययः योज्यते।|suffix|Affix attached after verbal roots.
+जोडो|क्त्वा|क्त्वा|क,्,त,्,व,ा,प,स|बालकः पठित्वा लिखति।|having done (suffix)|Prior sequential action participle suffix.
+जोडो|ल्यप्|ल्यप्|ल,्,य,प,्,क,त|शिष्यः प्रणम्य पठति।|having done (prefix suffix)|Prefix-bound replacement for ktva suffix.
+जोडो|तुमुन्|तुमुन्|त,ु,म,ु,न,्,प,स|पठितुं विद्यालयं गच्छति।|in order to (suffix)|Infinitive suffix denoting purpose.
+जोडो|क्तवतु|क्तवतु|क,्,त,व,त,ु,प,स|सः कार्यं कृतवान्।|having done (past participle)|Past active participial suffix across three genders.
+जोडो|कारकम्|कारकम्|क,ा,र,कम्,प,स,त|क्रियान्वयि कारकं भवति।|case / syntactic governor|Direct syntactic relation between noun and action.
+जोडो|सम्प्रदानम्|सम्प्रदानम्|स,म,्,प,्,र,द,ा,नम्|दानस्य पात्रं सम्प्रदानं भवति।|dative case / recipient|Recipient or beneficiary in giving action.
+जोडो|अपादानम्|अपादानम्|अ,प,ा,द,ा,नम्,स|वृक्षात् पत्रं पतति।|ablative case / separation|Point of departure or separation.
+जोडो|उपपदम्|उपपदम्|उ,प,प,दम्,प,स,त|विशेषपदयोगे उपपदविभक्तिः भवति।|secondary governing word|Case assigned due to proximity of a specific word.
+जोडो|अयादिः|अयादिः|अ,य,ा,द,िः,क,प|शे अधिक अनम् शयनम् अयादिसन्धिः।|ayadi sandhi|Sandhi substituting ay, av, aay, aav.
+जोडो|पूर्वरूपम्|पूर्वरूपम्|प,ू,र,्,व,र,ू,पम्|ते अधिक अपि तेऽपि पूर्वरूपम्।|purvarupa sandhi|Sandhi preserving preceding vowel with avagraha.

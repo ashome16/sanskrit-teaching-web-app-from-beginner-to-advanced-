@@ -1,0 +1,149 @@
+# चिह्न-परिचयः · The Sacred Symbols of Sanskrit
+## Understanding Daṇḍa (।), Double Daṇḍa (॥), Avagraha (ऽ), and Traditional Script Marks
+
+When reading Sanskrit texts, ancient manuscripts, and CBSE textbook verses, you immediately notice unique marks and punctuation symbols that do not exist in modern English.
+
+Unlike Western punctuation (commas, semicolons, exclamation marks, and question marks) which were introduced in modern printing, classical Sanskrit relies on an elegant, rhythmic system of punctuation perfectly suited for both musical recitation (छन्दः) and scientific prose.
+
+Let us explore each symbol, its Sanskrit name, its visual form, and its grammatical role!
+
+---
+
+## 1. पूर्णविरामः / एकदण्डः — The Single Daṇḍa (। )
+
+- **Visual Symbol:** `।` (a single vertical line)
+- **Sanskrit Term:** पूर्णविरामः (Pūrṇavirāmaḥ) or एकदण्डः (Eka-daṇḍaḥ)
+- **Literal Meaning:** "Daṇḍa" means a staff or stick; "Pūrṇavirāma" means complete pause or full stop.
+
+### Roles & Function:
+1. **In Prose (गद्यम्):** It functions exactly like a full stop / period in English. When a grammatical sentence finishes, it ends with a single Daṇḍa.
+   - Example: `अस्माकं देशः भारतवर्षम् अस्ति।` (Our country is Bharatvarsha.)
+2. **In Metrical Poetry / Shlokas (पद्यम्):** Sanskrit verses are divided into metric quarters (पादाः) and two halves (अर्ध-श्लोकः). A single Daṇḍa marks the **end of the first half (the first two quarters)**. It signals to the chanter to take a brief, measured breath before reciting the second half.
+   - Example:
+     `यस्याः मस्तके हिमालयः मुकुटरूपेण शोभते।` (Halfway pause with single Daṇḍa)
+     `तस्यै भारतमात्रे नमः॥` (Full conclusion with double Daṇḍa)
+
+---
+
+## 2. द्विदण्डः / महाविरामः — The Double Daṇḍa (॥ )
+
+- **Visual Symbol:** `॥` (two parallel vertical lines)
+- **Sanskrit Term:** द्विदण्डः (Dvi-daṇḍaḥ) or महाविरामः (Mahāvirāmaḥ)
+- **Literal Meaning:** "Double staff" or "Great pause".
+
+### Roles & Function:
+1. **Full Verse Completion:** Marks the absolute end of a complete shloka or poetic stanza.
+2. **Section & Chapter Endings:** Marks the end of a major section, prayer, or narrative chapter.
+3. **Bracketing Shloka Numbers:** Traditional manuscripts place the verse number between double daṇḍas.
+   - Example: `॥ १ ॥` (Verse 1), `॥ १२ ॥` (Verse 12).
+   - Complete Shloka Example:
+     `वन्दे भारतमातरम्, सुजलां सुफलां मातरम्।`
+     `शुभ्रज्योत्स्ना-पुलकित-यामिनीम्, वन्दे भारतमातरम्॥ १ ॥`
+
+---
+
+## 3. अवग्रहः — The Avagraha (ऽ )
+
+- **Visual Symbol:** `ऽ` (resembles the English letter 'S')
+- **Sanskrit Term:** अवग्रहः (Avagrahaḥ)
+- **Literal Meaning:** "Separator" or "Grasper" (holding the place of an elided sound).
+
+### Roles & Function:
+1. **The Placeholder for Elided 'अ' (Pūrvarūpa Sandhi):**
+   In Sanskrit Sandhi, when a word ending in **ए** or **ओ** is followed by a word beginning with a short **अ**, the short 'अ' gets absorbed (elided) into the preceding vowel according to the Pāṇinian rule *एङः पदान्तादति (६.१.१०९)*.
+   To indicate in writing that an 'अ' originally belonged there, scribes write the symbol `ऽ` (Avagraha).
+2. **Formula & Real Examples:**
+   - `कः + अपि` → `कोऽपि` (ko'pi — anyone / someone)
+   - `सः + अपि` → `सोऽपि` (so'pi — he too)
+   - `वने + अस्ति` → `वनेऽस्ति` (vane'sti — is in the forest)
+   - `शिवे + अर्चनम्` → `शिवेऽर्चनम्` (śive'rcanam — worship of Shiva)
+3. **Pronunciation Rule:**
+   Do **NOT** pronounce `ऽ` as an English "S" or "Sa"!
+   In oral chanting, the preceding vowel is held smoothly for an extra instant or pronounced as a gentle glottal continuation (e.g. `ko-pi`, not `ko-s-pi`).
+
+---
+
+## 4. अनुस्वारः — The Anusvāra (ं )
+
+- **Visual Symbol:** `ं` (a single dot placed above the shiro-rekhā header)
+- **Sanskrit Term:** अनुस्वारः (Anusvāraḥ)
+- **Literal Meaning:** "Following sound" (an / am).
+
+### Roles & Function:
+1. Replaces a final `म्` (Halanta Makāra) when the next word begins with any consonant (*मोऽनुस्वारः - ८.३.२३*).
+   - Example: `सत्यम् + वद` → `सत्यं वद` (Speak the truth).
+2. The dot takes on the nasal color of whatever consonant class follows:
+   - Before guttural (क-वर्ग): sounds like `ङ` (e.g. `गङ्गा` or `गंगा`).
+   - Before palatal (च-वर्ग): sounds like `ञ` (e.g. `चञ्चल` or `चंचल`).
+   - Before retroflex (ट-वर्ग): sounds like `ण` (e.g. `घण्टा` or `घंटा`).
+   - Before dental (त-वर्ग): sounds like `न` (e.g. `दन्त` or `दंत`).
+   - Before labial (प-वर्ग): sounds like `म` (e.g. `सम्पत्ति` or `संपत्ति`).
+
+---
+
+## 5. विसर्गः — The Visarga (ः )
+
+- **Visual Symbol:** `ः` (two stacked vertical dots)
+- **Sanskrit Term:** विसर्गः (Visargaḥ)
+- **Literal Meaning:** "Emission" or "Discharge" of breath.
+
+### Roles & Function:
+1. Produces a breathy, unvoiced aspiration that echoes the vowel immediately preceding it:
+   - After **अ**: sounds like a breathy *'aha'* (e.g. `रामः` → *rāma-ha*).
+   - After **इ**: sounds like a breathy *'ihi'* (e.g. `हरिः` → *hari-hi*).
+   - After **उ**: sounds like a breathy *'uhu'* (e.g. `गुरुः` → *guru-hu*).
+   - After **ए**: sounds like a breathy *'ehe'* (e.g. `कवेः` → *kave-he*).
+2. Essential for masculine and neuter noun declensions (प्रथमा विभक्तिः).
+
+---
+
+## 6. हलन्तम् / विरामः — The Halanta / Virāma (् )
+
+- **Visual Symbol:** `्` (a small downward slash beneath a consonant)
+- **Sanskrit Term:** हलन्तम् (Halantam) or विरामः (Virāmaḥ)
+- **Literal Meaning:** "Ending in Hal (a consonant)" or "Cessation of the inherent vowel".
+
+### Roles & Function:
+1. Every Sanskrit Devanagari consonant naturally carries the inherent vowel 'a' (अ): `क` = `क् + अ`.
+2. When the Halanta mark is attached, the vowel 'a' is suppressed, turning it into a pure consonant:
+   - `क्` (k), `त्` (t), `न्` (n), `म्` (m).
+3. Used when forming conjunct letters (संयुक्ताक्षराणि) like `क् + ष` = `क्ष`, `ज् + ञ` = `ज्ञ`.
+
+---
+
+## 7. अनुनासिकः / चन्द्रबिन्दु — The Chandrabindu (ँ )
+
+- **Visual Symbol:** `ँ` (crescent moon with a central dot)
+- **Sanskrit Term:** अनुनासिकः (Anunāsikaḥ) or चन्द्रबिन्दुः (Candrabinduḥ)
+- **Literal Meaning:** "Through the nose" or "Moon dot".
+
+### Roles & Function:
+1. Marks a vowel where breath flows simultaneously through the mouth and nose.
+2. Frequently found in Vedic Sanskrit, mantra recitation, and Sandhi rules involving 'ल' (*तोरली - ८.४.६०*, e.g., `विद्वान् + लिखति` → `विद्वाँल्लिखति`).
+
+---
+
+## 8. प्रणवः / ओङ्कारः — The Sacred Syllable Om (ॐ )
+
+- **Visual Symbol:** `ॐ`
+- **Sanskrit Term:** प्रणवः (Praṇavaḥ) or ओंकारः (Oṅkāraḥ)
+- **Components:** Composed of three phonetic sounds: **अ** (A), **उ** (U), and **म्** (M), topped by the crescent Chandrabindu representing transcendental consciousness.
+
+### Roles & Function:
+1. Invocatory symbol placed at the very start of sacred scriptures, Vedic chanting, prayers, and chapter titles.
+2. Signifies peace, auspicious beginning (मङ्गलाचरणम्), and the primordial resonance of the universe.
+
+---
+
+## Quick Reference Summary Table
+
+| चिह्नम् (Symbol) | नाम (Name) | प्राथमिकं कार्यम् (Primary Role) | उदाहरणम् (Example) |
+| :---: | :---: | :--- | :--- |
+| **।** | पूर्णविरामः / एकदण्डः | Sentence end in prose; half-verse pause in shlokas | `सत्यं वद।` |
+| **॥** | द्विदण्डः / महाविरामः | Full shloka completion; chapter end; verse numbering | `धर्मं चर॥ १ ॥` |
+| **ऽ** | अवग्रहः | Placeholder for absorbed short 'अ' in Sandhi | `कोऽपि (कः + अपि)` |
+| **ं** | अनुस्वारः | Nasal dot replacing 'म्' before consonants | `विद्यां ददाति` |
+| **ः** | विसर्गः | Echoed breath aspiration | `देवः, मुनिः, भानुः` |
+| **्** | हलन्तम् / विरामः | Strips the inherent 'a' vowel from consonants | `जगत्, भगवान्` |
+| **ँ** | अनुनासिकः / चन्द्रबिन्दु | Simultaneous mouth and nasal resonance | `विद्वाँल्लिखति` |
+| **ॐ** | प्रणवः / ओंकारः | Sacred auspicious invocation | `ॐ शान्तिः शान्तिः` |

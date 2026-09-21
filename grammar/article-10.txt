@@ -1,0 +1,79 @@
+# Sanskrit Lesson: Understanding Vibhaktis (Case Endings)
+## Master the 8 Sanskrit noun cases, kāraka roles, suffixes, and memory trick with Bālaka
+
+In English, we use prepositions (like to, by, for, from, of, in) to show how a noun relates to a verb.
+Example: The boy goes to the school.
+
+In Sanskrit, instead of separate words, we change the ending of the noun itself. These case endings are called विभक्ति (Vibhakti). There are 8 Vibhaktis in Sanskrit, and each corresponds to a specific role in a sentence, known as a कारक (Kāraka).
+
+Let us learn them using a standard masculine noun ending in "a": बालक (Bālaka - Boy).
+
+## 1. प्रथमा विभक्ति (Prathamā Vibhakti) — Nominative Case
+- Role (कारक): कर्ता (Kartā) — The Subject (The doer of the action).
+- English Indicator: No preposition (The / A).
+- Singular Suffix: -ः (-aḥ)
+- Example Word: बालकः (Bālakaḥ) — The boy.
+- Sentence: बालकः पठति। (Bālakaḥ paṭhati.) = The boy reads.
+
+## 2. द्वितीया विभक्ति (Dvitīyā Vibhakti) — Accusative Case
+- Role (कारक): कर्मन् (Karman) — The Direct Object (The recipient or target of the action).
+- English Indicator: To / Whom / What.
+- Singular Suffix: -म् (-am)
+- Example Word: बालकम् (Bālakam) — To the boy (or just the boy as an object).
+- Sentence: जनकः बालकम् पश्यति। (Janakaḥ bālakam paśyati.) = Father sees the boy.
+
+## 3. तृतीया विभक्ति (Tṛtīyā Vibhakti) — Instrumental Case
+- Role (कारक): करणम् (Karaṇam) — The Instrument (By means of what or with whom the action is done).
+- English Indicator: By / With.
+- Singular Suffix: -एण (-ena)
+- Example Word: बालकेन (Bālakena) — By/With the boy.
+- Sentence: शिक्षकः बालकेन सह गच्छति। (Śikṣakaḥ bālakena saha gacchati.) = The teacher goes with the boy.
+
+## 4. चतुर्थी विभक्ति (Caturthī Vibhakti) — Dative Case
+- Role (कारक): सम्प्रदानम् (Sampradānam) — The Recipient / Purpose (For whom something is given or done).
+- English Indicator: For / To.
+- Singular Suffix: -ाय (-āya)
+- Example Word: बालकाय (Bālakāya) — For the boy.
+- Sentence: माता बालकाय फलम् ददाति। (Mātā bālakāya phalam dadāti.) = Mother gives a fruit to/for the boy.
+
+## 5. पञ्चमी विभक्ति (Pañcamī Vibhakti) — Ablative Case
+- Role (कारक): अपादानम् (Apādānam) — Separation or Origin (Indicating where something moves away from).
+- English Indicator: From.
+- Singular Suffix: -आत् (-āt)
+- Example Word: बालकात् (Bālakāt) — From the boy.
+- Sentence: कन्दुकः बालकात् पतति। (Kandukaḥ bālakāt patati.) = The ball falls from the boy.
+
+## 6. षष्ठी विभक्ति (Ṣaṣṭhī Vibhakti) — Genitive Case
+- Role (कारक): सम्बन्धः (Sambandhaḥ) — Possession or Relationship (Not technically a Kāraka, but connects two nouns).
+- English Indicator: Of / 's.
+- Singular Suffix: -स्य (-asya)
+- Example Word: बालकस्य (Bālakasya) — Of the boy / Boy's.
+- Sentence: एतत् बालकस्य पुस्तकम्। (Etat bālakasya pustakam.) = This is the boy's book.
+
+## 7. सप्तमी विभक्ति (Saptamī Vibhakti) — Locative Case
+- Role (कारक): अधिकरणम् (Adhikaraṇam) — The Location or Time (Where or when the action takes place).
+- English Indicator: In / On / At.
+- Singular Suffix: -ए (-e)
+- Example Word: बालके (Bālake) — In/On the boy.
+- Sentence: बालके उत्तमः गुणः अस्ति। (Bālake uttamaḥ guṇaḥ asti.) = A good quality exists in the boy.
+
+## 8. सम्बोधन विभक्ति (Sambodhana Vibhakti) — Vocative Case
+- Role (कारक): आह्वानम् (Āhvānam) — Addressing or calling out to someone.
+- English Indicator: O! / Hey!
+- Singular Prefix/Suffix: हे ... ! (He ... !) (Drops the base visarga)
+- Example Word: हे बालक! (He bālaka!) — O Boy!
+- Sentence: हे बालक! अत्र आगच्छ। (He bālaka! atra āgaccha.) = O Boy! Come here.
+
+## 💡 Quick Memory Trick Table (Masculine Singular)
+| Vibhakti (Case) | English Indicator | Suffix Sound | Example Word |
+| 1. Prathamā (प्रथमा) | (Subject) | -aḥ (ः) | बालकः (Bālakaḥ) |
+| 2. Dvitīyā (द्वितीया) | To / Object | -am (म्) | बालकम् (Bālakam) |
+| 3. Tṛtīyā (तृतीया) | By / With | -ena (एण) | बालकेन (Bālakena) |
+| 4. Caturthī (चतुर्थी) | For / To | -āya (ाय) | बालकाय (Bālakāya) |
+| 5. Pañcamī (पञ्चमी) | From | -āt (आत्) | बालकात् (Bālakāt) |
+| 6. Ṣaṣṭhī (षष्ठी) | Of / 's | -asya (स्य) | बालकस्य (Bālakasya) |
+| 7. Saptamī (सप्तमी) | In / On / At | -e (ए) | बालके (Bālake) |
+| 8. Sambodhana (सम्बोधन) | O! / Hey! | He ... ! | हे बालक! (He bālaka!) |
+
+## Practical Takeaway
+By memorizing this single suffix series — -aḥ, -am, -ena, -āya, -āt, -asya, -e, He ... ! — you unlock thousands of Sanskrit masculine nouns ending in "a", including राम (Rāma), गज (Elephant), अश्व (Horse), देव (Deity), and वानर (Monkey). You can practice this anytime with the interactive Vibhakti Quiz and printable Worksheet!
