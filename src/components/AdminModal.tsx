@@ -12,6 +12,7 @@ const AdminModal: React.FC = () => {
     adminLogout,
     getAllAccountsList,
     setUserPlanStatus,
+    adminResetUserPassword,
     deleteUserAccountByAdmin,
     approveTransaction,
     rejectTransaction,
@@ -436,6 +437,34 @@ const AdminModal: React.FC = () => {
                                     onClick={() => setUserPlanStatus(acc.profile.id, 'trial', 14)}
                                   >
                                     Trial
+                                  </button>
+                                  <button
+                                    type="button"
+                                    className="admin-btn-action"
+                                    title="End trial / mark expired"
+                                    onClick={() => setUserPlanStatus(acc.profile.id, 'expired')}
+                                  >
+                                    Expire
+                                  </button>
+                                  <button
+                                    type="button"
+                                    className="admin-btn-action"
+                                    title="Reset password for this student"
+                                    onClick={() => {
+                                      const pw = window.prompt(
+                                        `Set a new password for ${acc.profile.fullName} (@${acc.profile.username}):`,
+                                        ''
+                                      );
+                                      if (pw == null) return;
+                                      const res = adminResetUserPassword(acc.profile.id, pw);
+                                      if (res.success) {
+                                        window.alert('Password updated for this student.');
+                                      } else {
+                                        window.alert(res.error || 'Could not reset password.');
+                                      }
+                                    }}
+                                  >
+                                    🔑 Reset PW
                                   </button>
                                 </div>
                               </td>

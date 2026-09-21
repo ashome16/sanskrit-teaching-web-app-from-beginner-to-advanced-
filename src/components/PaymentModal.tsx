@@ -34,6 +34,7 @@ const PaymentModal: React.FC = () => {
     submitManualUpiPayment,
     upiVpa: storeUpiVpa,
     upiPayeeName: storeUpiPayee,
+    isAdminLoggedIn,
   } = useAuthStore();
 
   const [utrNumber, setUtrNumber] = useState('');
@@ -42,6 +43,7 @@ const PaymentModal: React.FC = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [pendingTxn, setPendingTxn] = useState<PaymentTransaction | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [adminPreviewUpi, setAdminPreviewUpi] = useState(false);
 
   if (!isPaymentModalOpen) return null;
 
@@ -59,6 +61,10 @@ const PaymentModal: React.FC = () => {
           year: 'numeric',
         })
       : '';
+
+  /** Admin can preview the real UPI form during trial without activating Premium. */
+  const showTrialGate = trialActive && !(isAdminLoggedIn && adminPreviewUpi);
+  const isAdminUpiPreview = trialActive && isAdminLoggedIn && adminPreviewUpi;
 
   const handleCopyUpi = async () => {
     try {
@@ -127,6 +133,7 @@ const PaymentModal: React.FC = () => {
     setIsProcessing(false);
     setDesktopPayTip(false);
     setUtrNumber('');
+    setAdminPreviewUpi(false);
     closePaymentModal();
   };
 
@@ -175,7 +182,7 @@ const PaymentModal: React.FC = () => {
                 Create an account first
               </h2>
             </>
-          ) : trialActive ? (
+          ) : showTrialGate ? (
             <>
               <span className="payment-plan-badge">🎉 Free Trial Active</span>
               <h2 id="payment-modal-title" className="payment-modal-title">
@@ -184,9 +191,11 @@ const PaymentModal: React.FC = () => {
             </>
           ) : (
             <>
-              <span className="payment-plan-badge">🌟 All-Access Monthly Pass</span>
+              <span className="payment-plan-badge">
+                {isAdminUpiPreview ? '🛠 Admin UPI Preview' : '🌟 All-Access Monthly Pass'}
+              </span>
               <h2 id="payment-modal-title" className="payment-modal-title">
-                Unlock Full Sanskrit Platform
+                {isAdminUpiPreview ? 'Preview UPI pay form' : 'Unlock Full Sanskrit Platform'}
               </h2>
 
               <div className="payment-modal-price-row">
@@ -194,7 +203,9 @@ const PaymentModal: React.FC = () => {
                 <span className="payment-price-period">/ month</span>
               </div>
               <p className="payment-trial-note">
-                Includes all 15 CBSE/NCERT Class 7 Chapters, 5,800+ audio glosses, Jodo Puzzles, and Vedic Mathematics!
+                {isAdminUpiPreview
+                  ? 'Admin preview only — does not charge; Premium still needs real UTR + approve (or Razorpay later).'
+                  : 'Includes all 15 CBSE/NCERT Class 7 Chapters, 5,800+ audio glosses, Jodo Puzzles, and Vedic Mathematics!'}
               </p>
             </>
           )}
@@ -260,8 +271,8 @@ const PaymentModal: React.FC = () => {
               </div>
             </div>
           </div>
-        ) : trialActive ? (
-          /* 2) Logged in + active trial: no UPI form */
+        ) : showTrialGate ? (
+          /* 2) Logged in + active trial: no UPI form (admin can opt into preview) */
           <div className="payment-modal-body">
             <div className="payment-success-box" style={{ padding: '1.5rem 1.75rem' }}>
               <div
@@ -307,6 +318,45 @@ const PaymentModal: React.FC = () => {
                   Continue Learning
                 </button>
               </div>
+              {isAdminLoggedIn && (
+                <div
+                  style={{
+                    marginTop: '1.35rem',
+                    paddingTop: '1rem',
+                    borderTop: '1px dashed #e2e8f0',
+                    textAlign: 'center',
+                  }}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setAdminPreviewUpi(true)}
+                    style={{
+                      background: '#ffffff',
+                      color: '#0f766e',
+                      border: '1.5px solid #0f766e',
+                      borderRadius: '8px',
+                      padding: '0.5rem 0.95rem',
+                      fontWeight: 700,
+                      fontSize: '0.8rem',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Admin: preview UPI pay form
+                  </button>
+                  <p
+                    style={{
+                      margin: '0.55rem auto 0',
+                      maxWidth: '26rem',
+                      fontSize: '0.72rem',
+                      color: '#64748b',
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    Admin preview only — does not charge; Premium still needs real UTR + approve
+                    (or Razorpay later).
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         ) : isProcessing ? (
@@ -379,6 +429,45 @@ const PaymentModal: React.FC = () => {
                 }}
               >
                 {errorMessage}
+              </div>
+            )}
+
+            {isAdminUpiPreview && (
+              <div
+                style={{
+                  padding: '0.65rem 1.75rem',
+                  borderBottom: '1px solid #fcd34d',
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  color: '#92400e',
+                  background: '#fffbeb',
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '0.5rem',
+                }}
+              >
+                <span>
+                  Admin preview only — does not charge; Premium still needs real UTR + approve (or
+                  Razorpay later).
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setAdminPreviewUpi(false)}
+                  style={{
+                    background: 'transparent',
+                    border: '1px solid #d97706',
+                    color: '#92400e',
+                    borderRadius: '6px',
+                    padding: '0.25rem 0.6rem',
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                  }}
+                >
+                  Hide preview
+                </button>
               </div>
             )}
 

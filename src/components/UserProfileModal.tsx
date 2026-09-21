@@ -24,6 +24,8 @@ const UserProfileModal: React.FC = () => {
     updateProfile,
     deleteProfile,
     getTrialDaysRemaining,
+    isAdminLoggedIn,
+    setUserPlanStatus,
   } = useAuthStore();
 
   const { progress } = useAppStore();
@@ -191,7 +193,7 @@ const UserProfileModal: React.FC = () => {
                 Plan: ₹200 / month · Pay via <strong>UPI / QR</strong>
               </div>
 
-              <div style={{ marginTop: '0.9rem' }}>
+              <div style={{ marginTop: '0.9rem', display: 'flex', flexWrap: 'wrap', gap: '0.55rem' }}>
                 <button
                   type="button"
                   onClick={() => {
@@ -230,6 +232,30 @@ const UserProfileModal: React.FC = () => {
                       : 'Subscribe Now for ₹200 / mo (UPI)'}
                   </span>
                 </button>
+                {isAdminLoggedIn && currentUser.planStatus === 'trial' && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const ok = setUserPlanStatus(currentUser.id, 'expired');
+                      if (ok) {
+                        // Stay on profile so she can open Pay next; status refreshes via store.
+                      }
+                    }}
+                    style={{
+                      background: '#ffffff',
+                      color: '#7c2d12',
+                      border: '1.5px solid #ea580c',
+                      borderRadius: '8px',
+                      padding: '0.5rem 0.9rem',
+                      fontSize: '0.8rem',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                    }}
+                    title="Admin test: expire trial so the normal post-trial UPI pay path appears"
+                  >
+                    End trial now (test)
+                  </button>
+                )}
               </div>
 
               {/* Recent Payments hidden for students — avoids fake ✓ PAID / pending receipt UI */}

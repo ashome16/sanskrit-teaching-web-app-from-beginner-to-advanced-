@@ -126,6 +126,7 @@ interface AuthState {
   getAdminPasscode: () => string;
   setAdminPasscode: (newPasscode: string) => boolean;
   setUserPlanStatus: (userId: string, status: PlanStatus, durationDays?: number) => boolean;
+  adminResetUserPassword: (userId: string, newPassword: string) => { success: boolean; error?: string };
   deleteUserAccountByAdmin: (userId: string) => boolean;
   approveTransaction: (userId: string, transactionId: string) => boolean;
   rejectTransaction: (userId: string, transactionId: string) => boolean;
@@ -670,6 +671,10 @@ export const useAuthStore = create<AuthState>((set, get) => {
         subscriptionRenewsAt = now + durationDays * 24 * 60 * 60 * 1000;
       } else if (status === 'trial') {
         trialEndsAt = now + durationDays * 24 * 60 * 60 * 1000;
+      } else if (status === 'expired') {
+        // Force past trial/sub so reload does not resurrect "trial" from trialEndsAt.
+        trialEndsAt = now - 60_000;
+        subscriptionRenewsAt = undefined;
       }
 
       const updatedProfile: UserProfile = {
@@ -693,6 +698,26 @@ export const useAuthStore = create<AuthState>((set, get) => {
       const nextCurrent = currentUser && currentUser.id === userId ? updatedProfile : currentUser;
       set({ accounts: updatedAccounts, currentUser: nextCurrent });
       return true;
+    },
+
+    adminResetUserPassword: (userId: string, newPassword: string) => {
+      const { accounts } = get();
+      const account = accounts[userId];
+      if (!account) return { success: false, error: 'Account not found.' };
+      const cleanPass = (newPassword || '').trim();
+      if (cleanPass.length < 4) {
+        return { success: false, error: 'Password must be at least 4 characters.' };
+      }
+      const updatedAccounts = {
+        ...accounts,
+        [userId]: {
+          ...account,
+          passwordHash: cleanPass,
+        },
+      };
+      saveAccounts(updatedAccounts);
+      set({ accounts: updatedAccounts });
+      return { success: true };
     },
 
     deleteUserAccountByAdmin: (userId: string) => {

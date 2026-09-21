@@ -524,9 +524,21 @@ const AuthModal: React.FC = () => {
           <form className="auth-form" onSubmit={otpStep === 1 ? handleRequestOtp : handleVerifyAndReset}>
             {otpStep === 1 ? (
               <>
-                <p style={{ margin: '0 0 1.25rem 0', fontSize: '0.86rem', color: '#475569', lineHeight: 1.5 }}>
-                  Enter your registered <strong>username</strong> or <strong>email address</strong>. We will generate a secure 6-digit OTP verification code to reset your password.
-                </p>
+                <div
+                  style={{
+                    margin: '0 0 1.1rem 0',
+                    padding: '0.85rem 1rem',
+                    background: '#ecfdf5',
+                    border: '1px solid #a7f3d0',
+                    borderRadius: '10px',
+                    fontSize: '0.86rem',
+                    color: '#065f46',
+                    lineHeight: 1.55,
+                  }}
+                >
+                  <strong>No phone or SMS needed.</strong> Enter your registered username or email → we show a{' '}
+                  <strong>reset code on this screen</strong> → enter that code with your new password.
+                </div>
 
                 <div className="auth-form-group">
                   <label className="auth-label" htmlFor="forgot-identifier">
@@ -545,21 +557,21 @@ const AuthModal: React.FC = () => {
                 </div>
 
                 <button type="submit" className="auth-submit-btn">
-                  Send 6-Digit OTP Code ➔
+                  Get reset code ➔
                 </button>
               </>
             ) : (
               <>
-                {/* OTP Dispatch Notification Card */}
+                {/* On-screen reset code (not SMS) */}
                 <div className="auth-otp-dispatch-card">
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
-                    <span style={{ fontSize: '1.35rem' }}>📬</span>
+                    <span style={{ fontSize: '1.35rem' }}>🔑</span>
                     <div style={{ flex: 1 }}>
                       <div style={{ fontWeight: 800, fontSize: '0.88rem', color: '#1e3a8a' }}>
-                        OTP Verification Code Generated
+                        Your reset code (shown here — not sent by SMS):
                       </div>
                       <div style={{ fontSize: '0.8rem', color: '#3b82f6', marginTop: '0.15rem' }}>
-                        Enter the code below to authorize your password reset:
+                        Copy or Auto-Fill the code below, then set a new password.
                       </div>
                       {lastDispatchedOtp && (
                         <div style={{ marginTop: '0.6rem', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
@@ -603,7 +615,7 @@ const AuthModal: React.FC = () => {
                 {/* 6-Digit OTP Input */}
                 <div className="auth-form-group">
                   <label className="auth-label" htmlFor="otp-code-input">
-                    Enter 6-Digit OTP Code *
+                    Enter reset code *
                   </label>
                   <input
                     id="otp-code-input"
@@ -618,14 +630,14 @@ const AuthModal: React.FC = () => {
                     autoFocus
                   />
                   <div className="auth-resend-row">
-                    <span style={{ color: '#64748b' }}>Didn't get code?</span>
+                    <span style={{ color: '#64748b' }}>Need a new code?</span>
                     <button
                       type="button"
                       className="auth-resend-btn"
                       onClick={handleResendOtp}
                       disabled={resendCooldown > 0}
                     >
-                      {resendCooldown > 0 ? `Resend OTP in ${resendCooldown}s` : 'Resend OTP Code'}
+                      {resendCooldown > 0 ? `New code in ${resendCooldown}s` : 'Resend (regenerate on-screen code)'}
                     </button>
                   </div>
                 </div>
@@ -663,7 +675,7 @@ const AuthModal: React.FC = () => {
                 </div>
 
                 <button type="submit" className="auth-submit-btn">
-                  Verify OTP &amp; Reset Password ➔
+                  Verify code &amp; Reset Password ➔
                 </button>
 
                 <div style={{ textAlign: 'center', marginTop: '0.75rem' }}>
