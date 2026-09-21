@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import '../styles/board.css';
 import { iconForExampleWord } from '../data/exampleIcons';
 import { playPronunciation } from '../utils/pronunciation';
@@ -10,6 +10,13 @@ interface BoardPuzzle { target: string; tiles: string[]; answer?: string; englis
 interface BoardShelfLine { shelf: string; native: string; skin: string; puzzles: BoardPuzzle[]; }
 interface PackLabel { title: string; gloss: string; }
 interface VisitorBlock { heading: 'h2' | 'h3' | 'p'; text: string; }
+interface BoardSearchMatch {
+  puzzle: BoardPuzzle;
+  shelfId: ShelfId;
+  shelfName: string;
+  shelfIcon: string;
+  puzzleIndex: number;
+}
 
 export interface BoardProps {
   onNavigateToHome?: () => void;
@@ -661,6 +668,29 @@ const Board: React.FC<BoardProps> = ({
   const [isChipsExpanded, setIsChipsExpanded] = useState(false);
   const activeChipRef = useRef<HTMLButtonElement | null>(null);
   const puzzleBoardRef = useRef<HTMLElement | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchScope, setSearchScope] = useState<'all' | 'current'>('all');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isSearchOpen) {
+        setIsSearchOpen(false);
+      }
+      if (
+        (e.key === '/' || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) &&
+        document.activeElement?.tagName !== 'INPUT' &&
+        document.activeElement?.tagName !== 'TEXTAREA'
+      ) {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+        setIsSearchOpen(true);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isSearchOpen]);
   const [showHelp, setShowHelp] = useState<boolean>(() => {
     try {
       return localStorage.getItem('jodo-help-collapsed') !== 'true';
@@ -763,6 +793,96 @@ const Board: React.FC<BoardProps> = ({
     setTimeout(() => {
       puzzleBoardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }, 60);
+  };
+
+  const allShelvesWithPuzzles = useMemo(() => {
+    const groups: { shelfId: ShelfId; shelfName: string; shelfIcon: string; puzzles: BoardPuzzle[] }[] = [];
+    if (boardShelves.length > 0) {
+      for (const entry of boardShelves) {
+        const shelfKey = entry.shelf.toLowerCase().trim();
+        const shelfId = (SHELF_ALIASES[shelfKey] ?? shelfKey) as ShelfId;
+        const meta = SHELF_DESCRIPTIONS[shelfId];
+        groups.push({
+          shelfId,
+          shelfName: meta?.title ?? entry.shelf,
+          shelfIcon: meta?.icon ?? '🧩',
+          puzzles: entry.puzzles ?? [],
+        });
+      }
+    } else if (fallbackPuzzles.length > 0) {
+      const meta = SHELF_DESCRIPTIONS['prarambhah'];
+      groups.push({
+        shelfId: 'prarambhah',
+        shelfName: meta?.title ?? 'Beginners',
+        shelfIcon: meta?.icon ?? '🌱',
+        puzzles: fallbackPuzzles,
+      });
+    }
+    return groups;
+  }, [boardShelves, fallbackPuzzles]);
+
+  const searchResults = useMemo<BoardSearchMatch[]>(() => {
+    const q = searchQuery.trim().toLowerCase().normalize('NFC');
+    if (!q) return [];
+
+    const results: BoardSearchMatch[] = [];
+    const targetGroups = searchScope === 'current'
+      ? allShelvesWithPuzzles.filter((g) => g.shelfId === activeShelf)
+      : allShelvesWithPuzzles;
+
+    for (const group of targetGroups) {
+      const puzzles = group.puzzles;
+      for (let i = 0; i < puzzles.length; i++) {
+        const p = puzzles[i];
+        const target = (p.target || '').toLowerCase().normalize('NFC');
+        const answer = (p.answer || '').toLowerCase().normalize('NFC');
+        const english = (p.english || '').toLowerCase();
+        const gloss = (p.gloss || '').toLowerCase();
+        const sentence = (p.sentence || '').toLowerCase().normalize('NFC');
+        const prompt = (p.prompt || '').toLowerCase().normalize('NFC');
+        const explanation = (p.explanation || '').toLowerCase();
+        const tiles = (p.tiles || []).map((t) => t.toLowerCase().normalize('NFC'));
+
+        const isMatch =
+          target.includes(q) ||
+          answer.includes(q) ||
+          english.includes(q) ||
+          gloss.includes(q) ||
+          sentence.includes(q) ||
+          prompt.includes(q) ||
+          explanation.includes(q) ||
+          tiles.some((t) => t.includes(q));
+
+        if (isMatch) {
+          results.push({
+            puzzle: p,
+            shelfId: group.shelfId,
+            shelfName: group.shelfName,
+            shelfIcon: group.shelfIcon,
+            puzzleIndex: i,
+          });
+        }
+      }
+    }
+    return results;
+  }, [searchQuery, searchScope, activeShelf, allShelvesWithPuzzles]);
+
+  const handleSelectSearchResult = (match: BoardSearchMatch) => {
+    if (match.shelfId !== activeShelf) {
+      setActiveShelf(match.shelfId);
+      localStorage.setItem('last-board-shelf', match.shelfId);
+    }
+    setPuzzleIndexByShelf((current) => ({
+      ...current,
+      [match.shelfId]: match.puzzleIndex,
+    }));
+    setChecked(false);
+    setWrongAttempt(false);
+    setChosen([]);
+    setIsSearchOpen(false);
+    setTimeout(() => {
+      puzzleBoardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 70);
   };
 
   const targetWord = ((activePuzzle?.answer ?? activePuzzle?.target) || '').normalize('NFC');
@@ -1055,6 +1175,200 @@ const Board: React.FC<BoardProps> = ({
         </button>
       ))}
     </nav>
+
+    {/* Search Bar for Tile Puzzles */}
+    <section className="board-search-section" aria-label="Search Tile Puzzles">
+      <div className="board-search-bar-wrap">
+        <div className="board-search-input-box">
+          <span className="board-search-icon" aria-hidden="true">🔍</span>
+          <input
+            ref={searchInputRef}
+            type="search"
+            className="board-search-input"
+            placeholder="Search tile puzzles by word, meaning, or letter (e.g. का, नेत्रम्, जलम्, girl, eye)..."
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              if (!isSearchOpen && e.target.value.trim().length > 0) {
+                setIsSearchOpen(true);
+              }
+            }}
+            onFocus={() => {
+              if (searchQuery.trim().length > 0) {
+                setIsSearchOpen(true);
+              }
+            }}
+            aria-label="Search Tile Puzzles"
+          />
+          {searchQuery && (
+            <button
+              type="button"
+              className="board-search-clear-btn"
+              onClick={() => {
+                setSearchQuery('');
+                setIsSearchOpen(false);
+                searchInputRef.current?.focus();
+              }}
+              aria-label="Clear Search"
+              title="Clear search"
+            >
+              ✕
+            </button>
+          )}
+        </div>
+
+        {/* Search Scope Toggle */}
+        <div className="board-search-scope-toggle" role="group" aria-label="Search Scope">
+          <button
+            type="button"
+            className={`board-scope-btn ${searchScope === 'all' ? 'active' : ''}`}
+            onClick={() => setSearchScope('all')}
+            title="Search across all 7 puzzle shelves"
+          >
+            🌍 All Shelves
+          </button>
+          <button
+            type="button"
+            className={`board-scope-btn ${searchScope === 'current' ? 'active' : ''}`}
+            onClick={() => setSearchScope('current')}
+            title={`Search only in ${activeShelfInfo?.title || 'Current Shelf'}`}
+          >
+            📂 {activeShelfInfo?.title ? activeShelfInfo.title.split('·')[0].trim() : 'Current Shelf'}
+          </button>
+        </div>
+      </div>
+
+      {/* Quick Suggestion Chips */}
+      <div className="board-search-suggestions">
+        <span className="board-suggestion-label">💡 Try searching:</span>
+        {[
+          { label: 'का (Who)', query: 'का' },
+          { label: 'बालिका (Girl)', query: 'बालिका' },
+          { label: 'नेत्रम् (Eye)', query: 'नेत्रम्' },
+          { label: 'जलम् (Water)', query: 'जलम्' },
+          { label: 'वृक्षः (Tree)', query: 'वृक्षः' },
+          { label: 'हस्तः (Hand)', query: 'हस्त' },
+          { label: 'Question words', query: 'who' },
+        ].map((chip) => (
+          <button
+            key={chip.label}
+            type="button"
+            className="board-search-chip"
+            onClick={() => {
+              setSearchQuery(chip.query);
+              setIsSearchOpen(true);
+            }}
+          >
+            {chip.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Search Results Drawer / Panel */}
+      {isSearchOpen && searchQuery.trim().length > 0 && (
+        <div className="board-search-results-panel" role="region" aria-label="Puzzle Search Results">
+          <div className="board-search-results-header">
+            <div className="board-search-header-meta">
+              <strong>
+                {searchResults.length} {searchResults.length === 1 ? 'puzzle' : 'puzzles'} found
+              </strong>
+              <span className="board-search-query-badge">
+                matching &ldquo;{searchQuery}&rdquo; {searchScope === 'all' ? 'across all shelves' : `in ${activeShelfInfo?.title || 'current shelf'}`}
+              </span>
+            </div>
+            <button
+              type="button"
+              className="board-search-close-btn"
+              onClick={() => setIsSearchOpen(false)}
+              title="Close search results (Esc)"
+            >
+              ✕ Close
+            </button>
+          </div>
+
+          {searchResults.length > 0 ? (
+            <>
+              <div className="board-search-results-list">
+                {searchResults.slice(0, 50).map((match) => (
+                  <div
+                    key={`${match.shelfId}-${match.puzzleIndex}-${match.puzzle.target}`}
+                    className="board-search-result-card"
+                    onClick={() => handleSelectSearchResult(match)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleSelectSearchResult(match);
+                      }
+                    }}
+                  >
+                    <div className="board-search-card-main">
+                      <div className="board-search-card-top">
+                        <span className="board-search-target-word">{match.puzzle.target}</span>
+                        <span className="board-search-shelf-pill">
+                          {match.shelfIcon} {match.shelfName.split('·')[0].trim()} · #{match.puzzleIndex + 1}
+                        </span>
+                      </div>
+                      {match.puzzle.english && (
+                        <div className="board-search-english">{match.puzzle.english}</div>
+                      )}
+                      {match.puzzle.sentence && (
+                        <div className="board-search-sentence">{match.puzzle.sentence}</div>
+                      )}
+                      {match.puzzle.tiles && match.puzzle.tiles.length > 0 && (
+                        <div className="board-search-tiles-preview">
+                          <span className="board-search-tiles-label">Tiles:</span>
+                          {match.puzzle.tiles.map((t, idx) => (
+                            <span key={idx} className="board-search-tile-pill">{cleanTile(t)}</span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    <div className="board-search-card-action">
+                      <button
+                        type="button"
+                        className="board-search-play-btn"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleSelectSearchResult(match);
+                        }}
+                      >
+                        Play ▶
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              {searchResults.length > 50 && (
+                <div className="board-search-overflow-note">
+                  ⚡ Showing first 50 of {searchResults.length} matching puzzles. Type more specific letters to refine.
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="board-search-empty">
+              <span className="board-search-empty-icon">🔎</span>
+              <p><strong>No puzzles found matching &ldquo;{searchQuery}&rdquo;</strong></p>
+              <p className="board-search-empty-hint">
+                {searchScope === 'current'
+                  ? 'Try switching to "🌍 All Shelves" above, or search by English meaning (e.g. eye, girl, water, tree) or Devanagari letter.'
+                  : 'Try searching with a shorter root word, an English keyword (e.g. eye, water, boy, temple), or single letter.'}
+              </p>
+              {searchScope === 'current' && (
+                <button
+                  type="button"
+                  className="board-search-switch-scope-btn"
+                  onClick={() => setSearchScope('all')}
+                >
+                  Switch to 🌍 All Shelves
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+    </section>
 
     {/* Active Shelf Info Banner */}
     {activeShelfInfo && (
