@@ -2514,3 +2514,73 @@
 मौग्ध्यपवनः मन्दं वहति।|The gentle breeze blows softly.|मौग्ध्यपवनः|nature
 मौग्ध्यतरुः शोभते।|The charming tree looks beautiful.|मौग्ध्यतरुः|nature
 मौग्ध्यमेघः दृश्यते।|The beautiful cloud is seen.|मौग्ध्यमेघः|nature
+आह्स्यपवनः वहति।|The funny breeze blows.|आह्स्यपवनः
+आह्स्यखगः कूजति।|The funny bird chirps.|आह्स्यखगः
+आह्स्यतरुः कम्पते।|The funny tree shakes.|आह्स्यतरुः
+आह्स्यपुष्पम् विकसति।|The funny flower blooms.|आह्स्यपुष्पम्
+आह्स्यकमलम् सुन्दरं अस्ति।|The funny lotus is beautiful.|आह्स्यकमलम्
+आह्स्यसरः अत्र अस्ति।|The funny lake is here.|आह्स्यसरः
+आह्स्यमेघः दृश्यते।|The funny cloud is seen.|आह्स्यमेघः
+उज्भ्यमेघः वर्षति।|The lofty cloud rains.|उज्भ्यमेघः
+उज्भ्यगिरिः उच्चैः अस्ति।|The lofty mountain is high.|उज्भ्यगिरिः
+उज्भ्यतरुः वर्धते।|The lofty tree grows.|उज्भ्यतरुः
+उज्भ्यपवनः वहति।|The lofty breeze blows.|उज्भ्यपवनः
+उज्भ्यसरः शीतलः।|The lofty lake is cool.|उज्भ्यसरः
+उज्भ्यखगः उत्पतति।|The lofty bird flies up.|उज्भ्यखगः
+उज्भ्यपुष्पम् विकसति।|The lofty flower blooms.|उज्भ्यपुष्पम्
+संस्क्र्यतरुः तिष्ठति।|The refined tree stands.|संस्क्र्यतरुः
+संस्क्र्यपवनः मन्दं वहति।|The refined breeze blows softly.|संस्क्र्यपवनः
+संस्क्र्यसरः स्वच्छः अस्ति।|The refined lake is clean.|संस्क्र्यसरः
+संस्क्र्यपुष्पम् विकसति।|The refined flower blooms.|संस्क्र्यपुष्पम्
+संस्क्र्यकमलम् सुन्दरं अस्ति।|The refined lotus is beautiful.|संस्क्र्यकमलम्
+संस्क्र्यखगः गायति।|The refined bird sings.|संस्क्र्यखगः
+संस्क्र्यमेघः दृश्यते।|The refined cloud is seen.|संस्क्र्यमेघः
+निष्क्र्यखगः उत्पतति।|The outgoing bird flies up.|निष्क्र्यखगः
+निष्क्र्यपवनः वहति।|The outgoing breeze blows.|निष्क्र्यपवनः
+निष्क्र्यसिंहः भ्रमति।|The outgoing lion roams.|निष्क्र्यसिंहः
+निष्क्र्यमेघः चलति।|The outgoing cloud moves.|निष्क्र्यमेघः
+निष्क्र्यसरः अत्र अस्ति।|The outgoing lake is here.|निष्क्र्यसरः
+निष्क्र्यतरुः शोभते।|The outgoing tree looks beautiful.|निष्क्र्यतरुः
+निष्क्र्यपुष्पम् विकसति।|The outgoing flower blooms.|निष्क्र्यपुष्पम्
+युज्म्यसरः शीतलः।|The joined lake is cool.|युज्म्यसरः
+युज्म्यतरुः अत्र अस्ति।|The joined tree is here.|युज्म्यतरुः
+युज्म्यपुष्पम् विकसति।|The joined flower blooms.|युज्म्यपुष्पम्
+युज्म्यकमलम् सुन्दरं अस्ति।|The joined lotus is beautiful.|युज्म्यकमलम्
+युज्म्यखगः उपविशति।|The joined bird sits.|युज्म्यखगः
+युज्म्यपवनः वहति।|The joined breeze blows.|युज्म्यपवनः
+युज्म्यमेघः दृश्यते।|The joined cloud is seen.|युज्म्यमेघः
+हन्स्यपवनः वहति।|The fierce breeze blows.|हन्स्यपवनः
+हन्स्यमेघः गर्जति।|The fierce cloud thunders.|हन्स्यमेघः
+हन्स्यसिंहः भ्रमति।|The fierce lion roams.|हन्स्यसिंहः
+हन्स्यतरुः कम्पते।|The fragile tree shakes.|हन्स्यतरुः
+हन्स्यपुष्पम् पतति।|The delicate flower falls.|हन्स्यपुष्पम्
+हन्स्यसरः चञ्चलः अस्ति।|The restless lake is rough.|हन्स्यसरः
+हन्स्यखगः उत्पतति।|The wild bird flies up.|हन्स्यखगः
+रुक्म्यसूर्यः विभाति।|The golden sun shines.|रुक्म्यसूर्यः
+रुक्म्यतरुः तिष्ठति।|The golden tree stands.|रुक्म्यतरुः
+रुक्म्यपुष्पम् विकसति।|The golden flower blooms.|रुक्म्यपुष्पम्
+रुक्म्यकमलम् सुन्दरं अस्ति।|The golden lotus is beautiful.|रुक्म्यकमलम्
+रुक्म्यसरः स्वच्छः अस्ति।|The radiant lake is clean.|रुक्म्यसरः
+रुक्म्यखगः गायति।|The radiant bird sings.|रुक्म्यखगः
+रुक्म्यमेघः दृश्यते।|The radiant cloud is seen.|रुक्म्यमेघः
+विल्भ्यतरुः वर्धते।|The Bilva tree grows.|विल्भ्यतरुः
+विल्भ्यवनम् घोरं अस्ति।|The Bilva forest is dense.|विल्भ्यवनम्
+विल्भ्यपुष्पम् विकसति।|The Bilva flower blooms.|विल्भ्यपुष्पम्
+विल्भ्यसरः शीतलः।|The Bilva-side lake is cool.|विल्भ्यसरः
+विल्भ्यखगः उपविशति।|The Bilva-perched bird sits.|विल्भ्यखगः
+विल्भ्यपवनः वहति।|The wood-apple breeze blows.|विल्भ्यपवनः
+विल्भ्यमेघः दृश्यते।|The wood-apple cloud is seen.|विल्भ्यमेघः
+दिव्स्यपवनः वहति।|The daytime breeze blows.|दिव्स्यपवनः
+दिव्स्यमेघः दृश्यते।|The daytime cloud is seen.|दिव्स्यमेघः
+दिव्स्यसूर्यः विभाति।|The daytime sun shines.|दिव्स्यसूर्यः
+दिव्स्यसरः शीतलः।|The daytime lake is cool.|दिव्स्यसरः
+दिव्स्यतरुः शोभते।|The daytime tree looks beautiful.|दिव्स्यतरुः
+दिव्स्यखगः गायति।|The daytime bird sings.|दिव्स्यखगः
+दिव्स्यकमलम् विकसति।|The daytime lotus blooms.|दिव्स्यकमलम्
+स्तन्भ्यपवनः वहति।|The calmable breeze blows.|स्तन्भ्यपवनः
+स्तन्भ्यमेघः वर्षति।|The calmable cloud rains.|स्तन्भ्यमेघः
+स्तन्भ्यसरः शीतलः।|The calmable lake is cool.|स्तन्भ्यसरः
+स्तन्भ्यतरुः वर्धते।|The calmable tree grows.|स्तन्भ्यतरुः
+स्तन्भ्यखगः कूजति।|The calmable bird chirps.|स्तन्भ्यखगः
+स्तन्भ्यपुष्पम् विकसति।|The calmable flower blooms.|स्तन्भ्यपुष्पम्
+स्तन्भ्यगिरिः विशालः अस्ति।|The calmable mountain is huge.|स्तन्भ्यगिरिः
