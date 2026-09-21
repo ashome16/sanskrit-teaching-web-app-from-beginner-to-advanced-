@@ -83,3 +83,13 @@ export interface FAQItem {
   question: string;
   answer: string;
 }
+
+export interface OtpSession {
+  code: string;
+  identifier: string;
+  email: string;
+  expiresAt: number;
+  purpose: 'forgot_password' | 'registration';
+  attempts: number;
+}
+

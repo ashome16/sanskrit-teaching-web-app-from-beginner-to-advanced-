@@ -24,9 +24,11 @@ const AuthModal: React.FC = () => {
     clearAuthError,
     pendingRedirectView,
     setPendingRedirect,
+    requestPasswordResetOtp,
+    verifyOtpAndResetPassword,
   } = useAuthStore();
 
-  const [activeTab, setActiveTab] = useState<'login' | 'register'>(authModalInitialTab);
+  const [activeTab, setActiveTab] = useState<'login' | 'register' | 'forgot_password'>(authModalInitialTab);
 
   useEffect(() => {
     setActiveTab(authModalInitialTab);
@@ -40,6 +42,24 @@ const AuthModal: React.FC = () => {
   // Login form state
   const [loginIdentifier, setLoginIdentifier] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
+
+  // Forgot password & OTP state
+  const [forgotIdentifier, setForgotIdentifier] = useState('');
+  const [otpInput, setOtpInput] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [otpStep, setOtpStep] = useState<1 | 2>(1);
+  const [resendCooldown, setResendCooldown] = useState(0);
+  const [lastDispatchedOtp, setLastDispatchedOtp] = useState<string | null>(null);
+  const [resetSuccessMessage, setResetSuccessMessage] = useState<string | null>(null);
+  const [localError, setLocalError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (resendCooldown > 0) {
+      const timer = setTimeout(() => setResendCooldown((prev) => prev - 1), 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [resendCooldown]);
 
   // Register form state
   const [regUsername, setRegUsername] = useState('');
@@ -55,9 +75,63 @@ const AuthModal: React.FC = () => {
 
   if (!isAuthModalOpen) return null;
 
-  const handleTabChange = (tab: 'login' | 'register') => {
+  const handleTabChange = (tab: 'login' | 'register' | 'forgot_password') => {
     clearAuthError();
+    setLocalError(null);
+    setResetSuccessMessage(null);
     setActiveTab(tab);
+    if (tab === 'forgot_password') {
+      setOtpStep(1);
+      setForgotIdentifier(loginIdentifier || '');
+      setOtpInput('');
+      setNewPassword('');
+      setConfirmPassword('');
+      setLastDispatchedOtp(null);
+    }
+  };
+
+  const handleRequestOtp = (e: React.FormEvent) => {
+    e.preventDefault();
+    clearAuthError();
+    setLocalError(null);
+    const res = requestPasswordResetOtp(forgotIdentifier);
+    if (res.success && res.otp) {
+      setLastDispatchedOtp(res.otp);
+      setOtpStep(2);
+      setResendCooldown(60);
+    }
+  };
+
+  const handleResendOtp = () => {
+    if (resendCooldown > 0) return;
+    clearAuthError();
+    setLocalError(null);
+    const res = requestPasswordResetOtp(forgotIdentifier);
+    if (res.success && res.otp) {
+      setLastDispatchedOtp(res.otp);
+      setResendCooldown(60);
+    }
+  };
+
+  const handleVerifyAndReset = (e: React.FormEvent) => {
+    e.preventDefault();
+    clearAuthError();
+    setLocalError(null);
+
+    if (newPassword.trim().length < 4) {
+      setLocalError('Password must be at least 4 characters long.');
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      setLocalError('Passwords do not match. Please re-enter.');
+      return;
+    }
+
+    const res = verifyOtpAndResetPassword(forgotIdentifier, otpInput, newPassword);
+    if (res.success) {
+      setResetSuccessMessage('Password successfully updated! Logging you in...');
+    }
   };
 
   const handleLoginSubmit = (e: React.FormEvent) => {
@@ -110,46 +184,97 @@ const AuthModal: React.FC = () => {
         </header>
 
         {/* 2-Week Free Trial Banner */}
-        <div className="auth-trial-banner">
-          <span className="auth-trial-icon">🎉</span>
-          <div className="auth-trial-text">
-            <div className="auth-trial-title">
-              {pendingRedirectView ? 'Sign Up for 14 Days Free Unrestricted Access' : '2 Weeks Free Access Included'}
-            </div>
-            <p className="auth-trial-desc">
-              Create your free student profile to unlock all 15 CBSE chapters, quizzes, worksheets, and puzzles immediately.
-            </p>
-          </div>
-        </div>
-
-        {/* Tabs */}
-        <div className="auth-tabs">
-          <button
-            type="button"
-            className={`auth-tab-btn${activeTab === 'login' ? ' auth-tab-btn--active' : ''}`}
-            onClick={() => handleTabChange('login')}
-          >
-            Log In (प्रवेशः)
-          </button>
-          <button
-            type="button"
-            className={`auth-tab-btn${activeTab === 'register' ? ' auth-tab-btn--active' : ''}`}
-            onClick={() => handleTabChange('register')}
-          >
-            Create Account (पञ्जीकरणम्)
-          </button>
-        </div>
-
-        {/* Alert message */}
-        {authError && (
-          <div style={{ padding: '0 1.75rem', marginTop: '1rem' }}>
-            <div className="auth-alert-error">
-              <span>⚠️</span> {authError}
+        {activeTab !== 'forgot_password' && (
+          <div className="auth-trial-banner">
+            <span className="auth-trial-icon">🎉</span>
+            <div className="auth-trial-text">
+              <div className="auth-trial-title">
+                {pendingRedirectView ? 'Sign Up for 14 Days Free Unrestricted Access' : '2 Weeks Free Access Included'}
+              </div>
+              <p className="auth-trial-desc">
+                Create your free student profile to unlock all 15 CBSE chapters, quizzes, worksheets, and puzzles immediately.
+              </p>
             </div>
           </div>
         )}
 
-        {/* Login Form */}
+        {/* Tabs */}
+        {activeTab !== 'forgot_password' ? (
+          <div className="auth-tabs">
+            <button
+              type="button"
+              className={`auth-tab-btn${activeTab === 'login' ? ' auth-tab-btn--active' : ''}`}
+              onClick={() => handleTabChange('login')}
+            >
+              Log In (प्रवेशः)
+            </button>
+            <button
+              type="button"
+              className={`auth-tab-btn${activeTab === 'register' ? ' auth-tab-btn--active' : ''}`}
+              onClick={() => handleTabChange('register')}
+            >
+              Create Account (पञ्जीकरणम्)
+            </button>
+          </div>
+        ) : (
+          <div
+            style={{
+              padding: '0.85rem 1.75rem 0.35rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              borderBottom: '1px solid #ebdccb',
+            }}
+          >
+            <div
+              style={{
+                fontWeight: 800,
+                fontSize: '1.05rem',
+                color: '#1e293b',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+              }}
+            >
+              <span>🔑</span>
+              <span>Reset Password · पासवर्ड-पुनर्प्राप्तिः</span>
+            </div>
+            <button
+              type="button"
+              onClick={() => handleTabChange('login')}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: '#b45309',
+                fontSize: '0.82rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                textDecoration: 'underline',
+              }}
+            >
+              ← Back to Log In
+            </button>
+          </div>
+        )}
+
+        {/* Alert messages */}
+        {(authError || localError) && (
+          <div style={{ padding: '0 1.75rem', marginTop: '1rem' }}>
+            <div className="auth-alert-error">
+              <span>⚠️</span> {authError || localError}
+            </div>
+          </div>
+        )}
+
+        {resetSuccessMessage && (
+          <div style={{ padding: '0 1.75rem', marginTop: '1rem' }}>
+            <div className="auth-success-banner">
+              <span>✓</span> {resetSuccessMessage}
+            </div>
+          </div>
+        )}
+
+        {/* Forms */}
         {activeTab === 'login' ? (
           <form className="auth-form" onSubmit={handleLoginSubmit}>
             <div className="auth-form-group">
@@ -181,6 +306,25 @@ const AuthModal: React.FC = () => {
                 onChange={(e) => setLoginPassword(e.target.value)}
                 required
               />
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-0.35rem', marginBottom: '0.85rem' }}>
+              <button
+                type="button"
+                onClick={() => handleTabChange('forgot_password')}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: '#b45309',
+                  fontSize: '0.82rem',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  textDecoration: 'underline',
+                  padding: 0,
+                }}
+              >
+                Forgot Password? (पासवर्ड विस्मृतः?)
+              </button>
             </div>
 
             <button type="submit" className="auth-submit-btn">
@@ -221,7 +365,7 @@ const AuthModal: React.FC = () => {
               </button>
             </div>
           </form>
-        ) : (
+        ) : activeTab === 'register' ? (
           /* Registration Form */
           <form className="auth-form" onSubmit={handleRegisterSubmit}>
             <div className="auth-form-group">
@@ -372,6 +516,194 @@ const AuthModal: React.FC = () => {
               >
                 <span>←</span>
                 <span>Return to Free Chapter 1 Preview</span>
+              </button>
+            </div>
+          </form>
+        ) : (
+          /* Forgot Password / OTP Verification Form */
+          <form className="auth-form" onSubmit={otpStep === 1 ? handleRequestOtp : handleVerifyAndReset}>
+            {otpStep === 1 ? (
+              <>
+                <p style={{ margin: '0 0 1.25rem 0', fontSize: '0.86rem', color: '#475569', lineHeight: 1.5 }}>
+                  Enter your registered <strong>username</strong> or <strong>email address</strong>. We will generate a secure 6-digit OTP verification code to reset your password.
+                </p>
+
+                <div className="auth-form-group">
+                  <label className="auth-label" htmlFor="forgot-identifier">
+                    Username or Email *
+                  </label>
+                  <input
+                    id="forgot-identifier"
+                    type="text"
+                    className="auth-input"
+                    placeholder="e.g. ram_sharma or student@example.com"
+                    value={forgotIdentifier}
+                    onChange={(e) => setForgotIdentifier(e.target.value)}
+                    required
+                    autoFocus
+                  />
+                </div>
+
+                <button type="submit" className="auth-submit-btn">
+                  Send 6-Digit OTP Code ➔
+                </button>
+              </>
+            ) : (
+              <>
+                {/* OTP Dispatch Notification Card */}
+                <div className="auth-otp-dispatch-card">
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
+                    <span style={{ fontSize: '1.35rem' }}>📬</span>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontWeight: 800, fontSize: '0.88rem', color: '#1e3a8a' }}>
+                        OTP Verification Code Generated
+                      </div>
+                      <div style={{ fontSize: '0.8rem', color: '#3b82f6', marginTop: '0.15rem' }}>
+                        Enter the code below to authorize your password reset:
+                      </div>
+                      {lastDispatchedOtp && (
+                        <div style={{ marginTop: '0.6rem', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                          <span
+                            style={{
+                              fontFamily: 'monospace',
+                              fontSize: '1.35rem',
+                              fontWeight: 900,
+                              letterSpacing: '0.2em',
+                              background: '#ffffff',
+                              padding: '0.25rem 0.65rem',
+                              borderRadius: '6px',
+                              border: '1.5px dashed #93c5fd',
+                              color: '#1d4ed8',
+                            }}
+                          >
+                            {lastDispatchedOtp}
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => setOtpInput(lastDispatchedOtp)}
+                            style={{
+                              background: '#1d4ed8',
+                              color: '#ffffff',
+                              border: 'none',
+                              padding: '0.35rem 0.75rem',
+                              borderRadius: '6px',
+                              fontSize: '0.78rem',
+                              fontWeight: 700,
+                              cursor: 'pointer',
+                            }}
+                          >
+                            ⚡ Auto-Fill Code
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* 6-Digit OTP Input */}
+                <div className="auth-form-group">
+                  <label className="auth-label" htmlFor="otp-code-input">
+                    Enter 6-Digit OTP Code *
+                  </label>
+                  <input
+                    id="otp-code-input"
+                    type="text"
+                    inputMode="numeric"
+                    maxLength={6}
+                    className="auth-otp-input"
+                    placeholder="• • • • • •"
+                    value={otpInput}
+                    onChange={(e) => setOtpInput(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                    required
+                    autoFocus
+                  />
+                  <div className="auth-resend-row">
+                    <span style={{ color: '#64748b' }}>Didn't get code?</span>
+                    <button
+                      type="button"
+                      className="auth-resend-btn"
+                      onClick={handleResendOtp}
+                      disabled={resendCooldown > 0}
+                    >
+                      {resendCooldown > 0 ? `Resend OTP in ${resendCooldown}s` : 'Resend OTP Code'}
+                    </button>
+                  </div>
+                </div>
+
+                {/* New Password */}
+                <div className="auth-form-group">
+                  <label className="auth-label" htmlFor="new-password">
+                    New Password * (minimum 4 characters)
+                  </label>
+                  <input
+                    id="new-password"
+                    type="password"
+                    className="auth-input"
+                    placeholder="Create a new password"
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
+                    required
+                  />
+                </div>
+
+                {/* Confirm Password */}
+                <div className="auth-form-group">
+                  <label className="auth-label" htmlFor="confirm-password">
+                    Confirm New Password *
+                  </label>
+                  <input
+                    id="confirm-password"
+                    type="password"
+                    className="auth-input"
+                    placeholder="Re-enter new password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    required
+                  />
+                </div>
+
+                <button type="submit" className="auth-submit-btn">
+                  Verify OTP &amp; Reset Password ➔
+                </button>
+
+                <div style={{ textAlign: 'center', marginTop: '0.75rem' }}>
+                  <button
+                    type="button"
+                    onClick={() => setOtpStep(1)}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: '#64748b',
+                      fontSize: '0.8rem',
+                      cursor: 'pointer',
+                      textDecoration: 'underline',
+                    }}
+                  >
+                    ← Change Username / Email
+                  </button>
+                </div>
+              </>
+            )}
+
+            <div style={{ textAlign: 'center', marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid #f1f5f9' }}>
+              <button
+                type="button"
+                onClick={() => handleTabChange('login')}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: '#b45309',
+                  fontWeight: 700,
+                  fontSize: '0.85rem',
+                  cursor: 'pointer',
+                  textDecoration: 'underline',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.35rem',
+                }}
+              >
+                <span>←</span>
+                <span>Back to Log In</span>
               </button>
             </div>
           </form>

@@ -605,3 +605,74 @@
   border-color: #22c55e;
   color: #15803d;
 }
+
+/* OTP & Forgot Password Styles */
+.auth-otp-dispatch-card {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  margin-bottom: 1.25rem;
+}
+
+.auth-otp-input {
+  font-family: monospace;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  text-align: center;
+  color: #1e3a8a;
+  background: #ffffff;
+  border: 2px solid #93c5fd;
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.auth-otp-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+.auth-resend-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+  margin-bottom: 1.15rem;
+  font-size: 0.82rem;
+}
+
+.auth-resend-btn {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.auth-resend-btn:disabled {
+  color: #94a3b8;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+.auth-success-banner {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+

@@ -8,6 +8,7 @@ import type {
   PaymentMethod,
   PaymentTransaction,
   AccessControlMode,
+  OtpSession,
 } from '../types/auth';
 import type { UserProgress } from '../types';
 import { useAppStore } from './index';
@@ -89,17 +90,23 @@ interface AuthState {
   isAuthModalOpen: boolean;
   isProfileModalOpen: boolean;
   isPaymentModalOpen: boolean;
-  authModalInitialTab: 'login' | 'register';
+  authModalInitialTab: 'login' | 'register' | 'forgot_password';
   authError: string | null;
 
   // Actions
-  openAuthModal: (tab?: 'login' | 'register') => void;
+  openAuthModal: (tab?: 'login' | 'register' | 'forgot_password') => void;
   closeAuthModal: () => void;
   openProfileModal: () => void;
   closeProfileModal: () => void;
   openPaymentModal: () => void;
   closePaymentModal: () => void;
   clearAuthError: () => void;
+
+  // OTP & Password Recovery
+  activeOtpSession: OtpSession | null;
+  requestPasswordResetOtp: (identifier: string) => { success: boolean; otp?: string; email?: string; error?: string };
+  verifyOtpAndResetPassword: (identifier: string, otp: string, newPassword: string) => { success: boolean; error?: string };
+  clearOtpSession: () => void;
 
   register: (data: RegisterFormData) => { success: boolean; error?: string };
   login: (usernameOrEmail: string, password: string) => { success: boolean; error?: string };
@@ -215,6 +222,125 @@ export const useAuthStore = create<AuthState>((set, get) => {
     openPaymentModal: () => set({ isPaymentModalOpen: true }),
     closePaymentModal: () => set({ isPaymentModalOpen: false }),
     clearAuthError: () => set({ authError: null }),
+
+    // OTP & Password Recovery
+    activeOtpSession: null,
+
+    clearOtpSession: () => set({ activeOtpSession: null }),
+
+    requestPasswordResetOtp: (identifier: string) => {
+      const { accounts } = get();
+      const cleanId = (identifier || '').trim().toLowerCase();
+
+      if (!cleanId) {
+        const error = 'Please enter your registered username or email address.';
+        set({ authError: error });
+        return { success: false, error };
+      }
+
+      const account = Object.values(accounts).find(
+        (acc) =>
+          acc.profile.username.toLowerCase() === cleanId ||
+          acc.profile.email.toLowerCase() === cleanId
+      );
+
+      if (!account) {
+        const error = 'No account found matching that username or email address.';
+        set({ authError: error });
+        return { success: false, error };
+      }
+
+      // Generate a secure 6-digit OTP code
+      const otp = Math.floor(100000 + Math.random() * 900000).toString();
+      const expiresAt = Date.now() + 10 * 60 * 1000; // 10 minutes validity
+
+      const session: OtpSession = {
+        code: otp,
+        identifier: cleanId,
+        email: account.profile.email,
+        expiresAt,
+        purpose: 'forgot_password',
+        attempts: 0,
+      };
+
+      set({ activeOtpSession: session, authError: null });
+      return { success: true, otp, email: account.profile.email };
+    },
+
+    verifyOtpAndResetPassword: (identifier: string, otp: string, newPassword: string) => {
+      const { accounts, activeOtpSession } = get();
+      const cleanId = (identifier || '').trim().toLowerCase();
+      const cleanOtp = (otp || '').trim();
+      const cleanPass = (newPassword || '').trim();
+
+      if (!activeOtpSession) {
+        const error = 'No active OTP session. Please request a new verification code.';
+        set({ authError: error });
+        return { success: false, error };
+      }
+
+      if (Date.now() > activeOtpSession.expiresAt) {
+        const error = 'This OTP has expired. Please tap "Resend Code" to get a fresh one.';
+        set({ authError: error });
+        return { success: false, error };
+      }
+
+      if (activeOtpSession.attempts >= 5) {
+        const error = 'Too many failed attempts. Please request a new verification code.';
+        set({ authError: error });
+        return { success: false, error };
+      }
+
+      if (cleanOtp !== activeOtpSession.code) {
+        const updatedSession = { ...activeOtpSession, attempts: activeOtpSession.attempts + 1 };
+        const error = `Incorrect 6-digit OTP code (${5 - updatedSession.attempts} attempts remaining).`;
+        set({ activeOtpSession: updatedSession, authError: error });
+        return { success: false, error };
+      }
+
+      if (!cleanPass || cleanPass.length < 4) {
+        const error = 'Your new password must be at least 4 characters long.';
+        set({ authError: error });
+        return { success: false, error };
+      }
+
+      const account = Object.values(accounts).find(
+        (acc) =>
+          acc.profile.username.toLowerCase() === cleanId ||
+          acc.profile.email.toLowerCase() === cleanId ||
+          acc.profile.email.toLowerCase() === activeOtpSession.email.toLowerCase()
+      );
+
+      if (!account) {
+        const error = 'Account could not be found to update password.';
+        set({ authError: error });
+        return { success: false, error };
+      }
+
+      const updatedAccount: UserAccount = {
+        ...account,
+        passwordHash: cleanPass,
+      };
+
+      const updatedAccounts = {
+        ...accounts,
+        [account.profile.id]: updatedAccount,
+      };
+
+      saveAccounts(updatedAccounts);
+      saveSession(account.profile.id);
+      useAppStore.getState().setUserId(account.profile.id);
+
+      set({
+        accounts: updatedAccounts,
+        currentUser: account.profile,
+        activeOtpSession: null,
+        isAuthModalOpen: false,
+        authError: null,
+      });
+
+      return { success: true };
+    },
 
     // Platform Configuration & Access Control
     accessMode: getStoredAccessMode(),
