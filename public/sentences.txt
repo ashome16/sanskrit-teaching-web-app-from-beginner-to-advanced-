@@ -2409,3 +2409,38 @@
 सङ्ग्यपवनः वहति।|The clustering breeze blows.|सङ्ग्यपवनः|nature
 सङ्ग्यमेघः दृश्यते।|The clustering cloud is seen.|सङ्ग्यमेघः|nature
 सङ्ग्यगिरिः उच्चैः अस्ति।|The clustering mountain is high.|सङ्ग्यगिरिः|nature
+युग्म्यतरुः तिष्ठति।|The twin-like tree stands.|युग्म्यतरुः|nature
+युग्म्यपुष्पम् विकसति।|The paired flower blooms.|युग्म्यपुष्पम्|nature
+युग्म्यकमलम् सुन्दरं अस्ति।|The paired lotus is beautiful.|युग्म्यकमलम्|nature
+युग्म्यखगः कूजति।|The paired bird chirps.|युग्म्यखगः|nature
+युग्म्यपवनः वहति।|The twin-like breeze blows.|युग्म्यपवनः|nature
+युग्म्यसरः शीतलः।|The twin-like lake is cool.|युग्म्यसरः|nature
+युग्म्यगिरिः विशालः अस्ति।|The twin-like mountain is huge.|युग्म्यगिरिः|nature
+शुष्म्यपवनः वहति।|The dry breeze blows.|शुष्म्यपवनः|nature
+शुष्म्यमेघः दृश्यते।|The arid cloud is seen.|शुष्म्यमेघः|nature
+शुष्म्यतरुः अत्र अस्ति।|The dry tree is here.|शुष्म्यतरुः|nature
+शुष्म्यगिरिः उच्चैः अस्ति।|The arid mountain is high.|शुष्म्यगिरिः|nature
+शुष्म्यमार्गः दीर्घः अस्ति।|The dry path is long.|शुष्म्यमार्गः|nature
+शुष्म्यसरः अल्पः अस्ति।|The dry lake is small.|शुष्म्यसरः|nature
+शुष्म्यवनम् शान्तं अस्ति।|The dry forest is calm.|शुष्म्यवनम्|nature
+लब्ध्यगिरिः उच्चैः अस्ति।|The reachable mountain is high.|लब्ध्यगिरिः|nature
+लब्ध्यसरः अत्र अस्ति।|The reachable lake is here.|लब्ध्यसरः|nature
+लब्ध्यतरुः वर्धते।|The reachable tree grows.|लब्ध्यतरुः|nature
+लब्ध्यखगः उपविशति।|The reachable bird sits.|लब्ध्यखगः|nature
+लब्ध्यपुष्पम् विकसति।|The reachable flower blooms.|लब्ध्यपुष्पम्|nature
+लब्ध्यपवनः वहति।|The reachable breeze blows.|लब्ध्यपवनः|nature
+लब्ध्यमेघः दृश्यते।|The reachable cloud is seen.|लब्ध्यमेघः|nature
+पुष्प्यतरुः शोभते।|The flowering tree looks beautiful.|पुष्प्यतरुः|nature
+पुष्प्यपुष्पम् विकसति।|The flowering flower blooms.|पुष्प्यपुष्पम्|nature
+पुष्प्यकमलम् सुन्दरं अस्ति।|The flowering lotus is beautiful.|पुष्प्यकमलम्|nature
+पुष्प्यसरः स्वच्छः अस्ति।|The flowering lake is clean.|पुष्प्यसरः|nature
+पुष्प्यखगः गायति।|The flowering bird sings.|पुष्प्यखगः|nature
+पुष्प्यपवनः वहति।|The flowering breeze blows.|पुष्प्यपवनः|nature
+पुष्प्यमेघः वर्षति।|The flowering cloud rains.|पुष्प्यमेघः|nature
+सत्त्यतरुः तिष्ठति।|The real tree stands.|सत्त्यतरुः|nature
+सत्त्यपुष्पम् विकसति।|The real flower blooms.|सत्त्यपुष्पम्|nature
+सत्त्यकमलम् सुन्दरं अस्ति।|The real lotus is beautiful.|सत्त्यकमलम्|nature
+सत्त्यसरः स्वच्छः अस्ति।|The real lake is clean.|सत्त्यसरः|nature
+सत्त्यखगः गायति।|The real bird sings.|सत्त्यखगः|nature
+सत्त्यपवनः वहति।|The real breeze blows.|सत्त्यपवनः|nature
+सत्त्यमेघः दृश्यते।|The real cloud is seen.|सत्त्यमेघः|nature
