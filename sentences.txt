@@ -2724,3 +2724,73 @@
 उत्क्र्यपुष्पम् विकसति।|The high-rising flower blooms.|उत्क्र्यपुष्पम्|nature
 उत्क्र्यसरः शीतलः।|The high-rising lake is cool.|उत्क्र्यसरः|nature
 उत्क्र्यगिरिः उच्चैः अस्ति।|The high-rising mountain is high.|उत्क्र्यगिरिः|nature
+सम्प्र्यमेघः दृश्यते।|The converging cloud is seen.|सम्प्र्यमेघः|nature
+सम्प्र्यखगः उत्पतति।|The converging bird flies up.|सम्प्र्यखगः|nature
+सम्प्र्यपवनः वहति।|The converging breeze blows.|सम्प्र्यपवनः|nature
+सम्प्र्यसरः शीतलः।|The converging lake is cool.|सम्प्र्यसरः|nature
+सम्प्र्यतरुः वर्धते।|The converging tree grows.|सम्प्र्यतरुः|nature
+सम्प्र्यपुष्पम् विकसति।|The converging flower blooms.|सम्प्र्यपुष्पम्|nature
+सम्प्र्यगिरिः विशालः अस्ति।|The massive mountain is huge.|सम्प्र्यगिरिः|nature
+उत्प्र्यखगः उत्पतति।|The soaring bird flies up.|उत्प्र्यखगः|nature
+उत्प्र्यमेघः चलति।|The rising cloud moves.|उत्प्र्यमेघः|nature
+उत्प्र्यपवनः वहति।|The soaring breeze blows.|उत्प्र्यपवनः|nature
+उत्प्र्यतरुः तिष्ठति।|The rising tree stands.|उत्प्र्यतरुः|nature
+उत्प्र्यपुष्पम् विकसति।|The rising flower blooms.|उत्प्र्यपुष्पम्|nature
+उत्प्र्यसरः शीतलः।|The rising lake is cool.|उत्प्र्यसरः|nature
+उत्प्र्यगिरिः उच्चैः अस्ति।|The rising mountain is high.|उत्प्र्यगिरिः|nature
+उद्प्र्यसूर्यः विभाति।|The emerging sun shines.|उद्प्र्यसूर्यः|nature
+उद्प्र्यमेघः दृश्यते।|The emerging cloud is seen.|उद्प्र्यमेघः|nature
+उद्प्र्यपवनः वहति।|The emerging breeze blows.|उद्प्र्यपवनः|nature
+उद्प्र्यसरः स्वच्छः अस्ति।|The emerging lake is clean.|उद्प्र्यसरः|nature
+उद्प्र्यतरुः शोभते।|The emerging tree looks beautiful.|उद्प्र्यतरुः|nature
+उद्प्र्यखगः उत्पतति।|The emerging bird flies up.|उद्प्र्यखगः|nature
+उद्प्र्यकमलम् विकसति।|The emerging lotus blooms.|उद्प्र्यकमलम्|nature
+निष्प्र्यतरुः तिष्ठति।|The bare tree stands.|निष्प्र्यतरुः|nature
+निष्प्र्यवनम् शान्तं अस्ति।|The bare forest is calm.|निष्प्र्यवनम्|nature
+निष्प्र्यपवनः वहति।|The effortless breeze blows.|निष्प्र्यपवनः|nature
+निष्प्र्यगिरिः दृश्यते।|The bare mountain is seen.|निष्प्र्यगिरिः|nature
+निष्प्र्यमार्गः दीर्घः अस्ति।|The bare path is long.|निष्प्र्यमार्गः|nature
+निष्प्र्यमेघः चलति।|The bare cloud moves.|निष्प्र्यमेघः|nature
+निष्प्र्यसरः अत्र अस्ति।|The bare lake is here.|निष्प्र्यसरः|nature
+उत्स्र्यसरः वहति।|The streaming lake flows.|उत्स्र्यसरः|nature
+उत्स्र्यपवनः वहति।|The streaming breeze blows.|उत्स्र्यपवनः|nature
+उत्स्र्यमेघः वर्षति।|The streaming cloud rains.|उत्स्र्यमेघः|nature
+उत्स्र्यतरुः वर्धते।|The streaming tree grows.|उत्स्र्यतरुः|nature
+उत्स्र्यकमलम् विकसति।|The streaming lotus blooms.|उत्स्र्यकमलम्|nature
+उत्स्र्यखगः उत्पतति।|The streaming bird flies up.|उत्स्र्यखगः|nature
+उत्स्र्यगिरिः विशालः अस्ति।|The streaming mountain is huge.|उत्स्र्यगिरिः|nature
+उद्ग्र्यगिरिः उच्चैः अस्ति।|The lofty mountain is high.|उद्ग्र्यगिरिः|nature
+उद्ग्र्यतरुः वर्धते।|The lofty tree grows.|उद्ग्र्यतरुः|nature
+उद्ग्र्यमेघः दृश्यते।|The lofty cloud is seen.|उद्ग्र्यमेघः|nature
+उद्ग्र्यखगः उत्पतति।|The lofty bird flies up.|उद्ग्र्यखगः|nature
+उद्ग्र्यपवनः वहति।|The lofty breeze blows.|उद्ग्र्यपवनः|nature
+उद्ग्र्यसरः शीतलः।|The lofty lake is cool.|उद्ग्र्यसरः|nature
+उद्ग्र्यपुष्पम् विकसति।|The lofty flower blooms.|उद्ग्र्यपुष्पम्|nature
+उद्क्र्यमेघः दृश्यते।|The rising cloud is seen.|उद्क्र्यमेघः|nature
+उद्क्र्यपवनः वहति।|The rising breeze blows.|उद्क्र्यपवनः|nature
+उद्क्र्यसरः चञ्चलः अस्ति।|The rising lake is restless.|उद्क्र्यसरः|nature
+उद्क्र्यतरुः वर्धते।|The rising tree grows.|उद्क्र्यतरुः|nature
+उद्क्र्यखगः उत्पतति।|The rising bird flies up.|उद्क्र्यखगः|nature
+उद्क्र्यपुष्पम् विकसति।|The rising flower blooms.|उद्क्र्यपुष्पम्|nature
+उद्क्र्यगिरिः उच्चैः अस्ति।|The rising mountain is high.|उद्क्र्यगिरिः|nature
+आह्भ्र्यपवनः वहति।|The summoned breeze blows.|आह्भ्र्यपवनः|nature
+आह्भ्र्यमेघः वर्षति।|The summoned cloud rains.|आह्भ्र्यमेघः|nature
+आह्भ्र्यखगः कूजति।|The summoned bird chirps.|आह्भ्र्यखगः|nature
+आह्भ्र्यतरुः वर्धते।|The summoned tree grows.|आह्भ्र्यतरुः|nature
+आह्भ्र्यसरः शीतलः।|The summoned lake is cool.|आह्भ्र्यसरः|nature
+आह्भ्र्यकमलम् विकसति।|The summoned lotus blooms.|आह्भ्र्यकमलम्|nature
+आह्भ्र्यगिरिः विशालः अस्ति।|The summoned mountain is huge.|आह्भ्र्यगिरिः|nature
+प्रण्ह्र्यपवनः वहति।|The humble breeze blows.|प्रण्ह्र्यपवनः|nature
+प्रण्ह्र्यतरुः तिष्ठति।|The humble tree stands.|प्रण्ह्र्यतरुः|nature
+प्रण्ह्र्यखगः कूजति।|The humble bird chirps.|प्रण्ह्र्यखगः|nature
+प्रण्ह्र्यमेघः वर्षति।|The humble cloud rains.|प्रण्ह्र्यमेघः|nature
+प्रण्ह्र्यसरः शीतलः।|The humble lake is cool.|प्रण्ह्र्यसरः|nature
+प्रण्ह्र्यपुष्पम् विकसति।|The humble flower blooms.|प्रण्ह्र्यपुष्पम्|nature
+प्रण्ह्र्यगिरिः उच्चैः अस्ति।|The humble mountain is high.|प्रण्ह्र्यगिरिः|nature
+आह्ध्र्यसरः शीतलः।|The borne lake is cool.|आह्ध्र्यसरः|nature
+आह्ध्र्यपवनः वहति।|The borne breeze blows.|आह्ध्र्यपवनः|nature
+आह्ध्र्यतरुः वर्धते।|The borne tree grows.|आह्ध्र्यतरुः|nature
+आह्ध्र्यपुष्पम् विकसति।|The borne flower blooms.|आह्ध्र्यपुष्पम्|nature
+आह्ध्र्यकमलम् सुन्दरं अस्ति।|The borne lotus is beautiful.|आह्ध्र्यकमलम्|nature
+आह्ध्र्यखगः उपविशति।|The borne bird sits.|आह्ध्र्यखगः|nature
+आह्ध्र्यमेघः दृश्यते।|The borne cloud is seen.|आह्ध्र्यमेघः|nature
