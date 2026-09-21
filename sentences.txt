@@ -2514,73 +2514,213 @@
 मौग्ध्यपवनः मन्दं वहति।|The gentle breeze blows softly.|मौग्ध्यपवनः|nature
 मौग्ध्यतरुः शोभते।|The charming tree looks beautiful.|मौग्ध्यतरुः|nature
 मौग्ध्यमेघः दृश्यते।|The beautiful cloud is seen.|मौग्ध्यमेघः|nature
-आह्स्यपवनः वहति।|The funny breeze blows.|आह्स्यपवनः
-आह्स्यखगः कूजति।|The funny bird chirps.|आह्स्यखगः
-आह्स्यतरुः कम्पते।|The funny tree shakes.|आह्स्यतरुः
-आह्स्यपुष्पम् विकसति।|The funny flower blooms.|आह्स्यपुष्पम्
-आह्स्यकमलम् सुन्दरं अस्ति।|The funny lotus is beautiful.|आह्स्यकमलम्
-आह्स्यसरः अत्र अस्ति।|The funny lake is here.|आह्स्यसरः
-आह्स्यमेघः दृश्यते।|The funny cloud is seen.|आह्स्यमेघः
-उज्भ्यमेघः वर्षति।|The lofty cloud rains.|उज्भ्यमेघः
-उज्भ्यगिरिः उच्चैः अस्ति।|The lofty mountain is high.|उज्भ्यगिरिः
-उज्भ्यतरुः वर्धते।|The lofty tree grows.|उज्भ्यतरुः
-उज्भ्यपवनः वहति।|The lofty breeze blows.|उज्भ्यपवनः
-उज्भ्यसरः शीतलः।|The lofty lake is cool.|उज्भ्यसरः
-उज्भ्यखगः उत्पतति।|The lofty bird flies up.|उज्भ्यखगः
-उज्भ्यपुष्पम् विकसति।|The lofty flower blooms.|उज्भ्यपुष्पम्
-संस्क्र्यतरुः तिष्ठति।|The refined tree stands.|संस्क्र्यतरुः
-संस्क्र्यपवनः मन्दं वहति।|The refined breeze blows softly.|संस्क्र्यपवनः
-संस्क्र्यसरः स्वच्छः अस्ति।|The refined lake is clean.|संस्क्र्यसरः
-संस्क्र्यपुष्पम् विकसति।|The refined flower blooms.|संस्क्र्यपुष्पम्
-संस्क्र्यकमलम् सुन्दरं अस्ति।|The refined lotus is beautiful.|संस्क्र्यकमलम्
-संस्क्र्यखगः गायति।|The refined bird sings.|संस्क्र्यखगः
-संस्क्र्यमेघः दृश्यते।|The refined cloud is seen.|संस्क्र्यमेघः
-निष्क्र्यखगः उत्पतति।|The outgoing bird flies up.|निष्क्र्यखगः
-निष्क्र्यपवनः वहति।|The outgoing breeze blows.|निष्क्र्यपवनः
-निष्क्र्यसिंहः भ्रमति।|The outgoing lion roams.|निष्क्र्यसिंहः
-निष्क्र्यमेघः चलति।|The outgoing cloud moves.|निष्क्र्यमेघः
-निष्क्र्यसरः अत्र अस्ति।|The outgoing lake is here.|निष्क्र्यसरः
-निष्क्र्यतरुः शोभते।|The outgoing tree looks beautiful.|निष्क्र्यतरुः
-निष्क्र्यपुष्पम् विकसति।|The outgoing flower blooms.|निष्क्र्यपुष्पम्
-युज्म्यसरः शीतलः।|The joined lake is cool.|युज्म्यसरः
-युज्म्यतरुः अत्र अस्ति।|The joined tree is here.|युज्म्यतरुः
-युज्म्यपुष्पम् विकसति।|The joined flower blooms.|युज्म्यपुष्पम्
-युज्म्यकमलम् सुन्दरं अस्ति।|The joined lotus is beautiful.|युज्म्यकमलम्
-युज्म्यखगः उपविशति।|The joined bird sits.|युज्म्यखगः
-युज्म्यपवनः वहति।|The joined breeze blows.|युज्म्यपवनः
-युज्म्यमेघः दृश्यते।|The joined cloud is seen.|युज्म्यमेघः
-हन्स्यपवनः वहति।|The fierce breeze blows.|हन्स्यपवनः
-हन्स्यमेघः गर्जति।|The fierce cloud thunders.|हन्स्यमेघः
-हन्स्यसिंहः भ्रमति।|The fierce lion roams.|हन्स्यसिंहः
-हन्स्यतरुः कम्पते।|The fragile tree shakes.|हन्स्यतरुः
-हन्स्यपुष्पम् पतति।|The delicate flower falls.|हन्स्यपुष्पम्
-हन्स्यसरः चञ्चलः अस्ति।|The restless lake is rough.|हन्स्यसरः
-हन्स्यखगः उत्पतति।|The wild bird flies up.|हन्स्यखगः
-रुक्म्यसूर्यः विभाति।|The golden sun shines.|रुक्म्यसूर्यः
-रुक्म्यतरुः तिष्ठति।|The golden tree stands.|रुक्म्यतरुः
-रुक्म्यपुष्पम् विकसति।|The golden flower blooms.|रुक्म्यपुष्पम्
-रुक्म्यकमलम् सुन्दरं अस्ति।|The golden lotus is beautiful.|रुक्म्यकमलम्
-रुक्म्यसरः स्वच्छः अस्ति।|The radiant lake is clean.|रुक्म्यसरः
-रुक्म्यखगः गायति।|The radiant bird sings.|रुक्म्यखगः
-रुक्म्यमेघः दृश्यते।|The radiant cloud is seen.|रुक्म्यमेघः
-विल्भ्यतरुः वर्धते।|The Bilva tree grows.|विल्भ्यतरुः
-विल्भ्यवनम् घोरं अस्ति।|The Bilva forest is dense.|विल्भ्यवनम्
-विल्भ्यपुष्पम् विकसति।|The Bilva flower blooms.|विल्भ्यपुष्पम्
-विल्भ्यसरः शीतलः।|The Bilva-side lake is cool.|विल्भ्यसरः
-विल्भ्यखगः उपविशति।|The Bilva-perched bird sits.|विल्भ्यखगः
-विल्भ्यपवनः वहति।|The wood-apple breeze blows.|विल्भ्यपवनः
-विल्भ्यमेघः दृश्यते।|The wood-apple cloud is seen.|विल्भ्यमेघः
-दिव्स्यपवनः वहति।|The daytime breeze blows.|दिव्स्यपवनः
-दिव्स्यमेघः दृश्यते।|The daytime cloud is seen.|दिव्स्यमेघः
-दिव्स्यसूर्यः विभाति।|The daytime sun shines.|दिव्स्यसूर्यः
-दिव्स्यसरः शीतलः।|The daytime lake is cool.|दिव्स्यसरः
-दिव्स्यतरुः शोभते।|The daytime tree looks beautiful.|दिव्स्यतरुः
-दिव्स्यखगः गायति।|The daytime bird sings.|दिव्स्यखगः
-दिव्स्यकमलम् विकसति।|The daytime lotus blooms.|दिव्स्यकमलम्
-स्तन्भ्यपवनः वहति।|The calmable breeze blows.|स्तन्भ्यपवनः
-स्तन्भ्यमेघः वर्षति।|The calmable cloud rains.|स्तन्भ्यमेघः
-स्तन्भ्यसरः शीतलः।|The calmable lake is cool.|स्तन्भ्यसरः
-स्तन्भ्यतरुः वर्धते।|The calmable tree grows.|स्तन्भ्यतरुः
-स्तन्भ्यखगः कूजति।|The calmable bird chirps.|स्तन्भ्यखगः
-स्तन्भ्यपुष्पम् विकसति।|The calmable flower blooms.|स्तन्भ्यपुष्पम्
-स्तन्भ्यगिरिः विशालः अस्ति।|The calmable mountain is huge.|स्तन्भ्यगिरिः
+आह्स्यपवनः वहति।|The funny breeze blows.|आह्स्यपवनः|nature
+आह्स्यखगः कूजति।|The funny bird chirps.|आह्स्यखगः|nature
+आह्स्यतरुः कम्पते।|The funny tree shakes.|आह्स्यतरुः|nature
+आह्स्यपुष्पम् विकसति।|The funny flower blooms.|आह्स्यपुष्पम्|nature
+आह्स्यकमलम् सुन्दरं अस्ति।|The funny lotus is beautiful.|आह्स्यकमलम्|nature
+आह्स्यसरः अत्र अस्ति।|The funny lake is here.|आह्स्यसरः|nature
+आह्स्यमेघः दृश्यते।|The funny cloud is seen.|आह्स्यमेघः|nature
+उज्भ्यमेघः वर्षति।|The lofty cloud rains.|उज्भ्यमेघः|nature
+उज्भ्यगिरिः उच्चैः अस्ति।|The lofty mountain is high.|उज्भ्यगिरिः|nature
+उज्भ्यतरुः वर्धते।|The lofty tree grows.|उज्भ्यतरुः|nature
+उज्भ्यपवनः वहति।|The lofty breeze blows.|उज्भ्यपवनः|nature
+उज्भ्यसरः शीतलः।|The lofty lake is cool.|उज्भ्यसरः|nature
+उज्भ्यखगः उत्पतति।|The lofty bird flies up.|उज्भ्यखगः|nature
+उज्भ्यपुष्पम् विकसति।|The lofty flower blooms.|उज्भ्यपुष्पम्|nature
+संस्क्र्यतरुः तिष्ठति।|The refined tree stands.|संस्क्र्यतरुः|nature
+संस्क्र्यपवनः मन्दं वहति।|The refined breeze blows softly.|संस्क्र्यपवनः|nature
+संस्क्र्यसरः स्वच्छः अस्ति।|The refined lake is clean.|संस्क्र्यसरः|nature
+संस्क्र्यपुष्पम् विकसति।|The refined flower blooms.|संस्क्र्यपुष्पम्|nature
+संस्क्र्यकमलम् सुन्दरं अस्ति।|The refined lotus is beautiful.|संस्क्र्यकमलम्|nature
+संस्क्र्यखगः गायति।|The refined bird sings.|संस्क्र्यखगः|nature
+संस्क्र्यमेघः दृश्यते।|The refined cloud is seen.|संस्क्र्यमेघः|nature
+निष्क्र्यखगः उत्पतति।|The outgoing bird flies up.|निष्क्र्यखगः|nature
+निष्क्र्यपवनः वहति।|The outgoing breeze blows.|निष्क्र्यपवनः|nature
+निष्क्र्यसिंहः भ्रमति।|The outgoing lion roams.|निष्क्र्यसिंहः|nature
+निष्क्र्यमेघः चलति।|The outgoing cloud moves.|निष्क्र्यमेघः|nature
+निष्क्र्यसरः अत्र अस्ति।|The outgoing lake is here.|निष्क्र्यसरः|nature
+निष्क्र्यतरुः शोभते।|The outgoing tree looks beautiful.|निष्क्र्यतरुः|nature
+निष्क्र्यपुष्पम् विकसति।|The outgoing flower blooms.|निष्क्र्यपुष्पम्|nature
+युज्म्यसरः शीतलः।|The joined lake is cool.|युज्म्यसरः|nature
+युज्म्यतरुः अत्र अस्ति।|The joined tree is here.|युज्म्यतरुः|nature
+युज्म्यपुष्पम् विकसति।|The joined flower blooms.|युज्म्यपुष्पम्|nature
+युज्म्यकमलम् सुन्दरं अस्ति।|The joined lotus is beautiful.|युज्म्यकमलम्|nature
+युज्म्यखगः उपविशति।|The joined bird sits.|युज्म्यखगः|nature
+युज्म्यपवनः वहति।|The joined breeze blows.|युज्म्यपवनः|nature
+युज्म्यमेघः दृश्यते।|The joined cloud is seen.|युज्म्यमेघः|nature
+हन्स्यपवनः वहति।|The fierce breeze blows.|हन्स्यपवनः|nature
+हन्स्यमेघः गर्जति।|The fierce cloud thunders.|हन्स्यमेघः|nature
+हन्स्यसिंहः भ्रमति।|The fierce lion roams.|हन्स्यसिंहः|nature
+हन्स्यतरुः कम्पते।|The fragile tree shakes.|हन्स्यतरुः|nature
+हन्स्यपुष्पम् पतति।|The delicate flower falls.|हन्स्यपुष्पम्|nature
+हन्स्यसरः चञ्चलः अस्ति।|The restless lake is rough.|हन्स्यसरः|nature
+हन्स्यखगः उत्पतति।|The wild bird flies up.|हन्स्यखगः|nature
+रुक्म्यसूर्यः विभाति।|The golden sun shines.|रुक्म्यसूर्यः|nature
+रुक्म्यतरुः तिष्ठति।|The golden tree stands.|रुक्म्यतरुः|nature
+रुक्म्यपुष्पम् विकसति।|The golden flower blooms.|रुक्म्यपुष्पम्|nature
+रुक्म्यकमलम् सुन्दरं अस्ति।|The golden lotus is beautiful.|रुक्म्यकमलम्|nature
+रुक्म्यसरः स्वच्छः अस्ति।|The radiant lake is clean.|रुक्म्यसरः|nature
+रुक्म्यखगः गायति।|The radiant bird sings.|रुक्म्यखगः|nature
+रुक्म्यमेघः दृश्यते।|The radiant cloud is seen.|रुक्म्यमेघः|nature
+विल्भ्यतरुः वर्धते।|The Bilva tree grows.|विल्भ्यतरुः|nature
+विल्भ्यवनम् घोरं अस्ति।|The Bilva forest is dense.|विल्भ्यवनम्|nature
+विल्भ्यपुष्पम् विकसति।|The Bilva flower blooms.|विल्भ्यपुष्पम्|nature
+विल्भ्यसरः शीतलः।|The Bilva-side lake is cool.|विल्भ्यसरः|nature
+विल्भ्यखगः उपविशति।|The Bilva-perched bird sits.|विल्भ्यखगः|nature
+विल्भ्यपवनः वहति।|The wood-apple breeze blows.|विल्भ्यपवनः|nature
+विल्भ्यमेघः दृश्यते।|The wood-apple cloud is seen.|विल्भ्यमेघः|nature
+दिव्स्यपवनः वहति।|The daytime breeze blows.|दिव्स्यपवनः|nature
+दिव्स्यमेघः दृश्यते।|The daytime cloud is seen.|दिव्स्यमेघः|nature
+दिव्स्यसूर्यः विभाति।|The daytime sun shines.|दिव्स्यसूर्यः|nature
+दिव्स्यसरः शीतलः।|The daytime lake is cool.|दिव्स्यसरः|nature
+दिव्स्यतरुः शोभते।|The daytime tree looks beautiful.|दिव्स्यतरुः|nature
+दिव्स्यखगः गायति।|The daytime bird sings.|दिव्स्यखगः|nature
+दिव्स्यकमलम् विकसति।|The daytime lotus blooms.|दिव्स्यकमलम्|nature
+स्तन्भ्यपवनः वहति।|The calmable breeze blows.|स्तन्भ्यपवनः|nature
+स्तन्भ्यमेघः वर्षति।|The calmable cloud rains.|स्तन्भ्यमेघः|nature
+स्तन्भ्यसरः शीतलः।|The calmable lake is cool.|स्तन्भ्यसरः|nature
+स्तन्भ्यतरुः वर्धते।|The calmable tree grows.|स्तन्भ्यतरुः|nature
+स्तन्भ्यखगः कूजति।|The calmable bird chirps.|स्तन्भ्यखगः|nature
+स्तन्भ्यपुष्पम् विकसति।|The calmable flower blooms.|स्तन्भ्यपुष्पम्|nature
+स्तन्भ्यगिरिः विशालः अस्ति।|The calmable mountain is huge.|स्तन्भ्यगिरिः|nature
+प्रण्ह्यपवनः वहति।|The humble breeze blows.|प्रण्ह्यपवनः|nature
+प्रण्ह्यतरुः तिष्ठति।|The humble tree stands.|प्रण्ह्यतरुः|nature
+प्रण्ह्यखगः कूजति।|The humble bird chirps.|प्रण्ह्यखगः|nature
+प्रण्ह्यमेघः वर्षति।|The humble cloud rains.|प्रण्ह्यमेघः|nature
+प्रण्ह्यसरः शीतलः।|The humble lake is cool.|प्रण्ह्यसरः|nature
+प्रण्ह्यपुष्पम् विकसति।|The humble flower blooms.|प्रण्ह्यपुष्पम्|nature
+प्रण्ह्यगिरिः उच्चैः अस्ति।|The humble mountain is high.|प्रण्ह्यगिरिः|nature
+उद्भ्र्यपवनः वहति।|The agitated breeze blows.|उद्भ्र्यपवनः|nature
+उद्भ्र्यमेघः गर्जति।|The agitated cloud thunders.|उद्भ्र्यमेघः|nature
+उद्भ्र्यसरः चञ्चलः अस्ति।|The agitated lake is restless.|उद्भ्र्यसरः|nature
+उद्भ्र्यतरुः कम्पते।|The agitated tree shakes.|उद्भ्र्यतरुः|nature
+उद्भ्र्यखगः उत्पतति।|The agitated bird flies up.|उद्भ्र्यखगः|nature
+उद्भ्र्यसिंहः भ्रमति।|The agitated lion roams.|उद्भ्र्यसिंहः|nature
+उद्भ्र्यपुष्पम् पतति।|The agitated flower falls.|उद्भ्र्यपुष्पम्|nature
+निष्भ्यतरुः तिष्ठति।|The bare tree stands.|निष्भ्यतरुः|nature
+निष्भ्यवनम् शान्तं अस्ति।|The bare forest is calm.|निष्भ्यवनम्|nature
+निष्भ्यपवनः वहति।|The bare breeze blows.|निष्भ्यपवनः|nature
+निष्भ्यगिरिः दृश्यते।|The bare mountain is seen.|निष्भ्यगिरिः|nature
+निष्भ्यमार्गः दीर्घः अस्ति।|The bare path is long.|निष्भ्यमार्गः|nature
+निष्भ्यमेघः चलति।|The bare cloud moves.|निष्भ्यमेघः|nature
+निष्भ्यसरः अत्र अस्ति।|The bare lake is here.|निष्भ्यसरः|nature
+आह्भ्यपवनः वहति।|The invoked breeze blows.|आह्भ्यपवनः|nature
+आह्भ्यखगः गायति।|The invoked bird sings.|आह्भ्यखगः|nature
+आह्भ्यमेघः वर्षति।|The invoked cloud rains.|आह्भ्यमेघः|nature
+आह्भ्यसरः शीतलः।|The invoked lake is cool.|आह्भ्यसरः|nature
+आह्भ्यतरुः वर्धते।|The invoked tree grows.|आह्भ्यतरुः|nature
+आह्भ्यकमलम् विकसति।|The invoked lotus blooms.|आह्भ्यकमलम्|nature
+आह्भ्यगिरिः विशालः अस्ति।|The invoked mountain is huge.|आह्भ्यगिरिः|nature
+शुब्स्यसूर्यः विभाति।|The bright sun shines.|शुब्स्यसूर्यः|nature
+शुब्स्यपुष्पम् विकसति।|The bright flower blooms.|शुब्स्यपुष्पम्|nature
+शुब्स्यकमलम् सुन्दरं अस्ति।|The bright lotus is beautiful.|शुब्स्यकमलम्|nature
+शुब्स्यसरः स्वच्छः अस्ति।|The bright lake is clean.|शुब्स्यसरः|nature
+शुब्स्यपवनः वहति।|The bright breeze blows.|शुब्स्यपवनः|nature
+शुब्स्यमेघः दृश्यते।|The bright cloud is seen.|शुब्स्यमेघः|nature
+शुब्स्यतरुः शोभते।|The bright tree looks beautiful.|शुब्स्यतरुः|nature
+उच्म्यगिरिः उच्चैः अस्ति।|The high mountain is high.|उच्म्यगिरिः|nature
+उच्म्यतरुः वर्धते।|The high tree grows.|उच्म्यतरुः|nature
+उच्म्यमेघः दृश्यते।|The high cloud is seen.|उच्म्यमेघः|nature
+उच्म्यखगः उत्पतति।|The high bird flies up.|उच्म्यखगः|nature
+उच्म्यपवनः वहति।|The high breeze blows.|उच्म्यपवनः|nature
+उच्म्यसरः शीतलः।|The high lake is cool.|उच्म्यसरः|nature
+उच्म्यपुष्पम् विकसति।|The high flower blooms.|उच्म्यपुष्पम्|nature
+फल्स्यतरुः शोभते।|The fruiting tree looks beautiful.|फल्स्यतरुः|nature
+फल्स्यपुष्पम् विकसति।|The fruiting flower blooms.|फल्स्यपुष्पम्|nature
+फल्स्यपवनः वहति।|The fruiting breeze blows.|फल्स्यपवनः|nature
+फल्स्यसरः शीतलः।|The fruiting lake is cool.|फल्स्यसरः|nature
+फल्स्यखगः उपविशति।|The fruiting bird sits.|फल्स्यखगः|nature
+फल्स्यमेघः वर्षति।|The fruiting cloud rains.|फल्स्यमेघः|nature
+फल्स्यकमलम् सुन्दरं अस्ति।|The fruiting lotus is beautiful.|फल्स्यकमलम्|nature
+अग्न्यगिरिः उच्चैः अस्ति।|The fire-mountain is high.|अग्न्यगिरिः|nature
+अग्न्यपवनः वहति।|The fire-breeze blows.|अग्न्यपवनः|nature
+अग्न्यमेघः गर्जति।|The fire-cloud thunders.|अग्न्यमेघः|nature
+अग्न्यतरुः तिष्ठति।|The fire-tree stands.|अग्न्यतरुः|nature
+अग्न्यसरः उष्णः अस्ति।|The fire-lake is hot.|अग्न्यसरः|nature
+अग्न्यपुष्पम् विकसति।|The fire-flower blooms.|अग्न्यपुष्पम्|nature
+अग्न्यखगः कूजति।|The fire-bird chirps.|अग्न्यखगः|nature
+सुप्म्यखगः उपविशति।|The sleepy bird sits.|सुप्म्यखगः|nature
+सुप्म्यसिंहः निद्रायते।|The sleepy lion sleeps.|सुप्म्यसिंहः|nature
+सुप्म्यपवनः मन्दं वहति।|The sleepy breeze blows softly.|सुप्म्यपवनः|nature
+सुप्म्यसरः शान्तः अस्ति।|The sleepy lake is calm.|सुप्म्यसरः|nature
+सुप्म्यकमलम् मीलति।|The sleepy lotus closes.|सुप्म्यकमलम्|nature
+सुप्म्यतरुः तिष्ठति।|The sleepy tree stands.|सुप्म्यतरुः|nature
+सुप्म्यमेघः दृश्यते।|The sleepy cloud is seen.|सुप्म्यमेघः|nature
+शुब्म्यसूर्यः विभाति।|The bright sun shines.|शुब्म्यसूर्यः|nature
+शुब्म्यपुष्पम् विकसति।|The bright flower blooms.|शुब्म्यपुष्पम्|nature
+शुब्म्यकमलम् सुन्दरं अस्ति।|The bright lotus is beautiful.|शुब्म्यकमलम्|nature
+शुब्म्यसरः स्वच्छः अस्ति।|The bright lake is clean.|शुब्म्यसरः|nature
+शुब्म्यपवनः वहति।|The bright breeze blows.|शुब्म्यपवनः|nature
+शुब्म्यमेघः दृश्यते।|The bright cloud is seen.|शुब्म्यमेघः|nature
+शुब्म्यतरुः शोभते।|The bright tree looks beautiful.|शुब्म्यतरुः|nature
+प्रण्म्यपवनः वहति।|The gentle breeze blows.|प्रण्म्यपवनः|nature
+प्रण्म्यतरुः तिष्ठति।|The humble tree stands.|प्रण्म्यतरुः|nature
+प्रण्म्यखगः कूजति।|The humble bird chirps.|प्रण्म्यखगः|nature
+प्रण्म्यमेघः वर्षति।|The humble cloud rains.|प्रण्म्यमेघः|nature
+प्रण्म्यसरः शीतलः।|The humble lake is cool.|प्रण्म्यसरः|nature
+प्रण्म्यपुष्पम् विकसति।|The humble flower blooms.|प्रण्म्यपुष्पम्|nature
+प्रण्म्यगिरिः उच्चैः अस्ति।|The humble mountain is high.|प्रण्म्यगिरिः|nature
+सम्भ्यमेघः दृश्यते।|The gathered cloud is seen.|सम्भ्यमेघः|nature
+सम्भ्यखगः उत्पतति।|The gathered bird flies up.|सम्भ्यखगः|nature
+सम्भ्यपवनः वहति।|The gathered breeze blows.|सम्भ्यपवनः|nature
+सम्भ्यसरः शीतलः।|The gathered lake is cool.|सम्भ्यसरः|nature
+सम्भ्यतरुः वर्धते।|The gathered tree grows.|सम्भ्यतरुः|nature
+सम्भ्यपुष्पम् विकसति।|The gathered flower blooms.|सम्भ्यपुष्पम्|nature
+सम्भ्यगिरिः विशालः अस्ति।|The massive mountain is huge.|सम्भ्यगिरिः|nature
+अह्ण्यपवनः वहति।|The daytime breeze blows.|अह्ण्यपवनः|nature
+अह्ण्यमेघः दृश्यते।|The daytime cloud is seen.|अह्ण्यमेघः|nature
+अह्ण्यसूर्यः विभाति।|The daytime sun shines.|अह्ण्यसूर्यः|nature
+अह्ण्यसरः शीतलः।|The daytime lake is cool.|अह्ण्यसरः|nature
+अह्ण्यतरुः शोभते।|The daytime tree looks beautiful.|अह्ण्यतरुः|nature
+अह्ण्यखगः गायति।|The daytime bird sings.|अह्ण्यखगः|nature
+अह्ण्यकमलम् विकसति।|The daytime lotus blooms.|अह्ण्यकमलम्|nature
+उत्स्न्यमेघः दृश्यते।|The rising cloud is seen.|उत्स्न्यमेघः|nature
+उत्स्न्यपवनः वहति।|The surging breeze blows.|उत्स्न्यपवनः|nature
+उत्स्न्यसरः चञ्चलः अस्ति।|The surging lake is restless.|उत्स्न्यसरः|nature
+उत्स्न्यतरुः वर्धते।|The rising tree grows.|उत्स्न्यतरुः|nature
+उत्स्न्यखगः उत्पतति।|The rising bird flies up.|उत्स्न्यखगः|nature
+उत्स्न्यपुष्पम् विकसति।|The rising flower blooms.|उत्स्न्यपुष्पम्|nature
+उत्स्न्यगिरिः उच्चैः अस्ति।|The rising mountain is high.|उत्स्न्यगिरिः|nature
+पूर्ण्यचन्द्रः विभाति।|The full moon shines.|पूर्ण्यचन्द्रः|nature
+पूर्ण्यसरः स्वच्छः अस्ति।|The perfect lake is clean.|पूर्ण्यसरः|nature
+पूर्ण्यपुष्पम् विकसति।|The perfect flower blooms.|पूर्ण्यपुष्पम्|nature
+पूर्ण्यकमलम् सुन्दरं अस्ति।|The perfect lotus is beautiful.|पूर्ण्यकमलम्|nature
+पूर्ण्यखगः गायति।|The perfect bird sings.|पूर्ण्यखगः|nature
+पूर्ण्यपवनः वहति।|The perfect breeze blows.|पूर्ण्यपवनः|nature
+पूर्ण्यतरुः शोभते।|The perfect tree looks beautiful.|पूर्ण्यतरुः|nature
+कृष्ण्यमेघः वर्षति।|The dark cloud rains.|कृष्ण्यमेघः|nature
+कृष्ण्यपवनः वहति।|The dark breeze blows.|कृष्ण्यपवनः|nature
+कृष्ण्यसरः गभीरः अस्ति।|The dark lake is deep.|कृष्ण्यसरः|nature
+कृष्ण्यतरुः तिष्ठति।|The dark tree stands.|कृष्ण्यतरुः|nature
+कृष्ण्यखगः कूजति।|The dark bird chirps.|कृष्ण्यखगः|nature
+कृष्ण्यवनम् घोरं अस्ति।|The dark forest is dense.|कृष्ण्यवनम्|nature
+कृष्ण्यसिंहः भ्रमति।|The dark lion roams.|कृष्ण्यसिंहः|nature
+सत्त्र्यतरुः अत्र अस्ति।|The clustered tree is here.|सत्त्र्यतरुः|nature
+सत्त्र्यपुष्पम् विकसति।|The clustered flower blooms.|सत्त्र्यपुष्पम्|nature
+सत्त्र्यकमलम् सुन्दरं अस्ति।|The clustered lotus is beautiful.|सत्त्र्यकमलम्|nature
+सत्त्र्यखगः उत्पतति।|The clustered bird flies up.|सत्त्र्यखगः|nature
+सत्त्र्यपवनः वहति।|The clustered breeze blows.|सत्त्र्यपवनः|nature
+सत्त्र्यमेघः दृश्यते।|The clustered cloud is seen.|सत्त्र्यमेघः|nature
+सत्त्र्यगिरिः उच्चैः अस्ति।|The clustered mountain is high.|सत्त्र्यगिरिः|nature
+दुग्ध्र्यमेघः श्वेतः अस्ति।|The milky cloud is white.|दुग्ध्र्यमेघः|nature
+दुग्ध्र्यपुष्पम् विकसति।|The milky flower blooms.|दुग्ध्र्यपुष्पम्|nature
+दुग्ध्र्यपवनः वहति।|The milky breeze blows.|दुग्ध्र्यपवनः|nature
+दुग्ध्र्यकमलम् सुन्दरं अस्ति।|The milky lotus is beautiful.|दुग्ध्र्यकमलम्|nature
+दुग्ध्र्यसरः स्वच्छः अस्ति।|The milky lake is clean.|दुग्ध्र्यसरः|nature
+दुग्ध्र्यखगः गायति।|The milky bird sings.|दुग्ध्र्यखगः|nature
+दुग्ध्र्यतरुः शोभते।|The milky tree looks beautiful.|दुग्ध्र्यतरुः|nature
+लब्ध्र्यगिरिः उच्चैः अस्ति।|The reachable mountain is high.|लब्ध्र्यगिरिः|nature
+लब्ध्र्यसरः अत्र अस्ति।|The reachable lake is here.|लब्ध्र्यसरः|nature
+लब्ध्र्यतरुः वर्धते।|The reachable tree grows.|लब्ध्र्यतरुः|nature
+लब्ध्र्यखगः उपविशति।|The reachable bird sits.|लब्ध्र्यखगः|nature
+लब्ध्र्यपुष्पम् विकसति।|The reachable flower blooms.|लब्ध्र्यपुष्पम्|nature
+लब्ध्र्यपवनः वहति।|The reachable breeze blows.|लब्ध्र्यपवनः|nature
+लब्ध्र्यमेघः दृश्यते।|The reachable cloud is seen.|लब्ध्र्यमेघः|nature
+उत्क्र्यखगः उत्पतति।|The soaring bird flies up.|उत्क्र्यखगः|nature
+उत्क्र्यमेघः चलति।|The high-rising cloud moves.|उत्क्र्यमेघः|nature
+उत्क्र्यपवनः वहति।|The soaring breeze blows.|उत्क्र्यपवनः|nature
+उत्क्र्यतरुः तिष्ठति।|The high-rising tree stands.|उत्क्र्यतरुः|nature
+उत्क्र्यपुष्पम् विकसति।|The high-rising flower blooms.|उत्क्र्यपुष्पम्|nature
+उत्क्र्यसरः शीतलः।|The high-rising lake is cool.|उत्क्र्यसरः|nature
+उत्क्र्यगिरिः उच्चैः अस्ति।|The high-rising mountain is high.|उत्क्र्यगिरिः|nature
