@@ -2444,3 +2444,38 @@
 सत्त्यखगः गायति।|The real bird sings.|सत्त्यखगः|nature
 सत्त्यपवनः वहति।|The real breeze blows.|सत्त्यपवनः|nature
 सत्त्यमेघः दृश्यते।|The real cloud is seen.|सत्त्यमेघः|nature
+आर्ल्यपवनः वहति।|The graceful breeze blows.|आर्ल्यपवनः|nature
+आर्ल्यतरुः तिष्ठति।|The graceful tree stands.|आर्ल्यतरुः|nature
+आर्ल्यखगः गायति।|The graceful bird sings.|आर्ल्यखगः|nature
+आर्ल्यपुष्पम् विकसति।|The graceful flower blooms.|आर्ल्यपुष्पम्|nature
+आर्ल्यकमलम् सुन्दरं अस्ति।|The graceful lotus is beautiful.|आर्ल्यकमलम्|nature
+आर्ल्यसरः शीतलः।|The graceful lake is cool.|आर्ल्यसरः|nature
+आर्ल्यमेघः दृश्यते।|The graceful cloud is seen.|आर्ल्यमेघः|nature
+उद्द्यसूर्यः विभाति।|The shining sun shines.|उद्द्यसूर्यः|nature
+उद्द्यमेघः दृश्यते।|The bright cloud is seen.|उद्द्यमेघः|nature
+उद्द्यपवनः वहति।|The refreshing breeze blows.|उद्द्यपवनः|nature
+उद्द्यसरः स्वच्छः अस्ति।|The bright lake is clean.|उद्द्यसरः|nature
+उद्द्यतरुः शोभते।|The bright tree looks beautiful.|उद्द्यतरुः|nature
+उद्द्यखगः उत्पतति।|The rising bird flies up.|उद्द्यखगः|nature
+उद्द्यकमलम् विकसति।|The bright lotus blooms.|उद्द्यकमलम्|nature
+उद्भ्यखगः उत्पतति।|The soaring bird flies up.|उद्भ्यखगः|nature
+उद्भ्यमेघः वर्षति।|The emerging cloud rains.|उद्भ्यमेघः|nature
+उद्भ्यपवनः वहति।|The emerging breeze blows.|उद्भ्यपवनः|nature
+उद्भ्यतरुः वर्धते।|The emerging tree grows.|उद्भ्यतरुः|nature
+उद्भ्यपुष्पम् विकसति।|The emerging flower blooms.|उद्भ्यपुष्पम्|nature
+उद्भ्यसरः शीतलः।|The emerging lake is cool.|उद्भ्यसरः|nature
+उद्भ्यगिरिः उच्चैः अस्ति।|The soaring mountain is high.|उद्भ्यगिरिः|nature
+मठ्ठ्यपवनः वहति।|The peaceful breeze blows.|मठ्ठ्यपवनः|nature
+मठ्ठ्यतरुः तिष्ठति।|The peaceful tree stands.|मठ्ठ्यतरुः|nature
+मठ्ठ्यखगः कूजति।|The quiet bird chirps.|मठ्ठ्यखगः|nature
+मठ्ठ्यसरः शान्तः अस्ति।|The peaceful lake is calm.|मठ्ठ्यसरः|nature
+मठ्ठ्यपुष्पम् विकसति।|The quiet flower blooms.|मठ्ठ्यपुष्पम्|nature
+मठ्ठ्यकमलम् सुन्दरं अस्ति।|The peaceful lotus is beautiful.|मठ्ठ्यकमलम्|nature
+मठ्ठ्यमेघः दृश्यते।|The quiet cloud is seen.|मठ्ठ्यमेघः|nature
+गूड्ढ्यवनम् घोरं अस्ति।|The hidden forest is dense.|गूड्ढ्यवनम्|nature
+गूड्ढ्यसरः गभीरः अस्ति।|The deep lake is deep.|गूड्ढ्यसरः|nature
+गूड्ढ्यमार्गः दीर्घः अस्ति।|The hidden path is long.|गूड्ढ्यमार्गः|nature
+गूड्ढ्यतरुः अत्र अस्ति।|The hidden tree is here.|गूड्ढ्यतरुः|nature
+गूड्ढ्यपुष्पम् विकसति।|The mysterious flower blooms.|गूड्ढ्यपुष्पम्|nature
+गूड्ढ्यपवनः मन्दं वहति।|The hidden breeze blows softly.|गूड्ढ्यपवनः|nature
+गूड्ढ्यमेघः दृश्यते।|The mysterious cloud is seen.|गूड्ढ्यमेघः|nature
