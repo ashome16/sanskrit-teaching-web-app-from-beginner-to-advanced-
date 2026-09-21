@@ -41177,6 +41177,159 @@
         "prompt": "____ द्वौ स्तः।"
       },
       {
+        "target": "न्ब्या",
+        "tiles": [
+          "न्ब्य",
+          "आ",
+          "क",
+          "त",
+          "इ",
+          "उ"
+        ],
+        "english": "The nbya-form looks lovely.",
+        "explanation": "न्ब्य plus आ makes न्ब्या.",
+        "sentence": "न्ब्या रूपं शोभते।",
+        "highlight": "न्ब्या",
+        "phase": "jodo",
+        "prompt": "____ रूपं शोभते।"
+      },
+      {
+        "target": "न्ब्यि",
+        "tiles": [
+          "न्ब्य",
+          "इ",
+          "क",
+          "त",
+          "आ",
+          "उ"
+        ],
+        "english": "A nbyi-bird calls.",
+        "explanation": "न्ब्य plus इ makes न्ब्यि.",
+        "sentence": "न्ब्यि खगः कूजति।",
+        "highlight": "न्ब्यि",
+        "phase": "jodo",
+        "prompt": "____ खगः कूजति।"
+      },
+      {
+        "target": "न्ब्यी",
+        "tiles": [
+          "न्ब्य",
+          "ई",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two nbyi-forms are there.",
+        "explanation": "न्ब्य plus ई makes न्ब्यी.",
+        "sentence": "न्ब्यी द्वौ स्तः।",
+        "highlight": "न्ब्यी",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "न्ब्यु",
+        "tiles": [
+          "न्ब्य",
+          "उ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The boy sees the nbyu.",
+        "explanation": "न्ब्य plus उ makes न्ब्यु.",
+        "sentence": "न्ब्यु बालकः पश्यति।",
+        "highlight": "न्ब्यु",
+        "phase": "jodo",
+        "prompt": "____ बालकः पश्यति।"
+      },
+      {
+        "target": "न्ब्यू",
+        "tiles": [
+          "न्ब्य",
+          "ऊ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two nbyu-forms are there.",
+        "explanation": "न्ब्य plus ऊ makes न्ब्यू.",
+        "sentence": "न्ब्यू द्वौ स्तः।",
+        "highlight": "न्ब्यू",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
+        "target": "न्ब्ये",
+        "tiles": [
+          "न्ब्य",
+          "ए",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "A flower blooms at nbye.",
+        "explanation": "न्ब्य plus ए makes न्ब्ये.",
+        "sentence": "न्ब्ये पुष्पं विकसति।",
+        "highlight": "न्ब्ये",
+        "phase": "jodo",
+        "prompt": "____ पुष्पं विकसति।"
+      },
+      {
+        "target": "न्ब्यै",
+        "tiles": [
+          "न्ब्य",
+          "ऐ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "With nbyai the breeze blows.",
+        "explanation": "न्ब्य plus ऐ makes न्ब्यै.",
+        "sentence": "न्ब्यैः सह पवनः वहति।",
+        "highlight": "न्ब्यै",
+        "phase": "jodo",
+        "prompt": "____ः सह पवनः वहति।"
+      },
+      {
+        "target": "न्ब्यो",
+        "tiles": [
+          "न्ब्य",
+          "ओ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "The nbyo is lovely.",
+        "explanation": "न्ब्य plus ओ makes न्ब्यो.",
+        "sentence": "न्ब्यो रम्यः अस्ति।",
+        "highlight": "न्ब्यो",
+        "phase": "jodo",
+        "prompt": "____ रम्यः अस्ति।"
+      },
+      {
+        "target": "न्ब्यौ",
+        "tiles": [
+          "न्ब्य",
+          "औ",
+          "क",
+          "त",
+          "आ",
+          "इ"
+        ],
+        "english": "Two nbyau-forms are there.",
+        "explanation": "न्ब्य plus औ makes न्ब्यौ.",
+        "sentence": "न्ब्यौ द्वौ स्तः।",
+        "highlight": "न्ब्यौ",
+        "phase": "jodo",
+        "prompt": "____ द्वौ स्तः।"
+      },
+      {
         "target": "किम्",
         "tiles": [
           "किम्",
@@ -76212,6 +76365,111 @@
         "sentence": "हर्म्यपुष्पम् विकसति।",
         "english": "The high-perched flower blooms.",
         "highlight": "हर्म्यपुष्पम्"
+      },
+      {
+        "prompt": "पवनः ____।",
+        "target": "तान्ब्यथयति",
+        "tiles": [
+          "तान्ब्यथयति",
+          "गजः",
+          "वृक्षः",
+          "मेघः",
+          "सिंहः",
+          "पुष्पम्"
+        ],
+        "sentence": "पवनः तान्ब्यथयति।",
+        "english": "The breeze shakes them.",
+        "highlight": "तान्ब्यथयति"
+      },
+      {
+        "prompt": "मेघः ____।",
+        "target": "तान्ब्यथयति",
+        "tiles": [
+          "तान्ब्यथयति",
+          "अश्वः",
+          "मयूरः",
+          "फलम्",
+          "पर्वतः",
+          "सरः"
+        ],
+        "sentence": "मेघः तान्ब्यथयति।",
+        "english": "The cloud disturbs them.",
+        "highlight": "तान्ब्यथयति"
+      },
+      {
+        "prompt": "खगः ____।",
+        "target": "तान्ब्यथयति",
+        "tiles": [
+          "तान्ब्यथयति",
+          "शशः",
+          "वानरः",
+          "सूर्यः",
+          "आकाशः",
+          "कमलम्"
+        ],
+        "sentence": "खगः तान्ब्यथयति।",
+        "english": "The bird disturbs them.",
+        "highlight": "तान्ब्यथयति"
+      },
+      {
+        "prompt": "तरुः ____।",
+        "target": "तान्ब्यथयति",
+        "tiles": [
+          "तान्ब्यथयति",
+          "गजः",
+          "अश्वः",
+          "वृक्षः",
+          "मेघः",
+          "पवनः"
+        ],
+        "sentence": "तरुः तान्ब्यथयति।",
+        "english": "The tree shakes them.",
+        "highlight": "तान्ब्यथयति"
+      },
+      {
+        "prompt": "सिंहः ____।",
+        "target": "तान्ब्यथयति",
+        "tiles": [
+          "तान्ब्यथयति",
+          "मयूरः",
+          "पुष्पम्",
+          "फलम्",
+          "पर्वतः",
+          "सरः"
+        ],
+        "sentence": "सिंहः तान्ब्यथयति।",
+        "english": "The lion disturbs them.",
+        "highlight": "तान्ब्यथयति"
+      },
+      {
+        "prompt": "गिरिः ____।",
+        "target": "तान्ब्यथयति",
+        "tiles": [
+          "तान्ब्यथयति",
+          "शशः",
+          "वानरः",
+          "सिंहः",
+          "तरुः",
+          "गजः"
+        ],
+        "sentence": "गिरिः तान्ब्यथयति।",
+        "english": "The mountain shakes them.",
+        "highlight": "तान्ब्यथयति"
+      },
+      {
+        "prompt": "सरः ____।",
+        "target": "तान्ब्यथयति",
+        "tiles": [
+          "तान्ब्यथयति",
+          "गजः",
+          "वृक्षः",
+          "कमलम्",
+          "मेघः",
+          "खगः"
+        ],
+        "sentence": "सरः तान्ब्यथयति।",
+        "english": "The lake disturbs them.",
+        "highlight": "तान्ब्यथयति"
       },
       {
         "phase": "learn",
