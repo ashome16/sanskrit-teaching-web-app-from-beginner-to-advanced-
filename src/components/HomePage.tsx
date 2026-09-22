@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { playPronunciation } from '../utils/pronunciation';
-import FAQSection from './FAQSection';
 import { Grade8SyllabusModal } from './Grade8SyllabusModal';
 import { useAuthStore } from '../store/authStore';
 import '../styles/home-page.css';
@@ -457,7 +456,7 @@ const HomePage: React.FC<HomePageProps> = ({
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const { openAuthModal, isAdminLoggedIn } = useAuthStore();
+  const { isAdminLoggedIn } = useAuthStore();
   const [isGrade8ModalOpen, setIsGrade8ModalOpen] = useState<boolean>(false);
 
   const visibleChapters = CHAPTERS_INFO.filter(
@@ -647,7 +646,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <span className="home-trust-icon">🛡️</span>
           <div className="home-trust-text">
             <strong>100% Verified &amp; Safe</strong>
-            <span>UPI payment &amp; 14-day risk-free trial</span>
+            <span>Family-safe accounts &amp; progress sync</span>
           </div>
         </div>
       </section>
@@ -1341,11 +1340,6 @@ const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
       </section>
-
-      {/* ------------------------------------------------------------------
-          FAQ & 2-Week Trial Pricing Section
-          ------------------------------------------------------------------ */}
-      <FAQSection onOpenRegister={() => openAuthModal('register')} />
 
       {isAdminLoggedIn && (
         <Grade8SyllabusModal

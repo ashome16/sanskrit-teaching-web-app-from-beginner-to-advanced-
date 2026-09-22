@@ -3,7 +3,7 @@ import { QUIZ_CATEGORIES, QUIZ_QUESTIONS, type QuizQuestionItem } from '../data/
 import { playPronunciation } from '../utils/pronunciation';
 import { useAppStore } from '../store';
 import { useAuthStore } from '../store/authStore';
-import { getPremiumGateReason, hasPremiumAccess } from '../utils/premiumAccess';
+import { canDownloadContent, getDownloadGateReason } from '../utils/premiumAccess';
 import { downloadQuizSheet } from '../utils/contentDownload';
 import '../styles/quiz-section.css';
 
@@ -31,8 +31,8 @@ const QuizSection: React.FC<QuizSectionProps> = ({
 
   const { recordQuizAttempt } = useAppStore();
   const { isAdminLoggedIn, currentUser, openAuthModal, openPaymentModal } = useAuthStore();
-  const canDownload = hasPremiumAccess(currentUser, isAdminLoggedIn);
-  const gateReason = getPremiumGateReason(currentUser, isAdminLoggedIn);
+  const canDownload = canDownloadContent(currentUser, isAdminLoggedIn);
+  const gateReason = getDownloadGateReason(currentUser, isAdminLoggedIn);
 
   const visibleCategories = useMemo(
     () =>
@@ -292,10 +292,10 @@ const QuizSection: React.FC<QuizSectionProps> = ({
               title={
                 canDownload
                   ? 'Download current topic as offline practice HTML'
-                  : 'Subscription required to download'
+                  : 'Paid access required to download'
               }
             >
-              {canDownload ? '⬇️ Download Practice Sheet' : '🔒 Download (Trial / Paid)'}
+              {canDownload ? '⬇️ Download Practice Sheet' : '🔒 Download (Paid)'}
             </button>
           )}
           {onOpenReader && (
@@ -321,19 +321,23 @@ const QuizSection: React.FC<QuizSectionProps> = ({
           <div>
             <strong>
               {gateReason === 'guest'
-                ? 'Create a free account to unlock quiz downloads'
-                : 'Your trial or paid access has ended'}
+                ? 'Sign in to continue'
+                : gateReason === 'trial'
+                ? 'Downloads unlock after paid access (₹200 once)'
+                : 'Paid access required to download'}
             </strong>
             <p>
               {gateReason === 'guest'
-                ? 'Start a 14-day free trial to download offline quiz practice sheets.'
-                : 'Pay ₹200 once (≈30 days) to keep downloading quizzes for offline practice.'}
+                ? 'Create an account or sign in. Downloads require paid access (₹200 once) — the free trial does not include offline downloads.'
+                : gateReason === 'trial'
+                ? 'You can take quizzes online during your trial. Pay ₹200 once to download practice sheets offline.'
+                : 'Pay ₹200 once (≈30 days) to download quizzes for offline practice.'}
             </p>
           </div>
           <div className="quiz-upgrade-actions">
             {gateReason === 'guest' ? (
               <button type="button" className="quiz-retry-btn" onClick={() => openAuthModal('register')}>
-                Start Free Trial
+                Sign In / Register
               </button>
             ) : (
               <button type="button" className="quiz-retry-btn" onClick={() => openPaymentModal()}>
@@ -487,9 +491,9 @@ const QuizSection: React.FC<QuizSectionProps> = ({
               type="button"
               className={`quiz-download-btn${canDownload ? '' : ' locked'}`}
               onClick={handleDownloadResults}
-              title={canDownload ? 'Download results with answer key' : 'Subscription required'}
+              title={canDownload ? 'Download results with answer key' : 'Paid access required'}
             >
-              {canDownload ? '⬇️ Download Results' : '🔒 Download Results (Trial / Paid)'}
+              {canDownload ? '⬇️ Download Results' : '🔒 Download Results (Paid)'}
             </button>
             <button
               type="button"

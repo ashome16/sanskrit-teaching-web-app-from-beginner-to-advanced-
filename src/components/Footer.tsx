@@ -178,7 +178,7 @@ export const Footer: React.FC<FooterProps> = ({
                   className="footer-nav-btn"
                   onClick={onOpenFAQ}
                 >
-                  ❓ Gurukul FAQ &amp; 14-Day Free Trial
+                  ❓ Gurukul FAQ &amp; Pricing
                 </button>
               </li>
             </ul>

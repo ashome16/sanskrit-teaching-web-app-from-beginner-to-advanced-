@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { WORKSHEETS, WORKSHEET_CATEGORIES, type Worksheet } from '../data/worksheetData';
 import { useAuthStore } from '../store/authStore';
-import { getPremiumGateReason, hasPremiumAccess } from '../utils/premiumAccess';
+import { canDownloadContent, getDownloadGateReason } from '../utils/premiumAccess';
 import { downloadWorksheet } from '../utils/contentDownload';
 import '../styles/worksheet-section.css';
 
@@ -21,8 +21,8 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
   const [showAnswerKey, setShowAnswerKey] = useState<boolean>(false);
   const [showUpgradePrompt, setShowUpgradePrompt] = useState<boolean>(false);
   const { isAdminLoggedIn, currentUser, openAuthModal, openPaymentModal } = useAuthStore();
-  const canDownload = hasPremiumAccess(currentUser, isAdminLoggedIn);
-  const gateReason = getPremiumGateReason(currentUser, isAdminLoggedIn);
+  const canDownload = canDownloadContent(currentUser, isAdminLoggedIn);
+  const gateReason = getDownloadGateReason(currentUser, isAdminLoggedIn);
 
   const visibleCategories = useMemo(
     () => WORKSHEET_CATEGORIES.filter((cat) => isAdminLoggedIn || cat.id !== 'grade8'),
@@ -225,17 +225,17 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
                 type="button"
                 className={`worksheet-download-btn${canDownload ? '' : ' locked'}`}
                 onClick={handleDownload}
-                title={canDownload ? 'Download printable HTML worksheet' : 'Subscription required to download'}
+                title={canDownload ? 'Download printable HTML worksheet' : 'Paid access required to download'}
               >
                 <span>{canDownload ? '⬇️' : '🔒'}</span>
-                <span>{canDownload ? 'Download Worksheet' : 'Download (Trial / Paid)'}</span>
+                <span>{canDownload ? 'Download Worksheet' : 'Download (Paid)'}</span>
               </button>
 
               <button
                 type="button"
                 className={`worksheet-print-primary-btn${canDownload ? '' : ' locked'}`}
                 onClick={handlePrint}
-                title={canDownload ? 'Print or save as PDF' : 'Subscription required to print'}
+                title={canDownload ? 'Print or save as PDF' : 'Paid access required to print'}
               >
                 <span>{canDownload ? '🖨️' : '🔒'}</span>
                 <span>Print / Save PDF (A4)</span>
@@ -248,19 +248,23 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
               <div>
                 <strong>
                   {gateReason === 'guest'
-                    ? 'Create a free account to unlock downloads'
-                    : 'Your trial or paid access has ended'}
+                    ? 'Sign in to continue'
+                    : gateReason === 'trial'
+                    ? 'Downloads unlock after paid access (₹200 once)'
+                    : 'Paid access required to download'}
                 </strong>
                 <p>
                   {gateReason === 'guest'
-                    ? 'Start a 14-day free trial to download and print worksheets offline.'
-                    : 'Pay ₹200 once (≈30 days) to keep downloading and printing worksheets.'}
+                    ? 'Create an account or sign in. Downloads require paid access (₹200 once) — the free trial does not include offline downloads.'
+                    : gateReason === 'trial'
+                    ? 'You can browse and practice online during your trial. Pay ₹200 once to download and print worksheets offline.'
+                    : 'Pay ₹200 once (≈30 days) to download and print worksheets offline.'}
                 </p>
               </div>
               <div className="worksheet-upgrade-actions">
                 {gateReason === 'guest' ? (
                   <button type="button" className="worksheet-print-primary-btn" onClick={() => openAuthModal('register')}>
-                    Start Free Trial
+                    Sign In / Register
                   </button>
                 ) : (
                   <button type="button" className="worksheet-print-primary-btn" onClick={() => openPaymentModal()}>
