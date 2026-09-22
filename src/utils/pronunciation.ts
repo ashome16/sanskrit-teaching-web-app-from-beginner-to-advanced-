@@ -63,7 +63,19 @@ const applyVisargaEcho = (word: string): string => {
 // On Windows, avoid double-speak / roman pitch hacks for ज्ञ and त्र — SAPI
 // garbles those; plain Devanagari + hi-IN at a mild rate is clearer.
 const toSpeechText = (word: string): string => {
-  if (isWindowsPlatform() && (word === 'ज्ञ' || word === 'त्र' || word === 'क्ष')) {
+  // Windows SAPI: roman cues for these tiles land on English and sound wrong
+  // (घ→gha garbled, ज→ya-like, ध→wrong quality). Keep Devanagari so hi-IN speaks.
+  // Mac roman cues still work — this early return is Windows-only.
+  if (
+    isWindowsPlatform() &&
+    (word === 'ज्ञ' ||
+      word === 'त्र' ||
+      word === 'क्ष' ||
+      word === 'घ' ||
+      word === 'ज' ||
+      word === 'ध' ||
+      word === 'झ')
+  ) {
     return word;
   }
   // Single बारहखड़ी / Varṇamālā tiles: distinct roman cues.
@@ -115,8 +127,11 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   const isNgaWord =
     speech === 'gun ga' || speech === 'run ga' || speech === 'an gam';
 
-  // Windows: known-problem conjuncts — mild Devanagari rate, no pitch tricks.
-  if (isWindowsPlatform() && (isGya || isTra || isKsha)) {
+  // Windows: known-problem tiles/conjuncts — mild Devanagari rate, no pitch tricks.
+  const isJa = word === 'ज' || speech === 'ज';
+  const isDha = word === 'ध' || speech === 'ध';
+  const isJha = word === 'झ' || speech === 'झ';
+  if (isWindowsPlatform() && (isGya || isTra || isKsha || isGha || isJa || isDha || isJha)) {
     utterance.rate = clampRate(0.9);
     utterance.pitch = safePitch(1);
     utterance.volume = 1;
