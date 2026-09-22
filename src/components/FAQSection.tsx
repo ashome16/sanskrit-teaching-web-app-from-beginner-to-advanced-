@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { FAQItem } from '../types/auth';
 import { useAuthStore } from '../store/authStore';
-import { RAZORPAY_CTA_LABEL, RAZORPAY_TRUST_NOTICE } from '../utils/razorpayCheckout';
+import { RAZORPAY_CTA_LABEL } from '../utils/razorpayCheckout';
 import '../styles/faq-section.css';
 
 const FAQ_DATA: FAQItem[] = [
@@ -110,7 +110,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
               onClick={openPaymentModal}
             >
               {trialActive
-                ? `🎉 Trial active until ${trialEndsLabel} · Subscribe after trial`
+                ? `🎉 Trial active until ${trialEndsLabel} · Pay after trial`
                 : RAZORPAY_CTA_LABEL}
             </button>
             {!trialActive && (
@@ -118,7 +118,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
                 style={{
                   margin: 0,
                   flex: '1 1 16rem',
-                  maxWidth: '26rem',
+                  maxWidth: '22rem',
                   fontSize: '0.8rem',
                   color: '#475569',
                   lineHeight: 1.45,
@@ -126,7 +126,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
                   textAlign: 'left',
                 }}
               >
-                {RAZORPAY_TRUST_NOTICE}
+                UPI · Cards · Netbanking · Secured by Razorpay
               </p>
             )}
             {trialActive && (
