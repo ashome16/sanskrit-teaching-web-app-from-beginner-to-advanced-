@@ -30,7 +30,7 @@ const VOWEL_TO_MATRA: Record<string, string> = {
 const WINDOWS_BARE_CONSONANTS = new Set(
   'क ख ग घ ङ च छ ज झ ञ ट ठ ड ढ ण त थ द ध न प फ ब भ म य र ल व श ष स ह'.split(' '),
 );
-const WINDOWS_CONJUNCT_TILES = new Set(['क्ष', 'ज्ञ', 'त्र']);
+const WINDOWS_CONJUNCT_TILES = new Set(['क्ष', 'ज्ञ', 'त्र', 'श्र']);
 
 // Exact/substring phonetic overrides for words that speech engines
 // otherwise mispronounce or misinterpret entirely.
