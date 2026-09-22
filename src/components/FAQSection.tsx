@@ -15,14 +15,14 @@ const FAQ_DATA: FAQItem[] = [
   {
     id: 'faq-pricing',
     category: 'trial_pricing',
-    question: 'What is the subscription plan after the 2-week trial?',
+    question: 'What is the one-time ₹200 plan after the 2-week trial?',
     answer:
-      'After your 14-day free access period, our plan is just ₹200 / month. This gives you continued unlimited access to all chapters, ongoing curriculum updates, interactive exercises, Vedic Mathematics (वैदिक-गणितम्), and your personalized learning streak and progress tracking.',
+      'After your 14-day free access period, pay a one-time ₹200 for continued access (30 days). Renew anytime with another one-time payment. This gives you continued unlimited access to all chapters, ongoing curriculum updates, interactive exercises, Vedic Mathematics (वैदिक-गणितम्), and your personalized learning streak and progress tracking.',
   },
   {
     id: 'faq-payment-methods',
     category: 'trial_pricing',
-    question: 'What payment methods are supported for the ₹200/month plan?',
+    question: 'What payment methods are supported for the one-time ₹200 plan?',
     answer:
       'Pay ₹200 once via Razorpay Standard Checkout (UPI, cards, netbanking) — no auto-debit. Access lasts 30 days; renew anytime with another one-time payment. As a backup, you can also pay by UPI ID / QR and submit your 12-digit UTR for manual verification.',
   },
@@ -83,7 +83,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
           <span className="faq-kicker">प्रश्नोत्तरी · FAQ & Support</span>
           <h2 className="faq-title">Frequently Asked Questions & Pricing</h2>
           <p className="faq-subtitle">
-            Everything you need to know about our 2-week free trial, ₹200/month plan, and features.
+            Everything you need to know about our 2-week free trial, one-time ₹200 access, and features.
           </p>
         </div>
 
@@ -95,8 +95,8 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
             Explore all 15 Deepakam chapters, interactive audio, and grammar shelves without any upfront commitment.
           </p>
           <div className="faq-pricing-rate-row">
-            <span className="faq-pricing-rate">₹200 <small>/ month</small></span>
-            <span className="faq-pricing-rate-sub">billed monthly after 14-day free access</span>
+            <span className="faq-pricing-rate">₹200 <small>once</small></span>
+            <span className="faq-pricing-rate-sub">after 14-day free access · no auto-debit</span>
           </div>
           <div className="faq-pricing-actions">
             {!currentUser && onOpenRegister && (

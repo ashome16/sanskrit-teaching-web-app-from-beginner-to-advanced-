@@ -15,7 +15,7 @@ function buildUpiPayUri(vpa: string, payee: string): string {
   return (
     `upi://pay?pa=${encodeURIComponent(vpa)}` +
     `&pn=${encodeURIComponent(payee)}` +
-    `&am=200.00&cu=INR&tn=${encodeURIComponent('EdNet Monthly Access')}`
+    `&am=200.00&cu=INR&tn=${encodeURIComponent('EdNet 30-day Access')}`
   );
 }
 
@@ -239,7 +239,7 @@ const PaymentModal: React.FC = () => {
           ) : (
             <>
               <span className="payment-plan-badge">
-                {isAdminPayPreview ? '🛠 Admin Pay Preview' : '🌟 All-Access Monthly Pass'}
+                {isAdminPayPreview ? '🛠 Admin Pay Preview' : '🌟 All-Access Pass (30 days)'}
               </span>
               <h2 id="payment-modal-title" className="payment-modal-title">
                 {isAdminPayPreview ? 'Preview pay form' : 'Unlock Full Sanskrit Platform'}
