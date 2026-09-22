@@ -64,7 +64,7 @@ const applyVisargaEcho = (word: string): string => {
 // garbles those; plain Devanagari + hi-IN at a mild rate is clearer.
 const toSpeechText = (word: string): string => {
   // Windows SAPI: roman cues for these tiles land on English and sound wrong
-  // (घ→gha garbled, ज→ya-like, ध→wrong quality). Keep Devanagari so hi-IN speaks.
+  // (घ→gha garbled, ज→ya-like, ध→wrong quality, न→English "na", फ→English "pha"). Keep Devanagari so hi-IN speaks.
   // Mac roman cues still work — this early return is Windows-only.
   if (
     isWindowsPlatform() &&
@@ -74,7 +74,9 @@ const toSpeechText = (word: string): string => {
       word === 'घ' ||
       word === 'ज' ||
       word === 'ध' ||
-      word === 'झ')
+      word === 'झ' ||
+      word === 'न' ||
+      word === 'फ')
   ) {
     return word;
   }
