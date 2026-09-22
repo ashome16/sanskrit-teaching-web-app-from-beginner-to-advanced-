@@ -1,6 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import { WORKSHEETS, WORKSHEET_CATEGORIES, type Worksheet } from '../data/worksheetData';
 import { useAuthStore } from '../store/authStore';
+import { getPremiumGateReason, hasPremiumAccess } from '../utils/premiumAccess';
+import { downloadWorksheet } from '../utils/contentDownload';
 import '../styles/worksheet-section.css';
 
 interface WorksheetSectionProps {
@@ -17,7 +19,10 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeWorksheet, setActiveWorksheet] = useState<Worksheet | null>(null);
   const [showAnswerKey, setShowAnswerKey] = useState<boolean>(false);
-  const { isAdminLoggedIn } = useAuthStore();
+  const [showUpgradePrompt, setShowUpgradePrompt] = useState<boolean>(false);
+  const { isAdminLoggedIn, currentUser, openAuthModal, openPaymentModal } = useAuthStore();
+  const canDownload = hasPremiumAccess(currentUser, isAdminLoggedIn);
+  const gateReason = getPremiumGateReason(currentUser, isAdminLoggedIn);
 
   const visibleCategories = useMemo(
     () => WORKSHEET_CATEGORIES.filter((cat) => isAdminLoggedIn || cat.id !== 'grade8'),
@@ -83,8 +88,29 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
                 ws.id.startsWith('ws-ch14')))
         );
 
+  const requireDownloadAccess = (): boolean => {
+    if (canDownload) {
+      setShowUpgradePrompt(false);
+      return true;
+    }
+    setShowUpgradePrompt(true);
+    if (gateReason === 'guest') {
+      openAuthModal('register');
+    } else {
+      openPaymentModal();
+    }
+    return false;
+  };
+
   const handlePrint = () => {
+    if (!requireDownloadAccess()) return;
     window.print();
+  };
+
+  const handleDownload = () => {
+    if (!activeWorksheet) return;
+    if (!requireDownloadAccess()) return;
+    downloadWorksheet(activeWorksheet, showAnswerKey);
   };
 
   return (
@@ -181,7 +207,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
               ← Back to All Worksheets
             </button>
 
-            <div style={{ display: 'flex', gap: '0.65rem' }}>
+            <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
               <button
                 type="button"
                 className="worksheet-toolbar-btn"
@@ -197,14 +223,56 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
 
               <button
                 type="button"
-                className="worksheet-print-primary-btn"
-                onClick={handlePrint}
+                className={`worksheet-download-btn${canDownload ? '' : ' locked'}`}
+                onClick={handleDownload}
+                title={canDownload ? 'Download printable HTML worksheet' : 'Subscription required to download'}
               >
-                <span>🖨️</span>
+                <span>{canDownload ? '⬇️' : '🔒'}</span>
+                <span>{canDownload ? 'Download Worksheet' : 'Download (Trial / Paid)'}</span>
+              </button>
+
+              <button
+                type="button"
+                className={`worksheet-print-primary-btn${canDownload ? '' : ' locked'}`}
+                onClick={handlePrint}
+                title={canDownload ? 'Print or save as PDF' : 'Subscription required to print'}
+              >
+                <span>{canDownload ? '🖨️' : '🔒'}</span>
                 <span>Print / Save PDF (A4)</span>
               </button>
             </div>
           </div>
+
+          {showUpgradePrompt && !canDownload && (
+            <div className="worksheet-upgrade-banner" role="status">
+              <div>
+                <strong>
+                  {gateReason === 'guest'
+                    ? 'Create a free account to unlock downloads'
+                    : 'Your trial or paid access has ended'}
+                </strong>
+                <p>
+                  {gateReason === 'guest'
+                    ? 'Start a 14-day free trial to download and print worksheets offline.'
+                    : 'Pay ₹200 once (≈30 days) to keep downloading and printing worksheets.'}
+                </p>
+              </div>
+              <div className="worksheet-upgrade-actions">
+                {gateReason === 'guest' ? (
+                  <button type="button" className="worksheet-print-primary-btn" onClick={() => openAuthModal('register')}>
+                    Start Free Trial
+                  </button>
+                ) : (
+                  <button type="button" className="worksheet-print-primary-btn" onClick={() => openPaymentModal()}>
+                    Pay ₹200 · Unlock Download
+                  </button>
+                )}
+                <button type="button" className="worksheet-toolbar-btn" onClick={() => setShowUpgradePrompt(false)}>
+                  Dismiss
+                </button>
+              </div>
+            </div>
+          )}
 
           {/* A4 Document Paper */}
           <div className="worksheet-paper" id="printable-worksheet">

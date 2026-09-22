@@ -3,6 +3,8 @@ import { QUIZ_CATEGORIES, QUIZ_QUESTIONS, type QuizQuestionItem } from '../data/
 import { playPronunciation } from '../utils/pronunciation';
 import { useAppStore } from '../store';
 import { useAuthStore } from '../store/authStore';
+import { getPremiumGateReason, hasPremiumAccess } from '../utils/premiumAccess';
+import { downloadQuizSheet } from '../utils/contentDownload';
 import '../styles/quiz-section.css';
 
 interface QuizSectionProps {
@@ -25,9 +27,12 @@ const QuizSection: React.FC<QuizSectionProps> = ({
   const [score, setScore] = useState<number>(0);
   const [isCompleted, setIsCompleted] = useState<boolean>(false);
   const [showReview, setShowReview] = useState<boolean>(false);
+  const [showUpgradePrompt, setShowUpgradePrompt] = useState<boolean>(false);
 
   const { recordQuizAttempt } = useAppStore();
-  const { isAdminLoggedIn } = useAuthStore();
+  const { isAdminLoggedIn, currentUser, openAuthModal, openPaymentModal } = useAuthStore();
+  const canDownload = hasPremiumAccess(currentUser, isAdminLoggedIn);
+  const gateReason = getPremiumGateReason(currentUser, isAdminLoggedIn);
 
   const visibleCategories = useMemo(
     () =>
@@ -136,6 +141,54 @@ const QuizSection: React.FC<QuizSectionProps> = ({
     );
   }, [selectedCategory, publicQuestions]);
 
+  const requireDownloadAccess = (): boolean => {
+    if (canDownload) {
+      setShowUpgradePrompt(false);
+      return true;
+    }
+    setShowUpgradePrompt(true);
+    if (gateReason === 'guest') {
+      openAuthModal('register');
+    } else {
+      openPaymentModal();
+    }
+    return false;
+  };
+
+  const handleDownloadFilteredQuiz = () => {
+    if (!requireDownloadAccess()) return;
+    if (filteredQuestions.length === 0) return;
+    // Cap oversized "All Topics" exports so the HTML stays printable offline.
+    const MAX_PRACTICE = 80;
+    const questions =
+      selectedCategory === 'all' && filteredQuestions.length > MAX_PRACTICE
+        ? filteredQuestions.slice(0, MAX_PRACTICE)
+        : filteredQuestions;
+    const catLabel =
+      QUIZ_CATEGORIES.find((c) => c.id === selectedCategory)?.label || 'Quiz Practice';
+    const title =
+      questions.length < filteredQuestions.length
+        ? `${catLabel} (first ${questions.length} of ${filteredQuestions.length})`
+        : catLabel;
+    downloadQuizSheet(title, questions, {
+      includeAnswers: false,
+      filenameHint: `practice-${selectedCategory}`,
+    });
+  };
+
+  const handleDownloadResults = () => {
+    if (!activeQuestions) return;
+    if (!requireDownloadAccess()) return;
+    const catLabel =
+      QUIZ_CATEGORIES.find((c) => c.id === selectedCategory)?.label || 'Quiz Results';
+    downloadQuizSheet(`${catLabel} · Results`, activeQuestions, {
+      includeAnswers: true,
+      userAnswers,
+      scoreLabel: `Score: ${score} / ${activeQuestions.length * 10} points`,
+      filenameHint: `results-${selectedCategory}`,
+    });
+  };
+
   const availableSubQuizzes = useMemo(() => {
     const list: { title: string; count: number }[] = [];
     const seen = new Set<string>();
@@ -230,7 +283,21 @@ const QuizSection: React.FC<QuizSectionProps> = ({
             </p>
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '0.65rem' }}>
+        <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
+          {!activeQuestions && (
+            <button
+              type="button"
+              className={`quiz-download-btn${canDownload ? '' : ' locked'}`}
+              onClick={handleDownloadFilteredQuiz}
+              title={
+                canDownload
+                  ? 'Download current topic as offline practice HTML'
+                  : 'Subscription required to download'
+              }
+            >
+              {canDownload ? '⬇️ Download Practice Sheet' : '🔒 Download (Trial / Paid)'}
+            </button>
+          )}
           {onOpenReader && (
             <button type="button" className="quiz-home-btn" onClick={onOpenReader}>
               📖 Deepakam Reader
@@ -248,6 +315,37 @@ const QuizSection: React.FC<QuizSectionProps> = ({
           )}
         </div>
       </header>
+
+      {showUpgradePrompt && !canDownload && (
+        <div className="quiz-upgrade-banner" role="status">
+          <div>
+            <strong>
+              {gateReason === 'guest'
+                ? 'Create a free account to unlock quiz downloads'
+                : 'Your trial or paid access has ended'}
+            </strong>
+            <p>
+              {gateReason === 'guest'
+                ? 'Start a 14-day free trial to download offline quiz practice sheets.'
+                : 'Pay ₹200 once (≈30 days) to keep downloading quizzes for offline practice.'}
+            </p>
+          </div>
+          <div className="quiz-upgrade-actions">
+            {gateReason === 'guest' ? (
+              <button type="button" className="quiz-retry-btn" onClick={() => openAuthModal('register')}>
+                Start Free Trial
+              </button>
+            ) : (
+              <button type="button" className="quiz-retry-btn" onClick={() => openPaymentModal()}>
+                Pay ₹200 · Unlock Download
+              </button>
+            )}
+            <button type="button" className="quiz-home-btn" onClick={() => setShowUpgradePrompt(false)}>
+              Dismiss
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* View 1: Quiz Home / Mode Picker */}
       {!activeQuestions ? (
@@ -384,6 +482,14 @@ const QuizSection: React.FC<QuizSectionProps> = ({
               onClick={() => startQuiz(activeQuestions.length)}
             >
               🔄 Retake Quiz
+            </button>
+            <button
+              type="button"
+              className={`quiz-download-btn${canDownload ? '' : ' locked'}`}
+              onClick={handleDownloadResults}
+              title={canDownload ? 'Download results with answer key' : 'Subscription required'}
+            >
+              {canDownload ? '⬇️ Download Results' : '🔒 Download Results (Trial / Paid)'}
             </button>
             <button
               type="button"

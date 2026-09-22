@@ -538,3 +538,63 @@
   background: #e6dac6;
   color: #1f1a14;
 }
+
+
+/* Download + subscription upgrade prompt */
+.quiz-download-btn {
+  background: #fff7ed;
+  color: #9a3412;
+  border: 1.5px solid #fdba74;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.quiz-download-btn:hover {
+  background: #ffedd5;
+  border-color: #b3472f;
+  color: #7c2d12;
+}
+
+.quiz-download-btn.locked {
+  background: #f5f0e8;
+  color: #6b5a45;
+  border-color: #d8ceba;
+}
+
+.quiz-upgrade-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  margin: 0 0 1.25rem;
+  padding: 0.9rem 1.1rem;
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+  border: 1.5px solid #fdba74;
+  border-radius: 12px;
+  color: #7c2d12;
+}
+
+.quiz-upgrade-banner strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.quiz-upgrade-banner p {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #9a3412;
+  line-height: 1.4;
+}
+
+.quiz-upgrade-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

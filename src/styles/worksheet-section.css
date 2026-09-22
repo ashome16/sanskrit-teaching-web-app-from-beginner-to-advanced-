@@ -455,3 +455,74 @@
     page-break-inside: avoid;
   }
 }
+
+
+/* Download + subscription upgrade prompt */
+.worksheet-download-btn {
+  background: #fff7ed;
+  color: #9a3412;
+  border: 1.5px solid #fdba74;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.15s ease;
+}
+
+.worksheet-download-btn:hover {
+  background: #ffedd5;
+  border-color: #b3472f;
+  color: #7c2d12;
+}
+
+.worksheet-download-btn.locked,
+.worksheet-print-primary-btn.locked {
+  background: #f5f0e8;
+  color: #6b5a45;
+  border: 1.5px solid #d8ceba;
+  box-shadow: none;
+}
+
+.worksheet-download-btn.locked:hover,
+.worksheet-print-primary-btn.locked:hover {
+  background: #efe6d8;
+  color: #4b3e2e;
+}
+
+.worksheet-upgrade-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  margin: 0 0 1rem;
+  padding: 0.9rem 1.1rem;
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+  border: 1.5px solid #fdba74;
+  border-radius: 12px;
+  color: #7c2d12;
+}
+
+.worksheet-upgrade-banner strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.worksheet-upgrade-banner p {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #9a3412;
+  line-height: 1.4;
+}
+
+.worksheet-upgrade-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
