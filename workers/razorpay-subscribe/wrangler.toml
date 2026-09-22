@@ -1,6 +1,7 @@
 name = "razorpay-subscribe"
 main = "src/index.js"
 compatibility_date = "2026-09-21"
+account_id = "39d80d0d5eafb958350c9de17371c889"
 
 # Set secrets (never commit):
 #   npx wrangler secret put RAZORPAY_KEY_SECRET
