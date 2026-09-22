@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import type { SanskritWordBreakdown } from '../types/linguistics';
 import { searchSanskritWords, getAllSanskritWords } from '../data/sanskrit-words';
 import { extractLinguisticInfo } from '../utils/linguistics';
+import { playPronunciation } from '../utils/pronunciation';
 import '../styles/word-analyzer.css';
 
 export interface ExternalWordSelection {
@@ -34,19 +35,6 @@ const createCustomWord = (value: string): SanskritWordBreakdown => {
     etymology: 'Analysis unavailable for external text',
     examples: [],
   };
-};
-
-const playPronunciation = (value: string) => {
-  const word = cleanWord(value) || value.trim();
-  if (!word || !/[\u0900-\u097F]/.test(word) || typeof window === 'undefined' || !window.speechSynthesis) {
-    return;
-  }
-
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(word);
-  utterance.lang = 'hi-IN';
-  utterance.rate = 0.85;
-  window.speechSynthesis.speak(utterance);
 };
 
 const WordAnalyzer: React.FC<WordAnalyzerProps> = ({

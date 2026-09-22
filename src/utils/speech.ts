@@ -1,5 +1,7 @@
 // Speech Recognition Utility for pronunciation practice
 
+import { applySafeProsody, whenVoicesReady } from './speechPlatform';
+
 export interface SpeechRecognitionResult {
   transcript: string;
   confidence: number;
@@ -304,11 +306,15 @@ export class TextToSpeechHandler {
     utterance.rate = options.rate || 0.8;
     utterance.pitch = options.pitch || 1;
     utterance.volume = 1;
+    // OS-safe prosody (Windows SAPI distorts extreme rate/pitch).
+    applySafeProsody(utterance);
 
     // Log for debugging
     console.log('Speaking with language:', utterance.lang, 'voice:', utterance.voice?.name, 'Text:', options.text);
 
-    this.synthesis.speak(utterance);
+    void whenVoicesReady().then(() => {
+      this.synthesis.speak(utterance);
+    });
   }
 
   stop(): void {

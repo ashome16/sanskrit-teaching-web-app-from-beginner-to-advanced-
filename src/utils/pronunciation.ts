@@ -1,4 +1,13 @@
 import { isBarakhadiAkshara, varnamalaSpeechText } from './barakhadiPhonetics';
+import {
+  applySafeProsody,
+  clampRate,
+  isWindowsPlatform,
+  pickEnglishCueVoice,
+  pickHindiVoice,
+  safePitch,
+  whenVoicesReady,
+} from './speechPlatform';
 
 // Native Web Speech API pronunciation helper for Sanskrit text only.
 // Strips whitespace/punctuation plus Devanagari digits and hyphens (e.g. the
@@ -51,7 +60,12 @@ const applyVisargaEcho = (word: string): string => {
 
 // Builds the text actually sent to the speech engine: word overrides + visarga echo.
 // Full words stay Devanagari (Hindi voice). Single tiles use roman cues.
+// On Windows, avoid double-speak / roman pitch hacks for ज्ञ and त्र — SAPI
+// garbles those; plain Devanagari + hi-IN at a mild rate is clearer.
 const toSpeechText = (word: string): string => {
+  if (isWindowsPlatform() && (word === 'ज्ञ' || word === 'त्र' || word === 'क्ष')) {
+    return word;
+  }
   // Single बारहखड़ी / Varṇamālā tiles: distinct roman cues.
   if (isBarakhadiAkshara(word)) {
     return varnamalaSpeechText(word);
@@ -59,27 +73,16 @@ const toSpeechText = (word: string): string => {
   return applyVisargaEcho(applyWordOverrides(word));
 };
 
-const pickPreferredVoice = (): SpeechSynthesisVoice | undefined => {
-  const voices = window.speechSynthesis.getVoices();
-  return (
-    voices.find((voice) => voice.lang === 'hi-IN') ||
-    voices.find((voice) => voice.lang?.startsWith('hi')) ||
-    voices.find((voice) => voice.lang === 'sa-IN')
-  );
-};
-
 /** Default playback rate (1x). Slow presets were removed. */
 const DEFAULT_RATE = 1;
 
 const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, speech: string): void => {
-  const voice = pickPreferredVoice();
+  const voices = window.speechSynthesis.getVoices();
+  const voice = pickHindiVoice(voices);
   utterance.voice = voice || null;
   // Roman cues (tiles or word anchors like angam/ganga/ranga) use English; Devanagari uses Hindi.
   if (/^[a-z\- ]+$/i.test(speech)) {
-    const voices = window.speechSynthesis.getVoices();
-    const en =
-      voices.find((item) => item.lang === 'en-IN') ||
-      voices.find((item) => item.lang?.startsWith('en'));
+    const en = pickEnglishCueVoice(voices);
     if (en) {
       utterance.voice = en;
       utterance.lang = en.lang;
@@ -99,11 +102,11 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   const isChha = word === 'छ' || speech === 'छ';
   const isTtha = word === 'ठ' || speech === 'ठ';
   const isDdha = word === 'ढ' || speech === 'dhah';
-  const isKsha = word === 'क्ष' || speech === 'क्ष' || speech === 'ksha';
+  const isKsha = word === 'क्ष' || speech === 'क्ष' || speech === 'ksha' || speech === 'क्ष क्ष';
   const isLongEe = word === 'ई' || /^yee+$/i.test(speech);
   const isRih = word === 'ऋ' || /^rih$/i.test(speech);
   const isReee = word === 'ॠ' || /^reee$/i.test(speech);
-  const isGya = word === 'ज्ञ' || speech === 'ज्ञ' || speech === 'jnya';
+  const isGya = word === 'ज्ञ' || speech === 'ज्ञ' || speech === 'jnya' || speech === 'ज्ञ ज्ञ';
   const isTra = word === 'त्र' || speech === 'त्र' || speech === 'त्र त्र';
   const isLongUu = /ooooh$/i.test(speech);
   const isShortUu = /ooh$/i.test(speech) && !isLongUu;
@@ -111,6 +114,15 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   // गङ्गा / रङ्गः / अङ्गम्: original roman cues, extended slowly + full volume.
   const isNgaWord =
     speech === 'gun ga' || speech === 'run ga' || speech === 'an gam';
+
+  // Windows: known-problem conjuncts — mild Devanagari rate, no pitch tricks.
+  if (isWindowsPlatform() && (isGya || isTra || isKsha)) {
+    utterance.rate = clampRate(0.9);
+    utterance.pitch = safePitch(1);
+    utterance.volume = 1;
+    return;
+  }
+
   utterance.rate = isNgaWord
     ? 0.42
     : isTtha
@@ -147,31 +159,36 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
           ? 1.12
           : 1;
   utterance.volume = 1;
+  applySafeProsody(utterance);
 };
 
-const pickEnglishVoice = (): SpeechSynthesisVoice | undefined => {
-  const voices = window.speechSynthesis.getVoices();
-  return (
-    voices.find((item) => item.lang === 'en-IN') ||
-    voices.find((item) => item.lang?.startsWith('en'))
-  );
-};
-
-
-
-/** ञ = enya with fast en then slow ya. */
+/** ञ = enya with fast en then slow ya (Mac). Windows: plain Devanagari + hi-IN. */
 const playNyaEnya = (onDone?: () => void): void => {
-  const enVoice = pickEnglishVoice();
+  if (isWindowsPlatform()) {
+    const hi = pickHindiVoice();
+    const utterance = new SpeechSynthesisUtterance('ञ');
+    utterance.voice = hi || null;
+    utterance.lang = hi?.lang || 'hi-IN';
+    utterance.rate = clampRate(0.9);
+    utterance.pitch = safePitch(1);
+    utterance.volume = 1;
+    utterance.onend = () => onDone?.();
+    utterance.onerror = () => onDone?.();
+    window.speechSynthesis.speak(utterance);
+    return;
+  }
+
+  const enVoice = pickEnglishCueVoice();
   const enPart = new SpeechSynthesisUtterance('enn');
   enPart.voice = enVoice || null;
   enPart.lang = enVoice?.lang || 'en-IN';
-  enPart.rate = 1.95;
-  enPart.pitch = 1;
+  enPart.rate = clampRate(1.95);
+  enPart.pitch = safePitch(1);
   const yaPart = new SpeechSynthesisUtterance('ya');
   yaPart.voice = enVoice || null;
   yaPart.lang = enVoice?.lang || 'en-IN';
-  yaPart.rate = 0.55;
-  yaPart.pitch = 1;
+  yaPart.rate = clampRate(0.55);
+  yaPart.pitch = safePitch(1);
   enPart.onend = () => {
     window.speechSynthesis.speak(yaPart);
   };
@@ -183,10 +200,29 @@ const playNyaEnya = (onDone?: () => void): void => {
   window.speechSynthesis.speak(enPart);
 };
 
+/** Bumps on every play/stop so stale whenVoicesReady() callbacks do not speak. */
+let speakGeneration = 0;
 
 export const stopPronunciation = (): void => {
+  speakGeneration += 1;
   if (typeof window === 'undefined' || !window.speechSynthesis) return;
   window.speechSynthesis.cancel();
+};
+
+
+const speakConfigured = (word: string, onEnd?: () => void): void => {
+  if (word === 'ञ') {
+    playNyaEnya(onEnd);
+    return;
+  }
+  const speech = toSpeechText(word);
+  const utterance = new SpeechSynthesisUtterance(speech);
+  configureUtterance(utterance, word, speech);
+  if (onEnd) {
+    utterance.onend = onEnd;
+    utterance.onerror = onEnd;
+  }
+  window.speechSynthesis.speak(utterance);
 };
 
 export const playPronunciation = (value: string): void => {
@@ -196,14 +232,11 @@ export const playPronunciation = (value: string): void => {
   }
 
   stopPronunciation();
-  if (word === 'ञ') {
-    playNyaEnya();
-    return;
-  }
-  const speech = toSpeechText(word);
-  const utterance = new SpeechSynthesisUtterance(speech);
-  configureUtterance(utterance, word, speech);
-  window.speechSynthesis.speak(utterance);
+  const gen = speakGeneration;
+  void whenVoicesReady().then(() => {
+    if (gen !== speakGeneration) return;
+    speakConfigured(word);
+  });
 };
 
 /** Speak a list of words/letters in order. Returns stop(). */
@@ -250,22 +283,14 @@ export const playSequence = (
       if (cancelled) return;
       timer = setTimeout(speakNext, gapMs);
     };
-    if (word === 'ञ') {
-      playNyaEnya(after);
-      return;
-    }
-    const speech = toSpeechText(word);
-    const utterance = new SpeechSynthesisUtterance(speech);
-    configureUtterance(utterance, word, speech);
-    utterance.onend = after;
-    utterance.onerror = () => {
-      if (cancelled) return;
-      timer = setTimeout(speakNext, gapMs);
-    };
-    window.speechSynthesis.speak(utterance);
+    speakConfigured(word, after);
   };
 
   stopPronunciation();
-  speakNext();
+  const gen = speakGeneration;
+  void whenVoicesReady().then(() => {
+    if (cancelled || gen !== speakGeneration) return;
+    speakNext();
+  });
   return stop;
 };
