@@ -1,49 +1,75 @@
-import emailjs from '@emailjs/browser';
-
 /**
- * Free-tier EmailJS + Zoho Mail SMTP (ednetlearn.in).
- * Requires VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY.
- * Template should include {{to_email}} and {{otp_code}} (and optionally {{to_name}}).
- * Never invent credentials — if env vars are missing, returns { configured: false }.
+ * Password-reset email via Vercel serverless + Resend.
+ * Client generates the OTP and keeps it in activeOtpSession; the API only sends mail.
+ * Never display OTP on screen; API must not echo it back.
+ *
+ * Config:
+ *   VITE_RESET_API_URL — optional base URL (no trailing slash). Empty → same-origin `/api/send-reset-otp`.
+ *   VITE_RESET_EMAIL_ENABLED — set to "false" to force-disable the reset email path.
+ *
+ * Local `npm run dev` without a proxy to the serverless function is not configured
+ * unless VITE_RESET_API_URL points at a running API (e.g. vercel dev / production).
  */
+
+function getResetEndpoint(): string {
+  const base = (import.meta.env.VITE_RESET_API_URL || '').trim().replace(/\/$/, '');
+  if (!base) return '/api/send-reset-otp';
+  if (base.endsWith('/api/send-reset-otp')) return base;
+  return `${base}/api/send-reset-otp`;
+}
+
+/** True when the app should attempt Resend-backed reset emails. */
+export function isResetEmailConfigured(): boolean {
+  if (import.meta.env.VITE_RESET_EMAIL_ENABLED === 'false') return false;
+  const customUrl = (import.meta.env.VITE_RESET_API_URL || '').trim();
+  if (customUrl) return true;
+  // Plain Vite dev has no /api serverless — require explicit URL.
+  if (import.meta.env.DEV) return false;
+  // Production / preview on Vercel: same-origin /api/send-reset-otp.
+  return true;
+}
+
 export async function sendPasswordResetEmail(
   email: string,
-  otp: string
+  otp: string,
+  toName?: string
 ): Promise<{ configured: boolean; error?: string }> {
-  const serviceId = (import.meta.env.VITE_EMAILJS_SERVICE_ID || '').trim();
-  const templateId = (import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '').trim();
-  const publicKey = (import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '').trim();
-
-  if (!serviceId || !templateId || !publicKey) {
+  if (!isResetEmailConfigured()) {
     return { configured: false };
   }
 
+  const endpoint = getResetEndpoint();
+
   try {
-    await emailjs.send(
-      serviceId,
-      templateId,
-      {
-        to_email: email,
-        otp_code: otp,
-      },
-      { publicKey }
-    );
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email,
+        otp,
+        ...(toName ? { toName } : {}),
+      }),
+    });
+
+    const data = (await res.json().catch(() => ({}))) as {
+      ok?: boolean;
+      error?: string;
+      details?: string;
+    };
+
+    if (!res.ok || !data.ok) {
+      const message =
+        (typeof data.error === 'string' && data.error) ||
+        (typeof data.details === 'string' && data.details) ||
+        `Reset email failed (HTTP ${res.status})`;
+      console.error('Password-reset email send failed:', message);
+      return { configured: true, error: message };
+    }
+
     return { configured: true };
   } catch (err: unknown) {
-    const message =
-      err && typeof err === 'object' && 'text' in err
-        ? String((err as { text?: string }).text)
-        : err instanceof Error
-          ? err.message
-          : 'Email send failed';
-    console.error('EmailJS password-reset send failed:', message);
+    const message = err instanceof Error ? err.message : 'Email send failed';
+    console.error('Password-reset email send failed:', message);
     return { configured: true, error: message };
   }
-}
-
-export function isEmailJsConfigured(): boolean {
-  const serviceId = (import.meta.env.VITE_EMAILJS_SERVICE_ID || '').trim();
-  const templateId = (import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '').trim();
-  const publicKey = (import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '').trim();
-  return Boolean(serviceId && templateId && publicKey);
 }

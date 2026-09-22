@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthStore, DEFAULT_AVATARS, SANSKRIT_INTERESTS_LIST } from '../store/authStore';
 import type { SanskritGrade } from '../types/auth';
-import { isEmailJsConfigured } from '../utils/sendPasswordResetEmail';
+import { isResetEmailConfigured } from '../utils/sendPasswordResetEmail';
 import '../styles/auth-modal.css';
 
 const GRADES_LIST: SanskritGrade[] = [
@@ -577,7 +577,7 @@ const AuthModal: React.FC = () => {
                   <strong>Admin → Students → Reset PW</strong>.
                 </div>
 
-                {!isEmailJsConfigured() && (
+                {!isResetEmailConfigured() && (
                   <div
                     style={{
                       margin: '0 0 1.1rem 0',
@@ -590,9 +590,8 @@ const AuthModal: React.FC = () => {
                       lineHeight: 1.5,
                     }}
                   >
-                    Email delivery is not connected on this deployment. You will not receive a reset
-                    code until VITE_EMAILJS_* is configured in Vercel. Contact{' '}
-                    <strong>care@ednetlearn.in</strong> or ask an admin for{' '}
+                    Password reset emails (via EdNet mail / Resend) are not connected on this
+                    deployment yet. Contact <strong>care@ednetlearn.in</strong> or ask an admin for{' '}
                     <strong>Admin → Students → Reset PW</strong>.
                   </div>
                 )}
@@ -639,7 +638,7 @@ const AuthModal: React.FC = () => {
                   <strong>Admin → Students → Reset PW</strong>.
                 </div>
 
-                {!isEmailJsConfigured() && (
+                {!isResetEmailConfigured() && (
                   <div
                     style={{
                       margin: '0 0 1.1rem 0',
@@ -652,10 +651,9 @@ const AuthModal: React.FC = () => {
                       lineHeight: 1.5,
                     }}
                   >
-                    Email delivery is not connected on this deployment. Learners cannot receive reset
-                    codes until VITE_EMAILJS_SERVICE_ID / TEMPLATE_ID / PUBLIC_KEY are set in Vercel
-                    (EmailJS → Zoho Mail). Until then use <strong>Admin → Students → Reset PW</strong>
-                    or contact <strong>care@ednetlearn.in</strong>. Codes are never shown on screen.
+                    Password reset emails (via EdNet mail / Resend) are not connected on this
+                    deployment yet. Until then use <strong>Admin → Students → Reset PW</strong> or
+                    contact <strong>care@ednetlearn.in</strong>. Codes are never shown on screen.
                   </div>
                 )}
 

@@ -12,7 +12,7 @@ import type {
 } from '../types/auth';
 import type { UserProgress } from '../types';
 import { useAppStore } from './index';
-import { sendPasswordResetEmail as sendPasswordResetEmailApi, isEmailJsConfigured } from '../utils/sendPasswordResetEmail';
+import { sendPasswordResetEmail as sendPasswordResetEmailApi, isResetEmailConfigured } from '../utils/sendPasswordResetEmail';
 import { isAdminEmail } from '../utils/adminAllowlist';
 
 export { isAdminEmail, ADMIN_EMAIL_ALLOWLIST } from '../utils/adminAllowlist';
@@ -137,8 +137,8 @@ interface AuthState {
   requestPasswordResetOtp: (identifier: string) => Promise<{ success: boolean; emailConfigured: boolean; emailSent?: boolean; error?: string }>;
   verifyOtpAndResetPassword: (identifier: string, otp: string, newPassword: string) => { success: boolean; error?: string };
   clearOtpSession: () => void;
-  /** EmailJS free tier → Zoho Mail SMTP. No-ops when VITE_EMAILJS_* env vars are missing. */
-  sendPasswordResetEmail: (email: string, otp: string) => Promise<{ configured: boolean; error?: string }>;
+  /** Resend via Vercel /api/send-reset-otp. No-ops when reset email is not configured (e.g. local vite without API). */
+  sendPasswordResetEmail: (email: string, otp: string, toName?: string) => Promise<{ configured: boolean; error?: string }>;
 
   register: (data: RegisterFormData) => { success: boolean; error?: string };
   login: (usernameOrEmail: string, password: string) => { success: boolean; error?: string };
@@ -281,15 +281,15 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
     clearOtpSession: () => set({ activeOtpSession: null }),
 
-    // Free EmailJS + Zoho Mail (ednetlearn.in). Reads VITE_EMAILJS_* — never invent credentials.
-    sendPasswordResetEmail: async (email: string, otp: string) => {
-      return sendPasswordResetEmailApi(email, otp);
+    // Resend via Vercel serverless (/api/send-reset-otp). Client holds OTP; API only sends mail.
+    sendPasswordResetEmail: async (email: string, otp: string, toName?: string) => {
+      return sendPasswordResetEmailApi(email, otp, toName);
     },
 
     requestPasswordResetOtp: async (identifier: string) => {
       const { accounts } = get();
       const cleanId = (identifier || '').trim().toLowerCase();
-      const emailConfigured = isEmailJsConfigured();
+      const emailConfigured = isResetEmailConfigured();
 
       if (!cleanId) {
         const error = 'Please enter your registered username or email address.';
@@ -297,7 +297,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
         return { success: false, emailConfigured, emailSent: false, error };
       }
 
-      // Without EmailJS, never create an OTP session or pretend email was sent.
+      // Without Resend API path, never create an OTP session or pretend email was sent.
       if (!emailConfigured) {
         set({ authError: null, activeOtpSession: null });
         const error =
@@ -333,7 +333,11 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
       set({ activeOtpSession: session, authError: null });
 
-      const sendResult = await get().sendPasswordResetEmail(account.profile.email, otp);
+      const sendResult = await get().sendPasswordResetEmail(
+        account.profile.email,
+        otp,
+        account.profile.fullName || account.profile.username
+      );
 
       if (sendResult.error || !sendResult.configured) {
         // Drop unused OTP so a failed send cannot be guessed without email delivery.
