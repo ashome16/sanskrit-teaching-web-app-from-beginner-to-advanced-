@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuthStore } from '../store/authStore';
+import { isAdminEmail } from '../utils/adminAllowlist';
 import type { AccessControlMode } from '../types/auth';
 import '../styles/admin-modal.css';
 
@@ -66,6 +67,11 @@ const AdminModal: React.FC = () => {
   const handleAdminAuthSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setAuthError(null);
+    const { currentUser } = useAuthStore.getState();
+    if (!currentUser || !isAdminEmail(currentUser.email)) {
+      setAuthError('Admin only for approved EdNet emails. Sign in with an allowlisted account first.');
+      return;
+    }
     const success = adminLogin(passcodeInput);
     if (!success) {
       setAuthError('Incorrect administrator passcode. Please try again.');
@@ -187,7 +193,8 @@ const AdminModal: React.FC = () => {
               <div className="admin-lock-icon">🔐</div>
               <h3 className="admin-lock-title">Administrator Authentication</h3>
               <p className="admin-lock-desc">
-                Please enter the administrator passcode to unlock learner management, payment verification, and data export tools.
+                Sign in with an approved EdNet admin email first, then enter the administrator passcode.
+                Passcode alone will not unlock admin on test or other accounts.
               </p>
 
               <form onSubmit={handleAdminAuthSubmit}>

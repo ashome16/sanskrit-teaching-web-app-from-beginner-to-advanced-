@@ -13,6 +13,9 @@ import type {
 import type { UserProgress } from '../types';
 import { useAppStore } from './index';
 import { sendPasswordResetEmail as sendPasswordResetEmailApi, isEmailJsConfigured } from '../utils/sendPasswordResetEmail';
+import { isAdminEmail } from '../utils/adminAllowlist';
+
+export { isAdminEmail, ADMIN_EMAIL_ALLOWLIST } from '../utils/adminAllowlist';
 
 const ACCOUNTS_STORAGE_KEY = 'sanskrit_accounts_v1';
 const SESSION_STORAGE_KEY = 'sanskrit_current_session_v1';
@@ -69,6 +72,22 @@ const getStoredAdminSession = (): boolean => {
   }
 };
 
+const clearAdminSessionStorage = () => {
+  try {
+    localStorage.removeItem(ADMIN_SESSION_KEY);
+  } catch {}
+};
+
+/** Effective admin = passcode session AND allowlisted email. Clears stale session if not. */
+const resolveAdminLoggedIn = (email: string | undefined | null): boolean => {
+  if (!getStoredAdminSession()) return false;
+  if (!isAdminEmail(email)) {
+    clearAdminSessionStorage();
+    return false;
+  }
+  return true;
+};
+
 const TWO_WEEKS_MS = 14 * 24 * 60 * 60 * 1000;
 const MONTHLY_PRICE_INR = 200;
 const PAID_ACCESS_DAYS = 30;
@@ -115,7 +134,7 @@ interface AuthState {
 
   // OTP & Password Recovery
   activeOtpSession: OtpSession | null;
-  requestPasswordResetOtp: (identifier: string) => Promise<{ success: boolean; emailConfigured: boolean; error?: string }>;
+  requestPasswordResetOtp: (identifier: string) => Promise<{ success: boolean; emailConfigured: boolean; emailSent?: boolean; error?: string }>;
   verifyOtpAndResetPassword: (identifier: string, otp: string, newPassword: string) => { success: boolean; error?: string };
   clearOtpSession: () => void;
   /** EmailJS free tier → Zoho Mail SMTP. No-ops when VITE_EMAILJS_* env vars are missing. */
@@ -270,11 +289,20 @@ export const useAuthStore = create<AuthState>((set, get) => {
     requestPasswordResetOtp: async (identifier: string) => {
       const { accounts } = get();
       const cleanId = (identifier || '').trim().toLowerCase();
+      const emailConfigured = isEmailJsConfigured();
 
       if (!cleanId) {
         const error = 'Please enter your registered username or email address.';
         set({ authError: error });
-        return { success: false, emailConfigured: false, error };
+        return { success: false, emailConfigured, emailSent: false, error };
+      }
+
+      // Without EmailJS, never create an OTP session or pretend email was sent.
+      if (!emailConfigured) {
+        set({ authError: null, activeOtpSession: null });
+        const error =
+          'Email delivery is not connected yet. Contact Learner Care at care@ednetlearn.in, or ask an admin to reset your password (Admin → Students → Reset PW).';
+        return { success: false, emailConfigured: false, emailSent: false, error };
       }
 
       const account = Object.values(accounts).find(
@@ -286,11 +314,11 @@ export const useAuthStore = create<AuthState>((set, get) => {
       // Do not reveal whether the account exists. Only create a real OTP session when found.
       if (!account) {
         set({ authError: null });
-        // Mirror configured flag for UI copy without leaking existence or sending mail.
-        return { success: true, emailConfigured: isEmailJsConfigured() };
+        // Same success shape as a real send so the UI does not leak account existence.
+        return { success: true, emailConfigured: true, emailSent: false };
       }
 
-      // Generate a secure 6-digit OTP — store in activeOtpSession only; never return to UI.
+      // Generate a secure 6-digit OTP — store in activeOtpSession only; never return to UI / never SMS.
       const otp = Math.floor(100000 + Math.random() * 900000).toString();
       const expiresAt = Date.now() + 10 * 60 * 1000; // 10 minutes validity
 
@@ -305,11 +333,20 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
       set({ activeOtpSession: session, authError: null });
 
-      // Send via EmailJS when VITE_EMAILJS_* are set; otherwise configured:false (admin Reset PW path).
       const sendResult = await get().sendPasswordResetEmail(account.profile.email, otp);
 
+      if (sendResult.error || !sendResult.configured) {
+        // Drop unused OTP so a failed send cannot be guessed without email delivery.
+        set({ activeOtpSession: null });
+        const error =
+          sendResult.error ||
+          'Could not send the reset email. Please try again, or contact care@ednetlearn.in.';
+        set({ authError: error });
+        return { success: false, emailConfigured: true, emailSent: false, error };
+      }
+
       // Never return otp to the caller (must not appear on screen).
-      return { success: true, emailConfigured: sendResult.configured };
+      return { success: true, emailConfigured: true, emailSent: true };
     },
 
     verifyOtpAndResetPassword: (identifier: string, otp: string, newPassword: string) => {
@@ -382,6 +419,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
         activeOtpSession: null,
         isAuthModalOpen: false,
         authError: null,
+        isAdminLoggedIn: resolveAdminLoggedIn(account.profile.email),
       });
 
       return { success: true };
@@ -505,6 +543,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
         currentUser: profile,
         isAuthModalOpen: false,
         authError: null,
+        isAdminLoggedIn: resolveAdminLoggedIn(profile.email),
       });
 
       return { success: true };
@@ -569,6 +608,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
         authError: null,
         showAccessExpiredAlert: showExpired,
         accessExpiredOn: showExpired ? endedOn : null,
+        isAdminLoggedIn: resolveAdminLoggedIn(updatedProfile.email),
       });
 
       return { success: true };
@@ -576,11 +616,13 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
     logout: () => {
       saveSession(null);
+      clearAdminSessionStorage();
       set({
         currentUser: null,
         isProfileModalOpen: false,
         showAccessExpiredAlert: false,
         accessExpiredOn: null,
+        isAdminLoggedIn: false,
       });
     },
 
@@ -624,6 +666,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
       set({
         currentUser: updatedProfile,
         accounts: updatedAccounts,
+        isAdminLoggedIn: resolveAdminLoggedIn(updatedProfile.email),
       });
 
       return { success: true };
@@ -649,10 +692,12 @@ export const useAuthStore = create<AuthState>((set, get) => {
       // Reset progress to guest
       useAppStore.getState().resetProgress();
 
+      clearAdminSessionStorage();
       set({
         accounts: nextAccounts,
         currentUser: null,
         isProfileModalOpen: false,
+        isAdminLoggedIn: false,
       });
 
       return { success: true };
@@ -677,12 +722,17 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
     // Admin State & Methods
     isAdminModalOpen: false,
-    isAdminLoggedIn: getStoredAdminSession(),
+    isAdminLoggedIn: resolveAdminLoggedIn(initialUser?.email),
 
     openAdminModal: () => set({ isAdminModalOpen: true }),
     closeAdminModal: () => set({ isAdminModalOpen: false }),
 
     adminLogin: (passcode: string) => {
+      const { currentUser } = get();
+      // Passcode alone is not enough — must be signed in as an allowlisted EdNet email.
+      if (!currentUser || !isAdminEmail(currentUser.email)) {
+        return false;
+      }
       const correct = getStoredAdminPasscode();
       if (passcode.trim() === correct.trim()) {
         try {
@@ -793,12 +843,17 @@ export const useAuthStore = create<AuthState>((set, get) => {
       saveAccounts(nextAccounts);
 
       let nextCurrent = currentUser;
+      let nextAdmin = get().isAdminLoggedIn;
       if (currentUser && currentUser.id === userId) {
         saveSession(null);
         nextCurrent = null;
+        clearAdminSessionStorage();
+        nextAdmin = false;
+      } else {
+        nextAdmin = resolveAdminLoggedIn(nextCurrent?.email);
       }
 
-      set({ accounts: nextAccounts, currentUser: nextCurrent });
+      set({ accounts: nextAccounts, currentUser: nextCurrent, isAdminLoggedIn: nextAdmin });
       return true;
     },
 

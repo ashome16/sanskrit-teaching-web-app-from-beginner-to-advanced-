@@ -27,7 +27,6 @@ const AuthModal: React.FC = () => {
     setPendingRedirect,
     requestPasswordResetOtp,
     verifyOtpAndResetPassword,
-    isAdminLoggedIn,
   } = useAuthStore();
 
   const [activeTab, setActiveTab] = useState<'login' | 'register' | 'forgot_password'>(authModalInitialTab);
@@ -93,12 +92,8 @@ const AuthModal: React.FC = () => {
     }
   };
 
-  const buildResetInfoMessage = (emailConfigured: boolean) => {
-    if (emailConfigured) {
-      return 'If an account exists for that email/username, a reset code will be sent to the registered email.';
-    }
-    return 'If an account exists for that email/username, a reset code will be sent to the registered email. Email setup pending — contact care@ednetlearn.in for help, or ask admin to reset your password (Admin → Students → Reset PW).';
-  };
+  const SUCCESS_RESET_INFO =
+    'If an account exists for that email/username, a 6-digit reset code was sent to the registered email only (never shown here, never by SMS). Check inbox and spam.';
 
   const handleRequestOtp = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -106,23 +101,50 @@ const AuthModal: React.FC = () => {
     setLocalError(null);
     setResetInfoMessage(null);
     const res = await requestPasswordResetOtp(forgotIdentifier);
-    if (res.success) {
-      // Never display OTP on screen.
-      setResetInfoMessage(buildResetInfoMessage(res.emailConfigured));
-      setOtpStep(2);
-      setResendCooldown(60);
+    if (!res.emailConfigured) {
+      // Do not advance to OTP entry when email cannot be delivered.
+      setLocalError(
+        res.error ||
+          'Email delivery is not connected yet. Contact Learner Care at care@ednetlearn.in, or ask an admin to use Admin → Students → Reset PW.'
+      );
+      setOtpStep(1);
+      return;
     }
+    if (!res.success) {
+      setLocalError(
+        res.error ||
+          'Could not send the reset email. Please try again, or contact care@ednetlearn.in.'
+      );
+      return;
+    }
+    // Never display OTP on screen — user must read it from email.
+    setResetInfoMessage(SUCCESS_RESET_INFO);
+    setOtpStep(2);
+    setResendCooldown(60);
   };
 
   const handleResendOtp = async () => {
     if (resendCooldown > 0) return;
     clearAuthError();
     setLocalError(null);
+    setResetInfoMessage(null);
     const res = await requestPasswordResetOtp(forgotIdentifier);
-    if (res.success) {
-      setResetInfoMessage(buildResetInfoMessage(res.emailConfigured));
-      setResendCooldown(60);
+    if (!res.emailConfigured) {
+      setLocalError(
+        res.error ||
+          'Email delivery is not connected yet. Contact Learner Care at care@ednetlearn.in, or ask an admin to use Admin → Students → Reset PW.'
+      );
+      return;
     }
+    if (!res.success) {
+      setLocalError(
+        res.error ||
+          'Could not resend the reset email. Please try again, or contact care@ednetlearn.in.'
+      );
+      return;
+    }
+    setResetInfoMessage(SUCCESS_RESET_INFO + ' A new code was requested.');
+    setResendCooldown(60);
   };
 
   const handleVerifyAndReset = (e: React.FormEvent) => {
@@ -549,11 +571,31 @@ const AuthModal: React.FC = () => {
                   }}
                 >
                   Enter your registered username or email. If an account exists, a{' '}
-                  <strong>6-digit reset code will be sent to your registered email</strong>{' '}
-                  (never shown on this screen). If email delivery is not configured yet, contact{' '}
-                  <strong>care@ednetlearn.in</strong> or ask an admin to use{' '}
+                  <strong>6-digit reset code is emailed to that registered address only</strong>{' '}
+                  (never shown here, never by SMS). If email delivery is not connected yet, contact{' '}
+                  <strong>Learner Care (care@ednetlearn.in)</strong> or ask an admin to use{' '}
                   <strong>Admin → Students → Reset PW</strong>.
                 </div>
+
+                {!isEmailJsConfigured() && (
+                  <div
+                    style={{
+                      margin: '0 0 1.1rem 0',
+                      padding: '0.75rem 1rem',
+                      background: '#fffbeb',
+                      border: '1px solid #fcd34d',
+                      borderRadius: '10px',
+                      fontSize: '0.8rem',
+                      color: '#92400e',
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    Email delivery is not connected on this deployment. You will not receive a reset
+                    code until VITE_EMAILJS_* is configured in Vercel. Contact{' '}
+                    <strong>care@ednetlearn.in</strong> or ask an admin for{' '}
+                    <strong>Admin → Students → Reset PW</strong>.
+                  </div>
+                )}
 
                 <div className="auth-form-group">
                   <label className="auth-label" htmlFor="forgot-identifier">
@@ -589,19 +631,15 @@ const AuthModal: React.FC = () => {
                     lineHeight: 1.55,
                   }}
                 >
-                  <strong>Enter the 6-digit code sent to your registered email.</strong>
+                  <strong>Enter the 6-digit code from your registered email.</strong>
                   {' '}
-                  Codes are never shown on this screen.
-                  {!isAdminLoggedIn && (
-                    <>
-                      {' '}
-                      If you did not receive email, contact <strong>care@ednetlearn.in</strong> or use{' '}
-                      <strong>Admin → Reset PW</strong> for recovery.
-                    </>
-                  )}
+                  Codes are never shown on this screen and are never sent by SMS.
+                  {' '}
+                  If you did not receive email, tap Resend, contact <strong>care@ednetlearn.in</strong>, or ask an admin to use{' '}
+                  <strong>Admin → Students → Reset PW</strong>.
                 </div>
 
-                {isAdminLoggedIn && !isEmailJsConfigured() && (
+                {!isEmailJsConfigured() && (
                   <div
                     style={{
                       margin: '0 0 1.1rem 0',
@@ -614,9 +652,10 @@ const AuthModal: React.FC = () => {
                       lineHeight: 1.5,
                     }}
                   >
-                    Email delivery not connected yet — set VITE_EMAILJS_SERVICE_ID / TEMPLATE_ID / PUBLIC_KEY
-                    (free EmailJS → Zoho Mail SMTP). Until then, use <strong>Admin → Students → Reset PW</strong>.
-                    Never display OTP codes on screen.
+                    Email delivery is not connected on this deployment. Learners cannot receive reset
+                    codes until VITE_EMAILJS_SERVICE_ID / TEMPLATE_ID / PUBLIC_KEY are set in Vercel
+                    (EmailJS → Zoho Mail). Until then use <strong>Admin → Students → Reset PW</strong>
+                    or contact <strong>care@ednetlearn.in</strong>. Codes are never shown on screen.
                   </div>
                 )}
 
