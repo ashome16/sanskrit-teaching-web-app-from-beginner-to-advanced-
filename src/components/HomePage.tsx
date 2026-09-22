@@ -508,7 +508,7 @@ const HomePage: React.FC<HomePageProps> = ({
         <div className="home-hero-crest">
           <img
             src="/logo.jpg"
-            alt="EdNet Learn Gurukul"
+            alt="Interactive Sanskrit and Vedic Math learning platform for school children | EdNet Learn Gurukul"
             className="home-hero-logo"
           />
           <div className="home-hero-brand-details">

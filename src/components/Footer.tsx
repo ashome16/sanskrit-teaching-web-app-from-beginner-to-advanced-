@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="footer-brand-header">
               <img
                 src="/logo.jpg"
-                alt="EdNet Learn Gurukul"
+                alt="EdNet Learn Gurukul online Sanskrit classes and Vedic maths for kids"
                 className="footer-brand-logo"
                 loading="lazy"
               />
@@ -61,6 +61,41 @@ export const Footer: React.FC<FooterProps> = ({
                 &ldquo;Among all tongues, the divine language of Sanskrit is foremost, sweet, and eternal.&rdquo;
               </div>
             </div>
+          </div>
+
+
+          {/* Learning Paths */}
+          <div className="footer-col">
+            <h4 className="footer-col-title">Learning Paths</h4>
+            <ul className="footer-nav-list">
+              <li>
+                <button
+                  type="button"
+                  className="footer-nav-btn"
+                  onClick={onOpenVarnamala}
+                >
+                  Beginner · Varṇamālā &amp; first steps
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="footer-nav-btn"
+                  onClick={() => onOpenReader && onOpenReader('gsde101')}
+                >
+                  Intermediate · CBSE Deepakam Class 7
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="footer-nav-btn"
+                  onClick={onOpenGrammar}
+                >
+                  Advanced · Vyākaraṇa &amp; shlokas
+                </button>
+              </li>
+            </ul>
           </div>
 
           {/* Academic Curriculum Links */}

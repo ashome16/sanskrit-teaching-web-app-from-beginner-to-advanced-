@@ -222,7 +222,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
       {/* Top Header */}
       <header className="quiz-header">
         <div className="quiz-header-left">
-          <img src="/logo.jpg" alt="EdNet Learn Gurukul" className="quiz-header-logo" />
+          <img src="/logo.jpg" alt="Sanskrit and Vedic Maths quiz practice for school children" className="quiz-header-logo" />
           <div>
             <h2 className="quiz-title">प्रश्नोत्तरी · Sanskrit &amp; Vedic Maths Quiz</h2>
             <p className="quiz-subtitle">

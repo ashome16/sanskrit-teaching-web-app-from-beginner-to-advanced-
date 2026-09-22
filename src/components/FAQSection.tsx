@@ -168,7 +168,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
         {/* Official Customer Support Card */}
         <div className="faq-contact-card">
           <div className="faq-contact-header">
-            <img src="/logo.jpg" alt="EdNet Learn Gurukul Logo" className="faq-contact-logo" />
+            <img src="/logo.jpg" alt="EdNet Learn Gurukul support for online Sanskrit and Vedic Math learners" className="faq-contact-logo" />
             <div>
               <h3 className="faq-contact-title">EdNet Learn Gurukul · Customer &amp; Student Support</h3>
               <p className="faq-contact-subtitle">

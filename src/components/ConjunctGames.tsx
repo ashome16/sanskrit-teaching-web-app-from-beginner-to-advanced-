@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import '../styles/textbook-reader.css';
 
 const CONJUNCT_GAMES = [
-  { id: 'game1', title: 'Game 1 · Drop the Stick', src: './conjunct-game1.jpg', alt: 'Drop the Stick game' },
-  { id: 'game2', title: 'Game 2 · Piggyback Ride', src: './conjunct-game2.jpg', alt: 'Piggyback stacking game' },
-  { id: 'game3', title: 'Game 3 · Superhero Shape-Shifters', src: './conjunct-game3.jpg', alt: 'Superhero shape-shifters' },
+  { id: 'game1', title: 'Game 1 · Drop the Stick', src: './conjunct-game1.jpg', alt: 'Sanskrit conjunct consonant Drop the Stick game for kids' },
+  { id: 'game2', title: 'Game 2 · Piggyback Ride', src: './conjunct-game2.jpg', alt: 'Sanskrit conjunct Piggyback Ride stacking game for school children' },
+  { id: 'game3', title: 'Game 3 · Superhero Shape-Shifters', src: './conjunct-game3.jpg', alt: 'Sanskrit conjunct Superhero Shape-Shifters game for beginners' },
 ];
 
 const ConjunctGames: React.FC = () => {

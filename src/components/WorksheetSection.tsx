@@ -92,7 +92,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
       {/* Top Header */}
       <header className="worksheet-header">
         <div className="worksheet-header-left">
-          <img src="/logo.jpg" alt="EdNet Learn Gurukul" className="worksheet-header-logo" />
+          <img src="/logo.jpg" alt="Printable Sanskrit worksheets for CBSE school children | EdNet Learn Gurukul" className="worksheet-header-logo" />
           <div>
             <h2 className="worksheet-title">कार्यपत्रिकाः · Printable Sanskrit Worksheets</h2>
             <p className="worksheet-subtitle">
@@ -211,7 +211,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
             {/* Gurukul Official Header */}
             <div className="ws-paper-header">
               <div className="ws-paper-brand-row">
-                <img src="/logo.jpg" alt="EdNet Learn Gurukul" className="ws-paper-logo" />
+                <img src="/logo.jpg" alt="Printable Sanskrit worksheets for CBSE school children | EdNet Learn Gurukul" className="ws-paper-logo" />
                 <div>
                   <div className="ws-paper-school-name">EdNet Learn Gurukul</div>
                   <div className="ws-paper-school-sub">

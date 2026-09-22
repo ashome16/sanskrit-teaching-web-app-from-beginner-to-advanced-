@@ -419,7 +419,7 @@ const Dashboard: React.FC = () => {
           onClick={handleBrandClick}
           title="EdNet Learn Gurukul - Go to Homepage"
         >
-          <img src="/logo.jpg" alt="EdNet Learn Gurukul Logo" className="dashboard-brand-logo-img" />
+          <img src="/logo.jpg" alt="Interactive Sanskrit language learning dashboard for school children" className="dashboard-brand-logo-img" />
           <div className="dashboard-brand-text-col">
             <span className="dashboard-title">EdNet Learn Gurukul</span>
             <span className="dashboard-brand-sub">संस्कृत-शिक्षणम् · CBSE / NCERT</span>

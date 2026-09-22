@@ -1385,7 +1385,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               >
                 <img
                   src={activeLessonId === 'barakhadi' ? './barakhadi-chart.png' : './image1.jpg'}
-                  alt={activeLessonId === 'barakhadi' ? 'बारहखड़ी complete chart' : 'Sanskrit Pronunciation Chart'}
+                  alt={activeLessonId === 'barakhadi' ? 'Complete बारहखड़ी Sanskrit matra chart for beginners' : 'Sanskrit pronunciation chart with Devanagari letters for learners'}
                   className="varnamala-chart-image"
                   loading="lazy"
                 />

@@ -219,7 +219,7 @@ const PaymentModal: React.FC = () => {
             ✕
           </button>
           <div className="payment-modal-brand-row">
-            <img src="/logo.jpg" alt="EdNet Learn Gurukul" className="payment-modal-brand-logo" />
+            <img src="/logo.jpg" alt="Online Sanskrit and Vedic Math classes for kids | EdNet Learn Gurukul" className="payment-modal-brand-logo" />
             <div>
               <div className="payment-modal-brand-title">EdNet Learn Gurukul</div>
               <div className="payment-modal-brand-sub">CBSE Class 7 Sanskrit &amp; Vedic Mathematics</div>
