@@ -140,7 +140,7 @@ interface AuthState {
   /** Resend via Vercel /api/send-reset-otp. No-ops when reset email is not configured (e.g. local vite without API). */
   sendPasswordResetEmail: (email: string, otp: string, toName?: string) => Promise<{ configured: boolean; error?: string }>;
 
-  register: (data: RegisterFormData) => { success: boolean; error?: string };
+  register: (data: RegisterFormData) => { success: boolean; error?: string; code?: 'email_exists' | 'username_exists' };
   login: (usernameOrEmail: string, password: string) => { success: boolean; error?: string };
   logout: () => void;
   updateProfile: (data: UpdateProfileFormData) => { success: boolean; error?: string };
@@ -487,16 +487,17 @@ export const useAuthStore = create<AuthState>((set, get) => {
       if (usernameExists) {
         const error = 'Username is already registered. Please choose another or log in.';
         set({ authError: error });
-        return { success: false, error };
+        return { success: false, error, code: 'username_exists' as const };
       }
 
       const emailExists = Object.values(accounts).some(
         (acc) => acc.profile.email.toLowerCase() === cleanEmail
       );
       if (emailExists) {
-        const error = 'Email is already registered. Please log in.';
+        const error =
+          'An account already exists with this email. Use Forgot password to reset, or log in with your existing username.';
         set({ authError: error });
-        return { success: false, error };
+        return { success: false, error, code: 'email_exists' as const };
       }
 
       const userId = 'user_' + Math.random().toString(36).substr(2, 9);

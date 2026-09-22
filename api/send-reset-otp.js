@@ -8,12 +8,60 @@
  *   RESEND_FROM_EMAIL (optional) — default uses Resend onboarding sender for unverified domains.
  *     After verifying ednetlearn.in in Resend, set:
  *     RESEND_FROM_EMAIL=EdNet Learn <care@ednetlearn.in>
+ *     Do NOT use @example.com placeholders — they are ignored and fall back to the default.
  */
 const { send, handleOptions, readJson } = require('./_razorpay');
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const OTP_RE = /^\d{6}$/;
 const DEFAULT_FROM = 'EdNet Learn <beth.t@example.com>';
+
+/** Reject placeholder / unverified-example senders that Resend will always refuse. */
+function resolveFromAddress() {
+  const configured = (process.env.RESEND_FROM_EMAIL || '').trim();
+  if (!configured) return { from: DEFAULT_FROM, usedDefault: true };
+  const lower = configured.toLowerCase();
+  if (
+    lower.includes('@example.com') ||
+    lower.includes('@example.org') ||
+    lower.includes('@example.net') ||
+    lower.includes('yourdomain') ||
+    lower.includes('noreply@localhost')
+  ) {
+    return { from: DEFAULT_FROM, usedDefault: true, ignoredConfigured: true };
+  }
+  return { from: configured, usedDefault: false };
+}
+
+function extractResendDetail(data) {
+  if (!data || typeof data !== 'object') return null;
+  const candidates = [data.message, data.error, data.name, data.details];
+  for (const c of candidates) {
+    if (typeof c === 'string' && c.trim()) return c.trim();
+    if (c && typeof c === 'object') {
+      if (typeof c.message === 'string' && c.message.trim()) return c.message.trim();
+      try {
+        const s = JSON.stringify(c);
+        if (s && s !== '{}') return s;
+      } catch {
+        /* ignore */
+      }
+    }
+  }
+  return null;
+}
+
+function isDomainOrTestingRestriction(detail) {
+  const d = (detail || '').toLowerCase();
+  return (
+    d.includes('domain is not verified') ||
+    d.includes('only send testing emails') ||
+    d.includes('testing email') ||
+    d.includes('verify a domain') ||
+    d.includes('verify your domain') ||
+    d.includes('add and verify')
+  );
+}
 
 module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return handleOptions(res);
@@ -48,7 +96,7 @@ module.exports = async function handler(req, res) {
       return send(res, 400, { error: 'otp must be 6 digits' });
     }
 
-    const from = (process.env.RESEND_FROM_EMAIL || '').trim() || DEFAULT_FROM;
+    const { from } = resolveFromAddress();
     const greeting = toName ? `Hi ${toName},` : 'Hi,';
     const subject = 'Your EdNet Learn password reset code';
     const text = [
@@ -96,12 +144,17 @@ module.exports = async function handler(req, res) {
 
     if (!resendRes.ok) {
       const detail =
-        (data && (data.message || data.error || data.name)) ||
-        `Resend HTTP ${resendRes.status}`;
-      return send(res, resendRes.status >= 400 && resendRes.status < 600 ? resendRes.status : 502, {
+        extractResendDetail(data) || `Resend HTTP ${resendRes.status}`;
+      const payload = {
         error: 'Failed to send reset email',
         details: typeof detail === 'string' ? detail : 'Resend error',
-      });
+      };
+      if (isDomainOrTestingRestriction(payload.details)) {
+        payload.restriction = 'domain_or_testing';
+        payload.hint =
+          'Reset email may only reach the Resend account owner until ednetlearn.in is verified in Resend. Contact care@ednetlearn.in or use Admin → Students → Reset PW.';
+      }
+      return send(res, resendRes.status >= 400 && resendRes.status < 600 ? resendRes.status : 502, payload);
     }
 
     // Never echo otp (or Resend payload that might contain it).

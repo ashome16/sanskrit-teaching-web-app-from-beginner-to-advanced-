@@ -29,6 +29,57 @@ export function isResetEmailConfigured(): boolean {
   return true;
 }
 
+const FALLBACK_CARE =
+  'Contact care@ednetlearn.in, or ask an admin to use Admin → Students → Reset PW.';
+
+/** Map Resend / API failure into a safe user-facing message (never includes OTP). */
+export function formatResetEmailUserError(opts: {
+  error?: string;
+  details?: string;
+  hint?: string;
+  restriction?: string;
+  httpStatus?: number;
+}): string {
+  const details = (opts.details || '').trim();
+  const hint = (opts.hint || '').trim();
+  const lower = details.toLowerCase();
+
+  const isRestriction =
+    opts.restriction === 'domain_or_testing' ||
+    lower.includes('domain is not verified') ||
+    lower.includes('only send testing emails') ||
+    lower.includes('testing email') ||
+    lower.includes('verify a domain') ||
+    lower.includes('verify your domain') ||
+    lower.includes('add and verify') ||
+    lower.includes('use our testing email');
+
+  if (isRestriction) {
+    return (
+      (hint ||
+        'Password reset email could not be delivered yet. Until the ednetlearn.in domain is verified in Resend, email may only work for the Resend account owner\'s address.') +
+      ' ' +
+      FALLBACK_CARE
+    );
+  }
+
+  // Prefer Resend details when present; generic "Failed to send reset email" alone is not useful.
+  if (details && details.toLowerCase() !== 'failed to send reset email') {
+    const base = opts.error && opts.error !== details ? `${opts.error}: ${details}` : details;
+    return `${base} ${FALLBACK_CARE}`;
+  }
+
+  if (opts.error && opts.error.trim()) {
+    return `${opts.error.trim()} ${FALLBACK_CARE}`;
+  }
+
+  if (opts.httpStatus) {
+    return `Reset email failed (HTTP ${opts.httpStatus}). ${FALLBACK_CARE}`;
+  }
+
+  return `Could not send the reset email. Please try again, or ${FALLBACK_CARE.toLowerCase()}`;
+}
+
 export async function sendPasswordResetEmail(
   email: string,
   otp: string,
@@ -55,14 +106,20 @@ export async function sendPasswordResetEmail(
       ok?: boolean;
       error?: string;
       details?: string;
+      hint?: string;
+      restriction?: string;
     };
 
     if (!res.ok || !data.ok) {
-      const message =
-        (typeof data.error === 'string' && data.error) ||
-        (typeof data.details === 'string' && data.details) ||
-        `Reset email failed (HTTP ${res.status})`;
-      console.error('Password-reset email send failed:', message);
+      const message = formatResetEmailUserError({
+        error: typeof data.error === 'string' ? data.error : undefined,
+        details: typeof data.details === 'string' ? data.details : undefined,
+        hint: typeof data.hint === 'string' ? data.hint : undefined,
+        restriction: typeof data.restriction === 'string' ? data.restriction : undefined,
+        httpStatus: res.status,
+      });
+      // Log details for debugging; never log OTP.
+      console.error('Password-reset email send failed:', data.details || data.error || res.status);
       return { configured: true, error: message };
     }
 
@@ -70,6 +127,9 @@ export async function sendPasswordResetEmail(
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : 'Email send failed';
     console.error('Password-reset email send failed:', message);
-    return { configured: true, error: message };
+    return {
+      configured: true,
+      error: formatResetEmailUserError({ error: message }),
+    };
   }
 }

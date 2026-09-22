@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useAuthStore, DEFAULT_AVATARS, SANSKRIT_INTERESTS_LIST } from '../store/authStore';
 import type { SanskritGrade } from '../types/auth';
 import { isResetEmailConfigured } from '../utils/sendPasswordResetEmail';
@@ -54,6 +54,14 @@ const AuthModal: React.FC = () => {
   const [resetInfoMessage, setResetInfoMessage] = useState<string | null>(null);
   const [resetSuccessMessage, setResetSuccessMessage] = useState<string | null>(null);
   const [localError, setLocalError] = useState<string | null>(null);
+  const [emailExistsHint, setEmailExistsHint] = useState(false);
+  const authAlertRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (authError || localError) {
+      authAlertRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, [authError, localError]);
 
   useEffect(() => {
     if (resendCooldown > 0) {
@@ -79,6 +87,7 @@ const AuthModal: React.FC = () => {
   const handleTabChange = (tab: 'login' | 'register' | 'forgot_password') => {
     clearAuthError();
     setLocalError(null);
+    setEmailExistsHint(false);
     setResetSuccessMessage(null);
     setResetInfoMessage(null);
     setActiveTab(tab);
@@ -175,7 +184,10 @@ const AuthModal: React.FC = () => {
 
   const handleRegisterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    register({
+    clearAuthError();
+    setLocalError(null);
+    setEmailExistsHint(false);
+    const res = register({
       username: regUsername,
       fullName: regFullName,
       email: regEmail,
@@ -184,6 +196,31 @@ const AuthModal: React.FC = () => {
       grade: regGrade,
       interests: regInterests,
     });
+    if (!res.success) {
+      if (res.code === 'email_exists') {
+        setEmailExistsHint(true);
+        // Prefill forgot-password identifier with the colliding email.
+        setForgotIdentifier(regEmail.trim());
+      }
+      // Ensure the alert at the top of the modal is visible (long register form).
+      requestAnimationFrame(() => {
+        authAlertRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    }
+  };
+
+  const goToForgotFromDuplicateEmail = () => {
+    clearAuthError();
+    setLocalError(null);
+    setEmailExistsHint(false);
+    setForgotIdentifier(regEmail.trim() || forgotIdentifier);
+    setOtpStep(1);
+    setOtpInput('');
+    setNewPassword('');
+    setConfirmPassword('');
+    setResetInfoMessage(null);
+    setResetSuccessMessage(null);
+    setActiveTab('forgot_password');
   };
 
   const toggleInterest = (interest: string) => {
@@ -293,10 +330,22 @@ const AuthModal: React.FC = () => {
 
         {/* Alert messages */}
         {(authError || localError) && (
-          <div style={{ padding: '0 1.75rem', marginTop: '1rem' }}>
+          <div ref={authAlertRef} style={{ padding: '0 1.75rem', marginTop: '1rem' }}>
             <div className="auth-alert-error">
               <span>⚠️</span> {authError || localError}
             </div>
+            {emailExistsHint && activeTab === 'register' && (
+              <div style={{ marginTop: '0.65rem', textAlign: 'center' }}>
+                <button
+                  type="button"
+                  className="auth-forgot-link"
+                  onClick={goToForgotFromDuplicateEmail}
+                  style={{ fontSize: '0.9rem' }}
+                >
+                  Open Forgot password (पासवर्ड विस्मृतः?)
+                </button>
+              </div>
+            )}
           </div>
         )}
 
@@ -518,6 +567,42 @@ const AuthModal: React.FC = () => {
             <button type="submit" className="auth-submit-btn">
               Start 2-Week Free Trial ➔
             </button>
+
+            {emailExistsHint && (
+              <div
+                style={{
+                  marginTop: '0.85rem',
+                  padding: '0.75rem 0.9rem',
+                  background: '#fef2f2',
+                  border: '1px solid #fecaca',
+                  borderRadius: '10px',
+                  fontSize: '0.84rem',
+                  color: '#991b1b',
+                  lineHeight: 1.5,
+                  textAlign: 'center',
+                }}
+              >
+                <div style={{ marginBottom: '0.45rem' }}>
+                  An account already exists with this email. Use Forgot password to reset.
+                </div>
+                <button
+                  type="button"
+                  onClick={goToForgotFromDuplicateEmail}
+                  style={{
+                    background: '#b45309',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: '8px',
+                    padding: '0.45rem 0.9rem',
+                    fontWeight: 700,
+                    fontSize: '0.84rem',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Go to Forgot password
+                </button>
+              </div>
+            )}
 
             <div
               style={{
