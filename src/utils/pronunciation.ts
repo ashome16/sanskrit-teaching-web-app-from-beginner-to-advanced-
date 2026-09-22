@@ -25,6 +25,13 @@ const VOWEL_TO_MATRA: Record<string, string> = {
   'ए': 'े', 'ऐ': 'ै', 'ओ': 'ो', 'औ': 'ौ',
 };
 
+// Windows speech engines misread roman cues for bare Varṇamālā consonants;
+// keep the complete standard consonant row in Devanagari so hi-IN is used.
+const WINDOWS_BARE_CONSONANTS = new Set(
+  'क ख ग घ ङ च छ ज झ ञ ट ठ ड ढ ण त थ द ध न प फ ब भ म य र ल व श ष स ह'.split(' '),
+);
+const WINDOWS_CONJUNCT_TILES = new Set(['क्ष', 'ज्ञ', 'त्र']);
+
 // Exact/substring phonetic overrides for words that speech engines
 // otherwise mispronounce or misinterpret entirely.
 const applyWordOverrides = (word: string): string => {
@@ -60,24 +67,13 @@ const applyVisargaEcho = (word: string): string => {
 
 // Builds the text actually sent to the speech engine: word overrides + visarga echo.
 // Full words stay Devanagari (Hindi voice). Single tiles use roman cues.
-// On Windows, avoid double-speak / roman pitch hacks for ज्ञ and त्र — SAPI
-// garbles those; plain Devanagari + hi-IN at a mild rate is clearer.
+// On Windows, avoid roman cues for bare consonants and the existing ज्ञ/त्र/क्ष
+// conjuncts — SAPI garbles those; plain Devanagari + hi-IN is clearer.
 const toSpeechText = (word: string): string => {
-  // Windows SAPI: roman cues for these tiles land on English and sound wrong
-  // (घ→gha garbled, ज→ya-like, ध→wrong quality, न→English "na", फ→English "pha", भ→English "bha"). Keep Devanagari so hi-IN speaks.
   // Mac roman cues still work — this early return is Windows-only.
   if (
     isWindowsPlatform() &&
-    (word === 'ज्ञ' ||
-      word === 'त्र' ||
-      word === 'क्ष' ||
-      word === 'घ' ||
-      word === 'ज' ||
-      word === 'ध' ||
-      word === 'झ' ||
-      word === 'न' ||
-      word === 'फ' ||
-      word === 'भ')
+    (WINDOWS_BARE_CONSONANTS.has(word) || WINDOWS_CONJUNCT_TILES.has(word))
   ) {
     return word;
   }
