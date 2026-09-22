@@ -1318,13 +1318,14 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
       )}
 
       <header className="textbook-reader-header">
-        <h2>{activeLesson?.title}</h2>
-        {activeLesson && (
+        {/* Varṇamālā: lesson select already names it — skip repeating English title + .txt source */}
+        {activeLessonId !== 'varnamala' && <h2>{activeLesson?.title}</h2>}
+        {activeLesson && activeLessonId !== 'varnamala' && activeLessonId !== 'barakhadi' && (
           <p className="textbook-reader-source">Source Material: {activeLesson.fileName}</p>
         )}
         {activeLessonId === 'varnamala' && (
           <p className="textbook-glossary-hint" style={{ marginTop: '.35rem' }}>
-            Click on any syllable (akṣara (अक्षर)) to listen to audio pronunciation.
+            Click any syllable (अक्षर) to hear its pronunciation.
           </p>
         )}
         {activeLessonId === 'barakhadi' && (
