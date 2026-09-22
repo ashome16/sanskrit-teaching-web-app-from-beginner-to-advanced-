@@ -428,30 +428,40 @@ const Dashboard: React.FC = () => {
         <nav className="dashboard-nav" aria-label="Main learning views">
           <button
             type="button"
-            className={`dashboard-nav-home${activeView === 'home' ? ' active' : ''}`}
+            className={`dashboard-nav-home dashboard-nav-item${activeView === 'home' ? ' active' : ''}`}
             onClick={() => setActiveView('home')}
             title="Go to Homepage"
           >
-            🏠 Home
+            <img src="/nav/nav-home.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+            <span className="dashboard-nav-primary">Home</span>
           </button>
           <button
             type="button"
-            className={activeView === 'reader' && lesson.id === 'varnamala' ? 'active' : ''}
+            className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'reader' && lesson.id === 'varnamala' ? ' active' : ''}`}
             onClick={openVarnamala}
+            title="Open Varṇamālā alphabet"
           >
-            Varṇamālā
+            <img src="/nav/nav-varnamala.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+            <span className="dashboard-nav-primary">वर्णमाला</span>
+            <span className="dashboard-nav-secondary">Varṇamālā</span>
           </button>
           <button
             type="button"
-            className={activeView === 'board' ? 'active' : ''}
+            className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'board' ? ' active' : ''}`}
             onClick={() => navigateToView('board')}
+            title="Open जोडो tile puzzle"
           >
-            जोडो · Tile Puzzle
+            <img src="/nav/nav-jodo.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+            <span className="dashboard-nav-primary">जोडो</span>
+            <span className="dashboard-nav-secondary">Tile Puzzle</span>
           </button>
           <div
             className={`dashboard-nav-group${activeView === 'reader' && lesson.id !== 'varnamala' ? ' dashboard-nav-group--active' : ''}`}
           >
-            <span className="dashboard-nav-group-label">CBSE · NCERT Deepakam</span>
+            <span className="dashboard-nav-group-label">
+              <img src="/nav/nav-deepakam.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={18} height={18} />
+              CBSE · NCERT Deepakam
+            </span>
             <div className="dashboard-nav-sub" role="group" aria-label="CBSE & NCERT Deepakam grades">
               <button
                 type="button"
@@ -491,43 +501,47 @@ const Dashboard: React.FC = () => {
           </div>
           <button
             type="button"
-            className={`dashboard-nav-stacked${activeView === 'grammar' ? ' active' : ''}`}
+            className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'grammar' ? ' active' : ''}`}
             onClick={handleOpenGrammar}
             title="Open Grammar shelf with all articles"
           >
+            <img src="/nav/nav-grammar.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
             <span className="dashboard-nav-primary">Vyākaraṇa</span>
             <span className="dashboard-nav-secondary">Grammar</span>
           </button>
           <button
             type="button"
-            className={`dashboard-nav-stacked${activeView === 'vedic-maths' ? ' active' : ''}`}
+            className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'vedic-maths' ? ' active' : ''}`}
             onClick={() => navigateToView('vedic-maths')}
             title="Open Vedic Mathematics (वैदिक-गणितम्)"
           >
+            <img src="/nav/nav-vedic.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
             <span className="dashboard-nav-primary">वैदिक-गणितम्</span>
             <span className="dashboard-nav-secondary">Vedic Maths</span>
           </button>
           <button
             type="button"
-            className={`dashboard-nav-stacked${activeView === 'quiz' ? ' active' : ''}`}
+            className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'quiz' ? ' active' : ''}`}
             onClick={() => navigateToView('quiz')}
             title="Open Sanskrit & Vedic Maths Quiz (प्रश्नोत्तरी)"
           >
+            <img src="/nav/nav-quiz.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
             <span className="dashboard-nav-primary">प्रश्नोत्तरी</span>
             <span className="dashboard-nav-secondary">Quiz</span>
           </button>
           <button
             type="button"
-            className={`dashboard-nav-stacked${activeView === 'worksheets' ? ' active' : ''}`}
+            className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'worksheets' ? ' active' : ''}`}
             onClick={() => navigateToView('worksheets')}
             title="Open Printable Worksheets (कार्यपत्रिकाः)"
           >
+            <img src="/nav/nav-worksheets.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
             <span className="dashboard-nav-primary">कार्यपत्रिकाः</span>
             <span className="dashboard-nav-secondary">Worksheets</span>
           </button>
           <button
             type="button"
-            className="dashboard-nav-faq"
+            className="dashboard-nav-faq dashboard-nav-item"
             onClick={() => {
               setActiveView('home');
               setTimeout(() => {
@@ -537,7 +551,8 @@ const Dashboard: React.FC = () => {
             }}
             title="View FAQ, 2-Week Trial & Pricing"
           >
-            ❓ FAQ &amp; Plans
+            <img src="/nav/nav-faq.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+            <span className="dashboard-nav-primary">FAQ &amp; Plans</span>
           </button>
         </nav>
 
