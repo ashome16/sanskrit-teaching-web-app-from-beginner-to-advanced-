@@ -1,6 +1,5 @@
-/** Emails permitted to hold admin after passcode unlock. */
+/** Emails permitted to hold admin after passcode unlock (Zoho only). */
 export const ADMIN_EMAIL_ALLOWLIST = [
-  'kpenumallu@gmail.com',
   'care@ednetlearn.in',
   'admin@ednetlearn.in',
 ] as const;

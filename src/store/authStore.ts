@@ -25,6 +25,14 @@ const ADMIN_SESSION_KEY = 'ednet_admin_session_v1';
 const ACCESS_MODE_KEY = 'sanskrit_access_mode_v1';
 const UPI_VPA_KEY = 'sanskrit_upi_vpa_v1';
 const UPI_PAYEE_KEY = 'sanskrit_upi_payee_v1';
+/** One-time flag: purge retired personal demo accounts from localStorage. */
+const PURGE_PERSONAL_ACCOUNTS_FLAG = 'sanskrit_purge_personal_accounts_v1';
+/** Personal emails (and matching usernames) to remove once; never touch Zoho admin emails. */
+const PERSONAL_ACCOUNTS_TO_PURGE = [
+  'kpenumallu@gmail.com',
+  'seshakalpana7@gmail.com',
+  'kalpana_penumallu@yahoo.com',
+] as const;
 export const DEFAULT_UPI_VPA = '7075296749@upi';
 export const DEFAULT_UPI_PAYEE = 'EdNet Learn Gurukul';
 
@@ -191,10 +199,83 @@ interface AuthState {
   setPendingRedirect: (view: string | null, lessonId?: string) => void;
 }
 
+const normalizeIdentity = (value: string | undefined | null): string =>
+  (value || '').trim().toLowerCase();
+
+/** True if account email or username matches a retired personal identity. Never matches Zoho admin emails. */
+const shouldPurgePersonalAccount = (account: UserAccount): boolean => {
+  const email = normalizeIdentity(account.profile?.email);
+  const username = normalizeIdentity(account.profile?.username);
+  // Hard guard: never delete allowlisted Zoho admin accounts.
+  if (isAdminEmail(email)) return false;
+  for (const target of PERSONAL_ACCOUNTS_TO_PURGE) {
+    if (email === target) return true;
+    if (username === target) return true;
+    const localPart = target.split('@')[0];
+    if (username === localPart) return true;
+  }
+  return false;
+};
+
+/**
+ * One-time migration: remove retired personal accounts from localStorage accounts map.
+ * Clears session if the logged-in user was purged. Sets a flag so it does not re-run.
+ */
+const purgePersonalAccountsOnce = (
+  accounts: Record<string, UserAccount>
+): Record<string, UserAccount> => {
+  try {
+    if (localStorage.getItem(PURGE_PERSONAL_ACCOUNTS_FLAG) === '1') {
+      return accounts;
+    }
+  } catch {
+    // If flag cannot be read, still attempt purge below.
+  }
+
+  const next: Record<string, UserAccount> = { ...accounts };
+  let changed = false;
+  let purgedSession = false;
+
+  for (const [userId, account] of Object.entries(accounts)) {
+    if (!shouldPurgePersonalAccount(account)) continue;
+    delete next[userId];
+    changed = true;
+    try {
+      if (localStorage.getItem(SESSION_STORAGE_KEY) === userId) {
+        localStorage.removeItem(SESSION_STORAGE_KEY);
+        purgedSession = true;
+      }
+    } catch {
+      // ignore session clear failures
+    }
+  }
+
+  if (changed) {
+    try {
+      localStorage.setItem(ACCOUNTS_STORAGE_KEY, JSON.stringify(next));
+    } catch (err) {
+      console.error('Failed to persist personal-account purge', err);
+    }
+  }
+
+  if (purgedSession) {
+    clearAdminSessionStorage();
+  }
+
+  try {
+    localStorage.setItem(PURGE_PERSONAL_ACCOUNTS_FLAG, '1');
+  } catch {
+    // ignore flag write failures
+  }
+
+  return next;
+};
+
 const loadStoredAccounts = (): Record<string, UserAccount> => {
   try {
     const raw = localStorage.getItem(ACCOUNTS_STORAGE_KEY);
-    return raw ? JSON.parse(raw) : {};
+    const accounts: Record<string, UserAccount> = raw ? JSON.parse(raw) : {};
+    return purgePersonalAccountsOnce(accounts);
   } catch {
     return {};
   }
