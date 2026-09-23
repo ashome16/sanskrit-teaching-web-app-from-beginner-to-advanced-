@@ -11,7 +11,10 @@ import {
 import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters } from '../utils/premiumAccess';
 import { Grade8SyllabusModal } from './Grade8SyllabusModal';
+import { getLetterMnemonic } from '../data/varnamalaMnemonics';
+import { VarnamalaWritingPad } from './VarnamalaWritingPad';
 import '../styles/textbook-reader.css';
+import '../styles/varnamala-studio.css';
 
 interface TextbookReaderProps {
   lessons: Lesson[];
@@ -163,6 +166,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const [isSymbolsOpen, setIsSymbolsOpen] = useState(false);
   const [isGrade8SyllabusOpen, setIsGrade8SyllabusOpen] = useState(false);
   const [isPlayingAll, setIsPlayingAll] = useState(false);
+  const [varnamalaSubMode, setVarnamalaSubMode] = useState<'sound' | 'writing' | 'worksheets'>('sound');
+  const [padSelectedLetter, setPadSelectedLetter] = useState<string>('अ');
   const [glosses, setGlosses] = useState<AnalyseRegistry>({});
   const stopPlayAllRef = useRef<(() => void) | null>(null);
 
@@ -1368,36 +1373,174 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 
       {isGroupedLesson && activeLesson ? (
         <div className="varnamala-groups">
-          {(isVarnamala || activeLessonId === 'barakhadi') && (
-            <div className="varnamala-chart-toggle-wrap">
+          {isVarnamala && (
+            <nav className="varnamala-studio-nav" aria-label="Varṇamālā Study Modes">
               <button
                 type="button"
-                className="varnamala-chart-toggle"
-                onClick={() => setIsChartOpen((open) => !open)}
-                aria-expanded={isChartOpen}
-                aria-controls={`${activeLessonId}-chart-panel`}
+                className={`varnamala-mode-btn${varnamalaSubMode === 'sound' ? ' varnamala-mode-btn--active' : ''}`}
+                onClick={() => setVarnamalaSubMode('sound')}
               >
-                {activeLessonId === 'barakhadi'
-                  ? '🗺️ View बारहखड़ी Complete Chart'
-                  : '🗺️ View Alphabet Pronunciation Reference Chart'}
-                <span className="varnamala-chart-toggle-arrow">{isChartOpen ? '▲' : '▼'}</span>
+                <span className="varnamala-mode-icon">🔊</span>
+                <span>ध्वनि-फलकम् (Sound &amp; Pictures)</span>
               </button>
-              <div
-                id={`${activeLessonId}-chart-panel`}
-                className={`varnamala-chart-panel${isChartOpen ? ' varnamala-chart-panel--open' : ''}`}
+              <button
+                type="button"
+                className={`varnamala-mode-btn${varnamalaSubMode === 'writing' ? ' varnamala-mode-btn--active' : ''}`}
+                onClick={() => setVarnamalaSubMode('writing')}
               >
-                <img
-                  src={activeLessonId === 'barakhadi' ? './barakhadi-chart.png' : './image1.jpg'}
-                  alt={activeLessonId === 'barakhadi' ? 'Complete बारहखड़ी Sanskrit matra chart for beginners' : 'Sanskrit pronunciation chart with Devanagari letters for learners'}
-                  className="varnamala-chart-image"
-                  loading="lazy"
-                />
+                <span className="varnamala-mode-icon">✍️</span>
+                <span>अक्षर-लेखनम् (Writing &amp; Tracing Studio)</span>
+              </button>
+              <button
+                type="button"
+                className={`varnamala-mode-btn${varnamalaSubMode === 'worksheets' ? ' varnamala-mode-btn--active' : ''}`}
+                onClick={() => setVarnamalaSubMode('worksheets')}
+              >
+                <span className="varnamala-mode-icon">📑</span>
+                <span>अभ्यास-पत्रिकाः (Printable Worksheets)</span>
+              </button>
+            </nav>
+          )}
+
+          {isVarnamala && varnamalaSubMode === 'writing' && (
+            <VarnamalaWritingPad
+              initialLetter={padSelectedLetter}
+              onOpenWorksheets={onOpenWorksheets}
+            />
+          )}
+
+          {isVarnamala && varnamalaSubMode === 'worksheets' && (
+            <div
+              className="v-writing-studio"
+              style={{ padding: '1.75rem', textAlign: 'center' }}
+            >
+              <span className="v-writing-pill">📑 अभ्यास-सञ्चिका · Worksheets</span>
+              <h3 className="v-writing-title" style={{ margin: '0.5rem 0' }}>
+                Varṇamālā Printable &amp; Interactive Worksheets
+              </h3>
+              <p className="v-writing-subtitle" style={{ maxWidth: '650px', margin: '0 auto 1.5rem' }}>
+                Reinforce letter recognition, stroke order, vowel classifications, and consonant
+                families with classroom-tested practice sheets.
+              </p>
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                  gap: '1rem',
+                  textAlign: 'left',
+                  marginBottom: '1.5rem',
+                }}
+              >
+                <div
+                  style={{
+                    background: '#f8fafc',
+                    border: '1.5px solid #e2e8f0',
+                    borderRadius: '12px',
+                    padding: '1rem',
+                  }}
+                >
+                  <span style={{ fontSize: '1.5rem' }}>🔤</span>
+                  <h4 style={{ margin: '0.4rem 0 0.2rem', fontSize: '1rem', fontWeight: 800 }}>
+                    WS-V01: स्वर-परिचयः
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.8rem', color: '#64748b' }}>
+                    Vowels, short vs. long sounds, animal words, sequence drills.
+                  </p>
+                </div>
+                <div
+                  style={{
+                    background: '#f8fafc',
+                    border: '1.5px solid #e2e8f0',
+                    borderRadius: '12px',
+                    padding: '1rem',
+                  }}
+                >
+                  <span style={{ fontSize: '1.5rem' }}>🎯</span>
+                  <h4 style={{ margin: '0.4rem 0 0.2rem', fontSize: '1rem', fontWeight: 800 }}>
+                    WS-V02: स्पर्श-व्यञ्जनानि
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.8rem', color: '#64748b' }}>
+                    5 consonant families (क to प), articulation points, aspiration.
+                  </p>
+                </div>
+                <div
+                  style={{
+                    background: '#f8fafc',
+                    border: '1.5px solid #e2e8f0',
+                    borderRadius: '12px',
+                    padding: '1rem',
+                  }}
+                >
+                  <span style={{ fontSize: '1.5rem' }}>💨</span>
+                  <h4 style={{ margin: '0.4rem 0 0.2rem', fontSize: '1rem', fontWeight: 800 }}>
+                    WS-V03: अन्तःस्थाः ऊष्माणश्च
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.8rem', color: '#64748b' }}>
+                    Semi-vowels, sibilants (श, ष, स), Anusvāra &amp; Visarga echoes.
+                  </p>
+                </div>
+                <div
+                  style={{
+                    background: '#f8fafc',
+                    border: '1.5px solid #e2e8f0',
+                    borderRadius: '12px',
+                    padding: '1rem',
+                  }}
+                >
+                  <span style={{ fontSize: '1.5rem' }}>🧩</span>
+                  <h4 style={{ margin: '0.4rem 0 0.2rem', fontSize: '1rem', fontWeight: 800 }}>
+                    WS-V04: अक्षर-संयोजनम्
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.8rem', color: '#64748b' }}>
+                    Word synthesis addition (ग + ज + ः = गजः) and phonetic breakdown.
+                  </p>
+                </div>
               </div>
+              {onOpenWorksheets && (
+                <button
+                  type="button"
+                  className="v-submit-check-btn"
+                  onClick={onOpenWorksheets}
+                  style={{ maxWidth: '380px', margin: '0 auto' }}
+                >
+                  <span>📑</span> Open All Varṇamālā Worksheets Laboratory →
+                </button>
+              )}
             </div>
           )}
 
-          {isVarnamala && (
-            <div className="varnamala-chart-toggle-wrap" style={{ marginTop: '0.65rem' }}>
+          {(!isVarnamala || varnamalaSubMode === 'sound') && (
+            <>
+              {(isVarnamala || activeLessonId === 'barakhadi') && (
+                <div className="varnamala-chart-toggle-wrap">
+                  <button
+                    type="button"
+                    className="varnamala-chart-toggle"
+                    onClick={() => setIsChartOpen((open) => !open)}
+                    aria-expanded={isChartOpen}
+                    aria-controls={`${activeLessonId}-chart-panel`}
+                  >
+                    {activeLessonId === 'barakhadi'
+                      ? '🗺️ View बारहखड़ी Complete Chart'
+                      : '🗺️ View Alphabet Pronunciation Reference Chart'}
+                    <span className="varnamala-chart-toggle-arrow">{isChartOpen ? '▲' : '▼'}</span>
+                  </button>
+                  <div
+                    id={`${activeLessonId}-chart-panel`}
+                    className={`varnamala-chart-panel${isChartOpen ? ' varnamala-chart-panel--open' : ''}`}
+                  >
+                    <img
+                      src={activeLessonId === 'barakhadi' ? './barakhadi-chart.png' : './image1.jpg'}
+                      alt={activeLessonId === 'barakhadi' ? 'Complete बारहखड़ी Sanskrit matra chart for beginners' : 'Sanskrit pronunciation chart with Devanagari letters for learners'}
+                      className="varnamala-chart-image"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              )}
+
+              {isVarnamala && (
+                <div className="varnamala-chart-toggle-wrap" style={{ marginTop: '0.65rem' }}>
               <button
                 type="button"
                 className="varnamala-chart-toggle"
@@ -1506,29 +1649,66 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <div className="varnamala-row-letters">
                 {group.words.map((letter, letterIdx) => {
                   const isExtraAnunasika = letter === 'अँ';
+                  const mnemonic = isVarnamala ? getLetterMnemonic(letter) : undefined;
+
+                  if (isVarnamala && mnemonic) {
+                    return (
+                      <button
+                        key={`${activeLessonId}-${groupIdx}-${letterIdx}`}
+                        type="button"
+                        className="varnamala-bouncy-card"
+                        onClick={() => onWordClick(letter)}
+                        aria-label={`Letter ${letter} (${tileLabel(letter)}), word ${mnemonic.wordSan} (${mnemonic.wordEn})`}
+                        title={`Hear ${letter} · Mnemonic: ${mnemonic.wordSan} (${mnemonic.wordEn})`}
+                      >
+                        <span className="v-card-akshara">{letter}</span>
+                        {showRomanTiles ? (
+                          <small className="v-card-roman">{tileLabel(letter)}</small>
+                        ) : null}
+                        <div className="v-card-mnemonic-badge">
+                          <span className="v-card-mnemonic-emoji">{mnemonic.emoji}</span>
+                          <span className="v-card-mnemonic-word">{mnemonic.wordSan}</span>
+                        </div>
+                        <span
+                          className="v-card-trace-btn"
+                          title={`Trace & write ${letter}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setPadSelectedLetter(letter);
+                            setVarnamalaSubMode('writing');
+                          }}
+                        >
+                          ✍️
+                        </span>
+                      </button>
+                    );
+                  }
+
                   return (
-                  <button
-                    key={`${activeLessonId}-${groupIdx}-${letterIdx}`}
-                    type="button"
-                    className={`varnamala-letter-btn${showRomanTiles ? ' barakhadi-letter-btn' : ''}${isExtraAnunasika ? ' varnamala-letter-btn--extra' : ''}`}
-                    onClick={() => onWordClick(letter)}
-                    aria-label={`Play pronunciation for ${letter}${isExtraAnunasika ? ' (optional, for later)' : ''}${showRomanTiles ? ` (${tileLabel(letter)})` : ''}`}
-                    title={isExtraAnunasika ? 'Candrabindu — optional for beginners, learn later' : undefined}
-                  >
-                    <span className="barakhadi-dev">{letter}</span>
-                    {showRomanTiles ? (
-                      <small className="barakhadi-roman">{tileLabel(letter)}</small>
-                    ) : null}
-                    {isExtraAnunasika ? (
-                      <small className="varnamala-letter-note">extra · later</small>
-                    ) : null}
-                  </button>
+                    <button
+                      key={`${activeLessonId}-${groupIdx}-${letterIdx}`}
+                      type="button"
+                      className={`varnamala-letter-btn${showRomanTiles ? ' barakhadi-letter-btn' : ''}${isExtraAnunasika ? ' varnamala-letter-btn--extra' : ''}`}
+                      onClick={() => onWordClick(letter)}
+                      aria-label={`Play pronunciation for ${letter}${isExtraAnunasika ? ' (optional, for later)' : ''}${showRomanTiles ? ` (${tileLabel(letter)})` : ''}`}
+                      title={isExtraAnunasika ? 'Candrabindu — optional for beginners, learn later' : undefined}
+                    >
+                      <span className="barakhadi-dev">{letter}</span>
+                      {showRomanTiles ? (
+                        <small className="barakhadi-roman">{tileLabel(letter)}</small>
+                      ) : null}
+                      {isExtraAnunasika ? (
+                        <small className="varnamala-letter-note">extra · later</small>
+                      ) : null}
+                    </button>
                   );
                 })}
               </div>
               <p className="varnamala-row-description">{group.sanskrit}</p>
             </div>
           ))}
+            </>
+          )}
         </div>
       ) : (
         <div className="textbook-sentence-block">
