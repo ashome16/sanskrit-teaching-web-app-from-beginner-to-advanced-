@@ -1409,3 +1409,575 @@
 .dp-quiz-next-btn:hover {
   background: #115e59;
 }
+
+/* ==========================================================================
+   Dhātupāṭha Knowledge Articles & Treatises
+   ========================================================================== */
+
+.dp-articles-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dp-articles-hero {
+  background: linear-gradient(135deg, #042f2e 0%, #115e59 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem 2.25rem;
+  box-shadow: 0 10px 25px -5px rgba(17, 94, 89, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dp-articles-hero-pill {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #99f6e4;
+  margin-bottom: 0.75rem;
+}
+
+.dp-articles-hero-title {
+  margin: 0 0 0.6rem 0;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+  line-height: 1.3;
+}
+
+.dp-articles-hero-desc {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #ccfbf1;
+  max-width: 820px;
+}
+
+/* Shelf & Search */
+.dp-articles-shelf {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+}
+
+.dp-articles-shelf-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.dp-shelf-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dp-shelf-badge {
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid #bbf7d0;
+}
+
+.dp-shelf-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.dp-shelf-search-input {
+  min-width: 280px;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  border: 1.5px solid #cbd5e1;
+  font-size: 0.9rem;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.dp-shelf-search-input:focus {
+  border-color: #0d9488;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+}
+
+.dp-articles-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.dp-article-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.95rem;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.dp-article-tab-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.dp-article-tab-btn--active {
+  background: #ecfdf5 !important;
+  border-color: #059669 !important;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.15);
+}
+
+.dp-article-tab-badge {
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
+}
+
+.dp-article-tab-san {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e293b;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+}
+
+.dp-article-tab-time {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* Reader Card */
+.dp-article-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.dp-article-header {
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.dp-article-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.dp-article-category-badge {
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+}
+
+.dp-article-readtime {
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.dp-article-cert-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #059669;
+  background: #dcfce7;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+.dp-article-h1-san {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #0f172a;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+  line-height: 1.3;
+}
+
+.dp-article-h2-en {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.dp-article-summary {
+  margin: 0 0 1.25rem 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #334155;
+  background: #f8fafc;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  border-left: 4px solid #0d9488;
+}
+
+.dp-article-action-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+}
+
+.dp-action-icon {
+  font-size: 1.2rem;
+}
+
+.dp-action-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #166534;
+}
+
+.dp-article-action-btn {
+  background: #15803d;
+  color: #ffffff;
+  border: none;
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.dp-article-action-btn:hover {
+  background: #166534;
+}
+
+/* Sections */
+.dp-article-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.dp-article-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.dp-sec-header {
+  margin-bottom: 0.25rem;
+}
+
+.dp-sec-san {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f766e;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+}
+
+.dp-sec-en {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.dp-sec-p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #334155;
+}
+
+/* Sūtra Callouts */
+.dp-sutras-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 0.6rem 0;
+}
+
+.dp-sutra-box {
+  background: #fffdf5;
+  border: 1.5px solid #fde68a;
+  border-radius: 12px;
+  padding: 1.1rem 1.35rem;
+  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.05);
+}
+
+.dp-sutra-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.dp-sutra-badge {
+  background: #b45309;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+}
+
+.dp-sutra-num {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #92400e;
+}
+
+.dp-sutra-audio-btn {
+  margin-left: auto;
+  background: #ffffff;
+  border: 1px solid #d97706;
+  color: #b45309;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.dp-sutra-audio-btn:hover {
+  background: #fef3c7;
+}
+
+.dp-sutra-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #78350f;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.dp-sutra-meaning {
+  font-size: 0.92rem;
+  color: #451a03;
+  line-height: 1.55;
+}
+
+/* Tables */
+.dp-table-scroll-container {
+  overflow-x: auto;
+  margin: 0.75rem 0;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.dp-article-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.dp-article-table th {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-weight: 800;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #cbd5e1;
+  white-space: nowrap;
+}
+
+.dp-article-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.dp-article-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.dp-article-table tbody tr:hover {
+  background: #f0fdf4;
+}
+
+/* Key Takeaway Box */
+.dp-takeaway-box {
+  background: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.dp-takeaway-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #1e40af;
+  margin-bottom: 0.35rem;
+}
+
+.dp-takeaway-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #1e3a8a;
+}
+
+/* Examples Grid */
+.dp-examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.85rem;
+  margin-top: 0.6rem;
+}
+
+.dp-example-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+}
+
+.dp-ex-san-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.dp-ex-san {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+}
+
+.dp-ex-audio-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.2rem;
+}
+
+.dp-ex-trans {
+  font-size: 0.82rem;
+  color: #64748b;
+  font-style: italic;
+  margin-bottom: 0.25rem;
+}
+
+.dp-ex-meaning {
+  font-size: 0.88rem;
+  color: #334155;
+  margin-bottom: 0.4rem;
+}
+
+.dp-ex-breakdown code {
+  background: #e2e8f0;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #0f766e;
+}
+
+/* Footer Navigation */
+.dp-article-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 2px solid #f1f5f9;
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+}
+
+.dp-article-nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.dp-article-nav-btn--next {
+  text-align: right;
+  margin-left: auto;
+}
+
+.dp-article-nav-btn:hover {
+  background: #f0fdf4;
+  border-color: #86efac;
+  transform: translateY(-1px);
+}
+
+.dp-nav-dir {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0f766e;
+  text-transform: uppercase;
+}
+
+.dp-nav-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+}
+
+@media (max-width: 768px) {
+  .dp-article-card {
+    padding: 1.25rem;
+  }
+  .dp-articles-hero {
+    padding: 1.5rem;
+  }
+  .dp-articles-hero-title {
+    font-size: 1.35rem;
+  }
+  .dp-article-h1-san {
+    font-size: 1.4rem;
+  }
+  .dp-article-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .dp-article-nav-btn--next {
+    text-align: left;
+  }
+}
+

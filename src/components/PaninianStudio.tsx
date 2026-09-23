@@ -14,9 +14,10 @@ import {
   NUMBER_LABELS,
 } from '../utils/paninianEngine';
 import DhatupathaBrowser from './DhatupathaBrowser';
+import DhatupathaArticles from './DhatupathaArticles';
 import '../styles/dhatupatha.css';
 
-type StudioMode = 'deconstructor' | 'generator' | 'library' | 'quiz';
+type StudioMode = 'deconstructor' | 'generator' | 'library' | 'quiz' | 'articles';
 
 type PaninianStudioProps = {
   onGoBack?: () => void;
@@ -176,6 +177,14 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
           >
             <span className="dp-tab-icon">📖</span>
             <span className="dp-tab-text">धातुपाठ-सूची (Root Library)</span>
+          </button>
+          <button
+            type="button"
+            className={`dp-studio-tab${mode === 'articles' ? ' dp-studio-tab--active' : ''}`}
+            onClick={() => setMode('articles')}
+          >
+            <span className="dp-tab-icon">📜</span>
+            <span className="dp-tab-text">सिद्धान्त-मञ्जरी (Articles &amp; Guides)</span>
           </button>
         </nav>
       </header>
@@ -638,6 +647,25 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
           </div>
           <DhatupathaBrowser />
         </section>
+      )}
+
+      {/* ================================================================= */}
+      {/* MODE 5: DESCRIPTIVE ARTICLES & GRAMMAR TREATISES */}
+      {/* ================================================================= */}
+      {mode === 'articles' && (
+        <DhatupathaArticles
+          onDeconstructWord={(word) => {
+            setDeconInput(word);
+            handleDeconstruct(word);
+            setMode('deconstructor');
+            window.scrollTo({ top: 100, behavior: 'smooth' });
+          }}
+          onGenerateDhatu={(dhatuId) => {
+            setSelectedDhatuId(dhatuId);
+            setMode('generator');
+            window.scrollTo({ top: 100, behavior: 'smooth' });
+          }}
+        />
       )}
     </div>
   );

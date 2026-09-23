@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { useAuthStore, DEFAULT_AVATARS, SANSKRIT_INTERESTS_LIST } from '../store/authStore';
+import {
+  useAuthStore,
+  DEFAULT_AVATARS,
+  SANSKRIT_INTERESTS_LIST,
+  getStoredRememberedCredentials,
+  removeStoredRememberedCredentials,
+  setStoredRememberedCredentials,
+} from '../store/authStore';
 import { useAppStore } from '../store';
 import type { SanskritGrade } from '../types/auth';
 import '../styles/auth-modal.css';
@@ -22,6 +29,7 @@ const UserProfileModal: React.FC = () => {
     openPaymentModal,
     logout,
     updateProfile,
+    changePassword,
     deleteProfile,
     getTrialDaysRemaining,
     isAdminLoggedIn,
@@ -39,6 +47,28 @@ const UserProfileModal: React.FC = () => {
   const [editEmail, setEditEmail] = useState(currentUser?.email || '');
   const [editInterests, setEditInterests] = useState<string[]>(currentUser?.interests || []);
   const [editMessage, setEditMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+
+  // Security & Password state
+  const checkIsRemembered = () => {
+    const creds = getStoredRememberedCredentials();
+    if (!creds || !currentUser) return false;
+    return (
+      creds.identifier.toLowerCase() === currentUser.username.toLowerCase() ||
+      creds.identifier.toLowerCase() === currentUser.email.toLowerCase()
+    );
+  };
+
+  const [isPasswordSectionOpen, setIsPasswordSectionOpen] = useState(false);
+  const [currentPasswordInput, setCurrentPasswordInput] = useState('');
+  const [newPasswordInput, setNewPasswordInput] = useState('');
+  const [confirmNewPasswordInput, setConfirmNewPasswordInput] = useState('');
+  const [showCurrentPass, setShowCurrentPass] = useState(false);
+  const [showNewPass, setShowNewPass] = useState(false);
+  const [passwordChangeMessage, setPasswordChangeMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [isRememberedOnDevice, setIsRememberedOnDevice] = useState(checkIsRemembered);
+  const [deviceSaveMessage, setDeviceSaveMessage] = useState<string | null>(null);
+  const [quickSavePassword, setQuickSavePassword] = useState('');
+  const [isPromptingQuickSave, setIsPromptingQuickSave] = useState(false);
 
   // Delete form state
   const [deletePassword, setDeletePassword] = useState('');
@@ -87,6 +117,54 @@ const UserProfileModal: React.FC = () => {
     if (!result.success) {
       setDeleteError(result.error || 'Incorrect password.');
     }
+  };
+
+  const handleChangePasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setPasswordChangeMessage(null);
+
+    if (newPasswordInput.trim().length < 4) {
+      setPasswordChangeMessage({ type: 'error', text: 'New password must be at least 4 characters long.' });
+      return;
+    }
+
+    if (newPasswordInput !== confirmNewPasswordInput) {
+      setPasswordChangeMessage({ type: 'error', text: 'New passwords do not match. Please re-enter.' });
+      return;
+    }
+
+    const res = changePassword(currentPasswordInput, newPasswordInput);
+    if (res.success) {
+      setPasswordChangeMessage({ type: 'success', text: 'Password successfully changed and updated!' });
+      setCurrentPasswordInput('');
+      setNewPasswordInput('');
+      setConfirmNewPasswordInput('');
+      setIsRememberedOnDevice(checkIsRemembered());
+      setTimeout(() => {
+        setIsPasswordSectionOpen(false);
+        setPasswordChangeMessage(null);
+      }, 2000);
+    } else {
+      setPasswordChangeMessage({ type: 'error', text: res.error || 'Failed to update password.' });
+    }
+  };
+
+  const handleClearSavedPasswordOnDevice = () => {
+    removeStoredRememberedCredentials();
+    setIsRememberedOnDevice(false);
+    setDeviceSaveMessage('Saved password removed from this browser.');
+    setTimeout(() => setDeviceSaveMessage(null), 3000);
+  };
+
+  const handleSavePasswordOnDevice = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!quickSavePassword) return;
+    setStoredRememberedCredentials(currentUser.username, quickSavePassword);
+    setIsRememberedOnDevice(true);
+    setIsPromptingQuickSave(false);
+    setQuickSavePassword('');
+    setDeviceSaveMessage('Password saved to this browser for 1-click login!');
+    setTimeout(() => setDeviceSaveMessage(null), 3000);
   };
 
   const toggleInterest = (interest: string) => {
@@ -259,6 +337,176 @@ const UserProfileModal: React.FC = () => {
               </div>
 
               {/* Recent Payments hidden for students — avoids fake ✓ PAID / pending receipt UI */}
+            </div>
+
+            {/* Password & Device Remember Card */}
+            <div className="profile-security-card">
+              <div className="profile-security-header">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '1.2rem' }}>🔒</span>
+                  <h3 className="profile-security-title">Password &amp; Security (सुरक्षा एवं पासवर्ड)</h3>
+                </div>
+                <button
+                  type="button"
+                  className="profile-security-toggle-btn"
+                  onClick={() => setIsPasswordSectionOpen((prev) => !prev)}
+                >
+                  {isPasswordSectionOpen ? 'Close ▲' : 'Change Password ➔'}
+                </button>
+              </div>
+
+              {/* Remember on Device status */}
+              <div className="profile-remember-status-row">
+                <div className="profile-remember-info">
+                  <span className="profile-remember-icon">{isRememberedOnDevice ? '💾' : '📱'}</span>
+                  <div>
+                    <div className="profile-remember-title">
+                      {isRememberedOnDevice
+                        ? 'Password is saved on this browser'
+                        : 'Password is not saved on this device'}
+                    </div>
+                    <div className="profile-remember-sub">
+                      {isRememberedOnDevice
+                        ? 'Fast 1-click login enabled on this browser.'
+                        : 'You will need to re-enter your password each time you log in.'}
+                    </div>
+                  </div>
+                </div>
+
+                {isRememberedOnDevice ? (
+                  <button
+                    type="button"
+                    className="profile-clear-remember-btn"
+                    onClick={handleClearSavedPasswordOnDevice}
+                    title="Remove saved password from this browser"
+                  >
+                    Forget / Clear Saved
+                  </button>
+                ) : isPromptingQuickSave ? (
+                  <form onSubmit={handleSavePasswordOnDevice} style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
+                    <input
+                      type="password"
+                      className="auth-input"
+                      style={{ padding: '0.35rem 0.6rem', fontSize: '0.85rem', width: '130px' }}
+                      placeholder="Enter password"
+                      value={quickSavePassword}
+                      onChange={(e) => setQuickSavePassword(e.target.value)}
+                      required
+                      autoComplete="current-password"
+                    />
+                    <button type="submit" className="profile-save-remember-btn">Save</button>
+                    <button type="button" className="profile-clear-remember-btn" onClick={() => setIsPromptingQuickSave(false)}>✕</button>
+                  </form>
+                ) : (
+                  <button
+                    type="button"
+                    className="profile-save-remember-btn"
+                    onClick={() => setIsPromptingQuickSave(true)}
+                  >
+                    Save Password on Browser
+                  </button>
+                )}
+              </div>
+
+              {deviceSaveMessage && (
+                <div className="auth-alert-success" style={{ marginTop: '0.6rem', fontSize: '0.82rem', padding: '0.45rem 0.75rem' }}>
+                  ✓ {deviceSaveMessage}
+                </div>
+              )}
+
+              {/* Collapsible Change Password Form */}
+              {isPasswordSectionOpen && (
+                <form className="profile-password-form" onSubmit={handleChangePasswordSubmit}>
+                  <h4 style={{ margin: '0 0 0.75rem', fontSize: '0.95rem', fontWeight: 800, color: '#1e293b' }}>
+                    Change Account Password (पासवर्ड-परिवर्तनम्)
+                  </h4>
+
+                  {passwordChangeMessage && (
+                    <div className={passwordChangeMessage.type === 'success' ? 'auth-alert-success' : 'auth-alert-error'} style={{ marginBottom: '0.75rem' }}>
+                      {passwordChangeMessage.type === 'success' ? '✓' : '⚠️'} {passwordChangeMessage.text}
+                    </div>
+                  )}
+
+                  <div className="auth-form-group">
+                    <label className="auth-label" htmlFor="current-pw-input">Current Password *</label>
+                    <div className="auth-password-wrapper">
+                      <input
+                        id="current-pw-input"
+                        type={showCurrentPass ? 'text' : 'password'}
+                        className="auth-input auth-password-input"
+                        placeholder="Enter current password"
+                        value={currentPasswordInput}
+                        onChange={(e) => setCurrentPasswordInput(e.target.value)}
+                        required
+                        autoComplete="current-password"
+                      />
+                      <button
+                        type="button"
+                        className="auth-password-toggle-btn"
+                        onClick={() => setShowCurrentPass((p) => !p)}
+                        title={showCurrentPass ? 'Hide' : 'Show'}
+                      >
+                        {showCurrentPass ? '🙈' : '👁️'}
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="auth-form-group">
+                    <label className="auth-label" htmlFor="new-pw-input">New Password * (minimum 4 characters)</label>
+                    <div className="auth-password-wrapper">
+                      <input
+                        id="new-pw-input"
+                        type={showNewPass ? 'text' : 'password'}
+                        className="auth-input auth-password-input"
+                        placeholder="Create a new password"
+                        value={newPasswordInput}
+                        onChange={(e) => setNewPasswordInput(e.target.value)}
+                        required
+                        autoComplete="new-password"
+                      />
+                      <button
+                        type="button"
+                        className="auth-password-toggle-btn"
+                        onClick={() => setShowNewPass((p) => !p)}
+                        title={showNewPass ? 'Hide' : 'Show'}
+                      >
+                        {showNewPass ? '🙈' : '👁️'}
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="auth-form-group">
+                    <label className="auth-label" htmlFor="confirm-new-pw-input">Confirm New Password *</label>
+                    <input
+                      id="confirm-new-pw-input"
+                      type="password"
+                      className="auth-input"
+                      placeholder="Re-enter new password"
+                      value={confirmNewPasswordInput}
+                      onChange={(e) => setConfirmNewPasswordInput(e.target.value)}
+                      required
+                      autoComplete="new-password"
+                    />
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '0.6rem', marginTop: '0.85rem' }}>
+                    <button type="submit" className="auth-submit-btn" style={{ flex: 1, padding: '0.55rem 1rem' }}>
+                      Update &amp; Save Password
+                    </button>
+                    <button
+                      type="button"
+                      className="profile-btn-logout"
+                      style={{ padding: '0.55rem 1rem' }}
+                      onClick={() => {
+                        setIsPasswordSectionOpen(false);
+                        setPasswordChangeMessage(null);
+                      }}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              )}
             </div>
 
             {/* Actions */}

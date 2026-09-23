@@ -97,6 +97,43 @@ const resolveAdminLoggedIn = (email: string | undefined | null): boolean => {
   return true;
 };
 
+export const REMEMBERED_CREDENTIALS_KEY = 'ednet_remembered_credentials';
+
+export interface RememberedCredentials {
+  identifier: string;
+  password: string;
+  savedAt: number;
+}
+
+export const getStoredRememberedCredentials = (): RememberedCredentials | null => {
+  try {
+    const raw = localStorage.getItem(REMEMBERED_CREDENTIALS_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (parsed && typeof parsed.identifier === 'string' && typeof parsed.password === 'string') {
+      return parsed;
+    }
+    return null;
+  } catch {
+    return null;
+  }
+};
+
+export const setStoredRememberedCredentials = (identifier: string, password: string) => {
+  try {
+    localStorage.setItem(
+      REMEMBERED_CREDENTIALS_KEY,
+      JSON.stringify({ identifier: identifier.trim(), password, savedAt: Date.now() })
+    );
+  } catch {}
+};
+
+export const removeStoredRememberedCredentials = () => {
+  try {
+    localStorage.removeItem(REMEMBERED_CREDENTIALS_KEY);
+  } catch {}
+};
+
 const TWO_WEEKS_MS = 14 * 24 * 60 * 60 * 1000;
 const MONTHLY_PRICE_INR = 200;
 const PAID_ACCESS_DAYS = 30;
@@ -151,10 +188,11 @@ interface AuthState {
   /** Resend via Vercel /api/send-reset-otp. No-ops when reset email is not configured (e.g. local vite without API). */
   sendPasswordResetEmail: (email: string, otp: string, toName?: string) => Promise<{ configured: boolean; error?: string }>;
 
-  register: (data: RegisterFormData) => { success: boolean; error?: string; code?: 'email_exists' | 'username_exists' };
-  login: (usernameOrEmail: string, password: string) => { success: boolean; error?: string };
+  register: (data: RegisterFormData, rememberMe?: boolean) => { success: boolean; error?: string; code?: 'email_exists' | 'username_exists' };
+  login: (usernameOrEmail: string, password: string, rememberMe?: boolean) => { success: boolean; error?: string };
   logout: () => void;
   updateProfile: (data: UpdateProfileFormData) => { success: boolean; error?: string };
+  changePassword: (oldPassword: string, newPassword: string) => { success: boolean; error?: string };
   deleteProfile: (confirmationPassword: string) => { success: boolean; error?: string };
   getTrialDaysRemaining: () => number;
   processPayment: (method: PaymentMethod, upiId?: string) => Promise<{ success: boolean; transaction?: PaymentTransaction; error?: string }>;
@@ -600,6 +638,16 @@ export const useAuthStore = create<AuthState>((set, get) => {
       saveSession(account.profile.id);
       useAppStore.getState().setUserId(account.profile.id);
 
+      // If credentials were saved on this device for this user, keep them updated with new password
+      const remembered = getStoredRememberedCredentials();
+      if (
+        remembered &&
+        (remembered.identifier.toLowerCase() === account.profile.username.toLowerCase() ||
+          remembered.identifier.toLowerCase() === account.profile.email.toLowerCase())
+      ) {
+        setStoredRememberedCredentials(remembered.identifier, cleanPass);
+      }
+
       set({
         accounts: updatedAccounts,
         currentUser: account.profile,
@@ -640,7 +688,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
       set({ pendingRedirectView: view, pendingRedirectLessonId: lessonId });
     },
 
-    register: (data: RegisterFormData) => {
+    register: (data: RegisterFormData, rememberMe?: boolean) => {
       const { accounts } = get();
       const cleanUsername = data.username.trim();
       const cleanEmail = data.email.trim().toLowerCase();
@@ -726,6 +774,10 @@ export const useAuthStore = create<AuthState>((set, get) => {
       // Sync user progress into app store
       useAppStore.getState().setUserId(userId);
 
+      if (rememberMe) {
+        setStoredRememberedCredentials(cleanUsername, data.password);
+      }
+
       set({
         accounts: newAccounts,
         currentUser: profile,
@@ -737,7 +789,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
       return { success: true };
     },
 
-    login: (usernameOrEmail: string, password: string) => {
+    login: (usernameOrEmail: string, password: string, rememberMe?: boolean) => {
       const { accounts } = get();
       const identifier = usernameOrEmail.trim().toLowerCase();
 
@@ -779,6 +831,19 @@ export const useAuthStore = create<AuthState>((set, get) => {
       saveSession(updatedProfile.id);
 
       useAppStore.getState().setUserId(updatedProfile.id);
+
+      if (rememberMe === true) {
+        setStoredRememberedCredentials(usernameOrEmail, password);
+      } else if (rememberMe === false) {
+        const remembered = getStoredRememberedCredentials();
+        if (
+          remembered &&
+          (remembered.identifier.toLowerCase() === identifier ||
+            remembered.identifier.toLowerCase() === foundAccount.profile.email.toLowerCase())
+        ) {
+          removeStoredRememberedCredentials();
+        }
+      }
 
       const paidUntil = updatedProfile.planExpiresAt || updatedProfile.subscriptionRenewsAt;
       const endedOn =
@@ -856,6 +921,48 @@ export const useAuthStore = create<AuthState>((set, get) => {
         accounts: updatedAccounts,
         isAdminLoggedIn: resolveAdminLoggedIn(updatedProfile.email),
       });
+
+      return { success: true };
+    },
+
+    changePassword: (oldPassword: string, newPassword: string) => {
+      const { currentUser, accounts } = get();
+      if (!currentUser) return { success: false, error: 'You must be logged in to change your password.' };
+
+      const currentAccount = accounts[currentUser.id];
+      if (!currentAccount) return { success: false, error: 'Account not found.' };
+
+      if (currentAccount.passwordHash !== oldPassword) {
+        return { success: false, error: 'Current password is incorrect.' };
+      }
+
+      const cleanNew = (newPassword || '').trim();
+      if (cleanNew.length < 4) {
+        return { success: false, error: 'New password must be at least 4 characters long.' };
+      }
+
+      const updatedAccount: UserAccount = {
+        ...currentAccount,
+        passwordHash: cleanNew,
+      };
+
+      const updatedAccounts = {
+        ...accounts,
+        [currentUser.id]: updatedAccount,
+      };
+
+      saveAccounts(updatedAccounts);
+      set({ accounts: updatedAccounts });
+
+      // If credentials were saved on this device for this user, keep them updated!
+      const remembered = getStoredRememberedCredentials();
+      if (
+        remembered &&
+        (remembered.identifier.toLowerCase() === currentUser.username.toLowerCase() ||
+          remembered.identifier.toLowerCase() === currentUser.email.toLowerCase())
+      ) {
+        setStoredRememberedCredentials(remembered.identifier, cleanNew);
+      }
 
       return { success: true };
     },

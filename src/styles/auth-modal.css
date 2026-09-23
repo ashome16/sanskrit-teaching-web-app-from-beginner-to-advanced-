@@ -676,3 +676,199 @@
   gap: 0.5rem;
 }
 
+/* ==========================================================================
+   Password Visibility & Remember Me Options
+   ========================================================================== */
+
+.auth-password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.auth-password-input {
+  padding-right: 2.75rem !important;
+}
+
+.auth-password-toggle-btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.15rem;
+  padding: 0.25rem 0.4rem;
+  border-radius: 6px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.auth-password-toggle-btn:hover {
+  background: #f1f5f9;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Remember me row */
+.auth-remember-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.65rem;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.auth-remember-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.auth-remember-checkbox {
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: #b45309;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.auth-clear-saved-btn {
+  background: none;
+  border: none;
+  color: #dc2626;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  white-space: nowrap;
+  padding: 0.15rem 0.35rem;
+}
+
+.auth-clear-saved-btn:hover {
+  color: #991b1b;
+}
+
+/* Profile security card */
+.profile-security-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.profile-security-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.profile-security-title {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.profile-security-toggle-btn {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #0f766e;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.profile-security-toggle-btn:hover {
+  background: #f0fdf4;
+  border-color: #0f766e;
+}
+
+.profile-remember-status-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.profile-remember-info {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.profile-remember-icon {
+  font-size: 1.25rem;
+}
+
+.profile-remember-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.profile-remember-sub {
+  font-size: 0.76rem;
+  color: #64748b;
+  margin-top: 0.1rem;
+}
+
+.profile-clear-remember-btn {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.profile-clear-remember-btn:hover {
+  background: #fecaca;
+}
+
+.profile-save-remember-btn {
+  background: #15803d;
+  border: none;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.profile-save-remember-btn:hover {
+  background: #166534;
+}
+
+.profile-password-form {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #cbd5e1;
+}
+

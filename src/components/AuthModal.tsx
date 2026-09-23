@@ -1,5 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useAuthStore, DEFAULT_AVATARS, SANSKRIT_INTERESTS_LIST } from '../store/authStore';
+import {
+  useAuthStore,
+  DEFAULT_AVATARS,
+  SANSKRIT_INTERESTS_LIST,
+  getStoredRememberedCredentials,
+  removeStoredRememberedCredentials,
+} from '../store/authStore';
 import type { SanskritGrade } from '../types/auth';
 import { isResetEmailConfigured } from '../utils/sendPasswordResetEmail';
 import '../styles/auth-modal.css';
@@ -41,14 +47,23 @@ const AuthModal: React.FC = () => {
   };
 
   // Login form state
-  const [loginIdentifier, setLoginIdentifier] = useState('');
-  const [loginPassword, setLoginPassword] = useState('');
+  const rememberedCreds = getStoredRememberedCredentials();
+  const [loginIdentifier, setLoginIdentifier] = useState(rememberedCreds?.identifier || '');
+  const [loginPassword, setLoginPassword] = useState(rememberedCreds?.password || '');
+  const [rememberMe, setRememberMe] = useState(Boolean(rememberedCreds));
+  const [showLoginPassword, setShowLoginPassword] = useState(false);
+
+  // Register form state
+  const [regRememberMe, setRegRememberMe] = useState(true);
+  const [showRegPassword, setShowRegPassword] = useState(false);
 
   // Forgot password & OTP state
   const [forgotIdentifier, setForgotIdentifier] = useState('');
   const [otpInput, setOtpInput] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [otpStep, setOtpStep] = useState<1 | 2>(1);
   const [resendCooldown, setResendCooldown] = useState(0);
   const [resetInfoMessage, setResetInfoMessage] = useState<string | null>(null);
@@ -190,7 +205,7 @@ const AuthModal: React.FC = () => {
 
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    login(loginIdentifier, loginPassword);
+    login(loginIdentifier, loginPassword, rememberMe);
   };
 
   const handleRegisterSubmit = (e: React.FormEvent) => {
@@ -198,15 +213,18 @@ const AuthModal: React.FC = () => {
     clearAuthError();
     setLocalError(null);
     setEmailExistsHint(false);
-    const res = register({
-      username: regUsername,
-      fullName: regFullName,
-      email: regEmail,
-      password: regPassword,
-      avatar: regAvatar,
-      grade: regGrade,
-      interests: regInterests,
-    });
+    const res = register(
+      {
+        username: regUsername,
+        fullName: regFullName,
+        email: regEmail,
+        password: regPassword,
+        avatar: regAvatar,
+        grade: regGrade,
+        interests: regInterests,
+      },
+      regRememberMe
+    );
     if (!res.success) {
       if (res.code === 'email_exists') {
         setEmailExistsHint(true);
@@ -384,6 +402,7 @@ const AuthModal: React.FC = () => {
                 onChange={(e) => setLoginIdentifier(e.target.value)}
                 required
                 autoFocus
+                autoComplete="username"
               />
             </div>
 
@@ -391,18 +410,62 @@ const AuthModal: React.FC = () => {
               <label className="auth-label" htmlFor="login-password">
                 Password
               </label>
-              <input
-                id="login-password"
-                type="password"
-                className="auth-input"
-                placeholder="Enter your password"
-                value={loginPassword}
-                onChange={(e) => setLoginPassword(e.target.value)}
-                required
-              />
+              <div className="auth-password-wrapper">
+                <input
+                  id="login-password"
+                  type={showLoginPassword ? 'text' : 'password'}
+                  className="auth-input auth-password-input"
+                  placeholder="Enter your password"
+                  value={loginPassword}
+                  onChange={(e) => setLoginPassword(e.target.value)}
+                  required
+                  autoComplete="current-password"
+                />
+                <button
+                  type="button"
+                  className="auth-password-toggle-btn"
+                  onClick={() => setShowLoginPassword((prev) => !prev)}
+                  title={showLoginPassword ? 'Hide password' : 'Show password'}
+                  aria-label={showLoginPassword ? 'Hide password' : 'Show password'}
+                >
+                  {showLoginPassword ? '🙈' : '👁️'}
+                </button>
+              </div>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-0.35rem', marginBottom: '0.85rem' }}>
+            <div className="auth-remember-row">
+              <label className="auth-remember-label">
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={(e) => {
+                    const checked = e.target.checked;
+                    setRememberMe(checked);
+                    if (!checked) {
+                      removeStoredRememberedCredentials();
+                    }
+                  }}
+                  className="auth-remember-checkbox"
+                />
+                <span>Remember / Save password on this device (पासवर्ड सुरक्षितं रक्षतु)</span>
+              </label>
+              {getStoredRememberedCredentials() && (
+                <button
+                  type="button"
+                  className="auth-clear-saved-btn"
+                  onClick={() => {
+                    removeStoredRememberedCredentials();
+                    setRememberMe(false);
+                    setLoginPassword('');
+                  }}
+                  title="Clear saved password from this browser"
+                >
+                  Clear saved
+                </button>
+              )}
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '0.35rem', marginBottom: '0.85rem' }}>
               <button
                 type="button"
                 onClick={() => handleTabChange('forgot_password')}
@@ -510,15 +573,39 @@ const AuthModal: React.FC = () => {
               <label className="auth-label" htmlFor="reg-password">
                 Password * (minimum 4 characters)
               </label>
-              <input
-                id="reg-password"
-                type="password"
-                className="auth-input"
-                placeholder="Create a password"
-                value={regPassword}
-                onChange={(e) => setRegPassword(e.target.value)}
-                required
-              />
+              <div className="auth-password-wrapper">
+                <input
+                  id="reg-password"
+                  type={showRegPassword ? 'text' : 'password'}
+                  className="auth-input auth-password-input"
+                  placeholder="Create a password"
+                  value={regPassword}
+                  onChange={(e) => setRegPassword(e.target.value)}
+                  required
+                  autoComplete="new-password"
+                />
+                <button
+                  type="button"
+                  className="auth-password-toggle-btn"
+                  onClick={() => setShowRegPassword((prev) => !prev)}
+                  title={showRegPassword ? 'Hide password' : 'Show password'}
+                  aria-label={showRegPassword ? 'Hide password' : 'Show password'}
+                >
+                  {showRegPassword ? '🙈' : '👁️'}
+                </button>
+              </div>
+            </div>
+
+            <div className="auth-remember-row" style={{ marginTop: '-0.2rem', marginBottom: '0.85rem' }}>
+              <label className="auth-remember-label">
+                <input
+                  type="checkbox"
+                  checked={regRememberMe}
+                  onChange={(e) => setRegRememberMe(e.target.checked)}
+                  className="auth-remember-checkbox"
+                />
+                <span>Save password on this device for 1-click login</span>
+              </label>
             </div>
 
             {/* Avatar Picker */}
@@ -853,15 +940,27 @@ const AuthModal: React.FC = () => {
                   <label className="auth-label" htmlFor="new-password">
                     New Password * (minimum 4 characters)
                   </label>
-                  <input
-                    id="new-password"
-                    type="password"
-                    className="auth-input"
-                    placeholder="Create a new password"
-                    value={newPassword}
-                    onChange={(e) => setNewPassword(e.target.value)}
-                    required
-                  />
+                  <div className="auth-password-wrapper">
+                    <input
+                      id="new-password"
+                      type={showNewPassword ? 'text' : 'password'}
+                      className="auth-input auth-password-input"
+                      placeholder="Create a new password"
+                      value={newPassword}
+                      onChange={(e) => setNewPassword(e.target.value)}
+                      required
+                      autoComplete="new-password"
+                    />
+                    <button
+                      type="button"
+                      className="auth-password-toggle-btn"
+                      onClick={() => setShowNewPassword((prev) => !prev)}
+                      title={showNewPassword ? 'Hide password' : 'Show password'}
+                      aria-label={showNewPassword ? 'Hide password' : 'Show password'}
+                    >
+                      {showNewPassword ? '🙈' : '👁️'}
+                    </button>
+                  </div>
                 </div>
 
                 {/* Confirm Password */}
@@ -869,15 +968,27 @@ const AuthModal: React.FC = () => {
                   <label className="auth-label" htmlFor="confirm-password">
                     Confirm New Password *
                   </label>
-                  <input
-                    id="confirm-password"
-                    type="password"
-                    className="auth-input"
-                    placeholder="Re-enter new password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    required
-                  />
+                  <div className="auth-password-wrapper">
+                    <input
+                      id="confirm-password"
+                      type={showConfirmPassword ? 'text' : 'password'}
+                      className="auth-input auth-password-input"
+                      placeholder="Re-enter new password"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      required
+                      autoComplete="new-password"
+                    />
+                    <button
+                      type="button"
+                      className="auth-password-toggle-btn"
+                      onClick={() => setShowConfirmPassword((prev) => !prev)}
+                      title={showConfirmPassword ? 'Hide password' : 'Show password'}
+                      aria-label={showConfirmPassword ? 'Hide password' : 'Show password'}
+                    >
+                      {showConfirmPassword ? '🙈' : '👁️'}
+                    </button>
+                  </div>
                 </div>
 
                 <button type="submit" className="auth-submit-btn">
