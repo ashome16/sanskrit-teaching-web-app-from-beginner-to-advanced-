@@ -61,16 +61,73 @@ const CBSE_GUIDE_PATHS = new Set([
   '/cbse-sanskrit',
 ]);
 
+export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string }> = {
+  home: {
+    title: 'Online Sanskrit & Vedic Math Classes for Kids | EdNet Learn Gurukul',
+    desc: 'Interactive CBSE NCERT Sanskrit (दीपकम 6–8) and Vedic Math platform for school kids. 28+ worksheets, 39+ quizzes, 6,000+ tile puzzles, audio Varnamala & 16 Vedic math sutras.',
+  },
+  'cbse-guide': {
+    title: 'CBSE NCERT Sanskrit Exam Guide (Classes 7–10) | EdNet Learn Gurukul',
+    desc: 'Master CBSE NCERT Sanskrit exams for Classes 7–10: section blueprint, question terminology, Kim-family keywords, and exam-day strategy.',
+  },
+  worksheets: {
+    title: 'CBSE Sanskrit Worksheets & Practice Exercises (Class 6, 7, 8) | EdNet Learn',
+    desc: 'Printable & interactive CBSE Sanskrit worksheets, translation drills, sandhi practice, and NCERT Deepakam exercise solutions for students.',
+  },
+  'vedic-maths': {
+    title: 'Vedic Math Tricks & 16 Sutras for School Kids | EdNet Learn Gurukul',
+    desc: 'Learn fast mental math, Vedic geometry, and 16 Vedic mathematics sutras with interactive calculators, speed drills, and video lessons.',
+  },
+  grammar: {
+    title: 'Sanskrit Grammar Mastery: Shabdroop, Dhaturoop & Sandhi | EdNet Learn',
+    desc: 'Interactive Sanskrit grammar guide: declensions (shabdroop), verb conjugations (dhaturoop), sandhi rules, vibhakti charts, and phonetic audio.',
+  },
+  quiz: {
+    title: 'Interactive Sanskrit Quizzes & NCERT Chapter Tests | EdNet Learn',
+    desc: 'Test your Sanskrit knowledge with 39+ interactive quiz sets, 200+ CBSE curriculum questions, instant scoring, and explanation cards.',
+  },
+  board: {
+    title: 'Jodo Tile Studio (जोडो): 6,000+ Sanskrit Word Puzzles | EdNet Learn',
+    desc: 'Interactive Sanskrit word-building game with 6,000+ puzzles across vocabulary, verbs, anatomy, math, and daily conversation.',
+  },
+  reader: {
+    title: 'NCERT Sanskrit Deepakam Reader & Varnamala Audio Guide | EdNet Learn',
+    desc: 'Read NCERT Deepakam Chapters 1–15 with verse-by-verse English meanings, root analysis, and Sanskrit alphabet (Varnamala) pronunciation guide.',
+  },
+  philosophy: {
+    title: 'Sanskrit Philosophy & Shad-Darshana Primer | EdNet Learn Gurukul',
+    desc: 'Explore classical Indian philosophy, the 6 orthodox darshanas, epistemological inquiry (pramana), and Vedic wisdom traditions.',
+  },
+  faq: {
+    title: 'Frequently Asked Questions & Help | EdNet Learn Gurukul',
+    desc: 'Find answers about subscriptions, UPI payments, NCERT curriculum coverage, interactive puzzles, and learning Sanskrit online.',
+  },
+};
+
 const pathToView = (pathname: string): DashboardView | null => {
   const clean = pathname.replace(/\/+$/, '') || '/';
   if (PHILOSOPHY_PATHS.has(clean)) return 'philosophy';
   if (CBSE_GUIDE_PATHS.has(clean)) return 'cbse-guide';
+  if (clean === '/worksheets') return 'worksheets';
+  if (clean === '/vedic-maths' || clean === '/vedic-math') return 'vedic-maths';
+  if (clean === '/grammar') return 'grammar';
+  if (clean === '/quiz' || clean === '/quizzes') return 'quiz';
+  if (clean === '/board' || clean === '/jodo' || clean === '/puzzles') return 'board';
+  if (clean === '/reader' || clean === '/varnamala' || clean === '/lessons') return 'reader';
+  if (clean === '/faq' || clean === '/help') return 'faq';
   return null;
 };
 
 const viewToPath = (view: DashboardView): string => {
   if (view === 'philosophy') return '/philosophy';
   if (view === 'cbse-guide') return '/cbse-sanskrit-guide';
+  if (view === 'worksheets') return '/worksheets';
+  if (view === 'vedic-maths') return '/vedic-maths';
+  if (view === 'grammar') return '/grammar';
+  if (view === 'quiz') return '/quiz';
+  if (view === 'board') return '/board';
+  if (view === 'reader') return '/reader';
+  if (view === 'faq') return '/faq';
   return '/';
 };
 
@@ -287,7 +344,7 @@ const Dashboard: React.FC = () => {
     localStorage.setItem('school-active-view', activeView);
   }, [activeView]);
 
-  // Keep shareable /philosophy and /cbse-sanskrit-guide URLs in sync (other views stay on /)
+  // Keep clean canonical URLs and SEO meta tags in sync with activeView
   useEffect(() => {
     try {
       const desired = viewToPath(activeView);
@@ -295,6 +352,18 @@ const Dashboard: React.FC = () => {
       if (current !== desired) {
         window.history.pushState({ view: activeView }, '', desired);
       }
+
+      // Dynamically update document title & meta tags for SEO & social sharing
+      const meta = VIEW_METADATA[activeView] || VIEW_METADATA.home;
+      document.title = meta.title;
+      const descEl = document.querySelector('meta[name="description"]');
+      if (descEl) descEl.setAttribute('content', meta.desc);
+      const ogTitleEl = document.querySelector('meta[property="og:title"]');
+      if (ogTitleEl) ogTitleEl.setAttribute('content', meta.title);
+      const ogDescEl = document.querySelector('meta[property="og:description"]');
+      if (ogDescEl) ogDescEl.setAttribute('content', meta.desc);
+      const canonicalEl = document.querySelector('link[rel="canonical"]');
+      if (canonicalEl) canonicalEl.setAttribute('href', `https://ednetlearn.in${desired === '/' ? '/' : desired}`);
     } catch {}
   }, [activeView]);
 
