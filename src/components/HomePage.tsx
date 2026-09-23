@@ -10,6 +10,7 @@ export interface HomePageProps {
   onOpenVarnamala: () => void;
   onOpenGrammar: () => void;
   onOpenVedicMaths?: () => void;
+  onOpenPhilosophy?: () => void;
   onOpenQuiz?: () => void;
   onOpenWorksheets?: () => void;
 }
@@ -450,6 +451,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenVarnamala,
   onOpenGrammar,
   onOpenVedicMaths,
+  onOpenPhilosophy,
   onOpenQuiz,
   onOpenWorksheets,
 }) => {
@@ -573,6 +575,16 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenVedicMaths}
             >
               📐 Vedic Maths (वैदिक-गणितम्)
+            </button>
+          )}
+          {onOpenPhilosophy && (
+            <button
+              type="button"
+              className="home-btn-secondary"
+              onClick={onOpenPhilosophy}
+              title="Our Philosophy · Darśana"
+            >
+              🪔 Darśana · Philosophy
             </button>
           )}
           {onOpenQuiz && (

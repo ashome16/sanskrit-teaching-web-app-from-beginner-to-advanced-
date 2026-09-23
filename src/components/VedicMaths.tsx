@@ -18,9 +18,10 @@ type SolverKey = 'ekadhikena' | 'nikhilam-sub' | 'nikhilam-mul' | 'urdhva' | 'ek
 export interface VedicMathsProps {
   onGoHome?: () => void;
   onOpenReader?: () => void;
+  onOpenPhilosophy?: () => void;
 }
 
-const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
+const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader, onOpenPhilosophy }) => {
   const [activeTab, setActiveTab] = useState<VedicTab>('solvers');
 
   // Solver States
@@ -166,7 +167,17 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader }) => {
             <span className="vedic-breadcrumb-current">📐 वैदिक-गणितम् (Vedic Mathematics)</span>
           </div>
 
-          <div style={{ display: 'flex', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+            {onOpenPhilosophy && (
+              <button
+                type="button"
+                className="vedic-header-nav-btn"
+                onClick={onOpenPhilosophy}
+                title="Our Philosophy · Darśana"
+              >
+                🪔 Darśana
+              </button>
+            )}
             {onOpenReader && (
               <button
                 type="button"

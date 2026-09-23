@@ -11,6 +11,7 @@ export interface FooterProps {
   onOpenQuiz?: () => void;
   onOpenWorksheets?: () => void;
   onOpenFAQ?: () => void;
+  onOpenPhilosophy?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -22,6 +23,7 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenQuiz,
   onOpenWorksheets,
   onOpenFAQ,
+  onOpenPhilosophy,
 }) => {
   const [legalModal, setLegalModal] = useState<LegalModalType>(null);
   const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
@@ -136,6 +138,15 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenVedicMaths}
                 >
                   ⚡ वैदिक-गणितम् (16 Vedic Sutras)
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="footer-nav-btn"
+                  onClick={onOpenPhilosophy}
+                >
+                  🪔 Darśana · Our Philosophy
                 </button>
               </li>
             </ul>

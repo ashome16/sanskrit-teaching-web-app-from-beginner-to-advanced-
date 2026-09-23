@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import HomePage from './HomePage';
 import FAQSection from './FAQSection';
+import PhilosophyPage from './PhilosophyPage';
 import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
 import AuthModal from './AuthModal';
 import UserProfileModal from './UserProfileModal';
@@ -40,6 +41,41 @@ const firstDeepakamIndex = (lessons: typeof STATIC_LESSONS): number => {
   return gsde >= 0 ? gsde : 0;
 };
 
+type DashboardView =
+  | 'home'
+  | 'board'
+  | 'reader'
+  | 'grammar'
+  | 'vedic-maths'
+  | 'quiz'
+  | 'worksheets'
+  | 'faq'
+  | 'philosophy';
+
+const PHILOSOPHY_PATHS = new Set(['/philosophy', '/darsana', '/darshana']);
+
+const pathToView = (pathname: string): DashboardView | null => {
+  const clean = pathname.replace(/\/+$/, '') || '/';
+  if (PHILOSOPHY_PATHS.has(clean)) return 'philosophy';
+  return null;
+};
+
+const viewToPath = (view: DashboardView): string => {
+  if (view === 'philosophy') return '/philosophy';
+  return '/';
+};
+
+const isValidSavedView = (saved: string | null): saved is DashboardView =>
+  saved === 'home' ||
+  saved === 'board' ||
+  saved === 'reader' ||
+  saved === 'grammar' ||
+  saved === 'vedic-maths' ||
+  saved === 'quiz' ||
+  saved === 'worksheets' ||
+  saved === 'faq' ||
+  saved === 'philosophy';
+
 const Dashboard: React.FC = () => {
   const [lessons, setLessons] = useState(STATIC_LESSONS);
   const [lessonIndex, setLessonIndex] = useState(() => {
@@ -53,21 +89,13 @@ const Dashboard: React.FC = () => {
   });
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [wordSelection, setWordSelection] = useState<WordSelection | null>(null);
-  const [activeView, setActiveView] = useState<
-    'home' | 'board' | 'reader' | 'grammar' | 'vedic-maths' | 'quiz' | 'worksheets' | 'faq'
-  >(() => {
+  const [activeView, setActiveView] = useState<DashboardView>(() => {
+    try {
+      const fromPath = pathToView(window.location.pathname);
+      if (fromPath) return fromPath;
+    } catch {}
     const saved = localStorage.getItem('school-active-view');
-    if (
-      saved === 'home' ||
-      saved === 'board' ||
-      saved === 'reader' ||
-      saved === 'grammar' ||
-      saved === 'vedic-maths' ||
-      saved === 'quiz' ||
-      saved === 'worksheets' ||
-      saved === 'faq'
-    )
-      return saved;
+    if (isValidSavedView(saved)) return saved;
     return 'home';
   });
   const [grammarResetKey, setGrammarResetKey] = useState(0);
@@ -99,7 +127,7 @@ const Dashboard: React.FC = () => {
       return targetView !== 'home';
     }
     // smart_freemium mode (default & recommended):
-    if (targetView === 'home' || targetView === 'faq') return false;
+    if (targetView === 'home' || targetView === 'faq' || targetView === 'philosophy') return false;
     if (targetView === 'reader') {
       const lessonToCheck = targetLessonId || lessons[lessonIndex]?.id;
       // Varṇamālā and Chapter 1 (gsde101) are free for guests!
@@ -113,7 +141,7 @@ const Dashboard: React.FC = () => {
   };
 
   const checkAccess = (
-    targetView: 'home' | 'board' | 'reader' | 'grammar' | 'vedic-maths' | 'quiz' | 'worksheets' | 'faq',
+    targetView: DashboardView,
     targetLessonId?: string
   ): boolean => {
     if (isContentGated(targetView, targetLessonId)) {
@@ -125,10 +153,10 @@ const Dashboard: React.FC = () => {
   };
 
   const navigateToView = (
-    view: 'home' | 'board' | 'reader' | 'grammar' | 'vedic-maths' | 'quiz' | 'worksheets' | 'faq',
+    view: DashboardView,
     lessonId?: string
   ) => {
-    if (view === 'home' || view === 'faq') {
+    if (view === 'home' || view === 'faq' || view === 'philosophy') {
       setActiveView(view);
       return;
     }
@@ -197,7 +225,7 @@ const Dashboard: React.FC = () => {
   // Seamlessly resume user's journey after registration or login
   useEffect(() => {
     if (currentUser && pendingRedirectView) {
-      const target = pendingRedirectView as 'home' | 'board' | 'reader' | 'grammar' | 'vedic-maths' | 'quiz' | 'worksheets' | 'faq';
+      const target = pendingRedirectView as DashboardView;
       const targetLesson = pendingRedirectLessonId;
       setPendingRedirect(null, undefined);
       if (target === 'reader') {
@@ -209,7 +237,8 @@ const Dashboard: React.FC = () => {
         target === 'vedic-maths' ||
         target === 'quiz' ||
         target === 'worksheets' ||
-        target === 'faq'
+        target === 'faq' ||
+        target === 'philosophy'
       ) {
         if (target === 'grammar') {
           setGrammarResetKey((k) => k + 1);
@@ -222,10 +251,10 @@ const Dashboard: React.FC = () => {
   // Guard against stale localStorage pointing to gated content for guest visitors
   useEffect(() => {
     if (!currentUser) {
-      if (accessMode === 'strict_gate' && activeView !== 'home' && activeView !== 'faq') {
+      if (accessMode === 'strict_gate' && activeView !== 'home' && activeView !== 'faq' && activeView !== 'philosophy') {
         setActiveView('home');
       } else if (accessMode === 'smart_freemium') {
-        if (activeView !== 'home' && activeView !== 'reader' && activeView !== 'faq') {
+        if (activeView !== 'home' && activeView !== 'reader' && activeView !== 'faq' && activeView !== 'philosophy') {
           setActiveView('home');
         } else if (activeView === 'reader') {
           const currId = lessons[lessonIndex]?.id;
@@ -242,6 +271,26 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     localStorage.setItem('school-active-view', activeView);
   }, [activeView]);
+
+  // Keep shareable /philosophy URL in sync (other views stay on /)
+  useEffect(() => {
+    try {
+      const desired = viewToPath(activeView);
+      const current = window.location.pathname.replace(/\/+$/, '') || '/';
+      if (current !== desired) {
+        window.history.pushState({ view: activeView }, '', desired);
+      }
+    } catch {}
+  }, [activeView]);
+
+  useEffect(() => {
+    const onPop = () => {
+      const fromPath = pathToView(window.location.pathname);
+      setActiveView(fromPath || 'home');
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
 
   useEffect(() => {
     const id = lessons[lessonIndex]?.id;
@@ -592,10 +641,18 @@ const Dashboard: React.FC = () => {
           onOpenVedicMaths={() => navigateToView('vedic-maths')}
           onOpenQuiz={() => navigateToView('quiz')}
           onOpenWorksheets={() => navigateToView('worksheets')}
+          onOpenPhilosophy={() => navigateToView('philosophy')}
         />
       )}
       {activeView === 'faq' && (
         <FAQSection onOpenRegister={() => openAuthModal('register')} />
+      )}
+      {activeView === 'philosophy' && (
+        <PhilosophyPage
+          onOpenRegister={() => openAuthModal('register')}
+          onOpenVedicMaths={() => navigateToView('vedic-maths')}
+          onGoHome={() => navigateToView('home')}
+        />
       )}
       <Suspense fallback={<ViewLoader />}>
         {activeView === 'board' && (
@@ -618,6 +675,7 @@ const Dashboard: React.FC = () => {
           <VedicMaths
             onGoHome={() => setActiveView('home')}
             onOpenReader={() => openDeepakam()}
+            onOpenPhilosophy={() => navigateToView('philosophy')}
           />
         )}
         {activeView === 'quiz' && (
@@ -665,6 +723,7 @@ const Dashboard: React.FC = () => {
           onOpenQuiz={() => navigateToView('quiz')}
           onOpenWorksheets={() => navigateToView('worksheets')}
           onOpenFAQ={() => navigateToView('faq')}
+          onOpenPhilosophy={() => navigateToView('philosophy')}
         />
       )}
 
