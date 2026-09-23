@@ -5,7 +5,7 @@ import ConjunctGames from './ConjunctGames';
 import SoundTeamsArticle from './SoundTeamsArticle';
 import LingaVachanaGuide from './LingaVachanaGuide';
 import VibhaktiGuide from './VibhaktiGuide';
-import DhatupathaBrowser from './DhatupathaBrowser';
+import PaninianStudio from './PaninianStudio';
 import '../styles/grammar.css';
 
 type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'samyukta' | 'sound-teams' | 'science-of-sound' | 'dhatupatha' | 'article';
@@ -253,16 +253,11 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQui
 
   if (topic === 'dhatupatha') {
     return (
-      <section className="grammar-page" aria-label="Dhātupāṭha browser">
+      <section className="grammar-page" aria-label="Pāṇinian Dhātupāṭha Studio">
         <header className="grammar-page-header">
-          {renderBreadcrumb('धातुरूप / Dhātupāṭha · 100 Roots')}
-          <h2 className="grammar-title">धातुरूप · Dhātupāṭha</h2>
-          <p className="grammar-lead">
-            Browse 100 core Sanskrit verb roots — gaṇa, padam, meanings (EN + HI), and example forms.
-            Phase 1 library &amp; browse; full Pāṇini engine comes later.
-          </p>
+          {renderBreadcrumb('पाणिनीय-धातुपाठ-प्रयोगशाला (Pāṇinian Studio)')}
         </header>
-        <DhatupathaBrowser onGoBack={goBackToShelf} />
+        <PaninianStudio onGoBack={goBackToShelf} />
       </section>
     );
   }
@@ -400,14 +395,14 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQui
         <button
           type="button"
           className="grammar-card grammar-card--ready"
-          style={{ borderColor: '#b45309', background: 'linear-gradient(180deg, #ffffff 0%, #fff7ed 100%)' }}
+          style={{ borderColor: '#0f766e', background: 'linear-gradient(180deg, #ffffff 0%, #f0fdfa 100%)' }}
           onClick={() => setTopic('dhatupatha')}
         >
-          <span className="grammar-card-title" style={{ color: '#9a3412' }}>
-            🌿 धातुरूप / Dhātupāṭha · 100 Roots
+          <span className="grammar-card-title" style={{ color: '#0f766e' }}>
+            🌿 पाणिनीय-धातुपाठ-प्रयोगशाला · Pāṇinian Studio
           </span>
           <span className="grammar-card-blurb">
-            Search and browse 100 verb roots by gaṇa, padam, English &amp; Hindi meanings, with example forms.
+            Deconstruct words (गत्वा, पठितुम्), generate 5-Lakāra conjugations with color-coded formulas, and practice Pratyayas.
           </span>
         </button>
         <button
