@@ -2144,6 +2144,616 @@
   line-height: 1.4;
 }
 
+/* =========================================================================
+   MODULAR VERB MACHINE PIPELINE (चतुरङ्ग-संरचना)
+   ========================================================================= */
+
+.dp-modular-pipeline-wrap {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.4rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.dp-pipeline-header {
+  margin-bottom: 1.25rem;
+}
+
+.dp-pipeline-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #0284c7;
+  background: #e0f2fe;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.dp-pipeline-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+}
+
+.dp-modular-pipeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+  align-items: stretch;
+}
+
+.dp-modular-block {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  border: 1.5px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.dp-modular-block:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.dp-modular-block--amber {
+  border-color: #fde68a;
+  background: linear-gradient(180deg, #fffdf5 0%, #ffffff 100%);
+}
+.dp-modular-block--blue {
+  border-color: #bae6fd;
+  background: linear-gradient(180deg, #f5fbff 0%, #ffffff 100%);
+}
+.dp-modular-block--purple {
+  border-color: #e9d5ff;
+  background: linear-gradient(180deg, #fdfaff 0%, #ffffff 100%);
+}
+.dp-modular-block--emerald {
+  border-color: #bbf7d0;
+  background: linear-gradient(180deg, #f6fef9 0%, #ffffff 100%);
+}
+
+.dp-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dp-block-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  font-family: monospace;
+  color: #475569;
+}
+
+.dp-block-status-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+}
+
+.dp-block-status--optional {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.dp-block-status--mandatory {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.dp-block-name-san {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  font-family: "Noto Sans Devanagari", sans-serif;
+}
+
+.dp-block-role-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #0f766e;
+  background: #f0fdfa;
+  border: 1px solid #ccfbf1;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  width: fit-content;
+}
+
+.dp-block-desc {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.45;
+  margin: 0;
+  flex: 1;
+}
+
+.dp-block-sample-box {
+  background: rgba(0, 0, 0, 0.025);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 0.5rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.dp-sample-label {
+  font-size: 0.68rem;
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dp-sample-code {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0f172a;
+  font-family: "Noto Sans Devanagari", monospace;
+}
+
+.dp-sample-role {
+  font-size: 0.72rem;
+  color: #57534e;
+  font-style: italic;
+}
+
+.dp-modular-connector {
+  display: none;
+}
+
+.dp-pipeline-synthesis {
+  margin-top: 1.25rem;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  border-radius: 12px;
+  padding: 0.9rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+.dp-synthesis-arrow {
+  font-size: 1.5rem;
+  color: #7dd3fc;
+  font-weight: 800;
+}
+
+.dp-synthesis-result {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.dp-synthesis-label {
+  font-size: 0.82rem;
+  opacity: 0.92;
+  font-weight: 600;
+}
+
+.dp-synthesis-word {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #ffffff;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+  letter-spacing: 0.02em;
+}
+
+.dp-synthesis-meaning {
+  font-size: 0.88rem;
+  color: #e0f2fe;
+  font-style: italic;
+}
+
+/* =========================================================================
+   ASSEMBLY TIMELINE IN ACTION
+   ========================================================================= */
+
+.dp-assembly-timeline {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.4rem;
+  margin: 1.5rem 0;
+}
+
+.dp-assembly-header {
+  margin-bottom: 1.25rem;
+}
+
+.dp-assembly-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #0f766e;
+  background: #ccfbf1;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.dp-assembly-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.dp-assembly-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1rem;
+}
+
+.dp-assembly-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dp-assembly-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  border-color: #0284c7;
+}
+
+.dp-assembly-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dp-assembly-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #0284c7;
+  background: #e0f2fe;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+.dp-assembly-num {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #cbd5e1;
+  font-family: monospace;
+}
+
+.dp-assembly-card-title {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  font-family: "Noto Sans Devanagari", sans-serif;
+}
+
+.dp-assembly-card-desc {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.48;
+  margin: 0;
+  flex: 1;
+}
+
+.dp-assembly-formula-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.55rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dp-assembly-formula-chips {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.dp-form-chip {
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-family: "Noto Sans Devanagari", monospace;
+}
+
+.dp-form-root {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.dp-form-vikarana {
+  background: #f3e8ff;
+  color: #6b21a8;
+  border: 1px solid #e9d5ff;
+}
+
+.dp-form-suffix {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.dp-form-prefix {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.dp-form-result {
+  background: #0284c7;
+  color: #ffffff;
+  border: 1px solid #0284c7;
+}
+
+.dp-form-op {
+  color: #94a3b8;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.dp-form-arrow {
+  color: #0284c7;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.dp-step-audio-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #0f766e;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dp-step-audio-btn:hover {
+  background: #f0fdfa;
+  border-color: #0f766e;
+}
+
+/* =========================================================================
+   REVERSE DECONSTRUCTION CHECKLIST (पद-विश्लेषणम्)
+   ========================================================================= */
+
+.dp-decon-steps-container {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.4rem;
+  margin: 1.5rem 0;
+}
+
+.dp-decon-checklist-header {
+  margin-bottom: 1.25rem;
+}
+
+.dp-decon-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #d97706;
+  background: #fef3c7;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.dp-decon-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.dp-decon-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1rem;
+}
+
+.dp-decon-step-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dp-decon-step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  border-color: #d97706;
+}
+
+.dp-decon-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dp-decon-icon-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+}
+
+.dp-decon-icon {
+  font-size: 0.95rem;
+}
+
+.dp-decon-key {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #b45309;
+}
+
+.dp-decon-step-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.dp-decon-step-en {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.dp-decon-step-sa {
+  font-size: 0.75rem;
+  color: #0f766e;
+  font-weight: 700;
+  font-family: "Noto Sans Devanagari", sans-serif;
+}
+
+.dp-decon-action-row {
+  font-size: 0.8rem;
+  color: #334155;
+  display: flex;
+  gap: 0.45rem;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+
+.dp-action-bullet {
+  font-size: 0.85rem;
+}
+
+.dp-action-text {
+  flex: 1;
+}
+
+.dp-decon-target-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 6px;
+  padding: 0.35rem 0.65rem;
+}
+
+.dp-target-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #92400e;
+  text-transform: uppercase;
+}
+
+.dp-target-val {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #78350f;
+  font-family: "Noto Sans Devanagari", monospace;
+}
+
+.dp-decon-deduction-card {
+  background: #f8fafc;
+  border-left: 3px solid #0284c7;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dp-deduction-title {
+  font-size: 0.74rem;
+  color: #0369a1;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.dp-deduction-text {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Dark theme support for Verb Machine */
+[data-theme='dark'] .dp-modular-pipeline-wrap,
+[data-theme='dark'] .dp-assembly-timeline,
+[data-theme='dark'] .dp-decon-steps-container {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+[data-theme='dark'] .dp-pipeline-title,
+[data-theme='dark'] .dp-assembly-title,
+[data-theme='dark'] .dp-decon-title,
+[data-theme='dark'] .dp-block-name-san,
+[data-theme='dark'] .dp-assembly-card-title,
+[data-theme='dark'] .dp-decon-step-en {
+  color: #f8fafc;
+}
+
+[data-theme='dark'] .dp-modular-block,
+[data-theme='dark'] .dp-assembly-card,
+[data-theme='dark'] .dp-decon-step-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+[data-theme='dark'] .dp-block-desc,
+[data-theme='dark'] .dp-assembly-card-desc,
+[data-theme='dark'] .dp-decon-action-row,
+[data-theme='dark'] .dp-deduction-text {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .dp-assembly-formula-box,
+[data-theme='dark'] .dp-decon-deduction-card {
+  background: #0f172a;
+  border-color: #334155;
+}
+
 /* Footer Navigation */
 .dp-article-footer {
   display: flex;

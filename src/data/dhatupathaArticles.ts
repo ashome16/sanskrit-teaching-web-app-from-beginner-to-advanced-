@@ -25,6 +25,42 @@ export interface GanaCard {
   vikarana: string;
 }
 
+export interface ModularBlock {
+  tag: string;
+  nameSan: string;
+  nameEn: string;
+  status: 'Optional' | 'Mandatory';
+  role: string;
+  color: 'amber' | 'blue' | 'purple' | 'emerald';
+  description: string;
+  examplePiece: string;
+  exampleRole: string;
+}
+
+export interface AssemblyStep {
+  stepNumber: number;
+  badge: string;
+  title: string;
+  description: string;
+  formulaPieces: {
+    text: string;
+    type: 'prefix' | 'root' | 'vikarana' | 'suffix' | 'op' | 'arrow' | 'result';
+  }[];
+  audioText?: string;
+  highlightText?: string;
+}
+
+export interface DeconStep {
+  stepKey: string;
+  stepIcon: string;
+  stepName: string;
+  stepSan: string;
+  actionText: string;
+  inspectedPiece: string;
+  deductionTitle: string;
+  deductionText: string;
+}
+
 export interface ArticleSection {
   title: string;
   titleSan?: string;
@@ -37,6 +73,9 @@ export interface ArticleSection {
   keyTakeaway?: string;
   examples?: ArticleExample[];
   ganaCards?: GanaCard[];
+  modularBlocks?: ModularBlock[];
+  assemblySteps?: AssemblyStep[];
+  deconSteps?: DeconStep[];
 }
 
 export interface DhatupathaArticle {
@@ -329,6 +368,247 @@ export const DHATUPATHA_ARTICLES: DhatupathaArticle[] = [
         },
         keyTakeaway:
           'Notice that Gaṇa 1 (Bhvādi) undergoes vowel strengthening (Guṇa), whereas Gaṇa 6 (Tudādi) keeps the weak vowel: compare भू ➔ भवति with तुद् ➔ तुदति.',
+      },
+    ],
+  },
+  {
+    id: 'verb-machine-deconstruction',
+    titleSan: 'संस्कृत-क्रियायन्त्रस्य विनिर्माणम् — पदविश्लेषण-पद्धतिः',
+    titleEn: 'Deconstructing the Sanskrit Verb Machine: 4-Part Modular Architecture & Pada-Viśleṣaṇam',
+    badge: 'क्रिया-यन्त्रम्',
+    badgeColor: '#0284c7',
+    readTime: '7 min read',
+    summary:
+      'Pāṇini designed the Sanskrit verb like an algorithmic software engineer. Discover the 4-part modular architecture (Upasarga + Dhātu + Vikaraṇa + Pratyaya), watch the assembly line forge "समूपागच्छति", and master the 4-step reverse-engineering checklist (Pada-Viśleṣaṇam).',
+    suggestedAction: {
+      type: 'deconstruct',
+      targetWord: 'समूपागच्छति',
+      label: 'Deconstruct "समूपागच्छति" in Studio ➔',
+    },
+    sections: [
+      {
+        title: 'The 4-Part Modular Hardware Architecture (चतुरङ्ग-संरचना)',
+        titleSan: 'तिङन्तपदस्य चत्वारि मूल-घटकानि',
+        paragraphs: [
+          'To the untrained eye, a complex Sanskrit verb looks like a long, intimidating wall of text. But Maharshi Pāṇini designed the language like a modern software engineer: every verb is a perfectly assembled machine built out of swappable, modular components stacked in a precise, mathematical sequence.',
+          'By understanding how a verb is assembled, you can use a process called Pada-Viśleṣaṇam (पद-विश्लेषणम् — Word Deconstruction) to reverse-engineer any complex word back to its dictionary root. Every fully formed Sanskrit verb (Tiṅanta) consists of up to four structural blocks:',
+        ],
+        modularBlocks: [
+          {
+            tag: '[ UPASARGA ]',
+            nameSan: 'उपसर्गः (Prefix)',
+            nameEn: 'Directional Modifier',
+            status: 'Optional',
+            role: 'Direction (दिशा)',
+            color: 'amber',
+            description:
+              'Optional. Modifies or steers the direction of the action. Pāṇini catalogs 22 classical Upasargas that can reverse, intensify, or specialize the root meaning.',
+            examplePiece: 'सम् + उप + आ (sam + upa + ā)',
+            exampleRole: 'Completely + near + towards (अभिसम्बन्धः)',
+          },
+          {
+            tag: '[ DHĀTU ]',
+            nameSan: 'धातुः (Verbal Root)',
+            nameEn: 'Core Semantic Seed',
+            status: 'Mandatory',
+            role: 'Core DNA (मूल-बीजम्)',
+            color: 'blue',
+            description:
+              'Mandatory. The unchangeable, raw semantic core of the action. Cataloged in Pāṇini’s Dhātupāṭha across 2,000+ roots with their silent diagnostic code-letters (इत्-संज्ञा).',
+            examplePiece: '√गम् (gam)',
+            exampleRole: 'Core Meaning: To go (गतौ)',
+          },
+          {
+            tag: '[ VIKARAṆA ]',
+            nameSan: 'विकरणम् (Class Suffix)',
+            nameEn: 'Gaṇa Characteristic Spacer',
+            status: 'Mandatory',
+            role: 'Class Badge (गण-चिह्नम्)',
+            color: 'purple',
+            description:
+              'Mandatory. The specific structural spacer that identifies which of the 10 Gaṇas the root belongs to. It governs internal vowel mutation and theme-vowel insertion.',
+            examplePiece: 'शप् ➔ अ (a) / गच्छ',
+            exampleRole: '1st Gaṇa (Bhvādi) spacer mutating gam ➔ gacch',
+          },
+          {
+            tag: '[ PRATYAYA ]',
+            nameSan: 'तिङ्-प्रत्ययः (Personal Ending)',
+            nameEn: 'Inflectional Termination',
+            status: 'Mandatory',
+            role: 'Who & When (काल-पुरुष-वचनानि)',
+            color: 'emerald',
+            description:
+              'Mandatory. The terminal code from Pāṇini’s 18 Tiṅ affixes that specifies the Person (प्रथम/मध्यम/उत्तम), Number (एक/द्वि/बहु), Tense/Mood (लट्, लङ्, etc.), and Voice.',
+            examplePiece: 'तिप् ➔ ति (ti)',
+            exampleRole: 'Present Tense (Laṭ), 3rd Person Singular',
+          },
+        ],
+        keyTakeaway:
+          'A Sanskrit verb is not an arbitrary sequence of syllables; it is a 4-part software object: [ Upasarga ] + [ Dhātu ] + [ Vikaraṇa ] + [ Pratyaya ].',
+      },
+      {
+        title: 'The Assembly Line in Action: Forging "Samupāgacchati" (समूपागच्छति)',
+        titleSan: 'पाणिनीय-निर्माण-प्रक्रिया',
+        paragraphs: [
+          'Let’s look at how the verb "Samupāgacchati" (समूपागच्छति) — which means "He approaches completely" or "He draws near" — is assembled on Pāṇini’s grammatical assembly line.',
+          'Watch each module snap into place, from the raw root seed to the final euphonic Sandhi fusion:',
+        ],
+        assemblySteps: [
+          {
+            stepNumber: 1,
+            badge: 'Step 1 · Core DNA',
+            title: 'The Raw Semantic Seed (धातु-ग्रहणम्)',
+            description:
+              'We begin with the raw semantic root √gam (गम् — "to go") from Pāṇini\'s Dhātupāṭha.',
+            formulaPieces: [
+              { text: '√गम्', type: 'root' },
+              { text: '(to go / गमनम्)', type: 'op' },
+            ],
+            highlightText: 'Raw root: √gam',
+          },
+          {
+            stepNumber: 2,
+            badge: 'Step 2 · Class Pipeline',
+            title: 'The Class Suffix Insertion (विकरण-योजनम्)',
+            description:
+              '√gam belongs to the 1st Gaṇa (Bhvādi). By Sūtra "इषुगमियमां छः" (७.३.७७), the root mutates into the stem gaccha- and takes the theme vowel spacer -a- (शप् per ३.१.६८).',
+            formulaPieces: [
+              { text: '√गम्', type: 'root' },
+              { text: '+', type: 'op' },
+              { text: 'शप् (अ)', type: 'vikarana' },
+              { text: '➔', type: 'arrow' },
+              { text: 'गच्छ', type: 'result' },
+            ],
+            highlightText: 'Stem mutated: gaccha-',
+          },
+          {
+            stepNumber: 3,
+            badge: 'Step 3 · Who & When',
+            title: 'The Personal Ending (प्रत्यय-संयोगः)',
+            description:
+              'We want Present Tense (Laṭ-lakāra), 3rd Person Singular (He/She/It). We slap on the suffix -ti (तिप् per ३.४.७८). Now we have our base verb: gacchati (He goes).',
+            formulaPieces: [
+              { text: 'गच्छ', type: 'root' },
+              { text: '+', type: 'op' },
+              { text: 'तिप् (ति)', type: 'suffix' },
+              { text: '➔', type: 'arrow' },
+              { text: 'गच्छति', type: 'result' },
+            ],
+            audioText: 'गच्छति',
+            highlightText: 'Base verb: gacchati ("He goes")',
+          },
+          {
+            stepNumber: 4,
+            badge: 'Step 4 · Directional Steering',
+            title: 'Stacking the Steering Prefixes (उपसर्ग-सन्निवेशः)',
+            description:
+              'To transform generic "going" into "completely approaching near", we stack three directional prefixes at the front: Sam (सम् — completely) + Upa (उप — near) + Ā (आ — towards).',
+            formulaPieces: [
+              { text: 'सम्', type: 'prefix' },
+              { text: '+', type: 'op' },
+              { text: 'उप', type: 'prefix' },
+              { text: '+', type: 'op' },
+              { text: 'आ', type: 'prefix' },
+              { text: '+', type: 'op' },
+              { text: 'गच्छति', type: 'result' },
+            ],
+            highlightText: 'Prefixed chain: Sam + Upa + Ā + gacchati',
+          },
+          {
+            stepNumber: 5,
+            badge: 'Step 5 · Euphonic Sandhi Fusion',
+            title: 'The Final Polish (सन्धि-सङ्घटनम्)',
+            description:
+              'We run the whole chain through Sandhi blending rules: सम् + उप fuses into समुप्- (m merges with u ➔ mu); then समुप् + आ fuses by Dīrgha Sandhi (प + आ ➔ पा) into समूपा-. Combining with gacchati yields the final seamless word: Samupāgacchati (समूपागच्छति).',
+            formulaPieces: [
+              { text: 'सम् + उप + आ + गच्छति', type: 'prefix' },
+              { text: '➔', type: 'arrow' },
+              { text: 'समूपागच्छति', type: 'result' },
+            ],
+            audioText: 'समूपागच्छति',
+            highlightText: 'Final word: Samupāgacchati ("He approaches completely")',
+          },
+        ],
+        keyTakeaway:
+          'From a single root √gam, prefixes steer meaning from "going" (गच्छति) to "coming" (आगच्छति) to "completely approaching" (समूपागच्छति).',
+      },
+      {
+        title: 'Step-by-Step Deconstruction (Pada-Viśleṣaṇam / पद-विश्लेषणम्)',
+        titleSan: 'विपरीत-विश्लेषण-प्रक्रिया (४ चरणाः)',
+        paragraphs: [
+          'When you encounter a massive verb in a classical Sanskrit text, you do not need to feel overwhelmed. A Deconstructor tool or a trained student applies Pada-Viśleṣaṇam (पद-विश्लेषणम्) to run Pāṇini’s assembly line backward.',
+          'Let’s peel back the layers of "Samupāgacchati" using a 4-step reverse-engineering checklist from tail to head:',
+        ],
+        deconSteps: [
+          {
+            stepKey: 'Step A',
+            stepIcon: '🔍',
+            stepName: 'Peel Off the Tail (The Pratyaya)',
+            stepSan: 'प्रत्यय-निष्कासनम्',
+            actionText: 'Look at the very end of the word. We spot the termination -ti (-ति).',
+            inspectedPiece: '-ति (-ti)',
+            deductionTitle: 'Tense, Person & Number Deduction:',
+            deductionText:
+              'This instantly tells us the action is happening right now (Present Tense / Laṭ-lakāra / वर्तमाने लट्) and is being done by one person who is not you or me (3rd Person Singular / Prathama-puruṣa, Eka-vacana: He / She / It).',
+          },
+          {
+            stepKey: 'Step B',
+            stepIcon: '🔍',
+            stepName: 'Identify the Stem Core (The Vikaraṇa)',
+            stepSan: 'विकरण-निर्णयः',
+            actionText: 'Look right before the -ti ending. We see the stem element gaccha (गच्छ).',
+            inspectedPiece: 'गच्छ (gaccha-)',
+            deductionTitle: 'Root & Gaṇa Identification:',
+            deductionText:
+              'A student trained in the 10 Gaṇas recognizes that gaccha is the altered present-stem form of the root √gam (गम्). Because of the lingering theme vowel -a-, we know this root went through the 1st Gaṇa (Bhvādi) pipeline.',
+          },
+          {
+            stepKey: 'Step C',
+            stepIcon: '🔍',
+            stepName: 'Untangle the Head (The Upasargas)',
+            stepSan: 'उपसर्ग-विच्छेदः',
+            actionText: 'Now inspect what is left at the front: Samupā- (समूपा-).',
+            inspectedPiece: 'समूपा- (Samupā-)',
+            deductionTitle: 'Reverse Sandhi & Directional Nuances:',
+            deductionText:
+              'We use Sandhi rules in reverse to unblend the vowels: Samupā- untangles cleanly into Sam (सम्) + Upa (उप) + Ā (आ). These are three of the 22 classical Upasargas. Together, they shift the meaning from a simple "going" to "completely approaching near."',
+          },
+          {
+            stepKey: 'Step D',
+            stepIcon: '📋',
+            stepName: 'The Final Blueprint Report',
+            stepSan: 'पद-शारीरिक-मानचित्रम्',
+            actionText: 'By deconstructing the word, the system generates a complete anatomical map of the verb:',
+            inspectedPiece: 'समूपागच्छति (Samupāgacchati)',
+            deductionTitle: 'Complete Morphological Synthesis:',
+            deductionText:
+              'Every component is mapped to its precise grammatical role in Pāṇini’s generative grammar, removing all ambiguity.',
+          },
+        ],
+        table: {
+          headers: ['Component Type (अङ्ग-प्रकारः)', 'Component Piece (घटक-खण्डः)', 'Grammatical Meaning (व्याकरणार्थः)'],
+          rows: [
+            ['Upasargas (उपसर्गाः)', 'सम् + उप + आ (sam + upa + ā)', 'Direction: Completely, near, towards (आभिमुख्ये)'],
+            ['Dhātu (मूल-धातुः)', '√गम् (gam)', 'Core Meaning: To go (गतौ)'],
+            ['Gaṇa (गणः)', '१ · भ्वादिगणः (1st Gaṇa)', 'Class marker inserting the -a- theme spacer (शप्)'],
+            ['Lakāra (लकारः)', 'लट्-लकारः (Laṭ-lakāra)', 'Timeframe: Present Indicative Tense (वर्तमाने लट्)'],
+            ['Puruṣa & Vacana (पुरुष-वचने)', 'प्रथमपुरुषः, एकवचनम्', 'Subject: He / She / It (3rd Person Singular)'],
+            ['Synthesized Word (निष्पन्न-पदम्)', 'समूपागच्छति (samupāgacchati)', 'Complete Meaning: "He approaches completely" / "पास आता है"'],
+          ],
+        },
+        keyTakeaway:
+          'Pada-Viśleṣaṇam is the master key to Sanskrit: Peel the tail (Pratyaya) ➔ Identify the stem & class (Vikaraṇa) ➔ Untangle the prefixes (Upasargas) ➔ Retrieve the root (Dhātu).',
+      },
+      {
+        title: 'Why Pāṇini’s Design is Unbeatable (संस्कृत-वाक्-सामर्थ्यम्)',
+        titleSan: 'शब्द-सम्पुट-सिद्धान्तः',
+        paragraphs: [
+          'In modern analytical languages like English, if you want to say "he approaches completely", you are forced to write three separate words: "he" + "approaches" + "completely". Furthermore, in English, word order strictly dictates grammatical sense.',
+          'In Sanskrit, because of this tight modular design, you can compress an entire sentence or phrase into a single, structurally unbreakable word capsule. The verb alone encapsulates the subject pronoun, the timeframe, the direction, the mood, and the root action.',
+          'As long as you know how to run the deconstruction process, a single Sanskrit word tells you the whole story without needing any auxiliary crutches.',
+        ],
+        keyTakeaway:
+          'Sanskrit verbs are self-contained information packets: each word capsule carries its own actor, timeframe, directional modifier, and semantic root.',
       },
     ],
   },

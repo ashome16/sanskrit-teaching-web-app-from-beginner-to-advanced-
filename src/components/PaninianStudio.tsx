@@ -24,9 +24,11 @@ type PaninianStudioProps = {
 };
 
 const SUGGESTED_DECON_WORDS = [
+  'समूपागच्छति',
   'गत्वा',
   'पठितुम्',
   'भवति',
+  'गच्छति',
   'अपठत्',
   'गमिष्यति',
   'आगत्य',

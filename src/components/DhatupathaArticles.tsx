@@ -270,6 +270,153 @@ export const DhatupathaArticles: React.FC<DhatupathaArticlesProps> = ({
                 </div>
               )}
 
+              {/* 4-Part Modular Hardware Architecture */}
+              {sec.modularBlocks && sec.modularBlocks.length > 0 && (
+                <div className="dp-modular-pipeline-wrap" aria-label="4-Part Modular Verb Architecture">
+                  <div className="dp-pipeline-header">
+                    <span className="dp-pipeline-tag">यन्त्र-रचना · Hardware Blueprint</span>
+                    <h4 className="dp-pipeline-title">
+                      The 4-Part Modular Verb Machine (चतुरङ्ग-संरचना)
+                    </h4>
+                  </div>
+                  <div className="dp-modular-pipeline">
+                    {sec.modularBlocks.map((blk, bIdx) => (
+                      <React.Fragment key={blk.tag}>
+                        <div className={`dp-modular-block dp-modular-block--${blk.color}`}>
+                          <div className="dp-block-header">
+                            <span className="dp-block-tag">{blk.tag}</span>
+                            <span
+                              className={`dp-block-status-badge dp-block-status--${blk.status.toLowerCase()}`}
+                            >
+                              {blk.status}
+                            </span>
+                          </div>
+                          <h5 className="dp-block-name-san">{blk.nameSan}</h5>
+                          <div className="dp-block-role-pill">{blk.role}</div>
+                          <p className="dp-block-desc">{blk.description}</p>
+                          <div className="dp-block-sample-box">
+                            <span className="dp-sample-label">In "समूपागच्छति":</span>
+                            <code className="dp-sample-code">{blk.examplePiece}</code>
+                            <span className="dp-sample-role">({blk.exampleRole})</span>
+                          </div>
+                        </div>
+                        {bIdx < sec.modularBlocks!.length - 1 && (
+                          <div className="dp-modular-connector" aria-hidden="true">
+                            <span className="dp-connector-plus">+</span>
+                          </div>
+                        )}
+                      </React.Fragment>
+                    ))}
+                  </div>
+                  <div className="dp-pipeline-synthesis">
+                    <span className="dp-synthesis-arrow">➔</span>
+                    <div className="dp-synthesis-result">
+                      <span className="dp-synthesis-label">Synthesized Capsule (निष्पन्न-पदम्):</span>
+                      <strong className="dp-synthesis-word">समूपागच्छति</strong>
+                      <span className="dp-synthesis-meaning">"He approaches completely / draws near"</span>
+                      <button
+                        type="button"
+                        className="dp-audio-inline"
+                        onClick={() => playPronunciation('समूपागच्छति')}
+                        title="Listen to समूपागच्छति"
+                        aria-label="Listen to pronunciation"
+                      >
+                        🔊
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* 5-Step Assembly Line in Action */}
+              {sec.assemblySteps && sec.assemblySteps.length > 0 && (
+                <div className="dp-assembly-timeline" aria-label="Grammatical Assembly Line">
+                  <div className="dp-assembly-header">
+                    <span className="dp-assembly-tag">Pāṇinian Assembly Line</span>
+                    <h4 className="dp-assembly-title">Step-by-Step Morphological Forging</h4>
+                  </div>
+                  <div className="dp-assembly-steps-grid">
+                    {sec.assemblySteps.map((step) => (
+                      <div key={step.stepNumber} className="dp-assembly-card">
+                        <div className="dp-assembly-card-top">
+                          <span className="dp-assembly-badge">{step.badge}</span>
+                          <span className="dp-assembly-num">0{step.stepNumber}</span>
+                        </div>
+                        <h5 className="dp-assembly-card-title">{step.title}</h5>
+                        <p className="dp-assembly-card-desc">{step.description}</p>
+                        <div className="dp-assembly-formula-box">
+                          <div className="dp-assembly-formula-chips">
+                            {step.formulaPieces.map((p, pIdx) => {
+                              if (p.type === 'op' || p.type === 'arrow') {
+                                return (
+                                  <span key={pIdx} className={`dp-form-${p.type}`}>
+                                    {p.text}
+                                  </span>
+                                );
+                              }
+                              return (
+                                <span key={pIdx} className={`dp-form-chip dp-form-${p.type}`}>
+                                  {p.text}
+                                </span>
+                              );
+                            })}
+                          </div>
+                          {step.audioText && (
+                            <button
+                              type="button"
+                              className="dp-step-audio-btn"
+                              onClick={() => playPronunciation(step.audioText!)}
+                              title={`Listen to ${step.audioText}`}
+                              aria-label={`Pronounce ${step.audioText}`}
+                            >
+                              🔊 Listen
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* 4-Step Reverse Deconstruction Checklist */}
+              {sec.deconSteps && sec.deconSteps.length > 0 && (
+                <div className="dp-decon-steps-container" aria-label="Reverse Deconstruction Checklist">
+                  <div className="dp-decon-checklist-header">
+                    <span className="dp-decon-tag">पद-विश्लेषण-पद्धतिः</span>
+                    <h4 className="dp-decon-title">4-Step Reverse-Engineering Checklist</h4>
+                  </div>
+                  <div className="dp-decon-steps-grid">
+                    {sec.deconSteps.map((ds) => (
+                      <div key={ds.stepKey} className="dp-decon-step-card">
+                        <div className="dp-decon-card-head">
+                          <div className="dp-decon-icon-badge">
+                            <span className="dp-decon-icon">{ds.stepIcon}</span>
+                            <span className="dp-decon-key">{ds.stepKey}</span>
+                          </div>
+                          <div className="dp-decon-step-titles">
+                            <h5 className="dp-decon-step-en">{ds.stepName}</h5>
+                            <span className="dp-decon-step-sa">{ds.stepSan}</span>
+                          </div>
+                        </div>
+                        <div className="dp-decon-action-row">
+                          <span className="dp-action-bullet">👉</span>
+                          <span className="dp-action-text">{ds.actionText}</span>
+                        </div>
+                        <div className="dp-decon-target-pill">
+                          <span className="dp-target-label">Target Piece:</span>
+                          <code className="dp-target-val">{ds.inspectedPiece}</code>
+                        </div>
+                        <div className="dp-decon-deduction-card">
+                          <strong className="dp-deduction-title">{ds.deductionTitle}</strong>
+                          <p className="dp-deduction-text">{ds.deductionText}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Responsive Table */}
               {sec.table && (
                 <div className="dp-table-scroll-container">
