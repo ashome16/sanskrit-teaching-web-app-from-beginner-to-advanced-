@@ -5,9 +5,10 @@ import ConjunctGames from './ConjunctGames';
 import SoundTeamsArticle from './SoundTeamsArticle';
 import LingaVachanaGuide from './LingaVachanaGuide';
 import VibhaktiGuide from './VibhaktiGuide';
+import DhatupathaBrowser from './DhatupathaBrowser';
 import '../styles/grammar.css';
 
-type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'samyukta' | 'sound-teams' | 'science-of-sound' | 'article';
+type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'samyukta' | 'sound-teams' | 'science-of-sound' | 'dhatupatha' | 'article';
 
 const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((response) => response.text());
 
@@ -250,6 +251,22 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQui
     );
   }
 
+  if (topic === 'dhatupatha') {
+    return (
+      <section className="grammar-page" aria-label="Dhātupāṭha browser">
+        <header className="grammar-page-header">
+          {renderBreadcrumb('धातुरूप / Dhātupāṭha · 100 Roots')}
+          <h2 className="grammar-title">धातुरूप · Dhātupāṭha</h2>
+          <p className="grammar-lead">
+            Browse 100 core Sanskrit verb roots — gaṇa, padam, meanings (EN + HI), and example forms.
+            Phase 1 library &amp; browse; full Pāṇini engine comes later.
+          </p>
+        </header>
+        <DhatupathaBrowser onGoBack={goBackToShelf} />
+      </section>
+    );
+  }
+
   if (topic === 'article') {
     return (
       <section className="grammar-page" aria-label="Grammar article">
@@ -378,6 +395,19 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQui
           </span>
           <span className="grammar-card-blurb">
             Understand all 8 Sanskrit noun cases, kāraka roles, suffixes, sentences, and memory trick with Bālaka.
+          </span>
+        </button>
+        <button
+          type="button"
+          className="grammar-card grammar-card--ready"
+          style={{ borderColor: '#b45309', background: 'linear-gradient(180deg, #ffffff 0%, #fff7ed 100%)' }}
+          onClick={() => setTopic('dhatupatha')}
+        >
+          <span className="grammar-card-title" style={{ color: '#9a3412' }}>
+            🌿 धातुरूप / Dhātupāṭha · 100 Roots
+          </span>
+          <span className="grammar-card-blurb">
+            Search and browse 100 verb roots by gaṇa, padam, English &amp; Hindi meanings, with example forms.
           </span>
         </button>
         <button

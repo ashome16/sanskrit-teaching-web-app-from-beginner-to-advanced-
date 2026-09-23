@@ -47,16 +47,31 @@ export interface Vibhakti {
   example?: string;
 }
 
-// Root word (Dhātu)
+// Verb voice / pada
+export type DhatuPadam = 'parasmaipada' | 'atmanepada' | 'ubhayapada';
+
+// Root word (Dhātu) — used by WordAnalyzer and Dhātupāṭha browser
 export interface Dhatu {
+  id?: string;
   devanagari: string;
   transliteration: string;
   meaning: string;
-  class?: number; // Verb class (1-10)
+  /** Hindi gloss (Dhātupāṭha library). */
+  meaning_hi?: string;
+  /** Verb class / gaṇa (1–10). Prefer `gana`; `class` kept as alias for analyzer. */
+  gana?: number;
+  class?: number; // Verb class (1-10) — alias of gana
+  gana_name?: string;
+  padam?: DhatuPadam;
+  set_anit?: string;
   description?: string;
   examples?: string[];
+  notes?: string;
   audioUrl?: string;
 }
+
+/** Full library entry from public/dhatupatha.json */
+export type DhatuEntry = Dhatu;
 
 // Noun inflection details
 export interface NounInflection {
