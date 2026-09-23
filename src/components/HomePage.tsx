@@ -15,6 +15,7 @@ export interface HomePageProps {
   onOpenCbseGuide?: () => void;
   onOpenQuiz?: () => void;
   onOpenWorksheets?: () => void;
+  onOpenDhatupatha?: () => void;
 }
 
 interface DemoWord {
@@ -457,6 +458,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenCbseGuide,
   onOpenQuiz,
   onOpenWorksheets,
+  onOpenDhatupatha,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
@@ -571,6 +573,17 @@ const HomePage: React.FC<HomePageProps> = ({
           >
             📚 Vyākaraṇa (Grammar)
           </button>
+          {onOpenDhatupatha && (
+            <button
+              type="button"
+              className="home-btn-primary"
+              style={{ background: 'linear-gradient(135deg, #15803d 0%, #16a34a 100%)', boxShadow: '0 4px 12px rgba(21, 128, 61, 0.25)' }}
+              onClick={onOpenDhatupatha}
+              title="Pāṇinian Dhātupāṭha Studio - 5 Lakāra conjugations, Kṛt pratyayas & word deconstructor"
+            >
+              🌿 धातुपाठः (Dhātupāṭha)
+            </button>
+          )}
           {onOpenVedicMaths && (
             <button
               type="button"
@@ -1044,6 +1057,39 @@ const HomePage: React.FC<HomePageProps> = ({
             >
               Browse Grammar Shelf ▶
             </button>
+          </div>
+
+          {/* Feature: Pāṇinian Dhātupāṭha & Verb Studio */}
+          <div className="home-feature-card">
+            <div className="home-feature-card-top">
+              <div className="home-feature-icon-row">
+                <span className="home-feature-icon">🌿</span>
+                <span className="home-feature-badge" style={{ background: '#dcfce7', color: '#15803d' }}>
+                  Pāṇinian Grammar
+                </span>
+              </div>
+              <h3 className="home-feature-title">धातुपाठः (Dhātupāṭha Studio)</h3>
+              <p className="home-feature-desc">
+                Classical Pāṇinian verb root science made visual! Deconstruct any inflected word into its root and suffix,
+                generate instant 3×3 conjugation tables for 5 school Lakāras, derive Kṛt participles, and test your pratyaya skills.
+              </p>
+              <ul className="home-feature-points">
+                <li>Reverse Word Deconstructor (गत्वा ➔ गम् + क्त्वा, पठितुम् ➔ पठ् + तुमुन्)</li>
+                <li>5-Lakāra Conjugation Generator (लट्, लृट्, लङ्, लोट्, विधिलिङ्) with 1-tap audio</li>
+                <li>Kṛt Participles (क्त्वा, तुमुन्, ल्यप्, क्त, शतृ) &amp; CBSE Lakāra rules</li>
+                <li>Interactive Pratyaya Challenge Quiz with detailed grammatical explanations</li>
+              </ul>
+            </div>
+            {onOpenDhatupatha && (
+              <button
+                type="button"
+                className="home-feature-btn"
+                style={{ background: 'linear-gradient(135deg, #15803d 0%, #16a34a 100%)', color: '#ffffff' }}
+                onClick={onOpenDhatupatha}
+              >
+                Launch Dhātupāṭha Studio ▶
+              </button>
+            )}
           </div>
 
           {/* Feature 5: Vedic Mathematics */}

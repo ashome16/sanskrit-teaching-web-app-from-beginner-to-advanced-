@@ -13,6 +13,7 @@ export interface FooterProps {
   onOpenFAQ?: () => void;
   onOpenPhilosophy?: () => void;
   onOpenCbseGuide?: () => void;
+  onOpenDhatupatha?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -26,6 +27,7 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenFAQ,
   onOpenPhilosophy,
   onOpenCbseGuide,
+  onOpenDhatupatha,
 }) => {
   const [legalModal, setLegalModal] = useState<LegalModalType>(null);
   const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
@@ -131,6 +133,15 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenGrammar}
                 >
                   📚 Vyākaraṇa (Noun &amp; Verb Tables)
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="footer-nav-btn"
+                  onClick={onOpenDhatupatha}
+                >
+                  🌿 धातुपाठः (Pāṇinian Dhātupāṭha Studio)
                 </button>
               </li>
               <li>

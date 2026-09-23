@@ -18,6 +18,7 @@ const Grammar = lazy(() => import('./Grammar'));
 const VedicMaths = lazy(() => import('./VedicMaths'));
 const QuizSection = lazy(() => import('./QuizSection'));
 const WorksheetSection = lazy(() => import('./WorksheetSection'));
+const PaninianStudio = lazy(() => import('./PaninianStudio'));
 
 const ViewLoader = () => (
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '5rem 1rem', minHeight: '60vh', color: '#273b35' }}>
@@ -52,7 +53,8 @@ type DashboardView =
   | 'worksheets'
   | 'faq'
   | 'philosophy'
-  | 'cbse-guide';
+  | 'cbse-guide'
+  | 'dhatupatha';
 
 const PHILOSOPHY_PATHS = new Set(['/philosophy', '/darsana', '/darshana']);
 const CBSE_GUIDE_PATHS = new Set([
@@ -102,6 +104,10 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     title: 'Frequently Asked Questions & Help | EdNet Learn Gurukul',
     desc: 'Find answers about subscriptions, UPI payments, NCERT curriculum coverage, interactive puzzles, and learning Sanskrit online.',
   },
+  dhatupatha: {
+    title: 'Dhātupāṭha & Pāṇinian Verb Engine: 5 Lakāras & Kṛt Pratyayas | EdNet Learn',
+    desc: 'Explore the classical Pāṇinian Dhātupāṭha library with 5 CBSE Lakāra conjugations (लट्, लृट्, लङ्, लोट्, विधिलिङ्), Kṛt participles, reverse word deconstructor, and pratyaya quiz.',
+  },
 };
 
 const pathToView = (pathname: string): DashboardView | null => {
@@ -111,6 +117,7 @@ const pathToView = (pathname: string): DashboardView | null => {
   if (clean === '/worksheets') return 'worksheets';
   if (clean === '/vedic-maths' || clean === '/vedic-math') return 'vedic-maths';
   if (clean === '/grammar') return 'grammar';
+  if (clean === '/dhatupatha' || clean === '/dhatu' || clean === '/dhaturoop') return 'dhatupatha';
   if (clean === '/quiz' || clean === '/quizzes') return 'quiz';
   if (clean === '/board' || clean === '/jodo' || clean === '/puzzles') return 'board';
   if (clean === '/reader' || clean === '/varnamala' || clean === '/lessons') return 'reader';
@@ -124,6 +131,7 @@ const viewToPath = (view: DashboardView): string => {
   if (view === 'worksheets') return '/worksheets';
   if (view === 'vedic-maths') return '/vedic-maths';
   if (view === 'grammar') return '/grammar';
+  if (view === 'dhatupatha') return '/dhatupatha';
   if (view === 'quiz') return '/quiz';
   if (view === 'board') return '/board';
   if (view === 'reader') return '/reader';
@@ -141,7 +149,8 @@ const isValidSavedView = (saved: string | null): saved is DashboardView =>
   saved === 'worksheets' ||
   saved === 'faq' ||
   saved === 'philosophy' ||
-  saved === 'cbse-guide';
+  saved === 'cbse-guide' ||
+  saved === 'dhatupatha';
 
 
 /** Strip punctuation / digits so only the Devanagari token remains for analysis. */
@@ -198,7 +207,7 @@ const Dashboard: React.FC = () => {
       return targetView !== 'home';
     }
     // smart_freemium mode (default & recommended):
-    if (targetView === 'home' || targetView === 'faq' || targetView === 'philosophy' || targetView === 'cbse-guide') return false;
+    if (targetView === 'home' || targetView === 'faq' || targetView === 'philosophy' || targetView === 'cbse-guide' || targetView === 'dhatupatha') return false;
     if (targetView === 'reader') {
       const lessonToCheck = targetLessonId || lessons[lessonIndex]?.id;
       // Varṇamālā and Chapter 1 (gsde101) are free for guests!
@@ -670,6 +679,16 @@ const Dashboard: React.FC = () => {
           </button>
           <button
             type="button"
+            className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'dhatupatha' ? ' active' : ''}`}
+            onClick={() => navigateToView('dhatupatha')}
+            title="Pāṇinian Dhātupāṭha Studio - 5 Lakāras, Kṛt pratyayas & word deconstructor"
+          >
+            <img src="/nav/nav-dhatu.svg" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+            <span className="dashboard-nav-primary">धातुपाठः</span>
+            <span className="dashboard-nav-secondary">Dhātupāṭha</span>
+          </button>
+          <button
+            type="button"
             className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'vedic-maths' ? ' active' : ''}`}
             onClick={() => navigateToView('vedic-maths')}
             title="Open Vedic Mathematics (वैदिक-गणितम्)"
@@ -742,6 +761,7 @@ const Dashboard: React.FC = () => {
           onOpenBoard={() => navigateToView('board')}
           onOpenVarnamala={openVarnamala}
           onOpenGrammar={handleOpenGrammar}
+          onOpenDhatupatha={() => navigateToView('dhatupatha')}
           onOpenVedicMaths={() => navigateToView('vedic-maths')}
           onOpenQuiz={() => navigateToView('quiz')}
           onOpenWorksheets={() => navigateToView('worksheets')}
@@ -782,6 +802,11 @@ const Dashboard: React.FC = () => {
             onGoHome={() => setActiveView('home')}
             onOpenWorksheets={() => navigateToView('worksheets')}
             onOpenQuiz={() => navigateToView('quiz')}
+          />
+        )}
+        {activeView === 'dhatupatha' && (
+          <PaninianStudio
+            onGoBack={() => navigateToView('home')}
           />
         )}
         {activeView === 'vedic-maths' && (
@@ -832,6 +857,7 @@ const Dashboard: React.FC = () => {
           onOpenBoard={() => navigateToView('board')}
           onOpenVarnamala={openVarnamala}
           onOpenGrammar={handleOpenGrammar}
+          onOpenDhatupatha={() => navigateToView('dhatupatha')}
           onOpenVedicMaths={() => navigateToView('vedic-maths')}
           onOpenQuiz={() => navigateToView('quiz')}
           onOpenWorksheets={() => navigateToView('worksheets')}
