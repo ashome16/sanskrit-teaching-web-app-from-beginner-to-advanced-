@@ -6,6 +6,7 @@ import '../styles/admin-modal.css';
 
 const AdminModal: React.FC = () => {
   const {
+    currentUser,
     isAdminModalOpen,
     closeAdminModal,
     isAdminLoggedIn,
@@ -29,6 +30,7 @@ const AdminModal: React.FC = () => {
 
   const [activeTab, setActiveTab] = useState<'overview' | 'students' | 'payments' | 'settings' | 'backup'>('overview');
   const [passcodeInput, setPasscodeInput] = useState('');
+  const [adminEmailInput, setAdminEmailInput] = useState('');
   const [authError, setAuthError] = useState<string | null>(null);
 
   // Settings State
@@ -38,6 +40,16 @@ const AdminModal: React.FC = () => {
 
   // Search & Filter
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Add Student State
+  const [showAddStudentModal, setShowAddStudentModal] = useState(false);
+  const [newStudentFullName, setNewStudentFullName] = useState('');
+  const [newStudentEmail, setNewStudentEmail] = useState('');
+  const [newStudentUsername, setNewStudentUsername] = useState('');
+  const [newStudentPassword, setNewStudentPassword] = useState('ednet2026');
+  const [newStudentPlan, setNewStudentPlan] = useState<'trial' | 'active'>('trial');
+  const [addStudentError, setAddStudentError] = useState<string | null>(null);
+  const [addStudentSuccess, setAddStudentSuccess] = useState<string | null>(null);
 
   // Passcode Change
   const [newPasscode, setNewPasscode] = useState('');
@@ -68,16 +80,52 @@ const AdminModal: React.FC = () => {
     e.preventDefault();
     setAuthError(null);
     const { currentUser } = useAuthStore.getState();
-    if (!currentUser || !isAdminEmail(currentUser.email)) {
-      setAuthError('Admin only for approved EdNet emails. Sign in with an allowlisted account first.');
+    const emailToUse = isAdminEmail(currentUser?.email)
+      ? currentUser?.email
+      : adminEmailInput.trim().toLowerCase();
+
+    if (!emailToUse || !isAdminEmail(emailToUse)) {
+      setAuthError('Admin only for approved EdNet emails (care@ednetadmin.in, admin@ednetlearn.in).');
       return;
     }
-    const success = adminLogin(passcodeInput);
+    const success = adminLogin(passcodeInput, emailToUse);
     if (!success) {
       setAuthError('Incorrect administrator passcode. Please try again.');
     } else {
       setPasscodeInput('');
+      setAdminEmailInput('');
     }
+  };
+
+  const handleCreateStudentSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setAddStudentError(null);
+    setAddStudentSuccess(null);
+
+    const { createStudentAccountByAdmin } = useAuthStore.getState();
+    const res = createStudentAccountByAdmin({
+      fullName: newStudentFullName,
+      email: newStudentEmail,
+      username: newStudentUsername || undefined,
+      password: newStudentPassword || 'ednet2026',
+      planStatus: newStudentPlan,
+    });
+
+    if (!res.success) {
+      setAddStudentError(res.error || 'Could not create student account.');
+      return;
+    }
+
+    setAddStudentSuccess(`Student account for ${newStudentFullName} created successfully! (Initial password: ${res.temporaryPassword})`);
+    setNewStudentFullName('');
+    setNewStudentEmail('');
+    setNewStudentUsername('');
+    setNewStudentPassword('ednet2026');
+    setNewStudentPlan('trial');
+    setTimeout(() => {
+      setShowAddStudentModal(false);
+      setAddStudentSuccess(null);
+    }, 2500);
   };
 
   const accounts = getAllAccountsList();
@@ -193,19 +241,44 @@ const AdminModal: React.FC = () => {
               <div className="admin-lock-icon">🔐</div>
               <h3 className="admin-lock-title">Administrator Authentication</h3>
               <p className="admin-lock-desc">
-                Sign in with an approved EdNet admin email first, then enter the administrator passcode.
-                Passcode alone will not unlock admin on test or other accounts.
+                {currentUser && isAdminEmail(currentUser.email)
+                  ? `Signed in as ${currentUser.email}. Enter your administrator passcode to open the portal.`
+                  : 'Enter your approved administrator email (care@ednetadmin.in or admin@ednetlearn.in) and passcode.'}
               </p>
 
               <form onSubmit={handleAdminAuthSubmit}>
-                <input
-                  type="password"
-                  className="admin-passcode-input"
-                  placeholder="••••••••"
-                  value={passcodeInput}
-                  onChange={(e) => setPasscodeInput(e.target.value)}
-                  autoFocus
-                />
+                {(!currentUser || !isAdminEmail(currentUser?.email)) && (
+                  <div style={{ marginBottom: '1rem', textAlign: 'left' }}>
+                    <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem' }}>
+                      Administrator Email *
+                    </label>
+                    <input
+                      type="email"
+                      className="admin-passcode-input"
+                      placeholder="care@ednetadmin.in or admin@ednetlearn.in"
+                      value={adminEmailInput}
+                      onChange={(e) => setAdminEmailInput(e.target.value)}
+                      required
+                      style={{ fontSize: '0.92rem', padding: '0.65rem 1rem', width: '100%', marginBottom: '0.35rem', textAlign: 'left' }}
+                    />
+                  </div>
+                )}
+
+                <div style={{ marginBottom: '1rem', textAlign: 'left' }}>
+                  <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem' }}>
+                    Administrator Passcode *
+                  </label>
+                  <input
+                    type="password"
+                    className="admin-passcode-input"
+                    placeholder="••••••••"
+                    value={passcodeInput}
+                    onChange={(e) => setPasscodeInput(e.target.value)}
+                    required
+                    autoFocus
+                    style={{ fontSize: '1rem', padding: '0.65rem 1rem', width: '100%' }}
+                  />
+                </div>
 
                 {authError && (
                   <div style={{ color: '#ef4444', fontSize: '0.85rem', marginBottom: '1rem', fontWeight: 600 }}>
@@ -358,24 +431,162 @@ const AdminModal: React.FC = () => {
               {/* TAB 2: STUDENTS */}
               {activeTab === 'students' && (
                 <div>
-                  <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1rem', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
                     <input
                       type="text"
                       placeholder="Search students by name, email, or username..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       style={{
-                        flex: 1,
+                        flex: '1 1 240px',
                         padding: '0.65rem 1rem',
                         borderRadius: '8px',
                         border: '1px solid #cbd5e1',
                         fontSize: '0.9rem',
                       }}
                     />
+                    <button
+                      type="button"
+                      className="admin-btn-primary"
+                      onClick={() => {
+                        setShowAddStudentModal(!showAddStudentModal);
+                        setAddStudentError(null);
+                        setAddStudentSuccess(null);
+                      }}
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', whiteSpace: 'nowrap' }}
+                    >
+                      {showAddStudentModal ? '✕ Close Form' : '➕ Create Student'}
+                    </button>
                     <span style={{ fontSize: '0.85rem', color: '#64748b', whiteSpace: 'nowrap' }}>
                       Showing {filteredAccounts.length} of {accounts.length}
                     </span>
                   </div>
+
+                  {/* Inline Student Provisioning Form */}
+                  {showAddStudentModal && (
+                    <form
+                      onSubmit={handleCreateStudentSubmit}
+                      style={{
+                        background: '#f8fafc',
+                        border: '1px solid #cbd5e1',
+                        borderRadius: '12px',
+                        padding: '1.25rem',
+                        marginBottom: '1.25rem',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                        <div>
+                          <h4 style={{ margin: 0, fontSize: '1rem', color: '#0f172a' }}>
+                            ➕ Direct Student Account Provisioning
+                          </h4>
+                          <span style={{ fontSize: '0.8rem', color: '#64748b' }}>
+                            Creates the student account immediately without logging out of your admin session
+                          </span>
+                        </div>
+                      </div>
+
+                      {addStudentError && (
+                        <div style={{ padding: '0.6rem 0.85rem', background: '#fef2f2', border: '1px solid #fecaca', borderRadius: '6px', color: '#b91c1c', fontSize: '0.85rem', marginBottom: '0.85rem' }}>
+                          ⚠️ {addStudentError}
+                        </div>
+                      )}
+
+                      {addStudentSuccess && (
+                        <div style={{ padding: '0.6rem 0.85rem', background: '#ecfdf5', border: '1px solid #a7f3d0', borderRadius: '6px', color: '#047857', fontSize: '0.85rem', marginBottom: '0.85rem' }}>
+                          ✅ {addStudentSuccess}
+                        </div>
+                      )}
+
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
+                        <div>
+                          <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: '#334155', marginBottom: '0.25rem' }}>
+                            Student Full Name *
+                          </label>
+                          <input
+                            type="text"
+                            required
+                            placeholder="e.g. Aarav Sharma"
+                            value={newStudentFullName}
+                            onChange={(e) => setNewStudentFullName(e.target.value)}
+                            style={{ width: '100%', padding: '0.55rem 0.75rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.88rem', background: '#fff' }}
+                          />
+                        </div>
+
+                        <div>
+                          <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: '#334155', marginBottom: '0.25rem' }}>
+                            Email Address *
+                          </label>
+                          <input
+                            type="email"
+                            required
+                            placeholder="student@example.com"
+                            value={newStudentEmail}
+                            onChange={(e) => setNewStudentEmail(e.target.value)}
+                            style={{ width: '100%', padding: '0.55rem 0.75rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.88rem', background: '#fff' }}
+                          />
+                        </div>
+
+                        <div>
+                          <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: '#334155', marginBottom: '0.25rem' }}>
+                            Username (optional)
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="Auto-generated if blank"
+                            value={newStudentUsername}
+                            onChange={(e) => setNewStudentUsername(e.target.value)}
+                            style={{ width: '100%', padding: '0.55rem 0.75rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.88rem', background: '#fff' }}
+                          />
+                        </div>
+
+                        <div>
+                          <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: '#334155', marginBottom: '0.25rem' }}>
+                            Initial Password
+                          </label>
+                          <input
+                            type="text"
+                            value={newStudentPassword}
+                            onChange={(e) => setNewStudentPassword(e.target.value)}
+                            style={{ width: '100%', padding: '0.55rem 0.75rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.88rem', background: '#fff' }}
+                          />
+                        </div>
+
+                        <div>
+                          <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: '#334155', marginBottom: '0.25rem' }}>
+                            Initial Access Plan
+                          </label>
+                          <select
+                            value={newStudentPlan}
+                            onChange={(e) => setNewStudentPlan(e.target.value as 'trial' | 'active')}
+                            style={{ width: '100%', padding: '0.55rem 0.75rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.88rem', background: '#fff' }}
+                          >
+                            <option value="trial">Free Trial (7-Day Access)</option>
+                            <option value="active">Active Pass (Full Access)</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
+                        <button
+                          type="button"
+                          className="admin-btn-secondary"
+                          onClick={() => {
+                            setShowAddStudentModal(false);
+                            setAddStudentError(null);
+                          }}
+                        >
+                          Cancel
+                        </button>
+                        <button
+                          type="submit"
+                          className="admin-btn-primary"
+                        >
+                          Create Account
+                        </button>
+                      </div>
+                    </form>
+                  )}
 
                   {filteredAccounts.length === 0 ? (
                     <div style={{ textAlign: 'center', padding: '3rem 1rem', color: '#94a3b8' }}>

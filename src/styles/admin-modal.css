@@ -323,6 +323,38 @@
   color: #ffffff;
 }
 
+.admin-btn-primary {
+  background: #4f46e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.admin-btn-primary:hover {
+  background: #4338ca;
+}
+
+.admin-btn-secondary {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.admin-btn-secondary:hover {
+  background: #e2e8f0;
+}
+
 /* Passcode Lock Box */
 .admin-lock-box {
   padding: 3rem 1.5rem;

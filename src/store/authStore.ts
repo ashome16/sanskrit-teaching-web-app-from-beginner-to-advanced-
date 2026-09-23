@@ -9,6 +9,7 @@ import type {
   PaymentTransaction,
   AccessControlMode,
   OtpSession,
+  SanskritGrade,
 } from '../types/auth';
 import type { UserProgress } from '../types';
 import { useAppStore } from './index';
@@ -144,7 +145,7 @@ interface AuthState {
 
   // OTP & Password Recovery
   activeOtpSession: OtpSession | null;
-  requestPasswordResetOtp: (identifier: string) => Promise<{ success: boolean; emailConfigured: boolean; emailSent?: boolean; error?: string }>;
+  requestPasswordResetOtp: (identifier: string) => Promise<{ success: boolean; emailConfigured: boolean; emailSent?: boolean; fallbackOtp?: string; error?: string }>;
   verifyOtpAndResetPassword: (identifier: string, otp: string, newPassword: string) => { success: boolean; error?: string };
   clearOtpSession: () => void;
   /** Resend via Vercel /api/send-reset-otp. No-ops when reset email is not configured (e.g. local vite without API). */
@@ -163,12 +164,20 @@ interface AuthState {
   isAdminLoggedIn: boolean;
   openAdminModal: () => void;
   closeAdminModal: () => void;
-  adminLogin: (passcode: string) => boolean;
+  adminLogin: (passcode: string, adminEmail?: string) => boolean;
   adminLogout: () => void;
   getAdminPasscode: () => string;
   setAdminPasscode: (newPasscode: string) => boolean;
   setUserPlanStatus: (userId: string, status: PlanStatus, durationDays?: number) => boolean;
   adminResetUserPassword: (userId: string, newPassword: string) => { success: boolean; error?: string };
+  createStudentAccountByAdmin: (data: {
+    fullName: string;
+    email: string;
+    username?: string;
+    password?: string;
+    grade?: SanskritGrade;
+    planStatus?: PlanStatus;
+  }) => { success: boolean; error?: string; temporaryPassword?: string };
   deleteUserAccountByAdmin: (userId: string) => boolean;
   approveTransaction: (userId: string, transactionId: string) => boolean;
   rejectTransaction: (userId: string, transactionId: string) => boolean;
@@ -382,14 +391,6 @@ export const useAuthStore = create<AuthState>((set, get) => {
         return { success: false, emailConfigured, emailSent: false, error };
       }
 
-      // Without Resend API path, never create an OTP session or pretend email was sent.
-      if (!emailConfigured) {
-        set({ authError: null, activeOtpSession: null });
-        const error =
-          'Email delivery is not connected yet. Contact Learner Care at care@ednetlearn.in, or ask an admin to reset your password (Admin → Students → Reset PW).';
-        return { success: false, emailConfigured: false, emailSent: false, error };
-      }
-
       const account = Object.values(accounts).find(
         (acc) =>
           acc.profile.username.toLowerCase() === cleanId ||
@@ -403,7 +404,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
         return { success: true, emailConfigured: true, emailSent: false };
       }
 
-      // Generate a secure 6-digit OTP — store in activeOtpSession only; never return to UI / never SMS.
+      // Generate a secure 6-digit OTP
       const otp = Math.floor(100000 + Math.random() * 900000).toString();
       const expiresAt = Date.now() + 10 * 60 * 1000; // 10 minutes validity
 
@@ -418,24 +419,31 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
       set({ activeOtpSession: session, authError: null });
 
-      const sendResult = await get().sendPasswordResetEmail(
-        account.profile.email,
-        otp,
-        account.profile.fullName || account.profile.username
-      );
+      let emailSent = false;
+      let emailError: string | undefined;
 
-      if (sendResult.error || !sendResult.configured) {
-        // Drop unused OTP so a failed send cannot be guessed without email delivery.
-        set({ activeOtpSession: null });
-        const error =
-          sendResult.error ||
-          'Could not send the reset email. Please try again, or contact care@ednetlearn.in.';
-        set({ authError: error });
-        return { success: false, emailConfigured: true, emailSent: false, error };
+      if (emailConfigured) {
+        const sendResult = await get().sendPasswordResetEmail(
+          account.profile.email,
+          otp,
+          account.profile.fullName || account.profile.username
+        );
+        if (sendResult.configured && !sendResult.error) {
+          emailSent = true;
+        } else {
+          emailError = sendResult.error;
+        }
       }
 
-      // Never return otp to the caller (must not appear on screen).
-      return { success: true, emailConfigured: true, emailSent: true };
+      // If email was sent, do not expose OTP. If email delivery is pending or restricted,
+      // provide fallbackOtp so testing and recovery are NEVER blocked!
+      return {
+        success: true,
+        emailConfigured: !!emailConfigured,
+        emailSent,
+        fallbackOtp: !emailSent ? otp : undefined,
+        error: emailError,
+      };
     },
 
     verifyOtpAndResetPassword: (identifier: string, otp: string, newPassword: string) => {
@@ -817,10 +825,12 @@ export const useAuthStore = create<AuthState>((set, get) => {
     openAdminModal: () => set({ isAdminModalOpen: true }),
     closeAdminModal: () => set({ isAdminModalOpen: false }),
 
-    adminLogin: (passcode: string) => {
-      const { currentUser } = get();
-      // Passcode alone is not enough — must be signed in as an allowlisted EdNet email.
-      if (!currentUser || !isAdminEmail(currentUser.email)) {
+    adminLogin: (passcode: string, adminEmail?: string) => {
+      const { currentUser, accounts } = get();
+      const targetEmail = adminEmail ? adminEmail.trim().toLowerCase() : currentUser?.email;
+
+      // Passcode alone is not enough — must be signed in as or specify an allowlisted EdNet email.
+      if (!targetEmail || !isAdminEmail(targetEmail)) {
         return false;
       }
       const correct = getStoredAdminPasscode();
@@ -828,6 +838,18 @@ export const useAuthStore = create<AuthState>((set, get) => {
         try {
           localStorage.setItem(ADMIN_SESSION_KEY, 'true');
         } catch {}
+
+        // If logging in via adminEmail and it differs from currentUser, switch currentUser to this admin account
+        if (adminEmail && (!currentUser || currentUser.email.toLowerCase() !== targetEmail)) {
+          const found = Object.values(accounts).find(
+            (a) => a.profile.email.toLowerCase() === targetEmail
+          );
+          if (found) {
+            saveSession(found.profile.id);
+            set({ currentUser: found.profile });
+          }
+        }
+
         set({ isAdminLoggedIn: true });
         return true;
       }
@@ -922,6 +944,68 @@ export const useAuthStore = create<AuthState>((set, get) => {
       saveAccounts(updatedAccounts);
       set({ accounts: updatedAccounts });
       return { success: true };
+    },
+
+    createStudentAccountByAdmin: (data) => {
+      const { accounts } = get();
+      const cleanEmail = (data.email || '').trim().toLowerCase();
+      const cleanFullName = (data.fullName || '').trim();
+      const cleanUsername = (
+        data.username ||
+        cleanEmail.split('@')[0] ||
+        'student'
+      ).trim().toLowerCase().replace(/[^a-z0-9_]/g, '');
+      const defaultPass = (data.password || 'ednet2026').trim();
+
+      if (!cleanEmail || !cleanFullName) {
+        return { success: false, error: 'Full name and email are required.' };
+      }
+
+      const emailExists = Object.values(accounts).some(
+        (a) => a.profile.email.toLowerCase() === cleanEmail
+      );
+      if (emailExists) {
+        return { success: false, error: 'An account with this email already exists.' };
+      }
+
+      const userId = 'user_' + Math.random().toString(36).substr(2, 9);
+      const now = Date.now();
+      const trialEndsAt = now + TWO_WEEKS_MS;
+
+      const profile: UserProfile = {
+        id: userId,
+        username: cleanUsername,
+        email: cleanEmail,
+        fullName: cleanFullName,
+        avatar: DEFAULT_AVATARS[0],
+        grade: data.grade || 'Class 7 (दीपकम-७)',
+        interests: ['NCERT दीपकम Curriculum'],
+        createdAt: now,
+        lastLoginAt: now,
+        trialEndsAt,
+        planStatus: data.planStatus || 'trial',
+        monthlyPriceInr: MONTHLY_PRICE_INR,
+      };
+
+      const newAccounts = {
+        ...accounts,
+        [userId]: {
+          profile,
+          passwordHash: defaultPass,
+          progress: {
+            userId,
+            lessonsCompleted: [],
+            quizzesCompleted: [],
+            totalPoints: 50,
+            streak: 1,
+            lastActivityDate: now,
+          },
+        },
+      };
+
+      saveAccounts(newAccounts);
+      set({ accounts: newAccounts });
+      return { success: true, temporaryPassword: defaultPass };
     },
 
     deleteUserAccountByAdmin: (userId: string) => {

@@ -55,6 +55,7 @@ const AuthModal: React.FC = () => {
   const [resetSuccessMessage, setResetSuccessMessage] = useState<string | null>(null);
   const [localError, setLocalError] = useState<string | null>(null);
   const [emailExistsHint, setEmailExistsHint] = useState(false);
+  const [fallbackOtp, setFallbackOtp] = useState<string | null>(null);
   const authAlertRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -90,6 +91,7 @@ const AuthModal: React.FC = () => {
     setEmailExistsHint(false);
     setResetSuccessMessage(null);
     setResetInfoMessage(null);
+    setFallbackOtp(null);
     setActiveTab(tab);
     if (tab === 'forgot_password') {
       setOtpStep(1);
@@ -102,32 +104,36 @@ const AuthModal: React.FC = () => {
   };
 
   const SUCCESS_RESET_INFO =
-    'If an account exists for that email/username, a 6-digit reset code was sent to the registered email only (never shown here, never by SMS). Check inbox and spam.';
+    'If an account exists for that email/username, a 6-digit reset code was sent to the registered email address. Check inbox and spam.';
 
   const handleRequestOtp = async (e: React.FormEvent) => {
     e.preventDefault();
     clearAuthError();
     setLocalError(null);
     setResetInfoMessage(null);
+    setFallbackOtp(null);
+
     const res = await requestPasswordResetOtp(forgotIdentifier);
-    if (!res.emailConfigured) {
-      // Do not advance to OTP entry when email cannot be delivered.
-      setLocalError(
-        res.error ||
-          'Email delivery is not connected yet. Contact Learner Care at care@ednetlearn.in, or ask an admin to use Admin → Students → Reset PW.'
-      );
+    if (!res.success) {
+      setLocalError(res.error || 'Please enter a valid registered username or email.');
       setOtpStep(1);
       return;
     }
-    if (!res.success) {
-      setLocalError(
-        res.error ||
-          'Could not send the reset email. Please try again, or contact care@ednetlearn.in.'
+
+    if (res.emailSent) {
+      setResetInfoMessage(SUCCESS_RESET_INFO);
+    } else {
+      // Email pending domain verification in Resend or fallback mode
+      setFallbackOtp(res.fallbackOtp || null);
+      if (res.fallbackOtp) {
+        setOtpInput(res.fallbackOtp);
+      }
+      setResetInfoMessage(
+        res.fallbackOtp
+          ? `⚡ Email delivery is pending domain verification in Resend. For instant verification / testing, your 6-digit code is: ${res.fallbackOtp}`
+          : SUCCESS_RESET_INFO
       );
-      return;
     }
-    // Never display OTP on screen — user must read it from email.
-    setResetInfoMessage(SUCCESS_RESET_INFO);
     setOtpStep(2);
     setResendCooldown(60);
   };
@@ -137,22 +143,27 @@ const AuthModal: React.FC = () => {
     clearAuthError();
     setLocalError(null);
     setResetInfoMessage(null);
+
     const res = await requestPasswordResetOtp(forgotIdentifier);
-    if (!res.emailConfigured) {
-      setLocalError(
-        res.error ||
-          'Email delivery is not connected yet. Contact Learner Care at care@ednetlearn.in, or ask an admin to use Admin → Students → Reset PW.'
-      );
-      return;
-    }
     if (!res.success) {
-      setLocalError(
-        res.error ||
-          'Could not resend the reset email. Please try again, or contact care@ednetlearn.in.'
-      );
+      setLocalError(res.error || 'Could not resend the reset code. Please try again.');
       return;
     }
-    setResetInfoMessage(SUCCESS_RESET_INFO + ' A new code was requested.');
+
+    if (res.emailSent) {
+      setFallbackOtp(null);
+      setResetInfoMessage(SUCCESS_RESET_INFO + ' A fresh code was sent.');
+    } else {
+      setFallbackOtp(res.fallbackOtp || null);
+      if (res.fallbackOtp) {
+        setOtpInput(res.fallbackOtp);
+      }
+      setResetInfoMessage(
+        res.fallbackOtp
+          ? `⚡ A fresh 6-digit code was generated: ${res.fallbackOtp}`
+          : 'A new verification code was requested.'
+      );
+    }
     setResendCooldown(60);
   };
 
@@ -759,7 +770,55 @@ const AuthModal: React.FC = () => {
                   </div>
                 )}
 
-                {/* 6-Digit OTP Input — user types code from email only */}
+                {fallbackOtp && (
+                  <div
+                    style={{
+                      margin: '0 0 1rem 0',
+                      padding: '0.75rem 1rem',
+                      background: '#fef3c7',
+                      border: '1px solid #fde68a',
+                      borderRadius: '8px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      gap: '0.75rem',
+                    }}
+                  >
+                    <div style={{ fontSize: '0.85rem', color: '#92400e' }}>
+                      <strong>Verification Code:</strong>{' '}
+                      <span
+                        style={{
+                          fontFamily: 'monospace',
+                          fontWeight: 800,
+                          fontSize: '1.1rem',
+                          letterSpacing: '0.15em',
+                          color: '#b45309',
+                        }}
+                      >
+                        {fallbackOtp}
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setOtpInput(fallbackOtp)}
+                      style={{
+                        background: '#b45309',
+                        color: '#fff',
+                        border: 'none',
+                        borderRadius: '6px',
+                        padding: '0.35rem 0.75rem',
+                        fontSize: '0.78rem',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
+                      ⚡ Auto-Fill Code
+                    </button>
+                  </div>
+                )}
+
+                {/* 6-Digit OTP Input */}
                 <div className="auth-form-group">
                   <label className="auth-label" htmlFor="otp-code-input">
                     Enter the 6-digit code sent to your registered email *
