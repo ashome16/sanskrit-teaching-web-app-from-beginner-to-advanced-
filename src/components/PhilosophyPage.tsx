@@ -54,12 +54,20 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
     const ogTitle = document.querySelector('meta[property="og:title"]');
     const ogDesc = document.querySelector('meta[property="og:description"]');
     const ogUrl = document.querySelector('meta[property="og:url"]');
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    const twitterImage = document.querySelector('meta[name="twitter:image"]');
     const prevOgTitle = ogTitle?.getAttribute('content') || '';
     const prevOgDesc = ogDesc?.getAttribute('content') || '';
     const prevOgUrl = ogUrl?.getAttribute('href') || ogUrl?.getAttribute('content') || '';
+    const prevOgImage = ogImage?.getAttribute('content') || '';
+    const prevTwitterImage = twitterImage?.getAttribute('content') || '';
+    const MANDALA_OG =
+      'https://ednetlearn.in/philosophy/sunyat-anantam-mandala.webp';
     ogTitle?.setAttribute('content', PAGE_TITLE);
     ogDesc?.setAttribute('content', PAGE_DESC);
     ogUrl?.setAttribute('content', 'https://ednetlearn.in/philosophy');
+    ogImage?.setAttribute('content', MANDALA_OG);
+    twitterImage?.setAttribute('content', MANDALA_OG);
 
     return () => {
       document.title = prevTitle || DEFAULT_TITLE;
@@ -68,6 +76,8 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
       if (prevOgTitle) ogTitle?.setAttribute('content', prevOgTitle);
       if (prevOgDesc) ogDesc?.setAttribute('content', prevOgDesc);
       if (prevOgUrl) ogUrl?.setAttribute('content', prevOgUrl);
+      if (prevOgImage) ogImage?.setAttribute('content', prevOgImage);
+      if (prevTwitterImage) twitterImage?.setAttribute('content', prevTwitterImage);
     };
   }, []);
 
@@ -97,6 +107,16 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
             </span>
             <span className="philosophy-mantra-deva">शून्यात् अनन्तम्</span>
           </p>
+          <figure className="philosophy-hero-mandala">
+            <img
+              src="/philosophy/sunyat-anantam-mandala.webp"
+              alt="Śūnyāt Anantam — gaṇita-śāstra mandala from śūnya to ananta"
+              width={2000}
+              height={1091}
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
           <p className="philosophy-secondary">The Journey of Gaṇita-śāstra</p>
           <blockquote className="philosophy-epigraph">
             <p lang="sa">Yatra saṅkhyā bhavati vicāraḥ</p>

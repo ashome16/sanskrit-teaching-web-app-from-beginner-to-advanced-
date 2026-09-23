@@ -90,6 +90,21 @@
   color: #c4a882;
 }
 
+.philosophy-hero-mandala {
+  margin: 0.85rem auto 1rem;
+  max-width: min(100%, 640px);
+  width: 100%;
+}
+
+.philosophy-hero-mandala img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.12), 0 1px 3px rgba(0, 0, 0, 0.06);
+  background: #0b1224;
+}
+
 .philosophy-secondary {
   margin: 0 0 1rem;
   font-size: 1.02rem;
