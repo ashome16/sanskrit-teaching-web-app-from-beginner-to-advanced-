@@ -107,7 +107,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
             <button
               type="button"
               className="faq-pricing-pay-cta"
-              onClick={openPaymentModal}
+              onClick={() => openPaymentModal()}
             >
               {trialActive
                 ? `🎉 Trial active until ${trialEndsLabel} · Pay after trial`

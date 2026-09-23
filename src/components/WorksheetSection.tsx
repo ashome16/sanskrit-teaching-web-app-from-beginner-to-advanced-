@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { WORKSHEETS, WORKSHEET_CATEGORIES, type Worksheet } from '../data/worksheetData';
 import { useAuthStore } from '../store/authStore';
 import { canDownloadContent, getDownloadGateReason } from '../utils/premiumAccess';
+import { PAID_FEATURE_GATE } from '../utils/paidFeatureGateCopy';
 import { downloadWorksheet } from '../utils/contentDownload';
 import '../styles/worksheet-section.css';
 
@@ -97,7 +98,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
     if (gateReason === 'guest') {
       openAuthModal('register');
     } else {
-      openPaymentModal();
+      openPaymentModal('unlock_paid_features');
     }
     return false;
   };
@@ -111,6 +112,15 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
     if (!activeWorksheet) return;
     if (!requireDownloadAccess()) return;
     downloadWorksheet(activeWorksheet, showAnswerKey);
+  };
+
+  const handleToggleAnswerKey = () => {
+    if (showAnswerKey) {
+      setShowAnswerKey(false);
+      return;
+    }
+    if (!requireDownloadAccess()) return;
+    setShowAnswerKey(true);
   };
 
   return (
@@ -210,15 +220,24 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
             <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
               <button
                 type="button"
-                className="worksheet-toolbar-btn"
-                onClick={() => setShowAnswerKey(!showAnswerKey)}
+                className={`worksheet-toolbar-btn${canDownload || showAnswerKey ? '' : ' locked'}`}
+                onClick={handleToggleAnswerKey}
+                title={
+                  canDownload || showAnswerKey
+                    ? 'Toggle teacher answer key'
+                    : 'Paid access required for answer keys'
+                }
                 style={{
                   background: showAnswerKey ? '#dcfce7' : '#fff',
                   borderColor: showAnswerKey ? '#22c55e' : '#dfd3bf',
                   color: showAnswerKey ? '#15803d' : '#4b3e2e',
                 }}
               >
-                {showAnswerKey ? '✓ Hide Answer Key' : '👁️ Show Answer Key (Teacher Mode)'}
+                {showAnswerKey
+                  ? '✓ Hide Answer Key'
+                  : canDownload
+                  ? '👁️ Show Answer Key (Teacher Mode)'
+                  : '🔒 Answer Key (Paid)'}
               </button>
 
               <button
@@ -248,27 +267,27 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
               <div>
                 <strong>
                   {gateReason === 'guest'
-                    ? 'Sign in to continue'
+                    ? PAID_FEATURE_GATE.bannerTitleGuest
                     : gateReason === 'trial'
-                    ? 'Downloads unlock after paid access (₹200 once)'
-                    : 'Paid access required to download'}
+                    ? PAID_FEATURE_GATE.bannerTitleTrial
+                    : PAID_FEATURE_GATE.bannerTitleExpired}
                 </strong>
                 <p>
                   {gateReason === 'guest'
-                    ? 'Create an account or sign in. Downloads require paid access (₹200 once) — the free trial does not include offline downloads.'
+                    ? PAID_FEATURE_GATE.bannerBodyGuest
                     : gateReason === 'trial'
-                    ? 'You can browse and practice online during your trial. Pay ₹200 once to download and print worksheets offline.'
-                    : 'Pay ₹200 once (≈30 days) to download and print worksheets offline.'}
+                    ? PAID_FEATURE_GATE.bannerBodyTrial
+                    : PAID_FEATURE_GATE.bannerBodyExpired}
                 </p>
               </div>
               <div className="worksheet-upgrade-actions">
                 {gateReason === 'guest' ? (
                   <button type="button" className="worksheet-print-primary-btn" onClick={() => openAuthModal('register')}>
-                    Sign In / Register
+                    {PAID_FEATURE_GATE.ctaGuest}
                   </button>
                 ) : (
-                  <button type="button" className="worksheet-print-primary-btn" onClick={() => openPaymentModal()}>
-                    Pay ₹200 · Unlock Download
+                  <button type="button" className="worksheet-print-primary-btn" onClick={() => openPaymentModal('unlock_paid_features')}>
+                    {PAID_FEATURE_GATE.ctaSubscribe}
                   </button>
                 )}
                 <button type="button" className="worksheet-toolbar-btn" onClick={() => setShowUpgradePrompt(false)}>

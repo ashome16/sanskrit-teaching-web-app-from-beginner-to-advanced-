@@ -9,6 +9,7 @@ import {
   openRazorpayOrderCheckout,
   verifyRazorpayOrder,
 } from '../utils/razorpayCheckout';
+import { PAID_FEATURE_GATE, paidFeatureGateBodyWithTrialEnd } from '../utils/paidFeatureGateCopy';
 import '../styles/payment-modal.css';
 
 function buildUpiPayUri(vpa: string, payee: string): string {
@@ -34,6 +35,7 @@ function isMobileUpiCapable(): boolean {
 const PaymentModal: React.FC = () => {
   const {
     isPaymentModalOpen,
+    paymentModalIntent,
     closePaymentModal,
     currentUser,
     openAuthModal,
@@ -72,8 +74,12 @@ const PaymentModal: React.FC = () => {
         })
       : '';
 
-  const showTrialGate = trialActive && !(isAdminLoggedIn && adminPreviewPay);
+  // Welcome / status view for trial — keep unless opened to unlock paid features (or admin pay preview).
+  const unlockingPaidFeatures = paymentModalIntent === 'unlock_paid_features';
+  const showWelcomeTrial =
+    trialActive && !unlockingPaidFeatures && !(isAdminLoggedIn && adminPreviewPay);
   const isAdminPayPreview = trialActive && isAdminLoggedIn && adminPreviewPay;
+  const showPaidFeatureGate = trialActive && unlockingPaidFeatures && !(isAdminLoggedIn && adminPreviewPay);
 
   const handleCopyUpi = async () => {
     try {
@@ -231,10 +237,22 @@ const PaymentModal: React.FC = () => {
               <span className="payment-plan-badge">🆓 Start with a free account</span>
               <h2 id="payment-modal-title" className="payment-modal-title">Create an account first</h2>
             </>
-          ) : showTrialGate ? (
+          ) : showWelcomeTrial ? (
             <>
               <span className="payment-plan-badge">🎉 Free Trial Active</span>
               <h2 id="payment-modal-title" className="payment-modal-title">Your free trial is activated</h2>
+            </>
+          ) : showPaidFeatureGate ? (
+            <>
+              <span className="payment-plan-badge">{PAID_FEATURE_GATE.badge}</span>
+              <h2 id="payment-modal-title" className="payment-modal-title">{PAID_FEATURE_GATE.title}</h2>
+              <div className="payment-modal-price-row">
+                <span className="payment-price-currency">₹200</span>
+                <span className="payment-price-period"> once</span>
+              </div>
+              <p className="payment-trial-note">
+                {paidFeatureGateBodyWithTrialEnd(trialEndsFormatted)}
+              </p>
             </>
           ) : (
             <>
@@ -278,7 +296,7 @@ const PaymentModal: React.FC = () => {
               </div>
             </div>
           </div>
-        ) : showTrialGate ? (
+        ) : showWelcomeTrial ? (
           <div className="payment-modal-body">
             <div className="payment-success-box" style={{ padding: '1.5rem 1.75rem' }}>
               <div className="payment-success-icon" style={{ background: '#fef3c7', color: '#b45309' }}>✨</div>
@@ -364,6 +382,11 @@ const PaymentModal: React.FC = () => {
             )}
 
             <div className="payment-modal-body">
+              {showPaidFeatureGate && (
+                <p style={{ margin: '0 0 1rem', textAlign: 'center', fontSize: '0.88rem', color: '#92400e', fontWeight: 600, lineHeight: 1.45 }}>
+                  Your free trial stays active for browsing. Subscribe now if you need downloads, answer keys, or quiz assessment reports.
+                </p>
+              )}
               <div style={{ padding: '0.25rem 0 1rem' }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem', justifyContent: 'center' }}>
                   <button type="button" onClick={handleRazorpayPay} disabled={razorpayBusy}

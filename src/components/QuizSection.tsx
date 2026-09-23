@@ -4,6 +4,7 @@ import { playPronunciation } from '../utils/pronunciation';
 import { useAppStore } from '../store';
 import { useAuthStore } from '../store/authStore';
 import { canDownloadContent, getDownloadGateReason } from '../utils/premiumAccess';
+import { PAID_FEATURE_GATE } from '../utils/paidFeatureGateCopy';
 import { downloadQuizSheet } from '../utils/contentDownload';
 import '../styles/quiz-section.css';
 
@@ -150,10 +151,13 @@ const QuizSection: React.FC<QuizSectionProps> = ({
     if (gateReason === 'guest') {
       openAuthModal('register');
     } else {
-      openPaymentModal();
+      openPaymentModal('unlock_paid_features');
     }
     return false;
   };
+
+  /** Paid-only: finishing a quiz for the full assessment report (score + answer review). */
+  const requireAssessmentAccess = (): boolean => requireDownloadAccess();
 
   const handleDownloadFilteredQuiz = () => {
     if (!requireDownloadAccess()) return;
@@ -249,6 +253,8 @@ const QuizSection: React.FC<QuizSectionProps> = ({
       setSelectedOption(null);
       setIsAnswerChecked(false);
     } else {
+      // Final submit → assessment report is paid-only (trial users must subscribe).
+      if (!requireAssessmentAccess()) return;
       setIsCompleted(true);
       const attempt = {
         id: 'quiz_' + Date.now(),
@@ -321,27 +327,27 @@ const QuizSection: React.FC<QuizSectionProps> = ({
           <div>
             <strong>
               {gateReason === 'guest'
-                ? 'Sign in to continue'
+                ? PAID_FEATURE_GATE.bannerTitleGuest
                 : gateReason === 'trial'
-                ? 'Downloads unlock after paid access (₹200 once)'
-                : 'Paid access required to download'}
+                ? PAID_FEATURE_GATE.bannerTitleTrial
+                : PAID_FEATURE_GATE.bannerTitleExpired}
             </strong>
             <p>
               {gateReason === 'guest'
-                ? 'Create an account or sign in. Downloads require paid access (₹200 once) — the free trial does not include offline downloads.'
+                ? PAID_FEATURE_GATE.bannerBodyGuest
                 : gateReason === 'trial'
-                ? 'You can take quizzes online during your trial. Pay ₹200 once to download practice sheets offline.'
-                : 'Pay ₹200 once (≈30 days) to download quizzes for offline practice.'}
+                ? PAID_FEATURE_GATE.bannerBodyTrial
+                : PAID_FEATURE_GATE.bannerBodyExpired}
             </p>
           </div>
           <div className="quiz-upgrade-actions">
             {gateReason === 'guest' ? (
               <button type="button" className="quiz-retry-btn" onClick={() => openAuthModal('register')}>
-                Sign In / Register
+                {PAID_FEATURE_GATE.ctaGuest}
               </button>
             ) : (
-              <button type="button" className="quiz-retry-btn" onClick={() => openPaymentModal()}>
-                Pay ₹200 · Unlock Download
+              <button type="button" className="quiz-retry-btn" onClick={() => openPaymentModal('unlock_paid_features')}>
+                {PAID_FEATURE_GATE.ctaSubscribe}
               </button>
             )}
             <button type="button" className="quiz-home-btn" onClick={() => setShowUpgradePrompt(false)}>
@@ -670,7 +676,11 @@ const QuizSection: React.FC<QuizSectionProps> = ({
                   className="quiz-next-btn"
                   onClick={handleNext}
                 >
-                  {currentIndex < activeQuestions.length - 1 ? 'Next Question ➔' : 'View Results ➔'}
+                  {currentIndex < activeQuestions.length - 1
+                    ? 'Next Question ➔'
+                    : canDownload
+                    ? 'View Assessment Report ➔'
+                    : '🔒 Submit & Assessment (Paid)'}
                 </button>
               )}
             </div>

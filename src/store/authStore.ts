@@ -128,6 +128,8 @@ interface AuthState {
   isAuthModalOpen: boolean;
   isProfileModalOpen: boolean;
   isPaymentModalOpen: boolean;
+  /** Why the payment modal opened: welcome/status vs paid-feature unlock (downloads, answer keys, quiz assessment). */
+  paymentModalIntent: 'default' | 'unlock_paid_features';
   authModalInitialTab: 'login' | 'register' | 'forgot_password';
   authError: string | null;
 
@@ -136,7 +138,7 @@ interface AuthState {
   closeAuthModal: () => void;
   openProfileModal: () => void;
   closeProfileModal: () => void;
-  openPaymentModal: () => void;
+  openPaymentModal: (intent?: 'default' | 'unlock_paid_features') => void;
   closePaymentModal: () => void;
   clearAuthError: () => void;
 
@@ -340,6 +342,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
     isAuthModalOpen: false,
     isProfileModalOpen: false,
     isPaymentModalOpen: false,
+    paymentModalIntent: 'default',
     showAccessExpiredAlert: _showExpired,
     accessExpiredOn: _showExpired ? (_endedOn as number) : null,
     authModalInitialTab: 'login',
@@ -353,8 +356,9 @@ export const useAuthStore = create<AuthState>((set, get) => {
     openProfileModal: () => set({ isProfileModalOpen: true }),
     closeProfileModal: () => set({ isProfileModalOpen: false }),
 
-    openPaymentModal: () => set({ isPaymentModalOpen: true }),
-    closePaymentModal: () => set({ isPaymentModalOpen: false }),
+    openPaymentModal: (intent = 'default') =>
+      set({ isPaymentModalOpen: true, paymentModalIntent: intent }),
+    closePaymentModal: () => set({ isPaymentModalOpen: false, paymentModalIntent: 'default' }),
     clearAuthError: () => set({ authError: null }),
 
     // OTP & Password Recovery
