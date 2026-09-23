@@ -14,7 +14,7 @@ const { send, handleOptions, readJson } = require('./_razorpay');
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const OTP_RE = /^\d{6}$/;
-const DEFAULT_FROM = 'EdNet Learn <onboarding@resend.dev>';
+const DEFAULT_FROM = 'EdNet Learn <care@ednetlearn.in>';
 
 /** Reject placeholder / unverified-example senders that Resend will always refuse. */
 function resolveFromAddress() {
