@@ -38,7 +38,7 @@ const FAQ_DATA: FAQItem[] = [
     category: 'curriculum',
     question: 'How is the platform aligned with the CBSE Board Exam and NCERT curriculum?',
     answer:
-      'Our curriculum is 100% aligned with the Central Board of Secondary Education (CBSE) syllabus for Class 7 Sanskrit, based directly on the prescribed NCERT textbook "दीपकम-७". Every chapter covers CBSE board exam requirements: shlokas with line-by-line anvaya (श्लोकान्वयः), word-meanings (शब्दार्थाः), sandhi-vichheda (सन्धि-विच्छेदः), vibhakti-pratyaya identification, short/long answer questions (प्रश्नोत्तराणि), and unseen passage comprehension. In addition, learners have full access to Varṇamālā phonetics, बारहखड़ी, Vyākaraṇa (Shabdarupani & Dhatarupani), and Vedic Mathematics (वैदिक-गणितम्).',
+      'Our curriculum is 100% aligned with the Central Board of Secondary Education (CBSE) syllabus for Class 7 Sanskrit, based directly on the prescribed NCERT textbook "दीपकम-७". Every chapter covers CBSE board exam requirements: shlokas with line-by-line anvaya (श्लोकान्वयः), word-meanings (शब्दार्थाः), sandhi-vichheda (सन्धि-विच्छेदः), vibhakti-pratyaya identification, short/long answer questions (प्रश्नोत्तराणि), and unseen passage comprehension. In addition, learners have full access to Sanskrit Alphabet (वर्णमाला) phonetics, Syllables (बारहखड़ी), Vyākaraṇa (Shabdarupani & Dhatarupani), and Vedic Mathematics (वैदिक-गणितम्).',
   },
   {
     id: 'faq-audio',

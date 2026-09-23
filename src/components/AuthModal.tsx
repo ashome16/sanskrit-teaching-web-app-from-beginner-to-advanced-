@@ -547,7 +547,7 @@ const AuthModal: React.FC = () => {
               }}
             >
               <div style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.45, marginBottom: '0.5rem' }}>
-                📖 <strong>Free Guest Preview:</strong> You can explore the <strong>Varṇamālā (Alphabet)</strong> and <strong>Chapter 1</strong> for free. To access Chapters 2–15, Quizzes, Worksheets, or Vedic Maths, please log in or create an account.
+                📖 <strong>Free Guest Preview:</strong> You can explore the <strong>Alphabet &amp; Syllables (वर्णमाला)</strong> and <strong>Chapter 1</strong> for free. To access Chapters 2–15, Quizzes, Worksheets, or Vedic Maths, please log in or create an account.
               </div>
               <button
                 type="button"
@@ -778,7 +778,7 @@ const AuthModal: React.FC = () => {
               }}
             >
               <div style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.45, marginBottom: '0.5rem' }}>
-                📖 <strong>Free Guest Preview:</strong> You can explore the <strong>Varṇamālā (Alphabet)</strong> and <strong>Chapter 1</strong> for free. To access Chapters 2–15, Quizzes, Worksheets, or Vedic Maths, please log in or create an account.
+                📖 <strong>Free Guest Preview:</strong> You can explore the <strong>Alphabet &amp; Syllables (वर्णमाला)</strong> and <strong>Chapter 1</strong> for free. To access Chapters 2–15, Quizzes, Worksheets, or Vedic Maths, please log in or create an account.
               </div>
               <button
                 type="button"

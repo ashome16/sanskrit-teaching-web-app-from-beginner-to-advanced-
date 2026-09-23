@@ -874,7 +874,7 @@ const AdminModal: React.FC = () => {
                             </span>
                           </div>
                           <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: 1.45 }}>
-                            <strong>Home</strong>, <strong>Varṇamālā (Alphabet)</strong>, and <strong>Chapter 1 (वन्दे भारतमातरम्)</strong> are 100% free with no login barrier. When guests click Chapter 2–15, Jodo Tile Puzzle, Grammar, Vedic Maths, Quizzes, or Worksheets, they are prompted to create a free account to activate their <strong>14-day unrestricted trial</strong>.
+                            <strong>Home</strong>, <strong>Alphabet &amp; Syllables (वर्णमाला)</strong>, and <strong>Chapter 1 (वन्दे भारतमातरम्)</strong> are 100% free with no login barrier. When guests click Chapter 2–15, Jodo Tile Puzzle, Grammar, Vedic Maths, Quizzes, or Worksheets, they are prompted to create a free account to activate their <strong>14-day unrestricted trial</strong>.
                           </p>
                         </div>
                       </label>
@@ -909,7 +909,7 @@ const AdminModal: React.FC = () => {
                             </strong>
                           </div>
                           <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: 1.45 }}>
-                            Only the Homepage and FAQs are publicly visible. Clicking any learning module (Varṇamālā, reader, quizzes, worksheets, etc.) immediately opens the registration modal requiring the visitor to start their 14-day free trial.
+                            Only the Homepage and FAQs are publicly visible. Clicking any learning module (Alphabet &amp; Syllables, reader, quizzes, worksheets, etc.) immediately opens the registration modal requiring the visitor to start their 14-day free trial.
                           </p>
                         </div>
                       </label>

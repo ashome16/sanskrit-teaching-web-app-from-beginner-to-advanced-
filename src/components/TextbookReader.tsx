@@ -1374,7 +1374,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
       {isGroupedLesson && activeLesson ? (
         <div className="varnamala-groups">
           {isVarnamala && (
-            <nav className="varnamala-studio-nav" aria-label="Varṇamālā Study Modes">
+            <nav className="varnamala-studio-nav" aria-label="Alphabet &amp; Syllables Study Modes">
               <button
                 type="button"
                 className={`varnamala-mode-btn${varnamalaSubMode === 'sound' ? ' varnamala-mode-btn--active' : ''}`}
@@ -1416,7 +1416,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             >
               <span className="v-writing-pill">📑 अभ्यास-सञ्चिका · Worksheets</span>
               <h3 className="v-writing-title" style={{ margin: '0.5rem 0' }}>
-                Varṇamālā Printable &amp; Interactive Worksheets
+                Alphabet &amp; Syllables Printable Worksheets
               </h3>
               <p className="v-writing-subtitle" style={{ maxWidth: '650px', margin: '0 auto 1.5rem' }}>
                 Reinforce letter recognition, stroke order, vowel classifications, and consonant
@@ -1503,7 +1503,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                   onClick={onOpenWorksheets}
                   style={{ maxWidth: '380px', margin: '0 auto' }}
                 >
-                  <span>📑</span> Open All Varṇamālā Worksheets Laboratory →
+                  <span>📑</span> Open All Alphabet &amp; Syllables Worksheets Laboratory →
                 </button>
               )}
             </div>

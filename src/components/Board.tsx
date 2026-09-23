@@ -1180,7 +1180,7 @@ const Board: React.FC<BoardProps> = ({
         )}
         {onNavigateToVarnamala && (
           <button type="button" className="board-shortcut-btn" onClick={onNavigateToVarnamala}>
-            🔤 Varṇamālā
+            🔤 Alphabet &amp; Syllables
           </button>
         )}
         {onNavigateToGrammar && (

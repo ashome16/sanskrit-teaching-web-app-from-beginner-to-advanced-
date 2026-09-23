@@ -49,7 +49,7 @@ export const WORKSHEET_CATEGORIES = [
   { id: 'cbse_ch', label: 'CBSE Deepakam Chapters (पाठ-अभ्यासः)', icon: '📚' },
   { id: 'grammar', label: 'Vyākaraṇa / Grammar (10 Worksheets · व्याकरण-पत्राणि)', icon: '📐' },
   { id: 'vedic_maths', label: 'Vedic Maths Drills (वैदिक-गणितम्)', icon: '⚡' },
-  { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
+  { id: 'varnamala', label: 'Alphabet & Syllables (वर्णमाला)', icon: '🔤' },
   { id: 'grade8', label: 'Grade 8 Sanskrit (अष्टमकक्षा · 68 Worksheets)', icon: '🪕' },
 ] as const;
 
@@ -11321,10 +11321,10 @@ export const WORKSHEETS: Worksheet[] = [
   // ==========================================
   {
     id: 'ws-v01',
-    title: 'Varṇamālā: Svara-Paricaya (Vowels & Their Sounds - The Foundation)',
+    title: 'Alphabet & Syllables: Svara-Paricaya (Vowels & Sounds)',
     titleSanskrit: 'वर्णमाला · स्वर-परिचयः एवं ध्वनि-अभ्यासः (अभ्यास-पत्रम् १)',
     category: 'varnamala',
-    categoryLabel: 'Varṇamālā & Sounds',
+    categoryLabel: 'Alphabet & Syllables',
     grade: 'Foundational · Class 6–8',
     totalMarks: 25,
     timeLimit: '25 Minutes',
@@ -11441,10 +11441,10 @@ export const WORKSHEETS: Worksheet[] = [
   // ==========================================
   {
     id: 'ws-v02',
-    title: 'Varṇamālā: The 5 Consonant Families (Sparśa-Vyañjanāni · क to प)',
+    title: 'Alphabet & Syllables: The 5 Consonant Families (Sparśa-Vyañjanāni · क to प)',
     titleSanskrit: 'वर्णमाला · स्पर्श-व्यञ्जनानि (पञ्च वर्गाः · अभ्यास-पत्रम् २)',
     category: 'varnamala',
-    categoryLabel: 'Varṇamālā & Sounds',
+    categoryLabel: 'Alphabet & Syllables',
     grade: 'Foundational · Class 6–8',
     totalMarks: 25,
     timeLimit: '25 Minutes',
@@ -11560,10 +11560,10 @@ export const WORKSHEETS: Worksheet[] = [
   // ==========================================
   {
     id: 'ws-v03',
-    title: 'Varṇamālā: Semi-Vowels, Sibilants & Ayogavāhas (अन्तःस्थाः, ऊष्माणः अयोगवाहाश्च)',
+    title: 'Alphabet & Syllables: Semi-Vowels, Sibilants & Ayogavāhas (अन्तःस्थाः, ऊष्माणः अयोगवाहाश्च)',
     titleSanskrit: 'वर्णमाला · अन्तःस्थाः, ऊष्माणः अयोगवाहाश्च (अभ्यास-पत्रम् ३)',
     category: 'varnamala',
-    categoryLabel: 'Varṇamālā & Sounds',
+    categoryLabel: 'Alphabet & Syllables',
     grade: 'Foundational · Class 6–8',
     totalMarks: 25,
     timeLimit: '25 Minutes',
@@ -11682,10 +11682,10 @@ export const WORKSHEETS: Worksheet[] = [
   // ==========================================
   {
     id: 'ws-v04',
-    title: 'Varṇamālā: Building First Sanskrit Words (अक्षर-संयोजनम्)',
+    title: 'Alphabet & Syllables: Building First Sanskrit Words (अक्षर-संयोजनम्)',
     titleSanskrit: 'वर्णमाला · अक्षर-संयोजनेन शब्द-निर्माणम् (अभ्यास-पत्रम् ४)',
     category: 'varnamala',
-    categoryLabel: 'Varṇamālā & Sounds',
+    categoryLabel: 'Alphabet & Syllables',
     grade: 'Foundational · Class 6–8',
     totalMarks: 25,
     timeLimit: '25 Minutes',

@@ -564,7 +564,7 @@ const HomePage: React.FC<HomePageProps> = ({
             className="home-btn-secondary"
             onClick={onOpenVarnamala}
           >
-            🔤 Varṇamālā Alphabet
+            🔤 Alphabet &amp; Syllables
           </button>
           <button
             type="button"
@@ -678,7 +678,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <span className="home-trust-icon">🎧</span>
           <div className="home-trust-text">
             <strong>Native Phonetic Speech</strong>
-            <span>Varnamala audio synthesis with authentic visarga echoes</span>
+            <span>Alphabet &amp; syllable audio synthesis with authentic visarga echoes</span>
           </div>
         </div>
         <div className="home-trust-item">
@@ -866,7 +866,7 @@ const HomePage: React.FC<HomePageProps> = ({
                     textDecoration: 'underline',
                   }}
                 >
-                  Explore in Varṇamālā ➔
+                  Explore in Alphabet &amp; Syllables ➔
                 </button>
               </div>
             </div>
@@ -1012,7 +1012,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 <span className="home-feature-icon">🔤</span>
                 <span className="home-feature-badge">Phonetics Studio</span>
               </div>
-              <h3 className="home-feature-title">Varṇamālā &amp; Barakhadi Audio</h3>
+              <h3 className="home-feature-title">Alphabet &amp; Syllables (वर्णमाला)</h3>
               <p className="home-feature-desc">
                 The foundation of Sanskrit starts with sound. Master all Swaras (vowels), Vyanjanas (consonants), and Svaras (accents)
                 with exact articulation points and native pronunciation audio for every letter.
@@ -1028,7 +1028,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-feature-btn"
               onClick={onOpenVarnamala}
             >
-              Explore Varṇamālā ▶
+              Explore Alphabet &amp; Syllables ▶
             </button>
           </div>
 
@@ -1335,7 +1335,7 @@ const HomePage: React.FC<HomePageProps> = ({
               </span>
               <h3 className="home-pathway-title">🌱 New to Sanskrit?</h3>
               <p className="home-pathway-desc">
-                Start with hearing and repeating the 13 vowels and 33 consonants in Varṇamālā. Then head over to the
+                Start with hearing and repeating the 13 vowels and 33 consonants in the Sanskrit Alphabet (वर्णमाला). Then head over to the
                 Beginners shelf of the जोडो Tile Puzzle to master matra additions.
               </p>
             </div>
@@ -1344,7 +1344,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-pathway-btn"
               onClick={onOpenVarnamala}
             >
-              Start with Varṇamālā ▶
+              Start with Alphabet &amp; Syllables ▶
             </button>
           </div>
 

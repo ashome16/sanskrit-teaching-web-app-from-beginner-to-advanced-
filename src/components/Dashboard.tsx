@@ -66,7 +66,7 @@ const CBSE_GUIDE_PATHS = new Set([
 export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string }> = {
   home: {
     title: 'Online Sanskrit & Vedic Math Classes for Kids | EdNet Learn Gurukul',
-    desc: 'Interactive CBSE NCERT Sanskrit (दीपकम 6–8) and Vedic Math platform for school kids. 28+ worksheets, 39+ quizzes, 6,000+ tile puzzles, audio Varnamala & 16 Vedic math sutras.',
+    desc: 'Interactive CBSE NCERT Sanskrit (दीपकम 6–8) and Vedic Math platform for school kids. 28+ worksheets, 39+ quizzes, 6,000+ tile puzzles, audio Alphabet & Syllables & 16 Vedic math sutras.',
   },
   'cbse-guide': {
     title: 'CBSE NCERT Sanskrit Exam Guide (Classes 7–10) | EdNet Learn Gurukul',
@@ -93,8 +93,8 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     desc: 'Interactive Sanskrit word-building game with 6,000+ puzzles across vocabulary, verbs, anatomy, math, and daily conversation.',
   },
   reader: {
-    title: 'NCERT Sanskrit Deepakam Reader & Varnamala Audio Guide | EdNet Learn',
-    desc: 'Read NCERT Deepakam Chapters 1–15 with verse-by-verse English meanings, root analysis, and Sanskrit alphabet (Varnamala) pronunciation guide.',
+    title: 'NCERT Sanskrit Deepakam Reader & Alphabet Audio Guide | EdNet Learn',
+    desc: 'Read NCERT Deepakam Chapters 1–15 with verse-by-verse English meanings, root analysis, and Sanskrit Alphabet & Syllables (वर्णमाला) pronunciation guide.',
   },
   philosophy: {
     title: 'Sanskrit Philosophy & Shad-Darshana Primer | EdNet Learn Gurukul',
@@ -605,11 +605,11 @@ const Dashboard: React.FC = () => {
             type="button"
             className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'reader' && lesson.id === 'varnamala' ? ' active' : ''}`}
             onClick={openVarnamala}
-            title="Open Varṇamālā alphabet"
+            title="Open Alphabet & Syllables (वर्णमाला)"
           >
             <img src="/nav/nav-varnamala.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
             <span className="dashboard-nav-primary">वर्णमाला</span>
-            <span className="dashboard-nav-secondary">Varṇamālā</span>
+            <span className="dashboard-nav-secondary">Alphabet &amp; Syllables</span>
           </button>
           <button
             type="button"

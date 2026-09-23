@@ -107,7 +107,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenVarnamala}
                 >
                   <span className="nav-btn-icon">🔤</span>
-                  <span className="nav-btn-text">वर्णमाला · Audio Alphabet</span>
+                  <span className="nav-btn-text">वर्णमाला · Alphabet &amp; Syllables</span>
                 </button>
               </li>
               <li>

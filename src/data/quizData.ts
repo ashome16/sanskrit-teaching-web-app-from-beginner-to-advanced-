@@ -32,7 +32,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'cbse_deepakam', label: 'CBSE Deepakam Class 7 (दीपकम्)', icon: '📚' },
   { id: 'grammar', label: 'Vyākaraṇa / Grammar (11 Quizzes · 93 Qs)', icon: '📐' },
   { id: 'vedic_maths', label: 'Vedic Mathematics (वैदिक-गणितम्)', icon: '⚡' },
-  { id: 'varnamala', label: 'Varṇamālā & Sounds (वर्णमाला)', icon: '🔤' },
+  { id: 'varnamala', label: 'Alphabet & Syllables (वर्णमाला)', icon: '🔤' },
   { id: 'grade8_prarthana', label: 'Grade 8: सरस्वतीप्रार्थना (2 Quizzes · 10 Qs)', icon: '🪕' },
   { id: 'grade8_ch1', label: 'Grade 8 Ch 1: संगच्छध्वं संवदध्वम् (2 Quizzes · 8 Qs)', icon: '🏛️' },
   { id: 'grade8_ch2', label: 'Grade 8 Ch 2: अल्पानामपि वस्तूनां संहतिः (5 Quizzes · 21 Qs)', icon: '🕊️' },
@@ -7844,7 +7844,7 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
   {
     id: 'var-1',
     category: 'varnamala',
-    categoryLabel: 'Varṇamālā & Sounds',
+    categoryLabel: 'Alphabet & Syllables',
     question: 'Which of the following is a Hrasva Svara (ह्रस्व-स्वरः / Short vowel) in Sanskrit?',
     questionSanskrit: 'एतेषु ह्रस्वस्वरः कः?',
     options: ['इ (i)', 'ई (ī)', 'ऊ (ū)', 'ऐ (ai)'],
@@ -7856,7 +7856,7 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
   {
     id: 'var-2',
     category: 'varnamala',
-    categoryLabel: 'Varṇamālā & Sounds',
+    categoryLabel: 'Alphabet & Syllables',
     question: 'Where is the phonetic place of articulation (उच्चारणस्थानम्) for the guttural class "क, ख, ग, घ, ङ"?',
     questionSanskrit: '"क, ख, ग, घ, ङ" वर्णानाम् उच्चारणस्थानं किम्?',
     options: ['कण्ठः (Throat / Velar)', 'तालु (Palate)', 'मूर्धा (Retroflex)', 'दन्ताः (Teeth)'],
@@ -7868,7 +7868,7 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
   {
     id: 'var-3',
     category: 'varnamala',
-    categoryLabel: 'Varṇamālā & Sounds',
+    categoryLabel: 'Alphabet & Syllables',
     question: 'Which conjunct consonant (संयुक्त-व्यञ्जनम्) is formed by combining "क् + ष्"?',
     questionSanskrit: '"क् + ष्" संयोगात् कः वर्णः उत्पद्यते?',
     options: ['क्ष (kṣa)', 'त्र (tra)', 'ज्ञ (jña)', 'श्र (śra)'],
