@@ -9,6 +9,7 @@ import {
   type AnalyseRegistry,
 } from '../utils/analyseGloss';
 import { useAuthStore } from '../store/authStore';
+import { canAccessAllChapters } from '../utils/premiumAccess';
 import { Grade8SyllabusModal } from './Grade8SyllabusModal';
 import '../styles/textbook-reader.css';
 
@@ -148,7 +149,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   onOpenQuiz,
   onOpenWorksheets,
 }) => {
-  const { isAdminLoggedIn } = useAuthStore();
+  const { isAdminLoggedIn, currentUser } = useAuthStore();
+  const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
   const isGrade8Lesson = activeLessonId.startsWith('grade8_');
   const activeLesson = lessons.find((lesson) => lesson.id === activeLessonId);
   const isVarnamala = activeLessonId === 'varnamala';
@@ -251,8 +253,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     return best;
   })();
 
-  // Public visitors should not see Class 8 content (admin preview only).
-  if (isGrade8Lesson && !isAdminLoggedIn) {
+  // Guests / expired see Class 8 as upcoming; trial + paid may read.
+  if (isGrade8Lesson && !canReadAllChapters) {
     return (
       <section className="textbook-reader">
         <div className="textbook-cbse-banner textbook-grade8-upcoming-banner">

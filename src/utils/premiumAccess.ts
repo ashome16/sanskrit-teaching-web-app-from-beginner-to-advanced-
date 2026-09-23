@@ -17,6 +17,19 @@ export function hasPremiumAccess(
   return computePlanStatus(currentUser) !== 'expired';
 }
 
+
+/**
+ * True when the learner may open/read every chapter (including Class 8).
+ * Free-trial and paid members: yes. Guests and expired: no (Class 8 stays "upcoming" for guests).
+ * Does NOT unlock paid-only actions (download / answer keys / quiz assessment) — use canDownloadContent.
+ */
+export function canAccessAllChapters(
+  currentUser: UserProfile | null | undefined,
+  isAdminLoggedIn = false
+): boolean {
+  return hasPremiumAccess(currentUser, isAdminLoggedIn);
+}
+
 /**
  * True when the learner has an active paid plan (not trial).
  * Admins always allowed. Use for download / gated print.

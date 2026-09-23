@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { playPronunciation } from '../utils/pronunciation';
 import { Grade8SyllabusModal } from './Grade8SyllabusModal';
 import { useAuthStore } from '../store/authStore';
+import { canAccessAllChapters } from '../utils/premiumAccess';
 import '../styles/home-page.css';
 
 export interface HomePageProps {
@@ -460,11 +461,12 @@ const HomePage: React.FC<HomePageProps> = ({
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const { isAdminLoggedIn } = useAuthStore();
+  const { isAdminLoggedIn, currentUser } = useAuthStore();
+  const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
   const [isGrade8ModalOpen, setIsGrade8ModalOpen] = useState<boolean>(false);
 
   const visibleChapters = CHAPTERS_INFO.filter(
-    (ch) => isAdminLoggedIn || !ch.id.startsWith('grade8_')
+    (ch) => canReadAllChapters || !ch.id.startsWith('grade8_')
   );
 
   const categories = [
@@ -492,7 +494,7 @@ const HomePage: React.FC<HomePageProps> = ({
   });
 
   const openGrade8Syllabus = () => {
-    if (!isAdminLoggedIn) return;
+    if (!canReadAllChapters) return;
     setIsGrade8ModalOpen(true);
   };
 
@@ -1091,8 +1093,8 @@ const HomePage: React.FC<HomePageProps> = ({
           </p>
         </div>
 
-        {/* Grade 8 Syllabus Quick Banner — upcoming for public; full for admin preview */}
-        {isAdminLoggedIn ? (
+        {/* Grade 8 Syllabus Quick Banner — upcoming for guests; open for trial + paid (+ admin) */}
+        {canReadAllChapters ? (
           <div
             className="home-grade8-syllabus-banner"
             onClick={openGrade8Syllabus}
@@ -1365,7 +1367,7 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {isAdminLoggedIn && (
+      {canReadAllChapters && (
         <Grade8SyllabusModal
           isOpen={isGrade8ModalOpen}
           onClose={() => setIsGrade8ModalOpen(false)}
