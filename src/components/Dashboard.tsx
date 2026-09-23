@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import HomePage from './HomePage';
 import FAQSection from './FAQSection';
 import PhilosophyPage from './PhilosophyPage';
+import CbseSanskritGuidePage from './CbseSanskritGuidePage';
 import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
 import AuthModal from './AuthModal';
 import UserProfileModal from './UserProfileModal';
@@ -50,18 +51,26 @@ type DashboardView =
   | 'quiz'
   | 'worksheets'
   | 'faq'
-  | 'philosophy';
+  | 'philosophy'
+  | 'cbse-guide';
 
 const PHILOSOPHY_PATHS = new Set(['/philosophy', '/darsana', '/darshana']);
+const CBSE_GUIDE_PATHS = new Set([
+  '/cbse-sanskrit-guide',
+  '/ncert-sanskrit-exam',
+  '/cbse-sanskrit',
+]);
 
 const pathToView = (pathname: string): DashboardView | null => {
   const clean = pathname.replace(/\/+$/, '') || '/';
   if (PHILOSOPHY_PATHS.has(clean)) return 'philosophy';
+  if (CBSE_GUIDE_PATHS.has(clean)) return 'cbse-guide';
   return null;
 };
 
 const viewToPath = (view: DashboardView): string => {
   if (view === 'philosophy') return '/philosophy';
+  if (view === 'cbse-guide') return '/cbse-sanskrit-guide';
   return '/';
 };
 
@@ -74,7 +83,8 @@ const isValidSavedView = (saved: string | null): saved is DashboardView =>
   saved === 'quiz' ||
   saved === 'worksheets' ||
   saved === 'faq' ||
-  saved === 'philosophy';
+  saved === 'philosophy' ||
+  saved === 'cbse-guide';
 
 const Dashboard: React.FC = () => {
   const [lessons, setLessons] = useState(STATIC_LESSONS);
@@ -127,7 +137,7 @@ const Dashboard: React.FC = () => {
       return targetView !== 'home';
     }
     // smart_freemium mode (default & recommended):
-    if (targetView === 'home' || targetView === 'faq' || targetView === 'philosophy') return false;
+    if (targetView === 'home' || targetView === 'faq' || targetView === 'philosophy' || targetView === 'cbse-guide') return false;
     if (targetView === 'reader') {
       const lessonToCheck = targetLessonId || lessons[lessonIndex]?.id;
       // Varṇamālā and Chapter 1 (gsde101) are free for guests!
@@ -156,7 +166,7 @@ const Dashboard: React.FC = () => {
     view: DashboardView,
     lessonId?: string
   ) => {
-    if (view === 'home' || view === 'faq' || view === 'philosophy') {
+    if (view === 'home' || view === 'faq' || view === 'philosophy' || view === 'cbse-guide') {
       setActiveView(view);
       return;
     }
@@ -238,7 +248,8 @@ const Dashboard: React.FC = () => {
         target === 'quiz' ||
         target === 'worksheets' ||
         target === 'faq' ||
-        target === 'philosophy'
+        target === 'philosophy' ||
+        target === 'cbse-guide'
       ) {
         if (target === 'grammar') {
           setGrammarResetKey((k) => k + 1);
@@ -251,10 +262,10 @@ const Dashboard: React.FC = () => {
   // Guard against stale localStorage pointing to gated content for guest visitors
   useEffect(() => {
     if (!currentUser) {
-      if (accessMode === 'strict_gate' && activeView !== 'home' && activeView !== 'faq' && activeView !== 'philosophy') {
+      if (accessMode === 'strict_gate' && activeView !== 'home' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide') {
         setActiveView('home');
       } else if (accessMode === 'smart_freemium') {
-        if (activeView !== 'home' && activeView !== 'reader' && activeView !== 'faq' && activeView !== 'philosophy') {
+        if (activeView !== 'home' && activeView !== 'reader' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide') {
           setActiveView('home');
         } else if (activeView === 'reader') {
           const currId = lessons[lessonIndex]?.id;
@@ -272,7 +283,7 @@ const Dashboard: React.FC = () => {
     localStorage.setItem('school-active-view', activeView);
   }, [activeView]);
 
-  // Keep shareable /philosophy URL in sync (other views stay on /)
+  // Keep shareable /philosophy and /cbse-sanskrit-guide URLs in sync (other views stay on /)
   useEffect(() => {
     try {
       const desired = viewToPath(activeView);
@@ -642,6 +653,7 @@ const Dashboard: React.FC = () => {
           onOpenQuiz={() => navigateToView('quiz')}
           onOpenWorksheets={() => navigateToView('worksheets')}
           onOpenPhilosophy={() => navigateToView('philosophy')}
+          onOpenCbseGuide={() => navigateToView('cbse-guide')}
         />
       )}
       {activeView === 'faq' && (
@@ -652,6 +664,14 @@ const Dashboard: React.FC = () => {
           onOpenRegister={() => openAuthModal('register')}
           onOpenVedicMaths={() => navigateToView('vedic-maths')}
           onGoHome={() => navigateToView('home')}
+        />
+      )}
+      {activeView === 'cbse-guide' && (
+        <CbseSanskritGuidePage
+          onOpenRegister={() => openAuthModal('register')}
+          onGoHome={() => navigateToView('home')}
+          onOpenPhilosophy={() => navigateToView('philosophy')}
+          onOpenGrammar={handleOpenGrammar}
         />
       )}
       <Suspense fallback={<ViewLoader />}>
@@ -724,6 +744,7 @@ const Dashboard: React.FC = () => {
           onOpenWorksheets={() => navigateToView('worksheets')}
           onOpenFAQ={() => navigateToView('faq')}
           onOpenPhilosophy={() => navigateToView('philosophy')}
+          onOpenCbseGuide={() => navigateToView('cbse-guide')}
         />
       )}
 

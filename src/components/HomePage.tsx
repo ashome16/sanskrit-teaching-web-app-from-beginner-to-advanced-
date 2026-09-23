@@ -11,6 +11,7 @@ export interface HomePageProps {
   onOpenGrammar: () => void;
   onOpenVedicMaths?: () => void;
   onOpenPhilosophy?: () => void;
+  onOpenCbseGuide?: () => void;
   onOpenQuiz?: () => void;
   onOpenWorksheets?: () => void;
 }
@@ -452,6 +453,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenGrammar,
   onOpenVedicMaths,
   onOpenPhilosophy,
+  onOpenCbseGuide,
   onOpenQuiz,
   onOpenWorksheets,
 }) => {
@@ -585,6 +587,16 @@ const HomePage: React.FC<HomePageProps> = ({
               title="Our Philosophy · Darśana"
             >
               🪔 Darśana · Philosophy
+            </button>
+          )}
+          {onOpenCbseGuide && (
+            <button
+              type="button"
+              className="home-btn-secondary"
+              onClick={onOpenCbseGuide}
+              title="CBSE NCERT Sanskrit Exam Guide (Classes 7–10)"
+            >
+              📘 CBSE Sanskrit Guide
             </button>
           )}
           {onOpenQuiz && (

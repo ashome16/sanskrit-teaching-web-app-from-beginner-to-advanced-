@@ -12,6 +12,7 @@ export interface FooterProps {
   onOpenWorksheets?: () => void;
   onOpenFAQ?: () => void;
   onOpenPhilosophy?: () => void;
+  onOpenCbseGuide?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -24,6 +25,7 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenWorksheets,
   onOpenFAQ,
   onOpenPhilosophy,
+  onOpenCbseGuide,
 }) => {
   const [legalModal, setLegalModal] = useState<LegalModalType>(null);
   const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
@@ -147,6 +149,15 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenPhilosophy}
                 >
                   🪔 Darśana · Our Philosophy
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="footer-nav-btn"
+                  onClick={onOpenCbseGuide}
+                >
+                  📘 CBSE Sanskrit Exam Guide (7–10)
                 </button>
               </li>
             </ul>

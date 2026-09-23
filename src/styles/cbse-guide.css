@@ -1,0 +1,128 @@
+/* CBSE Sanskrit Exam Guide — table + note extras (reuses philosophy.css layout) */
+
+.cbse-guide-table-wrap {
+  overflow-x: auto;
+  margin: 0 0 1rem;
+  border: 1px solid #ebdcc5;
+  border-radius: 14px;
+  background: #fffdf9;
+  box-shadow: 0 2px 10px rgba(120, 53, 15, 0.04);
+  -webkit-overflow-scrolling: touch;
+}
+
+.cbse-guide-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.cbse-guide-table th,
+.cbse-guide-table td {
+  text-align: left;
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid #efe4d4;
+  vertical-align: top;
+  line-height: 1.5;
+  color: #3f3428;
+}
+
+.cbse-guide-table th {
+  background: #faf5ee;
+  color: #6b5e50;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  border-bottom: 1px solid #e5d8c3;
+}
+
+.cbse-guide-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.cbse-guide-table tbody tr:hover {
+  background: #fffbf5;
+}
+
+.cbse-guide-table td:first-child {
+  font-weight: 700;
+  color: #9a3423;
+  white-space: nowrap;
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+}
+
+.cbse-guide-note {
+  margin: 0 0 0.5rem;
+  padding: 0.85rem 1rem;
+  background: #fffbeb;
+  border: 1px solid #f59e0b;
+  border-radius: 12px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #78350f;
+}
+
+.cbse-guide-dl {
+  margin: 0 0 1rem;
+}
+
+.cbse-guide-dl dt {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-weight: 800;
+  font-size: 1.02rem;
+  color: #9a3423;
+  margin: 0.85rem 0 0.25rem;
+  line-height: 1.4;
+}
+
+.cbse-guide-dl dt:first-child {
+  margin-top: 0;
+}
+
+.cbse-guide-dl dd {
+  margin: 0;
+  padding-left: 0.15rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #3f3428;
+}
+
+.cbse-guide-keywords {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.cbse-guide-keywords li {
+  background: #fffdf9;
+  border: 1px solid #ebdcc5;
+  border-radius: 12px;
+  padding: 0.75rem 0.95rem;
+  line-height: 1.55;
+  font-size: 0.98rem;
+  color: #3f3428;
+}
+
+.cbse-guide-keywords strong {
+  display: block;
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-weight: 800;
+  color: #9a3423;
+  margin-bottom: 0.2rem;
+}
+
+@media (max-width: 640px) {
+  .cbse-guide-table {
+    font-size: 0.86rem;
+  }
+
+  .cbse-guide-table th,
+  .cbse-guide-table td {
+    padding: 0.55rem 0.5rem;
+  }
+}
