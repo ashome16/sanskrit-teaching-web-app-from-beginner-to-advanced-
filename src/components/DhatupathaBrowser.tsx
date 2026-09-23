@@ -7,6 +7,7 @@ import {
   searchDhatupatha,
 } from '../utils/dhatupatha';
 import { playPronunciation } from '../utils/pronunciation';
+import LatFormsTable from './LatFormsTable';
 import '../styles/dhatupatha.css';
 
 type DhatupathaBrowserProps = {
@@ -180,9 +181,10 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
 
               {open && (
                 <div className="dp-detail" onClick={(e) => e.stopPropagation()}>
+                  <LatFormsTable key={key} entry={entry} />
                   {(entry.examples ?? []).length > 0 && (
                     <>
-                      <h4 className="dp-detail-heading">Example forms</h4>
+                      <h4 className="dp-detail-heading">Quick examples</h4>
                       <ul className="dp-example-list">
                         {entry.examples!.map((ex) => (
                           <li key={ex}>
@@ -204,7 +206,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
                       <p className="dp-notes">{entry.notes}</p>
                     </>
                   )}
-                  <p className="dp-hint">Tap the card again to collapse · Phase 1 library browse</p>
+                  <p className="dp-hint">Tap the card again to collapse · Laṭ present tables · Phase 2</p>
                 </div>
               )}
             </article>
