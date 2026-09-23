@@ -30,7 +30,9 @@ const VOWEL_TO_MATRA: Record<string, string> = {
 const WINDOWS_BARE_CONSONANTS = new Set(
   'क ख ग घ ङ च छ ज झ ञ ट ठ ड ढ ण त थ द ध न प फ ब भ म य र ल व श ष स ह'.split(' '),
 );
-const WINDOWS_CONJUNCT_TILES = new Set(['क्ष', 'ज्ञ', 'त्र', 'श्र']);
+// Bare conjunct tiles: Hindi Devanagari on every OS (Mac roman ksha/jnya/sh-ra
+// and doubled त्र त्र sound worse than the Windows hi-IN letter voice).
+const CONJUNCT_TILES = new Set(['क्ष', 'ज्ञ', 'त्र', 'श्र']);
 
 // Exact/substring phonetic overrides for words that speech engines
 // otherwise mispronounce or misinterpret entirely.
@@ -67,14 +69,14 @@ const applyVisargaEcho = (word: string): string => {
 
 // Builds the text actually sent to the speech engine: word overrides + visarga echo.
 // Full words stay Devanagari (Hindi voice). Single tiles use roman cues.
-// On Windows, avoid roman cues for bare consonants and the existing ज्ञ/त्र/क्ष
-// conjuncts — SAPI garbles those; plain Devanagari + hi-IN is clearer.
+// Bare conjuncts always use Devanagari + hi-IN (Mac + Windows). On Windows,
+// bare consonants also skip roman cues — SAPI garbles those.
 const toSpeechText = (word: string): string => {
-  // Mac roman cues still work — this early return is Windows-only.
-  if (
-    isWindowsPlatform() &&
-    (WINDOWS_BARE_CONSONANTS.has(word) || WINDOWS_CONJUNCT_TILES.has(word))
-  ) {
+  if (CONJUNCT_TILES.has(word)) {
+    return word;
+  }
+  // Mac roman cues still work for non-conjunct tiles — this is Windows-only.
+  if (isWindowsPlatform() && WINDOWS_BARE_CONSONANTS.has(word)) {
     return word;
   }
   // Single बारहखड़ी / Varṇamālā tiles: distinct roman cues.
