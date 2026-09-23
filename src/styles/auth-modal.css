@@ -715,6 +715,47 @@
   transform: translateY(-50%) scale(1.1);
 }
 
+/* Remember & Save Password Card */
+.auth-remember-card {
+  background: #fdfbf7;
+  border: 1.5px solid #fed7aa;
+  border-radius: 10px;
+  padding: 0.75rem 0.95rem;
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.auth-remember-card:hover {
+  background: #fff8f0;
+  border-color: #f97316;
+}
+
+.auth-remember-content {
+  flex: 1;
+}
+
+.auth-remember-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.35;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.auth-remember-sub {
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.35;
+  margin-top: 0.15rem;
+}
+
 /* Remember me row */
 .auth-remember-row {
   display: flex;
@@ -728,8 +769,8 @@
 
 .auth-remember-label {
   display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: flex-start;
+  gap: 0.6rem;
   cursor: pointer;
   user-select: none;
   font-weight: 500;
@@ -737,11 +778,13 @@
 }
 
 .auth-remember-checkbox {
-  width: 1.05rem;
-  height: 1.05rem;
+  width: 1.15rem;
+  height: 1.15rem;
   accent-color: #b45309;
   cursor: pointer;
   border-radius: 4px;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
 }
 
 .auth-clear-saved-btn {

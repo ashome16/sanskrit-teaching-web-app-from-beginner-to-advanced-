@@ -24,6 +24,7 @@ const GRADES_LIST: SanskritGrade[] = [
 const UserProfileModal: React.FC = () => {
   const {
     currentUser,
+    accounts,
     isProfileModalOpen,
     closeProfileModal,
     openPaymentModal,
@@ -64,6 +65,7 @@ const UserProfileModal: React.FC = () => {
   const [confirmNewPasswordInput, setConfirmNewPasswordInput] = useState('');
   const [showCurrentPass, setShowCurrentPass] = useState(false);
   const [showNewPass, setShowNewPass] = useState(false);
+  const [updateSavedOnDevice, setUpdateSavedOnDevice] = useState(true);
   const [passwordChangeMessage, setPasswordChangeMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
   const [isRememberedOnDevice, setIsRememberedOnDevice] = useState(checkIsRemembered);
   const [deviceSaveMessage, setDeviceSaveMessage] = useState<string | null>(null);
@@ -135,11 +137,24 @@ const UserProfileModal: React.FC = () => {
 
     const res = changePassword(currentPasswordInput, newPasswordInput);
     if (res.success) {
-      setPasswordChangeMessage({ type: 'success', text: 'Password successfully changed and updated!' });
+      if (updateSavedOnDevice) {
+        setStoredRememberedCredentials(currentUser.username, newPasswordInput);
+        setIsRememberedOnDevice(true);
+        if (typeof window !== 'undefined' && 'PasswordCredential' in window && (navigator.credentials as any)?.store) {
+          try {
+            const cred = new (window as any).PasswordCredential({
+              id: currentUser.username,
+              password: newPasswordInput,
+              name: (currentUser.fullName || currentUser.username).trim(),
+            });
+            (navigator.credentials as any).store(cred);
+          } catch {}
+        }
+      }
+      setPasswordChangeMessage({ type: 'success', text: 'Password successfully changed and updated! 💾' });
       setCurrentPasswordInput('');
       setNewPasswordInput('');
       setConfirmNewPasswordInput('');
-      setIsRememberedOnDevice(checkIsRemembered());
       setTimeout(() => {
         setIsPasswordSectionOpen(false);
         setPasswordChangeMessage(null);
@@ -156,15 +171,32 @@ const UserProfileModal: React.FC = () => {
     setTimeout(() => setDeviceSaveMessage(null), 3000);
   };
 
-  const handleSavePasswordOnDevice = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!quickSavePassword) return;
-    setStoredRememberedCredentials(currentUser.username, quickSavePassword);
+  const handleSavePasswordOnDevice = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    const userAcc = accounts[currentUser.id];
+    const passToSave = quickSavePassword || userAcc?.passwordHash;
+    if (!passToSave) {
+      setIsPromptingQuickSave(true);
+      return;
+    }
+    setStoredRememberedCredentials(currentUser.username, passToSave);
     setIsRememberedOnDevice(true);
     setIsPromptingQuickSave(false);
     setQuickSavePassword('');
-    setDeviceSaveMessage('Password saved to this browser for 1-click login!');
-    setTimeout(() => setDeviceSaveMessage(null), 3000);
+    setDeviceSaveMessage('Password saved to this browser for 1-click login! 💾');
+
+    if (typeof window !== 'undefined' && 'PasswordCredential' in window && (navigator.credentials as any)?.store) {
+      try {
+        const cred = new (window as any).PasswordCredential({
+          id: currentUser.username,
+          password: passToSave,
+          name: (currentUser.fullName || currentUser.username).trim(),
+        });
+        (navigator.credentials as any).store(cred);
+      } catch {}
+    }
+
+    setTimeout(() => setDeviceSaveMessage(null), 3500);
   };
 
   const toggleInterest = (interest: string) => {
@@ -401,9 +433,9 @@ const UserProfileModal: React.FC = () => {
                   <button
                     type="button"
                     className="profile-save-remember-btn"
-                    onClick={() => setIsPromptingQuickSave(true)}
+                    onClick={() => handleSavePasswordOnDevice()}
                   >
-                    Save Password on Browser
+                    💾 Remember / Save Password
                   </button>
                 )}
               </div>
@@ -487,6 +519,18 @@ const UserProfileModal: React.FC = () => {
                       required
                       autoComplete="new-password"
                     />
+                  </div>
+
+                  <div className="auth-remember-row" style={{ marginTop: '0.4rem', marginBottom: '0.85rem' }}>
+                    <label className="auth-remember-label">
+                      <input
+                        type="checkbox"
+                        checked={updateSavedOnDevice}
+                        onChange={(e) => setUpdateSavedOnDevice(e.target.checked)}
+                        className="auth-remember-checkbox"
+                      />
+                      <span>Save updated password on this device (पासवर्ड सुरक्षितं रक्षतु)</span>
+                    </label>
                   </div>
 
                   <div style={{ display: 'flex', gap: '0.6rem', marginTop: '0.85rem' }}>

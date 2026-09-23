@@ -5,6 +5,7 @@ import {
   SANSKRIT_INTERESTS_LIST,
   getStoredRememberedCredentials,
   removeStoredRememberedCredentials,
+  setStoredRememberedCredentials,
 } from '../store/authStore';
 import type { SanskritGrade } from '../types/auth';
 import { isResetEmailConfigured } from '../utils/sendPasswordResetEmail';
@@ -50,7 +51,7 @@ const AuthModal: React.FC = () => {
   const rememberedCreds = getStoredRememberedCredentials();
   const [loginIdentifier, setLoginIdentifier] = useState(rememberedCreds?.identifier || '');
   const [loginPassword, setLoginPassword] = useState(rememberedCreds?.password || '');
-  const [rememberMe, setRememberMe] = useState(Boolean(rememberedCreds));
+  const [rememberMe, setRememberMe] = useState(true);
   const [showLoginPassword, setShowLoginPassword] = useState(false);
 
   // Register form state
@@ -58,6 +59,7 @@ const AuthModal: React.FC = () => {
   const [showRegPassword, setShowRegPassword] = useState(false);
 
   // Forgot password & OTP state
+  const [resetRememberMe, setResetRememberMe] = useState(true);
   const [forgotIdentifier, setForgotIdentifier] = useState('');
   const [otpInput, setOtpInput] = useState('');
   const [newPassword, setNewPassword] = useState('');
@@ -200,12 +202,35 @@ const AuthModal: React.FC = () => {
     const res = verifyOtpAndResetPassword(forgotIdentifier, otpInput, newPassword);
     if (res.success) {
       setResetSuccessMessage('Password successfully updated! Logging you in...');
+      if (resetRememberMe) {
+        setStoredRememberedCredentials(forgotIdentifier.trim(), newPassword);
+        if (typeof window !== 'undefined' && 'PasswordCredential' in window && (navigator.credentials as any)?.store) {
+          try {
+            const cred = new (window as any).PasswordCredential({
+              id: forgotIdentifier.trim(),
+              password: newPassword,
+            });
+            (navigator.credentials as any).store(cred);
+          } catch {}
+        }
+      }
     }
   };
 
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    login(loginIdentifier, loginPassword, rememberMe);
+    const res = login(loginIdentifier, loginPassword, rememberMe);
+    if (res.success && rememberMe) {
+      if (typeof window !== 'undefined' && 'PasswordCredential' in window && (navigator.credentials as any)?.store) {
+        try {
+          const cred = new (window as any).PasswordCredential({
+            id: loginIdentifier.trim(),
+            password: loginPassword,
+          });
+          (navigator.credentials as any).store(cred);
+        } catch {}
+      }
+    }
   };
 
   const handleRegisterSubmit = (e: React.FormEvent) => {
@@ -225,7 +250,18 @@ const AuthModal: React.FC = () => {
       },
       regRememberMe
     );
-    if (!res.success) {
+    if (res.success && regRememberMe) {
+      if (typeof window !== 'undefined' && 'PasswordCredential' in window && (navigator.credentials as any)?.store) {
+        try {
+          const cred = new (window as any).PasswordCredential({
+            id: regUsername.trim(),
+            password: regPassword,
+            name: (regFullName || regUsername).trim(),
+          });
+          (navigator.credentials as any).store(cred);
+        } catch {}
+      }
+    } else if (!res.success) {
       if (res.code === 'email_exists') {
         setEmailExistsHint(true);
         // Prefill forgot-password identifier with the colliding email.
@@ -388,13 +424,14 @@ const AuthModal: React.FC = () => {
 
         {/* Forms */}
         {activeTab === 'login' ? (
-          <form className="auth-form" onSubmit={handleLoginSubmit}>
+          <form className="auth-form" onSubmit={handleLoginSubmit} method="post" action="#">
             <div className="auth-form-group">
               <label className="auth-label" htmlFor="login-username">
                 Username or Email
               </label>
               <input
                 id="login-username"
+                name="username"
                 type="text"
                 className="auth-input"
                 placeholder="Enter your username or email"
@@ -413,6 +450,7 @@ const AuthModal: React.FC = () => {
               <div className="auth-password-wrapper">
                 <input
                   id="login-password"
+                  name="password"
                   type={showLoginPassword ? 'text' : 'password'}
                   className="auth-input auth-password-input"
                   placeholder="Enter your password"
@@ -433,22 +471,32 @@ const AuthModal: React.FC = () => {
               </div>
             </div>
 
-            <div className="auth-remember-row">
-              <label className="auth-remember-label">
-                <input
-                  type="checkbox"
-                  checked={rememberMe}
-                  onChange={(e) => {
-                    const checked = e.target.checked;
-                    setRememberMe(checked);
-                    if (!checked) {
-                      removeStoredRememberedCredentials();
-                    }
-                  }}
-                  className="auth-remember-checkbox"
-                />
-                <span>Remember / Save password on this device (पासवर्ड सुरक्षितं रक्षतु)</span>
-              </label>
+            <div className="auth-remember-card">
+              <div className="auth-remember-content">
+                <label className="auth-remember-label">
+                  <input
+                    type="checkbox"
+                    checked={rememberMe}
+                    onChange={(e) => {
+                      const checked = e.target.checked;
+                      setRememberMe(checked);
+                      if (!checked) {
+                        removeStoredRememberedCredentials();
+                      }
+                    }}
+                    className="auth-remember-checkbox"
+                  />
+                  <div>
+                    <div className="auth-remember-title">
+                      <span>💾</span>
+                      <span>Remember / Save password on this device (पासवर्ड सुरक्षितं रक्षतु)</span>
+                    </div>
+                    <div className="auth-remember-sub">
+                      Saves credentials in this browser so you can sign in automatically without re-entering.
+                    </div>
+                  </div>
+                </label>
+              </div>
               {getStoredRememberedCredentials() && (
                 <button
                   type="button"
@@ -458,9 +506,9 @@ const AuthModal: React.FC = () => {
                     setRememberMe(false);
                     setLoginPassword('');
                   }}
-                  title="Clear saved password from this browser"
+                  title="Clear saved password from this device"
                 >
-                  Clear saved
+                  ✕ Clear saved
                 </button>
               )}
             </div>
@@ -524,19 +572,21 @@ const AuthModal: React.FC = () => {
           </form>
         ) : activeTab === 'register' ? (
           /* Registration Form */
-          <form className="auth-form" onSubmit={handleRegisterSubmit}>
+          <form className="auth-form" onSubmit={handleRegisterSubmit} method="post" action="#">
             <div className="auth-form-group">
               <label className="auth-label" htmlFor="reg-username">
                 Username *
               </label>
               <input
                 id="reg-username"
+                name="username"
                 type="text"
                 className="auth-input"
                 placeholder="e.g. vidyarthi_ram"
                 value={regUsername}
                 onChange={(e) => setRegUsername(e.target.value)}
                 required
+                autoComplete="username"
               />
             </div>
 
@@ -546,11 +596,13 @@ const AuthModal: React.FC = () => {
               </label>
               <input
                 id="reg-fullname"
+                name="name"
                 type="text"
                 className="auth-input"
                 placeholder="e.g. Ram Sharma"
                 value={regFullName}
                 onChange={(e) => setRegFullName(e.target.value)}
+                autoComplete="name"
               />
             </div>
 
@@ -560,12 +612,14 @@ const AuthModal: React.FC = () => {
               </label>
               <input
                 id="reg-email"
+                name="email"
                 type="email"
                 className="auth-input"
                 placeholder="e.g. student@example.com"
                 value={regEmail}
                 onChange={(e) => setRegEmail(e.target.value)}
                 required
+                autoComplete="email"
               />
             </div>
 
@@ -576,6 +630,7 @@ const AuthModal: React.FC = () => {
               <div className="auth-password-wrapper">
                 <input
                   id="reg-password"
+                  name="password"
                   type={showRegPassword ? 'text' : 'password'}
                   className="auth-input auth-password-input"
                   placeholder="Create a password"
@@ -596,16 +651,26 @@ const AuthModal: React.FC = () => {
               </div>
             </div>
 
-            <div className="auth-remember-row" style={{ marginTop: '-0.2rem', marginBottom: '0.85rem' }}>
-              <label className="auth-remember-label">
-                <input
-                  type="checkbox"
-                  checked={regRememberMe}
-                  onChange={(e) => setRegRememberMe(e.target.checked)}
-                  className="auth-remember-checkbox"
-                />
-                <span>Save password on this device for 1-click login</span>
-              </label>
+            <div className="auth-remember-card" style={{ marginTop: '0.2rem', marginBottom: '1rem' }}>
+              <div className="auth-remember-content">
+                <label className="auth-remember-label">
+                  <input
+                    type="checkbox"
+                    checked={regRememberMe}
+                    onChange={(e) => setRegRememberMe(e.target.checked)}
+                    className="auth-remember-checkbox"
+                  />
+                  <div>
+                    <div className="auth-remember-title">
+                      <span>💾</span>
+                      <span>Save password on this device (पासवर्ड सुरक्षितं रक्षतु)</span>
+                    </div>
+                    <div className="auth-remember-sub">
+                      Enables instant 1-click login on this browser without retyping credentials.
+                    </div>
+                  </div>
+                </label>
+              </div>
             </div>
 
             {/* Avatar Picker */}
@@ -988,6 +1053,28 @@ const AuthModal: React.FC = () => {
                     >
                       {showConfirmPassword ? '🙈' : '👁️'}
                     </button>
+                  </div>
+                </div>
+
+                <div className="auth-remember-card" style={{ marginTop: '0.4rem', marginBottom: '1.25rem' }}>
+                  <div className="auth-remember-content">
+                    <label className="auth-remember-label">
+                      <input
+                        type="checkbox"
+                        checked={resetRememberMe}
+                        onChange={(e) => setResetRememberMe(e.target.checked)}
+                        className="auth-remember-checkbox"
+                      />
+                      <div>
+                        <div className="auth-remember-title">
+                          <span>💾</span>
+                          <span>Save new password on this device (पासवर्ड सुरक्षितं रक्षतु)</span>
+                        </div>
+                        <div className="auth-remember-sub">
+                          Updates your saved password on this browser for 1-click login.
+                        </div>
+                      </div>
+                    </label>
                   </div>
                 </div>
 
