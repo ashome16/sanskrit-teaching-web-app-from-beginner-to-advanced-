@@ -197,6 +197,79 @@ export const DhatupathaArticles: React.FC<DhatupathaArticlesProps> = ({
                 </div>
               )}
 
+              {/* 10 Classical Gaṇa Workshop Cards */}
+              {sec.ganaCards && sec.ganaCards.length > 0 && (
+                <div className="dp-ganas-grid">
+                  {sec.ganaCards.map((g) => (
+                    <div key={g.number} className="dp-gana-workshop-card">
+                      <div className="dp-gana-card-header">
+                        <div className="dp-gana-num-badge">
+                          <span className="dp-gana-num-digit">{g.number}</span>
+                          <span className="dp-gana-num-label">गणः</span>
+                        </div>
+                        <div className="dp-gana-card-title-col">
+                          <h4 className="dp-gana-name-san">{g.nameSan}</h4>
+                          <div className="dp-gana-name-en-row">
+                            <span className="dp-gana-name-en">{g.nameEn}</span>
+                            <span className="dp-gana-badge-pill">{g.titleBadge}</span>
+                          </div>
+                        </div>
+                        <div className="dp-gana-vikarana-tag">
+                          <span className="dp-vik-label">विकरणम्</span>
+                          <span className="dp-vik-val">{g.vikarana}</span>
+                        </div>
+                      </div>
+
+                      <div className="dp-gana-blueprint-box">
+                        <div className="dp-gana-box-title">
+                          <span>⚙️</span> <strong>The Blueprint (संरचना-प्रक्रिया):</strong>
+                        </div>
+                        <p className="dp-gana-blueprint-text">{g.blueprint}</p>
+                      </div>
+
+                      <div className="dp-gana-example-box">
+                        <div className="dp-gana-box-title">
+                          <span>✨</span> <strong>Paradigmatic Formulation (उदाहरणम्):</strong>
+                        </div>
+                        <div className="dp-gana-derivation-row">
+                          <div className="dp-gana-deriv-left">
+                            <span className="dp-gana-root">{g.exampleRoot}</span>
+                            <span className="dp-gana-arrow">➔</span>
+                            <span className="dp-gana-stem">{g.exampleDerivation}</span>
+                          </div>
+                          <button
+                            type="button"
+                            className="dp-gana-audio-btn"
+                            onClick={() =>
+                              playPronunciation(
+                                g.exampleDerivation.split('➔')[1]?.split('(')[0]?.trim() ||
+                                  g.exampleDerivation
+                              )
+                            }
+                            title="Listen to authentic pronunciation"
+                            aria-label={`Pronounce ${g.exampleDerivation}`}
+                          >
+                            🔊 Listen
+                          </button>
+                        </div>
+                        <div className="dp-gana-meaning">
+                          <em>Meaning:</em> {g.exampleMeaning}
+                        </div>
+                      </div>
+
+                      {g.funFact && (
+                        <div className="dp-gana-funfact-box">
+                          <span className="dp-funfact-icon">💡</span>
+                          <div className="dp-gana-funfact-text">
+                            <strong>Grammatical Insight:</strong> {g.funFact}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
               {/* Responsive Table */}
               {sec.table && (
                 <div className="dp-table-scroll-container">

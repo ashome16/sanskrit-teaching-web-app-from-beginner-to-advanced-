@@ -12,6 +12,19 @@ export interface ArticleExample {
   audioKey?: string;
 }
 
+export interface GanaCard {
+  number: number;
+  nameSan: string;
+  nameEn: string;
+  titleBadge: string;
+  blueprint: string;
+  exampleRoot: string;
+  exampleDerivation: string;
+  exampleMeaning: string;
+  funFact?: string;
+  vikarana: string;
+}
+
 export interface ArticleSection {
   title: string;
   titleSan?: string;
@@ -23,6 +36,7 @@ export interface ArticleSection {
   };
   keyTakeaway?: string;
   examples?: ArticleExample[];
+  ganaCards?: GanaCard[];
 }
 
 export interface DhatupathaArticle {
@@ -115,12 +129,12 @@ export const DHATUPATHA_ARTICLES: DhatupathaArticle[] = [
   {
     id: 'ten-ganas-breakdown',
     titleSan: 'दशगणाः — विकरण-व्यवस्था एवं लक्षणम्',
-    titleEn: 'The 10 Gaṇa Classes: Conjugational Markers & Characteristics',
+    titleEn: 'The 10 Gaṇa Classes: Conjugational Markers & Structural Templates',
     badge: 'दशगणाः',
     badgeColor: '#b45309',
-    readTime: '8 min read',
+    readTime: '9 min read',
     summary:
-      'Master the 10 conjugational classes of Sanskrit verbs. Understand why different roots require different conjugational infixes (Vikaraṇas) like शप्, श्यन्, and णिच्, complete with mnemonic shlokas and examples.',
+      'In Sanskrit grammar, the 2,000+ verbal roots (dhātus) are systematically organized into 10 distinct classes called Gaṇas. Each class acts like a specific workshop or structural template, dictating root-vowel strengthening (Guṇa) and conjugational infixes (Vikaraṇas).',
     suggestedAction: {
       type: 'generate',
       dhatuId: 'bhu',
@@ -128,18 +142,167 @@ export const DHATUPATHA_ARTICLES: DhatupathaArticle[] = [
     },
     sections: [
       {
-        title: 'The Great Gaṇa Mnemonic (स्मरण-कारिका)',
-        titleSan: 'दशगणानां श्लोकः',
+        title: 'The Concept of Gaṇas: The 10 Grammatical Workshops',
+        titleSan: 'गण-स्वरूपम् एवं स्मरण-कारिका',
         paragraphs: [
-          'All 2,000 roots in the Dhātupāṭha are divided into 10 distinct classes called Gaṇas (गणाः). Each Gaṇa is identified by its first root and inserts a specific connecting element called a Vikaraṇa-pratyaya (विकरण-प्रत्यय) between the root and the ending.',
-          'Tradition encodes this in a timeless mnemonic couplet:',
+          'In Sanskrit grammar, the 2,000+ verbal roots (dhātus) are systematically organized into 10 distinct classes called Gaṇas (गणाः). Each class acts like a specific workshop or structural template. It determines exactly how a raw root modifies its internal vowels and what specific suffix it takes before receiving a tense/person ending.',
+          'Tradition encodes this classification in a timeless mnemonic couplet revered across centuries of Pāṇinian scholarship:',
         ],
         sutras: [
           {
             sutra: 'भ्वादिरदादिर्जुहोत्यादिर्दैवादिः स्वादिरेव च ।\nतुदादिश्च रुधादिश्च तन्-क्र्यादी चुरादयः ॥',
             number: 'स्मरण-कारिका',
             meaning:
-              'The 10 classes are: Bhvādi (1), Adādi (2), Juhotyādi (3), Divādi (4), Svādi (5), Tudādi (6), Rudhādī (7), Tanādi (8), Kryādi (9), and Curādi (10).',
+              'The 10 classes are: 1. Bhvādi, 2. Adādi, 3. Juhotyādi, 4. Divādi, 5. Svādi, 6. Tudādi, 7. Rudhādi, 8. Tanādi, 9. Kryādi, and 10. Curādi.',
+          },
+        ],
+      },
+      {
+        title: 'The Definitive Guide to All 10 Classical Gaṇas',
+        titleSan: 'दशगणानां कार्यशाला-विमर्शः (The 10 Workshops)',
+        paragraphs: [
+          'Here is the definitive guide to all 10 classical Gaṇas as cataloged in Maharṣi Pāṇini’s grammatical framework, complete with their structural blueprints, derivations, and authentic linguistic insights:',
+        ],
+        ganaCards: [
+          {
+            number: 1,
+            nameSan: 'भ्वादिगणः (Bhvādi gaṇa)',
+            nameEn: 'Class 1',
+            titleBadge: 'The Paradigm Class',
+            vikarana: 'शप् (-a-)',
+            blueprint:
+              'The root vowel gets strengthened (a process called Guṇa), and a stabilizing theme vowel -a- (शप्) is inserted before the personal ending.',
+            exampleRoot: '√भू (bhū - to be)',
+            exampleDerivation: 'भव- + ति ➔ भवति (bhavati)',
+            exampleMeaning: 'He / She / It is, exists, or becomes',
+            funFact:
+              'This is by far the largest class, containing roughly half of all verbal roots in the entire language (~1,000+ roots!).',
+          },
+          {
+            number: 2,
+            nameSan: 'अदादिगणः (Adādi gaṇa)',
+            nameEn: 'Class 2',
+            titleBadge: 'The Direct Class',
+            vikarana: 'लुक् (Zero / Athematic)',
+            blueprint:
+              'This is an athematic class, meaning it completely bypasses any theme vowels (शपः श्लुक्). The personal endings are glued directly onto the raw root.',
+            exampleRoot: '√अद् (ad - to eat)',
+            exampleDerivation: 'अद्- + ति ➔ अत्ति (atti)',
+            exampleMeaning: 'He / She / It eats',
+            funFact:
+              'Bypasses connecting vowels. Contains ancient high-frequency verbs like अद् (eat), या (go), अस् (to be ➔ अस्ति), and विद् (know).',
+          },
+          {
+            number: 3,
+            nameSan: 'जुहोत्यादिगणः (Juhotyādi gaṇa)',
+            nameEn: 'Class 3',
+            titleBadge: 'The Reduplicating Class',
+            vikarana: 'श्लु (Reduplication / द्वित्वम्)',
+            blueprint:
+              'To create its conjugational stem, the first syllable of the root is completely doubled or repeated (reduplication) following strict sound-matching rules (श्लौ ६.१.१०).',
+            exampleRoot: '√हु (hu - to sacrifice)',
+            exampleDerivation: 'जुहु- + ति ➔ जुहोति (juhoti)',
+            exampleMeaning: 'He / She / It sacrifices or offers oblations',
+            funFact:
+              'Reduplication is a deep Proto-Indo-European relic: compare Sanskrit dadāti (दा ➔ ददाति) with ancient Greek dídōmi!',
+          },
+          {
+            number: 4,
+            nameSan: 'दिवादिगणः (Divādi gaṇa)',
+            nameEn: 'Class 4',
+            titleBadge: 'The "Ya" Class',
+            vikarana: 'श्यन् (-ya-)',
+            blueprint:
+              'A distinct -ya- suffix (श्यन्) is welded between the verbal root and the final conjugation ending. The root vowel typically remains unstrengthened.',
+            exampleRoot: '√नृत् (nṛt - to dance)',
+            exampleDerivation: 'नृत्य- + ति ➔ नृत्यति (nṛtyati)',
+            exampleMeaning: 'He / She / It dances',
+            funFact:
+              'Contains ~140 roots, many expressing psychological, mental, or intransitive states (e.g. कुप् ➔ कुप्यति, क्रुध् ➔ क्रुध्यति, मन् ➔ मन्यते).',
+          },
+          {
+            number: 5,
+            nameSan: 'स्वादिगणः (Svādi gaṇa)',
+            nameEn: 'Class 5',
+            titleBadge: 'The "Nu" Class',
+            vikarana: 'श्नु (-nu- / -no-)',
+            blueprint:
+              'The verbal stem is generated by attaching a characteristic -nu- (weak) or -no- (strong with Guṇa) suffix directly to the root before the ending.',
+            exampleRoot: '√आप् (āp - to obtain/reach)',
+            exampleDerivation: 'आप्नो- + ति ➔ आप्नोति (āpnoti)',
+            exampleMeaning: 'He / She / It obtains, reaches, or acquires',
+            funFact:
+              'The signature root सु (extract Soma nectar) gives this entire Gaṇa its ancient Vedic name (सु + आदि = स्वादि).',
+          },
+          {
+            number: 6,
+            nameSan: 'तुदादिगणः (Tudādi gaṇa)',
+            nameEn: 'Class 6',
+            titleBadge: 'The Unstrengthened "A" Class',
+            vikarana: 'श (-a-, No Guṇa)',
+            blueprint:
+              'Like Class 1, a basic -a- vowel (श) is inserted. However, the root vowel remains completely unstrengthened (no Guṇa modification), and the accent shifts to the inserted vowel.',
+            exampleRoot: '√विश् (viś - to enter)',
+            exampleDerivation: 'विश- + ति ➔ विशति (viśati)',
+            exampleMeaning: 'He / She / It enters',
+            funFact:
+              'The "non-strengthened" twin to Bhvādi: compare √bhū (becomes bhavati with Guṇa) with √tud (remains tudati, never *todati!).',
+          },
+          {
+            number: 7,
+            nameSan: 'रुधादिगणः (Rudhādi gaṇa)',
+            nameEn: 'Class 7',
+            titleBadge: 'The Infix Class',
+            vikarana: 'श्नम् (Nasal Infix -na- / -n-)',
+            blueprint:
+              'The most eccentric class in Sanskrit. Instead of tacking a suffix to the end, it splits the root wide open to insert a nasal infix (-na- or -n-) directly inside the root consonants before the final consonant!',
+            exampleRoot: '√भिद् (bhid - to split)',
+            exampleDerivation: 'भि-न-द्- + ति ➔ भिनत्ति (bhinatti)',
+            exampleMeaning: 'He / She / It splits, cleaves, or breaks apart',
+            funFact:
+              'Linguists consider this internal nasal infix one of the oldest Indo-European structural relics, identical to Latin vi-n-co (root vic-).',
+          },
+          {
+            number: 8,
+            nameSan: 'तनादिगणः (Tanādi gaṇa)',
+            nameEn: 'Class 8',
+            titleBadge: 'The "O" Class',
+            vikarana: 'उ (-u- / -o-)',
+            blueprint:
+              'The verbal root undergoes stem formulation by adding an -o- (strengthened) or -u- (weak) directly to its tail end.',
+            exampleRoot: '√कृ (kṛ - to do/make)',
+            exampleDerivation: 'करो- + ति ➔ करोति (karoti)',
+            exampleMeaning: 'He / She / It does, makes, or performs',
+            funFact:
+              'Contains very few roots (~10 roots), but includes कृ (to do), one of the most frequently used words in all of Sanskrit literature!',
+          },
+          {
+            number: 9,
+            nameSan: 'क्र्यादिगणः (Kryādi gaṇa)',
+            nameEn: 'Class 9',
+            titleBadge: 'The "Nā" Class',
+            vikarana: 'श्ना (-nā- / -nī-)',
+            blueprint:
+              'This class anchors its conjugational stem using a strong -nā- (in singular active) or weaker -nī- (in dual/plural) joining suffix.',
+            exampleRoot: '√क्री (krī - to buy)',
+            exampleDerivation: 'क्रीणा- + ति ➔ क्रीणाति (krīṇāti)',
+            exampleMeaning: 'He / She / It buys or purchases',
+            funFact:
+              'Under Pāṇini’s Sandhi rule अट्कुप्वाङ्नुम्व्यवायेऽपि, the -na- routinely cerebralizes into -ṇa- after roots with ṛ or r (krīṇāti, gṛhṇāti).',
+          },
+          {
+            number: 10,
+            nameSan: 'चुरादिगणः (Curādi gaṇa)',
+            nameEn: 'Class 10',
+            titleBadge: 'The Causative "Aya" Class',
+            vikarana: 'णिच् + शप् (-aya-)',
+            blueprint:
+              'Roots entering this class are modified with an obligatory -aya- (णिच्) suffix. This class is structurally unique because it often converts basic actions into causative structures (making someone else do it).',
+            exampleRoot: '√चुर् (cur - to steal)',
+            exampleDerivation: 'चोरय- + ति ➔ चोरयति (corayati)',
+            exampleMeaning: 'He / She / It steals',
+            funFact:
+              'Unlike other Gaṇas where णिच् is an optional causative modifier, in Curādi the णिच् affix is Svārthe (inherent to the root itself).',
           },
         ],
       },
@@ -147,7 +310,7 @@ export const DHATUPATHA_ARTICLES: DhatupathaArticle[] = [
         title: 'Comprehensive Gaṇa Classification Table',
         titleSan: 'दशगणानां तुलनात्मक-सारणी',
         paragraphs: [
-          'The following reference table outlines the distinctive Vikaraṇa, Sūtra authority, and classic paradigm for each of the 10 Gaṇas:',
+          'The following quick-reference matrix summarizes the distinctive Vikaraṇa, Sūtra authority, and classic paradigm across all 10 Gaṇas:',
         ],
         table: {
           headers: ['Gaṇa (गण)', 'Vikaraṇa (विकरण)', 'Pāṇinian Sūtra', 'Example Root', 'Present Form (लट्)'],
