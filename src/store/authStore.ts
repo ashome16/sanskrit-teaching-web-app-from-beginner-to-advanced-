@@ -282,13 +282,104 @@ const purgePersonalAccountsOnce = (
   return next;
 };
 
+const ensureDefaultAdminAccounts = (
+  accounts: Record<string, UserAccount>
+): Record<string, UserAccount> => {
+  const next = { ...accounts };
+  const now = Date.now();
+  const farFuture = now + 10 * 365 * 24 * 60 * 60 * 1000; // 10 years
+
+  // Seed care@ednetadmin.in (username: careadmin)
+  const hasCareAdmin = Object.values(next).some(
+    (a) =>
+      a.profile?.email?.toLowerCase() === 'care@ednetadmin.in' ||
+      a.profile?.username?.toLowerCase() === 'careadmin'
+  );
+  if (!hasCareAdmin) {
+    const id = 'admin_care_ednet';
+    next[id] = {
+      profile: {
+        id,
+        username: 'careadmin',
+        email: 'care@ednetadmin.in',
+        fullName: 'EdNet Care Administrator',
+        avatar: '👑',
+        grade: 'Advanced (कोविदः)',
+        interests: ['NCERT दीपकम Curriculum', 'Administration'],
+        createdAt: now,
+        lastLoginAt: now,
+        trialEndsAt: farFuture,
+        planExpiresAt: farFuture,
+        subscriptionRenewsAt: farFuture,
+        planStatus: 'active',
+        monthlyPriceInr: MONTHLY_PRICE_INR,
+      },
+      passwordHash: 'ednetadmin2026',
+      progress: {
+        userId: id,
+        lessonsCompleted: [],
+        quizzesCompleted: [],
+        totalPoints: 1000,
+        streak: 1,
+        lastActivityDate: now,
+      },
+    };
+  }
+
+  // Seed admin@ednetlearn.in (username: admin)
+  const hasMainAdmin = Object.values(next).some(
+    (a) =>
+      a.profile?.email?.toLowerCase() === 'admin@ednetlearn.in' ||
+      a.profile?.username?.toLowerCase() === 'admin'
+  );
+  if (!hasMainAdmin) {
+    const id = 'admin_main_ednet';
+    next[id] = {
+      profile: {
+        id,
+        username: 'admin',
+        email: 'admin@ednetlearn.in',
+        fullName: 'EdNet Learn Administrator',
+        avatar: '🧘',
+        grade: 'Advanced (कोविदः)',
+        interests: ['NCERT दीपकम Curriculum', 'Administration'],
+        createdAt: now,
+        lastLoginAt: now,
+        trialEndsAt: farFuture,
+        planExpiresAt: farFuture,
+        subscriptionRenewsAt: farFuture,
+        planStatus: 'active',
+        monthlyPriceInr: MONTHLY_PRICE_INR,
+      },
+      passwordHash: 'ednetadmin2026',
+      progress: {
+        userId: id,
+        lessonsCompleted: [],
+        quizzesCompleted: [],
+        totalPoints: 1000,
+        streak: 1,
+        lastActivityDate: now,
+      },
+    };
+  }
+
+  return next;
+};
+
 const loadStoredAccounts = (): Record<string, UserAccount> => {
   try {
     const raw = localStorage.getItem(ACCOUNTS_STORAGE_KEY);
     const accounts: Record<string, UserAccount> = raw ? JSON.parse(raw) : {};
-    return purgePersonalAccountsOnce(accounts);
+    const purged = purgePersonalAccountsOnce(accounts);
+    const seeded = ensureDefaultAdminAccounts(purged);
+    if (!raw || Object.keys(seeded).length !== Object.keys(accounts).length) {
+      saveAccounts(seeded);
+    }
+    return seeded;
   } catch {
-    return {};
+    const seeded = ensureDefaultAdminAccounts({});
+    saveAccounts(seeded);
+    return seeded;
   }
 };
 
@@ -397,11 +488,10 @@ export const useAuthStore = create<AuthState>((set, get) => {
           acc.profile.email.toLowerCase() === cleanId
       );
 
-      // Do not reveal whether the account exists. Only create a real OTP session when found.
       if (!account) {
-        set({ authError: null });
-        // Same success shape as a real send so the UI does not leak account existence.
-        return { success: true, emailConfigured: true, emailSent: false };
+        const error = `No account found for "${cleanId}". Please verify your username or email address.`;
+        set({ authError: error });
+        return { success: false, emailConfigured: true, emailSent: false, error };
       }
 
       // Generate a secure 6-digit OTP
