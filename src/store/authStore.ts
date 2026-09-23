@@ -1057,7 +1057,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
         utrNumber: utrNumber.trim(),
         timestamp: now,
         status: 'pending',
-        planName: 'Monthly Unlimited Access Pass',
+        planName: 'One-Time Unlimited Access Pass',
         billingPeriod: '30 Days',
         notes: 'Submitted via UTR verification. Awaiting Admin Approval.',
       };
@@ -1110,7 +1110,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
         razorpaySignature: signature,
         timestamp: now,
         status: 'success',
-        planName: 'All-Access Monthly Pass',
+        planName: 'All-Access 30-Day Pass',
         billingPeriod: `${PAID_ACCESS_DAYS} Days`,
         notes: 'Verified via Razorpay one-time Checkout signature.',
       };

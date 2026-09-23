@@ -128,7 +128,7 @@ export const LegalModals: React.FC<LegalModalsProps> = ({ activeModal, onClose }
             <section className="legal-modal-section">
               <h3>2. 7-Day Money-Back Guarantee</h3>
               <p>
-                If you purchase an Annual Gurukul Pass or Monthly Plan and find that our portal does not meet your academic expectations, you are eligible for a <strong>full refund within 7 days</strong> of the transaction date. No questions asked.
+                If you purchase an All-Access 30-Day Pass and find that our portal does not meet your academic expectations, you are eligible for a <strong>full refund within 7 days</strong> of the transaction date. No questions asked.
               </p>
             </section>
 

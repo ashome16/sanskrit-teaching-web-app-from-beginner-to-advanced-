@@ -87,7 +87,7 @@ const AdminModal: React.FC = () => {
   const activeSubscribers = accounts.filter((a) => a.profile.planStatus === 'active').length;
   const trialUsers = accounts.filter((a) => a.profile.planStatus === 'trial').length;
   const expiredUsers = accounts.filter((a) => a.profile.planStatus === 'expired').length;
-  const estMonthlyRevenue = activeSubscribers * 200;
+  const estActivePassValue = activeSubscribers * 200;
 
   // Flattened Transactions
   const allTransactions = accounts.flatMap((acc) =>
@@ -302,11 +302,11 @@ const AdminModal: React.FC = () => {
                     </div>
 
                     <div className="admin-metric-card">
-                      <span className="admin-metric-label">Est. Monthly MRR</span>
+                      <span className="admin-metric-label">Est. Active Pass Value</span>
                       <span className="admin-metric-value" style={{ color: '#2563eb' }}>
-                        ₹{estMonthlyRevenue}
+                        ₹{estActivePassValue}
                       </span>
-                      <span className="admin-metric-sub">₹200 / student pass</span>
+                      <span className="admin-metric-sub">₹200 / active pass</span>
                     </div>
                   </div>
 
@@ -746,7 +746,7 @@ const AdminModal: React.FC = () => {
                       <span>📱</span> UPI Payment Gateway &amp; Direct Bank Account
                     </h3>
                     <p style={{ margin: '0 0 1rem 0', fontSize: '0.85rem', color: '#64748b', lineHeight: 1.5 }}>
-                      Configure the receiver UPI ID / VPA and merchant business name displayed on the payment modal and generated in the QR code for ₹200 / month subscriptions.
+                      Configure the receiver UPI ID / VPA and merchant business name displayed on the payment modal and generated in the QR code for one-time ₹200 access passes (no auto-debit).
                     </p>
 
                     <form onSubmit={handleSaveUpiConfig}>
@@ -805,7 +805,7 @@ const AdminModal: React.FC = () => {
                           LIVE UPI INTENT URL (USED FOR MOBILE APP 1-CLICK CHECKOUT &amp; QR CODE):
                         </div>
                         <code style={{ fontSize: '0.75rem', color: '#15803d', wordBreak: 'break-all' }}>
-                          upi://pay?pa={upiVpaInput}&amp;pn={encodeURIComponent(upiPayeeInput)}&amp;am=200.00&amp;cu=INR&amp;tn=Monthly%20Access%20Pass
+                          upi://pay?pa={upiVpaInput}&amp;pn={encodeURIComponent(upiPayeeInput)}&amp;am=200.00&amp;cu=INR&amp;tn=One-Time%20Access%20Pass
                         </code>
                       </div>
 
@@ -851,7 +851,7 @@ const AdminModal: React.FC = () => {
                           <em style={{ fontSize: '0.78rem', color: '#64748b' }}>• Apache/cPanel: <code>.htaccess</code> rewrite to <code>index.html</code></em>
                         </li>
                         <li style={{ marginBottom: '0.4rem' }}>
-                          <strong>14-Day Free Trial:</strong> All new students who register get 14 days of unlimited access without paying upfront. When their trial concludes, the system invites them to subscribe for ₹200 / month.
+                          <strong>14-Day Free Trial:</strong> All new students who register get 14 days of unlimited access without paying upfront. When their trial concludes, the system invites them to pay one-time ₹200 via Razorpay (no auto-debit).
                         </li>
                         <li>
                           <strong>Payment Flow:</strong> When students transfer ₹200 via UPI and submit their 12-digit UTR, you will see it in the <strong>Payments &amp; UTRs</strong> tab where you can click <strong>Approve &amp; Activate</strong>.

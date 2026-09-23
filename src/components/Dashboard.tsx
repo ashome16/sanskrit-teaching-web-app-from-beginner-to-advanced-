@@ -7,7 +7,6 @@ import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
 import AuthModal from './AuthModal';
 import UserProfileModal from './UserProfileModal';
 import PaymentModal from './PaymentModal';
-import AccessExpiredBanner from './AccessExpiredBanner';
 import AdminModal from './AdminModal';
 import Footer from './Footer';
 import SupportWidget from './SupportWidget';
@@ -28,6 +27,7 @@ const ViewLoader = () => (
   </div>
 );
 import { useAuthStore } from '../store/authStore';
+import { canAccessAllChapters } from '../utils/premiumAccess';
 import { LESSONS as STATIC_LESSONS, fetchLatestChapters } from '../data/chapters';
 import { playPronunciation } from '../utils/pronunciation';
 import '../styles/dashboard.css';
@@ -119,7 +119,6 @@ const Dashboard: React.FC = () => {
     openAuthModal,
     openProfileModal,
     openAdminModal,
-    getTrialDaysRemaining,
     refreshPlanStatus,
     accessMode,
     pendingRedirectView,
@@ -127,7 +126,7 @@ const Dashboard: React.FC = () => {
     setPendingRedirect,
     isAdminLoggedIn,
   } = useAuthStore();
-  const trialDaysLeft = getTrialDaysRemaining();
+  const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
 
   useEffect(() => {
     refreshPlanStatus();
@@ -326,9 +325,10 @@ const Dashboard: React.FC = () => {
     setWordSelection(null);
   }, [lessonIndex, lessons]);
 
-  // Public: if saved/current lesson is Class 8, bounce to Class 7 (or Varṇamālā).
+  // Guests / expired: if saved lesson is Class 8, bounce to Class 7 (or Varṇamālā).
+  // Free-trial and paid members may keep Class 8 open for reading.
   useEffect(() => {
-    if (isAdminLoggedIn) return;
+    if (canReadAllChapters) return;
     const id = lessons[lessonIndex]?.id;
     if (!id || !id.startsWith('grade8_')) return;
     const fallback = firstDeepakamIndex(lessons);
@@ -341,7 +341,7 @@ const Dashboard: React.FC = () => {
     if (activeView === 'reader') {
       // stay on reader at Class 7 / varnamala
     }
-  }, [isAdminLoggedIn, lessonIndex, lessons, activeView]);
+  }, [canReadAllChapters, lessonIndex, lessons, activeView]);
 
   useEffect(() => {
     let cancelled = false;
@@ -468,8 +468,8 @@ const Dashboard: React.FC = () => {
   const openDeepakam = (lessonId?: string) => {
     const targetId =
       lessonId || (firstDeepakamIndex(lessons) >= 0 ? lessons[firstDeepakamIndex(lessons)].id : 'gsde101');
-    // Public visitors: Class 8 is upcoming — do not open grade8_* lessons
-    if (typeof targetId === 'string' && targetId.startsWith('grade8_') && !isAdminLoggedIn) {
+    // Guests / expired: Class 8 stays upcoming. Trial + paid may open for reading.
+    if (typeof targetId === 'string' && targetId.startsWith('grade8_') && !canReadAllChapters) {
       return;
     }
     if (!checkAccess('reader', targetId)) return;
@@ -500,7 +500,6 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className={`dashboard dashboard--${activeView}${activeView !== 'reader' ? ' dashboard--scrollable' : ''}`}>
-      <AccessExpiredBanner />
       <header className="dashboard-header">
         <button
           type="button"
@@ -560,17 +559,19 @@ const Dashboard: React.FC = () => {
               >
                 Class 7 (CBSE)
               </button>
-              {isAdminLoggedIn ? (
+              {canReadAllChapters ? (
                 <button
                   type="button"
                   className={activeView === 'reader' && lesson.id.startsWith('grade8_') ? 'active' : ''}
                   onClick={() => openDeepakam('grade8_prarthana')}
-                  title="Admin preview · CBSE Class 8 Sanskrit"
+                  title={isAdminLoggedIn ? 'Admin preview · CBSE Class 8 Sanskrit' : 'CBSE Class 8 Sanskrit'}
                 >
                   8th (CBSE)
-                  <span className="dashboard-nav-admin-chip" title="Visible only while admin is logged in">
-                    Admin preview · Class 8
-                  </span>
+                  {isAdminLoggedIn && (
+                    <span className="dashboard-nav-admin-chip" title="Visible only while admin is logged in">
+                      Admin preview · Class 8
+                    </span>
+                  )}
                 </button>
               ) : (
                 <button
@@ -649,9 +650,6 @@ const Dashboard: React.FC = () => {
             >
               <span className="nav-profile-avatar">{currentUser.avatar}</span>
               <span className="nav-profile-name">{currentUser.fullName.split(' ')[0]}</span>
-              {currentUser.planStatus === 'trial' && (
-                <span className="nav-trial-pill">{trialDaysLeft}d trial</span>
-              )}
               {currentUser.planStatus === 'active' && (
                 <span className="nav-trial-pill nav-active-pill" title="Subscription Active">⭐ Active</span>
               )}

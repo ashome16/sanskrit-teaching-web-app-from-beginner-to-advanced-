@@ -31,7 +31,7 @@ module.exports = async function handler(req, res) {
       notes: {
         userId: typeof body.userId === 'string' ? body.userId.slice(0, 120) : '',
         email: typeof body.email === 'string' ? body.email.slice(0, 200) : '',
-        product: 'all_access_monthly_pass',
+        product: 'all_access_one_time_pass',
       },
     });
 

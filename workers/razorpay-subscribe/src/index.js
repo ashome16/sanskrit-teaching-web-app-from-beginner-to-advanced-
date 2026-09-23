@@ -97,7 +97,7 @@ export default {
         amount: amountPaise,
         currency: 'INR',
         receipt,
-        notes: { userId, email, product: 'all_access_monthly_pass' },
+        notes: { userId, email, product: 'all_access_one_time_pass' },
       };
 
       const rzpRes = await fetch('https://api.razorpay.com/v1/orders', {

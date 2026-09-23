@@ -39,7 +39,7 @@ export const RAZORPAY_TRUST_NOTICE_ORDER =
   'You pay ₹200 once. No auto-debit. Secured by Razorpay.';
 
 export const RAZORPAY_TRUST_NOTICE_SUBSCRIPTION =
-  'First billing of ₹200 will occur automatically on 6 Oct 2026. Secured by Razorpay. Cancel anytime before then.';
+  'One-time ₹200 via Razorpay Standard Checkout. No auto-debit.';
 
 /** Trust copy next to the primary CTA — follows checkout mode. */
 export const RAZORPAY_TRUST_NOTICE =
@@ -49,7 +49,7 @@ export const RAZORPAY_TRUST_NOTICE =
 
 export const RAZORPAY_CTA_LABEL =
   RAZORPAY_CHECKOUT_MODE === 'subscription'
-    ? '🔒 Subscribe with Razorpay · ₹200/mo'
+    ? '🔒 Pay ₹200 with Razorpay'
     : '🔒 Pay ₹200 with Razorpay';
 
 export const RAZORPAY_THEME_COLOR = '#273b35';
@@ -219,7 +219,7 @@ export async function openRazorpayOrderCheckout(args: {
     currency: args.currency || 'INR',
     order_id: args.orderId,
     name: 'EdNet Learn Gurukul',
-    description: 'All-Access Monthly Pass',
+    description: 'All-Access 30-Day Pass — one-time ₹200',
     prefill: {
       name: args.name || '',
       email: args.email || '',
@@ -253,7 +253,7 @@ export async function openRazorpaySubscriptionCheckout(args: {
     key: RAZORPAY_KEY_ID,
     subscription_id: args.subscriptionId,
     name: 'EdNet Learn Gurukul',
-    description: 'All-Access Monthly Pass',
+    description: 'All-Access 30-Day Pass — one-time ₹200',
     prefill: {
       name: args.name || '',
       email: args.email || '',
