@@ -139,7 +139,28 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
     <aside ref={cardRef} className="word-analyzer-card">
       {!word && (
         <div className="wac-empty-state">
-          Click any Sanskrit word in the reading panel to see its analysis here.
+          <div className="wac-empty-card">
+            <h2 className="wac-empty-title">Word analysis · शब्द-विश्लेषणम्</h2>
+            <p className="wac-empty-lead">
+              Tap any Sanskrit word on the left to see meaning, grammar, and sound here.
+            </p>
+            <ul className="wac-empty-tips">
+              <li>
+                <span className="wac-empty-tip-label" aria-hidden="true">▶</span>
+                <span>
+                  <strong>Play all</strong> — hear every word on this page, in order
+                  (green button above the text).
+                </span>
+              </li>
+              <li>
+                <span className="wac-empty-tip-label" aria-hidden="true">अ</span>
+                <span>
+                  <strong>Click a word</strong> — this panel shows अर्थः (meaning),
+                  pronunciation, and related forms.
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
       )}
 

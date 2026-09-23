@@ -86,6 +86,11 @@ const isValidSavedView = (saved: string | null): saved is DashboardView =>
   saved === 'philosophy' ||
   saved === 'cbse-guide';
 
+
+/** Strip punctuation / digits so only the Devanagari token remains for analysis. */
+const cleanWord = (value: string): string =>
+  value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९./\\=+#*~_`]+/g, '').trim();
+
 const Dashboard: React.FC = () => {
   const [lessons, setLessons] = useState(STATIC_LESSONS);
   const [lessonIndex, setLessonIndex] = useState(() => {
@@ -371,15 +376,36 @@ const Dashboard: React.FC = () => {
   const isLastSentence =
     lessonIndex === lastVisible && sentenceIndex === (lesson?.sentences.length ?? 1) - 1;
 
-  const cleanWord = (value: string): string =>
-    value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९./\\=+#*~_`]+/g, '').trim();
-
   const handleWordClick = (word: string) => {
     const cleaned = cleanWord(word) || word.trim();
     playPronunciation(cleaned);
     localStorage.setItem('last-stem', cleaned);
     setWordSelection({ text: cleaned, nonce: Date.now() });
   };
+
+  // Auto-show first analyzable Devanagari word when the reader lesson/paragraph loads.
+  // Does NOT play audio — only populates WordAnalyzerCard. Manual clicks still play.
+  useEffect(() => {
+    if (activeView !== 'reader') {
+      setWordSelection(null);
+      return;
+    }
+    const s = lessons[lessonIndex]?.sentences[sentenceIndex];
+    if (!s) {
+      setWordSelection(null);
+      return;
+    }
+    const raw = s.words?.length ? s.words : (s.sanskrit || '').split(/\s+/);
+    const candidates = raw
+      .map((w) => cleanWord(w) || w.replace(/[॥।,;:!?—–\-…/()]+/g, '').trim())
+      .filter((w) => /[\u0900-\u097F]/.test(w));
+    const first = candidates[0];
+    if (!first) {
+      setWordSelection(null);
+      return;
+    }
+    setWordSelection({ text: first, nonce: Date.now() });
+  }, [activeView, lessonIndex, sentenceIndex, lessons]);
 
   const handleSelectLesson = (nextLessonId: string) => {
     if (HIDDEN_DEEPAKAM_IDS.has(nextLessonId)) return;
@@ -388,7 +414,7 @@ const Dashboard: React.FC = () => {
     if (nextIndex === -1) return;
     setLessonIndex(nextIndex);
     setSentenceIndex(0);
-    setWordSelection(null);
+    // wordSelection: auto-select effect fills from the new sentence
   };
 
   const goNext = () => {
@@ -403,7 +429,7 @@ const Dashboard: React.FC = () => {
         setSentenceIndex(0);
       }
     }
-    setWordSelection(null);
+    // wordSelection: auto-select effect fills from the new sentence
   };
 
   const goPrevious = () => {
@@ -418,14 +444,14 @@ const Dashboard: React.FC = () => {
         setSentenceIndex(lessons[prev].sentences.length - 1);
       }
     }
-    setWordSelection(null);
+    // wordSelection: auto-select effect fills from the new sentence
   };
 
   const jumpToSentence = (index: number) => {
     if (!lesson?.sentences?.length) return;
     const clamped = Math.max(0, Math.min(index, lesson.sentences.length - 1));
     setSentenceIndex(clamped);
-    setWordSelection(null);
+    // wordSelection: auto-select effect fills from the new sentence
   };
 
   const openVarnamala = () => {
@@ -434,7 +460,7 @@ const Dashboard: React.FC = () => {
     if (idx >= 0) {
       setLessonIndex(idx);
       setSentenceIndex(0);
-      setWordSelection(null);
+      // wordSelection: auto-select effect fills from the new sentence
     }
     setActiveView('reader');
   };
@@ -451,7 +477,7 @@ const Dashboard: React.FC = () => {
     if (idx >= 0) {
       setLessonIndex(idx);
       setSentenceIndex(0);
-      setWordSelection(null);
+      // wordSelection: auto-select effect fills from the new sentence
       setActiveView('reader');
       return;
     }
@@ -462,7 +488,7 @@ const Dashboard: React.FC = () => {
       if (fallbackIdx >= 0) {
         setLessonIndex(fallbackIdx);
         setSentenceIndex(0);
-        setWordSelection(null);
+        // wordSelection: auto-select effect fills from the new sentence
       }
     }
     setActiveView('reader');
