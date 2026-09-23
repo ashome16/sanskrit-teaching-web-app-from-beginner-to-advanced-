@@ -4,6 +4,11 @@ import {
   getLetterMnemonic,
   type LetterMnemonic,
 } from '../data/varnamalaMnemonics';
+import {
+  getLetterStrokeAnimation,
+  interpolateStrokePoints,
+  type StrokePoint,
+} from '../data/varnamalaStrokePaths';
 import { playPronunciation } from '../utils/pronunciation';
 
 interface Point {
@@ -43,9 +48,52 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [showCelebration, setShowCelebration] = useState<boolean>(false);
 
+  // Auto-Player State
+  const [isPlayingDemo, setIsPlayingDemo] = useState<boolean>(false);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [activeStrokeIndex, setActiveStrokeIndex] = useState<number>(0);
+  const [playbackSpeed, setPlaybackSpeed] = useState<number>(1.0);
+  const [pointerStyle, setPointerStyle] = useState<'pencil' | 'finger'>('pencil');
+  const [demoStatusMessage, setDemoStatusMessage] = useState<string | null>(null);
+  const [animPointerPos, setAnimPointerPos] = useState<{
+    x: number;
+    y: number;
+    isLifting: boolean;
+  } | null>(null);
+
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const demoCanvasRef = useRef<HTMLCanvasElement | null>(null);
   const isDrawingRef = useRef<boolean>(false);
   const currentStrokeRef = useRef<Stroke | null>(null);
+
+  // Animation controller refs
+  const animationFrameIdRef = useRef<number | null>(null);
+  const liftTimeoutRef = useRef<number | null>(null);
+  const isPausedRef = useRef<boolean>(false);
+  const playbackSpeedRef = useRef<number>(1.0);
+
+  const demoStateRef = useRef<{
+    strokeIndex: number;
+    ptIndex: number;
+    finePoints: StrokePoint[];
+    completedStrokes: { points: StrokePoint[] }[];
+    targetSingleStroke: number | null;
+  }>({
+    strokeIndex: 0,
+    ptIndex: 0,
+    finePoints: [],
+    completedStrokes: [],
+    targetSingleStroke: null,
+  });
+
+  // Keep ref sync with state for instantaneous speed updates
+  useEffect(() => {
+    playbackSpeedRef.current = playbackSpeed;
+  }, [playbackSpeed]);
+
+  useEffect(() => {
+    isPausedRef.current = isPaused;
+  }, [isPaused]);
 
   const mnemonic: LetterMnemonic = getLetterMnemonic(selectedLetter) || ALL_VARNAMALA_LETTERS[0];
 
@@ -58,7 +106,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     return true;
   });
 
-  // Re-draw canvas whenever strokes, guide, or letter changes
+  // Re-draw user canvas whenever user strokes change
   const redrawCanvas = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -67,7 +115,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Draw all completed strokes with smooth round caps
+    // Draw all completed user strokes with smooth round caps
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
 
@@ -84,7 +132,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
       ctx.stroke();
     });
 
-    // Draw current in-progress stroke if drawing
+    // Draw current in-progress user stroke
     if (currentStrokeRef.current && currentStrokeRef.current.points.length > 0) {
       const stroke = currentStrokeRef.current;
       ctx.beginPath();
@@ -99,26 +147,286 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     }
   };
 
-  // Setup resolution and redraw
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const parent = canvas.parentElement;
-    if (!parent) return;
+  // Re-draw demo canvas
+  const redrawDemoCanvas = (currentPoints?: StrokePoint[]) => {
+    const demoCanvas = demoCanvasRef.current;
+    if (!demoCanvas) return;
+    const ctx = demoCanvas.getContext('2d');
+    if (!ctx) return;
 
+    ctx.clearRect(0, 0, demoCanvas.width, demoCanvas.height);
+
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = 'rgba(245, 158, 11, 0.45)';
+
+    const dpr = window.devicePixelRatio || 1;
+    const width = demoCanvas.width / dpr;
+    const height = demoCanvas.height / dpr;
+
+    // Draw all previously completed strokes in the demo
+    demoStateRef.current.completedStrokes.forEach((s) => {
+      if (s.points.length < 1) return;
+      ctx.beginPath();
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 14;
+
+      const p0x = (s.points[0].x / 100) * width;
+      const p0y = (s.points[0].y / 100) * height;
+      ctx.moveTo(p0x, p0y);
+
+      for (let i = 1; i < s.points.length; i++) {
+        ctx.lineTo((s.points[i].x / 100) * width, (s.points[i].y / 100) * height);
+      }
+      ctx.stroke();
+    });
+
+    // Draw active stroke points currently in progress
+    if (currentPoints && currentPoints.length > 0) {
+      ctx.beginPath();
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 14;
+
+      const p0x = (currentPoints[0].x / 100) * width;
+      const p0y = (currentPoints[0].y / 100) * height;
+      ctx.moveTo(p0x, p0y);
+
+      for (let i = 1; i < currentPoints.length; i++) {
+        ctx.lineTo((currentPoints[i].x / 100) * width, (currentPoints[i].y / 100) * height);
+      }
+      ctx.stroke();
+    }
+  };
+
+  // Setup resolution for both drawing canvas and demo canvas
+  const updateCanvasDimensions = () => {
+    const canvas = canvasRef.current;
+    const demoCanvas = demoCanvasRef.current;
+    if (!canvas || !canvas.parentElement) return;
+
+    const parent = canvas.parentElement;
     const rect = parent.getBoundingClientRect();
     const dpr = window.devicePixelRatio || 1;
+
     canvas.width = rect.width * dpr;
     canvas.height = rect.height * dpr;
-
     const ctx = canvas.getContext('2d');
-    if (ctx) {
-      ctx.scale(dpr, dpr);
+    if (ctx) ctx.scale(dpr, dpr);
+
+    if (demoCanvas) {
+      demoCanvas.width = rect.width * dpr;
+      demoCanvas.height = rect.height * dpr;
+      const demoCtx = demoCanvas.getContext('2d');
+      if (demoCtx) demoCtx.scale(dpr, dpr);
     }
+
     redrawCanvas();
+    redrawDemoCanvas();
+  };
+
+  useEffect(() => {
+    updateCanvasDimensions();
+    window.addEventListener('resize', updateCanvasDimensions);
+    return () => {
+      window.removeEventListener('resize', updateCanvasDimensions);
+    };
   }, [strokes, selectedLetter]);
 
-  // Pointer event handlers
+  // Clean up animation on unmount
+  useEffect(() => {
+    return () => {
+      if (animationFrameIdRef.current) cancelAnimationFrame(animationFrameIdRef.current);
+      if (liftTimeoutRef.current) clearTimeout(liftTimeoutRef.current);
+    };
+  }, []);
+
+  // ==========================================
+  // AUTO-PLAYER ANIMATION ENGINE
+  // ==========================================
+
+  const stopDemo = () => {
+    if (animationFrameIdRef.current) {
+      cancelAnimationFrame(animationFrameIdRef.current);
+      animationFrameIdRef.current = null;
+    }
+    if (liftTimeoutRef.current) {
+      clearTimeout(liftTimeoutRef.current);
+      liftTimeoutRef.current = null;
+    }
+    setIsPlayingDemo(false);
+    setIsPaused(false);
+    setActiveStrokeIndex(0);
+    setAnimPointerPos(null);
+    setDemoStatusMessage(null);
+
+    // Clear demo canvas
+    const demoCanvas = demoCanvasRef.current;
+    if (demoCanvas) {
+      const ctx = demoCanvas.getContext('2d');
+      if (ctx) ctx.clearRect(0, 0, demoCanvas.width, demoCanvas.height);
+    }
+    demoStateRef.current = {
+      strokeIndex: 0,
+      ptIndex: 0,
+      finePoints: [],
+      completedStrokes: [],
+      targetSingleStroke: null,
+    };
+  };
+
+  const runAnimationStep = () => {
+    if (isPausedRef.current) return;
+
+    const animData = getLetterStrokeAnimation(selectedLetter);
+    const { strokeIndex, finePoints, targetSingleStroke } = demoStateRef.current;
+
+    if (strokeIndex >= animData.strokes.length) {
+      // Completed all strokes
+      handleDemoFinished();
+      return;
+    }
+
+    const currentStrokeData = animData.strokes[strokeIndex];
+    const ptIndex = demoStateRef.current.ptIndex;
+
+    if (ptIndex < finePoints.length) {
+      // Draw in-progress segment
+      const renderedPoints = finePoints.slice(0, ptIndex + 1);
+      redrawDemoCanvas(renderedPoints);
+
+      const currPt = finePoints[ptIndex];
+      setAnimPointerPos({
+        x: currPt.x,
+        y: currPt.y,
+        isLifting: false,
+      });
+
+      // Advance by step speed
+      const stepIncrement = Math.max(1, Math.round(1.6 * playbackSpeedRef.current));
+      demoStateRef.current.ptIndex = Math.min(finePoints.length, ptIndex + stepIncrement);
+
+      animationFrameIdRef.current = requestAnimationFrame(runAnimationStep);
+    } else {
+      // Finished this stroke!
+      demoStateRef.current.completedStrokes.push({
+        points: [...finePoints],
+      });
+      redrawDemoCanvas();
+
+      // Check if this was a single stroke request or the final stroke
+      const isSingleTargetDone =
+        targetSingleStroke !== null && currentStrokeData.strokeIndex === targetSingleStroke;
+      const isLastStroke = strokeIndex + 1 >= animData.strokes.length;
+
+      if (isSingleTargetDone || isLastStroke) {
+        handleDemoFinished();
+      } else {
+        // Prepare next stroke with pencil lift-off animation
+        const lastPt = finePoints[finePoints.length - 1];
+        setAnimPointerPos({
+          x: lastPt.x,
+          y: lastPt.y,
+          isLifting: true,
+        });
+
+        const nextStrokeIndex = strokeIndex + 1;
+        demoStateRef.current.strokeIndex = nextStrokeIndex;
+        const nextStroke = animData.strokes[nextStrokeIndex];
+        demoStateRef.current.finePoints = interpolateStrokePoints(nextStroke.points, 16);
+        demoStateRef.current.ptIndex = 0;
+
+        setActiveStrokeIndex(nextStroke.strokeIndex);
+        setDemoStatusMessage(
+          `Stroke ${nextStroke.strokeIndex} of ${animData.strokes.length}: ${nextStroke.label}`
+        );
+
+        const liftDuration = Math.max(180, Math.round(340 / playbackSpeedRef.current));
+        liftTimeoutRef.current = window.setTimeout(() => {
+          if (!isPausedRef.current) {
+            animationFrameIdRef.current = requestAnimationFrame(runAnimationStep);
+          }
+        }, liftDuration);
+      }
+    }
+  };
+
+  const handleDemoFinished = () => {
+    setIsPlayingDemo(false);
+    setActiveStrokeIndex(0);
+    setDemoStatusMessage('✨ उत्कृष्टम्! Now it is your turn to trace!');
+    playPronunciation(mnemonic.letter);
+
+    // Gently glide away pencil tip after a moment
+    if (liftTimeoutRef.current) clearTimeout(liftTimeoutRef.current);
+    liftTimeoutRef.current = window.setTimeout(() => {
+      setAnimPointerPos(null);
+    }, 1200);
+  };
+
+  const startDemo = (targetStroke: number | null = null) => {
+    stopDemo();
+
+    const animData = getLetterStrokeAnimation(selectedLetter);
+    if (!animData || animData.strokes.length === 0) return;
+
+    setIsPlayingDemo(true);
+    setIsPaused(false);
+    setShowCelebration(false);
+
+    let initialIndex = 0;
+    if (targetStroke !== null) {
+      const foundIdx = animData.strokes.findIndex((s) => s.strokeIndex === targetStroke);
+      if (foundIdx !== -1) initialIndex = foundIdx;
+    }
+
+    const firstStroke = animData.strokes[initialIndex];
+    demoStateRef.current = {
+      strokeIndex: initialIndex,
+      ptIndex: 0,
+      finePoints: interpolateStrokePoints(firstStroke.points, 16),
+      completedStrokes: [],
+      targetSingleStroke: targetStroke,
+    };
+
+    setActiveStrokeIndex(firstStroke.strokeIndex);
+    setDemoStatusMessage(
+      `Stroke ${firstStroke.strokeIndex} of ${animData.strokes.length}: ${firstStroke.label}`
+    );
+
+    // Position pointer at initial start point
+    const p0 = firstStroke.points[0];
+    setAnimPointerPos({
+      x: p0.x,
+      y: p0.y,
+      isLifting: true,
+    });
+
+    const initialDelay = Math.max(150, Math.round(260 / playbackSpeedRef.current));
+    liftTimeoutRef.current = window.setTimeout(() => {
+      animationFrameIdRef.current = requestAnimationFrame(runAnimationStep);
+    }, initialDelay);
+  };
+
+  const handleTogglePause = () => {
+    if (!isPlayingDemo) return;
+    if (isPaused) {
+      setIsPaused(false);
+      isPausedRef.current = false;
+      animationFrameIdRef.current = requestAnimationFrame(runAnimationStep);
+    } else {
+      setIsPaused(true);
+      isPausedRef.current = true;
+      if (animationFrameIdRef.current) cancelAnimationFrame(animationFrameIdRef.current);
+      if (liftTimeoutRef.current) clearTimeout(liftTimeoutRef.current);
+    }
+  };
+
+  const handlePlaySingleStroke = (strokeNumber: number) => {
+    startDemo(strokeNumber);
+  };
+
+  // Pointer event handlers for user drawing
   const handlePointerDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -175,6 +483,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
   const handleClear = () => {
     setStrokes([]);
     setShowCelebration(false);
+    stopDemo();
   };
 
   const handleCheckWriting = () => {
@@ -190,6 +499,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
   };
 
   const handleSelectLetter = (char: string) => {
+    stopDemo();
     setSelectedLetter(char);
     setStrokes([]);
     setShowCelebration(false);
@@ -248,7 +558,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
           className={`v-tool-btn${activeCategory === 'svara' ? ' v-tool-btn--active' : ''}`}
           onClick={() => setActiveCategory('svara')}
         >
-          स्वराः (Vowels · 13)
+          स्वराः (Vowels · 15)
         </button>
         <button
           type="button"
@@ -283,6 +593,95 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
             </button>
           );
         })}
+      </div>
+
+      {/* Animated Stroke Auto-Player Control Deck */}
+      <div className="v-player-control-deck" aria-label="Stroke Auto-Player Controls">
+        <div className="v-player-actions-row">
+          {!isPlayingDemo ? (
+            <button
+              type="button"
+              className="v-play-demo-btn"
+              onClick={() => startDemo(null)}
+              title="Watch animated stroke-by-stroke handwriting demo"
+            >
+              <span className="v-btn-icon">▶️</span>
+              <span className="v-btn-text">Watch How to Write (लेखन-प्रदर्शनम्)</span>
+            </button>
+          ) : (
+            <div className="v-player-running-group">
+              <button
+                type="button"
+                className="v-player-action-btn v-btn-pause"
+                onClick={handleTogglePause}
+                title={isPaused ? 'Resume stroke animation' : 'Pause stroke animation'}
+              >
+                {isPaused ? '▶️ Resume' : '⏸️ Pause'}
+              </button>
+              <button
+                type="button"
+                className="v-player-action-btn v-btn-stop"
+                onClick={stopDemo}
+                title="Stop animation and trace freely"
+              >
+                ⏹️ Stop
+              </button>
+              <button
+                type="button"
+                className="v-player-action-btn v-btn-replay"
+                onClick={() => startDemo(null)}
+                title="Replay from stroke 1"
+              >
+                🔄 Replay
+              </button>
+            </div>
+          )}
+
+          {/* Live Demo Status Pill */}
+          {demoStatusMessage && (
+            <div className="v-demo-status-pill" role="status" aria-live="polite">
+              <span className="v-status-dot" />
+              <span>{demoStatusMessage}</span>
+            </div>
+          )}
+        </div>
+
+        {/* Speed & Pointer Style Options */}
+        <div className="v-player-options-row">
+          <div className="v-player-option-group">
+            <span className="v-option-label">Speed:</span>
+            {[0.75, 1.0, 1.5].map((spd) => (
+              <button
+                key={spd}
+                type="button"
+                className={`v-speed-chip${playbackSpeed === spd ? ' v-speed-chip--active' : ''}`}
+                onClick={() => setPlaybackSpeed(spd)}
+              >
+                {spd === 0.75 ? '0.75x Slow' : spd === 1.0 ? '1x Normal' : '1.5x Fast'}
+              </button>
+            ))}
+          </div>
+
+          <div className="v-player-option-group">
+            <span className="v-option-label">Pointer:</span>
+            <button
+              type="button"
+              className={`v-speed-chip${pointerStyle === 'pencil' ? ' v-speed-chip--active' : ''}`}
+              onClick={() => setPointerStyle('pencil')}
+              title="Magic Cartoon Pencil"
+            >
+              ✏️ Pencil
+            </button>
+            <button
+              type="button"
+              className={`v-speed-chip${pointerStyle === 'finger' ? ' v-speed-chip--active' : ''}`}
+              onClick={() => setPointerStyle('finger')}
+              title="Guide Finger"
+            >
+              👆 Finger
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Main Workspace Layout */}
@@ -325,7 +724,10 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
               </div>
             )}
 
-            {/* Actual HTML5 Drawing Canvas */}
+            {/* Automated Stroke Animation Canvas (Overlay Layer) */}
+            <canvas ref={demoCanvasRef} className="v-demo-canvas" aria-hidden="true" />
+
+            {/* Actual HTML5 User Drawing Canvas */}
             <canvas
               ref={canvasRef}
               className="v-drawing-canvas"
@@ -336,6 +738,25 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
               onPointerLeave={handlePointerUp}
               aria-label={`Drawing slate for letter ${mnemonic.letter}`}
             />
+
+            {/* Floating Animated Pencil / Finger Pointer */}
+            {animPointerPos && (
+              <div
+                className={`v-animated-pointer${
+                  animPointerPos.isLifting ? ' v-pointer--lifting' : ''
+                }${pointerStyle === 'finger' ? ' v-pointer--finger' : ''}`}
+                style={{
+                  left: `${animPointerPos.x}%`,
+                  top: `${animPointerPos.y}%`,
+                }}
+                aria-hidden="true"
+              >
+                <div className="v-pointer-glow-halo" />
+                <span className="v-pointer-symbol">
+                  {pointerStyle === 'pencil' ? '✏️' : '👆'}
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Bottom Palette & Controls Bar */}
@@ -410,12 +831,32 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
               <span>🎯</span> Stroke Order Guide ({mnemonic.letter})
             </h4>
             <ul className="v-stroke-steps-list">
-              {mnemonic.strokeOrder.map((step, idx) => (
-                <li key={idx} className="v-stroke-step-item">
-                  <span className="v-stroke-step-num">0{idx + 1}</span>
-                  <span>{step}</span>
-                </li>
-              ))}
+              {mnemonic.strokeOrder.map((step, idx) => {
+                const isCurrentStroke = isPlayingDemo && activeStrokeIndex === idx + 1;
+                return (
+                  <li
+                    key={idx}
+                    className={`v-stroke-step-item${
+                      isCurrentStroke ? ' v-stroke-step-item--active' : ''
+                    }`}
+                  >
+                    <div className="v-stroke-step-top">
+                      <span className="v-stroke-step-num">
+                        {isCurrentStroke ? '✍️ 0' + (idx + 1) : '0' + (idx + 1)}
+                      </span>
+                      <button
+                        type="button"
+                        className="v-step-demo-btn"
+                        onClick={() => handlePlaySingleStroke(idx + 1)}
+                        title={`Watch stroke ${idx + 1} only`}
+                      >
+                        ▶ Play
+                      </button>
+                    </div>
+                    <span className="v-stroke-step-text">{step}</span>
+                  </li>
+                );
+              })}
             </ul>
 
             <div className="v-rule-callout">
