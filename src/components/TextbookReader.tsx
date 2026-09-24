@@ -167,6 +167,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const [isSymbolsOpen, setIsSymbolsOpen] = useState(false);
   const [isGrade8SyllabusOpen, setIsGrade8SyllabusOpen] = useState(false);
   const [isPlayingAll, setIsPlayingAll] = useState(false);
+  const [playingLetter, setPlayingLetter] = useState<string | null>(null);
+  const [playingGroupIdx, setPlayingGroupIdx] = useState<number | null>(null);
   const [varnamalaSubMode, setVarnamalaSubMode] = useState<'sound' | 'writing' | 'worksheets'>('sound');
   const [padSelectedLetter, setPadSelectedLetter] = useState<string>('अ');
   const [glosses, setGlosses] = useState<AnalyseRegistry>({});
@@ -196,6 +198,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     stopPlayAllRef.current = null;
     stopPronunciation();
     setIsPlayingAll(false);
+    setPlayingLetter(null);
+    setPlayingGroupIdx(null);
   };
 
   useEffect(() => () => {
@@ -210,7 +214,21 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     stopPronunciation();
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsPlayingAll((prev) => (prev ? false : prev));
+    setPlayingLetter(null);
+    setPlayingGroupIdx(null);
   }, [activeLessonId, sentenceNumber]);
+
+  // Leaving Sound & Pictures (writing / worksheets) cancels playback.
+  useEffect(() => {
+    if (!isVarnamala) return;
+    if (varnamalaSubMode === 'sound') return;
+    stopPlayAllRef.current?.();
+    stopPlayAllRef.current = null;
+    stopPronunciation();
+    setIsPlayingAll(false);
+    setPlayingLetter(null);
+    setPlayingGroupIdx(null);
+  }, [isVarnamala, varnamalaSubMode]);
 
   const collectPlayAllItems = (): string[] => {
     if (isGroupedLesson && activeLesson) {
@@ -232,26 +250,45 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     const items = collectPlayAllItems();
     if (!items.length) return;
     setIsPlayingAll(true);
+    setPlayingGroupIdx(null);
     stopPlayAllRef.current = playSequence(items, {
       gapMs: 240,
+      onItem: (word) => setPlayingLetter(word),
       onDone: () => {
         stopPlayAllRef.current = null;
         setIsPlayingAll(false);
+        setPlayingLetter(null);
+        setPlayingGroupIdx(null);
       },
     });
   };
 
-  const handlePlayGroup = (words: string[]) => {
+  const handlePlayGroup = (words: string[], groupIdx: number) => {
+    // Toggle Stop when the same row is already playing.
+    if (isPlayingAll && playingGroupIdx === groupIdx) {
+      stopPlayAll();
+      return;
+    }
     stopPlayAll();
     if (!words.length) return;
     setIsPlayingAll(true);
+    setPlayingGroupIdx(groupIdx);
     stopPlayAllRef.current = playSequence(words, {
       gapMs: 240,
+      onItem: (word) => setPlayingLetter(word),
       onDone: () => {
         stopPlayAllRef.current = null;
         setIsPlayingAll(false);
+        setPlayingLetter(null);
+        setPlayingGroupIdx(null);
       },
     });
+  };
+
+  /** Tile / chip click: stop any Play-all, then forward to parent (speaks syllable). */
+  const handleLetterActivate = (letter: string) => {
+    stopPlayAll();
+    onWordClick(letter);
   };
   const sectionJumps = buildSectionJumps(activeLesson);
   const currentJumpIndex = (() => {
@@ -1362,9 +1399,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <span className="textbook-glossary-hint">
             {activeLessonId === 'barakhadi'
               ? 'Hear every akṣara in बारहखड़ी, row by row.'
-              : isGroupedLesson
-                ? 'Hear every letter on this chart, in order.'
-                : 'Hear every word on this page, in order.'}
+              : activeLessonId === 'varnamala'
+                ? 'Hear every letter in order. Row ▶ plays one group. Speaks the syllable (not the picture word).'
+                : isGroupedLesson
+                  ? 'Hear every letter on this chart, in order.'
+                  : 'Hear every word on this page, in order.'}
           </span>
         </div>
         {!isGroupedLesson && (
@@ -1704,12 +1743,17 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 <span className="varnamala-row-label">{group.meaning || group.category}</span>
                 <button
                   type="button"
-                  className="textbook-playrow-btn"
-                  onClick={() => handlePlayGroup(group.words || [])}
-                  aria-label={`Play all letters in ${group.meaning || group.category || 'this row'}`}
-                  title="Play this row"
+                  className={`textbook-playrow-btn${isPlayingAll && playingGroupIdx === groupIdx ? ' textbook-playrow-btn--active' : ''}`}
+                  onClick={() => handlePlayGroup(group.words || [], groupIdx)}
+                  aria-label={
+                    isPlayingAll && playingGroupIdx === groupIdx
+                      ? `Stop playing ${group.meaning || group.category || 'this row'}`
+                      : `Play all letters in ${group.meaning || group.category || 'this row'}`
+                  }
+                  aria-pressed={isPlayingAll && playingGroupIdx === groupIdx}
+                  title={isPlayingAll && playingGroupIdx === groupIdx ? 'Stop this row' : 'Play this row'}
                 >
-                  ▶
+                  {isPlayingAll && playingGroupIdx === groupIdx ? '⏹' : '▶'}
                 </button>
               </div>
               <div className="varnamala-row-letters">
@@ -1718,21 +1762,23 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                   const mnemonic = isVarnamala ? getLetterMnemonic(letter) : undefined;
 
                   if (isVarnamala && mnemonic) {
+                    const isPlayHighlight = playingLetter === letter;
                     return (
                       <div
                         key={`${activeLessonId}-${groupIdx}-${letterIdx}`}
                         role="button"
                         tabIndex={0}
-                        className="varnamala-bouncy-card"
-                        onClick={() => onWordClick(letter)}
+                        className={`varnamala-bouncy-card${isPlayHighlight ? ' varnamala-bouncy-card--playing' : ''}`}
+                        onClick={() => handleLetterActivate(letter)}
                         onKeyDown={(e) => {
                           if (e.key === 'Enter' || e.key === ' ') {
                             e.preventDefault();
-                            onWordClick(letter);
+                            handleLetterActivate(letter);
                           }
                         }}
                         aria-label={`Letter ${letter} (${tileLabel(letter)}). Click to hear syllable; picture chip speaks the word.`}
                         title={`Hear ${letter} · Picture word: ${mnemonic.wordSan} (${mnemonic.wordEn})`}
+                        aria-current={isPlayHighlight ? 'true' : undefined}
                       >
                         <span className="v-card-akshara">{letter}</span>
                         {showRomanTiles ? (
@@ -1745,6 +1791,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                           title={`Hear ${mnemonic.wordSan} — ${mnemonic.wordEn}`}
                           onClick={(e) => {
                             e.stopPropagation();
+                            stopPlayAll();
                             playPronunciation(mnemonic.wordSan);
                           }}
                         >
@@ -1778,14 +1825,16 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                     );
                   }
 
+                  const isPlayHighlight = playingLetter === letter;
                   return (
                     <button
                       key={`${activeLessonId}-${groupIdx}-${letterIdx}`}
                       type="button"
-                      className={`varnamala-letter-btn${showRomanTiles ? ' barakhadi-letter-btn' : ''}${isExtraAnunasika ? ' varnamala-letter-btn--extra' : ''}`}
-                      onClick={() => onWordClick(letter)}
+                      className={`varnamala-letter-btn${showRomanTiles ? ' barakhadi-letter-btn' : ''}${isExtraAnunasika ? ' varnamala-letter-btn--extra' : ''}${isPlayHighlight ? ' varnamala-letter-btn--playing' : ''}`}
+                      onClick={() => handleLetterActivate(letter)}
                       aria-label={`Play pronunciation for ${letter}${isExtraAnunasika ? ' (optional, for later)' : ''}${showRomanTiles ? ` (${tileLabel(letter)})` : ''}`}
                       title={isExtraAnunasika ? 'Candrabindu — optional for beginners, learn later' : undefined}
+                      aria-current={isPlayHighlight ? 'true' : undefined}
                     >
                       <span className="barakhadi-dev">{letter}</span>
                       {showRomanTiles ? (

@@ -2,6 +2,7 @@ import { isBarakhadiAkshara, varnamalaSpeechText } from './barakhadiPhonetics';
 import {
   applySafeProsody,
   clampRate,
+  isApplePlatform,
   isWindowsPlatform,
   pickEnglishCueVoice,
   pickHindiVoice,
@@ -52,19 +53,46 @@ const applyWordOverrides = (word: string): string => {
 
 // Visarga (ः) is a breathy 'h' echo of the preceding vowel, e.g. अर्थः -> अर्थह,
 // मातुः -> मातुहु. Voice engines otherwise drop it or mispronounce it silently.
-const applyVisargaEcho = (word: string): string => {
+// On Windows, a thin space before 'ह' helps SAPI keep the echo audible as one word
+// (fixes picture words like एणः, ईशः, उष्ट्रः, डमरुः on Chrome/Edge).
+const applyVisargaEcho = (word: string, spacedEcho = false): string => {
   if (!word.endsWith('ः')) return word;
   const base = word.slice(0, -1);
   const lastChar = base[base.length - 1];
+  const h = spacedEcho ? ' ह' : 'ह';
 
   if (VOWEL_MATRAS.includes(lastChar)) {
-    return base + 'ह' + lastChar;
+    return base + h + lastChar;
   }
   if (VOWEL_TO_MATRA[lastChar]) {
-    return base + 'ह' + VOWEL_TO_MATRA[lastChar];
+    return base + h + VOWEL_TO_MATRA[lastChar];
   }
   // Bare consonant (inherent 'a') or the vowel 'अ': 'ह' already carries the 'a' sound.
-  return base + 'ह';
+  return base + h;
+};
+
+/**
+ * Apple voices often segment words that start with rare vocalic letters ॠ / ऌ
+ * (e.g. ॠकारः → "ॠ / का / रः"). Map to familiar री / ली so the whole word
+ * speaks continuously. Windows is left unchanged for these words.
+ */
+const applyAppleWordFixes = (word: string): string => {
+  if (!isApplePlatform()) return word;
+  if (word === 'ॠकारः' || word.startsWith('ॠकार')) {
+    return word.replace(/^ॠ/, 'री');
+  }
+  if (word === 'ऌकारः' || word.startsWith('ऌकार')) {
+    return word.replace(/^ऌ/, 'ली');
+  }
+  return word;
+};
+
+/** True for multi-akṣara picture / vocabulary words (not bare tiles). */
+const isFullWord = (word: string): boolean => {
+  if (CONJUNCT_TILES.has(word)) return false;
+  if (WINDOWS_BARE_CONSONANTS.has(word)) return false;
+  if (isBarakhadiAkshara(word)) return false;
+  return word.length > 1;
 };
 
 // Builds the text actually sent to the speech engine: word overrides + visarga echo.
@@ -83,7 +111,26 @@ const toSpeechText = (word: string): string => {
   if (isBarakhadiAkshara(word)) {
     return varnamalaSpeechText(word);
   }
-  return applyVisargaEcho(applyWordOverrides(word));
+
+  // Mac-only spoken-text for ॠकारः / ऌकारः (see applyAppleWordFixes).
+  const appleFixed = applyAppleWordFixes(word);
+  const overridden = applyWordOverrides(appleFixed);
+
+  // Windows whole-word path: keep Devanagari + spaced visarga echo for hi-IN.
+  // Mac keeps the unspaced echo (already correct there).
+  if (isWindowsPlatform()) {
+    // Never let roman overrides win for ordinary picture words on Windows —
+    // force Devanagari so pickHindiVoice is used (एणः, ईशः, …).
+    if (/^[a-z\- ]+$/i.test(overridden) && !/^(an gam|gun ga|run ga|sap-ta)$/i.test(overridden)) {
+      return applyVisargaEcho(appleFixed, true);
+    }
+    if (/^[a-z\- ]+$/i.test(overridden)) {
+      return overridden; // intentional ङ / सप्त roman anchors
+    }
+    return applyVisargaEcho(overridden, true);
+  }
+
+  return applyVisargaEcho(overridden, false);
 };
 
 /** Default playback rate (1x). Slow presets were removed. */
@@ -103,7 +150,14 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
       utterance.lang = 'en-IN';
     }
   } else {
-    utterance.lang = voice?.lang || 'hi-IN';
+    // Windows picture-words: always prefer a real hi-IN voice with Devanagari text.
+    if (isWindowsPlatform() && isFullWord(word)) {
+      const hi = pickHindiVoice(voices);
+      utterance.voice = hi || voice || null;
+      utterance.lang = hi?.lang || voice?.lang || 'hi-IN';
+    } else {
+      utterance.lang = voice?.lang || 'hi-IN';
+    }
   }
   // औ/ऐ: slower diphthong; घ: gha a touch slower.
   // छ uses Devanagari + Hindi voice (roman chhha was letter-spelled as C-A).
@@ -258,7 +312,12 @@ export const playPronunciation = (value: string): void => {
 /** Speak a list of words/letters in order. Returns stop(). */
 export const playSequence = (
   values: string[],
-  options?: { gapMs?: number; onDone?: () => void },
+  options?: {
+    gapMs?: number;
+    onDone?: () => void;
+    /** Fired just before each item is spoken (for tile highlight). */
+    onItem?: (word: string, index: number) => void;
+  },
 ): (() => void) => {
   const gapMs = options?.gapMs ?? 220;
   const items = values
@@ -272,12 +331,18 @@ export const playSequence = (
 
   let cancelled = false;
   let timer: ReturnType<typeof setTimeout> | null = null;
+  let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
   let index = 0;
+  let settledForIndex = -1;
 
   const clearTimer = () => {
     if (timer !== null) {
       clearTimeout(timer);
       timer = null;
+    }
+    if (fallbackTimer !== null) {
+      clearTimeout(fallbackTimer);
+      fallbackTimer = null;
     }
   };
 
@@ -294,11 +359,25 @@ export const playSequence = (
       return;
     }
     const word = items[index];
+    const itemIndex = index;
     index += 1;
+    options?.onItem?.(word, itemIndex);
+
     const after = () => {
-      if (cancelled) return;
+      if (cancelled || settledForIndex === itemIndex) return;
+      // External stopPronunciation() bumps speakGeneration — abort the queue.
+      if (gen !== speakGeneration) {
+        cancelled = true;
+        return;
+      }
+      settledForIndex = itemIndex;
+      clearTimer();
       timer = setTimeout(speakNext, gapMs);
     };
+
+    // Some Chrome/Edge builds skip onend; advance after a safe upper bound.
+    const fallbackMs = Math.max(1800, word.length * 420);
+    fallbackTimer = setTimeout(after, fallbackMs);
     speakConfigured(word, after);
   };
 

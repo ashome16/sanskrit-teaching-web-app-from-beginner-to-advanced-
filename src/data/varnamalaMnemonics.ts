@@ -13,7 +13,7 @@ export interface LetterMnemonic {
   wordHi: string;
   emoji: string;
   strokeOrder: string[];
-  group: 'svara' | 'sparsha' | 'antastha' | 'ushmana' | 'ayogavaha';
+  group: 'svara' | 'sparsha' | 'antastha' | 'ushmana' | 'ayogavaha' | 'samyukta';
   groupLabelSan: string;
   groupLabelEn: string;
 }
@@ -282,6 +282,24 @@ export const VARNAMALA_MNEMONICS: Record<string, LetterMnemonic> = {
     groupLabelEn: 'Aspirate Dots (Visarga)',
   },
 
+
+  अँ: {
+    letter: 'अँ',
+    iast: 'ã',
+    wordSan: 'अँगनम्',
+    wordIast: 'aṅganam',
+    wordEn: 'Courtyard',
+    wordHi: 'आँगन',
+    emoji: '🏡',
+    strokeOrder: [
+      '1. Draw letter "अ"',
+      '2. Cap with top bar',
+      '3. Place candrabindu (ँ) — crescent with a dot — centered above the bar',
+    ],
+    group: 'ayogavaha',
+    groupLabelSan: 'अयोगवाहः (चन्द्रबिन्दुः)',
+    groupLabelEn: 'Candrabindu (Nasal)',
+  },
   // ==========================================
   // KA-VARGA (Velar / कण्ठ्य)
   // ==========================================
@@ -890,6 +908,78 @@ export const VARNAMALA_MNEMONICS: Record<string, LetterMnemonic> = {
     group: 'ushmana',
     groupLabelSan: 'ऊष्माणः (कण्ठ्य)',
     groupLabelEn: 'Aspirate / Throat',
+  },
+
+  // ==========================================
+  // SAMYUKTA (Common Conjuncts / संयुक्तवत्)
+  // ==========================================
+  क्ष: {
+    letter: 'क्ष',
+    iast: 'kṣa',
+    wordSan: 'क्षत्रियः',
+    wordIast: 'kṣatriyaḥ',
+    wordEn: 'Warrior',
+    wordHi: 'क्षत्रिय / योद्धा',
+    emoji: '⚔️',
+    strokeOrder: [
+      '1. Draw क-body with vertical stem',
+      '2. Add ष-loop joined under/through the stem (क् + ष)',
+      '3. Cap with top horizontal bar (शिरोरेखा)',
+    ],
+    group: 'samyukta',
+    groupLabelSan: 'संयुक्तवत्',
+    groupLabelEn: 'Conjunct',
+  },
+  ज्ञ: {
+    letter: 'ज्ञ',
+    iast: 'jña',
+    wordSan: 'ज्ञानम्',
+    wordIast: 'jñānam',
+    wordEn: 'Knowledge',
+    wordHi: 'ज्ञान',
+    emoji: '📖',
+    strokeOrder: [
+      '1. Draw ज-body',
+      '2. Join ञ-form to complete ज्ञ (ज् + ञ)',
+      '3. Cap with top horizontal bar',
+    ],
+    group: 'samyukta',
+    groupLabelSan: 'संयुक्तवत्',
+    groupLabelEn: 'Conjunct',
+  },
+  त्र: {
+    letter: 'त्र',
+    iast: 'tra',
+    wordSan: 'त्रिशूलम्',
+    wordIast: 'triśūlam',
+    wordEn: 'Trident',
+    wordHi: 'त्रिशूल',
+    emoji: '🔱',
+    strokeOrder: [
+      '1. Draw त stem and left curve',
+      '2. Add र-curve (्र) tucked under/through',
+      '3. Cap with top horizontal bar',
+    ],
+    group: 'samyukta',
+    groupLabelSan: 'संयुक्तवत्',
+    groupLabelEn: 'Conjunct',
+  },
+  श्र: {
+    letter: 'श्र',
+    iast: 'śra',
+    wordSan: 'श्रीफलम्',
+    wordIast: 'śrīphalam',
+    wordEn: 'Coconut',
+    wordHi: 'नारियल / श्रीफल',
+    emoji: '🥥',
+    strokeOrder: [
+      '1. Draw श body with left loops',
+      '2. Add र-curve (्र) joined to the stem',
+      '3. Cap with top horizontal bar',
+    ],
+    group: 'samyukta',
+    groupLabelSan: 'संयुक्तवत्',
+    groupLabelEn: 'Conjunct',
   },
 };
 

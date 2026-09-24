@@ -91,6 +91,14 @@
   transition-duration: 0.08s;
 }
 
+.varnamala-bouncy-card--playing {
+  outline: 3px solid #0f766e;
+  outline-offset: 3px;
+  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.35);
+  transform: translateY(-4px) scale(1.05);
+  z-index: 2;
+}
+
 .v-card-akshara {
   font-size: 1.85rem;
   font-weight: 800;

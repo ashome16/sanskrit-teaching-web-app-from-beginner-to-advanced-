@@ -566,6 +566,19 @@
   line-height: 1.2;
 }
 
+.textbook-playrow-btn--active {
+  background: #b45309;
+  border-color: #b45309;
+  color: #fff;
+}
+
+.varnamala-letter-btn--playing {
+  outline: 3px solid #0f766e;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.25);
+  transform: translateY(-2px) scale(1.04);
+}
+
 .varnamala-row-header {
   margin-bottom: 0.5rem;
   display: flex;

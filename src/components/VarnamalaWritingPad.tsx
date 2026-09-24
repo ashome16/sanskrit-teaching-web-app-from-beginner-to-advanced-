@@ -102,7 +102,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     if (activeCategory === 'all') return true;
     if (activeCategory === 'svara') return item.group === 'svara' || item.group === 'ayogavaha';
     if (activeCategory === 'sparsha') return item.group === 'sparsha';
-    if (activeCategory === 'other') return item.group === 'antastha' || item.group === 'ushmana';
+    if (activeCategory === 'other') return item.group === 'antastha' || item.group === 'ushmana' || item.group === 'samyukta';
     return true;
   });
 

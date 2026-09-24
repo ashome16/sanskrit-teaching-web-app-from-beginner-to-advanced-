@@ -9,6 +9,12 @@ export const isWindowsPlatform = (): boolean => {
   return /Windows/i.test(navigator.userAgent);
 };
 
+/** macOS / iOS — used for Apple-voice-specific spoken-text tweaks. */
+export const isApplePlatform = (): boolean => {
+  if (typeof navigator === 'undefined') return false;
+  return /Mac|iPhone|iPad|iPod/i.test(navigator.userAgent);
+};
+
 /** Windows-safe rate: never below ~0.7; soft upper bound ~1.05. */
 export const clampRate = (rate: number): number => {
   if (!isWindowsPlatform()) return rate;
