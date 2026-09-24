@@ -874,6 +874,398 @@
   background: #1d4ed8;
 }
 
+/* ==========================================================================
+   Grammar as Arithmetic (अङ्कानां वामतो गतिः) & compose(n) Interactive Styles
+   ========================================================================== */
+
+.num-algorithm-hero {
+  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+  border: 1.5px solid #bfdbfe;
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.05);
+}
+
+.num-algorithm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.85rem;
+}
+
+.num-algorithm-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0 0 0.75rem;
+  line-height: 1.3;
+}
+
+.num-algorithm-lead {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #1e3a8a;
+  margin: 0 0 0.85rem;
+}
+
+.num-algorithm-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #334155;
+  margin: 0 0 0.85rem;
+}
+
+.num-algorithm-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.85rem;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.num-algo-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  color: #1e293b;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.num-algo-step code {
+  background: #f1f5f9;
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #0369a1;
+}
+
+.num-algo-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.num-sastra-box {
+  background: #fefce8;
+  border: 1.5px solid #fde047;
+  border-radius: 12px;
+  padding: 1.15rem 1.35rem;
+  margin-top: 1.25rem;
+}
+
+.num-sastra-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #854d0e;
+}
+
+.num-sastra-p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #713f12;
+}
+
+/* compose(n) Interactive Laboratory */
+.num-composer-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.num-composer-header {
+  margin-bottom: 1.25rem;
+}
+
+.num-composer-tag {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.num-composer-heading {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0 0 0.35rem;
+}
+
+.num-composer-sub {
+  font-size: 0.92rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.num-composer-presets {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+}
+
+.num-presets-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+  margin-right: 0.35rem;
+}
+
+.num-preset-chip {
+  padding: 0.35rem 0.85rem;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.num-preset-chip:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+.num-preset-chip.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #1d4ed8;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+.num-composer-slider-row {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.num-slider-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.num-slider-label strong {
+  color: #2563eb;
+  font-size: 1.15rem;
+}
+
+.num-composer-range {
+  width: 100%;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+/* Decomposition Table */
+.num-algo-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.num-algo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  text-align: left;
+}
+
+.num-algo-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 800;
+  padding: 0.85rem 1rem;
+  border-bottom: 1.5px solid #e2e8f0;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.num-algo-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  vertical-align: middle;
+}
+
+.num-order-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.num-order-badge--1 {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.num-order-badge--2 {
+  background: #f5f3ff;
+  color: #6d28d9;
+  border: 1px solid #ddd6fe;
+}
+
+.num-order-badge--res {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.num-stem-val {
+  font-family: 'Noto Sans Devanagari', -apple-system, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.num-algo-result-row {
+  background: #faf5ff;
+}
+
+.num-result-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.num-result-word {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #6b21a8;
+  font-family: 'Noto Sans Devanagari', -apple-system, sans-serif;
+}
+
+.num-result-iast {
+  font-size: 0.95rem;
+  color: #7e22ce;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.num-result-speak-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #8b5cf6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.num-result-speak-btn:hover {
+  background: #7c3aed;
+}
+
+/* Grammatical Equation */
+.num-composer-equation {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #fdf2f8;
+  border: 1.5px solid #fbcfe8;
+  border-radius: 12px;
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.num-equation-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #be185d;
+}
+
+.num-equation-math {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #9d174d;
+  font-family: 'Noto Sans Devanagari', monospace;
+}
+
+/* Code Preview Block */
+.num-code-preview {
+  background: #0f172a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.num-code-header {
+  background: #1e293b;
+  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #94a3b8;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  align-items: center;
+}
+
+.num-code-block {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #38bdf8;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.num-code-block code {
+  color: inherit;
+  font-family: inherit;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .num-guide-container {
@@ -903,4 +1295,20 @@
   .vedic-source-tag {
     margin-left: 0;
   }
+  .num-algorithm-hero,
+  .num-composer-card {
+    padding: 1.25rem 1rem;
+  }
+  .num-algorithm-title {
+    font-size: 1.25rem;
+  }
+  .num-composer-heading {
+    font-size: 1.15rem;
+  }
+  .num-composer-equation {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
 }
+

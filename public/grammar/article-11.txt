@@ -57,6 +57,68 @@ Reverse (अङ्कानां वामतो गतिः): 18!
 
 This is why the Mahābhārata is traditionally called **जय** (*Jaya*) — it contains **18** Parvas (books), the Kurukṣetra war lasted **18** days, the Bhagavad Gītā spans **18** chapters, and the fighting armies numbered **18** Akṣauhiṇīs!
 
+## अङ्कानां वामतो गतिः: Grammar is an Arithmetic Engine
+### English number-words are labels; Sanskrit number-words are an algorithm
+
+In English, grammar and arithmetic sit in different rooms. The phrase "twenty-four" does not compute 24. You cannot read the English phrase as an operation: the word order places tens first, then units, the stems are irregular (*eleven*, *twelve*, *twenty* rather than "two-ten"), and nothing in the phonetic structure explains how place value actually works. A child can speak English fluently and still fail to recognize that 24 is fundamentally $4 + 20$.
+
+Sanskrit does not allow that split.
+
+**अङ्कानां वामतो गतिः** (*aṅkānāṁ vāmato gatiḥ* — "numbers move leftward") is simultaneously an ancient linguistic rule and an executable place-value algorithm:
+
+- Step 1: Start at the units place ($n \pmod{10}$).
+- Step 2: Move leftward to the tens place ($\lfloor n / 10 \rfloor$).
+- Step 3: Glue the stems together as a dvigu-style compound.
+- Step 4: Apply mandatory Sandhi transformations.
+
+Therefore, in Sanskrit, the word for 24 is not a static vocabulary label. It is an addition equation:
+
+$$\text{चतुर् } (4) + \text{विंशतिः } (20) = \text{चतुर्विंशतिः } (24)$$
+
+The exact same computational engine builds:
+- $21 = \text{एक } (1) + \text{विंशतिः } (20) \to \text{एकविंशतिः}$
+- $26 = \text{षट् } (6) + \text{विंशतिः } (20) \to \text{षड्विंशतिः}$
+- $34 = \text{चतुर् } (4) + \text{त्रिंशत् } (30) \to \text{चतुस्त्रिंशत्}$
+- $19 = \text{एक } (1) + \text{ऊन } (\text{less}) + \text{विंशतिः } (20) \to \text{एकोनविंशतिः}$ ("one-less-than-twenty")
+
+The grammar *is* the addition. In Gurukul pedagogical methodology, cards display the breakdown $\text{चतुर् } (4) + \text{विंशतिः } (20)$ directly under the compound so the student perceives the sum as an organic operation, not just a blind label.
+
+### The Unified Śāstra Stack: Small Pieces, Strict Order, One Result
+
+This is not a poetic coincidence. In the classical Indian intellectual stack (**शास्त्र · Śāstra**), three sister disciplines share the exact same structural paradigm:
+- **व्याकरण (Grammar)**: How linguistic roots, upasargas, and pratyayas combine into words.
+- **गणित (Mathematics)**: How numerical quantities combine into place-value sums.
+- **छन्दस् (Prosody)**: How short and long acoustic beats combine into poetic meters.
+
+All three utilize the identical mental architecture: small constituent pieces, a strict directional order, mandatory sandhi or operational rules, and a single resulting compound form.
+
+Where English names the number as a frozen phrase, Sanskrit **assembles the number from the right**.
+
+| Spoken Order | Place Value | Digit Extraction | Example: 24 |
+| 1st Syllable | Units Place ($10^0$) | n % 10 | चतुर् (4) |
+| 2nd Syllable | Tens Place ($10^1$) | floor(n / 10) | विंशतिः (20) |
+| Result Compound | Unit stem + Ten stem + Sandhi | Combined Equation | चतुर्विंशतिः (24) |
+
+### Mapping to Modern Code: The `compose(n)` Algorithm
+
+This ancient rule translates directly into modern computer science as an executable function:
+
+```javascript
+function compose(n) {
+  const units = n % 10;              // 1. Rightmost digit first (units)
+  const tens  = Math.floor(n / 10);  // 2. Next digit leftward (tens)
+  
+  // 3. Assemble: unit stem + ten name + sandhi assimilation
+  return applySandhi(unitStem[units], tenName[tens]);
+}
+
+// 24 → 4 + 20 → चतुर् + विंशतिः → चतुर्विंशतिः
+// 21 → 1 + 20 → एक + विंशतिः   → एकविंशतिः
+// 19 → 20 - 1 → एक + ऊन + विंशतिः → एकोनविंशतिः
+```
+
+Grammar here is not cosmetic decoration layered on top of mathematics. It is the exact same leftward motion that governs both Sanskrit compound numbers and the Kaṭapayādi cipher!
+
 ## The Golden Ratio (ϕ ≈ 1.618) & Sanskrit Prosody
 
 One of the most profound intersections between mathematics and poetry is the **Golden Ratio ($\phi \approx 1.6180339887...$)**, universally admired as the proportion of supreme aesthetic balance in geometry, nature, and art. In Western history, this ratio is inextricably linked to the Fibonacci sequence (1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...).

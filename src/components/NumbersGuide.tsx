@@ -29,6 +29,7 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
   const [activeTab, setActiveTab] = useState<GuideTab>('grid');
   const [selectedDecade, setSelectedDecade] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [composerNumber, setComposerNumber] = useState<number>(24);
   const [playingWord, setPlayingWord] = useState<string | null>(null);
   const [isPlayingDecade, setIsPlayingDecade] = useState(false);
   const stopPlaySequenceRef = useRef<(() => void) | null>(null);
@@ -749,32 +750,184 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
 
       {/* Tab 5: Word Formation Secrets (Sandhi & Construction Rules) */}
       {activeTab === 'rules' && (
-        <div>
-          <div className="rules-grid">
-            <div className="rule-box">
-              <div className="rule-box-header">
-                <span className="rule-box-icon">🧭</span>
-                <h4 className="rule-box-title">1. अङ्कानां वामतो गतिः (Units Precede Tens)</h4>
+        <div className="rules-tab-content">
+          {/* Masterclass Callout: English Labels vs. Sanskrit Algorithm */}
+          <div className="num-algorithm-hero">
+            <div className="num-algorithm-badge">🧭 शास्त्र-रहस्यम् · The Construction Algorithm</div>
+            <h3 className="num-algorithm-title">
+              अङ्कानां वामतो गतिः · Grammar is an Arithmetic Engine
+            </h3>
+            <p className="num-algorithm-lead">
+              <strong>English number-words are frozen labels. Sanskrit number-words are an executable place-value algorithm.</strong>
+            </p>
+            <p className="num-algorithm-desc">
+              In English, grammar and arithmetic sit in different rooms. &ldquo;Twenty-four&rdquo; does not compute 24.
+              The word order is tens-then-units, the forms are irregular (<em>eleven</em>, <em>twelve</em>, <em>twenty</em>, not &ldquo;two-ten&rdquo;),
+              and nothing in the sentence structure tells you how place value works. A child can speak English fluently and still not see that 24 = 4 + 20.
+            </p>
+            <p className="num-algorithm-desc">
+              Sanskrit does not allow that split. <strong>अङ्कानां वामतो गतिः</strong> (digits move leftward) is both a linguistic rule and a place-value algorithm:
+            </p>
+            <div className="num-algorithm-steps">
+              <div className="num-algo-step">
+                <span className="num-algo-step-num">1</span>
+                <span>Start at the units place (<code>n % 10</code>)</span>
               </div>
-              <p className="rule-box-p">
-                Unlike modern English (Twenty-Four) or Hindi (चौबीस), Sanskrit builds two-digit numerals strictly
-                by naming the <strong>unit digit first</strong>, followed by the decade:
-              </p>
-              <div className="rule-formula">
-                <code>एक (1) + विंशतिः (20)</code> = <strong>एकविंशतिः (21)</strong>
+              <div className="num-algo-step">
+                <span className="num-algo-step-num">2</span>
+                <span>Move left to the tens place (<code>floor(n / 10)</code>)</span>
               </div>
-              <div className="rule-formula">
-                <code>चतुर् (4) + त्रिंशत् (30)</code> = <strong>चतुस्त्रिंशत् (34)</strong>
+              <div className="num-algo-step">
+                <span className="num-algo-step-num">3</span>
+                <span>Glue the stems as a dvigu-style compound</span>
               </div>
-              <div className="rule-formula">
-                <code>सप्त (7) + चत्वारिंशत् (40)</code> = <strong>सप्तचत्वारिंशत् (47)</strong>
+              <div className="num-algo-step">
+                <span className="num-algo-step-num">4</span>
+                <span>Apply mandatory Sandhi assimilation</span>
               </div>
             </div>
 
+            <div className="num-sastra-box">
+              <h4 className="num-sastra-title">🏛️ The Unified Śāstra Stack: Small Pieces, Strict Order, One Result</h4>
+              <p className="num-sastra-p">
+                This is not a poetic coincidence. In the classical Indian intellectual stack, <strong>व्याकरण</strong> (how forms combine),
+                <strong>गणित</strong> (how quantities combine), and <strong>छन्दस्</strong> (how sound-units combine) share the same machine:
+                small pieces, strict order, mandatory sandhi/operation, and one resulting form. English names the number;
+                <strong>Sanskrit assembles the number from the right</strong>.
+              </p>
+            </div>
+          </div>
+
+          {/* Interactive compose(n) Laboratory */}
+          {(() => {
+            const compItem = SANSKRIT_NUMBERS_1_TO_100.find((it) => it.value === composerNumber) || SANSKRIT_NUMBERS_1_TO_100[24];
+            const compUnits = composerNumber % 10;
+            const compTens = Math.floor(composerNumber / 10);
+            const presets = [24, 21, 19, 29, 34, 47, 81, 82, 96, 99];
+
+            return (
+              <div className="num-composer-card">
+                <div className="num-composer-header">
+                  <span className="num-composer-tag">⚙️ Interactive Laboratory · The `compose(n)` Engine</span>
+                  <h4 className="num-composer-heading">Assemble Any Number from the Right</h4>
+                  <p className="num-composer-sub">
+                    Pick a number or slide to watch the units place combine with the tens decade in real time:
+                  </p>
+                </div>
+
+                {/* Preset Chips */}
+                <div className="num-composer-presets">
+                  <span className="num-presets-label">Quick Examples:</span>
+                  {presets.map((p) => (
+                    <button
+                      key={p}
+                      type="button"
+                      className={`num-preset-chip${composerNumber === p ? ' active' : ''}`}
+                      onClick={() => setComposerNumber(p)}
+                    >
+                      {p}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Slider Control */}
+                <div className="num-composer-slider-row">
+                  <label htmlFor="composer-slider" className="num-slider-label">
+                    Select Number: <strong>{composerNumber}</strong> ({compItem.devanagariNumeral})
+                  </label>
+                  <input
+                    id="composer-slider"
+                    type="range"
+                    min="1"
+                    max="99"
+                    value={composerNumber}
+                    onChange={(e) => setComposerNumber(Number(e.target.value))}
+                    className="num-composer-range"
+                  />
+                </div>
+
+                {/* Real-Time Algorithmic Decomposition Table */}
+                <div className="num-algo-table-wrap">
+                  <table className="num-algo-table">
+                    <thead>
+                      <tr>
+                        <th>Spoken Order</th>
+                        <th>Place Value</th>
+                        <th>Extracted Stem</th>
+                        <th>Role in Compound</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span className="num-order-badge num-order-badge--1">1st (Rightmost)</span></td>
+                        <td>Units Place (<code>n % 10 = {compUnits}</code>)</td>
+                        <td className="num-stem-val">{compItem.breakdown ? compItem.breakdown.split('+')[0]?.trim() : compUnits}</td>
+                        <td>Unit prefix attached first</td>
+                      </tr>
+                      <tr>
+                        <td><span className="num-order-badge num-order-badge--2">2nd (Leftward)</span></td>
+                        <td>Tens Place (<code>floor(n / 10) = {compTens}</code>)</td>
+                        <td className="num-stem-val">{compItem.breakdown ? (compItem.breakdown.split('+')[1] || '').split('=')[0]?.trim() : compTens * 10}</td>
+                        <td>Decade base noun</td>
+                      </tr>
+                      <tr className="num-algo-result-row">
+                        <td><span className="num-order-badge num-order-badge--res">Result</span></td>
+                        <td>Combined Compound</td>
+                        <td colSpan={2}>
+                          <div className="num-result-box">
+                            <span className="num-result-word">{compItem.word}</span>
+                            <span className="num-result-iast">({compItem.iast})</span>
+                            <button
+                              type="button"
+                              className="num-result-speak-btn"
+                              onClick={() => handleSpeak(compItem.word)}
+                              title={`Hear ${compItem.word}`}
+                            >
+                              🔊 Hear Classical Pronunciation
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Breakdown Equation Display */}
+                {compItem.breakdown && (
+                  <div className="num-composer-equation">
+                    <span className="num-equation-label">The Grammatical Sum:</span>
+                    <span className="num-equation-math">{compItem.breakdown}</span>
+                  </div>
+                )}
+
+                {/* Code Representation */}
+                <div className="num-code-preview">
+                  <div className="num-code-header">
+                    <span>💻 Executable JavaScript Implementation</span>
+                  </div>
+                  <pre className="num-code-block">
+                    <code>{`function compose(n) {
+  const units = n % 10;              // 1. Rightmost digit first (units)
+  const tens  = Math.floor(n / 10);  // 2. Next digit leftward (tens)
+  
+  // 3. Assemble: unit stem + ten name + sandhi / specials
+  return applySandhi(unitStem[units], tenName[tens]);
+}
+
+// Result for ${composerNumber}:
+// ${composerNumber} → ${compItem.breakdown || compItem.word} → ${compItem.word}`}</code>
+                  </pre>
+                </div>
+              </div>
+            );
+          })()}
+
+          {/* Specific Phonological & Sandhi Rules Grid */}
+          <div className="rules-grid" style={{ marginTop: '2rem' }}>
             <div className="rule-box">
               <div className="rule-box-header">
                 <span className="rule-box-icon">➖</span>
-                <h4 className="rule-box-title">2. एकोन- / ऊन- नियम (Subtractive Naming)</h4>
+                <h4 className="rule-box-title">1. एकोन- / ऊन- नियम (Subtractive Naming)</h4>
               </div>
               <p className="rule-box-p">
                 Numbers ending in 9 can be expressed either constructively (9 + tens) or subtractively as
@@ -794,7 +947,7 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
             <div className="rule-box">
               <div className="rule-box-header">
                 <span className="rule-box-icon">⚡</span>
-                <h4 className="rule-box-title">3. The षण्णवतिः Sandhi Mystery (96)</h4>
+                <h4 className="rule-box-title">2. The षण्णवतिः Sandhi Mystery (96)</h4>
               </div>
               <p className="rule-box-p">
                 Why is 96 written as <strong>षण्णवतिः</strong> instead of षट्-नवतिः?
@@ -814,7 +967,7 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
             <div className="rule-box">
               <div className="rule-box-header">
                 <span className="rule-box-icon">☀️</span>
-                <h4 className="rule-box-title">4. Yan &amp; Savarna Dirgha in the 80s (अशीतिः)</h4>
+                <h4 className="rule-box-title">3. Yan &amp; Savarna Dirgha in the 80s (अशीतिः)</h4>
               </div>
               <p className="rule-box-p">
                 Because 80 is <strong>अशीतिः</strong> (starting with vowel अ), all numbers in the 80s undergo
