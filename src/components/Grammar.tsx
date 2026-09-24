@@ -9,19 +9,28 @@ import PaninianStudio from './PaninianStudio';
 import { NumbersGuide } from './NumbersGuide';
 import '../styles/grammar.css';
 
-type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'numbers' | 'samyukta' | 'sound-teams' | 'science-of-sound' | 'dhatupatha' | 'article';
+export type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'numbers' | 'samyukta' | 'sound-teams' | 'science-of-sound' | 'dhatupatha' | 'article';
 
 const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((response) => response.text());
 
-type GrammarProps = {
+export type GrammarProps = {
+  initialTopic?: GrammarTopic;
+  initialArticleId?: string | null;
   onGoHome?: () => void;
   onOpenWorksheets?: () => void;
   onOpenQuiz?: () => void;
 };
 
-const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQuiz }) => {
-  const [topic, setTopic] = useState<GrammarTopic>('home');
-  const [activeArticleId, setActiveArticleId] = useState<string | null>(null);
+const Grammar: React.FC<GrammarProps> = ({
+  initialTopic = 'home',
+  initialArticleId = null,
+  onGoHome,
+  onOpenWorksheets,
+  onOpenQuiz,
+}) => {
+  const [topic, setTopic] = useState<GrammarTopic>(initialTopic);
+  const [activeArticleId, setActiveArticleId] = useState<string | null>(initialArticleId);
+  const [searchFilter, setSearchFilter] = useState('');
   const [articles, setArticles] = useState<Record<string, ParsedArticle>>({});
   const [articleError, setArticleError] = useState(false);
 
@@ -381,97 +390,158 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQui
     );
   }
 
+  const INTERACTIVE_TOPICS = [
+    {
+      id: 'vibhakti' as GrammarTopic,
+      title: '🏛️ विभक्ति · Vibhakti Guide',
+      blurb: 'Understand all 8 Sanskrit noun cases, kāraka roles, suffixes, sentences, and memory trick with Bālaka.',
+      color: '#047857',
+      borderColor: '#059669',
+      bgGradient: 'linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%)',
+      keywords: ['vibhakti', 'noun cases', 'balaka', 'karaka', 'declension', 'cases', 'विभक्ति', 'बालक'],
+    },
+    {
+      id: 'dhatupatha' as GrammarTopic,
+      title: '🌿 पाणिनीय-धातुपाठ-प्रयोगशाला · Pāṇinian Studio',
+      blurb: 'Deconstruct words (गत्वा, पठितुम्), generate 5-Lakāra conjugations with color-coded formulas, and practice Pratyayas.',
+      color: '#0f766e',
+      borderColor: '#0f766e',
+      bgGradient: 'linear-gradient(180deg, #ffffff 0%, #f0fdfa 100%)',
+      keywords: ['dhatupatha', 'paninian studio', 'lakara', 'verb conjugations', 'pratyaya', 'deconstruct', 'roots', 'धातुपाठ', 'लकार'],
+    },
+    {
+      id: 'linga-vachana' as GrammarTopic,
+      title: '⚖️ लिङ्गं वचनं च · Gender & Number',
+      blurb: 'Master the 3 Genders, 3 Numbers, Pronouns, and Subject-Verb agreement with interactive tools.',
+      color: '#b45309',
+      borderColor: '#d97706',
+      bgGradient: 'linear-gradient(180deg, #ffffff 0%, #fffdf8 100%)',
+      keywords: ['linga', 'vachana', 'gender', 'number', 'pullinga', 'strilinga', 'napumsakalinga', 'agreement', 'लिङ्गं वचनं च'],
+    },
+    {
+      id: 'numbers' as GrammarTopic,
+      title: '🔢 संख्या-परिचयः · Numbers Masterclass',
+      blurb: 'Complete 1-100 numerals, 1-4 gender declensions (एकः, एका, एकम्), ordinals (प्रथम, द्वितीय), Vedic scales up to 10¹⁷, and quizzes.',
+      color: '#1d4ed8',
+      borderColor: '#2563eb',
+      bgGradient: 'linear-gradient(180deg, #ffffff 0%, #eff6ff 100%)',
+      keywords: ['numbers', 'numerals', 'counting', '1 to 100', 'ordinals', 'scales', 'sankhya', 'संख्या', 'गिनती'],
+    },
+    {
+      id: 'sound-teams' as GrammarTopic,
+      title: 'Five Sound Teams · पञ्च वर्ण-टीमें',
+      blurb: 'Vowels, consonants, sliders, hissers, and fusion blocks — how every letter finds its squad.',
+      color: '#475569',
+      borderColor: '#d8cfbf',
+      bgGradient: 'linear-gradient(180deg, #ffffff 0%, #faf8f5 100%)',
+      keywords: ['sound teams', 'vowels', 'consonants', 'sliders', 'hissers', 'varnamala', 'वर्ण-टीमें'],
+    },
+    {
+      id: 'science-of-sound' as GrammarTopic,
+      title: '🎥 Sanskrit: The Science of Sound · ध्वनि-विज्ञानम्',
+      blurb: 'Masterclass Video: Explore the neuro-acoustic precision, 5 vocal articulation points, and resonant frequencies of Sanskrit.',
+      color: '#7c3aed',
+      borderColor: '#8b5cf6',
+      bgGradient: 'linear-gradient(180deg, #ffffff 0%, #faf5ff 100%)',
+      keywords: ['science of sound', 'video', 'acoustics', 'kantha', 'talu', 'murdha', 'danta', 'oshtha', 'ध्वनि-विज्ञानम्'],
+    },
+    {
+      id: 'samyukta' as GrammarTopic,
+      title: 'संयुक्त · Conjunct Games',
+      blurb: 'Drop the stick, piggyback, shape-shifters — how letters join.',
+      color: '#e11d48',
+      borderColor: '#d8cfbf',
+      bgGradient: 'linear-gradient(180deg, #ffffff 0%, #faf8f5 100%)',
+      keywords: ['conjunct games', 'samyukta', 'ligatures', 'half letters', 'संयुक्त'],
+    },
+  ];
+
+  const qClean = searchFilter.trim().toLowerCase();
+
+  const filteredInteractive = qClean
+    ? INTERACTIVE_TOPICS.filter(
+        (t) =>
+          t.title.toLowerCase().includes(qClean) ||
+          t.blurb.toLowerCase().includes(qClean) ||
+          t.keywords.some((k) => k.toLowerCase().includes(qClean))
+      )
+    : INTERACTIVE_TOPICS;
+
+  const filteredArticles = qClean
+    ? ARTICLES.filter((art) => {
+        const text = (art.cardTitle + ' ' + art.cardBlurb).toLowerCase();
+        if (text.includes(qClean)) return true;
+        // Katapayadi extra tags
+        if (art.id === 'katapayadi-number-words') {
+          const kataTags = ['phi', 'golden ratio', 'pi', 'melakarta', 'raga', 'ragas', 'narayaniyam', 'astronomy', 'chronogram', 'madhava', 'virahanka', 'hemacandra'];
+          if (kataTags.some((tag) => tag.includes(qClean) || qClean.includes(tag))) return true;
+        }
+        return false;
+      })
+    : ARTICLES;
+
+  const totalMatches = filteredInteractive.length + filteredArticles.length;
+
   return (
     <section className="grammar-page" aria-label="Grammar">
       <header className="grammar-page-header">
-        <h2 className="grammar-title">व्याकरणम् · Grammar</h2>
+        <h2 className="grammar-title">व्याकरणम् · Grammar Shelf</h2>
         <p className="grammar-lead">
-          We build this shelf from the base. Vibhakti and conjunct games live here so Deepakam
-          stays the book.
+          Explore interactive declension guides, verb engines, and in-depth masterclass articles on Sanskrit linguistics and mathematics.
         </p>
       </header>
+
+      {/* Grammar Search Bar */}
+      <div className="grammar-search-bar-wrap">
+        <div className="grammar-search-input-box">
+          <span className="grammar-search-icon" aria-hidden="true">🔍</span>
+          <input
+            type="text"
+            className="grammar-search-input"
+            placeholder="Search articles & guides (e.g. Kaṭapayādi, Sandhi, Vibhakti, Phi, Pi, 1-100 Numbers)..."
+            value={searchFilter}
+            onChange={(e) => setSearchFilter(e.target.value)}
+            aria-label="Filter grammar articles and topics"
+          />
+          {searchFilter && (
+            <button
+              type="button"
+              className="grammar-search-clear"
+              onClick={() => setSearchFilter('')}
+              title="Clear search filter"
+              aria-label="Clear search"
+            >
+              ✕
+            </button>
+          )}
+        </div>
+        {searchFilter && (
+          <div className="grammar-search-count-badge">
+            Found {totalMatches} matching {totalMatches === 1 ? 'topic' : 'topics'}
+          </div>
+        )}
+      </div>
+
       <div className="grammar-shelf">
-        <button
-          type="button"
-          className="grammar-card grammar-card--ready"
-          style={{ borderColor: '#059669', background: 'linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%)' }}
-          onClick={() => setTopic('vibhakti')}
-        >
-          <span className="grammar-card-title" style={{ color: '#047857' }}>
-            🏛️ विभक्ति · Vibhakti Guide
-          </span>
-          <span className="grammar-card-blurb">
-            Understand all 8 Sanskrit noun cases, kāraka roles, suffixes, sentences, and memory trick with Bālaka.
-          </span>
-        </button>
-        <button
-          type="button"
-          className="grammar-card grammar-card--ready"
-          style={{ borderColor: '#0f766e', background: 'linear-gradient(180deg, #ffffff 0%, #f0fdfa 100%)' }}
-          onClick={() => setTopic('dhatupatha')}
-        >
-          <span className="grammar-card-title" style={{ color: '#0f766e' }}>
-            🌿 पाणिनीय-धातुपाठ-प्रयोगशाला · Pāṇinian Studio
-          </span>
-          <span className="grammar-card-blurb">
-            Deconstruct words (गत्वा, पठितुम्), generate 5-Lakāra conjugations with color-coded formulas, and practice Pratyayas.
-          </span>
-        </button>
-        <button
-          type="button"
-          className="grammar-card grammar-card--ready"
-          style={{ borderColor: '#d97706', background: 'linear-gradient(180deg, #ffffff 0%, #fffdf8 100%)' }}
-          onClick={() => setTopic('linga-vachana')}
-        >
-          <span className="grammar-card-title" style={{ color: '#b45309' }}>
-            ⚖️ लिङ्गं वचनं च · Gender &amp; Number
-          </span>
-          <span className="grammar-card-blurb">
-            Master the 3 Genders, 3 Numbers, Pronouns, and Subject-Verb agreement with interactive tools.
-          </span>
-        </button>
-        <button
-          type="button"
-          className="grammar-card grammar-card--ready"
-          style={{ borderColor: '#2563eb', background: 'linear-gradient(180deg, #ffffff 0%, #eff6ff 100%)' }}
-          onClick={() => setTopic('numbers')}
-        >
-          <span className="grammar-card-title" style={{ color: '#1d4ed8' }}>
-            🔢 संख्या-परिचयः · Numbers Masterclass
-          </span>
-          <span className="grammar-card-blurb">
-            Complete 1-100 numerals, 1-4 gender declensions (एकः, एका, एकम्), ordinals (प्रथम, द्वितीय), Vedic scales up to 10¹⁷, and quizzes.
-          </span>
-        </button>
-        <button
-          type="button"
-          className="grammar-card grammar-card--ready"
-          onClick={() => setTopic('sound-teams')}
-        >
-          <span className="grammar-card-title">Five Sound Teams · पञ्च वर्ण-टीमें</span>
-          <span className="grammar-card-blurb">
-            Vowels, consonants, sliders, hissers, and fusion blocks — how every letter finds its
-            squad.
-          </span>
-        </button>
-        <button
-          type="button"
-          className="grammar-card grammar-card--ready"
-          style={{ borderColor: '#8b5cf6', background: 'linear-gradient(180deg, #ffffff 0%, #faf5ff 100%)' }}
-          onClick={() => setTopic('science-of-sound')}
-        >
-          <span className="grammar-card-title" style={{ color: '#7c3aed' }}>
-            🎥 Sanskrit: The Science of Sound · ध्वनि-विज्ञानम्
-          </span>
-          <span className="grammar-card-blurb">
-            Masterclass Video: Explore the neuro-acoustic precision, 5 vocal articulation points, and resonant frequencies of Sanskrit.
-          </span>
-        </button>
-        <button type="button" className="grammar-card grammar-card--ready" onClick={() => setTopic('samyukta')}>
-          <span className="grammar-card-title">संयुक्त · Conjunct Games</span>
-          <span className="grammar-card-blurb">Drop the stick, piggyback, shape-shifters — how letters join.</span>
-        </button>
-        {ARTICLES.map((item) => (
+        {filteredInteractive.map((t) => (
+          <button
+            key={t.id}
+            type="button"
+            className="grammar-card grammar-card--ready"
+            style={{
+              borderColor: t.borderColor,
+              background: t.bgGradient,
+            }}
+            onClick={() => setTopic(t.id)}
+          >
+            <span className="grammar-card-title" style={{ color: t.color }}>
+              {t.title}
+            </span>
+            <span className="grammar-card-blurb">{t.blurb}</span>
+          </button>
+        ))}
+
+        {filteredArticles.map((item) => (
           <button
             type="button"
             className="grammar-card grammar-card--ready"
@@ -485,6 +555,23 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQui
           </button>
         ))}
       </div>
+
+      {totalMatches === 0 && (
+        <div className="grammar-no-results-card">
+          <span className="grammar-no-results-emoji" aria-hidden="true">🔍</span>
+          <h4 className="grammar-no-results-title">No matching grammar topics found</h4>
+          <p className="grammar-no-results-text">
+            No topics matched &ldquo;{searchFilter}&rdquo;. Try searching for &ldquo;Kaṭapayādi&rdquo;, &ldquo;Vibhakti&rdquo;, &ldquo;Sandhi&rdquo;, &ldquo;Dhātupāṭha&rdquo;, or &ldquo;Numbers&rdquo;.
+          </p>
+          <button
+            type="button"
+            className="grammar-clear-search-btn"
+            onClick={() => setSearchFilter('')}
+          >
+            Clear Filter &amp; Show All Topics
+          </button>
+        </div>
+      )}
     </section>
   );
 };

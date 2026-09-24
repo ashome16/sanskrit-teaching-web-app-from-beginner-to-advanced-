@@ -1,0 +1,1198 @@
+export type SearchCategory =
+  | 'all'
+  | 'grammar'
+  | 'lessons'
+  | 'maths'
+  | 'tools'
+  | 'guides';
+
+export interface SearchTarget {
+  view:
+    | 'grammar'
+    | 'reader'
+    | 'vedic-maths'
+    | 'dhatupatha'
+    | 'quiz'
+    | 'worksheets'
+    | 'board'
+    | 'cbse-guide'
+    | 'philosophy'
+    | 'faq';
+  grammarTopic?:
+    | 'home'
+    | 'vibhakti'
+    | 'linga-vachana'
+    | 'numbers'
+    | 'samyukta'
+    | 'sound-teams'
+    | 'science-of-sound'
+    | 'dhatupatha'
+    | 'article';
+  grammarArticleId?: string;
+  lessonId?: string;
+  mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero';
+  worksheetsCategory?: string;
+  openBodhi?: boolean;
+}
+
+export interface SearchItem {
+  id: string;
+  title: string;
+  subtitle?: string;
+  category: 'grammar' | 'lessons' | 'maths' | 'tools' | 'guides';
+  categoryLabel: string;
+  badgeEmoji: string;
+  badgeColor: string;
+  description: string;
+  keywords: string[];
+  target: SearchTarget;
+}
+
+export const SEARCH_INDEX: SearchItem[] = [
+  // =========================================================================
+  // 1. GRAMMAR ARTICLES (11 In-Depth Masterclasses)
+  // =========================================================================
+  {
+    id: 'art-katapayadi',
+    title: 'कटपयादि · Kaṭapayādi: Sacred Cipher of Sanskrit Mathematics',
+    subtitle: 'Golden Ratio (ϕ), π to 32 Decimals, 72 Melakarta Rāgas & Kerala Astronomy',
+    category: 'grammar',
+    categoryLabel: 'Article · Masterclass',
+    badgeEmoji: '🔢',
+    badgeColor: '#059669',
+    description:
+      'How ancient and medieval India encoded the Golden Ratio (ϕ), Pi (32-decimal Krishna stuti), 72 Carnatic Melakarta rāgas, and Kerala astronomical chronograms into chantable poetry.',
+    keywords: [
+      'katapayadi',
+      'kattapayadi',
+      'phi',
+      'golden ratio',
+      'pi',
+      'gopibhagyamadhuvratah',
+      '32 decimals',
+      'melakarta',
+      'carnatic',
+      'ragas',
+      'chronogram',
+      'narayaniyam',
+      'ayurarogyasaukhyam',
+      'madhava',
+      'kerala astronomy',
+      'paralpperu',
+      'chanda',
+      'prosody',
+      'pingala',
+      'hemacandra',
+      'virahanka',
+      'fibonacci',
+      'ankanam vamato gatih',
+      'कटपयादि',
+      'अङ्कानां वामतो गतिः',
+      'संख्या',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'katapayadi-number-words',
+    },
+  },
+  {
+    id: 'art-sandhi',
+    title: 'सन्धि · Sandhi: How Sounds Join & Vowel Architecture',
+    subtitle: 'Svara Sandhi, Dīrgha, Guṇa, Vṛddhi, Yaṇ & Ayādi',
+    category: 'grammar',
+    categoryLabel: 'Article · Grammar',
+    badgeEmoji: '🔗',
+    badgeColor: '#0f766e',
+    description:
+      'Explore phonetic sound joining in Sanskrit: Svara Sandhi rules, vocal transitions, mathematical transformations, and pronunciation laws.',
+    keywords: [
+      'sandhi',
+      'svara sandhi',
+      'vowel sandhi',
+      'dirgha',
+      'guna',
+      'vriddhi',
+      'yan',
+      'ayadi',
+      'vyanjana',
+      'visarga',
+      'joining',
+      'phonetics',
+      'सन्धि',
+      'स्वरसन्धि',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'sandhi-how-sounds-join',
+    },
+  },
+  {
+    id: 'art-vibhaktis-balaka',
+    title: 'Understanding Vibhaktis (Noun Cases) & Bālaka Declension',
+    subtitle: 'The 8 Sanskrit Cases, Kāraka Roles & Memory Tricks',
+    category: 'grammar',
+    categoryLabel: 'Article · Grammar',
+    badgeEmoji: '🏛️',
+    badgeColor: '#b45309',
+    description:
+      'Master the 8 noun cases (Prathamā to Sambodhana), kāraka relationships, suffix paradigms, and the Bālaka masculine noun table.',
+    keywords: [
+      'vibhakti',
+      'vibhaktis',
+      'noun cases',
+      'balaka',
+      'karaka',
+      'cases',
+      'prathama',
+      'dvitiya',
+      'tritiya',
+      'chaturthi',
+      'panchami',
+      'shasthi',
+      'saptami',
+      'sambodhana',
+      'विभक्ति',
+      'बालक',
+      'कारक',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'understanding-vibhaktis-balaka',
+    },
+  },
+  {
+    id: 'art-linga-vachana',
+    title: 'लिङ्गं वचनं च · Gender & Number Foundations',
+    subtitle: '3 Genders, 3 Numbers & Subject-Verb Agreement',
+    category: 'grammar',
+    categoryLabel: 'Article · Grammar',
+    badgeEmoji: '⚖️',
+    badgeColor: '#d97706',
+    description:
+      'The 3 Genders (Pulliṅga, Strīliṅga, Napuṁsakaliṅga), 3 Numbers (Ekavacana, Dvivacana, Bahuvacana), and mathematical agreement in Sanskrit.',
+    keywords: [
+      'linga',
+      'vachana',
+      'gender',
+      'number',
+      'pullinga',
+      'strilinga',
+      'napumsakalinga',
+      'singular',
+      'dual',
+      'plural',
+      'agreement',
+      'dvivacana',
+      'लिङ्ग',
+      'वचन',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'linga-vachana-foundations',
+    },
+  },
+  {
+    id: 'art-symbols-punctuation',
+    title: 'चिह्न-परिचयः · Symbols & Punctuation in Sanskrit',
+    subtitle: 'Mātrās, Anusvāra, Visarga, Halanta, Daṇḍa & Avagraha',
+    category: 'grammar',
+    categoryLabel: 'Article · Script',
+    badgeEmoji: '🖋️',
+    badgeColor: '#6366f1',
+    description:
+      'Complete guide to Sanskrit script markings: vowel signs (Mātrā), Anusvāra (ं), Visarga (ः), Halanta (्), Daṇḍa (।), Double Daṇḍa (॥), and Avagraha (ऽ).',
+    keywords: [
+      'symbols',
+      'punctuation',
+      'matra',
+      'matras',
+      'anusvara',
+      'visarga',
+      'halanta',
+      'danda',
+      'avagraha',
+      'chinha',
+      'marks',
+      'diacritics',
+      'चिह्न',
+      'मात्रा',
+      'हलन्त',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'sanskrit-symbols-punctuation',
+    },
+  },
+  {
+    id: 'art-dna-dhatus',
+    title: 'The DNA of Sanskrit · Dhātupāṭha & Verb Roots',
+    subtitle: 'Root Etymology, 10 Gaṇas & Upasargas',
+    category: 'grammar',
+    categoryLabel: 'Article · Linguistics',
+    badgeEmoji: '🧬',
+    badgeColor: '#0f766e',
+    description:
+      'How Sanskrit generates tens of thousands of words from approximately 2,000 verbal roots (Dhātus), the 10 verb classes (Gaṇas), and prefix modifiers.',
+    keywords: [
+      'dhatu',
+      'dhatus',
+      'verb roots',
+      'dhatupatha',
+      '10 ganas',
+      'upasargas',
+      'dna of sanskrit',
+      'etymology',
+      'root',
+      'धातु',
+      'धातुपाठ',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'dna-of-sanskrit-dhatus',
+    },
+  },
+  {
+    id: 'art-karakas-vibhaktis',
+    title: 'The Core Framework · Kārakas & Free Word Order',
+    subtitle: 'How 8 Noun Cases Let Sanskrit Words Scramble Freely',
+    category: 'grammar',
+    categoryLabel: 'Article · Syntax',
+    badgeEmoji: '🏛️',
+    badgeColor: '#b45309',
+    description:
+      'Discover why word order is flexible in Sanskrit: kāraka semantic roles bind words regardless of sentence position.',
+    keywords: [
+      'karaka',
+      'karakas',
+      'word order',
+      'syntax',
+      'scramble',
+      'flexible word order',
+      'semantic roles',
+      'karta',
+      'karma',
+      'karana',
+      'sampradana',
+      'apadana',
+      'adhikarana',
+      'कारक',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'karakas-and-vibhaktis',
+    },
+  },
+  {
+    id: 'art-mouth-gym',
+    title: 'The Mouth Gym · Pāṇini’s Shiva Sūtras & Pratyāhāras',
+    subtitle: 'Phonetic Programming Language & Sound Compression',
+    category: 'grammar',
+    categoryLabel: 'Article · Computing',
+    badgeEmoji: '🧩',
+    badgeColor: '#8b5cf6',
+    description:
+      'Pāṇini’s 14 Māheśvara Sūtras, algebraic Pratyāhāra abbreviations (like aṇ, ac, hal, al), and algorithmic sound sorting.',
+    keywords: [
+      'shiva sutras',
+      'maheswara sutras',
+      'panini',
+      'pratyahara',
+      'mouth gym',
+      'phonetic programming',
+      'compression',
+      'ashtadhyayi',
+      'शिवसूत्राणि',
+      'प्रत्याहार',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'mouth-gym-shiva-sutras',
+    },
+  },
+  {
+    id: 'art-secret-code-words',
+    title: 'The Secret Code of Words · Upasargas & Pratyayas',
+    subtitle: 'The 22 Prefixes & 21 Sup-Pratyaya Power-Up Stickers',
+    category: 'grammar',
+    categoryLabel: 'Article · Morphology',
+    badgeEmoji: '✨',
+    badgeColor: '#ec4899',
+    description:
+      'Understanding prefixes (Upasargas) and suffixes (Pratyayas) that modify meanings: Sup-pratyayas for nouns and Tiṅ-pratyayas for verbs.',
+    keywords: [
+      'upasarga',
+      'pratyaya',
+      'prefixes',
+      'suffixes',
+      'sup',
+      'tin',
+      'word building',
+      'power up stickers',
+      'उपसर्ग',
+      'प्रत्यय',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'secret-code-upsarg-pratyaya',
+    },
+  },
+  {
+    id: 'art-ipa-accents',
+    title: 'The Secret Code of Accents · Ancient Mouth-Science & IPA',
+    subtitle: 'Udātta, Anudātta, Svarita & Vedic Phonetic Precision',
+    category: 'grammar',
+    categoryLabel: 'Article · Phonetics',
+    badgeEmoji: '🔤',
+    badgeColor: '#2563eb',
+    description:
+      'How the ancient Indian phonetic science of Svara (Udātta, Anudātta, Svarita) laid the foundational blueprint for modern International Phonetic Alphabet (IPA).',
+    keywords: [
+      'ipa',
+      'accents',
+      'mouth science',
+      'udatta',
+      'anudatta',
+      'svarita',
+      'phonetics',
+      'pitch',
+      'intonation',
+      'accents',
+      'उदात्त',
+      'अनुदात्त',
+      'स्वरित',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'ipa-secret-code',
+    },
+  },
+  {
+    id: 'art-evolution-sound',
+    title: 'The Evolution of Sound · Vedic Mantra to Modern Linguistics',
+    subtitle: 'Why Sanskrit Grammatical Architecture Transcends Time',
+    category: 'grammar',
+    categoryLabel: 'Article · Philosophy',
+    badgeEmoji: '📖',
+    badgeColor: '#047857',
+    description:
+      'The journey of Sanskrit acoustics: from the rhythmic oral transmission of Vedic mantras to contemporary computer science and natural language processing.',
+    keywords: [
+      'evolution of sound',
+      'linguistics',
+      'vedic mantra',
+      'oral transmission',
+      'acoustic science',
+      'nlp',
+      'history',
+      'ध्वनि',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'evolution-of-sound',
+    },
+  },
+
+  // =========================================================================
+  // 2. INTERACTIVE GRAMMAR GUIDES & TOOLS
+  // =========================================================================
+  {
+    id: 'tool-vibhakti-guide',
+    title: '🏛️ विभक्ति · Interactive Vibhakti Master Guide',
+    subtitle: 'Declension Matrix, Kāraka Roles & Memory Tricks',
+    category: 'tools',
+    categoryLabel: 'Interactive Tool · Grammar',
+    badgeEmoji: '🏛️',
+    badgeColor: '#059669',
+    description:
+      'Interactive drill down into all 8 Sanskrit noun cases, kāraka semantic functions, audio pronunciation, and example sentences.',
+    keywords: [
+      'vibhakti guide',
+      'noun declension',
+      'karaka drill',
+      'cases table',
+      'balaka declension',
+      'interactive vibhakti',
+      'विभक्ति',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'vibhakti',
+    },
+  },
+  {
+    id: 'tool-linga-vachana',
+    title: '⚖️ लिङ्गं वचनं च · Interactive Gender & Number Guide',
+    subtitle: '3 Genders, 3 Numbers, Pronouns & Agreement Checker',
+    category: 'tools',
+    categoryLabel: 'Interactive Tool · Grammar',
+    badgeEmoji: '⚖️',
+    badgeColor: '#b45309',
+    description:
+      'Interactive explorer for Pulliṅga, Strīliṅga, and Napuṁsakaliṅga nouns, dual forms (dvivacana), pronouns, and subject-verb harmony.',
+    keywords: [
+      'gender guide',
+      'number guide',
+      'linga vachana',
+      'pronoun agreement',
+      'interactive gender',
+      'masculine feminine neuter',
+      'लिङ्गं वचनं च',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'linga-vachana',
+    },
+  },
+  {
+    id: 'tool-numbers-guide',
+    title: '🔢 संख्या-परिचयः · Sanskrit Numbers Masterclass',
+    subtitle: '1-100 Numerals, Vedic Scales up to 10¹⁷ & Gender Declensions',
+    category: 'tools',
+    categoryLabel: 'Interactive Guide · Mathematics',
+    badgeEmoji: '🔢',
+    badgeColor: '#1d4ed8',
+    description:
+      'Comprehensive numbers masterclass: 1 to 100 Devanagari numerals, gender declensions for 1–4 (एकः, एका, एकम्), ordinals, and Vedic astronomical powers up to 10¹⁷.',
+    keywords: [
+      'numbers',
+      'sanskrit numbers',
+      'numerals',
+      'counting',
+      '1 to 100',
+      'sankhya',
+      'ekah eka ekam',
+      'ordinals',
+      'vedic scales',
+      '10^17',
+      'mahashankha',
+      'संख्या',
+      'गिनती',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'numbers',
+    },
+  },
+  {
+    id: 'tool-dhatupatha-studio',
+    title: '🌿 पाणिनीय-धातुपाठः · Pāṇinian Dhātupāṭha Studio',
+    subtitle: '5 CBSE Lakāra Conjugations, Kṛt Pratyayas & Reverse Deconstructor',
+    category: 'tools',
+    categoryLabel: 'Engine · Verbs',
+    badgeEmoji: '🌿',
+    badgeColor: '#0f766e',
+    description:
+      'Search verb roots (पठ्, गम्, भू, कृ, दा), inspect 5 Lakāra conjugations (लट्, लृट्, लङ्, लोट्, विधिलिङ्) with color-coded formulas, and deconstruct complex participles (गत्वा, पठितुम्).',
+    keywords: [
+      'dhatupatha studio',
+      'verb engine',
+      'lakara',
+      'lat',
+      'lrit',
+      'lang',
+      'lot',
+      'vidhiling',
+      'krt pratyaya',
+      'ktva',
+      'lyap',
+      'tumun',
+      'verb conjugations',
+      'deconstructor',
+      'धातुपाठ',
+      'लकार',
+    ],
+    target: {
+      view: 'dhatupatha',
+    },
+  },
+  {
+    id: 'tool-sound-teams',
+    title: 'पञ्च वर्ण-टीमें · Five Sound Teams',
+    subtitle: 'Vowels, Consonants, Sliders, Hissers & Fusion Blocks',
+    category: 'grammar',
+    categoryLabel: 'Guide · Phonetics',
+    badgeEmoji: '🛡️',
+    badgeColor: '#d97706',
+    description:
+      'Visual guide explaining how every Sanskrit letter belongs to a sound team based on vocal articulation and air release.',
+    keywords: [
+      'sound teams',
+      'vocal teams',
+      'sliders',
+      'hissers',
+      'fusion blocks',
+      'varnamala groups',
+      'वर्ण-टीमें',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'sound-teams',
+    },
+  },
+  {
+    id: 'tool-science-of-sound',
+    title: '🎥 Sanskrit: The Science of Sound · ध्वनि-विज्ञानम्',
+    subtitle: 'Neuro-Acoustic Precision & 5 Articulation Points',
+    category: 'grammar',
+    categoryLabel: 'Video Masterclass',
+    badgeEmoji: '🎥',
+    badgeColor: '#7c3aed',
+    description:
+      'Masterclass video exploring the neuro-acoustic precision, 5 vocal articulation points (Kaṇṭha, Tālu, Mūrdhā, Danta, Oṣṭha), and resonant brain frequencies of Sanskrit.',
+    keywords: [
+      'science of sound',
+      'video masterclass',
+      'neuro-acoustics',
+      'kantha',
+      'talu',
+      'murdha',
+      'danta',
+      'oshtha',
+      'articulation points',
+      'ध्वनि-विज्ञानम्',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'science-of-sound',
+    },
+  },
+  {
+    id: 'tool-conjunct-games',
+    title: 'संयुक्त · Conjunct Games & Syllable Building',
+    subtitle: 'Drop the Stick, Piggyback & Shape-Shifters',
+    category: 'tools',
+    categoryLabel: 'Interactive Game',
+    badgeEmoji: '🧩',
+    badgeColor: '#e11d48',
+    description:
+      'Gamified visual guide to Sanskrit conjunct consonants (Saṁyuktākṣara): dropping the vertical stem, stacking letters, and unique ligatures.',
+    keywords: [
+      'conjunct games',
+      'samyukta',
+      'samyuktaksara',
+      'drop the stick',
+      'piggyback',
+      'half letters',
+      'ligatures',
+      'संयुक्त',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'samyukta',
+    },
+  },
+
+  // =========================================================================
+  // 3. VEDIC MATHEMATICS & SACRED GEOMETRY
+  // =========================================================================
+  {
+    id: 'math-16-sutras',
+    title: '16 Vedic Mathematics Sūtras & Speed Calculation Methods',
+    subtitle: 'Ekādhikena, Nikhilam, Ūrdhva-Tiryagbhyām & Sub-Sūtras',
+    category: 'maths',
+    categoryLabel: 'Vedic Maths · Sutras',
+    badgeEmoji: '⚡',
+    badgeColor: '#7c3aed',
+    description:
+      'Master the 16 core Vedic mental math sutras and 13 sub-sutras for lightning-fast mental multiplication, squaring, division, and algebra.',
+    keywords: [
+      'vedic maths',
+      '16 sutras',
+      'ekadhikena purvena',
+      'nikhilam navatashcaramam dashatah',
+      'urdhva tiryagbhyam',
+      'paravartya yojayet',
+      'speed math',
+      'mental calculation',
+      'वैदिक-गणितम्',
+      'सूत्र',
+    ],
+    target: {
+      view: 'vedic-maths',
+      mathsTab: 'sutras',
+    },
+  },
+  {
+    id: 'math-altars-geometry',
+    title: 'The Legacy of Vedic Geometry & Sacred Fire Altars',
+    subtitle: 'Śyenaciti (Falcon), Kūrmaciti (Turtle) & Baudhāyana √2',
+    category: 'maths',
+    categoryLabel: 'Vedic Maths · Geometry',
+    badgeEmoji: '🦅',
+    badgeColor: '#c2410c',
+    description:
+      'Explore the Śulba Sūtras: the 4 sacred fire altars (Falcon, Turtle, Chariot-Wheel, Trough), the Invariant Area problem, Baudhāyana’s √2 = 577/408 derivation, and algorithmic geometric transformations.',
+    keywords: [
+      'vedic geometry',
+      'fire altars',
+      'sulba sutras',
+      'syenaciti',
+      'kurmaciti',
+      'rathacakraciti',
+      'dronaciti',
+      'baudhayana',
+      'square root of 2',
+      '577/408',
+      'pythagorean theorem',
+      'invariant area',
+      'शुल्बसूत्राणि',
+      'श्येनचिति',
+    ],
+    target: {
+      view: 'vedic-maths',
+      mathsTab: 'altars',
+    },
+  },
+  {
+    id: 'math-absolute-zero',
+    title: 'The Architecture of Absolute Zero & The Numerical Grid',
+    subtitle: 'Śūnya, Brahmagupta’s Rules & Modern Computer Science',
+    category: 'maths',
+    categoryLabel: 'Vedic Maths · Philosophy',
+    badgeEmoji: '⚪',
+    badgeColor: '#0284c7',
+    description:
+      'The philosophical and mathematical genesis of zero (Śūnya), place value positional notation, Brahmagupta’s arithmetic laws for negative numbers and zero, and the foundation of digital computation.',
+    keywords: [
+      'zero',
+      'shunya',
+      'sunya',
+      'brahmagupta',
+      'place value',
+      'decimal system',
+      'numerical grid',
+      'computer science',
+      'शून्य',
+      'ब्रह्मगुप्त',
+    ],
+    target: {
+      view: 'vedic-maths',
+      mathsTab: 'zero',
+    },
+  },
+  {
+    id: 'math-multiplication',
+    title: 'Vedic Multiplication Drills & Interactive Calculators',
+    subtitle: 'Base 10/100/1000, Criss-Cross & Squaring Numbers Ending in 5',
+    category: 'maths',
+    categoryLabel: 'Vedic Maths · Interactive',
+    badgeEmoji: '✖️',
+    badgeColor: '#059669',
+    description:
+      'Step-by-step interactive calculations for Base multiplication, vertical-and-crosswise patterns, and instant mental squaring.',
+    keywords: [
+      'multiplication',
+      'vedic calculator',
+      'criss cross',
+      'squaring',
+      'base multiplication',
+      'speed multiplication',
+      'गुणा',
+    ],
+    target: {
+      view: 'vedic-maths',
+      mathsTab: 'multiplication',
+    },
+  },
+  {
+    id: 'math-divisibility',
+    title: 'Vedic Divisibility & Osculation (Ekādhika)',
+    subtitle: 'Instant Divisibility Checks for 7, 13, 17, 19, 23 & 29',
+    category: 'maths',
+    categoryLabel: 'Vedic Maths · Interactive',
+    badgeEmoji: '➗',
+    badgeColor: '#d97706',
+    description:
+      'Discover Osculation (Ekādhika) to test prime divisibility in seconds without long division.',
+    keywords: [
+      'divisibility',
+      'osculation',
+      'ekadhika',
+      'prime numbers',
+      'mental division',
+      'भाग',
+    ],
+    target: {
+      view: 'vedic-maths',
+      mathsTab: 'divisibility',
+    },
+  },
+
+  // =========================================================================
+  // 4. NCERT DEEPAKAM LESSONS & CHAPTERS
+  // =========================================================================
+  {
+    id: 'lesson-varnamala',
+    title: 'वर्णमाला · Sanskrit Alphabet & Syllables Audio Guide',
+    subtitle: 'Svaras (Vowels), Vyañjanas (Consonants) & Stroke Pad',
+    category: 'lessons',
+    categoryLabel: 'Foundations · Reader',
+    badgeEmoji: '🕉️',
+    badgeColor: '#b3472f',
+    description:
+      'Learn the 13 pure vowels (Svara), 33 consonants (Vyañjana), Ayogavāhas, clear human audio pronunciations, and interactive stroke-by-stroke writing pad.',
+    keywords: [
+      'varnamala',
+      'alphabet',
+      'svaras',
+      'vowels',
+      'vyanjanas',
+      'consonants',
+      'audio guide',
+      'stroke pad',
+      'writing practice',
+      'letters',
+      'वर्णमाला',
+      'स्वर',
+      'व्यञ्जन',
+    ],
+    target: {
+      view: 'reader',
+      lessonId: 'varnamala',
+    },
+  },
+  {
+    id: 'lesson-barakhadi',
+    title: 'बारहखड़ी · Guṇitākṣarāṇi Sound Combinations',
+    subtitle: 'Vowel-Consonant Combination Matrix & Audio Pronunciations',
+    category: 'lessons',
+    categoryLabel: 'Foundations · Reader',
+    badgeEmoji: '🗣️',
+    badgeColor: '#d97706',
+    description:
+      'Master all 12+ vowel modifier combinations with every consonant (क् + अ = क, क् + आ = का, etc.) with audio playback and phonetic charts.',
+    keywords: [
+      'barakhadi',
+      'gunitaaksharani',
+      'vowel consonants',
+      'sound combinations',
+      'audio lesson',
+      'phonetics',
+      'बारहखड़ी',
+      'गुणिताक्षराणि',
+    ],
+    target: {
+      view: 'reader',
+      lessonId: 'barakhadi',
+    },
+  },
+  {
+    id: 'lesson-ch1-vande-mataram',
+    title: 'Chapter 1: वन्दे भारतमातरम् (Salutations to Mother India)',
+    subtitle: 'CBSE Class 7 Sanskrit Deepakam · Pages 1–7',
+    category: 'lessons',
+    categoryLabel: 'Class 7 · Deepakam',
+    badgeEmoji: '🇮🇳',
+    badgeColor: '#2563eb',
+    description:
+      'Read verse-by-verse, word analysis, root deconstruction, and English translation of Chapter 1 patriotic invocation.',
+    keywords: [
+      'vande bharatamataram',
+      'chapter 1',
+      'class 7',
+      'deepakam',
+      'patriotic hymn',
+      'india',
+      'वन्दे भारतमातरम्',
+      'प्रथमः पाठः',
+    ],
+    target: {
+      view: 'reader',
+      lessonId: 'gsde101',
+    },
+  },
+  {
+    id: 'lesson-ch2-subhashita',
+    title: 'Chapter 2: नित्यं पिबामः सुभाषितरसम (Immortal Subhāṣitas)',
+    subtitle: 'CBSE Class 7 Sanskrit Deepakam · Pages 15–21',
+    category: 'lessons',
+    categoryLabel: 'Class 7 · Deepakam',
+    badgeEmoji: '📜',
+    badgeColor: '#059669',
+    description:
+      'Timeless wisdom verses on speech, character, perseverance, and truth with syllable audio and grammatical word breakup.',
+    keywords: [
+      'subhashita',
+      'subhashitarasam',
+      'chapter 2',
+      'class 7',
+      'wisdom verses',
+      'moral shlokas',
+      'सुभाषितम्',
+      'द्वितीयः पाठः',
+    ],
+    target: {
+      view: 'reader',
+      lessonId: 'gsde102',
+    },
+  },
+  {
+    id: 'lesson-ch3-mitraya-namah',
+    title: 'Chapter 3: मित्राय नमः (Salutations to the Sun / Friend)',
+    subtitle: 'CBSE Class 7 Sanskrit Deepakam · Pages 29–31',
+    category: 'lessons',
+    categoryLabel: 'Class 7 · Deepakam',
+    badgeEmoji: '☀️',
+    badgeColor: '#ea580c',
+    description:
+      'The cosmic and biological significance of the Sun, friendship, and morning invocations with word analysis.',
+    keywords: [
+      'mitraya namah',
+      'sun',
+      'friend',
+      'chapter 3',
+      'class 7',
+      'surya',
+      'solar',
+      'मित्राय नमः',
+      'तृतीयः पाठः',
+    ],
+    target: {
+      view: 'reader',
+      lessonId: 'gsde103',
+    },
+  },
+  {
+    id: 'lesson-ch4-amlam-draksha',
+    title: 'Chapter 4: आम्लं द्राक्षाफलम् (Sour Grapes Fable)',
+    subtitle: 'CBSE Class 7 Sanskrit Deepakam · Pages 39–41',
+    category: 'lessons',
+    categoryLabel: 'Class 7 · Deepakam',
+    badgeEmoji: '🦊',
+    badgeColor: '#b45309',
+    description:
+      'The classic Panchatantra-style fable of the thirsty fox and sour grapes with engaging dialogue and past tense verb forms.',
+    keywords: [
+      'sour grapes',
+      'drakshaphalalam',
+      'fox fable',
+      'panchatantra',
+      'chapter 4',
+      'class 7',
+      'द्राक्षाफलम्',
+      'चतुर्थः पाठः',
+    ],
+    target: {
+      view: 'reader',
+      lessonId: 'gsde104',
+    },
+  },
+  {
+    id: 'lesson-ch5-seva-dharma',
+    title: 'Chapter 5: सेवा हि परमो धर्मः (Service is the Highest Virtue)',
+    subtitle: 'CBSE Class 7 Sanskrit Deepakam · Pages 47–50',
+    category: 'lessons',
+    categoryLabel: 'Class 7 · Deepakam',
+    badgeEmoji: '🤝',
+    badgeColor: '#0f766e',
+    description:
+      'Inspiring narrative teaching selflessness, empathy, and social duty with conversational Sanskrit expressions.',
+    keywords: [
+      'seva hi paramo dharmah',
+      'service',
+      'duty',
+      'chapter 5',
+      'class 7',
+      'morals',
+      'सेवा',
+      'पञ्चमः पाठः',
+    ],
+    target: {
+      view: 'reader',
+      lessonId: 'gsde105',
+    },
+  },
+  {
+    id: 'lesson-ch6-antyakshari',
+    title: 'Chapter 6: क्रीडाम वयं श्लोकान्त्याक्षरीम् (Shloka Antyākṣarī)',
+    subtitle: 'CBSE Class 7 Sanskrit Deepakam · Pages 57–70',
+    category: 'lessons',
+    categoryLabel: 'Class 7 · Deepakam',
+    badgeEmoji: '🎵',
+    badgeColor: '#9333ea',
+    description:
+      'Traditional Sanskrit poetry chain game, training fast recall of classical stanzas, meter patterns, and syllable endings.',
+    keywords: [
+      'antyakshari',
+      'shloka antyakshari',
+      'verse game',
+      'poetry game',
+      'chapter 6',
+      'class 7',
+      'अन्त्याक्षरी',
+      'षष्ठः पाठः',
+    ],
+    target: {
+      view: 'reader',
+      lessonId: 'gsde106',
+    },
+  },
+  {
+    id: 'lesson-ch7-ishavasyam',
+    title: 'Chapter 7: ईशावास्यम् इदं सर्वम् (The Divine Cosmos)',
+    subtitle: 'CBSE Class 7 Sanskrit Deepakam · Pages 71–84',
+    category: 'lessons',
+    categoryLabel: 'Class 7 · Deepakam',
+    badgeEmoji: '🌌',
+    badgeColor: '#4338ca',
+    description:
+      'Selections from the profound Īśāvāsya Upaniṣad on universal harmony, moderation, and ecological consciousness.',
+    keywords: [
+      'ishavasyam',
+      'upanishad',
+      'vedic philosophy',
+      'chapter 7',
+      'class 7',
+      'ईशावास्योपनिषद्',
+      'सप्तमः पाठः',
+    ],
+    target: {
+      view: 'reader',
+      lessonId: 'gsde107',
+    },
+  },
+  {
+    id: 'lesson-grade8-prarthana',
+    title: 'Grade 8: सरस्वती-प्रार्थना (या कुन्देन्दुतुषारहारधवला)',
+    subtitle: 'CBSE Class 8 Sanskrit Deepakam Opening Invocation',
+    category: 'lessons',
+    categoryLabel: 'Class 8 · Deepakam',
+    badgeEmoji: '🪷',
+    badgeColor: '#059669',
+    description:
+      'The sacred hymn to Sarasvatī, Goddess of learning, wisdom, music, and the arts with syllable audio and grammatical analysis.',
+    keywords: [
+      'grade 8',
+      'class 8',
+      'saraswati prarthana',
+      'ya kundendu',
+      'invocation',
+      'सरस्वती',
+      'प्रार्थना',
+    ],
+    target: {
+      view: 'reader',
+      lessonId: 'grade8_prarthana',
+    },
+  },
+  {
+    id: 'lesson-grade8-ch1',
+    title: 'Grade 8: प्रथमः पाठः — संगच्छध्वं संवदध्वम् (Rigvedic Unity)',
+    subtitle: 'CBSE Class 8 Sanskrit Deepakam · Pages 1–9',
+    category: 'lessons',
+    categoryLabel: 'Class 8 · Deepakam',
+    badgeEmoji: '🔥',
+    badgeColor: '#ea580c',
+    description:
+      'The famous Rigvedic Saṁjñāna Sūkta calling humanity to unite in purpose, speak with one voice, and harmonize thoughts.',
+    keywords: [
+      'sangacchadhvam',
+      'rigveda',
+      'unity hymn',
+      'grade 8 chapter 1',
+      'class 8',
+      'संगच्छध्वं संवदध्वम्',
+    ],
+    target: {
+      view: 'reader',
+      lessonId: 'grade8_ch1',
+    },
+  },
+
+  // =========================================================================
+  // 5. PRACTICE, ASSESSMENT & INTERACTIVE GAMES
+  // =========================================================================
+  {
+    id: 'tool-jodo-puzzles',
+    title: 'जोडो (Jodo) Tile Studio: 6,000+ Sanskrit Word Puzzles',
+    subtitle: 'Interactive Syllable-Matching & Vocabulary Builder',
+    category: 'tools',
+    categoryLabel: 'Game · Vocabulary',
+    badgeEmoji: '🧩',
+    badgeColor: '#059669',
+    description:
+      'Drag and snap Devanagari syllable tiles together to build words across food, anatomy, daily actions, animals, school, and nature.',
+    keywords: [
+      'jodo',
+      'tile puzzle',
+      'word builder',
+      'syllable match',
+      'game',
+      'vocabulary practice',
+      'जोडो',
+      'पहेली',
+    ],
+    target: {
+      view: 'board',
+    },
+  },
+  {
+    id: 'tool-quizzes',
+    title: 'Interactive Sanskrit Quizzes (प्रश्नोत्तरी) · 39+ Chapter Sets',
+    subtitle: '200+ CBSE Questions, Instant Scoring & Feedback Cards',
+    category: 'tools',
+    categoryLabel: 'Assessment · Quiz',
+    badgeEmoji: '🎯',
+    badgeColor: '#dc2626',
+    description:
+      'Test your knowledge with 39+ interactive quizzes covering noun cases (Vibhaktis), verb forms (Lakāras), Sandhi, numerals, and NCERT chapters.',
+    keywords: [
+      'quiz',
+      'quizzes',
+      'tests',
+      'mcq',
+      'exam practice',
+      'score',
+      'prashnottari',
+      'प्रश्नोत्तरी',
+      'परीक्षा',
+    ],
+    target: {
+      view: 'quiz',
+    },
+  },
+  {
+    id: 'tool-worksheets',
+    title: 'Printable & Interactive CBSE Worksheets (कार्यपत्रिकाः)',
+    subtitle: '28+ Practice Sets across Grammar, Translation & NCERT Exercises',
+    category: 'tools',
+    categoryLabel: 'Study Material · PDF',
+    badgeEmoji: '📝',
+    badgeColor: '#2563eb',
+    description:
+      'Print or complete online 28+ structured CBSE worksheets for Class 6, 7, and 8 covering Sandhi, Vibhaktis, sentence translation, and chapter questions.',
+    keywords: [
+      'worksheets',
+      'printable',
+      'homework',
+      'exercises',
+      'drills',
+      'pdf download',
+      'karyapatrika',
+      'कार्यपत्रिका',
+      'अभ्यास',
+    ],
+    target: {
+      view: 'worksheets',
+    },
+  },
+  {
+    id: 'tool-bodhi-guide',
+    title: 'Bodhi (बोधि) · Your Interactive Gurukul Guide & Mascot',
+    subtitle: 'Tips, Grammatical Explanations & Friendly Encouragement',
+    category: 'tools',
+    categoryLabel: 'Assistant · AI Mascot',
+    badgeEmoji: '🧘',
+    badgeColor: '#047857',
+    description:
+      'Meet Bodhi, your friendly Gurukul mascot who explains difficult grammatical rules, shares mnemonic pro-tips, and guides your Sanskrit journey.',
+    keywords: [
+      'bodhi',
+      'mascot',
+      'guide',
+      'helper',
+      'assistant',
+      'gurukul mascot',
+      'बोधि',
+    ],
+    target: {
+      view: 'grammar',
+      openBodhi: true,
+    },
+  },
+
+  // =========================================================================
+  // 6. SPECIAL GUIDES & PHILOSOPHY ESSAYS
+  // =========================================================================
+  {
+    id: 'guide-cbse-exam',
+    title: 'CBSE NCERT Sanskrit Exam Guide (Classes 7–10)',
+    subtitle: 'Exam Blueprint, Section Strategies & Kim-Family Keywords',
+    category: 'guides',
+    categoryLabel: 'Portal · Exam Guide',
+    badgeEmoji: '📋',
+    badgeColor: '#7c3aed',
+    description:
+      'Comprehensive exam-day roadmap: section-by-section breakdown (Reading, Writing, Applied Grammar, Literature), question terminology guide, and common student pitfalls.',
+    keywords: [
+      'cbse guide',
+      'ncert exam',
+      'board exam',
+      'blueprint',
+      'class 7',
+      'class 8',
+      'class 9',
+      'class 10',
+      'kim family',
+      'strategy',
+      'marks',
+      'cbse sanskrit',
+    ],
+    target: {
+      view: 'cbse-guide',
+    },
+  },
+  {
+    id: 'guide-philosophy-ai',
+    title: 'Why Learn Sanskrit in the Age of AI? (दर्शनम् · Darśana)',
+    subtitle: 'Transfer vs. Bind, Pāṇinian Phonetics & The Four Levels of Vāk',
+    category: 'guides',
+    categoryLabel: 'Essay · Philosophy',
+    badgeEmoji: '🧠',
+    badgeColor: '#b45309',
+    description:
+      'Machines will make communication efficient; they will not make it living. Explore transfer vs bind, why learning Sanskrit rewires human cognitive architecture, and Chomsky vs. Pāṇini.',
+    keywords: [
+      'philosophy',
+      'why sanskrit',
+      'ai',
+      'artificial intelligence',
+      'transfer vs bind',
+      'four levels of vak',
+      'para pashyanti madhyama vaikhari',
+      'chomsky',
+      'darshana',
+      'दर्शन',
+    ],
+    target: {
+      view: 'philosophy',
+    },
+  },
+  {
+    id: 'guide-faq-pricing',
+    title: 'Frequently Asked Questions (FAQ) & Subscription Plans',
+    subtitle: 'UPI Payments, Course Access, Class Coverage & Support',
+    category: 'guides',
+    categoryLabel: 'Support · Info',
+    badgeEmoji: '❓',
+    badgeColor: '#475569',
+    description:
+      'Everything you need to know about Gurukul memberships, payment options via Razorpay UPI, lifetime access, curriculum alignment, and technical help.',
+    keywords: [
+      'faq',
+      'pricing',
+      'subscription',
+      'cost',
+      'payment',
+      'upi',
+      'plans',
+      'help',
+      'support',
+      'questions',
+    ],
+    target: {
+      view: 'faq',
+    },
+  },
+];

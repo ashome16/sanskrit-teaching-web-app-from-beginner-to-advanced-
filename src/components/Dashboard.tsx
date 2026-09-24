@@ -11,6 +11,9 @@ import AdminModal from './AdminModal';
 import Footer from './Footer';
 import SupportWidget from './SupportWidget';
 import BodhiGuideWidget from './BodhiGuideWidget';
+import GlobalSearchModal from './GlobalSearchModal';
+import type { SearchItem } from '../data/searchIndex';
+import type { GrammarTopic } from './Grammar';
 
 // Lazy-loaded heavy modules for fast initial homepage performance
 const TextbookReader = lazy(() => import('./TextbookReader'));
@@ -188,6 +191,9 @@ const Dashboard: React.FC = () => {
     return 'home';
   });
   const [grammarResetKey, setGrammarResetKey] = useState(0);
+  const [grammarTargetTopic, setGrammarTargetTopic] = useState<GrammarTopic>('home');
+  const [grammarTargetArticleId, setGrammarTargetArticleId] = useState<string | null>(null);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isBodhiGuideOpen, setIsBodhiGuideOpen] = useState(false);
   const {
     currentUser,
@@ -207,6 +213,24 @@ const Dashboard: React.FC = () => {
     refreshPlanStatus();
   }, [currentUser?.id, refreshPlanStatus]);
 
+  // Global search shortcut: Cmd+K / Ctrl+K or '/'
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsSearchModalOpen((prev) => !prev);
+      } else if (
+        e.key === '/' &&
+        !isSearchModalOpen &&
+        !['INPUT', 'TEXTAREA', 'SELECT'].includes((e.target as HTMLElement)?.tagName)
+      ) {
+        e.preventDefault();
+        setIsSearchModalOpen(true);
+      }
+    };
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, [isSearchModalOpen]);
 
   // Check whether a view or specific chapter is gated behind account registration
   const isContentGated = (targetView: string, targetLessonId?: string): boolean => {
@@ -267,8 +291,46 @@ const Dashboard: React.FC = () => {
     navigateToView('worksheets');
   };
 
-  const handleOpenGrammar = () => {
+  const handleOpenGrammar = (
+    topicOrEvent?: GrammarTopic | React.MouseEvent,
+    articleId?: string | null
+  ) => {
+    const topic: GrammarTopic = typeof topicOrEvent === 'string' ? topicOrEvent : 'home';
+    const artId: string | null = typeof articleId === 'string' ? articleId : null;
+    setGrammarTargetTopic(topic);
+    setGrammarTargetArticleId(artId);
+    setGrammarResetKey((k) => k + 1);
     navigateToView('grammar');
+  };
+
+  const handleSearchResultNavigate = (item: SearchItem) => {
+    const { target } = item;
+    if (target.openBodhi) {
+      setIsBodhiGuideOpen(true);
+      return;
+    }
+
+    if (target.view === 'grammar') {
+      handleOpenGrammar(target.grammarTopic || 'home', target.grammarArticleId || null);
+      return;
+    }
+
+    if (target.view === 'reader' && target.lessonId) {
+      openDeepakam(target.lessonId);
+      return;
+    }
+
+    if (target.view === 'vedic-maths') {
+      navigateToView('vedic-maths');
+      return;
+    }
+
+    if (target.view === 'worksheets') {
+      handleOpenWorksheets(target.worksheetsCategory || 'all');
+      return;
+    }
+
+    navigateToView(target.view);
   };
 
   // Hidden / Secret trigger for Admin Portal:
@@ -745,6 +807,17 @@ const Dashboard: React.FC = () => {
         </nav>
 
         <div className="dashboard-header-user" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+          <button
+            type="button"
+            className="dashboard-search-trigger-btn"
+            onClick={() => setIsSearchModalOpen(true)}
+            title="Search articles, lessons, grammar, Vedic maths & tools (Press ⌘K or /)"
+            aria-label="Search site and articles"
+          >
+            <span className="dashboard-search-trigger-icon" aria-hidden="true">🔍</span>
+            <span className="dashboard-search-trigger-text">Search…</span>
+            <kbd className="dashboard-search-trigger-kbd">⌘K</kbd>
+          </button>
           {currentUser ? (
             <button
               type="button"
@@ -784,6 +857,7 @@ const Dashboard: React.FC = () => {
           onOpenPhilosophy={() => navigateToView('philosophy')}
           onOpenCbseGuide={() => navigateToView('cbse-guide')}
           onOpenBodhi={() => setIsBodhiGuideOpen(true)}
+          onOpenSearch={() => setIsSearchModalOpen(true)}
         />
       )}
       {activeView === 'faq' && (
@@ -818,6 +892,8 @@ const Dashboard: React.FC = () => {
         {activeView === 'grammar' && (
           <Grammar
             key={grammarResetKey}
+            initialTopic={grammarTargetTopic}
+            initialArticleId={grammarTargetArticleId}
             onGoHome={() => setActiveView('home')}
             onOpenWorksheets={() => handleOpenWorksheets('grammar')}
             onOpenQuiz={() => navigateToView('quiz')}
@@ -900,6 +976,12 @@ const Dashboard: React.FC = () => {
         onOpenVarnamala={openVarnamala}
         forceOpen={isBodhiGuideOpen}
         onOpenChange={setIsBodhiGuideOpen}
+      />
+
+      <GlobalSearchModal
+        isOpen={isSearchModalOpen}
+        onClose={() => setIsSearchModalOpen(false)}
+        onNavigate={handleSearchResultNavigate}
       />
 
       <AuthModal />

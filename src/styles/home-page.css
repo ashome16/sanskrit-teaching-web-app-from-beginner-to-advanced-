@@ -136,6 +136,58 @@
   color: #5c5348;
 }
 
+.home-hero-search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #ffffff;
+  border: 1.5px solid #d8ceba;
+  border-radius: 999px;
+  padding: 0.65rem 1.25rem;
+  margin: 0 auto 1.85rem;
+  max-width: 580px;
+  width: 90%;
+  box-shadow: 0 4px 16px rgba(39, 59, 53, 0.07);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+}
+
+.home-hero-search-box:hover,
+.home-hero-search-box:focus-visible {
+  border-color: #b3472f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(179, 71, 47, 0.14);
+  outline: none;
+}
+
+.home-hero-search-icon {
+  font-size: 1.15rem;
+  color: #78716c;
+  flex-shrink: 0;
+}
+
+.home-hero-search-text {
+  flex: 1;
+  font-size: 0.95rem;
+  color: #78716c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.home-hero-search-badge {
+  background: #f7f3eb;
+  border: 1px solid #d8ceba;
+  border-bottom: 2px solid #b3a794;
+  border-radius: 6px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #5c5349;
+  flex-shrink: 0;
+}
+
 .home-hero-actions {
   display: flex;
   align-items: center;

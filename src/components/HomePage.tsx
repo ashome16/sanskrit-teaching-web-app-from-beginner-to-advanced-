@@ -19,6 +19,7 @@ export interface HomePageProps {
   onOpenWorksheets?: () => void;
   onOpenDhatupatha?: () => void;
   onOpenBodhi?: () => void;
+  onOpenSearch?: () => void;
 }
 
 interface DemoWord {
@@ -463,6 +464,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenWorksheets,
   onOpenDhatupatha,
   onOpenBodhi,
+  onOpenSearch,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
@@ -547,6 +549,26 @@ const HomePage: React.FC<HomePageProps> = ({
           beginners, and Vedic scholars. Experience word-by-word instant audio analysis, shloka anvaya,
           gamified tile puzzles, complete grammar declensions, and speed Vedic Mathematics without friction.
         </p>
+
+        {onOpenSearch && (
+          <div
+            className="home-hero-search-box"
+            onClick={onOpenSearch}
+            role="button"
+            tabIndex={0}
+            title="Search articles, lessons, 16 Vedic Sutras, Kaṭapayādi, Vibhakti... (Press ⌘K or /)"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onOpenSearch();
+              }
+            }}
+          >
+            <span className="home-hero-search-icon" aria-hidden="true">🔍</span>
+            <span className="home-hero-search-text">Search articles, lessons, 16 Vedic Sutras, Kaṭapayādi, Vibhakti...</span>
+            <kbd className="home-hero-search-badge">⌘K or /</kbd>
+          </div>
+        )}
 
         <div className="home-hero-actions">
           <button

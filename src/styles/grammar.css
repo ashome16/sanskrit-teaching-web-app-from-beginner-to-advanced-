@@ -515,3 +515,133 @@
     display: flex;
   }
 }
+
+/* —— In-Shelf Grammar Search Bar —— */
+.grammar-search-bar-wrap {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.grammar-search-input-box {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #ffffff;
+  border: 1.5px solid #d8cfbf;
+  border-radius: 12px;
+  padding: 0.6rem 0.95rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.18s ease;
+}
+
+.grammar-search-input-box:focus-within {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.grammar-search-icon {
+  font-size: 1.1rem;
+  color: #78716c;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.grammar-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.96rem;
+  color: #1f2937;
+  font-family: inherit;
+  outline: none;
+}
+
+.grammar-search-input::placeholder {
+  color: #8c8275;
+  font-size: 0.9rem;
+}
+
+.grammar-search-clear {
+  background: none;
+  border: none;
+  color: #8c8275;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.grammar-search-clear:hover {
+  background: #f5eee2;
+  color: #1f2937;
+}
+
+.grammar-search-count-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f766e;
+  background: #e6f7f5;
+  border: 1px solid #99d5cd;
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.grammar-no-results-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: #fffdf9;
+  border: 1.5px dashed #d8cfbf;
+  border-radius: 16px;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.grammar-no-results-emoji {
+  font-size: 2.2rem;
+}
+
+.grammar-no-results-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.grammar-no-results-text {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #6b6357;
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+.grammar-clear-search-btn {
+  margin-top: 0.5rem;
+  background: #0f766e;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.2);
+  transition: all 0.15s ease;
+}
+
+.grammar-clear-search-btn:hover {
+  background: #0b504b;
+  transform: translateY(-1px);
+}
