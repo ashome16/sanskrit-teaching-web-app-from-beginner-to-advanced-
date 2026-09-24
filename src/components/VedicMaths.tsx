@@ -1805,17 +1805,17 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader, onOpenP
                   The Śulba Sūtras (शुल्बसूत्राणि)
                 </h3>
                 <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
-                  <em>"Śulba"</em> literally means a measuring cord or rope. The texts of <em>Baudhāyana, Āpastamba, Kātyāyana</em>, and <em>Mānava</em> documented exact geometric algorithms used to lay out coordinates and right angles on the earth.
+                  <em>"Śulba"</em> literally means a measuring cord or rope. The texts of <em>Baudhāyana, Āpastamba, Kātyāyana</em>, and <em>Mānava</em> (c. 800–500 BCE) documented exact geometric algorithms used to lay out coordinates, cardinal orientations, and right angles on the earth.
                 </p>
               </div>
 
               <div style={{ background: '#ffffff', padding: '1.5rem', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
                 <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>🔺</div>
                 <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
-                  Baudhāyana’s Theorem (Pre-Pythagoras)
+                  Baudhāyana’s Theorem (The Diagonal Principle)
                 </h3>
                 <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
-                  <em>"दीर्घचतुरश्रस्याक्ष्णया रज्जुः..."</em> Baudhāyana explicitly proved that the diagonal of a rectangle produces by itself both areas which the sides produce separately, centuries before Pythagoras.
+                  <em>"दीर्घचतुरश्रस्याक्ष्णया रज्जुः पार्श्वमानी तिर्यङ्ग्मानी च यत् पृथग् भूते कुरुतस्तदुभयं करोति ॥"</em> (Baudhāyana Śulba Sūtra 1.48). Centuries before Pythagoras, Baudhāyana proved that the diagonal of a rectangle produces the sum of the areas produced separately by its length and breadth.
                 </p>
               </div>
 
@@ -1825,7 +1825,139 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader, onOpenP
                   Circle &amp; Square Transformations (Circling the Square)
                 </h3>
                 <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
-                  Because Vedic altars had to possess identical surface area regardless of whether their geometry was circular (Gārhapatya) or square (Āhavanīya), Vedic seers devised formulas to convert squares to circles and vice versa.
+                  Because Vedic altars had to possess identical surface area regardless of whether their geometry was circular (<em>Gārhapatya</em>) or square (<em>Āhavanīya</em>), Vedic seers devised exact cord-and-peg algorithms to transform squares to circles and circles to squares without area loss.
+                </p>
+              </div>
+            </div>
+
+            {/* Sacred Altars & The Invariant Area Problem */}
+            <div style={{ marginTop: '2.5rem', background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: '16px', padding: '1.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                <span style={{ fontSize: '1.5rem' }}>🔥</span>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>
+                  The Invariant Area Problem &amp; Sacred Altars (यज्ञकुण्डानि)
+                </h3>
+              </div>
+              <p style={{ fontSize: '0.94rem', color: '#475569', lineHeight: 1.6, margin: '0 0 1.25rem' }}>
+                The catalyst for ancient Indian geometry was the strict ritual injunction that every sacrificial fire altar (<em>Chiti</em>)
+                must possess the exact same surface area—traditionally <strong>7½ square puruṣas (approx. 108 square aṅgulas)</strong>—even
+                when constructed in drastically different symbolic silhouettes:
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
+                <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
+                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>🦅</div>
+                  <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
+                    Śyenaciti (श्येनचितिः · Falcon Altar)
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5 }}>
+                    Shaped as a magnificent soaring eagle with outstretched wings and tail to carry prayers up to heaven. Required complex polygon dissection while maintaining exact 7½ puruṣa area.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
+                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>🐢</div>
+                  <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
+                    Kūrmaciti (कूर्मचितिः · Tortoise Altar)
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5 }}>
+                    Symbolizing cosmic stability, foundation, and steady equilibrium of the universe. Required segmental circular boundaries matching square areas.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
+                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>☸️</div>
+                  <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
+                    Rathacakraciti (रथचक्रचितिः · Chariot Wheel)
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5 }}>
+                    Symbolizing movement, cyclical cosmic time (<em>kālacakra</em>), and seasonal progression. Built with concentric annular bands and spoke divisions.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
+                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>🏺</div>
+                  <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
+                    Droṇaciti (द्रोणचितिः · Trough Altar)
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5 }}>
+                    Representing abundance, nourishment, and a vessel of divine soma. Formed with trapezoidal prisms and precise step gradations.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Baudhayana's √2 Approximation Masterclass */}
+            <div style={{ marginTop: '2rem', background: 'linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%)', border: '1.5px solid #a7f3d0', borderRadius: '16px', padding: '1.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                <span style={{ fontSize: '1.5rem' }}>✨</span>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#065f46', margin: 0 }}>
+                  Baudhāyana’s √2 Approximation Formula (800 BCE)
+                </h3>
+              </div>
+              <p style={{ fontSize: '0.94rem', color: '#065f46', lineHeight: 1.6, margin: '0 0 1rem' }}>
+                When constructing a square altar double the size of an existing one, Baudhāyana needed the exact diagonal length (<em>d = s√2</em>). In <em>Baudhāyana Śulba Sūtra (1.61–62)</em>, he recorded the legendary verse:
+              </p>
+              <div style={{ background: '#ffffff', border: '1px solid #86efac', borderRadius: '10px', padding: '1rem 1.25rem', fontFamily: 'monospace', fontSize: '0.98rem', color: '#166534', marginBottom: '1rem' }}>
+                <strong>समस्य द्विकरणी । प्रमाणं तृतीयेन वर्धयेत्तच्च चतुर्थेनात्मचतुस्त्रिंशोनेन सविशेषः ॥</strong>
+                <div style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: '#15803d' }}>
+                  <em>"Increase the unit measure by its third, that third by its fourth, less the thirty-fourth part of that fourth."</em>
+                </div>
+                <div style={{ marginTop: '0.5rem', fontSize: '1.1rem', fontWeight: 800, color: '#047857' }}>
+                  √2 ≈ 1 + ⅓ + (⅓ × ¼) - (⅓ × ¼ × ⅟₃₄) = 577 / 408 ≈ 1.414215686...
+                </div>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #bbf7d0' }}>
+                  <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 700 }}>Baudhāyana’s Value (c. 800 BCE)</div>
+                  <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#166534' }}>1.414215686</div>
+                  <div style={{ fontSize: '0.78rem', color: '#059669', marginTop: '0.2rem' }}>577 / 408 (8th continued-fraction convergent)</div>
+                </div>
+
+                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #bbf7d0' }}>
+                  <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 700 }}>Modern Value of √2</div>
+                  <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#0f172a' }}>1.414213562</div>
+                  <div style={{ fontSize: '0.78rem', color: '#64748b', marginTop: '0.2rem' }}>Calculated with 64-bit IEEE floating point</div>
+                </div>
+
+                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #bbf7d0' }}>
+                  <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 700 }}>Historical Accuracy</div>
+                  <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2563eb' }}>99.99985%</div>
+                  <div style={{ fontSize: '0.78rem', color: '#3b82f6', marginTop: '0.2rem' }}>Error of only 0.00000212!</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Modern Echoes in Computer Science & Algorithms */}
+            <div style={{ marginTop: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem' }}>
+              <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '1.4rem' }}>
+                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>💻</div>
+                <h4 style={{ margin: '0 0 0.4rem', color: '#0f172a', fontSize: '1.05rem', fontWeight: 800 }}>
+                  1. Constructive Algorithmic Geometry (CAD)
+                </h4>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 }}>
+                  Because the Śulba Sūtras do not deal in abstract proofs but in sequential constructive instructions (<em>"stretch cord AB, bisect at M, swing arc to C"</em>), computer scientists classify them as early <strong>imperative constructive algorithms</strong> directly mirroring parametric CAD and 3D graphic rendering logic.
+                </p>
+              </div>
+
+              <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '1.4rem' }}>
+                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>🏛️</div>
+                <h4 style={{ margin: '0 0 0.4rem', color: '#0f172a', fontSize: '1.05rem', fontWeight: 800 }}>
+                  2. Vāstu Śāstra &amp; Sustainable Architecture
+                </h4>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 }}>
+                  The cord-geometry of altar construction laid the groundwork for Indian architecture (<em>Vāstu Śāstra</em>), where symmetry, orientation relative to the solar cardinal axis, and proportional area subdivisions are utilized in modern green architecture to maximize ventilation and thermal efficiency.
+                </p>
+              </div>
+
+              <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '1.4rem' }}>
+                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>🔐</div>
+                <h4 style={{ margin: '0 0 0.4rem', color: '#0f172a', fontSize: '1.05rem', fontWeight: 800 }}>
+                  3. Continued Fractions &amp; Signal Processing
+                </h4>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 }}>
+                  Baudhāyana's 577/408 corresponds to the 8th convergent of continued fractions (<em>[1; 2, 2, 2...]</em>). These Diophantine approximations are foundational to digital signal processing, Fourier quantization, and modern cryptographic key generation.
                 </p>
               </div>
             </div>
