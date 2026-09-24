@@ -72,20 +72,14 @@ const applyVisargaEcho = (word: string, spacedEcho = false): string => {
 };
 
 /**
- * Apple voices often segment words that start with rare vocalic letters ॠ / ऌ
- * (e.g. ॠकारः → "ॠ / का / रः"). Map to familiar री / ली so the whole word
- * speaks continuously. Windows is left unchanged for these words.
+ * Rare vocalic picture words use the Windows Devanagari + spaced-visarga path
+ * on Apple too, so ॠ / ऌ are not rewritten to री / ली on Mac.
  */
-const applyAppleWordFixes = (word: string): string => {
-  if (!isApplePlatform()) return word;
-  if (word === 'ॠकारः' || word.startsWith('ॠकार')) {
-    return word.replace(/^ॠ/, 'री');
-  }
-  if (word === 'ऌकारः' || word.startsWith('ऌकार')) {
-    return word.replace(/^ऌ/, 'ली');
-  }
-  return word;
-};
+const isRareVocalicWord = (word: string): boolean =>
+  word === 'ॠकारः' || word.startsWith('ॠकार') || word === 'ऌकारः' || word.startsWith('ऌकार');
+
+const usesWindowsWordSpeech = (word: string): boolean =>
+  isWindowsPlatform() || (isApplePlatform() && isRareVocalicWord(word));
 
 /** True for multi-akṣara picture / vocabulary words (not bare tiles). */
 const isFullWord = (word: string): boolean => {
@@ -112,17 +106,15 @@ const toSpeechText = (word: string): string => {
     return varnamalaSpeechText(word);
   }
 
-  // Mac-only spoken-text for ॠकारः / ऌकारः (see applyAppleWordFixes).
-  const appleFixed = applyAppleWordFixes(word);
-  const overridden = applyWordOverrides(appleFixed);
+  const overridden = applyWordOverrides(word);
 
   // Windows whole-word path: keep Devanagari + spaced visarga echo for hi-IN.
-  // Mac keeps the unspaced echo (already correct there).
-  if (isWindowsPlatform()) {
+  // Mac rare-vocalic words use this same path instead of a री / ली rewrite.
+  if (usesWindowsWordSpeech(word)) {
     // Never let roman overrides win for ordinary picture words on Windows —
     // force Devanagari so pickHindiVoice is used (एणः, ईशः, …).
     if (/^[a-z\- ]+$/i.test(overridden) && !/^(an gam|gun ga|run ga|sap-ta)$/i.test(overridden)) {
-      return applyVisargaEcho(appleFixed, true);
+      return applyVisargaEcho(word, true);
     }
     if (/^[a-z\- ]+$/i.test(overridden)) {
       return overridden; // intentional ङ / सप्त roman anchors
@@ -150,8 +142,9 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
       utterance.lang = 'en-IN';
     }
   } else {
-    // Windows picture-words: always prefer a real hi-IN voice with Devanagari text.
-    if (isWindowsPlatform() && isFullWord(word)) {
+    // Windows picture-words, plus Mac ॠकारः / ऌकारः: always prefer a real
+    // hi-IN voice with Devanagari text so the platform paths match.
+    if (usesWindowsWordSpeech(word) && isFullWord(word)) {
       const hi = pickHindiVoice(voices);
       utterance.voice = hi || voice || null;
       utterance.lang = hi?.lang || voice?.lang || 'hi-IN';
