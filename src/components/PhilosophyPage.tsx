@@ -32,6 +32,8 @@ const GLOSSARY: { term: string; meaning: string }[] = [
   { term: 'vibhakti', meaning: 'nominal case inflections expressing relational syntactical roles' },
   { term: 'dhātu', meaning: 'verbal root, the algorithmic generative core in Pāṇini’s Aṣṭādhyāyī' },
   { term: 'śikṣā', meaning: 'Vedic phonetic science mapping oral articulation points and acoustics' },
+  { term: 'japa', meaning: 'meditative repetition of a mantra, verse, or syllable' },
+  { term: 'ṛṣi', meaning: 'seer; investigator who observed inner mind-states through isolated speech' },
 ];
 
 const DEFAULT_TITLE =
@@ -209,6 +211,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </blockquote>
             </header>
 
+            {/* Opening */}
             <section className="philosophy-section" aria-labelledby="ai-opening">
               <p>
                 If a device can translate any sentence in real time, and if a future implant can
@@ -223,6 +226,74 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </p>
             </section>
 
+            {/* Evolution is not permission to discard the older work */}
+            <section className="philosophy-section" aria-labelledby="evolution-work">
+              <h2 id="evolution-work">Evolution is Not Permission to Discard the Older Work</h2>
+              <p>
+                Life did not arrive last Tuesday. Molecular and cellular lineages that make a nervous
+                system possible run on the scale of billions of years. Bodies that stand, breathe, and
+                speak were shaped over millions of years. The larynx, the ear, the long vagus, the
+                coupling of breath to heart — these are not legacy features waiting to be deprecated
+                by a software update.
+              </p>
+              <p>
+                On top of that anatomy, human cultures spent millennia doing something software still
+                treats as optional: holding sound still long enough to study it. Sanskrit is one of
+                the densest records of that work. Phonetics (<em>śikṣā</em>{' '}
+                <AudioChip term="शिक्षा" label="शिक्षा" />), meter (<em>chandas</em>{' '}
+                <AudioChip term="छन्दः" label="छन्दः" />), grammar, oral error-correction, mantra as
+                a controlled use of speech — thousands of years of research and practice went into
+                making language an instrument, not only a chat protocol.
+              </p>
+
+              {/* Evolutionary Timescales Breakdown */}
+              <div className="philosophy-timescale-grid" aria-label="Timescales of Human Speech Evolution">
+                <div className="philosophy-timescale-card">
+                  <span className="philosophy-timescale-time">Billions of Years</span>
+                  <div className="philosophy-timescale-title">🌌 The Brain</div>
+                  <p className="philosophy-timescale-desc">
+                    Cellular and neurological lineages that make conscious perception possible.
+                  </p>
+                </div>
+                <div className="philosophy-timescale-card">
+                  <span className="philosophy-timescale-time">Millions of Years</span>
+                  <div className="philosophy-timescale-title">🫁 The Speaking Body</div>
+                  <p className="philosophy-timescale-desc">
+                    Larynx, inner ear, long vagus nerve, and coupling of breath to heart.
+                  </p>
+                </div>
+                <div className="philosophy-timescale-card">
+                  <span className="philosophy-timescale-time">Thousands of Years</span>
+                  <div className="philosophy-timescale-title">📜 Sanskrit Craft</div>
+                  <p className="philosophy-timescale-desc">
+                    Śikṣā phonetics, Pāṇinian grammar, chandas, and controlled acoustic mantra.
+                  </p>
+                </div>
+                <div className="philosophy-timescale-card">
+                  <span className="philosophy-timescale-time">Months</span>
+                  <div className="philosophy-timescale-title">⚡ Artificial Intelligence</div>
+                  <p className="philosophy-timescale-desc">
+                    Model checkpoints, translation engines, speed, and synthetic thought-links.
+                  </p>
+                </div>
+              </div>
+
+              <p>
+                AI will keep evolving in months. That speed is real. It does not entitle us to throw
+                away the slower inheritances. Evolution, in a living species, is addition and
+                refinement — not a factory reset. We can add translation, tutors, and even
+                thought-links. We should not give up the mouth, the meter, or the discipline that
+                taught a civilisation how to bind mind to sound.
+              </p>
+              <p>
+                <strong>
+                  To continue evolving is to carry the older timescales with us, not to declare them
+                  obsolete because a new layer is faster.
+                </strong>
+              </p>
+            </section>
+
+            {/* Two kinds of communication */}
             <section className="philosophy-section" aria-labelledby="two-kinds-comm">
               <h2 id="two-kinds-comm">Two Kinds of Communication</h2>
               <p>
@@ -233,9 +304,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </p>
               <p>
                 The other kind is <strong>bind</strong>. Speech is locked to the body that produces
-                it: the chest vibration of a long vowel, the tongue striking the palate, the
-                hesitation before a word that costs something to say, the shared room where two people
-                hear the same syllable die away.
+                it: the length of the exhale, the vibration in the chest, the exact place of the
+                tongue, the state of the person who is speaking. Two people can send the same content.
+                Only one of them is present in the sound.
               </p>
 
               <div className="philosophy-duality-grid">
@@ -262,38 +333,35 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
 
               <p>
-                AI can simulate the surface of that second kind. It cannot live it. When you rely
-                only on transfer, you slowly treat every utterance as interchangeable code. What you
-                gain in reach, you lose in grain.
+                Systems make the first kind efficient and uniform. They do not automatically carry
+                uniqueness, aliveness, or the conscious state of the speaker. If we treat language as
+                obsolete the moment transfer is solved, we keep the packet and lose the person — and
+                we waste the anatomy that took geological time to build.
               </p>
             </section>
 
+            {/* What AI can do — and what it flattens */}
             <section className="philosophy-section" aria-labelledby="what-ai-flattens">
               <h2 id="what-ai-flattens">What AI Can Do — and What It Flattens</h2>
               <p>
-                A modern model can take a Sanskrit verse, parse compounds, output case endings, and
-                produce five elegant English renderings in seconds. That is extraordinary for access.
+                AI can already draft, translate, summarise, and tutor. It can give you a gloss of a
+                verse and a plausible English sentence. Used well, it removes fear and delay from the
+                early stages of study. Used as a replacement, it turns every language into an
+                interchangeable code.
               </p>
               <p>
-                <strong>What it cannot do for you is make the language your own.</strong>
-              </p>
-              <p>
-                When an engine resolves a sandhi (the joining of sounds at word boundaries), it
-                solves an equation. When you resolve it aloud, you experience why the mouth prefers
-                that pathway: effort, glide, release. You feel the architecture of speech.
-              </p>
-              <p>
-                When an engine maps a vibhakti (case marker), it looks up a relational graph. When
-                you learn to hear it, your brain begins to hold seven relationships at once without
-                needing word order to prop them up. That changes how you think, not just what you
-                read.
+                A translated sentence can be correct and still hollow. Humour, register, mantra, and
+                philosophical precision do not travel as cargo. They live in how a language cuts the
+                world. Sanskrit does not merely name things English already knows. It trains a
+                different grain of attention: sandhi as joining, vibhakti as relation, dhātu as root
+                action, śabda as sound that is also meaning.
               </p>
 
               <div className="philosophy-grain-grid">
                 <div className="philosophy-grain-card">
                   <div className="philosophy-grain-header">
                     <span className="philosophy-grain-sanskrit">संधिः</span>
-                    <span className="philosophy-grain-label">Sandhi · Acoustic Glide</span>
+                    <span className="philosophy-grain-label">Sandhi · Joining</span>
                   </div>
                   <p>
                     Not an algebraic rule of text substitution, but the natural kinetic flow of
@@ -305,7 +373,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 <div className="philosophy-grain-card">
                   <div className="philosophy-grain-header">
                     <span className="philosophy-grain-sanskrit">विभक्तिः</span>
-                    <span className="philosophy-grain-label">Vibhakti · 7 Relations</span>
+                    <span className="philosophy-grain-label">Vibhakti · Relation</span>
                   </div>
                   <p>
                     Syntactic relation held directly within nominal terminations. Your mind holds
@@ -318,7 +386,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 <div className="philosophy-grain-card">
                   <div className="philosophy-grain-header">
                     <span className="philosophy-grain-sanskrit">धातुः</span>
-                    <span className="philosophy-grain-label">Dhātu · Generative Root</span>
+                    <span className="philosophy-grain-label">Dhātu · Root Action</span>
                   </div>
                   <p>
                     Every noun and verb seeds from an algorithmic root action. Language is not a list
@@ -341,54 +409,48 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
 
               <p>
-                In a machine-first world, everything is translated into a common mush of
-                contemporary, flattened English: clean, helpful, and rootless. Sanskrit is the
-                opposite of mush. It has grain. It resists casual skimming. It asks for your
-                presence.
+                If no one studies languages except through a model, cultural knowledge moves into the
+                machine and out of us. We will talk through other worlds instead of inhabiting them.
+                The thousands of years of practice become a dataset. That is storage. It is not
+                transmission of a living skill.
               </p>
             </section>
 
+            {/* Why Sanskrit is a special case in this age */}
             <section className="philosophy-section" aria-labelledby="special-case">
               <h2 id="special-case">Why Sanskrit Is a Special Case in This Age</h2>
               <p>
-                Every language has a soul, but Sanskrit has a peculiar relationship to technology.
+                Sanskrit is often introduced as “ancient” or “liturgical.” Those labels hide its
+                usefulness now. It is not a museum language. It is one of the longest-running human
+                attempts to make speech precise enough to think with.
               </p>
 
               <div className="philosophy-card">
-                <h3>1. It is a designed instrument of speech</h3>
+                <h3>It is a designed instrument of speech</h3>
                 <p>
-                  Pāṇinian grammar does not describe how Sanskrit happened to drift on the street;
-                  it formalises how speech sounds are generated from roots (<em>dhātu</em>{' '}
-                  <AudioChip term="धातु" label="धातु" />) and affixes according to strict generative
-                  rules. It is an algorithmic language created millennia before computers.
-                </p>
-                <p>
-                  If you love code, Sanskrit should fascinate you not because “computers will run on
-                  Sanskrit” (a common half-truth), but because it proves human beings could design a
-                  system of speech as rigorous as code and as expressive as song.
+                  The science of <em>śikṣā</em> (<AudioChip term="शिक्षा" label="शिक्षा" />) treats
+                  letter, tone, duration, force, and continuity as things that can be held still.
+                  Ordinary conversation changes too many variables at once — new words, social
+                  threat, planning the next line. A mantra or a carefully recited verse is
+                  low-novelty, rhythmic speech. That is why it can be used as a practice, not only as
+                  a message. The <em>ṛṣi</em> (<AudioChip term="ऋषिः" label="ऋषिः" />) experiment was
+                  not a laboratory with scanners. It was speech isolated so that mind-state could be
+                  observed.
                 </p>
               </div>
 
               <div className="philosophy-card">
-                <h3>2. It begins in phonetics, not typography</h3>
+                <h3>It keeps a path from outer sound to inner seeing</h3>
                 <p>
-                  Before it was written down, it was chanted. The Śikṣā (
-                  <AudioChip term="शिक्षा" label="शिक्षा" />) phonetic tradition maps the mouth like
-                  a keyboard:
-                </p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem', margin: '0.5rem 0 0.85rem' }}>
-                  <AudioChip term="कण्ठ्य" label="Throat (कण्ठ्य)" />
-                  <AudioChip term="तालव्य" label="Palate (तालव्य)" />
-                  <AudioChip term="मूर्धन्य" label="Roof / Retroflex (मूर्धन्य)" />
-                  <AudioChip term="दन्त्य" label="Teeth (दन्त्य)" />
-                  <AudioChip term="ओष्ठ्य" label="Lips (ओष्ठ्य)" />
-                </div>
-                <p>
-                  When you recite, you are playing an acoustic instrument whose resonance you feel in
-                  your skull and ribcage.
+                  Tradition names levels of <em>vāk</em>: <em>vaikharī</em> (audible),{' '}
+                  <em>madhyamā</em> (inner speech), <em>paśyantī</em> (the impulse before words),{' '}
+                  <em>parā</em> (speech not yet split). Learning Sanskrit with the mouth, not only with
+                  a subtitle, is how a modern student still walks that path.
                 </p>
                 <p>
-                  <strong>An AI screen is silent glass. Sanskrit insists on the body.</strong>
+                  The temple <em>darśana</em> — seeing a form — is the tool for those who need an
+                  outer support. The seer’s work is inner observation. Language study can serve both:
+                  first the tool, then the seeing.
                 </p>
 
                 {/* 4 Levels of Vāk */}
@@ -428,103 +490,117 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
 
               <div className="philosophy-card">
-                <h3>3. It is low-novelty, high-attention</h3>
+                <h3>The point is the principle of use, not a secret string of syllables</h3>
                 <p>
-                  Most internet communication is high-novelty, low-attention: scroll, skim, react,
-                  forget. Traditional Sanskrit learning is the reverse: take one verse, repeat it
-                  forty times, hear the metre (<em>chandas</em> <AudioChip term="छन्दः" label="छन्दः" />
-                  ), inhabit the sandhi, let the meaning settle over weeks.
+                  Many mantras are already public. When a teacher still gives one in a closed way,
+                  what is transmitted is not a rare password. It is a rule of use: this sound, this
+                  breath, this constraint, this relationship. Two people can pronounce the same line.
+                  Only one of them has accepted it as an instrument that must stay still.
                 </p>
                 <p>
-                  <strong>That is an antidote to the machine age, not an inefficiency to fix.</strong>
+                  <strong>
+                    An app can print the words. It cannot replace that principle — but it can refuse
+                    to treat the words as content to swipe past.
+                  </strong>
                 </p>
               </div>
             </section>
 
+            {/* What you actually gain by learning it */}
             <section className="philosophy-section" aria-labelledby="what-you-gain">
               <h2 id="what-you-gain">What You Actually Gain by Learning It</h2>
               <p>
-                If you are learning only to get the “information” out of a text, let the AI read it
-                to you. You will save hundreds of hours.
+                You gain a second channel in a world that will otherwise offer you only the efficient
+                one.
               </p>
-              <p>Learn it if you want:</p>
               <ul className="philosophy-steps">
                 <li>
-                  <strong>A second channel in your head:</strong> To experience a thought before it
-                  is forced into English categories.
+                  <strong>You learn to hear structure:</strong> how sounds join, how a case ending
+                  places a noun in a relation, how a compact verse holds more than a paraphrase. That
+                  skill transfers. It makes you a better reader of any language, including the
+                  outputs of models — because you can tell a gloss from an inhabiting.
                 </li>
                 <li>
-                  <strong>To hear structure:</strong> Sanskrit makes the skeleton of meaning
-                  audible. Case endings, prefixes, and roots teach you to look at any language — even
-                  your mother tongue — with fresh eyes.
+                  <strong>You keep a living link:</strong> to texts that do not survive as
+                  “information.” A hymn, a sūtra, a definition in a śāstra is not a tweet waiting to
+                  be summarised. It is a form. Learning the language is how you stop outsourcing the
+                  form to a system that has never sat still with it.
                 </li>
                 <li>
-                  <strong>A living link:</strong> Not an academic autopsy of a dead tongue, but the
-                  same sonic vibration people used three thousand years ago to ask the same questions
-                  about time, grief, and freedom.
-                </li>
-                <li>
-                  <strong>Attention training:</strong> The precision required for Sanskrit grammar
-                  and pronunciation is one of the few remaining disciplines that cannot be faked with
-                  a prompt.
+                  <strong>You honour the body you actually have:</strong> Repetition that looks
+                  inefficient — japa (<AudioChip term="जप" label="जप" />), recitation, sandhi drills
+                  — is inefficient only if the goal is throughput. If the goal is a mind that can stay
+                  with one thing, using the throat and the ear that evolution already gave you, the old
+                  method is still the right tool.
                 </li>
               </ul>
+              <p>
+                <strong>
+                  Meeting a language with the mouth is how a fast species stays faithful to a slow
+                  one: itself.
+                </strong>
+              </p>
             </section>
 
+            {/* How to learn in the AI age without becoming the machine */}
             <section className="philosophy-section" aria-labelledby="how-to-learn">
               <h2 id="how-to-learn">How to Learn in the AI Age Without Becoming the Machine</h2>
-              <p>
-                The irony of modern language learning is that people often use apps that reduce
-                language to automated drills — mimicking machines while trying to learn something
-                human.
-              </p>
 
               <div className="philosophy-card">
-                <h3>Use AI as scaffolding, not the temple</h3>
+                <h3>Use translation and tutors as scaffolding. Do not use them as the temple.</h3>
                 <p>
-                  Use models to check your sandhi, to give vocabulary examples, or to explain a
-                  confusing commentary. But never let the model do the reading for you. The friction
-                  of parsing is where your brain grows.
+                  Let models explain confusing grammar, generate drills, or provide scaffolding. But
+                  never let the tool replace the friction of your own parsing.
                 </p>
               </div>
 
               <div className="philosophy-card">
-                <h3>Speak aloud from day one</h3>
+                <h3>Read aloud. Even a short line.</h3>
                 <p>
-                  If you study Sanskrit purely as text on a screen, you cut off half of its life.
-                  Recite. Even if your pronunciation is clumsy at first, let your mouth make the
-                  shapes.
+                  The bind of speech — motor, ear, breath — does not happen on a silent screen. If
+                  you only ever tap “show meaning,” you have used the transfer channel and skipped the
+                  living one.
                 </p>
               </div>
 
               <div className="philosophy-card">
                 <h3>Keep one inefficient practice</h3>
                 <p>
-                  Write the Devanagari script by hand on paper. Sit with a printed page without
-                  notifications. In an age of total convenience, deliberate inefficiency is how you
-                  protect what is sacred and human.
+                  A verse, a nāma, a sandhi pattern returned to until it is in the mouth, not only in
+                  history. Let the model quiz you. Do not let it chant for you.
+                </p>
+              </div>
+
+              <div className="philosophy-card">
+                <h3>Treat the app as a container that should get quieter as you grow, not louder</h3>
+                <p>
+                  Streaks and scores are for memory. They are not a measure of <em>darśana</em>.
                 </p>
               </div>
             </section>
 
-            <section className="philosophy-section" aria-labelledby="human-skill">
-              <h2 id="human-skill">
-                Language is no longer a survival skill; it is a human skill
-              </h2>
+            {/* A design rule for this moment */}
+            <section className="philosophy-section" aria-labelledby="design-rule">
+              <h2 id="design-rule">A Design Rule for This Moment</h2>
               <p>
-                For most of history, you learned another group’s language so you could trade,
-                travel, or avoid war. AI will largely handle those survival functions.
+                Make the channel efficient for sharing. Keep a path that is inefficient enough to
+                stay unique, alive, and honest about the state of the mind that is speaking.
               </p>
               <p>
-                <strong>That does not make language learning obsolete. It makes it chosen.</strong>
+                Sanskrit is one of the few languages still taught, in many homes and gurukuls, as that
+                second path: not only so you can be understood, but so you can inhabit a way of
+                cutting sound and meaning that machines can imitate and cannot replace.
               </p>
               <p>
-                You no longer have to learn a language. That means when you do, it can be for the
-                reasons that matter most: beauty, discipline, memory, and communion.
+                Learn it because the age of AI will make language optional as a survival skill. That
+                is exactly when it becomes necessary as a human one. Billions of years made the
+                possibility of a brain. Millions of years made a speaking body. Thousands of years
+                made Sanskrit into a craft. Evolution, if it is wise, does not throw those layers
+                away. It learns to speak from them.
               </p>
 
               <div className="philosophy-callout" style={{ textAlign: 'center', padding: '1.25rem' }}>
-                <p style={{ margin: '0 0 0.35rem', fontSize: '1.25rem', fontWeight: 800, color: '#9a3412' }}>
+                <p style={{ margin: '0 0 0.35rem', fontSize: '1.2rem', fontWeight: 800, color: '#9a3412' }}>
                   AI will give you the translation.
                 </p>
                 <p style={{ margin: 0, fontSize: '1.45rem', fontWeight: 900, color: '#1e293b' }}>
@@ -533,27 +609,19 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
-            {/* Practical Advice for Learners on this App */}
+            {/* For learners on this app */}
             <div className="philosophy-learner-box">
               <h3>For Learners on this App</h3>
-              <ul className="philosophy-learner-list">
-                <li>
-                  <strong>Start with the sounds:</strong> Hear the difference between dental (दन्त्य)
-                  and retroflex (मूर्धन्य). Speak the syllables before you read them.
-                </li>
-                <li>
-                  <strong>One line with presence:</strong> One line of a verse spoken slowly with full
-                  attention is worth ten pages translated by a machine in your pocket.
-                </li>
-                <li>
-                  <strong>Trace with your hand:</strong> Use our handwriting and tracing studio to
-                  anchor letter strokes in muscle memory before relying purely on keyboards.
-                </li>
-                <li>
-                  <strong>Read verse-by-verse:</strong> Encounter texts in our living reader where
-                  every word unfolds its root, gender, and grammatical case.
-                </li>
-              </ul>
+              <p style={{ fontSize: '1.05rem', lineHeight: 1.6, color: '#134e4a', margin: '0 0 1rem' }}>
+                <strong>Start with sound.</strong> One line spoken slowly is worth a page of instant
+                gloss. Use the tools here to see grammar clearly — then close the explanation and say
+                the verse until the mouth knows it.
+              </p>
+              <p style={{ fontSize: '1.02rem', lineHeight: 1.6, color: '#134e4a', margin: '0 0 1.25rem' }}>
+                That is the difference between having Sanskrit on your phone and having Sanskrit in your
+                speech. The phone is new. The speech is older than every empire that tried to replace
+                it.
+              </p>
 
               <div className="philosophy-action-buttons">
                 {onOpenVarnamala && (
@@ -563,7 +631,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 )}
                 {onOpenReader && (
                   <button type="button" className="philosophy-action-btn" onClick={onOpenReader}>
-                    📖 NCERT Deepakam Reader
+                    📖 NCERT Deepakam Living Reader
                   </button>
                 )}
                 <button
