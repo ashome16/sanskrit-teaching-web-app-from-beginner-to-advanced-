@@ -79,4 +79,12 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: 'Understanding Vibhaktis (Case Endings)',
     cardBlurb: 'Master the 8 noun cases, kāraka roles, suffixes, and memory trick using Bālaka.',
   },
+  {
+    id: 'katapayadi-number-words',
+    file: 'grammar/article-11.txt',
+    emoji: '🔢',
+    cardTitle: 'कटपयादि · Kaṭapayādi · Numbers into Words',
+    cardBlurb: 'The classical consonant–digit map that turned dates, π-related constants, and Melakarta numbers into memorable Sanskrit verse.',
+  },
+
 ];

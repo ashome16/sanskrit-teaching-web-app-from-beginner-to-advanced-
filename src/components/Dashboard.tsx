@@ -833,6 +833,7 @@ const Dashboard: React.FC = () => {
             onGoHome={() => setActiveView('home')}
             onOpenReader={() => openDeepakam()}
             onOpenPhilosophy={() => navigateToView('philosophy')}
+            onOpenGrammar={handleOpenGrammar}
           />
         )}
         {activeView === 'quiz' && (

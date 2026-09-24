@@ -1,0 +1,67 @@
+# कटपयादि · Kaṭapayādi · Turning Numbers into Sanskrit Words
+## The classical Indian consonant–digit system that turned dates, constants, and Melakarta numbers into poetry
+
+Long before digital hashing, Indian scholars used **Kaṭapayādi** (also spelled Kaṭapayādi / “Kattapayadi”) to map Sanskrit consonants to digits. Big numbers became memorable words and verses. It is not a secret cipher meant to hide knowledge — it is a **memory art** that joins mathematics, astronomy, music, and poetry.
+
+## What the name means
+
+The name itself is a mnemonic. Mapping groups begin at **क** (ka), **ट** (ṭa), **प** (pa), and **य** (ya) — each standing for **1**. So *Ka-ṭa-pa-ya-ādi* means “beginning with ka, ṭa, pa, and ya.”
+
+In Kerala it is also called **Paralpperu**. The system is especially associated with South India and Kerala; tradition links early popularisation to **Vararuci** (often placed around the early centuries CE).
+
+## The consonant–digit map
+
+Use this table as your decoder ring. Many letters share a digit — that freedom is what lets poets choose synonyms that fit both metre and meaning.
+
+| Digit | ka-row | ṭa-row | pa-row | ya-row |
+| 1 | क ka | ट ṭa | प pa | य ya |
+| 2 | ख kha | ठ ṭha | फ pha | र ra |
+| 3 | ग ga | ड ḍa | ब ba | ल la |
+| 4 | घ gha | ढ ḍha | भ bha | व va |
+| 5 | ङ ṅa | ण ṇa | म ma | श śa |
+| 6 | च ca | त ta | — | ष ṣa |
+| 7 | छ cha | थ tha | — | स sa |
+| 8 | ज ja | द da | — | ह ha |
+| 9 | झ jha | ध dha | — | ळ ḷa (Kerala / regional) |
+| 0 | ञ ña | न na | — | — |
+
+## Rules that make poetry possible
+
+- Stand-alone vowels usually count as **0**; vowels attached to consonants add no digit of their own.
+- In a conjunct, normally only the **last** consonant that carries the vowel is counted; bare half-forms without a vowel are skipped.
+- Digits are read **right-to-left** (units first): *aṅkānāṃ vāmato gatiḥ* — “the movement of digits is from the left.”
+- Because many letters share a digit, a poet can pick synonyms that fit both metre and meaning.
+
+## Tiny examples kids can try
+
+- **जय** (*jaya*): ज = 8, य = 1 → digits **81** → reverse → **18**. The Mahābhārata is also called *Jaya*; tradition highlights **18** parvas, **18** days of war, and **18** chapters of the Gītā.
+- **राम** (*rāma*): र = 2, म = 5 → **25** → reverse → **52**.
+- A playful modern-style encoding of **2010**: **नटनर** (*na-ṭa-na-ra*) → 0, 1, 0, 2 → read reverse as **2010**.
+
+## Nārāyaṇīyam chronogram
+
+Melpathur Nārāyaṇa Bhaṭṭatiri’s **Nārāyaṇīyam** ends with **आयुरायोग्यसौख्यम्** / *āyurārogyasaukhyam* (“long life, health, and happiness”).
+
+Decoded with Kaṭapayādi it yields **1712210**. Counting that many days from the start of Kali Yuga gives the traditional completion date often cited as **8 December 1586 CE** (some popular accounts round to 1587).
+
+Treat this carefully as a famous **chronogram** example — a date woven into a blessing — not as cryptography.
+
+## Astronomy and mathematics
+
+Kerala astronomers used the scheme to pack constants into chantable verse. **Haridatta**’s *Grahacāraṇibandhana* (**683 CE**) is often cited as an early securely dated use.
+
+Later Kerala-school scholars, including **Mādhava of Saṅgamagrāma**, encoded planetary and π-related values this way so tables could travel as poetry — memorised, recited, and checked against the sky.
+
+## Carnatic Melakarta
+
+The **72 Melakarta** rāgas carry prefixes whose first two syllables encode the rāga number.
+
+Example: **Harikāmbhōji** — ह = 8, र = 2 → **82** → reverse → **28th** Melakarta.
+
+The same idea appears in prefixes such as *Dheera-Śaṅkarābharaṇam* and *Mecha-Kalyāṇi*: two syllables, one catalogue number, endlessly singable.
+
+## Why it still matters
+
+Researchers sometimes compare Kaṭapayādi to **hashing**: a readable string maps to a numeric index for fast lookup. The parallel is helpful for curiosity, but keep the main point grounded — this was a living **memory technology** for dates, constants, and catalogue numbers that stayed poetic.
+
+Try decoding a Melakarta name in music class, or a simple word like **जय**, and watch maths, language, and heritage click together.

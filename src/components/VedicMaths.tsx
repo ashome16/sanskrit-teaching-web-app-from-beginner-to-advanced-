@@ -19,9 +19,10 @@ export interface VedicMathsProps {
   onGoHome?: () => void;
   onOpenReader?: () => void;
   onOpenPhilosophy?: () => void;
+  onOpenGrammar?: () => void;
 }
 
-const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader, onOpenPhilosophy }) => {
+const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader, onOpenPhilosophy, onOpenGrammar }) => {
   const [activeTab, setActiveTab] = useState<VedicTab>('solvers');
 
   // Solver States
@@ -176,6 +177,16 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader, onOpenP
                 title="Our Philosophy · Darśana"
               >
                 🪔 Darśana
+              </button>
+            )}
+            {onOpenGrammar && (
+              <button
+                type="button"
+                className="vedic-header-nav-btn"
+                onClick={onOpenGrammar}
+                title="Grammar Shelf · Kaṭapayādi & more"
+              >
+                📚 Grammar · Kaṭapayādi
               </button>
             )}
             {onOpenReader && (
@@ -1235,6 +1246,19 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader, onOpenP
                 )}
               </div>
             </article>
+
+            {onOpenGrammar && (
+              <div className="article-action-footer" style={{ marginTop: '1.25rem' }}>
+                <button
+                  type="button"
+                  className="article-interactive-cta"
+                  onClick={onOpenGrammar}
+                  title="Open Grammar Shelf — Kaṭapayādi article"
+                >
+                  🔢 Sanskrit &amp; Maths heritage · Kaṭapayādi (Grammar Shelf) →
+                </button>
+              </div>
+            )}
           </div>
         )}
 
