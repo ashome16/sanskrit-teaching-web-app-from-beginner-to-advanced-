@@ -39,7 +39,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
   initialLetter = 'अ',
   onOpenWorksheets,
 }) => {
-  const [selectedLetter, setSelectedLetter] = useState<string>(initialLetter);
+  const [selectedLetter, setSelectedLetter] = useState<string>(initialLetter || 'अ');
   const [brushColor, setBrushColor] = useState<string>(BRUSH_COLORS[0].hex);
   const [brushWidth, setBrushWidth] = useState<number>(10);
   const [showGuide, setShowGuide] = useState<boolean>(true);
@@ -95,7 +95,28 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     isPausedRef.current = isPaused;
   }, [isPaused]);
 
-  const mnemonic: LetterMnemonic = getLetterMnemonic(selectedLetter) || ALL_VARNAMALA_LETTERS[0];
+  // Keep selectedLetter in sync if initialLetter prop changes from reader
+  useEffect(() => {
+    if (initialLetter && initialLetter !== selectedLetter) {
+      setSelectedLetter(initialLetter);
+      setStrokes([]);
+      setShowCelebration(false);
+      stopDemo();
+    }
+  }, [initialLetter]);
+
+  const rawMnemonic = getLetterMnemonic(selectedLetter) || ALL_VARNAMALA_LETTERS[0];
+  const mnemonic: LetterMnemonic = {
+    ...rawMnemonic,
+    strokeOrder:
+      Array.isArray(rawMnemonic?.strokeOrder) && rawMnemonic.strokeOrder.length > 0
+        ? rawMnemonic.strokeOrder
+        : [
+            '1. Draw letter curves and body',
+            '2. Draw vertical standing stem',
+            '3. Draw top horizontal roof bar (शिरोरेखा) last',
+          ],
+  };
 
   // Filter letters by category
   const filteredLetters = ALL_VARNAMALA_LETTERS.filter((item) => {
@@ -108,154 +129,184 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
 
   // Re-draw user canvas whenever user strokes change
   const redrawCanvas = () => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    try {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
 
-    // Draw all completed user strokes with smooth round caps
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
+      if (Array.isArray(strokes)) {
+        for (const stroke of strokes) {
+          if (!stroke || !Array.isArray(stroke.points) || stroke.points.length < 1) continue;
+          const pts = stroke.points;
+          if (!pts[0] || typeof pts[0].x !== 'number' || isNaN(pts[0].x)) continue;
 
-    strokes.forEach((stroke) => {
-      if (stroke.points.length < 1) return;
-      ctx.beginPath();
-      ctx.strokeStyle = stroke.color;
-      ctx.lineWidth = stroke.width;
+          ctx.beginPath();
+          ctx.strokeStyle = stroke.color || '#d97706';
+          ctx.lineWidth = stroke.width || 10;
 
-      ctx.moveTo(stroke.points[0].x, stroke.points[0].y);
-      for (let i = 1; i < stroke.points.length; i++) {
-        ctx.lineTo(stroke.points[i].x, stroke.points[i].y);
+          ctx.moveTo(pts[0].x, pts[0].y);
+          for (let i = 1; i < pts.length; i++) {
+            if (pts[i] && typeof pts[i].x === 'number' && !isNaN(pts[i].x)) {
+              ctx.lineTo(pts[i].x, pts[i].y);
+            }
+          }
+          ctx.stroke();
+        }
       }
-      ctx.stroke();
-    });
 
-    // Draw current in-progress user stroke
-    if (currentStrokeRef.current && currentStrokeRef.current.points.length > 0) {
-      const stroke = currentStrokeRef.current;
-      ctx.beginPath();
-      ctx.strokeStyle = stroke.color;
-      ctx.lineWidth = stroke.width;
+      // Draw current in-progress user stroke
+      if (
+        currentStrokeRef.current &&
+        Array.isArray(currentStrokeRef.current.points) &&
+        currentStrokeRef.current.points.length > 0
+      ) {
+        const stroke = currentStrokeRef.current;
+        const pts = stroke.points;
+        if (pts[0] && typeof pts[0].x === 'number' && !isNaN(pts[0].x)) {
+          ctx.beginPath();
+          ctx.strokeStyle = stroke.color || '#d97706';
+          ctx.lineWidth = stroke.width || 10;
 
-      ctx.moveTo(stroke.points[0].x, stroke.points[0].y);
-      for (let i = 1; i < stroke.points.length; i++) {
-        ctx.lineTo(stroke.points[i].x, stroke.points[i].y);
+          ctx.moveTo(pts[0].x, pts[0].y);
+          for (let i = 1; i < pts.length; i++) {
+            if (pts[i] && typeof pts[i].x === 'number' && !isNaN(pts[i].x)) {
+              ctx.lineTo(pts[i].x, pts[i].y);
+            }
+          }
+          ctx.stroke();
+        }
       }
-      ctx.stroke();
+    } catch (err) {
+      console.warn('Canvas redraw error safely caught:', err);
     }
   };
 
   // Re-draw demo canvas
   const redrawDemoCanvas = (currentPoints?: StrokePoint[]) => {
-    const demoCanvas = demoCanvasRef.current;
-    if (!demoCanvas) return;
-    const ctx = demoCanvas.getContext('2d');
-    if (!ctx) return;
+    try {
+      const demoCanvas = demoCanvasRef.current;
+      if (!demoCanvas) return;
+      const ctx = demoCanvas.getContext('2d');
+      if (!ctx) return;
 
-    ctx.clearRect(0, 0, demoCanvas.width, demoCanvas.height);
+      ctx.clearRect(0, 0, demoCanvas.width, demoCanvas.height);
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = 'rgba(245, 158, 11, 0.45)';
 
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = 'rgba(245, 158, 11, 0.45)';
+      const dpr = window.devicePixelRatio || 1;
+      const width = demoCanvas.width / dpr;
+      const height = demoCanvas.height / dpr;
 
-    const dpr = window.devicePixelRatio || 1;
-    const width = demoCanvas.width / dpr;
-    const height = demoCanvas.height / dpr;
+      if (Array.isArray(demoStateRef.current.completedStrokes)) {
+        demoStateRef.current.completedStrokes.forEach((s) => {
+          if (!s || !Array.isArray(s.points) || s.points.length < 1) return;
+          ctx.beginPath();
+          ctx.strokeStyle = '#f59e0b';
+          ctx.lineWidth = 14;
 
-    // Draw all previously completed strokes in the demo
-    demoStateRef.current.completedStrokes.forEach((s) => {
-      if (s.points.length < 1) return;
-      ctx.beginPath();
-      ctx.strokeStyle = '#f59e0b';
-      ctx.lineWidth = 14;
+          const p0x = (s.points[0].x / 100) * width;
+          const p0y = (s.points[0].y / 100) * height;
+          ctx.moveTo(p0x, p0y);
 
-      const p0x = (s.points[0].x / 100) * width;
-      const p0y = (s.points[0].y / 100) * height;
-      ctx.moveTo(p0x, p0y);
-
-      for (let i = 1; i < s.points.length; i++) {
-        ctx.lineTo((s.points[i].x / 100) * width, (s.points[i].y / 100) * height);
+          for (let i = 1; i < s.points.length; i++) {
+            ctx.lineTo((s.points[i].x / 100) * width, (s.points[i].y / 100) * height);
+          }
+          ctx.stroke();
+        });
       }
-      ctx.stroke();
-    });
 
-    // Draw active stroke points currently in progress
-    if (currentPoints && currentPoints.length > 0) {
-      ctx.beginPath();
-      ctx.strokeStyle = '#f59e0b';
-      ctx.lineWidth = 14;
+      if (currentPoints && Array.isArray(currentPoints) && currentPoints.length > 0) {
+        ctx.beginPath();
+        ctx.strokeStyle = '#f59e0b';
+        ctx.lineWidth = 14;
 
-      const p0x = (currentPoints[0].x / 100) * width;
-      const p0y = (currentPoints[0].y / 100) * height;
-      ctx.moveTo(p0x, p0y);
+        const p0x = (currentPoints[0].x / 100) * width;
+        const p0y = (currentPoints[0].y / 100) * height;
+        ctx.moveTo(p0x, p0y);
 
-      for (let i = 1; i < currentPoints.length; i++) {
-        ctx.lineTo((currentPoints[i].x / 100) * width, (currentPoints[i].y / 100) * height);
+        for (let i = 1; i < currentPoints.length; i++) {
+          ctx.lineTo((currentPoints[i].x / 100) * width, (currentPoints[i].y / 100) * height);
+        }
+        ctx.stroke();
       }
-      ctx.stroke();
+    } catch (err) {
+      console.warn('Demo canvas redraw error safely caught:', err);
     }
   };
 
   // Setup resolution for both drawing canvas and demo canvas
   const updateCanvasDimensions = () => {
-    const canvas = canvasRef.current;
-    const demoCanvas = demoCanvasRef.current;
-    if (!canvas || !canvas.parentElement) return;
+    try {
+      const canvas = canvasRef.current;
+      const demoCanvas = demoCanvasRef.current;
+      if (!canvas || !canvas.parentElement) return;
 
-    const parent = canvas.parentElement;
-    const rect = parent.getBoundingClientRect();
-    if (rect.width <= 0 || rect.height <= 0) return;
+      const parent = canvas.parentElement;
+      const rect = parent.getBoundingClientRect();
+      if (rect.width <= 0 || rect.height <= 0) return;
 
-    const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
-    const targetWidth = Math.round(rect.width * dpr);
-    const targetHeight = Math.round(rect.height * dpr);
+      const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+      const targetWidth = Math.round(rect.width * dpr);
+      const targetHeight = Math.round(rect.height * dpr);
 
-    if (canvas.width !== targetWidth || canvas.height !== targetHeight) {
-      canvas.width = targetWidth;
-      canvas.height = targetHeight;
-      const ctx = canvas.getContext('2d');
-      if (ctx) ctx.scale(dpr, dpr);
-    }
-
-    if (demoCanvas) {
-      if (demoCanvas.width !== targetWidth || demoCanvas.height !== targetHeight) {
-        demoCanvas.width = targetWidth;
-        demoCanvas.height = targetHeight;
-        const demoCtx = demoCanvas.getContext('2d');
-        if (demoCtx) demoCtx.scale(dpr, dpr);
+      let changed = false;
+      if (Math.abs(canvas.width - targetWidth) > 2 || Math.abs(canvas.height - targetHeight) > 2) {
+        canvas.width = targetWidth;
+        canvas.height = targetHeight;
+        const ctx = canvas.getContext('2d');
+        if (ctx) ctx.scale(dpr, dpr);
+        changed = true;
       }
-    }
 
-    redrawCanvas();
-    redrawDemoCanvas();
+      if (demoCanvas) {
+        if (Math.abs(demoCanvas.width - targetWidth) > 2 || Math.abs(demoCanvas.height - targetHeight) > 2) {
+          demoCanvas.width = targetWidth;
+          demoCanvas.height = targetHeight;
+          const demoCtx = demoCanvas.getContext('2d');
+          if (demoCtx) demoCtx.scale(dpr, dpr);
+          changed = true;
+        }
+      }
+
+      if (changed) {
+        redrawCanvas();
+        redrawDemoCanvas();
+      }
+    } catch (err) {
+      console.warn('Canvas sizing error safely handled:', err);
+    }
   };
 
-  // Mount & container resize listener (does NOT re-trigger on stroke changes)
+  // Mount & container resize listener
   useEffect(() => {
-    updateCanvasDimensions();
+    // Initial size calculation once container layout settles
+    const timer = window.setTimeout(() => {
+      updateCanvasDimensions();
+    }, 50);
 
-    const canvas = canvasRef.current;
-    const parent = canvas?.parentElement;
-    let observer: ResizeObserver | null = null;
+    let rafId: number | null = null;
+    const handleResize = () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        updateCanvasDimensions();
+      });
+    };
 
-    if (parent && typeof ResizeObserver !== 'undefined') {
-      try {
-        observer = new ResizeObserver(() => {
-          updateCanvasDimensions();
-        });
-        observer.observe(parent);
-      } catch {
-        // Fallback to window resize
-      }
-    }
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
 
-    window.addEventListener('resize', updateCanvasDimensions);
     return () => {
-      if (observer) observer.disconnect();
-      window.removeEventListener('resize', updateCanvasDimensions);
+      window.clearTimeout(timer);
+      if (rafId) cancelAnimationFrame(rafId);
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
     };
   }, []);
 
@@ -472,8 +523,9 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     }
 
     const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    if (rect.width <= 0 || rect.height <= 0) return;
+    const x = Math.round(e.clientX - rect.left);
+    const y = Math.round(e.clientY - rect.top);
 
     isDrawingRef.current = true;
     currentStrokeRef.current = {
@@ -490,8 +542,9 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     if (!canvas) return;
 
     const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    if (rect.width <= 0 || rect.height <= 0) return;
+    const x = Math.round(e.clientX - rect.left);
+    const y = Math.round(e.clientY - rect.top);
 
     currentStrokeRef.current.points.push({ x, y });
     redrawCanvas();
@@ -510,11 +563,18 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
       }
     }
     isDrawingRef.current = false;
-    if (currentStrokeRef.current && currentStrokeRef.current.points.length > 0) {
-      setStrokes((prev) => [...prev, currentStrokeRef.current!]);
-    }
+    const finished = currentStrokeRef.current;
     currentStrokeRef.current = null;
-    redrawCanvas();
+
+    if (finished && Array.isArray(finished.points) && finished.points.length > 0) {
+      // Store immutable clone so reference mutations cannot corrupt stroke history
+      const strokeClone: Stroke = {
+        points: finished.points.map((p) => ({ x: p.x, y: p.y })),
+        color: finished.color,
+        width: finished.width,
+      };
+      setStrokes((prev) => [...prev, strokeClone]);
+    }
   };
 
   const handleUndo = () => {
@@ -884,7 +944,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
               <span>🎯</span> Stroke Order Guide ({mnemonic.letter})
             </h4>
             <ul className="v-stroke-steps-list">
-              {mnemonic.strokeOrder.map((step, idx) => {
+              {(mnemonic?.strokeOrder || []).map((step, idx) => {
                 const isCurrentStroke = isPlayingDemo && activeStrokeIndex === idx + 1;
                 return (
                   <li

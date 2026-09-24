@@ -19,10 +19,27 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
   }
 
   static getDerivedStateFromError(error: Error): ErrorBoundaryState {
+    const msg = error?.message || String(error);
+    // Ignore benign ResizeObserver notification warnings in browser
+    if (
+      msg.includes('ResizeObserver loop') ||
+      msg.includes('ResizeObserver loop completed') ||
+      msg.includes('ResizeObserver loop limit exceeded')
+    ) {
+      return { hasError: false, error: null };
+    }
     return { hasError: true, error };
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
+    const msg = error?.message || String(error);
+    if (
+      msg.includes('ResizeObserver loop') ||
+      msg.includes('ResizeObserver loop completed') ||
+      msg.includes('ResizeObserver loop limit exceeded')
+    ) {
+      return;
+    }
     console.error('App ErrorBoundary caught an unhandled exception:', error, errorInfo);
   }
 
@@ -38,7 +55,9 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
   };
 
   render(): ReactNode {
-    if (this.state.hasError) {
+    if (this.state.hasError && this.state.error) {
+      const errorMsg = this.state.error.message || 'An unexpected rendering error occurred.';
+
       return (
         <div
           role="alert"
@@ -72,7 +91,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
               fontSize: '0.95rem',
               lineHeight: 1.6,
               maxWidth: '520px',
-              margin: '0 auto 1.5rem',
+              margin: '0 auto 1.25rem',
             }}
           >
             {this.props.fallbackSubtitle ||
@@ -85,6 +104,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
               gap: '0.75rem',
               justifyContent: 'center',
               flexWrap: 'wrap',
+              marginBottom: '1rem',
             }}
           >
             <button
@@ -121,6 +141,35 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
               🏠 Reload Page
             </button>
           </div>
+
+          <details
+            style={{
+              marginTop: '1.25rem',
+              textAlign: 'left',
+              background: '#fef2f2',
+              border: '1px solid #fecaca',
+              borderRadius: '8px',
+              padding: '0.6rem 0.9rem',
+              fontSize: '0.8rem',
+              color: '#991b1b',
+            }}
+          >
+            <summary style={{ cursor: 'pointer', fontWeight: 700 }}>
+              Technical Details (त्रुटि-विवरणम्)
+            </summary>
+            <pre
+              style={{
+                marginTop: '0.5rem',
+                whiteSpace: 'pre-wrap',
+                wordBreak: 'break-word',
+                fontFamily: 'monospace',
+                fontSize: '0.76rem',
+                color: '#7f1d1d',
+              }}
+            >
+              {errorMsg}
+            </pre>
+          </details>
         </div>
       );
     }
