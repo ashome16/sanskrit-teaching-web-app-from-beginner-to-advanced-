@@ -56,7 +56,14 @@ type DashboardView =
   | 'cbse-guide'
   | 'dhatupatha';
 
-const PHILOSOPHY_PATHS = new Set(['/philosophy', '/darsana', '/darshana']);
+const PHILOSOPHY_PATHS = new Set([
+  '/philosophy',
+  '/darsana',
+  '/darshana',
+  '/why-sanskrit-ai',
+  '/why-sanskrit',
+  '/ai-sanskrit',
+]);
 const CBSE_GUIDE_PATHS = new Set([
   '/cbse-sanskrit-guide',
   '/ncert-sanskrit-exam',
@@ -97,8 +104,8 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     desc: 'Read NCERT Deepakam Chapters 1–15 with verse-by-verse English meanings, root analysis, and Sanskrit Alphabet & Syllables (वर्णमाला) pronunciation guide.',
   },
   philosophy: {
-    title: 'Sanskrit Philosophy & Shad-Darshana Primer | EdNet Learn Gurukul',
-    desc: 'Explore classical Indian philosophy, the 6 orthodox darshanas, epistemological inquiry (pramana), and Vedic wisdom traditions.',
+    title: 'Why Learn Sanskrit in the Age of AI & Darśana | EdNet Learn Gurukul',
+    desc: 'Why learn Sanskrit in the age of AI? Machines will make communication efficient; they will not make it living. Explore transfer vs bind, Pāṇinian phonetics, and mathematical darśana.',
   },
   faq: {
     title: 'Frequently Asked Questions & Help | EdNet Learn Gurukul',
@@ -783,6 +790,8 @@ const Dashboard: React.FC = () => {
         <PhilosophyPage
           onOpenRegister={() => openAuthModal('register')}
           onOpenVedicMaths={() => navigateToView('vedic-maths')}
+          onOpenVarnamala={openVarnamala}
+          onOpenReader={() => navigateToView('reader')}
           onGoHome={() => navigateToView('home')}
         />
       )}

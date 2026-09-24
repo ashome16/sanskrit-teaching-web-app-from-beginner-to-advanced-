@@ -207,7 +207,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenPhilosophy}
                 >
                   <span className="nav-btn-icon">🪔</span>
-                  <span className="nav-btn-text">दर्शनम् · Gurukul Philosophy</span>
+                  <span className="nav-btn-text">दर्शनम् · Philosophy (AI &amp; Sanskrit)</span>
                 </button>
               </li>
               <li>

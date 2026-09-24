@@ -938,6 +938,67 @@ const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* ------------------------------------------------------------------
+          Featured Essay: Why Learn Sanskrit in the Age of AI
+          ------------------------------------------------------------------ */}
+      {onOpenPhilosophy && (
+        <section style={{ maxWidth: '1100px', margin: '0 auto 3rem', padding: '0 1rem' }}>
+          <div style={{
+            background: 'linear-gradient(135deg, #fffdf8 0%, #fdf8ee 50%, #faede6 100%)',
+            border: '1.5px solid #ebdcc5',
+            borderRadius: '20px',
+            padding: '2.25rem 2rem',
+            boxShadow: '0 10px 30px rgba(179, 71, 47, 0.07)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem',
+            position: 'relative',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <span style={{
+                fontSize: '0.78rem',
+                fontWeight: 800,
+                color: '#b3472f',
+                background: '#faede6',
+                border: '1px solid #f2cfc5',
+                padding: '0.25rem 0.85rem',
+                borderRadius: '999px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+              }}>
+                Featured Gurukul Darśana · दर्शनम्
+              </span>
+              <span style={{ fontSize: '0.82rem', color: '#9a3412', fontWeight: 700 }}>
+                🤖 In the Age of AI
+              </span>
+            </div>
+
+            <div style={{ maxWidth: '850px' }}>
+              <h2 style={{ fontSize: 'clamp(1.4rem, 3.5vw, 1.95rem)', fontWeight: 800, color: '#2b2118', margin: '0 0 0.5rem', lineHeight: 1.3 }}>
+                Why Learn a Language — Especially Sanskrit — in the Age of AI
+              </h2>
+              <p style={{ fontSize: '1.08rem', fontWeight: 700, color: '#9a3423', margin: '0 0 0.75rem' }}>
+                Machines will make communication efficient. They will not make it living.
+              </p>
+              <p style={{ fontSize: '0.94rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                Because language was never only a pipe for information. It is also how a mind binds to breath, sound, culture, and attention. Explore why Pāṇinian phonetics, acoustic resonance, and human presence cannot be replaced by automated prompts.
+              </p>
+            </div>
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginTop: '0.5rem' }}>
+              <button
+                type="button"
+                className="home-btn-primary"
+                style={{ background: 'linear-gradient(135deg, #b3472f 0%, #ea580c 100%)', boxShadow: '0 4px 14px rgba(179, 71, 47, 0.25)', padding: '0.7rem 1.45rem', fontSize: '0.95rem' }}
+                onClick={onOpenPhilosophy}
+              >
+                Read the Essay ➔
+              </button>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ------------------------------------------------------------------
           Core Features Grid
           ------------------------------------------------------------------ */}
       <section className="home-features-section">
