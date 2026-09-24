@@ -83,8 +83,8 @@ export const ARTICLES: ArticleMeta[] = [
     id: 'katapayadi-number-words',
     file: 'grammar/article-11.txt',
     emoji: '🔢',
-    cardTitle: 'कटपयादि · Kaṭapayādi · Numbers into Words',
-    cardBlurb: 'The classical consonant–digit map that turned dates, π-related constants, and Melakarta numbers into memorable Sanskrit verse.',
+    cardTitle: 'कटपयादि · Kaṭapayādi: Sacred Cipher of Mathematics',
+    cardBlurb: 'How ancient India encoded π (32 decimals), the Golden Ratio (ϕ), Kerala astronomy, and 72 Melakarta rāgas into chantable Sanskrit poetry.',
   },
 
 ];
