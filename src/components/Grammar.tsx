@@ -6,9 +6,10 @@ import SoundTeamsArticle from './SoundTeamsArticle';
 import LingaVachanaGuide from './LingaVachanaGuide';
 import VibhaktiGuide from './VibhaktiGuide';
 import PaninianStudio from './PaninianStudio';
+import { NumbersGuide } from './NumbersGuide';
 import '../styles/grammar.css';
 
-type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'samyukta' | 'sound-teams' | 'science-of-sound' | 'dhatupatha' | 'article';
+type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'numbers' | 'samyukta' | 'sound-teams' | 'science-of-sound' | 'dhatupatha' | 'article';
 
 const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((response) => response.text());
 
@@ -262,6 +263,17 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQui
     );
   }
 
+  if (topic === 'numbers') {
+    return (
+      <section className="grammar-page" aria-label="Sanskrit Numbers Masterclass">
+        <header className="grammar-page-header">
+          {renderBreadcrumb('संख्या-परिचयः (Numbers Masterclass)')}
+        </header>
+        <NumbersGuide />
+      </section>
+    );
+  }
+
   if (topic === 'article') {
     return (
       <section className="grammar-page" aria-label="Grammar article">
@@ -416,6 +428,19 @@ const Grammar: React.FC<GrammarProps> = ({ onGoHome, onOpenWorksheets, onOpenQui
           </span>
           <span className="grammar-card-blurb">
             Master the 3 Genders, 3 Numbers, Pronouns, and Subject-Verb agreement with interactive tools.
+          </span>
+        </button>
+        <button
+          type="button"
+          className="grammar-card grammar-card--ready"
+          style={{ borderColor: '#2563eb', background: 'linear-gradient(180deg, #ffffff 0%, #eff6ff 100%)' }}
+          onClick={() => setTopic('numbers')}
+        >
+          <span className="grammar-card-title" style={{ color: '#1d4ed8' }}>
+            🔢 संख्या-परिचयः · Numbers Masterclass
+          </span>
+          <span className="grammar-card-blurb">
+            Complete 1-100 numerals, 1-4 gender declensions (एकः, एका, एकम्), ordinals (प्रथम, द्वितीय), Vedic scales up to 10¹⁷, and quizzes.
           </span>
         </button>
         <button

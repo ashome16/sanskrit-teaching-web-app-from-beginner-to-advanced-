@@ -1247,6 +1247,37 @@ const HomePage: React.FC<HomePageProps> = ({
               </button>
             )}
           </div>
+
+          {/* Feature: Sanskrit Numbers Masterclass */}
+          <div className="home-feature-card">
+            <div className="home-feature-card-top">
+              <div className="home-feature-icon-row">
+                <span className="home-feature-icon">🔢</span>
+                <span className="home-feature-badge" style={{ background: '#dbeafe', color: '#1d4ed8' }}>
+                  Numbers &amp; Scales
+                </span>
+              </div>
+              <h3 className="home-feature-title">संस्कृत-संख्या-परिचयः (Numbers Masterclass)</h3>
+              <p className="home-feature-desc">
+                From foundational digits to ancient cosmological scales! Master Sanskrit counting from 1 to 100,
+                explore the essential gender agreement rules for 1–4, learn ordinal ranks, and discover Vedic powers of 10 up to 10¹⁷ (परार्धम्).
+              </p>
+              <ul className="home-feature-points">
+                <li>Complete 1 to 100 interactive grid with 1-tap authentic audio</li>
+                <li>Gender Declension Rules for 1–4 across Masculine, Feminine, and Neuter</li>
+                <li>Ordinal Numbers (प्रथमः, द्वितीयः...) &amp; Paninian Sandhi Secrets (षण्णवतिः 96)</li>
+                <li>Astronomical Vedic scale (शतम्, सहस्रम्, लक्षम्, कोटिः to परार्धम्) &amp; Bodhi Quiz</li>
+              </ul>
+            </div>
+            <button
+              type="button"
+              className="home-feature-btn"
+              style={{ background: 'linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%)', color: '#ffffff' }}
+              onClick={() => onOpenReader('numbers')}
+            >
+              Explore Numbers Masterclass ▶
+            </button>
+          </div>
         </div>
       </section>
 

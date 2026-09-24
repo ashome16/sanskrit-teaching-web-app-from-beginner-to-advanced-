@@ -1,0 +1,906 @@
+/* ==========================================================================
+   Sanskrit Numbers Guide (संस्कृत-संख्या-परिचयः) Styles
+   ========================================================================== */
+
+.num-guide-container {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem 2.25rem;
+  margin: 1.5rem 0 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Devanagari', sans-serif;
+  color: #1e293b;
+}
+
+/* Header & Bodhi Welcome */
+.num-guide-header {
+  margin-bottom: 1.5rem;
+}
+
+.num-guide-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.num-guide-title {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+}
+
+.num-guide-subtitle {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-top: 0.25rem;
+}
+
+.num-guide-desc {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #475569;
+  max-width: 820px;
+  margin: 0 0 1rem;
+}
+
+/* Bodhi Banner Callout */
+.num-bodhi-banner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  border: 1.5px solid #a7f3d0;
+  border-radius: 14px;
+  padding: 1rem 1.35rem;
+  margin-bottom: 1.75rem;
+}
+
+.num-bodhi-avatar-col {
+  flex-shrink: 0;
+}
+
+.num-bodhi-quote {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #065f46;
+  margin: 0;
+}
+
+.num-bodhi-quote strong {
+  color: #047857;
+  font-weight: 800;
+}
+
+/* Main Navigation Tabs */
+.num-nav-tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.75rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.num-nav-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 1.15rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+}
+
+.num-nav-tab:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.num-nav-tab--active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.num-nav-tab--active:hover {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+/* Search & Decade Filters Toolbar */
+.num-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.num-toolbar-top {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.num-search-box {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+}
+
+.num-search-input {
+  width: 100%;
+  padding: 0.65rem 1rem 0.65rem 2.4rem;
+  border-radius: 10px;
+  border: 1.5px solid #cbd5e1;
+  font-size: 0.92rem;
+  background: #ffffff;
+  color: #1e293b;
+  transition: border-color 0.15s ease;
+}
+
+.num-search-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.num-search-icon {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.num-play-decade-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border: none;
+  background: #0f766e;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.num-play-decade-btn:hover {
+  background: #0d9488;
+  transform: translateY(-1px);
+}
+
+.num-play-decade-btn--playing {
+  background: #dc2626;
+  animation: pulse-red 1.5s infinite;
+}
+
+@keyframes pulse-red {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.num-decade-chips {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.num-decade-chip {
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.num-decade-chip:hover {
+  border-color: #94a3b8;
+  background: #f1f5f9;
+}
+
+.num-decade-chip--active {
+  background: #1e293b;
+  color: #ffffff;
+  border-color: #1e293b;
+}
+
+/* 1-100 Number Cards Grid */
+.num-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.num-card {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.15rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.num-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.12);
+  transform: translateY(-2px);
+}
+
+.num-card--playing {
+  border-color: #2563eb;
+  background: #eff6ff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+  transform: scale(1.02);
+}
+
+.num-card-badge {
+  position: absolute;
+  top: 0.65rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+}
+
+.num-card-digits {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #1e3a8a;
+  line-height: 1;
+  margin: 0.6rem 0 0.4rem;
+}
+
+.num-card-word {
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.2rem;
+}
+
+.num-card-iast {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #64748b;
+  margin-bottom: 0.4rem;
+}
+
+.num-card-en {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #047857;
+  background: #ecfdf5;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+.num-card-breakdown {
+  font-size: 0.74rem;
+  color: #64748b;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.num-card-audio-btn {
+  margin-top: 0.6rem;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.15s ease;
+}
+
+.num-card-audio-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* ==========================================================================
+   Tab 2: Gender Declension Layout (1-4)
+   ========================================================================== */
+
+.gender-declension-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gender-rule-banner {
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+}
+
+.gender-rule-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #92400e;
+  margin: 0 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gender-rule-p {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: #78350f;
+  margin: 0;
+}
+
+.gender-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.gender-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.4rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.gender-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.gender-card-numeral {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #2563eb;
+}
+
+.gender-card-stem {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.gender-card-gram-rule {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 0.2rem;
+}
+
+.gender-row-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.gender-variant-box {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.gender-variant-box--masc {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.gender-variant-box--fem {
+  background: #fdf2f8;
+  border: 1px solid #fbcfe8;
+}
+
+.gender-variant-box--neu {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+}
+
+.gender-variant-label {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: block;
+}
+
+.gender-variant-box--masc .gender-variant-label { color: #166534; }
+.gender-variant-box--fem .gender-variant-label { color: #9d174d; }
+.gender-variant-box--neu .gender-variant-label { color: #0369a1; }
+
+.gender-variant-word {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  display: block;
+}
+
+.gender-variant-iast {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+.gender-variant-example {
+  font-size: 0.88rem;
+  color: #1e293b;
+  margin-top: 0.25rem;
+}
+
+.gender-variant-example-en {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.gender-play-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.gender-play-btn:hover {
+  background: #e2e8f0;
+}
+
+/* ==========================================================================
+   Tab 3: Ordinal Numbers Table
+   ========================================================================== */
+
+.ordinal-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+}
+
+.ordinal-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.ordinal-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 800;
+  padding: 0.9rem 1rem;
+  border-bottom: 2px solid #e2e8f0;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.ordinal-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+}
+
+.ordinal-table tr:hover td {
+  background: #f8fafc;
+}
+
+.ordinal-rank-chip {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  background: #f1f5f9;
+  color: #334155;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+.ordinal-masc { font-weight: 700; color: #166534; }
+.ordinal-fem { font-weight: 700; color: #9d174d; }
+.ordinal-neu { font-weight: 700; color: #0369a1; }
+
+.ordinal-audio-icon {
+  cursor: pointer;
+  margin-left: 0.35rem;
+  opacity: 0.7;
+}
+
+.ordinal-audio-icon:hover {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Tab 4: Vedic Cosmic Powers of 10 Scale
+   ========================================================================== */
+
+.vedic-scale-intro {
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+  border: 1.5px solid #d8b4fe;
+  border-radius: 16px;
+  padding: 1.35rem 1.6rem;
+  margin-bottom: 1.75rem;
+}
+
+.vedic-scale-intro-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #581c87;
+  margin: 0 0 0.5rem;
+}
+
+.vedic-scale-intro-p {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: #4c1d95;
+  margin: 0;
+}
+
+.vedic-scale-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vedic-scale-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1rem 1.35rem;
+  transition: all 0.18s ease;
+}
+
+.vedic-scale-row:hover {
+  border-color: #a855f7;
+  box-shadow: 0 4px 14px rgba(168, 85, 247, 0.1);
+  transform: translateX(3px);
+}
+
+.vedic-exp-pill {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #7e22ce;
+  background: #f3e8ff;
+  border: 1px solid #d8b4fe;
+  border-radius: 10px;
+  padding: 0.4rem 0.85rem;
+  min-width: 60px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.vedic-info-col {
+  flex: 1;
+}
+
+.vedic-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  margin-bottom: 0.25rem;
+}
+
+.vedic-sanskrit-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1e1b4b;
+}
+
+.vedic-iast-name {
+  font-size: 0.86rem;
+  font-style: italic;
+  color: #6b21a8;
+}
+
+.vedic-meaning {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #047857;
+}
+
+.vedic-numeric-val {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-top: 0.15rem;
+}
+
+.vedic-source-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #9333ea;
+  background: #faf5ff;
+  border: 1px solid #e9d5ff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Tab 5: Rules & Etymology Secrets
+   ========================================================================== */
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.rule-box {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.4rem;
+}
+
+.rule-box-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.rule-box-icon {
+  font-size: 1.5rem;
+}
+
+.rule-box-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.rule-box-p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0 0 0.85rem;
+}
+
+.rule-formula {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.88rem;
+  color: #1e293b;
+  margin-bottom: 0.65rem;
+}
+
+.rule-formula code {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Tab 6: Interactive Number Quiz
+   ========================================================================== */
+
+.quiz-wrapper {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.75rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.quiz-score-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1.5px solid #e2e8f0;
+}
+
+.quiz-score-text {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.quiz-score-val {
+  color: #2563eb;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.quiz-question-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.quiz-q-numeral {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #1e3a8a;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.quiz-q-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.quiz-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.quiz-option-btn {
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.quiz-option-btn:hover {
+  border-color: #2563eb;
+  background: #f0f7ff;
+}
+
+.quiz-option-btn--correct {
+  background: #dcfce7 !important;
+  border-color: #22c55e !important;
+  color: #166534 !important;
+}
+
+.quiz-option-btn--incorrect {
+  background: #fee2e2 !important;
+  border-color: #ef4444 !important;
+  color: #991b1b !important;
+}
+
+.quiz-feedback-box {
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.quiz-feedback-box--correct {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+.quiz-feedback-box--incorrect {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.quiz-next-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.quiz-next-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .num-guide-container {
+    padding: 1.25rem 1rem;
+  }
+  .num-guide-title {
+    font-size: 1.45rem;
+  }
+  .num-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+  .num-card-digits {
+    font-size: 1.75rem;
+  }
+  .num-card-word {
+    font-size: 1.05rem;
+  }
+  .quiz-options-grid {
+    grid-template-columns: 1fr;
+  }
+  .vedic-scale-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .vedic-source-tag {
+    margin-left: 0;
+  }
+}

@@ -15,6 +15,7 @@ import { getLetterMnemonic } from '../data/varnamalaMnemonics';
 import { VarnamalaWritingPad } from './VarnamalaWritingPad';
 import { ErrorBoundary } from './ErrorBoundary';
 import GunitaaksharaGuide from './GunitaaksharaGuide';
+import { NumbersGuide } from './NumbersGuide';
 import '../styles/textbook-reader.css';
 import '../styles/varnamala-studio.css';
 
@@ -159,7 +160,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const isGrade8Lesson = activeLessonId.startsWith('grade8_');
   const activeLesson = lessons.find((lesson) => lesson.id === activeLessonId);
   const isVarnamala = activeLessonId === 'varnamala';
-  const isGroupedLesson = isVarnamala || activeLessonId === 'numbers' || activeLessonId === 'barakhadi';
+  const isNumbers = activeLessonId === 'numbers';
+  const isGroupedLesson = isVarnamala || isNumbers || activeLessonId === 'barakhadi';
   const showRomanTiles = activeLessonId === 'barakhadi' || activeLessonId === 'varnamala';
   const tileLabel = (letter: string) =>
     activeLessonId === 'varnamala' ? varnamalaLabel(letter) : aksharaLabel(letter);
@@ -172,6 +174,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const [playingLetter, setPlayingLetter] = useState<string | null>(null);
   const [playingGroupIdx, setPlayingGroupIdx] = useState<number | null>(null);
   const [varnamalaSubMode, setVarnamalaSubMode] = useState<'sound' | 'writing' | 'worksheets'>('sound');
+  const [numbersSubMode, setNumbersSubMode] = useState<'interactive' | 'tiles'>('interactive');
   const [padSelectedLetter, setPadSelectedLetter] = useState<string>('अ');
   const [glosses, setGlosses] = useState<AnalyseRegistry>({});
   const stopPlayAllRef = useRef<(() => void) | null>(null);
@@ -1448,6 +1451,36 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             </nav>
           )}
 
+          {isNumbers && (
+            <nav className="varnamala-studio-nav" aria-label="Sanskrit Numbers Study Modes">
+              <button
+                type="button"
+                className={`varnamala-mode-btn${numbersSubMode === 'interactive' ? ' varnamala-mode-btn--active' : ''}`}
+                onClick={() => setNumbersSubMode('interactive')}
+              >
+                <span className="varnamala-mode-icon">🌟</span>
+                <span>संख्या-मार्गदर्शकः (Numbers Masterclass Guide)</span>
+              </button>
+              <button
+                type="button"
+                className={`varnamala-mode-btn${numbersSubMode === 'tiles' ? ' varnamala-mode-btn--active' : ''}`}
+                onClick={() => setNumbersSubMode('tiles')}
+              >
+                <span className="varnamala-mode-icon">🔲</span>
+                <span>संख्या-फलकम् (1-100 Audio Grid)</span>
+              </button>
+            </nav>
+          )}
+
+          {isNumbers && numbersSubMode === 'interactive' && (
+            <ErrorBoundary
+              fallbackTitle="🔢 Numbers Guide Ready"
+              fallbackSubtitle="An unexpected issue occurred while rendering the Numbers Masterclass. Tap below to reload."
+            >
+              <NumbersGuide onSelectWord={handleLetterActivate} />
+            </ErrorBoundary>
+          )}
+
           {isVarnamala && varnamalaSubMode === 'writing' && (
             <ErrorBoundary
               fallbackTitle="✍️ Writing Studio Ready"
@@ -1616,7 +1649,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             </div>
           )}
 
-          {(!isVarnamala || varnamalaSubMode === 'sound') && (
+          {(!isVarnamala || varnamalaSubMode === 'sound') && (!isNumbers || numbersSubMode === 'tiles') && (
             <>
               {(isVarnamala || activeLessonId === 'barakhadi') && (
                 <div className="varnamala-chart-toggle-wrap">
