@@ -10,6 +10,7 @@ import PaymentModal from './PaymentModal';
 import AdminModal from './AdminModal';
 import Footer from './Footer';
 import SupportWidget from './SupportWidget';
+import BodhiGuideWidget from './BodhiGuideWidget';
 
 // Lazy-loaded heavy modules for fast initial homepage performance
 const TextbookReader = lazy(() => import('./TextbookReader'));
@@ -187,6 +188,7 @@ const Dashboard: React.FC = () => {
     return 'home';
   });
   const [grammarResetKey, setGrammarResetKey] = useState(0);
+  const [isBodhiGuideOpen, setIsBodhiGuideOpen] = useState(false);
   const {
     currentUser,
     openAuthModal,
@@ -781,6 +783,7 @@ const Dashboard: React.FC = () => {
           onOpenWorksheets={() => handleOpenWorksheets('all')}
           onOpenPhilosophy={() => navigateToView('philosophy')}
           onOpenCbseGuide={() => navigateToView('cbse-guide')}
+          onOpenBodhi={() => setIsBodhiGuideOpen(true)}
         />
       )}
       {activeView === 'faq' && (
@@ -881,12 +884,21 @@ const Dashboard: React.FC = () => {
           onOpenFAQ={() => navigateToView('faq')}
           onOpenPhilosophy={() => navigateToView('philosophy')}
           onOpenCbseGuide={() => navigateToView('cbse-guide')}
+          onOpenBodhi={() => setIsBodhiGuideOpen(true)}
         />
       )}
 
       <SupportWidget
         onOpenFAQ={() => navigateToView('faq')}
         onOpenWorksheets={() => handleOpenWorksheets('all')}
+      />
+
+      <BodhiGuideWidget
+        activeView={activeView}
+        onNavigateView={navigateToView}
+        onOpenVarnamala={openVarnamala}
+        forceOpen={isBodhiGuideOpen}
+        onOpenChange={setIsBodhiGuideOpen}
       />
 
       <AuthModal />

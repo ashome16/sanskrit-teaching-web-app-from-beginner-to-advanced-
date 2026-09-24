@@ -3,7 +3,9 @@ import { playPronunciation } from '../utils/pronunciation';
 import { Grade8SyllabusModal } from './Grade8SyllabusModal';
 import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters } from '../utils/premiumAccess';
+import BodhiAvatar from './BodhiAvatar';
 import '../styles/home-page.css';
+import '../styles/bodhi.css';
 
 export interface HomePageProps {
   onOpenReader: (lessonId?: string) => void;
@@ -16,6 +18,7 @@ export interface HomePageProps {
   onOpenQuiz?: () => void;
   onOpenWorksheets?: () => void;
   onOpenDhatupatha?: () => void;
+  onOpenBodhi?: () => void;
 }
 
 interface DemoWord {
@@ -459,6 +462,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenQuiz,
   onOpenWorksheets,
   onOpenDhatupatha,
+  onOpenBodhi,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
@@ -773,6 +777,65 @@ const HomePage: React.FC<HomePageProps> = ({
             </button>
           </div>
         )}
+      </section>
+
+      {/* ------------------------------------------------------------------
+          Meet Bodhi (बोधिः) — Mascot & Gurukul Guide Spotlight
+          ------------------------------------------------------------------ */}
+      <section className="bodhi-home-spotlight" aria-label="Meet Bodhi - Your Gurukul Mascot & Guide">
+        <div className="bodhi-spotlight-avatar-col">
+          <BodhiAvatar mood="namaste" size="xl" showHalo={true} />
+          <button
+            type="button"
+            className="bodhi-spotlight-voice-btn"
+            onClick={() => playPronunciation('नमस्ते! अहं बोधिः। भवतः स्वागतम्!')}
+            title="Hear Bodhi's voice"
+          >
+            🔊 Hear Bodhi Speak
+          </button>
+        </div>
+
+        <div className="bodhi-spotlight-content-col">
+          <div className="bodhi-spotlight-badge">
+            <span>✨</span> Your Gurukul Companion &amp; Guide
+          </div>
+
+          <h2 className="bodhi-spotlight-title">
+            Meet Bodhi <span className="bodhi-spotlight-title-dev">बोधिः — भवतः संस्कृत-सखा</span>
+          </h2>
+
+          <p className="bodhi-spotlight-desc">
+            Namaste! I am <strong>Bodhi</strong> (बोधिः), your personal guide throughout your Sanskrit, grammar, and Vedic Mathematics journey.
+            Whether you are decoding your first NCERT Deepakam chapter, learning retroflex sounds,
+            or multiplying large numbers with ancient sutras, I am here with tips, authentic audio, and encouragement!
+          </p>
+
+          <div className="bodhi-spotlight-actions">
+            {onOpenBodhi && (
+              <button
+                type="button"
+                className="bodhi-spotlight-primary-btn"
+                onClick={onOpenBodhi}
+              >
+                💬 Ask Bodhi a Question
+              </button>
+            )}
+            <button
+              type="button"
+              className="bodhi-spotlight-secondary-btn"
+              onClick={onOpenVarnamala}
+            >
+              🔤 Learn Sounds with Bodhi
+            </button>
+            <button
+              type="button"
+              className="bodhi-spotlight-secondary-btn"
+              onClick={() => onOpenReader('gsde101')}
+            >
+              📖 Read Deepakam Chapter 1
+            </button>
+          </div>
+        </div>
       </section>
 
       {/* ------------------------------------------------------------------

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import BodhiAvatar from './BodhiAvatar';
 import '../styles/philosophy.css';
 import { playPronunciation } from '../utils/pronunciation';
 
@@ -611,7 +612,10 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
 
             {/* For learners on this app */}
             <div className="philosophy-learner-box">
-              <h3>For Learners on this App</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.85rem' }}>
+                <BodhiAvatar mood="reading" size="sm" showHalo={false} />
+                <h3 style={{ margin: 0 }}>For Learners on this App — Bodhi’s Study Note</h3>
+              </div>
               <p style={{ fontSize: '1.05rem', lineHeight: 1.6, color: '#134e4a', margin: '0 0 1rem' }}>
                 <strong>Start with sound.</strong> One line spoken slowly is worth a page of instant
                 gloss. Use the tools here to see grammar clearly — then close the explanation and say
