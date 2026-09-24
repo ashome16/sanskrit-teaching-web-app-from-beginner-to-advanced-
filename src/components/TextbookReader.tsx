@@ -14,6 +14,7 @@ import { Grade8SyllabusModal } from './Grade8SyllabusModal';
 import { getLetterMnemonic } from '../data/varnamalaMnemonics';
 import { VarnamalaWritingPad } from './VarnamalaWritingPad';
 import { ErrorBoundary } from './ErrorBoundary';
+import GunitaaksharaGuide from './GunitaaksharaGuide';
 import '../styles/textbook-reader.css';
 import '../styles/varnamala-studio.css';
 
@@ -165,6 +166,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const [isChartOpen, setIsChartOpen] = useState(false);
   const [isSoundVideoOpen, setIsSoundVideoOpen] = useState(true);
   const [isSymbolsOpen, setIsSymbolsOpen] = useState(false);
+  const [isGunitaOpen, setIsGunitaOpen] = useState(false);
   const [isGrade8SyllabusOpen, setIsGrade8SyllabusOpen] = useState(false);
   const [isPlayingAll, setIsPlayingAll] = useState(false);
   const [playingLetter, setPlayingLetter] = useState<string | null>(null);
@@ -1641,6 +1643,31 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                       loading="lazy"
                     />
                   </div>
+                </div>
+              )}
+
+              {activeLessonId === 'barakhadi' && (
+                <div className="varnamala-chart-toggle-wrap" style={{ marginTop: '0.65rem' }}>
+                  <button
+                    type="button"
+                    className="varnamala-chart-toggle"
+                    onClick={() => setIsGunitaOpen((open) => !open)}
+                    aria-expanded={isGunitaOpen}
+                    style={{
+                      background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
+                      borderColor: '#f59e0b',
+                      color: '#9a3412',
+                      fontWeight: 700,
+                    }}
+                  >
+                    <span>📜 Guṇitākṣarāṇi (गुणिताक्षराणि) Symbols &amp; Exceptions Guide</span>
+                    <span className="varnamala-chart-toggle-arrow">{isGunitaOpen ? '▲' : '▼'}</span>
+                  </button>
+                  {isGunitaOpen && (
+                    <div style={{ marginTop: '1rem' }}>
+                      <GunitaaksharaGuide />
+                    </div>
+                  )}
                 </div>
               )}
 

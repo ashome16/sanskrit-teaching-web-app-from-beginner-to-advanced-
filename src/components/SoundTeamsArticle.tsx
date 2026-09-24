@@ -1,4 +1,5 @@
 import React from 'react';
+import GunitaaksharaGuide from './GunitaaksharaGuide';
 
 const BARAKHADI_ROWS = [
   {
@@ -222,6 +223,9 @@ const SoundTeamsArticle: React.FC = () => {
           </li>
         </ul>
       </section>
+
+      {/* Comprehensive Guṇitākṣarāṇi Masterclass & Symbols Guide */}
+      <GunitaaksharaGuide />
 
       <section className="sound-teams-section" aria-labelledby="barakhadi-matrix">
         <h3 id="barakhadi-matrix" className="sound-teams-heading">
