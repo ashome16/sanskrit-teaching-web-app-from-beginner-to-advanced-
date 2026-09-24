@@ -1653,34 +1653,62 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 
                   if (isVarnamala && mnemonic) {
                     return (
-                      <button
+                      <div
                         key={`${activeLessonId}-${groupIdx}-${letterIdx}`}
-                        type="button"
+                        role="button"
+                        tabIndex={0}
                         className="varnamala-bouncy-card"
                         onClick={() => onWordClick(letter)}
-                        aria-label={`Letter ${letter} (${tileLabel(letter)}), word ${mnemonic.wordSan} (${mnemonic.wordEn})`}
-                        title={`Hear ${letter} · Mnemonic: ${mnemonic.wordSan} (${mnemonic.wordEn})`}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            onWordClick(letter);
+                          }
+                        }}
+                        aria-label={`Letter ${letter} (${tileLabel(letter)}). Click to hear syllable; picture chip speaks the word.`}
+                        title={`Hear ${letter} · Picture word: ${mnemonic.wordSan} (${mnemonic.wordEn})`}
                       >
                         <span className="v-card-akshara">{letter}</span>
                         {showRomanTiles ? (
                           <small className="v-card-roman">{tileLabel(letter)}</small>
                         ) : null}
-                        <div className="v-card-mnemonic-badge">
-                          <span className="v-card-mnemonic-emoji">{mnemonic.emoji}</span>
+                        <button
+                          type="button"
+                          className="v-card-mnemonic-badge"
+                          aria-label={`Hear picture word ${mnemonic.wordSan} (${mnemonic.wordEn})`}
+                          title={`Hear ${mnemonic.wordSan} — ${mnemonic.wordEn}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            playPronunciation(mnemonic.wordSan);
+                          }}
+                        >
+                          <span className="v-card-mnemonic-emoji" aria-hidden="true">{mnemonic.emoji}</span>
                           <span className="v-card-mnemonic-word">{mnemonic.wordSan}</span>
-                        </div>
+                          <span className="v-card-mnemonic-speak" aria-hidden="true">🔊</span>
+                        </button>
                         <span
                           className="v-card-trace-btn"
+                          role="button"
+                          tabIndex={0}
                           title={`Trace & write ${letter}`}
+                          aria-label={`Trace and write ${letter}`}
                           onClick={(e) => {
                             e.stopPropagation();
                             setPadSelectedLetter(letter);
                             setVarnamalaSubMode('writing');
                           }}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              setPadSelectedLetter(letter);
+                              setVarnamalaSubMode('writing');
+                            }
+                          }}
                         >
                           ✍️
                         </span>
-                      </button>
+                      </div>
                     );
                   }
 

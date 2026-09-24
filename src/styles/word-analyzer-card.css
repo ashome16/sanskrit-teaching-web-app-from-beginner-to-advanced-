@@ -432,8 +432,34 @@
   box-shadow: 0 0 0 1px #0f766e33;
 }
 
+.wac-vowel-example-btn--picture {
+  border-color: #f59e0b;
+  background: #fffbeb;
+  box-shadow: 0 0 0 1px #f59e0b33;
+  order: -1;
+}
+
+.wac-vowel-example-btn--picture.wac-vowel-example-btn--active {
+  border-color: #0f766e;
+  background: #ecfdf5;
+  box-shadow: 0 0 0 1px #0f766e33, 0 0 0 3px #f59e0b33;
+}
+
 .wac-vowel-example-icon {
   font-size: 1.35rem;
   line-height: 1;
   flex-shrink: 0;
+}
+
+.wac-vowel-example-speak {
+  margin-left: auto;
+  font-size: 0.85rem;
+  line-height: 1;
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+.wac-vowel-example-btn:hover .wac-vowel-example-speak,
+.wac-vowel-example-btn:focus-visible .wac-vowel-example-speak {
+  opacity: 1;
 }

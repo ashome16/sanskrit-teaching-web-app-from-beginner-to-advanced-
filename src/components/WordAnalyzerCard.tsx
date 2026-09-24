@@ -10,6 +10,7 @@ import {
 } from '../data/vowelExamples';
 import { isBarakhadiAkshara } from '../utils/barakhadiPhonetics';
 import { iconForExampleWord } from '../data/exampleIcons';
+import { getLetterMnemonic } from '../data/varnamalaMnemonics';
 import { formatCaseLabel } from '../data/vibhakti';
 import {
   loadAnalyseGlosses,
@@ -122,7 +123,19 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
   const exampleBundle = soundAnchor
     ? displayExamplesForAkshara(soundAnchor)
     : { examples: [], mode: 'exact' as const, rareNote: null };
-  const vowelExamples = exampleBundle.examples;
+  const pictureMnemonic = soundAnchor ? getLetterMnemonic(soundAnchor) : undefined;
+  // Tile picture-word always leads the list (and is injected when missing from data).
+  const vowelExamples = (() => {
+    const base = exampleBundle.examples;
+    if (!pictureMnemonic?.wordSan) return base;
+    const picture = {
+      word: pictureMnemonic.wordSan,
+      gloss: pictureMnemonic.wordEn,
+    };
+    const rest = base.filter((item) => item.word !== pictureMnemonic.wordSan);
+    return [picture, ...rest];
+  })();
+  const pictureWord = pictureMnemonic?.wordSan ?? null;
   const examplesMode = exampleBundle.mode;
   const rareNote = exampleBundle.rareNote;
   const relatedFamilyLetter = soundAnchor
@@ -132,6 +145,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
     // Keep soundAnchor so the related-words list does not disappear.
     const result = findWord(example);
     setAnalysis(result);
+    // Always speak the full word (never the bare akṣara tile).
     playPronunciation(example);
   };
 
@@ -308,20 +322,31 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
                 </p>
               )}
               <div className="wac-vowel-examples">
-                {vowelExamples.map((item) => (
-                  <button
-                    key={item.word}
-                    type="button"
-                    className={`wac-vowel-example-btn${word?.devanagari === item.word ? ' wac-vowel-example-btn--active' : ''}`}
-                    onClick={() => openExampleWord(item.word)}
-                  >
-                    <span className="wac-vowel-example-icon" aria-hidden="true">{iconForExampleWord(item.word)}</span>
-                    <span className="wac-vowel-example-text">
-                      <span className="wac-vowel-example-dev">{item.word}</span>
-                      <span className="wac-vowel-example-gloss">{item.gloss}</span>
-                    </span>
-                  </button>
-                ))}
+                {vowelExamples.map((item) => {
+                  const isPicture = pictureWord === item.word;
+                  const isActive = word?.devanagari === item.word;
+                  return (
+                    <button
+                      key={item.word}
+                      type="button"
+                      className={`wac-vowel-example-btn${isActive ? ' wac-vowel-example-btn--active' : ''}${isPicture ? ' wac-vowel-example-btn--picture' : ''}`}
+                      onClick={() => openExampleWord(item.word)}
+                      aria-label={`Hear word ${item.word}${item.gloss ? ` (${item.gloss})` : ''}`}
+                      title={`Hear ${item.word}`}
+                    >
+                      <span className="wac-vowel-example-icon" aria-hidden="true">
+                        {isPicture && pictureMnemonic?.emoji
+                          ? pictureMnemonic.emoji
+                          : iconForExampleWord(item.word)}
+                      </span>
+                      <span className="wac-vowel-example-text">
+                        <span className="wac-vowel-example-dev">{item.word}</span>
+                        <span className="wac-vowel-example-gloss">{item.gloss}</span>
+                      </span>
+                      <span className="wac-vowel-example-speak" aria-hidden="true">🔊</span>
+                    </button>
+                  );
+                })}
               </div>
             </section>
           )}

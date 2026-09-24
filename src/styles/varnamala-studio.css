@@ -119,7 +119,20 @@
   margin-top: 0.35rem;
   width: 100%;
   justify-content: center;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.v-card-mnemonic-badge:hover,
+.v-card-mnemonic-badge:focus-visible {
+  background: #ccfbf1;
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.25);
+  outline: none;
 }
 
 .varnamala-bouncy-card:hover .v-card-mnemonic-badge {
@@ -139,6 +152,19 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 4.2rem;
+}
+
+.v-card-mnemonic-speak {
+  font-size: 0.58rem;
+  line-height: 1;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.v-card-mnemonic-badge:hover .v-card-mnemonic-speak,
+.v-card-mnemonic-badge:focus-visible .v-card-mnemonic-speak {
+  opacity: 1;
 }
 
 .v-card-trace-btn {
