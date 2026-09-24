@@ -63,7 +63,7 @@ export const ARTICLES: ArticleMeta[] = [
     file: 'grammar/article-8.txt',
     emoji: '🖋️',
     cardTitle: 'चिह्न-परिचयः · Symbols & Punctuation',
-    cardBlurb: 'The roles of Daṇḍa (।), Double Daṇḍa (॥), Avagraha (ऽ), Anusvāra, and sacred script marks.',
+    cardBlurb: 'Mātrās (vowel signs), Anusvāra, Visarga, Halanta, Daṇḍa (।), Double Daṇḍa (॥), Avagraha (ऽ), and sacred script marks.',
   },
   {
     id: 'linga-vachana-foundations',

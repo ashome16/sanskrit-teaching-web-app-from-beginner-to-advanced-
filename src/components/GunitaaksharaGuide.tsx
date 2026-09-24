@@ -39,7 +39,7 @@ export const GUNITAKSHARA_ROWS_DATA = [
   {
     svaraDev: 'आ',
     svaraIast: 'ā',
-    matraSign: 'ा',
+    matraSign: '◌ा',
     matraDesc: 'Vertical bar to the right',
     soundGuide: "'a' as in car",
     matraSuffix: 'ा',
@@ -48,7 +48,7 @@ export const GUNITAKSHARA_ROWS_DATA = [
   {
     svaraDev: 'इ',
     svaraIast: 'i',
-    matraSign: 'ि',
+    matraSign: '◌ि',
     matraDesc: 'Left hook over letter',
     soundGuide: "'i' as in kit",
     matraSuffix: 'ि',
@@ -57,7 +57,7 @@ export const GUNITAKSHARA_ROWS_DATA = [
   {
     svaraDev: 'ई',
     svaraIast: 'ī',
-    matraSign: 'ी',
+    matraSign: '◌ी',
     matraDesc: 'Right hook over letter',
     soundGuide: "'ee' as in keep",
     matraSuffix: 'ी',
@@ -66,7 +66,7 @@ export const GUNITAKSHARA_ROWS_DATA = [
   {
     svaraDev: 'उ',
     svaraIast: 'u',
-    matraSign: 'ु',
+    matraSign: '◌ु',
     matraDesc: 'Left curve under letter',
     soundGuide: "'u' as in put",
     matraSuffix: 'ु',
@@ -75,7 +75,7 @@ export const GUNITAKSHARA_ROWS_DATA = [
   {
     svaraDev: 'ऊ',
     svaraIast: 'ū',
-    matraSign: 'ू',
+    matraSign: '◌ू',
     matraDesc: 'Right loop under letter',
     soundGuide: "'oo' as in cool",
     matraSuffix: 'ू',
@@ -84,7 +84,7 @@ export const GUNITAKSHARA_ROWS_DATA = [
   {
     svaraDev: 'ऋ',
     svaraIast: 'ṛ',
-    matraSign: 'ृ',
+    matraSign: '◌ृ',
     matraDesc: "Small 'c' hook under letter",
     soundGuide: "Vocalic 'r' sound (like 'ri' in rigid)",
     matraSuffix: 'ृ',
@@ -93,7 +93,7 @@ export const GUNITAKSHARA_ROWS_DATA = [
   {
     svaraDev: 'ॠ',
     svaraIast: 'ṝ',
-    matraSign: 'ॄ',
+    matraSign: '◌ॄ',
     matraDesc: "Double 'c' hook under letter",
     soundGuide: "Elongated vocalic 'r' sound",
     matraSuffix: 'ॄ',
@@ -102,7 +102,7 @@ export const GUNITAKSHARA_ROWS_DATA = [
   {
     svaraDev: 'ऌ',
     svaraIast: 'ḷ',
-    matraSign: 'ॢ',
+    matraSign: '◌ॢ',
     matraDesc: 'Small sign under letter',
     soundGuide: "Vocalic 'l' sound (like 'l' in apple)",
     matraSuffix: 'ॢ',
@@ -111,7 +111,7 @@ export const GUNITAKSHARA_ROWS_DATA = [
   {
     svaraDev: 'ए',
     svaraIast: 'e',
-    matraSign: 'े',
+    matraSign: '◌े',
     matraDesc: 'Single diagonal stroke above',
     soundGuide: "'ay' as in pay",
     matraSuffix: 'े',
@@ -120,7 +120,7 @@ export const GUNITAKSHARA_ROWS_DATA = [
   {
     svaraDev: 'ऐ',
     svaraIast: 'ai',
-    matraSign: 'ै',
+    matraSign: '◌ै',
     matraDesc: 'Double diagonal stroke above',
     soundGuide: "'ai' as in high / aisle",
     matraSuffix: 'ै',
@@ -129,7 +129,7 @@ export const GUNITAKSHARA_ROWS_DATA = [
   {
     svaraDev: 'ओ',
     svaraIast: 'o',
-    matraSign: 'ो',
+    matraSign: '◌ो',
     matraDesc: 'Bar with single stroke above',
     soundGuide: "'o' as in pole",
     matraSuffix: 'ो',
@@ -138,7 +138,7 @@ export const GUNITAKSHARA_ROWS_DATA = [
   {
     svaraDev: 'औ',
     svaraIast: 'au',
-    matraSign: 'ौ',
+    matraSign: '◌ौ',
     matraDesc: 'Bar with double stroke above',
     soundGuide: "'ow' as in cow",
     matraSuffix: 'ौ',
@@ -147,7 +147,7 @@ export const GUNITAKSHARA_ROWS_DATA = [
   {
     svaraDev: 'अं',
     svaraIast: 'aṁ',
-    matraSign: 'ं',
+    matraSign: '◌ं',
     matraDesc: 'Anusvāra (dot above letter)',
     soundGuide: "Nasal sound ('am' or 'an')",
     matraSuffix: 'ं',
@@ -156,7 +156,7 @@ export const GUNITAKSHARA_ROWS_DATA = [
   {
     svaraDev: 'अः',
     svaraIast: 'aḥ',
-    matraSign: 'ः',
+    matraSign: '◌ः',
     matraDesc: 'Visarga (double dots to the right)',
     soundGuide: "Soft breathy echo ('aha')",
     matraSuffix: 'ः',

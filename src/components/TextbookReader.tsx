@@ -138,6 +138,46 @@ const SANSKRIT_SYMBOLS: SanskritSymbolItem[] = [
   }
 ];
 
+interface MatraRow {
+  vowel: string;
+  matraSymbol: string;
+  matraName: string;
+  example: string;
+  transliteration: string;
+}
+
+/** Sanskrit vowel signs (mātrās) with क as the combination base. */
+const SANSKRIT_MATRAS: MatraRow[] = [
+  { vowel: 'अ', matraSymbol: '(None / Inherent)', matraName: 'Akāra', example: 'क', transliteration: "ka (short 'a')" },
+  { vowel: 'आ', matraSymbol: '◌ा', matraName: 'Ākāra', example: 'का', transliteration: "kā (long 'aa')" },
+  { vowel: 'इ', matraSymbol: '◌ि', matraName: 'Ikāra', example: 'कि', transliteration: "ki (short 'i')" },
+  { vowel: 'ई', matraSymbol: '◌ी', matraName: 'Īkāra', example: 'की', transliteration: "kī (long 'ee')" },
+  { vowel: 'उ', matraSymbol: '◌ु', matraName: 'Ukāra', example: 'कु', transliteration: "ku (short 'u')" },
+  { vowel: 'ऊ', matraSymbol: '◌ू', matraName: 'Ūkāra', example: 'कू', transliteration: "kū (long 'oo')" },
+  { vowel: 'ऋ', matraSymbol: '◌ृ', matraName: 'Ṛkāra', example: 'कृ', transliteration: "kṛ (vocalic 'ri')" },
+  { vowel: 'ॠ', matraSymbol: '◌ॄ', matraName: 'Ṝkāra', example: 'कॄ', transliteration: "kṝ (long vocalic 'ree')" },
+  { vowel: 'ऌ', matraSymbol: '◌ॢ', matraName: 'Ḷkāra', example: 'कॢ', transliteration: "kḷ (vocalic 'li')" },
+  { vowel: 'ए', matraSymbol: '◌े', matraName: 'Ekāra', example: 'के', transliteration: "ke (sound of 'ay')" },
+  { vowel: 'ऐ', matraSymbol: '◌ै', matraName: 'Aikāra', example: 'कै', transliteration: "kai (sound of 'ai')" },
+  { vowel: 'ओ', matraSymbol: '◌ो', matraName: 'Okāra', example: 'को', transliteration: "ko (sound of 'oh')" },
+  { vowel: 'औ', matraSymbol: '◌ौ', matraName: 'Aukāra', example: 'कौ', transliteration: "kau (sound of 'ow')" },
+];
+
+interface DependentModifierRow {
+  symbol: string;
+  name: string;
+  function: string;
+  example: string;
+  transliteration: string;
+}
+
+/** Dependent orthographic modifiers used with vowels / consonants. */
+const DEPENDENT_MODIFIERS: DependentModifierRow[] = [
+  { symbol: '◌ं', name: 'Anusvāra', function: 'Nasalizes the vowel', example: 'कं', transliteration: 'kaṃ' },
+  { symbol: '◌ः', name: 'Visarga', function: 'Adds a soft breath/echo sound', example: 'कः', transliteration: 'kaḥ' },
+  { symbol: '◌्', name: 'Halanta / Virāma', function: "Mutes the inherent 'a' sound", example: 'क्', transliteration: 'k (pure consonant)' },
+];
+
 const TextbookReader: React.FC<TextbookReaderProps> = ({
   lessons,
   activeLessonId,
@@ -434,7 +474,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           type="button"
           className="textbook-tool-btn textbook-tool-btn--symbols"
           onClick={() => setIsSymbolsOpen(true)}
-          title="Sanskrit Punctuation & Orthographic Symbols Reference Guide"
+          title="Sanskrit Symbols, Mātrās (Vowel Signs) & Punctuation Reference Guide"
         >
           📜 चिह्न-परिचयः (Symbols Guide)
         </button>
@@ -2134,12 +2174,13 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           onClick={() => setIsSymbolsOpen(false)}
           role="dialog"
           aria-modal="true"
+          aria-labelledby="symbols-modal-title"
         >
-          <div className="symbols-modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="symbols-modal-content symbols-modal-content--wide" onClick={(e) => e.stopPropagation()}>
             <header className="symbols-modal-header">
               <div>
-                <h3>संस्कृत-विरामचिह्नानि · Sanskrit Symbols Reference</h3>
-                <p>Essential orthographic and punctuation symbols in classical Sanskrit</p>
+                <h3 id="symbols-modal-title">संस्कृत-चिह्नानि · Sanskrit Symbols Reference</h3>
+                <p>Mātrās (vowel signs), dependent modifiers, and classical punctuation marks</p>
               </div>
               <button
                 type="button"
@@ -2152,48 +2193,163 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             </header>
 
             <div className="symbols-modal-body">
-              <table className="symbols-table">
-                <thead>
-                  <tr>
-                    <th>चिह्नम्</th>
-                    <th>नाम व कार्यम्</th>
-                    <th>विवरणम् (Role)</th>
-                    <th>उदाहरणम् (Example)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {SANSKRIT_SYMBOLS.map((item) => (
-                    <tr key={item.symbol}>
-                      <td className="symbol-glyph">{item.symbol}</td>
-                      <td className="symbol-name-col">
-                        <span className="symbol-dev-name">{item.name}</span>
-                        <span className="symbol-role-badge">{item.role}</span>
-                      </td>
-                      <td>
-                        <p className="symbol-desc-text">{item.description}</p>
-                      </td>
-                      <td>
-                        <div className="symbol-example-box">
-                          <span>{item.example}</span>
-                          <button
-                            type="button"
-                            className="symbol-audio-btn"
-                            onClick={() => playPronunciation(item.example)}
-                            title="Listen"
-                            aria-label={`Listen to ${item.example}`}
-                          >
-                            🔊
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <section className="symbols-section" aria-labelledby="matras-heading">
+                <h4 id="matras-heading" className="symbols-section-title">
+                  स्वर-मात्राः · Sanskrit Vowel Signs (Mātrās)
+                </h4>
+                <p className="symbols-section-intro">
+                  When a vowel joins a consonant, it usually appears as a dependent <strong>mātrā</strong> (मात्रा)
+                  rather than its independent letter form. Combinations below use <strong>क</strong> as the base.
+                  Click an example to hear it.
+                </p>
+                <div className="symbols-table-scroll">
+                  <table className="symbols-table symbols-table--matras">
+                    <thead>
+                      <tr>
+                        <th>Sanskrit Vowel</th>
+                        <th>Matra Symbol</th>
+                        <th>Matra Name</th>
+                        <th>Combination (with क)</th>
+                        <th>Transliteration / Sound</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {SANSKRIT_MATRAS.map((row) => (
+                        <tr key={row.vowel}>
+                          <td className="symbol-glyph symbol-glyph--vowel">{row.vowel}</td>
+                          <td className="symbol-matra-cell">
+                            <span className="symbol-matra-glyph">{row.matraSymbol}</span>
+                          </td>
+                          <td className="symbol-name-col">
+                            <span className="symbol-dev-name">{row.matraName}</span>
+                          </td>
+                          <td>
+                            <button
+                              type="button"
+                              className="symbol-example-play"
+                              onClick={() => playPronunciation(row.example)}
+                              title={`Listen to ${row.example}`}
+                              aria-label={`Listen to ${row.example}`}
+                            >
+                              <span className="symbol-example-dev">{row.example}</span>
+                              <span className="symbol-audio-btn" aria-hidden="true">🔊</span>
+                            </button>
+                          </td>
+                          <td>
+                            <span className="symbol-sound-note">{row.transliteration}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section className="symbols-section" aria-labelledby="modifiers-heading">
+                <h4 id="modifiers-heading" className="symbols-section-title">
+                  Dependent Modifiers
+                </h4>
+                <p className="symbols-section-intro">
+                  These marks attach to letters to change nasalization, aspiration, or to mute the inherent vowel.
+                </p>
+                <div className="symbols-table-scroll">
+                  <table className="symbols-table symbols-table--modifiers">
+                    <thead>
+                      <tr>
+                        <th>Modifier Symbol</th>
+                        <th>Symbol Name</th>
+                        <th>Function</th>
+                        <th>Example</th>
+                        <th>Transliteration</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {DEPENDENT_MODIFIERS.map((row) => (
+                        <tr key={row.symbol}>
+                          <td className="symbol-matra-cell">
+                            <span className="symbol-matra-glyph">{row.symbol}</span>
+                          </td>
+                          <td className="symbol-name-col">
+                            <span className="symbol-dev-name">{row.name}</span>
+                          </td>
+                          <td>
+                            <p className="symbol-desc-text">{row.function}</p>
+                          </td>
+                          <td>
+                            <button
+                              type="button"
+                              className="symbol-example-play"
+                              onClick={() => playPronunciation(row.example)}
+                              title={`Listen to ${row.example}`}
+                              aria-label={`Listen to ${row.example}`}
+                            >
+                              <span className="symbol-example-dev">{row.example}</span>
+                              <span className="symbol-audio-btn" aria-hidden="true">🔊</span>
+                            </button>
+                          </td>
+                          <td>
+                            <span className="symbol-sound-note">{row.transliteration}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section className="symbols-section" aria-labelledby="punct-heading">
+                <h4 id="punct-heading" className="symbols-section-title">
+                  विरामचिह्नानि · Punctuation & Sacred Marks
+                </h4>
+                <div className="symbols-table-scroll">
+                  <table className="symbols-table">
+                    <thead>
+                      <tr>
+                        <th>चिह्नम्</th>
+                        <th>नाम व कार्यम्</th>
+                        <th>विवरणम् (Role)</th>
+                        <th>उदाहरणम् (Example)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {SANSKRIT_SYMBOLS.map((item) => (
+                        <tr key={item.symbol}>
+                          <td className="symbol-glyph">{item.symbol}</td>
+                          <td className="symbol-name-col">
+                            <span className="symbol-dev-name">{item.name}</span>
+                            <span className="symbol-role-badge">{item.role}</span>
+                          </td>
+                          <td>
+                            <p className="symbol-desc-text">{item.description}</p>
+                          </td>
+                          <td>
+                            <div className="symbol-example-box">
+                              <span>{item.example}</span>
+                              <button
+                                type="button"
+                                className="symbol-audio-btn"
+                                onClick={() => playPronunciation(item.example)}
+                                title="Listen"
+                                aria-label={`Listen to ${item.example}`}
+                              >
+                                🔊
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
             </div>
 
             <footer className="symbols-modal-footer">
-              <span>Tip: In classical texts and manuscripts, Daṇḍa (।) and Dvi-daṇḍa (॥) demarcate syntactic boundaries and poetic half/full verses.</span>
+              <span>
+                Tip: Mātrās turn independent vowels into dependent signs on consonants (क् + आ = का).
+                Daṇḍa (।) and Dvi-daṇḍa (॥) mark prose / verse boundaries. For interactive practice, open
+                Guṇitākṣarāṇi on the Varṇamālā page.
+              </span>
             </footer>
           </div>
         </div>
