@@ -16,6 +16,7 @@ export interface LetterMnemonic {
   group: 'svara' | 'sparsha' | 'antastha' | 'ushmana' | 'ayogavaha' | 'samyukta';
   groupLabelSan: string;
   groupLabelEn: string;
+  hoverNote?: string;
 }
 
 export const VARNAMALA_MNEMONICS: Record<string, LetterMnemonic> = {
@@ -290,6 +291,7 @@ export const VARNAMALA_MNEMONICS: Record<string, LetterMnemonic> = {
     wordIast: 'aṅganam',
     wordEn: 'Courtyard',
     wordHi: 'आँगन',
+    hoverNote: 'Teaching note: अँ rarely begins Sanskrit words, so अँगनम् is a friendly sound example—not a classical word starting with अँ.',
     emoji: '🏡',
     strokeOrder: [
       '1. Draw letter "अ"',

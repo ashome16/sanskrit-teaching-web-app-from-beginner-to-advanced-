@@ -1788,7 +1788,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                           type="button"
                           className="v-card-mnemonic-badge"
                           aria-label={`Hear picture word ${mnemonic.wordSan} (${mnemonic.wordEn})`}
-                          title={`Hear ${mnemonic.wordSan} — ${mnemonic.wordEn}`}
+                          title={mnemonic.hoverNote || `Hear ${mnemonic.wordSan} — ${mnemonic.wordEn}`}
                           onClick={(e) => {
                             e.stopPropagation();
                             stopPlayAll();
