@@ -488,11 +488,11 @@ const AuthModal: React.FC = () => {
                   />
                   <div>
                     <div className="auth-remember-title">
-                      <span>💾</span>
-                      <span>Remember / Save password on this device (पासवर्ड सुरक्षितं रक्षतु)</span>
+                      <span>🔐</span>
+                      <span>Stay signed in on this device (अस्मिन् यन्त्रे प्रवेशं रक्षतु)</span>
                     </div>
                     <div className="auth-remember-sub">
-                      Saves credentials in this browser so you can sign in automatically without re-entering.
+                      Saves your login securely on this browser for instant 1-click access.
                     </div>
                   </div>
                 </label>
@@ -506,9 +506,9 @@ const AuthModal: React.FC = () => {
                     setRememberMe(false);
                     setLoginPassword('');
                   }}
-                  title="Clear saved password from this device"
+                  title="Remove saved login credentials from this browser"
                 >
-                  ✕ Clear saved
+                  🗑️ Remove saved login
                 </button>
               )}
             </div>

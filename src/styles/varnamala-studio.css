@@ -393,6 +393,10 @@
   height: 100%;
   display: block;
   z-index: 4;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: crosshair;
 }
 
 /* 3-Line Notebook Ruling Background */

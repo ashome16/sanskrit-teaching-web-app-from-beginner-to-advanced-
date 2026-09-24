@@ -1,23 +1,111 @@
-import React, { useMemo, useState } from 'react';
-import { WORKSHEETS, WORKSHEET_CATEGORIES, type Worksheet } from '../data/worksheetData';
+import React, { useEffect, useMemo, useState } from 'react';
+import { WORKSHEETS, type Worksheet } from '../data/worksheetData';
 import { useAuthStore } from '../store/authStore';
 import { canDownloadContent, getDownloadGateReason } from '../utils/premiumAccess';
 import { PAID_FEATURE_GATE } from '../utils/paidFeatureGateCopy';
 import { downloadWorksheet } from '../utils/contentDownload';
 import '../styles/worksheet-section.css';
 
-interface WorksheetSectionProps {
+export interface WorksheetSectionProps {
+  initialCategory?: string;
   onGoHome?: () => void;
   onOpenQuiz?: () => void;
   onOpenReader?: () => void;
 }
 
+type WorksheetMenuLevel = 'varnamala' | 'ncert' | 'grammar' | 'vedic_maths' | 'all';
+
+interface LevelMenuOption {
+  id: WorksheetMenuLevel;
+  title: string;
+  sanskrit: string;
+  icon: string;
+  desc: string;
+  badge: string;
+}
+
+const LEVEL_MENU_OPTIONS: LevelMenuOption[] = [
+  {
+    id: 'varnamala',
+    title: 'Alphabet & Syllables',
+    sanskrit: 'वर्णमाला (Alphabet & Syllables)',
+    icon: '🔤',
+    desc: 'Vowels, Consonants, Conjuncts & Word Synthesis',
+    badge: '4 Worksheets',
+  },
+  {
+    id: 'ncert',
+    title: 'NCERT Chapter-Based',
+    sanskrit: 'पाठ-आधारितम् (Class 7 & 8)',
+    icon: '📚',
+    desc: 'CBSE Deepakam Curriculum Chapter-by-Chapter',
+    badge: '14 Chapters · 100+ Sheets',
+  },
+  {
+    id: 'grammar',
+    title: 'Grammar Practice',
+    sanskrit: 'व्याकरणम् (Vyākaraṇa)',
+    icon: '📐',
+    desc: 'Sandhi, Karaka, Dhatu, Vibhakti & Suffixes',
+    badge: '10 Worksheets',
+  },
+  {
+    id: 'vedic_maths',
+    title: 'Vedic Maths Drills',
+    sanskrit: 'वैदिक-गणितम् (Vedic Maths)',
+    icon: '⚡',
+    desc: 'Mental Calculations, Sutras & Speed Drills',
+    badge: '4 Drills',
+  },
+  {
+    id: 'all',
+    title: 'All Worksheets',
+    sanskrit: 'समग्र-पत्राणि (All Worksheets)',
+    icon: '📑',
+    desc: 'Full Sanskrit Worksheet Repository',
+    badge: '180+ Sheets',
+  },
+];
+
+const CHAPTER_SUBFILTERS = [
+  { id: 'all_chapters', label: 'All Chapters (समग्र-पाठाः)' },
+  { id: 'deep_ch1', label: 'Ch 1: वन्दे भारतमातरम्' },
+  { id: 'deep_ch2', label: 'Ch 2: नित्यं पिबामः सुभाषितरसम्' },
+  { id: 'deep_ch3', label: 'Ch 3: मित्राय नमः' },
+  { id: 'deep_ch4', label: 'Ch 4: आम्लं द्राक्षाफलम्' },
+  { id: 'deep_ch5', label: 'Ch 5: सेवा हि परमो धर्मः' },
+  { id: 'deep_ch6', label: 'Ch 6: श्लोकान्त्याक्षरी' },
+  { id: 'deep_ch7', label: 'Ch 7: ईशावास्यम् इदम्' },
+  { id: 'deep_ch8', label: 'Ch 8: हितं मनोहारि च' },
+  { id: 'deep_ch9', label: 'Ch 9: अन्नाद् भवन्ति भूतानि' },
+  { id: 'deep_ch10', label: 'Ch 10: दशमः कः?' },
+  { id: 'deep_ch11', label: 'Ch 11: द्वीपोऽण्डमानः' },
+  { id: 'deep_ch12', label: 'Ch 12: वीराङ्गना पन्नाधाया' },
+  { id: 'deep_ch13', label: 'Ch 13: वर्णमात्रा-परिचयः' },
+  { id: 'deep_ch14', label: 'Ch 14: शब्दरूपाणि' },
+];
+
+const resolveInitialTrack = (cat?: string): { level: WorksheetMenuLevel; subfilter: string } => {
+  if (!cat || cat === 'all') return { level: 'all', subfilter: 'all_chapters' };
+  if (cat === 'varnamala') return { level: 'varnamala', subfilter: 'all_chapters' };
+  if (cat === 'grammar') return { level: 'grammar', subfilter: 'all_chapters' };
+  if (cat === 'vedic_maths') return { level: 'vedic_maths', subfilter: 'all_chapters' };
+  if (cat === 'cbse_ch') return { level: 'ncert', subfilter: 'all_chapters' };
+  if (cat.startsWith('deep_ch') || cat === 'grade8') return { level: 'ncert', subfilter: cat };
+  return { level: 'all', subfilter: 'all_chapters' };
+};
+
 const WorksheetSection: React.FC<WorksheetSectionProps> = ({
+  initialCategory = 'all',
   onGoHome,
   onOpenQuiz,
   onOpenReader,
 }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const initialResolved = useMemo(() => resolveInitialTrack(initialCategory), [initialCategory]);
+  const [activeLevel, setActiveLevel] = useState<WorksheetMenuLevel>(initialResolved.level);
+  const [selectedChapterSubfilter, setSelectedChapterSubfilter] = useState<string>(
+    initialResolved.subfilter
+  );
   const [activeWorksheet, setActiveWorksheet] = useState<Worksheet | null>(null);
   const [showAnswerKey, setShowAnswerKey] = useState<boolean>(false);
   const [showUpgradePrompt, setShowUpgradePrompt] = useState<boolean>(false);
@@ -25,10 +113,12 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
   const canDownload = canDownloadContent(currentUser, isAdminLoggedIn);
   const gateReason = getDownloadGateReason(currentUser, isAdminLoggedIn);
 
-  const visibleCategories = useMemo(
-    () => WORKSHEET_CATEGORIES.filter((cat) => isAdminLoggedIn || cat.id !== 'grade8'),
-    [isAdminLoggedIn]
-  );
+  // Sync state if initialCategory changes externally
+  useEffect(() => {
+    const resolved = resolveInitialTrack(initialCategory);
+    setActiveLevel(resolved.level);
+    setSelectedChapterSubfilter(resolved.subfilter);
+  }, [initialCategory]);
 
   const publicWorksheets = useMemo(
     () =>
@@ -38,56 +128,47 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
     [isAdminLoggedIn]
   );
 
-  const filteredWorksheets =
-    selectedCategory === 'all'
-      ? publicWorksheets
-      : selectedCategory === 'deep_ch1'
-      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch1'))
-      : selectedCategory === 'deep_ch2'
-      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch2'))
-      : selectedCategory === 'deep_ch3'
-      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch3'))
-      : selectedCategory === 'deep_ch4'
-      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch4'))
-      : selectedCategory === 'deep_ch5'
-      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch5'))
-      : selectedCategory === 'deep_ch6'
-      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch6'))
-      : selectedCategory === 'deep_ch7'
-      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch7'))
-      : selectedCategory === 'deep_ch8'
-      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch8'))
-      : selectedCategory === 'deep_ch9'
-      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch9'))
-      : selectedCategory === 'deep_ch10'
-      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch10'))
-      : selectedCategory === 'deep_ch11'
-      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch11'))
-      : selectedCategory === 'deep_ch12'
-      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch12'))
-      : selectedCategory === 'deep_ch13'
-      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch13'))
-      : selectedCategory === 'deep_ch14'
-      ? publicWorksheets.filter((ws) => ws.id.startsWith('ws-ch14'))
-      : publicWorksheets.filter(
+  const filteredWorksheets = useMemo(() => {
+    if (activeLevel === 'varnamala') {
+      return publicWorksheets.filter((ws) => ws.category === 'varnamala');
+    }
+    if (activeLevel === 'grammar') {
+      return publicWorksheets.filter((ws) => ws.category === 'grammar');
+    }
+    if (activeLevel === 'vedic_maths') {
+      return publicWorksheets.filter((ws) => ws.category === 'vedic_maths');
+    }
+    if (activeLevel === 'ncert') {
+      if (selectedChapterSubfilter === 'all_chapters') {
+        return publicWorksheets.filter(
           (ws) =>
-            ws.category === selectedCategory ||
-            (selectedCategory === 'cbse_ch' &&
-              (ws.id.startsWith('ws-ch1') ||
-                ws.id.startsWith('ws-ch2') ||
-                ws.id.startsWith('ws-ch3') ||
-                ws.id.startsWith('ws-ch4') ||
-                ws.id.startsWith('ws-ch5') ||
-                ws.id.startsWith('ws-ch6') ||
-                ws.id.startsWith('ws-ch7') ||
-                ws.id.startsWith('ws-ch8') ||
-                ws.id.startsWith('ws-ch9') ||
-                ws.id.startsWith('ws-ch10') ||
-                ws.id.startsWith('ws-ch11') ||
-                ws.id.startsWith('ws-ch12') ||
-                ws.id.startsWith('ws-ch13') ||
-                ws.id.startsWith('ws-ch14')))
+            ws.category === 'cbse_ch' ||
+            ws.id.startsWith('ws-ch') ||
+            (isAdminLoggedIn && (ws.category === 'grade8' || ws.id.startsWith('ws-grade8-')))
         );
+      }
+      if (selectedChapterSubfilter === 'grade8') {
+        return publicWorksheets.filter(
+          (ws) => ws.category === 'grade8' || ws.id.startsWith('ws-grade8-')
+        );
+      }
+      const match = selectedChapterSubfilter.match(/deep_ch(\d+)/);
+      if (match) {
+        const num = match[1];
+        return publicWorksheets.filter(
+          (ws) => ws.id === `ws-ch${num}` || ws.id.startsWith(`ws-ch${num}-`)
+        );
+      }
+      return publicWorksheets.filter((ws) => ws.category === selectedChapterSubfilter);
+    }
+    // 'all'
+    return publicWorksheets;
+  }, [activeLevel, selectedChapterSubfilter, publicWorksheets, isAdminLoggedIn]);
+
+  const currentLevelOption = useMemo(
+    () => LEVEL_MENU_OPTIONS.find((opt) => opt.id === activeLevel) || LEVEL_MENU_OPTIONS[0],
+    [activeLevel]
+  );
 
   const requireDownloadAccess = (): boolean => {
     if (canDownload) {
@@ -128,11 +209,15 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
       {/* Top Header */}
       <header className="worksheet-header">
         <div className="worksheet-header-left">
-          <img src="/logo.jpg" alt="Printable Sanskrit worksheets for CBSE school children | EdNet Learn Gurukul" className="worksheet-header-logo" />
+          <img
+            src="/logo.jpg"
+            alt="Printable Sanskrit worksheets for CBSE school children | EdNet Learn Gurukul"
+            className="worksheet-header-logo"
+          />
           <div>
             <h2 className="worksheet-title">कार्यपत्रिकाः · Printable Sanskrit Worksheets</h2>
             <p className="worksheet-subtitle">
-              CBSE Class 7 Sanskrit Deepakam · Grammar Drills · Vedic Mathematics Practice Papers
+              Alphabet &amp; Syllables (वर्णमाला) · CBSE Class 7 &amp; 8 Deepakam · Grammar Drills · Vedic Maths
             </p>
           </div>
         </div>
@@ -159,19 +244,86 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
       {/* Gallery View */}
       {!activeWorksheet ? (
         <>
-          {/* Category Tabs */}
-          <div className="worksheet-categories-bar">
-            {visibleCategories.map((cat) => (
-              <button
-                key={cat.id}
-                type="button"
-                className={`worksheet-cat-pill${selectedCategory === cat.id ? ' active' : ''}`}
-                onClick={() => setSelectedCategory(cat.id)}
-              >
-                <span>{cat.icon}</span>
-                <span>{cat.label}</span>
-              </button>
-            ))}
+          {/* Level / Curriculum Track Menu Selector */}
+          <div className="worksheet-menu-grid" role="tablist" aria-label="Curriculum Level Selector">
+            {LEVEL_MENU_OPTIONS.map((lvl) => {
+              const isActive = activeLevel === lvl.id;
+              return (
+                <button
+                  key={lvl.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  className={`worksheet-menu-card${isActive ? ' worksheet-menu-card--active' : ''}`}
+                  onClick={() => setActiveLevel(lvl.id)}
+                >
+                  <div className="worksheet-menu-top">
+                    <span className="worksheet-menu-icon">{lvl.icon}</span>
+                    <span className="worksheet-menu-badge">{lvl.badge}</span>
+                  </div>
+                  <h3 className="worksheet-menu-title">{lvl.title}</h3>
+                  <div className="worksheet-menu-sanskrit">{lvl.sanskrit}</div>
+                  <p className="worksheet-menu-desc">{lvl.desc}</p>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Sub-bar for NCERT chapters when NCERT level is active */}
+          {activeLevel === 'ncert' && (
+            <div className="worksheet-chapter-subbar">
+              <div className="worksheet-chapter-subbar-header">
+                <span className="worksheet-chapter-subbar-title">
+                  📖 Select NCERT Deepakam Chapter (पाठं चिनोतु):
+                </span>
+                <span style={{ fontSize: '0.8rem', color: '#64748b' }}>
+                  Showing {filteredWorksheets.length} practice sheet{filteredWorksheets.length !== 1 ? 's' : ''}
+                </span>
+              </div>
+              <div className="worksheet-chapter-pills" role="tablist">
+                {CHAPTER_SUBFILTERS.map((ch) => (
+                  <button
+                    key={ch.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={selectedChapterSubfilter === ch.id}
+                    className={`worksheet-chapter-pill${
+                      selectedChapterSubfilter === ch.id ? ' active' : ''
+                    }`}
+                    onClick={() => setSelectedChapterSubfilter(ch.id)}
+                  >
+                    {ch.label}
+                  </button>
+                ))}
+                {isAdminLoggedIn && (
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={selectedChapterSubfilter === 'grade8'}
+                    className={`worksheet-chapter-pill${
+                      selectedChapterSubfilter === 'grade8' ? ' active' : ''
+                    }`}
+                    onClick={() => setSelectedChapterSubfilter('grade8')}
+                  >
+                    🪕 Grade 8 (अष्टमकक्षा)
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Active Level Summary Banner */}
+          <div className="worksheet-active-summary-banner">
+            <div>
+              <strong>
+                {currentLevelOption.icon} {currentLevelOption.title}
+              </strong>{' '}
+              — {currentLevelOption.desc}
+            </div>
+            <div style={{ fontWeight: 700, color: '#0f766e' }}>
+              {filteredWorksheets.length} worksheet{filteredWorksheets.length !== 1 ? 's' : ''}{' '}
+              available
+            </div>
           </div>
 
           {/* Worksheet Cards Grid */}

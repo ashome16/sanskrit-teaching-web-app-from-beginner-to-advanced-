@@ -13,6 +13,7 @@ import { canAccessAllChapters } from '../utils/premiumAccess';
 import { Grade8SyllabusModal } from './Grade8SyllabusModal';
 import { getLetterMnemonic } from '../data/varnamalaMnemonics';
 import { VarnamalaWritingPad } from './VarnamalaWritingPad';
+import { ErrorBoundary } from './ErrorBoundary';
 import '../styles/textbook-reader.css';
 import '../styles/varnamala-studio.css';
 
@@ -31,7 +32,7 @@ interface TextbookReaderProps {
   isFirstSentence: boolean;
   isLastSentence: boolean;
   onOpenQuiz?: () => void;
-  onOpenWorksheets?: () => void;
+  onOpenWorksheets?: (category?: string) => void;
 }
 
 const cleanWord = (value: string): string =>
@@ -170,6 +171,10 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const [padSelectedLetter, setPadSelectedLetter] = useState<string>('अ');
   const [glosses, setGlosses] = useState<AnalyseRegistry>({});
   const stopPlayAllRef = useRef<(() => void) | null>(null);
+
+  const handleOpenWorksheetsDefault = () => {
+    onOpenWorksheets?.();
+  };
 
   useEffect(() => {
     let cancelled = false;
@@ -438,7 +443,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Grade 8 Chapter 1 Worksheets (5 Sheets · संगच्छध्वं)"
               >
                 📑 5 Worksheets (Vedic · Loṭ · आम्/न)
@@ -470,7 +475,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Grade 8 Chapter 2 Printable Worksheet"
               >
                 📑 Grade 8 Chapter 2 Worksheet
@@ -502,7 +507,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Grade 8 Printable Worksheets"
               >
                 📑 Grade 8 Worksheets
@@ -534,7 +539,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Grade 8 Chapter 4 Printable Worksheets"
               >
                 📑 5 Worksheets (Humanitarian Service & Biography)
@@ -566,7 +571,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Grade 8 Chapter 5 Printable Worksheets"
               >
                 📑 5 Worksheets (Bhagavad Gita Wisdom)
@@ -598,7 +603,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Grade 8 Chapter 6 Printable Worksheets"
               >
                 📑 2 Worksheets (Digital India & Passive Voice)
@@ -630,7 +635,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Grade 8 Chapter 7 Printable Worksheets"
               >
                 📑 5 Worksheets (Sanskrit Glory & Verses)
@@ -662,7 +667,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Grade 8 Chapter 8 Printable Worksheets"
               >
                 📑 5 Worksheets (Seven Sisters & Geography)
@@ -694,7 +699,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Grade 8 Chapter 9 Printable Worksheets"
               >
                 📑 5 Worksheets (Ayurveda & Health Rules)
@@ -726,7 +731,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Grade 8 Chapter 10 Printable Worksheets"
               >
                 📑 5 Worksheets (Viravara Story & Past Tense)
@@ -758,7 +763,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Grade 8 Chapter 11 Printable Worksheets"
               >
                 📑 5 Worksheets (Voice Conversion & Hitopadesha)
@@ -790,7 +795,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Grade 8 Chapter 12 Printable Worksheets"
               >
                 📑 5 Worksheets (Pronunciation & Shiksha)
@@ -822,7 +827,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Grade 8 Chapter 13 Printable Worksheets"
               >
                 📑 5 Worksheets (Voice Anatomy & Sthana-Karana)
@@ -854,7 +859,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Grade 8 Appendix 1 Printable Worksheets"
               >
                 📑 5 Worksheets (Grammar & Sandhi)
@@ -878,7 +883,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Chapter 1 Printable Worksheets & Teacher Keys"
               >
                 📑 7 Worksheets
@@ -902,7 +907,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Chapter 2 Printable Worksheets & Teacher Keys"
               >
                 📑 7 Worksheets
@@ -926,7 +931,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Chapter 3 Printable Worksheets & Teacher Keys"
               >
                 📑 7 Worksheets
@@ -950,7 +955,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Chapter 4 Printable Worksheets & Teacher Keys"
               >
                 📑 7 Worksheets
@@ -974,7 +979,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Chapter 5 Printable Worksheets & Teacher Keys"
               >
                 📑 7 Worksheets
@@ -998,7 +1003,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Chapter 6 Printable Worksheets & Teacher Keys"
               >
                 📑 7 Worksheets
@@ -1022,7 +1027,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Chapter 7 Printable Worksheets & Teacher Keys"
               >
                 📑 8 Worksheets
@@ -1046,7 +1051,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Chapter 8 Printable Worksheets & Teacher Keys"
               >
                 📑 7 Worksheets
@@ -1070,7 +1075,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Chapter 9 Printable Worksheets & Teacher Keys"
               >
                 📑 7 Worksheets
@@ -1094,7 +1099,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Chapter 10 Printable Worksheets & Teacher Keys"
               >
                 📑 7 Worksheets
@@ -1118,7 +1123,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Chapter 11 Printable Worksheets & Teacher Keys"
               >
                 📑 7 Worksheets
@@ -1142,7 +1147,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Chapter 12 Printable Worksheets & Teacher Keys"
               >
                 📑 7 Worksheets
@@ -1166,7 +1171,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Supplementary Lesson Printable Worksheets & Teacher Keys"
               >
                 📑 7 Worksheets
@@ -1190,7 +1195,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={onOpenWorksheets}
+                onClick={handleOpenWorksheetsDefault}
                 title="Go to Appendix 1 Printable Worksheets & Teacher Keys"
               >
                 📑 7 Worksheets
@@ -1403,10 +1408,15 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           )}
 
           {isVarnamala && varnamalaSubMode === 'writing' && (
-            <VarnamalaWritingPad
-              initialLetter={padSelectedLetter}
-              onOpenWorksheets={onOpenWorksheets}
-            />
+            <ErrorBoundary
+              fallbackTitle="✍️ Writing Studio Ready"
+              fallbackSubtitle="An unexpected issue occurred while rendering the handwriting slate. Tap below to reload the studio."
+            >
+              <VarnamalaWritingPad
+                initialLetter={padSelectedLetter}
+                onOpenWorksheets={onOpenWorksheets}
+              />
+            </ErrorBoundary>
           )}
 
           {isVarnamala && varnamalaSubMode === 'worksheets' && (
@@ -1432,75 +1442,131 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 }}
               >
                 <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => onOpenWorksheets?.('varnamala')}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      onOpenWorksheets?.('varnamala');
+                    }
+                  }}
                   style={{
                     background: '#f8fafc',
                     border: '1.5px solid #e2e8f0',
                     borderRadius: '12px',
                     padding: '1rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.18s ease',
                   }}
                 >
                   <span style={{ fontSize: '1.5rem' }}>🔤</span>
                   <h4 style={{ margin: '0.4rem 0 0.2rem', fontSize: '1rem', fontWeight: 800 }}>
                     WS-V01: स्वर-परिचयः
                   </h4>
-                  <p style={{ margin: 0, fontSize: '0.8rem', color: '#64748b' }}>
+                  <p style={{ margin: '0 0 0.5rem', fontSize: '0.8rem', color: '#64748b' }}>
                     Vowels, short vs. long sounds, animal words, sequence drills.
                   </p>
+                  <span style={{ fontSize: '0.78rem', color: '#0f766e', fontWeight: 700 }}>
+                    Open Worksheet →
+                  </span>
                 </div>
                 <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => onOpenWorksheets?.('varnamala')}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      onOpenWorksheets?.('varnamala');
+                    }
+                  }}
                   style={{
                     background: '#f8fafc',
                     border: '1.5px solid #e2e8f0',
                     borderRadius: '12px',
                     padding: '1rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.18s ease',
                   }}
                 >
                   <span style={{ fontSize: '1.5rem' }}>🎯</span>
                   <h4 style={{ margin: '0.4rem 0 0.2rem', fontSize: '1rem', fontWeight: 800 }}>
                     WS-V02: स्पर्श-व्यञ्जनानि
                   </h4>
-                  <p style={{ margin: 0, fontSize: '0.8rem', color: '#64748b' }}>
+                  <p style={{ margin: '0 0 0.5rem', fontSize: '0.8rem', color: '#64748b' }}>
                     5 consonant families (क to प), articulation points, aspiration.
                   </p>
+                  <span style={{ fontSize: '0.78rem', color: '#0f766e', fontWeight: 700 }}>
+                    Open Worksheet →
+                  </span>
                 </div>
                 <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => onOpenWorksheets?.('varnamala')}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      onOpenWorksheets?.('varnamala');
+                    }
+                  }}
                   style={{
                     background: '#f8fafc',
                     border: '1.5px solid #e2e8f0',
                     borderRadius: '12px',
                     padding: '1rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.18s ease',
                   }}
                 >
                   <span style={{ fontSize: '1.5rem' }}>💨</span>
                   <h4 style={{ margin: '0.4rem 0 0.2rem', fontSize: '1rem', fontWeight: 800 }}>
                     WS-V03: अन्तःस्थाः ऊष्माणश्च
                   </h4>
-                  <p style={{ margin: 0, fontSize: '0.8rem', color: '#64748b' }}>
+                  <p style={{ margin: '0 0 0.5rem', fontSize: '0.8rem', color: '#64748b' }}>
                     Semi-vowels, sibilants (श, ष, स), Anusvāra &amp; Visarga echoes.
                   </p>
+                  <span style={{ fontSize: '0.78rem', color: '#0f766e', fontWeight: 700 }}>
+                    Open Worksheet →
+                  </span>
                 </div>
                 <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => onOpenWorksheets?.('varnamala')}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      onOpenWorksheets?.('varnamala');
+                    }
+                  }}
                   style={{
                     background: '#f8fafc',
                     border: '1.5px solid #e2e8f0',
                     borderRadius: '12px',
                     padding: '1rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.18s ease',
                   }}
                 >
                   <span style={{ fontSize: '1.5rem' }}>🧩</span>
                   <h4 style={{ margin: '0.4rem 0 0.2rem', fontSize: '1rem', fontWeight: 800 }}>
                     WS-V04: अक्षर-संयोजनम्
                   </h4>
-                  <p style={{ margin: 0, fontSize: '0.8rem', color: '#64748b' }}>
+                  <p style={{ margin: '0 0 0.5rem', fontSize: '0.8rem', color: '#64748b' }}>
                     Word synthesis addition (ग + ज + ः = गजः) and phonetic breakdown.
                   </p>
+                  <span style={{ fontSize: '0.78rem', color: '#0f766e', fontWeight: 700 }}>
+                    Open Worksheet →
+                  </span>
                 </div>
               </div>
               {onOpenWorksheets && (
                 <button
                   type="button"
                   className="v-submit-check-btn"
-                  onClick={onOpenWorksheets}
+                  onClick={() => onOpenWorksheets('varnamala')}
                   style={{ maxWidth: '380px', margin: '0 auto' }}
                 >
                   <span>📑</span> Open All Alphabet &amp; Syllables Worksheets Laboratory →

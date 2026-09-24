@@ -24,7 +24,7 @@ interface Stroke {
 
 interface VarnamalaWritingPadProps {
   initialLetter?: string;
-  onOpenWorksheets?: () => void;
+  onOpenWorksheets?: (category?: string) => void;
 }
 
 const BRUSH_COLORS = [
@@ -207,31 +207,62 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
 
     const parent = canvas.parentElement;
     const rect = parent.getBoundingClientRect();
-    const dpr = window.devicePixelRatio || 1;
+    if (rect.width <= 0 || rect.height <= 0) return;
 
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    const ctx = canvas.getContext('2d');
-    if (ctx) ctx.scale(dpr, dpr);
+    const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+    const targetWidth = Math.round(rect.width * dpr);
+    const targetHeight = Math.round(rect.height * dpr);
+
+    if (canvas.width !== targetWidth || canvas.height !== targetHeight) {
+      canvas.width = targetWidth;
+      canvas.height = targetHeight;
+      const ctx = canvas.getContext('2d');
+      if (ctx) ctx.scale(dpr, dpr);
+    }
 
     if (demoCanvas) {
-      demoCanvas.width = rect.width * dpr;
-      demoCanvas.height = rect.height * dpr;
-      const demoCtx = demoCanvas.getContext('2d');
-      if (demoCtx) demoCtx.scale(dpr, dpr);
+      if (demoCanvas.width !== targetWidth || demoCanvas.height !== targetHeight) {
+        demoCanvas.width = targetWidth;
+        demoCanvas.height = targetHeight;
+        const demoCtx = demoCanvas.getContext('2d');
+        if (demoCtx) demoCtx.scale(dpr, dpr);
+      }
     }
 
     redrawCanvas();
     redrawDemoCanvas();
   };
 
+  // Mount & container resize listener (does NOT re-trigger on stroke changes)
   useEffect(() => {
     updateCanvasDimensions();
+
+    const canvas = canvasRef.current;
+    const parent = canvas?.parentElement;
+    let observer: ResizeObserver | null = null;
+
+    if (parent && typeof ResizeObserver !== 'undefined') {
+      try {
+        observer = new ResizeObserver(() => {
+          updateCanvasDimensions();
+        });
+        observer.observe(parent);
+      } catch {
+        // Fallback to window resize
+      }
+    }
+
     window.addEventListener('resize', updateCanvasDimensions);
     return () => {
+      if (observer) observer.disconnect();
       window.removeEventListener('resize', updateCanvasDimensions);
     };
-  }, [strokes, selectedLetter]);
+  }, []);
+
+  // Redraw user strokes when strokes array changes without wiping canvas backing buffer
+  useEffect(() => {
+    redrawCanvas();
+  }, [strokes]);
 
   // Clean up animation on unmount
   useEffect(() => {
@@ -355,7 +386,11 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     setIsPlayingDemo(false);
     setActiveStrokeIndex(0);
     setDemoStatusMessage('✨ उत्कृष्टम्! Now it is your turn to trace!');
-    playPronunciation(mnemonic.letter);
+    try {
+      playPronunciation(mnemonic.letter);
+    } catch (e) {
+      console.warn('Speech pronunciation unavailable:', e);
+    }
 
     // Gently glide away pencil tip after a moment
     if (liftTimeoutRef.current) clearTimeout(liftTimeoutRef.current);
@@ -430,7 +465,11 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
   const handlePointerDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    canvas.setPointerCapture(e.pointerId);
+    try {
+      canvas.setPointerCapture(e.pointerId);
+    } catch {
+      // ignore InvalidPointerId if capture cannot be set
+    }
 
     const rect = canvas.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -463,7 +502,9 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     const canvas = canvasRef.current;
     if (canvas) {
       try {
-        canvas.releasePointerCapture(e.pointerId);
+        if (canvas.hasPointerCapture && canvas.hasPointerCapture(e.pointerId)) {
+          canvas.releasePointerCapture(e.pointerId);
+        }
       } catch {
         // ignore pointer capture release error if already released
       }
@@ -492,10 +533,18 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
       return;
     }
     setShowCelebration(true);
-    playPronunciation(mnemonic.letter);
-    setTimeout(() => {
-      playPronunciation(mnemonic.wordSan);
-    }, 600);
+    try {
+      playPronunciation(mnemonic.letter);
+      setTimeout(() => {
+        try {
+          playPronunciation(mnemonic.wordSan);
+        } catch {
+          // ignore speech failure
+        }
+      }, 600);
+    } catch {
+      // ignore speech failure
+    }
   };
 
   const handleSelectLetter = (char: string) => {
@@ -503,7 +552,11 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     setSelectedLetter(char);
     setStrokes([]);
     setShowCelebration(false);
-    playPronunciation(char);
+    try {
+      playPronunciation(char);
+    } catch {
+      // ignore speech failure
+    }
   };
 
   return (
@@ -523,7 +576,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
           <button
             type="button"
             className="v-tool-btn"
-            onClick={onOpenWorksheets}
+            onClick={() => onOpenWorksheets('varnamala')}
             style={{
               background: '#f0fdfa',
               borderColor: '#99f6e4',

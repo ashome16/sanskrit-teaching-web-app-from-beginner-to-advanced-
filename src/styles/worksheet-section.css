@@ -54,6 +54,156 @@
   font-weight: 600;
 }
 
+/* Level / Track Menu Selector */
+.worksheet-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.worksheet-menu-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 1.15rem;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+  position: relative;
+}
+
+.worksheet-menu-card:hover {
+  border-color: #0f766e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.12);
+}
+
+.worksheet-menu-card--active {
+  background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+  border-color: #0d9488;
+  box-shadow: 0 6px 18px rgba(13, 148, 136, 0.18);
+}
+
+.worksheet-menu-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0.4rem;
+}
+
+.worksheet-menu-icon {
+  font-size: 1.6rem;
+}
+
+.worksheet-menu-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.worksheet-menu-card--active .worksheet-menu-badge {
+  background: #0d9488;
+  color: #ffffff;
+}
+
+.worksheet-menu-title {
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.worksheet-menu-sanskrit {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0f766e;
+  margin-bottom: 0.3rem;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.worksheet-menu-desc {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+/* Sub-filter bar for NCERT chapters */
+.worksheet-chapter-subbar {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.worksheet-chapter-subbar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.worksheet-chapter-subbar-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.worksheet-chapter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.worksheet-chapter-pill {
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.worksheet-chapter-pill:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.worksheet-chapter-pill.active {
+  background: #0f766e;
+  border-color: #0f766e;
+  color: #ffffff;
+}
+
+/* Category summary banner */
+.worksheet-active-summary-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border-left: 4px solid #0f766e;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  font-size: 0.86rem;
+  color: #334155;
+}
+
 /* Category Filter Bar */
 .worksheet-categories-bar {
   display: flex;

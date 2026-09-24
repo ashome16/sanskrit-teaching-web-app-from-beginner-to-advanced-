@@ -251,6 +251,13 @@ const Dashboard: React.FC = () => {
     setActiveView(view);
   };
 
+  const [worksheetsCategory, setWorksheetsCategory] = useState<string>('all');
+
+  const handleOpenWorksheets = (category: string = 'all') => {
+    setWorksheetsCategory(category);
+    navigateToView('worksheets');
+  };
+
   const handleOpenGrammar = () => {
     navigateToView('grammar');
   };
@@ -764,7 +771,7 @@ const Dashboard: React.FC = () => {
           onOpenDhatupatha={() => navigateToView('dhatupatha')}
           onOpenVedicMaths={() => navigateToView('vedic-maths')}
           onOpenQuiz={() => navigateToView('quiz')}
-          onOpenWorksheets={() => navigateToView('worksheets')}
+          onOpenWorksheets={() => handleOpenWorksheets('all')}
           onOpenPhilosophy={() => navigateToView('philosophy')}
           onOpenCbseGuide={() => navigateToView('cbse-guide')}
         />
@@ -800,7 +807,7 @@ const Dashboard: React.FC = () => {
           <Grammar
             key={grammarResetKey}
             onGoHome={() => setActiveView('home')}
-            onOpenWorksheets={() => navigateToView('worksheets')}
+            onOpenWorksheets={() => handleOpenWorksheets('grammar')}
             onOpenQuiz={() => navigateToView('quiz')}
           />
         )}
@@ -819,12 +826,13 @@ const Dashboard: React.FC = () => {
         {activeView === 'quiz' && (
           <QuizSection
             onGoHome={() => setActiveView('home')}
-            onOpenWorksheets={() => navigateToView('worksheets')}
+            onOpenWorksheets={() => handleOpenWorksheets('all')}
             onOpenReader={() => openDeepakam()}
           />
         )}
         {activeView === 'worksheets' && (
           <WorksheetSection
+            initialCategory={worksheetsCategory}
             onGoHome={() => setActiveView('home')}
             onOpenQuiz={() => navigateToView('quiz')}
             onOpenReader={() => openDeepakam()}
@@ -845,7 +853,7 @@ const Dashboard: React.FC = () => {
           isFirstSentence={isFirstSentence}
           isLastSentence={isLastSentence}
           onOpenQuiz={() => navigateToView('quiz')}
-          onOpenWorksheets={() => navigateToView('worksheets')}
+          onOpenWorksheets={(category) => handleOpenWorksheets(category || 'all')}
         />}
       </Suspense>
 
@@ -860,7 +868,7 @@ const Dashboard: React.FC = () => {
           onOpenDhatupatha={() => navigateToView('dhatupatha')}
           onOpenVedicMaths={() => navigateToView('vedic-maths')}
           onOpenQuiz={() => navigateToView('quiz')}
-          onOpenWorksheets={() => navigateToView('worksheets')}
+          onOpenWorksheets={() => handleOpenWorksheets('all')}
           onOpenFAQ={() => navigateToView('faq')}
           onOpenPhilosophy={() => navigateToView('philosophy')}
           onOpenCbseGuide={() => navigateToView('cbse-guide')}
@@ -869,7 +877,7 @@ const Dashboard: React.FC = () => {
 
       <SupportWidget
         onOpenFAQ={() => navigateToView('faq')}
-        onOpenWorksheets={() => navigateToView('worksheets')}
+        onOpenWorksheets={() => handleOpenWorksheets('all')}
       />
 
       <AuthModal />

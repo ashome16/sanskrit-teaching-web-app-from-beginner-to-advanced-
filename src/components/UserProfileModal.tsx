@@ -167,7 +167,7 @@ const UserProfileModal: React.FC = () => {
   const handleClearSavedPasswordOnDevice = () => {
     removeStoredRememberedCredentials();
     setIsRememberedOnDevice(false);
-    setDeviceSaveMessage('Saved password removed from this browser.');
+    setDeviceSaveMessage('Saved login credentials removed from this browser.');
     setTimeout(() => setDeviceSaveMessage(null), 3000);
   };
 
@@ -390,17 +390,17 @@ const UserProfileModal: React.FC = () => {
               {/* Remember on Device status */}
               <div className="profile-remember-status-row">
                 <div className="profile-remember-info">
-                  <span className="profile-remember-icon">{isRememberedOnDevice ? '💾' : '📱'}</span>
+                  <span className="profile-remember-icon">{isRememberedOnDevice ? '🔐' : '📱'}</span>
                   <div>
                     <div className="profile-remember-title">
                       {isRememberedOnDevice
-                        ? 'Password is saved on this browser'
-                        : 'Password is not saved on this device'}
+                        ? 'Login saved on this browser'
+                        : 'Login not saved on this device'}
                     </div>
                     <div className="profile-remember-sub">
                       {isRememberedOnDevice
                         ? 'Fast 1-click login enabled on this browser.'
-                        : 'You will need to re-enter your password each time you log in.'}
+                        : 'You will need to enter your password each time you log in.'}
                     </div>
                   </div>
                 </div>
@@ -410,9 +410,9 @@ const UserProfileModal: React.FC = () => {
                     type="button"
                     className="profile-clear-remember-btn"
                     onClick={handleClearSavedPasswordOnDevice}
-                    title="Remove saved password from this browser"
+                    title="Remove saved login credentials from this browser"
                   >
-                    Forget / Clear Saved
+                    🗑️ Remove Saved Login
                   </button>
                 ) : isPromptingQuickSave ? (
                   <form onSubmit={handleSavePasswordOnDevice} style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
@@ -427,7 +427,7 @@ const UserProfileModal: React.FC = () => {
                       autoComplete="current-password"
                     />
                     <button type="submit" className="profile-save-remember-btn">Save</button>
-                    <button type="button" className="profile-clear-remember-btn" onClick={() => setIsPromptingQuickSave(false)}>✕</button>
+                    <button type="button" className="profile-clear-remember-btn" onClick={() => setIsPromptingQuickSave(false)}>Cancel</button>
                   </form>
                 ) : (
                   <button
@@ -435,7 +435,7 @@ const UserProfileModal: React.FC = () => {
                     className="profile-save-remember-btn"
                     onClick={() => handleSavePasswordOnDevice()}
                   >
-                    💾 Remember / Save Password
+                    🔐 Save Login on this Device
                   </button>
                 )}
               </div>
