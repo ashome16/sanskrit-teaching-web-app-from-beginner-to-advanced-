@@ -425,7 +425,7 @@ const Grammar: React.FC<GrammarProps> = ({
       color: '#1d4ed8',
       borderColor: '#2563eb',
       bgGradient: 'linear-gradient(180deg, #ffffff 0%, #eff6ff 100%)',
-      keywords: ['numbers', 'numerals', 'counting', '1 to 100', 'ordinals', 'scales', 'sankhya', 'संख्या', 'गिनती'],
+      keywords: ['numbers', 'numerals', 'counting', '1 to 100', 'ordinals', 'scales', 'sankhya', 'संख्या', 'गिनती', 'ankanama', 'ankanam vamato gatih', 'अङ्कानां वामतो गतिः', 'compose', 'arithmetic', 'algorithm'],
     },
     {
       id: 'sound-teams' as GrammarTopic,
@@ -473,7 +473,7 @@ const Grammar: React.FC<GrammarProps> = ({
         if (text.includes(qClean)) return true;
         // Katapayadi extra tags
         if (art.id === 'katapayadi-number-words') {
-          const kataTags = ['phi', 'golden ratio', 'pi', 'melakarta', 'raga', 'ragas', 'narayaniyam', 'astronomy', 'chronogram', 'madhava', 'virahanka', 'hemacandra'];
+          const kataTags = ['phi', 'golden ratio', 'pi', 'melakarta', 'raga', 'ragas', 'narayaniyam', 'astronomy', 'chronogram', 'madhava', 'virahanka', 'hemacandra', 'ankanam', 'ankanam vamato gatih', 'अङ्कानां वामतो गतिः', 'compose', 'arithmetic', 'algorithm'];
           if (kataTags.some((tag) => tag.includes(qClean) || qClean.includes(tag))) return true;
         }
         return false;

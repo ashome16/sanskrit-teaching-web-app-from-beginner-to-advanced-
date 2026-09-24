@@ -478,6 +478,11 @@ export const SEARCH_INDEX: SearchItem[] = [
       'mahashankha',
       'संख्या',
       'गिनती',
+      'ankanam vamato gatih',
+      'अङ्कानां वामतो गतिः',
+      'compose',
+      'grammar is arithmetic',
+      'place value',
     ],
     target: {
       view: 'grammar',
