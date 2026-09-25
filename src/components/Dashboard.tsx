@@ -956,6 +956,8 @@ const Dashboard: React.FC = () => {
             onOpenReader={() => openDeepakam()}
             onOpenPhilosophy={() => navigateToView('philosophy')}
             onOpenGrammar={handleOpenGrammar}
+            onOpenRegister={() => openAuthModal('register')}
+            onOpenLogin={() => openAuthModal('login')}
           />
         )}
         {activeView === 'quiz' && (

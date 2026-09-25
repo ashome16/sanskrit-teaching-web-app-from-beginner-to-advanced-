@@ -20,6 +20,26 @@ export interface VedicSubSutra {
   application: string;
 }
 
+export interface VedicSubSutraProblem {
+  id: string;
+  question: string;
+  hint: string;
+  answer: string;
+  acceptedAnswers?: string[];
+  solutionSteps: string[];
+  explanation: string;
+}
+
+export interface VedicSubSutraWorksheet {
+  subSutraId: number;
+  title: string;
+  titleSa: string;
+  level: 'Prāthamika (Beginner)' | 'Madhyama (Intermediate)' | 'Prauḍha (Advanced)';
+  targetTimeMinutes: number;
+  description: string;
+  problems: VedicSubSutraProblem[];
+}
+
 export interface QuizQuestion {
   id: number;
   question: string;
@@ -1033,3 +1053,689 @@ export const VEDIC_QUIZ_QUESTIONS: QuizQuestion[] = [
     quickTrick: '104 + 7 = 111, and 4 × 7 = 28!'
   }
 ];
+
+export const VEDIC_SUBSUTRA_WORKSHEETS: VedicSubSutraWorksheet[] = [
+  {
+    subSutraId: 1,
+    title: 'Ānurūpyeṇa (Proportionately)',
+    titleSa: 'आनुरूप्येण अभ्यास-पत्रकम्',
+    level: 'Madhyama (Intermediate)',
+    targetTimeMinutes: 5,
+    description: 'Master working bases (such as 20, 50, 200, 500) where standard base multiplication is scaled proportionately.',
+    problems: [
+      {
+        id: 'ss1-p1',
+        question: 'Calculate 48 × 54 using working base 50 (Theoretical base 100 ÷ 2).',
+        hint: 'Deviations from 50 are -2 and +4. Cross-add: 48 + 4 = 52. Proportion: divide by 2 to get LHS. RHS is (-2) × (+4) = -8.',
+        answer: '2592',
+        acceptedAnswers: ['2592', '2,592'],
+        solutionSteps: [
+          'Theoretical Base = 100; Working Base = 50 (Ratio = ÷ 2).',
+          'Deviations from 50: 48 is -2, 54 is +4.',
+          'Cross-addition: 48 + 4 = 52 (or 54 - 2 = 52).',
+          'Proportionately divide LHS by 2: 52 ÷ 2 = 26 (represents 2,600).',
+          'RHS product of deviations: (-2) × (+4) = -08.',
+          'Combine: 2,600 - 8 = 2,592.'
+        ],
+        explanation: 'By scaling the theoretical base by 1/2, Ānurūpyeṇa enables rapid base arithmetic for numbers far from 10 or 100.'
+      },
+      {
+        id: 'ss1-p2',
+        question: 'Calculate 196 × 204 using working base 200 (Theoretical base 100 × 2).',
+        hint: 'Deviations from 200 are -4 and +4. Cross-add: 196 + 4 = 200. Proportion: multiply LHS by 2.',
+        answer: '39984',
+        acceptedAnswers: ['39984', '39,984'],
+        solutionSteps: [
+          'Theoretical Base = 100; Working Base = 200 (Ratio = × 2).',
+          'Deviations from 200: 196 is -4, 204 is +4.',
+          'Cross-addition: 196 + 4 = 200.',
+          'Scale LHS by proportion factor 2: 200 × 2 = 400 (represents 40,000).',
+          'RHS product: (-4) × (+4) = -16.',
+          'Combine: 40,000 - 16 = 39,984.'
+        ],
+        explanation: 'Working base 200 doubles the cross-sum before appending the deviation difference.'
+      },
+      {
+        id: 'ss1-p3',
+        question: 'Calculate 492 × 498 using working base 500 (Theoretical base 1,000 ÷ 2).',
+        hint: 'Deviations: -8 and -2. Cross-add: 492 - 2 = 490. Divide by 2 = 245. RHS is (-8) × (-2) = 016 (3 digits for base 1000).',
+        answer: '245016',
+        acceptedAnswers: ['245016', '245,016'],
+        solutionSteps: [
+          'Theoretical Base = 1,000; Working Base = 500 (Ratio = ÷ 2).',
+          'Deviations: 492 is -8, 498 is -2.',
+          'Cross-operation: 492 - 2 = 490.',
+          'Proportionately divide by 2: 490 ÷ 2 = 245.',
+          'RHS product: (-8) × (-2) = 016 (3 digits because base 1,000 has 3 zeros).',
+          'Combine: 245,016.'
+        ],
+        explanation: 'Three digits on the RHS correspond to the three zeros of base 1,000.'
+      }
+    ]
+  },
+  {
+    subSutraId: 2,
+    title: 'Śiṣyate Śeṣasaṁjñaḥ (The Remainder Remains a Constant)',
+    titleSa: 'शिष्यते शेषसंज्ञः अभ्यास-पत्रकम्',
+    level: 'Madhyama (Intermediate)',
+    targetTimeMinutes: 4,
+    description: 'Rapid polynomial remainder determinations and cyclical quotient extractions.',
+    problems: [
+      {
+        id: 'ss2-p1',
+        question: 'Find the remainder when P(x) = 2x³ - 5x² + 4x - 7 is divided by (x - 2).',
+        hint: 'By Śiṣyate Śeṣasaṁjñaḥ (Remainder Theorem), substitute x = 2 directly into P(x).',
+        answer: '-3',
+        acceptedAnswers: ['-3'],
+        solutionSteps: [
+          'Set divisor to zero: x - 2 = 0 ➔ x = 2.',
+          'Substitute x = 2 into P(x):',
+          'P(2) = 2(2)³ - 5(2)² + 4(2) - 7',
+          'P(2) = 2(8) - 5(4) + 8 - 7',
+          'P(2) = 16 - 20 + 8 - 7 = -3.',
+          'The constant remainder is -3.'
+        ],
+        explanation: 'The sub-sutra affirms that remainder evaluation requires only constant substitution into the dividend.'
+      },
+      {
+        id: 'ss2-p2',
+        question: 'Find the remainder when 3x² + 5x + 9 is divided by (x + 1).',
+        hint: 'Set x + 1 = 0 ➔ x = -1, and evaluate the expression.',
+        answer: '7',
+        acceptedAnswers: ['7', '+7'],
+        solutionSteps: [
+          'Set divisor to zero: x + 1 = 0 ➔ x = -1.',
+          'Substitute: 3(-1)² + 5(-1) + 9',
+          '= 3(1) - 5 + 9',
+          '= 3 - 5 + 9 = 7.',
+          'The remainder is 7.'
+        ],
+        explanation: 'Eliminates tedious long division by reducing it to simple integer arithmetic.'
+      },
+      {
+        id: 'ss2-p3',
+        question: 'Find the remainder when x⁴ - 2x² + 5 is divided by (x - 3).',
+        hint: 'Evaluate at x = 3: 3⁴ - 2(3²) + 5.',
+        answer: '68',
+        acceptedAnswers: ['68'],
+        solutionSteps: [
+          'Set x = 3.',
+          '3⁴ = 81.',
+          '2(3²) = 2(9) = 18.',
+          'Remainder = 81 - 18 + 5 = 68.'
+        ],
+        explanation: 'Direct evaluation remains constant and exact regardless of polynomial power.'
+      }
+    ]
+  },
+  {
+    subSutraId: 3,
+    title: 'Ādyamādyenāntyamantyena (First by First and Last by Last)',
+    titleSa: 'आद्यमाद्येनान्त्यमन्त्येन अभ्यास-पत्रकम्',
+    level: 'Prāthamika (Beginner)',
+    targetTimeMinutes: 4,
+    description: 'Instant inspection and verification of extreme terms in quadratic factoring and algebraic expansions.',
+    problems: [
+      {
+        id: 'ss3-p1',
+        question: 'For 2x² + 7x + 3 = (2x + 1)(x + k), find the constant k by inspecting the first and last terms.',
+        hint: 'Last by last: 1 × k = 3.',
+        answer: '3',
+        acceptedAnswers: ['3', '+3'],
+        solutionSteps: [
+          'First term verification: 2x · x = 2x².',
+          'Last term principle: 1 · k = 3.',
+          'Therefore, k = 3 ÷ 1 = 3.',
+          'Factors are (2x + 1)(x + 3).'
+        ],
+        explanation: 'Extreme terms fix both the leading coefficients and constant terms immediately.'
+      },
+      {
+        id: 'ss3-p2',
+        question: 'When expanding (4x + 3)(3x + 5), what is the sum of the first coefficient (a) and last constant (c) in ax² + bx + c?',
+        hint: 'First by first: a = 4 × 3 = 12. Last by last: c = 3 × 5 = 15.',
+        answer: '27',
+        acceptedAnswers: ['27'],
+        solutionSteps: [
+          'First coefficient a = 4 × 3 = 12.',
+          'Last constant c = 3 × 5 = 15.',
+          'Sum a + c = 12 + 15 = 27.'
+        ],
+        explanation: 'First and last terms can be written down at glance without computing middle terms.'
+      },
+      {
+        id: 'ss3-p3',
+        question: 'If (3x + 2)(x + 4) = 3x² + bx + 8, what is the middle coefficient b obtained from cross-multiplying?',
+        hint: 'Inner product + outer product: (2 × 1) + (3 × 4).',
+        answer: '14',
+        acceptedAnswers: ['14'],
+        solutionSteps: [
+          'Inner product: 2 · x = 2x.',
+          'Outer product: 3x · 4 = 12x.',
+          'Sum = 2x + 12x = 14x.',
+          'Therefore, b = 14.'
+        ],
+        explanation: 'Cross-multiplication of inner and outer terms provides the middle coefficient.'
+      }
+    ]
+  },
+  {
+    subSutraId: 4,
+    title: 'Kevalaiḥ Saptakaṁ Guṇyāt (For 7 the Multiplicand is 143)',
+    titleSa: 'केवलैः सप्तकं गुण्यात् अभ्यास-पत्रकम्',
+    level: 'Madhyama (Intermediate)',
+    targetTimeMinutes: 4,
+    description: 'Mental shortcuts for decimal cycles of fraction families with denominator 7.',
+    problems: [
+      {
+        id: 'ss4-p1',
+        question: 'What is the complete 6-digit repeating decimal cycle of 1/7?',
+        hint: '1/7 = 0.142857142857... Enter the 6 recurring digits.',
+        answer: '142857',
+        acceptedAnswers: ['142857', '0.142857'],
+        solutionSteps: [
+          '7 × 143 = 1001.',
+          '1/7 = 143 ÷ 1001 = 0.142857142857...',
+          'The repeating 6-digit cycle is 142857.'
+        ],
+        explanation: 'Multiplicand 143 links 7 to 1001, defining the cyclic ring (1-4-2-8-5-7).'
+      },
+      {
+        id: 'ss4-p2',
+        question: 'Using the cyclic ring 142857, what are the 6 repeating decimal digits for 3/7?',
+        hint: '30 ÷ 7 = 4 with remainder 2. Trace the 142857 ring starting from digit 4.',
+        answer: '428571',
+        acceptedAnswers: ['428571', '0.428571'],
+        solutionSteps: [
+          '3 ÷ 7 starts at 0.4... (since 30 ÷ 7 = 4).',
+          'Follow the cyclic ring 142857 starting from 4: 4 ➔ 2 ➔ 8 ➔ 5 ➔ 7 ➔ 1.',
+          'Result: 3/7 = 0.428571428571...'
+        ],
+        explanation: 'All fractions n/7 (for n=1..6) have the exact same cyclic permutation starting at different digits.'
+      },
+      {
+        id: 'ss4-p3',
+        question: 'What are the 6 repeating decimal digits of 2/7?',
+        hint: '20 ÷ 7 = 2 with remainder 6. Trace starting from digit 2.',
+        answer: '285714',
+        acceptedAnswers: ['285714', '0.285714'],
+        solutionSteps: [
+          '2 ÷ 7 begins with 0.2...',
+          'Starting from digit 2 in 142857 gives 2 ➔ 8 ➔ 5 ➔ 7 ➔ 1 ➔ 4.',
+          'Result: 285714.'
+        ],
+        explanation: 'Mental cyclic shift gives the answer in under 2 seconds.'
+      }
+    ]
+  },
+  {
+    subSutraId: 5,
+    title: 'Veṣṭanam (By Osculation)',
+    titleSa: 'वेष्टनम् अभ्यास-पत्रकम्',
+    level: 'Prauḍha (Advanced)',
+    targetTimeMinutes: 5,
+    description: 'Instant prime divisibility checks using positive (Ekādhika) and negative osculators.',
+    problems: [
+      {
+        id: 'ss5-p1',
+        question: 'What is the positive osculator (Ekādhika P) for testing divisibility by 19?',
+        hint: 'For 19, the next multiple of 10 is 20. Drop the trailing zero.',
+        answer: '2',
+        acceptedAnswers: ['2', '+2'],
+        solutionSteps: [
+          'Divisor ending in 9: add 1 ➔ 19 + 1 = 20.',
+          'Drop the zero (divide by 10): 20 ÷ 10 = 2.',
+          'Therefore, positive osculator P = 2.'
+        ],
+        explanation: 'The osculator P multiplies the units digit to be added iteratively to the truncated number.'
+      },
+      {
+        id: 'ss5-p2',
+        question: 'Test 247 for divisibility by 19 using osculator 2. What is the reduced sum: 24 + (7 × 2)?',
+        hint: 'Truncate last digit 7. Multiply by 2: 14. Add to 24.',
+        answer: '38',
+        acceptedAnswers: ['38'],
+        solutionSteps: [
+          'Truncate 247: remaining = 24, last digit = 7.',
+          'Multiply last digit by osculator 2: 7 × 2 = 14.',
+          'Add: 24 + 14 = 38.',
+          'Since 38 = 19 × 2, 247 is divisible by 19!'
+        ],
+        explanation: 'A 3-digit number is reduced in one step to an easily recognizable multiple.'
+      },
+      {
+        id: 'ss5-p3',
+        question: 'What is the positive osculator P for testing divisibility by 13 (since 13 × 3 = 39)?',
+        hint: '39 ends in 9. Add 1 to get 40, then drop the zero.',
+        answer: '4',
+        acceptedAnswers: ['4', '+4'],
+        solutionSteps: [
+          'Find a multiple of 13 ending in 9: 13 × 3 = 39.',
+          'Add 1: 39 + 1 = 40.',
+          'Drop the zero: P = 4.',
+          'Hence positive osculator for 13 is 4.'
+        ],
+        explanation: 'Any prime can be osculated by finding its multiple ending in 9 or 1.'
+      }
+    ]
+  },
+  {
+    subSutraId: 6,
+    title: 'Yāvadūnaṁ Tāvadūnam (Lessen by Deficiency, Square Deficiency)',
+    titleSa: 'यावदूनं तावदूनम् अभ्यास-पत्रकम्',
+    level: 'Prauḍha (Advanced)',
+    targetTimeMinutes: 6,
+    description: 'Three-part mental cubing formula for numbers close to powers of 10.',
+    problems: [
+      {
+        id: 'ss6-p1',
+        question: 'Calculate 103³ using Yāvadūnaṁ with base 100 (surplus d = 3).',
+        hint: 'Formula: (N + 2d) | 3d² | d³. Here d = 3.',
+        answer: '1092727',
+        acceptedAnswers: ['1092727', '1,092,727'],
+        solutionSteps: [
+          'Base = 100; deviation d = +3.',
+          'LHS = 103 + 2(3) = 109.',
+          'Middle = 3 × (3²) = 3 × 9 = 27.',
+          'RHS = 3³ = 27.',
+          'Combine parts (2 digits each): 109 | 27 | 27 = 1,092,727.'
+        ],
+        explanation: 'Directly yields the cube in three parallel mental calculations.'
+      },
+      {
+        id: 'ss6-p2',
+        question: 'Calculate 102³ using base 100 (surplus d = 2).',
+        hint: 'LHS: 102 + 2(2) = 106. Middle: 3 × 2² = 12. RHS: 2³ = 08.',
+        answer: '1061208',
+        acceptedAnswers: ['1061208', '1,061,208'],
+        solutionSteps: [
+          'Deviation d = +2 from base 100.',
+          'LHS = 102 + 4 = 106.',
+          'Middle = 3 × 4 = 12.',
+          'RHS = 2³ = 08 (padded to 2 digits).',
+          'Combine: 1,061,208.'
+        ],
+        explanation: 'Base 100 requires 2 digits in both middle and RHS segments.'
+      },
+      {
+        id: 'ss6-p3',
+        question: 'Calculate 98³ using base 100 (deficiency d = -2).',
+        hint: 'LHS: 98 - 4 = 94. Middle: 3 × (-2)² = 12. RHS: (-2)³ = -08. Borrow 1 from 12.',
+        answer: '941192',
+        acceptedAnswers: ['941192', '941,192'],
+        solutionSteps: [
+          'Deviation d = -2 from base 100.',
+          'LHS = 98 + 2(-2) = 94.',
+          'Middle = 3 × (-2)² = 12.',
+          'RHS = (-2)³ = -08.',
+          'Borrow 1 from middle: middle becomes 11, RHS becomes 100 - 8 = 92.',
+          'Combine: 941,192.'
+        ],
+        explanation: 'Handling negative cubic deviations via simple base borrowing.'
+      }
+    ]
+  },
+  {
+    subSutraId: 7,
+    title: 'Yāvadūnaṁ Tāvadūnīkṛtya Vargaṁ Ca Yojayet (Base Squaring)',
+    titleSa: 'यावदूनं तावदूनीकृत्य वर्गं च योजयेत् अभ्यास-पत्रकम्',
+    level: 'Prāthamika (Beginner)',
+    targetTimeMinutes: 4,
+    description: 'The universal Vedic squaring shortcut: lessen by deficiency and append the square.',
+    problems: [
+      {
+        id: 'ss7-p1',
+        question: 'Calculate 96² using Yāvadūnaṁ Tāvadūnīkṛtya (Base 100).',
+        hint: 'Deficiency is 4. LHS: 96 - 4 = 92. RHS: 4² = 16.',
+        answer: '9216',
+        acceptedAnswers: ['9216', '9,216'],
+        solutionSteps: [
+          'Base = 100; deficiency = 100 - 96 = 4.',
+          'LHS: Lessen number by deficiency: 96 - 4 = 92.',
+          'RHS: Square the deficiency: 4² = 16.',
+          'Combine: 9,216.'
+        ],
+        explanation: 'One of the most famous and widely celebrated Vedic mental math techniques.'
+      },
+      {
+        id: 'ss7-p2',
+        question: 'Calculate 107² using base 100 (surplus = 7).',
+        hint: 'LHS: 107 + 7 = 114. RHS: 7² = 49.',
+        answer: '11449',
+        acceptedAnswers: ['11449', '11,449'],
+        solutionSteps: [
+          'Surplus over 100 = +7.',
+          'LHS: 107 + 7 = 114.',
+          'RHS: 7² = 49.',
+          'Combine: 11,449.'
+        ],
+        explanation: 'Works identically for numbers above the base by adding the surplus.'
+      },
+      {
+        id: 'ss7-p3',
+        question: 'Calculate 994² using base 1,000 (deficiency = 6).',
+        hint: 'LHS: 994 - 6 = 988. RHS: 6² = 036 (3 digits for base 1000).',
+        answer: '988036',
+        acceptedAnswers: ['988036', '988,036'],
+        solutionSteps: [
+          'Base = 1,000; deficiency = 6.',
+          'LHS: 994 - 6 = 988.',
+          'RHS: 6² = 36 ➔ written as 036 (3 digits).',
+          'Combine: 988,036.'
+        ],
+        explanation: 'Instant 6-digit mental square in under 3 seconds.'
+      }
+    ]
+  },
+  {
+    subSutraId: 8,
+    title: 'Antyayordaśake\'pi (When Final Digits Sum to 10)',
+    titleSa: 'अन्त्ययोर्दशकेऽपि अभ्यास-पत्रकम्',
+    level: 'Prāthamika (Beginner)',
+    targetTimeMinutes: 3,
+    description: 'Rapid product when units sum to 10 and all previous digits are identical.',
+    problems: [
+      {
+        id: 'ss8-p1',
+        question: 'Calculate 43 × 47 using Antyayordaśake\'pi.',
+        hint: 'Tens match (4), units 3 + 7 = 10. Left: 4 × 5 = 20. Right: 3 × 7 = 21.',
+        answer: '2021',
+        acceptedAnswers: ['2021', '2,021'],
+        solutionSteps: [
+          'Check condition: 3 + 7 = 10; tens digit = 4.',
+          'Left part: 4 × (4 + 1) = 4 × 5 = 20.',
+          'Right part: 3 × 7 = 21.',
+          'Combine: 2,021.'
+        ],
+        explanation: 'Combines Ekādhikena on the tens with direct product on the units.'
+      },
+      {
+        id: 'ss8-p2',
+        question: 'Calculate 62 × 68.',
+        hint: 'Tens: 6 × 7 = 42. Units: 2 × 8 = 16.',
+        answer: '4216',
+        acceptedAnswers: ['4216', '4,216'],
+        solutionSteps: [
+          'Check: 2 + 8 = 10; identical tens = 6.',
+          'Left: 6 × 7 = 42.',
+          'Right: 2 × 8 = 16.',
+          'Combine: 4,216.'
+        ],
+        explanation: 'Eliminates multi-step multiplication instantly.'
+      },
+      {
+        id: 'ss8-p3',
+        question: 'Calculate 91 × 99.',
+        hint: 'Left: 9 × 10 = 90. Right: 1 × 9 = 09 (two digits required).',
+        answer: '9009',
+        acceptedAnswers: ['9009', '9,009'],
+        solutionSteps: [
+          'Left: 9 × (9 + 1) = 90.',
+          'Right: 1 × 9 = 9 ➔ format with 2 digits as 09.',
+          'Combine: 9,009.'
+        ],
+        explanation: 'Remembering zero-padding on single digit products ensures exact place value.'
+      }
+    ]
+  },
+  {
+    subSutraId: 9,
+    title: 'Antyayoreva (Only the Last Terms)',
+    titleSa: 'अन्त्ययोरेव अभ्यास-पत्रकम्',
+    level: 'Madhyama (Intermediate)',
+    targetTimeMinutes: 3,
+    description: 'Rapid deduction of constant terms in polynomial expansions and rational functions.',
+    problems: [
+      {
+        id: 'ss9-p1',
+        question: 'Find the constant term in the expansion of (x + 3)(x - 4)(x + 5).',
+        hint: 'Consider only the last terms: (+3) × (-4) × (+5).',
+        answer: '-60',
+        acceptedAnswers: ['-60'],
+        solutionSteps: [
+          'Independent constant term equals the product of individual constants.',
+          'By Antyayoreva: 3 × (-4) × 5.',
+          '3 × (-4) = -12; -12 × 5 = -60.',
+          'The constant term is -60.'
+        ],
+        explanation: 'Higher-degree polynomials reveal their constant term immediately upon inspecting trailing numbers.'
+      },
+      {
+        id: 'ss9-p2',
+        question: 'Find the constant term of the rational expression [(x + 6)(x - 2)] / [(x + 4)(x + 3)].',
+        hint: 'Evaluate at x = 0 (only the last terms): [6 × (-2)] / [4 × 3].',
+        answer: '-1',
+        acceptedAnswers: ['-1'],
+        solutionSteps: [
+          'Numerator constant: 6 × (-2) = -12.',
+          'Denominator constant: 4 × 3 = 12.',
+          'Ratio = -12 ÷ 12 = -1.'
+        ],
+        explanation: 'Rational limits and asymptotes benefit directly from evaluating only terminal terms.'
+      },
+      {
+        id: 'ss9-p3',
+        question: 'In the product (2x + 5)(3x - 2), what is the value of the independent constant?',
+        hint: 'Multiply only the last terms: 5 × (-2).',
+        answer: '-10',
+        acceptedAnswers: ['-10'],
+        solutionSteps: [
+          'Multiply constants: 5 · (-2) = -10.',
+          'The independent term is -10.'
+        ],
+        explanation: 'Directly isolates the term independent of x.'
+      }
+    ]
+  },
+  {
+    subSutraId: 10,
+    title: 'Samuccayaguṇitaḥ (Sum of Coefficients into the Product)',
+    titleSa: 'समुच्चयगुणितः अभ्यास-पत्रकम्',
+    level: 'Madhyama (Intermediate)',
+    targetTimeMinutes: 4,
+    description: 'Verifying polynomial identities: the sum of coefficients in factors equals sum of coefficients in product.',
+    problems: [
+      {
+        id: 'ss10-p1',
+        question: 'For (2x + 3)(3x + 4) = 6x² + 17x + 12, what is the verified sum of coefficients on both sides?',
+        hint: 'Evaluate at x = 1: (2 + 3) × (3 + 4) = 5 × 7.',
+        answer: '35',
+        acceptedAnswers: ['35'],
+        solutionSteps: [
+          'Sum of coefficients in (2x + 3): 2 + 3 = 5.',
+          'Sum of coefficients in (3x + 4): 3 + 4 = 7.',
+          'Product of sums = 5 × 7 = 35.',
+          'RHS sum: 6 + 17 + 12 = 35.',
+          'Both sides equal 35 (identity verified!).'
+        ],
+        explanation: 'Provides an infallible algebraic check without expanding terms.'
+      },
+      {
+        id: 'ss10-p2',
+        question: 'What is the sum of coefficients in the expansion of (4x - 1)³?',
+        hint: 'Substitute x = 1: (4(1) - 1)³ = 3³.',
+        answer: '27',
+        acceptedAnswers: ['27'],
+        solutionSteps: [
+          'Substitute x = 1 into (4x - 1)³.',
+          '(4 - 1)³ = 3³.',
+          '3³ = 27.',
+          'The sum of coefficients is 27.'
+        ],
+        explanation: 'Bypasses lengthy binomial expansions to obtain total coefficient magnitude.'
+      },
+      {
+        id: 'ss10-p3',
+        question: 'If (x² - 3x + 5)(2x - 1) is expanded, what is the sum of coefficients of the resulting polynomial?',
+        hint: 'Evaluate at x = 1: (1 - 3 + 5) × (2 - 1).',
+        answer: '3',
+        acceptedAnswers: ['3'],
+        solutionSteps: [
+          'First factor: 1 - 3 + 5 = 3.',
+          'Second factor: 2 - 1 = 1.',
+          'Product = 3 × 1 = 3.'
+        ],
+        explanation: 'Works across polynomials of any degree.'
+      }
+    ]
+  },
+  {
+    subSutraId: 11,
+    title: 'Lopanasthāpanābhyām (By Elimination and Retention)',
+    titleSa: 'लोपनस्थापनाभ्याम् अभ्यास-पत्रकम्',
+    level: 'Prauḍha (Advanced)',
+    targetTimeMinutes: 5,
+    description: 'Factoring multi-variable polynomials by systematically eliminating one variable, solving, and assembling.',
+    problems: [
+      {
+        id: 'ss11-p1',
+        question: 'In Lopanasthāpanābhyām, to factorize 2x² + 5xy + 2y² + 7x + 7y + 3, if we eliminate y (set y = 0), what is the constant k when 2x² + 7x + 3 is factored into (2x + 1)(x + k)?',
+        hint: '2x² + 7x + 3 = (2x + 1)(x + 3).',
+        answer: '3',
+        acceptedAnswers: ['3'],
+        solutionSteps: [
+          'Eliminate variable y by setting y = 0.',
+          'Expression reduces to: 2x² + 7x + 3.',
+          'Factorizing: 2x² + 6x + x + 3 = (2x + 1)(x + 3).',
+          'Hence constant k = 3.'
+        ],
+        explanation: 'Eliminating y isolates the pure x-structure.'
+      },
+      {
+        id: 'ss11-p2',
+        question: 'When x is eliminated (x = 0) in x² + 3xy + 2y² + 4x + 5y + 3, we get 2y² + 5y + 3 = (2y + 3)(y + m). What is m?',
+        hint: 'Last term 3 ÷ 3 = 1.',
+        answer: '1',
+        acceptedAnswers: ['1'],
+        solutionSteps: [
+          'Set x = 0 to eliminate x.',
+          'Remaining: 2y² + 5y + 3.',
+          'Factorizing: (2y + 3)(y + 1).',
+          'Therefore, m = 1.'
+        ],
+        explanation: 'Symmetrically solves the y-component.'
+      },
+      {
+        id: 'ss11-p3',
+        question: 'For assembled factors (x + 2y + 3)(x + y + 1), what is the coefficient of the xy cross term in its expansion?',
+        hint: 'Cross terms: (x · y) + (2y · x) = 3xy.',
+        answer: '3',
+        acceptedAnswers: ['3'],
+        solutionSteps: [
+          'Multiply x by y = xy.',
+          'Multiply 2y by x = 2xy.',
+          'Sum = xy + 2xy = 3xy.',
+          'Coefficient is 3 (matches original expression!).'
+        ],
+        explanation: 'Cross terms confirm that the independent factorizations combine seamlessly.'
+      }
+    ]
+  },
+  {
+    subSutraId: 12,
+    title: 'Vilokanam (By Observation / Inspection)',
+    titleSa: 'विलोकनम् अभ्यास-पत्रकम्',
+    level: 'Prāthamika (Beginner)',
+    targetTimeMinutes: 3,
+    description: 'Mental inspection of symmetry, reciprocal relationships, and simultaneous balances.',
+    problems: [
+      {
+        id: 'ss12-p1',
+        question: 'Solve for x by Vilokanam (inspection): x + 1/x = 2.5 (where x > 1).',
+        hint: 'Rewrite 2.5 as 2 + 1/2. By visual symmetry with x + 1/x, what is x?',
+        answer: '2',
+        acceptedAnswers: ['2'],
+        solutionSteps: [
+          'Write 2.5 as the sum of an integer and its reciprocal: 2 + 1/2.',
+          'Compare: x + 1/x = 2 + 1/2.',
+          'By inspection, x = 2 (or 1/2).',
+          'Since x > 1, x = 2.'
+        ],
+        explanation: 'Bypasses setting up a quadratic equation through visual pattern recognition.'
+      },
+      {
+        id: 'ss12-p2',
+        question: 'Solve for x by inspection: x + 1/x = 10/3 (where x > 1).',
+        hint: '10/3 = 3 + 1/3.',
+        answer: '3',
+        acceptedAnswers: ['3'],
+        solutionSteps: [
+          'Decompose 10/3 into 3 + 1/3.',
+          'Compare directly with x + 1/x.',
+          'x = 3.'
+        ],
+        explanation: 'Symmetry allows immediate solution without paper and pencil.'
+      },
+      {
+        id: 'ss12-p3',
+        question: 'Inspect the system: x + y = 12 and x - y = 4. What is the value of x?',
+        hint: 'x is the arithmetic mean of sum and difference: (12 + 4) ÷ 2.',
+        answer: '8',
+        acceptedAnswers: ['8'],
+        solutionSteps: [
+          'In any sum and difference pair, x = (Sum + Diff) / 2.',
+          'x = (12 + 4) / 2 = 16 / 2 = 8.',
+          '(And y = (12 - 4) / 2 = 4).'
+        ],
+        explanation: 'Observation solves two simultaneous equations in one mental breath.'
+      }
+    ]
+  },
+  {
+    subSutraId: 13,
+    title: 'Guṇitasamuccayaḥ Samuccayaguṇakaḥ (Product of Sum is Sum of Products)',
+    titleSa: 'गुणितसमुच्चयः समुच्चयगुणकः अभ्यास-पत्रकम्',
+    level: 'Prauḍha (Advanced)',
+    targetTimeMinutes: 4,
+    description: 'Higher-degree verification matrix: product of coefficient sums equals sum of expansion coefficients.',
+    problems: [
+      {
+        id: 'ss13-p1',
+        question: 'For (x + 2)(x + 3)(x + 4) = x³ + 9x² + 26x + 24, verify by Guṇitasamuccayaḥ: what is the product of the sums of the coefficients of the three binomial factors?',
+        hint: 'Evaluate each factor at x = 1: (1 + 2) × (1 + 3) × (1 + 4).',
+        answer: '60',
+        acceptedAnswers: ['60'],
+        solutionSteps: [
+          'Factor 1 sum: 1 + 2 = 3.',
+          'Factor 2 sum: 1 + 3 = 4.',
+          'Factor 3 sum: 1 + 4 = 5.',
+          'Product of factor sums = 3 × 4 × 5 = 60.',
+          'RHS expansion sum: 1 + 9 + 26 + 24 = 60.',
+          'Both equal 60, confirming the cubic expansion is 100% correct.'
+        ],
+        explanation: 'A rigorous verification safeguard for factoring and expanding higher-order polynomials.'
+      },
+      {
+        id: 'ss13-p2',
+        question: 'For the polynomial product (2x - 1)(3x + 2)(x - 2), what is the sum of coefficients of the expanded polynomial?',
+        hint: 'Evaluate at x = 1: (2 - 1) × (3 + 2) × (1 - 2).',
+        answer: '-5',
+        acceptedAnswers: ['-5'],
+        solutionSteps: [
+          'Factor 1: 2 - 1 = 1.',
+          'Factor 2: 3 + 2 = 5.',
+          'Factor 3: 1 - 2 = -1.',
+          'Product of sums = 1 × 5 × (-1) = -5.',
+          'The expanded polynomial coefficient sum will equal -5.'
+        ],
+        explanation: 'Predicts the coefficient sum before multiplying.'
+      },
+      {
+        id: 'ss13-p3',
+        question: 'Apply Guṇitasamuccayaḥ to (x² + x + 1)(x - 1) = x³ - 1. What is the verified sum of coefficients on both sides?',
+        hint: 'Evaluate factor (x - 1) at x = 1: 1 - 1 = 0.',
+        answer: '0',
+        acceptedAnswers: ['0'],
+        solutionSteps: [
+          'Factor 1 sum: 1 + 1 + 1 = 3.',
+          'Factor 2 sum: 1 - 1 = 0.',
+          'Product: 3 × 0 = 0.',
+          'RHS sum: 1 - 1 = 0.',
+          'Both sides equal 0.'
+        ],
+        explanation: 'Demonstrates zero-product property in coefficient validation.'
+      }
+    ]
+  }
+];
+

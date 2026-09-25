@@ -659,6 +659,697 @@
 }
 
 /* --------------------------------------------------------------------------
+   Sub-Sutras Interactive Practice Worksheets
+   -------------------------------------------------------------------------- */
+.subsutras-header-intro {
+  margin-bottom: 1.25rem;
+}
+
+.subsutras-header-banner {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.subsutras-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.subsutras-member-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+}
+
+.subsutras-member-chip.active {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.subsutras-member-chip.preview {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.subsutras-header-subscribe-btn {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  color: #ffffff;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(180, 83, 9, 0.25);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.subsutras-header-subscribe-btn:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #b45309, #92400e);
+}
+
+.subsutras-quick-select-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.subsutras-quick-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #78350f;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.subsutras-quick-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.subsutras-quick-pill {
+  background: #ffffff;
+  border: 1px solid #ebdccb;
+  color: #4b5563;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.subsutras-quick-pill:hover {
+  border-color: #d97706;
+  color: #92400e;
+  background: #fffdf9;
+}
+
+.subsutras-quick-pill.active {
+  background: #78350f;
+  color: #ffffff;
+  border-color: #78350f;
+  box-shadow: 0 2px 6px rgba(120, 53, 15, 0.2);
+}
+
+.subsutra-table-row.active-row td {
+  background: #fdf6ec !important;
+}
+
+.subsutra-open-ws-btn {
+  background: #fdfbf7;
+  border: 1px solid #d97706;
+  color: #92400e;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.subsutra-open-ws-btn:hover {
+  background: #fef3c7;
+  border-color: #b45309;
+}
+
+.subsutra-open-ws-btn.active {
+  background: #78350f;
+  color: #ffffff;
+  border-color: #78350f;
+}
+
+/* Worksheet Drawer inside Table */
+.subsutra-ws-drawer-tr td {
+  padding: 0 !important;
+  background: #fffdf9;
+  border-bottom: 2px solid #d97706;
+}
+
+.subsutra-ws-drawer-content {
+  padding: 1.5rem 1.75rem;
+  border: 2px solid #fcd34d;
+  border-top: none;
+  background: #ffffff;
+  border-radius: 0 0 14px 14px;
+  box-shadow: inset 0 2px 8px rgba(120, 53, 15, 0.04);
+}
+
+.subsutra-ws-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.subsutra-ws-header-left {
+  flex: 1;
+  min-width: 260px;
+}
+
+.subsutra-ws-tag-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.subsutra-ws-num-badge {
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.subsutra-ws-level-badge {
+  background: #e0e7ff;
+  color: #3730a3;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.subsutra-ws-time-badge {
+  background: #f3f4f6;
+  color: #4b5563;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.subsutra-ws-access-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.subsutra-ws-access-badge.member {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.subsutra-ws-access-badge.trial {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.subsutra-ws-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #78350f;
+  margin: 0.2rem 0 0.35rem 0;
+  font-family: 'Noto Serif Devanagari', Georgia, serif;
+}
+
+.subsutra-ws-description {
+  font-size: 0.88rem;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.subsutra-ws-header-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.subsutra-ws-download-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+.subsutra-ws-download-btn {
+  background: #fef3c7;
+  color: #78350f;
+  border: 1px solid #d97706;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.subsutra-ws-download-btn:hover {
+  background: #fde68a;
+  color: #92400e;
+}
+
+.subsutra-ws-download-toast {
+  font-size: 0.78rem;
+  color: #15803d;
+  font-weight: 600;
+  background: #f0fdf4;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #86efac;
+}
+
+/* Problems List */
+.subsutra-problems-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.subsutra-problem-card {
+  background: #fdfbf7;
+  border: 1px solid #ebdccb;
+  border-radius: 10px;
+  padding: 1.15rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.subsutra-problem-card.problem-correct {
+  border-color: #86efac;
+  background: #f9fdfa;
+}
+
+.subsutra-problem-card.problem-incorrect {
+  border-color: #fca5a5;
+  background: #fffdfd;
+}
+
+.subsutra-problem-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.65rem;
+}
+
+.subsutra-problem-index {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.subsutra-q-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #92400e;
+  background: #fef3c7;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.subsutra-free-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #047857;
+  background: #d1fae5;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.subsutra-problem-tools {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.subsutra-tool-btn {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #4b5563;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.subsutra-tool-btn:hover {
+  background: #f9fafb;
+  color: #1f2937;
+  border-color: #9ca3af;
+}
+
+.subsutra-tool-btn.active {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #f59e0b;
+}
+
+.subsutra-problem-question {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.45;
+  margin-bottom: 0.75rem;
+}
+
+.subsutra-hint-card {
+  background: #fffbeb;
+  border-left: 3px solid #f59e0b;
+  padding: 0.55rem 0.85rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.84rem;
+  color: #78350f;
+  margin-bottom: 0.75rem;
+}
+
+.subsutra-problem-input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+  max-width: 440px;
+}
+
+.subsutra-problem-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+.subsutra-problem-input:focus {
+  outline: none;
+  border-color: #d97706;
+  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.15);
+}
+
+.subsutra-problem-input.input-success {
+  border-color: #22c55e;
+  background: #f0fdf4;
+}
+
+.subsutra-problem-input.input-error {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.subsutra-check-answer-btn {
+  background: #78350f;
+  color: #ffffff;
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.subsutra-check-answer-btn:hover:not(:disabled) {
+  background: #92400e;
+}
+
+.subsutra-check-answer-btn:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.subsutra-feedback-banner {
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.65rem;
+}
+
+.subsutra-feedback-banner.banner-correct {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.subsutra-feedback-banner.banner-incorrect {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.subsutra-solution-steps-card {
+  background: #ffffff;
+  border: 1px dashed #d97706;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  font-size: 0.86rem;
+  color: #374151;
+  margin-top: 0.5rem;
+}
+
+.subsutra-steps-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #92400e;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.subsutra-steps-ans {
+  background: #f0fdf4;
+  color: #166534;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  border: 1px solid #bbf7d0;
+}
+
+.subsutra-steps-ol {
+  margin: 0.35rem 0 0.5rem 1.25rem;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.subsutra-steps-ol li {
+  margin-bottom: 0.25rem;
+}
+
+.subsutra-steps-explanation {
+  margin: 0.35rem 0 0 0;
+  color: #6b7280;
+  font-size: 0.82rem;
+}
+
+/* Locked Card for Non-Subscribers */
+.subsutra-problem-card.locked {
+  background: linear-gradient(135deg, #fdfbf7, #fff7ed);
+  border: 1px dashed #f59e0b;
+  position: relative;
+  overflow: hidden;
+}
+
+.subsutra-locked-ribbon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  margin-bottom: 0.65rem;
+}
+
+.subsutra-locked-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 0.35rem 0;
+}
+
+.subsutra-locked-text {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0 0 0.85rem 0;
+  line-height: 1.45;
+}
+
+.subsutra-locked-btns {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.subsutra-unlock-btn {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  color: #ffffff;
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.45rem 0.95rem;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(180, 83, 9, 0.2);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.subsutra-unlock-btn:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #b45309, #92400e);
+}
+
+.subsutra-login-link-btn {
+  background: none;
+  border: none;
+  color: #78350f;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+}
+
+.subsutra-login-link-btn:hover {
+  color: #92400e;
+}
+
+/* Worksheet Footer */
+.subsutra-ws-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 1.15rem;
+}
+
+.subsutra-score-pill {
+  background: #dcfce7;
+  color: #166534;
+  font-size: 0.88rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid #86efac;
+}
+
+.subsutra-unscored-pill {
+  color: #6b7280;
+  font-size: 0.84rem;
+  font-style: italic;
+}
+
+.subsutra-ws-footer-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.subsutra-check-all-btn {
+  background: #047857;
+  color: #ffffff;
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.subsutra-check-all-btn:hover {
+  background: #065f46;
+}
+
+.subsutra-reset-btn {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #4b5563;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.subsutra-reset-btn:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.subsutra-close-btn {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.subsutra-close-btn:hover {
+  background: #fecaca;
+}
+
+@media (max-width: 768px) {
+  .subsutra-ws-drawer-content {
+    padding: 1rem;
+  }
+  .subsutra-problem-input-group {
+    max-width: 100%;
+    flex-direction: column;
+  }
+  .subsutra-check-answer-btn {
+    width: 100%;
+  }
+  .subsutra-ws-header-actions {
+    align-items: flex-start;
+    width: 100%;
+  }
+  .subsutra-ws-download-btn {
+    width: 100%;
+  }
+  .subsutra-ws-footer-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  .subsutra-check-all-btn,
+  .subsutra-reset-btn,
+  .subsutra-close-btn {
+    width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Speed Math Practice Quiz
    -------------------------------------------------------------------------- */
 .quiz-container {

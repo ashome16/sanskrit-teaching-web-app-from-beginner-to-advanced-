@@ -7,8 +7,14 @@ import {
   VEDIC_QUIZ_QUESTIONS,
   VEDIC_ARTICLES,
   GURU_PARAMPARA,
-  type VedicSutra
+  VEDIC_SUBSUTRA_WORKSHEETS,
+  type VedicSutra,
+  type VedicSubSutraWorksheet,
+  type VedicSubSutraProblem
 } from '../data/vedicMaths';
+import { useAuthStore } from '../store/authStore';
+import { hasPremiumAccess, canDownloadContent } from '../utils/premiumAccess';
+import { downloadBlob, escapeHtml } from '../utils/contentDownload';
 import { playPronunciation } from '../utils/pronunciation';
 import '../styles/vedic-maths.css';
 import '../styles/resources.css';
@@ -21,10 +27,233 @@ export interface VedicMathsProps {
   onOpenReader?: () => void;
   onOpenPhilosophy?: () => void;
   onOpenGrammar?: () => void;
+  onOpenRegister?: () => void;
+  onOpenLogin?: () => void;
 }
 
-const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader, onOpenPhilosophy, onOpenGrammar }) => {
+const VedicMaths: React.FC<VedicMathsProps> = ({
+  onGoHome,
+  onOpenReader,
+  onOpenPhilosophy,
+  onOpenGrammar,
+  onOpenRegister,
+  onOpenLogin
+}) => {
+  const { currentUser, isAdminLoggedIn, openAuthModal, openPaymentModal } = useAuthStore();
+  const isSubscribed = hasPremiumAccess(currentUser, isAdminLoggedIn);
+  const canDownload = canDownloadContent(currentUser, isAdminLoggedIn);
+
   const [activeTab, setActiveTab] = useState<VedicTab>('solvers');
+
+  // Sub-Sutra Practice Worksheet States
+  const [activeWorksheetSubSutraId, setActiveWorksheetSubSutraId] = useState<number | null>(null);
+  const [wsUserAnswers, setWsUserAnswers] = useState<Record<string, string>>({});
+  const [wsFeedback, setWsFeedback] = useState<Record<string, { isCorrect: boolean; checked: boolean }>>({});
+  const [wsShowHints, setWsShowHints] = useState<Record<string, boolean>>({});
+  const [wsShowSteps, setWsShowSteps] = useState<Record<string, boolean>>({});
+  const [wsOverallScore, setWsOverallScore] = useState<Record<number, { score: number; total: number } | null>>({});
+  const [wsIncludeAnswersInDownload, setWsIncludeAnswersInDownload] = useState(false);
+  const [wsDownloadSuccessMsg, setWsDownloadSuccessMsg] = useState<string | null>(null);
+
+  const handleUnlockWorksheet = () => {
+    if (onOpenRegister) {
+      onOpenRegister();
+    } else {
+      openAuthModal('register');
+    }
+  };
+
+  const handleOpenLoginModal = () => {
+    if (onOpenLogin) {
+      onOpenLogin();
+    } else {
+      openAuthModal('login');
+    }
+  };
+
+  const normalizeAnswer = (str: string) => str.trim().toLowerCase().replace(/[, ]+/g, '');
+
+  const handleCheckProblem = (problem: VedicSubSutraProblem) => {
+    const userRaw = wsUserAnswers[problem.id] || '';
+    const userClean = normalizeAnswer(userRaw);
+    if (!userClean) return;
+
+    let isCorrect = false;
+    if (problem.acceptedAnswers && problem.acceptedAnswers.length > 0) {
+      isCorrect = problem.acceptedAnswers.some((ans) => normalizeAnswer(ans) === userClean);
+    } else {
+      isCorrect = normalizeAnswer(problem.answer) === userClean;
+    }
+
+    setWsFeedback((prev) => ({
+      ...prev,
+      [problem.id]: { isCorrect, checked: true }
+    }));
+  };
+
+  const handleCheckAllForSubSutra = (ws: VedicSubSutraWorksheet) => {
+    let correctCount = 0;
+    let totalChecked = 0;
+    const newFeedback = { ...wsFeedback };
+
+    ws.problems.forEach((problem, pIdx) => {
+      if (!isSubscribed && pIdx > 0) return;
+
+      totalChecked++;
+      const userRaw = wsUserAnswers[problem.id] || '';
+      const userClean = normalizeAnswer(userRaw);
+      let isCorrect = false;
+      if (userClean) {
+        if (problem.acceptedAnswers && problem.acceptedAnswers.length > 0) {
+          isCorrect = problem.acceptedAnswers.some((ans) => normalizeAnswer(ans) === userClean);
+        } else {
+          isCorrect = normalizeAnswer(problem.answer) === userClean;
+        }
+      }
+      if (isCorrect) correctCount++;
+      newFeedback[problem.id] = { isCorrect, checked: true };
+    });
+
+    setWsFeedback(newFeedback);
+    setWsOverallScore((prev) => ({
+      ...prev,
+      [ws.subSutraId]: { score: correctCount, total: totalChecked }
+    }));
+  };
+
+  const handleResetSubSutraWorksheet = (ws: VedicSubSutraWorksheet) => {
+    const newAnswers = { ...wsUserAnswers };
+    const newFeedback = { ...wsFeedback };
+    const newHints = { ...wsShowHints };
+    const newSteps = { ...wsShowSteps };
+
+    ws.problems.forEach((p) => {
+      delete newAnswers[p.id];
+      delete newFeedback[p.id];
+      delete newHints[p.id];
+      delete newSteps[p.id];
+    });
+
+    setWsUserAnswers(newAnswers);
+    setWsFeedback(newFeedback);
+    setWsShowHints(newHints);
+    setWsShowSteps(newSteps);
+    setWsOverallScore((prev) => ({
+      ...prev,
+      [ws.subSutraId]: null
+    }));
+  };
+
+  const handleToggleWorksheet = (subSutraId: number) => {
+    setActiveWorksheetSubSutraId((prev) => (prev === subSutraId ? null : subSutraId));
+  };
+
+  const handleDownloadWorksheet = (ws: VedicSubSutraWorksheet) => {
+    if (!canDownload) {
+      if (openPaymentModal) {
+        openPaymentModal();
+      } else if (onOpenRegister) {
+        onOpenRegister();
+      } else {
+        openAuthModal('register');
+      }
+      return;
+    }
+
+    const subSutra = VEDIC_SUBSUTRAS.find((s) => s.id === ws.subSutraId);
+    const questionsHtml = ws.problems
+      .map((p, idx) => {
+        const answerBlock = wsIncludeAnswersInDownload
+          ? `<div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem 0.8rem; margin-top:0.6rem; color:#166534; font-size:0.95rem;">
+              <strong>✓ Vedic Answer:</strong> ${escapeHtml(p.answer)}<br/>
+              <strong>⚡ Vedic Method Steps:</strong>
+              <ol style="margin:0.4rem 0 0.4rem 1.2rem; padding:0;">
+                ${p.solutionSteps.map((s) => `<li>${escapeHtml(s)}</li>`).join('')}
+              </ol>
+              <div style="font-size:0.85rem; color:#15803d; font-style:italic;">${escapeHtml(p.explanation)}</div>
+            </div>`
+          : `<div style="min-height:3rem; border-bottom:1px dotted #9ca3af; margin-top:1rem; margin-bottom:1rem;"></div>`;
+
+        return `
+          <div style="margin:1.25rem 0; padding-bottom:1rem; border-bottom:1px solid #e5e7eb;">
+            <div style="font-size:1.05rem; font-weight:700; color:#1f2937;">
+              Problem ${idx + 1}: ${escapeHtml(p.question)}
+            </div>
+            <div style="font-size:0.88rem; color:#6b7280; margin-top:0.25rem;">
+              <em>Hint:</em> ${escapeHtml(p.hint)}
+            </div>
+            ${answerBlock}
+          </div>
+        `;
+      })
+      .join('');
+
+    const bodyHtml = `
+      <div style="font-family:'Noto Serif Devanagari', Georgia, serif; max-width:800px; margin:0 auto; padding:2rem; color:#1f2937;">
+        <div style="border-bottom:2px solid #b45309; padding-bottom:1rem; margin-bottom:1.5rem; display:flex; justify-content:space-between; align-items:flex-start;">
+          <div>
+            <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:#b45309; font-weight:800;">
+              EdNet Learn Gurukul · Vedic Mathematics
+            </div>
+            <h1 style="font-size:1.6rem; margin:0.35rem 0; color:#78350f;">
+              ${escapeHtml(ws.titleSa)}
+            </h1>
+            <div style="font-size:1.1rem; color:#374151; font-weight:600;">
+              Sub-Sutra #${ws.subSutraId}: ${escapeHtml(ws.title)}
+            </div>
+            <div style="font-size:0.9rem; color:#6b7280; margin-top:0.25rem;">
+              ${escapeHtml(ws.description)}
+            </div>
+          </div>
+          <div style="text-align:right; font-size:0.85rem; color:#4b5563; min-width:180px;">
+            <div>Level: <strong>${escapeHtml(ws.level)}</strong></div>
+            <div>Target Time: <strong>${ws.targetTimeMinutes} mins</strong></div>
+            ${wsIncludeAnswersInDownload ? '<div style="color:#059669; font-weight:700; margin-top:0.25rem;">Teacher Edition (Answer Key)</div>' : '<div style="color:#6b7280;">Student Worksheet</div>'}
+          </div>
+        </div>
+
+        <div style="background:#fef3c7; border:1px solid #fde68a; border-radius:8px; padding:0.8rem 1rem; margin-bottom:1.5rem; font-size:0.9rem;">
+          <div><strong>Sub-Sutra:</strong> ${escapeHtml(subSutra?.sanskrit || '')} (${escapeHtml(subSutra?.transliteration || '')})</div>
+          <div><strong>Meaning:</strong> ${escapeHtml(subSutra?.meaning || '')}</div>
+          <div><strong>Application:</strong> ${escapeHtml(subSutra?.application || '')}</div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; margin-bottom:1.5rem; padding:0.5rem 0; border-bottom:1px dashed #d1d5db; font-size:0.95rem;">
+          <div>Student Name: __________________________________</div>
+          <div>Date: ____________________</div>
+          <div>Score: _______ / ${ws.problems.length}</div>
+        </div>
+
+        <div>
+          ${questionsHtml}
+        </div>
+
+        <div style="margin-top:2.5rem; padding-top:1rem; border-top:1px solid #e5e7eb; font-size:0.8rem; color:#6b7280; text-align:center;">
+          EdNet Learn Gurukul Vedic Mathematics Practice Worksheets · care@ednetlearn.in · © ${new Date().getFullYear()}
+        </div>
+      </div>
+    `;
+
+    const fullHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>${escapeHtml(ws.title)} - Worksheet</title>
+<style>
+  @media print {
+    body { margin: 0; padding: 0; }
+  }
+</style>
+</head>
+<body>
+${bodyHtml}
+</body>
+</html>`;
+
+    downloadBlob(`vedic-subsutra-${ws.subSutraId}-worksheet.html`, fullHtml);
+    setWsDownloadSuccessMsg(`Downloaded Sub-Sutra #${ws.subSutraId} worksheet!`);
+    setTimeout(() => setWsDownloadSuccessMsg(null), 4000);
+  };
 
   // Solver States
   const [activeSolver, setActiveSolver] = useState<SolverKey>('ekadhikena');
@@ -2308,35 +2537,374 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader, onOpenP
               ))}
             </div>
 
-            {/* Sub-Sutras Table */}
+            {/* Sub-Sutras Section with Subscription Practice Worksheets */}
             <div className="subsutras-section">
-              <h2 className="subsutras-title">त्रयोदश उपसूत्राणि · 13 Sub-Sutras (Upa-Sutras)</h2>
-              <p className="subsutras-subtitle">
-                Corollaries that extend the 16 primary sutras into specialized domains such as proportion, divisibility osculation, and factor reduction.
-              </p>
+              <div className="subsutras-header-intro">
+                <h2 className="subsutras-title">त्रयोदश उपसूत्राणि · 13 Sub-Sutras (Upa-Sutras)</h2>
+                <p className="subsutras-subtitle">
+                  Corollaries that extend the 16 primary sutras into specialized domains such as proportion, divisibility osculation, and factor reduction. Each sub-sutra now includes a dedicated <strong>Online Practice Worksheet</strong> with live algorithmic verification!
+                </p>
+              </div>
+
+              {/* Sub-Sutras Navigation Bar & Member Status */}
+              <div className="subsutras-header-banner">
+                <div className="subsutras-status-row">
+                  {isSubscribed ? (
+                    <div className="subsutras-member-chip active">
+                      <span className="chip-icon">👑</span>
+                      <span><strong>Gurukul Member Active:</strong> All 13 Sub-Sutra Interactive Worksheets Unlocked</span>
+                    </div>
+                  ) : (
+                    <div className="subsutras-member-chip preview">
+                      <span className="chip-icon">⭐</span>
+                      <span>
+                        <strong>Member Preview Mode:</strong> Problem 1 open on each Sub-Sutra.
+                      </span>
+                      <button
+                        type="button"
+                        className="subsutras-header-subscribe-btn"
+                        onClick={handleUnlockWorksheet}
+                      >
+                        Unlock All 13 Worksheets
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                <div className="subsutras-quick-select-wrap">
+                  <span className="subsutras-quick-label">⚡ Jump to Practice Worksheet:</span>
+                  <div className="subsutras-quick-pills">
+                    {VEDIC_SUBSUTRAS.map((sub) => (
+                      <button
+                        key={sub.id}
+                        type="button"
+                        className={`subsutras-quick-pill ${activeWorksheetSubSutraId === sub.id ? 'active' : ''}`}
+                        onClick={() => {
+                          setActiveWorksheetSubSutraId(sub.id);
+                          setTimeout(() => {
+                            const el = document.getElementById(`subsutra-ws-${sub.id}`);
+                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                          }, 100);
+                        }}
+                      >
+                        #{sub.id} {sub.transliteration}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
               <div className="subsutras-table-wrap">
                 <table className="subsutras-table">
                   <thead>
                     <tr>
-                      <th style={{ width: '60px' }}>No.</th>
+                      <th style={{ width: '50px' }}>No.</th>
                       <th>उपसूत्रम् (Sanskrit)</th>
                       <th>Transliteration</th>
                       <th>English Meaning</th>
                       <th>Mathematical Application</th>
+                      <th style={{ width: '150px' }}>Online Practice</th>
                     </tr>
                   </thead>
                   <tbody>
                     {VEDIC_SUBSUTRAS.map((sub) => (
-                      <tr key={sub.id}>
-                        <td><strong>#{sub.id}</strong></td>
-                        <td style={{ fontWeight: 700, color: '#78350f', fontFamily: "'Noto Serif Devanagari', serif" }}>
-                          {sub.sanskrit}
-                        </td>
-                        <td style={{ fontStyle: 'italic', color: '#4b5563' }}>{sub.transliteration}</td>
-                        <td style={{ fontWeight: 600 }}>{sub.meaning}</td>
-                        <td style={{ color: '#4b5563' }}>{sub.application}</td>
-                      </tr>
+                      <React.Fragment key={sub.id}>
+                        <tr className={`subsutra-table-row ${activeWorksheetSubSutraId === sub.id ? 'active-row' : ''}`}>
+                          <td><strong>#{sub.id}</strong></td>
+                          <td style={{ fontWeight: 700, color: '#78350f', fontFamily: "'Noto Serif Devanagari', serif" }}>
+                            {sub.sanskrit}
+                          </td>
+                          <td style={{ fontStyle: 'italic', color: '#4b5563' }}>{sub.transliteration}</td>
+                          <td style={{ fontWeight: 600 }}>{sub.meaning}</td>
+                          <td style={{ color: '#4b5563' }}>{sub.application}</td>
+                          <td>
+                            <button
+                              type="button"
+                              className={`subsutra-open-ws-btn ${activeWorksheetSubSutraId === sub.id ? 'active' : ''}`}
+                              onClick={() => handleToggleWorksheet(sub.id)}
+                              title={`Open Practice Worksheet for Sub-Sutra #${sub.id}`}
+                            >
+                              {activeWorksheetSubSutraId === sub.id ? 'Close Sheet ▲' : '📝 Practice Sheet ▼'}
+                            </button>
+                          </td>
+                        </tr>
+
+                        {activeWorksheetSubSutraId === sub.id && (() => {
+                          const ws = VEDIC_SUBSUTRA_WORKSHEETS.find((w) => w.subSutraId === sub.id);
+                          if (!ws) return null;
+                          const scoreInfo = wsOverallScore[ws.subSutraId];
+
+                          return (
+                            <tr className="subsutra-ws-drawer-tr">
+                              <td colSpan={6}>
+                                <div className="subsutra-ws-drawer-content" id={`subsutra-ws-${sub.id}`}>
+                                  {/* Worksheet Card Header */}
+                                  <div className="subsutra-ws-card-header">
+                                    <div className="subsutra-ws-header-left">
+                                      <div className="subsutra-ws-tag-row">
+                                        <span className="subsutra-ws-num-badge">Sub-Sutra #{sub.id}</span>
+                                        <span className="subsutra-ws-level-badge">{ws.level}</span>
+                                        <span className="subsutra-ws-time-badge">⏱️ {ws.targetTimeMinutes} mins</span>
+                                        {isSubscribed ? (
+                                          <span className="subsutra-ws-access-badge member">👑 Gurukul Member Access</span>
+                                        ) : (
+                                          <span className="subsutra-ws-access-badge trial">⭐ Free Preview Mode (Problem 1 Open)</span>
+                                        )}
+                                      </div>
+                                      <h3 className="subsutra-ws-title">
+                                        {ws.titleSa} · {ws.title}
+                                      </h3>
+                                      <p className="subsutra-ws-description">{ws.description}</p>
+                                    </div>
+
+                                    <div className="subsutra-ws-header-actions">
+                                      <label className="subsutra-ws-download-toggle">
+                                        <input
+                                          type="checkbox"
+                                          checked={wsIncludeAnswersInDownload}
+                                          onChange={(e) => setWsIncludeAnswersInDownload(e.target.checked)}
+                                        />
+                                        <span>Include Answer Key in Download</span>
+                                      </label>
+                                      <button
+                                        type="button"
+                                        className="subsutra-ws-download-btn"
+                                        onClick={() => handleDownloadWorksheet(ws)}
+                                        title={canDownload ? "Download printable HTML/PDF worksheet" : "Upgrade to download printable worksheet"}
+                                      >
+                                        📥 Download Printable Sheet
+                                      </button>
+                                      {wsDownloadSuccessMsg && (
+                                        <div className="subsutra-ws-download-toast">
+                                          ✓ {wsDownloadSuccessMsg}
+                                        </div>
+                                      )}
+                                    </div>
+                                  </div>
+
+                                  {/* Problems List */}
+                                  <div className="subsutra-problems-list">
+                                    {ws.problems.map((problem, pIdx) => {
+                                      const isLocked = !isSubscribed && pIdx > 0;
+                                      const feedback = wsFeedback[problem.id];
+                                      const hintShown = !!wsShowHints[problem.id];
+                                      const stepsShown = !!wsShowSteps[problem.id];
+                                      const userVal = wsUserAnswers[problem.id] || '';
+
+                                      if (isLocked) {
+                                        return (
+                                          <div key={problem.id} className="subsutra-problem-card locked">
+                                            <div className="subsutra-locked-ribbon">
+                                              <span className="subsutra-lock-icon">🔒</span>
+                                              <span>Gurukul Member Problem #{pIdx + 1}</span>
+                                            </div>
+                                            <div className="subsutra-locked-body">
+                                              <h4 className="subsutra-locked-title">
+                                                Problem {pIdx + 1}: {problem.question.split('(')[0]}...
+                                              </h4>
+                                              <p className="subsutra-locked-text">
+                                                This interactive worksheet drill, its step-by-step Vedic solution algorithms, and score tracking are available with a Gurukul Subscription or Free Trial.
+                                              </p>
+                                              <div className="subsutra-locked-btns">
+                                                <button
+                                                  type="button"
+                                                  className="subsutra-unlock-btn"
+                                                  onClick={handleUnlockWorksheet}
+                                                >
+                                                  ⭐ Unlock All 13 Sub-Sutra Worksheets
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className="subsutra-login-link-btn"
+                                                  onClick={handleOpenLoginModal}
+                                                >
+                                                  Already a Member? Sign In
+                                                </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        );
+                                      }
+
+                                      return (
+                                        <div
+                                          key={problem.id}
+                                          className={`subsutra-problem-card ${
+                                            feedback?.checked
+                                              ? feedback.isCorrect
+                                                ? 'problem-correct'
+                                                : 'problem-incorrect'
+                                              : ''
+                                          }`}
+                                        >
+                                          <div className="subsutra-problem-card-top">
+                                            <div className="subsutra-problem-index">
+                                              <span className="subsutra-q-badge">Problem {pIdx + 1}</span>
+                                              {!isSubscribed && pIdx === 0 && (
+                                                <span className="subsutra-free-pill">Free Interactive Preview</span>
+                                              )}
+                                            </div>
+                                            <div className="subsutra-problem-tools">
+                                              <button
+                                                type="button"
+                                                className={`subsutra-tool-btn ${hintShown ? 'active' : ''}`}
+                                                onClick={() =>
+                                                  setWsShowHints((prev) => ({
+                                                    ...prev,
+                                                    [problem.id]: !hintShown
+                                                  }))
+                                                }
+                                              >
+                                                💡 {hintShown ? 'Hide Hint' : 'Hint'}
+                                              </button>
+                                              <button
+                                                type="button"
+                                                className={`subsutra-tool-btn ${stepsShown ? 'active' : ''}`}
+                                                onClick={() =>
+                                                  setWsShowSteps((prev) => ({
+                                                    ...prev,
+                                                    [problem.id]: !stepsShown
+                                                  }))
+                                                }
+                                              >
+                                                ⚡ {stepsShown ? 'Hide Vedic Steps' : 'Vedic Steps'}
+                                              </button>
+                                            </div>
+                                          </div>
+
+                                          <div className="subsutra-problem-question">
+                                            {problem.question}
+                                          </div>
+
+                                          {hintShown && (
+                                            <div className="subsutra-hint-card">
+                                              <strong>💡 Vedic Hint:</strong> {problem.hint}
+                                            </div>
+                                          )}
+
+                                          {/* Input & Action Area */}
+                                          <div className="subsutra-problem-input-group">
+                                            <input
+                                              type="text"
+                                              className={`subsutra-problem-input ${
+                                                feedback?.checked
+                                                  ? feedback.isCorrect
+                                                    ? 'input-success'
+                                                    : 'input-error'
+                                                  : ''
+                                              }`}
+                                              placeholder="Enter your calculation answer..."
+                                              value={userVal}
+                                              onChange={(e) =>
+                                                setWsUserAnswers((prev) => ({
+                                                  ...prev,
+                                                  [problem.id]: e.target.value
+                                                }))
+                                              }
+                                              onKeyDown={(e) => {
+                                                if (e.key === 'Enter') {
+                                                  handleCheckProblem(problem);
+                                                }
+                                              }}
+                                            />
+                                            <button
+                                              type="button"
+                                              className="subsutra-check-answer-btn"
+                                              onClick={() => handleCheckProblem(problem)}
+                                              disabled={!userVal.trim()}
+                                            >
+                                              Check Answer
+                                            </button>
+                                          </div>
+
+                                          {/* Feedback pill */}
+                                          {feedback?.checked && (
+                                            <div
+                                              className={`subsutra-feedback-banner ${
+                                                feedback.isCorrect ? 'banner-correct' : 'banner-incorrect'
+                                              }`}
+                                            >
+                                              {feedback.isCorrect ? (
+                                                <span>✓ उत्तमोत्तमम्! Correct answer ({problem.answer}). Great Vedic calculation!</span>
+                                              ) : (
+                                                <span>
+                                                  ✗ Not quite ({userVal || 'no answer'}). Check the hint or view the Vedic steps!
+                                                </span>
+                                              )}
+                                            </div>
+                                          )}
+
+                                          {/* Step-by-Step Vedic Method */}
+                                          {stepsShown && (
+                                            <div className="subsutra-solution-steps-card">
+                                              <div className="subsutra-steps-header">
+                                                <strong>⚡ Step-by-Step Vedic Algorithmic Solution:</strong>
+                                                <span className="subsutra-steps-ans">
+                                                  Answer: <strong>{problem.answer}</strong>
+                                                </span>
+                                              </div>
+                                              <ol className="subsutra-steps-ol">
+                                                {problem.solutionSteps.map((step, sIndex) => (
+                                                  <li key={sIndex}>{step}</li>
+                                                ))}
+                                              </ol>
+                                              <p className="subsutra-steps-explanation">
+                                                <em>{problem.explanation}</em>
+                                              </p>
+                                            </div>
+                                          )}
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+
+                                  {/* Worksheet Card Footer */}
+                                  <div className="subsutra-ws-card-footer">
+                                    <div className="subsutra-ws-footer-score">
+                                      {scoreInfo ? (
+                                        <span className="subsutra-score-pill">
+                                          🎯 Score: <strong>{scoreInfo.score} / {scoreInfo.total}</strong> (
+                                          {Math.round((scoreInfo.score / scoreInfo.total) * 100)}%)
+                                          {scoreInfo.score === scoreInfo.total ? ' 🌟 Adbhutam!' : ' Keep practicing!'}
+                                        </span>
+                                      ) : (
+                                        <span className="subsutra-unscored-pill">
+                                          {isSubscribed
+                                            ? 'Fill your answers and click Check All'
+                                            : 'Solve Problem 1 or Subscribe for all 3 problems'}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <div className="subsutra-ws-footer-actions">
+                                      <button
+                                        type="button"
+                                        className="subsutra-check-all-btn"
+                                        onClick={() => handleCheckAllForSubSutra(ws)}
+                                      >
+                                        ✓ Check All Answers
+                                      </button>
+                                      <button
+                                        type="button"
+                                        className="subsutra-reset-btn"
+                                        onClick={() => handleResetSubSutraWorksheet(ws)}
+                                      >
+                                        🔄 Reset Sheet
+                                      </button>
+                                      <button
+                                        type="button"
+                                        className="subsutra-close-btn"
+                                        onClick={() => setActiveWorksheetSubSutraId(null)}
+                                      >
+                                        ✕ Close Sheet
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          );
+                        })()}
+                      </React.Fragment>
                     ))}
                   </tbody>
                 </table>
