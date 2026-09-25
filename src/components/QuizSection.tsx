@@ -234,6 +234,27 @@ const QuizSection: React.FC<QuizSectionProps> = ({
     setShowReview(false);
   };
 
+  const handleShareScore = () => {
+    if (!activeQuestions) return;
+    const catObj = QUIZ_CATEGORIES.find((c) => c.id === selectedCategory);
+    const catLabel = catObj?.label || 'Sanskrit & Vedic Maths';
+    const percent = Math.round((score / (activeQuestions.length * 10)) * 100);
+    const shareText = `🎯 I scored ${score}/${activeQuestions.length * 10} points (${percent}%) on the "${catLabel}" Quiz at EdNet Learn Gurukul!\n\nCan you beat my score? Test your Sanskrit & Vedic Maths skills here:\n${window.location.origin}`;
+
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      navigator
+        .share({
+          title: 'EdNet Learn Gurukul Quiz Score',
+          text: shareText,
+          url: window.location.origin,
+        })
+        .catch(() => {});
+    } else {
+      const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   const handleSelectOption = (idx: number) => {
     if (isAnswerChecked) return;
     setSelectedOption(idx);
@@ -530,6 +551,14 @@ const QuizSection: React.FC<QuizSectionProps> = ({
               title={canDownload ? 'Review questions, your answers and detailed explanations' : 'Paid subscription required to view detailed answers'}
             >
               {canDownload ? (showReview ? 'Hide Answer Review' : '📝 Review My Answers') : '🔒 Review My Answers (Paid)'}
+            </button>
+            <button
+              type="button"
+              className="quiz-share-btn"
+              onClick={handleShareScore}
+              title="Share your score with classmates and parents on WhatsApp"
+            >
+              📲 Share on WhatsApp
             </button>
             <button
               type="button"

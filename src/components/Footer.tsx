@@ -353,6 +353,42 @@ export const Footer: React.FC<FooterProps> = ({
               <span className="helpdesk-indicator-dot" />
               <span className="helpdesk-status-text">Support desk active · Mon–Sat (IST)</span>
             </div>
+
+            <div className="footer-social-section">
+              <span className="footer-social-label">🌟 Gurukul Social &amp; Community:</span>
+              <div className="footer-social-pills">
+                <a
+                  href="https://whatsapp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-social-pill footer-social-pill--whatsapp"
+                  title="Join WhatsApp Parents &amp; Students Community"
+                >
+                  <span className="social-pill-icon">💬</span>
+                  <span>WhatsApp Community</span>
+                </a>
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-social-pill footer-social-pill--youtube"
+                  title="Watch Vedic Maths Tricks on YouTube"
+                >
+                  <span className="social-pill-icon">▶️</span>
+                  <span>YouTube Shorts</span>
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-social-pill footer-social-pill--instagram"
+                  title="Follow Sanskrit Word of the Day on Instagram"
+                >
+                  <span className="social-pill-icon">📸</span>
+                  <span>Instagram</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
