@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { ARTICLES } from '../data/articleIndex';
+import { SANSKRIT_ARTICLES, SANSKRIT_ARTICLE_META } from '../data/sanskritArticles';
 import { parseArticle, type ParsedArticle } from '../utils/articleParser';
+import { speakAsBodhi, stopBodhiSpeech, playPronunciation } from '../utils/pronunciation';
 import ConjunctGames from './ConjunctGames';
 import SoundTeamsArticle from './SoundTeamsArticle';
 import LingaVachanaGuide from './LingaVachanaGuide';
@@ -33,21 +35,108 @@ const Grammar: React.FC<GrammarProps> = ({
   const [searchFilter, setSearchFilter] = useState('');
   const [articles, setArticles] = useState<Record<string, ParsedArticle>>({});
   const [articleError, setArticleError] = useState(false);
+  const [articleLang, setArticleLang] = useState<'en' | 'sa'>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        return localStorage.getItem('grammar_article_lang') === 'sa' ? 'sa' : 'en';
+      } catch {}
+    }
+    return 'en';
+  });
+  const [isAudioPlaying, setIsAudioPlaying] = useState<boolean>(false);
+  const [audioSpeed, setAudioSpeed] = useState<'slow' | 'normal'>('normal');
+  const stopSpeechRef = useRef<(() => void) | null>(null);
 
   const activeArticleMeta = ARTICLES.find((item) => item.id === activeArticleId);
   const activeArticle = activeArticleId ? articles[activeArticleId] : undefined;
 
+  const handleStopAudio = () => {
+    if (stopSpeechRef.current) {
+      stopSpeechRef.current();
+      stopSpeechRef.current = null;
+    }
+    stopBodhiSpeech();
+    setIsAudioPlaying(false);
+  };
+
+  const handleToggleArticleLang = (lang: 'en' | 'sa') => {
+    if (isAudioPlaying) {
+      handleStopAudio();
+    }
+    setArticleLang(lang);
+    try {
+      localStorage.setItem('grammar_article_lang', lang);
+    } catch {}
+  };
+
   const goBackToShelf = () => {
+    handleStopAudio();
     setTopic('home');
     setActiveArticleId(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const openArticle = (id: string) => {
+    handleStopAudio();
     setActiveArticleId(id);
     setArticleError(false);
     setTopic('article');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    return () => {
+      handleStopAudio();
+    };
+  }, [topic, activeArticleId]);
+
+  const handleToggleAudio = () => {
+    if (isAudioPlaying) {
+      handleStopAudio();
+      return;
+    }
+
+    if (!activeArticleId) return;
+
+    const saArticle = SANSKRIT_ARTICLES[activeArticleId];
+    const targetArticle = articleLang === 'sa' && saArticle ? saArticle : (saArticle || activeArticle);
+    if (!targetArticle) return;
+
+    const speechChunks: string[] = [];
+    if (targetArticle.title) speechChunks.push(targetArticle.title);
+    if (targetArticle.subtitle) speechChunks.push(targetArticle.subtitle);
+
+    targetArticle.blocks.forEach((block) => {
+      if (block.type === 'paragraph' || block.type === 'subheading') {
+        speechChunks.push(block.text);
+      } else if (block.type === 'list') {
+        block.items.forEach((item) => speechChunks.push(item));
+      }
+    });
+
+    const fullSpeechText = speechChunks.join(' । ');
+    setIsAudioPlaying(true);
+
+    const cancel = speakAsBodhi(fullSpeechText, {
+      lang: 'sa',
+      speed: audioSpeed,
+      onEnd: () => {
+        setIsAudioPlaying(false);
+        stopSpeechRef.current = null;
+      },
+    });
+    stopSpeechRef.current = cancel;
+  };
+
+  const handleToggleSpeed = () => {
+    const nextSpeed = audioSpeed === 'normal' ? 'slow' : 'normal';
+    setAudioSpeed(nextSpeed);
+    if (isAudioPlaying) {
+      handleStopAudio();
+      setTimeout(() => {
+        handleToggleAudio();
+      }, 50);
+    }
   };
 
   const renderBreadcrumb = (currentTitle: string) => (
@@ -284,27 +373,108 @@ const Grammar: React.FC<GrammarProps> = ({
   }
 
   if (topic === 'article') {
+    const saArticle = activeArticleId ? SANSKRIT_ARTICLES[activeArticleId] : undefined;
+    const saMeta = activeArticleId ? SANSKRIT_ARTICLE_META[activeArticleId] : undefined;
+    const displayArticle = articleLang === 'sa' && saArticle ? saArticle : activeArticle;
+    const displayTitle = displayArticle
+      ? displayArticle.title
+      : articleLang === 'sa' && saMeta
+      ? saMeta.titleSa
+      : activeArticleMeta?.cardTitle || 'Article';
+    const displaySubtitle =
+      displayArticle?.subtitle ||
+      (articleLang === 'sa' && saMeta ? saMeta.blurbSa : activeArticleMeta?.cardBlurb);
+
     return (
       <section className="grammar-page" aria-label="Grammar article">
         <header className="grammar-page-header">
-          {renderBreadcrumb(activeArticle ? activeArticle.title : (activeArticleMeta?.cardTitle || 'Article'))}
-          <h2 className="grammar-title">{activeArticle ? activeArticle.title : 'Loading…'}</h2>
-          {activeArticle?.subtitle && <p className="grammar-lead">{activeArticle.subtitle}</p>}
+          {renderBreadcrumb(displayTitle)}
+          <h2 className="grammar-title">{displayTitle}</h2>
+          {displaySubtitle && <p className="grammar-lead">{displaySubtitle}</p>}
         </header>
-        {articleError && (
+
+        {/* Article Language Switcher & Audio Narrator */}
+        <div className="grammar-article-controls-bar">
+          <div className="grammar-lang-pill-group">
+            <span className="grammar-lang-pill-title">📖 भाषा (Language):</span>
+            <button
+              type="button"
+              className={`grammar-lang-pill-btn${articleLang === 'en' ? ' active' : ''}`}
+              onClick={() => handleToggleArticleLang('en')}
+            >
+              🇬🇧 English
+            </button>
+            <button
+              type="button"
+              className={`grammar-lang-pill-btn${articleLang === 'sa' ? ' active' : ''}`}
+              onClick={() => handleToggleArticleLang('sa')}
+            >
+              🕉️ संस्कृतेन पठ्यताम् (Read in Sanskrit)
+            </button>
+          </div>
+
+          <div className="grammar-article-audio-bar">
+            <button
+              type="button"
+              className={`grammar-article-audio-btn${isAudioPlaying ? ' playing' : ''}`}
+              onClick={handleToggleAudio}
+              title={isAudioPlaying ? 'Pause reading aloud' : 'Read entire article aloud in Sanskrit'}
+            >
+              <span className="audio-btn-icon">{isAudioPlaying ? '⏸️' : '🔊'}</span>
+              <span>{isAudioPlaying ? 'Pause Voice' : 'Read Aloud in Sanskrit (वाचय)'}</span>
+            </button>
+            {isAudioPlaying && (
+              <button
+                type="button"
+                className="grammar-article-stop-btn"
+                onClick={handleStopAudio}
+                title="Stop reading aloud"
+              >
+                ⏹️
+              </button>
+            )}
+            <button
+              type="button"
+              className="grammar-article-speed-btn"
+              onClick={handleToggleSpeed}
+              title={`Toggle reading speed (${audioSpeed === 'slow' ? '0.75x slow' : '1.0x normal'})`}
+            >
+              {audioSpeed === 'slow' ? '🐢 0.75x' : '⚡ 1.0x'}
+            </button>
+          </div>
+        </div>
+
+        {articleError && !displayArticle && (
           <p className="grammar-lead">
             Could not load the article. Make sure {activeArticleMeta?.file ?? 'the article file'} exists in
             public/.
           </p>
         )}
-        {activeArticle && (
+        {displayArticle && (
           <article className="grammar-article">
-            {activeArticle.blocks.map((block, index) => {
+            {displayArticle.blocks.map((block, index) => {
               if (block.type === 'subheading') {
                 return (
-                  <h3 className="grammar-article-subheading" key={index}>
-                    {block.text}
-                  </h3>
+                  <div key={index} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
+                    <h3 className="grammar-article-subheading" style={{ margin: 0 }}>
+                      {block.text}
+                    </h3>
+                    <button
+                      type="button"
+                      onClick={() => playPronunciation(block.text)}
+                      title="Hear Sanskrit pronunciation"
+                      style={{
+                        background: 'transparent',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '0.95rem',
+                        opacity: 0.75,
+                        padding: '0.2rem 0.4rem',
+                      }}
+                    >
+                      🔊
+                    </button>
+                  </div>
                 );
               }
               if (block.type === 'list') {
@@ -361,9 +531,29 @@ const Grammar: React.FC<GrammarProps> = ({
                 );
               }
               return (
-                <p className="grammar-article-paragraph" key={index}>
-                  {block.text}
-                </p>
+                <div key={index} style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.5rem' }}>
+                  <p className="grammar-article-paragraph" style={{ margin: 0, flex: 1 }}>
+                    {block.text}
+                  </p>
+                  {articleLang === 'sa' && (
+                    <button
+                      type="button"
+                      onClick={() => playPronunciation(block.text)}
+                      title="Hear this paragraph in Sanskrit"
+                      style={{
+                        background: 'transparent',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '0.9rem',
+                        opacity: 0.65,
+                        padding: '0.2rem',
+                        flexShrink: 0,
+                      }}
+                    >
+                      🔊
+                    </button>
+                  )}
+                </div>
               );
             })}
             <footer className="grammar-article-footer">
@@ -469,7 +659,16 @@ const Grammar: React.FC<GrammarProps> = ({
 
   const filteredArticles = qClean
     ? ARTICLES.filter((art) => {
-        const text = (art.cardTitle + ' ' + art.cardBlurb).toLowerCase();
+        const saMeta = SANSKRIT_ARTICLE_META[art.id];
+        const text = (
+          art.cardTitle +
+          ' ' +
+          art.cardBlurb +
+          ' ' +
+          (saMeta?.titleSa || '') +
+          ' ' +
+          (saMeta?.blurbSa || '')
+        ).toLowerCase();
         if (text.includes(qClean)) return true;
         // Katapayadi extra tags
         if (art.id === 'katapayadi-number-words') {
@@ -522,6 +721,27 @@ const Grammar: React.FC<GrammarProps> = ({
         )}
       </div>
 
+      {/* Shelf Language Switcher Controls */}
+      <div className="grammar-shelf-controls">
+        <span className="grammar-shelf-lang-label">📖 Read Articles in / भाषा-चयनम्:</span>
+        <div className="grammar-lang-pill-group">
+          <button
+            type="button"
+            className={`grammar-lang-pill-btn${articleLang === 'en' ? ' active' : ''}`}
+            onClick={() => handleToggleArticleLang('en')}
+          >
+            🇬🇧 English
+          </button>
+          <button
+            type="button"
+            className={`grammar-lang-pill-btn${articleLang === 'sa' ? ' active' : ''}`}
+            onClick={() => handleToggleArticleLang('sa')}
+          >
+            🕉️ संस्कृतेन पठ्यताम् (Read in Sanskrit)
+          </button>
+        </div>
+      </div>
+
       <div className="grammar-shelf">
         {filteredInteractive.map((t) => (
           <button
@@ -541,19 +761,27 @@ const Grammar: React.FC<GrammarProps> = ({
           </button>
         ))}
 
-        {filteredArticles.map((item) => (
-          <button
-            type="button"
-            className="grammar-card grammar-card--ready"
-            key={item.id}
-            onClick={() => openArticle(item.id)}
-          >
-            <span className="grammar-card-title">
-              {item.emoji} {item.cardTitle}
-            </span>
-            <span className="grammar-card-blurb">{item.cardBlurb}</span>
-          </button>
-        ))}
+        {filteredArticles.map((item) => {
+          const saMeta = SANSKRIT_ARTICLE_META[item.id];
+          const cardTitle = articleLang === 'sa' && saMeta ? saMeta.titleSa : item.cardTitle;
+          const cardBlurb = articleLang === 'sa' && saMeta ? saMeta.blurbSa : item.cardBlurb;
+          return (
+            <button
+              type="button"
+              className="grammar-card grammar-card--ready"
+              key={item.id}
+              onClick={() => openArticle(item.id)}
+            >
+              <span className="grammar-card-title">
+                {item.emoji} {cardTitle}
+              </span>
+              <span className="grammar-card-blurb">{cardBlurb}</span>
+              {articleLang === 'sa' && (
+                <span className="grammar-sanskrit-tag">🕉️ सरल-संस्कृतम् · Sanskrit</span>
+              )}
+            </button>
+          );
+        })}
       </div>
 
       {totalMatches === 0 && (
