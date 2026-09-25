@@ -440,7 +440,7 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
   const handleQuickDownload = (res: QuickDownloadResource) => {
     if (res.id === 'qd-vedic-maths-sutras') {
       const a = document.createElement('a');
-      a.href = '/vedic-sutras-poster-v2.png';
+      a.href = '/vedic-sutras-poster-v3.png';
       a.download = 'EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.png';
       document.body.appendChild(a);
       a.click();
@@ -936,8 +936,8 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                 title="Click to preview full-size poster"
               >
                 <img
-                  src="/vedic-sutras-poster-v2.webp"
-                  alt="16 Foundational Sutras of Vedic Mathematics poster by EdNet Learn"
+                  src="/vedic-sutras-poster-v3.webp"
+                  alt="EdNet Learn poster: the 16 Vedic Mathematics sutras of Swami Bharati Krishna Tirtha in standard order (Ekādhikena Pūrveṇa to Guṇakasamuccayaḥ), each with Sanskrit name, IAST, English meaning, use and a worked example"
                   className="vedic-poster-thumb-img"
                 />
               </div>
@@ -945,7 +945,7 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                 <span className="vedic-poster-badge">✦ Official Academy Wall Poster ✦</span>
                 <h3 className="vedic-poster-title">16 Foundational Sutras of Vedic Mathematics</h3>
                 <p className="vedic-poster-quote">
-                  "Vedic Mathematics is not just a method, it is a way of thinking." — Swami Bharati Krishna Tirtha
+                  "Vedic Mathematics is not just a method, it is a way of thinking."
                 </p>
                 <p className="vedic-poster-desc">
                   The complete 16 sutras with Sanskrit aphorisms, English translations, and worked arithmetic &amp; algebraic examples for rapid mental calculation (Ekādhikena, Nikhilam, Ūrdhva-Tiryagbhyām, Parāvartya, and more).
@@ -960,7 +960,7 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                     <span>View Full Poster</span>
                   </button>
                   <a
-                    href="/vedic-sutras-poster-v2.png"
+                    href="/vedic-sutras-poster-v3.png"
                     download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.png"
                     className="vedic-poster-btn-secondary"
                   >
@@ -1068,8 +1068,8 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                         title="Click to preview full-size poster"
                       >
                         <img
-                          src="/vedic-sutras-poster-v2.webp"
-                          alt="16 Foundational Sutras of Vedic Mathematics poster by EdNet Learn"
+                          src="/vedic-sutras-poster-v3.webp"
+                          alt="EdNet Learn poster: the 16 Vedic Mathematics sutras of Swami Bharati Krishna Tirtha in standard order (Ekādhikena Pūrveṇa to Guṇakasamuccayaḥ), each with Sanskrit name, IAST, English meaning, use and a worked example"
                           className="vedic-poster-thumb-img"
                         />
                       </div>
@@ -1077,7 +1077,7 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                         <span className="vedic-poster-badge">✦ Official Academy Wall Poster ✦</span>
                         <h4 className="vedic-poster-title">16 Foundational Sutras of Vedic Mathematics</h4>
                         <p className="vedic-poster-quote">
-                          "These sutras are not merely rules for calculation, but keys to a higher way of thinking." — Swami Bharati Krishna Tirtha
+                          "These sutras are not merely rules for calculation, but keys to a higher way of thinking."
                         </p>
                         <p className="vedic-poster-desc">
                           The official EdNet Learn Vedic Maths Academy reference poster matching our core curriculum. Features all 16 foundational formulas with clear step-by-step examples.
@@ -1092,7 +1092,7 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                             <span>View Full Poster</span>
                           </button>
                           <a
-                            href="/vedic-sutras-poster-v2.png"
+                            href="/vedic-sutras-poster-v3.png"
                             download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.png"
                             className="vedic-poster-btn-secondary"
                           >
@@ -1413,13 +1413,13 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
               <span className="resource-card-title-sa">षोडश-वैदिक-गणित-सूत्राणि</span>
             </h3>
             <p style={{ margin: '0 0 1rem', fontSize: '0.88rem', color: '#4338ca', fontStyle: 'italic' }}>
-              "Vedic Mathematics is not just a method, it is a way of thinking." — Swami Bharati Krishna Tirtha
+              "Vedic Mathematics is not just a method, it is a way of thinking."
             </p>
 
             <div className="vedic-modal-image-wrap">
               <img
-                src="/vedic-sutras-poster-v2.webp"
-                alt="16 Foundational Sutras of Vedic Mathematics poster by EdNet Learn"
+                src="/vedic-sutras-poster-v3.webp"
+                alt="EdNet Learn poster: the 16 Vedic Mathematics sutras of Swami Bharati Krishna Tirtha in standard order (Ekādhikena Pūrveṇa to Guṇakasamuccayaḥ), each with Sanskrit name, IAST, English meaning, use and a worked example"
                 className="vedic-modal-image"
               />
             </div>
@@ -1434,7 +1434,7 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                 <span>Close</span>
               </button>
               <a
-                href="/vedic-sutras-poster-v2.png"
+                href="/vedic-sutras-poster-v3.png"
                 download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.png"
                 className="vedic-poster-btn-primary"
               >
