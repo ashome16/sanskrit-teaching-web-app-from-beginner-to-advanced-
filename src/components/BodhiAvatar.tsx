@@ -10,6 +10,8 @@ export interface BodhiAvatarProps {
   interactive?: boolean;
   onClick?: () => void;
   title?: string;
+  /** Subtle mouth + glow pulse while Bodhi is speaking (reduced-motion safe). */
+  isSpeaking?: boolean;
 }
 
 const SIZE_MAP: Record<string, number> = {
@@ -28,12 +30,14 @@ export const BodhiAvatar: React.FC<BodhiAvatarProps> = ({
   interactive = false,
   onClick,
   title = 'Bodhi — Your Gurukul Sanskrit Guide (बोधिः)',
+  isSpeaking = false,
 }) => {
   const pixelSize = typeof size === 'number' ? size : SIZE_MAP[size] || 68;
 
   return (
     <div
-      className={`bodhi-avatar-wrapper ${className} ${interactive ? 'bodhi-interactive' : ''}`}
+      className={`bodhi-avatar-wrapper ${className} ${interactive ? 'bodhi-interactive' : ''} ${isSpeaking ? 'bodhi-avatar-speaking' : ''}`}
+      data-speaking={isSpeaking ? 'true' : undefined}
       style={{
         width: pixelSize,
         height: pixelSize,
@@ -331,6 +335,19 @@ export const BodhiAvatar: React.FC<BodhiAvatarProps> = ({
               strokeWidth="2.2"
               strokeLinecap="round"
               fill="none"
+            />
+          )}
+          {/* Speaking mouth: small open "o" that gently pulses via CSS */}
+          {isSpeaking && (
+            <ellipse
+              className="bodhi-speaking-mouth"
+              cx="80"
+              cy="75.5"
+              rx="3.6"
+              ry="2.6"
+              fill="#9f1239"
+              stroke="#881337"
+              strokeWidth="0.8"
             />
           )}
         </g>

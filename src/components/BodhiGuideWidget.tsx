@@ -7,7 +7,14 @@ import {
   BODHI_CONTEXT_TIPS,
   BODHI_QA_LIBRARY,
 } from '../data/bodhiData';
-import { speakAsBodhi } from '../utils/pronunciation';
+import {
+  speakAsBodhi,
+  splitBodhiSegments,
+  getBodhiVoiceSpeed,
+  setBodhiVoiceSpeed,
+  type BodhiSpeechLang,
+  type BodhiVoiceSpeed,
+} from '../utils/pronunciation';
 import '../styles/bodhi.css';
 
 interface BodhiGuideWidgetProps {
@@ -20,6 +27,35 @@ interface BodhiGuideWidgetProps {
 }
 
 type GuideTab = 'context' | 'qa' | 'subhashita' | 'phrases';
+
+/**
+ * Renders text split into the same chunks speakAsBodhi() speaks, so the chunk
+ * currently being spoken can be highlighted (follow-along).
+ */
+const FollowAlongText: React.FC<{ text: string; lang?: BodhiSpeechLang; activeChunk: number | null }> = ({
+  text,
+  lang = 'sa',
+  activeChunk,
+}) => {
+  const segments = useMemo(() => splitBodhiSegments(text, lang), [text, lang]);
+  return (
+    <>
+      {segments.map((seg, i) =>
+        seg.chunkIndex === null ? (
+          <React.Fragment key={i}>{seg.text}</React.Fragment>
+        ) : (
+          <span
+            key={i}
+            className={`bodhi-chunk ${activeChunk === seg.chunkIndex ? 'bodhi-chunk-active' : ''}`}
+            aria-current={activeChunk === seg.chunkIndex ? 'true' : undefined}
+          >
+            {seg.text}
+          </span>
+        ),
+      )}
+    </>
+  );
+};
 
 export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
   activeView,
@@ -63,10 +99,19 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
     tab === 'subhashita' ? 'meditate' : tab === 'qa' ? 'scholar' : tab === 'phrases' ? 'happy' : 'namaste';
 
   const [speakingText, setSpeakingText] = useState<string | null>(null);
+  // Index of the chunk currently being spoken (follow-along highlight).
+  const [activeChunk, setActiveChunk] = useState<number | null>(null);
+  // 🐢 Slow (default) / Normal — persisted in localStorage (bodhiVoiceSpeed).
+  const [voiceSpeed, setVoiceSpeedState] = useState<BodhiVoiceSpeed>(() => getBodhiVoiceSpeed());
+  const changeVoiceSpeed = (speed: BodhiVoiceSpeed) => {
+    setVoiceSpeedState(speed);
+    setBodhiVoiceSpeed(speed);
+  };
 
   const resetSpeakingUi = () => {
     setIsSpeaking(false);
     setSpeakingText(null);
+    setActiveChunk(null);
     setMood(tabMood(activeTabRef.current));
   };
 
@@ -78,7 +123,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
     if (stop && resetUi) resetSpeakingUi();
   };
 
-  const speakSanskrit = (text: string) => {
+  const speakSanskrit = (text: string, lang: BodhiSpeechLang = 'sa') => {
     // Clicking the same item again while Bodhi is speaking stops him.
     if (stopSpeechRef.current && speakingTextRef.current === text) {
       stopSpeaking();
@@ -90,8 +135,14 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
     try {
       setIsSpeaking(true);
       setSpeakingText(text);
+      setActiveChunk(null);
       setMood('reading');
       stopFn = speakAsBodhi(text, {
+        lang,
+        onChunk: (index) => {
+          if (stopFn !== null && stopSpeechRef.current !== stopFn) return;
+          setActiveChunk(index);
+        },
         // Driven by the real utterance onend (with per-chunk fallback timers
         // inside speakAsBodhi), not a fixed timeout.
         onEnd: () => {
@@ -151,6 +202,28 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen]);
+
+  const chunkFor = (text: string): number | null => (speakingText === text ? activeChunk : null);
+
+  /** Small 🔊 for Bodhi's English tips (en-IN voice, sentence chunks). */
+  const renderEnglishSpeakBtn = (text: string, label: string) => {
+    const active = speakingText === text;
+    return (
+      <button
+        type="button"
+        className={`bodhi-tip-speak-btn ${active ? 'is-speaking' : ''}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          speakSanskrit(text, 'en');
+        }}
+        title={active ? 'Stop Bodhi' : `Hear Bodhi read ${label}`}
+        aria-label={active ? 'Stop Bodhi' : `Hear Bodhi read ${label}`}
+        aria-pressed={active}
+      >
+        {active ? '⏹' : '🔊'}
+      </button>
+    );
+  };
 
   const currentContextTip = useMemo(() => {
     return BODHI_CONTEXT_TIPS[activeView] || BODHI_CONTEXT_TIPS.home;
@@ -275,7 +348,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
             {/* 1. Header with Avatar & Voice Button */}
             <header className="bodhi-card-header">
               <div className="bodhi-card-header-left">
-                <BodhiAvatar mood={mood} size="md" showHalo={true} />
+                <BodhiAvatar mood={mood} size="md" showHalo={true} isSpeaking={isSpeaking} />
                 <div className="bodhi-card-title-group">
                   <h3 id="bodhi-card-title" className="bodhi-card-title">
                     Bodhi <span className="bodhi-card-title-dev">बोधिः</span>
@@ -285,6 +358,26 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
               </div>
 
               <div className="bodhi-card-controls">
+                <div className="bodhi-speed-toggle" role="group" aria-label="Bodhi voice speed">
+                  <button
+                    type="button"
+                    className={`bodhi-speed-btn ${voiceSpeed === 'slow' ? 'active' : ''}`}
+                    aria-pressed={voiceSpeed === 'slow'}
+                    onClick={() => changeVoiceSpeed('slow')}
+                    title="Slow, calm voice (best for young learners)"
+                  >
+                    🐢 Slow
+                  </button>
+                  <button
+                    type="button"
+                    className={`bodhi-speed-btn ${voiceSpeed === 'normal' ? 'active' : ''}`}
+                    aria-pressed={voiceSpeed === 'normal'}
+                    onClick={() => changeVoiceSpeed('normal')}
+                    title="Normal speaking pace"
+                  >
+                    Normal
+                  </button>
+                </div>
                 <button
                   type="button"
                   className="bodhi-control-btn"
@@ -299,8 +392,11 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
 
             {/* 2. Spoken Greeting Strip */}
             <div className="bodhi-audio-greeting-strip">
-              <div>
-                <strong>नमस्ते!</strong> अहं बोधिः — भवतः संस्कृत-सखा।
+              <div className="bodhi-greeting-text">
+                <div>
+                  <strong>नमस्ते!</strong> अहं बोधिः — भवतः संस्कृत-सखा।
+                </div>
+                <p className="bodhi-persona-line">🌿 {BODHI_PROFILE.persona}</p>
               </div>
               <button
                 type="button"
@@ -366,8 +462,15 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                   <div className="bodhi-advice-box">
                     <div className="bodhi-advice-label">
                       <span>💡</span> Bodhi’s Insight
+                      {renderEnglishSpeakBtn(currentContextTip.bodhiAdvice, 'this insight')}
                     </div>
-                    <p className="bodhi-advice-text">"{currentContextTip.bodhiAdvice}"</p>
+                    <p className="bodhi-advice-text">
+                      "<FollowAlongText
+                        text={currentContextTip.bodhiAdvice}
+                        lang="en"
+                        activeChunk={chunkFor(currentContextTip.bodhiAdvice)}
+                      />"
+                    </p>
                   </div>
 
                   {currentContextTip.suggestedAction && (
@@ -451,7 +554,12 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                               </button>
                             ) : <span />}
 
-                            {item.tip && <span className="bodhi-tip-tag">💡 {item.tip}</span>}
+                            {item.tip && (
+                              <span className="bodhi-tip-tag">
+                                💡 <FollowAlongText text={item.tip} lang="en" activeChunk={chunkFor(item.tip)} />
+                                {renderEnglishSpeakBtn(item.tip, 'this tip')}
+                              </span>
+                            )}
                           </div>
                         </article>
                       ))
@@ -471,7 +579,12 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                   </div>
 
                   <div className="bodhi-shloka-box">
-                    <div className="bodhi-shloka-dev">{currentSubhashita.verseDevanagari}</div>
+                    <div className="bodhi-shloka-dev">
+                      <FollowAlongText
+                        text={currentSubhashita.verseDevanagari}
+                        activeChunk={chunkFor(currentSubhashita.verseDevanagari)}
+                      />
+                    </div>
                     <div className="bodhi-shloka-iast">{currentSubhashita.verseIast}</div>
                   </div>
 
@@ -495,8 +608,15 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                   <div className="bodhi-advice-box">
                     <div className="bodhi-advice-label">
                       <span>🪔</span> Bodhi’s Reflection
+                      {renderEnglishSpeakBtn(currentSubhashita.bodhiReflection, 'this reflection')}
                     </div>
-                    <p className="bodhi-advice-text">"{currentSubhashita.bodhiReflection}"</p>
+                    <p className="bodhi-advice-text">
+                      "<FollowAlongText
+                        text={currentSubhashita.bodhiReflection}
+                        lang="en"
+                        activeChunk={chunkFor(currentSubhashita.bodhiReflection)}
+                      />"
+                    </p>
                   </div>
 
                   <div className="bodhi-subhashita-nav-row">
@@ -532,12 +652,14 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                       <button
                         key={phr.id}
                         type="button"
-                        className="bodhi-phrase-card"
+                        className={`bodhi-phrase-card ${speakingText === phr.devanagari ? 'is-speaking' : ''}`}
                         onClick={() => speakSanskrit(phr.devanagari)}
                       >
                         <div className="bodhi-phrase-top">
-                          <span className="bodhi-phrase-dev">{phr.devanagari}</span>
-                          <span className="bodhi-phrase-speak-icon">🔊</span>
+                          <span className="bodhi-phrase-dev">
+                            <FollowAlongText text={phr.devanagari} activeChunk={chunkFor(phr.devanagari)} />
+                          </span>
+                          <span className="bodhi-phrase-speak-icon">{speakingText === phr.devanagari ? '⏹' : '🔊'}</span>
                         </div>
                         <span className="bodhi-phrase-iast">{phr.iast}</span>
                         <span className="bodhi-phrase-en">{phr.english}</span>

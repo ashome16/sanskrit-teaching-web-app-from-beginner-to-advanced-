@@ -390,35 +390,131 @@ export const playSequence = (
  * Bodhi speaks greetings, phrases and whole subhāṣita verses, so he gets his
  * own calm, unhurried delivery: same hi-IN voice selection + platform rules,
  * slower rate, and verse text split into short chunks with a gentle pause.
+ * He can also read his English tips aloud with an en-IN (fallback en-*) voice.
  */
 
-/** Mac / other: calm teacher pace. */
-export const BODHI_RATE = 0.7;
+/** Mac / other: calm teacher pace (kept ≥ 0.72 — lower rates sound gravelly). */
+export const BODHI_RATE = 0.75;
 /** Windows: the clampRate floor — SAPI voices garble below this. */
 export const BODHI_WINDOWS_RATE = 0.75;
-/** Slightly warm, lower pitch on Mac/other; Windows forced to 1 by safePitch. */
-const BODHI_PITCH = 0.95;
+/** Natural pitch, same as Varṇamālā playback (safePitch keeps Windows at 1). */
+const BODHI_PITCH = 1;
 /** Pause between recited chunks (half-verses, phrases). */
 export const BODHI_CHUNK_PAUSE_MS = 420;
 
-const bodhiRate = (): number =>
-  isWindowsPlatform() ? clampRate(BODHI_WINDOWS_RATE) : BODHI_RATE;
+/** Bodhi voice speed preference (🐢 Slow is the default). */
+export type BodhiVoiceSpeed = 'slow' | 'normal';
+export type BodhiSpeechLang = 'sa' | 'en';
+export const BODHI_SPEED_STORAGE_KEY = 'bodhiVoiceSpeed';
+
+/**
+ * Rate + pause per speed and platform.
+ * - Slow (default): Mac/other 0.75 + 420ms. Windows can't go below rate 0.75
+ *   (clampRate floor), so Slow there uses a longer 600ms pause to feel slower.
+ * - Normal: Mac/other 0.85, Windows 0.9, both with a 250ms pause.
+ */
+const BODHI_SPEED_SETTINGS: Record<BodhiVoiceSpeed, { mac: number; win: number; pauseMac: number; pauseWin: number }> = {
+  slow: { mac: BODHI_RATE, win: BODHI_WINDOWS_RATE, pauseMac: BODHI_CHUNK_PAUSE_MS, pauseWin: 600 },
+  normal: { mac: 0.85, win: 0.9, pauseMac: 250, pauseWin: 250 },
+};
+
+export const getBodhiVoiceSpeed = (): BodhiVoiceSpeed => {
+  try {
+    if (typeof window !== 'undefined' && window.localStorage?.getItem(BODHI_SPEED_STORAGE_KEY) === 'normal') {
+      return 'normal';
+    }
+  } catch {
+    /* storage unavailable (private mode) */
+  }
+  return 'slow';
+};
+
+export const setBodhiVoiceSpeed = (speed: BodhiVoiceSpeed): void => {
+  try {
+    window.localStorage?.setItem(BODHI_SPEED_STORAGE_KEY, speed);
+  } catch {
+    /* storage unavailable */
+  }
+};
+
+export const bodhiVoiceSettings = (
+  speed: BodhiVoiceSpeed = getBodhiVoiceSpeed(),
+): { rate: number; pauseMs: number } => {
+  const s = BODHI_SPEED_SETTINGS[speed] || BODHI_SPEED_SETTINGS.slow;
+  return isWindowsPlatform()
+    ? { rate: clampRate(s.win), pauseMs: s.pauseWin }
+    : { rate: s.mac, pauseMs: s.pauseMac };
+};
+
+/** A piece of the original text, tagged with its spoken chunk index (or null). */
+export interface BodhiSegment {
+  text: string;
+  chunkIndex: number | null;
+}
+
+const SANSKRIT_BREAK = /([।॥\n\r,;!?]+)/;
+
+const cleanSanskritChunk = (chunk: string): string =>
+  chunk
+    // Drop Devanagari verse numbers, dashes, quotes and brackets.
+    .replace(/[०-९0-9()[\]{}<>'"“”‘’\-–—|]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const cleanEnglishChunk = (chunk: string): string =>
+  chunk
+    // English voice should not attempt Devanagari: drop "(शून्य)" glosses
+    // and any stray Devanagari words, then tidy leftover quotes/brackets.
+    .replace(/\([^)]*[\u0900-\u097F][^)]*\)/g, ' ')
+    .replace(/[\u0900-\u097F]+/g, ' ')
+    .replace(/["“”]\s*["“”]/g, ' ')
+    .replace(/[“”"()[\]{}<>]+/g, ' ')
+    .replace(/\s+([,.;:!?])/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+/**
+ * Split text into display segments, each tagged with the chunk index that
+ * speakAsBodhi() will report via onChunk. Joining every segment's text gives
+ * back the original string, so the UI can render it with a highlight.
+ * Sanskrit: chunks on । ॥ newline , ; ! ?   English: chunks on . ! ? / newline.
+ */
+export const splitBodhiSegments = (text: string, lang: BodhiSpeechLang = 'sa'): BodhiSegment[] => {
+  const segments: BodhiSegment[] = [];
+  let next = 0;
+  if (lang === 'en') {
+    const parts = (text || '').match(/[^.!?\n]+(?:[.!?]+["”’')\]]*)?\s*|[.!?\n]+\s*/g) || [];
+    for (const part of parts) {
+      const cleaned = cleanEnglishChunk(part);
+      segments.push({ text: part, chunkIndex: /[a-z]/i.test(cleaned) ? next++ : null });
+    }
+    return segments;
+  }
+  for (const part of (text || '').split(SANSKRIT_BREAK)) {
+    if (!part) continue;
+    if (SANSKRIT_BREAK.test(part) && /^[।॥\n\r,;!?]+$/.test(part)) {
+      segments.push({ text: part, chunkIndex: null });
+      continue;
+    }
+    const cleaned = cleanSanskritChunk(part);
+    segments.push({ text: part, chunkIndex: cleaned && isSanskritText(cleaned) ? next++ : null });
+  }
+  return segments;
+};
+
+const chunksFromSegments = (text: string, lang: BodhiSpeechLang): string[] =>
+  splitBodhiSegments(text, lang)
+    .filter((seg) => seg.chunkIndex !== null)
+    .map((seg) => (lang === 'en' ? cleanEnglishChunk(seg.text) : cleanSanskritChunk(seg.text)));
 
 /**
  * Split text into recitation chunks on danda (। ॥), newlines, commas and
  * sentence marks (! ?). Keeps spaces inside a chunk so words stay separate.
  */
-export const splitBodhiChunks = (text: string): string[] =>
-  text
-    .split(/[।॥\n\r,;!?]+/)
-    .map((chunk) =>
-      chunk
-        // Drop Devanagari verse numbers, dashes, quotes and brackets.
-        .replace(/[०-९0-9()[\]{}<>'"“”‘’\-–—|]+/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim(),
-    )
-    .filter((chunk) => chunk && isSanskritText(chunk));
+export const splitBodhiChunks = (text: string): string[] => chunksFromSegments(text, 'sa');
+
+/** English tips: chunk on sentence boundaries (. ! ?). */
+export const splitBodhiEnglishChunks = (text: string): string[] => chunksFromSegments(text, 'en');
 
 /** Per-word visarga echo (same rule as the letter/word path). */
 const toBodhiSpeech = (chunk: string): string => {
@@ -429,25 +525,54 @@ const toBodhiSpeech = (chunk: string): string => {
     .join(' ');
 };
 
-const configureBodhiUtterance = (utterance: SpeechSynthesisUtterance): void => {
-  const voice = pickHindiVoice(window.speechSynthesis.getVoices());
-  utterance.voice = voice || null;
-  utterance.lang = voice?.lang || 'hi-IN';
-  utterance.rate = bodhiRate();
+/** English voice only (en-IN preferred, then any en-*). Never a Hindi voice. */
+const pickBodhiEnglishVoice = (voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | undefined =>
+  pickEnglishCueVoice(voices.filter((v) => (v.lang || '').toLowerCase().replace('_', '-').startsWith('en')));
+
+/**
+ * Sanskrit: reuse the exact Varṇamālā letter/word configuration
+ * (configureUtterance → pickHindiVoice, same hi-IN preference order on every
+ * platform, Devanagari text), then apply only Bodhi's slow rate and natural
+ * pitch 1 via safePitch. English tips: separate gentle en-IN voice, pitch 1.
+ */
+const configureBodhiUtterance = (
+  utterance: SpeechSynthesisUtterance,
+  lang: BodhiSpeechLang,
+  rate: number,
+  chunk: string,
+): void => {
+  if (lang === 'en') {
+    const voice = pickBodhiEnglishVoice(window.speechSynthesis.getVoices());
+    utterance.voice = voice || null;
+    utterance.lang = voice?.lang || 'en-IN';
+  } else {
+    configureUtterance(utterance, chunk, utterance.text);
+  }
+  utterance.rate = clampRate(rate);
   utterance.pitch = safePitch(BODHI_PITCH);
   utterance.volume = 1;
 };
+
+export interface SpeakAsBodhiOptions {
+  onEnd?: () => void;
+  /** Fired just before each chunk is spoken (follow-along highlight). */
+  onChunk?: (index: number, chunkText: string) => void;
+  /** Override the pause between chunks (defaults from speed). */
+  pauseMs?: number;
+  /** Force a speed; otherwise the stored preference is read per chunk. */
+  speed?: BodhiVoiceSpeed;
+  /** 'sa' (default, hi-IN voice) or 'en' (en-IN / en-* voice). */
+  lang?: BodhiSpeechLang;
+}
 
 /**
  * Speak as Bodhi: cancels any in-progress speech, then recites chunk by chunk
  * at a slow pace. onEnd fires exactly once (finished, stopped, or aborted by
  * another playPronunciation/stopPronunciation). Returns stop().
  */
-export const speakAsBodhi = (
-  text: string,
-  options?: { onEnd?: () => void; pauseMs?: number },
-): (() => void) => {
-  const chunks = splitBodhiChunks(text || '');
+export const speakAsBodhi = (text: string, options?: SpeakAsBodhiOptions): (() => void) => {
+  const lang: BodhiSpeechLang = options?.lang ?? 'sa';
+  const chunks = chunksFromSegments(text || '', lang);
   let ended = false;
   const finish = () => {
     if (ended) return;
@@ -460,7 +585,9 @@ export const speakAsBodhi = (
     return () => undefined;
   }
 
-  const pauseMs = options?.pauseMs ?? BODHI_CHUNK_PAUSE_MS;
+  // Speed is resolved per chunk so toggling 🐢 Slow / Normal mid-verse
+  // applies from the next chunk.
+  const currentSettings = () => bodhiVoiceSettings(options?.speed ?? getBodhiVoiceSpeed());
   let cancelled = false;
   let timer: ReturnType<typeof setTimeout> | null = null;
   let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
@@ -505,6 +632,7 @@ export const speakAsBodhi = (
     const chunk = chunks[index];
     const chunkIndex = index;
     index += 1;
+    const settings = currentSettings();
 
     const after = () => {
       if (cancelled || settledForIndex === chunkIndex) return;
@@ -515,16 +643,23 @@ export const speakAsBodhi = (
         finish();
         return;
       }
+      const pauseMs = options?.pauseMs ?? currentSettings().pauseMs;
       timer = setTimeout(speakNext, chunkIndex + 1 < chunks.length ? pauseMs : 0);
     };
 
-    const utterance = new SpeechSynthesisUtterance(toBodhiSpeech(chunk));
-    configureBodhiUtterance(utterance);
+    const utterance = new SpeechSynthesisUtterance(lang === 'en' ? chunk : toBodhiSpeech(chunk));
+    configureBodhiUtterance(utterance, lang, settings.rate, chunk);
     utterance.onend = after;
     utterance.onerror = after;
+    try {
+      options?.onChunk?.(chunkIndex, chunk);
+    } catch {
+      /* UI callback errors must not break recitation */
+    }
     // Some Chrome/Edge builds skip onend; advance after a generous upper
     // bound proportional to the chunk length at Bodhi's slow rate.
-    const fallbackMs = Math.max(2500, Math.round((chunk.length * 220) / utterance.rate));
+    const perChar = lang === 'en' ? 120 : 220;
+    const fallbackMs = Math.max(2500, Math.round((chunk.length * perChar) / utterance.rate));
     fallbackTimer = setTimeout(after, fallbackMs);
     window.speechSynthesis.speak(utterance);
   };

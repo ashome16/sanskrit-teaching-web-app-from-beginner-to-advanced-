@@ -1048,3 +1048,161 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Bodhi voice improvements: speed toggle, persona, follow-along highlight,
+   English tip speaker, speaking animation
+   -------------------------------------------------------------------------- */
+
+/* 🐢 Slow / Normal speed toggle (header) */
+.bodhi-speed-toggle {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.bodhi-speed-btn {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.bodhi-speed-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.bodhi-speed-btn.active {
+  background: #ffffff;
+  color: #9a3412;
+}
+
+.bodhi-speed-btn:focus-visible,
+.bodhi-tip-speak-btn:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+/* Persona line in the greeting strip */
+.bodhi-greeting-text {
+  min-width: 0;
+}
+
+.bodhi-persona-line {
+  margin: 0.2rem 0 0;
+  font-size: 0.74rem;
+  line-height: 1.4;
+  color: #92400e;
+  font-style: italic;
+}
+
+/* Follow-along highlight */
+.bodhi-chunk {
+  border-radius: 6px;
+  padding: 0 0.1em;
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bodhi-chunk-active {
+  background-color: #fde68a;
+  color: #7c2d12;
+  box-shadow: 0 0 0 2px #fde68a;
+}
+
+.bodhi-phrase-card.is-speaking {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25);
+}
+
+/* Small 🔊 for English tips */
+.bodhi-tip-speak-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.35rem;
+  width: 1.55rem;
+  height: 1.55rem;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid #fed7aa;
+  background: #fff7ed;
+  font-size: 0.75rem;
+  font-style: normal;
+  line-height: 1;
+  cursor: pointer;
+  vertical-align: middle;
+  text-transform: none;
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+
+.bodhi-tip-speak-btn:hover {
+  background: #ffedd5;
+  border-color: #fb923c;
+}
+
+.bodhi-tip-speak-btn.is-speaking {
+  background: #fde68a;
+  border-color: #f59e0b;
+}
+
+/* Speaking animation: gentle glow + mouth pulse */
+.bodhi-avatar-speaking {
+  border-radius: 50%;
+  animation: bodhi-speak-glow 1.6s ease-in-out infinite;
+}
+
+.bodhi-speaking-mouth {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: bodhi-speak-mouth 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes bodhi-speak-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 rgba(251, 191, 36, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 7px rgba(251, 191, 36, 0.85));
+  }
+}
+
+@keyframes bodhi-speak-mouth {
+  from {
+    transform: scaleY(0.45);
+  }
+  to {
+    transform: scaleY(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bodhi-avatar-speaking,
+  .bodhi-speaking-mouth {
+    animation: none;
+  }
+  .bodhi-avatar-speaking {
+    filter: drop-shadow(0 0 5px rgba(251, 191, 36, 0.75));
+  }
+  .bodhi-chunk {
+    transition: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .bodhi-speed-btn {
+    font-size: 0.66rem;
+    padding: 0.2rem 0.45rem;
+  }
+  .bodhi-persona-line {
+    font-size: 0.7rem;
+  }
+}
