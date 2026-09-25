@@ -689,33 +689,164 @@
   transform: scale(0.98);
 }
 
-/* Celebration Overlay */
-.v-celebration-banner {
-  animation: vPopBounce 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+/* Celebration & Assessment Card Overlay */
+.v-celebration-banner,
+.v-assessment-card {
+  animation: vPopBounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 14px;
+  padding: 1.15rem 1.25rem;
+  margin-top: 1rem;
   color: #ffffff;
-  border-radius: 12px;
-  padding: 0.9rem 1.2rem;
-  text-align: center;
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
 }
 
-.v-celebration-title {
+.v-assessment-card--excellent {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  border: 1.5px solid #34d399;
+  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.35);
+}
+
+.v-assessment-card--good {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border: 1.5px solid #60a5fa;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+}
+
+.v-assessment-card--practice {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  border: 1.5px solid #fbbf24;
+  box-shadow: 0 8px 25px rgba(217, 119, 6, 0.35);
+}
+
+.v-assessment-card--incomplete {
+  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+  border: 1.5px solid #f43f5e;
+  box-shadow: 0 8px 25px rgba(225, 29, 72, 0.35);
+}
+
+.v-assessment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.v-assessment-title {
   font-size: 1.15rem;
   font-weight: 900;
-  margin: 0 0 0.2rem;
-  font-family: "Noto Sans Devanagari", sans-serif;
+  margin: 0;
+  font-family: 'Noto Sans Devanagari', -apple-system, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-.v-celebration-sub {
-  font-size: 0.82rem;
-  opacity: 0.95;
-  margin: 0;
+.v-assessment-stars {
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+}
+
+.v-assessment-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.75rem 0;
+}
+
+.v-metric-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(4px);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.v-metric-pill strong {
+  color: #fef08a;
+}
+
+.v-assessment-feedback {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  margin: 0 0 0.6rem;
+  opacity: 0.98;
+}
+
+.v-assessment-rule-callout {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 8px;
+  padding: 0.45rem 0.65rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.v-assessment-tip {
+  font-size: 0.78rem;
+  line-height: 1.4;
+  background: rgba(255, 255, 255, 0.14);
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+  margin-bottom: 0.85rem;
+}
+
+.v-assessment-tip strong {
+  color: #fde047;
+}
+
+.v-assessment-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.v-assessment-btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  transition: all 0.15s ease;
+}
+
+.v-assessment-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.v-assessment-btn--primary {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: #ffffff;
+}
+
+.v-assessment-btn--primary:hover {
+  background: #f8fafc;
+  color: #0284c7;
 }
 
 @keyframes vPopBounce {
   0% {
-    transform: scale(0.6);
+    transform: scale(0.7);
     opacity: 0;
   }
   100% {

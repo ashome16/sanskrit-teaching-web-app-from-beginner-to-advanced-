@@ -10,6 +10,10 @@ import {
   type StrokePoint,
 } from '../data/varnamalaStrokePaths';
 import { playPronunciation } from '../utils/pronunciation';
+import {
+  evaluateHandwriting,
+  type AssessmentResult,
+} from '../utils/handwritingEvaluator';
 
 interface Point {
   x: number;
@@ -46,7 +50,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
   const [showRuling, setShowRuling] = useState<boolean>(true);
   const [strokes, setStrokes] = useState<Stroke[]>([]);
   const [activeCategory, setActiveCategory] = useState<string>('all');
-  const [showCelebration, setShowCelebration] = useState<boolean>(false);
+  const [assessment, setAssessment] = useState<AssessmentResult | null>(null);
 
   // Auto-Player State
   const [isPlayingDemo, setIsPlayingDemo] = useState<boolean>(false);
@@ -100,7 +104,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     if (initialLetter && initialLetter !== selectedLetter) {
       setSelectedLetter(initialLetter);
       setStrokes([]);
-      setShowCelebration(false);
+      setAssessment(null);
       stopDemo();
     }
   }, [initialLetter]);
@@ -126,6 +130,13 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     if (activeCategory === 'other') return item.group === 'antastha' || item.group === 'ushmana' || item.group === 'samyukta';
     return true;
   });
+
+  // Next letter in sequence for quick progression
+  const currentLetterIdx = ALL_VARNAMALA_LETTERS.findIndex((item) => item.letter === selectedLetter);
+  const nextLetterItem =
+    currentLetterIdx >= 0
+      ? ALL_VARNAMALA_LETTERS[(currentLetterIdx + 1) % ALL_VARNAMALA_LETTERS.length]
+      : null;
 
   // Re-draw user canvas whenever user strokes change
   const redrawCanvas = () => {
@@ -458,7 +469,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
 
     setIsPlayingDemo(true);
     setIsPaused(false);
-    setShowCelebration(false);
+    setAssessment(null);
 
     let initialIndex = 0;
     if (targetStroke !== null) {
@@ -578,30 +589,40 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
   };
 
   const handleUndo = () => {
-    setStrokes((prev) => prev.slice(0, -1));
+    setStrokes((prev) => {
+      const next = prev.slice(0, -1);
+      if (next.length === 0) setAssessment(null);
+      return next;
+    });
   };
 
   const handleClear = () => {
     setStrokes([]);
-    setShowCelebration(false);
+    setAssessment(null);
     stopDemo();
   };
 
   const handleCheckWriting = () => {
-    if (strokes.length === 0) {
-      alert('Draw or trace the letter first on the canvas!');
-      return;
-    }
-    setShowCelebration(true);
+    const canvas = canvasRef.current;
+    const rect = canvas ? canvas.getBoundingClientRect() : null;
+    const width = rect && rect.width > 0 ? rect.width : (canvas?.width || 400);
+    const height = rect && rect.height > 0 ? rect.height : (canvas?.height || 400);
+
+    const strokeAnim = getLetterStrokeAnimation(selectedLetter);
+    const result = evaluateHandwriting(strokes, width, height, strokeAnim, mnemonic);
+    setAssessment(result);
+
     try {
       playPronunciation(mnemonic.letter);
-      setTimeout(() => {
-        try {
-          playPronunciation(mnemonic.wordSan);
-        } catch {
-          // ignore speech failure
-        }
-      }, 600);
+      if (result.score >= 70) {
+        setTimeout(() => {
+          try {
+            playPronunciation(mnemonic.wordSan);
+          } catch {
+            // ignore speech failure
+          }
+        }, 650);
+      }
     } catch {
       // ignore speech failure
     }
@@ -611,7 +632,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     stopDemo();
     setSelectedLetter(char);
     setStrokes([]);
-    setShowCelebration(false);
+    setAssessment(null);
     try {
       playPronunciation(char);
     } catch {
@@ -978,23 +999,94 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
             </div>
           </div>
 
-          {/* Check / Celebrate Action Button */}
+          {/* Check / Evaluate Action Button */}
           <button
             type="button"
             className="v-submit-check-btn"
             onClick={handleCheckWriting}
           >
-            <span>🎉</span> Check My Writing (परीक्षणम्)
+            <span>✍️</span> Check My Writing (परीक्षणम्)
           </button>
 
-          {/* Celebration Banner */}
-          {showCelebration && (
-            <div className="v-celebration-banner">
-              <h5 className="v-celebration-title">✨ अति-उत्तमम्! Outstanding!</h5>
-              <p className="v-celebration-sub">
-                You wrote <strong>{mnemonic.letter}</strong> ({mnemonic.wordSan} {mnemonic.emoji})
-                with great precision!
-              </p>
+          {/* Dynamic Handwriting Assessment Card */}
+          {assessment && (
+            <div
+              className={`v-assessment-card v-assessment-card--${assessment.grade}`}
+              role="region"
+              aria-label="Handwriting Assessment Result"
+            >
+              <div className="v-assessment-header">
+                <h5 className="v-assessment-title">
+                  <span>{assessment.badgeEmoji}</span>
+                  <span>{assessment.title}</span>
+                </h5>
+                <div
+                  className="v-assessment-stars"
+                  aria-label={`${assessment.stars} out of 5 stars`}
+                >
+                  {'⭐'.repeat(assessment.stars)}
+                </div>
+              </div>
+
+              {/* Metrics pills: Score, Coverage, Precision, Stroke Count */}
+              <div className="v-assessment-metrics">
+                <span className="v-metric-pill">
+                  🎯 Score: <strong>{assessment.score}%</strong>
+                </span>
+                <span className="v-metric-pill">
+                  📐 Coverage: <strong>{assessment.coveragePct}%</strong>
+                </span>
+                <span className="v-metric-pill">
+                  ✨ Precision: <strong>{assessment.precisionPct}%</strong>
+                </span>
+                <span className="v-metric-pill">
+                  ✍️ Strokes: <strong>{assessment.strokeCount.message}</strong>
+                </span>
+              </div>
+
+              {/* Pāṇinian Rule / Shirorekha Callout */}
+              {assessment.shirorekhaCheck && (
+                <div className="v-assessment-rule-callout">
+                  <span>{assessment.shirorekhaCheck.message}</span>
+                </div>
+              )}
+
+              <p className="v-assessment-feedback">{assessment.feedback}</p>
+
+              <div className="v-assessment-tip">
+                <strong>💡 Calligraphy Tip: </strong>
+                <span>{assessment.calligraphyTip}</span>
+              </div>
+
+              {/* Quick Actions: Try Again, Watch Demo, Next Letter */}
+              <div className="v-assessment-actions">
+                <button
+                  type="button"
+                  className="v-assessment-btn"
+                  onClick={handleClear}
+                  title="Clear slate and practice this letter again"
+                >
+                  <span>🔄</span> Try Again
+                </button>
+                <button
+                  type="button"
+                  className="v-assessment-btn"
+                  onClick={() => startDemo(null)}
+                  title="Watch stroke animation demo"
+                >
+                  <span>▶️</span> Watch Demo
+                </button>
+                {nextLetterItem && (
+                  <button
+                    type="button"
+                    className="v-assessment-btn v-assessment-btn--primary"
+                    onClick={() => handleSelectLetter(nextLetterItem.letter)}
+                    title={`Move to next letter (${nextLetterItem.letter})`}
+                  >
+                    <span>Next: {nextLetterItem.letter}</span> ➔
+                  </button>
+                )}
+              </div>
             </div>
           )}
         </div>
