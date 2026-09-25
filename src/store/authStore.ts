@@ -28,12 +28,31 @@ const UPI_VPA_KEY = 'sanskrit_upi_vpa_v1';
 const UPI_PAYEE_KEY = 'sanskrit_upi_payee_v1';
 /** One-time flag: purge retired personal demo accounts from localStorage. */
 const PURGE_PERSONAL_ACCOUNTS_FLAG = 'sanskrit_purge_personal_accounts_v1';
-/** Personal emails (and matching usernames) to remove once; never touch Zoho admin emails. */
+/** Personal emails (and matching usernames) to remove once; never touch Zoho admin emails or active administrators. */
 const PERSONAL_ACCOUNTS_TO_PURGE = [
   'kpenumallu@gmail.com',
-  'seshakalpana7@gmail.com',
-  'kalpana_penumallu@yahoo.com',
 ] as const;
+
+export const isInternalDemoEmail = (email: string | undefined | null): boolean => {
+  if (!email) return false;
+  const lower = email.trim().toLowerCase();
+  return (
+    lower.endsWith('@ednetadmin.in') ||
+    lower.endsWith('@example.com') ||
+    lower.endsWith('@example.org') ||
+    lower.endsWith('@test.com') ||
+    lower.endsWith('@localhost')
+  );
+};
+
+export const maskEmail = (email: string | undefined | null): string => {
+  if (!email || !email.includes('@')) return email || '';
+  const [local, domain] = email.split('@');
+  if (local.length <= 2) {
+    return `${local[0]}***@${domain}`;
+  }
+  return `${local.slice(0, 2)}***${local.slice(-1)}@${domain}`;
+};
 export const DEFAULT_UPI_VPA = '7075296749@upi';
 export const DEFAULT_UPI_PAYEE = 'EdNet Learn Gurukul';
 
@@ -182,7 +201,16 @@ interface AuthState {
 
   // OTP & Password Recovery
   activeOtpSession: OtpSession | null;
-  requestPasswordResetOtp: (identifier: string) => Promise<{ success: boolean; emailConfigured: boolean; emailSent?: boolean; fallbackOtp?: string; error?: string }>;
+  requestPasswordResetOtp: (identifier: string) => Promise<{
+    success: boolean;
+    emailConfigured: boolean;
+    emailSent?: boolean;
+    fallbackOtp?: string;
+    targetEmail?: string;
+    maskedEmail?: string;
+    isDummyDomain?: boolean;
+    error?: string;
+  }>;
   verifyOtpAndResetPassword: (identifier: string, otp: string, newPassword: string) => { success: boolean; error?: string };
   clearOtpSession: () => void;
   /** Resend via Vercel /api/send-reset-otp. No-ops when reset email is not configured (e.g. local vite without API). */
@@ -401,6 +429,44 @@ const ensureDefaultAdminAccounts = (
     };
   }
 
+  // Seed seshakalpana7@gmail.com (username: kalpana)
+  const hasKalpana = Object.values(next).some(
+    (a) =>
+      a.profile?.email?.toLowerCase() === 'seshakalpana7@gmail.com' ||
+      a.profile?.username?.toLowerCase() === 'kalpana' ||
+      a.profile?.username?.toLowerCase() === 'seshakalpana'
+  );
+  if (!hasKalpana) {
+    const id = 'admin_kalpana_ednet';
+    next[id] = {
+      profile: {
+        id,
+        username: 'kalpana',
+        email: 'seshakalpana7@gmail.com',
+        fullName: 'Kalpana Penumallu',
+        avatar: '🧘',
+        grade: 'Advanced (कोविदः)',
+        interests: ['NCERT दीपकम Curriculum', 'Administration'],
+        createdAt: now,
+        lastLoginAt: now,
+        trialEndsAt: farFuture,
+        planExpiresAt: farFuture,
+        subscriptionRenewsAt: farFuture,
+        planStatus: 'active',
+        monthlyPriceInr: MONTHLY_PRICE_INR,
+      },
+      passwordHash: 'ednetadmin2026',
+      progress: {
+        userId: id,
+        lessonsCompleted: [],
+        quizzesCompleted: [],
+        totalPoints: 1000,
+        streak: 1,
+        lastActivityDate: now,
+      },
+    };
+  }
+
   return next;
 };
 
@@ -532,6 +598,10 @@ export const useAuthStore = create<AuthState>((set, get) => {
         return { success: false, emailConfigured: true, emailSent: false, error };
       }
 
+      const targetEmail = account.profile.email;
+      const maskedEmail = maskEmail(targetEmail);
+      const isDummyDomain = isInternalDemoEmail(targetEmail);
+
       // Generate a secure 6-digit OTP
       const otp = Math.floor(100000 + Math.random() * 900000).toString();
       const expiresAt = Date.now() + 10 * 60 * 1000; // 10 minutes validity
@@ -539,7 +609,7 @@ export const useAuthStore = create<AuthState>((set, get) => {
       const session: OtpSession = {
         code: otp,
         identifier: cleanId,
-        email: account.profile.email,
+        email: targetEmail,
         expiresAt,
         purpose: 'forgot_password',
         attempts: 0,
@@ -547,12 +617,26 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
       set({ activeOtpSession: session, authError: null });
 
+      // If internal demo domain (e.g. care@ednetadmin.in), do NOT call Resend (avoids bounce).
+      // Return fallbackOtp immediately for instant verification.
+      if (isDummyDomain) {
+        return {
+          success: true,
+          emailConfigured: true,
+          emailSent: false,
+          isDummyDomain: true,
+          targetEmail,
+          maskedEmail,
+          fallbackOtp: otp,
+        };
+      }
+
       let emailSent = false;
       let emailError: string | undefined;
 
       if (emailConfigured) {
         const sendResult = await get().sendPasswordResetEmail(
-          account.profile.email,
+          targetEmail,
           otp,
           account.profile.fullName || account.profile.username
         );
@@ -563,12 +647,15 @@ export const useAuthStore = create<AuthState>((set, get) => {
         }
       }
 
-      // If email was sent, do not expose OTP. If email delivery is pending or restricted,
-      // provide fallbackOtp so testing and recovery are NEVER blocked!
+      // If email was sent, do not expose OTP by default. If delivery failed or pending,
+      // provide fallbackOtp so user recovery is NEVER blocked.
       return {
         success: true,
         emailConfigured: !!emailConfigured,
         emailSent,
+        isDummyDomain: false,
+        targetEmail,
+        maskedEmail,
         fallbackOtp: !emailSent ? otp : undefined,
         error: emailError,
       };

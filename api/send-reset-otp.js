@@ -96,9 +96,22 @@ module.exports = async function handler(req, res) {
       return send(res, 400, { error: 'otp must be 6 digits' });
     }
 
+    if (
+      email.endsWith('@ednetadmin.in') ||
+      email.endsWith('@example.com') ||
+      email.endsWith('@example.org') ||
+      email.endsWith('@test.com') ||
+      email.endsWith('@localhost')
+    ) {
+      return send(res, 400, {
+        error: 'Internal demonstration address cannot receive inbound emails',
+        isDummyDomain: true,
+      });
+    }
+
     const { from } = resolveFromAddress();
     const greeting = toName ? `Hi ${toName},` : 'Hi,';
-    const subject = 'Your EdNet Learn password reset code';
+    const subject = `Your EdNet Learn reset code is ${otp}`;
     const text = [
       greeting,
       '',

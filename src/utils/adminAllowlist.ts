@@ -3,6 +3,7 @@ export const ADMIN_EMAIL_ALLOWLIST = [
   'care@ednetadmin.in',
   'admin@ednetlearn.in',
   'care@ednetlearn.in',
+  'seshakalpana7@gmail.com',
 ] as const;
 
 /** Case-insensitive trim match against ADMIN_EMAIL_ALLOWLIST. */

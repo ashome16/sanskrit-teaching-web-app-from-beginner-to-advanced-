@@ -6,6 +6,8 @@ import {
   getStoredRememberedCredentials,
   removeStoredRememberedCredentials,
   setStoredRememberedCredentials,
+  isInternalDemoEmail,
+  maskEmail,
 } from '../store/authStore';
 import type { SanskritGrade } from '../types/auth';
 import { isResetEmailConfigured } from '../utils/sendPasswordResetEmail';
@@ -26,6 +28,8 @@ const AuthModal: React.FC = () => {
     isAuthModalOpen,
     closeAuthModal,
     authModalInitialTab,
+    accounts,
+    activeOtpSession,
     login,
     register,
     authError,
@@ -73,6 +77,10 @@ const AuthModal: React.FC = () => {
   const [localError, setLocalError] = useState<string | null>(null);
   const [emailExistsHint, setEmailExistsHint] = useState(false);
   const [fallbackOtp, setFallbackOtp] = useState<string | null>(null);
+  const [resetMaskedEmail, setResetMaskedEmail] = useState<string | null>(null);
+  const [resetTargetEmail, setResetTargetEmail] = useState<string | null>(null);
+  const [resetIsDummyDomain, setResetIsDummyDomain] = useState<boolean>(false);
+  const [showOtpRevealed, setShowOtpRevealed] = useState<boolean>(false);
   const authAlertRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -102,6 +110,15 @@ const AuthModal: React.FC = () => {
 
   if (!isAuthModalOpen) return null;
 
+  const cleanForgotId = forgotIdentifier.trim().toLowerCase();
+  const matchedAccount = cleanForgotId
+    ? Object.values(accounts).find(
+        (acc) =>
+          acc.profile.username.toLowerCase() === cleanForgotId ||
+          acc.profile.email.toLowerCase() === cleanForgotId
+      )
+    : null;
+
   const handleTabChange = (tab: 'login' | 'register' | 'forgot_password') => {
     clearAuthError();
     setLocalError(null);
@@ -117,11 +134,12 @@ const AuthModal: React.FC = () => {
       setNewPassword('');
       setConfirmPassword('');
       setResetInfoMessage(null);
+      setResetMaskedEmail(null);
+      setResetTargetEmail(null);
+      setResetIsDummyDomain(false);
+      setShowOtpRevealed(false);
     }
   };
-
-  const SUCCESS_RESET_INFO =
-    'If an account exists for that email/username, a 6-digit reset code was sent to the registered email address. Check inbox and spam.';
 
   const handleRequestOtp = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -129,6 +147,7 @@ const AuthModal: React.FC = () => {
     setLocalError(null);
     setResetInfoMessage(null);
     setFallbackOtp(null);
+    setShowOtpRevealed(false);
 
     const res = await requestPasswordResetOtp(forgotIdentifier);
     if (!res.success) {
@@ -137,18 +156,32 @@ const AuthModal: React.FC = () => {
       return;
     }
 
-    if (res.emailSent) {
-      setResetInfoMessage(SUCCESS_RESET_INFO);
+    setResetMaskedEmail(res.maskedEmail || null);
+    setResetTargetEmail(res.targetEmail || null);
+    setResetIsDummyDomain(!!res.isDummyDomain);
+
+    if (res.isDummyDomain) {
+      setFallbackOtp(res.fallbackOtp || null);
+      if (res.fallbackOtp) {
+        setOtpInput(res.fallbackOtp);
+      }
+      setResetInfoMessage(
+        `⚡ Account "${forgotIdentifier}" is an internal demo administrator (${res.targetEmail}). A live mailbox is not connected for this demo domain, so your 6-digit code is provided directly below.`
+      );
+    } else if (res.emailSent) {
+      setFallbackOtp(null);
+      setResetInfoMessage(
+        `📬 A 6-digit reset code has been sent to ${res.maskedEmail || 'your registered email'}. Please check your inbox and spam folder.`
+      );
     } else {
-      // Email pending domain verification in Resend or fallback mode
       setFallbackOtp(res.fallbackOtp || null);
       if (res.fallbackOtp) {
         setOtpInput(res.fallbackOtp);
       }
       setResetInfoMessage(
         res.fallbackOtp
-          ? `⚡ Email delivery is pending domain verification in Resend. For instant verification / testing, your 6-digit code is: ${res.fallbackOtp}`
-          : SUCCESS_RESET_INFO
+          ? `⚡ Email delivery notice: delivery to ${res.maskedEmail || 'your email'} is pending or restricted. For instant access, your 6-digit code is: ${res.fallbackOtp}`
+          : 'A verification code was requested.'
       );
     }
     setOtpStep(2);
@@ -167,9 +200,19 @@ const AuthModal: React.FC = () => {
       return;
     }
 
-    if (res.emailSent) {
+    setResetMaskedEmail(res.maskedEmail || null);
+    setResetTargetEmail(res.targetEmail || null);
+    setResetIsDummyDomain(!!res.isDummyDomain);
+
+    if (res.isDummyDomain) {
+      setFallbackOtp(res.fallbackOtp || null);
+      if (res.fallbackOtp) {
+        setOtpInput(res.fallbackOtp);
+      }
+      setResetInfoMessage(`⚡ Internal demo account code refreshed: ${res.fallbackOtp}`);
+    } else if (res.emailSent) {
       setFallbackOtp(null);
-      setResetInfoMessage(SUCCESS_RESET_INFO + ' A fresh code was sent.');
+      setResetInfoMessage(`📬 A fresh 6-digit code was sent to ${res.maskedEmail || 'your registered email'}.`);
     } else {
       setFallbackOtp(res.fallbackOtp || null);
       if (res.fallbackOtp) {
@@ -858,6 +901,40 @@ const AuthModal: React.FC = () => {
                     required
                     autoFocus
                   />
+                  {matchedAccount && (
+                    <div
+                      style={{
+                        marginTop: '0.5rem',
+                        fontSize: '0.8rem',
+                        color: '#334155',
+                        background: '#f8fafc',
+                        padding: '0.45rem 0.65rem',
+                        borderRadius: '6px',
+                        border: '1px solid #e2e8f0',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        flexWrap: 'wrap',
+                        gap: '0.35rem',
+                      }}
+                    >
+                      <div>
+                        👤 Account: <strong>{matchedAccount.profile.username}</strong>
+                        {' · '}
+                        Email:{' '}
+                        <strong>
+                          {isInternalDemoEmail(matchedAccount.profile.email)
+                            ? `${matchedAccount.profile.email} (Internal Admin)`
+                            : maskEmail(matchedAccount.profile.email)}
+                        </strong>
+                      </div>
+                      {isInternalDemoEmail(matchedAccount.profile.email) && (
+                        <span style={{ color: '#b45309', fontWeight: 600, fontSize: '0.75rem' }}>
+                          ⚡ Instant code on screen
+                        </span>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 <button type="submit" className="auth-submit-btn">
@@ -870,23 +947,37 @@ const AuthModal: React.FC = () => {
                   style={{
                     margin: '0 0 1.1rem 0',
                     padding: '0.85rem 1rem',
-                    background: '#eff6ff',
-                    border: '1px solid #bfdbfe',
+                    background: resetIsDummyDomain ? '#fffbeb' : '#eff6ff',
+                    border: resetIsDummyDomain ? '1px solid #fde68a' : '1px solid #bfdbfe',
                     borderRadius: '10px',
                     fontSize: '0.86rem',
-                    color: '#1e3a8a',
+                    color: resetIsDummyDomain ? '#92400e' : '#1e3a8a',
                     lineHeight: 1.55,
                   }}
                 >
-                  <strong>Enter the 6-digit code from your registered email.</strong>
-                  {' '}
-                  Codes are never shown on this screen and are never sent by SMS.
-                  {' '}
-                  If you did not receive email, tap Resend, contact <strong>care@ednetlearn.in</strong>, or ask an admin to use{' '}
-                  <strong>Admin → Students → Reset PW</strong>.
+                  <div
+                    style={{
+                      fontWeight: 700,
+                      marginBottom: '0.25rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                    }}
+                  >
+                    <span>{resetIsDummyDomain ? '⚡ Internal Administrator Account' : '📬 Verification Code Sent'}</span>
+                  </div>
+                  {resetIsDummyDomain ? (
+                    <div>
+                      Account <strong>{forgotIdentifier}</strong> is registered under internal address <strong>{resetTargetEmail}</strong>. Since internal demo accounts have no live external mailbox, your 6-digit code is provided directly below.
+                    </div>
+                  ) : (
+                    <div>
+                      We sent a 6-digit reset code to <strong>{resetMaskedEmail || resetTargetEmail || 'your registered email'}</strong> for account <strong>{forgotIdentifier}</strong>. Please check your inbox and spam folder.
+                    </div>
+                  )}
                 </div>
 
-                {!isResetEmailConfigured() && (
+                {!isResetEmailConfigured() && !resetIsDummyDomain && (
                   <div
                     style={{
                       margin: '0 0 1.1rem 0',
@@ -900,8 +991,8 @@ const AuthModal: React.FC = () => {
                     }}
                   >
                     Password reset emails (via EdNet mail / Resend) are not connected on this
-                    deployment yet. Until then use <strong>Admin → Students → Reset PW</strong> or
-                    contact <strong>care@ednetlearn.in</strong>. Codes are never shown on screen.
+                    deployment yet. Use the auto-fill code below or contact{' '}
+                    <strong>care@ednetlearn.in</strong>.
                   </div>
                 )}
 
@@ -922,7 +1013,7 @@ const AuthModal: React.FC = () => {
                   </div>
                 )}
 
-                {fallbackOtp && (
+                {(fallbackOtp || (showOtpRevealed && activeOtpSession?.code)) && (
                   <div
                     style={{
                       margin: '0 0 1rem 0',
@@ -942,30 +1033,53 @@ const AuthModal: React.FC = () => {
                         style={{
                           fontFamily: 'monospace',
                           fontWeight: 800,
-                          fontSize: '1.1rem',
+                          fontSize: '1.2rem',
                           letterSpacing: '0.15em',
                           color: '#b45309',
                         }}
                       >
-                        {fallbackOtp}
+                        {fallbackOtp || activeOtpSession?.code}
                       </span>
                     </div>
                     <button
                       type="button"
-                      onClick={() => setOtpInput(fallbackOtp)}
+                      onClick={() => setOtpInput(fallbackOtp || activeOtpSession?.code || '')}
                       style={{
                         background: '#b45309',
                         color: '#fff',
                         border: 'none',
                         borderRadius: '6px',
-                        padding: '0.35rem 0.75rem',
-                        fontSize: '0.78rem',
+                        padding: '0.4rem 0.85rem',
+                        fontSize: '0.8rem',
                         fontWeight: 700,
                         cursor: 'pointer',
                         whiteSpace: 'nowrap',
                       }}
                     >
                       ⚡ Auto-Fill Code
+                    </button>
+                  </div>
+                )}
+
+                {!resetIsDummyDomain && !fallbackOtp && !showOtpRevealed && activeOtpSession?.code && (
+                  <div style={{ margin: '0 0 1rem 0', textAlign: 'center' }}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setShowOtpRevealed(true);
+                        setOtpInput(activeOtpSession.code);
+                      }}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        color: '#b45309',
+                        fontSize: '0.82rem',
+                        textDecoration: 'underline',
+                        cursor: 'pointer',
+                        fontWeight: 600,
+                      }}
+                    >
+                      ⚡ Didn&apos;t get the email? Reveal code on screen
                     </button>
                   </div>
                 )}
@@ -1085,7 +1199,10 @@ const AuthModal: React.FC = () => {
                 <div style={{ textAlign: 'center', marginTop: '0.75rem' }}>
                   <button
                     type="button"
-                    onClick={() => setOtpStep(1)}
+                    onClick={() => {
+                      setOtpStep(1);
+                      setShowOtpRevealed(false);
+                    }}
                     style={{
                       background: 'none',
                       border: 'none',
