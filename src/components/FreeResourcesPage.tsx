@@ -440,8 +440,8 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
   const handleQuickDownload = (res: QuickDownloadResource) => {
     if (res.id === 'qd-vedic-maths-sutras') {
       const a = document.createElement('a');
-      a.href = '/vedic-maths-16-sutras-poster.jpg';
-      a.download = 'EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.jpg';
+      a.href = '/vedic-sutras-poster-v2.png';
+      a.download = 'EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.png';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -936,8 +936,8 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                 title="Click to preview full-size poster"
               >
                 <img
-                  src="/vedic-maths-16-sutras-poster.jpg"
-                  alt="EdNet Learn 16 Foundational Sutras of Vedic Mathematics Infographic Poster"
+                  src="/vedic-sutras-poster-v2.webp"
+                  alt="16 Foundational Sutras of Vedic Mathematics poster by EdNet Learn"
                   className="vedic-poster-thumb-img"
                 />
               </div>
@@ -960,12 +960,12 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                     <span>View Full Poster</span>
                   </button>
                   <a
-                    href="/vedic-maths-16-sutras-poster.jpg"
-                    download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.jpg"
+                    href="/vedic-sutras-poster-v2.png"
+                    download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.png"
                     className="vedic-poster-btn-secondary"
                   >
                     <span>📥</span>
-                    <span>Download High-Res (JPG)</span>
+                    <span>Download High-Res (PNG)</span>
                   </a>
                 </div>
               </div>
@@ -1068,8 +1068,8 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                         title="Click to preview full-size poster"
                       >
                         <img
-                          src="/vedic-maths-16-sutras-poster.jpg"
-                          alt="EdNet Learn 16 Foundational Sutras of Vedic Mathematics Infographic Poster"
+                          src="/vedic-sutras-poster-v2.webp"
+                          alt="16 Foundational Sutras of Vedic Mathematics poster by EdNet Learn"
                           className="vedic-poster-thumb-img"
                         />
                       </div>
@@ -1092,12 +1092,12 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                             <span>View Full Poster</span>
                           </button>
                           <a
-                            href="/vedic-maths-16-sutras-poster.jpg"
-                            download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.jpg"
+                            href="/vedic-sutras-poster-v2.png"
+                            download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.png"
                             className="vedic-poster-btn-secondary"
                           >
                             <span>📥</span>
-                            <span>Download High-Res (JPG)</span>
+                            <span>Download High-Res (PNG)</span>
                           </a>
                         </div>
                       </div>
@@ -1418,8 +1418,8 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
 
             <div className="vedic-modal-image-wrap">
               <img
-                src="/vedic-maths-16-sutras-poster.jpg"
-                alt="16 Foundational Sutras of Vedic Mathematics Wall Poster"
+                src="/vedic-sutras-poster-v2.webp"
+                alt="16 Foundational Sutras of Vedic Mathematics poster by EdNet Learn"
                 className="vedic-modal-image"
               />
             </div>
@@ -1434,12 +1434,12 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                 <span>Close</span>
               </button>
               <a
-                href="/vedic-maths-16-sutras-poster.jpg"
-                download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.jpg"
+                href="/vedic-sutras-poster-v2.png"
+                download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.png"
                 className="vedic-poster-btn-primary"
               >
                 <span>📥</span>
-                <span>Download High-Resolution Poster (JPG)</span>
+                <span>Download High-Resolution Poster (PNG)</span>
               </a>
             </div>
           </div>
