@@ -20,6 +20,7 @@ export interface HomePageProps {
   onOpenDhatupatha?: () => void;
   onOpenBodhi?: () => void;
   onOpenSearch?: () => void;
+  onOpenResources?: () => void;
 }
 
 interface DemoWord {
@@ -465,6 +466,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenDhatupatha,
   onOpenBodhi,
   onOpenSearch,
+  onOpenResources,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
@@ -657,6 +659,16 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenWorksheets}
             >
               📑 कार्यपत्रिकाः · Worksheets
+            </button>
+          )}
+          {onOpenResources && (
+            <button
+              type="button"
+              className="home-btn-secondary"
+              style={{ background: 'rgba(2, 132, 199, 0.08)', borderColor: 'rgba(2, 132, 199, 0.35)', color: '#0369a1' }}
+              onClick={onOpenResources}
+            >
+              🌐 साधनानि · Live News &amp; Events
             </button>
           )}
         </div>

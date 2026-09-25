@@ -16,9 +16,9 @@ export interface SearchTarget {
     | 'worksheets'
     | 'board'
     | 'cbse-guide'
-    | 'resources'
     | 'philosophy'
-    | 'faq';
+    | 'faq'
+    | 'resources';
   grammarTopic?:
     | 'home'
     | 'vibhakti'
@@ -1274,6 +1274,40 @@ export const SEARCH_INDEX: SearchItem[] = [
     ],
     target: {
       view: 'faq',
+    },
+  },
+  {
+    id: 'guide-resources-events',
+    title: 'साधनानि · Sanskrit Resources, Live News & Events Feed',
+    subtitle: 'Breaking Bulletins, Competitions, Olympiads, Webinars & Study Vault',
+    category: 'guides',
+    categoryLabel: 'Live · Hub',
+    badgeEmoji: '🌐',
+    badgeColor: '#0284c7',
+    description:
+      'Real-time Sanskrit education feed featuring official CBSE circulars, National Sanskrit Olympiad 2026, live Sunday masterclasses, Vedic maths championships, calendar sync (.ics), and quick-download study sheets.',
+    keywords: [
+      'resources',
+      'news',
+      'events',
+      'feed',
+      'live',
+      'bulletin',
+      'circular',
+      'cbse',
+      'olympiad',
+      'competition',
+      'webinar',
+      'masterclass',
+      'download',
+      'vault',
+      'pdf',
+      'calendar',
+      'ics',
+      'sadhana',
+    ],
+    target: {
+      view: 'resources',
     },
   },
 ];

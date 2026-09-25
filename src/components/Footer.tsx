@@ -13,9 +13,9 @@ export interface FooterProps {
   onOpenFAQ?: () => void;
   onOpenPhilosophy?: () => void;
   onOpenCbseGuide?: () => void;
-  onOpenResources?: () => void;
   onOpenDhatupatha?: () => void;
   onOpenBodhi?: () => void;
+  onOpenResources?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -29,9 +29,9 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenFAQ,
   onOpenPhilosophy,
   onOpenCbseGuide,
-  onOpenResources,
   onOpenDhatupatha,
   onOpenBodhi,
+  onOpenResources,
 }) => {
   const [legalModal, setLegalModal] = useState<LegalModalType>(null);
   const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
@@ -154,16 +154,18 @@ export const Footer: React.FC<FooterProps> = ({
                   <span className="nav-btn-text">CBSE Sanskrit Exam Guide</span>
                 </button>
               </li>
-              <li>
-                <button
-                  type="button"
-                  className="footer-nav-btn"
-                  onClick={onOpenResources}
-                >
-                  <span className="nav-btn-icon">🔗</span>
-                  <span className="nav-btn-text">Free Sanskrit Resources</span>
-                </button>
-              </li>
+              {onOpenResources && (
+                <li>
+                  <button
+                    type="button"
+                    className="footer-nav-btn"
+                    onClick={onOpenResources}
+                  >
+                    <span className="nav-btn-icon">🌐</span>
+                    <span className="nav-btn-text">साधनानि · Live News, Events &amp; Vault</span>
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
 

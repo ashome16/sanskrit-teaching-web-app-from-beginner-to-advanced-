@@ -80,6 +80,10 @@ const RESOURCES_PATHS = new Set([
   '/resources',
   '/free-sanskrit-resources',
   '/sanskrit-resources',
+  '/events',
+  '/news',
+  '/live',
+  '/updates',
 ]);
 
 export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string }> = {
@@ -815,6 +819,16 @@ const Dashboard: React.FC = () => {
           </button>
           <button
             type="button"
+            className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'resources' ? ' active' : ''}`}
+            onClick={() => navigateToView('resources')}
+            title="Open Sanskrit Resources, Live News & Events Feed (साधनानि)"
+          >
+            <img src="/nav/nav-resources.svg" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+            <span className="dashboard-nav-primary">साधनानि</span>
+            <span className="dashboard-nav-secondary">Live &amp; Events</span>
+          </button>
+          <button
+            type="button"
             className={`dashboard-nav-faq dashboard-nav-item${activeView === 'faq' ? ' active' : ''}`}
             onClick={() => navigateToView('faq')}
             title="View FAQ & Pricing"
@@ -876,6 +890,7 @@ const Dashboard: React.FC = () => {
           onOpenCbseGuide={() => navigateToView('cbse-guide')}
           onOpenBodhi={() => setIsBodhiGuideOpen(true)}
           onOpenSearch={() => setIsSearchModalOpen(true)}
+          onOpenResources={() => navigateToView('resources')}
         />
       )}
       {activeView === 'faq' && (
@@ -906,6 +921,9 @@ const Dashboard: React.FC = () => {
           onOpenGrammar={handleOpenGrammar}
           onOpenCbseGuide={() => navigateToView('cbse-guide')}
           onOpenPhilosophy={() => navigateToView('philosophy')}
+          onOpenRegister={() => openAuthModal('register')}
+          onOpenQuiz={() => navigateToView('quiz')}
+          onOpenWorksheets={() => handleOpenWorksheets('all')}
         />
       )}
       <Suspense fallback={<ViewLoader />}>

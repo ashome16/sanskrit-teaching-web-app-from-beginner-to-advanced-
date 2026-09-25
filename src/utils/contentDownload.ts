@@ -166,3 +166,48 @@ export function downloadQuizSheet(
   const hint = options?.filenameHint || title;
   downloadBlob(`ednet-quiz-${slugify(hint)}.html`, html);
 }
+
+/** Trigger an .ics calendar file download for any event. */
+export function downloadCalendarEvent(title: string, description: string, location = 'Online · EdNet Learn'): void {
+  const dtStamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+  const icsContent = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//EdNet Learn Gurukul//Sanskrit Events//EN',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'BEGIN:VEVENT',
+    `UID:${Date.now()}@ednetlearn.in`,
+    `DTSTAMP:${dtStamp}`,
+    `DTSTART:${dtStamp}`,
+    `SUMMARY:${title.replace(/[,;\n]/g, ' ')}`,
+    `DESCRIPTION:${description.replace(/\n/g, '\\n')}`,
+    `LOCATION:${location}`,
+    'STATUS:CONFIRMED',
+    'END:VEVENT',
+    'END:VCALENDAR',
+  ].join('\r\n');
+
+  downloadBlob(`${slugify(title)}.ics`, icsContent, 'text/calendar;charset=utf-8');
+}
+
+/** Download a formatted, printable study guide or cheat sheet document. */
+export function downloadResourceDocument(
+  title: string,
+  titleSa: string,
+  category: string,
+  detailsHtml: string,
+  filename?: string
+): void {
+  const body = `
+<h1>${escapeHtml(title)}</h1>
+<div style="font-size: 1.25rem; font-weight: 700; color: #b3472f; margin-bottom: 0.5rem; font-family: 'Noto Sans Devanagari', serif;">${escapeHtml(titleSa)}</div>
+<div class="meta">${escapeHtml(category)} · Official EdNet Learn Gurukul Academic Study Vault</div>
+<div style="background: #fffdf8; border: 1.5px solid #eed0ae; border-radius: 8px; padding: 1.25rem; margin-top: 1rem; line-height: 1.6;">
+  ${detailsHtml}
+</div>
+`;
+  const html = wrapHtml(title, body);
+  downloadBlob(filename || `ednet-resource-${slugify(title)}.html`, html);
+}
+
