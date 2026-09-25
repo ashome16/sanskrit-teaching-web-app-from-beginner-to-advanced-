@@ -1,5 +1,5 @@
 # चिह्न-परिचयः · The Sacred Symbols of Sanskrit
-## Understanding Daṇḍa (।), Double Daṇḍa (॥), Avagraha (ऽ), and Traditional Script Marks
+## Understanding Mātrās (Vowel Signs), Daṇḍa (।), Double Daṇḍa (॥), Avagraha (ऽ), and Traditional Script Marks
 
 When reading Sanskrit texts, ancient manuscripts, and CBSE textbook verses, you immediately notice unique marks and punctuation symbols that do not exist in modern English.
 
@@ -147,3 +147,38 @@ Let us explore each symbol, its Sanskrit name, its visual form, and its grammati
 | **्** | हलन्तम् / विरामः | Strips the inherent 'a' vowel from consonants | `जगत्, भगवान्` |
 | **ँ** | अनुनासिकः / चन्द्रबिन्दु | Simultaneous mouth and nasal resonance | `विद्वाँल्लिखति` |
 | **ॐ** | प्रणवः / ओंकारः | Sacred auspicious invocation | `ॐ शान्तिः शान्तिः` |
+
+---
+
+## 9. स्वर-मात्राः — Sanskrit Vowel Signs (Mātrās)
+
+When a vowel joins a consonant in Devanagari, it usually appears as a dependent **mātrā** (मात्रा) rather than its independent letter form. The table below uses **क** as the combination base.
+
+| Sanskrit Vowel | Matra Symbol | Matra Name | Combination (with क) | Transliteration / Sound |
+| :---: | :---: | :--- | :---: | :--- |
+| **अ** | (None / Inherent) | Akāra | **क** | ka (short 'a') |
+| **आ** | ◌ा | Ākāra | **का** | kā (long 'aa') |
+| **इ** | ◌ि | Ikāra | **कि** | ki (short 'i') |
+| **ई** | ◌ी | Īkāra | **की** | kī (long 'ee') |
+| **उ** | ◌ु | Ukāra | **कु** | ku (short 'u') |
+| **ऊ** | ◌ू | Ūkāra | **कू** | kū (long 'oo') |
+| **ऋ** | ◌ृ | Ṛkāra | **कृ** | kṛ (vocalic 'ri') |
+| **ॠ** | ◌ॄ | Ṝkāra | **कॄ** | kṝ (long vocalic 'ree') |
+| **ऌ** | ◌ॢ | Ḷkāra | **कॢ** | kḷ (vocalic 'li') |
+| **ए** | ◌े | Ekāra | **के** | ke (sound of 'ay') |
+| **ऐ** | ◌ै | Aikāra | **कै** | kai (sound of 'ai') |
+| **ओ** | ◌ो | Okāra | **को** | ko (sound of 'oh') |
+| **औ** | ◌ौ | Aukāra | **कौ** | kau (sound of 'ow') |
+
+**Tip:** Open the in-app **चिह्न-परिचयः (Symbols Guide)** toolbar button for clickable audio on each combination, or the **Guṇitākṣarāṇi** panel on the Varṇamālā page for interactive consonant practice.
+
+---
+
+## 10. Dependent Modifiers (Quick Table)
+
+| Modifier Symbol | Symbol Name | Function | Example | Transliteration |
+| :---: | :--- | :--- | :---: | :--- |
+| ◌ं | Anusvāra | Nasalizes the vowel | **कं** | kaṃ |
+| ◌ः | Visarga | Adds a soft breath/echo sound | **कः** | kaḥ |
+| ◌् | Halanta / Virāma | Mutes the inherent 'a' sound | **क्** | k (pure consonant) |
+

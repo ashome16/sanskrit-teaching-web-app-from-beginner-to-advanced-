@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="dhatuGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#15803d" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#16a34a" />
+      <stop offset="100%" stop-color="#4ade80" />
+    </linearGradient>
+  </defs>
+  <!-- Background soft circle -->
+  <circle cx="64" cy="64" r="58" fill="#f0fdf4" stroke="#86efac" stroke-width="4"/>
+  <!-- Central root stem (Dhātu / मूल) -->
+  <path d="M64 100 C64 78 50 62 40 50 C58 52 70 66 68 76 C76 60 94 44 98 28 C80 34 68 52 64 72" fill="none" stroke="url(#dhatuGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Left sprouting leaf -->
+  <path d="M42 52 C32 38 46 22 60 30 C58 44 48 50 42 52 Z" fill="url(#leafGrad)"/>
+  <!-- Right upper flourishing leaf -->
+  <path d="M96 30 C86 16 68 18 64 34 C76 34 90 32 96 30 Z" fill="url(#leafGrad)"/>
+  <!-- Ground / Root Base -->
+  <path d="M52 100 C60 106 68 106 76 100" fill="none" stroke="#b45309" stroke-width="5" stroke-linecap="round"/>
+  <path d="M58 104 C64 112 68 112 72 104" fill="none" stroke="#b45309" stroke-width="4" stroke-linecap="round"/>
+</svg>
