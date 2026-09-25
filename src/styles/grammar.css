@@ -806,3 +806,91 @@
   align-self: flex-start;
 }
 
+/* Key Sanskrit Words Audio Chips */
+.grammar-keywords-container {
+  margin: 1.25rem 0 1.5rem;
+  padding: 1.1rem 1.25rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  border: 1.5px solid #a7f3d0;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.08);
+}
+
+.grammar-keywords-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.grammar-keywords-title {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #065f46;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.grammar-keywords-hint {
+  font-size: 0.78rem;
+  color: #047857;
+  font-weight: 600;
+}
+
+.grammar-keywords-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.grammar-keyword-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #ffffff;
+  border: 1.5px solid #a7f3d0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-family: inherit;
+}
+
+.grammar-keyword-chip:hover {
+  background: #d1fae5;
+  border-color: #059669;
+  transform: translateY(-1.5px);
+  box-shadow: 0 3px 8px rgba(5, 150, 105, 0.2);
+}
+
+.grammar-keyword-word {
+  font-family: 'Noto Sans Devanagari', serif;
+  font-weight: 800;
+  font-size: 0.96rem;
+  color: #065f46;
+}
+
+.grammar-keyword-translit {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: #047857;
+}
+
+.grammar-keyword-meaning {
+  font-size: 0.76rem;
+  color: #4b5563;
+  padding-left: 0.35rem;
+  border-left: 1px solid #d1fae5;
+}
+
+.grammar-keyword-speaker {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+

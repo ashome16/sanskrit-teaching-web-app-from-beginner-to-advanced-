@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ARTICLES } from '../data/articleIndex';
 import { SANSKRIT_ARTICLES, SANSKRIT_ARTICLE_META } from '../data/sanskritArticles';
+import { ARTICLE_KEY_WORDS } from '../data/articleKeyWords';
 import { parseArticle, type ParsedArticle } from '../utils/articleParser';
 import { speakAsBodhi, stopBodhiSpeech, playPronunciation } from '../utils/pronunciation';
 import ConjunctGames from './ConjunctGames';
@@ -384,6 +385,7 @@ const Grammar: React.FC<GrammarProps> = ({
     const displaySubtitle =
       displayArticle?.subtitle ||
       (articleLang === 'sa' && saMeta ? saMeta.blurbSa : activeArticleMeta?.cardBlurb);
+    const keyWords = activeArticleId ? ARTICLE_KEY_WORDS[activeArticleId] : undefined;
 
     return (
       <section className="grammar-page" aria-label="Grammar article">
@@ -393,23 +395,23 @@ const Grammar: React.FC<GrammarProps> = ({
           {displaySubtitle && <p className="grammar-lead">{displaySubtitle}</p>}
         </header>
 
-        {/* Article Language Switcher & Audio Narrator */}
+        {/* Article Language Switcher (Translate) & Audio Narrator */}
         <div className="grammar-article-controls-bar">
           <div className="grammar-lang-pill-group">
-            <span className="grammar-lang-pill-title">📖 भाषा (Language):</span>
+            <span className="grammar-lang-pill-title">📖 भाषा (Translation):</span>
             <button
               type="button"
               className={`grammar-lang-pill-btn${articleLang === 'en' ? ' active' : ''}`}
               onClick={() => handleToggleArticleLang('en')}
             >
-              🇬🇧 English
+              🇬🇧 English (Original)
             </button>
             <button
               type="button"
               className={`grammar-lang-pill-btn${articleLang === 'sa' ? ' active' : ''}`}
               onClick={() => handleToggleArticleLang('sa')}
             >
-              🕉️ संस्कृतेन पठ्यताम् (Read in Sanskrit)
+              🕉️ Translate to Sanskrit (अनुवादः)
             </button>
           </div>
 
@@ -443,6 +445,35 @@ const Grammar: React.FC<GrammarProps> = ({
             </button>
           </div>
         </div>
+
+        {/* Key Sanskrit Words Audio Chips */}
+        {keyWords && keyWords.length > 0 && (
+          <div className="grammar-keywords-container">
+            <div className="grammar-keywords-header">
+              <h4 className="grammar-keywords-title">
+                <span>🔊</span>
+                <span>Key Sanskrit Words in this Article (मुख्य-शब्दावली)</span>
+              </h4>
+              <span className="grammar-keywords-hint">Tap any word to hear authentic Sanskrit pronunciation</span>
+            </div>
+            <div className="grammar-keywords-chips">
+              {keyWords.map((kw, kwIdx) => (
+                <button
+                  key={kwIdx}
+                  type="button"
+                  className="grammar-keyword-chip"
+                  onClick={() => playPronunciation(kw.word)}
+                  title={`Tap to hear authentic audio for "${kw.word}" (${kw.translit})`}
+                >
+                  <span className="grammar-keyword-speaker">🔊</span>
+                  <span className="grammar-keyword-word">{kw.word}</span>
+                  <span className="grammar-keyword-translit">({kw.translit})</span>
+                  <span className="grammar-keyword-meaning">{kw.meaning}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {articleError && !displayArticle && (
           <p className="grammar-lead">
