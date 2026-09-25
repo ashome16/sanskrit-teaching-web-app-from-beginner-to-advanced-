@@ -312,4 +312,31 @@ export const SANSKRIT_EXPLANATIONS: Record<string, SanskritExplanation> = {
       },
     ],
   },
+
+  'sanskrit-in-english': {
+    titleSa: 'आङ्ग्लभाषायां संस्कृतस्य प्रभावः — बोधि-व्याख्या',
+    titleEn: "Bodhi's Sanskrit Explanation: Sanskrit's Quiet Imprint on English",
+    takeawayQuote: {
+      sa: 'भाषासु मुख्या मधुरा दिव्या गीर्वाणभारती।',
+      en: 'Foremost, sweet, and divine among all world languages is Sanskrit.',
+    },
+    sanskritText:
+      'अस्मिन् लेखे बोधिः विस्मयं प्रकाशयति यत् कथं वयं प्रतिदिनम् आङ्ग्लभाषायां संस्कृत-शब्दान् वदामः। शर्करा-शब्दात् Sugar, नारङ्ग-शब्दात् Orange, शृङ्गवेर-शब्दात् Ginger, खण्ड-शब्दात् Candy, जङ्गल-शब्दात् Jungle, चित्रक-शब्दात् Cheetah, तथा च कर्मन्-शब्दात् Karma इत्यादयः बहवः शब्दाः विश्वं पर्यट्य आङ्ग्लभाषां प्रविष्टाः। संस्कृतम् न केवलं भारतस्य, अपि तु सम्पूर्णस्य विश्वस्य शब्द-भाण्डागारम् अस्ति।',
+    englishTranslation:
+      'In this article, Bodhi illuminates the wondrous truth that we speak Sanskrit words every single day in English without even realizing it. From Śarkarā came Sugar, from Nāraṅga came Orange, from Śṛṅgavera came Ginger, from Khaṇḍa came Candy, from Jaṅgala came Jungle, from Citraka came Cheetah, and from Karman came Karma. These words travelled across ancient trade routes, Arabic, Persian, French, and Latin into English. Sanskrit is not merely an Indian language, but the timeless vocabulary treasure-house of humanity.',
+    bulletPoints: [
+      {
+        sa: 'शर्करा, नारङ्ग, खण्ड, जङ्गल — एते शब्दाः आङ्ग्लभाषायां साक्षात् प्रविष्टाः।',
+        en: 'Words like Sugar, Orange, Candy, and Jungle trace directly to ancient Sanskrit trade nouns.',
+      },
+      {
+        sa: 'मातृ, पितृ, भ्रातृ — एते इन्डो-यूरोपीय-सजातीयाः (Cognates) शब्दाः।',
+        en: 'Mother, Father, and Brother share prehistoric Indo-European root kinship with Sanskrit.',
+      },
+      {
+        sa: 'संस्कृतस्य शब्द-सम्पद् विश्वस्य भाषाः समृद्धीकरोति।',
+        en: "Sanskrit's rich lexical fountain continues to quietly enrich world languages today.",
+      },
+    ],
+  },
 };

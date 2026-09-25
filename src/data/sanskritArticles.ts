@@ -45,6 +45,10 @@ export const SANSKRIT_ARTICLE_META: Record<string, { titleSa: string; blurbSa: s
     titleSa: 'कटपयादि-संख्या-शास्त्रम् · Kaṭapayādi Cipher',
     blurbSa: 'कादिर्नव टादिर्नव — पाई (π) ३२-दशांश-स्थानानि, खगोलशास्त्रं रागपद्धतिः च।',
   },
+  'sanskrit-in-english': {
+    titleSa: 'आङ्ग्लभाषायां संस्कृतस्य प्रभावः · Sanskrit in English',
+    blurbSa: 'शर्करा, नारङ्ग, शृङ्गवेर, खण्ड, जङ्गल, कर्मन् — कथं संस्कृतशब्दाः आङ्ग्लभाषां प्रविष्टाः।',
+  },
 };
 
 export const SANSKRIT_ARTICLES: Record<string, ParsedArticle> = {
@@ -415,6 +419,57 @@ export const SANSKRIT_ARTICLES: Record<string, ParsedArticle> = {
       {
         type: 'paragraph',
         text: 'एषः श्लोकः श्रीकृष्णस्य प्रशंसापरः अपि अस्ति, शिवस्य स्तुतिपरः अपि अस्ति, तथा च कटपयादि-नियमेन पाई (π) इत्यस्य ३२ दशांशस्थानानां शुद्धं मानं प्रकटयति!',
+      },
+    ],
+  },
+  'sanskrit-in-english': {
+    title: 'आङ्ग्लभाषायां संस्कृतस्य प्रभावः (Sanskrit in English)',
+    subtitle: 'दैनन्दिन-व्यवहारे संस्कृतस्य शतशः शब्दाः (Everyday English Words Rooted in Sanskrit)',
+    blocks: [
+      {
+        type: 'paragraph',
+        text: 'वयं प्रतिदिनं बहून् आङ्ग्ल-शब्दान् वदामः, परन्तु प्रायः न जानीमः यत् तेषां मूलं संस्कृते वर्तते। प्राचीन-व्यापार-मार्गेभ्यः संस्कृत-शब्दाः विश्वं पर्यट्य आङ्ग्लभाषां प्रविष्टाः।',
+      },
+      {
+        type: 'subheading',
+        text: '१. खाद्यानि पेयानि च (Food & Everyday Spices)',
+      },
+      {
+        type: 'list',
+        items: [
+          'शर्करा (Śarkarā) → Sugar (Arabic: sukkar, French: sucre)',
+          'नारङ्ग (Nāraṅga) → Orange (Persian: nārang, Spanish: naranja)',
+          'खण्ड (Khaṇḍa) → Candy (Sugar crystal, Arabic: qandi)',
+          'शृङ्गवेर (Śṛṅgavera) → Ginger (Greek: zingiberis)',
+        ],
+      },
+      {
+        type: 'subheading',
+        text: '२. प्रकृतिः प्राणिनः च (Nature & Animals)',
+      },
+      {
+        type: 'list',
+        items: [
+          'जङ्गल (Jaṅgala - uncultivated wild terrain) → Jungle',
+          'चित्रक (Citraka - spotted leopard/hunting cat) → Cheetah',
+        ],
+      },
+      {
+        type: 'subheading',
+        text: '३. अध्यात्मं दर्शनं च (Philosophy & Universal Words)',
+      },
+      {
+        type: 'list',
+        items: [
+          'कर्मन् (Karman - action & fruit) → Karma',
+          'गुरु (Guru - venerable guide) → Guru',
+          'अवतार (Avatāra - divine descent) → Avatar',
+          'योग (Yoga - union) → Yoga',
+        ],
+      },
+      {
+        type: 'paragraph',
+        text: 'संस्कृतम् न केवलं प्राचीन-ग्रन्थानां भाषा, अपि तु सम्पूर्ण-विश्वस्य भाषासु संव्याप्ता एका जीवन्ती ज्ञान-परम्परा अस्ति।',
       },
     ],
   },
