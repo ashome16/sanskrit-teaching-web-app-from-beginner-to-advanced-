@@ -154,8 +154,8 @@ export function evaluateHandwriting(
   }
 
   // 4. Measure Coverage: What fraction of canonical path was touched by user?
-  // Threshold: 13.5 units in 0-100 normalized space
-  const COVERAGE_RADIUS = 13.5;
+  // Threshold: 16.5 units in 0-100 normalized space (accommodates normal finger/stylus stroke widths)
+  const COVERAGE_RADIUS = 16.5;
   let coveredRefCount = 0;
 
   allRefPoints.forEach((rp) => {
@@ -185,14 +185,14 @@ export function evaluateHandwriting(
       const dist = Math.hypot(up.x - rp.x, up.y - rp.y);
       if (dist < minDist) {
         minDist = dist;
-        if (dist <= 6) break;
+        if (dist <= 8) break;
       }
     }
 
-    if (minDist <= 10) {
+    if (minDist <= 14) {
       precisionSum += 1.0;
-    } else if (minDist <= 24) {
-      precisionSum += Math.max(0, 1.0 - (minDist - 10) / 14);
+    } else if (minDist <= 28) {
+      precisionSum += Math.max(0, 1.0 - (minDist - 14) / 14);
     } else {
       precisionSum += 0; // stray scribble outside target letter
     }
@@ -341,33 +341,40 @@ export function evaluateHandwriting(
   let stars = 4;
   let feedback = '';
 
-  if (finalScore >= 88 && coveragePct >= 80) {
+  if (finalScore >= 82 && coveragePct >= 72) {
     grade = 'excellent';
     title = '✨ अति-उत्तमम्! Outstanding Calligraphy!';
     badgeEmoji = '🏆';
     stars = 5;
     feedback = `Flawless execution! You wrote "${letterMnemonic.letter}" (${letterMnemonic.wordSan} ${letterMnemonic.emoji}) with exceptional stroke balance, alignment, and symmetry.`;
-  } else if (finalScore >= 72 && coveragePct >= 65) {
+  } else if (finalScore >= 66 && coveragePct >= 55) {
     grade = 'good';
     title = '👍 उत्तमम्! Very Good Work!';
     badgeEmoji = '⭐';
     stars = 4;
     feedback = `Good hand control! You captured the main contours and proportions of "${letterMnemonic.letter}" (${letterMnemonic.wordSan}) nicely.`;
-  } else if (finalScore >= 48 && coveragePct >= 38) {
+  } else if (finalScore >= 42 && coveragePct >= 32) {
     grade = 'practice';
-    title = '🌱 प्रयतस्व! Good Effort — Keep Practicing';
+    title = '🌱 प्रयतस्व! Good Progress — Keep Practicing';
     badgeEmoji = '✍️';
     stars = 3;
-    feedback = `You have the general layout of "${letterMnemonic.letter}", but some strokes either drifted outside the lines or were left incomplete.`;
+    if (hasRoofBar && !shirorekhaCheck?.present) {
+      feedback = `Great progress on the body curves of "${letterMnemonic.letter}"! Remember to draw the top horizontal roof bar (शिरोरेखा) last to complete the letter.`;
+    } else {
+      feedback = `Good start! You have traced key strokes of "${letterMnemonic.letter}". Trace through the remaining segments for a full 5-star score.`;
+    }
   } else {
     grade = 'incomplete';
-    title = '✏️ पुनः कुरु · Keep Tracing';
+    title = '✏️ पुनः कुरु · Continue Tracing';
     badgeEmoji = '🔄';
-    stars = coveragePct >= 25 ? 2 : 1;
-    feedback =
-      coveragePct < 40
-        ? `Incomplete letter. Significant portions of "${letterMnemonic.letter}" were left untraced.`
-        : `Your strokes wandered far from the guide letter. Slow down and trace directly over the faint template.`;
+    stars = coveragePct >= 20 ? 2 : 1;
+    if (coveragePct >= 20 && hasRoofBar && !shirorekhaCheck?.present) {
+      feedback = `Nice start on the first strokes of "${letterMnemonic.letter}". Follow the numbered step indicators ① ② ③ and cap with the top bar!`;
+    } else if (coveragePct < 30) {
+      feedback = `Partial tracing detected (${coveragePct}% coverage). Follow the numbered circles ① ② ③ directly on the slate to trace "${letterMnemonic.letter}".`;
+    } else {
+      feedback = `Your strokes drifted away from the guide path. Follow the dashed line template inside the letter to stay on track.`;
+    }
   }
 
   return {

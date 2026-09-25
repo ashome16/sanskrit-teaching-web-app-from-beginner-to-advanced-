@@ -353,23 +353,63 @@
   color: #334155;
 }
 
-.v-audio-speak-btn {
+.v-canvas-audio-group {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.v-audio-speak-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   background: #f0fdfa;
   border: 1px solid #99f6e4;
   border-radius: 8px;
-  padding: 0.3rem 0.65rem;
-  font-size: 0.76rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: #0f766e;
   cursor: pointer;
   transition: all 0.15s ease;
+  white-space: nowrap;
 }
 
 .v-audio-speak-btn:hover {
   background: #ccfbf1;
+  transform: translateY(-1px);
+}
+
+.v-audio-speak-btn--word {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #b45309;
+}
+
+.v-audio-speak-btn--word:hover {
+  background: #fef3c7;
+}
+
+.v-puzzle-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #fdf4ff;
+  border: 1px solid #f0abfc;
+  border-radius: 8px;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #a21caf;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.v-puzzle-link-btn:hover {
+  background: #fae8ff;
+  transform: translateY(-1px);
 }
 
 /* Canvas Area */
@@ -410,29 +450,25 @@
 /* 3-Line Notebook Ruling Background */
 .v-ruling-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   pointer-events: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 1rem;
+  z-index: 1;
 }
 
 .v-rule-topbar {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
   border-bottom: 2px solid #f87171; /* Top Bar guide (Red line) */
-  margin-bottom: 30%;
-  position: relative;
 }
 
 .v-rule-topbar::after {
   content: 'शिरोरेखा (Top Bar)';
   position: absolute;
-  right: 10px;
+  right: 12px;
   top: -18px;
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   font-weight: 800;
   color: #ef4444;
   text-transform: uppercase;
@@ -440,40 +476,63 @@
 }
 
 .v-rule-midline {
+  position: absolute;
+  top: 52%;
+  left: 0;
+  right: 0;
   border-bottom: 1.5px dashed #93c5fd; /* Midline (Dashed Blue) */
-  margin-bottom: 30%;
 }
 
 .v-rule-baseline {
+  position: absolute;
+  top: 78%;
+  left: 0;
+  right: 0;
   border-bottom: 2px solid #3b82f6; /* Baseline (Solid Blue) */
-  position: relative;
 }
 
 .v-rule-baseline::after {
   content: 'आधार-रेखा (Baseline)';
   position: absolute;
-  right: 10px;
+  right: 12px;
   bottom: -18px;
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   font-weight: 800;
   color: #3b82f6;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
-/* Ghost Letter Template Layer */
-.v-ghost-letter {
+/* Precise SVG Vector Guide Overlay */
+.v-guide-svg {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: clamp(140px, 28vw, 240px);
-  font-weight: 800;
-  color: rgba(148, 163, 184, 0.28);
+  inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   user-select: none;
-  font-family: "Noto Sans Devanagari", sans-serif;
-  line-height: 1;
+  z-index: 2;
+}
+
+.v-guide-stroke-outer {
+  stroke: rgba(148, 163, 184, 0.38);
+  transition: stroke 0.2s ease;
+}
+
+.v-guide-stroke-inner {
+  stroke: rgba(100, 116, 139, 0.45);
+}
+
+.v-guide-start-badge circle {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+[data-theme='dark'] .v-guide-stroke-outer {
+  stroke: rgba(203, 213, 225, 0.22);
+}
+
+[data-theme='dark'] .v-guide-stroke-inner {
+  stroke: rgba(148, 163, 184, 0.45);
 }
 
 /* Palette & Controls Bar */
@@ -622,6 +681,12 @@
   color: #b45309;
 }
 
+.v-step-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
 .v-step-demo-btn {
   display: inline-flex;
   align-items: center;
@@ -641,6 +706,28 @@
   background: #fef3c7;
   border-color: #fde68a;
   color: #b45309;
+  transform: scale(1.05);
+}
+
+.v-step-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.15rem 0.5rem;
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #0f766e;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.v-step-audio-btn:hover {
+  background: #ccfbf1;
+  border-color: #5eead4;
+  color: #115e59;
   transform: scale(1.05);
 }
 

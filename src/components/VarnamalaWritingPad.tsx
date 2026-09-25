@@ -10,6 +10,7 @@ import {
   type StrokePoint,
 } from '../data/varnamalaStrokePaths';
 import { playPronunciation } from '../utils/pronunciation';
+import { soundEffects } from '../utils/soundEffects';
 import {
   evaluateHandwriting,
   type AssessmentResult,
@@ -29,6 +30,8 @@ interface Stroke {
 interface VarnamalaWritingPadProps {
   initialLetter?: string;
   onOpenWorksheets?: (category?: string) => void;
+  onOpenPuzzle?: () => void;
+  onSelectLetter?: (letter: string) => void;
 }
 
 const BRUSH_COLORS = [
@@ -42,6 +45,8 @@ const BRUSH_COLORS = [
 export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
   initialLetter = 'अ',
   onOpenWorksheets,
+  onOpenPuzzle,
+  onSelectLetter,
 }) => {
   const [selectedLetter, setSelectedLetter] = useState<string>(initialLetter || 'अ');
   const [brushColor, setBrushColor] = useState<string>(BRUSH_COLORS[0].hex);
@@ -121,6 +126,8 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
             '3. Draw top horizontal roof bar (शिरोरेखा) last',
           ],
   };
+
+  const animData = getLetterStrokeAnimation(selectedLetter);
 
   // Filter letters by category
   const filteredLetters = ALL_VARNAMALA_LETTERS.filter((item) => {
@@ -539,6 +546,7 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     const y = Math.round(e.clientY - rect.top);
 
     isDrawingRef.current = true;
+    soundEffects.playStrokeChime();
     currentStrokeRef.current = {
       points: [{ x, y }],
       color: brushColor,
@@ -608,13 +616,21 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     const width = rect && rect.width > 0 ? rect.width : (canvas?.width || 400);
     const height = rect && rect.height > 0 ? rect.height : (canvas?.height || 400);
 
-    const strokeAnim = getLetterStrokeAnimation(selectedLetter);
+    const strokeAnim = animData || getLetterStrokeAnimation(selectedLetter);
     const result = evaluateHandwriting(strokes, width, height, strokeAnim, mnemonic);
     setAssessment(result);
 
+    if (result.score >= 80) {
+      soundEffects.playCelebrationChime();
+    } else if (result.score >= 55) {
+      soundEffects.playSuccessDing();
+    } else {
+      soundEffects.playEncouragementDing();
+    }
+
     try {
       playPronunciation(mnemonic.letter);
-      if (result.score >= 70) {
+      if (result.score >= 55) {
         setTimeout(() => {
           try {
             playPronunciation(mnemonic.wordSan);
@@ -633,6 +649,8 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     setSelectedLetter(char);
     setStrokes([]);
     setAssessment(null);
+    onSelectLetter?.(char);
+    soundEffects.playStrokeChime();
     try {
       playPronunciation(char);
     } catch {
@@ -830,14 +848,45 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
                 {mnemonic.emoji} {mnemonic.wordSan} ({mnemonic.wordEn} · {mnemonic.wordHi})
               </span>
             </div>
-            <button
-              type="button"
-              className="v-audio-speak-btn"
-              onClick={() => playPronunciation(mnemonic.letter)}
-              title="Hear authentic pronunciation"
-            >
-              🔊 Pronounce "{mnemonic.letter}"
-            </button>
+            <div className="v-canvas-audio-group">
+              <button
+                type="button"
+                className="v-audio-speak-btn"
+                onClick={() => {
+                  soundEffects.playStrokeChime();
+                  playPronunciation(mnemonic.letter);
+                }}
+                title={`Hear letter sound: ${mnemonic.letter}`}
+              >
+                🔊 Letter: {mnemonic.letter}
+              </button>
+
+              <button
+                type="button"
+                className="v-audio-speak-btn v-audio-speak-btn--word"
+                onClick={() => {
+                  soundEffects.playSuccessDing();
+                  playPronunciation(mnemonic.wordSan);
+                }}
+                title={`Hear word pronunciation: ${mnemonic.wordSan}`}
+              >
+                🔊 Word: {mnemonic.wordSan}
+              </button>
+
+              {onOpenPuzzle && (
+                <button
+                  type="button"
+                  className="v-puzzle-link-btn"
+                  onClick={() => {
+                    soundEffects.playSuccessDing();
+                    onOpenPuzzle();
+                  }}
+                  title="Practice letters in interactive Jodo Tile Puzzle"
+                >
+                  🧩 Tile Puzzle →
+                </button>
+              )}
+            </div>
           </div>
 
           {/* Canvas Wrapper */}
@@ -851,11 +900,66 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
               </div>
             )}
 
-            {/* Ghost Template to Trace Over */}
+            {/* Precise SVG Vector Stroke Guide Template */}
             {showGuide && (
-              <div className="v-ghost-letter" aria-hidden="true">
-                {mnemonic.letter}
-              </div>
+              animData && animData.strokes.length > 0 ? (
+                <svg
+                  viewBox="0 0 100 100"
+                  preserveAspectRatio="none"
+                  className="v-guide-svg"
+                  aria-hidden="true"
+                >
+                  {animData.strokes.map((stroke, sIdx) => {
+                    const pts = stroke.points;
+                    if (!pts || pts.length === 0) return null;
+                    const d = pts.reduce((acc, pt, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${pt.x} ${pt.y}`, '');
+                    const p0 = pts[0];
+                    const badges = ['①', '②', '③', '④', '⑤', '⑥'];
+                    return (
+                      <g key={sIdx}>
+                        {/* Outer translucent guide path */}
+                        <path
+                          d={d}
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="11"
+                          className="v-guide-stroke-outer"
+                        />
+                        {/* Inner dashed directional path */}
+                        <path
+                          d={d}
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2.2"
+                          strokeDasharray="2.5 2.5"
+                          className="v-guide-stroke-inner"
+                        />
+                        {/* Numbered start point badge */}
+                        <g className="v-guide-start-badge">
+                          <circle cx={p0.x} cy={p0.y} r="3.6" fill="#f59e0b" stroke="#ffffff" strokeWidth="1" />
+                          <text
+                            x={p0.x}
+                            y={p0.y + 1.2}
+                            textAnchor="middle"
+                            dominantBaseline="middle"
+                            fill="#ffffff"
+                            fontSize="2.7"
+                            fontWeight="bold"
+                          >
+                            {badges[sIdx] || sIdx + 1}
+                          </text>
+                        </g>
+                      </g>
+                    );
+                  })}
+                </svg>
+              ) : (
+                <div className="v-ghost-letter" aria-hidden="true">
+                  {mnemonic.letter}
+                </div>
+              )
             )}
 
             {/* Automated Stroke Animation Canvas (Overlay Layer) */}
@@ -978,14 +1082,30 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
                       <span className="v-stroke-step-num">
                         {isCurrentStroke ? '✍️ 0' + (idx + 1) : '0' + (idx + 1)}
                       </span>
-                      <button
-                        type="button"
-                        className="v-step-demo-btn"
-                        onClick={() => handlePlaySingleStroke(idx + 1)}
-                        title={`Watch stroke ${idx + 1} only`}
-                      >
-                        ▶ Play
-                      </button>
+                      <div className="v-step-btn-group">
+                        <button
+                          type="button"
+                          className="v-step-demo-btn"
+                          onClick={() => {
+                            soundEffects.playStrokeChime();
+                            handlePlaySingleStroke(idx + 1);
+                          }}
+                          title={`Watch stroke ${idx + 1} animation`}
+                        >
+                          ▶ Watch
+                        </button>
+                        <button
+                          type="button"
+                          className="v-step-audio-btn"
+                          onClick={() => {
+                            soundEffects.playSuccessDing();
+                            playPronunciation(step);
+                          }}
+                          title={`Listen to step ${idx + 1} instructions`}
+                        >
+                          🔊 Step
+                        </button>
+                      </div>
                     </div>
                     <span className="v-stroke-step-text">{step}</span>
                   </li>

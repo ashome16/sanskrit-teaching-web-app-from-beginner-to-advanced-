@@ -35,6 +35,7 @@ interface TextbookReaderProps {
   isLastSentence: boolean;
   onOpenQuiz?: () => void;
   onOpenWorksheets?: (category?: string) => void;
+  onOpenPuzzle?: () => void;
 }
 
 const cleanWord = (value: string): string =>
@@ -194,6 +195,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   isLastSentence,
   onOpenQuiz,
   onOpenWorksheets,
+  onOpenPuzzle,
 }) => {
   const { isAdminLoggedIn, currentUser } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
@@ -1528,7 +1530,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             >
               <VarnamalaWritingPad
                 initialLetter={padSelectedLetter}
+                onSelectLetter={(char) => {
+                  setPadSelectedLetter(char);
+                  onWordClick(char);
+                }}
                 onOpenWorksheets={onOpenWorksheets}
+                onOpenPuzzle={onOpenPuzzle}
               />
             </ErrorBoundary>
           )}

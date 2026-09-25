@@ -943,6 +943,7 @@ const Dashboard: React.FC = () => {
           isLastSentence={isLastSentence}
           onOpenQuiz={() => navigateToView('quiz')}
           onOpenWorksheets={(category) => handleOpenWorksheets(category || 'all')}
+          onOpenPuzzle={() => navigateToView('board')}
         />}
       </Suspense>
 
