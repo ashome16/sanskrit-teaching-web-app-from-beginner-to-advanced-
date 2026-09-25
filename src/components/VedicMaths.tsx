@@ -11,6 +11,7 @@ import {
 } from '../data/vedicMaths';
 import { playPronunciation } from '../utils/pronunciation';
 import '../styles/vedic-maths.css';
+import '../styles/resources.css';
 
 type VedicTab = 'solvers' | 'articles' | 'zero' | 'fluid' | 'algebra' | 'geometry' | 'parampara' | 'logic' | 'sutras' | 'quiz' | 'essay';
 type SolverKey = 'ekadhikena' | 'nikhilam-sub' | 'nikhilam-mul' | 'urdhva' | 'ekanyunena' | 'antya' | 'beejank';
@@ -62,6 +63,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader, onOpenP
   const [quizScore, setQuizScore] = useState(0);
   const [showExplanation, setShowExplanation] = useState(false);
   const [quizFinished, setQuizFinished] = useState(false);
+  const [isPosterModalOpen, setIsPosterModalOpen] = useState(false);
 
   // Roman Numeral Helper
   const getRoman = (num: number): string => {
@@ -2168,6 +2170,69 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader, onOpenP
         )}
         {activeTab === 'sutras' && (
           <div>
+            {/* Official 16 Foundational Sutras Poster Banner */}
+            <div className="vedic-poster-banner" style={{ marginTop: '0.5rem' }}>
+              <div
+                className="vedic-poster-thumb-wrap"
+                onClick={() => setIsPosterModalOpen(true)}
+                title="Click to view full-size poster"
+              >
+                <img
+                  src="/vedic-maths-16-sutras-poster.jpg"
+                  alt="EdNet Learn 16 Foundational Sutras of Vedic Mathematics Infographic Poster"
+                  className="vedic-poster-thumb-img"
+                />
+              </div>
+              <div className="vedic-poster-content">
+                <span className="vedic-poster-badge">✦ Official Academy Wall Poster ✦</span>
+                <h3 className="vedic-poster-title">16 Foundational Sutras of Vedic Mathematics</h3>
+                <p className="vedic-poster-quote">
+                  "Vedic Mathematics is not just a method, it is a way of thinking." — Swami Bharati Krishna Tirtha
+                </p>
+                <p className="vedic-poster-desc">
+                  The complete 16 sutras with Sanskrit aphorisms, English translations, and worked arithmetic &amp; algebraic examples for rapid mental calculation (Ekādhikena, Nikhilam, Ūrdhva-Tiryagbhyām, Parāvartya, and more).
+                </p>
+                <div className="vedic-poster-actions">
+                  <button
+                    type="button"
+                    className="vedic-poster-btn-primary"
+                    onClick={() => setIsPosterModalOpen(true)}
+                  >
+                    <span>🔍</span>
+                    <span>View Full Poster</span>
+                  </button>
+                  <a
+                    href="/vedic-maths-16-sutras-poster.jpg"
+                    download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.jpg"
+                    className="vedic-poster-btn-secondary"
+                  >
+                    <span>📥</span>
+                    <span>Download High-Res (JPG)</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Practical Starting Path Card */}
+            <div className="vedic-starting-path-card">
+              <div className="vedic-path-badge">🎯 Recommended 4-Step Learning Sequence</div>
+              <h3>A Practical Starting Path with the 16 Sutras</h3>
+              <ol className="vedic-path-steps">
+                <li>
+                  <strong>Pick 2–3 Frequent Sutras:</strong> Start with sutras that solve problems you actually encounter often — e.g., <em>Nikhilaṁ Navataścaramam</em> for multiplication near powers of 10, or <em>Dvandva / Ekādhikena</em> for squaring numbers ending in 5.
+                </li>
+                <li>
+                  <strong>Watch a Video Walkthrough:</strong> Focus on just those 2–3 sutras on YouTube to absorb the visual cross-multiplication or base-complement patterns with worked examples.
+                </li>
+                <li>
+                  <strong>Drill 10–15 Problems Daily:</strong> Pair sutra techniques with a free timed mental-math test site (5 minutes a day) until the calculation pattern becomes automatic.
+                </li>
+                <li>
+                  <strong>Add One New Sutra per Week:</strong> Expand gradually through the remaining 14 sutras rather than trying to absorb all 16 at once.
+                </li>
+              </ol>
+            </div>
+
             <div className="sutra-search-bar">
               <input
                 type="text"
@@ -2388,6 +2453,68 @@ const VedicMaths: React.FC<VedicMathsProps> = ({ onGoHome, onOpenReader, onOpenP
         )}
 
       </main>
+
+      {/* POSTER LIGHTBOX MODAL */}
+      {isPosterModalOpen && (
+        <div
+          className="resources-modal-backdrop"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-vedic-poster-title"
+          onClick={() => setIsPosterModalOpen(false)}
+        >
+          <div className="resources-modal-content" style={{ maxWidth: '900px' }} onClick={(e) => e.stopPropagation()}>
+            <div className="resources-modal-header">
+              <span className="resource-card-badge" style={{ background: '#ede9fe', color: '#6d28d9' }}>
+                EdNet Learn Vedic Maths Academy
+              </span>
+              <button
+                type="button"
+                className="resources-modal-close-btn"
+                onClick={() => setIsPosterModalOpen(false)}
+                aria-label="Close poster modal"
+              >
+                ✕
+              </button>
+            </div>
+
+            <h3 id="modal-vedic-poster-title" className="resources-modal-title" style={{ marginBottom: '0.25rem' }}>
+              16 Foundational Sutras of Vedic Mathematics
+              <span className="resource-card-title-sa">षोडश-वैदिक-गणित-सूत्राणि</span>
+            </h3>
+            <p style={{ margin: '0 0 1rem', fontSize: '0.88rem', color: '#4338ca', fontStyle: 'italic' }}>
+              "Vedic Mathematics is not just a method, it is a way of thinking." — Swami Bharati Krishna Tirtha
+            </p>
+
+            <div className="vedic-modal-image-wrap">
+              <img
+                src="/vedic-maths-16-sutras-poster.jpg"
+                alt="16 Foundational Sutras of Vedic Mathematics Wall Poster"
+                className="vedic-modal-image"
+              />
+            </div>
+
+            <div className="resources-modal-actions" style={{ justifyContent: 'space-between' }}>
+              <button
+                type="button"
+                className="resource-action-icon-btn"
+                onClick={() => setIsPosterModalOpen(false)}
+              >
+                <span>✕</span>
+                <span>Close</span>
+              </button>
+              <a
+                href="/vedic-maths-16-sutras-poster.jpg"
+                download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.jpg"
+                className="vedic-poster-btn-primary"
+              >
+                <span>📥</span>
+                <span>Download High-Resolution Poster (JPG)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
