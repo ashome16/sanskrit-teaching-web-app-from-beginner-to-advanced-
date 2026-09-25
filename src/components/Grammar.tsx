@@ -646,6 +646,10 @@ const Grammar: React.FC<GrammarProps> = ({
           const kataTags = ['phi', 'golden ratio', 'pi', 'melakarta', 'raga', 'ragas', 'narayaniyam', 'astronomy', 'chronogram', 'madhava', 'virahanka', 'hemacandra', 'ankanam', 'ankanam vamato gatih', 'अङ्कानां वामतो गतिः', 'compose', 'arithmetic', 'algorithm'];
           if (kataTags.some((tag) => tag.includes(qClean) || qClean.includes(tag))) return true;
         }
+        if (art.id === 'sanskrit-in-english') {
+          const engTags = ['etymology', 'english', 'loanword', 'borrowing', 'cognate', 'sugar', 'jungle', 'shampoo', 'bungalow', 'orange', 'ginger', 'candy', 'cheetah', 'karma', 'yoga', 'juggernaut', 'william jones'];
+          if (engTags.some((tag) => tag.includes(qClean) || qClean.includes(tag))) return true;
+        }
         return false;
       })
     : ARTICLES;

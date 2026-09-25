@@ -129,4 +129,16 @@ export const ARTICLE_KEY_WORDS: Record<string, SanskritKeyWord[]> = {
     { word: 'गोपीभाग्यमधुव्रातः', translit: 'Gopībhāgyamadhuvrātaḥ', meaning: 'Pi (π) encrypted to 32 decimals' },
     { word: 'मेलकर्ता', translit: 'Melakartā', meaning: '72 foundational scales in music' },
   ],
+
+  'sanskrit-in-english': [
+    { word: 'शर्करा', translit: 'Śarkarā', meaning: 'Grit, ground sugar → sugar, saccharide, jaggery' },
+    { word: 'नारङ्ग', translit: 'Nāraṅga', meaning: 'Orange tree → orange' },
+    { word: 'शृङ्गवेर', translit: 'Śṛṅgavera', meaning: 'Horn-shaped root → ginger' },
+    { word: 'खण्ड', translit: 'Khaṇḍa', meaning: 'Piece (of sugar) → candy' },
+    { word: 'जङ्गल', translit: 'Jaṅgala', meaning: 'Dry, uncultivated land → jungle' },
+    { word: 'चित्रक', translit: 'Citraka', meaning: 'Spotted one → cheetah' },
+    { word: 'कर्मन्', translit: 'Karman', meaning: 'Action and its result → karma' },
+    { word: 'भ्रातृ', translit: 'Bhrātṛ', meaning: 'Brother → pal (via Romani)' },
+    { word: 'मातृ', translit: 'Mātṛ', meaning: 'Mother (a cognate, not a borrowing)' },
+  ],
 };

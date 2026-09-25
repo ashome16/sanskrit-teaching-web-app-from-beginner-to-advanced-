@@ -86,5 +86,11 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: 'कटपयादि · Kaṭapayādi: Sacred Cipher of Mathematics',
     cardBlurb: 'How ancient India encoded π (32 decimals), the Golden Ratio (ϕ), Kerala astronomy, and 72 Melakarta rāgas into chantable Sanskrit poetry.',
   },
-
+  {
+    id: 'sanskrit-in-english',
+    file: 'grammar/article-12.txt',
+    emoji: '🌍',
+    cardTitle: "संस्कृतम् in English · Sanskrit's Quiet Imprint on English",
+    cardBlurb: '~100 everyday English words with Sanskrit roots — sugar, jungle, shampoo, karma — how they travelled, and which origins are still debated.',
+  },
 ];

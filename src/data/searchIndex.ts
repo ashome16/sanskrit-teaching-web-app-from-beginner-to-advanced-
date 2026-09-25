@@ -50,8 +50,48 @@ export interface SearchItem {
 
 export const SEARCH_INDEX: SearchItem[] = [
   // =========================================================================
-  // 1. GRAMMAR ARTICLES (11 In-Depth Masterclasses)
+  // 1. GRAMMAR ARTICLES (12 In-Depth Masterclasses)
   // =========================================================================
+  {
+    id: 'art-sanskrit-in-english',
+    title: "संस्कृतम् in English · Sanskrit's Quiet Imprint on English",
+    subtitle: '~100 everyday English words with Sanskrit roots',
+    category: 'grammar',
+    categoryLabel: 'Article · Etymology',
+    badgeEmoji: '🌍',
+    badgeColor: '#b45309',
+    description:
+      'Sugar, jungle, shampoo, cheetah, karma: how Sanskrit words reached English by trade, colonial contact, and scholarship; borrowings vs cognates; and a fact-checked 100-word list.',
+    keywords: [
+      'etymology',
+      'english words',
+      'loanwords',
+      'borrowings',
+      'cognates',
+      'william jones',
+      'indo-european',
+      'sugar',
+      'jungle',
+      'shampoo',
+      'bungalow',
+      'orange',
+      'ginger',
+      'candy',
+      'cheetah',
+      'karma',
+      'yoga',
+      'juggernaut',
+      'thug',
+      'pal',
+      'संस्कृतम्',
+      'शर्करा',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'sanskrit-in-english',
+    },
+  },
   {
     id: 'art-katapayadi',
     title: 'कटपयादि · Kaṭapayādi: Sacred Cipher of Sanskrit Mathematics',

@@ -870,6 +870,7 @@ const Dashboard: React.FC = () => {
           onOpenVarnamala={openVarnamala}
           onOpenReader={() => navigateToView('reader')}
           onGoHome={() => navigateToView('home')}
+          onOpenGrammarArticle={(articleId) => handleOpenGrammar('article', articleId)}
         />
       )}
       {activeView === 'cbse-guide' && (

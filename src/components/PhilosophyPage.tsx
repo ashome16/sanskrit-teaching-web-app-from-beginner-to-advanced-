@@ -9,6 +9,7 @@ export interface PhilosophyPageProps {
   onOpenVarnamala?: () => void;
   onOpenReader?: () => void;
   onGoHome?: () => void;
+  onOpenGrammarArticle?: (articleId: string) => void;
   initialEssay?: 'ai_sanskrit' | 'sunyat_anantam';
 }
 
@@ -58,6 +59,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   onOpenVarnamala,
   onOpenReader,
   onGoHome,
+  onOpenGrammarArticle,
   initialEssay = 'ai_sanskrit',
 }) => {
   const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam'>(initialEssay);
@@ -153,6 +155,16 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
           {onOpenVedicMaths && (
             <button type="button" className="philosophy-crumb-btn" onClick={onOpenVedicMaths}>
               📐 वैदिक-गणितम्
+            </button>
+          )}
+          {onOpenGrammarArticle && (
+            <button
+              type="button"
+              className="philosophy-crumb-btn"
+              onClick={() => onOpenGrammarArticle('sanskrit-in-english')}
+              title="Grammar Shelf · Sanskrit's Quiet Imprint on English"
+            >
+              🌍 Sanskrit in English
             </button>
           )}
         </div>
@@ -892,6 +904,16 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 >
                   🤖 Read “Why Learn Sanskrit in the Age of AI” ➔
                 </button>
+                {onOpenGrammarArticle && (
+                  <button
+                    type="button"
+                    className="philosophy-cta-secondary"
+                    onClick={() => onOpenGrammarArticle('sanskrit-in-english')}
+                    title="Open Grammar Shelf — Sanskrit's Quiet Imprint on English"
+                  >
+                    🌍 Sanskrit's Quiet Imprint on English ➔
+                  </button>
+                )}
               </div>
             </section>
           </div>

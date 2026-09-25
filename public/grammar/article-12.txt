@@ -1,0 +1,227 @@
+# संस्कृतम् in English · Sanskrit's Quiet Imprint on English
+## About 100 everyday English words with Sanskrit roots: how they travelled, what they tell us, and which origins are still debated
+
+Pour a glass of orange juice, stir in some sugar, nibble a piece of ginger candy, and dream of a walk in the jungle. Without noticing, you have just used five words with Sanskrit ancestry. Sanskrit's influence on English is real, but most of it is invisible. The words arrived in disguise, after long journeys through other languages, and by the time they reached London they looked and sounded completely English.
+
+This article follows those journeys. It is written for parents, teachers, and older children who enjoy the detective work of etymology (the study of where words come from). Each Sanskrit root is given in Devanagari with its IAST transliteration, for example शर्करा (śarkarā). Where scholars are unsure, we say so.
+
+## Three Roads into English
+
+Sanskrit words did not come into English all at once. They came along three broad roads, in different centuries, for different reasons.
+
+## Road 1 · The Ancient Trade Route
+
+For more than two thousand years, Indian goods such as spices, sugar, dyes, perfumes, and gems travelled west. Their names travelled with them, passed from language to language like a parcel: from Sanskrit into Prakrit or Pali, then Persian, Arabic, Greek, Latin, and Old French, and finally into English. Each language reshaped the word a little, so the Sanskrit original is often hard to recognise.
+
+- Sugar: शर्करा (śarkarā, 'grit, ground sugar') → Persian shakar → Arabic sukkar → Italian zucchero → Old French sucre → English sugar.
+- Crimson and carmine: कृमिज (kṛmija, 'produced by a worm') from कृमि (kṛmi, 'worm'), because the red dye was made from tiny insects. The word travelled through Persian and Arabic qirmiz into medieval Latin and Spanish.
+- Ginger: शृङ्गवेर (śṛṅgavera, 'horn-shaped root') → Prakrit siṅgabera → Greek zingiberis → Latin zingiber → Old English gingifer. The Sanskrit form may itself have been reshaped from a Dravidian word.
+- Orange: नारङ्ग (nāraṅga) → Persian nārang → Arabic nāranj → Old French orenge. The fruit gave its name to the colour, not the other way round.
+- Musk: मुष्क (muṣka) → Persian mushk → Greek moskhos → Latin muscus. The word named the scent pod of the musk deer.
+
+## Road 2 · The Colonial Route (17th Century Onwards)
+
+From the 1600s, British traders, soldiers, and officials of the East India Company lived in India and picked up words from Hindi, Urdu, Marathi, Bengali, and other Indian languages, many of which descend from Sanskrit. These words came into English more directly, so they are easier to recognise.
+
+- Bungalow: Hindi baṅglā, 'a house in the Bengal style', from वङ्ग (Vaṅga, Bengal).
+- Loot: Hindi lūṭ, from the Sanskrit root लुण्ठ् (luṇṭh-, 'to rob').
+- Thug: Hindi ṭhag, 'swindler', probably from स्थग (sthaga, 'cunning').
+- Jungle: Hindi jaṅgal, from जङ्गल (jaṅgala, 'dry, uncultivated land'). The meaning changed completely: the Sanskrit word described dry wasteland, but in English it came to mean thick tropical forest.
+- Shampoo: Hindi cā̃po, 'press! knead!' (a head-and-body massage), usually traced to चपयति (capayati, 'kneads').
+- Bandana: Hindi bāndhnū, 'tie-dyed cloth', from बन्ध् (bandh-, 'to tie').
+- Cot: Hindi khāṭ, from खट्वा (khaṭvā, 'bedstead').
+- Titles such as rajah (राजन् rājan, 'king'), pundit (पण्डित paṇḍita, 'learned'), and guru (गुरु guru, 'weighty; teacher').
+
+A word of caution: pyjama is often listed as a Sanskrit word, but it is not. It comes from Persian pāy-jāma ('leg garment') and reached English through Hindi and Urdu. It is an Indian loanword, but not a Sanskrit one.
+
+## Road 3 · The Spiritual and Scholarly Wave (19th–20th Centuries)
+
+In the 1800s and 1900s, European scholars translated the Vedas, the Upaniṣads, the Bhagavad Gītā, and Buddhist texts, and later yoga teachers and spiritual travellers brought Indian ideas to the West. This third wave brought words such as yoga, karma, nirvana, mantra, avatar, dharma, and mandala.
+
+What makes this group special is that their meanings stayed close to the original. Sugar has forgotten that it was once शर्करा (śarkarā), but when people say karma today they still mean something close to कर्मन् (karman, 'action and its consequences'). Some meanings have loosened in everyday speech: an avatar is now also a profile picture, and a mantra can be a company slogan. Even so, the link to the Sanskrit idea remains clear.
+
+## Borrowing vs Cognates: Family Resemblance Is Not Borrowing
+
+In 1786, Sir William Jones, a judge in Calcutta, told the Asiatic Society that Sanskrit, Greek, and Latin were so alike in their roots and grammar that they must have "sprung from some common source." This insight led to the discovery of the Indo-European language family, which includes Sanskrit, Persian, Greek, Latin, and the Germanic languages, English among them.
+
+This means there are two very different ways a Sanskrit word can resemble an English one:
+
+- Borrowing: English took the word, directly or through other languages, at some point in recorded history. Sugar, jungle, and yoga are borrowings.
+- Cognates: both languages inherited the word from their shared ancestor, Proto-Indo-European, spoken perhaps 6,000 years ago. Neither language borrowed from the other; they are cousins, not parent and child.
+
+| Sanskrit | English | Latin / Greek | Shared meaning |
+| मातृ (mātṛ) | mother | Latin māter | mother |
+| पितृ (pitṛ) | father | Latin pater | father |
+| भ्रातृ (bhrātṛ) | brother | Latin frāter | brother |
+| नव (nava) | nine | Latin novem | nine |
+
+Similarly, दन्त (danta, 'tooth') is a cousin of Latin dēns, from which English gets dental and dentist, and of English tooth itself. Words like mother, father, and the numbers are cognates, not borrowings, so they are not in our list. Here is a neat twist: the English word pal is a real borrowing from भ्रातृ (bhrātṛ), carried by the Romani language, while brother is its ancient cousin.
+
+The 100-word list below contains only borrowings: words that actually travelled from Sanskrit into English.
+
+## What the Categories Reveal
+
+Grouping the borrowings by theme tells a story about the contact between India and the English-speaking world.
+
+- Trade goods came first and travelled furthest: sugar, pepper, ginger, camphor, sandalwood, musk, lac, and indigo. Their names reached Europe centuries before any English person visited India.
+- Administration and colonial life brought titles (rajah, maharani, pundit) and the vocabulary of rule and law and order. Two words took darker meanings in English: thug, from a word for a swindler, became a general word for a violent criminal, and juggernaut, from जगन्नाथ (Jagannātha, 'Lord of the World', the deity of Puri's chariot festival), came to mean an unstoppable, crushing force, based on exaggerated European reports.
+- Domestic words show how closely people lived together: cot, shampoo, bangle, bandana, bungalow, chit, and gunny sack.
+- Spiritual and philosophical terms arrived last. They are the only group where English kept the original meaning almost intact, because people borrowed them precisely for their meaning.
+
+## The 100-Word List
+
+The words are grouped by theme. Each row gives the English word, the Sanskrit root (Devanagari + IAST), the original meaning, and the route by which it reached English.
+
+Legend: ⚠ = disputed etymology. Scholars propose the Sanskrit link, but it is uncertain or contested. Treat these as "possibly", not "definitely".
+
+## 1 · Religion & Philosophy (21)
+
+| English | Sanskrit root | Meaning | Route |
+| Yoga | योग (yoga) | yoking, union; discipline | Spiritual wave, 19th c. |
+| Yogi | योगिन् (yogin) | one who practises yoga | Hindi, 17th c. |
+| Guru | गुरु (guru) | weighty; teacher | Hindi, 17th c. |
+| Karma | कर्मन् (karman) | action and its result | Spiritual wave, 19th c. |
+| Mantra | मन्त्र (mantra) | sacred formula; 'tool of thought' | Spiritual wave, 19th c. |
+| Nirvana | निर्वाण (nirvāṇa) | blowing out (of desire) | Buddhist studies, 19th c. |
+| Avatar | अवतार (avatāra) | descent (of a deity) | Scholarly, 18th c. |
+| Dharma | धर्म (dharma) | that which upholds; duty, law | Spiritual wave, 19th c. |
+| Mahatma | महात्मन् (mahātman) | great soul | Hindi, 19th c. |
+| Swastika | स्वस्तिक (svastika) | sign of well-being, auspicious mark | Scholarly, 19th c. |
+| Buddha | बुद्ध (buddha) | awakened one | Scholarly, 17th–18th c. |
+| Mandala | मण्डल (maṇḍala) | circle | Spiritual wave, 19th c. |
+| Zen | ध्यान (dhyāna) | meditation | Chinese chán → Japanese zen |
+| Moksha | मोक्ष (mokṣa) | release, liberation | Spiritual wave, 19th c. |
+| Bhakti | भक्ति (bhakti) | devotion | Scholarly, 19th c. |
+| Chakra | चक्र (cakra) | wheel; energy centre | Spiritual wave, 19th c. |
+| Sutra | सूत्र (sūtra) | thread; concise rule | Scholarly, 19th c. |
+| Ashram | आश्रम (āśrama) | hermitage, retreat | Hindi, 19th c. |
+| Mahayana | महायान (mahāyāna) | great vehicle (Buddhist school) | Buddhist studies, 19th c. |
+| Maya | माया (māyā) | illusion; magical power | Scholarly, 19th c. |
+| Devi | देवी (devī) | goddess | Hindi / scholarly |
+
+## 2 · Titles & Society (12)
+
+| English | Sanskrit root | Meaning | Route |
+| Pundit | पण्डित (paṇḍita) | learned person | Hindi paṇḍit, 17th c. |
+| Swami | स्वामिन् (svāmin) | master, owner | Hindi svāmī |
+| Rajah | राजन् (rājan) | king | Hindi rājā, 16th c. |
+| Maharajah | महाराज (mahārāja) | great king | Hindi, 17th c. |
+| Maharani | महाराज्ञी (mahārājñī) | great queen | Hindi mahārānī |
+| Rani | राज्ञी (rājñī) | queen | Hindi rānī |
+| Maharishi | महर्षि (maharṣi) | great seer | Hindi / scholarly |
+| Juggernaut | जगन्नाथ (jagannātha) | Lord of the World | Hindi Jagannāth; English sense 'crushing force' |
+| Thug ⚠ | स्थग (sthaga) | cunning, fraudulent (probably) | Hindi ṭhag, 19th c. |
+| Gurkha | गोरक्ष (gorakṣa) | protector of cows (via the town of Gorkha) | Nepali gorkhā |
+| Mahout | महामात्र (mahāmātra) | high official; elephant keeper | Hindi mahāwat |
+| Mandarin | मन्त्रिन् (mantrin) | counsellor, minister | Malay menteri → Portuguese mandarim |
+
+## 3 · Everyday Words (15)
+
+| English | Sanskrit root | Meaning | Route |
+| Jungle | जङ्गल (jaṅgala) | dry, uncultivated land | Hindi jaṅgal |
+| Loot | लुण्ठ् (luṇṭh-) | to rob | Hindi lūṭ |
+| Cot | खट्वा (khaṭvā) | bedstead | Hindi khāṭ |
+| Pal | भ्रातृ (bhrātṛ) | brother | Romani phral |
+| Punch ⚠ | पञ्च (pañca) | five (ingredients) | Hindi pā̃c; traditional but disputed |
+| Candy | खण्ड (khaṇḍa) | piece (of sugar) | Persian qand → Arabic → French candi |
+| Bandana | बन्ध् (bandh-) | to tie | Hindi bāndhnū, 'tie-dye' |
+| Bangle ⚠ | uncertain (Hindi baṅgṛī) | glass bracelet | Hindi; older Sanskrit origin unclear |
+| Tank ⚠ | तडाग (taḍāga)? | pond, reservoir | Gujarati / Marathi ṭāṅkī; also Portuguese tanque |
+| Cash ⚠ | कर्ष (karṣa)? | a weight of silver or gold | Tamil kāsu (coin); 'money' sense mostly French casse |
+| Bungalow | वङ्ग (Vaṅga) | Bengal ('Bengal-style house') | Hindi baṅglā |
+| Shampoo | चपयति (capayati) | kneads, presses (probably) | Hindi cā̃po, 18th c. |
+| Pukka | पक्व (pakva) | cooked, ripe; solid | Hindi pakkā |
+| Chit | चित्र (citra) | mark, sign (probably) | Hindi ciṭṭhī, 'note' |
+| Gunny | गोणी (goṇī) | sack | Hindi / Marathi goṇī |
+
+## 4 · Animals (10)
+
+| English | Sanskrit root | Meaning | Route |
+| Cheetah | चित्रक (citraka) | spotted one | Hindi cītā |
+| Jackal | शृगाल (śṛgāla) | jackal | Persian shagāl → Turkish çakal |
+| Mugger | मकर (makara) | sea creature, crocodile | Hindi magar |
+| Mynah | मदन (madana) | delightful one | Hindi mainā |
+| Langur | लाङ्गूल (lāṅgūla) | tail ('long-tailed') | Hindi laṅgūr |
+| Nilgai | नील (nīla) + गो (go) | blue cow | Hindi nīlgāy |
+| Chukar | चकोर (cakora) | partridge | Hindi cakor |
+| Sambar | शम्बर (śambara) | a kind of deer | Hindi sā̃bar |
+| Cowrie | कपर्द (kaparda) | small shell | Hindi kauṛī |
+| Wanderoo | वानर (vānara) | monkey | Sinhala vandurā |
+
+## 5 · Plants, Food & Spices (19)
+
+| English | Sanskrit root | Meaning | Route |
+| Ginger | शृङ्गवेर (śṛṅgavera) | horn-shaped root | Prakrit → Greek → Latin → Old English |
+| Pepper | पिप्पली (pippalī) | long pepper | Greek peperi → Latin piper |
+| Orange | नारङ्ग (nāraṅga) | orange tree | Persian → Arabic → Old French |
+| Sugar | शर्करा (śarkarā) | grit, ground sugar | Persian → Arabic → Italian → French |
+| Sandalwood | चन्दन (candana) | sandalwood | Persian → Greek santalon → Latin |
+| Neem | निम्ब (nimba) | neem tree | Hindi nīm |
+| Datura | धत्तूर (dhattūra) | thorn-apple plant | Hindi dhatūrā |
+| Deodar | देवदारु (devadāru) | wood of the gods | Hindi deodār |
+| Jaggery | शर्करा (śarkarā) | sugar | Malayalam cakkara → Portuguese jágara |
+| Dal | दल (dala) | split (pulse) | Hindi dāl |
+| Mung | मुद्ग (mudga) | green gram | Hindi mūṅg |
+| Ganja | गञ्जा (gañjā) | hemp | Hindi gā̃jā |
+| Til | तिल (tila) | sesame | Hindi til |
+| Toddy | ताल (tāla) | palmyra palm | Hindi tāṛī |
+| Camphor | कर्पूर (karpūra) | camphor | Arabic kāfūr → Latin → French |
+| Aubergine | वातिङ्गण (vātiṅgaṇa) | eggplant | Persian → Arabic → Catalan → French |
+| Brinjal | वातिङ्गण (vātiṅgaṇa) | eggplant | Persian → Arabic → Portuguese beringela |
+| Copra | खर्पर (kharpara) | shell (probably) | Malayalam koppara → Portuguese |
+| Ashwagandha | अश्वगन्धा (aśvagandhā) | 'horse-smell' (a herb) | Ayurveda, 20th c. |
+
+## 6 · Textiles, Colours & Materials (12)
+
+| English | Sanskrit root | Meaning | Route |
+| Cashmere | कश्मीर (Kaśmīra) | Kashmir (the region's wool) | Place name, 17th c. |
+| Chintz | चित्र (citra) | bright, variegated | Hindi chīṇṭ, 'printed cloth' |
+| Shawl ⚠ | शाटी (śāṭī)? | strip of cloth | Persian / Urdu shāl; Sanskrit link weak |
+| Lac | लाक्षा (lākṣā) | lac resin | Hindi lākh |
+| Lacquer | लाक्षा (lākṣā) | lac resin | Persian lāk → Portuguese laca → French |
+| Crimson | कृमिज (kṛmija) | produced by a worm | Persian / Arabic qirmiz → Latin → Spanish |
+| Carmine | कृमि (kṛmi) | worm (dye insect) | Arabic qirmiz → Latin carminium → French |
+| Lilac | नील (nīla) | dark blue | Persian līlak → Arabic → Spanish → French |
+| Musk | मुष्क (muṣka) | scent pod | Persian → Greek → Latin |
+| Sari | शाटी (śāṭī) | strip of cloth | Hindi sāṛī |
+| Jute | जूट (jūṭa) | braid, matted fibre | Bengali jhuṭo |
+| Indigo | सिन्धु (Sindhu) | the Indus; 'Indian (dye)' | Persian Hind → Greek indikón → Latin → Spanish |
+
+## 7 · Gems, Science & Scholarly (6)
+
+| English | Sanskrit root | Meaning | Route |
+| Sapphire ⚠ | शनिप्रिय (śanipriya)? | 'dear to Saturn' | Usually traced to Semitic via Greek sappheiros; Sanskrit link speculative |
+| Opal ⚠ | उपल (upala) | stone, gem (probably) | Greek opallios → Latin opalus |
+| Saccharide | शर्करा (śarkarā) | grit, sugar | Pali sakkharā → Greek sákkharon → Latin |
+| Aniline | नीली (nīlī) | indigo plant | Persian nīl → Arabic → Portuguese anil → German |
+| Rupee | रूप्य (rūpya) | wrought silver, stamped coin | Hindi rupayā |
+| Gondwana | वन (vana) | forest ('forest of the Gonds') | Indian region name; geology term, 1870s |
+
+## 8 · Places & Misc (5)
+
+| English | Sanskrit root | Meaning | Route |
+| Java | यवद्वीप (Yavadvīpa) | barley island (probably) | Old Javanese / Malay Jawa |
+| Singapore | सिंहपुर (Siṃhapura) | lion city | Malay Singapura |
+| Atoll ⚠ | uncertain | ring-shaped coral island | Dhivehi atoḷu; Sanskrit link speculative |
+| Palanquin | पल्यङ्क (palyaṅka) | couch, bed | Odia / Hindi pālki → Portuguese palanquim |
+| Dinghy ⚠ | uncertain | small boat | Hindi ḍiṅgī; Sanskrit origin unclear |
+
+That makes 21 + 12 + 15 + 10 + 19 + 12 + 6 + 5 = 100 words.
+
+## What We Left Out, and Why
+
+A careful list is also about what does not belong. Some words that often appear in "Sanskrit in English" lists were removed after fact-checking:
+
+- Pyjama: Persian pāy-jāma, reaching English through Hindi and Urdu, not Sanskrit.
+- Rice: not a Sanskrit borrowing. Greek oryza is at most distantly related to Sanskrit व्रीहि (vrīhi).
+- Crocus: of Semitic origin; the proposed link to कुङ्कुम (kuṅkuma, saffron) is not accepted.
+- Das and chakram: Indian words, but not established English words.
+- Nark: from Romani nāk ('nose'); the Sanskrit link is too weak.
+- Gharry: from Hindi gāṛī ('cart'); the proposed Sanskrit root is doubtful.
+- Aryan: left out because the English word, originally from आर्य (ārya, 'noble'), was later misused in racial theories. That history deserves a careful discussion of its own.
+
+## Closing: A Substrate Hiding in Plain Sight
+
+Sanskrit never conquered English, and English speakers rarely studied it until the eighteenth century. Yet its words are everywhere, in the kitchen (sugar, ginger, dal), the wardrobe (sari, shawl, cashmere), the zoo (cheetah, jackal, langur), the bathroom (shampoo), and the yoga studio (karma, mantra, chakra). Some came with merchants, some with soldiers and clerks, and some with scholars and seekers.
+
+Next time you peel an orange or call a friend your pal, remember that you are speaking a little Sanskrit. The words have travelled a long way, but their roots are still there, quietly waiting for curious readers to notice them.
