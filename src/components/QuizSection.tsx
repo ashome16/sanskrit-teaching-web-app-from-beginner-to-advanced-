@@ -29,8 +29,10 @@ const QuizSection: React.FC<QuizSectionProps> = ({
   const [isCompleted, setIsCompleted] = useState<boolean>(false);
   const [showReview, setShowReview] = useState<boolean>(false);
   const [showUpgradePrompt, setShowUpgradePrompt] = useState<boolean>(false);
+  const [showHistoryModal, setShowHistoryModal] = useState<boolean>(false);
 
-  const { recordQuizAttempt } = useAppStore();
+  const { recordQuizAttempt, progress } = useAppStore();
+  const quizAttempts = progress?.quizzesCompleted || [];
   const { isAdminLoggedIn, currentUser, openAuthModal, openPaymentModal } = useAuthStore();
   const canDownload = canDownloadContent(currentUser, isAdminLoggedIn);
   const gateReason = getDownloadGateReason(currentUser, isAdminLoggedIn);
@@ -291,18 +293,35 @@ const QuizSection: React.FC<QuizSectionProps> = ({
         </div>
         <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
           {!activeQuestions && (
-            <button
-              type="button"
-              className={`quiz-download-btn${canDownload ? '' : ' locked'}`}
-              onClick={handleDownloadFilteredQuiz}
-              title={
-                canDownload
-                  ? 'Download current topic as offline practice HTML'
-                  : 'Paid access required to download'
-              }
-            >
-              {canDownload ? '⬇️ Download Practice Sheet' : '🔒 Download (Paid)'}
-            </button>
+            <>
+              <button
+                type="button"
+                className={`quiz-download-btn${canDownload ? '' : ' locked'}`}
+                onClick={handleDownloadFilteredQuiz}
+                title={
+                  canDownload
+                    ? 'Download current topic as offline practice HTML'
+                    : 'Paid subscription required to download practice sheets'
+                }
+              >
+                {canDownload ? '⬇️ Download Practice Sheet' : '🔒 Download (Paid)'}
+              </button>
+              <button
+                type="button"
+                className={`quiz-history-btn${canDownload ? '' : ' locked'}`}
+                onClick={() => {
+                  if (!requireAssessmentAccess()) return;
+                  setShowHistoryModal(true);
+                }}
+                title={
+                  canDownload
+                    ? 'View your past quiz submissions & graded answers'
+                    : 'Paid subscription required to view My Submissions history'
+                }
+              >
+                {canDownload ? '📋 My Submissions' : '🔒 My Submissions (Paid)'}
+              </button>
+            </>
           )}
           {onOpenReader && (
             <button type="button" className="quiz-home-btn" onClick={onOpenReader}>
@@ -497,16 +516,20 @@ const QuizSection: React.FC<QuizSectionProps> = ({
               type="button"
               className={`quiz-download-btn${canDownload ? '' : ' locked'}`}
               onClick={handleDownloadResults}
-              title={canDownload ? 'Download results with answer key' : 'Paid access required'}
+              title={canDownload ? 'Generate and download printable evaluation report with answer key' : 'Paid access required'}
             >
-              {canDownload ? '⬇️ Download Results' : '🔒 Download Results (Paid)'}
+              {canDownload ? '📄 Generate Evaluation Report' : '🔒 Generate Evaluation Report (Paid)'}
             </button>
             <button
               type="button"
-              className="quiz-review-toggle-btn"
-              onClick={() => setShowReview(!showReview)}
+              className={`quiz-review-toggle-btn${canDownload ? '' : ' locked'}`}
+              onClick={() => {
+                if (!requireAssessmentAccess()) return;
+                setShowReview(!showReview);
+              }}
+              title={canDownload ? 'Review questions, your answers and detailed explanations' : 'Paid subscription required to view detailed answers'}
             >
-              {showReview ? 'Hide Answer Review' : '📝 Review All Answers'}
+              {canDownload ? (showReview ? 'Hide Answer Review' : '📝 Review My Answers') : '🔒 Review My Answers (Paid)'}
             </button>
             <button
               type="button"
@@ -516,6 +539,43 @@ const QuizSection: React.FC<QuizSectionProps> = ({
               Select Another Topic
             </button>
           </div>
+
+          {!canDownload && (
+            <div className="quiz-subscription-pitch-card">
+              <div className="quiz-pitch-header">
+                <span className="quiz-pitch-badge">⭐ Subscribed Members Only</span>
+                <h4 className="quiz-pitch-title">Unlock Full Graded Answers &amp; Detailed Evaluation Reports</h4>
+                <p className="quiz-pitch-desc">
+                  Accelerate Sanskrit and Vedic Maths fluency. Subscribed students get CBSE teacher-reviewed answer explanations, unlimited quiz submissions, verified performance certificates, and printable evaluation reports.
+                </p>
+              </div>
+              <ul className="quiz-pitch-perks">
+                <li>
+                  <span>📄</span>
+                  <span><strong>Detailed Evaluation Reports:</strong> Printable question-by-question analytics &amp; CBSE mark sheets.</span>
+                </li>
+                <li>
+                  <span>📝</span>
+                  <span><strong>Full Answer Keys:</strong> Comprehensive Vyākaraṇa &amp; Sutra breakdowns for all questions.</span>
+                </li>
+                <li>
+                  <span>📋</span>
+                  <span><strong>Submission History:</strong> Track retention curve, accuracy trends, and chapter mastery over time.</span>
+                </li>
+                <li>
+                  <span>🏆</span>
+                  <span><strong>Verified Certificate:</strong> Earned upon completing master challenges across all chapters.</span>
+                </li>
+              </ul>
+              <button
+                type="button"
+                className="quiz-pitch-cta-btn"
+                onClick={() => openPaymentModal('unlock_paid_features')}
+              >
+                🚀 Upgrade to Full Access for ₹299 / Month
+              </button>
+            </div>
+          )}
 
           {/* Detailed Question Review */}
           {showReview && (
@@ -679,13 +739,69 @@ const QuizSection: React.FC<QuizSectionProps> = ({
                   {currentIndex < activeQuestions.length - 1
                     ? 'Next Question ➔'
                     : canDownload
-                    ? 'View Assessment Report ➔'
-                    : '🔒 Submit & Assessment (Paid)'}
+                    ? 'Submit & View Evaluation Report ➔'
+                    : '🔒 Submit Quiz & Unlock Evaluation Report (Paid)'}
                 </button>
               )}
             </div>
           </div>
         )
+      )}
+
+      {/* Submissions History Modal (Paid Feature) */}
+      {showHistoryModal && (
+        <div className="quiz-history-modal-overlay" onClick={() => setShowHistoryModal(false)}>
+          <div className="quiz-history-modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="quiz-history-modal-header">
+              <h3 className="quiz-history-modal-title">📋 My Quiz Submissions</h3>
+              <button
+                type="button"
+                className="quiz-history-modal-close"
+                onClick={() => setShowHistoryModal(false)}
+                aria-label="Close"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="quiz-history-modal-body">
+              {quizAttempts.length === 0 ? (
+                <div className="quiz-history-empty">
+                  <div className="quiz-history-empty-icon">📝</div>
+                  <h4>No submissions recorded yet</h4>
+                  <p>Complete any quiz drill and submit to record your graded score and evaluation history.</p>
+                </div>
+              ) : (
+                <div className="quiz-history-list">
+                  {quizAttempts.slice().reverse().map((att, idx) => {
+                    const dateStr = new Date(att.timestamp).toLocaleDateString(undefined, {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    });
+                    const catObj = QUIZ_CATEGORIES.find((c) => c.id === att.quizId);
+                    const catLabel = catObj?.label || (att.quizId === 'all' ? 'All Topics Drill' : att.quizId);
+                    const percent = att.totalPoints > 0 ? Math.round((att.score / att.totalPoints) * 100) : 0;
+                    return (
+                      <div key={att.id || idx} className="quiz-history-item">
+                        <div className="quiz-history-details">
+                          <h4>{catLabel}</h4>
+                          <span className="quiz-history-meta">
+                            📅 {dateStr} · {att.answers?.length || 0} Questions
+                          </span>
+                        </div>
+                        <div className="quiz-history-score-badge">
+                          {att.score} / {att.totalPoints} ({percent}%)
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
       )}
     </section>
   );

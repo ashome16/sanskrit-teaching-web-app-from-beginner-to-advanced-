@@ -49,7 +49,7 @@ const BRUSH_COLORS = [
 export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
   initialLetter = 'अ',
   onOpenWorksheets,
-  onOpenPuzzle,
+  onOpenPuzzle: _onOpenPuzzle,
   onSelectLetter,
 }) => {
   const [selectedLetter, setSelectedLetter] = useState<string>(initialLetter || 'अ');
@@ -753,6 +753,19 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     playPronunciation(word);
   };
 
+  const handlePlayFull = () => {
+    soundEffects.playSuccessDing();
+    startDemo(null);
+    try {
+      playPronunciation(mnemonic.letter);
+      window.setTimeout(() => {
+        try {
+          playPronunciation(mnemonic.wordSan);
+        } catch {}
+      }, 750);
+    } catch {}
+  };
+
   return (
     <div className="v-writing-studio" aria-label="Interactive Sanskrit Writing & Tracing Studio">
       {/* Studio Header */}
@@ -1074,19 +1087,15 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
                 🔊 Word: {mnemonic.wordSan}
               </button>
 
-              {onOpenPuzzle && (
-                <button
-                  type="button"
-                  className="v-puzzle-link-btn"
-                  onClick={() => {
-                    soundEffects.playSuccessDing();
-                    onOpenPuzzle();
-                  }}
-                  title="Practice letters in interactive Jodo Tile Puzzle"
-                >
-                  🧩 Tile Puzzle →
-                </button>
-              )}
+              <button
+                type="button"
+                className="v-play-full-btn"
+                onClick={handlePlayFull}
+                title={`Play full stroke drawing demo and authentic audio for "${mnemonic.letter}"`}
+              >
+                <span>▶️</span>
+                <span>Play Full</span>
+              </button>
             </div>
           </div>
 
