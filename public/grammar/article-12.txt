@@ -1,53 +1,37 @@
 # संस्कृतम् in English · Sanskrit's Quiet Imprint on English
 ## About 100 everyday English words with Sanskrit roots: how they travelled, what they tell us, and which origins are still debated
 
-Pour a glass of orange juice, stir in some sugar, nibble a piece of ginger candy, and dream of a walk in the jungle. Without noticing, you have just used five words with Sanskrit ancestry. Sanskrit's influence on English is real, but most of it is invisible. The words arrived in disguise, after long journeys through other languages, and by the time they reached London they looked and sounded completely English.
+When people talk about foreign influences on English, French, Latin, and Greek usually get the spotlight. Sanskrit rarely does, yet it has left a real, if largely invisible, mark on the language. Words like orange, sugar, ginger, candy, and jungle trace back to Sanskrit roots, even though almost no one uses them expecting a link to an ancient Indian sacred language.
 
-This article follows those journeys. It is written for parents, teachers, and older children who enjoy the detective work of etymology (the study of where words come from). Each Sanskrit root is given in Devanagari with its IAST transliteration, for example शर्करा (śarkarā). Where scholars are unsure, we say so.
+Throughout this article, Sanskrit roots are given in Devanagari with their IAST transliteration, for example शर्करा (śarkarā). Where scholars are unsure of an origin, we say so.
 
-## Three Roads into English
+## Three Roads Into English
 
-Sanskrit words did not come into English all at once. They came along three broad roads, in different centuries, for different reasons.
+Sanskrit words entered English by three distinct routes: two large ones and a third, smaller wave. Understanding the difference explains why the vocabulary feels so varied.
 
-## Road 1 · The Ancient Trade Route
+## Road 1 · The Ancient, Buried Route
 
-For more than two thousand years, Indian goods such as spices, sugar, dyes, perfumes, and gems travelled west. Their names travelled with them, passed from language to language like a parcel: from Sanskrit into Prakrit or Pali, then Persian, Arabic, Greek, Latin, and Old French, and finally into English. Each language reshaped the word a little, so the Sanskrit original is often hard to recognise.
+Long before anyone was writing dictionaries, Sanskrit words drifted west along trade networks. Spices, dyes, textiles, and luxury goods carried their names with them. A Sanskrit word for a "worm-derived red dye", कृमिज (kṛmija, from कृमि kṛmi, "worm"), passed through Persian and Arabic and eventually became both crimson and carmine in English. The same happened with sugar (from शर्करा śarkarā, "gravel" or "grit"), ginger (शृङ्गवेर śṛṅgavera), musk (मुष्क muṣka), and orange (नारङ्ग nāraṅga).
 
-- Sugar: शर्करा (śarkarā, 'grit, ground sugar') → Persian shakar → Arabic sukkar → Italian zucchero → Old French sucre → English sugar.
-- Crimson and carmine: कृमिज (kṛmija, 'produced by a worm') from कृमि (kṛmi, 'worm'), because the red dye was made from tiny insects. The word travelled through Persian and Arabic qirmiz into medieval Latin and Spanish.
-- Ginger: शृङ्गवेर (śṛṅgavera, 'horn-shaped root') → Prakrit siṅgabera → Greek zingiberis → Latin zingiber → Old English gingifer. The Sanskrit form may itself have been reshaped from a Dravidian word.
-- Orange: नारङ्ग (nāraṅga) → Persian nārang → Arabic nāranj → Old French orenge. The fruit gave its name to the colour, not the other way round.
-- Musk: मुष्क (muṣka) → Persian mushk → Greek moskhos → Latin muscus. The word named the scent pod of the musk deer.
+These words often travelled through half a dozen languages, among them Persian, Arabic, Greek, Latin, and Old French, picking up new sounds and spellings at every stop, until their Sanskrit origin became almost unrecognisable. Most English speakers have no idea these everyday words have Indian roots at all.
 
-## Road 2 · The Colonial Route (17th Century Onwards)
+## Road 2 · The Colonial and Scholarly Route
 
-From the 1600s, British traders, soldiers, and officials of the East India Company lived in India and picked up words from Hindi, Urdu, Marathi, Bengali, and other Indian languages, many of which descend from Sanskrit. These words came into English more directly, so they are easier to recognise.
+From the 17th century onward, direct contact between Britain and South Asia brought a second, more visible wave of borrowing. That contact came through trade, then the East India Company, and eventually the British Raj. Words like bungalow, loot, thug, jungle, shampoo, bandana, and cot entered English during this period, mostly via Hindi and Urdu, which had themselves inherited or adapted the terms from Sanskrit. Jungle, for instance, comes from जङ्गल (jaṅgala), which originally meant dry, uncultivated land. Shampoo is usually traced to चपयति (capayati, "kneads"), through the Hindi command cā̃po, "press!"
 
-- Bungalow: Hindi baṅglā, 'a house in the Bengal style', from वङ्ग (Vaṅga, Bengal).
-- Loot: Hindi lūṭ, from the Sanskrit root लुण्ठ् (luṇṭh-, 'to rob').
-- Thug: Hindi ṭhag, 'swindler', probably from स्थग (sthaga, 'cunning').
-- Jungle: Hindi jaṅgal, from जङ्गल (jaṅgala, 'dry, uncultivated land'). The meaning changed completely: the Sanskrit word described dry wasteland, but in English it came to mean thick tropical forest.
-- Shampoo: Hindi cā̃po, 'press! knead!' (a head-and-body massage), usually traced to चपयति (capayati, 'kneads').
-- Bandana: Hindi bāndhnū, 'tie-dyed cloth', from बन्ध् (bandh-, 'to tie').
-- Cot: Hindi khāṭ, from खट्वा (khaṭvā, 'bedstead').
-- Titles such as rajah (राजन् rājan, 'king'), pundit (पण्डित paṇḍita, 'learned'), and guru (गुरु guru, 'weighty; teacher').
+(Pyjama arrived by the same colonial road, but it is Persian, not Sanskrit: pāy-jāma, "leg garment", borrowed through Hindi and Urdu.)
 
-A word of caution: pyjama is often listed as a Sanskrit word, but it is not. It comes from Persian pāy-jāma ('leg garment') and reached English through Hindi and Urdu. It is an Indian loanword, but not a Sanskrit one.
+This is also when English absorbed titles and administrative vocabulary, such as rajah (राजन् rājan), maharajah, pundit (पण्डित paṇḍita), and guru (गुरु guru). These words were tied to Indian social and religious structures that the British were now governing or studying.
 
-## Road 3 · The Spiritual and Scholarly Wave (19th–20th Centuries)
+## Road 3 · A Third, Smaller Wave: Spiritual and Philosophical Words
 
-In the 1800s and 1900s, European scholars translated the Vedas, the Upaniṣads, the Bhagavad Gītā, and Buddhist texts, and later yoga teachers and spiritual travellers brought Indian ideas to the West. This third wave brought words such as yoga, karma, nirvana, mantra, avatar, dharma, and mandala.
+A third, smaller wave came later and is still happening. Spiritual and philosophical vocabulary such as yoga, karma, nirvana, mantra, avatar, dharma, and mandala entered English mainly in the 19th and 20th centuries. It came first through the study of Hinduism and Buddhism, and later through the spread of meditation and yoga practice in the West. Unlike the older borrowings, these words often kept their meanings close to the Sanskrit originals: when people say karma today, they still mean something close to कर्मन् (karman, "action and its consequences").
 
-What makes this group special is that their meanings stayed close to the original. Sugar has forgotten that it was once शर्करा (śarkarā), but when people say karma today they still mean something close to कर्मन् (karman, 'action and its consequences'). Some meanings have loosened in everyday speech: an avatar is now also a profile picture, and a mantra can be a company slogan. Even so, the link to the Sanskrit idea remains clear.
+## Why the Connection Runs Deep
 
-## Borrowing vs Cognates: Family Resemblance Is Not Borrowing
+Part of what makes the Sanskrit–English link feel so deep is structural. Both languages belong to the Indo-European language family, so they aren't just casually related; they share a common ancestor. This relationship was famously set out in 1786 by Sir William Jones, a British judge and philologist working in colonial India. He noticed that Sanskrit resembled Greek and Latin too closely for it to be a coincidence. His observation is often cited as the founding moment of comparative linguistics and of the Indo-European family theory: the idea that Sanskrit, Greek, Latin, Persian, and the Celtic and Germanic languages (including English) all descend from a single prehistoric ancestor.
 
-In 1786, Sir William Jones, a judge in Calcutta, told the Asiatic Society that Sanskrit, Greek, and Latin were so alike in their roots and grammar that they must have "sprung from some common source." This insight led to the discovery of the Indo-European language family, which includes Sanskrit, Persian, Greek, Latin, and the Germanic languages, English among them.
-
-This means there are two very different ways a Sanskrit word can resemble an English one:
-
-- Borrowing: English took the word, directly or through other languages, at some point in recorded history. Sugar, jungle, and yoga are borrowings.
-- Cognates: both languages inherited the word from their shared ancestor, Proto-Indo-European, spoken perhaps 6,000 years ago. Neither language borrowed from the other; they are cousins, not parent and child.
+That is actually a separate phenomenon from direct borrowing, though the two get blended in casual conversation. Words like mother, father, and the numbers one through ten are cognates. They are parallel developments from a shared ancestor, not borrowings.
 
 | Sanskrit | English | Latin / Greek | Shared meaning |
 | मातृ (mātṛ) | mother | Latin māter | mother |
@@ -55,18 +39,16 @@ This means there are two very different ways a Sanskrit word can resemble an Eng
 | भ्रातृ (bhrātṛ) | brother | Latin frāter | brother |
 | नव (nava) | nine | Latin novem | nine |
 
-Similarly, दन्त (danta, 'tooth') is a cousin of Latin dēns, from which English gets dental and dentist, and of English tooth itself. Words like mother, father, and the numbers are cognates, not borrowings, so they are not in our list. Here is a neat twist: the English word pal is a real borrowing from भ्रातृ (bhrātṛ), carried by the Romani language, while brother is its ancient cousin.
+Similarly, दन्त (danta, "tooth") is a cousin of Latin dēns, which gives English dental and dentist, and of English tooth itself. Here is a neat twist: the English word pal is a genuine borrowing from भ्रातृ (bhrātṛ), carried by the Romani language, while brother is its ancient cousin.
 
-The 100-word list below contains only borrowings: words that actually travelled from Sanskrit into English.
+The 100-word list below is about actual borrowing. It covers words that passed from Sanskrit, or from a descendant of Sanskrit such as Prakrit or Hindi, into English at some identifiable point in history.
 
-## What the Categories Reveal
+## What the Borrowed Words Reveal
 
-Grouping the borrowings by theme tells a story about the contact between India and the English-speaking world.
-
-- Trade goods came first and travelled furthest: sugar, pepper, ginger, camphor, sandalwood, musk, lac, and indigo. Their names reached Europe centuries before any English person visited India.
-- Administration and colonial life brought titles (rajah, maharani, pundit) and the vocabulary of rule and law and order. Two words took darker meanings in English: thug, from a word for a swindler, became a general word for a violent criminal, and juggernaut, from जगन्नाथ (Jagannātha, 'Lord of the World', the deity of Puri's chariot festival), came to mean an unstoppable, crushing force, based on exaggerated European reports.
-- Domestic words show how closely people lived together: cot, shampoo, bangle, bandana, bungalow, chit, and gunny sack.
-- Spiritual and philosophical terms arrived last. They are the only group where English kept the original meaning almost intact, because people borrowed them precisely for their meaning.
+- Trade goods (sugar, ginger, pepper, camphor, candy, jute, sandalwood, cashmere) reflect centuries of India as a source of spices, textiles, and luxury materials that Europe wanted and had no native words for.
+- Administration and social hierarchy (rajah, pundit, thug, juggernaut, loot) reflect the period of direct British rule. English needed vocabulary to describe Indian institutions, and it sometimes appropriated or distorted local concepts. Thug and juggernaut both took on far more sinister meanings in English than their Indian originals ever carried. Juggernaut comes from जगन्नाथ (Jagannātha, "Lord of the World"), the deity of Puri's chariot festival.
+- Everyday domestic words (bungalow, cot, shampoo, bandana) show how deeply colonial life in India seeped into British domestic habits and vocabulary. Colonial administrators and their families adopted local household terms and carried them home.
+- Spiritual and philosophical terms (yoga, karma, guru, nirvana, mantra, avatar) show a later, ongoing wave driven by intellectual and spiritual curiosity, not commerce or governance. Unlike the older borrowings, these largely keep their original meanings, because they were absorbed through scholarship and direct teaching rather than through centuries of sound change.
 
 ## The 100-Word List
 
@@ -220,8 +202,8 @@ A careful list is also about what does not belong. Some words that often appear 
 - Gharry: from Hindi gāṛī ('cart'); the proposed Sanskrit root is doubtful.
 - Aryan: left out because the English word, originally from आर्य (ārya, 'noble'), was later misused in racial theories. That history deserves a careful discussion of its own.
 
-## Closing: A Substrate Hiding in Plain Sight
+## A Language Hiding in Plain Sight
 
-Sanskrit never conquered English, and English speakers rarely studied it until the eighteenth century. Yet its words are everywhere, in the kitchen (sugar, ginger, dal), the wardrobe (sari, shawl, cashmere), the zoo (cheetah, jackal, langur), the bathroom (shampoo), and the yoga studio (karma, mantra, chakra). Some came with merchants, some with soldiers and clerks, and some with scholars and seekers.
+What's striking is how thoroughly assimilated many of these words are. Nobody pauses over sugar, candy, orange, or jungle and thinks "Sanskrit." They have been in English so long, and travelled through so many intermediate languages, that they read as fully native. Compare that with more recent borrowings like karma or avatar, which still carry a faint foreignness, or at least an awareness that they came from somewhere else.
 
-Next time you peel an orange or call a friend your pal, remember that you are speaking a little Sanskrit. The words have travelled a long way, but their roots are still there, quietly waiting for curious readers to notice them.
+In that sense, Sanskrit's influence on English isn't like French's, a visible layer of vocabulary that everyone recognises as borrowed. It is closer to a substrate: present everywhere, shaping ordinary speech, but almost entirely unnoticed unless you go looking for it.

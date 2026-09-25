@@ -875,6 +875,19 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               <p>This is the spirit of the EdNet Learn Gurukul.</p>
             </section>
 
+            {onOpenGrammarArticle && (
+              <div className="philosophy-related-reading" style={{ margin: '1.5rem 0', textAlign: 'center' }}>
+                <button
+                  type="button"
+                  className="philosophy-crumb-btn"
+                  onClick={() => onOpenGrammarArticle('sanskrit-in-english')}
+                  title="Open Grammar Shelf — Sanskrit's Quiet Imprint on English"
+                >
+                  🌍 Related reading: Sanskrit's Quiet Imprint on English ➔
+                </button>
+              </div>
+            )}
+
             <section className="philosophy-cta" aria-labelledby="philosophy-cta-heading">
               <h2 id="philosophy-cta-heading">Begin Your 14-Day Free Trial Yātrā</h2>
               <p>
@@ -904,16 +917,6 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 >
                   🤖 Read “Why Learn Sanskrit in the Age of AI” ➔
                 </button>
-                {onOpenGrammarArticle && (
-                  <button
-                    type="button"
-                    className="philosophy-cta-secondary"
-                    onClick={() => onOpenGrammarArticle('sanskrit-in-english')}
-                    title="Open Grammar Shelf — Sanskrit's Quiet Imprint on English"
-                  >
-                    🌍 Sanskrit's Quiet Imprint on English ➔
-                  </button>
-                )}
               </div>
             </section>
           </div>
