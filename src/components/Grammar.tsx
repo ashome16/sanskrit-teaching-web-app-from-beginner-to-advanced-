@@ -1,9 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ARTICLES } from '../data/articleIndex';
 import { SANSKRIT_ARTICLES, SANSKRIT_ARTICLE_META } from '../data/sanskritArticles';
 import { ARTICLE_KEY_WORDS } from '../data/articleKeyWords';
 import { parseArticle, type ParsedArticle } from '../utils/articleParser';
-import { speakAsBodhi, stopBodhiSpeech, playPronunciation } from '../utils/pronunciation';
+import { playPronunciation } from '../utils/pronunciation';
+import { BodhiAvatar } from './BodhiAvatar';
 import ConjunctGames from './ConjunctGames';
 import SoundTeamsArticle from './SoundTeamsArticle';
 import LingaVachanaGuide from './LingaVachanaGuide';
@@ -44,26 +45,20 @@ const Grammar: React.FC<GrammarProps> = ({
     }
     return 'en';
   });
-  const [isAudioPlaying, setIsAudioPlaying] = useState<boolean>(false);
-  const [audioSpeed, setAudioSpeed] = useState<'slow' | 'normal'>('normal');
-  const stopSpeechRef = useRef<(() => void) | null>(null);
+  const [activeSpokenWord, setActiveSpokenWord] = useState<string | null>(null);
 
   const activeArticleMeta = ARTICLES.find((item) => item.id === activeArticleId);
   const activeArticle = activeArticleId ? articles[activeArticleId] : undefined;
 
-  const handleStopAudio = () => {
-    if (stopSpeechRef.current) {
-      stopSpeechRef.current();
-      stopSpeechRef.current = null;
-    }
-    stopBodhiSpeech();
-    setIsAudioPlaying(false);
+  const handlePlayBodhiWord = (word: string) => {
+    setActiveSpokenWord(word);
+    playPronunciation(word);
+    setTimeout(() => {
+      setActiveSpokenWord((curr) => (curr === word ? null : curr));
+    }, 1400);
   };
 
   const handleToggleArticleLang = (lang: 'en' | 'sa') => {
-    if (isAudioPlaying) {
-      handleStopAudio();
-    }
     setArticleLang(lang);
     try {
       localStorage.setItem('grammar_article_lang', lang);
@@ -71,14 +66,14 @@ const Grammar: React.FC<GrammarProps> = ({
   };
 
   const goBackToShelf = () => {
-    handleStopAudio();
+    setActiveSpokenWord(null);
     setTopic('home');
     setActiveArticleId(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const openArticle = (id: string) => {
-    handleStopAudio();
+    setActiveSpokenWord(null);
     setActiveArticleId(id);
     setArticleError(false);
     setTopic('article');
@@ -87,58 +82,9 @@ const Grammar: React.FC<GrammarProps> = ({
 
   useEffect(() => {
     return () => {
-      handleStopAudio();
+      setActiveSpokenWord(null);
     };
   }, [topic, activeArticleId]);
-
-  const handleToggleAudio = () => {
-    if (isAudioPlaying) {
-      handleStopAudio();
-      return;
-    }
-
-    if (!activeArticleId) return;
-
-    const saArticle = SANSKRIT_ARTICLES[activeArticleId];
-    const targetArticle = articleLang === 'sa' && saArticle ? saArticle : (saArticle || activeArticle);
-    if (!targetArticle) return;
-
-    const speechChunks: string[] = [];
-    if (targetArticle.title) speechChunks.push(targetArticle.title);
-    if (targetArticle.subtitle) speechChunks.push(targetArticle.subtitle);
-
-    targetArticle.blocks.forEach((block) => {
-      if (block.type === 'paragraph' || block.type === 'subheading') {
-        speechChunks.push(block.text);
-      } else if (block.type === 'list') {
-        block.items.forEach((item) => speechChunks.push(item));
-      }
-    });
-
-    const fullSpeechText = speechChunks.join(' । ');
-    setIsAudioPlaying(true);
-
-    const cancel = speakAsBodhi(fullSpeechText, {
-      lang: 'sa',
-      speed: audioSpeed,
-      onEnd: () => {
-        setIsAudioPlaying(false);
-        stopSpeechRef.current = null;
-      },
-    });
-    stopSpeechRef.current = cancel;
-  };
-
-  const handleToggleSpeed = () => {
-    const nextSpeed = audioSpeed === 'normal' ? 'slow' : 'normal';
-    setAudioSpeed(nextSpeed);
-    if (isAudioPlaying) {
-      handleStopAudio();
-      setTimeout(() => {
-        handleToggleAudio();
-      }, 50);
-    }
-  };
 
   const renderBreadcrumb = (currentTitle: string) => (
     <div className="grammar-header-nav">
@@ -395,85 +341,79 @@ const Grammar: React.FC<GrammarProps> = ({
           {displaySubtitle && <p className="grammar-lead">{displaySubtitle}</p>}
         </header>
 
-        {/* Article Language Switcher (Translate) & Audio Narrator */}
-        <div className="grammar-article-controls-bar">
-          <div className="grammar-lang-pill-group">
-            <span className="grammar-lang-pill-title">📖 भाषा (Translation):</span>
-            <button
-              type="button"
-              className={`grammar-lang-pill-btn${articleLang === 'en' ? ' active' : ''}`}
-              onClick={() => handleToggleArticleLang('en')}
-            >
-              🇬🇧 English (Original)
-            </button>
-            <button
-              type="button"
-              className={`grammar-lang-pill-btn${articleLang === 'sa' ? ' active' : ''}`}
-              onClick={() => handleToggleArticleLang('sa')}
-            >
-              🕉️ Translate to Sanskrit (अनुवादः)
-            </button>
+        {/* Bodhi Mascot Article Companion: Translate & Key Words in Sanskrit Audio */}
+        <div className="grammar-bodhi-companion-card">
+          <div className="grammar-bodhi-companion-avatar">
+            <BodhiAvatar
+              size="md"
+              mood={activeSpokenWord ? 'happy' : articleLang === 'sa' ? 'scholar' : 'reading'}
+              showHalo={true}
+              isSpeaking={activeSpokenWord !== null}
+            />
           </div>
+          <div className="grammar-bodhi-companion-content">
+            <div className="grammar-bodhi-companion-header">
+              <div className="grammar-bodhi-title-row">
+                <span className="grammar-bodhi-name">बोधिः (Bodhi)</span>
+                <span className="grammar-bodhi-badge">Sanskrit Mascot &amp; Guide</span>
+              </div>
 
-          <div className="grammar-article-audio-bar">
-            <button
-              type="button"
-              className={`grammar-article-audio-btn${isAudioPlaying ? ' playing' : ''}`}
-              onClick={handleToggleAudio}
-              title={isAudioPlaying ? 'Pause reading aloud' : 'Read entire article aloud in Sanskrit'}
-            >
-              <span className="audio-btn-icon">{isAudioPlaying ? '⏸️' : '🔊'}</span>
-              <span>{isAudioPlaying ? 'Pause Voice' : 'Read Aloud in Sanskrit (वाचय)'}</span>
-            </button>
-            {isAudioPlaying && (
-              <button
-                type="button"
-                className="grammar-article-stop-btn"
-                onClick={handleStopAudio}
-                title="Stop reading aloud"
-              >
-                ⏹️
-              </button>
+              {/* Translate Option with Bodhi */}
+              <div className="grammar-bodhi-translate-group">
+                <button
+                  type="button"
+                  className={`grammar-bodhi-trans-btn${articleLang === 'en' ? ' active' : ''}`}
+                  onClick={() => handleToggleArticleLang('en')}
+                  title="Read original English article"
+                >
+                  🇬🇧 English (Original)
+                </button>
+                <button
+                  type="button"
+                  className={`grammar-bodhi-trans-btn${articleLang === 'sa' ? ' active' : ''}`}
+                  onClick={() => handleToggleArticleLang('sa')}
+                  title="Ask Bodhi to translate this article into सरल-संस्कृतम् (Simple Sanskrit)"
+                >
+                  🕉️ Translate to Sanskrit (सरल-संस्कृतम्)
+                </button>
+              </div>
+            </div>
+
+            <p className="grammar-bodhi-speech">
+              {articleLang === 'sa'
+                ? 'नमस्ते! अहं सम्पूर्णं लेखं सरल-संस्कृतेन अनूदितवान्। अधः मुख्य-शब्दान् स्पृष्ट्वा मया सह उच्चारणं शृणोतु!'
+                : 'Namaste! I am Bodhi. Tap "Translate" to read this article in simple Sanskrit, or tap any key word below to hear me pronounce it!'}
+            </p>
+
+            {/* Key Sanskrit Words with Bodhi Voice */}
+            {keyWords && keyWords.length > 0 && (
+              <div className="grammar-bodhi-keywords-wrap">
+                <span className="grammar-bodhi-keywords-label">
+                  🔊 <strong>बोधिः वदति (Bodhi recites):</strong> Tap any key word to hear authentic pronunciation:
+                </span>
+                <div className="grammar-bodhi-chips">
+                  {keyWords.map((kw, kwIdx) => {
+                    const isWordSpeaking = activeSpokenWord === kw.word;
+                    return (
+                      <button
+                        key={kwIdx}
+                        type="button"
+                        className={`grammar-bodhi-chip${isWordSpeaking ? ' active-speaking' : ''}`}
+                        onClick={() => handlePlayBodhiWord(kw.word)}
+                        title={`Tap to hear Bodhi speak "${kw.word}" (${kw.translit})`}
+                      >
+                        <span className="grammar-bodhi-chip-icon">🔊</span>
+                        <span className="grammar-bodhi-chip-word">{kw.word}</span>
+                        <span className="grammar-bodhi-chip-translit">({kw.translit})</span>
+                        <span className="grammar-bodhi-chip-meaning">{kw.meaning}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             )}
-            <button
-              type="button"
-              className="grammar-article-speed-btn"
-              onClick={handleToggleSpeed}
-              title={`Toggle reading speed (${audioSpeed === 'slow' ? '0.75x slow' : '1.0x normal'})`}
-            >
-              {audioSpeed === 'slow' ? '🐢 0.75x' : '⚡ 1.0x'}
-            </button>
           </div>
         </div>
-
-        {/* Key Sanskrit Words Audio Chips */}
-        {keyWords && keyWords.length > 0 && (
-          <div className="grammar-keywords-container">
-            <div className="grammar-keywords-header">
-              <h4 className="grammar-keywords-title">
-                <span>🔊</span>
-                <span>Key Sanskrit Words in this Article (मुख्य-शब्दावली)</span>
-              </h4>
-              <span className="grammar-keywords-hint">Tap any word to hear authentic Sanskrit pronunciation</span>
-            </div>
-            <div className="grammar-keywords-chips">
-              {keyWords.map((kw, kwIdx) => (
-                <button
-                  key={kwIdx}
-                  type="button"
-                  className="grammar-keyword-chip"
-                  onClick={() => playPronunciation(kw.word)}
-                  title={`Tap to hear authentic audio for "${kw.word}" (${kw.translit})`}
-                >
-                  <span className="grammar-keyword-speaker">🔊</span>
-                  <span className="grammar-keyword-word">{kw.word}</span>
-                  <span className="grammar-keyword-translit">({kw.translit})</span>
-                  <span className="grammar-keyword-meaning">{kw.meaning}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
 
         {articleError && !displayArticle && (
           <p className="grammar-lead">
