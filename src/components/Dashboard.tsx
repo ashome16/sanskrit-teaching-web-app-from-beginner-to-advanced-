@@ -35,6 +35,7 @@ import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters } from '../utils/premiumAccess';
 import { LESSONS as STATIC_LESSONS, fetchLatestChapters } from '../data/chapters';
 import { playPronunciation } from '../utils/pronunciation';
+import { hasDevanagariLetter, isDandaOrVerseNumberToken } from '../utils/dandaSpeech';
 import '../styles/dashboard.css';
 
 /** Conjunct Games live under Grammar now — keep out of Deepakam nav. */
@@ -533,6 +534,8 @@ const Dashboard: React.FC = () => {
     lessonIndex === lastVisible && sentenceIndex === (lesson?.sentences.length ?? 1) - 1;
 
   const handleWordClick = (word: string) => {
+    // । ॥ / verse numbers are punctuation: no speech, no analysis entry.
+    if (isDandaOrVerseNumberToken(word)) return;
     const cleaned = cleanWord(word) || word.trim();
     playPronunciation(cleaned);
     localStorage.setItem('last-stem', cleaned);
@@ -554,7 +557,7 @@ const Dashboard: React.FC = () => {
     const raw = s.words?.length ? s.words : (s.sanskrit || '').split(/\s+/);
     const candidates = raw
       .map((w) => cleanWord(w) || w.replace(/[॥।,;:!?—–\-…/()]+/g, '').trim())
-      .filter((w) => /[\u0900-\u097F]/.test(w));
+      .filter((w) => hasDevanagariLetter(w));
     const first = candidates[0];
     if (!first) {
       setWordSelection(null);

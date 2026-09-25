@@ -1,6 +1,7 @@
 // Speech Recognition Utility for pronunciation practice
 
 import { applySafeProsody, whenVoicesReady } from './speechPlatform';
+import { stripDandaForSpeech } from './dandaSpeech';
 
 export interface SpeechRecognitionResult {
   transcript: string;
@@ -285,8 +286,11 @@ export class TextToSpeechHandler {
     // Cancel any ongoing speech
     this.synthesis.cancel();
 
-    const isDevanagariText = /[\u0900-\u097F]/.test(options.text);
-    const speechText = isDevanagariText ? applyPhoneticOverrides(options.text) : options.text;
+    // Daṇḍa marks are punctuation: pause, but never speak "danda" / "poorn viraam".
+    const cleanedText = stripDandaForSpeech(options.text);
+    if (!cleanedText.trim()) return;
+    const isDevanagariText = /[\u0900-\u097F]/.test(cleanedText);
+    const speechText = isDevanagariText ? applyPhoneticOverrides(cleanedText) : cleanedText;
     const utterance = new SpeechSynthesisUtterance(speechText);
 
     const requestedLanguage = options.language || 'en-US';

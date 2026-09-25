@@ -128,6 +128,17 @@
   content: ' ';
 }
 
+/* Daṇḍa / double daṇḍa: visible punctuation, not a clickable word. */
+.textbook-punct-mark {
+  padding: 0.05em 0.15em;
+  cursor: default;
+}
+
+.textbook-punct-mark:not(:last-child)::after {
+  content: ' ';
+}
+.textbook-glossary-title .textbook-punct-mark { margin-right: .35rem; }
+
 /* Instant Inline Word Meaning Bar */
 .textbook-inline-meaning-bar {
   background: #fdfaf3;

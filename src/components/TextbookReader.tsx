@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import type { Lesson, LessonSentence } from '../types/chapters';
 import { aksharaLabel, varnamalaLabel } from '../utils/barakhadiPhonetics';
 import { playPronunciation, playSequence, stopPronunciation } from '../utils/pronunciation';
+import { hasDevanagariLetter, isDandaOrVerseNumberToken } from '../utils/dandaSpeech';
 import {
   loadAnalyseGlosses,
   lookupAnalyseGloss,
@@ -281,12 +282,13 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     if (isGroupedLesson && activeLesson) {
       return activeLesson.sentences.flatMap((group) => group.words || []);
     }
-    if (sentence.words?.length) return [...sentence.words];
+    // Daṇḍa / double daṇḍa / verse numbers are punctuation — never queue them for speech.
+    if (sentence.words?.length) return sentence.words.filter((word) => !isDandaOrVerseNumberToken(word));
     // Fallback: split visible Sanskrit from the paragraph.
     return (sentence.sanskrit || '')
       .split(/\s+/)
       .map((part) => part.replace(/[॥।,;:!?—–\-…/()]+/g, ''))
-      .filter((part) => /[\u0900-\u097F]/.test(part));
+      .filter((part) => hasDevanagariLetter(part));
   };
 
   const handlePlayAll = () => {
@@ -1992,7 +1994,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                       <p className="textbook-glossary-arth-sa">
                         {(sentence.answer_sanskrit || sentence.sanskrit_gloss || '').split(/(\s+)/).map((part, idx) => {
                           const clean = part.replace(/[॥।,;:!?—–\-…/()]+/g, '');
-                          const isWord = /[\u0900-\u097F]/.test(clean);
+                          const isWord = hasDevanagariLetter(clean);
                           if (!isWord) return <span key={idx}>{part}</span>;
                           return (
                             <span
@@ -2024,7 +2026,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               {sentence.kind === 'glossary-header' ? (
                 <>
                   <p className="textbook-glossary-title">
-                    {sentence.words.map((word, idx) => (
+                    {sentence.words.map((word, idx) => isDandaOrVerseNumberToken(word) ? (
+                      <span key={`${activeLessonId}-gh-${idx}`} className="textbook-punct-mark" aria-hidden="true">
+                        {word}
+                      </span>
+                    ) : (
                       <span
                         key={`${activeLessonId}-gh-${idx}`}
                         className="interactive-word"
@@ -2075,6 +2081,18 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             <>
               <p className="textbook-sentence-sanskrit">
                 {sentence.words.map((word, idx) => {
+                  // । ॥ (and verse numbers like ॥१॥) stay visible but are not clickable words.
+                  if (isDandaOrVerseNumberToken(word)) {
+                    return (
+                      <span
+                        key={`${activeLessonId}-${sentenceNumber}-${idx}`}
+                        className="textbook-punct-mark"
+                        aria-hidden="true"
+                      >
+                        {word}
+                      </span>
+                    );
+                  }
                   const cleaned = cleanWord(word);
                   const isSelected = Boolean(cleanActiveWord && cleaned === cleanActiveWord);
                   return (

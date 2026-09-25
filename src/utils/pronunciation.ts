@@ -9,6 +9,7 @@ import {
   safePitch,
   whenVoicesReady,
 } from './speechPlatform';
+import { isDandaOrVerseNumberToken } from './dandaSpeech';
 
 // Native Web Speech API pronunciation helper for Sanskrit text only.
 // Strips whitespace/punctuation plus Devanagari digits and hyphens (e.g. the
@@ -309,6 +310,8 @@ const speakConfigured = (word: string, onEnd?: () => void): void => {
 
 export const playPronunciation = (value: string): void => {
   if (pronunciationMuted) return;
+  // Never voice a bare daṇḍa / double daṇḍa / verse number ("danda", "poorn viraam").
+  if (isDandaOrVerseNumberToken(value)) return;
   const word = cleanWord(value) || value.trim();
   if (!word || !isSanskritText(word) || typeof window === 'undefined' || !window.speechSynthesis) {
     return;
@@ -334,6 +337,8 @@ export const playSequence = (
 ): (() => void) => {
   const gapMs = options?.gapMs ?? 220;
   const items = values
+    // Skip daṇḍa / double daṇḍa / verse-number tokens so Play-all never says "danda".
+    .filter((value) => !isDandaOrVerseNumberToken(value))
     .map((value) => cleanWord(value) || value.trim())
     .filter((word) => word && isSanskritText(word));
 
@@ -477,7 +482,7 @@ const SANSKRIT_BREAK = /([।॥\n\r,;!?]+)/;
 const cleanSanskritChunk = (chunk: string): string =>
   chunk
     // Drop Devanagari verse numbers, dashes, quotes and brackets.
-    .replace(/[०-९0-9()[\]{}<>'"“”‘’\-–—|]+/g, ' ')
+    .replace(/[।॥०-९0-9()[\]{}<>'"“”‘’\-–—|]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 
