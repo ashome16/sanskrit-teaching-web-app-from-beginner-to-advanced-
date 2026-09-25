@@ -1245,3 +1245,423 @@
   color: #fde68a;
 }
 
+/* ==========================================================================
+   Interactive Stroke-by-Stroke Puzzle & Syllable Vocabulary Styles
+   ========================================================================== */
+
+/* Mode Switcher: Trace & Write vs Stroke Puzzle */
+.v-mode-switcher-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.v-mode-tabs {
+  display: inline-flex;
+  background: #f1f5f9;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.25rem;
+  gap: 0.3rem;
+}
+
+.v-mode-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: 9px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.v-mode-tab-btn:hover {
+  color: #0f766e;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.v-mode-tab-btn--active {
+  background: #ffffff !important;
+  color: #0f766e !important;
+  box-shadow: 0 2px 8px rgba(15, 118, 110, 0.16), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Global Sound Toggle Button */
+.v-sound-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1.5px solid #99f6e4;
+  background: #f0fdfa;
+  color: #0f766e;
+}
+
+.v-sound-toggle-btn:hover {
+  background: #ccfbf1;
+  transform: translateY(-1px);
+}
+
+.v-sound-toggle-btn--muted {
+  border-color: #cbd5e1 !important;
+  background: #f8fafc !important;
+  color: #64748b !important;
+}
+
+.v-sound-toggle-btn--muted:hover {
+  background: #f1f5f9 !important;
+  color: #334155 !important;
+}
+
+/* Puzzle Tray & Controls */
+.v-puzzle-tray-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #ffedd5 100%);
+  border: 1.5px solid #fde68a;
+  border-radius: 12px;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.v-puzzle-tray-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: #92400e;
+}
+
+.v-puzzle-pieces-deck {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.v-puzzle-piece-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.38rem 0.75rem;
+  border-radius: 9px;
+  border: 2px solid #f59e0b;
+  background: #ffffff;
+  color: #b45309;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 5px rgba(245, 158, 11, 0.15);
+}
+
+.v-puzzle-piece-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.25);
+  background: #fffbeb;
+}
+
+.v-puzzle-piece-btn--next {
+  animation: puzzleNextPulse 1.4s infinite alternate;
+  border-color: #d97706;
+}
+
+@keyframes puzzleNextPulse {
+  0% {
+    box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.3), 0 2px 5px rgba(217, 119, 6, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 5px rgba(217, 119, 6, 0.5), 0 5px 14px rgba(217, 119, 6, 0.35);
+    transform: scale(1.04);
+  }
+}
+
+.v-puzzle-piece-btn--snapped {
+  background: #ecfdf5 !important;
+  border-color: #10b981 !important;
+  color: #065f46 !important;
+  box-shadow: 0 1px 3px rgba(16, 185, 129, 0.15) !important;
+}
+
+.v-puzzle-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.v-puzzle-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.v-puzzle-action-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #1e293b;
+}
+
+.v-puzzle-action-btn--primary {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border-color: #d97706;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.25);
+}
+
+.v-puzzle-action-btn--primary:hover {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* SVG Puzzle Snapped & Unplaced Styles */
+.v-puzzle-stroke-snapped {
+  stroke: #d97706;
+  filter: drop-shadow(0 2px 6px rgba(217, 119, 6, 0.4));
+  animation: puzzleSnapLock 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes puzzleSnapLock {
+  0% {
+    stroke-width: 18;
+    opacity: 0.3;
+    stroke: #fbbf24;
+  }
+  50% {
+    stroke-width: 22;
+    stroke: #f59e0b;
+    filter: drop-shadow(0 0 16px #f59e0b);
+  }
+  100% {
+    stroke-width: 14;
+    opacity: 1;
+    stroke: #d97706;
+  }
+}
+
+.v-puzzle-stroke-unplaced {
+  stroke: rgba(148, 163, 184, 0.4);
+  stroke-dasharray: 4 4;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.v-puzzle-stroke-unplaced:hover {
+  stroke: rgba(245, 158, 11, 0.7);
+  stroke-width: 14;
+}
+
+/* Syllable Word Card inside Stroke Step Item */
+.v-stroke-word-card {
+  margin-top: 0.55rem;
+  background: #ffffff;
+  border: 1.5px solid #fed7aa;
+  border-radius: 9px;
+  padding: 0.45rem 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.v-stroke-word-card:hover {
+  border-color: #f97316;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.12);
+}
+
+.v-stroke-word-card--active {
+  background: #fff7ed !important;
+  border-color: #ea580c !important;
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.2) !important;
+}
+
+.v-stroke-word-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.v-stroke-word-meta {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #9a3412;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.v-stroke-word-main {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.v-stroke-word-san {
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #7c2d12;
+}
+
+.v-stroke-word-iast {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: #78716c;
+}
+
+.v-stroke-word-gloss {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #44403c;
+}
+
+.v-stroke-word-listen-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 7px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  border: 1px solid #fdba74;
+  background: #fff7ed;
+  color: #c2410c;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.v-stroke-word-listen-btn:hover {
+  background: #ffedd5;
+  border-color: #fb923c;
+  transform: scale(1.05);
+}
+
+/* Snap Action Button on Step Item */
+.v-step-snap-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.15rem 0.5rem;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #b45309;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.v-step-snap-btn:hover {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  transform: scale(1.05);
+}
+
+.v-step-snap-btn--snapped {
+  background: #ecfdf5 !important;
+  border-color: #a7f3d0 !important;
+  color: #065f46 !important;
+}
+
+/* Puzzle Completion Card */
+.v-puzzle-completed-card {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #ecfdf5 100%);
+  border: 2px solid #10b981;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2);
+  animation: puzzleCompletedPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes puzzleCompletedPop {
+  0% { transform: scale(0.92); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.v-puzzle-completed-title {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #065f46;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.v-puzzle-completed-desc {
+  font-size: 0.82rem;
+  color: #047857;
+  margin-bottom: 0.75rem;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .v-mode-tabs {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+[data-theme='dark'] .v-mode-tab-btn--active {
+  background: #0f172a !important;
+  color: #5eead4 !important;
+}
+
+[data-theme='dark'] .v-puzzle-tray-container {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-color: #78350f;
+}
+
+[data-theme='dark'] .v-puzzle-tray-title {
+  color: #fde68a;
+}
+
+[data-theme='dark'] .v-puzzle-piece-btn {
+  background: #1e293b;
+  color: #fde68a;
+}
+
+[data-theme='dark'] .v-stroke-word-card {
+  background: #1e293b;
+  border-color: #475569;
+}
+
+[data-theme='dark'] .v-stroke-word-san {
+  color: #fed7aa;
+}
+
+[data-theme='dark'] .v-stroke-word-gloss {
+  color: #cbd5e1;
+}
+
+

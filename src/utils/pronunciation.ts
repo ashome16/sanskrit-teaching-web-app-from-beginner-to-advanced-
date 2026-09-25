@@ -263,6 +263,24 @@ const playNyaEnya = (onDone?: () => void): void => {
   window.speechSynthesis.speak(enPart);
 };
 
+let pronunciationMuted = false;
+if (typeof window !== 'undefined') {
+  try {
+    if (localStorage.getItem('sanskrit_sound_muted') === 'true') {
+      pronunciationMuted = true;
+    }
+  } catch {}
+}
+
+export const setPronunciationMuted = (muted: boolean): void => {
+  pronunciationMuted = muted;
+  if (muted) {
+    stopPronunciation();
+  }
+};
+
+export const isPronunciationMuted = (): boolean => pronunciationMuted;
+
 /** Bumps on every play/stop so stale whenVoicesReady() callbacks do not speak. */
 let speakGeneration = 0;
 
@@ -274,6 +292,7 @@ export const stopPronunciation = (): void => {
 
 
 const speakConfigured = (word: string, onEnd?: () => void): void => {
+  if (pronunciationMuted) return;
   if (word === 'ञ') {
     playNyaEnya(onEnd);
     return;
@@ -289,6 +308,7 @@ const speakConfigured = (word: string, onEnd?: () => void): void => {
 };
 
 export const playPronunciation = (value: string): void => {
+  if (pronunciationMuted) return;
   const word = cleanWord(value) || value.trim();
   if (!word || !isSanskritText(word) || typeof window === 'undefined' || !window.speechSynthesis) {
     return;
@@ -297,7 +317,7 @@ export const playPronunciation = (value: string): void => {
   stopPronunciation();
   const gen = speakGeneration;
   void whenVoicesReady().then(() => {
-    if (gen !== speakGeneration) return;
+    if (pronunciationMuted || gen !== speakGeneration) return;
     speakConfigured(word);
   });
 };

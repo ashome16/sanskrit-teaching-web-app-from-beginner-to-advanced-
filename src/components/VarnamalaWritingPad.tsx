@@ -9,8 +9,12 @@ import {
   interpolateStrokePoints,
   type StrokePoint,
 } from '../data/varnamalaStrokePaths';
-import { playPronunciation } from '../utils/pronunciation';
+import {
+  playPronunciation,
+  setPronunciationMuted,
+} from '../utils/pronunciation';
 import { soundEffects } from '../utils/soundEffects';
+import { getStrokeWord } from '../data/strokeVocabulary';
 import {
   evaluateHandwriting,
   type AssessmentResult,
@@ -49,6 +53,19 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
   onSelectLetter,
 }) => {
   const [selectedLetter, setSelectedLetter] = useState<string>(initialLetter || 'अ');
+  const [interactiveMode, setInteractiveMode] = useState<'trace' | 'puzzle'>('trace');
+  const [isSoundMuted, setIsSoundMuted] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        return localStorage.getItem('sanskrit_sound_muted') === 'true';
+      } catch {}
+    }
+    return false;
+  });
+  const [placedStrokes, setPlacedStrokes] = useState<number[]>([]);
+  const [activePlayingWord, setActivePlayingWord] = useState<string | null>(null);
+  const [justSnappedStroke, setJustSnappedStroke] = useState<number | null>(null);
+
   const [brushColor, setBrushColor] = useState<string>(BRUSH_COLORS[0].hex);
   const [brushWidth, setBrushWidth] = useState<number>(10);
   const [showGuide, setShowGuide] = useState<boolean>(true);
@@ -104,12 +121,21 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     isPausedRef.current = isPaused;
   }, [isPaused]);
 
+  // Sync sound muted status with sound synthesizer and speech synthesis
+  useEffect(() => {
+    soundEffects.setSoundEnabled(!isSoundMuted);
+    setPronunciationMuted(isSoundMuted);
+  }, [isSoundMuted]);
+
   // Keep selectedLetter in sync if initialLetter prop changes from reader
   useEffect(() => {
     if (initialLetter && initialLetter !== selectedLetter) {
       setSelectedLetter(initialLetter);
       setStrokes([]);
       setAssessment(null);
+      setPlacedStrokes([]);
+      setActivePlayingWord(null);
+      setJustSnappedStroke(null);
       stopDemo();
     }
   }, [initialLetter]);
@@ -607,6 +633,9 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
   const handleClear = () => {
     setStrokes([]);
     setAssessment(null);
+    setPlacedStrokes([]);
+    setActivePlayingWord(null);
+    setJustSnappedStroke(null);
     stopDemo();
   };
 
@@ -649,6 +678,9 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     setSelectedLetter(char);
     setStrokes([]);
     setAssessment(null);
+    setPlacedStrokes([]);
+    setActivePlayingWord(null);
+    setJustSnappedStroke(null);
     onSelectLetter?.(char);
     soundEffects.playStrokeChime();
     try {
@@ -656,6 +688,69 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
     } catch {
       // ignore speech failure
     }
+  };
+
+  const handleSnapStroke = (strokeNumber: number) => {
+    if (placedStrokes.includes(strokeNumber)) return;
+
+    soundEffects.playPuzzleSnap();
+    setJustSnappedStroke(strokeNumber);
+    const nextPlaced = [...placedStrokes, strokeNumber];
+    setPlacedStrokes(nextPlaced);
+
+    // Speak stroke vocabulary word
+    const strokeWord = getStrokeWord(selectedLetter, strokeNumber - 1);
+    setActivePlayingWord(strokeWord.word);
+    playPronunciation(strokeWord.word);
+
+    window.setTimeout(() => {
+      setJustSnappedStroke(null);
+    }, 450);
+
+    // Check if entire puzzle is complete
+    const totalStrokes = animData?.strokes?.length || 1;
+    if (nextPlaced.length >= totalStrokes) {
+      window.setTimeout(() => {
+        soundEffects.playCelebrationChime();
+        playPronunciation(mnemonic.letter);
+      }, 700);
+    }
+  };
+
+  const handleSnapNextStroke = () => {
+    if (!animData?.strokes?.length) return;
+    for (const stroke of animData.strokes) {
+      if (!placedStrokes.includes(stroke.strokeIndex)) {
+        handleSnapStroke(stroke.strokeIndex);
+        return;
+      }
+    }
+  };
+
+  const handleResetPuzzle = () => {
+    setPlacedStrokes([]);
+    setActivePlayingWord(null);
+    setJustSnappedStroke(null);
+    soundEffects.playStrokeChime();
+  };
+
+  const handleToggleSound = () => {
+    const next = !isSoundMuted;
+    setIsSoundMuted(next);
+    soundEffects.setSoundEnabled(!next);
+    setPronunciationMuted(next);
+    try {
+      localStorage.setItem('sanskrit_sound_muted', next ? 'true' : 'false');
+    } catch {}
+    if (!next) {
+      soundEffects.playSuccessDing();
+    }
+  };
+
+  const handlePlayWord = (word: string) => {
+    setActivePlayingWord(word);
+    soundEffects.playStrokeChime();
+    playPronunciation(word);
   };
 
   return (
@@ -686,6 +781,41 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
             📑 Open Printable Worksheets →
           </button>
         )}
+      </div>
+
+      {/* Mode Switcher & Global Sound Controls */}
+      <div className="v-mode-switcher-bar">
+        <div className="v-mode-tabs" role="tablist" aria-label="Writing Studio Mode">
+          <button
+            type="button"
+            className={`v-mode-tab-btn${interactiveMode === 'trace' ? ' v-mode-tab-btn--active' : ''}`}
+            onClick={() => setInteractiveMode('trace')}
+            aria-selected={interactiveMode === 'trace'}
+          >
+            <span>✍️</span>
+            <span>Trace &amp; Write (हस्तलेखनम्)</span>
+          </button>
+          <button
+            type="button"
+            className={`v-mode-tab-btn${interactiveMode === 'puzzle' ? ' v-mode-tab-btn--active' : ''}`}
+            onClick={() => setInteractiveMode('puzzle')}
+            aria-selected={interactiveMode === 'puzzle'}
+          >
+            <span>🧩</span>
+            <span>Stroke Puzzle (खंड-संयोजनम्)</span>
+          </button>
+        </div>
+
+        <button
+          type="button"
+          className={`v-sound-toggle-btn${isSoundMuted ? ' v-sound-toggle-btn--muted' : ''}`}
+          onClick={handleToggleSound}
+          title={isSoundMuted ? 'Turn Sound ON (ध्वनिः चाल्यताम्)' : 'Mute Sound (ध्वनिः मूक्यताम्)'}
+          aria-pressed={!isSoundMuted}
+        >
+          <span>{isSoundMuted ? '🔇' : '🔊'}</span>
+          <span>{isSoundMuted ? 'Sound: MUTED' : 'Sound: ON'}</span>
+        </button>
       </div>
 
       {/* Category Tabs */}
@@ -840,6 +970,77 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
       <div className="v-workspace-grid">
         {/* Left: The Drawing Slate */}
         <div className="v-canvas-container">
+          {/* Stroke Puzzle Tray (Shown when in Puzzle Mode) */}
+          {interactiveMode === 'puzzle' && (
+            <div className="v-puzzle-tray-container" role="region" aria-label="Stroke Puzzle Pieces Tray">
+              <div className="v-puzzle-tray-title">
+                <span>🧩</span>
+                <span>
+                  Piece Tray ({placedStrokes.length}/{animData?.strokes?.length || 1} in place):
+                </span>
+              </div>
+
+              <div className="v-puzzle-pieces-deck">
+                {(animData?.strokes || []).map((s) => {
+                  const isPlaced = placedStrokes.includes(s.strokeIndex);
+                  const isNext =
+                    !isPlaced &&
+                    (placedStrokes.length === 0
+                      ? s.strokeIndex === 1
+                      : !placedStrokes.includes(s.strokeIndex));
+                  const strokeWord = getStrokeWord(selectedLetter, s.strokeIndex - 1);
+                  return (
+                    <button
+                      key={s.strokeIndex}
+                      type="button"
+                      className={`v-puzzle-piece-btn${
+                        isPlaced ? ' v-puzzle-piece-btn--snapped' : ''
+                      }${isNext ? ' v-puzzle-piece-btn--next' : ''}`}
+                      onClick={() => handleSnapStroke(s.strokeIndex)}
+                      title={
+                        isPlaced
+                          ? `Piece ${s.strokeIndex} in place (${strokeWord.word})`
+                          : `Click to snap Piece ${s.strokeIndex}: ${s.label}`
+                      }
+                    >
+                      <span>{isPlaced ? '✅' : '🧩'}</span>
+                      <span>Piece 0{s.strokeIndex}</span>
+                      {isPlaced && (
+                        <span style={{ fontSize: '0.72rem', opacity: 0.9 }}>
+                          ({strokeWord.word})
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="v-puzzle-actions-group">
+                {placedStrokes.length < (animData?.strokes?.length || 1) ? (
+                  <button
+                    type="button"
+                    className="v-puzzle-action-btn v-puzzle-action-btn--primary"
+                    onClick={handleSnapNextStroke}
+                    title="Snap the next stroke piece into place"
+                  >
+                    <span>⚡</span>
+                    <span>Snap Next Piece</span>
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className="v-puzzle-action-btn"
+                    onClick={handleResetPuzzle}
+                    title="Disassemble pieces and rebuild"
+                  >
+                    <span>🔄</span>
+                    <span>Rebuild Puzzle</span>
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* Top Bar of Canvas */}
           <div className="v-canvas-top-bar">
             <div className="v-canvas-badge-info">
@@ -900,9 +1101,135 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
               </div>
             )}
 
-            {/* Precise SVG Vector Stroke Guide Template */}
-            {showGuide && (
-              animData && animData.strokes.length > 0 ? (
+            {/* Interactive Puzzle Mode SVG Overlay */}
+            {interactiveMode === 'puzzle' ? (
+              <svg
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+                className="v-guide-svg"
+                style={{ pointerEvents: 'auto' }}
+                aria-label={`Interactive Stroke Puzzle for letter ${selectedLetter}`}
+              >
+                {(animData?.strokes || []).map((stroke) => {
+                  const pts = stroke.points;
+                  if (!pts || pts.length === 0) return null;
+                  const d = pts.reduce(
+                    (acc, pt, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${pt.x} ${pt.y}`,
+                    ''
+                  );
+                  const p0 = pts[0];
+                  const isPlaced = placedStrokes.includes(stroke.strokeIndex);
+                  const badges = ['①', '②', '③', '④', '⑤', '⑥'];
+                  const badgeText = badges[stroke.strokeIndex - 1] || stroke.strokeIndex;
+
+                  if (isPlaced) {
+                    return (
+                      <g key={stroke.strokeIndex} className="v-puzzle-placed-group">
+                        {/* Glow halo */}
+                        <path
+                          d={d}
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="22"
+                          stroke="rgba(245, 158, 11, 0.28)"
+                        />
+                        {/* Solid snapped stroke */}
+                        <path
+                          d={d}
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="14"
+                          className={`v-puzzle-stroke-snapped${
+                            justSnappedStroke === stroke.strokeIndex
+                              ? ' v-puzzle-stroke-snapped--flash'
+                              : ''
+                          }`}
+                        />
+                        {/* Placed badge */}
+                        <g className="v-guide-start-badge">
+                          <circle
+                            cx={p0.x}
+                            cy={p0.y}
+                            r="3.8"
+                            fill="#10b981"
+                            stroke="#ffffff"
+                            strokeWidth="1.2"
+                          />
+                          <text
+                            x={p0.x}
+                            y={p0.y + 1.2}
+                            textAnchor="middle"
+                            dominantBaseline="middle"
+                            fill="#ffffff"
+                            fontSize="2.7"
+                            fontWeight="bold"
+                          >
+                            ✓
+                          </text>
+                        </g>
+                      </g>
+                    );
+                  }
+
+                  // Unplaced stroke: clickable slot
+                  return (
+                    <g
+                      key={stroke.strokeIndex}
+                      onClick={() => handleSnapStroke(stroke.strokeIndex)}
+                      style={{ cursor: 'pointer' }}
+                      role="button"
+                      aria-label={`Click to snap stroke ${stroke.strokeIndex} (${stroke.label})`}
+                    >
+                      {/* Transparent wide hit area for easy finger/mouse tapping */}
+                      <path
+                        d={d}
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="32"
+                        stroke="transparent"
+                      />
+                      {/* Dashed slot */}
+                      <path
+                        d={d}
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="12"
+                        className="v-puzzle-stroke-unplaced"
+                      />
+                      {/* Unplaced piece badge */}
+                      <g className="v-guide-start-badge">
+                        <circle
+                          cx={p0.x}
+                          cy={p0.y}
+                          r="4.2"
+                          fill="#f59e0b"
+                          stroke="#ffffff"
+                          strokeWidth="1.2"
+                        />
+                        <text
+                          x={p0.x}
+                          y={p0.y + 1.2}
+                          textAnchor="middle"
+                          dominantBaseline="middle"
+                          fill="#ffffff"
+                          fontSize="2.7"
+                          fontWeight="bold"
+                        >
+                          {badgeText}
+                        </text>
+                      </g>
+                    </g>
+                  );
+                })}
+              </svg>
+            ) : (
+              /* Precise SVG Vector Stroke Guide Template (Trace Mode) */
+              showGuide &&
+              (animData && animData.strokes.length > 0 ? (
                 <svg
                   viewBox="0 0 100 100"
                   preserveAspectRatio="none"
@@ -912,7 +1239,10 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
                   {animData.strokes.map((stroke, sIdx) => {
                     const pts = stroke.points;
                     if (!pts || pts.length === 0) return null;
-                    const d = pts.reduce((acc, pt, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${pt.x} ${pt.y}`, '');
+                    const d = pts.reduce(
+                      (acc, pt, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${pt.x} ${pt.y}`,
+                      ''
+                    );
                     const p0 = pts[0];
                     const badges = ['①', '②', '③', '④', '⑤', '⑥'];
                     return (
@@ -938,7 +1268,14 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
                         />
                         {/* Numbered start point badge */}
                         <g className="v-guide-start-badge">
-                          <circle cx={p0.x} cy={p0.y} r="3.6" fill="#f59e0b" stroke="#ffffff" strokeWidth="1" />
+                          <circle
+                            cx={p0.x}
+                            cy={p0.y}
+                            r="3.6"
+                            fill="#f59e0b"
+                            stroke="#ffffff"
+                            strokeWidth="1"
+                          />
                           <text
                             x={p0.x}
                             y={p0.y + 1.2}
@@ -959,11 +1296,16 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
                 <div className="v-ghost-letter" aria-hidden="true">
                   {mnemonic.letter}
                 </div>
-              )
+              ))
             )}
 
             {/* Automated Stroke Animation Canvas (Overlay Layer) */}
-            <canvas ref={demoCanvasRef} className="v-demo-canvas" aria-hidden="true" />
+            <canvas
+              ref={demoCanvasRef}
+              className="v-demo-canvas"
+              aria-hidden="true"
+              style={{ display: interactiveMode === 'puzzle' ? 'none' : 'block' }}
+            />
 
             {/* Actual HTML5 User Drawing Canvas */}
             <canvas
@@ -975,10 +1317,11 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
               onPointerCancel={handlePointerUp}
               onPointerLeave={handlePointerUp}
               aria-label={`Drawing slate for letter ${mnemonic.letter}`}
+              style={{ display: interactiveMode === 'puzzle' ? 'none' : 'block' }}
             />
 
             {/* Floating Animated Pencil / Finger Pointer */}
-            {animPointerPos && (
+            {interactiveMode === 'trace' && animPointerPos && (
               <div
                 className={`v-animated-pointer${
                   animPointerPos.isLifting ? ' v-pointer--lifting' : ''
@@ -996,6 +1339,57 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
               </div>
             )}
           </div>
+
+          {/* Puzzle Completed Celebration Banner */}
+          {interactiveMode === 'puzzle' &&
+            placedStrokes.length >= (animData?.strokes?.length || 1) && (
+              <div
+                className="v-puzzle-completed-card"
+                role="region"
+                aria-label="Puzzle completion notification"
+              >
+                <div className="v-puzzle-completed-title">
+                  <span>🎉</span>
+                  <span>अक्षर-संयोजनं सम्पन्नम्! Letter Successfully Assembled!</span>
+                </div>
+                <p className="v-puzzle-completed-desc">
+                  Brilliant work! You clicked all {animData?.strokes?.length || 1} strokes of "
+                  {mnemonic.letter}" ({mnemonic.wordSan}) into place in authentic Pāṇinian order!
+                </p>
+                <div
+                  style={{
+                    display: 'flex',
+                    gap: '0.5rem',
+                    justifyContent: 'center',
+                    flexWrap: 'wrap',
+                  }}
+                >
+                  <button
+                    type="button"
+                    className="v-puzzle-action-btn"
+                    onClick={handleResetPuzzle}
+                  >
+                    <span>🔄</span> Disassemble &amp; Play Again
+                  </button>
+                  <button
+                    type="button"
+                    className="v-puzzle-action-btn v-puzzle-action-btn--primary"
+                    onClick={() => setInteractiveMode('trace')}
+                  >
+                    <span>✍️</span> Try Tracing It Freehand
+                  </button>
+                  {nextLetterItem && (
+                    <button
+                      type="button"
+                      className="v-puzzle-action-btn v-puzzle-action-btn--primary"
+                      onClick={() => handleSelectLetter(nextLetterItem.letter)}
+                    >
+                      <span>Next Letter: {nextLetterItem.letter}</span> ➔
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
 
           {/* Bottom Palette & Controls Bar */}
           <div className="v-palette-bar">
@@ -1085,6 +1479,20 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
                       <div className="v-step-btn-group">
                         <button
                           type="button"
+                          className={`v-step-snap-btn${
+                            placedStrokes.includes(idx + 1) ? ' v-step-snap-btn--snapped' : ''
+                          }`}
+                          onClick={() => handleSnapStroke(idx + 1)}
+                          title={
+                            placedStrokes.includes(idx + 1)
+                              ? `Piece ${idx + 1} is snapped in place`
+                              : `Snap piece ${idx + 1} into puzzle`
+                          }
+                        >
+                          {placedStrokes.includes(idx + 1) ? '✅ Snapped' : '🧩 Snap'}
+                        </button>
+                        <button
+                          type="button"
                           className="v-step-demo-btn"
                           onClick={() => {
                             soundEffects.playStrokeChime();
@@ -1108,6 +1516,43 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
                       </div>
                     </div>
                     <span className="v-stroke-step-text">{step}</span>
+
+                    {/* Syllable Word for this Stroke */}
+                    {(() => {
+                      const strokeWord = getStrokeWord(selectedLetter, idx);
+                      const isWordActive = activePlayingWord === strokeWord.word;
+                      return (
+                        <div
+                          className={`v-stroke-word-card${
+                            isWordActive ? ' v-stroke-word-card--active' : ''
+                          }`}
+                          role="region"
+                          aria-label={`Syllable word for stroke ${idx + 1}`}
+                        >
+                          <div className="v-stroke-word-left">
+                            <span className="v-stroke-word-meta">
+                              🔤 Syllable Word {idx + 1}:
+                            </span>
+                            <div className="v-stroke-word-main">
+                              <span className="v-stroke-word-san">{strokeWord.word}</span>
+                              <span className="v-stroke-word-iast">
+                                ({strokeWord.transliteration})
+                              </span>
+                              <span className="v-stroke-word-gloss">· {strokeWord.gloss}</span>
+                              <span style={{ fontSize: '1.05rem' }}>{strokeWord.emoji}</span>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            className="v-stroke-word-listen-btn"
+                            onClick={() => handlePlayWord(strokeWord.word)}
+                            title={`Listen to "${strokeWord.word}" (${strokeWord.gloss})`}
+                          >
+                            🔊 Listen
+                          </button>
+                        </div>
+                      );
+                    })()}
                   </li>
                 );
               })}
