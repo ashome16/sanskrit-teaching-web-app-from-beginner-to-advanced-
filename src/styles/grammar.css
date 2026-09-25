@@ -1337,24 +1337,226 @@
   color: #57534e;
 }
 
-@media (max-width: 640px) {
-  .grammar-bodhi-explanation-head {
+/* —— Comprehensive Grammar Mobile Optimizations —— */
+@media (max-width: 680px) {
+  .grammar-page {
+    padding: 0.85rem 0.75rem 2rem;
+    border-radius: 10px;
+  }
+
+  .grammar-title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
+  }
+
+  .grammar-lead {
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .grammar-header-nav {
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .grammar-breadcrumb {
+    font-size: 0.84rem;
+    gap: 0.35rem;
+  }
+
+  .grammar-nav {
+    gap: 0.45rem;
+  }
+
+  .grammar-back,
+  .grammar-home {
+    min-height: 38px;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.88rem;
+  }
+
+  /* Shelf Grid */
+  .grammar-shelf {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .grammar-card {
+    padding: 0.85rem 0.95rem;
+  }
+
+  .grammar-card-title {
+    font-size: 1.05rem;
+  }
+
+  .grammar-card-blurb {
+    font-size: 0.84rem;
+  }
+
+  /* In-shelf Search */
+  .grammar-search-input-box {
+    padding: 0.45rem 0.75rem;
+  }
+
+  .grammar-search-input {
+    font-size: 0.88rem;
+  }
+
+  /* Bodhi Mascot Article Companion */
+  .grammar-bodhi-companion-card {
+    flex-direction: column;
+    padding: 0.85rem;
+    gap: 0.75rem;
+    border-radius: 14px;
+    margin: 0.85rem 0 1.25rem;
+  }
+
+  .grammar-bodhi-companion-header {
     flex-direction: column;
     align-items: stretch;
+    gap: 0.55rem;
+  }
+
+  .grammar-bodhi-title-row {
+    justify-content: flex-start;
+  }
+
+  .grammar-bodhi-translate-group {
+    width: 100%;
+    display: flex;
+  }
+
+  .grammar-bodhi-trans-btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.45rem 0.35rem;
+    font-size: 0.76rem;
+  }
+
+  .grammar-bodhi-speech {
+    font-size: 0.86rem;
+    padding: 0.55rem 0.75rem;
+  }
+
+  /* Bodhi Sanskrit Explanation Card */
+  .grammar-bodhi-explanation-card {
+    padding: 0.85rem;
+    gap: 0.75rem;
+    border-radius: 12px;
+  }
+
+  .grammar-bodhi-explanation-titles {
+    min-width: 0;
+  }
+
+  .grammar-bodhi-explanation-title {
+    font-size: 1.02rem;
   }
 
   .grammar-bodhi-explanation-actions {
-    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.45rem;
   }
 
   .grammar-bodhi-listen-btn {
     width: 100%;
     justify-content: center;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.84rem;
+    min-height: 42px;
   }
 
   .grammar-bodhi-lang-toggle-btn {
     width: 100%;
     text-align: center;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+    min-height: 38px;
+  }
+
+  .grammar-bodhi-sanskrit-box {
+    padding: 0.7rem 0.8rem;
+  }
+
+  .grammar-bodhi-sanskrit-text {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .grammar-bodhi-english-box {
+    padding: 0.7rem 0.8rem;
+  }
+
+  .grammar-bodhi-english-text {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .grammar-bodhi-bullets-list {
+    padding-left: 1rem;
+  }
+
+  .grammar-bodhi-bullets-list li {
+    font-size: 0.84rem;
+  }
+
+  /* Audio Chips */
+  .grammar-bodhi-chips {
+    gap: 0.4rem;
+  }
+
+  .grammar-bodhi-chip {
+    padding: 0.35rem 0.65rem;
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .grammar-bodhi-chip-word {
+    font-size: 0.9rem;
+  }
+
+  .grammar-bodhi-chip-translit {
+    font-size: 0.74rem;
+  }
+
+  .grammar-bodhi-chip-meaning {
+    font-size: 0.74rem;
+  }
+
+  /* Article Typography & Tables */
+  .grammar-article-subheading {
+    font-size: 1.02rem;
+  }
+
+  .grammar-article-paragraph {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .grammar-article-table-wrap {
+    margin: 0.5rem -0.2rem;
+    padding: 0.15rem;
+    border-radius: 8px;
+    border: 1px solid #e2d9cc;
+    background: #fffefb;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .grammar-article-table {
+    font-size: 0.78rem;
+  }
+
+  .grammar-article-table th,
+  .grammar-article-table td {
+    padding: 0.4rem 0.45rem;
+  }
+
+  .grammar-article-code {
+    padding: 0.65rem 0.75rem;
+    font-size: 0.8rem;
   }
 }
 

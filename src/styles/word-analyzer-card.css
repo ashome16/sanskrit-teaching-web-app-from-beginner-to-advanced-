@@ -463,3 +463,29 @@
 .wac-vowel-example-btn:focus-visible .wac-vowel-example-speak {
   opacity: 1;
 }
+
+@media (max-width: 640px) {
+  .word-analyzer-card {
+    padding: 0.85rem 0.75rem;
+    border-radius: 10px;
+  }
+
+  .wac-pinned-meaning-header {
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .wac-input-row {
+    gap: 0.35rem;
+  }
+
+  .wac-input {
+    font-size: 0.88rem;
+    padding: 0.45rem 0.6rem;
+  }
+
+  .wac-input-btn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.85rem;
+  }
+}
