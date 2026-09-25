@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ARTICLES } from '../data/articleIndex';
 import { SANSKRIT_ARTICLES, SANSKRIT_ARTICLE_META } from '../data/sanskritArticles';
 import { ARTICLE_KEY_WORDS } from '../data/articleKeyWords';
+import { SANSKRIT_EXPLANATIONS } from '../data/sanskritExplanations';
 import { parseArticle, type ParsedArticle } from '../utils/articleParser';
-import { playPronunciation } from '../utils/pronunciation';
+import { playPronunciation, speakAsBodhi, stopBodhiSpeech } from '../utils/pronunciation';
 import { BodhiAvatar } from './BodhiAvatar';
 import ConjunctGames from './ConjunctGames';
 import SoundTeamsArticle from './SoundTeamsArticle';
@@ -46,16 +47,50 @@ const Grammar: React.FC<GrammarProps> = ({
     return 'en';
   });
   const [activeSpokenWord, setActiveSpokenWord] = useState<string | null>(null);
+  const [isExplanationSpeaking, setIsExplanationSpeaking] = useState(false);
+  const [showEnglishExplanation, setShowEnglishExplanation] = useState(true);
+  const explanationStopRef = useRef<(() => void) | null>(null);
 
   const activeArticleMeta = ARTICLES.find((item) => item.id === activeArticleId);
   const activeArticle = activeArticleId ? articles[activeArticleId] : undefined;
 
+  const stopAllBodhiSpeech = () => {
+    if (explanationStopRef.current) {
+      explanationStopRef.current();
+      explanationStopRef.current = null;
+    }
+    stopBodhiSpeech();
+    setIsExplanationSpeaking(false);
+    setActiveSpokenWord(null);
+  };
+
   const handlePlayBodhiWord = (word: string) => {
+    stopAllBodhiSpeech();
     setActiveSpokenWord(word);
     playPronunciation(word);
     setTimeout(() => {
       setActiveSpokenWord((curr) => (curr === word ? null : curr));
     }, 1400);
+  };
+
+  const handleToggleExplanationSpeech = (text: string) => {
+    if (isExplanationSpeaking) {
+      stopAllBodhiSpeech();
+      return;
+    }
+    stopAllBodhiSpeech();
+    setIsExplanationSpeaking(true);
+    setActiveSpokenWord('explanation');
+
+    const stopFn = speakAsBodhi(text, {
+      lang: 'sa',
+      onEnd: () => {
+        explanationStopRef.current = null;
+        setIsExplanationSpeaking(false);
+        setActiveSpokenWord((curr) => (curr === 'explanation' ? null : curr));
+      },
+    });
+    explanationStopRef.current = stopFn;
   };
 
   const handleToggleArticleLang = (lang: 'en' | 'sa') => {
@@ -66,14 +101,14 @@ const Grammar: React.FC<GrammarProps> = ({
   };
 
   const goBackToShelf = () => {
-    setActiveSpokenWord(null);
+    stopAllBodhiSpeech();
     setTopic('home');
     setActiveArticleId(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const openArticle = (id: string) => {
-    setActiveSpokenWord(null);
+    stopAllBodhiSpeech();
     setActiveArticleId(id);
     setArticleError(false);
     setTopic('article');
@@ -82,7 +117,7 @@ const Grammar: React.FC<GrammarProps> = ({
 
   useEffect(() => {
     return () => {
-      setActiveSpokenWord(null);
+      stopAllBodhiSpeech();
     };
   }, [topic, activeArticleId]);
 
@@ -332,6 +367,7 @@ const Grammar: React.FC<GrammarProps> = ({
       displayArticle?.subtitle ||
       (articleLang === 'sa' && saMeta ? saMeta.blurbSa : activeArticleMeta?.cardBlurb);
     const keyWords = activeArticleId ? ARTICLE_KEY_WORDS[activeArticleId] : undefined;
+    const activeExplanation = activeArticleId ? SANSKRIT_EXPLANATIONS[activeArticleId] : undefined;
 
     return (
       <section className="grammar-page" aria-label="Grammar article">
@@ -346,9 +382,9 @@ const Grammar: React.FC<GrammarProps> = ({
           <div className="grammar-bodhi-companion-avatar">
             <BodhiAvatar
               size="md"
-              mood={activeSpokenWord ? 'happy' : articleLang === 'sa' ? 'scholar' : 'reading'}
+              mood={isExplanationSpeaking ? 'scholar' : activeSpokenWord ? 'happy' : articleLang === 'sa' ? 'scholar' : 'reading'}
               showHalo={true}
-              isSpeaking={activeSpokenWord !== null}
+              isSpeaking={isExplanationSpeaking || activeSpokenWord !== null}
             />
           </div>
           <div className="grammar-bodhi-companion-content">
@@ -381,9 +417,96 @@ const Grammar: React.FC<GrammarProps> = ({
 
             <p className="grammar-bodhi-speech">
               {articleLang === 'sa'
-                ? 'नमस्ते! अहं सम्पूर्णं लेखं सरल-संस्कृतेन अनूदितवान्। अधः मुख्य-शब्दान् स्पृष्ट्वा मया सह उच्चारणं शृणोतु!'
-                : 'Namaste! I am Bodhi. Tap "Translate" to read this article in simple Sanskrit, or tap any key word below to hear me pronounce it!'}
+                ? 'नमस्ते! अहं सम्पूर्णं लेखं सरल-संस्कृतेन अनूदितवान्। अधः बोधि-व्याख्यां शृणोतु, मुख्य-शब्दान् च स्पृष्ट्वा मया सह उच्चारणं कुरुतु!'
+                : 'Namaste! I am Bodhi. Listen to my simple Sanskrit explanation below, or tap any key word to hear authentic pronunciation!'}
             </p>
+
+            {/* Bodhi's Sanskrit Explanation (💡 बोधि-व्याख्या · Bodhi's Sanskrit Explanation) */}
+            {activeExplanation && (
+              <div className={`grammar-bodhi-explanation-card${isExplanationSpeaking ? ' is-speaking' : ''}`}>
+                <div className="grammar-bodhi-explanation-head">
+                  <div className="grammar-bodhi-explanation-titles">
+                    <div className="grammar-bodhi-explanation-badge-row">
+                      <span className="grammar-bodhi-explanation-tag">💡 बोधि-व्याख्या · Bodhi's Sanskrit Explanation</span>
+                      {activeExplanation.takeawayQuote && (
+                        <span className="grammar-bodhi-sutra-quote" title={activeExplanation.takeawayQuote.en}>
+                          📜 {activeExplanation.takeawayQuote.sa}
+                        </span>
+                      )}
+                    </div>
+                    <h4 className="grammar-bodhi-explanation-title">{activeExplanation.titleSa}</h4>
+                  </div>
+
+                  <div className="grammar-bodhi-explanation-actions">
+                    <button
+                      type="button"
+                      className={`grammar-bodhi-listen-btn${isExplanationSpeaking ? ' active' : ''}`}
+                      onClick={() => handleToggleExplanationSpeech(activeExplanation.sanskritText)}
+                      title={
+                        isExplanationSpeaking
+                          ? 'विरामोऽस्तु · Stop Bodhi recitation'
+                          : 'शृणोतु · Hear Bodhi explain in simple Sanskrit'
+                      }
+                    >
+                      {isExplanationSpeaking ? (
+                        <>
+                          <span className="grammar-bodhi-audio-pulse-dot" />
+                          <span className="grammar-bodhi-listen-icon">⏹️</span>
+                          <span className="grammar-bodhi-listen-text">विरामोऽस्तु (Stop)</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="grammar-bodhi-listen-icon">🔊</span>
+                          <span className="grammar-bodhi-listen-text">शृणोतु (Hear Bodhi in Sanskrit)</span>
+                        </>
+                      )}
+                    </button>
+
+                    <button
+                      type="button"
+                      className={`grammar-bodhi-lang-toggle-btn${showEnglishExplanation ? ' active' : ''}`}
+                      onClick={() => setShowEnglishExplanation((prev) => !prev)}
+                      title={showEnglishExplanation ? 'Hide English translation' : 'Show English translation'}
+                    >
+                      {showEnglishExplanation ? '🇬🇧 English (Hide)' : '🇬🇧 English (Show)'}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Sanskrit Explanation Paragraph */}
+                <div className="grammar-bodhi-sanskrit-box">
+                  <p className="grammar-bodhi-sanskrit-text">
+                    {activeExplanation.sanskritText}
+                  </p>
+                </div>
+
+                {/* English Translation & Takeaways Box */}
+                {showEnglishExplanation && (
+                  <div className="grammar-bodhi-english-box">
+                    <div className="grammar-bodhi-english-header">
+                      <span className="grammar-bodhi-english-tag">🇬🇧 English Translation &amp; Core Analysis</span>
+                    </div>
+                    <p className="grammar-bodhi-english-text">
+                      {activeExplanation.englishTranslation}
+                    </p>
+
+                    {activeExplanation.bulletPoints && activeExplanation.bulletPoints.length > 0 && (
+                      <div className="grammar-bodhi-bullets-wrap">
+                        <span className="grammar-bodhi-bullets-title">सार-बिन्दवः · Key Takeaways:</span>
+                        <ul className="grammar-bodhi-bullets-list">
+                          {activeExplanation.bulletPoints.map((bp, bpIdx) => (
+                            <li key={bpIdx}>
+                              <strong className="grammar-bodhi-bullet-sa">{bp.sa}</strong>
+                              <span className="grammar-bodhi-bullet-en"> — {bp.en}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* Key Sanskrit Words with Bodhi Voice */}
             {keyWords && keyWords.length > 0 && (
