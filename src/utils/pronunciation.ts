@@ -382,3 +382,159 @@ export const playSequence = (
   });
   return stop;
 };
+
+/* -------------------------------------------------------------------------
+ * Bodhi's teacher voice
+ * -------------------------------------------------------------------------
+ * playPronunciation() is tuned for single letters/words (and strips spaces).
+ * Bodhi speaks greetings, phrases and whole subhāṣita verses, so he gets his
+ * own calm, unhurried delivery: same hi-IN voice selection + platform rules,
+ * slower rate, and verse text split into short chunks with a gentle pause.
+ */
+
+/** Mac / other: calm teacher pace. */
+export const BODHI_RATE = 0.7;
+/** Windows: the clampRate floor — SAPI voices garble below this. */
+export const BODHI_WINDOWS_RATE = 0.75;
+/** Slightly warm, lower pitch on Mac/other; Windows forced to 1 by safePitch. */
+const BODHI_PITCH = 0.95;
+/** Pause between recited chunks (half-verses, phrases). */
+export const BODHI_CHUNK_PAUSE_MS = 420;
+
+const bodhiRate = (): number =>
+  isWindowsPlatform() ? clampRate(BODHI_WINDOWS_RATE) : BODHI_RATE;
+
+/**
+ * Split text into recitation chunks on danda (। ॥), newlines, commas and
+ * sentence marks (! ?). Keeps spaces inside a chunk so words stay separate.
+ */
+export const splitBodhiChunks = (text: string): string[] =>
+  text
+    .split(/[।॥\n\r,;!?]+/)
+    .map((chunk) =>
+      chunk
+        // Drop Devanagari verse numbers, dashes, quotes and brackets.
+        .replace(/[०-९0-9()[\]{}<>'"“”‘’\-–—|]+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim(),
+    )
+    .filter((chunk) => chunk && isSanskritText(chunk));
+
+/** Per-word visarga echo (same rule as the letter/word path). */
+const toBodhiSpeech = (chunk: string): string => {
+  const spaced = isWindowsPlatform();
+  return chunk
+    .split(' ')
+    .map((word) => applyVisargaEcho(word, spaced))
+    .join(' ');
+};
+
+const configureBodhiUtterance = (utterance: SpeechSynthesisUtterance): void => {
+  const voice = pickHindiVoice(window.speechSynthesis.getVoices());
+  utterance.voice = voice || null;
+  utterance.lang = voice?.lang || 'hi-IN';
+  utterance.rate = bodhiRate();
+  utterance.pitch = safePitch(BODHI_PITCH);
+  utterance.volume = 1;
+};
+
+/**
+ * Speak as Bodhi: cancels any in-progress speech, then recites chunk by chunk
+ * at a slow pace. onEnd fires exactly once (finished, stopped, or aborted by
+ * another playPronunciation/stopPronunciation). Returns stop().
+ */
+export const speakAsBodhi = (
+  text: string,
+  options?: { onEnd?: () => void; pauseMs?: number },
+): (() => void) => {
+  const chunks = splitBodhiChunks(text || '');
+  let ended = false;
+  const finish = () => {
+    if (ended) return;
+    ended = true;
+    options?.onEnd?.();
+  };
+
+  if (!chunks.length || typeof window === 'undefined' || !window.speechSynthesis) {
+    finish();
+    return () => undefined;
+  }
+
+  const pauseMs = options?.pauseMs ?? BODHI_CHUNK_PAUSE_MS;
+  let cancelled = false;
+  let timer: ReturnType<typeof setTimeout> | null = null;
+  let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
+  let index = 0;
+  let settledForIndex = -1;
+
+  const clearTimers = () => {
+    if (timer !== null) {
+      clearTimeout(timer);
+      timer = null;
+    }
+    if (fallbackTimer !== null) {
+      clearTimeout(fallbackTimer);
+      fallbackTimer = null;
+    }
+  };
+
+  const stop = () => {
+    if (cancelled) return;
+    cancelled = true;
+    clearTimers();
+    stopPronunciation();
+    finish();
+  };
+
+  stopPronunciation();
+  const gen = speakGeneration;
+
+  const speakNext = () => {
+    if (cancelled) return;
+    if (gen !== speakGeneration) {
+      cancelled = true;
+      clearTimers();
+      finish();
+      return;
+    }
+    if (index >= chunks.length) {
+      clearTimers();
+      finish();
+      return;
+    }
+    const chunk = chunks[index];
+    const chunkIndex = index;
+    index += 1;
+
+    const after = () => {
+      if (cancelled || settledForIndex === chunkIndex) return;
+      settledForIndex = chunkIndex;
+      clearTimers();
+      if (gen !== speakGeneration) {
+        cancelled = true;
+        finish();
+        return;
+      }
+      timer = setTimeout(speakNext, chunkIndex + 1 < chunks.length ? pauseMs : 0);
+    };
+
+    const utterance = new SpeechSynthesisUtterance(toBodhiSpeech(chunk));
+    configureBodhiUtterance(utterance);
+    utterance.onend = after;
+    utterance.onerror = after;
+    // Some Chrome/Edge builds skip onend; advance after a generous upper
+    // bound proportional to the chunk length at Bodhi's slow rate.
+    const fallbackMs = Math.max(2500, Math.round((chunk.length * 220) / utterance.rate));
+    fallbackTimer = setTimeout(after, fallbackMs);
+    window.speechSynthesis.speak(utterance);
+  };
+
+  void whenVoicesReady().then(() => {
+    if (cancelled) return;
+    speakNext();
+  });
+  return stop;
+};
+
+/** Stop Bodhi (or any) speech. */
+export const stopBodhiSpeech = (): void => stopPronunciation();

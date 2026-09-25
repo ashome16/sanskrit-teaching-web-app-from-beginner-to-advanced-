@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import BodhiAvatar, { type BodhiMood } from './BodhiAvatar';
 import {
   BODHI_PROFILE,
@@ -7,7 +7,7 @@ import {
   BODHI_CONTEXT_TIPS,
   BODHI_QA_LIBRARY,
 } from '../data/bodhiData';
-import { playPronunciation } from '../utils/pronunciation';
+import { speakAsBodhi } from '../utils/pronunciation';
 import '../styles/bodhi.css';
 
 interface BodhiGuideWidgetProps {
@@ -53,20 +53,72 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
   };
 
 
-  // Audio helper
+  // Audio helper — Bodhi's calm teacher voice (slow, chunked recitation).
+  const stopSpeechRef = useRef<(() => void) | null>(null);
+  const speakingTextRef = useRef<string | null>(null);
+  const activeTabRef = useRef<GuideTab>(activeTab);
+  activeTabRef.current = activeTab;
+
+  const tabMood = (tab: GuideTab): BodhiMood =>
+    tab === 'subhashita' ? 'meditate' : tab === 'qa' ? 'scholar' : tab === 'phrases' ? 'happy' : 'namaste';
+
+  const [speakingText, setSpeakingText] = useState<string | null>(null);
+
+  const resetSpeakingUi = () => {
+    setIsSpeaking(false);
+    setSpeakingText(null);
+    setMood(tabMood(activeTabRef.current));
+  };
+
+  const stopSpeaking = (resetUi = true) => {
+    const stop = stopSpeechRef.current;
+    stopSpeechRef.current = null;
+    speakingTextRef.current = null;
+    stop?.();
+    if (stop && resetUi) resetSpeakingUi();
+  };
+
   const speakSanskrit = (text: string) => {
+    // Clicking the same item again while Bodhi is speaking stops him.
+    if (stopSpeechRef.current && speakingTextRef.current === text) {
+      stopSpeaking();
+      return;
+    }
+    stopSpeaking(false);
+    let finished = false;
+    let stopFn: (() => void) | null = null;
     try {
       setIsSpeaking(true);
+      setSpeakingText(text);
       setMood('reading');
-      playPronunciation(text);
-      setTimeout(() => {
-        setIsSpeaking(false);
-        setMood('namaste');
-      }, 2500);
+      stopFn = speakAsBodhi(text, {
+        // Driven by the real utterance onend (with per-chunk fallback timers
+        // inside speakAsBodhi), not a fixed timeout.
+        onEnd: () => {
+          finished = true;
+          // Ignore end events from a recitation that was superseded/stopped.
+          if (stopFn !== null && stopSpeechRef.current !== stopFn) return;
+          stopSpeechRef.current = null;
+          speakingTextRef.current = null;
+          resetSpeakingUi();
+        },
+      });
+      if (!finished) {
+        stopSpeechRef.current = stopFn;
+        speakingTextRef.current = text;
+      }
     } catch {
-      setIsSpeaking(false);
+      stopSpeechRef.current = null;
+      speakingTextRef.current = null;
+      resetSpeakingUi();
     }
   };
+
+  // Stop Bodhi when the guide closes or the widget unmounts.
+  useEffect(() => {
+    if (!isOpen) stopSpeaking();
+  }, [isOpen]);
+  useEffect(() => () => stopSpeaking(), []);
 
   // Update Bodhi's mini bubble message when active view changes
   useEffect(() => {
@@ -126,12 +178,14 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
   }, [selectedCategory, searchQuery]);
 
   const handleNextSubhashita = () => {
+    stopSpeaking();
     setSubhashitaIdx((prev) => (prev + 1) % BODHI_SUBHASHITAS.length);
     setMood('celebrate');
     setTimeout(() => setMood('meditate'), 1200);
   };
 
   const handlePrevSubhashita = () => {
+    stopSpeaking();
     setSubhashitaIdx((prev) => (prev - 1 + BODHI_SUBHASHITAS.length) % BODHI_SUBHASHITAS.length);
     setMood('reading');
   };
@@ -252,9 +306,9 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                 type="button"
                 className="bodhi-speak-btn"
                 onClick={() => speakSanskrit(BODHI_PROFILE.audioGreeting)}
-                title="Hear Bodhi speak Namaste"
+                title={speakingText === BODHI_PROFILE.audioGreeting ? 'Stop Bodhi' : 'Hear Bodhi speak Namaste'}
               >
-                🔊 {isSpeaking ? 'Speaking...' : 'Listen'}
+                {speakingText === BODHI_PROFILE.audioGreeting ? '⏹ Speaking… (tap to stop)' : '🔊 Listen'}
               </button>
             </div>
 
@@ -428,7 +482,9 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                       style={{ margin: '0 auto', display: 'inline-flex' }}
                       onClick={() => speakSanskrit(currentSubhashita.verseDevanagari)}
                     >
-                      🔊 Recite Subhāṣita
+                      {isSpeaking && speakingText === currentSubhashita.verseDevanagari
+                        ? '⏹ Reciting… (tap to stop)'
+                        : '🔊 Recite Subhāṣita'}
                     </button>
                   </div>
 

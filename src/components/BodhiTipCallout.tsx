@@ -1,6 +1,6 @@
 import React from 'react';
 import BodhiAvatar, { type BodhiMood } from './BodhiAvatar';
-import { playPronunciation } from '../utils/pronunciation';
+import { speakAsBodhi } from '../utils/pronunciation';
 import '../styles/bodhi.css';
 
 interface BodhiTipCalloutProps {
@@ -23,7 +23,7 @@ export const BodhiTipCallout: React.FC<BodhiTipCalloutProps> = ({
   const handleAudio = () => {
     if (audioText) {
       try {
-        playPronunciation(audioText);
+        speakAsBodhi(audioText);
       } catch {}
     }
   };

@@ -54,6 +54,8 @@ export const BODHI_PROFILE = {
   title: 'Gurukul Mascot & Learning Guide',
   sanskritTitle: 'गुरुकुल-सखा एवं ज्ञान-मार्गदर्शकः',
   tagline: 'Illuminating your path through Sanskrit, grammar, and Vedic mathematics with heart, breath, and joy.',
+  persona:
+    'A calm, unhurried Gurukul guru who speaks slowly and clearly for children — reciting each phrase and half-verse with a gentle pause so young learners can listen and repeat.',
   greetingText: 'नमस्ते! अहं बोधिः — भवतः संस्कृत-सखा। (Namaste! I am Bodhi — your Gurukul Sanskrit friend. Ask me anything!)',
   audioGreeting: 'नमस्ते! अहं बोधिः।',
 };
