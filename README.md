@@ -44,7 +44,7 @@ src/
 
 ## 🎓 Adding Deepakam Lessons
 
-Detailed instructions on adding your Deepakam lesson PDFs can be found in [SETUP_GUIDE.md](./SETUP_GUIDE.md).
+Detailed instructions on adding your Deepakam lessons PDFs can be found in [SETUP_GUIDE.md](./SETUP_GUIDE.md).
 
 ## 🎤 Pronunciation Features
 
