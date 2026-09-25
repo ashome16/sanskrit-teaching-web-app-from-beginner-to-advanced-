@@ -16,6 +16,7 @@ export interface SearchTarget {
     | 'worksheets'
     | 'board'
     | 'cbse-guide'
+    | 'resources'
     | 'philosophy'
     | 'faq';
   grammarTopic?:
@@ -1186,6 +1187,41 @@ export const SEARCH_INDEX: SearchItem[] = [
     ],
     target: {
       view: 'cbse-guide',
+    },
+  },
+  {
+    id: 'guide-free-resources',
+    title: 'Free Sanskrit Resources (संस्कृत-साधनानि)',
+    subtitle: 'Courses, Dictionaries, Texts, Grammars & Spoken Practice',
+    category: 'guides',
+    categoryLabel: 'Library · External Links',
+    badgeEmoji: '🔗',
+    badgeColor: '#0f766e',
+    description:
+      'Hand-checked free resources: learnsanskrit.org, Samskrita Bharati, Sanskrit From Home (Vyoma), SWAYAM, Monier-Williams & Apte dictionaries, Sanscript, Amarahasa, Ambuda, GRETIL, and the Macdonell, Kale & Whitney grammars.',
+    keywords: [
+      'free resources',
+      'resources',
+      'dictionary',
+      'monier williams',
+      'apte',
+      'sanscript',
+      'transliteration',
+      'amarahasa',
+      'ambuda',
+      'gretil',
+      'sanskrit documents',
+      'samskrita bharati',
+      'vyoma',
+      'swayam',
+      'whitney',
+      'macdonell',
+      'kale',
+      'spoken sanskrit',
+      'साधनानि',
+    ],
+    target: {
+      view: 'resources',
     },
   },
   {

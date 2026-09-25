@@ -7,6 +7,7 @@ export interface CbseSanskritGuidePageProps {
   onGoHome?: () => void;
   onOpenPhilosophy?: () => void;
   onOpenGrammar?: () => void;
+  onOpenResources?: () => void;
 }
 
 const DEFAULT_TITLE =
@@ -155,6 +156,7 @@ const CbseSanskritGuidePage: React.FC<CbseSanskritGuidePageProps> = ({
   onGoHome,
   onOpenPhilosophy,
   onOpenGrammar,
+  onOpenResources,
 }) => {
   useEffect(() => {
     const prevTitle = document.title;
@@ -206,6 +208,11 @@ const CbseSanskritGuidePage: React.FC<CbseSanskritGuidePageProps> = ({
             {onOpenPhilosophy && (
               <button type="button" className="philosophy-crumb-btn" onClick={onOpenPhilosophy}>
                 Darśana
+              </button>
+            )}
+            {onOpenResources && (
+              <button type="button" className="philosophy-crumb-btn" onClick={onOpenResources}>
+                Free Resources
               </button>
             )}
           </div>

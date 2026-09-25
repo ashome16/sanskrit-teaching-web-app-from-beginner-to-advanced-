@@ -1,0 +1,157 @@
+/* Free Sanskrit Resources page — builds on philosophy.css gurukul layout */
+
+.free-resources-container {
+  max-width: 980px;
+}
+
+.free-resources-note {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-left: 4px solid #ea580c;
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.92rem;
+  color: #7c2d12;
+}
+
+.free-resources-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.free-resources-toc-link {
+  background: #fff;
+  border: 1px solid #e5d8c3;
+  color: #92400e;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.free-resources-toc-link:hover {
+  background: #fef3c7;
+}
+
+.free-resources-section {
+  scroll-margin-top: 90px;
+}
+
+.free-resources-section-sa {
+  color: #9a3423;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+.free-resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.free-resources-card {
+  display: flex;
+  flex-direction: column;
+  background: #fffdf9;
+  border: 1px solid #ebdcc5;
+  border-radius: 14px;
+  padding: 1rem 1.1rem 0.95rem;
+  box-shadow: 0 2px 10px rgba(120, 53, 15, 0.04);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.free-resources-card:hover {
+  box-shadow: 0 8px 22px rgba(120, 53, 15, 0.09);
+  transform: translateY(-1px);
+}
+
+.free-resources-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
+.free-resources-card h3 {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #9a3423;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.free-resources-card-sa {
+  color: #b45309;
+  font-weight: 700;
+}
+
+.free-resources-tag {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #065f46;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  white-space: nowrap;
+}
+
+.free-resources-card p {
+  font-size: 0.93rem;
+  line-height: 1.6;
+  margin: 0 0 0.8rem;
+  flex-grow: 1;
+}
+
+.free-resources-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.free-resources-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  background: #273b35;
+  border-radius: 8px;
+  padding: 0.35rem 0.7rem;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.free-resources-link:hover {
+  background: #b3472f;
+}
+
+.free-resources-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.free-resources-footnote {
+  text-align: center;
+  font-size: 0.88rem;
+  color: #6b5b4b;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .free-resources-grid {
+    grid-template-columns: 1fr;
+  }
+}

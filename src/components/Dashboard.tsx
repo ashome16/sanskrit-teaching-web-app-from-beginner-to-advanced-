@@ -3,6 +3,7 @@ import HomePage from './HomePage';
 import FAQSection from './FAQSection';
 import PhilosophyPage from './PhilosophyPage';
 import CbseSanskritGuidePage from './CbseSanskritGuidePage';
+import FreeResourcesPage from './FreeResourcesPage';
 import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
 import AuthModal from './AuthModal';
 import UserProfileModal from './UserProfileModal';
@@ -59,6 +60,7 @@ type DashboardView =
   | 'faq'
   | 'philosophy'
   | 'cbse-guide'
+  | 'resources'
   | 'dhatupatha';
 
 const PHILOSOPHY_PATHS = new Set([
@@ -74,6 +76,11 @@ const CBSE_GUIDE_PATHS = new Set([
   '/ncert-sanskrit-exam',
   '/cbse-sanskrit',
 ]);
+const RESOURCES_PATHS = new Set([
+  '/resources',
+  '/free-sanskrit-resources',
+  '/sanskrit-resources',
+]);
 
 export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string }> = {
   home: {
@@ -83,6 +90,10 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
   'cbse-guide': {
     title: 'CBSE NCERT Sanskrit Exam Guide (Classes 7–10) | EdNet Learn Gurukul',
     desc: 'Master CBSE NCERT Sanskrit exams for Classes 7–10: section blueprint, question terminology, Kim-family keywords, and exam-day strategy.',
+  },
+  resources: {
+    title: 'Free Sanskrit Resources · संस्कृत-साधनानि | EdNet Learn Gurukul',
+    desc: 'Hand-checked free Sanskrit learning resources: beginner courses, spoken Sanskrit classes, Monier-Williams & Apte dictionaries, Sanscript, Amarahasa stories, GRETIL texts and classic grammars.',
   },
   worksheets: {
     title: 'CBSE Sanskrit Worksheets & Practice Exercises (Class 6, 7, 8) | EdNet Learn',
@@ -126,6 +137,7 @@ const pathToView = (pathname: string): DashboardView | null => {
   const clean = pathname.replace(/\/+$/, '') || '/';
   if (PHILOSOPHY_PATHS.has(clean)) return 'philosophy';
   if (CBSE_GUIDE_PATHS.has(clean)) return 'cbse-guide';
+  if (RESOURCES_PATHS.has(clean)) return 'resources';
   if (clean === '/worksheets') return 'worksheets';
   if (clean === '/vedic-maths' || clean === '/vedic-math') return 'vedic-maths';
   if (clean === '/grammar') return 'grammar';
@@ -140,6 +152,7 @@ const pathToView = (pathname: string): DashboardView | null => {
 const viewToPath = (view: DashboardView): string => {
   if (view === 'philosophy') return '/philosophy';
   if (view === 'cbse-guide') return '/cbse-sanskrit-guide';
+  if (view === 'resources') return '/resources';
   if (view === 'worksheets') return '/worksheets';
   if (view === 'vedic-maths') return '/vedic-maths';
   if (view === 'grammar') return '/grammar';
@@ -162,6 +175,7 @@ const isValidSavedView = (saved: string | null): saved is DashboardView =>
   saved === 'faq' ||
   saved === 'philosophy' ||
   saved === 'cbse-guide' ||
+  saved === 'resources' ||
   saved === 'dhatupatha';
 
 
@@ -241,7 +255,7 @@ const Dashboard: React.FC = () => {
       return targetView !== 'home';
     }
     // smart_freemium mode (default & recommended):
-    if (targetView === 'home' || targetView === 'faq' || targetView === 'philosophy' || targetView === 'cbse-guide' || targetView === 'dhatupatha') return false;
+    if (targetView === 'home' || targetView === 'faq' || targetView === 'philosophy' || targetView === 'cbse-guide' || targetView === 'resources' || targetView === 'dhatupatha') return false;
     if (targetView === 'reader') {
       const lessonToCheck = targetLessonId || lessons[lessonIndex]?.id;
       // Varṇamālā and Chapter 1 (gsde101) are free for guests!
@@ -270,7 +284,7 @@ const Dashboard: React.FC = () => {
     view: DashboardView,
     lessonId?: string
   ) => {
-    if (view === 'home' || view === 'faq' || view === 'philosophy' || view === 'cbse-guide') {
+    if (view === 'home' || view === 'faq' || view === 'philosophy' || view === 'cbse-guide' || view === 'resources') {
       setActiveView(view);
       return;
     }
@@ -398,7 +412,8 @@ const Dashboard: React.FC = () => {
         target === 'worksheets' ||
         target === 'faq' ||
         target === 'philosophy' ||
-        target === 'cbse-guide'
+        target === 'cbse-guide' ||
+        target === 'resources'
       ) {
         if (target === 'grammar') {
           setGrammarResetKey((k) => k + 1);
@@ -411,10 +426,10 @@ const Dashboard: React.FC = () => {
   // Guard against stale localStorage pointing to gated content for guest visitors
   useEffect(() => {
     if (!currentUser) {
-      if (accessMode === 'strict_gate' && activeView !== 'home' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide') {
+      if (accessMode === 'strict_gate' && activeView !== 'home' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide' && activeView !== 'resources') {
         setActiveView('home');
       } else if (accessMode === 'smart_freemium') {
-        if (activeView !== 'home' && activeView !== 'reader' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide') {
+        if (activeView !== 'home' && activeView !== 'reader' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide' && activeView !== 'resources') {
           setActiveView('home');
         } else if (activeView === 'reader') {
           const currId = lessons[lessonIndex]?.id;
@@ -882,6 +897,15 @@ const Dashboard: React.FC = () => {
           onGoHome={() => navigateToView('home')}
           onOpenPhilosophy={() => navigateToView('philosophy')}
           onOpenGrammar={handleOpenGrammar}
+          onOpenResources={() => navigateToView('resources')}
+        />
+      )}
+      {activeView === 'resources' && (
+        <FreeResourcesPage
+          onGoHome={() => navigateToView('home')}
+          onOpenGrammar={handleOpenGrammar}
+          onOpenCbseGuide={() => navigateToView('cbse-guide')}
+          onOpenPhilosophy={() => navigateToView('philosophy')}
         />
       )}
       <Suspense fallback={<ViewLoader />}>
@@ -966,6 +990,7 @@ const Dashboard: React.FC = () => {
           onOpenFAQ={() => navigateToView('faq')}
           onOpenPhilosophy={() => navigateToView('philosophy')}
           onOpenCbseGuide={() => navigateToView('cbse-guide')}
+          onOpenResources={() => navigateToView('resources')}
           onOpenBodhi={() => setIsBodhiGuideOpen(true)}
         />
       )}
