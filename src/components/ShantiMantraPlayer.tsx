@@ -58,7 +58,6 @@ const ShantiMantraPlayer: React.FC<ShantiMantraPlayerProps> = ({
 
   // Mode: 'speech' (Web Speech API) vs 'swami' (Swami Dhyanananda's audio.com recitation)
   const [mode, setMode] = useState<'speech' | 'swami'>('speech');
-  const [showEmbed, setShowEmbed] = useState(false);
 
   // Load voices (Chrome/Edge fill the list only after voiceschanged).
   useEffect(() => {
@@ -135,7 +134,6 @@ const ShantiMantraPlayer: React.FC<ShantiMantraPlayerProps> = ({
             onClick={() => {
               stop();
               setMode('swami');
-              setShowEmbed(true);
             }}
             role="tab"
             aria-selected={mode === 'swami'}
@@ -152,16 +150,15 @@ const ShantiMantraPlayer: React.FC<ShantiMantraPlayerProps> = ({
             <span className="shanti-swami-title">
               Swami Dhyanananda · Sahana Vavatu Traditional Recitation
             </span>
-            <span className="shanti-swami-badge">Free to Use · Traditional Chant</span>
           </div>
 
           <p className="shanti-swami-note">
-            Authentic recitation of the <strong>Sahana Vavatu (सह नाववatu)</strong> Śānti Mantra from the Taittirīya &amp; Kaṭha Upaniṣads.
+            Authentic recitation of the <strong>Sahana Vavatu (सह नाववतु)</strong> Śānti Mantra from the Taittirīya &amp; Kaṭha Upaniṣads.
             Chanted in deliberate slow tempo with lead-and-follow pauses for disciple repetition.
           </p>
 
-          {/* Embedded Audio.com player iframe */}
-          {showEmbed && (
+          {/* Embedded Audio.com Player */}
+          <div className="shanti-embed-wrapper">
             <iframe
               className="shanti-embed-frame"
               src="https://audio.com/swami-dhyanananda/audio/sahana-lf-slow"
@@ -169,41 +166,18 @@ const ShantiMantraPlayer: React.FC<ShantiMantraPlayerProps> = ({
               allow="autoplay"
               sandbox="allow-scripts allow-same-origin allow-presentation"
             />
-          )}
+          </div>
 
-          {/* Local HTML5 Audio Player fallback */}
-          <audio
-            className="shanti-swami-audio"
-            controls
-            preload="metadata"
-          >
-            <source src="/audio/sahana-vavatu.mp3" type="audio/mpeg" />
-            <source src="/audio/sahana-navavatu.mp3" type="audio/mpeg" />
-            <source src="/audio/sahana-lf-slow.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
-
-          <div className="shanti-swami-links">
-            <button
-              type="button"
-              className="shanti-swami-link"
-              onClick={() => setShowEmbed((prev) => !prev)}
-            >
-              {showEmbed ? '▼ Hide Audio.com Embed' : '▶ Show Audio.com Embed'}
-            </button>
-            <span>·</span>
+          {/* Single Direct Link */}
+          <div className="shanti-direct-action-row" style={{ justifyContent: 'center', marginTop: '0.25rem' }}>
             <a
               href="https://audio.com/swami-dhyanananda/audio/sahana-lf-slow"
               target="_blank"
               rel="noopener noreferrer"
-              className="shanti-swami-link"
+              className="shanti-direct-link-btn"
             >
-              🎧 Open &amp; Download from Audio.com ↗
+              🎧 Open Recitation on Audio.com ↗
             </a>
-            <span>·</span>
-            <span className="shanti-swami-note" style={{ display: 'inline' }}>
-              Save MP3 to <code>public/audio/sahana-vavatu.mp3</code> for 100% offline playback
-            </span>
           </div>
         </div>
       )}
