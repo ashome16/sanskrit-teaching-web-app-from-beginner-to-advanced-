@@ -285,6 +285,237 @@ const PRACTICE_SENTENCES: {
   },
 ];
 
+const SECTION_PHRASES_BY_PART: {
+  sectionTitle: string;
+  sectionCode: string;
+  badge: string;
+  phrases: {
+    sanskrit: string;
+    meaning: string;
+    tip: string;
+  }[];
+}[] = [
+  {
+    sectionTitle: "खण्ड ‘क’ & ‘घ’ : Comprehension Passages",
+    sectionCode: "अवबोधनम्",
+    badge: "Reading & Textual Extract Analysis",
+    phrases: [
+      {
+        sanskrit: 'अनुच्छेदं पठित्वा प्रश्नानाम् उत्तराणि लिखत।',
+        meaning: 'Read the passage and write the answers to the questions.',
+        tip: 'Base your responses strictly on the facts stated in the passage. Do not write from external memory.',
+      },
+      {
+        sanskrit: 'अस्य गद्यांशस्य समुचितं शीर्षकं लिखत।',
+        meaning: 'Write an appropriate title for this prose passage.',
+        tip: 'Keep the title to 2–3 words in the nominative case (प्रथमा विभक्ति), capturing the main character or moral.',
+      },
+      {
+        sanskrit: '‘...’ इति क्रियापदस्य कर्तृपदं किम्?',
+        meaning: 'What is the subject (doer) for the verb \'...\'?',
+        tip: 'Identify the nominative noun/pronoun in प्रथमा विभक्ति that governs the verb\'s number and person.',
+      },
+      {
+        sanskrit: 'गद्यांशे ‘...’ पदस्य किं विपर्ययपदं/विलोमपदं प्रयुक्तम्?',
+        meaning: 'Which antonym / opposite word is used in the passage for \'...\'?',
+        tip: 'Locate the exact polar opposite word used within the designated paragraph text.',
+      },
+      {
+        sanskrit: '‘विशालं वनम्’ इत्यत्र विशेषणपदं/विशेष्यपदं किम्?',
+        meaning: 'In the phrase \'the vast forest\', which word is the adjective and which is the noun being described?',
+        tip: 'विशेषणपदम् = qualifying adjective (विशालम्); विशेष्यपदम् = noun being described (वनम्).',
+      },
+      {
+        sanskrit: '‘...’ इत्यर्थे किं पदं प्रयुक्तम्?',
+        meaning: 'Which word has been used to mean \'...\'? (Asking for a contextual synonym).',
+        tip: 'Scan the designated passage for an equivalent noun sharing the exact same case and gender.',
+      },
+    ],
+  },
+  {
+    sectionTitle: "खण्ड ‘ख’ : Creative Writing & Composition",
+    sectionCode: "रचनात्मक-कार्यम्",
+    badge: "Letter Writing, Picture Description & Translation",
+    phrases: [
+      {
+        sanskrit: 'मञ्जूषायां दत्तशब्दानां साहाय्येन रिक्तस्थानानि पूरयित्वा पत्रं पुनः लिखत।',
+        meaning: 'Fill in the blanks with the help of the words given in the helper box and rewrite the complete letter.',
+        tip: 'CRUCIAL BOARD RULE: Remind students they MUST rewrite the entire letter on the answer sheet, not just list numbers!',
+      },
+      {
+        sanskrit: 'प्रदत्तं चित्रं दृष्ट्वा मञ्जूषायां प्रदत्तशब्दानां साहाय्येन पञ्च वाक्यानि संस्कृतेन लिखत।',
+        meaning: 'Looking at the given picture, write 5 sentences in Sanskrit using the words in the helper box.',
+        tip: 'Use simple, grammatically rock-solid sentences using Bodhi\'s 5-step formula (Topic, Subject, Detail, Action, Harmony).',
+      },
+      {
+        sanskrit: 'मञ्जूषाप्रदत्तशब्दानां साहाय्येन निम्नलिखितं विषयम् अधिकृत्य एकम् अनुच्छेदं लिखत।',
+        meaning: 'Write a short paragraph based on the following topic with the help of the words provided in the box.',
+        tip: 'Structure 5 sequential sentences centered on the given topic using words from the Mañjūṣā.',
+      },
+      {
+        sanskrit: 'अधोलिखितानि वाक्यानि संस्कृतेन अनूद्य लिखत।',
+        meaning: 'Translate the following sentences into Sanskrit.',
+        tip: 'Identify tense (लट् / लृट् / लङ्), subject concord, and correct case inflections for each noun and verb.',
+      },
+    ],
+  },
+  {
+    sectionTitle: "खण्ड ‘ग’ : Applied Grammar",
+    sectionCode: "अनुप्रयोग-व्याकरणम् (व्याकरणवीथिः)",
+    badge: "Formulaic Paninian Rules",
+    phrases: [
+      {
+        sanskrit: 'रेखाङ्कितपदेषु सन्धिं सन्धिविच्छेदं वा कुरुत।',
+        meaning: 'Do the joint (सन्धि) or break the joint (सन्धिविच्छेद) for the underlined words.',
+        tip: 'Identify vowel junctions (दीर्घ, गुण, वृद्धि, यण्), consonant junctions, or visarga transformations.',
+      },
+      {
+        sanskrit: 'रेखाङ्कितपदानां समासं विग्रहं वा विकल्पेभ्यः चिनुत।',
+        meaning: 'Choose the compound phrase (समास) or its split expression (विग्रह) from the choices provided.',
+        tip: 'Verify whether it is Tatpurusha, Karmadharaya, Dvigu, Bahuvrihi, Dvandva, or Avyayibhava.',
+      },
+      {
+        sanskrit: 'प्रकृति-प्रत्ययौ संयोज्य/विभज्य कोष्ठकप्रदत्तशब्दानां स्थाने लिखत।',
+        meaning: 'Combine or separate the root word (प्रकृति) and suffix (प्रत्यय — like क्त्वा, तुमुन्, ल्यप्, क्तवतु, शतृ).',
+        tip: 'Ensure upasargas are factored in (e.g. वि + हस् + ल्यप् = विहस्य; गम् + तुमुन् = गन्तुम्).',
+      },
+      {
+        sanskrit: 'कोष्ठकात् उचितं पदं चित्वा रिक्तस्थानानि पूरयत।',
+        meaning: 'Choose the correct grammatically inflected word from the bracket and fill in the blanks.',
+        tip: 'Examine Upapada case rules (सह triggers 3rd case; नमः triggers 4th case; परितः triggers 2nd case).',
+      },
+      {
+        sanskrit: 'घटिकां दृष्ट्वा रिक्तस्थानेषु समयं लिखत।',
+        meaning: 'Look at the clock and write the time in the blanks (using terms like सपाद, सार्ध, पादोन).',
+        tip: 'Master the 4 time anchors: वादनम् (o\'clock), सपाद (+15m), सार्ध (+30m), पादोन (-15m to next hour).',
+      },
+      {
+        sanskrit: 'वाक्येषु अव्ययपदानि चित्वा लिखत।',
+        meaning: 'Identify and write the indeclinable words (अव्यय) from the sentences.',
+        tip: 'Avyayas never change gender, number, or case (यदा, तदा, सर्वत्र, अपि, एव, च, उच्चैः, शनैः, अद्य, श्वः).',
+      },
+    ],
+  },
+  {
+    sectionTitle: "पठित-अवबोधनम् : Literature & Shloka Analysis",
+    sectionCode: "श्लोक-अन्वय-भावार्थ-घटनाक्रमाः",
+    badge: "Textbook Poetry & Stories",
+    phrases: [
+      {
+        sanskrit: 'रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कुरुत।',
+        meaning: 'Frame questions targeting the underlined words.',
+        tip: 'RULE: Swap the underlined word with a matching किम् pronoun or adverb, and MUST terminate the sentence with a question mark (?).',
+      },
+      {
+        sanskrit: 'श्लोकस्य अन्वयं पूरयत।',
+        meaning: 'Complete the prose line-order setup of the poetic verse.',
+        tip: 'Reorder poetic metrics into standard prose: Subject (कर्ता) ➔ Object (कर्म) ➔ Verb (क्रिया).',
+      },
+      {
+        sanskrit: 'श्लोकस्य भावार्थं मञ्जूषातः पदैः पूरयत।',
+        meaning: 'Complete the underlying meaning/explanation of the verse using words from the box.',
+        tip: 'Read the overall moral explanation first before selecting matching synonym tokens from the Mañjūṣā.',
+      },
+      {
+        sanskrit: 'कथांशं/वाक्यानि घटनाक्रमानुसारं लिखत।',
+        meaning: 'Rewrite the sentences according to the chronological sequence of the story plot.',
+        tip: 'Identify the narrative cause and effect from your textbook chapter (e.g. hunter spreads net ➔ doves eat rice ➔ trapped ➔ mice sever net).',
+      },
+    ],
+  },
+];
+
+const FUNCTIONAL_VERBS_CHECKLIST: {
+  verb: string;
+  meaning: string;
+  action: string;
+}[] = [
+  {
+    verb: 'चिनुत / चित्वा',
+    meaning: 'Choose / Having chosen',
+    action: 'Select the correct answer from the given MCQ options or bracket choices.',
+  },
+  {
+    verb: 'लिखत',
+    meaning: 'Write',
+    action: 'Write the complete answer, word, or full sentence on your answer paper.',
+  },
+  {
+    verb: 'पूरयत',
+    meaning: 'Fill up',
+    action: 'Fill in the blanks with the correct form or appropriate token from the helper box.',
+  },
+  {
+    verb: 'संशोधयत',
+    meaning: 'Correct (errors)',
+    action: 'Spot grammatical mismatches (subject-verb agreement, case) and rewrite the corrected sentence.',
+  },
+  {
+    verb: 'संयोज्य / विभज्य',
+    meaning: 'Joining together / Separating apart',
+    action: 'Combine root + suffix or sandhi components, or split joined compounds into base stems.',
+  },
+  {
+    verb: 'अनूद्य लिखत',
+    meaning: 'Translate & write',
+    action: 'Translate the Hindi/English sentences into grammatical Sanskrit with proper case endings.',
+  },
+  {
+    verb: 'दृष्ट्वा',
+    meaning: 'Having seen / Looking at',
+    action: 'Base your answer directly on visual observation of the provided clock or picture illustration.',
+  },
+  {
+    verb: 'पठित्वा',
+    meaning: 'Having read',
+    action: 'Base your answers strictly on reading the provided prose excerpt or poetic verse.',
+  },
+];
+
+const CHITRA_VARNANAM_STEPS: {
+  step: string;
+  title: string;
+  formula: string;
+  example: string;
+  audioText: string;
+}[] = [
+  {
+    step: 'Step 1: Setting the Scene',
+    title: 'Topic & Context (स्थान-परिचयः)',
+    formula: 'इदं चित्रं [स्थानं षष्ठ्याम्] अस्ति।',
+    example: 'इदं चित्रं वाटिकायाः / विद्यालयस्य / क्रीडाङ्गणस्य अस्ति। (This picture is of a garden / school / playground.)',
+    audioText: 'इदं चित्रं वाटिकायाः अस्ति',
+  },
+  {
+    step: 'Step 2: What is Visible',
+    title: 'Primary Subjects (चित्रे के सन्ति)',
+    formula: 'चित्रे [प्रथमा बहुवचनम्] [क्रियापदम्]।',
+    example: 'चित्रे बालकाः कन्दुकेन क्रीडन्ति। (In the picture, boys are playing with a ball.)',
+    audioText: 'चित्रे बालकाः कन्दुकेन क्रीडन्ति',
+  },
+  {
+    step: 'Step 3: Environment Details',
+    title: 'Nature & Objects (वस्तु-विवरणम्)',
+    formula: 'अत्र [सप्तमी स्थानम्] [विशेषणम्] [विशेष्यम्] सन्ति।',
+    example: 'अत्र वृक्षे सुन्दराणि पुष्पाणि विकसन्ति। (Here on the trees, beautiful flowers are blossoming.)',
+    audioText: 'अत्र वृक्षे सुन्दराणि पुष्पाणि विकसन्ति',
+  },
+  {
+    step: 'Step 4: Ongoing Actions',
+    title: 'Activity & Movement (क्रिया-वर्णनम्)',
+    formula: '[कर्तृपदम्] [कर्म] कुर्वन्ति / दृश्यन्ते।',
+    example: 'खगाः आकाशे उत्पतन्ति, जनाः प्रसन्नाः दृश्यन्ते। (Birds fly in the sky, and people appear joyful.)',
+    audioText: 'खगाः आकाशे उत्पतन्ति जनाः प्रसन्नाः दृश्यन्ते',
+  },
+  {
+    step: 'Step 5: Concluding Harmony',
+    title: 'Aesthetic Conclusion (उपसंहारः)',
+    formula: 'इदं चित्रं अतीव रमणीयं / सुन्दरम् अस्ति।',
+    example: 'इदं चित्रं अतीव मनोहरं वर्तते। (This picture is exceedingly pleasant and charming.)',
+    audioText: 'इदं चित्रं अतीव मनोहरं वर्तते',
+  },
+];
+
 const CbseSanskritGuidePage: React.FC<CbseSanskritGuidePageProps> = ({
   onOpenRegister,
   onGoHome,
@@ -360,6 +591,18 @@ const CbseSanskritGuidePage: React.FC<CbseSanskritGuidePageProps> = ({
             Exam blueprint, question terminology, Kim-family keywords, and exam-day strategy
           </p>
         </header>
+
+        <nav className="cbse-guide-quicknav" aria-label="Exam guide quick jump">
+          <a href="#blueprint" className="cbse-quicknav-btn">📋 Exam Blueprint</a>
+          <a href="#instructions" className="cbse-quicknav-btn">✍️ Instructions (निर्देशाः)</a>
+          <a href="#question-words" className="cbse-quicknav-btn">❓ Question Words (क-कार)</a>
+          <a href="#grammatical-directives" className="cbse-quicknav-btn">📐 Grammatical Directives</a>
+          <a href="#section-by-section" className="cbse-quicknav-btn">📚 Sections (खण्ड क–घ)</a>
+          <a href="#functional-verbs" className="cbse-quicknav-btn">⚡ Verb Endings Checklist</a>
+          <a href="#chitra-varnanam" className="cbse-quicknav-btn">🖼️ Picture Description (चित्रवर्णनम्)</a>
+          <a href="#practice-sentences" className="cbse-quicknav-btn">🔍 Practice Decoding</a>
+          <a href="#strategy" className="cbse-quicknav-btn">🎯 Exam Day Strategy</a>
+        </nav>
 
         <section className="philosophy-section" aria-labelledby="guide-intro">
           <h2 id="guide-intro" className="visually-hidden" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)' }}>
@@ -623,6 +866,158 @@ const CbseSanskritGuidePage: React.FC<CbseSanskritGuidePageProps> = ({
             <strong>📚 Academic Citations &amp; Blueprint Standards:</strong> Structured according to the official
             CBSE Class 10 Sanskrit Sample Question Papers (Code 122), NCERT Middle School Sanskrit Curricula (Classes 7–8 दीपकम),
             and standard Paninian question-framing conventions.
+          </div>
+        </section>
+
+        {/* ------------------------------------------------------------------
+            5. Section-by-Section Phrasing & Terminology (Classes 7–10)
+            ------------------------------------------------------------------ */}
+        <section className="philosophy-section" id="section-by-section" aria-labelledby="section-breakdown-heading">
+          <h2 id="section-breakdown-heading">5. Section-by-Section Advanced Exam Directives (Classes 7–10)</h2>
+          <p>
+            For students progressing through Classes 7 to 10, the NCERT and CBSE Sanskrit exam structure transitions from
+            foundational recall to advanced language synthesis across the four official sections (खण्डाः). Master the precise
+            phrasing used by CBSE paper setters:
+          </p>
+
+          {SECTION_PHRASES_BY_PART.map((group) => (
+            <div key={group.sectionTitle} style={{ margin: '1.5rem 0' }}>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.6rem', flexWrap: 'wrap', marginBottom: '0.6rem' }}>
+                <h3 style={{ margin: 0, fontSize: '1.15rem', color: '#9a3423', fontFamily: "'Noto Sans Devanagari', Georgia, serif" }}>
+                  {group.sectionTitle}
+                </h3>
+                <span className="cbse-clue-badge" style={{ background: '#fef3c7', color: '#92400e', borderColor: '#fcd34d' }}>
+                  {group.badge}
+                </span>
+              </div>
+
+              <div className="cbse-section-cards-grid">
+                {group.phrases.map((phrase) => (
+                  <div key={phrase.sanskrit} className="cbse-section-phrase-card">
+                    <h4 className="cbse-section-phrase-title" lang="sa">
+                      <span>{phrase.sanskrit}</span>
+                      <button
+                        type="button"
+                        className="cbse-audio-btn"
+                        onClick={() => playPronunciation(phrase.sanskrit)}
+                        title="Listen to this instruction"
+                        aria-label={`Listen to ${phrase.sanskrit}`}
+                      >
+                        🔊
+                      </button>
+                    </h4>
+                    <p className="cbse-section-phrase-meaning">
+                      <strong>Meaning:</strong> {phrase.meaning}
+                    </p>
+                    <div className="cbse-section-phrase-tip">
+                      <strong>💡 Exam Tip / Rule:</strong> {phrase.tip}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {/* ------------------------------------------------------------------
+            6. Summary Checklist: Functional Verb Endings (क्रियापद-निर्देशाः)
+            ------------------------------------------------------------------ */}
+        <section className="philosophy-section" id="functional-verbs" aria-labelledby="functional-verbs-heading">
+          <h2 id="functional-verbs-heading">6. Student Summary Checklist: Functional Verb Endings (क्रियापद-निर्देशाः)</h2>
+          <p>
+            When reading any question line during the exam, train yourself to instantly spot the functional imperative verb ending.
+            These command verbs dictate exactly what task you must perform:
+          </p>
+
+          <div className="cbse-verb-grid">
+            {FUNCTIONAL_VERBS_CHECKLIST.map((item) => (
+              <div key={item.verb} className="cbse-verb-card">
+                <div className="cbse-verb-sanskrit" lang="sa">
+                  <span>{item.verb}</span>
+                  <button
+                    type="button"
+                    className="cbse-audio-btn"
+                    onClick={() => playPronunciation(item.verb.split(' / ')[0])}
+                    title={`Listen to '${item.verb}'`}
+                    aria-label={`Listen to ${item.verb}`}
+                  >
+                    🔊
+                  </button>
+                </div>
+                <div className="cbse-verb-meaning">{item.meaning}</div>
+                <div className="cbse-verb-action">{item.action}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ------------------------------------------------------------------
+            7. Picture Description Sheet (चित्रवर्णनम् — 5-Sentence Formula)
+            ------------------------------------------------------------------ */}
+        <section className="philosophy-section" id="chitra-varnanam" aria-labelledby="chitra-varnanam-heading">
+          <h2 id="chitra-varnanam-heading">7. Picture Description Sheet (चित्रवर्णनम् — 5-Sentence Formula Sheet)</h2>
+          <p>
+            Picture description (चित्रवर्णनम्) in Section B awards an easy 5 out of 5 marks when approached systematically.
+            Never write complicated prose; instead, follow Bodhi&apos;s formulaic 5-sentence architecture using tokens directly from the helper box (मञ्जूषा):
+          </p>
+
+          <div className="cbse-chitra-sheet">
+            <div className="cbse-chitra-header">
+              <h3 className="cbse-chitra-title" lang="sa">
+                चित्रवर्णन-पञ्चवाक्य-सूत्रम् · 5-Sentence Scoring Formula
+              </h3>
+              <span className="cbse-chitra-badge">Section B · 5 Marks</span>
+            </div>
+
+            <div className="cbse-chitra-steps-grid">
+              {CHITRA_VARNANAM_STEPS.map((step) => (
+                <div key={step.step} className="cbse-chitra-step-card">
+                  <span className="cbse-chitra-step-num">{step.step}</span>
+                  <strong style={{ fontSize: '0.9rem', color: '#1f2937' }}>{step.title}</strong>
+                  <p className="cbse-chitra-step-formula" lang="sa">
+                    {step.formula}
+                    <button
+                      type="button"
+                      className="cbse-audio-btn"
+                      onClick={() => playPronunciation(step.audioText)}
+                      title="Listen to example sentence"
+                      aria-label={`Listen to ${step.title}`}
+                    >
+                      🔊
+                    </button>
+                  </p>
+                  <p className="cbse-chitra-step-example">
+                    {step.example}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="cbse-chitra-manjusha-box">
+              <div className="cbse-manjusha-title">
+                📋 Typical Mañjūṣā (Helper Box) Word Bank
+              </div>
+              <div className="cbse-manjusha-tags">
+                <span className="cbse-manjusha-tag">वाटिका (Garden)</span>
+                <span className="cbse-manjusha-tag">वृक्षाः (Trees)</span>
+                <span className="cbse-manjusha-tag">बालकाः (Boys)</span>
+                <span className="cbse-manjusha-tag">क्रीडन्ति (Are playing)</span>
+                <span className="cbse-manjusha-tag">पुष्पाणि (Flowers)</span>
+                <span className="cbse-manjusha-tag">विकसन्ति (Blossom)</span>
+                <span className="cbse-manjusha-tag">खगाः (Birds)</span>
+                <span className="cbse-manjusha-tag">रमणीयम् (Pleasing)</span>
+                <span className="cbse-manjusha-tag">प्रसन्नाः (Joyful)</span>
+              </div>
+            </div>
+
+            <div className="cbse-chitra-rules-box">
+              <strong>⚠️ Essential Board Exam Scoring Rules for चित्रवर्णनम्:</strong>
+              <ul style={{ margin: '0.4rem 0 0', paddingLeft: '1.2rem', lineHeight: '1.5' }}>
+                <li><strong>Always rewrite complete sentences:</strong> Never write bare words or fragmented phrases on the answer booklet.</li>
+                <li><strong>Singular vs Plural Concord:</strong> Double-check that your verb matches whether the subject is singular (<span lang="sa">अस्ति / क्रीडति</span>) or plural (<span lang="sa">सन्ति / क्रीडन्ति</span>).</li>
+                <li><strong>Stick to the Mañjūṣā:</strong> Do not invent unfamiliar vocabulary. Selecting 1–2 words per sentence from the provided box guarantees full spelling and grammatical marks.</li>
+              </ul>
+            </div>
           </div>
         </section>
 

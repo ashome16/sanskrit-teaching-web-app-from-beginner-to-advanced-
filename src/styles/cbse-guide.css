@@ -511,3 +511,266 @@
   color: #92400e;
 }
 
+/* Quick Jump Navigation Pills */
+.cbse-guide-quicknav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.5rem;
+  padding: 0.65rem 0.8rem;
+  background: #fdfaf5;
+  border: 1px solid #ebdcc5;
+  border-radius: 12px;
+}
+
+.cbse-quicknav-btn {
+  background: #fff;
+  border: 1px solid #d4c2a9;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #78350f;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.cbse-quicknav-btn:hover {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  transform: translateY(-1px);
+}
+
+/* Section-by-Section Phrasing Cards */
+.cbse-section-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.cbse-section-phrase-card {
+  background: #fffdf9;
+  border: 1px solid #ebdcc5;
+  border-radius: 14px;
+  padding: 1.15rem;
+  box-shadow: 0 2px 8px rgba(120, 53, 15, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cbse-section-phrase-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(120, 53, 15, 0.08);
+}
+
+.cbse-section-phrase-title {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #9a3423;
+  line-height: 1.4;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cbse-section-phrase-meaning {
+  font-size: 0.92rem;
+  color: #374151;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.cbse-section-phrase-tip {
+  background: #fffbeb;
+  border-left: 3px solid #f59e0b;
+  padding: 0.45rem 0.65rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.82rem;
+  color: #78350f;
+  line-height: 1.45;
+  margin-top: 0.2rem;
+}
+
+/* Verb Endings Checklist */
+.cbse-verb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.cbse-verb-card {
+  background: #fdfaf5;
+  border: 1.5px solid #ebdcc5;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cbse-verb-card:hover {
+  transform: translateY(-2px);
+  border-color: #d97706;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.1);
+}
+
+.cbse-verb-sanskrit {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #9a3423;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cbse-verb-meaning {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.cbse-verb-action {
+  font-size: 0.8rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* Picture Description Sheet (चित्रवर्णनम्) */
+.cbse-chitra-sheet {
+  background: linear-gradient(135deg, #fffdf8 0%, #fffbeb 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 18px;
+  padding: 1.4rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.08);
+}
+
+.cbse-chitra-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  border-bottom: 1px dashed #fcd34d;
+  padding-bottom: 0.75rem;
+}
+
+.cbse-chitra-title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #78350f;
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-weight: 800;
+}
+
+.cbse-chitra-badge {
+  background: #d97706;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.cbse-chitra-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.9rem;
+  margin: 1rem 0;
+}
+
+.cbse-chitra-step-card {
+  background: #fff;
+  border: 1px solid #ebdcc5;
+  border-radius: 12px;
+  padding: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cbse-chitra-step-num {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #b45309;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cbse-chitra-step-formula {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-weight: 700;
+  font-size: 0.96rem;
+  color: #9a3423;
+  background: #fdfaf5;
+  padding: 0.35rem 0.55rem;
+  border-radius: 6px;
+  border-left: 3px solid #d97706;
+  margin: 0;
+}
+
+.cbse-chitra-step-example {
+  font-size: 0.82rem;
+  color: #4b5563;
+  line-height: 1.45;
+  font-style: italic;
+  margin: 0;
+}
+
+.cbse-chitra-manjusha-box {
+  background: #fdf6ec;
+  border: 1.5px dashed #d97706;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.cbse-manjusha-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #92400e;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.cbse-manjusha-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.cbse-manjusha-tag {
+  background: #fff;
+  border: 1px solid #fcd34d;
+  color: #78350f;
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+}
+
+.cbse-chitra-rules-box {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.84rem;
+  color: #991b1b;
+  line-height: 1.55;
+}
+
+
