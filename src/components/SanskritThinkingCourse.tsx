@@ -692,7 +692,9 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                       window.scrollTo({ top: 380, behavior: 'smooth' });
                     }}
                   >
-                    <div className="stc-addendum-part-tag">Part {art.partNumber} · {art.readingTimeMinutes} min</div>
+                    <div className="stc-addendum-part-tag">
+                      {art.partNumber === 0 ? 'Prologue' : `Part ${art.partNumber}`} · {art.readingTimeMinutes} min
+                    </div>
                     <div className="stc-addendum-nav-title">{art.titleEnglish}</div>
                   </button>
                 ))}
@@ -719,7 +721,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                 <div className="stc-addendum-meta-row">
                   <span>⏱️ {currentAddendum.readingTimeMinutes} min deep read</span>
                   <span>•</span>
-                  <span>Part {currentAddendum.partNumber} of 4</span>
+                  <span>{currentAddendum.partNumber === 0 ? 'Prologue · The Study Covenant' : `Part ${currentAddendum.partNumber} of 4`}</span>
                   <span>•</span>
                   <span>Self-Discovery &amp; Universal Phenomenon</span>
                 </div>
@@ -813,7 +815,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                     }
                   }}
                 >
-                  ← Previous {prevAddendum ? `(Part ${prevAddendum.partNumber})` : ''}
+                  ← Previous {prevAddendum ? (prevAddendum.partNumber === 0 ? '(Prologue)' : `(Part ${prevAddendum.partNumber})`) : ''}
                 </button>
 
                 <button
@@ -835,7 +837,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                     }
                   }}
                 >
-                  Next {nextAddendum ? `(Part ${nextAddendum.partNumber})` : ''} →
+                  Next {nextAddendum ? (nextAddendum.partNumber === 0 ? '(Prologue)' : `(Part ${nextAddendum.partNumber})`) : ''} →
                 </button>
               </div>
             </main>

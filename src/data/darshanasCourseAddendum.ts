@@ -50,6 +50,126 @@ export interface DarshanaAddendumArticle {
 
 export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
   // ==========================================
+  // PROLOGUE: THE TWO PREMISES & SAHA NĀV AVATU
+  // ==========================================
+  {
+    id: 'addendum-prologue-saha-nav-avatu',
+    partNumber: 0,
+    slug: 'two-premises-and-the-study-bond-saha-nav-avatu',
+    titleDevanagari: 'आमुखम् — विद्या-सम्बन्धः (सह नाववतु)',
+    titleEnglish: 'The Two Premises & The Study-Bond: Saha Nāv Avatu',
+    subtitle: 'Knowledge without Duty is Dangerous · The Dual Verb that Refuses the Solo User',
+    readingTimeMinutes: 7,
+    kicker: 'Course Addendum · Foundational Prologue · The Living Covenant',
+    summary:
+      'Knowledge that is only stored, quoted, or generated is still anyone’s individual content. It has no adhikāra. Speech without obligation is how a mantra becomes chatter and a verse becomes a weapon. Sanskrit refuses the solo user before a single lesson starts: Saha Nāv Avatu demands a living bind where knowledge is food, not cargo, and study is finished only when it participates in cosmic existence.',
+    sections: [
+      {
+        heading: 'Premise 1 — Knowledge without purpose and duty is not only useless. It can be harmful.',
+        subheading: 'Why Stored or Generated Information Lacks Adhikāra',
+        paragraphs: [
+          'Knowledge that is only stored, quoted, or generated is still anyone’s individual content. It has no adhikāra.',
+          'Then it can:',
+          '• be repeated without care',
+          '• be displayed as display',
+          '• be turned into a slogan',
+          '• be used as fluent error (a model that sounds sure)',
+          'Speech without obligation is how a mantra becomes chatter and a verse becomes a weapon.',
+          'Understanding is not more information. It is knowing what the knowledge is for, and answering for how it is used.',
+          'This is the same hinge as the article: transfer without bind; syllables without duty; AI as recipient–processor–exporter with no life staked on the meaning.',
+        ],
+        callout: {
+          title: 'The Danger of Fluent Error',
+          text: 'Speech without obligation is how a mantra becomes chatter and a verse becomes a weapon. Understanding is not more information; it is knowing what the knowledge is for, and answering for how it is used.',
+          type: 'philosophical',
+        },
+      },
+      {
+        heading: 'Premise 2 — Knowledge is not finished when it is scholarly.',
+        subheading: 'Pedantry vs. Standing Mindfully in Cosmic Existence',
+        paragraphs: [
+          'Pedantry can keep Sanskrit as a dataset and never enter it as a way of standing in the world.',
+          'The older aim was not only to be correct about a sūtra. It was to become a mindful part of cosmic existence:',
+          '• speech bound to breath',
+          '• thought bound to purpose',
+          '• the person bound to what the sound demands',
+          'Scholarship is a tool on that path. It is not the destination.',
+          'That is the ṛṣi’s inner seeing, the temple as tool, japa as experiment — not a footnote apparatus.',
+        ],
+        callout: {
+          title: 'Living Participation Over Footnotes',
+          text: 'The older aim was not only to be correct about a sūtra. It was to become a mindful part of cosmic existence: speech bound to breath, thought bound to purpose, and the person bound to what the sound demands.',
+          type: 'insight',
+        },
+      },
+      {
+        heading: 'How the Two Premises Lock to the Learning Journey',
+        subheading: 'Comparing Unanchored Information with Bound Practice',
+        paragraphs: [
+          'When we place these two premises against each layer of learning and technology, the difference between dead transfer and living transformation becomes unmistakable:',
+        ],
+        table: {
+          headers: ['Article Layer', 'Without the Premises', 'With the Premises'],
+          rows: [
+            ['AI / transfer', 'Fast, useful gloss', 'Dangerous if treated as enough'],
+            ['Bind / mouth', 'Presence', 'Presence still needs purpose'],
+            ['Guru', 'Living constraint', 'Confers duty, not extra data'],
+            ['Adhikāra', 'Eligibility jargon', 'Standing that makes knowledge answerable'],
+            ['Sanskrit study', 'Grammar + verses', 'Grammar in service of participation'],
+          ],
+        },
+      },
+      {
+        heading: 'Saha Nāv Avatu — The Study-Bond Said Aloud',
+        subheading: 'The Ancient Invocation Refusing the Solo User',
+        paragraphs: [
+          'The first word is saha — together. The grammar is dual throughout (nau, nāv, karavāvahai, vidviṣāvahai). The mantra refuses the solo user before a single lesson starts. That is already the opposite of anyone’s individual content.',
+        ],
+        sutras: [
+          {
+            sanskrit: 'ॐ सह नाववतु । सह नौ भुनक्तु । सह वीर्यं करवावहै । तेजस्वि नावधीतमस्तु मा विद्विषावहै । ॐ शान्तिः शान्तिः शान्तिः ॥',
+            transliteration: 'om saha nāv avatu | saha nau bhunaktu | saha vīryaṃ karavāvahai | tejasvi nāv adhītam astu mā vidviṣāvahai | om śāntiḥ śāntiḥ śāntiḥ',
+            meaning: 'Om. May that protect us both. May that nourish us both. May we work together with energy. May our study be brilliant. May we not quarrel. Om, peace, peace, peace.',
+            source: 'Taittirīya & Kaṭha Upaniṣad Śānti Mantra',
+          },
+        ],
+      },
+      {
+        heading: 'Deconstruction of the Invocatory Lines',
+        subheading: 'Line-by-Line Exegesis of the Study Covenant',
+        paragraphs: [
+          '• Saha nāv avatu — May that protect us both.\nThe “that” is not the app, not the dataset, not even the guru as a personality. It is the reality the study serves. Protection is not a firewall around private files. It is shelter for a bond. A download protects nothing. A bond can be protected.',
+          '• Saha nau bhunaktu — May that nourish us both.\nKnowledge here is food, not cargo. Cargo is transferred and forgotten. Food becomes the body. Guru and student are both fed by the same study; neither is a vending machine. If only one is nourished, the mantra has already failed.',
+          '• Saha vīryaṃ karavāvahai — May we two work with energy.\nVīrya is not screen-time. It is shared heat: the student parsing, the teacher holding the line still. AI can generate drills. It cannot enter karavāvahai — a dual verb, we two shall do. Effort that is not shared is still anyone’s individual content, however hard one works alone.',
+          '• Tejasvi nāv adhītam astu — May what we have studied be brilliant in us.\nTejas is not a high score. Pedantry can be correct and dark. This line asks that study shine as living clarity — knowledge finished only when it participates, not when it is footnoted.',
+          '• Mā vidviṣāvahai — May we not quarrel; may we not hate.\nThis is the first premise spoken as a vow. Knowledge without purpose and duty turns easily to contempt: teacher against student, school against school, fluent model against humble speaker. The mantra forbids that turn before the lesson begins. Harm is anticipated and refused.',
+          '• Om śāntiḥ śāntiḥ śāntiḥ — Peace three times.\nIn the body that speaks. Between the two who study. In the world that must receive what they send. The field must stay clear or the bind collapses into noise. Temple, mantra, guru — all are ways of keeping that field from becoming an echo chamber of the ego.',
+        ],
+      },
+      {
+        heading: 'The Guru–Śiṣya Bond and Adhikāra in the Age of AI',
+        subheading: 'Why a Model Cannot Stand Inside Saha',
+        paragraphs: [
+          'A model can print this in a second. It cannot stand inside saha. It has no dual. It cannot be protected with you, fed with you, heated with you, or refuse hatred with you.',
+          'That is the guru–śiṣya bond, and that is adhikāra begun aloud: purpose and duty spoken before content, so speech does not start as a private file and does not end as quarrel.',
+        ],
+        callout: {
+          title: 'The Inescapable Dual',
+          text: '“A language model has no dual. It cannot stand inside saha. It cannot enter karavāvahai—we two shall do. That is the guru–śiṣya bond: purpose and duty spoken before content, so speech does not start as a private file and does not end as quarrel.”',
+          type: 'cosmological',
+        },
+      },
+    ],
+    keyTakeaways: [
+      'Knowledge without purpose and duty is not only useless; it can be harmful (fluent error, slogans, contempt).',
+      'Knowledge is not finished when it is scholarly; pedantry is not destination—living participation is.',
+      'Saha Nāv Avatu employs grammatical dual forms throughout, refusing the solo user before the first lesson begins.',
+      'Adhikāra is not bureaucratic eligibility; it is the standing that makes knowledge answerable and alive.',
+      'A machine model has no dual—it cannot be fed with you, heated with you, or take vows with you. Purpose and duty must precede content.',
+    ],
+  },
+
+  // ==========================================
   // PART 1: THE SHAD DARSHANAS
   // ==========================================
   {
