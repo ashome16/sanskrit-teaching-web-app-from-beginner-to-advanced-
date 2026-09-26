@@ -966,10 +966,13 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   वनस्पतयः शान्तिर्विश्वे देवाः शान्तिर्ब्रह्म शान्तिः सर्वं शान्तिः शान्तिरेव शान्तिः सा मा शान्तिरेधि ॥<br />
                   ॐ शान्तिः शान्तिः शान्तिः ॥
                 </div>
-                <div className="philosophy-cosmic-english">
-                  “May there be peace in the celestial spheres. May there be peace in the intermediate space. May there be peace upon the Earth. May there be peace in the waters, peace in the medicinal herbs, peace in the majestic forest trees. May there be peace in all enlightened beings. May peace reside in Brahman. May peace envelop the entire cosmos. May peace itself be peace. May that very peace awaken within me. Om Peace, Peace, Peace.”
+                <div className="philosophy-cosmic-english" style={{ fontSize: '1.08rem', fontWeight: 700, color: '#f8fafc', marginBottom: '0.65rem' }}>
+                  “Peace in heaven, mid-space, earth, waters, herbs, trees, the gods, Brahman, everything — may that peace be mine.”
                 </div>
-                <div style={{ textAlign: 'center', marginTop: '0.85rem' }}>
+                <p style={{ margin: '0.5rem auto 0', maxWidth: '640px', fontSize: '0.88rem', color: '#94a3b8', lineHeight: 1.5, textAlign: 'center', fontStyle: 'italic' }}>
+                  Notice the sacred sequence: peace does not begin with the ego. It descends from the celestial (dyauḥ) through atmospheric sky (antarikṣam), anchors in the soil (pṛthivī), saturates waters (āpaḥ), medicinal plants (oṣadhayaḥ), and forest trees (vanaspatayaḥ), spans the cosmic intelligences (viśvedevāḥ) and the ultimate source (brahman). Only when all existence is held in balance does the disciple whisper: <strong>sā mā śāntir edhi</strong> — may that peace enter into me. Individual peace cannot exist in isolation; it is the natural consequence of cosmic alignment.
+                </p>
+                <div style={{ textAlign: 'center', marginTop: '1rem' }}>
                   <AudioChip term="द्यौः शान्तिरन्तरिक्षं शान्तिः" label="🔊 Listen to Universal Cosmic Peace" />
                 </div>
               </div>
