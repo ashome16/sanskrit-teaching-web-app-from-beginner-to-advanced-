@@ -561,7 +561,7 @@ export const COURSE_MODULES: CourseModule[] = [
     themeColor: '#b45309',
     icon: '✍️',
     overview:
-      'Learn how Devanāgarī functions not as an alphabet, but as an abugida where pure consonants, vowel modifiers (mātrās), and interlocking conjuncts visually represent vocal tract dynamics.',
+      'Learn how Devanāgarī functions not as an arbitrary alphabet, but as an abugida where pure consonants, vowel modifiers (mātrās), and interlocking conjuncts visually represent vocal tract dynamics with 100% phonetic fidelity.',
     lessons: [
       {
         id: 'c-2-1',
@@ -573,27 +573,46 @@ export const COURSE_MODULES: CourseModule[] = [
           heading: '100% Phonetic Transparency',
           summary: 'In English, "gh" can sound like "f" (enough) or be silent (through). In Devanāgarī, ambiguity is impossible. Every visual glyph produces exactly one acoustic vibration.',
           body: [
-            'Devanāgarī is written under a top horizontal hanging line called the Śirorekhā (शिरोरेखा).',
-            'We use IAST (International Alphabet of Sanskrit Transliteration) as training wheels with macrons (ā) and underdots (ṭ, ḍ, ṣ) so your tongue stays accurate while reading Latin letters.'
+            'Devanāgarī (literally "the script of the city of the gods") evolved through the ancient Brāhmī script as a direct visual spectrogram of human acoustic resonance.',
+            'Each glyph is suspended under a continuous top horizontal hanging line called the Śirorekhā (शिरोरेखा), which visually groups letters into single breath-syllables (akṣaras).',
+            'We use IAST (International Alphabet of Sanskrit Transliteration) as training wheels with macrons (ā, ī, ū) and underdots (ṭ, ḍ, ṇ, ṣ) so your tongue stays anatomically precise while reading Latin letters.'
           ],
-          keyTakeaway: 'Devanāgarī is a visual spectrogram of sound. You never have to ask "how do you spell this word?"'
+          keyTakeaway: 'Devanāgarī is a visual spectrogram of sound. You never have to ask "how do you spell this word?" — the sound dictating the script is absolute.'
         },
         soundPractice: {
           audioTerms: [
-            { devanagari: 'ज्ञानम्', iast: 'jñānam', meaning: 'Knowledge / Cognition' },
-            { devanagari: 'सत्यम्', iast: 'satyam', meaning: 'Truth / Unbroken reality' },
-            { devanagari: 'धर्मः', iast: 'dharmaḥ', meaning: 'Righteous cosmic order' }
+            { devanagari: 'ज्ञानम्', iast: 'jñānam', meaning: 'Knowledge / Cognition / Direct insight' },
+            { devanagari: 'सत्यम्', iast: 'satyam', meaning: 'Truth / Unbroken ontological reality' },
+            { devanagari: 'धर्मः', iast: 'dharmaḥ', meaning: 'Righteous cosmic order and duty' },
+            { devanagari: 'अक्षरम्', iast: 'akṣaram', meaning: 'Imperishable sound / Syllable' }
           ],
-          phoneticInstructions: 'Pronounce each letter while observing the IAST diacritic: a dot under ṭ or ḍ means curl the tongue up; a bar above ā or ī means double the duration.',
-          recitationTips: 'Never skip the top line (Śirorekhā) when handwriting Devanāgarī — it unifies the syllable.'
+          phoneticInstructions: 'Pronounce each letter while observing the IAST diacritic: a dot under ṭ or ḍ means curl the tongue up to strike the dome; a bar above ā or ī means double the duration.',
+          recitationTips: 'Never skip the top line (Śirorekhā) when handwriting Devanāgarī — it unifies the syllable into a single acoustic packet.'
         },
         ruleMechanics: {
-          title: 'The Inherent Vowel Principle',
+          title: 'The Inherent Vowel Principle & Diacritic Map',
           explanation: [
-            'Every bare consonant glyph in Devanāgarī contains an inherent "a" vowel.',
-            'To strip away the vowel and leave only pure consonant silence, add a diagonal slash underneath called a Halanta (ह्लन्त / ्).'
+            'Every bare consonant glyph in Devanāgarī contains an inherent short "a" vowel (अ).',
+            'To strip away the vowel and leave only pure consonant silence, add a diagonal slash underneath called a Halanta (ह्लन्त / ्).',
+            'IAST diacritics maintain a 1:1 bijective correspondence with Devanāgarī phonemes.'
           ],
-          formula: 'क् (Pure silent K) + अ (Inherent breath) = क (Audible Ka)'
+          formula: 'क् (Pure silent stop K) + अ (Inherent breath a) = क (Audible Ka)',
+          tableData: {
+            headers: ['Devanāgarī Glyph', 'IAST Diacritic', 'Articulation Landmark', 'Acoustic / Durational Value', 'Example Word'],
+            rows: [
+              ['अ / आ', 'a / ā', 'Kaṇṭha (Throat velar)', 'Short (1 mātrā) vs Long (2 mātrās)', 'अमृतम् (Amṛtam) / आकाशः (Ākāśaḥ)'],
+              ['इ / ई', 'i / ī', 'Tālu (Palate)', 'Short front close vs Long front close', 'इच्छा (Icchā) / ईश्वरः (Īśvaraḥ)'],
+              ['उ / ऊ', 'u / ū', 'Oṣṭha (Lips rounded)', 'Short labial vs Long labial', 'उपनिषद् (Upaniṣad) / ऊर्जा (Ūrjā)'],
+              ['ऋ / ॠ', 'ṛ / ṝ', 'Mūrdhan (Dome roof)', 'Vocalic retroflex consonant-vowel', 'ऋषिः (Ṛṣiḥ) / पितॄणाम् (Pitṝṇām)'],
+              ['ट / त', 'ṭa / ta', 'Mūrdhan vs Danta', 'Retroflex (underdot) vs Dental (plain)', 'टीका (Ṭīkā) / तर्कः (Tarkaḥ)'],
+              ['श / ष / स', 'śa / ṣa / sa', 'Tālu / Mūrdhan / Danta', 'Palatal (ś) vs Retroflex (ṣ) vs Dental (s)', 'शान्तिः (Śāntiḥ) / भाषा (Bhāṣā) / सत्यम् (Satyam)']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'नाम्नां धातुजत्वं शाकटायनश्च',
+            iast: 'nāmnāṁ dhātujatvaṁ śākaṭāyanaś ca',
+            meaning: 'All nominal forms originate from roots of action; every glyph reflects precise phonetic reality.'
+          }
         },
         practice: {
           quickQuiz: {
@@ -634,9 +653,10 @@ export const COURSE_MODULES: CourseModule[] = [
           summary: 'When a vowel attaches to a consonant, it sheds its standalone shape and turns into an elegant modifier flag called a Mātrā.',
           body: [
             'A pure consonant is motionless like a parked car. The vowel Mātrā is the engine ignition.',
-            'Barakhadi (बारहखड़ी) is the complete 12+ vowel scale practiced for every single consonant from क to ह.'
+            'Barakhadi (बारहखड़ी) is the complete 12+ vowel scale practiced for every single consonant from क to ह.',
+            'Mastering the 13 Mātrā attachments unlocks instant reading fluency for thousands of words.'
           ],
-          keyTakeaway: 'Mastering the 13 Mātrā attachments unlocks instant reading fluency for thousands of words.'
+          keyTakeaway: 'Consonants provide the structural skeleton; vowel mātrās are the prāṇa (breath) that brings speech alive.'
         },
         soundPractice: {
           audioTerms: [
@@ -649,21 +669,29 @@ export const COURSE_MODULES: CourseModule[] = [
           recitationTips: 'Keep short vowels snappy and long vowels smooth and melodic.'
         },
         ruleMechanics: {
-          title: 'The Mātrā Modifier Inventory',
+          title: 'The Mātrā Modifier Inventory & Rules of Duration',
           explanation: [
             'का (ा) = +ā, कि (ि) = +i, की (ी) = +ī, कु (ु) = +u, कू (ू) = +ū',
             'कृ (ृ) = +ṛ, के (े) = +e, कै (ै) = +ai, को (ो) = +o, कौ (ौ) = +au',
-            'कं (ं) = +ṁ (Anusvāra), कः (ः) = +ḥ (Visarga)'
+            'कं (ं) = +ṁ (Anusvāra nasalization), कः (ः) = +ḥ (Visarga aspirate release)'
           ],
           tableData: {
-            headers: ['Consonant', 'Vowel', 'Mātrā Sign', 'Result', 'Example Word'],
+            headers: ['Consonant', 'Vowel', 'Mātrā Sign', 'Resulting Akṣara', 'Example Word', 'Mātrā Duration'],
             rows: [
-              ['क्', 'आ', 'ा', 'का', 'कालः (Time)'],
-              ['क्', 'इ', 'ि', 'कि', 'किम् (What)'],
-              ['क्', 'ई', 'ी', 'की', 'कीर्तिः (Glory)'],
-              ['क्', 'उ', 'ु', 'कु', 'कुशलः (Skilled)'],
-              ['क्', 'ऋ', 'ृ', 'कृ', 'कृष्णः (Krishna)']
+              ['क्', 'आ', 'ा', 'का', 'कालः (Time)', '2 Mātrās (Dīrgha)'],
+              ['क्', 'इ', 'ि', 'कि', 'किम् (What)', '1 Mātrā (Hrasva)'],
+              ['क्', 'ई', 'ी', 'की', 'कीर्तिः (Glory)', '2 Mātrās (Dīrgha)'],
+              ['क्', 'उ', 'ु', 'कु', 'कुशलः (Skilled)', '1 Mātrā (Hrasva)'],
+              ['क्', 'ऊ', 'ू', 'कू', 'कूपः (Well)', '2 Mātrās (Dīrgha)'],
+              ['क्', 'ऋ', 'ृ', 'कृ', 'कृष्णः (Krishna)', '1 Mātrā (Vocalic)'],
+              ['क्', 'ए', 'े', 'के', 'केवलम् (Alone / Pure)', '2 Mātrās (Guṇa)'],
+              ['क्', 'ऐ', 'ै', 'कै', 'कैलासः (Kailash)', '2 Mātrās (Vṛddhi)']
             ]
+          },
+          sutraReference: {
+            devanagari: 'ऊकालोऽज्झ्रस्वदीर्घप्लुतः',
+            iast: "ūkālo'j-jhrasva-dīrgha-plutaḥ (Pāṇini 1.2.27)",
+            meaning: 'A vowel having the duration of short u, long ū, or prolated u3 is designated as Hrasva, Dīrgha, or Pluta respectively.'
           }
         },
         practice: {
@@ -705,27 +733,47 @@ export const COURSE_MODULES: CourseModule[] = [
           summary: 'In English, "str" is written as three separate letters side-by-side. In Sanskrit, when consonants collide without a vowel between them, they merge into a single sculpted conjunct (संयुक्ताक्षर).',
           body: [
             'Standard conjuncts remove the vertical stem (अर्ध-वर्ण): e.g. न् + य = न्य (as in धन्य).',
-            'Major irregular ligatures: क् + ष = क्ष (kṣa), त् + र = त्र (tra), ज् + ञ = ज्ञ (jña), श् + र = श्र (śra).'
+            'Major irregular ligatures: क् + ष = क्ष (kṣa), त् + र = त्र (tra), ज् + ञ = ज्ञ (jña), श् + र = श्र (śra).',
+            'Conjuncts are not confusing puzzles; they are visual representations of physical acoustic speed and vocal fluidity.'
           ],
-          keyTakeaway: 'Conjuncts are not confusing puzzles; they are visual representations of physical acoustic speed.'
+          keyTakeaway: 'A conjunct is pure physical cohesion: two or more articulators striking in immediate succession before the vowel arrives.'
         },
         soundPractice: {
           audioTerms: [
-            { devanagari: 'विद्या', iast: 'vidyā', meaning: 'द् + य = द्य (Wisdom)' },
-            { devanagari: 'ज्ञानम्', iast: 'jñānam', meaning: 'ज् + ञ = ज्ञ (Gnosis / Knowledge)' },
-            { devanagari: 'ईश्वरः', iast: 'īśvaraḥ', meaning: 'श् + व = श्व (Supreme Ruler)' },
-            { devanagari: 'मित्रम्', iast: 'mitram', meaning: 'त् + र = त्र (Friend)' }
+            { devanagari: 'विद्या', iast: 'vidyā', meaning: 'द् + य = द्य (Wisdom / Gnosis)' },
+            { devanagari: 'ज्ञानम्', iast: 'jñānam', meaning: 'ज् + ञ = ज्ञ (Knowledge / Direct cognition)' },
+            { devanagari: 'ईश्वरः', iast: 'īśvaraḥ', meaning: 'श् + व = श्व (Supreme Ruler / Divinity)' },
+            { devanagari: 'मित्रम्', iast: 'mitram', meaning: 'त् + र = त्र (Friend / Ally)' }
           ],
           phoneticInstructions: 'Pronounce "द्" and "य" without inserting a tiny "uh" sound between them. Let your tongue immediately touch the palate for "y" before releasing "d"!',
           recitationTips: 'Keep conjunct consonants crisp and percussive.'
         },
         ruleMechanics: {
-          title: 'The Rules of Conjunct Formation',
+          title: 'The Rules of Conjunct Formation & Ligature Typologies',
           explanation: [
             'Rule 1 (Stem Drop): Consonants with vertical stems (like त, प, स) drop their stem: त् + व = त्व.',
             'Rule 2 (Repha र्): When र् comes first, it flies above the next letter like a sickle (सूर्य = सू + र् + य).',
             'Rule 3 (Rā-Kāra): When र comes second, it sits as a slash under the first letter (प्रकाश = प् + र + का + श).'
-          ]
+          ],
+          formula: 'C₁ (Halanta) + C₂ = C₁C₂ (Ligature Glyph)',
+          tableData: {
+            headers: ['Conjunct Type', 'Constituent Phonemes', 'Ligature Glyph', 'Iconic Word', 'Phonetic Secret'],
+            rows: [
+              ['Stem Drop (अर्ध-वर्ण)', 'न् + य', 'न्य', 'धन्यः (Dhanyaḥ)', 'Vertical stem disappears; second letter carries vowel'],
+              ['Preceding Ra (Repha)', 'र् + य', 'र्य', 'सूर्यः (Sūryaḥ)', 'Ra floats to the top right of next consonant roof'],
+              ['Following Ra (Rā-kāra)', 'प् + र', 'प्र', 'प्रकाशः (Prakāśaḥ)', 'Ra anchors as a diagonal slash under the vertical stem'],
+              ['Compound Ligature 1', 'क् + ष', 'क्ष', 'मोक्षः (Mokṣaḥ)', 'Throat velar merges directly into dome retroflex'],
+              ['Compound Ligature 2', 'त् + र', 'त्र', 'मित्रम् (Mitram)', 'Dental stop meets retroflex liquid glide'],
+              ['Compound Ligature 3', 'ज् + ञ', 'ज्ञ', 'ज्ञानम् (Jñānam)', 'Palatal stop fuses into palatal nasal'],
+              ['Compound Ligature 4', 'श् + र', 'श्र', 'श्रीः (Śrīḥ)', 'Palatal sibilant blends into liquid roll'],
+              ['Vertical Stack', 'द् + ध', 'द्ध', 'बुद्धः (Buddhaḥ)', 'First consonant sits directly atop the second']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'हलोऽनन्तराः संयोगः',
+            iast: "halo'nantarāḥ saṁyogaḥ (Pāṇini 1.1.7)",
+            meaning: 'Consonants occurring in uninterrupted sequence without intervening vowels constitute a Saṁyoga (conjunct ligature).'
+          }
         },
         practice: {
           quickQuiz: {
@@ -766,26 +814,42 @@ export const COURSE_MODULES: CourseModule[] = [
           summary: 'Reading Sanskrit with the eyes alone is like looking at sheet music without playing the instrument. The magic happens only when vocal cords vibrate.',
           body: [
             'In this lesson, we synthesize the places of articulation, vowel mātrās, and conjuncts to read foundational Gurukul words.',
-            'Listen to Bodhi speak the word, then pause and repeat aloud with your full chest voice.'
+            'Listen to Bodhi speak the word, then pause and repeat aloud with your full chest voice.',
+            'Meeting speech with the mouth is how sound transforms from digital data into living realization.'
           ],
-          keyTakeaway: 'Meeting speech with the mouth is how sound transforms from digital data into living realization.'
+          keyTakeaway: 'Reading aloud in Sanskrit bridges perception and action, calming the autonomic nervous system through calibrated breath.'
         },
         soundPractice: {
           audioTerms: [
-            { devanagari: 'नमस्ते', iast: 'Namaste', meaning: 'Salutations to the divine in you' },
+            { devanagari: 'नमस्ते', iast: 'Namaste', meaning: 'Salutations to the divine spark in you' },
             { devanagari: 'सुप्रभातम्', iast: 'Suprabhātam', meaning: 'Good morning / Auspicious dawn' },
-            { devanagari: 'शान्तिः', iast: 'Śāntiḥ', meaning: 'Unshakeable peace' },
-            { devanagari: 'आनन्दः', iast: 'Ānandaḥ', meaning: 'Boundless spiritual joy' }
+            { devanagari: 'शान्तिः', iast: 'Śāntiḥ', meaning: 'Unshakeable threefold peace' },
+            { devanagari: 'आनन्दः', iast: 'Ānandaḥ', meaning: 'Boundless spiritual joy / Bliss' }
           ],
           phoneticInstructions: 'Pronounce each word in clear syllables: Na-ma-ste; Su-pra-bhā-tam; Śān-tiḥ; Ā-nan-daḥ.',
           recitationTips: 'Hold your spine upright and relax your jaw so the sound resonates without strain.'
         },
         ruleMechanics: {
-          title: 'Syllabic Parsing (Varṇa-Viccheda)',
+          title: 'Syllabic Parsing (Varṇa-Viccheda) & Word Constitution',
           explanation: [
             'To read any long Sanskrit word effortlessly, break it down into its constituent phonemes (वर्ण-विच्छेद):',
-            'नमस्ते = न् + अ + म् + अ + स् + त् + ए'
-          ]
+            'नमस्ते = न् + अ + म् + अ + स् + त् + ए (4 syllables, 4 mātrās)'
+          ],
+          tableData: {
+            headers: ['Sanskrit Word', 'Varṇa-Viccheda (वर्ण-विच्छेद)', 'Mātrā Breakdown', 'IAST', 'Semantic Realization'],
+            rows: [
+              ['नमस्ते', 'न् + अ + म् + अ + स् + त् + ए', '1 + 1 + 2 = 4 mātrās', 'namaste', 'Reverence to the divine spark within you'],
+              ['शान्तिः', 'श् + आ + न् + त् + इ + ः', '2 + 1 + 1 = 4 mātrās', 'śāntiḥ', 'Settling of all three disturbances (tāpatraya)'],
+              ['विद्या', 'व् + इ + द् + य् + आ', '1 + 2 = 3 mātrās', 'vidyā', 'Luminescent realization from root √विद् (to know)'],
+              ['गुरुः', 'ग् + उ + र् + उ + ः', '1 + 1 = 2 mātrās', 'guruḥ', 'Dispeller of darkness; heavy with wisdom'],
+              ['आनन्दः', 'आ + न् + अ + न् + द् + अ + ः', '2 + 1 + 1 = 4 mātrās', 'ānandaḥ', 'Unconditional inner delight / bliss']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'सुप्तिङन्तं पदम्',
+            iast: 'suptiṅantaṁ padam (Pāṇini 1.4.14)',
+            meaning: 'That which ends in nominal declension suffixes (sup) or verbal conjugation suffixes (tiṅ) is a Pada (a valid complete word).'
+          }
         },
         practice: {
           quickQuiz: {
@@ -842,9 +906,9 @@ export const COURSE_MODULES: CourseModule[] = [
           heading: 'The Root as a Generative Genetic Seed',
           summary: 'In English, you use unrelated words: "to see", "vision", "spectacle", "ocular". In Sanskrit, every one of these ideas grows organically from the single root √दृश् (to see).',
           body: [
-            'Maharṣi Pāṇini cataloged approximately 2,000 verbal roots (धातवः).',
+            'Maharṣi Pāṇini cataloged approximately 2,000 verbal roots (धातवः) divided into 10 conjugation classes (Gaṇas).',
             'By attaching prefixes (उपसर्ग) and suffixes (प्रत्यय), a single root spawns hundreds of nouns, verbs, adjectives, and adverbs.',
-            'Example: From √कृ (to do) grows karma, kartā, karaṇa, kārya, and saṁskāra!'
+            'Example: From √कृ (to do) grows karma, kartā, karaṇa, kārya, and saṁskāra! The root is a generative DNA seed.'
           ],
           keyTakeaway: 'Sanskrit is an organic fractal tree grown from roots, not a dead dictionary of arbitrary tags.'
         },
@@ -864,6 +928,17 @@ export const COURSE_MODULES: CourseModule[] = [
             'Formula: Prefix (उपसर्ग) + Root (धातु) + Suffix (प्रत्यय) = Word (पदम्)',
             'Example: अनु (along) + √गम् (to go) + ति = अनुगच्छति (he follows)'
           ],
+          tableData: {
+            headers: ['Verbal Root (धातुः)', 'Core Meaning', 'Prefix (उपसर्ग)', 'Suffix (प्रत्यय)', 'Derived Sanskrit Term', 'English Concept'],
+            rows: [
+              ['√कृ (डूकृञ्)', 'To do, make, perform', 'सं (together/well)', '+ कार (घञ्)', 'संस्कारः (Saṁskāraḥ)', 'Psychological impression / refinement'],
+              ['√कृ (डूकृञ्)', 'To do, make, perform', 'None', '+ मन् (मनिन्)', 'कर्म (Karma)', 'Action, causality, and duty'],
+              ['√दृश् (दृशिँर्)', 'To see, perceive', 'None', '+ अन (ल्युट्)', 'दर्शनम् (Darśanam)', 'A way of seeing / philosophy'],
+              ['√ज्ञा (ज्ञा)', 'To know, realize', 'वि (distinct/deep)', '+ अन (ल्युट्)', 'विज्ञानम् (Vijñānam)', 'Empirical science / experiential wisdom'],
+              ['√मन् (मनँ)', 'To think, contemplate', 'None', '+ त्र (ष्ट्रन्)', 'मन्त्रः (Mantraḥ)', 'Instrument of focused thought / formula'],
+              ['√गम् (गम्ॢ)', 'To move, progress', 'अधि (toward)', '+ ति (लट्)', 'अधिगच्छति (Adhigacchati)', 'Attains mastery / acquires knowledge']
+            ]
+          },
           sutraReference: {
             devanagari: 'भूवादयो धातवः',
             iast: 'bhūvādayo dhātavaḥ (Pāṇini 1.3.1)',
@@ -931,12 +1006,17 @@ export const COURSE_MODULES: CourseModule[] = [
             'Uttama (1st person) = पठामि (I), पठावः (we two), पठामः (we all)'
           ],
           tableData: {
-            headers: ['Puruṣa (Person)', 'Ekavacanam (1)', 'Dvivacanam (2)', 'Bahuvacanam (3+)'],
+            headers: ['Puruṣa (Person)', 'Ekavacanam (Singular: 1)', 'Dvivacanam (Dual: 2)', 'Bahuvacanam (Plural: 3+)'],
             rows: [
-              ['प्रथमः (Third)', 'पठति', 'पठतः', 'पठन्ति'],
-              ['मध्यमः (Second)', 'पठसि', 'पठथः', 'पठथ'],
-              ['उत्तमः (First)', 'पठामि', 'पठावः', 'पठामः']
+              ['प्रथमः (Third Person)', 'पठति (paṭhati)', 'पठतः (paṭhataḥ)', 'पठन्ति (paṭhanti)'],
+              ['मध्यमः (Second Person)', 'पठसि (paṭhasi)', 'पठथः (paṭhathaḥ)', 'पठथ (paṭhatha)'],
+              ['उत्तमः (First Person)', 'पठामि (paṭhāmi)', 'पठावः (paṭhāvaḥ)', 'पठामः (paṭhāmaḥ)']
             ]
+          },
+          sutraReference: {
+            devanagari: 'वर्तमाने लट्',
+            iast: 'vartamāne laṭ (Pāṇini 3.2.123)',
+            meaning: 'The affix Laṭ (present tense) is introduced after a verbal root when signifying an action existing in the present time.'
           }
         },
         practice: {
@@ -978,7 +1058,8 @@ export const COURSE_MODULES: CourseModule[] = [
           summary: 'Sanskrit has three grammatical genders (Masculine पुंलिङ्ग, Feminine स्त्रीलिङ्ग, Neuter नपुंसकलिङ्ग) and three numbers: Singular, Dual, and Plural.',
           body: [
             'The Dual (द्विवचनम्): Most modern languages only have 1 or "more than 1". Sanskrit has a dedicated grammatical form for exactly TWO entities.',
-            'Nature is full of pairs: two eyes, two hands, day and night, sun and moon, teacher and student (गुरु-शिष्यौ).'
+            'Nature is full of pairs: two eyes, two hands, day and night, sun and moon, teacher and student (गुरु-शिष्यौ).',
+            'Adjectives must strictly agree with nouns in Gender, Number, and Case, establishing unbreakable syntactic coherence.'
           ],
           keyTakeaway: 'The dual number trains your mind to notice natural partnerships and complementary polarities.'
         },
@@ -992,13 +1073,27 @@ export const COURSE_MODULES: CourseModule[] = [
           recitationTips: 'Emphasize the diphthong "au" in the masculine dual "बालकौ".'
         },
         ruleMechanics: {
-          title: 'Adjective-Noun Agreement (Viśeṣaṇa-Viśeṣya)',
+          title: 'Gender-Number Declension Paradigms & Agreement',
           explanation: [
             'An adjective must match its noun in Gender, Number, and Case:',
             'सुन्दरः बालकः (Handsome boy - M)',
             'सुन्दरा बालिका (Beautiful girl - F)',
             'सुन्दरम् पुस्तकम् (Beautiful book - N)'
-          ]
+          ],
+          tableData: {
+            headers: ['Gender (लिङ्गम्)', 'Noun Stem (प्रातिपदिकम्)', 'Singular (एकवचनम्)', 'Dual (द्विवचनम्)', 'Plural (बहुवचनम्)', 'Meaning'],
+            rows: [
+              ['पुंलिङ्गम् (Masculine)', 'राम (a-kārānta)', 'रामः (Rāmaḥ)', 'रामौ (Rāmau)', 'रामाः (Rāmāḥ)', 'One Rama / Two Ramas / Many Ramas'],
+              ['स्त्रीलिङ्गम् (Feminine)', 'लता (ā-kārānta)', 'लता (Latā)', 'लते (Late)', 'लताः (Latāḥ)', 'One creeper / Two creepers / Many creepers'],
+              ['नपुंसकलिङ्गम् (Neuter)', 'फल (a-kārānta)', 'फलम् (Phalam)', 'फले (Phale)', 'फलानि (Phalāni)', 'One fruit / Two fruits / Many fruits'],
+              ['पुंलिङ्गम् (Consonant)', 'राजन् (n-anta)', 'राजा (Rājā)', 'राजानौ (Rājānau)', 'राजानः (Rājānaḥ)', 'One king / Two kings / Many kings']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'प्रातिपदिकार्थलिङ्गपरिमाणवचनमात्रे प्रथमा',
+            iast: 'prātipadikārtha-liṅga-parimāṇa-vacana-mātre prathamā (Pāṇini 2.3.46)',
+            meaning: 'The nominative first case (Prathamā) is employed to designate the mere nominal stem sense, gender, measure, or number.'
+          }
         },
         practice: {
           quickQuiz: {
@@ -1032,7 +1127,7 @@ export const COURSE_MODULES: CourseModule[] = [
         id: 'c-3-4',
         lessonNumber: '3.4',
         titleDevanagari: 'कारकाणि एवं सप्त-विभक्तयः',
-        titleEnglish: 'The Vibhaktis as a Sentence\'s "Roles" (Kārakas)',
+        titleEnglish: "The Vibhaktis as a Sentence's \"Roles\" (Kārakas)",
         shortDescription: 'Case endings declare role, giving Sanskrit freedom from rigid English word order.',
         ideaConcept: {
           heading: 'The 7 Vibhaktis: Syntax Held in Suffixes',
@@ -1071,6 +1166,11 @@ export const COURSE_MODULES: CourseModule[] = [
               ['७ सप्तमी', 'अधिकरण (Location)', 'Where / In what?', 'रामे प्रीतिः (Love in Rama)'],
               ['सम्बोधनम्', 'आह्वान (Address)', 'Calling someone', 'हे राम! (O Rama!)']
             ]
+          },
+          sutraReference: {
+            devanagari: 'कारके',
+            iast: 'kārake (Pāṇini 1.4.23)',
+            meaning: 'The following terms are governed under the sphere of Kāraka (direct relation between noun and action).'
           }
         },
         practice: {
@@ -1112,8 +1212,8 @@ export const COURSE_MODULES: CourseModule[] = [
           summary: 'When the end of one word touches the beginning of the next, your tongue naturally merges them so you don’t pause awkwardly. Sandhi is the scientific study of this natural glide.',
           body: [
             'Svara Sandhi (Vowels): विद्या + आलयः = विद्यालयः; सूर्य + उदयः = सूर्योदयः; इति + आदि = इत्यादि.',
-            'Vyañjana Sandhi (Consonants): सत् + चित् = सच्चित्.',
-            'Visarga Sandhi: रामः + अवदत् = रामोऽवदत्.'
+            'Vyañjana Sandhi (Consonants): सत् + चित् = सच्चित्; तत् + च = तच्च.',
+            'Visarga Sandhi: रामः + अवदत् = रामोऽवदत्; शिवः + अहम् = शिवोऽहम्.'
           ],
           keyTakeaway: 'Sandhi is acoustic thermodynamics: the tongue always takes the path of minimum resistance.'
         },
@@ -1127,13 +1227,29 @@ export const COURSE_MODULES: CourseModule[] = [
           recitationTips: 'Sandhi is like a zipper. Splitting Sandhi (पदच्छेद) allows you to inspect the individual words.'
         },
         ruleMechanics: {
-          title: 'The Core Vowel Sandhi Formulas',
+          title: 'The Core Vowel, Consonant & Visarga Sandhi Laws',
           explanation: [
             '1. Dīrgha (अकः सवर्णे दीर्घः): Similar vowels merge into long: a+a=ā, i+i=ī, u+u=ū',
             '2. Guṇa (आद्गुणः): a + i/ī = e; a + u/ū = o; a + ṛ = ar',
             '3. Vṛddhi (वृद्धिरेचि): a + e/ai = ai; a + o/au = au',
             '4. Yaṇ (इको यणचि): i + vowel = y; u + vowel = v; ṛ + vowel = r'
-          ]
+          ],
+          tableData: {
+            headers: ['Sandhi Class', 'Pāṇinian Formula', 'Input Sounds', 'Fused Result', 'Living Example'],
+            rows: [
+              ['Dīrgha (दीर्घः)', 'अकः सवर्णे दीर्घः (6.1.101)', 'a/ā + a/ā, i/ī + i/ī', 'Long vowel (ā, ī, ū, ṝ)', 'विद्या + आलयः = विद्यालयः'],
+              ['Guṇa (गुणः)', 'आद्गुणः (6.1.87)', 'a/ā + i/ī, u/ū, ṛ/ṝ', 'e, o, ar', 'नर + ईशः = नरेशः; सूर्य + उदयः = सूर्योदयः'],
+              ['Vṛddhi (वृद्धिः)', 'वृद्धिरेचि (6.1.88)', 'a/ā + e/ai, o/au', 'ai, au', 'एक + एकम् = एकैकम्; महा + औषधिः = महौषधिः'],
+              ['Yaṇ (यण्)', 'इको यणचि (6.1.77)', 'i, u, ṛ + dissimilar vowel', 'y, v, r', 'यदि + अपि = यद्यपि; अनु + अयः = अन्वयः'],
+              ['Vyañjana (व्यञ्जनम्)', 'स्तोः श्चुना श्चुः (8.4.40)', 't-group + c-group / ś', 'Palatalized c-group', 'सत् + चित् = सच्चित्; तत् + च = तच्च'],
+              ['Visarga (विसर्गः)', 'ससजुषो रुः (8.2.66)', 'aḥ + voiced consonant / a', 'o (with Avagraha ऽ)', 'शिवः + अहम् = शिवोऽहम्; रामः + गच्छति = रामो गच्छति']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'परः संनिकर्षः संहिता',
+            iast: 'paraḥ saṁnikarṣaḥ saṁhitā (Pāṇini 1.4.109)',
+            meaning: 'Extreme acoustic proximity between phonemes is termed Saṁhitā (the domain of Sandhi).'
+          }
         },
         practice: {
           quickQuiz: {
@@ -1148,19 +1264,19 @@ export const COURSE_MODULES: CourseModule[] = [
             correctIndex: 1,
             explanation: 'Under Dīrgha Sandhi (अकः सवर्णे दीर्घः), long "ā" + long "ā" merge smoothly into single long "ā": विद्यालयः.'
           },
-          worksheetSummary: 'Worksheet 3.5: Sandhi Joining & Splitting (Padaccheda) Master Drills.',
+          worksheetSummary: 'Worksheet 3.5: Vowel & Consonant Sandhi Joining and Splitting (विच्छेद) Practice Sheet.',
           worksheetDownloadId: 'ws-c3-5'
         },
         thinkingConnection: {
-          type: 'contemplative',
-          badgeLabel: '🪔 Advaita & Interconnection',
-          heading: 'Dissolving the Illusion of Separation',
-          bridgeExplanation: 'In Advaita philosophy, boundaries between the individual (jīva) and the universal (brahman) dissolve upon closer examination. Sandhi embodies this acoustically: two seemingly distinct words lose their separate boundaries and flow as one seamless stream of unbroken breath.',
-          modernInsight: 'Contemplating Sandhi trains the student to perceive continuity and interbeing rather than isolated, disconnected fragments.'
+          type: 'scientific',
+          badgeLabel: '🔬 Audio DSP & Signal Processing',
+          heading: 'Coarticulation and Cross-Fade in Digital Sound',
+          bridgeExplanation: 'In digital speech synthesis and audio signal processing, abrupt cuts between phonemes cause harsh transient pops. Engineers apply "cross-fading" and "coarticulation smoothing". Sandhi is literally Sanskrit’s built-in acoustic smoothing filter, designed over 3,000 years ago.',
+          modernInsight: 'Studying Sandhi trains your ear to recognize how phonemes influence each other dynamically in real time.'
         },
         linkedResources: [
-          { label: 'Sandhi Rules Shelf in Grammar', targetView: 'grammar', param: 'topic:sandhi', badge: 'Formulas' },
-          { label: 'Deepakam Chapter Word-by-Word Sandhi Split', targetView: 'reader', badge: 'Tool' }
+          { label: 'Sandhi Engine & Rule Generator', targetView: 'grammar', param: 'topic:sandhi', badge: 'Interactive Tool' },
+          { label: 'Deepakam Chapter 2 Sandhi Drill', targetView: 'reader', badge: 'Reader' }
         ]
       },
       {
@@ -1168,61 +1284,76 @@ export const COURSE_MODULES: CourseModule[] = [
         lessonNumber: '3.6',
         titleDevanagari: 'समासाः · अर्थ-संक्षेपः',
         titleEnglish: 'Compounds (Samāsas): Packing Meaning Tightly',
-        shortDescription: 'Merging multiple words into a single high-density concept without losing grammatical precision.',
+        shortDescription: 'Fusing multiple words into single conceptual compounds for immense information density.',
         ideaConcept: {
-          heading: 'Semantic Compression through Compounding',
-          summary: 'In English, you say "The minister who serves the prime president of the republic". In Sanskrit, you can fold this entire phrase into a single modular compound (समासः).',
+          heading: 'Compression: Stacking Ideas into One Word',
+          summary: 'In English, you can say "the flower of the forest" or "forest flower". Sanskrit takes compounding to high mathematical art, fusing multiple words into a single compound (समास) while dropping internal case endings.',
           body: [
-            'Tatpuruṣa: Dependent compound (राजपुरुषः = The King’s man).',
-            'Dvandva: Pair compound joined by "and" (रामलक्ष्मणौ = Rama and Lakshmana).',
-            'Bahuvrīhi: External reference compound (पीताम्बरः = He who wears yellow robes, i.e. Krishna!).'
+            'There are 4 principal types of Samāsa:',
+            '1. Avyayībhāva (अव्ययीभावः): First word dominant (यथाशक्ति = as per capability)',
+            "2. Tatpuruṣa (तत्पुरुषः): Second word dominant (राजपुरुषः = king's officer)",
+            '3. Dvandva (द्वन्द्वः): Both words equal (मातापितरौ = mother and father)',
+            '4. Bahuvrīhi (बहुव्रीहिः): Points to a third outside entity (पीताम्बरः = yellow-robed one, Viṣṇu)'
           ],
-          keyTakeaway: 'Compounds turn phrases into compact concepts, packing high bandwidth into tiny space.'
+          keyTakeaway: 'Compounds are lossless compression algorithms. They compress lengthy syntactic clauses into dense conceptual nuggets.'
         },
         soundPractice: {
           audioTerms: [
-            { devanagari: 'राजपुरुषः', iast: 'Rājapuruṣaḥ', meaning: 'राज्ञः पुरुषः (King’s officer - Tatpuruṣa)' },
-            { devanagari: 'रामलक्ष्मणौ', iast: 'Rāma-Lakṣmaṇau', meaning: 'रामश्च लक्ष्मणश्च (Rama and Lakshmana - Dvandva)' },
-            { devanagari: 'पीताम्बरः', iast: 'Pītāmbaraḥ', meaning: 'पीतं अम्बरं यस्य सः (Wearing yellow robes - Bahuvrīhi)' }
+            { devanagari: 'मातापितरौ', iast: 'mātāpitarau', meaning: 'Dvandva: Mother and Father' },
+            { devanagari: 'यथाशक्ति', iast: 'yathāśakti', meaning: 'Avyayībhāva: To the limit of one’s capability' },
+            { devanagari: 'नीलोत्पलम्', iast: 'nīlotpalam', meaning: 'Karmadhāraya: Blue lotus' }
           ],
-          phoneticInstructions: 'Pronounce the compound as a single breath unit with one unified accent (स्वर).',
-          recitationTips: 'Notice how all intermediate case endings drop out (सुपो धातुप्रातिपदिकयोः) until the final word!'
+          phoneticInstructions: 'Pronounce long compounds as single rhythmic sweeps, pausing only after the compound concludes.',
+          recitationTips: 'To analyze a compound, dissolve it into its analytical sentence (विग्रह-वाक्य).'
         },
         ruleMechanics: {
-          title: 'The 4 Major Samāsa Families',
+          title: 'The 4-Fold Head-Dominance (Pradhānatā) Taxonomy',
           explanation: [
-            '1. Avyayībhāva (अव्ययीभावः): First word dominant, becomes an indeclinable adverb (यथाशक्ति).',
-            '2. Tatpuruṣa (तत्पुरुषः): Second word dominant; includes Karmadhāraya & Dvigu.',
-            '3. Bahuvrīhi (बहुव्रीहिः): Neither word dominant; refers to an outside third entity.',
-            '4. Dvandva (द्वन्द्वः): Both words equally dominant, linked by "and" (च).'
-          ]
+            'Every compound is classified by which of its constituent members (पदम्) holds the primary semantic weight (प्राधान्यम्).'
+          ],
+          tableData: {
+            headers: ['Compound Class (समासः)', 'Dominant Head (प्रधान-पदम्)', 'Structural Formula', 'Example Compound', 'Dissolved Meaning (विग्रह-वाक्यम्)'],
+            rows: [
+              ['अव्ययीभावः (Avyayībhāva)', 'पूर्वपद-प्रधान (First word dominant)', 'Indeclinable prefix + Noun', 'यथाशक्ति (Yathāśakti)', 'शक्तिम् अनतिक्रम्य (According to one’s capability)'],
+              ['तत्पुरुषः (Tatpuruṣa)', 'उत्तरपद-प्रधान (Second word dominant)', 'Noun in case 2-7 + Noun', 'राजपुरुषः (Rājapuruṣaḥ)', 'राज्ञः पुरुषः (King’s officer)'],
+              ['कर्मधारयः (Karmadhāraya)', 'समानाधिकरण (Appositional Tatpuruṣa)', 'Adjective + Noun', 'नीलोत्पलम् (Nīlotpalam)', 'नीलं च तत् उत्पलं च (A blue lotus)'],
+              ['द्विगुः (Dvigu)', 'संख्या-पूर्व (Number first)', 'Numeral + Collection', 'त्रिलोकम् (Trilokam)', 'त्रयाणां लोकानां समाहारः (Collection of three worlds)'],
+              ['द्वन्द्वः (Dvandva)', 'उभयपद-प्रधान (Both words equal)', 'Noun + Noun + Noun', 'रामलक्ष्मणौ (Rāma-Lakṣmaṇau)', 'रामश्च लक्ष्मणश्च (Rama and Lakshmana)'],
+              ['बहुव्रीहिः (Bahuvrīhi)', 'अन्यपद-प्रधान (External referent dominant)', 'Compound describing third entity', 'पीताम्बरः (Pītāmbaraḥ)', 'पीतं वस्त्रं यस्य सः (He whose garments are yellow: Viṣṇu)']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'समर्थः पदविधिः',
+            iast: 'samarthaḥ padavidhiḥ (Pāṇini 2.1.1)',
+            meaning: 'A grammatical operation involving words applies only when the words are semantically and syntactically connected (Samartha).'
+          }
         },
         practice: {
           quickQuiz: {
             id: 'q-3-6',
-            prompt: 'In the compound "रामलक्ष्मणौ", why does the ending have the dual "-au"?',
+            prompt: 'In the compound "रामलक्ष्मणौ" (Rama and Lakshmana), which type of Samāsa is used?',
             options: [
-              'Because it is feminine',
-              'Because it is a Dvandva compound joining two persons (Rama AND Lakshmana)',
-              'Because it is an accident',
-              'Because it is past tense'
+              'Avyayībhāva (First word dominant)',
+              'Tatpuruṣa (Second word dominant)',
+              'Dvandva (Both words hold equal weight: "and")',
+              'Bahuvrīhi (Points to someone else)'
             ],
-            correctIndex: 1,
-            explanation: 'Dvandva compounds combine multiple entities: two entities take the Dual ending (द्विवचन: -au).'
+            correctIndex: 2,
+            explanation: 'Dvandva (द्वन्द्वः) unites two or more equal coordinates connected by "and" (रामश्च लक्ष्मणश्च).'
           },
-          worksheetSummary: 'Worksheet 3.6: Samāsa Deconstruction (विग्रह-वाक्यम्) & Classification Practice.',
+          worksheetSummary: 'Worksheet 3.6: Samāsa Classification, Vigraha Dissolution & Identification Matrix.',
           worksheetDownloadId: 'ws-c3-6'
         },
         thinkingConnection: {
           type: 'scientific',
-          badgeLabel: '🔬 Functional Composition & Data Packing',
-          heading: 'High-Density Conceptual Chunking',
-          bridgeExplanation: 'Cognitive science shows that working memory holds roughly 4 to 7 "chunks" of information. By compounding complex relations into a single linguistic token, Sanskrit allows philosophers and scientists to hold vastly more complex abstractions simultaneously in active memory.',
-          modernInsight: 'This parallels object composition and function chaining in modern programming languages.'
+          badgeLabel: '🔬 Information Density & Compilers',
+          heading: 'High-Density Tokenization and Semantic Binding',
+          bridgeExplanation: 'In computer programming, combining multiple variables into a single composite struct or object reduces pointer overhead and increases cache locality. Sanskrit compounds function identically: they eliminate repetitive case inflections and package complex semantic relationships into a single memory token.',
+          modernInsight: 'This is why philosophical and scientific treatises in Sanskrit could store vast libraries of conceptual wisdom in easily memorized, dense compound verses.'
         },
         linkedResources: [
-          { label: 'Grammar Samāsa Guide', targetView: 'grammar', param: 'topic:samasa', badge: 'Articles' },
-          { label: 'Neologism Technology Riddles', targetView: 'home', badge: 'Interactive' }
+          { label: 'Samāsa Interactive Master Chart', targetView: 'grammar', param: 'topic:samasa', badge: 'Grammar' },
+          { label: 'Pañcatantra Compound Reader', targetView: 'reader', badge: 'Stories' }
         ]
       }
     ]
@@ -1268,12 +1399,27 @@ export const COURSE_MODULES: CourseModule[] = [
           recitationTips: 'Notice the Anvaya: Subject (बालकः) → Object (पुस्तकम्) → Verb (पठति).'
         },
         ruleMechanics: {
-          title: 'The Kartā-Kriyā Agreement Rule',
+          title: 'The Kartā-Kriyā Agreement & Syntax Synthesis',
           explanation: [
             'Singular Subject takes Singular Verb: बालकः गच्छति',
             'Dual Subject takes Dual Verb: बालकौ गच्छतः',
             'Plural Subject takes Plural Verb: बालकाः गच्छन्ति'
-          ]
+          ],
+          tableData: {
+            headers: ['Sentence Component', 'Grammatical Role', 'Singular Example', 'Dual Example', 'Plural Example'],
+            rows: [
+              ['कर्ता (Subject / Agent)', 'Prathamā Vibhakti', 'बालकः (Boy)', 'बालकौ (Two boys)', 'बालकाः (Boys)'],
+              ['कर्म (Object of Action)', 'Dvitīyā Vibhakti', 'ग्रन्थम् (Book/Scripture)', 'ग्रन्थौ (Two scriptures)', 'ग्रन्थान् (Scriptures)'],
+              ['अधिकरण (Location)', 'Saptamī Vibhakti', 'विद्यालये (In school)', 'विद्यालययोः (In two schools)', 'विद्यालयेषु (In schools)'],
+              ['क्रिया (Verbal Action)', 'Laṭ Lakāra (matches Subject)', 'पठति (Reads)', 'पठतः (Two read)', 'पठन्ति (Many read)'],
+              ['पूर्ण-वाक्यम् (Full Sentence)', 'Free-order compilation', 'बालकः विद्यालये ग्रन्थं पठति ।', 'बालकौ विद्यालये ग्रन्थौ पठतः ।', 'बालकाः विद्यालयेषु ग्रन्थान् पठन्ति ।']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'स्वतन्त्रः कर्ता',
+            iast: 'svatantraḥ kartā (Pāṇini 1.4.54)',
+            meaning: 'The entity who acts autonomously in an action is designated as the Kartā (Agent/Subject).'
+          }
         },
         practice: {
           quickQuiz: {
@@ -1327,13 +1473,27 @@ export const COURSE_MODULES: CourseModule[] = [
           recitationTips: 'Notice the Anvaya flow in classical prose.'
         },
         ruleMechanics: {
-          title: 'The Ktva (क्त्वा) & Lyap (ल्यप्) Gerund Participles',
+          title: 'The Ktva (क्त्वा) & Lyap (ल्यप्) Gerund Participles & Narrative Syntax',
           explanation: [
             'Expresses "having done" an action before the main verb:',
             'गम् + क्त्वा = गत्वा (having gone: गृहं गत्वा भोजनं करोति)',
             'दृश् + क्त्वा = दृष्ट्वा (having seen)',
             'With prefix, use Lyap: आ + गम् + ल्यप् = आगत्य (having arrived)'
-          ]
+          ],
+          tableData: {
+            headers: ['Story Phrase / Śloka', 'Grammatical Mechanism', 'Sandhi Breakdown', 'Literal Meaning', 'Strategic Moral Principle'],
+            rows: [
+              ['अस्ति कस्मिंश्चित् वने सिंहः ।', 'Locative singular of place', 'कस्मिन् + चित् (Indefinite pronoun)', 'In a certain forest there lived a lion', 'Setting the cosmic baseline stage'],
+              ['सः सर्वान् जन्तून् व्यापादयति ।', 'Accusative plural object', 'व्या + पादयति (Causative verb)', 'He indiscriminately destroyed all creatures', 'Power unconstrained by dharma leads to systemic ruin'],
+              ['ततः शशकेन उपायः चिन्तितः ।', 'Passive past participle (Kta)', 'शशकेन (Instrumental agent)', 'Then by the hare a clever strategy was conceived', 'Intellect and discernment conquer raw physical mass'],
+              ['उपायेन हि यच्छक्यं न तच्छक्यं पराक्रमैः ।', 'Instrumental + Relative pronoun', 'यत् + शक्यम् ; तत् + शक्यम्', 'What can be accomplished by strategy cannot be achieved by force', 'Viveka (discernment) is the ultimate protective shield']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'समानकर्तृकयोः पूर्वकाले',
+            iast: 'samānakartṛkayoḥ pūrvakāle (Pāṇini 3.4.21)',
+            meaning: 'The suffix Ktvā (त्वा) is introduced after a root to denote an action performed earlier by the same agent.'
+          }
         },
         practice: {
           quickQuiz: {
@@ -1380,45 +1540,59 @@ export const COURSE_MODULES: CourseModule[] = [
         },
         soundPractice: {
           audioTerms: [
-            { devanagari: 'विद्या ददाति विनयं विनयाद्याति पात्रताम् ।', iast: 'vidyā dadāti vinayaṁ vinayādyāti pātratām |', meaning: 'Knowledge bestows humility; from humility comes worthiness.' },
-            { devanagari: 'उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः ।', iast: 'udyamena hi sidhyanti kāryāṇi na manorathaiḥ |', meaning: 'Tasks are accomplished by diligent effort, not mere daydreaming.' }
+            { devanagari: 'विद्या ददाति विनयं विनयाद्याति पात्रताम् ।', iast: 'vidyā dadāti vinayaṁ vinayād yāti pātratām |', meaning: 'True knowledge gives humility; from humility comes worthiness.' },
+            { devanagari: 'उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः ।', iast: 'udyamena hi sidhyanti kāryāṇi na manorathaiḥ |', meaning: 'Tasks succeed through focused effort, never through mere wishful daydreaming.' }
           ],
-          phoneticInstructions: 'Chant with the classic 8-beat rhythm: Vid-yā da-dā-ti vi-na-yaṁ (pause) vi-na-yād yā-ti pā-tra-tām.',
-          recitationTips: 'Breathe in at the hemistich pause (midline).'
+          phoneticInstructions: 'Chant each half-verse (अर्ध-श्लोक) on a single steady exhalation. Match the rhythmic cadence of the 8 syllables.',
+          recitationTips: 'Notice the internal rhyming and rhythmic alliteration.'
         },
         ruleMechanics: {
-          title: 'The Anatomy of a Subhāṣita',
+          title: 'Subhāṣita Anatomy: Padaccheda, Anvaya & Rasa',
           explanation: [
-            'Line 1 presents the universal premise or natural law.',
-            'Line 2 delivers the striking metaphor or life-changing conclusion.'
-          ]
+            '1. Padaccheda (पदच्छेद): Split the sandhi to expose raw words.',
+            '2. Anvaya (अन्वय): Rearrange poetic words into normal grammatical prose order (Subject → Object → Verb).'
+          ],
+          tableData: {
+            headers: ['Subhāṣita Line', 'Padaccheda (Word Split)', 'Grammatical Anatomy', 'Translation', 'Cognitive Reflection'],
+            rows: [
+              ['विद्या ददाति विनयं', 'विद्या ददाति विनयम्', 'Subject (Vidya) + Verb (gives) + Object (humility)', 'Knowledge bestows true humility', 'Real learning dissolves arrogance; pedantry inflates it'],
+              ['विनयाद्याति पात्रताम् ।', 'विनयात् याति पात्रताम्', 'Ablative source (from humility) + attains + worthiness', 'From humility arises true capability/fitness', 'Vessel must be clean and emptied before wisdom can fill it'],
+              ['पात्रत्वाद्धनमाप्नोति', 'पात्रत्वात् धनम् आप्नोति', 'Ablative (from capability) + wealth + gains', 'From capability comes legitimate abundance', 'Wealth is a byproduct of excellence, never the primary aim'],
+              ['धनाद्धर्मं ततः सुखम् ॥', 'धनात् धर्मम् ततः सुखम्', 'Ablative (from wealth) + virtue + thence bliss', 'From righteous wealth comes Dharma, and thence lasting joy', 'The unbroken fourfold chain: Vidya → Vinaya → Patrata → Sukham']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'वाक्यं रसात्मकं काव्यम्',
+            iast: 'vākyaṁ rasātmakaṁ kāvyam (Sāhitya-Darpaṇa 1.3)',
+            meaning: 'Poetry is that statement whose very soul is Rasa (living aesthetic consciousness and emotional resonance).'
+          }
         },
         practice: {
           quickQuiz: {
             id: 'q-4-3',
-            prompt: 'According to the famous Subhāṣita, what is the very first gift that true knowledge (विद्या) bestows upon a student?',
+            prompt: 'According to the famous Subhāṣita "उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः", how do tasks actually reach completion?',
             options: [
-              'Arrogance (गर्वः)',
-              'Humility (विनयम्)',
-              'Money (धनम्)',
-              'Fame (कीर्तिः)'
+              'Through wishing and dreaming (मनोरथैः)',
+              'Through focused, diligent effort (उद्यमेन)',
+              'By pure chance',
+              'By talking about them'
             ],
             correctIndex: 1,
-            explanation: '"विद्या ददाति विनयं" — True learning bestows humility, not pride.'
+            explanation: '"उद्यमेन" is the Instrumental case (तृतीया) of उद्यम (diligence/effort): works are accomplished through exertion, not daydreams.'
           },
-          worksheetSummary: 'Worksheet 4.3: 10 Essential Subhāṣitas Recitation, Meaning & Grammar Breakdown.',
+          worksheetSummary: 'Worksheet 4.3: 10 Essential Subhāṣitas with Sandhi Splitting & Anvaya Translation Grid.',
           worksheetDownloadId: 'ws-c4-3'
         },
         thinkingConnection: {
-          type: 'contemplative',
-          badgeLabel: '🪔 Contemplative Reflection',
-          heading: 'Sustained Contemplation on Universal Truth',
-          bridgeExplanation: 'Subhāṣitas are designed for Manana (deep intellectual chewing). Repeating a verse mentally during a quiet walk uncovers deeper layers of meaning that a fast, superficial reading completely misses.',
-          modernInsight: 'This mirrors stoic journaling and cognitive reframing techniques used in modern psychological resilience training.'
+          type: 'integrated',
+          badgeLabel: '🧠 Cognitive Retention & Metacognition',
+          heading: 'Mnemonics as Compressed Cognitive Scripts',
+          bridgeExplanation: 'Cognitive psychology shows that rhymed, metered stanzas encode information into episodic long-term memory far more efficiently than prose. Subhāṣitas functioned as high-bandwidth cultural cognitive scripts.',
+          modernInsight: 'When facing ethical dilemmas, recalling a two-line Subhāṣita delivers instant clarity without mental fatigue.'
         },
         linkedResources: [
-          { label: 'Bodhi Mascot Subhāṣitas Library', targetView: 'home', badge: 'Audio Recitations' },
-          { label: 'Deepakam Chapter 3 Subhāṣitas', targetView: 'reader', param: 'gsde103', badge: 'Reader' }
+          { label: 'Subhāṣita Audio Treasury (50 Verses)', targetView: 'reader', badge: 'Audio Library' },
+          { label: 'Vedic Maths Shlokas', targetView: 'vedic-maths', badge: 'Maths Verses' }
         ]
       },
       {
@@ -1426,59 +1600,71 @@ export const COURSE_MODULES: CourseModule[] = [
         lessonNumber: '4.4',
         titleDevanagari: 'अनुष्टुप्-छन्दः एवं पाठ-पद्धतिः',
         titleEnglish: 'Reading and Reciting an Anuṣṭubh Verse',
-        shortDescription: 'The universal 32-syllable meter of the Rāmāyaṇa, Mahābhārata, and Bhagavad Gītā.',
+        shortDescription: 'The 32-syllable heartbeat of the Rāmāyaṇa, Mahābhārata, and Bhagavad Gītā.',
         ideaConcept: {
-          heading: 'The River-Flow of 32 Beats',
-          summary: 'The Anuṣṭubh meter (अनुष्टुप्-छन्दः) is the most famous poetic vehicle in Indian civilization. When Maharṣi Vālmīki witnessed the mourning bird, grief (Śoka) spontaneously overflowed as the world’s first Śloka in Anuṣṭubh meter!',
+          heading: 'The 32-Syllable Rhythmic Heartbeat',
+          summary: 'Almost the entire Bhagavad Gītā and the major epics are written in a single poetic meter: the Anuṣṭubh (अनुष्टुप्). Once you master its 8-8-8-8 rhythm, you can chant thousands of verses effortlessly.',
           body: [
-            'Structure: 4 quarters (पादाः) of exactly 8 syllables each (8 × 4 = 32 syllables).',
-            'Golden Rule: 5th syllable is short (ह्रस्व) everywhere; 6th syllable is long (दीर्घ) everywhere!'
+            'Total syllables: 32 syllables divided into four quarters (पाद) of 8 syllables each.',
+            'Universal rule: In every quarter, the 5th syllable is short (लघु), and the 6th syllable is long (गुरु)!'
           ],
-          keyTakeaway: 'Mastering the 8-syllable quarter lets you chant thousands of verses from the Gītā effortlessly.'
+          keyTakeaway: 'The Anuṣṭubh meter synchronizes respiration with speech, turning recitation into effortless breath-control (Prāṇāyāma).'
         },
         soundPractice: {
           audioTerms: [
-            { devanagari: 'श्लोके षष्ठं गुरु ज्ञेयं सर्वत्र लघु पञ्चमम् ।', iast: 'śloke ṣaṣṭhaṁ guru jñeyaṁ sarvatra laghu pañcamam |', meaning: 'In an anuṣṭubh verse, the 6th syllable is heavy (long), and the 5th is light (short).' },
-            { devanagari: 'द्विचतुष्पादयोर्ह्रस्वं सप्तमं द्वितयोः परम् ॥', iast: 'dvicatuṣpādayorhrasvaṁ saptamaṁ dvitayoḥ param ||', meaning: 'The 7th syllable is short in quarters 2 and 4, and long elsewhere.' }
+            { devanagari: 'यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।', iast: 'yadā yadā hi dharmasya glānir bhavati bhārata |', meaning: 'Whenever there is a decline of righteousness, O Bharata...' },
+            { devanagari: 'अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥', iast: 'abhyutthānam adharmasya tadātmānaṁ sṛjāmyaham ||', meaning: '...and an uprising of unrighteousness, then I manifest Myself.' }
           ],
-          phoneticInstructions: 'Tap your fingers in two sets of 4 beats: 1-2-3-4 / 5-6-7-8. Notice how natural and hypnotic the 8-beat rhythm feels to your nervous system.',
-          recitationTips: 'Keep the 5th syllable short and the 6th syllable long to create the classic poetic lilt.'
+          phoneticInstructions: 'Tap your finger in an 8-beat count for each Pāda: 1-2-3-4 / 5(short)-6(long)-7-8. Notice how naturally the breath settles.',
+          recitationTips: 'Pause for one calm beat at the end of the first line (।), and two beats at the double-danda (॥).'
         },
         ruleMechanics: {
-          title: 'The Mathematical Formula of Anuṣṭubh',
+          title: 'The Pingala Chandas-Śāstra Rule of Anuṣṭubh',
           explanation: [
-            '4 Pādas (Quarters) × 8 Akṣaras (Syllables) = 32 Total Syllables',
-            'Position 5 = Always Laghu (Light / Short)',
-            'Position 6 = Always Guru (Heavy / Long)',
-            'Position 7 = Laghu in Quarters 2 & 4'
-          ]
+            'Formula: 4 Pādas × 8 Akṣaras = 32 Akṣaras.',
+            'Universal constraint: Syllable 5 is always Laghu (˘); Syllable 6 is always Guru (¯).'
+          ],
+          tableData: {
+            headers: ['Quarter (पादः)', 'Syllable Range', '5th Syllable Rule', '6th Syllable Rule', '7th Syllable Rule', 'Cadence Rhythm'],
+            rows: [
+              ['प्रथमः पादः (Pāda 1)', 'Syllables 1 to 8', 'लघु (Laghu / Short: ˘)', 'गुरु (Guru / Long: ¯)', 'गुरु (Guru / Long: ¯)', '˘ ¯ ¯ (Laghu-Guru-Guru)'],
+              ['द्वितीयः पादः (Pāda 2)', 'Syllables 9 to 16', 'लघु (Laghu / Short: ˘)', 'गुरु (Guru / Long: ¯)', 'लघु (Laghu / Short: ˘)', '˘ ¯ ˘ (Laghu-Guru-Laghu)'],
+              ['तृतीयः पादः (Pāda 3)', 'Syllables 17 to 24', 'लघु (Laghu / Short: ˘)', 'गुरु (Guru / Long: ¯)', 'गुरु (Guru / Long: ¯)', '˘ ¯ ¯ (Laghu-Guru-Guru)'],
+              ['चतुर्थः पादः (Pāda 4)', 'Syllables 25 to 32', 'लघु (Laghu / Short: ˘)', 'गुरु (Guru / Long: ¯)', 'लघु (Laghu / Short: ˘)', '˘ ¯ ˘ (Laghu-Guru-Laghu)']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'श्लोके षष्ठं गुरु ज्ञेयं सर्वत्र लघु पञ्चमम् । द्विचतुष्पादयोर्ह्रस्वं सप्तमं दीर्घमन्ययोः ॥',
+            iast: 'śloke ṣaṣṭhaṁ guru jñeyaṁ sarvatra laghu pañcamam | dvi-catuṣ-pādayor hrasvaṁ saptamaṁ dīrgham anyayoḥ ||',
+            meaning: 'In an Anuṣṭubh śloka, the 5th syllable is short in all 4 pādas; the 6th is always long; the 7th is short in pādas 2 & 4, and long in pādas 1 & 3.'
+          }
         },
         practice: {
           quickQuiz: {
             id: 'q-4-4',
-            prompt: 'How many syllables (अक्षराणि) are in one complete Anuṣṭubh (अनुष्टुप्) śloka?',
+            prompt: 'In an Anuṣṭubh meter (the standard 32-syllable verse), what must the 5th and 6th syllables of every 8-beat quarter always be?',
             options: [
-              '16 syllables',
-              '32 syllables (4 quarters of 8 syllables each)',
-              '100 syllables',
-              '64 syllables'
+              '5th is always Long, 6th is always Short',
+              '5th is always Short (Laghu), 6th is always Long (Guru)',
+              'Both must be silent',
+              'There is no rule'
             ],
             correctIndex: 1,
-            explanation: 'The Anuṣṭubh meter contains 32 syllables arranged in four 8-syllable quarters (8 × 4 = 32).'
+            explanation: 'Under Chandas-śāstra rules, "सर्वत्र लघु पञ्चमम्" (5th is always short) and "षष्ठं गुरु ज्ञेयम्" (6th is always long).'
           },
-          worksheetSummary: 'Worksheet 4.4: Anuṣṭubh Syllable Scanning (Laghu-Guru Marking) & Recitation Drill.',
+          worksheetSummary: 'Worksheet 4.4: Anuṣṭubh Meter Metrical Scanning (लघु-गुरु) & Gītā Chanting Guide.',
           worksheetDownloadId: 'ws-c4-4'
         },
         thinkingConnection: {
           type: 'scientific',
-          badgeLabel: '🔬 Binary Math & Combinatorics',
-          heading: 'Piṅgala’s Chandaḥśāstra and Binary Arithmetic',
-          bridgeExplanation: 'To catalog poetic meters, the ancient mathematician Piṅgala (3rd century BCE) used two binary symbols: Laghu (0) and Guru (1). In doing so, he discovered the binary number system, binomial coefficients, Pascal’s Triangle (मेरु-प्रस्तार), and the Fibonacci numbers centuries before Europe.',
-          modernInsight: 'Sanskrit poetry is literally written in binary code.'
+          badgeLabel: '🔬 Cardiology & Respiratory Entrainment',
+          heading: '0.1 Hz Resonance Frequency in Human Heart Rhythms',
+          bridgeExplanation: 'Cardiovascular studies in the British Medical Journal (BMJ) revealed that reciting poetic verse in metered 6-breaths-per-minute cycles (such as the Anuṣṭubh or the Ave Maria) induces powerful respiratory sinus arrhythmia synchronization, matching the 0.1 Hz intrinsic baroreflex rhythm.',
+          modernInsight: 'Anuṣṭubh chanting is literally biometric biofeedback designed to optimize oxygenation and heart-rate variability.'
         },
         linkedResources: [
-          { label: 'Vedic Mathematics Studio', targetView: 'vedic-maths', badge: 'Math' },
-          { label: 'Philosophy Essay: Sound Bound to Breath', targetView: 'philosophy', badge: 'Essay' }
+          { label: 'Gītā Chapter 2 Living Reciter', targetView: 'reader', badge: 'Gītā Audio' },
+          { label: 'Course Capstone Verse Breakdown', targetView: 'course-addendum', badge: 'Capstone' }
         ]
       }
     ]
@@ -1492,71 +1678,85 @@ export const COURSE_MODULES: CourseModule[] = [
     moduleNumber: 5,
     titleDevanagari: 'गणितम्, तर्कः · The Scientific Mind',
     titleEnglish: 'The Scientific Mind (गणितम्, तर्कः)',
-    tagline: 'Algorithmic grammar, mental math sutras, and alphanumeric cryptography',
-    themeColor: '#7c3aed',
+    tagline: 'Algorithmic grammar, fast mental computing, and cipher encoding',
+    themeColor: '#0284c7',
     icon: '🔬',
     overview:
-      'Uncover the scientific genius of Sanskrit: Pāṇini’s 4,000 algorithmic sūtras as the world’s first virtual machine, 16 Vedic Mathematics mental arithmetic sutras, the Kaṭapayādi cryptographic number cipher, and Sanskrit’s enduring presence in modern science.',
+      'Explore how the rigorous logic of Sanskrit directly powers scientific computation: Pāṇini’s rewrite grammar as the world’s first generative compiler, Vedic mental mathematics, Kaṭapayādi alphanumeric encryption, and Sanskrit roots in modern computing terminology.',
     lessons: [
       {
         id: 'c-5-1',
         lessonNumber: '5.1',
         titleDevanagari: 'अष्टाध्यायी · जगत्-प्रथम-सङ्गणक-सूत्रम्',
-        titleEnglish: 'Pāṇini\'s Grammar as an Algorithm',
-        shortDescription: '4,000 sūtras functioning as an axiomatic, generative virtual machine 2,500 years before Turing.',
+        titleEnglish: "Pāṇini's Grammar as an Algorithm",
+        shortDescription: "The world's first formal language compiler, written in 3,959 algebraic sūtras circa 500 BCE.",
         ideaConcept: {
-          heading: 'The World’s First Generative Virtual Machine',
-          summary: 'In the 5th century BCE, Maharṣi Pāṇini created the Aṣṭādhyāyī — 4,000 short sūtras that can generate every grammatically correct Sanskrit sentence that has ever been or will ever be spoken.',
+          heading: 'The World’s First Generative Machine',
+          summary: 'Around 500 BCE, Maharṣi Pāṇini built a complete machine for generating every valid word in the Sanskrit language using 3,959 concise formulas. Computer scientists today recognize it as the world’s first formal generative compiler.',
           body: [
-            'It contains an auxiliary metalanguage, conditional branching (if-then statements), scope inheritance, and an execution stack.',
-            'Eminent linguist Leonard Bloomfield called it "one of the greatest monuments of human intelligence."'
+            'In 1960, John Backus and Peter Naur invented the BNF (Backus-Naur Form) to define computer programming languages. Renowned computer scientist Donald Knuth pointed out that Pāṇini had invented this 2,400 years earlier.',
+            'Pāṇini uses: variable names, auxiliary markers (it-saṁjñā), conditional if-then rules, operator precedence, and recursion.'
           ],
-          keyTakeaway: 'Pāṇini did not describe a language; he programmed a generative compiler for human speech.'
+          keyTakeaway: 'The Aṣṭādhyāyī is not a grammar book; it is a formal algebraic program that compiles raw phonetic roots into runtime sentences.'
         },
         soundPractice: {
           audioTerms: [
-            { devanagari: 'वृद्धिरादैच्', iast: 'vṛddhirādaic (1.1.1)', meaning: 'The first sūtra: definition of Vṛddhi vowels (ā, ai, au)' },
-            { devanagari: 'इको यणचि', iast: 'iko yaṇaci (6.1.77)', meaning: 'The famous Sandhi rule of semivowel substitution' },
-            { devanagari: 'विप्रतिषेधे परं कार्यम्', iast: 'vipratiṣedhe paraṁ kāryam (1.4.2)', meaning: 'Conflict resolution rule: the later rule overrides the former' }
+            { devanagari: 'वृद्धिरादैच्', iast: 'vṛddhir ādaic (1.1.1)', meaning: 'The first sūtra: ā, ai, au are designated as Vṛddhi' },
+            { devanagari: 'अदेङ् गुणः', iast: 'adeṅ guṇaḥ (1.1.2)', meaning: 'The second sūtra: a, e, o are designated as Guṇa' },
+            { devanagari: 'इको यणचि', iast: 'iko yaṇaci (6.1.77)', meaning: 'Rule: i, u, ṛ, ḷ become y, v, r, l before a vowel' }
           ],
-          phoneticInstructions: 'Chant "vṛd-dhir-ā-daic" — notice how terse and compressed it is. A single word holds a comprehensive mathematical definition!',
-          recitationTips: 'Ancient grammarians rejoiced over saving even half a mora (duration) in a sūtra as if celebrating the birth of a son!'
+          phoneticInstructions: 'Recite sūtra 1.1.1 "Vṛddhir ādaic" with crisp mathematical separation. Notice how Pāṇini begins his entire masterpiece with the auspicious word "वृद्धि" (growth, prosperity, expansion)!',
+          recitationTips: 'Sūtras are compressed code; every syllable was weighted with extreme economy.'
         },
         ruleMechanics: {
-          title: 'The Pāṇinian Rule Hierarchy',
+          title: 'The Pāṇinian Computational Engine vs Modern Compilers',
           explanation: [
-            '1. Saṁjñā (संज्ञा): Definitions and variable declarations.',
-            '2. Paribhāṣā (परिभाषा): Meta-rules for interpreting conflicting operations.',
-            '3. Vidhi (विधि): Operational algorithms (transformation rules).',
-            '4. Adhikāra (अधिकार): Scope blocks that stay active across subsequent sūtras.'
-          ]
+            'Pāṇini uses 4 main rule categories:',
+            '1. Saṁjñā (Definition/Types), 2. Paribhāṣā (Meta-rules of interpretation),',
+            '3. Vidhi (Operational transformation), 4. Adhikāra (Scope/Context inheritance).'
+          ],
+          tableData: {
+            headers: ['Pāṇinian Structural Engine', 'Modern Computer Science Equivalent', 'Operational Mechanism', 'Living Example'],
+            rows: [
+              ['शिवसूत्राणि (Śiva Sūtras)', 'Phonemic Alphabet & Bitmask Vectors', 'Arranges 42 sounds to define sub-ranges via 2-letter tokens', 'अण् = {a, i, u}; अल् = all phonemes'],
+              ['प्रत्याहारः (Pratyāhāra)', 'Subarray slicing & regular expressions', 'Defines token intervals [Start, End Marker)', 'अच् = all vowels; हल् = all consonants'],
+              ['संज्ञा (Saṁjñā) & परिभाषा (Paribhāṣā)', 'Meta-types and Scope Resolution Rules', 'Defines types, default parameters, and operator precedence', 'वृद्धिर्यस्याचामादिस्तद् वृद्धम् (1.1.73)'],
+              ['विधि-सूत्राणि (Vidhi Sūtras)', 'Production Rules / Rewrite Grammar', 'Transforms input strings based on pattern matching', 'इको यणचि (6.1.77): i/u/ṛ/ḷ → y/v/r/l / _ [Vowel]'],
+              ['विप्रतिषेध-नियमः (Conflict Resolution)', 'Compiler Conflict / Operator Precedence', 'When two rules apply simultaneously, the later/more specific rule wins', 'विप्रतिषेधे परं कार्यम् (1.4.2)']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'विप्रतिषेधे परं कार्यम्',
+            iast: 'vipratiṣedhe paraṁ kāryam (Pāṇini 1.4.2)',
+            meaning: 'In case of an equal conflict between two mutually applicable rules, the subsequent rule in the order of the Aṣṭādhyāyī takes precedence.'
+          }
         },
         practice: {
           quickQuiz: {
             id: 'q-5-1',
-            prompt: 'In Pāṇini’s Aṣṭādhyāyī, when two rules of equal strength conflict, which rule takes precedence under Sūtra 1.4.2?',
+            prompt: 'Why do computer scientists (including Donald Knuth) compare Pāṇini’s Aṣṭādhyāyī to Backus-Naur Form (BNF)?',
             options: [
-              'The shorter rule',
-              'The later rule in sūtra order (विप्रतिषेधे परं कार्यम्)',
-              'Neither rule applies',
-              'The rule with more consonants'
+              'Because both were written on computers',
+              'Because Pāṇini used context-free generative rewrite rules and meta-linguistic variables 2,400 years before computing',
+              'Because both are musical scales',
+              'Because neither has rules'
             ],
             correctIndex: 1,
-            explanation: 'Under Pāṇini 1.4.2 (विप्रतिषेधे परं कार्यम्), the later rule in sequential order wins in cases of mutual conflict.'
+            explanation: 'Pāṇini invented formal grammar and algebraic metalanguage (auxiliary tags, shorthand notation, rule hierarchy) thousands of years before modern computing.'
           },
-          worksheetSummary: 'Worksheet 5.1: Algorithmic Word Derivation Step-by-Step with Pāṇinian Sūtras.',
+          worksheetSummary: 'Worksheet 5.1: The Pāṇinian Algorithm & Rewrite Rule Tracing Exercise.',
           worksheetDownloadId: 'ws-c5-1'
         },
         thinkingConnection: {
           type: 'scientific',
-          badgeLabel: '🔬 Theoretical Computer Science',
-          heading: 'Turing Completeness and Context-Free Grammars',
-          bridgeExplanation: 'When computer scientists in the 1950s (Noam Chomsky, John Backus) sought a formal grammar to specify programming languages, they realized Pāṇini had solved the problem 2,500 years earlier. Pāṇini’s grammar is recognized as a formal generative grammar capable of Turing-complete derivation.',
-          modernInsight: 'Studying Pāṇini trains your brain in recursive algorithmic thinking better than almost any modern computer science textbook.'
+          badgeLabel: '🔬 Theoretical Computer Science & Compilers',
+          heading: 'Context-Free Grammars and Universal Turing Machines',
+          bridgeExplanation: 'Pāṇini’s grammar is an algorithmic engine capable of generating the infinite expressions of human thought from finite axiomatic sūtras. It is the world’s earliest functioning generative system.',
+          modernInsight: 'Studying Pāṇini trains the mind to think in recursive algorithms, type inheritance, and clean architectural separation of concerns.'
         },
         linkedResources: [
-          { label: 'Pāṇinian Dhātupāṭha Studio', targetView: 'dhatupatha', badge: 'Interactive Engine' },
-          { label: 'Philosophy Essay: Why Learn Sanskrit in AI Age', targetView: 'philosophy', badge: 'Essay' }
+          { label: 'Pāṇinian Studio & Sūtra Engine', targetView: 'grammar', badge: 'Interactive Tool' },
+          { label: 'Sanskrit & Modern Computing Research Guide', targetView: 'vedic-maths', badge: 'Research' }
         ]
       },
       {
@@ -1564,61 +1764,73 @@ export const COURSE_MODULES: CourseModule[] = [
         lessonNumber: '5.2',
         titleDevanagari: 'वैदिक-गणित-सूत्राणि · मानसिक-गणना',
         titleEnglish: 'Vedic Maths Sutras: Fast Mental Computing',
-        shortDescription: '16 mental aphorisms turning tedious arithmetic into visual, pattern-based mental joy.',
+        shortDescription: '16 mental math algorithms that turn complex arithmetic and algebra into lightning-fast visual patterns.',
         ideaConcept: {
-          heading: 'Mental Arithmetic Through Spatial Patterns',
-          summary: 'In modern school math, you carry numbers mechanically from right to left. Vedic Mathematics uses 16 concise Sanskrit sūtras that calculate visually, symmetrically, and instantly in your head.',
+          heading: 'Arithmetic as Spatial Pattern Recognition',
+          summary: 'Conventional math forces you to calculate rigidly from right to left with cumbersome carrying and paper clutter. Vedic Maths uses 16 visual sūtras that allow you to calculate from left to right directly in your head.',
           body: [
-            'Sūtra 1: "एकाधिकेन पूर्वेण" (By one more than the previous) — square numbers ending in 5 in 2 seconds!',
-            'Sūtra 2: "निखिलं नवतश्चरमं दशतः" (All from 9 and the last from 10) — lightning multiplication near powers of 10.'
+            'Rediscovered by Swami Bharati Krishna Tirtha between 1911 and 1918 from appendices of the Atharvaveda.',
+            'Examples: Ekādhikena Pūrveṇa (squaring numbers ending in 5 in 2 seconds!), Nikhilam Navataścaramaṁ Daśataḥ (multiplying numbers near 100, 1000 in your head).'
           ],
-          keyTakeaway: 'Math in ancient India was not cold drudgery; it was playful mental gymnastics that balanced both brain hemispheres.'
+          keyTakeaway: 'Vedic Maths transforms calculation from mechanical drudgery into joyful visual pattern play.'
         },
         soundPractice: {
           audioTerms: [
-            { devanagari: 'एकाधिकेन पूर्वेण', iast: 'Ekādhikena Pūrveṇa', meaning: 'By one more than the previous' },
-            { devanagari: 'निखिलं नवतश्चरमं दशतः', iast: 'Nikhilam Navataścaramam Daśataḥ', meaning: 'All from 9 and last from 10' },
-            { devanagari: 'ऊर्ध्वतिर्यग्भ्याम्', iast: 'Ūrdhva-Tiryagbhyām', meaning: 'Vertically and crosswise (general multiplication)' }
+            { devanagari: 'एकाधिकेन पूर्वेण', iast: 'ekādhikena pūrveṇa', meaning: 'By one more than the previous one (Squaring ending in 5)' },
+            { devanagari: 'निखिलं नवतश्चरमं दशतः', iast: 'nikhilaṁ navataścaramaṁ daśataḥ', meaning: 'All from 9 and the last from 10 (Fast multiplication)' },
+            { devanagari: 'ऊर्ध्वतिर्यग्भ्याम्', iast: 'ūrdhva-tiryagbhyām', meaning: 'Vertically and Crosswise (Universal multiplication)' }
           ],
-          phoneticInstructions: 'Recite "E-kā-dhi-ke-na Pūr-ve-ṇa" with steady rhythmic cadence.',
-          recitationTips: 'Say the sūtra mentally before calculating — the formula immediately triggers the mental pattern.'
+          phoneticInstructions: 'Chant "Ekādhikena Pūrveṇa". Notice the rhythmic balance: E-kā-dhi-ke-na Pūr-ve-ṇa.',
+          recitationTips: 'Say the sūtra mentally as you execute the mental calculation.'
         },
         ruleMechanics: {
-          title: 'The Ekādhikena Pūrveṇa Squaring Formula',
-          formula: '(Tens Digit) × (Tens Digit + 1)  |  Append 25',
+          title: 'Vedic Mental Math Sūtras & Worked Proofs',
           explanation: [
-            'Example: Calculate 75²',
-            'Step 1: Tens digit is 7. One more than 7 is 8.',
-            'Step 2: 7 × 8 = 56.',
-            'Step 3: Append 25 → 5625! Done in 2 seconds.'
-          ]
+            'Squaring 75: Ekādhikena Pūrveṇa → Previous digit is 7. One more is 8.',
+            'Step 1: 7 × 8 = 56. Step 2: 5² = 25. Result = 5625 in 2 seconds!'
+          ],
+          tableData: {
+            headers: ['Sūtra Name (सूत्रम्)', 'Literal Meaning', 'Mathematical Operation', 'Worked Example'],
+            rows: [
+              ['एकाधिकेन पूर्वेण', 'By one more than the previous one', 'Squaring numbers ending in 5; special multiplication', '65²: First part 6 × (6+1) = 42; second part 5² = 25 → 4225'],
+              ['निखिलं नवतश्चरमं दशतः', 'All from 9 and the last from 10', 'Multiplication near base 10ⁿ; subtraction from powers of 10', '98 × 97 (Base 100): Deficits (-2, -3) → (98-3) | (2×3) = 9506'],
+              ['ऊर्ध्वतिर्यग्भ्याम्', 'Vertically and Crosswise', 'General multiplication of any n-digit numbers; polynomial products', '23 × 12: Vert 2×1=2; Cross (2×2)+(3×1)=7; Vert 3×2=6 → 276'],
+              ['परावर्त्य योजयेत्', 'Transpose and Apply', 'Algebraic division; linear equation solving; synthetic division', 'Solve 3x + 4 = 19: x = (19 - 4) ÷ 3 = 5 (Transposing sign and divisor)'],
+              ['शून्यं साम्यसमुच्चये', 'When the collection is the same, it is zero', 'Factorization and roots where symmetrical terms equate', 'If (x+1) + (x+2) = (x+3) + x, then collection matches → x = 0']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'एकाधिकेन पूर्वेण । निखिलं नवतश्चरमं दशतः । ऊर्ध्वतिर्यग्भ्याम् ।',
+            iast: 'ekādhikena pūrveṇa | nikhilaṁ navataścaramaṁ daśataḥ | ūrdhva-tiryagbhyām |',
+            meaning: 'The foundational triad of Vedic mathematical sūtras: by one more than the before; all from nine and last from ten; vertically and crosswise.'
+          }
         },
         practice: {
           quickQuiz: {
             id: 'q-5-2',
-            prompt: 'Using the Vedic Math sūtra "एकाधिकेन पूर्वेण", what is 95²?',
+            prompt: 'Using the sūtra "एकाधिकेन पूर्वेण", what is 85² calculated mentally?',
             options: [
-              '8525',
-              '9025 (9 × 10 = 90, append 25)',
-              '9525',
-              '9925'
+              '7225 (8 × 9 = 72, then append 25)',
+              '6425',
+              '8125',
+              '7025'
             ],
-            correctIndex: 1,
-            explanation: '9 × (9 + 1) = 9 × 10 = 90, append 25 = 9025.'
+            correctIndex: 0,
+            explanation: 'By Ekādhikena Pūrveṇa: take the prefix 8, multiply by one more (8 × 9 = 72), and append 5² (25) = 7225.'
           },
-          worksheetSummary: 'Worksheet 5.2: 16 Vedic Mathematics Speed Sutras & Calculation Drill Sheet.',
+          worksheetSummary: 'Worksheet 5.2: Vedic Maths 16 Sūtras Quick-Calculation Drills & Answer Key.',
           worksheetDownloadId: 'ws-c5-2'
         },
         thinkingConnection: {
           type: 'scientific',
-          badgeLabel: '🔬 Algorithmic Efficiency & Heuristics',
-          heading: 'Heuristic Optimization and Algorithmic Complexity',
-          bridgeExplanation: 'Standard multiplication requires O(N²) operations. Vedic Math sūtras like Ūrdhva-Tiryagbhyām (vertically and crosswise) parallelize multiplications into independent systolic arrays, reducing step complexity.',
-          modernInsight: 'Vedic Math algorithms are widely used today by electrical engineers designing high-speed DSP (Digital Signal Processing) chips and VLSI multipliers.'
+          badgeLabel: '🔬 Computational Complexity & Mental Agility',
+          heading: 'Algorithmic Optimization in Brain-Based Computing',
+          bridgeExplanation: 'In computer algorithms (like Karatsuba multiplication and Fast Fourier Transforms), reducing the number of primitive multiplication operations drops computational complexity from O(n²) to O(n^1.58). Vedic Maths does this biologically: it offloads mechanical carrying into spatial geometric heuristics.',
+          modernInsight: 'Practicing Vedic Maths increases working memory, mathematical confidence, and lateral thinking.'
         },
         linkedResources: [
-          { label: 'Vedic Maths Studio (Interactive Calculators)', targetView: 'vedic-maths', badge: 'Interactive' },
-          { label: '16 Sutras Verified Poster v3', targetView: 'vedic-maths', badge: 'Poster' }
+          { label: 'Interactive Vedic Maths Studio (All 16 Sūtras)', targetView: 'vedic-maths', badge: 'Maths Studio' },
+          { label: 'Darśana Addendum: Evolution of Vedic Mathematics', targetView: 'course-addendum', badge: 'Addendum' }
         ]
       },
       {
@@ -1626,71 +1838,74 @@ export const COURSE_MODULES: CourseModule[] = [
         lessonNumber: '5.3',
         titleDevanagari: 'कटपयादि-संख्या-पद्धतिः · गूढ-सङ्ख्या',
         titleEnglish: 'Kaṭapayādi: Numbers Encoded as Words',
-        shortDescription: 'The world’s first alphanumeric cryptographic hash — encrypting numbers into poetic verses.',
+        shortDescription: 'The ancient alphanumeric hashing system that hides mathematical constants inside poetic prayers.',
         ideaConcept: {
-          heading: 'Hiding Numbers in Sacred Verses',
-          summary: 'How did ancient astronomers and mathematicians remember numbers with 30 decimal digits without writing on paper? They created Kaṭapayādi: a code where every consonant represents a digit from 0 to 9.',
+          heading: 'Alphanumeric Encryption in Classical Astronomy',
+          summary: 'Imagine memorizing Pi (π) to 32 decimal places by chanting a melodious praise of Krishna! That was standard practice in ancient Kerala through the Kaṭapayādi cipher.',
           body: [
-            'A mathematician could write a beautiful devotional hymn to Krishna that was simultaneously an exact mathematical table of astronomical sines or Pi (π)!',
-            'Rule: "अङ्कानां वामतो गतिः" (Numbers are read in reverse: from right to left).'
+            'Each consonant group corresponds to numbers 1 to 9, and vowels are zero (कादिर्नव टादिर्नव पादिपञ्चक यद्यष्टकः).',
+            'Numbers are read backwards (अङ्कानां वामतो गतिः), allowing astronomical constants and trigonometric sine tables to be disguised as poetic prayers.'
           ],
-          keyTakeaway: 'Kaṭapayādi bridges the creative right brain and analytical left brain in a single stroke.'
+          keyTakeaway: 'Kaṭapayādi bridges left-brain mathematical computation with right-brain poetic melody.'
         },
         soundPractice: {
           audioTerms: [
-            { devanagari: 'कादि नव', iast: 'kādi nava', meaning: 'k to jh = digits 1 to 9' },
-            { devanagari: 'टादि नव', iast: 'ṭādi nava', meaning: 'ṭ to dh = digits 1 to 9' },
-            { devanagari: 'पादि पञ्च', iast: 'pādi pañca', meaning: 'p to m = digits 1 to 5' },
-            { devanagari: 'याद्यष्टौ', iast: 'yādyaṣṭau', meaning: 'y to h = digits 1 to 8' },
-            { devanagari: 'क्षः शून्यम्', iast: 'kṣaḥ śūnyam', meaning: 'kṣ = zero (0)' }
+            { devanagari: 'गोपीभाग्यमधुव्रात...', iast: 'gopībhāgyamadhuvrāta...', meaning: 'Pi to 32 decimal places encoded in a prayer to Krishna' },
+            { devanagari: 'कादिर्नव', iast: 'kādir nava', meaning: 'Consonants starting with Ka represent digits 1 to 9' },
+            { devanagari: 'टादिर्नव', iast: 'ṭādir nava', meaning: 'Consonants starting with Ṭa represent digits 1 to 9' },
+            { devanagari: 'पादिपञ्चक', iast: 'pādi pañcaka', meaning: 'Consonants starting with Pa represent digits 1 to 5' },
+            { devanagari: 'यद्यष्टक', iast: 'yady-aṣṭaka', meaning: 'Consonants starting with Ya represent digits 1 to 8' }
           ],
-          phoneticInstructions: 'Chant the cryptographic key: "kādi nava, ṭādi nava, pādi pañca, yādyaṣṭau, kṣaḥ śūnyam".',
-          recitationTips: 'Remember that standalone vowels have zero numerical value; only consonants count!'
+          phoneticInstructions: 'Chant "गोपीभाग्यमधुव्रातशृङ्गिशोदधिसन्धिग". Every single syllable represents an exact digit of Pi: 3.1415926535897932384626433832792!',
+          recitationTips: 'Notice how the vowels add emotional beauty while consonants hold the mathematical data payload.'
         },
         ruleMechanics: {
-          title: 'The Kaṭapayādi Decryption Grid',
+          title: 'The Kaṭapayādi Master Decoding Matrix',
+          explanation: [
+            'Formula: अङ्कानां वामतो गतिः (Numbers proceed from right to left)',
+            'Ka to Jha = 1-9; Ṭa to Dha = 1-9; Pa to Ma = 1-5; Ya to Ha = 1-8. Consonants and standalone vowels = 0.'
+          ],
           tableData: {
-            headers: ['Digit', 'Group 1 (कादि)', 'Group 2 (टादि)', 'Group 3 (पादि)', 'Group 4 (यादि)'],
+            headers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],
             rows: [
-              ['1', 'क', 'ट', 'प', 'य'],
-              ['2', 'ख', 'ठ', 'फ', 'र'],
-              ['3', 'ग', 'ड', 'ब', 'ल'],
-              ['4', 'घ', 'ढ', 'भ', 'व'],
-              ['5', 'ङ', 'ण', 'म', 'श'],
-              ['6', 'च', 'त', '—', 'ष'],
-              ['7', 'छ', 'थ', '—', 'स'],
-              ['8', 'ज', 'द', '—', 'ह'],
-              ['9', 'झ', 'ध', '—', '—'],
-              ['0', 'ञ', 'न', '—', 'क्ष']
+              ['क (ka)', 'ख (kha)', 'ग (ga)', 'घ (gha)', 'ङ (ṅa)', 'च (ca)', 'छ (cha)', 'ज (ja)', 'झ (jha)', 'ञ (ña)'],
+              ['ट (ṭa)', 'ठ (ṭha)', 'ड (ḍa)', 'ढ (ḍha)', 'ण (ṇa)', 'त (ta)', 'थ (tha)', 'द (da)', 'ध (dha)', 'न (na)'],
+              ['प (pa)', 'फ (pha)', 'ब (ba)', 'भ (bha)', 'म (ma)', '—', '—', '—', '—', '—'],
+              ['य (ya)', 'र (ra)', 'ल (la)', 'व (va)', 'श (śa)', 'ष (ṣa)', 'स (sa)', 'ह (ha)', '—', '—']
             ]
+          },
+          sutraReference: {
+            devanagari: 'कादिर्नव टादिर्नव पादिपञ्चक यद्यष्टकः । क्षः शून्यम् ॥',
+            iast: 'kādir nava ṭādir nava pādi-pañcaka yady-aṣṭakaḥ | kṣaḥ śūnyam ||',
+            meaning: 'Letters starting with Ka are 1-9; starting with Ṭa are 1-9; starting with Pa are 1-5; starting with Ya are 1-8. Consonants and standalone vowels are zero.'
           }
         },
         practice: {
           quickQuiz: {
             id: 'q-5-3',
-            prompt: 'In the Kaṭapayādi cryptographic system, which rule dictates how the decoded digits are arranged?',
+            prompt: 'In the Kaṭapayādi alphanumeric system, what direction are encoded numbers deciphered?',
             options: [
               'Top to bottom',
-              'अङ्कानां वामतो गतिः (Numbers proceed from right to left / in reverse)',
-              'Randomly',
-              'Only forwards'
+              'From right to left (अङ्कानां वामतो गतिः)',
+              'From left to right only',
+              'Randomly'
             ],
             correctIndex: 1,
-            explanation: 'The fundamental rule "अङ्कानां वामतो गतिः" states that numbers are read from right to left (the first consonant decoded is the units digit).'
+            explanation: 'The fundamental rule is "अङ्कानां वामतो गतिः" (Numbers move towards the left): the first spoken syllable represents the units digit, the second the tens digit, and so on.'
           },
-          worksheetSummary: 'Worksheet 5.3: Kaṭapayādi Cryptographic Decryption & Pi (π) Verse Decoding Sheet.',
+          worksheetSummary: 'Worksheet 5.3: Kaṭapayādi Alphanumeric Encryption & Astronomical Verse Decryption.',
           worksheetDownloadId: 'ws-c5-3'
         },
         thinkingConnection: {
           type: 'scientific',
           badgeLabel: '🔬 Cryptography & Steganography',
-          heading: 'Alphanumeric Hashing and Information Steganography',
-          bridgeExplanation: 'Steganography is the art of hiding secret data inside an innocuous medium (like hiding a watermark in an image). Kaṭapayādi is the earliest known linguistic steganography: high-precision mathematical data hidden inside elegant devotional poetry.',
-          modernInsight: 'This allowed ancient Indian scientific tables to survive unbroken through oral memory across wars and book-burnings.'
+          heading: 'Steganography: Hiding Data Inside Aesthetic Carrier Signals',
+          bridgeExplanation: 'In modern cybersecurity, steganography is the practice of concealing secret data within an ordinary file (like hiding text inside an image’s least significant bits). Kaṭapayādi was literal steganography: high-precision mathematical data was imperceptibly hidden inside sacred liturgical hymns.',
+          modernInsight: 'This ensured that scientific discoveries survived centuries of foreign invasions and manuscript destruction by living in oral memory.'
         },
         linkedResources: [
-          { label: 'Philosophy Essay: Śūnyāt Anantam', targetView: 'philosophy', badge: 'History of Math' },
-          { label: 'Vedic Maths Studio', targetView: 'vedic-maths', badge: 'Calculators' }
+          { label: 'Kaṭapayādi Interactive Cipher Tool', targetView: 'vedic-maths', badge: 'Cipher Tool' },
+          { label: 'Numbers Guide & Sanskrit Numerals', targetView: 'home', badge: 'Numerals' }
         ]
       },
       {
@@ -1698,60 +1913,75 @@ export const COURSE_MODULES: CourseModule[] = [
         lessonNumber: '5.4',
         titleDevanagari: 'विज्ञान-तन्त्रज्ञाने संस्कृत-पदानि',
         titleEnglish: 'Sanskrit Words in Science, Technology & English',
-        shortDescription: 'Cognates across languages and Pāṇinian neologisms for modern space and AI technologies.',
+        shortDescription: 'From Mother to Matrix, Geometry to Gaṇita: tracing ancient Sanskrit roots in modern global science.',
         ideaConcept: {
-          heading: 'The Global Echo of Sanskrit',
-          summary: 'Did you know that English words like Mother (माता), Brother (भ्राता), Name (नाम), Ignite (अग्नि), and Geometry (ज्यामिति) share direct genetic roots with Sanskrit? More importantly, Sanskrit can engineer precise words for modern technologies without borrowing.',
+          heading: 'The Global Etymological Thread',
+          summary: 'Did you know that "Geometry" comes from Gyamiti (ज्यामिति), "Trigonometry" from Trikonamiti (त्रिकोणमिति), and "Mother" from Mātṛ (मातृ)? Sanskrit is the elder sister of the Indo-European linguistic family.',
           body: [
-            'Ancient Sanskrit gave humanity zero (शून्य) which became Cipher and Zero in Europe via Arabic sifr.',
-            'Today, Pāṇinian grammar allows scientists to engineer pure modern terms: Artificial Intelligence = कृत्रिमन्त्रम्, Internet = अन्तर्जालम्, Blockchain = खण्डशृङ्खला.'
+            'In 1869, Russian chemist Dmitri Mendeleev organized the Periodic Table of Elements. To name his predicted undiscovered elements, he used Sanskrit prefixes: Eka-boron, Eka-aluminium, and Eka-silicon!',
+            'Why? Because Mendeleev was inspired by the two-dimensional matrix organization of Pāṇini’s Śiva Sūtras.'
           ],
-          keyTakeaway: 'Sanskrit is not a dead language of the past; it is a living forge for future concepts.'
+          keyTakeaway: 'Sanskrit vocabulary is already in your mouth when you speak English, mathematics, and science.'
         },
         soundPractice: {
           audioTerms: [
-            { devanagari: 'कृत्रिमन्त्रम्', iast: 'Kṛtrimantram', meaning: 'Artificial Intelligence (Engineered tool of thought)' },
-            { devanagari: 'अन्तर्जालम्', iast: 'Antarjālam', meaning: 'The Internet (Interconnected inner web)' },
-            { devanagari: 'खण्डशृङ्खला', iast: 'Khaṇḍaśṛṅkhalā', meaning: 'Blockchain (Interlocked chain of ledger blocks)' },
-            { devanagari: 'सङ्गणकम्', iast: 'Saṅgaṇakam', meaning: 'Computer (Machine that computes harmoniously)' }
+            { devanagari: 'मातृ → Mother', iast: 'mātṛ → Mother', meaning: 'Root √मा (to measure / nourish)' },
+            { devanagari: 'भ्रातृ → Brother', iast: 'bhrātṛ → Brother', meaning: 'Root √भृ (to bear / support)' },
+            { devanagari: 'ज्यामितिः → Geometry', iast: 'jyāmitiḥ → Geometry', meaning: 'Earth measurement (ज्या + मिति)' },
+            { devanagari: 'त्रिकोणमितिः → Trigonometry', iast: 'trikoṇamitiḥ → Trigonometry', meaning: 'Measurement of three-angled shapes' }
           ],
-          phoneticInstructions: 'Recite each neologism and trace its roots: कृत्रिम (man-made) + मन्त्रम् (tool of thinking).',
-          recitationTips: 'Notice how much more natural and concise "कृत्रिमन्त्रम्" is compared to clumsy multi-word translations!'
+          phoneticInstructions: 'Pronounce the pairs: Mātṛ / Mother, Bhrātṛ / Brother, Nāman / Name, Pada / Pedestrian. Feel the ancient family connection vibrating across centuries.',
+          recitationTips: 'Notice how the Sanskrit root is almost always more descriptive and mathematically transparent.'
         },
         ruleMechanics: {
-          title: 'The Neologism Engineering Blueprint',
+          title: 'Indo-European Cognate Matrix & Scientific Nomenclature',
           explanation: [
-            '1. Identify the essential action or function (e.g. to compute = √गण्).',
-            '2. Add appropriate noun suffix: ल्युट् (-ana) → गणनम् (computing).',
-            '3. Add prefix for excellence/harmony: सम् + गणनम् → सङ्गणकम् (Computer)!'
-          ]
+            'Grimm’s Law and Verner’s Law explain how Sanskrit consonants shifted into Germanic and Latin over 3,000 years:',
+            'Sanskrit aspirated stops (bh, dh, gh) softened into voiced stops (b, d, g) in English.'
+          ],
+          tableData: {
+            headers: ['Sanskrit Root / Word', 'Core Meaning', 'Cognate / Descendant in English', 'Scientific / Technical Field', 'Shared Indo-European Concept'],
+            rows: [
+              ['मातृ (Mātṛ)', 'Mother / Measurer', 'Mother, Matrix, Metric, Matter', 'Mathematics / Physics', 'The matrix from which all manifestation is measured'],
+              ['भ्रातृ (Bhrātṛ)', 'Brother / Supporter', 'Brother, Fraternal', 'Anthropology / Biology', 'Kinship bonds sharing sustenance'],
+              ['नामन् (Nāman)', 'Name / Identity', 'Name, Nominal, Nomenclature', 'Computer Science / Linguistics', 'Identifier token pointing to an object'],
+              ['पद (Pada)', 'Step / Place / Foot', 'Foot, Pedal, Pedestrian, Podiatry', 'Anatomy / Geometry', 'Unit of measurement and locational standing'],
+              ['ज्ञान (Jñāna)', 'Direct knowing / Gnosis', 'Know, Gnosis, Cognition, Diagnosis', 'Epistemology / Cognitive Science', 'Active awareness grasping reality without distortion'],
+              ['अष्ट (Aṣṭa)', 'Eight (8)', 'Eight, Octagon, Octopus, Octave', 'Arithmetic / Musicology', 'The structural octave in acoustic and numerical scales']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'एकं सद्विप्रा बहुधा वदन्ति',
+            iast: 'ekaṁ sad viprā bahudhā vadanti (Ṛgveda 1.164.46)',
+            meaning: 'Truth is one; the wise articulate it through multiple linguistic expressions and varied names.'
+          }
         },
         practice: {
           quickQuiz: {
             id: 'q-5-4',
-            prompt: 'What modern technological concept is engineered in Sanskrit by the word "खण्डशृङ्खला" (Khaṇḍaśṛṅkhalā)?',
+            prompt: 'Why did the creator of the Periodic Table, Dmitri Mendeleev, name his predicted missing elements "Eka-Aluminium" and "Eka-Silicon" using the Sanskrit word "Eka" (एक)?',
             options: [
-              'Satellite Television',
-              'Blockchain / Distributed Ledger (Chain of discrete data blocks)',
-              'Electric Car',
-              'Optical Fiber'
+              'It was a complete coincidence',
+              'He was paying homage to Pāṇini’s two-dimensional matrix of sounds (Śiva Sūtras), which inspired his periodic table layout',
+              'Because Sanskrit was the language of Russia',
+              'He liked the sound of the word'
             ],
             correctIndex: 1,
-            explanation: '"खण्ड" (discrete block) + "शृङ्खला" (interlocked unbroken chain) = Blockchain!'
+            explanation: 'Historical linguistics confirms that Mendeleev was a friend of Sanskrit scholar Böhtlingk and deliberately utilized Sanskrit’s "Eka" (one beyond) in homage to Pāṇinian structural matrices.'
           },
-          worksheetSummary: 'Worksheet 5.4: Indo-European Cognates & Neologism Word Forge Exercise.',
+          worksheetSummary: 'Worksheet 5.4: Sanskrit Etymology in Modern Science & 100 Indo-European Cognates Chart.',
           worksheetDownloadId: 'ws-c5-4'
         },
         thinkingConnection: {
-          type: 'scientific',
-          badgeLabel: '🔬 Comparative Linguistics & Terminology',
-          heading: 'Morphological Self-Sufficiency',
-          bridgeExplanation: 'Unlike languages that borrow foreign loanwords when new inventions appear (e.g., Hindi borrowing "computer" or "mobile"), Sanskrit derives new words strictly from its internal root system (Dhātus). This ensures that modern terminology remains fully transparent to anyone who knows the roots.',
-          modernInsight: 'This architectural self-sufficiency makes Sanskrit a uniquely resilient linguistic operating system.'
+          type: 'integrated',
+          badgeLabel: '🧠 Cognitive History of Science',
+          heading: 'Mendeleev, Pāṇini, and the Architecture of Discovery',
+          bridgeExplanation: 'Scientific breakthroughs often occur when a thinker imports an elegant structural model from an unrelated discipline. Mendeleev’s recognition of periodic atomic properties mirrored Pāṇini’s grouping of phonemes by place of articulation and acoustic effort.',
+          modernInsight: 'Studying ancient linguistic systems expands your capacity for cross-disciplinary pattern recognition.'
         },
         linkedResources: [
-          { label: 'Bodhi Neologism Riddles Game', targetView: 'home', badge: 'Game' },
-          { label: 'Grammar Article 12: Sanskrit in English', targetView: 'grammar', param: 'article:sanskrit-in-english', badge: 'Article' }
+          { label: 'Philosophy: Why Sanskrit Matters in the AI Age', targetView: 'philosophy', badge: 'Essay' },
+          { label: 'Full Course Certificate Desk', targetView: 'worksheets', badge: 'Certificate' }
         ]
       }
     ]
@@ -1765,73 +1995,85 @@ export const COURSE_MODULES: CourseModule[] = [
     moduleNumber: 6,
     titleDevanagari: 'दर्शनम् · The Contemplative Mind',
     titleEnglish: 'The Contemplative Mind (दर्शनम्)',
-    tagline: 'Recitation, reading original scriptures, and holistic capstone analysis',
-    themeColor: '#d97706',
+    tagline: 'Sound as meditation: from recitation to direct realization',
+    themeColor: '#7c3aed',
     icon: '🪔',
     overview:
-      'The crown of the course: transforming linguistic mastery into contemplative depth. Learn pitch-accented Vedic recitation, read the Bhagavad Gītā in the original Sanskrit without translations, explore the 6 Darśanas, and complete the end-to-end Capstone Verse Analysis.',
+      'The ultimate culmination: turning speech back into its transcendent source. Experience how focused recitation calms the autonomic nervous system, read the Bhagavad Gītā directly without translation, explore the 6 Darśanas as integrated lenses on reality, and execute an end-to-end linguistic and philosophical analysis of a sacred verse.',
     lessons: [
       {
         id: 'c-6-1',
         lessonNumber: '6.1',
         titleDevanagari: 'स्वरः, लयः एवं एकाग्रता',
         titleEnglish: 'Recitation and Focus: Svara, Rhythm and Attention',
-        shortDescription: 'Voice as the bridge between body, breath, and inner silence. Chanting as neuro-acoustic regulation.',
+        shortDescription: 'How pitch accents (Udātta, Anudātta, Svarita) transform speech into a laser of cognitive presence.',
         ideaConcept: {
-          heading: 'Speech as an Auditory Meditation',
-          summary: 'In the Gurukul tradition, chanting was never rote performance. It was a precise method of holding the nervous system perfectly still while speech flowed.',
+          heading: 'Chanting as Vocal Meditation',
+          summary: 'In the Vedic tradition, recitation is not singing for performance. It is an exacting discipline of attention where pitch, duration, and breath are locked into alignment.',
           body: [
-            'The three Vedic pitches: Udātta (उदात्तः - raised pitch), Anudātta (अनुदात्तः - lowered pitch), and Svarita (स्वरितः - circumflex glide).',
-            'Reciting with accurate pitch prevents the mind from projecting thoughts into the past or future.'
+            'The three Vedic accents: Udātta (उदान्त = elevated pitch), Anudātta (अनुदात्त = grave/low pitch), and Svarita (स्वरित = circumflex/falling pitch).',
+            'Reciting with Svara requires total presence: if your mind wanders for a quarter of a second, your pitch drops and you notice immediately!'
           ],
-          keyTakeaway: 'When pitch, duration, and breath align, chanting quiets internal chatter and brings lucid mental stillness.'
+          keyTakeaway: 'Svara is a real-time biofeedback monitor for human awareness.'
         },
         soundPractice: {
           audioTerms: [
-            { devanagari: 'ओं सह नाववतु ।', iast: 'oṃ saha nāvavatu |', meaning: 'Oṃ. May the Supreme protect teacher and student together.' },
-            { devanagari: 'सह नौ भुनक्तु ।', iast: 'saha nau bhunaktu |', meaning: 'May it nourish us both together.' },
-            { devanagari: 'सह वीर्यं करवावहै ।', iast: 'saha vīryaṃ karavāvahai |', meaning: 'May we both work together with vigour.' },
-            { devanagari: 'तेजस्वि नावधीतमस्तु मा विद्विषावहै ॥', iast: 'tejasvi nāvadhītamastu mā vidviṣāvahai ||', meaning: 'May our study be radiant; may we never hate one another.' },
-            { devanagari: 'ओं शान्तिः शान्तिः शान्तिः ॥', iast: 'oṃ śāntiḥ śāntiḥ śāntiḥ ||', meaning: 'Oṃ. Peace, peace, peace.' }
+            { devanagari: 'उदात्तः', iast: 'udāttaḥ', meaning: 'Raised / High tone (No mark in text)' },
+            { devanagari: 'अनुदात्तः', iast: 'anudāttaḥ', meaning: 'Grave / Low tone (Underline mark)' },
+            { devanagari: 'स्वरितः', iast: 'svaritaḥ', meaning: 'Falling / Combined tone (Vertical stroke above)' },
+            { devanagari: 'ॐ भूर्भुवः स्वः', iast: 'oṁ bhūr bhuvaḥ svaḥ', meaning: 'The sacred Vyāhṛtis with Vedic accents' },
+            { devanagari: 'सत्यं वद । धर्मं चर ।', iast: 'satyaṁ vada | dharmaṁ cara |', meaning: 'Speak truth; walk in righteousness (Taittirīya)' }
           ],
-          phoneticInstructions: 'Chant the Śānti Mantra slowly. Feel the vibration rise from your belly through the chest into the crown of your head.',
-          recitationTips: 'Pause after "ओं शान्तिः शान्तिः शान्तिः" and sit in pure silence for 30 seconds.'
+          phoneticInstructions: 'Listen closely to the pitch rise on Svarita (vertical mark) and the grounding chest drop on Anudātta (horizontal underbar).',
+          recitationTips: 'Never force the throat. Let the breath rise from the diaphragm like a fountain.'
         },
         ruleMechanics: {
-          title: 'The Three Vedic Pitch Accents (Svara)',
+          title: 'The Vedic Svara Accent Triad & Physiological Effect',
           explanation: [
-            '1. Udātta (उदात्तः): Pitch produced in the upper vocal region (high tone).',
-            '2. Anudātta (अनुदात्तः): Pitch produced in the lower vocal region (marked with a horizontal bar under the letter in Vedic texts: अ॒).',
-            '3. Svarita (स्वरितः): Harmonious combination / falling glide (marked with a vertical stroke above: अ॑).'
-          ]
+            '1. Udātta (उच्चैरुदात्तः 1.2.29): Pitch produced in the upper vocal tract registers.',
+            '2. Anudātta (नीचैरनुदात्तः 1.2.30): Pitch produced in the lower vocal registers.',
+            '3. Svarita (समाहारः स्वरितः 1.2.31): Falling inflection connecting Udātta and Anudātta.'
+          ],
+          tableData: {
+            headers: ['Svara Accent (स्वरः)', 'Vocal Pitch & Intonation', 'Devanāgarī Notation', 'Physiological Effect', 'Vedic Sūtra Landmark'],
+            rows: [
+              ['उदात्तः (Udātta)', 'High / elevated pitch; vocal cords tighten slightly', 'Unmarked (bare syllable)', 'Alert, upward movement of attention', 'उच्चैरुदात्तः (Pāṇini 1.2.29)'],
+              ['अनुदात्तः (Anudātta)', 'Low / grave pitch; chest resonance opens', 'Horizontal line underneath ( _ )', 'Grounding, parasympathetic calming', 'नीचैरनुदात्तः (Pāṇini 1.2.30)'],
+              ['स्वरितः (Svarita)', 'Circumflex / falling pitch from high to low', 'Vertical stroke on top ( | )', 'Harmonic balancing; cerebral integration', 'समाहारः स्वरितः (Pāṇini 1.2.31)']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'उच्चैरुदात्तः । नीचैरनुदात्तः । समाहारः स्वरितः ।',
+            iast: 'uccair udāttaḥ | nīcair anudāttaḥ | samāhāraḥ svaritaḥ (Pāṇini 1.2.29-31)',
+            meaning: 'High-pitched is Udātta; low-pitched is Anudātta; the synthesis/combination of both is Svarita.'
+          }
         },
         practice: {
           quickQuiz: {
             id: 'q-6-1',
-            prompt: 'In Vedic recitation, what are the three foundational pitch accents called?',
+            prompt: 'In Vedic text notation, what does a horizontal line under a syllable (like अ॒) signify?',
             options: [
-              'Do, Re, Mi',
-              'Udātta (उच्चैः), Anudātta (नीचैः), and Svarita (समाहारः)',
-              'Hrasva, Dīrgha, Pluta',
-              'Past, Present, Future'
+              'It means the letter is silent',
+              'It is Anudātta (low/grave pitch accent)',
+              'It means pronounce it twice',
+              'It is a printing error'
             ],
             correctIndex: 1,
-            explanation: 'The three Vedic accents are Udātta (raised), Anudātta (lowered), and Svarita (circumflex transition).'
+            explanation: 'The horizontal underbar signifies Anudātta (the low or grave pitch accent in Vedic recitation).'
           },
-          worksheetSummary: 'Worksheet 6.1: Vedic Svara Markings & Respiratory Recitation Practice Sheet.',
+          worksheetSummary: 'Worksheet 6.1: Vedic Svara Accent Notation & Focused Recitation Breath Guide.',
           worksheetDownloadId: 'ws-c6-1'
         },
         thinkingConnection: {
           type: 'contemplative',
-          badgeLabel: '🪔 Neuro-Acoustics & Vagal Tone',
-          heading: 'Vagus Nerve Stimulation Through Metered Resonance',
-          bridgeExplanation: 'The long vagus nerve passes directly alongside the vocal cords and larynx before innervating the heart, lungs, and viscera. Low-frequency resonant chanting with prolonged exhalation directly stimulates the parasympathetic nervous system, lowering heart rate variability (HRV) and calming stress.',
-          modernInsight: 'Ancient chant masters discovered physiological biofeedback thousands of years before electronic monitors existed.'
+          badgeLabel: '🪔 Vagal Nerve Stimulation & Chanting',
+          heading: 'Vocal Resonance and Parasympathetic Activation',
+          bridgeExplanation: 'Neuroscientific studies on mantra chanting confirm that prolonged vocalic exhalations stimulate the auricular branch of the vagus nerve, reducing amygdala hyperactivity and inducing deep parasympathetic tranquility.',
+          modernInsight: 'Ancient recitation was a sophisticated psycho-acoustic technology designed to quiet mental chatter before deep meditation.'
         },
         linkedResources: [
-          { label: 'मन्त्राः श्लोकाश्च · Mantras & Ślokas — Bhūmi Vandanam & Cosmic Peace', targetView: 'course-addendum', param: 'addendum-mantras-shlokas', badge: 'Recite' },
-          { label: 'Deepakam Prārthanā Audio Recitation', targetView: 'reader', badge: 'Prayer Audio' },
-          { label: 'Philosophy: Evolution of the Speaking Body', targetView: 'philosophy', badge: 'Essay' }
+          { label: 'Deepakam Chapter 1 Reciter', targetView: 'reader', badge: 'Audio Reader' },
+          { label: 'Philosophy: Living Transmission vs Models', targetView: 'philosophy', badge: 'Essay' }
         ]
       },
       {
@@ -1839,59 +2081,72 @@ export const COURSE_MODULES: CourseModule[] = [
         lessonNumber: '6.2',
         titleDevanagari: 'श्रीमद्भगवद्गीता-पठनम्',
         titleEnglish: 'Reading the Gītā Directly',
-        shortDescription: 'Moving beyond secondhand translations into direct contact with the original dialogue.',
+        shortDescription: 'Entering the battlefield dialogue of Krishna and Arjuna without translation intermediaries.',
         ideaConcept: {
-          heading: 'Direct Encounter with the Original Text',
-          summary: 'When you read the Gītā in translation, you are reading someone else’s interpretation. When you read the Sanskrit words directly, you encounter the raw psychological dialogue between Krishna and Arjuna.',
+          heading: 'Meeting the Song of the Divine',
+          summary: 'Translations are like looking at a sunrise through someone else’s tinted sunglasses. In this lesson, you will read the most famous stanza of the Bhagavad Gītā (2.47) directly in original Sanskrit.',
           body: [
-            'We will take the most famous verse in human literature: Chapter 2, Verse 47 ("कर्मण्येवाधिकारस्ते...").',
-            'Using the Sandhi and Vibhakti rules you learned in Module 3, you will disassemble and translate it yourself!'
+            '"कर्मण्येवाधिकारस्ते मा फलेषु कदाचन । मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥"',
+            'You will dissect each word grammatically: Karmāṇi (Locative: in action) + eva (alone) + adhikāraḥ (right/jurisdiction) + te (to you).'
           ],
-          keyTakeaway: 'Reading sacred literature in its original language removes all secondhand filters.'
+          keyTakeaway: 'Reading the original words gives you direct, unfiltered intimacy with timeless spiritual psychology.'
         },
         soundPractice: {
           audioTerms: [
-            { devanagari: 'कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।', iast: 'karmaṇyevādhikāraste mā phaleṣu kadācana |', meaning: 'Your jurisdiction is in action alone, never in its fruits.' },
-            { devanagari: 'मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥', iast: 'mā karmaphalaheturbhūrmā te saṅgo\'stvakarmaṇi ||', meaning: 'Do not let fruits of action be your motive; do not be attached to inaction.' }
+            { devanagari: 'कर्मण्येवाधिकारस्ते', iast: 'karmaṇy-evādhikāras-te', meaning: 'You have jurisdiction over action alone...' },
+            { devanagari: 'मा फलेषु कदाचन ।', iast: 'mā phaleṣu kadācana |', meaning: '...never over the fruits / results.' },
+            { devanagari: 'समत्वं योग उच्यते ।', iast: 'samatvaṁ yoga ucyate |', meaning: 'Equanimity of mind is termed Yoga.' }
           ],
-          phoneticInstructions: 'Split the Sandhi as you chant: Karmaṇi + eva + adhikāraḥ + te | mā + phaleṣu + kadācana.',
-          recitationTips: 'Notice how the rhythm gives weight and dignity to the profound philosophical declaration.'
+          phoneticInstructions: 'Chant verse 2.47 in the traditional Anuṣṭubh lilt: Kar-man-yev-ādhi-kā-ras-te / mā pha-le-ṣu ka-dā-ca-na.',
+          recitationTips: 'Pause and let the meaning wash through your mind before moving to the second line.'
         },
         ruleMechanics: {
-          title: 'Anvaya Breakdown of Gītā 2.47',
+          title: 'Grammatical Breakdown of Gītā 2.47',
           explanation: [
-            'कर्मणि (In action - Saptamī locative) + एव (alone) + अधिकारः (right/jurisdiction) + ते (your).',
-            'फलेषु (In the fruits - Saptamī plural) + कदाचन (ever) + मा (not).',
-            'कर्मफलहेतुः (Motivated by fruits) + मा भूः (do not become).',
-            'अकर्मणि (In inaction) + ते (your) + सङ्गः (attachment) + मा अस्तु (may not be).'
-          ]
+            'कर्मणि (In action - 7th Locative) + एव (alone) + अधिकारः (right - 1st Nominative) + ते (to you - 6th Genitive)',
+            'मा (not) + फलेषु (in fruits - 7th Locative Plural) + कदाचन (ever)'
+          ],
+          tableData: {
+            headers: ['Gītā 2.47 Quarter', 'Padaccheda (Word Split)', 'Grammatical Case / Verb Form', 'Meaning', 'Spiritual Contemplation'],
+            rows: [
+              ['कर्मण्येवाधिकारस्ते', 'कर्मणि एव अधिकारः ते', 'Saptamī (in action) + Avyaya + Prathamā + Genitive pronoun', 'In action alone is your jurisdiction / right', 'Direct your energy toward your duty, never into obsessive worry'],
+              ['मा फलेषु कदाचन ।', 'मा फलेषु कदाचन', 'Particle of prohibition + Saptamī plural (in fruits) + Adverb', 'Never in the fruits or outcomes of action', 'Severing anxiety: you control the input effort, not the external result'],
+              ['मा कर्मफलहेतुर्भूर्', 'मा कर्म-फल-हेतुः भूः', 'Negative particle + Bahuvrīhi compound + Aorist verb', 'Do not let the motive for action be the reward', 'Act from duty and excellence, not mercenary calculation'],
+              ['मा ते सङ्गोऽस्त्वकर्मणि ॥', 'मा ते सङ्गः अस्तु अकर्मणि', 'Negative + Genitive + Nominative + Imperative + Locative', 'Nor let there be any attachment to inaction', 'Refuse paralysis and lethargy; engage the world with complete presence']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'योगस्थः कुरु कर्माणि सङ्गं त्यक्त्वा धनञ्जय । सिद्ध्यसिद्ध्योः समो भूत्वा समत्वं योग उच्यते ॥',
+            iast: 'yogasthaḥ kuru karmāṇi saṅgaṁ tyaktvā dhanañjaya | siddhy-asiddhyoḥ samo bhūtvā samatvaṁ yoga ucyate (Gītā 2.48)',
+            meaning: 'Established in yoga, perform your actions having abandoned selfish attachment; remaining equanimous in success and failure—equanimity is called Yoga.'
+          }
         },
         practice: {
           quickQuiz: {
             id: 'q-6-2',
-            prompt: 'In Gītā 2.47, what grammatical case is "कर्मणि" (in action) and "फलेषु" (in fruits)?',
+            prompt: 'In Bhagavad Gītā 2.47, what does the phrase "कर्मणि एव अधिकारः ते" (Karmaṇyevādhikāraste) mean?',
             options: [
-              'Prathamā (Subject nominative)',
-              'Saptamī (Locative / in, on, at)',
-              'Tṛtīyā (Instrumental)',
-              'Dvitīyā (Accusative)'
+              'You have no right to do any work',
+              'You have jurisdiction/standing over your action alone, not over its results',
+              'You should only work if you get paid immediately',
+              'Action is an illusion'
             ],
             correctIndex: 1,
-            explanation: 'Both "कर्मणि" (singular) and "फलेषु" (plural) are in Saptamī Vibhakti (Locative case), expressing "in action" and "in the fruits".'
+            explanation: '"कर्मणि एव अधिकारः ते": Your jurisdiction (अधिकारः) is strictly within action (कर्मणि), never in the fruits (मा फलेषु).'
           },
-          worksheetSummary: 'Worksheet 6.2: Bhagavad Gītā Chapter 2 Verse Parsing & Anvaya Translation Worksheet.',
+          worksheetSummary: 'Worksheet 6.2: Bhagavad Gītā Verse 2.47 & 2.48 Word-by-Word Grammatical Parsing Sheet.',
           worksheetDownloadId: 'ws-c6-2'
         },
         thinkingConnection: {
           type: 'contemplative',
           badgeLabel: '🪔 Karma Yoga & Psychological Freedom',
-          heading: 'Action Free from Anxiety Over Outcome',
-          bridgeExplanation: 'Gītā 2.47 is the ultimate psychological blueprint for peak performance. When a surgeon or coder is hyper-fixated on fear of failure or craving praise (phala), working memory is drained. Directing 100% of attention into the action itself (karmaṇi eva) produces effortless flow state.',
-          modernInsight: 'This directly parallels Mihaly Csikszentmihalyi’s modern concept of Flow and Carol Dweck’s Growth Mindset.'
+          heading: 'Decoupling Effort from Anxiety',
+          bridgeExplanation: 'Modern cognitive behavioral therapy (CBT) and stoic philosophy emphasize focusing solely on the "Locus of Control". Krishna’s teaching in 2.47 is the ultimate formulation of this principle: total commitment to the quality of action, accompanied by complete surrender of obsessive attachment to the outcome.',
+          modernInsight: 'Direct engagement with this Sanskrit verse dissolves burnout and performance anxiety at their root.'
         },
         linkedResources: [
-          { label: 'Grammar Declension Shelf', targetView: 'grammar', badge: 'Declensions' },
-          { label: 'NCERT Deepakam Verse Reader', targetView: 'reader', badge: 'Reader' }
+          { label: 'Bhagavad Gītā Interactive Reciter', targetView: 'reader', badge: 'Audio Reader' },
+          { label: 'Philosophy: The Well & The Bank', targetView: 'philosophy', badge: 'Article' }
         ]
       },
       {
@@ -1899,71 +2154,74 @@ export const COURSE_MODULES: CourseModule[] = [
         lessonNumber: '6.3',
         titleDevanagari: 'षड्-दर्शनानि · दृष्टयः',
         titleEnglish: 'The Darśanas as Ways of Seeing',
-        shortDescription: 'The six classical epistemological systems as lenses for investigating reality and consciousness.',
+        shortDescription: 'The six classical schools of Indian philosophy as complementary scientific lenses on reality.',
         ideaConcept: {
-          heading: 'Philosophy as Direct Seeing (Darśana)',
-          summary: 'In the West, philosophy means "love of wisdom". In Sanskrit, it is called Darśana (दर्शनम्, from √दृश् = to see) — a direct experiential perception of reality.',
+          heading: 'The Six Luminescent Lenses on Reality',
+          summary: 'In the West, philosophical schools argued to destroy each other. In classical India, the six orthodox Darśanas (from dṛś = to see) operate as a progressive staircase of human cognition.',
           body: [
-            'The 6 Orthodox Systems (षड्-दर्शनानि):',
-            '1. Nyāya (Logic & Epistemology)',
-            '2. Vaiśeṣika (Atomic Physics & Categorization)',
-            '3. Sāṅkhya (Cosmology & Consciousness vs Matter)',
-            '4. Yoga (Psychology & Meditative Stillness)',
-            '5. Mīmāṁsā (Linguistic Hermeneutics & Action)',
-            '6. Vedānta (Non-duality & Ultimate Reality)'
+            '1. Nyāya: Formal logic and epistemology (How do we know what is real?)',
+            '2. Vaiśeṣika: Atomic physics and taxonomy of substances',
+            '3. Sāṅkhya: The 25 cosmic principles from consciousness (Puruṣa) to matter (Prakṛti)',
+            '4. Yoga: The psychophysical science of stilling mental fluctuations',
+            '5. Mīmāṁsā: Linguistic duty, acoustic physics, and living ritual',
+            '6. Vedānta: The non-dual climax: individual consciousness is identical with universal reality'
           ],
-          keyTakeaway: 'The Darśanas are not dogmatic beliefs; they are complementary lenses through which the mind investigates existence.'
+          keyTakeaway: 'The Darśanas are not dogmatic beliefs; they are rigorous empirical instruments for investigating the self and the cosmos.'
         },
         soundPractice: {
           audioTerms: [
-            { devanagari: 'प्रत्यक्षम्', iast: 'Pratyakṣam', meaning: 'Direct sensory perception' },
-            { devanagari: 'अनुमानम्', iast: 'Anumānam', meaning: 'Logical inference (where there is smoke, there is fire)' },
-            { devanagari: 'उपमानम्', iast: 'Upamānam', meaning: 'Comparison and analogy' },
-            { devanagari: 'शब्दः', iast: 'Śabdaḥ', meaning: 'Valid testimony of reliable seers' }
+            { devanagari: 'दर्शनम्', iast: 'darśanam', meaning: 'A way of seeing / Direct perception' },
+            { devanagari: 'योगश्चित्तवृत्तिनिरोधः', iast: 'yogaś-citta-vṛtti-nirodhaḥ', meaning: 'Yoga is the cessation of mind-fluctuations (Yoga Sūtra 1.2)' },
+            { devanagari: 'अथातो ब्रह्मजिज्ञासा', iast: 'athāto brahma-jijñāsā', meaning: 'Now, therefore, the inquiry into ultimate reality (Brahma Sūtra 1.1.1)' }
           ],
-          phoneticInstructions: 'Chant the 4 primary Pramāṇas (valid means of knowledge).',
-          recitationTips: 'Reflect on how your mind gathers evidence for every belief it holds.'
+          phoneticInstructions: 'Recite "Yogaś citta-vṛtti-nirodhaḥ" with calm, unwavering clarity. Notice the rhythmic pauses between words.',
+          recitationTips: 'Observe how each philosophical tradition begins with an explicit declaration of inquiry (Jijñāsā).'
         },
         ruleMechanics: {
-          title: 'The Six Darśana Pairs',
+          title: 'The Six Orthodox Darśanas: Complete Comparative Matrix',
           tableData: {
-            headers: ['System (दर्शनम्)', 'Founder (ऋषिः)', 'Core Investigation', 'Scientific / Philosophical Focus'],
+            headers: ['Darśana (दर्शनम्)', 'Founding Sage', 'Core Focus & Method', 'Key Text', 'Modern Parallel'],
             rows: [
-              ['न्याय (Nyāya)', 'गौतम (Gautama)', 'प्रमाणानि (Means of knowledge)', 'Formal logic, syllogisms, fallacy detection'],
-              ['वैशेषिक (Vaiśeṣika)', 'कणाद (Kaṇāda)', 'पदार्थाः (Atomic elements)', 'Atomic theory, physics, material categories'],
-              ['सांख्य (Sāṅkhya)', 'कपिल (Kapila)', 'प्रकृति-पुरुषौ (Matter & Soul)', 'Cosmology, 24 elements, conscious awareness'],
-              ['योग (Yoga)', 'पतञ्जलि (Patañjali)', 'चित्तवृत्तिनिरोधः (Stillness)', 'Meditation, psychology, breath control'],
-              ['मीमांसा (Mīmāṁsā)', 'जैमिनि (Jaimini)', 'धर्म-विचारः (Hermeneutics)', 'Philosophy of language, ritual semantics'],
-              ['वेदान्त (Vedānta)', 'बादरायण (Bādarāyaṇa)', 'ब्रह्म-साक्षात्कारः (Non-duality)', 'Nature of the Self, Advaita, ultimate truth']
+              ['न्याय (Nyāya)', 'ऋषि गौतम (Gautama)', 'Formal Logic & Epistemology (16 Pramāṇas)', 'Nyāya Sūtras', 'Mathematical Logic & Scientific Method'],
+              ['वैशेषिक (Vaiśeṣika)', 'ऋषि कणाद (Kaṇāda)', 'Atomic Physics & 9 Primary Substances', 'Vaiśeṣika Sūtras', 'Particle Physics & Material Chemistry'],
+              ['साङ्ख्य (Sāṅkhya)', 'ऋषि कपिल (Kapila)', '25 Tattvas (Puruṣa & Prakṛti Taxonomy)', 'Sāṅkhya Kārikā', 'Evolutionary Cosmology & Dual-Aspect Theory'],
+              ['योग (Yoga)', 'ऋषि पतञ्जलि (Patañjali)', '8 Limbs of Psychophysical Stillness', 'Yoga Sūtras', 'Neuroscience, Mindfulness & Somatics'],
+              ['मीमांसा (Mīmāṁsā)', 'ऋषि जैमिनि (Jaimini)', 'Linguistic Duty, Sound Vibrations & Dharma', 'Mīmāṁsā Sūtras', 'Hermeneutics, Semiotics & Acoustic Duty'],
+              ['वेदान्त (Vedānta)', 'ऋषि बादरायण (Bādarāyaṇa)', 'Non-Dual Realization (Atman = Brahman)', 'Brahma Sūtras', 'Quantum Unified Field & Non-Dual Philosophy']
             ]
+          },
+          sutraReference: {
+            devanagari: 'प्रमाण-प्रमेय-संशय-प्रयोजन-दृष्टान्त-सिद्धान्तावयव-तर्क-निर्णय-वाद-जल्प-वितण्डा-हेत्वाभास-च्छल-जाति-निग्रहस्थानानां तत्त्वज्ञानान्निःश्रेयसाधिगमः',
+            iast: 'pramāṇa-prameya-saṁśaya-prayojana-dṛṣṭānta-siddhāntāvayava-tarka-nirṇaya-vāda-jalpa-vitaṇḍā-hetvābhāsa-cchala-jāti-nigrahasthānānāṁ tattvajñānān niḥśreyasādhigamaḥ (Nyāya Sūtra 1.1.1)',
+            meaning: 'By direct knowledge of the 16 epistemological categories (means of valid knowledge, objects of inquiry, doubt, purpose, logic, and resolution), the supreme good (liberation) is attained.'
           }
         },
         practice: {
           quickQuiz: {
             id: 'q-6-3',
-            prompt: 'What does the Sanskrit word "दर्शनम्" (Darśana) literally mean?',
+            prompt: 'Which Darśana is famous for proposing that the universe is made of indivisible atoms (Paramāṇu) moving through empty space?',
             options: [
-              'A collection of dogmas to be memorized',
-              'A direct "seeing" or experiential realization of reality (from root √दृश्)',
-              'A debating contest',
-              'A calendar'
+              'Yoga',
+              'Vaiśeṣika (Sage Kaṇāda)',
+              'Vedānta',
+              'Mīmāṁsā'
             ],
             correctIndex: 1,
-            explanation: '"Darśana" comes from the root √दृश् (to see) — it denotes an experiential perception of truth rather than mere academic speculation.'
+            explanation: 'Sage Kaṇāda’s Vaiśeṣika Darśana was the world’s earliest atomic theory of matter, detailing how atoms combine into dyads and triads.'
           },
-          worksheetSummary: 'Worksheet 6.3: The 6 Darśanas Epistemological Frameworks & Pramāṇa Chart.',
+          worksheetSummary: 'Worksheet 6.3: The 6 Darśanas Comparative Philosophy Matrix & Epistemology Guide.',
           worksheetDownloadId: 'ws-c6-3'
         },
         thinkingConnection: {
           type: 'integrated',
-          badgeLabel: '🧠 Epistemology & Scientific Method',
-          heading: 'Rigorous Epistemology Before Scientific Claims',
-          bridgeExplanation: 'Before modern science formulated the empirical method, Nyāya and Vaiśeṣika laid out strict criteria for what constitutes valid proof (Pramāṇa) versus logical fallacies (Hetvābhāsa). You were never allowed to say "it is written in a book, so it must be true". You had to prove it through perception, inference, or rigorous logic.',
-          modernInsight: 'This intellectual fearlessness prevented dogmatic stagnation and encouraged rigorous debate across millennia.'
+          badgeLabel: '🧠 Unified Cognitive Architecture',
+          heading: 'The Progressive Staircase of Human Knowing',
+          bridgeExplanation: 'The six Darśanas do not contradict; they complete each other. Nyāya sharpens your logic; Vaiśeṣika examines physical matter; Sāṅkhya maps the mind; Yoga quietens mental chatter; Mīmāṁsā aligns acoustic duty; and Vedānta reveals non-dual oneness.',
+          modernInsight: 'This integrative epistemology prevents the narrow reductionism of modern hyper-specialization.'
         },
         linkedResources: [
-          { label: 'Philosophy Essay: Darśana & AI', targetView: 'philosophy', badge: 'Essay' },
-          { label: 'Vedic Maths & Śūnyāt Anantam', targetView: 'vedic-maths', badge: 'Philosophy of Math' }
+          { label: '4-Part Comprehensive Darśana Course Addendum', targetView: 'course-addendum', badge: 'Addendum' },
+          { label: 'Philosophy: From Śūnya to Ananta', targetView: 'philosophy', badge: 'Darśana' }
         ]
       },
       {
@@ -1971,16 +2229,13 @@ export const COURSE_MODULES: CourseModule[] = [
         lessonNumber: '6.4',
         titleDevanagari: 'महा-समन्वयः · पूर्ण-श्लोक-मीमांसा',
         titleEnglish: 'Capstone: Analyzing One Verse End-to-End',
-        shortDescription: 'The grand synthesis: analyzing one verse from Sound to Script to Rules to Meaning to Contemplation.',
+        shortDescription: 'The grand synthesis: dissecting a sacred verse across sound, script, grammar, meaning, and meditation.',
         ideaConcept: {
-          heading: 'The Master Synthesis: From Sound to Silence',
-          summary: 'You have walked the complete path: from the physiological points of articulation to Pāṇini’s code, from noun cases to narrative wisdom, from algorithms to contemplative stillness. In this Capstone, you analyze one immortal verse across all five dimensions.',
+          heading: 'The Grand Synthesis of Learning',
+          summary: 'In this capstone lesson, you bring every single tool you have mastered together: acoustics (Śikṣā), script (Devanāgarī), morphology (Pāṇini), syntax (Anvaya), and contemplation (Darśana).',
           body: [
-            'The Capstone Verse (Bṛhadāraṇyaka Upaniṣad 1.3.28):',
-            'असतो मा सद्गमय ।',
-            'तमसो मा ज्योतिर्गमय ।',
-            'मृत्योर्माऽमृतं गमय ॥',
-            'ॐ शान्तिः शान्तिः शान्तिः ॥'
+            'We analyze the immortal peace invocation from the Bṛhadāraṇyaka Upaniṣad:',
+            'असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्माऽमृतं गमय ॥ ॐ शान्तिः शान्तिः शान्तिः ॥'
           ],
           keyTakeaway: 'You are no longer an outsider looking at translations. You can now inhabit the Sanskrit sound-architecture directly.'
         },
@@ -1988,21 +2243,36 @@ export const COURSE_MODULES: CourseModule[] = [
           audioTerms: [
             { devanagari: 'असतो मा सद्गमय ।', iast: 'asato mā sadgamaya |', meaning: 'From untruth / unreal, lead me to truth / reality.' },
             { devanagari: 'तमसो मा ज्योतिर्गमय ।', iast: 'tamaso mā jyotirgamaya |', meaning: 'From darkness / ignorance, lead me to luminous light.' },
-            { devanagari: 'मृत्योर्माऽमृतं गमय ।', iast: 'mṛtyormā\'mṛtaṁ gamaya |', meaning: 'From mortality / limitation, lead me to immortality.' },
+            { devanagari: 'मृत्योर्माऽमृतं गमय ।', iast: "mṛtyormā'mṛtaṁ gamaya |", meaning: 'From mortality / limitation, lead me to immortality.' },
             { devanagari: 'ॐ शान्तिः शान्तिः शान्तिः ॥', iast: 'oṁ śāntiḥ śāntiḥ śāntiḥ ||', meaning: 'Peace within, peace around, peace transcendent.' }
           ],
           phoneticInstructions: 'Recite the full three-line invocation with absolute presence. Notice the visceral shift as your tongue transitions from "asataḥ" to "jyotiḥ" to "amṛtam".',
           recitationTips: 'Hold 1 minute of silent reflection after the final peace mantra.'
         },
         ruleMechanics: {
-          title: 'The 5-Dimensional Capstone Decomposition',
+          title: 'The 5-Dimensional Capstone Decomposition Matrix',
           explanation: [
             '1. SOUND (ध्वनिः): Notice the balance of vowels and nasals. Visargas soften into "o" before voiced consonants (असतस् + मा = असतो मा).',
             '2. SCRIPT (लिपिः): Observe conjuncts: त्य (त्+य in मृत्योः), म्भो (म्+भ), र्ग (र्+ग in गमय).',
             '3. GRAMMAR (व्याकरणम्): "असतः", "तमसः", "मृत्योः" are all in Pañcamī Vibhakti (Ablative = source of departure!). The verb "गमय" is an imperative prayer (Loṭ-Lakāra causal: "cause to reach / lead").',
             '4. MEANING (अर्थः): The universal human yearning to transcend darkness, limitation, and falsehood.',
             '5. CONTEMPLATION (चिन्तनम्): The journey from outer noise to the unshakeable witness within.'
-          ]
+          ],
+          tableData: {
+            headers: ['Analytical Phase', 'Pedagogical Pillar', 'Investigation Question', 'Practical Execution on Capstone Verse'],
+            rows: [
+              ['Phase 1: ध्वनिः (Sound)', 'Acoustic / Śikṣā', 'Where are the sounds born?', 'Tracing Kaṇṭha, Tālu, and Oṣṭha phonemes; ensuring accurate mātrā timing.'],
+              ['Phase 2: लिपिः (Script)', 'Orthography / Chhandas', 'How is the meter constructed?', 'Counting syllables per quarter; verifying metrical weights and conjunct ligatures.'],
+              ['Phase 3: व्याकरणम् (Grammar)', 'Pāṇinian Morphology', 'What are the roots and cases?', 'Dissolving Sandhi (पदच्छेद), identifying roots (धातु), and extracting Kārakas (विभक्ति).'],
+              ['Phase 4: वाक्यम् (Syntax)', 'Anvaya & Meaning', 'How do the words assemble?', 'Reordering the words into prose syntax (अन्वय) to reveal unambiguous meaning.'],
+              ['Phase 5: चिन्तनम् (Contemplation)', 'Darśana & Integration', 'What duty does this demand?', 'Living participation: transforming information into personal adhikāra and peace.']
+            ]
+          },
+          sutraReference: {
+            devanagari: 'ऋतं च स्वाध्यायप्रवचने च । सत्यं च स्वाध्यायप्रवचने च । शमश्च स्वाध्यायप्रवचने च ॥',
+            iast: 'ṛtaṁ ca svādhyāya-pravacane ca | satyaṁ ca svādhyāya-pravacane ca | śamaś ca svādhyāya-pravacane ca (Taittirīya Upaniṣad 1.9.1)',
+            meaning: 'Order and study-teaching; truth and study-teaching; tranquility and study-teaching: all virtues must be coupled with dedicated study and transmission.'
+          }
         },
         practice: {
           quickQuiz: {
