@@ -1,14 +1,16 @@
 .dashboard {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1.35fr 1fr;
   grid-template-rows: auto 1fr;
-  gap: 1.5rem;
-  height: 100vh;
+  gap: 1.25rem;
+  min-height: 100vh;
+  height: auto;
   width: 100%;
   box-sizing: border-box;
-  padding: 1.5rem;
+  padding: 0.85rem 1.25rem 3rem;
   background: #f7f5f0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* Full-Page Views (Board Studio, Home, Vedic Maths, Grammar, Quiz, Worksheets):
@@ -21,7 +23,7 @@
   min-height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 1rem 1.5rem 4rem;
+  padding: 0.85rem 1.25rem 4rem;
   gap: 1rem;
 }
 
@@ -30,21 +32,31 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(247, 245, 240, 0.92);
+  background: rgba(247, 245, 240, 0.95);
   backdrop-filter: blur(12px) saturate(1.15);
   -webkit-backdrop-filter: blur(12px) saturate(1.15);
-  padding: 0.6rem 0 0.85rem;
+  padding: 0.4rem 0 0.6rem;
   border-bottom: 1px solid rgba(212, 194, 169, 0.75);
-  box-shadow: 0 4px 16px rgba(39, 59, 53, 0.06);
-  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 16px rgba(39, 59, 53, 0.05);
+  margin-bottom: 0.25rem;
 }
 
 .dashboard-header {
   grid-column: 1 / -1;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 245, 240, 0.95);
+  backdrop-filter: blur(12px) saturate(1.15);
+  -webkit-backdrop-filter: blur(12px) saturate(1.15);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  padding: 0.35rem 0 0.55rem;
+  border-bottom: 1px solid rgba(212, 194, 169, 0.75);
+  box-shadow: 0 4px 16px rgba(39, 59, 53, 0.04);
+  margin-bottom: 0.25rem;
 }
 
 .dashboard-brand-btn {

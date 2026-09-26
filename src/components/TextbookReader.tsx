@@ -75,6 +75,53 @@ const buildSectionJumps = (lesson: Lesson | undefined): SectionJump[] => {
   return jumps;
 };
 
+const getJumpChipLabel = (jump: SectionJump, activeLessonId: string): string => {
+  if (jump.index === 0) {
+    return ((activeLessonId === 'gsde101' || activeLessonId === 'grade8_prarthana') && (jump.label.includes('प्रार्थना') || jump.label.toLowerCase().includes('prayer'))) ? 'प्रार्थना' : 'पाठः';
+  }
+  if (jump.label.includes('शब्दार्थ')) return 'शब्दार्थ';
+  if (jump.label.includes('अभ्यास')) return 'अभ्यास';
+  if (jump.kind === 'exercise-header' && (/^[०-९1-9१-९]/.test(jump.label))) {
+    return jump.label.split(' ')[0];
+  }
+  if (jump.label.includes('भौगोलिक')) return 'भूगोलः';
+  if (jump.label.includes('कारागार')) return 'कारागारः';
+  if (jump.label.includes('पर्यटन')) return 'पर्यटनम्';
+  if (jump.label.includes('जलक्रीडा')) return 'जलक्रीडा';
+  if (jump.label.includes('आजीविका')) return 'आजीविका';
+  if (jump.label.includes('प्रशस्ति')) return 'प्रशस्तिः';
+  if (jump.label.includes('संवाद')) return 'संवादः';
+  if (jump.label.includes('गीत')) return 'गीतम्';
+  if (jump.label.includes('मन्त्र')) return 'मन्त्राः';
+  if (jump.label.includes('परियोजना')) return 'परियोजना';
+  if (jump.label.includes('श्लोक')) return 'श्लोक';
+  if (jump.label.includes('कथा')) return 'कथा';
+  if (jump.label.includes('दृश्य')) {
+    const match = jump.label.match(/दृश्यम्\s*([०-९1-9१-९]+)/);
+    return match ? `दृश्य ${match[1]}` : 'दृश्यम्';
+  }
+  if (jump.label.includes('नाटक')) return 'नाटकम्';
+  if (jump.label.includes('ग्रन्थ')) return 'ग्रन्थ-परिचयः';
+  if (jump.label.includes('सूक्त')) return 'सूक्तयः';
+  if (jump.label.includes('द्रव्य') || jump.label.includes('रसायन') || jump.label.includes('विज्ञान')) return 'विज्ञानम्';
+  if (jump.label.includes('स्तोत्र')) return 'स्तोत्रम्';
+  if (jump.label.includes('अवधेय')) return 'अवधेयम्';
+  if (jump.label.includes('पूरण')) return 'पूरणशब्दाः';
+  if (jump.label.includes('सङ्ख्या')) return 'सङ्ख्याः';
+  if (jump.label.includes('लङ्-लकार')) return 'लङ्-लकारः';
+  if (jump.label.includes('वर्णमात्रा') || jump.label.includes('मात्रा-परिचय')) return 'वर्णमात्रा';
+  if (jump.label.includes('कुक्कुट') || jump.label.includes('चाष')) return 'ध्वनि-मात्रा';
+  if (jump.label.includes('कार्यकलाप')) return 'कार्यकलापः';
+  if (jump.label.includes('गणना')) return 'मात्रा-गणना';
+  if (jump.label.includes('व्यूह') || jump.label.includes('सप्ताङ्ग')) return 'व्यूहरचना';
+  if (jump.label.includes('विस्तार') || jump.label.includes('पुराण')) return 'विस्तारः';
+  if (jump.label.includes('लाभ')) return 'लाभाः';
+  if (jump.label.includes('स्वास्थ्य') || jump.label.includes('नियम')) return 'स्वास्थ्य';
+  if (jump.label.includes('पृष्ठम् ५६') || jump.label.includes('पृष्ठ ५६')) return 'पृष्ठ ५६';
+  if (jump.label.includes('पृष्ठम् ३८') || jump.label.includes('पृष्ठ ३८') || jump.label.includes('Page 38')) return 'पृष्ठ ३८';
+  return jump.label.split('·')[0].trim().slice(0, 10);
+};
+
 interface SanskritSymbolItem {
   symbol: string;
   name: string;
@@ -377,1181 +424,217 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 
   return (
     <section className="textbook-reader">
-      {activeLessonId.startsWith('gsde') && (
-        <div className="textbook-cbse-banner">
-          <span className="textbook-cbse-pill">CBSE Board Exam Aligned</span>
-          <span className="textbook-cbse-title">
-            NCERT Class 7 Sanskrit · दीपकम (Deepakam)
-            {activeLesson?.page_numbers ? ` · पाठः पृष्ठानि (Pages ${activeLesson.page_numbers})` : ''}
-          </span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_prarthana' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #f0fdf4 0%, #eff6ff 100%)', borderColor: '#86efac' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#059669', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · प्रार्थना — सरस्वतीप्रार्थना (मङ्गलाचरणम्)</span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_ch1' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #f0fdf4 0%, #eff6ff 100%)', borderColor: '#86efac' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#059669', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · प्रथमः पाठः — संगच्छध्वं संवदध्वम् (Pages 1–9)</span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_ch2' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #f0fdf4 0%, #eff6ff 100%)', borderColor: '#86efac' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#059669', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · द्वितीयः पाठः — अल्पानामपि वस्तूनां संहतिः कार्यसाधिका (Pages 10–22)</span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_ch3' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #fefce8 0%, #eff6ff 100%)', borderColor: '#fde047' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#d97706', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · तृतीयः पाठः — सुभाषितरसं पीत्वा जीवनं सफलं कुरु (Pages 24–35)</span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_ch4' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #fff7ed 0%, #eff6ff 100%)', borderColor: '#fdba74' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#ea580c', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · चतुर्थः पाठः — प्रणम्यो देशभक्तोऽयं गोपबन्धुर्महामनाः (Pages 36–44)</span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_ch5' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #faf5ff 0%, #eff6ff 100%)', borderColor: '#d8b4fe' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#9333ea', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · पञ्चमः पाठः — गीता सुगीता कर्तव्या (Pages 49–58)</span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_ch6' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #f0fdf4 0%, #eff6ff 100%)', borderColor: '#86efac' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#16a34a', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम् (Pages 61–66)</span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_ch7' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #eff6ff 0%, #faf5ff 100%)', borderColor: '#bfdbfe' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#2563eb', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा (Pages 75–83)</span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_ch8' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #ecfdf5 0%, #f0fdf4 100%)', borderColor: '#a7f3d0' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#059669', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम् (Pages 85–88)</span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_ch9' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #fefce8 0%, #f0fdf4 100%)', borderColor: '#fde047' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#ca8a04', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · नवमः पाठः — कोऽरुक्? कोऽरुक्? कोऽरुक्? (Pages 97–105)</span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_ch10' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #fdf2f8 0%, #eff6ff 100%)', borderColor: '#fbcfe8' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#db2777', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः) (Pages 111–122)</span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_ch11' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #fdf4ff 0%, #eff6ff 100%)', borderColor: '#f0abfc' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#c026d3', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः) (Pages 124–135)</span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_ch12' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #f0fdf4 0%, #eff6ff 100%)', borderColor: '#86efac' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#15803d', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (Pages 137–145)</span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_ch13' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #ecfeff 0%, #f0fdfa 100%)', borderColor: '#67e8f9' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#0891b2', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १ (Pages 146–156)</span>
-        </div>
-      )}
-      {activeLessonId === 'grade8_app1' && (
-        <div className="textbook-cbse-banner" style={{ background: 'linear-gradient(90deg, #fef3c7 0%, #ede9fe 100%)', borderColor: '#f59e0b' }}>
-          <span className="textbook-cbse-pill" style={{ background: '#b45309', color: '#ffffff' }}>CBSE Class 8 Sanskrit</span>
-          <span className="textbook-cbse-title">NCERT Class 8 Sanskrit · परिशिष्टम् १ — व्याकरणम् (Pages 159–165)</span>
-        </div>
-      )}
-
-      <div className="textbook-toolbar-row">
-        <button
-          type="button"
-          className="textbook-tool-btn textbook-tool-btn--symbols"
-          onClick={() => setIsSymbolsOpen(true)}
-          title="Sanskrit Symbols, Mātrās (Vowel Signs) & Punctuation Reference Guide"
-        >
-          📜 चिह्न-परिचयः (Symbols Guide)
-        </button>
-        {onOpenVoiceSettings && (
-          <button
-            type="button"
-            className="textbook-tool-btn"
-            onClick={onOpenVoiceSettings}
-            title="Adjust reading voice, speed, or select system voices"
-          >
-            🔊 Voice Studio (स्वर-विन्यासः)
-          </button>
-        )}
-        {onOpenCbseGuide && (
-          <button
-            type="button"
-            className="textbook-tool-btn"
-            onClick={onOpenCbseGuide}
-            title="Open CBSE Sanskrit Exam Blueprint & Question Paper Guide"
-          >
-            📋 CBSE Guide (परीक्षा-मार्गदर्शिका)
-          </button>
-        )}
-        {activeLessonId === 'grade8_prarthana' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+      {/* Sleek Unified Top Header */}
+      <header className="textbook-top-bar">
+        <div className="textbook-top-row">
+          <div className="textbook-lesson-picker">
+            <span
+              className={`textbook-grade-badge ${
+                isGrade8Lesson
+                  ? 'textbook-grade-badge--grade8'
+                  : isGroupedLesson
+                  ? 'textbook-grade-badge--foundations'
+                  : 'textbook-grade-badge--grade7'
+              }`}
             >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Saraswati Prarthana Quizzes"
-              >
-                🎯 2 Quizzes (10 Qs)
-              </button>
-            )}
-
-          </>
-        )}
-        {activeLessonId === 'grade8_ch1' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+              {isGrade8Lesson ? 'CBSE Class 8' : isGroupedLesson ? 'मूल-संस्कृतम्' : 'CBSE Class 7'}
+            </span>
+            <select
+              id="lesson-select"
+              className="textbook-lesson-select"
+              value={activeLessonId}
+              onChange={(event) => {
+                if (event.target.value === '__cbse_guide__' && onOpenCbseGuide) {
+                  onOpenCbseGuide();
+                } else {
+                  onSelectLesson(event.target.value);
+                }
+              }}
+              aria-label="Select Sanskrit chapter or lesson"
             >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 1 Quizzes (2 Quizzes · 8 questions)"
-              >
-                🎯 2 Quizzes (8 Qs)
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Grade 8 Chapter 1 Worksheets (5 Sheets · संगच्छध्वं)"
-              >
-                📑 5 Worksheets (Vedic · Loṭ · आम्/न)
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'grade8_ch2' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
-            >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 2 Quizzes"
-              >
-                🎯 3 Quizzes (15 Qs)
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Grade 8 Chapter 2 Printable Worksheet"
-              >
-                📑 Grade 8 Chapter 2 Worksheet
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'grade8_ch3' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
-            >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 3 Quizzes"
-              >
-                🎯 4 Quizzes (21 Qs)
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Grade 8 Printable Worksheets"
-              >
-                📑 Grade 8 Worksheets
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'grade8_ch4' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
-            >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 4 Quizzes"
-              >
-                🎯 4 Quizzes (20 Qs)
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Grade 8 Chapter 4 Printable Worksheets"
-              >
-                📑 5 Worksheets (Humanitarian Service & Biography)
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'grade8_ch5' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
-            >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 5 Quizzes"
-              >
-                🎯 2 Quizzes (10 Qs)
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Grade 8 Chapter 5 Printable Worksheets"
-              >
-                📑 5 Worksheets (Bhagavad Gita Wisdom)
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'grade8_ch6' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
-            >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 6 Quizzes"
-              >
-                🎯 2 Quizzes (10 Qs)
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Grade 8 Chapter 6 Printable Worksheets"
-              >
-                📑 2 Worksheets (Digital India & Passive Voice)
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'grade8_ch7' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
-            >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 7 Quizzes"
-              >
-                🎯 2 Quizzes (8 Qs)
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Grade 8 Chapter 7 Printable Worksheets"
-              >
-                📑 5 Worksheets (Sanskrit Glory & Verses)
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'grade8_ch8' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
-            >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 8 Quizzes"
-              >
-                🎯 2 Quizzes (8 Qs)
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Grade 8 Chapter 8 Printable Worksheets"
-              >
-                📑 5 Worksheets (Seven Sisters & Geography)
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'grade8_ch9' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
-            >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 9 Quizzes"
-              >
-                🎯 2 Quizzes (8 Qs)
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Grade 8 Chapter 9 Printable Worksheets"
-              >
-                📑 5 Worksheets (Ayurveda & Health Rules)
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'grade8_ch10' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
-            >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 10 Quizzes"
-              >
-                🎯 2 Quizzes (8 Qs)
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Grade 8 Chapter 10 Printable Worksheets"
-              >
-                📑 5 Worksheets (Viravara Story & Past Tense)
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'grade8_ch11' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
-            >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 11 Quizzes"
-              >
-                🎯 2 Quizzes (8 Qs)
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Grade 8 Chapter 11 Printable Worksheets"
-              >
-                📑 5 Worksheets (Voice Conversion & Hitopadesha)
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'grade8_ch12' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
-            >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 12 Quizzes"
-              >
-                🎯 2 Quizzes (8 Qs)
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Grade 8 Chapter 12 Printable Worksheets"
-              >
-                📑 5 Worksheets (Pronunciation & Shiksha)
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'grade8_ch13' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
-            >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Chapter 13 Quizzes"
-              >
-                🎯 2 Quizzes (10 Qs)
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Grade 8 Chapter 13 Printable Worksheets"
-              >
-                📑 5 Worksheets (Voice Anatomy & Sthana-Karana)
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'grade8_app1' && (
-          <>
-            <button
-              type="button"
-              className="textbook-tool-btn textbook-tool-btn--syllabus"
-              onClick={() => setIsGrade8SyllabusOpen(true)}
-              title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
-            >
-              📜 पाठानुक्रमणिका (Class 8 Syllabus)
-            </button>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Grade 8 Appendix 1 Grammar Quizzes"
-              >
-                🎯 2 Quizzes (10 Qs)
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Grade 8 Appendix 1 Printable Worksheets"
-              >
-                📑 5 Worksheets (Grammar & Sandhi)
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'gsde101' && (
-          <>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Chapter 1 MCQs & Grammar Quizzes (35 questions)"
-              >
-                🎯 7 Quizzes
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Chapter 1 Printable Worksheets & Teacher Keys"
-              >
-                📑 7 Worksheets
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'gsde102' && (
-          <>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Chapter 2 MCQs & Grammar Quizzes (35 questions)"
-              >
-                🎯 7 Quizzes
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Chapter 2 Printable Worksheets & Teacher Keys"
-              >
-                📑 7 Worksheets
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'gsde103' && (
-          <>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Chapter 3 MCQs & Grammar Quizzes (35 questions)"
-              >
-                🎯 7 Quizzes
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Chapter 3 Printable Worksheets & Teacher Keys"
-              >
-                📑 7 Worksheets
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'gsde104' && (
-          <>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Chapter 4 MCQs & Grammar Quizzes (35 questions)"
-              >
-                🎯 7 Quizzes
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Chapter 4 Printable Worksheets & Teacher Keys"
-              >
-                📑 7 Worksheets
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'gsde105' && (
-          <>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Chapter 5 MCQs & Grammar Quizzes (35 questions)"
-              >
-                🎯 7 Quizzes
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Chapter 5 Printable Worksheets & Teacher Keys"
-              >
-                📑 7 Worksheets
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'gsde106' && (
-          <>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Chapter 6 MCQs & Grammar Quizzes (35 questions)"
-              >
-                🎯 7 Quizzes
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Chapter 6 Printable Worksheets & Teacher Keys"
-              >
-                📑 7 Worksheets
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'gsde107' && (
-          <>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Chapter 7 MCQs & Grammar Quizzes (35 questions)"
-              >
-                🎯 7 Quizzes
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Chapter 7 Printable Worksheets & Teacher Keys"
-              >
-                📑 8 Worksheets
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'gsde108' && (
-          <>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Chapter 8 MCQs & Grammar Quizzes (35 questions)"
-              >
-                🎯 7 Quizzes
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Chapter 8 Printable Worksheets & Teacher Keys"
-              >
-                📑 7 Worksheets
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'gsde109' && (
-          <>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Chapter 9 MCQs & Grammar Quizzes (35 questions)"
-              >
-                🎯 7 Quizzes
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Chapter 9 Printable Worksheets & Teacher Keys"
-              >
-                📑 7 Worksheets
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'gsde110' && (
-          <>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Chapter 10 MCQs & Grammar Quizzes (35 questions)"
-              >
-                🎯 7 Quizzes
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Chapter 10 Printable Worksheets & Teacher Keys"
-              >
-                📑 7 Worksheets
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'gsde111' && (
-          <>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Chapter 11 MCQs & Grammar Quizzes (35 questions)"
-              >
-                🎯 7 Quizzes
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Chapter 11 Printable Worksheets & Teacher Keys"
-              >
-                📑 7 Worksheets
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'gsde112' && (
-          <>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Chapter 12 MCQs & Grammar Quizzes (35 questions)"
-              >
-                🎯 7 Quizzes
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Chapter 12 Printable Worksheets & Teacher Keys"
-              >
-                📑 7 Worksheets
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'gsde113' && (
-          <>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Supplementary Lesson MCQs & Grammar Quizzes (35 questions)"
-              >
-                🎯 7 Quizzes
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Supplementary Lesson Printable Worksheets & Teacher Keys"
-              >
-                📑 7 Worksheets
-              </button>
-            )}
-          </>
-        )}
-        {activeLessonId === 'gsde114' && (
-          <>
-            {onOpenQuiz && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--quiz"
-                onClick={onOpenQuiz}
-                title="Go to Appendix 1 MCQs & Grammar Quizzes (35 questions)"
-              >
-                🎯 7 Quizzes
-              </button>
-            )}
-            {onOpenWorksheets && (
-              <button
-                type="button"
-                className="textbook-tool-btn textbook-tool-btn--ws"
-                onClick={handleOpenWorksheetsDefault}
-                title="Go to Appendix 1 Printable Worksheets & Teacher Keys"
-              >
-                📑 7 Worksheets
-              </button>
-            )}
-          </>
-        )}
-      </div>
-
-      <div className="textbook-lesson-select-row">
-        <label htmlFor="lesson-select" className="textbook-lesson-select-label">
-          Select Lesson
-        </label>
-        <select
-          id="lesson-select"
-          className="textbook-lesson-select"
-          value={activeLessonId}
-          onChange={(event) => {
-            if (event.target.value === '__cbse_guide__' && onOpenCbseGuide) {
-              onOpenCbseGuide();
-            } else {
-              onSelectLesson(event.target.value);
-            }
-          }}
-        >
-          {/* Class 7 Lessons */}
-          <optgroup label="CBSE Class 7 · दीपकम (सप्तमी कक्षा)">
-            {lessons
-              .filter(
-                (lesson) =>
-                  !lesson.id.startsWith('grade8_') &&
-                  lesson.id !== 'samyukta' &&
-                  lesson.id !== 'varnamala' &&
-                  lesson.id !== 'numbers' &&
-                  lesson.id !== 'barakhadi'
-              )
-              .map((lesson) => (
-                <option key={lesson.id} value={lesson.id}>
-                  {lesson.title}
-                </option>
-              ))}
-            {onOpenCbseGuide && (
-              <option value="__cbse_guide__">
-                📋 CBSE Class 7 Exam Guide &amp; Question Directives
-              </option>
-            )}
-          </optgroup>
-
-          {/* Class 8 Lessons */}
-          {lessons.some((lesson) => lesson.id.startsWith('grade8_')) && (
-            <optgroup label="CBSE Class 8 · दीपकम (अष्टमी कक्षा)">
-              {lessons
-                .filter((lesson) => lesson.id.startsWith('grade8_'))
-                .map((lesson) => (
-                  <option key={lesson.id} value={lesson.id}>
-                    {lesson.title}
+              {/* Class 7 Lessons */}
+              <optgroup label="CBSE Class 7 · दीपकम (सप्तमी कक्षा)">
+                {lessons
+                  .filter(
+                    (lesson) =>
+                      !lesson.id.startsWith('grade8_') &&
+                      lesson.id !== 'samyukta' &&
+                      lesson.id !== 'varnamala' &&
+                      lesson.id !== 'numbers' &&
+                      lesson.id !== 'barakhadi'
+                  )
+                  .map((lesson) => (
+                    <option key={lesson.id} value={lesson.id}>
+                      {lesson.title}
+                    </option>
+                  ))}
+                {onOpenCbseGuide && (
+                  <option value="__cbse_guide__">
+                    📋 CBSE Class 7 Exam Guide &amp; Question Directives
                   </option>
-                ))}
-              {onOpenCbseGuide && (
-                <option value="__cbse_guide__">
-                  📋 CBSE Class 8 Exam Guide &amp; Question Directives
-                </option>
+                )}
+              </optgroup>
+
+              {/* Class 8 Lessons */}
+              {lessons.some((lesson) => lesson.id.startsWith('grade8_')) && (
+                <optgroup label="CBSE Class 8 · दीपकम (अष्टमी कक्षा)">
+                  {lessons
+                    .filter((lesson) => lesson.id.startsWith('grade8_'))
+                    .map((lesson) => (
+                      <option key={lesson.id} value={lesson.id}>
+                        {lesson.title}
+                      </option>
+                    ))}
+                  {onOpenCbseGuide && (
+                    <option value="__cbse_guide__">
+                      📋 CBSE Class 8 Exam Guide &amp; Question Directives
+                    </option>
+                  )}
+                </optgroup>
               )}
-            </optgroup>
-          )}
 
-          {/* Foundations (Alphabet & Numbers) */}
-          {lessons.some(
-            (lesson) =>
-              lesson.id === 'varnamala' ||
-              lesson.id === 'numbers' ||
-              lesson.id === 'barakhadi'
-          ) && (
-            <optgroup label="Foundations (मूल-संस्कृतम्)">
-              {lessons
-                .filter(
-                  (lesson) =>
-                    lesson.id === 'varnamala' ||
-                    lesson.id === 'numbers' ||
-                    lesson.id === 'barakhadi'
-                )
-                .map((lesson) => (
-                  <option key={lesson.id} value={lesson.id}>
-                    {lesson.title}
-                  </option>
-                ))}
-            </optgroup>
-          )}
-        </select>
-      </div>
+              {/* Foundations (Alphabet & Numbers) */}
+              {lessons.some(
+                (lesson) =>
+                  lesson.id === 'varnamala' ||
+                  lesson.id === 'numbers' ||
+                  lesson.id === 'barakhadi'
+              ) && (
+                <optgroup label="Foundations (मूल-संस्कृतम्)">
+                  {lessons
+                    .filter(
+                      (lesson) =>
+                        lesson.id === 'varnamala' ||
+                        lesson.id === 'numbers' ||
+                        lesson.id === 'barakhadi'
+                    )
+                    .map((lesson) => (
+                      <option key={lesson.id} value={lesson.id}>
+                        {lesson.title}
+                      </option>
+                    ))}
+                </optgroup>
+              )}
+            </select>
+          </div>
 
-      {!isGroupedLesson && sectionJumps.length > 1 && (
-        <div className="textbook-jump-row">
-          <label htmlFor="section-jump" className="textbook-lesson-select-label">
-            Jump to
-          </label>
-          <select
-            id="section-jump"
-            className="textbook-lesson-select textbook-jump-select"
-            value={String(currentJumpIndex)}
-            onChange={(event) => onJumpToSentence(Number(event.target.value))}
-          >
-            {sectionJumps.map((jump) => (
-              <option key={`${jump.index}-${jump.label}`} value={String(jump.index)}>
-                {jump.label}
-              </option>
-            ))}
-          </select>
-          <div className="textbook-jump-chips" aria-label="Quick sections">
-            {sectionJumps.map((jump) => (
+          <div className="textbook-quick-tools" role="toolbar" aria-label="Quick Study Tools">
+            <button
+              type="button"
+              className="textbook-action-chip"
+              onClick={() => setIsSymbolsOpen(true)}
+              title="Sanskrit Symbols, Mātrās & Punctuation Reference Guide"
+            >
+              📜 चिह्न-परिचयः (Symbols)
+            </button>
+            {onOpenVoiceSettings && (
               <button
-                key={`chip-${jump.index}`}
                 type="button"
-                className={`textbook-jump-chip${currentJumpIndex === jump.index ? ' active' : ''}`}
-                onClick={() => onJumpToSentence(jump.index)}
+                className="textbook-action-chip"
+                onClick={onOpenVoiceSettings}
+                title="Adjust reading voice, speed, or select system voices"
               >
-                {jump.index === 0
-                  ? ((activeLessonId === 'gsde101' || activeLessonId === 'grade8_prarthana') && (jump.label.includes('प्रार्थना') || jump.label.toLowerCase().includes('prayer')) ? 'प्रार्थना' : 'पाठः')
-                  : jump.label.includes('शब्दार्थ')
-                    ? 'शब्दार्थ'
-                    : jump.label.includes('अभ्यास')
-                      ? 'अभ्यास'
-                      : jump.kind === 'exercise-header' && (/^[०-९1-9१-९]/.test(jump.label))
-                        ? jump.label.split(' ')[0]
-                        : jump.label.includes('भौगोलिक')
-                          ? 'भूगोलः'
-                          : jump.label.includes('कारागार')
-                            ? 'कारागारः'
-                            : jump.label.includes('पर्यटन')
-                              ? 'पर्यटनम्'
-                              : jump.label.includes('जलक्रीडा')
-                                ? 'जलक्रीडा'
-                                : jump.label.includes('आजीविका')
-                                  ? 'आजीविका'
-                                  : jump.label.includes('प्रशस्ति')
-                                    ? 'प्रशस्तिः'
-                                    : jump.label.includes('संवाद')
-                                      ? 'संवादः'
-                                      : jump.label.includes('गीत')
-                                        ? 'गीतम्'
-                                        : jump.label.includes('मन्त्र')
-                                          ? 'मन्त्राः'
-                                          : jump.label.includes('परियोजना')
-                                            ? 'परियोजना'
-                                            : jump.label.includes('श्लोक')
-                                  ? 'श्लोक'
-                                  : jump.label.includes('कथा')
-                                    ? 'कथा'
-                                    : jump.label.includes('दृश्य')
-                                      ? (jump.label.match(/दृश्यम्\s*([०-९1-9१-९]+)/) ? `दृश्य ${jump.label.match(/दृश्यम्\s*([०-९1-9१-९]+)/)![1]}` : 'दृश्यम्')
-                                      : jump.label.includes('नाटक')
-                                        ? 'नाटकम्'
-                                        : jump.label.includes('ग्रन्थ')
-                                          ? 'ग्रन्थ-परिचयः'
-                                          : jump.label.includes('सूक्त')
-                                            ? 'सूक्तयः'
-                                            : jump.label.includes('द्रव्य') || jump.label.includes('रसायन') || jump.label.includes('विज्ञान')
-                                              ? 'विज्ञानम्'
-                                              : jump.label.includes('स्तोत्र')
-                                                ? 'स्तोत्रम्'
-                                                : jump.label.includes('अवधेय')
-                                                  ? 'अवधेयम्'
-                                                  : jump.label.includes('पूरण')
-                                                    ? 'पूरणशब्दाः'
-                                                    : jump.label.includes('सङ्ख्या')
-                                                      ? 'सङ्ख्याः'
-                                                      : jump.label.includes('लङ्-लकार')
-                                                        ? 'लङ्-लकारः'
-                                                      : jump.label.includes('वर्णमात्रा') || jump.label.includes('मात्रा-परिचय')
-                                                        ? 'वर्णमात्रा'
-                                                      : jump.label.includes('कुक्कुट') || jump.label.includes('चाष')
-                                                        ? 'ध्वनि-मात्रा'
-                                                      : jump.label.includes('कार्यकलाप')
-                                                        ? 'कार्यकलापः'
-                                                      : jump.label.includes('गणना')
-                                                        ? 'मात्रा-गणना'
-                                                      : jump.label.includes('व्यूह') || jump.label.includes('सप्ताङ्ग')
-                                                        ? 'व्यूहरचना'
-                                                      : jump.label.includes('विस्तार') || jump.label.includes('पुराण')
-                                                        ? 'विस्तारः'
-                                                        : jump.label.includes('लाभ')
-                                                          ? 'लाभाः'
-                                                          : jump.label.includes('स्वास्थ्य') || jump.label.includes('नियम')
-                                                            ? 'स्वास्थ्य'
-                                        : jump.label.includes('पृष्ठम् ५६') || jump.label.includes('पृष्ठ ५६')
-                                          ? 'पृष्ठ ५६'
-                                          : jump.label.includes('पृष्ठम् ३८') || jump.label.includes('पृष्ठ ३८') || jump.label.includes('Page 38')
-                                            ? 'पृष्ठ ३८'
-                                            : jump.label.split('·')[0].trim().slice(0, 10)}
+                🔊 Voice Studio
               </button>
-            ))}
+            )}
+            {onOpenCbseGuide && (
+              <button
+                type="button"
+                className="textbook-action-chip"
+                onClick={onOpenCbseGuide}
+                title="Open CBSE Sanskrit Exam Blueprint & Question Paper Guide"
+              >
+                📋 CBSE Guide
+              </button>
+            )}
+            {isGrade8Lesson && (
+              <button
+                type="button"
+                className="textbook-action-chip textbook-action-chip--syllabus"
+                onClick={() => setIsGrade8SyllabusOpen(true)}
+                title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+              >
+                📜 पाठानुक्रमणिका (Syllabus)
+              </button>
+            )}
+            {onOpenQuiz && (
+              <button
+                type="button"
+                className="textbook-action-chip textbook-action-chip--quiz"
+                onClick={onOpenQuiz}
+                title="Go to Chapter Quizzes & MCQs"
+              >
+                🎯 Quizzes
+              </button>
+            )}
+            {onOpenWorksheets && (
+              <button
+                type="button"
+                className="textbook-action-chip textbook-action-chip--ws"
+                onClick={handleOpenWorksheetsDefault}
+                title="Go to Printable Worksheets & Teacher Keys"
+              >
+                📑 Worksheets
+              </button>
+            )}
           </div>
         </div>
-      )}
 
-      <header className="textbook-reader-header">
-        {/* Varṇamālā: lesson select already names it — skip repeating English title + .txt source */}
-        {activeLessonId !== 'varnamala' && <h2>{activeLesson?.title}</h2>}
-        {activeLesson && activeLessonId !== 'varnamala' && activeLessonId !== 'barakhadi' && (
-          <p className="textbook-reader-source">Source Material: {activeLesson.fileName}</p>
-        )}
-        {activeLessonId === 'varnamala' && (
-          <p className="textbook-glossary-hint" style={{ marginTop: '.35rem' }}>
-            Click any syllable (अक्षर) to hear its pronunciation.
-          </p>
-        )}
-        {activeLessonId === 'barakhadi' && (
-          <p className="textbook-glossary-hint" style={{ marginTop: '.35rem' }}>
-            Tap any letter to hear it. Kid spellings keep look-alikes clear (tt vs t, shh vs sh).
-          </p>
+        {/* Quick Section Jump Chips */}
+        {!isGroupedLesson && sectionJumps.length > 1 && (
+          <div className="textbook-jump-row">
+            <span className="textbook-jump-label">Jump:</span>
+            <select
+              id="section-jump"
+              className="textbook-jump-select"
+              value={String(currentJumpIndex)}
+              onChange={(event) => onJumpToSentence(Number(event.target.value))}
+              aria-label="Jump to lesson section"
+            >
+              {sectionJumps.map((jump) => (
+                <option key={`${jump.index}-${jump.label}`} value={String(jump.index)}>
+                  {jump.label}
+                </option>
+              ))}
+            </select>
+            <div className="textbook-jump-chips" aria-label="Quick sections">
+              {sectionJumps.map((jump) => (
+                <button
+                  key={`chip-${jump.index}`}
+                  type="button"
+                  className={`textbook-jump-chip${currentJumpIndex === jump.index ? ' active' : ''}`}
+                  onClick={() => onJumpToSentence(jump.index)}
+                >
+                  {getJumpChipLabel(jump, activeLessonId)}
+                </button>
+              ))}
+            </div>
+          </div>
         )}
 
-        <div className="textbook-playall-row">
-          <button
-            type="button"
-            className={`textbook-playall-btn${isPlayingAll ? ' textbook-playall-btn--active' : ''}`}
-            onClick={handlePlayAll}
-            aria-pressed={isPlayingAll}
-          >
-            {isPlayingAll
-              ? '⏹ Stop'
-              : activeLessonId === 'barakhadi'
-                ? '▶ Play all letters'
-                : '▶ Play all'}
-          </button>
-          <span className="textbook-glossary-hint">
-            {activeLessonId === 'barakhadi'
-              ? 'Hear every akṣara in बारहखड़ी, row by row.'
-              : activeLessonId === 'varnamala'
-                ? 'Hear every letter in order. Row ▶ plays one group. Speaks the syllable (not the picture word).'
-                : isGroupedLesson
-                  ? 'Hear every letter on this chart, in order.'
-                  : 'Hear every word on this page, in order.'}
-          </span>
-        </div>
-        {!isGroupedLesson && (
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.6rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
-            <span className="textbook-reader-progress" style={{ margin: 0 }}>
-              {sentence.kind?.startsWith('glossary') || sentence.kind?.startsWith('exercise')
-                ? `Exercise · ${sentenceNumber} of ${totalSentences}`
-                : `Paragraph ${sentenceNumber} of ${totalSentences}`}
-            </span>
-            <div className="textbook-nav-top-buttons">
+        {/* Compact Controls Strip: Audio Play + Paragraph Nav */}
+        {!isGroupedLesson ? (
+          <div className="textbook-controls-strip">
+            <div className="textbook-controls-left">
               <button
                 type="button"
-                className="textbook-nav-top-btn"
+                className={`textbook-playall-strip-btn${isPlayingAll ? ' active' : ''}`}
+                onClick={handlePlayAll}
+                aria-pressed={isPlayingAll}
+                title="Hear every word spoken aloud in sequence"
+              >
+                {isPlayingAll ? '⏹ Stop' : '▶ Play all'}
+              </button>
+              <span className="textbook-progress-badge">
+                {sentence.kind?.startsWith('glossary') || sentence.kind?.startsWith('exercise')
+                  ? `Exercise ${sentenceNumber} of ${totalSentences}`
+                  : `Paragraph ${sentenceNumber} of ${totalSentences}`}
+              </span>
+            </div>
+            <div className="textbook-strip-nav">
+              <button
+                type="button"
+                className="textbook-strip-nav-btn"
                 onClick={onPrevious}
                 disabled={isFirstSentence}
                 title="Previous paragraph / sentence (◀)"
@@ -1560,13 +643,37 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               </button>
               <button
                 type="button"
-                className="textbook-nav-top-btn"
+                className="textbook-strip-nav-btn"
                 onClick={onNext}
                 disabled={isLastSentence}
                 title="Next paragraph / sentence (▶)"
               >
                 Next ▶
               </button>
+            </div>
+          </div>
+        ) : (
+          <div className="textbook-controls-strip">
+            <div className="textbook-controls-left">
+              <button
+                type="button"
+                className={`textbook-playall-strip-btn${isPlayingAll ? ' active' : ''}`}
+                onClick={handlePlayAll}
+                aria-pressed={isPlayingAll}
+              >
+                {isPlayingAll
+                  ? '⏹ Stop'
+                  : activeLessonId === 'barakhadi'
+                  ? '▶ Play all letters'
+                  : '▶ Play all'}
+              </button>
+              <span className="textbook-glossary-hint" style={{ margin: 0, fontSize: '0.82rem' }}>
+                {activeLessonId === 'barakhadi'
+                  ? 'Hear every akṣara in बारहखड़ी, row by row.'
+                  : activeLessonId === 'varnamala'
+                  ? 'Hear every letter in order. Row ▶ plays one group.'
+                  : 'Hear every letter on this chart, in order.'}
+              </span>
             </div>
           </div>
         )}
@@ -2222,6 +1329,24 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 })}
               </p>
 
+              {/* English Meaning Box — Prominently right below the Sanskrit text for immediate visibility */}
+              {sentence.meaning && (
+                <div className="textbook-sentence-meaning-box" role="region" aria-label="English Translation">
+                  <div className="textbook-meaning-header">
+                    <span className="textbook-meaning-tag">📖 अनुवादः · English Translation</span>
+                  </div>
+                  <p className="textbook-sentence-meaning">{sentence.meaning}</p>
+                </div>
+              )}
+
+              {/* Hindi Translation if available */}
+              {sentence.paragraphTranslation && (
+                <div className="textbook-paragraph-translation">
+                  <span className="textbook-paragraph-translation-label">हिन्दी अनुवादः · Hindi Meaning</span>
+                  <p className="textbook-paragraph-translation-text">{sentence.paragraphTranslation}</p>
+                </div>
+              )}
+
               {/* Instant Inline Word Meaning Bar — Reads right on the same page with 0 scrolling */}
               {cleanActiveWord && (
                 <div className="textbook-inline-meaning-bar" role="region" aria-label="Selected word meaning">
@@ -2260,19 +1385,6 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                       </p>
                     ) : null}
                   </div>
-                </div>
-              )}
-
-              {sentence.meaning && (
-                <div className="textbook-sentence-meaning-box">
-                  <span className="textbook-meaning-tag">अनुवादः · English Translation</span>
-                  <p className="textbook-sentence-meaning">{sentence.meaning}</p>
-                </div>
-              )}
-              {sentence.paragraphTranslation && (
-                <div className="textbook-paragraph-translation">
-                  <span className="textbook-paragraph-translation-label">हिन्दी अनुवादः · Hindi Meaning</span>
-                  <p className="textbook-paragraph-translation-text">{sentence.paragraphTranslation}</p>
                 </div>
               )}
             </>
