@@ -15,6 +15,7 @@ import { playPronunciation } from '../utils/pronunciation';
 import { findShantiLineIndex, isShantiMantraText, reciteShantiMantra } from '../utils/shantiMantraSpeech';
 import ShantiMantraPlayer from './ShantiMantraPlayer';
 import { MANTRAS_ADDENDUM_ID, MANTRAS_BY_ID, MANTRAS_COURSE_HASH } from '../data/mantrasShlokas';
+import { getCourseLessonWorksheet } from '../data/courseWorksheetsData';
 
 /** Sidebar / nav label for an addendum unit. */
 const addendumPartLabel = (art: DarshanaAddendumArticle): string =>
@@ -170,8 +171,16 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
   // Quiz state per lesson: { [lessonId]: selectedOptionIndex }
   const [quizAnswers, setQuizAnswers] = useState<Record<string, number | null>>({});
 
-  // Active worksheet modal state
+  // Active worksheet modal state & answer key toggle
   const [activeWorksheetModalLesson, setActiveWorksheetModalLesson] = useState<CourseLesson | null>(null);
+  const [showAnswerKeyInModal, setShowAnswerKeyInModal] = useState(false);
+
+  // In-lesson interactive drills accordion state: { [lessonId]: boolean }
+  const [showInteractiveDrills, setShowInteractiveDrills] = useState<Record<string, boolean>>({});
+
+  // Sequential listen & repeat playback state
+  const [isPlayingSequence, setIsPlayingSequence] = useState(false);
+  const [activeAudioIndex, setActiveAudioIndex] = useState<number | null>(null);
 
   // Current active lesson object
   const currentLesson: CourseLesson = useMemo(() => {
@@ -182,6 +191,50 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
   const currentModule: CourseModule = useMemo(() => {
     return COURSE_MODULES.find((m) => m.lessons.some((l) => l.id === currentLesson.id)) || COURSE_MODULES[0];
   }, [currentLesson]);
+
+  // Stop audio sequence if switching lessons
+  const stopSequence = () => {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    setIsPlayingSequence(false);
+    setActiveAudioIndex(null);
+  };
+
+  useEffect(() => {
+    stopSequence();
+  }, [activeLessonId]);
+
+  // Play sequential recitation for all audio terms in the lesson
+  const playSequence = (terms: { devanagari: string }[]) => {
+    if (isPlayingSequence) {
+      stopSequence();
+      return;
+    }
+    if (!terms || terms.length === 0) return;
+    setIsPlayingSequence(true);
+    let idx = 0;
+
+    const playNext = () => {
+      if (idx >= terms.length) {
+        setIsPlayingSequence(false);
+        setActiveAudioIndex(null);
+        return;
+      }
+      setActiveAudioIndex(idx);
+      const term = terms[idx].devanagari;
+      const shantiLine = findShantiLineIndex(term);
+      if (shantiLine >= 0) {
+        reciteShantiMantra({ lines: [shantiLine] });
+      } else {
+        playPronunciation(term);
+      }
+      idx++;
+      setTimeout(playNext, 2400);
+    };
+
+    playNext();
+  };
 
   // Sync active module when lesson changes
   useEffect(() => {
@@ -230,11 +283,13 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
       : null;
 
   const handleSelectLesson = (lesson: CourseLesson) => {
+    stopSequence();
     setActiveLessonId(lesson.id);
     window.scrollTo({ top: 400, behavior: 'smooth' });
   };
 
   const handleAudioPlay = (term: string) => {
+    stopSequence();
     // Śānti-mantra lines (ओं सह नाववतु …) use the dedicated recitation voice:
     // whole phrase with spaces kept, no daṇḍa spoken, calm rate.
     const shantiLine = findShantiLineIndex(term);
@@ -517,9 +572,29 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                 Listen to each acoustic vibration, pay attention to the place of articulation, and repeat aloud with your full chest voice:
               </p>
 
+              {/* Sequential Chanting Controls */}
+              <div className="stc-sound-header-controls">
+                <button
+                  type="button"
+                  className={`stc-play-all-btn ${isPlayingSequence ? 'playing' : ''}`}
+                  onClick={() => playSequence(currentLesson.soundPractice.audioTerms)}
+                  aria-label="Play all audio terms in sequence"
+                >
+                  {isPlayingSequence ? '⏹️ Stop Playback' : '▶️ Play All in Sequence (श्रवण-माला)'}
+                </button>
+                <span className="stc-sound-subtext">
+                  {isPlayingSequence
+                    ? 'Continuous chanting active · listen and repeat aloud!'
+                    : 'Listen one-by-one or chant continuously in sequence'}
+                </span>
+              </div>
+
               <div className="stc-audio-chips-grid">
                 {currentLesson.soundPractice.audioTerms.map((term, idx) => (
-                  <div key={idx} className="stc-audio-chip-card">
+                  <div
+                    key={idx}
+                    className={`stc-audio-chip-card ${activeAudioIndex === idx ? 'active-term' : ''}`}
+                  >
                     <div>
                       <div className="stc-chip-devanagari">{term.devanagari}</div>
                       <div className="stc-chip-iast">{term.iast}</div>
@@ -653,6 +728,80 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                   </div>
                 )}
               </div>
+
+              {/* Expandable In-Lesson Practice Drills */}
+              {(() => {
+                const wsData = getCourseLessonWorksheet(
+                  currentLesson.id,
+                  currentLesson.lessonNumber,
+                  currentLesson.titleDevanagari,
+                  currentLesson.titleEnglish,
+                  currentLesson.ideaConcept.heading,
+                  currentLesson.ruleMechanics.title,
+                  currentLesson.practice.quickQuiz.prompt,
+                  currentLesson.practice.quickQuiz.options,
+                  currentLesson.practice.quickQuiz.correctIndex,
+                  currentLesson.practice.quickQuiz.explanation,
+                  currentLesson.thinkingConnection.bridgeExplanation
+                );
+                const isDrillOpen = Boolean(showInteractiveDrills[currentLesson.id]);
+
+                return (
+                  <div className="stc-drills-toggle-row">
+                    <button
+                      type="button"
+                      className="stc-drills-toggle-btn"
+                      onClick={() =>
+                        setShowInteractiveDrills((prev) => ({
+                          ...prev,
+                          [currentLesson.id]: !prev[currentLesson.id]
+                        }))
+                      }
+                      aria-expanded={isDrillOpen}
+                    >
+                      <span>
+                        📋 {isDrillOpen ? 'Hide' : 'Explore'} Lesson {currentLesson.lessonNumber} Practice Drills &amp; Exercises (अभ्यास-विस्तारः)
+                      </span>
+                      <span>{isDrillOpen ? '▲ Close' : '▼ View 4 Sections'}</span>
+                    </button>
+
+                    {isDrillOpen && (
+                      <div className="stc-drills-panel">
+                        {wsData.sections.map((sec, secIdx) => (
+                          <div key={secIdx} className="stc-drill-section-box">
+                            <div className="stc-drill-sec-header">
+                              <span className="stc-drill-sec-title">
+                                {sec.sectionTitleDevanagari} ({sec.sectionTitleEnglish})
+                              </span>
+                              <span className="stc-drill-marks-badge">{sec.totalMarks} Marks</span>
+                            </div>
+                            <p style={{ margin: '0 0 0.5rem', fontSize: '0.82rem', color: '#64748b', fontStyle: 'italic' }}>
+                              {sec.instructions}
+                            </p>
+                            {sec.questions.map((q, qIdx) => (
+                              <div key={qIdx} className="stc-drill-q-card">
+                                <div className="stc-drill-q-prompt">
+                                  {q.questionNumber}. {q.promptDevanagari}
+                                </div>
+                                <div className="stc-drill-q-eng">{q.promptEnglish}</div>
+                                {q.optionsOrHints && (
+                                  <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', margin: '0.35rem 0' }}>
+                                    {q.optionsOrHints.map((opt, oIdx) => (
+                                      <span key={oIdx} style={{ background: '#ffffff', border: '1px solid #cbd5e1', padding: '0.2rem 0.55rem', borderRadius: 4, fontSize: '0.78rem' }}>
+                                        {opt}
+                                      </span>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })()}
 
               {/* Gated Worksheet Download Card */}
               <div className="stc-worksheet-gate-card">
@@ -946,69 +1095,284 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
           </div>
         )}
 
-        {/* Modal: Printable Worksheet & Answer Key Preview */}
-        {activeWorksheetModalLesson && (
-          <div className="stc-modal-overlay" onClick={() => setActiveWorksheetModalLesson(null)}>
-            <div className="stc-modal-card" onClick={(e) => e.stopPropagation()}>
-              <button
-                type="button"
-                className="stc-modal-close"
-                onClick={() => setActiveWorksheetModalLesson(null)}
-                aria-label="Close modal"
-              >
-                ✕
-              </button>
+        {/* Modal: Comprehensive Gurukul Printable Study Worksheet & Answer Key */}
+        {activeWorksheetModalLesson && (() => {
+          const ws = getCourseLessonWorksheet(
+            activeWorksheetModalLesson.id,
+            activeWorksheetModalLesson.lessonNumber,
+            activeWorksheetModalLesson.titleDevanagari,
+            activeWorksheetModalLesson.titleEnglish,
+            activeWorksheetModalLesson.ideaConcept.heading,
+            activeWorksheetModalLesson.ruleMechanics.title,
+            activeWorksheetModalLesson.practice.quickQuiz.prompt,
+            activeWorksheetModalLesson.practice.quickQuiz.options,
+            activeWorksheetModalLesson.practice.quickQuiz.correctIndex,
+            activeWorksheetModalLesson.practice.quickQuiz.explanation,
+            activeWorksheetModalLesson.thinkingConnection.bridgeExplanation
+          );
 
-              <div style={{ textAlign: 'center', marginBottom: '1.5rem', borderBottom: '2px solid #f1ece1', paddingBottom: '1rem' }}>
-                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#b45309', textTransform: 'uppercase' }}>
-                  EdNet Learn Gurukul · Official Study Worksheet
-                </span>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#134e4a', margin: '0.25rem 0' }}>
-                  {activeWorksheetModalLesson.titleDevanagari} ({activeWorksheetModalLesson.titleEnglish})
-                </h3>
-                <div style={{ fontSize: '0.9rem', color: '#64748b' }}>
-                  Lesson {activeWorksheetModalLesson.lessonNumber} · {activeWorksheetModalLesson.practice.worksheetSummary}
-                </div>
-              </div>
-
-              <div style={{ background: '#fdfbf7', border: '1px solid #e7dfd3', borderRadius: 10, padding: '1.25rem', marginBottom: '1.5rem' }}>
-                <h4 style={{ margin: '0 0 0.5rem', color: '#78350f' }}>📋 Lesson Drill &amp; Self-Check:</h4>
-                <p style={{ margin: '0 0 0.75rem', fontWeight: 700 }}>{activeWorksheetModalLesson.practice.quickQuiz.prompt}</p>
-                <div style={{ background: '#ecfdf5', border: '1px solid #a7f3d0', padding: '0.75rem 1rem', borderRadius: 8, color: '#065f46' }}>
-                  <strong>Verified Answer Key:</strong> {activeWorksheetModalLesson.practice.quickQuiz.options[activeWorksheetModalLesson.practice.quickQuiz.correctIndex]}
-                  <p style={{ margin: '0.35rem 0 0', fontSize: '0.85rem' }}>{activeWorksheetModalLesson.practice.quickQuiz.explanation}</p>
-                </div>
-              </div>
-
-              <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 10, padding: '1.25rem', marginBottom: '1.5rem' }}>
-                <h4 style={{ margin: '0 0 0.5rem', color: '#1e293b' }}>🧠 Thinking Connection Exercise:</h4>
-                <p style={{ margin: '0 0 0.5rem', fontSize: '0.9rem', color: '#475569' }}>
-                  In your study notebook, write a 3-sentence synthesis answering:
-                </p>
-                <blockquote style={{ margin: 0, paddingLeft: '1rem', borderLeft: '3px solid #7c3aed', color: '#4c1d95', fontStyle: 'italic' }}>
-                  "{activeWorksheetModalLesson.thinkingConnection.bridgeExplanation}"
-                </blockquote>
-              </div>
-
-              <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
+          return (
+            <div className="stc-modal-overlay" onClick={() => setActiveWorksheetModalLesson(null)}>
+              <div className="stc-modal-card stc-worksheet-modal" onClick={(e) => e.stopPropagation()}>
                 <button
                   type="button"
-                  className="stc-crumb-btn"
-                  onClick={() => window.print()}
-                >
-                  🖨️ Print Worksheet
-                </button>
-                <button
-                  type="button"
-                  className="stc-worksheet-btn stc-worksheet-btn--unlocked"
+                  className="stc-modal-close stc-print-hide"
                   onClick={() => setActiveWorksheetModalLesson(null)}
+                  aria-label="Close modal"
                 >
-                  Done
+                  ✕
                 </button>
+
+                {/* Printable Official Worksheet Header */}
+                <div className="stc-ws-header-sheet">
+                  <div className="stc-ws-crest">
+                    गुरुकुल-पाठ्यक्रमः · EdNet Learn Sanskrit Thinking Academy
+                  </div>
+                  <h2 className="stc-ws-title-dev">
+                    {ws.worksheetTitleDevanagari}
+                  </h2>
+                  <div className="stc-ws-title-eng">
+                    {ws.worksheetTitleEnglish}
+                  </div>
+                  <div style={{ fontSize: '0.86rem', color: '#64748b' }}>
+                    {ws.subtitle}
+                  </div>
+
+                  {/* Student Metadata Table */}
+                  <div className="stc-ws-meta-row-grid">
+                    <div className="stc-ws-meta-cell">
+                      <strong>छात्रस्य नाम (Student Name):</strong> ___________________________
+                    </div>
+                    <div className="stc-ws-meta-cell">
+                      <strong>दिनाङ्कः (Date):</strong> ____________
+                    </div>
+                    <div className="stc-ws-meta-cell">
+                      <strong>पूर्णाङ्काः (Max Marks):</strong> {ws.maxMarks} ({ws.durationMinutes} min)
+                    </div>
+                  </div>
+                </div>
+
+                {/* Learning Outcomes */}
+                <div className="stc-ws-outcomes-card">
+                  <strong style={{ display: 'block', marginBottom: '0.35rem' }}>
+                    🎯 अधिगम-उद्देश्यानि (Core Learning Outcomes Tested):
+                  </strong>
+                  <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 1.5 }}>
+                    {ws.learningOutcomes.map((lo, lIdx) => (
+                      <li key={lIdx}>{lo}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* 4 Sections of the Worksheet */}
+                {ws.sections.map((section, sIdx) => (
+                  <div key={sIdx} className="stc-ws-section-wrapper">
+                    <div className="stc-ws-section-banner">
+                      <span className="stc-ws-sec-name">
+                        {section.sectionTitleDevanagari} ({section.sectionTitleEnglish})
+                      </span>
+                      <span className="stc-drill-marks-badge">
+                        अङ्काः (Marks): {section.totalMarks}
+                      </span>
+                    </div>
+
+                    <p className="stc-ws-sec-instr">{section.instructions}</p>
+
+                    {section.questions.map((q, qIdx) => (
+                      <div key={qIdx} className="stc-ws-q-block">
+                        <div className="stc-ws-q-top">
+                          <span className="stc-ws-q-title">
+                            प्रश्नः {q.questionNumber}. {q.promptDevanagari}
+                          </span>
+                          <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0f766e' }}>
+                            [{q.marks} Marks]
+                          </span>
+                        </div>
+                        <div className="stc-ws-q-eng-sub">{q.promptEnglish}</div>
+
+                        {q.optionsOrHints && (
+                          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', margin: '0.4rem 0' }}>
+                            {q.optionsOrHints.map((opt, oIdx) => (
+                              <span
+                                key={oIdx}
+                                style={{
+                                  background: '#f8fafc',
+                                  border: '1px solid #cbd5e1',
+                                  padding: '0.25rem 0.65rem',
+                                  borderRadius: 4,
+                                  fontSize: '0.82rem'
+                                }}
+                              >
+                                ({String.fromCharCode(65 + oIdx)}) {opt}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+
+                        <div className="stc-ws-writein-area">
+                          <div className="stc-ws-writein-line" />
+                          <div className="stc-ws-writein-line" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+
+                {/* Contemplative Synthesis Box */}
+                {ws.contemplativePrompt && (
+                  <div className="stc-ws-section-wrapper">
+                    <div className="stc-ws-section-banner" style={{ borderLeftColor: '#7c3aed' }}>
+                      <span className="stc-ws-sec-name">
+                        चिन्तन-सेतुः · स्वाध्याय-मन्थनम् (Deep Contemplative Reflection)
+                      </span>
+                      <span className="stc-drill-marks-badge" style={{ background: '#f5f3ff', color: '#6d28d9', borderColor: '#ddd6fe' }}>
+                        अङ्काः (Marks): 5
+                      </span>
+                    </div>
+                    <div className="stc-ws-q-block">
+                      <div className="stc-ws-q-title">
+                        {ws.contemplativePrompt.promptDevanagari}
+                      </div>
+                      <div className="stc-ws-q-eng-sub">
+                        {ws.contemplativePrompt.promptEnglish}
+                      </div>
+                      <ul style={{ fontSize: '0.82rem', color: '#64748b', margin: '0.35rem 0 0.75rem', paddingLeft: '1.25rem' }}>
+                        {ws.contemplativePrompt.guidingQuestions.map((gq, gIdx) => (
+                          <li key={gIdx}>{gq}</li>
+                        ))}
+                      </ul>
+                      <div className="stc-ws-writein-area">
+                        <div className="stc-ws-writein-line" />
+                        <div className="stc-ws-writein-line" />
+                        <div className="stc-ws-writein-line" />
+                        <div className="stc-ws-writein-line" />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Evaluation Rubric Grid */}
+                <div className="stc-ws-rubric-box">
+                  <strong style={{ fontSize: '0.88rem', color: '#78350f' }}>
+                    📊 मूल्याङ्कन-सारणी (Teacher / Self-Assessment Grading Grid):
+                  </strong>
+                  <table className="stc-ws-rubric-table">
+                    <thead>
+                      <tr>
+                        <th>विभागः क (Acoustics)</th>
+                        <th>विभागः ख (Morphology)</th>
+                        <th>विभागः ग (Syntax)</th>
+                        <th>विभागः घ (Contemplation)</th>
+                        <th>सम्पूर्ण-अङ्काः (Total)</th>
+                        <th>श्रेणी (Grade)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>___ / 5</td>
+                        <td>___ / 8</td>
+                        <td>___ / 7</td>
+                        <td>___ / 5</td>
+                        <td><strong>___ / 25</strong></td>
+                        <td>A+ / A / B</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Verified Answer Key & Model Answers (Toggleable) */}
+                <div className="stc-print-hide" style={{ margin: '1.5rem 0' }}>
+                  <button
+                    type="button"
+                    className="stc-crumb-btn"
+                    style={{
+                      background: showAnswerKeyInModal ? '#dcfce7' : '#f8fafc',
+                      color: showAnswerKeyInModal ? '#166534' : '#1e293b',
+                      borderColor: showAnswerKeyInModal ? '#86efac' : '#cbd5e1',
+                      padding: '0.65rem 1.25rem',
+                      fontWeight: 800,
+                      width: '100%',
+                      justifyContent: 'center'
+                    }}
+                    onClick={() => setShowAnswerKeyInModal((prev) => !prev)}
+                  >
+                    {showAnswerKeyInModal ? '▲ Hide Verified Answer Key' : '👁️ View Verified Answer Key & Model Solutions (उत्तर-पत्रिका)'}
+                  </button>
+                </div>
+
+                {showAnswerKeyInModal && (
+                  <div className="stc-ws-answer-key-section">
+                    <div className="stc-ws-ak-title">
+                      <span>✓</span>
+                      <span>सम्पूर्ण-उत्तर-पत्रिका (Official Verified Answer Key &amp; Explanations):</span>
+                    </div>
+
+                    {ws.sections.map((section, secIdx) => (
+                      <div key={secIdx} style={{ marginBottom: '1rem' }}>
+                        <div style={{ fontWeight: 800, color: '#166534', fontSize: '0.9rem', marginBottom: '0.4rem' }}>
+                          {section.sectionTitleDevanagari} ({section.sectionTitleEnglish}):
+                        </div>
+                        {section.questions.map((q, qIdx) => (
+                          <div key={qIdx} className="stc-ws-ak-item">
+                            <div>
+                              <span className="stc-ws-ak-q-num">Q{q.questionNumber}:</span>
+                              <span className="stc-ws-ak-answer">{q.answer}</span>
+                            </div>
+                            <div className="stc-ws-ak-expl">💡 {q.explanation}</div>
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+
+                    {ws.contemplativePrompt && (
+                      <div style={{ marginTop: '1rem', borderTop: '1px solid #bbf7d0', paddingTop: '0.75rem' }}>
+                        <strong style={{ color: '#166534', fontSize: '0.88rem' }}>
+                          🧠 Model Contemplative Reflection (आदर्श-चिन्तनम्):
+                        </strong>
+                        <p style={{ margin: '0.35rem 0 0', fontSize: '0.85rem', color: '#1e293b', lineHeight: 1.5, fontStyle: 'italic' }}>
+                          "{ws.contemplativePrompt.modelReflection}"
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Modal Footer Action Buttons */}
+                <div
+                  className="stc-print-hide"
+                  style={{
+                    display: 'flex',
+                    gap: '0.75rem',
+                    justifyContent: 'flex-end',
+                    flexWrap: 'wrap',
+                    marginTop: '1.5rem',
+                    borderTop: '1px solid #e2e8f0',
+                    paddingTop: '1rem'
+                  }}
+                >
+                  <button
+                    type="button"
+                    className="stc-crumb-btn"
+                    onClick={() => window.print()}
+                    style={{ padding: '0.6rem 1.25rem', background: '#0f766e', color: '#ffffff', borderColor: '#0f766e' }}
+                  >
+                    🖨️ Print Complete Worksheet
+                  </button>
+                  <button
+                    type="button"
+                    className="stc-worksheet-btn stc-worksheet-btn--unlocked"
+                    onClick={() => {
+                      setActiveWorksheetModalLesson(null);
+                      setShowAnswerKeyInModal(false);
+                    }}
+                  >
+                    Done
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          );
+        })()}
       </div>
     </div>
   );

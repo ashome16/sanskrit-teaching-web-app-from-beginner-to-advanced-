@@ -1269,3 +1269,401 @@
   border-top: 1px solid #e2e8f0;
 }
 
+/* Sequential Audio Playlist Controls (श्रवण-माला) */
+.stc-sound-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0 1rem;
+}
+
+.stc-play-all-btn {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  color: #ffffff;
+  border: none;
+  font-weight: 800;
+  font-size: 0.88rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 2px 6px rgba(180, 83, 9, 0.25);
+  transition: all 0.2s ease;
+}
+
+.stc-play-all-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(180, 83, 9, 0.35);
+  background: #92400e;
+}
+
+.stc-play-all-btn.playing {
+  background: #dc2626;
+  animation: pulse-ring 1.8s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+.stc-sound-subtext {
+  font-size: 0.82rem;
+  color: #78350f;
+  font-weight: 600;
+}
+
+.stc-audio-chip-card.active-term {
+  border-color: #d97706;
+  background: #fef3c7;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+}
+
+/* In-Lesson Interactive Drills Expandable Accordion */
+.stc-drills-toggle-row {
+  margin: 1rem 0 0.5rem;
+}
+
+.stc-drills-toggle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 0.75rem 1.15rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stc-drills-toggle-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.stc-drills-panel {
+  background: #fdfbf7;
+  border: 1px solid #e7dfd3;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.stc-drill-section-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+}
+
+.stc-drill-sec-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.4rem;
+}
+
+.stc-drill-sec-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.stc-drill-marks-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.stc-drill-q-card {
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.stc-drill-q-prompt {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #1e293b;
+  margin-bottom: 0.35rem;
+}
+
+.stc-drill-q-eng {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+/* Printable Worksheet Modal Sheet Styling */
+.stc-modal-card.stc-worksheet-modal {
+  max-width: 880px;
+  padding: 2.25rem 2.5rem;
+  background: #ffffff;
+}
+
+.stc-ws-header-sheet {
+  border-bottom: 2.5px solid #134e4a;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.stc-ws-crest {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #b45309;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.stc-ws-title-dev {
+  font-family: 'Noto Sans Devanagari', serif;
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: #134e4a;
+  margin: 0.2rem 0;
+}
+
+.stc-ws-title-eng {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #334155;
+  margin: 0 0 0.4rem;
+}
+
+.stc-ws-meta-row-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  margin-top: 1rem;
+  text-align: left;
+  font-size: 0.85rem;
+  color: #334155;
+}
+
+.stc-ws-meta-cell strong {
+  color: #0f172a;
+}
+
+.stc-ws-outcomes-card {
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: #115e59;
+}
+
+.stc-ws-section-wrapper {
+  margin-bottom: 1.75rem;
+}
+
+.stc-ws-section-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f1f5f9;
+  border-left: 4px solid #0f766e;
+  padding: 0.6rem 0.85rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 0.85rem;
+}
+
+.stc-ws-sec-name {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.stc-ws-sec-instr {
+  font-size: 0.84rem;
+  color: #64748b;
+  font-style: italic;
+  margin: 0 0 0.75rem;
+}
+
+.stc-ws-q-block {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.85rem;
+}
+
+.stc-ws-q-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.stc-ws-q-title {
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.stc-ws-q-eng-sub {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-bottom: 0.6rem;
+}
+
+.stc-ws-writein-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.6rem;
+}
+
+.stc-ws-writein-line {
+  border-bottom: 1px dashed #cbd5e1;
+  height: 1.25rem;
+  width: 100%;
+}
+
+.stc-ws-rubric-box {
+  background: #fdfbf7;
+  border: 1px solid #e7dfd3;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stc-ws-rubric-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.stc-ws-rubric-table th,
+.stc-ws-rubric-table td {
+  border: 1px solid #cbd5e1;
+  padding: 0.45rem 0.65rem;
+  text-align: center;
+}
+
+.stc-ws-rubric-table th {
+  background: #f1f5f9;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.stc-ws-answer-key-section {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.stc-ws-ak-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #166534;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+}
+
+.stc-ws-ak-item {
+  background: #ffffff;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 0.65rem;
+  font-size: 0.86rem;
+}
+
+.stc-ws-ak-q-num {
+  font-weight: 800;
+  color: #15803d;
+  margin-right: 0.4rem;
+}
+
+.stc-ws-ak-answer {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.stc-ws-ak-expl {
+  color: #475569;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+}
+
+/* Print CSS: Dedicated Rule for High-Fidelity Paper Printing */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .stc-modal-overlay,
+  .stc-modal-overlay * {
+    visibility: visible;
+  }
+  .stc-modal-overlay {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+  .stc-modal-card {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 1rem 1.5rem !important;
+    overflow: visible !important;
+  }
+  .stc-modal-close,
+  .stc-print-hide,
+  .stc-top-bar,
+  .stc-sidebar,
+  .stc-formula-ribbon,
+  .stc-view-selector,
+  .stc-hero {
+    display: none !important;
+  }
+  .stc-ws-q-block {
+    page-break-inside: avoid;
+    border: 1px solid #94a3b8;
+  }
+  .stc-ws-section-wrapper {
+    page-break-inside: avoid;
+  }
+}
+
+
