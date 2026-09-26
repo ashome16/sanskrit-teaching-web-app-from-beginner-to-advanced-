@@ -1580,6 +1580,59 @@ const HomePage: React.FC<HomePageProps> = ({
                 </div>
               </div>
             ))}
+            {onOpenCbseGuide && (
+              <div
+                className="home-chapter-card home-chapter-card--guide"
+                onClick={onOpenCbseGuide}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') onOpenCbseGuide();
+                }}
+              >
+                <div className="home-chapter-card-top">
+                  <div className="home-chapter-card-header">
+                    <div className="home-chapter-meta-left">
+                      <span className="home-chapter-num">परीक्षा-मार्गदर्शिका</span>
+                      <span className="home-genre-badge">CBSE Board Exam Blueprint</span>
+                    </div>
+                    <span className="home-chapter-icon">📋</span>
+                  </div>
+
+                  <h4 className="home-chapter-title-sanskrit">CBSE संस्कृत-परीक्षा-मार्गदर्शिका</h4>
+                  <p className="home-chapter-meaning-en">CBSE NCERT Sanskrit Exam Blueprint &amp; Question Formula Guide</p>
+                  <p className="home-chapter-theme-desc">
+                    Standardized 4-section exam blueprint (खण्ड क–घ), formulaic instruction headings (निर्देशाः), 10 core question words (क-कार शब्दाः), and grammatical directives (कर्तृपदम्, क्रियापदम्, अन्वयः).
+                  </p>
+                </div>
+
+                <div className="home-chapter-card-bottom">
+                  <div className="home-grammar-tag">
+                    <span className="home-grammar-tag-label">🎯 Board Exam Prep:</span> एकपदेन, पूर्णवाक्येन, प्रश्ननिर्माणम्, क-कार शब्दाः
+                  </div>
+                  <div className="home-chapter-footer-row">
+                    <span className="home-chapter-read-cta">
+                      Explore Exam Guide ➔
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {onOpenCbseGuide && (
+          <div className="home-curriculum-guide-banner">
+            <div className="home-curriculum-guide-info">
+              <span className="home-curriculum-guide-badge">CBSE &amp; NCERT Exam Blueprint</span>
+              <h3>Ace Your School &amp; Board Sanskrit Exams</h3>
+              <p>
+                NCERT and CBSE Sanskrit exam questions follow standardized, formulaic patterns. Master repetitive instruction phrases (निर्देशाः), interrogative root words (क-कार शब्दाः), and grammatical directives like कर्तृपदम् and क्रियापदम्.
+              </p>
+            </div>
+            <button type="button" className="home-curriculum-guide-cta" onClick={onOpenCbseGuide}>
+              📋 View Complete Exam Guide ➔
+            </button>
           </div>
         )}
       </section>
@@ -1687,6 +1740,7 @@ const HomePage: React.FC<HomePageProps> = ({
           isOpen={isGrade8ModalOpen}
           onClose={() => setIsGrade8ModalOpen(false)}
           onSelectLesson={(lessonId) => onOpenReader(lessonId)}
+          onOpenCbseGuide={onOpenCbseGuide}
         />
       )}
     </main>

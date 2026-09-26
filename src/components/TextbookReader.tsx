@@ -1331,20 +1331,67 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             }
           }}
         >
-          <optgroup label="NCERT Deepakam Lessons">
+          {/* Class 7 Lessons */}
+          <optgroup label="CBSE Class 7 · दीपकम (सप्तमी कक्षा)">
             {lessons
-              .filter((lesson) => lesson.id !== 'samyukta')
+              .filter(
+                (lesson) =>
+                  !lesson.id.startsWith('grade8_') &&
+                  lesson.id !== 'samyukta' &&
+                  lesson.id !== 'varnamala' &&
+                  lesson.id !== 'numbers' &&
+                  lesson.id !== 'barakhadi'
+              )
               .map((lesson) => (
-              <option key={lesson.id} value={lesson.id}>
-                {lesson.title}
-              </option>
-            ))}
-          </optgroup>
-          {onOpenCbseGuide && (
-            <optgroup label="CBSE Board Exam Blueprint">
+                <option key={lesson.id} value={lesson.id}>
+                  {lesson.title}
+                </option>
+              ))}
+            {onOpenCbseGuide && (
               <option value="__cbse_guide__">
-                📋 CBSE Sanskrit Exam Blueprint &amp; Syllabus Guide
+                📋 CBSE Class 7 Exam Guide &amp; Question Directives
               </option>
+            )}
+          </optgroup>
+
+          {/* Class 8 Lessons */}
+          {lessons.some((lesson) => lesson.id.startsWith('grade8_')) && (
+            <optgroup label="CBSE Class 8 · दीपकम (अष्टमी कक्षा)">
+              {lessons
+                .filter((lesson) => lesson.id.startsWith('grade8_'))
+                .map((lesson) => (
+                  <option key={lesson.id} value={lesson.id}>
+                    {lesson.title}
+                  </option>
+                ))}
+              {onOpenCbseGuide && (
+                <option value="__cbse_guide__">
+                  📋 CBSE Class 8 Exam Guide &amp; Question Directives
+                </option>
+              )}
+            </optgroup>
+          )}
+
+          {/* Foundations (Alphabet & Numbers) */}
+          {lessons.some(
+            (lesson) =>
+              lesson.id === 'varnamala' ||
+              lesson.id === 'numbers' ||
+              lesson.id === 'barakhadi'
+          ) && (
+            <optgroup label="Foundations (मूल-संस्कृतम्)">
+              {lessons
+                .filter(
+                  (lesson) =>
+                    lesson.id === 'varnamala' ||
+                    lesson.id === 'numbers' ||
+                    lesson.id === 'barakhadi'
+                )
+                .map((lesson) => (
+                  <option key={lesson.id} value={lesson.id}>
+                    {lesson.title}
+                  </option>
+                ))}
             </optgroup>
           )}
         </select>
@@ -2233,6 +2280,28 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         </div>
       )}
 
+      {/* End of Grade Lessons Completion & Exam Guide Banner */}
+      {!isGroupedLesson && isLastSentence && onOpenCbseGuide && (
+        <div className="textbook-grade-completion-guide" role="region" aria-label="CBSE Sanskrit Exam Blueprint & Guide">
+          <div className="grade-guide-header">
+            <span className="grade-guide-badge">
+              {activeLessonId.startsWith('grade8_') ? 'CBSE Class 8 Sanskrit' : 'CBSE Class 7 Deepakam'}
+            </span>
+            <h4>📋 CBSE Sanskrit Exam Blueprint &amp; Question Directives</h4>
+          </div>
+          <p>
+            {activeLessonId === 'gsde115'
+              ? 'Congratulations on completing all 15 lessons of CBSE Class 7 Deepakam! Prepare for your school and board exams with standardized instruction formulas (निर्देशाः), 10 core question words (क-कार शब्दाः), and grammatical directives.'
+              : activeLessonId === 'grade8_app1' || activeLessonId === 'grade8_ch13'
+              ? 'Class 8 lessons completed! Master CBSE High School paper structure, अन्वय-पूरणम्, प्रश्ननिर्माणम्, and precision sentence corrections.'
+              : 'Prepare for school exams: master question instruction keywords (एकपदेन, पूर्णवाक्येन, अन्वयः) and grammatical directives (कर्तृपदम्, क्रियापदम्) for this grade.'}
+          </p>
+          <button type="button" className="grade-guide-action-btn" onClick={onOpenCbseGuide}>
+            📋 Open CBSE Sanskrit Exam Guide (Classes 7–10) ➔
+          </button>
+        </div>
+      )}
+
       {!isGroupedLesson && (
         <div className="textbook-nav-buttons">
           <button
@@ -2243,14 +2312,25 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           >
             ◀ Previous
           </button>
-          <button
-            type="button"
-            className="textbook-nav-btn"
-            onClick={onNext}
-            disabled={isLastSentence}
-          >
-            Next ▶
-          </button>
+          {isLastSentence && onOpenCbseGuide && (activeLessonId === 'gsde115' || activeLessonId === 'grade8_app1' || activeLessonId === 'grade8_ch13') ? (
+            <button
+              type="button"
+              className="textbook-nav-btn textbook-nav-btn--guide"
+              onClick={onOpenCbseGuide}
+              title="Open CBSE Sanskrit Exam Guide"
+            >
+              📋 CBSE Exam Guide ➔
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="textbook-nav-btn"
+              onClick={onNext}
+              disabled={isLastSentence}
+            >
+              Next ▶
+            </button>
+          )}
         </div>
       )}
 
@@ -2445,6 +2525,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         isOpen={isGrade8SyllabusOpen}
         onClose={() => setIsGrade8SyllabusOpen(false)}
         onSelectLesson={(id) => onSelectLesson(id)}
+        onOpenCbseGuide={onOpenCbseGuide}
       />
     </section>
   );

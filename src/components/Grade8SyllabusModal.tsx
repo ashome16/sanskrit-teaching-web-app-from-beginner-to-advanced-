@@ -8,6 +8,7 @@ interface Grade8SyllabusModalProps {
   isOpen: boolean;
   onClose: () => void;
   onSelectLesson?: (lessonId: string) => void;
+  onOpenCbseGuide?: () => void;
 }
 
 type FilterCategory = 'all' | 'shlokas' | 'stories' | 'dialogue' | 'grammar' | 'preface';
@@ -16,6 +17,7 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
   isOpen,
   onClose,
   onSelectLesson,
+  onOpenCbseGuide,
 }) => {
   const { isAdminLoggedIn, currentUser } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
@@ -295,6 +297,39 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
             })
           )}
         </div>
+
+        {onOpenCbseGuide && (
+          <div
+            className="g8-syllabus-guide-banner"
+            onClick={() => {
+              onClose();
+              onOpenCbseGuide();
+            }}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                onClose();
+                onOpenCbseGuide();
+              }
+            }}
+          >
+            <div className="g8-guide-content">
+              <span className="g8-banner-badge">📋 CBSE &amp; NCERT EXAM BLUEPRINT</span>
+              <h4>CBSE Class 8 Sanskrit Exam Guide &amp; Question Directives</h4>
+              <p>
+                Master standardized instructions (यथानिर्देशम्, अन्वयः, घटनाक्रमः), 10 interrogative क-कार words, and grammatical components (कर्तृपदम्, क्रियापदम्) for board-pattern scoring.
+              </p>
+            </div>
+            <button
+              type="button"
+              className="g8-action-btn-primary"
+              style={{ whiteSpace: 'nowrap', flexShrink: 0 }}
+            >
+              Open Exam Guide ➔
+            </button>
+          </div>
+        )}
 
         {/* Modal Footer */}
         <div className="g8-modal-footer">
