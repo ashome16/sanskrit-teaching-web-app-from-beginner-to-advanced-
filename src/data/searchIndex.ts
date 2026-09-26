@@ -35,7 +35,7 @@ export interface SearchTarget {
   lessonId?: string;
   /** Course Addendum unit to open (view: 'course'), e.g. 'addendum-mantras-shlokas'. */
   courseAddendumId?: string;
-  philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter';
+  philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha';
   mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero';
   worksheetsCategory?: string;
   openBodhi?: boolean;
@@ -2374,6 +2374,129 @@ export const SEARCH_INDEX: SearchItem[] = [
     target: {
       view: 'course',
       courseAddendumId: 'addendum-cymatics-music-of-matter',
+    },
+  },
+  {
+    id: 'essay-pingala-binary-blueprint',
+    title: 'The Binary Blueprint: How Piṅgala’s Chhandas Śāstra Anticipated Computer Science',
+    subtitle: 'लघु (0) & गुरु (1) · प्रस्तारः (Truth Table) · नष्टम् & उद्दिष्टम् (Binary Codec) · मेरु-प्रस्तारः (Pascal’s Triangle)',
+    category: 'guides',
+    categoryLabel: 'Philosophy & Science',
+    badgeEmoji: '⚡',
+    badgeColor: '#0284c7',
+    description:
+      'Explore how Achārya Piṅgala (c. 300 BCE) invented the binary numeral system, combinatorial algorithms, decimal-to-binary codecs, and binomial pyramids 1,900 years before Europe.',
+    keywords: [
+      'pingala',
+      'chhandas shastra',
+      'binary',
+      'binary blueprint',
+      'laghu',
+      'guru',
+      'prastara',
+      'nastam',
+      'uddistam',
+      'meru prastara',
+      'pascal triangle',
+      'halayudha',
+      'truth table',
+      'codec',
+      'computer science',
+      'combinatorics',
+      'leibniz',
+      'algorithms',
+    ],
+    target: {
+      view: 'philosophy',
+      philosophyEssay: 'pingala_binary',
+    },
+  },
+  {
+    id: 'addendum-pingala-binary-blueprint',
+    title: 'Course Addendum · Masterclass 7: The Binary Blueprint (Piṅgala & Computer Science)',
+    subtitle: 'Metric Combinatorics, Binary Exponentiation, Halāyudha’s Meru Prastāra & Digital Codecs',
+    category: 'guides',
+    categoryLabel: 'Course Addendum',
+    badgeEmoji: '📜',
+    badgeColor: '#059669',
+    description:
+      'Part 7 of the Sanskrit as a Way of Thinking companion series: deep algorithmic analysis of Piṅgala’s Chhandas Śāstra, Prastāra loops, Naṣṭam/Uddiṣṭam codecs, and the human voice as a binary generator.',
+    keywords: [
+      'addendum',
+      'masterclass 7',
+      'pingala',
+      'chhandas',
+      'binary',
+      'prastara',
+      'meru prastara',
+      'pascal triangle',
+      'nastam',
+      'uddistam',
+      'computer science',
+      'halayudha',
+    ],
+    target: {
+      view: 'course',
+      courseAddendumId: 'addendum-pingala-binary-blueprint',
+    },
+  },
+  {
+    id: 'essay-turanga-bandha-knights-tour',
+    title: 'The Architecture of Sound and Strategy: Knight’s Tours in Classical Sanskrit Poetry',
+    subtitle: 'चित्रकाव्यम् · तुरङ्गबन्धः · Rudraṭa’s 8x4 Grid · Vedānta Deśika’s Pādukā Sahasram 929–930 · Chaturaṅga',
+    category: 'guides',
+    categoryLabel: 'Philosophy & Science',
+    badgeEmoji: '♞',
+    badgeColor: '#b45309',
+    description:
+      'Discover how ancient Indian poets solved the Knight’s Tour (Hamiltonian path) on a half-chessboard 900 years before Euler, encoding bilingual geometric ciphers across Sanskrit poetry.',
+    keywords: [
+      'turanga bandha',
+      'knights tour',
+      'chitra kavya',
+      'rudrata',
+      'kavyalankara',
+      'vedanta desika',
+      'paduka sahasram',
+      'euler',
+      'hamiltonian path',
+      'chaturanga',
+      'chess',
+      '8x4 grid',
+      'half chessboard',
+      'anustubh',
+      'sound and strategy',
+    ],
+    target: {
+      view: 'philosophy',
+      philosophyEssay: 'turanga_bandha',
+    },
+  },
+  {
+    id: 'addendum-turanga-bandha-knights-tour',
+    title: 'Course Addendum · Masterclass 8: The Architecture of Sound and Strategy (Knight’s Tours)',
+    subtitle: 'Euler Anticipated · Rudraṭa’s Kāvyālaṅkāra · Pādukā Sahasram 929–930 & 4 Simultaneous Constraints',
+    category: 'guides',
+    categoryLabel: 'Course Addendum',
+    badgeEmoji: '📜',
+    badgeColor: '#059669',
+    description:
+      'Part 8 of the Sanskrit as a Way of Thinking companion series: deep mathematical analysis of Turaṅga-Bandha, 8x4 Hamiltonian matrices, Sanskrit chess treatises, and topological poetry.',
+    keywords: [
+      'addendum',
+      'masterclass 8',
+      'turanga bandha',
+      'knights tour',
+      'rudrata',
+      'desika',
+      'paduka sahasram',
+      'chaturanga',
+      'hamiltonian',
+      'euler',
+    ],
+    target: {
+      view: 'course',
+      courseAddendumId: 'addendum-turanga-bandha-knights-tour',
     },
   },
   {

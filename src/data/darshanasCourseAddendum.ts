@@ -1208,5 +1208,343 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
       'The daily sweeping of rangolis and withering of floral mandalas embodies the metaphysics of impermanence: appreciating the temporary vessel (Piṇḍa) while abiding in the eternal sound (Brahmāṇḍa).',
     ],
   },
+
+  // ==========================================
+  // PART 7 / MASTERCLASS: THE BINARY BLUEPRINT
+  // ==========================================
+  {
+    id: 'addendum-pingala-binary-blueprint',
+    partNumber: 7,
+    partLabel: 'Masterclass 7',
+    slug: 'binary-blueprint-pingala-chhandas-shastra-computer-science',
+    titleDevanagari: 'द्वि-आधारी-सङ्केत-शास्त्रम् · पिङ्गलस्य छन्दःशास्त्रे सङ्गणक-विज्ञानम्',
+    titleEnglish: 'The Binary Blueprint: How Pingala’s Chhandas Shastra Anticipated Computer Science',
+    subtitle: 'Laghu and Guru as 0 and 1 · Prastāra Combinatorial Matrices · Naṣṭam & Uddiṣṭam · Meru Prastāra (Pascal’s Triangle)',
+    readingTimeMinutes: 15,
+    kicker: 'Course Addendum · Masterclass 7 · Binary Arithmetic & Algorithmic Combinatorics',
+    summary:
+      'Centuries before Gottfried Wilhelm Leibniz formalized the modern binary number system in Europe in 1689, an ancient Indian grammarian named Achārya Piṅgala developed its foundational mathematics out of sheer literary necessity in his seminal text, the Chhandas Śāstra (c. 3rd–2nd Century BCE). Seeking to mathematically catalog the rhythmic structures of Sanskrit poetry, Piṅgala invented a systematic method for binary coding using short and long syllables (Laghu and Guru as 0 and 1), an iterative algorithm (Prastāra) to construct what modern computer scientists call a Binary Truth Table, bi-directional lookup algorithms (Naṣṭam & Uddiṣṭam) for binary-to-decimal conversion, and the combinatorial pyramid (Meru Prastāra) identical to Pascal’s Triangle published 1,900 years later. Explore how treating the human voice as a binary generator anticipated the core architecture of modern computer programming.',
+    heroImage: {
+      src: '/philosophy/pingala-binary-blueprint.jpg',
+      alt: 'The Binary Blueprint: How Pingala’s Chhandas Shastra Anticipated Computer Science — Visual Infographic',
+      caption: 'Visual Masterpiece: Achārya Piṅgala under the sacred banyan tree composing the Chhandas Śāstra, radiating the golden Meru Prastāra pyramid, binary logic gates (0 and 1), and ancient palm-leaf algorithms.'
+    },
+    sections: [
+      {
+        anchorId: 'language-zeroes-ones',
+        heading: '1. The Language of Zeroes and Ones: Laghu and Guru',
+        subheading: 'Syllabic Weight as Binary Logic · Laghu (0) and Guru (1) · Combinatorial Permutations',
+        paragraphs: [
+          'Centuries before the German polymath Gottfried Wilhelm Leibniz formalized the modern binary number system in Europe in 1689, an ancient Indian grammarian named Achārya Piṅgala developed its foundational mathematics out of sheer literary necessity. In his pioneering treatise, the Chhandas Śāstra (c. 3rd–2nd Century BCE), Piṅgala sought to mathematically catalog every possible rhythmic structure of Sanskrit poetry.',
+          'In doing so, he invented a systematic method for binary coding, combinatorial matrices, and algorithmic logic that directly mirrors the mathematical architecture of modern computer programming.',
+          'Sanskrit poetry is intrinsically musical, with its rhythm determined strictly by the weight (Mātrā duration) of syllables rather than mere dynamic stress. Piṅgala categorized all vocalic syllables into two atomic binary units of measurement:',
+          '• Laghu (लघु): A light, short syllable of 1 beat (conventionally marked with a crescent ˘ or vertical bar, functioning as an exact equivalent to a binary 0).',
+          '• Guru (गुरु): A heavy, long syllable of 2 beats (conventionally marked with a horizontal bar ¯, functioning as an exact equivalent to a binary 1).',
+          'A single line of metered verse (Pāda) consists of a fixed number of syllables (n), creating a specific meter. For example, a three-syllable meter yields combinations like Laghu-Laghu-Guru (001) or Guru-Laghu-Guru (101). Piṅgala faced a massive combinatorial problem: How can a poet systematically map out every possible permutation of a meter of any given length without missing a single variation or repeating a pattern? To solve this, he created a suite of four foundational algorithms.',
+        ],
+        callout: {
+          title: 'The Binary Syllable Equivalence',
+          text: '“Laghu (लघु) = 0 (1 beat duration) ⟷ Guru (गुरु) = 1 (2 beat duration). Long before silicon chips, the human vocal tract was mapped as an acoustic binary register.”',
+          type: 'scientific',
+        },
+        sutras: [
+          {
+            sanskrit: 'धीश्रीस्त्रीं म् । भूतार्यं ल् । रूपं ग् ॥',
+            transliteration: 'dhī-śrī-strīṃ m | bhūtāryaṃ l | rūpaṃ g ||',
+            meaning: 'Defining the syllabic weights: three heavy syllables form Ma-gaṇa; a single light syllable is Laghu (L); a single heavy syllable is Guru (G).',
+            source: 'Piṅgala Chhandas Śāstra 1.1-3',
+          },
+        ],
+      },
+      {
+        anchorId: 'prastara-algorithm',
+        heading: '2. Prastāra: The Algorithmic Generation of Binary Sequences',
+        subheading: 'Iterative Truth Table Generation · Pingala’s 4-Step Combinatorial Loop · 3-Bit Permutations',
+        paragraphs: [
+          'The Sanskrit word Prastāra (प्रस्तारः) translates literally to "spreading out" or "combinatorial matrix". Piṅgala laid down a strict, iterative step-by-step algorithm to construct what modern computer scientists call a Binary Truth Table.',
+          'To generate a complete Prastāra for a meter of n syllables, Piṅgala’s combinatorial rule dictates:',
+          '1. Start by writing all Gurus (1 1 1...) as the initial first row.',
+          '2. In the next row, locate the first Guru (1) from the left, change it into a Laghu (0), and copy all syllables to its left exactly as they were in the previous row.',
+          '3. Fill all remaining positions to the right of that new Laghu with Gurus (1).',
+          '4. Repeat this algorithmic loop until the entire matrix concludes with all Laghus (0 0 0...).',
+          'For a 3-syllable meter (n = 3), this generates exactly 2³ = 8 distinct permutations in standard Least Significant Bit (LSB) first binary sequence:',
+        ],
+        table: {
+          headers: ['Row Number', 'Syllable Weight Sequence', 'Sanskrit Representation', 'Modern Binary (LSB to MSB)'],
+          rows: [
+            ['Row 1', 'Guru - Guru - Guru', 'गा गा गा (¯ ¯ ¯)', '1 1 1'],
+            ['Row 2', 'Laghu - Guru - Guru', 'ल गा गा (˘ ¯ ¯)', '0 1 1'],
+            ['Row 3', 'Guru - Laghu - Guru', 'गा ल गा (¯ ˘ ¯)', '1 0 1'],
+            ['Row 4', 'Laghu - Laghu - Guru', 'ल ल गा (˘ ˘ ¯)', '0 0 1'],
+            ['Row 5', 'Guru - Guru - Laghu', 'गा गा ल (¯ ¯ ˘)', '1 1 0'],
+            ['Row 6', 'Laghu - Guru - Laghu', 'ल गा ल (˘ ¯ ˘)', '0 1 0'],
+            ['Row 7', 'Guru - Laghu - Laghu', 'गा ल ल (¯ ˘ ˘)', '1 0 0'],
+            ['Row 8', 'Laghu - Laghu - Laghu', 'ल ल ल (˘ ˘ ˘)', '0 0 0'],
+          ],
+        },
+        callout: {
+          title: 'Algorithmic Truth Table',
+          text: '“Piṅgala’s Prastāra generates every possible n-bit permutation with zero omissions, zero duplicates, and deterministic mathematical termination.”',
+          type: 'insight',
+        },
+      },
+      {
+        anchorId: 'nastam-uddishtam',
+        heading: '3. Naṣṭam and Uddiṣṭam: Binary-to-Decimal Conversion',
+        subheading: 'The Lost Pattern & Indicated Number · Recursive Halving & Horner’s Doubling · Digital Encoding Precursor',
+        paragraphs: [
+          'Piṅgala did not stop at merely listing permutations in a matrix; he created bidirectional lookup algorithms to map these binary sequences to decimal numbers and vice versa, laying the mathematical groundwork for modern digital encoding systems like ASCII and Unicode.',
+          '1. Naṣṭam (नष्टम् - "The Lost Pattern"): If a poet knows only the row number (decimal), Piṅgala’s algorithm reconstructs the exact sequence of Laghus and Gurus (binary) that belongs in that row, using a recursive division-by-two method:',
+          '• If the number is odd, add 1, divide by 2, and write a Guru (1).',
+          '• If the number is even, divide by 2 directly, and write a Laghu (0).',
+          '• Repeat until all n positions of the meter are resolved.',
+          '2. Uddiṣṭam (उद्दिष्टम् - "The Indicated Number"): If a poet has a specific sequence of syllables (binary), this inverse algorithm computes its exact row position (decimal) in the master table by repeatedly doubling integers and adding values:',
+          '• Start with 1. For each syllable from left to right: if it is Guru (1), double the running total and subtract 1 (or accumulate powers of 2); if Laghu (0), double and proceed.',
+          'This is identical to the modern binary-to-decimal conversion algorithm and Horner’s method for polynomial evaluation.',
+        ],
+        callout: {
+          title: 'The Bi-Directional Digital Codec',
+          text: '“Naṣṭam is Decimal-to-Binary decoding; Uddiṣṭam is Binary-to-Decimal encoding. Piṅgala formalized a lossless, reversible digital codec over 2,200 years ago.”',
+          type: 'scientific',
+        },
+        sutras: [
+          {
+            sanskrit: 'लौऽर्धे । समे गिति च ॥',
+            transliteration: 'lau\'rdhe | same giti ca ||',
+            meaning: 'Halve the number if even and note Laghu; if odd, note Guru and halve after adding unity.',
+            source: 'Piṅgala Chhandas Śāstra 8.24-25',
+          },
+        ],
+      },
+      {
+        anchorId: 'meru-prastara',
+        heading: '4. Meru Prastāra: The Combinatorial Pyramid',
+        subheading: 'Halāyudha’s 10th-Century Commentary · The Staircase of Mount Meru · Pascal’s Triangle 1,900 Years Prior',
+        paragraphs: [
+          'To calculate exactly how many combinations in a Prastāra contain a specific mix of short and long syllables (such as how many 4-syllable verses have exactly one Guru and three Laghus, mathematically represented by the binomial coefficient C(n, k) = n! / (k!(n-k)!)), Piṅgala conceptualized a stepped pyramidal grid.',
+          'Centuries later, the 10th-century Indian mathematician Halāyudha drew this out in his commentary Mṛtasañjīvanī on Piṅgala, naming it the Meru Prastāra (मेरु-प्रस्तारः = The Staircase of Mount Meru).',
+          'Halāyudha’s rule states: "Draw a square at the summit. Below it, draw two squares overlapping. Fill the boundary squares with 1. For any interior square, add the numbers in the two squares immediately above it."',
+          'This geometric pyramid generates the binomial expansion coefficients: 1; 1 1; 1 2 1; 1 3 3 1; 1 4 6 4 1; 1 5 10 10 5 1... This arrangement is identical to "Pascal’s Triangle", published in Europe by Blaise Pascal in 1654, approximately 1,900 years after Piṅgala and 700 years after Halāyudha.',
+        ],
+        table: {
+          headers: ['Meter Syllables (n)', 'Meru Prastāra Row (Binomial Coefficients)', 'Combinations (Total 2ⁿ)'],
+          rows: [
+            ['n = 1 (1 syllable)', '1  1', '2¹ = 2 (1 Guru, 1 Laghu)'],
+            ['n = 2 (2 syllables)', '1  2  1', '2² = 4 (1 with 0L, 2 with 1L, 1 with 2L)'],
+            ['n = 3 (3 syllables)', '1  3  3  1', '2³ = 8 (1 with 0L, 3 with 1L, 3 with 2L, 1 with 3L)'],
+            ['n = 4 (4 syllables)', '1  4  6  4  1', '2⁴ = 16 (1 with 0L, 4 with 1L, 6 with 2L, 4 with 3L, 1 with 4L)'],
+            ['n = 5 (5 syllables)', '1  5  10  10  5  1', '2⁵ = 32 (Sum of all coefficients = 32)'],
+          ],
+        },
+        callout: {
+          title: 'The Staircase of Mount Meru',
+          text: '“Meru Prastāra is the world’s earliest recorded formulation of binomial coefficients and combinatorial probability, engineered to analyze the aesthetics of Sanskrit meters.”',
+          type: 'cosmological',
+        },
+        sutras: [
+          {
+            sanskrit: 'परे पूर्णम् । परेऽर्द्धे ॥',
+            transliteration: 'pare pūrṇam | pare\'rddhe ||',
+            meaning: 'In the next row, copy the full value at the edge; in the interior, add the numbers from above.',
+            source: 'Piṅgala Chhandas Śāstra 8.34-35',
+          },
+        ],
+      },
+      {
+        anchorId: 'art-into-code',
+        heading: '5. Conclusion: Elevating the Rhythms of Art into Code',
+        subheading: 'Math as the Invisible Architecture of Poetry · The Human Voice as a Binary Generator · Modern Computing Parallels',
+        paragraphs: [
+          'Piṅgala’s Chhandas Śāstra demonstrates that ancient Indian science did not view mathematics as an isolated, purely utilitarian discipline. Instead, math was recognized as the invisible, elegant architecture that allowed art, melody, and sacred contemplation to exist.',
+          'By treating the human voice as a binary generator, Piṅgala proved that the structures of natural language and musical rhythm could be perfectly captured through rigorous algorithmic code.',
+          'When modern computers process complex strings of 0s and 1s to execute algorithms, transmit data over the internet, and train neural networks, they are utilizing the exact same combinatorial logic that ancient Indian poets used to chant sacred metered verses into the open air.',
+        ],
+        table: {
+          headers: ['Piṅgala’s Concept (c. 300 BCE)', 'Sanskrit Term', 'Modern Computer Science Equivalent', 'Year in Western Science'],
+          rows: [
+            ['Binary Syllable States', 'लघु (Laghu) & गुरु (Guru)', 'Binary Bits (0 and 1)', 'Gottfried Leibniz (1689 CE)'],
+            ['Permutation Generation', 'प्रस्तारः (Prastāra)', 'Binary Truth Table', 'George Boole (1854 CE)'],
+            ['Decimal to Binary', 'नष्टम् (Naṣṭam)', 'Division-by-2 Number Conversion', 'Modern Computer Arithmetic'],
+            ['Binary to Decimal', 'उद्दिष्टम् (Uddiṣṭam)', 'Polynomial Evaluation / Horner’s Rule', 'William George Horner (1819 CE)'],
+            ['Combinatorial Pyramid', 'मेरु-प्रस्तारः (Meru Prastāra)', 'Binomial Coefficients / Pascal’s Triangle', 'Blaise Pascal (1654 CE)'],
+            ['Meter Exponentiation', 'द्विरूपम् (Dvirūpam)', 'Calculation of 2ⁿ via Binary Exponentiation', 'Modern Fast Exponentiation (O(log n))'],
+          ],
+        },
+        callout: {
+          title: 'The Living Synthesis',
+          text: '“Language is not opposed to logic; poetry is not the enemy of mathematics. In Piṅgala’s vision, the breath that sings a verse is the identical energy that computes the universe.”',
+          type: 'insight',
+        },
+      },
+    ],
+    keyTakeaways: [
+      'Achārya Piṅgala’s Chhandas Śāstra (c. 3rd–2nd Century BCE) is the world’s earliest known treatise on binary mathematics and algorithmic combinatorics.',
+      'Sanskrit metric syllables Laghu (light, 1 beat) and Guru (heavy, 2 beats) correspond precisely to modern binary digits 0 and 1.',
+      'The Prastāra algorithm systematically generates a complete Binary Truth Table of 2ⁿ permutations without repetition or omission.',
+      'Naṣṭam (Decimal to Binary) and Uddiṣṭam (Binary to Decimal) provide a bidirectional, lossless numeric codec anticipating modern digital encoding like ASCII.',
+      'The Meru Prastāra, commented on by Halāyudha in the 10th century, formulated the binomial coefficients and Pascal’s Triangle 1,900 years before Blaise Pascal.',
+      'Piṅgala introduced binary exponentiation (Dvirūpam) to compute 2ⁿ in logarithmic time O(log n), mirroring modern computer arithmetic.',
+      'Treating the human voice as a binary generator demonstrates that ancient Indian civilization saw mathematics as the underlying architecture of art and consciousness.',
+    ],
+  },
+  {
+    id: 'addendum-turanga-bandha-knights-tour',
+    partNumber: 8,
+    partLabel: 'Masterclass 8',
+    slug: 'turanga-bandha-knights-tours-classical-sanskrit-poetry',
+    kicker: 'Gurukul Darśana · Companion Masterclass 8 · चित्रकाव्यम्',
+    titleDevanagari: 'तुरङ्गबन्धः · चित्रकाव्ये गणित-व्यूह-दर्शनम्',
+    titleEnglish: 'The Architecture of Sound and Strategy: Knight’s Tours in Classical Sanskrit Poetry',
+    subtitle: 'Euler Anticipated by 900 Years · Rudraṭa’s Kāvyālaṅkāra · Vedānta Deśika’s Pādukā Sahasram 929–930 · Chaturaṅga Matrices',
+    readingTimeMinutes: 24,
+    heroImage: {
+      src: '/philosophy/turanga-bandha-knights-tour.jpg',
+      alt: "The Architecture of Sound and Strategy: Knight's Tours in Classical Sanskrit Poetry - Visual Infographic",
+    },
+    summary:
+      'In classical Sanskrit poetics, Chitra-Kāvya (pictorial poetry) transformed language into an algorithmic matrix. Through Turaṅga-Bandha (the Knight’s Tour), 9th-century Kashmiri scholar Rudraṭa and 14th-century polymath Śrī Vedānta Deśika solved complete Hamiltonian paths on an 8x4 half-chessboard centuries before Leonhard Euler. When read horizontally, Verse 929 praises the divine sandals; when traversed in an L-shaped knight’s move across all 32 cells without repetition, it spells out Verse 930—an entirely distinct, grammatically perfect Sanskrit poem.',
+    sections: [
+      {
+        anchorId: 'chitra-kavya-turanga',
+        heading: '1. Chitra-Kāvya & Turaṅga-Bandha: Sound Arranged as Strategy',
+        subheading: 'Constrained Geometry · The Horse-Binding Algorithm · Anticipating Leonhard Euler (1759) by Centuries',
+        paragraphs: [
+          'In the realm of classical Sanskrit literature, poets frequently engaged in Chitra-Kāvya (चित्रकाव्य - pictorial or constrained poetry). Far from being a mere decorative exercise in wordplay, Chitra-Kāvya was a rigorous, exacting mathematical discipline where phonemes and syllables were arranged to fit precise geometric shapes: wheels (Cakra-Bandha), lotus petals (Padma-Bandha), zigzag lightning (Gomūtrikā-Bandha), and chessboards.',
+          'The most mathematically astounding subset of this genre is the Turaṅga-Bandha (तुरङ्गबन्धः - literally, the "horse-binding" or "knight’s pattern"). In the game of chess—originating in ancient India as Chaturaṅga (चतुरङ्ग)—the horse (knight) moves in a strict L-shaped trajectory (two squares along one axis, then one square perpendicular).',
+          'Centuries before the Swiss mathematician Leonhard Euler investigated the Knight’s Tour in 1759—a topological challenge requiring a knight to visit all squares of a chessboard exactly once without duplication—Sanskrit poet-mathematicians were using this exact Hamiltonian path topology as a generative grid to encode hidden, grammatically flawless verses.',
+        ],
+        callout: {
+          title: 'The Pre-Eulerian Hamiltonian Path',
+          text: '“Euler explored the Knight’s Tour in 1759 on bare numbers. Sanskrit polymaths solved the Knight’s Tour nearly 900 years earlier while simultaneously balancing phonetic meter, compounding syntax, and profound spiritual theology.”',
+          type: 'scientific',
+        },
+      },
+      {
+        anchorId: 'rudrata-kavyalankara',
+        heading: '2. Rudraṭa’s Kāvyālaṅkāra (9th Century): The Earliest Textual Knight’s Tour',
+        subheading: 'The Kashmiri Master of Poetics · 8x4 Matrix on a Half-Chessboard · A Second Poem from an L-Shaped Walk',
+        paragraphs: [
+          'The earliest known textual documentation of a Knight’s Tour anywhere in the world appears in the Kāvyālaṅkāra (काव्यालङ्कारः), a master treatise on poetics composed in the 9th century CE by the Kashmiri scholar Rudraṭa.',
+          'Rudraṭa mapped a four-line Sanskrit stanza onto a half-chessboard grid: an 8x4 matrix containing exactly 32 syllables (matching the 32 syllables of a standard Anuṣṭubh meter with 8 syllables per quarter-verse).',
+          'When read conventionally from left to right, line by line, it produces a complete, meaningful Sanskrit verse. However, when a reader places a chess knight on the very first square (the first syllable) and follows its strict L-shaped trajectory across the grid, the path systematically hits all 32 squares without duplication.',
+          'As the knight "steps" on the syllables in this precise mathematical sequence, it spells out a second, entirely distinct, grammatically perfect poem. Rudraṭa proved that language could be balanced with spatial and geometric algorithms.',
+        ],
+        table: {
+          headers: ['Dimension', 'Rudraṭa’s Kāvyālaṅkāra (9th c.)', 'Modern Graph Theory Equivalent'],
+          rows: [
+            ['Board Dimension', 'Half-Chessboard (8x4 = 32 cells)', 'Bipartite Graph G = (V, E) where |V| = 32'],
+            ['Syllable Constraint', '32 Akṣaras (1 Anuṣṭubh Śloka)', '32 Independent Graph Vertices'],
+            ['Movement Rule', 'Turaṅga-Gati (L-shaped knight move)', 'Valid Knight Graph Edges: (Δx=1, Δy=2) or (Δx=2, Δy=1)'],
+            ['Dual Emergence', 'Horizontal = Verse 1; Knight = Verse 2', 'Bialgorithmic Hamiltonian Path with Semantic Isomorphism'],
+          ],
+        },
+        callout: {
+          title: 'The Kashmiri Foundation',
+          text: '“Rudraṭa demonstrated that the Sanskrit phonetic matrix is isomorphic to a discrete coordinate graph, where space and sound can be traversed along orthogonal algorithms.”',
+          type: 'insight',
+        },
+      },
+      {
+        anchorId: 'desika-paduka-sahasram',
+        heading: '3. Vedānta Deśika’s Pādukā Sahasram (14th Century)',
+        subheading: 'Verses 929 & 930 · Chitra-Paddhati · The 8x4 Symmetrical Matrix of Srirangam',
+        paragraphs: [
+          'While Rudraṭa laid the structural groundwork, the supreme zenith of Turaṅga-Bandha was reached 500 years later by the Śrī Vaiṣṇava polymath, philosopher, and poet Śrī Vedānta Deśika (1268–1369 CE).',
+          'In his magnum opus, the Śrī Pādukā Sahasram (1,008 verses celebrating the sacred Sandals of Lord Ranganatha, composed in a single night at Srirangam), Deśika dedicated the 30th chapter, Chitra-Paddhati, to geometric and pictorial poetry. In this chapter, he introduced verses 929 and 930, which structurally solved the Knight’s Tour on an 8x4 half-chessboard.',
+          'Verse 929 is read conventionally from left to right, line by line. It is a sublime prayer to the holy sandals. Then, by traversing the syllables according to the knight’s steps (steps 1 through 32), Verse 930 emerges: an entirely new, fully coherent verse praising the sandals’ golden luster and grief-dispelling power.',
+        ],
+        sutras: [
+          {
+            sanskrit: 'स्थिरागसां सदाराध्या विहताकततामता ।\nसत्पादुके सरसा मा रङ्गराजपदं नय ॥ ९२९ ॥',
+            transliteration: 'sthirāgasāṁ sadārādhyā vihatākatatāmatā |\nsatpāduke sarasā mā raṅgarājapadaṁ naya || 929 ||',
+            meaning: 'O sacred Sandals of the Supreme Brahman! You are eternally adorned by those who have committed unpardonable sins; you destroy all sorrow and unwanted miseries; you produce a sweet, musical sound. Please lead me to the eternal feet of Lord Rangaraja.',
+            source: 'Śrī Vedānta Deśika · Śrī Pādukā Sahasram 929 (Linear Layout)',
+          },
+          {
+            sanskrit: 'स्थिता समयराजत्पा गताऽऽमदके गवि ।\nदुरंहसामसन्नतादा साध्या तापकरासरा ॥ ९३० ॥',
+            transliteration: 'sthitā samayarājatpā gatā\'\'madake gavi |\nduraṁhasāmasannatādā sādhyā tāpakarāsarā || 930 ||',
+            meaning: 'The sandals protect those who shine with good conduct; they possess the deep brilliance of gold; they dispense boundless spiritual joy; they destroy the despair of the wicked; and the radiant rays of their gems have the power to instantly extinguish the burning heat of worldly suffering.',
+            source: 'Śrī Vedānta Deśika · Śrī Pādukā Sahasram 930 (Knight’s Tour Emergence)',
+          },
+        ],
+        table: {
+          headers: ['Row / Pāda', 'Col 1', 'Col 2', 'Col 3', 'Col 4', 'Col 5', 'Col 6', 'Col 7', 'Col 8'],
+          rows: [
+            ['Pāda 1 (Steps)', '01 (स्थि)', '16 (रा)', '21 (ग)', '26 (सां)', '03 (स)', '18 (दा)', '23 (रा)', '28 (ध्या)'],
+            ['Pāda 2 (Steps)', '20 (वि)', '25 (ह)', '02 (ता)', '17 (क)', '22 (त)', '27 (ता)', '04 (म)', '15 (ता)'],
+            ['Pāda 3 (Steps)', '09 (सत्)', '32 (पा)', '13 (दु)', '06 (के)', '11 (स)', '30 (र)', '07 (सा)', '24 (मा)'],
+            ['Pāda 4 (Steps)', '12 (रं)', '05 (ग)', '10 (रा)', '31 (ज)', '08 (प)', '29 (दं)', '14 (न)', '19 (य)'],
+          ],
+        },
+        callout: {
+          title: 'Chronological Step Matrix (1 to 32)',
+          text: '“Notice the mathematical symmetry: starting at cell (0,0) [Step 1], jumping to (1,2) [Step 2], (0,4) [Step 3], and (1,6) [Step 4]—each step follows a perfect Knight move across the board, systematically visiting all 32 cells without a single duplication.”',
+          type: 'cosmological',
+        },
+      },
+      {
+        anchorId: 'four-simultaneous-constraints',
+        heading: '4. The Genius of the Sanskrit Matrix: Four Simultaneous Constraints',
+        subheading: 'Topological, Grammatical, Metrical & Theological Synchronization',
+        paragraphs: [
+          'What makes Deśika’s achievement genuinely mind-boggling is not merely solving a graph-theory problem, but layering four simultaneous constraints across the same 32 cells:',
+          '1. Mathematical Accuracy: The underlying matrix must track a flawlessly valid Hamiltonian path (Knight’s Tour topology) across 32 independent cells without dead-ending or repeating.',
+          '2. Grammatical Rigor: Both resulting sequences cannot be random strings or phonetic gibberish; they must strictly adhere to the intricate rules of Pāṇinian Sanskrit grammar, case inflections (Vibhakti), and multi-word compounding (Samāsa).',
+          '3. Poetic Meter: Both verses must seamlessly fit the Anuṣṭubh meter (a fixed rhythmic cadence of 8 syllables per quarter-verse with specified Laghu/Guru weightings at syllables 5, 6, and 7).',
+          '4. Thematic Consistency: Both verses must independently convey deep, elegant theological meanings relating to the same sacred subject: the divine sandals of the Supreme Lord.',
+        ],
+        table: {
+          headers: ['Constraint Layer', 'Constraint Rule', 'How Deśika Satisfied It'],
+          rows: [
+            ['Topology', 'Hamiltonian Path on 8x4 Grid', 'Every step from 1 to 32 is a strict (Δx=1, Δy=2) or (Δx=2, Δy=1) knight move'],
+            ['Grammar & Morphology', 'Pāṇinian Syntax & Compounds', 'Flawless Samāsa compounding: sthirāgasām... and sthitā samayarājatpā...'],
+            ['Prosody & Meter', 'Anuṣṭubh Chhandas (32 syllables)', 'Both 929 and 930 form exact 4-pāda × 8-syllable Classical Anuṣṭubh stanzas'],
+            ['Theology & Philosophy', 'Viśiṣṭādvaita Bhakti', 'Both verses provide devotional commentaries on grace, redemption, and liberation'],
+          ],
+        },
+        callout: {
+          title: 'The Multi-Dimensional Cipher',
+          text: '“To write one coherent verse is art. To arrange its syllables so that a knight’s walk creates an entirely different, grammatically perfect poem in the exact same meter is pure intellectual mastery.”',
+          type: 'insight',
+        },
+      },
+      {
+        anchorId: 'historical-chaturanga-manuals',
+        heading: '5. Historical Chess Manuals in Sanskrit: Chaturaṅga as War & Geometry',
+        subheading: 'Vilāsamaṇi Mañjarī · Chaturaṅga Sāra Sarvasva · The Living Synthesis of Art and Play',
+        paragraphs: [
+          'Beyond poetic constraints, the game of chess—originating in ancient India as Chaturaṅga (चतुरङ्ग - "four limbs of the army": infantry, cavalry, elephants, chariots)—was thoroughly documented in secular technical treatises as a science of war, logic, and statecraft:',
+          '• Vilāsamaṇi Mañjarī (विलासमणिमञ्जरी): Written by the royal scholar Pandit Trivengadacharya Shastri, this text serves as a vital historical manual detailing advanced endgame scenarios, piece strategies, and traditional Indian piece movements.',
+          '• Chaturaṅga Sāra Sarvasva (चतुरङ्गसारसर्वस्वम्): Compiled in the 19th century under the patronage of the Maharaja of Mysore, this exhaustive manuscript functions as an encyclopedia of chess, loaded with complex geometrical problems, tactical board layouts, and knight-tour permutations.',
+          'Sanskrit polymaths achieved these breakthroughs without modern computing or linear algebra models. They used the phonetic matrix of a language as a live combinatorics field, proving that art, play, and mathematics are fundamentally one.',
+        ],
+        table: {
+          headers: ['Historical Figure / Text', 'Period', 'Contribution to Chess / Combinatorics'],
+          rows: [
+            ['Rudraṭa (Kāvyālaṅkāra)', '9th Century CE (Kashmir)', 'Earliest documented Knight’s Tour anywhere in world literature (8x4 grid)'],
+            ['Śrī Vedānta Deśika (Pādukā Sahasram)', '14th Century CE (Srirangam)', 'Bilingual dual-verse Knight’s Tour (Verses 929 & 930) solving half-chessboard'],
+            ['Pandit Trivengadacharya Shastri (Vilāsamaṇi Mañjarī)', 'Classical India', 'Comprehensive manual of Chaturaṅga endgames and tactical geometric maneuvers'],
+            ['Maharaja of Mysore (Chaturaṅga Sāra Sarvasva)', '19th Century CE (Mysore)', 'Exhaustive encyclopedic compilation of Chaturaṅga problems, knight tours, and arrays'],
+            ['Leonhard Euler', '1759 CE (Switzerland)', 'First formal mathematical investigation of Knight’s Tour in Western Europe (900 years later)'],
+          ],
+        },
+        callout: {
+          title: 'The Living Synthesis',
+          text: '“In the Gurukul worldview, poetry is not opposed to calculation, nor is gaming divorced from spiritual inquiry. The horse that leaps across the board is the mind navigating the infinite pathways of consciousness.”',
+          type: 'insight',
+        },
+      },
+    ],
+    keyTakeaways: [
+      'Turaṅga-Bandha (the Knight’s Tour) is a crowning jewel of Chitra-Kāvya, arranging Sanskrit syllables into an algorithmic chessboard matrix.',
+      'Kashmiri scholar Rudraṭa’s 9th-century Kāvyālaṅkāra provides the earliest documented textual solution to a Knight’s Tour in world history.',
+      'Śrī Vedānta Deśika (14th century) solved the Knight’s Tour on an 8x4 half-chessboard across Verses 929 and 930 of the Śrī Pādukā Sahasram.',
+      'Verse 929 reads horizontally row by row; following the Knight’s L-shaped steps (1 to 32) spells out Verse 930—an entirely distinct, grammatically perfect poem in the exact same Anuṣṭubh meter.',
+      'This composition simultaneously satisfies four grueling constraints: graph-theoretical Hamiltonian accuracy, Pāṇinian grammatical syntax, metrical cadence, and theological depth.',
+      'Sanskrit chess treatises like Vilāsamaṇi Mañjarī and Chaturaṅga Sāra Sarvasva document ancient India’s sophisticated tactical, geometric, and mathematical mastery of Chaturaṅga.',
+      'Indian poet-mathematicians anticipated Leonhard Euler’s 1759 mathematical investigation by nearly 900 years, transforming language itself into a combinatorial playground.',
+    ],
+  },
 ];
+
 

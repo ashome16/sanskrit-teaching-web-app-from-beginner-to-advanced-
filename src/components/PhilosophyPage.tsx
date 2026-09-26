@@ -3,6 +3,12 @@ import BodhiAvatar from './BodhiAvatar';
 import { MANTRAS_ADDENDUM_ID } from '../data/mantrasShlokas';
 import '../styles/philosophy.css';
 import { playPronunciation } from '../utils/pronunciation';
+import {
+  PingalaPrastaraTruthTable,
+  PingalaNastamUddistamCodec,
+  PingalaMeruPyramid,
+} from './PingalaInteractiveTools';
+import { TurangaBandhaChessboard } from './TurangaBandhaChessboard';
 
 export interface PhilosophyPageProps {
   onOpenRegister?: () => void;
@@ -13,7 +19,7 @@ export interface PhilosophyPageProps {
   onOpenGrammarArticle?: (articleId: string) => void;
   /** Open a Course Addendum unit (e.g. Mantras & Ślokas). */
   onOpenCourseAddendum?: (addendumId: string) => void;
-  initialEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter';
+  initialEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha';
 }
 
 const GLOSSARY: { term: string; meaning: string }[] = [
@@ -56,6 +62,19 @@ const GLOSSARY: { term: string; meaning: string }[] = [
   { term: 'śrī chakra (श्रीचक्रम्)', meaning: 'the supreme sacred geometric yantra formed by 9 interlocking triangles radiating from a central Bindu, embodying cosmic vibration' },
   { term: 'vāstu śāstra (वास्तुशास्त्रम्)', meaning: 'the classical Indian architectural science that uses circle, square, and triangle geometries as functional acoustic lenses for energy alignment' },
   { term: 'ānanda (आनन्दः)', meaning: 'uncaused cosmic joy; the primordial creative impulse that sings the universe and all its geometric forms into existence' },
+  { term: 'laghu (लघु)', meaning: 'light, short syllable of 1 mātrā (beat); encoded mathematically as 0 in binary meters' },
+  { term: 'guru (गुरु)', meaning: 'heavy, long syllable of 2 mātrās (beats); encoded mathematically as 1 in binary meters' },
+  { term: 'prastāra (प्रस्तारः)', meaning: 'systematic algorithmic expansion generating all 2ⁿ metric permutations without omission (binary truth table)' },
+  { term: 'naṣṭam (नष्टम्)', meaning: 'the lost meter algorithm; converts a decimal row index into its exact binary syllable sequence via repeated halving' },
+  { term: 'uddiṣṭam (उद्दिष्टम्)', meaning: 'the indicated number algorithm; converts a binary syllable sequence into its exact decimal row position via repeated doubling' },
+  { term: 'meru prastāra (मेरु-प्रस्तारः)', meaning: 'the staircase of Mount Meru; combinatorial pyramid generating binomial coefficients (Pascal’s Triangle, c. 300 BCE)' },
+  { term: 'dvirūpam (द्विरूपम्)', meaning: 'binary exponentiation; computing powers of 2 (2ⁿ) in logarithmic time O(log n)' },
+  { term: 'chhandas śāstra (छन्दःशास्त्रम्)', meaning: 'the Vedic science of poetic meter and rhythmic combinatorics authored by Achārya Piṅgala' },
+  { term: 'chitra-kāvya (चित्रकाव्यम्)', meaning: 'pictorial, constrained poetry; arranging syllables to fit geometric grids, matrices, wheels, and chessboards' },
+  { term: 'turaṅga-bandha (तुरङ्गबन्धः)', meaning: 'the horse-binding or knight’s tour pattern; traversing an 8x4 half-chessboard using chess knight moves to reveal a second hidden verse' },
+  { term: 'chaturaṅga (चतुरङ्गम्)', meaning: 'the ancient Indian ancestor of chess representing the four limbs of an army: infantry, cavalry, elephants, and chariots' },
+  { term: 'hamiltonian path (हैमिल्टन-मार्गः)', meaning: 'a topological graph trajectory visiting every square/vertex of a board exactly once without duplication or omission' },
+  { term: 'śrī pādukā sahasram (श्रीपादुकासहस्रम्)', meaning: 'Śrī Vedānta Deśika’s 1,008-verse masterpiece celebrating the divine sandals of Lord Ranganatha, featuring the iconic Verses 929 & 930' },
 ];
 
 const DEFAULT_TITLE =
@@ -83,6 +102,16 @@ const MUSIC_OF_MATTER_TITLE =
 const MUSIC_OF_MATTER_DESC =
   'From Nāda Brahma to Hans Jenny’s tonoscope: discover how sound waves crystallize into sacred geometry, Fibonacci floral mandalas, and quantum holographic reality.';
 
+const PINGALA_ESSAY_TITLE =
+  'The Binary Blueprint: How Piṅgala’s Chhandas Śāstra Anticipated Computer Science · Darśana | EdNet Learn Gurukul';
+const PINGALA_ESSAY_DESC =
+  'From Laghu (0) and Guru (1) to Prastāra truth tables, Naṣṭam/Uddiṣṭam codecs, and Meru Prastāra (Pascal’s Triangle): discover ancient India’s foundational computer science.';
+
+const TURANGA_ESSAY_TITLE =
+  'The Architecture of Sound and Strategy: Knight’s Tours in Classical Sanskrit Poetry · Darśana | EdNet Learn Gurukul';
+const TURANGA_ESSAY_DESC =
+  'Euler anticipated by 900 years: discover how Rudraṭa (9th c.) and Vedānta Deśika (14th c.) solved the Knight’s Tour on an 8x4 half-chessboard across Pādukā Sahasram 929–930.';
+
 const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   onOpenRegister,
   onOpenVedicMaths,
@@ -93,7 +122,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   onOpenCourseAddendum,
   initialEssay = 'ai_sanskrit',
 }) => {
-  const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter'>(initialEssay);
+  const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha'>(initialEssay);
   const [glossaryOpen, setGlossaryOpen] = useState(false);
 
   useEffect(() => {
@@ -114,6 +143,12 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
     } else if (activeEssay === 'music_of_matter') {
       currentTitle = MUSIC_OF_MATTER_TITLE;
       currentDesc = MUSIC_OF_MATTER_DESC;
+    } else if (activeEssay === 'pingala_binary') {
+      currentTitle = PINGALA_ESSAY_TITLE;
+      currentDesc = PINGALA_ESSAY_DESC;
+    } else if (activeEssay === 'turanga_bandha') {
+      currentTitle = TURANGA_ESSAY_TITLE;
+      currentDesc = TURANGA_ESSAY_DESC;
     }
 
     const prevTitle = document.title;
@@ -142,6 +177,10 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
         ? 'https://ednetlearn.in/philosophy/tagore-sanskrit-charioteer.jpg'
         : activeEssay === 'music_of_matter'
         ? 'https://ednetlearn.in/philosophy/music-of-matter-cymatics.jpg'
+        : activeEssay === 'pingala_binary'
+        ? 'https://ednetlearn.in/philosophy/pingala-binary-blueprint.jpg'
+        : activeEssay === 'turanga_bandha'
+        ? 'https://ednetlearn.in/philosophy/turanga-bandha-knights-tour.jpg'
         : 'https://ednetlearn.in/philosophy/sunyat-anantam-mandala.webp';
     ogTitle?.setAttribute('content', currentTitle);
     ogDesc?.setAttribute('content', currentDesc);
@@ -275,6 +314,34 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
             <div>
               <span className="philosophy-essay-tab-title">The Music of Matter: Cymatics &amp; Sacred Geometry</span>
               <span className="philosophy-essay-tab-sub">Nāda Brahma · Tonoscope · Yathā Piṇḍe Tathā Brahmāṇḍe</span>
+            </div>
+          </button>
+          <button
+            type="button"
+            className={`philosophy-essay-tab ${activeEssay === 'pingala_binary' ? 'active' : ''}`}
+            onClick={() => {
+              setActiveEssay('pingala_binary');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
+            <span className="philosophy-essay-tab-icon" aria-hidden="true">⚡</span>
+            <div>
+              <span className="philosophy-essay-tab-title">The Binary Blueprint: Piṅgala &amp; Computer Science</span>
+              <span className="philosophy-essay-tab-sub">Chhandas Śāstra · Laghu (0) &amp; Guru (1) · Prastāra · Meru Prastāra</span>
+            </div>
+          </button>
+          <button
+            type="button"
+            className={`philosophy-essay-tab ${activeEssay === 'turanga_bandha' ? 'active' : ''}`}
+            onClick={() => {
+              setActiveEssay('turanga_bandha');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
+            <span className="philosophy-essay-tab-icon" aria-hidden="true">♞</span>
+            <div>
+              <span className="philosophy-essay-tab-title">Sound &amp; Strategy: Knight’s Tours in Sanskrit Poetry</span>
+              <span className="philosophy-essay-tab-sub">चित्रकाव्यम् · तुरङ्गबन्धः · Pādukā Sahasram 929–930 · 8×4 Matrix</span>
             </div>
           </button>
         </nav>
@@ -2150,11 +2217,743 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                     type="button"
                     className="philosophy-cta-secondary"
                     onClick={() => {
-                      setActiveEssay('sunyat_anantam');
+                      setActiveEssay('pingala_binary');
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
                   >
-                    🌌 Śūnyāt Anantam (Mathematics as Darśana) ➔
+                    ⚡ The Binary Blueprint (Piṅgala &amp; Computer Science) ➔
+                  </button>
+                  <button
+                    type="button"
+                    className="philosophy-cta-secondary"
+                    onClick={() => {
+                      setActiveEssay('turanga_bandha');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    ♞ Sound &amp; Strategy: Knight’s Tours in Sanskrit Poetry ➔
+                  </button>
+                </div>
+              </section>
+            </section>
+          </div>
+        )}
+
+        {/* =========================================================================
+            ESSAY 5: The Binary Blueprint: How Piṅgala Anticipated Computer Science
+           ========================================================================= */}
+        {activeEssay === 'pingala_binary' && (
+          <div className="philosophy-essay-body">
+            <header className="philosophy-hero">
+              <span className="philosophy-kicker">Gurukul Darśana · Masterclass 7 · पिङ्गल-च्छन्दःशास्त्रम्</span>
+              <h1 className="philosophy-title">
+                The Binary Blueprint: How Piṅgala’s Chhandas Śāstra Anticipated Computer Science
+              </h1>
+              <p className="philosophy-mantra">
+                लौऽर्धे · समे गिति च · द्विरूपम् · मेरु-प्रस्तारः
+              </p>
+              <p className="philosophy-secondary">
+                Zeroes and Ones, Algorithmic Truth Tables, Bi-Directional Codecs, and Pascal’s Triangle in Ancient India
+              </p>
+
+              <blockquote className="philosophy-pull-quote" style={{ maxWidth: '44rem', margin: '1.25rem auto 0.75rem' }}>
+                <p>
+                  “Centuries before Gottfried Wilhelm Leibniz formalized the binary numeral system in 1689 Europe, the Indian mathematician and grammarian Achārya Piṅgala developed the exact mathematical foundations of binary arithmetic in the Chhandas Śāstra (c. 300–200 BCE). Through Sanskrit poetic meters, Piṅgala treated the human voice as a binary generator, formalizing combinatorial truth tables, bi-directional codecs, and Pascal’s Triangle nearly two millennia before Western science.”
+                </p>
+              </blockquote>
+
+              <div className="philosophy-journey" style={{ marginTop: '1rem' }}>
+                <AudioChip term="लघु" label="लघु (Laghu)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="गुरु" label="गुरु (Guru)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="प्रस्तारः" label="प्रस्तारः (Prastāra)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="नष्टम्" label="नष्टम् (Naṣṭam)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="उद्दिष्टम्" label="उद्दिष्टम् (Uddiṣṭam)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="मेरु-प्रस्तारः" label="मेरु-प्रस्तारः (Meru Prastāra)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="द्विरूपम्" label="द्विरूपम् (Dvirūpam)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="छन्दःशास्त्रम्" label="छन्दःशास्त्रम्" />
+              </div>
+            </header>
+
+            {/* Visual Masterpiece Artwork Hero */}
+            <figure className="philosophy-hero-mandala" style={{ maxWidth: 'min(100%, 820px)', margin: '1.75rem auto 2.25rem' }}>
+              <img
+                src="/philosophy/pingala-binary-blueprint.jpg"
+                alt="The Binary Blueprint: How Piṅgala’s Chhandas Śāstra Anticipated Computer Science — Visual Infographic"
+                width={1920}
+                height={1300}
+                loading="eager"
+                decoding="async"
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '16px',
+                  boxShadow: '0 12px 36px rgba(15, 23, 42, 0.16), 0 2px 8px rgba(0, 0, 0, 0.08)',
+                }}
+              />
+              <figcaption style={{
+                fontSize: '0.84rem',
+                color: '#64748b',
+                textAlign: 'center',
+                marginTop: '0.75rem',
+                fontStyle: 'italic',
+                lineHeight: 1.5,
+              }}>
+                Visual Masterpiece: Achārya Piṅgala’s Chhandas Śāstra, Binary Truth Table (Prastāra), Halāyudha’s Meru Prastāra (Pascal’s Triangle c. 300 BCE), Bidirectional Codecs (Naṣṭam &amp; Uddiṣṭam), and the Human Voice as a Digital Generator.
+              </figcaption>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', marginTop: '1rem' }} aria-label="Artwork thematic navigation">
+                <a href="#pingala-laghu-guru" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>⚡ 1. Laghu &amp; Guru: 0 and 1</a>
+                <a href="#pingala-prastara" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>📊 2. Prastāra: The Truth Table</a>
+                <a href="#pingala-codecs" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🔄 3. Naṣṭam &amp; Uddiṣṭam: Codec</a>
+                <a href="#pingala-meru" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🔺 4. Meru Prastāra: Pascal’s Pyramid</a>
+                <a href="#pingala-dvirupam" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🚀 5. Dvirūpam: O(log n) Exponentiation</a>
+                <a href="#pingala-art-code" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>💻 6. Art into Code &amp; Computing</a>
+              </div>
+            </figure>
+
+            {/* Section 1: The Language of Zeroes and Ones */}
+            <section className="philosophy-section" id="pingala-laghu-guru" aria-labelledby="heading-pingala-laghu-guru">
+              <h2 id="heading-pingala-laghu-guru">1. The Language of Zeroes and Ones: Laghu (0) and Guru (1)</h2>
+              <p className="philosophy-lead">
+                At the heart of modern computer science lies the bit: a binary unit of information that can exist in one of two states: 0 or 1. Over two millennia ago, Achārya Piṅgala discovered this exact mathematical principle through the study of Sanskrit poetic rhythm.
+              </p>
+              <p>
+                In classical Sanskrit prosody (<em>Chhandas Śāstra</em>), poetry is not measured by syllable count alone, but by acoustic duration (<em>Mātrā</em>). Every syllable in Sanskrit belongs strictly to one of two fundamental rhythmic categories:
+              </p>
+              <ul className="philosophy-bullet-list">
+                <li>
+                  <strong>Laghu (लघु - Light / Short):</strong> Takes 1 unit of time (1 Mātrā) to pronounce, symbolized classically by a vertical crescent (∪) or dot. In Piṅgala’s mathematical abstraction, this is the digit <strong>0</strong>.
+                </li>
+                <li>
+                  <strong>Guru (गुरु - Heavy / Long):</strong> Takes 2 units of time (2 Mātrās) to pronounce—either with a long vowel or followed by a consonant cluster (Samyuktākṣara)—symbolized classically by a horizontal line (—). In Piṅgala’s algebra, this is the digit <strong>1</strong>.
+                </li>
+              </ul>
+              <p>
+                By mapping language to a discrete 2-state algebraic set, Piṅgala realized that any poetic meter of length <em>n</em> syllables could be treated as an <em>n</em>-bit binary string. A four-syllable meter is a 4-bit nibble; an eight-syllable Anuṣṭubh pāda is an 8-bit byte!
+              </p>
+
+              <div className="philosophy-callout">
+                <span className="philosophy-callout-icon" aria-hidden="true">💡</span>
+                <div>
+                  <h3 className="philosophy-callout-title">The Binary Invariance Principle</h3>
+                  <p className="philosophy-callout-text">
+                    “Gottfried Leibniz is credited with inventing binary in 1689. Yet Leibniz himself was influenced by ancient combinatorial treatises, and 2,000 years prior, Piṅgala had already proven that poetic syllables constitute a discrete binary algebraic group.”
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 2: Prastāra: The Truth Table */}
+            <section className="philosophy-section" id="pingala-prastara" aria-labelledby="heading-pingala-prastara">
+              <h2 id="heading-pingala-prastara">2. Prastāra: Algorithmic Generation of Binary Sequences</h2>
+              <p className="philosophy-lead">
+                Piṅgala did not stop at identifying binary states; he created an algorithmic routine called <strong>Prastāra (प्रस्तारः)</strong> to systematically expand every possible permutation of a meter of <em>n</em> syllables without a single omission or duplication.
+              </p>
+              <p>
+                Piṅgala’s algorithm for generating the table of permutations of length <em>n</em>:
+              </p>
+              <ol className="philosophy-bullet-list" style={{ paddingLeft: '1.25rem' }}>
+                <li>Start with a row of all Gurus: <code>1 1 1 ... 1</code> (or all Laghus in inverted order).</li>
+                <li>To generate the next permutation: locate the first Guru (1) from left to right, change it into a Laghu (0).</li>
+                <li>Copy all syllables to its left as all Gurus (1s), and copy all syllables to its right unchanged.</li>
+                <li>Repeat until the row consists entirely of all Laghus (0s).</li>
+              </ol>
+              <p>
+                This recursive procedure generates exactly <strong>2<sup>n</sup></strong> distinct rows. It is, in every formal sense, a <strong>Binary Truth Table</strong>, created over 2,100 years before George Boole formalized Boolean logic in 1854!
+              </p>
+
+              {/* Interactive Tool 1: Prastāra Truth Table */}
+              <PingalaPrastaraTruthTable onPlayAudio={handlePlayAudio} />
+
+              <div className="philosophy-card" style={{ marginTop: '1.5rem', background: '#fdf4ff', border: '1.5px solid #f0abfc' }}>
+                <h3 style={{ margin: '0 0 0.5rem', color: '#86198f', fontSize: '1.15rem', fontWeight: 800 }}>
+                  The Vedic Mnemonic: यामाताराजभानसलगाम् (Yā-Mā-Tā-Rā-Ja-Bhā-Na-Sa-La-Gām)
+                </h3>
+                <p style={{ margin: '0 0 0.5rem', fontSize: '0.92rem', color: '#701a75', lineHeight: 1.5 }}>
+                  To memorize the 8 possible 3-syllable triplets (2<sup>3</sup> = 8 Gaṇas), Indian scholars devised a single 10-syllable circular shift register: <strong>या-मा-ता-रा-ज-भा-न-स-ल-गाम्</strong>.
+                  Taking any 3 consecutive syllables gives the exact binary structure of that Gaṇa:
+                </p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.5rem', marginTop: '0.75rem' }}>
+                  <div style={{ background: '#ffffff', padding: '0.5rem', borderRadius: '6px', border: '1px solid #f5d0fe', fontSize: '0.82rem' }}>
+                    <strong>मा-ता-रा (M)</strong>: 1-1-1 (All Guru)
+                  </div>
+                  <div style={{ background: '#ffffff', padding: '0.5rem', borderRadius: '6px', border: '1px solid #f5d0fe', fontSize: '0.82rem' }}>
+                    <strong>या-मा-ता (Y)</strong>: 0-1-1 (Initial Laghu)
+                  </div>
+                  <div style={{ background: '#ffffff', padding: '0.5rem', borderRadius: '6px', border: '1px solid #f5d0fe', fontSize: '0.82rem' }}>
+                    <strong>रा-ज-भा (R)</strong>: 1-0-1 (Middle Laghu)
+                  </div>
+                  <div style={{ background: '#ffffff', padding: '0.5rem', borderRadius: '6px', border: '1px solid #f5d0fe', fontSize: '0.82rem' }}>
+                    <strong>स-ल-गा (S)</strong>: 0-0-1 (Final Guru)
+                  </div>
+                  <div style={{ background: '#ffffff', padding: '0.5rem', borderRadius: '6px', border: '1px solid #f5d0fe', fontSize: '0.82rem' }}>
+                    <strong>ता-रा-ज (T)</strong>: 1-1-0 (Final Laghu)
+                  </div>
+                  <div style={{ background: '#ffffff', padding: '0.5rem', borderRadius: '6px', border: '1px solid #f5d0fe', fontSize: '0.82rem' }}>
+                    <strong>ज-भा-न (J)</strong>: 0-1-0 (Middle Guru)
+                  </div>
+                  <div style={{ background: '#ffffff', padding: '0.5rem', borderRadius: '6px', border: '1px solid #f5d0fe', fontSize: '0.82rem' }}>
+                    <strong>भा-न-स (Bh)</strong>: 1-0-0 (Initial Guru)
+                  </div>
+                  <div style={{ background: '#ffffff', padding: '0.5rem', borderRadius: '6px', border: '1px solid #f5d0fe', fontSize: '0.82rem' }}>
+                    <strong>न-स-ल (N)</strong>: 0-0-0 (All Laghu)
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 3: Naṣṭam & Uddiṣṭam: Lossless Codec */}
+            <section className="philosophy-section" id="pingala-codecs" aria-labelledby="heading-pingala-codecs">
+              <h2 id="heading-pingala-codecs">3. Naṣṭam &amp; Uddiṣṭam: The Bidirectional Digital Codec</h2>
+              <p className="philosophy-lead">
+                Generating an entire table of 2<sup>n</sup> rows can be cumbersome when <em>n</em> is large (for a 16-syllable meter, the table has 65,536 rows). What if a poet needs to look up row #42,105 directly, or verify which row an existing verse belongs to?
+              </p>
+              <p>
+                To solve this, Piṅgala invented two inverse algorithms that constitute the world’s earliest recorded <strong>lossless numeric codec</strong>:
+              </p>
+              <ul className="philosophy-bullet-list">
+                <li>
+                  <strong>Naṣṭam (नष्टम् - &quot;The Lost Meter&quot;):</strong> Decimal-to-Binary conversion. Takes a decimal row index <em>K</em> and recovers its exact binary syllable pattern by repeatedly halving the number (<em>लौऽर्धे । समे गिति च ॥</em>).
+                </li>
+                <li>
+                  <strong>Uddiṣṭam (उद्दिष्टम् - &quot;The Indicated Number&quot;):</strong> Binary-to-Decimal conversion. Takes any sequence of syllables and determines its exact row index in the master table by summing powers of 2.
+                </li>
+              </ul>
+
+              {/* Interactive Tool 2: Naṣṭam & Uddiṣṭam Sandbox */}
+              <PingalaNastamUddistamCodec onPlayAudio={handlePlayAudio} />
+            </section>
+
+            {/* Section 4: Meru Prastāra: Pascal's Pyramid */}
+            <section className="philosophy-section" id="pingala-meru" aria-labelledby="heading-pingala-meru">
+              <h2 id="heading-pingala-meru">4. Meru Prastāra: The Combinatorial Pyramid</h2>
+              <p className="philosophy-lead">
+                To calculate how many combinations in a meter have an exact count of short and long syllables (such as how many 4-syllable verses have exactly 2 Gurus and 2 Laghus), Piṅgala conceptualized a stepped pyramidal grid.
+              </p>
+              <p>
+                In the 10th century CE, Indian mathematician Halāyudha drew this out in his commentary <em>Mṛtasañjīvanī</em> on Piṅgala, naming it the <strong>Meru Prastāra (मेरु-प्रस्तारः - The Staircase of Mount Meru)</strong>.
+              </p>
+              <p>
+                Halāyudha’s sūtra states: <em>&quot;Draw a square at the summit. Below it, draw two squares overlapping. Fill the boundary squares with 1. For any interior square, add the numbers in the two squares immediately above it.&quot;</em>
+              </p>
+              <p>
+                This arrangement generates the binomial coefficients: <code>1; 1 1; 1 2 1; 1 3 3 1; 1 4 6 4 1; 1 5 10 10 5 1...</code> This is identical to <strong>&quot;Pascal’s Triangle&quot;</strong>, published by Blaise Pascal in 1654 CE—approximately 1,900 years after Piṅgala and 700 years after Halāyudha!
+              </p>
+
+              {/* Interactive Tool 3: Meru Prastāra Pyramid */}
+              <PingalaMeruPyramid onPlayAudio={handlePlayAudio} />
+            </section>
+
+            {/* Section 5: Dvirūpam: O(log n) Exponentiation */}
+            <section className="philosophy-section" id="pingala-dvirupam" aria-labelledby="heading-pingala-dvirupam">
+              <h2 id="heading-pingala-dvirupam">5. Dvirūpam: Binary Fast Exponentiation O(log n)</h2>
+              <p className="philosophy-lead">
+                How did Piṅgala calculate the total number of permutations 2<sup>n</sup> for large meters without multiplying 2 by itself <em>n</em> times?
+              </p>
+              <p>
+                In Sūtras 8.28–31 (<em>द्विरूपम् । रूपे शून्यम् ॥</em>), Piṅgala introduced the algorithm known today as <strong>Exponentiation by Squaring</strong>. By repeatedly halving even powers and subtracting 1 from odd powers:
+              </p>
+              <ul className="philosophy-bullet-list">
+                <li>If the exponent is even: halve it and mark an operation of squaring.</li>
+                <li>If the exponent is odd: subtract 1, divide by 2, and double the base.</li>
+              </ul>
+              <p>
+                Instead of requiring <em>n</em> sequential multiplications (an O(n) linear operation), Piṅgala reduced computation to <strong>O(log n) logarithmic time</strong>. This exact algorithm is the computational backbone of modern public-key cryptography (such as RSA and Diffie-Hellman key exchange) running on every secure internet connection today!
+              </p>
+            </section>
+
+            {/* Section 6: Art into Code & Computing Matrix */}
+            <section className="philosophy-section" id="pingala-art-code" aria-labelledby="heading-pingala-art-code">
+              <h2 id="heading-pingala-art-code">6. Elevating the Rhythms of Art into Code: Comparative Matrix</h2>
+              <p className="philosophy-lead">
+                Piṅgala’s Chhandas Śāstra demonstrates that ancient Indian science did not view mathematics as a detached, purely utilitarian tool. Mathematics was recognized as the invisible, elegant architecture of music, language, and spiritual consciousness.
+              </p>
+              <p>
+                By treating the human voice as a binary generator, ancient Indian grammarians proved that the structural integrity of natural language could be formalized through strict algorithmic code.
+              </p>
+
+              <div className="philosophy-table-wrapper" style={{ margin: '1.5rem 0' }}>
+                <table className="philosophy-table" aria-label="Comparative table of Piṅgala’s concepts and modern computer science">
+                  <thead>
+                    <tr>
+                      <th scope="col">Piṅgala’s Concept (c. 300 BCE)</th>
+                      <th scope="col">Sanskrit Term</th>
+                      <th scope="col">Modern Computer Science Equivalent</th>
+                      <th scope="col">Year in Western Science</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Binary Syllable States</td>
+                      <td lang="sa"><em>लघु (Laghu) &amp; गुरु (Guru)</em></td>
+                      <td>Binary Bits (0 and 1)</td>
+                      <td>Gottfried Leibniz (1689 CE)</td>
+                    </tr>
+                    <tr>
+                      <td>Permutation Generation</td>
+                      <td lang="sa"><em>प्रस्तारः (Prastāra)</em></td>
+                      <td>Binary Truth Table</td>
+                      <td>George Boole (1854 CE)</td>
+                    </tr>
+                    <tr>
+                      <td>Decimal to Binary</td>
+                      <td lang="sa"><em>नष्टम् (Naṣṭam)</em></td>
+                      <td>Division-by-2 Number Conversion</td>
+                      <td>Modern Computer Arithmetic</td>
+                    </tr>
+                    <tr>
+                      <td>Binary to Decimal</td>
+                      <td lang="sa"><em>उद्दिष्टम् (Uddiṣṭam)</em></td>
+                      <td>Polynomial Evaluation / Horner’s Rule</td>
+                      <td>William G. Horner (1819 CE)</td>
+                    </tr>
+                    <tr>
+                      <td>Combinatorial Pyramid</td>
+                      <td lang="sa"><em>मेरु-प्रस्तारः (Meru Prastāra)</em></td>
+                      <td>Binomial Coefficients / Pascal’s Triangle</td>
+                      <td>Blaise Pascal (1654 CE)</td>
+                    </tr>
+                    <tr>
+                      <td>Meter Exponentiation</td>
+                      <td lang="sa"><em>द्विरूपम् (Dvirūpam)</em></td>
+                      <td>Fast Binary Exponentiation (O(log n))</td>
+                      <td>Modern Cryptography &amp; ALU Design</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Call to Action Navigation */}
+              <section className="philosophy-cta" aria-labelledby="pingala-cta-heading" style={{ marginTop: '2.5rem' }}>
+                <h2 id="pingala-cta-heading">Experience the Living Code of Sanskrit</h2>
+                <p>
+                  Explore the companion Masterclass in the Course Addendum or delve into Vedic Mathematics drills.
+                </p>
+                <div className="philosophy-cta-actions">
+                  {onOpenCourseAddendum && (
+                    <button
+                      type="button"
+                      className="philosophy-cta-primary"
+                      onClick={() => onOpenCourseAddendum('addendum-pingala-binary-blueprint')}
+                    >
+                      📜 Open Masterclass 7 in Course Addendum ➔
+                    </button>
+                  )}
+                  {onOpenVedicMaths && (
+                    <button type="button" className="philosophy-cta-secondary" onClick={onOpenVedicMaths}>
+                      📐 Explore वैदिक-गणितम्
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    className="philosophy-cta-secondary"
+                    onClick={() => {
+                      setActiveEssay('turanga_bandha');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    ♞ Sound &amp; Strategy: Knight’s Tours in Sanskrit Poetry ➔
+                  </button>
+                  <button
+                    type="button"
+                    className="philosophy-cta-secondary"
+                    onClick={() => {
+                      setActiveEssay('music_of_matter');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    🔔 The Music of Matter (Cymatics) ➔
+                  </button>
+                </div>
+              </section>
+            </section>
+          </div>
+        )}
+
+        {/* =========================================================================
+            ESSAY 6: The Architecture of Sound and Strategy: Knight's Tours
+           ========================================================================= */}
+        {activeEssay === 'turanga_bandha' && (
+          <div className="philosophy-essay-body">
+            <header className="philosophy-hero">
+              <span className="philosophy-kicker">Gurukul Darśana · Masterclass 8 · चित्रकाव्यम्</span>
+              <h1 className="philosophy-title">
+                The Architecture of Sound and Strategy: Knight’s Tours in Classical Sanskrit Poetry
+              </h1>
+              <p className="philosophy-mantra">
+                तुरङ्गबन्धः · चित्रकाव्यम् · चतुरङ्गम् · पादुकासहस्रम्
+              </p>
+              <p className="philosophy-secondary">
+                Euler Anticipated by 900 Years · Rudraṭa’s Kāvyālaṅkāra · Vedānta Deśika’s Pādukā Sahasram 929–930 · 8×4 Matrix
+              </p>
+
+              <blockquote className="philosophy-pull-quote" style={{ maxWidth: '44rem', margin: '1.25rem auto 0.75rem' }}>
+                <p>
+                  “In classical Sanskrit literature, poets engaged in Chitra-Kāvya (constrained, pictorial poetry) where syllables were arranged into precise geometric matrices. The supreme mathematical zenith of this genre is the Turanga-Bandha (the Knight’s Tour). Centuries before Swiss mathematician Leonhard Euler investigated the Knight’s Tour in 1759, Sanskrit authors were using this exact Hamiltonian path topology across half-chessboards to encode hidden, grammatically flawless poems.”
+                </p>
+              </blockquote>
+
+              <div className="philosophy-journey" style={{ marginTop: '1rem' }}>
+                <AudioChip term="चित्रकाव्यम्" label="चित्रकाव्यम् (Chitra-Kāvya)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="तुरङ्गबन्धः" label="तुरङ्गबन्धः (Turaṅga-Bandha)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="चतुरङ्गम्" label="चतुरङ्गम् (Chaturaṅga)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="पादुकासहस्रम्" label="पादुकासहस्रम्" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="स्थिरागसां सदाराध्या" label="श्लोकः ९२९" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="स्थिता समयराजत्पा" label="श्लोकः ९३०" />
+              </div>
+            </header>
+
+            {/* Visual Masterpiece Artwork Hero */}
+            <figure className="philosophy-hero-mandala" style={{ maxWidth: 'min(100%, 820px)', margin: '1.75rem auto 2.25rem' }}>
+              <img
+                src="/philosophy/turanga-bandha-knights-tour.jpg"
+                alt="The Architecture of Sound and Strategy: Knight's Tours in Classical Sanskrit Poetry — Visual Infographic"
+                width={1920}
+                height={1080}
+                loading="eager"
+                decoding="async"
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '16px',
+                  boxShadow: '0 12px 36px rgba(15, 23, 42, 0.16), 0 2px 8px rgba(0, 0, 0, 0.08)',
+                }}
+              />
+              <figcaption style={{
+                fontSize: '0.84rem',
+                color: '#64748b',
+                textAlign: 'center',
+                marginTop: '0.75rem',
+                fontStyle: 'italic',
+                lineHeight: 1.5,
+              }}>
+                Visual Masterpiece: The Luminous Celestial Horse (Turanga) leaping along an 8x4 half-chessboard Hamiltonian path, Sacred Pādukā of Lord Ranganatha on a glowing lotus, Palm-leaf manuscripts of Rudraṭa’s Kāvyālaṅkāra &amp; Vedānta Deśika’s Pādukā Sahasram.
+              </figcaption>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', marginTop: '1rem' }} aria-label="Artwork thematic navigation">
+                <a href="#turanga-chitra-kavya" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>♞ 1. Chitra-Kāvya &amp; Strategy</a>
+                <a href="#turanga-rudrata" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>📜 2. Rudraṭa’s Kāvyālaṅkāra (9th c.)</a>
+                <a href="#turanga-desika" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>✨ 3. Deśika’s Verses 929 &amp; 930</a>
+                <a href="#turanga-simulator" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>♟️ 4. Interactive Chessboard</a>
+                <a href="#turanga-constraints" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>⚖️ 5. Four Simultaneous Constraints</a>
+                <a href="#turanga-manuals" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>⚔️ 6. Sanskrit Chess Treatises</a>
+              </div>
+            </figure>
+
+            {/* Section 1: Chitra-Kāvya & Strategy */}
+            <section className="philosophy-section" id="turanga-chitra-kavya" aria-labelledby="heading-turanga-chitra-kavya">
+              <h2 id="heading-turanga-chitra-kavya">1. Chitra-Kāvya &amp; Turaṅga-Bandha: Sound Arranged as Strategy</h2>
+              <p className="philosophy-lead">
+                In classical Sanskrit poetics, language was recognized as a geometric, spatial matrix. Far from being a mere decorative pastime, <strong>Chitra-Kāvya (चित्रकाव्यम् - constrained or pictorial poetry)</strong> demanded unprecedented mathematical rigor.
+              </p>
+              <p>
+                Poets arranged phonemes and syllables to satisfy strict visual shapes: wheels with radiating spokes (<em>Cakra-Bandha</em>), lotus blossoms with folding petals (<em>Padma-Bandha</em>), crisscrossing lightning trajectories (<em>Gomūtrikā-Bandha</em>), and chessboards.
+              </p>
+              <p>
+                The most mathematically astounding of these patterns is the <strong>Turaṅga-Bandha (तुरङ्गबन्धः - &quot;horse-binding&quot; or &quot;knight’s pattern&quot;)</strong>. Originating from ancient India’s strategic game of <strong>Chaturaṅga (चतुरङ्ग)</strong>, the horse (knight) moves in an invariant L-shaped jump: two squares along one axis and one square perpendicular.
+              </p>
+              <p>
+                Centuries before the Swiss mathematician Leonhard Euler investigated the Knight’s Tour in 1759—a topological challenge requiring a knight to visit all squares of a chessboard exactly once without duplication—Sanskrit poet-mathematicians were using this Hamiltonian path topology as a generative cipher to encode hidden, grammatically flawless verses.
+              </p>
+
+              <div className="philosophy-callout">
+                <span className="philosophy-callout-icon" aria-hidden="true">💡</span>
+                <div>
+                  <h3 className="philosophy-callout-title">The Topological Miracle</h3>
+                  <p className="philosophy-callout-text">
+                    “Euler investigated the Knight’s Tour in 1759 on bare numeric squares. Sanskrit polymaths solved the Knight’s Tour nearly 900 years earlier while simultaneously balancing phonetic meter, compounding grammar, and profound spiritual theology.”
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 2: Rudraṭa’s Kāvyālaṅkāra */}
+            <section className="philosophy-section" id="turanga-rudrata" aria-labelledby="heading-turanga-rudrata">
+              <h2 id="heading-turanga-rudrata">2. Rudraṭa’s Kāvyālaṅkāra (9th Century): The Earliest Documented Knight’s Tour</h2>
+              <p className="philosophy-lead">
+                The earliest known textual documentation of a Knight’s Tour anywhere in the world appears in the <em>Kāvyālaṅkāra (काव्यालङ्कारः)</em>, a master treatise on poetics by the 9th-century Kashmiri scholar Rudraṭa.
+              </p>
+              <p>
+                Rudraṭa mapped a four-line Sanskrit stanza on a half-chessboard grid: an <strong>8×4 matrix containing exactly 32 syllables</strong> (matching the 32 syllables of an Anuṣṭubh meter with 8 syllables per quarter-verse).
+              </p>
+              <ul className="philosophy-bullet-list">
+                <li>
+                  <strong>Horizontal Reading:</strong> Reading conventionally from left to right, line by line, produces a complete, meaningful, grammatically flawless Sanskrit verse.
+                </li>
+                <li>
+                  <strong>Knight’s Walk:</strong> Placing a chess knight on square 1 and following its strict L-shaped trajectory systematically visits all 32 squares without duplication or omission.
+                </li>
+                <li>
+                  <strong>Dual Emergence:</strong> As the knight steps on the syllables in this sequence, it spells out a second, entirely distinct, grammatically perfect poem!
+                </li>
+              </ul>
+            </section>
+
+            {/* Section 3: Vedānta Deśika’s Pādukā Sahasram */}
+            <section className="philosophy-section" id="turanga-desika" aria-labelledby="heading-turanga-desika">
+              <h2 id="heading-turanga-desika">3. Vedānta Deśika’s Pādukā Sahasram (14th Century): Verses 929 and 930</h2>
+              <p className="philosophy-lead">
+                While Rudraṭa laid the structural groundwork, the supreme zenith of Turaṅga-Bandha was reached 500 years later by the Śrī Vaiṣṇava polymath, philosopher, and poet <strong>Śrī Vedānta Deśika (1268–1369 CE)</strong>.
+              </p>
+              <p>
+                In his magnum opus, the <em>Śrī Pādukā Sahasram</em> (1,008 verses celebrating the sacred Sandals of Lord Ranganatha composed in a single night at Srirangam), Deśika dedicated the 30th chapter, <em>Chitra-Paddhati</em>, to geometric poetry. In this chapter, he introduced verses 929 and 930, which structurally solved the Knight’s Tour on a half-chessboard (8×4 grid).
+              </p>
+
+              <div className="philosophy-card" style={{ margin: '1.25rem 0', background: '#f0fdf4', border: '1.5px solid #86efac' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#166534', textTransform: 'uppercase' }}>
+                    Verse 929 (The Linear Layout · 8x4 Grid)
+                  </span>
+                  <button
+                    type="button"
+                    className="philosophy-audio-btn"
+                    onClick={() => handlePlayAudio('स्थिरागसां सदाराध्या विहताकततामता सत्पादुके सरसा मा रङ्गराजपदं नय')}
+                  >
+                    🔊 Chant 929
+                  </button>
+                </div>
+                <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#14532d', lineHeight: 1.6, marginBottom: '0.5rem' }}>
+                  स्थिरागसां सदाराध्या विहताकततामता ।<br />
+                  सत्पादुके सरसा मा रङ्गराजपदं नय ॥ ९२९ ॥
+                </div>
+                <p style={{ margin: '0 0 0.5rem', fontSize: '0.88rem', color: '#15803d', fontStyle: 'italic' }}>
+                  sthirāgasāṁ sadārādhyā vihatākatatāmatā | satpāduke sarasā mā raṅgarājapadaṁ naya ||
+                </p>
+                <p style={{ margin: 0, fontSize: '0.9rem', color: '#166534', lineHeight: 1.5 }}>
+                  <strong>Meaning:</strong> &quot;O sacred Sandals of the Supreme Brahman! You are eternally adorned by those who have committed unpardonable sins; you destroy all sorrow and unwanted miseries; you produce a sweet, musical sound. Please lead me to the eternal feet of Lord Rangaraja.&quot;
+                </p>
+              </div>
+
+              <div className="philosophy-card" style={{ margin: '1.25rem 0', background: '#fffbeb', border: '1.5px solid #fde68a' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#92400e', textTransform: 'uppercase' }}>
+                    Verse 930 (The Knight’s Emergence · Steps 1 to 32)
+                  </span>
+                  <button
+                    type="button"
+                    className="philosophy-audio-btn"
+                    onClick={() => handlePlayAudio('स्थिता समयराजत्पा गतामदके गवि दुरंहसामसन्नतादा साध्या तापकरासरा')}
+                  >
+                    🔊 Chant 930
+                  </button>
+                </div>
+                <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#78350f', lineHeight: 1.6, marginBottom: '0.5rem' }}>
+                  स्थिता समयराजत्पा गताऽऽमदके गवि ।<br />
+                  दुरंहसामसन्नतादा साध्या तापकरासरा ॥ ९३० ॥
+                </div>
+                <p style={{ margin: '0 0 0.5rem', fontSize: '0.88rem', color: '#b45309', fontStyle: 'italic' }}>
+                  sthitā samayarājatpā gatā&apos;&apos;madake gavi | duraṁhasāmasannatādā sādhyā tāpakarāsarā ||
+                </p>
+                <p style={{ margin: 0, fontSize: '0.9rem', color: '#78350f', lineHeight: 1.5 }}>
+                  <strong>Meaning:</strong> &quot;The sandals protect those who shine with good conduct; they possess the deep brilliance of gold; they dispense boundless spiritual joy; they destroy the despair of the wicked; and the radiant rays of their gems have the power to instantly extinguish the burning heat of worldly suffering.&quot;
+                </p>
+              </div>
+
+              <div style={{ marginTop: '1.25rem' }}>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.5rem' }}>
+                  Deśika’s 8×4 Grid Mapping Matrix (Chronological Steps 01 to 32)
+                </h3>
+                <div className="philosophy-table-wrapper">
+                  <table className="philosophy-table" style={{ textAlign: 'center' }}>
+                    <thead>
+                      <tr>
+                        <th>Row / Pāda</th>
+                        <th>Col 1</th>
+                        <th>Col 2</th>
+                        <th>Col 3</th>
+                        <th>Col 4</th>
+                        <th>Col 5</th>
+                        <th>Col 6</th>
+                        <th>Col 7</th>
+                        <th>Col 8</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Pāda 1</strong></td>
+                        <td>01 (स्थि)</td>
+                        <td>16 (रा)</td>
+                        <td>21 (ग)</td>
+                        <td>26 (सां)</td>
+                        <td>03 (स)</td>
+                        <td>18 (दा)</td>
+                        <td>23 (रा)</td>
+                        <td>28 (ध्या)</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Pāda 2</strong></td>
+                        <td>20 (वि)</td>
+                        <td>25 (ह)</td>
+                        <td>02 (ता)</td>
+                        <td>17 (क)</td>
+                        <td>22 (त)</td>
+                        <td>27 (ता)</td>
+                        <td>04 (म)</td>
+                        <td>15 (ता)</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Pāda 3</strong></td>
+                        <td>09 (सत्)</td>
+                        <td>32 (पा)</td>
+                        <td>13 (दु)</td>
+                        <td>06 (के)</td>
+                        <td>11 (स)</td>
+                        <td>30 (र)</td>
+                        <td>07 (सा)</td>
+                        <td>24 (मा)</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Pāda 4</strong></td>
+                        <td>12 (रं)</td>
+                        <td>05 (ग)</td>
+                        <td>10 (रा)</td>
+                        <td>31 (ज)</td>
+                        <td>08 (प)</td>
+                        <td>29 (दं)</td>
+                        <td>14 (न)</td>
+                        <td>19 (य)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 4: Interactive Chessboard Simulator */}
+            <section className="philosophy-section" id="turanga-simulator" aria-labelledby="heading-turanga-simulator">
+              <h2 id="heading-turanga-simulator">4. Interactive Chessboard: The Knight’s Tour in Real Time</h2>
+              <p className="philosophy-lead">
+                Step through the tour move by move or hit &quot;Play&quot; to watch the glowing knight leap across the half-chessboard, assembling Verse 930 before your eyes!
+              </p>
+
+              {/* Embedded Interactive Chessboard Component */}
+              <TurangaBandhaChessboard onPlayAudio={handlePlayAudio} />
+            </section>
+
+            {/* Section 5: The Four Simultaneous Constraints */}
+            <section className="philosophy-section" id="turanga-constraints" aria-labelledby="heading-turanga-constraints">
+              <h2 id="heading-turanga-constraints">5. The Genius of the Sanskrit Matrix: Four Simultaneous Constraints</h2>
+              <p className="philosophy-lead">
+                What makes Deśika’s achievement genuinely mind-boggling is the layering of multiple simultaneous constraints across the same 32 cells:
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', margin: '1.25rem 0' }}>
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <div style={{ fontSize: '1.25rem', marginBottom: '0.4rem' }}>📐</div>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                    1. Mathematical Accuracy
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.5 }}>
+                    The underlying matrix must track a flawlessly valid Hamiltonian path (Knight’s Tour topology) across 32 independent cells without dead-ending or duplicating.
+                  </p>
+                </div>
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <div style={{ fontSize: '1.25rem', marginBottom: '0.4rem' }}>📜</div>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                    2. Grammatical Rigor
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.5 }}>
+                    Both resulting sequences cannot be random strings or phonetic gibberish; they must strictly adhere to the intricate rules of Pāṇinian Sanskrit grammar, case inflections (Vibhakti), and multi-word compounding (Samāsa).
+                  </p>
+                </div>
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <div style={{ fontSize: '1.25rem', marginBottom: '0.4rem' }}>🎵</div>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                    3. Poetic Meter
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.5 }}>
+                    Both verses must seamlessly fit the Anuṣṭubh meter (a fixed rhythmic cadence of 8 syllables per quarter-verse with specified Laghu/Guru weightings at syllables 5, 6, and 7).
+                  </p>
+                </div>
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <div style={{ fontSize: '1.25rem', marginBottom: '0.4rem' }}>🕉️</div>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                    4. Thematic Consistency
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.5 }}>
+                    Both verses must independently convey deep, elegant theological meanings relating to the same sacred subject: the divine sandals of the Supreme Lord.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 6: Historical Chess Manuals in Sanskrit */}
+            <section className="philosophy-section" id="turanga-manuals" aria-labelledby="heading-turanga-manuals">
+              <h2 id="heading-turanga-manuals">6. Historical Chess Manuals in Sanskrit: Chaturaṅga as War &amp; Geometry</h2>
+              <p className="philosophy-lead">
+                Beyond poetic constraints, the game of chess—originating in ancient India as <strong>Chaturaṅga (चतुरङ्ग - &quot;four limbs of the army&quot;)</strong>—was thoroughly documented in secular technical treatises as a science of war, logic, and statecraft:
+              </p>
+              <ul className="philosophy-bullet-list">
+                <li>
+                  <strong>Vilāsamaṇi Mañjarī (विलासमणिमञ्जरी):</strong> Written by royal scholar Pandit Trivengadacharya Shastri, detailing advanced endgame scenarios, piece strategies, and traditional Indian movements.
+                </li>
+                <li>
+                  <strong>Chaturaṅga Sāra Sarvasva (चतुरङ्गसारसर्वस्वम्):</strong> Compiled in the 19th century under the patronage of the Maharaja of Mysore, this exhaustive manuscript functions as an encyclopedia of chess, loaded with complex geometrical problems, tactical board layouts, and knight-tour permutations.
+                </li>
+              </ul>
+
+              <div className="philosophy-card" style={{ marginTop: '1.75rem', background: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)', color: '#ffffff' }}>
+                <h3 style={{ margin: '0 0 0.5rem', color: '#a5b4fc', fontSize: '1.2rem', fontWeight: 800 }}>
+                  The Living Synthesis: Art, Play, and Mathematics
+                </h3>
+                <p style={{ margin: 0, fontSize: '0.94rem', color: '#e0e7ff', lineHeight: 1.6 }}>
+                  Sanskrit polymaths achieved these breakthroughs without modern computing or linear algebra models. They used the phonetic matrix of a language as a live combinatorics field, proving that art, play, and mathematics are fundamentally one.
+                </p>
+              </div>
+
+              {/* Call to Action Navigation */}
+              <section className="philosophy-cta" aria-labelledby="turanga-cta-heading" style={{ marginTop: '2.5rem' }}>
+                <h2 id="turanga-cta-heading">Master Sanskrit as a Strategic Way of Thinking</h2>
+                <p>
+                  Explore Masterclass 8 in the Course Addendum or delve into Piṅgala’s binary mathematics.
+                </p>
+                <div className="philosophy-cta-actions">
+                  {onOpenCourseAddendum && (
+                    <button
+                      type="button"
+                      className="philosophy-cta-primary"
+                      onClick={() => onOpenCourseAddendum('addendum-turanga-bandha-knights-tour')}
+                    >
+                      📜 Open Masterclass 8 in Course Addendum ➔
+                    </button>
+                  )}
+                  {onOpenVedicMaths && (
+                    <button type="button" className="philosophy-cta-secondary" onClick={onOpenVedicMaths}>
+                      📐 Explore वैदिक-गणितम्
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    className="philosophy-cta-secondary"
+                    onClick={() => {
+                      setActiveEssay('pingala_binary');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    ⚡ The Binary Blueprint (Piṅgala) ➔
+                  </button>
+                  <button
+                    type="button"
+                    className="philosophy-cta-secondary"
+                    onClick={() => {
+                      setActiveEssay('music_of_matter');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    🔔 The Music of Matter (Cymatics) ➔
                   </button>
                 </div>
               </section>
