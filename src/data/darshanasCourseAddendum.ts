@@ -1545,6 +1545,145 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
       'Indian poet-mathematicians anticipated Leonhard Euler’s 1759 mathematical investigation by nearly 900 years, transforming language itself into a combinatorial playground.',
     ],
   },
+  {
+    id: 'addendum-lilavati-poetic-equation',
+    partNumber: 9,
+    partLabel: 'Masterclass 9',
+    slug: 'lilavati-bhaskaracharya-poetic-equation-mathematics-art',
+    kicker: 'Gurukul Darśana · Companion Masterclass 9 · लीलावती',
+    titleDevanagari: 'काव्यमय-समीकरणम् · भास्कराचार्यस्य लीलावत्यां गणित-कला-दर्शनम्',
+    titleEnglish: 'The Poetic Equation: How Bhāskarāchārya’s Līlāvatī Turned Mathematics into Art',
+    subtitle: 'Shattering the Science-Art Divide · Woodland Quadratic Riddles · Lover’s Quarrel Fractions · The Peacock & the Lotus',
+    readingTimeMinutes: 20,
+    heroImage: {
+      src: '/philosophy/lilavati-poetic-equation.jpg',
+      alt: "The Poetic Equation: How Bhāskarāchārya’s Līlāvatī Turned Mathematics into Art - Visual Infographic",
+    },
+    summary:
+      'In modern global education, a strict structural wall stands between the sciences and the arts. 12th-century India completely shattered this division through the Līlāvatī, authored by master astronomer-mathematician Bhāskarāchārya (Bhāskara II) in 1114 CE. Written entirely in elegant Sanskrit verse and addressed to his gifted daughter Līlāvatī, this foundational treatise cloaked multi-step quadratic equations, fractional arithmetic, and Pythagorean geometry in the romantic imagery of woodland swarms, lover’s quarrels, perched peacocks, and water lotuses—evoking creative joy (Ānanda) rather than mental exhaustion.',
+    sections: [
+      {
+        anchorId: 'lilavati-shattering-divide',
+        heading: '1. Shattering the Divide: Mathematics Framed as Poetic Dialogue',
+        subheading: '12th-Century Ujjain · Bhāskara II (1114 CE) · Affective Pedagogy and Romantic Imagery',
+        paragraphs: [
+          'In modern global education, a strict structural wall separates the analytical sciences from the creative arts. Students are compartmentalized as either "logical and quantitative" or "intuitive and literary."',
+          'Twelfth-century India completely dissolved this dichotomy through the Līlāvatī (लीलावती), the opening volume of Bhāskarāchārya’s masterwork Siddhānta Śiromaṇi (1114 CE).',
+          'Rather than presenting arithmetic, algebra, and geometry in dry, sterile symbols, Bhāskara framed the entire treatise as an affectionate, poetic conversation addressed to a young girl named Līlāvatī. Complex algebraic equations were wrapped in the vibrant textures of the natural world: buzzing bee swarms, fragrant jasmine creepers, scattered pearl necklaces, gliding snakes, and wind-blown lotuses.',
+        ],
+        callout: {
+          title: 'The Pedagogy of Delight',
+          text: '“Bhāskarāchārya demonstrated that mathematical abstraction need not be dry or austere. When cloaked in rhythm and metaphor, mathematics becomes a living aesthetic experience that evokes wonder (Vismaya) and creative bliss (Ānanda).”',
+          type: 'insight',
+        },
+      },
+      {
+        anchorId: 'swarm-of-bees-quadratic',
+        heading: '2. Resolution of the Classic "Swarm of Bees" Riddle',
+        subheading: 'Multi-Step Radical Equations Disguised as a Woodland Pastoral · Quadratic Resolution',
+        paragraphs: [
+          'The poetic riddle of the swarming bees demonstrates Bhāskara’s genius for disguising a rigorous multi-step quadratic equation as a romantic woodland narrative.',
+          'The Sanskrit verse states: "The square root of half the swarm flew to the Mālatī flowers; one-fifth of the swarm landed upon the jasmine bush; one-third entered the lotus bloom. Three times the difference between the jasmine and lotus visitors flew to the trumpet flower, while exactly one lonely bee remained trapped inside the folded lotus bud at night. Tell me, lovely Līlāvatī, what was the total swarm?"',
+        ],
+        sutras: [
+          {
+            sanskrit: 'अलिकुलदलमूलं मालतीं यातम्...\naliguladalaṁ pañcamo malindaḥ, tribhāgo vilīyate mallikāyām |\ntadantaraguṇaṁ triguṇaṁ ca mālatyāṁ, nalinīdale ca avaśiṣṭa ekaḥ ||',
+            transliteration: 'alikuladalamūlaṁ mālatīṁ yātam... | aliguladalaṁ pañcamo malindaḥ, tribhāgo vilīyate mallikāyām | tadantaraguṇaṁ triguṇaṁ ca mālatyāṁ, nalinīdale ca avaśiṣṭa ekaḥ ||',
+            meaning: 'The square root of half the swarm of bees went to the Mālatī blossom; one-fifth flew to the jasmine; one-third entered the lotus; three times their difference flew to the trumpet flower; and one bee remained trapped in the lotus at night. Tell me the total number of bees.',
+            source: 'Bhāskarāchārya · Līlāvatī · Verse 54',
+          },
+        ],
+        table: {
+          headers: ['Woodland Element', 'Mathematical Formulation', 'Algebraic Role'],
+          rows: [
+            ['Mālatī Flowers', '√(x / 2)', 'Radical component requiring isolation and squaring'],
+            ['Jasmine Bush (Mallikā)', 'x / 5', 'Linear fractional component'],
+            ['Lotus Bloom (Padma)', 'x / 3', 'Linear fractional component'],
+            ['Trumpet Flower', '3 × (x/3 - x/5) = 2x/5', 'Linear differential multiplier'],
+            ['Trapped Bee in Lotus', '1', 'Constant integer remainder'],
+          ],
+        },
+        callout: {
+          title: 'Algebraic Resolution',
+          text: '“Summing all linear fractions yields 14x/15. Isolating the radical yields x/15 - 1 = √(x/2). Squaring both sides produces the quadratic equation 2x² - 285x + 450 = 0. In Bhāskara’s sister formulation (8/9 x + √(x/2) + 2 = x), the equation factors to (2x - 9)(x - 72) = 0, giving exactly 72 bees!”',
+          type: 'scientific',
+        },
+      },
+      {
+        anchorId: 'broken-necklace-fractions',
+        heading: '3. The Broken Necklace: Elevating a Lover’s Quarrel into Fractional Arithmetic',
+        subheading: 'Linear Algebraic Balance · Least Common Multiple (LCM) · Playful Sensual Poetry',
+        paragraphs: [
+          'Another spectacular example of elevating human emotion into mathematical inquiry occurs in Bhāskara’s broken necklace riddle, situated during a lover’s playful embrace:',
+          '"Whilst making love a necklace broke. A row of pearls mislaid. One sixth fell to the floor. One fifth upon the bed. The young woman saved one third of them. One tenth were caught by her lover. If six pearls remained upon the string, how many pearls were there altogether?"',
+          'To solve for total pearls p: p/6 + p/5 + p/3 + p/10 + 6 = p. Finding the least common multiple (LCM = 30): (5p + 6p + 10p + 3p)/30 + 6 = p. This simplifies to 24p/30 + 6 = p, or 4/5 p + 6 = p. Hence, 1/5 p = 6, yielding exactly p = 30 pearls.',
+        ],
+        table: {
+          headers: ['Location of Pearls', 'Fraction of Total (p)', 'Count for p = 30', 'Fractional Base (LCM = 30)'],
+          rows: [
+            ['Fell to the floor', '1/6', '5 pearls', '5/30'],
+            ['Fell upon the bed', '1/5', '6 pearls', '6/30'],
+            ['Saved by the young woman', '1/3', '10 pearls', '10/30'],
+            ['Caught by her lover', '1/10', '3 pearls', '3/30'],
+            ['Remaining on silk string', 'Remainder', '6 pearls', '6/30 = 1/5 of necklace'],
+            ['Total Pearl Necklace', '1.0 (Full)', '30 pearls', '30/30'],
+          ],
+        },
+        callout: {
+          title: 'The Art of Living Math',
+          text: '“Instead of abstract variables on a chalkboard, Bhāskara placed numbers in the midst of romantic life. The student solves the equation not out of obligation, but out of delightful empathy for the lovers.”',
+          type: 'insight',
+        },
+      },
+      {
+        anchorId: 'geometry-peacock-lotus',
+        heading: '4. Geometry in Nature: The Perched Peacock and the Wind-Blown Lotus',
+        subheading: 'Pythagorean Hypotenuse · Equidistant Dynamic Flight · Submerged Aquatic Geometry',
+        paragraphs: [
+          'Bhāskara’s geometric problems are celebrated for transforming static Euclidean theorems into living natural kinetic scenes:',
+          '1. The Sliding Peacock on the Pillar: A peacock perches atop a 9-cubit pillar. A snake slithers toward its burrow at the base from a distance three times the pillar’s height (27 cubits). Spotting the snake, the peacock dives down diagonally at the exact same speed as the snake crawls. Where do they collide? Setting flight distance equal to snake travel: 9² + x² = (27 - x)². This yields 81 + x² = 729 - 54x + x², simplifying to 54x = 648, meaning they collide exactly 12 cubits from the hole!',
+          '2. The Lotus in the Lake: A vertical lotus bud stands in a lake with its tip rising half a cubit (h = 0.5) above the water. A fierce gust of wind pushes the stem until the blossom touches the surface at a horizontal distance of 2 cubits (L = 2). What is the lake depth d? By the Pythagorean theorem: d² + 2² = (d + 0.5)², yielding d² + 4 = d² + d + 0.25, giving d = 3.75 cubits!',
+        ],
+        table: {
+          headers: ['Riddle Name', 'Geometric Concept', 'Formula Derived', 'Physical Solution'],
+          rows: [
+            ['Sliding Peacock', 'Equidistant Hypotenuse Interception', 'x = (D² - H²) / (2D)', 'x = 12 cubits from hole (Flight = 15 cubits)'],
+            ['Wind-Blown Lotus', 'Right-Angled Aquatic Submersion', 'd = (L² - h²) / (2h)', 'Depth d = 3.75 cubits (Stem length = 4.25 cubits)'],
+          ],
+        },
+        callout: {
+          title: 'The Kinematics of Geometry',
+          text: '“In Western geometry, figures were drawn motionless in dust or parchment. In Bhāskara’s hands, geometry became cinematic: animals move, winds blow, waters ripple, and the Pythagorean theorem measures the depth of a living lake.”',
+          type: 'cosmological',
+        },
+      },
+      {
+        anchorId: 'sanskrit-aesthetics-philosophy',
+        heading: '5. Sanskrit Aesthetics: Mnemonic Rhythms and the Evocation of Rasa',
+        subheading: 'Chandas as Data Compression · Mathematics as Ānanda · The Cosmic Harmony of Number',
+        paragraphs: [
+          'Why did Indian mathematicians write advanced treatises in metered Sanskrit poetry rather than prose?',
+          '1. Mnemonic Technology: In an oral civilization relying on Gurukul transmission, rhythmic verse (Chandas) functioned as an indestructible audio compression codec. A student could retain hundreds of algorithms and mathematical tables in memory through song.',
+          '2. The Evocation of Rasa: Bhāskarāchārya firmly believed that solving a mathematical problem should evoke Ānanda (creative, playful bliss) rather than mental burnout. By engaging the emotional and aesthetic faculties, math became a source of spiritual joy.',
+          '3. The Unified Symphony: To the Vedic thinker, numbers were not cold, dead symbols. The mathematical law governing a fractional necklace was seen as identical to the celestial mechanics governing planetary orbits and the acoustic frequencies of vocal speech.',
+        ],
+        callout: {
+          title: 'The Eternal Union',
+          text: '“Mathematics is the grammar of the universe; poetry is the song of consciousness. In the Līlāvatī, they meet as one.”',
+          type: 'insight',
+        },
+      },
+    ],
+    keyTakeaways: [
+      'Bhāskarāchārya’s Līlāvatī (1114 CE) shattered the artificial divide between analytical mathematics and poetic literature.',
+      'Written entirely in Sanskrit verse, the text addresses mathematical riddles to a young girl named Līlāvatī using nature’s romantic imagery.',
+      'The Swarm of Bees riddle disguises a multi-step quadratic equation featuring square roots and fractional groupings within a woodland narrative.',
+      'The Broken Necklace problem transforms a lover’s quarrel into an elegant exercise in finding common denominators and solving linear fractions.',
+      'The Sliding Peacock problem solves equidistant kinetic interception using the Pythagorean theorem (collision at 12 cubits).',
+      'The Wind-Blown Lotus problem calculates lake depth (3.75 cubits) through right-angled trigonometry of a displaced stem.',
+      'Sanskrit poetics served as an oral mnemonic compression system, ensuring algorithms were permanently memorized while evoking creative joy (Ānanda).',
+    ],
+  },
 ];
 
 

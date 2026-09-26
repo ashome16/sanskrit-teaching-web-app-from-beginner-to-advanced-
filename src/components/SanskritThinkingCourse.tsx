@@ -956,7 +956,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                 <div className="stc-addendum-meta-row">
                   <span>⏱️ {currentAddendum.readingTimeMinutes} min deep read</span>
                   <span>•</span>
-                  <span>{currentAddendum.partLabel ? `Companion · ${currentAddendum.partLabel}` : currentAddendum.partNumber === 0 ? 'Prologue · The Study Covenant' : `Part ${currentAddendum.partNumber} of 8`}</span>
+                  <span>{currentAddendum.partLabel ? `Companion · ${currentAddendum.partLabel}` : currentAddendum.partNumber === 0 ? 'Prologue · The Study Covenant' : `Part ${currentAddendum.partNumber} of 9`}</span>
                   <span>•</span>
                   <span>Self-Discovery &amp; Universal Phenomenon</span>
                 </div>

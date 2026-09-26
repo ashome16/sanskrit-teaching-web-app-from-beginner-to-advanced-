@@ -9,6 +9,7 @@ import {
   PingalaMeruPyramid,
 } from './PingalaInteractiveTools';
 import { TurangaBandhaChessboard } from './TurangaBandhaChessboard';
+import { LilavatiPoeticMathStudio } from './LilavatiPoeticMathStudio';
 
 export interface PhilosophyPageProps {
   onOpenRegister?: () => void;
@@ -19,7 +20,7 @@ export interface PhilosophyPageProps {
   onOpenGrammarArticle?: (articleId: string) => void;
   /** Open a Course Addendum unit (e.g. Mantras & Ślokas). */
   onOpenCourseAddendum?: (addendumId: string) => void;
-  initialEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha';
+  initialEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math';
 }
 
 const GLOSSARY: { term: string; meaning: string }[] = [
@@ -75,6 +76,10 @@ const GLOSSARY: { term: string; meaning: string }[] = [
   { term: 'chaturaṅga (चतुरङ्गम्)', meaning: 'the ancient Indian ancestor of chess representing the four limbs of an army: infantry, cavalry, elephants, and chariots' },
   { term: 'hamiltonian path (हैमिल्टन-मार्गः)', meaning: 'a topological graph trajectory visiting every square/vertex of a board exactly once without duplication or omission' },
   { term: 'śrī pādukā sahasram (श्रीपादुकासहस्रम्)', meaning: 'Śrī Vedānta Deśika’s 1,008-verse masterpiece celebrating the divine sandals of Lord Ranganatha, featuring the iconic Verses 929 & 930' },
+  { term: 'līlāvatī (लीलावती)', meaning: '12th-century foundational treatise on arithmetic, algebra, and geometry by Bhāskarāchārya, framed as poetic riddles addressed to his daughter' },
+  { term: 'bhāskarāchārya / bhāskara ii (भास्कराचार्यः)', meaning: 'master 12th-century Indian mathematician-astronomer (1114 CE), author of Siddhānta Śiromaṇi, pioneer of differential calculus foundations' },
+  { term: 'rasa / vismaya (रसः / विस्मयः)', meaning: 'aesthetic essence and wonder; Bhāskara’s pedagogy proving mathematics must evoke joyful contemplation (Ānanda) rather than mental burnout' },
+  { term: 'alisaṅkhyā (अलिसङ्ख्या)', meaning: 'the classic riddle of the swarming bees; resolving multi-step radical quadratic equations through woodland poetry' },
 ];
 
 const DEFAULT_TITLE =
@@ -112,6 +117,11 @@ const TURANGA_ESSAY_TITLE =
 const TURANGA_ESSAY_DESC =
   'Euler anticipated by 900 years: discover how Rudraṭa (9th c.) and Vedānta Deśika (14th c.) solved the Knight’s Tour on an 8x4 half-chessboard across Pādukā Sahasram 929–930.';
 
+const LILAVATI_ESSAY_TITLE =
+  'The Poetic Equation: How Bhāskarāchārya’s Līlāvatī Turned Mathematics into Art · Darśana | EdNet Learn Gurukul';
+const LILAVATI_ESSAY_DESC =
+  'Shattering the science-art divide: explore how Bhāskara II (1114 CE) cloaked multi-step quadratic equations, fractions, and geometry in the romantic imagery of nature.';
+
 const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   onOpenRegister,
   onOpenVedicMaths,
@@ -122,7 +132,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   onOpenCourseAddendum,
   initialEssay = 'ai_sanskrit',
 }) => {
-  const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha'>(initialEssay);
+  const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math'>(initialEssay);
   const [glossaryOpen, setGlossaryOpen] = useState(false);
 
   useEffect(() => {
@@ -149,6 +159,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
     } else if (activeEssay === 'turanga_bandha') {
       currentTitle = TURANGA_ESSAY_TITLE;
       currentDesc = TURANGA_ESSAY_DESC;
+    } else if (activeEssay === 'lilavati_math') {
+      currentTitle = LILAVATI_ESSAY_TITLE;
+      currentDesc = LILAVATI_ESSAY_DESC;
     }
 
     const prevTitle = document.title;
@@ -181,6 +194,8 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
         ? 'https://ednetlearn.in/philosophy/pingala-binary-blueprint.jpg'
         : activeEssay === 'turanga_bandha'
         ? 'https://ednetlearn.in/philosophy/turanga-bandha-knights-tour.jpg'
+        : activeEssay === 'lilavati_math'
+        ? 'https://ednetlearn.in/philosophy/lilavati-poetic-equation.jpg'
         : 'https://ednetlearn.in/philosophy/sunyat-anantam-mandala.webp';
     ogTitle?.setAttribute('content', currentTitle);
     ogDesc?.setAttribute('content', currentDesc);
@@ -342,6 +357,20 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
             <div>
               <span className="philosophy-essay-tab-title">Sound &amp; Strategy: Knight’s Tours in Sanskrit Poetry</span>
               <span className="philosophy-essay-tab-sub">चित्रकाव्यम् · तुरङ्गबन्धः · Pādukā Sahasram 929–930 · 8×4 Matrix</span>
+            </div>
+          </button>
+          <button
+            type="button"
+            className={`philosophy-essay-tab ${activeEssay === 'lilavati_math' ? 'active' : ''}`}
+            onClick={() => {
+              setActiveEssay('lilavati_math');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
+            <span className="philosophy-essay-tab-icon" aria-hidden="true">🪷</span>
+            <div>
+              <span className="philosophy-essay-tab-title">The Poetic Equation: Bhāskara’s Līlāvatī</span>
+              <span className="philosophy-essay-tab-sub">Math into Art · Swarm of Bees · Broken Necklace · Peacock &amp; Lotus</span>
             </div>
           </button>
         </nav>
@@ -2954,6 +2983,280 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                     }}
                   >
                     🔔 The Music of Matter (Cymatics) ➔
+                  </button>
+                  <button
+                    type="button"
+                    className="philosophy-cta-secondary"
+                    onClick={() => {
+                      setActiveEssay('lilavati_math');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    🪷 The Poetic Equation: Bhāskara’s Līlāvatī ➔
+                  </button>
+                </div>
+              </section>
+            </section>
+          </div>
+        )}
+
+        {/* =========================================================================
+            ESSAY 7: The Poetic Equation: Bhāskarāchārya's Līlāvatī
+           ========================================================================= */}
+        {activeEssay === 'lilavati_math' && (
+          <div className="philosophy-essay-body">
+            <header className="philosophy-hero">
+              <span className="philosophy-kicker">Gurukul Darśana · Masterclass 9 · लीलावती</span>
+              <h1 className="philosophy-title">
+                The Poetic Equation: How Bhāskarāchārya’s Līlāvatī Turned Mathematics into Art
+              </h1>
+              <p className="philosophy-mantra">
+                लीलावती · भास्कराचार्यः · आनन्दः · विस्मयः
+              </p>
+              <p className="philosophy-secondary">
+                Shattering the Science-Art Divide · Woodland Quadratic Riddles · Lover’s Quarrel Fractions · The Peacock &amp; the Lotus
+              </p>
+
+              <blockquote className="philosophy-pull-quote" style={{ maxWidth: '44rem', margin: '1.25rem auto 0.75rem' }}>
+                <p>
+                  “In modern global education, a strict structural wall stands between the sciences and the arts. Students are frequently classified as either &apos;analytical and logical&apos; or &apos;creative and literary&apos;. 12th-century India completely shattered this division through the Līlāvatī. Authored by the master astronomer-mathematician Bhāskarāchārya (Bhāskara II) in 1114 CE, this foundational treatise on arithmetic, algebra, and geometry was written entirely in elegant Sanskrit verse. Rather than presenting quantitative data in dry, abstract equations, Bhāskara wrapped complex concepts in the romantic and vibrant imagery of the natural world.”
+                </p>
+              </blockquote>
+
+              <div className="philosophy-journey" style={{ marginTop: '1rem' }}>
+                <AudioChip term="लीलावती" label="लीलावती (Līlāvatī)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="भास्कराचार्यः" label="भास्कराचार्यः (Bhāskara II)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="रसः" label="रसः (Aesthetic Rasa)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="आनन्दः" label="आनन्दः (Creative Bliss)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="अलिकुलदलमूलम्" label="भ्रमर-श्लोकः" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="सिद्धान्तशिरोमणिः" label="सिद्धान्तशिरोमणिः" />
+              </div>
+            </header>
+
+            {/* Visual Masterpiece Artwork Hero */}
+            <figure className="philosophy-hero-mandala" style={{ maxWidth: 'min(100%, 820px)', margin: '1.75rem auto 2.25rem' }}>
+              <img
+                src="/philosophy/lilavati-poetic-equation.jpg"
+                alt="The Poetic Equation: How Bhāskarāchārya’s Līlāvatī Turned Mathematics into Art — Visual Infographic"
+                width={1920}
+                height={1080}
+                loading="eager"
+                decoding="async"
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '16px',
+                  boxShadow: '0 12px 36px rgba(15, 23, 42, 0.16), 0 2px 8px rgba(0, 0, 0, 0.08)',
+                }}
+              />
+              <figcaption style={{
+                fontSize: '0.84rem',
+                color: '#64748b',
+                textAlign: 'center',
+                marginTop: '0.75rem',
+                fontStyle: 'italic',
+                lineHeight: 1.5,
+              }}>
+                Visual Masterpiece: Bhāskarāchārya and young Līlāvatī studying mathematics in a garden pavilion by the lotus lake, surrounded by swarming bees, a peacock watching a snake from a stone pillar, a broken pearl necklace, and celestial astrolabes.
+              </figcaption>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', marginTop: '1rem' }} aria-label="Artwork thematic navigation">
+                <a href="#lilavati-divide" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🪷 1. Shattering the Divide</a>
+                <a href="#lilavati-bees" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🐝 2. Swarm of Bees (Quadratic)</a>
+                <a href="#lilavati-necklace" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>📿 3. Broken Necklace (Fractions)</a>
+                <a href="#lilavati-peacock-lotus" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🦚 4. Peacock &amp; Lotus (Geometry)</a>
+                <a href="#lilavati-studio" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>⚙️ 5. Interactive Riddle Studio</a>
+                <a href="#lilavati-aesthetics" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🎨 6. Sanskrit Aesthetics &amp; Rasa</a>
+              </div>
+            </figure>
+
+            {/* Section 1: Shattering the Divide */}
+            <section className="philosophy-section" id="lilavati-divide" aria-labelledby="heading-lilavati-divide">
+              <h2 id="heading-lilavati-divide">1. Shattering the Divide: Mathematics Framed as Poetic Dialogue</h2>
+              <p className="philosophy-lead">
+                In modern education, an artificial wall divides the quantitative sciences from the creative arts. Students are classified as either &quot;analytical thinkers&quot; or &quot;imaginative writers.&quot;
+              </p>
+              <p>
+                Twelfth-century India completely dissolved this division through the <em>Līlāvatī (लीलावती)</em>, the opening volume of Bhāskarāchārya’s masterwork <em>Siddhānta Śiromaṇi</em> (1114 CE).
+              </p>
+              <p>
+                Rather than presenting arithmetic, algebra, and geometry in dry symbols, Bhāskara framed the treatise as an affectionate series of poetic riddles addressed to his daughter Līlāvatī. Complex algebraic equations were wrapped in the vibrant textures of the natural world: buzzing bee swarms, fragrant jasmine creepers, scattered pearl necklaces, gliding snakes, and wind-blown lotuses.
+              </p>
+
+              <div className="philosophy-callout">
+                <span className="philosophy-callout-icon" aria-hidden="true">💡</span>
+                <div>
+                  <h3 className="philosophy-callout-title">The Pedagogy of Wonder</h3>
+                  <p className="philosophy-callout-text">
+                    “Bhāskarāchārya proved that mathematical abstraction need not be dry or intimidating. When cloaked in rhythm and metaphor, mathematics becomes a living aesthetic experience that evokes wonder (Vismaya) and creative bliss (Ānanda).”
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 2: Resolution of the Swarm of Bees Riddle */}
+            <section className="philosophy-section" id="lilavati-bees" aria-labelledby="heading-lilavati-bees">
+              <h2 id="heading-lilavati-bees">2. Resolution of the Classic &quot;Swarm of Bees&quot; Riddle</h2>
+              <p className="philosophy-lead">
+                The poetic riddle of the swarming bees demonstrates Bhāskara’s ability to disguise a multi-step quadratic equation as a romantic woodland narrative.
+              </p>
+              <div className="philosophy-card" style={{ background: '#f0fdfa', border: '1.5px solid #99f6e4', margin: '1.25rem 0' }}>
+                <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#134e4a', lineHeight: 1.6, marginBottom: '0.4rem' }}>
+                  अलिकुलदलमूलं मालतीं यातम्...<br />
+                  <span style={{ fontSize: '0.94rem', fontWeight: 600, color: '#0f766e' }}>
+                    aliguladalaṁ pañcamo malindaḥ, tribhāgo vilīyate mallikāyām |<br />
+                    tadantaraguṇaṁ triguṇaṁ ca mālatyāṁ, nalinīdale ca avaśiṣṭa ekaḥ ||
+                  </span>
+                </div>
+                <p style={{ margin: 0, fontSize: '0.9rem', color: '#115e59', lineHeight: 1.5 }}>
+                  <strong>The Constraints:</strong> The square root of half the swarm of bees flew to the Mālatī flowers (√(x/2)); one-fifth landed upon the jasmine bush (x/5); one-third nestled in the lotus bloom (x/3). Three times the difference between the jasmine and lotus visitors flew to the trumpet flower (3 × (x/3 - x/5) = 2x/5); and exactly one lonely bee remained trapped inside a folded lotus bud at night.
+                </p>
+              </div>
+
+              <p>
+                To find the total swarm <em>x</em>, we set up the equation:
+              </p>
+              <div style={{ background: '#f8fafc', padding: '1rem', borderRadius: '10px', border: '1px solid #cbd5e1', fontFamily: 'monospace', fontSize: '0.95rem', margin: '1rem 0' }}>
+                x = √(x/2) + x/5 + x/3 + 3(x/3 - x/5) + 1<br />
+                x = √(x/2) + 14x/15 + 1<br />
+                x/15 - 1 = √(x/2)<br />
+                ((x - 15) / 15)² = x / 2 ➔ <strong>2x² - 285x + 450 = 0</strong>
+              </div>
+              <p>
+                In Bhāskara’s parallel canonical verse (<em>Alikuladalamūlaṁ mālatīṁ yātamaṣṭau...</em>), the equation factors to <code>(2x - 9)(x - 72) = 0</code>, yielding exactly <strong>72 bees</strong>!
+              </p>
+            </section>
+
+            {/* Section 3: The Broken Necklace */}
+            <section className="philosophy-section" id="lilavati-necklace" aria-labelledby="heading-lilavati-necklace">
+              <h2 id="heading-lilavati-necklace">3. The Broken Necklace: Elevating a Lover’s Quarrel into Fractions</h2>
+              <p className="philosophy-lead">
+                Another spectacular instance of elevating the mundane to the magical occurs in a problem regarding a broken pearl necklace during a passionate embrace:
+              </p>
+              <div className="philosophy-card" style={{ background: '#fffbeb', border: '1.5px solid #fde68a', margin: '1.25rem 0' }}>
+                <blockquote style={{ margin: '0 0 0.5rem', fontStyle: 'italic', fontSize: '0.96rem', color: '#92400e', lineHeight: 1.6 }}>
+                  &quot;Whilst making love a necklace broke. A row of pearls mislaid.<br />
+                  One sixth fell to the floor. One fifth upon the bed.<br />
+                  The young woman saved one third of them. One tenth were caught by her lover.<br />
+                  If six pearls remained upon the string, how many pearls were there altogether?&quot;
+                </blockquote>
+                <div style={{ marginTop: '0.65rem', fontSize: '0.88rem', color: '#78350f', lineHeight: 1.5 }}>
+                  <strong>The Solution:</strong> Finding a common denominator of 30:<br />
+                  <code>(5p + 6p + 10p + 3p) / 30 + 6 = p ➔ 24p / 30 + 6 = p ➔ 4/5 p + 6 = p ➔ 1/5 p = 6 ➔ <strong>p = 30 pearls!</strong></code>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 4: Geometry Puzzles: The Peacock and the Lotus */}
+            <section className="philosophy-section" id="lilavati-peacock-lotus" aria-labelledby="heading-lilavati-peacock-lotus">
+              <h2 id="heading-lilavati-peacock-lotus">4. Geometry in Nature: The Perched Peacock and the Wind-Blown Lotus</h2>
+              <p className="philosophy-lead">
+                Bhāskara transforms geometric constraints into living kinetic scenes rather than static chalkboard figures:
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', margin: '1.25rem 0' }}>
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                    🦚 The Sliding Peacock on the Pillar
+                  </h3>
+                  <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.5 }}>
+                    A peacock atop a 9-cubit pillar dives diagonally to intercept a snake slithering toward its hole from 27 cubits away. Since speeds are equal, the flight hypotenuse equals the snake’s travel distance:
+                  </p>
+                  <div style={{ fontFamily: 'monospace', fontSize: '0.84rem', background: '#ffffff', padding: '0.5rem', borderRadius: '6px', border: '1px solid #cbd5e1', margin: '0.5rem 0' }}>
+                    9² + x² = (27 - x)² ➔ 81 + x² = 729 - 54x + x²<br />
+                    54x = 648 ➔ <strong>x = 12 cubits!</strong>
+                  </div>
+                </div>
+
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                    🪷 The Lotus in the Lake
+                  </h3>
+                  <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.5 }}>
+                    A lotus tip rises half a cubit (h = 0.5) above water. A gust of wind pushes it until submerged 2 cubits away (L = 2). The right triangle with depth <em>d</em> and stem <em>d + 0.5</em> yields:
+                  </p>
+                  <div style={{ fontFamily: 'monospace', fontSize: '0.84rem', background: '#ffffff', padding: '0.5rem', borderRadius: '6px', border: '1px solid #cbd5e1', margin: '0.5rem 0' }}>
+                    d² + 2² = (d + 0.5)² ➔ d² + 4 = d² + d + 0.25<br />
+                    d = 4 - 0.25 ➔ <strong>d = 3.75 cubits depth!</strong>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 5: Interactive Riddle Studio */}
+            <section className="philosophy-section" id="lilavati-studio" aria-labelledby="heading-lilavati-studio">
+              <h2 id="heading-lilavati-studio">5. Interactive Riddle Studio: Solve Bhāskara’s Four Riddles</h2>
+              <p className="philosophy-lead">
+                Experiment with the interactive sliders below to solve the quadratic bee swarm, string the pearls, calculate the peacock’s dive, and measure the lake depth:
+              </p>
+
+              {/* Embedded Interactive Component */}
+              <LilavatiPoeticMathStudio onPlayAudio={handlePlayAudio} />
+            </section>
+
+            {/* Section 6: Sanskrit Aesthetics & Rasa */}
+            <section className="philosophy-section" id="lilavati-aesthetics" aria-labelledby="heading-lilavati-aesthetics">
+              <h2 id="heading-lilavati-aesthetics">6. Sanskrit Aesthetics: The Philosophy Behind the Poetry</h2>
+              <p className="philosophy-lead">
+                The synthesis of quantitative mathematics and high poetry was the absolute norm in classical Sanskrit text production, driven by a profound educational philosophy:
+              </p>
+              <ul className="philosophy-bullet-list">
+                <li>
+                  <strong>Mnemonic Technology:</strong> In an oral culture relying on human memory, metered verse (<em>Chandas</em>) created phonetic compression codecs that remained in a student’s memory permanently.
+                </li>
+                <li>
+                  <strong>The Evocation of Rasa:</strong> Bhāskarāchārya believed that solving a mathematical problem should evoke <em>Ānanda</em> (creative, playful joy) rather than intellectual exhaustion.
+                </li>
+                <li>
+                  <strong>The Unified Symphony:</strong> To the Vedic thinker, numbers were not cold accidental variables. The exact mathematics regulating an algebraic fraction was seen as identical to the laws organizing cosmic stars and musical harmonics.
+                </li>
+              </ul>
+
+              {/* Call to Action Navigation */}
+              <section className="philosophy-cta" aria-labelledby="lilavati-cta-heading" style={{ marginTop: '2.5rem' }}>
+                <h2 id="lilavati-cta-heading">Awaken Your Mathematical Imagination</h2>
+                <p>
+                  Explore Masterclass 9 in the Course Addendum or delve into interactive Vedic Math drills.
+                </p>
+                <div className="philosophy-cta-actions">
+                  {onOpenCourseAddendum && (
+                    <button
+                      type="button"
+                      className="philosophy-cta-primary"
+                      onClick={() => onOpenCourseAddendum('addendum-lilavati-poetic-equation')}
+                    >
+                      📜 Open Masterclass 9 in Course Addendum ➔
+                    </button>
+                  )}
+                  {onOpenVedicMaths && (
+                    <button type="button" className="philosophy-cta-secondary" onClick={onOpenVedicMaths}>
+                      📐 Explore वैदिक-गणितम्
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    className="philosophy-cta-secondary"
+                    onClick={() => {
+                      setActiveEssay('turanga_bandha');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    ♞ Sound &amp; Strategy (Knight’s Tours) ➔
+                  </button>
+                  <button
+                    type="button"
+                    className="philosophy-cta-secondary"
+                    onClick={() => {
+                      setActiveEssay('pingala_binary');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    ⚡ The Binary Blueprint (Piṅgala) ➔
                   </button>
                 </div>
               </section>

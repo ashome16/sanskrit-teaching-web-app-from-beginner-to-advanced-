@@ -35,7 +35,7 @@ export interface SearchTarget {
   lessonId?: string;
   /** Course Addendum unit to open (view: 'course'), e.g. 'addendum-mantras-shlokas'. */
   courseAddendumId?: string;
-  philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha';
+  philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math';
   mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero';
   worksheetsCategory?: string;
   openBodhi?: boolean;
@@ -2497,6 +2497,64 @@ export const SEARCH_INDEX: SearchItem[] = [
     target: {
       view: 'course',
       courseAddendumId: 'addendum-turanga-bandha-knights-tour',
+    },
+  },
+  {
+    id: 'essay-lilavati-poetic-equation',
+    title: 'The Poetic Equation: How Bhāskarāchārya’s Līlāvatī Turned Mathematics into Art',
+    subtitle: 'लीलावती · भास्कराचार्यः · Swarm of Bees · The Broken Necklace · Peacock & Snake · Lotus in Lake',
+    category: 'guides',
+    categoryLabel: 'Philosophy & Science',
+    badgeEmoji: '🪷',
+    badgeColor: '#0d9488',
+    description:
+      'Explore how Bhāskara II (1114 CE) shattered the science-art divide, cloaking multi-step quadratic equations, fractions, and Pythagorean geometry in romantic nature poetry.',
+    keywords: [
+      'lilavati',
+      'bhaskaracharya',
+      'bhaskara',
+      'poetic equation',
+      'swarm of bees',
+      'broken necklace',
+      'peacock and snake',
+      'lotus in lake',
+      'vedic mathematics',
+      'quadratic equation',
+      'fractions',
+      'pythagoras',
+      'rasa',
+      'ananda',
+      'aesthetic math',
+    ],
+    target: {
+      view: 'philosophy',
+      philosophyEssay: 'lilavati_math',
+    },
+  },
+  {
+    id: 'addendum-lilavati-poetic-equation',
+    title: 'Course Addendum · Masterclass 9: The Poetic Equation (Bhāskarāchārya’s Līlāvatī)',
+    subtitle: 'Woodland Quadratic Riddles, Fractions, Pythagorean Geometry & Sanskrit Aesthetics',
+    category: 'guides',
+    categoryLabel: 'Course Addendum',
+    badgeEmoji: '📜',
+    badgeColor: '#059669',
+    description:
+      'Part 9 of the Sanskrit as a Way of Thinking companion series: deep mathematical derivation of the Līlāvatī’s 4 classic riddles and the pedagogical philosophy of wonder (Vismaya) and creative joy (Ānanda).',
+    keywords: [
+      'addendum',
+      'masterclass 9',
+      'lilavati',
+      'bhaskara',
+      'algebra',
+      'geometry',
+      'quadratic',
+      'fractions',
+      'chandas',
+    ],
+    target: {
+      view: 'course',
+      courseAddendumId: 'addendum-lilavati-poetic-equation',
     },
   },
   {
