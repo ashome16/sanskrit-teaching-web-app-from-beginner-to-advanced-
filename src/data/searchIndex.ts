@@ -35,6 +35,7 @@ export interface SearchTarget {
   lessonId?: string;
   /** Course Addendum unit to open (view: 'course'), e.g. 'addendum-mantras-shlokas'. */
   courseAddendumId?: string;
+  philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit';
   mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero';
   worksheetsCategory?: string;
   openBodhi?: boolean;
@@ -1295,6 +1296,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     ],
     target: {
       view: 'philosophy',
+      philosophyEssay: 'ai_sanskrit',
     },
   },
   {
@@ -2229,6 +2231,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     ],
     target: {
       view: 'philosophy',
+      philosophyEssay: 'ai_sanskrit',
     },
   },
   {
@@ -2259,6 +2262,48 @@ export const SEARCH_INDEX: SearchItem[] = [
     ],
     target: {
       view: 'philosophy',
+      philosophyEssay: 'sunyat_anantam',
+    },
+  },
+  {
+    id: 'essay-tagore-sanskrit-genius',
+    title: 'The Eternal Charioteer & The Cage Bird · Tagore’s Creative Genius',
+    subtitle: 'Darśana Essay · How Classical Sanskrit & The Upanishads Shaped Rabindranath Tagore',
+    category: 'guides',
+    categoryLabel: 'Darśana · Masterclass',
+    badgeEmoji: '🪕',
+    badgeColor: '#9a3412',
+    description:
+      'Explore Tagore’s foundational Jorasanko upbringing, the Tatsama linguistic architecture of Jana Gana Mana, the Gita’s Chirasarathi, the Dvā Suparṇā parable in Dui Pakhi, and Vedic nature poetry.',
+    keywords: [
+      'tagore',
+      'rabindranath tagore',
+      'philosophy',
+      'darshana',
+      'jana gana mana',
+      'dui pakhi',
+      'chirasarathi',
+      'parthasarathy',
+      'mundaka upanishad',
+      'dva suparna',
+      'two birds',
+      'cage bird',
+      'forest bird',
+      'tatsama',
+      'national anthem',
+      'panchajanya',
+      'upanishadic upbringing',
+      'bengal renaissance',
+      'gitanjali',
+      'anandadhara bahiche bhubane',
+      'sarvam khalvidam brahma',
+      'रवीन्द्रनाथ ठाकुर',
+      'चिरसारथि',
+      'दर्शनम्',
+    ],
+    target: {
+      view: 'philosophy',
+      philosophyEssay: 'tagore_sanskrit',
     },
   },
   {
@@ -2517,6 +2562,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     ],
     target: {
       view: 'course',
+      courseAddendumId: 'addendum-part-1-shad-darshanas',
     },
   },
   {
@@ -2545,6 +2591,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     ],
     target: {
       view: 'course',
+      courseAddendumId: 'addendum-part-2-singular-foundation',
     },
   },
   {
@@ -2577,6 +2624,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     ],
     target: {
       view: 'course',
+      courseAddendumId: 'addendum-part-3-sankhya-tattvas',
     },
   },
   {
@@ -2609,6 +2657,53 @@ export const SEARCH_INDEX: SearchItem[] = [
     ],
     target: {
       view: 'course',
+      courseAddendumId: 'addendum-part-4-vedic-mathematics-vibration',
+    },
+  },
+  {
+    id: 'addendum-tagore-sanskrit-genius',
+    title: 'चिरसारथिः पञ्जरस्थविहगश्च · The Eternal Charioteer and the Cage Bird',
+    subtitle: 'Course Addendum Masterclass 5 · Tagore, Sanskrit, Jana Gana Mana & Mundaka Upanishad',
+    category: 'guides',
+    categoryLabel: 'Course Addendum · Masterclass',
+    badgeEmoji: '🪕',
+    badgeColor: '#b45309',
+    description:
+      'How Sanskrit and the Upanishads shaped Rabindranath Tagore’s creative genius: Jorasanko upbringing, Jana Gana Mana’s Tatsama architecture, Krishna as Chirasarathi from the Gita, and Dui Pakhi from Mundaka Upanishad.',
+    keywords: [
+      'tagore',
+      'rabindranath tagore',
+      'chirasarathi',
+      'parthasarathy',
+      'dui pakhi',
+      'jana gana mana',
+      'bharoto bhagyo bidhata',
+      'upanishads',
+      'mundaka upanishad',
+      'dva suparna',
+      'two birds',
+      'cage bird',
+      'forest bird',
+      'jorasanko',
+      'tatsama',
+      'national anthem',
+      'panchajanya',
+      'gitanjali',
+      'anandadhara bahiche bhubane',
+      'isha upanishad',
+      'taittiriya upanishad',
+      'sarvam khalvidam brahma',
+      'prakriti',
+      'रवीन्द्रनाथ',
+      'जन गण मन',
+      'चिरसारथि',
+      'पार्थसारथि',
+      'उपनिषद्',
+      'द्व सुपर्णा',
+    ],
+    target: {
+      view: 'course',
+      courseAddendumId: 'addendum-tagore-sanskrit-genius',
     },
   },
 ];

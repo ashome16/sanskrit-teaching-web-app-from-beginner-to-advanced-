@@ -229,6 +229,7 @@ const Dashboard: React.FC = () => {
   const [grammarResetKey, setGrammarResetKey] = useState(0);
   const [grammarTargetTopic, setGrammarTargetTopic] = useState<GrammarTopic>('home');
   const [grammarTargetArticleId, setGrammarTargetArticleId] = useState<string | null>(null);
+  const [philosophyEssay, setPhilosophyEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit'>('ai_sanskrit');
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
   const [isBodhiGuideOpen, setIsBodhiGuideOpen] = useState(false);
@@ -383,6 +384,14 @@ const Dashboard: React.FC = () => {
 
     if (target.view === 'course' && target.courseAddendumId) {
       openCourseAddendum(target.courseAddendumId);
+      return;
+    }
+
+    if (target.view === 'philosophy') {
+      if (target.philosophyEssay) {
+        setPhilosophyEssay(target.philosophyEssay);
+      }
+      navigateToView('philosophy');
       return;
     }
 
@@ -965,6 +974,7 @@ const Dashboard: React.FC = () => {
       )}
       {activeView === 'philosophy' && (
         <PhilosophyPage
+          initialEssay={philosophyEssay}
           onOpenRegister={() => openAuthModal('register')}
           onOpenVedicMaths={() => navigateToView('vedic-maths')}
           onOpenVarnamala={openVarnamala}

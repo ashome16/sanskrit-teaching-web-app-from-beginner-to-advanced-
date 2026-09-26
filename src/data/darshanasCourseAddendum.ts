@@ -867,4 +867,188 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
       'Mastering the math of structure and the frequency of vibration allows consciousness to transcend material entrapment and rest in Purusha.',
     ],
   },
+
+  // ==========================================
+  // PART 5 / MASTERCLASS: THE ETERNAL CHARIOTEER AND THE CAGE BIRD
+  // ==========================================
+  {
+    id: 'addendum-tagore-sanskrit-genius',
+    partNumber: 5,
+    partLabel: 'Masterclass 5',
+    slug: 'eternal-charioteer-cage-bird-tagore-sanskrit-upanishads',
+    titleDevanagari: 'चिरसारथिः पञ्जरस्थविहगश्च — रवीन्द्रनाथस्य काव्यप्रतिभायाम् उपनिषदः',
+    titleEnglish: 'The Eternal Charioteer and the Cage Bird: How Sanskrit and the Upanishads Shaped Rabindranath Tagore’s Creative Genius',
+    subtitle: 'Vedic Upbringing at Jorasanko · Sanskrit in Jana Gana Mana · The Parthasarathy Metaphor · Dui Pakhi & Mundaka Upanishad',
+    readingTimeMinutes: 14,
+    kicker: 'Course Addendum · Masterclass 5 · The Sanskrit Blueprint of Indian Literature',
+    summary:
+      'The sprawling Jorasanko mansion in 19th-century Calcutta was more than a family home; it was the vibrant crucible of the Bengal Renaissance, where ancient Indian heritage collided with modern intellectual awakening. At its center was a young Rabindranath Tagore, whose spiritual worldview was fundamentally anchored in Vedic and Upanishadic traditions. From the Tatsama architecture of India’s national anthem to the Dvā Suparṇā parable in "Dui Pakhi" and the cosmic Chirasarathi of the Gita, explore how classical Sanskrit provided the foundational blueprint for Tagore’s creative genius.',
+    sections: [
+      {
+        anchorId: 'upanishadic-upbringing',
+        heading: '1. The Upanishadic Upbringing of a Polymath',
+        subheading: 'Jorasanko Crucible · Himalayan Retreat · Sanskrit Grammar & The Gayatri Awakening',
+        paragraphs: [
+          'The sprawling Jorasanko mansion in 19th-century Calcutta was more than a family home; it was the vibrant crucible of the Bengal Renaissance. Within its walls, ancient Indian heritage collided with modern intellectual awakening. At the center of this world was a young Rabindranath Tagore, whose spiritual worldview was fundamentally anchored in the Vedic and Upanishadic traditions.',
+          'Though born into the Brahmo Samaj—a reformist movement that rejected idol worship—Tagore’s literature remains profoundly tied to classical Indian heritage, rich in Sanskrit imagery, and deeply embedded with Puranic metaphors. Rabindranath grew up under the strict yet profoundly spiritual guidance of his father, Debendranath Tagore, who was affectionately known as Maharshi (the Great Sage).',
+          'At age eleven, Tagore underwent the Upanayana (sacred thread coming-of-age ceremony). Following this milestone, his father took him on an extensive retreat into the Himalayas. It was during these formative travels that Debendranath systematically instructed the young boy in classical Sanskrit grammar, the Vedas, and the Upanishads.',
+          'The daily routine at Jorasanko involved the chanting of Upanishadic verses and the Gayatri Mantra. Tagore later identified these early morning recitations as a core awakening of his consciousness to the oneness of the universe.',
+          'Tagore’s lifelong spiritual manifesto, Sadhana: The Realisation of Life, explicitly relies on these ancient texts. He adopted the Vedic concepts of Brahman (the Infinite Cosmic Consciousness) and Advaita (non-duality), viewing nature not as passive, dead matter but as a living, divine entity.',
+        ],
+        callout: {
+          title: 'The Jorasanko Awakening',
+          text: '“Daily morning chanting of Upanishadic verses and the Gayatri Mantra at Jorasanko formed the primordial acoustic soil from which Tagore’s universal vision of consciousness emerged.”',
+          type: 'philosophical',
+        },
+      },
+      {
+        anchorId: 'sanskrit-in-jana-gana-mana',
+        heading: '2. Sanskrit Elements in "Jana Gana Mana"',
+        subheading: 'Linguistic DNA of the National Anthem · Tatsama Vocabulary as a Universal Bridge',
+        paragraphs: [
+          'Although Jana Gana Mana was originally composed as a five-stanza song titled Bharoto Bhagyo Bidhata in Sadhu Bhasha (a highly formal, literary register of Bengali), its linguistic DNA is almost entirely Sanskrit.',
+          'Nearly every noun and adjective in the anthem functions natively in Sanskrit:',
+          '• Jana (जन): People or individual souls.\n• Gana (गण): The masses or plurality.\n• Mana (मनस् / मन): The mind or collective consciousness.\n• Adhinayaka (अधिनायक): Supreme sovereign ruler or moral leader.\n• Bhagya Vidhata (भाग्य विधाता): The divine dispenser of destiny.',
+          'Because of this intense saturation of Tatsama words (direct Sanskrit loanwords preserved without phonetic alteration), the anthem bypasses regional linguistic barriers. It acts as a universal bridge, enabling speakers of diverse modern Indian languages to instantly grasp its sacred, unifying meaning.',
+        ],
+        table: {
+          headers: ['Sanskrit Term (पदम्)', 'Devanagari / Root', 'Classical Meaning', 'Anthem Architectural Role'],
+          rows: [
+            ['Jana', 'जन (√जन् · to be born)', 'Individual person, embodied soul', 'The diverse populace across provinces'],
+            ['Gana', 'गण (√गण् · to count / assemble)', 'The collective plurality, community', 'The democratic brotherhood of India'],
+            ['Mana', 'मनस् / मन (√मन् · to think / perceive)', 'Inner mind, psyche, cognition', 'The collective national conscience'],
+            ['Adhinayaka', 'अधिनायक (अधि + नायक)', 'Supreme sovereign guide, moral helmsman', 'The perennial director of destiny'],
+            ['Bhagya Vidhata', 'भाग्य विधाता (वि + √धा)', 'Divine dispenser of cosmic destiny', 'Supreme Providence guiding the nation'],
+          ],
+        },
+        callout: {
+          title: 'The Universal Linguistic Bridge',
+          text: '“Saturated with Tatsama words, Jana Gana Mana bypasses regional linguistic barriers, operating natively in Bengali, Hindi, Marathi, Gujarati, Odia, and Malayalam alike.”',
+          type: 'insight',
+        },
+      },
+      {
+        anchorId: 'eternal-charioteer-krishna',
+        heading: '3. The Puranic Krishna Reference: The Eternal Charioteer',
+        subheading: 'Stanza 3 of Bharoto Bhagyo Bidhata · Chirasarathi as Parthasarathy · The Panchajanya Conch',
+        paragraphs: [
+          'While a historical misconception once circulated that Tagore wrote the song to praise the visiting British monarch King George V, Tagore himself fiercely debunked this. In letters written in 1937 and 1939, he clarified that the song was dedicated to the perennial guide of India’s destiny, not a mortal king.',
+          'When examining the lesser-known third stanza of the full, uncut poem, Tagore’s imagery reveals a clear inspiration drawn from the Bhagavad Gita and Puranic descriptions of Sri Krishna:',
+          '“Patana-Abhyudaya-Shana-Bandhura Pantha, Yuga Yuga Dhavita Yatri\nHey Chirasarathi, Tava Ratha-Chakre Mukharita Patha Dina Ratri...”',
+          '• The Eternal Charioteer (Chirasarathi / चिरसारथि): When Tagore translated this stanza into English, he purposefully capitalized the phrase as the "Eternal Charioteer". This is a direct reference to Krishna’s role as Parthasarathy (पार्थसारथि), the divine charioteer steering humanity through the tumultuous battlefield of life.',
+          '• The Sound of the Conch (Sankha-Dhwani / शङ्खध्वनि): The stanza continues to describe a divine conch shell blowing amidst the chaos of revolutionary struggle to dispel terror and grief. This mirrors the Panchajanya (पाञ्चजन्य), the sacred conch blown by Krishna to signal the triumph of righteousness (Dharma).',
+          '• The Wheel of Time (Yuga-Chakra / युगचक्र): The reference to the wheels of the cosmic chariot guiding weary pilgrims through ages (Yuga Yuga) echoes the Puranic concepts of divine cosmic order and the cyclic flow of time directed by the Supreme Divinity.',
+        ],
+        sutras: [
+          {
+            sanskrit: 'पतन-अभ्युदय-बन्धुर पन्था, युग-युग धावित यात्री । हे चिरसारथि, तव रथचक्रे मुखरित पथ दिन-रात्रि ॥ दारुण विप्लव-माझे तव शङ्खध्वनि बाजे...',
+            transliteration: 'patana-abhyudaya-bandhura panthā, yuga-yuga dhāvita yātrī | he chirasārathi, tava ratha-cakre mukharita patha dina-rātri || dāruṇa viplava-mājhe tava śaṅkha-dhvani bāje...',
+            meaning: 'Along the rugged road of rise and fall, pilgrims have journeyed age after age. O Eternal Charioteer, the wheels of Thy chariot echo day and night along the path! Amidst dire turmoil, Thy sacred conch resounds...',
+            source: 'Rabindranath Tagore · Bharoto Bhagyo Bidhata (Original Complete National Poem, Stanza 3) · 1911',
+          },
+        ],
+        callout: {
+          title: 'The Divine Helmsman (पार्थसारथिः)',
+          text: '“By capitalizing ‘Eternal Charioteer’ (चिरसारथि), Tagore invoked neither monarch nor empire, but Krishna at the reins of the cosmic chariot, steering humanity through historical crisis.”',
+          type: 'cosmological',
+        },
+      },
+      {
+        anchorId: 'parable-of-two-birds-dui-pakhi',
+        heading: '4. The Parable of the Two Birds (Dui Pakhi)',
+        subheading: 'Dvā Suparṇā Mantra of Mundaka Upanishad 3.1.1 & Rigveda 1.164.20 · Forest Bird vs. Cage Bird',
+        paragraphs: [
+          'One of the most striking examples of how Tagore repackaged Vedic philosophy into modern literature is his famous poem "Dui Pakhi" (Two Birds). The poem draws direct inspiration from the celebrated Dvā Suparṇā mantra found in both the Mundaka Upanishad (3.1.1) and the Rigveda (1.164.20).',
+          'The ancient Upanishadic allegory describes two inseparable companion birds perched on the exact same tree:',
+          'In the original text, the first bird (Jiva, the individual soul) hops from branch to branch, eating the sweet and bitter fruits of the world, getting caught up in earthly joys and sorrows. The second bird (Paramatman, the Supreme Consciousness) merely sits on a higher branch, watching calmly as a silent witness (Sakshi) without consuming anything.',
+          'In his poem "Dui Pakhi", Tagore masterfully adapts this abstract metaphysical duality into a poignant narrative dialogue between a free forest-bird and a captive cage-bird.',
+          'The forest-bird represents boundless infinity, absolute freedom, and the vast, unknown skies—mirroring the detached Paramatman. The cage-bird represents the finite self bound by safe limits, material habits, and domestic comfort—mirroring the conditioned Jiva.',
+          'By translating a static, philosophical concept into an active, emotional conversation between two entities longing to unite, Tagore gave a modern, human heartbeat to an ancient Upanishadic truth.',
+        ],
+        sutras: [
+          {
+            sanskrit: 'द्वा सुपर्णा सयुजा सखाया समानं वृक्षं परिषस्वजाते । तयोरन्यः पिप्पलं स्वाद्वत्त्यनश्नन्नन्यो अभिचाकशीति ॥',
+            transliteration: 'dvā suparṇā sayujā sakhāyā samānaṃ vṛkṣaṃ pariṣasvajāte | tayoranyaḥ pippalaṃ svādvatti-anaśnannanyo abhicākaśīti ||',
+            meaning: 'Two birds of beautiful plumage, inseparable companions, cling to the very same tree. One of them eats the sweet and bitter fruits; the other looks on calmly without eating, a radiant silent witness.',
+            source: 'Muṇḍaka Upaniṣad 3.1.1 · Ṛgveda 1.164.20 · Śvetāśvatara Upaniṣad 4.6',
+          },
+        ],
+        callout: {
+          title: 'From Metaphysics to Human Longing',
+          text: '“In Dui Pakhi, the abstract polarity of Jīva and Paramātman is transformed into a tender dialogue between a forest bird and a cage bird, yearning for union across the bars of finite existence.”',
+          type: 'philosophical',
+        },
+      },
+      {
+        anchorId: 'vedic-echoes-in-nature-prakriti',
+        heading: '5. Vedic Echoes in Tagore’s Nature Poetry (Prakriti)',
+        subheading: 'Nature as a Living, Conscious Cosmic Force · Sarvam Khalvidam Brahma',
+        paragraphs: [
+          'Tagore’s nature poetry (Prakriti-Giti) is not merely a romantic appreciation of scenic beauty; it is a direct continuation of the Vedic worldview.',
+          'In the Rigveda, elements of nature like the dawn (Ushas), wind (Vayu), and rain (Parjanya) are treated as living, conscious, cosmic forces (Devatas). Tagore revived this ancient perception, viewing nature as a vast theater where the infinite manifests through the finite.',
+          '• The Universe as a Living Entity: For Tagore, the rustling of leaves, the cresting of river waves, and the shifting seasons were expressions of a singular, cosmic heartbeat. This mirrors the Upanishadic dictum, "Sarvam Khalvidam Brahma" (All this universe is indeed Brahman).',
+          '• The Spiritual Bond: Unlike Western Romantic poets who often viewed nature as a canvas for the human ego, Tagore saw nature as a spiritual kin. In his poems, the human soul and the natural world are two notes in the same eternal symphony, constantly seeking communion.',
+        ],
+        callout: {
+          title: 'The Cosmic Heartbeat',
+          text: '“‘Sarvam Khalvidam Brahma’ (सर्वं खल्विदं ब्रह्म) — For Tagore, nature was never a passive backdrop for the ego, but a living sanctuary where the finite soul communes with its own infinite essence.”',
+          type: 'scientific',
+        },
+      },
+      {
+        anchorId: 'comparative-text-analysis',
+        heading: '6. Comparative Text Analysis: Upanishadic Roots vs. Tagorean Verses',
+        subheading: 'The Light of Consciousness & The Abundance of Joy (Ananda)',
+        paragraphs: [
+          'To truly appreciate how seamlessly Tagore translated ancient Sanskrit philosophy into the cadence of modern Bengali verse, we can examine direct conceptual parallels across canonical verses.',
+          '1. The Light of Consciousness (प्रकाशः):\n• The Upanishadic Root (From the Isha Upanishad 15):\n"Hiranmayena Patrena Satyasya Apihitam Mukham | Tat Tvam Pushan Apavrinu Satya Dharmaya Drishtaye ||"\n(The face of Truth is covered with a golden vessel. Unveil it, O Sun, so that I, who love the Truth, may see it.)\n• Tagore’s Resonance (From Gitanjali, Song 57):\n"Light, my light, the world-filling light, the eye-kissing light, heart-sweetening light! Ah, the light dances, my darling, at the center of my life; the light strikes, my darling, the chords of my love..."\n• The Connection: Both texts move from contemplating the physical sun to experiencing an ecstatic, internal awakening of spiritual truth and cosmic illumination.',
+          '2. The Abundance of Joy (आनन्दः):\n• The Upanishadic Root (From the Taittiriya Upanishad 3.6):\n"Anandaddhyeva khalvimani bhutani jayante | Anandena jatani jivanti ||"\n(From joy all these beings are born; by joy they are sustained when born; and into joy they enter upon departing.)\n• Tagore’s Resonance (From Anandadhara Bahiche Bhubane):\n"Anandadhara bahiche bhubane / Dina rajani kataro amrito raso nabhane..."\n(A torrent of joy flows through the universe, night and day the nectar of immortality pours from the skies...)\n• The Connection: Tagore takes the abstract philosophical concept of Ananda (infinite cosmic joy) and transforms it into a highly visual, emotionally accessible lyrical river that washes over the everyday human experience.',
+        ],
+        sutras: [
+          {
+            sanskrit: 'हिरण्मयेन पात्रेण सत्यस्यापिहितं मुखम् । तत्त्वं पूषन्नपावृणु सत्यधर्माय दृष्टये ॥',
+            transliteration: 'hiraṇmayena pātreṇa satyasyāpihitaṃ mukham | tat tvaṃ pūṣann apāvṛṇu satyadharmāya dṛṣṭaye ||',
+            meaning: 'The face of Truth is covered with a golden vessel. Unveil it, O Sustainer (Pūṣan), so that I, dedicated to Truth, may behold it.',
+            source: 'Īśa Upaniṣad 15',
+          },
+          {
+            sanskrit: 'आनन्दाद्ध्येव खल्विमानि भूतानि जायन्ते । आनन्देन जातानि जीवन्ति । आनन्दं प्रयन्त्यभिसंविशन्तीति ॥',
+            transliteration: 'ānandāddhy eva khalv imāni bhūtāni jāyante | ānandena jātāni jīvanti | ānandaṃ prayanty abhisaṃviśantīti ||',
+            meaning: 'From Infinite Joy (Ānanda) indeed all these beings are born; by Joy they are sustained when born; and into Joy they dissolve upon departure.',
+            source: 'Taittirīya Upaniṣad 3.6.1',
+          },
+        ],
+      },
+      {
+        anchorId: 'shared-blueprint-indian-heritage',
+        heading: '7. Conclusion: The Shared Blueprint of Indian Heritage',
+        subheading: 'How Sanskrit Unifies Modern Indian Languages · Philosophical Depth, Rasa & Chandas',
+        paragraphs: [
+          'Learning Sanskrit and its foundational literature is essential to gaining a complete picture of India\'s roots, heritage, and poetic references. Languages like Hindi, Bengali, Marathi, Gujarati, Odia, and Malayalam operate within this shared conceptual ecosystem.',
+          'Tagore did not let Sanskrit restrict his modern style; instead, he used it as an expansive toolkit to elevate the emotion and texture of his poetry. By understanding the linguistic and philosophical foundations he leaned on, we do not just read modern Indian literature—we hear the ancient, eternal echoes built directly into its vocabulary.',
+        ],
+        table: {
+          headers: ['Dimension', 'Role of Sanskrit Roots', 'Modern Language Impact'],
+          rows: [
+            ['Philosophical Depth', 'Direct loaning of complex conceptual words (Tatsama).', 'Allows abstract ideas like Mukti (liberation), Chetana (consciousness), and Satya (truth) to hold identical meanings across distinct regional borders.'],
+            ['Emotional Landscape', 'Aesthetic frameworks borrowed from classical texts (Navarasa).', 'Words denoting deep emotional states like Viraha (the painful longing of separation) convey the exact same cultural weight in a Hindi bhajan as they do in a Malayalam poem.'],
+            ['Rhythmic Architecture', 'Metrical patterns and sound arrangements (Chandas).', 'The innate, mathematical cadence of Sanskrit verses directly shaped the lyrical flow and structural rhythm of medieval and modern regional devotional poetry.'],
+          ],
+        },
+        callout: {
+          title: 'Hearing the Eternal Echoes',
+          text: '“By understanding the linguistic and philosophical foundations Tagore leaned on, we don’t just read modern Indian literature—we hear the ancient, eternal echoes built directly into its vocabulary.”',
+          type: 'insight',
+        },
+      },
+    ],
+    keyTakeaways: [
+      'Rabindranath Tagore’s childhood immersion in Sanskrit grammar, the Vedas, and the Upanishads under Maharshi Debendranath formed the bedrock of his literary universe.',
+      'Jana Gana Mana is composed in Tatsama-saturated Sadhu Bhasha, making its vocabulary native to Sanskrit and universally intelligible across all Indian linguistic traditions.',
+      'The third stanza of Bharoto Bhagyo Bidhata addresses the Supreme as Chirasarathi (Eternal Charioteer), directly evoking Krishna as Parthasarathy in the Gita with the conch of victory (Panchajanya).',
+      'Tagore’s celebrated poem "Dui Pakhi" (Two Birds) is a lyrical dramatization of the famous Dvā Suparṇā mantra from the Mundaka Upanishad and Rigveda.',
+      'In Tagore’s nature songs (Prakriti-Giti), the natural world is not passive scenery but the living embodiment of Brahman ("Sarvam Khalvidam Brahma").',
+      'Classical Sanskrit serves as the unifying linguistic and aesthetic motherboard for modern Indian literatures across Hindi, Bengali, Marathi, Gujarati, Odia, and Malayalam.',
+    ],
+  },
 ];

@@ -13,7 +13,7 @@ export interface PhilosophyPageProps {
   onOpenGrammarArticle?: (articleId: string) => void;
   /** Open a Course Addendum unit (e.g. Mantras & Ślokas). */
   onOpenCourseAddendum?: (addendumId: string) => void;
-  initialEssay?: 'ai_sanskrit' | 'sunyat_anantam';
+  initialEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit';
 }
 
 const GLOSSARY: { term: string; meaning: string }[] = [
@@ -43,6 +43,12 @@ const GLOSSARY: { term: string; meaning: string }[] = [
   { term: 'prāṇa', meaning: 'living breath carrying vibration and intention in speech; the vital current moving through body and world' },
   { term: 'śānti', meaning: 'from verbal root √śam (to quiet, to still, to bring to rest); not passive “calm” or a wellness mood, but the active stilling of whatever would stop the teaching from landing — in the body, between teacher and student, and in the world around them' },
   { term: 'adhikāra', meaning: 'conscious standing, fitness, and answerability; the inner vessel and duty required before knowledge can be received without turning into harm or display' },
+  { term: 'tatsama (तत्सम)', meaning: 'direct Sanskrit loanword preserved without phonetic modification across modern Indian languages' },
+  { term: 'chirasārathi (चिरसारथि)', meaning: 'the eternal charioteer; Puranic epithet for Kṛṣṇa guiding human destiny through historical struggle' },
+  { term: 'pārthasārathī (पार्थसारथि)', meaning: 'Kṛṣṇa as divine charioteer to Arjuna (Pārtha) on the Kurukṣetra battlefield in the Bhagavad Gītā' },
+  { term: 'dvā suparṇā (द्वा सुपर्णा)', meaning: 'the two birds of Muṇḍaka Upaniṣad 3.1.1 & Ṛgveda 1.164.20: the enjoying Jīva and the witnessing Paramātman' },
+  { term: 'pañcajanya (पाञ्चजन्य)', meaning: 'the sacred conch of victory and righteousness blown by Śrī Kṛṣṇa in the Mahābhārata' },
+  { term: 'prakṛti-gīti (प्रकृतिगीति)', meaning: 'songs and poems celebrating Nature as a living manifestation of cosmic consciousness (Brahman)' },
 ];
 
 const DEFAULT_TITLE =
@@ -60,6 +66,11 @@ const MATH_ESSAY_TITLE =
 const MATH_ESSAY_DESC =
   'EdNet Learn Gurukul darśana: gaṇita as a living bhāṣā — from śūnya to ananta. Explore mathematics as inquiry, pattern, and ṛta. Begin a 14-day free trial.';
 
+const TAGORE_ESSAY_TITLE =
+  'The Eternal Charioteer and the Cage Bird: Rabindranath Tagore & Sanskrit · Darśana | EdNet Learn Gurukul';
+const TAGORE_ESSAY_DESC =
+  'How Sanskrit and the Upanishads shaped Rabindranath Tagore’s creative genius: Jana Gana Mana’s Tatsama architecture, the Gita’s Chirasarathi, Dui Pakhi & Mundaka Upanishad.';
+
 const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   onOpenRegister,
   onOpenVedicMaths,
@@ -70,13 +81,25 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   onOpenCourseAddendum,
   initialEssay = 'ai_sanskrit',
 }) => {
-  const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam'>(initialEssay);
+  const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit'>(initialEssay);
   const [glossaryOpen, setGlossaryOpen] = useState(false);
 
   useEffect(() => {
-    const isAi = activeEssay === 'ai_sanskrit';
-    const currentTitle = isAi ? AI_ESSAY_TITLE : MATH_ESSAY_TITLE;
-    const currentDesc = isAi ? AI_ESSAY_DESC : MATH_ESSAY_DESC;
+    if (initialEssay) {
+      setActiveEssay(initialEssay);
+    }
+  }, [initialEssay]);
+
+  useEffect(() => {
+    let currentTitle = AI_ESSAY_TITLE;
+    let currentDesc = AI_ESSAY_DESC;
+    if (activeEssay === 'sunyat_anantam') {
+      currentTitle = MATH_ESSAY_TITLE;
+      currentDesc = MATH_ESSAY_DESC;
+    } else if (activeEssay === 'tagore_sanskrit') {
+      currentTitle = TAGORE_ESSAY_TITLE;
+      currentDesc = TAGORE_ESSAY_DESC;
+    }
 
     const prevTitle = document.title;
     document.title = currentTitle;
@@ -205,6 +228,20 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
             <div>
               <span className="philosophy-essay-tab-title">Śūnyāt Anantam (शून्यात् अनन्तम्)</span>
               <span className="philosophy-essay-tab-sub">The Journey of Gaṇita-śāstra · Mathematics as Darśana</span>
+            </div>
+          </button>
+          <button
+            type="button"
+            className={`philosophy-essay-tab ${activeEssay === 'tagore_sanskrit' ? 'active' : ''}`}
+            onClick={() => {
+              setActiveEssay('tagore_sanskrit');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
+            <span className="philosophy-essay-tab-icon" aria-hidden="true">🪕</span>
+            <div>
+              <span className="philosophy-essay-tab-title">The Eternal Charioteer &amp; The Cage Bird</span>
+              <span className="philosophy-essay-tab-sub">Tagore’s Creative Genius · Jana Gana Mana &amp; Dui Pakhi</span>
             </div>
           </button>
         </nav>
@@ -915,6 +952,644 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   🤖 Read “Why Learn Sanskrit in the Age of AI” ➔
                 </button>
               </div>
+            </section>
+          </div>
+        )}
+
+        {/* =========================================================================
+            ESSAY 3: The Eternal Charioteer and the Cage Bird: Rabindranath Tagore & Sanskrit
+           ========================================================================= */}
+        {activeEssay === 'tagore_sanskrit' && (
+          <div className="philosophy-essay-body">
+            <header className="philosophy-hero">
+              <span className="philosophy-kicker">Gurukul Darśana · Masterclass 5 · साहित्यम्</span>
+              <h1 className="philosophy-title">
+                The Eternal Charioteer and the Cage Bird
+              </h1>
+              <p className="philosophy-mantra">
+                चिरसारथिः पञ्जरस्थविहगश्च — रवीन्द्रनाथस्य काव्यप्रतिभायाम् उपनिषदः
+              </p>
+              <p className="philosophy-secondary">
+                How Sanskrit and the Upanishads Shaped Rabindranath Tagore’s Creative Genius
+              </p>
+
+              <blockquote className="philosophy-pull-quote" style={{ maxWidth: '42rem', margin: '1.25rem auto 0.75rem' }}>
+                <p>
+                  “To fully understand Tagore's masterpieces, including India's national anthem Jana Gana
+                  Mana, one must look past surface-level translations. By exploring his foundational upbringing,
+                  his structural use of Tatsama Sanskrit, and his creative adaptations of Vedic philosophy, we
+                  unlock the deep roots connecting modern Indian identity with its most ancient wisdom.”
+                </p>
+              </blockquote>
+
+              <div className="philosophy-journey" style={{ marginTop: '1rem' }}>
+                <AudioChip term="चिरसारथिः" label="चिरसारथिः" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="पार्थसारथिः" label="पार्थसारथिः" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="उपनिषद्" label="उपनिषद्" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="द्व सुपर्णा" label="द्व सुपर्णा" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="तत्सम" label="तत्सम" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="अधिनायक" label="अधिनायक" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="प्रकृतिः" label="प्रकृतिः" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="आनन्दः" label="आनन्दः" />
+              </div>
+            </header>
+
+            {/* 1. Upanishadic Upbringing */}
+            <section className="philosophy-section" aria-labelledby="tagore-upbringing">
+              <h2 id="tagore-upbringing">1. The Upanishadic Upbringing of a Polymath</h2>
+              <p className="philosophy-secondary" style={{ marginTop: '-0.35rem', marginBottom: '1rem', fontStyle: 'italic' }}>
+                Jorasanko Crucible · Himalayan Retreat · Sanskrit Grammar &amp; The Gayatri Awakening
+              </p>
+              <p>
+                The sprawling Jorasanko mansion in 19th-century Calcutta was more than a family home; it was
+                the vibrant crucible of the Bengal Renaissance. Within its walls, ancient Indian heritage
+                collided with modern intellectual awakening. At the center of this world was a young Rabindranath
+                Tagore, whose spiritual worldview was fundamentally anchored in the Vedic and Upanishadic traditions.
+              </p>
+              <p>
+                Though born into the Brahmo Samaj—a reformist movement that rejected idol worship—Tagore’s
+                literature remains profoundly tied to classical Indian heritage, rich in Sanskrit imagery, and
+                deeply embedded with Puranic metaphors. Rabindranath grew up under the strict yet profoundly
+                spiritual guidance of his father, Debendranath Tagore, who was affectionately known as Maharshi
+                (the Great Sage).
+              </p>
+              <p>
+                At age eleven, Tagore underwent the <em>Upanayana</em> (sacred thread coming-of-age ceremony). Following
+                this milestone, his father took him on an extensive retreat into the Himalayas. It was during these
+                formative travels that Debendranath systematically instructed the young boy in classical Sanskrit
+                grammar, the Vedas, and the Upanishads.
+              </p>
+              <p>
+                The daily routine at Jorasanko involved the chanting of Upanishadic verses and the Gayatri Mantra.
+                Tagore later identified these early morning recitations as a core awakening of his consciousness to the
+                oneness of the universe.
+              </p>
+              <p>
+                Tagore’s lifelong spiritual manifesto, <em>Sadhana: The Realisation of Life</em>, explicitly relies on
+                these ancient texts. He adopted the Vedic concepts of <em>Brahman</em> (the Infinite Cosmic Consciousness)
+                and <em>Advaita</em> (non-duality), viewing nature not as passive, dead matter but as a living, divine entity.
+              </p>
+
+              <div className="philosophy-premise-card philosophy-premise-card--insight">
+                <div className="philosophy-premise-title">
+                  <span>🪔</span> The Jorasanko Awakening
+                </div>
+                <p>
+                  “Daily morning chanting of Upanishadic verses and the Gayatri Mantra at Jorasanko formed
+                  the primordial acoustic soil from which Tagore’s universal vision of consciousness emerged.”
+                </p>
+              </div>
+            </section>
+
+            {/* 2. Sanskrit Elements in Jana Gana Mana */}
+            <section className="philosophy-section" aria-labelledby="tagore-jgm">
+              <h2 id="tagore-jgm">2. Sanskrit Elements in “Jana Gana Mana”</h2>
+              <p className="philosophy-secondary" style={{ marginTop: '-0.35rem', marginBottom: '1rem', fontStyle: 'italic' }}>
+                Linguistic DNA of the National Anthem · Tatsama Vocabulary as a Universal Bridge
+              </p>
+              <p>
+                Although <em>Jana Gana Mana</em> was originally composed as a five-stanza song titled{' '}
+                <em>Bharoto Bhagyo Bidhata</em> in Sadhu Bhasha (a highly formal, literary register of Bengali), its
+                linguistic DNA is almost entirely Sanskrit.
+              </p>
+              <p>
+                Nearly every noun and adjective in the anthem functions natively in Sanskrit:
+              </p>
+              <ul>
+                <li><strong>Jana (जन):</strong> People or individual embodied souls.</li>
+                <li><strong>Gana (गण):</strong> The collective masses, plurality, democratic brotherhood.</li>
+                <li><strong>Mana (मनस् / मन):</strong> The inner mind, psyche, or collective conscience.</li>
+                <li><strong>Adhinayaka (अधिनायक):</strong> Supreme sovereign ruler or moral helmsman.</li>
+                <li><strong>Bhagya Vidhata (भाग्य विधाता):</strong> The divine dispenser of cosmic destiny.</li>
+              </ul>
+              <p>
+                Because of this intense saturation of <strong>Tatsama words</strong> (direct Sanskrit loanwords
+                preserved without phonetic alteration), the anthem bypasses regional linguistic barriers. It acts as
+                a universal motherboard, enabling speakers of diverse modern Indian languages to instantly grasp its
+                sacred, unifying meaning.
+              </p>
+
+              <div className="philosophy-table-wrap">
+                <table className="philosophy-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Sanskrit Term (पदम्)</th>
+                      <th scope="col">Devanagari / Root</th>
+                      <th scope="col">Classical Meaning</th>
+                      <th scope="col">Anthem Architectural Role</th>
+                      <th scope="col">Listen</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Jana</strong></td>
+                      <td lang="sa"><em>जन (√जन् · to be born)</em></td>
+                      <td>Individual person, embodied soul</td>
+                      <td>The diverse populace across provinces</td>
+                      <td><AudioChip term="जन" label="जन" /></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Gana</strong></td>
+                      <td lang="sa"><em>गण (√गण् · to assemble)</em></td>
+                      <td>The collective plurality, community</td>
+                      <td>The democratic brotherhood of India</td>
+                      <td><AudioChip term="गण" label="गण" /></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Mana</strong></td>
+                      <td lang="sa"><em>मनस् / मन (√मन् · to perceive)</em></td>
+                      <td>Inner mind, psyche, cognition</td>
+                      <td>The collective national conscience</td>
+                      <td><AudioChip term="मनः" label="मनस्" /></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Adhinayaka</strong></td>
+                      <td lang="sa"><em>अधिनायक (अधि + नायक)</em></td>
+                      <td>Supreme sovereign guide, moral helmsman</td>
+                      <td>The perennial director of destiny</td>
+                      <td><AudioChip term="अधिनायक" label="अधिनायक" /></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Bhagya Vidhata</strong></td>
+                      <td lang="sa"><em>भाग्य विधाता (वि + √धा)</em></td>
+                      <td>Divine dispenser of cosmic destiny</td>
+                      <td>Supreme Providence guiding the nation</td>
+                      <td><AudioChip term="विधाता" label="विधाता" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="philosophy-card">
+                <h3>The Universal Linguistic Bridge</h3>
+                <p>
+                  Saturated with Tatsama vocabulary, <em>Jana Gana Mana</em> operates natively in Bengali, Hindi,
+                  Marathi, Gujarati, Odia, and Malayalam alike. Sanskrit is not an extinct language preserved in amber;
+                  it is the living motherboard of Indian expression.
+                </p>
+              </div>
+            </section>
+
+            {/* 3. The Puranic Krishna Reference */}
+            <section className="philosophy-section" aria-labelledby="tagore-charioteer">
+              <h2 id="tagore-charioteer">3. The Puranic Krishna Reference: The Eternal Charioteer</h2>
+              <p className="philosophy-secondary" style={{ marginTop: '-0.35rem', marginBottom: '1rem', fontStyle: 'italic' }}>
+                Stanza 3 of Bharoto Bhagyo Bidhata · Chirasarathi as Parthasarathy · The Panchajanya Conch
+              </p>
+              <p>
+                While a historical misconception once circulated that Tagore wrote the song to praise the visiting
+                British monarch King George V, Tagore himself fiercely debunked this. In letters written in 1937 and
+                1939, he clarified that the song was dedicated to the perennial guide of India’s destiny, not a
+                mortal king.
+              </p>
+              <p>
+                When examining the lesser-known third stanza of the full, uncut poem, Tagore’s imagery reveals a clear
+                inspiration drawn from the Bhagavad Gita and Puranic descriptions of Sri Krishna:
+              </p>
+
+              <div className="philosophy-verse-banner">
+                <div className="philosophy-verse-sanskrit" lang="sa">
+                  पतन-अभ्युदय-बन्धुर पन्था, युग-युग धावित यात्री ।<br />
+                  हे चिरसारथि, तव रथचक्रे मुखरित पथ दिन-रात्रि ॥<br />
+                  दारुण विप्लव-माझे तव शङ्खध्वनि बाजे...
+                </div>
+                <div className="philosophy-verse-translit">
+                  patana-abhyudaya-bandhura panthā, yuga-yuga dhāvita yātrī |<br />
+                  he chirasārathi, tava ratha-cakre mukharita patha dina-rātri ||<br />
+                  dāruṇa viplava-mājhe tava śaṅkha-dhvani bāje...
+                </div>
+                <div className="philosophy-verse-english">
+                  “Along the rugged road of rise and fall, pilgrims have journeyed age after age. O Eternal
+                  Charioteer, the wheels of Thy chariot echo day and night along the path! Amidst dire turmoil, Thy
+                  sacred conch resounds...”
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.75rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+                  <span className="philosophy-verse-source">Rabindranath Tagore · Bharoto Bhagyo Bidhata, Stanza 3 (1911)</span>
+                  <AudioChip term="चिरसारथिः" label="Listen" />
+                </div>
+              </div>
+
+              <p>Three core metaphysical symbols anchor this verse:</p>
+              <ul>
+                <li>
+                  <strong>The Eternal Charioteer (Chirasarathi / चिरसारथि):</strong> When Tagore translated this
+                  stanza into English, he purposefully capitalized the phrase as the "Eternal Charioteer". This is a
+                  direct reference to Krishna’s role as <em>Parthasarathy</em> (पार्थसारथि), the divine charioteer
+                  steering humanity through the tumultuous battlefield of Kurukṣetra and historical struggle.
+                </li>
+                <li>
+                  <strong>The Sound of the Conch (Sankha-Dhwani / शङ्खध्वनि):</strong> The stanza continues to
+                  describe a divine conch shell blowing amidst the chaos of revolutionary struggle to dispel terror and
+                  grief. This mirrors the <em>Panchajanya</em> (पाञ्चजन्य), the sacred conch blown by Krishna to signal
+                  the triumph of righteousness (Dharma).
+                </li>
+                <li>
+                  <strong>The Wheel of Time (Yuga-Chakra / युगचक्र):</strong> The reference to the wheels of the
+                  cosmic chariot guiding weary pilgrims through ages (<em>Yuga Yuga</em>) echoes the Puranic concepts of
+                  divine cosmic order and the cyclic flow of time directed by the Supreme Divinity.
+                </li>
+              </ul>
+
+              <div className="philosophy-premise-card philosophy-premise-card--insight">
+                <div className="philosophy-premise-title">
+                  <span>☸️</span> The Divine Helmsman (पार्थसारथिः)
+                </div>
+                <p>
+                  By capitalizing "Eternal Charioteer" (चिरसारथि), Tagore invoked neither monarch nor mortal empire,
+                  but Śrī Kṛṣṇa at the reins of the cosmic chariot, steering humanity through historical crisis toward
+                  righteous awakening.
+                </p>
+              </div>
+            </section>
+
+            {/* 4. The Parable of the Two Birds */}
+            <section className="philosophy-section" aria-labelledby="tagore-two-birds">
+              <h2 id="tagore-two-birds">4. The Parable of the Two Birds (Dui Pakhi)</h2>
+              <p className="philosophy-secondary" style={{ marginTop: '-0.35rem', marginBottom: '1rem', fontStyle: 'italic' }}>
+                Dvā Suparṇā Mantra of Mundaka Upanishad 3.1.1 &amp; Rigveda 1.164.20 · Forest Bird vs. Cage Bird
+              </p>
+              <p>
+                One of the most striking examples of how Tagore repackaged Vedic philosophy into modern literature is
+                his famous poem "Dui Pakhi" (Two Birds). The poem draws direct inspiration from the celebrated{' '}
+                <em>Dvā Suparṇā</em> mantra found in both the Mundaka Upanishad (3.1.1) and the Rigveda (1.164.20).
+              </p>
+
+              <div className="philosophy-verse-banner">
+                <div className="philosophy-verse-sanskrit" lang="sa">
+                  द्वा सुपर्णा सयुजा सखाया समानं वृक्षं परिषस्वजाते ।<br />
+                  तयोरन्यः पिप्पलं स्वाद्वत्त्यनश्नन्नन्यो अभिचाकशीति ॥
+                </div>
+                <div className="philosophy-verse-translit">
+                  dvā suparṇā sayujā sakhāyā samānaṃ vṛkṣaṃ pariṣasvajāte |<br />
+                  tayoranyaḥ pippalaṃ svādvatti-anaśnannanyo abhicākaśīti ||
+                </div>
+                <div className="philosophy-verse-english">
+                  “Two birds of beautiful plumage, inseparable companions, cling to the very same tree. One of them
+                  eats the sweet and bitter fruits; the other looks on calmly without eating, a radiant silent witness.”
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.75rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+                  <span className="philosophy-verse-source">Muṇḍaka Upaniṣad 3.1.1 · Ṛgveda 1.164.20 · Śvetāśvatara 4.6</span>
+                  <AudioChip term="द्वा सुपर्णा सयुजा सखाया" label="Listen" />
+                </div>
+              </div>
+
+              <p>
+                The ancient Upanishadic allegory describes two inseparable companion birds perched on the exact same tree:
+              </p>
+              <p>
+                In the original text, the first bird (<em>Jīva</em>, the individual soul) hops from branch to branch,
+                eating the sweet and bitter fruits of the world, getting caught up in earthly joys and sorrows. The second
+                bird (<em>Paramātman</em>, the Supreme Consciousness) merely sits on a higher branch, watching calmly as a
+                silent witness (<em>Sākṣī</em>) without consuming anything.
+              </p>
+              <p>
+                In his poem "Dui Pakhi", Tagore masterfully adapts this abstract metaphysical duality into a poignant
+                narrative dialogue between a free forest-bird and a captive cage-bird:
+              </p>
+              <ul>
+                <li>
+                  <strong>The forest-bird</strong> represents boundless infinity, absolute freedom, and the vast,
+                  unknown skies—mirroring the detached <em>Paramātman</em>.
+                </li>
+                <li>
+                  <strong>The cage-bird</strong> represents the finite self bound by safe limits, material habits, and
+                  domestic comfort—mirroring the conditioned <em>Jīva</em>.
+                </li>
+              </ul>
+              <p>
+                By translating a static philosophical concept into an active, emotional conversation between two
+                entities longing to unite, Tagore gave a modern, human heartbeat to an ancient Upanishadic truth.
+              </p>
+
+              <div className="philosophy-card">
+                <h3>From Metaphysics to Human Longing</h3>
+                <p>
+                  In <em>Dui Pakhi</em>, the abstract polarity of Jīva and Paramātman is transformed into a tender
+                  dialogue between a forest bird and a cage bird, yearning for union across the bars of finite existence.
+                </p>
+              </div>
+            </section>
+
+            {/* 5. Vedic Echoes in Nature Poetry */}
+            <section className="philosophy-section" aria-labelledby="tagore-nature">
+              <h2 id="tagore-nature">5. Vedic Echoes in Tagore’s Nature Poetry (Prakriti)</h2>
+              <p className="philosophy-secondary" style={{ marginTop: '-0.35rem', marginBottom: '1rem', fontStyle: 'italic' }}>
+                Nature as a Living, Conscious Cosmic Force · Sarvam Khalvidam Brahma
+              </p>
+              <p>
+                Tagore’s nature poetry (<em>Prakriti-Giti</em>) is not merely a romantic appreciation of scenic beauty;
+                it is a direct continuation of the Vedic worldview.
+              </p>
+              <p>
+                In the Rigveda, elements of nature like the dawn (<em>Uṣas</em>), wind (<em>Vāyu</em>), and rain
+                (<em>Parjanya</em>) are treated as living, conscious, cosmic forces (<em>Devatās</em>). Tagore revived
+                this ancient perception, viewing nature as a vast theater where the infinite manifests through the finite:
+              </p>
+              <ul>
+                <li>
+                  <strong>The Universe as a Living Entity:</strong> For Tagore, the rustling of leaves, the cresting of
+                  river waves, and the shifting seasons were expressions of a singular, cosmic heartbeat. This mirrors
+                  the Upanishadic dictum, <em>“Sarvam Khalvidam Brahma”</em> (All this universe is indeed Brahman).
+                </li>
+                <li>
+                  <strong>The Spiritual Bond:</strong> Unlike Western Romantic poets who often viewed nature as a
+                  canvas for the human ego, Tagore saw nature as a spiritual kin. In his poems, the human soul and the
+                  natural world are two notes in the same eternal symphony, constantly seeking communion.
+                </li>
+              </ul>
+
+              <div className="philosophy-premise-card philosophy-premise-card--insight">
+                <div className="philosophy-premise-title">
+                  <span>🌿</span> The Cosmic Heartbeat: Sarvam Khalvidam Brahma
+                </div>
+                <p>
+                  <strong>“सर्वं खल्विदं ब्रह्म”</strong> — For Tagore, nature was never a passive backdrop for the ego,
+                  but a living sanctuary where the finite soul communes with its own infinite essence.
+                </p>
+              </div>
+            </section>
+
+            {/* 6. Comparative Text Analysis */}
+            <section className="philosophy-section" aria-labelledby="tagore-comparative">
+              <h2 id="tagore-comparative">6. Comparative Text Analysis: Upanishadic Roots vs. Tagorean Verses</h2>
+              <p className="philosophy-secondary" style={{ marginTop: '-0.35rem', marginBottom: '1rem', fontStyle: 'italic' }}>
+                The Light of Consciousness (Prakāśa) &amp; The Abundance of Joy (Ānanda)
+              </p>
+              <p>
+                To truly appreciate how seamlessly Tagore translated ancient Sanskrit philosophy into the cadence of
+                modern Bengali verse, we can examine direct conceptual parallels across canonical verses:
+              </p>
+
+              {/* Parallel 1 */}
+              <div style={{ margin: '1.5rem 0' }}>
+                <h3 style={{ color: '#9a3412', fontSize: '1.15rem', marginBottom: '0.5rem' }}>
+                  A. The Light of Consciousness (प्रकाशः)
+                </h3>
+                <div className="philosophy-verse-banner" style={{ margin: '0.75rem 0 1rem' }}>
+                  <div className="philosophy-verse-sanskrit" lang="sa">
+                    हिरण्मयेन पात्रेण सत्यस्यापिहितं मुखम् ।<br />
+                    तत्त्वं पूषन्नपावृणु सत्यधर्माय दृष्टये ॥
+                  </div>
+                  <div className="philosophy-verse-translit">
+                    hiraṇmayena pātreṇa satyasyāpihitaṃ mukham |<br />
+                    tat tvaṃ pūṣann apāvṛṇu satyadharmāya dṛṣṭaye ||
+                  </div>
+                  <div className="philosophy-verse-english">
+                    “The face of Truth is covered with a golden vessel. Unveil it, O Sustainer (Pūṣan), so that I,
+                    dedicated to Truth, may behold it.”
+                  </div>
+                  <span className="philosophy-verse-source">Īśa Upaniṣad 15</span>
+                </div>
+
+                <div className="philosophy-card" style={{ background: '#fdfbf7', borderLeft: '4px solid #ea580c' }}>
+                  <p style={{ margin: '0 0 0.5rem', fontWeight: 700, color: '#7c2d12' }}>
+                    Tagore’s Resonance (Gitanjali, Song 57):
+                  </p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem' }}>
+                    “Light, my light, the world-filling light, the eye-kissing light, heart-sweetening light! Ah, the light
+                    dances, my darling, at the center of my life; the light strikes, my darling, the chords of my love...”
+                  </p>
+                  <p style={{ margin: 0, fontSize: '0.92rem', color: '#475569' }}>
+                    <strong>The Connection:</strong> Both texts move from contemplating the physical sun to experiencing an
+                    ecstatic, internal awakening of spiritual truth and cosmic illumination.
+                  </p>
+                </div>
+              </div>
+
+              {/* Parallel 2 */}
+              <div style={{ margin: '1.5rem 0' }}>
+                <h3 style={{ color: '#0f766e', fontSize: '1.15rem', marginBottom: '0.5rem' }}>
+                  B. The Abundance of Joy (आनन्दः)
+                </h3>
+                <div className="philosophy-verse-banner" style={{ margin: '0.75rem 0 1rem' }}>
+                  <div className="philosophy-verse-sanskrit" lang="sa">
+                    आनन्दाद्ध्येव खल्विमानि भूतानि जायन्ते ।<br />
+                    आनन्देन जातानि जीवन्ति ।<br />
+                    आनन्दं प्रयन्त्यभिसंविशन्तीति ॥
+                  </div>
+                  <div className="philosophy-verse-translit">
+                    ānandāddhy eva khalv imāni bhūtāni jāyante |<br />
+                    ānandena jātāni jīvanti |<br />
+                    ānandaṃ prayanty abhisaṃviśantīti ||
+                  </div>
+                  <div className="philosophy-verse-english">
+                    “From Infinite Joy (Ānanda) indeed all these beings are born; by Joy they are sustained when born; and
+                    into Joy they dissolve upon departure.”
+                  </div>
+                  <span className="philosophy-verse-source">Taittirīya Upaniṣad 3.6.1</span>
+                </div>
+
+                <div className="philosophy-card" style={{ background: '#f0fdfa', borderLeft: '4px solid #0f766e' }}>
+                  <p style={{ margin: '0 0 0.5rem', fontWeight: 700, color: '#134e4a' }}>
+                    Tagore’s Resonance (Anandadhara Bahiche Bhubane):
+                  </p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem' }}>
+                    “Anandadhara bahiche bhubane / Dina rajani kataro amrito raso nabhane...”<br />
+                    (A torrent of joy flows through the universe, night and day the nectar of immortality pours from the skies...)
+                  </p>
+                  <p style={{ margin: 0, fontSize: '0.92rem', color: '#475569' }}>
+                    <strong>The Connection:</strong> Tagore takes the abstract philosophical concept of Ānanda (infinite
+                    cosmic joy) and transforms it into an accessible lyrical river washing over everyday human experience.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* 7. Conclusion */}
+            <section className="philosophy-section" aria-labelledby="tagore-conclusion">
+              <h2 id="tagore-conclusion">7. Conclusion: The Shared Blueprint of Indian Heritage</h2>
+              <p className="philosophy-secondary" style={{ marginTop: '-0.35rem', marginBottom: '1rem', fontStyle: 'italic' }}>
+                How Sanskrit Unifies Modern Indian Languages · Philosophical Depth, Rasa &amp; Chandas
+              </p>
+              <p>
+                Learning Sanskrit and its foundational literature is essential to gaining a complete picture of India's
+                roots, heritage, and poetic references. Languages like Hindi, Bengali, Marathi, Gujarati, Odia, and
+                Malayalam operate within this shared conceptual ecosystem.
+              </p>
+              <p>
+                Tagore did not let Sanskrit restrict his modern style; instead, he used it as an expansive toolkit to
+                elevate the emotion and texture of his poetry. By understanding the linguistic and philosophical foundations
+                he leaned on, we do not just read modern Indian literature—we hear the ancient, eternal echoes built
+                directly into its vocabulary.
+              </p>
+
+              <div className="philosophy-table-wrap">
+                <table className="philosophy-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Dimension</th>
+                      <th scope="col">Role of Sanskrit Roots</th>
+                      <th scope="col">Modern Language Impact</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Philosophical Depth</strong></td>
+                      <td>Direct loaning of complex conceptual words (Tatsama).</td>
+                      <td>
+                        Allows abstract ideas like <em>Mukti</em> (liberation), <em>Chetana</em> (consciousness), and{' '}
+                        <em>Satya</em> (truth) to hold identical meanings across distinct regional borders.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Emotional Landscape</strong></td>
+                      <td>Aesthetic frameworks borrowed from classical texts (Navarasa).</td>
+                      <td>
+                        Words denoting deep emotional states like <em>Viraha</em> (the painful longing of separation) convey
+                        the exact same cultural weight in a Hindi bhajan as they do in a Malayalam poem.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Rhythmic Architecture</strong></td>
+                      <td>Metrical patterns and sound arrangements (Chandas).</td>
+                      <td>
+                        The innate, mathematical cadence of Sanskrit verses directly shaped the lyrical flow and structural
+                        rhythm of medieval and modern regional devotional poetry.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Key Takeaways Cards */}
+              <h3 style={{ marginTop: '2rem', marginBottom: '0.85rem', color: '#1e293b' }}>
+                Key Takeaways · मुख्य-सिद्धान्ताः
+              </h3>
+              <div className="philosophy-timescale-grid" style={{ marginBottom: '1.5rem' }}>
+                <div className="philosophy-timescale-card">
+                  <span className="philosophy-timescale-time">Foundational Soil</span>
+                  <div className="philosophy-timescale-title">🪔 Jorasanko Upbringing</div>
+                  <p className="philosophy-timescale-desc">
+                    Daily morning recitations of Upanishadic verses and the Gayatri under Maharshi Debendranath shaped
+                    Tagore's consciousness.
+                  </p>
+                </div>
+                <div className="philosophy-timescale-card">
+                  <span className="philosophy-timescale-time">Linguistic DNA</span>
+                  <div className="philosophy-timescale-title">📜 Tatsama Architecture</div>
+                  <p className="philosophy-timescale-desc">
+                    Jana Gana Mana is saturated with direct Sanskrit loanwords, making it universally intelligible across
+                    all Indian language families.
+                  </p>
+                </div>
+                <div className="philosophy-timescale-card">
+                  <span className="philosophy-timescale-time">Puranic Metaphor</span>
+                  <div className="philosophy-timescale-title">☸️ Krishna as Chirasarathi</div>
+                  <p className="philosophy-timescale-desc">
+                    Stanza 3 addresses the Eternal Charioteer with the Panchajanya conch, evoking Krishna as Parthasarathy
+                    steering history.
+                  </p>
+                </div>
+                <div className="philosophy-timescale-card">
+                  <span className="philosophy-timescale-time">Vedic Allegory</span>
+                  <div className="philosophy-timescale-title">🕊️ Dui Pakhi &amp; Mundaka</div>
+                  <p className="philosophy-timescale-desc">
+                    The famous Dvā Suparṇā mantra (Jīva vs. Paramātman) transformed into an intimate dialogue between forest
+                    bird and cage bird.
+                  </p>
+                </div>
+                <div className="philosophy-timescale-card">
+                  <span className="philosophy-timescale-time">Cosmic Kinship</span>
+                  <div className="philosophy-timescale-title">🌿 Living Nature (Prakriti)</div>
+                  <p className="philosophy-timescale-desc">
+                    Nature is not scenic decoration for the ego, but a living Devatā continuum — “Sarvam Khalvidam Brahma”.
+                  </p>
+                </div>
+                <div className="philosophy-timescale-card">
+                  <span className="philosophy-timescale-time">Living Motherboard</span>
+                  <div className="philosophy-timescale-title">🏛️ Unified Heritage</div>
+                  <p className="philosophy-timescale-desc">
+                    Sanskrit provides the philosophical depth, emotional rasa, and metrical chandas uniting Hindi, Bengali,
+                    Marathi, and beyond.
+                  </p>
+                </div>
+              </div>
+
+              {/* Bodhi's Study Note */}
+              <div className="philosophy-learner-box">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.85rem' }}>
+                  <BodhiAvatar mood="reading" size="sm" showHalo={false} />
+                  <h3 style={{ margin: 0 }}>Bodhi’s Study Note · Explore the Masterclass in Depth</h3>
+                </div>
+                <p style={{ fontSize: '1.05rem', lineHeight: 1.6, color: '#134e4a', margin: '0 0 1rem' }}>
+                  Tagore did not treat Sanskrit as a dead museum exhibit; he wielded it as a living, expansive palette. When
+                  you read the national anthem or chant the Upaniṣads, you are participating in the exact same unbroken
+                  acoustic and conceptual stream.
+                </p>
+                <div className="philosophy-action-buttons">
+                  {onOpenCourseAddendum && (
+                    <button
+                      type="button"
+                      className="philosophy-action-btn"
+                      style={{ background: '#b45309' }}
+                      onClick={() => onOpenCourseAddendum('addendum-tagore-sanskrit-genius')}
+                    >
+                      📜 Open Masterclass 5 in Course Addendum ➔
+                    </button>
+                  )}
+                  {onOpenVarnamala && (
+                    <button type="button" className="philosophy-action-btn" onClick={onOpenVarnamala}>
+                      🔤 Alphabet &amp; Syllables Masterclass
+                    </button>
+                  )}
+                  {onOpenReader && (
+                    <button type="button" className="philosophy-action-btn" onClick={onOpenReader}>
+                      📖 Living Reader
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              {/* CTA Actions */}
+              <section className="philosophy-cta" aria-labelledby="tagore-cta-heading" style={{ marginTop: '2.5rem' }}>
+                <h2 id="tagore-cta-heading">Awaken Your Living Connection to Sanskrit</h2>
+                <p>
+                  Experience Sanskrit not as dry grammar memorization, but as the living language of Indian genius,
+                  philosophy, and poetry.
+                </p>
+                <p className="philosophy-cta-note">
+                  14-day free trial, then one-time ₹200. No auto-debit. Renew anytime.
+                </p>
+                <div className="philosophy-cta-actions">
+                  {onOpenRegister && (
+                    <button type="button" className="philosophy-cta-primary" onClick={onOpenRegister}>
+                      Start Free Trial ➔
+                    </button>
+                  )}
+                  {onOpenVedicMaths && (
+                    <button type="button" className="philosophy-cta-secondary" onClick={onOpenVedicMaths}>
+                      Explore वैदिक-गणितम्
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    className="philosophy-cta-secondary"
+                    onClick={() => {
+                      setActiveEssay('ai_sanskrit');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    🤖 Why Learn Sanskrit in the Age of AI ➔
+                  </button>
+                  <button
+                    type="button"
+                    className="philosophy-cta-secondary"
+                    onClick={() => {
+                      setActiveEssay('sunyat_anantam');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    🌌 Śūnyāt Anantam (Mathematics as Darśana) ➔
+                  </button>
+                </div>
+              </section>
             </section>
           </div>
         )}

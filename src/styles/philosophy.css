@@ -436,6 +436,7 @@
 
 .philosophy-essay-nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.65rem;
   margin-bottom: 1.5rem;
   background: #ffffff;
@@ -801,7 +802,7 @@
   margin: 0;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .philosophy-essay-nav {
     flex-direction: column;
   }
