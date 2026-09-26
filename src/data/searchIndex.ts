@@ -51,8 +51,48 @@ export interface SearchItem {
 
 export const SEARCH_INDEX: SearchItem[] = [
   // =========================================================================
-  // 1. GRAMMAR ARTICLES (12 In-Depth Masterclasses)
+  // 1. GRAMMAR ARTICLES (13 In-Depth Masterclasses)
   // =========================================================================
+  {
+    id: 'art-beginners-roadmap',
+    title: "संस्कृत-मार्गदर्शिका · A Beginner's Roadmap to Learning Sanskrit",
+    subtitle: 'Where to start, what to learn in what order, and how to practise',
+    category: 'grammar',
+    categoryLabel: 'Article · Start Here',
+    badgeEmoji: '🧭',
+    badgeColor: '#9a3412',
+    description:
+      'A step-by-step path for beginners: sound and script, noun cases, present-tense verbs and sandhi, graded stories, then the Gītā and Upaniṣads. Includes an 8-week starter plan, a 20-minute daily routine and common beginner mistakes.',
+    keywords: [
+      'roadmap',
+      'beginner',
+      'beginners',
+      'how to learn sanskrit',
+      'learn sanskrit',
+      'where to start',
+      'start here',
+      'study plan',
+      '8 week plan',
+      'daily routine',
+      'first steps',
+      'devanagari',
+      'iast',
+      'pronunciation',
+      'places of articulation',
+      'sthana',
+      'panchatantra',
+      'hitopadesha',
+      'bhagavad gita',
+      'common mistakes',
+      'मार्गदर्शिका',
+      'संस्कृत',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'beginners-roadmap',
+    },
+  },
   {
     id: 'art-sanskrit-in-english',
     title: "संस्कृतम् in English · Sanskrit's Quiet Imprint on English",

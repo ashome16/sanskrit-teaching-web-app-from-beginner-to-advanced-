@@ -141,4 +141,15 @@ export const ARTICLE_KEY_WORDS: Record<string, SanskritKeyWord[]> = {
     { word: 'भ्रातृ', translit: 'Bhrātṛ', meaning: 'Brother → pal (via Romani)' },
     { word: 'मातृ', translit: 'Mātṛ', meaning: 'Mother (a cognate, not a borrowing)' },
   ],
+
+  'beginners-roadmap': [
+    { word: 'अजः', translit: 'Ajaḥ', meaning: 'Goat (a first noun)' },
+    { word: 'गच्छति', translit: 'Gacchati', meaning: 'He / she goes (present tense of गम्)' },
+    { word: 'रामः', translit: 'Rāmaḥ', meaning: 'Rāma (nominative: the doer)' },
+    { word: 'रामम्', translit: 'Rāmam', meaning: 'Rāma (accusative: the object)' },
+    { word: 'विद्यालयः', translit: 'Vidyālayaḥ', meaning: 'School: विद्या + आलयः (sandhi)' },
+    { word: 'अक्षरसाधना', translit: 'Akṣara-sādhanā', meaning: 'Mastery of letters' },
+    { word: 'विभक्तिः', translit: 'Vibhaktiḥ', meaning: 'Noun case ending' },
+    { word: 'सन्धिः', translit: 'Sandhiḥ', meaning: 'Joining of sounds' },
+  ],
 };

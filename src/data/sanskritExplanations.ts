@@ -339,4 +339,31 @@ export const SANSKRIT_EXPLANATIONS: Record<string, SanskritExplanation> = {
       },
     ],
   },
+
+  'beginners-roadmap': {
+    titleSa: 'संस्कृत-मार्गदर्शिका — बोधि-व्याख्या',
+    titleEn: "Bodhi's Sanskrit Explanation: A Beginner's Roadmap",
+    takeawayQuote: {
+      sa: 'शनैर्विद्या शनैर्वित्तम्।',
+      en: 'Learning, like wealth, is gathered little by little.',
+    },
+    sanskritText:
+      'अस्मिन् लेखे बोधिः संस्कृताध्ययनस्य मार्गं दर्शयति। प्रथमं ध्वनिः — वर्णाः कण्ठात् ओष्ठपर्यन्तं क्रमेण उच्चार्यन्ते। ततः भाषाप्रयोगः — विभक्तयः, धातुरूपाणि, सन्धिः च। ततः कथापठनम् — पञ्चतन्त्रं हितोपदेशः च। अन्ते शास्त्रपाठः — भगवद्गीता उपनिषदः च। प्रतिदिनं विंशतिः निमेषाः, उच्चैः पठनं च — एषः एव सफलतायाः उपायः।',
+    englishTranslation:
+      'In this article, Bodhi shows the path of Sanskrit study. First comes sound: the letters are pronounced in order from the throat to the lips. Then comes using the language: noun cases, verb forms and sandhi. Then reading stories such as the Pañcatantra and Hitopadeśa. Finally, reading the classics: the Bhagavad Gītā and the Upaniṣads. Twenty minutes a day, read aloud, is the real secret of success.',
+    bulletPoints: [
+      {
+        sa: 'ध्वनिः प्रथमः — व्याकरणं ततः।',
+        en: 'Sound comes first; grammar follows.',
+      },
+      {
+        sa: 'द्वे विभक्ती प्रथमं, ततः अन्याः।',
+        en: 'Learn two noun cases well before adding the others.',
+      },
+      {
+        sa: 'उच्चैः पठतु — मौनेन न।',
+        en: 'Always read Sanskrit aloud, never silently.',
+      },
+    ],
+  },
 };

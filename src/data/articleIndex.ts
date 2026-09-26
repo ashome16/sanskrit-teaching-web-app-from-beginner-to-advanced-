@@ -93,4 +93,11 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: "संस्कृतम् in English · Sanskrit's Quiet Imprint on English",
     cardBlurb: '~100 everyday English words with Sanskrit roots — sugar, jungle, shampoo, karma — how they travelled, and which origins are still debated.',
   },
+  {
+    id: 'beginners-roadmap',
+    file: 'grammar/article-13.txt',
+    emoji: '🧭',
+    cardTitle: "संस्कृत-मार्गदर्शिका · A Beginner's Roadmap to Learning Sanskrit",
+    cardBlurb: 'Where to start, what to learn in what order, and how to practise: sound → grammar → stories → classics, plus an 8-week starter plan and a 20-minute daily routine.',
+  },
 ];

@@ -1562,3 +1562,53 @@
 
 
 
+
+/* Inline links inside plain-text articles */
+.grammar-article-link {
+  color: #9a3412;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  word-break: break-word;
+}
+.grammar-article-link:hover {
+  color: #7c2d12;
+}
+
+/* "New to Sanskrit? Start here" banner on the Grammar shelf */
+.grammar-start-here-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  margin: 0 0 1rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid #f0c987;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #fff7e8 0%, #fffdf8 100%);
+  color: #4a3b2a;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.grammar-start-here-banner:hover {
+  box-shadow: 0 4px 14px rgba(180, 83, 9, 0.15);
+  transform: translateY(-1px);
+}
+.grammar-start-here-emoji {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+.grammar-start-here-text {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.grammar-start-here-text strong {
+  color: #9a3412;
+}
+.grammar-start-here-arrow {
+  font-size: 1.2rem;
+  color: #b45309;
+  flex-shrink: 0;
+}

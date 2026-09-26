@@ -155,3 +155,30 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* "New to Sanskrit? Start with our roadmap" link */
+.resources-start-here-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid #f0c987;
+  border-radius: 12px;
+  background: #fff7e8;
+  color: #4a3b2a;
+  font: inherit;
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+  max-width: 100%;
+}
+.resources-start-here-btn strong {
+  color: #9a3412;
+}
+.resources-start-here-btn:hover {
+  box-shadow: 0 4px 14px rgba(180, 83, 9, 0.15);
+}
+.resources-start-here-sub {
+  color: #6b5a45;
+}

@@ -18,6 +18,34 @@ export type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'numbers' | '
 
 const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((response) => response.text());
 
+const URL_PATTERN = /(https?:\/\/[^\s)]+)/g;
+const SITE_ORIGIN_PATTERN = /^https?:\/\/(www\.)?ednetlearn\.in/i;
+
+/** Renders plain article text, turning bare http(s) URLs into links (site links stay in the same tab). */
+const renderLinkedText = (text: string): React.ReactNode => {
+  if (!text.includes('http')) return text;
+  const parts = text.split(URL_PATTERN);
+  return parts.map((part, i) => {
+    if (i % 2 === 0) return part;
+    const trailing = part.match(/[.,;:!?]+$/)?.[0] ?? '';
+    const url = trailing ? part.slice(0, -trailing.length) : part;
+    const isSite = SITE_ORIGIN_PATTERN.test(url);
+    const href = isSite ? url.replace(SITE_ORIGIN_PATTERN, '') || '/' : url;
+    return (
+      <React.Fragment key={i}>
+        <a
+          href={href}
+          className="grammar-article-link"
+          {...(isSite ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
+        >
+          {url.replace(/^https?:\/\/(www\.)?/, '')}
+        </a>
+        {trailing}
+      </React.Fragment>
+    );
+  });
+};
+
 export type GrammarProps = {
   initialTopic?: GrammarTopic;
   initialArticleId?: string | null;
@@ -575,7 +603,7 @@ const Grammar: React.FC<GrammarProps> = ({
                 return (
                   <ul className="grammar-article-list" key={index}>
                     {block.items.map((item, itemIndex) => (
-                      <li key={itemIndex}>{item}</li>
+                      <li key={itemIndex}>{renderLinkedText(item)}</li>
                     ))}
                   </ul>
                 );
@@ -595,7 +623,7 @@ const Grammar: React.FC<GrammarProps> = ({
                         {block.rows.map((row, rowIndex) => (
                           <tr key={rowIndex}>
                             {row.map((cell, cellIndex) => (
-                              <td key={cellIndex}>{cell}</td>
+                              <td key={cellIndex}>{renderLinkedText(cell)}</td>
                             ))}
                           </tr>
                         ))}
@@ -627,7 +655,7 @@ const Grammar: React.FC<GrammarProps> = ({
               return (
                 <div key={index} style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.5rem' }}>
                   <p className="grammar-article-paragraph" style={{ margin: 0, flex: 1 }}>
-                    {block.text}
+                    {renderLinkedText(block.text)}
                   </p>
                   {articleLang === 'sa' && (
                     <button
@@ -769,6 +797,10 @@ const Grammar: React.FC<GrammarProps> = ({
           const kataTags = ['phi', 'golden ratio', 'pi', 'melakarta', 'raga', 'ragas', 'narayaniyam', 'astronomy', 'chronogram', 'madhava', 'virahanka', 'hemacandra', 'ankanam', 'ankanam vamato gatih', 'अङ्कानां वामतो गतिः', 'compose', 'arithmetic', 'algorithm'];
           if (kataTags.some((tag) => tag.includes(qClean) || qClean.includes(tag))) return true;
         }
+        if (art.id === 'beginners-roadmap') {
+          const roadTags = ['roadmap', 'beginner', 'start', 'where to start', 'how to learn', 'learn sanskrit', 'study plan', 'plan', 'routine', 'first steps', 'guide', 'mistakes', 'devanagari', 'iast', 'pronunciation', 'मार्गदर्शिका'];
+          if (roadTags.some((tag) => tag.includes(qClean) || qClean.includes(tag))) return true;
+        }
         if (art.id === 'sanskrit-in-english') {
           const engTags = ['etymology', 'english', 'loanword', 'borrowing', 'cognate', 'sugar', 'jungle', 'shampoo', 'bungalow', 'orange', 'ginger', 'candy', 'cheetah', 'karma', 'yoga', 'juggernaut', 'william jones'];
           if (engTags.some((tag) => tag.includes(qClean) || qClean.includes(tag))) return true;
@@ -839,6 +871,21 @@ const Grammar: React.FC<GrammarProps> = ({
           </button>
         </div>
       </div>
+
+      {!qClean && (
+        <button
+          type="button"
+          className="grammar-start-here-banner"
+          onClick={() => openArticle('beginners-roadmap')}
+          title="Open: A Beginner's Roadmap to Learning Sanskrit"
+        >
+          <span className="grammar-start-here-emoji" aria-hidden="true">🧭</span>
+          <span className="grammar-start-here-text">
+            <strong>New to Sanskrit? Start here.</strong> A beginner's roadmap: what to learn first, in what order, and an 8-week starter plan.
+          </span>
+          <span className="grammar-start-here-arrow" aria-hidden="true">→</span>
+        </button>
+      )}
 
       <div className="grammar-shelf">
         {filteredInteractive.map((t) => (

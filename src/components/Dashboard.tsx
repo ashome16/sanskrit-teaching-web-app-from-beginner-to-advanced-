@@ -919,6 +919,7 @@ const Dashboard: React.FC = () => {
         <FreeResourcesPage
           onGoHome={() => navigateToView('home')}
           onOpenGrammar={handleOpenGrammar}
+          onOpenRoadmap={() => handleOpenGrammar('article', 'beginners-roadmap')}
           onOpenCbseGuide={() => navigateToView('cbse-guide')}
           onOpenPhilosophy={() => navigateToView('philosophy')}
           onOpenRegister={() => openAuthModal('register')}
@@ -1011,6 +1012,7 @@ const Dashboard: React.FC = () => {
           onOpenPhilosophy={() => navigateToView('philosophy')}
           onOpenCbseGuide={() => navigateToView('cbse-guide')}
           onOpenResources={() => navigateToView('resources')}
+          onOpenRoadmap={() => handleOpenGrammar('article', 'beginners-roadmap')}
           onOpenBodhi={() => setIsBodhiGuideOpen(true)}
         />
       )}

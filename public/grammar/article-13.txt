@@ -1,0 +1,126 @@
+# संस्कृत-मार्गदर्शिका · A Beginner's Roadmap to Learning Sanskrit
+## Where to start, what to learn in what order, and how to practise, from the first sound to your first Gītā verse
+
+Learning Sanskrit is often seen as a monumental task reserved for scholars and priests. But Sanskrit is a highly structured and phonetic language, with a grammar so systematic that it can feel almost mathematical, and that makes it one of the most logical languages you can learn. Whether your goal is to read texts like the Bhagavad Gītā, dive into yoga philosophy, or simply give your mind a rewarding challenge, the key is to follow a systematic, natural sequence. This guide outlines where to start, what to learn in sequence, and how to practise effectively.
+
+Throughout, Sanskrit terms are given in Devanāgarī with IAST transliteration, for example विभक्ति (vibhakti).
+
+## 1 · Where to Start: The Foundation of Pure Sound
+
+Unlike most modern languages, your journey into Sanskrit should not begin with grammar drills or conversational phrases. It should begin with sound. Sanskrit is highly phonetic: it is written as it is spoken, and each letter stands for one sound. Classical recitation expects that sound to be precise, with no slurring of vowel lengths or aspirated consonants. (Vedic Sanskrit goes further and marks pitch accents, called स्वर (svara): उदात्त (udātta, raised), अनुदात्त (anudātta, not raised) and स्वरित (svarita, falling). Beginners don't need these yet, but they are why Vedic chanting sounds the way it does.)
+
+Because every sound is produced deliberately from a particular place in the mouth, traditional teachers often compare careful recitation of the alphabet to a gentle breath practice, a little like प्राणायाम (prāṇāyāma). You will feel why the first time you chant the full alphabet slowly and clearly.
+
+- अक्षरसाधना (akṣara-sādhanā, mastery of letters): Start by understanding the internal architecture of the Sanskrit alphabet. The letters are laid out in order from the back of the throat to the lips.
+- The देवनागरी (Devanāgarī) script: Learn to recognise and write the script. Don't let perfect handwriting become a gatekeeper. Use IAST (the International Alphabet of Sanskrit Transliteration) as a temporary set of training wheels while you build script recognition, then let it go.
+
+## The Five Places of Articulation (स्थानानि · sthānāni)
+
+The ancient phonetics texts called शिक्षा (śikṣā), such as the Pāṇinīya Śikṣā, group sounds by where they are made. Each of the five main consonant rows (वर्ग, varga) belongs to one place:
+
+| Place (स्थानम्) | Sanskrit name | English name | Consonant row | Also made here |
+| कण्ठः (kaṇṭhaḥ) · throat | कण्ठ्य (kaṇṭhya) | guttural (velar) | क ख ग घ ङ | अ आ ह |
+| तालु (tālu) · palate | तालव्य (tālavya) | palatal | च छ ज झ ञ | इ ई य श |
+| मूर्धा (mūrdhā) · roof of the mouth | मूर्धन्य (mūrdhanya) | retroflex (cerebral) | ट ठ ड ढ ण | ऋ ॠ र ष |
+| दन्ताः (dantāḥ) · teeth | दन्त्य (dantya) | dental | त थ द ध न | ऌ ल स |
+| ओष्ठौ (oṣṭhau) · lips | ओष्ठ्य (oṣṭhya) | labial | प फ ब भ म | उ ऊ |
+
+Say क च ट त प slowly, one after another, and feel your tongue travel forward from throat to lips. That single exercise teaches you more about the alphabet than an hour of reading about it.
+
+To hear and see this mapping, open वर्णमाला (Alphabet & Syllables) from the top menu of this site: every letter plays its sound when tapped, and the consonants are labelled by their group (for example क-वर्गः, कण्ठ्य). For a video introduction, The Sanskrit Channel's "The First Sanskrit Lesson – Mastery of Sound" (https://www.youtube.com/watch?v=a4rz9NbMq0M) explains how the basic sounds are formed and why they are arranged the way they are, and its "How to Learn Sanskrit from Basics to Mastery" workshop recording (https://www.youtube.com/watch?v=pZ27iJw3uPg) gives a short overview of the whole journey.
+
+## 2 · The Learning Sequence: Step-by-Step Mastery
+
+To avoid feeling overwhelmed, approach the language in four distinct, compounding phases. Each one builds on the last.
+
+| Step | Phase | What you build | You are ready to move on when… |
+| ① | ध्वनिः लिपिः च (dhvaniḥ lipiḥ ca) · Sound & Script | Alphabet, pronunciation, Devanāgarī, first words | You can read any Devanāgarī word aloud, slowly but correctly |
+| ② | भाषाप्रयोगः (bhāṣā-prayogaḥ) · Using the Language | Noun cases, present-tense verbs, basic sandhi | You can build and understand simple sentences like रामः वनं गच्छति |
+| ③ | कथापठनम् (kathā-paṭhanam) · Reading Stories | Graded stories, fables, simple verses | You can follow a short story with a glossary, not a translation |
+| ④ | शास्त्रपाठः (śāstra-pāṭhaḥ) · Reading the Classics | Gītā, classical poetry, Upaniṣads | You can read a verse, split its sandhi and see how its words connect |
+
+## Phase 1 · Sounds, Script, and Mechanics
+
+- Vowels & consonants: Group them by their physical place of articulation (guttural, palatal, retroflex, dental, labial), as in the table above, rather than memorising them as a random list.
+- Basic vocabulary: Start collecting 10–20 useful words a day, such as nouns like अजः (ajaḥ, goat) and verbs like गच्छति (gacchati, goes). Say each one aloud as you write it.
+
+## Phase 2 · भाषाप्रयोगः (Bhāṣā-prayogaḥ): Using the Language
+
+- Noun cases, विभक्ति (vibhakti): Sanskrit is a highly inflected language. Word endings change depending on the word's role in the sentence. There are seven vibhaktis plus the vocative, सम्बोधनम् (sambodhanam), which is why you will often see "eight cases". Master the first two, the nominative (प्रथमा, prathamā) and the accusative (द्वितीया, dvitīyā), before tackling the rest.
+
+| Case | Form | Role | Example |
+| प्रथमा (prathamā) · nominative | रामः (rāmaḥ) | the doer | रामः वनं गच्छति। Rāma goes to the forest. |
+| द्वितीया (dvitīyā) · accusative | रामम् (rāmam) | the object | सीता रामं पश्यति। Sītā sees Rāma. |
+
+Notice that the ending, not the word order, tells you who does what: रामं सीता पश्यति still means "Sītā sees Rāma". (रामम् and वनम् are written रामं and वनं before a consonant; that small change is itself a sandhi rule.)
+
+- Verb conjugations: Learn how basic verbs change by person, number (एकवचनम् singular, द्विवचनम् dual, बहुवचनम् plural) and tense. Here is the present tense, लट् (laṭ), of गम् (gam, to go). Note that Sanskrit grammar names the persons differently from English: प्रथमपुरुषः (prathama-puruṣa, literally "first person") is the English third person, मध्यमपुरुषः (madhyama) the second, and उत्तमपुरुषः (uttama) the first.
+
+| Person | Singular | Dual | Plural |
+| प्रथमपुरुषः (he / she / it, they) | गच्छति | गच्छतः | गच्छन्ति |
+| मध्यमपुरुषः (you) | गच्छसि | गच्छथः | गच्छथ |
+| उत्तमपुरुषः (I, we) | गच्छामि | गच्छावः | गच्छामः |
+
+- सन्धि (sandhi): Sandhi is the phonetic blending of sounds where words meet. Learning its rules stops you from mistaking blended words for single, giant words. A first example: विद्या + आलयः = विद्यालयः (vidyā + ālayaḥ = vidyālayaḥ, "abode of learning", a school). Two long ā sounds merge into one.
+
+## Phase 3 · कथापठनम् (Kathā-paṭhanam): Textual Immersion Through Stories
+
+- Intuitive reading: Don't jump straight into dense philosophy. Move into simple, narrative-driven texts such as the पञ्चतन्त्र (Pañcatantra) or हितोपदेश (Hitopadeśa) fables. Graded story sites like Amarahasa (https://en.amarahasa.com/), where you can tap a word to see its meaning, and the chapter readers on this site (CBSE · NCERT Deepakam, with verse-by-verse meanings) help you acquire vocabulary naturally, without getting bogged down in explicit grammar rules.
+- First verses aloud: Alongside the stories, start reciting a few simple verses in the अनुष्टुभ् (anuṣṭubh) metre, the 4 × 8-syllable pattern used for most of the Bhagavad Gītā. Its steady rhythm makes it easy to memorise and a gentle bridge into Phase 4.
+
+## Phase 4 · शास्त्रपाठः (Śāstra-pāṭhaḥ): Reading the Classics and Scriptures
+
+- The milestone: Once your vocabulary is solid and you understand compound words (समास, samāsa), you can move on to authentic verses from the Bhagavad Gītā, then classical works such as the poetry of Kālidāsa, and the Upaniṣads.
+
+## 3 · Connecting the Sequence to Your Goals
+
+How you progress depends entirely on why you want to learn the language. Knowing your endpoint will keep you motivated through the harder grammar modules.
+
+| If your goal is… | Focus on… | The breakthrough moment looks like… |
+| Chanting & meditation | Accurate pronunciation, the fourteen माहेश्वरसूत्राणि (Māheśvara-sūtrāṇi), and steady breath | Feeling calm and focus come from precise, unhurried sound |
+| Reading philosophy | Vibhaktis (noun cases), compound analysis, and vocabulary | Seeing the literal meaning of a verse for yourself, including the nuance translations often lose |
+| Language & mental agility | Traditional grammar, व्याकरण (vyākaraṇa), and deriving words from their roots (धातु, dhātu) | Working out a sentence step by step, almost like solving an equation |
+
+## 4 · How to Practise and Absorb the Language
+
+Consistency beats intensity with a language as structured as Sanskrit. Use a hybrid approach that balances technical study with intuitive exposure:
+
+- Separate "studying" from "acquisition": Spend about half your time on explicit grammar (how sentences work) and the other half on pure exposure: reading stories, listening to spoken Sanskrit podcasts, or watching short audio-visual books.
+- Use structured platforms: For a comprehensive, free grammar guide, use learnsanskrit.org (https://www.learnsanskrit.org/guide/). For audio-visual courses and structured materials, explore Vyoma's Sanskrit From Home (https://www.sanskritfromhome.org/course-listing); most of its courses are free, a few are paid. For gamified vocabulary practice, try the Little Guru app (https://little-guru.com/), whose basic chapters are free with paid higher levels. Our hand-checked Free Resources page (https://ednetlearn.in/resources) lists these and many more, including dictionaries and text libraries.
+- Recite aloud daily: Never read Sanskrit silently. Chant vocabulary, simple sentences, or basic verses aloud to train correct tongue placement and your ear.
+- Join a community: Look into volunteer-based organisations like संस्कृतभारती (Samskrita Bharati, https://www.samskritabharati.in/), which runs 10-day spoken-Sanskrit camps (सम्भाषणशिबिरम्, sambhāṣaṇa-śibiram) around the world. Speaking with others quickly strips away the intimidation factor.
+
+## Your First 8 Weeks: A Starter Plan (about 20 minutes a day)
+
+Every item below uses a section you can open from this site's top menu or Grammar shelf.
+
+| Week | Focus | Where to practise on EdNet Learn |
+| 1 | Vowels (स्वराः) and their lengths | वर्णमाला: tap each vowel, repeat it aloud; the Five Sound Teams guide on the Grammar shelf |
+| 2 | Consonants by place of articulation | वर्णमाला consonant groups; "The Science of Sound" video card on the Grammar shelf |
+| 3 | Vowel signs (मात्रा) and joined letters | Grammar article "चिह्न-परिचयः · Symbols & Punctuation"; संयुक्त · Conjunct Games |
+| 4 | First 50–100 words; gender and number | जोडो tile puzzles for word-building; "लिङ्गं वचनं च · Gender & Number" guide |
+| 5 | The first two cases (प्रथमा, द्वितीया) | विभक्ति · Vibhakti Guide (the Bālaka tables); build five sentences a day |
+| 6 | Present-tense verbs (लट्) | धातुपाठः (Dhātupāṭha): open गम्, पठ्, वद् and read their Laṭ tables aloud |
+| 7 | Sandhi basics | Grammar article "सन्धि · Sandhi"; spot joined words in any short text |
+| 8 | Your first real reading | A Class 7 Deepakam chapter in the reader, then its quiz (प्रश्नोत्तरी) and a worksheet (कार्यपत्रिकाः) |
+
+## A 20-Minute Daily Routine
+
+| Minutes | Do this |
+| 0–3 | Chant the alphabet aloud, slowly, from अ to ह |
+| 3–8 | Learn 10 new words; say each aloud and write it once in Devanāgarī |
+| 8–13 | One grammar point: one case, one verb table, or one sandhi rule |
+| 13–18 | Read or listen to something real: a story, a verse, a chapter paragraph |
+| 18–20 | Recite one verse or sentence from memory |
+
+## Common Beginner Mistakes
+
+- Skipping pronunciation: rushing past the alphabet means relearning sounds later. The first two weeks on sound pay for themselves many times over.
+- Relying only on transliteration: IAST is a ladder, not a home. Switch to Devanāgarī as soon as you can read it slowly.
+- Memorising all eight cases at once: learn two, use them in sentences, then add the next.
+- Reading silently: Sanskrit is meant to be heard. If you are not saying it, you are only half-learning it.
+- Jumping to the Upaniṣads first: dense philosophy with weak grammar leads to frustration. Stories first, then the Gītā, then the Upaniṣads.
+
+## The Road Ahead
+
+The path from अ to your first Gītā verse is shorter than it looks, if you walk it in order: sound, then structure, then stories, then scripture. A few focused minutes every day, spoken aloud, will carry you further than occasional long sessions. शुभमस्तु (śubham astu): may it go well!

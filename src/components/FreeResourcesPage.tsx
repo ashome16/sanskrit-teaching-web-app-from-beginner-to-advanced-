@@ -17,6 +17,7 @@ import '../styles/resources.css';
 export interface FreeResourcesPageProps {
   onGoHome?: () => void;
   onOpenGrammar?: () => void;
+  onOpenRoadmap?: () => void;
   onOpenCbseGuide?: () => void;
   onOpenPhilosophy?: () => void;
   onOpenRegister?: () => void;
@@ -381,6 +382,7 @@ const getStatusBadgeStyle = (status: LiveStatus) => {
 export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
   onGoHome,
   onOpenGrammar,
+  onOpenRoadmap,
   onOpenCbseGuide,
   onOpenPhilosophy,
   onOpenRegister,
@@ -538,6 +540,23 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
           <p className="philosophy-secondary">
             CBSE circulars, National Sanskrit Olympiads, weekly shloka webinars, study vaults and hand-curated learning libraries
           </p>
+
+          {/* Start here: beginner's roadmap */}
+          {onOpenRoadmap && (
+            <button
+              type="button"
+              className="resources-start-here-btn"
+              onClick={onOpenRoadmap}
+              title="Open: A Beginner's Roadmap to Learning Sanskrit"
+            >
+              <span aria-hidden="true">🧭</span>
+              <span>
+                <strong>New to Sanskrit? Start with our roadmap</strong>
+                <span className="resources-start-here-sub"> · what to learn first, in what order, plus an 8-week starter plan</span>
+              </span>
+              <span aria-hidden="true">→</span>
+            </button>
+          )}
 
           {/* Quick Action CTA Pill Bar */}
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', marginTop: '1.25rem' }}>
