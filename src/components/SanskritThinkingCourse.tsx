@@ -60,6 +60,7 @@ export interface SanskritThinkingCourseProps {
   initialLessonId?: string;
   initialMode?: 'curriculum' | 'addendum';
   initialAddendumId?: string;
+  onOpenVoiceSettings?: () => void;
 }
 
 export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
@@ -79,6 +80,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
   initialLessonId,
   initialMode = 'curriculum',
   initialAddendumId,
+  onOpenVoiceSettings,
 }) => {
   const { currentUser, isAdminLoggedIn } = useAuthStore();
   const hasPaid = hasPaidAccess(currentUser, isAdminLoggedIn);
@@ -824,9 +826,9 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                   ))}
 
                   {sec.sutras && sec.sutras.map((sutra, suIdx) => sutra.mantraId && MANTRAS_BY_ID[sutra.mantraId] ? (
-                    <ShantiMantraPlayer key={`${currentAddendum.id}-${suIdx}`} mantra={MANTRAS_BY_ID[sutra.mantraId]} />
+                    <ShantiMantraPlayer key={`${currentAddendum.id}-${suIdx}`} mantra={MANTRAS_BY_ID[sutra.mantraId]} onOpenVoiceSettings={onOpenVoiceSettings} />
                   ) : isShantiMantraText(sutra.sanskrit) ? (
-                    <ShantiMantraPlayer key={`${currentAddendum.id}-${suIdx}`} />
+                    <ShantiMantraPlayer key={`${currentAddendum.id}-${suIdx}`} onOpenVoiceSettings={onOpenVoiceSettings} />
                   ) : (
                     <div key={suIdx} className="stc-sutra-box">
                       <div className="stc-sutra-sanskrit">{sutra.sanskrit}</div>

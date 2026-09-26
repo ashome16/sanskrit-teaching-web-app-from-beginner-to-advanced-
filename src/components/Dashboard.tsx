@@ -13,6 +13,8 @@ import Footer from './Footer';
 import SupportWidget from './SupportWidget';
 import BodhiGuideWidget from './BodhiGuideWidget';
 import GlobalSearchModal from './GlobalSearchModal';
+import VoiceSettingsModal from './VoiceSettingsModal';
+import { getSearchShortcut } from '../utils/platformShortcut';
 import type { SearchItem } from '../data/searchIndex';
 import type { GrammarTopic } from './Grammar';
 
@@ -228,7 +230,9 @@ const Dashboard: React.FC = () => {
   const [grammarTargetTopic, setGrammarTargetTopic] = useState<GrammarTopic>('home');
   const [grammarTargetArticleId, setGrammarTargetArticleId] = useState<string | null>(null);
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
+  const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
   const [isBodhiGuideOpen, setIsBodhiGuideOpen] = useState(false);
+  const searchShortcut = getSearchShortcut();
   const [bodhiGuideInitialTab, setBodhiGuideInitialTab] = useState<'context' | 'qa' | 'subhashita' | 'phrases'>('context');
   const {
     currentUser,
@@ -885,13 +889,24 @@ const Dashboard: React.FC = () => {
           <button
             type="button"
             className="dashboard-search-trigger-btn"
+            style={{ padding: '0.45rem 0.65rem' }}
+            onClick={() => setIsVoiceModalOpen(true)}
+            title="Audio & Voice Studio: Configure voices for Mantras, Deepakam, and Bodhi"
+            aria-label="Open Voice Studio"
+          >
+            <span aria-hidden="true">🔊</span>
+            <span className="dashboard-search-trigger-text">Voices</span>
+          </button>
+          <button
+            type="button"
+            className="dashboard-search-trigger-btn"
             onClick={() => setIsSearchModalOpen(true)}
-            title="Search articles, lessons, grammar, Vedic maths & tools (Press ⌘K or /)"
+            title={searchShortcut.searchTitle}
             aria-label="Search site and articles"
           >
             <span className="dashboard-search-trigger-icon" aria-hidden="true">🔍</span>
             <span className="dashboard-search-trigger-text">Search…</span>
-            <kbd className="dashboard-search-trigger-kbd">⌘K</kbd>
+            <kbd className="dashboard-search-trigger-kbd">{searchShortcut.kbd}</kbd>
           </button>
           {currentUser ? (
             <button
@@ -1038,6 +1053,7 @@ const Dashboard: React.FC = () => {
           onOpenQuiz={() => navigateToView('quiz')}
           onOpenWorksheets={(category) => handleOpenWorksheets(category || 'all')}
           onOpenPuzzle={() => navigateToView('board')}
+          onOpenVoiceSettings={() => setIsVoiceModalOpen(true)}
         />}
         {activeView === 'course' && (
           <SanskritThinkingCourse
@@ -1056,6 +1072,7 @@ const Dashboard: React.FC = () => {
             onOpenCbseGuide={() => navigateToView('cbse-guide')}
             onOpenRegister={() => openAuthModal('register')}
             onOpenPayment={() => openPaymentModal()}
+            onOpenVoiceSettings={() => setIsVoiceModalOpen(true)}
           />
         )}
       </Suspense>
@@ -1101,6 +1118,11 @@ const Dashboard: React.FC = () => {
         isOpen={isSearchModalOpen}
         onClose={() => setIsSearchModalOpen(false)}
         onNavigate={handleSearchResultNavigate}
+      />
+
+      <VoiceSettingsModal
+        isOpen={isVoiceModalOpen}
+        onClose={() => setIsVoiceModalOpen(false)}
       />
 
       <AuthModal />

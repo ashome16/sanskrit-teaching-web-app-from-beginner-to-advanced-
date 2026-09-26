@@ -314,28 +314,75 @@
 
 .textbook-nav-buttons {
   display: flex;
-  justify-content: space-between;
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid #eee;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  padding-bottom: 5.5rem; /* Generous bottom spacing ensures buttons stay well clear of any bottom floating mascots */
+  border-top: 1.5px solid #eee;
 }
 
 .textbook-nav-btn {
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  border: 1px solid #d8ceba;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.6rem;
+  min-width: 140px;
+  border-radius: 999px;
+  border: 1.5px solid #d8ceba;
   background: #fbf8f2;
+  color: #273b35;
   cursor: pointer;
   font-size: 0.95rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .textbook-nav-btn:disabled {
-  opacity: 0.4;
+  opacity: 0.35;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
 .textbook-nav-btn:not(:disabled):hover {
-  background: #f0e6d2;
+  background: #273b35;
+  color: #f1c75b;
+  border-color: #273b35;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(39, 59, 53, 0.2);
+}
+
+.textbook-nav-top-buttons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: auto;
+}
+
+.textbook-nav-top-btn {
+  padding: 0.3rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid #d8ceba;
+  background: #fbf8f2;
+  color: #273b35;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.textbook-nav-top-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.textbook-nav-top-btn:not(:disabled):hover {
+  background: #273b35;
+  color: #f1c75b;
+  border-color: #273b35;
 }
 
 .varnamala-groups {

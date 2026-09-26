@@ -79,6 +79,13 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
   const [showMiniBubble, setShowMiniBubble] = useState(true);
   const [bubbleText, setBubbleText] = useState('नमस्ते! I am Bodhi. Need a tip?');
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [isTriggerCollapsed, setIsTriggerCollapsed] = useState(() => {
+    try {
+      return localStorage.getItem('bodhi_floating_collapsed') === 'true';
+    } catch {
+      return false;
+    }
+  });
 
   // Sync external open request
   useEffect(() => {
@@ -364,28 +371,68 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
             )}
 
             {/* Clickable Floating Mascot Button */}
-            <button
-              type="button"
-              className="bodhi-floating-trigger"
-              onClick={() => {
-                setShowMiniBubble(false);
-                updateIsOpen(true);
-                setMood('happy');
-              }}
-              title="Open Bodhi Gurukul Guide (बोधिः)"
-              aria-expanded={isOpen}
-            >
-              <div className="bodhi-trigger-avatar-wrap">
+            {isTriggerCollapsed ? (
+              <button
+                type="button"
+                className="bodhi-collapsed-trigger"
+                onClick={() => {
+                  setIsTriggerCollapsed(false);
+                  try {
+                    localStorage.setItem('bodhi_floating_collapsed', 'false');
+                  } catch {
+                    /* ignore storage quota */
+                  }
+                }}
+                title="Expand Bodhi Gurukul Guide (बोधिः)"
+                aria-label="Expand Bodhi Guide"
+              >
                 <BodhiAvatar mood={mood} size="sm" showHalo={false} />
-                <span className="bodhi-trigger-badge">मार्गदर्शकः</span>
+                <span className="bodhi-collapsed-badge">बोधिः</span>
+              </button>
+            ) : (
+              <div className="bodhi-trigger-group">
+                <button
+                  type="button"
+                  className="bodhi-floating-trigger"
+                  onClick={() => {
+                    setShowMiniBubble(false);
+                    updateIsOpen(true);
+                    setMood('happy');
+                  }}
+                  title="Open Bodhi Gurukul Guide (बोधिः)"
+                  aria-expanded={isOpen}
+                >
+                  <div className="bodhi-trigger-avatar-wrap">
+                    <BodhiAvatar mood={mood} size="sm" showHalo={false} />
+                    <span className="bodhi-trigger-badge">मार्गदर्शकः</span>
+                  </div>
+                  <div className="bodhi-trigger-text-wrap">
+                    <span className="bodhi-trigger-name">
+                      Bodhi <span className="bodhi-trigger-name-dev">बोधिः</span>
+                    </span>
+                    <span className="bodhi-trigger-sub">Gurukul Guide</span>
+                  </div>
+                </button>
+                <button
+                  type="button"
+                  className="bodhi-trigger-minimize"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsTriggerCollapsed(true);
+                    setShowMiniBubble(false);
+                    try {
+                      localStorage.setItem('bodhi_floating_collapsed', 'true');
+                    } catch {
+                      /* ignore storage quota */
+                    }
+                  }}
+                  title="Minimize Bodhi to small icon"
+                  aria-label="Minimize Bodhi guide"
+                >
+                  ─
+                </button>
               </div>
-              <div className="bodhi-trigger-text-wrap">
-                <span className="bodhi-trigger-name">
-                  Bodhi <span className="bodhi-trigger-name-dev">बोधिः</span>
-                </span>
-                <span className="bodhi-trigger-sub">Gurukul Guide</span>
-              </div>
-            </button>
+            )}
           </div>
         )}
       </aside>

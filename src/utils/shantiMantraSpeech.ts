@@ -15,6 +15,7 @@
  */
 import { clampRate, isWindowsPlatform, safePitch, whenVoicesReady } from './speechPlatform';
 import { getSpeechGeneration, stopPronunciation } from './pronunciation';
+import { getSavedVoiceName, setSavedVoiceName, resolveVoiceForRole, getSavedRate } from './voiceConfig';
 
 export interface ShantiStep {
   /** Devanagari text actually sent to the voice (never contains । ॥). */
@@ -165,14 +166,17 @@ export const listShantiVoices = (voices: SpeechSynthesisVoice[]): SpeechSynthesi
     .sort((a, b) => scoreShantiVoice(b) - scoreShantiVoice(a) || a.name.localeCompare(b.name));
 
 export const getSavedShantiVoiceName = (): string => {
-  try {
-    return window.localStorage?.getItem(SHANTI_VOICE_STORAGE_KEY) || '';
-  } catch {
-    return '';
-  }
+  return getSavedVoiceName('mantras') || (() => {
+    try {
+      return window.localStorage?.getItem(SHANTI_VOICE_STORAGE_KEY) || '';
+    } catch {
+      return '';
+    }
+  })();
 };
 
 export const setSavedShantiVoiceName = (name: string): void => {
+  setSavedVoiceName('mantras', name);
   try {
     if (name) window.localStorage?.setItem(SHANTI_VOICE_STORAGE_KEY, name);
     else window.localStorage?.removeItem(SHANTI_VOICE_STORAGE_KEY);
@@ -189,7 +193,7 @@ export const pickShantiVoice = (
     const saved = voices.find((v) => v.name === preferredName);
     if (saved) return saved;
   }
-  return listShantiVoices(voices)[0];
+  return resolveVoiceForRole('mantras', voices) || listShantiVoices(voices)[0];
 };
 
 /* ---------------------------------------------------------------------------
@@ -267,7 +271,7 @@ export const reciteShantiMantra = (options: ReciteShantiOptions = {}): (() => vo
   const abortedElsewhere = () => gen !== getSpeechGeneration();
 
   const win = isWindowsPlatform();
-  const baseRate = clampRate(SHANTI_BASE_RATE);
+  const baseRate = clampRate(getSavedRate('mantras') || SHANTI_BASE_RATE);
   // Windows can't go below 0.75, so its pauses are a little longer to feel as calm.
   const pauseScale = win ? 1.15 : 1;
 

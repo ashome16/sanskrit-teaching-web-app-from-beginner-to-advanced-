@@ -4,6 +4,7 @@ import { Grade8SyllabusModal } from './Grade8SyllabusModal';
 import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters } from '../utils/premiumAccess';
 import BodhiAvatar from './BodhiAvatar';
+import { getSearchShortcut } from '../utils/platformShortcut';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
 
@@ -560,7 +561,7 @@ const HomePage: React.FC<HomePageProps> = ({
             onClick={onOpenSearch}
             role="button"
             tabIndex={0}
-            title="Search articles, lessons, 16 Vedic Sutras, Kaṭapayādi, Vibhakti... (Press ⌘K or /)"
+            title={getSearchShortcut().searchTitle}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -570,7 +571,7 @@ const HomePage: React.FC<HomePageProps> = ({
           >
             <span className="home-hero-search-icon" aria-hidden="true">🔍</span>
             <span className="home-hero-search-text">Search articles, lessons, 16 Vedic Sutras, Kaṭapayādi, Vibhakti...</span>
-            <kbd className="home-hero-search-badge">⌘K or /</kbd>
+            <kbd className="home-hero-search-badge">{getSearchShortcut().searchBadge}</kbd>
           </div>
         )}
 

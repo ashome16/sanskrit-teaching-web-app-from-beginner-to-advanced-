@@ -1,0 +1,418 @@
+/* ==========================================================================
+   Voice Studio & Audio Settings Modal
+   ========================================================================== */
+
+.voice-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  padding: 1.5rem 1rem;
+  animation: voiceFadeIn 0.2s ease-out;
+}
+
+@keyframes voiceFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.voice-modal-dialog {
+  background: #fffdf9;
+  border: 1.5px solid #d8ceba;
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.3), 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 760px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  animation: voiceSlideUp 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes voiceSlideUp {
+  from { transform: translateY(18px) scale(0.98); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.voice-modal-header {
+  padding: 1.25rem 1.6rem 1rem;
+  background: linear-gradient(135deg, #fbf7ee 0%, #f7efe0 100%);
+  border-bottom: 1.5px solid #e7dcce;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.voice-modal-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.voice-modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #273b35;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.voice-modal-title-dev {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.05rem;
+  color: #b45309;
+  font-weight: 600;
+}
+
+.voice-modal-subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.voice-modal-close-btn {
+  background: transparent;
+  border: 1px solid #d8ceba;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.voice-modal-close-btn:hover {
+  background: #f1ebd8;
+  color: #0f172a;
+  transform: rotate(90deg);
+}
+
+.voice-modal-body {
+  padding: 1.25rem 1.6rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Platform detection banner */
+.voice-platform-banner {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.84rem;
+  color: #166534;
+}
+
+.voice-platform-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.voice-platform-text strong {
+  color: #14532d;
+}
+
+.voice-platform-text p {
+  margin: 0.25rem 0 0;
+  color: #374151;
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+/* Role Cards Grid */
+.voice-roles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.voice-role-card {
+  background: #ffffff;
+  border: 1.5px solid #e5dec9;
+  border-radius: 14px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.voice-role-card:hover {
+  border-color: #d4a373;
+  box-shadow: 0 4px 14px rgba(180, 83, 9, 0.08);
+}
+
+.voice-role-card--mantras {
+  border-left: 4px solid #d97706;
+}
+
+.voice-role-card--reader {
+  border-left: 4px solid #2563eb;
+}
+
+.voice-role-card--bodhi {
+  border-left: 4px solid #059669;
+}
+
+.voice-role-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.voice-role-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.voice-role-title {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.voice-role-tag {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.voice-role-card--mantras .voice-role-tag {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.voice-role-card--reader .voice-role-tag {
+  background: #eff6ff;
+  color: #1e40af;
+}
+
+.voice-role-card--bodhi .voice-role-tag {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.voice-role-desc {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.voice-role-controls {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .voice-role-controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+.voice-select-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.voice-control-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.voice-select {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.voice-select:focus {
+  border-color: #273b35;
+  box-shadow: 0 0 0 3px rgba(39, 59, 53, 0.12);
+}
+
+.voice-rate-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 130px;
+}
+
+.voice-rate-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.voice-rate-slider {
+  flex: 1;
+  accent-color: #273b35;
+  cursor: pointer;
+}
+
+.voice-rate-val {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #334155;
+  min-width: 2.2rem;
+  text-align: right;
+}
+
+.voice-test-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.52rem 0.95rem;
+  border-radius: 8px;
+  border: 1.5px solid #d8ceba;
+  background: #fbf7ee;
+  color: #273b35;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  align-self: flex-end;
+}
+
+.voice-test-btn:hover {
+  background: #273b35;
+  color: #f1c75b;
+  border-color: #273b35;
+  transform: translateY(-1px);
+}
+
+.voice-test-btn--playing {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fca5a5;
+  animation: voicePulse 1.5s infinite;
+}
+
+@keyframes voicePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Device OS Help Accordion */
+.voice-help-card {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+.voice-help-title {
+  margin: 0 0 0.4rem;
+  font-weight: 700;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.voice-help-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  line-height: 1.5;
+}
+
+/* Modal Footer */
+.voice-modal-footer {
+  padding: 1rem 1.6rem;
+  background: #fbf8f2;
+  border-top: 1.5px solid #e7dcce;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.voice-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.voice-reset-btn {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.voice-reset-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.voice-save-btn {
+  background: #273b35;
+  color: #f1c75b;
+  border: 1.5px solid #273b35;
+  border-radius: 8px;
+  padding: 0.55rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(39, 59, 53, 0.25);
+}
+
+.voice-save-btn:hover {
+  background: #192723;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(39, 59, 53, 0.35);
+}

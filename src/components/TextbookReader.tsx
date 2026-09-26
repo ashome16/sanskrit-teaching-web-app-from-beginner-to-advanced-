@@ -37,6 +37,7 @@ interface TextbookReaderProps {
   onOpenQuiz?: () => void;
   onOpenWorksheets?: (category?: string) => void;
   onOpenPuzzle?: () => void;
+  onOpenVoiceSettings?: () => void;
 }
 
 const cleanWord = (value: string): string =>
@@ -197,6 +198,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   onOpenQuiz,
   onOpenWorksheets,
   onOpenPuzzle,
+  onOpenVoiceSettings,
 }) => {
   const { isAdminLoggedIn, currentUser } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
@@ -482,6 +484,16 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         >
           📜 चिह्न-परिचयः (Symbols Guide)
         </button>
+        {onOpenVoiceSettings && (
+          <button
+            type="button"
+            className="textbook-tool-btn"
+            onClick={onOpenVoiceSettings}
+            title="Adjust reading voice, speed, or select system voices"
+          >
+            🔊 Voice Studio (स्वर-विन्यासः)
+          </button>
+        )}
         {activeLessonId === 'grade8_prarthana' && (
           <>
             <button
@@ -1456,11 +1468,33 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           </span>
         </div>
         {!isGroupedLesson && (
-          <span className="textbook-reader-progress">
-            {sentence.kind?.startsWith('glossary') || sentence.kind?.startsWith('exercise')
-              ? `Exercise · ${sentenceNumber} of ${totalSentences}`
-              : `Paragraph ${sentenceNumber} of ${totalSentences}`}
-          </span>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.6rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+            <span className="textbook-reader-progress" style={{ margin: 0 }}>
+              {sentence.kind?.startsWith('glossary') || sentence.kind?.startsWith('exercise')
+                ? `Exercise · ${sentenceNumber} of ${totalSentences}`
+                : `Paragraph ${sentenceNumber} of ${totalSentences}`}
+            </span>
+            <div className="textbook-nav-top-buttons">
+              <button
+                type="button"
+                className="textbook-nav-top-btn"
+                onClick={onPrevious}
+                disabled={isFirstSentence}
+                title="Previous paragraph / sentence (◀)"
+              >
+                ◀ Prev
+              </button>
+              <button
+                type="button"
+                className="textbook-nav-top-btn"
+                onClick={onNext}
+                disabled={isLastSentence}
+                title="Next paragraph / sentence (▶)"
+              >
+                Next ▶
+              </button>
+            </div>
+          </div>
         )}
       </header>
 

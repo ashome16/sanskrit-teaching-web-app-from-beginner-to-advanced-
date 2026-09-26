@@ -9,6 +9,7 @@ import {
   safePitch,
   whenVoicesReady,
 } from './speechPlatform';
+import { resolveVoiceForRole } from './voiceConfig';
 import { isDandaOrVerseNumberToken } from './dandaSpeech';
 
 // Native Web Speech API pronunciation helper for Sanskrit text only.
@@ -131,7 +132,8 @@ const DEFAULT_RATE = 1;
 
 const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, speech: string): void => {
   const voices = window.speechSynthesis.getVoices();
-  const voice = pickHindiVoice(voices);
+  const configuredReaderVoice = resolveVoiceForRole('reader', voices);
+  const voice = configuredReaderVoice || pickHindiVoice(voices);
   utterance.voice = voice || null;
   // Roman cues (tiles or word anchors like angam/ganga/ranga) use English; Devanagari uses Hindi.
   if (/^[a-z\- ]+$/i.test(speech)) {
@@ -146,7 +148,7 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
     // Windows picture-words, plus Mac ॠकारः / ऌकारः: always prefer a real
     // hi-IN voice with Devanagari text so the platform paths match.
     if (usesWindowsWordSpeech(word) && isFullWord(word)) {
-      const hi = pickHindiVoice(voices);
+      const hi = configuredReaderVoice || pickHindiVoice(voices);
       utterance.voice = hi || voice || null;
       utterance.lang = hi?.lang || voice?.lang || 'hi-IN';
     } else {
@@ -570,12 +572,19 @@ const configureBodhiUtterance = (
   rate: number,
   chunk: string,
 ): void => {
+  const allVoices = window.speechSynthesis.getVoices();
+  const configuredBodhiVoice = resolveVoiceForRole('bodhi', allVoices);
   if (lang === 'en') {
-    const voice = pickBodhiEnglishVoice(window.speechSynthesis.getVoices());
+    const voice = configuredBodhiVoice || pickBodhiEnglishVoice(allVoices);
     utterance.voice = voice || null;
     utterance.lang = voice?.lang || 'en-IN';
   } else {
-    configureUtterance(utterance, chunk, utterance.text);
+    if (configuredBodhiVoice) {
+      utterance.voice = configuredBodhiVoice;
+      utterance.lang = configuredBodhiVoice.lang || 'hi-IN';
+    } else {
+      configureUtterance(utterance, chunk, utterance.text);
+    }
   }
   utterance.rate = clampRate(rate);
   utterance.pitch = safePitch(BODHI_PITCH);
