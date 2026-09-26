@@ -842,6 +842,149 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
+            {/* Bhūmi Vandanam: The Culture Behind the Knowledge */}
+            <section className="philosophy-section" aria-labelledby="bhumi-vandanam">
+              <h2 id="bhumi-vandanam">The Culture Behind the Knowledge: Bhūmi Vandanam &amp; The Living Ethic of Touch</h2>
+              <p style={{ fontSize: '1.05rem', color: '#78350f', fontWeight: 700, fontStyle: 'italic' }}>
+                “This is part of your training: state of mind and attitude matter, not just the skill.”
+              </p>
+              <p>
+                The knowledge you seek comes from a civilization where you do not step out of bed onto the floor without asking forgiveness from the living earth. 
+                Before the feet touch the ground at dawn, both palms are placed upon the floor. You do not begin the day by trampling reality; you begin with <strong>pāda-sparśa-kṣamāpana</strong> — asking forgiveness for touching the Mother with your feet.
+              </p>
+
+              {/* Bhūmi Vandanam Dual Script Card */}
+              <div className="philosophy-earth-banner">
+                <div style={{ textAlign: 'center', marginBottom: '0.85rem' }}>
+                  <span className="philosophy-verse-source">Morning Bhūmi / Vasundharā Prārthanā · प्रातः स्मरणम्</span>
+                </div>
+
+                <div className="philosophy-dual-script">
+                  <div className="philosophy-script-card">
+                    <span className="philosophy-script-badge">Devanagari (संस्कृतम्)</span>
+                    <div className="philosophy-script-devanagari">
+                      समुद्रवसने देवि पर्वतस्तनमण्डले ।<br />
+                      विष्णुपत्नि नमस्तुभ्यं पादस्पर्शं क्षमस्व मे ॥
+                    </div>
+                  </div>
+
+                  <div className="philosophy-script-card">
+                    <span className="philosophy-script-badge">Telugu Script (తెలుగు లిపి)</span>
+                    <div className="philosophy-script-telugu">
+                      సముద్రవసనే దేవి పర్వతస్తనమణ్డలే ।<br />
+                      విష్ణుపత్ని నమస్తుభ్యం పాదస్పర్శం క్షమస్వ మే ॥
+                    </div>
+                  </div>
+                </div>
+
+                <div className="philosophy-verse-translit" style={{ textAlign: 'center', margin: '0.75rem 0' }}>
+                  samudra-vasane devi parvata-stana-maṇḍale |<br />
+                  viṣṇu-patni namas-tubhyaṃ pāda-sparśaṃ kṣamasva me ||
+                </div>
+
+                <div className="philosophy-verse-english" style={{ textAlign: 'center' }}>
+                  “O Goddess whose garments are the vast oceans, whose bosom is the sacred mountain ranges, O beloved consort of Viṣṇu — I bow to you. Please forgive the touch of my feet upon your sacred body.”
+                </div>
+
+                <div style={{ marginTop: '0.85rem', display: 'flex', justifyContent: 'center' }}>
+                  <AudioChip term="समुद्रवसने देवि पर्वतस्तनमण्डले" label="🔊 Listen to Bhūmi Vandanam" />
+                </div>
+              </div>
+
+              {/* The Living Oral Ethic in Telugu Homes */}
+              <div className="philosophy-telugu-meaning-pill">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                  <span style={{ fontSize: '1.25rem' }}>🌱</span>
+                  <span style={{ fontWeight: 800, color: '#1e3a8a', fontSize: '0.92rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                    The Living Oral Ethic in Telugu Homes
+                  </span>
+                </div>
+                <div className="philosophy-telugu-meaning-text">
+                  చేతితో గానీ, కాలితో గానీ, ఏ విధంగానైనా భూమిని హింసించవద్దు.
+                </div>
+                <p style={{ margin: 0, color: '#1e293b', fontSize: '0.95rem', lineHeight: 1.5 }}>
+                  <em>“By hand, by foot, or by any means whatsoever — do not commit violence (hiṃsā) against the Earth.”</em><br />
+                  That sentence is the living soul of the teaching. The verse that carries it across generations is <strong>pāda-sparśaṃ kṣamasva me</strong>.
+                </p>
+              </div>
+
+              {/* Companion Verses: Taking Soil & Walking */}
+              <h3 style={{ margin: '1.75rem 0 0.5rem', color: '#78350f', fontSize: '1.15rem', fontWeight: 800 }}>
+                Walking &amp; Taking Soil: The Invocations of Vasundharā (वसुन्धरा)
+              </h3>
+              <p>
+                When taking soil or walking upon the earth, traditional practice pairs the morning greeting with the invocation of Vasundharā:
+              </p>
+
+              <div className="philosophy-premise-card philosophy-premise-card--insight">
+                <div className="philosophy-premise-title">
+                  <span>👣</span>
+                  <span>Protection at Every Step (पदे पदे)</span>
+                </div>
+                <p style={{ fontFamily: 'Noto Sans Devanagari', fontSize: '1.05rem', fontWeight: 700, color: '#78350f', margin: '0.35rem 0' }}>
+                  अश्वक्रान्ते रथक्रान्ते विष्णुक्रान्ते वसुन्धरे । शिरसा धारिते देवि रक्षस्व मां पदे पदे ॥
+                </p>
+                <p style={{ fontFamily: 'Noto Sans Telugu', fontSize: '1rem', fontWeight: 600, color: '#1e3a8a', margin: '0.25rem 0' }}>
+                  అశ్వక్రాన్తే రథక్రాన్తే విష్ణుక్రాన్తే వసున్ధరే । శిరసా ధారితే దేవి రక్షస్వ మాం పదే పదే ॥
+                </p>
+                <p style={{ fontStyle: 'italic', color: '#475569', fontSize: '0.92rem', margin: '0.35rem 0 0.65rem' }}>
+                  aśva-krānte ratha-krānte viṣṇu-krānte vasundhare | śirasā dhārite devi rakṣasva māṃ pade pade ||
+                </p>
+                <p style={{ margin: 0, color: '#334155', fontSize: '0.92rem', lineHeight: 1.45 }}>
+                  <em>“O Vasundharā, crossed by horses, chariots, and by the cosmic strides of Viṣṇu — held with devotion upon the head, O Goddess, protect me at every single step.”</em>
+                </p>
+                <div style={{ marginTop: '0.85rem', paddingTop: '0.75rem', borderTop: '1px dashed #e2e8f0' }}>
+                  <p style={{ fontFamily: 'Noto Sans Devanagari', fontSize: '1.02rem', fontWeight: 700, color: '#78350f', margin: '0 0 0.25rem' }}>
+                    मृत्तिके हर मे पापं यन्मया दुष्कृतं कृतम् । मृत्तिके ब्रह्मदत्तासि काश्यपेन अभिमन्त्रिता ॥
+                  </p>
+                  <p style={{ margin: 0, color: '#334155', fontSize: '0.9rem', lineHeight: 1.45 }}>
+                    <em>“O sacred earth (mṛttikā), take away whatever wrong I have done. You were gifted by Brahmā and consecrated by Sage Kaśyapa.”</em>
+                  </p>
+                </div>
+              </div>
+
+              {/* The Īśāvāsya Ethic: Tena Tyaktena Bhuñjīthā */}
+              <div className="philosophy-callout" style={{ borderLeftColor: '#0d9488', background: '#f0fdfa', margin: '1.5rem 0' }}>
+                <p style={{ margin: '0 0 0.35rem', fontWeight: 800, color: '#0f766e', fontSize: '1.05rem' }}>
+                  The Vedic Ethic Behind the Verse: Tena Tyaktena Bhuñjīthā (तेन त्यक्तेन भुञ्जीथाः)
+                </p>
+                <p style={{ margin: 0, color: '#134e4a', fontSize: '0.98rem', lineHeight: 1.6 }}>
+                  The foundational line of the <strong>Īśāvāsya Upaniṣad</strong> speaks the same duty in eternal words: <em>tena tyaktena bhuñjīthā mā gṛdhaḥ</em> — <strong>enjoy by letting go; do not seize; do not covet</strong>. 
+                  Do not do <em>hiṃsā</em> to the earth; receive what she offers without violence, exploitation, or greed.
+                </p>
+              </div>
+
+              {/* Universal Cosmic Peace: Dyauḥ Śāntiḥ */}
+              <div className="philosophy-cosmic-shanti">
+                <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#5eead4', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                    The Universal Cosmic Peace · Śukla Yajurveda 36.17
+                  </span>
+                </div>
+                <div className="philosophy-cosmic-verse">
+                  ॐ द्यौः शान्तिरन्तरिक्षं शान्तिः पृथिवी शान्तिरापः शान्तिरोषधयः शान्तिः ।<br />
+                  वनस्पतयः शान्तिर्विश्वे देवाः शान्तिर्ब्रह्म शान्तिः सर्वं शान्तिः शान्तिरेव शान्तिः सा मा शान्तिरेधि ॥<br />
+                  ॐ शान्तिः शान्तिः शान्तिः ॥
+                </div>
+                <div className="philosophy-cosmic-english">
+                  “May there be peace in the celestial spheres. May there be peace in the intermediate space. May there be peace upon the Earth. May there be peace in the waters, peace in the medicinal herbs, peace in the majestic forest trees. May there be peace in all enlightened beings. May peace reside in Brahman. May peace envelop the entire cosmos. May peace itself be peace. May that very peace awaken within me. Om Peace, Peace, Peace.”
+                </div>
+                <div style={{ textAlign: 'center', marginTop: '0.85rem' }}>
+                  <AudioChip term="द्यौः शान्तिरन्तरिक्षं शान्तिः" label="🔊 Listen to Universal Cosmic Peace" />
+                </div>
+              </div>
+
+              <div className="philosophy-callout" style={{ borderLeftColor: '#d97706', background: '#fffbeb', textAlign: 'center', padding: '1.25rem' }}>
+                <p style={{ margin: '0 0 0.35rem', fontWeight: 800, color: '#9a3412', fontSize: '1.1rem' }}>
+                  Attitude Precedes Skill · भावः प्रधानम्
+                </p>
+                <p style={{ margin: 0, color: '#451a03', fontSize: '1rem', lineHeight: 1.6 }}>
+                  Sanskrit is not an algorithmic trophy or disembodied data syntax. The knowledge was preserved by people who bowed to the earth before walking on her. 
+                  <strong>State of mind and attitude matter, not just the skill.</strong> When grammar is studied with this reverence, learning is transformed from extraction into living communion.
+                </p>
+              </div>
+            </section>
+
             {/* Why Sanskrit is a special case in this age */}
             <section className="philosophy-section" aria-labelledby="special-case">
               <h2 id="special-case">Why Sanskrit Is a Special Case in This Age</h2>
