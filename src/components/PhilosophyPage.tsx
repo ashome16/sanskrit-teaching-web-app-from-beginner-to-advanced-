@@ -513,6 +513,184 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
+            {/* The Two Premises & The Study-Bond: Saha Nāv Avatu */}
+            <section className="philosophy-section" aria-labelledby="study-bond">
+              <h2 id="study-bond">The Two Premises &amp; The Study-Bond: Saha Nāv Avatu (सह नाववतु)</h2>
+              <p>
+                To understand why the living lineage (<em>paramparā</em>) cannot be substituted by machine generation, we must articulate two foundational premises that governed classical Sanskrit learning for millennia.
+              </p>
+
+              {/* Premise 1 Card */}
+              <div className="philosophy-premise-card philosophy-premise-card--warning">
+                <div className="philosophy-premise-title">
+                  <span>⚠️</span>
+                  <span>Premise 1 — Knowledge without purpose and duty is not only useless. It can be harmful.</span>
+                </div>
+                <p>
+                  Knowledge that is only stored, quoted, or generated is still anyone’s individual content. It has no <em>adhikāra</em> (अधिकार — standing, fitness, answerability).
+                </p>
+                <p style={{ margin: '0.4rem 0 0.2rem', fontWeight: 700, color: '#991b1b' }}>Then it can:</p>
+                <ul>
+                  <li><strong>be repeated without care:</strong> syllables uttered mechanically without awareness of their weight.</li>
+                  <li><strong>be displayed as display:</strong> intellect flaunted as ornamental prestige rather than lived realization.</li>
+                  <li><strong>be turned into a slogan:</strong> profound metaphysical truths reduced to superficial brand phrases.</li>
+                  <li><strong>be used as fluent error:</strong> a machine model or scholar that sounds completely sure while being spiritually vacant.</li>
+                </ul>
+                <p>
+                  <strong>Speech without obligation is how a mantra becomes chatter and a verse becomes a weapon.</strong>
+                </p>
+                <p style={{ margin: 0, color: '#4b5563', fontSize: '0.92rem' }}>
+                  Understanding is not more information. It is knowing what the knowledge is for, and answering for how it is used. This is the exact hinge of our age: transfer without bind; syllables without duty; AI as recipient–processor–exporter with no life staked on the meaning.
+                </p>
+              </div>
+
+              {/* Premise 2 Card */}
+              <div className="philosophy-premise-card philosophy-premise-card--insight">
+                <div className="philosophy-premise-title">
+                  <span>✨</span>
+                  <span>Premise 2 — Knowledge is not finished when it is scholarly.</span>
+                </div>
+                <p>
+                  Pedantry can keep Sanskrit as a dataset and never enter it as a way of standing in the world.
+                </p>
+                <p style={{ margin: '0.4rem 0 0.2rem', fontWeight: 700, color: '#92400e' }}>
+                  The older aim was not only to be correct about a sūtra. It was to become a mindful part of cosmic existence (<em>ṛta</em>):
+                </p>
+                <ul>
+                  <li><strong>speech bound to breath:</strong> physical acoustic resonance aligning the nervous system.</li>
+                  <li><strong>thought bound to purpose:</strong> intention purified before the syllable is uttered.</li>
+                  <li><strong>the person bound to what the sound demands:</strong> ethical and spiritual alignment with truth.</li>
+                </ul>
+                <p style={{ margin: 0, color: '#4b5563', fontSize: '0.92rem' }}>
+                  Scholarship is a tool on that path. It is not the destination. That is the <em>ṛṣi’s</em> inner seeing, the temple as tool, <em>japa</em> as empirical experiment — not a footnote apparatus.
+                </p>
+              </div>
+
+              {/* Comparative Table: Without vs With the Premises */}
+              <div className="philosophy-table-wrap">
+                <table className="philosophy-table">
+                  <thead>
+                    <tr>
+                      <th>Article Layer</th>
+                      <th>Without the Premises</th>
+                      <th>With the Premises</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>AI / Transfer</strong></td>
+                      <td>Fast, useful gloss</td>
+                      <td>Dangerous if treated as enough; fluent error without soul</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Bind / Mouth</strong></td>
+                      <td>Physical presence</td>
+                      <td>Presence still needs purposeful intention and living restraint</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Guru (गुरु)</strong></td>
+                      <td>Living constraint</td>
+                      <td>Confers duty and responsibility, not merely extra data</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Adhikāra (अधिकार)</strong></td>
+                      <td>Eligibility jargon</td>
+                      <td>The conscious standing that makes knowledge answerable</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Sanskrit Study</strong></td>
+                      <td>Grammar rules + verses</td>
+                      <td>Grammar in service of conscious cosmic participation</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* The Śānti Mantra: Saha Nāv Avatu Banner */}
+              <div className="philosophy-verse-banner">
+                <div className="philosophy-verse-sanskrit">
+                  ॐ सह नाववतु । सह नौ भुनक्तु । सह वीर्यं करवावहै ।<br />
+                  तेजस्वि नावधीतमस्तु मा विद्विषावहै ।<br />
+                  ॐ शान्तिः शान्तिः शान्तिः ॥
+                </div>
+                <div className="philosophy-verse-translit">
+                  om saha nāv avatu | saha nau bhunaktu | saha vīryaṃ karavāvahai |<br />
+                  tejasvi nāv adhītam astu mā vidviṣāvahai |<br />
+                  om śāntiḥ śāntiḥ śāntiḥ
+                </div>
+                <div className="philosophy-verse-english">
+                  “Om. May that protect us both. May that nourish us both. May we work together with energy. May our study be brilliant. May we not quarrel. Om, peace, peace, peace.”
+                </div>
+                <div style={{ marginTop: '0.75rem', display: 'flex', justifyContent: 'center', gap: '0.5rem', alignItems: 'center' }}>
+                  <AudioChip term="सह नाववतु" label="🔊 Listen to Invocation" />
+                  <span className="philosophy-verse-source">Taittirīya &amp; Kaṭha Upaniṣad Śānti Mantra</span>
+                </div>
+              </div>
+
+              {/* Structured Binding Table */}
+              <p>
+                Look at how every single phrase in this study covenant binds teacher, student, and knowledge together:
+              </p>
+              <div className="philosophy-table-wrap">
+                <table className="philosophy-table">
+                  <thead>
+                    <tr>
+                      <th>Line (पदम्)</th>
+                      <th>What It Binds (सम्बन्धः)</th>
+                      <th>Living Covenant vs. Machine Download</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><em>saha nāv avatu</em><br /><small style={{ color: '#64748b' }}>सह नाववतु</small></td>
+                      <td><strong>Protection is shared</strong></td>
+                      <td>Not a solo download. Protection is not a firewall around private files; it is shelter for a living relationship.</td>
+                    </tr>
+                    <tr>
+                      <td><em>saha nau bhunaktu</em><br /><small style={{ color: '#64748b' }}>सह नौ भुनक्तु</small></td>
+                      <td><strong>Nourishment is shared</strong></td>
+                      <td>Knowledge as food, not cargo. Cargo is shifted across drives without changing the carrier; food metabolizes into living consciousness.</td>
+                    </tr>
+                    <tr>
+                      <td><em>saha vīryaṃ karavāvahai</em><br /><small style={{ color: '#64748b' }}>सह वीर्यं करवावहै</small></td>
+                      <td><strong>Effort is shared</strong></td>
+                      <td>Guru and student under one shared work and heat (<em>tapas</em>). AI can generate drills, but it cannot enter <em>karavāvahai</em> (dual verb: we two shall do).</td>
+                    </tr>
+                    <tr>
+                      <td><em>tejasvi nāv adhītam astu</em><br /><small style={{ color: '#64748b' }}>तेजस्वि नावधीतमस्तु</small></td>
+                      <td><strong>Study should shine</strong></td>
+                      <td>Not pedantry, not a dead dataset. Knowledge finished only when it participates in life, not when it is merely footnoted.</td>
+                    </tr>
+                    <tr>
+                      <td><em>mā vidviṣāvahai</em><br /><small style={{ color: '#64748b' }}>मा विद्विषावहै</small></td>
+                      <td><strong>No hostility</strong></td>
+                      <td>Knowledge without duty turns easily into contempt or weaponized debate; this line proactively forbids and dissolves that turn before the lesson begins.</td>
+                    </tr>
+                    <tr>
+                      <td><em>śāntiḥ × 3</em><br /><small style={{ color: '#64748b' }}>ॐ शान्तिः शान्तिः शान्तिः</small></td>
+                      <td><strong>The field must stay clear</strong></td>
+                      <td>Threefold peace guarding the speaking body (<em>ādhyātmika</em>), the teacher-student bond (<em>ādhibhautika</em>), and the cosmic world (<em>ādhidaivika</em>).</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* The Inescapable Dual Callout */}
+              <div className="philosophy-callout" style={{ borderLeftColor: '#0f766e', background: '#f0fdfa', margin: '1.25rem 0' }}>
+                <p style={{ margin: '0 0 0.45rem', fontWeight: 800, color: '#0f766e', fontSize: '1.1rem' }}>
+                  The Grammar Refuses the Solo User
+                </p>
+                <p style={{ margin: '0 0 0.5rem', color: '#134e4a', fontSize: '1rem', lineHeight: 1.6 }}>
+                  It is the direct opposite of “anyone’s individual content.” The first word is <strong>saha</strong> (सह — together).
+                  The Sanskrit grammar is strictly dual throughout (<em>nau, nāv, karavāvahai, vidviṣāvahai</em>).
+                  The mantra refuses the isolated user before a single lesson starts.
+                </p>
+                <p style={{ margin: 0, color: '#134e4a', fontSize: '1rem', lineHeight: 1.6, fontStyle: 'italic' }}>
+                  Purpose and duty are spoken before the lesson, so speech does not start as a private file and does not end as quarrel. A language model can print this mantra in a fraction of a second. It cannot stand inside saha. It has no dual. That is the guru–śiṣya bond.
+                </p>
+              </div>
+            </section>
+
             {/* Why Sanskrit is a special case in this age */}
             <section className="philosophy-section" aria-labelledby="special-case">
               <h2 id="special-case">Why Sanskrit Is a Special Case in This Age</h2>

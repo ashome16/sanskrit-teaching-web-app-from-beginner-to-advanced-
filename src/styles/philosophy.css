@@ -807,4 +807,155 @@
   }
 }
 
+/* =========================================================================
+   STUDY-BOND (SAHA NĀV AVATU) & PREMISE COMPONENTS
+   ========================================================================= */
+
+.philosophy-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.25rem 0 1.75rem;
+  border-radius: 12px;
+  border: 1.5px solid #ebdcc5;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.philosophy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.philosophy-table th {
+  background: #fdf5ea;
+  color: #78350f;
+  font-weight: 800;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1rem;
+  border-bottom: 2px solid #ebdcc5;
+  white-space: nowrap;
+}
+
+.philosophy-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #f3ece1;
+  color: #334155;
+  vertical-align: top;
+}
+
+.philosophy-table tr:last-child td {
+  border-bottom: none;
+}
+
+.philosophy-table tr:nth-child(even) {
+  background: #fdfbf7;
+}
+
+.philosophy-table td strong {
+  color: #0f172a;
+}
+
+.philosophy-table td em {
+  color: #9a3412;
+  font-style: normal;
+  font-weight: 700;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.philosophy-verse-banner {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 16px;
+  padding: 1.5rem 1.35rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.12);
+  text-align: center;
+}
+
+.philosophy-verse-sanskrit {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: clamp(1.15rem, 3vw, 1.45rem);
+  font-weight: 800;
+  color: #78350f;
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+}
+
+.philosophy-verse-translit {
+  font-family: Georgia, serif;
+  font-size: 0.96rem;
+  font-style: italic;
+  color: #92400e;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.philosophy-verse-english {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #451a03;
+  line-height: 1.55;
+  max-width: 600px;
+  margin: 0 auto 0.85rem;
+}
+
+.philosophy-verse-source {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #b45309;
+  background: #ffffff;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid #fde68a;
+}
+
+.philosophy-premise-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-left: 4px solid #0f766e;
+  border-radius: 12px;
+  padding: 1.15rem 1.25rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.philosophy-premise-card--warning {
+  border-left-color: #dc2626;
+  background: #fffafa;
+}
+
+.philosophy-premise-card--insight {
+  border-left-color: #d97706;
+  background: #fffdf8;
+}
+
+.philosophy-premise-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.philosophy-premise-card ul {
+  margin: 0.5rem 0 0.75rem;
+  padding-left: 1.25rem;
+  color: #475569;
+}
+
+.philosophy-premise-card li {
+  margin-bottom: 0.35rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+
 
