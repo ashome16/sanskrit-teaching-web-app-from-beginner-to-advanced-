@@ -16,9 +16,13 @@ export interface DarshanaSutra {
   transliteration: string;
   meaning: string;
   source: string;
+  /** Render with the recitation player (see src/data/mantrasShlokas.ts). */
+  mantraId?: string;
 }
 
 export interface DarshanaSection {
+  /** Optional DOM id (deep-link anchor inside the unit). */
+  anchorId?: string;
   heading: string;
   subheading?: string;
   paragraphs: string[];
@@ -32,11 +36,15 @@ export interface DarshanaSection {
     rows: string[][];
   };
   sutras?: DarshanaSutra[];
+  /** Optional button to another addendum unit. */
+  addendumLink?: { label: string; addendumId: string };
 }
 
 export interface DarshanaAddendumArticle {
   id: string;
   partNumber: number;
+  /** Sidebar / meta label override (e.g. 'Companion'); default Prologue / Part N. */
+  partLabel?: string;
   slug: string;
   titleDevanagari: string;
   titleEnglish: string;
@@ -228,19 +236,15 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
       },
       {
         heading: 'The Culture Behind the Knowledge: Bhūmi Vandanam & The Living Ethic of Touch',
-        subheading: 'Pāda-sparśa-kṣamāpana, the Living Telugu Ethic, and Cosmic Peace',
+        subheading: 'Pāda-sparśa-kṣamāpana · Attitude Before Skill',
         paragraphs: [
           'This is part of your training: state of mind and inner attitude matter, not just technical skill.',
-          'The knowledge you seek comes from a civilization where you do not step out of bed onto the floor without asking forgiveness from the living earth. Before the feet touch the ground at dawn, both palms are placed upon the earth. You do not begin the day by trampling reality; you begin with pāda-sparśa-kṣamāpana (asking forgiveness for touching the Mother with your feet):',
-          '• Devanagari:\nसमुद्रवसने देवि पर्वतस्तनमण्डले ।\nविष्णुपत्नि नमस्तुभ्यं पादस्पर्शं क्षमस्व मे ॥',
-          '• Telugu Script:\nసముద్రవసనే దేవి పర్వతస్తనమణ్డలే ।\nవిష్ణుపత్ని నమస్తుభ్యం పాదస్పర్శం క్షమస్వ మే ॥',
-          '• Meaning:\n“O Goddess whose garments are the vast oceans, whose bosom is the sacred mountain ranges, O wife of Viṣṇu — I bow to you. Forgive my touching you with my feet.”',
-          'In Telugu homes, every child grows up with this oral gloss: “చేతితో గానీ, కాలితో గానీ, ఏ విధంగానైనా భూమిని హింసించవద్దు” (By hand, by foot, or by any means whatsoever — do not commit violence against the earth). That sentence is the meaning; the śloka that carries it is pāda-sparśaṃ kṣamasva me.',
-          'When taking soil or walking upon the earth, tradition pairs it with the invocation of Vasundharā:\n“अश्वक्रान्ते रथक्रान्ते विष्णुक्रान्ते वसुन्धरे । शिरसा धारिते देवि रक्षस्व मां पदे पदे ॥”\n(అశ్వక్రాన్తే రథక్రాన్తే విష్ణుక్రాన్తే వసున్ధరే । శిరసా ధారితే దేవి రక్షస్వ మాం పదే పదే ॥)\n“O Vasundharā, crossed by horses, chariots, and the cosmic strides of Viṣṇu — held upon the head with reverence, protect me at every single step.”',
-          'The Vedic ethic behind this is the immortal line of the Īśāvāsya Upaniṣad: “tena tyaktena bhuñjīthā mā gṛdhaḥ” (तेन त्यक्तेन भुञ्जीथा मा गृधः) — enjoy by letting go; do not seize; do not do hiṃsā to the earth; use what she gives without violence or waste.',
-          'And in the Śukla Yajurveda (36.17), peace is not an insular psychological mood, but cosmic harmony spanning all existence:\n“ॐ द्यौः शान्तिरन्तरिक्षं शान्तिः पृथिवी शान्तिरापः शान्तिरोषधयः शान्तिः । वनस्पतयः शान्तिर्विश्वे देवाः शान्तिर्ब्रह्म शान्तिः सर्वं शान्तिः शान्तिरेव शान्तिः सा मा शान्तिरेधि ॥ ॐ शान्तिः शान्तिः शान्तिः ॥”\n“Peace in heaven, mid-space, earth, waters, herbs, trees, the gods, Brahman, everything — may that peace be mine.”\n(Notice the order: peace does not start with the ego; only when the entire cosmos is held in balance does the seeker ask: sā mā śāntir edhi — may that peace be mine).',
-          'Without this attitude, Sanskrit becomes an analytical toy or empty data manipulation. With this attitude, study becomes a mindful participation in the living cosmic order.',
+          'The knowledge you seek comes from a civilization where you do not step out of bed onto the floor without asking forgiveness from the living earth. Before the feet touch the ground at dawn, both palms are placed upon the earth: pāda-sparśaṃ kṣamasva me — forgive me the touch of my feet.',
+          'The oral gloss many of us grew up with at home says it plainly: by hand, by foot, or by any means whatsoever — do not do violence (hiṃsā) to the earth. The Īśāvāsya Upaniṣad gives the same duty its Vedic form: tena tyaktena bhuñjīthā mā gṛdhaḥ — enjoy by letting go; do not seize. And the Yajurveda’s peace does not start with the ego: it moves through sky, waters, herbs and trees before the seeker asks, sā mā śāntir edhi — may that peace be mine.',
+          'The full verses — Bhūmi Vandanam, the Vasundharā and Mṛttikā mantras, Īśāvāsya 1 and Dyauḥ Śāntiḥ — are in the companion unit “मन्त्राः श्लोकाश्च · Mantras & Ślokas”, each with line-by-line recitation.',
+          'Without this attitude, Sanskrit becomes an analytical toy or empty data manipulation. With it, study becomes a mindful participation in the living cosmic order.',
         ],
+        addendumLink: { label: '🪔 Open Mantras & Ślokas — recite them line by line', addendumId: 'addendum-mantras-shlokas' },
         callout: {
           title: 'Attitude Precedes Skill',
           text: '“Sanskrit is not a disembodied skill. State of mind and attitude matter, not just dexterity. The knowledge comes from a culture where you bow to the earth with your palms before your feet dare to touch her.”',
@@ -278,11 +282,126 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
       'Knowledge without purpose and duty turns into harm (mā vidviṣāvahai disarms the mind before doctrine inflames the ego).',
       'Saha nāv avatu is grammatically dual throughout—refusing the solo user and transforming a download into a living covenant.',
       'State of mind and attitude matter, not just skill: Bhūmi Vandanam (pāda-sparśaṃ kṣamasva me) establishes reverence before taking the first step.',
-      'The living oral ethic (“చేతితో గానీ, కాలితో గానీ, ఏ విధంగానైనా భూమిని హింసించవద్దు”) grounds study in the Īśāvāsya rule: tena tyaktena bhuñjīthā (enjoy without seizing).',
+      'The living oral ethic — by hand, by foot, or by any means, do not harm the earth — grounds study in the Īśāvāsya rule: tena tyaktena bhuñjīthā (enjoy without seizing).',
       'The cosmic peace of Yajurveda (Dyauḥ śāntiḥ) encompasses sky, earth, waters, herbs, and trees—placing the learner within cosmic order.',
       'Speech is a collective resource: the Well (saha nau bhunaktu) gives nourishment, and the Bank (saha vīryaṃ karavāvahai) demands the deposit of breath, tapas, and care.',
       'Adhikāra balances the right to draw and the duty to deposit: leaving the well fuller than one’s thirst, and the bank heavier than one’s name.',
       'Śabda-Brahman is reality as sound: Sanskrit has built-in prayojana (purpose). To learn is to use sound as the real uses sound—held still, answered for, and offered back.',
+    ],
+  },
+
+  // ==========================================
+  // COMPANION: MANTRAS & ŚLOKAS (मन्त्राः श्लोकाश्च)
+  // ==========================================
+  {
+    id: 'addendum-mantras-shlokas',
+    partNumber: 0,
+    partLabel: 'Mantras & Ślokas',
+    slug: 'mantras-and-shlokas',
+    titleDevanagari: 'मन्त्राः श्लोकाश्च — भूमि-वन्दनं शान्ति-पाठश्च',
+    titleEnglish: 'Mantras & Ślokas: Bhūmi Vandanam & Cosmic Peace',
+    subtitle: 'Recite, Don’t Just Read · The Verses Behind the Study-Bond, the Ethic of Touch, and the Universal Peace',
+    readingTimeMinutes: 6,
+    kicker: 'Course Addendum · Companion to the Prologue · Recitation Practice',
+    summary:
+      'The verses that frame the Gurukul way of study, gathered in one place so they can be spoken, not only read. Each is recited line by line by the same calm recitation voice: tap a line to hear it, or recite the whole verse. Say them slowly, with the breath, as lesson 6.1 (Recitation and Focus) teaches — the attitude is part of the training.',
+    sections: [
+      {
+        anchorId: 'mantra-saha-navavatu',
+        heading: 'ओं सह नाववतु — The Study-Bond (in the Prologue)',
+        subheading: 'Taittirīya Upaniṣad 2.2 · Said Together Before Every Lesson',
+        paragraphs: [
+          'The first mantra of the path is the study-bond itself: protection, nourishment, effort and brilliance asked for “us both”, and hostility refused before the lesson begins. Its recitation player, word-by-word meanings and line-by-line exegesis live in the Prologue.',
+        ],
+        addendumLink: { label: '🤝 Recite सह नाववतु in the Prologue', addendumId: 'addendum-prologue-saha-nav-avatu' },
+      },
+      {
+        anchorId: 'mantra-bhumi-vandanam',
+        heading: 'भूमि-वन्दनम् — Bhūmi Vandanam at Dawn',
+        subheading: 'Pāda-sparśa-kṣamāpana · Asking Forgiveness Before the Feet Touch the Ground',
+        paragraphs: [
+          'Before stepping out of bed, both palms are placed on the floor and this verse is said. You do not begin the day by trampling reality; you begin by asking the Mother’s forgiveness for the touch of your feet.',
+        ],
+        sutras: [
+          {
+            mantraId: 'bhumi-vandanam',
+            sanskrit: 'समुद्रवसने देवि पर्वतस्तनमण्डले । विष्णुपत्नि नमस्तुभ्यं पादस्पर्शं क्षमस्व मे ॥',
+            transliteration: 'samudravasane devi parvatastanamaṇḍale | viṣṇupatni namastubhyaṃ pādasparśaṃ kṣamasva me ||',
+            meaning: 'O Goddess whose garment is the ocean and whose bosom is the mountain ranges, O consort of Viṣṇu — I bow to you. Forgive me for touching you with my feet.',
+            source: 'Traditional morning prayer (prātaḥ-smaraṇa)',
+          },
+        ],
+        callout: {
+          title: 'The Oral Gloss',
+          text: '“By hand, by foot, or by any means whatsoever — do not do violence to the earth.” That sentence is the meaning; the verse that carries it across generations is pāda-sparśaṃ kṣamasva me.',
+          type: 'insight',
+        },
+      },
+      {
+        anchorId: 'mantra-vasundhara',
+        heading: 'वसुन्धरा-मृत्तिका — Walking On and Taking Up the Earth',
+        subheading: 'Taittirīya Āraṇyaka 10.1 (Mahānārāyaṇa Upaniṣad)',
+        paragraphs: [
+          'When walking upon the earth or taking up soil, tradition pairs the dawn greeting with these lines to Vasundharā — the bearer of wealth — and to Mṛttikā, the earth taken in the hand.',
+        ],
+        sutras: [
+          {
+            mantraId: 'vasundhara-mrttika',
+            sanskrit: 'अश्वक्रान्ते रथक्रान्ते विष्णुक्रान्ते वसुन्धरे । शिरसा धारयिष्यामि रक्षस्व मां पदे पदे ॥ मृत्तिके हन मे पापं यन्मया दुष्कृतं कृतम् । मृत्तिके ब्रह्मदत्तासि काश्यपेनाभिमन्त्रिता । मृत्तिके देहि मे पुष्टिं त्वयि सर्वं प्रतिष्ठितम् ॥',
+            transliteration: 'aśvakrānte rathakrānte viṣṇukrānte vasundhare | śirasā dhārayiṣyāmi rakṣasva māṃ pade pade || mṛttike hana me pāpaṃ yanmayā duṣkṛtaṃ kṛtam | mṛttike brahmadattāsi kāśyapenābhimantritā | mṛttike dehi me puṣṭiṃ tvayi sarvaṃ pratiṣṭhitam ||',
+            meaning: 'O Vasundharā, trodden by horses, chariots and the strides of Viṣṇu — I shall bear you upon my head; protect me at every step. O Earth, strike away the wrong I have done; you are Brahmā’s gift, consecrated by Kāśyapa; grant me nourishment — in you everything is established.',
+            source: 'Taittirīya Āraṇyaka 10.1',
+          },
+        ],
+      },
+      {
+        anchorId: 'mantra-ishavasya',
+        heading: 'ईशा वास्यमिदं सर्वम् — The Ethic Behind the Verses',
+        subheading: 'Īśāvāsya Upaniṣad 1 · Tena Tyaktena Bhuñjīthāḥ',
+        paragraphs: [
+          'The Bhūmi verse speaks the duty with the body; the Īśāvāsya speaks it as principle: receive what is given without violence, exploitation or greed. This is the Well and the Bank of the Prologue in one line — use without seizing.',
+        ],
+        sutras: [
+          {
+            mantraId: 'ishavasya',
+            sanskrit: 'ईशा वास्यमिदं सर्वं यत्किञ्च जगत्यां जगत् । तेन त्यक्तेन भुञ्जीथा मा गृधः कस्यस्विद्धनम् ॥',
+            transliteration: 'īśā vāsyam idaṃ sarvaṃ yat kiñca jagatyāṃ jagat | tena tyaktena bhuñjīthā mā gṛdhaḥ kasyasvid dhanam ||',
+            meaning: 'All this, whatever moves in the moving world, is pervaded by the Lord. Enjoy by letting go; do not seize — whose, indeed, is wealth?',
+            source: 'Īśāvāsya Upaniṣad 1',
+          },
+        ],
+      },
+      {
+        anchorId: 'mantra-dyauh-shanti',
+        heading: 'ॐ द्यौः शान्तिः — The Universal Cosmic Peace',
+        subheading: 'Śukla Yajurveda 36.17 · Peace That Does Not Begin With the Ego',
+        paragraphs: [
+          'Notice the order. Peace descends from the sky (dyauḥ) through the mid-space (antarikṣam), anchors in the earth (pṛthivī), fills the waters (āpaḥ), the healing herbs (oṣadhayaḥ) and the trees (vanaspatayaḥ), spans the divine powers (viśve devāḥ) and Brahman — and only then does the seeker whisper sā mā śāntir edhi: may that peace come to me.',
+          'Individual peace cannot exist in isolation; it is the natural consequence of cosmic alignment. The closing triple śāntiḥ is the same threefold clearing the Prologue describes — in the body, between beings, and in what no one controls.',
+        ],
+        sutras: [
+          {
+            mantraId: 'dyauh-shanti',
+            sanskrit: 'ॐ द्यौः शान्तिरन्तरिक्षं शान्तिः पृथिवी शान्तिरापः शान्तिरोषधयः शान्तिः । वनस्पतयः शान्तिर्विश्वे देवाः शान्तिर्ब्रह्म शान्तिः सर्वं शान्तिः शान्तिरेव शान्तिः सा मा शान्तिरेधि ॥ ॐ शान्तिः शान्तिः शान्तिः ॥',
+            transliteration: 'oṃ dyauḥ śāntir antarikṣaṃ śāntiḥ pṛthivī śāntir āpaḥ śāntir oṣadhayaḥ śāntiḥ | vanaspatayaḥ śāntir viśve devāḥ śāntir brahma śāntiḥ sarvaṃ śāntiḥ śāntir eva śāntiḥ sā mā śāntir edhi || oṃ śāntiḥ śāntiḥ śāntiḥ ||',
+            meaning: 'Peace in the sky, in the mid-space, on the earth, in the waters, in the herbs, in the trees, in all the divine powers, in Brahman — peace in everything, peace itself. May that peace be mine.',
+            source: 'Śukla Yajurveda 36.17',
+          },
+        ],
+        callout: {
+          title: 'How to Practise',
+          text: 'Recite one verse a day, slowly, with a long exhale at each daṇḍa. Then sit in silence for thirty seconds. Tap a single line to hear it again until the mouth knows it — this is the “one inefficient practice” the Darśana essay asks you to keep.',
+          type: 'philosophical',
+        },
+      },
+    ],
+    keyTakeaways: [
+      'Mantras are for the mouth, not only the eye: recite each line with the breath, then the whole verse.',
+      'ओं सह नाववतु (in the Prologue) sets the study-bond; Bhūmi Vandanam sets the attitude before the first step of the day.',
+      'Bhūmi Vandanam: samudravasane devi … pāda-sparśaṃ kṣamasva me — ask forgiveness before your feet touch the earth.',
+      'Vasundharā & Mṛttikā (Taittirīya Āraṇyaka 10.1): protect me at every step; grant me nourishment — in you everything is established.',
+      'Īśāvāsya 1: tena tyaktena bhuñjīthā mā gṛdhaḥ — use without seizing.',
+      'Dyauḥ Śāntiḥ (Yajurveda 36.17): peace moves through sky, waters, herbs and trees before it is asked for oneself — sā mā śāntir edhi.',
     ],
   },
 

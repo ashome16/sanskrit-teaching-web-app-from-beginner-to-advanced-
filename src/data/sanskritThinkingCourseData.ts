@@ -22,7 +22,7 @@ export interface CourseQuizQuestion {
 
 export interface CourseLinkedResource {
   label: string;
-  targetView: 'reader' | 'varnamala' | 'grammar' | 'dhatupatha' | 'vedic-maths' | 'philosophy' | 'worksheets' | 'quiz' | 'board' | 'home' | 'cbse-guide';
+  targetView: 'reader' | 'varnamala' | 'grammar' | 'dhatupatha' | 'vedic-maths' | 'philosophy' | 'worksheets' | 'quiz' | 'board' | 'home' | 'cbse-guide' | 'course-addendum';
   param?: string; // e.g. chapterId 'gsde101' or grammar articleId 'shiksha-sound-anatomy'
   badge: string;
 }
@@ -1829,6 +1829,7 @@ export const COURSE_MODULES: CourseModule[] = [
           modernInsight: 'Ancient chant masters discovered physiological biofeedback thousands of years before electronic monitors existed.'
         },
         linkedResources: [
+          { label: 'मन्त्राः श्लोकाश्च · Mantras & Ślokas — Bhūmi Vandanam & Cosmic Peace', targetView: 'course-addendum', param: 'addendum-mantras-shlokas', badge: 'Recite' },
           { label: 'Deepakam Prārthanā Audio Recitation', targetView: 'reader', badge: 'Prayer Audio' },
           { label: 'Philosophy: Evolution of the Speaking Body', targetView: 'philosophy', badge: 'Essay' }
         ]

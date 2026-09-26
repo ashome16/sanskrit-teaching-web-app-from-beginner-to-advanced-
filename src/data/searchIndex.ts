@@ -33,6 +33,8 @@ export interface SearchTarget {
     | 'article';
   grammarArticleId?: string;
   lessonId?: string;
+  /** Course Addendum unit to open (view: 'course'), e.g. 'addendum-mantras-shlokas'. */
+  courseAddendumId?: string;
   mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero';
   worksheetsCategory?: string;
   openBodhi?: boolean;
@@ -2431,6 +2433,57 @@ export const SEARCH_INDEX: SearchItem[] = [
     ],
     target: {
       view: 'course',
+      courseAddendumId: 'addendum-prologue-saha-nav-avatu',
+    },
+  },
+  {
+    id: 'addendum-mantras-shlokas',
+    title: 'मन्त्राः श्लोकाश्च · Mantras & Ślokas — Bhūmi Vandanam & Cosmic Peace',
+    subtitle: 'Course Addendum · Line-by-line recitation: Bhūmi Vandanam, Vasundharā & Mṛttikā, Īśāvāsya 1, Dyauḥ Śāntiḥ (+ सह नाववतु in the Prologue)',
+    category: 'guides',
+    categoryLabel: 'Course Addendum',
+    badgeEmoji: '🪔',
+    badgeColor: '#b45309',
+    description:
+      'Recite the verses behind the Gurukul way of study with a calm recitation voice: tap a line or recite the whole verse. समुद्रवसने देवि (Bhūmi Vandanam), अश्वक्रान्ते रथक्रान्ते, ईशा वास्यमिदं सर्वम्, ॐ द्यौः शान्तिः (Yajurveda 36.17).',
+    keywords: [
+      'mantra',
+      'mantras',
+      'shloka',
+      'sloka',
+      'shlokas',
+      'recitation',
+      'bhumi vandanam',
+      'bhoomi vandanam',
+      'bhumi mantra',
+      'samudra vasane devi',
+      'samudravasane',
+      'pada sparsham kshamasva me',
+      'vasundhara',
+      'ashvakrante rathakrante',
+      'mrittike',
+      'ishavasya',
+      'isavasya',
+      'tena tyaktena bhunjitha',
+      'dyauh shanti',
+      'dyau shanti',
+      'shanti path',
+      'shanti mantra',
+      'cosmic peace',
+      'universal peace',
+      'om shanti shanti shanti',
+      'भूमि वन्दनम्',
+      'समुद्रवसने',
+      'वसुन्धरे',
+      'ईशावास्य',
+      'द्यौः शान्तिः',
+      'शान्ति मन्त्र',
+      'मन्त्र',
+      'श्लोक',
+    ],
+    target: {
+      view: 'course',
+      courseAddendumId: 'addendum-mantras-shlokas',
     },
   },
   {

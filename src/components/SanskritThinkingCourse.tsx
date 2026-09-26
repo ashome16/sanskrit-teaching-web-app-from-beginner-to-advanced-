@@ -14,6 +14,33 @@ import { hasPaidAccess, hasPremiumAccess } from '../utils/premiumAccess';
 import { playPronunciation } from '../utils/pronunciation';
 import { findShantiLineIndex, isShantiMantraText, reciteShantiMantra } from '../utils/shantiMantraSpeech';
 import ShantiMantraPlayer from './ShantiMantraPlayer';
+import { MANTRAS_ADDENDUM_ID, MANTRAS_BY_ID, MANTRAS_COURSE_HASH } from '../data/mantrasShlokas';
+
+/** Sidebar / nav label for an addendum unit. */
+const addendumPartLabel = (art: DarshanaAddendumArticle): string =>
+  art.partLabel || (art.partNumber === 0 ? 'Prologue' : `Part ${art.partNumber}`);
+
+/**
+ * Course deep links (hash on /course):
+ *   #mantras                 → Mantras & Ślokas unit
+ *   #mantra-<id>             → Mantras & Ślokas unit, scrolled to that verse
+ *   #addendum-<id|slug>      → any addendum unit
+ *   #lesson-<id>             → a curriculum lesson (e.g. #lesson-c-6-1)
+ */
+const parseCourseHash = (): { addendumId?: string; lessonId?: string; anchor?: string } => {
+  if (typeof window === 'undefined') return {};
+  const h = decodeURIComponent((window.location.hash || '').replace(/^#/, '')).trim();
+  if (!h) return {};
+  if (h === MANTRAS_COURSE_HASH) return { addendumId: MANTRAS_ADDENDUM_ID };
+  if (h.startsWith('mantra-')) return { addendumId: MANTRAS_ADDENDUM_ID, anchor: h };
+  if (h.startsWith('lesson-')) return { lessonId: h.slice('lesson-'.length) };
+  if (h.startsWith('addendum-')) {
+    const key = h.slice('addendum-'.length);
+    const art = DARSHANAS_COURSE_ADDENDUM.find((a) => a.id === h || a.id === key || a.slug === key);
+    if (art) return { addendumId: art.id };
+  }
+  return {};
+};
 import '../styles/sanskrit-thinking-course.css';
 
 export interface SanskritThinkingCourseProps {
@@ -55,13 +82,56 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
 }) => {
   const { currentUser, isAdminLoggedIn } = useAuthStore();
   const hasPaid = hasPaidAccess(currentUser, isAdminLoggedIn);
+  const [hashTarget] = useState(parseCourseHash);
   const inTrial = hasPremiumAccess(currentUser, isAdminLoggedIn) && !hasPaid;
 
   // View mode: 'curriculum' (28 Lessons) vs 'addendum' (4 Foundational Essays)
-  const [viewMode, setViewMode] = useState<'curriculum' | 'addendum'>(initialMode);
-  const [activeAddendumId, setActiveAddendumId] = useState<string>(
-    initialAddendumId || DARSHANAS_COURSE_ADDENDUM[0].id
+  const [viewMode, setViewMode] = useState<'curriculum' | 'addendum'>(
+    hashTarget.addendumId || initialAddendumId ? 'addendum' : hashTarget.lessonId ? 'curriculum' : initialMode
   );
+  const [activeAddendumId, setActiveAddendumId] = useState<string>(
+    hashTarget.addendumId || initialAddendumId || DARSHANAS_COURSE_ADDENDUM[0].id
+  );
+
+  const openAddendum = (addendumId: string) => {
+    setViewMode('addendum');
+    setActiveAddendumId(addendumId);
+    window.scrollTo({ top: 380, behavior: 'smooth' });
+  };
+
+  // Scroll to the deep-linked unit / verse once it has rendered.
+  useEffect(() => {
+    if (!hashTarget.addendumId && !initialAddendumId && !hashTarget.lessonId) return;
+    const t = setTimeout(() => {
+      const el =
+        (hashTarget.anchor && document.getElementById(hashTarget.anchor)) ||
+        document.querySelector('.stc-addendum-article, .stc-lesson-main, main');
+      el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 350);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Keep a shareable hash for the Mantras & Ślokas unit (after the parent's URL sync).
+  useEffect(() => {
+    const t = setTimeout(() => {
+    try {
+      const onCourse = /^\/(course|sanskrit-thinking|sanskrit-as-a-way-of-thinking|samskrta-cintanam)\/?$/.test(window.location.pathname);
+      if (!onCourse) return;
+      const wantMantras = viewMode === 'addendum' && activeAddendumId === MANTRAS_ADDENDUM_ID;
+      const hash = window.location.hash.replace(/^#/, '');
+      const isMantraHash = hash === MANTRAS_COURSE_HASH || hash.startsWith('mantra-');
+      if (wantMantras && !isMantraHash) {
+        window.history.replaceState(window.history.state, '', `${window.location.pathname}#${MANTRAS_COURSE_HASH}`);
+      } else if (!wantMantras && isMantraHash) {
+        window.history.replaceState(window.history.state, '', window.location.pathname);
+      }
+    } catch {
+      /* ignore */
+    }
+    }, 0);
+    return () => clearTimeout(t);
+  }, [viewMode, activeAddendumId]);
 
   // Flatten all lessons for easy sequential indexing
   const allLessons = useMemo(() => {
@@ -70,16 +140,18 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
 
   // Active module & lesson state
   const [activeModuleId, setActiveModuleId] = useState<string>(() => {
-    if (initialLessonId) {
-      const found = COURSE_MODULES.find((m) => m.lessons.some((l) => l.id === initialLessonId));
+    const wantLesson = hashTarget.lessonId || initialLessonId;
+    if (wantLesson) {
+      const found = COURSE_MODULES.find((m) => m.lessons.some((l) => l.id === wantLesson));
       if (found) return found.id;
     }
     return COURSE_MODULES[0].id;
   });
 
   const [activeLessonId, setActiveLessonId] = useState<string>(() => {
-    if (initialLessonId && allLessons.some((l) => l.id === initialLessonId)) {
-      return initialLessonId;
+    const wantLesson = hashTarget.lessonId || initialLessonId;
+    if (wantLesson && allLessons.some((l) => l.id === wantLesson)) {
+      return wantLesson;
     }
     return COURSE_MODULES[0].lessons[0].id;
   });
@@ -195,6 +267,9 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
 
   const handleLinkedResourceClick = (res: { targetView: string; param?: string }) => {
     switch (res.targetView) {
+      case 'course-addendum':
+        if (res.param) openAddendum(res.param);
+        break;
       case 'varnamala':
         onOpenVarnamala?.();
         break;
@@ -337,7 +412,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
             onClick={() => setViewMode('addendum')}
           >
             <span>🪔</span>
-            <span>Course Addendum: 4 Foundational Essays · Shad Darshanas & Sāṅkhya (४ अनुबन्धाः)</span>
+            <span>Course Addendum: Prologue, Mantras &amp; Ślokas, 4 Foundational Essays (अनुबन्धाः)</span>
           </button>
         </div>
 
@@ -702,7 +777,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                     }}
                   >
                     <div className="stc-addendum-part-tag">
-                      {art.partNumber === 0 ? 'Prologue' : `Part ${art.partNumber}`} · {art.readingTimeMinutes} min
+                      {addendumPartLabel(art)} · {art.readingTimeMinutes} min
                     </div>
                     <div className="stc-addendum-nav-title">{art.titleEnglish}</div>
                   </button>
@@ -730,7 +805,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                 <div className="stc-addendum-meta-row">
                   <span>⏱️ {currentAddendum.readingTimeMinutes} min deep read</span>
                   <span>•</span>
-                  <span>{currentAddendum.partNumber === 0 ? 'Prologue · The Study Covenant' : `Part ${currentAddendum.partNumber} of 4`}</span>
+                  <span>{currentAddendum.partLabel ? `Companion · ${currentAddendum.partLabel}` : currentAddendum.partNumber === 0 ? 'Prologue · The Study Covenant' : `Part ${currentAddendum.partNumber} of 4`}</span>
                   <span>•</span>
                   <span>Self-Discovery &amp; Universal Phenomenon</span>
                 </div>
@@ -741,15 +816,17 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
               </div>
 
               {currentAddendum.sections.map((sec, sIdx) => (
-                <section key={sIdx} className="stc-addendum-section">
+                <section key={sIdx} className="stc-addendum-section" id={sec.anchorId}>
                   <h3 className="stc-addendum-sec-h2">{sec.heading}</h3>
                   {sec.subheading && <div className="stc-addendum-sec-sub">{sec.subheading}</div>}
                   {sec.paragraphs.map((p, pIdx) => (
                     <p key={pIdx} className="stc-addendum-para">{p}</p>
                   ))}
 
-                  {sec.sutras && sec.sutras.map((sutra, suIdx) => isShantiMantraText(sutra.sanskrit) ? (
-                    <ShantiMantraPlayer key={suIdx} />
+                  {sec.sutras && sec.sutras.map((sutra, suIdx) => sutra.mantraId && MANTRAS_BY_ID[sutra.mantraId] ? (
+                    <ShantiMantraPlayer key={`${currentAddendum.id}-${suIdx}`} mantra={MANTRAS_BY_ID[sutra.mantraId]} />
+                  ) : isShantiMantraText(sutra.sanskrit) ? (
+                    <ShantiMantraPlayer key={`${currentAddendum.id}-${suIdx}`} />
                   ) : (
                     <div key={suIdx} className="stc-sutra-box">
                       <div className="stc-sutra-sanskrit">{sutra.sanskrit}</div>
@@ -758,6 +835,18 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                       <div className="stc-sutra-source">— {sutra.source}</div>
                     </div>
                   ))}
+
+                  {sec.addendumLink && (
+                    <div style={{ margin: '1rem 0' }}>
+                      <button
+                        type="button"
+                        className="stc-crumb-btn"
+                        onClick={() => openAddendum(sec.addendumLink!.addendumId)}
+                      >
+                        {sec.addendumLink.label} ➔
+                      </button>
+                    </div>
+                  )}
 
                   {sec.callout && (
                     <div className={`stc-callout-box stc-callout--${sec.callout.type}`}>
@@ -826,7 +915,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                     }
                   }}
                 >
-                  ← Previous {prevAddendum ? (prevAddendum.partNumber === 0 ? '(Prologue)' : `(Part ${prevAddendum.partNumber})`) : ''}
+                  ← Previous {prevAddendum ? `(${addendumPartLabel(prevAddendum)})` : ''}
                 </button>
 
                 <button
@@ -848,7 +937,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                     }
                   }}
                 >
-                  Next {nextAddendum ? (nextAddendum.partNumber === 0 ? '(Prologue)' : `(Part ${nextAddendum.partNumber})`) : ''} →
+                  Next {nextAddendum ? `(${addendumPartLabel(nextAddendum)})` : ''} →
                 </button>
               </div>
             </main>

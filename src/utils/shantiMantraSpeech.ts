@@ -1,6 +1,7 @@
 /**
  * Dedicated recitation voice for the Śānti mantra "ओं सह नाववतु …"
- * (Taittirīya Upaniṣad 2.2 / Kaṭha Upaniṣad śānti-pāṭha).
+ * (Taittirīya Upaniṣad 2.2 / Kaṭha Upaniṣad śānti-pāṭha) — and, via
+ * `mantraLines`, for any other mantra / śloka (see src/data/mantrasShlokas.ts).
  *
  * Deliberately separate from Bodhi (speakAsBodhi) and from the Varṇamālā
  * letter voice (playPronunciation):
@@ -34,9 +35,9 @@ export interface ShantiLine {
 }
 
 /** ओं: its own slow, elongated syllable before the words. */
-const OM: ShantiStep = { say: 'ओम्', rateFactor: 0.86, pauseAfterMs: 320 };
+export const OM: ShantiStep = { say: 'ओम्', rateFactor: 0.86, pauseAfterMs: 320 };
 /** शान्तिः → soft visarga echo "शान्तिह" (audible h, not "shaantee-ha"). */
-const SHANTI: ShantiStep = { say: 'शान्तिह', pauseAfterMs: 560 };
+export const SHANTI: ShantiStep = { say: 'शान्तिह', pauseAfterMs: 560 };
 
 export const SHANTI_MANTRA_SOURCE = 'Taittirīya Upaniṣad 2.2 · Kaṭha Upaniṣad Śānti-pāṭha';
 
@@ -204,6 +205,8 @@ const SHANTI_PITCH = 1;
 let liveUtterance: SpeechSynthesisUtterance | null = null;
 
 export interface ReciteShantiOptions {
+  /** Which mantra to recite (default: ओं सह नाववतु). Any ShantiLine[] works. */
+  mantraLines?: ShantiLine[];
   /** Only these line indexes (default: all lines in order). */
   lines?: number[];
   /** Voice name override (default: saved picker choice, then preference order). */
@@ -217,10 +220,11 @@ export interface ReciteShantiOptions {
 }
 
 export const reciteShantiMantra = (options: ReciteShantiOptions = {}): (() => void) => {
+  const mantraLines = options.mantraLines && options.mantraLines.length ? options.mantraLines : SHANTI_MANTRA_LINES;
   const lineIdx = (options.lines && options.lines.length
     ? options.lines
-    : SHANTI_MANTRA_LINES.map((_, i) => i)
-  ).filter((i) => i >= 0 && i < SHANTI_MANTRA_LINES.length);
+    : mantraLines.map((_, i) => i)
+  ).filter((i) => i >= 0 && i < mantraLines.length);
 
   let ended = false;
   const finish = () => {
@@ -285,7 +289,7 @@ export const reciteShantiMantra = (options: ReciteShantiOptions = {}): (() => vo
       finish();
       return;
     }
-    const line = SHANTI_MANTRA_LINES[lineIdx[li]];
+    const line = mantraLines[lineIdx[li]];
     const step = line.steps[si];
     if (si === 0) {
       try {

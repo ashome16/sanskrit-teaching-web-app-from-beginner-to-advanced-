@@ -1,9 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
-  SHANTI_MANTRA_LINES,
-  SHANTI_MANTRA_SOURCE,
-  SHANTI_MANTRA_TRANSLATION,
-  SHANTI_WORD_MEANINGS,
   getSavedShantiVoiceName,
   listShantiVoices,
   pickShantiVoice,
@@ -11,25 +7,38 @@ import {
   setSavedShantiVoiceName,
 } from '../utils/shantiMantraSpeech';
 import { whenVoicesReady } from '../utils/speechPlatform';
+import { SAHA_NAVAVATU, type MantraText } from '../data/mantrasShlokas';
 import '../styles/shanti-mantra.css';
 
 interface ShantiMantraPlayerProps {
+  /** Which mantra / śloka to show and recite (default: ओं सह नाववतु). */
+  mantra?: MantraText;
   /** Show the word-by-word meanings (collapsed by default). */
   showWordMeanings?: boolean;
-  /** Optional heading above the verse. */
+  /** Optional heading above the verse (default: the mantra's own title when `mantra` is passed). */
   title?: string;
   source?: string;
+  /** Optional DOM id (deep-link anchor). */
+  id?: string;
 }
 
 /**
- * ओं सह नाववतु — Śānti mantra with its own calm recitation voice,
- * line-by-line highlight, per-line replay, stop, and a Hindi voice picker.
+ * Mantra recitation player — ओं सह नाववतु by default, or any MantraText:
+ * its own calm recitation voice, line-by-line highlight, per-line replay,
+ * full recitation, stop, and a Hindi voice picker.
  */
 const ShantiMantraPlayer: React.FC<ShantiMantraPlayerProps> = ({
+  mantra,
   showWordMeanings = true,
   title,
-  source = SHANTI_MANTRA_SOURCE,
+  source,
+  id,
 }) => {
+  const text = mantra || SAHA_NAVAVATU;
+  const lines = text.lines;
+  const heading = title ?? (mantra ? `${text.titleDevanagari} · ${text.titleEnglish}` : undefined);
+  const sourceLabel = source ?? text.source;
+  const wordMeanings = text.wordMeanings || [];
   const [activeLine, setActiveLine] = useState<number | null>(null);
   const [playing, setPlaying] = useState(false);
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
@@ -61,12 +70,13 @@ const ShantiMantraPlayer: React.FC<ShantiMantraPlayerProps> = ({
   }, []);
 
   const play = useCallback(
-    (lines?: number[]) => {
+    (only?: number[]) => {
       stopRef.current?.();
       setNoVoice(false);
       setPlaying(true);
       const stopFn = reciteShantiMantra({
-        lines,
+        mantraLines: lines,
+        lines: only,
         voiceName: voiceName || undefined,
         onLine: (i) => setActiveLine(i),
         onNoVoice: () => setNoVoice(true),
@@ -78,7 +88,7 @@ const ShantiMantraPlayer: React.FC<ShantiMantraPlayerProps> = ({
       });
       stopRef.current = stopFn;
     },
-    [voiceName],
+    [voiceName, lines],
   );
 
   const onVoiceChange = (name: string) => {
@@ -91,11 +101,11 @@ const ShantiMantraPlayer: React.FC<ShantiMantraPlayerProps> = ({
   const currentVoice = voices.find((v) => v.name === voiceName);
 
   return (
-    <div className="shanti-player" lang="sa">
-      {title && <div className="shanti-title">{title}</div>}
+    <div className="shanti-player" lang="sa" id={id}>
+      {heading && <div className="shanti-title">{heading}</div>}
 
-      <ol className="shanti-lines" aria-label="Śānti mantra — tap a line to hear it">
-        {SHANTI_MANTRA_LINES.map((line, i) => (
+      <ol className="shanti-lines" aria-label={`${text.titleEnglish} — tap a line to hear it`}>
+        {lines.map((line, i) => (
           <li key={i} className={`shanti-line${activeLine === i ? ' is-active' : ''}`}>
             <button
               type="button"
@@ -120,7 +130,7 @@ const ShantiMantraPlayer: React.FC<ShantiMantraPlayerProps> = ({
           </button>
         ) : (
           <button type="button" className="shanti-btn" onClick={() => play()} disabled={!supported}>
-            🔊 Recite full mantra
+            🔊 Recite full {mantra && mantra.id !== SAHA_NAVAVATU.id ? 'verse' : 'mantra'}
           </button>
         )}
         {voices.length > 0 && (
@@ -136,7 +146,7 @@ const ShantiMantraPlayer: React.FC<ShantiMantraPlayerProps> = ({
             </select>
           </label>
         )}
-        <span className="shanti-source">{source}</span>
+        <span className="shanti-source">{sourceLabel}</span>
       </div>
 
       {supported && (noVoice || (voices.length === 0 && playing)) && (
@@ -150,13 +160,13 @@ const ShantiMantraPlayer: React.FC<ShantiMantraPlayerProps> = ({
         <p className="shanti-note" lang="en">This browser does not support speech playback.</p>
       )}
 
-      <p className="shanti-translation" lang="en">“{SHANTI_MANTRA_TRANSLATION}”</p>
+      <p className="shanti-translation" lang="en">“{text.translation}”</p>
 
-      {showWordMeanings && (
+      {showWordMeanings && wordMeanings.length > 0 && (
         <details className="shanti-words" lang="en">
           <summary>Word-by-word meaning (पदार्थः)</summary>
           <dl>
-            {SHANTI_WORD_MEANINGS.map(([dev, iast, meaning]) => (
+            {wordMeanings.map(([dev, iast, meaning]) => (
               <div key={iast} className="shanti-word">
                 <dt>
                   <span lang="sa">{dev}</span> <em lang="sa-Latn">{iast}</em>

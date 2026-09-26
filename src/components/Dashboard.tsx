@@ -301,10 +301,14 @@ const Dashboard: React.FC = () => {
     return true;
   };
 
+  // Deep link into a Course Addendum unit (e.g. Mantras & Ślokas) + remount key.
+  const [courseAddendumTarget, setCourseAddendumTarget] = useState<{ id: string; key: number } | null>(null);
+
   const navigateToView = (
     view: DashboardView,
     lessonId?: string
   ) => {
+    if (view !== 'course') setCourseAddendumTarget(null);
     if (view === 'home' || view === 'faq' || view === 'philosophy' || view === 'cbse-guide' || view === 'resources') {
       setActiveView(view);
       return;
@@ -321,6 +325,10 @@ const Dashboard: React.FC = () => {
   };
 
   const [worksheetsCategory, setWorksheetsCategory] = useState<string>('all');
+  const openCourseAddendum = (addendumId: string) => {
+    setCourseAddendumTarget((prev) => ({ id: addendumId, key: (prev?.key || 0) + 1 }));
+    navigateToView('course');
+  };
 
   const handleOpenWorksheets = (category: string = 'all') => {
     setWorksheetsCategory(category);
@@ -366,6 +374,11 @@ const Dashboard: React.FC = () => {
 
     if (target.view === 'worksheets') {
       handleOpenWorksheets(target.worksheetsCategory || 'all');
+      return;
+    }
+
+    if (target.view === 'course' && target.courseAddendumId) {
+      openCourseAddendum(target.courseAddendumId);
       return;
     }
 
@@ -935,6 +948,7 @@ const Dashboard: React.FC = () => {
           onOpenReader={() => navigateToView('reader')}
           onGoHome={() => navigateToView('home')}
           onOpenGrammarArticle={(articleId) => handleOpenGrammar('article', articleId)}
+          onOpenCourseAddendum={openCourseAddendum}
         />
       )}
       {activeView === 'cbse-guide' && (
@@ -1027,6 +1041,8 @@ const Dashboard: React.FC = () => {
         />}
         {activeView === 'course' && (
           <SanskritThinkingCourse
+            key={courseAddendumTarget ? `addendum-${courseAddendumTarget.key}` : 'course'}
+            initialAddendumId={courseAddendumTarget?.id}
             onGoHome={() => navigateToView('home')}
             onOpenReader={(chapterId) => openDeepakam(chapterId)}
             onOpenVarnamala={openVarnamala}
