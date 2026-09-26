@@ -65,13 +65,39 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
     partNumber: 0,
     slug: 'two-premises-and-the-study-bond-saha-nav-avatu',
     titleDevanagari: 'आमुखम् — विद्या-सम्बन्धः (सह नाववतु)',
-    titleEnglish: 'The Two Premises & The Study-Bond: Saha Nāv Avatu',
-    subtitle: 'Knowledge without Duty is Dangerous · The Dual Verb that Refuses the Solo User',
-    readingTimeMinutes: 7,
+    titleEnglish: 'Guru-Paramparā, The Two Premises & The Study-Bond: Saha Nāv Avatu',
+    subtitle: 'Living Lineage vs. Generation · Knowledge without Duty is Dangerous · The Dual Verb that Refuses the Solo User',
+    readingTimeMinutes: 8,
     kicker: 'Course Addendum · Foundational Prologue · The Living Covenant',
     summary:
-      'Knowledge that is only stored, quoted, or generated is still anyone’s individual content. It has no adhikāra. Speech without obligation is how a mantra becomes chatter and a verse becomes a weapon. Sanskrit refuses the solo user before a single lesson starts: Saha Nāv Avatu demands a living bind where knowledge is food, not cargo, and study is finished only when it participates in cosmic existence.',
+      'Ask a model to invent a language and it will do so in seconds; that is generation, not paramparā. Guru-paramparā is living transmission through prāṇa—breath carrying intention and responsibility. Knowledge that is only stored, quoted, or generated is still anyone’s individual content. It has no adhikāra. Speech without obligation is how a mantra becomes chatter and a verse becomes a weapon. Sanskrit refuses the solo user before a single lesson starts: Saha Nāv Avatu demands a living bind where knowledge is food, not cargo, and study is finished only when it participates in cosmic existence.',
     sections: [
+      {
+        anchorId: 'guru-not-model',
+        heading: 'The Guru is Not a Faster Model (गुरु-परम्परा)',
+        subheading: 'Living Paramparā vs. Generative Output · Prāṇa as the Living Medium',
+        paragraphs: [
+          'Ask a large model to invent a language and it will do so in seconds: phonemes, grammar, sample sentences, even a myth of origin. That is generation. It is not paramparā (परम्परा).',
+          'Guru-paramparā is living transmission. A human being who has held a sound until it changed them gives that sound to another human being, with a rule of use. The syllables may already be public. What travels is not a rare string. What travels is prāṇa (प्राणः) in speech: breath carrying vibration, intention riding the breath, a mind that has consented to be responsible for the sound.',
+          'In the language of the sages, prāṇa is not a poetic extra. It is breath as the living current that moves through body and world — the same current they treated as purposeful, meaningful, and controlled, not random noise in matter. Whether one speaks of it in the vocabulary of śāstra or of physiology, the claim is practical: a spoken line is not only data leaving a mouth. It is an imprint of the speaker’s state. Intention, held long enough, becomes invocation. Words are powerful because they are thought made audible, not because they are tokens in a vocabulary list.',
+          'A machine operates as recipient, processor, and exporter. It takes text, transforms text, returns text. It does not stand in the middle as a being who must interpret, choose, and answer for the outcome. The human is the medium: receiving, transferring, and infusing information with thought. That middle piece is the whole of knowledge as a civilisation meant it — not storage of propositions, but interpretation and use, so that one can master what follows from speech.',
+          'This is why a guru cannot be replaced by a generator. The generator has no prāṇa to imprint and no life to stake on the meaning. The guru is not faster content. The guru is the living constraint that keeps speech from becoming random: purposeful, meaningful, controlled — the same discipline that made mantra an experiment rather than chatter.',
+        ],
+        table: {
+          headers: ['Dimension', 'The Generator · Model (उत्पादकः)', 'The Living Guru · Paramparā (गुरु-परम्परा)'],
+          rows: [
+            ['Role & Stance', 'Recipient, processor, exporter of tokens without stakes', 'Living medium receiving, holding, and answering for sound'],
+            ['Medium', 'Silicon weights, statistical probabilities, zero prāṇa', 'Prāṇa (breath), intentionality, mind-state made audible'],
+            ['Transmission', 'Generates strings instantly on demand', 'Imparts a sound with its rule of use and ethical boundary'],
+            ['Relationship', 'Anonymous query–response loop; isolated user', 'Shared protection and shared heat (saha nāv avatu)'],
+          ],
+        },
+        callout: {
+          title: 'The Principle of Use',
+          text: '“AI can print the mantra. Only a living lineage can give the principle of its use. AI can move information. Only a human, breathing, can turn intention into invocation.”',
+          type: 'philosophical',
+        },
+      },
       {
         heading: 'Premise 1 — Knowledge without purpose and duty is not only useless. It can be harmful.',
         subheading: 'Why Stored or Generated Information Lacks Adhikāra',
@@ -276,6 +302,7 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
       },
     ],
     keyTakeaways: [
+      'The Guru is not a faster model: generation produces strings without stakes, while guru-paramparā transmits prāṇa (breath, intention, and responsibility) with a rule of use.',
       'A śānti mantra is not a polite opener; it is the first act of the path: clear the field, name the bond, refuse harm before knowledge arrives.',
       'Śānti is derived from √śam (to bring to rest); it is a cleared field and the pacification of obstacles, not a passive wellness mood.',
       'The triple śāntiḥ addresses the three disturbances (tāpatraya): ādhyātmika (self), ādhibhautika (others), and ādhidaivika (unseen forces).',

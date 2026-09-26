@@ -444,148 +444,32 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </p>
             </section>
 
-            {/* The guru is not a faster model */}
-            <section className="philosophy-section" aria-labelledby="guru-not-model">
-              <h2 id="guru-not-model">The Guru is Not a Faster Model (गुरु-परम्परा)</h2>
-              <p>
-                Ask a large model to invent a language and it will do so in seconds: phonemes,
-                grammar, sample sentences, even a myth of origin. That is generation. It is not{' '}
-                <em>paramparā</em> (<AudioChip term="परम्परा" label="परम्परा" />).
+            {/* Bridge: The Study-Bond & Guru-Paramparā in the Course */}
+            <div className="philosophy-callout philosophy-mantras-pointer" style={{ borderLeftColor: "#b45309", background: "#fff7ed", margin: "1.5rem 0 2rem" }}>
+              <p style={{ margin: "0 0 0.45rem", fontWeight: 800, color: "#9a3412", fontSize: "1.05rem" }}>
+                🪔 The Living Covenant: Guru-Paramparā, Saha Nāv Avatu &amp; Śabda-Brahman
               </p>
-              <p>
-                <strong>Guru-paramparā is living transmission.</strong> A human being who has held a sound
-                until it changed them gives that sound to another human being, with a rule of use. The
-                syllables may already be public. What travels is not a rare string. What travels is{' '}
-                <em>prāṇa</em> (<AudioChip term="प्राणः" label="प्राणः" />) in speech: breath carrying
-                vibration, intention riding the breath, a mind that has consented to be responsible for
-                the sound. For the sages, prāṇa was the living current that moves through body and world —
-                purposeful, not random noise in matter. A spoken line is not only data leaving a mouth; it
-                is an imprint of the speaker’s state. Intention, held long enough, becomes invocation.
+              <p style={{ margin: "0 0 0.65rem", color: "#451a03", fontSize: "0.98rem", lineHeight: 1.6 }}>
+                The full exegesis of why the guru is not a faster model, the two premises of knowledge with duty (<em>adhikāra</em>), the dual grammar of <em>saha nāv avatu</em>, and the living ethic of <em>Śabda-Brahman</em> and <em>Bhūmi Vandanam</em> now live in the Course curriculum with interactive recitation.
               </p>
-
-              {/* Generator vs Guru Comparison Grid */}
-              <div className="philosophy-duality-grid">
-                <div className="philosophy-duality-card philosophy-duality-card--transfer">
-                  <h3 className="philosophy-duality-title">
-                    <span>🤖</span> The Generator · Model (उत्पादकः)
-                  </h3>
-                  <p className="philosophy-duality-desc">
-                    Recipient, processor, exporter. It takes text, transforms text, returns text. It does
-                    not stand in the middle as a being who must interpret, choose, and answer for the
-                    outcome. It has no prāṇa to imprint and no life to stake on the meaning.
-                  </p>
-                </div>
-                <div className="philosophy-duality-card philosophy-duality-card--bind">
-                  <h3 className="philosophy-duality-title">
-                    <span>🪔</span> The Living Guru · Paramparā (गुरु-परम्परा)
-                  </h3>
-                  <p className="philosophy-duality-desc">
-                    The human is the medium: receiving, transferring, and infusing information with
-                    thought. Not faster content, but the living constraint that keeps speech purposeful,
-                    meaningful, controlled — the discipline that made mantra an experiment rather than chatter.
-                  </p>
-                </div>
-              </div>
-
-              <p>
-                That middle piece — interpretation and use — is the whole of knowledge as a civilisation
-                meant it: not storage of propositions, but mastery of what follows from speech. Many mantras
-                are already public. When a teacher still gives one in a closed way, what is transmitted is
-                not a password but a rule of use: this sound, this breath, this constraint, this relationship.
-              </p>
-              <div className="philosophy-callout" style={{ borderLeftColor: '#d97706', background: '#fffbeb', margin: '1.25rem 0' }}>
-                <p style={{ margin: '0 0 0.35rem', fontWeight: 800, color: '#9a3412', fontSize: '1.05rem' }}>
-                  AI can print the mantra. Only a living lineage can give the principle of its use.
-                </p>
-                <p style={{ margin: 0, color: '#451a03', fontSize: '1rem', fontStyle: 'italic' }}>
-                  AI can move information. Only a human, breathing, can turn intention into invocation.
-                </p>
-              </div>
-            </section>
-
-            {/* The Two Premises & The Study-Bond: Saha Nāv Avatu */}
-            <section className="philosophy-section" aria-labelledby="study-bond">
-              <h2 id="study-bond">The Two Premises &amp; The Study-Bond: Saha Nāv Avatu (सह नाववतु)</h2>
-              <p>
-                Why can a lineage not be replaced by a generator? Because classical Sanskrit learning
-                rested on two premises that a generator cannot meet.
-              </p>
-
-              {/* Premise 1 Card */}
-              <div className="philosophy-premise-card philosophy-premise-card--warning">
-                <div className="philosophy-premise-title">
-                  <span>⚠️</span>
-                  <span>Premise 1 — Knowledge without purpose and duty is not only useless. It can be harmful.</span>
-                </div>
-                <p>
-                  Knowledge that is only stored, quoted, or generated is still anyone’s individual content.
-                  It has no <em>adhikāra</em> (अधिकार — standing, fitness, answerability). So it gets
-                  repeated without care, displayed as display, turned into a slogan, or used as fluent
-                  error — a model, or a scholar, that sounds completely sure.{' '}
-                  <strong>Speech without obligation is how a mantra becomes chatter and a verse becomes a weapon.</strong>
-                </p>
-                <p style={{ margin: 0, color: '#4b5563', fontSize: '0.92rem' }}>
-                  Understanding is not more information. It is knowing what the knowledge is for, and
-                  answering for how it is used.
-                </p>
-              </div>
-
-              {/* Premise 2 Card */}
-              <div className="philosophy-premise-card philosophy-premise-card--insight">
-                <div className="philosophy-premise-title">
-                  <span>✨</span>
-                  <span>Premise 2 — Knowledge is not finished when it is scholarly.</span>
-                </div>
-                <p>
-                  Pedantry can keep Sanskrit as a dataset and never enter it as a way of standing in the
-                  world. The older aim was not only to be correct about a sūtra, but to become a mindful
-                  part of cosmic existence (<em>ṛta</em>): speech bound to breath, thought bound to
-                  purpose, the person bound to what the sound demands.
-                </p>
-                <p style={{ margin: 0, color: '#4b5563', fontSize: '0.92rem' }}>
-                  Scholarship is a tool on that path, not the destination — the <em>ṛṣi’s</em> inner
-                  seeing, the temple as tool, <em>japa</em> as experiment, not a footnote apparatus.
-                </p>
-              </div>
-
-              <p>
-                The tradition did not leave these premises as theory. It put them in the mouth of teacher
-                and student before the first lesson, as the śānti mantra <em>saha nāv avatu</em>. Read it
-                line by line and every phrase binds: <strong>protection is shared</strong> — shelter for
-                a living relationship, not a firewall around private files; <strong>nourishment is
-                shared</strong> — knowledge as food that becomes consciousness, not cargo shifted between
-                drives; <strong>effort is shared</strong> — one work and one heat (<em>tapas</em>);{' '}
-                <strong>study should shine</strong> — alive, not footnoted; <strong>no hostility</strong>{' '}
-                — <em>mā vidviṣāvahai</em> forbids contempt and weaponised debate before any doctrine
-                begins; and a <strong>threefold peace</strong> keeps the field clear.
-              </p>
-
-              {/* The Inescapable Dual Callout */}
-              <div className="philosophy-callout" style={{ borderLeftColor: '#0f766e', background: '#f0fdfa', margin: '1.25rem 0' }}>
-                <p style={{ margin: '0 0 0.45rem', fontWeight: 800, color: '#0f766e', fontSize: '1.1rem' }}>
-                  The Grammar Refuses the Solo User
-                </p>
-                <p style={{ margin: '0 0 0.5rem', color: '#134e4a', fontSize: '1rem', lineHeight: 1.6 }}>
-                  The first word is <strong>saha</strong> (सह — together), and the grammar is dual
-                  throughout (<em>nau, nāv, karavāvahai, vidviṣāvahai</em>). It is the direct opposite of
-                  “anyone’s individual content.”
-                </p>
-                <p style={{ margin: 0, color: '#134e4a', fontSize: '1rem', lineHeight: 1.6, fontStyle: 'italic' }}>
-                  A language model can print this mantra in a fraction of a second. It cannot stand inside
-                  saha. It has no dual. That is the guru–śiṣya bond.
-                </p>
-              </div>
-
-              {/* Pointer to the course: mantras & ślokas now live there */}
-              <div className="philosophy-callout philosophy-mantras-pointer" style={{ borderLeftColor: '#b45309', background: '#fff7ed', margin: '1.25rem 0' }}>
-                <p style={{ margin: '0 0 0.6rem', color: '#451a03', fontSize: '1rem', lineHeight: 1.6 }}>
-                  The mantras and ślokas this essay draws on — <em>saha nāv avatu</em>, Bhūmi Vandanam and
-                  the universal peace of <em>dyauḥ śāntiḥ</em> — are in the course, with line-by-line recitation.
-                </p>
+              <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
+                <a
+                  href="/course#addendum-prologue-saha-nav-avatu"
+                  className="philosophy-action-btn"
+                  style={{ display: "inline-block", textDecoration: "none" }}
+                  onClick={(e) => {
+                    if (onOpenCourseAddendum) {
+                      e.preventDefault();
+                      onOpenCourseAddendum("addendum-prologue-saha-nav-avatu");
+                    }
+                  }}
+                >
+                  🤝 Study the Living Covenant in the Course ➔
+                </a>
                 <a
                   href="/course#mantras"
                   className="philosophy-action-btn"
-                  style={{ display: 'inline-block', textDecoration: 'none' }}
+                  style={{ display: "inline-block", textDecoration: "none", background: "transparent", color: "#9a3412", border: "1px solid #fdba74" }}
                   onClick={(e) => {
                     if (onOpenCourseAddendum) {
                       e.preventDefault();
@@ -593,185 +477,10 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                     }
                   }}
                 >
-                  🪔 Recite the Mantras &amp; Ślokas in the Course ➔
+                  🪔 Recite the Mantras &amp; Ślokas ➔
                 </a>
               </div>
-            </section>
-
-            {/* Śānti: clearing the field */}
-            <section className="philosophy-section" aria-labelledby="clearing-the-field">
-              <h2 id="clearing-the-field">Not a Polite “Let Us Begin” — Clearing the Field Before Knowledge Arrives</h2>
-              <p>
-                A <em>śānti mantra</em> is not a polite “let us begin.” For a disciple starting a path it
-                is the first act of the path: <strong>clear the field, name the bond, refuse harm before
-                knowledge arrives.</strong> <em>Śānti</em> here is not “feeling calm” or a wellness mood.
-                The word is from the root <strong>√śam (शम्)</strong> — to quiet, to still, to bring to
-                rest: <em>let the trouble that would break this work come to rest.</em>
-              </p>
-              <p>
-                A guru does not only hand over teaching; the guru opens a space in which teaching can land.
-                That space is easily broken. Śaṅkara, commenting on the Taittirīya, says the word is uttered
-                three times to ward off the three kinds of trouble (<em>tāpatraya</em>) that arise on the
-                path to wisdom:
-              </p>
-
-              {/* 3 Disturbances Grid */}
-              <div className="philosophy-disturbances-grid">
-                <div className="philosophy-disturbance-card">
-                  <span className="philosophy-disturbance-badge">In the Disciple · Self</span>
-                  <div className="philosophy-disturbance-title">आध्यात्मिक (Ādhyātmika)</div>
-                  <p className="philosophy-disturbance-desc">
-                    From one’s own body and mind: fever, fear, restlessness, pride — the inner noise that makes hearing impossible.
-                  </p>
-                </div>
-                <div className="philosophy-disturbance-card">
-                  <span className="philosophy-disturbance-badge">Between Beings · Social</span>
-                  <div className="philosophy-disturbance-title">आधिभौतिक (Ādhibhautika)</div>
-                  <p className="philosophy-disturbance-desc">
-                    From other beings: quarrel, contempt, other people’s pull, the world pressing on the pair who study.
-                  </p>
-                </div>
-                <div className="philosophy-disturbance-card">
-                  <span className="philosophy-disturbance-badge">What No One Controls · Cosmic</span>
-                  <div className="philosophy-disturbance-title">आधिदैविक (Ādhidaivika)</div>
-                  <p className="philosophy-disturbance-desc">
-                    From elemental or unseen forces: sudden event, fate — the large forces that can end a path without argument.
-                  </p>
-                </div>
-              </div>
-
-              <p>
-                So śānti is a <strong>cleared field, not a mood</strong> — closer to the pacification of
-                obstacles than to peace of mind as a product. This is why the guru gives it to a new
-                disciple. The path is easily obstructed, and the mantra does not pretend the disciple is
-                already peaceful. A spiritual journey inflames the ego as often as it refines it, so{' '}
-                <em>mā vidviṣāvahai</em> sets purpose and duty while the mind is still unarmed. Speech
-                itself must be stilled before it is used as an instrument — <em>śikṣā</em> of the field,
-                holding the room still the way śikṣā holds the syllable still. And when teacher and student
-                say it together, the guru is not a content provider: the guru enters the same protection and
-                the same vow. A model can print the lines. It cannot stand under <em>avatu mām, avatu
-                vaktāram</em> — protect me, protect the speaker.
-              </p>
-
-              <div className="philosophy-callout" style={{ borderLeftColor: '#f59e0b', background: '#fffbeb', margin: '1.25rem 0' }}>
-                <p style={{ margin: 0, color: '#451a03', fontSize: '1.02rem', fontStyle: 'italic', lineHeight: 1.55 }}>
-                  “Śānti is the stilling of whatever would stop the teaching from landing — in the body, between teacher and student, and in the world around them.”
-                </p>
-              </div>
-
-              {/* In One Chain Synthesis Banner */}
-              <div className="philosophy-chain-banner">
-                <div className="philosophy-chain-kicker">The Sacred Synthesis · Day One</div>
-                <h3 className="philosophy-chain-heading">
-                  Embarking = Leaving Ordinary Chatter for a Bound Use of Speech and Life
-                </h3>
-                <div className="philosophy-chain-list">
-                  <div className="philosophy-chain-item">
-                    <div className="philosophy-chain-item-label">1. A Field</div>
-                    <div className="philosophy-chain-item-val">Three Śāntiḥ (Clearing the Storm)</div>
-                  </div>
-                  <div className="philosophy-chain-item">
-                    <div className="philosophy-chain-item-label">2. A Bond</div>
-                    <div className="philosophy-chain-item-val">Saha (Dual Verb Refusing Solo Ego)</div>
-                  </div>
-                  <div className="philosophy-chain-item">
-                    <div className="philosophy-chain-item-label">3. A Duty</div>
-                    <div className="philosophy-chain-item-val">Adhikāra (Answerable to What Sound Demands)</div>
-                  </div>
-                  <div className="philosophy-chain-item">
-                    <div className="philosophy-chain-item-label">4. Refusal of Harm</div>
-                    <div className="philosophy-chain-item-val">Mā Vidviṣāvahai (Disarming Mind Before Doctrine)</div>
-                  </div>
-                </div>
-                <p className="philosophy-chain-conclusion">
-                  <strong>The śānti mantra is how the guru puts all four in the disciple’s mouth on day one</strong> — before philosophy, before secret syllables, before anyone’s individual content can pretend to be a path.
-                </p>
-              </div>
-            </section>
-
-            {/* Culture behind the knowledge + collective resource + Śabda-Brahman */}
-            <section className="philosophy-section" aria-labelledby="bhumi-vandanam">
-              <h2 id="bhumi-vandanam">The Culture Behind the Knowledge: Using Without Seizing</h2>
-              <p style={{ fontSize: '1.05rem', color: '#78350f', fontWeight: 700, fontStyle: 'italic' }}>
-                “This is part of your training: state of mind and attitude matter, not just the skill.”
-              </p>
-              <p>
-                The knowledge you seek comes from a civilization where you do not step out of bed onto the
-                floor without asking forgiveness from the living earth. Before the feet touch the ground at
-                dawn, both palms are placed upon it, and the morning verse ends <em>pāda-sparśaṃ kṣamasva
-                me</em> — forgive me the touch of my feet. The oral gloss many of us grew up with says it
-                plainly: <em>by hand, by foot, or by any means whatsoever — do not do violence to the earth.</em>{' '}
-                The Īśāvāsya Upaniṣad gives the same duty its Vedic form: <em>tena tyaktena bhuñjīthā mā
-                gṛdhaḥ</em> — enjoy by letting go; do not seize. And the Yajurveda’s peace does not begin with
-                the ego: it moves through sky, mid-space, earth, waters, herbs, and trees before the seeker
-                asks, <em>sā mā śāntir edhi</em> — may that peace be mine.
-              </p>
-              <p>
-                Speech belongs to the same order. Sanskrit is not a private accomplishment; it is a collective
-                resource — like the earth under your feet, a river, a teacher’s living time.{' '}
-                <em>Saha nau bhunaktu</em> already said it: nourishment is shared. So the journey of learning
-                Sanskrit is the journey of becoming a person who can <strong>use without seizing</strong>.
-              </p>
-
-              {/* The Collective Well and The Collective Bank Grid */}
-              <div className="philosophy-well-bank-grid">
-                <div className="philosophy-well-card">
-                  <span className="philosophy-wb-badge philosophy-wb-badge--well">
-                    <span>💧</span>
-                    <span>The Collective Well · You May Drink</span>
-                  </span>
-                  <h3 className="philosophy-wb-title">Saha Nau Bhunaktu (सह नौ भुनक्तु)</h3>
-                  <p>
-                    Everything you receive was waiting before you arrived: the grammar, the meter, the
-                    phonetics, the breath, the teacher’s patience. If you only draw without depositing,
-                    your study is seizure with better manners.
-                  </p>
-                </div>
-                <div className="philosophy-bank-card">
-                  <span className="philosophy-wb-badge philosophy-wb-badge--bank">
-                    <span>🔥</span>
-                    <span>The Collective Bank · You Must Deposit</span>
-                  </span>
-                  <h3 className="philosophy-wb-title">Saha Vīryaṃ Karavāvahai (सह वीर्यं करवावहै)</h3>
-                  <p>
-                    Every learner puts heat (<em>tapas</em>) back: breath, attention, correct articulation,
-                    the refusal to harm. If you deposit only slogans and ornamental quotes, the bank is
-                    merely display.
-                  </p>
-                </div>
-              </div>
-
-              <div className="philosophy-callout" style={{ borderLeftColor: '#0f766e', background: '#f0fdfa', margin: '1.25rem 0' }}>
-                <p style={{ margin: 0, color: '#134e4a', fontSize: '1rem', lineHeight: 1.6 }}>
-                  <strong>Adhikāra is the right to draw from the well coupled with the obligation to deposit
-                  back into the bank.</strong> A better person is not a decorated scholar with hundreds of
-                  footnotes. It is someone who leaves the well fuller than their thirst, and the bank heavier
-                  than their name.
-                </p>
-              </div>
-
-              {/* Śabda-Brahman: Purpose is Built-in */}
-              <div className="philosophy-shabda-banner">
-                <div className="philosophy-shabda-kicker">Ontological Foundation · शब्दब्रह्म</div>
-                <h3 className="philosophy-shabda-heading">
-                  Śabda-Brahman: Language Has a Built-in Purpose (Prayojana)
-                </h3>
-                <p style={{ margin: '0 0 0.85rem', color: '#c7d2fe', fontSize: '1.02rem', lineHeight: 1.6 }}>
-                  For the <em>ṛṣis</em>, the point was never that Sanskrit is merely old. It was that this
-                  knowledge exists for a reason: <strong>Śabda-Brahman (शब्दब्रह्म)</strong> — reality
-                  manifesting as sound, not an arbitrary label stuck onto dead matter. If śabda is a
-                  foundational principle of being, then the language refined to hold it — <em>chandas</em>,{' '}
-                  <em>śikṣā</em>, <em>vyākaraṇa</em>, mantra — carries its purpose in its very structure.
-                  Purpose is not added later; use without purpose is a contradiction. That is why Sanskrit
-                  cannot be treated as dead prestige, a scraper’s dataset, or a slogan.
-                </p>
-                <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.15)', textAlign: 'center' }}>
-                  <p style={{ margin: 0, fontSize: '1.05rem', fontStyle: 'italic', color: '#fef08a', lineHeight: 1.6, fontWeight: 600 }}>
-                    “To learn Sanskrit is to consent to that purpose: not to own the word, but to use it as the real uses sound — held still, answered for, and offered back to the living whole.”
-                  </p>
-                </div>
-              </div>
-            </section>
+            </div>
 
             {/* Why Sanskrit is a special case in this age */}
             <section className="philosophy-section" aria-labelledby="special-case">
