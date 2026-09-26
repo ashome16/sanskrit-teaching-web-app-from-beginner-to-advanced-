@@ -135,37 +135,51 @@ const ShantiMantraPlayer: React.FC<ShantiMantraPlayerProps> = ({
             onClick={() => {
               stop();
               setMode('swami');
+              setShowEmbed(true);
             }}
             role="tab"
             aria-selected={mode === 'swami'}
           >
-            🎙️ Swami Dhyanananda (Audio.com / MP3)
+            🎙️ Sahana Vavatu Recitation (Swami Dhyanananda)
           </button>
         </div>
       )}
 
-      {/* Swami Dhyanananda Recitation Panel */}
+      {/* Swami Dhyanananda Sahana Vavatu Recitation Panel */}
       {isSahaNavavatu && mode === 'swami' && (
         <div className="shanti-swami-panel">
           <div className="shanti-swami-header">
             <span className="shanti-swami-title">
-              Swami Dhyanananda · Authentic Vedic Recitation (Slow tempo with pause for repetition)
+              Swami Dhyanananda · Sahana Vavatu Traditional Recitation
             </span>
-            <span className="shanti-swami-badge">Free to Use</span>
+            <span className="shanti-swami-badge">Free to Use · Traditional Chant</span>
           </div>
 
           <p className="shanti-swami-note">
-            Traditional recitation of Taittirīya Upaniṣad 2.2 / Kaṭha Upaniṣad Śānti-pāṭha.
-            Recorded slowly with space for disciple repetition.
+            Authentic recitation of the <strong>Sahana Vavatu (सह नाववatu)</strong> Śānti Mantra from the Taittirīya &amp; Kaṭha Upaniṣads.
+            Chanted in deliberate slow tempo with lead-and-follow pauses for disciple repetition.
           </p>
 
-          {/* HTML5 Native Audio Player (checks local public/audio/ first) */}
+          {/* Embedded Audio.com player iframe */}
+          {showEmbed && (
+            <iframe
+              className="shanti-embed-frame"
+              src="https://audio.com/swami-dhyanananda/audio/sahana-lf-slow"
+              title="Swami Dhyanananda Sahana Vavatu Recitation"
+              allow="autoplay"
+              sandbox="allow-scripts allow-same-origin allow-presentation"
+            />
+          )}
+
+          {/* Local HTML5 Audio Player fallback */}
           <audio
             className="shanti-swami-audio"
             controls
             preload="metadata"
-            src="/audio/sahana-navavatu.mp3"
           >
+            <source src="/audio/sahana-vavatu.mp3" type="audio/mpeg" />
+            <source src="/audio/sahana-navavatu.mp3" type="audio/mpeg" />
+            <source src="/audio/sahana-lf-slow.mp3" type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
 
@@ -175,7 +189,7 @@ const ShantiMantraPlayer: React.FC<ShantiMantraPlayerProps> = ({
               className="shanti-swami-link"
               onClick={() => setShowEmbed((prev) => !prev)}
             >
-              {showEmbed ? '▼ Hide Audio.com Player' : '▶ Show Audio.com Embed Player'}
+              {showEmbed ? '▼ Hide Audio.com Embed' : '▶ Show Audio.com Embed'}
             </button>
             <span>·</span>
             <a
@@ -184,24 +198,13 @@ const ShantiMantraPlayer: React.FC<ShantiMantraPlayerProps> = ({
               rel="noopener noreferrer"
               className="shanti-swami-link"
             >
-              🎧 Open on Audio.com ↗
+              🎧 Open &amp; Download from Audio.com ↗
             </a>
+            <span>·</span>
+            <span className="shanti-swami-note" style={{ display: 'inline' }}>
+              Save MP3 to <code>public/audio/sahana-vavatu.mp3</code> for 100% offline playback
+            </span>
           </div>
-
-          {showEmbed && (
-            <iframe
-              className="shanti-embed-frame"
-              src="https://audio.com/swami-dhyanananda/audio/sahana-lf-slow"
-              title="Swami Dhyanananda Saha Nāvavatu Recitation"
-              allow="autoplay"
-              sandbox="allow-scripts allow-same-origin allow-presentation"
-            />
-          )}
-
-          <p className="shanti-swami-note">
-            💡 <em>Offline &amp; zero-tracking hosting:</em> To host this audio directly without third-party cookies,
-            download the MP3 from Audio.com and place it as <code>public/audio/sahana-navavatu.mp3</code>.
-          </p>
         </div>
       )}
 

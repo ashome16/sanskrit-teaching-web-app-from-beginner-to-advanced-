@@ -34,7 +34,7 @@ export interface MantraText {
 export const SAHA_NAVAVATU: MantraText = {
   id: 'saha-navavatu',
   titleDevanagari: 'ओं सह नाववतु',
-  titleEnglish: 'Saha Nāvavatu · The Study-Bond Śānti Mantra',
+  titleEnglish: 'Sahana Vavatu (Saha Nāvavatu) · The Study-Bond Śānti Mantra',
   source: SHANTI_MANTRA_SOURCE,
   lines: SHANTI_MANTRA_LINES,
   translation: SHANTI_MANTRA_TRANSLATION,
