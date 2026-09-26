@@ -285,6 +285,10 @@ export const isPronunciationMuted = (): boolean => pronunciationMuted;
 /** Bumps on every play/stop so stale whenVoicesReady() callbacks do not speak. */
 let speakGeneration = 0;
 
+/** Current stop/play generation — lets independent players (e.g. the Śānti
+ * mantra reciter) notice when any other playback called stopPronunciation(). */
+export const getSpeechGeneration = (): number => speakGeneration;
+
 export const stopPronunciation = (): void => {
   speakGeneration += 1;
   if (typeof window === 'undefined' || !window.speechSynthesis) return;

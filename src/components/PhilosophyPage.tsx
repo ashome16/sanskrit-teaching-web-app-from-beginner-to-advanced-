@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BodhiAvatar from './BodhiAvatar';
+import ShantiMantraPlayer from './ShantiMantraPlayer';
 import '../styles/philosophy.css';
 import { playPronunciation } from '../utils/pronunciation';
 
@@ -608,26 +609,8 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 </table>
               </div>
 
-              {/* The Śānti Mantra: Saha Nāv Avatu Banner */}
-              <div className="philosophy-verse-banner">
-                <div className="philosophy-verse-sanskrit">
-                  ॐ सह नाववतु । सह नौ भुनक्तु । सह वीर्यं करवावहै ।<br />
-                  तेजस्वि नावधीतमस्तु मा विद्विषावहै ।<br />
-                  ॐ शान्तिः शान्तिः शान्तिः ॥
-                </div>
-                <div className="philosophy-verse-translit">
-                  om saha nāv avatu | saha nau bhunaktu | saha vīryaṃ karavāvahai |<br />
-                  tejasvi nāv adhītam astu mā vidviṣāvahai |<br />
-                  om śāntiḥ śāntiḥ śāntiḥ
-                </div>
-                <div className="philosophy-verse-english">
-                  “Om. May that protect us both. May that nourish us both. May we work together with energy. May our study be brilliant. May we not quarrel. Om, peace, peace, peace.”
-                </div>
-                <div style={{ marginTop: '0.75rem', display: 'flex', justifyContent: 'center', gap: '0.5rem', alignItems: 'center' }}>
-                  <AudioChip term="सह नाववतु" label="🔊 Listen to Invocation" />
-                  <span className="philosophy-verse-source">Taittirīya &amp; Kaṭha Upaniṣad Śānti Mantra</span>
-                </div>
-              </div>
+              {/* The Śānti Mantra: Saha Nāv Avatu — dedicated recitation player */}
+              <ShantiMantraPlayer />
 
               {/* Structured Binding Table */}
               <p>

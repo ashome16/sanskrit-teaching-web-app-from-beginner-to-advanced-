@@ -12,6 +12,8 @@ import {
 import { useAuthStore } from '../store/authStore';
 import { hasPaidAccess, hasPremiumAccess } from '../utils/premiumAccess';
 import { playPronunciation } from '../utils/pronunciation';
+import { findShantiLineIndex, isShantiMantraText, reciteShantiMantra } from '../utils/shantiMantraSpeech';
+import ShantiMantraPlayer from './ShantiMantraPlayer';
 import '../styles/sanskrit-thinking-course.css';
 
 export interface SanskritThinkingCourseProps {
@@ -159,6 +161,13 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
   };
 
   const handleAudioPlay = (term: string) => {
+    // Śānti-mantra lines (ओं सह नाववतु …) use the dedicated recitation voice:
+    // whole phrase with spaces kept, no daṇḍa spoken, calm rate.
+    const shantiLine = findShantiLineIndex(term);
+    if (shantiLine >= 0) {
+      reciteShantiMantra({ lines: [shantiLine] });
+      return;
+    }
     playPronunciation(term);
   };
 
@@ -739,7 +748,9 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                     <p key={pIdx} className="stc-addendum-para">{p}</p>
                   ))}
 
-                  {sec.sutras && sec.sutras.map((sutra, suIdx) => (
+                  {sec.sutras && sec.sutras.map((sutra, suIdx) => isShantiMantraText(sutra.sanskrit) ? (
+                    <ShantiMantraPlayer key={suIdx} />
+                  ) : (
                     <div key={suIdx} className="stc-sutra-box">
                       <div className="stc-sutra-sanskrit">{sutra.sanskrit}</div>
                       <div className="stc-sutra-translit">{sutra.transliteration}</div>

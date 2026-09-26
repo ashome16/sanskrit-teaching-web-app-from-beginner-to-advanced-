@@ -1380,3 +1380,13 @@
 
 
 
+
+/* Keep 3-column study tables readable on phones: scroll instead of crushing. */
+@media (max-width: 640px) {
+  .philosophy-table {
+    min-width: 560px;
+  }
+  .philosophy-table th {
+    white-space: normal;
+  }
+}

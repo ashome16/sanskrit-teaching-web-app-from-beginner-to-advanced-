@@ -1788,13 +1788,14 @@ export const COURSE_MODULES: CourseModule[] = [
         },
         soundPractice: {
           audioTerms: [
-            { devanagari: 'ॐ सह नाववतु ।', iast: 'oṁ saha nāvavatu |', meaning: 'May the Supreme protect teacher and student together.' },
-            { devanagari: 'सह नौ भुनक्तु ।', iast: 'saha nau bhunaktu |', meaning: 'May we be nourished together.' },
-            { devanagari: 'सह वीर्यं करवावहै ।', iast: 'saha vīryaṁ karavāvahai |', meaning: 'May we work together with boundless vitality.' },
-            { devanagari: 'तेजस्वि नावधीतमस्तु मा विद्विषावहै ॥', iast: 'tejasvi nāvadhītamastu mā vidviṣāvahai ||', meaning: 'May our study be luminous; may no enmity arise between us.' }
+            { devanagari: 'ओं सह नाववतु ।', iast: 'oṃ saha nāvavatu |', meaning: 'Oṃ. May the Supreme protect teacher and student together.' },
+            { devanagari: 'सह नौ भुनक्तु ।', iast: 'saha nau bhunaktu |', meaning: 'May it nourish us both together.' },
+            { devanagari: 'सह वीर्यं करवावहै ।', iast: 'saha vīryaṃ karavāvahai |', meaning: 'May we both work together with vigour.' },
+            { devanagari: 'तेजस्वि नावधीतमस्तु मा विद्विषावहै ॥', iast: 'tejasvi nāvadhītamastu mā vidviṣāvahai ||', meaning: 'May our study be radiant; may we never hate one another.' },
+            { devanagari: 'ओं शान्तिः शान्तिः शान्तिः ॥', iast: 'oṃ śāntiḥ śāntiḥ śāntiḥ ||', meaning: 'Oṃ. Peace, peace, peace.' }
           ],
           phoneticInstructions: 'Chant the Śānti Mantra slowly. Feel the vibration rise from your belly through the chest into the crown of your head.',
-          recitationTips: 'Pause after "ॐ शान्तिः शान्तिः शान्तिः" and sit in pure silence for 30 seconds.'
+          recitationTips: 'Pause after "ओं शान्तिः शान्तिः शान्तिः" and sit in pure silence for 30 seconds.'
         },
         ruleMechanics: {
           title: 'The Three Vedic Pitch Accents (Svara)',

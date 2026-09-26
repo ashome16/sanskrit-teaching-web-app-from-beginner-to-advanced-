@@ -1,0 +1,234 @@
+/* Śānti mantra (ओं सह नाववतु) recitation player */
+.shanti-player {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 16px;
+  padding: 1.25rem 1.1rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.12);
+  text-align: center;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+.shanti-title {
+  font-weight: 800;
+  color: #78350f;
+  margin-bottom: 0.6rem;
+}
+
+.shanti-lines {
+  list-style: none;
+  margin: 0 0 0.9rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.shanti-line-btn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shanti-line-btn:hover,
+.shanti-line-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: #fde68a;
+  outline: none;
+}
+
+.shanti-line.is-active .shanti-line-btn {
+  background: #ffffff;
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
+}
+
+.shanti-line-dev {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: clamp(1.1rem, 3.4vw, 1.4rem);
+  font-weight: 800;
+  color: #78350f;
+  line-height: 1.6;
+}
+
+.shanti-line.is-active .shanti-line-dev {
+  color: #b45309;
+}
+
+.shanti-line-iast {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #92400e;
+}
+
+.shanti-line-en {
+  font-size: 0.86rem;
+  color: #57534e;
+}
+
+.shanti-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.shanti-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #d97706;
+  background: #d97706;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  min-height: 40px;
+}
+
+.shanti-btn:hover {
+  background: #b45309;
+}
+
+.shanti-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.shanti-btn--stop {
+  background: #ffffff;
+  color: #b45309;
+}
+
+.shanti-btn--stop:hover {
+  background: #fef3c7;
+}
+
+.shanti-voice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #78350f;
+  max-width: 100%;
+}
+
+.shanti-voice select {
+  max-width: min(260px, 70vw);
+  padding: 0.35rem 0.45rem;
+  border-radius: 8px;
+  border: 1px solid #fcd34d;
+  background: #ffffff;
+  font-size: 0.82rem;
+  color: #451a03;
+}
+
+.shanti-source {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #b45309;
+  background: #ffffff;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid #fde68a;
+}
+
+.shanti-note {
+  font-size: 0.82rem;
+  color: #7c2d12;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  margin: 0 auto 0.75rem;
+  max-width: 620px;
+  text-align: left;
+}
+
+.shanti-translation {
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: #451a03;
+  line-height: 1.55;
+  max-width: 620px;
+  margin: 0 auto 0.6rem;
+}
+
+.shanti-words {
+  text-align: left;
+  max-width: 640px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  padding: 0.5rem 0.8rem;
+}
+
+.shanti-words summary {
+  cursor: pointer;
+  font-weight: 800;
+  color: #92400e;
+  font-size: 0.9rem;
+}
+
+.shanti-words dl {
+  margin: 0.5rem 0 0.2rem;
+}
+
+.shanti-word {
+  display: grid;
+  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+  gap: 0.6rem;
+  padding: 0.3rem 0;
+  border-top: 1px dashed #fde68a;
+  font-size: 0.86rem;
+}
+
+.shanti-word dt {
+  font-weight: 800;
+  color: #78350f;
+}
+
+.shanti-word dt em {
+  font-weight: 600;
+  color: #92400e;
+}
+
+.shanti-word dd {
+  margin: 0;
+  color: #44403c;
+}
+
+@media (max-width: 520px) {
+  .shanti-player {
+    padding: 1rem 0.6rem;
+  }
+  .shanti-word {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+  .shanti-voice {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

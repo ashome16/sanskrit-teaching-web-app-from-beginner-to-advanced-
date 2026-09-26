@@ -127,10 +127,10 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
         ],
         sutras: [
           {
-            sanskrit: 'ॐ सह नाववतु । सह नौ भुनक्तु । सह वीर्यं करवावहै । तेजस्वि नावधीतमस्तु मा विद्विषावहै । ॐ शान्तिः शान्तिः शान्तिः ॥',
-            transliteration: 'om saha nāv avatu | saha nau bhunaktu | saha vīryaṃ karavāvahai | tejasvi nāv adhītam astu mā vidviṣāvahai | om śāntiḥ śāntiḥ śāntiḥ',
-            meaning: 'Om. May that protect us both. May that nourish us both. May we work together with energy. May our study be brilliant. May we not quarrel. Om, peace, peace, peace.',
-            source: 'Taittirīya & Kaṭha Upaniṣad Śānti Mantra',
+            sanskrit: 'ओं सह नाववतु । सह नौ भुनक्तु । सह वीर्यं करवावहै । तेजस्वि नावधीतमस्तु मा विद्विषावहै ॥ ओं शान्तिः शान्तिः शान्तिः ॥',
+            transliteration: 'oṃ saha nāvavatu | saha nau bhunaktu | saha vīryaṃ karavāvahai | tejasvi nāvadhītamastu mā vidviṣāvahai || oṃ śāntiḥ śāntiḥ śāntiḥ ||',
+            meaning: 'Oṃ. May That (Brahman) protect us both together; may That nourish us both together; may we both work together with vigour; may what we study be radiant; may we never hate one another. Oṃ, peace, peace, peace.',
+            source: 'Taittirīya Upaniṣad 2.2 · Kaṭha Upaniṣad Śānti-pāṭha',
           },
         ],
       },
@@ -143,7 +143,7 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
           '• Saha vīryaṃ karavāvahai — May we two work with energy.\nVīrya is not screen-time. It is shared heat (tapas): the student parsing and testing, the teacher holding the line steady. AI can generate drills, but it cannot enter karavāvahai — a dual verb, we two shall do. Effort that is not shared is still anyone’s individual content, however hard one works alone.',
           '• Tejasvi nāv adhītam astu — May what we have studied be brilliant in us.\nTejas is not a high quiz score. Pedantry can be correct and spiritually dark. This line asks that study radiate as living clarity and active cosmic participation — knowledge finished only when it participates in cosmic existence, not when it is merely footnoted.',
           '• Mā vidviṣāvahai — May we not quarrel; may we not hate.\nThis is the first premise spoken as a solemn vow. Knowledge without purpose and duty turns easily to contempt and dispute: teacher against student, school against school, fluent model against humble speaker. The mantra forbids that turn before the lesson begins. Harm is anticipated, bound, and refused.',
-          '• Om śāntiḥ śāntiḥ śāntiḥ — Peace three times.\nIn the body that speaks (ādhyātmika). Between the two who study (ādhibhautika). In the cosmic world that must receive what they send (ādhidaivika). The field must stay clear or the bind collapses into noise. Temple, mantra, guru — all are ways of keeping that field from becoming an echo chamber of the ego.',
+          '• Oṃ śāntiḥ śāntiḥ śāntiḥ — Peace three times.\nIn the body that speaks (ādhyātmika). Between the two who study (ādhibhautika). In the cosmic world that must receive what they send (ādhidaivika). The field must stay clear or the bind collapses into noise. Temple, mantra, guru — all are ways of keeping that field from becoming an echo chamber of the ego.',
         ],
         table: {
           headers: ['Mantra Line (पदम्)', 'What It Binds (सम्बन्धः)', 'Living Realization vs. Solo Download'],
@@ -153,7 +153,7 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
             ['saha vīryaṃ karavāvahai (सह वीर्यं करवावहै)', 'Effort is shared — guru and student under one work', 'Shared heat (tapas): the student parsing and testing, the teacher holding the line steady. An AI model can generate drills, but it cannot enter karavāvahai (the dual verb: we two shall do).'],
             ['tejasvi nāv adhītam astu (तेजस्वि नावधीतमस्तु)', 'Study should shine — not pedantry, not a dead dataset', 'Study must radiate as living clarity and direct cosmic participation, not pedantic trivia or cold footnote apparatus.'],
             ['mā vidviṣāvahai (मा विद्विषावहै)', 'No hostility — knowledge without duty becomes harm', 'Knowledge without obligation turns into arrogance, slogans, or weaponized debate. This line proactively forbids and dissolves hostility before the lesson can begin.'],
-            ['śāntiḥ × 3 (ॐ शान्तिः शान्तिः शान्तिः)', 'The field must stay clear: self, other, world', 'Threefold peace guarding the speech-body (ādhyātmika), the interpersonal student-teacher bond (ādhibhautika), and the cosmic environment (ādhidaivika).'],
+            ['oṃ śāntiḥ × 3 (ओं शान्तिः शान्तिः शान्तिः)', 'The field must stay clear: self, other, world', 'Threefold peace guarding the speech-body (ādhyātmika), the interpersonal student-teacher bond (ādhibhautika), and the cosmic environment (ādhidaivika).'],
           ],
         },
       },
