@@ -17,6 +17,7 @@ export interface FooterProps {
   onOpenBodhi?: () => void;
   onOpenResources?: () => void;
   onOpenRoadmap?: () => void;
+  onOpenCourse?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -34,6 +35,7 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenBodhi,
   onOpenResources,
   onOpenRoadmap,
+  onOpenCourse,
 }) => {
   const [legalModal, setLegalModal] = useState<LegalModalType>(null);
   const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
@@ -177,6 +179,18 @@ export const Footer: React.FC<FooterProps> = ({
                   >
                     <span className="nav-btn-icon">🧭</span>
                     <span className="nav-btn-text">Beginner's Roadmap · Start Here</span>
+                  </button>
+                </li>
+              )}
+              {onOpenCourse && (
+                <li>
+                  <button
+                    type="button"
+                    className="footer-nav-btn"
+                    onClick={onOpenCourse}
+                  >
+                    <span className="nav-btn-icon">🧠</span>
+                    <span className="nav-btn-text">संस्कृत-चिन्तनम् (Complete Course)</span>
                   </button>
                 </li>
               )}

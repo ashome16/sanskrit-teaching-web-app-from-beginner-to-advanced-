@@ -21,6 +21,7 @@ export interface HomePageProps {
   onOpenBodhi?: () => void;
   onOpenSearch?: () => void;
   onOpenResources?: () => void;
+  onOpenCourse?: () => void;
 }
 
 interface DemoWord {
@@ -467,6 +468,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenBodhi,
   onOpenSearch,
   onOpenResources,
+  onOpenCourse,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
@@ -661,6 +663,21 @@ const HomePage: React.FC<HomePageProps> = ({
               📑 कार्यपत्रिकाः · Worksheets
             </button>
           )}
+          {onOpenCourse && (
+            <button
+              type="button"
+              className="home-btn-primary"
+              style={{
+                background: 'linear-gradient(135deg, #4338ca 0%, #6366f1 100%)',
+                boxShadow: '0 4px 14px rgba(67, 56, 202, 0.35)',
+                fontWeight: 800,
+              }}
+              onClick={onOpenCourse}
+              title="संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking Complete 6-Module Course"
+            >
+              🧠 संस्कृत-चिन्तनम् (Course)
+            </button>
+          )}
           {onOpenResources && (
             <button
               type="button"
@@ -672,6 +689,68 @@ const HomePage: React.FC<HomePageProps> = ({
             </button>
           )}
         </div>
+
+        {/* Featured Complete Course Banner: संस्कृत-चिन्तनम् */}
+        {onOpenCourse && (
+          <div
+            className="home-course-feature-card"
+            style={{
+              marginTop: '1.75rem',
+              background: 'linear-gradient(135deg, #134e4a 0%, #1e1b4b 100%)',
+              borderRadius: '16px',
+              padding: '1.5rem 1.75rem',
+              color: '#ffffff',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '1.25rem',
+              boxShadow: '0 8px 24px rgba(19, 78, 74, 0.25)',
+              border: '1.5px solid rgba(254, 240, 138, 0.3)',
+              cursor: 'pointer',
+              textAlign: 'left',
+            }}
+            onClick={onOpenCourse}
+          >
+            <div style={{ flex: 1, minWidth: '280px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem', flexWrap: 'wrap' }}>
+                <span style={{ background: '#fef08a', color: '#713f12', padding: '0.15rem 0.6rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase' }}>
+                  Complete Course · 6 Modules
+                </span>
+                <span style={{ color: '#99f6e4', fontSize: '0.8rem', fontWeight: 700 }}>
+                  Free Trial Open · All 28 Lessons · ₹200 Full Access
+                </span>
+              </div>
+              <h3 style={{ fontSize: '1.45rem', fontWeight: 900, color: '#fef08a', margin: '0 0 0.35rem', fontFamily: 'Noto Sans Devanagari, serif' }}>
+                संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking
+              </h3>
+              <p style={{ margin: 0, fontSize: '0.92rem', color: '#ccfbf1', lineHeight: 1.5, maxWidth: '44rem' }}>
+                Sound as Input → Rules as Processing → Meaning as Output. 28 structured lessons with audio, rules, interactive drills, and bridges to the Scientific Mind (algorithms &amp; logic) and Contemplative Mind (recitation &amp; darśana).
+              </p>
+            </div>
+            <button
+              type="button"
+              style={{
+                background: '#f59e0b',
+                color: '#ffffff',
+                border: 'none',
+                padding: '0.75rem 1.5rem',
+                borderRadius: '10px',
+                fontWeight: 800,
+                fontSize: '0.95rem',
+                cursor: 'pointer',
+                whiteSpace: 'nowrap',
+                boxShadow: '0 4px 12px rgba(245, 158, 11, 0.35)',
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+                onOpenCourse();
+              }}
+            >
+              Start Course →
+            </button>
+          </div>
+        )}
 
         {/* Live Platform Highlights */}
         <div className="home-stats-grid">

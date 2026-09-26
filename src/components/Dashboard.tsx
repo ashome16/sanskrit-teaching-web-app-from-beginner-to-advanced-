@@ -24,6 +24,7 @@ const VedicMaths = lazy(() => import('./VedicMaths'));
 const QuizSection = lazy(() => import('./QuizSection'));
 const WorksheetSection = lazy(() => import('./WorksheetSection'));
 const PaninianStudio = lazy(() => import('./PaninianStudio'));
+const SanskritThinkingCourse = lazy(() => import('./SanskritThinkingCourse'));
 
 const ViewLoader = () => (
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '5rem 1rem', minHeight: '60vh', color: '#273b35' }}>
@@ -61,7 +62,8 @@ type DashboardView =
   | 'philosophy'
   | 'cbse-guide'
   | 'resources'
-  | 'dhatupatha';
+  | 'dhatupatha'
+  | 'course';
 
 const PHILOSOPHY_PATHS = new Set([
   '/philosophy',
@@ -85,11 +87,21 @@ const RESOURCES_PATHS = new Set([
   '/live',
   '/updates',
 ]);
+const COURSE_PATHS = new Set([
+  '/course',
+  '/sanskrit-thinking',
+  '/sanskrit-as-a-way-of-thinking',
+  '/samskrta-cintanam',
+]);
 
 export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string }> = {
   home: {
     title: 'Online Sanskrit & Vedic Math Classes for Kids | EdNet Learn Gurukul',
     desc: 'Interactive CBSE NCERT Sanskrit (दीपकम 6–8) and Vedic Math platform for school kids. 28+ worksheets, 39+ quizzes, 6,000+ tile puzzles, audio Alphabet & Syllables & 16 Vedic math sutras.',
+  },
+  course: {
+    title: 'संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking | EdNet Learn Gurukul',
+    desc: 'Complete 6-module curriculum: Sanskrit as an integrated system for taking sound in, processing rules, and producing output. 28 lessons for science and contemplation.',
   },
   'cbse-guide': {
     title: 'CBSE NCERT Sanskrit Exam Guide (Classes 7–10) | EdNet Learn Gurukul',
@@ -139,6 +151,7 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
 
 const pathToView = (pathname: string): DashboardView | null => {
   const clean = pathname.replace(/\/+$/, '') || '/';
+  if (COURSE_PATHS.has(clean)) return 'course';
   if (PHILOSOPHY_PATHS.has(clean)) return 'philosophy';
   if (CBSE_GUIDE_PATHS.has(clean)) return 'cbse-guide';
   if (RESOURCES_PATHS.has(clean)) return 'resources';
@@ -154,6 +167,7 @@ const pathToView = (pathname: string): DashboardView | null => {
 };
 
 const viewToPath = (view: DashboardView): string => {
+  if (view === 'course') return '/course';
   if (view === 'philosophy') return '/philosophy';
   if (view === 'cbse-guide') return '/cbse-sanskrit-guide';
   if (view === 'resources') return '/resources';
@@ -170,6 +184,7 @@ const viewToPath = (view: DashboardView): string => {
 
 const isValidSavedView = (saved: string | null): saved is DashboardView =>
   saved === 'home' ||
+  saved === 'course' ||
   saved === 'board' ||
   saved === 'reader' ||
   saved === 'grammar' ||
@@ -220,6 +235,7 @@ const Dashboard: React.FC = () => {
     openAuthModal,
     openProfileModal,
     openAdminModal,
+    openPaymentModal,
     refreshPlanStatus,
     accessMode,
     pendingRedirectView,
@@ -833,6 +849,16 @@ const Dashboard: React.FC = () => {
           </button>
           <button
             type="button"
+            className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'course' ? ' active' : ''}`}
+            onClick={() => navigateToView('course')}
+            title="संस्कृत-चिन्तनम् · Complete Sanskrit as a Way of Thinking Course"
+          >
+            <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">🧠</span>
+            <span className="dashboard-nav-primary">संस्कृत-चिन्तनम्</span>
+            <span className="dashboard-nav-secondary">Course (6 Mod)</span>
+          </button>
+          <button
+            type="button"
             className={`dashboard-nav-faq dashboard-nav-item${activeView === 'faq' ? ' active' : ''}`}
             onClick={() => navigateToView('faq')}
             title="View FAQ & Pricing"
@@ -895,6 +921,7 @@ const Dashboard: React.FC = () => {
           onOpenBodhi={() => setIsBodhiGuideOpen(true)}
           onOpenSearch={() => setIsSearchModalOpen(true)}
           onOpenResources={() => navigateToView('resources')}
+          onOpenCourse={() => navigateToView('course')}
         />
       )}
       {activeView === 'faq' && (
@@ -998,6 +1025,23 @@ const Dashboard: React.FC = () => {
           onOpenWorksheets={(category) => handleOpenWorksheets(category || 'all')}
           onOpenPuzzle={() => navigateToView('board')}
         />}
+        {activeView === 'course' && (
+          <SanskritThinkingCourse
+            onGoHome={() => navigateToView('home')}
+            onOpenReader={(chapterId) => openDeepakam(chapterId)}
+            onOpenVarnamala={openVarnamala}
+            onOpenGrammar={handleOpenGrammar}
+            onOpenDhatupatha={() => navigateToView('dhatupatha')}
+            onOpenVedicMaths={() => navigateToView('vedic-maths')}
+            onOpenPhilosophy={() => navigateToView('philosophy')}
+            onOpenWorksheets={() => handleOpenWorksheets('all')}
+            onOpenQuiz={() => navigateToView('quiz')}
+            onOpenBoard={() => navigateToView('board')}
+            onOpenCbseGuide={() => navigateToView('cbse-guide')}
+            onOpenRegister={() => openAuthModal('register')}
+            onOpenPayment={() => openPaymentModal()}
+          />
+        )}
       </Suspense>
 
       {activeView === 'reader' && <WordAnalyzerCard selection={wordSelection} />}
@@ -1018,6 +1062,7 @@ const Dashboard: React.FC = () => {
           onOpenResources={() => navigateToView('resources')}
           onOpenRoadmap={() => handleOpenGrammar('article', 'beginners-roadmap')}
           onOpenBodhi={() => setIsBodhiGuideOpen(true)}
+          onOpenCourse={() => navigateToView('course')}
         />
       )}
 

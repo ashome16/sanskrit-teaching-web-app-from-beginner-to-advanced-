@@ -19,6 +19,7 @@ export interface SearchTarget {
     | 'philosophy'
     | 'faq'
     | 'resources'
+    | 'course'
     | 'home';
   grammarTopic?:
     | 'home'
@@ -2256,6 +2257,146 @@ export const SEARCH_INDEX: SearchItem[] = [
     ],
     target: {
       view: 'philosophy',
+    },
+  },
+  {
+    id: 'course-sanskrit-thinking',
+    title: 'संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking (Complete Course)',
+    subtitle: '6 Modules · 28 Lessons · Precision for Science, Depth for Contemplation',
+    category: 'guides',
+    categoryLabel: 'Complete Course',
+    badgeEmoji: '🧠',
+    badgeColor: '#4338ca',
+    description:
+      'Sanskrit isn’t only a language. It is an integrated system for taking sound in, processing rules, and producing output. 28 structured lessons with audio, rules, interactive drills, and bridges to the Scientific Mind and Contemplative Mind.',
+    keywords: [
+      'course',
+      'sanskrit as a way of thinking',
+      'sanskrit thinking',
+      'samskrta cintanam',
+      'chintanam',
+      'cintanam',
+      'subscription',
+      'modules',
+      'thinking',
+      'संस्कृत-चिन्तनम्',
+      'पाठ्यक्रमः',
+      'way of thinking',
+      'scientific mind',
+      'contemplative mind',
+    ],
+    target: {
+      view: 'course',
+    },
+  },
+  {
+    id: 'course-mod1-sound',
+    title: 'Module 1: Sound as Input (ध्वनिः) · Sanskrit as a Way of Thinking',
+    subtitle: '6 Lessons: Articulation places, vowels, 5×5 consonants, and Māheśvara compression',
+    category: 'lessons',
+    categoryLabel: 'Course · Module 1',
+    badgeEmoji: '🔊',
+    badgeColor: '#0f766e',
+    description:
+      'Acoustic input calibrated by places of articulation (śikṣā), vowel durations (mātrā), consonant coordinate grids, and Pāṇinian sound compression.',
+    keywords: [
+      'module 1',
+      'sound as input',
+      'dhvani',
+      'shiksha',
+      'places of articulation',
+      'maheshvara sutras',
+      'matra',
+      'ध्वनिः',
+      'माहेश्वर',
+      'शिक्षा',
+    ],
+    target: {
+      view: 'course',
+    },
+  },
+  {
+    id: 'course-mod3-rules',
+    title: 'Module 3: Rules as Processing (व्याकरणम्) · Sanskrit as a Way of Thinking',
+    subtitle: '6 Lessons: Roots (Dhātu), present tense (Laṭ), noun cases (Vibhaktis), Sandhi & compounds',
+    category: 'grammar',
+    categoryLabel: 'Course · Module 3',
+    badgeEmoji: '⚙️',
+    badgeColor: '#4f46e5',
+    description:
+      'Morphological algorithms: turning 2,000 root seeds into verb conjugations, 7 noun case roles (kārakas), sound junctions (sandhi), and compounds (samāsa).',
+    keywords: [
+      'module 3',
+      'rules as processing',
+      'vyakarana',
+      'grammar',
+      'dhatu',
+      'lat lakara',
+      'vibhakti',
+      'sandhi',
+      'samasa',
+      'व्याकरणम्',
+      'धातु',
+      'विभक्ति',
+    ],
+    target: {
+      view: 'course',
+    },
+  },
+  {
+    id: 'course-mod5-science',
+    title: 'Module 5: The Scientific Mind (गणितम्, तर्कः) · Sanskrit as a Way of Thinking',
+    subtitle: '4 Lessons: Pāṇini algorithm, Vedic maths, Kaṭapayādi cipher & neologisms',
+    category: 'maths',
+    categoryLabel: 'Course · Module 5',
+    badgeEmoji: '🔬',
+    badgeColor: '#7c3aed',
+    description:
+      'Pāṇini’s generative grammar virtual machine, 16 Vedic Mathematics speed sutras, Kaṭapayādi cryptographic numbers, and modern technological neologisms.',
+    keywords: [
+      'module 5',
+      'scientific mind',
+      'panini algorithm',
+      'vedic maths',
+      'katapayadi',
+      'cryptography',
+      'astadhyayi',
+      'ganitam',
+      'tarka',
+      'गणितम्',
+      'तर्कः',
+      'कटपयादि',
+    ],
+    target: {
+      view: 'course',
+    },
+  },
+  {
+    id: 'course-mod6-contemplation',
+    title: 'Module 6: The Contemplative Mind (दर्शनम्) · Sanskrit as a Way of Thinking',
+    subtitle: '4 Lessons & Capstone: Svara recitation, Bhagavad Gītā direct reading, 6 Darśanas & Capstone',
+    category: 'guides',
+    categoryLabel: 'Course · Module 6',
+    badgeEmoji: '🪔',
+    badgeColor: '#d97706',
+    description:
+      'Vedic svara pitch chanting, direct original Bhagavad Gītā reading without translations, the 6 Darśana epistemologies, and the end-to-end Capstone Verse Analysis.',
+    keywords: [
+      'module 6',
+      'contemplative mind',
+      'darshana',
+      'gita',
+      'bhagavad gita',
+      'recitation',
+      'svara',
+      'capstone',
+      'asato ma sadgamaya',
+      'दर्शनम्',
+      'गीता',
+      'शान्ति',
+    ],
+    target: {
+      view: 'course',
     },
   },
 ];
