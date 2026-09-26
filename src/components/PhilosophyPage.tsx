@@ -38,6 +38,8 @@ const GLOSSARY: { term: string; meaning: string }[] = [
   { term: 'ṛṣi', meaning: 'seer; investigator who observed inner mind-states through isolated speech' },
   { term: 'guru / guru-paramparā', meaning: 'living unbroken lineage of transmission; the human who has held sound until it changed them, passing sound with its rule of use' },
   { term: 'prāṇa', meaning: 'living breath carrying vibration and intention in speech; the vital current moving through body and world' },
+  { term: 'śānti', meaning: 'from verbal root √śam (to quiet, to still, to bring to rest); not passive “calm” or a wellness mood, but the active stilling of whatever would stop the teaching from landing — in the body, between teacher and student, and in the world around them' },
+  { term: 'adhikāra', meaning: 'conscious standing, fitness, and answerability; the inner vessel and duty required before knowledge can be received without turning into harm or display' },
 ];
 
 const DEFAULT_TITLE =
@@ -698,36 +700,58 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 A <em>śānti mantra</em> is not a polite “let us begin.” For a disciple starting a spiritual path it is the first act of the path: <strong>clear the field, name the bond, refuse harm before knowledge arrives.</strong>
               </p>
               <p>
-                A guru does not only hand teaching. The guru opens a space in which teaching can land. That space is easily broken — by the student’s own agitation, by other people, by events no one controls. Traditional commentary on the triple <em>śāntiḥ</em> (Śaṅkara on the Taittirīya) names exactly those three disturbances (<em>tāpatraya</em>):
+                In this context <em>śānti</em> is not “feeling calm” or a temporary psychological mood. It is the settling of disturbance so that study and a spiritual bond can exist. The word is from the verbal root <strong>√śam (शम्)</strong> — to quiet, to still, to bring to rest. In a śānti mantra it means: <em>let the trouble that would break this work come to rest.</em>
+              </p>
+              <p>
+                A guru does not only hand teaching. The guru opens a space in which teaching can land. That space is easily broken — by the student’s own agitation, by other people, by events no one controls. Traditional commentary on the triple <em>śāntiḥ</em> (Śaṅkara on the Taittirīya) names exactly those three layers matching the triple disturbance (<em>tāpatraya</em>):
               </p>
 
               {/* 3 Disturbances Grid */}
               <div className="philosophy-disturbances-grid">
                 <div className="philosophy-disturbance-card">
-                  <span className="philosophy-disturbance-badge">Internal · Self</span>
+                  <span className="philosophy-disturbance-badge">In the Disciple · Self</span>
                   <div className="philosophy-disturbance-title">आध्यात्मिक (Ādhyātmika)</div>
                   <p className="philosophy-disturbance-desc">
-                    Disturbances arising from one’s own body and mind: fever, illness, wandering attention, anxiety, restlessness, and spiritual doubt.
+                    Disturbances arising from one’s own body and mind: fever, fear, restlessness, pride, the inner noise that makes hearing impossible.
                   </p>
                 </div>
                 <div className="philosophy-disturbance-card">
-                  <span className="philosophy-disturbance-badge">Interpersonal · Social</span>
+                  <span className="philosophy-disturbance-badge">Between Beings · Social</span>
                   <div className="philosophy-disturbance-title">आधिभौतिक (Ādhibhautika)</div>
                   <p className="philosophy-disturbance-desc">
-                    Disturbances arising from other beings and the external world: fellow creatures, conflicts, social noise, family friction, competition.
+                    Disturbances arising from other beings and the external world: quarrel, contempt, other people’s pull, the world pressing on the pair who study.
                   </p>
                 </div>
                 <div className="philosophy-disturbance-card">
-                  <span className="philosophy-disturbance-badge">Cosmic · Unseen</span>
+                  <span className="philosophy-disturbance-badge">What No One Controls · Cosmic</span>
                   <div className="philosophy-disturbance-title">आधिदैविक (Ādhidaivika)</div>
                   <p className="philosophy-disturbance-desc">
-                    Disturbances arising from elemental or unseen forces beyond ordinary control: storms, lightning, droughts, sudden environmental crises.
+                    Disturbances arising from elemental or unseen forces: sudden event, fate, the large forces that can end a path without argument.
                   </p>
                 </div>
               </div>
 
+              <p>
+                So <em>śānti</em> here is a <strong>cleared field, not a mood</strong>. It is closer to the active <em>pacification of obstacles</em> than to “peace of mind” as a modern wellness product. It is the indispensable condition in which:
+              </p>
+              <ul className="philosophy-steps" style={{ margin: '0.75rem 0 1.25rem' }}>
+                <li><strong>saha can hold:</strong> two people placed securely under one shared protection.</li>
+                <li><strong>adhikāra can be conferred:</strong> conscious duty requires a steady, quiet vessel.</li>
+                <li><strong>speech can bind:</strong> mantra and parsing take root instead of scattering into chatter.</li>
+                <li><strong>knowledge does not turn into harm:</strong> <em>mā vidviṣāvahai</em> — preventing weaponized debate before doctrine begins.</li>
+              </ul>
+
+              <div className="philosophy-callout" style={{ borderLeftColor: '#f59e0b', background: '#fffbeb', margin: '1.25rem 0' }}>
+                <p style={{ margin: '0 0 0.35rem', fontWeight: 800, color: '#92400e', fontSize: '1.05rem' }}>
+                  The Core Realization for Learners:
+                </p>
+                <p style={{ margin: 0, color: '#451a03', fontSize: '1.02rem', fontStyle: 'italic', lineHeight: 1.55 }}>
+                  “Śānti is the stilling of whatever would stop the teaching from landing — in the body, between teacher and student, and in the world around them.”
+                </p>
+              </div>
+
               <p style={{ fontStyle: 'italic', color: '#78350f', fontWeight: 600 }}>
-                The word is said three times so the lesson is not asked to begin inside a storm. That is why it belongs at the start of a spiritual journey, not only at the end of a ritual.
+                Śaṅkara, on the Taittirīya ending, says the word is uttered three times to ward off the troubles that arise on the path to wisdom from organism, external beings, and the cosmic powers. The lesson is not asked to begin inside a storm.
               </p>
 
               {/* Why the Guru Gives It to a New Disciple (6 Pillars) */}
