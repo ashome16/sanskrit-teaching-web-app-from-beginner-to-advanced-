@@ -689,6 +689,133 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   Purpose and duty are spoken before the lesson, so speech does not start as a private file and does not end as quarrel. A language model can print this mantra in a fraction of a second. It cannot stand inside saha. It has no dual. That is the guru–śiṣya bond.
                 </p>
               </div>
+
+              {/* Not a Polite "Let Us Begin" — Clearing the Field */}
+              <h3 style={{ margin: '2rem 0 0.5rem', color: '#78350f', fontSize: '1.25rem', fontWeight: 800 }}>
+                Not a Polite “Let Us Begin” — Clearing the Field Before Knowledge Arrives
+              </h3>
+              <p>
+                A <em>śānti mantra</em> is not a polite “let us begin.” For a disciple starting a spiritual path it is the first act of the path: <strong>clear the field, name the bond, refuse harm before knowledge arrives.</strong>
+              </p>
+              <p>
+                A guru does not only hand teaching. The guru opens a space in which teaching can land. That space is easily broken — by the student’s own agitation, by other people, by events no one controls. Traditional commentary on the triple <em>śāntiḥ</em> (Śaṅkara on the Taittirīya) names exactly those three disturbances (<em>tāpatraya</em>):
+              </p>
+
+              {/* 3 Disturbances Grid */}
+              <div className="philosophy-disturbances-grid">
+                <div className="philosophy-disturbance-card">
+                  <span className="philosophy-disturbance-badge">Internal · Self</span>
+                  <div className="philosophy-disturbance-title">आध्यात्मिक (Ādhyātmika)</div>
+                  <p className="philosophy-disturbance-desc">
+                    Disturbances arising from one’s own body and mind: fever, illness, wandering attention, anxiety, restlessness, and spiritual doubt.
+                  </p>
+                </div>
+                <div className="philosophy-disturbance-card">
+                  <span className="philosophy-disturbance-badge">Interpersonal · Social</span>
+                  <div className="philosophy-disturbance-title">आधिभौतिक (Ādhibhautika)</div>
+                  <p className="philosophy-disturbance-desc">
+                    Disturbances arising from other beings and the external world: fellow creatures, conflicts, social noise, family friction, competition.
+                  </p>
+                </div>
+                <div className="philosophy-disturbance-card">
+                  <span className="philosophy-disturbance-badge">Cosmic · Unseen</span>
+                  <div className="philosophy-disturbance-title">आधिदैविक (Ādhidaivika)</div>
+                  <p className="philosophy-disturbance-desc">
+                    Disturbances arising from elemental or unseen forces beyond ordinary control: storms, lightning, droughts, sudden environmental crises.
+                  </p>
+                </div>
+              </div>
+
+              <p style={{ fontStyle: 'italic', color: '#78350f', fontWeight: 600 }}>
+                The word is said three times so the lesson is not asked to begin inside a storm. That is why it belongs at the start of a spiritual journey, not only at the end of a ritual.
+              </p>
+
+              {/* Why the Guru Gives It to a New Disciple (6 Pillars) */}
+              <h3 style={{ margin: '2rem 0 0.5rem', color: '#0f766e', fontSize: '1.25rem', fontWeight: 800 }}>
+                Why the Guru Gives It to a New Disciple — The Six Pillars
+              </h3>
+
+              <div className="philosophy-disciple-grid">
+                <div className="philosophy-disciple-card">
+                  <div className="philosophy-disciple-num">1</div>
+                  <h4 className="philosophy-disciple-title">The path is easily obstructed</h4>
+                  <p className="philosophy-disciple-body">
+                    Fever, fear, pride, comparison, family noise, accident, drought, sudden loss — any of these can swallow study. The mantra does not pretend the disciple is already peaceful. It asks for peace in the three places trouble comes from, so <em>adhikāra</em> has a chance to form.
+                  </p>
+                </div>
+
+                <div className="philosophy-disciple-card">
+                  <div className="philosophy-disciple-num">2</div>
+                  <h4 className="philosophy-disciple-title">Knowledge without a clear field turns into harm</h4>
+                  <p className="philosophy-disciple-body">
+                    This is your first premise, already spoken as liturgy. <em>Mā vidviṣāvahai</em> — may we not hate. A spiritual journey inflames the ego as often as it refines it: teacher against student, student against student, “my realisation” against another’s. The śānti mantra forbids that turn before the first sentence of doctrine. Purpose and duty are set while the mind is still unarmed.
+                  </p>
+                </div>
+
+                <div className="philosophy-disciple-card">
+                  <div className="philosophy-disciple-num">3</div>
+                  <h4 className="philosophy-disciple-title">The disciple is not a solo user</h4>
+                  <p className="philosophy-disciple-body">
+                    <em>Saha nāv avatu</em> is dual. Protection, nourishment, effort, brilliance — us both. A beginner’s default is anyone’s individual content: my notes, my app, my private chant. The guru puts <em>saha</em> in the mouth so the journey is a bond, not a download. Both are fed; both are answerable.
+                  </p>
+                </div>
+
+                <div className="philosophy-disciple-card">
+                  <div className="philosophy-disciple-num">4</div>
+                  <h4 className="philosophy-disciple-title">Speech itself must be purified before it is used as instrument</h4>
+                  <p className="philosophy-disciple-body">
+                    The journey will use mantra, study, and eventually invocation. If the first sounds are restless, the instrument is already bent. <em>Śānti</em> is <em>śikṣā</em> of the field: hold the room still the way <em>śikṣā</em> holds the syllable still. Same experiment, larger scale.
+                  </p>
+                </div>
+
+                <div className="philosophy-disciple-card">
+                  <div className="philosophy-disciple-num">5</div>
+                  <h4 className="philosophy-disciple-title">Cosmic standing, not only classroom manners</h4>
+                  <p className="philosophy-disciple-body">
+                    The second premise: knowledge is not finished when it is scholarly. Śānti mantras of the Upanishads ask peace in earth, waters, plants, sky, and in Brahman — not only “good behaviour in class.” The disciple is being placed as a mindful part of existence, not as a consumer of verses. Three peaces: in the speaker, between the two who study, in the world that will receive what they send.
+                  </p>
+                </div>
+
+                <div className="philosophy-disciple-card">
+                  <div className="philosophy-disciple-num">6</div>
+                  <h4 className="philosophy-disciple-title">The guru accepts responsibility aloud</h4>
+                  <p className="philosophy-disciple-body">
+                    When teacher and student say it together, the guru is not a content provider. The guru enters the same protection and the same vow. That is living transmission. A model can print the lines. It cannot stand under <em>avatu mām, avatu vaktāram</em> — protect me, protect the speaker.
+                  </p>
+                </div>
+              </div>
+
+              {/* In One Chain Synthesis Banner */}
+              <div className="philosophy-chain-banner">
+                <div className="philosophy-chain-kicker">The Sacred Synthesis · Day One</div>
+                <h3 className="philosophy-chain-heading">
+                  Embarking = Leaving Ordinary Chatter for a Bound Use of Speech and Life
+                </h3>
+                <p style={{ margin: '0 0 1rem', color: '#ccfbf1', fontSize: '1.02rem', lineHeight: 1.55 }}>
+                  That requires four unbreakable anchors before any path can begin:
+                </p>
+                <div className="philosophy-chain-list">
+                  <div className="philosophy-chain-item">
+                    <div className="philosophy-chain-item-label">1. A Field</div>
+                    <div className="philosophy-chain-item-val">Three Śāntiḥ (Clearing the Storm)</div>
+                  </div>
+                  <div className="philosophy-chain-item">
+                    <div className="philosophy-chain-item-label">2. A Bond</div>
+                    <div className="philosophy-chain-item-val">Saha (Dual Verb Refusing Solo Ego)</div>
+                  </div>
+                  <div className="philosophy-chain-item">
+                    <div className="philosophy-chain-item-label">3. A Duty</div>
+                    <div className="philosophy-chain-item-val">Adhikāra (Answerable to What Sound Demands)</div>
+                  </div>
+                  <div className="philosophy-chain-item">
+                    <div className="philosophy-chain-item-label">4. Refusal of Harm</div>
+                    <div className="philosophy-chain-item-val">Mā Vidviṣāvahai (Disarming Mind Before Doctrine)</div>
+                  </div>
+                </div>
+                <p className="philosophy-chain-conclusion">
+                  <strong>The śānti mantra is how the guru puts all four in the disciple’s mouth on day one</strong> — before philosophy, before secret syllables, before anyone’s individual content can pretend to be a path.
+                </p>
+              </div>
             </section>
 
             {/* Why Sanskrit is a special case in this age */}
