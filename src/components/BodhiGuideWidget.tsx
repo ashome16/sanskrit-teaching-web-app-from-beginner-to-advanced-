@@ -6,7 +6,10 @@ import {
   BODHI_SPOKEN_PHRASES,
   BODHI_CONTEXT_TIPS,
   BODHI_QA_LIBRARY,
+  BODHI_WORD_SUGGESTIONS,
 } from '../data/bodhiData';
+import { SEARCH_INDEX, type SearchItem } from '../data/searchIndex';
+import { matchesSearchQuery } from '../utils/searchNormalizer';
 import {
   speakAsBodhi,
   splitBodhiSegments,
@@ -24,6 +27,7 @@ interface BodhiGuideWidgetProps {
   forceOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
   initialTab?: GuideTab;
+  onSearchResultNavigate?: (item: SearchItem) => void;
 }
 
 type GuideTab = 'context' | 'qa' | 'subhashita' | 'phrases';
@@ -64,6 +68,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
   forceOpen,
   onOpenChange,
   initialTab,
+  onSearchResultNavigate,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<GuideTab>(initialTab || 'context');
@@ -82,6 +87,13 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
       if (forceOpen) setShowMiniBubble(false);
     }
   }, [forceOpen]);
+
+  // Sync initialTab when provided from external navigation (e.g. Search modal)
+  useEffect(() => {
+    if (initialTab) {
+      setActiveTab(initialTab);
+    }
+  }, [initialTab]);
 
   const updateIsOpen = (nextOpen: boolean) => {
     setIsOpen(nextOpen);
@@ -231,20 +243,69 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
 
   const currentSubhashita = BODHI_SUBHASHITAS[subhashitaIdx % BODHI_SUBHASHITAS.length];
 
-  // Filter Q&A
+  // Navigate to any Gurukul learning room clicked inside Bodhi
+  const handleNavigateToGurukulItem = (item: SearchItem) => {
+    updateIsOpen(false);
+    if (onSearchResultNavigate) {
+      onSearchResultNavigate(item);
+    } else if (item.target.view && onNavigateView) {
+      onNavigateView(item.target.view);
+    }
+  };
+
+  // Gurukul site-wide content matches (Chapters, Dhātupāṭha, Grammar, Vedic Math, Quizzes, Worksheets)
+  const gurukulMatches = useMemo(() => {
+    const q = searchQuery.trim();
+    if (!q) return [];
+    return SEARCH_INDEX.filter((item) => {
+      // Avoid duplicate Bodhi guide items in this section
+      if (item.target.openBodhi) return false;
+
+      if (selectedCategory === 'grammar' && item.category !== 'grammar') return false;
+      if (selectedCategory === 'vedic_math' && item.category !== 'maths') return false;
+      if (selectedCategory === 'cbse' && item.category !== 'lessons' && item.category !== 'grammar') return false;
+      if (selectedCategory === 'lessons' && item.category !== 'lessons') return false;
+
+      const targetString = [
+        item.title,
+        item.subtitle || '',
+        item.description,
+        item.categoryLabel,
+        ...item.keywords,
+      ].join(' ');
+
+      return matchesSearchQuery(targetString, q);
+    }).slice(0, 6);
+  }, [searchQuery, selectedCategory]);
+
+  // Live word auto-suggestions when typing
+  const matchingWords = useMemo(() => {
+    const q = searchQuery.trim();
+    if (!q) return [];
+    return BODHI_WORD_SUGGESTIONS.filter(
+      (w) =>
+        matchesSearchQuery(w.devanagari, q) ||
+        matchesSearchQuery(w.iast, q) ||
+        matchesSearchQuery(w.english, q) ||
+        (w.modernConcept && matchesSearchQuery(w.modernConcept, q))
+    ).slice(0, 6);
+  }, [searchQuery]);
+
+  // Filter Q&A with diacritic & phonetic awareness
   const filteredQA = useMemo(() => {
     let list = BODHI_QA_LIBRARY;
     if (selectedCategory !== 'all') {
       list = list.filter((item) => item.category === selectedCategory);
     }
     if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase();
+      const q = searchQuery.trim();
       list = list.filter(
         (item) =>
-          item.question.toLowerCase().includes(q) ||
-          item.shortAnswer.toLowerCase().includes(q) ||
-          item.detailedAnswer.toLowerCase().includes(q) ||
-          (item.sanskritQuestion && item.sanskritQuestion.includes(q))
+          matchesSearchQuery(item.question, q) ||
+          matchesSearchQuery(item.shortAnswer, q) ||
+          matchesSearchQuery(item.detailedAnswer, q) ||
+          (item.sanskritQuestion && matchesSearchQuery(item.sanskritQuestion, q)) ||
+          (item.audioDevanagari && matchesSearchQuery(item.audioDevanagari, q))
       );
     }
     return list;
@@ -501,15 +562,43 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                     <input
                       type="text"
                       className="bodhi-search-input"
-                      placeholder="Ask Bodhi: retroflex sounds, vibhakti, sandhi, zero..."
+                      placeholder="Ask Bodhi: vidya, kṛtrima, AI, sandhi, retroflex, zero..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                     />
                   </div>
 
+                  {/* Live Word Autocomplete Radar */}
+                  {matchingWords.length > 0 && (
+                    <div className="bodhi-word-suggestions-tray">
+                      <div className="bodhi-word-suggestions-header">
+                        <span>💡 Bodhi’s Word Radar (click to explore & hear):</span>
+                      </div>
+                      <div className="bodhi-word-chips-flow">
+                        {matchingWords.map((w) => (
+                          <button
+                            key={w.id}
+                            type="button"
+                            className={`bodhi-word-chip bodhi-word-chip--${w.category}`}
+                            onClick={() => {
+                              setSearchQuery(w.devanagari);
+                              speakSanskrit(w.devanagari);
+                            }}
+                            title={w.breakdown || w.english}
+                          >
+                            <span className="bodhi-word-chip-dev">{w.devanagari}</span>
+                            <span className="bodhi-word-chip-iast">({w.iast})</span>
+                            <span className="bodhi-word-chip-meaning">— {w.english}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   <div className="bodhi-category-chips">
                     {[
                       { id: 'all', label: 'All Topics' },
+                      { id: 'engineering', label: '🧩 Word Riddles' },
                       { id: 'pronunciation', label: '🗣️ Pronunciation' },
                       { id: 'grammar', label: '📚 Grammar' },
                       { id: 'cbse', label: '🎯 CBSE Exams' },
@@ -527,13 +616,129 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                     ))}
                   </div>
 
-                  <div className="bodhi-qa-list" style={{ marginTop: '0.85rem' }}>
-                    {filteredQA.length === 0 ? (
-                      <p style={{ textAlign: 'center', color: '#64748b', fontSize: '0.9rem', padding: '2rem 1rem' }}>
-                        No questions found matching "{searchQuery}". Try searching for "pronunciation", "lakāra", or "sutra"!
-                      </p>
-                    ) : (
-                      filteredQA.map((item) => (
+                  {searchQuery.trim().length > 0 ? (
+                    <div style={{ marginTop: '0.85rem' }}>
+                      {/* Personal Bodhi Greeting Banner */}
+                      <div className="bodhi-personal-search-banner">
+                        <div className="bodhi-personal-badge">
+                          <span>🌿 अहं बोधिः</span>
+                        </div>
+                        <p className="bodhi-personal-message">
+                          {gurukulMatches.length + filteredQA.length > 0 ? (
+                            <>
+                              I explored our Gurukul library for <strong>"{searchQuery.trim()}"</strong> and found <strong>{gurukulMatches.length + filteredQA.length}</strong> {gurukulMatches.length + filteredQA.length === 1 ? 'treasure' : 'treasures'} for you:
+                            </>
+                          ) : (
+                            <>
+                              I searched our entire Gurukul library, but didn't find an exact match for <strong>"{searchQuery.trim()}"</strong>. Let me guide you to related topics below!
+                            </>
+                          )}
+                        </p>
+                      </div>
+
+                      {/* 1. Gurukul Lessons, Studios & Articles */}
+                      {gurukulMatches.length > 0 && selectedCategory !== 'engineering' && (
+                        <div className="bodhi-search-group">
+                          <div className="bodhi-search-group-title">
+                            <span>🧭 Gurukul Lessons & Interactive Studios ({gurukulMatches.length})</span>
+                          </div>
+                          <div className="bodhi-gurukul-results-list">
+                            {gurukulMatches.map((item) => (
+                              <div key={item.id} className="bodhi-gurukul-card">
+                                <div className="bodhi-gurukul-card-header">
+                                  <span
+                                    className="bodhi-gurukul-badge"
+                                    style={{
+                                      backgroundColor: `${item.badgeColor}15`,
+                                      color: item.badgeColor,
+                                      borderColor: `${item.badgeColor}40`,
+                                    }}
+                                  >
+                                    {item.badgeEmoji} {item.categoryLabel}
+                                  </span>
+                                  <button
+                                    type="button"
+                                    className="bodhi-guide-btn"
+                                    onClick={() => handleNavigateToGurukulItem(item)}
+                                    title={`Open ${item.title}`}
+                                  >
+                                    Guide Me There 🚀
+                                  </button>
+                                </div>
+                                <h5 className="bodhi-gurukul-title">{item.title}</h5>
+                                {item.subtitle && <div className="bodhi-gurukul-subtitle">{item.subtitle}</div>}
+                                <p className="bodhi-gurukul-desc">
+                                  <span className="bodhi-persona-prefix">🌿 Bodhi’s note:</span> {item.description}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* 2. Bodhi’s Direct Explanations & Answers */}
+                      {filteredQA.length > 0 && selectedCategory !== 'lessons' && (
+                        <div className="bodhi-search-group" style={{ marginTop: gurukulMatches.length > 0 ? '1rem' : '0' }}>
+                          <div className="bodhi-search-group-title">
+                            <span>❓ Bodhi’s Direct Explanations ({filteredQA.length})</span>
+                          </div>
+                          <div className="bodhi-qa-list">
+                            {filteredQA.map((item) => (
+                              <article key={item.id} className="bodhi-qa-card">
+                                <h5 className="bodhi-qa-question">{item.question}</h5>
+                                {item.sanskritQuestion && (
+                                  <div className="bodhi-qa-sanskrit-q">{item.sanskritQuestion}</div>
+                                )}
+                                <div className="bodhi-qa-short">{item.shortAnswer}</div>
+                                <div className="bodhi-qa-details">{item.detailedAnswer}</div>
+
+                                <div className="bodhi-qa-bottom-bar">
+                                  {item.audioDevanagari ? (
+                                    <button
+                                      type="button"
+                                      className="bodhi-audio-pill"
+                                      onClick={() => speakSanskrit(item.audioDevanagari!)}
+                                      title="Hear pronunciation"
+                                    >
+                                      🔊 {item.audioDevanagari}
+                                    </button>
+                                  ) : <span />}
+
+                                  {item.tip && (
+                                    <span className="bodhi-tip-tag">
+                                      💡 <FollowAlongText text={item.tip} lang="en" activeChunk={chunkFor(item.tip)} />
+                                      {renderEnglishSpeakBtn(item.tip, 'this tip')}
+                                    </span>
+                                  )}
+                                </div>
+                              </article>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* 3. Empty State with Warm Personal Recommendations */}
+                      {gurukulMatches.length === 0 && filteredQA.length === 0 && (
+                        <div className="bodhi-search-empty-personal">
+                          <div className="bodhi-empty-avatar-icon">🧘🏽‍♂️</div>
+                          <h5>मित्र! (Dear friend), no worries at all!</h5>
+                          <p>
+                            Sanskrit spelling or script variations happen. Let Bodhi take you straight to our most popular study rooms:
+                          </p>
+                          <div className="bodhi-empty-shortcut-row">
+                            <button type="button" onClick={() => setSearchQuery('lakara')}>Verb Lakāras (लट्, लृट्)</button>
+                            <button type="button" onClick={() => setSearchQuery('sandhi')}>Sandhi Rules (संधि)</button>
+                            <button type="button" onClick={() => setSearchQuery('vibhakti')}>7 Vibhaktis (विभक्ति)</button>
+                            <button type="button" onClick={() => setSearchQuery('nikhilam')}>Vedic Math Tricks</button>
+                            <button type="button" onClick={() => setSearchQuery('vidya')}>Vidyā (विद्या)</button>
+                            <button type="button" onClick={() => setSearchQuery('krtrimantram')}>AI Riddle (कृत्रिमन्त्रम्)</button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="bodhi-qa-list" style={{ marginTop: '0.85rem' }}>
+                      {filteredQA.map((item) => (
                         <article key={item.id} className="bodhi-qa-card">
                           <h5 className="bodhi-qa-question">{item.question}</h5>
                           {item.sanskritQuestion && (
@@ -562,9 +767,9 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                             )}
                           </div>
                         </article>
-                      ))
-                    )}
-                  </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
 

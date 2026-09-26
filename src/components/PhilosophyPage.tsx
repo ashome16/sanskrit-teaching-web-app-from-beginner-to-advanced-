@@ -36,6 +36,8 @@ const GLOSSARY: { term: string; meaning: string }[] = [
   { term: 'śikṣā', meaning: 'Vedic phonetic science mapping oral articulation points and acoustics' },
   { term: 'japa', meaning: 'meditative repetition of a mantra, verse, or syllable' },
   { term: 'ṛṣi', meaning: 'seer; investigator who observed inner mind-states through isolated speech' },
+  { term: 'guru / guru-paramparā', meaning: 'living unbroken lineage of transmission; the human who has held sound until it changed them, passing sound with its rule of use' },
+  { term: 'prāṇa', meaning: 'living breath carrying vibration and intention in speech; the vital current moving through body and world' },
 ];
 
 const DEFAULT_TITLE =
@@ -283,6 +285,13 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   </p>
                 </div>
                 <div className="philosophy-timescale-card">
+                  <span className="philosophy-timescale-time">Unbroken Lineage</span>
+                  <div className="philosophy-timescale-title">🪔 Guru-Paramparā</div>
+                  <p className="philosophy-timescale-desc">
+                    Living transmission: sound bound to breath, prāṇa, and a personal rule of use.
+                  </p>
+                </div>
+                <div className="philosophy-timescale-card">
                   <span className="philosophy-timescale-time">Months</span>
                   <div className="philosophy-timescale-title">⚡ Artificial Intelligence</div>
                   <p className="philosophy-timescale-desc">
@@ -429,6 +438,81 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </p>
             </section>
 
+            {/* The guru is not a faster model */}
+            <section className="philosophy-section" aria-labelledby="guru-not-model">
+              <h2 id="guru-not-model">The Guru is Not a Faster Model (गुरु-परम्परा)</h2>
+              <p>
+                Ask a large model to invent a language and it will do so in seconds: phonemes,
+                grammar, sample sentences, even a myth of origin. That is generation. It is not{' '}
+                <em>paramparā</em> (<AudioChip term="परम्परा" label="परम्परा" />).
+              </p>
+              <p>
+                <strong>Guru-paramparā is living transmission.</strong> A human being who has held a sound
+                until it changed them gives that sound to another human being, with a rule of use. The
+                syllables may already be public. What travels is not a rare string. What travels is{' '}
+                <em>prāṇa</em> (<AudioChip term="प्राणः" label="प्राणः" />) in speech: breath carrying
+                vibration, intention riding the breath, a mind that has consented to be responsible for
+                the sound.
+              </p>
+              <p>
+                In the language of the sages, <em>prāṇa</em> is not a poetic extra. It is breath as the
+                living current that moves through body and world — the same current they treated as
+                purposeful, meaningful, and controlled, not random noise in matter. Whether one speaks
+                of it in the vocabulary of <em>śāstra</em> or of physiology, the claim is practical: a
+                spoken line is not only data leaving a mouth. It is an imprint of the speaker’s state.
+                Intention, held long enough, becomes invocation. Words are powerful because they are
+                thought made audible, not because they are tokens in a vocabulary list.
+              </p>
+
+              {/* Generator vs Guru Comparison Grid */}
+              <div className="philosophy-duality-grid">
+                <div className="philosophy-duality-card philosophy-duality-card--transfer">
+                  <h3 className="philosophy-duality-title">
+                    <span>🤖</span> The Generator · Model (उत्पादकः)
+                  </h3>
+                  <p className="philosophy-duality-desc">
+                    Operates as recipient, processor, and exporter. Takes text, transforms text,
+                    returns text. It does not stand in the middle as a being who must interpret,
+                    choose, and answer for the outcome. It has no prāṇa to imprint and no life to stake
+                    on the meaning.
+                  </p>
+                </div>
+                <div className="philosophy-duality-card philosophy-duality-card--bind">
+                  <h3 className="philosophy-duality-title">
+                    <span>🪔</span> The Living Guru · Paramparā (गुरु-परम्परा)
+                  </h3>
+                  <p className="philosophy-duality-desc">
+                    Living transmission with a rule of use. The human is the medium: receiving,
+                    transferring, and infusing information with thought. The living constraint that
+                    keeps speech from becoming random: purposeful, meaningful, controlled.
+                  </p>
+                </div>
+              </div>
+
+              <p>
+                A machine operates as recipient, processor, and exporter. It takes text, transforms
+                text, returns text. It does not stand in the middle as a being who must interpret,
+                choose, and answer for the outcome. The human is the medium: receiving, transferring,
+                and infusing information with thought. That middle piece is the whole of knowledge as a
+                civilisation meant it — not storage of propositions, but interpretation and use, so that
+                one can master what follows from speech.
+              </p>
+              <p>
+                This is why a guru cannot be replaced by a generator. The generator has no prāṇa to
+                imprint and no life to stake on the meaning. The guru is not faster content. The guru is
+                the living constraint that keeps speech from becoming random: purposeful, meaningful,
+                controlled — the same discipline that made mantra an experiment rather than chatter.
+              </p>
+              <div className="philosophy-callout" style={{ borderLeftColor: '#d97706', background: '#fffbeb', margin: '1.25rem 0' }}>
+                <p style={{ margin: '0 0 0.35rem', fontWeight: 800, color: '#9a3412', fontSize: '1.05rem' }}>
+                  AI can print the mantra. Only a living lineage can give the principle of its use.
+                </p>
+                <p style={{ margin: 0, color: '#451a03', fontSize: '1rem', fontStyle: 'italic' }}>
+                  AI can move information. Only a human, breathing, can turn intention into invocation.
+                </p>
+              </div>
+            </section>
+
             {/* Why Sanskrit is a special case in this age */}
             <section className="philosophy-section" aria-labelledby="special-case">
               <h2 id="special-case">Why Sanskrit Is a Special Case in This Age</h2>
@@ -562,8 +646,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               <div className="philosophy-card">
                 <h3>Use translation and tutors as scaffolding. Do not use them as the temple.</h3>
                 <p>
-                  Let models explain confusing grammar, generate drills, or provide scaffolding. But
-                  never let the tool replace the friction of your own parsing.
+                  Let models explain confusing grammar, generate drills, or provide scaffolding. Never
+                  let the tool replace the friction of your own parsing — or the living teacher, when
+                  you have one.
                 </p>
               </div>
 
@@ -587,7 +672,8 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               <div className="philosophy-card">
                 <h3>Treat the app as a container that should get quieter as you grow, not louder</h3>
                 <p>
-                  Streaks and scores are for memory. They are not a measure of <em>darśana</em>.
+                  Streaks and scores are for memory. They are not a measure of <em>darśana</em>. They are
+                  not a guru.
                 </p>
               </div>
             </section>
@@ -608,16 +694,19 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 Learn it because the age of AI will make language optional as a survival skill. That
                 is exactly when it becomes necessary as a human one. Billions of years made the
                 possibility of a brain. Millions of years made a speaking body. Thousands of years
-                made Sanskrit into a craft. Evolution, if it is wise, does not throw those layers
-                away. It learns to speak from them.
+                made Sanskrit into a craft. A living paramparā kept that craft from becoming only text.
+                Evolution, if it is wise, does not throw those layers away. It learns to speak from them.
               </p>
 
               <div className="philosophy-callout" style={{ textAlign: 'center', padding: '1.25rem' }}>
                 <p style={{ margin: '0 0 0.35rem', fontSize: '1.2rem', fontWeight: 800, color: '#9a3412' }}>
                   AI will give you the translation.
                 </p>
-                <p style={{ margin: 0, fontSize: '1.45rem', fontWeight: 900, color: '#1e293b' }}>
+                <p style={{ margin: '0 0 0.45rem', fontSize: '1.45rem', fontWeight: 900, color: '#1e293b' }}>
                   Only you can give yourself the voice.
+                </p>
+                <p style={{ margin: 0, fontSize: '1.05rem', fontWeight: 700, color: '#0f766e' }}>
+                  And only a living teacher can show you that the voice is not an output — it is prāṇa, thought, and purpose made audible.
                 </p>
               </div>
             </section>
@@ -634,9 +723,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 the verse until the mouth knows it.
               </p>
               <p style={{ fontSize: '1.02rem', lineHeight: 1.6, color: '#134e4a', margin: '0 0 1.25rem' }}>
-                That is the difference between having Sanskrit on your phone and having Sanskrit in your
+                <strong>When you can, receive a line from a living teacher and keep its rule of use.</strong> That is the difference between having Sanskrit on your phone and having Sanskrit in your
                 speech. The phone is new. The speech is older than every empire that tried to replace
-                it.
+                it. <strong>The guru is the reason the speech did not die when the page was printed.</strong>
               </p>
 
               <div className="philosophy-action-buttons">

@@ -540,6 +540,88 @@
   color: #94a3b8;
 }
 
+/* Live Word Suggestions Tray */
+.bodhi-word-suggestions-tray {
+  margin: -0.35rem 0 0.75rem;
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  border-radius: 12px;
+  padding: 0.6rem 0.75rem;
+  animation: bodhi-fade-in 0.18s ease-out;
+}
+
+.bodhi-word-suggestions-header {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #b45309;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.4rem;
+}
+
+.bodhi-word-chips-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.bodhi-word-chip {
+  background: #ffffff;
+  border: 1px solid #fcd34d;
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.76rem;
+  color: #1e293b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: left;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.bodhi-word-chip:hover {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  transform: translateX(2px);
+}
+
+.bodhi-word-chip--tech {
+  border-left: 3.5px solid #6366f1;
+}
+
+.bodhi-word-chip--root {
+  border-left: 3.5px solid #10b981;
+}
+
+.bodhi-word-chip--grammar {
+  border-left: 3.5px solid #f59e0b;
+}
+
+.bodhi-word-chip--vocab {
+  border-left: 3.5px solid #ec4899;
+}
+
+.bodhi-word-chip-dev {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #9a3412;
+}
+
+.bodhi-word-chip-iast {
+  font-style: italic;
+  color: #64748b;
+  font-size: 0.74rem;
+}
+
+.bodhi-word-chip-meaning {
+  color: #334155;
+  font-weight: 500;
+  flex: 1;
+}
+
 .bodhi-category-chips {
   display: flex;
   gap: 0.4rem;
@@ -656,6 +738,193 @@
   font-size: 0.72rem;
   color: #64748b;
   font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   Connected Gurukul Search Results inside Bodhi
+   -------------------------------------------------------------------------- */
+.bodhi-personal-search-banner {
+  background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%);
+  border: 1.5px solid #fde68a;
+  border-radius: 12px;
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.bodhi-personal-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #f59e0b;
+  color: #ffffff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.bodhi-personal-message {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #78350f;
+  line-height: 1.4;
+}
+
+.bodhi-search-group {
+  margin-bottom: 1rem;
+}
+
+.bodhi-search-group-title {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #9a3412;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.bodhi-gurukul-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.bodhi-gurukul-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.8rem 0.95rem;
+  transition: all 0.18s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.bodhi-gurukul-card:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1);
+  transform: translateY(-1px);
+}
+
+.bodhi-gurukul-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.bodhi-gurukul-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.18rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid;
+}
+
+.bodhi-guide-btn {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.32rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: all 0.15s ease;
+}
+
+.bodhi-guide-btn:hover {
+  background: linear-gradient(135deg, #c2410c 0%, #9a3412 100%);
+  transform: translateY(-1px);
+}
+
+.bodhi-gurukul-title {
+  margin: 0 0 0.2rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.35;
+}
+
+.bodhi-gurukul-subtitle {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #b45309;
+  margin-bottom: 0.35rem;
+}
+
+.bodhi-gurukul-desc {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #475569;
+  line-height: 1.45;
+}
+
+.bodhi-persona-prefix {
+  font-weight: 700;
+  color: #15803d;
+}
+
+.bodhi-search-empty-personal {
+  text-align: center;
+  background: #f8fafc;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 14px;
+  padding: 1.5rem 1rem;
+  margin: 0.5rem 0;
+}
+
+.bodhi-empty-avatar-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.bodhi-search-empty-personal h5 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.bodhi-search-empty-personal p {
+  margin: 0 0 1rem;
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.45;
+}
+
+.bodhi-empty-shortcut-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.bodhi-empty-shortcut-row button {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9a3412;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.bodhi-empty-shortcut-row button:hover {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  transform: translateY(-1px);
 }
 
 /* --------------------------------------------------------------------------

@@ -38,7 +38,7 @@ export interface BodhiContextTip {
 
 export interface BodhiQAItem {
   id: string;
-  category: 'pronunciation' | 'grammar' | 'cbse' | 'vedic_math' | 'philosophy';
+  category: 'pronunciation' | 'grammar' | 'cbse' | 'vedic_math' | 'philosophy' | 'engineering';
   question: string;
   sanskritQuestion?: string;
   shortAnswer: string;
@@ -46,6 +46,16 @@ export interface BodhiQAItem {
   audioDevanagari?: string;
   tip?: string;
   relatedView?: string;
+}
+
+export interface BodhiWordSuggestion {
+  id: string;
+  devanagari: string;
+  iast: string;
+  english: string;
+  category: 'root' | 'tech' | 'grammar' | 'vocab';
+  breakdown?: string;
+  modernConcept?: string;
 }
 
 export const BODHI_PROFILE = {
@@ -114,6 +124,15 @@ export const BODHI_SUBHASHITAS: Subhashita[] = [
     bodhiReflection: 'The sacred motto of India! Truth (Satya) in speech means speaking what is true, gentle, and beneficial for all living beings.',
     source: 'Muṇḍaka Upaniṣad (मुण्डकोपनिषद् 3.1.6)',
     theme: 'Truth & Integrity',
+  },
+  {
+    id: 'subh-7',
+    verseDevanagari: 'गुरुर्ब्रह्मा गुरुर्विष्णुर्गुरुर्देवो महेश्वरः ।\nगुरुः साक्षात् परं ब्रह्म तस्मै श्रीगुरवे नमः ॥',
+    verseIast: 'gururbrahmā gururviṣṇurgururdevo maheśvaraḥ |\nguruḥ sākṣāt paraṁ brahma tasmai śrīgurave namaḥ ||',
+    englishMeaning: 'The Guru is Brahmā (creator of wisdom), the Guru is Viṣṇu (sustainer of learning), the Guru is Śiva (dispeller of ignorance). The Guru is verily the Supreme Reality itself — salutations to that revered Guru.',
+    bodhiReflection: 'In our Gurukul, the Guru is not a faster search engine or generative model. The Guru is a living presence — the living breath and constraint that transforms mere information into living realization.',
+    source: 'Guru Gītā (गुरुगीता)',
+    theme: 'The Living Teacher (गुरु-महिमा)',
   },
 ];
 
@@ -405,12 +424,12 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
   {
     id: 'qa-vowel-length',
     category: 'pronunciation',
-    question: 'What is the difference between Hrasva (ह्रस्व) and Dīrgha (दीर्घ) vowels?',
-    sanskritQuestion: 'ह्रस्व-दीर्घ-स्वरयोः कः भेदः?',
-    shortAnswer: 'Hrasva vowels last for exactly 1 beat (mātrā), while Dīrgha vowels last for 2 beats.',
-    detailedAnswer: 'In Sanskrit, vowel duration changes the entire meaning of a word! For example, "शिव" (Śiva - auspicious) has a short "i", while "शीत" (cold) has a long "ī". In the ancient Prātiśākhyas, 1 mātrā is compared to the call of a blue jay (चाष), 2 mātrās to the crowing of a rooster, and 3 mātrās (pluta) to the cry of a peacock.',
-    audioDevanagari: 'अ आ इ ई उ ऊ',
-    tip: 'Tap your finger on your desk: short vowels get one tap, long vowels get two smooth taps.',
+    question: 'What does the symbol on top of vowels mean (like ā in [vidyā]), and what is the difference between Hrasva (ह्रस्व) and Dīrgha (दीर्घ)?',
+    sanskritQuestion: 'ह्रस्व-दीर्घ-स्वरयोः कः भेदः? आ-कारे उपरि दण्डस्य कः अर्थः?',
+    shortAnswer: 'The horizontal bar on top (called a macron: ā) denotes a Dīrgha (दीर्घ / long) vowel held for 2 beats (mātrās), like "aa" in father versus "u" in cut.',
+    detailedAnswer: 'In Sanskrit transliteration (IAST), the horizontal bar above a vowel (like ā, ī, ū) is called a macron. In Sanskrit phonetics (शिक्षा / Śikṣā), it denotes a Dīrgha (दीर्घ) or long vowel:\n• Plain "a" (अ) = Hrasva (ह्रस्व / short, 1 mātrā), pronounced like the "u" in "cut" or "sun".\n• "ā" with a macron (आ) = Dīrgha (दीर्घ / long, 2 mātrās), held for twice the duration, sounding like "aa" in "father".\nIn [vidyā] (विद्या), "vi" has a short "i" (1 mātrā), while "dyā" has a long "ā" (2 mātrās). In Sanskrit, vowel duration changes the entire meaning of a word! For example: "शिव" (Śiva - auspicious) with short "i", but "शीत" (cold) with long "ī"; or "सुतः" (son) vs "सुता" (daughter). In the ancient Prātiśākhyas, 1 mātrā is compared to the call of a blue jay (चाष), 2 mātrās to the crowing of a rooster, and 3 mātrās (pluta) to the cry of a peacock.',
+    audioDevanagari: 'अ आ इ ई उ ऊ विद्या',
+    tip: 'Tap your finger on your desk: short vowels (a, i, u) get one quick tap (1 mātrā); long vowels with a macron (ā, ī, ū) get two smooth taps (2 mātrās).',
     relatedView: 'reader',
   },
   {
@@ -512,6 +531,17 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     relatedView: 'home',
   },
   {
+    id: 'qa-guru-parampara',
+    category: 'philosophy',
+    question: 'Why is the Guru not just a faster model? What is the role of Guru-Paramparā in the age of AI?',
+    sanskritQuestion: 'किं कृत्रिम-बुद्धेः युगे गुरु-परम्परायाः स्थाने यन्त्रं भवितुम् अर्हति?',
+    shortAnswer: 'A generative model is an accumulator and processor of recorded traces, whereas a Guru is a living constraint and unbroken lineage who transmits Prāṇa (breath/life) into speech.',
+    detailedAnswer: 'In the Sanskrit Gurukul tradition, the guru is not an informational bottleneck or a faster search engine. Machines process representations; humans live conditions. A model can print a mantra, parse its grammar, or recite a commentary, but it has no breath (prāṇa), no mortality, no fear, and no lineage commitment. The Guru is a living constraint whose voice is bonded to breath and attention, passing down the principle of a text\'s use (प्रयोग). As Bodhi\'s study note reminds us: AI can move information; only a living lineage can turn intention into invocation. The guru is why Sanskrit did not die when paper was printed, and why it will remain living in the age of AI.',
+    audioDevanagari: 'गुरुः साक्षात् परं ब्रह्म तस्मै श्रीगुरवे नमः',
+    tip: 'An app or AI is a wonderful scaffold or reference shelf, but never confuse the scaffold for the temple or the search engine for the living teacher.',
+    relatedView: 'philosophy',
+  },
+  {
     id: 'qa-gunitaakshara',
     category: 'pronunciation',
     question: 'What are Guṇitākṣarāṇi (गुणिताक्षराणि) and how do Mātrās work?',
@@ -555,4 +585,92 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     tip: 'When you hear "33 Koti Devata", remember that Koṭi in Sanskrit also meant supreme category/class, not just numerical crore!',
     relatedView: 'vedic-maths',
   },
+  {
+    id: 'qa-riddle-ai',
+    category: 'engineering',
+    question: '🧩 Riddle #1: What modern tech concept is engineered by "कृत्रिमन्त्रम्" (Kṛtrimantram)?',
+    sanskritQuestion: 'कृत्रिमन्त्रम् इति नवीन-शब्देन कस्य आधुनिक-तन्त्रज्ञानस्य बोधः भवति?',
+    shortAnswer: 'Artificial Intelligence (AI) — literally an engineered tool/mechanism (मन्त्र) for active thinking, reasoning, and computing!',
+    detailedAnswer: 'Blueprint Breakdown:\n• Stage 1 (Raw Materials): Core Root √मन् (Man = to think, ponder, compute) + instrumental suffix "त्र" (tra = instrument/mechanism) + modifier "कृत्रिम" (artificial/man-made, from √कृ + त्रिमप्).\n• Stage 2 (Grammar Forge): √मन् + त्र = मन्त्र (Pāṇini 3.2.182: tool for thinking). Compounded via Tatpuruṣa Samāsa: कृत्रिम + मन्त्रम् = कृत्रिमन्त्रम्.\n• Stage 3 (Final Outcome): "कृत्रिमन्त्रम्" = An engineered instrument designed for synthetic intelligence and reasoning!\nWhy this is pure genius: While modern languages translate AI clumsily as "कृत्रिम बुद्धिमत्ता" (three words), classical Pāṇinian morphology creates a single, elegant nominal: कृत्रिमन्त्रम्!',
+    audioDevanagari: 'कृत्रिमन्त्रम्',
+    tip: 'In ancient times, "Mantra" meant an instrument of thought (मननात् त्रायते इति). Today, AI is quite literally a machine that calculates thoughts!',
+    relatedView: 'philosophy',
+  },
+  {
+    id: 'qa-riddle-internet',
+    category: 'engineering',
+    question: '🧩 Riddle #2: What modern communication network is engineered by "अन्तर्जालम्" (Antarjālam) / "विश्वजालम्" (Viśvajālam)?',
+    sanskritQuestion: 'अन्तर्जालम् अथवा विश्वजालम् इति शब्देन किम् अभिधीयते?',
+    shortAnswer: 'The Internet / World Wide Web (WWW) — an interconnected mesh (जाल) spanning the interior space between all computational nodes.',
+    detailedAnswer: 'Blueprint Breakdown:\n• Stage 1 (Raw Materials): Core word "जालम्" (Jālam = net, lattice, matrix, web) + prefix "अन्तर्" (Antar = within, interconnected among entities; cognate to Latin "inter-") or "विश्व" (Viśva = universe/global).\n• Stage 2 (Grammar Forge): Tatpuruṣa Samāsa (अन्तर्गतं जालं यत् सर्वान् संबध्नाति = The inner web linking all). Compounding with Sandhi yields "अन्तर्जालम्" (The Internet) and "विश्वजालम्" (The World Wide Web).\n• Stage 3 (Final Outcome): Precise Sanskrit descriptive nominals that perfectly encapsulate nodes interconnected across global cyberspace.',
+    audioDevanagari: 'अन्तर्जालम् विश्वजालम्',
+    tip: 'Think of spiderwebs or fishing nets: "जाल" describes any interconnected node network where every thread holds tension with the rest!',
+    relatedView: 'philosophy',
+  },
+  {
+    id: 'qa-riddle-smartphone',
+    category: 'engineering',
+    question: '🧩 Riddle #3: What everyday pocket device is engineered by "चलदूरभाषः" (Caladūrabhāṣaḥ)?',
+    sanskritQuestion: 'चलदूरभाषः इति शब्देन कस्य यन्त्रस्य निर्देशः भवति?',
+    shortAnswer: 'Mobile Phone / Smartphone — literally a mobile (चल) instrument for speaking across long distances (दूरभाष).',
+    detailedAnswer: 'Blueprint Breakdown:\n• Stage 1 (Raw Materials): Root √भाष् (to speak/voice) + Ghañ suffix = भाषः (instrument of speech) + prefix "दूर" (dūra = at a distance/tele-) + adjective "चल" (moving, portable, from √चल् = to move).\n• Stage 2 (Grammar Forge): दूर + भाषः = दूरभाषः (Telephone). Then Karmadhāraya Samāsa: चलः चासौ दूरभाषश्च = चलदूरभाषः (Mobile phone). If equipped with intelligence (Smartphone), it is engineered as "सचेतन-चलदूरभाषः"!\n• Stage 3 (Final Outcome): "चलदूरभाषः" (Mobile phone) and "चलदूरवाणी" (Cellular voice terminal).',
+    audioDevanagari: 'चलदूरभाषः',
+    tip: 'Notice how "Dūra" matches the Greek prefix "Tele-" (as in Telephone, Television, Telescope)!',
+    relatedView: 'reader',
+  },
+  {
+    id: 'qa-riddle-satellite',
+    category: 'engineering',
+    question: '🧩 Riddle #4: What aerospace technology is engineered by "कृत्रिमोपग्रहः" (Kṛtrimopagrahaḥ)?',
+    sanskritQuestion: 'कृत्रिमोपग्रहः इति शब्देन कस्य आकाश-यन्त्रस्य ग्रहणं भवति?',
+    shortAnswer: 'Artificial Space Satellite — a man-made (कृत्रिम) secondary companion body (उपग्रह) locked in orbital gravitation.',
+    detailedAnswer: 'Blueprint Breakdown:\n• Stage 1 (Raw Materials): Root √ग्रह् (to seize/gravitate) + Ac suffix = ग्रहः (celestial body holding orbit) + prefix "उप" (secondary/orbiting companion, as in Upaniṣad) + adjective "कृत्रिम" (artificial).\n• Stage 2 (Grammar Forge): उप + ग्रहः = उपग्रहः (a moon or satellite orbiting a primary planet). Compounded with "कृत्रिम" via Karmadhāraya: कृत्रिम + उपग्रहः. Applying Guṇa Sandhi (a + u = o, Pāṇini 6.1.87 "आद्गुणः") morphs it into "कृत्रिमोपग्रहः".\n• Stage 3 (Final Outcome): "कृत्रिमोपग्रहः" = An artificial orbiting satellite orbiting Earth for GPS, weather, and telecommunications!',
+    audioDevanagari: 'कृत्रिमोपग्रहः',
+    tip: 'In Sanskrit astronomy, the Moon (चन्द्र) is a natural उपग्रहः, while Chandrayaan and GSAT are कृत्रिमोपग्रहाः!',
+    relatedView: 'vedic-maths',
+  },
+  {
+    id: 'qa-riddle-blockchain',
+    category: 'engineering',
+    question: '🧩 Riddle #5: What decentralized fintech architecture is engineered by "खण्डशृङ्खला" (Khaṇḍaśṛṅkhalā)?',
+    sanskritQuestion: 'खण्डशृङ्खला इति पदं कस्याः आधुनिक-तन्त्र-व्यवस्थायाः वाचकम्?',
+    shortAnswer: 'Blockchain — an immutable, cryptographically verified chain (शृङ्खला) of discrete data blocks (खण्ड).',
+    detailedAnswer: 'Blueprint Breakdown:\n• Stage 1 (Raw Materials): Root √खण्ड् (to divide, partition) = खण्डः (a discrete block or ledger record) + nominal base "शृङ्खला" (an interlocking unbroken chain or series).\n• Stage 2 (Grammar Forge): Ṣaṣṭhī Tatpuruṣa Samāsa: खण्डानां शृङ्खला = खण्डशृङ्खला (A linked chain of blocks). When encrypted cryptographically with root √गुप् (to protect/hash), it is termed "गोपिता खण्डशृङ्खला" (Cryptographic Blockchain)!\n• Stage 3 (Final Outcome): "खण्डशृङ्खला" captures the distributed ledger architecture with 100% mathematical precision without borrowing a single foreign word.',
+    audioDevanagari: 'खण्डशृङ्खला',
+    tip: 'Sanskrit compounds (Samāsa) are naturally modular — just like software object-oriented design and cryptography blocks!',
+    relatedView: 'vedic-maths',
+  },
+];
+
+export const BODHI_WORD_SUGGESTIONS: BodhiWordSuggestion[] = [
+  // Tech / Neologisms
+  { id: 'w-ai', devanagari: 'कृत्रिमन्त्रम्', iast: 'Kṛtrimantram', english: 'Artificial Intelligence (AI)', category: 'tech', modernConcept: 'AI / Thinking Machine', breakdown: 'कृत्रिम (artificial) + √मन् (to think) + त्र (mechanism)' },
+  { id: 'w-net', devanagari: 'अन्तर्जालम्', iast: 'Antarjālam', english: 'The Internet / Cyberspace', category: 'tech', modernConcept: 'Internet', breakdown: 'अन्तर् (inter-) + जालम् (net / web)' },
+  { id: 'w-phone', devanagari: 'चलदूरभाषः', iast: 'Caladūrabhāṣaḥ', english: 'Mobile Phone / Smartphone', category: 'tech', modernConcept: 'Smartphone', breakdown: 'चल (mobile) + दूर (tele) + √भाष् (to speak)' },
+  { id: 'w-sat', devanagari: 'कृत्रिमोपग्रहः', iast: 'Kṛtrimopagrahaḥ', english: 'Artificial Space Satellite', category: 'tech', modernConcept: 'Satellite', breakdown: 'कृत्रिम (man-made) + उपग्रहः (satellite orbiter)' },
+  { id: 'w-chain', devanagari: 'खण्डशृङ्खला', iast: 'Khaṇḍaśṛṅkhalā', english: 'Blockchain / Distributed Ledger', category: 'tech', modernConcept: 'Blockchain', breakdown: 'खण्ड (block) + शृङ्खला (interlocked chain)' },
+  { id: 'w-comp', devanagari: 'सङ्गणकम्', iast: 'Saṅgaṇakam', english: 'Computer / Calculating Machine', category: 'tech', modernConcept: 'Computer', breakdown: 'सम् (well/together) + √गण् (to compute) + ल्युट् (noun suffix)' },
+  { id: 'w-vr', devanagari: 'आभासीय-यथार्थता', iast: 'Ābhāsīya-Yathārthatā', english: 'Virtual Reality (VR)', category: 'tech', modernConcept: 'Virtual Reality', breakdown: 'आभास (simulated appearance) + यथार्थता (reality)' },
+  { id: 'w-email', devanagari: 'विद्युत्पत्रम्', iast: 'Vidyut-patram', english: 'Electronic Mail (E-mail)', category: 'tech', modernConcept: 'Email', breakdown: 'विद्युत् (electric) + पत्रम् (letter/message)' },
+
+  // Roots (Dhātus)
+  { id: 'w-dhatu-man', devanagari: '√मन्', iast: '√man', english: 'To think, reason, ponder, calculate', category: 'root', breakdown: 'Divādi Gaṇa (मन्यते) — Root of mantra, manas, manana' },
+  { id: 'w-dhatu-kr', devanagari: '√कृ', iast: '√kṛ', english: 'To do, create, make, perform', category: 'root', breakdown: 'Tanādi Gaṇa (करोति) — Root of karma, kārya, kartā, kṛtrima' },
+  { id: 'w-dhatu-jna', devanagari: '√ज्ञा', iast: '√jñā', english: 'To know, understand, cognize', category: 'root', breakdown: 'Kryādi Gaṇa (जानाति) — Root of jñāna, vijñāna, saṁjñā' },
+  { id: 'w-dhatu-gam', devanagari: '√गम्', iast: '√gam', english: 'To go, move, progress', category: 'root', breakdown: 'Bhavādi Gaṇa (गच्छति) — Root of gati, āgama, jaṅgama' },
+  { id: 'w-dhatu-path', devanagari: '√पठ्', iast: '√paṭh', english: 'To read, study, recite aloud', category: 'root', breakdown: 'Bhavādi Gaṇa (पठति) — Root of pāṭha, pāṭhaśālā' },
+  { id: 'w-dhatu-likh', devanagari: '√लिख्', iast: '√likh', english: 'To write, scratch, record, sketch', category: 'root', breakdown: 'Tudādi Gaṇa (लिखति) — Root of lekha, lipi, lekhaka' },
+  { id: 'w-dhatu-drs', devanagari: '√दृश्', iast: '√dṛś', english: 'To see, perceive, realize', category: 'root', breakdown: 'Bhavādi Gaṇa (पश्यति) — Root of darśana, dṛṣṭi' },
+
+  // Core Vocabulary & Grammar
+  { id: 'w-vidya', devanagari: 'विद्या', iast: 'Vidyā', english: 'Sacred Knowledge, Science, Wisdom', category: 'vocab', breakdown: '√विद् (to know) + क्यप् + टाप् (feminine)' },
+  { id: 'w-vibhakti', devanagari: 'विभक्तिः', iast: 'Vibhaktiḥ', english: 'Noun Case Inflection (7 Cases)', category: 'grammar', breakdown: 'वि + √भज् (to divide/distribute) + क्तिन्' },
+  { id: 'w-sandhi', devanagari: 'सन्धिः', iast: 'Sandhiḥ', english: 'Phonological Sound Junction / Union', category: 'grammar', breakdown: 'सम् + √धा (to place together) + कि' },
+  { id: 'w-samasa', devanagari: 'समासः', iast: 'Samāsaḥ', english: 'Nominal Word Compounding', category: 'grammar', breakdown: 'सम् + √अस् (to throw/merge together) + घञ्' },
+  { id: 'w-sutra', devanagari: 'सूत्रम्', iast: 'Sūtram', english: 'Aphorism, Concise Algorithmic Code', category: 'grammar', breakdown: '√सिव् (to sew) + ष्ट्रन् — An unbroken thread of rules' },
+  { id: 'w-visarga', devanagari: 'विसर्गः', iast: 'Visargaḥ', english: 'Aspiration Sound (ः) Mirroring Preceding Vowel', category: 'grammar', breakdown: 'वि + √सृज् (to emit/release breath) + घञ्' },
+  { id: 'w-anusvara', devanagari: 'अनुस्वारः', iast: 'Anusvāraḥ', english: 'Pure Nasal Sound (ं) Following a Vowel', category: 'grammar', breakdown: 'अनु (after) + स्वर (vowel) — That which follows a vowel' },
+  { id: 'w-guru', devanagari: 'गुरुः', iast: 'Guruḥ', english: 'Living Teacher, Spiritual Guide (Heavy with Wisdom)', category: 'vocab', breakdown: '√गृ (to invoke/guide) or गु (darkness) + रु (dispeller) — The living dispeller of darkness' },
+  { id: 'w-parampara', devanagari: 'परम्परा', iast: 'Paramparā', english: 'Unbroken Living Lineage / Succession', category: 'vocab', breakdown: 'परम् (beyond) + परम् (higher) — From one generation of teachers to the next' },
+  { id: 'w-prana', devanagari: 'प्राणः', iast: 'Prāṇaḥ', english: 'Vital Breath, Life-Force in Speech and Being', category: 'vocab', breakdown: 'प्र + √अन् (to breathe) + घञ् — The breath that binds intention to sound' },
 ];

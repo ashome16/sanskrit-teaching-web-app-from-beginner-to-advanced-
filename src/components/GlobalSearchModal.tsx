@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { SEARCH_INDEX, type SearchItem, type SearchCategory } from '../data/searchIndex';
+import { matchesSearchQuery, stripDiacritics, normalizeSearchText } from '../utils/searchNormalizer';
 import '../styles/search-modal.css';
 
 interface GlobalSearchModalProps {
@@ -9,16 +10,16 @@ interface GlobalSearchModalProps {
 }
 
 const POPULAR_SUGGESTIONS = [
-  'Kaṭapayādi (ϕ & π)',
-  'Vibhaktis (8 Cases)',
+  'Vidyā (विद्या)',
+  'Symbol on top of a (ā)',
+  'Ask Bodhi',
   '16 Vedic Sutras',
+  '13 Sub-Sutras',
+  'Vibhaktis (8 Cases)',
   'Sandhi',
+  'Kaṭapayādi (ϕ & π)',
   'Dhātupāṭha',
-  'Vedic Geometry',
-  'Numbers 1-100',
-  'Class 7 Ch 1',
-  'Class 8',
-  'CBSE Guide',
+  'Class 7 & 8 Deepakam',
 ];
 
 const RECENT_SEARCHES_KEY = 'gurukul_recent_searches_v1';
@@ -101,8 +102,11 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
 
   // Filter & Rank results
   const filteredResults = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    const tokens = q.split(/\s+/).filter(Boolean);
+    const q = query.trim();
+    if (!q) {
+      if (activeCategory === 'all') return SEARCH_INDEX;
+      return SEARCH_INDEX.filter((item) => item.category === activeCategory);
+    }
 
     return SEARCH_INDEX.filter((item) => {
       // Category filter
@@ -114,8 +118,6 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
         if (activeCategory === 'guides' && item.category !== 'guides') return false;
       }
 
-      if (tokens.length === 0) return true;
-
       // Text search matching against title, subtitle, description, keywords, category
       const targetString = [
         item.title,
@@ -123,18 +125,16 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
         item.description,
         item.categoryLabel,
         ...item.keywords,
-      ]
-        .join(' ')
-        .toLowerCase();
+      ].join(' ');
 
-      // Check if all search tokens match
-      return tokens.every((token) => targetString.includes(token));
+      return matchesSearchQuery(targetString, q);
     }).sort((a, b) => {
-      if (!query.trim()) return 0;
-      const qLower = query.trim().toLowerCase();
-      // Exact title match boost
-      const aTitleMatch = a.title.toLowerCase().includes(qLower) ? 2 : 0;
-      const bTitleMatch = b.title.toLowerCase().includes(qLower) ? 2 : 0;
+      const qNorm = normalizeSearchText(q);
+      const aTitleNorm = normalizeSearchText(a.title);
+      const bTitleNorm = normalizeSearchText(b.title);
+
+      const aTitleMatch = aTitleNorm.includes(qNorm) ? 2 : 0;
+      const bTitleMatch = bTitleNorm.includes(qNorm) ? 2 : 0;
       return bTitleMatch - aTitleMatch;
     });
   }, [query, activeCategory]);
@@ -195,25 +195,48 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
     const q = searchQuery.trim();
     if (!q) return text;
 
-    const tokens = q
-      .split(/\s+/)
-      .filter((t) => t.length > 1)
-      .map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+    const rawTokens = q.split(/\s+/).filter((t) => t.length > 0);
+    if (rawTokens.length === 0) return text;
 
-    if (tokens.length === 0) return text;
+    const buildFuzzyRegexPattern = (token: string) => {
+      const clean = stripDiacritics(token).toLowerCase();
+      let pat = '';
+      for (const ch of clean) {
+        if (ch === 'a') pat += '[aāAĀ]';
+        else if (ch === 'i') pat += '[iīIĪ]';
+        else if (ch === 'u') pat += '[uūUŪ]';
+        else if (ch === 'r') pat += '[rṛṝRṚṜ]';
+        else if (ch === 'l') pat += '[lḷḹLḶḸ]';
+        else if (ch === 'n') pat += '[nṅñṇNṄÑṆ]';
+        else if (ch === 't') pat += '[tṭTṬ]';
+        else if (ch === 'd') pat += '[dḍDḌ]';
+        else if (ch === 's') pat += '[sśṣSŚṢ]';
+        else if (ch === 'h') pat += '[hḥHḤ]';
+        else if (ch === 'm') pat += '[mṃṁMṂṀ]';
+        else pat += ch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      }
+      return pat;
+    };
 
-    const regex = new RegExp(`(${tokens.join('|')})`, 'gi');
-    const parts = text.split(regex);
+    const patterns = rawTokens.map(buildFuzzyRegexPattern).filter(Boolean);
+    if (patterns.length === 0) return text;
 
-    return parts.map((part, index) =>
-      regex.test(part) ? (
-        <mark key={index} className="search-highlight">
-          {part}
-        </mark>
-      ) : (
-        part
-      )
-    );
+    try {
+      const regex = new RegExp(`(${patterns.join('|')})`, 'gi');
+      const parts = text.split(regex);
+
+      return parts.map((part, index) =>
+        regex.test(part) ? (
+          <mark key={index} className="search-highlight">
+            {part}
+          </mark>
+        ) : (
+          part
+        )
+      );
+    } catch {
+      return text;
+    }
   };
 
   if (!isOpen) return null;

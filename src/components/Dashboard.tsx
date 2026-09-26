@@ -214,6 +214,7 @@ const Dashboard: React.FC = () => {
   const [grammarTargetArticleId, setGrammarTargetArticleId] = useState<string | null>(null);
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isBodhiGuideOpen, setIsBodhiGuideOpen] = useState(false);
+  const [bodhiGuideInitialTab, setBodhiGuideInitialTab] = useState<'context' | 'qa' | 'subhashita' | 'phrases'>('context');
   const {
     currentUser,
     openAuthModal,
@@ -325,6 +326,9 @@ const Dashboard: React.FC = () => {
   const handleSearchResultNavigate = (item: SearchItem) => {
     const { target } = item;
     if (target.openBodhi) {
+      if (target.bodhiTab) {
+        setBodhiGuideInitialTab(target.bodhiTab);
+      }
       setIsBodhiGuideOpen(true);
       return;
     }
@@ -1028,6 +1032,8 @@ const Dashboard: React.FC = () => {
         onOpenVarnamala={openVarnamala}
         forceOpen={isBodhiGuideOpen}
         onOpenChange={setIsBodhiGuideOpen}
+        initialTab={bodhiGuideInitialTab}
+        onSearchResultNavigate={handleSearchResultNavigate}
       />
 
       <GlobalSearchModal
