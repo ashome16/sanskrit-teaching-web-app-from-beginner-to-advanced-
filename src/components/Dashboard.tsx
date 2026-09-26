@@ -759,13 +759,13 @@ const Dashboard: React.FC = () => {
             <span className="dashboard-nav-secondary">Tile Puzzle</span>
           </button>
           <div
-            className={`dashboard-nav-group${activeView === 'reader' && lesson.id !== 'varnamala' ? ' dashboard-nav-group--active' : ''}`}
+            className={`dashboard-nav-group${(activeView === 'reader' && lesson.id !== 'varnamala') || activeView === 'cbse-guide' ? ' dashboard-nav-group--active' : ''}`}
           >
             <span className="dashboard-nav-group-label">
               <img src="/nav/nav-deepakam.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={18} height={18} />
-              CBSE · NCERT Deepakam
+              CBSE · NCERT Lessons
             </span>
-            <div className="dashboard-nav-sub" role="group" aria-label="CBSE & NCERT Deepakam grades">
+            <div className="dashboard-nav-sub" role="group" aria-label="CBSE & NCERT Deepakam grades and exam guide">
               <button
                 type="button"
                 className={activeView === 'reader' && lesson.id !== 'varnamala' && !lesson.id.startsWith('grade8_') ? 'active' : ''}
@@ -799,6 +799,14 @@ const Dashboard: React.FC = () => {
                   8th (CBSE)
                 </button>
               )}
+              <button
+                type="button"
+                className={activeView === 'cbse-guide' ? 'active' : ''}
+                onClick={() => navigateToView('cbse-guide')}
+                title="CBSE NCERT Sanskrit Exam Blueprint, Syllabus & Question Paper Guide"
+              >
+                CBSE Guide
+              </button>
               <button type="button" className="dashboard-nav-soon" disabled aria-disabled="true" title="Class 9 CBSE - Coming soon">
                 9th (CBSE)
               </button>
@@ -1054,6 +1062,7 @@ const Dashboard: React.FC = () => {
           onOpenWorksheets={(category) => handleOpenWorksheets(category || 'all')}
           onOpenPuzzle={() => navigateToView('board')}
           onOpenVoiceSettings={() => setIsVoiceModalOpen(true)}
+          onOpenCbseGuide={() => navigateToView('cbse-guide')}
         />}
         {activeView === 'course' && (
           <SanskritThinkingCourse

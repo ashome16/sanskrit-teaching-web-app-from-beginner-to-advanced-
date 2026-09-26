@@ -38,6 +38,7 @@ interface TextbookReaderProps {
   onOpenWorksheets?: (category?: string) => void;
   onOpenPuzzle?: () => void;
   onOpenVoiceSettings?: () => void;
+  onOpenCbseGuide?: () => void;
 }
 
 const cleanWord = (value: string): string =>
@@ -199,6 +200,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   onOpenWorksheets,
   onOpenPuzzle,
   onOpenVoiceSettings,
+  onOpenCbseGuide,
 }) => {
   const { isAdminLoggedIn, currentUser } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
@@ -492,6 +494,16 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             title="Adjust reading voice, speed, or select system voices"
           >
             🔊 Voice Studio (स्वर-विन्यासः)
+          </button>
+        )}
+        {onOpenCbseGuide && (
+          <button
+            type="button"
+            className="textbook-tool-btn"
+            onClick={onOpenCbseGuide}
+            title="Open CBSE Sanskrit Exam Blueprint & Question Paper Guide"
+          >
+            📋 CBSE Guide (परीक्षा-मार्गदर्शिका)
           </button>
         )}
         {activeLessonId === 'grade8_prarthana' && (
@@ -1311,15 +1323,30 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           id="lesson-select"
           className="textbook-lesson-select"
           value={activeLessonId}
-          onChange={(event) => onSelectLesson(event.target.value)}
+          onChange={(event) => {
+            if (event.target.value === '__cbse_guide__' && onOpenCbseGuide) {
+              onOpenCbseGuide();
+            } else {
+              onSelectLesson(event.target.value);
+            }
+          }}
         >
-          {lessons
-            .filter((lesson) => lesson.id !== 'samyukta')
-            .map((lesson) => (
-            <option key={lesson.id} value={lesson.id}>
-              {lesson.title}
-            </option>
-          ))}
+          <optgroup label="NCERT Deepakam Lessons">
+            {lessons
+              .filter((lesson) => lesson.id !== 'samyukta')
+              .map((lesson) => (
+              <option key={lesson.id} value={lesson.id}>
+                {lesson.title}
+              </option>
+            ))}
+          </optgroup>
+          {onOpenCbseGuide && (
+            <optgroup label="CBSE Board Exam Blueprint">
+              <option value="__cbse_guide__">
+                📋 CBSE Sanskrit Exam Blueprint &amp; Syllabus Guide
+              </option>
+            </optgroup>
+          )}
         </select>
       </div>
 

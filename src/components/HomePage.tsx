@@ -583,6 +583,16 @@ const HomePage: React.FC<HomePageProps> = ({
           >
             📖 Read CBSE Deepakam Class 7
           </button>
+          {onOpenCbseGuide && (
+            <button
+              type="button"
+              className="home-btn-secondary"
+              onClick={onOpenCbseGuide}
+              title="CBSE NCERT Sanskrit Exam Guide (Classes 7–10)"
+            >
+              📘 CBSE Sanskrit Guide
+            </button>
+          )}
           <button
             type="button"
             className="home-btn-secondary"
@@ -633,16 +643,6 @@ const HomePage: React.FC<HomePageProps> = ({
               title="Our Philosophy · Darśana"
             >
               🪔 Darśana · Philosophy
-            </button>
-          )}
-          {onOpenCbseGuide && (
-            <button
-              type="button"
-              className="home-btn-secondary"
-              onClick={onOpenCbseGuide}
-              title="CBSE NCERT Sanskrit Exam Guide (Classes 7–10)"
-            >
-              📘 CBSE Sanskrit Guide
             </button>
           )}
           {onOpenQuiz && (
