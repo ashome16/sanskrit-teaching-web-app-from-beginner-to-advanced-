@@ -1061,4 +1061,152 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
       'Classical Sanskrit serves as the unifying linguistic and aesthetic motherboard for modern Indian literatures across Hindi, Bengali, Marathi, Gujarati, Odia, and Malayalam.',
     ],
   },
+
+  // ==========================================
+  // PART 6 / MASTERCLASS: THE MUSIC OF MATTER
+  // ==========================================
+  {
+    id: 'addendum-cymatics-music-of-matter',
+    partNumber: 6,
+    partLabel: 'Masterclass 6',
+    slug: 'music-of-matter-cymatics-sacred-geometry-holographic-universe',
+    titleDevanagari: 'पदार्थस्य सङ्गीतम् · नादब्रह्म, साङ्केतिक-भूमितिः, विश्व-होलोग्राम् च',
+    titleEnglish: 'The Music of Matter: Cymatics, Sacred Geometry, and the Holographic Universe',
+    subtitle: 'From the Vibration of Sound to the Geometry of Existence — An Ancient Wisdom, A Modern Science, One Universe',
+    readingTimeMinutes: 16,
+    kicker: 'Course Addendum · Masterclass 6 · Nāda Brahma & Quantum Holography',
+    summary:
+      'To view the universe through the lens of ancient Indian thought is to see a world woven entirely out of sound. While the physical senses perceive a landscape of solid, detached objects, the Vedic tradition asserts that reality is fundamentally vibrational (Nāda Brahma). This ancient intuition aligns profoundly with cymatics—the modern study of visible sound pioneered by Hans Jenny—revealing a striking convergence between acoustic physics, sacred art forms like mandalas and rangolis, the architectural science of Vāstu Śāstra, and the foundational cosmological axiom: "Yathā Piṇḍe Tathā Brahmāṇḍe" (As is the microcosm, so is the macrocosm). Explore how acoustic standing waves crystallize chaotic matter into sacred geometry, and how the Upanishadic metaphysics of Ānanda and impermanence illuminate the holographic matrix of creation.',
+    heroImage: {
+      src: '/philosophy/music-of-matter-cymatics.jpg',
+      alt: 'The Music of Matter: Cymatics, Sacred Geometry, and the Holographic Universe — Visual Infographic',
+      caption: 'Visual Symphony: Nāda Brahma Soundwave, Hans Jenny Tonoscope & Shri Yantra, Yathā Piṇḍe Tathā Brahmāṇḍe Holographic Matrix, Rangolis & Golden Ratio Fibonacci Flora, Vāstu Śāstra Geometries, and the Cosmic Dissolution of Form in Eternal Consciousness.'
+    },
+    sections: [
+      {
+        anchorId: 'cymatics-and-sanskrit',
+        heading: '1. Cymatics and Sanskrit: The Science of Visible Sound',
+        subheading: 'Hans Jenny’s Tonoscope · Acoustic Wave to Geometric Form · Mantra to Yantra',
+        paragraphs: [
+          'In the mid-20th century, Swiss physician and natural scientist Hans Jenny pioneered the field of cymatics, using an apparatus called a tonoscope to pass calibrated sound frequencies through physical mediums like quartz sand, lycopodium powder, and viscous liquids resting on flat vibrating membranes. The experimental results were revolutionary: sound frequencies naturally and spontaneously organize chaotic particles into geometric, symmetrical, and highly repeatable patterns. Lower frequencies produce simple harmonic structures, while higher frequencies generate intensely intricate, mandalic lattices.',
+          'This observable physical phenomenon provides a concrete empirical parallel to the foundational philosophy of Mantra Śāstra (the science of sacred utterances) and the ancient concept of Nāda Brahma (नादब्रह्म = the universe is fundamentally sound). In this worldview, the ancient Ṛṣis (seers) did not invent Sanskrit words as arbitrary symbolic labels; instead, through deep meditative absorption, they inner-audited the innate vibrational signatures of physical and metaphysical forces, mapping them into precise vocal phonetics.',
+          'This direct translation of vibration into architecture is demonstrated by the Mantra-Yantra connection: every audible acoustic wave (Mantra) generates an exact physical standing-wave geometric blueprint (Yantra). When Hans Jenny chanted the primordial sacred syllable "AUM" (ॐ) into the tonoscope, the scattered particles on the plate dynamically shifted into concentric circles, squares, and interlocking triangles, structurally mirroring the geometry of the ancient Śrī Chakra Yantra. Because Sanskrit grammar is mathematically rigorous—regulating the exact place of articulation (Sthāna) in the vocal tract, internal effort (Abhyantara Prayatna), and the precise release of breath—it functions as a precision vibrational technology that shapes physical mediums through pure acoustic resonance.',
+        ],
+        callout: {
+          title: 'The Mantra-Yantra Algorithmic Flow',
+          text: '“Mantra (Acoustic Wave Input) ──> Cymatic Sound Frequency ──> Standing Wave Interference ──> Yantra (Geometric Form Result). In Sanskrit, sound does not merely describe reality; sound literally configures matter.”',
+          type: 'scientific',
+        },
+        sutras: [
+          {
+            sanskrit: 'नादरूपः स्मृतो ब्रह्मा नादरूपो जनार्दनः । नादरूपा परा शक्तिर्नादरूपो महेश्वरः ॥',
+            transliteration: 'nādarūpaḥ smṛto brahmā nādarūpo janārdanaḥ | nādarūpā parā śaktir nādarūpo maheśvaraḥ ||',
+            meaning: 'Brahma the creator is recognized as sound; Janardana (Vishnu) the sustainer is sound; the supreme creative power (Para Shakti) is sound; and Maheshvara (Shiva) the dissolver is sound.',
+            source: 'Saṅgīta-Makaranda 1.4',
+          },
+        ],
+      },
+      {
+        anchorId: 'yatha-pinde-tatha-brahmande',
+        heading: '2. Yathā Piṇḍe Tathā Brahmāṇḍe: The Holographic Matrix',
+        subheading: 'Yajurvedic Axiom · Quantum Non-Locality · The Microcosm-Macrocosm Mirror',
+        paragraphs: [
+          'The structural relationship between sound and matter underpins the celebrated cosmological maxim from the Yajurveda: "यथा पिण्डे तथा ब्रह्माण्डे, यथा ब्रह्माण्डे तथा पिण्डे" (Yathā Piṇḍe Tathā Brahmāṇḍe, Yathā Brahmāṇḍe Tathā Piṇḍe — As is the individual body, so is the cosmic body; as is the macrocosm, so is the microcosm).',
+          'This ancient formula directly anticipates the principles of modern quantum mechanics and the holographic universe theory pioneered by theoretical physicist David Bohm and neuroscientist Karl Pribram. In an optical hologram, information about the entire three-dimensional object is distributed across every point of the interference pattern. If you shatter a holographic plate into a thousand pieces, each microscopic fragment still retains the complete, intact image of the entire object, simply seen from a slightly narrower perspective.',
+          'Traditional sacred arts like mandalas and rangolis function as physical, fractalline microcosms of this holographic reality. When an Indian practitioner plots a symmetrical geometric rangoli on a doorstep at sunrise, they are not merely rendering folk decoration; they are consciously mapping the macrocosmic order of celestial orbits, galactic spirals, and atomic electron shells onto a local, finite plane.',
+        ],
+        callout: {
+          title: 'The Holographic Principle of the Upaniṣads',
+          text: '“Break a hologram... the whole is still there. In the same way, the individual body (Piṇḍa) is not an isolated droplet stranded in a cold universe; it is a complete, holographic focal point of the cosmic matrix (Brahmāṇḍa).”',
+          type: 'philosophical',
+        },
+        sutras: [
+          {
+            sanskrit: 'यथा पिण्डे तथा ब्रह्माण्डे, यथा ब्रह्माण्डे तथा पिण्डे ।',
+            transliteration: 'yathā piṇḍe tathā brahmāṇḍe, yathā brahmāṇḍe tathā piṇḍe |',
+            meaning: 'As is the individual micro-vessel (Piṇḍa), so is the cosmic universe (Brahmāṇḍa); as is the macrocosm, so is the microcosm.',
+            source: 'Yajurveda · Garbha Upaniṣad 3',
+          },
+          {
+            sanskrit: 'पूर्णमदः पूर्णमिदं पूर्णात्पूर्णमुदच्यते । पूर्णस्य पूर्णमादाय पूर्णमेवावशिष्यते ॥',
+            transliteration: 'pūrṇam adaḥ pūrṇam idaṃ pūrṇāt pūrṇam udacyate | pūrṇasya pūrṇam ādāya pūrṇam evāvaśiṣyate ||',
+            meaning: 'That is whole; this is whole. From the Whole, the whole manifests. When the whole is subtracted from the Whole, the Whole alone remains.',
+            source: 'Īśa Upaniṣad · Śānti Mantra',
+          },
+        ],
+      },
+      {
+        anchorId: 'rangolis-and-floral-offerings',
+        heading: '3. Rangolis and Floral Offerings: Frozen Music and Organic Arrays',
+        subheading: 'Standing Nodal Waves · Fibonacci Growth · Liquid Crystal Cellular Water',
+        paragraphs: [
+          'Traditional Indian art practices bring this invisible acoustic architecture directly into daily life, operating across three distinct, deeply scientific layers of form, matter, and biological resonance:',
+          '1. Rangolis as "Frozen Music": The symmetrical grids of white rice flour dots (Pulli) and continuous looping lines drawn at the thresholds of Indian homes are literal visual expressions of acoustic standing waves. They mimic the exact nodal points—lines of zero vibration—where sand particles naturally settle on a vibrating cymatic plate. A rangoli is effectively an auspicious mantra made visible, laid out upon the threshold of the earth to stabilize, harmonize, and filter the subtle environmental energy of the dwelling.',
+          '2. Floral Offerings (Pushpa-Añjali): Incorporating living plant materials introduces an active biological layer to this cosmic matrix. Flowers are natural living cymatic structures whose petals unfold along strict mathematical algorithms, specifically the Fibonacci Sequence (1, 1, 2, 3, 5, 8, 13, 21...) and the Golden Ratio (φ ≈ 1.618033...). These divine proportions dictate the most mathematically efficient packing of organic matter in confined spaces. They also govern the laminar flow of acoustic shockwaves in fluids, the nautilus shell, and the logarithmic expansion of spiral galaxies.',
+          '3. Bio-Energetic Alignment: When a human being interacts with or meditates upon these organic mandalas, a dynamic acoustic and energetic exchange occurs. Because the human physical body is composed of approximately 60% water, standing over or contemplating these harmonious geometric arrays structurally organizes the liquid crystal water lattices within our own cells, acoustically attuning the individual vessel (Piṇḍa) to the coherent harmonic baseline of the cosmos (Brahmāṇḍa).',
+        ],
+        callout: {
+          title: 'The Golden Spiral in Cellular Water',
+          text: '“Flowers do not choose the Fibonacci ratio by accident; it is the optimal path of least vibrational resistance. When our eyes take in these sacred geometric ratios, our internal cellular biology recognizes its own native harmonic blueprint.”',
+          type: 'insight',
+        },
+      },
+      {
+        anchorId: 'geometry-of-sacred-space',
+        heading: '4. The Geometry of Sacred Space: Vāstu Śāstra & Temple Architecture',
+        subheading: 'Circle (Chakra/Bindu) · Square (Bhūpura) · Triangle (Trikoṇa) · Śrī Yantra',
+        paragraphs: [
+          'In the architectural science of Vāstu Śāstra, geometric archetypes are engineered not as decorative motifs, but as functional acoustic lenses designed to focus, amplify, or ground cosmic vibrational frequencies within built environments:',
+          '• The Circle (Chakra / Bindu): Represents infinity, absolute unmanifest consciousness, and cosmic unity. A circle possesses no beginning and no end. In sacred architecture and yantras, circular boundaries prevent energy from dissipating outward, locking subtle vibrations into a protective, self-sustaining vortex.',
+          '• The Square (Bhūpura): Represents stability, foundational grounding, and the manifest material realm. In temple mandalas and yantras, the square forms the outer fortress or gateway (Bhūpura), anchoring high-frequency cosmic vibrations into the stable terrestrial plane.',
+          '• The Triangle (Trikoṇa): The universal symbol of directed energetic velocity. An upward-pointing triangle represents ascending aspiration and the transcendent witness consciousness of Śiva; a downward-pointing triangle represents descending grace and the dynamic creative energy of Śakti. The interlocking of these opposing polarities generates the dynamic, vitalizing movement of life itself.',
+          '• The Śrī Yantra: The pinnacle of sacred geometry, composed of 9 interlocking triangles (4 upward Śiva triangles and 5 downward Śakti triangles) radiating from a single central point (Bindu). This configuration generates 43 subsidiary triangles, creating a multi-dimensional acoustic antenna that embodies the complete vibrational architecture of the manifest universe.',
+        ],
+        table: {
+          headers: ['Geometric Form', 'Sanskrit Term', 'Cosmological Role', 'Acoustic / Energy Function'],
+          rows: [
+            ['Circle', 'चक्रम् / बिन्दुः (Chakra / Bindu)', 'Infinity, unity, absolute consciousness', 'Contains and concentrates subtle energy within a protective vortex.'],
+            ['Square', 'भूपुरम् (Bhūpura)', 'Earth element, stability, material manifestation', 'Grounds and anchors celestial frequencies into terrestrial stability.'],
+            ['Upward Triangle', 'ऊर्ध्व-त्रिकोणम् (Śiva Trikoṇa)', 'Ascending consciousness, fire element (Agni)', 'Directs human attention vertically toward transcendent realization.'],
+            ['Downward Triangle', 'अधस्-त्रिकोणम् (Śakti Trikoṇa)', 'Descending grace, water element (Jala)', 'Channels divine creative compassion and nourishment into form.'],
+            ['Interlocking Triangles', 'श्रीचक्रम् (Śrī Chakra)', 'Cosmic union of Śiva and Śakti (Creation)', 'Generates the 43-triangle holographic matrix of space-time.'],
+          ],
+        },
+      },
+      {
+        anchorId: 'metaphysics-of-impermanence',
+        heading: '5. The Cosmic Core: The Metaphysics of Impermanence',
+        subheading: 'Ānanda as the Cosmic Wave · Daily Dissolution · "Piṇḍa Dissolves, Brahmāṇḍa Sings On"',
+        paragraphs: [
+          'This entire scientific and geometric architecture ultimately converges upon the Upanishadic revelation of Ānanda (आनन्दः) — the infinite, uncaused, creative joy that Rabindranath Tagore identified as the primary driving impulse of the universe.',
+          'In the Vedic realization, the cosmos was not assembled out of mechanical obligation or cold evolutionary chance; it was sung into existence out of the exuberant, overflowing joy of absolute consciousness expressing itself. Ānanda is the primordial soundwave pulsating through the cosmic vacuum, while subatomic particles, galaxies, floral mandalas, and human languages are simply the standing geometric shapes that this joyful wave creates whenever it encounters the medium of matter.',
+          'This realization illuminates the profound spiritual wisdom behind why rangolis are deliberately swept away at dusk each day, and why intricate floral offerings (Pushpa-Añjali) are left to gently wither under the sun. In a holographic universe born of sound, physical form is temporary, but the underlying wave is eternal.',
+          'The intentional dissolution of these breathtaking, labor-intensive geometric artworks teaches humanity the supreme spiritual discipline of Viveka (discernment) and Vairāgya (non-attachment): to celebrate and appreciate the transient beauty of physical manifestation (Piṇḍa) without grasping or clinging to it, remaining forever anchored in the eternal, indestructible field of consciousness (Brahmāṇḍa) that endlessly sings these geometric forms into life.',
+        ],
+        callout: {
+          title: 'The Eternal Song',
+          text: '“Piṇḍa dissolves... Brahmāṇḍa sings on. When you understand that you are the underlying ocean of sound and not merely the temporary wave on its surface, all fear of death vanishes into pure Ānanda.”',
+          type: 'philosophical',
+        },
+        sutras: [
+          {
+            sanskrit: 'आनन्दाद्ध्येव खल्विमानि भूतानि जायन्ते । आनन्देन जातानि जीवन्ति । आनन्दं प्रयन्त्यभिसंविशन्तीति ॥',
+            transliteration: 'ānandāddhy eva khalv imāni bhūtāni jāyante | ānandena jātāni jīvanti | ānandaṃ prayanty abhisaṃviśantīti ||',
+            meaning: 'From Infinite Joy (Ānanda) indeed all these beings are born; by Joy they are sustained when born; and into Joy they dissolve upon departure.',
+            source: 'Taittirīya Upaniṣad 3.6.1',
+          },
+        ],
+      },
+    ],
+    keyTakeaways: [
+      'Hans Jenny’s mid-20th century cymatic tonoscope proved empirically that acoustic frequencies naturally organize chaotic physical matter into repeatable, symmetrical geometric mandalas.',
+      'In Sanskrit Mantra Śāstra, every audible wave (Mantra) has an exact corresponding geometric standing-wave blueprint (Yantra), as demonstrated by chanting AUM to produce the Śrī Chakra geometry.',
+      'The Yajurvedic principle "Yathā Piṇḍe Tathā Brahmāṇḍe" anticipates modern quantum holographic theory: every individual part contains the structural blueprint of the complete whole.',
+      'Traditional threshold rangolis function as "frozen music"—visual standing waves positioned at nodal points to energetically stabilize and harmonize dwellings.',
+      'Floral offerings (Pushpa-Añjali) follow the Golden Ratio (φ ≈ 1.618) and Fibonacci sequence, harmonizing the ~60% liquid crystal water matrix within human cells.',
+      'Vāstu Śāstra utilizes the Circle (infinity), Square (stability), and Triangle (Śiva-Śakti dynamics) as functional acoustic lenses for focusing environmental energy.',
+      'The daily sweeping of rangolis and withering of floral mandalas embodies the metaphysics of impermanence: appreciating the temporary vessel (Piṇḍa) while abiding in the eternal sound (Brahmāṇḍa).',
+    ],
+  },
 ];
+

@@ -35,7 +35,7 @@ export interface SearchTarget {
   lessonId?: string;
   /** Course Addendum unit to open (view: 'course'), e.g. 'addendum-mantras-shlokas'. */
   courseAddendumId?: string;
-  philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit';
+  philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter';
   mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero';
   worksheetsCategory?: string;
   openBodhi?: boolean;
@@ -2304,6 +2304,76 @@ export const SEARCH_INDEX: SearchItem[] = [
     target: {
       view: 'philosophy',
       philosophyEssay: 'tagore_sanskrit',
+    },
+  },
+  {
+    id: 'essay-music-of-matter',
+    title: 'The Music of Matter: Cymatics, Sacred Geometry & The Holographic Universe',
+    subtitle: 'Nāda Brahma · Hans Jenny Tonoscope · Yathā Piṇḍe Tathā Brahmāṇḍe · Fibonacci Mandalas',
+    category: 'guides',
+    categoryLabel: 'Darśana Masterclass',
+    badgeEmoji: '🔔',
+    badgeColor: '#0f766e',
+    description:
+      'From the vibration of sound to the geometry of existence: discover how acoustic standing waves organize chaotic particles into symmetrical mandalas, how AUM mirrors the Śrī Chakra, and how the ancient principle "Yathā Piṇḍe Tathā Brahmāṇḍe" converges with quantum holographic theory.',
+    keywords: [
+      'music of matter',
+      'cymatics',
+      'hans jenny',
+      'tonoscope',
+      'nada brahma',
+      'yatha pinde tatha brahmande',
+      'sacred geometry',
+      'shri chakra',
+      'shri yantra',
+      'rangoli',
+      'kolam',
+      'fibonacci',
+      'golden ratio',
+      'vastu shastra',
+      'holographic universe',
+      'david bohm',
+      'ananda',
+      'pushpa anjali',
+      'frozen music',
+      'standing wave',
+      'impermanence',
+      'नादब्रह्म',
+      'यथा पिण्डे तथा ब्रह्माण्डे',
+      'श्रीचक्रम्',
+      'रङ्गोली',
+      'दर्शनम्',
+    ],
+    target: {
+      view: 'philosophy',
+      philosophyEssay: 'music_of_matter',
+    },
+  },
+  {
+    id: 'addendum-cymatics-music-of-matter',
+    title: 'Course Addendum · Masterclass 6: The Music of Matter (Cymatics & Holography)',
+    subtitle: 'Acoustic Standing Waves, Mantra-Yantra Transmutation & Vedic Metaphysics',
+    category: 'guides',
+    categoryLabel: 'Course Addendum',
+    badgeEmoji: '📜',
+    badgeColor: '#059669',
+    description:
+      'Part 6 of the Sanskrit as a Way of Thinking companion series: rigorous examination of cymatics, tonoscope wave dynamics, Vāstu Śāstra sacred geometry, and the metaphysics of daily dissolution.',
+    keywords: [
+      'addendum',
+      'masterclass 6',
+      'cymatics',
+      'nada brahma',
+      'yatha pinde tatha brahmande',
+      'sacred geometry',
+      'shri yantra',
+      'hologram',
+      'quantum',
+      'ananda',
+    ],
+    target: {
+      view: 'course',
+      courseAddendumId: 'addendum-cymatics-music-of-matter',
     },
   },
   {
