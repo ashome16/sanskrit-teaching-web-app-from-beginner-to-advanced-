@@ -988,6 +988,119 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
+            {/* The Collective Resource: The Well, The Bank, and Śabda-Brahman */}
+            <section className="philosophy-section" aria-labelledby="collective-resource">
+              <h2 id="collective-resource">The Collective Resource: The Well, The Bank &amp; Śabda-Brahman (शब्दब्रह्म)</h2>
+              <p>
+                Sanskrit is not a private accomplishment or personal property. Speech is a collective resource — like the earth under your feet, the waters of the river, a teacher’s living time, or a consecrated temple field.
+              </p>
+              <p>
+                The ancient tradition configured this with exact precision:
+                <em>Saha</em> already declared it: <strong>nourishment is shared</strong> (<em>saha nau bhunaktu</em>).
+                The <em>Bhūmi</em> verse spoke it with the body: <strong>do not harm what you must stand on</strong>.
+                The triple <em>śāntiḥ</em> declared it with the cosmos: peace in waters, herbs, trees, not merely in the classroom.
+              </p>
+              <p style={{ fontWeight: 600, color: '#78350f' }}>
+                Therefore, the journey of learning Sanskrit is the journey of becoming a person who can <strong>use without seizing</strong>.
+              </p>
+
+              {/* The Collective Well and The Collective Bank Grid */}
+              <div className="philosophy-well-bank-grid">
+                {/* The Well Card */}
+                <div className="philosophy-well-card">
+                  <span className="philosophy-wb-badge philosophy-wb-badge--well">
+                    <span>💧</span>
+                    <span>The Collective Well · You May Drink</span>
+                  </span>
+                  <h3 className="philosophy-wb-title">Saha Nau Bhunaktu (सह नौ भुनक्तु)</h3>
+                  <p>
+                    Everything you receive was already waiting before you arrived: the grammar, the meter, the phonetics, the mantras, the breath, and the living teacher’s patience.
+                  </p>
+                  <ul className="philosophy-wb-list">
+                    <li><strong>The Well is shared nourishment:</strong> guru and student are both fed by the same unbroken stream.</li>
+                    <li><strong>The Warning:</strong> If you only draw from the well without depositing, your study is seizure with better manners.</li>
+                    <li><strong>The Earthly Ground:</strong> The <em>Bhūmi</em> verse is the well under your feet — providing the platform for every breath.</li>
+                  </ul>
+                </div>
+
+                {/* The Bank Card */}
+                <div className="philosophy-bank-card">
+                  <span className="philosophy-wb-badge philosophy-wb-badge--bank">
+                    <span>🔥</span>
+                    <span>The Collective Bank · You Must Deposit</span>
+                  </span>
+                  <h3 className="philosophy-wb-title">Saha Vīryaṃ Karavāvahai (सह वीर्यं करवावहै)</h3>
+                  <p>
+                    Every learner is required to put sacred heat (<em>tapas</em>) back into the common treasury: your breath, your attention, your correct articulation, your refusal to harm.
+                  </p>
+                  <ul className="philosophy-wb-list">
+                    <li><strong>The Bank is shared effort:</strong> both teacher and disciple put heat into the work.</li>
+                    <li><strong>The Warning:</strong> If you only deposit slogans, academic pedantry, or ornamental quotes, the bank is merely egoic display.</li>
+                    <li><strong>The Earthly Deposit:</strong> The solemn vow not to injure the earth with hand, foot, or speech is your deposit into reality.</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Adhikāra: Right to Draw + Obligation to Deposit */}
+              <div className="philosophy-callout" style={{ borderLeftColor: '#0f766e', background: '#f0fdfa', margin: '1.25rem 0' }}>
+                <p style={{ margin: '0 0 0.35rem', fontWeight: 800, color: '#0f766e', fontSize: '1.05rem' }}>
+                  Adhikāra: The Balance of the Well and the Bank
+                </p>
+                <p style={{ margin: 0, color: '#134e4a', fontSize: '1rem', lineHeight: 1.6 }}>
+                  Grammar without duty only withdraws: turning sacred sound into slogans, extraction, and display. 
+                  <strong>Adhikāra is the right to draw from the well coupled with the obligation to deposit back into the bank.</strong> 
+                  A better person is not a decorated scholar with hundreds of footnotes. It is someone who leaves the well fuller than their thirst, and the bank heavier than their name.
+                </p>
+              </div>
+
+              {/* Śabda-Brahman: Purpose is Built-in */}
+              <div className="philosophy-shabda-banner">
+                <div className="philosophy-shabda-kicker">Ontological Foundation · शब्दब्रह्म</div>
+                <h3 className="philosophy-shabda-heading">
+                  Śabda-Brahman: Language Has a Built-in Purpose (Prayojana)
+                </h3>
+                <p style={{ margin: '0 0 0.85rem', color: '#c7d2fe', fontSize: '1.02rem', lineHeight: 1.6 }}>
+                  For the Vedic <em>ṛṣis</em>, the primary point was never that Sanskrit is merely old. It was that this knowledge exists for an ontological reason: <strong>Śabda-Brahman (शब्दब्रह्म)</strong> — reality manifesting as sound-vibration, not an arbitrary human label stuck onto dead matter.
+                </p>
+                <p style={{ margin: '0 0 1rem', color: '#e0e7ff', fontSize: '0.96rem', lineHeight: 1.55 }}>
+                  If <em>śabda</em> is the foundational principle of existence, language is not a gadget you pick up when convenient. It is how reality becomes conscious and speakable. Therefore, use without purpose is a metaphysical contradiction.
+                </p>
+
+                <div className="philosophy-chain-steps">
+                  <div className="philosophy-chain-step-row">
+                    <div className="philosophy-chain-step-num">1</div>
+                    <div className="philosophy-chain-step-text">
+                      <strong>Existence is not accidental:</strong> The sages recognized that <em>śabda</em> is a primordial principle of being, not an invented human gadget.
+                    </div>
+                  </div>
+                  <div className="philosophy-chain-step-row">
+                    <div className="philosophy-chain-step-num">2</div>
+                    <div className="philosophy-chain-step-text">
+                      <strong>Built-in Prayojana (Purpose):</strong> The language engineered to hold that principle — meter (<em>chandas</em>), phonetics (<em>śikṣā</em>), algorithmic grammar (<em>vyākaraṇa</em>), mantra — has purpose built into its very structure.
+                    </div>
+                  </div>
+                  <div className="philosophy-chain-step-row">
+                    <div className="philosophy-chain-step-num">3</div>
+                    <div className="philosophy-chain-step-text">
+                      <strong>Refusal of Extraction:</strong> Therefore, Sanskrit cannot be treated as dead prestige, a data scraper’s dataset, or an egoic slogan. Purpose is not added later; purpose is what the knowledge exists for.
+                    </div>
+                  </div>
+                  <div className="philosophy-chain-step-row">
+                    <div className="philosophy-chain-step-num">4</div>
+                    <div className="philosophy-chain-step-text">
+                      <strong>Adhikāra Made Personal:</strong> You may draw from the well of <em>śabda</em> only if you deposit duty back: still speech, answered meaning, and a field you refuse to harm.
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.15)', textAlign: 'center' }}>
+                  <p style={{ margin: 0, fontSize: '1.05rem', fontStyle: 'italic', color: '#fef08a', lineHeight: 1.6, fontWeight: 600 }}>
+                    “The sages did not leave us a language and then look for a use. They held Śabda-Brahman as a foundational principle — so the existence of this knowledge already contains its purpose. To learn Sanskrit is to consent to that purpose: not to own the word, but to use it as the real uses sound — held still, answered for, and offered back to the living whole.”
+                  </p>
+                </div>
+              </div>
+            </section>
+
             {/* Why Sanskrit is a special case in this age */}
             <section className="philosophy-section" aria-labelledby="special-case">
               <h2 id="special-case">Why Sanskrit Is a Special Case in This Age</h2>
