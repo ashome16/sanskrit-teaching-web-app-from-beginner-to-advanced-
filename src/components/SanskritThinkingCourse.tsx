@@ -5,6 +5,10 @@ import {
   type CourseLesson,
   type CourseModule,
 } from '../data/sanskritThinkingCourseData';
+import {
+  DARSHANAS_COURSE_ADDENDUM,
+  type DarshanaAddendumArticle,
+} from '../data/darshanasCourseAddendum';
 import { useAuthStore } from '../store/authStore';
 import { hasPaidAccess, hasPremiumAccess } from '../utils/premiumAccess';
 import { playPronunciation } from '../utils/pronunciation';
@@ -25,6 +29,8 @@ export interface SanskritThinkingCourseProps {
   onOpenRegister?: () => void;
   onOpenPayment?: () => void;
   initialLessonId?: string;
+  initialMode?: 'curriculum' | 'addendum';
+  initialAddendumId?: string;
 }
 
 export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
@@ -42,10 +48,18 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
   onOpenRegister,
   onOpenPayment,
   initialLessonId,
+  initialMode = 'curriculum',
+  initialAddendumId,
 }) => {
   const { currentUser, isAdminLoggedIn } = useAuthStore();
   const hasPaid = hasPaidAccess(currentUser, isAdminLoggedIn);
   const inTrial = hasPremiumAccess(currentUser, isAdminLoggedIn) && !hasPaid;
+
+  // View mode: 'curriculum' (28 Lessons) vs 'addendum' (4 Foundational Essays)
+  const [viewMode, setViewMode] = useState<'curriculum' | 'addendum'>(initialMode);
+  const [activeAddendumId, setActiveAddendumId] = useState<string>(
+    initialAddendumId || DARSHANAS_COURSE_ADDENDUM[0].id
+  );
 
   // Flatten all lessons for easy sequential indexing
   const allLessons = useMemo(() => {
@@ -121,6 +135,23 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
   const currentIndex = allLessons.findIndex((l) => l.id === currentLesson.id);
   const prevLesson = currentIndex > 0 ? allLessons[currentIndex - 1] : null;
   const nextLesson = currentIndex < allLessons.length - 1 ? allLessons[currentIndex + 1] : null;
+
+  const currentAddendum: DarshanaAddendumArticle = useMemo(() => {
+    return (
+      DARSHANAS_COURSE_ADDENDUM.find((a) => a.id === activeAddendumId) ||
+      DARSHANAS_COURSE_ADDENDUM[0]
+    );
+  }, [activeAddendumId]);
+
+  const currentAddendumIndex = useMemo(() => {
+    return DARSHANAS_COURSE_ADDENDUM.findIndex((a) => a.id === currentAddendum.id);
+  }, [currentAddendum]);
+
+  const prevAddendum = currentAddendumIndex > 0 ? DARSHANAS_COURSE_ADDENDUM[currentAddendumIndex - 1] : null;
+  const nextAddendum =
+    currentAddendumIndex < DARSHANAS_COURSE_ADDENDUM.length - 1
+      ? DARSHANAS_COURSE_ADDENDUM[currentAddendumIndex + 1]
+      : null;
 
   const handleSelectLesson = (lesson: CourseLesson) => {
     setActiveLessonId(lesson.id);
@@ -277,8 +308,33 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
           ))}
         </div>
 
-        {/* Main Two-Column Layout */}
-        <div className="stc-layout">
+        {/* Course View Mode Switcher (Curriculum vs Addendum) */}
+        <div className="stc-view-selector" role="tablist" aria-label="Course section selector">
+          <button
+            type="button"
+            role="tab"
+            aria-selected={viewMode === 'curriculum'}
+            className={`stc-view-tab-btn ${viewMode === 'curriculum' ? 'active' : ''}`}
+            onClick={() => setViewMode('curriculum')}
+          >
+            <span>📚</span>
+            <span>28 Course Curriculum Lessons (२८ पाठाः)</span>
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={viewMode === 'addendum'}
+            className={`stc-view-tab-btn ${viewMode === 'addendum' ? 'active' : ''}`}
+            onClick={() => setViewMode('addendum')}
+          >
+            <span>🪔</span>
+            <span>Course Addendum: 4 Foundational Essays · Shad Darshanas & Sāṅkhya (४ अनुबन्धाः)</span>
+          </button>
+        </div>
+
+        {viewMode === 'curriculum' ? (
+          /* Main Two-Column Layout */
+          <div className="stc-layout">
           {/* Module Navigation Sidebar */}
           <aside className="stc-sidebar">
             <h2 className="stc-sidebar-title">
@@ -616,6 +672,175 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
             </div>
           </main>
         </div>
+        ) : (
+          /* Course Addendum: 4 Foundational Essays Layout */
+          <div className="stc-addendum-container">
+            {/* Addendum Sidebar Navigation */}
+            <aside className="stc-addendum-sidebar">
+              <h3 className="stc-addendum-sidebar-title">षड्दर्शनानि साङ्ख्यं च</h3>
+              <p className="stc-addendum-sidebar-desc">
+                Foundational essays on the 6 Darśanas, cosmic taxonomy, self-discovery, and the evolution of Vedic mathematics.
+              </p>
+              <div className="stc-addendum-nav-list">
+                {DARSHANAS_COURSE_ADDENDUM.map((art) => (
+                  <button
+                    key={art.id}
+                    type="button"
+                    className={`stc-addendum-nav-btn ${art.id === currentAddendum.id ? 'active' : ''}`}
+                    onClick={() => {
+                      setActiveAddendumId(art.id);
+                      window.scrollTo({ top: 380, behavior: 'smooth' });
+                    }}
+                  >
+                    <div className="stc-addendum-part-tag">Part {art.partNumber} · {art.readingTimeMinutes} min</div>
+                    <div className="stc-addendum-nav-title">{art.titleEnglish}</div>
+                  </button>
+                ))}
+              </div>
+              <div style={{ marginTop: '1.5rem', paddingTop: '1rem', borderTop: '1px solid #f1ece1' }}>
+                <button
+                  type="button"
+                  className="stc-crumb-btn"
+                  style={{ width: '100%', justifyContent: 'center' }}
+                  onClick={() => setViewMode('curriculum')}
+                >
+                  ← Return to 28 Lessons
+                </button>
+              </div>
+            </aside>
+
+            {/* Addendum Main Article */}
+            <main className="stc-addendum-article" tabIndex={-1}>
+              <header className="stc-addendum-article-header">
+                <span className="stc-addendum-kicker">{currentAddendum.kicker}</span>
+                <h1 className="stc-addendum-title-dev">{currentAddendum.titleDevanagari}</h1>
+                <h2 className="stc-addendum-title-eng">{currentAddendum.titleEnglish}</h2>
+                <div className="stc-addendum-sub">{currentAddendum.subtitle}</div>
+                <div className="stc-addendum-meta-row">
+                  <span>⏱️ {currentAddendum.readingTimeMinutes} min deep read</span>
+                  <span>•</span>
+                  <span>Part {currentAddendum.partNumber} of 4</span>
+                  <span>•</span>
+                  <span>Self-Discovery &amp; Universal Phenomenon</span>
+                </div>
+              </header>
+
+              <div className="stc-addendum-summary-box">
+                <strong>Summary &amp; Central Thesis:</strong> {currentAddendum.summary}
+              </div>
+
+              {currentAddendum.sections.map((sec, sIdx) => (
+                <section key={sIdx} className="stc-addendum-section">
+                  <h3 className="stc-addendum-sec-h2">{sec.heading}</h3>
+                  {sec.subheading && <div className="stc-addendum-sec-sub">{sec.subheading}</div>}
+                  {sec.paragraphs.map((p, pIdx) => (
+                    <p key={pIdx} className="stc-addendum-para">{p}</p>
+                  ))}
+
+                  {sec.sutras && sec.sutras.map((sutra, suIdx) => (
+                    <div key={suIdx} className="stc-sutra-box">
+                      <div className="stc-sutra-sanskrit">{sutra.sanskrit}</div>
+                      <div className="stc-sutra-translit">{sutra.transliteration}</div>
+                      <div className="stc-sutra-meaning">"{sutra.meaning}"</div>
+                      <div className="stc-sutra-source">— {sutra.source}</div>
+                    </div>
+                  ))}
+
+                  {sec.callout && (
+                    <div className={`stc-callout-box stc-callout--${sec.callout.type}`}>
+                      <div className="stc-callout-title">
+                        <span>
+                          {sec.callout.type === 'philosophical'
+                            ? '🪔'
+                            : sec.callout.type === 'scientific'
+                            ? '🔬'
+                            : sec.callout.type === 'cosmological'
+                            ? '🌌'
+                            : '💡'}
+                        </span>
+                        <span>{sec.callout.title}</span>
+                      </div>
+                      <div style={{ fontStyle: 'italic' }}>{sec.callout.text}</div>
+                    </div>
+                  )}
+
+                  {sec.table && (
+                    <div className="stc-table-wrapper" style={{ margin: '1.5rem 0' }}>
+                      <table className="stc-table">
+                        <thead>
+                          <tr>
+                            {sec.table.headers.map((th, hIdx) => (
+                              <th key={hIdx}>{th}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {sec.table.rows.map((row, rIdx) => (
+                            <tr key={rIdx}>
+                              {row.map((td, dIdx) => (
+                                <td key={dIdx}>{td}</td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                </section>
+              ))}
+
+              <div className="stc-takeaways-card">
+                <div className="stc-takeaways-title">
+                  <span>📌</span>
+                  <span>Key Takeaways &amp; Cognitive Architecture:</span>
+                </div>
+                <ul className="stc-takeaways-list">
+                  {currentAddendum.keyTakeaways.map((point, kIdx) => (
+                    <li key={kIdx}>{point}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="stc-addendum-nav-row">
+                <button
+                  type="button"
+                  className="stc-nav-prev-btn"
+                  disabled={!prevAddendum}
+                  onClick={() => {
+                    if (prevAddendum) {
+                      setActiveAddendumId(prevAddendum.id);
+                      window.scrollTo({ top: 380, behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  ← Previous {prevAddendum ? `(Part ${prevAddendum.partNumber})` : ''}
+                </button>
+
+                <button
+                  type="button"
+                  className="stc-crumb-btn"
+                  onClick={() => setViewMode('curriculum')}
+                >
+                  Return to 28 Lessons
+                </button>
+
+                <button
+                  type="button"
+                  className="stc-nav-next-btn"
+                  disabled={!nextAddendum}
+                  onClick={() => {
+                    if (nextAddendum) {
+                      setActiveAddendumId(nextAddendum.id);
+                      window.scrollTo({ top: 380, behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  Next {nextAddendum ? `(Part ${nextAddendum.partNumber})` : ''} →
+                </button>
+              </div>
+            </main>
+          </div>
+        )}
 
         {/* Modal: Printable Worksheet & Answer Key Preview */}
         {activeWorksheetModalLesson && (
