@@ -956,7 +956,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                 <div className="stc-addendum-meta-row">
                   <span>⏱️ {currentAddendum.readingTimeMinutes} min deep read</span>
                   <span>•</span>
-                  <span>{currentAddendum.partLabel ? `Companion · ${currentAddendum.partLabel}` : currentAddendum.partNumber === 0 ? 'Prologue · The Study Covenant' : `Part ${currentAddendum.partNumber} of 4`}</span>
+                  <span>{currentAddendum.partLabel ? `Companion · ${currentAddendum.partLabel}` : currentAddendum.partNumber === 0 ? 'Prologue · The Study Covenant' : `Part ${currentAddendum.partNumber} of 5`}</span>
                   <span>•</span>
                   <span>Self-Discovery &amp; Universal Phenomenon</span>
                 </div>
@@ -965,6 +965,29 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
               <div className="stc-addendum-summary-box">
                 <strong>Summary &amp; Central Thesis:</strong> {currentAddendum.summary}
               </div>
+
+              {currentAddendum.heroImage && (
+                <figure className="stc-addendum-hero-figure" style={{ margin: '1.75rem auto 2rem', maxWidth: '820px', textAlign: 'center' }}>
+                  <img
+                    src={currentAddendum.heroImage.src}
+                    alt={currentAddendum.heroImage.alt}
+                    style={{
+                      display: 'block',
+                      width: '100%',
+                      maxHeight: '620px',
+                      objectFit: 'contain',
+                      borderRadius: '16px',
+                      boxShadow: '0 12px 36px rgba(15, 23, 42, 0.16)'
+                    }}
+                    loading="eager"
+                  />
+                  {currentAddendum.heroImage.caption && (
+                    <figcaption style={{ fontSize: '0.82rem', color: '#64748b', marginTop: '0.65rem', fontStyle: 'italic', lineHeight: 1.45 }}>
+                      {currentAddendum.heroImage.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
 
               {currentAddendum.sections.map((sec, sIdx) => (
                 <section key={sIdx} className="stc-addendum-section" id={sec.anchorId}>

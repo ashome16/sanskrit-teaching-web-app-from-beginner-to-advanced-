@@ -123,7 +123,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
     const prevOgImage = ogImage?.getAttribute('content') || '';
     const prevTwitterImage = twitterImage?.getAttribute('content') || '';
     const MANDALA_OG =
-      'https://ednetlearn.in/philosophy/sunyat-anantam-mandala.webp';
+      activeEssay === 'tagore_sanskrit'
+        ? 'https://ednetlearn.in/philosophy/tagore-sanskrit-charioteer.jpg'
+        : 'https://ednetlearn.in/philosophy/sunyat-anantam-mandala.webp';
     ogTitle?.setAttribute('content', currentTitle);
     ogDesc?.setAttribute('content', currentDesc);
     ogUrl?.setAttribute('content', 'https://ednetlearn.in/philosophy');
@@ -1000,6 +1002,44 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 <AudioChip term="आनन्दः" label="आनन्दः" />
               </div>
             </header>
+
+            {/* Visual Masterpiece Artwork Hero */}
+            <figure className="philosophy-hero-mandala" style={{ maxWidth: 'min(100%, 780px)', margin: '1.75rem auto 2.25rem' }}>
+              <img
+                src="/philosophy/tagore-sanskrit-charioteer.jpg"
+                alt="Rabindranath Tagore: The Eternal Charioteer and the Cage Bird — Sanskrit and Upanishadic Heritage Visual Artwork"
+                width={1920}
+                height={1700}
+                loading="eager"
+                decoding="async"
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '16px',
+                  boxShadow: '0 12px 36px rgba(15, 23, 42, 0.16), 0 2px 8px rgba(0, 0, 0, 0.08)'
+                }}
+              />
+              <figcaption style={{
+                fontSize: '0.84rem',
+                color: '#64748b',
+                textAlign: 'center',
+                marginTop: '0.75rem',
+                fontStyle: 'italic',
+                lineHeight: 1.5
+              }}>
+                Visual Symphony: Jorasanko, Himalayan Vedic Awakening (सत्यं ज्ञानम् अनन्तम्), Jana Gana Mana Sanskrit Etymology, The Eternal Charioteer (चिरसारथिः), and the Two Birds of Mundaka Upanishad (द्वा सुपर्णा).
+              </figcaption>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', marginTop: '1rem' }} aria-label="Artwork thematic navigation">
+                <a href="#tagore-upbringing" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🏛️ Jorasanko &amp; Himalayas</a>
+                <a href="#tagore-jgm" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🇮🇳 Jana Gana Mana &amp; Sanskrit</a>
+                <a href="#tagore-charioteer" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>☸️ The Eternal Charioteer (चिरसारथिः)</a>
+                <a href="#tagore-two-birds" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🕊️ Dui Pakhi &amp; Mundaka Upanishad</a>
+                <a href="#tagore-nature" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🌿 Vedic Nature (Prakriti &amp; Ananda)</a>
+                <a href="#tagore-comparative" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>📜 Comparative Sanskrit Grid</a>
+              </div>
+            </figure>
 
             {/* 1. Upanishadic Upbringing */}
             <section className="philosophy-section" aria-labelledby="tagore-upbringing">

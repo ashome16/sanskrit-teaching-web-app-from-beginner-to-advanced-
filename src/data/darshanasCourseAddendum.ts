@@ -52,6 +52,11 @@ export interface DarshanaAddendumArticle {
   readingTimeMinutes: number;
   kicker: string;
   summary: string;
+  heroImage?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  };
   sections: DarshanaSection[];
   keyTakeaways: string[];
 }
@@ -883,6 +888,11 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
     kicker: 'Course Addendum · Masterclass 5 · The Sanskrit Blueprint of Indian Literature',
     summary:
       'The sprawling Jorasanko mansion in 19th-century Calcutta was more than a family home; it was the vibrant crucible of the Bengal Renaissance, where ancient Indian heritage collided with modern intellectual awakening. At its center was a young Rabindranath Tagore, whose spiritual worldview was fundamentally anchored in Vedic and Upanishadic traditions. From the Tatsama architecture of India’s national anthem to the Dvā Suparṇā parable in "Dui Pakhi" and the cosmic Chirasarathi of the Gita, explore how classical Sanskrit provided the foundational blueprint for Tagore’s creative genius.',
+    heroImage: {
+      src: '/philosophy/tagore-sanskrit-charioteer.jpg',
+      alt: 'Rabindranath Tagore: The Eternal Charioteer and the Cage Bird — Sanskrit and Upanishadic Heritage Infographic',
+      caption: 'Visual Symphony: Jorasanko, Himalayan Vedic Awakening (सत्यं ज्ञानम् अनन्तम्), Jana Gana Mana Etymology, The Eternal Charioteer (चिरसारथिः), and the Two Birds of Mundaka Upanishad (द्वा सुपर्णा).'
+    },
     sections: [
       {
         anchorId: 'upanishadic-upbringing',
