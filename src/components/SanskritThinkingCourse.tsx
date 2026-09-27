@@ -1552,6 +1552,16 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                     </div>
                   )}
 
+                  {sec.diagram && (
+                    <div className="stc-diagram-container" style={{ margin: '1.5rem 0' }}>
+                      <div className="stc-diagram-header">
+                        <span className="stc-diagram-badge">{sec.diagramTitle || '🧬 VĀK ARCHITECTURAL FLOW'}</span>
+                        <span className="stc-diagram-sub">Descent of Consciousness into Form</span>
+                      </div>
+                      <pre className="stc-addendum-diagram">{sec.diagram}</pre>
+                    </div>
+                  )}
+
                   {sec.table && (
                     <div className="stc-table-wrapper" style={{ margin: '1.5rem 0' }}>
                       <table className="stc-table">

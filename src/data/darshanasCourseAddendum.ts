@@ -35,6 +35,9 @@ export interface DarshanaSection {
     headers: string[];
     rows: string[][];
   };
+  /** Architectural ASCII/flow diagram rendered in preformatted container. */
+  diagram?: string;
+  diagramTitle?: string;
   sutras?: DarshanaSutra[];
   /** Optional button to another addendum unit. */
   addendumLink?: { label: string; addendumId: string };
@@ -407,7 +410,19 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
           '• The Physical Pipeline of Vaikharī:\nModern speech science uses three engines. Śikṣā already split the last one:\n1. Initiation (prāṇa / uras): Diaphragm + chest wall push a controlled egressive airstream. Speech is not rest-breathing: short in-breath, long managed out-breath so many syllables ride one expiration. Pāṇinīya Śikṣā lists uras (chest) among the eight sthānas — they already put the bellows in the map, not only the mouth.\n2. Phonation (kaṇṭha): Air through the glottis. Folds approximate → vibration → voice. Apart → whisper / h. This is why Vedic svara is not “melody on top”: pitch is a laryngeal event. Unready folds (infant, illness, strain) cannot carry mantra the way a trained throat can. That is physiology, not mystique.\n3. Articulation (sthāna + karaṇa + prayatna): The tract shapes the buzz into varṇa. Śikṣā’s eight places line up with a sagittal cut of the tract: uras (chest / subglottal drive), kaṇṭha (larynx / velar region: a, k-varga, h, visarga), tālu (palate: i, c-varga, y, ś), mūrdhan (retroflex vault: ṛ, ṭ-varga, r, ṣ), danta (teeth: ḷ, t-varga, l, s), oṣṭha (lips: u, p-varga), nāsikā (velum open: ṅ ñ ṇ n m), and jihvāmūla (tongue-root). Prayatna is manner: full touch (stops), light touch (semivowels), open (vowels). That is the same grid IPA uses, with Indian names.',
           '• Progression: How the Body Grows into Vāk:\nThe infant does not start at Parā and politely descend. The hardware comes online in order, rhyming with the four vāks:\n— Birth–2 months (larynx first): Cry, vegetative sounds. Folds protect the airway more than they speak. No adult vocal ligament; high larynx, short tract. This is raw vaikharī without a stable inner form.\n— 2–4 months (coo): Pharynx begins to play. Vowel-like colour. First “I am sounding on purpose.” Paśyantī-like: intention appears before lexicon.\n— 4–10 months (expansion / babble): Jaw, lips, tongue explore sthānas. Canonical babble (ba-ba, da-da) is prayatna practice. Rhythm of breath groups appears.\n— ~1–3 years (larynx descent, first words): Tract becomes a two-tube resonator. Words need madhyamā: hold a form inside, then release it. This is why meaning and sound lock together here — 10.125.4’s “who hears what is spoken.”\n— Childhood → adolescence: Vocal fold layers mature ~11–12+; male larynx drops at puberty. Adult svara control is late hardware. Asking a small child for full Vedic pitch is asking for an organ that is not finished.\nReception (adhikāra) has a body: auditory cortex + motor map of the same gestures. You understand a mūrdhanya because you can almost make it. A mantra that never enters that loop is repetition without reception.',
           '• What Changes in the Body When Vāk Moves:\nNot magic. Measurable shifts if the person is actually speaking or preparing to speak:\n— Breath: longer expiration, slight postural lift of ribcage.\n— Larynx: adduction for voiced sounds; height changes with pitch.\n— Soft palate: lift for oral varṇas, drop for nasals.\n— Tongue body: front/back/height = vowel space; tip = dental vs retroflex.\n— Face: lips round for u/o; jaw drops for open a.\n— Autonomic: heart-rate and vagal tone settle in slow japa — that is paced breathing plus attention, not proof that Devī “entered the nāḍī”.\nChakra-to-organ charts (mūlādhāra = parā, etc.) are sādhanā maps. They are not dissection maps. Use them as practice language; don’t sell them as MRI.',
+          '• The Threefold Branches of Vaikharī (Acoustic, Graphic, Physical):\nVaikharī is not solely the acoustic wave from the mouth. The tradition recognizes three distinct sensorial branches of the articulated signal:\n1. Acoustic: Pressure wave from larynx and vocal tract for the ear.\n2. Graphic: Written glyph (e.g. the ॐ character) for the eye and scribe’s hand.\n3. Physical: Bronze or stone mūrti (e.g. Gaṇapati’s curved trunk and belly) for the whole body to behold and circumambulate.\nAll three are Vaikharī: the dense, tangible terminus of one unbroken descent from Parā stillness.',
         ],
+        diagramTitle: '🧬 The Four Vāks & Threefold Vaikharī Architecture',
+        diagram: `[Parā]        Unmanifest potential / Silent readiness / The Unuttered
+   ↓
+[Paśyantī]    The single intentional vector / Pre-verbal flash of purpose
+   ↓
+[Madhyamā]    Internal acoustic/motor map (Inner rehearsal, sthāna selection)
+   ↓
+[Vaikharī]    Articulated signal:
+              ├─ Acoustic: Pressure wave from the larynx & tract
+              ├─ Graphic:  Written glyph (e.g., the ॐ character)
+              └─ Physical: Bronze/stone mūrti (e.g., Gaṇapati's trunk & belly)`,
         table: {
           headers: ['Vāk Level', 'What It Is', 'Body Analogue (Use Carefully)', 'What Actually Happens'],
           rows: [
@@ -562,6 +577,17 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
             ['Bhāvanā of the utterer', 'Nyāsa & Prāṇa-pratiṣṭhā', 'Installs living consciousness into the form'],
           ],
         },
+        diagramTitle: '🕉️ The Threefold Signal of Vaikharī (Acoustic, Graphic, Physical)',
+        diagram: `[Parā]        Unmanifest potential / Silent readiness / The Unuttered
+   ↓
+[Paśyantī]    The single intentional vector / Pre-verbal flash of purpose
+   ↓
+[Madhyamā]    Internal acoustic/motor map (Inner rehearsal, sthāna selection)
+   ↓
+[Vaikharī]    Articulated signal:
+              ├─ Acoustic: Pressure wave from the larynx & tract (gaṃ / oṃ)
+              ├─ Graphic:  Written glyph (the Devanāgarī ॐ character)
+              └─ Physical: Bronze/stone mūrti (Gaṇapati's belly, tusk & trunk)`,
         callout: {
           title: 'The Three Densities',
           text: '“One reality, three densities: Parā (formless stillness), Gaṃ/Oṃ (vibrational sound-form), and Vigraha (visible embodied form). Use the density your mind can hold. Return to the same sacred purpose at every density.”',
