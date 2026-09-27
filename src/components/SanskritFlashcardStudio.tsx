@@ -632,14 +632,17 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
 ];
 
 export interface SanskritFlashcardStudioProps {
+  isAdmin?: boolean;
   onPlayAudio?: (term: string) => void;
   onOpenLesson?: (lessonId: string) => void;
 }
 
 export const SanskritFlashcardStudio: React.FC<SanskritFlashcardStudioProps> = ({
+  isAdmin = false,
   onPlayAudio,
   onOpenLesson
 }) => {
+
   const [selectedModuleFilter, setSelectedModuleFilter] = useState<number | 'all'>('all');
   const [currentCardIndex, setCurrentCardIndex] = useState<number>(0);
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
@@ -709,6 +712,22 @@ export const SanskritFlashcardStudio: React.FC<SanskritFlashcardStudioProps> = (
     }
   };
 
+  const handleAdminMasterAll = () => {
+    const allIds = new Set(SANSKRIT_FLASHCARDS.map((c) => c.id));
+    setMasteredIds(allIds);
+    try {
+      localStorage.setItem('stc_mastered_flashcards', JSON.stringify(Array.from(allIds)));
+    } catch {}
+  };
+
+  const handleAdminResetMastery = () => {
+    setMasteredIds(new Set());
+    try {
+      localStorage.removeItem('stc_mastered_flashcards');
+    } catch {}
+  };
+
+
   // Keyboard navigation: Space flips, Left/Right navigates
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -746,16 +765,56 @@ export const SanskritFlashcardStudio: React.FC<SanskritFlashcardStudioProps> = (
         </div>
 
         {/* Global Mastery Counter */}
-        <div style={{ background: '#fef3c7', border: '1.5px solid #f59e0b', borderRadius: '12px', padding: '0.5rem 1rem', textAlign: 'right' }}>
-          <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#92400e', textTransform: 'uppercase' }}>
-            Overall Deck Mastery
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.4rem' }}>
+          <div style={{ background: '#fef3c7', border: '1.5px solid #f59e0b', borderRadius: '12px', padding: '0.5rem 1rem', textAlign: 'right' }}>
+            <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#92400e', textTransform: 'uppercase' }}>
+              Overall Deck Mastery
+            </div>
+            <div style={{ fontSize: '1.2rem', fontWeight: 900, color: '#78350f' }}>
+              {totalMasteredCount} / {SANSKRIT_FLASHCARDS.length} Cards
+              <span style={{ fontSize: '0.85rem', fontWeight: 700, marginLeft: '0.4rem', color: '#b45309' }}>
+                ({Math.round((totalMasteredCount / SANSKRIT_FLASHCARDS.length) * 100)}%)
+              </span>
+            </div>
           </div>
-          <div style={{ fontSize: '1.2rem', fontWeight: 900, color: '#78350f' }}>
-            {totalMasteredCount} / {SANSKRIT_FLASHCARDS.length} Cards
-            <span style={{ fontSize: '0.85rem', fontWeight: 700, marginLeft: '0.4rem', color: '#b45309' }}>
-              ({Math.round((totalMasteredCount / SANSKRIT_FLASHCARDS.length) * 100)}%)
-            </span>
-          </div>
+          {isAdmin && (
+            <div style={{ display: 'flex', gap: '0.35rem' }}>
+              <button
+                type="button"
+                onClick={handleAdminMasterAll}
+                style={{
+                  background: '#dcfce7',
+                  border: '1px solid #86efac',
+                  color: '#166534',
+                  padding: '0.25rem 0.55rem',
+                  borderRadius: '6px',
+                  fontSize: '0.75rem',
+                  fontWeight: 800,
+                  cursor: 'pointer'
+                }}
+                title="Admin Quick-Pass: Mark all 40 cards as mastered"
+              >
+                ⚡ Master All 40
+              </button>
+              <button
+                type="button"
+                onClick={handleAdminResetMastery}
+                style={{
+                  background: '#fee2e2',
+                  border: '1px solid #fca5a5',
+                  color: '#991b1b',
+                  padding: '0.25rem 0.55rem',
+                  borderRadius: '6px',
+                  fontSize: '0.75rem',
+                  fontWeight: 800,
+                  cursor: 'pointer'
+                }}
+                title="Admin: Reset flashcards mastery"
+              >
+                🔄 Reset
+              </button>
+            </div>
+          )}
         </div>
       </div>
 

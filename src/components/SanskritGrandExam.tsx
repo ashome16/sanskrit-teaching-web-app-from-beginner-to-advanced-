@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { COURSE_MODULES, type CourseLesson } from '../data/sanskritThinkingCourseData';
 
 export interface SanskritGrandExamProps {
+  isAdmin?: boolean;
   onSelectLessonById?: (lessonId: string) => void;
   onOpenCertificate?: () => void;
   onGoToCurriculum?: () => void;
@@ -26,10 +27,12 @@ export interface ExamQuestionItem {
 }
 
 export const SanskritGrandExam: React.FC<SanskritGrandExamProps> = ({
+  isAdmin = false,
   onSelectLessonById,
   onOpenCertificate,
   onGoToCurriculum
 }) => {
+
   // Build the complete 28-question exam bank dynamically from the 28 curriculum lessons
   const questions: ExamQuestionItem[] = useMemo(() => {
     const list: ExamQuestionItem[] = [];
@@ -150,6 +153,26 @@ export const SanskritGrandExam: React.FC<SanskritGrandExamProps> = ({
       /* ignore */
     }
   };
+
+  const handleAdminAutoSolve = () => {
+    const perfect: Record<number, number> = {};
+    questions.forEach((q, idx) => {
+      perfect[idx] = q.correctIndex;
+    });
+    setUserAnswers(perfect);
+    setIsSubmitted(true);
+    setIsTimerRunning(false);
+    try {
+      localStorage.setItem('stc_grand_exam_answers', JSON.stringify(perfect));
+      localStorage.setItem('stc_grand_exam_submitted', 'true');
+      localStorage.setItem('stc_grand_exam_score', `${questions.length}/${questions.length}`);
+      localStorage.setItem('stc_grand_exam_percent', '100%');
+      localStorage.setItem('stc_grand_exam_grade', 'महामहोपाध्यायः (Summa Cum Laude)');
+      localStorage.setItem('stc_grand_exam_date', new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }));
+    } catch {}
+    window.scrollTo({ top: 400, behavior: 'smooth' });
+  };
+
 
   const handleEndorseCertificate = () => {
     // Ensure credentials saved
@@ -317,12 +340,36 @@ export const SanskritGrandExam: React.FC<SanskritGrandExamProps> = ({
                 ← Return to Lessons
               </button>
             )}
+            {isAdmin && (
+              <button
+                type="button"
+                onClick={handleAdminAutoSolve}
+                style={{
+                  background: '#fef3c7',
+                  border: '1.5px solid #f59e0b',
+                  color: '#92400e',
+                  padding: '0.4rem 0.85rem',
+                  borderRadius: '8px',
+                  fontSize: '0.82rem',
+                  fontWeight: 800,
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.4rem'
+                }}
+                title="Admin Quick-Pass: Solve all 28 questions with 100% score"
+              >
+                <span>⚡</span>
+                <span>Admin Auto-Solve (28/28)</span>
+              </button>
+            )}
             <div style={{ background: 'rgba(0, 0, 0, 0.25)', padding: '0.45rem 0.85rem', borderRadius: '8px', fontSize: '0.86rem', display: 'flex', alignItems: 'center', gap: '0.5rem', border: '1px solid rgba(255, 255, 255, 0.15)' }}>
               <span>⏱️ Timer:</span>
               <span style={{ fontFamily: 'monospace', fontWeight: 800, fontSize: '0.96rem' }}>{formatTime(timerSeconds)}</span>
             </div>
           </div>
         </div>
+
 
         {/* Mode Selector & Quick Summary */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginTop: '1.5rem', paddingTop: '1.25rem', borderTop: '1px solid rgba(255, 255, 255, 0.15)' }}>

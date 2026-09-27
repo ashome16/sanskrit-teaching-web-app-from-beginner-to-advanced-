@@ -98,9 +98,27 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
   onOpenVoiceSettings,
 }) => {
   const { currentUser, isAdminLoggedIn } = useAuthStore();
-  const hasPaid = hasPaidAccess(currentUser, isAdminLoggedIn);
+  // Admin fast-pass override (via ?admin=1, #admin, or top toolbar toggle)
+  const [isAdminOverride, setIsAdminOverride] = useState<boolean>(() => {
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const hash = window.location.hash.toLowerCase();
+      if (urlParams.get('admin') === '1' || urlParams.get('admin') === 'true' || hash.includes('admin')) {
+        localStorage.setItem('stc_admin_override', 'true');
+        return true;
+      }
+      return localStorage.getItem('stc_admin_override') === 'true';
+    } catch {
+      return false;
+    }
+  });
+
+  const isEffectiveAdmin = isAdminLoggedIn || isAdminOverride;
+  const hasPaid = hasPaidAccess(currentUser, isEffectiveAdmin);
   const [hashTarget] = useState(parseCourseHash);
-  const inTrial = hasPremiumAccess(currentUser, isAdminLoggedIn) && !hasPaid;
+  const inTrial = hasPremiumAccess(currentUser, isEffectiveAdmin) && !hasPaid;
+  const [isAdminDeckOpen, setIsAdminDeckOpen] = useState<boolean>(true);
+
 
   // View mode: 'curriculum' (28 Lessons), 'addendum' (Prologue, Mantras, Masterclasses), 'flashcards' (Cognitive Flashcards), 'exam' (Grand Assessment)
   const [viewMode, setViewMode] = useState<'curriculum' | 'addendum' | 'flashcards' | 'exam'>(
@@ -351,6 +369,56 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
     }
   };
 
+  const handleAdminCompleteAllLessons = () => {
+    const allIds = new Set(allLessons.map((l) => l.id));
+    setCompletedLessonIds(allIds);
+    try {
+      localStorage.setItem('stc_completed_lessons', JSON.stringify(Array.from(allIds)));
+    } catch {}
+  };
+
+  const handleAdminCompleteAllAddenda = () => {
+    const allIds = new Set(DARSHANAS_COURSE_ADDENDUM.map((a) => a.id));
+    setCompletedAddendumIds(allIds);
+    try {
+      localStorage.setItem('stc_completed_addenda', JSON.stringify(Array.from(allIds)));
+    } catch {}
+  };
+
+  const handleAdminPerfectExam = () => {
+    try {
+      const perfect: Record<number, number> = {};
+      allLessons.forEach((l, idx) => {
+        perfect[idx] = l.practice.quickQuiz.correctIndex;
+      });
+      localStorage.setItem('stc_grand_exam_answers', JSON.stringify(perfect));
+      localStorage.setItem('stc_grand_exam_submitted', 'true');
+      localStorage.setItem('stc_grand_exam_score', `${allLessons.length}/${allLessons.length}`);
+      localStorage.setItem('stc_grand_exam_percent', '100%');
+      localStorage.setItem('stc_grand_exam_grade', 'महामहोपाध्यायः (Summa Cum Laude)');
+      localStorage.setItem('stc_grand_exam_date', new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }));
+    } catch {}
+    setIsCertificateModalOpen(true);
+  };
+
+  const handleAdminResetAll = () => {
+    if (!window.confirm('Reset all course progress (lessons, addenda, exam)?')) return;
+    setCompletedLessonIds(new Set());
+    setCompletedAddendumIds(new Set());
+    setQuizAnswers({});
+    try {
+      localStorage.removeItem('stc_completed_lessons');
+      localStorage.removeItem('stc_completed_addenda');
+      localStorage.removeItem('stc_grand_exam_answers');
+      localStorage.removeItem('stc_grand_exam_submitted');
+      localStorage.removeItem('stc_grand_exam_score');
+      localStorage.removeItem('stc_grand_exam_percent');
+      localStorage.removeItem('stc_grand_exam_grade');
+      localStorage.removeItem('stc_grand_exam_date');
+    } catch {}
+  };
+
+
   const handleAudioPlay = (term: string) => {
     stopSequence();
     // Śānti-mantra lines (ओं सह नाववतु …) use the dedicated recitation voice:
@@ -463,6 +531,28 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
+            {/* Admin Fast-Pass Access Switch */}
+            <button
+              type="button"
+              className="stc-crumb-btn"
+              style={{
+                background: isEffectiveAdmin ? '#fef3c7' : '#f8fafc',
+                borderColor: isEffectiveAdmin ? '#d97706' : '#cbd5e1',
+                color: isEffectiveAdmin ? '#92400e' : '#475569',
+                fontWeight: 800
+              }}
+              onClick={() => {
+                const next = !isAdminOverride;
+                setIsAdminOverride(next);
+                try {
+                  localStorage.setItem('stc_admin_override', next ? 'true' : 'false');
+                } catch {}
+              }}
+              title="Toggle Course Administrator Fast-Pass (Quick-jump to any lesson, complete all progress, bypass gates)"
+            >
+              <span>{isEffectiveAdmin ? '🛡️ Admin: Active' : '🛡️ Admin Access'}</span>
+            </button>
+
             <button
               type="button"
               className="stc-crumb-btn"
@@ -473,6 +563,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
               <span>📜</span>
               <span>Course Certificate</span>
             </button>
+
             {hasPaid ? (
               <span className="stc-sub-pill stc-sub-pill--active">
                 ⭐ ₹200 Active Access · Worksheets &amp; Answer Keys Unlocked
@@ -532,8 +623,235 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
           ))}
         </div>
 
+        {/* Course Admin Fast-Pass Deck */}
+        {isEffectiveAdmin && (
+          <div
+            style={{
+              background: '#fffbeb',
+              border: '2px solid #f59e0b',
+              borderRadius: '14px',
+              padding: '1rem 1.25rem',
+              marginBottom: '1.5rem',
+              boxShadow: '0 4px 15px rgba(245, 158, 11, 0.15)',
+              position: 'relative'
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: isAdminDeckOpen ? '0.85rem' : 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                <span style={{ fontSize: '1.25rem' }}>🛡️</span>
+                <div>
+                  <div style={{ fontWeight: 900, color: '#92400e', fontSize: '0.94rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                    Course Admin Fast-Pass Deck · आचार्य-द्रुत-नियन्त्रणम्
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: '#b45309' }}>
+                    Full unrestricted bypass: Jump to any lesson, auto-solve exam, toggle 100% progress, and download keys.
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <button
+                  type="button"
+                  onClick={() => setIsAdminDeckOpen((prev) => !prev)}
+                  style={{
+                    background: '#ffffff',
+                    border: '1px solid #d97706',
+                    color: '#92400e',
+                    borderRadius: '6px',
+                    padding: '0.25rem 0.65rem',
+                    fontSize: '0.76rem',
+                    fontWeight: 800,
+                    cursor: 'pointer'
+                  }}
+                >
+                  {isAdminDeckOpen ? '▲ Collapse Deck' : '▼ Expand Admin Deck'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsAdminOverride(false);
+                    try { localStorage.removeItem('stc_admin_override'); } catch {}
+                  }}
+                  style={{
+                    background: '#fee2e2',
+                    border: '1px solid #fca5a5',
+                    color: '#991b1b',
+                    borderRadius: '6px',
+                    padding: '0.25rem 0.65rem',
+                    fontSize: '0.76rem',
+                    fontWeight: 800,
+                    cursor: 'pointer'
+                  }}
+                  title="Exit Admin Mode"
+                >
+                  Exit Admin
+                </button>
+              </div>
+            </div>
+
+            {isAdminDeckOpen && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', paddingTop: '0.5rem', borderTop: '1px solid #fde68a' }}>
+                {/* Row 1: Direct Lesson Jumper Dropdown */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+                  <label htmlFor="stc-admin-jump" style={{ fontSize: '0.82rem', fontWeight: 800, color: '#78350f', whiteSpace: 'nowrap' }}>
+                    ⚡ Instant Jumper:
+                  </label>
+                  <select
+                    id="stc-admin-jump"
+                    value={viewMode === 'curriculum' ? `lesson-${activeLessonId}` : viewMode === 'addendum' ? `addendum-${activeAddendumId}` : viewMode}
+                    onChange={(e) => {
+                      const val = e.target.value;
+                      if (val === 'flashcards') {
+                        setViewMode('flashcards');
+                      } else if (val === 'exam') {
+                        setViewMode('exam');
+                      } else if (val.startsWith('lesson-')) {
+                        handleSelectLessonById(val.replace('lesson-', ''));
+                      } else if (val.startsWith('addendum-')) {
+                        openAddendum(val.replace('addendum-', ''));
+                      }
+                    }}
+                    style={{
+                      flex: '1 1 280px',
+                      padding: '0.45rem 0.75rem',
+                      borderRadius: '8px',
+                      border: '1.5px solid #d97706',
+                      background: '#ffffff',
+                      color: '#0f172a',
+                      fontSize: '0.86rem',
+                      fontWeight: 700,
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <option value="" disabled>Select any unit to jump immediately...</option>
+                    <optgroup label="Interactive Studios & Evaluation">
+                      <option value="flashcards">🗂️ Cognitive Flashcard Studio (चिन्तन-मञ्जूषा)</option>
+                      <option value="exam">🏆 Grand Assessment Exam (महा-मूल्याङ्कनम् - 28 Questions)</option>
+                    </optgroup>
+                    {COURSE_MODULES.map((m) => (
+                      <optgroup key={m.id} label={`Module ${m.moduleNumber}: ${m.titleDevanagari} (${m.titleEnglish})`}>
+                        {m.lessons.map((l) => (
+                          <option key={l.id} value={`lesson-${l.id}`}>
+                            Lesson {l.lessonNumber}: {l.titleDevanagari} ({l.titleEnglish})
+                          </option>
+                        ))}
+                      </optgroup>
+                    ))}
+                    <optgroup label="Masterclasses & Addenda (11 Units)">
+                      {DARSHANAS_COURSE_ADDENDUM.map((a) => (
+                        <option key={a.id} value={`addendum-${a.id}`}>
+                          {a.partLabel || `Part ${a.partNumber}`}: {a.titleDevanagari} ({a.titleEnglish})
+                        </option>
+                      ))}
+                    </optgroup>
+                  </select>
+                </div>
+
+                {/* Row 2: 1-Click Fast-Pass Actions */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                  <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#78350f' }}>
+                    Admin Actions:
+                  </span>
+
+                  <button
+                    type="button"
+                    onClick={handleAdminCompleteAllLessons}
+                    style={{
+                      background: '#dcfce7',
+                      border: '1px solid #86efac',
+                      color: '#15803d',
+                      borderRadius: '8px',
+                      padding: '0.35rem 0.75rem',
+                      fontSize: '0.78rem',
+                      fontWeight: 800,
+                      cursor: 'pointer'
+                    }}
+                    title="Mark all 28 curriculum lessons as completed"
+                  >
+                    ✓ Complete All 28 Lessons
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleAdminCompleteAllAddenda}
+                    style={{
+                      background: '#dcfce7',
+                      border: '1px solid #86efac',
+                      color: '#15803d',
+                      borderRadius: '8px',
+                      padding: '0.35rem 0.75rem',
+                      fontSize: '0.78rem',
+                      fontWeight: 800,
+                      cursor: 'pointer'
+                    }}
+                    title="Mark all 11 masterclasses as completed"
+                  >
+                    ✓ Complete All 11 Masterclasses
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleAdminPerfectExam}
+                    style={{
+                      background: '#ede9fe',
+                      border: '1px solid #c4b5fd',
+                      color: '#5b21b6',
+                      borderRadius: '8px',
+                      padding: '0.35rem 0.75rem',
+                      fontSize: '0.78rem',
+                      fontWeight: 800,
+                      cursor: 'pointer'
+                    }}
+                    title="Auto-solve grand exam with 100% and endorse Summa Cum Laude on Certificate"
+                  >
+                    🌟 100% Perfect Grand Exam
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setIsCertificateModalOpen(true)}
+                    style={{
+                      background: '#ffffff',
+                      border: '1px solid #d97706',
+                      color: '#92400e',
+                      borderRadius: '8px',
+                      padding: '0.35rem 0.75rem',
+                      fontSize: '0.78rem',
+                      fontWeight: 800,
+                      cursor: 'pointer'
+                    }}
+                    title="Open official Gurukul certificate"
+                  >
+                    📜 Open Certificate
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleAdminResetAll}
+                    style={{
+                      background: '#fee2e2',
+                      border: '1px solid #fca5a5',
+                      color: '#991b1b',
+                      borderRadius: '8px',
+                      padding: '0.35rem 0.75rem',
+                      fontSize: '0.78rem',
+                      fontWeight: 800,
+                      cursor: 'pointer',
+                      marginLeft: 'auto'
+                    }}
+                    title="Reset all progress back to zero"
+                  >
+                    🔄 Reset All Progress
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
         {/* Course View Mode Switcher (Curriculum vs Addendum vs Flashcards vs Exam) */}
         <div className="stc-view-selector" role="tablist" aria-label="Course section selector">
+
           <button
             type="button"
             role="tab"
@@ -578,16 +896,19 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
 
         {viewMode === 'flashcards' ? (
           <SanskritFlashcardStudio
+            isAdmin={isEffectiveAdmin}
             onPlayAudio={handleAudioPlay}
             onOpenLesson={handleSelectLessonById}
           />
         ) : viewMode === 'exam' ? (
           <SanskritGrandExam
+            isAdmin={isEffectiveAdmin}
             onSelectLessonById={handleSelectLessonById}
             onOpenCertificate={() => setIsCertificateModalOpen(true)}
             onGoToCurriculum={() => setViewMode('curriculum')}
           />
         ) : viewMode === 'curriculum' ? (
+
           /* Main Two-Column Layout */
           <div className="stc-layout">
 
@@ -834,10 +1155,16 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                         onClick={() => handleQuizSelect(currentLesson.id, optIdx)}
                       >
                         <span>{String.fromCharCode(65 + optIdx)}.</span> {opt}
+                        {isEffectiveAdmin && isCorrect && (
+                          <span style={{ marginLeft: 'auto', background: '#dcfce7', color: '#166534', padding: '0.15rem 0.45rem', borderRadius: '4px', fontSize: '0.72rem', fontWeight: 800 }}>
+                            Key ✓
+                          </span>
+                        )}
                       </button>
                     );
                   })}
                 </div>
+
 
                 {quizAnswers[currentLesson.id] !== undefined && quizAnswers[currentLesson.id] !== null && (
                   <div
