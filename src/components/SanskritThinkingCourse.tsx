@@ -23,6 +23,7 @@ import {
 } from './PingalaInteractiveTools';
 import { TurangaBandhaChessboard } from './TurangaBandhaChessboard';
 import { LilavatiPoeticMathStudio } from './LilavatiPoeticMathStudio';
+import { CymaticsHarmonicsStudio } from './CymaticsHarmonicsStudio';
 import SanskritFlashcardStudio from './SanskritFlashcardStudio';
 import SanskritGrandExam from './SanskritGrandExam';
 
@@ -1552,6 +1553,22 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                     </div>
                   )}
 
+                  {sec.image && (
+                    <figure className="stc-addendum-figure">
+                      <img
+                        src={sec.image.src}
+                        alt={sec.image.alt}
+                        className="stc-addendum-img"
+                        loading="lazy"
+                      />
+                      {sec.image.caption && (
+                        <figcaption className="stc-addendum-figcaption">
+                          {sec.image.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  )}
+
                   {sec.diagram && (
                     <div className="stc-diagram-container" style={{ margin: '1.5rem 0' }}>
                       <div className="stc-diagram-header">
@@ -1638,6 +1655,12 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                     </p>
                   </div>
                   <LilavatiPoeticMathStudio onPlayAudio={handleAudioPlay} />
+                </div>
+              )}
+
+              {currentAddendum.id === 'addendum-cymatics-music-of-matter' && (
+                <div style={{ margin: '2.5rem 0' }}>
+                  <CymaticsHarmonicsStudio onPlayAudio={handleAudioPlay} />
                 </div>
               )}
 

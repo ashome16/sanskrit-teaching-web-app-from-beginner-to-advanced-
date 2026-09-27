@@ -1219,6 +1219,37 @@
   white-space: pre;
 }
 
+/* Addendum Section Visual Figure */
+.stc-addendum-figure {
+  margin: 1.75rem auto;
+  text-align: center;
+  max-width: 620px;
+  background: #070d18;
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1.5px solid #1e293b;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 25px rgba(56, 189, 248, 0.08);
+}
+
+.stc-addendum-img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+.stc-addendum-figcaption {
+  font-size: 0.84rem;
+  color: #94a3b8;
+  margin-top: 0.85rem;
+  font-style: italic;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
 /* Sutra Card */
 .stc-sutra-box {
   background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);

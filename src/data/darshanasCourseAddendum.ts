@@ -38,6 +38,12 @@ export interface DarshanaSection {
   /** Architectural ASCII/flow diagram rendered in preformatted container. */
   diagram?: string;
   diagramTitle?: string;
+  /** Optional visual diagram or illustration image. */
+  image?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  };
   sutras?: DarshanaSutra[];
   /** Optional button to another addendum unit. */
   addendumLink?: { label: string; addendumId: string };
@@ -1593,6 +1599,11 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
         anchorId: 'somatic-cymatics-nodal-stillness',
         heading: 'Somatic Cymatics & Nodal Stillness: The Practitioner as the Chladni Plate (नाद-बिन्दु-संस्थानम्)',
         subheading: 'Form Born from Regions of Zero Displacement · 4-Lobe Mūlādhāra Resonance · Yantra as a Standing Wave Map',
+        image: {
+          src: '/philosophy/cymatics-sound-vibration-geometric-structure.png',
+          alt: 'Cymatics: Sound Vibration Creating Geometric Structure — 4-Lobe Quadrupole Standing Wave',
+          caption: 'Figure 6.2: Polar standing wave representation of acoustic vibration generating a 4-lobed quadrupole geometry. Particles settle along nodal lines (regions of zero displacement), mirroring the 4-petaled Mūlādhāra lotus, the 4-gated Bhūpura of sacred Yantras, and the fourfold descent of Vāk (Parā ⟶ Paśyantī ⟶ Madhyamā ⟶ Vaikharī).'
+        },
         paragraphs: [
           'What cymatics demonstrates on a physical laboratory plate is the empirical foundation of what Tantric and Vedic traditions formalized as Yantra: Mantra (sound-vibration) ⟷ Yantra (geometric standing wave) ⟷ Mūrti (embodied form).',
           '• 1. Form is Born from Nodal Stillness:\nIn cymatics (whether on a metal Chladni plate or in a fluid membrane), particles do not collect where the plate is violently shaking. They gather at the nodal lines — the regions of zero displacement where opposing wave vectors cancel each other out.\n— The Physics: Geometry appears where there is structural stillness amid oscillation.\n— The Sādhana: This is the physical proof of Parā ⟷ Vaikharī. A mantra does not create form through noisy chaos; it creates form because its stable frequency sets up exact lines of rest. If the phoneme drifts or the purpose wavers, the standing wave collapses into random jitter, and the geometry dissolves.',

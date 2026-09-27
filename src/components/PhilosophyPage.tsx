@@ -10,6 +10,7 @@ import {
 } from './PingalaInteractiveTools';
 import { TurangaBandhaChessboard } from './TurangaBandhaChessboard';
 import { LilavatiPoeticMathStudio } from './LilavatiPoeticMathStudio';
+import { CymaticsHarmonicsStudio } from './CymaticsHarmonicsStudio';
 
 export interface PhilosophyPageProps {
   onOpenRegister?: () => void;
@@ -1837,6 +1838,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', marginTop: '1rem' }} aria-label="Artwork thematic navigation">
                 <a href="#cymatics-sanskrit" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🔊 1. Cymatics &amp; Sanskrit</a>
+                <a href="#cymatics-somatic-nodal" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🌊 Somatic Cymatics Studio</a>
                 <a href="#cymatics-yatha-pinde" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🌌 2. Yathā Piṇḍe Tathā Brahmāṇḍe</a>
                 <a href="#cymatics-rangolis" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🌸 3. Rangolis &amp; Fibonacci Flora</a>
                 <a href="#cymatics-vastu" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🏛️ 4. Vāstu Sacred Geometry</a>
@@ -1901,6 +1903,53 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 </p>
                 <cite className="philosophy-sutra-source">— Saṅgīta-Makaranda 1.4</cite>
               </blockquote>
+            </section>
+
+            {/* Somatic Cymatics & Nodal Stillness Interactive Section */}
+            <section className="philosophy-section" id="cymatics-somatic-nodal" aria-labelledby="cymatics-somatic-nodal-heading">
+              <h2 id="cymatics-somatic-nodal-heading">Somatic Cymatics &amp; Nodal Stillness: The Practitioner as the Chladni Plate (नाद-बिन्दु-संस्थानम्)</h2>
+              <p className="philosophy-secondary" style={{ marginTop: '-0.35rem', marginBottom: '1rem', fontStyle: 'italic' }}>
+                Form Born from Regions of Zero Displacement · 4-Lobe Mūlādhāra Resonance · Yantra as a Standing Wave Map
+              </p>
+
+              <figure className="philosophy-hero-mandala" style={{ maxWidth: '580px', margin: '1.5rem auto' }}>
+                <img
+                  src="/philosophy/cymatics-sound-vibration-geometric-structure.png"
+                  alt="Cymatics: Sound Vibration Creating Geometric Structure — 4-Lobe Quadrupole Standing Wave"
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: '16px',
+                    border: '1px solid #1e293b',
+                    boxShadow: '0 12px 32px rgba(0, 0, 0, 0.45), 0 0 25px rgba(56, 189, 248, 0.1)',
+                    background: '#070b14'
+                  }}
+                  loading="lazy"
+                />
+                <figcaption style={{ fontSize: '0.84rem', color: '#64748b', textAlign: 'center', marginTop: '0.75rem', fontStyle: 'italic', lineHeight: 1.5 }}>
+                  Figure: Polar standing wave representation of acoustic vibration generating a 4-lobed quadrupole geometry. Particles settle along nodal lines (regions of zero displacement), mirroring the 4-petaled Mūlādhāra lotus, the 4-gated Bhūpura of sacred Yantras, and the fourfold descent of Vāk (Parā ⟶ Paśyantī ⟶ Madhyamā ⟶ Vaikharī).
+                </figcaption>
+              </figure>
+
+              <p>
+                What cymatics demonstrates on a physical laboratory plate is the empirical foundation of what Tantric and Vedic traditions formalized as Yantra: <strong>Mantra (sound-vibration) ⟷ Yantra (geometric standing wave) ⟷ Mūrti (embodied form)</strong>.
+              </p>
+
+              <ul className="philosophy-bullet-list">
+                <li>
+                  <strong>Form is Born from Nodal Stillness:</strong> In cymatics, particles do not collect where the plate is violently shaking. They gather at the <em>nodal lines</em> — the regions of zero displacement where opposing wave vectors cancel each other out. Geometry appears where there is structural stillness amid oscillation.
+                </li>
+                <li>
+                  <strong>The 4-Lobe Pattern (Mūlādhāra &amp; Gaṇapati):</strong> A harmonic quadrupole vibration naturally generates a distinct 4-lobed rotational symmetry. In subtle anatomy, Mūlādhāra is classically mapped as a 4-petaled lotus (vaṃ, śaṃ, ṣaṃ, saṃ), the seat of Gaṇeśa identified with Oṃkāra and the grossest density of earth/matter (pṛthvī-tattva).
+                </li>
+                <li>
+                  <strong>Somatic Cymatics: The Practitioner as the Plate:</strong> The human body is over 70% fluid. When chanting a sacred varṇa with unwavering <em>bhāvanā</em>, the articulator acts as the mechanical actuator, intention provides stable voltage without phase jitter, and consciousness settles neural tissue along the nodal lines of sacred geometry.
+                </li>
+              </ul>
+
+              {/* Interactive Cymatics Studio Component */}
+              <CymaticsHarmonicsStudio onPlayAudio={handlePlayAudio} />
             </section>
 
             {/* 2. Yatha Pinde Tatha Brahmande */}
