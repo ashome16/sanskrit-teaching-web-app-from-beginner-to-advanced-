@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import type { Lesson, LessonSentence } from '../types/chapters';
 import { aksharaLabel, varnamalaLabel } from '../utils/barakhadiPhonetics';
 import { playPronunciation, playSequence, stopPronunciation } from '../utils/pronunciation';
+import { setBarakhadiSpeechContext } from '../utils/macBarakhadiSpeech';
 import { hasDevanagariLetter, isDandaOrVerseNumberToken } from '../utils/dandaSpeech';
 import {
   loadAnalyseGlosses,
@@ -305,6 +306,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     stopPlayAllRef.current?.();
     stopPronunciation();
   }, []);
+
+  // Mac-only बारहखड़ी speech overrides apply only while this lesson is on screen.
+  useEffect(() => {
+    setBarakhadiSpeechContext(activeLessonId === 'barakhadi');
+    return () => setBarakhadiSpeechContext(false);
+  }, [activeLessonId]);
 
   useEffect(() => {
     // New page / lesson: stop any running Play-all.

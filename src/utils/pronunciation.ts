@@ -9,7 +9,8 @@ import {
   safePitch,
   whenVoicesReady,
 } from './speechPlatform';
-import { resolveVoiceForRole } from './voiceConfig';
+import { getSavedVoiceName, resolveVoiceForRole } from './voiceConfig';
+import { macBarakhadiCue, pickMacBarakhadiVoice } from './macBarakhadiSpeech';
 import { isDandaOrVerseNumberToken } from './dandaSpeech';
 
 // Native Web Speech API pronunciation helper for Sanskrit text only.
@@ -260,8 +261,35 @@ export const stopPronunciation = (): void => {
 };
 
 
+/**
+ * Mac-only बारहखड़ी overrides (see macBarakhadiSpeech.ts for the cell → cue table).
+ * Returns true when it spoke. Only fires on macOS desktop, while the बारहखड़ी lesson
+ * is open, for the specific reported cells, and only if a Hindi voice exists.
+ */
+const speakMacBarakhadiOverride = (word: string, onEnd?: () => void): boolean => {
+  const cue = macBarakhadiCue(word);
+  if (!cue) return false;
+  const voices = window.speechSynthesis.getVoices();
+  const savedName = getSavedVoiceName('reader');
+  const saved = savedName ? voices.find((v) => v.name === savedName) : undefined;
+  const hindi = pickMacBarakhadiVoice(voices, saved);
+  if (!hindi) return false;
+  const utterance = new SpeechSynthesisUtterance(cue);
+  configureUtterance(utterance, word, cue); // same rate rules as other tiles, pitch 1.0
+  utterance.voice = hindi;
+  utterance.lang = hindi.lang || 'hi-IN';
+  utterance.pitch = 1.0;
+  if (onEnd) {
+    utterance.onend = onEnd;
+    utterance.onerror = onEnd;
+  }
+  window.speechSynthesis.speak(utterance);
+  return true;
+};
+
 const speakConfigured = (word: string, onEnd?: () => void): void => {
   if (pronunciationMuted) return;
+  if (speakMacBarakhadiOverride(word, onEnd)) return;
   if (word === 'ञ') {
     const voices = window.speechSynthesis.getVoices();
     const hasHindi = !!(resolveVoiceForRole('reader', voices) || pickHindiVoice(voices));
