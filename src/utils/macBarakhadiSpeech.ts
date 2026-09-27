@@ -6,57 +6,46 @@
  *  - Only while the बारहखड़ी lesson is on screen (TextbookReader sets the context),
  *    so Varṇamālā single-letter tiles, conjunct tiles (क्ष ज्ञ त्र श्र), picture words
  *    and Bodhi's voice are untouched even though they share letters with the grid.
- *  - Only the cells the user reported as wrong on Mac. Every other cell keeps the
- *    existing getGuninthaluSpeechText() output.
+ *  - Only cells the user reported as wrong on Mac. Every other cell keeps the
+ *    existing getGuninthaluSpeechText() output (plain Devanagari).
  *  - Voice is forced to a Hindi (hi-IN) voice: Lekha → Google हिन्दी → any hi-*.
  *    Pitch stays 1.0; rate comes from the normal configureUtterance() rules.
  *
- * Why these cues (Lekha / Google हिन्दी are *Hindi* text-to-speech engines):
- *  1. Lone syllables that are also Hindi words or abbreviations get read as the word:
- *     डा. = डॉक्टर ("doctor"), मी. = मीटर ("meter"), लि. = लिमिटेड ("limited"),
- *     जू. = जून/जूनियर, पु. = पुल्लिंग; and old visarga echoes छह = "six", तह = "fold".
- *     Fix: write the syllable as consonant + halant + independent vowel (म्ई = m + ī).
- *     It sounds the same but no longer matches a dictionary word/abbreviation, and the
- *     explicit vowel stops Hindi schwa-deletion from clipping bare cells (ल → "l").
- *  2. Visarga (ः): spaced echo "C ह" (same idea as the Windows picture-word fix, e.g.
- *     एणः → "एण ह"), so the engine says "ta … ha" rather than a Hindi word.
- *  3. ऋ-matra (ृ): spelled with र + ि (तृ → त्रि) — Hindi voices garble lone C+ृ.
- *  4. ऐ / औ in the reported cells: Sanskrit diphthongs "ai" / "au" (याइ, णाउ), matching
- *     the earlier approved Mac cues yaai / gaau. Hindi voices say ɛ / ɔ for ै / ौ.
- *  5. ङ row base cells follow the already-accepted ङा → ङ्गा pattern (ङ → ङ्ग).
- *  6. ञ row: Hindi voices barely know ञ, so it is voiced as palatal "nya" (न्य).
+ * Round 2 (after Mac listening of e511961):
+ *  - ृ column (every consonant): plain Cृ AND the C्रि cue were both reported as
+ *    very bad. New cue C्ऋ = consonant + halant + the independent vowel ऋ. Grounded
+ *    in what already works on Mac: the Varṇamālā ऋ tile is spoken as plain "ऋ" by
+ *    Lekha (and ॠकारः uses the same Devanagari hi-IN path), so C्ऋ asks the voice to
+ *    say the consonant followed by that same proven ऋ sound, not a र-cluster.
+ *  - ञ, ठ, थ rows: the न्य / C्+vowel cues were reported far worse, so these rows
+ *    go back to plain Devanagari (exactly what the Varṇamālā ञ tile sends to Lekha).
+ *  - ड row: reverted to plain Devanagari (possible "doggo" effect from ड्आ/ड्ओ);
+ *    only डा → डाआ (vowel stretch, still avoids the डा. = डॉक्टर abbreviation) and
+ *    डः → "ड ह" stay.
+ *  - भी / भि: the split भ्ई / भ्इ was bad. भि → plain भि; भी → भीई (vowel stretch so
+ *    Lekha does not read the Hindi function word भी "also" quickly and weakly).
  *
- * Cell → cue table
+ * Cell → cue table (current)
  * ----------------------------------------------------------------------------
+ *  ृ column, all 33 consonants:  Cृ → C्ऋ   (ङृ → ङ्ग्ऋ to match the ङ्ग row cues)
  *  Individually reported cells
  *   ङ  → ङ्ग     ङं → ङ्गम्    ङः → ङ्ग ह
- *   छः → छ ह     टः → ट ह      तः → त ह      पः → प ह
- *   णृ → ण्रि    तृ → त्रि      नृ → न्रि      मृ → म्रि      जृ → ज्रि
+ *   छः → छ ह     टः → ट ह      तः → त ह      पः → प ह      डः → ड ह
  *   णौ → णाउ    यै → याइ      रै → राइ
- *   ल  → ल्अ     लि → ल्इ      मी → म्ई      जू → ज्ऊ      पु → प्उ
- *  Whole rows reported wrong: ञ ठ ड थ फ भ ष  (C = row consonant; ञ uses न्य)
- *   C  → C्अ    Cा → C्आ    Cि → C्इ    Cी → C्ई    Cु → C्उ    Cू → C्ऊ
- *   Cृ → C्रि   Cे → C्ए    Cै → C्आइ   Cो → C्ओ   Cौ → C्आउ
- *   Cं → C्अम्  Cः → "C ह"
- *   ञ row: ञ→न्य ञा→न्या ञि→न्यि ञी→न्यी ञु→न्यु ञू→न्यू ञृ→न्य्रि ञे→न्ये
- *          ञै→न्याइ ञो→न्यो ञौ→न्याउ ञं→न्यम् ञः→"न्य ह"
- *   (डा and डः are in the ड row: ड्आ and "ड ह".)
+ *   ल  → ल्अ     लि → ल्इ      मी → म्ई      जू → ज्ऊ      पु → प्उ      डा → डाआ
+ *   भी → भीई    भि → भि (plain)
+ *  Whole rows still overridden: फ भ ष  (C = row consonant)
+ *   C  → C्अ    Cा → C्आ    Cु → C्उ    Cू → C्ऊ    Cे → C्ए    Cै → C्आइ
+ *   Cो → C्ओ   Cौ → C्आउ   Cं → C्अम्   Cः → "C ह"
+ *   Cि → C्इ / Cी → C्ई  (फ, ष only; भ uses the entries above)
+ *  Plain Devanagari again (no override except ृ): ञ ठ ड थ rows.
  * ----------------------------------------------------------------------------
  */
 
-/** Rows the user reported as wrong in all cells on Mac. */
-const MAC_WHOLE_ROWS = ['ञ', 'ठ', 'ड', 'थ', 'फ', 'भ', 'ष'];
+/** Rows whose "rest are fine" C्+vowel cues are kept on Mac. */
+const MAC_WHOLE_ROWS = ['फ', 'भ', 'ष'];
 
-const buildRow = (letter: string): Record<string, string> => {
-  if (letter === 'ञ') {
-    const s = 'न्य';
-    return {
-      'ञ': s, 'ञा': `${s}ा`, 'ञि': `${s}ि`, 'ञी': `${s}ी`, 'ञु': `${s}ु`, 'ञू': `${s}ू`,
-      'ञृ': `${s}्रि`, 'ञे': `${s}े`, 'ञै': `${s}ाइ`, 'ञो': `${s}ो`, 'ञौ': `${s}ाउ`,
-      'ञं': `${s}म्`, 'ञः': `${s} ह`,
-    };
-  }
-  const c = letter;
+const buildRow = (c: string): Record<string, string> => {
   const h = `${c}्`;
   return {
     [c]: `${h}अ`,
@@ -65,7 +54,6 @@ const buildRow = (letter: string): Record<string, string> => {
     [`${c}ी`]: `${h}ई`,
     [`${c}ु`]: `${h}उ`,
     [`${c}ू`]: `${h}ऊ`,
-    [`${c}ृ`]: `${h}रि`,
     [`${c}े`]: `${h}ए`,
     [`${c}ै`]: `${h}आइ`,
     [`${c}ो`]: `${h}ओ`,
@@ -75,7 +63,16 @@ const buildRow = (letter: string): Record<string, string> => {
   };
 };
 
+const ALL_CONSONANTS = 'क ख ग घ ङ च छ ज झ ञ ट ठ ड ढ ण त थ द ध न प फ ब भ म य र ल व श ष स ह'.split(' ');
+
+/** ृ column: C्ऋ (reuses the Mac-proven Varṇamālā ऋ sound). */
+const RI_COLUMN: Record<string, string> = Object.fromEntries(
+  ALL_CONSONANTS.map((c) => [`${c}ृ`, c === 'ङ' ? 'ङ्ग्ऋ' : `${c}्ऋ`]),
+);
+
 const MAC_BARAKHADI_CUES: Record<string, string> = {
+  // Whole rows kept from round 1 (फ भ ष)
+  ...Object.assign({}, ...MAC_WHOLE_ROWS.map(buildRow)),
   // Individually reported cells
   'ङ': 'ङ्ग',
   'ङं': 'ङ्गम्',
@@ -84,11 +81,8 @@ const MAC_BARAKHADI_CUES: Record<string, string> = {
   'टः': 'ट ह',
   'तः': 'त ह',
   'पः': 'प ह',
-  'णृ': 'ण्रि',
-  'तृ': 'त्रि',
-  'नृ': 'न्रि',
-  'मृ': 'म्रि',
-  'जृ': 'ज्रि',
+  'डः': 'ड ह',
+  'डा': 'डाआ',
   'णौ': 'णाउ',
   'यै': 'याइ',
   'रै': 'राइ',
@@ -97,8 +91,11 @@ const MAC_BARAKHADI_CUES: Record<string, string> = {
   'मी': 'म्ई',
   'जू': 'ज्ऊ',
   'पु': 'प्उ',
-  // Whole rows (includes डा → ड्आ and डः → "ड ह")
-  ...Object.assign({}, ...MAC_WHOLE_ROWS.map(buildRow)),
+  // भ row: split vowel failed for these two
+  'भी': 'भीई',
+  'भि': 'भि',
+  // ृ column for every consonant (overrides any row entry)
+  ...RI_COLUMN,
 };
 
 let barakhadiContextActive = false;
