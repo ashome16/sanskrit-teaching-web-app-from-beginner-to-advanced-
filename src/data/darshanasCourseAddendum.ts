@@ -509,6 +509,108 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
           type: 'cosmological',
         },
       },
+      {
+        anchorId: 'bhavana-visualization-scriptures',
+        heading: 'Bhāvanā: Why Visualization is Not a Mood-Board (तज्जपस्तदर्थभावनम्)',
+        subheading: 'Yoga Sūtra 1.28 & Upaniṣadic Foundations · Controlled Smaraṇa · Sound Gives Mind a Body, Bhāvanā Gives It a Soul',
+        paragraphs: [
+          'Scripture does not treat visualization as aesthetic daydreaming, an emotional mood-board, or passive fantasy. It treats it as bhāvanā (भावना) — derived from the causative root √bhū (भू), meaning “causing to become” or “bringing into living being.”',
+          'Bhāvanā means making the sacred reality and purpose dwell so vividly in the mind that sound is never empty. Without bhāvanā, japa is a hollow acoustic husk.',
+          '• The Governing Rule: Patañjali’s Yoga Sūtra 1.28:\n“तज्जपस्तदर्थभावनम्” (taj-japas tad-artha-bhāvanam) — Japa is the repetition of that sacred sound (Praṇava), and bhāvanā is the continuous dwelling upon its artha.\nVyāsa’s foundational commentary explains the reciprocal cycle: repeat the sound, then meditate upon the meaning; meditate upon the meaning, then repeat the sound. The two continuously fertilize each other. Artha is not a passive dictionary definition. It is the living cosmic reality the sound embodies. Bhāvanā is occupying consciousness with that reality until the organism is reshaped by it. Mechanical repetition without bhāvanā is precisely what Sūtra 1.28 was formulated to block.',
+          '• Scriptural Foundations for Bhāvanā:\n1. Chāndogya Upaniṣad 3.14.1: “यथाक्रतुरस्मिँल्लोके पुरुषो भवति तथेतः प्रेत्य भवति” — As is a person’s kratu (inner will / formative resolve) in this world, so they become when departing hence. Upaniṣadic upāsanā takes a finite support (sun, breath, mind, udgītha, OM) and inhabits it as Brahman. The support is the handle; the dwelling is what transforms the person.\n2. Bhagavad Gītā 8.6: “यं यं वापि स्मरन् भावं त्यजत्यन्ते कलेवरम्” — Whatever state of being (bhāva) one remembers at the end, to that very state one goes. Visualization is controlled, deliberate smaraṇa (remembrance). Gītā 8.12–13 unites them: restrain the gates of the senses, hold the mind in the heart, sound the single syllable OM, remembering Me (mām anusmaran). Sound and remembrance are one unified act.\n3. Bhagavad Gītā 12.5: “क्लेशोऽधिकतरस्तेषामव्यक्तासक्तचेतसाम्” — The path of the unmanifest is arduous for embodied beings. Form is not a concession to ignorance; form is offered because an embodied mind naturally requires a “where.” That is the sacred scriptural warrant for saguṇa dhyāna.\n4. Muṇḍaka Upaniṣad 2.2.4: “प्रणवो धनुः शरो ह्यात्मा ब्रह्म तल्लक्ष्यमुच्यते” — Praṇava is the bow, the self is the arrow, Brahman is the target. Draw it with unswerving contemplation (apramatta). Without visualization of the aim, drawing the bow is mere physical exhaustion.\n5. Śvetāśvatara Upaniṣad 1.13: Just as fire latent in wood is brought forth by friction (manthana), the Divine is realized in the body by the friction of Praṇava. The syllable is the friction; meditative dwelling is the fire.\n6. Kulārṇava Tantra: A mantra whose consciousness (caitanya) is asleep is mere syllables; crores of mechanical japa bear no fruit. Worship without the living realization that the Divine is the very form of the mantra is sterile. Dhyāna has two tiers: sthūla (with form — the cognitive stabilizer) and sūkṣma (formless essence). Gross visualization is not the final summit; it is the anchor that stabilizes the restless mind so it can eventually drop the picture while retaining the unshakeable reality.',
+          '• Two Kinds of “Seeing” (Do Not Mix Them):\n— Pratīka / Rūpa-dhyāna: Visualizing the sacred form of the deity, the yantra, or the letter as a drawn glyph. (Gītā 6.14: manaḥ saṃyamya mac-citto māt-paraḥ).\n— Artha-bhāvanā: Meditating directly upon the living purpose and reality of the sound itself (YS 1.28). In the Guru’s discipline: the reality of the single utterer, the single sthāna, the single sacred purpose.\nSound gives the mind a body. Bhāvanā gives that body a soul. Keeping the same purpose every time is how the soul does not change clothes between beads.',
+        ],
+        sutras: [
+          {
+            sanskrit: 'तज्जपस्तदर्थभावनम् ॥',
+            transliteration: 'taj-japas tad-artha-bhāvanam ||',
+            meaning: 'The continuous repetition (japa) of that sacred syllable (Praṇava), and the meditative dwelling (bhāvanā) upon its reality and purpose.',
+            source: 'Patañjali Yoga Sūtra 1.28',
+          },
+          {
+            sanskrit: 'प्रणवो धनुः शरो ह्यात्मा ब्रह्म तल्लक्ष्यमुच्यते । अप्रमत्तेन वेद्धव्यं शरवत्तन्मयो भवेत् ॥',
+            transliteration: 'praṇavo dhanuḥ śaro hy ātmā brahma tal-lakṣyam ucyate | apramattena veddhavyaṃ śaravat tanmayo bhavet ||',
+            meaning: 'The Praṇava (OM) is the bow, the self is the arrow, and Brahman is named the target. It must be pierced with an unswerving, undistracted mind; one should become one with It, as the arrow with the target.',
+            source: 'Muṇḍaka Upaniṣad 2.2.4',
+          },
+        ],
+        callout: {
+          title: 'The Soul of the Sound',
+          text: '“Sound gives the mind a body. Bhāvanā gives that body a soul. Japa without bhāvanā is a broken pot: mechanical syllables rattling without the living presence of what they mean.”',
+          type: 'insight',
+        },
+      },
+      {
+        anchorId: 'murti-puja-ganapati-omkara',
+        heading: 'Mūrti-Pūjā as Embodied Bhāvanā: Gaṇapati as Oṃkāra (मूर्त्तिपूजा ओङ्कारस्वरूपश्च)',
+        subheading: 'Form as the Durable Anchor · Gaṇapati Atharvaśīrṣa Manu-Svarūpa · The Glyph ॐ Rendered in Bronze',
+        paragraphs: [
+          'The formless does not need a statue; embodied human consciousness does. Bhagavad Gītā 12.5 already noted that the unmanifest is arduous for embodied beings. Upaniṣadic upāsanā used an inner support (pratīka: sun, space, breath). The Āgamas and Tantras simply made that pratīka durable in stone, metal, and wood—a stable, shared visual anchor so an entire community does not have to invent a new daydream every morning.',
+          'Kulārṇava Tantra sums up the theology in one definitive stroke:\n“साधकानां हितार्थाय ब्रह्मणो रूपकल्पना” (sādhakānāṃ hitārthāya brahmaṇo rūpakalpanā) — Form is conceived solely for the spiritual welfare and focus of the sādhaka, not because the Infinite shrank.',
+          'Prāṇa-pratiṣṭhā is the communal, liturgical version of what the Guru demands in private: install living consciousness so the support is never treated as a lifeless doll. Nyāsa installs mantra across the bodily limbs; āvāhana invokes the living reality; daily upacāra maintains unswerving focus. Drop the inner bhāvanā, and the sacred mūrti reverts to decorative stone.',
+          '• Gaṇapati as Oṃkāra: The Sound-Form Revealed (Atharvaśīrṣa):\nThe Gaṇapati Atharvaśīrṣa does not say Gaṇeśa merely likes OM. It reveals his direct manu-svarūpa (mantra-body):\n— ga-kāraḥ pūrva-rūpam (the consonant “g” is the opening form)\n— a-kāro madhyama-rūpam (the vowel “a” is the middle form)\n— anusvāraś cāntya-rūpam (the nasal resonance is the final form)\n— bindur uttara-rūpam (the dot bindu is the crowning form)\n— nādaḥ sandhānam (the unstruck sound-resonance joins them together)\n— saṃhitā sandhiḥ (their union is the junction)\n— etad dhi tava manu-svarūpam (this indeed is your mantra-body!)\nAt the very opening, the sage proclaims: “त्वमेव प्रत्यक्षं तत्त्वमसि” (tvam eva pratyakṣaṃ tattvam asi) — you are that transcendent truth made directly perceptible face-to-face.',
+          '• The Glyph ॐ Rendered in Bronze:\nBeyond sound physics, the mūrti is the written glyph of ॐ given living limbs: the vast rounded belly, the sweeping curve of the trunk, the upper tusk and ear contours directly reflect the Devanāgarī glyph ॐ (curve, stem, crescent, bindu). The trunk curving into the shape of ॐ is that wisdom cast in bronze: the written akṣara made visible so the eye can hold the same reality the voice speaks.',
+          '• The Middle Path to Avoid Two Errors:\n1. The Idol-Trap: Believing the physical statue is the entirety of God, forgetting the inner syllable and the stillness.\n2. The Cynical Trap: Dismissing the mūrti as mere “primitive psychology” and ignoring its consecrated living link.\nThe living tradition recognizes One Reality across three densities: Parā (formless potential) → Gaṃ / Oṃ (sound-form) → Vigraha (seen-form). Hold the letter → hold the state; hold the mūrti as that letter’s state → you are doing the same sādhana with the eyes.',
+        ],
+        table: {
+          headers: ['Inner Guru Practice (अन्तरङ्ग-साधना)', 'Temple & Mūrti Architecture (बहिरङ्ग-पूजा)', 'Spiritual Function'],
+          rows: [
+            ['Parā: no extra phoneme', 'Garbhagṛha: dark sanctum, one presence', 'Eliminates crowd of discursive thoughts'],
+            ['Access one sound', 'Āvāhana of one chosen deity (Iṣṭa)', 'Anchors attention on a single reality'],
+            ['Put forth once', 'One sacred name / One offering (Naivedya)', 'Acts without psychological leakage'],
+            ['Same purpose every time', 'Same daily upacāra (ritual code)', 'Refuses erratic daily bargains'],
+            ['Bhāvanā of the utterer', 'Nyāsa & Prāṇa-pratiṣṭhā', 'Installs living consciousness into the form'],
+          ],
+        },
+        callout: {
+          title: 'The Three Densities',
+          text: '“One reality, three densities: Parā (formless stillness), Gaṃ/Oṃ (vibrational sound-form), and Vigraha (visible embodied form). Use the density your mind can hold. Return to the same sacred purpose at every density.”',
+          type: 'philosophical',
+        },
+      },
+      {
+        anchorId: 'species-hardware-universal-vak',
+        heading: 'Species Hardware, Universal Acoustics, and Primordial Vāk (नाद-स्पन्द-वैविध्यम्)',
+        subheading: 'Signal vs. Architecture vs. Vāk · The Question of Animal Sanskrit · One World, One Sound, Then None',
+        paragraphs: [
+          'What if hominins had evolved with a different vocal tract—like whales, gibbons, or songbirds? Our acoustic inventory would be completely different. What then is the “Sanskrit version” of other living beings?',
+          'To answer this with scientific honesty and metaphysical depth, we must hold three distinct levels apart:',
+          '• Layer 1 — Signal (Species Hardware):\nSpeech sounds are mechanical constraints of an anatomical instrument. Humans possess a descended larynx, lack vocal membranes and laryngeal air sacs, and feature a highly flexible tongue with a two-tube resonator tract. This allows stable harmonics, rapid formant transitions, and the exact 8-sthāna grid mapped in Pāṇinīya Śikṣā.\nOther primates retained vocal membranes, producing louder, chaotic calls incapable of forming discrete syllables. Birds articulate with a syrinx; whales broadcast acoustic recitals across hundreds of miles of oceanic water; insects communicate via stridulation. A creature without lips has no labials (oṣṭhya); without a retroflex tongue-tip, it has no mūrdhanya.\nThere is no literal “Sanskrit” of a whale or an elephant if you mean Pāṇini’s 14 Śiva Sūtras. That inventory is the human tract’s specific vaikharī.',
+          '• Layer 2 — Architecture (Universal Wave Physics & Spanda):\nUnder every species’ call, the physical architecture of vibration remains identical: an oscillator moves, a medium couples the wave, a resonator filters the harmonic spectrum, and a nervous system treats pattern as signal.\nIn Sanskrit philosophy, this universal acoustic architecture is named Spanda (primordial pulsation), Nāda (unstruck vibration), and Śabda-Brahman (reality as sound-potential). This is wave physics observed by living consciousness: wherever there is stress and motion, there is vibration; vibration is how form shows up.',
+          '• Layer 3 — Vāk (The Primordial Power of Articulation):\nṚgveda 10.125’s Vāk is not an international human language. She is the primordial power through which anything becomes articulate at all: a human hymn, a gibbon’s territorial call, a bird’s mating song, or a newborn’s first cry. Vāk is the bridge through which potential becomes a single distinct pulse.',
+        ],
+        table: {
+          headers: ['Vāk Level', 'Human Sanskrit Expression', 'Other Living Beings (Whale, Bird, Primate)'],
+          rows: [
+            ['Parā (परा)', 'Speech-not-yet-speech; unused readiness', 'The same quiet readiness of the living nervous system'],
+            ['Paśyantī (पश्यन्ती)', 'The single intended syllable or meaning', 'The single intended biological act (alarm, locate, mate)'],
+            ['Madhyamā (मध्यमा)', 'Inner rehearsal of a pada / respiratory set', 'Pre-motor neurological mapping of the species call'],
+            ['Vaikharī (वैखरी)', 'ka, ta, pa... (human articulatory grid)', 'Species-typical calls, songs, clicks, silence-patterns'],
+          ],
+        },
+        callout: {
+          title: 'The Universal Law of Vāk',
+          text: '“The alphabet changes with the animal. The fact that a world can be one sound — and then none — does not. What is accessed is not the IPA chart; it is the capacity of existence to transition from potential to a single distinct pulse, and return to stillness.”',
+          type: 'scientific',
+        },
+      },
+      {
+        anchorId: 'hold-that-letter-state-geometry',
+        heading: '“Hold That Letter, Hold That State”: The Geometry of the Utterer (वर्णधारणं चित्तवृत्तिश्च)',
+        subheading: 'A Letter is a Repeatable State · Sthāna, Prayatna, and Living Tissue · The Load-Bearing Rule of Purpose',
+        paragraphs: [
+          'A Sanskrit letter (varṇa) is not an ink stroke on parchment. It is an exacting, repeatable state of the human organism: place in the tract, motor map, shade of attention, and consecrated use. If those stay identical, the letter is held. If any of them drift, one only imagines they are holding it.',
+          '• What “Hold That Letter” Actually Holds:\n1. Place (Sthāna): The exact anatomical center that is engaged (retroflex vault, palate, teeth, lips).\n2. Effort (Prayatna): The precise contact (full touch, light touch, open vocal stream).\n3. Breath Pulse (Prāṇa): One clean expiration, not a paragraph.\n4. Inner Form (Paśyantī): The distinct contour of this syllable alone, with no preview of the next.\n5. Purpose (Prayojana): The exact same sacred why, every single time.\nHold ṭ (ट्) and the tongue-tip must curl up and contact the retroflex dome of the palate. The mind capable of holding that physical precision without drifting is already an entirely different mind from one that emits a lazy, collapsed dental t. The letter trains the state of attention because only that state can produce the letter without acoustic leakage.',
+          '• Accessing the Real “Part of the Brain”:\nThere is no little filing cabinet in the cortex labeled ka. There is a coordinated neuro-muscular network that fires together: motor cortex, brainstem, laryngeal nerve, respiratory wall, and auditory cortex.\nYou access this not by imagining brain cartoons, but by feeling the living geometry of the utterer: the tension at the tongue-root, the approximation of vocal folds, the abdominal wall holding steady. For a moment, there is only that agent-and-instrument.',
+          '• “Same Purpose Every Time” — The Load-Bearing Rule:\nThis is the load-bearing clause of all authentic sādhana. If Monday a mantra is a concentration drill, Tuesday a wish-list for worldly gain, and Wednesday a public performance, you have not held one letter. You have held three completely different uses wearing one mouth-shape.\nSame purpose means: the exact why the Guru conferred, no private extra agenda smuggled in, no curious experimentation. Then the nervous system learns one pristine mapping: this sound ↔ this use ↔ this stillness before and after. That is how a varṇa becomes a weapon of transformation instead of a cognitive toy.',
+          '• The 6-Step Micro-Sādhana of the Single Varṇa:\n1. No-phoneme: Rest in quiet Parā readiness.\n2. Feel only the one physical sthāna that will speak.\n3. Utter once, for the given purpose only.\n4. Notice the exact physiological and mental state required.\n5. Drop the letter; keep the unusedness and the stillness of the gap.\n6. Next time: same sthāna, same prayatna, same purpose—never a remix.',
+        ],
+        callout: {
+          title: 'The Purpose is Part of the Phoneme',
+          text: '“If your purpose moves, stop and reset. A new purpose is a new mantra, even if the mouth looks identical. Hold that letter, hold that state: one sthāna, one prayatna, one purpose, emerging from and dissolving into stillness.”',
+          type: 'insight',
+        },
+      },
     ],
     keyTakeaways: [
       'The Guru is not a faster model: generation produces strings without stakes, while guru-paramparā transmits prāṇa (breath, intention, and responsibility) with a rule of use.',
@@ -532,6 +634,10 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
       'Eka-Śabda Discipline: One sound, fully occupied, fully released. The sādhana sequence: Potential → One Word → Potential. The gap is part of the practice: “Become the place where no word has started. From there, let only this word start. When it has gone, be that place again.”',
       'Devī Sūktam (RV 10.125) consists of eight ṛcs by Vāk Āmbhṛṇī in first-person (Ahaṃ): Speech as the sovereign medium sustaining gods and worlds. Verses 4–5 establish inner adhikāra: Vāk chooses whom to make a ṛṣi.',
       'The Twin Rivers of Vāk: RV 10.125.7 (Vāk Āmbhṛṇī’s ocean womb) and RV 1.164.42 (Dīrghatamas’s waters flowing from Akṣara to sustain the four quarters). Hearing is not the same as receiving.',
+      'Bhāvanā is not a mood-board: YS 1.28 (taj-japas tad-artha-bhāvanam) mandates dwelling on reality. Sound gives mind a body; Bhāvanā gives that body a soul.',
+      'Mūrti-Pūjā is embodied bhāvanā: Gaṇapati Atharvaśīrṣa reveals the manu-svarūpa (ga + a + anusvāra + bindu + nāda) rhyming with the Devanāgarī glyph ॐ cast in bronze.',
+      'Species Hardware vs. Universal Acoustics: The signal varies with anatomy (human dropped larynx vs. syrinx, blowhole, stridulation); the wave physics (Spanda, Nāda) and Primordial Vāk remain universal.',
+      '“Hold that letter, hold that state”: A letter is a repeatable state of tissue, attention, and purpose. Purpose is part of the phoneme—changing the purpose changes the mantra.',
     ],
   },
 
@@ -750,6 +856,30 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
           type: 'philosophical',
         },
       },
+      {
+        anchorId: 'mantra-ganapati-atharvashirsha-manu-svarupa',
+        heading: 'गणपति-अथर्वशीर्षम् (मनु-स्वरूपम्) — The Mantra-Body of Oṃkāra',
+        subheading: 'Atharvaveda · ga-kāraḥ pūrva-rūpam · The Acoustic & Visual Body of Gaṇeśa as ॐ',
+        paragraphs: [
+          'The Gaṇapati Atharvaśīrṣa (Atharvaveda) reveals the profound esoteric science of the elephant-headed deity as the living embodiment of the Praṇava (OM). The sage does not treat Gaṇapati as a mythological character; he reveals his precise manu-svarūpa (the anatomy of his mantra-body).',
+          'The mantra breaks down the bīja “GAṂ” into its cosmic acoustic components: the opening guttural consonant (ga), the primordial short vowel (a), the nasal vibration (anusvāra), the focal point of consciousness (bindu), and the unstruck joining resonance (nāda) adorned with the tāra (OM).',
+          'Recite this verse with deliberate clarity. Feel how the acoustic articulation precisely mirrors the physical iconography: the vast belly as the lower arc of ॐ, the curved trunk as the fluid nasal crescent, and the jewel on the forehead as the bindu.',
+        ],
+        sutras: [
+          {
+            mantraId: 'atharvashirsha-manu-svarupa',
+            sanskrit: 'गकारः पूर्वरूपम् । अकारो मध्यमरूपम् । अनुस्वारश्चान्त्यरूपम् । बिन्दुरुत्तररूपम् । नादः सन्धानम् । संहिता सन्धिः । सैषा गणेशविद्या । गणक ऋषिः । निचृद्गायत्रीच्छन्दः । गणपतिर्देवता । ॐ गं गणपतये नमः ॥',
+            transliteration: 'ga-kāraḥ pūrva-rūpam | a-kāro madhyama-rūpam | anusvāraś cāntya-rūpam | bindur uttara-rūpam | nādaḥ sandhānam | saṃhitā sandhiḥ | saiṣā gaṇeśa-vidyā | gaṇaka ṛṣiḥ | nicṛd-gāyatrī-cchandaḥ | gaṇapatir devatā | oṃ gaṃ gaṇapataye namaḥ ||',
+            meaning: 'The sound “G” is the anterior form; the vowel “A” is the middle form; the anusvāra (nasal m) is the final form; the bindu (dot) is the crowning form; the nāda (sound resonance) is the connection; the saṃhitā (junction) is the union. This is the sacred knowledge of Gaṇeśa. The sage is Gaṇaka; the meter is Nicṛd-Gāyatrī; the deity is Gaṇapati. Oṃ Gaṃ, to Gaṇapati I bow.',
+            source: 'Gaṇapati Atharvaśīrṣa (Śrī Gaṇeśa Upaniṣad · Atharvaveda)',
+          },
+        ],
+        callout: {
+          title: 'The Glyph Made Visible',
+          text: '“When you behold the mūrti of Gaṇapati, you are holding the state of the written ॐ with the eyes. When you chant the bīja GAṂ, you are sounding that form from the throat. Hold the letter → hold the state: one reality across sound, glyph, and form.”',
+          type: 'insight',
+        },
+      },
     ],
     keyTakeaways: [
       'Mantras are for the mouth, not only the eye: recite each line with the breath, then the whole verse.',
@@ -760,6 +890,7 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
       'Dyauḥ Śāntiḥ (Yajurveda 36.17): peace moves through sky, waters, herbs and trees before it is asked for oneself — sā mā śāntir edhi.',
       'Devī Sūktam (Ṛgveda 10.125): Eight sacred ṛcs by Vāk Āmbhṛṇī expressing Speech as sovereign queen (ahaṃ rāṣṭrī), the condition of all living functions (eating, seeing, breathing, hearing), and the authority that confers wisdom (sumedhā).',
       'Ṛgveda 1.164.42 (Dīrghatamas): The celestial waters flow from Vāk to sustain the four quarters, and from Her flows the imperishable syllable (Akṣara) on which the cosmos lives. Hearing is not the same as receiving.',
+      'Gaṇapati Atharvaśīrṣa: The manu-svarūpa (ga-kāraḥ pūrva-rūpam...) reveals the mantra-body of Gaṇeśa as the living Devanāgarī glyph ॐ—sound and form united.',
     ],
   },
 
