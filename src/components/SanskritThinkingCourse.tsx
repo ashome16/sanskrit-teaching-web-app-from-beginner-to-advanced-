@@ -23,6 +23,8 @@ import {
 } from './PingalaInteractiveTools';
 import { TurangaBandhaChessboard } from './TurangaBandhaChessboard';
 import { LilavatiPoeticMathStudio } from './LilavatiPoeticMathStudio';
+import SanskritFlashcardStudio from './SanskritFlashcardStudio';
+import SanskritGrandExam from './SanskritGrandExam';
 
 /** Sidebar / nav label for an addendum unit. */
 const addendumPartLabel = (art: DarshanaAddendumArticle): string =>
@@ -34,11 +36,15 @@ const addendumPartLabel = (art: DarshanaAddendumArticle): string =>
  *   #mantra-<id>             → Mantras & Ślokas unit, scrolled to that verse
  *   #addendum-<id|slug>      → any addendum unit
  *   #lesson-<id>             → a curriculum lesson (e.g. #lesson-c-6-1)
+ *   #flashcards              → Cognitive Flashcards Studio
+ *   #exam                    → Grand Assessment Exam
  */
-const parseCourseHash = (): { addendumId?: string; lessonId?: string; anchor?: string } => {
+const parseCourseHash = (): { addendumId?: string; lessonId?: string; anchor?: string; mode?: 'curriculum' | 'addendum' | 'flashcards' | 'exam' } => {
   if (typeof window === 'undefined') return {};
   const h = decodeURIComponent((window.location.hash || '').replace(/^#/, '')).trim();
   if (!h) return {};
+  if (h === 'flashcards' || h === 'cards' || h === 'flashcard-studio') return { mode: 'flashcards' };
+  if (h === 'exam' || h === 'assessment' || h === 'grand-exam') return { mode: 'exam' };
   if (h === MANTRAS_COURSE_HASH) return { addendumId: MANTRAS_ADDENDUM_ID };
   if (h.startsWith('mantra-')) return { addendumId: MANTRAS_ADDENDUM_ID, anchor: h };
   if (h.startsWith('lesson-')) return { lessonId: h.slice('lesson-'.length) };
@@ -49,6 +55,7 @@ const parseCourseHash = (): { addendumId?: string; lessonId?: string; anchor?: s
   }
   return {};
 };
+
 import '../styles/sanskrit-thinking-course.css';
 
 export interface SanskritThinkingCourseProps {
@@ -95,9 +102,9 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
   const [hashTarget] = useState(parseCourseHash);
   const inTrial = hasPremiumAccess(currentUser, isAdminLoggedIn) && !hasPaid;
 
-  // View mode: 'curriculum' (28 Lessons) vs 'addendum' (4 Foundational Essays)
-  const [viewMode, setViewMode] = useState<'curriculum' | 'addendum'>(
-    hashTarget.addendumId || initialAddendumId ? 'addendum' : hashTarget.lessonId ? 'curriculum' : initialMode
+  // View mode: 'curriculum' (28 Lessons), 'addendum' (Prologue, Mantras, Masterclasses), 'flashcards' (Cognitive Flashcards), 'exam' (Grand Assessment)
+  const [viewMode, setViewMode] = useState<'curriculum' | 'addendum' | 'flashcards' | 'exam'>(
+    hashTarget.mode || (hashTarget.addendumId || initialAddendumId ? 'addendum' : hashTarget.lessonId ? 'curriculum' : initialMode)
   );
   const [activeAddendumId, setActiveAddendumId] = useState<string>(
     hashTarget.addendumId || initialAddendumId || DARSHANAS_COURSE_ADDENDUM[0].id
@@ -334,6 +341,16 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
     window.scrollTo({ top: 400, behavior: 'smooth' });
   };
 
+  const handleSelectLessonById = (lessonId: string) => {
+    const targetModule = COURSE_MODULES.find((m) => m.lessons.some((l) => l.id === lessonId));
+    const targetLesson = allLessons.find((l) => l.id === lessonId);
+    if (targetModule && targetLesson) {
+      setActiveModuleId(targetModule.id);
+      handleSelectLesson(targetLesson);
+      setViewMode('curriculum');
+    }
+  };
+
   const handleAudioPlay = (term: string) => {
     stopSequence();
     // Śānti-mantra lines (ओं सह नाववतु …) use the dedicated recitation voice:
@@ -515,7 +532,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
           ))}
         </div>
 
-        {/* Course View Mode Switcher (Curriculum vs Addendum) */}
+        {/* Course View Mode Switcher (Curriculum vs Addendum vs Flashcards vs Exam) */}
         <div className="stc-view-selector" role="tablist" aria-label="Course section selector">
           <button
             type="button"
@@ -525,7 +542,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
             onClick={() => setViewMode('curriculum')}
           >
             <span>📚</span>
-            <span>28 Course Curriculum Lessons (२८ पाठाः)</span>
+            <span>28 Lessons (२८ पाठाः)</span>
           </button>
           <button
             type="button"
@@ -535,13 +552,45 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
             onClick={() => setViewMode('addendum')}
           >
             <span>🪔</span>
-            <span>Course Addendum: Prologue, Mantras &amp; Ślokas, 9 Masterclasses (अनुबन्धाः)</span>
+            <span>Addenda &amp; Masterclasses (अनुबन्धाः)</span>
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={viewMode === 'flashcards'}
+            className={`stc-view-tab-btn ${viewMode === 'flashcards' ? 'active' : ''}`}
+            onClick={() => setViewMode('flashcards')}
+          >
+            <span>🗂️</span>
+            <span>Cognitive Flashcards (चिन्तन-मञ्जूषा)</span>
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={viewMode === 'exam'}
+            className={`stc-view-tab-btn ${viewMode === 'exam' ? 'active' : ''}`}
+            onClick={() => setViewMode('exam')}
+          >
+            <span>🏆</span>
+            <span>Grand Assessment Exam (महा-मूल्याङ्कनम्)</span>
           </button>
         </div>
 
-        {viewMode === 'curriculum' ? (
+        {viewMode === 'flashcards' ? (
+          <SanskritFlashcardStudio
+            onPlayAudio={handleAudioPlay}
+            onOpenLesson={handleSelectLessonById}
+          />
+        ) : viewMode === 'exam' ? (
+          <SanskritGrandExam
+            onSelectLessonById={handleSelectLessonById}
+            onOpenCertificate={() => setIsCertificateModalOpen(true)}
+            onGoToCurriculum={() => setViewMode('curriculum')}
+          />
+        ) : viewMode === 'curriculum' ? (
           /* Main Two-Column Layout */
           <div className="stc-layout">
+
           {/* Module Navigation Sidebar */}
           <aside className="stc-sidebar">
             <h2 className="stc-sidebar-title">
@@ -1765,6 +1814,11 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                       <div style={{ textAlign: 'left', fontSize: '0.8rem', color: '#64748b' }}>
                         <div><strong>Verification Code:</strong> STC-GK-{(studentName || 'LEARNER').slice(0, 3).toUpperCase()}-2026</div>
                         <div><strong>Curriculum Progress:</strong> {completedLessonIds.size}/28 Lessons · {completedAddendumIds.size}/11 Masterclasses</div>
+                        {typeof window !== 'undefined' && localStorage.getItem('stc_grand_exam_score') && (
+                          <div style={{ color: '#92400e', fontWeight: 700, margin: '0.15rem 0' }}>
+                            <strong>Grand Assessment Exam:</strong> {localStorage.getItem('stc_grand_exam_score')} ({localStorage.getItem('stc_grand_exam_percent')}) · {localStorage.getItem('stc_grand_exam_grade')}
+                          </div>
+                        )}
                         <div><strong>Awarded on:</strong> {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</div>
                       </div>
 

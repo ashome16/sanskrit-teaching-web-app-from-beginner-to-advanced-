@@ -35,6 +35,7 @@ export interface SearchTarget {
   lessonId?: string;
   /** Course Addendum unit to open (view: 'course'), e.g. 'addendum-mantras-shlokas'. */
   courseAddendumId?: string;
+  courseMode?: 'curriculum' | 'addendum' | 'flashcards' | 'exam';
   philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math';
   mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero';
   worksheetsCategory?: string;
@@ -2587,6 +2588,71 @@ export const SEARCH_INDEX: SearchItem[] = [
       view: 'course',
     },
   },
+  {
+    id: 'course-cognitive-flashcards',
+    title: 'चिन्तन-मञ्जूषा · Cognitive Flashcard Studio (Sanskrit as a Way of Thinking)',
+    subtitle: '40 Interactive Cognitive Flashcards across all 6 Modules with 3D Flip & Audio Pronunciation',
+    category: 'tools',
+    categoryLabel: 'Course Studio',
+    badgeEmoji: '🗂️',
+    badgeColor: '#b45309',
+    description:
+      'Master the core conceptual building blocks of Sanskrit thinking across 6 pedagogical pillars: Phonetics, Orthography, Grammar, Syntax, Binary Logic, and Philosophy. Includes 3D flip animation, audio pronunciation, filters, and mastery tracking.',
+    keywords: [
+      'flashcards',
+      'flashcard studio',
+      'cognitive flashcards',
+      'cards',
+      'flip card',
+      'revision',
+      'chintan manjusha',
+      'चिन्तन-मञ्जूषा',
+      'मञ्जूषा',
+      'sanskrit cards',
+      'sanskrit flashcards',
+      'mnemonic',
+      'study cards',
+      'phonetics flashcards',
+      'panini flashcards',
+    ],
+    target: {
+      view: 'course',
+      courseMode: 'flashcards',
+    },
+  },
+  {
+    id: 'course-grand-assessment-exam',
+    title: 'सम्पूर्ण-महा-मूल्याङ्कनम् · Grand Course Assessment Exam (28 Questions)',
+    subtitle: 'Official Capstone Evaluation across all 28 Lessons · Honors Classification & Certificate Endorsement',
+    category: 'tools',
+    categoryLabel: 'Course Exam',
+    badgeEmoji: '🏆',
+    badgeColor: '#4338ca',
+    description:
+      'Test your mastery over the complete 28-lesson Sanskrit thinking curriculum. Features timed evaluation, instant diagnostic breakdown by module, 4 honors tiers (महामहोपाध्यायः, पण्डितः, अध्येता, जिज्ञासुः), and automatic endorsement onto your official Gurukul Certificate.',
+    keywords: [
+      'exam',
+      'grand exam',
+      'assessment',
+      'grand assessment',
+      'final exam',
+      'quiz',
+      'test',
+      'mulyankanam',
+      'maha mulyankanam',
+      'महा-मूल्याङ्कनम्',
+      'मूल्याङ्कनम्',
+      'certificate exam',
+      'capstone evaluation',
+      'honors',
+      'mahamahopadhyaya',
+    ],
+    target: {
+      view: 'course',
+      courseMode: 'exam',
+    },
+  },
+
   {
     id: 'course-mod1-sound',
     title: 'Module 1: Sound as Input (ध्वनिः) · Sanskrit as a Way of Thinking',

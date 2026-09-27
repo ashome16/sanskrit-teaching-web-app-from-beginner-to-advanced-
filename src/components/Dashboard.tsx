@@ -382,10 +382,18 @@ const Dashboard: React.FC = () => {
       return;
     }
 
-    if (target.view === 'course' && target.courseAddendumId) {
-      openCourseAddendum(target.courseAddendumId);
-      return;
+    if (target.view === 'course') {
+      if (target.courseAddendumId) {
+        openCourseAddendum(target.courseAddendumId);
+        return;
+      }
+      if (target.courseMode) {
+        window.location.hash = `#${target.courseMode}`;
+        navigateToView('course');
+        return;
+      }
     }
+
 
     if (target.view === 'philosophy') {
       if (target.philosophyEssay) {
