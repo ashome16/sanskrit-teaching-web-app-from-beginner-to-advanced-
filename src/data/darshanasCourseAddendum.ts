@@ -1590,6 +1590,38 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
         ],
       },
       {
+        anchorId: 'somatic-cymatics-nodal-stillness',
+        heading: 'Somatic Cymatics & Nodal Stillness: The Practitioner as the Chladni Plate (नाद-बिन्दु-संस्थानम्)',
+        subheading: 'Form Born from Regions of Zero Displacement · 4-Lobe Mūlādhāra Resonance · Yantra as a Standing Wave Map',
+        paragraphs: [
+          'What cymatics demonstrates on a physical laboratory plate is the empirical foundation of what Tantric and Vedic traditions formalized as Yantra: Mantra (sound-vibration) ⟷ Yantra (geometric standing wave) ⟷ Mūrti (embodied form).',
+          '• 1. Form is Born from Nodal Stillness:\nIn cymatics (whether on a metal Chladni plate or in a fluid membrane), particles do not collect where the plate is violently shaking. They gather at the nodal lines — the regions of zero displacement where opposing wave vectors cancel each other out.\n— The Physics: Geometry appears where there is structural stillness amid oscillation.\n— The Sādhana: This is the physical proof of Parā ⟷ Vaikharī. A mantra does not create form through noisy chaos; it creates form because its stable frequency sets up exact lines of rest. If the phoneme drifts or the purpose wavers, the standing wave collapses into random jitter, and the geometry dissolves.',
+          '• 2. The 4-Lobe Pattern: Mūlādhāra and Gaṇapati:\nA harmonic quadrupole vibration naturally generates a distinct 4-lobed rotational symmetry. In subtle anatomy and iconographic grammar, this is not an arbitrary shape:\n— Mūlādhāra Cakra: The foundational energy center at the base of the spine is classically mapped as a 4-petaled lotus (vaṃ, śaṃ, ṣaṃ, saṃ).\n— The Seat of Gaṇapati: Mūlādhāra is the seat of Gaṇeśa — the deity identified with Oṃkāra and the grossest density of earth/matter (pṛthvī-tattva).\n— The Origin of Vāk: Classical texts (Śāradā-tilaka, Tantrāloka) state that Parā Vāk resides unmanifest in the Mūlādhāra. When it moves upward through the navel (Paśyantī), heart (Madhyamā), and throat (Vaikharī), it is a progression from low-mode fundamental standing waves to complex articulatory harmonics.',
+          '• 3. Yantra is Not Symbolic Art; It is an Acoustic Map:\nTantra insists that a Yantra is not a human decorative drawing:\n— Linear Yantra: When a particular bīja is sounded continuously with pure pitch and steady prāṇa, the medium (air, cerebrospinal fluid, cellular tissue) organizes along predictable harmonic nodes.\n— Concentric Circles and Petals: The concentric circles in yantras represent boundary conditions (the outer ring of the resonant plate). The petals represent modal harmonic lobes produced by resonant integer ratios (2×, 4×, 8×, 16×).',
+          '• 4. Somatic Cymatics: The Practitioner as the Plate:\nThe human body is over 70% fluid, encased in resonant bone cavities (skull vault, sinus chambers, thoracic cage).\nWhen the Guru instructs: “Hold that letter, hold that state. Access that part of your brain, experience the reality of the one involved in uttering it, and use it for the same purpose every time” — they are instructing you to turn your nervous system into a stabilized Chladni plate:\n— The Articulator (Sthāna + Prayatna): The mechanical actuator driving the frequency into the skull and spine.\n— The Intention (Artha-bhāvanā): The steady voltage/amplitude that prevents phase jitter.\n— The State of Mind: The stabilization of physical and neural tissue along the nodal lines of that single frequency.\nIf you waver, the pattern smears. If you hold the letter without leakage, the tissue locks into exact geometric coherence.',
+        ],
+        diagramTitle: '🌊 Cymatic Standing Wave Transformation',
+        diagram: `Mantra (Sound-Vibration / Harmonic Frequency)
+         ↓
+Yantra (Geometric Standing Wave / Nodal Stillness)
+         ↓
+Mūrti  (Embodied Form / Physical Density in Space)`,
+        table: {
+          headers: ['Cymatic Physics Coordinate', 'Sādhana / Yogic Coordinate', 'Biological Manifestation'],
+          rows: [
+            ['Frequency Generator / Actuator', 'Sthāna (articulatory contact) + Prayatna', 'Vocal folds, tongue dome, thoracic wall'],
+            ['Voltage / Stable Amplitude', 'Artha-bhāvanā (purposeful dwelling)', 'Prevents neural phase jitter and mental drift'],
+            ['Nodal Lines (zero displacement)', 'Parā Stillness (gap between pulses)', 'Tissue stabilizes; chaotic tremors settle'],
+            ['Modal Lobes (e.g. 4-lobe quadrupole)', 'Cakra Petals (Mūlādhāra 4-petaled lotus)', 'Resonant acoustic cavity coupling (cranial/spinal)'],
+          ],
+        },
+        callout: {
+          title: 'The Law of Nodal Stillness',
+          text: '“Form is born from stillness, not violence. Particles gather where displacement is zero. When you hold a single varṇa with unwavering bhāvanā, your nervous system becomes a stabilized Chladni plate: chaotic thoughts cancel out, and consciousness crystallizes along the nodal lines of sacred geometry.”',
+          type: 'scientific',
+        },
+      },
+      {
         anchorId: 'yatha-pinde-tatha-brahmande',
         heading: '2. Yathā Piṇḍe Tathā Brahmāṇḍe: The Holographic Matrix',
         subheading: 'Yajurvedic Axiom · Quantum Non-Locality · The Microcosm-Macrocosm Mirror',
