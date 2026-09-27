@@ -1,6 +1,7 @@
 /**
- * बारहखड़ी romanization for on-tile labels and speech hints.
- * Similar-looking consonants get distinct spellings so TTS and kids can tell them apart.
+ * बारहखड़ी (Guṇintālu / Guṇitākṣarālu) romanization for on-tile labels and speech hints.
+ * Similar-looking consonants get distinct spellings so learners can tell them apart visually,
+ * while speech synthesis receives authentic Devanagari phonetic representations for Indian TTS voices.
  */
 const CONSONANT_STEM: Record<string, string> = {
   क: 'k', ख: 'kh', ग: 'g', घ: 'gh', ङ: 'ng',
@@ -67,64 +68,6 @@ export const barakhadiLabel = (akshara: string): string => {
   return clean;
 };
 
-
-/** Stretch short उ vs long ऊ so TTS does not collapse ku/koo. */
-const stretchUuSpeech = (speech: string): string => {
-  if (!speech || speech.includes('ooooh') || speech === 'ooh') return speech;
-  if (speech.endsWith('-oo')) return `${speech.slice(0, -3)}ooooh`;
-  if (speech.endsWith('oo')) return `${speech.slice(0, -2)}ooooh`;
-  if (speech.endsWith('-u')) return `${speech.slice(0, -2)}ooh`;
-  if (speech.endsWith('u') && !speech.endsWith('au')) return `${speech.slice(0, -1)}ooh`;
-  return speech;
-};
-
-/** Speech engines need clearer separation for look-alike rows. */
-export const barakhadiSpeechText = (akshara: string): string => {
-  const label = barakhadiLabel(akshara);
-  if (!label || label === akshara) return akshara;
-
-  // Hyphenate long digraphs so engines keep aspiration / retroflex.
-  const special: Record<string, string> = {
-    // Pure vowels: avoid English letter names (a/i) and E-E for ee.
-    a: 'aaaah', aa: 'ahh', i: 'yi', ee: 'yee', gi: 'गि', ti: 'ति', tee: 'ती', tu: 'तु', too: 'तू',
-    u: 'ooh', oo: 'ooooh',
-    e: 'yay', ai: 'ai', o: 'o', au: 'au',
-    gau: 'gaau',
-    gaau: 'gaau',
-    ghai: 'ghaai',
-    ghaai: 'ghaai',
-    ri: 'rih', rii: 'reee', ree: 'reee',
-    nga: 'unga', ngaa: 'ng-aa', ngi: 'ng-i', ngee: 'ng-ee', ngu: 'ngooh', ngoo: 'ngooooh',
-    nge: 'ng-e', ngai: 'ng-ai', ngo: 'ng-o', ngau: 'ng-au', ngam: 'ng-am', ngah: 'ng-ah', ngru: 'ng-ru',
-    nya: 'enya', nyaa: 'ny-aa', nyi: 'ny-i', nyee: 'ny-ee',
-    tta: 'tah', ttaa: 'टा', tti: 'टि', ttee: 'टी', ttu: 'टु', ttoo: 'टू',
-    tte: 'टे', ttai: 'टै', tto: 'टो', ttau: 'टौ', ttam: 'tam', ttah: 'टः', ttru: 'टृ',
-    ttha: 'ठ', tthaa: 't-thaa', tthi: 't-thi', tthee: 't-thee',
-    dda: 'dah', ddaa: 'डा', ddi: 'डि', ddee: 'डी', ddu: 'डु', ddoo: 'डू',
-    dde: 'डे', ddai: 'डै', ddo: 'डो', ddau: 'डौ', ddam: 'डं', ddah: 'डः', ddru: 'डृ',
-    ddha: 'dhah', ddhaa: 'd-dhaa', ddhi: 'd-dhi', ddhee: 'd-dhee',
-    nna: 'nah', nnaa: 'n-naa', nni: 'n-ni', nnee: 'n-nee',
-    shha: 'sh-ha', shhaa: 'sh-haa', shhi: 'sh-hi', shhee: 'sh-hee',
-    chha: 'chha', chhaa: 'chhaa', chhi: 'chhi', chhee: 'chhee',
-    ksha: 'ksha', jnya: 'jnya', tra: 'त्र त्र', shra: 'sh-ra',
-    li: 'li',
-    kha: 'k-ha', khaa: 'k-haa', khi: 'k-hi', khee: 'k-hee',
-    gha: 'gha', ghaa: 'g-haa', ghi: 'g-hi', ghee: 'g-hee',
-    jha: 'j-ha', jhaa: 'j-haa', jhi: 'j-hi', jhee: 'j-hee',
-    pha: 'p-ha', phaa: 'p-haa', phi: 'फि', phee: 'p-hee',
-    bha: 'b-ha', bhaa: 'b-haa', bhi: 'b-hi', bhee: 'b-hee',
-    tha: 't-ha', thaa: 't-haa', thi: 't-hi', thee: 't-hee',
-    dha: 'd-ha', dhaa: 'd-haa', dhi: 'धि', dhee: 'd-hee',
-    the: 'थे', de: 'दे', dhe: 'धे', nru: 'नृ', nri: 'नृ', pi: 'पि', pau: 'पौ',
-    be: 'बे', bhe: 'भे', bho: 'भो', mri: 'मृ', mru: 'मृ', me: 'मे', mau: 'मौ', ye: 'yae',
-    yai: 'yaai', rri: 'rar', lri: 'lar',
-  };
-  if (special[label]) return stretchUuSpeech(special[label]);
-
-  // Default roman, with उ/ऊ length stretched (ku→kooh, koo→kooooh).
-  return stretchUuSpeech(label);
-};
-
 export const isBarakhadiAkshara = (value: string): boolean => {
   const clean = value.normalize('NFC').trim();
   if (!clean || clean.length > 4) return false;
@@ -134,7 +77,6 @@ export const isBarakhadiAkshara = (value: string): boolean => {
   const rest = clean.slice(1);
   return rest === '' || rest in MATRA_VOWEL;
 };
-
 
 /** Traditional Varṇamālā roman (school chart: ri, ṭa, ṣha…). */
 const VARNAMALA_VOWELS: Record<string, string> = {
@@ -172,105 +114,105 @@ export const varnamalaLabel = (akshara: string): string => {
   if (!rest) return `${stem}a`;
   if (rest === 'ं') return `${stem}am`;
   if (rest === 'ः') return `${stem}ah`;
-  // Matras rarely appear on Varṇamālā tiles; fall back to barakhadi scheme.
   return barakhadiLabel(clean);
 };
 
-/** Speakable ASCII for traditional labels (ṭ→tt, ṣ→shh, rii→ree). */
-export const varnamalaSpeechText = (akshara: string): string => {
+/**
+ * Convert any Barakhadi / Guninthalu / Varnamala akshara into authentic Devanagari speech text
+ * optimized for Indian TTS engines (hi-IN, sa-IN) across iOS, macOS, Windows, and Android.
+ */
+export const getGuninthaluSpeechText = (akshara: string): string => {
   const clean = akshara.normalize('NFC').trim();
-  // Cues English voices will not read as letter names / E-E-E.
-  // अ short open; आ stays aaaah; इ = yi; ई = yee (extended yee).
-  if (clean === 'अ') return 'aaaah';
-  if (clean === 'आ') return 'ahh';
-  if (clean === 'इ') return 'yi';
-  if (clean === 'ई') return 'yee';
-  if (clean === 'उ') return 'ooh';
-  if (clean === 'ऊ') return 'ooooh';
-  if (clean === 'ऋ') return 'rih';
-  if (clean === 'ॠ') return 'reee';
-  if (clean === 'ए') return 'yay';
-  if (clean === 'ओ') return 'o';
-  if (clean === 'औ') return 'au';
-  if (clean === 'घ') return 'gha';
-  if (clean === 'छ') return 'छ';
-  if (clean === 'ञ') return 'enya';
-  if (clean === 'ङ') return 'unga';
-  // ङ + matra: reuse barakhadi unga/ng-ee cues (varnamalaLabel alone yields bare ngee).
-  if (clean.startsWith('ङ') && clean.length > 1) return barakhadiSpeechText(clean);
-  if (clean === 'ट') return 'tah';
-  if (clean === 'टं') return 'tam';
-  // ट + matra: English tt*/t-t* sounds like double-t; use Hindi letter voice.
-  if (clean.startsWith('ट') && clean.length > 1) return clean;
-  if (clean === 'ठ') return 'ठ';
-  if (clean === 'ड') return 'dah';
-  // ड + matra: English dd*/d-d* doubles; use Hindi letter voice.
-  if (clean.startsWith('ड') && clean.length > 1) return clean;
-  if (clean === 'ढ') return 'dhah';
-  if (clean === 'ण') return 'nah';
-  if (clean === 'ब') return 'bah';
-  if (clean === 'त') return 'त';
-  // ति–तु: English ti/tee/tu → tea; use Hindi letter voice.
-  if (clean === 'ति' || clean === 'ती' || clean === 'तु' || clean === 'तू') return clean;
-  if (clean === 'क्ष') return 'ksha';
-  if (clean === 'ज्ञ') return 'jnya';
-  if (clean === 'त्र') return 'त्र त्र';
-  if (clean === 'गि') return 'गि';
-  if (clean === 'थे') return 'थे';
-  if (clean === 'दे') return 'दे';
-  if (clean === 'धि') return 'धि';
-  if (clean === 'धे') return 'धे';
-  if (clean === 'नृ') return 'नृ';
-  if (clean === 'पि') return 'पि';
-  if (clean === 'पौ') return 'पौ';
-  if (clean === 'फि') return 'फि';
-  if (clean === 'बे') return 'बे';
-  if (clean === 'भे') return 'भे';
-  if (clean === 'भो') return 'भो';
-  if (clean === 'मृ') return 'मृ';
-  if (clean === 'मे') return 'मे';
-  if (clean === 'मौ') return 'मौ';
-  if (clean === 'ये') return 'yae';
-  if (clean === 'यै') return 'yaai';
-  if (clean === 'रृ') return 'rar';
-  if (clean === 'लृ') return 'lar';
-  const label = varnamalaLabel(clean);
-  if (!label || label === clean) return barakhadiSpeechText(clean);
-  const ascii = label
-    .replace(/ṭ/g, 'tt')
-    .replace(/ḍ/g, 'dd')
-    .replace(/ṇ/g, 'nn')
-    .replace(/ṣ/g, 'shh')
-    .replace(/ṅ/g, 'ng')
-    .replace(/ñ/g, 'ny')
-    .replace(/ī/g, 'ee')
-    .replace(/rii/g, 'ree');
-  const special: Record<string, string> = {
-    a: 'aaaah', aa: 'ahh', i: 'इ', ee: 'yee', gi: 'गि',
-    u: 'ooh', oo: 'ooooh',
-    e: 'yay', ai: 'ai', o: 'o', au: 'au',
-    gau: 'gaau',
-    gaau: 'gaau',
-    ghai: 'ghaai',
-    ghaai: 'ghaai',
-    ri: 'rih', rii: 'reee', ree: 'reee',
-    gha: 'gha',
-    nga: 'unga', nya: 'enya', chha: 'chha',
-    tta: 'tah', ttaa: 'टा', tti: 'टि', ttee: 'टी', ttu: 'टु', ttoo: 'टू',
-    tte: 'टे', ttai: 'टै', tto: 'टो', ttau: 'टौ', ttam: 'tam', ttah: 'टः', ttru: 'टृ',
-    ttha: 'ठ',
-    dda: 'dah', ddaa: 'डा', ddi: 'डि', ddee: 'डी', ddu: 'डु', ddoo: 'डू',
-    dde: 'डे', ddai: 'डै', ddo: 'डो', ddau: 'डौ', ddam: 'डं', ddah: 'डः', ddru: 'डृ',
-    ddha: 'dhah', nna: 'nah',
-    ba: 'bah',
-    ta: 'त', ti: 'ति', tee: 'ती', tu: 'तु', too: 'तू',
-    the: 'थे', de: 'दे', dhi: 'धि', dhe: 'धे', nru: 'नृ', nri: 'नृ', pi: 'पि', pau: 'पौ',
-    phi: 'फि', be: 'बे', bhe: 'भे', bho: 'भो', mri: 'मृ', mru: 'मृ', me: 'मे', mau: 'मौ', ye: 'yae',
-    yai: 'yaai', rri: 'rar', lri: 'lar',
-    shha: 'sh-ha', ksha: 'क्ष क्ष', jnya: 'ज्ञ ज्ञ', tra: 'त्र त्र', shra: 'sh-ra',
-  };
-  return stretchUuSpeech(special[ascii] || ascii);
+  if (!clean) return '';
+
+  // 1. Visarga combinations (ः) -> Sanskrit echo vowel (कः -> कह, खः -> खह, किः -> किहि, etc.)
+  if (clean.endsWith('ः')) {
+    const base = clean.slice(0, -1);
+    if (!base) return 'अह';
+    const lastChar = base[base.length - 1];
+    if (lastChar === 'ि' || lastChar === 'ी') return base + 'हि';
+    if (lastChar === 'ु' || lastChar === 'ू') return base + 'हु';
+    if (lastChar === 'े' || lastChar === 'ै') return base + 'हे';
+    if (lastChar === 'ो' || lastChar === 'ौ') return base + 'हो';
+    if (lastChar === 'ा') return base + 'हा';
+    if (lastChar === 'ृ' || lastChar === 'ॄ') return base + 'हृ';
+    if (base === 'अ') return 'अह';
+    if (base === 'आ') return 'आहा';
+    if (base === 'इ') return 'इहि';
+    if (base === 'ई') return 'ईहि';
+    if (base === 'उ') return 'उहु';
+    if (base === 'ऊ') return 'ऊहु';
+    return base + 'ह';
+  }
+
+  // 2. Anusvara combinations (ं) -> Halanta Makara (कम्, खम्, गम्, दम् - prevents dropping or English "damn")
+  if (clean.endsWith('ं')) {
+    const base = clean.slice(0, -1);
+    if (!base) return 'अम्';
+    return base + 'म्';
+  }
+
+  // 3. Velar nasal ङ row: clear audible velar articulation
+  if (clean === 'ङ') return 'ङ्ङ';
+  if (clean === 'ङा') return 'ङ्गा';
+  if (clean === 'ङि') return 'ङ्गि';
+  if (clean === 'ङी') return 'ङ्गी';
+  if (clean === 'ङु') return 'ङ्गु';
+  if (clean === 'ङू') return 'ङ्गू';
+  if (clean === 'ङृ') return 'ङ्गृ';
+  if (clean === 'ङे') return 'ङ्गे';
+  if (clean === 'ङै') return 'ङ्गै';
+  if (clean === 'ङो') return 'ङ्गो';
+  if (clean === 'ङौ') return 'ङ्गौ';
+
+  // 4. Palatal nasal ञ row
+  if (clean === 'ञ') return 'ञ';
+  if (clean === 'ञा') return 'ञा';
+  if (clean === 'ञि') return 'ञि';
+  if (clean === 'ञी') return 'ञी';
+  if (clean === 'ञु') return 'ञु';
+  if (clean === 'ञू') return 'ञू';
+  if (clean === 'ञृ') return 'ञृ';
+  if (clean === 'ञे') return 'ञे';
+  if (clean === 'ञै') return 'ञै';
+  if (clean === 'ञो') return 'ञो';
+  if (clean === 'ञौ') return 'ञौ';
+
+  // 5. Conjuncts
+  if (clean === 'क्ष') return 'क्ष';
+  if (clean === 'ज्ञ') return 'ज्ञ';
+  if (clean === 'त्र') return 'त्र';
+  if (clean === 'श्र') return 'श्र';
+
+  // 6. Independent vowels
+  if (clean === 'अ') return 'अ';
+  if (clean === 'आ') return 'आ';
+  if (clean === 'इ') return 'इ';
+  if (clean === 'ई') return 'ई';
+  if (clean === 'उ') return 'उ';
+  if (clean === 'ऊ') return 'ऊ';
+  if (clean === 'ऋ') return 'ऋ';
+  if (clean === 'ॠ') return 'ॠ';
+  if (clean === 'ऌ') return 'लृ';
+  if (clean === 'ए') return 'ए';
+  if (clean === 'ऐ') return 'ऐ';
+  if (clean === 'ओ') return 'ओ';
+  if (clean === 'औ') return 'औ';
+
+  // 7. Standard consonant + matra combinations: return pure Devanagari directly
+  return clean;
 };
+
+/** Speech text for Barakhadi / Guninthalu syllables: always returns native Devanagari. */
+export const barakhadiSpeechText = (akshara: string): string => {
+  return getGuninthaluSpeechText(akshara);
+};
+
+/** Speakable text for Varnamala tiles: always returns native Devanagari. */
+export const varnamalaSpeechText = (akshara: string): string => {
+  return getGuninthaluSpeechText(akshara);
+};
+
 /** Shared default (बारहखड़ी). Prefer varnamalaLabel for Varṇamālā tiles. */
 export const aksharaLabel = barakhadiLabel;
 export const isPhoneticAkshara = isBarakhadiAkshara;

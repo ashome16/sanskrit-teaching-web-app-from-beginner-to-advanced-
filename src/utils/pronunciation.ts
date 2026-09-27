@@ -1,4 +1,4 @@
-import { isBarakhadiAkshara, varnamalaSpeechText } from './barakhadiPhonetics';
+import { isBarakhadiAkshara, getGuninthaluSpeechText } from './barakhadiPhonetics';
 import {
   applySafeProsody,
   clampRate,
@@ -16,7 +16,7 @@ import { isDandaOrVerseNumberToken } from './dandaSpeech';
 // Strips whitespace/punctuation plus Devanagari digits and hyphens (e.g. the
 // numbers guide's "० - शून्यम्" button labels) so only the word itself is spoken.
 const cleanWord = (value: string): string =>
-  value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९\.\/\\=+#*~_`]+/g, '').trim();
+  value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९./\\=+#*~_`]+/g, '').trim();
 
 const isSanskritText = (value: string): boolean => /[\u0900-\u097F]/.test(value);
 
@@ -83,14 +83,6 @@ const isRareVocalicWord = (word: string): boolean =>
 const usesWindowsWordSpeech = (word: string): boolean =>
   isWindowsPlatform() || (isApplePlatform() && isRareVocalicWord(word));
 
-/** True for multi-akṣara picture / vocabulary words (not bare tiles). */
-const isFullWord = (word: string): boolean => {
-  if (CONJUNCT_TILES.has(word)) return false;
-  if (WINDOWS_BARE_CONSONANTS.has(word)) return false;
-  if (isBarakhadiAkshara(word)) return false;
-  return word.length > 1;
-};
-
 // Builds the text actually sent to the speech engine: word overrides + visarga echo.
 // Full words stay Devanagari (Hindi voice). Single tiles use roman cues.
 // Bare conjuncts always use Devanagari + hi-IN (Mac + Windows). On Windows,
@@ -99,13 +91,9 @@ const toSpeechText = (word: string): string => {
   if (CONJUNCT_TILES.has(word)) {
     return word;
   }
-  // Mac roman cues still work for non-conjunct tiles — this is Windows-only.
-  if (isWindowsPlatform() && WINDOWS_BARE_CONSONANTS.has(word)) {
-    return word;
-  }
-  // Single बारहखड़ी / Varṇamālā tiles: distinct roman cues.
-  if (isBarakhadiAkshara(word)) {
-    return varnamalaSpeechText(word);
+  // Single बारहखड़ी (Guṇintālu) / Varṇamālā tiles: return authentic Devanagari speech text
+  if (isBarakhadiAkshara(word) || WINDOWS_BARE_CONSONANTS.has(word)) {
+    return getGuninthaluSpeechText(word);
   }
 
   const overridden = applyWordOverrides(word);
@@ -135,8 +123,12 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   const configuredReaderVoice = resolveVoiceForRole('reader', voices);
   const voice = configuredReaderVoice || pickHindiVoice(voices);
   utterance.voice = voice || null;
-  // Roman cues (tiles or word anchors like angam/ganga/ranga) use English; Devanagari uses Hindi.
-  if (/^[a-z\- ]+$/i.test(speech)) {
+
+  // Devanagari text (Guninthalu, Varnamala, full Sanskrit words): always use Indian/Hindi voice
+  if (/[\u0900-\u097F]/.test(speech)) {
+    utterance.voice = voice || null;
+    utterance.lang = voice?.lang || 'hi-IN';
+  } else if (/^[a-z\- ]+$/i.test(speech)) {
     const en = pickEnglishCueVoice(voices);
     if (en) {
       utterance.voice = en;
@@ -145,43 +137,18 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
       utterance.lang = 'en-IN';
     }
   } else {
-    // Windows picture-words, plus Mac ॠकारः / ऌकारः: always prefer a real
-    // hi-IN voice with Devanagari text so the platform paths match.
-    if (usesWindowsWordSpeech(word) && isFullWord(word)) {
-      const hi = configuredReaderVoice || pickHindiVoice(voices);
-      utterance.voice = hi || voice || null;
-      utterance.lang = hi?.lang || voice?.lang || 'hi-IN';
-    } else {
-      utterance.lang = voice?.lang || 'hi-IN';
-    }
+    utterance.lang = voice?.lang || 'hi-IN';
   }
-  // औ/ऐ: slower diphthong; घ: gha a touch slower.
-  // छ uses Devanagari + Hindi voice (roman chhha was letter-spelled as C-A).
-  // ञ uses a two-beat contour in playPronunciation (fast en + slow ya).
-  // Any word ending in visarga (ः): speak the whole word slowly so the echo is clear.
-  const isAu = word === 'औ' || speech === 'au' || speech === 'gaau' || /aau$/i.test(speech);
-  const isAi = word === 'ऐ' || speech === 'ai' || speech === 'ghaai' || /aai$/i.test(speech);
-  const isGha = word === 'घ' || speech === 'gha';
-  const isChha = word === 'छ' || speech === 'छ';
-  const isTtha = word === 'ठ' || speech === 'ठ';
-  const isDdha = word === 'ढ' || speech === 'dhah';
-  const isKsha = word === 'क्ष' || speech === 'क्ष' || speech === 'ksha' || speech === 'क्ष क्ष';
-  const isLongEe = word === 'ई' || /^yee+$/i.test(speech);
-  const isRih = word === 'ऋ' || /^rih$/i.test(speech);
-  const isReee = word === 'ॠ' || /^reee$/i.test(speech);
-  const isGya = word === 'ज्ञ' || speech === 'ज्ञ' || speech === 'jnya' || speech === 'ज्ञ ज्ञ';
-  const isTra = word === 'त्र' || speech === 'त्र' || speech === 'त्र त्र';
-  const isLongUu = /ooooh$/i.test(speech);
-  const isShortUu = /ooh$/i.test(speech) && !isLongUu;
-  const isVisargaWord = word.endsWith('ः');
-  // गङ्गा / रङ्गः / अङ्गम्: original roman cues, extended slowly + full volume.
-  const isNgaWord =
-    speech === 'gun ga' || speech === 'run ga' || speech === 'an gam';
 
-  // Windows: known-problem tiles/conjuncts — mild Devanagari rate, no pitch tricks.
+  // Windows: known-problem conjuncts — mild Devanagari rate, natural pitch
+  const isKsha = word === 'क्ष' || speech === 'क्ष';
+  const isGya = word === 'ज्ञ' || speech === 'ज्ञ';
+  const isTra = word === 'त्र' || speech === 'त्र';
+  const isGha = word === 'घ' || speech === 'gha';
   const isJa = word === 'ज' || speech === 'ज';
   const isDha = word === 'ध' || speech === 'ध';
   const isJha = word === 'झ' || speech === 'झ';
+
   if (isWindowsPlatform() && (isGya || isTra || isKsha || isGha || isJa || isDha || isJha)) {
     utterance.rate = clampRate(0.9);
     utterance.pitch = safePitch(1);
@@ -189,41 +156,34 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
     return;
   }
 
-  utterance.rate = isNgaWord
-    ? 0.42
-    : isTtha
-      ? 0.5
-      : isKsha || isGya || isTra
-        ? 0.85
-        : isLongEe
-          ? 0.8
-          : isRih || isReee
-            ? 0.58
-            : isLongUu
-                ? 0.62
-                : isShortUu
-                  ? 1.05
-                  : isDdha
-                    ? 0.72
-                    : isVisargaWord
-                      ? 0.45
-                      : isAu || isAi
-                        ? 0.45
-                        : isGha
-                          ? 0.75
-                          : isChha
-                            ? 0.9
-                            : DEFAULT_RATE;
-  // Natural pitch (1.0) for clean conjuncts and vowels
-  utterance.pitch = isNgaWord
-    ? 1.15
-    : isTtha
-      ? 1.35
-      : isRih || isReee
-        ? 1.12
-        : isDdha
-          ? 1.12
-          : 1;
+  // Natural pitch (1.0) across all akṣaras — avoid chipmunk distortions
+  utterance.pitch = 1.0;
+
+  // Pedagogical recitation rates:
+  // - Long vowels (ā, ī, ū, ai, au): deliberate 2-mātrā duration (0.84)
+  // - Visarga echo (kaha, khaha, gaha): 0.88
+  // - Conjuncts (ksha, tra, jnya, shra): 0.88
+  // - Guninthalu / Varnamala single akṣaras: 0.92
+  // - Full multi-word sentences: DEFAULT_RATE (1.0)
+  const isLongVowel = /[ाीूॄैौ]/.test(word) || word === 'आ' || word === 'ई' || word === 'ऊ' || word === 'ऐ' || word === 'औ';
+  const isVisarga = word.endsWith('ः') || speech.endsWith('ह');
+  const isConjunct = CONJUNCT_TILES.has(word) || isKsha || isGya || isTra;
+  const isNgaWord = speech === 'gun ga' || speech === 'run ga' || speech === 'an gam';
+
+  if (isNgaWord) {
+    utterance.rate = 0.55;
+  } else if (isVisarga) {
+    utterance.rate = 0.88;
+  } else if (isLongVowel) {
+    utterance.rate = 0.84;
+  } else if (isConjunct) {
+    utterance.rate = 0.88;
+  } else if (isBarakhadiAkshara(word) || WINDOWS_BARE_CONSONANTS.has(word)) {
+    utterance.rate = 0.92;
+  } else {
+    utterance.rate = DEFAULT_RATE;
+  }
+
   utterance.volume = 1;
   applySafeProsody(utterance);
 };
@@ -272,7 +232,9 @@ if (typeof window !== 'undefined') {
     if (localStorage.getItem('sanskrit_sound_muted') === 'true') {
       pronunciationMuted = true;
     }
-  } catch {}
+  } catch {
+    // Ignore storage unavailability in incognito/SSR
+  }
 }
 
 export const setPronunciationMuted = (muted: boolean): void => {
@@ -301,8 +263,12 @@ export const stopPronunciation = (): void => {
 const speakConfigured = (word: string, onEnd?: () => void): void => {
   if (pronunciationMuted) return;
   if (word === 'ञ') {
-    playNyaEnya(onEnd);
-    return;
+    const voices = window.speechSynthesis.getVoices();
+    const hasHindi = !!(resolveVoiceForRole('reader', voices) || pickHindiVoice(voices));
+    if (!hasHindi && !isWindowsPlatform()) {
+      playNyaEnya(onEnd);
+      return;
+    }
   }
   const speech = toSpeechText(word);
   const utterance = new SpeechSynthesisUtterance(speech);
