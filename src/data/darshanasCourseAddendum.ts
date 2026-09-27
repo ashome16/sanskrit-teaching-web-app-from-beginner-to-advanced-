@@ -212,6 +212,31 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
         },
       },
       {
+        anchorId: 'adhikara-vessel-not-gatekeeping',
+        heading: 'Adhikāra is Not “Gatekeeping”: The Vessel vs. The Membership Card (अधिकारः — पात्र-निर्माणं न द्वार-रक्षणम्)',
+        subheading: 'Capacity to Receive Without Distorting · Pastoral Caution (Gītā 18.67) vs. Sociological Freezing · Integrity in Public Learning',
+        paragraphs: [
+          'The English word “qualification” is far too thin and transactional to capture adhikāra. It evokes an administrative checklist, a prerequisite exam, or an institutional admissions ticket. In traditional pedagogy, adhikāra is something much deeper: the capacity to receive without distorting.',
+          'Not a membership card. A vessel (पात्रम्, pātra). Hence the genuine disciple is termed an adhikārī or a su-pātra (worthy receptacle). If unboiled sweet milk is poured into an unbaked or tainted clay pot, the milk turns sour before it can nourish anyone. The ancient work of adhikāra is the patient baking and cleansing of that inner vessel.',
+          '• The Living Gurukul Reality:\nIn the classical guru–śiṣya setting, this demanded pedagogical conditions that seem incomprehensible to modern mass content:\n— Few students at a time, often nurtured over years.\n— Unhurried, rigorous observation of life and temperament.\n— The guru watching constantly whether the seeker truly hears (śravaṇa as real reception in the nervous system and consciousness), not merely whether they can parrot the sounds with superficial agility.\n— Pastoral restraint: holding back potent sound and high philosophical fire so that a sacred mantra does not degenerate into mental noise, trivial decoration, or weaponized argument in an unready mind.\nRepetition without reception is just sound. Reception is what the tradition was protecting.',
+          '• Pastoral Caution vs. Sociological Freezing (Bhagavad Gītā 18.67):\nBhagavad Gītā 18.67 sounds the exact same pastoral warning at the summit of Krishna’s dialogue with Arjuna:\n“इदं ते नातपस्काय नाभक्ताय कदाचन । न चाशुश्रूषवे वाच्यं न च मां योऽभ्यसूयति ॥”\n(Never speak this sacred teaching to one who lacks discipline / tapas, who has no devotion, who refuses to listen and serve, or who harbors cynical cavil and will weaponize it).\nThis is pastoral care, not social snobbery. It protects the seeker from taking non-dual wisdom or potent acoustic fire and converting it into intellectual arrogance, nihilism, or rationalized recklessness. It protects the integrity of the recipient as much as the integrity of the teaching.\nTragically, later Indian social history frequently froze this compassionate pastoral caution into rigid, hereditary caste barriers. Those two things must never be collapsed: the spiritual necessity of the vessel is living; its historical distortion into external gatekeeping and social exclusion is dead.',
+          '• The Integrity and Humility of Public Learning:\nIn an open web application or digital curriculum, this distinction establishes clear ethical boundaries:\n— We can introduce sacred mantras with reverence, beauty, and linguistic clarity.\n— We can teach metrical structures (chandas), historical contexts, places of articulation (śikṣā), and line-by-line grammatical breakdowns.\n— We cannot claim to confer Vedic adhikāra, which requires living human presence, prāṇa, and personal covenant.\nLabeling that limitation openly is not exclusion—it is integrity. It honors the sacredness of what is being studied without pretending a digital interface can replace a living master.',
+        ],
+        sutras: [
+          {
+            sanskrit: 'इदं ते नातपस्काय नाभक्ताय कदाचन । न चाशुश्रूषवे वाच्यं न च मां योऽभ्यसूयति ॥',
+            transliteration: 'idaṃ te nātapaskāya nābhaktāya kadācana | na cāśuśrūṣave vācyaṃ na ca māṃ yo\'bhyasūyati ||',
+            meaning: 'Never speak this sacred teaching to one devoid of discipline (tapas), nor to one who lacks devotion, nor to one who refuses to listen and serve, nor to one who cavils against me.',
+            source: 'Bhagavad Gītā 18.67 · Pastoral Restraint of Sacred Knowledge',
+          },
+        ],
+        callout: {
+          title: 'The Vessel Principle',
+          text: '“Adhikāra is not gatekeeping; it is establishing the capacity to receive without distorting. Not a membership card, but a vessel. Repetition without reception is just sound. Reception is what the tradition was protecting.”',
+          type: 'philosophical',
+        },
+      },
+      {
         heading: 'Not a Polite “Let Us Begin” — Clearing the Field Before Knowledge Arrives',
         subheading: 'Śaṅkara on the Triple Disturbance (Tāpatraya) and the Root √śam',
         paragraphs: [
@@ -453,9 +478,43 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
           type: 'philosophical',
         },
       },
+      {
+        anchorId: 'conscious-cosmos-twin-rivers-vak',
+        heading: 'Conscious Cosmos Card: The Twin Rivers of Primordial Speech (वाक्सूक्तयोः सङ्गमः)',
+        subheading: 'Ṛgveda 10.125 (Vāk Āmbhṛṇī) & Ṛgveda 1.164.42 (Dīrghatamas) · The Imperishable Akṣara Waters the World',
+        paragraphs: [
+          'A frequent point of textual confusion occurs when the majestic verse celebrating the cosmic oceans and the eternal syllable is mistakenly cited as verse 7 of the Devī Sūktam (RV 10.125.7). Both are sacred Vedic hymns centered on Vāk, but they arise through two distinct seers and explore two complementary vistas of reality.',
+          '• The Actual RV 10.125.7 (Vāk Āmbhṛṇī / Devī Sūktam):\n“अहं सुवे पितरमस्य मूर्धन् मम योनिरप्स्वन्तः समुद्रे । ततो वि तिष्ठे भुवनानु विश्वोतामूं द्यां वर्ष्मणोप स्पृशामि ॥”\n(I bring forth the Father on the summit of this world; my womb is in the cosmic waters, within the ocean. Thence I stand through all realms and touch yonder heaven with my stature).\nHere, Vāk speaks directly in the sovereign first person (Ahaṃ)—she is the womb within the ocean who actively brings forth cosmic life and touches the highest heights.',
+          '• The Verses of Dīrghatamas: RV 1.164.41–42 (Asya Vāmīya Sūkta):\nThe verse often quoted is actually Ṛgveda 1.164.42 (found also in Atharvaveda 9.10.21, 13.1.42, and Taittirīya Brāhmaṇa 2.4.6.11):\n“तस्याः समुद्रा अधि वि क्षरन्ति तेन जीवन्ति प्रदिशश्चतस्रः । ततः क्षरत्यक्षरं तद्विश्वमुप जीवति ॥”\n(From Her, the oceans flow forth in all directions; by that energy, the four quarters of the universe find life. From there flows the imperishable syllable, Akṣara; upon that eternal syllable, the whole universe depends and lives).',
+          '• The Meaning of the Dīrghatamas Coupling (1.164.41–42):\nIn verse 41, the visionary seer Dīrghatamas beholds the cosmic buffalo cow (gauḥ / Vāk) lowing as she measures out the world: first one-footed, two-footed, four-footed, eight-footed, nine-footed, and finally fashioning the thousand-syllabled waters in highest heaven (sahasrākṣarā parame vyoman).\nThen verse 42 describes the cosmic irrigation: from Her, the oceans of consciousness flow forth abundantly (adhi vi kṣaranti). By this living flood, the four cardinal quarters live (tena jīvanti pradiśaś catasraḥ). From that primal outpouring flows the Akṣara (the undying sound-matrix of creation), and upon that Akṣara the entire cosmos subsists (tad viśvam upa jīvati).',
+          '• Two Seers, One Primordial River:\nDifferent ṛṣis, different hymns, but the exact same river of meaning: Speech is the cosmic reservoir from which reality itself is watered. Dīrghatamas beholds Vāk objectively as the cosmic mother whose syllable irrigates the universe; Vāk Āmbhṛṇī speaks subjectively as the sovereign “I” that indwells all gods and beings.',
+        ],
+        sutras: [
+          {
+            sanskrit: 'तस्याः समुद्रा अधि वि क्षरन्ति तेन जीवन्ति प्रदिशश्चतस्रः । ततः क्षरत्यक्षरं तद्विश्वमुप जीवति ॥',
+            transliteration: 'tasyāḥ samudrā adhi vi kṣaranti tena jīvanti pradiśaś-catasraḥ | tataḥ kṣaraty-akṣaraṃ tad-viśvam-upa jīvati ||',
+            meaning: 'From Her, the oceans of cosmic water flow forth; by that, the four quarters of the universe live and are sustained. From there flows the imperishable syllable (Akṣara); upon that eternal syllable, the whole universe depends and lives.',
+            source: 'Ṛgveda 1.164.42 (Dīrghatamas Aucathya · Asya Vāmīya Sūkta · also AV 9.10.21 & TB 2.4.6.11)',
+          },
+          {
+            sanskrit: 'अहं सुवे पितरमस्य मूर्धन्मम योनिरप्स्वन्तः समुद्रे । ततो वि तिष्ठे भुवनानु विश्वोतामूं द्यां वर्ष्मणोप स्पृशामि ॥',
+            transliteration: 'ahaṃ suve pitaram asya mūrdhan mama yonir apsv antaḥ samudre | tato vi tiṣṭhe bhuvanānu viśvotāmūṃ dyāṃ varṣmaṇopa spṛśāmi ||',
+            meaning: 'I bring forth the Father on the summit of this cosmos; my womb is within the waters, inside the ocean. Thence I stand out through all beings and touch yonder heaven with my majesty.',
+            source: 'Ṛgveda 10.125.7 (Vāk Āmbhṛṇī · Devī Sūktam)',
+          },
+        ],
+        callout: {
+          title: 'Conscious Cosmos Card · The Golden Rule of Adhikāra',
+          text: '“Hearing is not the same as receiving. Repetition without reception is just sound. When Vāk flows as the Akṣara watering all four quarters, only a prepared vessel can receive the stream without turning it to pride or noise.”',
+          type: 'cosmological',
+        },
+      },
     ],
     keyTakeaways: [
       'The Guru is not a faster model: generation produces strings without stakes, while guru-paramparā transmits prāṇa (breath, intention, and responsibility) with a rule of use.',
+      'Adhikāra is not “gatekeeping”: English “qualification” is too thin. Adhikāra is the capacity to receive without distorting—a vessel (pātra), not a membership card.',
+      'In the authentic Gurukul, few students were nurtured over long periods: the guru watched for genuine reception (śravaṇa), guarding against shallow parroting.',
+      'Gītā 18.67 establishes pastoral caution (holding back sacred knowledge from unready, cynical minds) to protect both teaching and student—never to be collapsed into later sociological caste freezing.',
       'A śānti mantra is not a polite opener; it is the first act of the path: clear the field, name the bond, refuse harm before knowledge arrives.',
       'Śānti is derived from √śam (to bring to rest); it is a cleared field and the pacification of obstacles, not a passive wellness mood.',
       'The triple śāntiḥ addresses the three disturbances (tāpatraya): ādhyātmika (self), ādhibhautika (others), and ādhidaivika (unseen forces).',
@@ -472,6 +531,7 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
       'The physical pipeline of Vaikharī comprises Initiation (prāṇa/uras bellows), Phonation (kaṇṭha/glottis svara), and Articulation (8 sthānas + prayatna manner).',
       'Eka-Śabda Discipline: One sound, fully occupied, fully released. The sādhana sequence: Potential → One Word → Potential. The gap is part of the practice: “Become the place where no word has started. From there, let only this word start. When it has gone, be that place again.”',
       'Devī Sūktam (RV 10.125) consists of eight ṛcs by Vāk Āmbhṛṇī in first-person (Ahaṃ): Speech as the sovereign medium sustaining gods and worlds. Verses 4–5 establish inner adhikāra: Vāk chooses whom to make a ṛṣi.',
+      'The Twin Rivers of Vāk: RV 10.125.7 (Vāk Āmbhṛṇī’s ocean womb) and RV 1.164.42 (Dīrghatamas’s waters flowing from Akṣara to sustain the four quarters). Hearing is not the same as receiving.',
     ],
   },
 
@@ -666,6 +726,30 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
           type: 'insight',
         },
       },
+      {
+        anchorId: 'mantra-asya-vamiya-dirghatamas',
+        heading: 'अस्य वामीयम् (ऋग्वेद १.१६४.४२) — The Waters of the Imperishable Akṣara',
+        subheading: 'Dīrghatamas Aucathya · Cosmic Irrigation of the Four Quarters · Akṣara as the Life of the Universe',
+        paragraphs: [
+          'This ancient mantra is from the profound Asya Vāmīya Sūkta (RV 1.164) of the visionary seer Dīrghatamas (also preserved in Atharvaveda 9.10.21 / 13.1.42 and Taittirīya Brāhmaṇa 2.4.6.11). It is often conflated with verse 7 of Devī Sūktam, but belongs to this sister contemplation of Primordial Speech.',
+          'Here, Vāk is beheld as the cosmic mother whose waters flood all space: from Her flow the oceans of consciousness, sustaining the four cardinal quarters. From that outpouring flows the Akṣara (the imperishable syllable), and upon that eternal syllable the whole universe depends and lives.',
+          'Notice the sacred word-play between kṣaranti (flowing / dissolving) and a-kṣaram (that which never decays or dissolves). The universe dissolves in time, but the sound-matrix of Vāk remains imperishable.',
+        ],
+        sutras: [
+          {
+            mantraId: 'asya-vamiya-1-164-42',
+            sanskrit: 'तस्याः समुद्रा अधि वि क्षरन्ति तेन जीवन्ति प्रदिशश्चतस्रः । ततः क्षरत्यक्षरं तद्विश्वमुप जीवति ॥',
+            transliteration: 'tasyāḥ samudrā adhi vi kṣaranti tena jīvanti pradiśaś-catasraḥ | tataḥ kṣaraty-akṣaraṃ tad-viśvam-upa jīvati ||',
+            meaning: 'From Her, the oceans of cosmic consciousness flow forth in all directions; by that life-stream, the four quarters of space are sustained. From there flows the imperishable syllable (Akṣara); upon that eternal syllable, the whole universe depends and lives.',
+            source: 'Ṛgveda 1.164.42 (Dīrghatamas Aucathya · Asya Vāmīya Sūkta · also AV 9.10.21 & TB 2.4.6.11)',
+          },
+        ],
+        callout: {
+          title: 'The Sādhana of Reception',
+          text: '“Hearing is not the same as receiving. Repetition without reception is just sound. In reciting this verse, let the breath inhabit the gap between kṣaranti (what flows) and akṣaram (what endures).”',
+          type: 'philosophical',
+        },
+      },
     ],
     keyTakeaways: [
       'Mantras are for the mouth, not only the eye: recite each line with the breath, then the whole verse.',
@@ -675,6 +759,7 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
       'Īśāvāsya 1: tena tyaktena bhuñjīthā mā gṛdhaḥ — use without seizing.',
       'Dyauḥ Śāntiḥ (Yajurveda 36.17): peace moves through sky, waters, herbs and trees before it is asked for oneself — sā mā śāntir edhi.',
       'Devī Sūktam (Ṛgveda 10.125): Eight sacred ṛcs by Vāk Āmbhṛṇī expressing Speech as sovereign queen (ahaṃ rāṣṭrī), the condition of all living functions (eating, seeing, breathing, hearing), and the authority that confers wisdom (sumedhā).',
+      'Ṛgveda 1.164.42 (Dīrghatamas): The celestial waters flow from Vāk to sustain the four quarters, and from Her flows the imperishable syllable (Akṣara) on which the cosmos lives. Hearing is not the same as receiving.',
     ],
   },
 
