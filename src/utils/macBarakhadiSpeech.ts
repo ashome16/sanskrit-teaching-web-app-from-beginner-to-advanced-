@@ -25,20 +25,35 @@
  *  - भी / भि: the split भ्ई / भ्इ was bad. भि → plain भि; भी → भीई (vowel stretch so
  *    Lekha does not read the Hindi function word भी "also" quickly and weakly).
  *
+ * Round 3 (after Mac listening of 749acbd):
+ *  - ृ column and ड row approved — unchanged.
+ *  - ै / ौ: the split diphthong cues (C्आइ, C्आउ, याइ, णाउ) and the stretch डाआ gave
+ *    "khai", "khau", "nauau", "dauauau". All ै/ौ overrides are now the plain syllable
+ *    with a trailing danda (फै → फै।, यै → यै।, णौ → णौ।, ढौ → ढौ।); डा → डा। (danda ends
+ *    the token so it is not the abbreviation डा. = डॉक्टर).
+ *  - जु was read as "July" (Hindi abbreviation जु. = जुलाई) → ज्उ, same pattern as पु.
+ *  - ठ / थ rows sounded like "ka". Checked the code: no path maps them to क — the grid
+ *    sends exactly the same text ("ठ") and voice (Lekha, hi-IN) as the Varṇamālā tile.
+ *    It is Lekha's reading of the lone syllable, so these rows now get a trailing
+ *    danda (ठ → ठ।, ठा → ठा। …, ठं → ठम्।, ठः → ठह।) to make each cell a complete
+ *    utterance rather than a bare glyph.
+ *
  * Cell → cue table (current)
  * ----------------------------------------------------------------------------
  *  ृ column, all 33 consonants:  Cृ → C्ऋ   (ङृ → ङ्ग्ऋ to match the ङ्ग row cues)
  *  Individually reported cells
  *   ङ  → ङ्ग     ङं → ङ्गम्    ङः → ङ्ग ह
  *   छः → छ ह     टः → ट ह      तः → त ह      पः → प ह      डः → ड ह
- *   णौ → णाउ    यै → याइ      रै → राइ
- *   ल  → ल्अ     लि → ल्इ      मी → म्ई      जू → ज्ऊ      पु → प्उ      डा → डाआ
+ *   णौ → णौ।    ढौ → ढौ।      यै → यै।      रै → रै।
+ *   ल  → ल्अ     लि → ल्इ      मी → म्ई      जू → ज्ऊ      पु → प्उ      जु → ज्उ
+ *   डा → डा।
  *   भी → भीई    भि → भि (plain)
  *  Whole rows still overridden: फ भ ष  (C = row consonant)
- *   C  → C्अ    Cा → C्आ    Cु → C्उ    Cू → C्ऊ    Cे → C्ए    Cै → C्आइ
- *   Cो → C्ओ   Cौ → C्आउ   Cं → C्अम्   Cः → "C ह"
+ *   C  → C्अ    Cा → C्आ    Cु → C्उ    Cू → C्ऊ    Cे → C्ए    Cै → Cै।
+ *   Cो → C्ओ   Cौ → Cौ।   Cं → C्अम्   Cः → "C ह"
  *   Cि → C्इ / Cी → C्ई  (फ, ष only; भ uses the entries above)
- *  Plain Devanagari again (no override except ृ): ञ ठ ड थ rows.
+ *  ठ थ rows: plain syllable + "।" (ठं → ठम्।, ठः → ठह।).
+ *  Plain Devanagari (no override except ृ): ञ ड rows (except डा, डः).
  * ----------------------------------------------------------------------------
  */
 
@@ -55,13 +70,29 @@ const buildRow = (c: string): Record<string, string> => {
     [`${c}ु`]: `${h}उ`,
     [`${c}ू`]: `${h}ऊ`,
     [`${c}े`]: `${h}ए`,
-    [`${c}ै`]: `${h}आइ`,
+    [`${c}ै`]: `${c}ै।`,
     [`${c}ो`]: `${h}ओ`,
-    [`${c}ौ`]: `${h}आउ`,
+    [`${c}ौ`]: `${c}ौ।`,
     [`${c}ं`]: `${h}अम्`,
     [`${c}ः`]: `${c} ह`,
   };
 };
+
+/** Plain Devanagari syllable + "।" for every cell of a row (visarga keeps the default echo C+ह). */
+const dandaRow = (c: string): Record<string, string> => ({
+  [c]: `${c}।`,
+  [`${c}ा`]: `${c}ा।`,
+  [`${c}ि`]: `${c}ि।`,
+  [`${c}ी`]: `${c}ी।`,
+  [`${c}ु`]: `${c}ु।`,
+  [`${c}ू`]: `${c}ू।`,
+  [`${c}े`]: `${c}े।`,
+  [`${c}ै`]: `${c}ै।`,
+  [`${c}ो`]: `${c}ो।`,
+  [`${c}ौ`]: `${c}ौ।`,
+  [`${c}ं`]: `${c}म्।`,
+  [`${c}ः`]: `${c}ह।`,
+});
 
 const ALL_CONSONANTS = 'क ख ग घ ङ च छ ज झ ञ ट ठ ड ढ ण त थ द ध न प फ ब भ म य र ल व श ष स ह'.split(' ');
 
@@ -82,10 +113,12 @@ const MAC_BARAKHADI_CUES: Record<string, string> = {
   'तः': 'त ह',
   'पः': 'प ह',
   'डः': 'ड ह',
-  'डा': 'डाआ',
-  'णौ': 'णाउ',
-  'यै': 'याइ',
-  'रै': 'राइ',
+  'डा': 'डा।',
+  'णौ': 'णौ।',
+  'ढौ': 'ढौ।',
+  'यै': 'यै।',
+  'रै': 'रै।',
+  'जु': 'ज्उ',
   'ल': 'ल्अ',
   'लि': 'ल्इ',
   'मी': 'म्ई',
@@ -94,6 +127,8 @@ const MAC_BARAKHADI_CUES: Record<string, string> = {
   // भ row: split vowel failed for these two
   'भी': 'भीई',
   'भि': 'भि',
+  // ठ / थ rows: plain syllable + trailing danda (ृ column below still wins)
+  ...Object.assign({}, ...['ठ', 'थ'].map(dandaRow)),
   // ृ column for every consonant (overrides any row entry)
   ...RI_COLUMN,
 };
