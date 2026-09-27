@@ -153,6 +153,7 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
 
 const pathToView = (pathname: string): DashboardView | null => {
   const clean = pathname.replace(/\/+$/, '') || '/';
+  if (clean === '/' || clean === '/home' || clean === '/index') return 'home';
   if (COURSE_PATHS.has(clean)) return 'course';
   if (PHILOSOPHY_PATHS.has(clean)) return 'philosophy';
   if (CBSE_GUIDE_PATHS.has(clean)) return 'cbse-guide';
