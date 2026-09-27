@@ -197,6 +197,28 @@ export const getGuninthaluSpeechText = (akshara: string): string => {
   if (clean === 'ठो') return 'ठ्हो';
   if (clean === 'ठौ') return 'ठ्हौ';
 
+
+
+  // 4b. Retroflex aspirated ठ row: most TTS voices don't render the aspiration
+  // puff, so ठ collapses into the same sound as the unaspirated ट. Force an
+  // audible aspirate release by inserting an extra 'ह' after the halant —
+  // the same technique already used above for the visarga echo. ट itself is
+  // left untouched (falls through to case 7, plain Devanagari) so the two
+  // stay clearly distinct. (ठः / ठं are already handled correctly above by
+  // the generic visarga/anusvara rules in cases 1–2, which run first.)
+  if (clean === 'ठ') return 'ठ्ह';
+  if (clean === 'ठा') return 'ठ्हा';
+  if (clean === 'ठि') return 'ठ्हि';
+  if (clean === 'ठी') return 'ठ्ही';
+  if (clean === 'ठु') return 'ठ्हु';
+  if (clean === 'ठू') return 'ठ्हू';
+  if (clean === 'ठृ') return 'ठ्हृ';
+  if (clean === 'ठे') return 'ठ्हे';
+  if (clean === 'ठै') return 'ठ्है';
+  if (clean === 'ठो') return 'ठ्हो';
+  if (clean === 'ठौ') return 'ठ्हौ';
+
+
   // 5. Conjuncts
   if (clean === 'क्ष') return 'क्ष';
   if (clean === 'ज्ञ') return 'ज्ञ';
