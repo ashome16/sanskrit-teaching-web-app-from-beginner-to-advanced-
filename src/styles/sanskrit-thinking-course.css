@@ -1689,4 +1689,95 @@
   }
 }
 
+/* Gurukul Certificate Modal & Parchment Styles */
+.stc-cert-modal-card {
+  max-width: 960px;
+  width: 95%;
+  background: #fdfbf7;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.stc-cert-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e2d9cc;
+}
+
+.stc-cert-scroll-wrap {
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.stc-cert-parchment {
+  background: #fffdfa;
+  border: 4px double #b45309;
+  border-radius: 12px;
+  padding: 2.25rem 2rem;
+  position: relative;
+  text-align: center;
+  box-shadow: inset 0 0 30px rgba(180, 83, 9, 0.05);
+}
+
+.stc-cert-inner-border {
+  border: 1px solid #fbd38d;
+  padding: 1.75rem 1.5rem;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.stc-cert-corner {
+  position: absolute;
+  font-size: 1.25rem;
+  color: #b45309;
+  line-height: 1;
+  user-select: none;
+}
+.stc-cert-corner--tl { top: 8px; left: 8px; }
+.stc-cert-corner--tr { top: 8px; right: 8px; }
+.stc-cert-corner--bl { bottom: 8px; left: 8px; }
+.stc-cert-corner--br { bottom: 8px; right: 8px; }
+
+.stc-cert-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15rem;
+  font-weight: 900;
+  color: rgba(180, 83, 9, 0.03);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+@media print {
+  @page {
+    size: landscape;
+    margin: 0.4in;
+  }
+  .stc-cert-parchment {
+    box-shadow: none !important;
+    border: 3px double #000000 !important;
+  }
+  .stc-cert-modal-card {
+    max-height: none !important;
+    height: auto !important;
+    box-shadow: none !important;
+  }
+  .stc-cert-scroll-wrap {
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+}
+
 

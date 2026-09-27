@@ -16,6 +16,13 @@ import { findShantiLineIndex, isShantiMantraText, reciteShantiMantra } from '../
 import ShantiMantraPlayer from './ShantiMantraPlayer';
 import { MANTRAS_ADDENDUM_ID, MANTRAS_BY_ID, MANTRAS_COURSE_HASH } from '../data/mantrasShlokas';
 import { getCourseLessonWorksheet } from '../data/courseWorksheetsData';
+import {
+  PingalaPrastaraTruthTable,
+  PingalaNastamUddistamCodec,
+  PingalaMeruPyramid,
+} from './PingalaInteractiveTools';
+import { TurangaBandhaChessboard } from './TurangaBandhaChessboard';
+import { LilavatiPoeticMathStudio } from './LilavatiPoeticMathStudio';
 
 /** Sidebar / nav label for an addendum unit. */
 const addendumPartLabel = (art: DarshanaAddendumArticle): string =>
@@ -168,6 +175,25 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
     return new Set<string>();
   });
 
+  // Track completed masterclasses (addenda) in localStorage
+  const [completedAddendumIds, setCompletedAddendumIds] = useState<Set<string>>(() => {
+    try {
+      const saved = localStorage.getItem('stc_completed_addenda');
+      if (saved) return new Set(JSON.parse(saved));
+    } catch {}
+    return new Set<string>();
+  });
+
+  // Gurukul Certificate Modal & Student Name state
+  const [isCertificateModalOpen, setIsCertificateModalOpen] = useState(false);
+  const [studentName, setStudentName] = useState(() => {
+    try {
+      return localStorage.getItem('stc_student_name') || (currentUser?.fullName || 'विद्वान् / विदुषी');
+    } catch {
+      return currentUser?.fullName || 'विद्वान् / विदुषी';
+    }
+  });
+
   // Quiz state per lesson: { [lessonId]: selectedOptionIndex }
   const [quizAnswers, setQuizAnswers] = useState<Record<string, number | null>>({});
 
@@ -259,7 +285,27 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
     });
   };
 
+  // Save addendum / masterclass progress
+  const toggleAddendumComplete = (addendumId: string) => {
+    setCompletedAddendumIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(addendumId)) {
+        next.delete(addendumId);
+      } else {
+        next.add(addendumId);
+      }
+      try {
+        localStorage.setItem('stc_completed_addenda', JSON.stringify(Array.from(next)));
+      } catch {}
+      return next;
+    });
+  };
+
   const progressPercent = Math.round((completedLessonIds.size / allLessons.length) * 100);
+  const addendaProgressPercent = Math.round((completedAddendumIds.size / DARSHANAS_COURSE_ADDENDUM.length) * 100);
+  const totalCompleted = completedLessonIds.size + completedAddendumIds.size;
+  const totalItems = allLessons.length + DARSHANAS_COURSE_ADDENDUM.length;
+  const overallProgressPercent = Math.round((totalCompleted / totalItems) * 100);
 
   const currentIndex = allLessons.findIndex((l) => l.id === currentLesson.id);
   const prevLesson = currentIndex > 0 ? allLessons[currentIndex - 1] : null;
@@ -399,7 +445,17 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
             )}
           </div>
 
-          <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
+            <button
+              type="button"
+              className="stc-crumb-btn"
+              style={{ background: '#fef3c7', borderColor: '#d97706', color: '#92400e' }}
+              onClick={() => setIsCertificateModalOpen(true)}
+              title="View and customize your official Gurukul Certificate of Completion"
+            >
+              <span>📜</span>
+              <span>Course Certificate</span>
+            </button>
             {hasPaid ? (
               <span className="stc-sub-pill stc-sub-pill--active">
                 ⭐ ₹200 Active Access · Worksheets &amp; Answer Keys Unlocked
@@ -424,13 +480,23 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
           <p className="stc-hero-intro">{SANSKRIT_THINKING_COURSE_METADATA.introduction}</p>
 
           <div className="stc-progress-box">
-            <span className="stc-progress-label">
-              Course Progress: {completedLessonIds.size} / {allLessons.length} Lessons
-            </span>
-            <div className="stc-progress-bar-wrap" aria-label={`Course progress ${progressPercent}%`}>
-              <div className="stc-progress-bar-fill" style={{ width: `${progressPercent}%` }} />
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.35rem' }}>
+              <span className="stc-progress-label">
+                Course Progress: {completedLessonIds.size} / {allLessons.length} Lessons ({progressPercent}%) · {completedAddendumIds.size} / {DARSHANAS_COURSE_ADDENDUM.length} Masterclasses ({addendaProgressPercent}%)
+              </span>
+              <button
+                type="button"
+                className="stc-crumb-btn"
+                style={{ fontSize: '0.78rem', padding: '0.2rem 0.65rem', background: 'rgba(255, 255, 255, 0.2)', color: '#ffffff', borderColor: 'rgba(255, 255, 255, 0.4)' }}
+                onClick={() => setIsCertificateModalOpen(true)}
+              >
+                📜 Certificate
+              </button>
             </div>
-            <span className="stc-progress-percent">{progressPercent}%</span>
+            <div className="stc-progress-bar-wrap" aria-label={`Overall progress ${overallProgressPercent}%`}>
+              <div className="stc-progress-bar-fill" style={{ width: `${overallProgressPercent}%` }} />
+            </div>
+            <span className="stc-progress-percent">{overallProgressPercent}% Total</span>
           </div>
         </header>
 
@@ -469,7 +535,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
             onClick={() => setViewMode('addendum')}
           >
             <span>🪔</span>
-            <span>Course Addendum: Prologue, Mantras &amp; Ślokas, 4 Foundational Essays (अनुबन्धाः)</span>
+            <span>Course Addendum: Prologue, Mantras &amp; Ślokas, 9 Masterclasses (अनुबन्धाः)</span>
           </button>
         </div>
 
@@ -664,11 +730,25 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
 
               {currentLesson.ruleMechanics.sutraReference && (
                 <div className="stc-sutra-callout">
-                  <span style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', color: '#6d28d9' }}>
-                    Pāṇinian Sūtra Canonical Rule:
-                  </span>
-                  <div className="stc-sutra-sanskrit">{currentLesson.ruleMechanics.sutraReference.devanagari}</div>
-                  <div style={{ fontSize: '0.82rem', color: '#5b21b6' }}>{currentLesson.ruleMechanics.sutraReference.iast}</div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.75rem' }}>
+                    <div>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', color: '#6d28d9' }}>
+                        Pāṇinian Sūtra Canonical Rule:
+                      </span>
+                      <div className="stc-sutra-sanskrit">{currentLesson.ruleMechanics.sutraReference.devanagari}</div>
+                      <div style={{ fontSize: '0.82rem', color: '#5b21b6' }}>{currentLesson.ruleMechanics.sutraReference.iast}</div>
+                    </div>
+                    <button
+                      type="button"
+                      className="stc-audio-play-btn"
+                      style={{ flexShrink: 0, marginTop: '0.25rem', background: '#ede9fe', borderColor: '#c4b5fd' }}
+                      onClick={() => handleAudioPlay(currentLesson.ruleMechanics.sutraReference!.devanagari)}
+                      title="Listen to canonical sūtra recitation"
+                      aria-label={`Play audio for ${currentLesson.ruleMechanics.sutraReference.devanagari}`}
+                    >
+                      🔊
+                    </button>
+                  </div>
                   <div className="stc-sutra-meaning">“{currentLesson.ruleMechanics.sutraReference.meaning}”</div>
                 </div>
               )}
@@ -871,6 +951,45 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
               </div>
             )}
 
+            {/* Capstone Completion Callout for Lesson 6.4 */}
+            {currentLesson.id === 'c-6-4' && (
+              <div
+                style={{
+                  background: 'linear-gradient(135deg, #fefce8 0%, #fef3c7 100%)',
+                  border: '2px solid #f59e0b',
+                  borderRadius: '16px',
+                  padding: '1.75rem',
+                  margin: '1.75rem 0',
+                  textAlign: 'center',
+                  boxShadow: '0 10px 25px -5px rgba(245, 158, 11, 0.2)'
+                }}
+              >
+                <div style={{ fontSize: '2.5rem', marginBottom: '0.4rem' }}>🎓</div>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#78350f', margin: '0 0 0.5rem' }}>
+                  अभिनन्दनम्! You Have Reached the Capstone Synthesis
+                </h3>
+                <p style={{ color: '#92400e', maxWidth: '640px', margin: '0 auto 1.25rem', lineHeight: 1.6, fontSize: '0.94rem' }}>
+                  You have traveled the complete arc from acoustic vibration (Śikṣā) and orthography (Devanāgarī) to morphological derivation (Pāṇini), syntactic disassembly (Anvaya), and contemplative vision (Darśana). You are eligible for the official Gurukul Certificate of Sanskrit Cognitive Mastery!
+                </p>
+                <button
+                  type="button"
+                  className="stc-crumb-btn"
+                  style={{
+                    background: '#b45309',
+                    color: '#ffffff',
+                    fontWeight: 800,
+                    padding: '0.75rem 1.6rem',
+                    fontSize: '1rem',
+                    borderColor: '#92400e',
+                    boxShadow: '0 4px 14px rgba(180, 83, 9, 0.35)'
+                  }}
+                  onClick={() => setIsCertificateModalOpen(true)}
+                >
+                  📜 Open &amp; Customize Your Gurukul Certificate
+                </button>
+              </div>
+            )}
+
             {/* Mark as Done & Navigation Row */}
             <div className="stc-nav-buttons-row">
               <button
@@ -908,13 +1027,13 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
           </main>
         </div>
         ) : (
-          /* Course Addendum: 4 Foundational Essays Layout */
+          /* Course Addendum: 11 Masterclasses & Foundational Units Layout */
           <div className="stc-addendum-container">
             {/* Addendum Sidebar Navigation */}
             <aside className="stc-addendum-sidebar">
-              <h3 className="stc-addendum-sidebar-title">षड्दर्शनानि साङ्ख्यं च</h3>
+              <h3 className="stc-addendum-sidebar-title">षड्दर्शनानि महा-पाठाश्च</h3>
               <p className="stc-addendum-sidebar-desc">
-                Foundational essays on the 6 Darśanas, cosmic taxonomy, self-discovery, and the evolution of Vedic mathematics.
+                Unabridged masterclasses on the 6 Darśanas, Sacred Geometry &amp; Cymatics, Tagore's Genius, Piṅgala's Binary System, Turaṅga-Bandha, and Līlāvatī's Poetic Mathematics.
               </p>
               <div className="stc-addendum-nav-list">
                 {DARSHANAS_COURSE_ADDENDUM.map((art) => (
@@ -927,8 +1046,11 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                       window.scrollTo({ top: 380, behavior: 'smooth' });
                     }}
                   >
-                    <div className="stc-addendum-part-tag">
-                      {addendumPartLabel(art)} · {art.readingTimeMinutes} min
+                    <div className="stc-addendum-part-tag" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span>{addendumPartLabel(art)} · {art.readingTimeMinutes} min</span>
+                      {completedAddendumIds.has(art.id) && (
+                        <span style={{ color: '#16a34a', fontWeight: 800, fontSize: '0.85rem' }} title="Masterclass completed">✓</span>
+                      )}
                     </div>
                     <div className="stc-addendum-nav-title">{art.titleEnglish}</div>
                   </button>
@@ -1003,8 +1125,22 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                     <ShantiMantraPlayer key={`${currentAddendum.id}-${suIdx}`} onOpenVoiceSettings={onOpenVoiceSettings} />
                   ) : (
                     <div key={suIdx} className="stc-sutra-box">
-                      <div className="stc-sutra-sanskrit">{sutra.sanskrit}</div>
-                      <div className="stc-sutra-translit">{sutra.transliteration}</div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.75rem' }}>
+                        <div>
+                          <div className="stc-sutra-sanskrit">{sutra.sanskrit}</div>
+                          <div className="stc-sutra-translit">{sutra.transliteration}</div>
+                        </div>
+                        <button
+                          type="button"
+                          className="stc-audio-play-btn"
+                          style={{ flexShrink: 0, marginTop: '0.25rem' }}
+                          onClick={() => handleAudioPlay(sutra.sanskrit)}
+                          title="Listen to sūtra recitation"
+                          aria-label={`Play audio for ${sutra.sanskrit}`}
+                        >
+                          🔊
+                        </button>
+                      </div>
                       <div className="stc-sutra-meaning">"{sutra.meaning}"</div>
                       <div className="stc-sutra-source">— {sutra.source}</div>
                     </div>
@@ -1065,6 +1201,60 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                 </section>
               ))}
 
+              {/* Interactive Computing & Strategy Studios for Masterclasses */}
+              {currentAddendum.id === 'addendum-pingala-binary-blueprint' && (
+                <div style={{ margin: '2.5rem 0' }}>
+                  <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                    <span style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#7c3aed', background: '#f5f3ff', padding: '0.25rem 0.75rem', borderRadius: '9999px', border: '1px solid #ddd6fe' }}>
+                      Interactive Computing Laboratory
+                    </span>
+                    <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#1e1b4b', margin: '0.5rem 0 0.25rem' }}>
+                      Ācārya Piṅgala’s Combinatorial Engine
+                    </h3>
+                    <p style={{ color: '#64748b', fontSize: '0.9rem', maxWidth: '650px', margin: '0 auto' }}>
+                      Experiment with the binary truth table generator (Prastāra), test bi-directional decimal-binary conversions (Naṣṭam &amp; Uddiṣṭam), and explore Pascal’s triangle (Meru Prastāra).
+                    </p>
+                  </div>
+                  <PingalaPrastaraTruthTable onPlayAudio={handleAudioPlay} />
+                  <PingalaNastamUddistamCodec />
+                  <PingalaMeruPyramid />
+                </div>
+              )}
+
+              {currentAddendum.id === 'addendum-turanga-bandha-knights-tour' && (
+                <div style={{ margin: '2.5rem 0' }}>
+                  <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                    <span style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#c2410c', background: '#fff7ed', padding: '0.25rem 0.75rem', borderRadius: '9999px', border: '1px solid #ffedd5' }}>
+                      Interactive Chaturaṅga Laboratory
+                    </span>
+                    <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#431407', margin: '0.5rem 0 0.25rem' }}>
+                      Turaṅga-Bandha Knight’s Tour Simulator
+                    </h3>
+                    <p style={{ color: '#64748b', fontSize: '0.9rem', maxWidth: '650px', margin: '0 auto' }}>
+                      Navigate an 8×4 Sanskrit chessboard through valid Knight jumps and watch Vedānta Deśika’s second verse (Pādukā Sahasram 930) assemble in real time!
+                    </p>
+                  </div>
+                  <TurangaBandhaChessboard onPlayAudio={handleAudioPlay} />
+                </div>
+              )}
+
+              {currentAddendum.id === 'addendum-lilavati-poetic-equation' && (
+                <div style={{ margin: '2.5rem 0' }}>
+                  <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                    <span style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#0369a1', background: '#f0f9ff', padding: '0.25rem 0.75rem', borderRadius: '9999px', border: '1px solid #e0f2fe' }}>
+                      Interactive Poetic Mathematics Studio
+                    </span>
+                    <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#0c4a6e', margin: '0.5rem 0 0.25rem' }}>
+                      Bhāskarāchārya’s Riddle Solver
+                    </h3>
+                    <p style={{ color: '#64748b', fontSize: '0.9rem', maxWidth: '650px', margin: '0 auto' }}>
+                      Adjust parameters to solve the Swarm of Bees quadratic, Pearl Necklace fractions, Sliding Peacock Pythagorean flight, and Submerged Lotus water depth.
+                    </p>
+                  </div>
+                  <LilavatiPoeticMathStudio onPlayAudio={handleAudioPlay} />
+                </div>
+              )}
+
               <div className="stc-takeaways-card">
                 <div className="stc-takeaways-title">
                   <span>📌</span>
@@ -1075,6 +1265,25 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                     <li key={kIdx}>{point}</li>
                   ))}
                 </ul>
+              </div>
+
+              {/* Masterclass Completion Button */}
+              <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0 1.25rem' }}>
+                <button
+                  type="button"
+                  className="stc-crumb-btn"
+                  style={{
+                    background: completedAddendumIds.has(currentAddendum.id) ? '#ecfdf5' : '#ffffff',
+                    color: completedAddendumIds.has(currentAddendum.id) ? '#065f46' : '#1e293b',
+                    borderColor: completedAddendumIds.has(currentAddendum.id) ? '#10b981' : '#cbd5e1',
+                    padding: '0.65rem 1.6rem',
+                    fontSize: '0.95rem',
+                    fontWeight: 800
+                  }}
+                  onClick={() => toggleAddendumComplete(currentAddendum.id)}
+                >
+                  {completedAddendumIds.has(currentAddendum.id) ? '✓ Masterclass Marked as Completed' : '○ Mark Masterclass as Complete'}
+                </button>
               </div>
 
               <div className="stc-addendum-nav-row">
@@ -1396,6 +1605,191 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
             </div>
           );
         })()}
+
+        {/* Modal: Official Gurukul Certificate of Sanskrit Cognitive Mastery */}
+        {isCertificateModalOpen && (
+          <div className="stc-modal-overlay" onClick={() => setIsCertificateModalOpen(false)}>
+            <div className="stc-cert-modal-card" onClick={(e) => e.stopPropagation()}>
+              <div className="stc-cert-top-bar stc-print-hide">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <span style={{ fontSize: '1.35rem' }}>📜</span>
+                  <div>
+                    <div style={{ fontWeight: 800, color: '#78350f', fontSize: '0.96rem' }}>
+                      Official Gurukul Certificate of Completion
+                    </div>
+                    <div style={{ fontSize: '0.78rem', color: '#64748b' }}>
+                      संस्कृत-चिन्तन-प्रमाणपत्रम् · Verified Credential
+                    </div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                  <button
+                    type="button"
+                    className="stc-crumb-btn"
+                    style={{ background: '#047857', color: '#ffffff', borderColor: '#065f46', fontWeight: 800 }}
+                    onClick={() => window.print()}
+                  >
+                    🖨️ Print / Save as PDF
+                  </button>
+                  <button
+                    type="button"
+                    className="stc-modal-close"
+                    onClick={() => setIsCertificateModalOpen(false)}
+                    aria-label="Close certificate modal"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+
+              <div className="stc-cert-scroll-wrap">
+                {/* Student Name Editor (Print-hidden) */}
+                <div
+                  className="stc-print-hide"
+                  style={{
+                    background: '#f8fafc',
+                    border: '1.5px solid #e2e8f0',
+                    borderRadius: '10px',
+                    padding: '0.85rem 1.25rem',
+                    marginBottom: '1.5rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    flexWrap: 'wrap',
+                    gap: '0.75rem'
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flex: '1 1 280px' }}>
+                    <label htmlFor="stc-cert-name" style={{ fontSize: '0.86rem', fontWeight: 800, color: '#334155', whiteSpace: 'nowrap' }}>
+                      Recipient Name:
+                    </label>
+                    <input
+                      id="stc-cert-name"
+                      type="text"
+                      value={studentName}
+                      onChange={(e) => {
+                        const val = e.target.value;
+                        setStudentName(val);
+                        try { localStorage.setItem('stc_student_name', val); } catch {}
+                      }}
+                      placeholder="Enter recipient name"
+                      style={{
+                        flex: 1,
+                        padding: '0.45rem 0.85rem',
+                        borderRadius: '6px',
+                        border: '1px solid #cbd5e1',
+                        fontSize: '0.94rem',
+                        fontWeight: 700,
+                        color: '#0f172a'
+                      }}
+                    />
+                  </div>
+                  <span style={{ fontSize: '0.78rem', color: '#64748b' }}>
+                    💡 Customize your name to display on the official parchment.
+                  </span>
+                </div>
+
+                {/* THE PARCHMENT SHEET */}
+                <div className="stc-cert-parchment">
+                  {/* Classical Vedic Corners */}
+                  <div className="stc-cert-corner stc-cert-corner--tl">⚜</div>
+                  <div className="stc-cert-corner stc-cert-corner--tr">⚜</div>
+                  <div className="stc-cert-corner stc-cert-corner--bl">⚜</div>
+                  <div className="stc-cert-corner stc-cert-corner--br">⚜</div>
+
+                  <div className="stc-cert-watermark">ॐ</div>
+
+                  <div className="stc-cert-inner-border">
+                    {/* Gurukul Seal & Header */}
+                    <div style={{ marginBottom: '1rem' }}>
+                      <div style={{ fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#92400e', marginBottom: '0.25rem' }}>
+                        ॥ ॐ श्री गुरुभ्यो नमः ॥
+                      </div>
+                      <div style={{ fontSize: '0.88rem', fontWeight: 700, color: '#78350f', fontStyle: 'italic', marginBottom: '0.75rem' }}>
+                        विद्ययाऽमृतमश्नुते · विद्या ददाति विनयं विनयाद्याति पात्रताम्
+                      </div>
+                      <h1 className="stc-cert-main-title" style={{ fontFamily: 'serif', fontSize: '2.1rem', fontWeight: 900, color: '#78350f', margin: '0.25rem 0', letterSpacing: '0.02em' }}>
+                        संस्कृत-चिन्तन-प्रमाणपत्रम्
+                      </h1>
+                      <div style={{ fontSize: '1rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.12em', color: '#b45309' }}>
+                        Gurukul Certificate of Sanskrit Cognitive Mastery
+                      </div>
+                    </div>
+
+                    <div style={{ width: '80px', height: '2px', background: '#b45309', margin: '0.75rem auto 1.25rem' }} />
+
+                    <div style={{ fontStyle: 'italic', fontSize: '0.98rem', color: '#451a03', marginBottom: '0.4rem' }}>
+                      This is to certify with academic and contemplative honor that
+                    </div>
+
+                    {/* Recipient Name in Regal Typography */}
+                    <div className="stc-cert-recipient" style={{ fontFamily: 'Georgia, serif', fontSize: '2.25rem', fontWeight: 800, color: '#1e3a8a', padding: '0.4rem 0', textDecoration: 'underline double #b45309', margin: '0.4rem 0 0.85rem' }}>
+                      {studentName || 'विद्वान् / विदुषी'}
+                    </div>
+
+                    <p style={{ maxWidth: '680px', margin: '0 auto 1.4rem', lineHeight: 1.65, color: '#334155', fontSize: '0.94rem' }}>
+                      has diligently studied and successfully demonstrated mastery over the complete curriculum of
+                      <strong> संस्कृत-चिन्तनम् (Sanskrit as a Way of Thinking)</strong>, spanning all 6 Core Modules (28 Lessons) and 11 Advanced Masterclasses in Pāṇinian Grammatical Mechanics, Computational Binary Logic, Chaturaṅga Strategy, and Classical Darśana Epistemology.
+                    </p>
+
+                    {/* 6 Pedagogical Pillars Grid */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.65rem', maxWidth: '750px', margin: '0 auto 1.6rem', textAlign: 'left' }}>
+                      <div style={{ background: '#fdf6ec', border: '1px solid #fed7aa', padding: '0.5rem 0.65rem', borderRadius: '6px', fontSize: '0.75rem' }}>
+                        <strong style={{ color: '#9a3412', display: 'block' }}>1. ध्वनिः (Śikṣā)</strong>
+                        Acoustic calibration &amp; articulation points
+                      </div>
+                      <div style={{ background: '#fdf6ec', border: '1px solid #fed7aa', padding: '0.5rem 0.65rem', borderRadius: '6px', fontSize: '0.75rem' }}>
+                        <strong style={{ color: '#9a3412', display: 'block' }}>2. लिपिः (Orthography)</strong>
+                        Devanāgarī abugida &amp; syllable duration
+                      </div>
+                      <div style={{ background: '#fdf6ec', border: '1px solid #fed7aa', padding: '0.5rem 0.65rem', borderRadius: '6px', fontSize: '0.75rem' }}>
+                        <strong style={{ color: '#9a3412', display: 'block' }}>3. विधिः (Grammar)</strong>
+                        Pāṇinian sūtras, dhātus, &amp; sandhi logic
+                      </div>
+                      <div style={{ background: '#fdf6ec', border: '1px solid #fed7aa', padding: '0.5rem 0.65rem', borderRadius: '6px', fontSize: '0.75rem' }}>
+                        <strong style={{ color: '#9a3412', display: 'block' }}>4. वाक्यम् (Syntax)</strong>
+                        Kārakas, vibhaktis &amp; anvaya synthesis
+                      </div>
+                      <div style={{ background: '#fdf6ec', border: '1px solid #fed7aa', padding: '0.5rem 0.65rem', borderRadius: '6px', fontSize: '0.75rem' }}>
+                        <strong style={{ color: '#9a3412', display: 'block' }}>5. तर्कः (Science)</strong>
+                        Piṅgala binary logic &amp; Vedic maths
+                      </div>
+                      <div style={{ background: '#fdf6ec', border: '1px solid #fed7aa', padding: '0.5rem 0.65rem', borderRadius: '6px', fontSize: '0.75rem' }}>
+                        <strong style={{ color: '#9a3412', display: 'block' }}>6. दर्शनम् (Vision)</strong>
+                        6 Darśanas &amp; Upaniṣadic contemplation
+                      </div>
+                    </div>
+
+                    {/* Authentication Row */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', borderTop: '1px solid #fed7aa', paddingTop: '1.25rem', marginTop: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
+                      <div style={{ textAlign: 'left', fontSize: '0.8rem', color: '#64748b' }}>
+                        <div><strong>Verification Code:</strong> STC-GK-{(studentName || 'LEARNER').slice(0, 3).toUpperCase()}-2026</div>
+                        <div><strong>Curriculum Progress:</strong> {completedLessonIds.size}/28 Lessons · {completedAddendumIds.size}/11 Masterclasses</div>
+                        <div><strong>Awarded on:</strong> {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</div>
+                      </div>
+
+                      {/* Golden Embossed Seal Motif */}
+                      <div style={{ width: '85px', height: '85px', borderRadius: '50%', border: '3px solid #b45309', background: 'radial-gradient(circle, #fef3c7 20%, #fde68a 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 12px rgba(180, 83, 9, 0.25)', flexShrink: 0, margin: '0 auto' }}>
+                        <span style={{ fontSize: '1.4rem' }}>ॐ</span>
+                        <span style={{ fontSize: '0.58rem', fontWeight: 800, color: '#92400e', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                          GURUKUL SEAL
+                        </span>
+                      </div>
+
+                      <div style={{ textAlign: 'right', fontSize: '0.82rem', color: '#451a03' }}>
+                        <div style={{ fontFamily: 'cursive', fontSize: '1.15rem', color: '#78350f', borderBottom: '1px solid #b45309', paddingBottom: '0.25rem', marginBottom: '0.25rem' }}>
+                          आचार्यः सोमदेवः
+                        </div>
+                        <div><strong>Academic Council / परीक्षा-संसद्</strong></div>
+                        <div style={{ fontSize: '0.75rem', color: '#64748b' }}>Sanskrit Cognitive Studies Center</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
