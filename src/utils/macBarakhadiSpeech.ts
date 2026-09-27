@@ -101,6 +101,41 @@ const RI_COLUMN: Record<string, string> = Object.fromEntries(
   ALL_CONSONANTS.map((c) => [`${c}ृ`, c === 'ङ' ? 'ङ्ग्ऋ' : `${c}्ऋ`]),
 );
 
+/**
+ * Mac-only Varṇamālā tile cues.
+ *
+ * macOS Hindi voices can interpret an isolated Devanāgarī consonant as a
+ * Hindi word/abbreviation or collapse retroflex/aspirated letters toward a
+ * common sound. For alphabet tiles, give the voice an explicit consonant + अ
+ * cue. Conjuncts are split at the virāma so their constituent consonants remain
+ * audible. This is deliberately Mac-only; other platforms keep their path.
+ */
+const MAC_VARNAMALA_CUES: Record<string, string> = Object.fromEntries(
+  ALL_CONSONANTS.map((c) => [c, `${c}्अ`]),
+);
+
+Object.assign(MAC_VARNAMALA_CUES, {
+  'ङ': 'ङ्ग',
+  'ञ': 'ञ्अ',
+  'ज': 'ज्अ',
+  'ट': 'ट्अ',
+  'ठ': 'ठ्अ',
+  'ड': 'ड्अ',
+  'ढ': 'ढ्अ',
+  'ण': 'ण्अ',
+  'क्ष': 'क् ष',
+  'ज्ञ': 'ज् ञ',
+  'त्र': 'त् र',
+  'श्र': 'श् र',
+});
+
+/** Exact Mac Varṇamālā tile → speech cue; null on other platforms/tokens. */
+export const macVarnamalaCue = (word: string): string | null => {
+  if (!isMacDesktopPlatform()) return null;
+  const clean = word.normalize('NFC').trim();
+  return MAC_VARNAMALA_CUES[clean] ?? null;
+};
+
 const MAC_BARAKHADI_CUES: Record<string, string> = {
   // Whole rows kept from round 1 (फ भ ष)
   ...Object.assign({}, ...MAC_WHOLE_ROWS.map(buildRow)),
