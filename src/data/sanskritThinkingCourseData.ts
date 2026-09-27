@@ -2073,6 +2073,8 @@ export const COURSE_MODULES: CourseModule[] = [
         },
         linkedResources: [
           { label: 'Deepakam Chapter 1 Reciter', targetView: 'reader', badge: 'Audio Reader' },
+          { label: 'Four Vāks & Eka-Śabda Sādhana', targetView: 'course-addendum', param: 'addendum-prologue-saha-nav-avatu', badge: 'Guru Sādhana' },
+          { label: 'Devī Sūktam (RV 10.125) & Reciter', targetView: 'course-addendum', param: 'addendum-mantras-shlokas', badge: 'Vedic Reciter' },
           { label: 'Philosophy: Living Transmission vs Models', targetView: 'philosophy', badge: 'Essay' }
         ]
       },
@@ -2146,6 +2148,7 @@ export const COURSE_MODULES: CourseModule[] = [
         },
         linkedResources: [
           { label: 'Bhagavad Gītā Interactive Reciter', targetView: 'reader', badge: 'Audio Reader' },
+          { label: 'Śloka vs Mantra: Form vs Function', targetView: 'course-addendum', param: 'addendum-prologue-saha-nav-avatu', badge: 'Masterclass' },
           { label: 'Philosophy: The Well & The Bank', targetView: 'philosophy', badge: 'Article' }
         ]
       },
