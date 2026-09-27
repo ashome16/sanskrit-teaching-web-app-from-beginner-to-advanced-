@@ -266,6 +266,66 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
         },
       },
       {
+        anchorId: 'shloka-vs-mantra',
+        heading: 'Śloka and Mantra: Form vs. Function in the Guru’s Transmission (श्लोकः मन्त्रश्च)',
+        subheading: 'Verse Form vs. Sacred Practice · Understanding Meaning vs. Inhabiting Vibration',
+        paragraphs: [
+          'Shloka and mantra are related but not the same thing. People mix them up because both are usually in Sanskrit and both get recited. The difference is form vs function.',
+          '• Shloka (श्लोक) — The Architecture of Verse:\nA shloka is a verse form — a metrical stanza.\nClassic form: anuṣṭubh — 32 syllables, usually two lines of 16, or four pādas of 8.\nIt is poetry/meter. The Mahābhārata, Rāmāyaṇa, Bhagavad Gītā, Purāṇas, and most later Sanskrit literature are written in shlokas.\nEmphasis: meaning, teaching, story, praise. You are meant to understand it.\nRecitation can be spoken or sung; it does not require Vedic svara (pitch accents).\nEtymology often given: from śru (“to hear”) / later linked to Vālmīki’s spontaneous grief (śoka) that gave birth to the first śloka of human poetry.',
+          '• Mantra (मन्त्र) — The Instrument of Mind-Delivery:\nA mantra is a sacred utterance used as practice.\nTraditional gloss: मननात् त्रायते इति मन्त्रः (mananāt trāyate iti mantraḥ) — that which protects or delivers the mind through contemplation, repetition, and acoustic resonance.\nCan be one syllable (oṃ, bīja like hrīṃ), a short formula (oṃ namaḥ śivāya), or a Vedic ṛc (Gāyatrī).\nEmphasis: sound, vibration, japa, ritual, inner effect. Meaning helps, but efficacy is traditionally tied to correct sound and use, not only to intellectual understanding.\nVedic mantras have prescribed chandas and svara (pitch accents). Later nāma-mantras often start with oṃ and include a name + namaḥ.\nNot every verse is a mantra. A Gītā verse is a shloka; it becomes “used as mantra” only if a lineage or tradition treats it that way.',
+          '• Illustrative Examples:\n— Gāyatrī is a mantra (a Vedic ṛc composed in Gāyatrī meter).\n— Oṃ namo nārāyaṇāya is a mantra (a sacred eight-syllable aṣṭākṣara formula).\n— Viṣṇu Sahasranāma is a stotra made of many shlokas; select individual lines are also used as mantras.',
+        ],
+        sutras: [
+          {
+            sanskrit: 'कर्मण्येवाधिकारस्ते मा फलेषु कदाचन । मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥',
+            transliteration: 'karmaṇy-evādhikāras te mā phaleṣu kadācana | mā karma-phala-hetur bhūr mā te saṅgo\'stv-akarmaṇi ||',
+            meaning: 'You have a right only to work, never to its fruits. Let not the fruits of action be your motive, nor let your attachment be to inaction.',
+            source: 'Bhagavad Gītā 2.47 · Example of a Classic Shloka carrying Philosophical Teaching',
+          },
+          {
+            sanskrit: 'मननात् त्रायते इति मन्त्रः ॥',
+            transliteration: 'mananāt trāyate iti mantraḥ ||',
+            meaning: 'A mantra is that which delivers, protects, and transforms the mind through contemplation, focused repetition, and acoustic resonance.',
+            source: 'Traditional Śāstric Definition of Mantra',
+          },
+        ],
+        table: {
+          headers: ['Dimension', 'Shloka (श्लोकः)', 'Mantra (मन्त्रः)'],
+          rows: [
+            ['What it is', 'Verse / meter', 'Sacred formula for use & delivery'],
+            ['Main job', 'Teach, narrate, praise', 'Japa, meditation, ritual, inner transformation'],
+            ['Need meaning?', 'Yes, for full benefit & study', 'Helpful, but efficacy is tied to vibration & correct use'],
+            ['Form', 'Fixed chandas (often anuṣṭubh)', 'Any length (1 syllable to full ṛc); Vedic ones have svara'],
+            ['Typical home', 'Bhagavad Gītā, Itihāsa (Rāmāyaṇa), Purāṇa', 'Veda, tantra, nāma-japa, Upaniṣad'],
+          ],
+        },
+        callout: {
+          title: 'The Form vs. Function Principle',
+          text: '“A shloka is a form (a poetic meter carrying narrative and doctrine). A mantra is a function (a sacred acoustic instrument designed to protect and still the mind). They overlap when a metrical shloka is taken up in japa, or when a mantra is composed in metrical rhythm.”',
+          type: 'insight',
+        },
+      },
+      {
+        anchorId: 'shloka-mantra-application',
+        heading: 'Nearby Terms & Practical Application: Shloka vs. Mantra (प्रयोगः)',
+        subheading: 'Understanding Ṛc, Stotra, Sūtra, and Japa · How to Inhabit Both in Daily Practice',
+        paragraphs: [
+          'To navigate Sanskrit literature with precision, the Guru trains the disciple to distinguish the nearby terms that cluster around shloka and mantra:',
+          '• Ṛc / Ṛchā (ऋक् / ऋचा): A sacred Vedic verse or hymn (a specific kind of mantra, such as the Gāyatrī Ṛc from the Ṛgveda).',
+          '• Stotra (स्तोत्रम्): A hymn of praise, usually constructed by stringing many shlokas together (e.g. Śiva Tāṇḍava, Viṣṇu Sahasranāma).',
+          '• Sūtra (सूत्रम्): An ultra-compressed aphoristic rule (e.g. Pāṇini’s Aṣṭādhyāyī, Yoga Sūtra), not the same as a shloka.',
+          '• Japa (जपः): The disciplined act of repeating a mantra with focused breath, presence, and rhythmic stillness.',
+          '• How Shlokas are Used (Understand and Remember):\n— Morning recitation (Sarasvatī namastubhyam, Ganeśa vakratuṇḍa).\n— Teaching and memorizing dharma, philosophy, and stories from the Gītā and Rāmāyaṇa.\n— Memory, meter, sandhi recognition, and vocabulary expansion.\n— For children and beginners: meaning + picture + one line a day.',
+          '• How Mantras are Used (Repeat and Inhabit):\n— Japa with a mālā (108, 21, or 11 repetitions).\n— Pūjā, homa, and dīkṣā (conferred by a teacher in an authentic lineage).\n— Breath + sound to quiet mental turbulence and settle the mind.\n— Vedic mantras: learn from a trained reciter if you want authentic svara (pitch accents).',
+          'They overlap: a shloka can be used as a mantra if you japa it; a mantra can be written as a shloka if it is metrical.',
+        ],
+        callout: {
+          title: 'How to Apply Both in Daily Life',
+          text: '“Shloka: understand and remember — let the intellect be illuminated by meaning. Mantra: repeat and inhabit — let the breath and mind be stilled by sacred resonance.”',
+          type: 'philosophical',
+        },
+      },
+      {
         heading: 'The Culture Behind the Knowledge: Bhūmi Vandanam & The Living Ethic of Touch',
         subheading: 'Pāda-sparśa-kṣamāpana · Attitude Before Skill',
         paragraphs: [
@@ -317,8 +377,9 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
       'The living oral ethic — by hand, by foot, or by any means, do not harm the earth — grounds study in the Īśāvāsya rule: tena tyaktena bhuñjīthā (enjoy without seizing).',
       'The cosmic peace of Yajurveda (Dyauḥ śāntiḥ) encompasses sky, earth, waters, herbs, and trees—placing the learner within cosmic order.',
       'Speech is a collective resource: the Well (saha nau bhunaktu) gives nourishment, and the Bank (saha vīryaṃ karavāvahai) demands the deposit of breath, tapas, and care.',
-      'Adhikāra balances the right to draw and the duty to deposit: leaving the well fuller than one’s thirst, and the bank heavier than one’s name.',
       'Śabda-Brahman is reality as sound: Sanskrit has built-in prayojana (purpose). To learn is to use sound as the real uses sound—held still, answered for, and offered back.',
+      'Śloka vs. Mantra is form vs. function: a Shloka is a metrical stanza (classic Anuṣṭubh: 32 syllables) meant to be understood and remembered; a Mantra is a sacred utterance (mananāt trāyate) meant to be repeated and inhabited through vibration and japa.',
+      'Nearby terms: Ṛc is a sacred Vedic verse, Stotra is a hymn strung from multiple shlokas, Sūtra is an ultra-compressed algorithmic rule, and Japa is the repetition of a mantra with focused breath.',
     ],
   },
 
@@ -338,6 +399,28 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
     summary:
       'The verses that frame the Gurukul way of study, gathered in one place so they can be spoken, not only read. Each is recited line by line by the same calm recitation voice: tap a line to hear it, or recite the whole verse. Say them slowly, with the breath, as lesson 6.1 (Recitation and Focus) teaches — the attitude is part of the training.',
     sections: [
+      {
+        anchorId: 'mantras-vs-shlokas-foundations',
+        heading: 'The Foundational Distinction: Śloka vs. Mantra (Form vs. Function)',
+        subheading: 'Why Both Are Recited in Sanskrit · Poetry to Understand vs. Sacred Formula to Inhabit',
+        paragraphs: [
+          'Shloka and mantra are related but not the same thing. People mix them up because both are usually in Sanskrit and both get recited. The difference is form vs function.',
+          '• Shloka (श्लोक): A verse form — a metrical stanza (classic form: Anuṣṭubh with 32 syllables, 4 pādas of 8). It is poetry and meter. The Mahābhārata, Rāmāyaṇa, Bhagavad Gītā, and Purāṇas are written in shlokas. Emphasis: meaning, teaching, story, praise. You are meant to understand and remember it.',
+          '• Mantra (मन्त्र): A sacred utterance used as practice (मननात् त्रायते इति मन्त्रः — that which protects and delivers the mind through contemplation, repetition, and resonance). It can be one syllable (oṃ, bīja), a short formula (oṃ namaḥ śivāya), or a Vedic ṛc (Gāyatrī). Emphasis: sound, vibration, japa, ritual, and inner effect.',
+          'They overlap: a shloka can be used as a mantra if you japa it; a mantra can be written as a shloka if it is metrical.',
+        ],
+        table: {
+          headers: ['Dimension', 'Shloka (श्लोकः)', 'Mantra (मन्त्रः)'],
+          rows: [
+            ['What it is', 'Verse / meter (metrical stanza)', 'Sacred formula for use & delivery'],
+            ['Main job', 'Teach, narrate, praise', 'Japa, meditation, ritual, inner transformation'],
+            ['Need meaning?', 'Yes, for full benefit & study', 'Helpful, not always required; efficacy is in sound & use'],
+            ['Form', 'Fixed chandas (often anuṣṭubh)', 'Any length (1 syllable to full ṛc); Vedic ones have svara'],
+            ['Typical home', 'Bhagavad Gītā, Itihāsa (Rāmāyaṇa), Purāṇa', 'Veda, tantra, nāma-japa, Upaniṣad'],
+          ],
+        },
+        addendumLink: { label: '🪔 Read Full Exegesis in Guru-Paramparā Prologue', addendumId: 'addendum-prologue-saha-nav-avatu' },
+      },
       {
         anchorId: 'mantra-saha-navavatu',
         heading: 'ओं सह नाववतु — The Study-Bond (in the Prologue)',
