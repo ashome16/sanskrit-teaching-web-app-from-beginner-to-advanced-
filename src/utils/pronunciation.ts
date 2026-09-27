@@ -10,7 +10,7 @@ import {
   whenVoicesReady,
 } from './speechPlatform';
 import { getSavedVoiceName, resolveVoiceForRole } from './voiceConfig';
-import { macBarakhadiCue, pickMacBarakhadiVoice } from './macBarakhadiSpeech';
+import { isMacDesktopPlatform, macBarakhadiCue, pickMacBarakhadiVoice } from './macBarakhadiSpeech';
 import { isDandaOrVerseNumberToken } from './dandaSpeech';
 
 // Native Web Speech API pronunciation helper for Sanskrit text only.
@@ -287,9 +287,50 @@ const speakMacBarakhadiOverride = (word: string, onEnd?: () => void): boolean =>
   return true;
 };
 
+/**
+ * Mac-only vocalic vowel tiles (Varṇamālā ऋ ॠ ऌ, plus ॡ if ever shown).
+ * Plain ऋ / ॠ / लृ all came out as the same "ri" from Lekha on Mac, so each tile
+ * gets an explicit hi-IN cue and ॠ / ॡ a slower rate for the long vowel:
+ *   ऋ → रि   (short ri, rate from configureUtterance: 0.92)
+ *   ॠ → री   (long rī, rate 0.72)
+ *   ऌ → ल्रि  (lṛ ≈ "lri", rate 0.92)
+ *   ॡ → ल्री  (long lṝ ≈ "lrī", rate 0.72)
+ * Exact single-letter tokens only: the ॠकारः / ऌकारः name words (Windows-matched
+ * path), the barakhadi C्ऋ cues, Windows and iOS are unaffected. Pitch 1.0.
+ */
+const MAC_VOCALIC_CUES: Record<string, { cue: string; rate?: number }> = {
+  'ऋ': { cue: 'रि' },
+  'ॠ': { cue: 'री', rate: 0.72 },
+  'ऌ': { cue: 'ल्रि' },
+  'ॡ': { cue: 'ल्री', rate: 0.72 },
+};
+
+const speakMacVocalicVowel = (word: string, onEnd?: () => void): boolean => {
+  const entry = MAC_VOCALIC_CUES[word];
+  if (!entry || !isMacDesktopPlatform()) return false;
+  const voices = window.speechSynthesis.getVoices();
+  const savedName = getSavedVoiceName('reader');
+  const saved = savedName ? voices.find((v) => v.name === savedName) : undefined;
+  const hindi = pickMacBarakhadiVoice(voices, saved);
+  if (!hindi) return false;
+  const utterance = new SpeechSynthesisUtterance(entry.cue);
+  configureUtterance(utterance, word, entry.cue);
+  utterance.voice = hindi;
+  utterance.lang = hindi.lang || 'hi-IN';
+  utterance.pitch = 1.0;
+  if (entry.rate) utterance.rate = entry.rate;
+  if (onEnd) {
+    utterance.onend = onEnd;
+    utterance.onerror = onEnd;
+  }
+  window.speechSynthesis.speak(utterance);
+  return true;
+};
+
 const speakConfigured = (word: string, onEnd?: () => void): void => {
   if (pronunciationMuted) return;
   if (speakMacBarakhadiOverride(word, onEnd)) return;
+  if (speakMacVocalicVowel(word, onEnd)) return;
   if (word === 'ञ') {
     const voices = window.speechSynthesis.getVoices();
     const hasHindi = !!(resolveVoiceForRole('reader', voices) || pickHindiVoice(voices));
