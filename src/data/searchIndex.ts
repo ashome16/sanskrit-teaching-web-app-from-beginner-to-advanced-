@@ -38,6 +38,8 @@ export interface SearchTarget {
   courseMode?: 'curriculum' | 'addendum' | 'flashcards' | 'exam';
   philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind';
   mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero';
+  /** /vedic-maths anchor: 'zero', 'sutra-<id>', 'solver-<key>' (see vedicLearningPath.ts). */
+  vedicAnchor?: string;
   worksheetsCategory?: string;
   openBodhi?: boolean;
   bodhiTab?: 'context' | 'qa' | 'subhashita' | 'phrases';

@@ -155,6 +155,7 @@
 }
 
 .num-search-input {
+  box-sizing: border-box;
   width: 100%;
   padding: 0.65rem 1rem 0.65rem 2.4rem;
   border-radius: 10px;
@@ -181,35 +182,149 @@
   pointer-events: none;
 }
 
-.num-play-decade-btn {
+.num-play-all-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 1.25rem;
-  border-radius: 10px;
-  font-size: 0.88rem;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
   font-weight: 700;
   border: none;
   background: #0f766e;
   color: #ffffff;
   cursor: pointer;
-  transition: all 0.18s ease;
+  transition: background 0.15s ease, transform 0.15s ease;
+  box-shadow: 0 1px 3px rgba(15, 118, 110, 0.25);
   white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.num-play-decade-btn:hover {
-  background: #0d9488;
+.num-play-all-btn:hover:not(:disabled) {
+  background: #115e59;
   transform: translateY(-1px);
 }
 
-.num-play-decade-btn--playing {
-  background: #dc2626;
+.num-play-all-btn:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.num-play-all-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.num-play-all-btn--playing {
+  background: #b91c1c;
+  box-shadow: 0 1px 3px rgba(185, 28, 28, 0.3);
   animation: pulse-red 1.5s infinite;
+}
+
+.num-play-all-btn--playing:hover:not(:disabled) {
+  background: #991b1b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .num-play-all-btn--playing { animation: none; }
 }
 
 @keyframes pulse-red {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.85; }
+}
+
+.num-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.num-section {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1rem 1rem 1.15rem;
+}
+
+.num-section--playing {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.18);
+}
+
+.num-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.num-section-title {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.7rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.num-section-title-dev { color: #0f172a; }
+.num-section-title-range {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #64748b;
+  background: #e2e8f0;
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+}
+
+.num-play-group-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  border: none;
+  background: #0f766e;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(15, 118, 110, 0.25);
+  -webkit-tap-highlight-color: transparent;
+}
+.num-play-group-btn:hover { background: #115e59; }
+.num-play-group-btn--playing {
+  background: #b91c1c;
+  box-shadow: 0 1px 3px rgba(185, 28, 28, 0.3);
+  animation: pulse-red 1.5s infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .num-play-group-btn--playing { animation: none; }
+}
+
+.num-tab-playbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+  border-radius: 12px;
+}
+.num-tab-playbar-hint {
+  font-size: 0.84rem;
+  color: #0f766e;
+  font-weight: 600;
 }
 
 .num-decade-chips {
@@ -244,8 +359,9 @@
 /* 1-100 Number Cards Grid */
 .num-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.85rem;
+  align-items: stretch;
 }
 
 .num-card {
@@ -253,13 +369,17 @@
   background: #ffffff;
   border: 1.5px solid #e2e8f0;
   border-radius: 14px;
-  padding: 1.15rem 1rem;
+  padding: 0.95rem 0.75rem 0.85rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 0.35rem;
+  box-sizing: border-box;
+  min-width: 0;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease, background 0.15s ease;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .num-card:hover {
@@ -275,82 +395,123 @@
   transform: scale(1.02);
 }
 
-.num-card-badge {
-  position: absolute;
-  top: 0.65rem;
-  left: 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: #64748b;
-  background: #f1f5f9;
-  padding: 0.15rem 0.45rem;
-  border-radius: 6px;
+.num-card-numerals {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0.1rem 0 0.15rem;
 }
 
 .num-card-digits {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 900;
   color: #1e3a8a;
   line-height: 1;
-  margin: 0.6rem 0 0.4rem;
+}
+
+.num-card-badge {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 0.12rem 0.45rem;
+  border-radius: 6px;
+  line-height: 1.2;
+}
+
+.num-card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  width: 100%;
+  min-height: 4.6rem;
 }
 
 .num-card-word {
-  font-size: 1.22rem;
+  font-size: 1.12rem;
   font-weight: 800;
   color: #0f172a;
-  margin: 0 0 0.2rem;
+  line-height: 1.25;
+  word-break: break-word;
 }
 
 .num-card-iast {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-style: italic;
   color: #64748b;
-  margin-bottom: 0.4rem;
+  line-height: 1.3;
 }
 
 .num-card-en {
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 700;
   color: #047857;
   background: #ecfdf5;
-  padding: 0.2rem 0.6rem;
+  padding: 0.15rem 0.55rem;
   border-radius: 999px;
-  margin-bottom: 0.5rem;
 }
 
 .num-card-breakdown {
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   color: #64748b;
   background: #f8fafc;
   border: 1px dashed #cbd5e1;
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0.45rem;
   border-radius: 6px;
-  margin-top: auto;
   width: 100%;
   box-sizing: border-box;
+  margin-top: auto;
+  line-height: 1.35;
 }
 
 .num-card-audio-btn {
-  margin-top: 0.6rem;
+  margin-top: 0.35rem;
   background: #f1f5f9;
   border: 1px solid #e2e8f0;
   border-radius: 999px;
-  padding: 0.3rem 0.8rem;
-  font-size: 0.78rem;
+  padding: 0.28rem 0.75rem;
+  font-size: 0.76rem;
   font-weight: 700;
   color: #334155;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  transition: all 0.15s ease;
+  gap: 0.3rem;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
 .num-card-audio-btn:hover {
   background: #e2e8f0;
   color: #0f172a;
 }
+
+/* Zero sits on its own full-width row so 1–10 line up as two rows of five. */
+.num-card--zero {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem 1.1rem;
+  padding: 0.7rem 1rem;
+}
+.num-card--zero .num-card-numerals { margin: 0; }
+.num-card--zero .num-card-text {
+  min-height: 0;
+  width: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.2rem 0.6rem;
+}
+.num-card--zero .num-card-breakdown {
+  width: auto;
+  margin-top: 0;
+}
+.num-card--zero .num-card-audio-btn { margin-top: 0; }
 
 /* ==========================================================================
    Tab 2: Gender Declension Layout (1-4)
@@ -1275,17 +1436,27 @@
     font-size: 1.45rem;
   }
   .num-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 0.75rem;
+    font-size: 1.45rem;
   }
-  .num-card-digits {
-    font-size: 1.75rem;
+.num-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
   }
-  .num-card-word {
-    font-size: 1.05rem;
-  }
+  .num-card-digits { font-size: 1.65rem; }
+  .num-card-word { font-size: 1rem; }
+  .num-card-text { min-height: 4.2rem; }
+  .num-section { padding: 0.85rem 0.7rem 1rem; }
+  .num-section-title { font-size: 0.95rem; }
+
   .quiz-options-grid {
     grid-template-columns: 1fr;
+  }
+  .num-search-box {
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+  .num-play-all-btn {
+    flex: 1 1 100%;
   }
   .vedic-scale-row {
     flex-direction: column;
@@ -1312,3 +1483,237 @@
   }
 }
 
+
+
+@media (max-width: 1100px) and (min-width: 769px) {
+  .num-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) and (min-width: 481px) {
+  .num-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.ordinal-row--playing td {
+  background: #eff6ff;
+}
+.vedic-scale-row--playing {
+  border-color: #2563eb;
+  background: #eff6ff;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Read more · History of Indian numerals */
+.num-readmore {
+  margin: 2rem 0 0.5rem;
+  padding: 1.25rem 1.35rem;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  text-align: left;
+}
+.num-readmore-title {
+  margin: 0 0 0.45rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+.num-readmore-note {
+  margin: 0 0 0.9rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #475569;
+}
+.num-readmore-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+.num-readmore-link {
+  display: grid;
+  grid-template-columns: 1.75rem 1fr auto;
+  gap: 0.65rem;
+  align-items: center;
+  padding: 0.7rem 0.85rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.num-readmore-link:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+.num-readmore-emoji { font-size: 1.15rem; }
+.num-readmore-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.num-readmore-text strong {
+  font-size: 0.95rem;
+  color: #1d4ed8;
+}
+.num-readmore-text span {
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+.num-readmore-arrow {
+  color: #64748b;
+  font-weight: 800;
+}
+
+/* Dark mode — content area follows prefers-color-scheme / data-theme */
+@media (prefers-color-scheme: dark) {
+  .num-guide-container {
+    background: #1c1d24;
+    border-color: #2e303a;
+    color: #e5e7eb;
+    box-shadow: none;
+  }
+  .num-guide-title,
+  .num-section-title,
+  .num-section-title-dev,
+  .num-card-word,
+  .num-readmore-title { color: #f3f4f6; }
+  .num-guide-desc,
+  .num-guide-subtitle,
+  .num-card-iast,
+  .num-readmore-note,
+  .num-readmore-text span { color: #9ca3af; }
+  .num-toolbar,
+  .num-section,
+  .num-readmore {
+    background: #16171d;
+    border-color: #2e303a;
+  }
+  .num-search-input,
+  .num-card,
+  .num-readmore-link,
+  .num-decade-chip {
+    background: #1f2028;
+    border-color: #2e303a;
+    color: #e5e7eb;
+  }
+  .num-card-digits { color: #93c5fd; }
+  .num-card-badge,
+  .num-section-title-range {
+    background: #2e303a;
+    color: #9ca3af;
+  }
+  .num-card-en {
+    background: rgba(16, 185, 129, 0.15);
+    color: #6ee7b7;
+  }
+  .num-card-breakdown {
+    background: #16171d;
+    border-color: #3f4250;
+    color: #9ca3af;
+  }
+  .num-card-audio-btn {
+    background: #2e303a;
+    border-color: #3f4250;
+    color: #e5e7eb;
+  }
+  .num-card--playing {
+    background: rgba(37, 99, 235, 0.2);
+    border-color: #60a5fa;
+  }
+  .num-decade-chip--active {
+    background: #e5e7eb;
+    color: #111827;
+    border-color: #e5e7eb;
+  }
+  .num-tab-playbar {
+    background: rgba(15, 118, 110, 0.15);
+    border-color: rgba(45, 212, 191, 0.35);
+  }
+  .num-tab-playbar-hint { color: #5eead4; }
+  .num-bodhi-banner {
+    background: #16171d;
+    border-color: #2e303a;
+  }
+  .num-bodhi-quote { color: #d1d5db; }
+  .num-readmore-text strong { color: #93c5fd; }
+  .num-readmore-link:hover { border-color: #60a5fa; }
+}
+
+[data-theme='dark'] .num-guide-container {
+  background: #1c1d24;
+  border-color: #2e303a;
+  color: #e5e7eb;
+  box-shadow: none;
+}
+[data-theme='dark'] .num-guide-title,
+[data-theme='dark'] .num-section-title,
+[data-theme='dark'] .num-section-title-dev,
+[data-theme='dark'] .num-card-word,
+[data-theme='dark'] .num-readmore-title { color: #f3f4f6; }
+[data-theme='dark'] .num-guide-desc,
+[data-theme='dark'] .num-guide-subtitle,
+[data-theme='dark'] .num-card-iast,
+[data-theme='dark'] .num-readmore-note,
+[data-theme='dark'] .num-readmore-text span { color: #9ca3af; }
+[data-theme='dark'] .num-toolbar,
+[data-theme='dark'] .num-section,
+[data-theme='dark'] .num-readmore {
+  background: #16171d;
+  border-color: #2e303a;
+}
+[data-theme='dark'] .num-search-input,
+[data-theme='dark'] .num-card,
+[data-theme='dark'] .num-readmore-link,
+[data-theme='dark'] .num-decade-chip {
+  background: #1f2028;
+  border-color: #2e303a;
+  color: #e5e7eb;
+}
+[data-theme='dark'] .num-card-digits { color: #93c5fd; }
+[data-theme='dark'] .num-card-badge,
+[data-theme='dark'] .num-section-title-range {
+  background: #2e303a;
+  color: #9ca3af;
+}
+[data-theme='dark'] .num-card-en {
+  background: rgba(16, 185, 129, 0.15);
+  color: #6ee7b7;
+}
+[data-theme='dark'] .num-card-breakdown {
+  background: #16171d;
+  border-color: #3f4250;
+  color: #9ca3af;
+}
+[data-theme='dark'] .num-card-audio-btn {
+  background: #2e303a;
+  border-color: #3f4250;
+  color: #e5e7eb;
+}
+[data-theme='dark'] .num-card--playing {
+  background: rgba(37, 99, 235, 0.2);
+  border-color: #60a5fa;
+}
+[data-theme='dark'] .num-decade-chip--active {
+  background: #e5e7eb;
+  color: #111827;
+  border-color: #e5e7eb;
+}
+[data-theme='dark'] .num-tab-playbar {
+  background: rgba(15, 118, 110, 0.15);
+  border-color: rgba(45, 212, 191, 0.35);
+}
+[data-theme='dark'] .num-tab-playbar-hint { color: #5eead4; }
+[data-theme='dark'] .num-bodhi-banner {
+  background: #16171d;
+  border-color: #2e303a;
+}
+[data-theme='dark'] .num-bodhi-quote { color: #d1d5db; }
+[data-theme='dark'] .num-readmore-text strong { color: #93c5fd; }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   VEDIC_ZERO_ESSAY,
   VEDIC_LOGIC_LANGUAGE_ESSAY,
@@ -16,10 +16,12 @@ import { useAuthStore } from '../store/authStore';
 import { hasPremiumAccess, canDownloadContent } from '../utils/premiumAccess';
 import { downloadBlob, escapeHtml } from '../utils/contentDownload';
 import { playPronunciation } from '../utils/pronunciation';
+import { VEDIC_LEARNING_PATH, VEDIC_PATH_SUTRA_IDS, vedicPathIndex } from '../data/vedicLearningPath';
+import { VedicLearningPath } from './VedicLearningPath';
 import '../styles/vedic-maths.css';
 import '../styles/resources.css';
 
-type VedicTab = 'solvers' | 'articles' | 'zero' | 'fluid' | 'algebra' | 'geometry' | 'parampara' | 'logic' | 'sutras' | 'quiz' | 'essay';
+export type VedicTab = 'solvers' | 'articles' | 'zero' | 'fluid' | 'algebra' | 'geometry' | 'parampara' | 'logic' | 'sutras' | 'quiz' | 'essay';
 type SolverKey = 'ekadhikena' | 'nikhilam-sub' | 'nikhilam-mul' | 'urdhva' | 'ekanyunena' | 'antya' | 'beejank';
 
 export interface VedicMathsProps {
@@ -29,6 +31,12 @@ export interface VedicMathsProps {
   onOpenGrammar?: () => void;
   onOpenRegister?: () => void;
   onOpenLogin?: () => void;
+  /** Tab to open first (e.g. 'zero' from search / Numbers guide "Read more"). */
+  initialTab?: VedicTab;
+  /** Anchor to open first: 'zero' | 'vedic-path' | 'sutra-<id>' | 'solver-<key>' (also read from the URL hash). */
+  initialAnchor?: string;
+  /** "New here? Start from Numbers" → Sanskrit Numbers guide. */
+  onOpenNumbers?: () => void;
 }
 
 const VedicMaths: React.FC<VedicMathsProps> = ({
@@ -37,13 +45,16 @@ const VedicMaths: React.FC<VedicMathsProps> = ({
   onOpenPhilosophy,
   onOpenGrammar,
   onOpenRegister,
-  onOpenLogin
+  onOpenLogin,
+  initialTab = 'solvers',
+  initialAnchor,
+  onOpenNumbers,
 }) => {
   const { currentUser, isAdminLoggedIn, openAuthModal, openPaymentModal } = useAuthStore();
   const isSubscribed = hasPremiumAccess(currentUser, isAdminLoggedIn);
   const canDownload = canDownloadContent(currentUser, isAdminLoggedIn);
 
-  const [activeTab, setActiveTab] = useState<VedicTab>('solvers');
+  const [activeTab, setActiveTab] = useState<VedicTab>(initialTab);
 
   // Sub-Sutra Practice Worksheet States
   const [activeWorksheetSubSutraId, setActiveWorksheetSubSutraId] = useState<number | null>(null);
@@ -334,6 +345,91 @@ ${bodyHtml}
     return matchesSearch && matchesFilter;
   });
 
+  // Display order follows the shared Numbers → Vedic Maths path, then the rest by number.
+  const orderedSutras = [
+    ...VEDIC_PATH_SUTRA_IDS.flatMap((id) => filteredSutras.filter((sutra) => sutra.id === id)),
+    ...filteredSutras.filter((sutra) => !VEDIC_PATH_SUTRA_IDS.includes(sutra.id)),
+  ];
+
+  // ---- Anchor navigation (/vedic-maths#zero, #vedic-path, #sutra-<id>, #solver-<key>) ----
+  const [pendingScrollId, setPendingScrollId] = useState<string | null>(null);
+  const [flashId, setFlashId] = useState<string | null>(null);
+
+  const goToAnchor = (anchor: string, updateUrl = true): boolean => {
+    const clean = anchor.replace(/^#/, '');
+    let scrollId: string;
+    if (clean === 'zero') {
+      setActiveTab('zero');
+      scrollId = 'vedic-tabs';
+    } else if (clean === 'vedic-path') {
+      setActiveTab('sutras');
+      scrollId = 'vedic-path';
+    } else if (/^sutra-\d+$/.test(clean)) {
+      const id = Number(clean.slice(6));
+      if (!VEDIC_SUTRAS.some((s) => s.id === id)) return false;
+      setActiveTab('sutras');
+      setSutraFilter('all');
+      setSutraSearch('');
+      scrollId = clean;
+    } else if (clean.startsWith('solver-')) {
+      const key = clean.slice(7) as SolverKey;
+      const keys: SolverKey[] = ['ekadhikena', 'nikhilam-sub', 'nikhilam-mul', 'urdhva', 'ekanyunena', 'antya', 'beejank'];
+      if (!keys.includes(key)) return false;
+      setActiveTab('solvers');
+      setActiveSolver(key);
+      scrollId = 'vedic-solver-layout';
+    } else {
+      return false;
+    }
+    if (updateUrl && typeof window !== 'undefined') {
+      const { pathname, search } = window.location;
+      window.history.replaceState(window.history.state, '', `${pathname}${search}#${clean}`);
+    }
+    setPendingScrollId(scrollId);
+    return true;
+  };
+
+  // Open the anchor from the Numbers guide / search, or from the URL hash on load + hash changes.
+  useEffect(() => {
+    const fromHash = typeof window !== 'undefined' ? window.location.hash.replace(/^#/, '') : '';
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (initialAnchor) goToAnchor(initialAnchor);
+    else if (fromHash) goToAnchor(fromHash, false);
+    const onHash = () => {
+      const h = window.location.hash.replace(/^#/, '');
+      if (h) goToAnchor(h, false);
+    };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!pendingScrollId) return;
+    const id = pendingScrollId;
+    const raf = window.requestAnimationFrame(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+        el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        if (id.startsWith('sutra-')) setFlashId(id);
+      }
+      setPendingScrollId(null);
+    });
+    return () => window.cancelAnimationFrame(raf);
+  }, [pendingScrollId, activeTab]);
+
+  useEffect(() => {
+    if (!flashId) return;
+    const t = window.setTimeout(() => setFlashId(null), 2200);
+    return () => window.clearTimeout(t);
+  }, [flashId]);
+
+  const onAnchorLink = (anchor: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    if (goToAnchor(anchor)) e.preventDefault();
+  };
+
   // Digital Root (Beejank) Helper
   const getDigitalRoot = (n: number): number => {
     let sum = Math.abs(n);
@@ -456,8 +552,31 @@ ${bodyHtml}
           The Magic of Numbers &amp; The Architecture of Absolute Zero: An ultra-efficient system of mental calculation that allows people to solve arithmetic and algebraic problems 10 to 15 times faster than conventional methods.
         </p>
 
+        {onOpenNumbers && (
+          <p className="vedic-numbers-start">
+            <span aria-hidden="true">🔢</span> New here?{' '}
+            <a
+              href="/grammar"
+              onClick={(e) => {
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+                e.preventDefault();
+                onOpenNumbers();
+              }}
+            >
+              Start from Numbers (संख्याः 0–100) →
+            </a>{' '}
+            <span className="vedic-numbers-start-sub">
+              then follow the{' '}
+              <a href="/vedic-maths#vedic-path" onClick={onAnchorLink('vedic-path')}>
+                step-by-step path
+              </a>
+              .
+            </span>
+          </p>
+        )}
+
         {/* Tab Navigation */}
-        <div className="vedic-tabs">
+        <div className="vedic-tabs" id="vedic-tabs">
           <button
             type="button"
             className={`vedic-tab-btn${activeTab === 'solvers' ? ' active' : ''}`}
@@ -544,7 +663,7 @@ ${bodyHtml}
       {/* Main Content Area */}
       <main className="vedic-content-wrap">
         {activeTab === 'solvers' && (
-          <div className="solver-layout">
+          <div className="solver-layout" id="vedic-solver-layout">
             {/* Sidebar with Solver Methods */}
             <aside className="solver-sidebar">
               <h3 className="solver-sidebar-title">⚡ Vedic Techniques</h3>
@@ -2462,6 +2581,15 @@ ${bodyHtml}
               </ol>
             </div>
 
+            <VedicLearningPath
+              id="vedic-path"
+              heading="🧭 Step-by-step path: Numbers → Vedic Maths (Classes 6–8)"
+              intro="The sutra cards below follow this same order. Start at Step 1 and use ← Previous / Next → on each card."
+              onOpen={(anchor, e) => {
+                if (goToAnchor(anchor)) e.preventDefault();
+              }}
+            />
+
             <div className="sutra-search-bar">
               <input
                 type="text"
@@ -2493,8 +2621,22 @@ ${bodyHtml}
             </div>
 
             <div className="sutras-grid">
-              {filteredSutras.map((sutra: VedicSutra) => (
-                <div key={sutra.id} className="sutra-card">
+              {orderedSutras.map((sutra: VedicSutra) => {
+                const stepIdx = vedicPathIndex(`sutra-${sutra.id}`);
+                const prevStep = stepIdx > 0 ? VEDIC_LEARNING_PATH[stepIdx - 1] : null;
+                const nextStep = stepIdx >= 0 && stepIdx < VEDIC_LEARNING_PATH.length - 1 ? VEDIC_LEARNING_PATH[stepIdx + 1] : null;
+                const pathStep = stepIdx >= 0 ? VEDIC_LEARNING_PATH[stepIdx] : null;
+                return (
+                <div
+                  key={sutra.id}
+                  id={`sutra-${sutra.id}`}
+                  className={`sutra-card${flashId === `sutra-${sutra.id}` ? ' sutra-card--flash' : ''}`}
+                >
+                  {pathStep && (
+                    <div className="sutra-step-tag">
+                      Step {stepIdx + 1} of {VEDIC_LEARNING_PATH.length}
+                    </div>
+                  )}
                   <div className="sutra-card-top">
                     <div className="sutra-card-badge-row">
                       <span className="sutra-card-num">Sutra {sutra.id}</span>
@@ -2533,8 +2675,33 @@ ${bodyHtml}
                     </ul>
                     <div className="sutra-card-example-ans">➔ Answer: {sutra.example.answer}</div>
                   </div>
+
+                  {pathStep && (
+                    <nav className="sutra-step-nav" aria-label={`Learning path step ${stepIdx + 1}`}>
+                      {prevStep ? (
+                        <a href={`/vedic-maths#${prevStep.anchor}`} onClick={onAnchorLink(prevStep.anchor)} className="sutra-step-nav-link">
+                          ← Previous: {prevStep.title}
+                        </a>
+                      ) : (
+                        <span />
+                      )}
+                      {pathStep.solver && (
+                        <a href={`/vedic-maths#solver-${pathStep.solver}`} onClick={onAnchorLink(`solver-${pathStep.solver}`)} className="sutra-step-nav-link sutra-step-nav-link--try">
+                          ▶ Try it
+                        </a>
+                      )}
+                      {nextStep ? (
+                        <a href={`/vedic-maths#${nextStep.anchor}`} onClick={onAnchorLink(nextStep.anchor)} className="sutra-step-nav-link sutra-step-nav-link--next">
+                          Next: {nextStep.title} →
+                        </a>
+                      ) : (
+                        <span className="sutra-step-nav-done">🎉 Path complete — explore the other sutras below</span>
+                      )}
+                    </nav>
+                  )}
                 </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Sub-Sutras Section with Subscription Practice Worksheets */}

@@ -15,7 +15,8 @@ import BodhiGuideWidget from './BodhiGuideWidget';
 import GlobalSearchModal from './GlobalSearchModal';
 import VoiceSettingsModal from './VoiceSettingsModal';
 import { getSearchShortcut } from '../utils/platformShortcut';
-import type { SearchItem } from '../data/searchIndex';
+import type { SearchItem, SearchTarget } from '../data/searchIndex';
+import type { VedicTab } from './VedicMaths';
 import type { GrammarTopic } from './Grammar';
 
 // Lazy-loaded heavy modules for fast initial homepage performance
@@ -238,6 +239,7 @@ const Dashboard: React.FC = () => {
   const [grammarResetKey, setGrammarResetKey] = useState(0);
   const [grammarTargetTopic, setGrammarTargetTopic] = useState<GrammarTopic>('home');
   const [grammarTargetArticleId, setGrammarTargetArticleId] = useState<string | null>(null);
+  const [vedicTarget, setVedicTarget] = useState<{ tab: VedicTab; anchor?: string; key: number }>({ tab: 'solvers', key: 0 });
   const [philosophyEssay, setPhilosophyEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind'>('ai_sanskrit');
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
@@ -396,6 +398,12 @@ const Dashboard: React.FC = () => {
     }
 
     if (target.view === 'vedic-maths') {
+      const anchor = target.vedicAnchor;
+      let tab: VedicTab = 'solvers';
+      if (anchor === 'zero' || target.mathsTab === 'zero') tab = 'zero';
+      else if (anchor?.startsWith('sutra-') || anchor === 'vedic-path' || target.mathsTab === 'sutras') tab = 'sutras';
+      else if (anchor?.startsWith('solver-')) tab = 'solvers';
+      setVedicTarget((prev) => ({ tab, anchor, key: prev.key + 1 }));
       navigateToView('vedic-maths');
       return;
     }
@@ -428,6 +436,20 @@ const Dashboard: React.FC = () => {
 
     navigateToView(target.view);
   };
+
+  // In-page links (e.g. Numbers guide "Read more") ask for the same navigation as search.
+  const searchNavigateRef = useRef(handleSearchResultNavigate);
+  searchNavigateRef.current = handleSearchResultNavigate;
+  useEffect(() => {
+    const onOpenTarget = (event: Event) => {
+      const detail = (event as CustomEvent<{ target?: SearchTarget; handled?: boolean }>).detail;
+      if (!detail?.target?.view) return;
+      detail.handled = true;
+      searchNavigateRef.current({ target: detail.target } as SearchItem);
+    };
+    window.addEventListener('ednet:open-target', onOpenTarget);
+    return () => window.removeEventListener('ednet:open-target', onOpenTarget);
+  }, []);
 
   // Hidden / Secret trigger for Admin Portal:
   // 1. Triple-clicking the Gurukul brand logo
@@ -1064,6 +1086,10 @@ const Dashboard: React.FC = () => {
         )}
         {activeView === 'vedic-maths' && (
           <VedicMaths
+            key={`vedic-${vedicTarget.key}`}
+            initialTab={vedicTarget.tab}
+            initialAnchor={vedicTarget.anchor}
+            onOpenNumbers={() => handleOpenGrammar('numbers')}
             onGoHome={() => setActiveView('home')}
             onOpenReader={() => openDeepakam()}
             onOpenPhilosophy={() => navigateToView('philosophy')}

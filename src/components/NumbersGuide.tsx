@@ -9,6 +9,7 @@ import {
 } from '../data/sanskritNumbers';
 import { playPronunciation, stopPronunciation, playSequence } from '../utils/pronunciation';
 import { BodhiAvatar } from './BodhiAvatar';
+import { VedicLearningPath } from './VedicLearningPath';
 import '../styles/numbers-guide.css';
 
 interface NumbersGuideProps {
@@ -16,6 +17,74 @@ interface NumbersGuideProps {
 }
 
 type GuideTab = 'grid' | 'gender' | 'ordinals' | 'vedic' | 'rules' | 'quiz';
+
+/**
+ * Existing articles on the site about the history of Indian numerals.
+ * Clicking dispatches `ednet:open-target` (handled by Dashboard with the same
+ * navigation the global search uses); the href is the real page fallback.
+ */
+interface ReadMoreLink {
+  id: string;
+  emoji: string;
+  title: string;
+  blurb: string;
+  href: string;
+  target: Record<string, string>;
+}
+
+const NUMBERS_READ_MORE: ReadMoreLink[] = [
+  {
+    id: 'zero-grid',
+    emoji: '🪐',
+    title: 'The Numerical Grid & Zero',
+    blurb: 'Vedic Maths · decimal place value and śūnya (zero), and how the system travelled to Europe.',
+    href: '/vedic-maths#zero',
+    target: { view: 'vedic-maths', vedicAnchor: 'zero' },
+  },
+  {
+    id: 'katapayadi',
+    emoji: '🔢',
+    title: 'कटपयादि · Kaṭapayādi',
+    blurb: 'Article · the letter-number cipher and अङ्कानां वामतो गतिः (digits read right-to-left).',
+    href: '/grammar',
+    target: { view: 'grammar', grammarTopic: 'article', grammarArticleId: 'katapayadi-number-words' },
+  },
+  {
+    id: 'sunyat-anantam',
+    emoji: '🌌',
+    title: 'Śūnyāt Anantam (शून्यात् अनन्तम्)',
+    blurb: 'Darśana essay · the journey of Gaṇita-śāstra, from zero to infinity.',
+    href: '/philosophy',
+    target: { view: 'philosophy', philosophyEssay: 'sunyat_anantam' },
+  },
+  {
+    id: 'pingala',
+    emoji: '⚡',
+    title: 'The Binary Blueprint: Piṅgala',
+    blurb: 'Darśana essay · Chandaḥśāstra, laghu (0) & guru (1) and Meru-prastāra.',
+    href: '/philosophy',
+    target: { view: 'philosophy', philosophyEssay: 'pingala_binary' },
+  },
+  {
+    id: 'lilavati',
+    emoji: '📐',
+    title: 'The Poetic Equation: Bhāskara’s Līlāvatī',
+    blurb: 'Darśana essay · mathematics written as Sanskrit verse.',
+    href: '/philosophy',
+    target: { view: 'philosophy', philosophyEssay: 'lilavati_math' },
+  },
+];
+
+/** In-app navigation via Dashboard; falls back to the link's real href when unhandled. */
+const openSiteTarget = (event: React.MouseEvent<HTMLAnchorElement>, target: Record<string, string>) => {
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+  const detail = { target, handled: false };
+  window.dispatchEvent(new CustomEvent('ednet:open-target', { detail }));
+  if (detail.handled) {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+};
 
 interface QuizQuestion {
   question: string;
@@ -31,8 +100,11 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [composerNumber, setComposerNumber] = useState<number>(24);
   const [playingWord, setPlayingWord] = useState<string | null>(null);
-  const [isPlayingDecade, setIsPlayingDecade] = useState(false);
+  /** Which ▶ Play all queue is running: 'all', a decade id, 'ordinals' or 'vedic'. */
+  const [playingGroup, setPlayingGroup] = useState<string | null>(null);
+  const isPlayingAll = playingGroup !== null;
   const stopPlaySequenceRef = useRef<(() => void) | null>(null);
+  const guideRef = useRef<HTMLElement | null>(null);
 
   // Quiz state
   const [quizScore, setQuizScore] = useState(0);
@@ -52,7 +124,7 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
   const handleSpeak = (word: string) => {
     stopPlaySequenceRef.current?.();
     stopPlaySequenceRef.current = null;
-    setIsPlayingDecade(false);
+    setPlayingGroup(null);
     stopPronunciation();
 
     setPlayingWord(word);
@@ -85,34 +157,83 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
     });
   }, [selectedDecade, searchQuery]);
 
-  // Decade audio sequence playback
-  const handleTogglePlayDecade = () => {
-    if (isPlayingDecade) {
-      stopPlaySequenceRef.current?.();
-      stopPlaySequenceRef.current = null;
-      stopPronunciation();
-      setIsPlayingDecade(false);
-      setPlayingWord(null);
-      return;
-    }
+  // 1–100 cards grouped into their decade sections (respecting decade filter + search).
+  const numberSections = useMemo(
+    () =>
+      DECADE_GROUPS.filter((group) => group.id !== 'all')
+        .map((group) => ({
+          ...group,
+          items: filteredNumbers.filter((item) => item.decadeGroup === group.id),
+        }))
+        .filter((group) => group.items.length > 0),
+    [filteredNumbers],
+  );
 
-    const wordsToPlay = filteredNumbers.map((item) => item.word);
-    if (!wordsToPlay.length) return;
+  /** Cancel a running ▶ Play all (Stop button, tab / filter change, unmount). */
+  const stopPlayAll = () => {
+    stopPlaySequenceRef.current?.();
+    stopPlaySequenceRef.current = null;
+    stopPronunciation();
+    setPlayingGroup(null);
+    setPlayingWord(null);
+  };
 
-    setIsPlayingDecade(true);
-    stopPlaySequenceRef.current = playSequence(wordsToPlay, {
-      gapMs: 380,
-      onItem: (word) => {
-        setPlayingWord(word);
-        onSelectWord?.(word);
+  // ▶ Play all — speaks each word in order through playSequence, which uses the
+  // same speakConfigured() pipeline (voice, rate, pitch) as playPronunciation /
+  // each card's tap-to-hear. Tapping the running group's button again stops it.
+  const handleTogglePlayGroup = (groupId: string, words: string[]) => {
+    const wasPlayingThis = playingGroup === groupId;
+    stopPlayAll();
+    if (wasPlayingThis || !words.length) return;
+
+    setPlayingGroup(groupId);
+    stopPlaySequenceRef.current = playSequence(words, {
+      gapMs: 600,
+      onItem: (word, index) => {
+        // Highlight only. (Calling onSelectWord here would re-speak via the parent
+        // and cancel the queue.)
+        setPlayingWord(words[index] ?? word);
       },
       onDone: () => {
         stopPlaySequenceRef.current = null;
-        setIsPlayingDecade(false);
+        setPlayingGroup(null);
         setPlayingWord(null);
       },
     });
   };
+
+  const handleTogglePlayAll = () =>
+    handleTogglePlayGroup(
+      'all',
+      filteredNumbers.map((item) => item.word),
+    );
+
+  // Changing tab, decade or search mid-playback cancels Play all.
+  useEffect(() => {
+    if (!stopPlaySequenceRef.current) return;
+    stopPlaySequenceRef.current();
+    stopPlaySequenceRef.current = null;
+    stopPronunciation();
+    setPlayingGroup(null);
+    setPlayingWord(null);
+  }, [activeTab, selectedDecade, searchQuery]);
+
+  // While playing, gently bring the current item into view if it is off-screen.
+  useEffect(() => {
+    if (!isPlayingAll || !playingWord || !guideRef.current) return;
+    const el = Array.from(guideRef.current.querySelectorAll<HTMLElement>('[data-play-word]')).find(
+      (node) => node.dataset.playWord === playingWord,
+    );
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const viewH = window.innerHeight || document.documentElement.clientHeight;
+    const offScreen = rect.top < 0 || rect.bottom > viewH;
+    if (!offScreen) return;
+    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center', inline: 'nearest' });
+  }, [isPlayingAll, playingWord]);
+
+  const playButtonLabel = (groupId: string, idle: string) => (playingGroup === groupId ? '■ Stop' : idle);
 
   // Quiz questions bank
   const quizQuestions: QuizQuestion[] = useMemo(() => [
@@ -201,7 +322,7 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
   };
 
   return (
-    <section className="num-guide-container" aria-label="Sanskrit Numbers Guide">
+    <section className="num-guide-container" aria-label="Sanskrit Numbers Guide" ref={guideRef}>
       {/* Header */}
       <header className="num-guide-header">
         <div className="num-guide-badge">
@@ -321,11 +442,19 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
 
               <button
                 type="button"
-                className={`num-play-decade-btn${isPlayingDecade ? ' num-play-decade-btn--playing' : ''}`}
-                onClick={handleTogglePlayDecade}
-                title="Play all numbers in this view sequentially"
+                className={`num-play-all-btn${playingGroup === 'all' ? ' num-play-all-btn--playing' : ''}`}
+                onClick={handleTogglePlayAll}
+                aria-pressed={playingGroup === 'all'}
+                disabled={playingGroup !== 'all' && filteredNumbers.length === 0}
+                title={
+                  playingGroup === 'all'
+                    ? 'Stop playback'
+                    : selectedDecade === 'all' && !searchQuery.trim()
+                    ? 'Hear every number 1–100 in order'
+                    : 'Hear every number shown below, in order'
+                }
               >
-                <span>{isPlayingDecade ? '⏹ Stop Audio' : '▶ Play Group Audio'}</span>
+                {playButtonLabel('all', '▶ Play all')}
               </button>
             </div>
 
@@ -344,51 +473,90 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
             </div>
           </div>
 
-          {/* Cards Grid */}
-          <div className="num-grid" role="region" aria-label="Number tiles">
-            {filteredNumbers.map((item: SanskritNumberItem) => {
-              const isPlaying = playingWord === item.word;
+          {/* Cards grouped by decade, each with its own ▶ Play */}
+          <div className="num-sections" role="region" aria-label="Number tiles">
+            {numberSections.map((section) => {
+              const [from, to] = section.range;
+              const sectionPlaying = playingGroup === section.id;
               return (
-                <div
-                  key={item.value}
-                  role="button"
-                  tabIndex={0}
-                  className={`num-card${isPlaying ? ' num-card--playing' : ''}`}
-                  onClick={() => handleSpeak(item.word)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      handleSpeak(item.word);
-                    }
-                  }}
-                  title={`Click to pronounce ${item.word} (${item.english})`}
-                  aria-label={`${item.value} in Sanskrit is ${item.word} (${item.iast})`}
+                <section
+                  key={section.id}
+                  className={`num-section${sectionPlaying ? ' num-section--playing' : ''}`}
+                  aria-labelledby={`num-section-${section.id}`}
                 >
-                  <span className="num-card-badge">{item.value}</span>
-                  <div className="num-card-digits">{item.devanagariNumeral}</div>
-                  <div className="num-card-word">{item.word}</div>
-                  <div className="num-card-iast">{item.iast}</div>
-                  <div className="num-card-en">{item.english}</div>
+                  <header className="num-section-head">
+                    <h3 className="num-section-title" id={`num-section-${section.id}`}>
+                      <span className="num-section-title-dev">{section.label}</span>
+                      <span className="num-section-title-range">
+                        {from === 1 ? '0' : from}–{to}
+                      </span>
+                    </h3>
+                    <button
+                      type="button"
+                      className={`num-play-group-btn${sectionPlaying ? ' num-play-group-btn--playing' : ''}`}
+                      onClick={() => handleTogglePlayGroup(section.id, section.items.map((item) => item.word))}
+                      aria-pressed={sectionPlaying}
+                      aria-label={sectionPlaying ? `Stop ${from}–${to}` : `Play all numbers ${from}–${to}`}
+                      title={sectionPlaying ? 'Stop this group' : `Hear ${from}–${to} in order`}
+                    >
+                      {playButtonLabel(section.id, '▶ Play')}
+                    </button>
+                  </header>
 
-                  {item.breakdown && (
-                    <div className="num-card-breakdown" title={item.breakdown}>
-                      {item.breakdown}
-                    </div>
-                  )}
+                  <div className="num-grid">
+                    {section.items.map((item: SanskritNumberItem) => {
+                      const isPlaying = playingWord === item.word;
+                      return (
+                        <div
+                          key={item.value}
+                          role="button"
+                          tabIndex={0}
+                          data-play-word={item.word}
+                          aria-current={isPlaying && isPlayingAll ? 'true' : undefined}
+                          className={`num-card${item.value === 0 ? ' num-card--zero' : ''}${isPlaying ? ' num-card--playing' : ''}`}
+                          onClick={() => handleSpeak(item.word)}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                              e.preventDefault();
+                              handleSpeak(item.word);
+                            }
+                          }}
+                          title={`Click to pronounce ${item.word} (${item.english})`}
+                          aria-label={`${item.value} in Sanskrit is ${item.word} (${item.iast})`}
+                        >
+                          <div className="num-card-numerals">
+                            <span className="num-card-digits">{item.devanagariNumeral}</span>
+                            <span className="num-card-badge">{item.value}</span>
+                          </div>
+                          <div className="num-card-text">
+                            <div className="num-card-word">{item.word}</div>
+                            <div className="num-card-iast">{item.iast}</div>
+                            <div className="num-card-en">{item.english}</div>
+                          </div>
 
-                  <button
-                    type="button"
-                    className="num-card-audio-btn"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleSpeak(item.word);
-                    }}
-                    aria-label={`Play audio for ${item.word}`}
-                  >
-                    <span>🔊</span>
-                    <span>Speak</span>
-                  </button>
-                </div>
+                          {item.breakdown && (
+                            <div className="num-card-breakdown" title={item.breakdown}>
+                              {item.breakdown}
+                            </div>
+                          )}
+
+                          <button
+                            type="button"
+                            className="num-card-audio-btn"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleSpeak(item.word);
+                            }}
+                            aria-label={`Play audio for ${item.word}`}
+                          >
+                            <span>🔊</span>
+                            <span>Speak</span>
+                          </button>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </section>
               );
             })}
           </div>
@@ -622,6 +790,19 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
             </p>
           </div>
 
+          <div className="num-tab-playbar">
+            <button
+              type="button"
+              className={`num-play-all-btn${playingGroup === 'ordinals' ? ' num-play-all-btn--playing' : ''}`}
+              onClick={() => handleTogglePlayGroup('ordinals', ORDINAL_NUMBERS_LIST.map((ord) => ord.masculine))}
+              aria-pressed={playingGroup === 'ordinals'}
+              title={playingGroup === 'ordinals' ? 'Stop playback' : 'Hear every ordinal (masculine form) in order'}
+            >
+              {playButtonLabel('ordinals', '▶ Play all')}
+            </button>
+            <span className="num-tab-playbar-hint">Plays the पुंलिङ्गम् (masculine) form of each ordinal, in order.</span>
+          </div>
+
           <div className="ordinal-table-wrapper">
             <table className="ordinal-table">
               <thead>
@@ -636,7 +817,12 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
               </thead>
               <tbody>
                 {ORDINAL_NUMBERS_LIST.map((ord) => (
-                  <tr key={ord.rank}>
+                  <tr
+                    key={ord.rank}
+                    data-play-word={ord.masculine}
+                    className={playingGroup === 'ordinals' && playingWord === ord.masculine ? 'ordinal-row--playing' : undefined}
+                    aria-current={playingGroup === 'ordinals' && playingWord === ord.masculine ? 'true' : undefined}
+                  >
                     <td>
                       <span className="ordinal-rank-chip">
                         {ord.numeral} ({ord.rank})
@@ -711,9 +897,27 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
             </p>
           </div>
 
+          <div className="num-tab-playbar">
+            <button
+              type="button"
+              className={`num-play-all-btn${playingGroup === 'vedic' ? ' num-play-all-btn--playing' : ''}`}
+              onClick={() => handleTogglePlayGroup('vedic', VEDIC_LARGE_NUMBERS.map((item) => item.sanskritName))}
+              aria-pressed={playingGroup === 'vedic'}
+              title={playingGroup === 'vedic' ? 'Stop playback' : 'Hear every power of ten in order'}
+            >
+              {playButtonLabel('vedic', '▶ Play all')}
+            </button>
+            <span className="num-tab-playbar-hint">एकम् → परार्धम् · every power of ten, smallest to largest.</span>
+          </div>
+
           <div className="vedic-scale-timeline">
             {VEDIC_LARGE_NUMBERS.map((item) => (
-              <div key={item.exponent} className="vedic-scale-row">
+              <div
+                key={item.exponent}
+                data-play-word={item.sanskritName}
+                aria-current={playingGroup === 'vedic' && playingWord === item.sanskritName ? 'true' : undefined}
+                className={`vedic-scale-row${playingGroup === 'vedic' && playingWord === item.sanskritName ? ' vedic-scale-row--playing' : ''}`}
+              >
                 <div className="vedic-exp-pill">{item.powerOfTen}</div>
 
                 <div className="vedic-info-col">
@@ -1063,6 +1267,42 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
           </div>
         </div>
       )}
+
+      {/* Read more: existing site articles on the history of Indian numerals */}
+      <aside className="num-readmore" aria-labelledby="num-readmore-title">
+        <h3 className="num-readmore-title" id="num-readmore-title">📚 Read more · History of Indian numerals</h3>
+        <p className="num-readmore-note">
+          The digits 0–9 used worldwide grew out of these Indian numerals; in the West they are called
+          “Hindu numerals” or “Hindu–Arabic numerals” because they reached Europe through Arab scholars.
+        </p>
+        <ul className="num-readmore-list">
+          {NUMBERS_READ_MORE.map((link) => (
+            <li key={link.id}>
+              <a
+                className="num-readmore-link"
+                href={link.href}
+                data-readmore={link.id}
+                onClick={(e) => openSiteTarget(e, link.target)}
+              >
+                <span className="num-readmore-emoji" aria-hidden="true">{link.emoji}</span>
+                <span className="num-readmore-text">
+                  <strong>{link.title}</strong>
+                  <span>{link.blurb}</span>
+                </span>
+                <span className="num-readmore-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </aside>
+
+      {/* Next step: Numbers → Vedic Maths (shared ordered list) */}
+      <VedicLearningPath
+        id="numbers-next-vedic-maths"
+        heading="🧮 Next step: Numbers → Vedic Maths (Classes 6–8)"
+        intro="Now that you can read and say numbers, follow these steps in order. Each one opens that sutra on the Vedic Maths page."
+        onOpen={(anchor, e) => openSiteTarget(e, { view: 'vedic-maths', vedicAnchor: anchor })}
+      />
     </section>
   );
 };
