@@ -21,7 +21,7 @@ export interface PhilosophyPageProps {
   onOpenGrammarArticle?: (articleId: string) => void;
   /** Open a Course Addendum unit (e.g. Mantras & Ślokas). */
   onOpenCourseAddendum?: (addendumId: string) => void;
-  initialEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math';
+  initialEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'medha_mind';
 }
 
 const GLOSSARY: { term: string; meaning: string }[] = [
@@ -81,6 +81,13 @@ const GLOSSARY: { term: string; meaning: string }[] = [
   { term: 'bhāskarāchārya / bhāskara ii (भास्कराचार्यः)', meaning: 'master 12th-century Indian mathematician-astronomer (1114 CE), author of Siddhānta Śiromaṇi, pioneer of differential calculus foundations' },
   { term: 'rasa / vismaya (रसः / विस्मयः)', meaning: 'aesthetic essence and wonder; Bhāskara’s pedagogy proving mathematics must evoke joyful contemplation (Ānanda) rather than mental burnout' },
   { term: 'alisaṅkhyā (अलिसङ्ख्या)', meaning: 'the classic riddle of the swarming bees; resolving multi-step radical quadratic equations through woodland poetry' },
+  { term: 'medhā (मेधा)', meaning: 'receptive, retentive intelligence; from √medhṛ (Dhātupāṭha: understanding; also “meeting, coming together”)' },
+  { term: 'antaḥkaraṇa (अन्तःकरणम्)', meaning: 'the inner instrument: manas, buddhi, citta and ahaṅkāra (Vedānta); threefold in Sāṅkhya' },
+  { term: 'sākṣī (साक्षी)', meaning: 'the witness; awareness that observes the movements of the mind without being one of them' },
+  { term: 'citta-vṛtti-nirodha (चित्तवृत्तिनिरोधः)', meaning: 'stilling of the fluctuations of the mind — Patañjali’s definition of yoga (Yoga Sūtra 1.2)' },
+  { term: 'puruṣa · prakṛti (पुरुषः · प्रकृतिः)', meaning: 'Sāṅkhya: pure witnessing consciousness / nature, including mind, ego and intellect as subtle matter' },
+  { term: 'kośa (कोशः)', meaning: 'sheath; the five layers (food, breath, mind, intellect, bliss) of Taittirīya Upaniṣad 2' },
+  { term: 'anātman · anattā (अनात्मन्)', meaning: 'Buddhist “not-self”: no permanent self to be found in or behind the stream of mental events' },
 ];
 
 const DEFAULT_TITLE =
@@ -123,6 +130,11 @@ const LILAVATI_ESSAY_TITLE =
 const LILAVATI_ESSAY_DESC =
   'Shattering the science-art divide: explore how Bhāskara II (1114 CE) cloaked multi-step quadratic equations, fractions, and geometry in the romantic imagery of nature.';
 
+const MEDHA_ESSAY_TITLE =
+  'Medhā and the Mind: Two Ways of Looking at Consciousness · Darśana | EdNet Learn Gurukul';
+const MEDHA_ESSAY_DESC =
+  'Medhā, antaḥkaraṇa and the witness (sākṣī): Descartes, physicalism and the hard problem set beside Vedānta, Sāṅkhya-Yoga (YS 1.2) and Buddhist anattā.';
+
 const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   onOpenRegister,
   onOpenVedicMaths,
@@ -133,7 +145,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   onOpenCourseAddendum,
   initialEssay = 'ai_sanskrit',
 }) => {
-  const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math'>(initialEssay);
+  const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'medha_mind'>(initialEssay);
   const [glossaryOpen, setGlossaryOpen] = useState(false);
 
   useEffect(() => {
@@ -141,6 +153,23 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
       setActiveEssay(initialEssay);
     }
   }, [initialEssay]);
+
+  // Deep link: /philosophy#medha opens the Medhā essay tab.
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash === '#medha') {
+      setActiveEssay('medha_mind');
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const { pathname, search, hash } = window.location;
+    if (activeEssay === 'medha_mind' && hash !== '#medha' && !hash.startsWith('#medha-')) {
+      window.history.replaceState(window.history.state, '', `${pathname}${search}#medha`);
+    } else if (activeEssay !== 'medha_mind' && (hash === '#medha' || hash.startsWith('#medha-'))) {
+      window.history.replaceState(window.history.state, '', `${pathname}${search}`);
+    }
+  }, [activeEssay]);
 
   useEffect(() => {
     let currentTitle = AI_ESSAY_TITLE;
@@ -163,6 +192,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
     } else if (activeEssay === 'lilavati_math') {
       currentTitle = LILAVATI_ESSAY_TITLE;
       currentDesc = LILAVATI_ESSAY_DESC;
+    } else if (activeEssay === 'medha_mind') {
+      currentTitle = MEDHA_ESSAY_TITLE;
+      currentDesc = MEDHA_ESSAY_DESC;
     }
 
     const prevTitle = document.title;
@@ -372,6 +404,20 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
             <div>
               <span className="philosophy-essay-tab-title">The Poetic Equation: Bhāskara’s Līlāvatī</span>
               <span className="philosophy-essay-tab-sub">Math into Art · Swarm of Bees · Broken Necklace · Peacock &amp; Lotus</span>
+            </div>
+          </button>
+          <button
+            type="button"
+            className={`philosophy-essay-tab ${activeEssay === 'medha_mind' ? 'active' : ''}`}
+            onClick={() => {
+              setActiveEssay('medha_mind');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
+            <span className="philosophy-essay-tab-icon" aria-hidden="true">🪔</span>
+            <div>
+              <span className="philosophy-essay-tab-title">मेधा · Medhā and the Mind</span>
+              <span className="philosophy-essay-tab-sub">Two Ways of Looking at Consciousness · Antaḥkaraṇa · Sākṣī</span>
             </div>
           </button>
         </nav>
@@ -3310,6 +3356,460 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 </div>
               </section>
             </section>
+          </div>
+        )}
+
+        {/* =========================================================================
+            ESSAY: मेधा · Medhā and the Mind — Two Ways of Looking at Consciousness
+           ========================================================================= */}
+        {activeEssay === 'medha_mind' && (
+          <div className="philosophy-essay-body" id="medha">
+            <header className="philosophy-hero">
+              <span className="philosophy-kicker">Gurukul Darśana · मेधा · अन्तःकरणम् · साक्षी</span>
+              <h1 className="philosophy-title">
+                मेधा · Medhā and the Mind: Two Ways of Looking at Consciousness
+              </h1>
+              <p className="philosophy-mantra">
+                The West asks what the mind is made of. The sages of India ask whether the mind is even you.
+              </p>
+
+              <blockquote className="philosophy-pull-quote" style={{ maxWidth: '40rem', margin: '1.25rem auto 0.75rem' }}>
+                <p lang="sa" style={{ fontSize: '1.15rem' }}>
+                  यन्मनसा न मनुते येनाहुर्मनो मतम् ।<br />
+                  तदेव ब्रह्म त्वं विद्धि नेदं यदिदमुपासते ॥
+                </p>
+                <p>
+                  “That which the mind cannot think, but by which, they say, the mind is thought — know that
+                  alone to be Brahman, not this which people worship here.”
+                </p>
+                <cite>— Kena Upaniṣad 1.6</cite>
+              </blockquote>
+
+              <div className="philosophy-journey" style={{ marginTop: '1rem' }}>
+                <AudioChip term="मेधा" label="मेधा (medhā)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="अन्तःकरणम्" label="अन्तःकरण (antaḥkaraṇa)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="चित्तवृत्तिनिरोधः" label="चित्तवृत्तिनिरोधः" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="साक्षी" label="साक्षी (sākṣī)" />
+              </div>
+            </header>
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', margin: '0 0 1.75rem' }} aria-label="Article sections">
+              <a href="#medha-etymology" className="philosophy-chip" style={{ textDecoration: 'none' }}>🪔 1. The Word Medhā</a>
+              <a href="#medha-west" className="philosophy-chip" style={{ textDecoration: 'none' }}>🏛️ 2. The Western Inheritance</a>
+              <a href="#medha-india" className="philosophy-chip" style={{ textDecoration: 'none' }}>🕉️ 3. The View from India</a>
+              <a href="#medha-faultline" className="philosophy-chip" style={{ textDecoration: 'none' }}>⚖️ 4. The Real Fault Line</a>
+              <a href="#medha-nudge" className="philosophy-chip" style={{ textDecoration: 'none' }}>📱 5. A Mind Worth Nudging</a>
+              <a href="#medha-sakshi" className="philosophy-chip" style={{ textDecoration: 'none' }}>🌊 6. Resting as the Witness</a>
+            </div>
+
+            {/* Opening */}
+            <section className="philosophy-section" aria-label="Introduction">
+              <p>
+                Every civilization eventually asks the same question: <em>what is it that thinks?</em> The
+                answers split into two broad instincts. The dominant line of Western philosophy asks what the
+                mind is made of and how it works. The contemplative schools of India ask something stranger
+                and more personal: <em>is the mind even you?</em>
+              </p>
+              <p>
+                This essay walks both roads. It is not a contest between a “materialist West” and a
+                “spiritual India” — as we will see, that picture is too simple on both sides. But the two roads
+                do begin from different places, and the difference matters for how we study, how we live with
+                technology, and how we understand the word at the centre of this page: <strong>medhā</strong>.
+              </p>
+            </section>
+
+            {/* 1. Etymology */}
+            <section className="philosophy-section" aria-labelledby="medha-etymology">
+              <h2 id="medha-etymology">1. The Word Medhā: A Receptive Intelligence</h2>
+              <p>
+                <strong lang="sa">मेधा (medhā)</strong> is usually translated “intelligence,” “wisdom,” or
+                “retentive memory.” Its verbal root, as listed in Pāṇini’s Dhātupāṭha, is{' '}
+                <strong lang="sa">मेधृ (medhṛ)</strong>, a bhvādi (first-class) root given the senses of{' '}
+                <em lang="sa">medhā</em> (understanding) and — in a separate entry — <em lang="sa">saṅgama</em>,
+                “meeting, coming together” (<span lang="sa">मेधृ सङ्गमे च</span>). The same entry also records a
+                sense of <em>hiṃsana</em>, “harming,” which is a reminder that Sanskrit roots carry several meanings
+                and that etymology is a lens, not a proof.
+              </p>
+              <p>
+                Still, the pairing of “understanding” with “meeting” is suggestive. Read through that lens, medhā is
+                not computational speed or the ability to pile up facts. It is the capacity of the mind to{' '}
+                <em>meet</em> what is true and hold it without distortion — a receptive clarity rather than an
+                acquisitive one. The word is old: already in the Ṛgveda (1.18.6) the poet says{' '}
+                <span lang="sa">सनिं मेधामयासिषम्</span>, “I have sought medhā as my gain,” and the later{' '}
+                <strong>Medhā Sūkta</strong> — preserved as a supplementary hymn (khila) to the Ṛgveda and, in its most
+                widely chanted form, in the Mahānārāyaṇa Upaniṣad of the Taittirīya Āraṇyaka — addresses Medhā as a
+                goddess: <span lang="sa">त्वया जुष्ट ऋषिर्भवति देवि</span>, “favoured by you, O Devī, one becomes a ṛṣi.”
+              </p>
+              <p>
+                In the Indian tradition this faculty belongs to the <strong lang="sa">अन्तःकरण (antaḥkaraṇa)</strong>,
+                the “inner instrument.” Vedānta usually describes it as fourfold:
+              </p>
+              <ul>
+                <li><strong lang="sa">मनस् (manas)</strong> — the mind that receives, doubts, and deliberates;</li>
+                <li><strong lang="sa">बुद्धि (buddhi)</strong> — the intellect that decides and discerns;</li>
+                <li><strong lang="sa">चित्त (citta)</strong> — the store of memory and impressions;</li>
+                <li><strong lang="sa">अहंकार (ahaṃkāra)</strong> — the “I-maker,” which claims experiences as “mine.”</li>
+              </ul>
+              <p>
+                (Sāṅkhya counts the inner instrument as threefold — buddhi, ahaṃkāra and manas — but the idea is the
+                same.) Medhā, in this picture, is what the inner instrument looks like when it is clean: absorbing,
+                integrating, and retaining deep truths because nothing in it is bending the light. It is less a
+                possession than a transparency.
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', margin: '0.75rem 0' }}>
+                <AudioChip term="मनस्" label="मनस् (manas)" />
+                <AudioChip term="बुद्धिः" label="बुद्धि (buddhi)" />
+                <AudioChip term="चित्तम्" label="चित्त (citta)" />
+                <AudioChip term="अहंकारः" label="अहंकार (ahaṃkāra)" />
+              </div>
+              <p>
+                That word — <em>instrument</em> — is the hinge of everything that follows. To see why, we have to look
+                first at how the Western tradition came to think about the mind.
+              </p>
+            </section>
+
+            {/* 2. Western Inheritance */}
+            <section className="philosophy-section" aria-labelledby="medha-west">
+              <h2 id="medha-west">2. The Western Inheritance: What Is the Mind Made Of?</h2>
+              <p>
+                Modern Western philosophy of mind effectively begins with <strong>René Descartes</strong> (1596–1650).
+                He divided reality into two kinds of substance: <em>res cogitans</em>, the thinking thing, and{' '}
+                <em>res extensa</em>, extended physical matter. The mind was immaterial, the body mechanical. This gave
+                the West a clear picture — and a famous problem. If mind and matter are utterly different, how does a
+                decision move an arm, or a pinprick produce pain? Princess Elisabeth of Bohemia pressed Descartes on
+                exactly this in 1643, and the “interaction problem” has never gone away.
+              </p>
+              <p>
+                Much of later Western thought tried to escape the problem by collapsing the two sides into one.{' '}
+                <strong>Physicalism</strong>, the dominant view in academic philosophy and neuroscience today, holds that
+                the mind is what the brain does. Thoughts are patterns of neural firing, emotions are neurochemical
+                cascades, memories are changes in synaptic strength. There is, in Gilbert Ryle’s mocking 1949 phrase,
+                no “ghost in the machine.”
+              </p>
+              <p>
+                <strong>Functionalism</strong> refined this. A mental state is defined not by what it is made of but by
+                what it <em>does</em> — its causal role between inputs, other states, and outputs. Pain is whatever plays
+                the pain role. This opened the door to a question Alan Turing had already posed in 1950 and that now
+                sits on every phone: if a machine performed all the right functions, would it be thinking?
+              </p>
+              <p>
+                Then, in 1995, <strong>David Chalmers</strong> named what he called the <em>hard problem of
+                consciousness</em>. Even if we explained every function of the brain — perception, memory, attention,
+                report — a further question would remain: <em>why does any of this feel like something from the
+                inside?</em> Why is there an experience of red, and not just the processing of wavelengths? (Thomas Nagel
+                had put the point memorably in 1974: there is “something it is like” to be a bat.) Three decades on,
+                there is no consensus answer.
+              </p>
+              <p>
+                Beneath most of these debates lies a shared assumption: <strong>you are your mind</strong>. Whether the
+                mind is a soul, a brain process, or a pattern of information, it is the seat of the self. This is why
+                dementia is so often described as a person “disappearing” while the body remains — if the self is the
+                mind, then when the mind goes, the person goes.
+              </p>
+              <p>
+                The West has never spoken with one voice, though. <strong>Spinoza</strong> (1632–1677) proposed a single
+                substance with thought and extension as two of its attributes — often called dual-aspect monism.{' '}
+                <strong>Leibniz</strong> imagined reality as made of <em>monads</em>, simple perceiving centres.{' '}
+                <strong>David Hume</strong> looked inward for a self and reported finding only “a bundle or collection
+                of different perceptions” — strikingly close to a Buddhist observation. <strong>Henri Bergson</strong>{' '}
+                argued that lived time, <em>durée</em>, cannot be captured by clock-time measurement, and that
+                consciousness is more than the brain’s bookkeeping. And today some philosophers seriously defend
+                panpsychism, or the “extended mind” thesis (Andy Clark and David Chalmers, 1998), which holds that
+                notebooks and devices can literally be part of a mind. These are real dissenting currents — but they
+                have remained minority positions.
+              </p>
+            </section>
+
+            {/* 3. India */}
+            <section className="philosophy-section" aria-labelledby="medha-india">
+              <h2 id="medha-india">3. The View from Classical India: The Mind as Instrument</h2>
+              <p>
+                The major contemplative schools of India begin from a different place. For most of them, the mind is an
+                instrument — very subtle, but an instrument — and not the one who uses it. It is something you{' '}
+                <em>have</em>, observed by what you <em>are</em>.
+              </p>
+
+              <h3>Vedānta: The Sheaths and the Light</h3>
+              <p>
+                The Taittirīya Upaniṣad describes a person as a series of nested layers, later systematized as the
+                five <strong lang="sa">कोश (kośa)</strong>, “sheaths”: the body made of food (<em>annamaya</em>), the
+                sheath of vital breath (<em>prāṇamaya</em>), of mind (<em>manomaya</em>), of discerning intellect
+                (<em>vijñānamaya</em>), and of bliss (<em>ānandamaya</em>). At the centre — or rather, pervading all of
+                them without being any of them — is the <strong lang="sa">आत्मन् (ātman)</strong>, which Advaita Vedānta
+                identifies with Brahman, the ground of all that is.
+              </p>
+              <p>
+                Mind and intellect belong to the <em>sūkṣma śarīra</em>, the subtle body, together with the senses and
+                the vital breaths. They are made of subtle matter, not of consciousness itself. The Kena Upaniṣad quoted
+                above makes the point sharply: the real Self is “the mind of the mind,” that <em>by which</em> the mind
+                thinks, which is itself never an object of thought. A short Advaita text, the Dṛg-Dṛśya-Viveka, opens
+                with a ladder of seeing: the form is seen by the eye; the eye is seen by the mind; the movements of the
+                mind are seen by the witness, <strong lang="sa">साक्षी (sākṣī)</strong> — and the witness is never itself
+                seen. The observer is the light by which thought becomes visible.
+              </p>
+              <p>
+                It is often said that Vedānta calls the mind “an illusion.” That needs care. Advaita does not claim the
+                mind is nothing. It says the mind belongs to the changing, dependent world — what it calls{' '}
+                <em>mithyā</em>, the realm of <em>māyā</em> — real enough to experience and to work with, but not
+                independently real and not the Self. (Other Vedānta schools, such as Viśiṣṭādvaita and Dvaita, treat
+                the world and the mind as fully real, while still distinguishing them from the self.)
+              </p>
+
+              <h3>Sāṅkhya and Yoga: The Witness and the Weather</h3>
+              <p>
+                The Sāṅkhya system draws the line most starkly. On one side is{' '}
+                <strong lang="sa">पुरुष (puruṣa)</strong>, pure consciousness: the witness, uninvolved and inactive (the
+                Sāṅkhya Kārikā, verse 19, calls it <em>sākṣī</em>, a witness, and <em>akartṛ</em>, a non-doer). On the
+                other side is <strong lang="sa">प्रकृति (prakṛti)</strong>, nature — and nature includes not only rocks
+                and bodies but intellect, ego, and emotion, all understood as extremely subtle matter. Your thoughts, on
+                this view, are as much a part of nature as the weather.
+              </p>
+              <p>
+                Patañjali’s Yoga Sūtra, built on this framework, gives the most famous definition in Indian
+                psychology (1.2):
+              </p>
+              <blockquote className="philosophy-pull-quote">
+                <p lang="sa" style={{ fontSize: '1.15rem' }}>योगश्चित्तवृत्तिनिरोधः ॥</p>
+                <p>“Yoga is the stilling of the fluctuations of the mind.”</p>
+                <cite>— Yoga Sūtra 1.2 · followed by 1.3: “Then the seer abides in its own nature.”</cite>
+              </blockquote>
+              <p>
+                The mind, left to itself, is turbulent — constantly taking the shape of whatever it meets. Liberation
+                is not the mind becoming perfect. It is the witness recognizing that it was never caught in the
+                turbulence at all.
+              </p>
+
+              <h3>Buddhism: No Fixed Watcher</h3>
+              <p>
+                Buddhism takes a different road and arrives somewhere just as radical. Its teaching of{' '}
+                <em>anattā</em> (Pāli; Sanskrit <em>anātman</em>, “not-self”) denies any permanent self — not only a
+                self identical to the mind, but also a hidden, eternal witness behind it. The mind is a stream of
+                momentary mental events (<em>citta</em>), arising and passing in dependence on conditions. The felt,
+                solid “I” is a construction assembled moment by moment. Meditation, on this view, does not uncover a
+                hidden watcher; it shows that the search for a fixed watcher was the mistake.
+              </p>
+              <p>
+                So even within India there is deep disagreement: Vedānta and Sāṅkhya affirm a witnessing self distinct
+                from the mind, while Buddhism denies a lasting self of any kind. What they share is the conviction that{' '}
+                <em>the mind is not what you take yourself to be</em>, and that this can be seen directly.
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', margin: '0.75rem 0' }}>
+                <AudioChip term="पुरुषः" label="पुरुष (puruṣa)" />
+                <AudioChip term="प्रकृतिः" label="प्रकृति (prakṛti)" />
+                <AudioChip term="कोशः" label="कोश (kośa)" />
+                <AudioChip term="आत्मन्" label="आत्मन् (ātman)" />
+                <AudioChip term="अनात्मन्" label="अनात्मन् (anātman)" />
+              </div>
+            </section>
+
+            {/* Comparison Table */}
+            <section className="philosophy-section" aria-labelledby="medha-table">
+              <h2 id="medha-table">Two Pictures of the Mind, Side by Side</h2>
+              <p>
+                The table below contrasts the <em>dominant</em> modern Western physicalist picture with the broad
+                picture shared by the Indian contemplative schools. Both columns are simplifications: each tradition is
+                internally diverse, and there are Western dualists and panpsychists just as there were Indian
+                materialists.
+              </p>
+              <div className="philosophy-table-wrap">
+                <table className="philosophy-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Question</th>
+                      <th scope="col">Modern Western physicalism (dominant view)</th>
+                      <th scope="col">Indian contemplative schools (Vedānta · Sāṅkhya-Yoga)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>What is the mind?</strong></td>
+                      <td>What the brain does — patterns of neural activity and information processing.</td>
+                      <td>A subtle instrument (<em>antaḥkaraṇa</em>, part of the <em>sūkṣma śarīra</em>), made of subtle matter, not of consciousness itself.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Where is it?</strong></td>
+                      <td>Located in and dependent on the brain and nervous system (though “extended mind” theorists include the body and tools).</td>
+                      <td>Associated with the subtle body, not reducible to the gross brain. Some modern teachers read this as a mind not confined to the skull — an interpretation, not a claim the classical texts make in those words.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Is the mind the self?</strong></td>
+                      <td>Generally yes: the self is a mental or neural construction; there is no further “you.”</td>
+                      <td>No. The mind is an object of awareness; the self (<em>ātman</em> / <em>puruṣa</em>) is the witness. Buddhism agrees the mind is not a self, but denies any permanent self.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>How is it studied?</strong></td>
+                      <td>Mainly third-person: experiment, measurement, theory.</td>
+                      <td>Mainly first-person: disciplined observation of one’s own mind through practice.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>What is the goal?</strong></td>
+                      <td>Explanation — and often enhancement or repair of mental function.</td>
+                      <td>Liberation (<em>mokṣa</em>, <em>kaivalya</em>, <em>nirvāṇa</em>) — freedom from identifying with the mind.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 4. The Real Fault Line */}
+            <section className="philosophy-section" aria-labelledby="medha-faultline">
+              <h2 id="medha-faultline">4. The Real Fault Line</h2>
+              <p>
+                It would be easy to tell this as a story of a materialist West and a spiritual India. That story is
+                false. India had its own thoroughgoing materialists: the <strong>Cārvāka</strong> (Lokāyata) school
+                rejected any soul and held that consciousness arises from matter when the elements combine in the right
+                way — like the intoxicating power that appears when certain ingredients ferment. That is very close to
+                modern emergentist physicalism.
+              </p>
+              <p>
+                The deeper divide is not matter versus spirit. It is this question:{' '}
+                <strong>is the self identical to the mind, or distinct from it?</strong> The mainstream Western
+                tradition has largely assumed they are the same — whether it then explained the mind as soul or as
+                brain. The main Indian contemplative schools assumed the mind is an <em>object</em> of awareness, and
+                claimed that this can be demonstrated experientially, not just argued.
+              </p>
+              <p>
+                That points to the second difference: <strong>method</strong>. Western philosophy of mind has mostly
+                been third-person and theoretical. The Indian schools were first-person and practical: you are asked to
+                watch a thought arise, stay, and dissolve, and to notice who is watching. A yogi who could recite every
+                distinction between puruṣa and prakṛti but had never once watched a thought arise would, by the
+                tradition’s own standard, have learned nothing that matters.
+              </p>
+            </section>
+
+            {/* 5. Optimization and nudging (condensed from essay 1) */}
+            <section className="philosophy-section" aria-labelledby="medha-nudge">
+              <h2 id="medha-nudge">5. A Mind Worth Nudging: Optimization in the Attention Economy</h2>
+              <p>
+                These are not just seminar questions. How a culture answers “what is the mind?” shapes what it does
+                with minds. If the mind is essentially a biological machine, the natural next step is to tune it. A large
+                industry now promises exactly that — cognitive enhancement, biohacking, neurofeedback, performance
+                coaching — much of it aimed at maximizing output. Some of this is genuinely useful; some of it is
+                marketing ahead of evidence.
+              </p>
+              <p>
+                The same picture also makes the mind a resource to be influenced. Behavioural science has documented how
+                small design choices — defaults, framing, the famous “nudge” of Thaler and Sunstein (2008) — shift what
+                people choose. Digital platforms apply these insights at scale, using data on our clicks and pauses and
+                design patterns such as infinite scroll and unpredictable rewards (often loosely described as “dopamine
+                loops”) to hold attention. How much this changes deep beliefs is still debated by researchers, but few
+                dispute that our attention is being competed for, measured, and sold.
+              </p>
+              <p>
+                The contemplative traditions do not offer a better optimization technique. They offer a different
+                question. If the mind is an instrument, then being nudged, profiled, or tuned is something that happens{' '}
+                <em>to the instrument</em>. The more clearly you see the movements of your own mind — a craving
+                arriving, an outrage being triggered — the less automatically they run you. That is not a rejection of
+                technology. It is a way of remaining the one who uses it.
+              </p>
+            </section>
+
+            {/* Convergence */}
+            <section className="philosophy-section" aria-labelledby="medha-convergence">
+              <h2 id="medha-convergence">Why the Comparison Still Matters</h2>
+              <p>
+                Neither road has simply solved the problem. The hard problem is still hard, and the contemplative claims
+                are, by their nature, difficult to test from outside. But something interesting is happening where the
+                roads meet.
+              </p>
+              <p>
+                Neuroscience keeps finding that the unified, in-charge “I” is less solid than it feels. Split-brain
+                studies by Roger Sperry and Michael Gazzaniga showed that when the two hemispheres are surgically
+                disconnected, a verbal “interpreter” in the left hemisphere will confidently invent reasons for actions it
+                did not initiate. Research on <em>confabulation</em> shows how readily people produce plausible stories
+                about why they did things. <em>Predictive processing</em> models describe the brain as constantly
+                generating a best-guess model of the world — and of the self. Together these suggest that the self we
+                experience may be, at least partly, a narrative the brain constructs.
+              </p>
+              <p>
+                That is not the same as saying “you are the Ātman” or “there is no self.” Science cannot settle those
+                claims. But the Buddhist observer who found no fixed watcher, the Sāṅkhya teacher who said thought is
+                part of nature, and the neuroscientist who finds the self to be a construction are, cautiously, arriving
+                in the same neighbourhood from very different roads.
+              </p>
+            </section>
+
+            {/* 6. Sakshi */}
+            <section className="philosophy-section" aria-labelledby="medha-sakshi">
+              <h2 id="medha-sakshi">6. The Wave, the Mirror, and Resting as the Witness</h2>
+              <p>
+                The traditions reach for images here, because the point is hard to say directly. Scoop up a wave and look
+                for the wave: you find only water. The mind, examined closely, is likewise a stream of thoughts,
+                conditioning, reactions, and memories, with no separate “thing” behind them. In the depths of meditative
+                absorption (<em>samādhi</em>), the texts say, even this movement stills, and what remains is awareness
+                itself — <em>cit</em>, the ocean of which each thought was a passing wave.
+              </p>
+              <p>
+                The second image is the <strong>unbound mirror</strong>. The unconditioned mind is like a still, clear
+                mountain lake: it reflects stars, clouds, earth, and sky exactly as they are, because nothing is
+                disturbing its surface. Most of us spend our lives mistaking the dust on the mirror — our moods,
+                opinions, and reactions — for who we are. Medhā, in this sense, is not a bigger mirror. It is a cleaner
+                one.
+              </p>
+              <p>
+                Many schools also see body and mind as one continuum rather than two opposed substances: in Sāṅkhya both
+                belong to prakṛti, the body as its gross form and the mind as its subtle form. That is why practices of
+                breath and posture are treated as practices of mind.
+              </p>
+              <p>
+                The practical invitation is simple, and older than any of our arguments. Learn to tell the transient
+                from the permanent observer. Do not only try to upgrade the room of conditioned thought; step back far
+                enough to see that you are standing in it. Rest, even for a few breaths, as the silent witness —{' '}
+                <strong lang="sa">साक्षी (sākṣī)</strong>, the word the Śvetāśvatara Upaniṣad (6.11) uses for the one who
+                sees: <span lang="sa">साक्षी चेता केवलो निर्गुणश्च</span>, “the witness, pure awareness, alone, beyond
+                qualities.”
+              </p>
+              <p>
+                From that place, the traditions say, you discover that you are not only the machine that can be tuned,
+                nudged, or exploited. You are the awareness that makes the instrument luminous — the light in which every
+                thought, including this one, appears.
+              </p>
+              <blockquote className="philosophy-pull-quote">
+                <p lang="sa" style={{ fontSize: '1.1rem' }}>दृश्या धीवृत्तयः साक्षी दृगेव न तु दृश्यते ॥</p>
+                <p>“The movements of the mind are seen; the witness is the seer — and is never itself seen.”</p>
+                <cite>— Dṛg-Dṛśya-Viveka, verse 1</cite>
+              </blockquote>
+            </section>
+
+            {/* Bodhi's note */}
+            <div className="philosophy-learner-box">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.85rem' }}>
+                <BodhiAvatar mood="reading" size="sm" showHalo={false} />
+                <h3 style={{ margin: 0 }}>Bodhi’s Study Note · Watching the Word Work</h3>
+              </div>
+              <p style={{ fontSize: '1.05rem', lineHeight: 1.6, color: '#134e4a', margin: '0 0 1rem' }}>
+                Try a tiny experiment before your next lesson. Sit for one minute and simply notice each thought as it
+                arrives — name it “thinking” and let it go. Then chant one word slowly: <strong lang="sa">मेधा</strong>.
+                Notice that the sound, the meaning, and the one who hears both are three different things. That
+                noticing is the beginning of medhā — and it makes the next śloka much easier to hold.
+              </p>
+              <div className="philosophy-action-buttons">
+                <button
+                  type="button"
+                  className="philosophy-action-btn"
+                  onClick={() => {
+                    setActiveEssay('ai_sanskrit');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
+                  🤖 Why Learn Sanskrit in the Age of AI ➔
+                </button>
+                <button
+                  type="button"
+                  className="philosophy-action-btn"
+                  style={{ background: '#b45309' }}
+                  onClick={() => {
+                    setActiveEssay('sunyat_anantam');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
+                  🌌 Śūnyāt Anantam ➔
+                </button>
+              </div>
+            </div>
           </div>
         )}
 

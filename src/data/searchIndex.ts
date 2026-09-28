@@ -36,7 +36,7 @@ export interface SearchTarget {
   /** Course Addendum unit to open (view: 'course'), e.g. 'addendum-mantras-shlokas'. */
   courseAddendumId?: string;
   courseMode?: 'curriculum' | 'addendum' | 'flashcards' | 'exam';
-  philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math';
+  philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'medha_mind';
   mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero';
   worksheetsCategory?: string;
   openBodhi?: boolean;
@@ -2537,6 +2537,47 @@ export const SEARCH_INDEX: SearchItem[] = [
     target: {
       view: 'course',
       courseAddendumId: 'addendum-turanga-bandha-knights-tour',
+    },
+  },
+  {
+    id: 'essay-medha-mind-consciousness',
+    title: 'मेधा · Medhā and the Mind: Two Ways of Looking at Consciousness',
+    subtitle: 'मेधा · अन्तःकरणम् · साक्षी · Descartes · Hard Problem · Vedānta · Sāṅkhya-Yoga · Anattā',
+    category: 'guides',
+    categoryLabel: 'Philosophy & Science',
+    badgeEmoji: '🪔',
+    badgeColor: '#7c3aed',
+    description:
+      'Medhā (from √medhṛ) and the inner instrument (antaḥkaraṇa) set beside Descartes, physicalism, functionalism and Chalmers’ hard problem, Vedānta’s kośas and sākṣī, Sāṅkhya-Yoga puruṣa/prakṛti (YS 1.2), Buddhist anattā and the Cārvāka.',
+    keywords: [
+      'medha',
+      'medhā',
+      'mind',
+      'consciousness',
+      'antahkarana',
+      'manas',
+      'buddhi',
+      'chitta',
+      'ahamkara',
+      'sakshi',
+      'witness',
+      'purusha',
+      'prakriti',
+      'kosha',
+      'atman',
+      'anatta',
+      'charvaka',
+      'descartes',
+      'hard problem',
+      'chalmers',
+      'yoga sutra',
+      'citta vritti nirodha',
+      'neuroscience',
+      'philosophy of mind',
+    ],
+    target: {
+      view: 'philosophy',
+      philosophyEssay: 'medha_mind',
     },
   },
   {
