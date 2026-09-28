@@ -123,3 +123,15 @@ export const applySafeProsody = (utterance: SpeechSynthesisUtterance): void => {
   utterance.rate = clampRate(utterance.rate);
   utterance.pitch = safePitch(utterance.pitch);
 };
+
+/**
+ * Phones / tablets: iPhone, iPad (incl. iPadOS Safari that reports "Macintosh"
+ * but has a touch screen), iPod and Android. Mac desktop and Windows are false.
+ */
+export const isMobileSpeechPlatform = (): boolean => {
+  if (typeof navigator === 'undefined') return false;
+  const ua = navigator.userAgent || '';
+  if (/Windows/i.test(ua)) return false;
+  if (/iPhone|iPad|iPod|Android/i.test(ua)) return true;
+  return /Macintosh/i.test(ua) && typeof navigator.maxTouchPoints === 'number' && navigator.maxTouchPoints > 1;
+};

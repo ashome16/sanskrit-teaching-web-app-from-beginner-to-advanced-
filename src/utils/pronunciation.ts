@@ -1,92 +1,788 @@
-import { CONSONANT_STEM, MATRA_VOWEL, isBarakhadiAkshara } from './barakhadiPhonetics';
+import { isBarakhadiAkshara, getGuninthaluSpeechText, CONSONANT_STEM, MATRA_VOWEL } from './barakhadiPhonetics';
+import {
+  applySafeProsody,
+  clampRate,
+  isApplePlatform,
+  isMobileSpeechPlatform,
+  isWindowsPlatform,
+  pickEnglishCueVoice,
+  pickHindiVoice,
+  safePitch,
+  whenVoicesReady,
+} from './speechPlatform';
+import { getSavedVoiceName, resolveVoiceForRole } from './voiceConfig';
+import { isMacDesktopPlatform, macBarakhadiCue, pickMacBarakhadiVoice } from './macBarakhadiSpeech';
+import { isDandaOrVerseNumberToken } from './dandaSpeech';
 
-let pronunciationMuted = false;
+// Native Web Speech API pronunciation helper for Sanskrit text only.
+// Strips whitespace/punctuation plus Devanagari digits and hyphens (e.g. the
+// numbers guide's "० - शून्यम्" button labels) so only the word itself is spoken.
+const cleanWord = (value: string): string =>
+  value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९./\\=+#*~_`]+/g, '').trim();
 
-export const setPronunciationMuted = (muted: boolean) => {
-  pronunciationMuted = muted;
+const isSanskritText = (value: string): boolean => /[\u0900-\u097F]/.test(value);
+
+// Devanagari vowel signs (matras) that can carry a visarga's "echo" vowel.
+const VOWEL_MATRAS = ['ा', 'ि', 'ी', 'ु', 'ू', 'ृ', 'ॄ', 'ॢ', 'ॣ', 'े', 'ै', 'ो', 'ौ'];
+const VOWEL_TO_MATRA: Record<string, string> = {
+  'आ': 'ा', 'इ': 'ि', 'ई': 'ी', 'उ': 'ु', 'ऊ': 'ू',
+  'ऋ': 'ृ', 'ॠ': 'ॄ', 'ऌ': 'ॢ', 'ॡ': 'ॣ',
+  'ए': 'े', 'ऐ': 'ै', 'ओ': 'ो', 'औ': 'ौ',
 };
 
-export const getPronunciationMuted = () => pronunciationMuted;
+// Windows speech engines misread roman cues for bare Varṇamālā consonants;
+// keep the complete standard consonant row in Devanagari so hi-IN is used.
+const WINDOWS_BARE_CONSONANTS = new Set(
+  'क ख ग घ ङ च छ ज झ ञ ट ठ ड ढ ण त थ द ध न प फ ब भ म य र ल व श ष स ह'.split(' '),
+);
+// Bare conjunct tiles: Hindi Devanagari on every OS (Mac roman ksha/jnya/sh-ra
+// and doubled त्र त्र sound worse than the Windows hi-IN letter voice).
+const CONJUNCT_TILES = new Set(['क्ष', 'ज्ञ', 'त्र', 'श्र']);
 
-export const speakConfigured = (word: string, onEnd?: () => void): void => {
-  if (pronunciationMuted) return;
+// Exact/substring phonetic overrides for words that speech engines
+// otherwise mispronounce or misinterpret entirely.
+const applyWordOverrides = (word: string): string => {
+  // ङ example words: stable English cues (same every click).
+  if (word === 'अङ्गम्' || word === 'अंगम्') return 'an gam';
+  if (word === 'गङ्गा' || word === 'गंगा') return 'gun ga';
+  if (word === 'रङ्गः' || word === 'रंगः' || word === 'रङ्ग' || word === 'रंग') return 'run ga';
+  // 'नव' (nava, 9) is otherwise auto-corrected by some engines to the English
+  // month "November"; force a pure Devanagari override to keep it Sanskrit.
+  if (word.includes('नव')) return word.replace(/नव/g, 'नवम्');
+  // 'सप्त' (sapta, 7) gets clipped to "sat" without the plosive 'p'; a
+  // hyphenated romanized hint forces the engine to articulate it in full.
+  if (word === 'सप्त') return 'sap-ta';
+  return word;
+};
 
-  // 1. स्वतंत्र स्वरों (अ से औ) के लिए लोकल MP3 मैपिंग
-  const VOWEL_MP3_MAP: Record<string, string> = {
-    'अ': 'a', 'आ': 'aa', 'इ': 'i', 'ई': 'ee', 'उ': 'u', 'ऊ': 'oo',
-    'ऋ': 'ri', 'ॠ': 'rii', 'ऌ': 'li', 'ए': 'e', 'ऐ': 'ai', 'ओ': 'o', 'औ': 'au',
-    'अं': 'am', 'अः': 'ah', 'अँ': 'an'
-  };
+// Visarga (ः) is a breathy 'h' echo of the preceding vowel, e.g. अर्थः -> अर्थह,
+// मातुः -> मातुहु. Voice engines otherwise drop it or mispronounce it silently.
+// On Windows, a thin space before 'ह' helps SAPI keep the echo audible as one word
+// (fixes picture words like एणः, ईशः, उष्ट्रः, डमरुः on Chrome/Edge).
+const applyVisargaEcho = (word: string, spacedEcho = false): string => {
+  if (!word.endsWith('ः')) return word;
+  const base = word.slice(0, -1);
+  const lastChar = base[base.length - 1];
+  const h = spacedEcho ? ' ह' : 'ह';
 
-  if (VOWEL_MP3_MAP[word]) {
-    const audioPath = `/audio/barakhadi/${VOWEL_MP3_MAP[word]}.mp3`;
-    const audio = new Audio(audioPath);
-    if (onEnd) { audio.onended = onEnd; audio.onerror = onEnd; }
-    audio.play().catch(err => { console.error(err); if (onEnd) onEnd(); });
+  if (VOWEL_MATRAS.includes(lastChar)) {
+    return base + h + lastChar;
+  }
+  if (VOWEL_TO_MATRA[lastChar]) {
+    return base + h + VOWEL_TO_MATRA[lastChar];
+  }
+  // Bare consonant (inherent 'a') or the vowel 'अ': 'ह' already carries the 'a' sound.
+  return base + h;
+};
+
+/**
+ * Rare vocalic picture words use the Windows Devanagari + spaced-visarga path
+ * on Apple too, so ॠ / ऌ are not rewritten to री / ली on Mac.
+ */
+const isRareVocalicWord = (word: string): boolean =>
+  word === 'ॠकारः' || word.startsWith('ॠकार') || word === 'ऌकारः' || word.startsWith('ऌकार');
+
+const usesWindowsWordSpeech = (word: string): boolean =>
+  isWindowsPlatform() || (isApplePlatform() && isRareVocalicWord(word));
+
+// Builds the text actually sent to the speech engine: word overrides + visarga echo.
+// Full words stay Devanagari (Hindi voice). Single tiles use roman cues.
+// Bare conjuncts always use Devanagari + hi-IN (Mac + Windows). On Windows,
+// bare consonants also skip roman cues — SAPI garbles those.
+const toSpeechText = (word: string): string => {
+  if (CONJUNCT_TILES.has(word)) {
+    return word;
+  }
+  // Single बारहखड़ी (Guṇintālu) / Varṇamālā tiles: return authentic Devanagari speech text
+  if (isBarakhadiAkshara(word) || WINDOWS_BARE_CONSONANTS.has(word)) {
+    return getGuninthaluSpeechText(word);
+  }
+
+  const overridden = applyWordOverrides(word);
+
+  // Windows whole-word path: keep Devanagari + spaced visarga echo for hi-IN.
+  // Mac rare-vocalic words use this same path instead of a री / ली rewrite.
+  if (usesWindowsWordSpeech(word)) {
+    // Never let roman overrides win for ordinary picture words on Windows —
+    // force Devanagari so pickHindiVoice is used (एणः, ईशः, …).
+    if (/^[a-z\- ]+$/i.test(overridden) && !/^(an gam|gun ga|run ga|sap-ta)$/i.test(overridden)) {
+      return applyVisargaEcho(word, true);
+    }
+    if (/^[a-z\- ]+$/i.test(overridden)) {
+      return overridden; // intentional ङ / सप्त roman anchors
+    }
+    return applyVisargaEcho(overridden, true);
+  }
+
+  return applyVisargaEcho(overridden, false);
+};
+
+/** Default playback rate (1x). Slow presets were removed. */
+const DEFAULT_RATE = 1;
+
+const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, speech: string): void => {
+  const voices = window.speechSynthesis.getVoices();
+  const configuredReaderVoice = resolveVoiceForRole('reader', voices);
+  const voice = configuredReaderVoice || pickHindiVoice(voices);
+  utterance.voice = voice || null;
+
+  // Devanagari text (Guninthalu, Varnamala, full Sanskrit words): always use Indian/Hindi voice
+  if (/[\u0900-\u097F]/.test(speech)) {
+    utterance.voice = voice || null;
+    utterance.lang = voice?.lang || 'hi-IN';
+  } else if (/^[a-z\- ]+$/i.test(speech)) {
+    const en = pickEnglishCueVoice(voices);
+    if (en) {
+      utterance.voice = en;
+      utterance.lang = en.lang;
+    } else {
+      utterance.lang = 'en-IN';
+    }
+  } else {
+    utterance.lang = voice?.lang || 'hi-IN';
+  }
+
+  // Windows: known-problem conjuncts — mild Devanagari rate, natural pitch
+  const isKsha = word === 'क्ष' || speech === 'क्ष';
+  const isGya = word === 'ज्ञ' || speech === 'ज्ञ';
+  const isTra = word === 'त्र' || speech === 'त्र';
+  const isGha = word === 'घ' || speech === 'gha';
+  const isJa = word === 'ज' || speech === 'ज';
+  const isDha = word === 'ध' || speech === 'ध';
+  const isJha = word === 'झ' || speech === 'झ';
+
+  if (isWindowsPlatform() && (isGya || isTra || isKsha || isGha || isJa || isDha || isJha)) {
+    utterance.rate = clampRate(0.9);
+    utterance.pitch = safePitch(1);
+    utterance.volume = 1;
     return;
   }
 
-  // 2. बाराखड़ी अक्षरों के लिए इंटरसेप्टर
+  // Natural pitch (1.0) across all akṣaras — avoid chipmunk distortions
+  utterance.pitch = 1.0;
+
+  // Pedagogical recitation rates:
+  // - Long vowels (ā, ī, ū, ai, au): deliberate 2-mātrā duration (0.84)
+  // - Visarga echo (kaha, khaha, gaha): 0.88
+  // - Conjuncts (ksha, tra, jnya, shra): 0.88
+  // - Guninthalu / Varnamala single akṣaras: 0.92
+  // - Full multi-word sentences: DEFAULT_RATE (1.0)
+  const isLongVowel = /[ाीूॄैौ]/.test(word) || word === 'आ' || word === 'ई' || word === 'ऊ' || word === 'ऐ' || word === 'औ';
+  const isVisarga = word.endsWith('ः') || speech.endsWith('ह');
+  const isConjunct = CONJUNCT_TILES.has(word) || isKsha || isGya || isTra;
+  const isNgaWord = speech === 'gun ga' || speech === 'run ga' || speech === 'an gam';
+
+  if (isNgaWord) {
+    utterance.rate = 0.55;
+  } else if (isVisarga) {
+    utterance.rate = 0.88;
+  } else if (isLongVowel) {
+    utterance.rate = 0.84;
+  } else if (isConjunct) {
+    utterance.rate = 0.88;
+  } else if (isBarakhadiAkshara(word) || WINDOWS_BARE_CONSONANTS.has(word)) {
+    utterance.rate = 0.92;
+  } else {
+    utterance.rate = DEFAULT_RATE;
+  }
+
+  utterance.volume = 1;
+  applySafeProsody(utterance);
+};
+
+/** ञ = enya with fast en then slow ya (Mac). Windows: plain Devanagari + hi-IN. */
+const playNyaEnya = (onDone?: () => void): void => {
+  if (isWindowsPlatform()) {
+    const hi = pickHindiVoice();
+    const utterance = new SpeechSynthesisUtterance('ञ');
+    utterance.voice = hi || null;
+    utterance.lang = hi?.lang || 'hi-IN';
+    utterance.rate = clampRate(0.9);
+    utterance.pitch = safePitch(1);
+    utterance.volume = 1;
+    utterance.onend = () => onDone?.();
+    utterance.onerror = () => onDone?.();
+    window.speechSynthesis.speak(utterance);
+    return;
+  }
+
+  const enVoice = pickEnglishCueVoice();
+  const enPart = new SpeechSynthesisUtterance('enn');
+  enPart.voice = enVoice || null;
+  enPart.lang = enVoice?.lang || 'en-IN';
+  enPart.rate = clampRate(1.95);
+  enPart.pitch = safePitch(1);
+  const yaPart = new SpeechSynthesisUtterance('ya');
+  yaPart.voice = enVoice || null;
+  yaPart.lang = enVoice?.lang || 'en-IN';
+  yaPart.rate = clampRate(0.55);
+  yaPart.pitch = safePitch(1);
+  enPart.onend = () => {
+    window.speechSynthesis.speak(yaPart);
+  };
+  yaPart.onend = () => onDone?.();
+  yaPart.onerror = () => onDone?.();
+  enPart.onerror = () => {
+    window.speechSynthesis.speak(yaPart);
+  };
+  window.speechSynthesis.speak(enPart);
+};
+
+let pronunciationMuted = false;
+if (typeof window !== 'undefined') {
+  try {
+    if (localStorage.getItem('sanskrit_sound_muted') === 'true') {
+      pronunciationMuted = true;
+    }
+  } catch {
+    // Ignore storage unavailability in incognito/SSR
+  }
+}
+
+export const setPronunciationMuted = (muted: boolean): void => {
+  pronunciationMuted = muted;
+  if (muted) {
+    stopPronunciation();
+  }
+};
+
+export const isPronunciationMuted = (): boolean => pronunciationMuted;
+
+/** Bumps on every play/stop so stale whenVoicesReady() callbacks do not speak. */
+let speakGeneration = 0;
+
+/** Current stop/play generation — lets independent players (e.g. the Śānti
+ * mantra reciter) notice when any other playback called stopPronunciation(). */
+export const getSpeechGeneration = (): number => speakGeneration;
+
+export const stopPronunciation = (): void => {
+  speakGeneration += 1;
+  if (typeof window === 'undefined' || !window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+};
+
+
+/**
+ * Mac-only बारहखड़ी overrides (see macBarakhadiSpeech.ts for the cell → cue table).
+ * Returns true when it spoke. Only fires on macOS desktop, while the बारहखड़ी lesson
+ * is open, for the specific reported cells, and only if a Hindi voice exists.
+ */
+const speakMacBarakhadiOverride = (word: string, onEnd?: () => void): boolean => {
+  const cue = macBarakhadiCue(word);
+  if (!cue) return false;
+  const voices = window.speechSynthesis.getVoices();
+  const savedName = getSavedVoiceName('reader');
+  const saved = savedName ? voices.find((v) => v.name === savedName) : undefined;
+  const hindi = pickMacBarakhadiVoice(voices, saved);
+  if (!hindi) return false;
+  const utterance = new SpeechSynthesisUtterance(cue);
+  configureUtterance(utterance, word, cue); // same rate rules as other tiles, pitch 1.0
+  utterance.voice = hindi;
+  utterance.lang = hindi.lang || 'hi-IN';
+  utterance.pitch = 1.0;
+  if (onEnd) {
+    utterance.onend = onEnd;
+    utterance.onerror = onEnd;
+  }
+  window.speechSynthesis.speak(utterance);
+  return true;
+};
+
+/**
+ * Mac-only vocalic vowel tiles (Varṇamālā ऋ ॠ ऌ, plus ॡ if ever shown).
+ * Plain ऋ / ॠ / लृ all came out as the same "ri" from Lekha on Mac, so each tile
+ * gets an explicit hi-IN cue and ॠ / ॡ a slower rate for the long vowel:
+ *   ऋ → रि   (short ri, rate from configureUtterance: 0.92)
+ *   ॠ → री   (long rī, rate 0.72)
+ *   ऌ → ल्रि  (lṛ ≈ "lri", rate 0.92)
+ *   ॡ → ल्री  (long lṝ ≈ "lrī", rate 0.72)
+ * Exact single-letter tokens only: the ॠकारः / ऌकारः name words (Windows-matched
+ * path), the barakhadi C्ऋ cues, Windows and iOS are unaffected. Pitch 1.0.
+ */
+const MAC_VOCALIC_CUES: Record<string, { cue: string; rate?: number }> = {
+  'ऋ': { cue: 'रि' },
+  'ॠ': { cue: 'री', rate: 0.72 },
+  'ऌ': { cue: 'ल्रि' },
+  'ॡ': { cue: 'ल्री', rate: 0.72 },
+};
+
+const speakMacVocalicVowel = (word: string, onEnd?: () => void): boolean => {
+  const entry = MAC_VOCALIC_CUES[word];
+  if (!entry || !isMacDesktopPlatform()) return false;
+  const voices = window.speechSynthesis.getVoices();
+  const savedName = getSavedVoiceName('reader');
+  const saved = savedName ? voices.find((v) => v.name === savedName) : undefined;
+  const hindi = pickMacBarakhadiVoice(voices, saved);
+  if (!hindi) return false;
+  const utterance = new SpeechSynthesisUtterance(entry.cue);
+  configureUtterance(utterance, word, entry.cue);
+  utterance.voice = hindi;
+  utterance.lang = hindi.lang || 'hi-IN';
+  utterance.pitch = 1.0;
+  if (entry.rate) utterance.rate = entry.rate;
+  if (onEnd) {
+    utterance.onend = onEnd;
+    utterance.onerror = onEnd;
+  }
+  window.speechSynthesis.speak(utterance);
+  return true;
+};
+
+const speakConfigured = (word: string, onEnd?: () => void): void => {
+  if (pronunciationMuted) return;
+
+  // 1. Intercept Barakhadi characters and play our local MP3 files
   if (isBarakhadiAkshara(word)) {
     const cons = word[0];
     const rest = word.slice(1);
+    
+    // Map the Devanagari back to our English filenames
     const stem = CONSONANT_STEM[cons];
     const vowel = MATRA_VOWEL[rest] || (rest === '' ? 'a' : undefined);
 
     if (stem && vowel) {
-      const audioPath = `/audio/barakhadi/${stem}_${vowel}.mp3`;
+      // Mobile only (iPhone / iPad / Android): the shared ठ recordings — above all
+      // bare ठ (tth_a.mp3) — have almost no aspiration puff (≈40 ms burst-to-voicing
+      // vs ≈20 ms for ट), so ठ and ट sound the same on phone speakers. The files in
+      // /audio/barakhadi-mobile/ are the same Google Hindi voice (gTTS, lang hi)
+      // generated from an explicit-aspiration cue ठ्ह + mātrā (ठ → "ठ्ह", ठा → "ठ्हा",
+      // ठि → "ठ्हि" … ठं → "ठ्हं", ठः → "ठ्हः"), measuring ≈70–90 ms aspiration for
+      // every cell. ट stays on the original unaspirated files. Mac desktop and
+      // Windows keep /audio/barakhadi/ unchanged.
+      const useMobileTha = cons === 'ठ' && isMobileSpeechPlatform();
+      const audioPath = useMobileTha
+        ? `/audio/barakhadi-mobile/${stem}_${vowel}.mp3`
+        : `/audio/barakhadi/${stem}_${vowel}.mp3`;
       const audio = new Audio(audioPath);
+      
       if (onEnd) {
         audio.onended = onEnd;
         audio.onerror = onEnd;
       }
+      
       audio.play().catch(err => {
         console.error(`Could not play audio for ${word}:`, err);
         if (onEnd) onEnd();
       });
-      return;
+      
+      return; // Stop here so it doesn't trigger the robotic Mac voice!
     }
   }
 
-  // 3. फॉलबैक टेक्स्ट-टू-स्पीच लॉजिक
-  const utterance = new SpeechSynthesisUtterance(word);
-  utterance.lang = 'hi-IN';
+  // 2. Fall back to the built-in Text-to-Speech for full words and sentences
+  if (speakMacBarakhadiOverride(word, onEnd)) return;
+  if (speakMacVocalicVowel(word, onEnd)) return;
+  if (word === 'ञ') {
+    const voices = window.speechSynthesis.getVoices();
+    const hasHindi = !!(resolveVoiceForRole('reader', voices) || pickHindiVoice(voices));
+    if (!hasHindi && !isWindowsPlatform()) {
+      playNyaEnya(onEnd);
+      return;
+    }
+  }
+  const speech = toSpeechText(word);
+  const utterance = new SpeechSynthesisUtterance(speech);
+  configureUtterance(utterance, word, speech);
   if (onEnd) {
     utterance.onend = onEnd;
     utterance.onerror = onEnd;
   }
   window.speechSynthesis.speak(utterance);
 };
-
-export const playPronunciation = (word: string, onEnd?: () => void): void => {
-  speakConfigured(word, onEnd);
-};
-
-export const playSequence = (words: string[], onComplete?: () => void): void => {
-  if (!words || words.length === 0) {
-    if (onComplete) onComplete();
+export const playPronunciation = (value: string): void => {
+  if (pronunciationMuted) return;
+  // Never voice a bare daṇḍa / double daṇḍa / verse number ("danda", "poorn viraam").
+  if (isDandaOrVerseNumberToken(value)) return;
+  const word = cleanWord(value) || value.trim();
+  if (!word || !isSanskritText(word) || typeof window === 'undefined' || !window.speechSynthesis) {
     return;
   }
-  let index = 0;
-  const playNext = () => {
-    if (index >= words.length) {
-      if (onComplete) onComplete();
-      return;
-    }
-    speakConfigured(words[index], () => {
-      index++;
-      playNext();
-    });
-  };
-  playNext();
+
+  stopPronunciation();
+  const gen = speakGeneration;
+  void whenVoicesReady().then(() => {
+    if (pronunciationMuted || gen !== speakGeneration) return;
+    speakConfigured(word);
+  });
 };
 
-export const stopPronunciation = (): void => {
-  if (typeof window !== 'undefined' && window.speechSynthesis) {
-    window.speechSynthesis.cancel();
+/** Speak a list of words/letters in order. Returns stop(). */
+export const playSequence = (
+  values: string[],
+  options?: {
+    gapMs?: number;
+    onDone?: () => void;
+    /** Fired just before each item is spoken (for tile highlight). */
+    onItem?: (word: string, index: number) => void;
+  },
+): (() => void) => {
+  const gapMs = options?.gapMs ?? 220;
+  const items = values
+    // Skip daṇḍa / double daṇḍa / verse-number tokens so Play-all never says "danda".
+    .filter((value) => !isDandaOrVerseNumberToken(value))
+    .map((value) => cleanWord(value) || value.trim())
+    .filter((word) => word && isSanskritText(word));
+
+  if (!items.length || typeof window === 'undefined' || !window.speechSynthesis) {
+    options?.onDone?.();
+    return () => undefined;
+  }
+
+  let cancelled = false;
+  let timer: ReturnType<typeof setTimeout> | null = null;
+  let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
+  let index = 0;
+  let settledForIndex = -1;
+
+  const clearTimer = () => {
+    if (timer !== null) {
+      clearTimeout(timer);
+      timer = null;
+    }
+    if (fallbackTimer !== null) {
+      clearTimeout(fallbackTimer);
+      fallbackTimer = null;
+    }
+  };
+
+  const stop = () => {
+    cancelled = true;
+    clearTimer();
+    stopPronunciation();
+  };
+
+  const speakNext = () => {
+    if (cancelled) return;
+    if (index >= items.length) {
+      options?.onDone?.();
+      return;
+    }
+    const word = items[index];
+    const itemIndex = index;
+    index += 1;
+    options?.onItem?.(word, itemIndex);
+
+    const after = () => {
+      if (cancelled || settledForIndex === itemIndex) return;
+      // External stopPronunciation() bumps speakGeneration — abort the queue.
+      if (gen !== speakGeneration) {
+        cancelled = true;
+        return;
+      }
+      settledForIndex = itemIndex;
+      clearTimer();
+      timer = setTimeout(speakNext, gapMs);
+    };
+
+    // Some Chrome/Edge builds skip onend; advance after a safe upper bound.
+    const fallbackMs = Math.max(1800, word.length * 420);
+    fallbackTimer = setTimeout(after, fallbackMs);
+    speakConfigured(word, after);
+  };
+
+  stopPronunciation();
+  const gen = speakGeneration;
+  void whenVoicesReady().then(() => {
+    if (cancelled || gen !== speakGeneration) return;
+    speakNext();
+  });
+  return stop;
+};
+
+/* -------------------------------------------------------------------------
+ * Bodhi's teacher voice
+ * -------------------------------------------------------------------------
+ * playPronunciation() is tuned for single letters/words (and strips spaces).
+ * Bodhi speaks greetings, phrases and whole subhāṣita verses, so he gets his
+ * own calm, unhurried delivery: same hi-IN voice selection + platform rules,
+ * slower rate, and verse text split into short chunks with a gentle pause.
+ * He can also read his English tips aloud with an en-IN (fallback en-*) voice.
+ */
+
+/** Mac / other: calm teacher pace (kept ≥ 0.72 — lower rates sound gravelly). */
+export const BODHI_RATE = 0.75;
+/** Windows: the clampRate floor — SAPI voices garble below this. */
+export const BODHI_WINDOWS_RATE = 0.75;
+/** Natural pitch, same as Varṇamālā playback (safePitch keeps Windows at 1). */
+const BODHI_PITCH = 1;
+/** Pause between recited chunks (half-verses, phrases). */
+export const BODHI_CHUNK_PAUSE_MS = 420;
+
+/** Bodhi voice speed preference (🐢 Slow is the default). */
+export type BodhiVoiceSpeed = 'slow' | 'normal';
+export type BodhiSpeechLang = 'sa' | 'en';
+export const BODHI_SPEED_STORAGE_KEY = 'bodhiVoiceSpeed';
+
+/**
+ * Rate + pause per speed and platform.
+ * - Slow (default): Mac/other 0.75 + 420ms. Windows can't go below rate 0.75
+ *   (clampRate floor), so Slow there uses a longer 600ms pause to feel slower.
+ * - Normal: Mac/other 0.85, Windows 0.9, both with a 250ms pause.
+ */
+const BODHI_SPEED_SETTINGS: Record<BodhiVoiceSpeed, { mac: number; win: number; pauseMac: number; pauseWin: number }> = {
+  slow: { mac: BODHI_RATE, win: BODHI_WINDOWS_RATE, pauseMac: BODHI_CHUNK_PAUSE_MS, pauseWin: 600 },
+  normal: { mac: 0.85, win: 0.9, pauseMac: 250, pauseWin: 250 },
+};
+
+export const getBodhiVoiceSpeed = (): BodhiVoiceSpeed => {
+  try {
+    if (typeof window !== 'undefined' && window.localStorage?.getItem(BODHI_SPEED_STORAGE_KEY) === 'normal') {
+      return 'normal';
+    }
+  } catch {
+    /* storage unavailable (private mode) */
+  }
+  return 'slow';
+};
+
+export const setBodhiVoiceSpeed = (speed: BodhiVoiceSpeed): void => {
+  try {
+    window.localStorage?.setItem(BODHI_SPEED_STORAGE_KEY, speed);
+  } catch {
+    /* storage unavailable */
   }
 };
 
-export const getSpeechGeneration = (): number => {
-  return 1;
+export const bodhiVoiceSettings = (
+  speed: BodhiVoiceSpeed = getBodhiVoiceSpeed(),
+): { rate: number; pauseMs: number } => {
+  const s = BODHI_SPEED_SETTINGS[speed] || BODHI_SPEED_SETTINGS.slow;
+  return isWindowsPlatform()
+    ? { rate: clampRate(s.win), pauseMs: s.pauseWin }
+    : { rate: s.mac, pauseMs: s.pauseMac };
 };
+
+/** A piece of the original text, tagged with its spoken chunk index (or null). */
+export interface BodhiSegment {
+  text: string;
+  chunkIndex: number | null;
+}
+
+const SANSKRIT_BREAK = /([।॥\n\r,;!?]+)/;
+
+const cleanSanskritChunk = (chunk: string): string =>
+  chunk
+    // Drop Devanagari verse numbers, dashes, quotes and brackets.
+    .replace(/[।॥०-९0-9()[\]{}<>'"“”‘’\-–—|]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const cleanEnglishChunk = (chunk: string): string =>
+  chunk
+    // English voice should not attempt Devanagari: drop "(शून्य)" glosses
+    // and any stray Devanagari words, then tidy leftover quotes/brackets.
+    .replace(/\([^)]*[\u0900-\u097F][^)]*\)/g, ' ')
+    .replace(/[\u0900-\u097F]+/g, ' ')
+    .replace(/["“”]\s*["“”]/g, ' ')
+    .replace(/[“”"()[\]{}<>]+/g, ' ')
+    .replace(/\s+([,.;:!?])/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+/**
+ * Split text into display segments, each tagged with the chunk index that
+ * speakAsBodhi() will report via onChunk. Joining every segment's text gives
+ * back the original string, so the UI can render it with a highlight.
+ * Sanskrit: chunks on । ॥ newline , ; ! ?   English: chunks on . ! ? / newline.
+ */
+export const splitBodhiSegments = (text: string, lang: BodhiSpeechLang = 'sa'): BodhiSegment[] => {
+  const segments: BodhiSegment[] = [];
+  let next = 0;
+  if (lang === 'en') {
+    const parts = (text || '').match(/[^.!?\n]+(?:[.!?]+["”’')\]]*)?\s*|[.!?\n]+\s*/g) || [];
+    for (const part of parts) {
+      const cleaned = cleanEnglishChunk(part);
+      segments.push({ text: part, chunkIndex: /[a-z]/i.test(cleaned) ? next++ : null });
+    }
+    return segments;
+  }
+  for (const part of (text || '').split(SANSKRIT_BREAK)) {
+    if (!part) continue;
+    if (SANSKRIT_BREAK.test(part) && /^[।॥\n\r,;!?]+$/.test(part)) {
+      segments.push({ text: part, chunkIndex: null });
+      continue;
+    }
+    const cleaned = cleanSanskritChunk(part);
+    segments.push({ text: part, chunkIndex: cleaned && isSanskritText(cleaned) ? next++ : null });
+  }
+  return segments;
+};
+
+const chunksFromSegments = (text: string, lang: BodhiSpeechLang): string[] =>
+  splitBodhiSegments(text, lang)
+    .filter((seg) => seg.chunkIndex !== null)
+    .map((seg) => (lang === 'en' ? cleanEnglishChunk(seg.text) : cleanSanskritChunk(seg.text)));
+
+/**
+ * Split text into recitation chunks on danda (। ॥), newlines, commas and
+ * sentence marks (! ?). Keeps spaces inside a chunk so words stay separate.
+ */
+export const splitBodhiChunks = (text: string): string[] => chunksFromSegments(text, 'sa');
+
+/** English tips: chunk on sentence boundaries (. ! ?). */
+export const splitBodhiEnglishChunks = (text: string): string[] => chunksFromSegments(text, 'en');
+
+/** Per-word visarga echo (same rule as the letter/word path). */
+const toBodhiSpeech = (chunk: string): string => {
+  const spaced = isWindowsPlatform();
+  return chunk
+    .split(' ')
+    .map((word) => applyVisargaEcho(word, spaced))
+    .join(' ');
+};
+
+/** English voice only (en-IN preferred, then any en-*). Never a Hindi voice. */
+const pickBodhiEnglishVoice = (voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | undefined =>
+  pickEnglishCueVoice(voices.filter((v) => (v.lang || '').toLowerCase().replace('_', '-').startsWith('en')));
+
+/**
+ * Sanskrit: reuse the exact Varṇamālā letter/word configuration
+ * (configureUtterance → pickHindiVoice, same hi-IN preference order on every
+ * platform, Devanagari text), then apply only Bodhi's slow rate and natural
+ * pitch 1 via safePitch. English tips: separate gentle en-IN voice, pitch 1.
+ */
+const configureBodhiUtterance = (
+  utterance: SpeechSynthesisUtterance,
+  lang: BodhiSpeechLang,
+  rate: number,
+  chunk: string,
+): void => {
+  const allVoices = window.speechSynthesis.getVoices();
+  const configuredBodhiVoice = resolveVoiceForRole('bodhi', allVoices);
+  if (lang === 'en') {
+    const voice = configuredBodhiVoice || pickBodhiEnglishVoice(allVoices);
+    utterance.voice = voice || null;
+    utterance.lang = voice?.lang || 'en-IN';
+  } else {
+    if (configuredBodhiVoice) {
+      utterance.voice = configuredBodhiVoice;
+      utterance.lang = configuredBodhiVoice.lang || 'hi-IN';
+    } else {
+      configureUtterance(utterance, chunk, utterance.text);
+    }
+  }
+  utterance.rate = clampRate(rate);
+  utterance.pitch = safePitch(BODHI_PITCH);
+  utterance.volume = 1;
+};
+
+export interface SpeakAsBodhiOptions {
+  onEnd?: () => void;
+  /** Fired just before each chunk is spoken (follow-along highlight). */
+  onChunk?: (index: number, chunkText: string) => void;
+  /** Override the pause between chunks (defaults from speed). */
+  pauseMs?: number;
+  /** Force a speed; otherwise the stored preference is read per chunk. */
+  speed?: BodhiVoiceSpeed;
+  /** 'sa' (default, hi-IN voice) or 'en' (en-IN / en-* voice). */
+  lang?: BodhiSpeechLang;
+}
+
+/**
+ * Speak as Bodhi: cancels any in-progress speech, then recites chunk by chunk
+ * at a slow pace. onEnd fires exactly once (finished, stopped, or aborted by
+ * another playPronunciation/stopPronunciation). Returns stop().
+ */
+export const speakAsBodhi = (text: string, options?: SpeakAsBodhiOptions): (() => void) => {
+  const lang: BodhiSpeechLang = options?.lang ?? 'sa';
+  const chunks = chunksFromSegments(text || '', lang);
+  let ended = false;
+  const finish = () => {
+    if (ended) return;
+    ended = true;
+    options?.onEnd?.();
+  };
+
+  if (!chunks.length || typeof window === 'undefined' || !window.speechSynthesis) {
+    finish();
+    return () => undefined;
+  }
+
+  // Speed is resolved per chunk so toggling 🐢 Slow / Normal mid-verse
+  // applies from the next chunk.
+  const currentSettings = () => bodhiVoiceSettings(options?.speed ?? getBodhiVoiceSpeed());
+  let cancelled = false;
+  let timer: ReturnType<typeof setTimeout> | null = null;
+  let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
+  let index = 0;
+  let settledForIndex = -1;
+
+  const clearTimers = () => {
+    if (timer !== null) {
+      clearTimeout(timer);
+      timer = null;
+    }
+    if (fallbackTimer !== null) {
+      clearTimeout(fallbackTimer);
+      fallbackTimer = null;
+    }
+  };
+
+  const stop = () => {
+    if (cancelled) return;
+    cancelled = true;
+    clearTimers();
+    stopPronunciation();
+    finish();
+  };
+
+  stopPronunciation();
+  const gen = speakGeneration;
+
+  const speakNext = () => {
+    if (cancelled) return;
+    if (gen !== speakGeneration) {
+      cancelled = true;
+      clearTimers();
+      finish();
+      return;
+    }
+    if (index >= chunks.length) {
+      clearTimers();
+      finish();
+      return;
+    }
+    const chunk = chunks[index];
+    const chunkIndex = index;
+    index += 1;
+    const settings = currentSettings();
+
+    const after = () => {
+      if (cancelled || settledForIndex === chunkIndex) return;
+      settledForIndex = chunkIndex;
+      clearTimers();
+      if (gen !== speakGeneration) {
+        cancelled = true;
+        finish();
+        return;
+      }
+      const pauseMs = options?.pauseMs ?? currentSettings().pauseMs;
+      timer = setTimeout(speakNext, chunkIndex + 1 < chunks.length ? pauseMs : 0);
+    };
+
+    const utterance = new SpeechSynthesisUtterance(lang === 'en' ? chunk : toBodhiSpeech(chunk));
+    configureBodhiUtterance(utterance, lang, settings.rate, chunk);
+    utterance.onend = after;
+    utterance.onerror = after;
+    try {
+      options?.onChunk?.(chunkIndex, chunk);
+    } catch {
+      /* UI callback errors must not break recitation */
+    }
+    // Some Chrome/Edge builds skip onend; advance after a generous upper
+    // bound proportional to the chunk length at Bodhi's slow rate.
+    const perChar = lang === 'en' ? 120 : 220;
+    const fallbackMs = Math.max(2500, Math.round((chunk.length * perChar) / utterance.rate));
+    fallbackTimer = setTimeout(after, fallbackMs);
+    window.speechSynthesis.speak(utterance);
+  };
+
+  void whenVoicesReady().then(() => {
+    if (cancelled) return;
+    speakNext();
+  });
+  return stop;
+};
+
+/** Stop Bodhi (or any) speech. */
+export const stopBodhiSpeech = (): void => stopPronunciation();

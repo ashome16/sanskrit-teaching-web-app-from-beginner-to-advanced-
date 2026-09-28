@@ -54,6 +54,70 @@
   font-size: 1.15rem;
 }
 
+/* Link from Varṇamālā to the बारहखड़ी lesson */
+.varnamala-barakhadi-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: -0.35rem 0 1.25rem;
+  padding: 0.7rem 1rem;
+  border-radius: 14px;
+  border: 1.5px solid #99f6e4;
+  background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+  color: #115e59;
+  text-decoration: none;
+  transition: all 0.18s ease;
+}
+
+.varnamala-barakhadi-link:hover,
+.varnamala-barakhadi-link:focus-visible {
+  border-color: #0f766e;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.18);
+  transform: translateY(-1px);
+}
+
+.varnamala-barakhadi-link__dev {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f766e;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid #99f6e4;
+}
+
+.varnamala-barakhadi-link__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  flex: 1;
+  min-width: 0;
+  font-size: 0.85rem;
+  color: #334155;
+}
+
+.varnamala-barakhadi-link__text strong {
+  font-size: 1rem;
+  color: #115e59;
+}
+
+.varnamala-barakhadi-link__arrow {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+[data-theme='dark'] .varnamala-barakhadi-link {
+  background: #0f172a;
+  border-color: #134e4a;
+}
+
+[data-theme='dark'] .varnamala-barakhadi-link__text,
+[data-theme='dark'] .varnamala-barakhadi-link__text strong {
+  color: #ccfbf1;
+}
+
 /* =========================================================================
    BOUNCY LETTER TILES & MNEMONIC BADGES
    ========================================================================= */

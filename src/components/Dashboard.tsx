@@ -164,7 +164,7 @@ const pathToView = (pathname: string): DashboardView | null => {
   if (clean === '/dhatupatha' || clean === '/dhatu' || clean === '/dhaturoop') return 'dhatupatha';
   if (clean === '/quiz' || clean === '/quizzes') return 'quiz';
   if (clean === '/board' || clean === '/jodo' || clean === '/puzzles') return 'board';
-  if (clean === '/reader' || clean === '/varnamala' || clean === '/lessons') return 'reader';
+  if (clean === '/reader' || clean === '/varnamala' || clean === '/lessons' || clean === '/barakhadi') return 'reader';
   if (clean === '/faq' || clean === '/help') return 'faq';
   return null;
 };
@@ -208,6 +208,14 @@ const cleanWord = (value: string): string =>
 const Dashboard: React.FC = () => {
   const [lessons, setLessons] = useState(STATIC_LESSONS);
   const [lessonIndex, setLessonIndex] = useState(() => {
+    try {
+      if (window.location.pathname.replace(/\/+$/, '') === '/barakhadi') {
+        const bIdx = STATIC_LESSONS.findIndex((item) => item.id === 'barakhadi');
+        if (bIdx >= 0) return bIdx;
+      }
+    } catch {
+      /* no window (SSR) */
+    }
     const saved = localStorage.getItem('school-lesson-id');
     if (saved && !HIDDEN_DEEPAKAM_IDS.has(saved)) {
       const idx = STATIC_LESSONS.findIndex((item) => item.id === saved);
@@ -306,6 +314,20 @@ const Dashboard: React.FC = () => {
     }
     return true;
   };
+
+  // Guests opening the /barakhadi deep link get the same sign-up box as other gated lessons.
+  useEffect(() => {
+    try {
+      if (window.location.pathname.replace(/\/+$/, '') !== '/barakhadi') return;
+    } catch {
+      return;
+    }
+    if (isContentGated('reader', 'barakhadi')) {
+      setPendingRedirect('reader', 'barakhadi');
+      openAuthModal('register');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Deep link into a Course Addendum unit (e.g. Mantras & Ślokas) + remount key.
   const [courseAddendumTarget, setCourseAddendumTarget] = useState<{ id: string; key: number } | null>(null);
@@ -509,7 +531,8 @@ const Dashboard: React.FC = () => {
   // Keep clean canonical URLs and SEO meta tags in sync with activeView
   useEffect(() => {
     try {
-      const desired = viewToPath(activeView);
+      const desired =
+        activeView === 'reader' && lessons[lessonIndex]?.id === 'barakhadi' ? '/barakhadi' : viewToPath(activeView);
       const current = window.location.pathname.replace(/\/+$/, '') || '/';
       if (current !== desired) {
         window.history.pushState({ view: activeView }, '', desired);
@@ -527,7 +550,8 @@ const Dashboard: React.FC = () => {
       const canonicalEl = document.querySelector('link[rel="canonical"]');
       if (canonicalEl) canonicalEl.setAttribute('href', `https://ednetlearn.in${desired === '/' ? '/' : desired}`);
     } catch {}
-  }, [activeView]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeView, lessons[lessonIndex]?.id]);
 
   useEffect(() => {
     const onPop = () => {
@@ -1082,6 +1106,7 @@ const Dashboard: React.FC = () => {
           onOpenPuzzle={() => navigateToView('board')}
           onOpenVoiceSettings={() => setIsVoiceModalOpen(true)}
           onOpenCbseGuide={() => navigateToView('cbse-guide')}
+          onOpenBarakhadi={() => openDeepakam('barakhadi')}
         />}
         {activeView === 'course' && (
           <SanskritThinkingCourse

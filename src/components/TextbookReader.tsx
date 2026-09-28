@@ -40,6 +40,8 @@ interface TextbookReaderProps {
   onOpenPuzzle?: () => void;
   onOpenVoiceSettings?: () => void;
   onOpenCbseGuide?: () => void;
+  /** Opens the बारहखड़ी lesson (deep link /barakhadi); access rules applied by the parent. */
+  onOpenBarakhadi?: () => void;
 }
 
 const cleanWord = (value: string): string =>
@@ -249,6 +251,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   onOpenPuzzle,
   onOpenVoiceSettings,
   onOpenCbseGuide,
+  onOpenBarakhadi,
 }) => {
   const { isAdminLoggedIn, currentUser } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
@@ -715,6 +718,24 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 <span>अभ्यास-पत्रिकाः (Printable Worksheets)</span>
               </button>
             </nav>
+          )}
+
+          {isVarnamala && onOpenBarakhadi && (
+            <a
+              href="/barakhadi"
+              className="varnamala-barakhadi-link"
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenBarakhadi();
+              }}
+            >
+              <span className="varnamala-barakhadi-link__dev" aria-hidden="true">का कि की</span>
+              <span className="varnamala-barakhadi-link__text">
+                <strong>बारहखड़ी · Barakhadi</strong>
+                <span>consonant + vowel chart (क का कि की …) with audio</span>
+              </span>
+              <span className="varnamala-barakhadi-link__arrow" aria-hidden="true">→</span>
+            </a>
           )}
 
           {isNumbers && (
