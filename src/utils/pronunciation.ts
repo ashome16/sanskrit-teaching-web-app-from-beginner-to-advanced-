@@ -3,7 +3,6 @@ import {
   applySafeProsody,
   clampRate,
   isApplePlatform,
-  isMobileSpeechPlatform,
   isWindowsPlatform,
   pickEnglishCueVoice,
   pickHindiVoice,
@@ -341,18 +340,7 @@ const speakConfigured = (word: string, onEnd?: () => void): void => {
     const vowel = MATRA_VOWEL[rest] || (rest === '' ? 'a' : undefined);
 
     if (stem && vowel) {
-      // Mobile only (iPhone / iPad / Android): the shared ठ recordings — above all
-      // bare ठ (tth_a.mp3) — have almost no aspiration puff (≈40 ms burst-to-voicing
-      // vs ≈20 ms for ट), so ठ and ट sound the same on phone speakers. The files in
-      // /audio/barakhadi-mobile/ are the same Google Hindi voice (gTTS, lang hi)
-      // generated from an explicit-aspiration cue ठ्ह + mātrā (ठ → "ठ्ह", ठा → "ठ्हा",
-      // ठि → "ठ्हि" … ठं → "ठ्हं", ठः → "ठ्हः"), measuring ≈70–90 ms aspiration for
-      // every cell. ट stays on the original unaspirated files. Mac desktop and
-      // Windows keep /audio/barakhadi/ unchanged.
-      const useMobileTha = cons === 'ठ' && isMobileSpeechPlatform();
-      const audioPath = useMobileTha
-        ? `/audio/barakhadi-mobile/${stem}_${vowel}.mp3`
-        : `/audio/barakhadi/${stem}_${vowel}.mp3`;
+      const audioPath = `/audio/barakhadi/${stem}_${vowel}.mp3`;
       const audio = new Audio(audioPath);
       
       if (onEnd) {
