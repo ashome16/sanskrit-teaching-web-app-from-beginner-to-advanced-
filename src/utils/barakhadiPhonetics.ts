@@ -31,14 +31,14 @@ export const MATRA_VOWEL: Record<string, string> = {
   'ः': 'ah',
 };
 
-const INDEPENDENT_VOWELS: Record<string, string> = {
+export const INDEPENDENT_VOWELS: Record<string, string> = {
   अ: 'a', आ: 'aa', इ: 'i', ई: 'ee', उ: 'u', ऊ: 'oo',
   ऋ: 'ri', ॠ: 'rī', ऌ: 'li', ए: 'e', ऐ: 'ai', ओ: 'o', औ: 'au',
   अं: 'am', अः: 'ah', अँ: 'an',
 };
 
 /** Varnamala conjunct tiles */
-const CONJUNCTS: Record<string, string> = {
+export const CONJUNCTS: Record<string, string> = {
   क्ष: 'ksha',
   ज्ञ: 'jnya',
   त्र: 'tra',
