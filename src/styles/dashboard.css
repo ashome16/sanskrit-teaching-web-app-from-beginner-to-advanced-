@@ -1,6 +1,9 @@
 .dashboard {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
+  /* minmax(0, …): bare fr tracks grow to min-content, which let wide reader
+     content (lesson <select>, tile rows, video) squeeze the Word-analysis
+     panel to ~140px on desktop. */
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   grid-template-rows: auto 1fr;
   gap: 1.25rem;
   min-height: 100vh;
