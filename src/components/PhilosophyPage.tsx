@@ -21,7 +21,7 @@ export interface PhilosophyPageProps {
   onOpenGrammarArticle?: (articleId: string) => void;
   /** Open a Course Addendum unit (e.g. Mantras & Ślokas). */
   onOpenCourseAddendum?: (addendumId: string) => void;
-  initialEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'medha_mind';
+  initialEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind';
 }
 
 const GLOSSARY: { term: string; meaning: string }[] = [
@@ -88,6 +88,18 @@ const GLOSSARY: { term: string; meaning: string }[] = [
   { term: 'puruṣa · prakṛti (पुरुषः · प्रकृतिः)', meaning: 'Sāṅkhya: pure witnessing consciousness / nature, including mind, ego and intellect as subtle matter' },
   { term: 'kośa (कोशः)', meaning: 'sheath; the five layers (food, breath, mind, intellect, bliss) of Taittirīya Upaniṣad 2' },
   { term: 'anātman · anattā (अनात्मन्)', meaning: 'Buddhist “not-self”: no permanent self to be found in or behind the stream of mental events' },
+  { term: 'ṣaḍ-darśana (षड्दर्शनानि)', meaning: 'the six “ways of seeing”: Nyāya, Vaiśeṣika, Sāṅkhya, Yoga, Mīmāṃsā and Vedānta' },
+  { term: 'āstika · nāstika (आस्तिक · नास्तिक)', meaning: 'in doxography: schools that accept the authority of the Veda / those that do not (Cārvāka, Jaina, Bauddha)' },
+  { term: 'pramāṇa (प्रमाणम्)', meaning: 'a valid means of knowing: perception, inference, comparison, testimony, and (for some schools) postulation and non-apprehension' },
+  { term: 'padārtha (पदार्थः)', meaning: '“the meaning of a word”; in Vaiśeṣika, a category of what is real — six in the sūtra, later seven with abhāva (absence)' },
+  { term: 'paramāṇu (परमाणुः)', meaning: 'the eternal, partless atom of Vaiśeṣika, from which earth, water, fire and air are built' },
+  { term: 'satkāryavāda (सत्कार्यवादः)', meaning: 'Sāṅkhya doctrine that the effect already exists, unmanifest, in its cause (Sāṅkhya Kārikā 9)' },
+  { term: 'tattva (तत्त्वम्)', meaning: '“that-ness”, a principle of reality; Sāṅkhya enumerates twenty-five' },
+  { term: 'svataḥ-prāmāṇya (स्वतःप्रामाण्यम्)', meaning: 'Mīmāṃsā thesis that a cognition is valid by default unless defeated' },
+  { term: 'arthāpatti · anupalabdhi (अर्थापत्तिः · अनुपलब्धिः)', meaning: 'postulation (accepted by both Mīmāṃsā schools) · non-apprehension (Kumārila’s sixth pramāṇa)' },
+  { term: 'pūrvapakṣa · siddhānta (पूर्वपक्षः · सिद्धान्तः)', meaning: 'the opponent’s view, stated first and at full strength · the established conclusion' },
+  { term: 'vāda · jalpa · vitaṇḍā (वादः · जल्पः · वितण्डा)', meaning: 'truth-seeking discussion · debate to win · purely destructive cavil (Nyāya Sūtra 1.2.1–3)' },
+  { term: 'vivarta · pariṇāma (विवर्तः · परिणामः)', meaning: 'apparent transformation (Advaita’s account of the world) · real transformation (as milk into curd; Sāṅkhya’s prakṛti)' },
 ];
 
 const DEFAULT_TITLE =
@@ -130,10 +142,21 @@ const LILAVATI_ESSAY_TITLE =
 const LILAVATI_ESSAY_DESC =
   'Shattering the science-art divide: explore how Bhāskara II (1114 CE) cloaked multi-step quadratic equations, fractions, and geometry in the romantic imagery of nature.';
 
+const SHAD_ESSAY_TITLE =
+  'Six Lenses on Reality: The Ṣaḍ-darśanas and the Culture of Debate · Darśana | EdNet Learn Gurukul';
+const SHAD_ESSAY_DESC =
+  'Nyāya, Vaiśeṣika, Sāṅkhya, Yoga, Mīmāṃsā and Vedānta: each opening sūtra in Devanagari with meaning, how the six schools differ in method, and India’s culture of pūrvapakṣa and debate.';
+
 const MEDHA_ESSAY_TITLE =
   'Medhā and the Mind: Two Ways of Looking at Consciousness · Darśana | EdNet Learn Gurukul';
 const MEDHA_ESSAY_DESC =
   'Medhā, antaḥkaraṇa and the witness (sākṣī): Descartes, physicalism and the hard problem set beside Vedānta, Sāṅkhya-Yoga (YS 1.2) and Buddhist anattā.';
+
+/** Essays that own a URL hash (deep link + section chips prefixed with the same key). */
+const ESSAY_HASHES = {
+  shad_darshana: 'shad-darshana',
+  medha_mind: 'medha',
+} as const;
 
 const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   onOpenRegister,
@@ -145,7 +168,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   onOpenCourseAddendum,
   initialEssay = 'ai_sanskrit',
 }) => {
-  const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'medha_mind'>(initialEssay);
+  const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind'>(initialEssay);
   const [glossaryOpen, setGlossaryOpen] = useState(false);
 
   useEffect(() => {
@@ -154,19 +177,28 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
     }
   }, [initialEssay]);
 
-  // Deep link: /philosophy#medha opens the Medhā essay tab.
+  // Deep links: /philosophy#medha opens the Medhā essay tab; /philosophy#shad-darshana opens Six Lenses.
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.location.hash === '#medha') {
-      setActiveEssay('medha_mind');
+    if (typeof window === 'undefined') return;
+    const hash = window.location.hash;
+    const match = (Object.keys(ESSAY_HASHES) as (keyof typeof ESSAY_HASHES)[]).find(
+      (k) => hash === `#${ESSAY_HASHES[k]}` || hash.startsWith(`#${ESSAY_HASHES[k]}-`)
+    );
+    if (match) {
+      setActiveEssay(match);
     }
   }, []);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const { pathname, search, hash } = window.location;
-    if (activeEssay === 'medha_mind' && hash !== '#medha' && !hash.startsWith('#medha-')) {
-      window.history.replaceState(window.history.state, '', `${pathname}${search}#medha`);
-    } else if (activeEssay !== 'medha_mind' && (hash === '#medha' || hash.startsWith('#medha-'))) {
+    const matchesKey = (key: string) => hash === `#${key}` || hash.startsWith(`#${key}-`);
+    const activeKey = (ESSAY_HASHES as Record<string, string>)[activeEssay];
+    if (activeKey) {
+      if (!matchesKey(activeKey)) {
+        window.history.replaceState(window.history.state, '', `${pathname}${search}#${activeKey}`);
+      }
+    } else if (Object.values(ESSAY_HASHES).some(matchesKey)) {
       window.history.replaceState(window.history.state, '', `${pathname}${search}`);
     }
   }, [activeEssay]);
@@ -192,6 +224,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
     } else if (activeEssay === 'lilavati_math') {
       currentTitle = LILAVATI_ESSAY_TITLE;
       currentDesc = LILAVATI_ESSAY_DESC;
+    } else if (activeEssay === 'shad_darshana') {
+      currentTitle = SHAD_ESSAY_TITLE;
+      currentDesc = SHAD_ESSAY_DESC;
     } else if (activeEssay === 'medha_mind') {
       currentTitle = MEDHA_ESSAY_TITLE;
       currentDesc = MEDHA_ESSAY_DESC;
@@ -404,6 +439,20 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
             <div>
               <span className="philosophy-essay-tab-title">The Poetic Equation: Bhāskara’s Līlāvatī</span>
               <span className="philosophy-essay-tab-sub">Math into Art · Swarm of Bees · Broken Necklace · Peacock &amp; Lotus</span>
+            </div>
+          </button>
+          <button
+            type="button"
+            className={`philosophy-essay-tab ${activeEssay === 'shad_darshana' ? 'active' : ''}`}
+            onClick={() => {
+              setActiveEssay('shad_darshana');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
+            <span className="philosophy-essay-tab-icon" aria-hidden="true">👁️</span>
+            <div>
+              <span className="philosophy-essay-tab-title">षड्दर्शनानि · Six Lenses on Reality</span>
+              <span className="philosophy-essay-tab-sub">The Ṣaḍ-darśanas &amp; the Culture of Debate · Prequel to Medhā</span>
             </div>
           </button>
           <button
@@ -3360,10 +3409,554 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
         )}
 
         {/* =========================================================================
+            ESSAY: षड्दर्शनानि · Six Lenses on Reality — prequel to Medhā and the Mind
+           ========================================================================= */}
+        {activeEssay === 'shad_darshana' && (
+          <div className="philosophy-essay-body" id="shad-darshana">
+            <header className="philosophy-hero">
+              <span className="philosophy-kicker">Gurukul Darśana · षड्दर्शनानि · प्रमाणम् · पूर्वपक्षः</span>
+              <h1 className="philosophy-title">
+                षड्दर्शनानि · Six Lenses on Reality: The Ṣaḍ-darśanas and the Culture of Debate
+              </h1>
+              <p className="philosophy-mantra">
+                Darśana means “seeing,” not “doctrine.” Six schools, six vantage points — and a conversation that
+                never needed a single winner.
+              </p>
+
+              <blockquote className="philosophy-pull-quote" style={{ maxWidth: '40rem', margin: '1.25rem auto 0.75rem' }}>
+                <p lang="sa" style={{ fontSize: '1.15rem' }}>
+                  को अद्धा वेद क इह प्र वोचत् कुत आजाता कुत इयं विसृष्टिः ।
+                </p>
+                <p>“Who truly knows? Who here will declare it — whence it was born, whence this creation?”</p>
+                <cite>— Ṛgveda 10.129.6 (Nāsadīya Sūkta)</cite>
+              </blockquote>
+
+              <div className="philosophy-journey" style={{ marginTop: '1rem' }}>
+                <AudioChip term="षड्दर्शनानि" label="षड्दर्शनानि (ṣaḍ-darśanāni)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="दर्शनम्" label="दर्शनम् (darśanam)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="प्रमाणम्" label="प्रमाणम् (pramāṇam)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="पूर्वपक्षः" label="पूर्वपक्षः (pūrvapakṣaḥ)" />
+              </div>
+            </header>
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', margin: '0 0 1.75rem' }} aria-label="Article sections">
+              <a href="#shad-darshana-nyaya" className="philosophy-chip" style={{ textDecoration: 'none' }}>⚖️ 1. Nyāya</a>
+              <a href="#shad-darshana-vaisheshika" className="philosophy-chip" style={{ textDecoration: 'none' }}>⚛️ 2. Vaiśeṣika</a>
+              <a href="#shad-darshana-sankhya" className="philosophy-chip" style={{ textDecoration: 'none' }}>🌱 3. Sāṅkhya</a>
+              <a href="#shad-darshana-yoga" className="philosophy-chip" style={{ textDecoration: 'none' }}>🧘 4. Yoga</a>
+              <a href="#shad-darshana-mimamsa" className="philosophy-chip" style={{ textDecoration: 'none' }}>🔥 5. Mīmāṃsā</a>
+              <a href="#shad-darshana-vedanta" className="philosophy-chip" style={{ textDecoration: 'none' }}>🕉️ 6. Vedānta</a>
+              <a href="#shad-darshana-methods" className="philosophy-chip" style={{ textDecoration: 'none' }}>🔍 How They Differ</a>
+              <a href="#shad-darshana-debate" className="philosophy-chip" style={{ textDecoration: 'none' }}>🗣️ Nothing Was Absolute</a>
+            </div>
+
+            {/* Opening */}
+            <section className="philosophy-section" aria-label="Introduction">
+              <p>
+                The <strong lang="sa">षड्दर्शनानि (ṣaḍ-darśanāni)</strong>, the “six darśanas,” are the six classical
+                schools of Indian philosophy traditionally called <strong>āstika</strong>. Here the word has a precise
+                meaning: a school that accepts the authority of the Veda. (It does not simply mean “theist” — as we will
+                see, two of the six did not need a creator God at all.) Alongside them stood the <strong>nāstika</strong>{' '}
+                schools, which did not accept Vedic authority: the materialist <strong>Cārvāka</strong> (Lokāyata), the{' '}
+                <strong>Jaina</strong>, and the <strong>Bauddha</strong> (Buddhist) traditions. They were not outsiders
+                to the conversation. They were among its sharpest partners in debate.
+              </p>
+              <p>
+                Rather than a single absolute dogma, the six operate as an interconnected web of perspectives, each
+                using its own analytical method to examine the nature of reality. The word itself tells you how to read
+                them. <strong lang="sa">दर्शन (darśana)</strong>, from √dṛś, “to see,” means a <em>way of seeing</em>, a
+                viewpoint — not a creed. Each school stands at a different vantage point and asks three questions in its
+                own order: <em>What is real? How do we know? What should we do?</em>
+              </p>
+              <p>
+                Below, each school speaks first through one opening teaching — its foundational sūtra or verse, given in
+                Devanagari, transliteration, and meaning — followed by its approach. Then we compare their methods side
+                by side, and end with the culture of argument that held them together.
+              </p>
+              <p style={{ fontSize: '0.92rem', color: '#57534e' }}>
+                Texts: each sūtra below has been checked against the editions on GRETIL (Göttingen Register of
+                Electronic Texts in Indian Languages); the Devanagari is transliterated from those editions. Numbering
+                follows the standard references given with each quotation.
+              </p>
+            </section>
+
+            {/* 1. Nyaya */}
+            <section className="philosophy-section" aria-labelledby="shad-darshana-nyaya">
+              <h2 id="shad-darshana-nyaya">1. Nyāya: The Science of Valid Knowing</h2>
+              <blockquote className="philosophy-pull-quote">
+                <p lang="sa" style={{ fontSize: '1.05rem' }}>
+                  प्रमाणप्रमेयसंशयप्रयोजनदृष्टान्तसिद्धान्तावयवतर्कनिर्णयवादजल्पवितण्डाहेत्वाभासच्छलजातिनिग्रहस्थानानां
+                  तत्त्वज्ञानान्निःश्रेयसाधिगमः ॥
+                </p>
+                <p style={{ fontStyle: 'italic', fontSize: '0.95rem' }}>
+                  pramāṇa-prameya-saṃśaya-prayojana-dṛṣṭānta-siddhāntāvayava-tarka-nirṇaya-vāda-jalpa-vitaṇḍā-hetvābhāsa-chala-jāti-nigrahasthānānāṃ
+                  tattvajñānān niḥśreyasādhigamaḥ
+                </p>
+                <p>
+                  “The highest good is attained through true knowledge of the sixteen categories” — beginning with the
+                  means of knowledge (<em>pramāṇa</em>), the objects of knowledge (<em>prameya</em>) and doubt
+                  (<em>saṃśaya</em>), and ending with the fallacies and tricks of debate (<em>hetvābhāsa</em>,{' '}
+                  <em>chala</em>, <em>jāti</em>) and the points at which an arguer is defeated (<em>nigrahasthāna</em>).
+                </p>
+                <cite>— Nyāya Sūtra of Gautama (Akṣapāda) 1.1.1</cite>
+              </blockquote>
+              <p>
+                <strong>Approach.</strong> The first sūtra is really a syllabus: a table of contents for a science of
+                knowledge and debate. Notice that <em>doubt</em> is the third item on the list. Nyāya begins where honest
+                inquiry begins — with not yet knowing. Its core claim is that whatever exists can, in principle, be known
+                through a valid means; reality must survive logical verification.
+              </p>
+              <p>
+                Nyāya accepts four <strong lang="sa">प्रमाण (pramāṇa)</strong>, valid means of knowing (NS 1.1.3):
+                perception (<em>pratyakṣa</em>), inference (<em>anumāna</em>), comparison or analogy
+                (<em>upamāna</em>), and reliable testimony (<em>śabda</em>). Its formal argument has five members
+                (NS 1.1.32): the claim (<em>pratijñā</em>), the reason (<em>hetu</em>), the example
+                (<em>udāharaṇa</em>), the application (<em>upanaya</em>), and the conclusion (<em>nigamana</em>). The
+                classic illustration: <em>the hill has fire; because it has smoke; wherever there is smoke there is
+                fire, as in a kitchen; this hill has smoke of that kind; therefore the hill has fire.</em>
+              </p>
+              <p>
+                Nyāya also studied debate itself. It distinguishes <strong>vāda</strong>, honest discussion aimed at
+                truth; <strong>jalpa</strong>, debate aimed at winning; and <strong>vitaṇḍā</strong>, pure attack that
+                defends no position of its own (NS 1.2.1–3). And it catalogued bad-faith argument — quibbles, false
+                rejoinders, fallacious reasons — with a thoroughness any modern student of rhetoric would recognise.
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', margin: '0.75rem 0' }}>
+                <AudioChip term="न्यायः" label="न्याय (nyāya)" />
+                <AudioChip term="प्रत्यक्षम्" label="प्रत्यक्ष (pratyakṣa)" />
+                <AudioChip term="अनुमानम्" label="अनुमान (anumāna)" />
+                <AudioChip term="उपमानम्" label="उपमान (upamāna)" />
+                <AudioChip term="शब्दः" label="शब्द (śabda)" />
+                <AudioChip term="वादः" label="वाद (vāda)" />
+              </div>
+            </section>
+
+            {/* 2. Vaisheshika */}
+            <section className="philosophy-section" aria-labelledby="shad-darshana-vaisheshika">
+              <h2 id="shad-darshana-vaisheshika">2. Vaiśeṣika: Reality Sorted into Categories</h2>
+              <blockquote className="philosophy-pull-quote">
+                <p lang="sa" style={{ fontSize: '1.05rem' }}>
+                  धर्मविशेषप्रसूताद्द्रव्यगुणकर्मसामान्यविशेषसमवायानां पदार्थानां साधर्म्यवैधर्म्याभ्यां
+                  तत्त्वज्ञानान्निःश्रेयसम् ॥
+                </p>
+                <p style={{ fontStyle: 'italic', fontSize: '0.95rem' }}>
+                  dharma-viśeṣa-prasūtād dravya-guṇa-karma-sāmānya-viśeṣa-samavāyānāṃ padārthānāṃ
+                  sādharmya-vaidharmyābhyāṃ tattvajñānān niḥśreyasam
+                </p>
+                <p>
+                  “The highest good comes from true knowledge — born of a particular dharma — of the categories
+                  substance, quality, action, universal, particularity and inherence, through their similarities and
+                  differences.”
+                </p>
+                <cite>
+                  — Vaiśeṣika Sūtra of Kaṇāda 1.1.4 (in the recension followed by Śaṅkara Miśra’s Upaskāra). Recensions
+                  differ: the text transmitted with Candrānanda’s Vṛtti lacks this sūtra, and there 1.1.4 is the list of
+                  nine substances.
+                </cite>
+              </blockquote>
+              <p>
+                <strong>Approach.</strong> Where Nyāya asks <em>how</em> we know, Vaiśeṣika asks <em>what there
+                is</em>. Its answer is a catalogue. Everything real falls into one of six{' '}
+                <strong lang="sa">पदार्थ (padārtha)</strong>, categories — literally “meanings of words,” things that can
+                be named. Later Nyāya-Vaiśeṣika added a seventh: <em>abhāva</em>, absence (the “no-pot” you notice on an
+                empty table is, for this school, a genuine object of knowledge).
+              </p>
+              <p>
+                The sūtra names nine substances (<em>dravya</em>): earth, water, fire, air, ether (<em>ākāśa</em>),
+                time, space, self (<em>ātman</em>) and mind (<em>manas</em>). The four material elements are ultimately
+                made of <strong lang="sa">परमाणु (paramāṇu)</strong>, eternal, partless atoms too small to perceive,
+                which combine into larger and larger wholes. It is an atomism that most historians regard as developed
+                independently of the Greek atomists. For Vaiśeṣika, reality is <em>pluralistic</em> and exists
+                independently of anyone’s perception of it; atoms combine according to regular causes, with the unseen
+                force the sūtras call <em>adṛṣṭa</em> accounting for what ordinary causes cannot.
+              </p>
+              <p>
+                Its method is classification by comparison: knowing a thing by what it shares with others
+                (<em>sādharmya</em>) and what sets it apart (<em>vaidharmya</em>) — the very words of the sūtra above.
+                Classical Vaiśeṣika accepted two pramāṇas, perception and inference, and over time merged with Nyāya
+                into a single joint school, Nyāya-Vaiśeṣika: one supplying the logic, the other the ontology.
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', margin: '0.75rem 0' }}>
+                <AudioChip term="वैशेषिकम्" label="वैशेषिक (vaiśeṣika)" />
+                <AudioChip term="पदार्थः" label="पदार्थ (padārtha)" />
+                <AudioChip term="द्रव्यम्" label="द्रव्य (dravya)" />
+                <AudioChip term="परमाणुः" label="परमाणु (paramāṇu)" />
+                <AudioChip term="अभावः" label="अभाव (abhāva)" />
+              </div>
+            </section>
+
+            {/* 3. Sankhya */}
+            <section className="philosophy-section" aria-labelledby="shad-darshana-sankhya">
+              <h2 id="shad-darshana-sankhya">3. Sāṅkhya: Enumerating the Constituents of Experience</h2>
+              <blockquote className="philosophy-pull-quote">
+                <p lang="sa" style={{ fontSize: '1.1rem' }}>
+                  मूलप्रकृतिरविकृतिर्महदाद्याः प्रकृतिविकृतयः सप्त ।<br />
+                  षोडशकस्तु विकारो न प्रकृतिर्न विकृतिः पुरुषः ॥
+                </p>
+                <p style={{ fontStyle: 'italic', fontSize: '0.95rem' }}>
+                  mūla-prakṛtir avikṛtir mahad-ādyāḥ prakṛti-vikṛtayaḥ sapta |<br />
+                  ṣoḍaśakas tu vikāro na prakṛtir na vikṛtiḥ puruṣaḥ ||
+                </p>
+                <p>
+                  “Primal nature is not a product. The seven beginning with the Great One (intellect, ego and the five
+                  subtle elements) are both producers and products. The sixteen are products only. Puruṣa is neither
+                  producer nor product.”
+                </p>
+                <cite>— Sāṅkhya Kārikā of Īśvarakṛṣṇa, verse 3</cite>
+              </blockquote>
+              <p>
+                <strong>Approach.</strong> <em>Sāṅkhya</em> means “enumeration,” and this verse is a whole cosmology in
+                two lines. There are two uncreated realities: <strong lang="sa">प्रकृति (prakṛti)</strong>, nature, and{' '}
+                <strong lang="sa">पुरुष (puruṣa)</strong>, pure consciousness — not one cosmic puruṣa but many (SK 18).
+                From unmanifest prakṛti unfold twenty-three further principles: intellect (<em>buddhi</em>, the “Great
+                One”), ego (<em>ahaṅkāra</em>), mind, the ten senses of knowing and acting, the five subtle elements and
+                the five gross elements. With puruṣa and prakṛti, that makes twenty-five{' '}
+                <strong lang="sa">तत्त्व (tattva)</strong>.
+              </p>
+              <p>
+                The striking move is where the line is drawn. Mind, intellect and ego are on the side of{' '}
+                <em>nature</em>; consciousness alone is puruṣa. The world is real — not an illusion — and it is dynamic:
+                the evolutionary unfolding of prakṛti is set going by the proximity or conjunction (<em>saṃyoga</em>) of
+                puruṣa and prakṛti, which the Kārikā compares to a lame man riding on the shoulders of a blind one
+                (SK 21). Causation is explained by <strong lang="sa">सत्कार्यवाद (satkāryavāda)</strong>: the effect
+                already exists, unmanifest, in its cause (SK 9) — the commentators’ favourite example is oil, already
+                present in the sesame seed. Sāṅkhya reasons by rational deduction
+                from effects to causes and accepts three pramāṇas — perception, inference and reliable testimony (SK 4).
+                Classical Sāṅkhya is non-theistic: it explains the cosmos without a creator God.
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', margin: '0.75rem 0' }}>
+                <AudioChip term="साङ्ख्यम्" label="साङ्ख्य (sāṅkhya)" />
+                <AudioChip term="प्रकृतिः" label="प्रकृति (prakṛti)" />
+                <AudioChip term="पुरुषः" label="पुरुष (puruṣa)" />
+                <AudioChip term="तत्त्वम्" label="तत्त्व (tattva)" />
+                <AudioChip term="सत्कार्यवादः" label="सत्कार्यवाद (satkāryavāda)" />
+              </div>
+            </section>
+
+            {/* 4. Yoga */}
+            <section className="philosophy-section" aria-labelledby="shad-darshana-yoga">
+              <h2 id="shad-darshana-yoga">4. Yoga: Analysis Through Experiment</h2>
+              <blockquote className="philosophy-pull-quote">
+                <p lang="sa" style={{ fontSize: '1.15rem' }}>योगश्चित्तवृत्तिनिरोधः ॥</p>
+                <p style={{ fontStyle: 'italic', fontSize: '0.95rem' }}>yogaś citta-vṛtti-nirodhaḥ</p>
+                <p>“Yoga is the stilling of the fluctuations of the mind.”</p>
+                <cite>— Yoga Sūtra of Patañjali 1.2</cite>
+              </blockquote>
+              <p>
+                <strong>Approach.</strong> If Sāṅkhya drew the map, Yoga built the laboratory. It takes over Sāṅkhya’s
+                picture of puruṣa and prakṛti and asks how its central claim — that consciousness is not the
+                mind — can be <em>verified</em>, not just argued. Sāṅkhya supplies the theory; Yoga runs the experiment.
+              </p>
+              <p>
+                It begins by classifying the fluctuations (<em>vṛtti</em>) themselves (YS 1.6): right knowledge, error,
+                conceptual construction or imagination, sleep, and memory. Right knowledge rests on three pramāṇas —
+                perception, inference and testimony (YS 1.7). Our perception is coloured by these movements; the
+                eight-limbed discipline (<em>aṣṭāṅga</em>, YS 2.29) — ethical restraints and observances, posture,
+                breath, withdrawal of the senses, concentration, meditation and absorption — is the method for quieting
+                them, until “the seer abides in its own nature” (YS 1.3).
+              </p>
+              <p>
+                One point is often misunderstood. Yoga does <em>not</em> say that the outer world is merely
+                psychological, or that it fades away when the mind is still. Yoga is a realist school: in YS 4.14–16
+                Patañjali argues that an object is one and the same even when different minds perceive it differently,
+                and that a thing does not depend on a single mind — “if it did, what would become of it when that mind
+                was not attending?” What stills is the <em>mind’s distortion</em>, not the world. Yoga’s distinctive
+                claim is that some truths can be confirmed only through trained, first-person experience. It also
+                admits <em>Īśvara</em>, a special puruṣa untouched by affliction, as one optional support for practice
+                (“or by devotion to Īśvara,” YS 1.23–24).
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', margin: '0.75rem 0' }}>
+                <AudioChip term="योगः" label="योग (yoga)" />
+                <AudioChip term="चित्तवृत्तिनिरोधः" label="चित्तवृत्तिनिरोधः" />
+                <AudioChip term="अष्टाङ्गयोगः" label="अष्टाङ्ग (aṣṭāṅga)" />
+                <AudioChip term="ईश्वरः" label="ईश्वर (īśvara)" />
+              </div>
+            </section>
+
+            {/* 5. Mimamsa */}
+            <section className="philosophy-section" aria-labelledby="shad-darshana-mimamsa">
+              <h2 id="shad-darshana-mimamsa">5. Mīmāṃsā: The Philosophy of Language and Duty</h2>
+              <blockquote className="philosophy-pull-quote">
+                <p lang="sa" style={{ fontSize: '1.15rem' }}>
+                  अथातो धर्मजिज्ञासा ॥ चोदनालक्षणोऽर्थो धर्मः ॥
+                </p>
+                <p style={{ fontStyle: 'italic', fontSize: '0.95rem' }}>
+                  athāto dharma-jijñāsā || codanā-lakṣaṇo ’rtho dharmaḥ ||
+                </p>
+                <p>
+                  “Now, therefore, the inquiry into dharma. Dharma is that good which is known through injunction (the
+                  Vedic command).”
+                </p>
+                <cite>— Mīmāṃsā Sūtra of Jaimini 1.1.1–2</cite>
+              </blockquote>
+              <p>
+                <strong>Approach.</strong> Mīmāṃsā, “reflective inquiry,” began as the discipline of interpreting the
+                Vedic ritual texts, and in doing so it became India’s great school of hermeneutics and philosophy of
+                language. How do you read a sentence that commands? How do you resolve two texts that seem to
+                conflict? Which words are the main point and which are praise? Its rules of interpretation were so
+                useful that later jurists and grammarians borrowed them freely.
+              </p>
+              <p>
+                Mīmāṃsā holds that the connection between a word and its meaning is inherent, not invented
+                (MS 1.1.5, <em>autpattikas tu śabdasyārthena sambandhaḥ</em>), and that a cognition is valid by default
+                unless something defeats it — <strong lang="sa">स्वतःप्रामाण्य (svataḥ-prāmāṇya)</strong>, intrinsic
+                validity. Its two great commentators differ on the means of knowledge. <strong>Prabhākara</strong>{' '}
+                accepts five pramāṇas: perception, inference, comparison, testimony, and postulation
+                (<em>arthāpatti</em>). <strong>Kumārila Bhaṭṭa</strong> accepts those same five and adds a sixth,
+                non-apprehension (<em>anupalabdhi</em>), by which we know absences.
+              </p>
+              <p>
+                Its picture of reality is pragmatic and action-centred. The world is real and without beginning, the
+                Veda is eternal and authorless, and dharma is decoded from its injunctions. Right action (<em>karma</em>)
+                produces results through its own unseen potency, so early Mīmāṃsā did not need to posit a creator God
+                — and Kumārila argues explicitly against one. Existence, on this view, is a web of actions and their
+                fruits, and language is the key to reading it.
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', margin: '0.75rem 0' }}>
+                <AudioChip term="मीमांसा" label="मीमांसा (mīmāṃsā)" />
+                <AudioChip term="धर्मः" label="धर्म (dharma)" />
+                <AudioChip term="अर्थापत्तिः" label="अर्थापत्ति (arthāpatti)" />
+                <AudioChip term="अनुपलब्धिः" label="अनुपलब्धि (anupalabdhi)" />
+              </div>
+            </section>
+
+            {/* 6. Vedanta */}
+            <section className="philosophy-section" aria-labelledby="shad-darshana-vedanta">
+              <h2 id="shad-darshana-vedanta">6. Vedānta: Inquiry into the Ground of Being</h2>
+              <blockquote className="philosophy-pull-quote">
+                <p lang="sa" style={{ fontSize: '1.15rem' }}>
+                  अथातो ब्रह्मजिज्ञासा ॥ जन्माद्यस्य यतः ॥
+                </p>
+                <p style={{ fontStyle: 'italic', fontSize: '0.95rem' }}>
+                  athāto brahma-jijñāsā || janmādy asya yataḥ ||
+                </p>
+                <p>
+                  “Now, therefore, the inquiry into Brahman. [Brahman is that] from which the origin and so on — the
+                  origin, sustenance and dissolution — of this [world] proceed.”
+                </p>
+                <cite>— Brahma Sūtra of Bādarāyaṇa 1.1.1–2</cite>
+              </blockquote>
+              <p>
+                <strong>Approach.</strong> Set the first words beside Mīmāṃsā’s: <em>athāto dharma-jijñāsā</em>,{' '}
+                <em>athāto brahma-jijñāsā</em>. The parallel is deliberate. Vedānta — “the end of the Veda,” its
+                Upaniṣadic culmination, also called Uttara-Mīmāṃsā — uses the same hermeneutic tools as Mīmāṃsā, but
+                turns them from the ritual portion of the Veda to the Upaniṣads, and from the question of duty to the
+                question of the ground of being. Its method is systematic interpretation of scripture joined to
+                dialectic: every major position is argued by first stating the opponent’s view (<em>pūrvapakṣa</em>)
+                and then answering it (<em>uttarapakṣa</em>, <em>siddhānta</em>).
+              </p>
+              <p>
+                On what the Brahma Sūtra means, its great commentators disagree — and the disagreement is the lesson.
+                Each concerns the relation between the individual self (<em>jīvātman</em>) and Brahman, and between
+                Brahman and the world:
+              </p>
+              <ul>
+                <li>
+                  <strong>Śaṅkara’s Advaita</strong> (non-dualism): Brahman alone is ultimately real, and the self is
+                  not other than Brahman. The world is <em>vivarta</em>, an apparent transformation — as a rope appears
+                  as a snake — real for practical purposes, but not independently real.
+                </li>
+                <li>
+                  <strong>Rāmānuja’s Viśiṣṭādvaita</strong> (qualified non-dualism): selves and world are real, and are
+                  related to Brahman as a body to its indwelling soul (<em>śarīra–śarīrin</em>). Brahman really becomes
+                  the manifest world in this sense — a real transformation (<em>pariṇāma</em>) of what is Brahman’s
+                  body — without any change in Brahman’s own perfect nature.
+                </li>
+                <li>
+                  <strong>Madhva’s Dvaita</strong> (dualism): God, selves and matter are eternally distinct and real.
+                  The world is neither an appearance of Brahman nor a transformation of Brahman; it depends wholly on
+                  God, who governs it.
+                </li>
+              </ul>
+              <p>
+                Same sūtra, same methods, different conclusions. So when you hear that “Vedānta teaches that true
+                existence is pure, undifferentiated being,” remember that this is Advaita’s answer — not Vedānta’s only
+                one.
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', margin: '0.75rem 0' }}>
+                <AudioChip term="वेदान्तः" label="वेदान्त (vedānta)" />
+                <AudioChip term="ब्रह्मन्" label="ब्रह्मन् (brahman)" />
+                <AudioChip term="विवर्तः" label="विवर्त (vivarta)" />
+                <AudioChip term="परिणामः" label="परिणाम (pariṇāma)" />
+              </div>
+            </section>
+
+            {/* Comparison Table */}
+            <section className="philosophy-section" aria-labelledby="shad-darshana-methods">
+              <h2 id="shad-darshana-methods">How They Differ in Method</h2>
+              <p>
+                The six are best understood not as rival answers to one question, but as answers to six different
+                questions. Each column below is a simplification; every school had centuries of internal debate.
+              </p>
+              <div className="philosophy-table-wrap">
+                <table className="philosophy-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">School</th>
+                      <th scope="col">Central question</th>
+                      <th scope="col">Primary method</th>
+                      <th scope="col">Nature of reality analysed</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Nyāya</strong></td>
+                      <td>How do we know?</td>
+                      <td>Logic, epistemology, debate theory: four pramāṇas, five-membered argument, sixteen categories</td>
+                      <td>Epistemic realism: a mind-independent world that can be known through valid means and must survive logical testing.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Vaiśeṣika</strong></td>
+                      <td>What exists?</td>
+                      <td>Categorisation by similarity and difference; atomism</td>
+                      <td>Ontological pluralism: six (later seven) padārthas; nine substances; material things built from eternal paramāṇus.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Sāṅkhya</strong></td>
+                      <td>What is experience made of?</td>
+                      <td>Enumeration and causal inference (satkāryavāda)</td>
+                      <td>Dualist realism: many puruṣas and one prakṛti; the world is a real unfolding of prakṛti into twenty-five tattvas.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Yoga</strong></td>
+                      <td>How do we verify it directly?</td>
+                      <td>Disciplined introspection; the eight-limbed practice</td>
+                      <td>Realist, on Sāṅkhya’s map: the world is real and shared (YS 4.14–16); what changes is the mind’s distortion, not the world.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Mīmāṃsā</strong></td>
+                      <td>What does the text enjoin?</td>
+                      <td>Hermeneutics; philosophy of language (vākya-śāstra)</td>
+                      <td>Pragmatic realism: a real, beginningless world; dharma known through Vedic injunction; action and its fruits.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Vedānta</strong></td>
+                      <td>What is the ultimate ground?</td>
+                      <td>Scriptural interpretation of the Upaniṣads; dialectic</td>
+                      <td>Brahman as the source of origin, sustenance and dissolution — read as non-dual (Advaita: world as vivarta), qualified non-dual (Viśiṣṭādvaita: world as Brahman’s body) or dual (Dvaita).</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                Put simply: Nyāya supplies logic, Vaiśeṣika ontology, Sāṅkhya-Yoga a psychology and a practice,
+                Mīmāṃsā a theory of interpretation, and Vedānta a synthesis. Traditionally they are even grouped in
+                pairs — Nyāya with Vaiśeṣika, Sāṅkhya with Yoga, Mīmāṃsā with Vedānta.
+              </p>
+            </section>
+
+            {/* Debate */}
+            <section className="philosophy-section" aria-labelledby="shad-darshana-debate">
+              <h2 id="shad-darshana-debate">Nothing Was Absolute: The Culture of Debate</h2>
+              <p>
+                <strong>The opponent goes first.</strong> Classical Indian philosophical writing has a signature form:
+                before you state your own view, you present the <strong lang="sa">पूर्वपक्ष (pūrvapakṣa)</strong> — the
+                opposing position — in its strongest form. Only then comes the reply and the established conclusion
+                (<em>siddhānta</em>). Śaṅkara, Kumārila and countless others often stated their opponents’ arguments so
+                fully that such passages remain valuable sources for the schools they opposed.
+              </p>
+              <p>
+                <strong>They argued with each other — and with outsiders.</strong> Nyāya logicians and Buddhist
+                logicians sharpened one another for centuries. Nyāya’s view that an effect is a genuinely new thing
+                challenged Sāṅkhya’s satkāryavāda. Vedānta accepted Mīmāṃsā’s rules of interpretation but argued that
+                the Upaniṣads, whose subject is Brahman rather than ritual action, point beyond action to knowledge —
+                while Mīmāṃsakas pressed back that the Veda is fundamentally about what is to be done. The Brahma Sūtra
+                itself devotes a whole section to critiquing Sāṅkhya’s unconscious prakṛti as a first cause
+                (BS 2.2.1 ff.) and Vaiśeṣika’s atoms (the argument continues in BS 2.2, around sūtras 11–17 in Śaṅkara’s
+                numbering). Sāṅkhya was critiqued by nearly everyone. And the Cārvākas, who accepted perception alone,
+                and the Jainas, with their doctrine of many-sidedness (<em>anekāntavāda</em>), were part of the
+                conversation throughout.
+              </p>
+              <p>
+                <strong>Even Vedic authority was argued, not merely assumed.</strong> Mīmāṃsā and Vedānta treat the
+                Veda as a source of knowledge in its own right. Nyāya justifies testimony through reasoning, as the word
+                of a reliable speaker. Sāṅkhya and Yoga accept scripture but lean heavily on inference and on practice.
+                Whether there is a God, whether there is one self or many, whether the world is real or apparent — all of
+                it remained open. Doubt was a tool, not a failure: Nyāya put it third in its list of categories.
+              </p>
+              <p>
+                Debate was also a public culture. The Upaniṣads already stage it — Yājñavalkya questioned in turn by
+                the sages at King Janaka’s court, Gārgī among them — and later centuries saw formal disputations in royal
+                courts and monastic centres. A single scholar might write authoritative commentaries on several rival
+                schools: the ninth- or tenth-century Vācaspati Miśra wrote on Nyāya, Sāṅkhya, Yoga, Mīmāṃsā and Advaita.
+                Reality was treated less as a creed to be defended than as a many-sided puzzle to be examined from every
+                angle.
+              </p>
+              <blockquote className="philosophy-pull-quote">
+                <p lang="sa" style={{ fontSize: '1.1rem' }}>
+                  इयं विसृष्टिर्यत आबभूव यदि वा दधे यदि वा न ।<br />
+                  यो अस्याध्यक्षः परमे व्योमन्सो अङ्ग वेद यदि वा न वेद ॥
+                </p>
+                <p>
+                  “Whence this creation arose — whether it was established or not — the one who watches over it in the
+                  highest heaven, he surely knows. Or perhaps he does not know.”
+                </p>
+                <cite>— Ṛgveda 10.129.7, the final verse of the Nāsadīya Sūkta (its question “ko addhā veda — who truly knows?” is 10.129.6)</cite>
+              </blockquote>
+              <p>
+                That is where the oldest philosophical hymn of the tradition chooses to end: not with an answer, but
+                with a question left honestly open. The six darśanas inherit that spirit. Truth is approached from many
+                angles, tested, and argued over — and the next essay turns those six lenses on the nearest mystery of
+                all, the mind itself.
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', margin: '0.75rem 0' }}>
+                <AudioChip term="पूर्वपक्षः" label="पूर्वपक्ष (pūrvapakṣa)" />
+                <AudioChip term="सिद्धान्तः" label="सिद्धान्त (siddhānta)" />
+                <AudioChip term="आस्तिक" label="आस्तिक (āstika)" />
+                <AudioChip term="नास्तिक" label="नास्तिक (nāstika)" />
+              </div>
+            </section>
+
+            {/* Bodhi's note */}
+            <div className="philosophy-learner-box">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.85rem' }}>
+                <BodhiAvatar mood="reading" size="sm" showHalo={false} />
+                <h3 style={{ margin: 0 }}>Bodhi’s Study Note · Hear the Family Resemblance</h3>
+              </div>
+              <p style={{ fontSize: '1.05rem', lineHeight: 1.6, color: '#134e4a', margin: '0 0 1rem' }}>
+                Read two opening sūtras aloud, slowly: <strong lang="sa">अथातो धर्मजिज्ञासा</strong> and{' '}
+                <strong lang="sa">अथातो ब्रह्मजिज्ञासा</strong>. Only one word changes. Now split{' '}
+                <strong lang="sa">जिज्ञासा</strong>: it is the desiderative of √jñā, “to know” — literally “the wish to
+                know.” Every darśana begins there. Try this with a friend: pick a simple claim, and before you argue for
+                it, state the best case <em>against</em> it. That is pūrvapakṣa — and it is the habit that makes the next
+                essay, on medhā and the mind, much easier to think through.
+              </p>
+              <div className="philosophy-action-buttons">
+                <button
+                  type="button"
+                  className="philosophy-action-btn"
+                  onClick={() => {
+                    setActiveEssay('medha_mind');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
+                  Next: Medhā and the Mind →
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* =========================================================================
             ESSAY: मेधा · Medhā and the Mind — Two Ways of Looking at Consciousness
            ========================================================================= */}
         {activeEssay === 'medha_mind' && (
           <div className="philosophy-essay-body" id="medha">
+            <div style={{ display: 'flex', justifyContent: 'flex-start', margin: '0 0 0.75rem' }}>
+              <button
+                type="button"
+                className="philosophy-crumb-btn"
+                onClick={() => {
+                  setActiveEssay('shad_darshana');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              >
+                ← Prequel: Six Lenses on Reality
+              </button>
+            </div>
             <header className="philosophy-hero">
               <span className="philosophy-kicker">Gurukul Darśana · मेधा · अन्तःकरणम् · साक्षी</span>
               <h1 className="philosophy-title">

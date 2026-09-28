@@ -36,7 +36,7 @@ export interface SearchTarget {
   /** Course Addendum unit to open (view: 'course'), e.g. 'addendum-mantras-shlokas'. */
   courseAddendumId?: string;
   courseMode?: 'curriculum' | 'addendum' | 'flashcards' | 'exam';
-  philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'medha_mind';
+  philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind';
   mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero';
   worksheetsCategory?: string;
   openBodhi?: boolean;
@@ -2537,6 +2537,54 @@ export const SEARCH_INDEX: SearchItem[] = [
     target: {
       view: 'course',
       courseAddendumId: 'addendum-turanga-bandha-knights-tour',
+    },
+  },
+  {
+    id: 'essay-shad-darshana-six-lenses',
+    title: 'षड्दर्शनानि · Six Lenses on Reality: The Ṣaḍ-darśanas and the Culture of Debate',
+    subtitle: 'न्याय · वैशेषिक · साङ्ख्य · योग · मीमांसा · वेदान्त · प्रमाण · पूर्वपक्ष',
+    category: 'guides',
+    categoryLabel: 'Philosophy & Science',
+    badgeEmoji: '👁️',
+    badgeColor: '#7c3aed',
+    description:
+      'The six āstika darśanas through their opening sūtras (Nyāya 1.1.1, Vaiśeṣika 1.1.4, Sāṅkhya Kārikā 3, Yoga Sūtra 1.2, Mīmāṃsā 1.1.1–2, Brahma Sūtra 1.1.1–2), how they differ in method, and the culture of pūrvapakṣa and debate with Cārvāka, Jaina and Bauddha thinkers.',
+    keywords: [
+      'shad darshana',
+      'shaddarshana',
+      'sad darsana',
+      'six schools',
+      'six darshanas',
+      'indian philosophy',
+      'astika',
+      'nastika',
+      'nyaya',
+      'vaisheshika',
+      'vaiseshika',
+      'samkhya',
+      'sankhya',
+      'yoga',
+      'mimamsa',
+      'vedanta',
+      'advaita',
+      'vishishtadvaita',
+      'dvaita',
+      'pramana',
+      'padartha',
+      'paramanu',
+      'atomism',
+      'satkaryavada',
+      'purvapaksha',
+      'debate',
+      'syllogism',
+      'nasadiya',
+      'charvaka',
+      'jaina',
+      'buddhist',
+    ],
+    target: {
+      view: 'philosophy',
+      philosophyEssay: 'shad_darshana',
     },
   },
   {

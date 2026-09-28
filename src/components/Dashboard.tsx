@@ -238,7 +238,7 @@ const Dashboard: React.FC = () => {
   const [grammarResetKey, setGrammarResetKey] = useState(0);
   const [grammarTargetTopic, setGrammarTargetTopic] = useState<GrammarTopic>('home');
   const [grammarTargetArticleId, setGrammarTargetArticleId] = useState<string | null>(null);
-  const [philosophyEssay, setPhilosophyEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'medha_mind'>('ai_sanskrit');
+  const [philosophyEssay, setPhilosophyEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind'>('ai_sanskrit');
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
   const [isBodhiGuideOpen, setIsBodhiGuideOpen] = useState(false);
