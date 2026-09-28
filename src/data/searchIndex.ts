@@ -38,7 +38,7 @@ export interface SearchTarget {
   courseMode?: 'curriculum' | 'addendum' | 'flashcards' | 'exam';
   philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind';
   mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero';
-  /** /vedic-maths anchor: 'zero', 'sutra-<id>', 'solver-<key>' (see vedicLearningPath.ts). */
+  /** /vedic-maths anchor: 'zero', 'sutra-<id>', 'solver-<key>' (see vedicLearningPath.ts), 'article-<slug>'. */
   vedicAnchor?: string;
   worksheetsCategory?: string;
   openBodhi?: boolean;
@@ -776,6 +776,53 @@ export const SEARCH_INDEX: SearchItem[] = [
     target: {
       view: 'vedic-maths',
       mathsTab: 'zero',
+    },
+  },
+  {
+    id: 'math-roots-of-algebra',
+    title: '॥ बीजगणितस्य मूलानि ॥ · The Roots of Algebra',
+    subtitle: 'Śulba altars, colour-named unknowns, place value & śūnya, dhana–ṛṇa and samīkaraṇa',
+    category: 'maths',
+    categoryLabel: 'Vedic Maths · Article',
+    badgeEmoji: '🌱',
+    badgeColor: '#b45309',
+    description:
+      'A four-part prequel to “Algebra is Base x”: the Śulba Sūtras’ altar geometry, the move from rhetorical to syncopated (yā, kā, nī) to symbolic algebra, decimal place value and zero, Brahmagupta’s rules for fortunes (dhana) and debts (ṛṇa), and the equation as a balance (samīkaraṇa).',
+    keywords: [
+      'algebra',
+      'roots of algebra',
+      'history of algebra',
+      'bijaganita',
+      'bījagaṇita',
+      'avyakta ganita',
+      'variable',
+      'unknown',
+      'yavat tavat',
+      'kalaka',
+      'nilaka',
+      'sulba sutras',
+      'rhind papyrus',
+      'diophantus',
+      'brahmagupta',
+      'bhaskara',
+      'place value',
+      'negative numbers',
+      'dhana rna',
+      'debt fortune',
+      'laws of signs',
+      'equation',
+      'samikarana',
+      'transposition',
+      'al-jabr',
+      'बीजगणित',
+      'बीजगणितस्य मूलानि',
+      'समीकरण',
+      'ऋण',
+      'धन',
+    ],
+    target: {
+      view: 'vedic-maths',
+      vedicAnchor: 'article-roots-of-algebra',
     },
   },
   {

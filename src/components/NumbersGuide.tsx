@@ -42,6 +42,14 @@ const NUMBERS_READ_MORE: ReadMoreLink[] = [
     target: { view: 'vedic-maths', vedicAnchor: 'zero' },
   },
   {
+    id: 'roots-of-algebra',
+    emoji: '🌱',
+    title: 'बीजगणितस्य मूलानि · The Roots of Algebra',
+    blurb: 'Vedic Maths article · how place value, zero and negative numbers (dhana–ṛṇa) led to the equation and the variable x.',
+    href: '/vedic-maths#article-roots-of-algebra',
+    target: { view: 'vedic-maths', vedicAnchor: 'article-roots-of-algebra' },
+  },
+  {
     id: 'katapayadi',
     emoji: '🔢',
     title: 'कटपयादि · Kaṭapayādi',

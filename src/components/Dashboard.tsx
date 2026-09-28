@@ -403,6 +403,7 @@ const Dashboard: React.FC = () => {
       if (anchor === 'zero' || target.mathsTab === 'zero') tab = 'zero';
       else if (anchor?.startsWith('sutra-') || anchor === 'vedic-path' || target.mathsTab === 'sutras') tab = 'sutras';
       else if (anchor?.startsWith('solver-')) tab = 'solvers';
+      else if (anchor?.startsWith('article-')) tab = 'articles';
       setVedicTarget((prev) => ({ tab, anchor, key: prev.key + 1 }));
       navigateToView('vedic-maths');
       return;

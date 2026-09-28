@@ -64,11 +64,33 @@ export interface GuruParamparaMember {
   quote?: string;
 }
 
+/** Diagrams rendered by VedicArticleFigure.tsx (clean HTML/SVG, no ASCII art). */
+export type VedicArticleFigureId =
+  | 'algebra-lineage'
+  | 'algebra-three-phases'
+  | 'additive-vs-positional'
+  | 'place-value-156'
+  | 'base-10-to-base-x'
+  | 'dhana-rna-number-line'
+  | 'brahmagupta-sign-rules'
+  | 'cross-signs'
+  | 'samikarana-balance'
+  | 'transposition-steps';
+
 export interface VedicArticleSection {
   title: string;
   sanskritTitle?: string;
+  /** Opens a new "Part" of a multi-part article before this section. */
+  part?: { label: string; sanskritTitle?: string; title: string; subtitle: string };
   paragraphs: string[];
+  /** Diagram shown after the paragraphs. */
+  figure?: VedicArticleFigureId;
   highlight?: string;
+  /** Site deep links (/vedic-maths#<anchor>) shown under the section. */
+  links?: { anchor: string; label: string }[];
+  /** End-of-part pull quote and 🎯 takeaways (multi-part articles). */
+  quote?: string;
+  takeaways?: string[];
 }
 
 export interface VedicArticle {
@@ -81,7 +103,11 @@ export interface VedicArticle {
   badge: string;
   sections: VedicArticleSection[];
   quote?: string;
+  /** Article-level takeaways; may be empty when each part carries its own. */
   keyTakeaways: string[];
+  /** Series links shown at the top ("← Prequel: …") and end ("Next: … →"). */
+  prequel?: { id: string; label: string };
+  next?: { id: string; label: string };
 }
 
 export const GURU_PARAMPARA: GuruParamparaMember[] = [
@@ -302,6 +328,206 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
     ]
   },
   {
+    id: 'roots-of-algebra',
+    slug: 'roots-of-algebra',
+    title: 'The Roots of Algebra',
+    sanskritTitle: '॥ बीजगणितस्य मूलानि ॥',
+    subtitle:
+      'A prequel in four parts: from the Śulba altar-builders to the variable, from place value and śūnya to negative numbers, and from a ledger of facts to the balanced equation.',
+    readingTime: '14 min read',
+    badge: 'Prequel · Roots of Algebra',
+    sections: [
+      // ---------------------------------------------------------------- PART 1
+      {
+        part: {
+          label: 'Part 1',
+          title: 'The Genesis of Unknowns: The Ancient Quest for the Variable',
+          subtitle:
+            'Before algebra became generalized arithmetic, it was the sacred science of measuring the infinite through the finite.',
+        },
+        title: 'The Geometric Womb of the Variable',
+        paragraphs: [
+          'Before symbols like x or y existed, how did ancient minds calculate what they could not see? The earliest algebra was not written in letters at all. It was laid out in geometric configurations: lengths, areas and shapes that stood in for the quantities being sought.',
+          'Fire Altars (Śulba Sūtras): In Vedic India, the Śulba Sūtras of Baudhāyana, Āpastamba and Kātyāyana (composed roughly between 800 and 200 BCE) gave rope-and-peg rules for constructing sacrificial altars (vedi, citi) with exact shapes and areas.',
+          'The spatial dilemma: A priest might need to enlarge an altar’s area by a precise amount while keeping its shape unchanged. The best-known case is the falcon altar (śyenaciti): its first construction covers 7½ square puruṣa, and each later construction adds one square puruṣa while keeping the falcon’s exact proportions, so every length has to grow by a precise square-root factor.',
+          'The birth of the unknown: The Śulba texts solve this with geometric constructions (combining and transforming squares and rectangles, as in Baudhāyana’s diagonal rule and his approximation of √2), not with symbolic equations. Read through a modern lens, though, they already treat an unknown side as a scalable entity: a length whose size is not yet known but is fully fixed by the proportion it must satisfy. That reading is our interpretation, not the texts’ own vocabulary.',
+        ],
+        highlight: 'Geometry was the physical vessel; algebra was the hidden code waiting to break free.',
+      },
+      {
+        title: 'The Shift from Rhetoric to Symbolism',
+        paragraphs: [
+          'Over thousands of years, algebra moved through three linguistic phases:',
+          '1. Rhetorical (Egypt and Babylon): Problems and solutions were written entirely in words. The famous line “A quantity and its seventh, added together, become nineteen” is Egyptian: Problem 24 of the Rhind Mathematical Papyrus (c. 1550 BCE), one of the “aha” (heap) problems. Babylonian scribes were just as rhetorical, stating even quadratic problems as step-by-step verbal recipes on clay tablets.',
+          '2. Syncopated (Greece and India): Words were shortened into abbreviations. Diophantus of Alexandria (c. 3rd century CE) used a syncopated notation for a single unknown. Indian algebraists took the decisive step for several unknowns: Brahmagupta (628 CE, Brāhmasphuṭasiddhānta) prescribes varṇa (“colours”) to name different unknowns. The first unknown was called yāvat-tāvat (“as many as”, written yā), and the others kālaka (black, kā), nīlaka (blue, nī), pītaka (yellow, pī) and so on. Bhāskara II (1150 CE, Bījagaṇita) systematized this notation.',
+          '3. Symbolic (modern Europe): François Viète used letters for both unknowns and given quantities (1591), and René Descartes (1637) fixed the x, y, z convention we still use.',
+        ],
+        figure: 'algebra-three-phases',
+        highlight:
+          'India did not invent abbreviation alone (Diophantus had it too). Its distinct gift was a clean, scalable notation for many unknowns at once: yā, kā, nī, pī, the ancestors of x, y, z.',
+      },
+      {
+        title: 'What’s in a Name: बीजगणित',
+        paragraphs: [
+          'In Sanskrit, algebra is बीजगणित (bījagaṇita), literally “seed-computation”: the unknown is a seed (बीज, bīja) whose value sprouts when the equation is solved.',
+          'Indian texts, Bhāskara II’s among them, also call it अव्यक्त-गणित (avyakta-gaṇita), “computation with the unmanifest”, meaning unknown quantities. Its partner is व्यक्त-गणित (vyakta-gaṇita), computation with manifest (known) numbers: the arithmetic of his Līlāvatī.',
+        ],
+        quote:
+          'Geometry gave algebra its initial physical form; language gave it a voice; but it was the concept of the positional variable that gave it a soul.',
+        takeaways: [
+          'The earliest “unknowns” lived inside geometry, in constructions like the Śulba Sūtras’ altar enlargements.',
+          'Algebra moved from words (Egypt, Babylon) to abbreviations (Diophantus; Brahmagupta and Bhāskara II) to symbols (Viète, Descartes).',
+          'Indian algebraists pioneered naming many unknowns at once through colour names (yā, kā, nī, pī).',
+        ],
+      },
+      // ---------------------------------------------------------------- PART 2
+      {
+        part: {
+          label: 'Part 2',
+          sanskritTitle: '॥ अङ्कगणित-सेतुः ॥',
+          title: 'The Positional Bridge: How the Zero Unlocked Abstract Space',
+          subtitle: 'Before we could generalize arithmetic into algebra, we had to liberate numbers from concrete objects.',
+        },
+        title: 'The Rigidity of Additive Counting',
+        paragraphs: [
+          'In an additive system such as Roman numerals, each symbol carries a fixed value and a number is just the sum of its symbols. Such a system cannot scale.',
+          'Multiply XII by XIII and the symbols give you no structural pattern to follow towards the answer, CLVI (156). Multiply 12 by 13 and every digit sits on a predictable place-value grid.',
+        ],
+        figure: 'additive-vs-positional',
+        highlight: 'In an additive system, numbers are dead ends. In a positional system, numbers are dynamic vectors.',
+      },
+      {
+        title: 'The Zero as a Spatial Placeholder',
+        paragraphs: [
+          'Indian thinking was base-10 long before the digits. Vedic texts already name the powers of ten: eka, daśa, śata, sahasra, ayuta, niyuta, prayuta, arbuda, nyarbuda, samudra, madhya, anta, parārdha (up to 10¹² in the Yajurveda lists).',
+          'Written decimal place-value numerals with a zero came later. Clear evidence appears by about the 5th to 7th centuries CE: Āryabhaṭa’s place-value rule (499 CE) and Brahmagupta’s rules for computing with zero (628 CE). The dating of the Bakhshali manuscript is still debated.',
+          'The introduction of śūnya (zero) and decimal place value by Indian mathematicians spatialized mathematics. Every digit now occupies a slot, and the slot, not the shape of the symbol, decides its value. Zero keeps the grid honest: in 106 the empty tens slot must still be marked, or 106 collapses into 16.',
+        ],
+        figure: 'place-value-156',
+      },
+      {
+        title: 'The Great Leap to the Variable',
+        paragraphs: [
+          'Once digits are coefficients on powers of a base, a thought experiment opens up: what if the base is left open? Replace 10 with x, and 1·10² + 5·10¹ + 6·10⁰ becomes 1·x² + 5·x + 6. Arithmetic becomes algebra.',
+          'This is a conceptual lens, not a documented historical moment: no ancient text records “replacing 10 by x”. But it is mathematically exact. A polynomial evaluated at x = 10 gives back an ordinary number: (x + 2)(x + 3) = x² + 5x + 6, and at x = 10 that is 12 × 13 = 156, the identity explored in the next article.',
+        ],
+        figure: 'base-10-to-base-x',
+        quote:
+          'The decimal system did not just give us a way to count wealth; it gave us the spatial architecture required to map the infinite variations of algebra.',
+        takeaways: [
+          'Additive numerals (Roman) hide structure; positional numerals expose it.',
+          'Śūnya and place value turn every digit into a coefficient on a power of the base: 156 = 1·10² + 5·10¹ + 6·10⁰.',
+          'Leave the base open as x and numbers become polynomials: algebra as generalized arithmetic.',
+        ],
+      },
+      // ---------------------------------------------------------------- PART 3
+      {
+        part: {
+          label: 'Part 3',
+          sanskritTitle: '॥ ऋण-धन-नियमः ॥',
+          title: 'The Polar Universe: How Zero Birthed Negative Space',
+          subtitle:
+            'Before algebra could govern the cosmos, it had to break past the barrier of zero and discover the mirror world of negative existence.',
+        },
+        title: 'The Conceptual Prison of the Physical',
+        paragraphs: [
+          'For most of history, a number meant tangible ownership. You could have three cows, or zero cows, but you could not own fewer than zero cows. To Greek and Egyptian mathematicians, a number less than nothing seemed absurd.',
+          'The geometric deadlock: in a mathematics built on lines and areas, no square has a side of −4 and no field has a negative area.',
+          'The algebraic wall: Diophantus called an equation whose answer would be negative “absurd”. Even in 16th-century Europe, Gerolamo Cardano called negative roots “fictitious”, and Descartes still called them “false” roots in 1637. Whole families of solutions were thrown away, and the mathematical universe was cut in half.',
+          'The wall was not universal. Chinese mathematicians working from the Nine Chapters on the Mathematical Art (compiled around the 1st century CE) already computed with negatives, using red and black counting rods for positive and negative quantities when solving systems of equations.',
+        ],
+      },
+      {
+        title: 'The Ledger of the Cosmos: Dhana and Ṛṇa',
+        paragraphs: [
+          'In 628 CE, Brahmagupta’s Brāhmasphuṭasiddhānta gave the earliest known systematic rules for computing with zero and negative quantities together. He treated numbers as relational states: dhana (धन, “fortune”, assets) and ṛṇa (ऋण, “debt”, also called kṣaya, “loss”), with śūnya or kha (zero) between them.',
+        ],
+        figure: 'dhana-rna-number-line',
+      },
+      {
+        title: 'Brahmagupta’s Laws of Fortune and Debt',
+        paragraphs: [
+          'His rules (Brāhmasphuṭasiddhānta 18.30–35) read like a cosmic ledger. In a standard translation: “a debt minus zero is a debt, a fortune minus zero is a fortune, zero minus zero is zero”. The product of two debts, or of two fortunes, is a fortune, and the product of a debt and a fortune is a debt.',
+          'One rule did not survive. Brahmagupta stated that zero divided by zero is zero. Later mathematicians revisited division by zero (Bhāskara II called a number divided by zero khahara, an infinite quantity), and modern mathematics leaves it undefined.',
+        ],
+        figure: 'brahmagupta-sign-rules',
+        highlight: 'Zero is not mere emptiness: it is the fulcrum between dhana and ṛṇa, assets and debts.',
+      },
+      {
+        title: 'The Vectorial Symmetry of Algebra',
+        paragraphs: [
+          'Once debts are genuine numbers, numbers become directional: a quantity has a size and a side of zero. The sign rules are what let expressions containing subtractions be multiplied mechanically.',
+          'The modern Vedic Maths system of Swami Bhāratī Kṛṣṇa Tīrtha (20th century) applies exactly these rules. Expanding (x − 2)(x + 3) with Ūrdhva-Tiryagbhyām (vertically and crosswise), the crosswise step combines a fortune and a debt, and the last vertical step multiplies a debt by a fortune. Without the laws of signs, neither column could be computed.',
+        ],
+        figure: 'cross-signs',
+        links: [{ anchor: 'sutra-3', label: 'Ūrdhva-Tiryagbhyām (Sutra 3) →' }],
+        quote:
+          'By defining Zero not as mere emptiness, but as the perfect fulcrum between Assets and Debts, ancient algebra unlocked the hidden half of the mathematical universe.',
+        takeaways: [
+          'Geometric cultures rejected negative numbers: no negative lengths, no negative areas, no “false” roots.',
+          'Indian algebraists, beginning with Brahmagupta, reframed them as dhana (fortune) and ṛṇa (debt), with zero as the mirror between them.',
+          'The laws of signs let polynomial cross-multiplication work across positive and negative terms.',
+        ],
+      },
+      // ---------------------------------------------------------------- PART 4
+      {
+        part: {
+          label: 'Part 4',
+          sanskritTitle: '॥ अव्यक्त-समीकरणम् ॥',
+          title: 'The Dynamic Equilibrium: The Birth of the Equation',
+          subtitle:
+            'To balance the unknown against the known, mathematics had to evolve from a ledger of facts into a scale of pure symmetry.',
+        },
+        title: 'The Concept of Samīkaraṇa',
+        paragraphs: [
+          'Indian algebraists called equation-making samīkaraṇa (समीकरण), literally “making equal”. Bhāskara II’s Bījagaṇita organizes whole chapters this way: ekavarṇa-samīkaraṇa (equations in one unknown) and anekavarṇa-samīkaraṇa (equations in several unknowns). The two sides (pakṣa) were written one beneath the other.',
+          'An equation is a statement of balance, not a command. It does not say “calculate this”; it declares that two expressions weigh exactly the same.',
+        ],
+        figure: 'samikarana-balance',
+      },
+      {
+        title: 'The Architecture of Inversion',
+        paragraphs: [
+          'To keep the scale balanced, whatever disturbs one side must be mirrored on the other. Indian texts state this as operational rules. Algebra was already well developed in India before the Arabic treatises: Brahmagupta (628 CE) gave rules for solving linear and quadratic equations, for computing with negatives and zero, and for equations in several unknowns.',
+          'Similar operations appear later in al-Khwārizmī’s Arabic treatise on algebra (c. 820 CE) as al-jabr (“restoration”: moving a subtracted term to the other side as an added one) and al-muqābala (“balancing”: cancelling like terms on both sides); al-jabr gave algebra its name. Al-Khwārizmī openly credited India for the numerals in his arithmetic book on Hindu reckoning, known in Latin as Algoritmi de numero Indorum. How much of his algebra drew on Indian sources is not recorded. Indian astronomy was available in Baghdad (the Brāhmasphuṭasiddhānta was translated there as the Zīj al-Sindhind in the 770s), so Indian influence is plausible, but its extent is unknown.',
+          'Transposition by clearing (śodhana): Bhāskara II’s rule is to subtract the unknown of one side from the other side, and the known numbers (rūpa) of the other side from the first. A term that crosses the scale changes its state: dhana becomes ṛṇa, and ṛṇa becomes dhana.',
+          'Viśodhana (clearing equal quantities): identical terms on both sides can be removed together, because taking the same amount from both pans leaves the balance undisturbed.',
+          'Brahmagupta then gives the finishing step for bx + c = dx + e: the difference of the known numbers, divided by the difference of the coefficients of the unknown, is the unknown, so x = (e − c) ÷ (b − d).',
+          'A note on names: saṅkramaṇa, sometimes quoted for transposition, is the name of a different classical topic, “concurrence”: finding two numbers from their sum and difference.',
+        ],
+        figure: 'transposition-steps',
+      },
+      {
+        title: 'The Universal Matrix',
+        paragraphs: [
+          'The Vedic Maths sutras read equations on the same grid as multiplication: coefficients are extracted, operations run crosswise, and the unknown is isolated by tracing relationships instead of by long step-by-step manipulation.',
+          'On this site you can see this in Parāvartya Yojayet (“transpose and apply”) for simple equations such as 7x − 5 = 2x + 25, in Śūnyaṃ Sāmyasamuccaye (“when the collection is the same, it is zero”), and in Saṅkalana-Vyavakalanābhyām (“by addition and by subtraction”) for simultaneous equations such as 23x + 17y = 63 and 17x + 23y = 57. These are methods of the 20th-century Vedic Maths system, built on the classical rules above.',
+        ],
+        links: [
+          { anchor: 'sutra-4', label: 'Parāvartya Yojayet (Sutra 4) →' },
+          { anchor: 'sutra-5', label: 'Śūnyaṃ Sāmyasamuccaye (Sutra 5) →' },
+          { anchor: 'sutra-7', label: 'Saṅkalana-Vyavakalanābhyām (Sutra 7) →' },
+        ],
+      },
+      {
+        title: 'गुरु-परम्परा · The Unbroken Lineage of Indian Algebra',
+        paragraphs: [
+          'Indian algebra grew as a chain of teachers and texts. Authors routinely name their predecessors and gurus: Bhāskara II, closing his Bījagaṇita, says he drew on the algebras of Brahmagupta, Śrīdhara and Padmanābha, which he found too extensive, and condensed them for learners.',
+        ],
+        figure: 'algebra-lineage',
+        quote:
+          'An equation is not a question demanding a calculation; it is a declaration of absolute symmetry, where the unknown is already structurally bound to the known.',
+        takeaways: [
+          'Samīkaraṇa, “making equal”: an equation is a balance between two sides, not a command.',
+          'Transposition (a term crosses the scale and changes sign, ṛṇa ↔ dhana) and clearing equal terms keep the balance; al-jabr and al-muqābala are later Arabic counterparts, and how far Indian sources shaped them is unknown.',
+          'Vedic Maths sutras such as Parāvartya Yojayet read equations on the same coefficient grid as multiplication.',
+        ],
+      },
+    ],
+    keyTakeaways: [],
+    next: { id: 'algebra-engine', label: 'The Universal Engine of Algebra: Unifying Arithmetic & Polynomials' },
+  },
+  {
     id: 'algebra-engine',
     slug: 'universal-engine-of-algebra',
     title: 'The Universal Engine of Algebra: Unifying Arithmetic & Polynomials',
@@ -309,6 +535,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
     subtitle: 'Arithmetic is Base 10, Algebra is Base x: Discover how the exact same sutra multiplies numbers and polynomials with identical coefficient vectors.',
     readingTime: '6 min read',
     badge: 'Mathematical Unification',
+    prequel: { id: 'roots-of-algebra', label: 'बीजगणितस्य मूलानि' },
     sections: [
       {
         title: 'Algebra is Simply Generalized Arithmetic',

@@ -18,6 +18,7 @@ import { downloadBlob, escapeHtml } from '../utils/contentDownload';
 import { playPronunciation } from '../utils/pronunciation';
 import { VEDIC_LEARNING_PATH, VEDIC_PATH_SUTRA_IDS, vedicPathIndex } from '../data/vedicLearningPath';
 import { VedicLearningPath } from './VedicLearningPath';
+import VedicArticleFigure from './VedicArticleFigure';
 import '../styles/vedic-maths.css';
 import '../styles/resources.css';
 
@@ -33,7 +34,7 @@ export interface VedicMathsProps {
   onOpenLogin?: () => void;
   /** Tab to open first (e.g. 'zero' from search / Numbers guide "Read more"). */
   initialTab?: VedicTab;
-  /** Anchor to open first: 'zero' | 'vedic-path' | 'sutra-<id>' | 'solver-<key>' (also read from the URL hash). */
+  /** Anchor to open first: 'zero' | 'vedic-path' | 'sutra-<id>' | 'solver-<key>' | 'article-<slug>' (also read from the URL hash). */
   initialAnchor?: string;
   /** "New here? Start from Numbers" → Sanskrit Numbers guide. */
   onOpenNumbers?: () => void;
@@ -351,7 +352,7 @@ ${bodyHtml}
     ...filteredSutras.filter((sutra) => !VEDIC_PATH_SUTRA_IDS.includes(sutra.id)),
   ];
 
-  // ---- Anchor navigation (/vedic-maths#zero, #vedic-path, #sutra-<id>, #solver-<key>) ----
+  // ---- Anchor navigation (/vedic-maths#zero, #vedic-path, #sutra-<id>, #solver-<key>, #article-<slug>) ----
   const [pendingScrollId, setPendingScrollId] = useState<string | null>(null);
   const [flashId, setFlashId] = useState<string | null>(null);
 
@@ -378,6 +379,13 @@ ${bodyHtml}
       setActiveTab('solvers');
       setActiveSolver(key);
       scrollId = 'vedic-solver-layout';
+    } else if (clean.startsWith('article-')) {
+      const key = clean.slice(8);
+      const article = VEDIC_ARTICLES.find((a) => a.slug === key || a.id === key);
+      if (!article) return false;
+      setActiveTab('articles');
+      setSelectedArticleId(article.id);
+      scrollId = 'vedic-article-card';
     } else {
       return false;
     }
@@ -474,6 +482,18 @@ ${bodyHtml}
   // Current Article lookup
   const currentArticle = VEDIC_ARTICLES.find((a) => a.id === selectedArticleId) || VEDIC_ARTICLES[0];
   const currentArticleIdx = VEDIC_ARTICLES.findIndex((a) => a.id === currentArticle.id);
+  const articleAnchor = (id: string): string => {
+    const target = VEDIC_ARTICLES.find((a) => a.id === id);
+    return `article-${target ? target.slug : id}`;
+  };
+  // Switching articles keeps an #article-<slug> URL in sync (other hashes are left alone).
+  const selectArticle = (id: string) => {
+    setSelectedArticleId(id);
+    if (typeof window !== 'undefined' && window.location.hash.startsWith('#article-')) {
+      const { pathname, search } = window.location;
+      window.history.replaceState(window.history.state, '', `${pathname}${search}#${articleAnchor(id)}`);
+    }
+  };
 
   return (
     <div className="vedic-maths-container">
@@ -1459,7 +1479,7 @@ ${bodyHtml}
                     key={article.id}
                     type="button"
                     className={`article-nav-pill${selectedArticleId === article.id ? ' active' : ''}`}
-                    onClick={() => setSelectedArticleId(article.id)}
+                    onClick={() => selectArticle(article.id)}
                   >
                     <span>{idx + 1}.</span>
                     <span>{article.badge}</span>
@@ -1469,7 +1489,16 @@ ${bodyHtml}
             </div>
 
             {/* Active Article Reading Presentation */}
-            <article className="article-reading-card">
+            <article className="article-reading-card" id="vedic-article-card">
+              {currentArticle.prequel && (
+                <a
+                  className="article-series-link article-series-link--prequel"
+                  href={`/vedic-maths#${articleAnchor(currentArticle.prequel.id)}`}
+                  onClick={onAnchorLink(articleAnchor(currentArticle.prequel.id))}
+                >
+                  ← Prequel: {currentArticle.prequel.label}
+                </a>
+              )}
               <div className="article-meta-header">
                 <span className="article-badge-tag">
                   ✦ {currentArticle.badge}
@@ -1486,13 +1515,59 @@ ${bodyHtml}
               {/* Sections */}
               {currentArticle.sections.map((sec, sIdx) => (
                 <div key={sIdx} className="article-section-block">
-                  <h2 className="article-section-title">{sec.title}</h2>
+                  {sec.part && (
+                    <header className="article-part-header">
+                      <div className="article-part-label">{sec.part.label}</div>
+                      {sec.part.sanskritTitle && <div className="article-part-sa">{sec.part.sanskritTitle}</div>}
+                      <h2 className="article-part-title">{sec.part.title}</h2>
+                      <p className="article-part-subtitle">{sec.part.subtitle}</p>
+                    </header>
+                  )}
+                  {sec.part ? (
+                    <h3 className="article-section-title">{sec.title}</h3>
+                  ) : (
+                    <h2 className="article-section-title">{sec.title}</h2>
+                  )}
                   {sec.paragraphs.map((p, pIdx) => (
                     <p key={pIdx} className="article-p">{p}</p>
                   ))}
+                  {sec.figure && <VedicArticleFigure id={sec.figure} />}
                   {sec.highlight && (
                     <div className="article-highlight-box">
                       💡 {sec.highlight}
+                    </div>
+                  )}
+                  {sec.links && sec.links.length > 0 && (
+                    <div className="article-inline-links">
+                      {sec.links.map((link) => (
+                        <a
+                          key={link.anchor}
+                          className="article-inline-link"
+                          href={`/vedic-maths#${link.anchor}`}
+                          onClick={onAnchorLink(link.anchor)}
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                  {sec.quote && (
+                    <div className="article-pullquote">
+                      <span className="article-pullquote-mark">&ldquo;</span>
+                      {sec.quote}
+                    </div>
+                  )}
+                  {sec.takeaways && sec.takeaways.length > 0 && (
+                    <div className="article-takeaways-card">
+                      <div className="article-takeaways-title">
+                        <span>🎯 Key Takeaways</span>
+                      </div>
+                      {sec.takeaways.map((point, kIdx) => (
+                        <div key={kIdx} className="article-takeaway-item">
+                          <span className="article-takeaway-icon">✓</span>
+                          <span>{point}</span>
+                        </div>
+                      ))}
                     </div>
                   )}
                 </div>
@@ -1507,6 +1582,7 @@ ${bodyHtml}
               )}
 
               {/* Key Takeaways */}
+              {currentArticle.keyTakeaways.length > 0 && (
               <div className="article-takeaways-card">
                 <div className="article-takeaways-title">
                   <span>🎯 Key Architectural Takeaways</span>
@@ -1518,6 +1594,17 @@ ${bodyHtml}
                   </div>
                 ))}
               </div>
+              )}
+
+              {currentArticle.next && (
+                <a
+                  className="article-series-link article-series-link--next"
+                  href={`/vedic-maths#${articleAnchor(currentArticle.next.id)}`}
+                  onClick={onAnchorLink(articleAnchor(currentArticle.next.id))}
+                >
+                  Next: {currentArticle.next.label} →
+                </a>
+              )}
 
               {/* Sequential Footer Navigation & Interactive CTAs */}
               <div className="article-action-footer">
@@ -1528,7 +1615,7 @@ ${bodyHtml}
                     disabled={currentArticleIdx === 0}
                     onClick={() => {
                       if (currentArticleIdx > 0) {
-                        setSelectedArticleId(VEDIC_ARTICLES[currentArticleIdx - 1].id);
+                        selectArticle(VEDIC_ARTICLES[currentArticleIdx - 1].id);
                       }
                     }}
                   >
@@ -1540,7 +1627,7 @@ ${bodyHtml}
                     disabled={currentArticleIdx === VEDIC_ARTICLES.length - 1}
                     onClick={() => {
                       if (currentArticleIdx < VEDIC_ARTICLES.length - 1) {
-                        setSelectedArticleId(VEDIC_ARTICLES[currentArticleIdx + 1].id);
+                        selectArticle(VEDIC_ARTICLES[currentArticleIdx + 1].id);
                       }
                     }}
                   >
