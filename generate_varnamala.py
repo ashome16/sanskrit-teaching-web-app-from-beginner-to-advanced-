@@ -1,6 +1,7 @@
 import os
 import time
-from gTTS import gTTS
+import urllib.request
+import urllib.parse
 
 output_dir = "public/audio/barakhadi"
 os.makedirs(output_dir, exist_ok=True)
@@ -15,18 +16,21 @@ conjuncts = {
     'क्ष': 'ksha', 'ज्ञ': 'jnya', 'त्र': 'tra', 'श्र': 'shra'
 }
 
-print("Generating Varnamala audio...")
+print("Generating Varnamala audio via direct TTS stream...")
 
 for char, eng in {**vowels, **conjuncts}.items():
     filename = f"{eng}.mp3"
     filepath = os.path.join(output_dir, filename)
     if not os.path.exists(filepath):
-        print(f"Generating {char} -> {filename}")
+        print(f"Downloading {char} -> {filename}")
         try:
-            tts = gTTS(text=char, lang='hi')
-            tts.save(filepath)
-            time.sleep(0.5)
+            encoded_text = urllib.parse.quote(char)
+            url = f"https://translate.google.com/translate_tts?ie=UTF-8&q={encoded_text}&tl=hi&client=tw-ob"
+            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req) as response, open(filepath, 'wb') as out_file:
+                out_file.write(response.read())
+            time.sleep(0.4)
         except Exception as e:
-            print(f"Failed to generate {char}: {e}")
+            print(f"Failed for {char}: {e}")
 
-print("Done!")
+print("All Varnamala audio files generated successfully!")
