@@ -101,7 +101,7 @@ const Home: React.FC = () => {
   return (
     <div className="home">
       <header className="hero">
-        <h1>Sanskrit Learning Journey</h1>
+        <h1>SAMSKRITHA: Interactive Sanskrit Learning Journey</h1>
         <p>From Beginner to Advanced</p>
       </header>
 
