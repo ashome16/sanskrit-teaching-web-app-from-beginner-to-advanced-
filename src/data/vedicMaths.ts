@@ -515,6 +515,16 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           'Indian algebra grew as a chain of teachers and texts. Authors routinely name their predecessors and gurus: Bhāskara II, closing his Bījagaṇita, says he drew on the algebras of Brahmagupta, Śrīdhara and Padmanābha, which he found too extensive, and condensed them for learners.',
         ],
         figure: 'algebra-lineage',
+      },
+      {
+        title: 'Students Came to India',
+        paragraphs: [
+          'Learning also travelled with people. Chinese pilgrim-scholars made the long journey to India: Faxian (travelled c. 399–412 CE), then Xuanzang (in India c. 630–645) and Yijing (c. 673–685), who both studied at Nālandā. Teachers went the other way: Kumārajīva (of Indian and Kuchean parentage) reached China in 401 CE, Paramārtha of Ujjayinī arrived in 546 CE, and tradition credits Bodhidharma with carrying Chan (Zen) Buddhism there.',
+          'Indian astronomers served at the Tang court. Gautama Siddha (Qutan Xida) translated the Jiuzhi (Navagraha) calendar in 718 CE, and it explains Indian numerals, including a dot for zero.',
+          'In Buddhism and astronomy, the flow of learning ran largely from India to China. Chinese mathematics also had strong roots of its own: counting rods and, as we saw in Part 3, computation with negatives in the Nine Chapters.',
+        ],
+        highlight:
+          'India gave the world the number system and the arithmetic of zero and negatives on which all later algebra stands, and sustained an unbroken lineage of mathematicians for over two thousand years.',
         quote:
           'An equation is not a question demanding a calculation; it is a declaration of absolute symmetry, where the unknown is already structurally bound to the known.',
         takeaways: [
