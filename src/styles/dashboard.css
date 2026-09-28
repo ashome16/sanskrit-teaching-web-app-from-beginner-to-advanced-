@@ -13,6 +13,21 @@
   overflow-y: auto;
 }
 
+/* Reader: `overflow-x: hidden` turned .dashboard into its own scroll container
+   (which never scrolls — the page does), so the sticky header and the sticky
+   Word-analysis panel scrolled away with the page. `clip` hides horizontal
+   overflow without creating a scroll container, so sticky tracks the viewport. */
+.dashboard.dashboard--reader {
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+/* The reader header is tall (2–3 nav rows on desktop) and always scrolled away
+   with the page here; keep it that way now that sticky actually engages. */
+.dashboard.dashboard--reader .dashboard-header {
+  position: relative;
+}
+
 /* Full-Page Views (Board Studio, Home, Vedic Maths, Grammar, Quiz, Worksheets):
    Naturally scrollable with sticky header, standard browser scrollbar, and unconstrained vertical scrolling */
 .dashboard.dashboard--scrollable,
@@ -339,7 +354,9 @@
 
 @media (max-width: 900px) {
   .dashboard {
-    grid-template-columns: 1fr;
+    /* minmax(0, 1fr): a bare 1fr lets min-content (long lesson <select>, tile rows)
+       blow the single reader column out to ~1300px on phones. */
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto auto;
     height: auto;
   }

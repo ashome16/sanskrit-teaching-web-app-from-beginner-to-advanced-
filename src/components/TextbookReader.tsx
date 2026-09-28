@@ -276,6 +276,43 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const [padSelectedLetter, setPadSelectedLetter] = useState<string>('अ');
   const [glosses, setGlosses] = useState<AnalyseRegistry>({});
   const stopPlayAllRef = useRef<(() => void) | null>(null);
+  /** Letter shown in the mobile "now playing" chip after a single tile tap. */
+  const [tapPlayingLetter, setTapPlayingLetter] = useState<string | null>(null);
+  const tapChipTimerRef = useRef<number | null>(null);
+
+  const clearTapChip = () => {
+    if (tapChipTimerRef.current !== null) {
+      window.clearInterval(tapChipTimerRef.current);
+      tapChipTimerRef.current = null;
+    }
+    setTapPlayingLetter(null);
+  };
+
+  /**
+   * Show the floating chip for a tapped tile while its audio plays. Read-only:
+   * watches speechSynthesis.speaking (never touches playback). Minimum ~1.6s so
+   * MP3-backed tiles still get a glimpse; hard cap 8s.
+   */
+  const showTapChip = (letter: string) => {
+    if (typeof window === 'undefined') return;
+    if (tapChipTimerRef.current !== null) window.clearInterval(tapChipTimerRef.current);
+    setTapPlayingLetter(letter);
+    let elapsed = 0;
+    tapChipTimerRef.current = window.setInterval(() => {
+      elapsed += 250;
+      const synth = window.speechSynthesis;
+      const busy = !!synth && (synth.speaking || synth.pending);
+      if ((elapsed > 1600 && !busy) || elapsed > 8000) {
+        if (tapChipTimerRef.current !== null) window.clearInterval(tapChipTimerRef.current);
+        tapChipTimerRef.current = null;
+        setTapPlayingLetter(null);
+      }
+    }, 250);
+  };
+
+  useEffect(() => () => {
+    if (tapChipTimerRef.current !== null) window.clearInterval(tapChipTimerRef.current);
+  }, []);
 
   const handleOpenWorksheetsDefault = () => {
     onOpenWorksheets?.();
@@ -303,6 +340,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     setIsPlayingAll(false);
     setPlayingLetter(null);
     setPlayingGroupIdx(null);
+    clearTapChip();
   };
 
   useEffect(() => () => {
@@ -325,6 +363,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     setIsPlayingAll((prev) => (prev ? false : prev));
     setPlayingLetter(null);
     setPlayingGroupIdx(null);
+    clearTapChip();
   }, [activeLessonId, sentenceNumber]);
 
   // Leaving Sound & Pictures (writing / worksheets) cancels playback.
@@ -337,6 +376,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     setIsPlayingAll(false);
     setPlayingLetter(null);
     setPlayingGroupIdx(null);
+    clearTapChip();
   }, [isVarnamala, varnamalaSubMode]);
 
   const collectPlayAllItems = (): string[] => {
@@ -399,7 +439,14 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const handleLetterActivate = (letter: string) => {
     stopPlayAll();
     onWordClick(letter);
+    if (isVarnamala) showTapChip(letter);
   };
+
+  // Mobile / narrow "now playing" chip: Play-all letter wins over a single tap.
+  const nowPlayingLetter = isVarnamala && varnamalaSubMode === 'sound'
+    ? (isPlayingAll && playingLetter ? playingLetter : tapPlayingLetter)
+    : null;
+  const nowPlayingMnemonic = nowPlayingLetter ? getLetterMnemonic(nowPlayingLetter) : undefined;
   const sectionJumps = buildSectionJumps(activeLesson);
   const currentJumpIndex = (() => {
     if (!sectionJumps.length) return 0;
@@ -1145,6 +1192,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                             e.stopPropagation();
                             stopPlayAll();
                             playPronunciation(mnemonic.wordSan);
+                            showTapChip(letter);
                           }}
                         >
                           <span className="v-card-mnemonic-emoji" aria-hidden="true">{mnemonic.emoji}</span>
@@ -1667,6 +1715,23 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         onSelectLesson={(id) => onSelectLesson(id)}
         onOpenCbseGuide={onOpenCbseGuide}
       />
+      {nowPlayingLetter ? (
+        <div className="varna-now-playing" role="status" aria-live="polite">
+          <span className="varna-now-playing__pulse" aria-hidden="true">🔊</span>
+          <span className="varna-now-playing__letter">{nowPlayingLetter}</span>
+          {nowPlayingMnemonic ? (
+            <span className="varna-now-playing__word">
+              <span className="varna-now-playing__emoji" aria-hidden="true">{nowPlayingMnemonic.emoji}</span>
+              <span className="varna-now-playing__san">{nowPlayingMnemonic.wordSan}</span>
+              <span className="varna-now-playing__en">{nowPlayingMnemonic.wordEn}</span>
+            </span>
+          ) : (
+            <span className="varna-now-playing__word">
+              <span className="varna-now-playing__en">{tileLabel(nowPlayingLetter)}</span>
+            </span>
+          )}
+        </div>
+      ) : null}
     </section>
   );
 };

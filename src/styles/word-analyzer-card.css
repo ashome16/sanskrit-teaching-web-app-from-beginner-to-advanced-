@@ -1,8 +1,13 @@
 .word-analyzer-card {
+  /* Sticky within the reader grid so the current word stays in view while the
+     learner scrolls the tiles. The reader header scrolls away, so pin near the
+     viewport top. Needs .dashboard--reader overflow-x: clip (see dashboard.css). */
   position: sticky;
-  top: 4.25rem;
+  top: 0.85rem;
   align-self: start;
-  max-height: calc(100vh - 5.25rem);
+  box-sizing: border-box;
+  max-height: calc(100vh - 1.7rem);
+  max-height: calc(100dvh - 1.7rem);
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);

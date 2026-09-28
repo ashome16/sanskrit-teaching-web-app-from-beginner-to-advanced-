@@ -1752,3 +1752,111 @@
 }
 
 
+
+/* ── Mobile / narrow "now playing" chip ─────────────────────────────
+   On wide screens the sticky Word-analysis panel (right column) already shows
+   the current letter, so the chip only appears where that panel stacks below
+   the tiles (≤ 900px). Sits above the Bodhi (bottom-left) and Learner Care
+   Desk (bottom-right) buttons; pointer-events off so it never blocks taps. */
+.varna-now-playing {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .varna-now-playing {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: fixed;
+    left: 50%;
+    bottom: calc(5.4rem + env(safe-area-inset-bottom, 0px));
+    transform: translateX(-50%);
+    z-index: 1001; /* above Bodhi tip bubble (998) and Care Desk (999) */
+    max-width: calc(100vw - 2rem);
+    padding: 0.45rem 0.9rem 0.45rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(255, 253, 247, 0.97);
+    border: 1px solid #e3cfa8;
+    box-shadow: 0 6px 22px rgba(39, 59, 53, 0.18);
+    color: #2c2418;
+    pointer-events: none;
+    white-space: nowrap;
+    animation: varna-now-playing-in 0.18s ease-out;
+  }
+
+  .varna-now-playing__pulse {
+    font-size: 0.85rem;
+    animation: varna-now-playing-pulse 1s ease-in-out infinite;
+  }
+
+  .varna-now-playing__letter {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #9a3412;
+  }
+
+  .varna-now-playing__word {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 0.5rem;
+    border-left: 1px solid #ecdcbf;
+  }
+
+  .varna-now-playing__emoji {
+    font-size: 1rem;
+    align-self: center;
+  }
+
+  .varna-now-playing__san {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .varna-now-playing__en {
+    font-size: 0.8rem;
+    color: #6b5d4a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  [data-theme='dark'] .varna-now-playing {
+    background: rgba(30, 36, 44, 0.97);
+    border-color: #475569;
+    color: #f1f5f9;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
+  }
+
+  [data-theme='dark'] .varna-now-playing__letter {
+    color: #fdba74;
+  }
+
+  [data-theme='dark'] .varna-now-playing__word {
+    border-left-color: #475569;
+  }
+
+  [data-theme='dark'] .varna-now-playing__en {
+    color: #cbd5e1;
+  }
+}
+
+@keyframes varna-now-playing-in {
+  from { opacity: 0; transform: translate(-50%, 8px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes varna-now-playing-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .varna-now-playing,
+  .varna-now-playing__pulse {
+    animation: none;
+  }
+}
