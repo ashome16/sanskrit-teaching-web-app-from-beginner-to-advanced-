@@ -3,7 +3,7 @@
  * Similar-looking consonants get distinct spellings so learners can tell them apart visually,
  * while speech synthesis receives authentic Devanagari phonetic representations for Indian TTS voices.
  */
-const CONSONANT_STEM: Record<string, string> = {
+export const CONSONANT_STEM: Record<string, string> = {
   क: 'k', ख: 'kh', ग: 'g', घ: 'gh', ङ: 'ng',
   च: 'ch', छ: 'chh', ज: 'j', झ: 'jh', ञ: 'ny',
   ट: 'tt', ठ: 'tth', ड: 'dd', ढ: 'ddh', ण: 'nn',
@@ -14,7 +14,7 @@ const CONSONANT_STEM: Record<string, string> = {
 };
 
 /** Matra → vowel ending (school-style: aa, ee, oo). */
-const MATRA_VOWEL: Record<string, string> = {
+export const MATRA_VOWEL: Record<string, string> = {
   '': 'a',
   'ा': 'aa',
   'ि': 'i',

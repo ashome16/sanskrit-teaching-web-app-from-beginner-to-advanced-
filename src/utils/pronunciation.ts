@@ -1,4 +1,4 @@
-import { isBarakhadiAkshara, getGuninthaluSpeechText } from './barakhadiPhonetics';
+import { isBarakhadiAkshara, getGuninthaluSpeechText, CONSONANT_STEM, MATRA_VOWEL } from './barakhadiPhonetics';
 import {
   applySafeProsody,
   clampRate,
@@ -329,6 +329,35 @@ const speakMacVocalicVowel = (word: string, onEnd?: () => void): boolean => {
 
 const speakConfigured = (word: string, onEnd?: () => void): void => {
   if (pronunciationMuted) return;
+
+  // 1. Intercept Barakhadi characters and play our local MP3 files
+  if (isBarakhadiAkshara(word)) {
+    const cons = word[0];
+    const rest = word.slice(1);
+    
+    // Map the Devanagari back to our English filenames
+    const stem = CONSONANT_STEM[cons];
+    const vowel = MATRA_VOWEL[rest] || (rest === '' ? 'a' : undefined);
+
+    if (stem && vowel) {
+      const audioPath = `/audio/barakhadi/${stem}_${vowel}.mp3`;
+      const audio = new Audio(audioPath);
+      
+      if (onEnd) {
+        audio.onended = onEnd;
+        audio.onerror = onEnd;
+      }
+      
+      audio.play().catch(err => {
+        console.error(`Could not play audio for ${word}:`, err);
+        if (onEnd) onEnd();
+      });
+      
+      return; // Stop here so it doesn't trigger the robotic Mac voice!
+    }
+  }
+
+  // 2. Fall back to the built-in Text-to-Speech for full words and sentences
   if (speakMacBarakhadiOverride(word, onEnd)) return;
   if (speakMacVocalicVowel(word, onEnd)) return;
   if (word === 'ञ') {
@@ -348,7 +377,6 @@ const speakConfigured = (word: string, onEnd?: () => void): void => {
   }
   window.speechSynthesis.speak(utterance);
 };
-
 export const playPronunciation = (value: string): void => {
   if (pronunciationMuted) return;
   // Never voice a bare daṇḍa / double daṇḍa / verse number ("danda", "poorn viraam").
