@@ -3132,3 +3132,166 @@
   margin: 0.85rem 0 0;
   font-style: italic;
 }
+
+/* ---- Articles: general note on dates ---- */
+.articles-dates-note {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin: 0 0 1rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #e5e7eb;
+  border-left: 3px solid #d6b98c;
+  border-radius: 10px;
+  background: #fafaf7;
+  color: #4b5563;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+.articles-dates-note p {
+  margin: 0;
+}
+.articles-dates-note strong {
+  color: #374151;
+}
+.articles-dates-note-icon {
+  color: #a16207;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* ---- Articles: tap-to-hear Sanskrit terms ---- */
+.article-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.9rem 0 1.1rem;
+}
+.article-term {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  background: #fffbeb;
+  color: #374151;
+  font: inherit;
+  font-size: 0.88rem;
+  text-align: left;
+  cursor: pointer;
+}
+.article-term:hover,
+.article-term:focus-visible {
+  background: #fef3c7;
+  border-color: #f59e0b;
+}
+.article-term-audio {
+  font-size: 0.8rem;
+}
+.article-term-sa {
+  font-family: 'Noto Serif Devanagari', Georgia, serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #92400e;
+}
+.article-term-iast {
+  font-style: italic;
+  color: #78350f;
+}
+.article-term-gloss {
+  color: #6b7280;
+}
+
+/* ---- Before the Carat: unit chain ---- */
+.vaf-chain {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.35rem 0;
+}
+.vaf-chain-item {
+  display: flex;
+  align-items: center;
+}
+.vaf-chain-unit {
+  min-width: 6.5rem;
+  max-width: 8.5rem;
+  text-align: center;
+  border: 1px solid #ebdccb;
+  border-radius: 10px;
+  background: #fffdf9;
+  padding: 0.45rem 0.5rem;
+}
+.vaf-chain-item--anchor .vaf-chain-unit {
+  border: 2px solid #f59e0b;
+  background: #fffbeb;
+}
+.vaf-chain-sa {
+  font-family: 'Noto Serif Devanagari', Georgia, serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #92400e;
+}
+.vaf-chain-iast {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #78350f;
+}
+.vaf-chain-gloss {
+  font-size: 0.75rem;
+  color: #6b7280;
+  line-height: 1.3;
+  margin-top: 0.15rem;
+}
+.vaf-chain-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0.3rem;
+  color: #b45309;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+.vaf-chain-arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* ---- Before the Carat: Indus weight ratios ---- */
+.vaf-indus {
+  display: grid;
+  gap: 0.75rem;
+}
+.vaf-indus-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #78350f;
+  margin-bottom: 0.35rem;
+}
+.vaf-indus-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.vaf-indus-chip {
+  min-width: 2.6rem;
+  text-align: center;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid #d6d3d1;
+  border-radius: 6px;
+  background: #f5f5f4;
+  color: #44403c;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9rem;
+}
+.vaf-indus-chip--key {
+  border-color: #f59e0b;
+  background: #fffbeb;
+  color: #92400e;
+  font-weight: 800;
+}

@@ -50,6 +50,14 @@ const NUMBERS_READ_MORE: ReadMoreLink[] = [
     target: { view: 'vedic-maths', vedicAnchor: 'article-roots-of-algebra' },
   },
   {
+    id: 'before-the-carat',
+    emoji: '⚖️',
+    title: 'Before the Carat · Seeds, Slate & Ancient Metrology',
+    blurb: 'Vedic Maths article · counting in weights: 8 dust motes → … → 80 guñjā seeds to a gold suvarṇa, and binary–decimal Indus weights.',
+    href: '/vedic-maths#article-before-the-carat',
+    target: { view: 'vedic-maths', vedicAnchor: 'article-before-the-carat' },
+  },
+  {
     id: 'katapayadi',
     emoji: '🔢',
     title: 'कटपयादि · Kaṭapayādi',

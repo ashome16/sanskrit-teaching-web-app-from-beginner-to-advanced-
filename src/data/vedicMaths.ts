@@ -75,7 +75,13 @@ export type VedicArticleFigureId =
   | 'brahmagupta-sign-rules'
   | 'cross-signs'
   | 'samikarana-balance'
-  | 'transposition-steps';
+  | 'transposition-steps'
+  | 'manu-weight-chain'
+  | 'weight-tables-compared'
+  | 'gem-weight-units'
+  | 'diamond-grading'
+  | 'touchstone-streaks'
+  | 'indus-weights';
 
 export interface VedicArticleSection {
   title: string;
@@ -91,6 +97,8 @@ export interface VedicArticleSection {
   /** End-of-part pull quote and 🎯 takeaways (multi-part articles). */
   quote?: string;
   takeaways?: string[];
+  /** Tap-to-hear Sanskrit terms (Devanagari voiced via playPronunciation, IAST beside it). */
+  terms?: { sa: string; iast: string; gloss: string }[];
 }
 
 export interface VedicArticle {
@@ -665,7 +673,116 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Replaces rote calculation with geometric spatial flow.',
       'Directly applied today in VLSI microchips, AI coprocessors, and quantum computing.'
     ]
-  }
+  },
+  {
+    id: 'before-the-carat',
+    slug: 'before-the-carat',
+    title: 'Before the Carat — Seeds, Slate, and the Metrology of Ancient India',
+    sanskritTitle: '॥ प्राचीन-भारतस्य तुलामानम् ॥',
+    subtitle:
+      'Article 1 · How dust motes, mustard seeds, barley and the red guñjā seed became a precise chain of weights, and how a black stone and a fire kept gold and coins honest.',
+    readingTime: '10 min read',
+    badge: 'Article 1 · Metrology',
+    sections: [
+      {
+        title: 'Nature’s Blueprints for Weight',
+        paragraphs: [
+          'Before the metric system, the carat or the gram, the merchants, metallurgists and gemologists of ancient India worked with a sophisticated system of weights. To build it, they turned to nature’s own blueprints: a speck of dust in a sunbeam, mustard seeds, barley, and the bright red guñjā seed.',
+          'The story runs from the grid-planned cities of the Indus, whose standardized stone weights we can still put on a balance, to the diamond trade that much later made Golconda (at its peak in the 16th and 17th centuries CE) a byword for gems. Throughout, it combines botanical reference units, practical physics and state oversight.',
+          'The texts quoted below are simply the earliest accounts that survive. These systems were very likely in use, and passed on orally, long before any of them. The Indus weights are physical evidence of standardized measurement far earlier still, but the Indus script is undeciphered: we can weigh the weights, yet we cannot read what their makers wrote about them.',
+        ],
+        highlight:
+          'The ratti a jeweller may still quote is a living link in a chain of units that starts with a speck of dust.',
+      },
+      {
+        title: 'The Architecture of Weight',
+        paragraphs: [
+          'The smallest unit is almost a thought experiment in physics. The earliest surviving account of the full chain is preserved in the Manusmṛti (8.132–137), and the same series appears in the Yājñavalkya Smṛti (1.362–365). The trasareṇu (त्रसरेणु), the tiny mote of dust you see floating when sunlight shines through a lattice window, is declared the least of all quantities.',
+          'From there, every step is a natural object: 8 trasareṇu = 1 likṣā (लिक्षा, a louse egg); 3 likṣā = 1 rāja-sarṣapa (black mustard seed); 3 rāja-sarṣapa = 1 gaura-sarṣapa (white mustard seed); 6 gaura-sarṣapa = 1 yava (यव, a middle-sized barley corn); 3 yava = 1 kṛṣṇala, the red-and-black seed also called raktikā (रक्तिका) or guñjā (Abrus precatorius); 5 kṛṣṇala = 1 māṣa (माष); and 16 māṣa = 1 suvarṇa (सुवर्ण), the standard weight for gold. Multiply it out and a single kṛṣṇala is 1,296 dust motes.',
+        ],
+        figure: 'manu-weight-chain',
+      },
+      {
+        title: 'Two Tables, One Anchor',
+        paragraphs: [
+          'The Arthaśāstra (2.19), the manual of statecraft attributed to Kauṭilya, preserves a parallel official table for the Superintendent of Weights and Measures: 10 seeds of māṣa (black gram) or 5 guñjā seeds make one suvarṇa-māṣaka, 16 māṣaka make one suvarṇa (also called karṣa), and 4 karṣa make one pala. Silver and diamonds had their own reckonings: 88 white mustard seeds made one silver māṣaka, and 20 grains of husked rice (taṇḍula, तण्डुल) made one dharaṇa of diamond. The same chapter says the official weights were to be made of iron, of stone from Magadha and Mekala, or of anything that neither swells when wet nor expands in heat.',
+          'Both tables land on the same anchor: 80 guñjā seeds to one gold suvarṇa. The guñjā (ratti) seed was the practical reference. By convention a ratti is taken as about 0.12 g (later standard tables use 121.5 mg). Living seeds are not identical, though: measured Abrus seeds vary noticeably from seed to seed and from region to region (one West African sample averaged only about 0.074 g). What made the seed usable was practice: weighing against several seeds at once, keeping seeds of typical size, and above all calibrated weights of stone and metal kept by the state. The Manusmṛti (8.403) orders that all weights and measures be duly marked and re-examined every six months.',
+          'Units outlived the ancient tables, but not unchanged. The Manusmṛti counts 5 kṛṣṇala to a māṣa. The later Indian goldsmiths’ system, common in Mughal and British times, counts 8 ratti = 1 māśā and 12 māśā = 1 tolā, so a tolā is 96 ratti. In 1833 the East India Company fixed the tolā at 180 grains (about 11.66 g), and jewellers used it well into the 20th century. The ancient māṣa and the later māśā share a name but are different units.',
+        ],
+        figure: 'weight-tables-compared',
+        terms: [
+          { sa: 'त्रसरेणु', iast: 'trasareṇu', gloss: 'dust mote in a sunbeam' },
+          { sa: 'लिक्षा', iast: 'likṣā', gloss: 'louse egg (8 trasareṇu)' },
+          { sa: 'यव', iast: 'yava', gloss: 'barley corn' },
+          { sa: 'तण्डुल', iast: 'taṇḍula', gloss: 'grain of husked rice' },
+          { sa: 'रक्तिका', iast: 'raktikā', gloss: 'the red guñjā seed, ratti' },
+          { sa: 'माष', iast: 'māṣa', gloss: '5 raktikā (Manusmṛti)' },
+          { sa: 'सुवर्ण', iast: 'suvarṇa', gloss: 'gold weight, 16 māṣa' },
+        ],
+      },
+      {
+        title: 'The Diamond Monopoly and Pre-Karat Gemology',
+        paragraphs: [
+          'For over two thousand years India was the world’s main source of diamonds. Borneo produced a few; India’s dominance ended only when large deposits were found in Brazil in the 1720s, and South Africa followed in the 1860s.',
+          'Judging gems was a science of its own: ratnaparīkṣā (रत्नपरीक्षा), “the examination of gems”. The Arthaśāstra (2.11) lists the sources and qualities of diamonds, Varāhamihira’s Bṛhatsaṃhitā gives gems a whole chapter (ch. 80), and later treatises such as the Ratnaparīkṣā ascribed to Buddhabhaṭṭa and the Agastimata carried the subject further. Gems were weighed with the smallest units of the system: diamonds in rice grains, pearls in guñjā seeds.',
+        ],
+        figure: 'gem-weight-units',
+      },
+      {
+        title: 'Why “Carat”?',
+        paragraphs: [
+          'The Western carat has a parallel botanical story. Its name comes, through Arabic qīrāṭ, from the Greek keration, the seed of the carob tree. Carob seeds are not unusually uniform either: a 2006 study (Turnbull and colleagues, Biology Letters) found their weight varies about as much as that of other seeds, roughly 23%. Traders’ careful selection, not nature, made the carat reliable, and the metric carat was fixed at 200 mg in 1907.',
+          'Indian diamonds were judged on three points:',
+        ],
+        figure: 'diamond-grading',
+        terms: [{ sa: 'रत्नपरीक्षा', iast: 'ratnaparīkṣā', gloss: 'the examination of gems' }],
+      },
+      {
+        title: 'Mints, Slate and Fire',
+        paragraphs: [
+          'Weight alone cannot protect a currency; the metal itself has to be proved. India’s earliest coins, the punch-marked silver pieces later known as kārṣāpaṇa (कार्षापण), were valued by weight and fineness. The oldest found are generally dated to around the 6th–5th century BCE, well before the Mauryas, who continued the series. Their standard was about 32 raktikā of silver, some 3.3–3.5 g. That matches the Manusmṛti’s silver dharaṇa (or purāṇa) of 16 silver māṣaka of 2 kṛṣṇala each; the Manusmṛti itself gives the name kārṣāpaṇa to a karṣa of copper.',
+          'The touchstone, nikaṣa (निकष; Hindi kasauṭī), is described in the Arthaśāstra (2.13). A streak of standard gold is drawn on the stone, then a streak of the gold under test beside it, and the colours are compared. The text praises a stone with a soft, shining lustre and names the green-bean-coloured stone of Kaliṅga among the best. Touchstones in practice are fine-grained, dark siliceous stones (lydite, basanite or black jasper). They are often loosely called “slate”, which is where our title’s word comes from.',
+          'For reference pieces of known purity, the same chapter defines sixteen standards (ṣoḍaśa-varṇaka): replace 1, 2, 3 … up to 16 kākaṇī of the gold in a suvarṇa with copper (a kākaṇī is a quarter māṣaka, so 1⁄64 of the suvarṇa) and you get a graded ladder of alloys to match a streak against. The text also names the cheats: a streak that wipes off or rubs away, or one produced by glittering powder under a fingernail, betrays deception.',
+        ],
+        figure: 'touchstone-streaks',
+      },
+      {
+        title: 'Trial by Fire',
+        paragraphs: [
+          'Fire gave an independent check. In the Arthaśāstra (2.13), impure gold is fused with lead, four times the weight of the impurity; silver is refined with lead too, and counts as pure when it turns white, glowing and full of globules. Chapter 2.14 describes silver heated again and again with copper sulphate mixed with powdered bone, with lead, in a skull-shaped vessel (kapāla) and finally with rock salt, as R. Shamasastry translates these technical terms. These are processes akin to cupellation, in which lead carries base metals away and leaves the precious metal behind. The text does not describe the bone-ash cupel of later assayers, and some of its technical words remain uncertain.',
+          'The fire also exposed fraud. Gold that keeps the same colour inside and out when heated is the best, and black or blue shows impurity. The mint allowed exactly one kākaṇī of extra metal per suvarṇa coin for loss in manufacture (2.14), so any larger shortfall had to be explained. Gold leaf wrapped over lead could be caught by heating, by the touchstone, or by the dull sound the piece made when rubbed.',
+        ],
+        highlight:
+          'Streak, standard and fire: three independent checks that let a treasury trust a coin or an ingot it had never seen before.',
+        terms: [
+          { sa: 'कार्षापण', iast: 'kārṣāpaṇa', gloss: 'punch-marked coin, a standard weight of metal' },
+          { sa: 'निकष', iast: 'nikaṣa', gloss: 'touchstone' },
+        ],
+      },
+      {
+        title: 'The Legacy of Indian Metrology',
+        paragraphs: [
+          'The foundations are older than any text we can read. In the Indus cities, excavations at Harappa, Mohenjo-daro and other sites found fired bricks proportioned 1 : 2 : 4 (thickness : width : length) and polished cubical stone weights, mostly of chert, made to one standard across a vast area. The weights follow a binary series for small amounts (ratios 1, 2, 4, 8, 16, 32, 64) and decimal multiples for large ones (160, 200, 320, 640, 1,600 and up). The commonest, ratio 16, weighs about 13.7 g. We can measure these weights precisely; because the Indus script is undeciphered, we cannot read what their makers called them.',
+        ],
+        figure: 'indus-weights',
+      },
+      {
+        title: 'Seeds, Verses and Officials',
+        paragraphs: [
+          'The later systems stayed tied to flora and minerals, were memorized in verse and taught by word of mouth, and were enforced by officials who stamped the weights and checked them again. Together they were precise enough to anchor trade across the subcontinent for millennia, until the tolā and the ratti gave way to the gram and the metric carat.',
+        ],
+      },
+    ],
+    quote:
+      'Before there was a carat, there was a seed; before there was a laboratory, there was a dark stone and a fire.',
+    keyTakeaways: [
+      'The smallest unit, the trasareṇu, is a dust mote in a sunbeam; the chain from it to the gold suvarṇa is preserved in the Manusmṛti (8.132–137) and the Yājñavalkya Smṛti.',
+      'The Arthaśāstra (2.19) preserves a parallel state table, including 20 rice grains to one dharaṇa of diamond; both tables give 80 guñjā to a gold suvarṇa.',
+      'Guñjā (ratti) seeds were a practical standard, made reliable by averaging and by state-checked weights, not by perfect uniformity.',
+      'Gold was proved on the touchstone (nikaṣa) against sixteen graded reference alloys, and by fire.',
+      'The Indus weights show binary and decimal standards far older than any text we can read.',
+    ],
+  },
 ];
 
 export const VEDIC_INTRO = {

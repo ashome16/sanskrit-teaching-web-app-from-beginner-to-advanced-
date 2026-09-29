@@ -1468,6 +1468,17 @@ ${bodyHtml}
             ================================================================== */}
         {(activeTab === 'articles' || activeTab === 'essay') && (
           <div className="articles-hub-container">
+            <aside className="articles-dates-note" role="note">
+              <span className="articles-dates-note-icon" aria-hidden="true">ⓘ</span>
+              <p>
+                <strong>A note on dates:</strong> the dates given for texts are the dates of the earliest copies that
+                have survived, been found and been deciphered, not when a method or idea began. Much knowledge was passed
+                on orally, and many manuscripts and libraries were lost over the centuries through climate, decay and
+                destruction during invasions (for example, Nālandā, c. 1193). Many methods are therefore likely older
+                than their earliest surviving record.
+              </p>
+            </aside>
+
             {/* Article Selector Navigation Pills */}
             <div className="article-nav-pills-wrap">
               <div className="article-nav-pills-label">
@@ -1532,6 +1543,24 @@ ${bodyHtml}
                     <p key={pIdx} className="article-p">{p}</p>
                   ))}
                   {sec.figure && <VedicArticleFigure id={sec.figure} />}
+                  {sec.terms && sec.terms.length > 0 && (
+                    <div className="article-terms" aria-label="Tap to hear Sanskrit terms">
+                      {sec.terms.map((term) => (
+                        <button
+                          key={term.sa}
+                          type="button"
+                          className="article-term"
+                          onClick={() => playPronunciation(term.sa)}
+                          title={`Listen: ${term.iast}`}
+                        >
+                          <span className="article-term-audio" aria-hidden="true">🔊</span>
+                          <span className="article-term-sa" lang="sa">{term.sa}</span>
+                          <span className="article-term-iast">{term.iast}</span>
+                          <span className="article-term-gloss">{term.gloss}</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
                   {sec.highlight && (
                     <div className="article-highlight-box">
                       💡 {sec.highlight}

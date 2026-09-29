@@ -399,6 +399,254 @@ const Lineage = () => (
   </aside>
 );
 
+// ---------------------------------------------------------------- Before the Carat (metrology)
+
+const MANU_CHAIN: { sa: string; iast: string; gloss: string; next?: string }[] = [
+  { sa: 'त्रसरेणु', iast: 'trasareṇu', gloss: 'dust mote in a sunbeam', next: '×8' },
+  { sa: 'लिक्षा', iast: 'likṣā', gloss: 'louse egg', next: '×3' },
+  { sa: 'राजसर्षप', iast: 'rāja-sarṣapa', gloss: 'black mustard seed', next: '×3' },
+  { sa: 'गौरसर्षप', iast: 'gaura-sarṣapa', gloss: 'white mustard seed', next: '×6' },
+  { sa: 'यव', iast: 'yava', gloss: 'barley corn', next: '×3' },
+  { sa: 'कृष्णल', iast: 'kṛṣṇala', gloss: 'raktikā / guñjā seed (ratti) ≈ 0.12 g', next: '×5' },
+  { sa: 'माष', iast: 'māṣa', gloss: 'bean weight', next: '×16' },
+  { sa: 'सुवर्ण', iast: 'suvarṇa', gloss: 'gold weight' },
+];
+
+const ManuWeightChain = () => (
+  <figure className="vaf-figure">
+    <ol className="vaf-chain" aria-label="Chain of weights, smallest to largest">
+      {MANU_CHAIN.map((u) => (
+        <li key={u.iast} className={`vaf-chain-item${u.iast === 'kṛṣṇala' ? ' vaf-chain-item--anchor' : ''}`}>
+          <div className="vaf-chain-unit">
+            <div className="vaf-chain-sa" lang="sa">{u.sa}</div>
+            <div className="vaf-chain-iast">{u.iast}</div>
+            <div className="vaf-chain-gloss">{u.gloss}</div>
+          </div>
+          {u.next && (
+            <div className="vaf-chain-step" aria-label={`${u.next.replace('×', 'times ')} makes the next unit`}>
+              <span className="vaf-chain-factor">{u.next}</span>
+              <span className="vaf-chain-arrow" aria-hidden="true">→</span>
+            </div>
+          )}
+        </li>
+      ))}
+    </ol>
+    <figcaption className="vaf-note">
+      Each arrow reads “this many make the next unit”. Preserved in the Manusmṛti 8.132–134 (same series in the
+      Yājñavalkya Smṛti 1.362–363). 1 kṛṣṇala = 8 × 3 × 3 × 6 × 3 = 1,296 trasareṇu; 1 suvarṇa = 80 kṛṣṇala. The gram
+      value is the modern conventional ratti, not a figure from the text.
+    </figcaption>
+  </figure>
+);
+
+const WeightTablesCompared = () => (
+  <div className="vaf-table-wrap">
+    <table className="vaf-table">
+      <caption>Two surviving tables side by side</caption>
+      <thead>
+        <tr>
+          <th scope="col">Metal / use</th>
+          <th scope="col">Manusmṛti 8.134–136</th>
+          <th scope="col">Arthaśāstra 2.19</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Gold, small unit</th>
+          <td>5 kṛṣṇala (guñjā) = 1 māṣa</td>
+          <td>5 guñjā or 10 māṣa beans = 1 suvarṇa-māṣaka</td>
+        </tr>
+        <tr>
+          <th scope="row">Gold, standard</th>
+          <td>16 māṣa = 1 suvarṇa</td>
+          <td>16 māṣaka = 1 suvarṇa (karṣa)</td>
+        </tr>
+        <tr>
+          <th scope="row">Larger</th>
+          <td>4 suvarṇa = 1 pala</td>
+          <td>4 karṣa = 1 pala</td>
+        </tr>
+        <tr>
+          <th scope="row">Silver</th>
+          <td>2 kṛṣṇala = 1 silver māṣaka; 16 = 1 dharaṇa (purāṇa)</td>
+          <td>88 white mustard seeds = 1 silver māṣaka; 16 = 1 dharaṇa</td>
+        </tr>
+        <tr>
+          <th scope="row">Diamond</th>
+          <td>—</td>
+          <td>20 grains of rice (taṇḍula) = 1 dharaṇa of diamond</td>
+        </tr>
+      </tbody>
+    </table>
+    <p className="vaf-note">Both give 80 guñjā seeds to one gold suvarṇa.</p>
+  </div>
+);
+
+const GemWeightUnits = () => (
+  <div className="vaf-table-wrap">
+    <table className="vaf-table">
+      <caption>Gem weights before the metric carat</caption>
+      <thead>
+        <tr>
+          <th scope="col">Unit</th>
+          <th scope="col">Natural basis</th>
+          <th scope="col">Approx. mass</th>
+          <th scope="col">Where it comes from</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">taṇḍula · तण्डुल</th>
+          <td>a grain of husked rice</td>
+          <td>not fixed in the text</td>
+          <td>Arthaśāstra 2.19: 20 taṇḍula = 1 dharaṇa of diamond</td>
+        </tr>
+        <tr>
+          <th scope="row">raktikā · रक्तिका (ratti)</th>
+          <td>guñjā seed, Abrus precatorius</td>
+          <td>≈ 0.12 g (conventional)</td>
+          <td>Manusmṛti, Arthaśāstra; still quoted by jewellers</td>
+        </tr>
+        <tr className="vaf-row-muted">
+          <th scope="row">pakkī ratti</th>
+          <td>a trade unit, no longer a seed</td>
+          <td>≈ 0.18 g (≈ 0.91 carat)</td>
+          <td>later gem-trade convention; values vary by trader</td>
+        </tr>
+        <tr className="vaf-row-muted">
+          <th scope="row">mañjāḍi (manjadikuru)</th>
+          <td>red seed of Adenanthera pavonina</td>
+          <td>≈ 2 guñjā (kunni) seeds</td>
+          <td>regional convention in Kerala and the south</td>
+        </tr>
+        <tr>
+          <th scope="row">carat</th>
+          <td>carob seed (Greek keration)</td>
+          <td>0.2 g (metric carat, fixed 1907)</td>
+          <td>Mediterranean and Arab trade; now worldwide</td>
+        </tr>
+      </tbody>
+    </table>
+    <p className="vaf-note">Greyed rows are later or regional trade conventions, not units from the classical texts.</p>
+  </div>
+);
+
+const DiamondGrading = () => (
+  <figure className="vaf-figure">
+    <div className="vaf-phases" role="list">
+      <div className="vaf-phase" role="listitem">
+        <div className="vaf-phase-tag">1 · Varṇa (colour)</div>
+        <div className="vaf-phase-who">Bṛhatsaṃhitā 80.11 · Arthaśāstra 2.11</div>
+        <div className="vaf-phase-eg">
+          Four colour classes named after the varṇas: white for Brāhmaṇas, red or yellow for Kṣatriyas, slightly yellow
+          for Vaiśyas, black for Śūdras.
+        </div>
+        <div className="vaf-phase-src">
+          The Bṛhatsaṃhitā frames this as who should wear which colour. The Arthaśāstra lists shades such as cat’s-eye,
+          śirīṣa flower, cow’s urine, alum and mālatī flower.
+        </div>
+      </div>
+      <div className="vaf-phase" role="listitem">
+        <div className="vaf-phase-tag">2 · Hardness</div>
+        <div className="vaf-phase-who">Arthaśāstra 2.11</div>
+        <div className="vaf-phase-eg">
+          The best diamond withstands blows and scratches the surface of vessels (bhājanalekhī).
+        </div>
+        <div className="vaf-phase-src">Only a diamond scratches a diamond, which made this a test few fakes could pass.</div>
+      </div>
+      <div className="vaf-phase" role="listitem">
+        <div className="vaf-phase-tag">3 · Size, weight, form and light</div>
+        <div className="vaf-phase-who">Arthaśāstra 2.11</div>
+        <div className="vaf-phase-eg">Big, heavy, with regular angles (samakoṇa), refracting light and brilliant.</div>
+        <div className="vaf-phase-src">
+          Density testing by displacement in water or oil is not attested in the classical texts; later gem lore even
+          praises a diamond that “floats on water”, an ideal rather than a measurement.
+        </div>
+      </div>
+    </div>
+  </figure>
+);
+
+const TOUCH_STREAKS: { label: string; fill: string }[] = [
+  { label: '0', fill: '#f4c542' },
+  { label: '4', fill: '#eab13c' },
+  { label: '8', fill: '#dc9b3a' },
+  { label: '12', fill: '#cc8537' },
+  { label: '16', fill: '#b96e33' },
+];
+
+const TouchstoneStreaks = () => (
+  <figure className="vaf-figure">
+    <svg
+      className="vaf-svg"
+      viewBox="0 0 600 230"
+      role="img"
+      aria-label="A dark touchstone with five reference streaks from pure gold to gold with 16 kākaṇī of copper, and a test streak matching the second"
+    >
+      <rect x="10" y="10" width="580" height="175" rx="22" fill="#1f2328" />
+      <rect x="10" y="10" width="580" height="175" rx="22" fill="none" stroke="#4b5563" strokeWidth="2" />
+      {TOUCH_STREAKS.map((s, i) => (
+        <g key={s.label}>
+          <rect x={48 + i * 82} y="40" width="46" height="100" rx="6" fill={s.fill} opacity="0.92" />
+          <text x={71 + i * 82} y="165" textAnchor="middle" fill="#e5e7eb" fontSize="15">
+            {s.label}
+          </text>
+        </g>
+      ))}
+      <line x1="458" y1="30" x2="458" y2="150" stroke="#6b7280" strokeDasharray="4 4" />
+      <rect x="490" y="40" width="46" height="100" rx="6" fill="#eab13c" opacity="0.92" />
+      <text x="513" y="165" textAnchor="middle" fill="#fde68a" fontSize="15" fontWeight="700">
+        test
+      </text>
+      <text x="236" y="212" textAnchor="middle" fill="#78350f" fontSize="14">
+        reference streaks · kākaṇī of copper per suvarṇa (of 64)
+      </text>
+      <text x="513" y="212" textAnchor="middle" fill="#78350f" fontSize="14">
+        ≈ matches 4
+      </text>
+    </svg>
+    <figcaption className="vaf-note">
+      Arthaśāstra 2.13: draw a streak of standard gold, then the gold under test beside it, and compare colours. Its
+      sixteen standards (ṣoḍaśa-varṇaka) replace 1 to 16 kākaṇī of gold by copper; five are shown. Colours are
+      illustrative.
+    </figcaption>
+  </figure>
+);
+
+const INDUS_BINARY = [1, 2, 4, 8, 16, 32, 64];
+const INDUS_DECIMAL = [160, 200, 320, 640, 1600, 3200, 6400, 8000, 12800];
+
+const IndusWeights = () => (
+  <figure className="vaf-figure">
+    <div className="vaf-indus">
+      <div className="vaf-indus-row">
+        <div className="vaf-indus-label">Binary (small weights)</div>
+        <div className="vaf-indus-chips">
+          {INDUS_BINARY.map((n) => (
+            <span key={n} className={`vaf-indus-chip${n === 16 ? ' vaf-indus-chip--key' : ''}`}>
+              {n}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="vaf-indus-row">
+        <div className="vaf-indus-label">Decimal multiples (large weights)</div>
+        <div className="vaf-indus-chips">
+          {INDUS_DECIMAL.map((n) => (
+            <span key={n} className="vaf-indus-chip">
+              {n.toLocaleString('en-IN')}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+    <figcaption className="vaf-note">
+      Ratios of Harappan cubical stone weights (J. M. Kenoyer’s summary). The highlighted ratio 16 is the commonest weight,
+      about 13.7 g, so the smallest (ratio 1) is under 1 g. Bricks from the same cities follow 1 : 2 : 4.
+    </figcaption>
+  </figure>
+);
+
 export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId }) {
   switch (id) {
     case 'algebra-lineage':
@@ -421,6 +669,18 @@ export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId })
       return <Balance />;
     case 'transposition-steps':
       return <Transposition />;
+    case 'manu-weight-chain':
+      return <ManuWeightChain />;
+    case 'weight-tables-compared':
+      return <WeightTablesCompared />;
+    case 'gem-weight-units':
+      return <GemWeightUnits />;
+    case 'diamond-grading':
+      return <DiamondGrading />;
+    case 'touchstone-streaks':
+      return <TouchstoneStreaks />;
+    case 'indus-weights':
+      return <IndusWeights />;
     default:
       return null;
   }
