@@ -58,6 +58,14 @@ const NUMBERS_READ_MORE: ReadMoreLink[] = [
     target: { view: 'vedic-maths', vedicAnchor: 'article-before-the-carat' },
   },
   {
+    id: 'naming-the-colossal',
+    emoji: '🔢',
+    title: 'Naming the Colossal · Past a Million',
+    blurb: 'Vedic Maths article · named powers of ten in the Vājasaneyi Saṃhitā, the tallakṣaṇa list, and Piṅgala’s prastāra.',
+    href: '/vedic-maths#article-naming-the-colossal',
+    target: { view: 'vedic-maths', vedicAnchor: 'article-naming-the-colossal' },
+  },
+  {
     id: 'katapayadi',
     emoji: '🔢',
     title: 'कटपयादि · Kaṭapayādi',

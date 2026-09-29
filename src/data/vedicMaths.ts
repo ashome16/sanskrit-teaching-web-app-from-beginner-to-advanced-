@@ -84,7 +84,8 @@ export type VedicArticleFigureId =
   | 'indus-weights'
   | 'coin-compared'
   | 'manu-time-chain'
-  | 'panchanga-compared';
+  | 'panchanga-compared'
+  | 'named-powers-three';
 
 export interface VedicArticleSection {
   title: string;
@@ -922,6 +923,90 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'A tithi is 12° of sun–moon separation and varies from about 19 to 26 hours. The mean in the converter is 1/30 of the modern mean synodic month.',
       'The Sūrya Siddhānta’s year is 1,577,917,828 ÷ 4,320,000 = 365.258756 days, about 3 minutes 27 seconds longer than the modern mean sidereal year (about 365.25636 days), not “within seconds.”',
       'Vikram saṃvat is traditionally counted from 57 BCE, with the new year on Caitra śukla pratipadā. In September 2026 that count is about 2083. It is still a linear count; the festivals track the lunisolar year.',
+    ],
+  },
+  {
+    id: 'naming-the-colossal',
+    slug: 'naming-the-colossal',
+    title: 'Naming the Colossal — How Indian Texts Counted Past a Million',
+    sanskritTitle: '॥ दशगुणोत्तरसंज्ञाः ॥',
+    subtitle:
+      'Named powers of ten in the Vājasaneyi Saṃhitā, a hundred-fold tallakṣaṇa list in the Lalitavistara, and the prastāra of short and long syllables.',
+    readingTime: '8 min read',
+    badge: 'Named powers of ten',
+    sections: [
+      {
+        title: 'A habit of naming the next ten',
+        paragraphs: [
+          'Carl Sagan, in Cosmos (Random House, 1980), chapter 10, “The Edge of Forever,” wrote: “The Hindu religion is the only one of the world’s great faiths dedicated to the idea that the Cosmos itself undergoes an immense, indeed an infinite, number of deaths and rebirths. It is the only religion in which the time scales correspond, no doubt by accident, to those of modern scientific cosmology. Its cycles run from our ordinary day and night to a day and night of Brahma, 8.64 billion years long, longer than the age of the Earth or the Sun and about half the time since the Big Bang. And there are much longer time scales still.”',
+          'He was talking about cosmological time, and the same habit of named powers of ten shows up in the counting lists.',
+        ],
+      },
+      {
+        title: 'Vedic number names',
+        sanskritTitle: 'वाजसनेयिसंहिता १७.२',
+        paragraphs: [
+          'A list of number-names is preserved in the Vājasaneyi Saṃhitā of the White Yajurveda, book 17, verse 2. The verse does not say that counting began there. It asks that the bricks of the altar be milch cows, and it pairs each name with the next: eka, daśa, śata, sahasra, ayuta, niyuta, prayuta, arbuda, nyarbuda, samudra, madhya, anta, parārdha — one and ten, ten and a hundred, a hundred and a thousand, and so on to anta and parārdha.',
+          'Ralph T. H. Griffith’s English (The Texts of the White Yajurveda, 1899) agrees on the first rungs: “one, and ten, and ten tens, a hundred, and ten hundreds, a thousand, and ten thousand.” After that his wording bunches names (“an ocean middle and end”) and does not give one power to each word, so those later glosses are not used as exponents here.',
+          'Amartya Kumar Dutta reads every pair in the verse as ten times the name before it (Bhāvanā, “Mathematics in India,” part 2). On that reading of this verse, parārdha is 10^12. That is one reckoning of this passage. The word is not fixed there. B. Datta and A. N. Singh report that Śrīdhara’s decuple place-names run to eighteen and end in parārdha, so in that later list the same name stands much further up a tenfold ladder. No second exponent is printed here.',
+          'A Greek myriad is 10^4. Latin mille is a thousand. Each is a name for one step. The Saṃhitā list is that kind of naming carried through thirteen steps.',
+        ],
+        terms: [
+          { sa: 'एक', iast: 'eka', gloss: 'one' },
+          { sa: 'दश', iast: 'daśa', gloss: 'ten' },
+          { sa: 'शत', iast: 'śata', gloss: 'a hundred' },
+          { sa: 'सहस्र', iast: 'sahasra', gloss: 'a thousand' },
+          { sa: 'अयुत', iast: 'ayuta', gloss: 'the step after sahasra in this verse' },
+          { sa: 'परार्ध', iast: 'parārdha', gloss: 'last name in VS 17.2; 10^12 on Dutta’s reading' },
+        ],
+      },
+      {
+        title: 'The tallakṣaṇa scale',
+        sanskritTitle: 'ललितविस्तर',
+        paragraphs: [
+          'In the Lalitavistara, chapter 12, the mathematician Arjuna asks the bodhisattva for the count past a hundred koṭis. The answer is a ladder of hundreds: a hundred koṭis is an ayuta, a hundred ayutas a niyuta, and so on, until a hundred vibhūtaṅgamās is a tallakṣaṇa. There are twenty-three names in that list, from ayuta through tallakṣaṇa, each a hundred times the one before.',
+          'The sūtra does not write 10^53. A koṭi in later literature is usually ten million, 10^7, and that value is not certain for this passage. If a koṭi is 10^7, a hundred koṭis is 10^9, and the twenty-two hundred-fold steps from ayuta to tallakṣaṇa land on 10^53. If the koṭi is different, the power is different. The text’s own ladder is the hundred-fold list.',
+          'The list does not stop at tallakṣaṇa. The same reply names further numerations above it, among them one for the sands of the Ganges, and a highest numeration in that series called uttaraparamāṇurajaḥpraveśa. Tallakṣaṇa is the last name of the first ladder, not the largest name in the chapter.',
+        ],
+        terms: [
+          { sa: 'कोटि', iast: 'koṭi', gloss: 'the unit the ladder starts from; 10^7 only in later usage' },
+          { sa: 'तल्लक्षण', iast: 'tallakṣaṇa', gloss: 'last name of the hundred-fold list' },
+        ],
+      },
+      {
+        title: 'Short, long, and a triangle of counts',
+        sanskritTitle: 'छन्दःशास्त्रम्',
+        paragraphs: [
+          'The Chandaḥśāstra of Piṅgala is a treatise on metre. Its date as a text is not fixed; what follows is what the sūtras do, not a claim about when the idea began. A syllable is laghu, short, or guru, long. The patterns of a line are what get counted. For a line of n syllables there are two choices at each place, so 2^n patterns. The sūtra’s own device for setting them out is the prastāra, the expansion of the patterns.',
+          'How many of those patterns have a given number of short syllables is a combination count. Halāyudha, in the 10th century, writing his commentary on Piṅgala, sets those counts out as a triangular array, the meru-prastāra. That writing-out is centuries before Pascal’s triangle (1654). The triangle in that form is the commentator’s, on a very short sūtra. Piṅgala’s text does not draw it.',
+          'A later reading maps laghu and guru onto two values. The sūtra is about the patterns of a line. It does not set out a code for machines, and it does not assign the digits 0 and 1.',
+        ],
+        terms: [
+          { sa: 'लघु', iast: 'laghu', gloss: 'a short syllable' },
+          { sa: 'गुरु', iast: 'guru', gloss: 'a long syllable' },
+          { sa: 'प्रस्तार', iast: 'prastāra', gloss: 'the expansion of the patterns' },
+          { sa: 'मेरुप्रस्तार', iast: 'meru-prastāra', gloss: 'the triangular array in Halāyudha’s commentary' },
+        ],
+      },
+      {
+        title: 'Countable, uncountable, infinite',
+        sanskritTitle: 'अनुयोगद्वार',
+        paragraphs: [
+          'The Anuyogadvāra-sūtra, in the summary given by J. J. O’Connor and E. F. Robertson from G. G. Joseph’s The Crest of the Peacock, sorts quantities into saṅkhyāta, asaṅkhyāta and ananta: countable, uncountable-but-finite, and infinite. The same summary lists more than one kind of infinite — in one direction, in two directions, in area, everywhere, and perpetually. A distant cousin of the later question.',
+        ],
+        figure: 'named-powers-three',
+        terms: [
+          { sa: 'संख्यात', iast: 'saṅkhyāta', gloss: 'countable' },
+          { sa: 'असंख्यात', iast: 'asaṅkhyāta', gloss: 'uncountable, and still not the infinite' },
+          { sa: 'अनन्त', iast: 'ananta', gloss: 'infinite; more than one kind is named' },
+        ],
+      },
+    ],
+    keyTakeaways: [
+      'The names eka through parārdha are preserved in Vājasaneyi Saṃhitā 17.2, paired so that each is the next step. Griffith (1899) confirms the opening through ten thousand. Dutta’s reading of every pair as ×10 makes parārdha 10^12 in this verse; later place-lists set that name much higher.',
+      'Lalitavistara chapter 12 builds tallakṣaṇa by hundreds, not by writing 10^53. That power holds only if a koṭi is 10^7. The chapter names further numerations above tallakṣaṇa.',
+      'Piṅgala’s prastāra expands the patterns of laghu and guru. Halāyudha (10th century) writes the combination counts as the meru-prastāra. A later reading maps the two syllables onto two values; the sūtra does not assign 0 and 1.',
+      'The Anuyogadvāra classification, as summarized from Joseph, distinguishes countable, uncountable-but-finite, and infinite, and names more than one kind of infinite. That is as far as the comparison goes.',
     ],
   },
 ];

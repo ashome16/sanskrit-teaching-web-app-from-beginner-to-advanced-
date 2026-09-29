@@ -859,6 +859,48 @@ const PanchangaCompared = () => (
   </div>
 );
 
+
+const NamedPowersThree = () => (
+  <div className="vaf-table-wrap">
+    <table className="vaf-table">
+      <caption>Three counting ideas, and what the text itself does</caption>
+      <thead>
+        <tr>
+          <th scope="col">Idea</th>
+          <th scope="col">Where it is preserved</th>
+          <th scope="col">What is named</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Decuple names</th>
+          <td>Vājasaneyi Saṃhitā 17.2</td>
+          <td>
+            A name for each next ten, through parārdha. On Dutta’s reading of this verse, parārdha is 10
+            <Sup>12</Sup>. Later place-lists set the same name higher.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Tallakṣaṇa scale</th>
+          <td>Lalitavistara, chapter 12</td>
+          <td>
+            Each name is a hundred times the last. 10<Sup>53</Sup> only if a koṭi is 10<Sup>7</Sup>. The chapter
+            continues past tallakṣaṇa.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Meru-prastāra</th>
+          <td>Halāyudha (10th century) on Piṅgala</td>
+          <td>
+            Combination counts for short and long syllables, written as a triangle. The sūtra’s device is the
+            prastāra, the expansion of the patterns.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+);
+
 export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId }) {
   switch (id) {
     case 'algebra-lineage':
@@ -899,6 +941,8 @@ export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId })
       return <TimeUnitChain />;
     case 'panchanga-compared':
       return <PanchangaCompared />;
+    case 'named-powers-three':
+      return <NamedPowersThree />;
     default:
       return null;
   }
