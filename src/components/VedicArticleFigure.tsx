@@ -647,6 +647,45 @@ const IndusWeights = () => (
   </figure>
 );
 
+const CoinCompared = () => (
+  <div className="vaf-table-wrap">
+    <table className="vaf-table">
+      <caption>Two silver coins, both valued as metal</caption>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">kārṣāpaṇa</th>
+          <th scope="col">denarius, early empire</th>
+          <th scope="col">denarius after Nero (AD 64)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">What it looks like</th>
+          <td>punch-marked silver; no portrait</td>
+          <td>silver with the emperor’s portrait</td>
+          <td>the same portrait, on a lighter coin</td>
+        </tr>
+        <tr>
+          <th scope="row">Mass</th>
+          <td>about 32 ratti, some 3.3–3.5 g</td>
+          <td>about 3.9 g (1/84 of a Roman pound)</td>
+          <td>about 3.4 g (1/96 of a pound)</td>
+        </tr>
+        <tr>
+          <th scope="row">What the value follows</th>
+          <td>weight and fineness of the silver</td>
+          <td>weight and fineness; the silver share is high</td>
+          <td>less silver in the coin of the same name (near 80% in Butcher and Ponting)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p className="vaf-note">
+      No laboratory figure for the silver percentage of a punch-marked kārṣāpaṇa is given here. The Roman column is the standard numismatic account of Nero’s reform of AD 64.
+    </p>
+  </div>
+);
+
 export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId }) {
   switch (id) {
     case 'algebra-lineage':
@@ -681,6 +720,8 @@ export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId })
       return <TouchstoneStreaks />;
     case 'indus-weights':
       return <IndusWeights />;
+    case 'coin-compared':
+      return <CoinCompared />;
     default:
       return null;
   }

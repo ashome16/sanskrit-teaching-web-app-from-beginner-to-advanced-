@@ -81,7 +81,8 @@ export type VedicArticleFigureId =
   | 'gem-weight-units'
   | 'diamond-grading'
   | 'touchstone-streaks'
-  | 'indus-weights';
+  | 'indus-weights'
+  | 'coin-compared';
 
 export interface VedicArticleSection {
   title: string;
@@ -681,7 +682,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
     sanskritTitle: '॥ प्राचीन-भारतस्य तुलामानम् ॥',
     subtitle:
       'Article 1 · How dust motes, mustard seeds, barley and the red guñjā seed became a precise chain of weights, and how a black stone and a fire kept gold and coins honest.',
-    readingTime: '12 min read',
+    readingTime: '13 min read',
     badge: 'Article 1 · Metrology',
     sections: [
       {
@@ -767,6 +768,20 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           'For reference pieces of known purity, the same chapter defines sixteen standards (ṣoḍaśa-varṇaka): replace 1, 2, 3 … up to 16 kākaṇī of the gold in a suvarṇa with copper (a kākaṇī is a quarter māṣaka, so 1⁄64 of the suvarṇa) and you get a graded ladder of alloys to match a streak against. The text also names the cheats: a streak that wipes off or rubs away, or one produced by glittering powder under a fingernail, betrays deception.',
         ],
         figure: 'touchstone-streaks',
+      },
+      {
+        title: 'A Strict Standard, Not a Slur',
+        paragraphs: [
+          'The strictness was the sovereign’s own standard, so that a buyer and a seller weighed the same mass. It is supervision, not a slur on merchants. The pautavādhyakṣa had the weights and balances made (Arthaśāstra 2.19). In Shamasastry’s translation of that chapter he charges 4 māṣas to stamp a weight or measure, fines 27¼ paṇa for using one unstamped, and takes one kākaṇī a day from traders toward the stamping. Another reading of the same sentence takes the stamp as due every four months (cāturmāsikam). Those are two readings of one place, not one rule, and neither is the Manusmṛti (8.403), which says the weights are to be marked and looked at again once in six months.',
+          'The fines are in the text’s own units. On the tulā balance (Arthaśāstra 4.2) a difference of one karṣa is no offence, two karṣa cost 6 paṇa, and a larger gap rises in proportion. A merchant who buys with one false balance and sells with another pays double. A middleman whose sleight of hand costs someone an eighth of a paṇa is fined 200 paṇa. The mint’s own ladder, in 2.14, is the three amercements already noted: lowered fineness the lowest, an underweight coin the middle, deception with the balance the highest. These passages do not set the fine by the māṣa, and they do not say confiscation or exile.',
+        ],
+        figure: 'coin-compared',
+      },
+      {
+        title: 'Roman Gold at the Ports',
+        paragraphs: [
+          'The Periplus of the Erythraean Sea, a Greek merchant’s guide, names Muziris on the Malabar coast and the pepper shipped from there. Roman gold, the aureus, reached those ports in quantity, and so did silver. Many of the aurei found in south India are slashed across the portrait. That is a trade practice: the coin was taken as bullion, and the cut cancelled the portrait. It is not a slogan about politics. Both the kārṣāpaṇa and the Roman denarius were metal coins. The early imperial denarius weighed about 3.9 g, a theoretical 1/84 of a Roman pound, and was high in silver; in AD 64 Nero cut it to about 3.4 g, 1/96 of a pound, and lowered the silver (Butcher and Ponting’s analyses put the fineness near 80 percent). The fair contrast is that later debasement, not a claim that one coin was token money and the other pure.',
+        ],
       },
       {
         title: 'Trial by Fire',
