@@ -403,6 +403,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     setPlayingGroupIdx(null);
     stopPlayAllRef.current = playSequence(items, {
       gapMs: 240,
+      // Deepakam / Class 8 lessons only — not Varṇamālā, बारहखड़ी, or the Numbers guide.
+      sanskritCardinals: !isGroupedLesson,
       onItem: (word) => setPlayingLetter(word),
       onDone: () => {
         stopPlayAllRef.current = null;
