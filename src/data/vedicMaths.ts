@@ -681,7 +681,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
     sanskritTitle: '॥ प्राचीन-भारतस्य तुलामानम् ॥',
     subtitle:
       'Article 1 · How dust motes, mustard seeds, barley and the red guñjā seed became a precise chain of weights, and how a black stone and a fire kept gold and coins honest.',
-    readingTime: '10 min read',
+    readingTime: '12 min read',
     badge: 'Article 1 · Metrology',
     sections: [
       {
@@ -701,6 +701,13 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           'From there, every step is a natural object: 8 trasareṇu = 1 likṣā (लिक्षा, a louse egg); 3 likṣā = 1 rāja-sarṣapa (black mustard seed); 3 rāja-sarṣapa = 1 gaura-sarṣapa (white mustard seed); 6 gaura-sarṣapa = 1 yava (यव, a middle-sized barley corn); 3 yava = 1 kṛṣṇala, the red-and-black seed also called raktikā (रक्तिका) or guñjā (Abrus precatorius); 5 kṛṣṇala = 1 māṣa (माष); and 16 māṣa = 1 suvarṇa (सुवर्ण), the standard weight for gold. Multiply it out and a single kṛṣṇala is 1,296 dust motes.',
         ],
         figure: 'manu-weight-chain',
+      },
+      {
+        title: 'The Same Mote, as a Length',
+        paragraphs: [
+          'That chain is a scale of weight. The dust mote is also the start of a scale of length, and the two must not be run together. A length series preserved in the Mayamata (chapter 5) runs entirely in eights: 8 paramāṇu = 1 rathareṇu, a speck of dust; 8 rathareṇu = 1 bālāgra, the tip of a hair; 8 bālāgra = 1 likṣā; 8 likṣā = 1 yūkā, a louse; 8 yūkā = 1 yava, a barley grain; 8 yava = 1 aṅgula, a finger-breadth. A similar series, without the hair-tip, is preserved in the Arthaśāstra (2.20): 8 paramāṇu make the dust thrown up by a chariot wheel, then eightfold steps through likṣā, yūkā and yava to the aṅgula.',
+          'The paramāṇu here is simply the smallest particle the texts posit. The Mayamata says it is what the yogins see. It is not a modern atom, and these texts give no measure in micrometres. The Bhāgavata Purāṇa (3.11.5) uses the sunbeam mote too, but as a count of particles rather than this eightfold length: two paramāṇu make one aṇu, and three aṇu make one trasareṇu, the speck seen when sunshine comes through a lattice. The point of all three is a shared visible baseline, so that “the smallest thing a sharp eye can see” meant the same thing in different places.',
+        ],
       },
       {
         title: 'Two Tables, One Anchor',
@@ -736,6 +743,20 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
         ],
         figure: 'diamond-grading',
         terms: [{ sa: 'रत्नपरीक्षा', iast: 'ratnaparīkṣā', gloss: 'the examination of gems' }],
+      },
+      {
+        title: 'Colour as a Property of the Stone',
+        paragraphs: [
+          'Lapidaries described a diamond by how it looked. The Bṛhatsaṃhitā (80.11) sorts the colours under the four varṇa names, as who should wear which stone: white for Brāhmaṇas, red or yellow for Kṣatriyas, slightly yellow for Vaiśyas, black for Śūdras. It is not a simple scale from colourless down to dark. The same chapter calls a superior diamond light and dazzling, of the colour of lightning, fire or a rainbow (80.14), and praises a six-sided stone (80.8). Read straight, this grades colour cast, marks in the stone and the way the surface handles light. They treated those differences as real properties of the material, not as names only.',
+          'A gemologist today, speaking of a stone of that colour, would name one cause traces of nitrogen in the carbon, from a faint Cape tint to a fancy yellow; another, strain in the crystal, for a pink or brown stone; and another, dense dark inclusions such as graphite, for a black stone. Those are our names for causes. The texts do not use them. What the texts describe is the stone’s own faces: lapidaries polished those natural faces, the six-sided form among them, rather than cutting the many facets of a modern brilliant.',
+        ],
+      },
+      {
+        title: 'Varṇa as a Grade of Quality',
+        paragraphs: [
+          'Readers sometimes hear the four names on a diamond as a slur. In this chapter varṇa is a grade of quality. Jāti is the other word: a birth-group, or simply a kind. A stone is graded by how it looks and how it performs, not by which mine it came from, and the same word varṇa is used of a person’s qualities and actions.',
+          'That use of the word is preserved in the Bhagavad Gītā (4.13), which divides the four varṇas by guṇa and karma, quality and work. It is preserved again in the Manusmṛti (2.157): an unlearned brāhmaṇa is like an elephant made of wood, or a deer made of leather, and the three bear nothing but the name.',
+        ],
       },
       {
         title: 'Mints, Slate and Fire',
