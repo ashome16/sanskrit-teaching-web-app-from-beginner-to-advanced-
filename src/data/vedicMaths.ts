@@ -755,7 +755,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
         title: 'Varṇa as a Grade of Quality',
         paragraphs: [
           'Readers sometimes hear the four names on a diamond as a slur. In this chapter varṇa is a grade of quality. Jāti is the other word: a birth-group, or simply a kind. A stone is graded by how it looks and how it performs, not by which mine it came from, and the same word varṇa is used of a person’s qualities and actions.',
-          'That use of the word is preserved in the Bhagavad Gītā (4.13), which divides the four varṇas by guṇa and karma, quality and work. It is preserved again in the Manusmṛti (2.157): an unlearned brāhmaṇa is like an elephant made of wood, or a deer made of leather, and the three bear nothing but the name.',
+          'That use of the word is preserved in the Bhagavad Gītā (4.13), which divides the four varṇas by guṇa and karma, quality and work. It is preserved again in the Manusmṛti (2.157): an unlearned brāhmaṇa is like an elephant made of wood, or a deer made of leather, and the three bear nothing but the name. The gurukuls, where a student’s varṇa was read from aptitude and conduct, were shut down, and that way of reading the word was lost with them. The Manusmṛti is still widely misread today as a birth-based code, though the verses cited here tie a person’s standing to conduct and to learning: quality and work in the Bhagavad Gītā (4.13), and learning in the Manusmṛti (2.157).',
         ],
       },
       {
