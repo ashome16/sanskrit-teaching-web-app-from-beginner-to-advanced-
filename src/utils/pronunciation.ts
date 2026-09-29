@@ -11,8 +11,8 @@ import {
 } from './speechPlatform';
 import { getSavedVoiceName, resolveVoiceForRole } from './voiceConfig';
 import { isMacDesktopPlatform, macBarakhadiCue, pickMacBarakhadiVoice } from './macBarakhadiSpeech';
-import { isDandaOrVerseNumberToken } from './dandaSpeech';
-import { lessonNumberSpeechParts } from './lessonNumberSpeech';
+import { isDandaOrVerseNumberToken, stripDandaForSpeech } from './dandaSpeech';
+import { expandDigitsInLessonText } from './lessonNumberSpeech';
 
 // Native Web Speech API pronunciation helper for Sanskrit text only.
 // Strips whitespace/punctuation plus Devanagari digits and hyphens (e.g. the
@@ -336,6 +336,14 @@ const speakConfigured = (word: string, onEnd?: () => void, plain = false): void 
   if (plain) {
     const utterance = new SpeechSynthesisUtterance(word);
     configureUtterance(utterance, word, word);
+    // Cardinals must use the Hindi voice. A saved English reader voice says "two".
+    const hindi = pickHindiVoice();
+    if (hindi) {
+      utterance.voice = hindi;
+      utterance.lang = hindi.lang || 'hi-IN';
+    } else {
+      utterance.lang = 'hi-IN';
+    }
     if (onEnd) {
       utterance.onend = onEnd;
       utterance.onerror = onEnd;
@@ -430,16 +438,20 @@ export const playSequence = (
   for (const value of values) {
     // Skip daṇḍa / double daṇḍa / verse-number tokens so Play-all never says "danda".
     if (isDandaOrVerseNumberToken(value)) continue;
-    if (options?.sanskritCardinals) {
-      const parts = lessonNumberSpeechParts(value);
-      if (parts) {
-        for (const part of parts) items.push({ word: part, plain: true });
-        continue;
-      }
+    if (options?.plainDevanagari) {
+      const phrase = expandDigitsInLessonText(value).replace(/\s+/g, ' ').trim();
+      if (phrase) items.push({ word: phrase, plain: true });
+      continue;
+    }
+    // Lesson reader: any digit inside the line, not only a numeral-only token.
+    if (options?.sanskritCardinals && /[0-9०-९]/.test(value)) {
+      const phrase = stripDandaForSpeech(expandDigitsInLessonText(value)).replace(/\s+/g, ' ').trim();
+      if (phrase) items.push({ word: phrase, plain: true });
+      continue;
     }
     const word = cleanWord(value) || value.trim();
     if (word && isSanskritText(word)) {
-      items.push({ word, plain: !!options?.plainDevanagari });
+      items.push({ word, plain: false });
     }
   }
 
@@ -513,6 +525,23 @@ export const playSequence = (
 /** Lesson reader: speak Sanskrit cardinals already written in Devanagari. */
 export const playLessonCardinals = (words: string[]): void => {
   playSequence(words, { plainDevanagari: true, gapMs: 80 });
+};
+
+/**
+ * Lesson reader speech. Digit runs anywhere in the line become Devanagari
+ * cardinals before the engine sees them. Lines with no digits keep the
+ * existing word voice (including Varṇamālā MP3s, which do not call this).
+ */
+export const playLessonText = (value: string): void => {
+  if (pronunciationMuted) return;
+  if (isDandaOrVerseNumberToken(value)) return;
+  if (!/[0-9०-९]/.test(value || '')) {
+    playPronunciation(value);
+    return;
+  }
+  const speech = stripDandaForSpeech(expandDigitsInLessonText(value)).replace(/\s+/g, ' ').trim();
+  if (!speech || typeof window === 'undefined' || !window.speechSynthesis) return;
+  playSequence([speech], { plainDevanagari: true, gapMs: 0 });
 };
 
 /* -------------------------------------------------------------------------

@@ -3,6 +3,7 @@ import { GRADE_8_SYLLABUS, type Grade8Chapter } from '../data/grade8Syllabus';
 import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters } from '../utils/premiumAccess';
 import '../styles/grade8-syllabus.css';
+import { expandDigitsInLessonText } from '../utils/lessonNumberSpeech';
 
 interface Grade8SyllabusModalProps {
   isOpen: boolean;
@@ -44,7 +45,7 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
       setSpeakingId(null);
       return;
     }
-    const utterance = new SpeechSynthesisUtterance(text);
+    const utterance = new SpeechSynthesisUtterance(expandDigitsInLessonText(text));
     utterance.lang = 'hi-IN'; // Devanagari phonology
     utterance.rate = 0.85;
     utterance.pitch = 1.0;

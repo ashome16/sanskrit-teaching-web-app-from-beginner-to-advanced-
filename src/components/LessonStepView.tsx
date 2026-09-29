@@ -2,6 +2,7 @@ import React from 'react';
 import type { LessonStep } from '../utils/lessonSteps';
 import { TextToSpeechHandler } from '../utils/speech';
 import { hasDevanagariLetter, stripDandaForSpeech } from '../utils/dandaSpeech';
+import { expandDigitsInLessonText } from '../utils/lessonNumberSpeech';
 
 interface ChecklistItem {
   label: string;
@@ -34,7 +35,7 @@ const LessonStepView: React.FC<LessonStepViewProps> = ({
 }) => {
   const handleWordClick = (rawWord: string) => {
     // Drop attached । ॥ / verse numbers so they are neither spoken nor analysed.
-    const word = stripDandaForSpeech(rawWord).replace(/[,]+/g, '').trim();
+    const word = expandDigitsInLessonText(stripDandaForSpeech(rawWord).replace(/[,]+/g, '').trim());
     if (!hasDevanagariLetter(word)) return;
     ttsHandler.speak({ text: word, language: 'sa-IN', rate: 0.7 });
     onWordSelected?.({

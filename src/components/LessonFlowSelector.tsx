@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { LessonContent } from '../types';
 import { TextToSpeechHandler } from '../utils/speech';
+import { expandDigitsInLessonText } from '../utils/lessonNumberSpeech';
 import '../styles/lesson-flow.css';
 
 interface LessonFlowSelectorProps {
@@ -63,9 +64,11 @@ const LessonFlowSelector: React.FC<LessonFlowSelectorProps> = ({
     }
 
     if (textToNarrate) {
+      const spoken = expandDigitsInLessonText(textToNarrate);
       ttsHandler.speak({
-        text: textToNarrate,
-        language: 'en-US',
+        text: spoken,
+        // Digits become Devanagari cardinals; hi-IN reads those. Plain English stays en-US.
+        language: spoken !== textToNarrate ? 'hi-IN' : 'en-US',
         rate: 0.9,
       });
 

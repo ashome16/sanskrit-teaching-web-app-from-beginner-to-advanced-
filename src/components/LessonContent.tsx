@@ -1,6 +1,7 @@
 import React from 'react';
 import type { LessonContent as LessonContentType } from '../types';
 import { TextToSpeechHandler } from '../utils/speech';
+import { expandDigitsInLessonText } from '../utils/lessonNumberSpeech';
 import '../styles/content.css';
 
 interface LessonContentProps {
@@ -12,12 +13,12 @@ const LessonContent: React.FC<LessonContentProps> = ({ content, ttsHandler }) =>
   const handleSpeak = () => {
     if (content.data.devanagari) {
       ttsHandler.speak({
-        text: content.data.transliteration || content.data.devanagari,
+        text: expandDigitsInLessonText(content.data.transliteration || content.data.devanagari),
         language: 'sa-IN',
       });
     } else if (content.data.text) {
       ttsHandler.speak({
-        text: content.data.text,
+        text: expandDigitsInLessonText(content.data.text),
       });
     }
   };

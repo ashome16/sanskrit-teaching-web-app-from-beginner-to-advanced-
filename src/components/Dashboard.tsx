@@ -39,8 +39,8 @@ const ViewLoader = () => (
 import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters } from '../utils/premiumAccess';
 import { LESSONS as STATIC_LESSONS, fetchLatestChapters } from '../data/chapters';
-import { playLessonCardinals, playPronunciation } from '../utils/pronunciation';
-import { lessonNumberSpeechParts } from '../utils/lessonNumberSpeech';
+import { playLessonText, playPronunciation } from '../utils/pronunciation';
+import { expandDigitsInLessonText } from '../utils/lessonNumberSpeech';
 import { hasDevanagariLetter, isDandaOrVerseNumberToken } from '../utils/dandaSpeech';
 import '../styles/dashboard.css';
 
@@ -660,12 +660,13 @@ const Dashboard: React.FC = () => {
     if (isDandaOrVerseNumberToken(word)) return;
     // Lessons only. Numbers guide, Varṇamālā, and बारहखड़ी keep their own audio.
     const skipNumberSpeech = lesson?.id === 'numbers' || lesson?.id === 'varnamala' || lesson?.id === 'barakhadi';
-    const cardinals = skipNumberSpeech ? null : lessonNumberSpeechParts(word);
-    if (cardinals) {
-      playLessonCardinals(cardinals);
-      const spoken = cardinals.join(' ');
-      localStorage.setItem('last-stem', spoken);
-      setWordSelection({ text: spoken, nonce: Date.now() });
+    if (!skipNumberSpeech) {
+      // Any digit in the line (एकः २, 2., page numbers), not only a bare numeral.
+      playLessonText(word);
+      const spoken = expandDigitsInLessonText(word);
+      const cleaned = cleanWord(spoken) || spoken.trim();
+      localStorage.setItem('last-stem', cleaned);
+      setWordSelection({ text: cleaned, nonce: Date.now() });
       return;
     }
     const cleaned = cleanWord(word) || word.trim();

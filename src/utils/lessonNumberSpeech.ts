@@ -63,24 +63,43 @@ export const cardinalForInteger = (n: number): string[] => {
     .map((digit) => CARDINAL_0_TO_10[Number(digit)]);
 };
 
+const DIGIT_RUN = /[0-9०-९]+/g;
+
+/**
+ * Replace every digit run in lesson text, including inside a sentence
+ * ("एकः २", "The 12 Solar", "2."). Surrounding words stay. No raw digit
+ * is left for hi-IN ("do") or an English voice ("two").
+ * Number-guide labels are not passed through here.
+ */
+export const expandDigitsInLessonText = (text: string): string => {
+  if (!text) return '';
+  DIGIT_RUN.lastIndex = 0;
+  if (!DIGIT_RUN.test(text)) return text;
+  DIGIT_RUN.lastIndex = 0;
+  const expanded = text.replace(DIGIT_RUN, (run) => {
+    const n = integerFromDigits(run);
+    if (n === null) return ' ';
+    const spoken = cardinalForInteger(n);
+    return spoken.length ? ` ${spoken.join(' ')} ` : ' ';
+  });
+  // Belt: a digit the parser could not read must not reach the engine.
+  return expanded
+    .replace(DIGIT_RUN, '')
+    .replace(/[ \t]+([.,;:!?।॥)\]])/g, '$1')
+    .replace(/[ \t]{2,}/g, ' ')
+    .trim();
+};
+
 /**
  * If `raw` is only a numeral (or a punctuation-wrapped one, e.g. "२", "2.",
  * "१५-२१"), return the Devanagari cardinals to speak. Tokens that already
- * contain letters (number-guide labels, ordinary words) return null.
+ * contain letters return null — use expandDigitsInLessonText for those.
  */
 export const lessonNumberSpeechParts = (raw: string): string[] | null => {
   const trimmed = (raw || '').trim();
   if (!trimmed || HAS_LETTER.test(trimmed)) return null;
   if (!/[0-9०-९]/.test(trimmed)) return null;
-  const runs = trimmed.match(/[0-9०-९]+/g);
-  if (!runs?.length) return null;
-  const parts: string[] = [];
-  for (const run of runs) {
-    const n = integerFromDigits(run);
-    if (n === null) return null;
-    const spoken = cardinalForInteger(n);
-    if (!spoken.length) return null;
-    parts.push(...spoken);
-  }
-  return parts;
+  const expanded = expandDigitsInLessonText(trimmed);
+  const parts = expanded.split(/\s+/).filter((part) => part && /[\u0900-\u097F]/.test(part));
+  return parts.length ? parts : null;
 };

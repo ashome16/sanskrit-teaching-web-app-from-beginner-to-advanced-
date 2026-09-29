@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { LessonContent as LessonContentType } from '../types';
 import { TextToSpeechHandler } from '../utils/speech';
+import { expandDigitsInLessonText } from '../utils/lessonNumberSpeech';
 import '../styles/pronunciation.css';
 
 interface PronunciationPracticeProps {
@@ -29,7 +30,7 @@ const PronunciationPractice: React.FC<PronunciationPracticeProps> = ({
   const playReferenceAudio = () => {
     setIsSpeaking(true);
     ttsHandler.speak({
-      text: expectedPronunciation,
+      text: expandDigitsInLessonText(expectedPronunciation),
       language: 'sa-IN',
       rate: practiceMode === 'syllable' ? 0.6 : 0.8,
       pitch: 1,

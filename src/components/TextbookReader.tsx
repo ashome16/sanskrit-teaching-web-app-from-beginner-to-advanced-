@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import type { Lesson, LessonSentence } from '../types/chapters';
 import { aksharaLabel, varnamalaLabel } from '../utils/barakhadiPhonetics';
-import { playPronunciation, playSequence, stopPronunciation } from '../utils/pronunciation';
+import { playLessonText, playPronunciation, playSequence, stopPronunciation } from '../utils/pronunciation';
 import { setBarakhadiSpeechContext } from '../utils/macBarakhadiSpeech';
 import { hasDevanagariLetter, isDandaOrVerseNumberToken } from '../utils/dandaSpeech';
 import {
@@ -1435,7 +1435,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                       <button
                         type="button"
                         className="textbook-inline-sound-btn"
-                        onClick={() => playPronunciation(cleanActiveWord)}
+                        onClick={() => (isGroupedLesson ? playPronunciation(cleanActiveWord) : playLessonText(cleanActiveWord))}
                         title={`Listen to ${cleanActiveWord}`}
                         aria-label={`Listen to ${cleanActiveWord}`}
                       >
