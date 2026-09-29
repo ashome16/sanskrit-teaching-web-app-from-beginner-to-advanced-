@@ -891,13 +891,13 @@ export const SEARCH_INDEX: SearchItem[] = [
   {
     id: 'math-ganita-and-the-calendar',
     title: 'Gaṇita and the Calendar — What a Pañcāṅga Tracks',
-    subtitle: 'Nimeṣa to ahorātra, tithi, pakṣa, adhikamāsa, and Vikram saṃvat',
+    subtitle: 'Nimeṣa to ahorātra, tithi, pakṣa and adhikamāsa; Vikram saṃvat only as an era count',
     category: 'maths',
     categoryLabel: 'Vedic Maths · Article',
     badgeEmoji: '🌙',
     badgeColor: '#b45309',
     description:
-      'Article 2 on how Indian texts measure time: the Manusmṛti 1.64 chain (nimeṣa, kāṣṭhā, kalā, muhūrta, ahorātra), why a truṭi is not mixed in, the tithi as 12°, pakṣa, adhikamāsa, the Sūrya Siddhānta year 365.258756 days beside the modern sidereal year, and Vikram saṃvat. A short contrast with the Gregorian reform and the Latin month-names.',
+      'Article 2 on how Indian texts measure time: the Manusmṛti 1.64 chain (nimeṣa, kāṣṭhā, kalā, muhūrta, ahorātra), why a truṭi is not mixed in, the tithi as 12°, pakṣa, adhikamāsa, the Sūrya Siddhānta year 365.258756 days beside the modern sidereal year. Vikram saṃvat is named only as an era count, not as that measure of time. A short contrast with the Gregorian reform and the Latin month-names.',
     keywords: [
       'panchanga',
       'panchang',

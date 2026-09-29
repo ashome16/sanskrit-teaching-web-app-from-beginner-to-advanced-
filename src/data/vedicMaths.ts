@@ -894,9 +894,9 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       {
         title: 'Vikram saṃvat',
         paragraphs: [
-          'Vikram saṃvat (विक्रमसंवत्) is traditionally counted from 57 BCE. The story that a king Vikramāditya defeated the Śakas is traditional. It is not a settled historical fact, and the year count does not depend on proving it. The new year is Caitra śukla pratipadā, the first tithi of the bright fortnight of Caitra.',
+          'The pañcāṅga measures time astronomically — a tithi, a saṅkrānti — while Vikram saṃvat (विक्रमसंवत्) is a different metric, a yuga or era count, not that measurement. Vikram saṃvat is counted from 57 BCE, traditionally the victory of Vikramāditya, and the Gregorian year is counted from a chosen year taken as the birth of Jesus, and that birth year is itself an estimate. Both are starting points of a year count. The new year of this era is Caitra śukla pratipadā, the first tithi of the bright fortnight of Caitra.',
           'The count is linear, just as a Gregorian year-number is linear. In September 2026 the Caitra new year has already passed — Caitra falls in March or April, and the pratipadā that opened the year numbered 2083 is reported on 19 March 2026 — so the year in use is about 2083. That is 2026 + 57, once the Caitra year has turned. (A tithi can begin on either side of a midnight, which is why “about” stays in the sentence. September is not that boundary.)',
-          'What differs is what the months and the festival days track. The Gregorian year is a civil count from a historical epoch, adjusted so that the equinox stays near the same calendar date. The pañcāṅga keeps festivals on the season by a lunisolar correction: Holi falls in Phālguna, in spring, and Dīpāvalī on the new moon of Kārttika, in autumn. Neither statement means that one calendar “ignores the sky.” Both look at the sky. They look for different things.',
+          'What differs is what the months and the festival days track. The Gregorian year is a civil count, adjusted so that the equinox stays near the same calendar date. The pañcāṅga keeps festivals on the season by a lunisolar correction: Holi falls in Phālguna, in spring, and Dīpāvalī on the new moon of Kārttika, in autumn. Neither statement means that one calendar “ignores the sky.” Both look at the sky. They look for different things.',
         ],
       },
       {
@@ -922,7 +922,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'The Viṣṇu Purāṇa counts 15 nimeṣa to a kāṣṭhā, and the Bhāgavata’s truṭi scale says six or seven nāḍikā to a watch. The converter follows Manu only, and does not average.',
       'A tithi is 12° of sun–moon separation and varies from about 19 to 26 hours. The mean in the converter is 1/30 of the modern mean synodic month.',
       'The Sūrya Siddhānta’s year is 1,577,917,828 ÷ 4,320,000 = 365.258756 days, about 3 minutes 27 seconds longer than the modern mean sidereal year (about 365.25636 days), not “within seconds.”',
-      'Vikram saṃvat is traditionally counted from 57 BCE, with the new year on Caitra śukla pratipadā. In September 2026 that count is about 2083. It is still a linear count; the festivals track the lunisolar year.',
+      'Vikram saṃvat is an era count, not the pañcāṅga’s measure of time: counted from 57 BCE, traditionally the victory of Vikramāditya, as the Gregorian year is counted from a chosen year taken as the birth of Jesus, and that birth year is itself an estimate. In September 2026 that count is about 2083. The era’s new year is Caitra śukla pratipadā; the festivals follow the lunisolar pañcāṅga.',
     ],
   },
   {
