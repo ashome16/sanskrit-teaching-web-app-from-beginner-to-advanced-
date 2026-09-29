@@ -1,4 +1,4 @@
-import type { MouseEvent, ReactNode } from 'react';
+import { useState, type MouseEvent, type ReactNode } from 'react';
 import type { VedicArticleFigureId } from '../data/vedicMaths';
 
 /** Diagrams for Vedic Maths articles: clean HTML/SVG (no ASCII art, no math library needed). */
@@ -686,6 +686,179 @@ const CoinCompared = () => (
   </div>
 );
 
+const MANU_TIME_CHAIN: { sa: string; iast: string; gloss: string; next?: string }[] = [
+  { sa: 'निमेष', iast: 'nimeṣa', gloss: 'a twinkling of the eye', next: '×18' },
+  { sa: 'काष्ठा', iast: 'kāṣṭhā', gloss: '3.2 seconds', next: '×30' },
+  { sa: 'कला', iast: 'kalā', gloss: '96 seconds', next: '×30' },
+  { sa: 'मुहूर्त', iast: 'muhūrta', gloss: '48 minutes', next: '×30' },
+  { sa: 'अहोरात्र', iast: 'ahorātra', gloss: 'a day and a night' },
+];
+
+/** Manusmṛti 1.64 only. 18×30×30×30 nimeṣa = 1 ahorātra, taken as 24 hours. */
+const MANU_AHORATRA_S = 86400;
+const MANU_NIMESA_S = MANU_AHORATRA_S / (18 * 30 * 30 * 30);
+/** Modern mean synodic month. A tithi varies; the box uses the mean, 1/30 of this. */
+const MEAN_SYNODIC_DAYS = 29.530588853;
+const MEAN_TITHI_S = (MEAN_SYNODIC_DAYS / 30) * MANU_AHORATRA_S;
+
+const TIME_UNITS: { id: string; label: string; seconds: number; source: string }[] = [
+  {
+    id: 'nimesa',
+    label: 'nimeṣa (smallest in this verse)',
+    seconds: MANU_NIMESA_S,
+    source:
+      'Manusmṛti 1.64: 18 nimeṣa = 1 kāṣṭhā. Seconds assume one ahorātra = 24 hours. The verse itself has no seconds.',
+  },
+  {
+    id: 'kastha',
+    label: 'kāṣṭhā',
+    seconds: MANU_NIMESA_S * 18,
+    source: 'Manusmṛti 1.64: 18 nimeṣa = 1 kāṣṭhā, and 30 kāṣṭhā = 1 kalā. One ahorātra = 24 hours.',
+  },
+  {
+    id: 'kala',
+    label: 'kalā (time, not the arc-minute)',
+    seconds: MANU_NIMESA_S * 18 * 30,
+    source: 'Manusmṛti 1.64: 30 kāṣṭhā = 1 kalā, and 30 kalā = 1 muhūrta. One ahorātra = 24 hours.',
+  },
+  {
+    id: 'muhurta',
+    label: 'muhūrta',
+    seconds: MANU_AHORATRA_S / 30,
+    source: 'Manusmṛti 1.64: 30 muhūrta = 1 ahorātra. One ahorātra = 24 hours, so one muhūrta = 48 minutes.',
+  },
+  {
+    id: 'ahoratra',
+    label: 'ahorātra',
+    seconds: MANU_AHORATRA_S,
+    source: 'Manusmṛti 1.64: the ahorātra is a day and a night. Counted here as one mean civil day of 24 hours.',
+  },
+  {
+    id: 'tithi',
+    label: 'tithi (mean)',
+    seconds: MEAN_TITHI_S,
+    source:
+      'Not the Manu chain. A tithi is 12° of sun–moon separation (thirty tithis to a lunar month: Sūrya Siddhānta 1.12–13 and 1.28). A real tithi varies, about 19–26 hours. This box uses the mean only: 1/30 of the modern mean synodic month, 29.530588853 days.',
+  },
+];
+
+function formatAmount(n: number): string {
+  if (!Number.isFinite(n)) return '—';
+  const abs = Math.abs(n);
+  const digits = abs >= 1000 ? 2 : abs >= 1 ? 4 : 6;
+  return n.toLocaleString('en-US', { maximumFractionDigits: digits });
+}
+
+const TimeUnitChain = () => {
+  const [raw, setRaw] = useState('1');
+  const [unitId, setUnitId] = useState('muhurta');
+  const unit = TIME_UNITS.find((u) => u.id === unitId) ?? TIME_UNITS[3];
+  const n = Number(raw);
+  const ok = raw.trim() !== '' && Number.isFinite(n);
+  const seconds = ok ? n * unit.seconds : NaN;
+
+  return (
+    <figure className="vaf-figure">
+      <ol className="vaf-chain" aria-label="Manusmṛti time units, smallest to a day and night">
+        {MANU_TIME_CHAIN.map((u) => (
+          <li key={u.iast} className="vaf-chain-item">
+            <div className="vaf-chain-unit">
+              <div className="vaf-chain-sa" lang="sa">{u.sa}</div>
+              <div className="vaf-chain-iast">{u.iast}</div>
+              <div className="vaf-chain-gloss">{u.gloss}</div>
+            </div>
+            {u.next && (
+              <div className="vaf-chain-step" aria-label={`${u.next.replace('×', 'times ')} makes the next unit`}>
+                <span className="vaf-chain-factor">{u.next}</span>
+                <span className="vaf-chain-arrow" aria-hidden="true">→</span>
+              </div>
+            )}
+          </li>
+        ))}
+      </ol>
+      <figcaption className="vaf-note">
+        Preserved in the Manusmṛti 1.64. The seconds are not in the verse: they follow only if one ahorātra is one
+        mean civil day of 24 hours. 1 nimeṣa = 16/90 second, 1 kāṣṭhā = 3.2 s, 1 kalā = 96 s, 1 muhūrta = 48 min.
+      </figcaption>
+
+      <form className="vaf-conv" onSubmit={(e) => e.preventDefault()} aria-label="Convert a Sanskrit time unit">
+        <div className="vaf-conv-title">Convert a unit</div>
+        <div className="vaf-conv-row">
+          <label className="vaf-conv-field">
+            <span>How many</span>
+            <input
+              inputMode="decimal"
+              value={raw}
+              onChange={(e) => setRaw(e.target.value)}
+              aria-label="Number of units"
+            />
+          </label>
+          <label className="vaf-conv-field">
+            <span>Unit</span>
+            <select value={unitId} onChange={(e) => setUnitId(e.target.value)} aria-label="Sanskrit time unit">
+              {TIME_UNITS.map((u) => (
+                <option key={u.id} value={u.id}>{u.label}</option>
+              ))}
+            </select>
+          </label>
+        </div>
+        {ok ? (
+          <dl className="vaf-conv-out">
+            <div><dt>Seconds</dt><dd>{formatAmount(seconds)}</dd></div>
+            <div><dt>Minutes</dt><dd>{formatAmount(seconds / 60)}</dd></div>
+            <div><dt>Hours</dt><dd>{formatAmount(seconds / 3600)}</dd></div>
+            <div><dt>Days</dt><dd>{formatAmount(seconds / 86400)}</dd></div>
+          </dl>
+        ) : (
+          <p className="vaf-note">Enter a number.</p>
+        )}
+        <p className="vaf-note">{unit.source}</p>
+      </form>
+    </figure>
+  );
+};
+
+const PanchangaCompared = () => (
+  <div className="vaf-table-wrap">
+    <table className="vaf-table">
+      <caption>Two answers to two different questions</caption>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Gregorian civil count</th>
+          <th scope="col">Pañcāṅga</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Day</th>
+          <td>A civil day of 24 hours, midnight to midnight.</td>
+          <td>A tithi: 12° of separation between sun and moon. About 19–26 hours; the mean is near 23 hours 37 minutes.</td>
+        </tr>
+        <tr>
+          <th scope="row">Month</th>
+          <td>Fixed lengths, 28 to 31 days, on a civil grid.</td>
+          <td>A lunar fortnight (pakṣa) of 15 tithis, or a solar month: the time the sun takes to cross one rāśi.</td>
+        </tr>
+        <tr>
+          <th scope="row">Keeping step</th>
+          <td>A leap day. Century years are leap years only when divisible by 400.</td>
+          <td>An adhikamāsa, about 7 times in 19 years, when a lunar month contains no saṅkrānti.</td>
+        </tr>
+        <tr>
+          <th scope="row">What the year tracks</th>
+          <td>Tropical: the return of the equinox. About 365.2422 days.</td>
+          <td>Nirayaṇa (sidereal) for saṅkrānti: the sun’s return to the same star. Not the same target as the tropical year.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p className="vaf-note">
+      Neither replaces the other. The Gregorian year is a civil count tuned to the seasons of the equinox. The pañcāṅga
+      keeps festival days on a lunisolar count, and its solar months on a sidereal one.
+    </p>
+  </div>
+);
+
 export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId }) {
   switch (id) {
     case 'algebra-lineage':
@@ -722,6 +895,10 @@ export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId })
       return <IndusWeights />;
     case 'coin-compared':
       return <CoinCompared />;
+    case 'manu-time-chain':
+      return <TimeUnitChain />;
+    case 'panchanga-compared':
+      return <PanchangaCompared />;
     default:
       return null;
   }

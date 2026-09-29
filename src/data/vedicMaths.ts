@@ -82,7 +82,9 @@ export type VedicArticleFigureId =
   | 'diamond-grading'
   | 'touchstone-streaks'
   | 'indus-weights'
-  | 'coin-compared';
+  | 'coin-compared'
+  | 'manu-time-chain'
+  | 'panchanga-compared';
 
 export interface VedicArticleSection {
   title: string;
@@ -818,6 +820,108 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Guñjā (ratti) seeds were a practical standard, made reliable by averaging and by state-checked weights, not by perfect uniformity.',
       'Gold was proved on the touchstone (nikaṣa) against sixteen graded reference alloys, and by fire.',
       'The Indus weights show binary and decimal standards far older than any text we can read.',
+    ],
+  },
+  {
+    id: 'ganita-and-the-calendar',
+    slug: 'ganita-and-the-calendar',
+    title: 'Gaṇita and the Calendar — What a Pañcāṅga Tracks, and What the Gregorian Reform Fixed',
+    sanskritTitle: '॥ कालमानं पञ्चाङ्गं च ॥',
+    subtitle:
+      'Article 2 · Next in the series. How a blink, a tithi and an extra month keep a festival on its season — and, briefly, what the 1582 reform was actually for.',
+    readingTime: '12 min read',
+    badge: 'Article 2 · Next in the series',
+    prequel: { id: 'before-the-carat', label: 'Before the Carat' },
+    sections: [
+      {
+        title: 'A day built from a blink',
+        paragraphs: [
+          'This is about how Indian texts measure time, not about scoring one calendar against another. The small units come first. A pañcāṅga — the five limbs of the Indian almanac — then uses those days to keep a tithi, a fortnight and a festival on the sky. The Gregorian reform is a short contrast at the end. It answers a different question.',
+          'A text’s date, here, is the earliest copy that survived and can be read. The chain below is preserved in the Manusmṛti (1.64). That is not a claim that timekeeping began with that verse, or that anyone in it invented the blink as a unit. Other works preserve other chains, and they do not agree with one another.',
+        ],
+        highlight:
+          'Eighteen twinklings, then thirties: the Manusmṛti’s day is a counted stack, not a clock face.',
+      },
+      {
+        title: 'Nimeṣa, kāṣṭhā, kalā, muhūrta',
+        paragraphs: [
+          'The verse says: eighteen nimeṣa (निमेष, a twinkling of the eye) make one kāṣṭhā (काष्ठा); thirty kāṣṭhā make one kalā (कला); thirty kalā make one muhūrta (मुहूर्त); and thirty muhūrta make one ahorātra (अहोरात्र), a day and a night. That is the whole ratio. The text does not mention a truṭi, and it does not give seconds.',
+          'To set the stack on a modern clock, one ahorātra is taken as one mean civil day of 24 hours, and nothing else is assumed. Then one muhūrta is 48 minutes, one kalā is 96 seconds, one kāṣṭhā is 3.2 seconds, and one nimeṣa is 16/90 of a second (about 0.178 s). Those four modern figures are that one assumption worked downwards. They are not a second measurement hiding in the verse.',
+          'The kalā in this verse is a time. The Sūrya Siddhānta (1.28) uses the same word for an arc: sixty vikalā make one kalā, and sixty kalā make one degree. Do not run the two together.',
+        ],
+        figure: 'manu-time-chain',
+        terms: [
+          { sa: 'निमेष', iast: 'nimeṣa', gloss: 'a twinkling of the eye' },
+          { sa: 'काष्ठा', iast: 'kāṣṭhā', gloss: '18 nimeṣa (Manusmṛti 1.64)' },
+          { sa: 'मुहूर्त', iast: 'muhūrta', gloss: '30 kalā; 48 minutes if a day is 24 hours' },
+          { sa: 'अहोरात्र', iast: 'ahorātra', gloss: 'a day and a night' },
+        ],
+      },
+      {
+        title: 'Why the converter follows one text',
+        paragraphs: [
+          'The box under the chain will convert a number of nimeṣa, kāṣṭhā, kalā, muhūrta or ahorātra using only the Manusmṛti ratios, plus the 24-hour day. A mean tithi is offered separately, and labelled as a different measure. Two texts are not averaged.',
+          'They do disagree. The Viṣṇu Purāṇa (Book I, chapter 3) preserves the same thirties — thirty kāṣṭhā to a kalā, thirty kalā to a muhūrta, thirty muhūrta to a mortal day and night — but its first step is fifteen twinklings to one kāṣṭhā, not eighteen. Pick either text and the nimeṣa changes length. The converter picks the Manusmṛti and names it.',
+          'A truṭi (त्रुटि) is real in other passages, and it is not in Manu 1.64, so it is not in the converter. The Bhāgavata Purāṇa (3.11.6–8) preserves one such scale: the time to join three trasareṇu is a truṭi; a hundred truṭi make a vedha; three vedha make a lava; three lava make a nimeṣa; three nimeṣa make a kṣaṇa; five kṣaṇa make a kāṣṭhā; fifteen kāṣṭhā make a laghu; fifteen laghu make a nāḍikā; two nāḍikā make a muhūrta. A watch of the day is six nāḍikā or seven. Because the text itself says six or seven, there is no single ratio from that truṭi to a civil day, and none is invented here.',
+          'The Sūrya Siddhānta (1.11) names the truṭi too, as the start of what it calls unreal time, and then counts a different scale entirely: six prāṇa (respirations) make a vināḍī, sixty vināḍī a nāḍī, and sixty nāḍī one sidereal day and night. It does not say how many truṭi make a prāṇa. That scale is left out of the box as well.',
+        ],
+      },
+      {
+        title: 'What a pañcāṅga is counting',
+        paragraphs: [
+          'Above the day, the almanac watches the sun and the moon, not a fixed grid of midnights. A tithi (तिथि) is one lunar day. The Sūrya Siddhānta (1.12–13) makes a lunar month out of thirty tithis, and a solar month out of the sun’s entrance into a sign of the zodiac, a saṅkrānti. The same book (1.28) divides the circle into twelve rāśi of thirty degrees. Thirty equal shares of that circle are 12° each, so a tithi is the time in which the moon gains 12° on the sun.',
+          'That angle is fixed. The clock time is not, because the sun and the moon do not move at one speed. A tithi runs about 19 to 26 hours. The converter’s tithi is only the mean: one thirtieth of the modern mean synodic month, 29.530588853 days, which is about 23 hours 37 minutes. It is labelled as a mean for that reason.',
+          'Fifteen tithis make a pakṣa (पक्ष), a fortnight. The bright fortnight is śukla, the dark one kṛṣṇa. The Bhāgavata Purāṇa (3.11.10) states the count: fifteen days and nights are a fortnight, and a month has a white fortnight and a black one. The Manusmṛti (1.66) already uses the same two fortnights when it describes a month of the manes.',
+          'An adhikamāsa (अधिकमास), an extra lunar month, is how the count stays with the sun. The working rule is: when two new moons fall inside one rāśi — a lunar month with no saṅkrānti — that month is intercalary. The Sūrya Siddhānta (1.35) defines intercalary months as the lunar months left over after the solar months are subtracted, and verse 1.38 counts them: 1,593,336 in an Age of 4,320,000 years. That is about seven in nineteen years (nineteen times the text’s rate is 7.01).',
+        ],
+        terms: [
+          { sa: 'तिथि', iast: 'tithi', gloss: '12° of sun–moon separation' },
+          { sa: 'पक्ष', iast: 'pakṣa', gloss: 'a fortnight, bright or dark' },
+          { sa: 'अधिकमास', iast: 'adhikamāsa', gloss: 'an intercalary lunar month' },
+          { sa: 'पञ्चाङ्ग', iast: 'pañcāṅga', gloss: 'the five-limbed almanac' },
+        ],
+      },
+      {
+        title: 'The year in the Sūrya Siddhānta',
+        paragraphs: [
+          'The length of the year is not a slogan in the text. It is a division. Verse 1.37 gives 1,577,917,828 civil days in an Age, and the Age is 4,320,000 solar years. Divide: 365.258756 days, which is 365 days, 6 hours, 12 minutes and 36.56 seconds. Indian calendars use this as a nirayaṇa year, a sidereal year, the sun’s return to the same star, and saṅkrānti is read from it.',
+          'The modern mean sidereal year is about 365.25636 days (365.256363 days near the year 2000). The text’s figure is longer by about 3 minutes 27 seconds — a few minutes, not “within seconds.” Set beside the tropical year, about 365.2422 days, the gap is larger still, about 24 minutes. The tropical year is a different target: the return of the equinox, not of a star. Saying the siddhānta outmatched the modern year would mix those targets, so it is not said.',
+        ],
+        highlight:
+          '1,577,917,828 civil days ÷ 4,320,000 years = 365.258756 days. The modern mean sidereal year is about 365.25636 days. The gap is about 3 minutes 27 seconds.',
+      },
+      {
+        title: 'Vikram saṃvat',
+        paragraphs: [
+          'Vikram saṃvat (विक्रमसंवत्) is traditionally counted from 57 BCE. The story that a king Vikramāditya defeated the Śakas is traditional. It is not a settled historical fact, and the year count does not depend on proving it. The new year is Caitra śukla pratipadā, the first tithi of the bright fortnight of Caitra.',
+          'The count is linear, just as a Gregorian year-number is linear. In September 2026 the Caitra new year has already passed — Caitra falls in March or April, and the pratipadā that opened the year numbered 2083 is reported on 19 March 2026 — so the year in use is about 2083. That is 2026 + 57, once the Caitra year has turned. (A tithi can begin on either side of a midnight, which is why “about” stays in the sentence. September is not that boundary.)',
+          'What differs is what the months and the festival days track. The Gregorian year is a civil count from a historical epoch, adjusted so that the equinox stays near the same calendar date. The pañcāṅga keeps festivals on the season by a lunisolar correction: Holi falls in Phālguna, in spring, and Dīpāvalī on the new moon of Kārttika, in autumn. Neither statement means that one calendar “ignores the sky.” Both look at the sky. They look for different things.',
+        ],
+      },
+      {
+        title: 'A short contrast: 1582, and the names of months',
+        paragraphs: [
+          'The Julian year, introduced in 45 BCE with Sosigenes of Alexandria, averages 365.25 days: three years of 365 and a fourth of 366. The tropical year, equinox to equinox, is about 365.2422 days. By 1582 the spring equinox fell about ten days earlier than the 21 March date the Church used for Easter. The papal bull Inter gravissimas ordered those ten days removed. Where the reform was taken up at once, the day after 4 October 1582 was 15 October. Century years are leap years only when they are divisible by 400. Aloysius Lilius proposed the cycle; Christopher Clavius worked it into the calendar that was published.',
+          'The aim was to put the equinox back for the date of Easter. The reform kept a civil month-grid. It is a separate story from later Jesuit contact with the Kerala school, and Matteo Ricci’s work was in China. No document tying the Kerala series to the bull of 1582 is cited here, so none is claimed.',
+          'A familiar claim about the month-names is wrong, and it is worth one clear correction. June, October and December are not Sanskrit words borrowed into Latin. June is Latin Iūnius, from the goddess Juno, or from iūniōrēs, the younger men; the root is the same Indo-European *yeu- that appears in Sanskrit yuvan, “young.” October is Latin octō, a cognate of Sanskrit aṣṭa, and it was the eighth month of the old Roman year, which began in March. December is Latin decem, a cognate of daśa, the tenth month of that year. September is the same pattern: Latin septem, a cognate of sapta, the seventh. The ending -ber is Latin -bris. It is not Sanskrit ambara. The resemblance is a shared Indo-European root, not a loan from Sanskrit.',
+        ],
+        figure: 'panchanga-compared',
+      },
+      {
+        title: 'Different questions',
+        paragraphs: [
+          'A civil day, a fixed month and a leap-day rule keep a state on one grid. A tithi, a pakṣa and an adhikamāsa keep a rite on the moon and the season. The Gregorian year is tropical. The solar year a pañcāṅga uses for saṅkrānti is sidereal, nirayaṇa, so the two are not aiming at the same length. One did not outmatch the other. They were built to answer different questions, and both are still in use.',
+        ],
+      },
+    ],
+    quote:
+      'A muhūrta is thirty kalā because the verse says so. A tithi is twelve degrees because the moon has to gain them. The rest is which question you asked.',
+    keyTakeaways: [
+      'The blink-to-day chain used here is preserved in the Manusmṛti 1.64: 18 nimeṣa = 1 kāṣṭhā, then thirties up to the ahorātra. Seconds follow only if that day-and-night is 24 hours.',
+      'The Viṣṇu Purāṇa counts 15 nimeṣa to a kāṣṭhā, and the Bhāgavata’s truṭi scale says six or seven nāḍikā to a watch. The converter follows Manu only, and does not average.',
+      'A tithi is 12° of sun–moon separation and varies from about 19 to 26 hours. The mean in the converter is 1/30 of the modern mean synodic month.',
+      'The Sūrya Siddhānta’s year is 1,577,917,828 ÷ 4,320,000 = 365.258756 days, about 3 minutes 27 seconds longer than the modern mean sidereal year (about 365.25636 days), not “within seconds.”',
+      'Vikram saṃvat is traditionally counted from 57 BCE, with the new year on Caitra śukla pratipadā. In September 2026 that count is about 2083. It is still a linear count; the festivals track the lunisolar year.',
     ],
   },
 ];

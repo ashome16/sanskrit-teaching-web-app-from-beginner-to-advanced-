@@ -3295,3 +3295,73 @@
   color: #92400e;
   font-weight: 800;
 }
+
+/* ---- Pañcāṅga article: time-unit converter ---- */
+.vaf-conv {
+  margin-top: 1.25rem;
+  padding: 0.9rem;
+  border: 1px solid #ebdccb;
+  border-radius: 12px;
+  background: #fffdf9;
+}
+.vaf-conv-title {
+  font-weight: 800;
+  color: #78350f;
+  margin-bottom: 0.6rem;
+}
+.vaf-conv-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 0.6rem;
+}
+.vaf-conv-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+  min-width: 0;
+}
+.vaf-conv-field input,
+.vaf-conv-field select {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.3;
+  min-height: 48px;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #e7d3bc;
+  border-radius: 10px;
+  background: #fff;
+  color: #1f2937;
+}
+.vaf-conv-out {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.45rem;
+  margin: 0.75rem 0 0.35rem;
+}
+.vaf-conv-out div {
+  background: #fffbeb;
+  border: 1px solid #f3e2c4;
+  border-radius: 10px;
+  padding: 0.4rem 0.5rem;
+  min-width: 0;
+}
+.vaf-conv-out dt {
+  font-size: 0.72rem;
+  color: #92400e;
+  font-weight: 700;
+}
+.vaf-conv-out dd {
+  margin: 0.1rem 0 0;
+  font-variant-numeric: tabular-nums;
+  color: #1f2937;
+  word-break: break-word;
+}
+@media (max-width: 640px) {
+  .vaf-conv-row,
+  .vaf-conv-out {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
