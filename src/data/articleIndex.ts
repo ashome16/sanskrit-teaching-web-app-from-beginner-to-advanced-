@@ -121,4 +121,11 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: 'तुलामानं धातुशुद्धिश्च · The Legacy of Indian Metrology',
     cardBlurb: 'From Harappan 4:2:1 seismic bricks and binary-decimal weights to defacing Roman bullion at Muziris and Kautilyan 4-month scale recalibration fines.',
   },
+  {
+    id: 'vakyapadiya-and-ai',
+    file: 'grammar/article-17.txt',
+    emoji: '🧠',
+    cardTitle: 'वाक्यपदीयं कृत्रिमप्रज्ञा च · Bhartṛhari’s Vākyapadīya & Modern AI',
+    cardBlurb: 'Computational Optimization in Classical Semantics: Connecting Bhartṛhari’s Sphoṭa & Kāraka framework to Rick Briggs’ 1985 NASA AI research and modern transformers.',
+  },
 ];

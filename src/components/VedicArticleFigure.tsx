@@ -920,6 +920,84 @@ const NamedPowersThree = () => (
   </div>
 );
 
+const VakyapadiyaSemanticNet = () => (
+  <div className="vaf-table-wrap">
+    <table className="vaf-table">
+      <caption>Śābdabodha Dependency Graph vs. Modern AI Knowledge Representation</caption>
+      <thead>
+        <tr>
+          <th scope="col">Kāraka Role</th>
+          <th scope="col">Sanskrit Argument</th>
+          <th scope="col">Semantic Relation (FOPL)</th>
+          <th scope="col">AI Semantic Net / FrameNet Equivalent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Kriyā (Action Head)</th>
+          <td><strong>पच् (पचति / Pāka)</strong></td>
+          <td><code>CookingEvent(e)</code></td>
+          <td>Central Predicate Node / Event Frame (State Change of Softening)</td>
+        </tr>
+        <tr>
+          <th scope="row">Kartā (Agent)</th>
+          <td><strong>देवदत्तः (Devadatta)</strong></td>
+          <td><code>Kartā(e, Devadatta)</code></td>
+          <td>Independent Agent / Subject Argument Node</td>
+        </tr>
+        <tr>
+          <th scope="row">Karma (Object)</th>
+          <td><strong>ओदनम् (Odana / Rice)</strong></td>
+          <td><code>Karma(e, Rice)</code></td>
+          <td>Direct Object / Undergoer of State Change</td>
+        </tr>
+        <tr>
+          <th scope="row">Karaṇa (Instrument)</th>
+          <td><strong>काष्ठैः (Firewood)</strong></td>
+          <td><code>Karaṇa(e, Firewood)</code></td>
+          <td>Instrument Arc / Auxiliary Means Node</td>
+        </tr>
+        <tr>
+          <th scope="row">Adhikaraṇa (Locus)</th>
+          <td><strong>स्थाल्याम् (Sthālī / Pot)</strong></td>
+          <td><code>Adhikaraṇa(e, Pot)</code></td>
+          <td>Spatial Locus / Container Support Arc</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style={{ marginTop: '1.25rem', padding: '1rem', background: 'rgba(255,255,255,0.04)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)' }}>
+      <p style={{ margin: '0 0 0.5rem', fontWeight: 600, color: 'var(--accent, #e5a93c)' }}>
+        🧠 Bhartṛhari’s 4 Speech Levels vs. Transformer Multi-Head Self-Attention:
+      </p>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem', fontSize: '0.85rem' }}>
+        <div style={{ padding: '0.5rem', background: 'rgba(0,0,0,0.2)', borderRadius: '6px' }}>
+          <strong>१. वैखरी (Vaikharī)</strong>
+          <div style={{ color: '#888' }}>Audible acoustic/text tokens</div>
+          <div style={{ color: '#4ade80' }}>Input Token Embeddings</div>
+        </div>
+        <div style={{ padding: '0.5rem', background: 'rgba(0,0,0,0.2)', borderRadius: '6px' }}>
+          <strong>२. मध्यमा (Madhyamā)</strong>
+          <div style={{ color: '#888' }}>Mental linear syntax</div>
+          <div style={{ color: '#60a5fa' }}>Lower Layers + Positional Encodings</div>
+        </div>
+        <div style={{ padding: '0.5rem', background: 'rgba(0,0,0,0.2)', borderRadius: '6px' }}>
+          <strong>३. पश्यन्ती (Paśyantī)</strong>
+          <div style={{ color: '#888' }}>Holistic Sphoṭa gestalt</div>
+          <div style={{ color: '#f43f5e' }}>Multi-Head Self-Attention Layers</div>
+        </div>
+        <div style={{ padding: '0.5rem', background: 'rgba(0,0,0,0.2)', borderRadius: '6px' }}>
+          <strong>४. परा (Parā)</strong>
+          <div style={{ color: '#888' }}>Transcendent ground of meaning</div>
+          <div style={{ color: '#c084fc' }}>Foundational Latent Manifold</div>
+        </div>
+      </div>
+    </div>
+    <p className="vaf-note">
+      As Rick Briggs (NASA Ames, 1985) demonstrated, Sanskrit’s Śābdabodha semantic paraphrase converts natural speech directly into an unambiguous, typed dependency graph—pioneering the exact intermediate representation (IR) required by modern compilers and AI reasoning systems.
+    </p>
+  </div>
+);
+
 export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId }) {
   switch (id) {
     case 'algebra-lineage':
@@ -962,6 +1040,8 @@ export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId })
       return <PanchangaCompared />;
     case 'named-powers-three':
       return <NamedPowersThree />;
+    case 'vakyapadiya-semantic-net':
+      return <VakyapadiyaSemanticNet />;
     default:
       return null;
   }

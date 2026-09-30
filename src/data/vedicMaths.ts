@@ -85,7 +85,8 @@ export type VedicArticleFigureId =
   | 'coin-compared'
   | 'manu-time-chain'
   | 'panchanga-compared'
-  | 'named-powers-three';
+  | 'named-powers-three'
+  | 'vakyapadiya-semantic-net';
 
 export interface VedicArticleSection {
   title: string;
@@ -933,6 +934,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'How ancient India named powers of ten up to 10⁵⁷, 10⁵³, and 10¹⁴⁰ — from the Yajurveda and Vālmīki Rāmāyaṇa to the Lalitavistara Sūtra and Bhāskara’s Līlāvatī.',
     readingTime: '15 min read',
     badge: 'Article 3 · Powers of Ten & Infinity',
+    next: { id: 'vakyapadiya-and-ai', label: 'Bhartṛhari’s Vākyapadīya & Modern AI' },
     sections: [
       {
         title: 'A habit of naming the next ten',
@@ -1045,6 +1047,115 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Bhāskarācārya’s Līlāvatī (1150 CE) standardized the 18 classical decimal places (Aṣṭādaśa Sthānāni) from Eka to Parārdha (10¹⁷).',
       'Jaina mathematicians (Anuyogadvāra Sūtra) pioneered transfinite mathematics, classifying numbers into Saṅkhyāta, Asaṅkhyāta, and multiple orders of Ananta (Anantānanta) 2,000 years before Georg Cantor.',
       'Piṅgala’s Chandaḥśāstra established binary combinatorics (2ⁿ) and the Meru Prastāra (Pascal’s triangle) centuries before European discovery.',
+    ],
+  },
+  {
+    id: 'vakyapadiya-and-ai',
+    slug: 'vakyapadiya-and-ai',
+    title: 'Computational Optimization in Classical Semantics: Connecting Bhartṛhari’s Vākyapadīya to Modern AI',
+    sanskritTitle: '॥ वाक्यपदीयं कृत्रिमप्रज्ञा च ॥',
+    subtitle:
+      'How a 5th-century Sanskrit philosopher and Rick Briggs’ 1985 NASA research paper unlocked unambiguous knowledge representation, kāraka dependency logic, and transformer self-attention.',
+    readingTime: '18 min read',
+    badge: 'Article 4 · Semantics, Grammar & AI',
+    prequel: { id: 'naming-the-colossal', label: 'Naming the Colossal' },
+    sections: [
+      {
+        title: 'The 1985 AI Bottleneck & Rick Briggs at NASA Ames',
+        sanskritTitle: 'नासा-संशोधनपत्रम् · १९८५',
+        paragraphs: [
+          'In the mid-1980s, Artificial Intelligence research collided with an obstinate wall: Natural Language Processing (NLP). The prevailing doctrine among computer scientists was that natural human languages were inherently too messy, ambiguous, and irregular for logical reasoning engines. Huge sums were expended inventing artificial formalisms—Semantic Networks, Conceptual Dependency Graphs, and Frame Semantics—to manipulate knowledge without semantic breakdown.',
+          'In 1985, Rick Briggs, a computer scientist at NASA Ames Research Center / RIACS, published a landmark paper in AI Magazine titled “Knowledge Representation in Sanskrit and Artificial Intelligence”. Briggs demonstrated that classical Indian grammarians and semanticists had, two millennia earlier, solved the exact knowledge representation problem modern computer scientists were struggling with: creating an unambiguous, machine-interpretable representation of natural language semantics.',
+        ],
+      },
+      {
+        title: 'Akhaṇḍa-Vākya-Sphoṭa: Sentence Holism & Pratibhā',
+        sanskritTitle: 'अखण्डवाक्यस्फोटः · प्रतिभा',
+        paragraphs: [
+          'At the foundation of this linguistic architecture stands the 5th-century philosopher-grammarian Bhartṛhari and his treatise, the Vākyapadīya. Bhartṛhari fundamentally rejected lexical reductionism. He demonstrated that individual phonemes (varṇa) or isolated words (pada) have no independent semantic existence. The true, indivisible atomic unit of meaning is the complete sentence: Akhaṇḍa-Vākya-Sphoṭa.',
+          'Individual words are merely operational abstractions (apoddhāra) constructed to teach grammar. In actual cognitive reality, meaning is not assembled sequentially like bricks; it bursts forth as an instantaneous, indivisible flash of intuitive comprehension: Pratibhā. Just as a painting is perceived as a unified aesthetic whole rather than isolated pigment dots, sentential meaning is experienced as a holistic gestalt.',
+        ],
+        terms: [
+          { sa: 'स्फोट', iast: 'sphoṭa', gloss: 'the holistic burst of meaning' },
+          { sa: 'वाक्यपदीयम्', iast: 'vākyapadīyam', gloss: 'Bhartṛhari’s treatise on words and sentences' },
+          { sa: 'प्रतिभा', iast: 'pratibhā', gloss: 'intuitive flash of comprehension' },
+          { sa: 'अपोद्धार', iast: 'apoddhāra', gloss: 'pedagogical analytical abstraction' },
+        ],
+      },
+      {
+        title: 'Kāraka Dynamics: The Action as Central Semantic Anchor',
+        sanskritTitle: 'कारकव्यवस्था · क्रियाप्रधानं वाक्यम्',
+        paragraphs: [
+          'Extending Pāṇini’s formal grammar (Aṣṭādhyāyī 1.4.23–55), Bhartṛhari established that a sentence is fundamentally an event-centric graph. The central semantic anchor of communication is the action or verb (Kriyā).',
+          'Nominal entities in a sentence do not hold static noun labels. Instead, they derive meaning exclusively through their dynamic, causal participation (Kāraka) in actualizing the verb:',
+          '१. कर्ता (Kartā): Svatantraḥ kartā (1.4.54) — The independent agent controlling the action.\n२. कर्म (Karma): Kartur-īpsitatamaṃ karma (1.4.49) — The primary target or locus of state change.\n३. करण (Karaṇa): Sādhakatamaṃ karaṇam (1.4.42) — The most effective instrument or auxiliary tool.\n४. सम्प्रदान (Sampradāna): Karmaṇā yam-abhipraiti sa sampradānam (1.4.32) — The recipient or beneficiary.\n५. अपादान (Apādāna): Dhruvam-apāye\'pādānam (1.4.24) — The fixed point of departure/origin.\n६. अधिकरण (Adhikaraṇa): Ādhāro\'dhikaraṇam (1.4.45) — The spatial or temporal locus.',
+        ],
+        terms: [
+          { sa: 'कर्ता', iast: 'kartā', gloss: 'independent agent' },
+          { sa: 'कर्म', iast: 'karma', gloss: 'primary object / state-change patient' },
+          { sa: 'करण', iast: 'karaṇa', gloss: 'primary instrument' },
+          { sa: 'सम्प्रदान', iast: 'sampradāna', gloss: 'recipient / beneficiary' },
+          { sa: 'अपादान', iast: 'apādāna', gloss: 'point of departure / source' },
+          { sa: 'अधिकरण', iast: 'adhikaraṇa', gloss: 'spatial / temporal locus' },
+        ],
+      },
+      {
+        title: 'Contextual Operators for Disambiguation',
+        sanskritTitle: 'वाक्यकाण्डम् २.३१५–३१६ · अर्थनिर्णयः',
+        paragraphs: [
+          'Human language frequently uses polysemous words (e.g., saindhava meaning both "salt" and "horse"). In the Vākyakāṇḍa (2.315–316), Bhartṛhari lists formal contextual operators that deterministically collapse ambiguity:',
+          '• Saṃyoga (Connection) & Viyoga (Separation): Explicit linkage or privation of attributes.\n• Sāhacarya (Association) & Virodhitā (Opposition): Co-occurrence (Rāma-Lakṣmaṇa) or antonymic contrast.\n• Artha (Purpose) & Prakaraṇa (Context of Situation): Intent of speaker and pragmatic environment (e.g., "bring saindhava" at meals = salt; on battlefield = horse).\n• Liṅga (Characteristic Mark) & Aucitya (Propriety): Morphological constraints and logical plausibility.\n• Deśa (Space) & Kāla (Time): Geographic and temporal bounding.',
+        ],
+      },
+      {
+        title: 'The Paraphrase (Śābdabodha) as Compiler Intermediate Representation',
+        sanskritTitle: 'शाब्दबोध-विवरणम् · अन्वय-प्रक्रिया',
+        paragraphs: [
+          'Rick Briggs highlighted that Indian grammarians did not accept colloquial surface syntax as raw computational data. Instead, they transformed sentences into a standardized semantic paraphrase (Śābdabodha-vivaraṇa) where every implicit case relation and state change was made explicit.',
+          'For example, the sentence "Devadatta cooks rice in a pot with firewood" (devadattaḥ sthālyāṃ kāṣṭhaiḥ odanaṃ pacati) compiles into:',
+          '1. Viklitti-anukūla-vyāpāra: An activity producing the state change of softening (Kriyā),\n2. Devadatta-kartṛka: Having Devadatta as its conscious initiating agent (Kartā),\n3. Odana-karmaka: Having raw rice grains as the object undergoing softening (Karma),\n4. Kāṣṭha-karaṇaka: Having firewood as the primary auxiliary instrument (Karaṇa),\n5. Sthālī-adhikaraṇaka: Having the cooking pot as the spatial locus of support (Adhikaraṇa).',
+          'In modern software engineering, this is identical to how an optimizing compiler translates human code into an Intermediate Representation (IR) or Abstract Syntax Tree (AST) before generating machine bytecode.',
+        ],
+        figure: 'vakyapadiya-semantic-net',
+      },
+      {
+        title: 'Mathematical Formalization in First-Order Predicate Logic (FOPL)',
+        sanskritTitle: 'प्रथमादेश-तर्कशास्त्रम् · Davidsonian Event Semantics',
+        paragraphs: [
+          'In modern formal semantics, Bhartṛhari’s event-centric kāraka framework maps directly onto Davidsonian event semantics in First-Order Predicate Logic:',
+          'Let e be the cooking event: CookingEvent(e). The kārakas bind participants as binary relations: Kartā(e, Devadatta), Karma(e, Rice), Karaṇa(e, Firewood), Adhikaraṇa(e, Pot), Sampradāna(e, Family), Apādāna(e, Grains).',
+          'The entire multi-clause proposition compiles into an unambiguous queryable matrix: ∃e ∃x ∃y ∃z ∃l ∃w ∃s [ CookingEvent(e) ∧ Devadatta(x) ∧ Kartā(e,x) ∧ Rice(y) ∧ Karma(e,y) ∧ Firewood(z) ∧ Karaṇa(e,z) ∧ Pot(l) ∧ Adhikaraṇa(e,l) ∧ Family(w) ∧ Sampradāna(e,w) ∧ Grains(s) ∧ Apādāna(e,s) ∧ Devotion(CausalMotive(e)) ].',
+          'By enforcing this structured relational matrix, parsing ambiguity is completely eliminated—arguments cannot be misattributed across distance.',
+        ],
+      },
+      {
+        title: 'Bhartṛhari’s Four Speech Levels & Modern Transformer Attention',
+        sanskritTitle: 'वैखरी-मध्यमा-पश्यन्ती-परा · Neural Network Depths',
+        paragraphs: [
+          'In the Brahmakāṇḍa, Bhartṛhari identifies four hierarchical strata of speech cognition: Vaikharī (audible acoustic/text tokens), Madhyamā (internal mental syntax and linear sequencing), Paśyantī (holistic semantic vision where all relations exist simultaneously), and Parā (transcendent ground of meaning).',
+          'In modern Deep Learning, this hierarchy maps directly onto Transformer architectures: Vaikharī corresponds to input token embeddings; Madhyamā corresponds to lower layers encoding local syntax and positional order; Paśyantī corresponds to deep Multi-Head Self-Attention layers where every token attends to every other token simultaneously; and Parā corresponds to the underlying latent semantic manifold.',
+          'Vaswani et al.’s Scaled Dot-Product Self-Attention [Attention(Q, K, V) = softmax(QKᵀ / √dₖ)V] implements Bhartṛhari’s Vākya-Sphoṭa: words have no isolated, static meaning outside of the total context field.',
+        ],
+      },
+      {
+        title: 'Dispelling Modern Myths: Practical Lessons for Explainable & Neuro-Symbolic AI',
+        sanskritTitle: 'कृत्रिमप्रज्ञायाः भविष्यम् · सम्प्रज्ञातोपायः',
+        paragraphs: [
+          'A popular urban myth claims that "NASA declared Sanskrit the best language for computer programming." Rick Briggs was not suggesting that programmers write operating systems in spoken Sanskrit instead of C or Python. Rather, he identified that Sanskrit’s scientific meta-language (Vyākaraṇa and Navya-Nyāya Śābdabodha) provides an ideal, human-readable yet machine-interpretable knowledge representation system.',
+          'For 21st-century AI, Bhartṛhari’s framework offers three major engineering breakthroughs:',
+          '1. Explainable AI (XAI): While Large Language Models rely on opaque vector embeddings, kāraka graphs provide an interpretable, auditable reasoning trace for mission-critical systems.\n2. Knowledge Graphs: The RDF triple architecture (Subject–Predicate–Object) underlying modern web ontologies (Wikidata, Schema.org) mirrors Bhartṛhari’s relational primitives.\n3. Mitigating Hallucinations (Neuro-Symbolic AI): Hybrid architectures, where probabilistic language models generate text constrained by formal kāraka semantic graphs, prevent the factual drift and hallucinations common in pure statistical architectures.',
+        ],
+      },
+    ],
+    quote:
+      'Rigorous systematic formalization demonstrates that optimal communication does not require trading natural human expression for computational rigor; the two are unified in classical Indian linguistics.',
+    keyTakeaways: [
+      'In 1985, Rick Briggs (NASA Ames / RIACS) published in AI Magazine demonstrating that Sanskrit’s grammatical traditions had already solved semantic knowledge representation.',
+      'Bhartṛhari’s Vākyapadīya (5th c. CE) established sentence holism (Akhaṇḍa-Vākya-Sphoṭa), demonstrating that meaning is an indivisible cognitive flash (Pratibhā).',
+      'The six Kārakas (Kartā, Karma, Karaṇa, Sampradāna, Apādāna, Adhikaraṇa) form an action-centered (Kriyā) relational graph that directly anticipates modern semantic networks and frame semantics.',
+      'Sanskrit’s standardized paraphrase (Śābdabodha) functions as an Intermediate Representation (IR), compiling colloquial syntax into invariant semantic primitives.',
+      'The kāraka system formalizes into First-Order Predicate Logic (FOPL) event matrices, eliminating parsing and binding ambiguities.',
+      'Bhartṛhari’s four speech levels (Vaikharī, Madhyamā, Paśyantī, Parā) and holistic Sphoṭa mirror the multi-head self-attention mechanisms of modern Transformer architectures.',
     ],
   },
 ];
