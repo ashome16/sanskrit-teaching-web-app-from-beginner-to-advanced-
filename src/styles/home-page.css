@@ -268,9 +268,9 @@
    -------------------------------------------------------------------------- */
 .home-stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  max-width: 900px;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1.25rem 1rem;
+  max-width: 1050px;
   margin: 0 auto;
   border-top: 1px solid #ebdcc5;
   padding-top: 1.5rem;
@@ -962,7 +962,7 @@
 
 .home-pathways-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.25rem;
   margin-top: 1.5rem;
 }
@@ -996,6 +996,12 @@
   border: 1px solid #b7e5ce;
 }
 
+.home-pathway-badge--course {
+  background: #ede9fe;
+  color: #4f46e5;
+  border: 1px solid #c7d2fe;
+}
+
 .home-pathway-badge--school {
   background: #fdf3e2;
   color: #a35d07;
@@ -1006,6 +1012,12 @@
   background: #f5edf8;
   color: #7b3191;
   border: 1px solid #e1c0e9;
+}
+
+.home-pathway-badge--maths {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
 }
 
 .home-pathway-title {

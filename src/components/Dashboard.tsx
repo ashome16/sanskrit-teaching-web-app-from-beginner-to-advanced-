@@ -100,8 +100,8 @@ const COURSE_PATHS = new Set([
 
 export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string }> = {
   home: {
-    title: 'Online Sanskrit & Vedic Math Classes for Kids | EdNet Learn Gurukul',
-    desc: 'Interactive CBSE NCERT Sanskrit (दीपकम 6–8) and Vedic Math platform for school kids. 28+ worksheets, 39+ quizzes, 6,000+ tile puzzles, audio Alphabet & Syllables & 16 Vedic math sutras.',
+    title: 'Learn Sanskrit Online: From Beginner to Advanced & Vedic Studies | EdNet Gurukul',
+    desc: 'Learn Sanskrit online for all levels: complete audio Varṇamālā & 400+ syllables, 6,000+ word puzzles, 28-lesson Sanskrit thinking course, Pāṇinian grammar & Dhātupāṭha, 16 Vedic math sutras, plus CBSE/NCERT curriculum.',
   },
   course: {
     title: 'संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking | EdNet Learn Gurukul',
@@ -120,8 +120,8 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     desc: 'Printable & interactive CBSE Sanskrit worksheets, translation drills, sandhi practice, and NCERT Deepakam exercise solutions for students.',
   },
   'vedic-maths': {
-    title: 'Vedic Math Tricks & 16 Sutras for School Kids | EdNet Learn Gurukul',
-    desc: 'Learn fast mental math, Vedic geometry, and 16 Vedic mathematics sutras with interactive calculators, speed drills, and video lessons.',
+    title: 'Vedic Mathematics Mastery: 16 Sutras, Fast Mental Math & Astronomy | EdNet Gurukul',
+    desc: 'Master fast mental calculation, Vedic geometry, 16 Vedic mathematics sutras, 366-day Vedic astronomical calendar, and ancient metrology with interactive tools.',
   },
   grammar: {
     title: 'Sanskrit Grammar Mastery: Shabdroop, Dhaturoop & Sandhi | EdNet Learn',

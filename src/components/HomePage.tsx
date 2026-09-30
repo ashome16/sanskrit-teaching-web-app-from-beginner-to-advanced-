@@ -526,12 +526,12 @@ const HomePage: React.FC<HomePageProps> = ({
         <div className="home-hero-crest">
           <img
             src="/logo.jpg"
-            alt="Interactive Sanskrit and Vedic Math learning platform for school children | EdNet Learn Gurukul"
+            alt="EdNet Gurukul - Learn Sanskrit Online &amp; Vedic Mathematics"
             className="home-hero-logo"
           />
           <div className="home-hero-brand-details">
             <h2 className="home-hero-org-title">EdNet Learn Gurukul</h2>
-            <div className="home-hero-org-subtitle">गुरुकुलम् · Sanskrit &amp; Vedic Studies</div>
+            <div className="home-hero-org-subtitle">गुरुकुलम् · Sanskrit &amp; Vedic Studies for All Learners</div>
           </div>
         </div>
 
@@ -543,16 +543,14 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
 
         <h1 className="home-hero-title">
-          Master Sanskrit &amp; Vedic Mathematics
+          Learn Sanskrit Online · From Beginner to Advanced
           <span className="home-hero-title-dev">
-            संस्कृत-शिक्षण-मञ्चः · CBSE बोर्ड-पाठ्यक्रमः · सम्पूर्णं सरल-संस्कृतम्
+            सरल-संस्कृतम् · व्याकरणम् · वैदिक-गणितम् · सर्वजन-शिक्षणम्
           </span>
         </h1>
 
         <p className="home-hero-subtitle">
-          An intuitive, interactive Gurukul learning platform tailored for <strong>CBSE Class 7 Sanskrit Board Exams</strong> (NCERT दीपकम),
-          beginners, and Vedic scholars. Experience word-by-word instant audio analysis, shloka anvaya,
-          gamified tile puzzles, complete grammar declensions, and speed Vedic Mathematics without friction.
+          An intuitive, interactive Gurukul learning platform engineered for <strong>complete beginners, adult self-learners, university scholars, and school students</strong>. Master Sanskrit from the alphabet to Pāṇinian grammar (Dhātupāṭha &amp; Vibhaktis), explore computational linguistics &amp; AI connections, sharpen mental agility with speed Vedic Mathematics, or study the complete CBSE/NCERT curriculum with instant word-by-word audio and translations.
         </p>
 
         {onOpenSearch && (
@@ -576,43 +574,38 @@ const HomePage: React.FC<HomePageProps> = ({
         )}
 
         <div className="home-hero-actions">
-          <button
-            type="button"
-            className="home-btn-primary"
-            onClick={() => onOpenReader('gsde101')}
-          >
-            📖 Read CBSE Deepakam Class 7
-          </button>
-          {onOpenCbseGuide && (
+          {onOpenVarnamala && (
             <button
               type="button"
-              className="home-btn-secondary"
-              onClick={onOpenCbseGuide}
-              title="CBSE NCERT Sanskrit Exam Guide (Classes 7–10)"
+              className="home-btn-primary"
+              onClick={onOpenVarnamala}
+              title="Start with the Sanskrit Alphabet (वर्णमाला) & 400+ Syllables"
             >
-              📘 CBSE Sanskrit Guide
+              🌱 Start as Beginner (Alphabet)
+            </button>
+          )}
+          {onOpenCourse && (
+            <button
+              type="button"
+              className="home-btn-primary"
+              style={{
+                background: 'linear-gradient(135deg, #4338ca 0%, #6366f1 100%)',
+                boxShadow: '0 4px 14px rgba(67, 56, 202, 0.35)',
+                fontWeight: 800,
+              }}
+              onClick={onOpenCourse}
+              title="संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking 28-Lesson Course"
+            >
+              🧠 Sanskrit Thinking Course
             </button>
           )}
           <button
             type="button"
             className="home-btn-secondary"
             onClick={onOpenBoard}
+            title="Interactive Tile Puzzle across 7 curated shelves"
           >
-            🧩 Play जोडो Tile Puzzle
-          </button>
-          <button
-            type="button"
-            className="home-btn-secondary"
-            onClick={onOpenVarnamala}
-          >
-            🔤 Alphabet &amp; Syllables
-          </button>
-          <button
-            type="button"
-            className="home-btn-accent"
-            onClick={onOpenGrammar}
-          >
-            📚 Vyākaraṇa (Grammar)
+            🧩 6,000+ Word Puzzles
           </button>
           {onOpenDhatupatha && (
             <button
@@ -625,14 +618,41 @@ const HomePage: React.FC<HomePageProps> = ({
               🌿 धातुपाठः (Dhātupāṭha)
             </button>
           )}
+          <button
+            type="button"
+            className="home-btn-accent"
+            onClick={onOpenGrammar}
+            title="Grammar shelf - 7 Vibhaktis, Declensions, Conjugations & 17 Masterclasses"
+          >
+            📚 Vyākaraṇa (Grammar)
+          </button>
           {onOpenVedicMaths && (
             <button
               type="button"
               className="home-btn-primary"
               style={{ background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)', boxShadow: '0 4px 12px rgba(180, 83, 9, 0.25)' }}
               onClick={onOpenVedicMaths}
+              title="16 Vedic Math Sutras, Sub-sutras, and Lightning Mental Arithmetic"
             >
               📐 Vedic Maths (वैदिक-गणितम्)
+            </button>
+          )}
+          <button
+            type="button"
+            className="home-btn-secondary"
+            onClick={() => onOpenReader('gsde101')}
+            title="CBSE Class 7 NCERT Deepakam Textbook with Audio & Word Meanings"
+          >
+            📖 CBSE Deepakam (Classes 6–8)
+          </button>
+          {onOpenCbseGuide && (
+            <button
+              type="button"
+              className="home-btn-secondary"
+              onClick={onOpenCbseGuide}
+              title="CBSE NCERT Sanskrit Exam Guide (Classes 7–10)"
+            >
+              📘 CBSE Exam Guide
             </button>
           )}
           {onOpenPhilosophy && (
@@ -640,7 +660,7 @@ const HomePage: React.FC<HomePageProps> = ({
               type="button"
               className="home-btn-secondary"
               onClick={onOpenPhilosophy}
-              title="Our Philosophy · Darśana"
+              title="Our Philosophy · Darśana & In the Age of AI"
             >
               🪔 Darśana · Philosophy
             </button>
@@ -664,21 +684,6 @@ const HomePage: React.FC<HomePageProps> = ({
               📑 कार्यपत्रिकाः · Worksheets
             </button>
           )}
-          {onOpenCourse && (
-            <button
-              type="button"
-              className="home-btn-primary"
-              style={{
-                background: 'linear-gradient(135deg, #4338ca 0%, #6366f1 100%)',
-                boxShadow: '0 4px 14px rgba(67, 56, 202, 0.35)',
-                fontWeight: 800,
-              }}
-              onClick={onOpenCourse}
-              title="संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking Complete 6-Module Course"
-            >
-              🧠 संस्कृत-चिन्तनम् (Course)
-            </button>
-          )}
           {onOpenResources && (
             <button
               type="button"
@@ -686,7 +691,7 @@ const HomePage: React.FC<HomePageProps> = ({
               style={{ background: 'rgba(2, 132, 199, 0.08)', borderColor: 'rgba(2, 132, 199, 0.35)', color: '#0369a1' }}
               onClick={onOpenResources}
             >
-              🌐 साधनानि · Live News &amp; Events
+              🌐 साधनानि · News &amp; Events
             </button>
           )}
         </div>
@@ -756,54 +761,183 @@ const HomePage: React.FC<HomePageProps> = ({
         {/* Live Platform Highlights */}
         <div className="home-stats-grid">
           <div className="home-stat-item">
-            <span className="home-stat-val">15</span>
-            <span className="home-stat-label">NCERT Deepakam Chapters</span>
+            <span className="home-stat-val">6,000+</span>
+            <span className="home-stat-label">Word Puzzles &amp; Drills</span>
           </div>
           <div className="home-stat-item">
-            <span className="home-stat-val">2,200+</span>
-            <span className="home-stat-label">Interactive Tile Puzzles</span>
+            <span className="home-stat-val">400+</span>
+            <span className="home-stat-label">Audio Syllables &amp; Words</span>
+          </div>
+          <div className="home-stat-item">
+            <span className="home-stat-val">28</span>
+            <span className="home-stat-label">Lessons in Sanskrit Course</span>
+          </div>
+          <div className="home-stat-item">
+            <span className="home-stat-val">17</span>
+            <span className="home-stat-label">Pāṇinian Masterclasses</span>
           </div>
           <div className="home-stat-item">
             <span className="home-stat-val">16</span>
             <span className="home-stat-label">Vedic Math Sutras</span>
           </div>
           <div className="home-stat-item">
-            <span className="home-stat-val">5,160+</span>
-            <span className="home-stat-label">Words with Sanskrit Audio</span>
+            <span className="home-stat-val">15+</span>
+            <span className="home-stat-label">NCERT Chapters (6–8)</span>
           </div>
         </div>
       </section>
 
       {/* ------------------------------------------------------------------
-          Trust & Academic Accreditation Bar
+          Trust & Academic Standards Bar
           ------------------------------------------------------------------ */}
       <section className="home-trust-banner" aria-label="Academic Standards">
         <div className="home-trust-item">
-          <span className="home-trust-icon">🏛️</span>
+          <span className="home-trust-icon">🌟</span>
           <div className="home-trust-text">
-            <strong>CBSE Class 7 Syllabus</strong>
-            <span>Aligned with Board Exam pattern &amp; NCERT Textbook 'दीपकम'</span>
-          </div>
-        </div>
-        <div className="home-trust-item">
-          <span className="home-trust-icon">🇮🇳</span>
-          <div className="home-trust-text">
-            <strong>NEP 2020 Compliant</strong>
-            <span>Multidisciplinary Sanskrit &amp; computational thinking</span>
+            <strong>For All Ages &amp; Levels</strong>
+            <span>Beginners, adult self-learners, university scholars &amp; school students</span>
           </div>
         </div>
         <div className="home-trust-item">
           <span className="home-trust-icon">🎧</span>
           <div className="home-trust-text">
             <strong>Native Phonetic Speech</strong>
-            <span>Alphabet &amp; syllable audio synthesis with authentic visarga echoes</span>
+            <span>Alphabet, syllable &amp; shloka audio with authentic visarga echoes</span>
           </div>
         </div>
         <div className="home-trust-item">
-          <span className="home-trust-icon">🛡️</span>
+          <span className="home-trust-icon">🏛️</span>
           <div className="home-trust-text">
-            <strong>100% Verified &amp; Safe</strong>
-            <span>Family-safe accounts &amp; progress sync</span>
+            <strong>Classical Pāṇinian Depth</strong>
+            <span>Dhātupāṭha verb engine, 7 Vibhaktis &amp; Śābdabodha semantic architecture</span>
+          </div>
+        </div>
+        <div className="home-trust-item">
+          <span className="home-trust-icon">🎒</span>
+          <div className="home-trust-text">
+            <strong>CBSE &amp; NEP 2020 Aligned</strong>
+            <span>Full NCERT Deepakam curriculum (Classes 6–8) with exam preparation</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------
+          Learning Pathways Section (5 Clear Learner Tracks)
+          ------------------------------------------------------------------ */}
+      <section className="home-pathways-section" aria-label="Learning Pathways">
+        <div className="home-section-header">
+          <span className="home-section-tag">Guided Learning Tracks</span>
+          <h2 className="home-section-title">Choose Your Learning Path</h2>
+          <p className="home-section-subtitle">
+            Whether you are learning your first Sanskrit syllable, researching Pāṇinian linguistics, computing mental math, or preparing for exams:
+          </p>
+        </div>
+
+        <div className="home-pathways-grid">
+          {/* Pathway 1: Beginner */}
+          <div className="home-pathway-card">
+            <div>
+              <span className="home-pathway-badge home-pathway-badge--beginner">
+                Beginner Track
+              </span>
+              <h3 className="home-pathway-title">🌱 New to Sanskrit?</h3>
+              <p className="home-pathway-desc">
+                Hear and practice 13 vowels and 33 consonants in the Sanskrit Alphabet (वर्णमाला). Master matra combinations, 400+ interactive audio syllables, and essential starter vocabulary.
+              </p>
+            </div>
+            <button
+              type="button"
+              className="home-pathway-btn"
+              onClick={onOpenVarnamala}
+            >
+              Start with Alphabet &amp; Syllables ▶
+            </button>
+          </div>
+
+          {/* Pathway 2: Sanskrit Thinking Course */}
+          {onOpenCourse && (
+            <div className="home-pathway-card" style={{ borderColor: '#c7d2fe' }}>
+              <div>
+                <span className="home-pathway-badge home-pathway-badge--course">
+                  Structured Course
+                </span>
+                <h3 className="home-pathway-title">🧠 Sanskrit as a Way of Thinking</h3>
+                <p className="home-pathway-desc">
+                  Our flagship 6-module, 28-lesson program. Learn Sanskrit through computational logic: Sound as Input → Rules as Processing → Meaning as Output, with recitation and philosophy.
+                </p>
+              </div>
+              <button
+                type="button"
+                className="home-pathway-btn"
+                style={{ background: '#4338ca', color: '#ffffff', borderColor: '#4338ca' }}
+                onClick={onOpenCourse}
+              >
+                Explore 28-Lesson Course ▶
+              </button>
+            </div>
+          )}
+
+          {/* Pathway 3: Paninian Grammar & Dhatupatha */}
+          <div className="home-pathway-card">
+            <div>
+              <span className="home-pathway-badge home-pathway-badge--grammar">
+                Pāṇinian Grammar
+              </span>
+              <h3 className="home-pathway-title">🌿 Dhātupāṭha &amp; Vyākaraṇa</h3>
+              <p className="home-pathway-desc">
+                Explore the generative root science of Sanskrit. Deconstruct inflected words, generate 5-lakāra verb tables, master 7 vibhaktis (noun cases), and read 17 research masterclasses.
+              </p>
+            </div>
+            <button
+              type="button"
+              className="home-pathway-btn"
+              onClick={onOpenDhatupatha || onOpenGrammar}
+            >
+              Launch Dhātupāṭha &amp; Grammar ▶
+            </button>
+          </div>
+
+          {/* Pathway 4: Vedic Mental Math */}
+          {onOpenVedicMaths && (
+            <div className="home-pathway-card">
+              <div>
+                <span className="home-pathway-badge home-pathway-badge--maths">
+                  Speed Math &amp; Heritage
+                </span>
+                <h3 className="home-pathway-title">⚡ Vedic Mental Mathematics</h3>
+                <p className="home-pathway-desc">
+                  Compute 10–15× faster! Master all 16 Sutras &amp; 13 Sub-sutras, Bhāskarācārya's Līlāvatī poetic math, Piṅgala's binary Chandas, and Katapayadi mnemonics.
+                </p>
+              </div>
+              <button
+                type="button"
+                className="home-pathway-btn"
+                style={{ background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)', color: '#ffffff', borderColor: '#b45309' }}
+                onClick={onOpenVedicMaths}
+              >
+                Start Vedic Maths ▶
+              </button>
+            </div>
+          )}
+
+          {/* Pathway 5: CBSE & NCERT School Track */}
+          <div className="home-pathway-card">
+            <div>
+              <span className="home-pathway-badge home-pathway-badge--school">
+                School Curriculum
+              </span>
+              <h3 className="home-pathway-title">🎒 CBSE &amp; NCERT Deepakam</h3>
+              <p className="home-pathway-desc">
+                Follow all 15 Deepakam textbook chapters sequentially. Master shloka recitation, anvaya, sandhi, and exam question drills with word-by-word grammatical breakdowns.
+              </p>
+            </div>
+            <button
+              type="button"
+              className="home-pathway-btn"
+              onClick={() => onOpenReader('gsde101')}
+            >
+              Start CBSE Deepakam (Classes 6–8) ▶
+            </button>
           </div>
         </div>
       </section>
@@ -1188,23 +1322,54 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
 
         <div className="home-features-grid">
-          {/* Feature 1: Deepakam Reader */}
+          {/* Feature 1: Sanskrit Thinking Course */}
+          {onOpenCourse && (
+            <div className="home-feature-card">
+              <div className="home-feature-card-top">
+                <div className="home-feature-icon-row">
+                  <span className="home-feature-icon">🧠</span>
+                  <span className="home-feature-badge" style={{ background: '#ede9fe', color: '#4f46e5' }}>
+                    Flagship 6-Module Course
+                  </span>
+                </div>
+                <h3 className="home-feature-title">संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking</h3>
+                <p className="home-feature-desc">
+                  A revolutionary course mapping Sanskrit grammar to modern computational linguistics and cognitive science. 28 structured lessons taking you from basic phonetics to algorithmic sentence structure and philosophical contemplation.
+                </p>
+                <ul className="home-feature-points">
+                  <li>Sound as Input → Rules as Processing → Meaning as Output</li>
+                  <li>Bridges to Computer Science: BNF grammars, context-free parsing &amp; AI</li>
+                  <li>Recitation audio, interactive comprehension quizzes &amp; study notes</li>
+                  <li>Certificate of completion &amp; continuous progress tracking</li>
+                </ul>
+              </div>
+              <button
+                type="button"
+                className="home-feature-btn"
+                style={{ background: '#4338ca', color: '#ffffff' }}
+                onClick={onOpenCourse}
+              >
+                Launch Course Modules ▶
+              </button>
+            </div>
+          )}
+
+          {/* Feature 2: Classical & NCERT Reader */}
           <div className="home-feature-card">
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
                 <span className="home-feature-icon">📖</span>
-                <span className="home-feature-badge">CBSE Board Exam · NCERT Class 7</span>
+                <span className="home-feature-badge">Interactive Reader &amp; CBSE Track</span>
               </div>
-              <h3 className="home-feature-title">Interactive Deepakam Reader (CBSE Class 7)</h3>
+              <h3 className="home-feature-title">Interactive Sanskrit Reader (दीपकम् 6–8)</h3>
               <p className="home-feature-desc">
-                Study the complete 15 lessons from the prescribed CBSE/NCERT textbook 'दीपकम्'. Click any word to hear crystal-clear pronunciation,
-                inspect syllable breakdowns, see trilingual meanings, and master CBSE board question patterns!
+                Study classical stories, shlokas, dialogues, and the complete NCERT 'दीपकम्' curriculum. Tap any word for crystal-clear native pronunciation, syllable breakdowns, trilingual meanings, and exam question blueprints.
               </p>
               <ul className="home-feature-points">
-                <li>100% CBSE Class 7 Sanskrit Board Exam Syllabus aligned</li>
-                <li>Shloka Anvaya (श्लोकान्वयः) &amp; exam question drills</li>
                 <li>Word-by-word instant dictionary lookup &amp; native audio</li>
-                <li>Parallel English &amp; Hindi translations for all paragraphs</li>
+                <li>Shloka Anvaya (श्लोकान्वयः) &amp; grammatical analysis</li>
+                <li>Parallel English &amp; Hindi translations for every paragraph</li>
+                <li>Full alignment with CBSE Sanskrit Board Exam question formats</li>
               </ul>
             </div>
             <button
@@ -1212,7 +1377,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-feature-btn"
               onClick={() => onOpenReader('gsde101')}
             >
-              Open CBSE Textbook Reader ▶
+              Open Sanskrit Reader ▶
             </button>
           </div>
 
@@ -1400,11 +1565,10 @@ const HomePage: React.FC<HomePageProps> = ({
           ------------------------------------------------------------------ */}
       <section className="home-curriculum-section">
         <div className="home-section-header">
-          <span className="home-section-tag">CBSE Board Exam &amp; NCERT Syllabus</span>
-          <h2 className="home-section-title">Complete 15 Lessons Directory · CBSE Class 7 (दीपकम्)</h2>
+          <span className="home-section-tag">Graded Literature &amp; School Curriculum</span>
+          <h2 className="home-section-title">Classical Literature &amp; NCERT Reader Directory (दीपकम् 6–8)</h2>
           <p className="home-section-subtitle">
-            Explore the entire NCERT Class 7 'दीपकम्' syllabus mapped to CBSE Board Exam guidelines. Every chapter features full Sanskrit text,
-            parallel English &amp; Hindi translations, authentic audio recitation, and complete word-by-word grammar analysis for top exam scores.
+            Explore graded classical stories, shlokas, dialogues, and NCERT 'दीपकम्' chapters with line-by-line Sanskrit text, word analysis, and parallel translations—ideal for school board prep or classical literature reading.
           </p>
         </div>
 
@@ -1637,103 +1801,7 @@ const HomePage: React.FC<HomePageProps> = ({
         )}
       </section>
 
-      {/* ------------------------------------------------------------------
-          Learning Pathways Section
-          ------------------------------------------------------------------ */}
-      <section className="home-pathways-section">
-        <div className="home-section-header">
-          <span className="home-section-tag">Guided Journeys</span>
-          <h2 className="home-section-title">Choose Your Learning Path</h2>
-          <p className="home-section-subtitle">
-            Whether you are picking up your very first Sanskrit syllable or prepping for school exams, we have a clear path for you:
-          </p>
-        </div>
 
-        <div className="home-pathways-grid">
-          <div className="home-pathway-card">
-            <div>
-              <span className="home-pathway-badge home-pathway-badge--beginner">
-                Beginner Track
-              </span>
-              <h3 className="home-pathway-title">🌱 New to Sanskrit?</h3>
-              <p className="home-pathway-desc">
-                Start with hearing and repeating the 13 vowels and 33 consonants in the Sanskrit Alphabet (वर्णमाला). Then head over to the
-                Beginners shelf of the जोडो Tile Puzzle to master matra additions.
-              </p>
-            </div>
-            <button
-              type="button"
-              className="home-pathway-btn"
-              onClick={onOpenVarnamala}
-            >
-              Start with Alphabet &amp; Syllables ▶
-            </button>
-          </div>
-
-          <div className="home-pathway-card">
-            <div>
-              <span className="home-pathway-badge home-pathway-badge--school">
-                CBSE Board Exam
-              </span>
-              <h3 className="home-pathway-title">🎒 CBSE Class 7 Student</h3>
-              <p className="home-pathway-desc">
-                Follow the 15 Deepakam chapters sequentially. Master shloka recitation, anvaya, sandhi,
-                and exam question patterns with instant word-by-word grammatical breakdowns and translations.
-              </p>
-            </div>
-            <button
-              type="button"
-              className="home-pathway-btn"
-              onClick={() => onOpenReader('gsde101')}
-            >
-              Start CBSE Chapter 1 (वन्दे भारतमातरम्) ▶
-            </button>
-          </div>
-
-          <div className="home-pathway-card">
-            <div>
-              <span className="home-pathway-badge home-pathway-badge--grammar">
-                Grammar Master
-              </span>
-              <h3 className="home-pathway-title">📖 Grammar &amp; Shlokas</h3>
-              <p className="home-pathway-desc">
-                Dive straight into noun declensions (Shabdarupani) and verb conjugations (Dhaturupams).
-                Learn the 7 vibhakti cases and understand sentence structures like a true scholar.
-              </p>
-            </div>
-            <button
-              type="button"
-              className="home-pathway-btn"
-              onClick={onOpenGrammar}
-            >
-              Explore Vyākaraṇa Shelf ▶
-            </button>
-          </div>
-
-          <div className="home-pathway-card">
-            <div>
-              <span className="home-pathway-badge" style={{ background: '#fef3c7', color: '#92400e' }}>
-                Mental Fluency
-              </span>
-              <h3 className="home-pathway-title">⚡ Vedic Mental Math</h3>
-              <p className="home-pathway-desc">
-                Conquer arithmetic phobia and compute 10 to 15 times faster! Master the 16 Sutras, instant squaring,
-                lightning subtraction without borrowing, and digital root verification.
-              </p>
-            </div>
-            {onOpenVedicMaths && (
-              <button
-                type="button"
-                className="home-pathway-btn"
-                style={{ background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)', color: '#ffffff' }}
-                onClick={onOpenVedicMaths}
-              >
-                Start Vedic Maths ▶
-              </button>
-            )}
-          </div>
-        </div>
-      </section>
 
       {canReadAllChapters && (
         <Grade8SyllabusModal
