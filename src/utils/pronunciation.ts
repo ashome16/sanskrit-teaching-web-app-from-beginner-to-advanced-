@@ -630,8 +630,8 @@ const SANSKRIT_BREAK = /([।॥\n\r,;!?]+)/;
 
 const cleanSanskritChunk = (chunk: string): string =>
   chunk
-    // Drop Devanagari verse numbers, dashes, quotes and brackets.
-    .replace(/[।॥०-९0-9()[\]{}<>'"“”‘’\-–—|]+/g, ' ')
+    // Drop Devanagari verse numbers, dashes, quotes, exclamation marks and brackets.
+    .replace(/[।॥०-९0-9()[\]{}<>'"“”‘’\-–—|!]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 
@@ -643,7 +643,9 @@ const cleanEnglishChunk = (chunk: string): string =>
     .replace(/[\u0900-\u097F]+/g, ' ')
     .replace(/["“”]\s*["“”]/g, ' ')
     .replace(/[“”"()[\]{}<>]+/g, ' ')
-    .replace(/\s+([,.;:!?])/g, '$1')
+    // Convert exclamation marks to periods so TTS engines never speak "exclamation mark"
+    .replace(/!+/g, '.')
+    .replace(/\s+([,.;:?])/g, '$1')
     .replace(/\s+/g, ' ')
     .trim();
 

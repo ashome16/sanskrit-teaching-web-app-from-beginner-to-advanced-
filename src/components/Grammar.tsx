@@ -503,7 +503,7 @@ const Grammar: React.FC<GrammarProps> = ({
             </div>
 
             <p className="grammar-bodhi-speech">
-              Namaste! I am Bodhi. Explore the key concepts below, and tap any highlighted Sanskrit word in the glossary or narrative to hear authentic pronunciation!
+              Namaste. I am Bodhi. Explore the key concepts below, and tap any highlighted Sanskrit word in the glossary or narrative to hear authentic pronunciation.
             </p>
 
             {/* Bodhi's Sanskrit Explanation (💡 बोधि-व्याख्या · Bodhi's Sanskrit Explanation) */}

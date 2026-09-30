@@ -949,7 +949,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     badgeEmoji: '🔢',
     badgeColor: '#b45309',
     description:
-      'Named powers of ten preserved in Vājasaneyi Saṃhitā 17.2 (parārdha as 10^12 on one reading of that verse), the hundred-fold tallakṣaṇa list in Lalitavistara chapter 12, Piṅgala’s prastāra and Halāyudha’s meru-prastāra, and the Anuyogadvāra classes saṅkhyāta, asaṅkhyāta, ananta.',
+      'Named powers of ten preserved in Vājasaneyi Saṃhitā 17.2 (13 decuple rungs up to parārdha 10¹²), the hundred-fold tallakṣaṇa list in Lalitavistara chapter 12, Piṅgala’s prastāra and Halāyudha’s meru-prastāra, and the Anuyogadvāra classes saṅkhyāta, asaṅkhyāta, ananta.',
     keywords: [
       'large numbers',
       'powers of ten',

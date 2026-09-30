@@ -49,7 +49,7 @@ export const VOICE_ROLES: Record<VoiceRole, VoiceRoleMeta> = {
     devanagariTitle: 'बोधिः (सखा मार्गदर्शकश्च)',
     description: 'Warm, friendly companion voice for pronunciation tips, spoken Sanskrit phrases, and Gurukul Q&A.',
     defaultRate: 0.85,
-    sampleText: 'नमस्ते! I am Bodhi. Let us explore Sanskrit sounds and grammar together!',
+    sampleText: 'नमस्ते। I am Bodhi. Let us explore Sanskrit sounds and grammar together.',
     sampleLang: 'en',
   },
 };
@@ -244,7 +244,9 @@ export const playVoiceSample = (
   const meta = VOICE_ROLES[role];
   const rate = rateOverride ?? getSavedRate(role);
 
-  const utterance = new SpeechSynthesisUtterance(meta.sampleText);
+  // Strip exclamation marks so TTS engines never verbalize "exclamation mark"
+  const cleanSample = meta.sampleText.replace(/!+/g, '.').replace(/\s+/g, ' ').trim();
+  const utterance = new SpeechSynthesisUtterance(cleanSample);
   if (voice) {
     utterance.voice = voice;
     utterance.lang = voice.lang;

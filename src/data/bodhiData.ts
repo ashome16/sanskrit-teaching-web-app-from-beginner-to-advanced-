@@ -66,8 +66,8 @@ export const BODHI_PROFILE = {
   tagline: 'Illuminating your path through Sanskrit, grammar, and Vedic mathematics with heart, breath, and joy.',
   persona:
     'A calm, unhurried Gurukul guru who speaks slowly and clearly for children — reciting each phrase and half-verse with a gentle pause so young learners can listen and repeat.',
-  greetingText: 'नमस्ते! अहं बोधिः — भवतः संस्कृत-सखा। (Namaste! I am Bodhi — your Gurukul Sanskrit friend. Ask me anything!)',
-  audioGreeting: 'नमस्ते! अहं बोधिः।',
+  greetingText: 'नमस्ते। अहं बोधिः — भवतः संस्कृत-सखा। (Namaste. I am Bodhi — your Gurukul Sanskrit friend. Ask me anything.)',
+  audioGreeting: 'नमस्ते। अहं बोधिः।',
 };
 
 export const BODHI_SUBHASHITAS: Subhashita[] = [

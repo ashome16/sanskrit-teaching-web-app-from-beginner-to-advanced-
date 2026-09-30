@@ -947,9 +947,9 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
         title: 'Vedic Number Names: The Thirteen Decuple Rungs',
         sanskritTitle: 'वाजसनेयिसंहिता १७.२ · तैत्तिरीयसंहिता',
         paragraphs: [
-          'The earliest surviving systematically named decuple scale in world literature appears in the Vājasaneyi Saṃhitā of the White Yajurveda (17.2), also echoed in the Taittirīya Saṃhitā (4.4.11.4) and Maitrāyaṇī Saṃhitā. The passage names each power of ten as a distinct mathematical entity in sacrificial brick altar geometry:',
+          'The Vājasaneyi Saṃhitā of the White Yajurveda (17.2), also echoed in the Taittirīya Saṃhitā (4.4.11.4) and Maitrāyaṇī Saṃhitā, preserves a systematic 13-step decuple ladder where each named rank is ten times the preceding one (daśaguṇottaram):',
           '१. एक (Eka = 10⁰ = 1)\n२. दश (Daśa = 10¹ = 10)\n३. शत (Śata = 10² = 100)\n४. सहस्र (Sahasra = 10³ = 1,000)\n५. अयुत (Ayuta = 10⁴ = 10,000)\n६. नियुत (Niyuta = 10⁵ = 100,000)\n७. प्रयुत (Prayuta = 10⁶ = 1,000,000 / Million)\n८. अर्बुद (Arbuda = 10⁷ = 10,000,000 / Ten Million)\n९. न्यर्बुद (Nyarbuda = 10⁸ = 100,000,000 / Hundred Million)\n१०. समुद्र (Samudra = 10⁹ = 1,000,000,000 / Billion)\n११. मध्य (Madhya = 10¹⁰ = 10,000,000,000 / Ten Billion)\n१२. अन्त (Anta = 10¹¹ = 100,000,000,000 / Hundred Billion)\n१३. परार्ध (Parārdha = 10¹² = 1,000,000,000,000 / Trillion)',
-          'To appreciate how extraordinary this was: classical Greek mathematics stopped naming powers of ten at the myriad (10⁴ = 10,000), and Roman numerals had no individual names or symbols beyond mille (10³ = 1,000). Vedic mathematicians were calculating at 10¹² with effortless fluency.',
+          'In this Vedic enumeration, each step advances tenfold, culminating in Parārdha as 10¹² (one trillion). In later classical treatises, such as Śrīdhara’s Pāṭīgaṇita and Bhāskarācārya’s Līlāvatī, the standard decuple ladder was extended to eighteen places, assigning the name Parārdha to the 18th place (10¹⁷). Both traditions reflect the same foundational decimal architecture: naming ascending powers of ten with structured mathematical clarity.',
         ],
         terms: [
           { sa: 'एक', iast: 'eka', gloss: '10⁰ = 1' },

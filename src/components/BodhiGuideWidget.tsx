@@ -77,7 +77,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [showMiniBubble, setShowMiniBubble] = useState(true);
-  const [bubbleText, setBubbleText] = useState('नमस्ते! I am Bodhi. Need a tip?');
+  const [bubbleText, setBubbleText] = useState('नमस्ते। I am Bodhi. Need a tip?');
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isTriggerCollapsed, setIsTriggerCollapsed] = useState(() => {
     try {
