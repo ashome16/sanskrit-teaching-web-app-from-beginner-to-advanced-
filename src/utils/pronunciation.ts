@@ -98,7 +98,13 @@ const toSpeechText = (word: string): string => {
     return getGuninthaluSpeechText(word);
   }
 
-  const overridden = applyWordOverrides(word);
+  // Convert any numerals into Sanskrit Devanagari words so raw digits never reach the speech engine
+  let workingWord = word;
+  if (/[0-9०-९]/.test(workingWord)) {
+    workingWord = expandDigitsInLessonText(workingWord);
+  }
+
+  const overridden = applyWordOverrides(workingWord);
 
   // Windows whole-word path: keep Devanagari + spaced visarga echo for hi-IN.
   // Mac rare-vocalic words use this same path instead of a री / ली rewrite.
@@ -403,7 +409,14 @@ export const playPronunciation = (value: string): void => {
   if (pronunciationMuted) return;
   // Never voice a bare daṇḍa / double daṇḍa / verse number ("danda", "poorn viraam").
   if (isDandaOrVerseNumberToken(value)) return;
-  const word = cleanWord(value) || value.trim();
+
+  // Intercept numerals (e.g. "२", "२.", "1", "4") and expand to Sanskrit cardinal/ordinal words
+  let raw = value;
+  if (/[0-9०-९]/.test(raw)) {
+    raw = expandDigitsInLessonText(raw);
+  }
+
+  const word = cleanWord(raw) || raw.trim();
   if (!word || !isSanskritText(word) || typeof window === 'undefined' || !window.speechSynthesis) {
     return;
   }

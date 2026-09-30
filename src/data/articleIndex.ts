@@ -100,4 +100,25 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: "संस्कृत-मार्गदर्शिका · A Beginner's Roadmap to Learning Sanskrit",
     cardBlurb: 'Where to start, what to learn in what order, and how to practise: sound → grammar → stories → classics, plus an 8-week starter plan and a 20-minute daily routine.',
   },
+  {
+    id: 'indian-calendar-precision',
+    file: 'grammar/article-14.txt',
+    emoji: '☀️',
+    cardTitle: 'कालमानं पञ्चाङ्गं च · The Indian Calendar & 366-Day Vedic Year',
+    cardBlurb: 'Why ancient Indian astronomy never needed a Gregorian patch: Lagadha’s 366-day solar year, Aryabhata’s sidereal accuracy, and self-correcting Adhika Māsa.',
+  },
+  {
+    id: 'naming-the-colossal',
+    file: 'grammar/article-15.txt',
+    emoji: '🌌',
+    cardTitle: 'दशगुणोत्तरसंज्ञाः · Naming the Colossal Past a Million',
+    cardBlurb: 'How Indian texts counted past a million to 10⁵⁷, 10⁵³, and 10¹⁴⁰ — from the Yajurveda and Vālmīki Rāmāyaṇa to the Lalitavistara, Līlāvatī, and Jaina Infinities.',
+  },
+  {
+    id: 'legacy-of-indian-metrology',
+    file: 'grammar/article-16.txt',
+    emoji: '⚖️',
+    cardTitle: 'तुलामानं धातुशुद्धिश्च · The Legacy of Indian Metrology',
+    cardBlurb: 'From Harappan 4:2:1 seismic bricks and binary-decimal weights to defacing Roman bullion at Muziris and Kautilyan 4-month scale recalibration fines.',
+  },
 ];

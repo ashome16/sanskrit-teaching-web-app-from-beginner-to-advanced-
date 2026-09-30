@@ -817,7 +817,7 @@ const Dashboard: React.FC = () => {
           </button>
           <button
             type="button"
-            className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'reader' && lesson.id === 'varnamala' ? ' active' : ''}`}
+            className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'reader' && (lesson.id === 'varnamala' || lesson.id === 'barakhadi') ? ' active' : ''}`}
             onClick={openVarnamala}
             title="Open Alphabet & Syllables (वर्णमाला)"
           >

@@ -650,38 +650,44 @@ const IndusWeights = () => (
 const CoinCompared = () => (
   <div className="vaf-table-wrap">
     <table className="vaf-table">
-      <caption>Two silver coins, both valued as metal</caption>
+      <caption>Mauryan Silver Kārṣāpaṇa vs. Roman Silver Denarius</caption>
       <thead>
         <tr>
-          <th scope="col"></th>
-          <th scope="col">kārṣāpaṇa</th>
-          <th scope="col">denarius, early empire</th>
-          <th scope="col">denarius after Nero (AD 64)</th>
+          <th scope="col">Dimension</th>
+          <th scope="col">Mauryan Silver Kārṣāpaṇa</th>
+          <th scope="col">Roman Silver Denarius (Early)</th>
+          <th scope="col">Roman Denarius (Debased Post-Nero)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">What it looks like</th>
-          <td>punch-marked silver; no portrait</td>
-          <td>silver with the emperor’s portrait</td>
-          <td>the same portrait, on a lighter coin</td>
+          <th scope="row">Shape &amp; Appearance</th>
+          <td>Punch-marked irregular ingot/polygon with 5 state punch-marks (sun, ṣaḍāra-cakra 6-arm wheel, hill, tree)</td>
+          <td>Round cast die-struck coin with Emperor's portrait &amp; imperial titles</td>
+          <td>Round die-struck coin with Emperor's portrait (often defaced/slashed at Indian ports like Muziris)</td>
         </tr>
         <tr>
-          <th scope="row">Mass</th>
-          <td>about 32 ratti, some 3.3–3.5 g</td>
-          <td>about 3.9 g (1/84 of a Roman pound)</td>
-          <td>about 3.4 g (1/96 of a pound)</td>
+          <th scope="row">Baseline Weight</th>
+          <td>Standardized at 32 Ratti seed standard (~3.4 to 3.5 g)</td>
+          <td>~3.9 g (theoretical 1/84 of a Roman pound)</td>
+          <td>Reduced to ~3.4 g under Nero (64 CE; 1/96 lb), later falling below 3 g</td>
         </tr>
         <tr>
-          <th scope="row">What the value follows</th>
-          <td>weight and fineness of the silver</td>
-          <td>weight and fineness; the silver share is high</td>
-          <td>less silver in the coin of the same name (near 80% in Butcher and Ponting)</td>
+          <th scope="row">Silver Purity &amp; Fineness</th>
+          <td>Strictly maintained at ~75–80% fine silver backed by state assayer (sauvarṇika)</td>
+          <td>Initially high fineness (~95–98% silver under Augustus)</td>
+          <td>Systematically debased: Nero dropped to ~80%, Trajan to ~85%, Septimius Severus to ~50%, and Gallienus to &lt;5% copper wash</td>
+        </tr>
+        <tr>
+          <th scope="row">Market Value Logic</th>
+          <td><strong>Intrinsic bullion metal mass</strong>: Valued strictly by weight &amp; touchstone assay (nikaṣa / kasauṭī)</td>
+          <td>Imperial fiat currency backed by Roman state decree within the Empire</td>
+          <td><strong>Treated as raw scrap bullion abroad</strong>: Indian traders slashed the emperor's portrait to reject imperial fiat and melted coins down to intrinsic purity</td>
         </tr>
       </tbody>
     </table>
     <p className="vaf-note">
-      No laboratory figure for the silver percentage of a punch-marked kārṣāpaṇa is given here. The Roman column is the standard numismatic account of Nero’s reform of AD 64.
+      At ports like Muziris (Kerala), Roman aurei and denarii were weighed on balances against native Ratti standards and tested on Kasauṭī stones. The deep chisel slashes across the imperial portrait served as trade defacement: treating the Roman coin strictly as raw bullion scrap regardless of imperial politics.
     </p>
   </div>
 );
@@ -863,41 +869,57 @@ const PanchangaCompared = () => (
 const NamedPowersThree = () => (
   <div className="vaf-table-wrap">
     <table className="vaf-table">
-      <caption>Three counting ideas, and what the text itself does</caption>
+      <caption>Major Large-Number Systems in Ancient Indian Texts</caption>
       <thead>
         <tr>
-          <th scope="col">Idea</th>
-          <th scope="col">Where it is preserved</th>
-          <th scope="col">What is named</th>
+          <th scope="col">Tradition &amp; Source</th>
+          <th scope="col">Base Step</th>
+          <th scope="col">Scale Range</th>
+          <th scope="col">Peak Named Value</th>
+          <th scope="col">Historical Context</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">Decuple names</th>
-          <td>Vājasaneyi Saṃhitā 17.2</td>
-          <td>
-            A name for each next ten, through parārdha. On Dutta’s reading of this verse, parārdha is 10
-            <Sup>12</Sup>. Later place-lists set the same name higher.
-          </td>
+          <th scope="row">Vājasaneyi Saṃhitā 17.2</th>
+          <td>10× (Decuple)</td>
+          <td>10<Sup>0</Sup> to 10<Sup>12</Sup></td>
+          <td><strong>Parārdha (10<Sup>12</Sup>)</strong></td>
+          <td>Sacrificial brick altar geometry; eka through parārdha (1 trillion)</td>
         </tr>
         <tr>
-          <th scope="row">Tallakṣaṇa scale</th>
-          <td>Lalitavistara, chapter 12</td>
-          <td>
-            Each name is a hundred times the last. 10<Sup>53</Sup> only if a koṭi is 10<Sup>7</Sup>. The chapter
-            continues past tallakṣaṇa.
-          </td>
+          <th scope="row">Vālmīki Rāmāyaṇa 6.28</th>
+          <td>100,000× (1 Lakṣa step)</td>
+          <td>10<Sup>2</Sup> to 10<Sup>57</Sup></td>
+          <td><strong>Mahā-ogha (10<Sup>57</Sup>)</strong></td>
+          <td>Śuka’s census of the Vānara army for Rāvaṇa; Śaṅku, Padma, Kharva to Ogha</td>
         </tr>
         <tr>
-          <th scope="row">Meru-prastāra</th>
-          <td>Halāyudha (10th century) on Piṅgala</td>
-          <td>
-            Combination counts for short and long syllables, written as a triangle. The sūtra’s device is the
-            prastāra, the expansion of the patterns.
-          </td>
+          <th scope="row">Lalitavistara Sūtra ch. 12</th>
+          <td>100× (Centesimal)</td>
+          <td>10<Sup>7</Sup> to 10<Sup>53</Sup> … 10<Sup>140</Sup></td>
+          <td><strong>Uttaraparamāṇu (10<Sup>140</Sup>)</strong></td>
+          <td>Prince Siddhārtha’s dialogue with Arjuna; Tallakṣaṇa (10<Sup>53</Sup>) and cosmic atom counting (10<Sup>140</Sup>)</td>
+        </tr>
+        <tr>
+          <th scope="row">Bhāskara’s Līlāvatī (1150 CE)</th>
+          <td>10× (Place-Value)</td>
+          <td>10<Sup>0</Sup> to 10<Sup>17</Sup></td>
+          <td><strong>Parārdha (10<Sup>17</Sup>)</strong></td>
+          <td>Standard 18 decimal places (Aṣṭādaśa Sthānāni) for classical mathematics</td>
+        </tr>
+        <tr>
+          <th scope="row">Anuyogadvāra Sūtra (Jaina)</th>
+          <td>Structural Cardinality</td>
+          <td>Finite to Infinite</td>
+          <td><strong>Anantānanta (∞ of ∞)</strong></td>
+          <td>Classification of Saṅkhyāta (countable), Asaṅkhyāta (innumerable), and Ananta (infinite levels)</td>
         </tr>
       </tbody>
     </table>
+    <p className="vaf-note">
+      For comparison: the estimated number of fundamental subatomic particles in the entire observable universe is roughly 10<Sup>80</Sup>. Ancient Indian mathematicians had named values reaching 10<Sup>140</Sup>—exceeding the universe's total particle count by sixty orders of magnitude.
+    </p>
   </div>
 );
 

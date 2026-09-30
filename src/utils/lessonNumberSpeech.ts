@@ -13,13 +13,13 @@
 
 import { SANSKRIT_NUMBERS_1_TO_100 } from '../data/sanskritNumbers';
 
-/** Cardinal stems. 1–10 are एक द्वि त्रि चतुर् … not the neuter एकम् / द्वे forms. */
+/** Authentic Sanskrit cardinals: 0=शून्यम्, 1=एकम्, 2=द्वे, 3=त्रीणि, 4=चत्वारि, 5=पञ्च, 6=षट्, 7=सप्त, 8=अष्ट, 9=नव, 10=दश. */
 const CARDINAL_0_TO_10 = [
   'शून्यम्',
-  'एक',
-  'द्वि',
-  'त्रि',
-  'चतुर्',
+  'एकम्',
+  'द्वे',
+  'त्रीणि',
+  'चत्वारि',
   'पञ्च',
   'षट्',
   'सप्त',
@@ -27,6 +27,20 @@ const CARDINAL_0_TO_10 = [
   'नव',
   'दश',
 ] as const;
+
+/** Ordinal words for numbered exercise/question items (१., २., ३., 1., 2., 3.) */
+const ORDINAL_1_TO_10: Record<number, string> = {
+  1: 'प्रथमम्',
+  2: 'द्वितीयम्',
+  3: 'तृतीयम्',
+  4: 'चतुर्थम्',
+  5: 'पञ्चमम्',
+  6: 'षष्ठम्',
+  7: 'सप्तमम्',
+  8: 'अष्टमम्',
+  9: 'नवमम्',
+  10: 'दशमम्',
+};
 
 const WORD_BY_VALUE = new Map<number, string>(
   SANSKRIT_NUMBERS_1_TO_100.map((item) => [item.value, item.word]),
@@ -53,8 +67,11 @@ const integerFromDigits = (run: string): number | null => {
 };
 
 /** One integer → Devanagari word(s). No Roman letters. */
-export const cardinalForInteger = (n: number): string[] => {
+export const cardinalForInteger = (n: number, isOrdinal = false): string[] => {
   if (!Number.isInteger(n) || n < 0) return [];
+  if (isOrdinal && n >= 1 && n <= 10 && ORDINAL_1_TO_10[n]) {
+    return [ORDINAL_1_TO_10[n]];
+  }
   if (n <= 10) return [CARDINAL_0_TO_10[n]];
   const listed = WORD_BY_VALUE.get(n);
   if (listed) return [listed];
@@ -67,19 +84,32 @@ const DIGIT_RUN = /[0-9०-९]+/g;
 
 /**
  * Replace every digit run in lesson text, including inside a sentence
- * ("एकः २", "The 12 Solar", "2."). Surrounding words stay. No raw digit
+ * ("एकः २", "The 12 Solar", "2.", "१."). Surrounding words stay. No raw digit
  * is left for hi-IN ("do") or an English voice ("two").
- * Number-guide labels are not passed through here.
+ * Numbered list items like "१." or "2." are pronounced as ordinals (प्रथमम्, द्वितीयम्).
  */
 export const expandDigitsInLessonText = (text: string): string => {
   if (!text) return '';
+  // Check if text is an ordinal item like "१." or "1." or "(१)"
+  const trimmed = text.trim();
+  const ordinalMatch = trimmed.match(/^[([]?([0-9०-९]+)[.।)\\]]?$/);
+  if (ordinalMatch && (trimmed.includes('.') || trimmed.includes('।') || trimmed.startsWith('('))) {
+    const n = integerFromDigits(ordinalMatch[1]);
+    if (n !== null && n >= 1 && n <= 10) {
+      return ORDINAL_1_TO_10[n];
+    }
+  }
+
   DIGIT_RUN.lastIndex = 0;
   if (!DIGIT_RUN.test(text)) return text;
   DIGIT_RUN.lastIndex = 0;
-  const expanded = text.replace(DIGIT_RUN, (run) => {
+  const expanded = text.replace(DIGIT_RUN, (run, offset, fullStr) => {
     const n = integerFromDigits(run);
     if (n === null) return ' ';
-    const spoken = cardinalForInteger(n);
+    // If followed by dot or closing paren, treat 1-10 as ordinal
+    const nextChar = fullStr[offset + run.length];
+    const isOrdinal = (nextChar === '.' || nextChar === '।') && n >= 1 && n <= 10;
+    const spoken = cardinalForInteger(n, isOrdinal);
     return spoken.length ? ` ${spoken.join(' ')} ` : ' ';
   });
   // Belt: a digit the parser could not read must not reach the engine.

@@ -766,25 +766,94 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 <span className="varnamala-mode-icon">📑</span>
                 <span>अभ्यास-पत्रिकाः (Printable Worksheets)</span>
               </button>
+              {onOpenBarakhadi && (
+                <button
+                  type="button"
+                  className="varnamala-mode-btn"
+                  onClick={onOpenBarakhadi}
+                  style={{
+                    background: 'linear-gradient(135deg, #fef3c7, #fde68a)',
+                    color: '#92400e',
+                    border: '1.5px solid #f59e0b',
+                    fontWeight: 700,
+                  }}
+                  title="Switch to 400+ Syllables Grid (क का कि की ...)"
+                >
+                  <span className="varnamala-mode-icon">🔡</span>
+                  <span>बारहखड़ी · Guṇintālu (400+ Grid) →</span>
+                </button>
+              )}
+            </nav>
+          )}
+
+          {activeLessonId === 'barakhadi' && (
+            <nav className="varnamala-studio-nav" aria-label="Barakhadi Studio Modes">
+              <button
+                type="button"
+                className="varnamala-mode-btn varnamala-mode-btn--active"
+              >
+                <span className="varnamala-mode-icon">🔡</span>
+                <span>बारहखड़ी · Guṇintālu (400+ Syllables Grid)</span>
+              </button>
+              <button
+                type="button"
+                className="varnamala-mode-btn"
+                onClick={() => onSelectLesson('varnamala')}
+                style={{
+                  background: 'linear-gradient(135deg, #e0f2fe, #bae6fd)',
+                  color: '#0369a1',
+                  border: '1.5px solid #38bdf8',
+                  fontWeight: 700,
+                }}
+              >
+                <span className="varnamala-mode-icon">🔤</span>
+                <span>← वर्णमाला (Basic Alphabet)</span>
+              </button>
             </nav>
           )}
 
           {isVarnamala && onOpenBarakhadi && (
-            <a
-              href="/barakhadi"
-              className="varnamala-barakhadi-link"
-              onClick={(e) => {
-                e.preventDefault();
-                onOpenBarakhadi();
+            <div
+              className="varnamala-barakhadi-banner"
+              onClick={onOpenBarakhadi}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onOpenBarakhadi();
+                }
+              }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '1rem 1.25rem',
+                margin: '0.85rem 0 1.25rem',
+                background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
+                border: '2px solid #f59e0b',
+                borderRadius: '12px',
+                cursor: 'pointer',
+                boxShadow: '0 3px 10px rgba(245, 158, 11, 0.15)',
+                transition: 'all 0.2s ease',
               }}
             >
-              <span className="varnamala-barakhadi-link__dev" aria-hidden="true">का कि की</span>
-              <span className="varnamala-barakhadi-link__text">
-                <strong>बारहखड़ी · Barakhadi</strong>
-                <span>consonant + vowel chart (क का कि की …) with audio</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <span style={{ fontSize: '2rem' }}>🔡</span>
+                <div>
+                  <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#92400e', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    <span>Looking for बारहखड़ी · Guṇintālu?</span>
+                    <span style={{ fontSize: '0.72rem', background: '#d97706', color: '#fff', padding: '2px 8px', borderRadius: '999px', textTransform: 'uppercase', fontWeight: 800 }}>400+ Syllables Audio</span>
+                  </div>
+                  <div style={{ fontSize: '0.86rem', color: '#78350f', marginTop: '3px' }}>
+                    Practice all 400+ consonant-vowel combinations (क का कि की कु कू …) with authentic Indian studio pronunciation!
+                  </div>
+                </div>
+              </div>
+              <span style={{ fontWeight: 800, color: '#b45309', fontSize: '0.95rem', whiteSpace: 'nowrap', padding: '8px 16px', background: '#ffffff', borderRadius: '8px', border: '1.5px solid #f59e0b', boxShadow: '0 2px 4px rgba(0,0,0,0.06)' }}>
+                Open बारहखड़ी Studio →
               </span>
-              <span className="varnamala-barakhadi-link__arrow" aria-hidden="true">→</span>
-            </a>
+            </div>
           )}
 
           {isNumbers && (
