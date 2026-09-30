@@ -366,4 +366,31 @@ export const SANSKRIT_EXPLANATIONS: Record<string, SanskritExplanation> = {
       },
     ],
   },
+
+  'vakyapadiya-and-ai': {
+    titleSa: 'वाक्यपदीयं कृत्रिमप्रज्ञा च — बोधि-व्याख्या',
+    titleEn: "Bodhi's Overview: Bhartṛhari's Vākyapadīya & Modern AI",
+    takeawayQuote: {
+      sa: 'वाक्यात् पदानाम् अत्यन्तं प्रविवेको न कश्चन।',
+      en: 'Words have no independent existence outside the holistic context of the sentence.',
+    },
+    sanskritText:
+      'अत्र भर्तृहरेः वाक्यपदीयस्य सिद्धान्ताः विवृताः। वाक्यम् अखण्डं भवति (अखण्ड-वाक्य-स्फोटः), अर्थश्च प्रतिभा-रूपेण झटिति स्फुरति। नासा-संशोधकः रिक-ब्रिग्स् १९८५ तमे वर्षे दर्शितवान् यत् पाणिनेः कारक-व्यवस्था आधुनिक-कम्प्यूटर-जालैः (Semantic Networks) सह समाना वर्तते। क्रिया एव वाक्यस्य प्रधानं केन्द्रम्।',
+    englishTranslation:
+      'Here Bodhi outlines Bhartṛhari’s linguistic breakthroughs. The sentence is an indivisible semantic whole (Akhaṇḍa-Vākya-Sphoṭa), and meaning flashes as an intuitive cognitive gestalt (Pratibhā). NASA scientist Rick Briggs demonstrated in 1985 that Pāṇini’s kāraka system is mathematically identical to modern AI semantic dependency graphs, with the action (Kriyā) serving as the root governing node.',
+    bulletPoints: [
+      {
+        sa: 'अखण्ड-वाक्य-स्फोटः — वाक्यम् एव अर्थस्य मूलम्, न तु पृथक्-पदानि।',
+        en: 'Sentence holism: The complete sentence is the primary unit of semantic meaning, not isolated words.',
+      },
+      {
+        sa: 'षट् कारकाणि — क्रियायाः जनकाः सम्बन्धाः (Agent, Object, Instrument, Goal, Source, Locus)।',
+        en: 'The 6 Kārakas form an event-centric directed graph around the verb (Kriyā).',
+      },
+      {
+        sa: 'पश्यन्ती-मध्यमा-वैखरी — आधुनिक-ट्रान्सफॉर्मर-जालस्य (Self-Attention) समानाः स्तराः।',
+        en: 'Bhartṛhari’s speech hierarchy mirrors the deep attention layers of modern generative AI.',
+      },
+    ],
+  },
 };

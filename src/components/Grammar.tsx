@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ARTICLES } from '../data/articleIndex';
-import { SANSKRIT_ARTICLES, SANSKRIT_ARTICLE_META } from '../data/sanskritArticles';
+import { SANSKRIT_ARTICLE_META } from '../data/sanskritArticles';
 import { ARTICLE_KEY_WORDS } from '../data/articleKeyWords';
 import { SANSKRIT_EXPLANATIONS } from '../data/sanskritExplanations';
 import { parseArticle, type ParsedArticle } from '../utils/articleParser';
@@ -18,31 +18,125 @@ export type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'numbers' | '
 
 const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((response) => response.text());
 
-const URL_PATTERN = /(https?:\/\/[^\s)]+)/g;
 const SITE_ORIGIN_PATTERN = /^https?:\/\/(www\.)?ednetlearn\.in/i;
 
-/** Renders plain article text, turning bare http(s) URLs into links (site links stay in the same tab). */
-const renderLinkedText = (text: string): React.ReactNode => {
-  if (!text.includes('http')) return text;
-  const parts = text.split(URL_PATTERN);
+const MARKDOWN_TOKEN_PATTERN = /(\[[^\]]+\]\(https?:\/\/[^\s)]+\)|https?:\/\/[^\s)<>]+|\*\*[^*]+\*\*|`[^`]+`)/g;
+const DEVANAGARI_WORD_PATTERN = /([\u0901-\u0963\u0970-\u097F\u200C\u200D]+(?:[-—][\u0901-\u0963\u0970-\u097F\u200C\u200D]+)*)/g;
+
+/** Renders Devanagari Sanskrit words as interactive tap-to-pronounce saffron pills */
+const renderDevanagariWords = (text: string, baseKey: string): React.ReactNode => {
+  const parts = text.split(DEVANAGARI_WORD_PATTERN);
+  if (parts.length === 1) return text;
+
   return parts.map((part, i) => {
     if (i % 2 === 0) return part;
-    const trailing = part.match(/[.,;:!?]+$/)?.[0] ?? '';
-    const url = trailing ? part.slice(0, -trailing.length) : part;
-    const isSite = SITE_ORIGIN_PATTERN.test(url);
-    const href = isSite ? url.replace(SITE_ORIGIN_PATTERN, '') || '/' : url;
+    const cleanWord = part.trim();
+    if (!cleanWord) return part;
+
     return (
-      <React.Fragment key={i}>
-        <a
-          href={href}
-          className="grammar-article-link"
-          {...(isSite ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
-        >
-          {url.replace(/^https?:\/\/(www\.)?/, '')}
-        </a>
-        {trailing}
-      </React.Fragment>
+      <span
+        key={`${baseKey}-sa-${i}`}
+        className="grammar-sanskrit-highlight"
+        onClick={(e) => {
+          e.stopPropagation();
+          playPronunciation(cleanWord);
+        }}
+        title={`Tap to hear Sanskrit pronunciation: ${cleanWord}`}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            playPronunciation(cleanWord);
+          }
+        }}
+      >
+        {part}
+      </span>
     );
+  });
+};
+
+/**
+ * Rich parser for grammar article text:
+ * - Parses markdown links [text](url) and bare URLs
+ * - Parses bolding **text**
+ * - Parses inline code `code`
+ * - Automatically highlights Devanagari Sanskrit words with tap-to-pronounce
+ */
+const renderRichArticleText = (text: string, baseKeyPrefix = 'rich'): React.ReactNode => {
+  if (!text) return null;
+
+  const parts = text.split(MARKDOWN_TOKEN_PATTERN);
+  if (parts.length === 1) {
+    return renderDevanagariWords(text, `${baseKeyPrefix}-single`);
+  }
+
+  return parts.map((part, i) => {
+    if (!part) return null;
+    const key = `${baseKeyPrefix}-${i}`;
+
+    // Markdown link: [Anchor text](https://...)
+    if (part.startsWith('[') && part.includes('](') && part.endsWith(')')) {
+      const match = part.match(/^\[(.*?)\]\((https?:\/\/[^\s)]+)\)$/);
+      if (match) {
+        const [, linkText, rawUrl] = match;
+        const isSite = SITE_ORIGIN_PATTERN.test(rawUrl);
+        const href = isSite ? rawUrl.replace(SITE_ORIGIN_PATTERN, '') || '/' : rawUrl;
+        return (
+          <a
+            key={key}
+            href={href}
+            className="grammar-article-link"
+            {...(isSite ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
+          >
+            {renderDevanagariWords(linkText, `${key}-lt`)}
+          </a>
+        );
+      }
+    }
+
+    // Markdown bold: **content**
+    if (part.startsWith('**') && part.endsWith('**') && part.length >= 4) {
+      const boldContent = part.slice(2, -2);
+      return (
+        <strong key={key}>
+          {renderDevanagariWords(boldContent, `${key}-b`)}
+        </strong>
+      );
+    }
+
+    // Inline code: `code`
+    if (part.startsWith('`') && part.endsWith('`') && part.length >= 2) {
+      return (
+        <code key={key} className="grammar-inline-code">
+          {part.slice(1, -1)}
+        </code>
+      );
+    }
+
+    // Bare URL: https://...
+    if (part.startsWith('http://') || part.startsWith('https://')) {
+      const trailing = part.match(/[.,;:!?)]+$/)?.[0] ?? '';
+      const url = trailing ? part.slice(0, -trailing.length) : part;
+      const isSite = SITE_ORIGIN_PATTERN.test(url);
+      const href = isSite ? url.replace(SITE_ORIGIN_PATTERN, '') || '/' : url;
+      return (
+        <React.Fragment key={key}>
+          <a
+            href={href}
+            className="grammar-article-link"
+            {...(isSite ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
+          >
+            {url.replace(/^https?:\/\/(www\.)?/, '')}
+          </a>
+          {trailing}
+        </React.Fragment>
+      );
+    }
+
+    // Plain text: highlight Devanagari words
+    return <React.Fragment key={key}>{renderDevanagariWords(part, key)}</React.Fragment>;
   });
 };
 
@@ -66,18 +160,18 @@ const Grammar: React.FC<GrammarProps> = ({
   const [searchFilter, setSearchFilter] = useState('');
   const [articles, setArticles] = useState<Record<string, ParsedArticle>>({});
   const [articleError, setArticleError] = useState(false);
-  const [articleLang, setArticleLang] = useState<'en' | 'sa'>(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        return localStorage.getItem('grammar_article_lang') === 'sa' ? 'sa' : 'en';
-      } catch {}
-    }
-    return 'en';
-  });
   const [activeSpokenWord, setActiveSpokenWord] = useState<string | null>(null);
   const [isExplanationSpeaking, setIsExplanationSpeaking] = useState(false);
   const [showEnglishExplanation, setShowEnglishExplanation] = useState(true);
   const explanationStopRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => {
+    try {
+      localStorage.removeItem('grammar_article_lang');
+    } catch {
+      /* ignore storage errors */
+    }
+  }, []);
 
   const activeArticleMeta = ARTICLES.find((item) => item.id === activeArticleId);
   const activeArticle = activeArticleId ? articles[activeArticleId] : undefined;
@@ -119,13 +213,6 @@ const Grammar: React.FC<GrammarProps> = ({
       },
     });
     explanationStopRef.current = stopFn;
-  };
-
-  const handleToggleArticleLang = (lang: 'en' | 'sa') => {
-    setArticleLang(lang);
-    try {
-      localStorage.setItem('grammar_article_lang', lang);
-    } catch {}
   };
 
   const goBackToShelf = () => {
@@ -383,17 +470,9 @@ const Grammar: React.FC<GrammarProps> = ({
   }
 
   if (topic === 'article') {
-    const saArticle = activeArticleId ? SANSKRIT_ARTICLES[activeArticleId] : undefined;
-    const saMeta = activeArticleId ? SANSKRIT_ARTICLE_META[activeArticleId] : undefined;
-    const displayArticle = articleLang === 'sa' && saArticle ? saArticle : activeArticle;
-    const displayTitle = displayArticle
-      ? displayArticle.title
-      : articleLang === 'sa' && saMeta
-      ? saMeta.titleSa
-      : activeArticleMeta?.cardTitle || 'Article';
-    const displaySubtitle =
-      displayArticle?.subtitle ||
-      (articleLang === 'sa' && saMeta ? saMeta.blurbSa : activeArticleMeta?.cardBlurb);
+    const displayArticle = activeArticle;
+    const displayTitle = displayArticle?.title || activeArticleMeta?.cardTitle || 'Article';
+    const displaySubtitle = displayArticle?.subtitle || activeArticleMeta?.cardBlurb;
     const keyWords = activeArticleId ? ARTICLE_KEY_WORDS[activeArticleId] : undefined;
     const activeExplanation = activeArticleId ? SANSKRIT_EXPLANATIONS[activeArticleId] : undefined;
 
@@ -405,12 +484,12 @@ const Grammar: React.FC<GrammarProps> = ({
           {displaySubtitle && <p className="grammar-lead">{displaySubtitle}</p>}
         </header>
 
-        {/* Bodhi Mascot Article Companion: Translate & Key Words in Sanskrit Audio */}
+        {/* Bodhi Mascot Article Companion: Key Words & Sanskrit Recitation */}
         <div className="grammar-bodhi-companion-card">
           <div className="grammar-bodhi-companion-avatar">
             <BodhiAvatar
               size="md"
-              mood={isExplanationSpeaking ? 'scholar' : activeSpokenWord ? 'happy' : articleLang === 'sa' ? 'scholar' : 'reading'}
+              mood={isExplanationSpeaking ? 'scholar' : activeSpokenWord ? 'happy' : 'reading'}
               showHalo={true}
               isSpeaking={isExplanationSpeaking || activeSpokenWord !== null}
             />
@@ -421,32 +500,10 @@ const Grammar: React.FC<GrammarProps> = ({
                 <span className="grammar-bodhi-name">बोधिः (Bodhi)</span>
                 <span className="grammar-bodhi-badge">Sanskrit Mascot &amp; Guide</span>
               </div>
-
-              {/* Translate Option with Bodhi */}
-              <div className="grammar-bodhi-translate-group">
-                <button
-                  type="button"
-                  className={`grammar-bodhi-trans-btn${articleLang === 'en' ? ' active' : ''}`}
-                  onClick={() => handleToggleArticleLang('en')}
-                  title="Read original English article"
-                >
-                  🇬🇧 English (Original)
-                </button>
-                <button
-                  type="button"
-                  className={`grammar-bodhi-trans-btn${articleLang === 'sa' ? ' active' : ''}`}
-                  onClick={() => handleToggleArticleLang('sa')}
-                  title="Ask Bodhi to translate this article into सरल-संस्कृतम् (Simple Sanskrit)"
-                >
-                  🕉️ Translate to Sanskrit (सरल-संस्कृतम्)
-                </button>
-              </div>
             </div>
 
             <p className="grammar-bodhi-speech">
-              {articleLang === 'sa'
-                ? 'नमस्ते! अहं सम्पूर्णं लेखं सरल-संस्कृतेन अनूदितवान्। अधः बोधि-व्याख्यां शृणोतु, मुख्य-शब्दान् च स्पृष्ट्वा मया सह उच्चारणं कुरुतु!'
-                : 'Namaste! I am Bodhi. Listen to my simple Sanskrit explanation below, or tap any key word to hear authentic pronunciation!'}
+              Namaste! I am Bodhi. Explore the key concepts below, and tap any highlighted Sanskrit word in the glossary or narrative to hear authentic pronunciation!
             </p>
 
             {/* Bodhi's Sanskrit Explanation (💡 बोधि-व्याख्या · Bodhi's Sanskrit Explanation) */}
@@ -540,7 +597,7 @@ const Grammar: React.FC<GrammarProps> = ({
             {keyWords && keyWords.length > 0 && (
               <div className="grammar-bodhi-keywords-wrap">
                 <span className="grammar-bodhi-keywords-label">
-                  🔊 <strong>बोधिः वदति (Bodhi recites):</strong> Tap any key word to hear authentic pronunciation:
+                  <strong>बोधि-शब्दावली (Key Sanskrit Terms):</strong> Tap any word to hear authentic pronunciation:
                 </span>
                 <div className="grammar-bodhi-chips">
                   {keyWords.map((kw, kwIdx) => {
@@ -577,33 +634,23 @@ const Grammar: React.FC<GrammarProps> = ({
             {displayArticle.blocks.map((block, index) => {
               if (block.type === 'subheading') {
                 return (
-                  <div key={index} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
-                    <h3 className="grammar-article-subheading" style={{ margin: 0 }}>
-                      {block.text}
-                    </h3>
-                    <button
-                      type="button"
-                      onClick={() => playPronunciation(block.text)}
-                      title="Hear Sanskrit pronunciation"
-                      style={{
-                        background: 'transparent',
-                        border: 'none',
-                        cursor: 'pointer',
-                        fontSize: '0.95rem',
-                        opacity: 0.75,
-                        padding: '0.2rem 0.4rem',
-                      }}
-                    >
-                      🔊
-                    </button>
-                  </div>
+                  <h3 key={index} className="grammar-article-subheading">
+                    {renderRichArticleText(block.text, `sub-${index}`)}
+                  </h3>
+                );
+              }
+              if (block.type === 'quote') {
+                return (
+                  <blockquote key={index} className="grammar-article-quote">
+                    {renderRichArticleText(block.text, `quote-${index}`)}
+                  </blockquote>
                 );
               }
               if (block.type === 'list') {
                 return (
                   <ul className="grammar-article-list" key={index}>
                     {block.items.map((item, itemIndex) => (
-                      <li key={itemIndex}>{renderLinkedText(item)}</li>
+                      <li key={itemIndex}>{renderRichArticleText(item, `li-${index}-${itemIndex}`)}</li>
                     ))}
                   </ul>
                 );
@@ -615,7 +662,7 @@ const Grammar: React.FC<GrammarProps> = ({
                       <thead>
                         <tr>
                           {block.headers.map((header, headerIndex) => (
-                            <th key={headerIndex}>{header}</th>
+                            <th key={headerIndex}>{renderRichArticleText(header, `th-${index}-${headerIndex}`)}</th>
                           ))}
                         </tr>
                       </thead>
@@ -623,7 +670,7 @@ const Grammar: React.FC<GrammarProps> = ({
                         {block.rows.map((row, rowIndex) => (
                           <tr key={rowIndex}>
                             {row.map((cell, cellIndex) => (
-                              <td key={cellIndex}>{renderLinkedText(cell)}</td>
+                              <td key={cellIndex}>{renderRichArticleText(cell, `td-${index}-${rowIndex}-${cellIndex}`)}</td>
                             ))}
                           </tr>
                         ))}
@@ -639,7 +686,7 @@ const Grammar: React.FC<GrammarProps> = ({
                     <img src={src} alt={block.alt} className="grammar-article-image" loading="lazy" />
                     {block.caption && (
                       <figcaption className="grammar-article-image-caption">
-                        {block.caption}
+                        {renderRichArticleText(block.caption, `cap-${index}`)}
                       </figcaption>
                     )}
                   </figure>
@@ -653,29 +700,9 @@ const Grammar: React.FC<GrammarProps> = ({
                 );
               }
               return (
-                <div key={index} style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.5rem' }}>
-                  <p className="grammar-article-paragraph" style={{ margin: 0, flex: 1 }}>
-                    {renderLinkedText(block.text)}
-                  </p>
-                  {articleLang === 'sa' && (
-                    <button
-                      type="button"
-                      onClick={() => playPronunciation(block.text)}
-                      title="Hear this paragraph in Sanskrit"
-                      style={{
-                        background: 'transparent',
-                        border: 'none',
-                        cursor: 'pointer',
-                        fontSize: '0.9rem',
-                        opacity: 0.65,
-                        padding: '0.2rem',
-                        flexShrink: 0,
-                      }}
-                    >
-                      🔊
-                    </button>
-                  )}
-                </div>
+                <p key={index} className="grammar-article-paragraph">
+                  {renderRichArticleText(block.text, `p-${index}`)}
+                </p>
               );
             })}
             <footer className="grammar-article-footer">
@@ -851,27 +878,6 @@ const Grammar: React.FC<GrammarProps> = ({
         )}
       </div>
 
-      {/* Shelf Language Switcher Controls */}
-      <div className="grammar-shelf-controls">
-        <span className="grammar-shelf-lang-label">📖 Read Articles in / भाषा-चयनम्:</span>
-        <div className="grammar-lang-pill-group">
-          <button
-            type="button"
-            className={`grammar-lang-pill-btn${articleLang === 'en' ? ' active' : ''}`}
-            onClick={() => handleToggleArticleLang('en')}
-          >
-            🇬🇧 English
-          </button>
-          <button
-            type="button"
-            className={`grammar-lang-pill-btn${articleLang === 'sa' ? ' active' : ''}`}
-            onClick={() => handleToggleArticleLang('sa')}
-          >
-            🕉️ संस्कृतेन पठ्यताम् (Read in Sanskrit)
-          </button>
-        </div>
-      </div>
-
       {!qClean && (
         <button
           type="button"
@@ -906,27 +912,19 @@ const Grammar: React.FC<GrammarProps> = ({
           </button>
         ))}
 
-        {filteredArticles.map((item) => {
-          const saMeta = SANSKRIT_ARTICLE_META[item.id];
-          const cardTitle = articleLang === 'sa' && saMeta ? saMeta.titleSa : item.cardTitle;
-          const cardBlurb = articleLang === 'sa' && saMeta ? saMeta.blurbSa : item.cardBlurb;
-          return (
-            <button
-              type="button"
-              className="grammar-card grammar-card--ready"
-              key={item.id}
-              onClick={() => openArticle(item.id)}
-            >
-              <span className="grammar-card-title">
-                {item.emoji} {cardTitle}
-              </span>
-              <span className="grammar-card-blurb">{cardBlurb}</span>
-              {articleLang === 'sa' && (
-                <span className="grammar-sanskrit-tag">🕉️ सरल-संस्कृतम् · Sanskrit</span>
-              )}
-            </button>
-          );
-        })}
+        {filteredArticles.map((item) => (
+          <button
+            type="button"
+            className="grammar-card grammar-card--ready"
+            key={item.id}
+            onClick={() => openArticle(item.id)}
+          >
+            <span className="grammar-card-title">
+              {item.emoji} {item.cardTitle}
+            </span>
+            <span className="grammar-card-blurb">{item.cardBlurb}</span>
+          </button>
+        ))}
       </div>
 
       {totalMatches === 0 && (

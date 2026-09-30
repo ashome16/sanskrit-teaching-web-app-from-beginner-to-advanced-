@@ -1028,7 +1028,13 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
           '4. You apply the experimental psychophysical tools of Yoga to quieten the nervous system and experience pure consciousness directly.',
           '5. You execute your duty with Mīmāṃsā, harmonizing speech and action with cosmic order.',
           '6. And finally, you dissolve all artificial boundaries in Vedānta, resting in the singular, undivided ground of existence.',
+          'This non-sectarian, unitive synthesis is captured in the celebrated classical verse attributed to tradition and invoked by Ādi Śaṅkarācārya: just as every raindrop falling from any cloud or corner of the sky eventually flows through different tributaries into the one vast ocean, every genuine philosophical stream (Darśana) inevitably conducts consciousness into the solitary, non-dual substratum of Being.',
         ],
+        callout: {
+          title: 'The Ocean of Synthesis (सागर-समन्वयः)',
+          text: '“आकाशात् पतितं तोयं यथा गच्छति सागरम् । सर्वदेवनमस्कारः केशवं प्रति गच्छति ॥” — Just as water falling from the skies ultimately reaches the one boundless ocean, all streams of inquiry, worship, and philosophical reflection ultimately converge in the Supreme Reality.',
+          type: 'philosophical',
+        },
       },
     ],
     keyTakeaways: [

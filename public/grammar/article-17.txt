@@ -3,8 +3,7 @@
 
 Efficient transmission and storage of information have always dictated the limits of human knowledge systems. When communicative ambiguity rises, cognitive processing costs increase, leading to systematic errors, parsing friction, and lost computational utility.
 
-In 1985, Rick Briggs, a research scientist working with the Research Institute for Advanced Computer Science (RIACS) at NASA’s Ames Research Center in California, published a foundational paper in AI Magazine titled:
-[“Knowledge Representation in Sanskrit and Artificial Intelligence”](https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/466)
+In 1985, Rick Briggs, a research scientist working with the Research Institute for Advanced Computer Science (RIACS) at NASA’s Ames Research Center in California, published a foundational paper in AI Magazine titled [“Knowledge Representation in Sanskrit and Artificial Intelligence”](https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/466).
 
 Briggs made an assertion that stunned the computational linguistics community: ancient Indian grammarians and semanticists had, two millennia earlier, formulated an operational methodology for natural language that solved the exact problem modern computer scientists were struggling with—creating an unambiguous, machine-interpretable representation of natural language semantics.
 
@@ -167,6 +166,28 @@ A persistent modern myth claims that "NASA declared Sanskrit the best language f
 1. **Explainable AI (XAI)**: Modern Large Language Models (LLMs) operate as opaque probabilistic "black boxes." By integrating kāraka-based deterministic dependency graphs, an AI’s internal reasoning can be audited step-by-step, ensuring transparent logical validation.
 2. **Knowledge Graphs & Web 3.0**: The semantic triple architecture underlying modern web ontologies (Wikidata, Schema.org, Resource Description Framework / RDF) maps directly onto the action-centric graphs formalized by Bhartṛhari.
 3. **Mitigating Hallucinations (Neuro-Symbolic AI)**: Probabilistic language models frequently hallucinate facts because they predict words based on statistical token frequency rather than logical state validation. Hybrid neuro-symbolic systems, where an LLM generates text guided by formal Sanskrit-style semantic constraints, eliminate structural hallucinations at the parsing stage.
+
+## 8 · Glossary of Important Sanskrit & Computational Terms
+
+| Sanskrit Term | IAST | Functional Role in Bhartṛhari’s Grammar | Modern AI & Computational Parallel |
+| :--- | :--- | :--- | :--- |
+| **वाक्यपदीयम्** | Vākyapadīyam | Bhartṛhari’s monumental treatise on sentence holism | Foundational treatise on natural language semantics & cognitive linguistics |
+| **स्फोटः** | Sphoṭaḥ | Indivisible burst of whole meaning flashing in the mind | Semantic Gestalt / Contextualized token representations |
+| **शाब्दबोधः** | Śābdabodhaḥ | Verbal cognition arising from structured syntactic relations | Semantic parsing / Directed dependency graph resolution |
+| **प्रतिभा** | Pratibhā | Immediate cognitive intuition / flash of whole sentence meaning | Latent space state convergence / Single-step inference |
+| **क्रिया** | Kriyā | Action, dynamic motion, or state-change process | Root governing predicate node in semantic networks |
+| **कारकम्** | Kārakam | Causal participant capacity that helps accomplish an action | Deep semantic case roles (Theta roles / Frame arguments) |
+| **कर्ता** | Kartā | Independent initiating agent (*Svatantraḥ kartā*) | Agent / Subject argument in semantic triples |
+| **कर्म** | Karma | Direct object / primary locus of state change (*Īpsitatamam*) | Patient / Direct object undergoing transformation |
+| **करणम्** | Karaṇa | Auxiliary instrument or most effective tool (*Sādhakatamam*) | Instrumental frame role / Auxiliary modifier |
+| **सम्प्रदानम्** | Sampradānam | Recipient or beneficiary of an action or transfer | Goal / Recipient node in relational graph |
+| **अपादानम्** | Apādānam | Fixed baseline origin from which separation occurs | Source / Origin vector in spatial-temporal frames |
+| **अधिकरणम्** | Adhikaraṇam | Physical, spatial, or temporal locus supporting the event | Spatio-temporal context coordinate / Locus argument |
+| **विवरणम्** | Vivaraṇam | Standardized semantic paraphrase resolving surface ambiguities | Intermediate Representation (IR) / Semantic canonicalization |
+| **पश्यन्ती** | Paśyantī | Pre-verbal holistic vision where all relations coexist | Multi-Head Self-Attention layer (global context synthesis) |
+| **मध्यमा** | Madhyamā | Intermediate mental sequencing of syntax and order | Positional encodings & syntactic parsing layers |
+| **वैखरी** | Vaikharī | Overt acoustic speech or surface written characters | Input/output token embeddings (discrete text tokens) |
+| **अपोद्धारः** | Apoddhāraḥ | Analytical extraction of isolated words from holistic sentences | Tokenization & grammatical deconstruction |
 
 ## Summary Checklist
 - **Rick Briggs (1985)**: NASA Ames / RIACS scientist published a landmark paper in *AI Magazine* demonstrating that Sanskrit’s grammatical traditions had already solved semantic knowledge representation.

@@ -4,7 +4,8 @@ export type ArticleBlock =
   | { type: 'list'; items: string[] }
   | { type: 'table'; headers: string[]; rows: string[][] }
   | { type: 'code'; text: string }
-  | { type: 'image'; src: string; alt: string; caption?: string };
+  | { type: 'image'; src: string; alt: string; caption?: string }
+  | { type: 'quote'; text: string };
 
 export interface ParsedArticle {
   title: string;
@@ -16,6 +17,8 @@ export interface ParsedArticle {
  * Parses a lightly-marked-up plain text file into an article:
  *   # Title              -> article title (first line only)
  *   ## Heading           -> first one becomes the subtitle, rest become subheadings
+ *   ### Subheading       -> smaller subheading / section marker
+ *   > Quote              -> styled blockquote
  *   - list item          -> consecutive lines starting with "- " become a list
  *   | a | b | c |        -> consecutive "| ... |" rows become a table (first row = header)
  *   ```                  -> a fenced block (```...```) becomes a preformatted code block
@@ -51,8 +54,12 @@ export function parseArticle(raw: string): ParsedArticle {
 
   const flushTable = () => {
     if (tableRows.length > 0) {
-      const [headers, ...rows] = tableRows;
-      blocks.push({ type: 'table', headers, rows });
+      // Filter out markdown separator rows like | :--- | :--- |
+      const filtered = tableRows.filter((row) => !row.every((cell) => /^:?-+:?$/.test(cell)));
+      if (filtered.length > 0) {
+        const [headers, ...rows] = filtered;
+        blocks.push({ type: 'table', headers, rows });
+      }
       tableRows = [];
     }
   };
@@ -101,6 +108,22 @@ export function parseArticle(raw: string): ParsedArticle {
       } else {
         blocks.push({ type: 'subheading', text });
       }
+      continue;
+    }
+
+    if (line.startsWith('### ')) {
+      flushParagraph();
+      flushList();
+      flushTable();
+      blocks.push({ type: 'subheading', text: line.slice(4).trim() });
+      continue;
+    }
+
+    if (line.startsWith('> ')) {
+      flushParagraph();
+      flushList();
+      flushTable();
+      blocks.push({ type: 'quote', text: line.slice(2).trim() });
       continue;
     }
 
