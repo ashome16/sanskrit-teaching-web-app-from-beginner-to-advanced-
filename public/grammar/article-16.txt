@@ -64,9 +64,21 @@ In Arthaśāstra 2.13, Kauṭilya details sixteen standard reference alloys (**�
 - The assayer streaks the benchmark alloy alongside the merchant's gold on the kasauṭī stone and compares the golden lustre.
 - If a merchant attempted fraud using glittering dust under fingernails or streaks that rubbed away, secondary assays were conducted through cupellation fire (*puṭapāka*) using lead and bone vessels (*kapāla*).
 
+## 5 · Color as a Universal Taxonomic Framework & Diamond Optical Physics
+
+Just as a physicist might categorize light wavelengths or a modern gemologist uses the GIA D-to-Z color scale, ancient Indian scholars used color (*varṇa*) as a universal framework to organize everything in nature:
+- **Soil Classification**: Categorized soil types by color (white, red, yellow, black) to determine agricultural utility, moisture retention, and drainage capacity.
+- **Architecture**: Categorized temple building materials and stone strata by color to determine structural density and load-bearing performance.
+- **Pharmacology**: Categorized medicinal herbs and botanical roots by color in Āyurveda to identify bio-potency and chemical action.
+
+In lapidary treatises (*ratnaparīkṣā*) such as the *Bṛhatsaṃhitā* (ch. 80) and *Arthaśāstra* (2.11), color was applied to mineral specimens strictly as an objective scale of optical properties, internal purity, and light performance—never as a social prescription of who should wear what:
+- **Principles of Light**: Diamonds were evaluated for optical clarity, high refractive brilliance, and multi-hued spectral dispersion resembling lightning or a rainbow (*indrāyudha-saṃnibha*).
+- **Crystal Symmetry**: Lapidaries polished natural crystal faces (octahedral samakoṇa geometry with sharp dhārā edges) to maximize internal total reflection and fire, establishing optical quality benchmarks millennia before modern brilliant cuts.
+
 ## Summary Checklist
 - **Muziris Defacement**: Indian merchants slashed the face of Roman emperors on aurei/denarii, treating foreign coins strictly as raw bullion melted down on Kasauṭī stones.
 - **Harappan 4:2:1 Ratio**: Every brick baked to 4:2:1 for seismic durability; binary weights for fine goods, decimal for bulk.
 - **Kautilyan Recalibration**: Pautavādhyakṣa mandated 4-month scale inspection (*cāturmāsikam*); fines of 6 Paṇas for 1 Māṣa, 12 Paṇas for 2 Māṣas, 200 Paṇas for >5% fraud.
 - **Kūṭatulā Outlawed**: Severe penalties for operating fraudulent double-balances.
 - **Punch-Marked Kārṣāpaṇa vs. Denarius**: Indian kārṣāpaṇa maintained intrinsic 32-ratti silver purity while Rome continuously debased its imperial coinage.
+- **Universal Color Taxonomy**: Color (*varṇa*) served as a universal scientific framework for soils, stones, herbs, and diamonds, evaluating diamonds strictly on optical principles of light and crystal symmetry.

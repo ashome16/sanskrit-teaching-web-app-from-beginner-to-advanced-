@@ -535,15 +535,13 @@ const DiamondGrading = () => (
   <figure className="vaf-figure">
     <div className="vaf-phases" role="list">
       <div className="vaf-phase" role="listitem">
-        <div className="vaf-phase-tag">1 · Varṇa (colour)</div>
-        <div className="vaf-phase-who">Bṛhatsaṃhitā 80.11 · Arthaśāstra 2.11</div>
+        <div className="vaf-phase-tag">1 · Varṇa (Color & Optical Quality)</div>
+        <div className="vaf-phase-who">Bṛhatsaṃhitā 80.11–14 · Arthaśāstra 2.11</div>
         <div className="vaf-phase-eg">
-          Four colour classes named after the varṇas: white for Brāhmaṇas, red or yellow for Kṣatriyas, slightly yellow
-          for Vaiśyas, black for Śūdras.
+          Universal physical color taxonomy: pure clear (white), red, yellow, and deep dark shades.
         </div>
         <div className="vaf-phase-src">
-          The Bṛhatsaṃhitā frames this as who should wear which colour. The Arthaśāstra lists shades such as cat’s-eye,
-          śirīṣa flower, cow’s urine, alum and mālatī flower.
+          Evaluated strictly for optical clarity, lightning flashes, and rainbow spectral dispersion (indrāyudha-saṃnibha)—not who wears what.
         </div>
       </div>
       <div className="vaf-phase" role="listitem">
@@ -552,15 +550,14 @@ const DiamondGrading = () => (
         <div className="vaf-phase-eg">
           The best diamond withstands blows and scratches the surface of vessels (bhājanalekhī).
         </div>
-        <div className="vaf-phase-src">Only a diamond scratches a diamond, which made this a test few fakes could pass.</div>
+        <div className="vaf-phase-src">Only a diamond scratches a diamond, which made this an empirical test few fakes could pass.</div>
       </div>
       <div className="vaf-phase" role="listitem">
-        <div className="vaf-phase-tag">3 · Size, weight, form and light</div>
-        <div className="vaf-phase-who">Arthaśāstra 2.11</div>
-        <div className="vaf-phase-eg">Big, heavy, with regular angles (samakoṇa), refracting light and brilliant.</div>
+        <div className="vaf-phase-tag">3 · Form, Symmetry and Light</div>
+        <div className="vaf-phase-who">Arthaśāstra 2.11 · Bṛhatsaṃhitā 80.8</div>
+        <div className="vaf-phase-eg">Regular octahedral angles (samakoṇa), sharp facets (dhārā), refracting light and dazzling.</div>
         <div className="vaf-phase-src">
-          Density testing by displacement in water or oil is not attested in the classical texts; later gem lore even
-          praises a diamond that “floats on water”, an ideal rather than a measurement.
+          Natural crystal symmetry: clean six- or eight-sided natural faces polished to maximize internal refraction and rainbow fire.
         </div>
       </div>
     </div>

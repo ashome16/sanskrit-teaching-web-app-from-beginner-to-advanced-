@@ -749,17 +749,20 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
         terms: [{ sa: 'रत्नपरीक्षा', iast: 'ratnaparīkṣā', gloss: 'the examination of gems' }],
       },
       {
-        title: 'Colour as a Property of the Stone',
+        title: 'Color as a Universal Taxonomic Framework',
         paragraphs: [
-          'Lapidaries described a diamond by how it looked. The Bṛhatsaṃhitā (80.11) sorts the colours under the four varṇa names, as who should wear which stone: white for Brāhmaṇas, red or yellow for Kṣatriyas, slightly yellow for Vaiśyas, black for Śūdras. It is not a simple scale from colourless down to dark. The same chapter calls a superior diamond light and dazzling, of the colour of lightning, fire or a rainbow (80.14), and praises a six-sided stone (80.8). Read straight, this grades colour cast, marks in the stone and the way the surface handles light. They treated those differences as real properties of the material, not as names only.',
-          'A gemologist today, speaking of a stone of that colour, would name one cause traces of nitrogen in the carbon, from a faint Cape tint to a fancy yellow; another, strain in the crystal, for a pink or brown stone; and another, dense dark inclusions such as graphite, for a black stone. Those are our names for causes. The texts do not use them. What the texts describe is the stone’s own faces: lapidaries polished those natural faces, the six-sided form among them, rather than cutting the many facets of a modern brilliant.',
+          'Just as a physicist might categorize light wavelengths or a modern gemologist uses the GIA D-to-Z color scale, ancient Indian scholars used color as a universal framework to organize everything in nature:',
+          '• They categorized soil types by color (white, red, yellow, black) to determine agricultural utility, moisture retention, and drainage capacity.',
+          '• They categorized temple building materials by color to determine structural density and load-bearing performance.',
+          '• They categorized medicinal herbs by color to identify pharmacological potency and botanical efficacy.',
+          'In lapidary texts, this same objective classification was applied to mineral specimens. It was never a matter of social prescription or who should wear what; it was a physical and optical framework to identify how light interacts with the stone’s crystal structure.',
         ],
       },
       {
-        title: 'Varṇa as a Grade of Quality',
+        title: 'The Principles of Light & Diamond Quality',
         paragraphs: [
-          'Readers sometimes hear the four names on a diamond as a slur. In this chapter varṇa is a grade of quality. Jāti is the other word: a birth-group, or simply a kind. A stone is graded by how it looks and how it performs, not by which mine it came from, and the same word varṇa is used of a person’s qualities and actions.',
-          'That use of the word is preserved in the Bhagavad Gītā (4.13), which divides the four varṇas by guṇa and karma, quality and work. It is preserved again in the Manusmṛti (2.157): an unlearned brāhmaṇa is like an elephant made of wood, or a deer made of leather, and the three bear nothing but the name. The gurukuls, where a student’s varṇa was read from aptitude and conduct, were shut down, and that way of reading the word was lost with them. The Manusmṛti is still widely misread today as a birth-based code, though the verses cited here tie a person’s standing to conduct and to learning: quality and work in the Bhagavad Gītā (4.13), and learning in the Manusmṛti (2.157). Medhātithi reads the mixed-marriage verses (Manusmṛti 10.64–65) as descent through marriage, but that is not the only reading the wider tradition gives, and the verses already cited tie standing to qualities, learning and conduct. One such account is preserved in the Chāndogya Upaniṣad (4.4): Satyakāma Jābāla tells Gautama that his mother Jabālā had served in many houses and does not know his family, and Gautama initiates him because he has not flinched from the truth.',
+          'Indian lapidary science (ratnaparīkṣā) evaluated diamonds on rigorous physical and optical principles: transparency, internal brilliance, dispersion, and crystal symmetry. The Bṛhatsaṃhitā (80.14) identifies the supreme diamond as light, pure, and dazzling—radiating the brilliant flash of lightning, fire, or the multi-hued spectral dispersion of a rainbow (indrāyudha-saṃnibha).',
+          'Rather than carving arbitrary facets, early Indian lapidaries respected and polished the stone’s natural crystal geometry. They praised stones possessing regular edges and six- or eight-sided symmetrical forms (80.8), with sharp facets (dhārā) and perfect internal clarity. In modern optical physics, diamond possesses an extraordinarily high refractive index (2.42) and high dispersion (0.044), which splits white incident light into spectral rainbow fire. Long before modern gemological laboratories, ancient Indian examiners used these precise optical phenomena as the universal benchmark of mineral quality.',
         ],
       },
       {
