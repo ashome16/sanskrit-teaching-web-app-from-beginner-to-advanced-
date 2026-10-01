@@ -881,6 +881,41 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
+            <section className="philosophy-section philosophy-what-they-said" aria-labelledby="what-they-said">
+              <h2 id="what-they-said">What they said</h2>
+              <blockquote className="philosophy-said">
+                <p>
+                  “The intellectual debt of Europe to Sanskrit literature has thus been undeniably great; it may perhaps become greater still in the years that are to come.”
+                </p>
+                <footer>
+                  Arthur A. MacDonell,{' '}
+                  <a
+                    href="https://www.gutenberg.org/files/41563/41563-h/41563-h.htm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    A History of Sanskrit Literature
+                  </a>
+                </footer>
+              </blockquote>
+              <blockquote className="philosophy-said">
+                <p>
+                  “The Sanskrit language, whatever be its antiquity, is of a wonderful structure; more perfect than the Greek, more copious than the Latin and more exquisitely refined than either: yet bearing to both of them a stronger affinity, both in the roots of verbs, and in the forms of grammar, than could possibly have been produced by accident; so strong indeed, that no philologer could examine them all without believing them to have sprung from some common source which perhaps no longer exists.”
+                </p>
+                <footer>
+                  Sir William Jones, Third Anniversary Discourse, 2 February 1786. He came to India in 1783 as a judge of the Supreme Court at Fort William, Bengal.
+                </footer>
+              </blockquote>
+              <blockquote className="philosophy-said">
+                <p>
+                  “Sanskrit language, as has been universally recognized by those competent to form a judgement, as one of the most magnificent, the most perfect, the most prominent and wonderfully sufficient literary instruments developed by the human mind.”
+                </p>
+                <footer>
+                  Sri Aurobindo, <cite>Arya</cite>, May to September 1920
+                </footer>
+              </blockquote>
+            </section>
+
             {/* For learners on this app */}
             <div className="philosophy-learner-box">
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.85rem' }}>
