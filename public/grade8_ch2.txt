@@ -303,139 +303,313 @@ After telling the story, the leader Sudheer addressed everyone: "Friends! The tr
 
 ================================================================================
 
-🧠 Part 3: Interactive Practice Quizzes (5 Quizzes · 21 Questions)
+📝 PART 3: REGENERATED WORKSHEETS (10 Questions Each)
 
-🏆 Quiz 1: कथा-ज्ञानं श्लोकार्थः च (Story Narrative & Hitopadesha Verses · 5 Qs)
+📄 WORKSHEET 1: Comprehensive Textual Context & Vocabulary
+Focus: Textual recall, core terms, and contextual memory from the chapter.
 
-1. Where did the school friends travel for their summer vacation pilgrimage before facing the storm?
-   संस्कृतम्: छात्राः ग्रीष्मावकाशे पुण्यक्षेत्रदर्शनाय कुत्र अगच्छन्?
-   (A) उत्तराखण्डम् (Uttarakhand / Gaurikund)  (B) हिमाचलप्रदेशम् (Himachal Pradesh)  (C) काश्मीरम् (Kashmir)  (D) राजस्थानम् (Rajasthan)
+Q1–Q5. Match the following Sanskrit terms with their correct definitions/meanings:
+1. सेतुः (Setuḥ) [→] ______________  (A. Having hidden / छिपा हुआ)
+2. व्याधः (Vyādhaḥ) [→] ______________  (B. Traps or bonds / बंधन)
+3. प्रच्छन्नः (Pracchannaḥ) [→] ______________  (C. Bridge / पुल)
+4. पाशान् (Pāśān) [→] ______________  (D. By rapid water current / तीव्र बहाव से)
+5. तीव्रजलवेगेन (Tīvrajalavegena) [→] ______________  (E. Hunter / शिकारी)
 
-2. According to Verse 1 ("वृद्धानां वचनं ग्राह्यमापत्काले ह्युपस्थिते..."), whose counsel should be accepted when a crisis arrives?
-   संस्कृतम्: आपत्काले उपस्थिते केषां वचनं ग्राह्यम्?
-   (A) वृद्धानाम् / विदुषाम् (Of wise elders and experienced mentors)  (B) शत्रूणाम् (Of enemies)  (C) केवलं बालानाम् (Of young children alone)  (D) कस्यापि न (Of nobody)
-
-3. What is the celebrated moral dictum of this chapter?
-   संस्कृतम्: अस्य पाठस्य मुख्यं नीतिवचनं किम्?
-   (A) लघूनामपि वस्तूनां संहतिः कार्यसाधिका (Unity of even small things accomplishes the task)  (B) विनाशकाले विपरीतबुद्धिः (During ruin, intellect turns perverse)  (C) मौनं सर्वार्थसाधनम् (Silence achieves everything)  (D) अति सर्वत्र वर्जयेत् (Avoid excess everywhere)
-
-4. What does Chitragriva identify as the trait of a coward during sudden adversity?
-   संस्कृतम्: विपत्काले कः कापुरुषलक्षणम् अस्ति?
-   (A) विस्मयः / केवलं भयप्रदर्शनम् (Showing sheer panic, shock, and dismay)  (B) धैर्यम् (Steadfast courage)  (C) सङ्घटनम् (United collective action)  (D) उपायचिन्तनम् (Thinking of constructive solutions)
-
-5. Why did Hiranyaka the mouse king live in a burrow constructed with one hundred exit doors (शतद्वारं विवरम्)?
-   संस्कृतम्: हिरण्यकः किमर्थं शतद्वारं विवरं कृत्वा निवसति स्म?
-   (A) अनिष्टशङ्कया आत्मरक्षणार्थम् (Out of foresight and caution against unforeseen hazards)  (B) क्रीडार्थम् (For leisure games)  (C) शीतलवातावरणार्थम् (To get cold air)  (D) अतिलोभेन (Out of sheer greed)
-
-उत्तरकुञ्चिका व्याख्या च (Answer Key & Explanations):
-1. (A) उत्तराखण्डम् (Uttarakhand / Gaurikund) • As described on Page 10, the students traveled to the holy pilgrimage land of Uttarakhand (Gaurikund) during summer vacation.
-2. (A) वृद्धानाम् / विदुषाम् (Of wise elders and experienced mentors) • The verse states: "वृद्धानां वचनं ग्राह्यमापत्काले ह्युपस्थिते" — in times of distress or sudden danger, one must heed the counsel of wise elders.
-3. (A) लघूनामपि वस्तूनां संहतिः कार्यसाधिका (Unity of even small things accomplishes the task) • "लघूनामपि वस्तूनां संहतिः कार्यसाधिका भवति" illustrates how the united effort of small and fragile individuals can overcome seemingly insurmountable barriers.
-4. (A) विस्मयः / केवलं भयप्रदर्शनम् (Showing sheer panic, shock, and dismay) • Chitragriva says: "यतोहि विपत्काले विस्मयः एव कापुरुषलक्षणम्" — merely panicking without seeking remedies is the mark of a coward; the wise stay patient.
-5. (A) अनिष्टशङ्कया आत्मरक्षणार्थम् (Out of foresight and caution against unforeseen hazards) • The text notes: "हिरण्यकश्च सर्वदा अनिष्टशङ्कया शतद्वारं विवरं कृत्वा निवसति" — he maintained a burrow with 100 exits to ensure escape from any surprise attack.
+Q6–Q10. Fill in the blanks using content directly from the chapter text:
+6. कानिचन मित्राणि विद्यालयस्य ग्रीष्मावकाशे __________________ अगच्छन्।
+7. श्रीकेदारक्षेत्रम् आरोहन्तः आसन् तदा लक्ष्यप्राप्तेः पूर्वं वेगेन __________________ आरब्धा।
+8. अस्ति __________________ तीरे एको विशालः शाल्मलीतरुः।
+9. चित्रग्रीवस्य मित्रं हिरण्यको नाम मूषकराजः __________________ तीरे चित्रवने निवसति।
+10. हिरण्यकश्च सर्वदा अनिष्टशङ्कया __________________ विवरं कृत्वा निवसति।
 
 --------------------------------------------------------------------------------
 
-🏆 Quiz 2: ल्यप्-प्रत्ययः सन्धि-नियमाः च (Grammar: Lyap Pratyaya & Sandhi · 5 Qs)
+📄 WORKSHEET 2: Applied Suffixes (ल्यप्) & Sandhi Mechanics
+Focus: Lyap-Pratyaya decomposition/synthesis and Visarga/Vowel Sandhi rules.
 
-1. What is the correct indeclinable gerund formed by: वि + कॄ + ल्यप्?
-   संस्कृतम्: 'वि + कॄ + ल्यप्' इत्यस्य शुद्धं रूपं किम्?
-   (A) विकीर्य (Having scattered)  (B) विकृत्वा (Viktva)  (C) विकीर्णम् (Vikirnam)  (D) विकरणम् (Vikaranam)
+Q1–Q5. Decode the grammatical structure by breaking down or combining the ल्यप् forms:
+1. आ + गम् + ल्यप् = ____________________
+2. वि + स्तॄ + ल्यप् = ____________________
+3. निर्माय = ______ + ______ + ______
+4. प्रक्षाल्य = ______ + ______ + ______
+5. अव + लम्ब् + ल्यप् = ____________________
 
-2. What is the correct Sandhi split of the term "चित्रग्रीवोऽवदत्"?
-   संस्कृतम्: 'चित्रग्रीवोऽवदत्' अस्य पदस्य सन्धिविच्छेदः कः?
-   (A) चित्रग्रीवः + अवदत् (Visarga with uktva and avagraha)  (B) चित्रग्रीव + अवदत्  (C) चित्रग्रीवेन + अवदत्  (D) चित्रग्रीवम् + अवदत्
-
-3. Which Sandhi rule and split forms "इत्याकर्ण्य"?
-   संस्कृतम्: 'इत्याकर्ण्य' पदस्य सन्धिविच्छेदः कः?
-   (A) इति + आकर्ण्य (यण्-सन्धिः: इ + आ = या)  (B) इत + आकर्ण्य  (C) इत्या + कर्ण्य  (D) इति + अकर्ण्य
-
-4. What is the grammatical breakdown of the word "प्रत्यभिज्ञाय" (Having recognized)?
-   संस्कृतम्: 'प्रत्यभिज्ञाय' इति पदे के उपसर्गाः कश्च प्रत्ययः?
-   (A) प्रति + अभि (उपसर्गौ) + ज्ञा (धातुः) + ल्यप् (प्रत्ययः)  (B) प्र + त्ति + ज्ञा + क्त्वा  (C) प्रत्य + भिज्ञाय + शतृ  (D) प्रति + अज्ञा + तुमुन्
-
-5. What is the correct Sandhi split of "उपायश्चिन्तनीयः"?
-   संस्कृतम्: 'उपायश्चिन्तनीयः' अस्य सन्धिविच्छेदः कः?
-   (A) उपायः + चिन्तनीयः (Visarga before च् becomes श्)  (B) उपाय + श्चिन्तनीयः  (C) उपायम् + चिन्तनीयः  (D) उपाये + चिन्तनीयः
-
-उत्तरकुञ्चिका व्याख्या च (Answer Key & Explanations):
-1. (A) विकीर्य (Having scattered) • Root कॄ preceded by prefix वि- takes suffix ल्यप् to form the gerund "विकीर्य" (having scattered).
-2. (A) चित्रग्रीवः + अवदत् (Visarga with uktva and avagraha) • 'चित्रग्रीवः + अवदत्' undergoes Visarga Sandhi (अः + अ ➔ ओऽ) to yield 'चित्रग्रीवोऽवदत्'.
-3. (A) इति + आकर्ण्य (यण्-सन्धिः: इ + आ = या) • 'इति + आकर्ण्य' forms 'इत्याकर्ण्य' through Yaṇ Sandhi where short 'इ' becomes 'य्' before the dissimilar vowel 'आ'.
-4. (A) प्रति + अभि (उपसर्गौ) + ज्ञा (धातुः) + ल्यप् (प्रत्ययः) • 'प्रत्यभिज्ञाय' is composed of two prefixes 'प्रति' and 'अभि', root 'ज्ञा' (to know), and gerund suffix 'ल्यप्'.
-5. (A) उपायः + चिन्तनीयः (Visarga before च् becomes श्) • Visarga followed by 'च्' transforms into palatal sibilant 'श्' (विसर्गस्य शकारः), producing 'उपायश्चिन्तनीयः'.
+Q6–Q10. Separate the words joined via Visarga/Vowel Sandhi rules:
+6. कश्चित् = ______________ + ______________
+7. कुतोऽत्र = ______________ + ______________
+8. चित्रग्रीवोऽवदत् = ______________ + ______________
+9. चकितस्तूष्णीम् = ______________ + ______________
+10. नमस्ते = ______________ + ______________
 
 --------------------------------------------------------------------------------
 
-🏆 Quiz 3: अभ्यासकार्यम् · एकपदेन पूर्णवाक्येन च (Textbook Solved Mastery · 5 Qs)
+📄 WORKSHEET 3: Reading Comprehension & Shloka Analysis
+Focus: Extract analysis, one-word answers, complete sentences, and True/False statements.
 
-1. What was the name of the king of mice who was a dear friend of Chitragriva?
-   संस्कृतम्: चित्रग्रीवस्य मित्रस्य मूषकराजस्य नाम किम् आसीत्?
-   (A) हिरण्यकः (Hiranyaka)  (B) मन्थरकः (Mantharaka)  (C) लघुपतनकः (Laghupatanaka)  (D) दमनकः (Damanaka)
+Carefully read this extracted passage from Page 3 of the text:
+"चित्रग्रीवः तण्डुलकणलुब्धान् कपोतान् अवदत – “कुतोऽत्रनिर्जने वने तण्डुलकणानां सम्भवः तद्निरूप्यताम्। कश्चिद व्याधोऽत्र भवेत्। सर्वथा अविचारितं कर्म न कर्तव्यम्।” एतद्वचनं श्रुत्वा कश्चित् कपोतः सदर्पम् अवदत – “आः किमर्थं एवमुच्यते?
+वृद्धानां वचनं ग्राह्यमापत्काले ह्युपस्थिते।
+सर्वत्रैवं विचारे तु भोजनेऽप्यप्रवर्तनम्॥ १ ॥”"
 
-2. Why did Chitragriva urge Hiranyaka to cut his flock members' snares first before cutting his own?
+Q1–Q4. Answer in one word (एकपदेन उत्तरत):
+1. चित्रग्रीवः कान् अवदत? [→] ____________________
+2. कुत्र तण्डुलकणानां सम्भवः न आसीत्? [→] ____________________
+3. सर्वथा कीदृशं कर्म न कर्तव्यम्? [→] ____________________
+4. कस्य वचनं ग्राह्यम् आपत्काले समुपस्थिते? [→] ____________________
+
+Q5–Q7. Answer in a complete sentence (पूर्णवाक्येन उत्तरत):
+5. चित्रग्रीवस्य वचनं श्रुत्वा कश्चित् कपोतः सदर्पम् किम् अवदत्?
+   [→] _____________________________________________________________
+6. सर्वत्र विचारे कृते सति किमपि असम्भवं भवति? (Explain with reference to the verse)
+   [→] _____________________________________________________________
+7. कस्य आज्ञाम् अवज्ञां कृत्वा सर्वे कपोताः भूमौ अवतीर्य भोक्तुं प्रवृत्ताः?
+   [→] _____________________________________________________________
+
+Q8–Q10. True (आम) or False (न):
+8. चित्रग्रीवः अविचारितं कर्म कर्तुं सर्वान अकथयत्। [______]
+9. आपत्काले वृद्धानां वचनं ग्राह्यं भवति। [______]
+10. वनमध्ये तण्डुलकणान् अवलोक्य कपोताः लोभाकृष्टाः न अभवन्। [______]
+
+--------------------------------------------------------------------------------
+
+🔑 WORKSHEET ANSWER KEYS
+
+🏁 Answer Key: Worksheet 1
+• Q1–Q5: 1-C, 2-E, 3-A, 4-B, 5-D
+• Q6: देवभूमिम् उत्तराखण्डम् (वा ग्रीष्मावकाशे)
+• Q7: वृष्टिः
+• Q8: गोदावरी
+• Q9: गण्डकी
+• Q10: शतद्वारं
+
+🏁 Answer Key: Worksheet 2
+• Q1: आगत्य / आगम्य
+• Q2: विस्तीर्य
+• Q3: निर + मा + ल्यप्
+• Q4: प्र + क्षल (क्षालि) + ल्यप्
+• Q5: अवलम्ब्य
+• Q6: कः + चित्
+• Q7: कुतः + अत्र
+• Q8: चित्रग्रीवः + अवदत्
+• Q9: चकितः + तूष्णीम्
+• Q10: नमः + ते
+
+🏁 Answer Key: Worksheet 3
+• Q1: तण्डुलकणलुब्धान् कपोतान्
+• Q2: निर्जने वने
+• Q3: अविचारितं कर्म
+• Q4: वृद्धानाम्
+• Q5: कश्चित् कपोतः सदर्पम् अवदत् यत् – "आः किमर्थं एवमुच्यते? वृद्धानां वचनं ग्राह्यमापत्काले ह्युपस्थिते। सर्वत्रैवं विचारे तु भोजनेऽप्यप्रवर्तनम्॥"
+• Q6: यदि वयम् सर्वत्र अतिविचारं कुर्मः तर्हि लोके भोजनं करणमपि असम्भवं भविष्यति।
+• Q7: चित्रग्रीवस्य आज्ञाम् अवज्ञां कृत्वा सर्वे कपोताः भूमौ अवतीर्य भोक्तुं प्रवृत्ताः।
+• Q8: न (False)
+• Q9: आम (True)
+• Q10: न (False)
+
+================================================================================
+
+🧠 PART 4: REGENERATED INTERACTIVE PRACTICE QUIZZES (3 Quizzes · 30 Questions)
+
+⚡ QUIZ 1: Narrative Details & Core Plot Points (10 Qs)
+
+1. At what point during their journey did the rain begin for the school group?
+   संस्कृतम्: कस्मिन् समये विद्यालयस्य छात्राणां यात्राकाले वृष्टिः आरब्धा?
+   (A) श्रीकेदारक्षेत्रम् आरोहन्तः आसन् (Climbing the Kedarnath area)
+   (B) देवभूमिम् प्रविशन्तः आसन् (Entering Devabhumi)
+   (C) विद्यालये स्थिताः आसन् (Staying at school)
+   (D) मार्गं निर्माणकालः (During bridge construction)
+
+2. What caused the bridge to break down in the mountains?
+   संस्कृतम्: पर्वतीयमार्गे सेतुः केन कारणेन भग्नः अभवत्?
+   (A) पर्वतस्खलनेन (By landslide)
+   (B) तीव्रजलवेगेन (By rapid water current)
+   (C) अन्धकारेण (By darkness)
+   (D) पवनवेगेन (By wind speed)
+
+3. Who was the designated leader of the school students?
+   संस्कृतम्: विद्यालयस्य छात्राणां नायकः कः आसीत्?
+   (A) दिनेशः  (B) सुरेशः  (C) कपिलः  (D) सुधीरः
+
+4. Where did the flock of pigeons discover the scattered rice grains?
+   संस्कृतम्: कपोताः कुत्र विकीर्णान् तण्डुलकणान् दृष्टवन्तः?
+   (A) नद्याः तीरे  (B) गृहाङ्गणे  (C) वनमध्ये  (D) पर्वतशिखरे
+
+5. What is the name of the pigeon king who suspected danger?
+   संस्कृतम्: सङ्कटशङ्कां कुर्वतः कपोतराजस्य नाम किम् आसीत्?
+   (A) हिरण्यकः  (B) चित्रग्रीवः  (C) सुधीरः  (D) व्याधः
+
+6. Why did the mouse king Hiranyaka initially hide and remain silent inside his hole?
+   संस्कृतम्: मूषकराजः हिरण्यकः प्रारम्भे किमर्थं बिले तूष्णीं स्थितः?
+   (A) निद्रावशात् (Due to sleep)
+   (B) कपोतानाम् अवपातभयात् (Fear of the falling cluster of pigeons)
+   (C) क्रोधात् (Due to anger)
+   (D) व्याधस्य भयात् (Fear of the hunter)
+
+7. On the bank of which river did the mouse king Hiranyaka reside?
+   संस्कृतम्: मूषकराजः हिरण्यकः कस्याः नद्याः तीरे न्यवसत्?
+   (A) गोदावरी  (B) गङ्गा  (C) गण्डकी  (D) यमुना
+
+8. Whose bonds did Chitragriva ask Hiranyaka to chew through first?
    संस्कृतम्: चित्रग्रीवः पूर्वं केषां पाशं छेत्तुं हिरण्यकम् अकथयत्?
-   (A) आश्रितवात्सल्येन स्वप्रजायाः रक्षणार्थम् (Out of royal duty and deep affection toward his dependents)  (B) स्वप्राणभयेन (Out of fear for his own life)  (C) हिरण्यकस्य परीक्षाकरणार्थम् (To test Hiranyaka)  (D) जालान्तरे सुखेन उपवेष्टुम् (To sit comfortably in the net)
+   (A) आत्मनः (His own)
+   (B) मदाश्रितानाम् (Of his dependents)
+   (C) व्याधस्य (The hunter's)
+   (D) सुधीरस्य (Sudheer's)
 
-3. What did the hunter scatter under the tree to lure the birds into his net?
-   संस्कृतम्: व्याधः कान् विकीर्य जालं विस्तीर्य च स्थितः?
-   (A) तण्डुलकणान् (Grains of rice)  (B) सुवर्णमुद्रिकाः (Golden coins)  (C) पुष्पाणि (Flowers)  (D) जलबिन्दून् (Water droplets)
+9. What character trait did Chitragriva show by prioritizing his flock's rescue?
+   संस्कृतम्: कपोतानां रक्षणाय प्राथमिकतां दत्त्वा चित्रग्रीवः कम् सद्गुणं प्रादर्शयत्?
+   (A) भीरुता (Cowardice)
+   (B) आश्रितवात्सल्यम् (Affection for dependents)
+   (C) अहंकारः (Arrogance)
+   (D) कृपणता (Miserliness)
 
-4. How did the doves successfully escape from the hunter?
-   संस्कृतम्: कपोताः कथं व्याधात् आत्मरक्षणं कृतवन्तः?
-   (A) एकचित्तीभूय जालमादाय उड्डीय (By becoming single-minded and flying away together with the net)  (B) व्याधं प्रहृत्य (By physically attacking the hunter)  (C) क्रन्दनं कृत्वा (By merely weeping and wailing)  (D) भूमौ तूष्णीं स्थित्वा (By staying silent on the ground)
-
-5. What is the contextual meaning of the vocabulary word "प्रतीकारः" (Pratīkāraḥ)?
-   संस्कृतम्: 'प्रतीकारः' इति पदस्य कः अर्थः अस्ति?
-   (A) उपायः / प्रतिविधानम् / समाधानम् (Remedy / Countermeasure / Solution)  (B) प्रहारः / युद्धम् (Attack / War)  (C) उपहासः (Mockery)  (D) पराजयः (Defeat)
+10. How did the school students eventually build the mountain bridge?
+    संस्कृतम्: विद्यालयस्य छात्राः कथं पर्वतीयमार्गस्य सेतोः पुनर्निर्माणं कृतवन्तः?
+    (A) ईश्वरप्रार्थनया (Only by praying)
+    (B) भगीरथप्रयत्नैः सङ्घटनसामर्थ्येण च (By monumental collaborative efforts)
+    (C) धनबलेन (By using money)
+    (D) केवल एकाकी (By the leader alone)
 
 उत्तरकुञ्चिका व्याख्या च (Answer Key & Explanations):
-1. (A) हिरण्यकः (Hiranyaka) • The king of mice living on the bank of the Gandaki river in Chitravana was named Hiranyaka (हिरण्यकः).
-2. (A) आश्रितवात्सल्येन स्वप्रजायाः रक्षणार्थम् (Out of royal duty and deep affection toward his dependents) • Chitragriva embodied noble leadership by insisting that his subjects be liberated first ("पूर्वं मदाश्रितानाम् एतेषां पाशं छिन्द्धि, पश्चाच्च मम").
-3. (A) तण्डुलकणान् (Grains of rice) • The hunter scattered rice grains ("तण्डुलकणान्विकीर्य जालं विस्तीर्य च प्रच्छन्नों भूत्वा स्थितः").
-4. (A) एकचित्तीभूय जालमादाय उड्डीय (By becoming single-minded and flying away together with the net) • Chitragriva instructed: "सर्वैः एकचित्तीभूय जालमादाय उड्डीयताम्" — by uniting their strength, they flew upward carrying the net with them.
-5. (A) उपायः / प्रतिविधानम् / समाधानम् (Remedy / Countermeasure / Solution) • "प्रतीकारः" means finding a practical remedy or countermeasure to resolve an impending crisis.
+1. (A) श्रीकेदारक्षेत्रम् आरोहन्तः आसन् • When the students were climbing up toward the holy area of Shri Kedarnath, torrential rain began before they could reach their destination ("यदा ते श्रीकेदारक्षेत्रम् आरोहन्तः आसन् तदा लक्ष्यप्राप्तेः पूर्वं वेगेन वृष्टिः आरब्धा").
+2. (B) तीव्रजलवेगेन (By rapid water current) • The bridge broke down due to the rapid, forceful current of rushing rainwater ("तीव्रजलवेगेन एकः सेतुः भग्नः अभवत्").
+3. (D) सुधीरः • Sudheer stepped forward as the leader and encouraged his despondent classmates to unite their efforts.
+4. (C) वनमध्ये • The doves spotted the grains of rice scattered on the ground in the middle of the deserted forest ("केचन कपोताः वनमध्ये तण्डुलकणान् अवलोक्य लोभाकृष्टाः अभवन्").
+5. (B) चित्रग्रीवः • Chitragriva was the wise king of pigeons who cautioned his flock against hasty, unconsidered actions in a deserted forest.
+6. (B) कपोतानाम् अवपातभयात् • When the flock landed suddenly with the net, Hiranyaka suspected unexpected danger from the heavy landing noise and stayed inside ("कपोतानाम् अवपातभयात् चकितस्तूष्णीं स्थितः").
+7. (C) गण्डकी • Hiranyaka resided in Chitravana on the bank of the Gandaki river ("चित्रग्रीवस्य मित्रं हिरण्यको नाम मूषकराजः गण्डकीतीरे चित्रवने निवसति").
+8. (B) मदाश्रितानाम् (Of his dependents) • Chitragriva insisted that his dependents be freed first ("सखे! पूर्वं मदाश्रितानाम् एतेषां पाशं छिन्द्धि, तदनन्तरं मम पाशं छेत्स्यसि").
+9. (B) आश्रितवात्सल्यम् (Affection for dependents) • By placing the welfare and freedom of his flock before his own, Chitragriva demonstrated noble affection and duty toward his dependents.
+10. (B) भगीरथप्रयत्नैः सङ्घटनसामर्थ्येण च • All students united together, gathered stones and wood, and through monumental collective determination, successfully rebuilt the wooden bridge.
 
 --------------------------------------------------------------------------------
 
-🏆 Quiz 4: Lyap-Pratyaya Structure Mechanics (ल्यप-प्रत्ययः · 3 Qs)
+⚡ QUIZ 2: Grammar Mechanics (ल्यप्, Sandhi & Samas) (10 Qs)
 
-1. Sanskrit grammar rules state that when a root verb is preceded by a prefix (उपसर्गः), which suffix replaces the standard past-gerund suffix 'क्त्वा'?
-   संस्कृतम्: यदा धातोः पूर्वम् उपसर्गः भवति, तदा 'क्त्वा' स्थाने कः प्रत्ययः प्रयुज्यते?
-   A) शतृ-प्रत्ययः  B) ल्यप-प्रत्ययः  C) तव्यत्-प्रत्ययः  D) तुमुन्-प्रत्ययः
+1. Identify the prefix used in the word "अवलोक्य":
+   संस्कृतम्: "अवलोक्य" इति पदे कः उपसर्गः प्रयुक्तः?
+   (A) अव  (B) अप  (C) आ  (D) उप
 
-2. What is the correct synthesized output word string when you combine the grammar variables: प्र + नम् + ल्यप्?
-   संस्कृतम्: 'प्र + नम् + ल्यप्' इत्यस्य संयुक्तं रूपं किम्?
-   A) प्रनम्य  B) प्रणम्य (अथवा प्रणत्य)  C) प्रनमित्वा  D) प्रनमन
+2. Choose the correct ल्यप् configuration for the verb meaning 'having built':
+   संस्कृतम्: "निर्माणं कृत्वा" इत्यर्थे ल्यप्-प्रत्ययस्य शुद्धं रूपं किम्?
+   (A) निर + मा + क्त्वा  (B) नि + मा + तुमुन्  (C) निर + मा + ल्यप्  (D) प्र + मा + ल्यप्
 
-3. In the sentence "व्याधः जालं विस्तीर्य प्रच्छन्नो भूत्वा स्थितः", what are the internal components of the word "विस्तीर्य"?
-   संस्कृतम्: "विस्तीर्य" इति पदस्य प्रकृति-प्रत्ययः कः?
-   A) वि + स्तार् + क्त्वा  B) वि + स्तॄ + ल्यप्  C) वि + तीर्य + ल्यप्  D) वि + स्थि + ल्यप्
+3. What does "ततः + हिरण्यकः" transform into after Visarga Sandhi rules?
+   संस्कृतम्: "ततः + हिरण्यकः" इत्यस्य सन्धिपदं किम्?
+   (A) ततःहिरण्यकः  (B) ततो हिरण्यकः  (C) ततश्चहिरण्यकः  (D) ततस्थहिरण्यकः
+
+4. Break down the compound word "तण्डुलकणान्" into its component words:
+   संस्कृतम्: "तण्डुलकणान्" इति समस्तपदस्य विग्रहवाक्यं किम्?
+   (A) तण्डुले कणाः  (B) तण्डुलानां कणाः  (C) तण्डुलाय कणाः  (D) तण्डुलस्य कणम्
+
+5. Which of these words does NOT feature the suffix ल्यप्?
+   संस्कृतम्: एतेषु पदेषु कस्मिन् पदे ल्यप्-प्रत्ययः नास्ति?
+   (A) प्रविश्य  (B) आगत्य  (C) गत्वा  (D) स्वीकृत्य
+
+6. Complete the following split correctly: "इत्याकर्ण्य = इति + ______":
+   संस्कृतम्: "इत्याकर्ण्य" इत्यस्य शुद्धः सन्धिविच्छेदः कः? (इति + _____)
+   (A) आकर्ण्य  (B) कर्ण्य  (C) ओकर्ण्य  (D) सुत्वा
+
+7. Find the appropriate ल्यप् translation for the action "having descended":
+   संस्कृतम्: "नीचे उतरकर" (having descended) इत्यर्थे ल्यप्-प्रत्ययान्तरूपं किम्?
+   (A) आगत्य  (B) अवतीर्य  (C) विकीर्य  (D) विस्तीर्य
+
+8. What structural alteration occurs when a Visarga is followed by a 'च' or 'छ'?
+   संस्कृतम्: विसर्गात् परं "च" अथवा "छ" वर्णे सति विसर्गस्य किं परिवर्तनं भवति?
+   (A) It changes to 'स'
+   (B) It changes to 'श'
+   (C) It changes to 'ओ'
+   (D) It drops out entirely
+
+9. Solve the Sandhi combination for "नमः + ते":
+   संस्कृतम्: "नमः + ते" इत्यस्य शुद्धं सन्धिपदं किम्?
+   (A) नमोते  (B) नमश्ते  (C) नमस्ते  (D) नमःते
+
+10. What is the explicit remainder letter left in a root verb when ल्यप् is applied?
+    संस्कृतम्: ल्यप्-प्रत्ययस्य प्रयोगे धातोः अन्ते कः वर्णः अवशिष्यते?
+    (A) म्  (B) त्वा  (C) य  (D) ति
 
 उत्तरकुञ्चिका व्याख्या च (Answer Key & Explanations):
-1. B) ल्यप-प्रत्ययः • Correct! According to the rule on Page 17, if a prefix is attached before the Dhatu, 'क्त्वा' is replaced by 'ल्यप्', leaving only the terminal component 'य'. (Hint: Look closely at the suffix system analyzed in the grey box on page 17 of Chapter 2.)
-2. B) प्रणम्य (अथवा प्रणत्य) • Correct! As documented in the textbook verb table on Page 18, it resolves to either 'प्रणम्य' or 'प्रणत्य'. Due to internal phonetic rules triggered by 'प्र', the dental nasal 'न' changes to retroflex 'ण'.
-3. B) वि + स्तॄ + ल्यप् • Correct! The root is 'स्तॄ' (to spread), with prefix 'वि' and suffix 'ल्यप्', forming 'विस्तीर्य' (having spread). (Hint: Check page 19 of the textbook, under the fifth entry row within the active grammar table map.)
+1. (A) अव • In "अवलोक्य", the prefix is "अव", followed by root "लोक्" and gerund suffix "ल्यप्" (अव + लोक् + ल्यप्).
+2. (C) निर + मा + ल्यप् • Root "मा" preceded by prefix "निर्" takes suffix "ल्यप्" to form "निर्माय" (निर् + मा + ल्यप्).
+3. (B) ततो हिरण्यकः • When a visarga preceded by "अ" meets a voiced consonant like "ह", it transforms into "ओ" (अतो रोरप्लुतादप्लुते / हशि च), yielding "ततो हिरण्यकः".
+4. (B) तण्डुलानां कणाः • "तण्डुलकणान्" is a षष्ठी-तत्पुरुष-समासः: तण्डुलानां कणाः = तण्डुलकणाः, declined in accusative plural as तण्डुलकणान्.
+5. (C) गत्वा • "गत्वा" contains the suffix "क्त्वा" (गम् + क्त्वा) because it has no prefix, whereas प्रविश्य, आगत्य, and स्वीकृत्य all possess prefixes and take "ल्यप्".
+6. (A) आकर्ण्य • इति + आकर्ण्य forms इत्याकर्ण्य by Yaṇ Sandhi (इ + आ = या).
+7. (B) अवतीर्य • अव (prefix) + तॄ (to cross/descend) + ल्यप् = अवतीर्य (having descended).
+8. (B) It changes to 'श' • According to Visarga Sandhi rules (विसर्जनीयस्य सः / श्चुत्वम्), a visarga followed by palatal stops "च" or "छ" turns into the palatal sibilant "श्" (e.g., कः + चित् = कश्चित्).
+9. (C) नमस्ते • When a visarga is followed by dental "त्", it transforms into dental sibilant "स्", resulting in "नमस्ते".
+10. (C) य • In the suffix ल्यप्, "ल्" and "प्" are elided (इत्संज्ञा), leaving only the sound "य" attached to the prefixed root (e.g., वि + हस् + ल्यप् = विहस्य).
 
 --------------------------------------------------------------------------------
 
-🏆 Quiz 5: Visarga Sandhi Transition Rules (विसर्गसन्धिः · 3 Qs)
+⚡ QUIZ 3: Verses (श्लोकाः) & Strategic Interpretations (10 Qs)
 
-1. According to the rules on page 17, when a trailing visarga is immediately followed by a 'च' or 'छ' character, what does the visarga transform into?
-   संस्कृतम्: विसर्गात् परं 'च' वा 'छ' वर्णे सति विसर्गस्य किं परिवर्तनं भवति?
-   A) सकारः (स्)  B) शकारः (श्)  C) ओकारः (ओ)  D) र् (रेफः)
+1. Complete the verse fragment: "विपदि धैर्यमथाभ्युदये ______":
+   संस्कृतम्: "विपदि धैर्यमथाभ्युदये ______" इत्यत्र रिक्तस्थानं पूरयत:
+   (A) विक्रमः  (B) क्षमा  (C) वाक्पटुता  (D) व्यसनं
 
-2. What is the correct Sandhi output when joining the segment inputs: 'हिरण्यकः + नाम'?
-   संस्कृतम्: 'हिरण्यकः + नाम' इत्यस्य सन्धिपदं किम्?
-   A) हिरण्यकस्नाम  B) हिरण्यकश्चनाम  C) हिरण्यको नाम  D) हिरण्यकऽनाम
+2. What design feature did Hiranyaka implement in his hole for emergency escape pathways?
+   संस्कृतम्: हिरण्यकः विपत्तौ आत्मरक्षणार्थं बिले कीदृशीं व्यवस्थां कृतवान्?
+   (A) एकद्वारं (Single door)
+   (B) शतद्वारं (One hundred doors)
+   (C) द्वारहीनं (No doors)
+   (D) विशालद्वारं (Giant main door)
 
-3. Join the following terms using the textbook's dual-vowel visarga framework: 'कुतः + अत्र'.
-   संस्कृतम्: 'कुतः + अत्र' इत्यस्य सन्धिपदं किम्?
-   A) कुतोऽत्र  B) कुतस्तत्र  C) कुतःअत्र  D) कुतश्चात्र
+3. According to the text, reacting with absolute shock or panic during an unexpected crisis is a trait of a:
+   संस्कृतम्: विपत्काले केवलं विस्मयः अथवा भयप्रदर्शनं कस्य लक्षणम् अस्ति?
+   (A) सत्पुरुष (Noble man)
+   (B) कापुरुष (Coward)
+   (C) नायक (Leader)
+   (D) महात्मा (Great soul)
+
+4. Where should an individual exhibit "वाक्पटुता" (eloquence/speech skills) according to the Hitopadesha verse?
+   संस्कृतम्: श्लोकानुसारं महात्मनां "वाक्पटुता" कुत्र दृश्यते?
+   (A) युधि (In battle)  (B) सदसि (In assembly)  (C) भोजने (During meals)  (D) वने (In the forest)
+
+5. What metaphor does the text use to show the power of small entities ("तृणैर्गुणत्वमापन्नैर्बध्यन्ते...")?
+   संस्कृतम्: "तृणैर्गुणत्वमापन्नैर्बध्यन्ते मत्तदन्तिनः" इत्यत्र कः दृष्टान्तः दत्तः?
+   (A) Catching small fish with thin threads
+   (B) Binding an intoxicated wild elephant with grass ropes
+   (C) Building a nest with dry leaves
+   (D) Trapping birds with a fine silk net
+
+6. What was the core operational flaw of the pigeons that led to their captivity?
+   संस्कृतम्: कपोतानां बन्धनस्य मुख्यं कारणं किम् आसीत्?
+   (A) सत्यभाषणम् (Truthfulness)
+   (B) विचारहीनता (Thoughtlessness/Greed)
+   (C) आलस्यम् (Laziness)
+   (D) अनादरः (Disrespect for trees)
+
+7. Who authored the primary source text हितोपदेशः from which this story is borrowed?
+   संस्कृतम्: हितोपदेशः इति ग्रन्थस्य रचयिता कः अस्ति?
+   (A) पण्डितः नारायणशर्मा  (B) विष्णुशर्मा  (C) कालिदासः  (D) बाणभट्टः
+
+8. Which specific introductory chapter section (प्रकरणम्) of the Hitopadesha features this story?
+   संस्कृतम्: एषा कथा हितोपदेशस्य कस्मिन् प्रकरणे प्राप्यते?
+   (A) सुहृद्भेदः  (B) विग्रहः  (C) सन्धिः  (D) मित्रलाभः
+
+9. What does the term "सविषादम्" explicitly tell us about a speaker's emotional state?
+   संस्कृतम्: "सविषादम्" इति पदस्य भावार्थः कः?
+   (A) Highly excited  (B) Sorrowful / Gripped by despair  (C) Furious  (D) Confused
+
+10. What does the phrase "एकचित्तीभूय" instruct the flock to do?
+    संस्कृतम्: "एकचित्तीभूय" इति पदस्य कः निर्देशः अस्ति?
+    (A) Act individually
+    (B) Fly away in different directions
+    (C) Harmonize their minds and act as a single unit
+    (D) Retreat back to the branches
 
 उत्तरकुञ्चिका व्याख्या च (Answer Key & Explanations):
-1. B) शकारः (श्) • Correct! The visarga shifts to an unvoiced palatal sibilant 'श्' when followed by palatal stops 'च' or 'छ' (e.g., कः + चित् = कश्चित्). (Hint: Look at the examples 'प्रतीकारः + चिन्त्यताम्' or 'कः + चित्' explicitly highlighted in the textbook guidelines.)
-2. C) हिरण्यको नाम • Correct! When a visarga is preceded by an 'अ' sound and followed by a class-3/4/5 voiced consonant (like 'न'), the combination resolves to an 'ओ' sound. (Hint: Review the third bullet point parameter block listed under the Visarga rules on Page 17.)
-3. A) कुतोऽत्र • Correct! When an 'अ' sound sits on both sides of a visarga boundary, the visarga turns to 'ओ' and the second 'अ' drops out, replaced by an avagraha 'ऽ'. (Hint: Look for the final rule row summary entry on page 17, which matches the textbook example 'सः + अस्माकम् = सोऽस्माकम्'.)
+1. (B) क्षमा • The verse reads: "विपदि धैर्यमथाभ्युदये क्षमा, सदसि वाक्पटुता युधि विक्रमः" — courage in distress and forgiveness in prosperity.
+2. (B) शतद्वारं (One hundred doors) • Hiranyaka dug his burrow with one hundred escape tunnels ("अनिष्टशङ्कया शतद्वारं विवरं कृत्वा निवसति") so that no single predator could corner him.
+3. (B) कापुरुष (Coward) • Chitragriva reminds his flock: "विपत्काले विस्मयः एव कापुरुषलक्षणम्" — merely lamenting and freezing in dismay is the mark of a coward; the brave seek solutions.
+4. (B) सदसि (In assembly) • "सदसि वाक्पटुता" — in an assembly or council of peers, great individuals display eloquence and articulate clarity.
+5. (B) Binding an intoxicated wild elephant with grass ropes • Individual blades of grass, when twisted into a sturdy rope, can restrain even an enraged wild elephant ("तृणैर्गुणत्वमापन्नैर्बध्यन्ते मत्तदन्तिनः").
+6. (B) विचारहीनता (Thoughtlessness/Greed) • Unchecked greed and hasty thoughtlessness (अविचारितं कर्म / लोभः) caused the pigeons to overlook obvious dangers and get trapped in the hunter's net.
+7. (A) पण्डितः नारायणशर्मा • The Hitopadesha was composed by Pandit Narayana Sharma (पण्डितः नारायणशर्मा) in Bengal, adapting tales from the Panchatantra.
+8. (D) मित्रलाभः • This story appears in the "मित्रलाभः" (Acquisition of Friends / Winning Friends) section of the Hitopadesha.
+9. (B) Sorrowful / Gripped by despair • "सविषादम्" (स + विषादम्) means with deep sorrow, sadness, and anguish ("विषादेन सह / दुःखसहितम्").
+10. (C) Harmonize their minds and act as a single unit • "एकचित्तीभूय" means becoming of one single mind, aligning all wills toward a solitary focused objective ("एकं चित्तं यस्य सः एकचित्तः, एकचित्तीभूय = ऐक्यभावेन").
 
 --------------------------------------------------------------------------------
