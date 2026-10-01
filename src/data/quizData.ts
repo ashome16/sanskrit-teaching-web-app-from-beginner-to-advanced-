@@ -1,6 +1,6 @@
 export interface QuizQuestionItem {
   id: string;
-  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4' | 'grade8_ch5' | 'grade8_ch6' | 'grade8_ch7' | 'grade8_ch8' | 'grade8_ch9' | 'grade8_ch10' | 'grade8_ch11' | 'grade8_ch12' | 'grade8_ch13' | 'grade8_app1';
+  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4' | 'grade8_ch5' | 'grade8_ch6' | 'grade8_ch7' | 'grade8_ch8' | 'grade8_ch9' | 'grade8_ch10' | 'grade8_ch11' | 'grade8_ch12' | 'grade8_ch13' | 'grade8_app1' | 'grade9_ch1';
   categoryLabel: string;
   chapterRef?: string;
   subCategory?: string;
@@ -13055,5 +13055,586 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
   "explanation": "न (असत्यम्)। तत् + चित्रम् = तच्चित्रम्। अत्र 'स्तोः श्चुना श्चुः' सूत्रेण श्चुत्व-सन्धिः (त् ➔ च्) अस्ति, जश्त्वं न।",
   "difficulty": "easy",
   "points": 10
-}
+},
+
+  // ==========================================
+  // GRADE 9 CHAPTER 1: सत्यं शिवं सुन्दरं संस्कृतम् (3 QUIZZES · 30 QUESTIONS)
+  // ==========================================
+
+  // --- Quiz 1: Core Themes & Spiritual Foundations (Shlokas 1–3) [10 Qs] ---
+  {
+    id: "g9-ch1-q1-1",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Core Themes (Shlokas 1–3)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 1: Core Themes & Spiritual Foundations",
+    question: "According to the introductory text, what does the study of Sanskrit make a human being? (संस्कृताध्ययनेन मानवः कीदृशः भवति?)",
+    questionSanskrit: "संस्कृताध्ययनेन मानवः कीदृशः भवति?",
+    options: [
+      "A) सुसंस्कृतः (Cultured and refined)",
+      "B) धनवान् (Wealthy)",
+      "C) अभिमानी (Arrogant)",
+      "D) भीरुः (Fearful)"
+    ],
+    correctIndex: 0,
+    explanation: "The introduction states: 'संस्कृताध्ययनेन मानवः सुसंस्कृतः भवति' (Through Sanskrit study, one becomes refined and cultured).",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q1-2",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Core Themes (Shlokas 1–3)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 1: Core Themes & Spiritual Foundations",
+    question: "What vital role does Sanskrit play regarding the nation of India in Shloka 1? (संस्कृतं भारतस्य कस्याः साधकम्?)",
+    questionSanskrit: "श्लोकानुसारं संस्कृतं भारतस्य कस्याः साधकम् अस्ति?",
+    options: [
+      "A) कलहस्य (Of conflict)",
+      "B) भारतीयैकतायाः (Of Indian unity)",
+      "C) वाणिज्यस्य (Of commerce)",
+      "D) युद्धस्य (Of warfare)"
+    ],
+    correctIndex: 1,
+    explanation: "Shloka 1 begins: 'भारतीयैकतासाधकं संस्कृतम्' (Sanskrit is the accomplisher of Indian unity).",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q1-3",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Core Themes (Shlokas 1–3)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 1: Core Themes & Spiritual Foundations",
+    question: "Complete the phrase from Shloka 1: 'ज्ञानपुञ्जप्रभा______ संस्कृतम्':",
+    questionSanskrit: "'ज्ञानपुञ्जप्रभा______' इत्यत्र रिक्तस्थानं पूरयत:",
+    options: [
+      "A) दर्शकम्",
+      "B) नाशकम्",
+      "C) शोधकम्",
+      "D) वादकम्"
+    ],
+    correctIndex: 0,
+    explanation: "'ज्ञानपुञ्जप्रभादर्शकं संस्कृतम्' — Sanskrit reveals the radiant illumination of the cluster of knowledge.",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q1-4",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Core Themes (Shlokas 1–3)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 1: Core Themes & Spiritual Foundations",
+    question: "What does the word 'सन्दोहदम्' mean in the phrase 'सर्वदानन्दसन्दोहदम्'?",
+    questionSanskrit: "'सर्वदानन्दसन्दोहदम्' इति पदे 'सन्दोहदम्' इत्यस्य कः अर्थः?",
+    options: [
+      "A) Destroying sorrow",
+      "B) Bestowing an abundant mass / collection",
+      "C) Stealing joy",
+      "D) Postponing happiness"
+    ],
+    correctIndex: 1,
+    explanation: "'सन्दोह' means an abundant collection/heap, and 'दम्' means bestower. Hence it gives floods of eternal bliss.",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q1-5",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Core Themes (Shlokas 1–3)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 1: Core Themes & Spiritual Foundations",
+    question: "Which part of human organism does Sanskrit refine and culture according to Shloka 2?",
+    questionSanskrit: "श्लोके संस्कृतं कस्य संस्कारकं प्रतिपादितम्?",
+    options: [
+      "A) हस्तस्य",
+      "B) पादस्य",
+      "C) सर्वमस्तिष्कस्य",
+      "D) केवलनेत्रस्य"
+    ],
+    correctIndex: 2,
+    explanation: "Shloka 2 states: 'सर्वमस्तिष्कसंस्कारकं संस्कृतम्' (Refiner of every human mind and intellect).",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q1-6",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Core Themes (Shlokas 1–3)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 1: Core Themes & Spiritual Foundations",
+    question: "In Shloka 2, Sanskrit is described as 'सर्ववाणीपरिष्कारकम्'. What does this imply?",
+    questionSanskrit: "'सर्ववाणीपरिष्कारकम्' इत्यनेन किं ज्ञायते?",
+    options: [
+      "A) It silences speech",
+      "B) It purifies, polishes, and ennobles all speech and languages",
+      "C) It limits words to rituals",
+      "D) It replaces modern communication"
+    ],
+    correctIndex: 1,
+    explanation: "'परिष्कारकम्' means purifier/polisher. Sanskrit standardizes, cleanses, and elevates all speech.",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q1-7",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Core Themes (Shlokas 1–3)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 1: Core Themes & Spiritual Foundations",
+    question: "What path does Sanskrit inspire one to walk upon? (संस्कृतं कस्य पथस्य प्रेरणादायकम्?)",
+    questionSanskrit: "संस्कृतं कस्य पथस्य प्रेरणादायकम् अस्ति?",
+    options: [
+      "A) कुपथस्य (Evil path)",
+      "B) सत्पथस्य (Righteous noble path)",
+      "C) कपटपथस्य (Deceitful path)",
+      "D) अन्धकारपथस्य (Dark path)"
+    ],
+    correctIndex: 1,
+    explanation: "'सत्पथप्रेरणादायकं संस्कृतम्' — Sanskrit motivates humanity to tread upon the noble path of truth.",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q1-8",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Core Themes (Shlokas 1–3)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 1: Core Themes & Spiritual Foundations",
+    question: "In Shloka 3, what worldwide sentiment is expanded by Sanskrit? (संस्कृतं कस्य विस्तारकं भवति?)",
+    questionSanskrit: "संस्कृतं कस्य विस्तारकं भवति?",
+    options: [
+      "A) विश्वबन्धुत्वस्य (Universal brotherhood)",
+      "B) साम्राज्यविस्तारस्य (Imperial expansion)",
+      "C) स्पर्धायाः (Competition)",
+      "D) स्वार्थस्य (Selfishness)"
+    ],
+    correctIndex: 0,
+    explanation: "'विश्वबन्धुत्वविस्तारकं संस्कृतम्' — Sanskrit promotes the ethos of 'वसुधैव कुटुम्बकम्' (Universal brotherhood).",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q1-9",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Core Themes (Shlokas 1–3)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 1: Core Themes & Spiritual Foundations",
+    question: "What does the compound word 'सर्वभूतैकताकारकम्' signify?",
+    questionSanskrit: "'सर्वभूतैकताकारकम्' इत्यस्य भावार्थः कः?",
+    options: [
+      "A) Dividing creatures into castes",
+      "B) Creating a deep sense of oneness among all living beings",
+      "C) Dominating other species",
+      "D) Ignoring the existence of animals"
+    ],
+    correctIndex: 1,
+    explanation: "'सर्वभूतेषु एकतायाः कारकम्' — It fosters universal empathy and oneness with every living creature.",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q1-10",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Core Themes (Shlokas 1–3)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 1: Core Themes & Spiritual Foundations",
+    question: "What celebrated historical and ethical tenets does Sanskrit institute according to Shloka 3?",
+    questionSanskrit: "संस्कृतं केषां प्रतिष्ठापकम् अस्ति?",
+    options: [
+      "A) पञ्चबाणानाम्",
+      "B) पञ्चशीलानाम्",
+      "C) पञ्चपाण्डवानाम्",
+      "D) पञ्चामृतानाम्"
+    ],
+    correctIndex: 1,
+    explanation: "Shloka 3 concludes: 'पञ्चशीलप्रतिष्ठापकं संस्कृतम्' — Establishing the five foundational ethical principles.",
+    difficulty: "easy",
+    points: 10
+  },
+
+  // --- Quiz 2: Holistic Values & Philosophy (Shlokas 4–6) [10 Qs] ---
+  {
+    id: "g9-ch1-q2-1",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Holistic Values (Shlokas 4–6)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 2: Holistic Values & Philosophy",
+    question: "What three sacred vows does Sanskrit embody in Shloka 4? (संस्कृतं केषां त्रयाणां व्रतं प्रतिपादितम्?)",
+    questionSanskrit: "श्लोके संस्कृतं केषां त्रयाणां व्रतं प्रतिपादितम्?",
+    options: [
+      "A) क्रोध-लोभ-मोहस्य",
+      "B) त्याग-सन्तोष-सेवाव्रतम्",
+      "C) निद्रा-आलस्य-भयस्य",
+      "D) धन-पद-प्रतिष्ठायाः"
+    ],
+    correctIndex: 1,
+    explanation: "'त्यागसन्तोषसेवाव्रतं संस्कृतम्' — Embodying the sublime vows of sacrifice (Tyaga), contentment (Santosha), and service (Seva).",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q2-2",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Holistic Values (Shlokas 4–6)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 2: Holistic Values & Philosophy",
+    question: "To what cosmic objective is Sanskrit dedicated in Shloka 4?",
+    questionSanskrit: "संस्कृतं कस्य निष्ठायुतं वर्तते?",
+    options: [
+      "A) स्वकुटुम्बकल्याणस्य",
+      "B) विश्वकल्याणस्य",
+      "C) केवलम् अर्थोपार्जनस्य",
+      "D) शत्रुविनाशस्य"
+    ],
+    correctIndex: 1,
+    explanation: "'विश्वकल्याणनिष्ठायुतं संस्कृतम्' — Endowed with dedication towards the welfare of the entire world.",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q2-3",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Holistic Values (Shlokas 4–6)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 2: Holistic Values & Philosophy",
+    question: "Sanskrit is celebrated as the grand union (सम्मेलनम्) of which two domains?",
+    questionSanskrit: "कयोः द्वयोः सम्मेलनं संस्कृतम् अस्ति?",
+    options: [
+      "A) ज्ञानविज्ञानयोः (Spiritual knowledge & scientific empiricism)",
+      "B) युद्धसन्ध्योः (War and truce)",
+      "C) पापपुण्ययोः (Sin and virtue)",
+      "D) जन्ममरणयोः (Birth and death)"
+    ],
+    correctIndex: 0,
+    explanation: "'ज्ञानविज्ञानसम्मेलनं संस्कृतम्' — The grand synthesis of metaphysical wisdom (Jnana) and empirical science (Vijnana).",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q2-4",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Holistic Values (Shlokas 4–6)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 2: Holistic Values & Philosophy",
+    question: "What is the meaning of 'भुक्तिमुक्तिद्वयोद्वेलनम्'?",
+    questionSanskrit: "'भुक्तिमुक्तिद्वयोद्वेलनम्' इत्यस्य कः अभिप्रायः?",
+    options: [
+      "A) Denouncing both worldly life and liberation",
+      "B) Harmoniously elevating both worldly fulfillment (Bhukti) and spiritual emancipation (Mukti)",
+      "C) Choosing only asceticism",
+      "D) Rejecting spiritual liberation"
+    ],
+    correctIndex: 1,
+    explanation: "Bhukti is worldly prosperity and Mukti is spiritual liberation. Sanskrit elevates and harmonizes both pursuits.",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q2-5",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Holistic Values (Shlokas 4–6)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 2: Holistic Values & Philosophy",
+    question: "How many Purusharthas (cardinal life aims) does Sanskrit confer according to Shloka 5?",
+    questionSanskrit: "श्लोके संस्कृतं कति पुरुषार्थान् प्रयच्छति?",
+    options: [
+      "A) द्वौ",
+      "B) त्रीन्",
+      "C) चतुरः (Dharma, Artha, Kama, Moksha)",
+      "D) पञ्च"
+    ],
+    correctIndex: 2,
+    explanation: "'धर्मकामार्थमोक्षप्रदं संस्कृतम्' — Sanskrit bestows all four Purusharthas: Dharma, Artha, Kama, and Moksha.",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q2-6",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Holistic Values (Shlokas 4–6)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 2: Holistic Values & Philosophy",
+    question: "What does 'ऐहिकामुष्मिकोत्कर्षदम्' promise to the student of Sanskrit?",
+    questionSanskrit: "'ऐहिकामुष्मिकोत्कर्षदम्' इत्यस्य कः भावः?",
+    options: [
+      "A) Poverty in this world",
+      "B) Prosperity in this earthly life (Aihika) and ascent in the spiritual realm (Amushmika)",
+      "C) Only fame after demise",
+      "D) Neglect of current obligations"
+    ],
+    correctIndex: 1,
+    explanation: "'इह लोके भवम् = ऐहिकम्, अमुष्मिन् लोके भवम् = आमुष्मिकम्' — Progress in both this material world and the life hereafter.",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q2-7",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Holistic Values (Shlokas 4–6)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 2: Holistic Values & Philosophy",
+    question: "Which triune triad of spiritual paths does Sanskrit bestow in Shloka 5?",
+    questionSanskrit: "पञ्चमश्लोके संस्कृतं किं त्रिविधं तत्त्वं ददाति?",
+    options: [
+      "A) दण्डं, भेदं, नीतिम्",
+      "B) कर्मदं, ज्ञानदं, भक्तिदम्",
+      "C) कामं, क्रोधं, लोभम्",
+      "D) रूपं, लावण्यं, कान्तिम्"
+    ],
+    correctIndex: 1,
+    explanation: "'कर्मदं ज्ञानदं भक्तिदं संस्कृतम्' — Conferring the threefold path of Karma Yoga, Jnana Yoga, and Bhakti Yoga.",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q2-8",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Holistic Values (Shlokas 4–6)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 2: Holistic Values & Philosophy",
+    question: "Complete the iconic refrain of the chapter: 'सत्यनिष्ठं ______ सुन्दरं संस्कृतम्':",
+    questionSanskrit: "'सत्यनिष्ठं ______ सुन्दरं संस्कृतम्' इत्यत्र रिक्तस्थानं पूरयत:",
+    options: [
+      "A) शिवम्",
+      "B) भीषणम्",
+      "C) विषम्",
+      "D) मलिनम्"
+    ],
+    correctIndex: 0,
+    explanation: "'सत्यनिष्ठं शिवं सुन्दरं संस्कृतम्' — The immortal motto: Truth, Auspiciousness (Shivam), and Beauty (Sundaram).",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q2-9",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Holistic Values (Shlokas 4–6)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 2: Holistic Values & Philosophy",
+    question: "Why is Sanskrit compared to a 'लीलावनम्' (play-garden) in Shloka 6?",
+    questionSanskrit: "संस्कृतं कस्य लीलावनम् अस्ति?",
+    options: [
+      "A) शब्दलालित्यस्य (Of verbal elegance and stylistic beauty)",
+      "B) पशुपक्षिणाम् (Of wild animals)",
+      "C) पुष्पाणाम् (Of seasonal flowers)",
+      "D) राज्ञाम् (Of monarchs)"
+    ],
+    correctIndex: 0,
+    explanation: "'शब्दलालित्यलीलावनं संस्कृतम्' — The joyful garden where elegant, melodious, and aesthetic words play.",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q2-10",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Holistic Values (Shlokas 4–6)",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 2: Holistic Values & Philosophy",
+    question: "What does Sanskrit preserve as a living monument ('यशःस्मारकम्')?",
+    questionSanskrit: "संस्कृतं केषां यशःस्मारकम् अस्ति?",
+    options: [
+      "A) विदेशीयानाम्",
+      "B) पूर्वजानाम् (Of our noble ancestors)",
+      "C) वैरिणाम्",
+      "D) सैनिकानाम्"
+    ],
+    correctIndex: 1,
+    explanation: "'पूर्वजानां यशःस्मारकं संस्कृतम्' — The living monument commemorating the eternal glory and wisdom of our ancestors.",
+    difficulty: "easy",
+    points: 10
+  },
+
+  // --- Quiz 3: Sanskrit Compounds (समासाः), Sandhi & Grammar [10 Qs] ---
+  {
+    id: "g9-ch1-q3-1",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Compounds & Grammar",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 3: Sanskrit Compounds & Grammar",
+    question: "What is the correct Samasa-Vigraha (split) of 'भारतीयैकतासाधकम्'?",
+    questionSanskrit: "'भारतीयैकतासाधकम्' इति समस्तपदस्य शुद्धः विग्रहः कः?",
+    options: [
+      "A) भारते एकता",
+      "B) भारतीयैकतायाः साधकम् (Ṣaṣṭhī Tatpuruṣa)",
+      "C) भारतीया एकता च सा",
+      "D) भारतीयस्य एकता"
+    ],
+    correctIndex: 1,
+    explanation: "भारतीयैकतायाः साधकम् is a Ṣaṣṭhī Tatpuruṣa compound showing the genitive relationship.",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q3-2",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Compounds & Grammar",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 3: Sanskrit Compounds & Grammar",
+    question: "Identify the compound type in 'ज्ञानविज्ञानसम्मेलनम्':",
+    questionSanskrit: "'ज्ञानविज्ञानसम्मेलनम्' इत्यत्र कः समासः?",
+    options: [
+      "A) द्वन्द्वगर्भ-षष्ठी-तत्पुरुषः (ज्ञानस्य विज्ञानस्य च सम्मेलनम्)",
+      "B) अव्ययीभावः",
+      "C) बहुव्रीहिः",
+      "D) केवल-कर्मधारयः"
+    ],
+    correctIndex: 0,
+    explanation: "ज्ञानं च विज्ञानं च = ज्ञानविज्ञाने (Dvandva), तयोः सम्मेलनम् = ज्ञानविज्ञानसम्मेलनम् (Ṣaṣṭhī Tatpuruṣa).",
+    difficulty: "hard",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q3-3",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Compounds & Grammar",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 3: Sanskrit Compounds & Grammar",
+    question: "What is the grammatical resolution of the compound 'शान्तिसंस्थापकम्'?",
+    questionSanskrit: "'शान्तिसंस्थापकम्' इत्यस्य विग्रहवाक्यं किम्?",
+    options: [
+      "A) शान्त्या संस्थापकम्",
+      "B) शान्तौ संस्थापकम्",
+      "C) शान्तेः संस्थापकम्",
+      "D) शान्तिं संस्थापकम्"
+    ],
+    correctIndex: 2,
+    explanation: "शान्तेः संस्थापकम् — Ṣaṣṭhī Tatpuruṣa (The establisher of peace).",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q3-4",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Compounds & Grammar",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 3: Sanskrit Compounds & Grammar",
+    question: "Separate the compound word 'सर्ववाणीपरिष्कारकम्':",
+    questionSanskrit: "'सर्ववाणीपरिष्कारकम्' इत्यस्य विग्रहः कः?",
+    options: [
+      "A) सर्वासां वाणीनां परिष्कारकम्",
+      "B) सर्वेषां वाणीनाम्",
+      "C) सर्वं च वाणी च",
+      "D) वाण्यां परिष्कारः"
+    ],
+    correctIndex: 0,
+    explanation: "सर्वासां वाणीनां परिष्कारकम् (Refiner/purifier of all speeches and languages).",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q3-5",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Compounds & Grammar",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 3: Sanskrit Compounds & Grammar",
+    question: "Solve the Sandhi combination in 'भारतीय + एकता':",
+    questionSanskrit: "'भारतीय + एकता' इत्यस्य शुद्धं सन्धिपदं किम्?",
+    options: [
+      "A) भारतीयैकता (वृद्धि-सन्धिः)",
+      "B) भारतीयता",
+      "C) भारतेकता",
+      "D) भारतीयोक्ता"
+    ],
+    correctIndex: 0,
+    explanation: "Vṛddhi Sandhi: अ/आ + ए/ऐ = ऐ (वृद्धिरेचि 6.1.88) -> भारतीय + एकता = भारतीयैकता.",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q3-6",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Compounds & Grammar",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 3: Sanskrit Compounds & Grammar",
+    question: "What Sandhi rule is applied in 'सम्पद् + अस्ति = सम्पदस्ति'?",
+    questionSanskrit: "'सम्पद् + अस्ति' इत्यत्र कः सन्धिः?",
+    options: [
+      "A) स्वरसन्धिः",
+      "B) व्यञ्जनसन्धिः / संयोगः",
+      "C) विसर्गसन्धिः",
+      "D) यण्-सन्धिः"
+    ],
+    correctIndex: 1,
+    explanation: "द् + अ = द (Consonant joins following vowel directly without euphonic change).",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q3-7",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Compounds & Grammar",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 3: Sanskrit Compounds & Grammar",
+    question: "Break the Sandhi in 'द्वयोद्वेलनम्':",
+    questionSanskrit: "'द्वयोद्वेलनम्' इत्यस्य शुद्धः सन्धिविच्छेदः कः?",
+    options: [
+      "A) द्वयोः + उद्वेलनम् (विसर्ग-ऋत्व-सन्धिः)",
+      "B) द्वय + उद्वेलनम्",
+      "C) द्वयो + द्वेलनम्",
+      "D) द्वे + उद्वेलनम्"
+    ],
+    correctIndex: 0,
+    explanation: "Visarga preceded by vowel other than 'अ/आ' followed by a voiced sound turns into 'र्' -> द्वयोः + उद्वेलनम् = द्वयोद्वेलनम्.",
+    difficulty: "hard",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q3-8",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Compounds & Grammar",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 3: Sanskrit Compounds & Grammar",
+    question: "Which word from the text acts as a synonym for 'प्रकाशः' (light/radiance)?",
+    questionSanskrit: "'प्रकाशः' इत्यर्थे पाठे कः शब्दः प्रयुक्तः?",
+    options: [
+      "A) पुञ्जः",
+      "B) प्रभा",
+      "C) लीला",
+      "D) धारा"
+    ],
+    correctIndex: 1,
+    explanation: "'प्रभा' means brilliance, light, and radiance ('ज्ञानपुञ्जप्रभादर्शकम्').",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q3-9",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Compounds & Grammar",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 3: Sanskrit Compounds & Grammar",
+    question: "What is the grammatical case (विभक्तिः) and number (वचनम्) of 'पूर्वजानाम्'?",
+    questionSanskrit: "'पूर्वजानाम्' इति पदे का विभक्तिः किं च वचनम्?",
+    options: [
+      "A) पञ्चमी, एकवचनम्",
+      "B) षष्ठी, बहुवचनम्",
+      "C) तृतीया, द्विवचनम्",
+      "D) सप्तमी, बहुवचनम्"
+    ],
+    correctIndex: 1,
+    explanation: "Declension of masculine noun 'पूर्वज' in Genitive Plural (षष्ठी विभक्तिः, बहुवचनम्).",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-ch1-q3-10",
+    category: "grade9_ch1",
+    categoryLabel: "Grade 9 Ch 1: Compounds & Grammar",
+    chapterRef: "Grade 9: प्रथमः पाठः — सत्यं शिवं सुन्दरं संस्कृतम्",
+    subCategory: "Quiz 3: Sanskrit Compounds & Grammar",
+    question: "What poetic category describes this entire opening lesson?",
+    questionSanskrit: "अयं पाठः साहित्यस्य कस्यां विधायां वर्तते?",
+    options: [
+      "A) गद्य-कथा",
+      "B) गेय-काव्यम् / गीतम् (Lyrical poetry)",
+      "C) नाटकम्",
+      "D) चम्पू-काव्यम्"
+    ],
+    correctIndex: 1,
+    explanation: "The introduction explicitly notes: 'कविना सुन्दरं गीतं प्रस्तुतम्' (A beautiful lyrical poem/song).",
+    difficulty: "easy",
+    points: 10
+  }
+
 ];

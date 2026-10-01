@@ -21,7 +21,7 @@ export interface Worksheet {
   id: string;
   title: string;
   titleSanskrit: string;
-  category: 'cbse_ch' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8';
+  category: 'cbse_ch' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8' | 'grade9';
   categoryLabel: string;
   grade: string;
   totalMarks: number;
@@ -12250,4 +12250,457 @@ export const WORKSHEETS: Worksheet[] = [
       },
     ],
   },
+
+  // ==========================================
+  // GRADE 9 CH 1 WORKSHEETS (Exact Comprehensive Set · 30 Qs)
+  // ==========================================
+  {
+    id: 'ws-grade9-ch1-ws1',
+    title: 'Chapter 1 Worksheet 1: Vocabulary & Textual Context (10 Questions)',
+    titleSanskrit: 'प्रथमः पाठः कार्यपत्रिका १: शब्दार्थ-परिचयः पाठ्यसन्दर्भः च (१० प्रश्नाः)',
+    category: 'grade9',
+    categoryLabel: 'Grade 9 Sanskrit · CBSE Sharda',
+    grade: 'CBSE Grade 9 (Sharda Framework)',
+    totalMarks: 20,
+    timeLimit: '30 Mins',
+    description: 'Textual recall, vocabulary matching (सम्पद्, नितराम्, सन्दोहदम्, परिष्कारकम्, लीलावनम्), and chapter contextual blanks.',
+    sections: [
+      {
+        sectionTitle: 'Section A: Vocabulary Matching (शब्दानाम् अर्थैः सह मेलनम्)',
+        sectionTitleSanskrit: 'खण्डः "क" · शब्दार्थानां मेलनम्',
+        instructions: 'Match the following Sanskrit terms with their correct definitions/meanings (Q1–Q5):',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'सम्पद् (Sampad) [→] ______________',
+            questionSanskrit: 'सम्पद् [→] ______________',
+            marks: 2,
+            type: 'matching',
+            options: [
+              '(A) Always / सदैव',
+              '(B) Treasure or wealth / संपत्ति',
+              '(C) Absolutely / अत्यधिक',
+              '(D) Bestower of collection / समूह देने वाली',
+              '(E) Purifier or polisher / शुद्ध करने वाली',
+              '(F) Play-garden / क्रीड़ा-उपवन'
+            ],
+            answer: '(B) Treasure or wealth / संपत्ति',
+            explanation: 'सम्पद् means wealth, treasure, or valuable heritage (1-B).',
+          },
+          {
+            num: 2,
+            question: 'नितराम् (Nitarām) [→] ______________',
+            questionSanskrit: 'नितराम् [→] ______________',
+            marks: 2,
+            type: 'matching',
+            options: [
+              '(A) Always / सदैव',
+              '(B) Treasure or wealth / संपत्ति',
+              '(C) Absolutely / अत्यधिक',
+              '(D) Bestower of collection / समूह देने वाली',
+              '(E) Purifier or polisher / शुद्ध करने वाली',
+              '(F) Play-garden / क्रीड़ा-उपवन'
+            ],
+            answer: '(C) Absolutely / अत्यधिक',
+            explanation: 'नितराम् means absolutely, extremely, or inevitably (2-C).',
+          },
+          {
+            num: 3,
+            question: 'सन्दोहदम् (Sandohadam) [→] ______________',
+            questionSanskrit: 'सन्दोहदम् [→] ______________',
+            marks: 2,
+            type: 'matching',
+            options: [
+              '(A) Always / सदैव',
+              '(B) Treasure or wealth / संपत्ति',
+              '(C) Absolutely / अत्यधिक',
+              '(D) Bestower of collection / समूह देने वाली',
+              '(E) Purifier or polisher / शुद्ध करने वाली',
+              '(F) Play-garden / क्रीड़ा-उपवन'
+            ],
+            answer: '(D) Bestower of collection / समूह देने वाली',
+            explanation: 'सन्दोह means a collection or abundance, and दम् means bestower (3-D).',
+          },
+          {
+            num: 4,
+            question: 'परिष्कारकम् (Pariṣkārakam) [→] ______________',
+            questionSanskrit: 'परिष्कारकम् [→] ______________',
+            marks: 2,
+            type: 'matching',
+            options: [
+              '(A) Always / सदैव',
+              '(B) Treasure or wealth / संपत्ति',
+              '(C) Absolutely / अत्यधिक',
+              '(D) Bestower of collection / समूह देने वाली',
+              '(E) Purifier or polisher / शुद्ध करने वाली',
+              '(F) Play-garden / क्रीड़ा-उपवन'
+            ],
+            answer: '(E) Purifier or polisher / शुद्ध करने वाली',
+            explanation: 'परिष्कारकम् means that which refines, cleanses, or polishes (4-E).',
+          },
+          {
+            num: 5,
+            question: 'लीलावनम् (Līlāvanam) [→] ______________',
+            questionSanskrit: 'लीलावनम् [→] ______________',
+            marks: 2,
+            type: 'matching',
+            options: [
+              '(A) Always / सदैव',
+              '(B) Treasure or wealth / संपत्ति',
+              '(C) Absolutely / अत्यधिक',
+              '(D) Bestower of collection / समूह देने वाली',
+              '(E) Purifier or polisher / शुद्ध करने वाली',
+              '(F) Play-garden / क्रीड़ा-उपवन'
+            ],
+            answer: '(F) Play-garden / क्रीड़ा-उपवन',
+            explanation: 'लीलावनम् means a recreational garden or park of playful beauty (5-F).',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: Textual Fact Verification & Blanks',
+        sectionTitleSanskrit: 'खण्डः "ख" · पाठ्याधारित-रिक्तस्थानपूर्तिः',
+        instructions: 'Complete the sentences using authentic terms from the text (Q6–Q10):',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 6,
+            question: 'संस्कृतं भारतदेशस्य ________________________ अस्ति।',
+            marks: 2,
+            type: 'fill',
+            options: ['सम्पद्', 'भारः', 'दुःखम्', 'विपद'],
+            answer: 'सम्पद्',
+            explanation: 'पाठ-भूमिकायाम् उल्लिखितम् — "संस्कृतं भारतदेशस्य सम्पादस्ति" (सम्पद् + अस्ति)।',
+          },
+          {
+            num: 7,
+            question: 'संस्कृताध्ययनेन मानवः ________________________ भवति।',
+            marks: 2,
+            type: 'fill',
+            options: ['सुसंस्कृतः', 'क्रोधवान्', 'अज्ञानी', 'भीरुः'],
+            answer: 'सुसंस्कृतः',
+            explanation: '"संस्कृताध्ययनेन मानवः सुसंस्कृतः भवति।"',
+          },
+          {
+            num: 8,
+            question: 'संस्कृतं सर्वतः ________________________ पञ्चशीलप्रतिष्ठापकं च वर्तते।',
+            marks: 2,
+            type: 'fill',
+            options: ['शान्तिसंस्थापकम्', 'युद्धकारकम्', 'भयप्रदम्', 'विवादकरम्'],
+            answer: 'शान्तिसंस्थापकम्',
+            explanation: '"सर्वतः शान्तिसंस्थापकं संस्कृतं पञ्चशीलप्रतिष्ठापकं संस्कृतम्॥"',
+          },
+          {
+            num: 9,
+            question: '________________________ द्वयोद्वेलनं संस्कृतम् अस्ति।',
+            marks: 2,
+            type: 'fill',
+            options: ['भुक्तिमुक्ति', 'पापपुण्य', 'सुखदुःख', 'रागद्वेष'],
+            answer: 'भुक्तिमुक्ति',
+            explanation: '"ज्ञानविज्ञानसम्मेलनं संस्कृतं भुक्तिमुक्तिद्वयोद्वेलनं संस्कृतम्॥"',
+          },
+          {
+            num: 10,
+            question: 'संस्कृतं पूर्वजानां ________________________ स्मारकम् अस्ति।',
+            marks: 2,
+            type: 'fill',
+            options: ['यशः', 'शोक', 'धन', 'गृह'],
+            answer: 'यशः',
+            explanation: '"विश्वचेतश्चमत्कारकं संस्कृतं पूर्वजानां यशःस्मारकं संस्कृतम्॥"',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ws-grade9-ch1-ws2',
+    title: 'Chapter 1 Worksheet 2: Applied Grammar — Compound Words & Sandhi (10 Questions)',
+    titleSanskrit: 'प्रथमः पाठः कार्यपत्रिका २: व्याकरणम् — समास-विग्रहः सन्धि-नियमाः च (१० प्रश्नाः)',
+    category: 'grade9',
+    categoryLabel: 'Grade 9 Sanskrit · CBSE Sharda',
+    grade: 'CBSE Grade 9 (Sharda Framework)',
+    totalMarks: 20,
+    timeLimit: '30 Mins',
+    description: 'Mastering Samasa Vigraha (तत्पुरुषः, द्वन्द्वः) and Sandhi splits (वृद्धिः, व्यञ्जनम्, विसर्गः).',
+    sections: [
+      {
+        sectionTitle: 'Section A: Compound Words Split (समस्तपदानां विग्रहः)',
+        sectionTitleSanskrit: 'खण्डः "क" · समास-विग्रहः',
+        instructions: 'Choose or provide the correct compound split (Q1–Q5):',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 1,
+            question: 'भारतीयैकतासाधकम् = ____________________',
+            marks: 2,
+            type: 'mcq',
+            options: [
+              'भारतीयैकतायाः साधकम्',
+              'भारते एकता',
+              'भारतीया एकता च',
+              'भारतीयस्य साधकम्'
+            ],
+            answer: 'भारतीयैकतायाः साधकम्',
+            explanation: 'षष्ठी-तत्पुरुष समासः — भारतीयैकतायाः साधकम् = भारतीयैकतासाधकम्।',
+          },
+          {
+            num: 2,
+            question: 'सर्ववाणीपरिष्कारकम् = ____________________',
+            marks: 2,
+            type: 'mcq',
+            options: [
+              'सर्वासां वाणीनां परिष्कारकम्',
+              'सर्वा वाणी च परिष्कारः च',
+              'सर्वस्य वाण्याः',
+              'वाण्याः परिष्कारे'
+            ],
+            answer: 'सर्वासां वाणीनां परिष्कारकम्',
+            explanation: 'षष्ठी-तत्पुरुषः — सर्वासां वाणीनां परिष्कारकम्।',
+          },
+          {
+            num: 3,
+            question: 'विश्वबन्धुत्वविस्तारकम् = ____________________',
+            marks: 2,
+            type: 'mcq',
+            options: [
+              'विश्वबन्धुत्वस्य विस्तारकम्',
+              'विश्वे बन्धुत्वम्',
+              'विश्वस्य विस्तारः',
+              'बन्धुषु विस्तारः'
+            ],
+            answer: 'विश्वबन्धुत्वस्य विस्तारकम्',
+            explanation: 'षष्ठी-तत्पुरुषः — विश्वबन्धुत्वस्य विस्तारकम्।',
+          },
+          {
+            num: 4,
+            question: 'सर्वभूतैकताकारकम् = ____________________',
+            marks: 2,
+            type: 'mcq',
+            options: [
+              'सर्वभूतानाम् एकतायाः कारकम्',
+              'सर्वस्य भूतस्य',
+              'भूतेषु कारकम्',
+              'एकतायां भूतम्'
+            ],
+            answer: 'सर्वभूतानाम् एकतायाः कारकम्',
+            explanation: 'षष्ठी-तत्पुरुषः — सर्वभूतानाम् एकतायाः कारकम्।',
+          },
+          {
+            num: 5,
+            question: 'ज्ञानविज्ञानसम्मेलनम् = ____________________',
+            marks: 2,
+            type: 'mcq',
+            options: [
+              'ज्ञानस्य विज्ञानस्य च सम्मेलनम्',
+              'ज्ञाने विज्ञानम्',
+              'ज्ञानं विज्ञानं च',
+              'सम्मेलने विज्ञानम्'
+            ],
+            answer: 'ज्ञानस्य विज्ञानस्य च सम्मेलनम्',
+            explanation: 'द्वन्द्वगर्भ-षष्ठी-तत्पुरुषः — ज्ञानस्य विज्ञानस्य च सम्मेलनम्।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: Sandhi Splitting & Joining (सन्धि-कार्यम्)',
+        sectionTitleSanskrit: 'खण्डः "ख" · सन्धि-विच्छेदः संयोजनं च',
+        instructions: 'Solve the Sandhi operations (Q6–Q10):',
+        totalMarks: 10,
+        questions: [
+          {
+            num: 6,
+            question: 'भारतीयैकता = __________________ + __________________',
+            marks: 2,
+            type: 'grammar',
+            options: [
+              'भारतीय + एकता (वृद्धि-सन्धिः)',
+              'भारती + एकता',
+              'भारतीये + कता',
+              'भारत + एकता'
+            ],
+            answer: 'भारतीय + एकता (वृद्धि-सन्धिः)',
+            explanation: 'अ + ए = ऐ (वृद्धिरेचि सूत्रेण वृद्धि-स्वरसन्धिः)।',
+          },
+          {
+            num: 7,
+            question: 'सम्पदस्ति = __________________ + __________________',
+            marks: 2,
+            type: 'grammar',
+            options: [
+              'सम्पद् + अस्ति',
+              'सम्पत् + अस्ति',
+              'सम्पदा + अस्ति',
+              'सम् + पदस्ति'
+            ],
+            answer: 'सम्पद् + अस्ति',
+            explanation: 'व्यञ्जनसंयोगः — सम्पद् + अस्ति = सम्पदस्ति।',
+          },
+          {
+            num: 8,
+            question: 'अपेक्षितमस्ति = __________________ + __________________',
+            marks: 2,
+            type: 'grammar',
+            options: [
+              'अपेक्षितम् + अस्ति',
+              'अपेक्षित + मस्ति',
+              'अपेक्षिता + अस्ति',
+              'अपे + क्षितमस्ति'
+            ],
+            answer: 'अपेक्षितम् + अस्ति',
+            explanation: 'अनुस्वार/संयोगः — अपेक्षितम् + अस्ति = अपेक्षितमस्ति।',
+          },
+          {
+            num: 9,
+            question: 'सर्वदानन्दः = __________________ + __________________',
+            marks: 2,
+            type: 'grammar',
+            options: [
+              'सर्वदा + आनन्दः (दीर्घ-सन्धिः)',
+              'सर्व + दानन्दः',
+              'सर्वद + आनन्दः',
+              'सर्वदान + दः'
+            ],
+            answer: 'सर्वदा + आनन्दः (दीर्घ-सन्धिः)',
+            explanation: 'आ + आ = आ (अकः सवर्णे दीर्घः)।',
+          },
+          {
+            num: 10,
+            question: 'द्वयोद्वेलनम् = __________________ + __________________',
+            marks: 2,
+            type: 'grammar',
+            options: [
+              'द्वयोः + उद्वेलनम्',
+              'द्वय + उद्वेलनम्',
+              'द्वयो + द्वेलनम्',
+              'द्वे + उद्वेलनम्'
+            ],
+            answer: 'द्वयोः + उद्वेलनम्',
+            explanation: 'विसर्गस्य ऋत्वे कृते — द्वयोः + उद्वेलनम् = द्वयोर् + उद्वेलनम् = द्वयोद्वेलनम्।',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ws-grade9-ch1-ws3',
+    title: 'Chapter 1 Worksheet 3: Verse Comprehension & Philosophical Analysis (10 Questions)',
+    titleSanskrit: 'प्रथमः पाठः कार्यपत्रिका ३: श्लोकार्थावबोधनम् दार्शनिक-विश्लेषणं च (१० प्रश्नाः)',
+    category: 'grade9',
+    categoryLabel: 'Grade 9 Sanskrit · CBSE Sharda',
+    grade: 'CBSE Grade 9 (Sharda Framework)',
+    totalMarks: 20,
+    timeLimit: '30 Mins',
+    description: 'Deep comprehension of Shlokas 3 & 5, one-word analysis, complete sentences, and True/False assertions.',
+    sections: [
+      {
+        sectionTitle: 'Section A: One-Word Comprehension (एकपदेन उत्तरत)',
+        sectionTitleSanskrit: 'खण्डः "क" · एकपदेन उत्तरत',
+        instructions: 'Read Shlokas 3 & 5 and answer in one word (Q1–Q4):',
+        totalMarks: 8,
+        questions: [
+          {
+            num: 1,
+            question: 'संस्कृतं कस्य विस्तारकं भवति?',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'विश्वबन्धुत्वस्य',
+            explanation: 'श्लोक ३: "विश्वबन्धुत्वविस्तारकं संस्कृतम्"।',
+          },
+          {
+            num: 2,
+            question: 'संस्कृतं केषु एकतायाः कारकम्?',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'सर्वभूतेषु (सर्वभूतैकताकारकम्)',
+            explanation: 'समस्त-प्राणिमात्रे एकात्मभाव-स्थापिका।',
+          },
+          {
+            num: 3,
+            question: 'संस्कृतं कति-पुरुषार्थप्रदम् अस्ति?',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'चतुरः (धर्म-काम-अर्थ-मोक्षप्रदम्)',
+            explanation: 'धर्म, अर्थ, काम, मोक्ष इति चतुरः पुरुषार्थान् ददाति।',
+          },
+          {
+            num: 4,
+            question: 'संस्कृतं कीदृशं वर्तते? (अन्तिमपदानुसारम्)',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'सत्यनिष्ठं शिवं सुन्दरम्',
+            explanation: 'पञ्चमश्लोकस्य अन्ते: "सत्यनिष्ठं शिवं सुन्दरं संस्कृतम्"।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section B: Full Sentence Answers (पूर्णवाक्येन उत्तरत)',
+        sectionTitleSanskrit: 'खण्डः "ख" · पूर्णवाक्येन उत्तरत',
+        instructions: 'Answer in complete grammatical Sanskrit sentences (Q5–Q7):',
+        totalMarks: 6,
+        questions: [
+          {
+            num: 5,
+            question: 'संस्कृतं केषां पञ्चशीलानां प्रतिष्ठापकम् अस्ति?',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'संस्कृतं सदाचारस्य शान्तेः च पञ्चशीलप्रतिष्ठापकम् अस्ति।',
+            explanation: 'संस्कृतं विश्वे शान्तिं पञ्चशील-सदाचार-नियमांश्च प्रतिष्ठापयति।',
+          },
+          {
+            num: 6,
+            question: 'ऐहिकामुष्मिकोत्कर्षः केन साधितः भवति?',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'ऐहिकामुष्मिकोत्कर्षः संस्कृताध्ययनेन संस्कृतभाषायाः ज्ञानेन च साधितः भवति।',
+            explanation: 'इहलोकस्य परलोकस्य च उन्नतिः संस्कृतेन भवति।',
+          },
+          {
+            num: 7,
+            question: 'संस्कृतं कीदृशं त्रिविधं भावं प्रददाति?',
+            marks: 2,
+            type: 'short_ans',
+            answer: 'संस्कृतं कर्मदं, ज्ञानदं, भक्तिदं च त्रिविधं भावं प्रददाति।',
+            explanation: 'पञ्चमश्लोकः: "कर्मदं ज्ञानदं भक्तिदं संस्कृतम्"।',
+          },
+        ],
+      },
+      {
+        sectionTitle: 'Section C: True or False (आम / न)',
+        sectionTitleSanskrit: 'खण्डः "ग" · सत्यासत्य-निर्णयः (आम / न)',
+        instructions: 'Mark whether the statement is True (आम) or False (न) (Q8–Q10):',
+        totalMarks: 6,
+        questions: [
+          {
+            num: 8,
+            question: 'संस्कृतं केवलम् ऐहिकोत्कर्षं ददाति, आमुष्मिकं न।',
+            marks: 2,
+            type: 'mcq',
+            options: ['आम (True)', 'न (False)'],
+            answer: 'न (False)',
+            explanation: 'संस्कृतं "ऐहिकामुष्मिकोत्कर्षदम्" अस्ति, अर्थात् द्वयोः लोकयोः उत्कर्षं ददाति।',
+          },
+          {
+            num: 9,
+            question: 'संस्कृतं सर्वतः शान्तेः संस्थापनं करोति।',
+            marks: 2,
+            type: 'mcq',
+            options: ['आम (True)', 'न (False)'],
+            answer: 'आम (True)',
+            explanation: 'श्लोकः: "सर्वतः शान्तिसंस्थापकं संस्कृतम्"।',
+          },
+          {
+            num: 10,
+            question: 'पञ्चशीलप्रतिष्ठापकं संस्कृतं नास्ति।',
+            marks: 2,
+            type: 'mcq',
+            options: ['आम (True)', 'न (False)'],
+            answer: 'न (False)',
+            explanation: 'संस्कृतं पञ्चशीलानां प्रतिष्ठापकम् अस्ति, अतः असत्यम्।',
+          },
+        ],
+      },
+    ],
+  },
+
 ];

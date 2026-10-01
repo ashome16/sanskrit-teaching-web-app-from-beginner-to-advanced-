@@ -70,6 +70,7 @@ const LEVEL_MENU_OPTIONS: LevelMenuOption[] = [
 const CHAPTER_SUBFILTERS = [
   { id: 'all_chapters', label: 'All Chapters (समग्र-पाठाः)' },
   { id: 'grade8', label: 'Grade 8: दीपकम् (Class 8)' },
+  { id: 'grade9', label: 'Grade 9: शारदा (Class 9)' },
   { id: 'deep_ch1', label: 'Ch 1: वन्दे भारतमातरम्' },
   { id: 'deep_ch2', label: 'Ch 2: नित्यं पिबामः सुभाषितरसम्' },
   { id: 'deep_ch3', label: 'Ch 3: मित्राय नमः' },
@@ -92,7 +93,7 @@ const resolveInitialTrack = (cat?: string): { level: WorksheetMenuLevel; subfilt
   if (cat === 'grammar') return { level: 'grammar', subfilter: 'all_chapters' };
   if (cat === 'vedic_maths') return { level: 'vedic_maths', subfilter: 'all_chapters' };
   if (cat === 'cbse_ch') return { level: 'ncert', subfilter: 'all_chapters' };
-  if (cat.startsWith('deep_ch') || cat === 'grade8') return { level: 'ncert', subfilter: cat };
+  if (cat.startsWith('deep_ch') || cat === 'grade8' || cat === 'grade9') return { level: 'ncert', subfilter: cat };
   return { level: 'all', subfilter: 'all_chapters' };
 };
 
@@ -126,7 +127,13 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
     () =>
       canReadAllChapters
         ? WORKSHEETS
-        : WORKSHEETS.filter((ws) => ws.category !== 'grade8' && !ws.id.startsWith('ws-grade8-')),
+        : WORKSHEETS.filter(
+            (ws) =>
+              ws.category !== 'grade8' &&
+              ws.category !== 'grade9' &&
+              !ws.id.startsWith('ws-grade8-') &&
+              !ws.id.startsWith('ws-grade9-')
+          ),
     [canReadAllChapters]
   );
 
@@ -146,12 +153,21 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
           (ws) =>
             ws.category === 'cbse_ch' ||
             ws.id.startsWith('ws-ch') ||
-            (canReadAllChapters && (ws.category === 'grade8' || ws.id.startsWith('ws-grade8-')))
+            (canReadAllChapters &&
+              (ws.category === 'grade8' ||
+                ws.category === 'grade9' ||
+                ws.id.startsWith('ws-grade8-') ||
+                ws.id.startsWith('ws-grade9-')))
         );
       }
       if (selectedChapterSubfilter === 'grade8') {
         return publicWorksheets.filter(
           (ws) => ws.category === 'grade8' || ws.id.startsWith('ws-grade8-')
+        );
+      }
+      if (selectedChapterSubfilter === 'grade9') {
+        return publicWorksheets.filter(
+          (ws) => ws.category === 'grade9' || ws.id.startsWith('ws-grade9-')
         );
       }
       const match = selectedChapterSubfilter.match(/deep_ch(\d+)/);
