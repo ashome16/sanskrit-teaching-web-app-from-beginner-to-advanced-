@@ -269,8 +269,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const [isGunitaOpen, setIsGunitaOpen] = useState(false);
   const [isGrade8SyllabusOpen, setIsGrade8SyllabusOpen] = useState(false);
   const [isPlayingAll, setIsPlayingAll] = useState(false);
-  /** Whole-lesson recitation, distinct from paragraph ▶ Play all. */
-  const [fullLessonPhase, setFullLessonPhase] = useState<'idle' | 'playing' | 'paused'>('idle');
+  /** Lesson paragraphs only. Grouped charts (Varṇamālā / Numbers / बारहखड़ी) stay on isPlayingAll. */
+  const [playAllPhase, setPlayAllPhase] = useState<'idle' | 'playing' | 'paused'>('idle');
   const [playingLetter, setPlayingLetter] = useState<string | null>(null);
   const [playingGroupIdx, setPlayingGroupIdx] = useState<number | null>(null);
   const [varnamalaSubMode, setVarnamalaSubMode] = useState<'sound' | 'writing' | 'worksheets'>('sound');
@@ -278,9 +278,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const [padSelectedLetter, setPadSelectedLetter] = useState<string>('अ');
   const [glosses, setGlosses] = useState<AnalyseRegistry>({});
   const stopPlayAllRef = useRef<(() => void) | null>(null);
-  /** Spoken tokens for the current lesson, and the token index to resume from. */
-  const fullLessonItemsRef = useRef<string[]>([]);
-  const fullLessonIndexRef = useRef(0);
+  /** Word index inside the current paragraph. Pause resumes here (replays the cut-off word). */
+  const paragraphIndexRef = useRef(0);
+  /** Set only when Play all itself moves to the next paragraph, so that navigation does not cancel it. */
+  const continueAfterAdvanceRef = useRef(false);
+  const beginLessonParagraphRef = useRef<(fromIndex: number) => void>(() => {});
   /** Letter shown in the mobile "now playing" chip after a single tile tap. */
   const [tapPlayingLetter, setTapPlayingLetter] = useState<string | null>(null);
   const tapChipTimerRef = useRef<number | null>(null);
@@ -338,22 +340,6 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const activeEnglishMeaning = activeGloss ? englishMeaningFromGloss(activeGloss) : '';
   const activeHindiMeaning = activeGloss?.languages?.hi?.meaning || '';
 
-  const stopPlayAll = () => {
-    stopPlayAllRef.current?.();
-    stopPlayAllRef.current = null;
-    stopPronunciation();
-    setIsPlayingAll(false);
-    setPlayingLetter(null);
-    setPlayingGroupIdx(null);
-    clearTapChip();
-  };
-
-  const resetFullLesson = () => {
-    fullLessonItemsRef.current = [];
-    fullLessonIndexRef.current = 0;
-    setFullLessonPhase('idle');
-  };
-
   /** Stop speechSynthesis and drop any utterances still queued by the sequence. */
   const cancelSpeechNow = () => {
     stopPlayAllRef.current?.();
@@ -362,6 +348,17 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     if (typeof window !== 'undefined' && window.speechSynthesis) {
       window.speechSynthesis.cancel();
     }
+  };
+
+  const stopPlayAll = () => {
+    continueAfterAdvanceRef.current = false;
+    cancelSpeechNow();
+    setIsPlayingAll(false);
+    setPlayAllPhase('idle');
+    paragraphIndexRef.current = 0;
+    setPlayingLetter(null);
+    setPlayingGroupIdx(null);
+    clearTapChip();
   };
 
   useEffect(() => () => {
@@ -379,7 +376,13 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   }, [activeLessonId]);
 
   useEffect(() => {
-    // New page / lesson: stop Play-all and any full-lesson recitation.
+    // Play all finished a paragraph and asked to open the next one. Do not cancel.
+    if (continueAfterAdvanceRef.current) {
+      continueAfterAdvanceRef.current = false;
+      beginLessonParagraphRef.current(0);
+      return;
+    }
+    // Lesson change, or the student moved paragraphs: stop. Do not resume or skip.
     stopPlayAllRef.current?.();
     stopPlayAllRef.current = null;
     stopPronunciation();
@@ -388,12 +391,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     }
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsPlayingAll((prev) => (prev ? false : prev));
+    setPlayAllPhase('idle');
+    paragraphIndexRef.current = 0;
     setPlayingLetter(null);
     setPlayingGroupIdx(null);
     clearTapChip();
-    fullLessonItemsRef.current = [];
-    fullLessonIndexRef.current = 0;
-    setFullLessonPhase('idle');
   }, [activeLessonId, sentenceNumber]);
 
   // Leaving Sound & Pictures (writing / worksheets) cancels playback.
@@ -404,12 +406,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     stopPlayAllRef.current = null;
     stopPronunciation();
     setIsPlayingAll(false);
+    setPlayAllPhase('idle');
+    paragraphIndexRef.current = 0;
     setPlayingLetter(null);
     setPlayingGroupIdx(null);
     clearTapChip();
-    fullLessonItemsRef.current = [];
-    fullLessonIndexRef.current = 0;
-    setFullLessonPhase('idle');
   }, [isVarnamala, varnamalaSubMode]);
 
   const speechItemsFromSentence = (item: LessonSentence): string[] => {
@@ -428,97 +429,133 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     return speechItemsFromSentence(sentence);
   };
 
-  /** Every speakable token in the current lesson, in reading order (not one paragraph). */
-  const collectFullLessonItems = (): string[] => {
-    if (!activeLesson || isGroupedLesson) return [];
-    return activeLesson.sentences.flatMap((item) => speechItemsFromSentence(item));
-  };
-
-  const beginFullLesson = (fromIndex: number) => {
-    const items = fullLessonItemsRef.current;
-    if (fromIndex >= items.length) {
-      resetFullLesson();
-      return;
-    }
-    stopPlayAllRef.current?.();
-    stopPlayAllRef.current = null;
-    setIsPlayingAll(false);
-    setPlayingGroupIdx(null);
-    setFullLessonPhase('playing');
-    const slice = items.slice(fromIndex);
-    stopPlayAllRef.current = playSequence(slice, {
-      gapMs: 240,
-      // Same lesson path as paragraph Play all: digits → Devanagari cardinals.
-      sanskritCardinals: true,
-      onItem: (_word, index) => {
-        fullLessonIndexRef.current = fromIndex + index;
-        setPlayingLetter(_word);
-      },
-      onDone: () => {
-        stopPlayAllRef.current = null;
-        fullLessonItemsRef.current = [];
-        fullLessonIndexRef.current = 0;
-        setFullLessonPhase('idle');
-        setPlayingLetter(null);
-      },
-    });
-  };
-
-  const handlePlayFullLesson = () => {
+  /**
+   * Speak the current paragraph from `fromIndex` (lesson reader only).
+   * Digits go through playSequence({ sanskritCardinals }) — the same path as a
+   * single lesson word. Daṇḍa tokens are already filtered out.
+   * When the paragraph finishes, open the next one and keep going.
+   * Stops at the end of this lesson (does not enter the next lesson).
+   */
+  const beginLessonParagraph = (fromIndex: number) => {
     if (isGroupedLesson) return;
-    if (fullLessonPhase === 'playing') {
-      // Pause keeps the current token so Resume replays the word that was cut off.
-      cancelSpeechNow();
-      setIsPlayingAll(false);
-      setPlayingLetter(null);
-      setPlayingGroupIdx(null);
-      setFullLessonPhase('paused');
-      return;
-    }
-    if (fullLessonPhase !== 'paused' || fullLessonItemsRef.current.length === 0) {
-      const items = collectFullLessonItems();
-      if (!items.length) return;
-      fullLessonItemsRef.current = items;
-      fullLessonIndexRef.current = 0;
-    }
-    if (fullLessonIndexRef.current >= fullLessonItemsRef.current.length) {
-      fullLessonIndexRef.current = 0;
-    }
-    beginFullLesson(fullLessonIndexRef.current);
-  };
-
-  const handlePlayAll = () => {
-    if (fullLessonPhase !== 'idle') {
-      cancelSpeechNow();
-      resetFullLesson();
-    }
-    if (isPlayingAll) {
-      stopPlayAll();
-      return;
-    }
-    const items = collectPlayAllItems();
-    if (!items.length) return;
+    const items = speechItemsFromSentence(sentence);
+    const start = Math.max(0, fromIndex);
+    setPlayAllPhase('playing');
     setIsPlayingAll(true);
     setPlayingGroupIdx(null);
-    stopPlayAllRef.current = playSequence(items, {
+    if (start >= items.length) {
+      if (sentenceNumber < totalSentences) {
+        continueAfterAdvanceRef.current = true;
+        paragraphIndexRef.current = 0;
+        onJumpToSentence(sentenceNumber);
+        return;
+      }
+      stopPlayAllRef.current = null;
+      paragraphIndexRef.current = 0;
+      setPlayAllPhase('idle');
+      setIsPlayingAll(false);
+      setPlayingLetter(null);
+      return;
+    }
+    const slice = items.slice(start);
+    stopPlayAllRef.current?.();
+    stopPlayAllRef.current = null;
+    stopPlayAllRef.current = playSequence(slice, {
       gapMs: 240,
-      // Deepakam / Class 8 lessons only — not Varṇamālā, बारहखड़ी, or the Numbers guide.
-      sanskritCardinals: !isGroupedLesson,
-      onItem: (word) => setPlayingLetter(word),
+      sanskritCardinals: true,
+      onItem: (word, index) => {
+        paragraphIndexRef.current = start + index;
+        setPlayingLetter(word);
+      },
       onDone: () => {
         stopPlayAllRef.current = null;
+        if (sentenceNumber < totalSentences) {
+          continueAfterAdvanceRef.current = true;
+          paragraphIndexRef.current = 0;
+          onJumpToSentence(sentenceNumber);
+          return;
+        }
+        paragraphIndexRef.current = 0;
+        setPlayAllPhase('idle');
         setIsPlayingAll(false);
         setPlayingLetter(null);
         setPlayingGroupIdx(null);
       },
     });
   };
+  beginLessonParagraphRef.current = beginLessonParagraph;
+
+  const pauseLessonPlayAll = () => {
+    // Stay on this paragraph. Do not open the next section.
+    continueAfterAdvanceRef.current = false;
+    cancelSpeechNow();
+    setIsPlayingAll(false);
+    setPlayAllPhase('paused');
+    setPlayingLetter(null);
+    setPlayingGroupIdx(null);
+  };
+
+  /** Student moved by hand: cancel speech and do not auto-advance. */
+  const stopLessonPlaybackForNav = () => {
+    continueAfterAdvanceRef.current = false;
+    if (playAllPhase === 'idle' && !isPlayingAll) return;
+    cancelSpeechNow();
+    setPlayAllPhase('idle');
+    setIsPlayingAll(false);
+    paragraphIndexRef.current = 0;
+    setPlayingLetter(null);
+    setPlayingGroupIdx(null);
+  };
+
+  const goReaderNext = () => {
+    stopLessonPlaybackForNav();
+    onNext();
+  };
+  const goReaderPrevious = () => {
+    stopLessonPlaybackForNav();
+    onPrevious();
+  };
+  const jumpReaderSection = (index: number) => {
+    stopLessonPlaybackForNav();
+    onJumpToSentence(index);
+  };
+
+  const handlePlayAll = () => {
+    if (isGroupedLesson) {
+      if (isPlayingAll) {
+        stopPlayAll();
+        return;
+      }
+      const items = collectPlayAllItems();
+      if (!items.length) return;
+      setIsPlayingAll(true);
+      setPlayingGroupIdx(null);
+      stopPlayAllRef.current = playSequence(items, {
+        gapMs: 240,
+        sanskritCardinals: false,
+        onItem: (word) => setPlayingLetter(word),
+        onDone: () => {
+          stopPlayAllRef.current = null;
+          setIsPlayingAll(false);
+          setPlayingLetter(null);
+          setPlayingGroupIdx(null);
+        },
+      });
+      return;
+    }
+    if (playAllPhase === 'playing') {
+      pauseLessonPlayAll();
+      return;
+    }
+    if (playAllPhase === 'paused') {
+      beginLessonParagraph(paragraphIndexRef.current);
+      return;
+    }
+    paragraphIndexRef.current = 0;
+    beginLessonParagraph(0);
+  };
 
   const handlePlayGroup = (words: string[], groupIdx: number) => {
-    if (fullLessonPhase !== 'idle') {
-      cancelSpeechNow();
-      resetFullLesson();
-    }
     // Toggle Stop when the same row is already playing.
     if (isPlayingAll && playingGroupIdx === groupIdx) {
       stopPlayAll();
@@ -540,11 +577,10 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     });
   };
 
-  /** Word or tile: a manual tap ends full-lesson recitation so one word can play. */
+  /** A manual word tap ends Play all so that one word can play. Next Play all starts this paragraph over. */
   const handleSpokenWord = (word: string) => {
-    if (fullLessonPhase !== 'idle') {
-      cancelSpeechNow();
-      resetFullLesson();
+    if (playAllPhase !== 'idle' || isPlayingAll) {
+      stopPlayAll();
     }
     onWordClick(word);
   };
@@ -615,6 +651,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               className="textbook-lesson-select"
               value={activeLessonId}
               onChange={(event) => {
+                stopLessonPlaybackForNav();
                 if (event.target.value === '__cbse_guide__' && onOpenCbseGuide) {
                   onOpenCbseGuide();
                 } else {
@@ -759,7 +796,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               id="section-jump"
               className="textbook-jump-select"
               value={String(currentJumpIndex)}
-              onChange={(event) => onJumpToSentence(Number(event.target.value))}
+              onChange={(event) => jumpReaderSection(Number(event.target.value))}
               aria-label="Jump to lesson section"
             >
               {sectionJumps.map((jump) => (
@@ -774,7 +811,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                   key={`chip-${jump.index}`}
                   type="button"
                   className={`textbook-jump-chip${currentJumpIndex === jump.index ? ' active' : ''}`}
-                  onClick={() => onJumpToSentence(jump.index)}
+                  onClick={() => jumpReaderSection(jump.index)}
                 >
                   {getJumpChipLabel(jump, activeLessonId)}
                 </button>
@@ -789,31 +826,22 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             <div className="textbook-controls-left">
               <button
                 type="button"
-                className={`textbook-playall-strip-btn${isPlayingAll ? ' active' : ''}`}
+                className={`textbook-playall-strip-btn${playAllPhase === 'playing' ? ' active' : ''}`}
                 onClick={handlePlayAll}
-                aria-pressed={isPlayingAll}
-                title="Hear every word in this paragraph, in order"
-              >
-                {isPlayingAll ? '⏹ Stop' : '▶ Play all'}
-              </button>
-              <button
-                type="button"
-                className={`textbook-playfull-strip-btn${fullLessonPhase === 'playing' ? ' active' : ''}`}
-                onClick={handlePlayFullLesson}
-                aria-pressed={fullLessonPhase === 'playing'}
+                aria-pressed={playAllPhase === 'playing'}
                 title={
-                  fullLessonPhase === 'playing'
-                    ? 'Pause the full lesson'
-                    : fullLessonPhase === 'paused'
-                      ? 'Resume the full lesson from the word that was paused'
-                      : 'Speak this whole lesson in order, not just this paragraph'
+                  playAllPhase === 'playing'
+                    ? 'Pause. Stays on this paragraph and does not skip ahead.'
+                    : playAllPhase === 'paused'
+                      ? 'Resume from the word that was paused, then continue through this lesson.'
+                      : 'Play this paragraph, then each following one, until the lesson ends.'
                 }
               >
-                {fullLessonPhase === 'playing'
+                {playAllPhase === 'playing'
                   ? '⏸ Pause'
-                  : fullLessonPhase === 'paused'
+                  : playAllPhase === 'paused'
                     ? '▶ Resume'
-                    : '▶ Play full lesson'}
+                    : '▶ Play all'}
               </button>
               <span className="textbook-progress-badge">
                 {sentence.kind?.startsWith('glossary') || sentence.kind?.startsWith('exercise')
@@ -825,7 +853,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-strip-nav-btn"
-                onClick={onPrevious}
+                onClick={goReaderPrevious}
                 disabled={isFirstSentence}
                 title="Previous paragraph / sentence (◀)"
               >
@@ -834,7 +862,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-strip-nav-btn"
-                onClick={onNext}
+                onClick={goReaderNext}
                 disabled={isLastSentence}
                 title="Next paragraph / sentence (▶)"
               >
@@ -1759,7 +1787,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <button
             type="button"
             className="textbook-nav-btn"
-            onClick={onPrevious}
+            onClick={goReaderPrevious}
             disabled={isFirstSentence}
           >
             ◀ Previous
@@ -1777,7 +1805,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             <button
               type="button"
               className="textbook-nav-btn"
-              onClick={onNext}
+              onClick={goReaderNext}
               disabled={isLastSentence}
             >
               Next ▶
