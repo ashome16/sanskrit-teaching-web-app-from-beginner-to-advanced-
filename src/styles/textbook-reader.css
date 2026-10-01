@@ -764,7 +764,8 @@
 .textbook-glossary-card--header { background: #273b35; color: #fffdf8; }
 .textbook-glossary-title { font: 700 1.55rem "Noto Sans Devanagari", Georgia, serif; margin: 0 0 .4rem; }
 .textbook-glossary-title .interactive-word { color: #f1c75b; margin-right: .35rem; }
-.textbook-glossary-subtitle { color: #d8d0c3; font-size: .95rem; margin: 0 0 .55rem; }
+.textbook-glossary-card--header .textbook-glossary-subtitle { color: #d8d0c3; }
+.textbook-glossary-subtitle { color: #273b35; font-size: .95rem; margin: 0 0 .55rem; line-height: 1.5; }
 .textbook-glossary-hint { color: #cbd6c8; font-size: .82rem; margin: 0; }
 .textbook-glossary-pair { display: grid; gap: .35rem; margin-top: .75rem; }
 .textbook-glossary-label { color: #8a5a2b; font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
@@ -777,6 +778,39 @@
 .textbook-exercise-card .textbook-exercise-q { color: #273b35; font: 600 1.05rem "Noto Sans Devanagari", Georgia, serif; margin: 0; white-space: pre-wrap; }
 .textbook-glossary-card--header.textbook-exercise-card .textbook-glossary-title { font-size: 1.25rem; }
 .textbook-exercise-card .textbook-glossary-arth-sa .interactive-word { margin-right: .15rem; }
+
+.textbook-exercise-note-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.textbook-exercise-note-text {
+  background: #fffdf8;
+  border: 1.5px solid #e5dbcc;
+  border-radius: 8px;
+  color: #1c2826;
+  font: 600 1.3rem/1.9 "Noto Sans Devanagari", Georgia, serif;
+  margin: 0;
+  padding: 0.85rem 1.05rem;
+  box-shadow: 0 2px 6px rgba(39, 59, 53, 0.04);
+}
+
+.textbook-exercise-note-text .interactive-word {
+  color: #1c2826;
+  border-radius: 4px;
+}
+
+.textbook-exercise-note-text .interactive-word:hover {
+  background-color: #fce8a9;
+  color: #92400e;
+}
+
+.textbook-exercise-note-text .interactive-word--active {
+  background-color: #273b35 !important;
+  color: #fffdf8 !important;
+  box-shadow: 0 0 0 2px #d86a3d;
+}
 
 .textbook-jump-row { display: flex; flex-wrap: wrap; gap: .55rem .7rem; align-items: center; margin: .35rem 0 .85rem; }
 .textbook-jump-select { min-width: min(100%, 22rem); }

@@ -1380,7 +1380,69 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                   </div>
                 </>
               ) : (
-                <p className="textbook-glossary-subtitle">{sentence.sanskrit}</p>
+                <div className="textbook-exercise-note-wrap">
+                  <div className="textbook-glossary-pair" style={{ marginTop: 0 }}>
+                    <span className="textbook-glossary-label">📝 पाठ्य-टिप्पणी · Context &amp; Notes</span>
+                    <p className="textbook-exercise-note-text">
+                      {sentence.words && sentence.words.length > 0 ? (
+                        sentence.words.map((word, idx) => {
+                          const hasLetter = hasDevanagariLetter(word);
+                          if (isDandaOrVerseNumberToken(word) || !hasLetter) {
+                            return (
+                              <span
+                                key={`${activeLessonId}-${sentenceNumber}-en-${idx}`}
+                                className="textbook-punct-mark"
+                                aria-hidden={isDandaOrVerseNumberToken(word)}
+                              >
+                                {word}
+                              </span>
+                            );
+                          }
+                          const cleaned = cleanWord(word);
+                          const isSelected = Boolean(cleanActiveWord && cleaned === cleanActiveWord);
+                          return (
+                            <span
+                              key={`${activeLessonId}-${sentenceNumber}-en-${idx}`}
+                              className={`interactive-word${isSelected ? ' interactive-word--active' : ''}`}
+                              onClick={() => onWordClick(word)}
+                              role="button"
+                              tabIndex={0}
+                              onKeyDown={(event) => {
+                                if (event.key === 'Enter' || event.key === ' ') {
+                                  onWordClick(word);
+                                }
+                              }}
+                            >
+                              {word}
+                            </span>
+                          );
+                        })
+                      ) : (
+                        sentence.sanskrit
+                      )}
+                    </p>
+                  </div>
+                  {sentence.meaning && (
+                    <div className="textbook-glossary-pair">
+                      <span className="textbook-glossary-label">📖 अनुवादः · English Translation</span>
+                      <div className="textbook-glossary-arth">
+                        <p className="textbook-glossary-arth-en">{sentence.meaning}</p>
+                      </div>
+                    </div>
+                  )}
+                  {(sentence.paragraphTranslation || sentence.hindi_gloss) && (
+                    <div className="textbook-glossary-pair">
+                      <span className="textbook-glossary-label" style={{ color: '#c2410c' }}>
+                        🇮🇳 हिन्दी-भावार्थः · Hindi Translation
+                      </span>
+                      <div className="textbook-glossary-arth">
+                        <p className="textbook-glossary-arth-hi">
+                          {sentence.paragraphTranslation || sentence.hindi_gloss}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
               )}
             </div>
           ) : (sentence.kind === 'glossary' || sentence.kind === 'glossary-header') ? (
