@@ -210,327 +210,336 @@ Page 8 | पृष्ठम् ८
 
 ================================================================================
 
-📝 PART 1: EXPANDED WORKSHEETS (10 Questions Each)
+📝 PART 1: WORKSHEETS (10 Questions Each)
 
-📄 Worksheet 1: Textual Recall & Vocabulary Mastery
-Focus: Complete mantra retention and vocabulary definitions from the chapter.
+📄 Worksheet 1: Textual Recall & Sanskrit Vocabulary
+Focus: Testing mantra memorization, context, and literal definitions from the text.
 
-Section A: Complete the Vedic Verses
-Fill in the blanks using the exact structural text of the Rigvedic mantras:
-1. सङ्गच्छध्वं _______________ सं वो मनांसि जानताम्।
+Section A: Complete the Mantras
+Fill in the blanks with the correct words from the chapter text:
+1. संगच्छध्वं _______________ सं वो मनांसि जानताम्।
 2. देवा भागं यथा पूर्वे _______________ उपासते॥
-3. समानो मन्त्रः _______________ समानी समानं मनः सह _______________ एषाम्।
+3. समानो मन्त्रः _______________ समानी समानं मनः सह चित्तमेषाम्।
 4. समानं मन्त्रमभिमन्त्रये वः समानेन वो _______________ जुहोमि॥
 5. समानी व _______________ समाना हृदयानि वः।
 6. समानमस्तु वो _______________ यथा वः सुसहासति॥
 
-Section B: Match Words to Meanings (Sanskrit to English)
-Match the structural terms from the text with their correct English vocabulary definitions:
-No.  Sanskrit Term     English Definition
-7.   समवेतस्वरेण       (a) Common targeted resolutions
-8.   अभ्युदयं          (b) Intention / Deep internal resolve
-9.   समितिः           (c) Chanting altogether in unison
-10.  आकूतिः           (d) Worldly elevation, growth, and prosperity
+Section B: Match the Sanskrit Word to its Meaning
+Match the terms from the vocabulary chart with their descriptions:
+7. समवेतस्वरेण ─── (a) Resolution / Deep inner intent
+8. अभ्युदयं ─── (b) Out of mutual harmony / unified thinking
+9. संजानानाः ─── (c) Chanting all together in unison
+10. आकूतिः ─── (d) Growth, high evolution, and prosperity
 
---------------------------------------------------------------------------------
+🔑 Answer Key for Worksheet 1
+1. संवदध्वं
+2. संजानाना
+3. समितिः
+4. हविषा
+5. आकूतिः
+6. मनो
+7. (c) Chanting all together in unison
+8. (d) Growth, high evolution, and prosperity
+9. (b) Out of mutual harmony / unified thinking
+10. (a) Resolution / Deep inner intent
 
-📄 Worksheet 2: Advanced Sanskrit Grammar Applied
-Focus: Lot-Lakara (Imperative) transformations, Atmanepada roots, and enclitic short pronoun rules (Asmad / Yushmad).
+================================================================================
 
-Section A: Conjugation Shifts (Lat-Lakara to Lot-Lakara)
-Transform these everyday action statements into their commanding/requesting equivalents:
+📄 Worksheet 2: Grammar & Syntactic Transformations
+Focus: Changing active verbs to the Imperative Mood (Lot-Lakara), breaking down prefixes, and optional short pronoun variants (Asmad/Yushmad).
+
+Section A: Lat-Lakara to Lot-Lakara (Present to Imperative)
+Convert these active sentences into commands or requests using the grid on Page 6:
 1. बालकाः क्रीडाक्षेत्रे हसन्ति। ➡️ ________________________________________
 2. युवां तत्र मन्त्रं पठथः। ➡️ ________________________________________
 3. यूयं देशस्य सेवां कुरुथ। ➡️ ________________________________________
 4. आवां सत्यं मार्गं गच्छावः। ➡️ ________________________________________
 5. वयं राष्ट्रगानं सम्यक् गायामः। ➡️ ________________________________________
 
-Section B: Alternative Enclitic Forms & Root Splits
-Provide the requested alternate optional forms or root details based on the grammar charts on pages 6 and 7:
-6. What is the short, optional form of मह्यम् (Dative singular of Asmad)? ➡️ __________
-7. What is the short, optional form of तव (Genitive singular of Yushmad)? ➡️ __________
-8. What is the short, optional form of अस्माकम् (Genitive plural of Asmad)? ➡️ __________
-9. When the prefix सम् is added to the root verb गम्, what grammatical class (Pada) does it switch to? ➡️ __________
-10. Identify the Person and Number of the Atmanepada verb form संगच्छध्वम्:
-    • Person (Purusha): _________________ | Number (Vachana): _________________
+Section B: Pronoun & Conjugation Rules
+Answer based on the specialized grammar appendices on pages 6 and 7:
+6. What is the optional short variant for the word मम (Genitive Singular of Asmad)? ➡️ __________
+7. What is the optional short variant for the word तुभ्यम् (Dative Singular of Yushmad)? ➡️ __________
+8. What is the optional short variant for the word अस्माकम् (Genitive Plural of Asmad)? ➡️ __________
+9. When the prefix सम् is attached to the root गम्, what type of verb group (Pada) does it become? ➡️ __________
+10. Identify the Person (Purusha) and Number (Vachana) of the verb संगच्छध्वम्.
+* Person: _________________ | Number: _________________
 
---------------------------------------------------------------------------------
+🔑 Answer Key for Worksheet 2
+1. बालकाः क्रीडाक्षेत्रे हसन्तु।
+2. युवां तत्र मन्त्रं पठतम्।
+3. यूयं देशस्य सेवां कुरुत।
+4. आवां सत्यं मार्गं गच्छाव।
+5. वयं राष्ट्रगानं सम्यक् गायाम।
+6. मे
+7. ते
+8. नः
+9. आत्मनेपदम् (Atmanepada)
+10. मध्यमपुरुषः (Second Person), बहुवचनम् (Plural)
 
-📄 Worksheet 3: Deep Contextual Comprehension
-Focus: Understanding textual data, character statements, and core thematic concepts.
+================================================================================
 
-Section A: Short Answer Questions
-Answer based on the opening classroom dialogue and the final study notes:
-1. Who is the specific Vedic sage (ऋषिः) mentioned in the commentary who received this divine message?
-   • Ans: __________________________________________________________________________________
-2. What absolute sport were the students playing in the school festival (क्रीडोत्सवे)?
-   • Ans: __________________________________________________________________________________
-3. What two main destructive mental blockages caused the downfall of the rival football team?
-   • Ans: __________________________________________________________________________________
-4. According to Page 9, which specific Mandala (मण्डलम्) and Sukta (सूक्तम्) of the Rigveda does this text stem from?
-   • Ans: __________________________________________________________________________________
-5. In ancient times, how did cosmic elemental forces (अग्नि-वायु-आदित्यादयः) accept their designated sacrifice shares?
-   • Ans: __________________________________________________________________________________
+📄 Worksheet 3: Conceptual Context & Comprehension
+Focus: Questions from the introductory dialogue and textbook metadata.
+
+Section A: Text-Based Questions
+Answer concisely using information from the text:
+1. Which sport did the students win in their school sports festival?
+	• Ans: ___________________________________________________________
+2. What internal issues caused the opponent team to lose?
+	• Ans: ___________________________________________________________
+3. What is the alternative name for the Samjnana-Sukta?
+	• Ans: ___________________________________________________________
+4. From which specific Veda are these three mantras extracted?
+	• Ans: ___________________________________________________________
+5. According to the text commentary, who is the original Rishi (sage) of this hymn?
+	• Ans: ___________________________________________________________
 
 Section B: True or False (सत्यम् / असत्यम्)
-6. Generally, the isolated root Gam (गम्) is conjugated in Parasmaipada. ( _________ )
-7. The title text 'संगच्छध्वं संवदध्वम्' is drawn directly from the Sama-Samhita. ( _________ )
-8. Individual isolation without social cooperation brings the ultimate highest victory. ( _________ )
-9. The phrase 'सुसहासति' denotes that our societal organization should be beautifully integrated. ( _________ )
-10. The text claims there are a total of 10,552 mantras located in the Rigveda compilation. ( _________ )
+6. The isolated base root Gam (गम्) is usually a Parasmaipada verb. ( _________ )
+7. In ancient times, the gods (देवाः) fought bitterly over their sacrificial shares. ( _________ )
+8. Working in isolation without social cooperation brings quick victory. ( _________ )
+9. According to the study pages, there are a total of 10,552 mantras in the Rigveda. ( _________ )
+10. This chapter is compiled from the 10th Mandala of the Rigveda. ( _________ )
 
---------------------------------------------------------------------------------
+🔑 Answer Key for Worksheet 3
+1. पादकन्दुक-क्रीडा (Football)
+2. मनोभेदः द्वेषभावः च (Internal differences and mutual hatred)
+3. संघटन-सूक्तम् (The Hymn of Unity)
+4. ऋग्वेदः (Rigveda)
+5. ऋषिः आङ्गिरसः (Sage Angiras)
+6. सत्यम् (True)
+7. असत्यम् (False - they worked with ultimate harmony)
+8. असत्यम् (False)
+9. सत्यम् (True)
+10. सत्यम् (True)
 
-🔑 WORKSHEET ANSWER KEYS
+================================================================================
 
-Key for Worksheet 1:
-• Section A: 1. संवदध्वं | 2. संजानाना | 3. समितिः, चित्तम् | 4. हविषा | 5. आकूतिः | 6. मनो
-• Section B: 7-(c), 8-(d), 9-(a), 10-(b)
+🧠 PART 2: THE INTERACTIVE QUIZZES (10 Questions Each)
 
-Key for Worksheet 2:
-• Section A:
-  1. बालकाः क्रीडाक्षेत्रे हसन्तु।
-  2. युवां तत्र मन्त्रं पठतम्।
-  3. यूयं देशस्य सेवां कुरुत।
-  4. आवां सत्यं मार्गं गच्छेव / गच्छाव (Imperative mood standard).
-  5. वयं राष्ट्रगानं सम्यक् गायाम।
-• Section B: 6. मे | 7. ते | 8. नः | 9. आत्मनेपदम् (Atmanepada) | 10. मध्यमपुरुषः (Middle Person), बहुवचनम् (Plural)
+🏆 Quiz 1: Textual Foundations & Dialogue Elements
 
-Key for Worksheet 3:
-• Section A:
-  1. Sage Angiras (ऋषिः आङ्गिरसः).
-  2. Football (पादकन्दुक-क्रीडा).
-  3. Mental conflict (मनोभेदः) and deep mutual hatred (द्वेषभावः).
-  4. 10th Mandala, 191st Sukta (10.191).
-  5. With complete harmony, dynamic internal coordination, and full dedication (उत्कृष्ट-समन्वय-पूर्वकं).
-• Section B: 6. सत्यम् | 7. असत्यम् (Rigveda) | 8. असत्यम् | 9. सत्यम् | 10. सत्यम्
+1. What game did the students win in their school festival?
+	• (a) कन्दुक-क्रीडा
+	• (b) पादकन्दुक-क्रीडा
+	• (c) क्रिकेट-क्रीडा
+	• (d) मल्ल्युद्धम्
 
-🧠 PART 2: EXPANDED QUIZZES (10 Questions Each)
+2. Why did the opposing team lose their match?
+	• (a) They lacked athletic stamina
+	• (b) They had mutual discord and jealousy (मनोभेदः द्वेषभावः च)
+	• (c) They did not practice before the match
+	• (d) The weather was harsh
 
-🏆 Quiz 1: Textual Foundation & Mantra Completions (मन्त्रस्मरणम्)
-An assessment designed to map textual flow, verify exact syntax, and ensure accurate mantra spelling memory.
+3. What is the alternative title of the Samjnana-Sukta?
+	• (a) शान्ति-सूक्तम्
+	• (b) संघटन-सूक्तम्
+	• (c) पुरुष-सूक्तम्
+	• (d) गायत्री-सूक्तम्
 
-1. मन्त्रस्य प्रथमं पदम् अस्ति- "सङ्गच्छध्वं सं वदध्वं सं वो..." तत्र रिक्तस्थाने किं भविष्यति?
-   (A) हृदयानि वः
-   (B) मनांसि जानताम्
-   (C) देवा भागं यथा
-   (D) समानी व आकूतिः
-   संकेतः (Hint): मनसः (विचारस्य) ज्ञानस्य च विषये अस्मिन् मन्त्रभागे चर्चा कृता अस्ति।
+4. From which ancient collection is this hymn extracted?
+	• (a) यजुर्वेदः
+	• (b) सामवेदः
+	• (c) ऋग्वेदः
+	• (d) अथर्ववेदः
 
-2. "देवा भागं यथा पूर्वे..." इत्यस्य मन्त्रभागस्य पूर्णं पदं किम्?
-   (A) मनांसि जानताम्
-   (B) हविषा जुहोमि
-   (C) सञ्जानाना उपासते
-   (D) समितिः समानी
+5. How are the Vedas viewed in ancient Indian knowledge systems?
+	• (a) Human-made plays
+	• (b) Secular history logs
+	• (c) Holy divine speech emerging from Brahma (ब्रह्ममुखनिःसृता दैवी वाक्)
+	• (d) Foreign textbooks
 
-3. "समानो मन्त्रः समितिः समानी..." इत्यत्र अग्रिमः मन्त्रभागः कः?
-   (A) समानं मनः सह चित्तमेषाम्
-   (B) समानेन वो हविषा जुहोमि
-   (C) समाना हृदयानि वः
-   (D) देवा भागं यथा पूर्वे
+6. What is the total number of mantras estimated in the Rigveda text?
+	• (a) 5,000
+	• (b) 10,552
+	• (c) 1,028
+	• (d) 85
 
-4. "समानं मन्त्रमभि मन्त्रये वः..." इत्यस्य मन्त्रभागस्य पूर्णं चरणं किम्?
-   (A) समानं मनः सह चित्तमेषाम्
-   (B) समितिः समानी समानो मन्त्रः
-   (C) देवा भागं यथा पूर्वे
-   (D) समानेन वो हविषा जुहोमि
+7. Which specific Mandala of the Rigveda houses this text?
+	• (a) First Mandala
+	• (b) Fifth Mandala
+	• (c) Tenth Mandala
+	• (d) Eighth Mandala
 
-5. "समानी व आकूतिः..." इत्यस्य तृतीयामन्त्रस्य प्रथमचरणे समानानि कानि उक्तानि?
-   (A) समानं मनः सह चित्तम्
-   (B) समाना हृदयानि वः
-   (C) समानो मन्त्रः समितिः
-   (D) मनांसि जानताम्
+8. What does the chapter advice students to do before starting prayers?
+	• (a) Read newspapers
+	• (b) Remove footwear and sit with single-minded focus
+	• (c) Exercise fast
+	• (d) Talk loudly
 
-6. "समानमस्तु वो मनो..." इत्यस्य तृतीयामन्त्रस्य अन्तिमः भागः कः?
-   (A) सञ्जानाना उपासते
-   (B) समानेन वो हविषा जुहोमि
-   (C) यथा वः सुसहासति
-   (D) समानं मनः सह चित्तम्
+9. Who is the text coordinator of this textbook?
+	• (a) दिनेशप्रसादः सकलानी
+	• (b) जतीन्द्र मोहनः मिश्रः
+	• (c) चामु कृष्ण शास्त्री
+	• (d) सुधा मूर्ति
 
-7. प्रथमस्य मन्त्रस्य द्वितीयं चरणं किम्? "देवा भागं यथा पूर्वे..."
-   (A) सञ्जानाना उपासते
-   (B) मनांसि जानताम्
-   (C) यथा वः सुसहासति
-   (D) समानेन वो हविषा जुहोमि
+10. What is the name of this Class 8 textbook?
+	• (a) रुचिरा
+	• (b) शेमुषी
+	• (c) दीपकम्
+	• (d) संस्कृत-कणिका
 
-8. "...समितिः समानी समानं मनः सह चित्तमेषाम्" इत्यस्य मन्त्रभागस्य आरम्भे कः शब्दः अस्ति?
-   (A) समानी व आकूतिः
-   (B) सङ्गच्छध्वं सं वदध्वम्
-   (C) समानं मन्त्रमभि मन्त्रये
-   (D) समानो मन्त्रः
+🔑 Quiz 1 Answer Key
+1. (b) पादकन्दुक-क्रीडा
+2. (b) Mutual discord and jealousy (मनोभेदः द्वेषभावः च)
+3. (b) संघटन-सूक्तम्
+4. (c) ऋग्वेदः
+5. (c) Holy divine speech emerging from Brahma (ब्रह्ममुखनिःसृता दैवी वाक्)
+6. (b) 10,552
+7. (c) Tenth Mandala
+8. (b) Remove footwear and sit with single-minded focus
+9. (b) जतीन्द्र मोहनः मिश्रः
+10. (c) दीपकम्
 
-9. "सङ्गच्छध्वं सं वदध्वं सं वो मनांसि..." इत्यत्र अन्तिमं पदं किम्?
-   (A) उपासते
-   (B) जानताम्
-   (C) जुहोमि
-   (D) सुसहासति
+================================================================================
 
-10. "समानं मन्त्रमभि मन्त्रये वः समानेन वो..." इत्यत्र रिक्तस्थाने कः शब्दः अस्ति?
-    (A) हृदयानि
-    (B) मनांसि
-    (C) हविषा जुहोमि
-    (D) आकूतिः
+🏆 Quiz 2: Deep Mantra Meanings & Core Philosophy
 
-उत्तरकुञ्चिका व्याख्या च (Answer Key & Explanations):
-1. (B) मनांसि जानताम् • मनसः (विचारस्य) ज्ञानस्य च विषये अस्मिन् मन्त्रभागे चर्चा कृता अस्ति — "सं वो मनांसि जानताम्"।
-2. (C) सञ्जानाना उपासते • सम्यक्! पूर्णं वाक्यम् अस्ति - "देवा भागं यथा पूर्वे सञ्जानाना उपासते"।
-3. (A) समानं मनः सह चित्तमेषाम् • सम्यक्! पूर्णं वाक्यम् - "समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम्"।
-4. (D) समानेन वो हविषा जुहोमि • सम्यक्! पूर्णं वाक्यम् - "समानं मन्त्रमभि मन्त्रये वः समानेन वो हविषा जुहोमि"।
-5. (B) समाना हृदयानि वः • सम्यक्! पूर्णं चरणम् अस्ति - "समानी व आकूतिः समाना हृदयानि वः"।
-6. (C) यथा वः सुसहासति • सम्यक्! पूर्णं चरणम् अस्ति - "समानमस्तु वो मनो यथा वः सुसहासति"।
-7. (A) सञ्जानाना उपासते • सम्यक्! "देवा भागं यथा पूर्वे सञ्जानाना उपासते" इति प्रथमः मन्त्रः पूर्णः भवति।
-8. (D) समानो मन्त्रः • सम्यक्! सम्पूर्णं वाक्यम् अस्ति - "समानो मन्त्रः समितिः समानी समानं मनः सह चित्तमेषाम्"।
-9. (B) जानताम् • सम्यक्! पूर्णं वाक्यम् - "सङ्गच्छध्वं सं वदध्वं सं वो मनांसि जानताम्"।
-10. (C) हविषा जुहोमि • सम्यक्! सम्पूर्णं वाक्यम् - "समानेन वो हविषा जुहोमि"।
+1. What does 'संगच्छध्वम्' literally mean?
+	• (a) May you sit in one place
+	• (b) May you walk together harmoniously
+	• (c) May you dispute out loud
+	• (d) May you sleep peacefully
 
+2. What does 'संवदध्वम्' request people to do?
+	• (a) Speak in one unified voice of accord
+	• (b) Remain completely silent
+	• (c) Yell at opponents
+	• (d) Sing secular modern songs
 
-🏆 Quiz 2: Deep Context & Translation Meanings (पाठ-सन्दर्भः अनुवादार्थः च)
-This text focuses on the narrative background context, semantic values of complex terms, and the translation values into both English and Hindi.
+3. In the line "देवा भागं यथा पूर्वे...", who is referred to as an example?
+	• (a) Earthly human kings
+	• (b) Cosmic elements/Deities acting in absolute unison
+	• (c) Wandering merchants
+	• (d) Aggressive predators
 
-1. 'सङ्गच्छध्वम्' इत्ययं पाठः ऋग्वेदस्य कतमतमात् मण्डलात् / सूक्तात् गृहीतः अस्ति?
-   (A) सामवेदस्य प्रथमाध्यायात्
-   (B) ऋग्वेदस्य दशममण्डलस्य संज्ञानसूक्तात् (१०.१९१.२)
-   (C) यजुर्वेदात् शतपथब्राह्मणात्
-   (D) अथर्ववेदस्य शान्तिसूक्तात्
+4. What does the word 'समितिः' imply in Mantra 2?
+	• (a) A dense wilderness
+	• (b) An assembly / unified societal gathering
+	• (c) An internal battle
+	• (d) Financial profit
 
-2. संस्कृतपदे 'सङ्गच्छध्वम्' इत्यस्य कः अर्थः भवति?
-   (A) एकत्र उपविशन्तु
-   (B) एकत्र वदन्तु
-   (C) एकत्र गच्छन्तु / मिलित्वा प्रचलन्तु
-   (D) एकत्र खादन्तु
+5. What does the keyword 'हविषा' represent?
+	• (a) Sacrificial offerings/prayers of dedication
+	• (b) Sharp iron weapons
+	• (c) Royal luxury clothes
+	• (d) Harsh words
 
-3. मन्त्रे प्रयुक्तस्य 'सं वदध्वम्' पदस्य हिन्दी/आङ्ग्लभाषायाम् अर्थः कः अस्ति?
-   (A) मिलित्वा वदन्तु / Speak together in harmony
-   (B) उच्चैः क्रोशन्तु
-   (C) तूष्णीं तिष्ठन्तु
-   (D) विवादं कुर्वन्तु
+6. What is the deep philosophical definition of 'आकूतिः'?
+	• (a) Bodily stamina
+	• (b) Pure, directed mental resolve/intent
+	• (c) Golden coins
+	• (d) Written literature
 
-4. "समानो मन्त्रः समितिः समानी" इत्यस्य पङ्क्त्याः समीचीनः अर्थः कः अस्ति?
-   (A) अस्माकं निवासस्थानं भिन्नं, विचारश्च समानः।
-   (B) मन्त्रः पृथक् अस्ति, सभा च भिन्ना अस्ति।
-   (C) वयं युद्धे समानरूपेण गच्छामः।
-   (D) अस्माकं मन्त्रः (विचारः/मन्त्रणा) समानः अस्ति, सभा (समितिः) च समानरूपेण एका एव अस्ति।
+7. What does the text mean by "समानं मनः सह चित्तमेषाम्"?
+	• (a) Everyone must look physically identical
+	• (b) Their deeper minds and consciousness should function in harmony
+	• (c) People should give up thinking entirely
+	• (d) Society must be divided into rigid fractions
 
-5. 'आकूतिः' (आकूतिः) इत्यस्य पदस्य गभीरः अर्थः कः अस्ति?
-   (A) शारीरिकं बलं वा शक्तिः
-   (B) आन्तरिकः सङ्कल्पः वा विचारितम् अभीष्टम् (Inner intention or directed will)
-   (C) यज्ञे दीयमानं हविः
-   (D) बाह्यं प्रदर्शनम्
+8. What does 'सुसहासति' mean at the close of Mantra 3?
+	• (a) May you laugh loudly
+	• (b) That your collective union may be excellently strong and integrated
+	• (c) That you should travel far away
+	• (d) May you defeat your neighbors
 
-6. वैदिकसंस्कृते 'समितिः' इत्यस्य पदस्य कः अभिप्रायः अस्ति?
-   (A) एकः सैनिकव्यूहः
-   (B) एका अग्निहोत्रशाला
-   (C) एका धार्मिकी सामाजिकी वा सभा यत्राधिष्ठानं भवति (An assembly or gathering with shared purpose)
-   (D) एकः पर्वतः
+9. Who is the divine seer/ ऋषि behind these verses?
+	• (a) विश्वामित्रः
+	• (b) आङ्गिरसः
+	• (c) वसिष्ठः
+	• (d) वाल्मीकिः
 
-7. श्लोके प्रयुक्तं 'हविषा' पदं कं विषयं सूचयति?
-   (A) यज्ञे प्रक्षिप्यमाणं हविः / समर्पणभावयुक्तम् आहुतिद्रव्यम् (An oblation or offering)
-   (B) शत्रुनाशकम् अस्त्रम्
-   (C) मौनं ध्यानम्
-   (D) मधुरं गायनम्
+10. What is the ultimate purpose of chanting these collective unity mantras?
+	• (a) Collecting heavy material tax
+	• (b) Fostering a healthy, cooperative, and highly synchronized community
+	• (c) Promoting private individual growth alone
+	• (d) Building huge dynamic stone monuments
 
-8. "देवा भागं यथा पूर्वे..." इत्यस्य पङ्क्त्याः उत्तरार्धं पदं किम् अस्ति?
-   (A) मनांसि जानताम्
-   (B) समितिः समानी
-   (C) हृदयानि वः
-   (D) सञ्जानाना उपासते
+🔑 Quiz 2 Answer Key
+1. (b) May you walk together harmoniously
+2. (a) Speak in one unified voice of accord
+3. (b) Cosmic elements/Deities acting in absolute unison
+4. (b) An assembly / unified societal gathering
+5. (a) Sacrificial offerings/prayers of dedication
+6. (b) Pure, directed mental resolve/intent
+7. (b) Their deeper minds and consciousness should function in harmony
+8. (b) That your collective union may be excellently strong and integrated
+9. (b) आङ्गिरसः
+10. (b) Fostering a healthy, cooperative, and highly synchronized community
 
-9. 'समानं मनः सह चित्तमेषाम्' इत्यस्य हिन्दी अनुवादः कः अस्ति?
-   (A) तेषां मनांसि भिन्नानि सन्ति।
-   (B) तेषां मनः तथा चित्तमपि समानरूपेण एकीभूतं भवति (Their minds and consciousness are harmonious and united)
-   (C) ते केवलं शरीरतः मिलिताः सन्ति।
-   (D) तेषां चिन्तनं विरोधयुक्तम् अस्ति।
+================================================================================
 
-10. 'सङ्गच्छध्वम्' पाठस्य मूलः सन्देशः कः अस्ति?
-    (A) व्यक्तिगतस्वातन्त्र्यार्थं समाजतः पृथक् भवितव्यम्।
-    (B) केवलं धनार्जनार्थं मिलित्वा कार्यं करणीयम्।
-    (C) समाजे परस्परं मिलित्वा, समानविचारेण, एकतायाः भावनाया च सह जीवनयापनं करणीयम् (Living together in harmony, shared resolve, and collective consciousness)
-    (D) अन्यैः जनैः स्पर्धां कृत्वा श्रेष्ठता सिद्ध्यति।
+🏆 Quiz 3: Technical Grammar & Applied Conjugations
 
-उत्तरकुञ्चिका व्याख्या च (Answer Key & Explanations):
-1. (B) ऋग्वेदस्य दशममण्डलस्य संज्ञानसूक्तात् (१०.१९१.२) • सम्यक्! अयम् प्रसिद्धः मन्त्रः ऋग्वेदस्य दशममण्डलस्य संज्ञानसूक्तात् उद्धृतः अस्ति।
-2. (C) एकत्र गच्छन्तु / मिलित्वा प्रचलन्तु • सम्यक्! 'सङ्गच्छध्वम्' इत्यस्य अर्थः मिलित्वा एकत्र गमनं वा प्रस्थानं भवति।
-3. (A) मिलित्वा वदन्तु / Speak together in harmony • सम्यक्! 'सं वदध्वम्' इत्यस्य अर्थः समरस्येन मिलित्वा संभाषणं कुर्वन्तु इति अस्ति।
-4. (D) अस्माकं मन्त्रः (विचारः/मन्त्रणा) समानः अस्ति, सभा च समानरूपेण एका एव अस्ति • सम्यक्! अस्मिन् श्लोके परामर्शः तथा सभा समानौ भवतः इति उच्यते।
-5. (B) आन्तरिकः सङ्कल्पः वा विचारितम् अभीष्टम् • सम्यक्! आकूतिः इत्यस्य अर्थः मनसः संकल्पः वा अभीष्टम् उद्देश्यम् अस्ति।
-6. (C) एका धार्मिकी सामाजिकी वा सभा यत्राधिष्ठानं भवति • सम्यक्! 'समितिः' इत्यस्य अर्थः जनानां सामान्यसभा वा अधिवेशनम् अस्ति।
-7. (A) यज्ञे प्रक्षिप्यमाणं हविः / समर्पणभावयुक्तम् आहुतिद्रव्यम् • सम्यक्! 'हविषा' इत्यस्य अर्थः आहुतिद्रव्यं वा समर्पणं भवति।
-8. (D) सञ्जानाना उपासते • सम्यक्! पूर्णं वाक्यम् - "देवा भागं यथा पूर्वे सञ्जानाना उपासते"।
-9. (B) तेषां मनः तथा चित्तमपि समानरूपेण एकीभूतं भवति • सम्यक्! 'समानं मनः' इत्यस्य अर्थः मनसः चित्तस्य च समानता सामरस्यञ्च अस्ति।
-10. (C) समाजे परस्परं मिलित्वा, समानविचारेण, एकतायाः भावनाया च सह जीवनयापनं करणीयम् • सम्यक्! सम्पूर्णस्य पाठस्य मूलमुद्देश्यं मानवसमाजे ऐक्यं, सद्भावः च अस्ति।
+1. What happens to the base root Gam (गम्) when prefixed with 'सम्'?
+	• (a) It transforms into a past participle
+	• (b) It moves from Parasmaipada to Atmanepada class
+	• (c) It changes its root vowel completely
+	• (d) It becomes an indeclinable
 
+2. What is the correct third-person singular Lot-Lakara (Imperative) form for 'गच्छति'?
+	• (a) अगच्छत्
+	• (b) गच्छतु
+	• (c) गच्छेत्
+	• (d) गमिष्यति
 
-🏆 Quiz 3: Applied Structural Grammar & Alternate Forms (उन्नत-व्याकरण-रूपाणि)
-A high-precision evaluation on advanced linguistic details, containing conjugation rules, optional pronouns, and Lot-lakara shifts.
+3. Identify the exact location of the word 'संगच्छध्वम्' on the grid:
+	• (a) First Person Singular
+	• (b) Second Person Plural Atmanepada
+	• (c) Third Person Dual Parasmaipada
+	• (d) Second Person Singular
 
-1. Change the Lat-lakara plural verb 'लिखन्ति' (they write) into the corresponding Lot-lakara (Imperative) form.
-   (A) लिखिष्यन्ति
-   (B) लिखन्तु
-   (C) लिखामि
-   (D) अलिखन्
+4. What is the alternative optional short variant for the pronoun 'अस्माकम्'?
+	• (a) मे
+	• (b) नः
+	• (c) ते
+	• (d) वः
 
-2. What is the correct Lot-lakara (Imperative) third person singular form for the Lat-lakara verb 'पठति'?
-   (A) पठतु
-   (B) अपठत्
-   (C) पठिष्यति
-   (D) पठेत
+5. What is the short enclitic variant for 'युष्माकम्' (Genitive Plural)?
+	• (a) नौ
+	• (b) वः
+	• (c) मे
+	• (d) नः
 
-3. Identify the correct Lat-lakara (Present tense) Atmanepada third person singular form (प्रथमपुरुष एकवचनम्) for the root 'सम् + गम्'.
-   (A) सङ्गच्छति
-   (B) सङ्गच्छते
-   (C) गच्छते
-   (D) सम्गच्छति
+6. Change the active present verb 'हसन्ति' to its imperative counterpart:
+	• (a) अहसन्
+	• (b) हसन्तु
+	• (c) हसेयुः
+	• (d) हसिष्यन्ति
 
-4. What is the alternate enclitic/short form (वैकल्पिक रूपम्) for 'अस्माकम्' (of us / our) in the genitive plural case of the pronoun 'अस्मद्'?
-   (A) मे
-   (B) नौ
-   (C) नः
-   (D) वः
+7. Find the short enclitic form of the dative word 'मह्यम्':
+	• (a) नः
+	• (b) मे
+	• (c) ते
+	• (d) नौ
 
-5. Which of the following is the alternate enclitic/short form for 'युष्माकम्' (your - plural) in the genitive plural case of 'युष्मद्'?
-   (A) वः
-   (B) ते
-   (C) नौ
-   (D) मे
+8. Find the short enclitic form for the second-person genitive singular 'तव':
+	• (a) मे
+	• (b) ते
+	• (c) वः
+	• (d) नौ
 
-6. What is the alternate enclitic/short form for the dual number accusative, dative, and genitive cases of 'अस्मद्'?
-   (A) नः
-   (B) मे
-   (C) नौ
-   (D) वः
+9. What mood/purpose does the Lot-Lakara represent in Sanskrit syntax?
+	• (a) Absolute Past Tense
+	• (b) Future expectations
+	• (c) Commands, requests, and benedictions (आज्ञार्थे / आमन्त्रणार्थे)
+	• (d) Passive descriptions
 
-7. Which short enclitic form is designated for the dual number of accusative, dative, and genitive cases under the 'युष्मद्' pronoun?
-   (A) ते
-   (B) नौ
-   (C) वः
-   (D) मे
+10. What is the dual enclitic pronoun variant for 'आवाम् / नौ' in the accusative case?
+	• (a) नः
+	• (b) नौ
+	• (c) वः
+	• (d) मे
 
-8. What is the Lot-lakara (Imperative) second person singular form (मध्यमपुरुष एकवचनम्) for the root 'गम्' (to go)?
-   (A) गच्छतु
-   (B) गच्छत
-   (C) गच्छ
-   (D) अगच्छः
-
-9. Break down the constituent prefix (उपसर्ग) and root (धातु) found in the verb form 'सङ्गच्छध्वम्'.
-   (A) सम् + गम्
-   (B) सु + गच्छ
-   (C) सम् + गम्य
-   (D) सत् + गम्
-
-10. What is the alternate enclitic/short form for the singular dative (चतुर्थी एकवचनम्) and genitive cases of 'अस्मद्'?
-    (A) नः
-    (B) वः
-    (C) नौ
-    (D) मे
-
-उत्तरकुञ्चिका व्याख्या च (Answer Key & Explanations):
-1. (B) लिखन्तु • Correct! The plural present ending '-न्ति' shifts to the imperative plural ending '-न्तु', yielding 'लिखन्तु'.
-2. (A) पठतु • Correct! 'पठति' (present tense, singular 3rd person) transitions to 'पठतु' in Lot-lakara.
-3. (B) सङ्गच्छते • Correct! The root 'गम्' with prefix 'सम्' takes the Atmanepada singular ending '-ते' as 'सङ्गच्छते'.
-4. (C) नः • Correct! 'नः' is the standard alternate enclitic form for plural accusative, dative, and genitive in 'अस्मद्'.
-5. (A) वः • Correct! 'वः' serves as the enclitic alternative for plural accusative, dative, and genitive cases in 'युष्मद्'.
-6. (C) नौ • Correct! 'नौ' is the dual alternative enclitic for 'अस्मद्' in द्विवचनम्.
-7. (B) नौ • Correct! 'नौ' is used as the dual enclitic for both 'अस्मद्' and 'युष्मद्' across specific oblique cases.
-8. (C) गच्छ • Correct! In the imperative second person singular for class-1 roots like 'गम्' (gachchha-), the base form 'गच्छ' is used without extra suffixes.
-9. (A) सम् + गम् • Correct! 'सङ्गच्छध्वम्' is formed by combining the prefix 'सम्' with the root 'गम्'.
-10. (D) मे • Correct! 'मे' is the alternative enclitic for the singular dative/genitive of 'अस्मद्'.
+🔑 Quiz 3 Answer Key
+1. (b) It moves from Parasmaipada to Atmanepada class
+2. (b) गच्छतु
+3. (b) Second Person Plural Atmanepada
+4. (b) नः
+5. (b) वः
+6. (b) हसन्तु
+7. (b) मे
+8. (b) ते
+9. (c) Commands, requests, and benedictions (आज्ञार्थे / आमन्त्रणार्थे)
+10. (b) नौ
