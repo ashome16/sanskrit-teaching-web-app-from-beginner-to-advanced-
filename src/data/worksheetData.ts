@@ -12906,4 +12906,349 @@ export const WORKSHEETS: Worksheet[] = [
       }
     ]
   },
+
+  // ==========================================
+  // GRADE 9 CH 3 WORKSHEET 1: Vocabulary & Past Participle Mastery (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch3-ws1",
+    title: "Worksheet 1: Vocabulary & Past Participle Mastery (10 Questions)",
+    titleSanskrit: "तृतीयः पाठः कार्यपत्रिका १: शब्दार्थाः क्तवतुप्रत्ययाश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Master essential vocabulary, past active participles (क्तवतु), verb transformations, and gerund structures from Chapter 3.",
+    sections: [
+      {
+        sectionTitle: "Section A: Vocabulary & Participles",
+        sectionTitleSanskrit: "खण्डः 'क' · शब्दार्थाः क्तवतु-प्रत्यय-रूपाणि च",
+        instructions: "Solve the word meanings, root breakdowns, and verbal transformations based on the textbook lesson.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Match the Sanskrit words with their meanings: (A) बुभुक्षितः, (B) अनुधावितवान्, (C) अपहृत्य, (D) म्लाने, (E) प्रसवित्री.",
+            questionSanskrit: "उचितैः अर्थैः सह योजयत: (क) बुभुक्षितः, (ख) अनुधावितवान्, (ग) अपहृत्य, (घ) म्लाने, (ङ) प्रसवित्री।",
+            marks: 2,
+            type: "matching",
+            answer: "(A) बुभुक्षितः = भूखा (Hungry); (B) अनुधावितवान् = पीछे दौड़ा (Chased); (C) अपहृत्य = छीनकर (Snatched); (D) म्लाने = कुम्हलाए हुए (Withered); (E) प्रसवित्री = जन्म देने वाली (Mother).",
+            explanation: "पाठान्तर्गत-कठिनशब्दानां यथार्थ-शब्दार्थाः।"
+          },
+          {
+            num: 2,
+            question: "Analyze the grammatical components of 'अनुपालितवान्':",
+            questionSanskrit: "'अनुपालितवान्' इति पदस्य प्रकृति-प्रत्यय-विभागं कुरुत:",
+            marks: 2,
+            type: "grammar",
+            answer: "उपसर्गः: अनु | धातुः: √पाल् (पालयति) | प्रत्ययः: क्तवतु | लिङ्ग-विभक्ति-वचनम्: पुंलिङ्गम्, प्रथमा-विभक्तिः, एकवचनम्।",
+            explanation: "क्तवतु-प्रत्ययान्तं भूतकालिक-कृदन्तरूपम्।"
+          },
+          {
+            num: 3,
+            question: "Transform these present active verbs into past active participles (क्तवतु): (A) शृणोति (पुं.एक.), (B) गच्छति (स्त्री.एक.).",
+            questionSanskrit: "क्तवतु-प्रत्ययेन रूपान्तरं कुरुत: (क) शृणोति (पुं.एक.), (ख) गच्छति (स्त्री.एक.)।",
+            marks: 2,
+            type: "fill",
+            answer: "(A) श्रुतवान् | (B) गतवती।",
+            explanation: "श्रु + क्तवतु (पुं) = श्रुतवान्, गम् + क्तवतु (स्त्री) = गतवती।"
+          },
+          {
+            num: 4,
+            question: "Write the masculine nominative dual (प्रथमा द्विवचनम्) for: (A) √ताड् + क्तवतु, (B) √हस् + क्तवतु.",
+            questionSanskrit: "पुंलिङ्ग-प्रथमा-द्विवचने क्तवतु-रूपं लिखत: (क) √ताड् + क्तवतु, (ख) √हस् + क्तवतु।",
+            marks: 2,
+            type: "short_ans",
+            answer: "(A) ताडितवन्तौ | (B) हसितवन्तौ।",
+            explanation: "यथा बालकौ ताडितवन्तौ, उभौ हसितवन्तौ इति द्विवचन-प्रयोगः।"
+          },
+          {
+            num: 5,
+            question: "Identify the grammatical case and compound split of 'पाषाणखण्डम्':",
+            questionSanskrit: "'पाषाणखण्डम्' इत्यस्य विभक्तिं विग्रहं च लिखत:",
+            marks: 2,
+            type: "grammar",
+            answer: "विभक्तिः: द्वितीया-विभक्तिः, एकवचनम् (नपुंसकलिङ्गम्); विग्रहः: पाषाणस्य खण्डः, तम् (षष्ठीतत्पुरुषः)।",
+            explanation: "पाषाणस्य खण्डम् = पत्थर का टुकड़ा।"
+          },
+          {
+            num: 6,
+            question: "Fill in the blank using the authentic text term: नामदेवः करुणया __________ आदाय शूनकस्य पृष्ठे अधावत्।",
+            questionSanskrit: "उचितेन पदेन रिक्तस्थानं पूरयत: नामदेवः करुणया ______ आदाय शूनकस्य पृष्ठे अधावत्।",
+            marks: 2,
+            type: "fill",
+            answer: "घृतपात्रम् (Bowl of clarified butter).",
+            explanation: "नामदेवः करुणया घृतपात्रं धृत्वा अधावत् येन शूनकस्य उदरवेदना न भवेत्।"
+          },
+          {
+            num: 7,
+            question: "Convert the predicate into क्तवतु plural form: सत्पुरुषाः स्वकर्तृत्वेन स्वीयं जन्म सार्थकं कुर्वन्ति।",
+            questionSanskrit: "क्तवतु-प्रयोगेण परिवर्तयत: 'सत्पुरुषाः स्वकर्तृत्वेन स्वीयं जन्म सार्थकं कुर्वन्ति'।",
+            marks: 2,
+            type: "short_ans",
+            answer: "सत्पुरुषाः स्वकर्तृत्वेन स्वीयं जन्म सार्थकं कृतवन्तः।",
+            explanation: "कुर्वन्ति (लट् बहुवचनम्) → कृतवन्तः (क्तवतु पुंलिङ्ग बहुवचनम्)।"
+          },
+          {
+            num: 8,
+            question: "Dissect prefixes, root, and suffixes for: (A) अपहृत्य, (B) निमील्य.",
+            questionSanskrit: "प्रकृति-प्रत्ययं पृथक् कुरुत: (क) अपहृत्य, (ख) निमील्य।",
+            marks: 2,
+            type: "grammar",
+            answer: "(A) अप (उपसर्गः) + √हृ (धातुः) + ल्यप् (प्रत्ययः) | (B) नि (उपसर्गः) + √मील् (धातुः) + ल्यप् (प्रत्ययः)।",
+            explanation: "उपसर्गपूर्वक-धातोः ल्यप्-प्रत्ययः विधीयते।"
+          },
+          {
+            num: 9,
+            question: "What is the single-word Sanskrit designation for: 'यः सर्वभूतेषु आत्मवत् पश्यति सः'?",
+            questionSanskrit: "'आत्मवत्सर्वभूतेषु यः पश्यति' सः कः कथ्यते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "पण्डितः (Wise scholar / truly enlightened sage).",
+            explanation: "'आत्मवत्सर्वभूतेषु यः पश्यति स पण्डितः' इति प्रसिद्धं नीतिवाक्यम्।"
+          },
+          {
+            num: 10,
+            question: "State True/False with text rationale: Did Namdev pursue the dog with a stick out of anger?",
+            questionSanskrit: "सत्यम्/असत्यं लिखत: 'नामदेवः कोपेन लगुडम् आदाय शूनकं दण्डयितुं धावितवान्'?",
+            marks: 2,
+            type: "short_ans",
+            answer: "असत्यम् (False)। Rationale: 'नामदेवः कोपेन न धावितवान्, प्रत्युत सः करुणया घृतपात्रं धृत्वा धावितवान्।'",
+            explanation: "नामदेवस्य मनसि करुणा आसीत् न तु क्रोधः।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 CH 3 WORKSHEET 2: Upapada Vibhaktis & Sandhi-Samasa Analysis (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch3-ws2",
+    title: "Worksheet 2: Upapada Vibhaktis & Sandhi-Samasa Analysis (10 Questions)",
+    titleSanskrit: "तृतीयः पाठः कार्यपत्रिका २: उपपदविभक्तयः सन्धिः समासाश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Complete exercises on governed cases (सह, विना, परितः, निकषा, धिक्), vowel/visarga sandhi, and compound words.",
+    sections: [
+      {
+        sectionTitle: "Section A: Upapada Cases, Sandhi & Compounds",
+        sectionTitleSanskrit: "खण्डः 'क' · उपपदविभक्तयः समासाः सन्धयश्च",
+        instructions: "Apply the rules of Upapada Vibhaktis and morphological breakdown.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Fill in the governed case: शिशुः जनन्या ______ (सह) आपणं गच्छति। (सहयोगे का विभक्तिः?)",
+            questionSanskrit: "उचितविभक्त्या रिक्तस्थानं पूरयत: शिशुः ______ (जननी) सह गच्छति।",
+            marks: 2,
+            type: "fill",
+            answer: "जनन्या / मात्रा (तृतीया विभक्तिः).",
+            explanation: "'सहयुक्तेऽप्रधाने' सूत्रेण सह-योगे तृतीया विभक्तिः भवति।"
+          },
+          {
+            num: 2,
+            question: "Fill in the governed case: विद्यालयं ______ (परितः) रमणीयाः वृक्षाः सन्ति। (परितः-योगे का विभक्तिः?)",
+            questionSanskrit: "रिक्तस्थानं पूरयत: ______ (विद्यालय) परितः वृक्षाः सन्ति।",
+            marks: 2,
+            type: "fill",
+            answer: "विद्यालयम् (द्वितीया विभक्तिः).",
+            explanation: "'अभितः-परितः-समया-निकषा-हा-प्रतियोगेऽपि' सूत्रेण परितः योगे द्वितीया।"
+          },
+          {
+            num: 3,
+            question: "Fill in the governed case: धिक् ______ (अकर्मण्यः जनः)! (धिक्-योगे का विभक्तिः?)",
+            questionSanskrit: "रिक्तस्थानं पूरयत: धिक् ______ (अकर्मण्यः जनः)।",
+            marks: 2,
+            type: "fill",
+            answer: "अकर्मण्यं जनम् (द्वितीया विभक्तिः).",
+            explanation: "धिक्-शब्दस्य योगे द्वितीया विभक्तिः विधीयते।"
+          },
+          {
+            num: 4,
+            question: "Which three cases can be optionally used with the preposition 'विना'?",
+            questionSanskrit: "'विना' अव्ययस्य योगे काः तिस्रः विभक्तयः सम्भवन्ति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "द्वितीया, तृतीया, पञ्चमी च (यथा: जलं / जलेन / जलात् विना जीवनं न सम्भवति)।",
+            explanation: "'पृथग्विनानानाभिस्तृतीयाऽन्यतरस्याम्' सूत्रेण विना-योगे द्वितीया, तृतीया, पञ्चमी वा भवति।"
+          },
+          {
+            num: 5,
+            question: "Fill in the blank: देवालयं ______ (निकषा) एका विमला सरिता वहति। (निकषा-योगे का विभक्तिः?)",
+            questionSanskrit: "रिक्तस्थानं पूरयत: ______ (देवालय) निकषा नदी वहति।",
+            marks: 2,
+            type: "fill",
+            answer: "देवालयम् (द्वितीया विभक्तिः).",
+            explanation: "निकषा-योगे द्वितीया विभक्तिः प्रयुज्यते।"
+          },
+          {
+            num: 6,
+            question: "Disjoin the sandhi in: (A) ह्यचलाम्, (B) अत एवोक्तम्.",
+            questionSanskrit: "सन्धिच्छेदं कुरुत: (क) ह्यचलाम्, (ख) अत एवोक्तम्।",
+            marks: 2,
+            type: "short_ans",
+            answer: "(A) हि + अचलाम् (यण्-सन्धिः) | (B) अतः + एव + उक्तम् (विसर्गलोपः गुणसन्धिः च)।",
+            explanation: "हि + अचलाम् = ह्यचलाम् (इको यणचि); अतः + एव = अत एव, अत एव + उक्तम् = अत एवोक्तम्।"
+          },
+          {
+            num: 7,
+            question: "Provide the compound split (विग्रहः) and name of Samasa for 'घृतपात्रम्':",
+            questionSanskrit: "'घृतपात्रम्' इत्यस्य सामासिक-विग्रहं समासनाम च लिखत:",
+            marks: 2,
+            type: "short_ans",
+            answer: "विग्रहः: घृतस्य पात्रम् | समासः: षष्ठीतत्पुरुष-समासः।",
+            explanation: "घृतस्य पात्रम् = घी का पात्र।"
+          },
+          {
+            num: 8,
+            question: "Provide the compound split (विग्रहः) and name of Samasa for 'उदरवेदना':",
+            questionSanskrit: "'उदरवेदना' इत्यस्य सामासिक-विग्रहं समासनाम च लिखत:",
+            marks: 2,
+            type: "short_ans",
+            answer: "विग्रहः: उदरे वेदना | समासः: सप्तमीतत्पुरुष-समासः।",
+            explanation: "उदरे वेदना = पेट में दर्द।"
+          },
+          {
+            num: 9,
+            question: "Provide the compound split for 'प्रतिदिनम्' and identify its Samasa:",
+            questionSanskrit: "'प्रतिदिनम्' इत्यस्य विग्रहं समासनाम च लिखत:",
+            marks: 2,
+            type: "short_ans",
+            answer: "विग्रहः: दिने दिने इति | समासः: अव्ययीभाव-समासः।",
+            explanation: "वीप्सायां प्रति-उपसर्गस्य अव्ययीभावः।"
+          },
+          {
+            num: 10,
+            question: "In 'कपिलः माधवी च कञ्चन शूनकं दृष्ट्वा पाषाणखण्डं स्वीकृत्य मारयितुं धावितवन्तौ', find the subjects, participles, and infinitive:",
+            questionSanskrit: "अस्मिन् वाक्ये कर्ता, क्त्वा/ल्यप् पदम्, तुमुन् पदम्, क्तवतु क्रियापदं च निर्दिशत:",
+            marks: 2,
+            type: "short_ans",
+            answer: "कर्ता: कपिलः माधवी च | क्त्वा/ल्यप्: दृष्ट्वा, स्वीकृत्य | तुमुन्: मारयितुम् | क्तवतु: धावितवन्तौ।",
+            explanation: "वाक्यगत-व्याकरण-तत्त्वानां सूक्ष्म-विश्लेषणम्।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 CH 3 WORKSHEET 3: Speaker-Addressee, Story Sequencing & Ethical Application (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch3-ws3",
+    title: "Worksheet 3: Speaker-Addressee, Story Sequencing & Ethical Application (10 Questions)",
+    titleSanskrit: "तृतीयः पाठः कार्यपत्रिका ३: संवादः प्रश्ननिर्माणं जीवनमूल्यानि च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Identify speaker and listener, construct interrogatives, rearrange the story chronological timeline, and explore universal compassion.",
+    sections: [
+      {
+        sectionTitle: "Section A: Dialogues, Sequencing & Ethics",
+        sectionTitleSanskrit: "खण्डः 'क' · संवादः घटनाक्रमः जीवनमूल्यानि च",
+        instructions: "Answer each textual and moral question accurately with full justification.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Identify speaker and listener: 'किं देवेन सह अपि मित्रता सम्भवति?'",
+            questionSanskrit: "कः कं प्रति कथयति: 'किं देवेन सह अपि मित्रता सम्भवति?'",
+            marks: 2,
+            type: "short_ans",
+            answer: "कः: कपिलः | कं प्रति: मातामहीं प्रति।",
+            explanation: "कपिलः साश्चर्यं नानीं प्रति पृच्छति।"
+          },
+          {
+            num: 2,
+            question: "Identify speaker and listener: 'अतः तस्य सर्वात्मकस्य ईश्वरस्य पूजनं कुरु।'",
+            questionSanskrit: "कः कं प्रति कथयति: 'अतः तस्य सर्वात्मकस्य ईश्वरस्य पूजनं कुरु'?",
+            marks: 2,
+            type: "short_ans",
+            answer: "कः: विसोबा (गुरुः) | कं प्रति: नामदेवं प्रति।",
+            explanation: "नामदेवस्य गुरुः विसोबा तम् अध्यापितवान्।"
+          },
+          {
+            num: 3,
+            question: "Identify speaker and listener: 'उत्तीर्णः भवान् परीक्षाम्।'",
+            questionSanskrit: "कः कं प्रति कथयति: 'उत्तीर्णः भवान् परीक्षाम्'?",
+            marks: 2,
+            type: "short_ans",
+            answer: "कः: भगवान् पाण्डुरङ्गः | कं प्रति: नामदेवं प्रति।",
+            explanation: "शूनकस्य स्थाने आविर्भूतः पाण्डुरङ्गः नामदेवं प्रशंसन् अवदत्।"
+          },
+          {
+            num: 4,
+            question: "Frame a question for the underlined term: नामदेवः करुणया धावितवान्।",
+            questionSanskrit: "रेखाङ्कितपदम् आधृत्य प्रश्ननिर्माणं कुरुत: नामदेवः करुणया धावितवान्।",
+            marks: 2,
+            type: "short_ans",
+            answer: "नामदेवः कया (भावनया) धावितवान्? / नामदेवः कथं धावितवान्?",
+            explanation: "करुणया (स्त्रीलिङ्ग तृतीया एकवचनम्) → कया।"
+          },
+          {
+            num: 5,
+            question: "Frame a question for the underlined term: ईश्वरः सर्वेषु भूतेषु निवसति।",
+            questionSanskrit: "रेखाङ्कितपदम् आधृत्य प्रश्ननिर्माणं कुरुत: ईश्वरः सर्वेषु भूतेषु निवसति।",
+            marks: 2,
+            type: "short_ans",
+            answer: "ईश्वरः केषु निवसति? (अथवा: ईश्वरः कुत्र निवसति?)",
+            explanation: "सर्वेषु भूतेषु (सप्तमी बहुवचनम्) → केषु / कुत्र।"
+          },
+          {
+            num: 6,
+            question: "Frame a question for the underlined term: शूनकस्य स्थाने पाण्डुरङ्गः आविर्भूतवान्।",
+            questionSanskrit: "रेखाङ्कितपदम् आधृत्य प्रश्ननिर्माणं कुरुत: शूनकस्य स्थाने पाण्डुरङ्गः आविर्भूतवान्।",
+            marks: 2,
+            type: "short_ans",
+            answer: "शूनकस्य स्थाने कः आविर्भूतवान्?",
+            explanation: "पाण्डुरङ्गः (प्रथमा एकवचनम्) → कः।"
+          },
+          {
+            num: 7,
+            question: "Reorder events into chronological order: (A) Lord Panduranga appeared; (B) Dog took dry roti; (C) Namdev prayed in temple; (D) Namdev ran with ghee.",
+            questionSanskrit: "घटनाक्रमानुसारं वाक्यानि योजयत: (क) पाण्डुरङ्गः आविर्भूतः, (ख) शूनकः रोटिकाम् अपहृत्य अधावत्, (ग) नामदेवः प्रार्थनां कृतवान्, (घ) नामदेवः घृतपात्रम् आदाय अनुधावितवान्।",
+            marks: 2,
+            type: "short_ans",
+            answer: "उचितक्रमः: (१) नामदेवः प्रार्थनां कृतवान् [C], (२) शूनकः रोटिकाम् अपहृत्य अधावत् [B], (३) नामदेवः घृतपात्रम् आदाय अनुधावितवान् [D], (४) पाण्डुरङ्गः आविर्भूतः [A] ।",
+            explanation: "कथायाः स्वाभाविकः घटनाक्रमः।"
+          },
+          {
+            num: 8,
+            question: "Why did Kapil and Madhavi feel repentant and hang their heads in shame (अपराधभावनया मुखे म्लाने आस्ताम्)?",
+            questionSanskrit: "बालकयोः मुखे किमर्थं म्लाने अभवताम्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "They realized their grave mistake: they had stoned a harmless dog for playful amusement, whereas Sant Namdev saw God Himself in the dog and lovingly ran to give it ghee so it would not suffer stomach pain.",
+            explanation: "आत्मग्लानिः पश्चात्तापः च तयोः मनसि उत्पन्नः।"
+          },
+          {
+            num: 9,
+            question: "Complete the ancient verse: मातृवत्परदारेषु परद्रव्येषु लोष्टवत्। ______ यः पश्यति स पण्डितः॥",
+            questionSanskrit: "श्लोकांशं पूरयत: 'मातृवत्परदारेषु परद्रव्येषु लोष्टवत्। ______ यः पश्यति स पण्डितः॥'",
+            marks: 2,
+            type: "fill",
+            answer: "आत्मवत्सर्वभूतेषु",
+            explanation: "चाणक्यनीतेः सुप्रसिद्धः श्लोकः।"
+          },
+          {
+            num: 10,
+            question: "What solemn pledge did the children take before their grandmother at the end of the lesson?",
+            questionSanskrit: "पाठस्यान्ते बालकाभ्यां कः सङ्कल्पः कृतः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "'अस्माकं कायेन वाचा मनसा वा कस्यापि पीडा न भवेत्, तथैव कस्यापि या कापि पीडा स्यात् तां निवारयितुं प्रयतामहे' (We will never hurt anyone by body, speech, or mind, and will actively work to relieve another's pain).",
+            explanation: "अहिंसायाः भूतदयायाश्च सङ्कल्पः।"
+          }
+        ]
+      }
+    ]
+  },
 ];
