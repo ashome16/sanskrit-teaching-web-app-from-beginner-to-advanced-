@@ -122,7 +122,7 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
         <div className="g8-stats-row">
           <div className="g8-stat-chip">
             <span>📚</span>
-            <span><strong>18</strong> Total Modules</span>
+            <span><strong>{GRADE_8_SYLLABUS.length}</strong> Total Modules</span>
           </div>
           <div className="g8-stat-chip">
             <span>📖</span>
@@ -246,6 +246,7 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
                       {isSpeaking ? '⏹️ Playing' : '🔊 Pronounce'}
                     </button>
                   </div>
+                  {ch.hindiTitle && <div className="g8-card-title-hi" style={{ fontSize: '0.95rem', fontWeight: 600, color: '#b45309', marginBottom: '0.2rem' }}>🇮🇳 {ch.hindiTitle}</div>}
                   <div className="g8-card-title-en">{ch.englishTitle}</div>
 
                   <div className="g8-card-theme">{ch.theme}</div>
