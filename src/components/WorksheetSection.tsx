@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { WORKSHEETS, type Worksheet } from '../data/worksheetData';
 import { useAuthStore } from '../store/authStore';
-import { canDownloadContent, getDownloadGateReason } from '../utils/premiumAccess';
+import { canAccessAllChapters, canDownloadContent, getDownloadGateReason } from '../utils/premiumAccess';
 import { PAID_FEATURE_GATE } from '../utils/paidFeatureGateCopy';
 import { downloadWorksheet } from '../utils/contentDownload';
 import '../styles/worksheet-section.css';
@@ -69,6 +69,7 @@ const LEVEL_MENU_OPTIONS: LevelMenuOption[] = [
 
 const CHAPTER_SUBFILTERS = [
   { id: 'all_chapters', label: 'All Chapters (समग्र-पाठाः)' },
+  { id: 'grade8', label: 'Grade 8: दीपकम् (Class 8)' },
   { id: 'deep_ch1', label: 'Ch 1: वन्दे भारतमातरम्' },
   { id: 'deep_ch2', label: 'Ch 2: नित्यं पिबामः सुभाषितरसम्' },
   { id: 'deep_ch3', label: 'Ch 3: मित्राय नमः' },
@@ -110,6 +111,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
   const [showAnswerKey, setShowAnswerKey] = useState<boolean>(false);
   const [showUpgradePrompt, setShowUpgradePrompt] = useState<boolean>(false);
   const { isAdminLoggedIn, currentUser, openAuthModal, openPaymentModal } = useAuthStore();
+  const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
   const canDownload = canDownloadContent(currentUser, isAdminLoggedIn);
   const gateReason = getDownloadGateReason(currentUser, isAdminLoggedIn);
 
@@ -122,10 +124,10 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
 
   const publicWorksheets = useMemo(
     () =>
-      isAdminLoggedIn
+      canReadAllChapters
         ? WORKSHEETS
         : WORKSHEETS.filter((ws) => ws.category !== 'grade8' && !ws.id.startsWith('ws-grade8-')),
-    [isAdminLoggedIn]
+    [canReadAllChapters]
   );
 
   const filteredWorksheets = useMemo(() => {
@@ -144,7 +146,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
           (ws) =>
             ws.category === 'cbse_ch' ||
             ws.id.startsWith('ws-ch') ||
-            (isAdminLoggedIn && (ws.category === 'grade8' || ws.id.startsWith('ws-grade8-')))
+            (canReadAllChapters && (ws.category === 'grade8' || ws.id.startsWith('ws-grade8-')))
         );
       }
       if (selectedChapterSubfilter === 'grade8') {
@@ -163,7 +165,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
     }
     // 'all'
     return publicWorksheets;
-  }, [activeLevel, selectedChapterSubfilter, publicWorksheets, isAdminLoggedIn]);
+  }, [activeLevel, selectedChapterSubfilter, publicWorksheets, canReadAllChapters]);
 
   const currentLevelOption = useMemo(
     () => LEVEL_MENU_OPTIONS.find((opt) => opt.id === activeLevel) || LEVEL_MENU_OPTIONS[0],

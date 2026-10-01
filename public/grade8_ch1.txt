@@ -210,41 +210,100 @@ Page 8 | पृष्ठम् ८
 
 ================================================================================
 
-📝 Supplementary Worksheets & Quizzes (अभ्यास-पत्रिकाः)
+📝 PART 1: EXPANDED WORKSHEETS (10 Questions Each)
 
-📄 Worksheet 1: Verse Interpretation (श्लोक-अवबोधनम्)
-Verse:
-संगच्छध्वं संवदध्वं सं वो मनांसि जानताम्।
-देवा भागं यथा पूर्वे संजानाना उपासते॥
-1. देवाः पूर्वे कथं भागम् उपासते?
-2. अस्मिन् मन्त्रे "मनांसि" इति पदस्य किं विशेषणपदम् अस्ति?
-3. "संवदध्वम्" इति पदस्य कः सरलाथः?
-Answers: 1. संजानानाः (एकमत्यं भूत्वा), 2. वः, 3. एकस्वरेण वदत / मिलित्वा वदत।
+📄 Worksheet 1: Textual Recall & Vocabulary Mastery
+Focus: Complete mantra retention and vocabulary definitions from the chapter.
 
-📄 Worksheet 2: Vocabulary & Synonyms
-Match:
-आकूतिः (a) धनानि / ऐश्वर्याणि
-वसूनि (b) सङ्कल्पः / विचारः
-समितिः (c) सभा / परिषद्
-सुसहासति (d) शोभनः सङ्घटनः / उत्तमं सहजीवनम्
-Answers: 1-(b), 2-(a), 3-(c), 4-(d).
+Section A: Complete the Vedic Verses
+Fill in the blanks using the exact structural text of the Rigvedic mantras:
+1. सङ्गच्छध्वं _______________ सं वो मनांसि जानताम्।
+2. देवा भागं यथा पूर्वे _______________ उपासते॥
+3. समानो मन्त्रः _______________ समानी समानं मनः सह _______________ एषाम्।
+4. समानं मन्त्रमभिमन्त्रये वः समानेन वो _______________ जुहोमि॥
+5. समानी व _______________ समाना हृदयानि वः।
+6. समानमस्तु वो _______________ यथा वः सुसहासति॥
 
-📄 Worksheet 3: Question Formation (प्रश्ननिर्माणम्)
-1. अयं पाठः ऋग्वेदात् सङ्कलितः अस्ति। ➡️ अयं पाठः कस्मात् सङ्कलितः अस्ति?
-2. ऋषयः ईश्वरं नमन्ति। ➡️ ऋषयः कम् नमन्ति?
-3. समानेन वो हविषा जुहोमि। ➡️ समानेन वो केन जुहोमि?
-4. देवाः यज्ञभागं प्राप्नुवन्ति स्म। ➡️ के यज्ञभागं प्राप्नुवन्ति स्म?
+Section B: Match Words to Meanings (Sanskrit to English)
+Match the structural terms from the text with their correct English vocabulary definitions:
+No.  Sanskrit Term     English Definition
+7.   समवेतस्वरेण       (a) Common targeted resolutions
+8.   अभ्युदयं          (b) Intention / Deep internal resolve
+9.   समितिः           (c) Chanting altogether in unison
+10.  आकूतिः           (d) Worldly elevation, growth, and prosperity
 
-📄 Worksheet 4: Mood Transformations (लट् तः लोट्)
-1. वयं सत्यं वदामः। ➡️ वयं सत्यं वदाम
-2. मानवाः मिलित्वा गच्छन्ति। ➡️ मानवाः मिलित्वा गच्छन्तु
-3. त्वं मन्त्रं पठसि। ➡️ त्वं मन्त्रं पठ
-4. युवां कार्यं कुरुथः। ➡️ युवां कार्यं कुरुतम्
+--------------------------------------------------------------------------------
 
-📄 Worksheet 5: Fill in the Blanks (मन्त्र-पूर्तिः)
-1. समानी वः ___________ समाना हृदयानि वः। ➡️ आकूतिः
-2. समानो मन्त्रः ___________ समानी। ➡️ समितिः
-3. सं वो मनांसि ___________। ➡️ जानताम्
+📄 Worksheet 2: Advanced Sanskrit Grammar Applied
+Focus: Lot-Lakara (Imperative) transformations, Atmanepada roots, and enclitic short pronoun rules (Asmad / Yushmad).
+
+Section A: Conjugation Shifts (Lat-Lakara to Lot-Lakara)
+Transform these everyday action statements into their commanding/requesting equivalents:
+1. बालकाः क्रीडाक्षेत्रे हसन्ति। ➡️ ________________________________________
+2. युवां तत्र मन्त्रं पठथः। ➡️ ________________________________________
+3. यूयं देशस्य सेवां कुरुथ। ➡️ ________________________________________
+4. आवां सत्यं मार्गं गच्छावः। ➡️ ________________________________________
+5. वयं राष्ट्रगानं सम्यक् गायामः। ➡️ ________________________________________
+
+Section B: Alternative Enclitic Forms & Root Splits
+Provide the requested alternate optional forms or root details based on the grammar charts on pages 6 and 7:
+6. What is the short, optional form of मह्यम् (Dative singular of Asmad)? ➡️ __________
+7. What is the short, optional form of तव (Genitive singular of Yushmad)? ➡️ __________
+8. What is the short, optional form of अस्माकम् (Genitive plural of Asmad)? ➡️ __________
+9. When the prefix सम् is added to the root verb गम्, what grammatical class (Pada) does it switch to? ➡️ __________
+10. Identify the Person and Number of the Atmanepada verb form संगच्छध्वम्:
+    • Person (Purusha): _________________ | Number (Vachana): _________________
+
+--------------------------------------------------------------------------------
+
+📄 Worksheet 3: Deep Contextual Comprehension
+Focus: Understanding textual data, character statements, and core thematic concepts.
+
+Section A: Short Answer Questions
+Answer based on the opening classroom dialogue and the final study notes:
+1. Who is the specific Vedic sage (ऋषिः) mentioned in the commentary who received this divine message?
+   • Ans: __________________________________________________________________________________
+2. What absolute sport were the students playing in the school festival (क्रीडोत्सवे)?
+   • Ans: __________________________________________________________________________________
+3. What two main destructive mental blockages caused the downfall of the rival football team?
+   • Ans: __________________________________________________________________________________
+4. According to Page 9, which specific Mandala (मण्डलम्) and Sukta (सूक्तम्) of the Rigveda does this text stem from?
+   • Ans: __________________________________________________________________________________
+5. In ancient times, how did cosmic elemental forces (अग्नि-वायु-आदित्यादयः) accept their designated sacrifice shares?
+   • Ans: __________________________________________________________________________________
+
+Section B: True or False (सत्यम् / असत्यम्)
+6. Generally, the isolated root Gam (गम्) is conjugated in Parasmaipada. ( _________ )
+7. The title text 'संगच्छध्वं संवदध्वम्' is drawn directly from the Sama-Samhita. ( _________ )
+8. Individual isolation without social cooperation brings the ultimate highest victory. ( _________ )
+9. The phrase 'सुसहासति' denotes that our societal organization should be beautifully integrated. ( _________ )
+10. The text claims there are a total of 10,552 mantras located in the Rigveda compilation. ( _________ )
+
+--------------------------------------------------------------------------------
+
+🔑 WORKSHEET ANSWER KEYS
+
+Key for Worksheet 1:
+• Section A: 1. संवदध्वं | 2. संजानाना | 3. समितिः, चित्तम् | 4. हविषा | 5. आकूतिः | 6. मनो
+• Section B: 7-(c), 8-(d), 9-(a), 10-(b)
+
+Key for Worksheet 2:
+• Section A:
+  1. बालकाः क्रीडाक्षेत्रे हसन्तु।
+  2. युवां तत्र मन्त्रं पठतम्।
+  3. यूयं देशस्य सेवां कुरुत।
+  4. आवां सत्यं मार्गं गच्छेव / गच्छाव (Imperative mood standard).
+  5. वयं राष्ट्रगानं सम्यक् गायाम।
+• Section B: 6. मे | 7. ते | 8. नः | 9. आत्मनेपदम् (Atmanepada) | 10. मध्यमपुरुषः (Middle Person), बहुवचनम् (Plural)
+
+Key for Worksheet 3:
+• Section A:
+  1. Sage Angiras (ऋषिः आङ्गिरसः).
+  2. Football (पादकन्दुक-क्रीडा).
+  3. Mental conflict (मनोभेदः) and deep mutual hatred (द्वेषभावः).
+  4. 10th Mandala, 191st Sukta (10.191).
+  5. With complete harmony, dynamic internal coordination, and full dedication (उत्कृष्ट-समन्वय-पूर्वकं).
+• Section B: 6. सत्यम् | 7. असत्यम् (Rigveda) | 8. असत्यम् | 9. सत्यम् | 10. सत्यम्
 
 🧠 Grammar Theme Quizzes
 
