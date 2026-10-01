@@ -289,3 +289,248 @@ Q6. सन्धि-विच्छेदस्य नियमाः (Grammar I
 नम्रास्तरवः = नम्राः + तरवः (विसर्ग transforms to 'स्' before a soft voiceless 'त')
 अभ्युपैति = अभि + उप + एति (यण् sandhi mapping followed by vocalic expansion)
 ================================================================================
+
+================================================================================
+📝 PART 4: THE REGENERATED WORKSHEETS (10 Questions Each · 30 Questions Total)
+================================================================================
+
+📄 WORKSHEET 1: Shloka Completion & Word Meanings
+Student Name: __________________   Date: ___________   Class/Sec: 8 (_____)
+
+Section A: Complete the Verses (श्लोकपूर्तिः)
+1. गुणी गुणं वेत्ति न वेत्ति ______________
+2. बली बलं वेत्ति न वेत्ति ______________
+3. पिको वसन्तस्य गुणं न ______________
+4. करी च सिंहस्य बलं न ______________
+5. भवन्ति नम्रास्तरवः ______________
+
+Section B: Match the Word to its Hindi/English Meaning (शब्दार्थ-मेलनम्)
+6. पिकः → ____________________
+7. वायसः → ____________________
+8. करी → ____________________
+9. कनकम् → ____________________
+10. अङ्गारः → ____________________
+
+--------------------------------------------------------------------------------
+
+📄 WORKSHEET 2: One-Word Answers & Character Analysis
+Student Name: __________________   Date: ___________   Class/Sec: 8 (_____)
+
+Section A: Textual One-Word Answers (एकपदेन उत्तराणि)
+1. गीतानि के गायन्ति? → ____________________
+2. कः वसन्तस्य गुणं वेत्ति? → ____________________
+3. मूषकः कस्य बलं न वेत्ति? → ____________________
+4. फलोद्गमैः के नम्राः भवन्ति? → ____________________
+5. केन समं सख्यं न करणीयम्? → ____________________
+
+Section B: Conceptual & Character Understanding (चरित्र-बोधः)
+6. केन विना दैवं न सिध्यति? → ____________________
+7. कनकं कतिभिः प्रकारैः परीक्ष्यते? → ____________________
+8. पुरुषं कति गुणाः दीपयन्ति? → ____________________
+9. का सभा न भवति यत्र के न सन्ति? → ____________________
+10. शीतलः अङ्गारः करं किं करोति? → ____________________
+
+--------------------------------------------------------------------------------
+
+📄 WORKSHEET 3: Gold and Human Testing Criteria & Grammar
+Student Name: __________________   Date: ___________   Class/Sec: 8 (_____)
+
+Section A: Four Tests for Gold & Humans (कनक-पुरुष-परीक्षा)
+According to Shloka 4, write down the four distinct ways gold is tested and the four distinct qualities by which a human's character is evaluated.
+
+Four Tests for Gold (कनक-परीक्षा):
+1. Test 1 for Gold: ____________________
+2. Test 2 for Gold: ____________________
+3. Test 3 for Gold: ____________________
+4. Test 4 for Gold: ____________________
+
+Four Tests for a Human (पुरुष-परीक्षा):
+5. Test 1 for Human: ____________________
+6. Test 2 for Human: ____________________
+7. Test 3 for Human: ____________________
+8. Test 4 for Human: ____________________
+
+Section B: Sandhi and Samasa Separation (व्याकरण-विश्लेषणम्)
+9. नम्रास्तरवः = ______________ + ______________
+10. यथाशक्ति = ______________ (अव्ययीभावः)
+
+--------------------------------------------------------------------------------
+🔑 ANSWER KEY FOR WORKSHEETS (1–3)
+--------------------------------------------------------------------------------
+Worksheet 1 Answers:
+1. निर्गुणः (गुणी गुणं वेत्ति न वेत्ति निर्गुणः)
+2. निर्बलः (बली बलं वेत्ति न वेत्ति निर्बलः)
+3. वायसः (पिको वसन्तस्य गुणं न वायसः)
+4. मूषकः (करी च सिंहस्य बलं न मूषकः)
+5. फलोद्गमैः (भवन्ति नम्रास्तरवः फलोद्गमैः)
+6. कोयल / Cuckoo
+7. कौआ / Crow
+8. हाथी / Elephant
+9. सोना / Gold
+10. कोयला / Charcoal
+
+Worksheet 2 Answers:
+1. देवाः (गायन्ति देवाः किल गीतकानि)
+2. पिकः (पिको वसन्तस्य गुणं वेत्ति)
+3. सिंहस्य (करी च सिंहस्य बलं न मूषकः)
+4. तरवः (भवन्ति नम्रास्तरवः फलोद्गमैः)
+5. दुर्जनेन (दुर्जनेन समं सख्यं प्रीतिं चापि न कारयेत्)
+6. पुरुषकारेण (एवं पुरुषकारेण विना दैवं न सिध्यति)
+7. चतुर्भिः (यथा चतुर्भिः कनकं परीक्ष्यते)
+8. अष्टौ (अष्टौ गुणाः पुरुषं दीपयन्ति)
+9. वृद्धाः (न सा सभा यत्र न सन्ति वृद्धाः)
+10. कृष्णायते / काला करता है (शीतः कृष्णायते करम्)
+
+Worksheet 3 Answers:
+1. निघर्षण (घिसना / Rubbing on touchstone)
+2. छेदन (काटना / Cutting)
+3. ताप (तपाना / Heating in fire)
+4. ताडन (पीटना / Hammering)
+5. कुल (वंश / Family lineage)
+6. शील (चरित्र / Character & conduct)
+7. गुण (सद्गुण / Virtues)
+8. कर्म (कार्य / Actions & deeds)
+9. नम्राः + तरवः (विसर्जनीयस्य सः)
+10. शक्तिम् अनतिक्रम्य (अव्ययीभाव-समासः)
+
+================================================================================
+🎯 PART 5: INTERACTIVE QUIZZES (30 MCQs Across 3 Quizzes)
+================================================================================
+
+Quiz 1: सुभाषित-अवबोधनम् (Shlokas 1–4 Comprehension & Anvaya) — 10 Qs
+Q1. According to Shloka 1, who sings hymns praising the supreme spiritual glory of those born in India?
+    [A] देवाः (The gods / celestial deities)  [B] दानवाः  [C] गन्धर्वाः  [D] राक्षसाः
+    -> Correct: [A] देवाः
+
+Q2. In Shloka 1, what divine status or celestial condition do the gods leave to be born as humans in India?
+    [A] सुरत्वात् (From their divine status / godhood)  [B] राज्यात्  [C] धनात्  [D] मोक्षात्
+    -> Correct: [A] सुरत्वात्
+
+Q3. In Shloka 2, who truly understands and appreciates the value of virtues?
+    [A] गुणी (A virtuous person)  [B] निर्गुणः  [C] कृपणः  [D] मूर्खः
+    -> Correct: [A] गुणी
+
+Q4. In Shloka 2, which bird recognizes the enchanting beauty of the spring season?
+    [A] पिकः (The cuckoo bird)  [B] वायसः  [C] मयूरः  [D] शुकः
+    -> Correct: [A] पिकः
+
+Q5. In Shloka 2, who truly understands and respects the formidable strength of a lion?
+    [A] करी (The mighty elephant)  [B] मूषकः  [C] शशकः  [D] हरिणः
+    -> Correct: [A] करी
+
+Q6. According to Shloka 3, when do trees naturally bow down low and look humble?
+    [A] फलोद्गमैः (By the emergence and weight of fruits)  [B] वायुवेगेन  [C] शुष्कपत्रैः  [D] कुसुमैः
+    -> Correct: [A] फलोद्गमैः
+
+Q7. In Shloka 3, what causes heavy clouds to hang down close to the earth?
+    [A] नवाम्बुभिः (With fresh rain waters)  [B] विद्युद्भिः  [C] वातेन  [D] धूमैः
+    -> Correct: [A] नवाम्बुभिः
+
+Q8. What is the natural disposition of noble souls (सत्पुरुषाः) when blessed with immense prosperity?
+    [A] अनुद्धताः (Humble, modest and free from arrogance)  [B] अहङ्कारिणः  [C] लोभिनः  [D] क्रुद्धाः
+    -> Correct: [A] अनुद्धताः
+
+Q9. In Shloka 4, in how many ways is gold tested to verify its authentic purity?
+    [A] चतुर्भिः (Four ways: rubbing, cutting, heating, hammering)  [B] त्रिभिः  [C] पञ्चभिः  [D] अष्टभिः
+    -> Correct: [A] चतुर्भिः
+
+Q10. By which four criteria is a human evaluated according to Shloka 4?
+    [A] कुलेन शीलेन गुणेन कर्मणा (Lineage, character, virtues, and deeds)
+    [B] धनेन वस्त्राभरणैः रूपेण
+    [C] बलेन प्रासादेन वाहनेन
+    [D] वचनेन विवादेन कपटेन
+    -> Correct: [A] कुलेन शीलेन गुणेन कर्मणा
+
+--------------------------------------------------------------------------------
+Quiz 2: श्लोकार्थ-सद्गुणाः (Shlokas 5–8 Virtues & Wisdom) — 10 Qs
+Q11. According to Shloka 5, how many qualities illuminate and glorify a person's life?
+    [A] अष्टौ गुणाः (Eight virtues)  [B] दश गुणाः  [C] षट् गुणाः  [D] पञ्च गुणाः
+    -> Correct: [A] अष्टौ गुणाः
+
+Q12. What does the first virtue 'प्रज्ञा' (Prajñā) signify in Shloka 5?
+    [A] विशिष्टा बुद्धिः / विवेकः (Extraordinary intellect, insight, and wisdom)
+    [B] अहङ्कारः  [C] केवलं रूपम्  [D] धनसञ्चयः
+    -> Correct: [A] विशिष्टा बुद्धिः / विवेकः
+
+Q13. What does 'अबहुभाषिता' (Abahubhāṣitā) mean among the eight virtues?
+    [A] मितभाषिता / सार्थकभाषणम् (Speaking measuredly, concisely, and meaningfully)
+    [B] सर्वदा मौनम्  [C] व्यर्थभाषणम्  [D] परनिन्दा
+    -> Correct: [A] मितभाषिता / सार्थकभाषणम्
+
+Q14. How should charity (दानम्) be performed according to Shloka 5?
+    [A] यथाशक्ति (According to one's honest capacity and means)  [B] ऋणं गृहीत्वा  [C] प्रदर्शनाय  [D] लोभाय
+    -> Correct: [A] यथाशक्ति
+
+Q15. According to Shloka 6, what distinguishes an assembly as a genuine assembly (सभा)?
+    [A] वृद्धाः (Wise, experienced elders who uphold Dharma)  [B] सैनिकाः  [C] धनिकाः  [D] बालाः
+    -> Correct: [A] वृद्धाः
+
+Q16. When does truth (सत्यम्) cease to be considered real truth according to Shloka 6?
+    [A] यद् छलम् अभ्युपैति (When it is tainted with fraud, deceit, or manipulation)
+    [B] यदा रात्रौ उच्यते  [C] यदा बालः वदति  [D] यदा ग्रन्थे न दृश्यते
+    -> Correct: [A] यद् छलम् अभ्युपैति
+
+Q17. In Shloka 7, with whom is friendship and affection strictly forbidden?
+    [A] दुर्जनेन (With a wicked / malicious person)  [B] साधुना  [C] विदुषा  [D] कृषकेण
+    -> Correct: [A] दुर्जनेन
+
+Q18. In the charcoal metaphor of Shloka 7, what happens when charcoal is hot?
+    [A] दहति (It burns the hand)  [B] शीतलं करोति  [C] कृष्णायते  [D] रञ्जयति
+    -> Correct: [A] दहति
+
+Q19. In Shloka 7, what does cold charcoal do to the hand?
+    [A] कृष्णायते (It stains / blackens the hand with soot)  [B] दहति  [C] प्रकाशयति  [D] सुगन्धयति
+    -> Correct: [A] कृष्णायते
+
+Q20. What is the core philosophical moral taught by the chariot and wheel metaphor in Shloka 8?
+    [A] केवलं भाग्याश्रितेन न स्थातव्यम्, परिश्रमः एव फलदायकः (Hard work is essential; fate alone is ineffective)
+    [B] भाग्ये यत् अस्ति तत् स्वयमेव लभ्यते
+    [C] रथचालनं बालकैः न कार्यम्
+    [D] दैवमेव सर्वोपरि अस्ति
+    -> Correct: [A] केवलं भाग्याश्रितेन न स्थातव्यम्, परिश्रमः एव फलदायकः
+
+--------------------------------------------------------------------------------
+Quiz 3: शब्दार्थाः, व्याकरणम् अभ्यास-प्रश्नाः च (Vocabulary, Grammar & Solved Exercises) — 10 Qs
+Q21. From the chapter vocabulary, what is the meaning of 'अपवर्गः' (Apavargaḥ)?
+    [A] मोक्षः / निर्वाणम् (Liberation / Salvation)  [B] धनसम्पत्तिः  [C] भोजनम्  [D] क्रोधः
+    -> Correct: [A] मोक्षः / निर्वाणम्
+
+Q22. What is the meaning of the Sanskrit term 'करी' (Karī) used in Shloka 2?
+    [A] गजः / हस्ती (Elephant)  [B] अश्वः  [C] मयूरः  [D] काकः
+    -> Correct: [A] गजः / हस्ती
+
+Q23. What is the classical Sanskrit synonym for 'वायसः' (Vāyasaḥ)?
+    [A] काकः (Crow)  [B] कोकिलः  [C] कपोतः  [D] हंसः
+    -> Correct: [A] काकः
+
+Q24. What is the correct Sandhi split of 'नम्रास्तरवः' according to the grammar rules?
+    [A] नम्राः + तरवः (Visarga Sandhi -> स्)  [B] नम्र + तरवः  [C] नम्रास् + तरवः  [D] नम्रो + तरवः
+    -> Correct: [A] नम्राः + तरवः
+
+Q25. What is the correct grammatical breakdown of 'अभ्युपैति'?
+    [A] अभि + उप + एति (Yan followed by Vriddhi Sandhi)  [B] अभ्यु + पैति  [C] अभ्युप + ऐति  [D] अभी + उपैति
+    -> Correct: [A] अभि + उप + एति
+
+Q26. What is the compound Vigraha for 'यथाशक्ति' (Avyayībhāva Samāsa)?
+    [A] शक्तिम् अनतिक्रम्य  [B] शक्तेः समीपे  [C] शक्त्या सह  [D] शक्तिं शक्तिं प्रति
+    -> Correct: [A] शक्तिम् अनतिक्रम्य
+
+Q27. From textbook Exercise 1(ख), who does not understand strength?
+    [A] निर्बलः (A weak person)  [B] बली  [C] सिंहः  [D] करी
+    -> Correct: [A] निर्बलः
+
+Q28. From textbook Exercise 2(ङ), when does destiny fail to bear fruit?
+    [A] पुरुषकारेण विना (Without human effort and hard work)  [B] मन्त्रेण विना  [C] निद्रया विना  [D] धनेन विना
+    -> Correct: [A] पुरुषकारेण विना
+
+Q29. What is the Sandhi split of 'ह्येकेन' from Shloka 8?
+    [A] हि + एकेन (Yan Sandhi: इ -> य्)  [B] ह्य + एकेन  [C] ही + एकेन  [D] हे + एकेन
+    -> Correct: [A] हि + एकेन
+
+Q30. From the opening dialogue on Page 24, what does the term 'सुभाषितानि' literally mean?
+    [A] सुष्ठु भाषितानि शोभनानि वचनानि यानि सर्वदा जनानां हिताय भवन्ति (Well-spoken, noble words for the welfare of all)
+    [B] केवलं काव्यानि
+    [C] प्राचीनकथाः
+    [D] व्याकरणनियमाः
+    -> Correct: [A] सुष्ठु भाषितानि शोभनानि वचनानि यानि सर्वदा जनानां हिताय भवन्ति
+================================================================================
