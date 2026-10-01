@@ -12534,166 +12534,127 @@ export const WORKSHEETS: Worksheet[] = [
     ],
   },
 
-  // ==========================================
-  // GRADE 9 CH 2 WORKSHEET 1: Vocabulary, Financial Literacy & Terminology (10 Qs)
+    // ==========================================
+  // GRADE 9 CH 2 WORKSHEET 1: Grammar, Declensions & Fill-in-the-Blanks (10 Qs)
   // ==========================================
   {
     id: "ws-grade9-ch2-ws1",
-    title: "Worksheet 1: Vocabulary & Financial Literacy (10 Questions)",
-    titleSanskrit: "कार्यपत्रिका १: शब्दार्थाः वित्तीयसाक्षरता च (१० प्रश्नाः)",
+    title: "Worksheet 1: Grammar, Declensions & Fill-in-the-Blanks (10 Questions)",
+    titleSanskrit: "कार्यपत्रिका १: व्याकरणं रूपसिद्धिः रिक्तस्थानपूर्तिश्च (१० प्रश्नाः)",
     category: "grade9",
     categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
     grade: "CBSE Grade 9 (Sharda Framework)",
     totalMarks: 20,
     timeLimit: "25 Mins",
-    description: "Testing financial terminology, compound adjectives, Upanishadic maxims, and antonyms.",
+    description: "Fill in blanks using correct Sanskrit words, root declensions, prefixes, and compound splits.",
     sections: [
       {
-        sectionTitle: "Section A: Match the Terms with Hindi Meanings",
-        sectionTitleSanskrit: "खण्डः 'क' · शब्दार्थ-मेलनम्",
-        instructions: "Match the Sanskrit financial terms with their correct Hindi meanings:",
+        sectionTitle: "Section A: Sentences & Root Declensions",
+        sectionTitleSanskrit: "खण्डः 'क' · वाक्यपूर्तिः धातुरूपाणि च",
+        instructions: "Fill in the blank fields using correct Sanskrit words or grammatical variations derived from the text:",
         totalMarks: 10,
         questions: [
           {
             num: 1,
-            question: "अपव्ययः ─── ?",
-            questionSanskrit: "अपव्ययः ─── ?",
+            question: "Sentence Completion: वास्तविकसुखस्य आधारः ___________ अस्ति।",
+            questionSanskrit: "वास्तविकसुखस्य आधारः ___________ अस्ति।",
             marks: 2,
-            type: "mcq",
-            options: [
-              "(a) आवर्ती जमा (RD)",
-              "(b) निश्चित अवधि जमा (FD)",
-              "(c) चक्रवृद्धि ब्याज से",
-              "(d) आत्मनिर्भर",
-              "(e) फिजूलखर्ची / अनुचित व्यय"
-            ],
-            answer: "(e) फिजूलखर्ची / अनुचित व्यय",
-            explanation: "अपव्ययः = अनुचित व्यय / फिजूलखर्ची (Unnecessary expense / Wastage)।"
+            type: "fill",
+            options: ["(A) धर्मः", "(B) विलासः", "(C) अहङ्कारः", "(D) कलहः"],
+            answer: "धर्मः",
+            explanation: "पाठानुकूलम्: वास्तविकसुखस्य आधारः धर्मः अस्ति।"
           },
           {
             num: 2,
-            question: "आवृत्तिनिक्षेपः ─── ?",
-            questionSanskrit: "आवृत्तिनिक्षेपः ─── ?",
+            question: "Declension Matching: Complete the root form chart for लभ् (आत्मनेपद): लभते | ___________ | लभन्ते",
+            questionSanskrit: "लभ्-धातोः लट्-लकारे रूपं पूरयत: लभते | ___________ | लभन्ते",
             marks: 2,
-            type: "mcq",
-            options: [
-              "(a) आवर्ती जमा (RD)",
-              "(b) निश्चित अवधि जमा (FD)",
-              "(c) चक्रवृद्धि ब्याज से",
-              "(d) आत्मनिर्भर",
-              "(e) फिजूलखर्ची / अनुचित व्यय"
-            ],
-            answer: "(a) आवर्ती जमा (RD)",
-            explanation: "आवृत्तिनिक्षेपः = आवर्ती जमा (Recurring Deposit - RD)।"
+            type: "fill",
+            options: ["(A) लभेते", "(B) लभते", "(C) लभसे", "(D) लभामहे"],
+            answer: "लभेते",
+            explanation: "लभ् धातुः लट् लकारः: लभते, लभेते, लभन्ते।"
           },
           {
             num: 3,
-            question: "नियतनिक्षेपः ─── ?",
-            questionSanskrit: "नियतनिक्षेपः ─── ?",
+            question: "Declension Matching: Complete the root form chart for वर्ध्: ___________ | वर्धेते | ___________",
+            questionSanskrit: "वर्ध्-धातोः रूपं पूरयत: ___________ | वर्धेते | ___________",
             marks: 2,
-            type: "mcq",
-            options: [
-              "(a) आवर्ती जमा (RD)",
-              "(b) निश्चित अवधि जमा (FD)",
-              "(c) चक्रवृद्धि ब्याज से",
-              "(d) आत्मनिर्भर",
-              "(e) फिजूलखर्ची / अनुचित व्यय"
-            ],
-            answer: "(b) निश्चित अवधि जमा (FD)",
-            explanation: "नियतनिक्षेपः = निश्चित अवधि जमा (Fixed Deposit - FD)।"
+            type: "short_ans",
+            answer: "वर्धते | वर्धन्ते",
+            explanation: "वर्ध् धातुः आत्मनेपदम्: वर्धते (एकवचनम्), वर्धेते (द्विवचनम्), वर्धन्ते (बहुवचनम्)।"
           },
           {
             num: 4,
-            question: "चक्रवृद्ध्यंशेन ─── ?",
-            questionSanskrit: "चक्रवृद्ध्यंशेन ─── ?",
+            question: "Grammar Identification: The word उद्धृत्य is formed by combining the prefix उद्, the root _____, and the suffix _____.",
+            questionSanskrit: "'उद्धृत्य' पदे धातु-प्रत्ययौ कौ?",
             marks: 2,
-            type: "mcq",
-            options: [
-              "(a) आवर्ती जमा (RD)",
-              "(b) निश्चित अवधि जमा (FD)",
-              "(c) चक्रवृद्धि ब्याज से",
-              "(d) आत्मनिर्भर",
-              "(e) फिजूलखर्ची / अनुचित व्यय"
-            ],
-            answer: "(c) चक्रवृद्धि ब्याज से",
-            explanation: "चक्रवृद्ध्यंशेन = चक्रवृद्धि ब्याज से (With compound interest)।"
+            type: "short_ans",
+            answer: "Root: √धृ | Suffix: ल्यप्",
+            explanation: "उद् (उपसर्गः) + धृ (धातुः) + ल्यप् (प्रत्ययः) = उद्धृत्य।"
           },
           {
             num: 5,
-            question: "स्वावलम्बी ─── ?",
-            questionSanskrit: "स्वावलम्बी ─── ?",
+            question: "Fill in the Blank (Verse): सर्वेषामेव शौचानामर्थशौचं _____ स्मृतम्।",
+            questionSanskrit: "सर्वेषामेव शौचानामर्थशौचं _____ स्मृतम्।",
             marks: 2,
-            type: "mcq",
-            options: [
-              "(a) आवर्ती जमा (RD)",
-              "(b) निश्चित अवधि जमा (FD)",
-              "(c) चक्रवृद्धि ब्याज से",
-              "(d) आत्मनिर्भर",
-              "(e) फिजूलखर्ची / अनुचित व्यय"
-            ],
-            answer: "(d) आत्मनिर्भर",
-            explanation: "स्वावलम्बी = आत्मनिर्भर (Self-reliant)।"
+            type: "fill",
+            options: ["(A) परं", "(B) वरं", "(C) शुभं", "(D) समं"],
+            answer: "परं",
+            explanation: "मनुस्मृतौ: 'सर्वेषामेव शौचानामर्थशौचं परं स्मृतम्'।"
           }
         ]
       },
       {
-        sectionTitle: "Section B: Modern Compound Adjectives",
-        sectionTitleSanskrit: "खण्डः 'ख' · आधुनिक-सामासिक-विशेषणानि",
-        instructions: "Write the English translation for the following compound terms:",
-        totalMarks: 6,
+        sectionTitle: "Section B: Cases, Antonyms & Compounds",
+        sectionTitleSanskrit: "खण्डः 'ख' · विभक्तिः विलोमपदं समासश्च",
+        instructions: "Identify case endings, create antonyms, and analyze compound words:",
+        totalMarks: 10,
         questions: [
           {
             num: 6,
-            question: "त्वरिताहारः ➡️ ?",
-            questionSanskrit: "त्वरिताहारः ➡️ ?",
+            question: "Case Identification: What is the base word (प्रातिपदिकम्) and case of मातापितृभ्यां?",
+            questionSanskrit: "'मातापितृभ्यां' पदे प्रातिपदिकं विभक्तिश्च का?",
             marks: 2,
             type: "short_ans",
-            answer: "Fast Food / Quick-prep food",
-            explanation: "त्वरिताहारः = Fast food / भोजनं यत् शीघ्रं सिध्यति।"
+            answer: "Base word: मातापितृ | Case: तृतीया / चतुर्थी / पञ्चमी विभक्तिः (द्विवचनम्)",
+            explanation: "प्रातिपदिकम्: मातापितृ, विभक्तिः: तृतीया/चतुर्थी/पञ्चमी द्विवचनम्।"
           },
           {
             num: 7,
-            question: "पुटीकृतभोजनम् ➡️ ?",
-            questionSanskrit: "पुटीकृतभोजनम् ➡️ ?",
+            question: "Antonym Creation: What is the exact antonym of व्ययः (expenditure) used extensively in Page 2 and 3?",
+            questionSanskrit: "'व्ययः' इत्यस्य विलोमपदं किम्?",
             marks: 2,
             type: "short_ans",
-            answer: "Packaged / canned food",
-            explanation: "पुटीकृतभोजनम् = Packaged / processed packaged food।"
+            answer: "सञ्चयः (Savings / Accumulation)",
+            explanation: "व्ययस्य (खर्च) विलोमपदं सञ्चयः (बचत) अस्ति।"
           },
           {
             num: 8,
-            question: "कष्टार्जितधनस्य ➡️ ?",
-            questionSanskrit: "कष्टार्जितधनस्य ➡️ ?",
+            question: "Sentence Completion: पर्याप्तधनस्य अभावात् ________________ कठिनं भवति।",
+            questionSanskrit: "पर्याप्तधनस्य अभावात् ________________ कठिनं भवति।",
             marks: 2,
             type: "short_ans",
-            answer: "Of the wealth earned with hardship/effort",
-            explanation: "कष्टार्जितधनस्य = Of hard-earned wealth / श्रमेण उपार्जितस्य धनस्य।"
-          }
-        ]
-      },
-      {
-        sectionTitle: "Section C: Contextual Applications & Synonyms",
-        sectionTitleSanskrit: "खण्डः 'ग' · सन्दर्भप्रयोगः विलोमपदं च",
-        instructions: "Answer the contextual questions based on the textbook lesson:",
-        totalMarks: 4,
-        questions: [
+            answer: "स्वकर्तव्यपालनं",
+            explanation: "पाठानुकूलम्: पर्याप्तधनस्य अभावात् स्वकर्तव्यपालनं कठिनं भवति।"
+          },
           {
             num: 9,
-            question: "Identify the Upanishadic phrase warning against coveting wealth:",
-            questionSanskrit: "परधन-लोभ-निषेधके उपनिषदः वाक्यं किम्?",
+            question: "Fill in the Blank (Verb Form): अपेक्ष् → अपेक्षते | ___________ | अपेक्षन्ते.",
+            questionSanskrit: "अपेक्ष् धातु: अपेक्षते | ___________ | अपेक्षन्ते.",
             marks: 2,
-            type: "short_ans",
-            answer: "मा गृधः कस्यस्विद्धनम्",
-            explanation: "ईशावास्योपनिषदः प्रथममन्त्रे: 'मा गृधः कस्यस्विद्धनम्' (Do not covet anyone's wealth)।"
+            type: "fill",
+            options: ["(A) अपेक्षेते", "(B) अपेक्ष्यते", "(C) अपेक्षसे", "(D) अपेक्षे"],
+            answer: "अपेक्षेते",
+            explanation: "अपेक्ष् धातोः द्विवचने रूपम् 'अपेक्षेते' भवति।"
           },
           {
             num: 10,
-            question: "Give the antonym (विलोमपदम्) used for 'अपव्ययः':",
-            questionSanskrit: "'अपव्ययः' इत्यस्य विलोमपदं किम्?",
+            question: "Compound Splitting (विग्रहः): The compound word आर्थिकव्यवहारः splits up into: ______________________________.",
+            questionSanskrit: "'आर्थिकव्यवहारः' इत्यस्य विग्रहः कः?",
             marks: 2,
             type: "short_ans",
-            answer: "मितव्ययः / उचितव्ययः (सञ्चयः)",
-            explanation: "अपव्ययस्य विलोमपदं मितव्ययः अथवा सञ्चयः भवति।"
+            answer: "अर्थस्य व्यवहारः / धनविषयकः व्यवहारः",
+            explanation: "आर्थिकव्यवहारः = अर्थस्य (धनस्य) व्यवहारः / षष्ठीतत्पुरुषः।"
           }
         ]
       }
@@ -12701,134 +12662,122 @@ export const WORKSHEETS: Worksheet[] = [
   },
 
   // ==========================================
-  // GRADE 9 CH 2 WORKSHEET 2: Grammar, Sandhi, Samasa & Atmanepada Roots (10 Qs)
+  // GRADE 9 CH 2 WORKSHEET 2: Question Framing & Sentence Transformation (10 Qs)
   // ==========================================
   {
     id: "ws-grade9-ch2-ws2",
-    title: "Worksheet 2: Grammar, Sandhi & Atmanepada Roots (10 Questions)",
-    titleSanskrit: "कार्यपत्रिका २: व्याकरणं सन्धिः आत्मनेपद-रूपाणि च (१० प्रश्नाः)",
+    title: "Worksheet 2: Question Framing & Sentence Transformation (10 Questions)",
+    titleSanskrit: "कार्यपत्रिका २: प्रश्ननिर्माणं वाक्यरूपान्तरणं च (१० प्रश्नाः)",
     category: "grade9",
     categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
     grade: "CBSE Grade 9 (Sharda Framework)",
     totalMarks: 20,
     timeLimit: "30 Mins",
-    description: "Mastering Sandhi disjunctions, Atmanepada verb conjugations (लट् लकार), and Samasa analysis.",
+    description: "Transform affirmative sentences into questions, correct grammatical mismatches, and translate principles.",
     sections: [
       {
-        sectionTitle: "Section A: Sandhi-Vichheda",
-        sectionTitleSanskrit: "खण्डः 'क' · सन्धिच्छेदः",
-        instructions: "Disjoin the following compound euphonic words:",
-        totalMarks: 6,
+        sectionTitle: "Section A: Question Framing (प्रश्ननिर्माणम्)",
+        sectionTitleSanskrit: "खण्डः 'क' · रेखाङ्कितपदमाधृत्य प्रश्ननिर्माणम्",
+        instructions: "Frame questions by replacing underlined parts with appropriate interrogative pronouns (कः, कदा, केन, कीदृशः, कस्य):",
+        totalMarks: 10,
         questions: [
           {
             num: 1,
-            question: "चोत्थाय ➡️ ? + ?",
-            questionSanskrit: "'चोत्थाय' इत्यस्य सन्धिच्छेदं कुरुत:",
+            question: "Frame Question: सुखस्य मूलं धर्मः। → ?",
+            questionSanskrit: "सुखस्य मूलं धर्मः। (प्रश्ननिर्माणं कुरुत)",
             marks: 2,
             type: "short_ans",
-            answer: "च + उत्थाय",
-            explanation: "च + उत्थाय = चोत्थाय (गुणसन्धिः: अ + उ = ओ)।"
+            answer: "सुखस्य मूलं कः?",
+            explanation: "धर्मः (पुंल्लिङ्ग प्रथमा एकवचन) स्थाने 'कः' प्रयुज्यते।"
           },
           {
             num: 2,
-            question: "योऽर्थे ➡️ ? + ?",
-            questionSanskrit: "'योऽर्थे' इत्यस्य सन्धिच्छेदं कुरुत:",
+            question: "Frame Question: दिनस्य आरम्भे धर्मार्थयोः चिन्तनम् आवश्यकम्। → ?",
+            questionSanskrit: "दिनस्य आरम्भे धर्मार्थयोः चिन्तनम् आवश्यकम्। (प्रश्ननिर्माणं कुरुत)",
             marks: 2,
             type: "short_ans",
-            answer: "यः + अर्थे",
-            explanation: "यः + अर्थे = योऽर्थे (उत्व-विसर्गसन्धिः पूर्वरूपं च)।"
+            answer: "कदा धर्मार्थयोः चिन्तनम् आवश्यकम्?",
+            explanation: "दिनस्य आरम्भे (कालवाचक पद) स्थाने 'कदा' प्रयुज्यते।"
           },
           {
             num: 3,
-            question: "नापेक्षते ➡️ ? + ?",
-            questionSanskrit: "'नापेक्षते' इत्यस्य सन्धिच्छेदं कुरुत:",
+            question: "Frame Question: सन्मार्गेण एव धनार्जनं करणीयम्। → ?",
+            questionSanskrit: "सन्मार्गेण एव धनार्जनं करणीयम्। (प्रश्ननिर्माणं कुरुत)",
             marks: 2,
             type: "short_ans",
-            answer: "न + अपेक्षते",
-            explanation: "न + अपेक्षते = नापेक्षते (दीर्घ-स्वरसन्धिः)।"
-          }
-        ]
-      },
-      {
-        sectionTitle: "Section B: Atmanepada Lat-Lakara Forms",
-        sectionTitleSanskrit: "खण्डः 'ख' · आत्मनेपद-लट्-लकार-रूपाणि",
-        instructions: "Fill in the blanks with the correct form of the root in Atmanepada Present Tense:",
-        totalMarks: 8,
-        questions: [
+            answer: "केन एव धनार्जनं करणीयम्?",
+            explanation: "सन्मार्गेण (तृतीया एकवचन) स्थाने 'केन' प्रयुज्यते।"
+          },
           {
             num: 4,
-            question: "धर्मपालनेन मानवः दीर्घकालिकं सुखं ____________। (लभ् धातु)",
-            questionSanskrit: "धर्मपालनेन मानवः दीर्घकालिकं सुखं ____________। (लभ् - लट् प्रथम एकवचन)",
+            question: "Frame Question: अनैतिकः आर्थिकव्यवहारः कदापि न करणीयः। → ?",
+            questionSanskrit: "अनैतिकः आर्थिकव्यवहारः कदापि न करणीयः। (प्रश्ननिर्माणं कुरुत)",
             marks: 2,
-            type: "fill",
-            options: ["(A) लभते", "(B) लभन्ति", "(C) लभसे", "(D) लभामि"],
-            answer: "लभते",
-            explanation: "लभ् धातु, लट् लकार, प्रथमपुरुष, एकवचन = लभते।"
+            type: "short_ans",
+            answer: "कीदृशः आर्थिकव्यवहारः कदापि न करणीयः?",
+            explanation: "अनैतिकः (विशेषणवाचक पद) स्थाने 'कीदृशः' प्रयुज्यते।"
           },
           {
             num: 5,
-            question: "भारतीयधर्मशास्त्रेषु अनेकाः सूक्तयः ____________। (विद् धातु)",
-            questionSanskrit: "भारतीयधर्मशास्त्रेषु अनेकाः सूक्तयः ____________। (विद् - लट् प्रथम बहुवचन)",
+            question: "Frame Question: संकटकाले स्वाभिमानिजनः अन्यजनस्य आर्थिकसहायताम् नापेक्षते। → ?",
+            questionSanskrit: "संकटकाले स्वाभिमानिजनः अन्यजनस्य आर्थिकसहायताम् नापेक्षते। (प्रश्ननिर्माणं कुरुत)",
             marks: 2,
-            type: "fill",
-            options: ["(A) विद्यन्ते", "(B) विद्यते", "(C) विद्येते", "(D) विन्दन्ति"],
-            answer: "विद्यन्ते",
-            explanation: "विद् धातु (आत्मनेपद), लट् लकार, प्रथमपुरुष, बहुवचन = विद्यन्ते।"
-          },
-          {
-            num: 6,
-            question: "चक्रवृद्ध्यंशेन सह तद्धनं सततं ____________। (वर्ध् धातु)",
-            questionSanskrit: "चक्रवृद्ध्यंशेन सह तद्धनं सततं ____________। (वर्ध् - लट् प्रथम एकवचन)",
-            marks: 2,
-            type: "fill",
-            options: ["(A) वर्धते", "(B) वर्धन्ते", "(C) वर्धन्ति", "(D) वर्धेते"],
-            answer: "वर्धते",
-            explanation: "वर्ध् धातु, लट् लकार, प्रथमपुरुष, एकवचन = वर्धते।"
-          },
-          {
-            num: 7,
-            question: "स्वाभिमानी जनः अन्यस्य साहाय्यं न ____________। (अपेक्ष् धातु)",
-            questionSanskrit: "स्वाभिमानी जनः अन्यस्य साहाय्यं न ____________। (अपेक्ष् - लट् प्रथम एकवचन)",
-            marks: 2,
-            type: "fill",
-            options: ["(A) अपेक्षते", "(B) अपेक्षन्ते", "(C) अपेक्षन्ति", "(D) अपेक्षेते"],
-            answer: "अपेक्षते",
-            explanation: "अपेक्ष् धातु, लट् लकार, प्रथमपुरुष, एकवचन = अपेक्षते।"
+            type: "short_ans",
+            answer: "संकटकाले स्वाभिमानिजनः कस्य आर्थिकसहायताम् नापेक्षते?",
+            explanation: "अन्यजनस्य (षष्ठी एकवचन) स्थाने 'कस्य' प्रयुज्यते।"
           }
         ]
       },
       {
-        sectionTitle: "Section C: Samasa Analysis & Grammatical Roots",
-        sectionTitleSanskrit: "खण्डः 'ग' · समासः प्रत्ययः च",
-        instructions: "Analyze the compound structure and suffixes:",
-        totalMarks: 6,
+        sectionTitle: "Section B: Transformations & Comprehension",
+        sectionTitleSanskrit: "खण्डः 'ख' · वाक्यशोधनं पूर्णवाक्योत्तराणि च",
+        instructions: "Correct syntactic errors, complete textual answers, and translate key maxims:",
+        totalMarks: 10,
         questions: [
           {
-            num: 8,
-            question: "'अर्थशौचम्' इत्यस्य विग्रहः कः समासश्च कः?",
-            questionSanskrit: "'अर्थशौचम्' इत्यस्य विग्रहः कः?",
+            num: 6,
+            question: "Sentence Correction: Correct the grammatical mismatch: छात्राः मातापितृभ्यां कष्टार्जितधनस्य अपव्ययं करोति।",
+            questionSanskrit: "वाक्यं संशोध्य लिखत: छात्राः मातापितृभ्यां कष्टार्जितधनस्य अपव्ययं करोति।",
             marks: 2,
             type: "short_ans",
-            answer: "अर्थस्य शौचम् (षष्ठी-तत्पुरुषसमासः)",
-            explanation: "अर्थस्य शौचम् = अर्थशौचम् (षष्ठीतत्पुरुषः)।"
+            answer: "छात्राः मातापितृभ्यां कष्टार्जितधनस्य अपव्ययं कुर्वन्ति।",
+            explanation: "छात्राः (बहुवचनम् कर्ता), अतः क्रियापि बहुवचने 'कुर्वन्ति' भविष्यति।"
+          },
+          {
+            num: 7,
+            question: "Complete the full-sentence answer: “सुखस्य मूलं धर्मः, धर्मस्य मूलम् अर्थः” इतीदं प्रसिद्धं वाक्यं कस्मिन् ग्रन्थे प्राप्यते?",
+            questionSanskrit: "“सुखस्य मूलं धर्मः, धर्मस्य मूलम् अर्थः” इतीदं प्रसिद्धं वाक्यं कस्मिन् ग्रन्थे प्राप्यते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "“सुखस्य मूलं धर्मः, धर्मस्य मूलम् अर्थः” इतीदं प्रसिद्धं वाक्यं कौटिल्यस्य अर्थशास्त्रे प्राप्यते।",
+            explanation: "इदं सूत्रवाक्यं कौटिल्यस्य अर्थशास्त्रे अस्ति।"
+          },
+          {
+            num: 8,
+            question: "Complete the full-sentence answer: ब्राह्मे मुहूर्ते कयोः चिन्तनम् आवश्यकम्?",
+            questionSanskrit: "ब्राह्मे मुहूर्ते कयोः चिन्तनम् आवश्यकम्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "ब्राह्मे मुहूर्ते धर्मार्थयोः (धर्मस्य अर्थस्य च) चिन्तनम् आवश्यकम्।",
+            explanation: "गरुडपुराणानुसारं धर्मस्य अर्थस्य च चिन्तनं करणीयम्।"
           },
           {
             num: 9,
-            question: "'उद्धृत्य' पदे कः धातुः कः च प्रत्ययः?",
-            questionSanskrit: "'उद्धृत्य' पदे धातु-प्रत्ययौ लिखत:",
+            question: "True or False: आडम्बरपूर्णः व्ययः अवश्यं करणीयः। (Change statement to make it correct if false).",
+            questionSanskrit: "सत्यम् असत्यं वा: आडम्बरपूर्णः व्ययः अवश्यं करणीयः।",
             marks: 2,
             type: "short_ans",
-            answer: "उद् + धृ + ल्यप्",
-            explanation: "उद् (उपसर्ग) + धृ (धातु) + ल्यप् (प्रत्यय) = उद्धृत्य।"
+            answer: "False. Correct sentence: आडम्बरपूर्णः व्ययः वर्जनीयः (अथवा औचित्यपूर्णः व्ययः अवश्यं करणीयः)।",
+            explanation: "पाठे उक्तम् यत् आडम्बरपूर्णः व्ययः अपव्ययः भवति, अतः सः वर्जनीयः।"
           },
           {
             num: 10,
-            question: "'जलबिन्दुनिपातेन' इत्यत्र कः समासः?",
-            questionSanskrit: "'जलबिन्दुनिपातेन' इत्यत्र कः समासः?",
+            question: "Translate to Sanskrit: 'Savings are the root of self-respect.'",
+            questionSanskrit: "संस्कृते अनुवदत: 'Savings are the root of self-respect.'",
             marks: 2,
             type: "short_ans",
-            answer: "षष्ठी-तत्पुरुषसमासः (जलस्य बिन्दूनां निपातेन)",
-            explanation: "जलस्य बिन्दूनां निपातेन = षष्ठीतत्पुरुषसमासः।"
+            answer: "सञ्चयः स्वाभिमानस्य मूलं वर्तते। (अथवा: स्वावलम्बनं स्वाभिमानस्य मूलं वर्तते।)",
+            explanation: "सञ्चयः / स्वावलम्बनं स्वाभिमानस्य मूलं भवति।"
           }
         ]
       }
@@ -12836,127 +12785,122 @@ export const WORKSHEETS: Worksheet[] = [
   },
 
   // ==========================================
-  // GRADE 9 CH 2 WORKSHEET 3: Conceptual Comprehension & Scriptural Sources (10 Qs)
+  // GRADE 9 CH 2 WORKSHEET 3: Mathematical Compound Interest & Application Exercises (10 Qs)
   // ==========================================
   {
     id: "ws-grade9-ch2-ws3",
-    title: "Worksheet 3: Conceptual Comprehension & Sources (10 Questions)",
-    titleSanskrit: "कार्यपत्रिका ३: पाठावबोधनं शास्त्रीय-स्रोतांसि च (१० प्रश्नाः)",
+    title: "Worksheet 3: Compound Interest & Applied Economics (10 Questions)",
+    titleSanskrit: "कार्यपत्रिका ३: चक्रवृद्ध्यंश-गणना व्यावहारिक-आर्थिकसाक्षरता च (१० प्रश्नाः)",
     category: "grade9",
     categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
     grade: "CBSE Grade 9 (Sharda Framework)",
     totalMarks: 20,
     timeLimit: "35 Mins",
-    description: "Evaluating scriptural source matching, text-based reasoning, and true/false discernment.",
+    description: "Complete real-world compounding calculations from Page 10 math lab, identify expenditures, and quote core verses.",
     sections: [
       {
-        sectionTitle: "Section A: Text-Based Direct Recall",
-        sectionTitleSanskrit: "खण्डः 'क' · पाठाधारित-प्रश्नाः",
-        instructions: "Answer the questions based on the lesson text:",
-        totalMarks: 10,
+        sectionTitle: "Section A: Compounding Calculation Table (गणनाकार्यम्)",
+        sectionTitleSanskrit: "खण्डः 'क' · चक्रवृद्ध्यंश-सारणी (मूलधनम् ₹1,000, वार्षिकदरः 10%)",
+        instructions: "Complete compounding table values for initial principal ₹1,000 at 10% annual compound interest:",
+        totalMarks: 8,
         questions: [
           {
             num: 1,
-            question: "कौटिल्यस्य अर्थशास्त्रे प्रसिद्धं सूत्रवाक्यं किम्?",
-            questionSanskrit: "कौटिल्यस्य अर्थशास्त्रे प्रसिद्धं सूत्रवाक्यं किम्?",
+            question: "Calculate Year 3 Compounded Total (A) when Year 3 Principal is ₹1,210.00 and Interest is ₹121.00:",
+            questionSanskrit: "तृतीयवर्षस्य अन्ते कुलधनम् (A) किम्?",
             marks: 2,
             type: "short_ans",
-            answer: "सुखस्य मूलं धर्मः, धर्मस्य मूलम् अर्थः।",
-            explanation: "कौटिल्यस्य अर्थशास्त्रस्य आरम्भे सूत्रम्: 'सुखस्य मूलं धर्मः, धर्मस्य मूलम् अर्थः'।"
+            answer: "₹1,331.00",
+            explanation: "₹1,210.00 + ₹121.00 = ₹1,331.00।"
           },
           {
             num: 2,
-            question: "ब्राह्मे मुहूर्ते कयोः चिन्तनं करणीयम्?",
-            questionSanskrit: "ब्राह्मे मुहूर्ते कयोः चिन्तनं करणीयम्?",
+            question: "Calculate Year 4 Interest Earned (10% of ₹1,331.00):",
+            questionSanskrit: "चतुर्थवर्षे अर्जितं १०% चक्रवृद्धिव्याजं किम्?",
             marks: 2,
             type: "short_ans",
-            answer: "धर्मार्थयोः (धर्मस्य अर्थस्य च)",
-            explanation: "गरुडपुराणे: 'ब्राह्मे मुहूर्ते चोत्थाय धर्ममर्थं च चिन्तयेत्'।"
+            answer: "₹133.10",
+            explanation: "10% of ₹1,331.00 = ₹133.10।"
           },
           {
             num: 3,
-            question: "स्वावलम्बनं कस्य मूलं वर्तते?",
-            questionSanskrit: "स्वावलम्बनं कस्य मूलं वर्तते?",
+            question: "Calculate Year 5 Compounded Total (A) when Year 5 Principal is ₹1,464.10 and Interest is ₹146.41:",
+            questionSanskrit: "पञ्चमवर्षस्य अन्ते कुलधनम् (A) किम्?",
             marks: 2,
             type: "short_ans",
-            answer: "स्वाभिमानस्य",
-            explanation: "पाठे उक्तम्: 'स्वावलम्बनं स्वाभिमानस्य मूलं वर्तते'।"
+            answer: "₹1,610.51",
+            explanation: "₹1,464.10 + ₹146.41 = ₹1,610.51।"
           },
           {
             num: 4,
-            question: "जलबिन्दुनिपातेन क्रमशः किं पूर्यते?",
-            questionSanskrit: "जलबिन्दुनिपातेन क्रमशः किं पूर्यते?",
+            question: "What is the compounded total shown in the textbook table for Year 10?",
+            questionSanskrit: "दशमवर्षस्य अन्ते सारणी-दर्शितं कुलधनं किम्?",
             marks: 2,
             type: "short_ans",
-            answer: "घटः",
-            explanation: "चाणक्यनीतौ: 'जलबिन्दुनिपातेन क्रमशः पूर्यते घटः'।"
-          },
-          {
-            num: 5,
-            question: "कस्याः युगे यूनामपव्ययः अधिको भवति?",
-            questionSanskrit: "कस्मिन् युगे यूनामपव्ययः अधिको भवति?",
-            marks: 2,
-            type: "short_ans",
-            answer: "भौतिकतावादियुगे",
-            explanation: "भौतिकतावादियुगस्य आकर्षणेन यूनामपव्ययः अधिको भवति।"
+            answer: "₹2,593.74",
+            explanation: "As verified in textbook chart: ₹1,000 × (1.10)^10 = ₹2,593.74।"
           }
         ]
       },
       {
-        sectionTitle: "Section B: True or False (सत्यम् / असत्यम्)",
-        sectionTitleSanskrit: "खण्डः 'ख' · सत्यम् अथवा असत्यम्",
-        instructions: "State whether each assertion is True (सत्यम्) or False (असत्यम्):",
-        totalMarks: 10,
+        sectionTitle: "Section B: Applied Economic Reasoning & Verse Mastery",
+        sectionTitleSanskrit: "खण्डः 'ख' · आर्थिक-निर्णयः सुभाषित-कण्ठस्थीकरणं च",
+        instructions: "Solve Page 10 student assignment questions and analyze core economic teachings:",
+        totalMarks: 12,
         questions: [
           {
-            num: 6,
-            question: "भगवान् मनुना अर्थशौचं सर्वेषु शौचेषु श्रेष्ठं मन्यते।",
-            questionSanskrit: "भगवान् मनुना अर्थशौचं सर्वेषु शौचेषु श्रेष्ठं मन्यते।",
+            num: 5,
+            question: "Find the total compounded sum value of ₹1,000 principal at Year 11 (2,593.74 × 1.10):",
+            questionSanskrit: "एकादशवर्षस्य अन्ते कुलधनं किम्? (2,593.74 × 1.10)",
             marks: 2,
-            type: "mcq",
-            options: ["(A) सत्यम् (True)", "(B) असत्यम् (False)"],
-            answer: "सत्यम् (True)",
-            explanation: "सत्यम्: 'सर्वेषामेव शौचानामर्थशौचं परं स्मृतम्'।"
+            type: "short_ans",
+            answer: "₹2,853.11",
+            explanation: "₹2,593.74 × 1.10 = ₹2,853.114 ≈ ₹2,853.11।"
+          },
+          {
+            num: 6,
+            question: "What is the total compounded value at Year 12 (2,853.11 × 1.10)?",
+            questionSanskrit: "द्वादशवर्षस्य अन्ते कुलधनं किम्? (2,853.11 × 1.10)",
+            marks: 2,
+            type: "short_ans",
+            answer: "₹3,138.43",
+            explanation: "₹2,853.11 × 1.10 = ₹3,138.421 ≈ ₹3,138.43।"
           },
           {
             num: 7,
-            question: "'मा गृधः कस्यस्विद्धनम्' इति गरुडपुराणस्य वचनम्।",
-            questionSanskrit: "'मा गृधः कस्यस्विद्धनम्' इति गरुडपुराणस्य वचनम्।",
+            question: "Write the exact definition of चक्रवृद्ध्यंशः in simple Hindi or English as derived from Page 9:",
+            questionSanskrit: "'चक्रवृद्ध्यंशः' इत्यस्य परिभाषां लिखत:",
             marks: 2,
-            type: "mcq",
-            options: ["(A) सत्यम् (True)", "(B) असत्यम् (False)"],
-            answer: "असत्यम् (False - ईशावास्योपनिषत्)",
-            explanation: "असत्यम्: इदं वचनम् ईशावास्योपनिषदः अस्ति, न तु गरुडपुराणस्य।"
+            type: "short_ans",
+            answer: "Interest earned on top of principal plus accumulated interest (वह ब्याज जिसमें मूलधन के साथ-साथ अर्जित ब्याज पर भी ब्याज मिलता है)।",
+            explanation: "चक्रवृद्धिब्याजम् = Interest calculated on initial principal and accumulated interest."
           },
           {
             num: 8,
-            question: "सञ्चयस्य अभ्यासेन जनः स्वावलम्बी भवति।",
-            questionSanskrit: "सञ्चयस्य अभ्यासेन जनः स्वावलम्बी भवति।",
+            question: "Under औचित्यपूर्णः व्ययः, identify: (A) Buying street fast food: ______ | (B) Sukanya Samriddhi account deposit: ______",
+            questionSanskrit: "व्ययस्य प्रकारं निर्धारयत: (क) त्वरिताहार-क्रयणम्, (ख) सुकन्या-समृद्धि-योजनायां धननिक्षेपः।",
             marks: 2,
-            type: "mcq",
-            options: ["(A) सत्यम् (True)", "(B) असत्यम् (False)"],
-            answer: "सत्यम् (True)",
-            explanation: "सत्यम्: सञ्चयस्य अभ्यासेन जनः स्वावलम्बी स्वाभिमानी च भवति।"
+            type: "short_ans",
+            answer: "(A) अपव्ययः (Waste) | (B) उचितनिवेशः / सञ्चयः (Investment/Saving)",
+            explanation: "त्वरिताहारः अपव्ययः, सर्वकारीय-योजनायां निक्षेपः उचितनिवेशः।"
           },
           {
             num: 9,
-            question: "पुटीकृतभोजनस्य सेवनेन धनहानिः स्वास्थ्यहानिः च न भवति।",
-            questionSanskrit: "पुटीकृतभोजनस्य सेवनेन धनहानिः स्वास्थ्यहानिः च न भवति।",
+            question: "Complete the final core lesson conclusion: A student who acts with absolute financial awareness today grows into what kind of asset tomorrow?",
+            questionSanskrit: "अर्थविषये जागरूकः विद्यार्थी भविष्ये कीदृशः भवति?",
             marks: 2,
-            type: "mcq",
-            options: ["(A) सत्यम् (True)", "(B) असत्यम् (False)"],
-            answer: "असत्यम् (False)",
-            explanation: "असत्यम्: पुटीकृतभोजनेन धनहानिः स्वास्थ्यहानिः च द्वयमपि भवति।"
+            type: "short_ans",
+            answer: "उत्तरदायी नागरिको भवति (Becomes a responsible citizen).",
+            explanation: "'यः विद्यार्थी अद्य अर्थविषये जागरूकोऽस्ति, सः भविष्ये उत्तरदायी नागरिको भवति।'"
           },
           {
             num: 10,
-            question: "धर्मशास्त्रेषु चतुर्वर्गेषु अर्थः अन्यतमः महत्त्वपूर्णः स्तम्भः अस्ति।",
-            questionSanskrit: "धर्मशास्त्रेषु चतुर्वर्गेषु अर्थः अन्यतमः महत्त्वपूर्णः स्तम्भः अस्ति।",
+            question: "Quote the final lines of the chapter that remind us not to waste small things or small moments:",
+            questionSanskrit: "पाठान्त्यं सुभाषित-श्लोकं लिखत:",
             marks: 2,
-            type: "mcq",
-            options: ["(A) सत्यम् (True)", "(B) असत्यम् (False)"],
-            answer: "सत्यम् (True)",
-            explanation: "सत्यम्: धर्म-अर्थ-काम-मोक्षेषु अर्थः प्रमुखः स्तम्भः मन्यते।"
+            type: "short_ans",
+            answer: "क्षणशः कणशश्चैव विद्यामर्थं च साधयेत्। क्षणे नष्टे कुतो विद्या कणे नष्टे कुतो धनम्॥",
+            explanation: "समयस्य कणस्य च महत्त्व-प्रतिपादकः प्रसिद्धः श्लोकः।"
           }
         ]
       }

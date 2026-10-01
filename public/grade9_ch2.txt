@@ -230,199 +230,188 @@ Due to the allure of the materialistic era, the extravagance among youth is high
   शुद्ध विकल्पः: (२) चाणक्यः
 
 ================================================================================
-📄 PART 4: WORKSHEETS (10 Questions Each with Explicit Answer Keys)
+📋 PART 1: THE 3 QUIZZES (10 Questions Each with Explicit Keys)
 ================================================================================
 
-📄 Worksheet 1: Vocabulary, Financial Literacy & Terminology
-Section A: Match the Terms with Hindi Meanings
-1. अपव्ययः ─── (a) आवर्ती जमा (RD)
-2. आवृत्तिनिक्षेपः ─── (b) निश्चित अवधि जमा (FD)
-3. नियतनिक्षेपः ─── (c) चक्रवृद्धि ब्याज से
-4. चक्रवृद्ध्यंशेन ─── (d) आत्मनिर्भर
-5. स्वावलम्बी ─── (e) फिजूलखर्ची / अनुचित व्यय
-Section B: Modern Compound Adjectives
-6. त्वरिताहारः ➡️ ________________________________________
-7. पुटीकृतभोजनम् ➡️ ________________________________________
-8. कष्टार्जितधनस्य ➡️ ________________________________________
-Section C: Contextual Applications & Synonyms
-9. Identify the Upanishadic phrase warning against coveting wealth: ➡️ ____________________
-10. Give the antonym (विलोमपदम्) used for 'अपव्ययः': ➡️ ____________________
+🧠 Quiz 1: Textual Comprehension & Core Concepts
+Instructions: Choose or write the most accurate answer based directly on the chapter text.
 
-🔑 Answer Key for Worksheet 1
-1. (e) फिजूलखर्ची / अनुचित व्यय
-2. (a) आवर्ती जमा (RD)
-3. (b) निश्चित अवधि जमा (FD)
-4. (c) चक्रवृद्धि ब्याज से
-5. (d) आत्मनिर्भर
-6. Fast Food / Quick-prep food
-7. Packaged / canned food
-8. Of the wealth earned with hardship/effort
-9. "मा गृधः कस्यस्विद्धनम्" (ईशावास्योपनिषत्)
-10. मितव्ययः / उचितव्ययः (सञ्चयः)
-
---------------------------------------------------------------------------------
-
-📄 Worksheet 2: Grammar, Sandhi, Samasa & Atmanepada Roots
-Section A: Sandhi-Vichheda
-1. चोत्थाय ➡️ ___________ + ___________
-2. योऽर्थे ➡️ ___________ + ___________
-3. नापेक्षते ➡️ ___________ + ___________
-Section B: Atmanepada Lat-Lakara Forms
-4. धर्मपालनेन मानवः दीर्घकालिकं सुखं ____________। (लभ् - लट् प्रथम एकवचन)
-5. भारतीयधर्मशास्त्रेषु अनेकाः सूक्तयः ____________। (विद् - लट् प्रथम बहुवचन)
-6. चक्रवृद्ध्यंशेन सह तद्धनं सततं ____________। (वर्ध् - लट् प्रथम एकवचन)
-7. स्वाभिमानी जनः अन्यस्य साहाय्यं न ____________। (अपेक्ष् - लट् प्रथम एकवचन)
-Section C: Samasa Analysis & Grammatical Roots
-8. 'अर्थशौचम्' इत्यस्य विग्रहः कः? ➡️ ____________________
-9. 'उद्धृत्य' पदे कः धातुः कः च प्रत्ययः? ➡️ ____________________
-10. 'जलबिन्दुनिपातेन' इत्यत्र कः समासः? ➡️ ____________________
-
-🔑 Answer Key for Worksheet 2
-1. च + उत्थाय (गुणसन्धिः)
-2. यः + अर्थे (उत्व-विसर्गसन्धिः)
-3. न + अपेक्षते (दीर्घसन्धिः)
-4. लभते
-5. विद्यन्ते
-6. वर्धते
-7. अपेक्षते
-8. अर्थस्य शौचम् (षष्ठी-तत्पुरुषसमासः)
-9. उद् + धृ + ल्यप्
-10. षष्ठी-तत्पुरुषसमासः (जलस्य बिन्दूनां निपातेन)
-
---------------------------------------------------------------------------------
-
-📄 Worksheet 3: Conceptual Comprehension & Scriptural Sources
-Section A: Text-Based Direct Recall
-1. कौटिल्यस्य अर्थशास्त्रे प्रसिद्धं सूत्रवाक्यं किम्? ➡️ ____________________
-2. ब्राह्मे मुहूर्ते कयोः चिन्तनं करणीयम्? ➡️ ____________________
-3. स्वावलम्बनं कस्य मूलं वर्तते? ➡️ ____________________
-4. जलबिन्दुनिपातेन क्रमशः किं पूर्यते? ➡️ ____________________
-5. कस्याः युगे यूनामपव्ययः अधिको भवति? ➡️ ____________________
-Section B: True or False (सत्यम् / असत्यम्)
-6. भगवान् मनुना अर्थशौचं सर्वेषु शौचेषु श्रेष्ठं मन्यते। ( _________ )
-7. मा गृधः कस्यस्विद्धनम् इति गरुडपुराणस्य वचनम्। ( _________ )
-8. सञ्चयस्य अभ्यासेन जनः स्वावलम्बी भवति। ( _________ )
-9. पुटीकृतभोजनस्य सेवनेन धनहानिः स्वास्थ्यहानिः च न भवति। ( _________ )
-10. धर्मशास्त्रेषु चतुर्वर्गेषु अर्थः अन्यतमः महत्त्वपूर्णः स्तम्भः अस्ति। ( _________ )
-
-🔑 Answer Key for Worksheet 3
-1. सुखस्य मूलं धर्मः, धर्मस्य मूलम् अर्थः।
-2. धर्मार्थयोः (धर्मस्य अर्थस्य च)
-3. स्वाभिमानस्य
-4. घटः
-5. भौतिकतावादियुगे
-6. सत्यम् (True)
-7. असत्यम् (False - ईशावास्योपनिषत्)
-8. सत्यम् (True)
-9. असत्यम् (False - दोनों हानियाँ होती हैं)
-10. सत्यम् (True)
-
-================================================================================
-🧠 PART 5: INTERACTIVE QUIZZES (30 MCQs with Explicit Answer Keys)
-================================================================================
-
-🏆 Quiz 1: Text Comprehension & Financial Literacy
-1. "सुखस्य मूलं धर्मः, धर्मस्य मूलम् अर्थः" इति सूत्रं कस्य ग्रन्थे वर्तते?
-   (A) मनुस्मृतौ  (B) कौटिल्यस्य अर्थशास्त्रे  (C) गरुडपुराणे  (D) हितोपदेशे
-2. वास्तविकसुखस्य आधारः कः मन्यते?
-   (A) विलासः  (B) धर्मः  (C) अहङ्कारः  (D) केवलं धनम्
-3. धर्मपालनस्य प्रमुखं साधनं किम् अस्ति?
-   (A) अर्थः (धनम्)  (B) कलहः  (C) दण्डः  (D) निद्रा
-4. स्वस्थः आर्थिकव्यवहारः कतिविधः भवति?
-   (A) द्विविधः  (B) त्रिविधः  (C) चतुर्विधः  (D) पञ्चविधः
-5. स्वावलम्बनं कस्य मूलं वर्तते?
-   (A) लोभस्य  (B) स्वाभिमानस्य  (C) आलस्यस्य  (D) चिन्तायाः
-6. छात्रजीवने अपव्ययस्य प्रमुखं कारणं किम्?
-   (A) विद्याभ्यासः  (B) जिह्वा-लालसा (त्वरिताहारः, विलासश्च)  (C) पुस्तकक्रयणम्  (D) सेवाकार्यम्
-7. 'नियतनिक्षेपः' इत्यस्य आधुनिके बैङ्किङ्ग्-व्यवहारे कः अर्थः?
-   (A) Saving Account  (B) Fixed Deposit (FD)  (C) Recurring Deposit (RD)  (D) Demat
-8. 'आवृत्तिनिक्षेपः' इति कस्याः योजनायाः कृते प्रयुज्यते?
-   (A) Recurring Deposit (RD)  (B) Fixed Deposit (FD)  (C) ATM Card  (D) Loan
-9. चक्रवृद्ध्यंशेन सह धनस्य किं भवति?
-   (A) नाशः  (B) सततं वर्धनम्  (C) स्तम्भनम्  (D) संकोचः
-10. बुद्धिमान् छात्रः भविष्ये कीदृशः नागरिकः भवति?
-   (A) उत्तरदायी नागरिकः  (B) विलासी नागरिकः  (C) अनुत्तरदायी  (D) उदासीनः
+1. According to Kautilya, what is the ultimate foundation of true happiness (वास्तविकसुखस्य आधारः)?
+2. Which text says that you should wake up in the early morning (ब्राह्मे मुहूर्ते) and think about right conduct and wealth?
+3. Name the three types of healthy financial behavior mentioned on Page 2.
+4. According to Sage Manu, which type of purity/cleanliness (शौचम्) is supreme over all others?
+5. Fill in the blank according to the Upanishadic quote: "मा गृधः ____________ धनम्"
+6. What happens to a student's lifestyle if they continuously chase जिह्वलालसा (desires of the tongue)?
+7. In the verse "जलबिन्दुनिपातेन क्रमशः पूर्यते घटः", what three things are said to be accumulated in the exact same gradual manner?
+8. Name at least three specific government savings schemes listed on Page 3 or 4.
+9. What kind of spending is explicitly categorized as अपव्ययः (wastefulness) in the text?
+10. Complete the life balance principle: True life is marked by the equilibrium of which three pillars?
 
 🔑 Quiz 1 Answer Key
-1. (B) कौटिल्यस्य अर्थशास्त्रे
-2. (B) धर्मः
-3. (A) अर्थः (धनम्)
-4. (B) त्रिविधः
-5. (B) स्वाभिमानस्य
-6. (B) जिह्वा-लालसा (त्वरिताहारः, विलासश्च)
-7. (B) Fixed Deposit (FD)
-8. (A) Recurring Deposit (RD)
-9. (B) सततं वर्धनम्
-10. (A) उत्तरदायी नागरिकः
+1. धर्मः (Dharma / Righteousness)
+2. गरुडपुराणम् (Garuda Purana)
+3. न्यायपूर्णम् अर्थोपार्जनम् (Righteous earning), औचित्यपूर्णः व्ययः (Justified spending), and भविष्यदृष्ट्या सञ्चयः (Saving for the future).
+4. अर्थशौचम् (Financial purity / Honesty in wealth)
+5. कस्यस्विद् (कस्यस्विद्धनम्)
+6. They waste hard-earned money on fast food/packaged food, which destroys their health and increases medical costs.
+7. विद्या (Knowledge), धर्म (Righteousness), and धन (Wealth).
+8. Any three: प्रधानमन्त्री-जनधनयोजना, सुकन्या-समृद्धि-योजना, सार्वजनिक-भविष्य-निधिः (PPF), किसान-विकास-पत्रम् (KVP), राष्ट्रिय-सञ्चय-प्रमाणपत्रम् (NSC), नियतनिक्षेपः (FD), आवृत्तिनिक्षेपः (RD).
+9. आडम्बरपूर्णः प्रदर्शनकारी व्ययः (Ostentatious/showy spending) or spending on luxury and vices (विलासव्यसनाय व्ययः).
+10. धर्मः, अर्थः, सुखम् (Dharma, Artha, and Happiness).
 
 --------------------------------------------------------------------------------
 
-🏆 Quiz 2: Deep Shloka Interpretations, Scriptural Sources & Philosophy
-1. "ब्राह्मे मुहूर्ते चोत्थाय धर्ममर्थं च चिन्तयेत्" इति श्लोकांशः कस्मात् ग्रन्थात् उद्धृतः?
-   (A) गरुडपुराणात्  (B) विष्णुपुराणात्  (C) शिवपुराणात्  (D) रामायणात्
-2. "सर्वेषामेव शौचानामर्थशौचं परं स्मृतम्" इति कस्य वचनम्?
-   (A) भगवतो मनोः (मनुस्मृतिः)  (B) कौटिल्यस्य  (C) पाणिनेः  (D) भर्तृहरेः
-3. "योऽर्थे शुचिर्हि सः शुचिर्न मृद्वारिशुचिः शुचिः" इत्यस्य श्लोकस्य मुख्यः सन्देशः कः?
-   (A) जलेन स्नानमेव परमम्  (B) धनस्य शुद्धिः (ईमानदारी) एव खरी शुद्धिः  (C) मृत्तिकालेपनं श्रेष्ठम्  (D) धनत्यागः
-4. "मा गृधः कस्यस्विद्धनम्" इति अमरं वचनं कस्मिन् उपनिषदि अस्ति?
-   (A) केनोपनिषदि  (B) कठोपनिषदि  (C) ईशावास्योपनिषदि  (D) मुण्डकोपनिषदि
-5. "जलबिन्दुनिपातेन क्रमशः पूर्यते घटः" इति दृष्टान्तेन कस्य संचयः प्रतिपादितः?
-   (A) केवलं जलस्य  (B) विद्यायाः, धर्मस्य, धनस्य च  (C) पाषाणस्य  (D) अन्नस्य मात्रस्य
-6. "क्षणशः कणशश्चैव विद्यामर्थं च साधयेत्" इत्यत्र 'क्षणशः' पदस्य कोऽर्थः?
-   (A) एक-एक क्षण से (समयस्य सदुपयोगेन)  (B) शीघ्रम्  (C) कदाचित्  (D) क्षणभंगुरम्
-7. "कणे नष्टे कुतो धनम्" इत्यनेन कस्य महत्त्वं दर्शितम्?
-   (A) अन्न-धनकणस्य अल्प-सञ्चयस्य संरक्षणम्  (B) कृषिकार्यस्य  (C) भोजनस्य  (D) धान्यविक्रयस्य
-8. चतुर्वर्गेषु (पुरुषार्थेषु) के चत्वारः विषयाः अन्तर्भवन्ति?
-   (A) सत्यं ज्ञानम् अनन्तं ब्रह्म  (B) धर्मः, अर्थः, कामः, मोक्षः च  (C) माता पिता गुरुः अतिथिः  (D) चत्वारो वेदाः
-9. आपातकाले स्वाभिमानिनः जनस्य का विशेषता भवति?
-   (A) सः अन्यस्य आर्थिक-साहाय्यं नापेक्षते  (B) सः ऋणं याचते  (C) सः पलायनं करोति  (D) सः अधर्मं करोति
-10. अपव्ययस्य निवारणाय पाठे कः उपायः निर्दिष्टः?
-   (A) व्ययस्य लेख-स्थापनं (हिसाब-किताब) परिशीलनं च  (B) धनसञ्चयस्य त्यागः  (C) क्रयणस्य पूर्ण-निषेधः  (D) धनदान-निवारणम्
+🔤 Quiz 2: Vocabulary & Word Meanings (Sanskrit-Hindi-English)
+Instructions: Match or state the exact meaning and grammatical form as given in the chapter's glossary.
+
+1. What is the English meaning of the word अपव्ययः?
+2. Translate the infinitive verb अवाप्तुम् into Hindi.
+3. What does अविच्छिन्नः mean, and what type of compound (समासः) is it?
+4. What is the English definition of त्वरिताहारः?
+5. The term कष्टार्जितधनस्य contains which case ending (विभक्तिः)?
+6. Translate पुटीकृतभोजनम् into both Hindi and English.
+7. What is the Sanskrit word used in the text for Compound Interest?
+8. What does the scriptural command "मा गृधः" mean in plain English?
+9. Define स्वावलम्बी in Hindi.
+10. What does the word विपन्ना describe in the context of a youth's financial status?
 
 🔑 Quiz 2 Answer Key
-1. (A) गरुडपुराणात्
-2. (A) भगवतो मनोः (मनुस्मृतिः)
-3. (B) धनस्य शुद्धिः (ईमानदारी) एव खरी शुद्धिः
-4. (C) ईशावास्योपनिषदि
-5. (B) विद्यायाः, धर्मस्य, धनस्य च
-6. (A) एक-एक क्षण से (समयस्य सदुपयोगेन)
-7. (A) अन्न-धनकणस्य अल्प-सञ्चयस्य संरक्षणम्
-8. (B) धर्मः, अर्थः, कामः, मोक्षः च
-9. (A) सः अन्यस्य आर्थिक-साहाय्यं नापेक्षते
-10. (A) व्ययस्य लेख-स्थापनं (हिसाब-किताब) परिशीलनं च
+1. Unnecessary expense / Wastage
+2. प्राप्त करने के लिए (To get / obtain)
+3. अटूट (Inseparable / Unbroken); it is a नञ् तत्पुरुष compound.
+4. Fast Food
+5. षष्ठी विभक्तिः (Genitive case / "of the wealth earned with difficulty").
+6. Hindi: डिब्बाबन्द खाना | English: Packaged food
+7. चक्रवृद्ध्यंशः
+8. Don't covet / Do not be greedy
+9. आत्मनिर्भरः (आत्मनिर्भर)
+10. Destitute / Crisis-ridden / Deprived financial state (सम्पन्नतारहिता / संकटग्रस्त)
 
 --------------------------------------------------------------------------------
 
-🏆 Quiz 3: Technical Grammar, Atmanepada Roots, Sandhi & Compounds
-1. 'लभते' इति क्रियापदं कस्य गणस्य कस्य च पदस्य रूपम्?
-   (A) लभ्-धातुः, आत्मनेपदम्, लट्, प्रथमपुरुष, एकवचन  (B) परस्मैपदम्, लट्  (C) लोट्, मध्यमपुरुष  (D) लङ्, उत्तमपुरुष
-2. 'विद्यन्ते' इति रूपे धातुः, लकारः, वचनं च किम्?
-   (A) विद् (सत्तायाम्), लट्-लकारः, बहुवचनम्  (B) विद्, लोट्, एकवचनम्  (C) विद्, लङ्, द्विवचनम्  (D) विद्, विधिलिङ्
-3. 'अपेक्षते' इति रूपस्य बहुवचने किं रूपं भविष्यति?
-   (A) अपेक्ष्यन्ते  (B) अपेक्षन्ते  (C) अपेक्षन्ति  (D) अपेक्षध्वम्
-4. 'चोत्थाय' इत्यत्र कः सन्धिः अस्ति?
-   (A) दीर्घसन्धिः  (B) गुणसन्धिः (च + उत्थाय)  (C) वृद्धिसन्धिः  (D) यण्सन्धिः
-5. 'योऽर्थे' इत्यत्र सन्धिच्छेदः कः?
-   (A) यः + अर्थे (उत्व-विसर्गसन्धिः)  (B) यो + अर्थे  (C) य + अर्थे  (D) या + अर्थे
-6. 'अर्थशौचम्' इत्यस्य सामासिक-विग्रहः कः?
-   (A) अर्थाय शौचम्  (B) अर्थस्य शौचम् (षष्ठीतत्पुरुषः)  (C) अर्थेन शौचम्  (D) अर्थे शौचम्
-7. 'उद्धृत्य' पदे कः प्रत्ययः प्रयुक्तः?
-   (A) क्त्वा  (B) ल्यप् (उद् + धृ + ल्यप्)  (C) तुमुन्  (D) शतृ
-8. 'अविच्छिन्नः' इति पदे कः समासः अस्ति?
-   (A) नञ्-तत्पुरुषसमासः (न विच्छिन्नः)  (B) कर्मधारयः  (C) द्वन्द्वः  (D) बहुव्रीहिः
-9. 'अवाप्तुम्' इत्यत्र कः प्रत्ययः विद्यते?
-   (A) ल्यप्  (B) तुमुन् (अव + आप् + तुमुन्)  (C) क्त्वा  (D) तव्यत्
-10. 'वर्धते' इत्यस्य द्विवचने किं रूपं भवति?
-   (A) वर्धेते  (B) वर्धन्ते  (C) वर्धतः  (D) वर्धसे
+🏛️ Quiz 3: Verse Analysis & Applied Financial Literacy
+Instructions: Analyze the philosophical logic and the mathematical compound interest example provided on Page 9.
+
+1. According to the text, what happens to money over time if it is saved via चक्रवृद्ध्यंशः (compound interest) versus simple interest?
+2. If you invest ₹1,000 at a 10% annual compound interest rate, what is the total value at the end of Year 2?
+3. What is the final value of that same ₹1,000 investment after 10 years as shown in the textbook's chart?
+4. Complete the verse fragment: "क्षणे नष्टे कुतो विद्या ____________ नष्टे कुतो धनम्॥"
+5. What baseline advice does the text offer to students who want to verify these government schemes? Where should they go?
+6. Why does the text argue that स्वावलम्बनम् (self-reliance) prevents a crisis of dignity (स्वाभिमानः) during tough times?
+7. What is the ultimate compound word used to describe "Financial Literacy" in the student context?
+8. Explain what the metaphor of a जलबिन्दु (water drop) represents in terms of everyday financial planning.
+9. What four disciplines form the core objective (ध्येयम्) of a wise student according to Page 4?
+10. Translate this line: "यः विद्यार्थी अद्य अर्थविषये जागरूकोऽस्ति, सः भविष्ये उत्तरदायी नागरिको भवति।"
 
 🔑 Quiz 3 Answer Key
-1. (A) लभ्-धातुः, आत्मनेपदम्, लट्, प्रथमपुरुष, एकवचन
-2. (A) विद् (सत्तायाम्), लट्-लकारः, बहुवचनम्
-3. (B) अपेक्षन्ते
-4. (B) गुणसन्धिः (च + उत्थाय)
-5. (A) यः + अर्थे (उत्व-विसर्गसन्धिः)
-6. (B) अर्थस्य शौचम् (षष्ठीतत्पुरुषः)
-7. (B) ल्यप् (उद् + धृ + ल्यप्)
-8. (A) नञ्-तत्पुरुषसमासः (न विच्छिन्नः)
-9. (B) तुमुन् (अव + आप् + तुमुन्)
-10. (A) वर्धेते
+1. It grows much faster (अतिशीघ्रं भवति) because interest is earned on top of previously earned interest, not just the base capital.
+2. ₹1,210.00
+3. ₹2,593.74
+4. कणे (कणे नष्टे कुतो धनम्)
+5. They should go to nearby banks (वित्तागाराः) or post offices (पत्रालयाः) and consult the officials.
+6. A self-reliant person does not need to depend on or beg for financial assistance from others (अन्यजनस्य आर्थिकसहायतां नापेक्षते) during a crisis.
+7. आर्थिकसाक्षरता
+8. It represents that small, continuous daily savings (लघु-लघुः सञ्चयोपि), no matter how minor, build great wealth over time.
+9. उचितोपार्जनम् (proper earning), व्ययस्य मर्यादा (spending limits), आपत्कालीननिधिसञ्चयः (emergency fund), and दीर्घकालीननिवेशः (long-term investment).
+10. "The student who is aware of financial matters today, becomes a responsible citizen in the future."
+
+================================================================================
+📝 PART 2: THE 3 WORKSHEETS (10 Questions Each with Explicit Keys)
+================================================================================
+
+📝 Worksheet 1: Grammar, Declensions & Fill-in-the-Blanks
+Instructions: Fill in the blank fields using correct Sanskrit words or grammatical variations derived from the text.
+
+1. Sentence Completion: वास्तविकसुखस्य आधारः ___________ अस्ति।
+2. Declension Matching: Complete the root form chart for लभ् (आत्मनेपद):
+   लभते | ___________ | लभन्ते
+3. Declension Matching: Complete the root form chart for वर्ध्:
+   ___________ | वर्धेते | ___________
+4. Grammar Identification: The word उद्धृत्य is formed by combining the prefix उद्, the root _____, and the suffix _____.
+5. Fill in the Blank (Verse): सर्वेषामेव शौचानामर्थशौचं _____ स्मृतम्।
+6. Case Identification: What is the base word (प्रातिपदिकम्) and case of मातापितृभ्यां?
+7. Antonym Creation: What is the exact antonym of व्ययः (expenditure) used extensively in Page 2 and 3?
+8. Sentence Completion: पर्याप्तधनस्य अभावात् ________________ कठिनं भवति।
+9. Fill in the Blank (Verb Form): अपेक्ष् → अपेक्षते | ___________ | अपेक्षन्ते.
+10. Compound Splitting (विग्रहः): The compound word आर्थिकव्यवहारः splits up into: ______________________________.
+
+🔑 Worksheet 1 Answer Key
+1. धर्मः
+2. लभेते
+3. वर्धते | वर्धन्ते
+4. Root: √धृ | Suffix: ल्यप्
+5. परं
+6. Base word: मातापितृ | Case: तृतीया / चतुर्थी / पञ्चमी विभक्तिः (द्विवचनम्)
+7. सञ्चयः (Savings / Accumulation)
+8. स्वकर्तव्यपालनं
+9. अपेक्षेते
+10. अर्थस्य व्यवहारः / धनविषयकः व्यवहारः
+
+--------------------------------------------------------------------------------
+
+📝 Worksheet 2: Question Framing & Sentence Transformation
+Instructions: Transform the given affirmative sentences into questions by replacing the underlined parts with appropriate interrogative pronouns (कः, कदा, केन, कीदृशः, कस्य), as required in the exercises on Page 11.
+
+1. Frame Question: सुखस्य मूलं <u>धर्मः</u>। → _________________________________?
+2. Frame Question: <u>दिनस्य आरम्भे</u> धर्मार्थयोः चिन्तनम् आवश्यकम्। → _________________________________?
+3. Frame Question: <u>सन्मार्गेण</u> एव धनार्जनं करणीयम्। → _________________________________?
+4. Frame Question: <u>अनैतिकः</u> आर्थिकव्यवहारः कदापि न करणीयः। → _________________________________?
+5. Frame Question: संकटकाले स्वाभिमानिजनः <u>अन्यजनस्य</u> आर्थिकसहायताम् नापेक्षते। → _________________________________?
+6. Sentence Correction: Correct the grammatical mismatch:
+   छात्राः मातापितृभ्यां कष्टार्जितधनस्य अपव्ययं करोति।
+7. Complete the full-sentence answer: “सुखस्य मूलं धर्मः, धर्मस्य मूलम् अर्थः” इतीदं प्रसिद्धं वाक्यं कस्मिन् ग्रन्थे प्राप्यते?
+8. Complete the full-sentence answer: ब्राह्मे मुहूर्ते कयोः चिन्तनम् आवश्यकम्?
+9. True or False: आडम्बरपूर्णः व्ययः अवश्यं करणीयः। (Change the statement to make it correct if false).
+10. Translate to Sanskrit: "Savings are the root of self-respect."
+
+🔑 Worksheet 2 Answer Key
+1. सुखस्य मूलं कः?
+2. कदा धर्मार्थयोः चिन्तनम् आवश्यकम्?
+3. केन एव धनार्जनं करणीयम्?
+4. कीदृशः आर्थिकव्यवहारः कदापि न करणीयः?
+5. संकटकाले स्वाभिमानिजनः कस्य आर्थिकसहायताम् नापेक्षते?
+6. Correction: छात्राः मातापितृभ्यां कष्टार्जितधनस्य अपव्ययं कुर्वन्ति। (Plural verb match).
+7. “सुखस्य मूलं धर्मः, धर्मस्य मूलम् अर्थः” इतीदं प्रसिद्धं वाक्यं कौटिल्यस्य अर्थशास्त्रे प्राप्यते।
+8. ब्राह्मे मुहूर्ते धर्मार्थयोः (धर्मस्य अर्थस्य च) चिन्तनम् आवश्यकम्।
+9. False. Correct sentence: आडम्बरपूर्णः व्ययः वर्जनीयः (Should be avoided) / औचित्यपूर्णः व्ययः अवश्यं करणीयः।
+10. सञ्चयः स्वाभिमानस्य मूलं वर्तते। (Alternately: स्वावलम्बनं स्वाभिमानस्य मूलं वर्तते।)
+
+--------------------------------------------------------------------------------
+
+📝 Worksheet 3: Mathematical Compound Interest & Application Exercises
+Instructions: Complete the real-world application tracking exercise as given in the textbook's math lab section (गणनाकार्यम्) on Page 10.
+
+Context: The text tasks students with calculating the compounding effect of an initial base principal of ₹1,000 at a 10% annual compound interest rate for future blocks of time.
+
+Use standard compound interest math logic A = P(1 + r/100)^n to complete the values:
+
+Year (n)     Starting Principal (P)     Interest Earned (10%)     Compounded Total (A)
+----------------------------------------------------------------------------------------
+Year 1       ₹1,000.00                  ₹100.00                   ₹1,100.00
+Year 2       ₹1,100.00                  ₹110.00                   ₹1,210.00
+Year 3       ₹1,210.00                  ₹121.00                   1. __________
+Year 4       ₹1,331.00                  2. __________             ₹1,464.10
+Year 5       ₹1,464.10                  ₹146.41                   3. __________
+Year 10      ——                         ——                        4. ₹2,593.74
+
+Solve the Page 10 Student Assignment Questions:
+5. Find the total compounded sum value of the ₹1,000 principal at Year 11 (2,593.74 × 1.10).
+6. What is the value at Year 12?
+7. Write the exact definition of चक्रवृद्ध्यंशः in simple Hindi/English as derived from Page 9.
+8. Under औचित्यपूर्णः व्ययः, identify which of the following is an investment and which is a waste:
+   (A) Buying street fast food: __________
+   (B) Depositing money in a Sukanya Samriddhi account: __________
+9. Complete the final core lesson conclusion (निगमनम्): A student who acts with absolute financial awareness today grows into what kind of asset tomorrow?
+10. Quote the final lines of the chapter that remind us not to waste small things or small moments (स्वाध्यायान्मा प्रमद:).
+
+🔑 Worksheet 3 Answer Key
+1. ₹1,331.00
+2. ₹133.10
+3. ₹1,610.51
+4. Already filled as textbook verification placeholder (₹2,593.74)
+5. ₹2,853.11
+6. ₹3,138.43
+7. Interest earned on top of principal plus accumulated interest (वह ब्याज जिसमें मूलधन के साथ-साथ अर्जित ब्याज पर भी ब्याज मिलता है).
+8. (A) अपव्ययः (Waste) | (B) उचितनिवेशः / सञ्चयः (Investment/Saving)
+9. उत्तरदायी नागरिको भवति (Becomes a highly responsible, balanced citizen).
+10. "क्षणशः कणशश्चैव विद्यामर्थं च साधयेत्। क्षणे नष्टे कुतो विद्या कणे नष्टे कुतो धनम्॥"
