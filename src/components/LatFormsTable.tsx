@@ -10,9 +10,11 @@ import { playPronunciation } from '../utils/pronunciation';
 
 type LatFormsTableProps = {
   entry: DhatuEntry;
+  /** When set, used instead of playPronunciation so a Play-all queue can cancel first. */
+  onPronounce?: (text: string) => void;
 };
 
-const LatFormsTable: React.FC<LatFormsTableProps> = ({ entry }) => {
+const LatFormsTable: React.FC<LatFormsTableProps> = ({ entry, onPronounce }) => {
   const result = useMemo(() => getLatForms(entry), [entry]);
   const hasP = Boolean(result.parasmaipada);
   const hasA = Boolean(result.atmanepada);
@@ -99,7 +101,7 @@ const LatFormsTable: React.FC<LatFormsTableProps> = ({ entry }) => {
                       className="dp-lat-cell"
                       title={`Pronounce ${form}`}
                       aria-label={`${person.en} ${NUMBER_LABELS[ci].en}: ${form}`}
-                      onClick={() => playPronunciation(form)}
+                      onClick={() => (onPronounce ?? playPronunciation)(form)}
                     >
                       <span className="dp-lat-form">{form}</span>
                       <span className="dp-lat-speak" aria-hidden="true">

@@ -271,7 +271,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
 
               {open && (
                 <div className="dp-detail" onClick={(e) => e.stopPropagation()}>
-                  <LatFormsTable key={key} entry={entry} />
+                  <LatFormsTable key={key} entry={entry} onPronounce={playOne} />
                   {(entry.examples ?? []).length > 0 && (
                     <>
                       <h4 className="dp-detail-heading">Quick examples</h4>
