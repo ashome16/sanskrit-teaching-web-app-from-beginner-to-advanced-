@@ -1,190 +1,252 @@
+॥ दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः) ॥
+Chapter 10: Sacrifice for a Good Cause is Noble (Part 1) — The Tale of Viravara (Hitopadesha — Pages 111–122)
+दशमः पाठः — सन्निमित्ते वरं त्यागः (क-भागः) (पृष्ठ १११–१२२)
+
 ================================================================================
-कक्षा ८ · दीपकम संस्कृतम् (NCERT / CBSE)
-दशमः पाठः (Chapter 10): सन्निमित्ते वरं त्यागः (क-भागः)
-Better to Sacrifice for a Noble Cause (Part 1) — The Tale of Viravara (Hitopadesha)
-पृष्ठानि १११–१२२ (Pages 111–122)
+📌 Pedagogical Framework: CBSE & NCERT Alignment — Sanskrit for All Learners
+================================================================================
+• CBSE & NCERT (NEP 2020 / NCF-SE) Alignment:
+  This curated learning module is aligned with the National Education Policy (NEP 2020) and the National Curriculum Framework for School Education (NCF-SE) formulated by NCERT and assessed by CBSE. Moving away from traditional rote-learning, it embodies competency-based, experiential education—integrating Sanskrit linguistic precision with timeless Indian Knowledge Systems (IKS), narrative ethics, and character-building values.
+
+• Why These Curated Lessons Are Designed for ALL Learners:
+  1. School Students (CBSE & State Boards):
+     - Complete line-by-line textbook analysis directly mapped to the Class 8 NCERT 'Deepakam' curriculum (Pages 111–122).
+     - Fully solved textbook exercises (आम्/न, पूर्णवाक्येन, अन्वयः, सन्धिच्छेदः, सर्वनामपदानि, पदच्छेदः) and standardized exam blueprints.
+  2. Absolute Beginners & Foundational Learners:
+     - Clear Devanagari typography paired with granular word-by-word glossaries (पदच्छेद एवं शब्दार्थ).
+     - Bilingual explanations in simple Hindi and English eliminate language barriers, enabling complete comprehension from day one.
+  3. Self-Paced & Independent Enthusiasts:
+     - Engaging classical narrative from Narayana Pandita's Hitopadesha showcasing supreme loyalty, courage, and selfless duty.
+  4. Advanced Students & Olympiad Aspirants:
+     - Grammatical rigor exploring Sandhi rules, compound words (Samasa: पूतचरित्रः, अहर्निशम्), verbal participles (Ktvā, Lyap, Tumun, Kta), and Anvaya syntactic reconstruction.
+     - Higher-order thinking skills (HOTS) cultivated through diagnostic quizzes with multi-tiered explanations.
+  5. Educators, Parents & Homeschoolers:
+     - Ready-to-teach structured pedagogy with thematic practice worksheets, rubric-aligned answer keys, and formative evaluation tools.
+
+================================================================================
+📖 Part 1: Full Lesson Extraction & Translation (Page wise)
 ================================================================================
 
-[विषय-प्रवेशः · THEME & BACKGROUND]
-संस्कृतवाङ्मये कथासाहित्यस्य विशिष्टं स्थानम् अस्ति। कथानां द्वारा अतीव मनोरञ्जकतया जीवनसम्बद्धाः विविधाः उपदेशाः, प्रेरणाः हि एतस्य साहित्यस्य प्रयोजनम्। संस्कृतस्य कथासाहित्यम् अत्यन्तं समृद्धं वैविध्यपूर्णं च अस्ति। प्रस्तुतं पाठः ‘हितोपदेशः’ इत्यस्मात्कथाग्रन्थात् स्वीकृतः। राज्ञः शूद्रकस्य सेवायां नियुक्तस्य कस्यचित् वीरवरनामकस्य कर्तव्यनिष्ठस्य राजपुत्रस्य वैशिष्ट्यस्य वर्णनं कथायामत्र वर्तते। सः राज्ञः राष्ट्रस्य च रक्षणाय स्वप्राणान् अपि अर्पयितुम् उद्यतः अभवत्। तस्य स्वामिभक्तिः राष्ट्राय समर्पणभावः च प्रेरणार्हः। अत्र एषः पाठः भागद्वये अस्ति। पठनीया इयं वीरवरकथा। अनुकरणीयः अयं वीरवरः।
+📍 Page 111 (Page 1)
 
-In Sanskrit literature, story literature holds a distinct and celebrated place. Imparting diverse moral instructions and inspirations tied to real life in an entertaining narrative manner is the chief goal of this genre. The present lesson is drawn from Narayana Pandita's classic 'Hitopadesha'. It narrates the inspiring account of prince Viravara, a devoted warrior who entered the service of King Shudraka and was ready to sacrifice his own life for the protection of his king and the state.
+📜 Sanskrit Text:
+दशमः पाठः । सन्निमित्ते वरं त्यागः (क-भागः)
+संस्कृतवाङ्मये कथासाहित्यस्य विशिष्टं स्थानम् अस्ति । कथानां द्वारा अतीव मनोरञ्जकतया जीवनसम्बद्धाः विविधाः उपदेशाः, प्रेरणाः हि एतस्य साहित्यस्य प्रयोजनम्। संस्कृतस्य कथासाहित्यम् अत्यन्तं समृद्धं वैविध्यपूर्णं च अस्ति ।
+प्रस्तुततः पाठः ‘हितोपदेशः’ इत्यस्मात्कथाग्रन्थात् स्वीकृतः। राज्ञः शूद्रकस्य सेवायां नियुक्तस्य कस्यचित् वीरवरनामकस्य कर्तव्यनिष्ठस्य राजपुत्रस्य वैशिष्ट्यस्य वर्णनं कथायामत्र वर्तते। सः राज्ञः राष्ट्रस्य च रक्षणाय स्वप्राणान् अपि अर्पयितुम् उद्यतः अभवत्। तस्य स्वामिभक्तिः राष्ट्राय समर्पणभावः च प्रेरणार्हः। अत्र एषः पाठः भागद्वये अस्ति। पठनीया इयं वीरवरकथा। अनुकरणीयः अयं वीरवरः।
+आसीत् शोभावती नाम काचन नगरी। तत्र शूद्रको नाम महापराक्रमी नानाशास्त्रविद् पूतचरित्रः महीपतिः प्रतिवसति स्म। अथैकदा वीरवरनामा राजपुत्रः वृत्त्यर्थं कस्मादपि देशाद् राजद्वारमुपागच्छत्। तेन सह वेदरता नाम तस्य पत्नी, शक्तिधरो नाम सुतः, वीरवती नाम कन्या च समायाताः।
+
+🇮🇳 Hindi Translation (हिंदी अनुवाद):
+दसवां पाठ: अच्छे कारण के लिए त्याग करना श्रेष्ठ है (भाग-क)। संस्कृत वाङ्मय (साहित्य) में कथा साहित्य का एक विशिष्ट स्थान है। कहानियों के माध्यम से अत्यंत मनोरंजक तरीके से जीवन से जुड़े विभिन्न उपदेश और प्रेरणा देना ही इस साहित्य का प्रयोजन है। संस्कृत का कथा साहित्य अत्यंत समृद्ध और विविधताओं से पूर्ण है।
+प्रस्तुत पाठ 'हितोपदेश' नामक कथा ग्रन्थ से लिया गया है। राजा शूद्रक की सेवा में नियुक्त किसी वीरवर नाम के कर्तव्यनिष्ठ राजपुत्र की विशेषता का वर्णन इस कथा में है। वह राजा और राष्ट्र की रक्षा के लिए अपने प्राणों को भी अर्पित करने के लिए तैयार हो गया। उसकी स्वामिभक्ति और राष्ट्र के प्रति समर्पण भाव प्रेरणा के योग्य है। यहाँ यह पाठ दो भागों में है। यह वीरवर की कहानी पढ़ने योग्य है। यह वीरवर अनुकरण करने योग्य है।
+शोभावती नाम की कोई नगरी थी। वहाँ शूद्रक नाम का महान पराक्रमी, अनेक शास्त्रों का ज्ञाता और पवित्र चरित्र वाला राजा रहता था। इसके बाद एक बार वीरवर नाम का राजपुत्र जीविका के लिए किसी देश से राजद्वार पर आया। उसके साथ वेदरता नाम की उसकी पत्नी, शक्तिधर नाम का बेटा और वीरवती नाम की बेटी भी आए थे।
+
+🇬🇧 English Translation:
+Chapter 10: Sacrifice for a good cause is noble (Part-A). Prose fiction or story literature holds a special place in Sanskrit literature. The purpose of this literature is to provide various life-related lessons and inspirations in a highly entertaining manner through stories. Sanskrit story literature is extremely rich and full of diversity.
+The present text is taken from the story book 'Hitopadesha'. This story describes the characteristics of a dutiful prince named Viravara who was employed in the service of King Shudraka. He became ready to sacrifice even his own life for the protection of the king and the nation. His devotion to his master and his sense of dedication to the nation are inspirational. Here this lesson is in two parts. This story of Viravara is worth reading. This Viravara is worthy of imitation.
+There was a city named Shobhavati. A very powerful king named Shudraka, who was well-versed in various scriptures and possessed a pure character, lived there. Then once, a prince named Viravara came to the royal palace gate from some country in search of a livelihood. Along with him, his wife named Vedarata, his son named Shaktidhara, and his daughter named Viravati also arrived.
 
 --------------------------------------------------------------------------------
-भागः १: शोभावती-नगरी वीरवरस्य च आगमनम् (Page 111)
-Part 1: The City of Shobhavati and the Arrival of Prince Viravara
---------------------------------------------------------------------------------
 
-[संस्कृत-मूलपाठः]
-आसीत् शोभावती नाम काचन नगरी। तत्र शूद्रको नाम महापराक्रमी नानाशास्त्रवित् पूतचरित्रः महीपतिः प्रतिवसति स्म। अथैकदा वीरवरनामा राजपुत्रः वृत्त्यर्थं कस्मादपि देशाद् राजद्वारमुपागच्छत्। तेन सह वेदरता नाम तस्य पत्नी, शक्तिधरो नाम सुतः, वीरवती नाम कन्या च समायाताः।
+📍 Page 112 (Page 2)
 
-[हिन्दी अनुवाद]
-शोभावती नाम की कोई नगरी थी। वहाँ शूद्रक नाम का महान पराक्रमी, अनेक शास्त्रों का ज्ञाता और पवित्र चरित्र वाला राजा रहता था। इसके बाद एक समय वीरवर नाम का एक राजकुमार आजीविका (नौकरी) के लिए किसी देश से राजद्वार (राजा के महल) आया। उसके साथ वेदरता नाम की उसकी पत्नी, शक्तिधर नाम का बेटा और वीरवती नाम की बेटी भी आए।
-
-[English Translation]
-There was a certain city named Shobhavati. A highly courageous king named Shudraka, who was well-versed in various sciences (shastras) and possessed a pure character, lived there. Once, a prince named Viravara came from some country to the royal palace in search of a livelihood. Along with him came his wife named Vedarata, his son named Shaktidhara, and his daughter named Viravati.
-
---------------------------------------------------------------------------------
-भागः २: राजसभायां संवादः वेतन-विभागश्च (Page 112)
-Part 2: Interview in the Royal Court and the Fourfold Division of Salary
---------------------------------------------------------------------------------
-
-[संस्कृत-मूलपाठः]
-वीरवरः – (प्रतिहारं वीक्ष्य) भोः प्रतिहार ! वृत्त्यर्थमागतो राजपुत्रोऽस्मि, तस्मान्नय मां स्वामिनः समीपम्।
+📜 Sanskrit Text:
+वीरवरः – (प्रतिहारं वीक्ष्य) भोः प्रतिहार! वृत्त्यर्थमागतो राजपुत्रोऽस्मि, तस्मान्नय मां स्वामिनः समीपम्।
 (ततो दौवारिकः तं प्रभोः समीपम् अनयत्।)
-वीरवरः – (प्रणामपुरस्सरं सविनयम्) देव ! यदि सौभाग्येन अहं भवतः सेवायां नियोजितः तर्हि यदादिश्यते तत् श्रद्धया पालयिष्यामि।
+वीरवरः – (प्रणामपुरस्सरं सविनयम्) देव! यदि सौभाग्येन अहं भवतः सेवायां नियोजितः तर्हि यदादिश्यते तत् श्रद्धया पालयिष्यामि।
 राजा – किं ते वर्तनम्?
-वीरवरः – प्रतिदिनं सुवर्णशतचतुष्टयं देव !
+वीरवरः – प्रतिदिनं सुवर्णशतचतुष्टयं देव!
 राजा – का ते सामग्री?
 वीरवरः – इमौ बाहू, एष खड्गश्च।
-राजा – नैतच्छक्यम् !
+राजा – नैतच्छक्यम्!
 (तत् श्रुत्वा वीरवरः राजानं प्रणम्य राजसभातः निर्गतः।)
-मन्त्री – (तदालोक्य) देव ! दिनचतुष्टयस्य वेतनार्पणेन प्रथमं परीक्ष्यतां स्वरूपमस्य वेतनार्थिनो राजपुत्रस्य, किमुपपन्नमेतत् वेतनं न वेति।
-अथ मन्त्रिणां वचनात् ताम्बूलदानेन नियोजितोऽसौ राजपुत्रो वीरवरो नरपतिना। स च राजपुत्रः प्रतिदिनं प्रभाते राजदर्शनादनन्तरं स्ववेतनस्य यच्छति देवेभ्यः अर्धम्। स्थितस्य चार्द्धं दरिद्रेभ्यो ददाति, निक्षिपति च तदवशिष्टं भोज्यविलासव्ययार्थं पत्न्याः हस्ते। ततो...
+मन्त्री – (तदालोक्य) देव! दिनचतुष्टयस्य वेतनार्पनेन प्रथमं परीक्ष्यतां स्वरूपमस्य वेतनार्थिनो राजपुत्रस्य, किमुपपन्नमेतत् वेतनं न वेति।
+अथ मन्त्रिणां वचनात् ताम्बूलदानेन नियोजितोऽसौ राजपुत्रो वीरवरो नरपतिना। स च राजपुत्रः प्रतिदिनं प्रभाते राजदर्शनादनन्तरं स्ववेतनस्य यच्छति देवेभ्यः अर्धम्। स्थितस्य चार्ड्धं दरिद्रेभ्यो ददाति, निक्षिपति च तदवशिष्टं भोज्यविलासव्ययार्थं पत्न्याः हस्ते।
 
-[हिन्दी अनुवाद]
-वीरवर – (द्वारपाल को देखकर) हे द्वारपाल! मैं आजीविका के लिए आया हुआ राजकुमार हूँ, इसलिए मुझे स्वामी के पास ले चलो।
-(इसके बाद द्वारपाल उसे राजा के पास ले गया।)
-वीरवर – (प्रणाम करके विनम्रतापूर्वक) देव! यदि सौभाग्य से मैं आपकी सेवा में नियुक्त किया जाता हूँ, तो जो भी आज्ञा दी जाएगी, उसका मैं श्रद्धापूर्वक पालन करूँगा।
-राजा – तुम्हारा वेतन (तन्ख्वाह) क्या है?
-वीरवर – चार सौ स्वर्ण मुद्राएँ प्रतिदिन, देव!
-राजा – तुम्हारी सामग्री (अस्त्र-शस्त्र/संसाधन) क्या है?
-वीरवर – ये दो भुजाएँ और यह तलवार।
-राजा – यह संभव नहीं है! (यानी इतना वेतन देना मुमकिन नहीं है)।
+🇮🇳 Hindi Translation (हिंदी अनुवाद):
+वीरवर - (द्वारपाल को देखकर) हे द्वारपाल! मैं जीविका के लिए आया हुआ राजपुत्र हूँ, इसलिए मुझे स्वामी के पास ले चलो।
+(तब द्वारपाल उसे राजा के पास ले गया।)
+वीरवर - (प्रणाम करते हुए विनम्रतापूर्वक) हे देव! यदि सौभाग्य से मैं आपकी सेवा में नियुक्त किया जाता हूँ, तो जो भी आदेश दिया जाएगा, मैं उसका श्रद्धापूर्वक पालन करूँगा।
+राजा - तुम्हारा वेतन क्या है?
+वीरवर - हे देव! प्रतिदिन चार सौ स्वर्ण मुद्राएँ।
+राजा - तुम्हारी सामग्री (साधन) क्या है?
+वीरवर - ये दोनों भुजाएँ और यह तलवार।
+राजा - यह संभव नहीं है (इतना वेतन देना मुमकिन नहीं है)!
 (यह सुनकर वीरवर राजा को प्रणाम करके राजसभा से बाहर निकल गया।)
-मंत्री – (यह देखकर) देव! चार दिनों का वेतन देकर पहले इस वेतन चाहने वाले राजकुमार के वास्तविक स्वरूप की परीक्षा की जानी चाहिए कि यह वेतन उचित है या नहीं।
-तब मंत्रियों के कहने पर राजा ने ताम्बूल (पान) देकर उस राजकुमार वीरवर को सेवा में नियुक्त कर लिया। वह राजकुमार प्रतिदिन सुबह राजा के दर्शन करने के बाद अपने वेतन का आधा भाग देवताओं (पूजा-अर्चना/धर्मकार्यों) को अर्पित कर देता था। बचे हुए आधे का आधा (अर्थात् कुल का एक-चौथाई) गरीबों को दे देता था और बाकी बचा हुआ हिस्सा भोजन और आमोद-प्रमोद के खर्च के लिए अपनी पत्नी के हाथ में सौंप देता था। इसके बाद...
+मंत्री - (यह देखकर) हे देव! चार दिनों का वेतन देकर सबसे पहले इस वेतन चाहने वाले राजपुत्र के स्वरूप की परीक्षा की जानी चाहिए कि यह वेतन उचित है या नहीं।
+इसके बाद मंत्रियों के कहने पर राजा ने ताम्बूल (पान) देकर उस राजपुत्र वीरवर को काम पर नियुक्त कर लिया। और वह राजपुत्र प्रतिदिन सुबह राजा के दर्शन करने के बाद अपने वेतन का आधा हिस्सा देवताओं को (पूजा-पाठ में) अर्पित करता है। बचे हुए आधे का आधा (एक चौथाई) गरीबों को देता है, और बाकी बचे हुए को भोजन और सुख-सुविधाओं के खर्च के लिए अपनी पत्नी के हाथ में सौंप देता है।
 
-[English Translation]
-Viravara – (Looking at the gatekeeper) O gatekeeper! I am a prince who has come looking for employment, therefore take me to the master.
-(Then the doorkeeper led him near the lord.)
-Viravara – (Bowing down with humility) My Lord! If by good fortune I am appointed to your service, then whatever is commanded, I shall obey it with absolute dedication.
+🇬🇧 English Translation:
+Viravara – (Looking at the gatekeeper) O Gatekeeper! I am a prince who has come in search of a livelihood, therefore, lead me to the master.
+(Then the gatekeeper led him to the lord/king.)
+Viravara – (Bowing respectfully and humbly) Your Majesty! If by good fortune I am employed in your service, then whatever is commanded, I will follow it with devotion.
 King – What is your salary?
-Viravara – Four hundred gold coins daily, my Lord!
-King – What is your equipment/assets?
-Viravara – These two arms, and this sword.
-King – This is not possible! (I cannot pay such a high amount).
-(Hearing this, Viravara bowed to the king and departed from the royal assembly.)
-Minister – (Observing this) My Lord! By granting him four days' salary, first let the capacity of this job-seeking prince be tested, to see whether this salary is appropriate or not.
-Then, upon the advice of the ministers, the king appointed prince Viravara to his service by offering him tāmbūla (betel-leaf as a token of acceptance). That prince, every morning after meeting the king, would give half of his daily salary to the gods. From the remaining half, he would give half (one-fourth of the total) to the poor, and deposit the remainder into his wife's hands for food and household expenses. Then...
+Viravara – Four hundred gold coins daily, Your Majesty!
+King – What is your equipment (possessions)?
+Viravara – These two arms and this sword.
+King – This is not possible!
+(Hearing that, Viravara bowed to the king and left the royal court.)
+Minister – (Seeing that) Your Majesty! By providing four days' salary, let the true nature of this salary-seeking prince be tested first, whether this salary is appropriate or not.
+Then, upon the advice of the ministers, that prince Viravara was appointed by the king by offering him a betel leaf (taambool). And that prince, every day in the morning after visiting the king, gives half of his salary to the gods. Out of the remaining half, he gives half (one-fourth) to the poor, and deposits the remaining part into his wife's hands for food and comfort expenses.
 
 --------------------------------------------------------------------------------
-भागः ३: अर्द्धरात्रे करुणरोदनम् राजलक्ष्म्या सह समागमश्च (Pages 113–114)
-Part 3: The Midnight Lament and Encounter with Goddess Rajalaxmi
---------------------------------------------------------------------------------
 
-[संस्कृत-मूलपाठः]
-धृतायुधः सः राजद्वारमहर्निशं सेवते। यदा राजा स्वयमादिशति तदा याति स्वगृहम्। अथैकदा कृष्णचतुर्दश्याम् अर्द्धरात्रे स राजा श्रुतवान् करुणरोदनध्वनिं कञ्चन।
+📍 Page 113 (Page 3)
+
+📜 Sanskrit Text:
+ततो धृतायुधः सः राजद्वारमहर्निशं सेवते। यदा राजा स्वयमादिशति तदा याति स्वगृहम्। अथैकदा कृष्णचतुर्दश्याम् अर्द्धरात्रे स राजा श्रुतवान् करुणरोदनध्वनिं कञ्चन।
 राजा – कोऽत्र द्वारि तिष्ठति?
-वीरवरः – सेवको वीरवरोऽत्र द्वारि वर्ते देव !
-राजा – क्रन्दनमनुसर राजपुत्र !
+वीरवरः – सेवको वीरवरोऽत्र द्वारि वर्ते देव!
+राजा – क्रन्दनमनुसर राजपुत्र!
 वीरवरः – यथादिशति देवः।
-(ततोऽसौ तद्रोदनस्वरम् अनुसरन् प्रचलितः।)
-राजा – (स्वगतम्) नैष गन्तुमर्हति राजपुत्र एकाकी सूचिभेद्ये तिमिरेऽस्मिन्। तस्मात् अहमपि गच्छामि पृष्ठतोऽस्य, निरूपयामि च किमेतदिति।
+(ततोऽसौ तद्रोदनस्वरम अनुसरन् प्रचलितः।)
+राजा – (स्वगतम्) नैष गन्तुमर्हति राजपुत्र एकाकी सूचिभेद्ये तिमिरेऽस्मिन्। तस्मात् अहमपि गच्छामि पृष्ठतोऽस्य, निरूपयामि च किमेतत् इति।
 (ततो नरपतिः खड्गपाणिः तस्य अनुसरणक्रमेण बहिः निरगच्छत् नगरीद्वारात्। अथ गच्छता राजपुत्रेण बहिः नगरादालोकिता रोदनपरा कापि सुन्दरी दिव्याभरणभूषिता।)
-वीरवरः – का त्वमम्ब ! किमर्थं विलपसि?
-राजलक्ष्मीः – वत्स ! अहमेतस्य भूपालस्य शूद्रकस्य राजलक्ष्मीरस्मि। चिरमेतस्य भुजच्छायायां समुद्गता सुखेन निवसामि। साम्प्रतन्तु देव्या अपराधेनाद्य प्रभृति तृतीये दिवसे राजा पञ्चत्वं यास्यति, तदाहमनाथा भविष्यामि। तदिदानीं नात्र स्थास्यामीति क्रन्दामि।
-वीरवरः – (तदाकर्ण्य प्रणिपत्य) भगवति ! अस्त्यत्र कश्चिदुपायो येन भगवत्याः पुनेरिह चिरवासो भवति, सुचिरं जीवति च स्वामी?
-राजलक्ष्मीः – अस्ति वत्स ! एकैवात्र प्रवृत्तिः, सा चातीव दुःसाध्या।
-वीरवरः – (साष्टाङ्गं नमस्कृत्य) अम्ब ! कथय, कः सः उपायः दुःसाध्यः?
-राजलक्ष्मीः – श्रूयतां पुत्र ! यदि त्वया स्वस्य सर्वतः प्रियं वस्तु सहासवदनेन भगवत्यै सर्वमङ्गलायै उपहारः क्रियेत, तदा पुनर्जीविष्यति राजा शूद्रको वर्षाणां शतम्, अहञ्च सुखेन निवत्स्यामि।
+वीरवरः – का त्वमम्ब! किमर्थं विलपसि?
+
+🇮🇳 Hindi Translation (हिंदी अनुवाद):
+उसके बाद वह शस्त्र धारण किए हुए दिन-रात राजद्वार की सेवा करता है। जब राजा स्वयं आदेश देते हैं, तब वह अपने घर जाता है। इसके बाद एक बार कृष्ण पक्ष की चतुर्दशी की आधी रात को उस राजा ने किसी के रोने की करुण ध्वनि सुनी।
+राजा - यहाँ द्वार पर कौन खड़ा है?
+वीरवर - हे देव! सेवक वीरवर यहाँ द्वार पर उपस्थित है!
+राजा - हे राजपुत्र! इस रोने की आवाज़ का पीछा करो (पता लगाओ)।
+वीरवर - जैसा देव आदेश दें।
+(इसके बाद वह उस रोने की आवाज़ का पीछा करते हुए चल पड़ा।)
+राजा - (अपने मन में) इस सुई से भेदने योग्य (घने) अंधकार में इस राजपुत्र को अकेले नहीं जाना चाहिए। इसलिए मैं भी इसके पीछे जाता हूँ और पता लगाता हूँ कि यह क्या है।
+(तब राजा हाथ में तलवार लेकर उसके पीछे-पीछे नगर के द्वार से बाहर निकला। इसके बाद जाते हुए राजपुत्र वीरवर ने नगर के बाहर रोती हुई, दिव्य आभूषणों से सजी किसी सुंदर स्त्री को देखा।)
+वीरवर - हे माता! तुम कौन हो? किसलिए रो रही हो?
+
+🇬🇧 English Translation:
+Thereafter, holding his weapon, he serves at the palace gate day and night. When the king himself orders, only then he goes to his home. Then once, at midnight on the fourteenth day of the dark fortnight (Krishna Chaturdashi), the king heard some sorrowful sound of weeping.
+King – Who is standing here at the door?
+Viravara – Servant Viravara is present here at the door, Your Majesty!
+King – Follow the crying, O Prince!
+Viravara – As Your Majesty commands.
+(Then he set off, following the sound of that weeping.)
+King – (To himself) This prince should not go alone in this darkness so dense that it could be pierced by a needle. Therefore, I too will follow behind him and find out what this is.
+(Then the king, sword in hand, went out of the city gate following him. Then, while going, the prince saw outside the city a beautiful woman adorned with divine ornaments, who was weeping.)
+Viravara – Who are you, Mother? Why are you weeping?
+
+--------------------------------------------------------------------------------
+
+📍 Page 114 (Page 4)
+
+📜 Sanskrit Text:
+राजलक्ष्मीः – वत्स! अहमेतस्य भूपालस्य शूद्रकस्य राजलक्ष्मीरस्मि। चिरमेतस्य भुजच्छायायां समुद्गता सुखेन निवसामि। साम्प्रतं तु देवस्य अपराधेनाद्य प्रभृति तृतीये दिवसे राजा पञ्चत्वं यास्यति, तदाहमनाथा भविष्यामि। तदिदानीं नात्र स्थास्यामीति क्रन्दामि।
+वीरवरः – (तदाकर्ण्य प्रणिपत्य) भगवति! अस्त्यत्र कश्चिदुपायो येन भगवत्याः पुनरिह चिरवासो भवति, सुचिरं जीवति च स्वामी?
+राजलक्ष्मीः – अस्ति वत्स! एकैवात्र प्रवृत्तिः, सा चातीव दुःसाध्या।
+वीरवरः – (साष्टाङ्गं नमस्कृत्य) अम्ब! कथय, कः सः उपायः दुःसाध्यः?
+राजलक्ष्मीः – श्रूयतां पुत्र! यदि त्वया स्वस्य सर्वतः प्रियं वस्तु सहासवदनेन भगवत्यै सर्वमङ्गलायै उपहारः क्रियेत, तदा पुनर्जीविष्यति राजा शूद्रको वर्षाणां शतम, अहञ्च सुखेन निवत्स्यामि।
 (ततः सा तत्क्षणादेव गताऽदृश्यतां तत्सम्मुखात्।)
 
-[हिन्दी अनुवाद]
-वह शस्त्र धारण किए हुए दिन-रात राजद्वार पर सेवा करता था। जब राजा स्वयं आदेश देते थे, तभी वह अपने घर जाता था। इसके बाद एक बार कृष्ण पक्ष की चतुर्दशी की आधी रात को उस राजा ने किसी का अत्यंत करुण विलाप (रोने की आवाज़) सुना।
-राजा – द्वार पर कौन है?
-वीरवर – देव! आपका सेवक वीरवर यहाँ द्वार पर उपस्थित है।
-राजा – राजकुमार, इस रोने की आवाज़ का पीछा करो (पता लगाओ)।
-वीरवर – जैसी देव की आज्ञा।
-(इसके बाद वह उस रोने की आवाज़ के पीछे चल पड़ा।)
-राजा – (अपने मन में) इस राजकुमार का इस घने (सूचिभेद्य—सुई से भी न छेदे जा सकने वाले) अंधकार में अकेले जाना उचित नहीं है। इसलिए मैं भी इसके पीछे जाता हूँ और पता लगाता हूँ कि यह क्या मामला है।
-(तब राजा हाथ में तलवार लिए उसका पीछा करते हुए नगर के मुख्य द्वार से बाहर निकल आए। आगे जाते हुए राजकुमार वीरवर को नगर के बाहर रोती हुई कोई सुंदर स्त्री दिखाई दी, जो दिव्य आभूषणों से सजी हुई थी।)
-वीरवर – हे माता! तुम कौन हो? किसलिए विलाप कर रही हो?
-राजलक्ष्मी – वत्स! मैं इस राजा शूद्रक की राजलक्ष्मी (साम्राज्य की समृद्धि की देवी) हूँ। लंबे समय से इसकी भुजाओं की छाया में आश्रय पाकर सुख से रह रही हूँ। परंतु अब, देवी (नियति/अपराध) के कारण आज से तीसरे दिन राजा मृत्यु को प्राप्त हो जाएँगे, तब मैं अनाथ हो जाऊँगी। इसलिए मैं यहाँ अब नहीं रह पाऊँगी, यही सोचकर रो रही हूँ।
-वीरवर – (यह सुनकर प्रणाम करते हुए) भगवती! क्या यहाँ कोई ऐसा उपाय है जिससे आपका पुनः यहाँ स्थायी वास हो जाए और मेरे स्वामी दीर्घायु हों?
-राजलक्ष्मी – वत्स! उपाय है, लेकिन केवल एक ही मार्ग है और वह अत्यंत कठिन (दुःसाध्य) है।
-वीरवर – (साष्टाङ्ग दंडवत प्रणाम करके) माता! कहिए, वह अत्यंत कठिन उपाय क्या है?
-राजलक्ष्मी – सुनो पुत्र! यदि तुम अपनी सबसे प्रिय वस्तु को हंसते हुए मुख से भगवती सर्वमंगला (दुर्गा जी) को उपहार (बलि) के रूप में अर्पित कर दो, तो राजा शूद्रक पुनः सौ वर्षों तक जीवित रहेंगे और मैं भी यहाँ सुख से निवास करूँगी।
+🇮🇳 Hindi Translation (हिंदी अनुवाद):
+राजलक्ष्मी - हे पुत्र! मैं इस राजा शूद्रक की राजलक्ष्मी हूँ। लंबे समय से इस राजा की भुजाओं की छाया में आश्रय पाकर सुख से रह रही हूँ। लेकिन इस समय राजा के किसी अपराध (या भाग्यदोष) के कारण आज से तीसरे दिन राजा की मृत्यु हो जाएगी, तब मैं अनाथ हो जाऊँगी। इसलिए अब मैं यहाँ नहीं रहूँगी, यही सोचकर रो रही हूँ।
+वीरवर - (यह सुनकर प्रणाम करके) हे भगवती! क्या यहाँ कोई ऐसा उपाय है जिससे आपका पुनः यहाँ दीर्घकाल तक निवास हो सके और मेरे स्वामी दीर्घायु हों?
+राजलक्ष्मी - हे पुत्र! यहाँ केवल एक ही रास्ता है, लेकिन वह अत्यंत कठिन (असाध्य) है।
+वीरवर - (साष्टाङ्ग प्रणाम करके) हे माता! कहिए, वह कठिन उपाय क्या है?
+राजलक्ष्मी - सुनो पुत्र! यदि तुम अपनी सबसे प्रिय वस्तु को हंसते हुए मुख से भगवती सर्वमंगला को उपहार (बलि) के रूप में अर्पित कर दो, तो राजा शूद्रक पुनः सौ वर्षों तक जीवित रहेंगे और मैं भी यहाँ सुख से रहूँगी।
 (इसके बाद वह उसी क्षण उसके सामने से गायब हो गई।)
 
-[English Translation]
-Bearing his weapons, he guarded the royal gate day and night. Only when the king himself ordered, would he return home. Then once, at midnight on the fourteenth day of the dark fortnight (Krishna Chaturdashi), the king heard a sorrowful weeping sound.
-King – Who is present at the gate?
-Viravara – Servant Viravara is present here at the gate, my Lord!
-King – Follow the sound of crying, O Prince!
-Viravara – As my Lord commands.
-(Then he set out, following the voice of weeping.)
-King – (To himself) It is not proper for this prince to go alone in this pitch darkness (so dense that it cannot even be pierced by a needle). Therefore, I shall also follow behind him and investigate what this is.
-(Then the king, holding a sword in his hand, went outside the city gate following his track. While going ahead, the prince saw a beautiful lady adorned with divine ornaments weeping outside the city.)
-Viravara – Who are you, Mother? Why are you wailing?
-Rajalaxmi – Child! I am the Rajalaxmi (Royal Prosperity) of this king Shudraka. For a very long time, gathered under the shadow of his arms, I have lived in comfort. But now, due to a cosmic fault, from today onwards on the third day, the king will face death, and then I shall become protectorless. Thinking that I will no longer be able to stay here, I am crying.
-Viravara – (Hearing this and bowing) O Goddess! Is there any remedy by which your stay here can be made permanent and my master can live for a long time?
-Rajalaxmi – There is, child! There is exactly one way, but it is extremely difficult to perform.
-Viravara – (Prostrating completely with eight limbs touching the ground) Mother! Tell me, what is that difficult remedy?
-Rajalaxmi – Listen, son! If you offer your most beloved possession with a smiling face as a sacrifice to Goddess Sarvamangala, then King Shudraka will live again for a hundred years, and I shall reside here happily.
-(Then, at that very moment, she vanished from right before him.)
+🇬🇧 English Translation:
+Rajalakshmi – Child! I am the Royal Fortune (Rajalakshmi) of this king Shudraka. For a long time, sheltered under the shadow of his arms, I have been living happily. But now, due to a lapse of the king, from today onwards on the third day, the king will attain death, and then I will become helpless. Therefore, I will not stay here anymore; thinking this, I am crying.
+Viravara – (Hearing that and bowing) O Goddess! Is there any remedy by which Your Goddess's stay here becomes long again, and my master lives for a very long time?
+Rajalakshmi – There is, child! There is only one course of action, but it is extremely difficult to accomplish.
+Viravara – (Prostrating fully) Mother! Tell me, what is that difficult remedy?
+Rajalakshmi – Listen, son! If you offer your most beloved possession with a smiling face as a gift to Goddess Sarvamangala, then King Shudraka will live again for a hundred years, and I will reside here happily.
+(Then she vanished from before him at that very moment.)
 
---------------------------------------------------------------------------------
-शब्दार्थाः (Vocabulary & Glossary - Pages 114–116)
---------------------------------------------------------------------------------
-१. महीपतिः = भूपालः / राजा (राजा · King)
-२. नानाशास्त्रवित् = अनेकेषां शास्त्राणां ज्ञाता (अनेक शास्त्रों का ज्ञाता · Well-versed in various sciences)
-३. पूतचरित्रः = पवित्रं चरित्रं यस्य सः (पवित्र चरित्र वाला · Of pure character)
-४. वृत्त्यर्थम् = आजीविकां प्राप्तुम् (आजीविका/नौकरी के लिए · For livelihood/employment)
-५. प्रतिहारम् = द्वारपालम् (द्वारपाल को · To the doorkeeper)
-६. दौवारिकः = द्वारपालकः (द्वारपाल · Gate-keeper)
-७. वर्तनम् = वेतनम् (वेतन / तन्ख्वाह · Salary/wages)
-८. सुवर्णशतचतुष्टयम् = चतुःशतसंख्याकाः स्वर्णमुद्राः (चार सौ स्वर्णमुद्राएँ · 400 gold coins)
-९. आलोक्य = दृष्ट्वा (देखकर · Having seen/observed)
-१०. नियोजितः = सेवायां नियुक्तः (काम पर रखा गया · Appointed/engaged)
-११. धृतायुधः = शस्त्रयुक्तः (शस्त्र धारण किए हुए · Armed with weapons)
-१२. अहर्निशम् = दिवसः रात्रिः च (दिन-रात · Day and night)
-१३. करुणरोदनध्वनिम् = करुणाजनकं रोदनध्वनिम् (करुणाजनक रोने की आवाज़ · Sorrowful weeping sound)
-१४. सूचिभेद्ये = गहने / सघने (अत्यंत घने / सघन · Dense/pitch darkness)
-१५. तिमिरे = अन्धकारे (अन्धकार में · In darkness)
-१६. पृष्ठतः = पृष्ठभागात् (पीछे से · From behind)
-१७. खड्गपाणिः = खड्गवान् जनः (हाथ में तलवार लिए हुए · One with a sword in hand)
-१८. विलपसि = रोदनं करोषि (रो रही हो · You are wailing)
-१९. पञ्चत्वम् = मृत्युम् (मृत्यु को · To demise/death)
-२०. अनाथा = स्वामिनं विना (अनाथ / बिना रक्षक के · Without a protector)
-२१. दुःसाध्या = काठिन्येन अनुपालनीया (अत्यंत कठिन · Extremely difficult to accomplish)
-२२. सहासवदनेन = हास्ययुक्तमुखेन (हंसते हुए चेहरे से · With a smiling face)
-२३. तत्क्षणादेव = तत्कालम् (उसी क्षण · Instantly/on the spot)
+================================================================================
+🔤 Part 2: Word-to-Word Meanings (शब्दार्थ)
+================================================================================
 
---------------------------------------------------------------------------------
-अभ्यासः (Solved Exercises - Pages 118–121)
---------------------------------------------------------------------------------
+संस्कृत शब्द          संस्कृत पर्याय                हिंदी अर्थ                      English Meaning
+१. महीपतिः          भूपालः / राजा                राजा                         King
+२. महापराक्रमी       अतिबलशाली                   बहुत बलवान                   Very brave
+३. नानाशास्त्रविद्     अनेकेषां शास्त्राणां ज्ञाता     अनेक शास्त्रों का ज्ञाता       One who knows many Shastras
+४. पूतचरित्रः         पवित्रं चरित्रं यस्य           पवित्र चरित्र वाला             Of high/pure character
+५. प्रतिवसति स्म       अवसत्                       रहता था                      Lived
+६. वृत्त्यर्थम्        आजीविकां प्राप्तुम्          आजीविका पाने के लिए          To get livelihood
+७. समायाताः          आगतवन्तः                    आए                           Came
+८. प्रतिहारम्         द्वारपालम्                   द्वारपाल को                   To the door-keeper
+९. दौवारिकः         द्वारपालकः                   द्वारपाल                      Gate-keeper
+१०. वर्तनम्          वेतनम्                       वेतन                         Salary
+११. सुवर्णशतचतुष्टयम् चतुश्शतसंख्याकाः स्वर्णमुद्राः चार सौ स्वर्णमुद्राएँ         Four hundred gold coins
+१२. निर्गतः          बहिः गतवान्                 बाहर चला गया                 Went out
+१३. आलोक्य           दृष्ट्वा                      देखकर                        After seeing
+१४. नियोजितः         सेवायां नियुक्तः             नियुक्त किया गया              Appointed
+१५. उपपन्नम्         युक्तियुक्तम् / उचितम्        उचित / उपयुक्त                Suitable / Appropriate
+१६. धृतायुधः         शस्त्रयुक्तः                  शस्त्र धारण किए हुए           Armed
+१७. अहर्निशम्        दिवसः रात्रिः च              दिन-रात                      Day and Night
+१८. करुणरोदनध्वनिम्  करुणाजनकं रोदनध्वनिम्       करुणाजनक क्रन्दन ध्वनि        Sorrowful voice of weeping
+१९. व्यचिन्तयत्       अचिन्तयत्                   सोचा                         Thought
+२०. सूचिभेद्ये        गहने / निबिड़े                अत्यधिक घने / सघन            Dense (darkness)
+२१. तिमिरे           अन्धकारे                    अन्धकार में                   In darkness
+२२. पृष्ठतः           पृष्ठभागात्                  पीछे से                      From back
+२३. निरूपयामि        पश्यामि                      देखता हूँ / पता लगाता हूँ      I see / observe
+२४. खड्गपाणिः        खड्गवान् जनः                 हाथ में तलवार लिए हुए        One with a sword in hand
+२५. रोदनपरा          रोदनं कुर्वती                 रोती हुई                      Weeping lady
+२६. विलपसि          रोदनं करोषि                 रो रही हो                    (You are) crying
+२७. क्रन्दामि         रोदनं करोमि                 रो रही हूँ                    Crying
+२८. साष्टाङ्गं नमस्कृत्य अष्टभिः अङ्गैः सह प्रणामं कृत्वा आठों अंगों सहित प्रणाम करके   Prostrating with eight limbs
+२९. पञ्चत्वम्         मृत्युम्                      मृत्यु को                      Death
+३०. अनाथा           स्वामिनं विना                 स्वामी के बिना / बेसहारा       Without protector / helpless
+३१. प्रवृत्तिः        आचरणम् / मार्गः              मार्ग / आचरण                  Course of action / follow-up
+३२. सुचिरम्          दीर्घकालं यावत्              दीर्घ काल तक                 For a very long time
+३३. दुःसाध्या         काठिन्येन अनुपालनीया         कठिनाई से पूरी होने योग्य     Difficult to be followed/achieved
+३४. सहासवदनेन       हास्य-युक्त-मुखेन             हंसते हुए मुख से              With a smiling face
+३५. निवत्स्यामि       वासं करिष्यामि               रहूँगी                        Will stay / reside
+३६. तत्क्षणादेव       तत्कालम्                     उसी क्षण                      On the spot / at that moment
 
-१. पाठम् आधृत्य उदाहरणानुगुणं लिखत ‘आम्’ अथवा ‘न’ — (Page 118)
-यथा — किं राज्ञः शूद्रकस्य नगर्याः नाम शोभावती आसीत्? → आम्
-       किं वीरवरः अनेकशास्त्राणां ज्ञाता आसीत्? → न (राजा ज्ञाता आसीत्)
-(क) किं वीरवरः राजपुत्रः आसीत्? → आम्
-(ख) “किं ते वर्तनम्?” इति किं शूद्रकः अपृच्छत्? → आम्
-(ग) किं वीरवरं राज्ञः समीपें दौवारिकः अनयत्? → आम्
-(घ) किं राजा शूद्रकः राजपुत्रं वीरवरं साक्षात् दृष्ट्वा एव वृत्तिम् अयच्छत्? → न (मन्त्रिणः उपदेशात् परीक्षां कृत्वा अयच्छत्)
-(ङ) किं वीरवरः स्ववेतनस्य चतुर्थं भागम् एव पत्न्यै यच्छति स्म? → आम् (अर्धं देवेभ्यः, स्थितस्य अर्धं दरिद्रेभ्यः, अवशिष्टं चतुर्थांशं पत्न्यै)
-(च) किं करुण-रोदन-ध्वनिं राजा श्रुतवान्? → आम्
-(छ) किं करुणरोदनध्वनिः दिवसे श्रुतः आसीत्? → न (अर्द्धरात्रे श्रुतः)
-(ज) किं राजलक्ष्म्या उक्तः उपायः अतीव दुःसाध्यः आसीत्? → आम्
-(झ) किं भगवती सर्वमङ्गला उपायं संसूच्य शीघ्रमेव अदृश्या अभवत्? → न (राजलक्ष्मीः उपायं संसूच्य अदृश्या अभवत्)
+================================================================================
+📝 Part 3: Solved Exercises with Answer Key
+================================================================================
 
-२. अधोलिखितान् प्रश्नान् पूर्णवाक्येन उत्तरत — (Page 119)
-(क) शूद्रकः कीदृशः राजा आसीत्?
-उत्तरम्: शूद्रकः महापराक्रमी, नानाशास्त्रवित्, पूतचरित्रः च महीपतिः आसीत्।
-(ख) वीरवरः कस्य समीपं गन्तुम् इच्छति स्म?
-उत्तरम्: वीरवरः महीपतेः राज्ञः शूद्रकस्य समीपं गन्तुम् इच्छति स्म।
-(ग) राज्ञः शूद्रकस्य ‘का ते सामग्री?’ इति प्रश्नस्य उत्तरं वीरवरः किम् अयच्छत्?
-उत्तरम्: वीरवरः अयच्छत् – “इमौ बाहू, एष खड्गश्च मम सामग्री।”
-(घ) वीरवरः स्वगृहं कदा गच्छति स्म?
-उत्तरम्: यदा राजा शूद्रकः स्वयम् आदिशति स्म, तदा वीरवरः स्वगृहं गच्छति स्म।
-(ङ) वीरवरः स्ववेतनस्य अर्धं केभ्यः यच्छति स्म?
-उत्तरम्: वीरवरः स्ववेतनस्य अर्धं देवेभ्यः यच्छति स्म।
-(च) राजलक्ष्मीः कुत्र सुखेन अवसत्?
-उत्तरम्: राजलक्ष्मीः भूपालस्य शूद्रकस्य भुजच्छायायां सुखेन अवसत्।
-(छ) राजलक्ष्म्याः दुःखस्य कारणं श्रुत्वा बद्धाञ्जलिः वीरवरः किम् अवदत्?
-उत्तरम्: वीरवरः अवदत् – “भगवति ! अस्त्यत्र कश्चिदुपायो येन भगवत्याः पुनेरिह चिरवासो भवति, सुचिरं जीवति च स्वामी?”
+१. पाठम् आधृत्य उदाहरणानुगुणं लिखत ‘आम्’ अथवा ‘न’—
+• यथा — किं राज्ञः शूद्रकस्य नगर्याः नाम शोभावती आसीत् ? आम्
+• किं वीरवरः अनेकशास्त्रां ज्ञाता आसीत्? न (Note: शूद्रकः आसीत्)
+• (क) किं वीरवरः राजपुत्रः आसीत्? आम्
+• (ख) “किं ते वर्तनम्” ? इति किं शूद्रकः अपृच्छत्? आम्
+• (ग) किं वीरवरं राज्ञः समीपे दौवारिकः अनयत्? आम्
+• (घ) किं राजा शूद्रकः राजपुत्रं वीरवरं साक्षात् दृष्ट्वा एव वृत्तिम अयच्छत्? न
+• (ङ) किं वीरवरः स्ववेतनस्य चतुर्थं भागम एव पत्न्यै यच्छति स्म? आम् (Note: Half to Gods, remaining half's half = 1/4th to poor, remaining 1/4th to wife)
+• (च) किं करुण-रोदन-ध्वनिं राजा श्रुतवान्? आम्
+• (छ) किं करुणरोदनध्वनिः दिवसे श्रुतः आसीत्? न (Note: अर्द्धरात्रे)
+• (ज) किं राजलक्ष्म्या उक्तः उपायः अतीव दुःसाध्यः आसीत्? आम्
+• (झ) किं भगवती सर्वमङ्गला उपायं संसूच्य शीघ्रमेव अदृश्या अभवत्? न (Note: राजलक्ष्मीः अदृश्या अभवत्)
 
-४. उदाहरणानुगुणं पाठगतानि पदानि अधिकृत्य सन्धि-विच्छेदं पूरयत — (Page 120)
+२. अधोलिखितान् प्रश्नान् पूर्णवाक्येन उत्तरत—
+• (क) शूद्रकः कीदृशः राजा आसीत्?
+	• उत्तरम्: शूद्रकः नाम महापराक्रमी नानाशास्त्रवित् पूतचरित्रः महीपतिः आसीत्।
+• (ख) वीरवरः कस्य समीपं गन्तुम् इच्छति स्म?
+	• उत्तरम्: वीरवरः स्वामिनः (राज्ञः शूद्रकस्य) समीपं गन्तुम् इच्छति स्म।
+• (ग) राज्ञः शूद्रकस्य ‘का ते सामग्री ?’ इति प्रश्नस्य उत्तरं वीरवरः किम् अयच्छत्?
+	• उत्तरम्: वीरवरः अयच्छत् - "इमौ बाहू, एष खड्गश्च" इति।
+• (घ) वीरवरः स्वगृहं कदा गच्छति स्म?
+	• उत्तरम्: यदा राजा स्वयम् आदिशति स्म, तदा वीरवरः स्वगृहं गच्छति स्म।
+• (ङ) वीरवरः स्ववेतनस्य अर्धं केभ्यः यच्छति स्म?
+	• उत्तरम्: वीरवरः स्ववेतनस्य अर्धं देवेभ्यः यच्छति स्म।
+• (च) राजलक्ष्मीः कुत्र सुखेन अवसत्?
+	• उत्तरम्: राजलक्ष्मीः भूपालस्य शूद्रकस्य भुजच्छायायां सुखेन अवसत्।
+• (छ) राजलक्ष्म्याः दुःखस्य कारणं श्रुत्वा बद्धाञ्जलिः वीरवरः किम् अवदत?
+	• उत्तरम्: वीरवरः अवदत्- "भगवति! अस्त्यत्र कश्चिदुपायो येन भगवत्याः पुनरिह चिरवासो भवति, सुचिरं जीवति च स्वामी?" इति।
+
+३. उदाहरणानुसारं निम्नलिखितानि वाक्यानि अन्वयरूपेण लिखत—
+• (क) आसीत् शोभावती नाम काचन नगरी।
+	• अन्वयः: शोभावती नाम काचन नगरी आसीत्।
+• (ख) प्रतिदिनं सुवर्णशतचतुष्टयं देव!
+	• अन्वयः: हे देव! (मम वर्तनं) प्रतिदिनं सुवर्णशतचतुष्टयम् (अस्ति)।
+• (ग) देव! दिनचतुष्टयस्य वेतनार्पणेन प्रथममवगम्यतां स्वरूपमस्य वेतनार्थिनो राजपुत्रस्य...
+	• अन्वयः: हे देव! दिनचतुष्टयस्य वेतनार्पणेन प्रथमम् अस्य वेतनार्थिनो राजपुत्रस्य स्वरूपम् अवगम्यताम्...
+• (घ) क्रन्दनमनुसर राजपुत्र!
+	• अन्वयः: हे राजपुत्र! (त्वं) क्रन्दनम् अनुसर।
+• (ङ) अथ मन्त्रिणां वचनात् ताम्बूलदानेन नियोजितोऽसौ राजपुत्रो वीरवरो नरपतिना।
+	• अन्वयः: अथ नरपतिना मन्त्रिणां वचनात् ताम्बूलदानेन असौ राजपुत्रो वीरवरो नियोजितः।
+• (च) नैष गन्तुमर्हति राजपुत्र एकाकी सूचिभेद्ये तिमिरेऽस्मिन्।
+	• अन्वयः: अस्मिन् सूचिभेद्ये तिमिरे एषः राजपुत्रः एकाकी गन्तुं न अर्हति।
+• (छ) भगवति! अस्त्यत्र कश्चिदुपायो येन भगवत्याः पुनरिह चिरवासो भवति...
+	• अन्वयः: हे भगवति! अत्र कश्चित् उपायः अस्ति, येन भगवत्याः पुनः इह चिरवासो भवति...
+• (ज) तदा पुनर्जीविष्यति राजा शूद्रको वर्षाणां शतम्।
+	• अन्वयः: तदा राजा शूद्रकः वर्षाणां शतं पुनः जीविष्यति।
+
+४. उदाहरणानुगुणं पाठगतानि पदानि अधिकृत्य रिक्तस्थानानि पूरयत (सन्धिच्छेदः)—
 • अथैकदा = अथ + एकदा
 • वृत्त्यर्थम् = वृत्ति + अर्थम्
 • कस्मादपि = कस्मात् + अपि
@@ -194,7 +256,7 @@ Rajalaxmi – Listen, son! If you offer your most beloved possession with a smil
 • वेतनार्पणेन = वेतन + अर्पणेन
 • तदालोक्य = तत् + आलोक्य
 • ततोऽसौ = ततः + असौ
-• वर्त्तनार्थिनो = वर्त्तन + अर्थिनः
+• वेतनार्थिनो = वेतन + अर्थिनः
 • तदवशिष्टं = तत् + अवशिष्टम्
 • राजदर्शनादनन्तरं = राजदर्शनात् + अनन्तरम्
 • वेति = वा + इति
@@ -204,16 +266,154 @@ Rajalaxmi – Listen, son! If you offer your most beloved possession with a smil
 • कापि = का + अपि
 • प्रत्युवाच = प्रति + उवाच
 • राजलक्ष्मीरस्मि = राजलक्ष्मीः + अस्मि
-• स्थास्यामीति = स्थास्यामी + इति
+• स्थास्यामीति = स्थास्यामि + इति
 • भुजच्छायायां = भुज + छायायाम्
 • अस्त्यत्र = अस्ति + अत्र
 • कश्चिदुपायो = कश्चित् + उपायः
 
-५. अधोलिखितेषु वाक्येषु रक्तवर्णीयपदानि (Pronouns) केभ्यः प्रयुक्तानि? (Page 121)
-यथा — अहं भवतः सेवायां नियोजितः। → राज्ञे (शूद्रकाय)
-(क) ततः असौ तद्रोदनस्वरानुसरणक्रमेण प्रचलितः। → वीरवराय
-(ख) तत् अहम् अपि गच्छामि पृष्ठतोऽस्य। → राज्ञे (शूद्रकाय)
-(ग) चिरम् एतस्य भुजच्छायायां समुद्गता सुखेन निवसामि। → राज्ञे (शूद्रकाय)
-(घ) सा चातीव दुःसाध्या। → प्रवृत्तये / उपायस्य कृते
-(ङ) किं ते वर्तनम्? → वीरवराय
+५. अधोलिखितेषु वाक्येषु रक्तवर्णीयपदानि (सर्वनामपदानि) केभ्यः प्रयुक्तानि इति लिखत—
+• यथा — अहं भवतः सेवायां नियोजितः। → राज्ञे (शूद्रकाय)
+• (क) ततः असौ तद्रोदनस्वरानुसरणक्रमेण प्रचलितः। → वीरवराय
+• (ख) तत् अहम् अपि गच्छामि पृष्ठतोऽस्य। → राज्ञे (शूद्रकाय)
+• (ग) चिरम् एतस्य भुजच्छायायां समुद्गता सुखेन निवसामि। → राज्ञे (शूद्रकाय)
+• (घ) सा चातीव दुःसाध्या। → प्रवृत्तये / उपायाय
+• (ङ) किं ते वर्तनम्? → वीरवराय
+
+६. अधोलिखितानि वाक्यानि पठित्वा तेन सम्बद्धं वाक्यं पाठात् चित्वा लिखत (Textual reference matching):
+• (क) राजलक्ष्मीः वदति यत् यदि वीरवरः स्वस्य सर्वप्रियं वस्तु त्यजति तदा सा पुनः शूद्रकस्य समीपे स्थास्यति।
+	• पाठात् वाक्यम्: "यदि त्वया स्वस्य सर्वतः प्रियं वस्तु सहासवदनेन भगवत्यै सर्वमङ्गलायै उपहारः क्रियेत, तदा पुनर्जीविष्यति राजा शूद्रको..."
+• (ख) राजा शूद्रकः प्रथमं वीरवरस्य वृत्त्यर्थं प्रार्थनां न स्वीकरोति।
+	• पाठात् वाक्यम्: "राजा – नैतच्छक्यम्!"
+• (ग) एकदा कोऽपि वीरवरः नाम राजपुत्रः वृत्तिं प्राप्तुं राज्ञः शूद्रकस्य समीपं गच्छति।
+	• पाठात् वाक्यम्: "अथैकदा वीरवरनामा राजपुत्रः वृत्त्यर्थं कस्मादपि देशाद् राजद्वारमुपागच्छत्।"
+• (घ) सः तस्य कर्तव्यनिष्ठां साक्षात् पश्यति।
+	• पाठात् वाक्यम्: "तस्मात् अहमपि गच्छामि पृष्ठतोऽस्य, निरूपयामि च किमेतदिति।"
+• (ङ) राजा मन्त्रिणां मन्त्रणया वीरवराय वृत्तिं यच्छति।
+	• पाठात् वाक्यम्: "अथ मन्त्रिणां वचनात् ताम्बूलदानेन नियोजितोऽसौ राजपुत्रो वीरवरो नरपतिना।"
+
+७. अधोलिखितानां वाक्यानां पदच्छेदं कुरुत—
+• (क) वृत्त्यर्थमागतो राजपुत्रोऽस्मि।
+	• पदच्छेदः: वृत्त्यर्थम् + आगतः + राजपुत्रः + अस्मि।
+• (ख) अथैकदा कृष्णचतुर्दश्याम्अर्द्धरात्रे स राजा श्रुतवान्करुणरोदनध्वनिंकञ्चन।
+	• पदच्छेदः: अथ + एकदा + कृष्णचतुर्दश्याम् + अर्द्धरात्रे + सः + राजा + श्रुतवान् + करुणरोदनध्वनिम् + कञ्चन।
+• (ग) तदहमपि गच्छामि पृष्ठतोऽस्य निरूपयामि च किमेतदिति।
+	• पदच्छेदः: तत् + अहम् + अपि + गच्छामि + पृष्ठतः + अस्य + निरूपयामि + च + किम् + एतत् + इति।
+• (घ) अस्त्यत्र कश्चिदुपायो येन भगवत्याः पुनरिह चिरवासो भवति।
+	• पदच्छेदः: अस्ति + अत्र + कश्चित् + उपायः + येन + भगवत्याः + पुनः + इह + चिरवासः + भवति।
+• (ङ) एकैवात्र प्रवृत्तिः सा चातीव दुःसाध्या।
+	• पदच्छेदः: एका + एव + अत्र + प्रवृत्तिः + सा + च + अतीव + दुःसाध्या।
+
 ================================================================================
+📄 Part 4: 3 Worksheets based on the Lesson
+================================================================================
+
+📝 WORKSHEET - 1 (Grammar & Vocabulary Focus)
+छात्रस्य नाम: _______________  दिनाङ्कः: __________
+
+Q1. सन्धिं / सन्धिच्छेदं कुरुत (Join/Split the words):
+1. प्रतिदिनम् + सुवर्णशतचतुष्टयम् = प्रतिदिनं सुवर्णशतचतुष्टयम्
+2. तस्मात् + अहम् = तस्मादहम्
+3. कोऽत्र = कः + अत्र
+4. पुनरिह = पुनः + इह
+
+Q2. विलोमपदानि लिखत (Write the antonyms from the text):
+1. सुखेन × दुःखेन
+2. दिनम् × रात्रिः / निशा
+3. निर्गतः × प्रविष्टः / समायातः
+4. अनाथा × सनाथा
+
+Q3. पाठात् प्रयुक्तं भूतकालिकं क्रियापदं (लङ्/क्त/क्तवतु) चित्वा रिक्तस्थानं पूरयत:
+1. राजा शूद्रकः शोभावत्यां प्रतिवसति स्म।
+2. वीरवरः राजानं प्रणम्य निर्गतः।
+3. राजा करुणरोदनध्वनिं श्रुतवान्।
+
+--------------------------------------------------------------------------------
+
+📝 WORKSHEET - 2 (Comprehension & Text Analysis)
+छात्रस्य नाम: _______________  दिनाङ्कः: __________
+
+Q1. उचितविकल्पं चित्वा रिक्तस्थानानि पूरयत (Fill in the blanks with correct choices):
+1. वीरवरस्य पुत्रस्य नाम शक्तिधरः आसीत्। (शक्तिधरः / वीरवती)
+2. वीरवरः प्रतिदिनं शतचतुष्टयं सुवर्णमुद्राः याचते स्म। (शतद्वयं / शतचतुष्टयं)
+3. राजा कृष्णचतुर्दश्याम् तिथौ करुणक्रन्दनं श्रुतवान्। (कृष्णचतुर्दश्याम् / पूर्णिमामाम्)
+
+Q2. कः कं प्रति कथयति? (Who said to whom?):
+1. “किं ते वर्तनम्?” → राजा शूद्रकः वीरवरं प्रति कथयति।
+2. “इमौ बाहू, एष खड्गश्च।” → वीरवरः राजानं प्रति कथयति।
+3. “का त्वमम्ब! किमर्थं विलपसि?” → वीरवरः रोदनपरां राजलक्ष्मीं प्रति कथयति।
+
+Q3. पाठांशं पठित्वा वाक्यं शुद्धं (True) अथवा अशुद्धं (False) इति लिखत:
+1. मन्त्री वीरवरं तत्क्षणमेव नियुक्तं कर्तुम् ऐच्छत्। [अशुद्धम् (False) - प्रथमं परीक्ष्यताम् ऐच्छत्]
+2. वीरवरः स्ववेतनस्य सर्वं भागं विलासाय व्ययम् करोति स्म। [अशुद्धम् (False) - अर्धं देवेभ्यः, चतुर्थं दरिद्रेभ्यः, चतुर्थं च पत्न्यै]
+
+--------------------------------------------------------------------------------
+
+📝 WORKSHEET - 3 (Advanced Sentence Creation & Translation)
+छात्रस्य नाम: _______________  दिनाङ्कः: __________
+
+Q1. संस्कृतेन अनुवादं कुरुत (Translate into Sanskrit):
+1. King Shudraka was very brave.
+→ राजा शूद्रकः महापराक्रमी आसीत्।
+2. Viravara stands at the door day and night.
+→ वीरवरः अहर्निशं राजद्वारे तिष्ठति (सेवते)।
+
+Q2. कोष्ठकात् उचितं पदं चित्वा अन्वयं पूरयत (Complete the sentence order):
+"आसीत् शोभावती नाम काचन नगरी।"
+→ शोभावती नाम काचन नगरी आसीत्।
+
+Q3. विभक्त्यनुसारं पृथक् कुरुत (Separate according to case ending - प्रथमा / द्वितीया / षष्ठी):
+[महीपतिः, स्वामिनः, राजपुत्रम्, पत्न्याः, खड्गम्]
+1. प्रथमा विभक्तिः: महीपतिः
+2. द्वितीया विभक्तिः: राजपुत्रम्, खड्गम्
+3. षष्ठी विभक्तिः: स्वामिनः, पत्न्याः
+
+================================================================================
+🧩 Part 5: 3 Question Banks (10 Questions Each with Answer Key)
+================================================================================
+
+📊 QUESTION BANK - 1 (One-Word Answers / एकपदेन उत्तरत)
+1. शूद्रकस्य नगर्याः नाम किम् आसीत्? ➔ शोभावती (A)
+2. वीरवरस्य पत्न्याः नाम किम् आसीत्? ➔ वेदरता (B)
+3. वीरवरः प्रतिदिनं कति सुवर्णमुद्राः वेतनरूपेण याचते स्म? ➔ सुवर्णशतचतुष्टयम् (४००) (B)
+4. कः राजपुत्रस्य पृष्ठतः खड्गपाणिः भूत्वा अगच्छत्? ➔ राजा शूद्रकः (B)
+5. रोदनपरा सुन्दरी कैः भूषिता आसीत्? ➔ दिव्याभरणैः (दिव्याभरणभूषिता) (B)
+6. कथाग्रन्थः 'हितोपदेशः' कस्मात् पाठात् स्वीकृतः? (प्रस्तुतपाठः कस्मात् ग्रन्थात्?) ➔ हितोपदेशात् (B)
+7. वीरवरः स्ववेतनस्य अर्धं केभ्यः ददाति स्म? ➔ देवेभ्यः (B)
+8. कस्य अपराधेन राजा पञ्चत्वं यास्यति? ➔ देवस्य (राज्ञः शूद्रकस्य) (B)
+9. घने अन्धकारे वीरवरः क्रन्दनम् अनुसरन् कुत्र प्रचलितः? ➔ बहिः (नगरात् बहिः) (B)
+10. कति वर्षाणि राजा शूद्रकः पुनर्जीविष्यति यदि वीरवरः सर्वप्रियं वस्तु उपहारं ददाति? ➔ वर्षाणां शतम् (१०० वर्षाणि) (B)
+
+--------------------------------------------------------------------------------
+
+📊 QUESTION BANK - 2 (Short Answer & Context Type)
+1. वीरवरेण सह के के समायाताः? ➔ पत्नी वेदरता, सुतः शक्तिधरः, कन्या वीरवती च (B)
+2. राज्ञः प्रश्नस्य 'का ते सामग्री?' इति वीरवरः किं प्रत्युवाच? ➔ "इमौ बाहू, एष खड्गश्च" इति (B)
+3. मन्त्रिणः राजा शूद्रकं वीरवरस्य वेतनविषये किम् उपदेशं दत्तवान्? ➔ दिनचतुष्टयस्य वेतनार्पणेन प्रथमं राजपुत्रस्य स्वरूपं परीक्ष्यताम् (B)
+4. वीरवरः स्ववेतनस्य विभागं कथं करोति स्म? ➔ अर्धं देवेभ्यः, स्थितस्य अर्धं दरिद्रेभ्यः, अवशिष्टं च पत्न्याः हस्ते (B)
+5. राजा शूद्रकः कस्यां रात्रौ रोदनध्वनिं श्रुतवान्? ➔ कृष्णचतुर्दश्याम् अर्द्धरात्रे (B)
+6. नगरात् बहिः रोदमाना स्त्री वस्तुतः का आसीत्? ➔ राज्ञः शूद्रकस्य राजलक्ष्मीः (C)
+7. राजलक्ष्मीः किमर्थं क्रन्दति स्म? ➔ तृतीये दिवसे राज्ञः मृत्योः कारणात् सा अनाथ भवित्वा तत्र न स्थास्यति (B)
+8. राजलक्ष्मीरूपा स्त्री कस्य भुजच्छायायां सुखेन निवसाति स्म? ➔ भूपालस्य शूद्रकस्य (B)
+9. भगवत्यै सर्वमङ्गलायै कस्य उपहारः करणीयः आसीत्? ➔ वीरवरस्य सर्वतः प्रियवस्तुनः (B)
+10. 'सूचिभेद्ये तिमिरे' इत्यस्य कः अर्थः अस्ति? ➔ अत्यधिकं गहनः सान्द्रश्च अन्धकारः (अत्यंत घना अंधेरा) (B)
+
+--------------------------------------------------------------------------------
+
+📊 QUESTION BANK - 3 (Grammar, Analysis & Fill-in-the-blanks)
+1. 'महीपतिः' पदस्य पाठात् समानार्थकपदं लिखत। ➔ भूपालः / राजा (B)
+2. 'पूतचरित्रः' इति पदस्य कः समासविग्रहः भवति? ➔ पूतं चरित्रं यस्य सः (बहुव्रीहि समासः) (B)
+3. 'श्रुत्वा' पदे कः धातुः कश्च प्रत्ययः अस्ति? ➔ श्रु + क्त्वा (B)
+4. 'अहर्निशम्' इत्यस्य शुद्धः समासविग्रहः कः? ➔ अहः च निशा च (द्वन्द्वः) (A)
+5. 'गन्तुमर्हति' पदस्य सन्धिच्छेदं कुरुत। ➔ गन्तुम् + अर्हति (B)
+6. 'सुचिरं जीवति च स्वामी' - अत्र अव्ययपदं किम्? ➔ च (अपि च 'सुचिरम्') (C)
+7. 'सहासवदनेन' इति पदस्य व्याकरणिकं रूपं (विभक्ति-वचनं) लिखत। ➔ तृतीया विभक्तिः, एकवचनम् (B)
+8. 'तदाकर्ण्य' पदस्य पदच्छेदं कुरुत। ➔ तत् + आकर्ण्य (B)
+9. 'अस्त्यत्र' पदस्य सन्धिच्छेदं कुरुत। ➔ अस्ति + अत्र (यण् सन्धिः) (A)
+10. पाठांशे प्रयुक्तं 'वत्स' इति सम्बोधनपदं कस्याः मुखाद् निष्क्रान्तम्? ➔ राजलक्ष्म्याः (B)
+
+================================================================================
+🔑 Answer Matrix Summary
+================================================================================
+• Quiz 1: 1-A, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B
+• Quiz 2: 1-B, 2-B, 3-B, 4-B, 5-B, 6-C, 7-B, 8-B, 9-B, 10-B
+• Quiz 3: 1-B, 2-B, 3-B, 4-A, 5-B, 6-C, 7-B, 8-B, 9-A, 10-B
