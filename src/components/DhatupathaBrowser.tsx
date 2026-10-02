@@ -18,9 +18,9 @@ const GANA_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 
 /** Page-only speech pace. Normal is Web Speech rate 1. Session only, not Bodhi. */
 const DHATU_SPEEDS = [
-  { id: 'slow', label: 'Slow', rate: 0.8 },
+  { id: 'slow', label: 'Slow', rate: 0.6 },
   { id: 'normal', label: 'Normal', rate: 1 },
-  { id: 'fast', label: 'Fast', rate: 1.25 },
+  { id: 'fast', label: 'Fast', rate: 1.6 },
 ] as const;
 type DhatuSpeed = (typeof DHATU_SPEEDS)[number]['id'];
 const DHATU_SPEED_KEY = 'dhatupatha-speech-speed';
@@ -59,6 +59,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
   const [speechSpeed, setSpeechSpeed] = useState<DhatuSpeed>(loadDhatuSpeed);
   const speechSpeedRef = useRef<DhatuSpeed>(speechSpeed);
   speechSpeedRef.current = speechSpeed;
+  const playbackBarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -119,6 +120,31 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
     setPlayingAll(false);
     setSpeakingKey(null);
   }, [query, ganaFilter]);
+
+  // While Play all runs, pin speed + Pause under the site header (or the
+  // screen top once the header has scrolled away). Fixed, not sticky: the
+  // dashboard is its own scroll container, so sticky scrolls off on a phone.
+  useEffect(() => {
+    if (!playingAll) return;
+    const bar = playbackBarRef.current;
+    const place = () => {
+      const header = document.querySelector<HTMLElement>('.dashboard-header');
+      const bottom = header ? header.getBoundingClientRect().bottom : 0;
+      const top = bottom > 8 ? Math.round(bottom) : 0;
+      bar?.style.setProperty('--dp-stick-top', `${top}px`);
+    };
+    place();
+    const header = document.querySelector('.dashboard-header');
+    const observer = header ? new ResizeObserver(place) : null;
+    if (header && observer) observer.observe(header);
+    window.addEventListener('scroll', place, true);
+    window.addEventListener('resize', place);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('scroll', place, true);
+      window.removeEventListener('resize', place);
+    };
+  }, [playingAll]);
 
   useEffect(() => {
     if (!playingAll || !speakingKey) return;
@@ -203,6 +229,10 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
           <span className="dp-meta" aria-live="polite">
             {loading ? 'Loading…' : `${filtered.length} of ${entries.length} roots`}
           </span>
+          <div
+            ref={playbackBarRef}
+            className={`dp-playback-bar${playingAll ? ' dp-playback-bar--live' : ''}`}
+          >
           <div className="dp-speed" role="group" aria-label="Root speech speed">
             {DHATU_SPEEDS.map((item) => (
               <button
@@ -234,6 +264,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
           >
             {playingAll ? '⏸ Pause' : '▶ Play all'}
           </button>
+          </div>
         </div>
         <div className="dp-chips" role="group" aria-label="Filter by gaṇa">
           <button

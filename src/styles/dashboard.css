@@ -45,6 +45,14 @@
   gap: 1rem;
 }
 
+/* Dhātupāṭha: overflow-x hidden made .dashboard a scroll container that never
+   scrolls (the page does), so a sticky/fixed Pause bar rode away with the list
+   on phones. clip hides sideways overflow without trapping playback controls. */
+.dashboard.dashboard--dhatupatha {
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
 .dashboard.dashboard--scrollable .dashboard-header,
 .dashboard:not(.dashboard--reader) .dashboard-header {
   position: sticky;

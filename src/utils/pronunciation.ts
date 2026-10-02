@@ -335,10 +335,12 @@ const speakMacVocalicVowel = (word: string, onEnd?: () => void): boolean => {
 };
 
 const applyCallerRate = (utterance: SpeechSynthesisUtterance, rate?: number): void => {
-  // Optional override for one caller (Dhātupāṭha). Pitch stays whatever
-  // configureUtterance already set. Omitted rate leaves every preset alone.
+  // Dhātupāṭha only, and only when that page passes a rate. Do not clamp:
+  // the Windows 0.75–1.05 clamp made Slow / Normal / Fast sound almost the same.
+  // Pitch stays 1. Bodhi and Varṇamālā never pass this rate.
   if (rate == null || !Number.isFinite(rate)) return;
-  utterance.rate = clampRate(rate);
+  utterance.rate = rate;
+  utterance.pitch = 1;
 };
 
 const speakConfigured = (word: string, onEnd?: () => void, plain = false, rate?: number): void => {
