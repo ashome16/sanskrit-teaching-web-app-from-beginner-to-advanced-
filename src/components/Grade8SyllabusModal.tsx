@@ -176,9 +176,9 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
         <div className="g8-modal-body">
           {!canReadAllChapters && (
             <div className="g8-upcoming-overlay-note" role="status">
-              <strong>UPCOMING · शीघ्रम्</strong>
+              <strong>ACCOUNT REQUIRED · लेखा आवश्यकः</strong>
               <span>
-                Class 8 Sanskrit is coming soon for students. Chapter cards below are a syllabus preview only — lessons are not yet open.
+                Class 8 lessons, worksheets, and quizzes are open to everyone with an account. Sign in or register for free to start learning!
               </span>
             </div>
           )}

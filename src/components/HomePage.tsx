@@ -453,6 +453,50 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     theme: 'Foundational Paninian grammar: 22 Upasargas with meaning shifts, Krit suffixes (ktva, lyap, tumun, ktavatu past participle), 6 Karakas, Upapada case rules, and vowel/consonant Sandhis.',
     grammarFocus: 'उपसर्गाः (२२), क्त्वा, ल्यप्, तुमुन्, क्तवतु (त्रिषु लिङ्गेषु), षट् कारकाणि, उपपद-विभक्तयः, अयादि-पूर्वरूप-व्यञ्जन-सन्धयः',
   },
+  {
+    id: 'grade9_prarthana',
+    num: 'Grade 9 · मङ्गलाचरणम्',
+    title: 'मङ्गलाचरणम् (प्रार्थना)',
+    english: 'Auspicious Vedic Invocation (Rigveda 10.191 Concord Mantras)',
+    icon: '🕉️',
+    category: 'shlokas',
+    genreBadge: 'प्रार्थना · Rigveda Samvad',
+    theme: 'Sangachhadhvam mantras fostering universal unity, common purpose, harmonized hearts, and concord across all people.',
+    grammarFocus: 'ऋग्वेदमन्त्राः, लोट्-लकारः (सङ्गच्छध्वम्, संवदध्वम्), समान-विभक्ति-प्रयोगाः (समानम्, समानेन)',
+  },
+  {
+    id: 'grade9_ch1',
+    num: 'Grade 9 · Chapter 1',
+    title: 'अहं वृक्षः अस्मि (Pages 1–8)',
+    english: 'I am a Tree (Autobiography of a Tree)',
+    icon: '🌳',
+    category: 'stories',
+    genreBadge: 'आत्मकथा · Ecological Heritage',
+    theme: 'The life journey of a tree: selfless service, universal shelter, shade, oxygen, and environmental guardianship.',
+    grammarFocus: 'उत्तमपुरुष-प्रयोगाः (अस्मि, यच्छामि), ल्यप्/तुमुन् प्रत्ययाः, विशेषण-विशेष्य-सम्बन्धः',
+  },
+  {
+    id: 'grade9_ch2',
+    num: 'Grade 9 · Chapter 2',
+    title: 'सुखस्य मूलं धर्मः, धर्मस्य मूलम् अर्थः (Pages 9–18)',
+    english: 'Righteousness is the Root of Happiness; Wealth is the Root of Righteousness',
+    icon: '⚖️',
+    category: 'dialogue',
+    genreBadge: 'नीतिशास्त्रम् · Arthashastra & Ethics',
+    theme: 'Kautilya Arthashastra and Upanishadic wisdom on ethical wealth creation, purity of livelihood, and disciplined conduct.',
+    grammarFocus: 'षष्ठी-विभक्तिः (सुखस्य, धर्मस्य), कर्मधारय-समासः, सूक्ति-सङ्ग्रहः, अव्ययपदानि',
+  },
+  {
+    id: 'grade9_ch3',
+    num: 'Grade 9 · Chapter 3',
+    title: 'आत्मवत्सर्वभूतेषु यः पश्यति सः पण्डितः (Pages 19–30)',
+    english: 'He Who Sees All Beings as Himself is Truly Wise',
+    icon: '🪷',
+    category: 'stories',
+    genreBadge: 'महात्मा-चरितम् · Compassion & Universal Empathy',
+    theme: 'Sant Namdev, compassion towards animals and all creatures, and realizing the divine presence in every living being.',
+    grammarFocus: 'सप्तमी-विभक्तिः (सर्वभूतेषु), यत्-तत् प्रयोगाः (यः... सः), कृदन्त-रूपाणि (दृष्ट्वा, गत्वा), अन्वय-रचना',
+  },
 ];
 
 const HomePage: React.FC<HomePageProps> = ({
@@ -479,7 +523,7 @@ const HomePage: React.FC<HomePageProps> = ({
   const [isGrade8ModalOpen, setIsGrade8ModalOpen] = useState<boolean>(false);
 
   const visibleChapters = CHAPTERS_INFO.filter(
-    (ch) => canReadAllChapters || !ch.id.startsWith('grade8_')
+    (ch) => canReadAllChapters || (!ch.id.startsWith('grade8_') && !ch.id.startsWith('grade9_'))
   );
 
   const categories = [

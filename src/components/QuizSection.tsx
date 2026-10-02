@@ -3,7 +3,7 @@ import { QUIZ_CATEGORIES, QUIZ_QUESTIONS, type QuizQuestionItem } from '../data/
 import { playPronunciation } from '../utils/pronunciation';
 import { useAppStore } from '../store';
 import { useAuthStore } from '../store/authStore';
-import { canDownloadContent, getDownloadGateReason } from '../utils/premiumAccess';
+import { canAccessAllChapters, canDownloadContent, getDownloadGateReason } from '../utils/premiumAccess';
 import { PAID_FEATURE_GATE } from '../utils/paidFeatureGateCopy';
 import { downloadQuizSheet } from '../utils/contentDownload';
 import '../styles/quiz-section.css';
@@ -37,18 +37,28 @@ const QuizSection: React.FC<QuizSectionProps> = ({
   const canDownload = canDownloadContent(currentUser, isAdminLoggedIn);
   const gateReason = getDownloadGateReason(currentUser, isAdminLoggedIn);
 
+  const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
+
   const visibleCategories = useMemo(
     () =>
-      QUIZ_CATEGORIES.filter((cat) => isAdminLoggedIn || !cat.id.startsWith('grade8')),
-    [isAdminLoggedIn]
+      QUIZ_CATEGORIES.filter(
+        (cat) =>
+          canReadAllChapters ||
+          (!cat.id.startsWith('grade8') && !cat.id.startsWith('grade9'))
+      ),
+    [canReadAllChapters]
   );
 
   const publicQuestions = useMemo(
     () =>
-      isAdminLoggedIn
+      canReadAllChapters
         ? QUIZ_QUESTIONS
-        : QUIZ_QUESTIONS.filter((q) => !String(q.category).startsWith('grade8')),
-    [isAdminLoggedIn]
+        : QUIZ_QUESTIONS.filter(
+            (q) =>
+              !String(q.category).startsWith('grade8') &&
+              !String(q.category).startsWith('grade9')
+          ),
+    [canReadAllChapters]
   );
 
   const filteredQuestions = useMemo(() => {

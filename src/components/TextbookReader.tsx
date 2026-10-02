@@ -52,7 +52,10 @@ type SectionJump = { index: number; label: string; kind?: string };
 const buildSectionJumps = (lesson: Lesson | undefined): SectionJump[] => {
   if (!lesson?.sentences?.length) return [];
   const jumps: SectionJump[] = [];
-  const isPrayerAllowed = lesson.id === 'gsde101' || lesson.id === 'grade8_prarthana';
+  const isPrayerAllowed =
+    lesson.id === 'gsde101' ||
+    lesson.id === 'grade8_prarthana' ||
+    lesson.id === 'grade9_prarthana';
 
   lesson.sentences.forEach((item, index) => {
     if (item.kind === 'section-header' || item.kind === 'chapter-header') {
@@ -80,7 +83,7 @@ const buildSectionJumps = (lesson: Lesson | undefined): SectionJump[] => {
 
 const getJumpChipLabel = (jump: SectionJump, activeLessonId: string): string => {
   if (jump.index === 0) {
-    return ((activeLessonId === 'gsde101' || activeLessonId === 'grade8_prarthana') && (jump.label.includes('प्रार्थना') || jump.label.toLowerCase().includes('prayer'))) ? 'प्रार्थना' : 'पाठः';
+    return ((activeLessonId === 'gsde101' || activeLessonId === 'grade8_prarthana' || activeLessonId === 'grade9_prarthana') && (jump.label.includes('प्रार्थना') || jump.label.toLowerCase().includes('prayer'))) ? 'प्रार्थना' : 'पाठः';
   }
   if (jump.label.includes('शब्दार्थ')) return 'शब्दार्थ';
   if (jump.label.includes('अभ्यास')) return 'अभ्यास';
@@ -253,9 +256,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   onOpenCbseGuide,
   onOpenBarakhadi,
 }) => {
-  const { isAdminLoggedIn, currentUser } = useAuthStore();
+  const { isAdminLoggedIn, currentUser, openAuthModal } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
   const isGrade8Lesson = activeLessonId.startsWith('grade8_');
+  const isGrade9Lesson = activeLessonId.startsWith('grade9_');
+  const isCurriculumLesson = isGrade8Lesson || isGrade9Lesson;
   const activeLesson = lessons.find((lesson) => lesson.id === activeLessonId);
   const isVarnamala = activeLessonId === 'varnamala';
   const isNumbers = activeLessonId === 'numbers';
@@ -607,23 +612,70 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     return best;
   })();
 
-  // Guests / expired see Class 8 as upcoming; trial + paid may read.
-  if (isGrade8Lesson && !canReadAllChapters) {
+  // Guests see Class 8 & Class 9 as requiring account; any registered user with an account may read.
+  if (isCurriculumLesson && !canReadAllChapters) {
+    const gradeLabel = isGrade9Lesson ? 'CBSE Class 9 (शारदा)' : 'CBSE Class 8 (दीपकम)';
     return (
       <section className="textbook-reader">
         <div className="textbook-cbse-banner textbook-grade8-upcoming-banner">
-          <span className="textbook-cbse-pill" style={{ background: '#92400e', color: '#ffffff' }}>
-            UPCOMING · शीघ्रम्
+          <span className="textbook-cbse-pill" style={{ background: '#1e3a8a', color: '#ffffff' }}>
+            ACCOUNT REQUIRED · लेखा आवश्यकः
           </span>
           <span className="textbook-cbse-title">
-            Class 8 Sanskrit (CBSE) is coming soon. Please continue with Class 7 Deepakam for now.
+            {gradeLabel} lessons, worksheets, and quizzes are open to everyone with an account.
           </span>
         </div>
         <div className="textbook-grade8-upcoming-note">
           <p>
-            अष्टमकक्षा-पाठ्यांशः शीघ्रम् एव उपलभ्यते। Class 8 chapters, quizzes, and worksheets will open here when ready.
-            Class 7 remains fully available from the dashboard.
+            Please sign in to your account or register for free below to read all Class 8 and Class 9 lessons, practice interactive quizzes, and explore chapter worksheets.
           </p>
+          <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem', flexWrap: 'wrap' }}>
+            <button
+              type="button"
+              onClick={() => openAuthModal('login')}
+              style={{
+                background: '#4338ca',
+                color: '#ffffff',
+                border: 'none',
+                borderRadius: '8px',
+                padding: '0.6rem 1.25rem',
+                fontWeight: 600,
+                cursor: 'pointer',
+              }}
+            >
+              🔐 Sign In
+            </button>
+            <button
+              type="button"
+              onClick={() => openAuthModal('register')}
+              style={{
+                background: '#059669',
+                color: '#ffffff',
+                border: 'none',
+                borderRadius: '8px',
+                padding: '0.6rem 1.25rem',
+                fontWeight: 600,
+                cursor: 'pointer',
+              }}
+            >
+              ✨ Create Free Account
+            </button>
+            <button
+              type="button"
+              onClick={() => onSelectLesson('gsde101')}
+              style={{
+                background: '#f1f5f9',
+                color: '#334155',
+                border: '1px solid #cbd5e1',
+                borderRadius: '8px',
+                padding: '0.6rem 1rem',
+                fontWeight: 500,
+                cursor: 'pointer',
+              }}
+            >
+              📖 Continue to Class 7 Deepakam
+            </button>
+          </div>
         </div>
       </section>
     );
@@ -637,14 +689,22 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <div className="textbook-lesson-picker">
             <span
               className={`textbook-grade-badge ${
-                isGrade8Lesson
+                isGrade9Lesson
+                  ? 'textbook-grade-badge--grade9'
+                  : isGrade8Lesson
                   ? 'textbook-grade-badge--grade8'
                   : isGroupedLesson
                   ? 'textbook-grade-badge--foundations'
                   : 'textbook-grade-badge--grade7'
               }`}
             >
-              {isGrade8Lesson ? 'CBSE Class 8' : isGroupedLesson ? 'मूल-संस्कृतम्' : 'CBSE Class 7'}
+              {isGrade9Lesson
+                ? 'CBSE Class 9'
+                : isGrade8Lesson
+                ? 'CBSE Class 8'
+                : isGroupedLesson
+                ? 'मूल-संस्कृतम्'
+                : 'CBSE Class 7'}
             </span>
             <select
               id="lesson-select"
@@ -666,6 +726,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                   .filter(
                     (lesson) =>
                       !lesson.id.startsWith('grade8_') &&
+                      !lesson.id.startsWith('grade9_') &&
                       lesson.id !== 'samyukta' &&
                       lesson.id !== 'varnamala' &&
                       lesson.id !== 'numbers' &&
@@ -696,6 +757,24 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                   {onOpenCbseGuide && (
                     <option value="__cbse_guide__">
                       📋 CBSE Class 8 Exam Guide &amp; Question Directives
+                    </option>
+                  )}
+                </optgroup>
+              )}
+
+              {/* Class 9 Lessons */}
+              {lessons.some((lesson) => lesson.id.startsWith('grade9_')) && (
+                <optgroup label="CBSE Class 9 · शारदा (नवमी कक्षा)">
+                  {lessons
+                    .filter((lesson) => lesson.id.startsWith('grade9_'))
+                    .map((lesson) => (
+                      <option key={lesson.id} value={lesson.id}>
+                        {lesson.title}
+                      </option>
+                    ))}
+                  {onOpenCbseGuide && (
+                    <option value="__cbse_guide__">
+                      📋 CBSE Class 9 Exam Guide &amp; Question Directives
                     </option>
                   )}
                 </optgroup>
@@ -1765,13 +1844,19 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         <div className="textbook-grade-completion-guide" role="region" aria-label="CBSE Sanskrit Exam Blueprint & Guide">
           <div className="grade-guide-header">
             <span className="grade-guide-badge">
-              {activeLessonId.startsWith('grade8_') ? 'CBSE Class 8 Sanskrit' : 'CBSE Class 7 Deepakam'}
+              {activeLessonId.startsWith('grade9_')
+                ? 'CBSE Class 9 Sanskrit'
+                : activeLessonId.startsWith('grade8_')
+                ? 'CBSE Class 8 Sanskrit'
+                : 'CBSE Class 7 Deepakam'}
             </span>
             <h4>📋 CBSE Sanskrit Exam Blueprint &amp; Question Directives</h4>
           </div>
           <p>
             {activeLessonId === 'gsde115'
               ? 'Congratulations on completing all 15 lessons of CBSE Class 7 Deepakam! Prepare for your school and board exams with standardized instruction formulas (निर्देशाः), 10 core question words (क-कार शब्दाः), and grammatical directives.'
+              : activeLessonId === 'grade9_ch3'
+              ? 'Class 9 chapters completed! Master CBSE High School paper structure, अन्वय-पूरणम्, प्रश्ननिर्माणम्, and precision sentence corrections.'
               : activeLessonId === 'grade8_app1' || activeLessonId === 'grade8_ch13'
               ? 'Class 8 lessons completed! Master CBSE High School paper structure, अन्वय-पूरणम्, प्रश्ननिर्माणम्, and precision sentence corrections.'
               : 'Prepare for school exams: master question instruction keywords (एकपदेन, पूर्णवाक्येन, अन्वयः) and grammatical directives (कर्तृपदम्, क्रियापदम्) for this grade.'}
@@ -1792,7 +1877,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           >
             ◀ Previous
           </button>
-          {isLastSentence && onOpenCbseGuide && (activeLessonId === 'gsde115' || activeLessonId === 'grade8_app1' || activeLessonId === 'grade8_ch13') ? (
+          {isLastSentence && onOpenCbseGuide && (activeLessonId === 'gsde115' || activeLessonId === 'grade8_app1' || activeLessonId === 'grade8_ch13' || activeLessonId === 'grade9_ch3') ? (
             <button
               type="button"
               className="textbook-nav-btn textbook-nav-btn--guide"

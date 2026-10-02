@@ -35,3 +35,5 @@ public/numbers.txt
 # Worker deps
 workers/**/node_modules
 _kalpana_batches/
+scratch/
+
