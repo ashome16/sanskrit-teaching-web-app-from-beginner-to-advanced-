@@ -34621,12 +34621,12 @@
       "id": "grade8_ch8",
       "fileName": "grade8_ch8.txt",
       "title": "अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
-      "page_numbers": "85-88",
+      "page_numbers": "85–94",
       "sentences": [
         {
           "sanskrit": "॥ अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम् ॥",
-          "meaning": "Chapter 8: Behold the Enchanting Northeast Corner of India (Pages 85–88)",
-          "paragraphTranslation": "अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम् (पृष्ठ ८५–८८)",
+          "meaning": "Chapter 8: Behold the Enchanting Northeast Corner of India (Pages 85–94)",
+          "paragraphTranslation": "अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम् (पृष्ठ ८५–९४)",
           "words": [
             "अष्टमः",
             "पाठः",
@@ -34638,9 +34638,9 @@
           "kind": "section-header"
         },
         {
-          "sanskrit": "अस्मिन् पाठे भारतस्य ऐशान्यकोणस्य (पूर्वोत्तरस्य) अष्टराज्यानां—'सप्तभगिन्यः एकः भ्राता सिक्किमः च', बराक-ब्रह्मपुत्रादिनदीनां, समृद्ध-जनजातीनां, स्वतन्त्र-इतिहासस्य तथा च बाँस-शिल्पस्य (वंशोद्योगस्य) भव्यं वर्णनं कृतम् अस्ति।",
-          "meaning": "This chapter explores India's northeastern states—celebrated as the Seven Sisters and Brother Sikkim—their rivers like Barak and Brahmaputra, distinct tribal communities, sovereign history, and famous bamboo handicrafts.",
-          "paragraphTranslation": "इस पाठ में भारत के उत्तर-पूर्वी कोने के आठ राज्यों—सात बहनें और एक भाई सिक्किम—के प्राकृतिक सौंदर्य, जनजातियों, स्वाधीनता इतिहास एवं बाँस उद्योग का वर्णन है।",
+          "sanskrit": "अस्मिन् पाठे भारतस्य पूर्वोत्तर-कोणस्य (ऐशान्यकोणस्य) अष्टराज्यानां ('अष्टभगिन्यः' अथवा 'सप्तभगिन्यः एकः भ्राता सिक्किमः च'), तेषां प्राकृतिक-सौन्दर्यस्य, ब्रह्मपुत्र-बराकादिनदीनां, जनजातीनां (गारो, खासी, नागा, मिजो, लेप्चा), स्वातन्त्र्य-इतिहासस्य तथा च समृद्ध-वंशोद्योगस्य (बाँस-शिल्पस्य) मनोहरः परिचयः दत्तः अस्ति।",
+          "meaning": "This chapter introduces the northeastern corner of India (the Ishanya corner), exploring the eight states renowned as the Seven Sisters and One Brother Sikkim, their rivers like Barak and Brahmaputra, rich tribal communities, sovereign history, and bamboo handicrafts.",
+          "paragraphTranslation": "इस पाठ में भारत के उत्तर-पूर्वी कोने (ईशान कोण) के आठ राज्यों ('सात बहनें और एक भाई सिक्किम')—अरुणाचल प्रदेश, असम, मणिपुर, मेघालय, मिजोरम, नागालैंड, त्रिपुरा और सिक्किम—के मनोहारी प्राकृतिक सौंदर्य, नदियों, जनजातियों, स्वाधीनता इतिहास तथा बांस उद्योग का सुंदर वर्णन किया गया है।",
           "words": [
             "अस्मिन्",
             "पाठे",
@@ -34650,11 +34650,23 @@
             "सिक्किमः",
             "वंशोद्योगस्य"
           ],
-          "kind": "section-header"
+          "kind": null
         },
         {
-          "sanskrit": "अरुणाचलप्रदेशः, असमः, मणिपुरं, मेघालयः, मिजोरमः, नागालैण्डं, त्रिपुरा एवञ्च सिक्किमः इत्येतानि अष्टराज्यानि देशस्य पूर्वोत्तरभागे स्थितानि।",
-          "meaning": "Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Tripura, and Sikkim—these eight states are located in the northeastern part of the country.",
+          "sanskrit": "भागः १: पूर्वोत्तर-भूगोलः परिचयः च (पृष्ठ ८५)",
+          "meaning": "Part 1: Geography and Grandeur of the Northeastern States (Page 85)",
+          "paragraphTranslation": "भाग १: पूर्वोत्तर भारत का भौगोलिक स्वरूप एवं प्राकृतिक समृद्धि (पृष्ठ ८५)",
+          "words": [
+            "भागः",
+            "पूर्वोत्तर",
+            "भूगोलः",
+            "परिचयः"
+          ],
+          "kind": "chapter-header"
+        },
+        {
+          "sanskrit": "अरुणाचलप्रदेशः, असमः, मणिपुरं, मेघालयः, मिजोरमः, नागालैण्डं, त्रिपुरा एवञ्च सिक्किमः इत्येतानि अष्टराज्यानि देशस्य पूर्वोत्तरभागे स्थितानि ।",
+          "meaning": "Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Tripura, and Sikkim—these eight states are located in the North-Eastern part of the country.",
           "paragraphTranslation": "अरुणाचल प्रदेश, असम, मणिपुर, मेघालय, मिजोरम, नागालैंड, त्रिपुरा और सिक्किम—ये आठ राज्य देश के उत्तर-पूर्वी भाग में स्थित हैं।",
           "words": [
             "अरुणाचलप्रदेशः",
@@ -34664,405 +34676,779 @@
             "मिजोरमः",
             "नागालैण्डं",
             "त्रिपुरा",
-            "एवञ्च",
             "सिक्किमः",
-            "इत्येतानि",
             "अष्टराज्यानि",
-            "देशस्य",
             "पूर्वोत्तरभागे",
             "स्थितानि"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "एतानि राज्यानि भारतस्य केवलं स्थानविशेषत्वेन न, अपितु सांस्कृतिक-ऐतिहासिक-विविधतायाः कारणेन विशेषमहत्त्वं वहन्ति।",
-          "meaning": "These states hold special importance not just as geographical locations, but because of their rich cultural and historical diversity.",
-          "paragraphTranslation": "ये राज्य केवल भौगोलिक स्थान के कारण ही नहीं, बल्कि सांस्कृतिक व ऐतिहासिक विविधता के कारण विशेष महत्त्व रखते हैं।",
+          "sanskrit": "एतानि राज्यानि भारतस्य केवलं स्थानविशेषत्वेन न, अपितु सांस्कृतिक-ऐतिहासिक-विविधतायाः कारणेन विशेषमहत्त्वं वहन्ति ।",
+          "meaning": "These states hold special significance not just as a location, but because of their deep cultural and historical diversity.",
+          "paragraphTranslation": "ये राज्य भारत में न केवल एक विशिष्ट भौगोलिक स्थान के रूप में, बल्कि अपनी सांस्कृतिक और ऐतिहासिक विविधता के कारण विशेष महत्व रखते हैं।",
           "words": [
             "एतानि",
             "राज्यानि",
             "भारतस्य",
-            "केवलं",
             "स्थानविशेषत्वेन",
-            "न",
-            "अपितु",
             "सांस्कृतिक",
             "ऐतिहासिक",
             "विविधतायाः",
-            "कारणेन",
             "विशेषमहत्त्वं",
             "वहन्ति"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "पर्वतैः नदीभिः च सुशोभितानि एतानि राज्यानि पूर्वहिमालय-श्रेणिषु पत्काई-नागपर्वत-प्रदेशे च स्थितानि।",
-          "meaning": "Adorned with mountains and rivers, these states are nestled in the Eastern Himalayan ranges, Patkai, and Naga hills.",
-          "paragraphTranslation": "पर्वतों और नदियों से सुशोभित ये राज्य पूर्वी हिमालय की श्रेणियों में पटकाई और नागा पर्वत क्षेत्र में स्थित हैं।",
+          "sanskrit": "एषां प्रदेशानां प्राकृतिकं सौन्दर्यं, समुदायानां विविधता, भौगोलिक-पर्यावरणीयं वैचित्र्यं च देशस्य अन्येभ्यः भागेभ्यः पृथक् अस्ति ।",
+          "meaning": "The natural beauty, diversity of communities, and geographic-environmental uniqueness of these regions set them apart from the other parts of the country.",
+          "paragraphTranslation": "इन क्षेत्रों का प्राकृतिक सौंदर्य, समुदायों (जनजातियों) की विविधता और भौगोलिक-पर्यावरणीय विशेषताएँ देश के अन्य भागों से बिलकुल अलग हैं।",
+          "words": [
+            "एषां",
+            "प्रदेशानां",
+            "प्राकृतिकं",
+            "सौन्दर्यं",
+            "समुदायानां",
+            "विविधता",
+            "भौगोलिक",
+            "पर्यावरणीयं",
+            "वैचित्र्यं",
+            "पृथक्",
+            "अस्ति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "पर्वतैः नदीभिः च सुशोभितानि एतानि राज्यानि पूर्वहिमालय-श्रेणिषु पत्काई-नागपर्वतप्रदेशे च स्थितानि ।",
+          "meaning": "Adorned with mountains and rivers, these states are located in the eastern Himalayan ranges, Patkai, and Naga hill regions.",
+          "paragraphTranslation": "पर्वतों और नदियों से सुशोभित ये राज्य पूर्वी हिमालय की श्रेणियों, पत्काई और नागा पर्वत क्षेत्रों में स्थित हैं।",
           "words": [
             "पर्वतैः",
             "नदीभिः",
-            "च",
             "सुशोभितानि",
-            "एतानि",
-            "राज्यानि",
-            "पूर्वहिमालय",
-            "श्रेणिषु",
-            "पत्काई",
-            "नागपर्वत",
-            "प्रदेशे",
-            "च",
+            "पूर्वहिमालय-श्रेणिषु",
+            "पत्काई-नागपर्वतप्रदेशे",
             "स्थितानि"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "एतेषु बराक-ब्रह्मपुत्रादि-नद्यः प्रवहन्ति एवञ्च पर्वतश्रेण्यः, पीठस्थलानि, निम्नपर्वताः, उपत्यकाः च अस्मिन् भू-भागे भू-वैविध्यं धारयन्ति।",
-          "meaning": "Rivers like Barak and Brahmaputra flow through them, and mountain ranges, plateaus, and valleys define their topographical diversity.",
-          "paragraphTranslation": "इनमें बराक, ब्रह्मपुत्र आदि नदियां बहती हैं और पर्वत श्रृंखलाएं, पठार व घाटियां भूमि की विविधता को धारण करती हैं।",
+          "sanskrit": "एतेषु बराक-ब्रह्मपुत्रादि-नद्यः प्रवहन्ति एवञ्च पर्वतश्रेण्यः, पीठस्थलानि, निम्नपर्वताः, उपत्यकाः च अस्मिन् भू-भागे भू-वैविध्यं धारयन्ति ।",
+          "meaning": "Rivers like Barak and Brahmaputra flow through them, and mountain ranges, plateaus, low hills, and valleys give this terrain immense land diversity.",
+          "paragraphTranslation": "इनमें बराक और ब्रह्मपुत्र जैसी नदियाँ बहती हैं, और पर्वत शृंखलाएँ, पठार, निचली पहाड़ियाँ तथा घाटियाँ इस भू-भाग को अद्वितीय भौगोलिक विविधता प्रदान करती हैं।",
           "words": [
-            "एतेषु",
             "बराक",
             "ब्रह्मपुत्रादि",
             "नद्यः",
             "प्रवहन्ति",
-            "एवञ्च",
             "पर्वतश्रेण्यः",
             "पीठस्थलानि",
             "निम्नपर्वताः",
             "उपत्यकाः",
-            "च",
-            "अस्मिन्",
-            "भू",
-            "भागे",
-            "भू",
-            "वैविध्यं",
+            "भू-वैविध्यं",
             "धारयन्ति"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "प्राकृतिक-सम्पदाभिः समृद्धः अयं प्रदेशः पूर्व-दक्षिणपूर्व-एशियायाः द्वारम् अस्ति। तानि राज्यानि अष्टभ्रातृभगिन्यः इति नाम्ना प्रसिद्धानि सन्ति।",
-          "meaning": "Rich in natural wealth, this region serves as the gateway to East and Southeast Asia, famously hailed as the Eight Brothers and Sisters.",
-          "paragraphTranslation": "प्राकृतिक संपदा से समृद्ध यह क्षेत्र पूर्व और दक्षिण-पूर्व एशिया का द्वार है, तथा आठ भाई-बहन नाम से प्रसिद्ध है।",
+          "sanskrit": "प्राकृतिक-सम्पदाभिः समृद्धः अयं प्रदेशः पूर्व-दक्षिणपूर्व-एशियायाः द्वारम् अस्ति ।",
+          "meaning": "Rich in natural resources, this region is the gateway to East and South-East Asia.",
+          "paragraphTranslation": "प्राकृतिक संपदा से समृद्ध यह क्षेत्र पूर्व और दक्षिण-पूर्व एशिया का प्रवेश द्वार है।",
           "words": [
-            "प्राकृतिक",
-            "सम्पदाभिः",
+            "प्राकृतिक-सम्पदाभिः",
             "समृद्धः",
             "अयं",
             "प्रदेशः",
-            "पूर्व",
-            "दक्षिणपूर्व",
-            "एशियायाः",
+            "पूर्व-दक्षिणपूर्व-एशियायाः",
             "द्वारम्",
-            "अस्ति",
-            "तानि",
-            "राज्यानि",
-            "अष्टभ्रातृभगिन्यः",
-            "इति",
-            "नाम्ना",
-            "प्रसिद्धानि",
-            "सन्ति"
-          ],
-          "kind": "sentence"
-        },
-        {
-          "sanskrit": "अध्यापिका– शोभनं स्वरे! अपि यूयं जानीथ यद् एतेषु राज्येषु अष्टराज्यानाम् एकः समवायोऽस्ति यः सप्तभगिन्यः एकः भ्राता च इति नाम्ना प्रथितः अस्ति?",
-          "meaning": "Teacher– Well said, Swara! Do you all know that among these, there is a union of eight states known as Seven Sisters and One Brother?",
-          "paragraphTranslation": "अध्यापिका– बहुत अच्छे स्वरा! क्या तुम सब जानते हो कि इनमें आठ राज्यों का एक समूह है जो 'सात बहनें और एक भाई' नाम से प्रसिद्ध है?",
-          "words": [
-            "अध्यापिका–",
-            "शोभनं",
-            "स्वरे",
-            "अपि",
-            "यूयं",
-            "जानीथ",
-            "यद्",
-            "एतेषु",
-            "राज्येषु",
-            "अष्टराज्यानाम्",
-            "एकः",
-            "समवायोऽस्ति",
-            "यः",
-            "सप्तभगिन्यः",
-            "एकः",
-            "भ्राता",
-            "च",
-            "इति",
-            "नाम्ना",
-            "प्रथितः",
             "अस्ति"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "श्रीशः – इमानि राज्यानि सप्तभगिन्यः एकः भ्राता च इति किमर्थं कथ्यन्ते? अध्यापिका– सामाजिक-सांस्कृतिक-परिदृश्यानां साम्याद् भौगोलिकवैशिष्ट्यात् च इमानि उक्तोपाधिना प्रथितानि।",
-          "meaning": "Shrisha– Why are these called Seven Sisters and One Brother? Teacher– Due to commonalities in socio-cultural fabric and geographical traits, they earned this title.",
-          "paragraphTranslation": "श्रीश– इन्हें सात बहनें और एक भाई क्यों कहते हैं? अध्यापिका– सामाजिक-सांस्कृतिक समानता और भौगोलिक विशिष्टता के कारण ये इस उपाधि से प्रसिद्ध हैं।",
+          "sanskrit": "तानि राज्यानि अष्टभ्रातृभगिन्यः इति नाम्ना प्रसिद्धानि सन्ति । तानि एव ‘अष्टभगिन्यः’ अथवा ‘सप्तभगिन्यः एकः भ्राता च’ इति कथ्यन्ते ।",
+          "meaning": "These states are famously known as the eight brothers and sisters. They are called 'Eight Sisters' or 'Seven Sisters and One Brother'.",
+          "paragraphTranslation": "ये राज्य 'आठ भाई-बहन' के नाम से प्रसिद्ध हैं। इन्हें ही 'अष्टभगिन्यः' (आठ बहनें) अथवा 'सात बहनें और एक भाई' कहा जाता है।",
           "words": [
-            "श्रीशः",
-            "–",
-            "इमानि",
-            "राज्यानि",
+            "अष्टभ्रातृभगिन्यः",
+            "नाम्ना",
+            "प्रसिद्धानि",
+            "अष्टभगिन्यः",
             "सप्तभगिन्यः",
             "एकः",
-            "भ्राता",
-            "च",
-            "इति",
-            "किमर्थं",
-            "कथ्यन्ते",
-            "अध्यापिका–",
-            "सामाजिक",
-            "सांस्कृतिक",
-            "परिदृश्यानां",
-            "साम्याद्",
-            "भौगोलिकवैशिष्ट्यात्",
-            "च",
-            "इमानि",
-            "उक्तोपाधिना",
-            "प्रथितानि"
+            "भ्राता"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "अद्वयं मत्रयं चैव न-त्रि-युक्तं तथाद्वयम्। सप्तराज्यसमूहोऽयं भगिनीसप्तकं मतम्॥ तेन युक्तो लघुः भ्राता सिक्किमः इति विश्रुतः। पश्यत कोणमैशान्यं भारतस्य मनोहरम्॥",
-          "meaning": "Mnemonic Shloka: Two starting with 'A' (Arunachal, Assam), three with 'Ma' (Manipur, Mizoram, Meghalaya), one each with 'Na' (Nagaland) and 'Tri' (Tripura). This cluster of seven is the Seven Sisters. Linked with them is the younger brother Sikkim. Behold this charming northeastern corner of India!",
-          "paragraphTranslation": "स्मरण-श्लोक: 'अ' से दो, 'म' से तीन, 'न' और 'त्रि' से एक-एक—यह सात राज्यों का समूह भगिनीसप्तक है। इसके साथ छोटा भाई सिक्किम जुड़ा है। भारत के सुंदर उत्तर-पूर्वी कोने को देखो।",
+          "sanskrit": "भागः २: कक्षा-संवादः भगिनीसप्तक-श्लोकः च (पृष्ठ ८६)",
+          "meaning": "Part 2: Classroom Dialogue & Mnemonic Verse (Page 86)",
+          "paragraphTranslation": "भाग २: कक्षा का संवाद और भगिनीसप्तक का प्रसिद्ध श्लोक (पृष्ठ ८६)",
           "words": [
-            "अद्वयं",
-            "मत्रयं",
-            "चैव",
-            "न",
-            "त्रि",
-            "युक्तं",
-            "तथाद्वयम्",
-            "सप्तराज्यसमूहोऽयं",
-            "भगिनीसप्तकं",
-            "मतम्",
-            "तेन",
-            "युक्तो",
-            "लघुः",
-            "भ्राता",
-            "सिक्किमः",
-            "इति",
-            "विश्रुतः",
-            "पश्यत",
-            "कोणमैशान्यं",
-            "भारतस्य",
-            "मनोहरम्"
+            "भागः",
+            "कक्षा-संवादः",
+            "भगिनीसप्तक",
+            "श्लोकः"
           ],
-          "kind": "verse"
+          "kind": "chapter-header"
         },
         {
-          "sanskrit": "भ्रात्रा सह इमाः सप्तभगिन्यः स्वीये प्राचीनेतिहासे प्रायः स्वाधीनाः एव दृष्टाः। न केनापि शासकेण इमाः स्वायत्तीकृताः।",
-          "meaning": "Along with their brother, these seven sisters have historically remained independent. No foreign conqueror was ever able to subjugate them.",
-          "paragraphTranslation": "भाई के साथ ये सात बहनें अपने प्राचीन इतिहास में सदैव स्वतंत्र ही रहीं। किसी भी शासक ने इन्हें अपने अधीन नहीं किया।",
+          "sanskrit": "अध्यापिका– सुप्रभातं छात्राः ।",
+          "meaning": "Teacher: Good morning, students!",
+          "paragraphTranslation": "अध्यापिका: सुप्रभातम बच्चों!",
           "words": [
-            "भ्रात्रा",
-            "सह",
-            "इमाः",
-            "सप्तभगिन्यः",
-            "स्वीये",
-            "प्राचीनेतिहासे",
-            "प्रायः",
-            "स्वाधीनाः",
-            "एव",
-            "दृष्टाः",
-            "न",
-            "केनापि",
-            "शासकेण",
-            "इमाः",
-            "स्वायत्तीकृताः"
+            "अध्यापिका",
+            "सुप्रभातं",
+            "छात्राः"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "गारो-खासी-नागा-मिजो-लेप्चा-प्रभृतयः बहवः जनजातीयाः अत्र निवसन्ति। शरीरेण ऊर्जस्विनः एतत्प्रादेशिकाः बहुभाषाभिः समन्विताः, पर्वपरम्पराभिः परिपूरिताः सन्ति।",
-          "meaning": "Numerous vibrant tribes like Garo, Khasi, Naga, Mizo, and Lepcha live here. Energetic in physique, they speak diverse tongues and cherish rich festive customs.",
-          "paragraphTranslation": "गारो, खासी, नागा, मिजो, लेप्चा आदि अनेक जनजातियाँ यहाँ रहती हैं। ऊर्जावान निवासी बहुभाषी और पर्व-परंपराओं से परिपूर्ण हैं।",
+          "sanskrit": "छात्राः – सुप्रभातम आचार्ये।",
+          "meaning": "Students: Good morning, teacher!",
+          "paragraphTranslation": "छात्र: सुप्रभातम आचार्या जी!",
           "words": [
-            "गारो",
-            "खासी",
-            "नागा",
-            "मिजो",
-            "लेप्चा",
-            "प्रभृतयः",
-            "बहवः",
-            "जनजातीयाः",
-            "अत्र",
-            "निवसन्ति",
-            "शरीरेण",
-            "ऊर्जस्विनः",
-            "एतत्प्रादेशिकाः",
-            "बहुभाषाभिः",
-            "समन्विताः",
-            "पर्वपरम्पराभिः",
-            "परिपूरिताः",
-            "सन्ति"
+            "छात्राः",
+            "सुप्रभातम",
+            "आचार्ये"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "प्रदेशेऽस्मिन् हस्तशिल्पानां बाहुल्यं वर्तते। आवस्त्राभूषणेभ्यः गृहनिर्माणपर्यन्तं प्रायः वंशवृक्षनिर्मितानां वस्तूनां उपयोगः क्रियते। साम्प्रतं वंशोद्योगोऽयम् अन्ताराष्ट्रियख्यातिम् अवाप्तोऽस्ति।",
-          "meaning": "Handicrafts thrive across this land. From personal garments and ornaments to architecture, bamboo materials are utilized. Today, this bamboo industry enjoys global fame.",
-          "paragraphTranslation": "इस क्षेत्र में हस्तशिल्प की प्रचुरता है। वस्त्रों-आभूषणों से लेकर घर निर्माण तक बाँस की बनी वस्तुओं का उपयोग होता है, और यह बाँस उद्योग अंतरराष्ट्रीय ख्याति प्राप्त कर चुका है।",
+          "sanskrit": "अध्यापिका– शुभाशयाः । अद्य किं पठनीयम्?",
+          "meaning": "Teacher: Best wishes. What should we study today?",
+          "paragraphTranslation": "अध्यापिका: शुभकामनाएँ! आज क्या पढ़ना है?",
           "words": [
-            "प्रदेशेऽस्मिन्",
-            "हस्तशिल्पानां",
-            "बाहुल्यं",
-            "वर्तते",
-            "आवस्त्राभूषणेभ्यः",
-            "गृहनिर्माणपर्यन्तं",
-            "प्रायः",
-            "वंशवृक्षनिर्मितानां",
-            "वस्तूनां",
-            "उपयोगः",
-            "क्रियते",
-            "साम्प्रतं",
-            "वंशोद्योगोऽयम्",
-            "अन्ताराष्ट्रियख्यातिम्",
-            "अवाप्तोऽस्ति"
+            "अध्यापिका",
+            "शुभाशयाः",
+            "अद्य",
+            "किं",
+            "पठनीयम्"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "अध्यापिका– एतानि राज्यानि तु भ्रमणार्थं स्वर्गसदृशानि सन्ति। अतः अवश्यं चलामः!",
-          "meaning": "Teacher– These states are verily heavenly like paradise for travel and exploration. Therefore, we must certainly embark on a journey!",
-          "paragraphTranslation": "अध्यापिका– ये राज्य पर्यटन के लिए स्वर्ग के समान हैं। अतः हमें अवश्य चलना चाहिए!",
+          "sanskrit": "छात्राः – वयं सर्वे स्वदेशस्य राज्यानां विषये ज्ञातुमिच्छामः ।",
+          "meaning": "Students: All of us want to know about the states of our country.",
+          "paragraphTranslation": "छात्र: हम सब अपने देश के राज्यों के विषय में जानना चाहते हैं।",
           "words": [
-            "अध्यापिका–",
-            "एतानि",
-            "राज्यानि",
-            "तु",
-            "भ्रमणार्थं",
-            "स्वर्गसदृशानि",
-            "सन्ति",
-            "अतः",
-            "अवश्यं",
-            "चलामः"
+            "छात्राः",
+            "वयं",
+            "सर्वे",
+            "स्वदेशस्य",
+            "राज्यानां",
+            "विषये",
+            "ज्ञातुमिच्छामः"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "ऐशान्यम् (पूर्वोत्तरदिशा)",
-          "meaning": "Northeast direction / Ishanya angle",
-          "paragraphTranslation": "पूर्वोत्तर दिशा",
+          "sanskrit": "अध्यापिका– शोभनम्। वदत, अस्माकं देशे कति राज्यानि सन्ति ?",
+          "meaning": "Teacher: Very good. Tell me, how many states are there in our country?",
+          "paragraphTranslation": "अध्यापिका: बहुत अच्छा। बताओ, हमारे देश में कितने राज्य हैं?",
           "words": [
-            "ऐशान्यम्",
-            "पूर्वोत्तरदिशा"
-          ],
-          "kind": "word-gloss"
-        },
-        {
-          "sanskrit": "समवायः (समाहारः / समूहः)",
-          "meaning": "Union / Conglomeration / Group",
-          "paragraphTranslation": "राज्यों का समूह / समाहार",
-          "words": [
-            "समवायः",
-            "समाहारः"
-          ],
-          "kind": "word-gloss"
-        },
-        {
-          "sanskrit": "स्वाधीनाः (स्वतन्त्राः)",
-          "meaning": "Self-governing / Sovereign / Independent",
-          "paragraphTranslation": "स्वाधीन / स्वतंत्र",
-          "words": [
-            "स्वाधीनाः",
-            "स्वतन्त्राः"
-          ],
-          "kind": "word-gloss"
-        },
-        {
-          "sanskrit": "वंशवृक्षाणाम् (बाँस के वृक्षों के)",
-          "meaning": "Of bamboo trees / Bamboo groves",
-          "paragraphTranslation": "बाँस के पेड़ों के",
-          "words": [
-            "वंशवृक्षाणाम्",
-            "वंशपादपानाम्"
-          ],
-          "kind": "word-gloss"
-        },
-        {
-          "sanskrit": "प्राचुर्यम् (बाहुल्यम् / अधिकता)",
-          "meaning": "Abundance / Profusion / Plenitude",
-          "paragraphTranslation": "प्रचुरता / अधिकता",
-          "words": [
-            "प्राचुर्यम्",
-            "बाहुल्यम्"
-          ],
-          "kind": "word-gloss"
-        },
-        {
-          "sanskrit": "१. (क) अस्माकं देशे कति राज्यानि सन्ति?",
-          "meaning": "How many states are in our country? -> अष्टाविंशतिः (२८)",
-          "paragraphTranslation": "हमारे देश में कितने राज्य हैं?",
-          "words": [
-            "क",
+            "अध्यापिका",
+            "शोभनम्",
+            "वदत",
             "अस्माकं",
             "देशे",
             "कति",
             "राज्यानि",
             "सन्ति"
           ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "अष्टाविंशतिः (२८)",
-          "hindi_gloss": "अट्ठाइस राज्य"
+          "kind": null
         },
         {
-          "sanskrit": "१. (ख) प्राचीनेतिहासे काः स्वाधीनाः आसन्?",
-          "meaning": "Who were sovereign in ancient history? -> सप्तभगिन्यः",
-          "paragraphTranslation": "प्राचीन इतिहास में कौन स्वतंत्र थीं?",
+          "sanskrit": "स्वरा – महोदये! मम भगिनी कथयति यत् अस्माकं देशे अष्टाविंशतिः राज्यानि सन्ति इति । एतद् अतिरिक्त अष्टकेन्द्रशासितप्रदेशाः अपि सन्ति ।",
+          "meaning": "Swara: Ma'am! My sister says that there are twenty-eight states in our country. Besides these, there are 8 Union Territories.",
+          "paragraphTranslation": "स्वरा: महोदया! मेरी बहन कहती है कि हमारे देश में 28 राज्य हैं। इसके अतिरिक्त 8 केंद्र शासित प्रदेश भी हैं।",
           "words": [
-            "ख",
-            "प्राचीनेतिहासे",
-            "काः",
-            "स्वाधीनाः",
-            "आसन्"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "सप्तभगिन्यः (भगिनीसप्तकम्)",
-          "hindi_gloss": "सात बहनें"
-        },
-        {
-          "sanskrit": "१. (ङ) सप्तभगिनी-प्रदेशे कः उद्योगः सर्वप्रमुखः?",
-          "meaning": "Which industry is most prominent? -> वंशोद्योगः",
-          "paragraphTranslation": "सप्तभगिनी क्षेत्र में कौन-सा उद्योग प्रमुख है?",
-          "words": [
-            "ङ",
-            "सप्तभगिनी-प्रदेशे",
-            "कः",
-            "उद्योगः",
-            "सर्वप्रमुखः"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "वंशोद्योगः (बाँस का उद्योग)",
-          "hindi_gloss": "बाँस उद्योग"
-        },
-        {
-          "sanskrit": "२. (क) भ्रातृसहित-भगिनीसप्तके कानि राज्यानि सन्ति?",
-          "meaning": "Which states are in the Seven Sisters and Brother Sikkim?",
-          "paragraphTranslation": "सात बहनों और भाई में कौन-से राज्य हैं?",
-          "words": [
-            "क",
-            "भ्रातृसहित-भगिनीसप्तके",
-            "कानि",
+            "स्वरा",
+            "महोदये",
+            "मम",
+            "भगिनी",
+            "कथयति",
+            "अष्टाविंशतिः",
             "राज्यानि",
-            "सन्ति"
+            "अष्टकेन्द्रशासितप्रदेशाः"
           ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "अरुणाचलप्रदेशः, असमः, मणिपुरम्, मिजोरमः, मेघालयः, नागालैण्डं, त्रिपुरा, भ्राता सिक्किमः च।",
-          "hindi_gloss": "अरुणाचल, असम, मणिपुर, मिजोरम, मेघालय, नागालैंड, त्रिपुरा और सिक्किम।"
+          "kind": null
         },
         {
-          "sanskrit": "३. प्रकृति-प्रत्ययविभागः – ज्ञातुम् = ज्ञा + तुमुन्; विश्रुतः = वि + श्रु + क्त; अतिरिच्य = अति + रिच् + ल्यप्; पठनीयम् = पठ् + अनीयर्",
-          "meaning": "Grammar roots and suffixes: Jnatum (Tumun), Vishrutah (Kta), Atirichya (Lyap), Pathaniyam (Aniyar).",
-          "paragraphTranslation": "प्रकृति-प्रत्यय विभाग।",
+          "sanskrit": "अध्यापिका– शोभनं स्वरे! सम्यक् जानाति तव भगिनी । भवतु, अपि यूयं जानीथ यद् एतेषु राज्येषु अष्टराज्यानाम एकः समवायोऽस्ति यः 'सप्तभगिन्यः एकः भ्राता च' इति नाम्ना प्रथितः अस्ति।",
+          "meaning": "Teacher: Well said, Swara! Your sister knows correctly. By the way, do you all know that among these states, there is a cluster of eight states which is famous by the name 'Seven Sisters and One Brother'?",
+          "paragraphTranslation": "अध्यापिका: बहुत अच्छे स्वरा! तुम्हारी बहन बिल्कुल सही जानती है। क्या आप सब जानते हैं कि इन राज्यों में आठ राज्यों का एक समूह है, जो 'सात बहनें और एक भाई' के नाम से प्रसिद्ध है?",
+          "words": [
+            "अध्यापिका",
+            "शोभनं",
+            "सम्यक्",
+            "जानाति",
+            "अष्टराज्यानाम्",
+            "समवायः",
+            "सप्तभगिन्यः",
+            "एकः",
+            "भ्राता",
+            "प्रथितः"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "सर्वे छात्राः – (परस्परं साश्चर्यं पश्यन्तः) सप्तभगिन्यः एकः भ्राता च !",
+          "meaning": "All Students: (Looking at each other with surprise) Seven Sisters and One Brother!",
+          "paragraphTranslation": "सभी छात्र: (एक-दूसरे को आश्चर्य से देखते हुए) सात बहनें और एक भाई!",
+          "words": [
+            "सर्वे",
+            "छात्राः",
+            "साश्चर्यं",
+            "पश्यन्तः",
+            "सप्तभगिन्यः",
+            "भ्राता"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "श्रीशः – इमानि राज्यानि सप्तभगिन्यः एकः भ्राता च इति किमर्थं कथ्यन्ते ?",
+          "meaning": "Shrisha: Why are these states called Seven Sisters and One Brother?",
+          "paragraphTranslation": "श्रीश: इन राज्यों को 'सात बहनें और एक भाई' किसलिए कहा जाता है?",
+          "words": [
+            "श्रीशः",
+            "इमानि",
+            "राज्यानि",
+            "सप्तभगिन्यः",
+            "किमर्थं",
+            "कथ्यन्ते"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अध्यापिका– प्रयोगोऽयं प्रतीकात्मको वर्तते। कदाचित सामाजिक-सांस्कृतिक-परिदृश्यानां साम्याद् भौगोलिकवैशिष्ट्यात् च इमानि उक्तोपाधिना प्रथितानि।",
+          "meaning": "Teacher: This usage is symbolic. Perhaps, due to the similarities in social and cultural landscapes as well as geographical features, they are known by this title.",
+          "paragraphTranslation": "अध्यापिका: यह नाम प्रतीकात्मक (सांकेतिक) है। संभवतः सामाजिक और सांस्कृतिक परिदृश्यों की समानता तथा भौगोलिक विशिष्टता के कारण ये इस उपाधि से प्रसिद्ध हैं।",
+          "words": [
+            "प्रयोगः",
+            "प्रतीकात्मकः",
+            "सामाजिक",
+            "सांस्कृतिक",
+            "साम्याद्",
+            "भौगोलिकवैशिष्ट्यात्",
+            "प्रथितानि"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "सर्वे छात्राः – अहो! अत्यन्तं सुखकरी वार्ता । श्रावयत तावत् यत् कानि तानि राज्यानि इति ?",
+          "meaning": "All Students: Oh! That is highly delightful news. Please tell us which states are those?",
+          "paragraphTranslation": "सभी छात्र: अरे वाह! यह तो बहुत सुखद बात है। कृपया सुनाइए कि वे राज्य कौन-से हैं?",
+          "words": [
+            "अहो",
+            "अत्यन्तं",
+            "सुखकरी",
+            "वार्ता",
+            "श्रावयत",
+            "राज्यानि"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अद्वयं मत्रयं चैव न-त्रि-युक्तं तथाद्वयम्। सप्तराज्यसमूहोऽयं भगिनीसप्तकं मतम्॥ तेन युक्तो लघुः भ्राता सिक्किमः इति विश्रुतः। पश्यत कोणमैशान्यं भारतस्य मनोहरम्॥",
+          "meaning": "Verse: Two beginning with 'A' (Arunachal, Assam), three with 'Ma' (Manipur, Mizoram, Meghalaya), and two with 'Na' (Nagaland) and 'Tri' (Tripura)—this group of seven states is considered the Seven Sisters. Associated with them is the younger brother known as Sikkim. Behold this charming Northeast corner of India.",
+          "paragraphTranslation": "श्लोक: 'अ' से दो (अरुणाचल, असम), 'म' से तीन (मणिपुर, मिजोरम, मेघालय), तथा 'न' (नागालैंड) और 'त्रि' (त्रिपुरा) से युक्त दो राज्य—यह सात राज्यों का समूह 'भगिनीसप्तक' कहलाता है। इनके साथ जुड़ा छोटा भाई 'सिक्किम' नाम से प्रसिद्ध है। भारत के मनोहर ईशान कोण को देखो।",
+          "words": [
+            "अद्वयं",
+            "मत्रयं",
+            "न-त्रि-युक्तं",
+            "सप्तराज्यसमूहः",
+            "भगिनीसप्तकं",
+            "लघुः",
+            "भ्राता",
+            "सिक्किमः",
+            "विश्रुतः",
+            "कोणमैशान्यं",
+            "मनोहरम्"
+          ],
+          "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "भागः ३: स्वाधीनता-इतिहासः, जनजातयः, वंशोद्योगः च (पृष्ठ ८७)",
+          "meaning": "Part 3: Sovereign History, Tribal Communities, and Bamboo Industry (Page 87)",
+          "paragraphTranslation": "भाग ३: स्वाधीन इतिहास, जनजातीय संस्कृति एवं बाँस उद्योग (पृष्ठ ८७)",
+          "words": [
+            "भागः",
+            "स्वाधीनता-इतिहासः",
+            "जनजातयः",
+            "वंशोद्योगः"
+          ],
+          "kind": "chapter-header"
+        },
+        {
+          "sanskrit": "इत्थं भ्रात्रा सिक्किमेन सह भगिनीसप्तके इमानि राज्यानि सन्ति – अरुणाचलप्रदेशः, असमः, मणिपुरं, मिजोरमः, मेघालयः, नागालैण्डं, त्रिपुरा चेति । यद्यपि क्षेत्रपरिमाणैः इमानि लघूनि वर्तन्ते तथापि गुणगौरवदृष्ट्या बृहत्तराणि प्रतीयन्ते ।",
+          "meaning": "Thus, along with the brother Sikkim, these states are included in the Seven Sisters—Arunachal Pradesh, Assam, Manipur, Mizoram, Meghalaya, Nagaland, and Tripura. Although they are small in terms of land area, they appear vast and highly significant due to their virtues and glory.",
+          "paragraphTranslation": "इस प्रकार भाई सिक्किम के साथ सात बहनों के इस समूह में ये राज्य हैं—अरुणाचल प्रदेश, असम, मणिपुर, मिजोरम, मेघालय, नागालैंड और त्रिपुरा। यद्यपि क्षेत्रफल की दृष्टि से ये छोटे हैं, फिर भी अपने गुणों और गौरव के कारण बहुत बड़े (महत्वपूर्ण) प्रतीत होते हैं।",
+          "words": [
+            "सिक्किमेन",
+            "सह",
+            "भगिनीसप्तके",
+            "क्षेत्रपरिमाणैः",
+            "लघूनि",
+            "गुणगौरवदृष्ट्या",
+            "बृहत्तराणि",
+            "प्रतीयन्ते"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "सर्वे छात्राः – कथं मान्ये !",
+          "meaning": "All Students: How is that so, Ma'am?",
+          "paragraphTranslation": "सभी छात्र: वह कैसे, महोदया?",
+          "words": [
+            "सर्वे",
+            "छात्राः",
+            "कथं",
+            "मान्ये"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अध्यापिका– भ्रात्रा सह इमाः सप्तभगिन्यः स्वीये प्राचीनेतिहासे प्रायः स्वाधीनाः एव दृष्टाः । न केनापि शासकेन इमाः स्वायत्तीकृताः । विविध-संस्कृतिविशिष्टायां भारतभूमौ एतासां भ्रातृ-भगिनीनां संस्कृतिः महत्त्वाधायिनी वर्तते।",
+          "meaning": "Teacher: Along with their brother, these seven sisters have mostly been independent throughout their ancient history. No ruler could ever subjugate them. On Indian soil blessed with diverse cultures, the heritage of these brothers and sisters holds immense importance.",
+          "paragraphTranslation": "अध्यापिका: अपने भाई (सिक्किम) के साथ ये सात बहनें अपने प्राचीन इतिहास में प्रायः स्वतंत्र ही देखी गई हैं। किसी भी विदेशी शासक ने इन्हें अपने अधीन नहीं किया। विभिन्न संस्कृतियों से युक्त भारत भूमि पर इन भाई-बहनों के राज्यों की संस्कृति बहुत महत्वपूर्ण है।",
+          "words": [
+            "प्राचीनेतिहासे",
+            "स्वाधीनाः",
+            "शासकेन",
+            "स्वायत्तीकृताः",
+            "भारतभूमौ",
+            "संस्कृतिः",
+            "महत्त्वाधायिनी"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "स्वरा – अन्यत्किमपि वैशिष्ट्यमस्ति एतासाम्?",
+          "meaning": "Swara: Is there any other special feature about them?",
+          "paragraphTranslation": "स्वरा: क्या इनकी कोई और भी विशेषता है?",
+          "words": [
+            "स्वरा",
+            "अन्यत्किमपि",
+            "वैशिष्ट्यम्",
+            "अस्ति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अध्यापिका– नूनम अस्ति एव । पर्वत-वृक्ष-पुष्प-प्रभृतिभिः प्राकृतिकसम्पद्भिः सुसमृद्धानि सन्ति इमानि राज्यानि । भारतवृक्षे पुष्प-स्तबकसदृशानि विराजन्ते एतानि ।",
+          "meaning": "Teacher: Yes, absolutely. These states are highly enriched with natural resources like mountains, trees, and flowers. On the tree of India, they flourish like bouquets of flowers.",
+          "paragraphTranslation": "अध्यापिका: हाँ, निश्चित रूप से है। ये राज्य पर्वत, वृक्ष, पुष्प आदि प्राकृतिक संपदाओं से अत्यंत समृद्ध हैं। भारत रूपी वृक्ष पर ये राज्य फूलों के गुच्छे के समान सुशोभित होते हैं।",
+          "words": [
+            "प्राकृतिकसम्पद्भिः",
+            "सुसमृद्धानि",
+            "भारतवृक्षे",
+            "पुष्प-स्तबकसदृशानि",
+            "विराजन्ते"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अस्ति तावदेतेषां विषये किञ्चिद् वैशिष्ट्यमपि कथनीयम्। सावहितमनसा शृणुत। जनजातिबहुलप्रदेशोऽयम्। गारो-खासी-नागा-मिजो-लेप्चा-प्रभृतयः बहवः जनजातीयाः अत्र निवसन्ति । शरीरेण ऊर्जस्विनः एतत्प्रादेशिकाः बहुभाषाभिः समन्विताः, पर्वपरम्पराभिः परिपूरिताः, स्वलीला-कलासु च निष्णाताः सन्ति ।",
+          "meaning": "Listen with an attentive mind. This is a tribal-dominated region. Many tribes like Garo, Khasi, Naga, Mizo, and Lepcha reside here. The people are physically energetic, speak multiple languages, celebrate rich festivals, and excel in their own arts and traditions.",
+          "paragraphTranslation": "ध्यानपूर्वक सुनो। यह जनजातियों से बहुल प्रदेश है। यहाँ गारो, खासी, नागा, मिजो, लेप्चा आदि बहुत सी जनजातियाँ रहती हैं। शरीर से ऊर्जावान यहाँ के निवासी अनेक भाषाओं से युक्त, पर्व-परंपराओं से भरपूर और अपनी कलाओं में निपुण हैं।",
+          "words": [
+            "जनजातिबहुलप्रदेशः",
+            "गारो",
+            "खासी",
+            "नागा",
+            "मिजो",
+            "लेप्चा",
+            "ऊर्जस्विनः",
+            "निष्णाताः"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "मालती – महोदये! तत्र तु वंशवृक्षाणां वनानि अपि प्राप्यन्ते ?",
+          "meaning": "Malati: Ma'am! Are bamboo forests also found there?",
+          "paragraphTranslation": "मालती: महोदया! क्या वहाँ बाँस के वृक्षों (वंशवृक्ष) के वन भी पाए जाते हैं?",
+          "words": [
+            "मालती",
+            "वंशवृक्षाणां",
+            "वनानि",
+            "प्राप्यन्ते"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अध्यापिका– आम्। प्रदेशेऽस्मिन् हस्तशिल्पानां बाहुल्यं वर्तते। आवस्त्राभूषणेभ्यः गृहनिर्माणपर्यन्तं प्रायः वंशवृक्षनिर्मितानां वस्तूनां उपयोगः क्रियते। यतो हि अत्र वंशवृक्षाणां प्राचूर्यं विद्यते। साम्प्रतं वंशोद्योगोऽयम् अन्ताराष्ट्रियख्यातिम अवाप्तोऽस्ति ।",
+          "meaning": "Teacher: Yes! Handloom and handicrafts are highly prevalent in this region. From clothing and ornaments to house construction, items made of bamboo are widely used because there is an abundance of bamboo trees here. Currently, this bamboo industry has achieved international renown.",
+          "paragraphTranslation": "अध्यापिका: हाँ! इस प्रदेश में हस्तशिल्प (हाथ की कारीगरी) की प्रचुरता है। वस्त्रों और आभूषणों से लेकर घर बनाने तक में यहाँ प्रायः बाँस से बनी वस्तुओं का ही उपयोग किया जाता है, क्योंकि यहाँ बाँस के वृक्षों की प्रचुरता है। आज यहाँ का बाँस उद्योग अंतरराष्ट्रीय प्रसिद्धि प्राप्त कर चुका है।",
+          "words": [
+            "हस्तशिल्पानां",
+            "बाहुल्यं",
+            "वंशवृक्षनिर्मितानां",
+            "प्राचूर्यं",
+            "वंशोद्योगः",
+            "अन्ताराष्ट्रियख्यातिम्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "शब्दार्थाः (Complete Chapter Vocabulary & Word Analysis — Pages 88–89)",
+          "meaning": "Vocabulary: Core Sanskrit Words, Synonyms, Hindi & English Meanings",
+          "paragraphTranslation": "शब्दार्थाः — पाठ के समस्त प्रमुख पदों के अर्थ (पृष्ठ ८८–८९)",
+          "words": [
+            "शब्दार्थाः",
+            "संस्कृत",
+            "हिन्दी",
+            "आङ्ग्ल"
+          ],
+          "kind": "glossary-header"
+        },
+        {
+          "sanskrit": "पूर्वोत्तरभागे — उत्तर-पूर्व दिशा में (in the North-Eastern part)",
+          "meaning": "pūrvottarabhāge: in the north-eastern geographic quadrant of India",
+          "paragraphTranslation": "पूर्वोत्तरभागे: उत्तर और पूर्व दिशा के मध्य क्षेत्र में",
+          "words": [
+            "पूर्वोत्तरभागे",
+            "उत्तर-पूर्व"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "वैचित्र्यम् — विचित्रता या अनोखापन (uniqueness / distinctiveness)",
+          "meaning": "vaicitryam: extraordinary uniqueness or distinction",
+          "paragraphTranslation": "वैचित्र्यम्: अनोखी विशेषता",
+          "words": [
+            "वैचित्र्यम्",
+            "अनोखापन"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "सुशोभितानि — अच्छी तरह सुशोभित (beautifully adorned)",
+          "meaning": "suśobhitāni: elegantly adorned with nature's splendor",
+          "paragraphTranslation": "सुशोभितानि: प्राकृतिक सौंदर्य से भली-भाँति शोभित",
+          "words": [
+            "सुशोभितानि",
+            "सुशोभित"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "पीठस्थलानि — पठार (plateaus / elevated tablelands)",
+          "meaning": "pīṭhasthalāni: high plateaus and elevated landmasses",
+          "paragraphTranslation": "पीठस्थलानि: पठारी भूभाग",
+          "words": [
+            "पीठस्थलानि",
+            "पठार"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "भू-वैविध्यम् — भूमि की विविधता (land diversity / terrain variety)",
+          "meaning": "bhū-vaividhyam: topographical and geographic diversity of terrain",
+          "paragraphTranslation": "भू-वैविध्यम्: भू-आकृतियों की विविधता",
+          "words": [
+            "भू-वैविध्यम्",
+            "विविधता"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "अष्टाविंशतिः — अट्ठाईस (28 / twenty-eight)",
+          "meaning": "aṣṭāviṃśatiḥ: the number 28 (total states of modern India)",
+          "paragraphTranslation": "अष्टाविंशतिः: संख्या २८",
+          "words": [
+            "अष्टाविंशतिः",
+            "अट्ठाईस"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "समवायः — समूह (combination / collective group)",
+          "meaning": "samavāyaḥ: integrated group or cluster of states",
+          "paragraphTranslation": "समवायः: संयुक्त समूह",
+          "words": [
+            "समवायः",
+            "समूह"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "प्रथितः / विश्रुतः — प्रसिद्ध / विख्यात (famous / renowned / celebrated)",
+          "meaning": "prathitaḥ / viśrutaḥ: widely acknowledged and renowned",
+          "paragraphTranslation": "प्रथितः: जगत्प्रसिद्ध",
+          "words": [
+            "प्रथितः",
+            "विश्रुतः",
+            "प्रसिद्ध"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "स्वाधीनाः — स्वतंत्र (independent / sovereign)",
+          "meaning": "svādhīnāḥ: self-governed and never subjugated by foreign kings",
+          "paragraphTranslation": "स्वाधीनाः: सदैव स्वाधीन व स्वतंत्र रहने वाले",
+          "words": [
+            "स्वाधीनाः",
+            "स्वतंत्र"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "पुष्पस्तबकसदृशानि — फूलों के गुच्छे के समान (like flower bouquets)",
+          "meaning": "puṣpastabakasadṛśāni: resplendent like clusters of blossoming flowers",
+          "paragraphTranslation": "पुष्पस्तबकसदृशानि: पुष्पगुच्छ के समान सुशोभित",
+          "words": [
+            "पुष्पस्तबकसदृशानि",
+            "पुष्पगुच्छ"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "ऊर्जस्विनः — शक्तिशाली व ऊर्जावान (energetic / vigorous)",
+          "meaning": "ūrjasvinaḥ: endowed with robust physical strength and vibrant spirit",
+          "paragraphTranslation": "ऊर्जस्विनः: अत्यधिक ऊर्जा और बल से संपन्न",
+          "words": [
+            "ऊर्जस्विनः",
+            "ऊर्जावान"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "निष्णाताः — निपुण या कुशल (experts / masters / proficient)",
+          "meaning": "niṣṇātāḥ: highly proficient and seasoned masters of craft and arts",
+          "paragraphTranslation": "निष्णाताः: पारंगत एवं अत्यंत कुशल",
+          "words": [
+            "निष्णाताः",
+            "निपुण"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "वंशवृक्षाणाम् — बाँस के वृक्षों के (of bamboo trees)",
+          "meaning": "vaṃśavṛkṣāṇām: of bamboo plants/trees abundant in the region",
+          "paragraphTranslation": "वंशवृक्षाणाम्: बाँस के वनों व पेड़ों का",
+          "words": [
+            "वंशवृक्षाणाम्",
+            "बाँस"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "प्राचूर्यम् — प्रचुरता / बाहुल्य (abundance / plentifulness)",
+          "meaning": "prācūryam: great abundance and profusion",
+          "paragraphTranslation": "प्राचूर्यम्: बहुतायत, प्रचुर मात्रा",
+          "words": [
+            "प्राचूर्यम्",
+            "प्रचुरता"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "अभ्यासकार्यम् (Chapter Exercises & Solved Textbook Solutions — Pages 89–91)",
+          "meaning": "Textbook Exercises: Q1, Q2, Q3, Q4, Q5, Q8, Q9 with Complete Solutions",
+          "paragraphTranslation": "अभ्यास-प्रश्नोत्तराणि (पृष्ठ ८९–९१)",
+          "words": [
+            "अभ्यासकार्यम्",
+            "प्रश्नोत्तराणि"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "१. अधोलिखितानां प्रश्नानाम् एकपदेन उत्तरं लिखत (Answer in one word):",
+          "meaning": "Q1: Answer the following questions in one word:",
+          "paragraphTranslation": "१. एक शब्द में उत्तर दीजिए:",
+          "words": [
+            "एकपदेन",
+            "उत्तरम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) अस्माकं देशे कति राज्यानि सन्ति ? ➔ उत्तरम्: अष्टाविंशतिः (28)\n• (ख) प्राचीनेतिहासे काः स्वाधीनाः आसन्? ➔ उत्तरम्: सप्तभगिन्यः (सात बहनें)\n• (ग) केषां समवायः ‘सप्तभगिन्यः’ इति कथ्यते? ➔ उत्तरम्: सप्तराज्यानाम् (सात राज्यों का)\n• (घ) अस्माकं देशे कति केन्द्रशासितप्रदेशाः सन्ति ? ➔ उत्तरम्: अष्ट (8)\n• (ङ) सप्तभगिनी-प्रदेशे कः उद्योगः सर्वप्रमुखः? ➔ उत्तरम्: वंशोद्योगः (बाँस का उद्योग)",
+          "meaning": "One-word answers: (a) 28 states (aṣṭāviṃśatiḥ), (b) Seven Sisters were independent (saptabhaginyaḥ), (c) Cluster of 7 states (saptarājyānām), (d) 8 Union Territories (aṣṭa), (e) Bamboo industry (vaṃśodyogaḥ).",
+          "paragraphTranslation": "(क) अष्टाविंशतिः (२८); (ख) सप्तभगिन्यः; (ग) सप्तराज्यानाम्; (घ) अष्ट (८); (ङ) वंशोद्योगः।",
+          "words": [
+            "अष्टाविंशतिः",
+            "सप्तभगिन्यः",
+            "सप्तराज्यानाम्",
+            "अष्ट",
+            "वंशोद्योगः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "२. अधोलिखितानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखत (Answer in a full sentence):",
+          "meaning": "Q2: Answer the following questions in a complete sentence:",
+          "paragraphTranslation": "२. पूर्ण वाक्य में उत्तर दीजिए:",
+          "words": [
+            "पूर्णवाक्येन",
+            "उत्तरम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) भ्रातृसहित-भगिनीसप्तके कानि राज्यानि सन्ति ? ➔ उत्तरम्: भ्रातृसहित-भगिनीसप्तके अरुणाचलप्रदेशः, असमः, मणिपुरं, मिजोरमः, मेघालयः, नागालैण्डं, त्रिपुरा, सिक्किमः च इति अष्टराज्यानि सन्ति।\n• (ख) इमानि राज्यानि सप्तभगिन्यः इति किमर्थं कथ्यन्ते ? ➔ उत्तरम्: सामाजिक-सांस्कृतिक-परिदृश्यानां साम्याद् भौगोलिकवैशिष्ट्यात् च इमानि राज्यानि सप्तभगिन्यः इति कथ्यन्ते।\n• (ग) ऐशान्यकोणप्रदेशेषु के निवसन्ति ? ➔ उत्तरम्: ऐशान्यकोणप्रदेशेषु गारो-खासी-नागा-मिजो-लेप्चा-प्रभृतयः बहवः जनजातीयाः निवसन्ति।\n• (घ) पूर्वोत्तरप्रादेशिकाः केषु निष्णाताः सन्ति ? ➔ उत्तरम्: पूर्वोत्तरप्रादेशिकाः स्वलीला-कलासु च निष्णाताः सन्ति।\n• (ङ) वंशवृक्षवस्तूनाम् उपयोगः कुत्र क्रियते? ➔ उत्तरम्: आवस्त्राभूषणेभ्यः गृहनिर्माणपर्यन्तं प्रायः सर्वत्र वंशवृक्षवस्तूनाम् उपयोगः क्रियते।",
+          "meaning": "Full sentence answers: (a) The 8 states are Arunachal, Assam, Manipur, Mizoram, Meghalaya, Nagaland, Tripura, and Sikkim. (b) Named Seven Sisters due to social-cultural and geographic similarities. (c) Inhabited by tribes like Garo, Khasi, Naga, Mizo, and Lepcha. (d) Energetic locals are proficient in their pastimes and arts. (e) Bamboo is used for clothing, ornaments, and house building.",
+          "paragraphTranslation": "पूर्णवाक्य उत्तर: (क) अरुणाचल, असम, मणिपुर, मिजोरम, मेघालय, नागालैंड, त्रिपुरा और सिक्किम; (ख) सामाजिक-सांस्कृतिक समानता व भौगोलिक विशिष्टता से; (ग) गारो, खासी, नागा, मिजो, लेप्चा जनजातियाँ; (घ) अपनी लीलाओं और कलाओं में निपुण; (ङ) वस्त्र-आभूषण से लेकर गृहनिर्माण तक।",
+          "words": [
+            "अरुणाचलप्रदेशः",
+            "असमः",
+            "मणिपुरं",
+            "सिक्किमः",
+            "गारो-खासी-नागा-मिजो-लेप्चा",
+            "स्वलीला-कलासु",
+            "वंशवृक्षवस्तूनाम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "३. अधोलिखितेषु पदेषु प्रकृति-प्रत्ययविभागं कुरुत (Separate Root and Suffix):",
+          "meaning": "Q3: Identify root (Dhatu/Pratipadika) and suffix (Pratyaya):",
+          "paragraphTranslation": "३. प्रकृति और प्रत्यय अलग कीजिए:",
+          "words": [
+            "प्रकृति",
+            "प्रत्यय"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) ज्ञातुम् ➔ ज्ञा (धातु) + तुमुन् (प्रत्यय)\n• (ख) विश्रुतः ➔ वि (उपसर्ग) + श्रु (धातु) + क्त (प्रत्यय)\n• (ग) अतिरिच्य ➔ अति (उपसर्ग) + रिच् (धातु) + ल्यप् (प्रत्यय)\n• (घ) पठनीयम् ➔ पठ् (धातु) + अनीयर् (प्रत्यय)",
+          "meaning": "Roots and suffixes: (a) jñātum = jñā + tumun, (b) viśrutaḥ = vi + śru + kta, (c) atiricya = ati + ric + lyap, (d) paṭhanīyam = paṭh + anīyar.",
+          "paragraphTranslation": "प्रकृति-प्रत्यय: (क) ज्ञा + तुमुन्; (ख) वि + श्रु + क्त; (ग) अति + रिच् + ल्यप्; (घ) पठ् + अनीयर्।",
           "words": [
             "ज्ञातुम्",
             "विश्रुतः",
             "अतिरिच्य",
-            "पठनीयम्"
+            "पठनीयम्",
+            "तुमुन्",
+            "क्त",
+            "ल्यप्",
+            "अनीयर्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "४. रेखाङ्कितं पदम् आधृत्य प्रश्ननिर्माणं कुरुत (Frame questions based on underlined terms):",
+          "meaning": "Q4: Frame questions based on the highlighted terms:",
+          "paragraphTranslation": "४. प्रश्न-निर्माण कीजिए:",
+          "words": [
+            "प्रश्ननिर्माणम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) वयं स्वदेशस्य राज्यानां विषये ज्ञातुम् इच्छामः। ➔ प्रश्नः: वयं कस्य राज्यानां विषये ज्ञातुम् इच्छामः?\n• (ख) सप्तभगिन्यः प्राचीनेतिहासे प्रायः स्वाधीनाः एव दृष्टाः। ➔ प्रश्नः: काः प्राचीनेतिहासे प्रायः स्वाधीनाः एव दृष्टाः?\n• (ग) प्रदेशेऽस्मिन् हस्तशिल्पानाम् बाहुल्यं वर्तते। ➔ प्रश्नः: प्रदेशेऽस्मिन् केषाम् बाहुल्यं वर्तते?\n• (घ) एतानि राज्यानि तु भ्रमणार्थं स्वर्गसदृशानि। ➔ प्रश्नः: एतानि राज्यानि तु भ्रमणार्थं कीदृशानि?",
+          "meaning": "Interrogatives: (a) kasya, (b) kāḥ, (c) keṣām, (d) kīdṛśāni.",
+          "paragraphTranslation": "प्रश्ननिर्माण: (क) कस्य; (ख) काः; (ग) केषाम्; (घ) कीदृशानि।",
+          "words": [
+            "कस्य",
+            "काः",
+            "केषाम्",
+            "कीदृशानि"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "५. यथानिर्देशम् उत्तरत (Answer as directed):",
+          "meaning": "Q5: Answer according to grammatical directions:",
+          "paragraphTranslation": "५. निर्देशानुसार उत्तर दीजिए:",
+          "words": [
+            "यथानिर्देशम्",
+            "उत्तरत"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) ‘महोदये! मम भगिनी कथयति’। अत्र 'मम' इति सर्वनामपदं कस्यै प्रयुक्तम्? ➔ उत्तरम्: स्वरायै (स्वरा के लिए)\n• (ख) ‘सामाजिक-सांस्कृतिकपरिदृश्यानां साम्याद् इमानि उक्तोपाधिना प्रथितानि’। अस्मिन् वाक्ये 'प्रथितानि' इति क्रियापदस्य कर्तृपदं किम्? ➔ उत्तरम्: इमानि (या राज्यानि)\n• (ग) ‘एतेषां राज्यानां पुनः सङ्घटनं विहितम्’। अत्र 'सङ्घटनम्' इति कर्तृपदस्य क्रियापदं किम्? ➔ उत्तरम्: विहितम्\n• (घ) ‘अत्र वंशवृक्षाणां प्राचूर्यं विद्यते’। अस्मात् वाक्यात् 'अल्पता' इति पदस्य विपरीतार्थकं पदं चित्वा लिखत? ➔ उत्तरम्: प्राचूर्यम्\n• (ङ) ‘क्षेत्रपरिमाणैः इमानि लघूनि वर्तन्ते’। अस्मिन् वाक्ये ‘सन्ति’ इति क्रियापदस्य किं समानार्थकं पदं प्रयुक्तम्? ➔ उत्तरम्: वर्तन्ते",
+          "meaning": "Directions: (a) 'mama' pronoun refers to Svarā. (b) Subject of 'prathitāni' is 'imāni' (rājyāni). (c) Verb for 'saṅghaṭanam' is 'vihitam'. (d) Antonym of 'alpatā' is 'prācūryam'. (e) Synonym of 'santi' used is 'vartante'.",
+          "paragraphTranslation": "निर्देशानुसार: (क) स्वरायै; (ख) इमानि (राज्यानि); (ग) विहितम्; (घ) प्राचूर्यम्; (ङ) वर्तन्ते।",
+          "words": [
+            "स्वरायै",
+            "इमानि",
+            "विहितम्",
+            "प्राचूर्यम्",
+            "वर्तन्ते"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "८. भिन्नप्रकृतिकं पदं चिनुत (Odd one out):",
+          "meaning": "Q8: Identify the odd word out based on tense, gender, or semantics:",
+          "paragraphTranslation": "८. भिन्न प्रकृतिक पद चुनिए:",
+          "words": [
+            "भिन्नप्रकृतिकम्",
+            "पदम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) गच्छति, पठति, धावति, अहसत, क्रीडति ➔ भिन्नपदम्: अहसत (लङ्लकारः / भूतकालः)\n• (ख) छात्रः, सेवकः, शिक्षकः, लेखिका, क्रीडकः ➔ भिन्नपदम्: लेखिका (स्त्रीलिङ्गम्)\n• (ग) पत्रम्, मित्रम्, पुष्पम्, आम्रः, फलम् ➔ भिन्नपदम्: आम्रः (पुल्लिङ्गम् / फलवृक्षविशेषः)\n• (घ) व्याघ्रः, भल्लूकः, गजः, कपोतः, शाखा, वृषभः, सिंहः ➔ भिन्नपदम्: शाखा (अचेतन-वृक्षाङ्गम्)\n• (ङ) पृथिवी, वसुन्धरा, धरित्री, यानम्, वसुधा ➔ भिन्नपदम्: यानम् (वाहनम्, अन्यानि पृथिव्याः पर्यायपदानि)",
+          "meaning": "Odd-ones: (a) ahasata (past tense), (b) lekhikā (feminine), (c) āmraḥ (masculine), (d) śākhā (inanimate tree branch), (e) yānam (vehicle, others mean Earth).",
+          "paragraphTranslation": "भिन्न पद: (क) अहसत; (ख) लेखिका; (ग) आम्रः; (घ) शाखा; (ङ) यानम्।",
+          "words": [
+            "अहसत",
+            "लेखिका",
+            "आम्रः",
+            "शाखा",
+            "यानम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "९. विशेष्य-विशेषणानाम् उचितं मेलनं कुरुत (Match adjectives with nouns):",
+          "meaning": "Q9: Match adjectives with their corresponding nouns:",
+          "paragraphTranslation": "९. विशेषण और विशेष्य का सुमेल कीजिए:",
+          "words": [
+            "विशेषण",
+            "विशेष्य",
+            "मेलनम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• अयम् ➔ प्रदेशः\n• संस्कृतिविशिष्टायाम् ➔ भारतभूमौ\n• महत्त्वधायिनी ➔ संस्कृतिः\n• प्राचीने ➔ इतिहासे\n• एकः ➔ समवायः",
+          "meaning": "Matches: ayam -> pradeśaḥ; saṃskṛtiviśiṣṭāyām -> bhāratabhūmau; mahattvadhāyinī -> saṃskṛtiḥ; prācīne -> itihāse; ekaḥ -> samavāyaḥ.",
+          "paragraphTranslation": "विशेषण-विशेष्य मेलन: अयम् प्रदेशः, संस्कृतिविशिष्टायाम् भारतभूमौ, महत्त्वधायिनी संस्कृतिः, प्राचीने इतिहासे, एकः समवायः।",
+          "words": [
+            "अयम्",
+            "प्रदेशः",
+            "संस्कृतिविशिष्टायाम्",
+            "भारतभूमौ",
+            "महत्त्वधायिनी",
+            "संस्कृतिः",
+            "प्राचीने",
+            "इतिहासे",
+            "एकः",
+            "समवायः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "कार्यपत्रिका १: दश दिशः पूर्वोत्तरपरिचयः च (Worksheet 1: Ten Directions Tracking & Northeast Geography)",
+          "meaning": "Worksheet 1: Mapping the ten traditional Sanskrit cardinal and intermediate directions (Iśānī = North-East, Nairṛtī = South-West, Āgneyī = South-East, Vāyavī = North-West).",
+          "paragraphTranslation": "कार्यपत्रिका १: दश दिशाओं का ज्ञान (ईशानी, नैर्ऋती, आग्नेयी, वायवी) एवं पूर्वोत्तर भारत का भौगोलिक परिचय।",
+          "words": [
+            "कार्यपत्रिका",
+            "दश",
+            "दिशः",
+            "ईशानी",
+            "नैर्ऋती",
+            "आग्नेयी",
+            "वायवी"
+          ],
+          "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "कार्यपत्रिका २: प्रत्यय-अभ्यासः प्रकृतिप्रत्ययविभागः च (Worksheet 2: Suffix Verification & Word Roots)",
+          "meaning": "Worksheet 2: Formation and deconstruction of Aniyar (paṭhanīyam), Tumun (gantum), and Kta (viśrutaḥ) verbal configurations.",
+          "paragraphTranslation": "कार्यपत्रिका २: प्रत्यय-अभ्यास (पठनीयम्, गन्तुम्, विश्रुतः) एवं धातु-प्रत्यय विवेचन।",
+          "words": [
+            "कार्यपत्रिका",
+            "प्रत्यय-अभ्यासः",
+            "पठनीयम्",
+            "गन्तुम्",
+            "विश्रुतः"
           ],
           "kind": "exercise-note"
         }

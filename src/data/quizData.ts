@@ -41,7 +41,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade8_ch5', label: 'Grade 8 Ch 5: गीता सुगीता कर्तव्या (3 Quizzes · 30 Qs)', icon: '🕉️' },
   { id: 'grade8_ch6', label: 'Grade 8 Ch 6: डिजिभारतम्-युगपरिवर्तनम् (3 Quizzes · 30 Qs)', icon: '💻' },
   { id: 'grade8_ch7', label: 'Grade 8 Ch 7: मञ्जुलमञ्जूषा सुन्दरसुरभाषा (3 Quizzes · 30 Qs)', icon: '💎' },
-  { id: 'grade8_ch8', label: 'Grade 8 Ch 8: पश्यत कोणमैशान्यं भारतस्य मनोहरम् (2 Quizzes · 8 Qs)', icon: '🏞️' },
+  { id: 'grade8_ch8', label: 'Grade 8 Ch 8: पश्यत कोणमैशान्यं भारतस्य मनोहरम् (3 Quizzes · 30 Qs)', icon: '🏞️' },
   { id: 'grade8_ch9', label: 'Grade 8 Ch 9: कोऽरुक्? कोऽरुक्? कोऽरुक्? (2 Quizzes · 8 Qs)', icon: '🌿' },
   { id: 'grade8_ch10', label: 'Grade 8 Ch 10: सन्निमित्ते वरं त्यागः (2 Quizzes · 8 Qs)', icon: '⚖️' },
   { id: 'grade8_ch11', label: 'Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख) (2 Quizzes · 8 Qs)', icon: '🕊️' },
@@ -13202,159 +13202,577 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
     "difficulty": "easy",
     "points": 10
   },
+    {
+    "id": "g8-ch8-q1-1",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: पूर्वोत्तर-भूगोलः परिचयः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 1: Textual Context & Geography",
+    "question": "पूर्वोत्तर भाग के सात राज्यों के समूह को किस नाम से जाना जाता है?",
+    "questionSanskrit": "पूर्वोत्तरभागस्य सप्तराज्यानां समूहः केन नाम्ना ज्ञायते?",
+    "options": [
+      "A) भगिनीसप्तकम् (सप्तभगिन्यः)",
+      "B) अष्टरत्नम्",
+      "C) नवग्रहः",
+      "D) भ्रातृसङ्घः"
+    ],
+    "correctIndex": 0,
+    "explanation": "पाठे उक्तम्—'सप्तराज्यसमूहोऽयं भगिनीसप्तकं मतम्' अर्थात् एतानि सप्त राज्यानि 'सप्तभगिन्यः' (Seven Sisters) इति नाम्ना प्रसिद्धानि सन्ति।",
+    "difficulty": "easy",
+    "points": 10
+  },
   {
-  "id": "g8-ch8-q1-1",
-  "category": "grade8_ch8",
-  "categoryLabel": "Grade 8 Ch 8: प्रत्ययाः वाक्यसंरचना च",
-  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
-  "subCategory": "Quiz 1: Suffixes & Sentence Structures",
-  "question": "'पठनीयम्' इत्यत्र कः प्रत्ययः अस्ति? (Which suffix is in 'पठनीयम्'?)",
-  "questionSanskrit": "'पठनीयम्' इत्यत्र कः प्रत्ययः अस्ति?",
-  "options": [
-    "A) तुमुन्",
-    "B) अनीयर्",
-    "C) क्त",
-    "D) ल्यप्"
-  ],
-  "correctIndex": 1,
-  "explanation": "योग्यार्थे चाहिए-अर्थे च अनीयर्-प्रत्ययः प्रयुज्यते (पठ् + अनीयर् = पठनीयम्)।",
-  "difficulty": "easy",
-  "points": 10
-},
-{
-  "id": "g8-ch8-q1-2",
-  "category": "grade8_ch8",
-  "categoryLabel": "Grade 8 Ch 8: प्रत्ययाः वाक्यसंरचना च",
-  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
-  "subCategory": "Quiz 1: Suffixes & Sentence Structures",
-  "question": "'ल्यप्' प्रत्ययस्य उदाहरणं किमस्ति? (Which is an example of Lyap suffix?)",
-  "questionSanskrit": "'ल्यप्' प्रत्ययस्य उदाहरणं किमस्ति?",
-  "options": [
-    "A) गन्तुम्",
-    "B) अतिरिच्य",
-    "C) विश्रुतः",
-    "D) प्रवहन्ति"
-  ],
-  "correctIndex": 1,
-  "explanation": "उपसर्गयुक्ते धातौ क्त्वा स्थाने ल्यप् प्रत्ययः भवति (अति + रिच् + ल्यप् = अतिरिच्य)।",
-  "difficulty": "medium",
-  "points": 10
-},
-{
-  "id": "g8-ch8-q1-3",
-  "category": "grade8_ch8",
-  "categoryLabel": "Grade 8 Ch 8: प्रत्ययाः वाक्यसंरचना च",
-  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
-  "subCategory": "Quiz 1: Suffixes & Sentence Structures",
-  "question": "'यूयं जानीथ'– अत्र 'जानीथ' इति क्रियापदस्य कः लकारः? (What tense is 'जानीथ'?)",
-  "questionSanskrit": "'यूयं जानीथ'– अत्र 'जानीथ' इति क्रियापदस्य कः लकारः?",
-  "options": [
-    "A) लट् लकारः",
-    "B) लृट् लकारः",
-    "C) लङ् लकारः",
-    "D) लोट् लकारः"
-  ],
-  "correctIndex": 0,
-  "explanation": "ज्ञा (जानाना) धातोः लट्लकारे मध्यमपुरुष-बहुवचने 'जानीथ' इति रूपं भवति यत् 'यूयम्' इत्यनेन सम्बद्धम्।",
-  "difficulty": "medium",
-  "points": 10
-},
-{
-  "id": "g8-ch8-q1-4",
-  "category": "grade8_ch8",
-  "categoryLabel": "Grade 8 Ch 8: प्रत्ययाः वाक्यसंरचना च",
-  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
-  "subCategory": "Quiz 1: Suffixes & Sentence Structures",
-  "question": "'मम भगिनी कथयति'– वाक्ये सर्वनामपदं किमस्ति? (What is the pronoun here?)",
-  "questionSanskrit": "'मम भगिनी कथयति'– अस्मिन् वाक्ये सर्वनामपदं किम्?",
-  "options": [
-    "A) भगिनी",
-    "B) मम",
-    "C) कथयति",
-    "D) कोऽपि न"
-  ],
-  "correctIndex": 1,
-  "explanation": "'मम' (मेरा) अस्मद्-सर्वनामशब्दस्य षष्ठी-विभक्तौ एकवचनस्य रूपम् अस्ति।",
-  "difficulty": "easy",
-  "points": 10
-},
-{
-  "id": "g8-ch8-q2-1",
-  "category": "grade8_ch8",
-  "categoryLabel": "Grade 8 Ch 8: विशेषण-विशेष्यं विभक्तिः च",
-  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
-  "subCategory": "Quiz 2: Adjective-Noun & Case Endings",
-  "question": "'संस्कृतिविशिष्टायां भारतभूमौ'– अत्र विशेषणपदं किम्?",
-  "questionSanskrit": "'संस्कृतिविशिष्टायां भारतभूमौ'– अत्र विशेषणपदं किम्?",
-  "options": [
-    "A) भारतभूमौ",
-    "B) संस्कृतिविशिष्टायाम्",
-    "C) संस्कृतिः",
-    "D) भूमौ"
-  ],
-  "correctIndex": 1,
-  "explanation": "विशेष्यपदं 'भारतभूमौ' (सप्तमी एक०), अतः तस्य विशेषणम् अपि 'संस्कृतिविशिष्टायाम्' सप्तमी एकवचने अस्ति।",
-  "difficulty": "medium",
-  "points": 10
-},
-{
-  "id": "g8-ch8-q2-2",
-  "category": "grade8_ch8",
-  "categoryLabel": "Grade 8 Ch 8: विशेषण-विशेष्यं विभक्तिः च",
-  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
-  "subCategory": "Quiz 2: Adjective-Noun & Case Endings",
-  "question": "'स्वदेशस्य' इति पदे का विभक्तिः अस्ति?",
-  "questionSanskrit": "'स्वदेशस्य' इति पदे का विभक्तिः अस्ति?",
-  "options": [
-    "A) द्वितीया",
-    "B) चतुर्थी",
-    "C) षष्ठी",
-    "D) सप्तमी"
-  ],
-  "correctIndex": 2,
-  "explanation": "अकारान्त-पुल्लिङ्ग 'स्वदेश' शब्दस्य षष्ठी-विभक्तौ एकवचने 'स्वदेशस्य' (अपने देश का) रूपं भवति।",
-  "difficulty": "easy",
-  "points": 10
-},
-{
-  "id": "g8-ch8-q2-3",
-  "category": "grade8_ch8",
-  "categoryLabel": "Grade 8 Ch 8: विशेषण-विशेष्यं विभक्तिः च",
-  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
-  "subCategory": "Quiz 2: Adjective-Noun & Case Endings",
-  "question": "'भगिनीसप्तकम्' इति पदे कः समासः भवितुं शक्नोति?",
-  "questionSanskrit": "'भगिनीसप्तकम्' इति पदे कः समासः भवितुं शक्नोति?",
-  "options": [
-    "A) द्वन्द्वः",
-    "B) द्विगुः / तत्पुरुषः",
-    "C) अव्ययीभावः",
-    "D) बहुव्रीहिः"
-  ],
-  "correctIndex": 1,
-  "explanation": "सप्तानां भगिनीनां समाहारः इति विग्रहे संख्यापूर्वत्वात् द्विगु-तत्पुरुषः समासः भवति।",
-  "difficulty": "medium",
-  "points": 10
-},
-{
-  "id": "g8-ch8-q2-4",
-  "category": "grade8_ch8",
-  "categoryLabel": "Grade 8 Ch 8: विशेषण-विशेष्यं विभक्तिः च",
-  "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
-  "subCategory": "Quiz 2: Adjective-Noun & Case Endings",
-  "question": "'लघूनि' इति पदस्य विलोमपदं पाठाधारितं किम्?",
-  "questionSanskrit": "'लघूनि' इति पदस्य विलोमपदं पाठाधारितं किम्?",
-  "options": [
-    "A) प्रथितः",
-    "B) बृहत्तराणि",
-    "C) समृद्धानि",
-    "D) लघुकानि"
-  ],
-  "correctIndex": 1,
-  "explanation": "पाठे उक्तम्—'यद्यपि क्षेत्रपरिमाणैः इमानि लघूनि वर्तन्ते तथापि गुणगौरवदृष्ट्या बृहत्तराणि प्रतीयन्ते'। अतः लघूनि इत्यस्य विलोमं 'बृहत्तराणि' अस्ति।",
-  "difficulty": "easy",
-  "points": 10
-},
-{
+    "id": "g8-ch8-q1-2",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: पूर्वोत्तर-भूगोलः परिचयः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 1: Textual Context & Geography",
+    "question": "'भगिनीसप्तक' राज्यों का छोटा भाई किस राज्य को माना गया है?",
+    "questionSanskrit": "भगिनीसप्तकस्य लघुः भ्राता कः विश्रुतः?",
+    "options": [
+      "A) असमः",
+      "B) सिक्किमः",
+      "C) त्रिपुरा",
+      "D) मेघालयः"
+    ],
+    "correctIndex": 1,
+    "explanation": "श्लोके उक्तम्—'तेन युक्तो लघुः भ्राता सिक्किमः इति विश्रुतः' अर्थात् सिक्किमराज्यं तेषां लघुभ्राता मन्यते।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q1-3",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: पूर्वोत्तर-भूगोलः परिचयः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 1: Textual Context & Geography",
+    "question": "क्षेत्रफल (क्षेत्रपरिमाणैः) की दृष्टि से ये राज्य कैसे हैं?",
+    "questionSanskrit": "क्षेत्रपरिमाणैः इमानि राज्यानि कीदृशानि वर्तन्ते?",
+    "options": [
+      "A) अतिविशालानि",
+      "B) लघूनि (छोटे)",
+      "C) मध्यमाः",
+      "D) दीर्घतमाः"
+    ],
+    "correctIndex": 1,
+    "explanation": "यद्यपि क्षेत्रफलदृष्ट्या इमानि लघूनि (छोटे) वर्तन्ते, तथापि गुणगौरवदृष्ट्या अतीव बृहत्तराणि प्रतीयन्ते।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q1-4",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: पूर्वोत्तर-भूगोलः परिचयः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 1: Textual Context & Geography",
+    "question": "प्राचीन इतिहास में ये राज्य प्रायः कैसे रहे हैं?",
+    "questionSanskrit": "स्वीये प्राचीनेतिहासे इमाः सप्तभगिन्यः प्रायः कीदृश्यः दृष्टाः?",
+    "options": [
+      "A) पराधीनाः",
+      "B) स्वाधीनाः (स्वतंत्र)",
+      "C) परतंत्राः",
+      "D) केंद्रशासिताः"
+    ],
+    "correctIndex": 1,
+    "explanation": "इमाः सप्तभगिन्यः स्वीये प्राचीनेतिहासे प्रायः स्वाधीनाः (स्वतन्त्राः) एव दृष्टाः। न केनापि शासकेन इमाः स्वायत्तीकृताः।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q1-5",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: पूर्वोत्तर-भूगोलः परिचयः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 1: Textual Context & Geography",
+    "question": "विश्व का सबसे बड़ा सुंदर नदी द्वीप 'माजुली' किस राज्य में स्थित है?",
+    "questionSanskrit": "विश्वस्य बृहत्तमः नदीद्वीपः 'माजुली' कस्मिन् राज्ये वर्तते?",
+    "options": [
+      "A) मणिपुुरे",
+      "B) असमे (ब्रह्मपुत्र नदे)",
+      "C) सिक्किमे",
+      "D) अरुणाचलप्रदेशे"
+    ],
+    "correctIndex": 1,
+    "explanation": "असमराज्ये ब्रह्मपुत्रनद्याः गर्भे माजुली नामकः संसारस्य बृहत्तमः नदीद्वीपः विराजते।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q1-6",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: पूर्वोत्तर-भूगोलः परिचयः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 1: Textual Context & Geography",
+    "question": "विश्व का एकमात्र तैरता हुआ राष्ट्रीय उद्यान (प्लवमानम् उद्यानम्) कहाँ है?",
+    "questionSanskrit": "विश्वस्य एकमात्रं प्लवमानम् राष्ट्रीयोद्यानं (केइबुल लामजाओ) कुत्र अस्ति?",
+    "options": [
+      "A) लोकटक-सरोवरे (मणिपुर)",
+      "B) चिल्का-सरोवरे",
+      "C) डल-सरोवरे",
+      "D) सांभर-सरोवरे"
+    ],
+    "correctIndex": 0,
+    "explanation": "मणिपुरराज्ये लोकटक-सरोवरे विश्वस्य अद्वितीयं प्लवमानम् (तैरता हुआ) राष्ट्रीयोद्यानं वर्तते।",
+    "difficulty": "hard",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q1-7",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: पूर्वोत्तर-भूगोलः परिचयः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 1: Textual Context & Geography",
+    "question": "भारत में सबसे पहले सूर्योदय (अरुणोदयः) किस राज्य में होता है?",
+    "questionSanskrit": "भारते सर्वप्रथमं सूर्योदयः कस्मिन् राज्ये भवति?",
+    "options": [
+      "A) मिजोरमः",
+      "B) अरुणाचलप्रदेशः",
+      "C) नागालैंड",
+      "D) असमः"
+    ],
+    "correctIndex": 1,
+    "explanation": "अरुणाचलप्रदेशः (अरुणस्य आचलः = सूर्यस्य किरणैः आलोकितः) भारते पूर्वदिशि सर्वप्रथमे सूर्योदयेन सुशोभितः भवति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q1-8",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: पूर्वोत्तर-भूगोलः परिचयः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 1: Textual Context & Geography",
+    "question": "असम राज्य को प्राचीनकाल में किस नाम से जाना जाता था?",
+    "questionSanskrit": "असमप्रदेशः प्राचीनकाले केन नाम्ना प्रसिद्धः आसीत्?",
+    "options": [
+      "A) कलिंगः",
+      "B) कामरूपम्",
+      "C) मगधः",
+      "D) अवन्ती"
+    ],
+    "correctIndex": 1,
+    "explanation": "असमराज्यस्य प्राचीनं प्रसिद्धं नाम 'कामरूपम्' (तथा प्राग्ज्योतिषपुरम्) आसीत्।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q1-9",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: पूर्वोत्तर-भूगोलः परिचयः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 1: Textual Context & Geography",
+    "question": "वर्तमान समय में हमारे देश में कुल कितने राज्य हैं?",
+    "questionSanskrit": "अस्माकं देशे सम्प्रति कति राज्यानि सन्ति?",
+    "options": [
+      "A) २५",
+      "B) २८ (अष्टाविंशतिः)",
+      "C) २९",
+      "D) ३०"
+    ],
+    "correctIndex": 1,
+    "explanation": "स्वरा पाठे कथयति—'अस्माकं देशे अष्टाविंशतिः (२८) राज्यानि तथा अष्टौ केन्द्रशासितप्रदेशाः सन्ति' इति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q1-10",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: पूर्वोत्तर-भूगोलः परिचयः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 1: Textual Context & Geography",
+    "question": "सप्तभगिनी क्षेत्र में बहुतायत से पाई जाने वाली जनजातियाँ कौन-सी हैं?",
+    "questionSanskrit": "सप्तभगिनीप्रदेशेषु काः प्रमुखजनजातयः निवसन्ति?",
+    "options": [
+      "A) भील-मीणा",
+      "B) गारो-खासी-नागा-मिजो-लेप्चा",
+      "C) संथाल-मुंडा",
+      "D) थारू-गोंड"
+    ],
+    "correctIndex": 1,
+    "explanation": "अत्र गारो, खासी, नागा, मिजो, लेप्चा प्रभृतयः जनजातीयाः निवसन्ति ये स्वलीला-कलासु निष्णाताः सन्ति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q2-1",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: सांस्कृतिकी विशेषता वंशोद्योगः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 2: Cultural Attributes & Features",
+    "question": "सप्तभगिनी प्रदेश में किस वृक्ष के उत्पादों की प्रचुरता है?",
+    "questionSanskrit": "अस्मिन् प्रदेशे कस्य वृक्षस्य प्राचूर्यं विद्यते?",
+    "options": [
+      "A) चंदनवृक्षाणाम्",
+      "B) वंशवृक्षाणाम् (बाँस के वृक्षों की)",
+      "C) आम्रवृक्षाणाम्",
+      "D) देवदारुवृक्षाणाम्"
+    ],
+    "correctIndex": 1,
+    "explanation": "पूर्वोत्तरप्रदेशेषु वंशवृक्षाणां (बाँस के पेड़ों की) विपुलता प्रचुरता च अस्ति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q2-2",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: सांस्कृतिकी विशेषता वंशोद्योगः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 2: Cultural Attributes & Features",
+    "question": "यहाँ का कौन-सा उद्योग आज अंतरराष्ट्रीय प्रसिद्धि प्राप्त कर चुका है?",
+    "questionSanskrit": "अत्रत्यः कः उद्योगः साम्प्रतम् अन्ताराष्ट्रियख्यातिम् अवाप्तवान्?",
+    "options": [
+      "A) लौहोद्योगः",
+      "B) वंशोद्योगः (बाँस का उद्योग)",
+      "C) वस्त्रोद्योगः",
+      "D) दुग्धोद्योगः"
+    ],
+    "correctIndex": 1,
+    "explanation": "हस्तशिल्पनिर्मितानां वस्तूनां कारणात् अयं वंशोद्योगः (Bamboo Industry) विश्वप्रसिद्धः जातः।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q2-3",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: सांस्कृतिकी विशेषता वंशोद्योगः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 2: Cultural Attributes & Features",
+    "question": "भारत रूपी वृक्ष पर ये आठ राज्य किस प्रकार सुशोभित होते हैं?",
+    "questionSanskrit": "भारतवृक्षे एतानि राज्यानि कथमिव विराजन्ते?",
+    "options": [
+      "A) शुष्कपत्रवत्",
+      "B) पुष्प-स्तबकसदृशानि (फूलों के गुच्छे के समान)",
+      "C) फलवत्",
+      "D) काष्ठवत्"
+    ],
+    "correctIndex": 1,
+    "explanation": "अध्यापिका कथयति—'भारतवृक्षे पुष्प-स्तबकसदृशानि विराजन्ते एतानि राज्यानि'।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q2-4",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: सांस्कृतिकी विशेषता वंशोद्योगः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 2: Cultural Attributes & Features",
+    "question": "सप्तभगिनी राज्यों के प्राचीन इतिहास को लेकर क्या विशेष बात कही गई है?",
+    "questionSanskrit": "एतासां राज्यानां प्राचीनेतिहासे किं वैशिष्ट्यम् आसीत्?",
+    "options": [
+      "A) वे हमेशा किसी राजा के अधीन रहे",
+      "B) न केनापि शासकेन इमाः स्वायत्तीकृताः (किसी ने वश में नहीं किया)",
+      "C) वे युद्धप्रिय नहीं थे",
+      "D) वे हमेशा विभाजित रहे"
+    ],
+    "correctIndex": 1,
+    "explanation": "इमानि राज्यानि स्वाधीनानि आसन्, न केनापि परकीयशासकेन स्वायत्तीकृतानि।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q2-5",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: सांस्कृतिकी विशेषता वंशोद्योगः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 2: Cultural Attributes & Features",
+    "question": "नागालैंड राज्य का प्रसिद्ध उत्सव कौन-सा है (परियोजनाकार्य)?",
+    "questionSanskrit": "नागालैण्डराज्यस्य प्रसिद्धः उत्सवः कः वर्तते?",
+    "options": [
+      "A) बिहू-महोत्सवः",
+      "B) होर्न्बिल-महोत्सवः",
+      "C) ओणम-महोत्सवः",
+      "D) पोंगल-महोत्सवः"
+    ],
+    "correctIndex": 1,
+    "explanation": "नागालैण्डराज्ये प्रतिवर्षं दिसम्बरमासे 'हॉर्नबिल-महोत्सवः' (Hornbill Festival) सोत्साहम् आचर्यते।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q2-6",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: सांस्कृतिकी विशेषता वंशोद्योगः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 2: Cultural Attributes & Features",
+    "question": "काजीरंगा राष्ट्रीय अभयारण्य किस जीव के लिए प्रसिद्ध है?",
+    "questionSanskrit": "काजीरङ्ग-उद्यानं कस्य वन्यजीवस्य कृते विश्वविश्रुतम्?",
+    "options": [
+      "A) सिंहः",
+      "B) एकशृङ्गगजाः (एक सींग वाला गैंडा)",
+      "C) मयूरः",
+      "D) व्याघ्रः"
+    ],
+    "correctIndex": 1,
+    "explanation": "असमस्थे काजीरङ्गोद्याने एकशृङ्गयुक्तः गण्डकः (One-horned Rhinoceros) संरक्षितः अस्ति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q2-7",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: सांस्कृतिकी विशेषता वंशोद्योगः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 2: Cultural Attributes & Features",
+    "question": "मेघालय के पठारी क्षेत्र में प्रचुर मात्रा में कौन-सा खनिज पाया जाता है?",
+    "questionSanskrit": "मेघालयस्य पीठस्थले कः खनिजपदार्थः प्राचुर्येण लभ्यते?",
+    "options": [
+      "A) स्वर्णम्",
+      "B) कृष्णहीरकः (कोयला), लौह-अयस्कः आदि",
+      "C) रजतम्",
+      "D) हीरकम्"
+    ],
+    "correctIndex": 1,
+    "explanation": "मेघालयस्य पठारेषु कृष्णहीरकः (कोयला) तथा चूनाप्रस्तरः प्रचुरतया प्राप्यन्ते।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q2-8",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: सांस्कृतिकी विशेषता वंशोद्योगः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 2: Cultural Attributes & Features",
+    "question": "पूर्वोत्तर राज्यों के निवासी शारीरिक रूप से कैसे होते हैं?",
+    "questionSanskrit": "पूर्वोत्तरप्रदेशानां निवासिनः शरीरेण कीदृशाः भवन्ति?",
+    "options": [
+      "A) अलसाः",
+      "B) ऊर्जस्विनः (शक्तिशाली व ऊर्जावान)",
+      "C) दुर्बलाः",
+      "D) निरुत्साहाः"
+    ],
+    "correctIndex": 1,
+    "explanation": "पाठे उक्तम्—'शरीरेण ऊर्जस्विनः एतत्प्रादेशिकाः बहुभाषाभिः समन्विताः निष्णाताः सन्ति'।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q2-9",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: सांस्कृतिकी विशेषता वंशोद्योगः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 2: Cultural Attributes & Features",
+    "question": "यहाँ आभूषणों और घरेलू निर्माण में बाँस का उपयोग क्यों होता है?",
+    "questionSanskrit": "गृहनिर्माणपर्यन्तं वंशवृक्षाणां वस्तूनाम् उपयोगः किमर्थं क्रियते?",
+    "options": [
+      "A) क्योंकि यहाँ बाँस सस्ता है",
+      "B) वंशवृक्षाणां प्राचूर्यात् (बाँस की प्रचुरता के कारण)",
+      "C) क्योंकि धातुएँ प्रतिबंधित हैं",
+      "D) फैशन के कारण"
+    ],
+    "correctIndex": 1,
+    "explanation": "अत्र वंशवृक्षाणां विपुलं प्राचूर्यं विद्यते, अतः हस्तशिल्पे गृहादिनिर्माणे च वंशस्य उपयोगः सर्वत्र क्रियते।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q2-10",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: सांस्कृतिकी विशेषता वंशोद्योगः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 2: Cultural Attributes & Features",
+    "question": "अध्यापिका के अनुसार पूर्वोत्तर के ये राज्य घूमने के लिए कैसे हैं?",
+    "questionSanskrit": "भ्रमणार्थं इमानि राज्यानि कीदृशानि सन्ति?",
+    "options": [
+      "A) दुर्गमस्थानानि",
+      "B) स्वर्गसदृशानि (स्वर्ग के समान)",
+      "C) नीरसानि",
+      "D) भयावहानि"
+    ],
+    "correctIndex": 1,
+    "explanation": "अध्यापिका वदति—'एतानि राज्यानि तु भ्रमणार्थं स्वर्गसदृशानि' (heaven-like destinations)।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q3-1",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: व्याकरणम् प्रत्ययाः दिशः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 3: Grammatical Configurations & Terminology",
+    "question": "'पठनीयम्' शब्द में किस प्रत्यय का शुद्ध विधान है?",
+    "questionSanskrit": "'पठनीयम्' इत्यत्र कः प्रत्ययः अस्ति?",
+    "options": [
+      "A) तुमुन्",
+      "B) अनीयर्",
+      "C) क्त",
+      "D) ल्यप्"
+    ],
+    "correctIndex": 1,
+    "explanation": "पठ् धातोः योगे 'अनीयर्' प्रत्ययेन निष्पन्नं रूपं 'पठनीयम्' (योग्यतार्थे/चाहिए अर्थ में) भवति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q3-2",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: व्याकरणम् प्रत्ययाः दिशः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 3: Grammatical Configurations & Terminology",
+    "question": "'ज्ञातुम्' पद का सही प्रकृति-प्रत्यय विभाग क्या होगा?",
+    "questionSanskrit": "'ज्ञातुम्' पदस्य शुद्धः प्रकृति-प्रत्ययविभागः कः?",
+    "options": [
+      "A) ज्ञा + क्त्वा",
+      "B) ज्ञा + तुमुन्",
+      "C) ज्ञा + ल्यप्",
+      "D) ज्ञा + शतृ"
+    ],
+    "correctIndex": 1,
+    "explanation": "ज्ञा (धातुः) + तुमुन् (निमित्तार्थकः प्रत्ययः) = ज्ञातुम् (जानने के लिए)।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q3-3",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: व्याकरणम् प्रत्ययाः दिशः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 3: Grammatical Configurations & Terminology",
+    "question": "'अतिरिच्य' पद में अंत में प्रयुक्त होने वाला प्रत्यय कौन-सा है?",
+    "questionSanskrit": "'अतिरिच्य' पदे कः प्रत्ययः प्रयुक्तः?",
+    "options": [
+      "A) ल्यप् (उपसर्ग युक्त होने के कारण)",
+      "B) क्त्वा",
+      "C) तुमुन्",
+      "D) अनीयर्"
+    ],
+    "correctIndex": 0,
+    "explanation": "उपसर्गयुक्ते धातौ 'क्त्वा' स्थाने 'ल्यप्' प्रत्ययः भवति। अत्र अति + रिच् + ल्यप् = अतिरिच्य।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q3-4",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: व्याकरणम् प्रत्ययाः दिशः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 3: Grammatical Configurations & Terminology",
+    "question": "'अष्टाविंशतिः' संख्यात्मक शब्द का हिंदी अर्थ क्या है?",
+    "questionSanskrit": "'अष्टाविंशतिः' इति संख्यावाचकपदस्य कः अर्थः?",
+    "options": [
+      "A) १८",
+      "B) २८",
+      "C) ३८",
+      "D) ४८"
+    ],
+    "correctIndex": 1,
+    "explanation": "अष्ट + विंशतिः = अष्टाविंशतिः अर्थात् २८ (Twenty-Eight)।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q3-5",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: व्याकरणम् प्रत्ययाः दिशः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 3: Grammatical Configurations & Terminology",
+    "question": "'प्राचूर्यम्' शब्द का सही विलोम शब्द पाठ के अनुसार क्या होगा?",
+    "questionSanskrit": "'प्राचूर्यम्' पदस्य विलोमपदं किम्?",
+    "options": [
+      "A) बाहुल्यम्",
+      "B) अल्पता",
+      "C) समृद्धिः",
+      "D) गौरवम्"
+    ],
+    "correctIndex": 1,
+    "explanation": "प्राचूर्यम् (आधिक्यम् / abundance) इत्यस्य विपरीतार्थकं पदं 'अल्पता' (scarcity) भवति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q3-6",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: व्याकरणम् प्रत्ययाः दिशः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 3: Grammatical Configurations & Terminology",
+    "question": "'दश दिशः' के अंतर्गत 'उत्तर-पूर्व' कोने की दिशा को क्या कहते हैं?",
+    "questionSanskrit": "उत्तर-पूर्वयोः मध्यस्था दिक् का उच्यते?",
+    "options": [
+      "A) आग्नेयी",
+      "B) ईशानी (ऐशान्यम्)",
+      "C) वायवी",
+      "D) नैर्ऋती"
+    ],
+    "correctIndex": 1,
+    "explanation": "उत्तर-पूर्वदिशोः मध्यकोणः 'ईशानी' (ऐशान्यकोणः / North-East) कथ्यते।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q3-7",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: व्याकरणम् प्रत्ययाः दिशः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 3: Grammatical Configurations & Terminology",
+    "question": "'स्वदेशस्य' पद में कौन-सी विभक्ति प्रयुक्त है?",
+    "questionSanskrit": "'स्वदेशस्य' इत्यत्र का विभक्तिः?",
+    "options": [
+      "A) तृतीया",
+      "B) षष्ठी विभक्ति",
+      "C) सप्तमी",
+      "D) प्रथमा"
+    ],
+    "correctIndex": 1,
+    "explanation": "अकारान्त-पुल्लिङ्ग 'स्वदेश' शब्दस्य षष्ठी-एकवचने 'स्वदेशस्य' (अपने देश का) रूपं सिध्यति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q3-8",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: व्याकरणम् प्रत्ययाः दिशः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 3: Grammatical Configurations & Terminology",
+    "question": "'लघूनि' शब्द का शुद्ध विलोम शब्द क्या है?",
+    "questionSanskrit": "'लघूनि' पदस्य विपरीतमर्थं सूचयत् पदं किम्?",
+    "options": [
+      "A) ह्रस्वानी",
+      "B) बृहत्तराणि",
+      "C) सूक्ष्माणि",
+      "D) तन्वी"
+    ],
+    "correctIndex": 1,
+    "explanation": "पाठे उल्लिखितम्—'यद्यपि क्षेत्रपरिमाणैः इमानि लघूनि वर्तन्ते तथापि गुणगौरवदृष्ट्या बृहत्तराणि प्रतीयन्ते'। अतः लघूनि इत्यस्य विलोमं 'बृहत्तराणि'।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q3-9",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: व्याकरणम् प्रत्ययाः दिशः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 3: Grammatical Configurations & Terminology",
+    "question": "'विश्रुतः' शब्द में कौन-सा धातु प्रयुक्त है?",
+    "questionSanskrit": "'विश्रुतः' पदे मूलधातुः कः?",
+    "options": [
+      "A) वि",
+      "B) श्रु",
+      "C) विश्र",
+      "D) विष्"
+    ],
+    "correctIndex": 1,
+    "explanation": "वि (उपसर्गः) + श्रु (धातुः श्रवणे) + क्त (प्रत्ययः) = विश्रुतः (प्रसिद्धः)।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch8-q3-10",
+    "category": "grade8_ch8",
+    "categoryLabel": "Grade 8 Ch 8: व्याकरणम् प्रत्ययाः दिशः च",
+    "chapterRef": "Grade 8: अष्टमः पाठः — पश्यत कोणमैशान्यं भारतस्य मनोहरम्",
+    "subCategory": "Quiz 3: Grammatical Configurations & Terminology",
+    "question": "'भारतभूमौ' पद में कौन-सी आधारभूत विभक्ति लगाई गई है?",
+    "questionSanskrit": "'भारतभूमौ' इत्यत्र का विभक्तिः?",
+    "options": [
+      "A) द्वितीया",
+      "B) सप्तमी विभक्ति",
+      "C) पञ्चमी",
+      "D) प्रथमा"
+    ],
+    "correctIndex": 1,
+    "explanation": "इकारान्त-स्त्रीलिङ्ग 'भूमि' शब्दस्य सप्तमी-एकवचने 'भूमौ' (भारत की भूमि पर / अधिकरण कारक) रूपं भवति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
   "id": "g8-ch9-q1-1",
   "category": "grade8_ch9",
   "categoryLabel": "Grade 8 Ch 9: विशेषण-विशेष्य-सम्बन्धः",

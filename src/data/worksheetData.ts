@@ -9391,69 +9391,70 @@ export const WORKSHEETS: Worksheet[] = [
 },
 {
   "id": "ws-grade8-ch8-ws1",
-  "title": "Worksheet 1: Comprehension & Text-Based Questions (भगिनीसप्तकम्)",
-  "titleSanskrit": "अष्टमः पाठः कार्यपत्रिका १: भगिनीसप्तकम् पूर्वोत्तरपरिचयः च",
+  "title": "Worksheet 1: Ten Directions Tracking & Northeast Geography (दश दिशः पूर्वोत्तरपरिचयः च)",
+  "titleSanskrit": "अष्टमः पाठः कार्यपत्रिका १: दश दिशः पूर्वोत्तरपरिचयः च",
   "category": "grade8",
   "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
   "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
   "timeLimit": "45 Mins",
-  "description": "Mnemonic shloka reading, state identification of the Seven Sisters and Brother Sikkim, and geographic-cultural understanding of Northeast India.",
+  "description": "Master the ten Sanskrit directions (Dashadishah), match traditional names with modern equivalents, and explore the geography and mnemonic shloka of the Seven Sisters and Brother Sikkim.",
   "sections": [
     {
-      "sectionTitle": "Section A: Mnemonic Shloka Extraction",
-      "sectionTitleSanskrit": "खण्डः 'क' · श्लोक-अवबोधनम्",
-      "instructions": "Read the mnemonic verse and answer the questions below:\n\n'अद्वयं मत्रयं चैव न-त्रि-युक्तं तथाद्वयम्।\nसप्तराज्यसमूहोऽयं भगिनीसप्तकं मतम्॥\nतेन युक्तो लघुः भ्राता सिक्किमः इति विश्रुतः।\nपश्यत कोणमैशान्यं भारतस्य मनोहरम्॥'",
+      "sectionTitle": "Section A: Ten Directions Tracking (दश दिशः)",
+      "sectionTitleSanskrit": "खण्डः 'क' · दश-दिशः अवबोधनम्",
+      "instructions": "Match the Sanskrit title of the direction with its modern equivalent using the notes from page 90:",
       "totalMarks": 10,
       "questions": [
         {
           "num": 1,
-          "question": "I. प्रश्नानाम् उत्तराणि लिखत:\n१. 'मत्रयम्' इति पदेन कति राज्यानां बोधः भवति?\n२. 'भगिनीसप्तकम्' इति समूहे कति राज्यानि सन्ति?\n३. 'अद्वयम्' इति पदस्य कानि राज्यानि नामानि पाठे आगतानि?",
-          "questionSanskrit": "श्लोकाधारित-प्रश्नोत्तराणि:",
-          "marks": 6,
-          "type": "short_ans",
-          "answer": "१. त्रयाणाम् (३) राज्यानाम् (मणिपुरम्, मिजोरमः, मेघालयः च)।\n२. सप्त (७) राज्यानि।\n३. अरुणाचलप्रदेशः च असमः।",
-          "explanation": "अद्वयम् = अरुणाचल, असम; मत्रयम् = मणिपुर, मिजोरम, मेघालय; न-त्रि = नागालैंड, त्रिपुरा।"
+          "question": "Fill in the correct Sanskrit direction name (Page 90):\n१. _______________ ➔ North-East (उत्तर-पूर्व)\n२. _______________ ➔ South-West (दक्षिण-पश्चिम)\n३. _______________ ➔ South-East (दक्षिण-पूर्व)\n४. _______________ ➔ North-West (उत्तर-पश्चिम)",
+          "questionSanskrit": "दिशानां संस्कृतरूपाणि लिखत:",
+          "marks": 8,
+          "type": "fill",
+          "answer": "१. ईशानी\n२. नैर्ऋती\n३. आग्नेयी\n४. वायवी",
+          "explanation": "पृष्ठ ९० अनुसारं विदिशानां नामानि: १. ईशानी (North-East), २. नैर्ऋती (South-West), ३. आग्नेयी (South-East), ४. वायवी (North-West)।"
         },
         {
           "num": 2,
-          "question": "II. Translate the following lines into English or Hindi:\n\"भगिनीसप्तके इमानि राज्यानि क्षेत्रपरिमाणैः लघूनि वर्तन्ते तथापि गुणगौरवदृष्ट्या बृहत्तराणि प्रतीयन्ते।\"",
-          "questionSanskrit": "सरलार्थं लिखत:",
-          "marks": 4,
+          "question": "Which Sanskrit direction represents the Northeast quadrant where the Seven Sisters and Brother Sikkim are located?",
+          "questionSanskrit": "सप्तभगिनीप्रदेशाः कस्यां दिशि स्थिताः?",
+          "marks": 2,
           "type": "short_ans",
-          "answer": "भगिनीसप्तक के ये राज्य क्षेत्रफल की दृष्टि से छोटे हैं, फिर भी गुण और गौरव की दृष्टि से बहुत बड़े प्रतीत होते हैं। (In the Seven Sisters, these states are small in terms of surface area, yet they appear very significant and grand in terms of their virtues and glory).",
-          "explanation": "पाठे अष्टमपाठस्य मुख्यवाक्यम्।"
+          "answer": "ईशानी (ऐशान्यकोणः / पूर्वोत्तरभागः)।",
+          "explanation": "अष्टमपाठस्य शीर्षके अपि 'पश्यत कोणमैशान्यम्' इति उल्लिखितम्।"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Geography & Rivers of Northeast India",
-      "sectionTitleSanskrit": "खण्डः 'ख' · भूगोलः नद्यः च",
-      "instructions": "Answer based on Page 85 textbook facts:",
+      "sectionTitle": "Section B: Mnemonic Shloka & Northeast States",
+      "sectionTitleSanskrit": "खण्डः 'ख' · श्लोक-विश्लेषणं राज्य-परिज्ञानं च",
+      "instructions": "Analyze the mnemonic shloka and answer:",
       "totalMarks": 10,
       "questions": [
         {
           "num": 3,
-          "question": "Which two prominent rivers flow through these northeastern states?\n(A) Ganga and Yamuna (B) Barak and Brahmaputra (C) Narmada and Godavari",
-          "questionSanskrit": "एतेषु राज्येषु के प्रमुखे नद्यौ प्रवहति?",
-          "marks": 5,
-          "type": "mcq",
-          "options": [
-            "(A) Ganga and Yamuna",
-            "(B) Barak and Brahmaputra (बराक-ब्रह्मपुत्रादि-नद्यः)",
-            "(C) Narmada and Godavari"
-          ],
-          "answer": "(B) Barak and Brahmaputra (बराक-ब्रह्मपुत्रादि-नद्यः)",
-          "explanation": "पाठे उक्तम्: 'एतेषु बराक-ब्रह्मपुत्रादि-नद्यः प्रवहन्ति'।"
+          "question": "Deconstruct the mnemonic shloka 'अद्वयं मत्रयं चैव न-त्रि-युक्तं तथाद्वयम्':\n(क) 'अ' अक्षर से शुरू होने वाले दो राज्य: ____________________\n(ख) 'म' अक्षर से शुरू होने वाले तीन राज्य: ____________________\n(ग) 'न' एवं 'त्रि' से शुरू होने वाले दो राज्य: ____________________\n(घ) छोटा भाई (लघुः भ्राता): ____________________",
+          "questionSanskrit": "श्लोकाधारेण अष्टराज्यानां नामानि लिखत:",
+          "marks": 6,
+          "type": "fill",
+          "answer": "(क) अरुणाचलप्रदेशः, असमः\n(ख) मणिपुरं, मिजोरमः, मेघालयः\n(ग) नागालैण्डं, त्रिपुरा\n(घ) सिक्किमः",
+          "explanation": "भगिनीसप्तकस्य एकस्य भ्रातुः च श्लोकानुसारं नामावली।"
         },
         {
           "num": 4,
-          "question": "How many total states and union territories are there in India as stated by Swara?\n(क) राज्यानि: ______________\n(ख) केन्द्रशासितप्रदेशाः: ______________",
-          "questionSanskrit": "भारते कति राज्यानि केन्द्रशासितप्रदेशाः च सन्ति?",
-          "marks": 5,
-          "type": "fill",
-          "answer": "(क) अष्टाविंशतिः (२८); (ख) अष्ट (८)",
-          "explanation": "अस्माकं देशे अष्टाविंशतिः राज्यानि तथा अष्ट केन्द्रशासितप्रदेशाः सन्ति।"
+          "question": "Which two prominent rivers flow through these northeastern states (Page 85)?\n(A) गङ्गा-यमुने (B) बराक-ब्रह्मपुत्रे (C) सिन्धु-झेलमौ (D) नर्मदा-ताप्त्यौ",
+          "questionSanskrit": "पूर्वोत्तरभागे के द्वे नद्यौ प्रवहति?",
+          "marks": 4,
+          "type": "mcq",
+          "options": [
+            "(A) गङ्गा-यमुने",
+            "(B) बराक-ब्रह्मपुत्रे (बराक-ब्रह्मपुत्रादि-नद्यः)",
+            "(C) सिन्धु-झेलमौ",
+            "(D) नर्मदा-ताप्त्यौ"
+          ],
+          "answer": "(B) बराक-ब्रह्मपुत्रे (बराक-ब्रह्मपुत्रादि-नद्यः)",
+          "explanation": "पाठे पृष्ठ ८५ स्पष्टम्: 'एतेषु बराक-ब्रह्मपुत्रादि-नद्यः प्रवहन्ति'।"
         }
       ]
     }
@@ -9461,70 +9462,71 @@ export const WORKSHEETS: Worksheet[] = [
 },
 {
   "id": "ws-grade8-ch8-ws2",
-  "title": "Worksheet 2: Vocabulary & Word Meanings (पूर्वोत्तर-शब्दावली)",
-  "titleSanskrit": "अष्टमः पाठः कार्यपत्रिका २: पूर्वोत्तर-शब्दावली",
+  "title": "Worksheet 2: Suffix Verification & Vocabulary (प्रत्यय-अभ्यासः पूर्वोत्तर-शब्दावली च)",
+  "titleSanskrit": "अष्टमः पाठः कार्यपत्रिका २: प्रत्यय-अभ्यासः पूर्वोत्तर-शब्दावली च",
   "category": "grade8",
   "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
   "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
   "timeLimit": "45 Mins",
-  "description": "Vocabulary mastery: matching synonyms, contextual blanks, and antonym recognition for 26 Chapter 8 terms.",
+  "description": "Deconstruct and build verbal participle configurations (Aniyar, Tumun, Kta, Lyap), master root-suffix analysis, and practice chapter antonyms and odd-one-out exercises.",
   "sections": [
     {
-      "sectionTitle": "Section A: Sanskrit-English Matching",
-      "sectionTitleSanskrit": "खण्डः 'क' · शब्दार्थ-मेलनम्",
-      "instructions": "Match the Sanskrit word with its correct English meaning:",
+      "sectionTitle": "Section A: Suffix Verification (प्रत्यय-अभ्यासः)",
+      "sectionTitleSanskrit": "खण्डः 'क' · प्रत्यय-निर्माणम्",
+      "instructions": "Deconstruct or build the verbal configurations:",
       "totalMarks": 10,
       "questions": [
         {
           "num": 1,
-          "question": "Match the following:\n१. वैचित्र्यम् ➔ (a) Abundance\n२. प्राचुर्यम् ➔ (b) Uniqueness\n३. स्वाधीनाः ➔ (c) Independent\n४. निष्णाताः ➔ (d) Experts / Masters",
-          "questionSanskrit": "उचित-अर्थैः सह मेलयत:",
+          "question": "Combine root and suffix to form the correct Sanskrit word:\n१. पठ् + अनीयर् ➔ _______________\n२. गम् + तुमुन् ➔ _______________\n३. वि + श्रु + क्त ➔ _______________",
+          "questionSanskrit": "धातु-प्रत्ययौ संयोज्य पदं लिखत:",
           "marks": 6,
-          "type": "matching",
-          "answer": "१-(b) Uniqueness, २-(a) Abundance, ३-(c) Independent, ४-(d) Experts / Masters",
-          "explanation": "वैचित्र्यम् = विशेषता; प्राचुर्यम् = आधिक्यम्; स्वाधीनाः = स्वतन्त्राः; निष्णाताः = निपुणाः।"
+          "type": "fill",
+          "answer": "१. पठनीयम्\n२. गन्तुम्\n३. विश्रुतः",
+          "explanation": "१. पठ् + अनीयर् = पठनीयम्; २. गम् + तुमुन् = गन्तुम्; ३. वि + श्रु + क्त = विश्रुतः।"
         },
         {
           "num": 2,
-          "question": "Fill in the blanks with the correct option:\n(क) अस्मिन् प्रदेशे ______________ वृक्षाणां प्राचुर्यं विद्यते। (आम्र / वंश)\n(ख) इमानि राज्यानि भ्रमणार्थं ______________ सन्ति। (नरकसदृशानि / स्वर्गसदृशानि)",
-          "questionSanskrit": "उचितपदैः रिक्तस्थानं पूरयत:",
+          "question": "Separate root and suffix for the following (Page 89 Q3):\n(क) ज्ञातुम् = ____________ + ____________\n(ख) अतिरिच्य = ____________ + ____________ + ____________",
+          "questionSanskrit": "प्रकृति-प्रत्ययविभागं कुरुत:",
           "marks": 4,
-          "type": "fill",
-          "answer": "(क) वंश; (ख) स्वर्गसदृशानि",
-          "explanation": "पूर्वोत्तरराज्येषु बाँस (वंश) वृक्षाणां प्राचुर्यम् अस्ति, भ्रमणाय च स्वर्गसदृशानि सन्ति।"
+          "type": "grammar",
+          "answer": "(क) ज्ञा (धातु) + तुमुन् (प्रत्यय)\n(ख) अति (उपसर्ग) + रिच् (धातु) + ल्यप् (प्रत्यय)",
+          "explanation": "पाठान्तर्गत-पदानां प्रकृतिप्रत्ययविभागः।"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Antonyms & Odd-One-Out",
+      "sectionTitle": "Section B: Vocabulary, Antonyms & Odd Word Out",
       "sectionTitleSanskrit": "खण्डः 'ख' · विलोमपदानि भिन्नप्रकृतिकपदानि च",
-      "instructions": "Choose antonyms and pick the odd word out:",
+      "instructions": "Identify antonyms and select the odd one out:",
       "totalMarks": 10,
       "questions": [
         {
           "num": 3,
           "question": "Find the antonym based on the chapter:\n१. 'लघूनि' इति पदस्य विलोमपदम्: __________________\n२. 'अल्पता' इति पदस्य विलोमपदम्: __________________\n३. 'पराधीनाः' इति पदस्य विलोमपदम्: __________________",
           "questionSanskrit": "विलोमपदानि लिखत:",
-          "marks": 6,
+          "marks": 5,
           "type": "grammar",
-          "answer": "१. बृहत्तराणि; २. प्राचुर्यम्; ३. स्वाधीनाः",
+          "answer": "१. बृहत्तराणि\n२. प्राचूर्यम्\n३. स्वाधीनाः",
           "explanation": "पाठान्तर्गत-विलोमशब्दाः।"
         },
         {
           "num": 4,
-          "question": "Pick the odd word out (भिन्नप्रकृतिकं पदं चिनुत - Page 90 Q8):\n(क) गच्छति, पठति, धावति, अहसत्, क्रीडति ➔ ______________\n(ख) छात्रः, सेवकः, शिक्षकः, लेखिका, क्रीडकः ➔ ______________",
+          "question": "Pick the odd word out (Page 90 Q8):\n(क) गच्छति, पठति, धावति, अहसत, क्रीडति ➔ ______________\n(ख) छात्रः, सेवकः, शिक्षकः, लेखिका, क्रीडकः ➔ ______________\n(ग) पृथिवी, वसुन्धरा, धरित्री, यानम्, वसुधा ➔ ______________",
           "questionSanskrit": "भिन्नप्रकृतिकं पदं चिनुत:",
-          "marks": 4,
+          "marks": 5,
           "type": "grammar",
-          "answer": "(क) अहसत् (लङ्लकारः / भूतकालः, अन्ये लट्लकारे सन्ति)\n(ख) लेखिका (स्त्रीलिङ्गम्, अन्ये पुल्लिङ्गे सन्ति)",
-          "explanation": "अभ्यासप्रश्न ८ इत्यस्य शुद्ध-समाधानम्।"
+          "answer": "(क) अहसत (लङ्लकारः / भूतकालः)\n(ख) लेखिका (स्त्रीलिङ्गम्)\n(ग) यानम् (वाहनम्, अन्यानि पृथिव्याः पर्यायपदानि)",
+          "explanation": "भिन्नप्रकृतिक-पदानां व्याकरण-तर्कः।"
         }
       ]
     }
   ]
 },
 {
+
   "id": "ws-grade8-ch8-ws3",
   "title": "Worksheet 3: Question Formation (प्रश्ननिर्माणम्)",
   "titleSanskrit": "अष्टमः पाठः कार्यपत्रिका ३: प्रश्ननिर्माणम्",
