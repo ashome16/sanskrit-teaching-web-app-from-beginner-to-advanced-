@@ -1,6 +1,6 @@
 export interface QuizQuestionItem {
   id: string;
-  category: 'cbse_deepakam' | 'grammar' | 'vedic_maths' | 'varnamala' | 'deep_ch1' | 'deep_ch2' | 'deep_ch3' | 'deep_ch4' | 'deep_ch5' | 'deep_ch6' | 'deep_ch7' | 'deep_ch8' | 'deep_ch9' | 'deep_ch10' | 'deep_ch11' | 'deep_ch12' | 'deep_ch13' | 'deep_ch14' | 'grade8_prarthana' | 'grade8_ch1' | 'grade8_ch2' | 'grade8_ch3' | 'grade8_ch4' | 'grade8_ch5' | 'grade8_ch6' | 'grade8_ch7' | 'grade8_ch8' | 'grade8_ch9' | 'grade8_ch10' | 'grade8_ch11' | 'grade8_ch12' | 'grade8_ch13' | 'grade8_app1' | 'grade9_ch1' | 'grade9_ch2' | 'grade9_ch3';
+  category: string;
   categoryLabel: string;
   chapterRef?: string;
   subCategory?: string;
@@ -44,7 +44,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade8_ch8', label: 'Grade 8 Ch 8: पश्यत कोणमैशान्यं भारतस्य मनोहरम् (3 Quizzes · 30 Qs)', icon: '🏞️' },
   { id: 'grade8_ch9', label: "Grade 8 Ch 9: कोऽरुक् ? कोऽरुक् ? कोऽरुक् ? (3 Quizzes · 30 Qs)", icon: '🦜' },
   { id: 'grade8_ch10', label: "Grade 8 Ch 10: सन्निमित्ते वरं त्यागः (क-भागः) (3 Quizzes · 30 Qs)", icon: '⚔️' },
-  { id: 'grade8_ch11', label: 'Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख) (2 Quizzes · 8 Qs)', icon: '🕊️' },
+  { id: 'grade8_ch11', label: "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः) (3 Quizzes · 30 Qs)", icon: '👑' },
   { id: 'grade8_ch12', label: 'Grade 8 Ch 12: सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (2 Quizzes · 8 Qs)', icon: '🗣️' },
   { id: 'grade8_ch13', label: 'Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (2 Quizzes · 10 Qs)', icon: '🔤' },
   { id: 'grade8_app1', label: 'Grade 8 App 1: व्याकरणम् (2 Quizzes · 10 Qs)', icon: '📐' },
@@ -14915,156 +14915,573 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
 {
   "id": "g8-ch11-q1-1",
   "category": "grade8_ch11",
-  "categoryLabel": "Grade 8 Ch 11: वाच्य-प्रकरणम् (Active & Passive)",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
   "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
-  "subCategory": "Quiz 1: Grammatical Voice Structure (वाच्य-प्रकरणम्)",
-  "question": "कर्तृवाच्ये वाक्ये कर्तृपदस्य का विभक्तिः भवति? (Which case is the subject in Active Voice?)",
-  "questionSanskrit": "कर्तृवाच्ये वाक्ये कर्तृपदस्य का विभक्तिः भवति?",
+  "subCategory": "Quiz 1: Factual Recall & Comprehension (एकपदेन उत्तरत)",
+  "question": "राजा शूद्रक की आयु कितने दिन शेष बची थी? (How many days of lifespan remained for King Shudraka?)",
+  "questionSanskrit": "शूद्रकस्य आयुः कति दिनानि एव अवशिष्टम् आसीत्?",
   "options": [
-    "A) द्वितीया",
-    "B) तृतीया",
-    "C) प्रथमा",
-    "D) चतुर्थी"
+    "(A) दिनत्रयम् (३ दिनानि)",
+    "(B) पञ्च दिनानि (५ दिनानि)",
+    "(C) सप्त दिनानि (७ दिनानि)",
+    "(D) दश दिनानि (१० दिनानि)"
   ],
-  "correctIndex": 2,
-  "explanation": "कर्तृवाच्ये कर्तुः प्राधान्यं भवति, अतः कर्तरि प्रथमा विभक्तिः, कर्मणि द्वितीया, क्रियापदं च कर्तृपदानुसारि भवति।",
+  "correctIndex": 0,
+  "explanation": "राजलक्ष्म्या उक्तम् यत् शूद्रकस्य आयुः केवलं दिनत्रयम् (तीन दिन) एव अवशिष्टम् अस्ति।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch11-q1-2",
   "category": "grade8_ch11",
-  "categoryLabel": "Grade 8 Ch 11: वाच्य-प्रकरणम् (Active & Passive)",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
   "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
-  "subCategory": "Quiz 1: Grammatical Voice Structure (वाच्य-प्रकरणम्)",
-  "question": "कर्मवाच्ये क्रियापदस्य रूपं कथं निर्मीयते? (How is the verb structured in Sanskrit Passive Voice?)",
-  "questionSanskrit": "कर्मवाच्ये क्रियापदस्य रूपं कथं भवति?",
+  "subCategory": "Quiz 1: Factual Recall & Comprehension (एकपदेन उत्तरत)",
+  "question": "वीरवर के पुत्र का क्या नाम था? (What was the name of Viravara's son?)",
+  "questionSanskrit": "वीरवरस्य पुत्रस्य नाम किम् आसीत्?",
   "options": [
-    "A) धातुः + शतृ प्रत्ययः",
-    "B) धातुः + य + आत्मनेपदम् (ते/न्ते)",
-    "C) केवलं परस्मैपदम्",
-    "D) धातुः + क्त्वा प्रत्ययः"
+    "(A) वीरवती",
+    "(B) शक्तिधरः",
+    "(C) शूद्रकः",
+    "(D) सोमदत्तः"
   ],
   "correctIndex": 1,
-  "explanation": "कर्मवाच्ये धातोः परतः 'य' प्रत्ययः युज्यते पश्चात् आत्मनेपदस्य प्रत्ययाः (ते, एते, न्ते) योज्यन्ते; यथा—पठ् + य + ते = पठ्यते, गम् + य + ते = गम्यते।",
-  "difficulty": "medium",
+  "explanation": "वीरवरस्य पुत्रस्य नाम 'शक्तिधरः' आसीत्, यः स्वामिहितार्थं आत्मबलिदानं कर्तुं तत्परः अभवत्।",
+  "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch11-q1-3",
   "category": "grade8_ch11",
-  "categoryLabel": "Grade 8 Ch 11: वाच्य-प्रकरणम् (Active & Passive)",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
   "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
-  "subCategory": "Quiz 1: Grammatical Voice Structure (वाच्य-प्रकरणम्)",
-  "question": "'अस्माभिः ग्रामः गम्यते' – वाक्यमिदं कस्य वाच्यस्य उदाहरणम् अस्ति?",
-  "questionSanskrit": "'अस्माभिः ग्रामः गम्यते' – इदं कस्य वाच्यस्य वाक्यम्?",
+  "subCategory": "Quiz 1: Factual Recall & Comprehension (एकपदेन उत्तरत)",
+  "question": "अपनी सबसे प्रिय वस्तु उपहार/बलि रूप में किस देवी को समर्पित करनी थी? (To which Goddess was the dearest possession to be offered?)",
+  "questionSanskrit": "सर्वप्रियं वस्तु उपहाररूपेण कस्यै देव्यै अर्पणीयं भवति?",
   "options": [
-    "A) कर्तृवाच्यस्य",
-    "B) भाववाच्यस्य",
-    "C) कर्मवाच्यस्य",
-    "D) किमपि न"
+    "(A) महालक्ष्म्यै",
+    "(B) सर्वमङ्गलायै",
+    "(C) सरस्वत्यै",
+    "(D) पार्वत्यै"
   ],
-  "correctIndex": 2,
-  "explanation": "अत्र कर्तरि तृतीया (अस्माभिः), कर्मणि प्रथमा (ग्रामः), क्रियापदं च कर्मानुसारि (गम्यते) अस्ति, अतः इदं कर्मवाच्यम् (Passive Voice)।",
+  "correctIndex": 1,
+  "explanation": "राजलक्ष्मी वीरवर को बताती है कि यदि वह अपनी सर्वप्रिय वस्तु भगवती सर्वमङ्गला को समर्पित करे, तो राजा सौ वर्ष जीएगा।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch11-q1-4",
   "category": "grade8_ch11",
-  "categoryLabel": "Grade 8 Ch 11: वाच्य-प्रकरणम् (Active & Passive)",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
   "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
-  "subCategory": "Quiz 1: Grammatical Voice Structure (वाच्य-प्रकरणम्)",
-  "question": "भाववाच्ये कस्य पदस्य सर्वथा अभावः भवति? (Which element is completely absent in Impersonal Voice?)",
-  "questionSanskrit": "भाववाच्ये कस्य पदस्य अभावः भवति?",
+  "subCategory": "Quiz 1: Factual Recall & Comprehension (एकपदेन उत्तरत)",
+  "question": "वीरवर की पुत्री (दुहिता) का क्या नाम था? (What was the name of Viravara's daughter?)",
+  "questionSanskrit": "वीरवरस्य दुहितुः (पुत्र्याः) नाम किम् आसीत्?",
   "options": [
-    "A) कर्तृपदस्य",
-    "B) कर्मपदस्य",
-    "C) क्रियापदस्य",
-    "D) अव्ययपदस्य"
+    "(A) वेदरता",
+    "(B) वीरवती",
+    "(C) प्रियंवदा",
+    "(D) अनसूया"
   ],
   "correctIndex": 1,
-  "explanation": "भाववाच्यस्य प्रयोगः केवलम् अकर्मकधातुभिः सह भवति, यत्र कर्मपदस्य सर्वथा अभावः भवति; क्रियापदं च सर्वदा प्रथमपुरुषस्य एकवचने एव भवति।",
+  "explanation": "वीरवरस्य कन्यायाः (दुहितुः) नाम 'वीरवती' तथा पत्न्याः नाम 'वेदरता' आसीत्।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q1-5",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 1: Factual Recall & Comprehension (एकपदेन उत्तरत)",
+  "question": "गुप्त रूप से वीरवर के पीछे-पीछे कौन चल रहा था? (Who was secretly following behind Viravara?)",
+  "questionSanskrit": "गुप्ततया वीरवरस्य पृष्ठतः कः अनुसरन् आसीत्?",
+  "options": [
+    "(A) महामन्त्री",
+    "(B) राजा शूद्रकः",
+    "(C) सेनापतिः",
+    "(D) द्वारपालः"
+  ],
+  "correctIndex": 1,
+  "explanation": "राजा शूद्रकः खड्गहस्तः सन् गुप्ततया वीरवरस्य पृष्ठतः अनुसरन् तयोः सर्वं संवादं शृणोति स्म।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q1-6",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 1: Factual Recall & Comprehension (एकपदेन उत्तरत)",
+  "question": "विनाश निश्चित होने पर किसका सत्कार्य के लिए त्याग श्रेष्ठ माना गया है? (When whose destruction is certain is sacrifice considered superior?)",
+  "questionSanskrit": "कस्य विनाशे नियते सति त्यागः वरं मन्यते?",
+  "options": [
+    "(A) केवलं धनस्य",
+    "(B) सर्वस्य / जीवनस्य",
+    "(C) केवलं राज्यस्य",
+    "(D) केवलं मानस्य"
+  ],
+  "correctIndex": 1,
+  "explanation": "श्लोके उक्तम्—'धनानि जीवितञ्चैव परार्थे प्राज्ञ उत्सृजेत्। सन्निमित्ते वरं त्यागो विनाशे नियते सति॥'",
   "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q1-7",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 1: Factual Recall & Comprehension (एकपदेन उत्तरत)",
+  "question": "शक्तिधर ने अपने हाथ की तलवार से क्या काट गिराया? (What was severed by Shaktidhara with his sword?)",
+  "questionSanskrit": "शक्तिधरेण स्वकरस्थखड्गेन किम् पातितम्?",
+  "options": [
+    "(A) वृक्षाग्रम्",
+    "(B) स्वशिरः",
+    "(C) पुष्पमालाम्",
+    "(D) पाषाणखण्डम्"
+  ],
+  "correctIndex": 1,
+  "explanation": "शक्तिधरेण स्वामिहितार्थं देव्याः पुरतः स्वकरस्थखड्गेन स्वशिरः (अपना सिर) पातितम्।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q1-8",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 1: Factual Recall & Comprehension (एकपदेन उत्तरत)",
+  "question": "किस देवी की कृपा से वीरवर का परिवार पुनः जीवित हुआ? (By whose grace did Viravara's family regain life?)",
+  "questionSanskrit": "कस्याः कृपया वीरवरस्य परिवारः पुनः लब्धजीवितः अभवत्?",
+  "options": [
+    "(A) राजलक्ष्म्याः",
+    "(B) भगवत्याः सर्वमङ्गलायाः",
+    "(C) कुलदेव्याः",
+    "(D) वनदेवतायाः"
+  ],
+  "correctIndex": 1,
+  "explanation": "राज्ञः शूद्रकस्य सत्त्वोत्कर्षेण भृत्यवात्सल्येन च प्रसन्ना भूत्वा भगवती सर्वमङ्गला सर्वान् पुनर्जीवितवती।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q1-9",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 1: Factual Recall & Comprehension (एकपदेन उत्तरत)",
+  "question": "राजा शूद्रक के मन में किसके प्रति अगाध वात्सल्य और स्नेह था? (Towards whom did King Shudraka possess deep affection?)",
+  "questionSanskrit": "राज्ञः शूद्रकस्य मनसि कस्य प्रति वात्सल्यम् आसीत्?",
+  "options": [
+    "(A) शत्रोः प्रति",
+    "(B) भृत्यस्य (सेवकस्य वीरवरस्य) प्रति",
+    "(C) केवलं धनस्य प्रति",
+    "(D) राजलक्ष्म्याः प्रति"
+  ],
+  "correctIndex": 1,
+  "explanation": "राजा शूद्रकः स्वसेवकं वीरवरं प्रति अगाधं वात्सल्यं धारयति स्म, अतः सः तद्रक्षणाय स्वप्राणान् अपि त्यक्तुम् उद्यतः अभवत्।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q1-10",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 1: Factual Recall & Comprehension (एकपदेन उत्तरत)",
+  "question": "राजा शूद्रक ने वीरवर को कौन-सा प्रदेश पुरस्कार में दिया? (Which territory did the King bestow upon Viravara?)",
+  "questionSanskrit": "महीपतिः वीरवराय कः प्रदेशः प्रायच्छत्?",
+  "options": [
+    "(A) मगधप्रदेशम्",
+    "(B) समग्रकर्णाटप्रदेशम्",
+    "(C) काश्मीरप्रदेशम्",
+    "(D) अङ्गप्रदेशम्"
+  ],
+  "correctIndex": 1,
+  "explanation": "कथायाः अन्ते राजा शूद्रकः परमां प्रीतिं गतः सन् वीरवराय समग्रकर्णाटप्रदेशं प्रायच्छत्।",
+  "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch11-q2-1",
   "category": "grade8_ch11",
-  "categoryLabel": "Grade 8 Ch 11: अकर्मकधातवः सन्धिकार्यञ्च",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
   "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
-  "subCategory": "Quiz 2: Intransitive Verbs & Sandhi Rules",
-  "question": "'हस, क्रन्द्, स्था, स्ना' इत्यादयः धातवः कीदृशाः कथ्यन्ते?",
-  "questionSanskrit": "'हस, क्रन्द्, स्था' धातवः कीदृशाः भवन्ति?",
+  "subCategory": "Quiz 2: Contextual Analysis & Dialogue (पूर्णवाक्येन उत्तरत)",
+  "question": "वीरवर प्राप्त वेतन (४०० स्वर्णमुद्राओं) का क्या-क्या करता था? (How did Viravara utilize his earned salary?)",
+  "questionSanskrit": "वीरवरः प्राप्तेन वेतनेन किं किं करोति स्म?",
   "options": [
-    "A) सकर्मकधातवः",
-    "B) अकर्मकधातवः",
-    "C) उभयपदिनः",
-    "D) विकर्णधातवः"
+    "(A) सर्वं धनं भाण्डागारे सञ्चयं करोति स्म",
+    "(B) अर्धं देवकार्ये, एकचतुर्थांशं दरिद्रेभ्यः, अवशिष्टं च पत्न्यै अर्पयति स्म",
+    "(C) केवलं स्वस्य विलासितायां व्ययं करोति स्म",
+    "(D) वाणिज्ये सर्वं धनं नियोजयति स्म"
   ],
   "correctIndex": 1,
-  "explanation": "एतेषां धातूनां व्यापारस्य फलं कर्तरि एव विश्राम्यति, कर्मणः आवश्यकता न भवति, अतः एते अकर्मकधातवः (Intransitive Verbs) सन्ति।",
-  "difficulty": "easy",
+  "explanation": "वीरवरः प्राप्तवेतनस्य अर्धं (५०%) देवकार्ये, चतुर्थांशं (२५%) दीनेभ्यः, अवशिष्टं च चतुर्थांशं पत्न्याः हस्ते अर्पयति स्म।",
+  "difficulty": "medium",
   "points": 10
 },
 {
   "id": "g8-ch11-q2-2",
   "category": "grade8_ch11",
-  "categoryLabel": "Grade 8 Ch 11: अकर्मकधातवः सन्धिकार्यञ्च",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
   "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
-  "subCategory": "Quiz 2: Intransitive Verbs & Sandhi Rules",
-  "question": "'ततः + ते' इत्यस्य शुद्धं सन्धियुक्तं पदं किम् अस्ति?",
-  "questionSanskrit": "'ततः + ते' इत्यस्य सन्धिपदं किम्?",
+  "subCategory": "Quiz 2: Contextual Analysis & Dialogue (पूर्णवाक्येन उत्तरत)",
+  "question": "वीरवर ने अपने घर जाकर किन्हें जगाया? (Whom did Viravara awaken upon reaching his residence?)",
+  "questionSanskrit": "वीरवरः स्वावासं गत्वा कान् प्राबोधयत्?",
   "options": [
-    "A) ततोते",
-    "B) ततस्ते",
-    "C) ततःते",
-    "D) तत्ताते"
+    "(A) केवलं स्वमित्राणि भृत्यांश्च",
+    "(B) निद्रालसां पत्नीं पुत्रं दुहितरञ्च",
+    "(C) केवलं पुत्रं शक्तिधरम्",
+    "(D) राजद्वाररक्षकान्"
   ],
   "correctIndex": 1,
-  "explanation": "विसर्जनीयस्य सः—तवर्गे परे विसर्गस्य सत्वं (स्) भवति; अतः ततः + ते = ततस्ते।",
+  "explanation": "वीरवरः स्वावासं गत्वा निद्रालसां पत्नीं (वेदरताम्), पुत्रं (शक्तिधरम्), दुहितरं (वीरवतीं) च प्राबोधयत्।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch11-q2-3",
   "category": "grade8_ch11",
-  "categoryLabel": "Grade 8 Ch 11: अकर्मकधातवः सन्धिकार्यञ्च",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
   "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
-  "subCategory": "Quiz 2: Intransitive Verbs & Sandhi Rules",
-  "question": "'शूद्रकोऽपि' इत्यस्य शुद्धः सन्धि-विच्छेदः कः अस्ति?",
-  "questionSanskrit": "'शूद्रकोऽपि' इत्यस्य विच्छेदः कः?",
+  "subCategory": "Quiz 2: Contextual Analysis & Dialogue (पूर्णवाक्येन उत्तरत)",
+  "question": "शक्तिधर ने स्वामी के जीवन की रक्षा के लिए क्या कहा? (What did Shaktidhara state regarding protecting the master's life?)",
+  "questionSanskrit": "शक्तिधरः स्वामिजीवितरक्षार्थं किं वक्तवान्?",
   "options": [
-    "A) शूद्रकः + अपि",
-    "B) शूद्रको + पि",
-    "C) शूद्रकम् + अपि",
-    "D) शूद्रके + अपि"
+    "(A) अहं बलिदानं दातुं न शक्नोमि",
+    "(B) राष्ट्रस्य राज्ञश्च हिताय मम सर्वस्वविनियोगः परमश्लाघ्यः अस्ति",
+    "(C) राजा स्वयमेव उपायं करोतु",
+    "(D) वयं देशान्तरं गमिष्यामः"
   ],
-  "correctIndex": 0,
-  "explanation": "शूद्रकः + अपि—अतो रोरप्लुतादप्लुते सूत्रेण विसर्गस्य उत्वे 'शूद्रको', एङः पदान्तादति सूत्रेण पूर्वरूपे च 'शूद्रकोऽपि' निष्पद्यते।",
+  "correctIndex": 1,
+  "explanation": "शक्तिधरः सहर्षम् अवदत् यत् राष्ट्रस्य राज्ञश्च कल्याणाय मम सर्वस्वविनियोगः परमश्लाघ्यः (प्रशंसनीयः) अस्ति।",
   "difficulty": "medium",
   "points": 10
 },
 {
   "id": "g8-ch11-q2-4",
   "category": "grade8_ch11",
-  "categoryLabel": "Grade 8 Ch 11: अकर्मकधातवः सन्धिकार्यञ्च",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
   "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
-  "subCategory": "Quiz 2: Intransitive Verbs & Sandhi Rules",
-  "question": "'महीपतिस्तस्मै प्रायच्छत् समग्रकर्णाटप्रदेशम्' – 'प्रायच्छत्' पदे कः उपसर्गः प्रयुक्तः अस्ति?",
-  "questionSanskrit": "'प्रायच्छत्' पदे कः उपसर्गः अस्ति?",
+  "subCategory": "Quiz 2: Contextual Analysis & Dialogue (पूर्णवाक्येन उत्तरत)",
+  "question": "माता वेदरता ने स्वामी के वेतन-ऋण से मुक्ति के विषय में क्या माना? (What did mother Vedarata think about discharging master's salary debt?)",
+  "questionSanskrit": "माता वेदरता स्वामिवर्तनस्य निस्तारविषये किं मन्यते?",
   "options": [
-    "A) प्रति",
-    "B) परा",
-    "C) प्र",
-    "D) परि"
+    "(A) स्वामिनः धनस्य प्रत्यर्पणं न करणीयम्",
+    "(B) यद्येवं कुलोचितं नाचरितव्यं तर्हि गृहीतस्वामिवर्तनस्य निस्तारः कथं भवेत्",
+    "(C) वयं पलायनं कुर्मः",
+    "(D) आत्मसमर्पणं व्यर्थम् अस्ति"
   ],
-  "correctIndex": 2,
-  "explanation": "प्र उपसर्गपूर्वक-दा (यच्छ्) धातोः लङ्-लकारे प्रथमपुरुषैकवचने 'प्रायच्छत्' (प्र + अयच्छत् / आयच्छत् = प्रायच्छत्) रूपं भवति।",
+  "correctIndex": 1,
+  "explanation": "वेदरता अवदत् यत् यदि वयं कुलोचितं धर्मं न पालयामः तर्हि स्वामिनः स्वीकृतवेतनस्य निस्तारः (ऋणमुक्तिः) कथं स्यात्।",
   "difficulty": "medium",
   "points": 10
-}
-,
+},
+{
+  "id": "g8-ch11-q2-5",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 2: Contextual Analysis & Dialogue (पूर्णवाक्येन उत्तरत)",
+  "question": "पुत्र के बलिदान के बाद वीरवर ने मन में क्या सोचा? (What did Viravara think inwardly after sacrificing his son?)",
+  "questionSanskrit": "वीरवरः पुत्रसमर्पणं कृत्वा स्वगतं किम् अचिन्तयत्?",
+  "options": [
+    "(A) अधुना मह्यं विपुलं धनं प्राप्स्यते",
+    "(B) पुत्रवियुक्तस्य मे जीवनं निष्फलम् अस्ति",
+    "(C) अहं राजभवनं गत्वा विश्रामं करिष्यामि",
+    "(D) मम कर्तव्यं समाप्तम्"
+  ],
+  "correctIndex": 1,
+  "explanation": "वीरवरः अचिन्तयत्—'कृतो मया गृहीतस्वामिवर्तनस्य निस्तारः, अधुना पुत्रवियुक्तस्य मे जीवनं निष्फलम्' इति मत्वा सः स्वशिरः अपि कर्तयितुम् उद्यतः।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q2-6",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 2: Contextual Analysis & Dialogue (पूर्णवाक्येन उत्तरत)",
+  "question": "राजा शूद्रक ने देवी सर्वमङ्गला के समक्ष क्या भाव प्रकट किया? (What did King Shudraka express to Goddess Sarvamangala?)",
+  "questionSanskrit": "राजा शूद्रकः देवीं प्रति स्वकीयं किं विचारं प्रकटितवान्?",
+  "options": [
+    "(A) मह्यं अधिकं राज्यं स्वर्णं च देहि",
+    "(B) हे मातः! गृहाण मे सर्वस्वम्, नेष्टं मे राज्यं न च जीवितं वा",
+    "(C) मह्यं अमरत्वं देहि",
+    "(D) शत्रुसैन्यं विनाशय"
+  ],
+  "correctIndex": 1,
+  "explanation": "राजा अवदत्—'हे मातः सर्वमङ्गले! गृहाण मे सर्वस्वम्। नेष्टं मे राज्यं न च जीवितं वा' (मुझे न राज्य चाहिए न जीवन)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q2-7",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 2: Contextual Analysis & Dialogue (पूर्णवाक्येन उत्तरत)",
+  "question": "भगवती सर्वमङ्गला ने किस प्रकार प्रकट होकर राजा को रोका? (How did Goddess Sarvamangala appear and intervene?)",
+  "questionSanskrit": "भगवती सर्वमङ्गला राज्ञः हस्ते किं कृत्वा प्रत्यक्षीभूता?",
+  "options": [
+    "(A) तस्य खड्गं हरन्ती",
+    "(B) राज्ञः करं (हाथ) धृत्वा",
+    "(C) पुष्पवृष्टिं कुर्वती",
+    "(D) धनं समर्प्य"
+  ],
+  "correctIndex": 1,
+  "explanation": "पाठे लिखितम्—'ततः प्रत्यक्षीभूत्या भगवत्या सर्वमङ्गलया राज्ञः करं धृत्वा उक्तम्—वत्स! प्रसन्ना भवामि त्वयि, अलं साहसेन'।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q2-8",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 2: Contextual Analysis & Dialogue (पूर्णवाक्येन उत्तरत)",
+  "question": "राजा शूद्रक ने अपनी शेष आयु के बदले क्या वरदान माँगा? (What boon did King Shudraka seek with his remaining lifespan?)",
+  "questionSanskrit": "राजा शूद्रकः स्वआयुषः अवशेषेण किं वरं याचितवान्?",
+  "options": [
+    "(A) ममायुः सहस्रवर्षं भवतु",
+    "(B) ममायुःशेषेणापि प्रत्यावर्तेत राजपुत्रो वीरवरः सह पुत्रेण पत्न्या दुहित्रा च",
+    "(C) मम शत्रवः नश्यन्तु",
+    "(D) समग्रं जगत् मे वशे भवतु"
+  ],
+  "correctIndex": 1,
+  "explanation": "राज्ञा याचितम् यत् मम शेषायुषा वीरवरः सपरिवारः पुनः जीवतु।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q2-9",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 2: Contextual Analysis & Dialogue (पूर्णवाक्येन उत्तरत)",
+  "question": "सर्वमङ्गला देवी राजा के किन गुणों से अत्यंत प्रसन्न हुईं? (Due to which qualities was Goddess Sarvamangala deeply pleased?)",
+  "questionSanskrit": "सर्वमङ्गला देवी राज्ञः कस्मात् गुणात् परं प्रीता अभवत्?",
+  "options": [
+    "(A) तस्य सौन्दर्येण युद्धकौशलेन च",
+    "(B) राज्ञः सत्त्वोत्कर्षेण भृत्यवात्सल्येन च",
+    "(C) तस्य बाहुबलेन राजवैभवेन च",
+    "(D) तस्य राज्यविस्तारेण"
+  ],
+  "correctIndex": 1,
+  "explanation": "देवी अवदत्—'वत्स! अनेन ते सत्त्वोत्कर्षेण (त्यागस्य श्रेष्ठतया) भृत्यवात्सल्येन (सेवक-प्रेम्णा) च परं प्रीतास्मि'।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q2-10",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 2: Contextual Analysis & Dialogue (पूर्णवाक्येन उत्तरत)",
+  "question": "अगले दिन वीरवर पुनः कहाँ अपनी सेवा में लग गया? (Where was Viravara engaged on the following day?)",
+  "questionSanskrit": "अन्येद्युः (अगले दिन) वीरवरः कुत्र निरतः अभवत्?",
+  "options": [
+    "(A) मन्दिरे ध्याने निरतः",
+    "(B) पुनः राजद्वारे रक्षकरूपेण सेवानिरतः अभवत्",
+    "(C) स्वगृहे विश्रामं कृतवान्",
+    "(D) वनं प्रति गतवान्"
+  ],
+  "correctIndex": 1,
+  "explanation": "प्रातःकाले वीरवरः निरहङ्कारतया पुनः राजद्वारे स्वखड्गम् आदाय रक्षकरूपेण सेवानिरतोऽभवत्।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q3-1",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 3: Grammar Mastery & Vocabulary (व्याकरणं शब्दकोशश्च)",
+  "question": "'प्राज्ञः' पद का विलोम पद पाठ के श्लोक में क्या आया है? (What is the antonym of 'प्राज्ञः' in the chapter's verses?)",
+  "questionSanskrit": "'प्राज्ञः' इति पदस्य विलोमपदं पाठांशस्य श्लोके किम् अस्ति?",
+  "options": [
+    "(A) धीमान्",
+    "(B) क्षुद्रजन्तवः (अथवा मूर्खः)",
+    "(C) मतिमान्",
+    "(D) पण्डितः"
+  ],
+  "correctIndex": 1,
+  "explanation": "प्राज्ञः (बुद्धिमान् / विवेकशीलः) इत्यस्य विलोमपदं पाठाधारे क्षुद्रजन्तवः (अथवा मूर्खः) भवति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q3-2",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 3: Grammar Mastery & Vocabulary (व्याकरणं शब्दकोशश्च)",
+  "question": "'अखिलराजलक्ष्मीसंवादम्' में कौन-सा समास है? (Which compound is in 'अखिलराजलक्ष्मीसंवादम्'?)",
+  "questionSanskrit": "'अखिलराजलक्ष्मीसंवादम्' इत्यत्र कः समासः अस्ति?",
+  "options": [
+    "(A) द्वन्द्व समासः",
+    "(B) षष्ठी तत्पुरुष समासः (अखिलस्य राजलक्ष्म्याः संवादः)",
+    "(C) अव्ययीभाव समासः",
+    "(D) द्विगु समासः"
+  ],
+  "correctIndex": 1,
+  "explanation": "अखिलस्य राजलक्ष्म्याः संवादः = अखिलराजलक्ष्मीसंवादः (षष्ठी तत्पुरुष समासः)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q3-3",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 3: Grammar Mastery & Vocabulary (व्याकरणं शब्दकोशश्च)",
+  "question": "'प्राबोधयत्' पद में कौन-सा उपसर्ग और मूल धातु है? (What is the prefix and root in 'प्राबोधयत्'?)",
+  "questionSanskrit": "'प्राबोधयत्' पदे कः उपसर्गः कश्च मूलधातुः?",
+  "options": [
+    "(A) परि + बोध्",
+    "(B) प्र (उपसर्गः) + बुध् (धातुः, णिच् + लङ्)",
+    "(C) परा + बुध्",
+    "(D) प्रति + बोध्"
+  ],
+  "correctIndex": 1,
+  "explanation": "प्र (उपसर्गः) + बुध् (अवगमने धातुः) + णिच् + लङ् लकारः प्रथमपुरुषः एकवचनम् = प्राबोधयत् (जगाया)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q3-4",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 3: Grammar Mastery & Vocabulary (व्याकरणं शब्दकोशश्च)",
+  "question": "'दुःसाध्यम्' पद का प्रकृति-प्रत्यय अथवा विच्छेद क्या है? (Morphology or split of 'दुःसाध्यम्'?)",
+  "questionSanskrit": "'दुःसाध्यम्' पदस्य प्रकृति-प्रत्ययस्वरूपं विच्छेदं वा किम्?",
+  "options": [
+    "(A) दुर् + साध् + क्त",
+    "(B) दुः + साध्यम् (दुस् + साध् + ण्यत्)",
+    "(C) दु + साध्य",
+    "(D) दोष + साध्य"
+  ],
+  "correctIndex": 1,
+  "explanation": "दुस् (उपसर्गः) + साध् (धातुः) + ण्यत् (प्रत्ययः) = दुःसाध्यम् (कठिनाई से सिद्ध होने योग्य)।",
+  "difficulty": "hard",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q3-5",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 3: Grammar Mastery & Vocabulary (व्याकरणं शब्दकोशश्च)",
+  "question": "'तच्छ्रुत्वा' पद का पूर्ण सन्धिच्छेद क्या है? (Sandhi split of 'तच्छ्रुत्वा'?)",
+  "questionSanskrit": "'तच्छ्रुत्वा' पदस्य पूर्णसन्धिच्छेदं किम्?",
+  "options": [
+    "(A) तद् + रुत्वा",
+    "(B) तत् + श्रुत्वा (श्चुत्व-छत्व सन्धिः)",
+    "(C) तत् + छुत्वा",
+    "(D) ता + श्रुत्वा"
+  ],
+  "correctIndex": 1,
+  "explanation": "तत् + श्रुत्वा = तच्छ्रुत्वा (स्तोः श्चुना श्चुः तथा शश्छोऽटि सूत्रेण तकारस्य चकारः शकारस्य च छकारः)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q3-6",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 3: Grammar Mastery & Vocabulary (व्याकरणं शब्दकोशश्च)",
+  "question": "'अदृश्यः' पद में कौन-सा प्रत्यय अथवा समास प्रयुक्त है? (Which suffix / compound is in 'अदृश्यः'?)",
+  "questionSanskrit": "'अदृश्यः' इति पदे कः प्रत्ययः प्रयुक्तः?",
+  "options": [
+    "(A) दृश्य् + तव्यत्",
+    "(B) दृश्य् + क / यत् (नञ्-तत्पुरुषः)",
+    "(C) दृश्य् + तुमुन्",
+    "(D) दृश्य् + क्तवतु"
+  ],
+  "correctIndex": 1,
+  "explanation": "न दृश्यः इति अदृश्यः (नञ् तत्पुरुष समासः)। दृश्य् धातोः क्यप्/यत् प्रत्ययेन 'दृश्य' शब्दः निष्पद्यते।",
+  "difficulty": "hard",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q3-7",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 3: Grammar Mastery & Vocabulary (व्याकरणं शब्दकोशश्च)",
+  "question": "'तेन पातितं स्वशिरः' - इस कर्मवाच्य वाक्य में कर्तृपद (agent) कौन-सा है? (What is the agent/subject in 'तेन पातितं स्वशिरः'?)",
+  "questionSanskrit": "'तेन पातितं स्वशिरः' - अस्मिन् वाक्ये कर्तृपदं किम्?",
+  "options": [
+    "(A) स्वशिरः",
+    "(B) तेन (तृतीया विभक्तिः, कर्मवाच्ये कर्ता)",
+    "(C) पातितम्",
+    "(D) खड्गेन"
+  ],
+  "correctIndex": 1,
+  "explanation": "कर्मवाच्ये कर्तरि तृतीया विभक्तिः भवति, अतः 'तेन' इति कर्तृपदम् अस्ति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q3-8",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 3: Grammar Mastery & Vocabulary (व्याकरणं शब्दकोशश्च)",
+  "question": "'अन्येद्युः' शब्द का हिन्दी भाषा में क्या अर्थ होता है? (What does 'अन्येद्युः' mean in Hindi?)",
+  "questionSanskrit": "'अन्येद्युः' शब्दस्य हिन्दीभाषायां कः अर्थः भवति?",
+  "options": [
+    "(A) आज ही",
+    "(B) अगले दिन (Next day / अपरे दिने)",
+    "(C) बीता हुआ कल",
+    "(D) कभी नहीं"
+  ],
+  "correctIndex": 1,
+  "explanation": "'अन्येद्युः' इति अव्ययपदम्। अस्य अर्थः 'अपरे दिने' (अगले दिन / On the next day) इति भवति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q3-9",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 3: Grammar Mastery & Vocabulary (व्याकरणं शब्दकोशश्च)",
+  "question": "'परार्थे' पद का सही सन्धिच्छेद क्या है? (Sandhi split of 'परार्थे'?)",
+  "questionSanskrit": "'परार्थे' इत्यस्य पदस्य सन्धिच्छेदं किम्?",
+  "options": [
+    "(A) परा + र्थे",
+    "(B) पर + अर्थे (दीर्घ सन्धिः)",
+    "(C) परो + अर्थे",
+    "(D) परम् + अर्थे"
+  ],
+  "correctIndex": 1,
+  "explanation": "पर + अर्थे = परार्थे (अ + अ = आ, अकः सवर्णे दीर्घः)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch11-q3-10",
+  "category": "grade8_ch11",
+  "categoryLabel": "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "chapterRef": "Grade 8: एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
+  "subCategory": "Quiz 3: Grammar Mastery & Vocabulary (व्याकरणं शब्दकोशश्च)",
+  "question": "'मादृशाः क्षुद्रजन्तुवः जायन्ते च म्रियन्ते च' - इस वाक्य में क्रियापद कौन-से हैं? (What are the verbs in this statement?)",
+  "questionSanskrit": "'मादृशाः क्षुद्रजन्तुवः जायन्ते च म्रियन्ते च' - अत्र क्रियापदे के स्तः?",
+  "options": [
+    "(A) मादृशाः, क्षुद्रजन्तवः",
+    "(B) जायन्ते, म्रियन्ते च (लट् लकारः, प्रथमपुरुष बहुवचनम्)",
+    "(C) च, एव",
+    "(D) लोके, सदृशः"
+  ],
+  "correctIndex": 1,
+  "explanation": "जन् (जायते) तथा मृ (म्रियते) आत्मनेपदी धात्वोः लट् लकारे प्रथमपुरुषस्य बहुवचने 'जायन्ते' तथा 'म्रियन्ते' इति क्रियापदे स्तः।",
+  "difficulty": "easy",
+  "points": 10
+},
 {
   "id": "g8-ch12-q1-1",
   "category": "grade8_ch12",

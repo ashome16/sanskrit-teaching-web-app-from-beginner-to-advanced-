@@ -36626,7 +36626,7 @@
       "id": "grade8_ch11",
       "fileName": "grade8_ch11.txt",
       "title": "एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः)",
-      "page_numbers": "124-135",
+      "page_numbers": "124–135",
       "sentences": [
         {
           "sanskrit": "॥ एकादशः पाठः — सन्निमित्ते वरं त्यागः (ख-भागः) ॥",
@@ -36639,6 +36639,20 @@
             "वरं",
             "त्यागः",
             "ख-भागः"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "📌 पाठ्यक्रम-मार्गदर्शिका (CBSE / NCERT / NEP 2020) — एषः पाठः सर्वेभ्यः शिक्षार्थिभ्यः सरलतया, सोदाहरणं, बहुभाषीय-माध्यमेन च कर्तव्यनिष्ठा-स्वामिभक्ति-ज्ञानवर्धनाय निर्मितः अस्ति।",
+          "meaning": "Curriculum Framework (CBSE / NCERT / NEP 2020): This curated lesson from Hitopadesha is architected for all learners—blending authentic Sanskrit prose with dual-language clarity, character ethics, and selfless duty.",
+          "paragraphTranslation": "पाठ्यक्रम मार्गदर्शिका (CBSE / NCERT / NEP 2020): यह पाठ सभी स्तरों के शिक्षार्थियों के लिए—हितोपदेश की इस प्रेरक कथा के माध्यम से कर्तव्यनिष्ठा, स्वामिभक्ति और निःस्वार्थ त्याग के उदात्त मूल्यों को सरल द्विभाषी रूप में प्रस्तुत करता है।",
+          "words": [
+            "पाठ्यक्रम",
+            "CBSE",
+            "NCERT",
+            "NEP2020",
+            "कर्तव्यनिष्ठा",
+            "स्वामिभक्ति"
           ],
           "kind": "section-header"
         },
@@ -37075,6 +37089,19 @@
             "तच्छ्रुत्वा",
             "धन्योऽहम्",
             "जीवितञ्चैव"
+          ],
+          "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "३ & ४. सर्वनामपदानि अन्वयश्च – 'भगवति! न मे प्रयोजनम्' (शूद्रकाय), 'अनेन ते सत्त्वोत्कर्षेण' (शूद्रकाय), 'धन्याहं यस्या ईदृशो जनको भ्राता च' (वीरवत्यै), 'अयमपि सपरिवारो जीवतु' (वीरवराय)। अन्वयः: मादृशाः क्षुद्रजन्तुवः जायन्ते च म्रियन्ते च।",
+          "meaning": "Exercises 3 & 4: Contextual Pronoun Referents (Me/Te -> King Shudraka, Yasya -> Viravati, Ayam -> Viravara) and Prose Anvaya reconstruction.",
+          "paragraphTranslation": "अभ्यास ३ एवं ४: सर्वनाम पदों के संदर्भ (मे/ते -> राजा शूद्रक, यस्याः -> वीरवती, अयम् -> वीरवर) तथा अन्वय रूप में गद्य-पुनर्लेखन।",
+          "words": [
+            "सर्वनामपदानि",
+            "अन्वयः",
+            "शूद्रकाय",
+            "वीरवत्यै",
+            "वीरवराय"
           ],
           "kind": "exercise-note"
         },
