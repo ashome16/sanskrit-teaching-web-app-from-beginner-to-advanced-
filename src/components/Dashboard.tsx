@@ -153,6 +153,12 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
   },
 };
 
+/** /barakhadi aliases the reader view. Copy is the existing search-index entry, not new marketing. */
+export const BARAKHADI_METADATA: { title: string; desc: string } = {
+  title: 'बारहखड़ी · Guṇitākṣarāṇi Sound Combinations',
+  desc: 'Master all 12+ vowel modifier combinations with every consonant (क् + अ = क, क् + आ = का, etc.) with audio playback and phonetic charts.',
+};
+
 const pathToView = (pathname: string): DashboardView | null => {
   const clean = pathname.replace(/\/+$/, '') || '/';
   if (clean === '/' || clean === '/home' || clean === '/index') return 'home';
@@ -555,15 +561,15 @@ const Dashboard: React.FC = () => {
   // Keep clean canonical URLs and SEO meta tags in sync with activeView
   useEffect(() => {
     try {
-      const desired =
-        activeView === 'reader' && lessons[lessonIndex]?.id === 'barakhadi' ? '/barakhadi' : viewToPath(activeView);
+      const onBarakhadi = activeView === 'reader' && lessons[lessonIndex]?.id === 'barakhadi';
+      const desired = onBarakhadi ? '/barakhadi' : viewToPath(activeView);
       const current = window.location.pathname.replace(/\/+$/, '') || '/';
       if (current !== desired) {
         window.history.pushState({ view: activeView }, '', desired);
       }
 
       // Dynamically update document title & meta tags for SEO & social sharing
-      const meta = VIEW_METADATA[activeView] || VIEW_METADATA.home;
+      const meta = onBarakhadi ? BARAKHADI_METADATA : VIEW_METADATA[activeView] || VIEW_METADATA.home;
       document.title = meta.title;
       const descEl = document.querySelector('meta[name="description"]');
       if (descEl) descEl.setAttribute('content', meta.desc);
@@ -571,8 +577,11 @@ const Dashboard: React.FC = () => {
       if (ogTitleEl) ogTitleEl.setAttribute('content', meta.title);
       const ogDescEl = document.querySelector('meta[property="og:description"]');
       if (ogDescEl) ogDescEl.setAttribute('content', meta.desc);
+      const canonicalHref = `https://ednetlearn.in${desired === '/' ? '/' : desired}`;
+      const ogUrlEl = document.querySelector('meta[property="og:url"]');
+      if (ogUrlEl) ogUrlEl.setAttribute('content', canonicalHref);
       const canonicalEl = document.querySelector('link[rel="canonical"]');
-      if (canonicalEl) canonicalEl.setAttribute('href', `https://ednetlearn.in${desired === '/' ? '/' : desired}`);
+      if (canonicalEl) canonicalEl.setAttribute('href', canonicalHref);
     } catch {}
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeView, lessons[lessonIndex]?.id]);
