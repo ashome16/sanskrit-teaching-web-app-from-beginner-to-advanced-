@@ -9702,69 +9702,64 @@ export const WORKSHEETS: Worksheet[] = [
 },
 {
   "id": "ws-grade8-ch9-ws1",
-  "title": "Worksheet 1: Comprehensive Reading (गरिष्ठद्रव्याणि सुपाच्यानि च)",
-  "titleSanskrit": "नवमः पाठः कार्यपत्रिका १: गरिष्ठद्रव्याणि सुपाच्यानि च",
+  "title": "Worksheet 1: Concept Extraction (हितभुक्, मितभुक्, ऋतुभुक्)",
+  "titleSanskrit": "नवमः पाठः कार्यपत्रिका १: अवधारणा-निष्कर्षणम्",
   "category": "grade8",
   "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
   "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
   "timeLimit": "45 Mins",
-  "description": "Extract-based reading from Vagbhata's explanation of food mass, digestibility, and moderation in dietary substances.",
+  "description": "Define the context of the core Ayurvedic dietary terms (Hitabhuk, Mitabhuk, Ritubhuk) and Gita dietary classification based on your textual analysis.",
   "sections": [
     {
-      "sectionTitle": "Section A: Prose Comprehension",
-      "sectionTitleSanskrit": "खण्डः 'क' · गद्यांश-अवबोधनम्",
-      "instructions": "Read the line and answer the questions below:\n\n\"गरिष्ठद्रव्याणि अपि अल्पमात्रं सेवनेन सुपाच्यानि भवन्ति, लघुद्रव्याणि चापि अतिमात्रं सेवनेन हानिकराणि जायन्ते।\"",
-      "totalMarks": 10,
+      "sectionTitle": "Section A: Concept Extraction (अवधारणा-निष्कर्षणम्)",
+      "sectionTitleSanskrit": "खण्डः 'क' · मूल-अवधारणा-निष्कर्षणम्",
+      "instructions": "Define the context of the core terms based on your textual analysis:",
+      "totalMarks": 12,
       "questions": [
         {
           "num": 1,
-          "question": "I. Answer based on the line:\n(क) कीदृशानि द्रव्याणि अल्पमात्रं सेवनेन सुपाच्यानि भवन्ति?\n(ख) लघुद्रव्याणि कति सेवनेन हानिकराणि जायन्ते?\n(ग) 'सुपाच्यानि' इति पदस्य कः विलोमशब्दः अत्र अस्ति?",
-          "questionSanskrit": "प्रश्नानाम् उत्तराणि लिखत:",
-          "marks": 6,
+          "question": "1. 'हितभुक्' का व्यावहारिक अर्थ क्या है? _______________",
+          "questionSanskrit": "'हितभुक्' इत्यस्य व्यावहारिकः अर्थः कः?",
+          "marks": 4,
           "type": "short_ans",
-          "answer": "(क) गरिष्ठद्रव्याणि\n(ख) अतिमात्रं सेवनेन\n(ग) हानिकराणि (अथवा गरिष्ठम् / अपाच्यानि)",
-          "explanation": "पङ्क्तौ स्पष्टम् उक्तम् यत् गरिष्ठद्रव्याणि अल्पमात्रेण सुपाच्यानि भवन्ति, लघुद्रव्याणि च अतिमात्रेण हानिकराणि जायन्ते।"
+          "answer": "वह भोजन जो शरीर की रक्षा करे और भावी रोगों को रोके।",
+          "explanation": "हितभुक् अर्थात् यस्य आहारस्य सेवनेन स्वास्थ्यस्य रक्षणं भवेत्, अनुत्पन्नानां विकाराणाम् उत्पत्तिः न भवेत्।"
         },
         {
           "num": 2,
-          "question": "II. What is the main factor determining whether food is light or heavy to digest according to Verse 2?\n(A) Taste (B) Quantity (मात्रा) (C) Price",
-          "questionSanskrit": "द्रव्याणां गुरुलाघवे किं कारणम् उद्दिष्टम्?",
+          "question": "2. 'मितभुक्' नियम के अनुसार हल्के भोजन की अधिक मात्रा कैसी होती है? _______________",
+          "questionSanskrit": "'मितभुक्' नियमानुसारं लघुद्रव्याणाम् अतिमात्रं सेवनं कीदृशं भवति?",
           "marks": 4,
-          "type": "mcq",
-          "options": [
-            "(A) Taste (रसः)",
-            "(B) Quantity (मात्राकारणम्)",
-            "(C) Price (मूल्यम्)"
-          ],
-          "answer": "(B) Quantity (मात्राकारणम्)",
-          "explanation": "श्लोक २: 'मात्राकारणमुद्दिष्टं द्रव्याणां गुरुलाघवे'।"
+          "type": "short_ans",
+          "answer": "अत्यधिक मात्रा में खाने पर हानिकारी होती है।",
+          "explanation": "मितभुक् नियमानुसारं लघुद्रव्याणि चापि अतिमात्रं सेवनेन हानिकराणि जायन्ते। अतः मात्रानुसारम् एव खादितव्यम्।"
+        },
+        {
+          "num": 3,
+          "question": "3. श्रीमद्भगवद्गीता के अनुसार राजसिक आहार मनुष्यों को क्या प्रदान करता है? _______________",
+          "questionSanskrit": "भगवद्गीतानुसारं राजसिक-आहारः मानवेभ्यः किं प्रयच्छति?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "दुःख, शोक और रोग प्रदान करता है।",
+          "explanation": "गीता १७.९: 'कट्वम्ललवणात्युष्णतीक्ष्णरूक्षविदाहिनः। आहारा राजसस्येष्टा दुःखशोकामयप्रदाः॥'"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Word Meanings & Food Quality",
-      "sectionTitleSanskrit": "खण्डः 'ख' · शब्दार्थाः आहारगुणाः च",
-      "instructions": "Identify Ayurvedic food attributes:",
-      "totalMarks": 10,
+      "sectionTitle": "Section B: Health Aphorism Application (स्वास्थ्यसूत्र-अवबोधनम्)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · स्वास्थ्यसूत्र-अर्थावबोधनम्",
+      "instructions": "Analyze the daily health maxim shloka:",
+      "totalMarks": 8,
       "questions": [
         {
-          "num": 3,
-          "question": "Match the term with its meaning:\n१. गरिष्ठम् ➔ (a) Easily digestible\n२. सुपाच्यम् ➔ (b) Heavy / hard to digest\n३. अतिमात्रम् ➔ (c) In excessive quantity\n४. अल्पमात्रम् ➔ (d) In small measure",
-          "questionSanskrit": "मेलनं कुरुत:",
-          "marks": 6,
-          "type": "matching",
-          "answer": "१-(b), २-(a), ३-(c), ४-(d)",
-          "explanation": "गरिष्ठम् = भारी; सुपाच्यम् = आसानी से पचने वाला; अतिमात्रम् = बहुत अधिक; अल्पमात्रम् = कम।"
-        },
-        {
           "num": 4,
-          "question": "According to Ayurveda, why is eating excessively hot food harmful?",
-          "questionSanskrit": "अत्युष्णं भोजनं किमर्थं हितकरं न भवति?",
-          "marks": 4,
+          "question": "दैनिक स्वास्थ्य के ४ नियम (श्लोक ४) कौन-से हैं?\n'व्यायामः प्रातरुत्थाय, नित्यं दन्तविशोधनम् ।\nस्वच्छजलेन सुस्नानं, बुभुक्षायाञ्च भोजनम् ॥'",
+          "questionSanskrit": "दैनिक-स्वास्थ्यस्य चत्वारः नियमाः के सन्ति?",
+          "marks": 8,
           "type": "short_ans",
-          "answer": "अत्युष्णभोजनेन मुखे दाहः भवेत्, पाचनशक्तिश्च नश्यति, अतः अत्युष्णं भोजनं हितकरं न भवति।",
-          "explanation": "पाठे माता वदति—'मुखे दाहः भवेत्, अपि च अत्युष्णं भोजनं हितकरं न भवति'।"
+          "answer": "१. सुबह उठकर व्यायाम करना,\n२. नित्य दाँत साफ़ करना,\n३. स्वच्छ जल से स्नान करना, और\n४. अच्छी भूख लगने पर ही भोजन करना।",
+          "explanation": "प्रातःकाले व्यायामः, दन्तधावनं, सुस्नानं तथा च बुभुक्षायां भोजनं चत्वारः आधारभूताः नियमाः सन्ति।"
         }
       ]
     }
@@ -9772,68 +9767,64 @@ export const WORKSHEETS: Worksheet[] = [
 },
 {
   "id": "ws-grade8-ch9-ws2",
-  "title": "Worksheet 2: Grammar - Adjective Agreement (विशेषण-प्रयोगः)",
-  "titleSanskrit": "नवमः पाठः कार्यपत्रिका २: विशेषण-प्रयोगः",
+  "title": "Worksheet 2: Grammar Check - Adjective Concordance (विशेषण-विशेष्य-अन्वयः)",
+  "titleSanskrit": "नवमः पाठः कार्यपत्रिका २: व्याकरण-जाँच (विशेषण-विशेष्य-अन्वयः)",
   "category": "grade8",
   "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
   "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
   "timeLimit": "45 Mins",
-  "description": "Master Sanskrit adjective-noun agreement in gender, number, and case across sentences (Page 103 grammar rule).",
+  "description": "Apply the fundamental rule on Page 103 (यल्लिङ्गं यद्वचनं या च विभक्तिर्विशेष्यस्य...) to complete adjective-noun concordance pairs.",
   "sections": [
     {
-      "sectionTitle": "Section A: Fill in with Correct Adjective",
-      "sectionTitleSanskrit": "खण्डः 'क' · विशेषण-पूरणम्",
-      "instructions": "Fill in the blanks with the correct form of the adjective in brackets:",
+      "sectionTitle": "Section A: Adjective Concordance Completion (विशेषण-विशेष्य-पूरणम्)",
+      "sectionTitleSanskrit": "खण्डः 'क' · नियमानुकूलं पदपूरणम्",
+      "instructions": "Apply the rule on Page 103 (यल्लिङ्गं यद्वचनं...) to complete the pairs:",
       "totalMarks": 10,
       "questions": [
         {
           "num": 1,
-          "question": "Fill in the blank with the correct form:\n१. ______________ बालकः पठति। (उत्तम / उत्तमा / उत्तमम्)\n२. वाग्भटः ______________ वाणीम् अशृणोत्। (मधुरः / मधुरा / मधुराम्)\n३. अहम् ______________ पुस्तकं क्रीणामि। (एकः / एका / एकम्)\n४. ______________ वैद्याः रोगं शमयन्ति। (उत्तमाः / उत्तमम् / उत्तमा)",
-          "questionSanskrit": "कोष्ठकात् उचितं विशेषणपदं चित्वा लिखत:",
-          "marks": 8,
-          "type": "grammar",
-          "answer": "१. उत्तमः बालकः\n२. मधुराम् वाणीम्\n३. एकम् पुस्तकम्\n४. उत्तमाः वैद्याः",
-          "explanation": "विशेष्यस्य लिङ्ग-वचन-विभक्त्यनुसारं विशेषणस्य रूपं भवति।"
+          "question": "Apply the concordance rule to complete each pair:\n१. मनोहरः + _______________ (पर्वतः / वाटिका / उद्यानम्)\n२. _______________ + पाकशाला (एकः / एका / एकम्)\n३. उत्कृष्टम् + _______________ (लेखकः / पुस्तकम् / लेखिका)",
+          "questionSanskrit": "कोष्ठकात् उचितं पदं चित्वा अन्वयं पूरयत:",
+          "marks": 6,
+          "type": "fill",
+          "answer": "१. पर्वतः (मनोहरः पर्वतः)\n२. एका (एका पाकशाला)\n३. पुस्तकम् (उत्कृष्टम् पुस्तकम्)",
+          "explanation": "१. मनोहरः (पुं.) ➔ पर्वतः (पुं.); २. पाकशाला (स्त्री.) ➔ एका (स्त्री.); ३. उत्कृष्टम् (नपुं.) ➔ पुस्तकम् (नपुं.)।"
         },
         {
           "num": 2,
-          "question": "In 'मनोहरा वाटिका', which word is the noun (विशेष्य)?\n(A) मनोहरा (B) वाटिका",
-          "questionSanskrit": "'मनोहरा वाटिका' इत्यत्र विशेष्यपदं किम्?",
-          "marks": 2,
-          "type": "mcq",
-          "options": [
-            "(A) मनोहरा",
-            "(B) वाटिका"
-          ],
-          "answer": "(B) वाटिका",
-          "explanation": "वाटिका संज्ञापदम् (विशेष्यम्), मनोहरा तस्य विशेषणम्।"
+          "question": "संस्कृत व्याकरणे विशेषण-विशेष्य-नियमस्य कारिकां लिखत (Page 103):",
+          "questionSanskrit": "विशेषण-विशेष्य-नियमस्य कारिका का?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "\"यल्लिङ्गं यद्वचनं या च विभक्तिर्विशेष्यस्य ।\nतल्लिङ्गं तद्वचनं सैव विभक्तिर्विशेषणस्यापि ॥\"",
+          "explanation": "विशेष्यस्य यत् लिङ्गं, यत् वचनं, या च विभक्तिः भवति, विशेषणस्यापि तदेव लिङ्गं, तदेव वचनं, सैव विभक्तिः भवति।"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Textual Adjective-Noun Matching",
-      "sectionTitleSanskrit": "खण्डः 'ख' · विशेषण-विशेष्य-मेलनम्",
-      "instructions": "Match the pairs from Pages 104–105 of Chapter 9:",
+      "sectionTitle": "Section B: Textual Adjective-Noun Matching (पाठान्तर्गत-मेलनम्)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · पाठगत-विशेषण-विशेष्य-मेलनम्",
+      "instructions": "Match the adjective with its noun from Page 105 of Chapter 9:",
       "totalMarks": 10,
       "questions": [
         {
           "num": 3,
-          "question": "Match the adjective with its noun from the text:\n१. विभिन्नानाम् ➔ (a) फलानि\n२. विशाले ➔ (b) व्याधीनाम्\n३. मधुराणि ➔ (c) प्राङ्गणे\n४. उत्कृष्टेन ➔ (d) आयुर्वेदज्ञानेन",
+          "question": "Match the adjective with its noun from the text (Page 105):\n१. विभिन्नानाम् ➔ _____________\n२. विशाले ➔ _____________\n३. मधुराणि ➔ _____________\n४. उत्कृष्टेन ➔ _____________\n५. लौकिकः ➔ _____________\n६. सात्त्विकम् ➔ _____________",
           "questionSanskrit": "पाठान्तर्गत-पदानां मेलनं कुरुत:",
           "marks": 6,
           "type": "matching",
-          "answer": "१-(b) व्याधीनाम्, २-(c) प्राङ्गणे, ३-(a) फलानि, ४-(d) आयुर्वेदज्ञानेन",
-          "explanation": "पाठे प्रयुक्तानि विशेषण-विशेष्य-युगलानि।"
+          "answer": "१. व्याधीनाम्\n२. प्राङ्गणे\n३. फलानि\n४. आयुर्वेदज्ञानेन\n५. खगः\n६. भोजनम्",
+          "explanation": "पाठान्तर्गत-विशेषण-विशेष्य-सम्बन्धाः।"
         },
         {
           "num": 4,
-          "question": "Identify the gender, number, and case of 'सात्त्विकं भोजनम्'.",
-          "questionSanskrit": "'सात्त्विकं भोजनम्' पदस्य लिङ्गं, वचनं, विभक्तिं च लिखत:",
+          "question": "अधोलिखितयोः पदयोः लिङ्गं, वचनं, विभक्तिं च लिखत:\n(क) मधुराम् वाणीम् ➔ _____________\n(ख) त्रीणि उत्तराणि ➔ _____________",
+          "questionSanskrit": "लिङ्गं, वचनं, विभक्तिं च पृथक् कुरुत:",
           "marks": 4,
           "type": "short_ans",
-          "answer": "लिङ्गम्: नपुंसकलिङ्गम्; वचनम्: एकवचनम्; विभक्तिः: प्रथमा / द्वितीया विभक्तिः।",
-          "explanation": "भोजनम् नपुंसकलिङ्गैकवचने, तदनुरूपं सात्त्विकम्।"
+          "answer": "(क) मधुराम् वाणीम्: स्त्रीलिङ्गम्, एकवचनम्, द्वितीया विभक्तिः।\n(ख) त्रीणि उत्तराणि: नपुंसकलिङ्गम्, बहुवचनम्, प्रथमा/द्वितीया विभक्तिः।",
+          "explanation": "विशेष्यस्य लिङ्ग-वचन-विभक्त्यनुसारं विशेषणस्य रूपाणि।"
         }
       ]
     }

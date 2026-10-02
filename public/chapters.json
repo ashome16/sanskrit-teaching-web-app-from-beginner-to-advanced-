@@ -35457,13 +35457,13 @@
     {
       "id": "grade8_ch9",
       "fileName": "grade8_ch9.txt",
-      "title": "नवमः पाठः — कोऽरुक्? कोऽरुक्? कोऽरुक्?",
-      "page_numbers": "97-105",
+      "title": "नवमः पाठः — कोऽरुक् ? कोऽरुक् ? कोऽरुक् ?",
+      "page_numbers": "62–65 / 97–105",
       "sentences": [
         {
-          "sanskrit": "॥ नवमः पाठः — कोऽरुक्? कोऽरुक्? कोऽरुक्? ॥",
-          "meaning": "Chapter 9: Who is Free from Disease? (The Ayurvedic Health Riddle — Pages 97–105)",
-          "paragraphTranslation": "नवमः पाठः — कोऽरुक्? कोऽरुक्? कोऽरुक्? (पृष्ठ ९७–१०५)",
+          "sanskrit": "॥ नवमः पाठः — कोऽरुक् ? कोऽरुक् ? कोऽरुक् ? ॥",
+          "meaning": "Chapter 9: Who is Free from Disease? (The Ayurvedic Health Riddle — Pages 62–65 / 97–105)",
+          "paragraphTranslation": "नवमः पाठः — कोऽरुक् ? कोऽरुक् ? कोऽरुक् ? (पृष्ठ ६२–६५ / ९७–१०५)",
           "words": [
             "नवमः",
             "पाठः",
@@ -35472,14 +35472,16 @@
           "kind": "section-header"
         },
         {
-          "sanskrit": "अस्मिन् पाठे भगवान् धन्वन्तरिः शुकरूपं धृत्वा वैद्यस्य वाग्भटस्य परीक्षां गृह्णाति। वाग्भटः स्वास्थ्यस्य त्रीणि सूत्राणि प्राददात्—'हितभुक्', 'मितभुक्', 'ऋतुभुक्' इति।",
-          "meaning": "In this lesson, Lord Dhanvantari tests physician Vagbhata in the guise of a parrot. Vagbhata articulates the three eternal health axioms: Hitabhuk (wholesome food), Mitabhuk (moderate quantity), and Ritubhuk (seasonal diet).",
-          "paragraphTranslation": "इस पाठ में भगवान धन्वंतरि तोते का रूप धरकर वैद्य वाग्भट्ट की परीक्षा लेते हैं, जहाँ वाग्भट्ट स्वास्थ्य के तीन नियम—हितभुक्, मितभुक्, और ऋतुभुक् बताते हैं।",
+          "sanskrit": "अस्मिन् पाठे आयुर्वेद-प्रवर्तकस्य भगवतः धन्वन्तरेः, प्रसिद्ध-वैद्यस्य वाग्भटस्य च रोचक-आख्यायिकायाः माध्यमेन स्वास्थ्यरक्षणस्य त्रयः मूल-सिद्धान्ताः—'हितभुक्' (कल्याणकर-आहारः), 'मितभुक्' (परिमित-मात्रा), 'ऋतुभुक्' (ऋत्वनुकूल-आहारः)—तथा च नित्य-दिनचर्यायाः सर्वकल्याण-प्रार्थनायाः च महत्त्वं प्रतिपादितम् अस्ति।",
+          "meaning": "This chapter imparts the core Ayurvedic principles of holistic health through the captivating legend of Lord Dhanvantari (who tested Indian physicians in the form of a speaking parrot) and the great master Vagbhata. It unlocks the threefold health formula: 'Hitabhuk' (wholesome food), 'Mitabhuk' (moderate quantity), and 'Ritubhuk' (seasonal diet), concluding with timeless guidelines for daily morning regimen and the universal prayer for freedom from disease.",
+          "paragraphTranslation": "इस पाठ में आयुर्वेद के प्रवर्तक भगवान धन्वन्तरि तथा महान वैद्य वाग्भट्ट की रोचक कथा के माध्यम से स्वास्थ्य रक्षा के तीन आधारभूत सिद्धांतों—'हितभुक्' (हितकारी भोजन), 'मितभुक्' (सीमित व संतुलित मात्रा), 'ऋतुभुक्' (मौसम के अनुकूल आहार)—तथा दैनिक स्वास्थ्य के ४ स्वर्णिम नियमों और सर्वे भवन्तु सुखिनः प्रार्थना का अत्यंत सुंदर व व्यावहारिक वर्णन किया गया है।",
           "words": [
             "अस्मिन्",
             "पाठे",
-            "धन्वन्तरिः",
+            "आयुर्वेद",
+            "धन्वन्तरेः",
             "वाग्भटस्य",
+            "स्वास्थ्यरक्षणस्य",
             "हितभुक्",
             "मितभुक्",
             "ऋतुभुक्"
@@ -35487,21 +35489,27 @@
           "kind": "section-header"
         },
         {
-          "sanskrit": "पुत्री – अम्ब ! महती बुभुक्षा बाधते, शीघ्रं भोजनं परिवेषयतु। माता – वत्से, भोजनम् अत्युष्णम् अस्ति, किञ्चित् प्रतीक्षस्व।",
-          "meaning": "Daughter – Mother! I feel very hungry, serve food quickly. Mother – Child, the food is extremely hot, wait for a while.",
-          "paragraphTranslation": "पुत्री – माँ! बहुत भूख लगी है, जल्दी भोजन दीजिए। माता – बेटी, भोजन बहुत गर्म है, थोड़ी प्रतीक्षा करो।",
+          "sanskrit": "पुत्री – अम्ब ! महती बुभुक्षा बाधते, शीघ्रं भोजनं परिवेषयतु ।",
+          "meaning": "Daughter – Mother! I am feeling very hungry, please serve the food quickly.",
+          "paragraphTranslation": "पुत्री – माँ! बहुत तेज भूख सता रही है, जल्दी से भोजन परोस दीजिए।",
           "words": [
             "पुत्री",
-            "–",
             "अम्ब",
             "महती",
             "बुभुक्षा",
             "बाधते",
             "शीघ्रं",
             "भोजनं",
-            "परिवेषयतु",
+            "परिवेषयतु"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "माता – वत्से, भोजनम् अत्युष्णम् अस्ति, किञ्चित् प्रतीक्षस्व ।",
+          "meaning": "Mother – Dear child, the food is extremely hot, please wait for a while.",
+          "paragraphTranslation": "माँ – बेटी, भोजन बहुत गर्म है, थोड़ी प्रतीक्षा करो।",
+          "words": [
             "माता",
-            "–",
             "वत्से",
             "भोजनम्",
             "अत्युष्णम्",
@@ -35509,37 +35517,126 @@
             "किञ्चित्",
             "प्रतीक्षस्व"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "माता – वत्से ! मुखे दाहः भवेत्, अपि च ‘अत्युष्णं भोजनं हितकरं न भवति’ इति आयुर्वेदस्य उपदेशः।",
-          "meaning": "Mother – Child! It may burn your mouth, and 'excessively hot food is not beneficial' is the teaching of Ayurveda.",
-          "paragraphTranslation": "माता – बेटी! मुँह जल सकता है, और 'बहुत गर्म भोजन हितकर नहीं होता' ऐसा आयुर्वेद का उपदेश है।",
+          "sanskrit": "पुत्री – उष्णं भोजनं किमर्थं न ददाति ?",
+          "meaning": "Daughter – Why do you not give hot food?",
+          "paragraphTranslation": "पुत्री – गर्म भोजन किसलिए नहीं देती हो?",
+          "words": [
+            "पुत्री",
+            "उष्णं",
+            "भोजनं",
+            "किमर्थं",
+            "न",
+            "ददाति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "माता – वत्से ! मुखे दाहः भवेत्, अपि च 'अत्युष्णं भोजनं हितकरं न भवति' इति आयुर्वेदस्य उपदेशः ।",
+          "meaning": "Mother – Dear! It might cause a burning sensation in the mouth, and moreover, 'Extremely hot food is not beneficial for health' is the advice of Ayurveda.",
+          "paragraphTranslation": "माँ – बेटी! मुँह में जलन हो सकती है, और 'बहुत गर्म भोजन स्वास्थ्य के लिए हितकर नहीं होता' ऐसा आयुर्वेद का उपदेश है।",
           "words": [
             "माता",
-            "–",
             "वत्से",
             "मुखे",
             "दाहः",
             "भवेत्",
             "अपि",
             "च",
-            "‘अत्युष्णं",
+            "अत्युष्णं",
             "भोजनं",
             "हितकरं",
             "न",
-            "भवति’",
+            "भवति",
             "इति",
             "आयुर्वेदस्य",
             "उपदेशः"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "पुरा भगवान् धन्वन्तरिः मनोहरं शुकरूपं धृत्वा प्रतिग्रामम् अभ्रमत्। सः प्रख्यातवैद्यानां भवनपार्श्वे 'कोऽरुक्' 'कोऽरुक्' इति ध्वनिम् अकरोत्।",
-          "meaning": "In ancient times, Lord Dhanvantari assumed the form of a parrot and visited villages, calling out near the houses of famed physicians: 'Koऽruk?' (Who is free from disease?).",
-          "paragraphTranslation": "प्राचीन काल में भगवान धन्वंतरि ने तोते का रूप धारण किया और प्रसिद्ध वैद्यों के घर के पास 'कोऽरुक्' (कौन नीरोगी है?) की पुकार लगाई।",
+          "sanskrit": "पुत्रः – अम्ब ! आयुर्वेडे बहवः आहारनियमाः सन्ति इति अस्माकं शिक्षकः अपि बोधयति ।",
+          "meaning": "Son – Mother! Our teacher also teaches us that there are many dietary rules in Ayurveda.",
+          "paragraphTranslation": "पुत्र – माँ! आयुर्वेद में भोजन के बहुत से नियम हैं, ऐसा हमारे शिक्षक भी हमें समझाते हैं।",
           "words": [
+            "पुत्रः",
+            "अम्ब",
+            "आयुर्वेडे",
+            "बहवः",
+            "आहारनियमाः",
+            "सन्ति",
+            "इति",
+            "अस्माकं",
+            "शिक्षकः",
+            "अपि",
+            "बोधयति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "माता – सत्यम् उक्तं वत्स ! आहारविषये एकः रोचकः प्रसङ्गः अस्ति । युवाम् इच्छथ चेत् श्रावयामि ।",
+          "meaning": "Mother – You said it right, son! There is an interesting story regarding food. If both of you wish, I can narrate it.",
+          "paragraphTranslation": "माँ – बेटा, तुमने सच कहा! भोजन के विषय में एक रोचक कहानी है। यदि तुम दोनों चाहते हो तो मैं सुनाती हूँ।",
+          "words": [
+            "माता",
+            "सत्यम्",
+            "उक्तं",
+            "वत्स",
+            "आहारविषये",
+            "एकः",
+            "रोचकः",
+            "प्रसङ्गः",
+            "अस्ति",
+            "युवाम्",
+            "इच्छथ",
+            "चेत्",
+            "श्रावयामि"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "पुत्री – अस्तु अम्ब ! यावत् भोजनं भोक्तुं योग्यं भवति तावत् तं श्रावयातु ।",
+          "meaning": "Daughter – Alright mother! Until the food becomes fit to eat, please narrate that story.",
+          "paragraphTranslation": "पुत्री – ठीक है माँ! जब तक भोजन खाने योग्य होता है, तब तक आप उसे सुनाइए।",
+          "words": [
+            "पुत्री",
+            "अस्तु",
+            "अम्ब",
+            "यावत्",
+            "भोजनं",
+            "भोक्तुं",
+            "योग्यं",
+            "भवति",
+            "तावत्",
+            "तं",
+            "श्रावयातु"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "माता – अस्तु, श्रूयाताम् ।",
+          "meaning": "Mother – Okay, listen.",
+          "paragraphTranslation": "माँ – अच्छा, सुनो।",
+          "words": [
+            "माता",
+            "अस्तु",
+            "श्रूयाताम्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "‘भारतवर्षे वैद्याः विभिन्ननां व्याधीनां शमनं कथं कुर्वन्ति’ इति ज्ञातुं पुरा भगवान् धन्वन्तरिः मनोहरं शुकरूपं धृत्वा प्रतिग्रामम् अभ्रमत् ।",
+          "meaning": "To see how physicians in India treat various diseases, Lord Dhanvantari assumed the beautiful form of a parrot in ancient times and wandered from village to village.",
+          "paragraphTranslation": "'भारतवर्ष में वैद्य विभिन्न रोगों का निवारण कैसे करते हैं' यह जानने के लिए प्राचीन काल में भगवान धन्वन्तरि ने तोते का सुंदर रूप धारण किया और गाँव-गाँव घूमे।",
+          "words": [
+            "भारतवर्षे",
+            "वैद्याः",
+            "विभिन्ननां",
+            "व्याधीनां",
+            "शमनं",
+            "ज्ञातुं",
             "पुरा",
             "भगवान्",
             "धन्वन्तरिः",
@@ -35547,46 +35644,116 @@
             "शुकरूपं",
             "धृत्वा",
             "प्रतिग्रामम्",
-            "अभ्रमत्",
+            "अभ्रमत्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "सः भ्रमणकाले अनेकेषां प्रख्यातवैद्यानां भवनपार्श्वे स्थितेषु वृक्षेषु उपविश्य 'कोऽरुक्' 'कोऽरुक्' 'कोऽरुक्' इति ध्वनिम् अकरोत् ।",
+          "meaning": "During his travels, he would sit on trees near the houses of many famous doctors and call out, 'Koruk? Koruk? Koruk?' (Who is healthy and free from disease?).",
+          "paragraphTranslation": "भ्रमण के दौरान वे कई प्रसिद्ध वैद्यों के घरों के पास के पेड़ों पर बैठकर 'कोऽरुक्? कोऽरुक्? कोऽरुक्?' (कौन नीरोग है?) की ध्वनि करते थे।",
+          "words": [
             "सः",
+            "भ्रमणकाले",
+            "अनेकेषां",
             "प्रख्यातवैद्यानां",
             "भवनपार्श्वे",
+            "स्थितेषु",
+            "वृक्षेषु",
+            "उपविश्य",
             "कोऽरुक्",
-            "कोऽरुक्",
-            "इति",
             "ध्वनिम्",
             "अकरोत्"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "अन्ते सः वैद्यस्य वाग्भटस्य कुटीरसमीपं गतवान्। तत्र पुष्पतरुम् आरुह्य मधुरया गिरा 'कोऽरुक्' इति शब्दम् अकरोत्।",
-          "meaning": "Finally he arrived at physician Vagbhata's hermitage, perching on a flower tree and calling 'Koऽruk' in a melodious voice.",
-          "paragraphTranslation": "अंत में वे वैद्य वाग्भट्ट की कुटिया पर गए और पेड़ पर बैठकर मधुर वाणी में 'कोऽरुक्' पुकारा।",
+          "sanskrit": "परन्तु कश्चिदपि खगस्य एतस्मिन् वचने अवधानं न दत्तवान् ।",
+          "meaning": "But no one paid attention to the bird's utterance.",
+          "paragraphTranslation": "परन्तु पक्षी की इस आवाज़ की ओर किसी ने ध्यान नहीं दिया।",
+          "words": [
+            "परन्तु",
+            "कश्चिदपि",
+            "खगस्य",
+            "एतस्मिन्",
+            "वचने",
+            "अवधानं",
+            "न",
+            "दत्तवान्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अन्ते सः वैद्यस्य वाग्भटस्य कुटीरसमीपं गतवान् ।",
+          "meaning": "In the end, he went near the cottage of physician Vagbhata.",
+          "paragraphTranslation": "अंत में वे वैद्य वाग्भट्ट की कुटिया के पास गए।",
           "words": [
             "अन्ते",
             "सः",
             "वैद्यस्य",
             "वाग्भटस्य",
             "कुटीरसमीपं",
-            "गतवान्",
+            "गतवान्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "तत्र विशाले प्राङ्गणे स्थितं पुष्पतरुम् आरुह्य मधुरया गिरा 'कोऽरुक्' 'कोऽरुक्' 'कोऽरुक्' इति शब्दम् अकरोत् ।",
+          "meaning": "Climbing a flowering tree in the large courtyard, he made the sound 'Koruk' in a sweet voice.",
+          "paragraphTranslation": "वहाँ बड़े आँगन में स्थित एक फूलों के पेड़ पर चढ़कर उन्होंने मधुर वाणी में 'कोऽरुक्? कोऽरुक्? कोऽरुक्?' शब्द किया।",
+          "words": [
             "तत्र",
+            "विशाले",
+            "प्राङ्गणे",
+            "स्थितं",
             "पुष्पतरुम्",
             "आरुह्य",
             "मधुरया",
             "गिरा",
             "कोऽरुक्",
-            "इति",
             "शब्दम्",
             "अकरोत्"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "मानुषध्वनिं कुर्वन्तं शुकं दृष्ट्वा विस्मितः वाग्भटः चिन्तितवान् - \"नायं लौकिकः खगः। एषः निश्चयेन कश्चन देवविशेषः अस्ति\"।",
-          "meaning": "Amazed to hear human speech from a parrot, Vagbhata realized: \"This is no mundane bird; surely this is a divine deity.\"",
-          "paragraphTranslation": "मनुष्य जैसी वाणी सुनकर चकित वाग्भट्ट ने सोचा— \"यह कोई साधारण पक्षी नहीं, अवश्य ही कोई देवपुरुष हैं।\"",
+          "sanskrit": "मधुरां वाणीं श्रुत्वा चिकित्सानिरतः वाग्भटः प्राङ्गणम् आगत्य सर्वासु दिक्षु अपश्यत् ।",
+          "meaning": "Hearing the sweet voice, Vagbhata, who was absorbed in practicing medicine, came out into the courtyard and looked in all directions.",
+          "paragraphTranslation": "मधुर वाणी सुनकर चिकित्सा में लीन वाग्भट्ट आँगन में आए और सभी दिशाओं में देखा।",
           "words": [
+            "मधुरां",
+            "वाणीं",
+            "श्रुत्वा",
+            "चिकित्सानिरतः",
+            "वाग्भटः",
+            "प्राङ्गणम्",
+            "आगत्य",
+            "सर्वासु",
+            "दिक्षु",
+            "अपश्यत्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "क्षणात् वाग्भटः मनोहरं तं शुकम् अपश्यत् ।",
+          "meaning": "In a moment, Vagbhata spotted the beautiful parrot.",
+          "paragraphTranslation": "थोड़ी ही देर में वाग्भट्ट ने उस सुंदर तोते को देखा।",
+          "words": [
+            "क्षणात्",
+            "वाग्भटः",
+            "मनोहरं",
+            "तं",
+            "शुकम्",
+            "अपश्यत्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "सार्थकं मानुषध्वनिं कुर्वन्तं शुकं दृष्ट्वा विस्मितः वाग्भटः चिन्तितवान् - 'नायं लौकिकः खगः । एषः निश्चयेन कश्चन देवविशेषः अस्ति' ।",
+          "meaning": "Amazed to see the parrot producing a meaningful human-like voice, Vagbhata thought: 'This is no ordinary earthly bird. He is certainly some divine being.'",
+          "paragraphTranslation": "अर्थपूर्ण इंसानी आवाज़ निकालने वाले तोते को देखकर हैरान वाग्भट्ट ने सोचा—'यह कोई साधारण पक्षी नहीं है। यह निश्चय ही कोई देवता है'।",
+          "words": [
+            "सार्थकं",
             "मानुषध्वनिं",
             "कुर्वन्तं",
             "शुकं",
@@ -35594,21 +35761,54 @@
             "विस्मितः",
             "वाग्भटः",
             "चिन्तितवान्",
-            "नायं",
             "लौकिकः",
             "खगः",
-            "एषः",
-            "निश्चयेन",
-            "कश्चन",
-            "देवविशेषः",
-            "अस्ति"
+            "देवविशेषः"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "ततः सः अचिरादेव सूत्ररूपाणि त्रीणि उत्तराणि प्राददात् - 'हितभुक्' 'मितभुक्' 'ऋतुभुक्' इति।",
-          "meaning": "Thereupon, without delay, Vagbhata gave three aphoristic answers: 'Hitabhuk' (eats wholesome food), 'Mitabhuk' (eats moderate portions), and 'Ritubhuk' (eats according to the season).",
-          "paragraphTranslation": "तब उन्होंने तुरंत सूत्र रूप में तीन उत्तर दिए— 'हितभुक्', 'मितभुक्', और 'ऋतुभुक्'।",
+          "sanskrit": "सः झटिति तस्मै विहगाय मधुराणि फलानि समर्पितवान् परन्तु सः खगः फलानि न गृहीत्वा पुनरपि तथैव 'कोऽरुक्' 'कोऽरुक्' 'कोऽरुक्' इति प्रश्नस्वरेण शब्दमकरोत् ।",
+          "meaning": "He quickly offered sweet fruits to the bird, but the bird did not take the fruits and questioned again in an interrogative tone, 'Koruk?'.",
+          "paragraphTranslation": "उन्होंने तुरंत उस पक्षी को मीठे फल भेंट किए, लेकिन उस पक्षी ने फल न लेकर फिर से वैसे ही प्रश्नवाचक स्वर में 'कोऽरुक्' शब्द किया।",
+          "words": [
+            "झटिति",
+            "तस्मै",
+            "विहगाय",
+            "मधुराणि",
+            "फलानि",
+            "समर्पितवान्",
+            "गृहीत्वा",
+            "पुनरपि",
+            "प्रश्नस्वरेण",
+            "शब्दमकरोत्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अथ वैद्यः वाग्भटः अचिन्तयत् यत् यावत् खगः स्वप्रश्नानाम् उत्तराणि न प्राप्नोति तावत् अयं भोजनं न वाञ्छति इति ।",
+          "meaning": "Then Vagbhata realized that until the bird receives answers to its questions, it does not desire food.",
+          "paragraphTranslation": "तब वैद्य वाग्भट्ट ने सोचा कि जब तक इस पक्षी को अपने प्रश्न का उत्तर नहीं मिल जाता, तब तक यह भोजन नहीं करना चाहता।",
+          "words": [
+            "अथ",
+            "वैद्यः",
+            "वाग्भटः",
+            "अचिन्तयत्",
+            "यावत्",
+            "खगः",
+            "स्वप्रश्नानाम्",
+            "उत्तराणि",
+            "प्राप्नोति",
+            "तावत्",
+            "भोजनं",
+            "वाञ्छति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "ततः सः अचिरादेव सूत्ररूपाणि त्रीणि उत्तराणि प्राददात् - 'हितभुक्' 'मितभुक्' 'ऋतुभुक्' इति ।",
+          "meaning": "Therefore, without delay, he provided three answers in aphoristic style: 'Hitabhuk' (wholesome eater), 'Mitabhuk' (moderate eater), and 'Ritubhuk' (seasonal eater).",
+          "paragraphTranslation": "इसलिए उन्होंने तुरंत सूत्र के रूप में तीन उत्तर दिए—'हितभुक्' (हितकारी खाने वाला), 'मितभुक्' (कम मात्रा में खाने वाला), और 'ऋतुभुक्' (ऋतु के अनुकूल खाने वाला)।",
           "words": [
             "ततः",
             "सः",
@@ -35619,93 +35819,160 @@
             "प्राददात्",
             "हितभुक्",
             "मितभुक्",
-            "ऋतुभुक्",
-            "इति"
+            "ऋतुभुक्"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "समुचितम् उत्तरं श्रुत्वा अत्यन्तं प्रीतः सः शुकः फलानि खादितवान्। धन्वन्तरिः उक्तवान् - \"वत्स ! अहं धन्वन्तरिः अस्मि। त्वम् अवश्यमेव अष्टाङ्गहृदयं विरचयेः।\"",
-          "meaning": "Overjoyed at the precise answer, the parrot relished the fruits and said: \"Child! I am Dhanvantari. You must compose the Ashtanga treatise!\"",
-          "paragraphTranslation": "सटीक उत्तर सुनकर प्रसन्न तोते ने फल खाए और धन्वंतरि ने कहा— \"वत्स! मैं धन्वंतरि हूँ। तुम अवश्य ही अष्टांग आयुर्वेद ग्रंथ की रचना करो।\"",
+          "sanskrit": "समुचितम् उत्तरं श्रुत्वा अत्यन्तं प्रीतः सः शुकः वाग्भटेन अर्पितानि फलानि खादितवान् ।",
+          "meaning": "Hearing the appropriate answer, the highly pleased parrot ate the fruits offered by Vagbhata.",
+          "paragraphTranslation": "सही उत्तर सुनकर बहुत प्रसन्न हुए तोते ने वाग्भट्ट द्वारा दिए गए फलों को खाया।",
           "words": [
             "समुचितम्",
             "उत्तरं",
             "श्रुत्वा",
             "अत्यन्तं",
             "प्रीतः",
-            "सः",
             "शुकः",
+            "वाग्भटेन",
+            "अर्पितानि",
             "फलानि",
-            "खादितवान्",
+            "खादितवान्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "ततः शुकरूपः धन्वन्तरिः वाग्भटम् उक्तवान् - 'वत्स ! अहं धन्वन्तरिः अस्मि। उत्तमस्य वैद्यस्य अन्वेषणाय भारतवर्षे सर्वत्र परिभ्रमन् अत्र समागतः। तव उत्कृष्टेन आयुर्वेदज्ञानेन अहम् अतीव सन्तुष्टः अस्मि। त्वम् अवश्यमेव आयुर्वेद-अष्टाङ्गविचार-सारभूतं तन्त्रं विरचयेः' इति उक्त्वा सः अन्तर्हितः ।",
+          "meaning": "Then Dhanvantari in the form of a parrot told Vagbhata: 'Son! I am Dhanvantari. I came here after traveling all over India in search of an excellent physician. I am immensely satisfied with your outstanding knowledge of Ayurveda. You must compose a medical treatise encapsulating the essence of the eight branches of Ayurveda.' Saying this, he disappeared.",
+          "paragraphTranslation": "तत्पश्चात तोते के रूप में आए धन्वन्तरि ने वाग्भट्ट से कहा—'बेटा! मैं धन्वन्तरि हूँ। एक योग्य वैद्य की खोज में पूरे भारतवर्ष में घूमते हुए यहाँ आया हूँ। मैं तुम्हारे उत्कृष्ट आयुर्वेद के ज्ञान से बहुत संतुष्ट हूँ। तुम अवश्य ही आयुर्वेद के आठ अंगों के विचार वाले इस ज्ञान के आधार पर एक ग्रंथ की रचना करो।' ऐसा कहकर वे अंतर्ध्यान हो गए।",
+          "words": [
+            "ततः",
+            "शुकरूपः",
             "धन्वन्तरिः",
+            "वाग्भटम्",
             "उक्तवान्",
-            "वत्स",
-            "अहं",
-            "धन्वन्तरिः",
-            "अस्मि",
-            "त्वम्",
-            "अवश्यमेव",
-            "अष्टाङ्गहृदयं",
-            "विरचयेः"
+            "अन्वेषणाय",
+            "आयुर्वेदज्ञानेन",
+            "सन्तुष्टः",
+            "अष्टाङ्गविचार",
+            "तन्त्रं",
+            "विरचयेः",
+            "अन्तर्हितः"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "तच्च नित्यं प्रयुञ्जीत स्वास्थ्यं येनानुवर्तते । अजातानां विकाराणामनुत्पत्तिकरं च यत् ॥ १ ॥",
-          "meaning": "Verse 1 (Charaka on Hitabhuk): One must daily partake of that wholesome diet which sustains optimal health and prevents the manifestation of unborn illnesses.",
-          "paragraphTranslation": "श्लोक १ (हितभुक्): मनुष्य को प्रतिदिन ऐसा हितकारी भोजन करना चाहिए जिससे स्वास्थ्य बना रहे और नए रोग उत्पन्न न हों।",
+          "sanskrit": "एतत् सर्वं दूरात् पश्यन्तः विस्मिताः शिष्याः आचार्यवाग्भटस्य समीपम् आगत्य अपृच्छन् - 'गुरुवर ! शुकः कोऽरुक् इति उक्तवान्, तस्य कोऽर्थः ? अपि च भवान् किम् उत्तरं दत्तवान् ?' ।",
+          "meaning": "Witnessing all this from afar with astonishment, the disciples approached Acharya Vagbhata and asked: 'Revered Guru! The parrot uttered Koruk—what is its meaning? And what answer did you give?'",
+          "paragraphTranslation": "यह सब दूर से देखकर हैरान हुए शिष्य आचार्य वाग्भट्ट के पास आए और बोले—'गुरुवर! तोते ने कोऽरुक् कहा, उसका क्या अर्थ है? और आपने क्या उत्तर दिया?'।",
           "words": [
-            "तच्च",
-            "नित्यं",
-            "प्रयुञ्जीत",
-            "स्वास्थ्यं",
-            "येनानुवर्तते",
-            "अजातानां",
-            "विकाराणामनुत्पत्तिकरं",
-            "च",
-            "यत्",
-            "१"
+            "एतत्",
+            "सर्वं",
+            "दूरात्",
+            "पश्यन्तः",
+            "विस्मिताः",
+            "शिष्याः",
+            "आचार्यवाग्भटस्य",
+            "समीपम्",
+            "आगत्य",
+            "अपृच्छन्"
           ],
-          "kind": "verse"
+          "kind": null
         },
         {
-          "sanskrit": "अल्पादाने गुरूणां च लघूनां चातिसेवने । मात्राकारणमुद्दिष्टं द्रव्याणां गुरुलाघवे ॥ २ ॥",
-          "meaning": "Verse 2 (Mitabhuk): Heavy meals become digestible when taken in small measures, while light foods turn harmful if eaten excessively. Hence food quantity determines digestibility.",
-          "paragraphTranslation": "श्लोक २ (मितभुक्): भारी भोजन भी कम मात्रा में पच जाता है, और हल्का भोजन भी अत्यधिक मात्रा में हानिकारक होता है; मात्रा ही मुख्य कारण है।",
+          "sanskrit": "तदा वाग्भटः छात्राणां जिज्ञासाम् उपशमयन् कथयति – 'छात्राः, शृणुत ! एषः शुकः वदति यत् कः अरुक् अर्थात् कः स्वस्थः नीरोगः वा वर्तते ? तदा मया उक्तम् - यः हितभुक्, मितभुक्, ऋतुभुक् च, सः एव सर्वदा स्वस्थः भवति' ।",
+          "meaning": "Then Vagbhata, pacifying the students' curiosity, explained: 'Students, listen! This parrot asks who is healthy and free from ailment? Then I answered: One who is Hitabhuk, Mitabhuk, and Ritubhuk alone always remains healthy.'",
+          "paragraphTranslation": "तब वाग्भट्ट ने शिष्यों की जिज्ञासा शांत करते हुए कहा—'छात्रों, सुनो! यह तोता पूछ रहा था कि कः अरुक्? अर्थात् कौन स्वस्थ या नीरोग रहता है? तब मैंने उत्तर दिया—जो हितभुक्, मितभुक् और ऋतुभुक् है, वही हमेशा स्वस्थ रहता है'।",
           "words": [
-            "अल्पादाने",
-            "गुरूणां",
-            "च",
-            "लघूनां",
-            "चातिसेवने",
-            "मात्राकारणमुद्दिष्टं",
-            "द्रव्याणां",
-            "गुरुलाघवे",
-            "२"
+            "तदा",
+            "वाग्भटः",
+            "छात्राणां",
+            "जिज्ञासाम्",
+            "उपशमयन्",
+            "कथयति",
+            "कः",
+            "अरुक्",
+            "स्वस्थः",
+            "नीरोगः",
+            "हितभुक्",
+            "मितभुक्",
+            "ऋतुभुक्"
           ],
-          "kind": "verse"
+          "kind": null
         },
         {
-          "sanskrit": "तस्याशिताद्यादाहारात् बलं वर्णश्च वर्धते । तस्यर्तुसात्म्यं विदितं चेष्टाहारव्यपाश्रयम् ॥ ३ ॥",
-          "meaning": "Verse 3 (Ritubhuk): When one understands dietary and lifestyle alignment across the six seasons, all consumed food enhances vitality, radiance, and longevity.",
-          "paragraphTranslation": "श्लोक ३ (ऋतुभुक्): जो छह ऋतुओं के अनुसार आहार-विहार का सामंजस्य जानता है, उसके खाए हुए अन्न से बल और शारीरिक कांति बढ़ती है।",
+          "sanskrit": "छात्राः पुनः जिज्ञासया अपृच्छन् - 'आचार्य ! हितभुक्, मितभुक्, ऋतुभुक् इति – एतेषां कः आशयः ?' ।",
+          "meaning": "The students inquired again with curiosity: 'Acharya! What is the true purport of Hitabhuk, Mitabhuk, and Ritubhuk?'",
+          "paragraphTranslation": "छात्रों ने फिर पूछा—'आचार्य! इन तीनों शब्दों का क्या मतलब है?'।",
           "words": [
-            "तस्याशिताद्यादाहारात्",
-            "बलं",
-            "वर्णश्च",
-            "वर्धते",
-            "तस्यर्तुसात्म्यं",
-            "विदितं",
-            "चेष्टाहारव्यपाश्रयम्",
-            "३"
+            "छात्राः",
+            "पुनः",
+            "जिज्ञासया",
+            "अपृच्छन्",
+            "आचार्य",
+            "हितभुक्",
+            "मितभुक्",
+            "ऋतुभुक्",
+            "आशयः"
           ],
-          "kind": "verse"
+          "kind": null
         },
         {
-          "sanskrit": "व्यायामः प्रातरुत्थाय, नित्यं दन्तविशोधनम्। स्वच्छजलेन सुस्नानं, बुभुक्षायाञ्च भोजनम् ॥ ४ ॥",
-          "meaning": "Verse 4 (Daily Health Formula): Exercising early in the morning, cleaning teeth daily, bathing thoroughly with clean water, and eating only when genuinely hungry.",
-          "paragraphTranslation": "श्लोक ४ (दिनचर्या): सुबह उठकर व्यायाम, प्रतिदिन दाँत साफ करना, स्वच्छ जल से स्नान, और भूख लगने पर ही भोजन करना।",
+          "sanskrit": "वाग्भटः वदति – 'हितभुक् अर्थात् यस्य आहारस्य सेवनेन स्वास्थ्यस्य रक्षणं भवेत्, अनुत्पन्नानां विकाराणाम् उत्पत्तिः न भवेत्, तादृशः आहारः सेवनीयः' ।",
+          "meaning": "Vagbhata explained: Hitabhuk means one must consume that wholesome food whose intake preserves existing health and prevents unmanifested disorders from developing.",
+          "paragraphTranslation": "वाग्भट्ट ने समझाया—हितभुक् अर्थात् जो भोजन शरीर की रक्षा करे और भविष्य में रोगों को पैदा न होने दे, वही हितकारी भोजन है।",
+          "words": [
+            "हितभुक्",
+            "आहारस्य",
+            "सेवनेन",
+            "स्वास्थ्यस्य",
+            "रक्षणं",
+            "अनुत्पन्नानां",
+            "विकाराणाम्",
+            "उत्पत्तिः",
+            "सेवनीयः"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "मितभुक् अर्थात् गरिष्ठद्रव्याणि अपि अल्पमात्रं सेवनेन सुपाच्यानि भवन्ति, लघुद्रव्याणि चापि अतिमात्रं सेवनेन हानिकराणि जायन्ते, अतः मात्रानुसारम् एव खादितव्यम् ।",
+          "meaning": "Mitabhuk means even heavy food articles become easily digestible when eaten in small portions, while light food articles turn harmful when eaten in excess; therefore, food should be consumed strictly in measured quantity.",
+          "paragraphTranslation": "मितभुक् अर्थात् भारी भोजन भी यदि कम मात्रा में खाया जाए तो पच जाता है, और हल्का भोजन भी यदि बहुत ज़्यादा खा लिया जाए तो नुकसान पहुँचाता है; इसलिए मात्रा के अनुसार संतुलित खाना ही मितभुक् है।",
+          "words": [
+            "मितभुक्",
+            "गरिष्ठद्रव्याणि",
+            "अल्पमात्रं",
+            "सेवनेन",
+            "सुपाच्यानि",
+            "लघुद्रव्याणि",
+            "अतिमात्रं",
+            "हानिकराणि",
+            "खादितव्यम्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "ऋतुभुक् अर्थात् वर्षभरे षट् ऋतवः भवन्ति, यः पुरुषः ऋतूनाम् अनुकूलं स्वास्थ्यप्रदम् आहारसेवनं जानाति तदनुसारम् आचरणं च करोति, तस्य जनस्य भोजनं बलवर्धकं, वर्णकान्तिजनकं, सुखवर्धकम्, आयुर्वर्धकञ्च भवति । अतः ऋतोः अनुसारं भोक्तव्यम् ।",
+          "meaning": "Ritubhuk means there are six seasons in a year; one who consumes wholesome food suited to the seasons and conducts life accordingly finds that food enhances physical vigor, glowing complexion, joy, and longevity. Hence, one must eat according to each season.",
+          "paragraphTranslation": "ऋतुभुक् अर्थात् साल में छह ऋतुएँ होती हैं; जो मौसम के अनुकूल और स्वास्थ्यवर्धक भोजन चुनता है, उसका भोजन बल, चेहरे की चमक, सुख और उम्र बढ़ाता है; इसलिए मौसम के अनुसार ही भोजन करना चाहिए।",
+          "words": [
+            "ऋतुभुक्",
+            "षट्",
+            "ऋतवः",
+            "अनुकूलं",
+            "स्वास्थ्यप्रदम्",
+            "आहारसेवनं",
+            "बलवर्धकं",
+            "वर्णकान्तिजनकं",
+            "सुखवर्धकम्",
+            "आयुर्वर्धकम्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "व्यायामः प्रातरुत्थाय, नित्यं दन्तविशोधनम् । स्वच्छजलेन सुस्नानं, बुभुक्षायाञ्च भोजनम् ॥",
+          "meaning": "Exercising upon waking up early morning, daily cleansing of teeth, bathing well with pure water, and having food only when genuinely hungry.",
+          "paragraphTranslation": "सुबह उठकर व्यायाम करना, रोज़ दाँत साफ़ करना, स्वच्छ जल से स्नान करना और अच्छी भूख लगने पर ही भोजन करना।",
           "words": [
             "व्यायामः",
             "प्रातरुत्थाय",
@@ -35713,161 +35980,28 @@
             "दन्तविशोधनम्",
             "स्वच्छजलेन",
             "सुस्नानं",
-            "बुभुक्षायाञ्च",
-            "भोजनम्",
-            "४"
+            "बुभुक्षायाम्",
+            "भोजनम्"
           ],
-          "kind": "verse"
+          "kind": null
         },
         {
-          "sanskrit": "सर्वे भवन्तु सुखिनः, सर्वे सन्तु निरामयाः । सर्वे भद्राणि पश्यन्तु मा कश्चिद् दुःखभाग्भवेत् ॥ ५ ॥",
-          "meaning": "Verse 5 (Universal Prayer): May all beings be happy, may all be free from illness, may all behold auspiciousness, and may no one suffer sorrow!",
-          "paragraphTranslation": "श्लोक ५: सभी सुखी हों, सभी नीरोगी रहें, सभी मंगल देखें, और कोई भी दुःख का भागी न बने।",
+          "sanskrit": "सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः । सर्वे भद्राणि पश्यन्तु मा कश्चिद् दुःखभाग्भवेत् ॥",
+          "meaning": "May all beings be happy, may all be free from illness and disease. May all perceive what is auspicious and good, and may no one suffer grief or sorrow.",
+          "paragraphTranslation": "सभी सुखी हों, सभी नीरोग (स्वस्थ) हों। सभी कल्याणकारी दृश्य देखें और किसी को भी दुःख का भागी न बनना पड़े।",
           "words": [
             "सर्वे",
             "भवन्तु",
             "सुखिनः",
-            "सर्वे",
             "सन्तु",
             "निरामयाः",
-            "सर्वे",
             "भद्राणि",
             "पश्यन्तु",
             "मा",
             "कश्चिद्",
-            "दुःखभाग्भवेत्",
-            "५"
+            "दुःखभाग्भवेत्"
           ],
-          "kind": "verse"
-        },
-        {
-          "sanskrit": "कोऽरुक् (कः + अरुक्)",
-          "meaning": "Who is free from disease? / Who is healthy?",
-          "paragraphTranslation": "कौन नीरोगी है? / कौन स्वस्थ है?",
-          "words": [
-            "कोऽरुक्",
-            "अरुक्"
-          ],
-          "kind": "word-gloss"
-        },
-        {
-          "sanskrit": "हितभुक् (हितकर-भोक्ता)",
-          "meaning": "One who eats wholesome, nutritious food",
-          "paragraphTranslation": "हितकारी भोजन करने वाला",
-          "words": [
-            "हितभुक्",
-            "हितकरम्"
-          ],
-          "kind": "word-gloss"
-        },
-        {
-          "sanskrit": "मितभुक् (परिमित-भोक्ता)",
-          "meaning": "One who eats in moderate, measured quantity",
-          "paragraphTranslation": "सीमित मात्रा में खाने वाला",
-          "words": [
-            "मितभुक्",
-            "मात्रा"
-          ],
-          "kind": "word-gloss"
-        },
-        {
-          "sanskrit": "ऋतुभुक् (ऋत्वनुकूल-भोक्ता)",
-          "meaning": "One who eats seasonally appropriate food",
-          "paragraphTranslation": "ऋतु के अनुकूल भोजन करने वाला",
-          "words": [
-            "ऋतुभुक्",
-            "ऋतुसात्म्यम्"
-          ],
-          "kind": "word-gloss"
-        },
-        {
-          "sanskrit": "निरामयाः (नीरोगिणः)",
-          "meaning": "Free from diseases / Healthy",
-          "paragraphTranslation": "रोगमुक्त / निरोगी",
-          "words": [
-            "निरामयाः",
-            "नीरोगिणः"
-          ],
-          "kind": "word-gloss"
-        },
-        {
-          "sanskrit": "बुभुक्षायाम् (क्षुधायाम्)",
-          "meaning": "Upon feeling hunger / In the state of hunger",
-          "paragraphTranslation": "भूख लगने पर",
-          "words": [
-            "बुभुक्षायाम्",
-            "क्षुधायाम्"
-          ],
-          "kind": "word-gloss"
-        },
-        {
-          "sanskrit": "१. (क) शुकरूपं कः धृतवान्?",
-          "meaning": "Who took the form of the parrot? -> भगवान् धन्वन्तरिः",
-          "paragraphTranslation": "तोते का रूप किसने धारण किया?",
-          "words": [
-            "क",
-            "शुकरूपं",
-            "कः",
-            "धृतवान्"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "भगवान् धन्वन्तरिः",
-          "hindi_gloss": "भगवान धन्वंतरि ने"
-        },
-        {
-          "sanskrit": "१. (ग) अन्ते शुकः कस्य कुटीरसमीपं गतवान्?",
-          "meaning": "To whose cottage did the parrot finally go? -> वाग्भटस्य",
-          "paragraphTranslation": "अंत में तोता किसकी कुटिया पर गया?",
-          "words": [
-            "ग",
-            "अन्ते",
-            "शुकः",
-            "कस्य",
-            "कुटीरसमीपं",
-            "गतवान्"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "वाग्भटस्य कुटीरसमीपम्",
-          "hindi_gloss": "वैद्य वाग्भट्ट की कुटिया पर"
-        },
-        {
-          "sanskrit": "१. (घ) ऋतवः कति सन्ति?",
-          "meaning": "How many seasons are there? -> षट् (६)",
-          "paragraphTranslation": "ऋतुएँ कितनी होती हैं?",
-          "words": [
-            "घ",
-            "ऋतवः",
-            "कति",
-            "सन्ति"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "षट् (६)",
-          "hindi_gloss": "छह ऋतुएँ"
-        },
-        {
-          "sanskrit": "२. रिक्तस्थानानि – भारतवर्षे जनाः कथं निरामयाः भवन्ति? अन्ते सः वैद्यस्य वाग्भटस्य कुटीरसमीपं गतवान्। लघुद्रव्याणि अतिमात्रं सेवनेन हानिकराणि जायन्ते।",
-          "meaning": "Fill in blanks: Bharatavarshe, Kutirasamipam, Atimatram.",
-          "paragraphTranslation": "रिक्त स्थान पूर्ति।",
-          "words": [
-            "भारतवर्षे",
-            "कुटीरसमीपं",
-            "अतिमात्रं"
-          ],
-          "kind": "exercise-note"
-        },
-        {
-          "sanskrit": "४ & ५. विशेषण-विशेष्य-मेलनम् – विभिन्नानां व्याधीनाम्, मनोहरं शुकम्, विशाले प्राङ्गणे, मधुराणि फलानि, उत्कृष्टेन आयुर्वेदज्ञानेन, सात्त्विकं भोजनम्, पूज्यः देवः।",
-          "meaning": "Adjective-noun matches: Vibhinnanam vyadhinam, Manoharam shukam, Vishale prangane, Madhurani phalani, Satvikam bhojanam.",
-          "paragraphTranslation": "विशेषण-विशेष्य पदों का मेलन।",
-          "words": [
-            "विभिन्नानां",
-            "व्याधीनाम्",
-            "मनोहरं",
-            "शुकम्",
-            "सात्त्विकं",
-            "भोजनम्"
-          ],
-          "kind": "exercise-note"
+          "kind": null
         }
       ]
     },
