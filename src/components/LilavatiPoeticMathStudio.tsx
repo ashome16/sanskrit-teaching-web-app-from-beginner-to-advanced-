@@ -5,7 +5,7 @@ interface LilavatiStudioProps {
 }
 
 export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlayAudio }) => {
-  const [activeTab, setActiveTab] = useState<'bees' | 'necklace' | 'peacock' | 'lotus'>('bees');
+  const [activeTab, setActiveTab] = useState<'bees' | 'necklace' | 'peacock' | 'lotus' | 'currency'>('bees');
 
   // Interactive state for Peacock & Snake
   const [pillarHeight, setPillarHeight] = useState<number>(9);
@@ -17,6 +17,9 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
 
   // Interactive state for Pearl Necklace
   const [remainingPearls, setRemainingPearls] = useState<number>(6);
+
+  // Interactive state for Cowrie Currency (Gavvalu / Varāṭaka)
+  const [cowrieCount, setCowrieCount] = useState<number>(80);
 
   // Calculations for Peacock:
   // D = snakeDistMultiplier * pillarHeight
@@ -34,6 +37,17 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
   // (1/6 + 1/5 + 1/3 + 1/10) = 4/5
   // (1 - 4/5)p = remainingPearls => p/5 = remainingPearls => p = 5 * remainingPearls
   const totalPearls = remainingPearls * 5;
+
+  // Calculations for Cowrie Currency (Līlāvatī Ch. 1, Verse 2):
+  // 20 Varāṭakas (Gavvalu) = 1 Kākiṇī
+  // 4 Kākiṇīs = 1 Paṇa (80 Cowries)
+  // 16 Paṇas = 1 Dramma (1,280 Cowries)
+  // 16 Drammas = 1 Niṣka (20,480 Cowries)
+  const kakinis = cowrieCount / 20;
+  const panas = cowrieCount / 80;
+  const drammas = cowrieCount / 1280;
+  const nishkas = cowrieCount / 20480;
+  const phootiKaudis = cowrieCount * 4;
 
   return (
     <div
@@ -53,20 +67,21 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
             Interactive Mathematical Poetry Studio
           </span>
           <h3 style={{ margin: '0.25rem 0 0', fontSize: '1.35rem', fontWeight: 800, color: '#0f172a' }}>
-            लीलावती (Līlāvatī) · The Four Poetic Puzzles of Bhāskara II
+            लीलावती (Līlāvatī) · Poetic Puzzles & Micro-Currency of Bhāskara II
           </h3>
           <p style={{ margin: '0.25rem 0 0', fontSize: '0.88rem', color: '#64748b' }}>
-            Quadratic Equations, Fractional Rhythms, and Pythagorean Geometry Cloaked in Nature’s Beauty (1114 CE)
+            Quadratic Equations, Fractional Rhythms, Pythagorean Geometry & Cowrie Place-Value (1114 CE)
           </p>
         </div>
 
         {/* Tab Switcher */}
-        <div style={{ display: 'flex', gap: '0.35rem', background: '#f1f5f9', padding: '0.35rem', borderRadius: '10px' }}>
+        <div style={{ display: 'flex', gap: '0.35rem', background: '#f1f5f9', padding: '0.35rem', borderRadius: '10px', flexWrap: 'wrap' }}>
           {[
             { id: 'bees', label: '🐝 Swarm of Bees', sub: 'Quadratic' },
             { id: 'necklace', label: '📿 Broken Necklace', sub: 'Fractions' },
             { id: 'peacock', label: '🦚 Peacock & Snake', sub: 'Geometry' },
             { id: 'lotus', label: '🪷 Lotus in Lake', sub: 'Depth' },
+            { id: 'currency', label: '🐚 Cowrie Currency (Gavvalu)', sub: 'Place Value' },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -510,6 +525,194 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
               <code>d² + L² = (d + h)² ➔ d² + L² = d² + 2dh + h² ➔ 2dh = L² - h² ➔ d = (L² - h²) / (2h)</code><br />
               With L = {horizontalShift} and h = {bloomHeight}:<br />
               <code>d = ({Math.pow(horizontalShift, 2).toFixed(2)} - {Math.pow(bloomHeight, 2).toFixed(2)}) / {2 * bloomHeight} = <strong>{waterDepth.toFixed(2)} cubits!</strong> (Stem Length = {stemLength.toFixed(2)} cubits)</code>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* =========================================================================
+          TAB 5: COWRIE SHELL CURRENCY (GAVVALU / VARĀṬAKA) & PLACE-VALUE
+         ========================================================================= */}
+      {activeTab === 'currency' && (
+        <div>
+          <div style={{ background: '#fefce8', border: '1.5px solid #fef08a', borderRadius: '12px', padding: '1.2rem', marginBottom: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#854d0e', textTransform: 'uppercase' }}>
+                Classic Sanskrit Verse · Līlāvatī Chapter 1 (Paribhāṣā), Verse 2 · वराटक-परिभाषा
+              </span>
+              <button
+                type="button"
+                onClick={() => onPlayAudio?.('वराटकानां दशकद्वयं यत् सा काकिणी')}
+                style={{
+                  padding: '0.2rem 0.6rem',
+                  fontSize: '0.76rem',
+                  borderRadius: '6px',
+                  border: '1px solid #fde047',
+                  background: '#ffffff',
+                  cursor: 'pointer',
+                  fontWeight: 700,
+                  color: '#854d0e',
+                }}
+              >
+                🔊 Chant Currency Verse
+              </button>
+            </div>
+            <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#713f12', lineHeight: 1.6, marginBottom: '0.4rem' }}>
+              वराटकानां दशकद्वयं यत् सा काकिणी ताश्च पणश्चतस्रः ।<br />
+              ते षोडश द्रम्म इहावगम्यो द्रम्मैस्तथा षोडशभिश्च निष्कः ॥<br />
+              <span style={{ fontSize: '0.92rem', fontWeight: 600, color: '#a16207' }}>
+                varāṭakānāṁ daśakadvayaṁ yat sā kākiṇī tāśca paṇaścatasraḥ |<br />
+                te ṣoḍaśa dramma ihāvagamyo drammaistathā ṣoḍaśabhiśca niṣkaḥ ||
+              </span>
+            </div>
+            <div style={{ fontSize: '0.85rem', color: '#854d0e', background: '#fef9c3', padding: '0.6rem 0.85rem', borderRadius: '8px', margin: '0.5rem 0', border: '1px solid #fde047' }}>
+              <strong>16th c. Telugu Translation (Prakīrṇa Gaṇitamu by Eluganti Pedana):</strong><br />
+              <em>&quot;ఇరువది గవ్వలు కాకిణి (20 Gavvalu = 1 Kakini) · పరగునాల్గు కాకిణులు ఒక పణము (4 Kakinis = 1 Pana) · పదహారు పణములు ద్రమ్మము (16 Panas = 1 Dramma) · పదహారు ద్రమ్మములు ఒక నిష్కము (16 Drammas = 1 Nishka).&quot;</em>
+            </div>
+            <p style={{ margin: 0, fontSize: '0.88rem', color: '#713f12', lineHeight: 1.5 }}>
+              <strong>The Marketplace Axiom:</strong> &quot;Twice ten (20) varāṭakas (cowrie shells / gavvalu) make one kākiṇī; four kākiṇīs make one paṇa; sixteen paṇas make one dramma; and sixteen drammas make one niṣka.&quot;
+            </p>
+          </div>
+
+          {/* Interactive Shell Currency Converter */}
+          <div style={{ background: '#f8fafc', padding: '1.25rem', borderRadius: '12px', border: '1.5px solid #e2e8f0', marginBottom: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1rem' }}>
+              <div>
+                <h4 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                  Interactive Cowrie Shell (Gavvalu) Ledger &amp; Scale
+                </h4>
+                <p style={{ margin: '0.2rem 0 0', fontSize: '0.82rem', color: '#64748b' }}>
+                  Slide to adjust the volume of cowries or pick historical marketplace denominations:
+                </p>
+              </div>
+
+              {/* Presets */}
+              <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap' }}>
+                {[
+                  { label: '20 (1 Kākiṇī)', count: 20 },
+                  { label: '80 (1 Paṇa · Copper)', count: 80 },
+                  { label: '1,280 (1 Dramma · Silver)', count: 1280 },
+                  { label: '20,480 (1 Niṣka · Gold)', count: 20480 },
+                ].map((preset) => (
+                  <button
+                    key={preset.count}
+                    type="button"
+                    onClick={() => setCowrieCount(preset.count)}
+                    style={{
+                      padding: '0.3rem 0.6rem',
+                      fontSize: '0.75rem',
+                      fontWeight: 700,
+                      borderRadius: '6px',
+                      border: cowrieCount === preset.count ? '1.5px solid #0d9488' : '1px solid #cbd5e1',
+                      background: cowrieCount === preset.count ? '#ccfbf1' : '#ffffff',
+                      color: cowrieCount === preset.count ? '#0f766e' : '#334155',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    {preset.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Slider */}
+            <div style={{ marginBottom: '1.25rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem' }}>
+                <span>Selected Shell Volume:</span>
+                <span style={{ color: '#0d9488', fontSize: '1rem' }}>{cowrieCount.toLocaleString()} Cowries (Gavvalu / वराटकाः)</span>
+              </div>
+              <input
+                type="range"
+                min="1"
+                max="20480"
+                step="1"
+                value={cowrieCount}
+                onChange={(e) => setCowrieCount(Number(e.target.value))}
+                style={{ width: '100%', accentColor: '#0d9488', cursor: 'pointer' }}
+              />
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#94a3b8', marginTop: '0.2rem' }}>
+                <span>1 Shell (Retail)</span>
+                <span>80 (Copper Paṇa)</span>
+                <span>1,280 (Silver Dramma)</span>
+                <span>20,480 (Gold Niṣka)</span>
+              </div>
+            </div>
+
+            {/* Live Monetary Hierarchy Cards */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '0.75rem', marginBottom: '1.25rem' }}>
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1.5px solid #e2e8f0' }}>
+                <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>1. Varāṭaka (गవ్వ / Shell)</div>
+                <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#0f172a', margin: '0.2rem 0' }}>{cowrieCount.toLocaleString()}</div>
+                <div style={{ fontSize: '0.75rem', color: '#64748b' }}>Indivisible market counter</div>
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1.5px solid #e2e8f0' }}>
+                <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>2. Kākiṇī (काकिणी / = 20)</div>
+                <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#0d9488', margin: '0.2rem 0' }}>{kakinis.toFixed(2)}</div>
+                <div style={{ fontSize: '0.75rem', color: '#64748b' }}>Handful barter standard</div>
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1.5px solid #e2e8f0' }}>
+                <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>3. Paṇa (पण / = 80)</div>
+                <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#b45309', margin: '0.2rem 0' }}>{panas.toFixed(2)}</div>
+                <div style={{ fontSize: '0.75rem', color: '#64748b' }}>Standard Copper Coin (~9.5g)</div>
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1.5px solid #e2e8f0' }}>
+                <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>4. Dramma (द्रम्म / = 1,280)</div>
+                <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#475569', margin: '0.2rem 0' }}>{drammas.toFixed(3)}</div>
+                <div style={{ fontSize: '0.75rem', color: '#64748b' }}>Standard Silver Coin</div>
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1.5px solid #e2e8f0' }}>
+                <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>5. Niṣka (निष्क / = 20,480)</div>
+                <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#eab308', margin: '0.2rem 0' }}>{nishkas.toFixed(4)}</div>
+                <div style={{ fontSize: '0.75rem', color: '#64748b' }}>Royal Gold Sovereign</div>
+              </div>
+            </div>
+
+            {/* Phooti Kaudi Callout */}
+            <div style={{ background: '#f1f5f9', padding: '0.75rem 1rem', borderRadius: '8px', border: '1px solid #cbd5e1', fontSize: '0.82rem', color: '#334155', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <span>
+                🧩 <strong>Fractional Ledger:</strong> 4 Phooṭī Kauḍīs (broken pieces) = 1 whole shell. Your volume equals <strong>{phootiKaudis.toLocaleString()} Phooṭī Kauḍīs</strong>.
+              </span>
+              <span style={{ fontSize: '0.75rem', color: '#64748b', fontStyle: 'italic' }}>
+                Root of the living Indian idiom: &quot;I don&apos;t have a single phooṭī kauḍī to my name.&quot;
+              </span>
+            </div>
+          </div>
+
+          {/* Core Historical Insights Grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+            <div style={{ background: '#ffffff', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+              <h4 style={{ margin: '0 0 0.4rem', fontSize: '0.98rem', fontWeight: 800, color: '#0f172a' }}>
+                🐚 Why Seashells Instead of Tamarind Seeds?
+              </h4>
+              <p style={{ fontSize: '0.85rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                While tamarind seeds (<em>chinta gittalu</em>) were used casually in domestic games like <em>Vāmana Guṇṭalu</em> (Pallāṅguḻi), they rot, chip, get eaten by insects, and change weight as they dry.
+                Formal treatises required <strong>Monetaria moneta</strong>: mineralized, lightweight, permanent, and impossible to counterfeit inland.
+                Meanwhile, botanical seeds like <strong>Guñjā (ratti)</strong> and <strong>Yava (barleycorn)</strong> were reserved for balance scales (<em>tulā</em>) to weigh gold and gems.
+              </p>
+            </div>
+
+            <div style={{ background: '#ffffff', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+              <h4 style={{ margin: '0 0 0.4rem', fontSize: '0.98rem', fontWeight: 800, color: '#0f172a' }}>
+                ⛵ The Maldives (Mala-dvīpa) Aquaculture Loop
+              </h4>
+              <p style={{ fontSize: '0.85rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                The world’s cowrie epicentre was the Maldives (ancient <em>Mala-dvīpa</em>, Arab <em>Dyvah-Kouzah</em>). Islanders submerged palm rafts in lagoons where millions of cowrie snails fed, harvesting them on lunar cycles.
+                Because atolls cannot grow rice, merchant fleets from Bengal and Odisha (Balasore, Chittagong) sailed with monsoons, bartering thousands of tons of rice, grains, silks, and pottery for billions of shells.
+              </p>
+            </div>
+
+            <div style={{ background: '#ffffff', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+              <h4 style={{ margin: '0 0 0.4rem', fontSize: '0.98rem', fontWeight: 800, color: '#0f172a' }}>
+                🧮 The Physical Training Ground for Place-Value
+              </h4>
+              <p style={{ fontSize: '0.85rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                Before calculating millions on paper, merchants arranged cowries in heaps of tens and twenties on grid floors. This tactile manipulation physically trained human brains in <strong>positional place-value</strong> and <strong>carrying over</strong>.
+                This efficiency swept through Arab treatises (Al-Khwarizmi) and into Europe via Fibonacci’s <em>Liber Abaci</em> (1202), rendering Roman numerals and abacuses obsolete.
+              </p>
             </div>
           </div>
         </div>

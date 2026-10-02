@@ -3251,7 +3251,8 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 <a href="#lilavati-necklace" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>📿 3. Broken Necklace (Fractions)</a>
                 <a href="#lilavati-peacock-lotus" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🦚 4. Peacock &amp; Lotus (Geometry)</a>
                 <a href="#lilavati-studio" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>⚙️ 5. Interactive Riddle Studio</a>
-                <a href="#lilavati-aesthetics" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🎨 6. Sanskrit Aesthetics &amp; Rasa</a>
+                <a href="#lilavati-currency" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🐚 6. Cowrie Currency (Gavvalu) &amp; Place-Value</a>
+                <a href="#lilavati-aesthetics" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🎨 7. Sanskrit Aesthetics &amp; Rasa</a>
               </div>
             </figure>
 
@@ -3371,16 +3372,148 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
             <section className="philosophy-section" id="lilavati-studio" aria-labelledby="heading-lilavati-studio">
               <h2 id="heading-lilavati-studio">5. Interactive Riddle Studio: Solve Bhāskara’s Four Riddles</h2>
               <p className="philosophy-lead">
-                Experiment with the interactive sliders below to solve the quadratic bee swarm, string the pearls, calculate the peacock’s dive, and measure the lake depth:
+                Experiment with the interactive sliders below to solve the quadratic bee swarm, string the pearls, calculate the peacock’s dive, measure the lake depth, and convert cowrie shell currency into silver and gold:
               </p>
 
               {/* Embedded Interactive Component */}
               <LilavatiPoeticMathStudio onPlayAudio={handlePlayAudio} />
             </section>
 
-            {/* Section 6: Sanskrit Aesthetics & Rasa */}
+            {/* Section 6: Cowrie Shell Currency & Place-Value */}
+            <section className="philosophy-section" id="lilavati-currency" aria-labelledby="heading-lilavati-currency">
+              <h2 id="heading-lilavati-currency">6. The Micro-Currency Foundation: Cowrie Shells (Varāṭaka / Gavvalu), Global Trade &amp; Physical Place-Value</h2>
+              <p className="philosophy-lead">
+                In Chapter 1 of the <em>Līlāvatī</em> (the <em>Paribhāṣā</em> metrological chapter), Bhāskarāchārya does not begin with abstract cosmic numbers. Instead, he anchors mathematical calculation in the tangible micro-currency of the common person: the cowrie seashell (वराटक / <em>varāṭaka</em>).
+              </p>
+
+              <div className="philosophy-card" style={{ background: '#fefce8', border: '1.5px solid #fef08a', margin: '1.25rem 0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#854d0e', textTransform: 'uppercase' }}>
+                    Sanskrit Metrology Verse · Upajāti Meter (Chapter 1, Verse 2)
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handlePlayAudio('वराटकानां दशकद्वयं यत् सा काकिणी')}
+                    style={{
+                      padding: '0.2rem 0.6rem',
+                      fontSize: '0.76rem',
+                      borderRadius: '6px',
+                      border: '1px solid #fde047',
+                      background: '#ffffff',
+                      cursor: 'pointer',
+                      fontWeight: 700,
+                      color: '#854d0e',
+                    }}
+                  >
+                    🔊 Chant Currency Verse
+                  </button>
+                </div>
+                <div style={{ fontSize: '1.02rem', fontWeight: 800, color: '#713f12', lineHeight: 1.6, marginBottom: '0.35rem' }}>
+                  वराटकानां दशकद्वयं यत् सा काकिणी ताश्च पणश्चतस्रः ।<br />
+                  ते षोडश द्रम्म इहावगम्यो द्रम्मैस्तथा षोडशभिश्च निष्कः ॥<br />
+                  <span style={{ fontSize: '0.9rem', fontWeight: 600, color: '#a16207' }}>
+                    varāṭakānāṁ daśakadvayaṁ yat sā kākiṇī tāśca paṇaścatasraḥ |<br />
+                    te ṣoḍaśa dramma ihāvagamyo drammaistathā ṣoḍaśabhiśca niṣkaḥ ||
+                  </span>
+                </div>
+                <div style={{ fontSize: '0.85rem', color: '#854d0e', background: '#fef9c3', padding: '0.5rem 0.75rem', borderRadius: '6px', margin: '0.4rem 0', border: '1px solid #fde047' }}>
+                  <strong>16th c. Telugu Translation (<em>Prakīrṇa Gaṇitamu</em> by Eluganti Pedana):</strong><br />
+                  <em>&quot;ఇరువది గవ్వలు కాకిణి (20 Gavvalu = 1 Kakini) · పరగునాల్గు కాకిణులు ఒక పణము (4 Kakinis = 1 Pana) · పదహారు పణములు ద్రమ్మము (16 Panas = 1 Dramma) · పదహారు ద్రమ్మములు ఒక నిష్కము (16 Drammas = 1 Nishka).&quot;</em>
+                </div>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: '#713f12', lineHeight: 1.5 }}>
+                  <strong>Literal Axiom:</strong> &quot;Twice ten (20) varāṭakas (cowrie shells / <em>gavvalu</em>) make one kākiṇī; four kākiṇīs make one paṇa; sixteen paṇas make one dramma; and sixteen drammas make one niṣka.&quot;
+                </p>
+              </div>
+
+              {/* Monetary Conversion Table */}
+              <div style={{ overflowX: 'auto', margin: '1.25rem 0' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem', textAlign: 'left', background: '#ffffff', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                  <thead>
+                    <tr style={{ background: '#f8fafc', borderBottom: '2px solid #cbd5e1' }}>
+                      <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Denomination (Sanskrit / Telugu)</th>
+                      <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Shell Count (Varāṭaka / Gavvalu)</th>
+                      <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Marketplace &amp; Metallic Reality</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Phooṭī Kauḍī / Badda Gavva (बद्द गవ్వ)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>1/4 Shell (0.25)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Quarter piece of a broken shell; fractional ledger unit (origin of the idiom <em>&quot;not even a phooṭī kauḍī&quot;</em>)</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
+                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Varāṭaka / Gavva (वराटक / గవ్వ)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>1 Whole Shell</td>
+                      <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Individual <em>Monetaria moneta</em>; indivisible micro-currency for buying daily produce, salt, and clay pots</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Kākiṇī (काकिणी / కాకిణి)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>20 Shells</td>
+                      <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Handful barter standard; bridges retail counters with wholesale bulk transactions</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
+                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Paṇa (पण / పణము)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>80 Shells (4 Kākiṇīs)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Standard copper coin (~9.5 grams); 80 uniform cowries balanced 1 copper coin on the scales</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Dramma (द्रम्म / ద్రమ్మము)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>1,280 Shells (16 Paṇas)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Standard silver coin; money changers used pre-calibrated scoops/baskets containing 1,280 shells</td>
+                    </tr>
+                    <tr style={{ background: '#f8fafc' }}>
+                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Niṣka (निष्क / నిష్కము)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>20,480 Shells (16 Drammas)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>High-denomination gold coin; state revenue reserves, real-estate transactions, and merchant fleet financing</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Three Thematic Sub-Blocks */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', margin: '1.25rem 0' }}>
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>
+                    🐚 Why Seashells, Not Tamarind Seeds?
+                  </h3>
+                  <p style={{ fontSize: '0.85rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                    While tamarind seeds (<em>chinta gittalu</em>) were used casually in domestic folk games like <em>Vāmana Guṇṭalu</em> (Pallāṅguḻi), they rot, chip, get eaten by insects, and change weight as they dry.
+                    Formal treatises required <strong>Monetaria moneta</strong>: mineralized, lightweight, permanent, and impossible to counterfeit inland.
+                    Meanwhile, botanical seeds like <strong>Guñjā (ratti)</strong> and <strong>Yava (barleycorn)</strong> were reserved for balance scales (<em>tulā</em>) to weigh gold and gems.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>
+                    ⛵ The Maldives (Mala-dvīpa) Aquaculture Loop
+                  </h3>
+                  <p style={{ fontSize: '0.85rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                    The world’s cowrie epicentre was the Maldives (ancient <em>Mala-dvīpa</em>, Arab <em>Dyvah-Kouzah</em>). Islanders submerged palm rafts in lagoons where millions of cowrie snails fed, harvesting them on lunar cycles.
+                    Because atolls cannot grow rice, merchant fleets from Bengal and Odisha (Balasore, Chittagong) sailed with monsoons, bartering thousands of tons of rice, grains, silks, and pottery for billions of shells.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>
+                    🧮 The Physical Training Ground for Place-Value
+                  </h3>
+                  <p style={{ fontSize: '0.85rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                    Before calculating millions on paper, merchants arranged cowries in heaps of tens and twenties on grid floors. This tactile manipulation physically trained human brains in <strong>positional place-value</strong> and <strong>carrying over</strong>.
+                    This efficiency swept through Arab treatises (Al-Khwarizmi) and into Europe via Fibonacci’s <em>Liber Abaci</em> (1202), rendering Roman numerals and abacuses obsolete.
+                  </p>
+                </div>
+              </div>
+
+              <div className="philosophy-card" style={{ background: '#f0fdfa', border: '1.5px solid #99f6e4', margin: '1rem 0' }}>
+                <p style={{ margin: 0, fontStyle: 'italic', fontSize: '0.92rem', color: '#134e4a', lineHeight: 1.6 }}>
+                  <strong>Historical Continuity:</strong> Four centuries before Bhāskara, Śrīdharācārya’s <em>Triśatikā</em> (8th c. CE) formulated this exact ratio: <code>20 varāṭakas = 1 kākiṇī</code>. Two centuries after Bhāskara, Nārāyaṇa Paṇḍita’s <em>Gaṇita Kaumudī</em> (1356 CE) opened its metrology chapter with the identical shell sequence. Cowrie shells functioned as India’s standardized national computational bedrock for well over a thousand years.
+                </p>
+              </div>
+            </section>
+
+            {/* Section 7: Sanskrit Aesthetics & Rasa */}
             <section className="philosophy-section" id="lilavati-aesthetics" aria-labelledby="heading-lilavati-aesthetics">
-              <h2 id="heading-lilavati-aesthetics">6. Sanskrit Aesthetics: The Philosophy Behind the Poetry</h2>
+              <h2 id="heading-lilavati-aesthetics">7. Sanskrit Aesthetics: The Philosophy Behind the Poetry</h2>
               <p className="philosophy-lead">
                 The synthesis of quantitative mathematics and high poetry was the absolute norm in classical Sanskrit text production, driven by a profound educational philosophy:
               </p>
