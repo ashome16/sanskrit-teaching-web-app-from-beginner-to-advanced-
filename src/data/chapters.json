@@ -38185,6 +38185,239 @@
       ]
     },
     {
+      "id": "grade8_app2",
+      "fileName": "grade8_app2.txt",
+      "title": "परिशिष्टम् २: शब्दरूपाणि — नामपदानि, सर्वनामपदानि, संख्यावाचकपदानि च",
+      "page_numbers": "166–175",
+      "sentences": [
+        {
+          "sanskrit": "॥ परिशिष्टम् २: शब्दरूपाणि — नामपदानि, सर्वनामपदानि, संख्यावाचकपदानि च ॥",
+          "meaning": "Appendix 2: Declension Paradigms — Nouns, Pronouns, Participles & Numerals (Pages 166–175)",
+          "paragraphTranslation": "परिशिष्टम् २: शब्दरूपाणि — नामपद, सर्वनामपद और संख्यावाचक पद (पृष्ठ १६६–१७५)",
+          "words": [
+            "परिशिष्टम्",
+            "शब्दरूपाणि",
+            "नामपदानि",
+            "सर्वनामपदानि",
+            "संख्यावाचकपदानि"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "📌 पाठ्यक्रम-मार्गदर्शिका (CBSE / NCERT / NEP 2020) — इदं परिशिष्टं कक्षा-८-संस्कृतपाठ्यक्रमे नाम-सर्वनाम-संख्याशब्दानां रूपसिद्धिं वाक्यरचनाकौशलं च दृढीकरोति।",
+          "meaning": "Curriculum Framework (CBSE / NCERT / NEP 2020): This appendix consolidates nominal, pronominal, and numeral declension patterns to build foundational Sanskrit sentence construction skills.",
+          "paragraphTranslation": "पाठ्यक्रम-मार्गदर्शिका: यह परिशिष्ट कक्षा 8 के छात्रों के लिए संज्ञा, सर्वनाम और संख्यावाची शब्दों के रूपात्मक ढाँचों को स्पष्ट कर वाक्य-निर्माण क्षमता को सुदृढ़ करता है।",
+          "words": [
+            "पाठ्यक्रम-मार्गदर्शिका",
+            "कक्षा-८",
+            "नामपदानि",
+            "सर्वनामपदानि",
+            "वाक्यरचना"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "नपुंसकलिङ्ग-शब्दाः — एतेषां शब्दानां प्रथमा-द्वितीया-विभक्त्योः रूपाणि समानानि भवन्ति, तृतीयातः सप्तमीपर्यन्तं पुंलिङ्गवत् रूपाणि चलन्ति।",
+          "meaning": "Neuter Stems: The nominative and accusative case forms of these words are identical; from instrumental to locative, they decline like masculine stems.",
+          "paragraphTranslation": "नपुंसकलिङ्ग शब्द: इन शब्दों की प्रथमा और द्वितीया विभक्ति के रूप सभी वचनों में समान होते हैं, और तृतीया से सप्तमी तक पुंलिङ्ग की भाँति चलते हैं।",
+          "words": [
+            "नपुंसकलिङ्ग",
+            "प्रथमा",
+            "द्वितीया",
+            "समानानि",
+            "पुंलिङ्गवत्"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "इकारान्त-नपुंसकलिङ्गः 'दधि' एवं 'वारि' — बहुवचने नुम्-आगमेन रूपद्वयं सिद्ध्यति (दधीनि, वारीणि)। 'वारि' शब्दे रेफ-प्रभावेन णत्वं भवति (वारीणि, वारिणा)।",
+          "meaning": "Ikaranta Neuter stems 'Dadhi' and 'Vari': Plurals add nasal augment (Dadhini, Varini). In 'Vari', the presence of 'r' triggers Natva to retroflex 'n' (Varini, Varina).",
+          "paragraphTranslation": "इकारान्त नपुंसकलिङ्ग 'दधि' और 'वारि': बहुवचन में नुम् के आगम से दधीनि और वारीणि बनते हैं। वारि में 'र' के प्रभाव से 'ण' हो जाता है (वारीणि, वारिणा)।",
+          "words": [
+            "दधि",
+            "वारि",
+            "दधीनि",
+            "वारीणि",
+            "णत्व-विधानम्"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "उकारान्त-नपुंसकलिङ्गः 'मधु' — बहुवचने 'मधूनि' इति रूपं भवति। तृतीया-एकवचने 'मधुना' तथा षष्ठी-बहुवचने 'मधूनाम्' इति दीर्घ-ऊकारान्तं रूपं जायते।",
+          "meaning": "Ukaranta Neuter stem 'Madhu': Nominative/accusative plural is 'Madhuni'. Instrumental singular is 'Madhuna' and genitive plural is elongated 'Madhunam'.",
+          "paragraphTranslation": "उकारान्त नपुंसकलिङ्ग 'मधु': बहुवचन में 'मधूनि' बनता है। तृतीया एकवचन में 'मधुना' और षष्ठी बहुवचन में दीर्घ 'मधूनाम्' रूप बनता है।",
+          "words": [
+            "मधु",
+            "मधूनि",
+            "मधुना",
+            "मधूनाम्",
+            "उकारान्त"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "हलन्त-पुंलिङ्ग-शब्दाः (तकारान्त-नकारान्त-सकारान्त) — व्यञ्जनान्तेषु शब्देषु विभक्तिकारणतः प्रातिपदिके सन्धिकार्याणि सम्प्रसारणादीनि च भवन्ति।",
+          "meaning": "Consonant-ending Masculine Stems (Takaranta, Nakaranta, Sakaranta): In consonantal stems, case endings trigger systematic Sandhi shifts and Samprasāraṇa.",
+          "paragraphTranslation": "हलन्त पुंलिङ्ग शब्द: व्यञ्जन से समाप्त होने वाले शब्दों में विभक्ति प्रत्ययों के कारण सन्धि-नियम और सम्प्रसारण कार्य घटित होते हैं।",
+          "words": [
+            "हलन्त",
+            "तकारान्त",
+            "नकारान्त",
+            "सकारान्त",
+            "सम्प्रसारणम्"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "तकारान्तः 'मरुत्' एवं 'भवत्' — भकारादौ प्रत्यये परे तकारस्य जश्त्व-सन्धिनियमेन दकारः भवति (मरुद्भिः, मरुद्भ्याम्; भवद्भिः, भवद्भ्याम्)।",
+          "meaning": "Takaranta stems 'Marut' and 'Bhavat': Before suffixes starting with 'bh', final 't' changes to voiced 'd' by Jashtva Sandhi (Marudbhih, Bhavadbhyam).",
+          "paragraphTranslation": "तकारान्त शब्द 'मरुत्' और 'भवत्': भ से शुरू होने वाले प्रत्ययों के आगे 'त्' का 'द्' हो जाता है (मरुद्भिः, भवद्भ्याम्)।",
+          "words": [
+            "मरुत्",
+            "भवत्",
+            "जश्त्व-सन्धिः",
+            "मरुद्भिः",
+            "भवद्भ्याम्"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "नकारान्तः 'राजन्' एवं 'आत्मन्' — प्रथमा-एकवचने नकारस्य लोपेन 'राजा', 'आत्मा' इति भवतः। 'राजन्' शब्दे दुर्बल-प्रत्यये परे 'अ'कारलोपेन 'राज्ञा', 'राज्ञः' इति सिद्ध्यति।",
+          "meaning": "Nakaranta stems 'Rajan' and 'Atman': In nominative singular, final 'n' drops yielding 'Raja' and 'Atma'. In 'Rajan', weak vowel affixes trigger vowel loss to form 'Rajna' and 'Rajnah'.",
+          "paragraphTranslation": "नकारान्त शब्द 'राजन्' और 'आत्मन्': प्रथमा एकवचन में 'न्' का लोप होकर 'राजा' और 'आत्मा' बनते हैं। राजन् में अजादि प्रत्ययों में अ-लोप होकर 'राज्ञा' और 'राज्ञः' बनते हैं।",
+          "words": [
+            "राजन्",
+            "आत्मन्",
+            "राजा",
+            "राज्ञा",
+            "राज्ञः"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "सकारान्तः 'विद्वस्' — प्रथमा-एकवचने 'विद्वान्' भवति। दुर्बलेषु अजादिषु प्रत्ययेषु 'वसोः सम्प्रसारणम्' इत्यनेन वकारस्य उकारे विदुषा, विदुषे, विदुषः इति रूपाणि जायन्ते।",
+          "meaning": "Sakaranta stem 'Vidvas': Nominative singular is 'Vidvan'. Weak vowel-initial suffixes trigger Samprasāraṇa (v -> u) yielding Vidusha, Vidushe, Vidushah.",
+          "paragraphTranslation": "सकारान्त शब्द 'विद्वस्': प्रथमा एकवचन में 'विद्वान्' बनता है। दुर्बल प्रत्ययों में व का उ होकर विदुषा, विदुषे, विदुषः रूप बनते हैं।",
+          "words": [
+            "विद्वस्",
+            "विद्वान्",
+            "विदुषा",
+            "विदुषे",
+            "विदुषः",
+            "सम्प्रसारणम्"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "शतृ-प्रत्ययान्त-शब्दाः (वर्तमानकालिक-कृदन्तः) — पुंलिङ्गे 'गच्छन्' (गच्छन्तौ, गच्छन्तः) नदीवत् स्त्रीलिङ्गे 'गच्छन्ती' (गच्छन्त्यौ, गच्छन्त्यः) इति रूपं धारयन्ति।",
+          "meaning": "Shatri Participle Stems (Present Active Participles): Masculine declines as 'Gacchan' (Gacchantau, Gacchantah); feminine declines like Nadi as 'Gacchanti' (Gacchantyau, Gacchantyah).",
+          "paragraphTranslation": "शतृ-प्रत्ययान्त शब्द: पुंलिङ्ग में 'गच्छन्' (गच्छन्तौ, गच्छन्तः) और स्त्रीलिङ्ग में नदी की भाँति 'गच्छन्ती' (गच्छन्त्यौ, गच्छन्त्यः) रूप बनते हैं।",
+          "words": [
+            "शतृ-प्रत्ययः",
+            "गच्छन्",
+            "गच्छन्ती",
+            "वर्तमानकालः",
+            "विशेषणम्"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "सर्वनामपदानि 'यद्' एवं 'इदम्' — सर्वनामसु सम्बोधनं न भवति। 'यद्' (यः, या, यत्) तथा 'इदम्' (अयम्, इयम्, इदम्) त्रिषु लिङ्गेषु भिन्नानि रूपाणि दर्शयन्ति।",
+          "meaning": "Pronouns 'Yad' and 'Idam': Pronouns lack vocative forms. 'Yad' (Yah, Ya, Yat) and 'Idam' (Ayam, Iyam, Idam) display distinct forms across the three genders.",
+          "paragraphTranslation": "सर्वनाम पद 'यद्' और 'इदम्': सर्वनामों में सम्बोधन नहीं होता। 'यद्' (यः, या, यत्) और 'इदम्' (अयम्, इयम्, इदम्) तीनों लिङ्गों में भिन्न रूप बनाते हैं।",
+          "words": [
+            "सर्वनाम",
+            "यद्",
+            "इदम्",
+            "अयम्",
+            "इयम्",
+            "सम्बोधनम्"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "संख्यावाची-शब्दाः (१-४) — 'एक' शब्दः नित्यैकवचनान्तः (एकः, एका, एकम्), 'द्वि' शब्दः नित्यद्विवचनान्तः (द्वौ, द्वे, द्वे), 'त्रि' एवं 'चतुर्' शब्दौ नित्यबहुवचनान्तौ भवतः।",
+          "meaning": "Numerals (1-4): 'Eka' is locked in singular (Ekah, Eka, Ekam), 'Dvi' in dual (Dvau, Dve, Dve), and 'Tri' and 'Chatur' are locked in plural.",
+          "paragraphTranslation": "संख्यावाची शब्द (१-४): 'एक' केवल एकवचन में, 'द्वि' केवल द्विवचन में, तथा 'त्रि' और 'चतुर्' केवल बहुवचन में तीनों लिङ्गों के अनुसार प्रयुक्त होते हैं।",
+          "words": [
+            "संख्यावाचक",
+            "एक",
+            "द्वि",
+            "त्रि",
+            "चतुर्",
+            "लिङ्गत्रयम्"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "स्त्रीलिङ्गे संख्याभेदः — त्रि-संख्यायां 'तिस्रः' तथा चतुर्-संख्यायां 'चतस्रः' इति स्त्रीलिङ्ग-विशिष्टानि रूपाणि स्मर्तव्यानि (यथा — तिस्रः कन्याः, चतस्रः महिलाः)।",
+          "meaning": "Feminine Numeral Variations: In feminine, 3 takes 'Tisrah' and 4 takes 'Chatasrah' (e.g., Tisrah Kanyah, Chatasrah Mahilah).",
+          "paragraphTranslation": "स्त्रीलिङ्ग संख्या भेद: स्त्रीलिङ्ग में ३ के लिए 'तिस्रः' और ४ के लिए 'चतस्रः' का प्रयोग होता है (जैसे तिस्रः कन्याः, चतस्रः महिलाः)।",
+          "words": [
+            "तिस्रः",
+            "चतस्रः",
+            "स्त्रीलिङ्ग-संख्या",
+            "कन्याः",
+            "महिलाः"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – दधि (दही / curd), वारि (जल / water), मधु (शहद / honey), मरुत् (वायु / wind), राजन् (राजा / king), विद्वस् (विद्वान् / scholar)।",
+          "meaning": "Vocabulary: Dadhi (curd), Vari (water), Madhu (honey), Marut (wind), Rajan (king), Vidvas (learned scholar).",
+          "paragraphTranslation": "शब्दार्थ: दधि = दही; वारि = जल; मधु = शहद; मरुत् = वायु; राजन् = राजा; विद्वस् = विद्वान्।",
+          "words": [
+            "दधि",
+            "वारि",
+            "मधु",
+            "मरुत्",
+            "राजन्",
+            "विद्वस्"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "अभ्यासः १ (विभक्ति-परिचयः) – (क) 'वारीणि' = प्रथमा/द्वितीया बहुवचनम्; (ख) 'मधूनाम्' = षष्ठी बहुवचनम्; (ग) 'दध्ना' = तृतीया एकवचनम्; (घ) 'विदुषा' = तृतीया एकवचनम्।",
+          "meaning": "Exercise 1 (Case Identification): (a) Varini = Nom/Acc plural; (b) Madhunam = Genitive plural; (c) Dadhna = Instrumental singular; (d) Vidusha = Instrumental singular.",
+          "paragraphTranslation": "अभ्यास १: (क) वारीणि = प्रथमा/द्वितीया बहुवचन; (ख) मधूनाम् = षष्ठी बहुवचन; (ग) दध्ना = तृतीया एकवचन; (घ) विदुषा = तृतीया एकवचन।",
+          "words": [
+            "अभ्यासः",
+            "विभक्तिः",
+            "वचनम्",
+            "वारीणि",
+            "मधूनाम्",
+            "दध्ना"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "अभ्यासः २ (रिक्तस्थान-पूर्तिः) – (क) 'त्रयः' बालकाः क्रीडन्ति (पुंलिङ्गम्); (ख) 'चतस्रः' महिलाः गच्छन्ति (स्त्रीलिङ्गम्); (ग) 'विद्वान्' सभायां भाषते (प्रथमा एक॰)।",
+          "meaning": "Exercise 2 (Fill in the Blanks): (a) Trayah balakah kridanti; (b) Chatasrah mahilah gacchanti; (c) Vidvan sabhayam bhashate.",
+          "paragraphTranslation": "अभ्यास २ (रिक्तस्थान पूर्ति): (क) त्रयः बालकाः क्रीडन्ति; (ख) चतस्रः महिलाः गच्छन्ति; (ग) विद्वान् सभायां भाषते।",
+          "words": [
+            "त्रयः",
+            "चतस्रः",
+            "विद्वान्",
+            "रिक्तस्थानम्",
+            "अभ्यासः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "व्याकरण-निष्कर्षः – नामपदानां लिङ्ग-वचन-विभक्ति-ज्ञानं विना शुद्ध-संस्कृतवाक्यरचना सम्भाषणं च असम्भवम्। अतः एतानि शब्दरूपाणि कण्ठस्थानि कर्तव्यानि।",
+          "meaning": "Grammar Synthesis: Precise mastery of noun gender, number, and case paradigms is essential for accurate Sanskrit composition and fluency.",
+          "paragraphTranslation": "व्याकरण-निष्कर्ष: नामपदों के लिङ्ग, वचन और विभक्ति का ज्ञान शुद्ध वाक्य-रचना और सम्भाषण का मूलाधार है। अतः इन शब्दरूपों का कण्ठस्थीकरण अनिवार्य है।",
+          "words": [
+            "व्याकरणम्",
+            "निष्कर्षः",
+            "वाक्यरचना",
+            "कण्ठस्थीकरणम्"
+          ],
+          "kind": "exercise-note"
+        }
+      ]
+    },
+    {
       "id": "grade9_prarthana",
       "fileName": "grade9_prarthana.txt",
       "title": "Grade 9: सरस्वतीप्रार्थना एवं राष्ट्रगीतम् (Pages 12 & 18)",

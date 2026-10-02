@@ -48,6 +48,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade8_ch12', label: "Grade 8 Ch 12: सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (3 Quizzes · 30 Qs)", icon: '🗣️' },
   { id: 'grade8_ch13', label: "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (3 Quizzes · 30 Qs)", icon: '🔤' },
   { id: 'grade8_app1', label: "Grade 8 App 1: व्याकरणम् (3 Quizzes · 30 Qs)", icon: '📐' },
+  { id: 'grade8_app2', label: "Grade 8 App 2: शब्दरूपाणि (3 Quizzes · 30 Qs)", icon: '📚' },
   { id: 'grade9_ch1', label: 'Grade 9 Ch 1: सत्यं शिवं सुन्दरं संस्कृतम् (3 Quizzes · 30 Qs)', icon: '🌸' },
   { id: 'grade9_ch2', label: 'Grade 9 Ch 2: सुखस्य मूलं धर्मः (3 Quizzes · 30 Qs)', icon: '⚖️' },
   { id: 'grade9_ch3', label: 'Grade 9 Ch 3: आत्मवत्सर्वभूतेषु यः पश्यति सः पण्डितः (3 Quizzes · 30 Qs)', icon: '👁️' },
@@ -17189,6 +17190,576 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
   ],
   "correctIndex": 1,
   "explanation": "'मोऽनुस्वारः' सूत्र के अनुसार पद के अन्त में स्थित 'म्' के बाद यदि कोई भी व्यंजन (च्) आए, तो म् का अनुस्वार (ं) हो जाता है (धर्मम् + चर = धर्मं चर)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app2-q1-1",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 1: Neuter Stems Accuracy (नपुंसकलिङ्ग-रूपाणि)",
+  "question": "'दधि' शब्द का प्रथमा विभक्ति बहुवचन का रूप क्या है? (What is the nominative plural form of 'Dadhi'?)",
+  "questionSanskrit": "'दधि' शब्दस्य प्रथमा विभक्तेः बहुवचनस्य रूपं किम्?",
+  "options": [
+    "दधीनि",
+    "दधीनी",
+    "दधिनि",
+    "दधिनी"
+  ],
+  "correctIndex": 0,
+  "explanation": "दधि (इकारान्त नपुंसकलिङ्ग) शब्द के प्रथमा और द्वितीया बहुवचन में नुम् के आगम और दीर्घ ईकार से 'दधीनि' बनता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app2-q1-2",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 1: Neuter Stems Accuracy (नपुंसकलिङ्ग-रूपाणि)",
+  "question": "'वारिणि' यह रूप किस विभक्ति और किस वचन में होता है? (In which case and number does the form 'Varini' occur?)",
+  "questionSanskrit": "'वारिणि' इति रूपं कस्यां विभक्तौ कतमे वचने च भवति?",
+  "options": [
+    "सप्तमी विभक्तिः, एकवचनम्",
+    "प्रथमा विभक्तिः, द्विवचनम्",
+    "द्वितीया विभक्तिः, बहुवचनम्",
+    "षष्ठी विभक्तिः, एकवचनम्"
+  ],
+  "correctIndex": 0,
+  "explanation": "वारि शब्द के सप्तमी एकवचन में 'वारिणि' (ह्रस्व इ) बनता है। प्रथमा/द्वितीया द्विवचन में 'वारिणी' (दीर्घ ई) बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app2-q1-3",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 1: Neuter Stems Accuracy (नपुंसकलिङ्ग-रूपाणि)",
+  "question": "'मधु' शब्द का तृतीया विभक्ति एकवचन का रूप क्या है? (What is the instrumental singular form of 'Madhu'?)",
+  "questionSanskrit": "'मधु' शब्दस्य तृतीया विभक्तेः एकवचनस्य रूपं लिखत।",
+  "options": [
+    "मधुना",
+    "मधवे",
+    "मधुने",
+    "मधुभिः"
+  ],
+  "correctIndex": 0,
+  "explanation": "उकारान्त नपुंसकलिङ्ग 'मधु' शब्द के तृतीया एकवचन में टा (आ) प्रत्यय में न-आगम होकर 'मधुना' बनता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app2-q1-4",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 1: Neuter Stems Accuracy (नपुंसकलिङ्ग-रूपाणि)",
+  "question": "'दध्नः' यह रूप किन दो विभक्तियों के एकवचन में समान होता है? (In the singular of which two cases does 'Dadhnah' occur identically?)",
+  "questionSanskrit": "'दध्नः' इति रूपं कयोः विभक्त्योः एकवचने समानान्तरं भवति?",
+  "options": [
+    "पञ्चमी-षष्ठी विभक्त्योः",
+    "द्वितीया-तृतीया विभक्त्योः",
+    "प्रथमा-द्वितीया विभक्त्योः",
+    "षष्ठी-सप्तमी विभक्त्योः"
+  ],
+  "correctIndex": 0,
+  "explanation": "'दधि' शब्द के पञ्चमी एकवचन (ङसि) और षष्ठी एकवचन (ङस्) दोनों में 'दध्नः' रूप बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app2-q1-5",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 1: Neuter Stems Accuracy (नपुंसकलिङ्ग-रूपाणि)",
+  "question": "'वारि' शब्द का षष्ठी विभक्ति बहुवचन का शुद्ध रूप क्या है? (What is the correct genitive plural form of 'Vari'?)",
+  "questionSanskrit": "'वारि' शब्दस्य षष्ठी विभक्तेः बहुवचनस्य शुद्धं रूपं किम्?",
+  "options": [
+    "वारीणाम्",
+    "वारिनाम्",
+    "वारिणाम्",
+    "वारीनाम्"
+  ],
+  "correctIndex": 0,
+  "explanation": "षष्ठी बहुवचन में नाम् प्रत्यय के परे स्वर दीर्घ (ई) होता है तथा र-कार के प्रभाव से णत्व होकर 'वारीणाम्' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app2-q1-6",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 1: Neuter Stems Accuracy (नपुंसकलिङ्ग-रूपाणि)",
+  "question": "'दधि' शब्द के सप्तमी एकवचन में कौन से दो वैकल्पिक रूप बनते हैं? (Which two alternative forms occur in locative singular of 'Dadhi'?)",
+  "questionSanskrit": "'दधि' शब्दस्य सप्तमी एकवचने रूपद्वयं किम् अस्ति?",
+  "options": [
+    "दध्नि, दधनि",
+    "दधौ, दधिनी",
+    "दधिनि, दधीनि",
+    "दध्ने, दध्ना"
+  ],
+  "correctIndex": 0,
+  "explanation": "पाणिनीय व्याकरण के अनुसार सप्तमी एकवचन (ङि) में दध्नि और दधनि दोनों रूप शुद्ध माने जाते हैं।",
+  "difficulty": "hard",
+  "points": 10
+},
+{
+  "id": "g8-app2-q1-7",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 1: Neuter Stems Accuracy (नपुंसकलिङ्ग-रूपाणि)",
+  "question": "क्या 'मधु' के षष्ठी बहुवचन में उकार का दीर्घत्व होता है? (Does the vowel 'u' lengthen in genitive plural of 'Madhu'?)",
+  "questionSanskrit": "'मधुनाम्' इति रूपे उकारस्य दीर्घत्वं भवति वा न?",
+  "options": [
+    "आम्, दीर्घत्वं भवति (मधूनाम्)",
+    "नहि, ह्रस्वः एव तिष्ठति (मधुनाम्)",
+    "केवलं विकल्पेन भवति",
+    "नपुंसकलिङ्गे नियमः नास्ति"
+  ],
+  "correctIndex": 0,
+  "explanation": "'नामि' (अष्टाध्यायी ६.४.३) सूत्र से षष्ठी बहुवचन में नाम् परे होने पर अङ्ग का स्वर दीर्घ होकर 'मधूनाम्' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app2-q1-8",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 1: Neuter Stems Accuracy (नपुंसकलिङ्ग-रूपाणि)",
+  "question": "'वारिणी' रूप में नकार का णकार किस कारण से हुआ? (Why did dental 'n' convert to retroflex 'n' in 'Varini'?)",
+  "questionSanskrit": "'वारिणी' इति रूपे नकारस्य णकारः कस्मात् कारणात् जातः?",
+  "options": [
+    "णत्व-विधानात् (र-कारस्य प्रभावेण)",
+    "जश्त्व-सन्धिनियमात्",
+    "श्चुत्व-सन्धिनियमात्",
+    "अवग्रह-नियमात्"
+  ],
+  "correctIndex": 0,
+  "explanation": "'रषाभ्यां नो णः समानपदे' नियम से 'वारि' में विद्यमान 'र्' के कारण न का ण हो जाता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app2-q1-9",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 1: Neuter Stems Accuracy (नपुंसकलिङ्ग-रूपाणि)",
+  "question": "'दध्ने' पद किस विभक्ति का सूचक है? (Which case is indicated by the word 'Dadhne'?)",
+  "questionSanskrit": "'दध्ने' इति पदं कस्याः विभक्तेः सूचकम् अस्ति?",
+  "options": [
+    "चतुर्थी विभक्तेः (एकवचनम्)",
+    "तृतीया विभक्तेः (एकवचनम्)",
+    "पञ्चमी विभक्तेः (एकवचनम्)",
+    "सप्तमी विभक्तेः (एकवचनम्)"
+  ],
+  "correctIndex": 0,
+  "explanation": "दधि शब्द के चतुर्थी एकवचन (ङे) में 'दध्ने' रूप बनता है (जैसे दध्ने नमः / दध्ने स्वाहा)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app2-q1-10",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 1: Neuter Stems Accuracy (नपुंसकलिङ्ग-रूपाणि)",
+  "question": "'मधु' शब्द के सम्बोधन एकवचन के दो रूप कौन से हैं? (What are the two vocative singular forms of 'Madhu'?)",
+  "questionSanskrit": "'मधु' शब्दस्य सम्बोधनस्य एकवचनस्य रूपद्वयं लिखत।",
+  "options": [
+    "हे मधु, हे मधो",
+    "हे मधू, हे मधवे",
+    "हे मधुन, हे मधु",
+    "हे मधोः, हे मधुना"
+  ],
+  "correctIndex": 0,
+  "explanation": "उकारान्त नपुंसकलिङ्ग सम्बोधन एकवचन में गुण विकल्प से होने के कारण 'हे मधु' और 'हे मधो' दोनों बनते हैं।",
+  "difficulty": "hard",
+  "points": 10
+},
+{
+  "id": "g8-app2-q2-1",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 2: Consonants & Participles Focus (हलन्त-शतृप्रत्ययान्त-शब्दाः)",
+  "question": "'मरुत्' शब्द का प्रथमा विभक्ति एकवचन का रूप क्या है? (What is the nominative singular form of 'Marut'?)",
+  "questionSanskrit": "'मरुत्' शब्दस्य प्रथमा एकवचनस्य रूपं किम्?",
+  "options": [
+    "मरुत्",
+    "मरुता",
+    "मरुतः",
+    "मरुन्"
+  ],
+  "correctIndex": 0,
+  "explanation": "तकारान्त पुंलिङ्ग मरुत् शब्द के प्रथमा एकवचन में सु-प्रत्यय का लोप होकर मूल प्रातिपदिक 'मरुत्' ही रहता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app2-q2-2",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 2: Consonants & Participles Focus (हलन्त-शतृप्रत्ययान्त-शब्दाः)",
+  "question": "'राज्ञः' यह रूप द्वितीया विभक्ति के किस वचन में मिलता है? (In which number of the accusative case is 'Rajnah' found?)",
+  "questionSanskrit": "'राज्ञः' इति रूपं द्वितीया विभक्तेः कस्मिन् वचने उपलभ्यते?",
+  "options": [
+    "बहुवचने",
+    "एकवचने",
+    "द्विवचने",
+    "त्रिवचने"
+  ],
+  "correctIndex": 0,
+  "explanation": "राजन् शब्द के द्वितीया बहुवचन में शस् (अस्) प्रत्यय में अ-लोप होकर 'राज्ञः' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app2-q2-3",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 2: Consonants & Participles Focus (हलन्त-शतृप्रत्ययान्त-शब्दाः)",
+  "question": "'विद्वस्' शब्द का प्रथमा विभक्ति एकवचन का रूप क्या है? (What is the nominative singular form of 'Vidvas'?)",
+  "questionSanskrit": "'विद्वस्' शब्दस्य प्रथमा विभक्तेः एकवचनस्य रूपं किम्?",
+  "options": [
+    "विद्वान्",
+    "विद्वसः",
+    "विद्वत्",
+    "विद्वांसः"
+  ],
+  "correctIndex": 0,
+  "explanation": "सकारान्त पुंलिङ्ग विद्वस् शब्द के प्रथमा एकवचन में दीर्घ और नुम् के आगम से 'विद्वान्' बनता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app2-q2-4",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 2: Consonants & Participles Focus (हलन्त-शतृप्रत्ययान्त-शब्दाः)",
+  "question": "'आत्मा' पद का मूल प्रातिपदिक (मूल शब्द) क्या है? (What is the crude base of the word 'Atma'?)",
+  "questionSanskrit": "'आत्मा' इति पदस्य मूलप्रातिपदिकं (मूलशब्दः) कः अस्ति?",
+  "options": [
+    "आत्मन् (नकारान्तः पुंलिङ्गः)",
+    "आत्म (अकारान्तः)",
+    "आत्मान (पुंलिङ्गः)",
+    "आत्मा (आकारान्तः)"
+  ],
+  "correctIndex": 0,
+  "explanation": "मूल प्रातिपदिक नकारान्त 'आत्मन्' है, जिसका प्रथमा एकवचन में नकार-लोप और उपधा-दीर्घ होकर 'आत्मा' बनता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app2-q2-5",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 2: Consonants & Participles Focus (हलन्त-शतृप्रत्ययान्त-शब्दाः)",
+  "question": "'मरुद्भ्याम्' में तकार का दकार किस सन्धि-नियम से हुआ? (By which Sandhi rule did 't' become 'd' in 'Marudbhyam'?)",
+  "questionSanskrit": "'मरुदभ्याम्' पदे तकारस्य दकारः केन सन्धिनियमेन अभवत्?",
+  "options": [
+    "जश्त्व-सन्धिनियमेन (झलां जशोऽन्ते)",
+    "श्चुत्व-सन्धिनियमेन",
+    "यण्-सन्धिनियमेन",
+    "विसर्ग-सन्धिनियमेन"
+  ],
+  "correctIndex": 0,
+  "explanation": "घोष वर्ण 'भ्' परे होने से अघोष 'त्' अपने वर्ग के तीसरे वर्ण 'द्' में परिवर्तित हो जाता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app2-q2-6",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 2: Consonants & Participles Focus (हलन्त-शतृप्रत्ययान्त-शब्दाः)",
+  "question": "'विदुषः' यह रूप किस विभक्ति में बनता है? (In which cases does the form 'Vidushah' occur?)",
+  "questionSanskrit": "'विदुषः' इति रूपं कस्यां विभक्तौ जायते?",
+  "options": [
+    "द्वितीया बहुवचने, पञ्चमी-षष्ठी एकवचने च",
+    "प्रथमा बहुवचने",
+    "तृतीया एकवचने",
+    "सप्तमी बहुवचने"
+  ],
+  "correctIndex": 0,
+  "explanation": "दुर्बल प्रत्ययों में सम्प्रसारण (व -> उ) होकर विदुषः रूप द्वितीया बहुवचन और पञ्चमी/षष्ठी एकवचन में बनता है।",
+  "difficulty": "hard",
+  "points": 10
+},
+{
+  "id": "g8-app2-q2-7",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 2: Consonants & Participles Focus (हलन्त-शतृप्रत्ययान्त-शब्दाः)",
+  "question": "'गच्छन्' यह शतृ-प्रत्ययान्त रूप किस लिङ्ग में है? (In which gender is the participle form 'Gacchan'?)",
+  "questionSanskrit": "'गच्छन्' इति शतृ-प्रत्ययान्त रूपं कस्मिन् लिङ्गे अस्ति?",
+  "options": [
+    "पुंलिङ्गे",
+    "स्त्रीलिङ्गे",
+    "नपुंसकलिङ्गे",
+    "अव्यये"
+  ],
+  "correctIndex": 0,
+  "explanation": "गम् धातु से शतृ प्रत्यय करने पर प्रथमा एकवचन पुंलिङ्ग में 'गच्छन्' बनता है (स्त्रीलिङ्ग: गच्छन्ती, नपुंसकलिङ्ग: गच्छत्)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app2-q2-8",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 2: Consonants & Participles Focus (हलन्त-शतृप्रत्ययान्त-शब्दाः)",
+  "question": "'गच्छन्ती' शब्द का तृतीया विभक्ति एकवचन का रूप क्या होगा? (What will be the instrumental singular of 'Gacchanti'?)",
+  "questionSanskrit": "'गच्छन्ती' शब्दस्य तृतीया एकवचनस्य रूपं किं भविष्यति?",
+  "options": [
+    "गच्छन्त्या",
+    "गच्छन्त्याम्",
+    "गच्छन्त्याः",
+    "गच्छन्तीना"
+  ],
+  "correctIndex": 0,
+  "explanation": "ईकारान्त नदी शब्द की भाँति गच्छन्ती का तृतीया एकवचन 'गच्छन्त्या' होता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app2-q2-9",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 2: Consonants & Participles Focus (हलन्त-शतृप्रत्ययान्त-शब्दाः)",
+  "question": "'राज्ञि' अथवा 'राजनि' में से कौन सा रूप शुद्ध है? (Which of 'Rajni' or 'Rajani' is correct?)",
+  "questionSanskrit": "'राज्ञि' अथवा 'राजने' इत्यनयोः कतरं रूपं शुद्धम्?",
+  "options": [
+    "द्वे अपि रूपे शुद्धे स्तः (सप्तमी एकवचने)",
+    "केवलं 'राज्ञि' शुद्धम्",
+    "केवलं 'राजनि' शुद्धम्",
+    "द्वे अपि अशुद्धे स्तः"
+  ],
+  "correctIndex": 0,
+  "explanation": "सप्तमी एकवचन (ङि) में अ-लोप विकल्प से होने के कारण 'राज्ञि' और 'राजनि' दोनों रूप शुद्ध हैं।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app2-q2-10",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 2: Consonants & Participles Focus (हलन्त-शतृप्रत्ययान्त-शब्दाः)",
+  "question": "'भवत्' (पुंलिङ्ग) शब्द का प्रथमा विभक्ति एकवचन का रूप लिखिए। (Write the nominative singular of honorific 'Bhavat' in masculine.)",
+  "questionSanskrit": "'भवत्' (पुंलिङ्ग) शब्दस्य प्रथमा एकवचनस्य रूपं लिखत।",
+  "options": [
+    "भवान्",
+    "भवतः",
+    "भवन्तः",
+    "भवता"
+  ],
+  "correctIndex": 0,
+  "explanation": "तकारान्त आदरार्थक सर्वनाम 'भवत्' का प्रथमा एकवचन पुंलिङ्ग में 'भवान्' बनता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app2-q3-1",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 3: Pronouns, Numerals & Adjectives (सर्वनाम-संख्या-विशेषणानि)",
+  "question": "'यद्' (स्त्रीलिङ्ग) शब्द का प्रथमा बहुवचन का रूप क्या है? (What is the nominative plural of 'Yad' in feminine?)",
+  "questionSanskrit": "'यद्' (स्त्रीलिङ्ग) शब्दस्य प्रथमा बहुवचनस्य रूपं किम्?",
+  "options": [
+    "याः",
+    "ये",
+    "यानि",
+    "याम्"
+  ],
+  "correctIndex": 0,
+  "explanation": "यद् शब्द के स्त्रीलिङ्ग प्रथमा में या (एक॰), ये (द्वि॰), याः (बहु॰) रूप बनते हैं।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app2-q3-2",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 3: Pronouns, Numerals & Adjectives (सर्वनाम-संख्या-विशेषणानि)",
+  "question": "'इदम्' (पुंलिङ्ग) शब्द का प्रथमा एकवचन का रूप क्या है? (What is the nominative singular of 'Idam' in masculine?)",
+  "questionSanskrit": "'इदम्' (पुंलिङ्ग) शब्दस्य प्रथमा एकवचनस्य रूपं किम्?",
+  "options": [
+    "अयम्",
+    "इदम्",
+    "इयम्",
+    "एषः"
+  ],
+  "correctIndex": 0,
+  "explanation": "'इदम्' सर्वनाम का पुंलिङ्ग प्रथमा एकवचन 'अयम्' होता है (स्त्रीलिङ्ग: इयम्, नपुंसकलिङ्ग: इदम्)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app2-q3-3",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 3: Pronouns, Numerals & Adjectives (सर्वनाम-संख्या-विशेषणानि)",
+  "question": "'एक' शब्द का प्रयोग नित्य किस वचन में होता है? (In which number does the word 'Eka' always inflect?)",
+  "questionSanskrit": "'एक' शब्दस्य प्रयोगः कस्मिन् वचने नित्यं भवति?",
+  "options": [
+    "एकवचने (नित्यैकवचनान्तः)",
+    "द्विवचने",
+    "बहुवचने",
+    "द्विवचन-बहुवचनयोः"
+  ],
+  "correctIndex": 0,
+  "explanation": "एक संख्या एकत्व की द्योतक होने के कारण सदा एकवचन में ही तीनों लिङ्गों (एकः, एका, एकम्) में रूप बनाती है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app2-q3-4",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 3: Pronouns, Numerals & Adjectives (सर्वनाम-संख्या-विशेषणानि)",
+  "question": "'तिस्रः' यह संख्यावाचक पद किस लिङ्ग में प्रयुक्त होता है? (In which gender is the numeral 'Tisrah' used?)",
+  "questionSanskrit": "'तिस्रः' इति संख्यावाचकपदं कस्मिन् लिङ्गे प्रयुज्यते?",
+  "options": [
+    "स्त्रीलिङ्गे (संख्या ३)",
+    "पुंलिङ्गे",
+    "नपुंसकलिङ्गे",
+    "सर्वलिङ्गेषु"
+  ],
+  "correctIndex": 0,
+  "explanation": "संख्या ३ का पुंलिङ्ग 'त्रयः', स्त्रीलिङ्ग 'तिस्रः' तथा नपुंसकलिङ्ग 'त्रीणि' होता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app2-q3-5",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 3: Pronouns, Numerals & Adjectives (सर्वनाम-संख्या-विशेषणानि)",
+  "question": "'द्वि' शब्द का षष्ठी विभक्ति का रूप क्या होगा? (What will be the genitive form of numeral 'Dvi'?)",
+  "questionSanskrit": "'द्वि' शब्दस्य षष्ठी विभक्तेः रूपं किं भविष्यति?",
+  "options": [
+    "द्वयोः (त्रिषुलिङ्गेषु समानम्)",
+    "द्वाभ्याम्",
+    "द्विनाम्",
+    "द्वेषु"
+  ],
+  "correctIndex": 0,
+  "explanation": "'द्वि' शब्द के षष्ठी और सप्तमी द्विवचन में तीनों लिङ्गों में 'द्वयोः' रूप बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app2-q3-6",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 3: Pronouns, Numerals & Adjectives (सर्वनाम-संख्या-विशेषणानि)",
+  "question": "'चत्वारि' पद किस लिङ्ग का संख्यावाचक रूप है? (Of which gender is 'Chatvari' the numeral form?)",
+  "questionSanskrit": "'चत्वारि' इति पदं कस्य लिङ्गस्य संख्यावाचकं रूपम्?",
+  "options": [
+    "नपुंसकलिङ्गस्य (संख्या ४)",
+    "पुंलिङ्गस्य",
+    "स्त्रीलिङ्गस्य",
+    "उभयलिङ्गस्य"
+  ],
+  "correctIndex": 0,
+  "explanation": "संख्या ४ का नपुंसकलिङ्ग प्रथमा/द्वितीया बहुवचन 'चत्वारि' होता है (जैसे चत्वारि फलानि)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app2-q3-7",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 3: Pronouns, Numerals & Adjectives (सर्वनाम-संख्या-विशेषणानि)",
+  "question": "'कीदृश' (स्त्रीलिङ्ग) शब्द का प्रथमा एकवचन का रूप क्या है? (What is nominative singular of 'Kidrisha' in feminine?)",
+  "questionSanskrit": "'कीदृश' (स्त्रीलिङ्ग) शब्दस्य प्रथमा एकवचनस्य रूपं किम्?",
+  "options": [
+    "कीदृशी",
+    "कीदृशा",
+    "कीदृशम्",
+    "कीदृश्या"
+  ],
+  "correctIndex": 0,
+  "explanation": "कीदृश शब्द से स्त्रीलिङ्ग में ङीप् प्रत्यय लगकर 'कीदृशी' रूप बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app2-q3-8",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 3: Pronouns, Numerals & Adjectives (सर्वनाम-संख्या-विशेषणानि)",
+  "question": "'यस्मै' पद किस शब्द की कौन सी विभक्ति है? (Which word and case is represented by 'Yasmai'?)",
+  "questionSanskrit": "'यस्मै' इति पदं कस्य शब्दस्य कतमा विभक्तिः अस्ति?",
+  "options": [
+    "यद् (पुंलिङ्ग/नपुंसकलिङ्ग), चतुर्थी विभक्तिः एकवचनम्",
+    "यद् (स्त्रीलिङ्ग), पञ्चमी विभक्तिः",
+    "इदम्, तृतीया विभक्तिः",
+    "तद्, द्वितीया विभक्तिः"
+  ],
+  "correctIndex": 0,
+  "explanation": "यद् शब्द के पुंलिङ्ग एवं नपुंसकलिङ्ग चतुर्थी एकवचन में 'स्मै' प्रत्यय जुड़कर 'यस्मै' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app2-q3-9",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 3: Pronouns, Numerals & Adjectives (सर्वनाम-संख्या-विशेषणानि)",
+  "question": "'अनेन' यह रूप 'इदम्' शब्द की किस विभक्ति में होता है? (In which case does 'Anena' occur for 'Idam'?)",
+  "questionSanskrit": "'अनेन' इति रूपं 'इदम्' शब्दस्य कस्यां विभक्तौ भवति?",
+  "options": [
+    "तृतीया विभक्तौ (एकवचनम्)",
+    "द्वितीया विभक्तौ (एकवचनम्)",
+    "सप्तमी विभक्तौ (एकवचनम्)",
+    "चतुर्थी विभक्तौ (एकवचनम्)"
+  ],
+  "correctIndex": 0,
+  "explanation": "'इदम्' शब्द के पुंलिङ्ग और नपुंसकलिङ्ग तृतीया एकवचन में 'अनेन' रूप बनता है (अनेन बालकेन / अनेन फलेन)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app2-q3-10",
+  "category": "grade8_app2",
+  "categoryLabel": "Grade 8 App 2: शब्दरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् २ — शब्दरूपाणि",
+  "subCategory": "Quiz 3: Pronouns, Numerals & Adjectives (सर्वनाम-संख्या-विशेषणानि)",
+  "question": "'चतस्रः' यह किस संख्यावाचक का स्त्रीलिङ्ग रूप है? (Of which numeral is 'Chatasrah' the feminine form?)",
+  "questionSanskrit": "'चतस्रः' इति संख्या कस्य संख्यावाचकस्य स्त्रीलिङ्गरूपम् अस्ति?",
+  "options": [
+    "चतुर् (संख्या ४)",
+    "त्रि (संख्या ३)",
+    "षष् (संख्या ६)",
+    "पञ्चन् (संख्या ५)"
+  ],
+  "correctIndex": 0,
+  "explanation": "चतुर् शब्द के स्त्रीलिङ्ग प्रथमा और द्वितीया बहुवचन में 'चतस्रः' रूप बनता है (यथा: चतस्रः महिलाः)।",
   "difficulty": "easy",
   "points": 10
 },

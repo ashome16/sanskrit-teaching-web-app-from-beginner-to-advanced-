@@ -11641,6 +11641,394 @@ export const WORKSHEETS: Worksheet[] = [
     }
   ]
 },
+{
+  "id": "ws-grade8-app2-ws1",
+  "title": "Worksheet 1: Neuter Stem Distinctions (नपुंसकलिङ्ग-रूपाणि: दधि, वारि, मधु)",
+  "titleSanskrit": "परिशिष्टम् २ · कार्यपत्रिका १: नपुंसकलिङ्ग-रूपाणि",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Morphological analysis and case identification for neuter vowel stems (दधि, वारि, मधु) including Natva-Vidhanam rules.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Case and Number Identification (विभक्ति-वचन-परिचयः)",
+      "sectionTitleSanskrit": "खण्डः 'क' · विभक्ति-वचन-परिचयः",
+      "instructions": "Identify the correct case (विभक्तिः) and number (वचनम्) for the given neuter words:",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. 'वारीणि' = _______________ विभक्तिः / _______________ वचनम्",
+          "questionSanskrit": "'वारीणि' = ______ विभक्तिः / ______ वचनम्",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "प्रथमा / द्वितीया विभक्तिः, बहुवचनम्",
+          "explanation": "इकारान्त-नपुंसकलिङ्ग 'वारि' शब्दस्य प्रथमा-द्वितीया-विभक्त्योः बहुवचने 'वारीणि' इति रूपं भवति।"
+        },
+        {
+          "num": 2,
+          "question": "२. 'मधूनाम्' = _______________ विभक्तिः / _______________ वचनम्",
+          "questionSanskrit": "'मधूनाम्' = ______ विभक्तिः / ______ वचनम्",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "षष्ठी विभक्तिः, बहुवचनम्",
+          "explanation": "उकारान्त-नपुंसकलिङ्ग 'मधु' शब्दस्य षष्ठी-बहुवचने 'नामि' सूत्रेण दीर्घत्वे 'मधूनाम्' भवति।"
+        },
+        {
+          "num": 3,
+          "question": "३. 'दध्ना' = _______________ विभक्तिः / _______________ वचनम्",
+          "questionSanskrit": "'दध्ना' = ______ विभक्तिः / ______ वचनम्",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "तृतीया विभक्तिः, एकवचनम्",
+          "explanation": "'दधि' शब्दस्य तृतीया-एकवचने अनङ्-आदेशे 'दध्ना' इति रूपं निष्पद्यते।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Paradigm Completion & Phonological Analysis (रूपसिद्धिः ध्वनिविज्ञानञ्च)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · रूपसिद्धिः ध्वनिविज्ञानञ्च",
+      "instructions": "Supply missing case forms and explain morphological shifts:",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 4,
+          "question": "४. 'दधि' शब्दस्य रूपं पूरयत: तृतीया एकवचनम्: दध्ना | चतुर्थी एकवचनम्: __________ | पञ्चमी एकवचनम्: __________",
+          "questionSanskrit": "'दधि' रूपं पूरयत: तृतीया एक॰: दध्ना | चतुर्थी एक॰: ______ | पञ्चमी एक॰: ______",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "चतुर्थी एकवचनम्: दध्ने | पञ्चमी एकवचनम्: दध्नः",
+          "explanation": "दधि शब्दस्य तृतीयादिषु अजादिषु प्रत्ययेषु 'दध्न्' आदेशेन दध्ना, दध्ने, दध्नः इति सिद्ध्यति।"
+        },
+        {
+          "num": 5,
+          "question": "५. 'दधीनि' पदे दन्त्य-नकारः अस्ति, परन्तु 'वारीणि' पदे मूर्धन्य-णकारः किमर्थं जातः?",
+          "questionSanskrit": "'दधीनि' पदे नकारः, 'वारीणि' पदे णकारः किमर्थं जातः?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "णत्व-विधानेन (र-कारस्य प्रभावेण)",
+          "explanation": "'रषाभ्यां नो णः समानपदे' इति सूत्रेण 'वारि' शब्दे 'र'कारस्य सद्भावात् न-कारस्य स्थाने ण-कारः भवति (वारीणि)। 'दधि' शब्दे तादृशः वर्णः नास्ति, अतः दन्त्य-नकारः एव तिष्ठति।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-app2-ws2",
+  "title": "Worksheet 2: Consonant & Participle Stem Analysis (हलन्त-शतृप्रत्ययान्त-शब्दाः)",
+  "titleSanskrit": "परिशिष्टम् २ · कार्यपत्रिका २: हलन्त-शतृप्रत्ययान्त-शब्दाः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Stem shifts, Jashtva voicing, Samprasāraṇa, and active present participle agreement.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Sentence Fill-in with Consonant Stems (हलन्त-शब्द-प्रयोगः)",
+      "sectionTitleSanskrit": "खण्डः 'क' · हलन्त-शब्द-प्रयोगः",
+      "instructions": "Fill in the blanks with the correct case form of the consonant stem:",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. _______________ सभायां भाषते। (विद्वस् - प्रथमा एकवचनम्)",
+          "questionSanskrit": "______ सभायां भाषते। (विद्वस् - प्रथमा एकवचनम्)",
+          "marks": 4,
+          "type": "fill",
+          "answer": "विद्वान्",
+          "explanation": "विद्वस् शब्दस्य प्रथमा-एकवचने दीर्घत्वे अनुस्वार-लोपे 'विद्वान्' इति रूपं भवति।"
+        },
+        {
+          "num": 2,
+          "question": "२. मेघः _______________ सह गच्छति। (मरुत् - तृतीया एकवचनम्)",
+          "questionSanskrit": "मेघः ______ सह गच्छति। (मरुत् - तृतीया एकवचनम्)",
+          "marks": 4,
+          "type": "fill",
+          "answer": "मरुता",
+          "explanation": "तकारान्त 'मरुत्' शब्दस्य तृतीया-एकवचने 'आ' प्रत्यये 'मरुता' रूपं भवति।"
+        },
+        {
+          "num": 3,
+          "question": "३. राजा _______________ पुरस्कारं यच्छति। (राजन् - चतुर्थी एकवचनम्)",
+          "questionSanskrit": "राजा ______ पुरस्कारं यच्छति। (राजन् - चतुर्थी एकवचनम्)",
+          "marks": 4,
+          "type": "fill",
+          "answer": "राज्ञे",
+          "explanation": "राजन् शब्दस्य चतुर्थी-एकवचने अलोपे ज् + न् मिलित्वा 'ज्ञ' भूत्वा 'राज्ञे' रूपं निष्पद्यते।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Participles & Morphological Changes (शतृप्रत्ययः सम्प्रसारणञ्च)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · शतृप्रत्ययः सम्प्रसारणञ्च",
+      "instructions": "Analyze participle agreement and morphological processes:",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 4,
+          "question": "४. 'गच्छन्' इति कस्मिन् लिङ्गे भवति, 'गच्छन्ती' इति च कस्मिन् लिङ्गे भवति?",
+          "questionSanskrit": "'गच्छन्' कस्य लिङ्गस्य रूपम्, 'गच्छन्ती' च कस्य?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "'गच्छन्' पुंलिङ्गे, 'गच्छन्ती' च स्त्रीलिङ्गे",
+          "explanation": "शतृ-प्रत्यये पुंलिङ्गे गच्छन् (गच्छन्तौ, गच्छन्तः) भवति, स्त्रीलिङ्गे ङीप्-प्रत्यये नदीवत् गच्छन्ती भवति।"
+        },
+        {
+          "num": 5,
+          "question": "५. 'विद्वस्' शब्दस्य तृतीया-एकवचने 'विदुषा' इति रूपं कथं सिद्ध्यति?",
+          "questionSanskrit": "'विद्वस्' शब्दस्य तृतीया-एकवचने 'विदुषा' कथं सिद्ध्यति?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "सम्प्रसारणेन (व $\rightarrow$ उ) तथा सकारस्य षकारेण",
+          "explanation": "'वसोः सम्प्रसारणम्' इत्यनेन दुर्बलप्रत्यये वकारस्य स्थाने उकारः भवति (सम्प्रसारणम्) तथा स्-कारस्य ष-कारः भवति (विदुषा)।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-app2-ws3",
+  "title": "Worksheet 3: Numeral & Pronominal Agreement (संख्या-सर्वनाम-प्रयोगाः: यद्, इदम्, १–४)",
+  "titleSanskrit": "परिशिष्टम् २ · कार्यपत्रिका ३: संख्या-सर्वनाम-प्रयोगाः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Pronominal base shifts (यद्, इदम्) and numerical gender agreement rules (1 to 4).",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Numeral Concord in Three Genders (संख्या-विशेषण-सङ्गतिः)",
+      "sectionTitleSanskrit": "खण्डः 'क' · संख्या-विशेषण-सङ्गतिः",
+      "instructions": "Select the correct numeral agreeing with the noun's gender and number:",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. _______________ बालकाः क्रीडन्ति। (त्रयः / तिस्रः / त्रीणि)",
+          "questionSanskrit": "______ बालकाः क्रीडन्ति। (त्रयः / तिस्रः / त्रीणि)",
+          "marks": 4,
+          "type": "mcq",
+          "options": [
+            "त्रयः",
+            "तिस्रः",
+            "त्रीणि",
+            "त्रिभिः"
+          ],
+          "answer": "त्रयः",
+          "explanation": "'बालकाः' इति पुंलिङ्ग-बहुवचनम् अस्ति, अतः पुंलिङ्ग-संख्या 'त्रयः' भविष्यति।"
+        },
+        {
+          "num": 2,
+          "question": "२. चतस्रः _______________ मार्गं पश्यन्ति। (महिलाः / पुरुषाः / फलानि)",
+          "questionSanskrit": "चतस्रः ______ मार्गं पश्यन्ति। (महिलाः / पुरुषाः / फलानि)",
+          "marks": 4,
+          "type": "mcq",
+          "options": [
+            "महिलाः",
+            "पुरुषाः",
+            "फलानि",
+            "बालकाः"
+          ],
+          "answer": "महिलाः",
+          "explanation": "'चतस्रः' इति स्त्रीलिङ्ग-बहुवचनस्य संख्या अस्ति, अतः स्त्रीलिङ्ग-विशेष्यं 'महिलाः' एव युक्तम्।"
+        },
+        {
+          "num": 3,
+          "question": "३. _______________ चक्रम् चलति। (एकः / एका / एकम्)",
+          "questionSanskrit": "______ चक्रम् चलति। (एकः / एका / एकम्)",
+          "marks": 4,
+          "type": "mcq",
+          "options": [
+            "एकः",
+            "एका",
+            "एकम्",
+            "एकेन"
+          ],
+          "answer": "एकम्",
+          "explanation": "'चक्रम्' इति नपुंसकलिङ्ग-एकवचनम् अस्ति, अतः नपुंसकलिङ्गे 'एकम्' प्रयुज्यते।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Pronominal Paradigms (सर्वनाम-रूपसिद्धिः)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · सर्वनाम-रूपसिद्धिः",
+      "instructions": "Provide the exact pronominal inflected forms:",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 4,
+          "question": "४. 'इदम्' (पुंलिङ्ग - प्रथमा एकवचनम्) = _______________",
+          "questionSanskrit": "'इदम्' (पुंलिङ्ग - प्रथमा एकवचनम्) = ______",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "अयम्",
+          "explanation": "'इदम्' सर्वनामशब्दस्य पुंलिङ्गे प्रथमा-एकवचने 'अयम्' इति रूपं भवति।"
+        },
+        {
+          "num": 5,
+          "question": "५. 'यद्' (स्त्रीलिङ्ग - षष्ठी एकवचनम्) = _______________",
+          "questionSanskrit": "'यद्' (स्त्रीलिङ्ग - षष्ठी एकवचनम्) = ______",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "यस्याः",
+          "explanation": "'यद्' शब्दस्य स्त्रीलिङ्गे षष्ठी-एकवचने 'यस्याः' इति रूपं भवति।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-app2-ws4",
+  "title": "Worksheet 4: Synoptic Grid Master Drills (सर्वनाम-नामपद-तालिका-अभ्यासः)",
+  "titleSanskrit": "परिशिष्टम् २ · कार्यपत्रिका ४: सर्वनाम-नामपद-तालिका-अभ्यासः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Comparative cross-reference of dual and plural forms across neuter and consonant stems.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Comparative Dual and Plural Forms (द्विवचन-बहुवचन-तुलना)",
+      "sectionTitleSanskrit": "खण्डः 'क' · द्विवचन-बहुवचन-तुलना",
+      "instructions": "Provide the correct matching case forms across specified paradigms:",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. 'मरुत्' शब्दस्य तृतीया बहुवचने किं रूपं भवति?",
+          "questionSanskrit": "'मरुत्' शब्दस्य तृतीया बहुवचने किं रूपम्?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "मरुद्भिः",
+          "explanation": "मरुत् + भिस् $\rightarrow$ जश्त्वेन मरुद्भिः भवति।"
+        },
+        {
+          "num": 2,
+          "question": "२. 'राजन्' शब्दस्य द्वितीया बहुवचने किं रूपं भवति?",
+          "questionSanskrit": "'राजन्' शब्दस्य द्वितीया बहुवचने किं रूपम्?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "राज्ञः",
+          "explanation": "राजन् + शस् $\rightarrow$ अ-लोपे ज् + न् मिलित्वा ज्ञ भूत्वा 'राज्ञः' भवति।"
+        },
+        {
+          "num": 3,
+          "question": "३. 'वारि' शब्दस्य सप्तमी एकवचने किं रूपं भवति?",
+          "questionSanskrit": "'वारि' शब्दस्य सप्तमी एकवचने किं रूपम्?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "वारिणि",
+          "explanation": "वारि + ङि $\rightarrow$ ह्रस्व-इकारान्त-सप्तमी-एकवचने 'वारिणि' भवति।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Dual Cases Verification (द्विवचन-विभक्ति-परीक्षणम्)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · द्विवचन-विभक्ति-परीक्षणम्",
+      "instructions": "State whether the statement is true or false and provide rationale:",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 4,
+          "question": "४. 'द्वि' संख्यायाः रूपाणि केवलं द्विवचने एव प्रचलन्ति। (सत्यम् / असत्यम्)",
+          "questionSanskrit": "'द्वि' संख्यायाः रूपाणि केवलं द्विवचने एव भवन्ति।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "सत्यम् (नित्यद्विवचनान्तः)",
+          "explanation": "'द्वि' शब्दः स्वभावतः एव द्वित्व-द्योतकत्वात् सर्वदा द्विवचने एव तिष्ठति (द्वौ, द्वे, द्वे)।"
+        },
+        {
+          "num": 5,
+          "question": "५. सर्वनामशब्दानां सम्बोधन-विभक्तौ रूपाणि भवन्ति वा न?",
+          "questionSanskrit": "सर्वनामशब्दानां सम्बोधनं भवति वा?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "न भवति",
+          "explanation": "सर्वनामशब्देषु अभिमुखीकरणस्य (calling out) अभावात् सम्बोधन-विभक्तिः न विधीयते।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-app2-ws5",
+  "title": "Worksheet 5: Sentence Syntax & Error Rectification (वाक्यरचना एवं अशुद्धि-संशोधनम्)",
+  "titleSanskrit": "परिशिष्टम् २ · कार्यपत्रिका ५: वाक्यरचना एवं अशुद्धि-संशोधनम्",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Correcting syntactic agreement errors in nominal, pronominal, and numeral usage in connected sentences.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Syntactic Error Rectification (अशुद्धि-संशोधनम्)",
+      "sectionTitleSanskrit": "खण्डः 'क' · अशुद्धि-संशोधनम्",
+      "instructions": "Correct the underlined erroneous words in each sentence:",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. अशुद्धम्: 'सरोवरे मधूनाम् संचितम् अस्ति।' $\rightarrow$ शुद्धं वाक्यं लिखत।",
+          "questionSanskrit": "अशुद्धं संशोध्य लिखत: सरोवरे मधूनाम् संचितम् अस्ति।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "सरोवरे मधु संचितम् अस्ति। (अथवा कुम्भे मधु अस्ति)",
+          "explanation": "कर्तृपदे प्रथमा-एकवचने 'मधु' इति रूपं भवेत्, न तु षष्ठी बहुवचनम्।"
+        },
+        {
+          "num": 2,
+          "question": "२. अशुद्धम्: 'तिस्रः बालकाः विद्यालये पठन्ति।' $\rightarrow$ शुद्धं रूपं किम्?",
+          "questionSanskrit": "संशोध्य लिखत: तिस्रः बालकाः विद्यालये पठन्ति।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "त्रयः बालकाः विद्यालये पठन्ति।",
+          "explanation": "'बालकाः' इति पुंलिङ्ग-पदम् अस्ति, अतः 'तिस्रः' (स्त्रीलिङ्ग) स्थाने 'त्रयः' (पुंलिङ्ग) इति भवेत्।"
+        },
+        {
+          "num": 3,
+          "question": "३. अशुद्धम्: 'विद्वद्भ्याम् सभायाम् आगच्छतः।' (द्विवचने) $\rightarrow$ शुद्धं रूपं किम्?",
+          "questionSanskrit": "संशोध्य लिखत: विद्वद्भ्याम् सभायाम् आगच्छतः।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "विद्वांसौ सभायाम् आगच्छतः।",
+          "explanation": "कर्तृपदे प्रथमा-द्विवचने 'विद्वांसौ' इति रूपं भवति, 'विद्वद्भ्याम्' तु तृतीया/चतुर्थी/पञ्चमी द्विवचनम्।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Active Sentence Construction (वाक्यरचना)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · वाक्यरचना",
+      "instructions": "Construct meaningful Sanskrit sentences using the indicated words:",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 4,
+          "question": "४. 'राज्ञा' (तृतीया एकवचनम्) पदस्य प्रयोगेण एकं वाक्यं रचयत।",
+          "questionSanskrit": "'राज्ञा' पदस्य प्रयोगेण वाक्यरचनां कुरुत।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "राज्ञा देशः रक्ष्यते। (अथवा: राज्ञा सह मन्त्री गच्छति।)",
+          "explanation": "कर्मवाच्ये तृतीया-विभक्तियुक्त-राज्ञा अथवा सह-योगे तृतीया।"
+        },
+        {
+          "num": 5,
+          "question": "५. 'गच्छन्ती' (शतृ-स्त्रीलिङ्ग) पदस्य प्रयोगेण एकं वाक्यं रचयत।",
+          "questionSanskrit": "'गच्छन्ती' पदस्य प्रयोगेण वाक्यं रचयत।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "मार्गे गच्छन्ती बालिका गायति।",
+          "explanation": "स्त्रीलिङ्ग-कर्तृवाच्य-विशेषणरूपेण 'गच्छन्ती बालिका' इति शुद्धः प्रयोगः।"
+        }
+      ]
+    }
+  ]
+},
 
   // ==========================================
   // VARNAMALA WORKSHEET 1: SVARA-PARICAYA
