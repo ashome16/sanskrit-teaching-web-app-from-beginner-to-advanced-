@@ -334,7 +334,14 @@ const speakMacVocalicVowel = (word: string, onEnd?: () => void): boolean => {
   return true;
 };
 
-const speakConfigured = (word: string, onEnd?: () => void, plain = false): void => {
+const applyCallerRate = (utterance: SpeechSynthesisUtterance, rate?: number): void => {
+  // Optional override for one caller (Dhātupāṭha). Pitch stays whatever
+  // configureUtterance already set. Omitted rate leaves every preset alone.
+  if (rate == null || !Number.isFinite(rate)) return;
+  utterance.rate = clampRate(rate);
+};
+
+const speakConfigured = (word: string, onEnd?: () => void, plain = false, rate?: number): void => {
   if (pronunciationMuted) return;
 
   // Lesson cardinals are already Devanagari number-words. Skip letter MP3s,
@@ -342,6 +349,7 @@ const speakConfigured = (word: string, onEnd?: () => void, plain = false): void 
   if (plain) {
     const utterance = new SpeechSynthesisUtterance(word);
     configureUtterance(utterance, word, word);
+    applyCallerRate(utterance, rate);
     // Cardinals must use the Hindi voice. A saved English reader voice says "two".
     const hindi = pickHindiVoice();
     if (hindi) {
@@ -405,7 +413,15 @@ const speakConfigured = (word: string, onEnd?: () => void, plain = false): void 
   }
   window.speechSynthesis.speak(utterance);
 };
-export const playPronunciation = (value: string): void => {
+export const playPronunciation = (
+  value: string,
+  options?: {
+    /** Hindi voice, Devanagari as written. Skips letter MP3s and roman cues. */
+    plainDevanagari?: boolean;
+    /** Playback rate for this call only. Ignored unless plainDevanagari. Pitch unchanged. */
+    rate?: number;
+  },
+): void => {
   if (pronunciationMuted) return;
   // Never voice a bare daṇḍa / double daṇḍa / verse number ("danda", "poorn viraam").
   if (isDandaOrVerseNumberToken(value)) return;
@@ -425,7 +441,8 @@ export const playPronunciation = (value: string): void => {
   const gen = speakGeneration;
   void whenVoicesReady().then(() => {
     if (pronunciationMuted || gen !== speakGeneration) return;
-    speakConfigured(word);
+    const plain = options?.plainDevanagari === true;
+    speakConfigured(word, undefined, plain, plain ? options?.rate : undefined);
   });
 };
 
@@ -444,6 +461,11 @@ export const playSequence = (
     sanskritCardinals?: boolean;
     /** Speak every item as given Devanagari, with no letter-audio or roman cues. */
     plainDevanagari?: boolean;
+    /**
+     * Playback rate for plain Devanagari items only. A function is read per item
+     * so a page can change speed mid-queue. Pitch is not touched. Omitted = existing rates.
+     */
+    rate?: number | (() => number);
   },
 ): (() => void) => {
   const gapMs = options?.gapMs ?? 220;
@@ -520,10 +542,17 @@ export const playSequence = (
       timer = setTimeout(speakNext, gapMs);
     };
 
+    const callerRate = (() => {
+      if (!item.plain || options?.rate == null) return undefined;
+      const raw = typeof options.rate === 'function' ? options.rate() : options.rate;
+      return typeof raw === 'number' && Number.isFinite(raw) && raw > 0 ? raw : undefined;
+    })();
+
     // Some Chrome/Edge builds skip onend; advance after a safe upper bound.
     const fallbackMs = Math.max(1800, word.length * 420);
-    fallbackTimer = setTimeout(after, fallbackMs);
-    speakConfigured(word, after, item.plain);
+    const timedFallback = callerRate != null ? Math.round(fallbackMs / callerRate) : fallbackMs;
+    fallbackTimer = setTimeout(after, timedFallback);
+    speakConfigured(word, after, item.plain, callerRate);
   };
 
   stopPronunciation();

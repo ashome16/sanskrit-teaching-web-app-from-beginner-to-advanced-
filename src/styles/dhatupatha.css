@@ -48,6 +48,46 @@
   white-space: nowrap;
 }
 
+.dp-speed {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1.5px solid #e3d5b3;
+  background: #fffdf8;
+  overflow: hidden;
+}
+
+.dp-speed-btn {
+  min-height: 40px;
+  padding: 0.3rem 0.7rem;
+  border: 0;
+  background: transparent;
+  color: #5b5348;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dp-speed-btn + .dp-speed-btn {
+  border-left: 1px solid #e3d5b3;
+}
+
+.dp-speed-btn:hover,
+.dp-speed-btn:focus-visible {
+  color: #0f766e;
+  outline: none;
+}
+
+.dp-speed-btn--active {
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.dp-speed-btn--active:hover,
+.dp-speed-btn--active:focus-visible {
+  color: #ffffff;
+}
+
 .dp-playall {
   min-height: 44px;
   padding: 0.45rem 0.95rem;

@@ -16,6 +16,31 @@ type DhatupathaBrowserProps = {
 
 const GANA_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 
+/** Page-only speech pace. Normal is Web Speech rate 1. Session only, not Bodhi. */
+const DHATU_SPEEDS = [
+  { id: 'slow', label: 'Slow', rate: 0.8 },
+  { id: 'normal', label: 'Normal', rate: 1 },
+  { id: 'fast', label: 'Fast', rate: 1.25 },
+] as const;
+type DhatuSpeed = (typeof DHATU_SPEEDS)[number]['id'];
+const DHATU_SPEED_KEY = 'dhatupatha-speech-speed';
+
+const isDhatuSpeed = (value: string | null): value is DhatuSpeed =>
+  value === 'slow' || value === 'normal' || value === 'fast';
+
+const loadDhatuSpeed = (): DhatuSpeed => {
+  try {
+    const saved = sessionStorage.getItem(DHATU_SPEED_KEY);
+    if (isDhatuSpeed(saved)) return saved;
+  } catch {
+    // Private mode / no storage — keep the default.
+  }
+  return 'normal';
+};
+
+const rateForSpeed = (speed: DhatuSpeed): number =>
+  DHATU_SPEEDS.find((item) => item.id === speed)?.rate ?? 1;
+
 const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
   const [entries, setEntries] = useState<DhatuEntry[]>([]);
   const [loading, setLoading] = useState(true);
@@ -31,6 +56,9 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
   const resumeIndexRef = useRef(0);
   const playTokenRef = useRef(0);
   const filteredRef = useRef<DhatuEntry[]>([]);
+  const [speechSpeed, setSpeechSpeed] = useState<DhatuSpeed>(loadDhatuSpeed);
+  const speechSpeedRef = useRef<DhatuSpeed>(speechSpeed);
+  speechSpeedRef.current = speechSpeed;
 
   useEffect(() => {
     let cancelled = false;
@@ -119,6 +147,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
       {
         gapMs: 550,
         plainDevanagari: true,
+        rate: () => rateForSpeed(speechSpeedRef.current),
         onItem: (_word, itemIndex) => {
           if (playTokenRef.current !== token) return;
           const entry = slice[itemIndex];
@@ -148,7 +177,10 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
   const speakOne = (value: string) => {
     // A single 🔊 cancels the Play all queue so the two do not talk over each other.
     stopPlayAll(false);
-    playPronunciation(value);
+    playPronunciation(value, {
+      plainDevanagari: true,
+      rate: rateForSpeed(speechSpeedRef.current),
+    });
   };
 
   const toggleExpand = (entry: DhatuEntry) => {
@@ -171,6 +203,27 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
           <span className="dp-meta" aria-live="polite">
             {loading ? 'Loading…' : `${filtered.length} of ${entries.length} roots`}
           </span>
+          <div className="dp-speed" role="group" aria-label="Root speech speed">
+            {DHATU_SPEEDS.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                className={`dp-speed-btn${speechSpeed === item.id ? ' dp-speed-btn--active' : ''}`}
+                aria-pressed={speechSpeed === item.id}
+                onClick={() => {
+                  speechSpeedRef.current = item.id;
+                  setSpeechSpeed(item.id);
+                  try {
+                    sessionStorage.setItem(DHATU_SPEED_KEY, item.id);
+                  } catch {
+                    // Ignore storage unavailability; the choice still lasts this view.
+                  }
+                }}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
           <button
             type="button"
             className={`dp-playall${playingAll ? ' dp-playall--active' : ''}`}
