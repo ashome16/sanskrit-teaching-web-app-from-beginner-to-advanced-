@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import type { DhatuEntry } from '../types/linguistics';
 import {
   GANA_LABELS,
@@ -6,7 +6,8 @@ import {
   loadDhatupatha,
   searchDhatupatha,
 } from '../utils/dhatupatha';
-import { playPronunciation } from '../utils/pronunciation';
+import { hasDevanagariLetter } from '../utils/dandaSpeech';
+import { playPronunciation, playSequence, stopPronunciation } from '../utils/pronunciation';
 import LatFormsTable from './LatFormsTable';
 import '../styles/dhatupatha.css';
 
@@ -23,6 +24,10 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
   const [query, setQuery] = useState('');
   const [ganaFilter, setGanaFilter] = useState<number | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [playingAll, setPlayingAll] = useState(false);
+  const [playingKey, setPlayingKey] = useState<string | null>(null);
+  const stopPlaySequenceRef = useRef<(() => void) | null>(null);
+  const browserRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -59,8 +64,81 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
     setExpandedId((prev) => (prev === key ? null : key));
   };
 
+  const entryKey = (entry: DhatuEntry) => entry.id ?? entry.devanagari;
+
+  /** Roots the single 🔊 button can speak. Empty / non-Devanagari items are skipped. */
+  const speakable = useMemo(
+    () => filtered.filter((entry) => hasDevanagariLetter(entry.devanagari || '')),
+    [filtered],
+  );
+
+  const stopPlayAll = () => {
+    stopPlaySequenceRef.current?.();
+    stopPlaySequenceRef.current = null;
+    stopPronunciation();
+    setPlayingAll(false);
+    setPlayingKey(null);
+  };
+
+  const playOne = (text: string) => {
+    stopPlayAll();
+    playPronunciation(text);
+  };
+
+  const handleTogglePlayAll = () => {
+    if (playingAll) {
+      stopPlayAll();
+      return;
+    }
+    if (!speakable.length) return;
+    const queue = speakable.map((entry) => entry.devanagari);
+    setPlayingAll(true);
+    setPlayingKey(entryKey(speakable[0]));
+    stopPlaySequenceRef.current = playSequence(queue, {
+      onItem: (_word, index) => {
+        const entry = speakable[index];
+        setPlayingKey(entry ? entryKey(entry) : null);
+      },
+      onDone: () => {
+        stopPlaySequenceRef.current = null;
+        setPlayingAll(false);
+        setPlayingKey(null);
+      },
+    });
+  };
+
+  // Search or gaṇa filter changes the visible list — stop rather than keep a stale queue.
+  useEffect(() => {
+    if (!stopPlaySequenceRef.current) return;
+    stopPlaySequenceRef.current();
+    stopPlaySequenceRef.current = null;
+    stopPronunciation();
+    setPlayingAll(false);
+    setPlayingKey(null);
+  }, [query, ganaFilter]);
+
+  useEffect(() => {
+    return () => {
+      stopPlaySequenceRef.current?.();
+      stopPlaySequenceRef.current = null;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!playingAll || !playingKey || !browserRef.current) return;
+    const el = browserRef.current.querySelector<HTMLElement>(
+      `[data-dhatu-key="${CSS.escape(playingKey)}"]`,
+    );
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const viewH = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top >= 0 && rect.bottom <= viewH) return;
+    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest' });
+  }, [playingAll, playingKey]);
+
   return (
-    <div className="dp-browser" aria-label="Dhātupāṭha root browser">
+    <div className="dp-browser" ref={browserRef} aria-label="Dhātupāṭha root browser">
       <div className="dp-toolbar">
         <div className="dp-search-row">
           <input
@@ -74,6 +152,17 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
           <span className="dp-meta" aria-live="polite">
             {loading ? 'Loading…' : `${filtered.length} of ${entries.length} roots`}
           </span>
+          <button
+            type="button"
+            className={`dp-play-all${playingAll ? ' dp-play-all--stop' : ''}`}
+            onClick={handleTogglePlayAll}
+            disabled={!playingAll && (loading || speakable.length === 0)}
+            aria-pressed={playingAll}
+            title={playingAll ? 'Stop playback' : 'Hear each root shown below, in order'}
+            aria-label={playingAll ? 'Stop' : 'Play all dhātus in order'}
+          >
+            {playingAll ? 'Stop' : 'Play all'}
+          </button>
         </div>
         <div className="dp-chips" role="group" aria-label="Filter by gaṇa">
           <button
@@ -118,7 +207,8 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
           return (
             <article
               key={key}
-              className={`dp-card${open ? ' dp-card--open' : ''}`}
+              data-dhatu-key={key}
+              className={`dp-card${open ? ' dp-card--open' : ''}${playingKey === key ? ' dp-card--speaking' : ''}`}
               onClick={() => toggleExpand(entry)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -142,7 +232,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
                   aria-label={`Pronounce ${entry.devanagari}`}
                   onClick={(e) => {
                     e.stopPropagation();
-                    playPronunciation(entry.devanagari);
+                    playOne(entry.devanagari);
                   }}
                 >
                   🔊
@@ -191,7 +281,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
                             <button
                               type="button"
                               className="dp-example-btn"
-                              onClick={() => playPronunciation(ex)}
+                              onClick={() => playOne(ex)}
                             >
                               {ex} <span aria-hidden="true">🔊</span>
                             </button>
