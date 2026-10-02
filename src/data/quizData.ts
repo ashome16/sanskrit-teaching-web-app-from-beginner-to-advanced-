@@ -49,6 +49,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade8_ch13', label: "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (3 Quizzes · 30 Qs)", icon: '🔤' },
   { id: 'grade8_app1', label: "Grade 8 App 1: व्याकरणम् (3 Quizzes · 30 Qs)", icon: '📐' },
   { id: 'grade8_app2', label: "Grade 8 App 2: शब्दरूपाणि (3 Quizzes · 30 Qs)", icon: '📚' },
+  { id: 'grade8_app3', label: "Grade 8 App 3: धातुरूपाणि (3 Quizzes · 30 Qs)", icon: '⚡' },
   { id: 'grade9_ch1', label: 'Grade 9 Ch 1: सत्यं शिवं सुन्दरं संस्कृतम् (3 Quizzes · 30 Qs)', icon: '🌸' },
   { id: 'grade9_ch2', label: 'Grade 9 Ch 2: सुखस्य मूलं धर्मः (3 Quizzes · 30 Qs)', icon: '⚖️' },
   { id: 'grade9_ch3', label: 'Grade 9 Ch 3: आत्मवत्सर्वभूतेषु यः पश्यति सः पण्डितः (3 Quizzes · 30 Qs)', icon: '👁️' },
@@ -17761,6 +17762,576 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
   "correctIndex": 0,
   "explanation": "चतुर् शब्द के स्त्रीलिङ्ग प्रथमा और द्वितीया बहुवचन में 'चतस्रः' रूप बनता है (यथा: चतस्रः महिलाः)।",
   "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app3-q1-1",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 1: Parasmaipada Tenses Focus (परस्मैपद-काल-प्रश्नावली)",
+  "question": "'भू' धातु का लट्-लकार उत्तमपुरुष बहुवचन का रूप क्या है? (What is the 1st person plural present tense form of 'Bhu'?)",
+  "questionSanskrit": "'भू' धातुः लट्-लकारः उत्तमपुरुष-बहुवचनस्य रूपं किम्?",
+  "options": [
+    "भवामः",
+    "भवावः",
+    "भवन्ति",
+    "भवथ"
+  ],
+  "correctIndex": 0,
+  "explanation": "लट्-लकार उत्तमपुरुष बहुवचन में मस् (मः) प्रत्यय जुड़कर 'भवामः' बनता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app3-q1-2",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 1: Parasmaipada Tenses Focus (परस्मैपद-काल-प्रश्नावली)",
+  "question": "'गम्' धातु का लृट्-लकार प्रथमपुरुष एकवचन का रूप क्या है? (What is 3rd person singular future tense of 'Gam'?)",
+  "questionSanskrit": "'गम्' धातुः लृट्-लकारः प्रथमपुरुष-एकवचनस्य रूपं लिखत।",
+  "options": [
+    "गमिष्यति",
+    "गच्छिष्यति",
+    "गमिष्यसि",
+    "गमिष्यामि"
+  ],
+  "correctIndex": 0,
+  "explanation": "लृट्-लकार में गच्छ-आदेश न होकर मूल धातु में इट् और ष्य लगकर 'गमिष्यति' बनता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app3-q1-3",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 1: Parasmaipada Tenses Focus (परस्मैपद-काल-प्रश्नावली)",
+  "question": "'पिबन्ति' क्रियापद में मूल धातु कौन सी है? (What is the crude verbal root in 'Pibanti'?)",
+  "questionSanskrit": "'पिबन्ति' इति क्रियापदे कः मूलधातुः अस्ति?",
+  "options": [
+    "पा (पाने)",
+    "पिब्",
+    "पातु",
+    "पिब"
+  ],
+  "correctIndex": 0,
+  "explanation": "मूल धातु 'पा' (पाने) है, जिसे सार्वधातुक लकारों में 'पिब' आदेश होता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app3-q1-4",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 1: Parasmaipada Tenses Focus (परस्मैपद-काल-प्रश्नावली)",
+  "question": "'स्था' धातु का लङ्-लकार प्रथमपुरुष एकवचन का रूप क्या है? (What is 3rd person singular past tense of 'Stha'?)",
+  "questionSanskrit": "'स्था' धातुः लङ्-लकारः प्रथमपुरुष-एकवचनस्य रूपं किम्?",
+  "options": [
+    "अतिष्ठत्",
+    "अतिष्ठन्",
+    "अस्थात्",
+    "तिष्ठति"
+  ],
+  "correctIndex": 0,
+  "explanation": "लङ्-लकार में अ-आगम और तिष्ठ-आदेश होकर 'अतिष्ठत्' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app3-q1-5",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 1: Parasmaipada Tenses Focus (परस्मैपद-काल-प्रश्नावली)",
+  "question": "'नेष्यति' यह रूप किस लकार और किस पुरुष का है? (Of which Lakara and Person is 'Neshyati'?)",
+  "questionSanskrit": "'नेष्यति' इति रूपं कस्य लकारस्य कस्य पुरुषस्य च अस्ति?",
+  "options": [
+    "लृट्-लकारः (भविष्यत्कालः), प्रथमपुरुषः",
+    "लट्-लकारः, प्रथमपुरुषः",
+    "लङ्-लकारः, मध्यमपुरुषः",
+    "लोट्-लकारः, उत्तमपुरुषः"
+  ],
+  "correctIndex": 0,
+  "explanation": "नी धातु के लृट्-लकार (भविष्यत्काल) प्रथमपुरुष एकवचन में 'नेष्यति' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app3-q1-6",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 1: Parasmaipada Tenses Focus (परस्मैपद-काल-प्रश्नावली)",
+  "question": "'दृश्' धातु का लट्-लकार मध्यमपुरुष द्विवचन का रूप क्या है? (What is 2nd person dual present tense of 'Drish'?)",
+  "questionSanskrit": "'दृश्' धातुः लट्-लकारः मध्यमपुरुष-द्विवचनस्य रूपं लिखत।",
+  "options": [
+    "पश्यथः",
+    "पश्यतः",
+    "पश्यथ",
+    "द्रक्ष्यथः"
+  ],
+  "correctIndex": 0,
+  "explanation": "लट्-लकार मध्यमपुरुष द्विवचन में थस् प्रत्यय लगकर 'पश्यथः' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app3-q1-7",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 1: Parasmaipada Tenses Focus (परस्मैपद-काल-प्रश्नावली)",
+  "question": "'अगच्छन्' यह रूप लङ्-लकार के किस वचन में होता है? (In which number does 'Agacchan' occur in Lang-Lakara?)",
+  "questionSanskrit": "'अगच्छन्' इति रूपं लङ्-लकारस्य कस्मिन् वचने भवति?",
+  "options": [
+    "बहुवचने (प्रथमपुरुषः)",
+    "एकवचने",
+    "द्विवचने",
+    "मध्यमपुरुषे"
+  ],
+  "correctIndex": 0,
+  "explanation": "लङ्-लकार प्रथमपुरुष बहुवचन में झि $\\rightarrow$ अन् होकर 'अगच्छन्' बनता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app3-q1-8",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 1: Parasmaipada Tenses Focus (परस्मैपद-काल-प्रश्नावली)",
+  "question": "'इष्' धातु का लृट्-लकार उत्तमपुरुष एकवचन का रूप क्या है? (What is 1st person singular future tense of 'Ish'?)",
+  "questionSanskrit": "'इष्' धातुः लृट्-लकारः उत्तमपुरुष-एकवचनस्य रूपं किम्?",
+  "options": [
+    "एषिष्यामि",
+    "इच्छामि",
+    "इषिष्यामि",
+    "एषिष्यति"
+  ],
+  "correctIndex": 0,
+  "explanation": "इष् धातु का गुण 'एष्' होकर लृट् उत्तमपुरुष एकवचन में 'एषिष्यामि' बनता है।",
+  "difficulty": "hard",
+  "points": 10
+},
+{
+  "id": "g8-app3-q1-9",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 1: Parasmaipada Tenses Focus (परस्मैपद-काल-प्रश्नावली)",
+  "question": "'तिष्ठति' पद में कौन सी मूल धातु प्रयुक्त है? (Which root is used in 'Tishthati'?)",
+  "questionSanskrit": "'तिष्ठति' इति पदे कः मूलधातुः प्रयुक्तः?",
+  "options": [
+    "स्था (स्था गतिनिवृत्तौ)",
+    "तिष्ठ्",
+    "स्थास्",
+    "तिष्ठति"
+  ],
+  "correctIndex": 0,
+  "explanation": "मूल धातु 'स्था' है, जिसे सार्वधातुक लकारों में 'तिष्ठ' आदेश होता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app3-q1-10",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 1: Parasmaipada Tenses Focus (परस्मैपद-काल-प्रश्नावली)",
+  "question": "'अभवताम्' यह पद किस लकार और किस वचन का है? (Of which Lakara and number is 'Abhavatam'?)",
+  "questionSanskrit": "'अभवताम्' इति पदं कस्य लकारस्य कस्य वचनस्य च अस्ति?",
+  "options": [
+    "लङ्-लकारः (भूतकालः), द्विवचनम्",
+    "लट्-लकारः, एकवचनम्",
+    "लोट्-लकारः, बहुवचनम्",
+    "लृट्-लकारः, द्विवचनम्"
+  ],
+  "correctIndex": 0,
+  "explanation": "लङ्-लकार प्रथमपुरुष द्विवचन में ताम् प्रत्यय लगकर 'अभवताम्' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app3-q2-1",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 2: Imperative, Potential & Atmanepada Systems",
+  "question": "'गच्छतु' यह पद किस लकार का सूचक है? (Which Lakara is indicated by 'Gacchatu'?)",
+  "questionSanskrit": "'गच्छतु' इति पदं कस्य लकारस्य सूचकम् अस्ति?",
+  "options": [
+    "लोट्-लकारस्य (आज्ञार्थकः)",
+    "लट्-लकारस्य",
+    "लङ्-लकारस्य",
+    "विधिलिङ्-लकारस्य"
+  ],
+  "correctIndex": 0,
+  "explanation": "तु प्रत्यय लोट्-लकार (आज्ञार्थक) प्रथमपुरुष एकवचन का सूचक है (गच्छतु)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app3-q2-2",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 2: Imperative, Potential & Atmanepada Systems",
+  "question": "'भू' धातु का विधिलिङ्-लकार प्रथमपुरुष बहुवचन का रूप क्या है? (What is 3rd person plural potential form of 'Bhu'?)",
+  "questionSanskrit": "'भू' धातुः विधिलिङ्-लकारः प्रथमपुरुष-बहुवचनस्य रूपं किम्?",
+  "options": [
+    "भवेयुः",
+    "भवन्तु",
+    "भवेत्",
+    "अभवन्"
+  ],
+  "correctIndex": 0,
+  "explanation": "विधिलिङ्-लकार प्रथमपुरुष बहुवचन में जुस् प्रत्यय से 'भवेयुः' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app3-q2-3",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 2: Imperative, Potential & Atmanepada Systems",
+  "question": "'पिब' यह रूप 'पा' धातु के किस लकार और पुरुष का है? (What mood and person is 'Piba' from root 'Pa'?)",
+  "questionSanskrit": "'पिब' इति रूपं 'पा' धातोः कस्य लकारस्य कस्य पुरुषस्य च अस्ति?",
+  "options": [
+    "लोट्-लकारः, मध्यमपुरुषः एकवचनम्",
+    "लट्-लकारः, प्रथमपुरुषः",
+    "विधिलिङ्, मध्यमपुरुषः",
+    "लङ्-लकारः, उत्तमपुरुषः"
+  ],
+  "correctIndex": 0,
+  "explanation": "लोट्-लकार मध्यमपुरुष एकवचन में हि प्रत्यय का लोप होकर 'पिब' रूप बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app3-q2-4",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 2: Imperative, Potential & Atmanepada Systems",
+  "question": "'सेव्' धातु का आत्मनेपद लट्-लकार प्रथमपुरुष बहुवचन का रूप लिखिए। (Write 3rd person plural present form of 'Sev'.)",
+  "questionSanskrit": "'सेव' धातुः आत्मनेपदः लट्-लकारः प्रथमपुरुष-बहुवचनस्य रूपं लिखत।",
+  "options": [
+    "सेवन्ते",
+    "सेवन्ति",
+    "सेवते",
+    "सेवेते"
+  ],
+  "correctIndex": 0,
+  "explanation": "आत्मनेपद लट्-लकार प्रथमपुरुष बहुवचन में अन्ते प्रत्यय लगकर 'सेवन्ते' बनता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app3-q2-5",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 2: Imperative, Potential & Atmanepada Systems",
+  "question": "'लभते' यह पद किस पद (परस्मैपद/आत्मनेपद) में है? (In which voice is 'Labhate'?)",
+  "questionSanskrit": "'लभते' इति पदं कस्मिन् पदे (परस्मैपदे/आत्मनेपदे) अस्ति?",
+  "options": [
+    "आत्मनेपदे",
+    "परस्मैपदे",
+    "उभयपदे",
+    "अव्यये"
+  ],
+  "correctIndex": 0,
+  "explanation": "लभ् धातु नित्य आत्मनेपदी धातु है, अतः लभते आत्मनेपद का रूप है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app3-q2-6",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 2: Imperative, Potential & Atmanepada Systems",
+  "question": "'सेव्' धातु का लृट्-लकार प्रथमपुरुष एकवचन का रूप क्या है? (What is 3rd person singular future form of 'Sev'?)",
+  "questionSanskrit": "'सेव' धातुः लृट्-लकारः प्रथमपुरुष-एकवचनस्य रूपं किम्?",
+  "options": [
+    "सेविष्यते",
+    "सेविष्यति",
+    "सेप्स्यते",
+    "सेवते"
+  ],
+  "correctIndex": 0,
+  "explanation": "सेव् धातु के लृट्-लकार प्रथमपुरुष एकवचन में इट् और ष्यते लगकर 'सेविष्यते' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app3-q2-7",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 2: Imperative, Potential & Atmanepada Systems",
+  "question": "'लप्स्यते' इस रूप में कौन सी मूल धातु और कौन सा लकार है? (Which root and Lakara are in 'Lapsyate'?)",
+  "questionSanskrit": "'लप्स्यते' इति रूपे कः मूलधातुः कश्च लकारः अस्ति?",
+  "options": [
+    "लभ् धातुः, लृट्-लकारः",
+    "लभ् धातुः, लट्-लकारः",
+    "लप् धातुः, लोट्-लकारः",
+    "लिभ् धातुः, लङ्-लकारः"
+  ],
+  "correctIndex": 0,
+  "explanation": "लभ् धातु के लृट्-लकार में भ् + स्य = प्स्य होकर 'लप्स्यते' बनता है।",
+  "difficulty": "hard",
+  "points": 10
+},
+{
+  "id": "g8-app3-q2-8",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 2: Imperative, Potential & Atmanepada Systems",
+  "question": "'असेवन्त' यह रूप किस लकार का है? (Of which Lakara is 'Asevanta'?)",
+  "questionSanskrit": "'असेवन्त' इति रूपं कस्य लकारस्य अस्ति?",
+  "options": [
+    "लङ्-लकारस्य (आत्मनेपदम्)",
+    "लट्-लकारस्य",
+    "लोट्-लकारस्य",
+    "विधिलिङ्-लकारस्य"
+  ],
+  "correctIndex": 0,
+  "explanation": "अ-आगम और आत्मनेपद अन्त प्रत्यय से लङ्-लकार प्रथमपुरुष बहुवचन में 'असेवन्त' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app3-q2-9",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 2: Imperative, Potential & Atmanepada Systems",
+  "question": "'लभ्' धातु का लोट्-लकार मध्यमपुरुष एकवचन का रूप क्या है? (What is 2nd person singular imperative form of 'Labh'?)",
+  "questionSanskrit": "'लभ्' धातुः लोट्-लकारः मध्यमपुरुष-एकवचनस्य रूपं लिखत।",
+  "options": [
+    "लभस्व",
+    "लभताम्",
+    "लभसे",
+    "लभ"
+  ],
+  "correctIndex": 0,
+  "explanation": "आत्मनेपद लोट्-लकार मध्यमपुरुष एकवचन में थास् के स्थान पर स्व होकर 'लभस्व' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app3-q2-10",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 2: Imperative, Potential & Atmanepada Systems",
+  "question": "'नयेत्' यह विधिलिङ् रूप किस पुरुष और वचन का है? (What person and number is 'Nayet' in potential mood?)",
+  "questionSanskrit": "'नयेत्' इति विधिलिङ् रूपं कस्य पुरुषस्य कस्य वचनस्य च अस्ति?",
+  "options": [
+    "प्रथमपुरुषः, एकवचनम्",
+    "मध्यमपुरुषः, बहुवचनम्",
+    "उत्तमपुरुषः, एकवचनम्",
+    "प्रथमपुरुषः, बहुवचनम्"
+  ],
+  "correctIndex": 0,
+  "explanation": "नी धातु के विधिलिङ् प्रथमपुरुष एकवचन में 'नयेत्' रूप बनता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app3-q3-1",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 3: Syntactic Syntax & Transformational Rules",
+  "question": "'अहं पुस्तकं ______' — रिक्तस्थान के लिए 'इष्' धातु का लट्-लकार रूप क्या होगा?",
+  "questionSanskrit": "\"अहं पुस्तकं ______\" — रिक्तस्थाने 'इष्' धातोः लट्-लकार रूपं किम्?",
+  "options": [
+    "इच्छामि",
+    "इच्छति",
+    "इच्छावः",
+    "इच्छसि"
+  ],
+  "correctIndex": 0,
+  "explanation": "कर्ता 'अहम्' उत्तमपुरुष एकवचन है, अतः क्रियापद 'इच्छामि' होगा।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app3-q3-2",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 3: Syntactic Syntax & Transformational Rules",
+  "question": "'दृश्' धातु का लृट्-लकार प्रथमपुरुष एकवचन का विलक्षण रूप क्या है?",
+  "questionSanskrit": "'दृश्' धातोः लृट्-लकारस्य प्रथमपुरुष-एकवचनस्य विलक्षणं रूपं किम्?",
+  "options": [
+    "द्रक्ष्यति",
+    "पश्यिष्यति",
+    "दर्शिष्यति",
+    "द्रक्ष्यते"
+  ],
+  "correctIndex": 0,
+  "explanation": "दृश् धातु का लृट् प्रथमपुरुष एकवचन में 'द्रक्ष्यति' रूप बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app3-q3-3",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 3: Syntactic Syntax & Transformational Rules",
+  "question": "'त्वं कुत्र ______' — रिक्तस्थान के लिए 'गम्' धातु का लोट्-लकार मध्यमपुरुष एकवचन रूप लिखिए।",
+  "questionSanskrit": "\"त्वं कुत्र ______\" — रिक्तस्थाने 'गम्' धातोः लोट्-लकार मध्यमपुरुष एकवचन रूपं लिखत।",
+  "options": [
+    "गच्छ",
+    "गच्छतु",
+    "गच्छसि",
+    "गच्छानि"
+  ],
+  "correctIndex": 0,
+  "explanation": "त्वम् के साथ लोट्-लकार मध्यमपुरुष एकवचन में 'गच्छ' होता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app3-q3-4",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 3: Syntactic Syntax & Transformational Rules",
+  "question": "'अभवः' यह रूप किस पुरुष का है? (Which person is 'Abhavah'?)",
+  "questionSanskrit": "'अभवः' इति रूपं कस्य पुरुषस्य अस्ति?",
+  "options": [
+    "मध्यमपुरुषस्य (एकवचनम्)",
+    "प्रथमपुरुषस्य",
+    "उत्तमपुरुषस्य",
+    "प्रथमपुरुष-बहुवचनस्य"
+  ],
+  "correctIndex": 0,
+  "explanation": "लङ्-लकार मध्यमपुरुष एकवचन में सिप् $\\rightarrow$ ः होकर 'अभवः' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app3-q3-5",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 3: Syntactic Syntax & Transformational Rules",
+  "question": "'लभे' यह पद 'लभ्' धातु के किस पुरुष और वचन का है? (What person and number is 'Labhe'?)",
+  "questionSanskrit": "'लभे' इति पदं 'लभ्' धातोः कस्य पुरुषस्य कस्य वचनस्य च अस्ति?",
+  "options": [
+    "उत्तमपुरुषः, एकवचनम् (लट्-लकारः)",
+    "प्रथमपुरुषः, एकवचनम्",
+    "मध्यमपुरुषः, द्विवचनम्",
+    "उत्तमपुरुषः, बहुवचनम्"
+  ],
+  "correctIndex": 0,
+  "explanation": "आत्मनेपद लट् उत्तमपुरुष एकवचन में इट् (ए) प्रत्यय लगकर 'लभे' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app3-q3-6",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 3: Syntactic Syntax & Transformational Rules",
+  "question": "'पिबेयम्' यह रूप किस लकार का है? (Which Lakara is 'Pibeyam'?)",
+  "questionSanskrit": "'पिबेयम्' इति रूपं कस्य लकारस्य अस्ति?",
+  "options": [
+    "विधिलिङ्-लकारस्य (उत्तमपुरुष-एकवचनम्)",
+    "लोट्-लकारस्य",
+    "लट्-लकारस्य",
+    "लङ्-लकारस्य"
+  ],
+  "correctIndex": 0,
+  "explanation": "विधिलिङ्-लकार उत्तमपुरुष एकवचन में एयम् प्रत्यय लगकर 'पिबेयम्' बनता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app3-q3-7",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 3: Syntactic Syntax & Transformational Rules",
+  "question": "'इच्छन्ति' पद में कौन सी धातु है? (What root is in 'Icchanti'?)",
+  "questionSanskrit": "'इच्छन्ति' पदे कः धातुः अस्ति?",
+  "options": [
+    "इष् धातुः",
+    "इच्छ् धातुः",
+    "एष् धातुः",
+    "ईश् धातुः"
+  ],
+  "correctIndex": 0,
+  "explanation": "मूल धातु 'इष्' (इषु इच्छायाम्) है, जिसे सार्वधातुक लकारों में 'इच्छ' आदेश होता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app3-q3-8",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 3: Syntactic Syntax & Transformational Rules",
+  "question": "'ते तत्र ______' — रिक्तस्थान में 'स्था' धातु का लङ्-लकार प्रथमपुरुष बहुवचन रूप क्या होगा?",
+  "questionSanskrit": "\"ते तत्र ______\" — रिक्तस्थाने 'स्था' धातोः लङ्-लकार प्रथमपुरुष बहुवचन रूपं किम्?",
+  "options": [
+    "अतिष्ठन्",
+    "अतिष्ठत्",
+    "अतिष्ठताम्",
+    "तिष्ठन्ति"
+  ],
+  "correctIndex": 0,
+  "explanation": "कर्ता 'ते' प्रथमपुरुष बहुवचन है, अतः लङ्-लकार में 'अतिष्ठन्' होगा।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app3-q3-9",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 3: Syntactic Syntax & Transformational Rules",
+  "question": "'सेवध्वे' यह रूप मध्यमपुरुष के किस वचन में होता है? (In which number does 'Sevadhve' occur?)",
+  "questionSanskrit": "'सेवध्वे' इति रूपं मध्यमपुरुषस्य कस्मिन् वचने भवति?",
+  "options": [
+    "बहुवचने (लट्-लकारः)",
+    "एकवचने",
+    "द्विवचने",
+    "उत्तमपुरुषे"
+  ],
+  "correctIndex": 0,
+  "explanation": "आत्मनेपद मध्यमपुरुष बहुवचन में ध्वे प्रत्यय लगकर 'सेवध्वे' बनता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app3-q3-10",
+  "category": "grade8_app3",
+  "categoryLabel": "Grade 8 App 3: धातुरूपाणि",
+  "chapterRef": "Grade 8: परिशिष्टम् ३ — धातुरूपाणि",
+  "subCategory": "Quiz 3: Syntactic Syntax & Transformational Rules",
+  "question": "'ऐच्छत्' इस भूतकालिक रूप के आदि में कौन सा स्वर आता है? (Which vowel comes at the start of 'Aicchat'?)",
+  "questionSanskrit": "'ऐच्छत्' इति भूतकालिक रूपे आदौ कः स्वरः आगच्छति?",
+  "options": [
+    "ऐ (ऐ-कारः, वृद्धिः जाता)",
+    "अ (अ-कारः)",
+    "ए (ए-कारः)",
+    "इ (इ-कारः)"
+  ],
+  "correctIndex": 0,
+  "explanation": "लङ्-लकार में अ-आगम + इष् धातु में वृद्धि सन्धि (अ + इ = ऐ) होकर 'ऐच्छत्' बनता है।",
+  "difficulty": "hard",
   "points": 10
 },
 

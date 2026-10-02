@@ -38418,6 +38418,176 @@
       ]
     },
     {
+      "id": "grade8_app3",
+      "fileName": "grade8_app3.txt",
+      "title": "परिशिष्टम् ३: धातुरूपाणि — लट्, लृट्, लङ्, लोट्, विधिलिङ्-लकाराः (परस्मैपदम् आत्मनेपदम् च)",
+      "page_numbers": "176–185",
+      "sentences": [
+        {
+          "sanskrit": "॥ परिशिष्टम् ३: धातुरूपाणि — लट्, लृट्, लङ्, लोट्, विधिलिङ्-लकाराः (परस्मैपदम् आत्मनेपदम् च) ॥",
+          "meaning": "Appendix 3: Verb Conjugations — Present, Future, Past, Imperative, and Potential Moods in Active and Middle Voices (Pages 176–185)",
+          "paragraphTranslation": "परिशिष्टम् ३: धातुरूपाणि — लट्, लृट्, लङ्, लोट् और विधिलिङ् लकार (परस्मैपद एवं आत्मनेपद) (पृष्ठ १७६–१८५)",
+          "words": [
+            "परिशिष्टम्",
+            "धातुरूपाणि",
+            "लकाराः",
+            "परस्मैपदम्",
+            "आत्मनेपदम्"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "📌 पाठ्यक्रम-मार्गदर्शिका (CBSE / NCERT / NEP 2020) — अस्मिन् परिशिष्टे कक्षा-८-छात्रेभ्यः पञ्चसु लकारेषु परस्मैपद-आत्मनेपद-धातुप्रयोगाः कर्तृ-क्रियान्वय-नियमाश्च निरूपिताः।",
+          "meaning": "Curriculum Framework (CBSE / NCERT / NEP 2020): This appendix provides Class 8 students with systematic verbal paradigms across five core Lakaras in Active and Middle voices with subject-verb concordance rules.",
+          "paragraphTranslation": "पाठ्यक्रम-मार्गदर्शिका: इस परिशिष्ट में कक्षा 8 के छात्रों के लिए पाँच लकारों में परस्मैपद और आत्मनेपद धातुओं के रूप तथा कर्ता-क्रिया अन्वय के नियम स्पष्ट किए गए हैं।",
+          "words": [
+            "पाठ्यक्रम-मार्गदर्शिका",
+            "पञ्च-लकाराः",
+            "धातुप्रयोगाः",
+            "कर्तृ-क्रियान्वयः"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "पञ्च-लकाराणां स्वरूपम् — १. लट् (वर्तमानकालः), २. लृट् (भविष्यत्कालः), ३. लङ् (अनद्यतन-भूतकालः, अ-आगमसहितः), ४. लोट् (आज्ञा-प्रार्थना), ५. विधिलिङ् (विधिः, कर्तव्यम्, सम्भावना च)।",
+          "meaning": "Overview of Five Lakaras: 1. Lat (Present), 2. Lrit (Future), 3. Lang (Past with prefix a-), 4. Lot (Imperative command/request), 5. Vidhiling (Potential duty/possibility).",
+          "paragraphTranslation": "पाँच लकारों का स्वरूप: १. लट् (वर्तमानकाल), २. लृट् (भविष्यत्काल), ३. लङ् (भूतकाल, 'अ' उपसर्ग सहित), ४. लोट् (आज्ञा एवं प्रार्थना), ५. विधिलिङ् (कर्तव्य एवं सम्भावना)।",
+          "words": [
+            "लट्",
+            "लृट्",
+            "लङ्",
+            "लोट्",
+            "विधिलिङ्"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "धात्वादेशाः — सार्वधातुकेषु लकारेषु गम् $\rightarrow$ गच्छ-, पा $\rightarrow$ पिब-, स्था $\rightarrow$ तिष्ठ-, दृश् $\rightarrow$ पश्य-, इष् $\rightarrow$ इच्छ- इत्यादयः आदेशाः भवन्ति।",
+          "meaning": "Stem Mutations: In non-future tenses, roots mutate: Gam -> Gaccha, Pa -> Piba, Stha -> Tishtha, Drish -> Pashya, Ish -> Iccha.",
+          "paragraphTranslation": "धात्वादेश: लट्, लङ्, लोट् और विधिलिङ् में धातुओं के रूप बदल जाते हैं: गम् का गच्छ-, पा का पिब-, स्था का तिष्ठ-, दृश् का पश्य-, और इष् का इच्छ- हो जाता है।",
+          "words": [
+            "धात्वादेशः",
+            "गच्छ",
+            "पिब",
+            "तिष्ठ",
+            "पश्य",
+            "इच्छ"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "लृट्-लकारे मूलधातु-संरक्षणम् — भविष्यत्काले आदेशाः न भवन्ति, अपि तु मूलधातुभ्यः एव रूपाणि निष्पद्यन्ते (यथा — गमिष्यति, पास्यति, स्थास्यति, द्रक्ष्यति, एषिष्यति)।",
+          "meaning": "Future Tense Retention of Roots: In future tense, roots do not take substitute stems but conjugate from their radical bases (Gamishyati, Pasyati, Sthasyati, Drakshyati, Eshishyati).",
+          "paragraphTranslation": "लृट्-लकार में मूलधातु का संरक्षण: भविष्यत्काल में आदेश नहीं होते, बल्कि मूलधातु से ही रूप बनते हैं (जैसे गमिष्यति, पास्यति, स्थास्यति, द्रक्ष्यति, एषिष्यति)।",
+          "words": [
+            "लृट्-लकारः",
+            "गमिष्यति",
+            "पास्यति",
+            "स्थास्यति",
+            "द्रक्ष्यति",
+            "एषिष्यति"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "आत्मनेपद-रूपाणि — 'सेव्' (सेवते, सेवेते, सेवन्ते) तथा 'लभ्' (लभते, लभेते, लभन्ते) आत्मनेपदिनौ धातू स्तः। लृट्-लकारे 'लभ्' धातोः 'लप्स्यते' इति रूपं भवति।",
+          "meaning": "Atmanepada Forms: 'Sev' (Sevate, Sevete, Sevante) and 'Labh' (Labhate, Labhete, Labhante) are Middle Voice roots. In future tense, Labh forms Lapsyate.",
+          "paragraphTranslation": "आत्मनेपद रूप: 'सेव्' और 'लभ्' आत्मनेपदी धातुएँ हैं। लृट्-लकार में 'लभ्' धातु का रूप 'लप्स्यते' बनता है।",
+          "words": [
+            "आत्मनेपदम्",
+            "सेवते",
+            "लभते",
+            "लप्स्यते",
+            "मध्यमपदम्"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "परस्मैपद-कर्तृ-क्रिया-सङ्गतिः — प्रथमपुरुषे सः/तौ/ते (भवति, भवतः, भवन्ति); मध्यमपुरुषे त्वम्/युवाम्/यूयम् (भवसि, भवथः, भवथ); उत्तमपुरुषे अहम्/आवाम्/वयम् (भवामि, भवावः, भवामः)।",
+          "meaning": "Parasmaipada Subject Concordance: 3rd person Sah/Tau/Te (Bhavati, Bhavatah, Bhavanti); 2nd person Tvam/Yuvam/Yuyam (Bhavasi, Bhavathah, Bhavatha); 1st person Aham/Avam/Vayam (Bhavami, Bhavavah, Bhavamah).",
+          "paragraphTranslation": "परस्मैपद कर्ता-क्रिया सङ्गति: प्रथमपुरुष में सः/तौ/ते (भवति, भवतः, भवन्ति); मध्यमपुरुष में त्वम्/युवाम्/यूयम् (भवसि, भवथः, भवथ); उत्तमपुरुष में अहम्/आवाम्/वयम् (भवामि, भवावः, भवामः)।",
+          "words": [
+            "कर्तृ-क्रिया-सङ्गतिः",
+            "प्रथमपुरुषः",
+            "मध्यमपुरुषः",
+            "उत्तमपुरुषः",
+            "परस्मैपदम्"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "आत्मनेपद-कर्तृ-क्रिया-सङ्गतिः — प्रथमपुरुषे सः/तौ/ते (सेवते, सेवेते, सेवन्ते); मध्यमपुरुषे त्वम्/युवाम्/यूयम् (सेवसे, सेवेथे, सेवध्वे); उत्तमपुरुषे अहम्/आवाम्/वयम् (सेवे, सेवावहे, सेवामहे)।",
+          "meaning": "Atmanepada Subject Concordance: 3rd person Sevate, Sevete, Sevante; 2nd person Sevase, Sevethe, Sevadhve; 1st person Seve, Sevavahe, Sevamahe.",
+          "paragraphTranslation": "आत्मनेपद कर्ता-क्रिया सङ्गति: प्रथमपुरुष में सेवते, सेवेते, सेवन्ते; मध्यमपुरुष में सेवसे, सेवेथे, सेवध्वे; उत्तमपुरुष में सेवे, सेवावहे, सेवामहे।",
+          "words": [
+            "आत्मनेपदम्",
+            "सेवसे",
+            "सेवेथे",
+            "सेवध्वे",
+            "सेवे",
+            "सेवामहे"
+          ],
+          "kind": "concept"
+        },
+        {
+          "sanskrit": "शब्दार्थाः – भू (होना / to become), गम् (जाना / to go), पा (पीना / to drink), नी (ले जाना / to lead), स्था (रुकना / to stand), दृश् (देखना / to see), इष् (चाहना / to desire), सेव् (सेवा करना / to serve), लभ् (पाना / to obtain)।",
+          "meaning": "Vocabulary: Bhu (to become), Gam (to go), Pa (to drink), Ni (to lead), Stha (to stand/stay), Drish (to see), Ish (to wish), Sev (to serve), Labh (to gain).",
+          "paragraphTranslation": "शब्दार्थ: भू = होना; गम् = जाना; पा = पीना; नी = ले जाना; स्था = ठहरना; दृश् = देखना; इष् = चाहना; सेव् = सेवा करना; लभ् = पाना।",
+          "words": [
+            "भू",
+            "गम्",
+            "पा",
+            "नी",
+            "स्था",
+            "दृश्",
+            "इष्",
+            "सेव्",
+            "लभ्"
+          ],
+          "kind": "vocabulary"
+        },
+        {
+          "sanskrit": "अभ्यासः १ (काल-परिवर्तनम्) – (क) 'सः गच्छति' $\rightarrow$ 'सः अगच्छत्' (लङ्); (ख) 'अहं पिबामि' $\rightarrow$ 'अहं पास्यामि' (लृट्); (ग) 'ते सेवन्ते' $\rightarrow$ 'ते असेवन्त' (लङ्)।",
+          "meaning": "Exercise 1 (Tense Transformation): (a) Sah gacchati -> Sah agacchhat (Past); (b) Aham pibami -> Aham pasyami (Future); (c) Te sevante -> Te asevanta (Past).",
+          "paragraphTranslation": "अभ्यास १ (काल परिवर्तन): (क) सः गच्छति $\rightarrow$ सः अगच्छत्; (ख) अहं पिबामि $\rightarrow$ अहं पास्यामि; (ग) ते सेवन्ते $\rightarrow$ ते असेवन्त।",
+          "words": [
+            "अभ्यासः",
+            "काल-परिवर्तनम्",
+            "अगच्छत्",
+            "पास्यामि",
+            "असेवन्त"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "अभ्यासः २ (उचित-क्रियापद-पूरणम्) – (क) 'यूयं विद्यालये तिष्ठथ' (मध्यम॰ बहु॰); (ख) 'वयं चित्रं पश्यामः' (उत्तम॰ बहु॰); (ग) 'त्वं सत्यं वद' (लोट् मध्यम॰ एक॰)।",
+          "meaning": "Exercise 2 (Verb Concordance): (a) Yuyam vidyalaye tishthatha; (b) Vayam chitram pashyamah; (c) Tvam satyam vada.",
+          "paragraphTranslation": "अभ्यास २ (क्रियापद पूरण): (क) यूयं विद्यालये तिष्ठथ; (ख) वयं चित्रं पश्यामः; (ग) त्वं सत्यं वद।",
+          "words": [
+            "तिष्ठथ",
+            "पश्यामः",
+            "वद",
+            "वाक्यपूर्तिः",
+            "अभ्यासः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "व्याकरण-निष्कर्षः – संस्कृते क्रियापदं वाक्यस्य प्राणभूतम् अस्ति। पुरुष-वचन-लकार-सङ्गतिं ज्ञात्वा एव छात्राः सम्भाषणे लेखने च निष्णाताः भवन्ति।",
+          "meaning": "Grammar Synthesis: The verb is the core life of a Sanskrit sentence. Mastering person, number, and mood concordance empowers students in fluent speaking and writing.",
+          "paragraphTranslation": "व्याकरण-निष्कर्ष: संस्कृत में क्रियापद वाक्य का प्राण है। पुरुष, वचन और लकार की सङ्गति को जानकर ही छात्र सम्भाषण और लेखन में निपुण हो सकते हैं।",
+          "words": [
+            "व्याकरणम्",
+            "निष्कर्षः",
+            "क्रियापदम्",
+            "सम्भाषणम्",
+            "लेखनम्"
+          ],
+          "kind": "exercise-note"
+        }
+      ]
+    },
+    {
       "id": "grade9_prarthana",
       "fileName": "grade9_prarthana.txt",
       "title": "Grade 9: सरस्वतीप्रार्थना एवं राष्ट्रगीतम् (Pages 12 & 18)",

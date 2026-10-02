@@ -12029,6 +12029,394 @@ export const WORKSHEETS: Worksheet[] = [
     }
   ]
 },
+{
+  "id": "ws-grade8-app3-ws1",
+  "title": "Worksheet 1: Present vs. Future Stem Contrasts (लट्-लृट्-धात्वादेश-अभ्यासः)",
+  "titleSanskrit": "परिशिष्टम् ३ · कार्यपत्रिका १: लट्-लृट्-धात्वादेश-अभ्यासः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Radical stem modifications between Present (लट्) and Future (लृट्) tenses (गम्, पा, दृश्, लभ्, इष्).",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Future Tense Form Generation (लृट्-लकार-रूपाणि)",
+      "sectionTitleSanskrit": "खण्डः 'क' · लृट्-लकार-रूपाणि",
+      "instructions": "Supply the corresponding Future Tense (लृट्-लकारः) equivalents for the given Present forms:",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. गच्छति $\\rightarrow$ _______________",
+          "questionSanskrit": "गच्छति $\\rightarrow$ ______",
+          "marks": 3,
+          "type": "short_ans",
+          "answer": "गमिष्यति",
+          "explanation": "गम् धातोः लृट्-लकारे गच्छ-आदेशः न भवति, अपि तु 'गमिष्यति' इति रूपं भवति।"
+        },
+        {
+          "num": 2,
+          "question": "२. पिबति $\\rightarrow$ _______________",
+          "questionSanskrit": "पिबति $\\rightarrow$ ______",
+          "marks": 3,
+          "type": "short_ans",
+          "answer": "पास्यति",
+          "explanation": "पा धातोः लृट्-लकारे पिब-आदेशः न भवति, मूलधातोः 'पास्यति' रूपं भवति।"
+        },
+        {
+          "num": 3,
+          "question": "३. पश्यति $\\rightarrow$ _______________",
+          "questionSanskrit": "पश्यति $\\rightarrow$ ______",
+          "marks": 3,
+          "type": "short_ans",
+          "answer": "द्रक्ष्यति",
+          "explanation": "दृश् धातोः लृट्-लकारे पश्य-आदेशः न भवति, गुण-षत्व-संयोगेन 'द्रक्ष्यति' रूपं भवति।"
+        },
+        {
+          "num": 4,
+          "question": "४. लभते $\\rightarrow$ _______________",
+          "questionSanskrit": "लभते $\\rightarrow$ ______",
+          "marks": 3,
+          "type": "short_ans",
+          "answer": "लप्स्यते",
+          "explanation": "लभ् धातोः लृट्-लकारे भ् + स्य = प्स्य भूत्वा 'लप्स्यते' रूपं जायते।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Grid Paradigm & Radical Stem Shifts (रूपसिद्धिः नियमविश्लेषणञ्च)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · रूपसिद्धिः नियमविश्लेषणञ्च",
+      "instructions": "Conjugate the requested root and explain the underlying phonological shift:",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 5,
+          "question": "५. 'इष्' धातोः लट्-लकारः प्रथमपुरुषः एकवचनम्: __________ | लृट्-लकारः प्रथमपुरुषः एकवचनम्: __________",
+          "questionSanskrit": "'इष्' धातोः लट् प्रथमपुरुष एक॰: ______ | लृट् प्रथमपुरुष एक॰: ______",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "लट्: इच्छति | लृट्: एषिष्यति",
+          "explanation": "लट्-लकारे इष् $\\rightarrow$ इच्छति; लृट्-लकारे गुणे इट्-आगमे च 'एषिष्यति' भवति।"
+        },
+        {
+          "num": 6,
+          "question": "६. 'दृश्' धातोः लट्-लकारे 'पश्यति' भवति, किन्तु लृट्-लकारे 'द्रक्ष्यति' किमर्थं भवति?",
+          "questionSanskrit": "'दृश्' धातोः लट्-लकारे 'पश्यति' किन्तु लृट्-लकारे 'द्रक्ष्यति' किमर्थम्?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "शित्-प्रत्ययेषु पश्यादेशः, आर्धधातुके लृटि मूलधातोः द्रक्ष्यति",
+          "explanation": "सार्वधातुकेषु शित्-प्रत्ययेषु 'पाघ्राध्मास्था...दृश्...' सूत्रेण पश्यादेशः भवति, आर्धधातुके लृटि तु मूलधातोरेव द्रक्ष्यति सिद्ध्यति।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-app3-ws2",
+  "title": "Worksheet 2: Past Tense Augment & Mood Identifications (लङ्-लोट्-विधिलिङ्-प्रयोगाः)",
+  "titleSanskrit": "परिशिष्टम् ३ · कार्यपत्रिका २: लङ्-लोट्-विधिलिङ्-प्रयोगाः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Past tense 'a-' augment transformations and Imperative / Potential mood distinctions.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Past Tense Transformation (लट् $\\rightarrow$ लङ् कालपरिवर्तनम्)",
+      "sectionTitleSanskrit": "खण्डः 'क' · लट् $\\rightarrow$ लङ् कालपरिवर्तनम्",
+      "instructions": "Rewrite the following present tense sentences into past imperfect tense (लङ्-लकारः):",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. सः गृहं गच्छति। $\\rightarrow$ ________________________________________",
+          "questionSanskrit": "सः गृहं गच्छति। $\\rightarrow$ ______",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "सः गृहम् अगच्छत्।",
+          "explanation": "गच्छति (लट् प्रथम॰ एक॰) $\\rightarrow$ अगच्छत् (लङ् प्रथम॰ एक॰)।"
+        },
+        {
+          "num": 2,
+          "question": "२. अहं दुग्धं पिबामि। $\\rightarrow$ ________________________________________",
+          "questionSanskrit": "अहं दुग्धं पिबामि। $\\rightarrow$ ______",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "अहम् दुग्धम् अपिबम्।",
+          "explanation": "पिबामि (लट् उत्तम॰ एक॰) $\\rightarrow$ अपिबम् (लङ् उत्तम॰ एक॰)।"
+        },
+        {
+          "num": 3,
+          "question": "३. ते गुरुं सेवन्ते। $\\rightarrow$ ________________________________________",
+          "questionSanskrit": "ते गुरुं सेवन्ते। $\\rightarrow$ ______",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "ते गुरुम् असेवन्त।",
+          "explanation": "सेवन्ते (लट् प्रथम॰ बहु॰ आत्मनेपदम्) $\\rightarrow$ असेवन्त (लङ् प्रथम॰ बहु॰ आत्मनेपदम्)।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Mood Identification & Imperative Commands (लोट् एवं विधिलिङ्)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · लोट् एवं विधिलिङ्",
+      "instructions": "Identify the correct mood form and supply imperative commands:",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 4,
+          "question": "४. विधिलिङ्-लकारस्य शुद्धं रूपं चिनुत: (गच्छेत् / अगच्छत् / गच्छतु)",
+          "questionSanskrit": "विधिलिङ्-रूपं किम्: (गच्छेत् / अगच्छत् / गच्छतु)",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "गच्छेत्",
+          "explanation": "गच्छेत् विधिलिङ्-लकारः अस्ति; अगच्छत् लङ्-लकारः; गच्छतु लोट्-लकारः।"
+        },
+        {
+          "num": 5,
+          "question": "५. लोट्-लकारे उचित-रूपेण रिक्तस्थानं पूरयत: (क) त्वम् भोजनं _______________। (ख) छात्राः विद्यालये _______________।",
+          "questionSanskrit": "लोट्-रूपेण पूरयत: (क) त्वं भोजनं ______। (ख) छात्राः विद्यालये ______।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "(क) खाद / भुङ्क्ष्व; (ख) तिष्ठन्तु / पठन्तु",
+          "explanation": "मध्यमपुरुष एकवचने 'खाद', प्रथमपुरुष बहुवचने 'तिष्ठन्तु' लोट्-लकारे भवति।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-app3-ws3",
+  "title": "Worksheet 3: Subject-Verb Concordance & Voice Recognition (अन्वयः पदविभागश्च)",
+  "titleSanskrit": "परिशिष्टम् ३ · कार्यपत्रिका ३: अन्वयः पदविभागश्च",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Subject-verb agreement drills across all persons and numbers, with Parasmaipada vs. Atmanepada classification.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Concordance Blank Filling (कर्तृ-क्रियान्वयः)",
+      "sectionTitleSanskrit": "खण्डः 'क' · कर्तृ-क्रियान्वयः",
+      "instructions": "Fill in the blanks with the matching verb form from the options in brackets:",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. यूयम् विद्यालये _______________। (तिष्ठति / तिष्ठथः / तिष्ठथ)",
+          "questionSanskrit": "यूयम् विद्यालये ______। (तिष्ठति / तिष्ठथः / तिष्ठथ)",
+          "marks": 4,
+          "type": "mcq",
+          "options": [
+            "तिष्ठथ",
+            "तिष्ठति",
+            "तिष्ठथः",
+            "तिष्ठन्ति"
+          ],
+          "answer": "तिष्ठथ",
+          "explanation": "'यूयम्' मध्यमपुरुष बहुवचनम् अस्ति, अतः 'तिष्ठथ' इति युक्तम्।"
+        },
+        {
+          "num": 2,
+          "question": "२. वयम् चित्रं _______________। (पश्यामि / पश्यावः / पश्यामः)",
+          "questionSanskrit": "वयम् चित्रं ______। (पश्यामि / पश्यावः / पश्यामः)",
+          "marks": 4,
+          "type": "mcq",
+          "options": [
+            "पश्यामः",
+            "पश्यामि",
+            "पश्यावः",
+            "पश्यन्ति"
+          ],
+          "answer": "पश्यामः",
+          "explanation": "'वयम्' उत्तमपुरुष बहुवचनम् अस्ति, अतः 'पश्यामः' इति शुद्धम्।"
+        },
+        {
+          "num": 3,
+          "question": "३. त्वम् भिक्षुकाय धनं _______________। (यच्छसि / लभसे / लभध्वे)",
+          "questionSanskrit": "त्वम् भिक्षुकाय धनं ______। (यच्छसि / लभसे / लभध्वे)",
+          "marks": 4,
+          "type": "mcq",
+          "options": [
+            "यच्छसि",
+            "लभसे",
+            "लभध्वे",
+            "यच्छति"
+          ],
+          "answer": "यच्छसि",
+          "explanation": "'त्वम्' मध्यमपुरुष एकवचने परस्मैपद-दानक्रियायां 'यच्छसि' भवति।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Voice Classification (पदविभागः: परस्मैपदम् / आत्मनेपदम्)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · पदविभागः (परस्मैपदम् / आत्मनेपदम्)",
+      "instructions": "Classify the following verb forms as either Parasmaipada (P) or Atmanepada (A):",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 4,
+          "question": "४. पदविभागं कुरुत: १. लप्स्यते [___] | २. नेष्यति [___] | ३. भवेयुः [___] | ४. सेवामहे [___]",
+          "questionSanskrit": "पदविभागं लिखत: १. लप्स्यते | २. नेष्यति | ३. भवेयुः | ४. सेवामहे",
+          "marks": 8,
+          "type": "short_ans",
+          "answer": "१. लप्स्यते [A] | २. नेष्यति [P] | ३. भवेयुः [P] | ४. सेवामहे [A]",
+          "explanation": "लप्स्यते एवं सेवामहे आत्मनेपदे स्तः; नेष्यति एवं भवेयुः परस्मैपदे स्तः।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-app3-ws4",
+  "title": "Worksheet 4: Synoptic Grid Master Drills (पञ्च-लकार-सारणी-अभ्यासः)",
+  "titleSanskrit": "परिशिष्टम् ३ · कार्यपत्रिका ४: पञ्च-लकार-सारणी-अभ्यासः",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Cross-reference conjugation drills tracking roots across 3 persons in singular and plural.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Third Person Plural Across Lakaras (प्रथमपुरुष-बहुवचन-रूपाणि)",
+      "sectionTitleSanskrit": "खण्डः 'क' · प्रथमपुरुष-बहुवचन-रूपाणि",
+      "instructions": "Supply the 3rd person plural forms across the requested Lakaras:",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. 'भू' धातोः लङ्-लकारः प्रथमपुरुष-बहुवचने किं रूपं भवति?",
+          "questionSanskrit": "'भू' लङ् प्रथमपुरुष-बहुवचने किं रूपम्?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "अभवन्",
+          "explanation": "अ + भव + अन् = अभवन्।"
+        },
+        {
+          "num": 2,
+          "question": "२. 'स्था' धातोः लोट्-लकारः प्रथमपुरुष-बहुवचने किं रूपं भवति?",
+          "questionSanskrit": "'स्था' लोट् प्रथमपुरुष-बहुवचने किं रूपम्?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "तिष्ठन्तु",
+          "explanation": "तिष्ठ + अन्तु = तिष्ठन्तु।"
+        },
+        {
+          "num": 3,
+          "question": "३. 'नी' धातोः विधिलिङ्-लकारः प्रथमपुरुष-बहुवचने किं रूपं भवति?",
+          "questionSanskrit": "'नी' विधिलिङ् प्रथमपुरुष-बहुवचने किं रूपम्?",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "नयेयुः",
+          "explanation": "नय + एयुः = नयेयुः।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Atmanepada Singular to Plural (आत्मनेपद-वचन-परिवर्तनम्)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · आत्मनेपद-वचन-परिवर्तनम्",
+      "instructions": "Transform the singular Atmanepada forms into plural forms:",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 4,
+          "question": "४. 'सेवते' (एकवचनम्) $\\rightarrow$ _______________ (बहुवचनम्)",
+          "questionSanskrit": "'सेवते' $\\rightarrow$ ______ (बहुवचनम्)",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "सेवन्ते",
+          "explanation": "सेवते (एक॰) $\\rightarrow$ सेवन्ते (बहु॰)।"
+        },
+        {
+          "num": 5,
+          "question": "५. 'लप्स्यते' (एकवचनम्) $\\rightarrow$ _______________ (बहुवचनम्)",
+          "questionSanskrit": "'लप्स्यते' $\\rightarrow$ ______ (बहुवचनम्)",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "लप्स्यन्ते",
+          "explanation": "लप्स्यते (एक॰) $\\rightarrow$ लप्स्यन्ते (बहु॰)।"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "ws-grade8-app3-ws5",
+  "title": "Worksheet 5: Sentence Syntax & Tense Transformation (वाक्यरचना एवं लकार-परिवर्तनम्)",
+  "titleSanskrit": "परिशिष्टम् ३ · कार्यपत्रिका ५: वाक्यरचना एवं लकार-परिवर्तनम्",
+  "category": "grade8",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
+  "totalMarks": 20,
+  "timeLimit": "25 Minutes",
+  "description": "Constructing coherent sentences and executing multi-step tense conversions.",
+  "sections": [
+    {
+      "sectionTitle": "Section A: Multi-Step Tense Conversion (लकार-परिवर्तनम्)",
+      "sectionTitleSanskrit": "खण्डः 'क' · लकार-परिवर्तनम्",
+      "instructions": "Transform the given sentence into the requested Lakaras:",
+      "totalMarks": 12,
+      "questions": [
+        {
+          "num": 1,
+          "question": "१. 'बालकः सत्यं वदति।' (लट्) $\\rightarrow$ लृट्-लकारे परिवर्तयत।",
+          "questionSanskrit": "'बालकः सत्यं वदति।' $\\rightarrow$ लृट्-लकारे लिखत।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "बालकः सत्यं वदिष्यति।",
+          "explanation": "वद् धातोः लृट् प्रथमपुरुष एकवचने 'वदिष्यति' भवति।"
+        },
+        {
+          "num": 2,
+          "question": "२. 'बालकः सत्यं वदति।' (लट्) $\\rightarrow$ लङ्-लकारे परिवर्तयत।",
+          "questionSanskrit": "'बालकः सत्यं वदति।' $\\rightarrow$ लङ्-लकारे लिखत।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "बालकः सत्यम् अवदत्।",
+          "explanation": "वद् धातोः लङ् प्रथमपुरुष एकवचने 'अवदत्' भवति।"
+        },
+        {
+          "num": 3,
+          "question": "३. 'बालकः सत्यं वदति।' (लट्) $\\rightarrow$ विधिलिङ्-लकारे परिवर्तयत।",
+          "questionSanskrit": "'बालकः सत्यं वदति।' $\\rightarrow$ विधिलिङ्-लकारे लिखत।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "बालकः सत्यं वदेत्।",
+          "explanation": "वद् धातोः विधिलिङ् प्रथमपुरुष एकवचने 'वदेत्' भवति।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section B: Active Composition (सृजनात्मक-वाक्यरचना)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · सृजनात्मक-वाक्यरचना",
+      "instructions": "Construct complete Sanskrit sentences using the specified verb forms:",
+      "totalMarks": 8,
+      "questions": [
+        {
+          "num": 4,
+          "question": "४. 'द्रक्ष्यति' (लृट् प्रथम॰ एक॰) पदस्य प्रयोगेण एकं वाक्यं रचयत।",
+          "questionSanskrit": "'द्रक्ष्यति' पदस्य प्रयोगेण वाक्यरचनां कुरुत।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "सः श्वः चलचित्रं द्रक्ष्यति। (अथवा: बालकः उद्यानं द्रक्ष्यति।)",
+          "explanation": "दृश् धातोः लृट् प्रथमपुरुष एकवचने 'द्रक्ष्यति' भविष्यत्काले प्रयुज्यते।"
+        },
+        {
+          "num": 5,
+          "question": "५. 'सेवे' (लट् उत्तम॰ एक॰) पदस्य प्रयोगेण एकं वाक्यं रचयत।",
+          "questionSanskrit": "'सेवे' पदस्य प्रयोगेण वाक्यं रचयत।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "अहं मातरं पितरं च सेवे।",
+          "explanation": "उत्तमपुरुष एकवचने 'अहम्' इत्यनेन सह 'सेवे' इति क्रियापदस्य प्रयोगः भवति।"
+        }
+      ]
+    }
+  ]
+},
 
   // ==========================================
   // VARNAMALA WORKSHEET 1: SVARA-PARICAYA
