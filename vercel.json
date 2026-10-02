@@ -4,5 +4,33 @@
     { "source": "/index", "destination": "/", "permanent": true },
     { "source": "/index.html", "destination": "/", "permanent": true }
   ],
-  "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/course", "destination": "/course/index.html" },
+    { "source": "/course/", "destination": "/course/index.html" },
+    { "source": "/reader", "destination": "/reader/index.html" },
+    { "source": "/reader/", "destination": "/reader/index.html" },
+    { "source": "/barakhadi", "destination": "/barakhadi/index.html" },
+    { "source": "/barakhadi/", "destination": "/barakhadi/index.html" },
+    { "source": "/grammar", "destination": "/grammar/index.html" },
+    { "source": "/grammar/", "destination": "/grammar/index.html" },
+    { "source": "/dhatupatha", "destination": "/dhatupatha/index.html" },
+    { "source": "/dhatupatha/", "destination": "/dhatupatha/index.html" },
+    { "source": "/vedic-maths", "destination": "/vedic-maths/index.html" },
+    { "source": "/vedic-maths/", "destination": "/vedic-maths/index.html" },
+    { "source": "/board", "destination": "/board/index.html" },
+    { "source": "/board/", "destination": "/board/index.html" },
+    { "source": "/worksheets", "destination": "/worksheets/index.html" },
+    { "source": "/worksheets/", "destination": "/worksheets/index.html" },
+    { "source": "/quiz", "destination": "/quiz/index.html" },
+    { "source": "/quiz/", "destination": "/quiz/index.html" },
+    { "source": "/cbse-sanskrit-guide", "destination": "/cbse-sanskrit-guide/index.html" },
+    { "source": "/cbse-sanskrit-guide/", "destination": "/cbse-sanskrit-guide/index.html" },
+    { "source": "/resources", "destination": "/resources/index.html" },
+    { "source": "/resources/", "destination": "/resources/index.html" },
+    { "source": "/philosophy", "destination": "/philosophy/index.html" },
+    { "source": "/philosophy/", "destination": "/philosophy/index.html" },
+    { "source": "/faq", "destination": "/faq/index.html" },
+    { "source": "/faq/", "destination": "/faq/index.html" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ]
 }
