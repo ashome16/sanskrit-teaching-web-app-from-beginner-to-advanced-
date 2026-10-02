@@ -46,7 +46,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade8_ch10', label: "Grade 8 Ch 10: सन्निमित्ते वरं त्यागः (क-भागः) (3 Quizzes · 30 Qs)", icon: '⚔️' },
   { id: 'grade8_ch11', label: "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः) (3 Quizzes · 30 Qs)", icon: '👑' },
   { id: 'grade8_ch12', label: "Grade 8 Ch 12: सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (3 Quizzes · 30 Qs)", icon: '🗣️' },
-  { id: 'grade8_ch13', label: 'Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (2 Quizzes · 10 Qs)', icon: '🔤' },
+  { id: 'grade8_ch13', label: "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (3 Quizzes · 30 Qs)", icon: '🔤' },
   { id: 'grade8_app1', label: 'Grade 8 App 1: व्याकरणम् (2 Quizzes · 10 Qs)', icon: '📐' },
   { id: 'grade9_ch1', label: 'Grade 9 Ch 1: सत्यं शिवं सुन्दरं संस्कृतम् (3 Quizzes · 30 Qs)', icon: '🌸' },
   { id: 'grade9_ch2', label: 'Grade 9 Ch 2: सुखस्य मूलं धर्मः (3 Quizzes · 30 Qs)', icon: '⚖️' },
@@ -16055,201 +16055,571 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
 {
   "id": "g8-ch13-q1-1",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी १)",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – बहुविकल्पीय-प्रश्नाः (MCQs)",
-  "question": "आस्यस्य अभ्यन्तरे वर्णानाम् उत्पत्त्यर्थं कति तत्त्वानि आवश्यकानि भवन्ति?",
-  "questionSanskrit": "आस्यस्य अभ्यन्तरे वर्णानाम् उत्पत्त्यर्थं कति तत्त्वानि आवश्यकानि भवन्ति?",
+  "subCategory": "Quiz 1: One-Word Answers (एकपदेन उत्तरत)",
+  "question": "वर्णों के शुद्ध उच्चारण के लिए किस शास्त्र की आवश्यकता होती है? (For pure pronunciation of letters, which Shastra is needed?)",
+  "questionSanskrit": "वर्णानां शुद्धोच्चारणार्थं कस्य शास्त्रस्य आवश्यकता भवति?",
   "options": [
-    "(अ) द्वे (२)",
-    "(ब) त्रीणि (३ — स्थानम्, करणम्, आभ्यन्तर-प्रयत्नः)",
-    "(स) चत्वारि (४)",
-    "(द) पञ्च (५)"
+    "(A) शिक्षाशास्त्रस्य (वर्णोच्चारण-शिक्षायाः)",
+    "(B) ज्योतिषशास्त्रस्य",
+    "(C) कल्पशास्त्रस्य",
+    "(D) छन्दःशास्त्रस्य"
   ],
-  "correctIndex": 1,
-  "explanation": "आस्यस्य अभ्यन्तरे वर्णानाम् उत्पत्त्यर्थं त्रीणि तत्त्वानि आवश्यकानि भवन्ति — (क) स्थानम्, (ख) करणम्, (ग) आभ्यन्तर-प्रयत्नश्च।",
+  "correctIndex": 0,
+  "explanation": "वर्णानां शुद्धोच्चारणार्थं शिक्षाशास्त्रस्य (वर्णोच्चारण-शिक्षायाः) आवश्यकता भवति। शिक्षा षड्वेदाङ्गेषु प्रथमं भवति।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch13-q1-2",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी १)",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – बहुविकल्पीय-प्रश्नाः (MCQs)",
-  "question": "\"जिह्वाग्रेण - ______\" रिक्तस्थानं पूरयत:",
-  "questionSanskrit": "\"जिह्वाग्रेण - ______\" रिक्तस्थानं पूरयत।",
+  "subCategory": "Quiz 1: One-Word Answers (एकपदेन उत्तरत)",
+  "question": "मनुष्य में वाणी की उत्पत्ति में वायु सर्वप्रथम कहाँ से प्रेरित होती है? (In human voice production, from where is the air first propelled?)",
+  "questionSanskrit": "मनुष्ये वागुत्पत्तौ वायुः सर्वप्रथमं कुतः प्रेरितः भवति?",
   "options": [
-    "(अ) तालव्यानाम्",
-    "(ब) मूर्धन्यानाम्",
-    "(स) दन्त्यानाम्",
-    "(द) ओष्ठ्यानाम्"
+    "(A) कण्ठ-बिलात्",
+    "(B) नाभि-प्रदेशात् (Abdominal region)",
+    "(C) आस्यात्",
+    "(D) नासिकायाः"
   ],
-  "correctIndex": 2,
-  "explanation": "दन्त्य-वर्णानाम् उच्चारणार्थं जिह्वायाः अग्रभागः (जिह्वाग्रम्) दन्तस्थानं स्पृशति, अतः 'जिह्वाग्रेण दन्त्यानाम्'।",
+  "correctIndex": 1,
+  "explanation": "सर्वप्रथमं नाभि-प्रदेशे स्थिताः मांसपेश्यः उरः नोदयन्ति, अतः वायुः नाभि-प्रदेशात् प्रेरितः भवति।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch13-q1-3",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी १)",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – बहुविकल्पीय-प्रश्नाः (MCQs)",
-  "question": "कण्ठ-बिलः (Voice-box / Larynx) कस्य तन्त्रस्य भागः अस्ति?",
-  "questionSanskrit": "कण्ठ-बिलः कस्य तन्त्रस्य भागः अस्ति?",
+  "subCategory": "Quiz 1: One-Word Answers (एकपदेन उत्तरत)",
+  "question": "फेफड़ों (श्वासकोश) में स्थित वायु को ऊपर कौन धकेलता/निकालता है? (What expels the air inside the lungs upward?)",
+  "questionSanskrit": "श्वासकोशस्थितं वायुं कः ऊर्ध्वं निःसारयति?",
   "options": [
-    "(अ) मांसपेशी-बल-तन्त्रम्",
-    "(ब) वायु-बल-तन्त्रम्",
-    "(स) ध्वनि-तन्त्रम् (Phonatory & Resonatory System)",
-    "(द) उच्चारण-तन्त्रम्"
+    "(A) कण्ठः",
+    "(B) उरः (वक्षः / Chest)",
+    "(C) आस्यम्",
+    "(D) जिह्वा"
   ],
-  "correctIndex": 2,
-  "explanation": "कण्ठ-बिलः (स्वरयन्त्रम्/Larynx) 'ध्वनि-तन्त्रम्' कथ्यते, यत्र वायुना शब्दध्वनिः उत्पद्यते।",
+  "correctIndex": 1,
+  "explanation": "उरः (वक्षः / Chest) पुनः श्वासकोश-स्थितं वायुम् ऊर्ध्वं निःसारयति। उरसि वायु-बल-तन्त्रं भवति।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch13-q1-4",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी १)",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – बहुविकल्पीय-प्रश्नाः (MCQs)",
-  "question": "अधोलिखितेषु कः वर्णः 'स्वस्थानकरणः' नास्ति?",
-  "questionSanskrit": "अधोलिखितेषु कः वर्णः 'स्वस्थानकरणः' नास्ति?",
+  "subCategory": "Quiz 1: One-Word Answers (एकपदेन उत्तरत)",
+  "question": "'कण्ठ-बिलम्' को अंग्रेजी भाषा में क्या कहा जाता है? (What is the English term for Kanthabilam?)",
+  "questionSanskrit": "कण्ठ-बिलस्य आङ्ग्लभाषायां किं नाम अस्ति?",
   "options": [
-    "(अ) कण्ठ्यः",
-    "(ब) तालव्यः (अस्य करणं जिह्वा भवति)",
-    "(स) ओष्ठ्यः",
-    "(द) नासिक्यः"
+    "(A) Diaphragm",
+    "(B) Voice-box / Larynx",
+    "(C) Oral Cavity",
+    "(D) Nasal Cavity"
   ],
   "correctIndex": 1,
-  "explanation": "कण्ठ, ओष्ठ और नासिका में स्व-स्थान करण होता है, किन्तु तालव्य-वर्णानाम् उच्चारणे जिह्वा-मध्यः करणं भवति, अतः तालव्यः स्वस्थानकरणः नास्ति।",
-  "difficulty": "medium",
+  "explanation": "कण्ठ-बिलः आङ्ग्लभाषायां Voice-box / Larynx / Vocal-cords इति कथ्यते। अत्र ध्वनि-तन्त्रं भवति।",
+  "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch13-q1-5",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी १)",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – बहुविकल्पीय-प्रश्नाः (MCQs)",
-  "question": "श्वासकोशस्थितः वायुः ऊर्ध्वं सरन् सर्वप्रथमं कुत्र गच्छति?",
-  "questionSanskrit": "श्वासकोशस्थितः वायुः ऊर्ध्वं सरन् सर्वप्रथमं कुत्र गच्छति?",
+  "subCategory": "Quiz 1: One-Word Answers (एकपदेन उत्तरत)",
+  "question": "आस्य (शिरोभाग) के भीतर वर्णों के कुल कितने उच्चारण स्थान हैं? (How many places of articulation are in the head/mouth area?)",
+  "questionSanskrit": "आस्यस्य अभ्यन्तरे कति उच्चारणस्थानानि सन्ति?",
   "options": [
-    "(अ) आस्यम्",
-    "(ब) कण्ठ-बिलम् (Voice-box / Larynx)",
-    "(स) नासिकाम्",
-    "(द) ओष्ठम्"
+    "(A) पञ्च",
+    "(B) षट् (Six)",
+    "(C) सप्त",
+    "(D) अष्टौ"
   ],
   "correctIndex": 1,
-  "explanation": "उरः श्वासकोशस्थितं वायुम् ऊर्ध्वं निःसारयति, सः वायुः ऊर्ध्वं सरन् सर्वप्रथमं कण्ठ-बिलं प्राप्नोति, ततः आस्यं प्रविशति।",
+  "explanation": "आस्यस्य अभ्यन्तरे षट् (६) उच्चारण-स्थानानि सन्ति — पञ्च मुखे (कण्ठ, तालु, मूर्धा, दन्त, ओष्ठ) एका च नासिका।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q1-6",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 1: One-Word Answers (एकपदेन उत्तरत)",
+  "question": "नासिका को मुख के अतिरिक्त कौन-सा स्थान माना गया है? (Which position is the nose considered among articulation places?)",
+  "questionSanskrit": "नासिका मुखस्य बहिः कतमं स्थानं मन्यते?",
+  "options": [
+    "(A) पञ्चमं स्थानम्",
+    "(B) षष्ठं स्थानम् (Sixth place)",
+    "(C) प्रथमं स्थानम्",
+    "(D) द्वितीयं स्थानम्"
+  ],
+  "correctIndex": 1,
+  "explanation": "मुखे पञ्च स्थानानि सन्ति, नासिकायां च 'नासिका' इत्येव षष्ठं स्थानम्।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q1-7",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 1: One-Word Answers (एकपदेन उत्तरत)",
+  "question": "उच्चारण-प्रक्रिया में सक्रिय साधन (Active Tool) को क्या कहा जाता है? (In the articulation process, what is the active tool called?)",
+  "questionSanskrit": "उच्चारणप्रक्रियायां सक्रियं साधनं किं कथ्यते?",
+  "options": [
+    "(A) स्थानम्",
+    "(B) करणम् (Instrument / Active Articulator)",
+    "(C) प्रयत्नः",
+    "(D) स्वरः"
+  ],
+  "correctIndex": 1,
+  "explanation": "वर्णस्य उच्चारण-समये आस्यस्य यः भागः स्थानं स्पृशति समीपं वा याति, सः 'करणम्' (Tool) इति कथ्यते।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q1-8",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 1: One-Word Answers (एकपदेन उत्तरत)",
+  "question": "तालु, मूर्धा और दन्त में किस अंग की प्रधानता करण रूप में होती है? (For palate, ridge, and teeth, which organ is the active Karana?)",
+  "questionSanskrit": "तालु-मूर्धा-दन्तेषु कस्य अङ्गस्य प्रधानता करणरूपेण भवति?",
+  "options": [
+    "(A) ओष्ठस्य",
+    "(B) जिह्वायाः (Tongue)",
+    "(C) कण्ठस्य",
+    "(D) नासिकायाः"
+  ],
+  "correctIndex": 1,
+  "explanation": "तालु, मूर्धा, दन्तः च इति त्रिषु स्थानेषु जिह्वा एव करणं भवति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q1-9",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 1: One-Word Answers (एकपदेन उत्तरत)",
+  "question": "ओष्ठ्य वर्णों के उच्चारण में कौन-सा होंठ करण (साधन) बनता है? (In pronouncing labials, which lip acts as the Karana?)",
+  "questionSanskrit": "ओष्ठ्यवर्णानाम् उच्चारणे कः ओष्ठः करणं भवति?",
+  "options": [
+    "(A) उत्तरोष्ठः (ऊपरी होंठ)",
+    "(B) अधरोष्ठः (निचला होंठ / Lower lip)",
+    "(C) उभौ ओष्ठौ निष्क्रिये",
+    "(D) कण्ठः"
+  ],
+  "correctIndex": 1,
+  "explanation": "ओष्ठ्यवर्णानाम् उच्चारणे उत्तरोष्ठः 'स्थानम्' तथा अधरोष्ठः (निचला होंठ) 'करणम्' भवति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q1-10",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 1: One-Word Answers (एकपदेन उत्तरत)",
+  "question": "'अन्वग् भवति व्यञ्जनम्' यह किसकी शास्त्रीय परिभाषा है? ('Anvag bhavati vyanjanam' is the classical definition of what?)",
+  "questionSanskrit": "'अन्वग् भवति व्यञ्जनम्' इति कस्य परिभाषा अस्ति?",
+  "options": [
+    "(A) स्वरस्य",
+    "(B) व्यञ्जनस्य (Consonant)",
+    "(C) पदस्य",
+    "(D) वाक्यस्य"
+  ],
+  "correctIndex": 1,
+  "explanation": "'अन्वग् भवति व्यञ्जनम्' अर्थात् जो स्वर के पीछे-पीछे उच्चरित होता है और स्वर पर आश्रित होता है, वह व्यञ्जन कहलाता है।",
   "difficulty": "medium",
   "points": 10
 },
 {
   "id": "g8-ch13-q2-1",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी २)",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – आम् / न (True or False)",
-  "question": "वर्णानाम् उच्चारणे केवलम् आस्यस्य एव उपयोगः भवति। (आम् / न)",
-  "questionSanskrit": "वर्णानाम् उच्चारणे केवलम् आस्यस्य एव उपयोगः भवति।",
+  "subCategory": "Quiz 2: Full-Sentence Answers (पूर्णवाक्येन उत्तरत)",
+  "question": "शरीर के कौन-से चार अंग वर्णोच्चारण में सहायता करते हैं? (Which four anatomical systems assist in letter pronunciation?)",
+  "questionSanskrit": "शरीरस्य कानि चत्वारि अङ्गानि वर्णोच्चारणे साहाय्यं कुर्वन्ति?",
   "options": [
-    "A) आम् (True)",
-    "B) न (False)"
+    "(A) नेत्रे, कर्णौ, नासिका, जिह्वा",
+    "(B) नाभि-प्रदेशः, उरः, कण्ठ-बिलः, आस्यञ्च",
+    "(C) हस्तौ, पादौ, उदरम्, कण्ठः",
+    "(D) दन्ताः, ओष्ठौ, तालु, मूर्धा"
   ],
   "correctIndex": 1,
-  "explanation": "न (असत्यम्)। वर्णानाम् उच्चारणे आस्येन सह शरीरस्य इतरेषाम् अपि अङ्गानां (नाभि, उरः, कण्ठ-बिलादीनाम्) उपयोगः भवति।",
+  "explanation": "वर्णोच्चारणे नाभि-प्रदेशः (मांसपेशी-बल-तन्त्रम्), उरः (वायु-बल-तन्त्रम्), कण्ठ-बिलः (ध्वनि-तन्त्रम्), आस्यञ्च (उच्चारण-तन्त्रम्) साहाय्यं कुर्वन्ति।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch13-q2-2",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी २)",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – आम् / न (True or False)",
-  "question": "तालव्य-वर्णानाम् उच्चारणार्थं जिह्वा-उपाग्रः करणं भवति। (आम् / न)",
-  "questionSanskrit": "तालव्य-वर्णानाम् उच्चारणार्थं जिह्वा-उपाग्रः करणं भवति।",
+  "subCategory": "Quiz 2: Full-Sentence Answers (पूर्णवाक्येन उत्तरत)",
+  "question": "वाणी-उत्पत्ति प्रक्रिया के चार क्रमिक चरण कौन-से हैं? (What is the sequential 4-stage process of voice production?)",
+  "questionSanskrit": "वाणी-उत्पत्ति-प्रक्रियायाः क्रमिकं सोपानचतुष्टयं किम् अस्ति?",
   "options": [
-    "A) आम् (True)",
-    "B) न (False)"
+    "(A) आस्यं ➔ कण्ठ-बिलम् ➔ उरः ➔ नाभिः",
+    "(B) नाभि-मांसपेश्यः उरः नोदयन्ति ➔ उरः वायुं निःसारयति ➔ कण्ठ-बिलं प्राप्नोति ➔ आस्यं प्रविशति",
+    "(C) वायुः मुखात् कण्ठे गच्छति ➔ कण्ठात् उरसि ➔ उरसः नाभौ",
+    "(D) ओष्ठौ स्पृशतः ➔ जिह्वा चलति ➔ कण्ठः उद्घाट्यते"
   ],
   "correctIndex": 1,
-  "explanation": "न (असत्यम्)। तालव्य-वर्णानां कृते जिह्वा-मध्यः करणं भवति, मूर्धन्य-वर्णानां कृते जिह्वा-उपाग्रः भवति।",
+  "explanation": "क्रमिकं सोपानम्: १. नाभि-मांसपेश्यः उरः नोदयन्ति, २. उरः वायुं निःसारयति, ३. सः कण्ठ-बिलं प्राप्नोति, ४. ततः आस्यं प्रविश्य वर्णरूपेण प्रकटीभवति।",
   "difficulty": "medium",
   "points": 10
 },
 {
   "id": "g8-ch13-q2-3",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी २)",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – आम् / न (True or False)",
-  "question": "ओष्ठ्यानां वर्णानाम् उच्चारणे जिह्वा प्रायः निष्क्रिया भवति। (आम् / न)",
-  "questionSanskrit": "ओष्ठ्यानां वर्णानाम् उच्चारणे जिह्वा प्रायः निष्क्रिया भवति।",
+  "subCategory": "Quiz 2: Full-Sentence Answers (पूर्णवाक्येन उत्तरत)",
+  "question": "आस्य के भीतर वर्णों की उत्पत्ति के लिए कौन-से तीन तत्त्व आवश्यक हैं? (Inside the mouth, which three elements are required for producing letters?)",
+  "questionSanskrit": "आस्यस्य अभ्यन्तरे वर्णानाम् उत्पत्त्यर्थं कानि त्रीणि तत्त्वानि आवश्यकानि?",
   "options": [
-    "A) आम् (True)",
-    "B) न (False)"
+    "(A) ह्रस्वः, दीर्घः, प्लुतः",
+    "(B) स्थानं, करणं, आभ्यन्तर-प्रयत्नाश्च",
+    "(C) उदात्तः, अनुदात्तः, स्वरितः",
+    "(D) स्वरः, व्यञ्जनम्, अयोगवाहः"
   ],
-  "correctIndex": 0,
-  "explanation": "आम् (सत्यम्)। ओष्ठ्य-वर्णानाम् उच्चारणे स्वस्थानम् (अधरोष्ठः) एव करणं भवति, अत्र जिह्वा निष्क्रिया सुप्ता च तिष्ठति।",
+  "correctIndex": 1,
+  "explanation": "आस्यस्य अभ्यन्तरे वर्णानाम् उत्पत्त्यर्थं त्रीणि तत्त्वानि आवश्यकानि: (क) प्रथमं स्थानम्, (ख) द्वितीयं करणम्, (ग) तृतीयम् आभ्यन्तर-प्रयत्नः।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-ch13-q2-4",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी २)",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – आम् / न (True or False)",
-  "question": "व्यञ्जन-वर्णाः उच्चारणार्थं स्वरं प्रति पराश्रिताः भवन्ति। (आम् / न)",
-  "questionSanskrit": "व्यञ्जन-वर्णाः उच्चारणार्थं स्वरं प्रति पराश्रिताः भवन्ति।",
+  "subCategory": "Quiz 2: Full-Sentence Answers (पूर्णवाक्येन उत्तरत)",
+  "question": "पाठ के अनुसार 'स्थान' (Place of Articulation) की क्या परिभाषा है? (According to the lesson, what is the definition of Sthana?)",
+  "questionSanskrit": "'स्थानम्' इत्यस्य परिभाषा पाठाधारेण का अस्ति?",
   "options": [
-    "A) आम् (True)",
-    "B) न (False)"
+    "(A) यः भागः स्थानं स्पृशति समीपं वा याति",
+    "(B) श्वासकोशतः ऊर्ध्वं सरन् वायुः मुखे नासिकायां वा यस्मिन् स्थले वर्णरूपेण प्रकटीभवति",
+    "(C) नाभिप्रदेशस्य मांसपेशीनां सङ्कोचनम्",
+    "(D) जिह्वायाः विभिन्नभागानां स्पन्दनम्"
   ],
-  "correctIndex": 0,
-  "explanation": "आम् (सत्यम्)। 'अन्वग् भवति व्यञ्जनम्' अर्थात् व्यञ्जनानि उच्चारणे स्वतन्त्राणि न भवन्ति, तानि स्वरम् आश्रित्यैव उच्चार्यन्ते।",
-  "difficulty": "easy",
+  "correctIndex": 1,
+  "explanation": "श्वासकोशतः ऊर्ध्वं सरन् वायुः कण्ठ-बिल-माध्यमेन आस्यं प्रविश्य यस्मिन् स्थले वर्णरूपेण प्रकटीभवति, तत् 'स्थानम्' उच्यते।",
+  "difficulty": "medium",
   "points": 10
 },
 {
   "id": "g8-ch13-q2-5",
   "category": "grade8_ch13",
-  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (प्रश्नोत्तरी २)",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
   "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – आम् / न (True or False)",
-  "question": "नासिका-स्थानस्य कृते नासिका एव करणं भवति। (आम् / न)",
-  "questionSanskrit": "नासिका-स्थानस्य कृते नासिका एव करणं भवति।",
+  "subCategory": "Quiz 2: Full-Sentence Answers (पूर्णवाक्येन उत्तरत)",
+  "question": "मुख के भीतर स्थित पाँच उच्चारण स्थान कौन-से हैं? (Which five articulatory places are located inside the mouth?)",
+  "questionSanskrit": "मुखे स्थितानि पञ्च उच्चारणस्थानानि कानि सन्ति?",
   "options": [
-    "A) आम् (True)",
-    "B) न (False)"
-  ],
-  "correctIndex": 0,
-  "explanation": "आम् (सत्यम्)। नासिक्याः वर्णाः स्वस्थानकरणाः सन्ति — नासिका-मूलस्य उपरिभागः स्थानं, अधोभागश्च करणं भवति।",
-  "difficulty": "easy",
-  "points": 10
-}
-,
-{
-  "id": "g8-app1-q1-1",
-  "category": "grade8_app1",
-  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी १)",
-  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
-  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – प्रत्ययाः एवं उपसर्गाः (MCQ Type)",
-  "question": "यदा धातुः उपसर्गेण युक्तः भवति, तदा 'क्त्वा' स्थाने कः प्रत्ययः भवति?",
-  "questionSanskrit": "यदा धातुः उपसर्गेण युक्तः भवति, तदा क्त्वा स्थाने कः प्रत्ययः भवति?",
-  "options": [
-    "A) तुमुन्",
-    "B) ल्यप्",
-    "C) क्तवतु",
-    "D) घञ्"
+    "(A) नासिका, नयनम्, श्रोत्रम्, जिह्वा, त्वक्",
+    "(B) कण्ठः, तालु, मूर्धा, दन्तः, ओष्ठः च",
+    "(C) नाभिः, उरः, कण्ठः, शिरः, ग्रीवा",
+    "(D) कण्ठः, नासिका, उरः, जिह्वा, दन्तः"
   ],
   "correctIndex": 1,
-  "explanation": "यदा धातुः उपसर्गेण युक्तः भवति, तदा क्त्वा-प्रत्ययस्य स्थाने ल्यप्-प्रत्ययः भवति (यथा — सम् + पूज् + ल्यप् = सम्पूज्य)।",
+  "explanation": "मुखे स्थितानि पञ्च स्थानानि सन्ति: कण्ठः, तालु, मूर्धा, दन्तः, ओष्ठः च (नासिका च षष्ठं स्थानम्)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q2-6",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 2: Full-Sentence Answers (पूर्णवाक्येन उत्तरत)",
+  "question": "मुरली के छेद और वादक की अंगुलियाँ वाणी के किन अंगों से सम्बन्धित हैं? (How are the flute holes and fingers mapped to vocal organs?)",
+  "questionSanskrit": "मुरल्याः छिद्राणि तथा वादकस्य अङ्गुलयः कस्मात् सम्बद्धाः सन्ति?",
+  "options": [
+    "(A) छिद्राणि करणानि, अङ्गुलयः स्थानानि",
+    "(B) छिद्राणि स्थानानि इव तथा अङ्गुलयः करणानि इव व्यवहरन्ति",
+    "(C) छिद्राणि स्वराः, अङ्गुलयः व्यञ्जनानि",
+    "(D) छिद्राणि प्रयत्नः, अङ्गुलयः वायुः"
+  ],
+  "correctIndex": 1,
+  "explanation": "मुरल्याः अङ्गुलिच्छिद्राणि 'स्थानानि' इव तथा मुरलीं वादयन्त्यः अङ्गुलयः 'करणानि' इव व्यवहरन्ति।",
   "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q2-7",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 2: Full-Sentence Answers (पूर्णवाक्येन उत्तरत)",
+  "question": "'करणम्' (Articulatory Tool) से आप क्या समझते हैं? (What do you understand by 'Karana'?)",
+  "questionSanskrit": "'करणम्' इत्यनेन भवन्तः किं अवगच्छन्ति?",
+  "options": [
+    "(A) श्वासकोशात् निर्गच्छन् वायुः",
+    "(B) वर्णस्य उच्चारण-समये, आस्यस्य यः भागः स्थानं स्पृशति समीपं वा याति",
+    "(C) नाभिप्रदेशस्य मांसपेशी-तन्त्रम्",
+    "(D) कण्ठबिलस्य स्वरतन्त्री"
+  ],
+  "correctIndex": 1,
+  "explanation": "वर्ण के उच्चारण के समय मुख का जो सक्रिय भाग स्थान को छूता है या उसके समीप जाता है, वह 'करण' कहलाता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q2-8",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 2: Full-Sentence Answers (पूर्णवाक्येन उत्तरत)",
+  "question": "विभिन्न वर्णों के उच्चारण में जीभ के कौन-से तीन भाग प्रयुक्त होते हैं? (Which 3 parts of the tongue are used as articulators?)",
+  "questionSanskrit": "जिह्वायाः के त्रयः भागाः विभिन्नवर्णानां करणे प्रयुक्ताः भवन्ति?",
+  "options": [
+    "(A) जिह्वामूलम्, जिह्वातलम्, जिह्वापार्श्वम्",
+    "(B) जिह्वा-मध्यः, जिह्वा-उपाग्रः, जिह्वा-अग्रः च",
+    "(C) ऊर्ध्वभागः, अधोभागः, मध्यभागः",
+    "(D) दक्षिणभागः, वामभागः, अग्रभागः"
+  ],
+  "correctIndex": 1,
+  "explanation": "पाठे जिह्वायाः त्रयः भागाः उक्ताः: जिह्वा-मध्यः (तालव्ये), जिह्वा-उपाग्रः (मूर्धन्ये), जिह्वा-अग्रः (दन्त्ये)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q2-9",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 2: Full-Sentence Answers (पूर्णवाक्येन उत्तरत)",
+  "question": "कण्ठ्य, ओष्ठ्य और नासिक्य वर्णों की प्रमुख विशेषता क्या है? (What is the key feature of guttural, labial, and nasal sounds?)",
+  "questionSanskrit": "कण्ठ्य-ओष्ठ्य-नासिक्यवर्णानां विशेषता का अस्ति?",
+  "options": [
+    "(A) जिह्वा सर्वदा अतिसक्रिया भवति",
+    "(B) एतेषाम् उच्चारणे जिह्वा निष्क्रिया भवति तथा 'स्व-स्थानम्' एव करणं भवति",
+    "(C) एते केवलं नासिकायाः उत्पद्यन्ते",
+    "(D) एतेषु आभ्यन्तर-प्रयत्नः न भवति"
+  ],
+  "correctIndex": 1,
+  "explanation": "कण्ठ्य, ओष्ठ्य और नासिक्य वर्णों में जीभ प्रायः निष्क्रिय रहती है और उस स्थान का अपना ही भाग करण बनता है (स्वस्थानकरणः)।",
+  "difficulty": "hard",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q2-10",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 2: Full-Sentence Answers (पूर्णवाक्येन उत्तरत)",
+  "question": "स्वर की पाणिनीय शास्त्रीय परिभाषा क्या है? (What is the classical Paninian definition of a vowel?)",
+  "questionSanskrit": "स्वरस्य पाणिनीया परिभाषा का अस्ति?",
+  "options": [
+    "(A) अन्वग् भवति स्वरः",
+    "(B) स्वयं राजन्ते इति स्वराः",
+    "(C) व्यञ्जनाश्रिताः स्वराः",
+    "(D) स्पर्शपूर्वाः स्वराः"
+  ],
+  "correctIndex": 1,
+  "explanation": "'स्वयं राजन्ते इति स्वराः' — जो स्वतंत्र रूप से बिना किसी अन्य ध्वनि की सहायता के चमकते/उच्चरित होते हैं, वे स्वर कहलाते हैं।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q3-1",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 3: Analytical Grammar & Applied Phonetics (व्याकरणं सूक्ष्मभेदश्च)",
+  "question": "'मांसपेशी-बल-तन्त्रम्' (Muscular-pressure System) शरीर के किस भाग में सक्रिय होता है? (In which part of the body is the muscular-pressure system active?)",
+  "questionSanskrit": "'मांसपेशी-बल-तन्त्रम्' शरीरस्य कस्मिन् भागे क्रियाशीलम् भवति?",
+  "options": [
+    "(A) उरसि (Chest)",
+    "(B) नाभि-प्रदेशे (Abdominal region)",
+    "(C) कण्ठ-बिले (Larynx)",
+    "(D) आस्ये (Oral cavity)"
+  ],
+  "correctIndex": 1,
+  "explanation": "नाभि-प्रदेशे (Abdominal muscles) मांसपेशी-बल-तन्त्रं भवति, यत् सर्वप्रथमं छाती (उरः) पर दबाव डालता है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q3-2",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 3: Analytical Grammar & Applied Phonetics (व्याकरणं सूक्ष्मभेदश्च)",
+  "question": "अन्दर से बाहर (अन्तः बहिः) की ओर मुख के उच्चारण स्थानों का सही क्रम क्या है? (What is the correct order of oral places from inside to outside?)",
+  "questionSanskrit": "विपरीतक्रमेण (अन्तः बहिः) मुखस्य स्थानानां सम्यक् क्रमः कः?",
+  "options": [
+    "(A) ओष्ठः ➔ दन्तः ➔ मूर्धा ➔ तालु ➔ कण्ठः",
+    "(B) कण्ठः ➔ तालु ➔ मूर्धा ➔ दन्तः ➔ ओष्ठः",
+    "(C) तालु ➔ कण्ठः ➔ मूर्धा ➔ ओष्ठः ➔ दन्तः",
+    "(D) दन्तः ➔ ओष्ठः ➔ तालु ➔ मूर्धा ➔ कण्ठः"
+  ],
+  "correctIndex": 1,
+  "explanation": "अन्दर से बाहर (अन्तः बहिः) का क्रम: कण्ठः ➔ तालु ➔ मूर्धा ➔ दन्तः ➔ ओष्ठः। (और बाहर से अन्दर का क्रम: ओष्ठः ➔ दन्तः ➔ मूर्धा ➔ तालु ➔ कण्ठः)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q3-3",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 3: Analytical Grammar & Applied Phonetics (व्याकरणं सूक्ष्मभेदश्च)",
+  "question": "जिह्वा-उपाग्र (जीभ की नोक के पास का भाग) से किन वर्णों का उच्चारण होता है? (Which sounds are pronounced using Jihva-upagra?)",
+  "questionSanskrit": "जिह्वा-उपाग्रेण केषां वर्णानाम् उच्चारणं भवति?",
+  "options": [
+    "(A) तालव्य-वर्णानाम् (च-वर्गस्य)",
+    "(B) मूर्धन्य-वर्णानाम् (ट-वर्गस्य)",
+    "(C) दन्त्य-वर्णानाम् (त-वर्गस्य)",
+    "(D) ओष्ठ्य-वर्णानाम् (प-वर्गस्य)"
+  ],
+  "correctIndex": 1,
+  "explanation": "मूर्धन्य वर्णों (ट, ठ, ड, ढ, ण, ष) के उच्चारण में मूर्धा = स्थान तथा जिह्वा-उपाग्रः = करण होता है।",
+  "difficulty": "hard",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q3-4",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 3: Analytical Grammar & Applied Phonetics (व्याकरणं सूक्ष्मभेदश्च)",
+  "question": "यदि 'उत्तरोष्ठः' (ऊपरी होंठ) स्थान है, तो उसका करण क्या होगा? (If the upper lip is the Sthana, what will be its Karana?)",
+  "questionSanskrit": "'उत्तरोष्ठः' स्थानं चेत्, तस्य करणं किं भविष्यति?",
+  "options": [
+    "(A) जिह्वा-अग्रः",
+    "(B) अधरोष्ठः (निचला होंठ)",
+    "(C) दन्तः",
+    "(D) तालु"
+  ],
+  "correctIndex": 1,
+  "explanation": "ओष्ठ्य वर्णों में उत्तरोष्ठः = स्थानम् तथा अधरोष्ठः (निचला होंठ) = करणम् भवति।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q3-5",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 3: Analytical Grammar & Applied Phonetics (व्याकरणं सूक्ष्मभेदश्च)",
+  "question": "कण्ठ्य वर्णों के उच्चारण में कण्ठ का कौन-सा भाग करण रूप में कार्य करता है? (In guttural sounds, which part of the throat acts as Karana?)",
+  "questionSanskrit": "कण्ठ्यवर्णानाम् उच्चारणे कण्ठस्य कः भागः करणरूपेण कार्यं करोति?",
+  "options": [
+    "(A) कण्ठस्य पृष्ठ-भागः",
+    "(B) कण्ठस्य अग्र-भागः (Front part of throat)",
+    "(C) जिह्वा-मध्यः",
+    "(D) नासिकामूलम्"
+  ],
+  "correctIndex": 1,
+  "explanation": "कण्ठ्य वर्णों में कण्ठ का पृष्ठभाग (पिछला भाग) स्थान है और कण्ठ का अग्रभाग (अगला भाग) करण है।",
+  "difficulty": "hard",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q3-6",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 3: Analytical Grammar & Applied Phonetics (व्याकरणं सूक्ष्मभेदश्च)",
+  "question": "'जिह्वाग्रेण - दन्त्यानाम्' इस शास्त्रीय नियम का क्या भावार्थ है? (What is the meaning of the rule 'Jihvagrena - Dantyanam'?)",
+  "questionSanskrit": "'जिह्वाग्रेण - दन्त्यानाम्' इति सूत्रस्य कः भावार्थः?",
+  "options": [
+    "(A) दाँतों से जीभ को दबाया जाता है",
+    "(B) दन्त्य वर्णों के उच्चारण में जीभ की नोक (जिह्वाग्र) सक्रिय साधन (करण) होती है",
+    "(C) दन्त्य वर्णों में जीभ निष्क्रिय रहती है",
+    "(D) जीभ दाँतों को स्पर्श नहीं करती"
+  ],
+  "correctIndex": 1,
+  "explanation": "दन्त्य वर्णों (त, थ, द, ध, न, ल, स) के उच्चारण में जीभ की नोक (जिह्वा-अग्रः) दाँतों को छूकर करण बनती है।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q3-7",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 3: Analytical Grammar & Applied Phonetics (व्याकरणं सूक्ष्मभेदश्च)",
+  "question": "पाठ में प्रयुक्त 'नितान्तम्' अव्यय पद का क्या अर्थ है? (What is the meaning of the indeclinable 'Nitantam' in the text?)",
+  "questionSanskrit": "'नितान्तम्' इति अव्ययपदस्य पाठात् कः अर्थः स्वीकृतः?",
+  "options": [
+    "(A) कदाचित् (Sometimes)",
+    "(B) अत्यन्तम् / अतीव (Extremely / Indispensable)",
+    "(C) शनैः शनैः (Slowly)",
+    "(D) वृथा (In vain)"
+  ],
+  "correctIndex": 1,
+  "explanation": "'शब्दानां सम्यक् शुद्धं च उच्चारणं नितान्तं महत्त्वपूर्णम् अस्ति' — अत्र 'नितान्तम्' इत्यस्य अर्थः अत्यन्तम् / अतीव अस्ति।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q3-8",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 3: Analytical Grammar & Applied Phonetics (व्याकरणं सूक्ष्मभेदश्च)",
+  "question": "व्यञ्जन को किस कारण से 'पराश्रित' (Dependent) कहा जाता है? (Why is a consonant called 'Parashrita'?)",
+  "questionSanskrit": "व्यञ्जनं कस्मात् कारणात् पराश्रितं कथ्यते?",
+  "options": [
+    "(A) इसकी कोई अपनी ध्वनि नहीं होती",
+    "(B) स्वर (अच्) की सहायता के बिना इसका स्वतंत्र उच्चारण संभव नहीं है",
+    "(C) यह केवल लिखित रूप में होता है",
+    "(D) इसका कोई उच्चारण स्थान नहीं होता"
+  ],
+  "correctIndex": 1,
+  "explanation": "व्यञ्जन वर्ण स्वर के बिना उच्चरित नहीं हो सकते ('अन्वग् भवति व्यञ्जनम्'), अतः वे पराश्रित कहलाते हैं।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q3-9",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 3: Analytical Grammar & Applied Phonetics (व्याकरणं सूक्ष्मभेदश्च)",
+  "question": "यदि 'नासिकामूल का ऊपरी भाग' स्थान है, तो उसका करण क्या है? (If the upper part of nasal base is Sthana, what is the Karana?)",
+  "questionSanskrit": "नासिका-मूलस्य उपरि-भागः चेत् स्थानं, तर्हि करणं किम्?",
+  "options": [
+    "(A) जिह्वा-मध्यः",
+    "(B) नासिका-मूलस्य अधो-भागः (Lower part of nasal base)",
+    "(C) अधरोष्ठः",
+    "(D) कण्ठबिलम्"
+  ],
+  "correctIndex": 1,
+  "explanation": "नासिक्य वर्णों में नासिकामूल का ऊपरी भाग 'स्थान' तथा नासिकामूल का निचला भाग (अधो-भागः) 'करण' होता है।",
+  "difficulty": "hard",
+  "points": 10
+},
+{
+  "id": "g8-ch13-q3-10",
+  "category": "grade8_ch13",
+  "categoryLabel": "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १",
+  "chapterRef": "Grade 8: त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
+  "subCategory": "Quiz 3: Analytical Grammar & Applied Phonetics (व्याकरणं सूक्ष्मभेदश्च)",
+  "question": "'स्वस्थानकरणाः' इस पारिभाषिक शब्द का शास्त्रीय अभिप्राय क्या है? (What is the technical meaning of 'Svasthanakaranah'?)",
+  "questionSanskrit": "'स्वस्थानकरणाः' इति शब्दस्य शास्त्रीयः कः अभिप्रायः?",
+  "options": [
+    "(A) जीभ सभी स्थानों पर जाती है",
+    "(B) उच्चारण स्थान का ही एक हिस्सा सक्रिय होकर दूसरे हिस्से को छूता है",
+    "(C) मुख के बाहर ध्वनियाँ उत्पन्न होती हैं",
+    "(D) केवल फेफड़े ही वर्ण उत्पन्न करते हैं"
+  ],
+  "correctIndex": 1,
+  "explanation": "जिन वर्णों (कण्ठ्य, ओष्ठ्य, नासिक्य) में जीभ निष्क्रिय रहती है और उस स्थान का अपना ही एक भाग करण बनकर दूसरे भाग को छूता है, वे 'स्वस्थानकरणाः' कहलाते हैं।",
+  "difficulty": "hard",
   "points": 10
 },
 {

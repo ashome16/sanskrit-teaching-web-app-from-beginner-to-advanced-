@@ -37470,7 +37470,7 @@
       "id": "grade8_ch13",
       "fileName": "grade8_ch13.txt",
       "title": "त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १",
-      "page_numbers": "146-156",
+      "page_numbers": "146–152",
       "sentences": [
         {
           "sanskrit": "॥ त्रयोदशः पाठः — वर्णोच्चारण-शिक्षा १ ॥",
@@ -37481,6 +37481,22 @@
             "पाठः",
             "वर्णोच्चारण",
             "शिक्षा"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "📌 पाठ्यक्रम-मार्गदर्शिका (CBSE / NCERT / NEP 2020) — एषः पाठः पाणिनीय-शिक्षायाः आधारेण शारीरिक-तन्त्राणि (मांसपेशी-वायु-ध्वनि-उच्चारण-तन्त्राणि), मुखस्थानानि, जिह्वाकरणानि, मुरली-दृष्टान्तं च बोधयति।",
+          "meaning": "Curriculum Framework (CBSE / NCERT / NEP 2020): Derived from Paniniya Shiksha, this lesson teaches learners speech physiology (muscular, pulmonary, phonatory, articulatory systems), oral places of articulation, tongue articulators, and the classical flute metaphor.",
+          "paragraphTranslation": "पाठ्यक्रम मार्गदर्शिका (CBSE / NCERT / NEP 2020): पाणिनीय-शिक्षा पर आधारित यह पाठ शिक्षार्थियों को वाग्-उत्पत्ति के चार शारीरिक तंत्रों (मांसपेशी, वायु, ध्वनि, उच्चारण), छह स्थानों, जिह्वा व स्वस्थान करणों तथा मुरली के वैज्ञानिक दृष्टान्त का बोध कराता है।",
+          "words": [
+            "पाठ्यक्रम",
+            "CBSE",
+            "NCERT",
+            "NEP2020",
+            "वर्णोच्चारण",
+            "पाणिनीयशिक्षा",
+            "शारीरिकतन्त्रम्",
+            "मुरली"
           ],
           "kind": "section-header"
         },
@@ -37798,6 +37814,25 @@
             "कण्ठः"
           ],
           "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "अभ्यासः ५ (यथायोग्यं मेलनम् - स्थानं करणं च) – ओष्ठः [उत्तरोष्ठः] ➔ स्वस्थानम् [अधरोष्ठः] | दन्तः [दन्तः] ➔ जिह्वा [जिह्वाग्रः] | नासिका [नासिकामूलस्य उपरिभागः] ➔ स्वस्थानम् [नासिकामूलस्य अधोभागः] | कण्ठः [कण्ठस्य पृष्ठभागः] ➔ स्वस्थानम् [कण्ठस्य अग्रभागः] | मूर्धा [मूर्धा] ➔ जिह्वा [जिह्वोपाग्रः] | तालु [तालु] ➔ जिह्वा [जिह्वामध्यः] ।",
+          "meaning": "Exercise 5: Matching Sthana and Karana: Oshtha (Upper lip -> Lower lip / Svasthana), Danta (Teeth -> Jihvagra), Nasika (Upper nasal root -> Lower nasal root / Svasthana), Kantha (Back pharynx -> Front pharynx / Svasthana), Murdha (Alveolar ridge -> Jihvopagra), Talu (Palate -> Jihvamadhya).",
+          "paragraphTranslation": "अभ्यास ५ (स्थान एवं करण का सुमेलन): ओष्ठ [उत्तरोष्ठ ➔ अधरोष्ठ / स्वस्थान], दन्त [दन्त ➔ जिह्वाग्र], नासिका [नासिकामूल का ऊपरी भाग ➔ निचला भाग / स्वस्थान], कण्ठ [कण्ठ का पृष्ठभाग ➔ अग्रभाग / स्वस्थान], मूर्धा [मूर्धा ➔ जिह्वोपाग्र], तालु [तालु ➔ जिह्वामध्य]।",
+          "words": [
+            "ओष्ठः",
+            "उत्तरोष्ठः",
+            "अधरोष्ठः",
+            "दन्तः",
+            "जिह्वाग्रः",
+            "नासिका",
+            "कण्ठः",
+            "मूर्धा",
+            "जिह्वोपाग्रः",
+            "तालु",
+            "जिह्वामध्यः"
+          ],
+          "kind": "exercise-table"
         }
       ]
     },

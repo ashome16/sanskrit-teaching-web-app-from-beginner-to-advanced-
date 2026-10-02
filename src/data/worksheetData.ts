@@ -10873,73 +10873,73 @@ export const WORKSHEETS: Worksheet[] = [
 ,
 {
   "id": "ws-grade8-ch13-ws1",
-  "title": "Chapter 13 · Worksheet 1: वाग्-उत्पत्ति-प्रक्रिया (Voice Production Mechanism)",
-  "titleSanskrit": "त्रयोदशः पाठः · कार्यपत्रिका १: वाग्-उत्पत्ति-प्रक्रिया",
+  "title": "Worksheet 1: Phonetics & Organ Identification (शारीरिक-तन्त्राणि)",
+  "titleSanskrit": "त्रयोदशः पाठः · कार्यपत्रिका १: वाग्-उत्पत्ति-प्रक्रिया एवं शारीरिक-तन्त्राणि",
   "category": "grade8",
-  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
-  "grade": "Grade 8 (Deepakam)",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
   "timeLimit": "30 Minutes",
-  "description": "Anatomy and sequential stages of the speech production mechanism (Pages 146–147).",
+  "description": "Phonetics and Organ Identification: Systems of voice production and true/false assessment (Pages 146–147).",
   "sections": [
     {
-      "sectionTitle": "Section A: Primary Force & Pressure Systems (प्राथमिक-बल-तन्त्रम्)",
-      "sectionTitleSanskrit": "खण्डः 'क' · मांसपेशी-वायुबल-परीक्षणम्",
-      "instructions": "Answer the questions on physical mechanisms in 1-2 words or short sentences:",
-      "totalMarks": 8,
+      "sectionTitle": "Section A: Missing Systems (रिक्तस्थानानि पूरयत)",
+      "sectionTitleSanskrit": "खण्डः 'क' · बल-तन्त्राणां रिक्तस्थान-पूर्तिः",
+      "instructions": "Fill in the missing anatomical system names in the blanks:",
+      "totalMarks": 12,
       "questions": [
         {
           "num": 1,
-          "question": "१. वर्णानाम् उच्चारणार्थं नाभि-प्रदेशे स्थिताः मांसपेश्यः कम् नोदयन्ति?",
-          "questionSanskrit": "नाभि-प्रदेशे स्थिताः मांसपेश्यः कम् नोदयन्ति?",
+          "question": "१. नाभि-प्रदेशे ____________________ बल-तन्त्रम् भवति।",
+          "questionSanskrit": "नाभि-प्रदेशे ____________________ बल-तन्त्रम् भवति।",
           "marks": 4,
-          "type": "short_ans",
-          "answer": "उरः (Chest/Abdominal muscles press the chest)",
-          "explanation": "सर्वप्रथमं नाभि-प्रदेशे स्थिताः मांसपेश्यः उरः (वक्षः) नोदयन्ति।"
+          "type": "fill",
+          "answer": "मांसपेशी (Muscular-pressure System)",
+          "explanation": "नाभि-प्रदेशे मांसपेशी-बल-तन्त्रं भवति, यत् उरसि दबावं जनयति।"
         },
         {
           "num": 2,
-          "question": "२. वायु-बल-तन्त्रम् शरीरस्य कस्मिन् अङ्गे भवति?",
-          "questionSanskrit": "वायु-बल-तन्त्रम् शरीरस्य कस्मिन् अङ्गे भवति?",
+          "question": "२. उरसि ____________________ बल-तन्त्रम् भवति।",
+          "questionSanskrit": "उरसि ____________________ बल-तन्त्रम् भवति।",
           "marks": 4,
-          "type": "short_ans",
-          "answer": "उरसि (Chest / Lungs & Diaphragm)",
-          "explanation": "उरः (छाती) वायु-बल-तन्त्रम् अस्ति, यत् फेफड़ों की वायु को ऊपर धकेलता है।"
+          "type": "fill",
+          "answer": "वायु (Air-pressure System)",
+          "explanation": "उरः (छाती/फेफड़े) वायु-बल-तन्त्रम् अस्ति, यत् श्वासकोशस्थितं वायुम् ऊर्ध्वं निःसारयति।"
+        },
+        {
+          "num": 3,
+          "question": "३. कण्ठ-बिले ____________________ तन्त्रम् भवति।",
+          "questionSanskrit": "कण्ठ-बिले ____________________ तन्त्रम् भवति।",
+          "marks": 4,
+          "type": "fill",
+          "answer": "ध्वनि (Phonatory & Resonatory System)",
+          "explanation": "कण्ठ-बिलः (Voice-box / Larynx) ध्वनि-तन्त्रम् अस्ति।"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Cavities & Sequential Voice Flow (मार्गः क्रमश्च)",
-      "sectionTitleSanskrit": "खण्डः 'ख' · ध्वनि-मार्गः उचितक्रमश्च",
-      "instructions": "Answer the directional and sequential questions on voice production:",
-      "totalMarks": 12,
+      "sectionTitle": "Section B: True or False (सत्यं वा असत्यं वा लिखत)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · सत्यम् / असत्यम्",
+      "instructions": "Indicate whether the following anatomical statements are True (सत्यम्) or False (असत्यम्):",
+      "totalMarks": 8,
       "questions": [
         {
-          "num": 3,
-          "question": "३. उरः श्वासकोश-स्थितं वायुं कुत्र निःसारयति?",
-          "questionSanskrit": "उरः श्वासकोश-स्थितं वायुं कुत्र निःसारयति?",
-          "marks": 4,
-          "type": "short_ans",
-          "answer": "ऊर्ध्वं (कण्ठ-बिलं प्रति / Upward toward voice-box)",
-          "explanation": "उरः श्वासकोशस्थितं वायुम् ऊर्ध्वं कण्ठ-बिलं प्रति निःसारयति।"
-        },
-        {
           "num": 4,
-          "question": "४. आस्यस्य आभ्यन्तरे (Mouth & Nose) कौ द्वौ भागौ भवतः?",
-          "questionSanskrit": "आस्यस्य आभ्यन्तरे कौ द्वौ भागौ भवतः?",
+          "question": "१. वर्णानाम् उच्चारणे केवलम् मुखस्य एव उपयोगः भवति। [सत्यम् / असत्यम्]",
+          "questionSanskrit": "वर्णानाम् उच्चारणे केवलम् मुखस्य एव उपयोगः भवति।",
           "marks": 4,
           "type": "short_ans",
-          "answer": "(क) मुखम् (Oral cavity), (ख) नासिका (Nasal cavity) च",
-          "explanation": "आस्यस्य अभ्यन्तरे मुखं नासिका च इति द्वे गुहे भवतः।"
+          "answer": "असत्यम् (False)",
+          "explanation": "वर्णानाम् उच्चारणे केवलम् आस्यस्य एव उपयोगः न भवति, अपि तु नाभि, उरः, कण्ठ-बिलादीनाम् अपि उपयोगः भवति।"
         },
         {
           "num": 5,
-          "question": "५. वाग्-उत्पत्ति-प्रक्रियायाः उचितं क्रमं लिखत: (कण्ठ-बिलः, नाभि-प्रदेशः, आस्यम्, उरः)",
-          "questionSanskrit": "वाग्-उत्पत्ति-प्रक्रियायाः उचितं क्रमं लिखत।",
+          "question": "२. जिह्वा कण्ठ्यवर्णानाम् उच्चारणे मुख्या भूमिकां वहति। [सत्यम् / असत्यम्]",
+          "questionSanskrit": "जिह्वा कण्ठ्यवर्णानाम् उच्चारणे मुख्या भूमिकां वहति।",
           "marks": 4,
           "type": "short_ans",
-          "answer": "नाभि-प्रदेशः ➔ उरः ➔ कण्ठ-बिलः ➔ आस्यम्",
-          "explanation": "शुद्धक्रमः: नाभि-प्रदेशः ➔ उरः ➔ कण्ठ-बिलः ➔ आस्यम्।"
+          "answer": "असत्यम् (False)",
+          "explanation": "कण्ठ्यवर्णानाम् उच्चारणे जिह्वा प्रायः निष्क्रिया भवति, तत्र स्व-स्थानम् (कण्ठस्य अग्र-भागः) एव करणं भवति।"
         }
       ]
     }
@@ -10947,73 +10947,81 @@ export const WORKSHEETS: Worksheet[] = [
 },
 {
   "id": "ws-grade8-ch13-ws2",
-  "title": "Chapter 13 · Worksheet 2: उच्चारण-स्थानानि (Places of Articulation)",
-  "titleSanskrit": "त्रयोदशः पाठः · कार्यपत्रिका २: उच्चारण-स्थानानि",
+  "title": "Worksheet 2: Flute Metaphor & Core Mechanics (मुरली-निदर्शनम्)",
+  "titleSanskrit": "त्रयोदशः पाठः · कार्यपत्रिका २: मुरली-निदर्शनं मुख्य-सिद्धान्ताश्च",
   "category": "grade8",
-  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
-  "grade": "Grade 8 (Deepakam)",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
   "timeLimit": "30 Minutes",
-  "description": "The six places of articulation and the flute (मुरली) analogy (Pages 148–149).",
+  "description": "Core articulatory mechanics and the flute metaphor (Pages 148–150).",
   "sections": [
     {
-      "sectionTitle": "Section A: Enumeration of Articulatory Places (स्थानानां परिगणनम्)",
-      "sectionTitleSanskrit": "खण्डः 'क' · स्थान-सङ्ख्या नामानि च",
-      "instructions": "Answer the questions on articulatory places:",
+      "sectionTitle": "Section A: Multiple Choice / Options (उचितं पदं चित्वा वाक्यं पूरयत)",
+      "sectionTitleSanskrit": "खण्डः 'क' · कोष्ठकात् उचितपद-चयनम्",
+      "instructions": "Select the correct option from the brackets to complete each statement:",
       "totalMarks": 8,
       "questions": [
         {
           "num": 1,
-          "question": "१. आस्ये कति उच्चारण-स्थानानि सन्ति?",
-          "questionSanskrit": "आस्ये कति उच्चारण-स्थानानि सन्ति?",
+          "question": "१. मुरल्याः अङ्गुलयः आस्यस्य __________ इव व्यवहरन्ति।",
+          "questionSanskrit": "मुरल्याः अङ्गुलयः आस्यस्य __________ इव व्यवहरन्ति।",
+          "options": [
+            "स्थानानि",
+            "करणानि"
+          ],
           "marks": 4,
-          "type": "short_ans",
-          "answer": "षट् (६) स्थानानि (Six places)",
-          "explanation": "आस्ये षट् उच्चारण-स्थानानि सन्ति (मुखे पञ्च, नासिकायां च एकम्)।"
+          "type": "mcq",
+          "answer": "करणानि",
+          "explanation": "बाँसुरी बजाने वाली अँगुलियाँ आस्य के 'करणों' (Tools) की तरह कार्य करती हैं, जबकि छेद 'स्थानों' की तरह होते हैं।"
         },
         {
           "num": 2,
-          "question": "२. मुखे स्थितानि पञ्च स्थानानि कानि सन्ति?",
-          "questionSanskrit": "मुखे स्थितानि पञ्च स्थानानि कानि?",
+          "question": "२. वर्णानां जननाय __________ तत्त्वानि आवश्यकानि भवन्ति।",
+          "questionSanskrit": "वर्णानां जननाय __________ तत्त्वानि आवश्यकानि भवन्ति।",
+          "options": [
+            "त्रीणि",
+            "पञ्च"
+          ],
           "marks": 4,
-          "type": "short_ans",
-          "answer": "कण्ठः, तालु, मूर्धा, दन्तः, ओष्ठः च",
-          "explanation": "मुखे स्थितानि पञ्च स्थानानि: कण्ठः, तालु, मूर्धा, दन्तः, ओष्ठः च।"
+          "type": "mcq",
+          "answer": "त्रीणि",
+          "explanation": "वर्णानाम् उत्पत्त्यर्थं त्रीणि तत्त्वानि आवश्यकानि: स्थानम्, करणम्, आभ्यन्तर-प्रयत्नश्च।"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Sixth Place & Flute Analogy (षष्ठस्थानं मुरली-दृष्टान्तश्च)",
-      "sectionTitleSanskrit": "खण्डः 'ख' · नासिका मुरली-सादृश्यञ्च",
-      "instructions": "Identify the 6th location and explain the musical analogy:",
+      "sectionTitle": "Section B: Tongue Segment Correlation (जिह्वायाः भागैः सह मेलनम्)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · जिह्वाभागानां सुमेलनम्",
+      "instructions": "Complete the match for each sound class with its specific tongue segment:",
       "totalMarks": 12,
       "questions": [
         {
           "num": 3,
-          "question": "३. आस्यस्य षष्ठं (६) उच्चारण-स्थानं किम् अस्ति?",
-          "questionSanskrit": "आस्यस्य षष्ठं उच्चारण-स्थानं किम्?",
+          "question": "१. तालव्याः वर्णाः → जिह्वा-__________",
+          "questionSanskrit": "तालव्याः वर्णाः → जिह्वा-__________",
           "marks": 4,
-          "type": "short_ans",
-          "answer": "नासिका (Nose / Nasal cavity)",
-          "explanation": "मुखे पञ्च स्थानानि, नासिकायां च 'नासिका' इत्येव षष्ठं स्थानम्।"
+          "type": "fill",
+          "answer": "मध्यः (जिह्वा-मध्यः)",
+          "explanation": "तालव्य वर्णों (च-वर्ग) के उच्चारण में तालु स्थान होता है और जिह्वा-मध्य करण होता है।"
         },
         {
           "num": 4,
-          "question": "४. स्थानस्य सम्यक् कार्य-निदर्शनार्थं पाठे किम् उदाहरणं दत्तम्?",
-          "questionSanskrit": "स्थानस्य कार्य-निदर्शनार्थं किम् उदाहरणं दत्तम्?",
+          "question": "२. मूर्धन्याः वर्णाः → जिह्वा-__________",
+          "questionSanskrit": "मूर्धन्याः वर्णाः → जिह्वा-__________",
           "marks": 4,
-          "type": "short_ans",
-          "answer": "मुरली (बाँसुरी / Flute)",
-          "explanation": "स्थानस्य कार्य-निदर्शनार्थं 'मुरली' समुचितम् उदाहरणम् अस्ति।"
+          "type": "fill",
+          "answer": "उपाग्रः (जिह्वा-उपाग्रः)",
+          "explanation": "मूर्धन्य वर्णों (ट-वर्ग) के उच्चारण में मूर्धा स्थान होता है और जिह्वा-उपाग्र करण होता है।"
         },
         {
           "num": 5,
-          "question": "५. मुरल्याः 'अङ्गुलिच्छिद्राणि' आस्यस्य किम इव व्यवहरन्ति?",
-          "questionSanskrit": "मुरल्याः अङ्गुलिच्छिद्राणि आस्यस्य किम् इव व्यवहरन्ति?",
+          "question": "३. दन्त्याः वर्णाः → जिह्वा-__________",
+          "questionSanskrit": "दन्त्याः वर्णाः → जिह्वा-__________",
           "marks": 4,
-          "type": "short_ans",
-          "answer": "स्थानानि इव (Like the Places of Articulation)",
-          "explanation": "बाँसुरी के छेद (अङ्गुलिच्छिद्राणि) आस्य के 'स्थानों' की तरह व्यवहार करते हैं।"
+          "type": "fill",
+          "answer": "अग्रः (जिह्वा-अग्रः)",
+          "explanation": "दन्त्य वर्णों (त-वर्ग) के उच्चारण में दन्त स्थान होता है और जिह्वा की नोक (जिह्वा-अग्र) करण होती है।"
         }
       ]
     }
@@ -11021,73 +11029,81 @@ export const WORKSHEETS: Worksheet[] = [
 },
 {
   "id": "ws-grade8-ch13-ws3",
-  "title": "Chapter 13 · Worksheet 3: उच्चारण-करणानि (Tools of Articulation)",
-  "titleSanskrit": "त्रयोदशः पाठः · कार्यपत्रिका ३: उच्चारण-करणानि",
+  "title": "Worksheet 3: Technical Definitions & Sutras (शास्त्रीय-परिभाषाः पदच्छेदश्च)",
+  "titleSanskrit": "त्रयोदशः पाठः · कार्यपत्रिका ३: शास्त्रीय-परिभाषाः पदच्छेदश्च",
   "category": "grade8",
-  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
-  "grade": "Grade 8 (Deepakam)",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
   "timeLimit": "30 Minutes",
-  "description": "Definition of Karana and the role of the tongue across places of articulation (Pages 149–150).",
+  "description": "Classical Paninian definitions, sandhi splitting, and place-instrument matching (Pages 146–152).",
   "sections": [
     {
-      "sectionTitle": "Section A: Karana Definition & Flute Analogy (करण-लक्षणम्)",
-      "sectionTitleSanskrit": "खण्डः 'क' · करण-परिभाषा मुरली-अङ्गुलयश्च",
-      "instructions": "Answer the questions defining Karana and its metaphor:",
+      "sectionTitle": "Section A: Scriptural Definitions (परिभाषावाक्यं पूरयत)",
+      "sectionTitleSanskrit": "खण्डः 'क' · शास्त्रीय-परिभाषा-पूर्तिः",
+      "instructions": "Complete the canonical phonetic sutras:",
       "totalMarks": 8,
       "questions": [
         {
           "num": 1,
-          "question": "१. वर्णस्य उच्चारण-समये आस्यस्य यः भागः स्थानं स्पृशति तद् किम् उच्यते?",
-          "questionSanskrit": "स्थानं स्पृशन् भागः किम् उच्यते?",
+          "question": "१. 'स्वयं राजन्ते इति __________।'",
+          "questionSanskrit": "'स्वयं राजन्ते इति __________।'",
           "marks": 4,
-          "type": "short_ans",
-          "answer": "करणम् (Active Tool of Articulation)",
-          "explanation": "आस्यस्य यः भागः स्थानं स्पृशति स्थानस्य समीपं वा याति, सः 'करणम्' इति कथ्यते।"
+          "type": "fill",
+          "answer": "स्वराः (Vowels)",
+          "explanation": "स्वयं राजन्ते इति स्वराः — जो बिना किसी अन्य वर्ण की सहायता के स्वयं उच्चरित होते हैं, वे स्वर कहलाते हैं।"
         },
         {
           "num": 2,
-          "question": "२. मुरलीं वादयन्त्यः 'अङ्गुलयः' आस्यस्य किम इव व्यवहरन्ति?",
-          "questionSanskrit": "मुरलीं वादयन्त्यः अङ्गुलयः किम् इव व्यवहरन्ति?",
+          "question": "२. 'अन्वग् भवति __________।'",
+          "questionSanskrit": "'अन्वग् भवति __________।'",
           "marks": 4,
-          "type": "short_ans",
-          "answer": "करणानि इव (Like the Active Tools)",
-          "explanation": "बाँसुरी बजाती हुई उँगलियाँ आस्य के 'करणों' की भाँति कार्य करती हैं।"
+          "type": "fill",
+          "answer": "व्यञ्जनम् (Consonant)",
+          "explanation": "अन्वग् भवति व्यञ्जनम् — जो स्वर के पीछे-पीछे उच्चरित होता है, वह व्यञ्जन कहलाता है।"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Dynamic Tongue Articulators (जिह्वा-भागाः)",
-      "sectionTitleSanskrit": "खण्डः 'ख' · जिह्वायाः विविधाः भागाः",
-      "instructions": "Attribute the parts of the tongue to specific articulatory classes:",
-      "totalMarks": 12,
+      "sectionTitle": "Section B: Sandhi Splitting (पदच्छेदं कुरुत)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · पदच्छेदः",
+      "instructions": "Split the sandhi compounds from the text:",
+      "totalMarks": 6,
       "questions": [
         {
           "num": 3,
-          "question": "३. तालु, मूर्धा, दन्तः च - एतेषु त्रिषु स्थानेषु किं सामान्यं करणं भवति?",
-          "questionSanskrit": "तालु-मूर्धा-दन्तेषु किं सामान्यं करणम्?",
-          "marks": 4,
-          "type": "short_ans",
-          "answer": "जिह्वा (The Tongue)",
-          "explanation": "तालु, मूर्धा और दन्त इन तीनों स्थानों में 'जिह्वा' सामान्य करण होती है।"
+          "question": "१. सम्यग्उच्चारणार्थम् = __________ + __________",
+          "questionSanskrit": "सम्यग्उच्चारणार्थम् इत्यस्य पदच्छेदं कुरुत।",
+          "marks": 3,
+          "type": "grammar",
+          "answer": "सम्यक् + उच्चारणार्थम् (वा सम्यक् + उच्चारण + अर्थम्)",
+          "explanation": "व्यञ्जनसन्धिः: ककारस्य गकारः (सम्यक् + उच्चारणार्थम् = सम्यग्उच्चारणार्थम्)।"
         },
         {
           "num": 4,
-          "question": "४. तालव्य-वर्णानाम् उच्चारणार्थं जिह्वायाः कः भागः करणं भवति?",
-          "questionSanskrit": "तालव्यानाम् उच्चारणे जिह्वायाः कः भागः करणम्?",
-          "marks": 4,
-          "type": "short_ans",
-          "answer": "जिह्वा-मध्यः (जिह्वामध्येन - तालव्यानाम् / Middle of the tongue)",
-          "explanation": "तालव्य-वर्णानाम् उच्चारणार्थं 'जिह्वा-मध्यः' करणं भवति।"
-        },
+          "question": "२. वागुत्पत्तिः = __________ + __________",
+          "questionSanskrit": "वागुत्पत्तिः इत्यस्य पदच्छेदं कुरुत।",
+          "marks": 3,
+          "type": "grammar",
+          "answer": "वाक् + उत्पत्तिः",
+          "explanation": "व्यञ्जनसन्धिः: ककारस्य गकारः (वाक् + उत्पत्तिः = वागुत्पत्तिः)।"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Section C: Sthana & Karana Match (स्थानं करणं च मेलयत)",
+      "sectionTitleSanskrit": "खण्डः 'ग' · स्थान-करण-सुमेलनम्",
+      "instructions": "Match the articulatory place (स्थानम्) with its active instrument (करणम्):",
+      "totalMarks": 6,
+      "questions": [
         {
           "num": 5,
-          "question": "५. दन्त्य-वर्णानाम् उच्चारणाय जिह्वायाः कः भागः स्थानं स्पृशति?",
-          "questionSanskrit": "दन्त्यानाम् उच्चारणे जिह्वायाः कः भागः स्पृशति?",
-          "marks": 4,
-          "type": "short_ans",
-          "answer": "जिह्वा-अग्रः (जिह्वाग्रेण - दन्त्यानाम् / Tip of the tongue)",
-          "explanation": "दन्त्य-वर्णानाम् उच्चारणार्थं जिह्वायाः अग्रभागः ('जिह्वा-अग्रः') दन्तस्थानं स्पृशति।"
+          "question": "स्थान-करण-सुमेलनं कुरुत (Match Sthana & Karana):\n१. ओष्ठः [उत्तरोष्ठः] ➔ ____\n२. दन्तः [दन्तः] ➔ ____\n३. नासिका [नासिकामूलस्य उपरिभागः] ➔ ____\n४. कण्ठः [कण्ठस्य पृष्ठभागः] ➔ ____\n५. मूर्धा [मूर्धा] ➔ ____\n६. तालु [तालु] ➔ ____",
+          "questionSanskrit": "स्थानस्य सह करणस्य मेलनं कुरुत।",
+          "marks": 6,
+          "type": "matching",
+          "answer": "१-अधरोष्ठः (स्वस्थानम्), २-जिह्वाग्रः, ३-नासिकामूलस्य अधोभागः (स्वस्थानम्), ४-कण्ठस्य अग्रभागः (स्वस्थानम्), ५-जिह्वोपाग्रः, ६-जिह्वामध्यः",
+          "explanation": "ओष्ठ, नासिका, कण्ठ में स्वस्थान करण होता है; दन्त, मूर्धा, तालु में जिह्वा करण होती है।"
         }
       ]
     }
