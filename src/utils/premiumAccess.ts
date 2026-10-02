@@ -37,6 +37,7 @@ export const ACCOUNT_OPEN_CHAPTER_IDS = [
   'grade8_ch1',
   'grade8_ch2',
   'grade8_ch3',
+  'grade8_ch4',
   'grade9_prarthana',
   'grade9_ch1',
   'grade9_ch2',

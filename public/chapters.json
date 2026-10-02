@@ -28545,27 +28545,25 @@
       "id": "grade8_ch4",
       "fileName": "grade8_ch4.txt",
       "title": "चतुर्थः पाठः — प्रणम्यो देशभक्तोऽयं गोपबन्धुर्महामनाः",
-      "page_numbers": "Pages 36–44",
+      "page_numbers": "Pages 36–45",
       "sentences": [
         {
           "sanskrit": "॥ चतुर्थः पाठः — प्रणम्यो देशभक्तोऽयं गोपबन्धुर्महामनाः ॥",
-          "meaning": "Chapter 4: The Venerable Patriot Gopabandhu Das, the Great-Souled (Pages 36–44)",
-          "paragraphTranslation": "चतुर्थः पाठः — प्रणम्यो देशभक्तोऽयं गोपबन्धुर्महामनाः (पृष्ठ ३६–४४)",
+          "meaning": "Chapter 4: The Venerable Patriot Gopabandhu Das, the Great-Souled (Pages 36–45)",
+          "paragraphTranslation": "चतुर्थः पाठः — प्रणम्यो देशभक्तोऽयं गोपबन्धुर्महामनाः (पृष्ठ ३६–४५)",
           "words": [
-            "॥",
             "चतुर्थः",
             "पाठः",
             "प्रणम्यो",
             "देशभक्तोऽयं",
-            "गोपबन्धुर्महामनाः",
-            "॥"
+            "गोपबन्धुर्महामनाः"
           ],
           "kind": "section-header"
         },
         {
-          "sanskrit": "अयं पाठः ओडिशायाः अमर-देशभक्तस्य, समाजसेवकस्य, त्यागमूर्तेः 'उत्कलमणेः' पण्डित-गोपबन्धुदासस्य उदात्तजीवनचरितस्य परिचयम् उपस्थापयति। अत्र प्राकृतिक-आपत्काले निःस्वार्थ-मानवसेवा, सत्यवादी-वनविद्यालयस्य स्थापना, देशकल्याणाय सर्वस्व-समर्पणं च निरूपितम्।",
-          "meaning": "This chapter introduces the noble life of Odisha's immortal patriot, social reformer, and embodiment of self-sacrifice, 'Utkalmani' Pandit Gopabandhu Das. It highlights unconditional humanitarian service during natural calamities, the founding of the Satyavadi Open-Air Forest School, and supreme dedication to national progress.",
-          "paragraphTranslation": "यह पाठ ओडिशा के अमर देशभक्त, महान समाजसेवक और त्यागमूर्ति 'उत्कलमणि' पंडित गोपबन्धु दास के पावन जीवन का परिचय कराता है। यहाँ प्राकृतिक आपदा के समय निस्वार्थ मानव सेवा, सत्यवादी वन विद्यालय की स्थापना और देश के लिए सर्वस्व समर्पण का सुंदर वर्णन है।",
+          "sanskrit": "अयं पाठः ओडिशायाः अमर-देशभक्तस्य, समाजसेवकस्य, त्यागमूर्तेः उत्कलमणेः पण्डित-गोपबन्धुदासस्य उदात्तजीवनचरितस्य परिचयम् उपस्थापयति। अत्र प्राकृतिक-आपत्काले निःस्वार्थ-मानवसेवा, सत्यवादी-वनविद्यालयस्य स्थापना, दरिद्रनारायण-सेवा, देशकल्याणाय च सर्वस्व-समर्पणं निरूपितम्।",
+          "meaning": "This chapter introduces the sublime life of Odisha's immortal patriot, selfless social reformer, and embodiment of sacrifice, Utkalmani Pandit Gopabandhu Das, showcasing relief during natural calamities, free forest school education, and total dedication to the motherland.",
+          "paragraphTranslation": "यह पाठ ओडिशा के अमर देशभक्त, महान समाजसेवक और त्यागमूर्ति उत्कलमणि पंडित गोपबन्धु दास के पावन जीवन का परिचय कराता है। यहाँ प्राकृतिक आपदा के समय निस्वार्थ मानव सेवा, सत्यवादी वन विद्यालय की स्थापना, गरीबों की सेवा और देश के लिए सर्वस्व समर्पण का सुंदर वर्णन है।",
           "words": [
             "अयं",
             "पाठः",
@@ -28584,34 +28582,29 @@
           "kind": null
         },
         {
-          "sanskrit": "भागः १: पाठ-प्रवेशः — आपदासु सेवा-संवादः (Classroom Dialogue on Natural Disasters — Pages 36–37)",
-          "meaning": "Part 1: Lesson Introduction — Classroom Dialogue on Flood Calamities and Humanitarian Service",
-          "paragraphTranslation": "भाग १: पाठ-प्रवेश — प्राकृतिक आपदाओं में सेवा और सहायता पर कक्षा-संवाद (पृष्ठ ३६–३७)",
+          "sanskrit": "पृष्ठम् ३६: सभागारे चर्चा — जलप्लावपीडितानां साहाय्यार्थम् (Auditorium Discussion on Flood Relief)",
+          "meaning": "Page 36: Classroom Dialogue on Flood Calamities and Humanitarian Relief",
+          "paragraphTranslation": "पृष्ठ ३६: सभागार में चर्चा — बाढ़ पीड़ितों की सहायता के लिए संवाद",
           "words": [
-            "भागः",
-            "१",
-            ":",
-            "पाठ",
-            "-",
-            "प्रवेशः",
-            "आपदासु",
-            "सेवा",
-            "-",
-            "संवादः"
+            "पृष्ठम्",
+            "३६",
+            "सभागारे",
+            "चर्चा",
+            "जलप्लावपीडितानां",
+            "साहाय्यार्थम्"
           ],
           "kind": "chapter-header"
         },
         {
-          "sanskrit": "(बाढ़-पीडितानां साहाय्यार्थं शिक्षकाः छात्राः च सभागारे चर्चां कुर्वन्ति।)",
-          "meaning": "(Teachers and students are holding a discussion in the auditorium to help flood victims.)",
-          "paragraphTranslation": "(बाढ़ से पीड़ित लोगों की सहायता के लिए शिक्षक और छात्र सभागार में चर्चा कर रहे हैं।)",
+          "sanskrit": "(एकदा जलप्लावपीडितानां साहाय्यार्थं शिक्षकाः छात्राश्च सभागारे चर्चां कुर्वन्ति ।)",
+          "meaning": "(Once, teachers and students are holding a discussion in the auditorium to help the flood victims.)",
+          "paragraphTranslation": "(एक बार बाढ़ पीड़ितों की सहायता के लिए शिक्षक और छात्र सभागार में चर्चा कर रहे हैं।)",
           "words": [
-            "बाढ़",
-            "पीडितानां",
+            "एकदा",
+            "जलप्लावपीडितानां",
             "साहाय्यार्थं",
             "शिक्षकाः",
-            "छात्राः",
-            "च",
+            "छात्राश्च",
             "सभागारे",
             "चर्चां",
             "कुर्वन्ति"
@@ -28619,11 +28612,27 @@
           "kind": "exercise-note"
         },
         {
-          "sanskrit": "छात्राः – नमो नमः आचार्य! ओडिशा-राज्यस्य केन्द्रापडा-जनपदे महानद्यां भयङ्करः जलप्लावः सम्भूतः।",
-          "meaning": "Students: Salutations, Teacher! A terrible flood has occurred in the Mahanadi river in the Kendrapara district of Odisha state.",
-          "paragraphTranslation": "छात्र – नमो नमः आचार्य! ओडिशा राज्य के केन्द्रापडा जिले में महानदी में भयंकर बाढ़ (जलप्लाव) आई है।",
+          "sanskrit": "आचार्यः — नमस्ते छात्राः ! ह्यस्तनीं वार्तां श्रुतवन्तः किम्?",
+          "meaning": "Teacher: Hello students! Did you hear yesterday's news?",
+          "paragraphTranslation": "शिक्षक — नमस्ते छात्रों! क्या आपने कल का समाचार सुना है?",
           "words": [
+            "आचार्यः",
+            "नमस्ते",
             "छात्राः",
+            "ह्यस्तनीं",
+            "वार्तां",
+            "श्रुतवन्तः",
+            "किम्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "हिमानि (छात्रः) — नमो नमः आचार्य ! ओडिशा-राज्यस्य केन्द्रापडा-जनपदे महानद्यां भयङ्करः जलप्लावः सम्भूतः ।",
+          "meaning": "Himani (Student): Salutations Teacher! A terrible flood has occurred in the Mahanadi river in the Kendrapara district of Odisha state.",
+          "paragraphTranslation": "हिमानि (छात्र) — सादर प्रणाम आचार्य! ओडिशा राज्य के केंद्रपाड़ा जिले में महानदी में भयंकर बाढ़ आई है।",
+          "words": [
+            "हिमानि",
+            "छात्रः",
             "नमो",
             "नमः",
             "आचार्य",
@@ -28639,97 +28648,163 @@
           "kind": null
         },
         {
-          "sanskrit": "आचार्यः – आम् बालकाः! मया अपि वार्तापत्रे पठितं यत् तत्र सर्वत्र जलमेव जलं दृश्यते। गृह-पशु-वृक्षाः प्रवाहाद् नष्टाः अभवन्। चिकित्सालयाः घायलैः पूर्णाः सन्ति।",
-          "meaning": "Teacher: Yes, children! I too read in the newspaper that there is water visible everywhere. Houses, animals, and trees have been destroyed by the heavy current. Hospitals are completely filled with injured people.",
-          "paragraphTranslation": "आचार्य – हाँ बच्चों! मैंने भी समाचार पत्र में पढ़ा है कि वहाँ सब जगह जल ही जल दिखाई दे रहा है। घर, पशु और वृक्ष बाढ़ के तीव्र प्रवाह में नष्ट हो गए हैं। अस्पताल घायलों से भरे पड़े हैं।",
+          "sanskrit": "जलप्लावेन तत्र महती हानिः सञ्जाता ।",
+          "meaning": "A great loss has been caused by the flood there.",
+          "paragraphTranslation": "बाढ़ से वहां भारी नुकसान हुआ है।",
           "words": [
-            "आचार्यः",
-            "आम्",
-            "बालकाः",
-            "मया",
-            "अपि",
-            "वार्तापत्रे",
-            "पठितं",
-            "यत्",
+            "जलप्लावेन",
             "तत्र",
-            "सर्वत्र",
-            "जलमेव",
-            "जलं",
-            "दृश्यते",
-            "गृह",
-            "पशु",
-            "वृक्षाः",
-            "प्रवाहाद्",
-            "नष्टाः",
-            "अभवन्",
-            "चिकित्सालयाः",
-            "घायलैः",
-            "पूर्णाः",
-            "सन्ति"
-          ],
-          "kind": null
-        },
-        {
-          "sanskrit": "छात्रः १ – आचार्य! अस्माकं मनसि महती पीड़ा वर्तते। वयम् एतेषां पीडितजनानां साहाय्यार्थं किं कर्तुं शक्नुमः?",
-          "meaning": "Student 1: Teacher! There is great pain in our hearts. What can we do to help these distressed flood victims?",
-          "paragraphTranslation": "छात्र १ – आचार्य! हमारे मन में बहुत गहरा दुख (पीड़ा) है। हम इन पीड़ित लोगों की सहायता के लिए क्या कर सकते हैं?",
-          "words": [
-            "छात्रः",
-            "१",
-            "आचार्य",
-            "अस्माकं",
-            "मनसि",
             "महती",
-            "पीड़ा",
-            "वर्तते",
-            "वयम्",
-            "एतेषां",
-            "पीडितजनानां",
-            "साहाय्यार्थं",
-            "किं",
-            "कर्तुं",
-            "शक्नुमः"
+            "हानिः",
+            "सञ्जाता"
           ],
           "kind": null
         },
         {
-          "sanskrit": "आचार्यः – अतिशोभनम्! विपत्काले सेवा एव परमो धर्मः। प्राचीनकाले अपि अस्माकं देशे ईदृशाः महापुरुषाः अभवन् यैः स्वार्थं विहाय सर्वस्वं परोपकाराय दत्तम्। एतादृशः एव आसीत् ओडिशायाः ‘उत्कलमणिः’ गोपबन्धुदासः। सः अकुण्ठं सेवां कृत्वा अद्यापि जनमानसेषु समादृतोऽस्ति। भवन्तः सर्वे एतत् चित्रं पश्यन्तु। एषः अस्ति दीनबन्धुः गोपबन्धुः। सम्प्रति वयं तस्य विषये जानीमः।",
-          "meaning": "Teacher: Excellent! Serving others during a crisis is the ultimate duty (Dharma). Even in ancient times, there were such great men in our country who abandoned their self-interest and gave everything for the welfare of others. One such person was Gopabandhu Das, the 'Utkalmani' of Odisha. He rendered unconditional service and is deeply revered in the hearts of the people to this day. All of you, look at this picture. This is the friend of the poor, Gopabandhu. Let us now learn more about him.",
-          "paragraphTranslation": "आचार्य – बहुत सुंदर! संकट के समय सेवा करना ही सबसे बड़ा धर्म है। प्राचीन काल में भी हमारे देश में ऐसे महापुरुष हुए हैं जिन्होंने अपने स्वार्थ को छोड़कर परोपकार के लिए अपना सब कुछ दे दिया। ऐसे ही थे ओडिशा के 'उत्कलमणि' गोपबन्धु दास। उन्होंने निस्वार्थ भाव से समाज की सेवा की और वे आज भी जनमानस में अत्यधिक सम्मानित हैं। आप सभी इस चित्र को देखिए। ये ही हैं दीनबन्धु गोपबन्धु। आइए अब हम उनके विषय में विस्तार से जानते हैं।",
+          "sanskrit": "आचार्यः — आम, हिमानि ! त्वं सत्यं वदसि ।",
+          "meaning": "Teacher: Yes, Himani! You are speaking the truth.",
+          "paragraphTranslation": "शिक्षक — हाँ, हिमानि! तुम सच कह रही हो।",
           "words": [
             "आचार्यः",
-            "अतिशोभनम्",
-            "विपत्काले",
+            "आम",
+            "हिमानि",
+            "त्वं",
+            "सत्यं",
+            "वदसि"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "जलप्लावेन वासगृहाणि नष्टानि, केचित् अस्वस्थाः चिकित्सालये मृत्युना सह युध्यन्ते ।",
+          "meaning": "Due to the flood, residential houses have been destroyed, and some sick people are fighting for their lives in the hospital.",
+          "paragraphTranslation": "बाढ़ के कारण रहने के घर नष्ट हो गए हैं, कुछ बीमार लोग अस्पताल में मौत से जूझ रहे हैं।",
+          "words": [
+            "जलप्लावेन",
+            "वासगृहाणि",
+            "नष्टानि",
+            "केचित्",
+            "अस्वस्थाः",
+            "चिकित्सालये",
+            "मृत्युना",
+            "सह",
+            "युध्यन्ते"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अन्ये च अनाहारेण कष्टं सहन्ते ।",
+          "meaning": "And others are suffering greatly due to a lack of food.",
+          "paragraphTranslation": "और अन्य लोग भोजन न मिलने के कारण कष्ट सह रहे हैं।",
+          "words": [
+            "अन्ये",
+            "च",
+            "अनाहारेण",
+            "कष्टं",
+            "सहन्ते"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "बहवः गृहपालिताः पशवोऽपि नदीस्रोतसा प्रवाहिताः मृताश्च ।",
+          "meaning": "Many domestic animals were also washed away by the river currents and died.",
+          "paragraphTranslation": "बहुत से पालतू पशु भी नदी की धारा में बह गए हैं और मर गए हैं।",
+          "words": [
+            "बहवः",
+            "गृहपालिताः",
+            "पशवोऽपि",
+            "नदीस्रोतसा",
+            "प्रवाहिताः",
+            "मृताश्च"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अशोकः (छात्रः) — महोदय ! ते सम्प्रति अतिदुःखिताः भवेयुः खलु?",
+          "meaning": "Ashok (Student): Sir! They must be living in extreme sorrow right now, isn't it?",
+          "paragraphTranslation": "अशोक (छात्र) — महोदय! वे सब इस समय बहुत दुखी होंगे ना?",
+          "words": [
+            "अशोकः",
+            "छात्रः",
+            "महोदय",
+            "ते",
+            "सम्प्रति",
+            "अतिदुःखिताः",
+            "भवेयुः",
+            "खलु"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "पृष्ठम् ३७: दीनानां सेवा — उत्कलमणिः गोपबन्धुः (Compassion & Utkalmani Gopabandhu)",
+          "meaning": "Page 37: Selfless Service to Distressed Souls — Introducing Gopabandhu",
+          "paragraphTranslation": "पृष्ठ ३७: दुखियों की सेवा — उत्कलमणि गोपबन्धु का पावन परिचय",
+          "words": [
+            "पृष्ठम्",
+            "३७",
+            "दीनानां",
             "सेवा",
-            "एव",
-            "परमो",
-            "धर्मः",
-            "प्राचीनकाले",
-            "अपि",
-            "अस्माकं",
-            "देशे",
-            "ईदृशाः",
-            "महापुरुषाः",
-            "अभवन्",
-            "यैः",
-            "स्वार्थं",
-            "विहाय",
-            "सर्वस्वं",
-            "परोपकाराय",
-            "दत्तम्",
-            "एतादृशः",
-            "एव",
-            "आसीत्",
-            "ओडिशायाः",
             "उत्कलमणिः",
-            "गोपबन्धुदासः",
-            "सः",
+            "गोपबन्धुः"
+          ],
+          "kind": "chapter-header"
+        },
+        {
+          "sanskrit": "आचार्यः — सत्यम्, अशोक! ते सर्वे अतिदुःखेन जीवन्ति । अस्माभिः एतादृशानां दुःखितानां सहायता करणीया ।",
+          "meaning": "Teacher: True, Ashok! They all are living in extreme misery. We must help such distressed people.",
+          "paragraphTranslation": "शिक्षक — सच है, अशोक! वे सभी बहुत दुख में जी रहे हैं। हमें ऐसे दुखी लोगों की सहायता करनी चाहिए।",
+          "words": [
+            "आचार्यः",
+            "सत्यम्",
+            "अशोक",
+            "ते",
+            "सर्वे",
+            "अतिदुःखेन",
+            "जीवन्ति",
+            "अस्माभिः",
+            "एतादृशानां",
+            "दुःखितानां",
+            "सहायता",
+            "करणीया"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "यथा उत्कलमणिः गोपबन्धुः जलप्लावपीडितानाम् अकुण्ठं सेवां कृत्वा अद्यापि जनमानसेषु समादृतोऽस्ति ।",
+          "meaning": "Just like 'Utkalmani' Gopabandhu, who served the flood victims selflessly and is still highly respected in the minds and hearts of the people.",
+          "paragraphTranslation": "जैसे 'उत्कलमणि' गोपबन्धु ने बाढ़ पीड़ितों की नि:स्वार्थ भाव से सेवा करके आज भी लोगों के दिलों में आदरणीय स्थान बनाए रखा है।",
+          "words": [
+            "यथा",
+            "उत्कलमणिः",
+            "गोपबन्धुः",
+            "जलप्लावपीडितानाम्",
             "अकुण्ठं",
             "सेवां",
             "कृत्वा",
             "अद्यापि",
             "जनमानसेषु",
-            "समादृतोऽस्ति",
+            "समादृतोऽस्ति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "छात्रः — महोदय ! एषः गोपबन्धुः कः?",
+          "meaning": "Student: Sir! Who is this Gopabandhu?",
+          "paragraphTranslation": "छात्र — महोदय! यह गोपबन्धु कौन हैं?",
+          "words": [
+            "छात्रः",
+            "महोदय",
+            "एषः",
+            "गोपबन्धुः",
+            "कः"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "आचार्यः — भवन्तः सर्वे एतत् चित्रं पश्यन्तु । एषः अस्ति दीनबन्धुः गोपबन्धुः । सम्प्रति वयं तस्य विषये जानीमः ।",
+          "meaning": "Teacher: All of you please look at this picture. He is the friend of the poor, Gopabandhu. Now let us learn about him.",
+          "paragraphTranslation": "शिक्षक — आप सभी इस चित्र को देखिए। ये दीनबन्धु गोपबन्धु हैं। अब हम इनके विषय में जानते हैं।",
+          "words": [
+            "आचार्यः",
             "भवन्तः",
             "सर्वे",
             "एतत्",
@@ -28748,1008 +28823,1681 @@
           "kind": null
         },
         {
-          "sanskrit": "छात्रः २ – महोदय! एषः गोपबन्धुः कः? सः किं कृतवान्?",
-          "meaning": "Student 2: Sir! Who was this Gopabandhu? What did he accomplish?",
-          "paragraphTranslation": "छात्र २ – महोदय! ये गोपबन्धु कौन थे? उन्होंने क्या किया था?",
+          "sanskrit": "पृष्ठम् ३८: सत्यवादि-वनविद्यालये भोजने भिक्षुकक्रन्दनम् (The Banquet & the Beggar's Cry)",
+          "meaning": "Page 38: The Banquet at Satyavadi School and Gopabandhu's Compassionate Heart",
+          "paragraphTranslation": "पृष्ठ ३८: सत्यवादी वन विद्यालय में भोजन और भूखे भिखारी का रुदन",
           "words": [
-            "छात्रः",
-            "२",
-            "महोदय",
-            "एषः",
-            "गोपबन्धुः",
-            "कः",
-            "सः",
-            "किं",
-            "कृतवान्"
-          ],
-          "kind": null
-        },
-        {
-          "sanskrit": "भागः २: उत्कलमणेः गोपबन्धुदासस्य चरितम् (Biography of Utkalmani Gopabandhu Das — Pages 38–40)",
-          "meaning": "Part 2: Biography, Ideals, Open-Air Forest School & Supreme Humanitarian Sacrifice of Gopabandhu Das",
-          "paragraphTranslation": "भाग २: उत्कलमणि गोपबन्धु दास का पावन जीवन-चरित, वन-विद्यालय एवं अद्वितीय त्याग (पृष्ठ ३८–४०)",
-          "words": [
-            "भागः",
-            "२",
-            ":",
-            "उत्कलमणेः",
-            "गोपबन्धुदासस्य",
-            "चरितम्"
+            "पृष्ठम्",
+            "३८",
+            "सत्यवादि",
+            "वनविद्यालये",
+            "भोजने",
+            "भिक्षुकक्रन्दनम्"
           ],
           "kind": "chapter-header"
         },
         {
-          "sanskrit": "उत्कलमणिः गोपबन्धुदासः ओडिशा-राज्यस्य सुबर्णपुर-नामके ग्रामे १८७७ तमे ख्रिस्ताब्दे अक्टूबर-मासस्य नवमे दिनाङ्के जन्म अलभत। तस्य पिता श्रीदैत्यरीदासः माता च श्रीमती स्वर्णमयी देवी आस्ताम्।",
-          "meaning": "Utkalmani Gopabandhu Das was born on October 9, 1877, in a village named Subarnapur in Odisha state. His father was Shri Daityari Das and his mother was Shrimati Swarnamayi Devi.",
-          "paragraphTranslation": "उत्कलमणि गोपबन्धु दास का जन्म ओडिशा राज्य के सुबर्णपुर नामक गाँव में 9 अक्टूबर 1877 को हुआ था। उनके पिता श्री दैत्यरी दास और माता श्रीमती स्वर्णमयी देवी थीं।",
-          "words": [
-            "उत्कलमणिः",
-            "गोपबन्धुदासः",
-            "ओडिशा",
-            "राज्यस्य",
-            "सुबर्णपुर",
-            "नामके",
-            "ग्रामे",
-            "१८७७",
-            "तमे",
-            "ख्रिस्ताब्दे",
-            "अक्टूबर",
-            "मासस्य",
-            "नवमे",
-            "दिनाङ्के",
-            "जन्म",
-            "अलभत",
-            "तस्य",
-            "पिता",
-            "श्रीदैत्यरीदासः",
-            "माता",
-            "च",
-            "श्रीमती",
-            "स्वर्णमयी",
-            "देवी",
-            "आस्ताम्"
-          ],
-          "kind": null
-        },
-        {
-          "sanskrit": "बाल्यकालात् एव गोपबन्धुः दयालुः, परोपकारी, मेधावी च आसीत्। उच्चशिक्षां प्राप्य सः समाजस्य दीन-दरिद्र-पीडितजनानां सेवारूपं व्रतं स्वीकृतवान्।",
-          "meaning": "From his early childhood, Gopabandhu was compassionate, benevolent, and highly intelligent. After completing his higher education, he embraced a lifelong vow to serve the poor, destitute, and suffering sections of society.",
-          "paragraphTranslation": "बचपन से ही गोपबन्धु दयालु, परोपकारी और बहुत बुद्धिमान (मेधावी) थे। उच्च शिक्षा प्राप्त करके उन्होंने समाज के गरीब, असहाय और पीड़ित लोगों की सेवा करने का व्रत लिया।",
-          "words": [
-            "बाल्यकालात्",
-            "एव",
-            "गोपबन्धुः",
-            "दयालुः",
-            "परोपकारी",
-            "मेधावी",
-            "च",
-            "आसीत्",
-            "उच्चशिक्षां",
-            "प्राप्य",
-            "सः",
-            "समाजस्य",
-            "दीन",
-            "दरिद्र",
-            "पीडितजनानां",
-            "सेवारूपं",
-            "व्रतं",
-            "स्वीकृतवान्"
-          ],
-          "kind": null
-        },
-        {
-          "sanskrit": "१९०९ तमे वर्षे सः साखीगोपाल-स्थाने 'सत्यवादी वनविद्यालयः' इति संस्थापनं कृतवान्। तत्र वृक्षाणां अधः छात्राः प्राकृत-वातावरणे शिक्षां लभन्ते स्म। सः मन्यते स्म यत् 'मानवसेवा एव ईश्वरसेवा अस्ति।'",
-          "meaning": "In the year 1909, he established the 'Satyavadi Vana Vidyalaya' (Open-air Forest School) at a place called Sakhigopal. There, under the shade of trees, students received education in a natural environment. He firmly believed that 'service to humanity is service to God.'",
-          "paragraphTranslation": "वर्ष 1909 में उन्होंने साखीगोपाल नामक स्थान पर 'सत्यवादी वन विद्यालय' की स्थापना की। वहाँ पेड़ों के नीचे छात्र प्राकृतिक वातावरण में शिक्षा प्राप्त करते थे। उनका मानना था कि 'मानव सेवा ही ईश्वर सेवा है।'",
-          "words": [
-            "१९०९",
-            "तमे",
-            "वर्षे",
-            "सः",
-            "साखीगोपाल",
-            "स्थाने",
-            "सत्यवादी",
-            "वनविद्यालयः",
-            "इति",
-            "संस्थापनं",
-            "कृतवान्",
-            "तत्र",
-            "वृक्षाणां",
-            "अधः",
-            "छात्राः",
-            "प्राकृत",
-            "वातावरणे",
-            "शिक्षां",
-            "लभन्ते",
-            "स्म",
-            "सः",
-            "मन्यते",
-            "स्म",
-            "यत्",
-            "मानवसेवा",
-            "एव",
-            "ईश्वरसेवा",
-            "अस्ति"
-          ],
-          "kind": null
-        },
-        {
-          "sanskrit": "यदा ओडिशा-राज्ये दुर्भिक्षः (अकालः) जलप्लावः वा अभवत्, तदा सः बुभुक्षितानां रोगिणां च कृते अकुण्ठं सेवां करोति स्म।",
-          "meaning": "Whenever Odisha state faced famine or floods, he rendered unconditional service to the hungry and the sick.",
-          "paragraphTranslation": "जब भी ओडिशा राज्य में अकाल (दुर्भिक्ष) या भयंकर बाढ़ आती थी, तब वे भूखे और बीमार लोगों की निस्वार्थ भाव से सेवा करते थे।",
-          "words": [
-            "यदा",
-            "ओडिशा",
-            "राज्ये",
-            "दुर्भिक्षः",
-            "अकालः",
-            "जलप्लावः",
-            "वा",
-            "अभवत्",
-            "तदा",
-            "सः",
-            "बुभुक्षितानां",
-            "रोगिणां",
-            "च",
-            "कृते",
-            "अकुण्ठं",
-            "सेवां",
-            "करोति",
-            "स्म"
-          ],
-          "kind": null
-        },
-        {
-          "sanskrit": "एकदा तस्य पुत्रः तीव्रेण ज्वरेण पीड़ितः आसीत्, अपरत्र च ग्रामे जनाः जलप्लावपीडिताः आसन्। सः रुग्णपुत्रं विहाय समाजसेवार्थं जलप्लावपीडितक्षेत्रं गतवान्। धन्योऽयं त्यागमयः महापुरुषः!",
-          "meaning": "Once, while his own son was suffering from a severe fever, the people in the village were concurrently devastated by floods. He left his sick son and went directly to the flood-affected region to serve society. Blessed is this self-sacrificing great soul!",
-          "paragraphTranslation": "एक बार उनका स्वयं का पुत्र तेज़ बुखार से पीड़ित था, और दूसरी ओर गाँव के लोग बाढ़ से त्रस्त थे। वे अपने बीमार पुत्र को छोड़कर समाज सेवा के लिए बाढ़ पीड़ित क्षेत्र में चले गए। धन्य है यह त्यागमयी महापुरुष!",
+          "sanskrit": "एकदा आचार्यहरिहरदासः सत्यवादि-वनविद्यालयस्य सर्वान् अध्यापकान् भोजनाय आमन्त्रितवान्।",
+          "meaning": "Once, Acharya Harihardas invited all the teachers of Satyavadi Van Vidyalaya for a meal.",
+          "paragraphTranslation": "एक बार आचार्य हरिहरदास ने सत्यवादी वन विद्यालय के सभी अध्यापकों को भोजन पर आमंत्रित किया।",
           "words": [
             "एकदा",
-            "तस्य",
-            "पुत्रः",
-            "तीव्रेण",
-            "ज्वरेण",
-            "पीड़ितः",
-            "आसीत्",
-            "अपरत्र",
-            "च",
-            "ग्रामे",
-            "जनाः",
-            "जलप्लावपीडिताः",
-            "आसन्",
-            "सः",
-            "रुग्णपुत्रं",
-            "विहाय",
-            "समाजसेवार्थं",
-            "जलप्लावपीडितक्षेत्रं",
-            "गतवान्",
-            "धन्योऽयं",
-            "त्यागमयः",
-            "महापुरुषः"
+            "आचार्यहरिहरदासः",
+            "सत्यवादि",
+            "वनविद्यालयस्य",
+            "सर्वान्",
+            "अध्यापकान्",
+            "भोजनाय",
+            "आमन्त्रितवान्"
           ],
           "kind": null
         },
         {
-          "sanskrit": "सः अवदत् — 'मम वपुः (शरीरं) देशहिताय पततु, देशस्य प्रगत्यै मम सर्वस्वं लीनं भवतु।' इति।",
-          "meaning": "He famously declared: 'Let my body fall for the welfare of the nation, and let my everything be dissolved for the progress of the country.'",
-          "paragraphTranslation": "उन्होंने कहा था — 'मेरा शरीर देश के कल्याण के लिए गिर जाए (नष्ट हो जाए), देश की प्रगति के लिए मेरा सब कुछ समर्पित हो जाए।'",
+          "sanskrit": "आमन्त्रिताः सर्वे अतिथयः हस्तपादं प्रक्षालयित्वा आसनेषु उपविष्टवन्तः ।",
+          "meaning": "All the invited guests washed their hands and feet and sat on the seats.",
+          "paragraphTranslation": "आमंत्रित सभी अतिथि हाथ-पैर धोकर आसनों पर बैठ गए।",
           "words": [
-            "सः",
-            "अवदत्",
-            "मम",
-            "वपुः",
-            "शरीरं",
-            "देशहिताय",
-            "पततु",
-            "देशस्य",
-            "प्रगत्यै",
-            "मम",
-            "सर्वस्वं",
-            "लीनं",
-            "भवतु",
-            "इति"
+            "आमन्त्रिताः",
+            "सर्वे",
+            "अतिथयः",
+            "हस्तपादं",
+            "प्रक्षालयित्वा",
+            "आसनेषु",
+            "उपविष्टवन्तः"
           ],
           "kind": null
         },
         {
-          "sanskrit": "शब्दार्थाः (Complete Chapter Vocabulary & Synonyms — Pages 41–42)",
-          "meaning": "Complete Vocabulary List of All 12 Key Sanskrit Terms, Synonyms, Hindi Meanings & English Translations",
-          "paragraphTranslation": "शब्दार्थाः — पाठ के समस्त १२ महत्वपूर्ण शब्द, संस्कृत पर्याय, हिन्दी एवं आंग्ल अर्थ (पृष्ठ ४१–४२)",
+          "sanskrit": "बहूनि सुस्वादूनि व्यञ्जनानि कदलीपत्रेषु परिवेषितानि ।",
+          "meaning": "Many delicious dishes were served on banana leaves.",
+          "paragraphTranslation": "केले के पत्तों पर कई स्वादिष्ट व्यंजन परोसे गए।",
+          "words": [
+            "बहूनि",
+            "सुस्वादूनि",
+            "व्यञ्जनानि",
+            "कदलीपत्रेषु",
+            "परिवेषितानि"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "हसन गोपबन्धुरवदत् – अरे ! भोजनस्यातिदौर्लभ्यं जीवनाय सुखप्रदम्। तदर्थं भोजनं कुर्याः मा शरीरे दयां कुरु ॥",
+          "meaning": "Smiling, Gopabandhu said humorously: \"Oh! Scarcity of food makes it sweet for life; therefore eat heartily, do not spare pity on the body!\"",
+          "paragraphTranslation": "मुस्कुराते हुए गोपबन्धु ने कहा – अरे! भोजन का अत्यंत दुर्लभ होना जीवन के लिए सुखदायक होता है। इसलिए भोजन करना चाहिए, शरीर पर दया नहीं करनी चाहिए (भरपेट खाना चाहिए)।",
+          "words": [
+            "हसन",
+            "गोपबन्धुरवदत्",
+            "अरे",
+            "भोजनस्यातिदौर्लभ्यं",
+            "जीवनाय",
+            "सुखप्रदम्",
+            "तदर्थं",
+            "भोजनं",
+            "कुर्याः",
+            "मा",
+            "शरीरे",
+            "दयां",
+            "कुरु"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "एतच्छ्रुत्वा सर्वे उच्चैः च हसितवन्तः ।",
+          "meaning": "Hearing this wit, everyone laughed out loud.",
+          "paragraphTranslation": "यह सुनकर सभी ज़ोर से हँस पड़े।",
+          "words": [
+            "एतच्छ्रुत्वा",
+            "सर्वे",
+            "उच्चैः",
+            "च",
+            "हसितवन्तः"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "तदानीमेव बहिः कश्चन करुणध्वनिः गोपबन्धोः कर्णयोः अगूंजत् – “मातः, मातः! बुभुक्षितोऽस्मि, कृपया किञ्चित् भोजनं देहि । दिनत्रयात् किमपि न भुक्तम् । भोजनं देहि मातः! भोजनं देहि । आँ आँ . . .” इति क्रन्दनध्वनिं श्रुत्वैव दयाविगलितहृदयः गोपबन्धुः अश्रुपूर्णनयनोऽभवत्।",
+          "meaning": "Just then, a pitiful cry echoed in Gopabandhu's ears: \"Mother, mother! I am starving, please give some food. I haven't eaten for three days...\" Hearing this crying sound, Gopabandhu's heart melted with compassion and his eyes welled with tears.",
+          "paragraphTranslation": "उसी समय बाहर से एक करुण आवाज़ गूँजी – \"माता, माता! मैं भूखा हूँ, कृपया थोड़ा भोजन दे दो। तीन दिनों से कुछ भी नहीं खाया है।\" इस रुदन को सुनते ही दया से पिघले हृदय वाले गोपबन्धु की आँखें आँसुओं से भर गईं।",
+          "words": [
+            "तदानीमेव",
+            "बहिः",
+            "कश्चन",
+            "करुणध्वनिः",
+            "गोपबन्धोः",
+            "कर्णयोः",
+            "अगूंजत्",
+            "मातः",
+            "बुभुक्षितोऽस्मि",
+            "कृपया",
+            "किञ्चित्",
+            "भोजनं",
+            "देहि",
+            "दिनत्रयात्",
+            "किमपि",
+            "न",
+            "भुक्तम्",
+            "क्रन्दनध्वनिं",
+            "श्रुत्वैव",
+            "दयाविगलितहृदयः",
+            "गोपबन्धुः",
+            "अश्रुपूर्णनयनोऽभवत्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "किमपि अविचिन्त्य झटिति स्वस्मै परिवेषितं भोजनं हस्ते गृहीत्वा बहिरागतवान्। भिक्षुकञ्च तद्भोजितवान्।",
+          "meaning": "Without second thoughts, he quickly took his own served food in his hands, walked outside, and lovingly fed the beggar.",
+          "paragraphTranslation": "उन्होंने बिना कुछ सोचे तुरंत अपने लिए परोसा गया भोजन हाथ में लिया और बाहर आकर वह भोजन उस भिखारी को खिला दिया।",
+          "words": [
+            "किमपि",
+            "अविचिन्त्य",
+            "झटिति",
+            "स्वस्मै",
+            "परिवेषितं",
+            "भोजनं",
+            "हस्ते",
+            "गृहीत्वा",
+            "बहिरागतवान्",
+            "भिक्षुकञ्च",
+            "तद्भोजितवान्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "पृष्ठम् ३९: त्यागमयजीवनम् — समाजसेवा, स्वाधीनतासङ्ग्रामः कारावासश्च (Sacrifice & Patriotism)",
+          "meaning": "Page 39: Life of Utkalmani — Social Upliftment, Forest School, and Independence Movement",
+          "paragraphTranslation": "पृष्ठ ३९: त्यागमय जीवन — समाज सेवा, वन विद्यालय, स्वतंत्रता आंदोलन और कारावास",
+          "words": [
+            "पृष्ठम्",
+            "३९",
+            "त्यागमयजीवनम्",
+            "समाजसेवा",
+            "स्वाधीनतासङ्ग्रामः",
+            "कारावासश्च"
+          ],
+          "kind": "chapter-header"
+        },
+        {
+          "sanskrit": "असौ महान् समाजसेवकः आसीत् गोपबन्धुदासः। असौ सत्यवादि-वनविद्यालयस्य अध्यापकः, प्रसिद्धेषु पञ्चमित्रेषु अन्यतमः स्वतन्त्रतासङ्ग्रामी चासीत्।",
+          "meaning": "Gopabandhu Das was a towering social worker. He was a master at Satyavadi Van Vidyalaya, one of the celebrated 'Panchamitras', and an ardent freedom fighter.",
+          "paragraphTranslation": "यह गोपबन्धु दास एक महान समाज सेवक थे। वे सत्यवादी वन विद्यालय के अध्यापक, प्रसिद्ध 'पंचमित्रों' में से एक और स्वतंत्रता सेनानी थे।",
+          "words": [
+            "असौ",
+            "महान्",
+            "समाजसेवकः",
+            "आसीत्",
+            "गोपबन्धुदासः",
+            "असौ",
+            "सत्यवादि",
+            "वनविद्यालयस्य",
+            "अध्यापकः",
+            "प्रसिद्धेषु",
+            "पञ्चमित्रेषु",
+            "अन्यतमः",
+            "स्वतन्त्रतासङ्ग्रामी",
+            "चासीत्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "ओडिशाराज्यस्य पुरीजनपदस्य साक्षीगोपालसमीपे सुआण्डो-ग्रामे जन्म लब्धवान्। अध्ययनकालादेव स दरिद्राणां रोगिणां च सेवामकरोत्।",
+          "meaning": "He was born in Suando village near Sakshigopal in the Puri district of Odisha state. Right from his student days, he dedicated himself to serving the poor and the ailing.",
+          "paragraphTranslation": "उन्होंने ओड़िशा राज्य के पुरी जिले में साक्षीगोपाल के पास सुआण्डो गाँव में जन्म लिया था। वे छात्र जीवन से ही गरीबों और बीमारों की सेवा करते थे।",
+          "words": [
+            "ओडिशाराज्यस्य",
+            "पुरीजनपदस्य",
+            "साक्षीगोपालसमीपे",
+            "सुआण्डो",
+            "ग्रामे",
+            "जन्म",
+            "लब्धवान्",
+            "अध्ययनकालादेव",
+            "स",
+            "दरिद्राणां",
+            "रोगिणां",
+            "च",
+            "सेवामकरोत्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "सत्यवादि-वनविद्यालये स छात्रान् निःशुल्कम् अपाठयत्। निरक्षरतादूरीकरणाय सः सततं यतते स्म । कार्पासवस्त्रनिर्माणाय सः स्वयमेव सूत्रप्रस्तुतिमकरोत्।",
+          "meaning": "In Satyavadi Forest School, he taught pupils free of cost. He worked ceaselessly to eradicate illiteracy, and spun cotton thread with his own hands to promote indigenous garments.",
+          "paragraphTranslation": "सत्यवादी वन विद्यालय में वे छात्रों को मुफ्त पढ़ाते थे। वे निरक्षरता दूर करने के लिए लगातार प्रयास करते रहे। सूती कपड़े बनाने के लिए वे स्वयं ही सूत कातते थे।",
+          "words": [
+            "सत्यवादि",
+            "वनविद्यालये",
+            "स",
+            "छात्रान्",
+            "निःशुल्कम्",
+            "अपाठयत्",
+            "निरक्षरतादूरीकरणाय",
+            "सः",
+            "सततं",
+            "यतते",
+            "स्म",
+            "कार्पासवस्त्रनिर्माणाय",
+            "सः",
+            "स्वयमेव",
+            "सूत्रप्रस्तुतिमकरोत्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "जन्मभूमेः दुर्दशामवलोक्य स सर्वदा चिन्ताकुलो भवति स्म । महात्मगान्धेः प्रेरणया भारतीयस्वतन्त्रतान्दोलने गोपबन्धुः भागं गृहीतवान्। सः वर्षद्वयं यावत् कारावासं प्राप्तवान्।",
+          "meaning": "Beholding the plight of his motherland, he was ever anxious. Inspired by Mahatma Gandhi, Gopabandhu joined the Indian freedom movement and suffered two years of rigorous imprisonment.",
+          "paragraphTranslation": "अपनी मातृभूमि की दुर्दशा देखकर वे हमेशा चिंतित रहते थे। महात्मा गांधी की प्रेरणा से गोपबन्धु ने भारतीय स्वतंत्रता आंदोलन में भाग लिया। उन्हें दो वर्ष का कारावास मिला।",
+          "words": [
+            "जन्मभूमेः",
+            "दुर्दशामवलोक्य",
+            "स",
+            "सर्वदा",
+            "चिन्ताकुलो",
+            "भवति",
+            "स्म",
+            "महात्मगान्धेः",
+            "प्रेरणया",
+            "भारतीयस्वतन्त्रतान्दोलने",
+            "गोपबन्धुः",
+            "भागं",
+            "गृहीतवान्",
+            "सः",
+            "वर्षद्वयं",
+            "यावत्",
+            "कारावासं",
+            "प्राप्तवान्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "कारागारे निवसन सः ‘बन्दीर आत्मकथा’, ‘कारा-कविता’, ‘धर्मपद’, ‘गो-माहात्म्य’, ‘नचिकेता-उपाख्यान’ इत्यादीनि बहु प्रेरणादायीनि पुस्तकानि ओडिआभाषया विरचितवान्।",
+          "meaning": "While in jail, he authored many inspiring works in the Odia tongue: Bandira Atmakatha, Kara-Kavita, Dharmapada, Go-Mahatmya, and Nachiketa-Upakhyan.",
+          "paragraphTranslation": "जेल में रहते हुए उन्होंने ओड़िआ भाषा में 'बन्दीर आत्मकथा', 'कारा-कविता', 'धर्मपद', 'गो-माहात्म्य', 'नचिकेता-उपाख्यान' जैसी कई प्रेरणादायक पुस्तकें लिखीं।",
+          "words": [
+            "कारागारे",
+            "निवसन",
+            "सः",
+            "बन्दीर",
+            "आत्मकथा",
+            "कारा",
+            "कविता",
+            "धर्मपद",
+            "गो",
+            "माहात्म्य",
+            "नचिकेता",
+            "उपाख्यान",
+            "इत्यादीनि",
+            "बहु",
+            "प्रेरणादायीनि",
+            "पुस्तकानि",
+            "ओडिआभाषया",
+            "विरचितवान्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "सर्वदा स्वदेशस्यैव वस्त्राणां वस्तूनां च उपयोगं कृतवान्। मरणासन्नं स्वपुत्रमपि विहाय जलप्लावपीडितान् भारतमातः सहस्रशः पुत्रान् उद्धर्तुं गृहात् बहिः निर्गतः समाजमसेवत च ।",
+          "meaning": "He steadfastly used swadeshi garments and goods. Leaving behind even his dying son, he stepped forth to rescue thousands of flood-devastated sons of Mother India and served society.",
+          "paragraphTranslation": "वे हमेशा अपने देश के ही कपड़ों और वस्तुओं का उपयोग करते थे। मृत्यु की कगार पर खड़े अपने बेटे को भी छोड़कर, वे बाढ़ पीड़ित भारत माता के हजारों पुत्रों की रक्षा के लिए घर से बाहर निकल पड़े और समाज की सेवा की।",
+          "words": [
+            "सर्वदा",
+            "स्वदेशस्यैव",
+            "वस्त्राणां",
+            "वस्तूनां",
+            "च",
+            "उपयोगं",
+            "कृतवान्",
+            "मरणासन्नं",
+            "स्वपुत्रमपि",
+            "विहाय",
+            "जलप्लावपीडितान्",
+            "भारतमातः",
+            "सहस्रशः",
+            "पुत्रान्",
+            "उद्धर्तुं",
+            "गृहात्",
+            "बहिः",
+            "निर्गतः",
+            "समाजमसेवत",
+            "च"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "देशसेवातत्परस्य गोपबन्धुवर्यस्य प्रसिद्धं प्रेरणादायकं वचनमधुनापि जनमानसेषु राष्ट्रभक्तिं जागरयति ।",
+          "meaning": "The famous inspiring words of the venerable Gopabandhu awaken ardent patriotism in the hearts of countrymen to this very day.",
+          "paragraphTranslation": "देश सेवा में तत्पर रहने वाले आदरणीय गोपबन्धु का प्रसिद्ध प्रेरणादायक कथन आज भी लोगों के मनों में देशभक्ति जगाता है।",
+          "words": [
+            "देशसेवातत्परस्य",
+            "गोपबन्धुवर्यस्य",
+            "प्रसिद्धं",
+            "प्रेरणादायकं",
+            "वचनमधुनापि",
+            "जनमानसेषु",
+            "राष्ट्रभक्तिं",
+            "जागरयति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "पृष्ठम् ४१: राष्ट्रभक्तिश्लोकः उत्कलमणि-उपाधिः च (Patriotic Shloka & Title of Utkalmani)",
+          "meaning": "Page 41: Gopabandhu's Immortal Verse of Self-Offering and the Conferred Honor",
+          "paragraphTranslation": "पृष्ठ ४१: राष्ट्रभक्ति का अमर श्लोक और उत्कलमणि की उपाधि",
+          "words": [
+            "पृष्ठम्",
+            "४१",
+            "राष्ट्रभक्तिश्लोकः",
+            "उत्कलमणि",
+            "उपाधिः",
+            "च"
+          ],
+          "kind": "chapter-header"
+        },
+        {
+          "sanskrit": "स्वदेशभूमौ मम लीयतां तनुः, स्वदेशलोकास्तदनु प्रयान्तु नु। स्वराज्यमार्गे यदि गर्तमालिका, ममास्थिमांसैः परिपूरितास्तु सा ॥",
+          "meaning": "\"May my body dissolve into the soil of my motherland, and let my countrymen march forth over it! If there be any pit of obstacles upon the path of Swaraj, may it be filled to the brim with my bones and flesh!\"",
+          "paragraphTranslation": "मेरे देश की धरती में मेरा शरीर विलीन हो जाए और मेरे देश के लोग उसके ऊपर से आगे बढ़ें। यदि स्वराज्य के मार्ग में कोई गड्ढों की कतार (बाधाएँ) हो, तो वह मार्ग मेरी हड्डियों और मांस से पूरी तरह भर जाए।",
+          "words": [
+            "स्वदेशभूमौ",
+            "मम",
+            "लीयतां",
+            "तनुः",
+            "स्वदेशलोकास्तदनु",
+            "प्रयान्तु",
+            "नु",
+            "स्वराज्यमार्गे",
+            "यदि",
+            "गर्तमालिका",
+            "ममास्थिमांसैः",
+            "परिपूरितास्तु",
+            "सा"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "भावार्थः — स्वदेशस्य भूमिभागे मम शरीरं विलीनं भवतु। देशवासिनः मम अनुसरणं कुर्वन्तु । देशस्य स्वतन्त्रतानिमित्तं यत्र यत्र प्रतिबन्धकाः गर्ताः सन्ति, ते सर्वे गर्ताः मम अस्थिभिः मांसैश्च परिपूर्णाः भवन्तु ।",
+          "meaning": "Essence: Let my mortal frame be merged in the land of my country. Let all citizens tread forward upon it. Wherever obstacles lie in freedom's way, let those pits be filled by my sacrifice.",
+          "paragraphTranslation": "भावार्थ: मेरे देश की भूमि पर मेरा शरीर विलीन हो जाए। देशवासी मेरा अनुसरण करें। देश की आज़ादी के मार्ग में जहाँ-जहाँ रुकावट रूपी गड्ढे हैं, वे सभी गड्ढे मेरी हड्डियों और मांस से भर जाएँ।",
+          "words": [
+            "भावार्थः",
+            "स्वदेशस्य",
+            "भूमिभागे",
+            "मम",
+            "शरीरं",
+            "विलीनं",
+            "भवतु",
+            "देशवासिनः",
+            "मम",
+            "अनुसरणं",
+            "कुर्वन्तु",
+            "देशस्य",
+            "स्वतन्त्रतानिमित्तं",
+            "यत्र",
+            "यत्र",
+            "प्रतिबन्धकाः",
+            "गर्ताः",
+            "सन्ति",
+            "ते",
+            "सर्वे",
+            "गर्ताः",
+            "मम",
+            "अस्थिभिः",
+            "मांसैश्च",
+            "परिपूर्णाः",
+            "भवन्तु"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "असौ सत्यवादि-वनविद्यालयस्य, दरिद्रनारायणसेवा-सङ्घस्य, सत्यवादि-मुद्रणालयस्य, समाजः इति दैनिक-वार्तापत्रस्य च प्रतिष्ठाता आसीत्।",
+          "meaning": "He was the venerated founder of Satyavadi Forest School, Daridranarayan Seva Sangha, Satyavadi Printing Press, and the daily newspaper 'Samaja'.",
+          "paragraphTranslation": "वे सत्यवादी वन विद्यालय, दरिद्रनारायण सेवा संघ, सत्यवादी प्रिंटिंग प्रेस और 'समाज' नामक दैनिक समाचार पत्र के संस्थापक थे।",
+          "words": [
+            "असौ",
+            "सत्यवादि",
+            "वनविद्यालयस्य",
+            "दरिद्रनारायणसेवा",
+            "सङ्घस्य",
+            "सत्यवादि",
+            "मुद्रणालयस्य",
+            "समाजः",
+            "इति",
+            "दैनिक",
+            "वार्तापत्रस्य",
+            "च",
+            "प्रतिष्ठाता",
+            "आसीत्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "समाजः इति दिनपत्रिका शताधिकवर्षेभ्यः अधुनापि प्रतिदिनं प्रकाश्यते।",
+          "meaning": "The 'Samaja' daily newspaper continues to be published every day after more than a century.",
+          "paragraphTranslation": "'समाज' अखबार सौ से अधिक वर्षों से आज भी प्रतिदिन प्रकाशित होता है।",
+          "words": [
+            "समाजः",
+            "इति",
+            "दिनपत्रिका",
+            "शताधिकवर्षेभ्यः",
+            "अधुनापि",
+            "प्रतिदिनं",
+            "प्रकाश्यते"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "समाजसेवायै देशसेवायै च तस्य असीमं त्यागमनुभूय वैज्ञानिकः आचार्यः प्रफुल्लचन्द्ररायः गोपबन्धुम् ‘उत्कलमणिः’ इति उपाधिना सम्मानितवान्।",
+          "meaning": "Witnessing his boundless sacrifice for the upliftment of society and nation, the renowned scientist Acharya Prafulla Chandra Ray bestowed upon Gopabandhu the title 'Utkalmani' (The Jewel of Odisha).",
+          "paragraphTranslation": "समाज सेवा और देश सेवा के लिए उनके असीम त्याग को देखते हुए प्रख्यात वैज्ञानिक आचार्य प्रफुल्ल चंद्र राय ने गोपबन्धु को 'उत्कलमणि' की उपाधि से सम्मानित किया।",
+          "words": [
+            "समाजसेवायै",
+            "देशसेवायै",
+            "च",
+            "तस्य",
+            "असीमं",
+            "त्यागमनुभूय",
+            "वैज्ञानिकः",
+            "आचार्यः",
+            "प्रफुल्लचन्द्ररायः",
+            "गोपबन्धुम्",
+            "उत्कलमणिः",
+            "इति",
+            "उपाधिना",
+            "सम्मानितवान्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "उत्कलमणिरित्याख्यः प्रसिद्धो लोकसेवकः । प्रणम्यो देशभक्तोऽयं गोपबन्धुर्महामनाः ॥",
+          "meaning": "Celebrated as Utkalmani, this foremost servant of humanity, the great-minded patriot Gopabandhu, is worthy of universal adoration.",
+          "paragraphTranslation": "उत्कलमणि के नाम से प्रसिद्ध वह महान लोकसेवक और उदार देशभक्त गोपबन्धु सर्वथा प्रणाम करने योग्य हैं।",
+          "words": [
+            "उत्कलमणिरित्याख्यः",
+            "प्रसिद्धो",
+            "लोकसेवकः",
+            "प्रणम्यो",
+            "देशभक्तोऽयं",
+            "गोपबन्धुर्महामनाः"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "शब्दार्थाः (Complete Chapter Vocabulary & Meanings — Pages 41–42)",
+          "meaning": "Complete Chapter Vocabulary and Synonyms",
+          "paragraphTranslation": "पाठ के सभी कठिन शब्द और उनके अर्थ (शब्दार्थ)",
           "words": [
             "शब्दार्थाः",
             "Complete",
             "Chapter",
-            "Vocabulary",
-            "Pages",
-            "41",
-            "-",
-            "42"
+            "Vocabulary"
           ],
           "kind": "glossary-header"
         },
         {
-          "sanskrit": "जलप्लावः",
-          "sanskrit_gloss": "महापूरः / अतिवृष्टि-जलप्रवाहः",
-          "hindi_gloss": "भयंकर बाढ़",
-          "meaning": "Severe flood",
+          "sanskrit": "जलप्लावपीडितानाम्",
+          "meaning": "जलप्लावपीडितानाम् = बाढ़ पीड़ितों की / of flood victims",
+          "paragraphTranslation": "जलप्लावपीडितानाम् — बाढ़ पीड़ितों की (of flood victims)",
           "words": [
-            "जलप्लावः",
-            "महापूरः",
-            "/",
-            "अतिवृष्टि",
-            "-",
-            "जलप्रवाहः"
+            "जलप्लावपीडितानाम्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "साहाय्यार्थम्",
+          "meaning": "साहाय्यार्थम् = सहायता के लिए / for help",
+          "paragraphTranslation": "साहाय्यार्थम् — सहायता के लिए (for help)",
+          "words": [
+            "साहाय्यार्थम्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "सभागारे",
+          "meaning": "सभागारे = सभागार (ऑडिटोरियम) में / in the auditorium",
+          "paragraphTranslation": "सभागारे — सभागार में (in the auditorium)",
+          "words": [
+            "सभागारे"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "ह्यस्तनीम्",
+          "meaning": "ह्यस्तनीम् = कल की (बीते हुए कल की) / yesterday's",
+          "paragraphTranslation": "ह्यस्तनीम् — कल की (yesterday's)",
+          "words": [
+            "ह्यस्तनीम्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "वार्ताम्",
+          "meaning": "वार्ताम् = समाचार को / news",
+          "paragraphTranslation": "वार्ताम् — समाचार को (news)",
+          "words": [
+            "वार्ताम्"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "सम्भूतः",
-          "sanskrit_gloss": "सञ्जातः / उत्पन्नः",
-          "hindi_gloss": "घटित हुआ / आया",
-          "meaning": "Occurred / happened",
+          "meaning": "सम्भूतः = आया है / occurred",
+          "paragraphTranslation": "सम्भूतः — आया है / घटित हुआ (occurred)",
           "words": [
-            "सम्भूतः",
-            "सञ्जातः",
-            "/",
-            "उत्पन्नः"
+            "सम्भूतः"
           ],
           "kind": "glossary"
         },
         {
-          "sanskrit": "वार्तापत्रे",
-          "sanskrit_gloss": "समाचारपत्रे",
-          "hindi_gloss": "समाचार पत्र में",
-          "meaning": "In the newspaper",
+          "sanskrit": "हानिः सञ्जाता",
+          "meaning": "हानिः सञ्जाता = नुकसान हुआ है / loss happened",
+          "paragraphTranslation": "हानिः सञ्जाता — नुकसान हुआ है (loss happened)",
           "words": [
-            "वार्तापत्रे",
-            "समाचारपत्रे"
+            "हानिः सञ्जाता"
           ],
           "kind": "glossary"
         },
         {
-          "sanskrit": "प्रवाहाद्",
-          "sanskrit_gloss": "तीव्रजलवेगात्",
-          "hindi_gloss": "तीव्र बहाव से",
-          "meaning": "By the heavy current",
+          "sanskrit": "वासगृहाणि",
+          "meaning": "वासगृहाणि = रहने के घर / residential houses",
+          "paragraphTranslation": "वासगृहाणि — रहने के घर (residential houses)",
           "words": [
-            "प्रवाहाद्",
-            "तीव्रजलवेगात्"
+            "वासगृहाणि"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "नष्टानि",
+          "meaning": "नष्टानि = नष्ट हो गए / destroyed",
+          "paragraphTranslation": "नष्टानि — नष्ट हो गए (destroyed)",
+          "words": [
+            "नष्टानि"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "अस्वस्थाः",
+          "meaning": "अस्वस्थाः = बीमार / sick",
+          "paragraphTranslation": "अस्वस्थाः — बीमार (sick)",
+          "words": [
+            "अस्वस्थाः"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "मृत्युना सह युध्यन्ते",
+          "meaning": "मृत्युना सह युध्यन्ते = मौत से लड़ रहे हैं / fighting with death",
+          "paragraphTranslation": "मृत्युना सह युध्यन्ते — मौत से लड़ रहे हैं (fighting with death)",
+          "words": [
+            "मृत्युना सह युध्यन्ते"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "अनाहारेण",
+          "meaning": "अनाहारेण = बिना भोजन के / due to lack of food",
+          "paragraphTranslation": "अनाहारेण — बिना भोजन के (due to lack of food)",
+          "words": [
+            "अनाहारेण"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "नदीस्रोतसा",
+          "meaning": "नदीस्रोतसा = नदी के प्रवाह से / by river currents",
+          "paragraphTranslation": "नदीस्रोतसा — नदी के प्रवाह से (by river currents)",
+          "words": [
+            "नदीस्रोतसा"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "प्रवाहिताः",
+          "meaning": "प्रवाहिताः = बह गए / washed away",
+          "paragraphTranslation": "प्रवाहिताः — बह गए (washed away)",
+          "words": [
+            "प्रवाहिताः"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "सम्प्रति",
+          "meaning": "सम्प्रति = इस समय / at present",
+          "paragraphTranslation": "सम्प्रति — इस समय (at present)",
+          "words": [
+            "सम्प्रति"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "करणीया",
+          "meaning": "करणीया = करनी चाहिए / should be done",
+          "paragraphTranslation": "करणीया — करनी चाहिए (should be done)",
+          "words": [
+            "करणीया"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "अकुण्ठम्",
-          "sanskrit_gloss": "निस्वार्थभावेन / पूर्णरूपेण",
-          "hindi_gloss": "बिना किसी संकोच के / निस्वार्थ",
-          "meaning": "Unconditional / unhesitating",
+          "meaning": "अकुण्ठम् = बिना किसी संकोच के (निस्वार्थ) / generously, unconditionally",
+          "paragraphTranslation": "अकुण्ठम् — बिना संकोच के (unconditionally)",
           "words": [
-            "अकुण्ठम्",
-            "निस्वार्थभावेन",
-            "/",
-            "पूर्णरूपेण"
+            "अकुण्ठम्"
           ],
           "kind": "glossary"
         },
         {
-          "sanskrit": "सङ्स्थापनम्",
-          "sanskrit_gloss": "प्रतिष्ठापनम्",
-          "hindi_gloss": "स्थापना करना",
-          "meaning": "Establishing / founding",
+          "sanskrit": "जनमानसेषु",
+          "meaning": "जनमानसेषु = लोगों के मनों में / in the minds of people",
+          "paragraphTranslation": "जनमानसेषु — लोगों के मनों में (in the minds of people)",
           "words": [
-            "सङ्स्थापनम्",
-            "प्रतिष्ठापनम्"
+            "जनमानसेषु"
           ],
           "kind": "glossary"
         },
         {
-          "sanskrit": "दुर्भिक्षः",
-          "sanskrit_gloss": "अकालः / खाद्यसामग्र्यभावः",
-          "hindi_gloss": "अकाल",
-          "meaning": "Famine",
+          "sanskrit": "समादृतोऽस्ति",
+          "meaning": "समादृतोऽस्ति = आदर प्राप्त हैं / is highly respected",
+          "paragraphTranslation": "समादृतोऽस्ति — आदर प्राप्त हैं (is highly respected)",
           "words": [
-            "दुर्भिक्षः",
-            "अकालः",
-            "/",
-            "खाद्यसामग्र्यभावः"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "बुभुक्षितानाम्",
-          "sanskrit_gloss": "क्षुधितानाम्",
-          "hindi_gloss": "भूखों के लिए",
-          "meaning": "For the hungry people",
-          "words": [
-            "बुभुक्षितानाम्",
-            "क्षुधितानाम्"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "वपुः",
-          "sanskrit_gloss": "शरीरम्",
-          "hindi_gloss": "शरीर",
-          "meaning": "Body",
-          "words": [
-            "वपुः",
-            "शरीरम्"
-          ],
-          "kind": "glossary"
-        },
-        {
-          "sanskrit": "लीनम्",
-          "sanskrit_gloss": "विलीनम् / समर्पितम्",
-          "hindi_gloss": "विलीन होना / समर्पित",
-          "meaning": "Dissolved / merged",
-          "words": [
-            "लीनम्",
-            "विलीनम्",
-            "/",
-            "समर्पितम्"
+            "समादृतोऽस्ति"
           ],
           "kind": "glossary"
         },
         {
           "sanskrit": "दीनबन्धुः",
-          "sanskrit_gloss": "दरिद्राणां रक्षकः",
-          "hindi_gloss": "गरीबों का भाई/बन्धु",
-          "meaning": "Friend of the poor",
+          "meaning": "दीनबन्धुः = गरीबों के भाई (मित्र) / friend of the poor",
+          "paragraphTranslation": "दीनबन्धुः — गरीबों के बन्धु (friend of the poor)",
           "words": [
-            "दीनबन्धुः",
-            "दरिद्राणां",
-            "रक्षकः"
+            "दीनबन्धुः"
           ],
           "kind": "glossary"
         },
         {
-          "sanskrit": "मेधावी",
-          "sanskrit_gloss": "कुशाग्रबुद्धिः",
-          "hindi_gloss": "बहुत बुद्धिमान",
-          "meaning": "Highly intelligent",
+          "sanskrit": "आमन्त्रितवान्",
+          "meaning": "आमन्त्रितवान् = आमंत्रित किया / invited",
+          "paragraphTranslation": "आमन्त्रितवान् — आमंत्रित किया (invited)",
           "words": [
-            "मेधावी",
-            "कुशाग्रबुद्धिः"
+            "आमन्त्रितवान्"
           ],
           "kind": "glossary"
         },
         {
-          "sanskrit": "अभ्यासकार्यम् (Chapter Exercises & Complete Solved Solutions — Pages 43–44)",
-          "meaning": "Complete Solved Textbook Exercises: One-word Answers, Full Sentence Answers, Question Formulation, Fill-in-the-Blanks, and Sandhi Analysis",
-          "paragraphTranslation": "अभ्यासकार्यम् — संपूर्ण पाठ्यपुस्तक अभ्यास एवं समाधान (पृष्ठ ४३–४४)",
+          "sanskrit": "प्रक्षालयित्वा",
+          "meaning": "प्रक्षालयित्वा = धोकर / after washing",
+          "paragraphTranslation": "प्रक्षालयित्वा — धोकर (after washing)",
           "words": [
-            "अभ्यासकार्यम्",
-            "Chapter",
-            "Exercises",
-            "Pages",
-            "43",
-            "-",
-            "44"
+            "प्रक्षालयित्वा"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "उपविष्टवन्तः",
+          "meaning": "उपविष्टवन्तः = बैठ गए / sat down",
+          "paragraphTranslation": "उपविष्टवन्तः — बैठ गए (sat down)",
+          "words": [
+            "उपविष्टवन्तः"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "सुस्वादूनि व्यञ्जनानि",
+          "meaning": "सुस्वादूनि व्यञ्जनानि = स्वादिष्ट पकवान / delicious dishes",
+          "paragraphTranslation": "सुस्वादूनि व्यञ्जनानि — स्वादिष्ट पकवान (delicious dishes)",
+          "words": [
+            "सुस्वादूनि व्यञ्जनानि"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "कदलीपत्रेषु",
+          "meaning": "कदलीपत्रेषु = केले के पत्तों पर / on banana leaves",
+          "paragraphTranslation": "कदलीपत्रेषु — केले के पत्तों पर (on banana leaves)",
+          "words": [
+            "कदलीपत्रेषु"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "परिवेषितानि",
+          "meaning": "परिवेषितानि = परोसे गए / served",
+          "paragraphTranslation": "परिवेषितानि — परोसे गए (served)",
+          "words": [
+            "परिवेषितानि"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "दौर्लभ्यम्",
+          "meaning": "दौर्लभ्यम् = कठिनाई से प्राप्त होना / scarcity",
+          "paragraphTranslation": "दौर्लभ्यम् — कठिनाई से प्राप्त होना (scarcity)",
+          "words": [
+            "दौर्लभ्यम्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "अगूंजत्",
+          "meaning": "अगूंजत् = गूँजा / echoed",
+          "paragraphTranslation": "अगूंजत् — गूँजा (echoed)",
+          "words": [
+            "अगूंजत्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "बुभुक्षितोऽस्मि",
+          "meaning": "बुभुक्षितोऽस्मि = मैं भूखा हूँ / I am hungry",
+          "paragraphTranslation": "बुभुक्षितोऽस्मि — मैं भूखा हूँ (I am hungry)",
+          "words": [
+            "बुभुक्षितोऽस्मि"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "दिनत्रयात्",
+          "meaning": "दिनत्रयात् = तीन दिनों से / since three days",
+          "paragraphTranslation": "दिनत्रयात् — तीन दिनों से (since three days)",
+          "words": [
+            "दिनत्रयात्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "भुक्तम्",
+          "meaning": "भुक्तम् = खाया / eaten",
+          "paragraphTranslation": "भुक्तम् — खाया (eaten)",
+          "words": [
+            "भुक्तम्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "दयाविगलितहृदयः",
+          "meaning": "दयाविगलितहृदयः = करुणा से पिघले हृदय वाले / compassionate heart",
+          "paragraphTranslation": "दयाविगलितहृदयः — करुणा से पिघले हृदय वाले (compassionate heart)",
+          "words": [
+            "दयाविगलितहृदयः"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "अश्रुपूर्णनयनः",
+          "meaning": "अश्रुपूर्णनयनः = आँसुओं से भरी आँखों वाले / eyes filled with tears",
+          "paragraphTranslation": "अश्रुपूर्णनयनः — आँसुओं से भरी आँखों वाले (eyes filled with tears)",
+          "words": [
+            "अश्रुपूर्णनयनः"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "अविचिन्त्य",
+          "meaning": "अविचिन्त्य = बिना सोचे / without thinking",
+          "paragraphTranslation": "अविचिन्त्य — बिना सोचे (without thinking)",
+          "words": [
+            "अविचिन्त्य"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "झटिति",
+          "meaning": "झटिति = तुरंत / quickly",
+          "paragraphTranslation": "झटिति — तुरंत (quickly)",
+          "words": [
+            "झटिति"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "भिक्षुकञ्च",
+          "meaning": "भिक्षुकञ्च = और भिखारी को / and to the beggar",
+          "paragraphTranslation": "भिक्षुकञ्च — और भिखारी को (and to the beggar)",
+          "words": [
+            "भिक्षुकञ्च"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "पञ्चमित्रेषु अन्यतमः",
+          "meaning": "पञ्चमित्रेषु अन्यतमः = पाँच प्रसिद्ध मित्रों में से एक / one among the five friends",
+          "paragraphTranslation": "पञ्चमित्रेषु अन्यतमः — पाँच मित्रों में से एक (one of five friends)",
+          "words": [
+            "पञ्चमित्रेषु अन्यतमः"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "निःशुल्कम्",
+          "meaning": "निःशुल्कम् = बिना किसी फीस के / without any fees",
+          "paragraphTranslation": "निःशुल्कम् — मुफ्त / बिना फीस (free of cost)",
+          "words": [
+            "निःशुल्कम्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "निरक्षरतादूरीकरणाय",
+          "meaning": "निरक्षरतादूरीकरणाय = अनपढ़ता मिटाने के लिए / to eradicate illiteracy",
+          "paragraphTranslation": "निरक्षरतादूरीकरणाय — निरक्षरता मिटाने के लिए (to eliminate illiteracy)",
+          "words": [
+            "निरक्षरतादूरीकरणाय"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "सततं यतते स्म",
+          "meaning": "सततं यतते स्म = हमेशा प्रयास करते थे / constantly strived",
+          "paragraphTranslation": "सततं यतते स्म — लगातार प्रयास करते थे (constantly strived)",
+          "words": [
+            "सततं यतते स्म"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "सूत्रप्रस्तुतिम्",
+          "meaning": "सूत्रप्रस्तुतिम् = सूत कातना / spinning thread",
+          "paragraphTranslation": "सूत्रप्रस्तुतिम् — सूत कातना (spinning thread)",
+          "words": [
+            "सूत्रप्रस्तुतिम्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "चिन्ताकुलः",
+          "meaning": "चिन्ताकुलः = चिंताओं से घिरा हुआ / worried",
+          "paragraphTranslation": "चिन्ताकुलः — चिंतित (anxious / worried)",
+          "words": [
+            "चिन्ताकुलः"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "वर्षद्वयम्",
+          "meaning": "वर्षद्वयम् = दो वर्ष / two years",
+          "paragraphTranslation": "वर्षद्वयम् — दो वर्ष (two years)",
+          "words": [
+            "वर्षद्वयम्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "कारावासम्",
+          "meaning": "कारावासम् = जेल की सजा / imprisonment",
+          "paragraphTranslation": "कारावासम् — जेल की सजा (imprisonment)",
+          "words": [
+            "कारावासम्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "मरणासन्नम्",
+          "meaning": "मरणासन्नम् = मृत्यु के निकट / near death",
+          "paragraphTranslation": "मरणासन्नम् — मृत्यु के निकट (near death)",
+          "words": [
+            "मरणासन्नम्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "सहस्रशः",
+          "meaning": "सहस्रशः = हजारों / in thousands",
+          "paragraphTranslation": "सहस्रशः — हजारों (in thousands)",
+          "words": [
+            "सहस्रशः"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "लीयताम्",
+          "meaning": "लीयताम् = विलीन हो जाए / let it merge",
+          "paragraphTranslation": "लीयताम् — विलीन हो जाए (let it merge)",
+          "words": [
+            "लीयताम्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "तनुः",
+          "meaning": "तनुः = शरीर / body",
+          "paragraphTranslation": "तनुः — शरीर (body)",
+          "words": [
+            "तनुः"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "प्रयान्तु",
+          "meaning": "प्रयान्तु = आगे बढ़ें / walk over",
+          "paragraphTranslation": "प्रयान्तु — आगे बढ़ें (walk over)",
+          "words": [
+            "प्रयान्तु"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "गर्तमालिका",
+          "meaning": "गर्तमालिका = गड्ढों की कतार / series of potholes",
+          "paragraphTranslation": "गर्तमालिका — गड्ढों की कतार (series of potholes)",
+          "words": [
+            "गर्तमालिका"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "अस्थिमांसैः",
+          "meaning": "अस्थिमांसैः = हड्डियों और मांस से / with bones and flesh",
+          "paragraphTranslation": "अस्थिमांसैः — हड्डियों और मांस से (with bones and flesh)",
+          "words": [
+            "अस्थिमांसैः"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "प्रतिष्ठाता",
+          "meaning": "प्रतिष्ठाता = संस्थापक / founder",
+          "paragraphTranslation": "प्रतिष्ठाता — संस्थापक (founder)",
+          "words": [
+            "प्रतिष्ठाता"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "शताधिकवर्षेभ्यः",
+          "meaning": "शताधिकवर्षेभ्यः = सौ से भी अधिक वर्षों से / for more than a hundred years",
+          "paragraphTranslation": "शताधिकवर्षेभ्यः — सौ से भी अधिक वर्षों से (over a century)",
+          "words": [
+            "शताधिकवर्षेभ्यः"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "असीमम्",
+          "meaning": "असीमम् = अपार / boundless",
+          "paragraphTranslation": "असीमम् — अपार / असीम (boundless)",
+          "words": [
+            "असीमम्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "लोकसेवकः",
+          "meaning": "लोकसेवकः = जनता का सेवक / public servant",
+          "paragraphTranslation": "लोकसेवकः — जनता का सेवक (public servant)",
+          "words": [
+            "लोकसेवकः"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "अभ्यास-समाधानम् (NCERT Solved Exercises & Answer Key — Pages 43–45)",
+          "meaning": "Complete Chapter Exercises and Authentic Solved Solutions",
+          "paragraphTranslation": "पाठ के सभी अभ्यास प्रश्नों के सम्पूर्ण समाधान",
+          "words": [
+            "अभ्यास",
+            "समाधानम्",
+            "NCERT",
+            "Solved",
+            "Exercises"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "प्रश्न १: पाठस्य आधारेण अधोलिखितानां प्रश्नानाम् उत्तराणि एकपदेन लिखत — (Page 44)",
-          "meaning": "Question 1: Answer the following questions in a single word based on Chapter 4 (Page 44)",
-          "paragraphTranslation": "प्रश्न १: पाठ के आधार पर निम्नलिखित प्रश्नों के उत्तर एक पद में लिखिए — (पृष्ठ ४४)",
+          "sanskrit": "१. अधोलिखितानां प्रश्नानाम एकपदेन उत्तरं लिखत (Answer in one word):",
+          "meaning": "Question 1: Answer the following questions in one single word.",
+          "paragraphTranslation": "प्रश्न १: निम्नलिखित प्रश्नों के उत्तर एक शब्द में लिखिए:",
           "words": [
-            "प्रश्न",
             "१",
-            ":",
+            "अधोलिखितानां",
+            "प्रश्नानाम",
             "एकपदेन",
+            "उत्तरं",
             "लिखत"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) उत्कलमणिः गोपबन्धु दासः कुत्र जन्म प्राप्तवान्?",
-          "answer_sanskrit": "सुबर्णपुर-ग्रामे",
-          "meaning": "Where was Utkalmani Gopabandhu Das born? -> Subarnapur village.",
-          "hindi_gloss": "उत्कलमणि गोपबन्धु दास का जन्म कहाँ हुआ? ➔ सुबर्णपुर-ग्रामे",
+          "sanskrit": "(क) समाज-दिनपत्रिकायाः प्रतिष्ठाता कः?\nउत्तरम् — गोपबन्धुः (या गोपबन्धुदासः)",
+          "meaning": "Who was the founder of the Samaja daily newspaper? -> Gopabandhu Das",
+          "paragraphTranslation": "समाज दैनिक समाचार पत्र के संस्थापक कौन थे? -> गोपबन्धु दास",
           "words": [
-            "(",
             "क",
-            ")",
-            "उत्कलमणिः",
-            "गोपबन्धु",
-            "दासः",
-            "कुत्र",
-            "जन्म",
-            "प्राप्तवान्",
-            "?",
-            "सुबर्णपुर",
-            "-",
-            "ग्रामे"
+            "समाज",
+            "दिनपत्रिकायाः",
+            "प्रतिष्ठाता",
+            "कः",
+            "उत्तरम्",
+            "गोपबन्धुः",
+            "या",
+            "गोपबन्धुदासः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) गोपबन्धु महोदयस्य पिता कः आसीत्?",
-          "answer_sanskrit": "श्रीदैत्यरीदासः",
-          "meaning": "Who was the father of Gopabandhu? -> Shri Daityari Das.",
-          "hindi_gloss": "गोपबन्धु महोदय के पिता कौन थे? ➔ श्रीदैत्यरीदासः",
+          "sanskrit": "(ख) गोपबन्धुः कस्मै स्वभोजनं दत्तवान्?\nउत्तरम् — भिक्षुकाय",
+          "meaning": "To whom did Gopabandhu give his served food? -> To the beggar (भिक्षुकाय)",
+          "paragraphTranslation": "गोपबन्धु ने अपना भोजन किसे दे दिया? -> भिखारी को",
           "words": [
-            "(",
             "ख",
-            ")",
-            "गोपबन्धु",
-            "महोदयस्य",
-            "पिता",
+            "गोपबन्धुः",
+            "कस्मै",
+            "स्वभोजनं",
+            "दत्तवान्",
+            "उत्तरम्",
+            "भिक्षुकाय"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) मरणासन्नः कः आसीत्?\nउत्तरम् — स्वपुत्रः (गोपबन्धोः पुत्रः)",
+          "meaning": "Who was lying near death? -> His own son (स्वपुत्रः)",
+          "paragraphTranslation": "मृत्यु के कगार पर कौन था? -> उनका अपना पुत्र",
+          "words": [
+            "ग",
+            "मरणासन्नः",
             "कः",
             "आसीत्",
-            "?",
-            "श्रीदैत्यरीदासः"
+            "उत्तरम्",
+            "स्वपुत्रः",
+            "गोपबन्धोः",
+            "पुत्रः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) सः १९०९ तमे वर्षे किं स्थापितवान्?",
-          "answer_sanskrit": "सत्यवादी-वनविद्यालयम्",
-          "meaning": "What did he establish in the year 1909? -> Satyavadi Vana Vidyalaya.",
-          "hindi_gloss": "उन्होंने 1909 में किसकी स्थापना की? ➔ सत्यवादी-वनविद्यालयम्",
+          "sanskrit": "(घ) गोपबन्धुः केन उपाधिना सम्मानितः अभवत्?\nउत्तरम् — उत्कलमणिः",
+          "meaning": "With which title was Gopabandhu honored? -> Utkalmani (उत्कलमणिः)",
+          "paragraphTranslation": "गोपबन्धु को किस उपाधि से सम्मानित किया गया? -> उत्कलमणि",
           "words": [
-            "(",
-            "ग",
-            ")",
-            "सः",
-            "१९०९",
-            "तमे",
-            "वर्षे",
-            "किं",
-            "स्थापितवान्",
-            "?",
-            "सत्यवादी",
-            "-",
-            "वनविद्यालयम्"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(घ) गोपबन्धु महोदयानुसारं का एव ईश्वरसेवा अस्ति?",
-          "answer_sanskrit": "मानवसेवा",
-          "meaning": "According to Gopabandhu, what is real service to God? -> Service to humanity (Mānavasevā).",
-          "hindi_gloss": "गोपबन्धु महोदय के अनुसार कौन सी ही ईश्वर सेवा है? ➔ मानवसेवा",
-          "words": [
-            "(",
             "घ",
-            ")",
-            "गोपबन्धु",
-            "महोदयानुसारं",
-            "का",
-            "एव",
-            "ईश्वरसेवा",
-            "अस्ति",
-            "?",
-            "मानवसेवा"
+            "गोपबन्धुः",
+            "केन",
+            "उपाधिना",
+            "सम्मानितः",
+            "अभवत्",
+            "उत्तरम्",
+            "उत्कलमणिः"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) कस्य तीव्रेण ज्वरेण पीडा आसीत्?",
-          "answer_sanskrit": "तस्य पुत्रस्य",
-          "meaning": "Who was suffering from a severe fever? -> His son (Tasya putrasya).",
-          "hindi_gloss": "तेज़ बुखार से किसे पीड़ा थी? ➔ तस्य पुत्रस्य (उनके पुत्र को)",
+          "sanskrit": "(ङ) गोपबन्धुः कति वर्षाणि कारावासं प्राप्तवान्?\nउत्तरम् — वर्षद्वयम्",
+          "meaning": "For how many years was Gopabandhu imprisoned? -> Two years (वर्षद्वयम्)",
+          "paragraphTranslation": "गोपबन्धु को कितने वर्ष की जेल हुई? -> दो वर्ष",
           "words": [
-            "(",
             "ङ",
-            ")",
-            "कस्य",
-            "तीव्रेण",
-            "ज्वरेण",
-            "पीडा",
-            "आसीत्",
-            "?",
-            "तस्य",
-            "पुत्रस्य"
+            "गोपबन्धुः",
+            "कति",
+            "वर्षाणि",
+            "कारावासं",
+            "प्राप्तवान्",
+            "उत्तरम्",
+            "वर्षद्वयम्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "प्रश्न २: पाठस्य आधारेण अधोलिखितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखत — (Page 44)",
-          "meaning": "Question 2: Answer the following questions in complete sentences based on Chapter 4 (Page 44)",
-          "paragraphTranslation": "प्रश्न २: पाठ के आधार पर निम्नलिखित प्रश्नों के उत्तर पूर्ण वाक्य में लिखिए — (पृष्ठ ४४)",
+          "sanskrit": "२. एकवाक्येन उत्तरं लिखत (Answer in a full sentence):",
+          "meaning": "Question 2: Answer the following questions in a complete Sanskrit sentence.",
+          "paragraphTranslation": "प्रश्न २: निम्नलिखित प्रश्नों के उत्तर पूर्ण वाक्य में लिखिए:",
           "words": [
-            "प्रश्न",
             "२",
-            ":",
-            "पूर्णवाक्येन",
+            "एकवाक्येन",
+            "उत्तरं",
             "लिखत"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) गोपबन्धुदासस्य माता-पितरौ कौ आस्ताम्?",
-          "answer_sanskrit": "गोपबन्धुदासस्य पिता श्रीदैत्यरीदासः माता च श्रीमती स्वर्णमयी देवी आस्ताम्।",
-          "meaning": "Who were the parents of Gopabandhu Das? -> Gopabandhu Das's father was Shri Daityari Das and his mother was Shrimati Swarnamayi Devi.",
-          "hindi_gloss": "गोपबन्धु दास के माता-पिता कौन थे? ➔ गोपबन्धुदासस्य पिता श्रीदैत्यरीदासः माता च श्रीमती स्वर्णमयी देवी आस्ताम्।",
+          "sanskrit": "(क) गोपबन्धुः किमर्थम अश्रुपूर्णनयनः अभवत्?\nउत्तरम् — बहिः बुभुक्षितस्य भिक्षुकस्य करुणध्वनिं क्रन्दनध्वनिं च श्रुत्वा गोपबन्धुः अश्रुपूर्णनयनोऽभवत्।",
+          "meaning": "Why did Gopabandhu's eyes fill with tears? -> Hearing outside the pitiful cry and lamentation of the starving beggar, his eyes filled with tears.",
+          "paragraphTranslation": "गोपबन्धु की आँखें आँसुओं से क्यों भर गईं? -> बाहर भूखे भिखारी का करुण रुदन सुनकर गोपबन्धु की आँखें आँसुओं से भर गईं।",
           "words": [
-            "(",
             "क",
-            ")",
-            "गोपबन्धुदासस्य",
-            "माता",
-            "-",
-            "पितरौ",
-            "कौ",
-            "आस्ताम्",
-            "?",
-            "गोपबन्धुदासस्य",
-            "पिता",
-            "श्रीदैत्यरीदासः",
-            "माता",
+            "गोपबन्धुः",
+            "किमर्थम",
+            "अश्रुपूर्णनयनः",
+            "अभवत्",
+            "उत्तरम्",
+            "बहिः",
+            "बुभुक्षितस्य",
+            "भिक्षुकस्य",
+            "करुणध्वनिं",
+            "क्रन्दनध्वनिं",
             "च",
-            "श्रीमती",
-            "स्वर्णमयी",
-            "देवी",
-            "आस्ताम्।"
+            "श्रुत्वा",
+            "गोपबन्धुः",
+            "अश्रुपूर्णनयनोऽभवत्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) सत्यवादी वनविद्यालये छात्राः कथं शिक्षां लभन्ते स्म?",
-          "answer_sanskrit": "सत्यवादी वनविद्यालये वृक्षाणाम् अधः छात्राः प्राकृत-वातावरणे शिक्षां लभन्ते स्म।",
-          "meaning": "How did students receive education in the Satyavadi Vana Vidyalaya? -> Under the shade of trees in a natural open-air environment, students received education.",
-          "hindi_gloss": "सत्यवादी वन विद्यालय में छात्र कैसे शिक्षा प्राप्त करते थे? ➔ सत्यवादी वनविद्यालये वृक्षाणाम् अधः छात्राः प्राकृत-वातावरणे शिक्षां लभन्ते स्म।",
+          "sanskrit": "(ख) कीदृशं पुत्रं विहाय गोपबन्धुः समाजसेवाम अकरोत्?\nउत्तरम् — गोपबन्धुः मरणासन्नं स्वपुत्रमपि विहाय जलप्लावपीडितानां समाजसेवाम अकरोत्।",
+          "meaning": "Leaving what kind of a son did Gopabandhu perform social service? -> Leaving behind even his critically ill, dying son, he served the flood victims.",
+          "paragraphTranslation": "कैसे पुत्र को छोड़कर गोपबन्धु ने समाज सेवा की? -> मृत्यु के निकट खड़े अपने बीमार पुत्र को भी छोड़कर उन्होंने बाढ़ पीड़ितों की सेवा की।",
           "words": [
-            "(",
             "ख",
-            ")",
-            "सत्यवादी",
-            "वनविद्यालये",
-            "छात्राः",
-            "कथं",
-            "शिक्षां",
-            "लभन्ते",
-            "स्म",
-            "?",
-            "सत्यवादी",
-            "वनविद्यालये",
-            "वृक्षाणाम्",
-            "अधः",
-            "छात्राः",
-            "प्राकृत",
-            "-",
-            "वातावरणे",
-            "शिक्षां",
-            "लभन्ते",
-            "स्म।"
+            "कीदृशं",
+            "पुत्रं",
+            "विहाय",
+            "गोपबन्धुः",
+            "समाजसेवाम",
+            "अकरोत्",
+            "उत्तरम्",
+            "गोपबन्धुः",
+            "मरणासन्नं",
+            "स्वपुत्रमपि",
+            "विहाय",
+            "जलप्लावपीडितानां",
+            "समाजसेवाम",
+            "अकरोत्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) यदा ओडिशा-राज्ये जलप्लावः दुर्भिक्षः वा अभवत्, तदा गोपबन्धुः किं करोति स्म?",
-          "answer_sanskrit": "यदा ओडिशा-राज्ये जलप्लावः दुर्भिक्षः वा अभवत्, तदा गोपबन्धुः बुभुक्षितानां रोगिणां च कृते अकुण्ठं सेवां करोति स्म।",
-          "meaning": "What did Gopabandhu do whenever floods or famine struck Odisha? -> Whenever floods or famine occurred, Gopabandhu rendered unconditional, selfless relief to the hungry and the afflicted.",
-          "hindi_gloss": "जब ओडिशा राज्य में बाढ़ या अकाल पड़ता था, तब गोपबन्धु क्या करते थे? ➔ वे भूखों और बीमारों की निस्वार्थ भाव से सेवा करते थे।",
+          "sanskrit": "(ग) गोपबन्धोः कृते उत्कलमणिः इति उपाधिः किमर्थं प्रदत्तः?\nउत्तरम् — गोपबन्धोः समाजसेवायै देशसेवायै च असीमं त्यागमनुभूय तस्मै ‘उत्कलमणिः’ इति उपाधिः प्रदत्तः।",
+          "meaning": "Why was the title Utkalmani conferred upon Gopabandhu? -> In recognition of his boundless self-sacrifice for social and national upliftment, he was honored as Utkalmani.",
+          "paragraphTranslation": "गोपबन्धु को उत्कलमणि की उपाधि क्यों दी गई? -> समाज और देश सेवा के लिए उनके असीम त्याग को देखकर उन्हें उत्कलमणि की उपाधि दी गई।",
           "words": [
-            "(",
             "ग",
-            ")",
-            "यदा",
-            "ओडिशा",
-            "-",
-            "राज्ये",
-            "जलप्लावः",
-            "दुर्भिक्षः",
-            "वा",
-            "अभवत्",
-            ",",
-            "तदा",
-            "गोपबन्धुः",
-            "किं",
-            "करोति",
-            "स्म",
-            "?",
-            "यदा",
-            "ओडिशा",
-            "-",
-            "राज्ये",
-            "जलप्लावः",
-            "दुर्भिक्षः",
-            "वा",
-            "अभवत्",
-            ",",
-            "तदा",
-            "गोपबन्धुः",
-            "बुभुक्षितानां",
-            "रोगिणां",
-            "च",
+            "गोपबन्धोः",
             "कृते",
-            "अकुण्ठं",
-            "सेवां",
-            "करोति",
-            "स्म।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(घ) गोपबन्धुः रुग्णपुत्रं विहाय कुत्र गतवान् किमर्थं च?",
-          "answer_sanskrit": "गोपबन्धुः रुग्णपुत्रं विहाय समाजसेवार्थं जलप्लावपीडितक्षेत्रं गतवान्।",
-          "meaning": "Where did Gopabandhu go leaving behind his sick son, and why? -> Leaving his critically ill son, Gopabandhu went to the flood-devastated areas to serve the suffering populace.",
-          "hindi_gloss": "गोपबन्धु अपने बीमार पुत्र को छोड़कर कहाँ और क्यों गए? ➔ वे समाज सेवा के लिए बाढ़ पीड़ित क्षेत्र में गए।",
-          "words": [
-            "(",
-            "घ",
-            ")",
-            "गोपबन्धुः",
-            "रुग्णपुत्रं",
-            "विहाय",
-            "कुत्र",
-            "गतवान्",
+            "उत्कलमणिः",
+            "इति",
+            "उपाधिः",
             "किमर्थं",
+            "प्रदत्तः",
+            "उत्तरम्",
+            "गोपबन्धोः",
+            "समाजसेवायै",
+            "देशसेवायै",
             "च",
-            "?",
+            "असीमं",
+            "त्यागमनुभूय",
+            "तस्मै",
+            "‘उत्कलमणिः’",
+            "इति",
+            "उपाधिः",
+            "प्रदत्तः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(घ) गोपबन्धुः कुत्र जन्म लब्धवान्?\nउत्तरम् — गोपबन्धुः ओडिशाराज्यस्य पुरीजनपदस्य साक्षीगोपालसमीपे सुआण्डो-ग्रामे जन्म लब्धवान्।",
+          "meaning": "Where was Gopabandhu born? -> In Suando village near Sakshigopal in the Puri district of Odisha state.",
+          "paragraphTranslation": "गोपबन्धु का जन्म कहाँ हुआ था? -> ओडिशा राज्य के पुरी जिले में साक्षीगोपाल के पास सुआण्डो गाँव में।",
+          "words": [
+            "घ",
             "गोपबन्धुः",
-            "रुग्णपुत्रं",
-            "विहाय",
-            "समाजसेवार्थं",
-            "जलप्लावपीडितक्षेत्रं",
-            "गतवान्।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ङ) देशकल्याणाय गोपबन्धुदासस्य प्रमुखं वचनं किम् आसीत्?",
-          "answer_sanskrit": "गोपबन्धुदासस्य प्रमुखं वचनम् आसीत्— 'मम वपुः देशहिताय पततु, देशस्य प्रगत्यै मम सर्वस्वं लीनं भवतु' इति।",
-          "meaning": "What was the supreme motto of Gopabandhu Das for the nation? -> Gopabandhu Das's iconic declaration was: 'Let my body fall for the welfare of the country, and let my everything be merged for the nation's progress.'",
-          "hindi_gloss": "देश के कल्याण के लिए गोपबन्धु दास का प्रमुख वचन क्या था? ➔ 'मम वपुः देशहिताय पततु, देशस्य प्रगत्यै मम सर्वस्वं लीनं भवतु'।",
-          "words": [
-            "(",
-            "ङ",
-            ")",
-            "देशकल्याणाय",
-            "गोपबन्धुदासस्य",
-            "प्रमुखं",
-            "वचनं",
-            "किम्",
-            "आसीत्",
-            "?",
-            "गोपबन्धुदासस्य",
-            "प्रमुखं",
-            "वचनम्",
-            "आसीत्",
-            "—",
-            "'",
-            "मम",
-            "वपुः",
-            "देशहिताय",
-            "पततु",
-            ",",
-            "देशस्य",
-            "प्रगत्यै",
-            "मम",
-            "सर्वस्वं",
-            "लीनं",
-            "भवतु",
-            "'",
-            "इति।"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "प्रश्न ३: रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कुरुत — (Page 44)",
-          "meaning": "Question 3: Formulate grammatically precise questions based on the underlined target words (Page 44)",
-          "paragraphTranslation": "प्रश्न ३: रेखांकित पदों के आधार पर प्रश्न-निर्माण कीजिए — (पृष्ठ ४४)",
-          "words": [
-            "प्रश्न",
-            "३",
-            ":",
-            "प्रश्ननिर्माणम्",
-            "कुरुत"
-          ],
-          "kind": "exercise-header"
-        },
-        {
-          "sanskrit": "(क) महानद्यां भयङ्करः जलप्लावः सम्भूतः।",
-          "answer_sanskrit": "कस्यां भयङ्करः जलप्लावः सम्भूतः?",
-          "meaning": "A severe flood occurred in the Mahanadi river. -> In which river did a severe flood occur?",
-          "hindi_gloss": "महानदी में भयंकर बाढ़ आई। ➔ कस्यां भयङ्करः जलप्लावः सम्भूतः? (प्रश्न: कस्याम्)",
-          "words": [
-            "(",
-            "क",
-            ")",
-            "महानद्यां",
-            "भयङ्करः",
-            "जलप्लावः",
-            "सम्भूतः।",
-            "कस्यां",
-            "भयङ्करः",
-            "जलप्लावः",
-            "सम्भूतः",
-            "?"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ख) गोपबन्धुः सुबर्णपुर-ग्रामे जन्म अलभत।",
-          "answer_sanskrit": "गोपबन्धुः कुत्र जन्म अलभत?",
-          "meaning": "Gopabandhu was born in Subarnapur village. -> Where was Gopabandhu born?",
-          "hindi_gloss": "गोपबन्धु का जन्म सुबर्णपुर गाँव में हुआ। ➔ गोपबन्धुः कुत्र जन्म अलभत? (प्रश्न: कुत्र)",
-          "words": [
-            "(",
-            "ख",
-            ")",
+            "कुत्र",
+            "जन्म",
+            "लब्धवान्",
+            "उत्तरम्",
             "गोपबन्धुः",
-            "सुबर्णपुर",
-            "-",
+            "ओडिशाराज्यस्य",
+            "पुरीजनपदस्य",
+            "साक्षीगोपालसमीपे",
+            "सुआण्डो",
             "ग्रामे",
             "जन्म",
-            "अलभत।",
-            "गोपबन्धुः",
-            "कुत्र",
-            "जन्म",
-            "अलभत",
-            "?"
+            "लब्धवान्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) मानवसेवा एव ईश्वरसेवा अस्ति।",
-          "answer_sanskrit": "का एव ईश्वरसेवा अस्ति?",
-          "meaning": "Service to humanity is service to God. -> What indeed is service to God?",
-          "hindi_gloss": "मानव सेवा ही ईश्वर सेवा है। ➔ का एव ईश्वरसेवा अस्ति? (प्रश्न: का)",
+          "sanskrit": "(ङ) गोपबन्धुः सर्वदा केषाम उपयोगं कृतवान्?\nउत्तरम् — गोपबन्धुः सर्वदा स्वदेशस्यैव वस्त्राणां वस्तूनां च उपयोगं कृतवान्।",
+          "meaning": "What did Gopabandhu always use? -> He always used clothes and goods produced in his own country (swadeshi).",
+          "paragraphTranslation": "गोपबन्धु हमेशा किनका उपयोग करते थे? -> वे हमेशा अपने देश के वस्त्रों और वस्तुओं का ही उपयोग करते थे।",
           "words": [
-            "(",
-            "ग",
-            ")",
-            "मानवसेवा",
-            "एव",
-            "ईश्वरसेवा",
-            "अस्ति।",
-            "का",
-            "एव",
-            "ईश्वरसेवा",
-            "अस्ति",
-            "?"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(घ) सः १९०९ तमे वर्षे सत्यवादी-वनविद्यालयं स्थापितवान्।",
-          "answer_sanskrit": "सः कदा सत्यवादी-वनविद्यालयं स्थापितवान्?",
-          "meaning": "He established Satyavadi Vana Vidyalaya in the year 1909. -> When did he establish Satyavadi Vana Vidyalaya?",
-          "hindi_gloss": "उन्होंने 1909 में सत्यवादी वन विद्यालय स्थापित किया। ➔ सः कदा सत्यवादी-वनविद्यालयं स्थापितवान्? (प्रश्न: कदा / कस्मिन् वर्षे)",
-          "words": [
-            "(",
-            "घ",
-            ")",
-            "सः",
-            "१९०९",
-            "तमे",
-            "वर्षे",
-            "सत्यवादी",
-            "-",
-            "वनविद्यालयं",
-            "स्थापितवान्।",
-            "सः",
-            "कदा",
-            "सत्यवादी",
-            "-",
-            "वनविद्यालयं",
-            "स्थापितवान्",
-            "?"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ङ) मम वपुः देशहिताय पततु।",
-          "answer_sanskrit": "मम वपुः कस्मै पततु?",
-          "meaning": "Let my body fall for the welfare of the country. -> For what should my body fall?",
-          "hindi_gloss": "मेरा शरीर देश-हित के लिए गिरे। ➔ मम वपुः कस्मै पततु? (प्रश्न: कस्मै)",
-          "words": [
-            "(",
             "ङ",
-            ")",
-            "मम",
-            "वपुः",
-            "देशहिताय",
-            "पततु।",
-            "मम",
-            "वपुः",
-            "कस्मै",
-            "पततु",
-            "?"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "प्रश्न ४: मञ्जूषातः उचितानि पदानि चित्वा रिक्तस्थानानि पूरयत — (Page 44)",
-          "meaning": "Question 4: Fill in the blanks with appropriate words selected from the textbook options box [मञ्जूषा: जलप्लावः, ईश्वरसेवा, अकुण्ठम्, परमो धर्मः, वनविद्यालयः] (Page 44)",
-          "paragraphTranslation": "प्रश्न ४: मञ्जूषा से उचित पद चुनकर रिक्त स्थानों की पूर्ति कीजिए — [मञ्जूषा: जलप्लावः, ईश्वरसेवा, अकुण्ठम्, परमो धर्मः, वनविद्यालयः] (पृष्ठ ४४)",
-          "words": [
-            "प्रश्न",
-            "४",
-            ":",
-            "रिक्तस्थानानि",
-            "पूरयत"
-          ],
-          "kind": "exercise-header"
-        },
-        {
-          "sanskrit": "(क) विपत्काले सेवा एव ____________।",
-          "answer_sanskrit": "परमो धर्मः",
-          "meaning": "विपत्काले सेवा एव [परमो धर्मः]। -> Fill: परमो धर्मः (Supreme duty)",
-          "hindi_gloss": "संकट के समय सेवा ही परम धर्म है। ➔ रिक्तस्थान: परमो धर्मः",
-          "words": [
-            "(",
-            "क",
-            ")",
-            "विपत्काले",
-            "सेवा",
-            "एव",
-            "____________।",
-            "परमो",
-            "धर्मः"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ख) महानद्यां भयङ्करः ____________ सम्भूतः।",
-          "answer_sanskrit": "जलप्लावः",
-          "meaning": "महानद्यां भयङ्करः [जलप्लावः] सम्भूतः। -> Fill: जलप्लावः (Severe flood)",
-          "hindi_gloss": "महानदी में भयंकर बाढ़ आई। ➔ रिक्तस्थान: जलप्लावः",
-          "words": [
-            "(",
-            "ख",
-            ")",
-            "महानद्यां",
-            "भयङ्करः",
-            "____________",
-            "सम्भूतः।",
-            "जलप्लावः"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(ग) सः साखीगोपाल-स्थाने सत्यवादी ____________ स्थापितवान्।",
-          "answer_sanskrit": "वनविद्यालयः",
-          "meaning": "सः साखीगोपाल-स्थाने सत्यवादी [वनविद्यालयः] स्थापितवान्। -> Fill: वनविद्यालयः (Forest school)",
-          "hindi_gloss": "उन्होंने साखीगोपाल में सत्यवादी वन विद्यालय स्थापित किया। ➔ रिक्तस्थान: वनविद्यालयः",
-          "words": [
-            "(",
-            "ग",
-            ")",
-            "सः",
-            "साखीगोपाल",
-            "-",
-            "स्थाने",
-            "सत्यवादी",
-            "____________",
-            "स्थापितवान्।",
-            "वनविद्यालयः"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "(घ) गोपबन्धुः मन्यते स्म यत् मानवसेवा एव ____________ अस्ति।",
-          "answer_sanskrit": "ईश्वरसेवा",
-          "meaning": "गोपबन्धुः मन्यते स्म यत् मानवसेवा एव [ईश्वरसेवा] अस्ति। -> Fill: ईश्वरसेवा (Service to God)",
-          "hindi_gloss": "गोपबन्धु मानते थे कि मानव सेवा ही ईश्वर सेवा है। ➔ रिक्तस्थान: ईश्वरसेवा",
-          "words": [
-            "(",
-            "घ",
-            ")",
             "गोपबन्धुः",
-            "मन्यते",
-            "स्म",
-            "यत्",
-            "मानवसेवा",
-            "एव",
-            "____________",
-            "अस्ति।",
-            "ईश्वरसेवा"
+            "सर्वदा",
+            "केषाम",
+            "उपयोगं",
+            "कृतवान्",
+            "उत्तरम्",
+            "गोपबन्धुः",
+            "सर्वदा",
+            "स्वदेशस्यैव",
+            "वस्त्राणां",
+            "वस्तूनां",
+            "च",
+            "उपयोगं",
+            "कृतवान्"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) सः पीडितानां कृते ____________ सेवाम् अकरोत्।",
-          "answer_sanskrit": "अकुण्ठम्",
-          "meaning": "सः पीडितानां कृते [अकुण्ठम्] सेवाम् अकरोत्। -> Fill: अकुण्ठम् (Unhesitating/unconditional)",
-          "hindi_gloss": "उन्होंने पीड़ितों की निस्वार्थ सेवा की। ➔ रिक्तस्थान: अकुण्ठम्",
+          "sanskrit": "३. कोष्ठके दत्तानि पदानि उपयुज्य वाक्यानि रचयत (Frame sentences using words from bracket):",
+          "meaning": "Question 3: Compose meaningful sentences using the given bracketed words: (सेवाम्, सुस्वादूनि, सहायताम्, स्वदेशवस्त्राणि, अन्यतमः)",
+          "paragraphTranslation": "प्रश्न ३: कोष्ठक में दिए गए शब्दों का प्रयोग करके वाक्य बनाइए: (सेवाम्, सुस्वादूनि, सहायताम्, स्वदेशवस्त्राणि, अन्यतमः)",
           "words": [
-            "(",
-            "ङ",
-            ")",
-            "सः",
-            "पीडितानां",
-            "कृते",
-            "____________",
+            "३",
+            "कोष्ठके",
+            "दत्तानि",
+            "पदानि",
+            "उपयुज्य",
+            "वाक्यानि",
+            "रचयत",
             "सेवाम्",
-            "अकरोत्।",
-            "अकुण्ठम्"
-          ],
-          "kind": "exercise-qa"
-        },
-        {
-          "sanskrit": "प्रश्न ५: सन्धिविच्छेदं कुरुत नियमाः च — (Grammar & Sandhi Rules — Page 44)",
-          "meaning": "Question 5: Sandhi Disjunction, Visarga Rules and Morphological Derivations (Page 44)",
-          "paragraphTranslation": "प्रश्न ५: सन्धिविच्छेद एवं व्याकरण-नियम — (पृष्ठ ४४)",
-          "words": [
-            "प्रश्न",
-            "५",
-            ":",
-            "सन्धिविच्छेदं",
-            "कुरुत"
+            "सुस्वादूनि",
+            "सहायताम्",
+            "स्वदेशवस्त्राणि",
+            "अन्यतमः"
           ],
           "kind": "exercise-header"
         },
         {
-          "sanskrit": "(क) प्रणम्योऽयम्",
-          "answer_sanskrit": "प्रणम्यः + अयम्",
-          "meaning": "प्रणम्योऽयम् = प्रणम्यः + अयम् (विसर्ग-उत्व-सन्धिः: अः + अ -> ओऽ)",
-          "hindi_gloss": "प्रणम्योऽयम् = प्रणम्यः + अयम् (विसर्ग के दोनों ओर 'अ' होने पर 'ओऽ' होता है)",
+          "sanskrit": "(क) सहायताम् ➔ अस्माभिः दुःखितानां सहायताम् करणीया।",
+          "meaning": "We must help distressed people.",
+          "paragraphTranslation": "हमें दुखी लोगों की सहायता करनी चाहिए।",
           "words": [
-            "(",
             "क",
-            ")",
-            "प्रणम्योऽयम्",
-            "प्रणम्यः",
-            "+",
-            "अयम्"
+            "सहायताम्",
+            "अस्माभिः",
+            "दुःखितानां",
+            "सहायताम्",
+            "करणीया"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ख) समादृतोऽस्ति",
-          "answer_sanskrit": "समादृतः + अस्ति",
-          "meaning": "समादृतोऽस्ति = समादृतः + अस्ति (विसर्ग-उत्व-सन्धिः पूर्वसहित-अवग्रहः)",
-          "hindi_gloss": "समादृतोऽस्ति = समादृतः + अस्ति (विसर्ग का 'ओ' और 'अ' का अवग्रह 'ऽ')",
+          "sanskrit": "(ख) सुस्वादूनि ➔ कदलीपत्रेषु सुस्वादूनि व्यञ्जनानि परिवेषितानि।",
+          "meaning": "Delicious dishes were served on banana leaves.",
+          "paragraphTranslation": "केले के पत्तों पर स्वादिष्ट व्यंजन परोसे गए।",
           "words": [
-            "(",
             "ख",
-            ")",
-            "समादृतोऽस्ति",
-            "समादृतः",
-            "+",
+            "सुस्वादूनि",
+            "कदलीपत्रेषु",
+            "सुस्वादूनि",
+            "व्यञ्जनानि",
+            "परिवेषितानि"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) अन्यतमः ➔ सः प्रसिद्धेषु पञ्चमित्रेषु अन्यतमः आसीत्।",
+          "meaning": "He was one among the celebrated five friends.",
+          "paragraphTranslation": "वे प्रसिद्ध पाँच मित्रों में से एक थे।",
+          "words": [
+            "ग",
+            "अन्यतमः",
+            "सः",
+            "प्रसिद्धेषु",
+            "पञ्चमित्रेषु",
+            "अन्यतमः",
+            "आसीत्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(घ) सेवाम् ➔ अध्ययनकालादेव सः रोगिणां सेवाम् अकरोत्।",
+          "meaning": "Right from student days, he rendered service to the sick.",
+          "paragraphTranslation": "छात्र जीवन से ही उन्होंने बीमारों की सेवा की।",
+          "words": [
+            "घ",
+            "सेवाम्",
+            "अध्ययनकालादेव",
+            "सः",
+            "रोगिणां",
+            "सेवाम्",
+            "अकरोत्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ङ) स्वदेशवस्त्राणि ➔ गोपबन्धुः सर्वदा स्वदेशवस्त्राणि धारयति स्म (उपयोगं कृतवान्)।",
+          "meaning": "Gopabandhu always wore swadeshi garments.",
+          "paragraphTranslation": "गोपबन्धु हमेशा स्वदेशी वस्त्र धारण करते थे।",
+          "words": [
+            "ङ",
+            "स्वदेशवस्त्राणि",
+            "गोपबन्धुः",
+            "सर्वदा",
+            "स्वदेशवस्त्राणि",
+            "धारयति",
+            "स्म",
+            "उपयोगं",
+            "कृतवान्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "४. चित्रं दृष्ट्वा पञ्च वाक्यानि रचयत (Picture Description — Hospital Scene on Page 45):",
+          "meaning": "Question 4: Look at the illustration of the hospital on Page 45 and compose five Sanskrit sentences.",
+          "paragraphTranslation": "प्रश्न ४: पृष्ठ ४५ पर दिए गए अस्पताल के चित्र को देखकर पाँच संस्कृत वाक्य लिखिए:",
+          "words": [
+            "४",
+            "चित्रं",
+            "दृष्ट्वा",
+            "पञ्च",
+            "वाक्यानि",
+            "रचयत"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "(क) एतत् एकस्य चिकित्सालयस्य चित्रम् अस्ति।",
+          "meaning": "This is a picture of a hospital.",
+          "paragraphTranslation": "यह एक अस्पताल का चित्र है।",
+          "words": [
+            "क",
+            "एतत्",
+            "एकस्य",
+            "चिकित्सालयस्य",
+            "चित्रम्",
             "अस्ति"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ग) धन्योऽयम्",
-          "answer_sanskrit": "धन्यः + अयम्",
-          "meaning": "धन्योऽयम् = धन्यः + अयम् (विसर्गस्य उत्वं ततः पूर्वरूपम्)",
-          "hindi_gloss": "धन्योऽयम् = धन्यः + अयम् (उत्व सन्धि)",
+          "sanskrit": "(ख) चित्रे एकः अस्वस्थः बालकः अस्ति।",
+          "meaning": "There is an ailing sick boy in the picture.",
+          "paragraphTranslation": "चित्र में एक बीमार बालक है।",
           "words": [
-            "(",
+            "ख",
+            "चित्रे",
+            "एकः",
+            "अस्वस्थः",
+            "बालकः",
+            "अस्ति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) एकः पुरुषः तं बालकं चिकित्सालयं नयति।",
+          "meaning": "A compassionate man is carrying the boy to the hospital.",
+          "paragraphTranslation": "एक व्यक्ति उस बालक को अस्पताल ले जा रहा है।",
+          "words": [
             "ग",
-            ")",
-            "धन्योऽयम्",
-            "धन्यः",
-            "+",
-            "अयम्"
+            "एकः",
+            "पुरुषः",
+            "तं",
+            "बालकं",
+            "चिकित्सालयं",
+            "नयति"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(घ) देशहिताय",
-          "answer_sanskrit": "देशस्य हिताय",
-          "meaning": "देशहिताय = देशस्य हिताय (षष्ठी-तत्पुरुष-समासः)",
-          "hindi_gloss": "देशहिताय = देशस्य हिताय (देश के कल्याण हेतु, षष्ठी तत्पुरुष)",
+          "sanskrit": "(घ) चिकित्सालयस्य भवनं सुन्दरं दृश्यते।",
+          "meaning": "The hospital building looks tidy and beautiful.",
+          "paragraphTranslation": "अस्पताल का भवन सुंदर दिखाई देता है।",
           "words": [
-            "(",
             "घ",
-            ")",
-            "देशहिताय",
-            "देशस्य",
-            "हिताय"
+            "चिकित्सालयस्य",
+            "भवनं",
+            "सुन्दरं",
+            "दृश्यते"
           ],
           "kind": "exercise-qa"
         },
         {
-          "sanskrit": "(ङ) प्रणम्यः",
-          "answer_sanskrit": "प्र + नम् + ण्यत्",
-          "meaning": "प्रणम्यः = प्र + नम् + ण्यत् (प्रकर्षेण नमनयोग्यः, worthy of veneration)",
-          "hindi_gloss": "प्रणम्यः = प्र + नम् + ण्यत् (वन्दनीय, आदरणीय)",
+          "sanskrit": "(ङ) परितः हरिताः पादपाः सन्ति।",
+          "meaning": "All around there are lush green trees and plants.",
+          "paragraphTranslation": "चारों ओर हरे-भरे पेड़-पौधे हैं।",
           "words": [
-            "(",
             "ङ",
-            ")",
-            "प्रणम्यः",
-            "प्र",
-            "+",
-            "नम्",
-            "+",
-            "ण्यत्"
+            "परितः",
+            "हरिताः",
+            "पादपाः",
+            "सन्ति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "५. समुचितेन पदेन श्लोकं पूरयत (Fill in the blanks to complete the verses):",
+          "meaning": "Question 5: Fill in the missing words to complete the sacred verses.",
+          "paragraphTranslation": "प्रश्न ५: उचित शब्दों से श्लोक की पंक्तियों को पूरा कीजिए:",
+          "words": [
+            "५",
+            "समुचितेन",
+            "पदेन",
+            "श्लोकं",
+            "पूरयत"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "(क) स्वदेशभूमौ मम लीयतां तनुः",
+          "meaning": "May my body dissolve in the soil of my motherland.",
+          "paragraphTranslation": "मेरे देश की धरती में मेरा शरीर विलीन हो जाए।",
+          "words": [
+            "क",
+            "स्वदेशभूमौ",
+            "मम",
+            "लीयतां",
+            "तनुः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ख) उत्कलमणिरित्याख्यः प्रसिद्धो लोकसेवकः",
+          "meaning": "The renowned public servant famously known as Utkalmani.",
+          "paragraphTranslation": "उत्कलमणि नाम से विख्यात प्रसिद्ध लोकसेवक।",
+          "words": [
+            "ख",
+            "उत्कलमणिरित्याख्यः",
+            "प्रसिद्धो",
+            "लोकसेवकः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) स्वदेशलोकास्तदनु प्रयान्तु नु",
+          "meaning": "May my countrymen march forward following over it.",
+          "paragraphTranslation": "मेरे देश के लोग उसके ऊपर से आगे बढ़ें।",
+          "words": [
+            "ग",
+            "स्वदेशलोकास्तदनु",
+            "प्रयान्तु",
+            "नु"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(घ) स्वराज्यमार्गे यदि गर्तमालिका",
+          "meaning": "If on the path of independence there be a series of obstacles.",
+          "paragraphTranslation": "यदि स्वराज्य के मार्ग में कोई गड्ढों की कतार हो।",
+          "words": [
+            "घ",
+            "स्वराज्यमार्गे",
+            "यदि",
+            "गर्तमालिका"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ङ) ममास्थिमांसैः परिपूरितास्तु सा",
+          "meaning": "May it be filled to the brim with my bones and flesh.",
+          "paragraphTranslation": "तो वह मेरी हड्डियों और मांस से पूरी तरह भर जाए।",
+          "words": [
+            "ङ",
+            "ममास्थिमांसैः",
+            "परिपूरितास्तु",
+            "सा"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "६. उदाहरणानुसारं क्रियापदं स्त्रीलिङ्गे परिवर्तयत (Change verbs into feminine — यथा: गतवान् → गतवती):",
+          "meaning": "Question 6: Change the past active participle (Ktavatu) masculine verbs into feminine following the example: गतवान् → गतवती.",
+          "paragraphTranslation": "प्रश्न ६: उदाहरण के अनुसार क्रियापद को स्त्रीलिंग में बदलिए (जैसे: गतवान् → गतवती):",
+          "words": [
+            "६",
+            "उदाहरणानुसारं",
+            "क्रियापदं",
+            "स्त्रीलिङ्गे",
+            "परिवर्तयत",
+            "गतवान्",
+            "गतवती"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "(क) प्राप्तवान् ➔ प्राप्तवती",
+          "meaning": "Attained (Masc) -> Attained (Fem)",
+          "paragraphTranslation": "प्राप्तवान् -> प्राप्तवती",
+          "words": [
+            "क",
+            "प्राप्तवान्",
+            "प्राप्तवती"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ख) उपविष्टवान् ➔ उपविष्टवती",
+          "meaning": "Sat down (Masc) -> Sat down (Fem)",
+          "paragraphTranslation": "उपविष्टवान् -> उपविष्टवती",
+          "words": [
+            "ख",
+            "उपविष्टवान्",
+            "उपविष्टवती"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) भुक्तवान् ➔ भुक्तवती",
+          "meaning": "Ate / dined (Masc) -> Ate / dined (Fem)",
+          "paragraphTranslation": "भुक्तवान् -> भुक्तवती",
+          "words": [
+            "ग",
+            "भुक्तवान्",
+            "भुक्तवती"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(घ) कृतवान् ➔ कृतवती",
+          "meaning": "Did / performed (Masc) -> Did / performed (Fem)",
+          "paragraphTranslation": "कृतवान् -> कृतवती",
+          "words": [
+            "घ",
+            "कृतवान्",
+            "कृतवती"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ङ) गृहीतवान् ➔ गृहीतवती",
+          "meaning": "Took / held (Masc) -> Took / held (Fem)",
+          "paragraphTranslation": "गृहीतवान् -> गृहीतवती",
+          "words": [
+            "ङ",
+            "गृहीतवान्",
+            "गृहीतवती"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "७. समुचितेन पदेन सह स्तम्भौ मेलयत (Match Column A with Column B):",
+          "meaning": "Question 7: Match the words in Column A with their correct counterparts in Column B.",
+          "paragraphTranslation": "प्रश्न ७: स्तम्भ 'अ' को स्तम्भ 'इ' के सही पद से मिलाइए:",
+          "words": [
+            "७",
+            "समुचितेन",
+            "पदेन",
+            "सह",
+            "स्तम्भौ",
+            "मेलयत"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "१. समाजः ➔ दिनपत्रिका",
+          "meaning": "1. Samaja -> Daily Newspaper (दिनपत्रिका)",
+          "paragraphTranslation": "१. समाजः -> दैनिक समाचार पत्र",
+          "words": [
+            "१",
+            "समाजः",
+            "दिनपत्रिका"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "२. ममास्थिमांसैः ➔ परिपूरितास्तु",
+          "meaning": "2. With my bones and flesh -> May it be filled (परिपूरितास्तु)",
+          "paragraphTranslation": "२. ममास्थिमांसैः -> परिपूरितास्तु",
+          "words": [
+            "२",
+            "ममास्थिमांसैः",
+            "परिपूरितास्तु"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "३. उत्कलमणिः ➔ गोपबन्धुः",
+          "meaning": "3. Utkalmani -> Gopabandhu (गोपबन्धुः)",
+          "paragraphTranslation": "३. उत्कलमणिः -> गोपबन्धुः",
+          "words": [
+            "३",
+            "उत्कलमणिः",
+            "गोपबन्धुः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "४. आँ आँ .. इति ➔ क्रन्दनध्वनिः",
+          "meaning": "4. \"Aa Aa...\" -> Weeping sound (क्रन्दनध्वनिः)",
+          "paragraphTranslation": "४. आँ आँ .. इति -> रोने की आवाज़",
+          "words": [
+            "४",
+            "आँ",
+            "आँ",
+            "इति",
+            "क्रन्दनध्वनिः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "५. सुस्वादूनि ➔ व्यञ्जनानि",
+          "meaning": "5. Delicious -> Dishes (व्यञ्जनानि)",
+          "paragraphTranslation": "५. सुस्वादूनि -> स्वादिष्ट पकवान",
+          "words": [
+            "५",
+            "सुस्वादूनि",
+            "व्यञ्जनानि"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "८. घटनाक्रमेण वाक्यानि पुनः लिखत (Rearrange the sentences in sequential order):",
+          "meaning": "Question 8: Rearrange the story events in chronological sequential order.",
+          "paragraphTranslation": "प्रश्न ८: घटनाक्रम के अनुसार वाक्यों को सही क्रम में पुनः लिखिए:",
+          "words": [
+            "८",
+            "घटनाक्रमेण",
+            "वाक्यानि",
+            "पुनः",
+            "लिखत"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "१. (घ) अतिथयो हस्तपादं क्षालयित्वा आसनेषु उपविष्टवन्तः ।",
+          "meaning": "Step 1: The invited guests washed their hands and feet and sat on seats.",
+          "paragraphTranslation": "१: सभी आमंत्रित अतिथि हाथ-पैर धोकर आसनों पर बैठ गए।",
+          "words": [
+            "१",
+            "घ",
+            "अतिथयो",
+            "हस्तपादं",
+            "क्षालयित्वा",
+            "आसनेषु",
+            "उपविष्टवन्तः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "२. (ङ) दिनत्रयात् किमपि न भुक्तम् ।",
+          "meaning": "Step 2: \"I have not eaten anything for three days!\"",
+          "paragraphTranslation": "२: \"तीन दिनों से कुछ भी नहीं खाया है।\"",
+          "words": [
+            "२",
+            "ङ",
+            "दिनत्रयात्",
+            "किमपि",
+            "न",
+            "भुक्तम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "३. (ग) गोपबन्धुः अश्रुपूर्णनयनोऽभवत् ।",
+          "meaning": "Step 3: Gopabandhu's eyes welled with tears of compassion.",
+          "paragraphTranslation": "३: गोपबन्धु की आँखें आँसुओं से भर गईं।",
+          "words": [
+            "३",
+            "ग",
+            "गोपबन्धुः",
+            "अश्रुपूर्णनयनोऽभवत्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "४. (क) भिक्षुकञ्च तद्भोजितवान् ।",
+          "meaning": "Step 4: He lovingly fed his own served food to the starving beggar.",
+          "paragraphTranslation": "४: उन्होंने वह भोजन उस भिखारी को खिला दिया।",
+          "words": [
+            "४",
+            "क",
+            "भिक्षुकञ्च",
+            "तद्भोजितवान्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "५. (ख) प्रफुल्लचन्द्ररायः गोपबन्धुम् उत्कलमणिः इति उपाधिना सम्मानितवान् ।",
+          "meaning": "Step 5: Acharya Prafulla Chandra Ray honored Gopabandhu with the title Utkalmani.",
+          "paragraphTranslation": "५: प्रफुल्ल चंद्र राय ने गोपबन्धु को 'उत्कलमणि' की उपाधि से सम्मानित किया।",
+          "words": [
+            "५",
+            "ख",
+            "प्रफुल्लचन्द्ररायः",
+            "गोपबन्धुम्",
+            "उत्कलमणिः",
+            "इति",
+            "उपाधिना",
+            "सम्मानितवान्"
           ],
           "kind": "exercise-qa"
         }
