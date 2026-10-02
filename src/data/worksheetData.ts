@@ -8206,73 +8206,91 @@ export const WORKSHEETS: Worksheet[] = [
   // ==========================================
   {
     "id": "ws-grade8-ch4-ws1",
-    "title": "Worksheet 1: Prose Comprehension & Historical Context (पठित-अवबोधनम्)",
-    "titleSanskrit": "चतुर्थः पाठः कार्यपत्रिका १: गद्यांश-अवबोधनम् ऐतिहासिक-पृष्ठभूमिः च",
+    "title": "Worksheet 1: Textual Comprehension & Vocabulary",
+    "titleSanskrit": "चतुर्थः पाठः कार्यपत्रिका १: गद्यांश-अवबोधनम् शब्दार्थाः च",
     "category": "grade8",
     "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
     "grade": "CBSE Grade 8 (Deepakam Framework)",
     "totalMarks": 20,
-    "timeLimit": "45 Mins",
-    "description": "Extract from teachers feast at Satyavadi Vana Vidyalaya, Gopabandhu feeding the hungry beggar, fact verification, and vocabulary antonyms.",
+    "timeLimit": "35 Mins",
+    "description": "Textual comprehension and vocabulary based on the dialogue and story text from pages 36–38 of Chapter 4.",
     "sections": [
       {
-        "sectionTitle": "Section A: Extract-Based Questions (पठित-अवबोधनम्)",
-        "sectionTitleSanskrit": "खण्डः \"क\" · पठित-अवबोधनम्",
-        "instructions": "Read the passage below carefully and answer the questions that follow:\n\n\"एकदा आचार्यहरिहरदासः 'सत्यवादि-वनविद्यालयस्य' सर्वान् अध्यापकान् भोजनाय आमन्त्रितवान्। आमन्त्रित-अतिथयः हस्तपादं क्षालयित्वा आसनेषु उपविष्टवन्तः। बहूनि सुस्वादूनि व्यञ्जनानि कदलीपत्रेषु परिवेषितानि। भोजनकाले कश्चित् भिक्षुकः द्वारम् आगत्य अवदत्– \\\"भोः! बुभुक्षितोऽहम्, मह्यं किमपि भोजनं ददत।\\\" एतत् श्रुत्वा गोपबन्धुः उत्थाय स्वथालीतः (स्वपत्रात्) सर्वं सुस्वादु भोजनं तस्मै भिक्षुकाय दत्तवान्।\"",
+        "sectionTitle": "Section A: Word Meanings",
+        "sectionTitleSanskrit": "खण्डः \"क\" · शब्दार्थाः",
+        "instructions": "Write the Hindi or English meaning for the following text words from pages 36–38:",
         "totalMarks": 10,
         "questions": [
           {
             "num": 1,
-            "question": "I. एकपदेन उत्तरत (Answer in a single word):\n(क) कः सर्वान् अध्यापकान् भोजनाय आमन्त्रितवान्?\n(ख) गोपबन्धुः कस्मै स्वभोजनं दत्तवान्?",
-            "questionSanskrit": "एकपदेन उत्तरत:",
+            "question": "1. जलप्लावपीडितानाम् = _______________",
+            "questionSanskrit": "जलप्लावपीडितानाम् इत्यस्य अर्थः कः?",
             "marks": 2,
             "type": "short_ans",
-            "answer": "(क) आचार्यहरिहरदासः\n(ख) भिक्षुकाय (बुभुक्षिताय भिक्षुकाय)",
-            "explanation": "गद्यांशे स्पष्टम् उल्लिखितम् — आचार्यहरिहरदासः अध्यापकान् आमन्त्रितवान् तथा गोपबन्धुः भिक्षुकाय स्वभोजनं दत्तवान्।"
+            "answer": "बाढ़ पीड़ितों की / of flood victims",
+            "explanation": "जलप्लावः (बाढ़) + पीडितानाम् (षष्ठी बहुवचन = पीड़ितों की / of flood victims)।"
           },
           {
             "num": 2,
-            "question": "II. पूर्णवाक्येन उत्तरत (Answer in a complete sentence):\n(क) अतिथयः भोजनार्थं कथम् उपविष्टवन्तः?\n(ख) भिक्षुकः द्वारम् आगत्य किम् अकथयत्?",
-            "questionSanskrit": "पूर्णवाक्येन उत्तरत:",
-            "marks": 4,
+            "question": "2. वासगृहाणि = _______________",
+            "questionSanskrit": "वासगृहाणि इत्यस्य अर्थः कः?",
+            "marks": 2,
             "type": "short_ans",
-            "answer": "(क) आमन्त्रित-अतिथयः हस्तपादं क्षालयित्वा आसनेषु उपविष्टवन्तः।\n(ख) भिक्षुकः द्वारम् आगत्य अवदत् — \"भोः! बुभुक्षितोऽहम्, मह्यं किमपि भोजनं ददत।\"",
-            "explanation": "गद्यांशानुसारं पूर्णवाक्येन उत्तरम्।"
+            "answer": "रहने के घर / residential houses",
+            "explanation": "निवासार्थं गृहाणि (रहने के घर / residential dwellings)।"
           },
           {
             "num": 3,
-            "question": "III. निर्देशानुसारं विकल्पं चिनुत (Grammar options based on text):\n१. 'सुस्वादूनि व्यञ्जनानि' – अत्र विशेषणपदं किम् अस्ति?\n(क) सुस्वादूनि (ख) व्यञ्जनानि (ग) भोजनाय (घ) कदलीपत्रेषु\n\n२. गद्यांशे 'बुभुक्षितोऽहम्' इत्यस्य कः सन्धि-विच्छेदः अस्ति?\n(क) बुभुक्षितः + अहम् (ख) बुभुक्षित + अहम् (ग) बुभुक्षितो + हम्\n\n३. 'दत्तवान्' इति पदे कः प्रत्ययः प्रयुक्तः?\n(क) क्त्वा (ख) ल्यप् (ग) क्तवतु (घ) तुमुन्\n\n४. 'अतिथयः' इति कर्तृपदस्य क्रियापदं किम् अस्ति?\n(क) उपविष्टवन्तः (ख) क्षालयित्वा (ग) आगत्य (घ) दत्तवान्",
-            "questionSanskrit": "निर्देशानुसारं विकल्पं चिनुत:",
-            "marks": 4,
-            "type": "mcq",
-            "answer": "१. (क) सुस्वादूनि (विशेष्यपदम्: व्यञ्जनानि)\n२. (क) बुभुक्षितः + अहम् (विसर्गस्य उत्वं पूर्वरूपं च)\n३. (ग) क्तवतु (दा + क्तवतु = दत्तवान्)\n४. (क) उपविष्टवन्तः (कर्तृपदम्: अतिथयः, क्रियापदम्: उपविष्टवन्तः)",
-            "explanation": "व्याकरणनियमानुसारं शुद्ध-विकल्पाः।"
+            "question": "3. बुभुक्षितः = _______________",
+            "questionSanskrit": "बुभुक्षितः इत्यस्य अर्थः कः?",
+            "marks": 3,
+            "type": "short_ans",
+            "answer": "भूखा / hungry",
+            "explanation": "भोक्तुम् इच्छुः = बुभुक्षितः (भूखा / starving person)।"
+          },
+          {
+            "num": 4,
+            "question": "4. परिवेषितम् = _______________",
+            "questionSanskrit": "परिवेषितम् इत्यस्य अर्थः कः?",
+            "marks": 3,
+            "type": "short_ans",
+            "answer": "परोसा गया / served",
+            "explanation": "भोजनम् आसनेषु कदलीपत्रेषु परिवेषितम् (परोसा गया / served food)।"
           }
         ]
       },
       {
-        "sectionTitle": "Section B: Textual Fact Verification & Fillers",
-        "sectionTitleSanskrit": "खण्डः \"ख\" · तथ्य-परीक्षणं विलोमपदानि च",
-        "instructions": "Verify chapter facts through cloze items and match antonym pairs:",
+        "sectionTitle": "Section B: Short Answer Questions",
+        "sectionTitleSanskrit": "खण्डः \"ख\" · एकपदेन उत्तरत",
+        "instructions": "Answer the following questions in one Sanskrit word (एकपदेन):",
         "totalMarks": 10,
         "questions": [
           {
-            "num": 4,
-            "question": "IV. रिक्तस्थानानि पूरयत (मञ्जूषा: समाज-दिनपत्रिकायाः, सुआण्डो-ग्रामे, प्रफुल्लचन्द्ररायेन, उत्कलमणिः, वर्षद्वयम्):\n१. गोपबन्धु महोदयस्य जन्म ओड़िशा-राज्यस्य ______________ अभवत्।\n२. गोपबन्धुः लोकसेवायै ______________ नामिकां पत्रिकाम् आरब्धवान्।\n३. सः देशसेवार्थं कारावासे ______________ कालम् अयापयत्।\n४. प्रसिद्धविद्वद्भिः आचार्य-______________ महोदयेन तस्मै विशिष्टा उपाधिः दत्ता।\n५. गोपबन्धुः समाजे ______________ इति नाम्ना सुविख्यातः अस्ति।",
-            "questionSanskrit": "मञ्जूषातः पदानि चित्वा रिक्तस्थानानि पूरयत:",
-            "marks": 5,
-            "type": "fill",
-            "answer": "१. सुआण्डो-ग्रामे; २. समाज-दिनपत्रिकायाः; ३. वर्षद्वयम्; ४. प्रफुल्लचन्द्ररायेन; ५. उत्कलमणिः",
-            "explanation": "पाठगत-ऐतिहासिक-तथ्यानाम् आधारेण रिक्तस्थानपूर्तिः।"
+            "num": 5,
+            "question": "5. ओडिशा-राज्यस्य कस्मिन् जनपदे भयंकरः जलप्लावः सम्भूतः?",
+            "questionSanskrit": "ओडिशा-राज्यस्य कस्मिन् जनपदे भयंकरः जलप्लावः सम्भूतः?",
+            "marks": 3,
+            "type": "short_ans",
+            "answer": "केन्द्रापडा-जनपदे (केंद्रपाड़ा जिले में)",
+            "explanation": "ओडिशा-राज्यस्य केन्द्रापडा-जनपदे महानद्यां भयंकरः जलप्लावः सम्भूतः।"
           },
           {
-            "num": 5,
-            "question": "V. विलोमपदानि मेलयत (Match the vocabulary antonyms based on the chapter):\nस्तम्भ \"अ\" (Word) : (क) पराजितः, (ख) सुस्वादु, (ग) विषादः, (घ) कृतज्ञता, (ङ) विपद्\nस्तम्भ \"ब\" (Antonym) : (१) अकृतज्ञता, (२) अभ्युदयः, (३) विजयी, (४) दुःस्वादु / नीरसम्, (५) प्रसन्नता / हर्षः",
-            "questionSanskrit": "विलोमपदानि परस्परं मेलयत:",
-            "marks": 5,
-            "type": "matching",
-            "answer": "(क) पराजितः -> (३) विजयी\n(ख) सुस्वादु -> (४) दुःस्वादु / नीरसम्\n(ग) विषादः -> (५) प्रसन्नता / हर्षः\n(घ) कृतज्ञता -> (१) अकृतज्ञता\n(ङ) विपद् -> (२) अभ्युदयः",
-            "explanation": "विलोम-शब्दानां यथायोग्यं मेलनम्।"
+            "num": 6,
+            "question": "6. आचार्यहरिहरदासः कस्य विद्यालयस्य अध्यापकान् भोजनाय आमन्त्रितवान्?",
+            "questionSanskrit": "आचार्यहरिहरदासः कस्य विद्यालयस्य अध्यापकान् भोजनाय आमन्त्रितवान्?",
+            "marks": 3,
+            "type": "short_ans",
+            "answer": "सत्यवादि-वनविद्यालयस्य (सत्यवादी वन विद्यालय के)",
+            "explanation": "एकदा आचार्यहरिहरदासः 'सत्यवादि-वनविद्यालयस्य' सर्वान् अध्यापकान् भोजनाय आमन्त्रितवान्।"
+          },
+          {
+            "num": 7,
+            "question": "7. गोपबन्धुः कस्मै स्वभोजनं दत्तवान्?",
+            "questionSanskrit": "गोपबन्धुः कस्मै स्वभोजनं दत्तवान्?",
+            "marks": 4,
+            "type": "short_ans",
+            "answer": "भिक्षुकाय (भिखारी को)",
+            "explanation": "गोपबन्धुः उत्थाय स्वपत्रात् सर्वं सुस्वादु भोजनं तस्मै बुभुक्षिताय भिक्षुकाय दत्तवान्।"
           }
         ]
       }
@@ -8280,64 +8298,91 @@ export const WORKSHEETS: Worksheet[] = [
   },
   {
     "id": "ws-grade8-ch4-ws2",
-    "title": "Worksheet 2: Verse Analysis & Core Character Evaluation (श्लोक-विश्लेषणम् चरित्र-मूल्याङ्कनं च)",
-    "titleSanskrit": "चतुर्थः पाठः कार्यपत्रिका २: श्लोक-विश्लेषणम् चरित्र-मूल्याङ्कनं च",
+    "title": "Worksheet 2: Life & Legacy of Gopabandhu Das",
+    "titleSanskrit": "चतुर्थः पाठः कार्यपत्रिका २: गोपबन्धोः जीवनचरितं योगदानं च",
     "category": "grade8",
     "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
     "grade": "CBSE Grade 8 (Deepakam Framework)",
     "totalMarks": 20,
-    "timeLimit": "40 Mins",
-    "description": "The chapters climax dedication sloka, sandhi breakdown, padaccheda, anvaya completion, and short biographical inquiries.",
+    "timeLimit": "35 Mins",
+    "description": "Biographical evaluation, historical statements, and fact verification from pages 39 and 41.",
     "sections": [
       {
-        "sectionTitle": "Section A: Structural Shloka Processing",
-        "sectionTitleSanskrit": "खण्डः \"क\" · श्लोक-अवबोधनम् अन्वय-पूर्तिः च",
-        "instructions": "Study the classical dedication verse of Gopabandhu Das and answer the questions:\n\n\"उत्कलमणिरित्याख्यः प्रसिद्धो लोकसेवकः ।\nप्रणम्यो देशभक्तोऽयं गोपबन्धुर्महामनाः ॥\"",
+        "sectionTitle": "Section A: Complete the Statements",
+        "sectionTitleSanskrit": "खण्डः \"क\" · वाक्यानि पूरयत",
+        "instructions": "Fill in the missing information based on the biographical details on pages 39 and 41:",
         "totalMarks": 10,
         "questions": [
           {
             "num": 1,
-            "question": "I. एकपदेन उत्तरत (Answer in a single word):\n(क) अयं महान् देशभक्तः केन नाम्ना आख्यातः (प्रसिद्धः) अस्ति?\n(ख) गोपबन्धुः कीदृशः सेवकः आसीत्?",
-            "questionSanskrit": "एकपदेन उत्तरत:",
+            "question": "1. गोपबन्धुदासः ओडिशाराज्यस्य पुरीजनपदस्य _______________ ग्रामे जन्म लब्धवान्।",
+            "questionSanskrit": "गोपबन्धुदासः पुरीजनपदस्य कस्मिन् ग्रामे जन्म लब्धवान्?",
             "marks": 2,
-            "type": "short_ans",
-            "answer": "(क) उत्कलमणिः (उत्कलमणिरित्याख्यः)\n(ख) लोकसेवकः (प्रसिद्धः लोकसेवकः)",
-            "explanation": "श्लोके स्पष्टं वर्तते यत् सः उत्कलमणि-नाम्ना आख्यातः प्रसिद्धः लोकसेवकः च आसीत्।"
+            "type": "fill",
+            "answer": "सुआण्डो (सुआण्डो-ग्रामे)",
+            "explanation": "गोपबन्धुदासस्य जन्म पुरीजनपदस्य सुआण्डो-ग्रामे अभवत्।"
           },
           {
             "num": 2,
-            "question": "II. पूर्णवाक्येन उत्तरत (Answer in a complete sentence):\n(क) अस्य श्लोकस्य अनुसारं गोपबन्धुः किमर्थं 'प्रणम्यः' अस्ति?\n(ख) 'गोपबन्धुर्महामनाः' इति पदस्य कः सन्धि-विच्छेदः भवति?",
-            "questionSanskrit": "पूर्णवाक्येन उत्तरत:",
-            "marks": 4,
-            "type": "short_ans",
-            "answer": "(क) अस्य श्लोकस्य अनुसारं गोपबन्धुः प्रसिद्धः लोकसेवकः, उदारहृदयः महामनाः, अनन्यः देशभक्तः च अस्ति, अतः सः सर्वैः प्रणम्यः (प्रणामयोग्यः) अस्ति।\n(ख) 'गोपबन्धुर्महामनाः' इत्यस्य सन्धि-विच्छेदः भवति — गोपबन्धुः + महामनाः (विसर्गस्य रेफः — रुत्वसन्धिः)।",
-            "explanation": "श्लोकार्थस्य सन्धि-नियमस्य च विश्लेषणम्।"
+            "question": "2. कारागारे निवसन् सः _______________ इति पुस्तकं ओडिआभाषया विरचितवान्।",
+            "questionSanskrit": "कारागारे निवसन् सः किं पुस्तकं विरचितवान्?",
+            "marks": 3,
+            "type": "fill",
+            "answer": "‘बन्दीर आत्मकथा’ (या 'कारा-कविता' / 'धर्मपद' आदि)",
+            "explanation": "हजारीबाग-कारागारे निवसन् सः 'बन्दीर आत्मकथा' इति सुप्रसिद्धं काव्यं विरचितवान्।"
           },
           {
             "num": 3,
-            "question": "III. अन्वय-पूर्तिः (मञ्जूषा: प्रसिद्धः, गोपबन्धुः, लोकसेवकः, अयम्):\n\"उत्कलमणिः इति आख्याः (१) ______________ (२) ______________ , (३) ______________ महामनाः (४) ______________ देशभक्तः प्रणम्यः अस्ति।\"",
-            "questionSanskrit": "मञ्जूषातः पदानि चित्वा अन्वयं पूरयत:",
-            "marks": 4,
+            "question": "3. आचार्यः प्रफुल्लचन्द्ररायः गोपबन्धुम् _______________ इति उपाधिना सम्मानितवान्।",
+            "questionSanskrit": "आचार्यः प्रफुल्लचन्द्ररायः गोपबन्धुं कया उपाधिना सम्मानितवान्?",
+            "marks": 2,
             "type": "fill",
-            "answer": "(१) प्रसिद्धः; (२) लोकसेवकः; (३) अयम्; (४) गोपबन्धुः",
-            "explanation": "श्लोकस्य व्यवस्थितः संस्कृत-अन्वयः।"
+            "answer": "‘उत्कलमणिः’ (ओडिशा का रत्न)",
+            "explanation": "प्रसिद्ध-वैज्ञानिकः आचार्यप्रफुल्लचन्द्ररायः तस्य निःस्वार्थसेवां दृष्ट्वा 'उत्कलमणिः' इति उपाधिना अलङ्कृतवान्।"
+          },
+          {
+            "num": 4,
+            "question": "4. गोपबन्धुः _______________ इति दैनिक-वार्तापत्रस्य प्रतिष्ठाता आसीत्।",
+            "questionSanskrit": "गोपबन्धुः कस्य दैनिक-वार्तापत्रस्य प्रतिष्ठाता आसीत्?",
+            "marks": 3,
+            "type": "fill",
+            "answer": "‘समाजः’ ('समाज' दैनिक समाचार पत्र)",
+            "explanation": "सः जनजागृतये 'समाजः' नामिकां दैनिक-वार्तापत्रिकाम् आरब्धवान्।"
           }
         ]
       },
       {
-        "sectionTitle": "Section B: Conceptual Short Insight Verification",
-        "sectionTitleSanskrit": "खण्डः \"ख\" · लघु-प्रश्नोत्तरी",
-        "instructions": "Answer short conceptual questions based on Gopabandhu Das life and historical deeds:",
+        "sectionTitle": "Section B: True (आम्) or False (न)",
+        "sectionTitleSanskrit": "खण्डः \"ख\" · आम् अथवा न लिखत",
+        "instructions": "State whether the following statements are True (आम्) or False (न):",
         "totalMarks": 10,
         "questions": [
           {
-            "num": 4,
-            "question": "IV. लघु-प्रश्नोत्तरी (Short Biographical Check):\n१. ओड़िशा-राज्यस्य कस्य जनपदे महानद्यां भयङ्करः जलप्लावः (बाढ़) सम्भूतः?\n२. जलप्लावपीडितानां साहाय्यार्थं के सभागारे चर्चां कुर्वन्ति?\n३. गोपबन्धुः कस्य उपयोगं कर्तुं देशवासिनः प्रेरितवान्?\n४. यदा पुत्रः मरणासन्नः आसीत्, तदा गोपबन्धुः किं परित्यज्य जलप्लावपीडितानां सेवायै गतवान्?\n५. गोपबन्धुः कं विद्यालयं स्थापितवान् यत्र वृक्षाणाम् अधः पाठनं भवति स्म?",
-            "questionSanskrit": "लघु-प्रश्नानाम् उत्तराणि लिखत:",
-            "marks": 10,
+            "num": 5,
+            "question": "5. गोपबन्धुः सर्वदा विदेशीयानां वस्तूनां उपयोगं कृतवान्। (_______)",
+            "questionSanskrit": "सत्यम्/असत्यम् लिखत:",
+            "marks": 3,
             "type": "short_ans",
-            "answer": "१. ओड़िशा-राज्यस्य केन्द्रापडा-जनपदे महानद्यां भयङ्करः जलप्लावः सम्भूतः।\n२. शिक्षकाः छात्राः च सभागारे जलप्लावपीडितानां साहाय्यार्थं चर्चां कुर्वन्ति।\n३. गोपबन्धुः स्वदेशीयानां वस्तूनां (स्वदेशवस्तूनाम्) उपयोगं कर्तुं देशवासिनः प्रेरितवान्।\n४. यदा पुत्रः मरणासन्नः आसीत्, तदा गोपबन्धुः पुत्रस्नेहं (पुत्रं) परित्यज्य सहस्राणां देशवासिनां जलप्लावपीडितानां च सेवायै अगच्छत्।\n५. गोपबन्धुः \"सत्यवादी-वनविद्यालयम्\" स्थापितवान्, यत्र वृक्षाणाम् अधः (छायायाम्) पाठनं भवति स्म।",
-            "explanation": "पाठगत-महत्त्वपूर्ण-प्रश्नोत्तराणि।"
+            "answer": "न (वह हमेशा स्वदेशी वस्तुओं का उपयोग करते थे)",
+            "explanation": "असत्यम् — सः सर्वदा स्वदेशीयानां वस्तूनाम् उपयोगं कृतवान्, विदेशीयानां वस्तूनां बहिष्कारं च कृतवान्।"
+          },
+          {
+            "num": 6,
+            "question": "6. सः वर्षद्वयं यावत् कारावासं प्राप्तवान्। (_______)",
+            "questionSanskrit": "सत्यम्/असत्यम् लिखत:",
+            "marks": 3,
+            "type": "short_ans",
+            "answer": "आम् (उन्हें दो वर्ष का कारावास मिला था)",
+            "explanation": "सत्यम् — स्वाधीनता-आन्दोलने भागं गृहीत्वा सः वर्षद्वयं हजारीबाग-कारागारे बन्दी अभवत्।"
+          },
+          {
+            "num": 7,
+            "question": "7. मरणासन्नं स्वपुत्रं विहाय सः जलप्लावपीडितानां सेवां कर्तुं निर्गतः। (_______)",
+            "questionSanskrit": "सत्यम्/असत्यम् लिखत:",
+            "marks": 4,
+            "type": "short_ans",
+            "answer": "आम् (वह अपने मरणासन्न पुत्र को छोड़कर बाढ़ पीड़ितों की सेवा में चले गए थे)",
+            "explanation": "सत्यम् — यदा तस्य पुत्रः मरणासन्नः आसीत्, तदा सः पुत्रस्नेहं त्यक्त्वा जलप्लावपीडितानां रक्षणाय निर्गतवान्।"
           }
         ]
       }
@@ -8345,55 +8390,91 @@ export const WORKSHEETS: Worksheet[] = [
   },
   {
     "id": "ws-grade8-ch4-ws3",
-    "title": "Worksheet 3: Past Active Participles (क्तवतु-प्रत्ययः)",
-    "titleSanskrit": "चतुर्थः पाठः कार्यपत्रिका ३: भूतकालिक-कृदन्तः क्तवतु-प्रत्ययः",
+    "title": "Worksheet 3: Chapter Grammar & Language Mechanics",
+    "titleSanskrit": "चतुर्थः पाठः कार्यपत्रिका ३: पूर्वरूपसन्धिः स्त्रीलिङ्ग-रूपाणि च",
     "category": "grade8",
     "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
     "grade": "CBSE Grade 8 (Deepakam Framework)",
     "totalMarks": 20,
-    "timeLimit": "45 Mins",
-    "description": "Mastering verb suffix mechanics with Ktavatu-Pratyaya, converting Lat-Lakara to Ktavatu, root deconstruction, and grammatical variants.",
+    "timeLimit": "35 Mins",
+    "description": "Exercises focusing on Purvarupa Sandhi and feminine verb/participle structures from pages 44 and 46.",
     "sections": [
       {
-        "sectionTitle": "Section A: Participle Sentence Upgrades (वाक्य-परिवर्तनम्)",
-        "sectionTitleSanskrit": "खण्डः \"क\" · लट्-लकारात् क्तवतु-प्रत्यये परिवर्तनम्",
-        "instructions": "Transform the following Present Tense (लट्-लकार) sentences into Past Active Participle (क्तवतु-प्रत्यय) forms based on Chapter 4 syntax.\n\nयथा: शिक्षकाः चर्चां कुर्वन्ति। ➔ शिक्षकाः चर्चां कृतवन्तः।",
+        "sectionTitle": "Section A: Purvarupa Sandhi (पूर्वरूपसन्धिः)",
+        "sectionTitleSanskrit": "खण्डः \"क\" · पूर्वरूपसन्धिः",
+        "instructions": "Join or separate the following words using the textbook rules of Purvarupa Sandhi (एङ् पदान्तादति):",
         "totalMarks": 10,
         "questions": [
           {
             "num": 1,
-            "question": "लट्-लकारस्य वाक्यानि क्तवतु-प्रत्ययेन परिवर्तयत:\n(क) छात्राः जलप्लाववार्तां शृण्वन्ति।\n(ख) सुधीरः स्वदेशवस्तूनां प्रयोगं करोति।\n(ग) अतिथयः आसनेषु उपविशन्ति।\n(घ) देशभक्ताः कारावासदुःखं सहन्ते।\n(ङ) अहं गोपबन्धोः जीवनीं पठामि।",
-            "questionSanskrit": "क्तवतु-प्रत्ययेन वाक्यानि परिवर्तयत:",
-            "marks": 10,
-            "type": "short_ans",
-            "answer": "(क) छात्राः जलप्लाववार्तां श्रुतवन्तः।\n(ख) सुधीरः स्वदेशवस्तूनां प्रयोगं कृतवान्।\n(ग) अतिथयः आसनेषु उपविष्टवन्तः।\n(घ) देशभक्ताः कारावासदुःखं सोढवन्तः (सहितवन्तः)।\n(ङ) अहं गोपबन्धोः जीवनीं पठितवान् (स्त्रीलिङ्गे: पठितवती)।",
-            "explanation": "पुल्लिङ्गे एकवचने -वान् तथा बहुवचने -वन्तः इति क्तवतु-प्रत्ययरूपाणि भवन्ति।"
+            "question": "1. देशभक्तो + अयम् = _______________",
+            "questionSanskrit": "देशभक्तो + अयम् इत्यस्य सन्धिः कः?",
+            "marks": 2,
+            "type": "grammar",
+            "answer": "देशभक्तोऽयम्",
+            "explanation": "पदान्ते 'ओ' + 'अ' = ओऽ (पूर्वरूपसन्धिः — अवग्रहः प्रयुज्यते)।"
+          },
+          {
+            "num": 2,
+            "question": "2. पशवोऽपि = _______________ + _______________",
+            "questionSanskrit": "पशवोऽपि इत्यस्य सन्धि-विच्छेदः कः?",
+            "marks": 3,
+            "type": "grammar",
+            "answer": "पशवो + अपि",
+            "explanation": "पशवो + अपि = पशवोऽपि (अकारस्य अवग्रहः अभवत्)।"
+          },
+          {
+            "num": 3,
+            "question": "3. बुभुक्षितो + अस्मि = _______________",
+            "questionSanskrit": "बुभुक्षितो + अस्मि इत्यस्य सन्धिः कः?",
+            "marks": 2,
+            "type": "grammar",
+            "answer": "बुभुक्षितोऽस्मि",
+            "explanation": "बुभुक्षितो + अस्मि = बुभुक्षितोऽस्मि।"
+          },
+          {
+            "num": 4,
+            "question": "4. अश्रुपूर्णनयनोऽभवत् = _______________ + _______________",
+            "questionSanskrit": "अश्रुपूर्णनयनोऽभवत् इत्यस्य सन्धि-विच्छेदः कः?",
+            "marks": 3,
+            "type": "grammar",
+            "answer": "अश्रुपूर्णनयनो + अभवत्",
+            "explanation": "अश्रुपूर्णनयनो + अभवत् = अश्रुपूर्णनयनोऽभवत्।"
           }
         ]
       },
       {
-        "sectionTitle": "Section B: Morphological Component Slicing",
-        "sectionTitleSanskrit": "खण्डः \"ख\" · धातु-प्रत्यय-विभागः शुद्ध-रूप-चयनं च",
-        "instructions": "Split or combine root and participle suffixes, and select the correct grammatical variants:",
+        "sectionTitle": "Section B: Gender Transformation (स्त्रीलिङ्ग-परिवर्तनम्)",
+        "sectionTitleSanskrit": "खण्डः \"ख\" · स्त्रीलिङ्ग-परिवर्तनम्",
+        "instructions": "Convert the masculine past participles to feminine forms following the given example:\\nयथा: गतवान् ➔ गतवती",
         "totalMarks": 10,
         "questions": [
           {
-            "num": 2,
-            "question": "II. धातु-प्रत्यय विभागं कुरुत (Split or combine the Root + Ktavatu components):\n१. श्रु + क्तवतु (पुल्लिङ्ग-बहुवचनम्) ➔ _______________\n२. गम् + क्तवतु (पुल्लिङ्ग-एकवचनम्) ➔ _______________\n३. कृ + क्तवतु (पुल्लिङ्ग-बहुवचनम्) ➔ _______________\n४. उपदिष्टवान् ➔ ___________ + ___________ + ___________\n५. प्रफुल्लितवन्तः ➔ ___________ + ___________ + ___________",
-            "questionSanskrit": "धातु-प्रत्ययौ पृथक् कुरुत योजयत वा:",
-            "marks": 5,
+            "num": 5,
+            "question": "5. प्राप्तवान् ➔ _______________",
+            "questionSanskrit": "प्राप्तवान् इत्यस्य स्त्रीलिङ्ग-रूपं किम्?",
+            "marks": 3,
             "type": "grammar",
-            "answer": "१. श्रुतवन्तः\n२. गतवान्\n३. कृतवन्तः\n४. उप + दिश् + क्तवतु (पुल्लिङ्ग-एकवचनम्)\n५. प्र + फुल्ल (फुल्लित) + क्तवतु (पुल्लिङ्ग-बहुवचनम्)",
-            "explanation": "धातोः क्तवतु-प्रत्यययोगेन भूतकालिक-रूपाणि निष्पद्यन्ते।"
+            "answer": "प्राप्तवती",
+            "explanation": "प्र + आप् + क्तवतु — पुल्लिङ्गे प्राप्तवान्, स्त्रीलिङ्गे प्राप्तवती।"
           },
           {
-            "num": 3,
-            "question": "III. शुद्धं पदं चिनुत (Identify the grammatically correct Ktavatu variant):\n१. 'त्यज् + क्तवतु' इति योगे पुल्लिङ्गे किं पदं सिध्यति?\n(क) त्यक्तवान् (ख) त्यजितवान् (ग) त्याजवान्\n\n२. 'स्थापितवन्तः' इति पदे कः मूलधातुः अस्ति?\n(क) स्था (ख) स्थापि (ग) स्थित\n\n३. 'सहन्ते' इत्यस्य भूतकालवाचकं क्तवन्तरूपं किम्?\n(क) सोढवान् (ख) सहितवान् (ग) सहवान्",
-            "questionSanskrit": "शुद्धं विकल्पं चिनुत:",
-            "marks": 5,
-            "type": "mcq",
-            "answer": "१. (क) त्यक्तवान् (त्यज् + क्तवतु)\n२. (क) स्था (णिच्-प्रत्ययान्तः आधारः स्थापि + क्तवतु)\n३. (क) सोढवान् (बहुवचने सोढवन्तः / सहितवन्तः)",
-            "explanation": "संस्कृतव्याकरणस्य धातुसाधित-क्तवतु-नियमाः।"
+            "num": 6,
+            "question": "6. कृतवान् ➔ _______________",
+            "questionSanskrit": "कृतवान् इत्यस्य स्त्रीलिङ्ग-रूपं किम्?",
+            "marks": 3,
+            "type": "grammar",
+            "answer": "कृतवती",
+            "explanation": "कृ + क्तवतु — पुल्लिङ्गे कृतवान्, स्त्रीलिङ्गे कृतवती।"
+          },
+          {
+            "num": 7,
+            "question": "7. गृहीतवान् ➔ _______________",
+            "questionSanskrit": "गृहीतवान् इत्यस्य स्त्रीलिङ्ग-रूपं किम्?",
+            "marks": 4,
+            "type": "grammar",
+            "answer": "गृहीतवती",
+            "explanation": "ग्रह् + क्तवतु — पुल्लिङ्गे गृहीतवान्, स्त्रीलिङ्गे गृहीतवती।"
           }
         ]
       }
