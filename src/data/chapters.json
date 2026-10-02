@@ -32265,906 +32265,1609 @@
     {
       "id": "grade8_ch6",
       "fileName": "grade8_ch6.txt",
-      "title": "षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम्",
-      "page_numbers": "61-66",
+      "title": "षष्ठः पाठः — डिजिभारतम् – युगपरिवर्तनम्",
+      "page_numbers": "Pages 61–71",
       "sentences": [
         {
-          "sanskrit": "॥ षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम् ॥",
-          "meaning": "Chapter 6: Digital India – Changing Era (Pages 61–66)",
-          "paragraphTranslation": "षष्ठः पाठः — डिजिभारतम्-युगपरिवर्तनम् (पृष्ठ ६१–६६)",
+          "sanskrit": "॥ षष्ठः पाठः — डिजिभारतम् – युगपरिवर्तनम् ॥",
+          "meaning": "Chapter 6: Digital India – The Paradigm Shift / Epoch Transformation (Pages 61–71)",
+          "paragraphTranslation": "षष्ठः पाठः — डिजिभारतम् – युगपरिवर्तनम् (पृष्ठ ६१–७१)",
           "words": [
             "षष्ठः",
             "पाठः",
-            "डिजिभारतम्-युगपरिवर्तनम्"
+            "डिजिभारतम्",
+            "युगपरिवर्तनम्"
           ],
           "kind": "section-header"
         },
         {
-          "sanskrit": "अस्मिन् पाठे वैज्ञानिक-प्रविधेः विकासेन भारते उत्पन्नायाः 'डिजिटल इण्डिया' क्रांत्याः, सङ्गणक-चलदूरभाषयन्त्राणां प्रयोगेण पर्यावरण-संरक्षणस्य, मुद्राहीन-विनिमयस्य (Cashless Transaction), तथा च दैनन्दिन-कार्याणां सुगमतायाः परिचयः दत्तः अस्ति।",
-          "meaning": "This chapter highlights the Digital India transformation: the technological leap from ancient oral Shruti tradition, palm leaves, paper, and typewriter to modern computers, smartphones, paperless ecology, and cashless digital transactions.",
-          "paragraphTranslation": "इस पाठ में प्राचीन श्रुति-परंपरा, ताड़पत्र, कागज और टाइपराइटर से लेकर आधुनिक कम्प्यूटर, स्मार्टफोन, पर्यावरण-संरक्षण तथा कैशलेस लेन-देन तक की 'डिजिटल इण्डिया' क्रांति का प्रेरक वर्णन है।",
+          "sanskrit": "अस्मिन् पाठे नवदेहलीस्थे प्रधानमन्त्रिसङ्ग्रहालये प्रदर्शितायाः अत्याधुनिक-डिजिटल-प्रौद्योगिक्याः, होलोग्राम्, वर्धितावास्तविकता (AR), आभासीयवास्तविकता (VR), कृत्रिमबुद्धेः (AI) संवादयन्त्रस्य च प्रत्यक्षानुभवः, डिजि-लॉकर, फास्टैग, यूपीआई, जनधनयोजना, ई-शासनम् (उमंग, जेम, कोविन), शिक्षा-मञ्चाः (दीक्षा, स्वयम्), कृषिमञ्चाः (ई-नाम), साङ्गणिक-सुरक्षा तथा च क्त-शतृ-प्रत्यययोः व्याकरणम् उपस्थापितम् अस्ति।",
+          "meaning": "This chapter presents an immersive exploration of modern digital technologies displayed at the Prime Ministers' Museum in New Delhi—including Holograms, Augmented Reality (AR), Virtual Reality (VR), AI chatbots, DigiLocker, FASTag, UPI, Jan Dhan Yojana, e-Governance (UMANG, GeM, CoWIN), educational and agricultural platforms, cyber security, and participle grammar (Kta & Shatri).",
+          "paragraphTranslation": "इस पाठ में नई दिल्ली स्थित प्रधानमंत्री संग्रहालय में प्रदर्शित अत्याधुनिक डिजिटल प्रौद्योगिकियों — होलोग्राम, ऑगमेंटेड रियलिटी (AR), वर्चुअल रियलिटी (VR), एआई संवाद यंत्र, डिजि-लॉकर, फास्टैग, यूपीआई, जनधन योजना, ई-गवर्नेंस पोर्टल (उमंग, जेम, कोविन), शैक्षिक व कृषि मंचों, साइबर सुरक्षा और क्त-शतृ प्रत्ययों का विस्तृत अध्ययन प्रस्तुत है।",
           "words": [
             "अस्मिन्",
             "पाठे",
-            "वैज्ञानिक-प्रविधेः",
-            "विकासेन",
-            "भारते",
-            "उत्पन्नायाः",
+            "नवदेहलीस्थे",
+            "प्रधानमन्त्रिसङ्ग्रहालये",
+            "प्रदर्शितायाः",
+            "अत्याधुनिक",
             "डिजिटल",
-            "इण्डिया",
-            "क्रांत्याः",
-            "सङ्गणक-चलदूरभाषयन्त्राणां",
-            "प्रयोगेण",
-            "पर्यावरण-संरक्षणस्य",
-            "मुद्राहीन-विनिमयस्य",
-            "Cashless",
-            "Transaction",
-            "तथा",
-            "च",
-            "दैनन्दिन-कार्याणां",
-            "सुगमतायाः",
-            "परिचयः",
-            "दत्तः",
-            "अस्ति।"
-          ]
+            "प्रौद्योगिक्याः",
+            "होलोग्राम्",
+            "वर्धितावास्तविकता",
+            "आभासीयवास्तविकता",
+            "कृत्रिमबुद्धेः",
+            "संवादयन्त्रस्य",
+            "प्रत्यक्षानुभवः",
+            "डिजि",
+            "लॉकर",
+            "फास्टैग",
+            "यूपीआई",
+            "जनधनयोजना",
+            "ई",
+            "शासनम्",
+            "उमंग",
+            "जेम",
+            "कोविन",
+            "शिक्षा",
+            "मञ्चाः",
+            "दीक्षा",
+            "स्वयम्",
+            "कृषिमञ्चाः",
+            "ई",
+            "नाम",
+            "साङ्गणिक",
+            "सुरक्षा",
+            "क्त",
+            "शतृ",
+            "प्रत्यययोः",
+            "व्याकरणम्",
+            "उपस्थापितम्",
+            "अस्ति"
+          ],
+          "kind": null
         },
         {
-          "sanskrit": "भागः १: डिजिभारतस्य विकासाभियानम् (The Evolution of Digital India — Pages 61–64)",
-          "meaning": "Part 1: The Technological Evolution of Digital India from Ancient Times to Smartphones",
-          "paragraphTranslation": "भाग १: डिजिटल इण्डिया का ऐतिहासिक विकास — प्राचीन काल से स्मार्टफोन तक (पृष्ठ ६१–६४)",
+          "sanskrit": "भागः १: प्रधानमन्त्रिसङ्ग्रहालये डिजिटल-प्रौद्योगिक्यः (PM Museum Visit & Modern Technologies — Pages 61–62)",
+          "meaning": "Part 1: The Prime Ministers' Museum in New Delhi and Modern Digital Technologies (Pages 61–62)",
+          "paragraphTranslation": "भाग १: प्रधानमंत्री संग्रहालय नई दिल्ली एवं अत्याधुनिक डिजिटल प्रौद्योगिकियाँ (पृष्ठ ६१–६२)",
           "words": [
             "भागः",
-            "१",
-            "डिजिभारतस्य",
-            "विकासाभियानम्",
-            "The",
-            "Evolution",
-            "of",
-            "Digital",
-            "India",
-            "Pages",
-            "61",
-            "64"
+            "प्रधानमन्त्रिसङ्ग्रहालये",
+            "डिजिटल",
+            "प्रौद्योगिक्यः"
           ],
           "kind": "chapter-header"
         },
         {
-          "sanskrit": "अद्य सम्पूर्णविश्वे 'डिजिभारतम्' (Digital India) इत्यस्य चर्चा श्रूयते। अस्य पदस्य कः भावः इति मनसि जिज्ञासा उत्पद्यते। कालपरिवर्तनेन सह मानवस्य आवश्यकता अपि परिवर्तते।",
-          "meaning": "Today, the buzz around 'Digital India' is heard across the entire world. A curiosity arises in the mind to understand the true essence of this term. With the change of time, human needs also change.",
-          "paragraphTranslation": "आज संपूर्ण विश्व में 'डिजिटल इंडिया' की चर्चा सुनी जाती है। इस शब्द का क्या भाव है, यह जानने की जिज्ञासा मन में उत्पन्न होती है। समय बदलने के साथ मनुष्य की आवश्यकताएँ भी बदलती हैं।",
+          "sanskrit": "(नवदेहलीस्थः प्रधानमन्त्रिसङ्ग्रहालयः । अत्र विविधाः डिजिटल-प्रौद्योगिक्यः प्रदर्शिताः सन्ति । सर्वे उत्सुकतया सङ्ग्रहालये प्रदर्शितानि वस्तूनि पश्यन्ति ।)",
+          "meaning": "(Prime Ministers' Museum in New Delhi. Various digital technologies are displayed here. Everyone looks at the displayed items with great eagerness and curiosity.)",
+          "paragraphTranslation": "(नई दिल्ली में स्थित प्रधानमंत्री संग्रहालय। यहाँ विभिन्न डिजिटल प्रौद्योगिकियाँ प्रदर्शित की गई हैं। सभी उत्सुकतापूर्वक संग्रहालय में प्रदर्शित वस्तुओं को देख रहे हैं।)",
           "words": [
+            "नवदेहलीस्थः",
+            "प्रधानमन्त्रिसङ्ग्रहालयः",
+            "अत्र",
+            "विविधाः",
+            "डिजिटल",
+            "प्रौद्योगिक्यः",
+            "प्रदर्शिताः",
+            "सन्ति",
+            "सर्वे",
+            "उत्सुकतया",
+            "सङ्ग्रहालये",
+            "प्रदर्शितानि",
+            "वस्तूनि",
+            "पश्यन्ति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अस्माकं देशः भारतं न केवलं सांस्कृतिकक्षेत्रे समृद्धम्, अपि तु नित्यम् आविष्कारैः कीर्तिं लभते। अद्य सम्पूर्णविश्वे ‘डिजिटल-भारतम्’ इत्यस्य चर्चा श्रूयते।",
+          "meaning": "Our country India is not only rich in the cultural sphere, but also earns glory daily through innovations. Today, discussions about 'Digital India' are heard all over the world.",
+          "paragraphTranslation": "हमारा देश भारत न केवल सांस्कृतिक क्षेत्र में समृद्ध है, बल्कि रोज़ नए आविष्कारों से प्रसिद्धि प्राप्त कर रहा है। आज पूरे विश्व में 'डिजिटल इंडिया' की चर्चा सुनाई देती है।",
+          "words": [
+            "अस्माकं",
+            "देशः",
+            "भारतं",
+            "न",
+            "केवलं",
+            "सांस्कृतिकक्षेत्रे",
+            "समृद्धम्",
+            "अपि",
+            "तु",
+            "नित्यम्",
+            "आविष्कारैः",
+            "कीर्तिं",
+            "लभते",
             "अद्य",
             "सम्पूर्णविश्वे",
-            "डिजिभारतम्",
-            "Digital",
-            "India",
-            "इत्यस्य",
-            "चर्चा",
-            "श्रूयते।",
-            "अस्य",
-            "पदस्य",
-            "कः",
-            "भावः",
-            "इति",
-            "मनसि",
-            "जिज्ञासा",
-            "उत्पद्यते।",
-            "कालपरिवर्तनेन",
-            "सह",
-            "मानवस्य",
-            "आवश्यकता",
-            "अपि",
-            "परिवर्तते।"
-          ]
-        },
-        {
-          "sanskrit": "प्राचीनकाले ज्ञानस्य आदान-प्रदानं मौखिकम् आसीत्, विद्या च श्रुतिपरम्परया गृह्यते स्म। अनन्तरं तालपत्रोपरि भोजपत्रोपरि च लेखनकार्यम् आरब्धम्।",
-          "meaning": "In ancient times, the exchange of knowledge was entirely oral, and education was received through the auditory transmission tradition (Shruti). Later, writing began on palm leaves (Talapatra) and birch barks (Bhojapatra).",
-          "paragraphTranslation": "प्राचीन काल में ज्ञान का आदान-प्रदान मौखिक था, और विद्या श्रुति-परंपरा द्वारा ग्रहण की जाती थी। इसके बाद ताड़ के पत्तों पर और भोजपत्रों पर लेखन-कार्य प्रारंभ हुआ।",
-          "words": [
-            "प्राचीनकाले",
-            "ज्ञानस्य",
-            "आदान-प्रदानं",
-            "मौखिकम्",
-            "आसीत्",
-            "विद्या",
-            "च",
-            "श्रुतिपरम्परया",
-            "गृह्यते",
-            "स्म।",
-            "अनन्तरं",
-            "तालपत्रोपरि",
-            "भोजपत्रोपरि",
-            "च",
-            "लेखनकार्यम्",
-            "आरब्धम्।"
-          ]
-        },
-        {
-          "sanskrit": "परिवर्तिनि काले कर्गदस्य लेखन्याः च आविष्कारेण सर्वेषामेव मनोगतानां भावानां कर्गदोपरि लेखनं प्रारब्धम्। टङ्कणयन्त्रस्य (Typewriter) आविष्कारेण तु लिखिता सामग्री टङ्किता सती बहुकालाय सुरक्षिता अतिष्ठत्।",
-          "meaning": "In the changing times, with the invention of paper (Kargada) and pen (Lekhani), writing internal thoughts on paper commenced. Furthermore, the invention of the typewriter ensured that typed text remained preserved for a very long time.",
-          "paragraphTranslation": "परिवर्तनशील समय में कागज और कलम के आविष्कार से सभी के मन के भावों को कागज पर लिखना शुरू हुआ। टाइपराइटर के आविष्कार से तो सामग्री टाइप होकर लंबे समय के लिए सुरक्षित रहने लगी।",
-          "words": [
-            "परिवर्तिनि",
-            "काले",
-            "कर्गदस्य",
-            "लेखन्याः",
-            "च",
-            "आविष्कारेण",
-            "सर्वेषामेव",
-            "मनोगतानां",
-            "भावानां",
-            "कर्गदोपरि",
-            "लेखनं",
-            "प्रारब्धम्।",
-            "टङ्कणयन्त्रस्य",
-            "Typewriter",
-            "आविष्कारेण",
-            "तु",
-            "लिखिता",
-            "सामग्री",
-            "टङ्किता",
-            "सती",
-            "बहुकालाय",
-            "सुरक्षिता",
-            "अतिष्ठत्।"
-          ]
-        },
-        {
-          "sanskrit": "वैज्ञानिकप्रविधेः प्रगतियात्रा पुनः अग्रे गता। अद्य सर्वाणि कार्याणि सङ्गणकनामकेन (Computer) यन्त्रेण साधितानि भवन्ति। समाचारपत्राणि पुस्तकानि च कम्प्यूटरमाध्यमेन पठ्यन्ते लिख्यन्ते च।",
-          "meaning": "The journey of scientific technology advanced even further. Today, all tasks are accomplished through the instrument called the computer (Sanganaka). Newspapers and books are read and written via computers.",
-          "paragraphTranslation": "वैज्ञानिक तकनीक की प्रगति यात्रा और आगे बढ़ी। आज सभी कार्य 'कम्प्यूटर' (सङ्गणक) नामक यन्त्र से संपन्न होते हैं। समाचार-पत्र और पुस्तकें कम्प्यूटर के माध्यम से ही पढ़े और लिखे जाते हैं।",
-          "words": [
-            "वैज्ञानिकप्रविधेः",
-            "प्रगतियात्रा",
-            "पुनः",
-            "अग्रे",
-            "गता।",
-            "अद्य",
-            "सर्वाणि",
-            "कार्याणि",
-            "सङ्गणकनामकेन",
-            "Computer",
-            "यन्त्रेण",
-            "साधितानि",
-            "भवन्ति।",
-            "समाचारपत्राणि",
-            "पुस्तकानि",
-            "च",
-            "कम्प्यूटरमाध्यमेन",
-            "पठ्यन्ते",
-            "लिख्यन्ते",
-            "च।"
-          ]
-        },
-        {
-          "sanskrit": "कर्गदोद्योगे वृक्षाणाम् उपयोगेन वृक्षाः कृत्यन्ते स्म, परं सङ्गणकस्य अधिकाधिकप्रयोगेण वृक्षाणां कर्तने न्यूनता भविष्यति इति विश्वासः। अनेन पर्यावरणसंरक्षणस्य दिशि महान् उपकारो भविष्यति।",
-          "meaning": "In the paper industry, trees were cut down extensively, but it is believed that maximizing the use of computers will lead to a reduction in the felling of trees. This will be a monumental service toward environmental preservation.",
-          "paragraphTranslation": "कागज के उद्योग में पेड़ों के उपयोग के कारण पेड़ काटे जाते थे, परन्तु कम्प्यूटर के अधिक से अधिक प्रयोग से पेड़ों की कटाई में कमी आएगी, ऐसा विश्वास है। इससे पर्यावरण-संरक्षण की दिशा में बहुत बड़ा उपकार होगा।",
-          "words": [
-            "कर्गदोद्योगे",
-            "वृक्षाणाम्",
-            "उपयोगेन",
-            "वृक्षाः",
-            "कृत्यन्ते",
-            "स्म",
-            "परं",
-            "सङ्गणकस्य",
-            "अधिकाधिकप्रयोगेण",
-            "वृक्षाणां",
-            "कर्तने",
-            "न्यूनता",
-            "भविष्यति",
-            "इति",
-            "विश्वासः।",
-            "अनेन",
-            "पर्यावरणसंरक्षणस्य",
-            "दिशि",
-            "महान्",
-            "उपकारो",
-            "भविष्यति।"
-          ]
-        },
-        {
-          "sanskrit": "अधुना आपणे (Market) वस्तुक्रयार्थम् रुपयाणाम् अनिवार्यता नास्ति। 'डेबिट कार्ड' (Debit card), 'क्रेडिट कार्ड' (Credit card) इत्यादयः सर्वत्र रुपयाणां स्थानं गृहीतवन्तः। बैंक-खाता-सम्बन्धितानि सर्वाणि कार्याणि सङ्गणकयन्त्रेण सम्पाद्यन्ते।",
-          "meaning": "Now, in the marketplace, there is no absolute necessity to carry physical currency to purchase goods. Debit cards and credit cards have taken the place of cash everywhere. All bank-related transactions are processed via computers.",
-          "paragraphTranslation": "अब बाज़ार में वस्तु खरीदने के लिए रुपयों (नकद) की अनिवार्यता नहीं है। डेबिट कार्ड, क्रेडिट कार्ड आदि ने सर्वत्र रुपयों का स्थान ले लिया है। बैंक के सभी कार्य कम्प्यूटर से संपन्न होते हैं।",
-          "words": [
-            "अधुना",
-            "आपणे",
-            "Market",
-            "वस्तुक्रयार्थम्",
-            "रुपयाणाम्",
-            "अनिवार्यता",
-            "नास्ति।",
-            "डेबिट",
-            "कार्ड",
-            "Debit",
-            "card",
-            "क्रेडिट",
-            "कार्ड",
-            "Credit",
-            "card",
-            "इत्यादयः",
-            "सर्वत्र",
-            "रुपयाणां",
-            "स्थानं",
-            "गृहीतवन्तः।",
-            "बैंक-खाता-सम्बन्धितानि",
-            "सर्वाणि",
-            "कार्याणि",
-            "सङ्गणकयन्त्रेण",
-            "सम्पाद्यन्ते।"
-          ]
-        },
-        {
-          "sanskrit": "विविधाः अनुप्रयोगाः (Apps) मुद्राहीनाय विनिमयाय (Cashless transaction) सहायकाः सन्ति। कुत्रापि यात्रा करणीया भवेत् रेलयानयात्रापत्रस्य (Railway ticket), वायुयानयात्रापत्रस्य (Air ticket) अनिवार्यता अद्य नास्ति।",
-          "meaning": "Various mobile applications (Apps) aid cashless transactions. Wherever one needs to travel, there is no hard requirement for physical railway tickets or flight tickets today.",
-          "paragraphTranslation": "अनेक मोबाइल ऐप्स कैशलेस लेन-देन (डिजिटल भुगतान) में सहायक हैं। कहीं भी यात्रा करनी हो, आज रेल टिकट या हवाई टिकट की कागजी अनिवार्यता नहीं है।",
-          "words": [
-            "विविधाः",
-            "अनुप्रयोगाः",
-            "Apps",
-            "मुद्राहीनाय",
-            "विनिमयाय",
-            "Cashless",
-            "transaction",
-            "सहायकाः",
-            "सन्ति।",
-            "कुत्रापि",
-            "यात्रा",
-            "करणीया",
-            "भवेत्",
-            "रेलयानयात्रापत्रस्य",
-            "Railway",
-            "ticket",
-            "वायुयानयात्रापत्रस्य",
-            "Air",
-            "ticket",
-            "अनिवार्यता",
-            "अद्य",
-            "नास्ति।"
-          ]
-        },
-        {
-          "sanskrit": "सर्वाणि पत्राणि अस्माकं चलदूरभाषयन्त्रे (Mobile phone) 'ई-मेल' इति स्थाने सुरक्षितानि भवन्ति यानि सन्दर्श्य वयं सौकर्येण यात्रायाः आनन्दं गृह्णीमः। चिकित्सालयेऽपि उपचारार्थं रुपयाणाम् आवश्यकता अद्य नानुभूयते। सर्वत्र कार्डमाध्यमेन, ई-बैंकिङ्गमाध्यमेन शुल्कं प्रदातुं शक्यते।",
-          "meaning": "All tickets remain securely stored in our mobile phones in the 'Email' folder; displaying these, we comfortably enjoy our travel. Even in hospitals, the necessity of physical cash for treatment is no longer felt; fees can be paid via cards or e-banking.",
-          "paragraphTranslation": "सभी टिकट हमारे मोबाइल फोन में 'ई-मेल' में सुरक्षित रहते हैं, जिन्हें दिखाकर हम सुगमता से यात्रा का आनंद लेते हैं। अस्पताल में भी इलाज के लिए नकद रुपयों की आवश्यकता महसूस नहीं होती; हर जगह कार्ड या ई-बैंकिंग से शुल्क दिया जा सकता है।",
-          "words": [
-            "सर्वाणि",
-            "पत्राणि",
-            "अस्माकं",
-            "चलदूरभाषयन्त्रे",
-            "Mobile",
-            "phone",
-            "ई-मेल",
-            "इति",
-            "स्थाने",
-            "सुरक्षितानि",
-            "भवन्ति",
-            "यानि",
-            "सन्दर्श्य",
-            "वयं",
-            "सौकर्येण",
-            "यात्रायाः",
-            "आनन्दं",
-            "गृह्णीमः।",
-            "चिकित्सालयेऽपि",
-            "उपचारार्थं",
-            "रुपयाणाम्",
-            "आवश्यकता",
-            "अद्य",
-            "नानुभूयते।",
-            "सर्वत्र",
-            "कार्डमाध्यमेन",
-            "ई-बैंकिङ्गमाध्यमेन",
-            "शुल्कं",
-            "प्रदातुं",
-            "शक्यते।"
-          ]
-        },
-        {
-          "sanskrit": "तद्दिनं नातिदूरे यदा वयं हस्ते एकमात्रं चलदूरभाषयन्त्रमादाय सर्वाणि कार्याणि साधयितुं समर्थाः भविष्यामः। वस्त्रपुटके (Pocket) रुपयाणाम् आवश्यकता न भविष्यति। पासबुक, चैकबुक इत्येतयोः आवश्यकता न भविष्यति।",
-          "meaning": "That day is not far when, holding merely a single mobile phone in hand, we will be capable of accomplishing all our tasks. There will be no need for cash in our pockets. Passbooks and chequebooks will no longer be required.",
-          "paragraphTranslation": "वह दिन दूर नहीं है जब हम हाथ में केवल एक मोबाइल फोन लेकर सभी कार्य करने में समर्थ होंगे। जेब में रुपयों की आवश्यकता नहीं होगी। पासबुक और चेकबुक की भी आवश्यकता नहीं रहेगी।",
-          "words": [
-            "तद्दिनं",
-            "नातिदूरे",
-            "यदा",
-            "वयं",
-            "हस्ते",
-            "एकमात्रं",
-            "चलदूरभाषयन्त्रमादाय",
-            "सर्वाणि",
-            "कार्याणि",
-            "साधयितुं",
-            "समर्थाः",
-            "भविष्यामः।",
-            "वस्त्रपुटके",
-            "Pocket",
-            "रुपयाणाम्",
-            "आवश्यकता",
-            "न",
-            "भविष्यति।",
-            "पासबुक",
-            "चैकबुक",
-            "इत्येतयोः",
-            "आवश्यकता",
-            "न",
-            "भविष्यति।"
-          ]
-        },
-        {
-          "sanskrit": "पठनार्थं पुस्तकानां समाचारपत्राणाम् अनिवार्यता प्रायः समाप्ता भविष्यति। लेखनार्थं अभ्यासपुस्तिकायाः कर्गदस्य वा, नूतनज्ञानान्वेषणार्थं शब्दकोशस्य अपि आवश्यकता न भविष्यति। अपरिचितमार्गस्य ज्ञानाय मार्गदर्शकस्य मानचित्रस्य आवश्यकतायाः अनुभूतिः अपि न भविष्यति।",
-          "meaning": "For reading, the physical requirement for books and newspapers will practically end. For writing, notebooks or paper, and for seeking new knowledge, even printed dictionaries will not be needed. To navigate unfamiliar routes, a physical guide or paper map will no longer be felt necessary.",
-          "paragraphTranslation": "पढ़ने के लिए पुस्तकों और समाचार-पत्रों की कागजी अनिवार्यता समाप्त हो जाएगी। लिखने के लिए नोटबुक या कागज की, और नए ज्ञान की खोज के लिए शब्दकोश की भी आवश्यकता नहीं रहेगी। अनजान रास्तों के लिए नक्शे या गाइड की आवश्यकता भी नहीं होगी।",
-          "words": [
-            "पठनार्थं",
-            "पुस्तकानां",
-            "समाचारपत्राणाम्",
-            "अनिवार्यता",
-            "प्रायः",
-            "समाप्ता",
-            "भविष्यति।",
-            "लेखनार्थं",
-            "अभ्यासपुस्तिकायाः",
-            "कर्गदस्य",
-            "वा",
-            "नूतनज्ञानान्वेषणार्थं",
-            "शब्दकोशस्य",
-            "अपि",
-            "आवश्यकता",
-            "न",
-            "भविष्यति।",
-            "अपरिचितमार्गस्य",
-            "ज्ञानाय",
-            "मार्गदर्शकस्य",
-            "मानचित्रस्य",
-            "आवश्यकतायाः",
-            "अनुभूतिः",
-            "अपि",
-            "न",
-            "भविष्यति।"
-          ]
-        },
-        {
-          "sanskrit": "एतत् सर्वं एकेनैव यन्त्रेण कर्तुं शक्यते। शाकादिक्रयार्थं, फलक्रयार्थं, विश्रामगृहेषु कक्षकक्षं सुनिश्चितं कर्तुं, चिकित्सालये शुल्कं प्रदातुं, विद्यालये महाविद्यालये चापि शुल्कं प्रदातुं, किम्बहुना दानमपि दातुं चलदूरभाषयन्त्रमेव अलम्। डिजिभारतम् इति अस्यां दिशि वयं भारतीयाः द्रुतगत्या अग्रे सरामः।",
-          "meaning": "All of this can be accomplished through a single device. For buying vegetables, purchasing fruits, booking hotel rooms, paying hospital bills, submitting school and college tuition, and even offering donations—the mobile phone alone is sufficient. In the direction of Digital India, we Indians are marching forward at a rapid pace.",
-          "paragraphTranslation": "यह सब एक ही यन्त्र से संभव है। सब्जी खरीदने, फल खरीदने, होटलों में कमरा बुक करने, अस्पताल में फीस देने, स्कूल-कॉलेज में फीस भरने और दान देने तक के लिए मोबाइल फोन ही पर्याप्त है। डिजिटल इंडिया की इस दिशा में हम भारतीय तीव्र गति से आगे बढ़ रहे हैं।",
-          "words": [
-            "एतत्",
-            "सर्वं",
-            "एकेनैव",
-            "यन्त्रेण",
-            "कर्तुं",
-            "शक्यते।",
-            "शाकादिक्रयार्थं",
-            "फलक्रयार्थं",
-            "विश्रामगृहेषु",
-            "कक्षकक्षं",
-            "सुनिश्चितं",
-            "कर्तुं",
-            "चिकित्सालये",
-            "शुल्कं",
-            "प्रदातुं",
-            "विद्यालये",
-            "महाविद्यालये",
-            "चापि",
-            "शुल्कं",
-            "प्रदातुं",
-            "किम्बहुना",
-            "दानमपि",
-            "दातुं",
-            "चलदूरभाषयन्त्रमेव",
-            "अलम्।",
-            "डिजिभारतम्",
-            "इति",
-            "अस्यां",
-            "दिशि",
-            "वयं",
-            "भारतीयाः",
-            "द्रुतगत्या",
-            "अग्रे",
-            "सरामः।"
-          ]
-        },
-        {
-          "sanskrit": "शब्दार्थाः (Complete Chapter Vocabulary & Synonyms — Page 65)",
-          "meaning": "Complete Vocabulary List of All 20 Modern Technical & Classical Sanskrit Terms with Synonyms, Hindi & English Meanings",
-          "paragraphTranslation": "शब्दार्थाः — पाठ के समस्त २० तकनीकी एवं शास्त्रीय पदों के अर्थ (पृष्ठ ६५)",
-          "words": [
-            "शब्दार्थाः",
-            "Complete",
-            "Chapter",
-            "Vocabulary",
-            "&",
-            "Synonyms",
-            "Page",
-            "65"
-          ],
-          "kind": "glossary-header"
-        },
-        {
-          "sanskrit": "जिज्ञासा",
-          "meaning": "Curiosity / desire to know",
-          "paragraphTranslation": "जानने की इच्छा",
-          "words": [
-            "जिज्ञासा"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "ज्ञातुम् इच्छा",
-          "hindi_gloss": "जानने की इच्छा"
-        },
-        {
-          "sanskrit": "कालपरिवर्तनेन",
-          "meaning": "With the change of time",
-          "paragraphTranslation": "समय बदलने के साथ",
-          "words": [
-            "कालपरिवर्तनेन"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "समयपरिवर्तनेन",
-          "hindi_gloss": "समय बदलने के साथ"
-        },
-        {
-          "sanskrit": "श्रुतिपरम्परया",
-          "meaning": "Through oral/auditory tradition",
-          "paragraphTranslation": "सुनने की परंपरा से",
-          "words": [
-            "श्रुतिपरम्परया"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "श्रवणपरम्परया",
-          "hindi_gloss": "सुनने की परंपरा से"
-        },
-        {
-          "sanskrit": "तालपत्रोपरि",
-          "meaning": "On the palm leaf",
-          "paragraphTranslation": "ताड़ के पत्ते के ऊपर",
-          "words": [
-            "तालपत्रोपरि"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "तालवृक्षस्य पत्रोपरि",
-          "hindi_gloss": "ताड़ के पत्ते के ऊपर"
-        },
-        {
-          "sanskrit": "भोजपत्रोपरि",
-          "meaning": "On the birch bark",
-          "paragraphTranslation": "भोजपत्र के ऊपर",
-          "words": [
-            "भोजपत्रोपरि"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "भूर्जवृक्षस्य त्वचायाम्",
-          "hindi_gloss": "भोजपत्र के ऊपर"
-        },
-        {
-          "sanskrit": "करगदस्य",
-          "meaning": "Of the paper",
-          "paragraphTranslation": "कागज का",
-          "words": [
-            "करगदस्य"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "कर्गदस्य",
-          "hindi_gloss": "कागज का"
-        },
-        {
-          "sanskrit": "लेखन्याः",
-          "meaning": "Of the pen",
-          "paragraphTranslation": "कलम का / लेखनी का",
-          "words": [
-            "लेखन्याः"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "कलमपदस्य",
-          "hindi_gloss": "कलम का / लेखनी का"
-        },
-        {
-          "sanskrit": "टङ्कणयन्त्रस्य",
-          "meaning": "Of the typewriter",
-          "paragraphTranslation": "टाइपराइटर का",
-          "words": [
-            "टङ्कणयन्त्रस्य"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "मुद्रणयन्त्रस्य",
-          "hindi_gloss": "टाइपराइटर का"
-        },
-        {
-          "sanskrit": "सङ्गणकम्",
-          "meaning": "Computer",
-          "paragraphTranslation": "कम्प्यूटर",
-          "words": [
-            "सङ्गणकम्"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "कम्प्यूटर-यन्त्रम्",
-          "hindi_gloss": "कम्प्यूटर"
-        },
-        {
-          "sanskrit": "प्रविधेः",
-          "meaning": "Technology / technique",
-          "paragraphTranslation": "तकनीक / प्रविधि",
-          "words": [
-            "प्रविधेः"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "तकनीक-कौशलस्य",
-          "hindi_gloss": "तकनीक / प्रविधि"
-        },
-        {
-          "sanskrit": "वस्तुक्रयार्थम्",
-          "meaning": "For purchasing goods",
-          "paragraphTranslation": "वस्तु खरीदने के लिए",
-          "words": [
-            "वस्तुक्रयार्थम्"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "सामग्र्यः क्रयणाय",
-          "hindi_gloss": "वस्तु खरीदने के लिए"
-        },
-        {
-          "sanskrit": "मुद्राहीनाय",
-          "meaning": "Cashless",
-          "paragraphTranslation": "नकद रहित (कैशलेस)",
-          "words": [
-            "मुद्राहीनाय"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "नकद-रहित-व्यवहाराय",
-          "hindi_gloss": "नकद रहित (कैशलेस)"
-        },
-        {
-          "sanskrit": "विनिमयाय",
-          "meaning": "For exchange / transaction",
-          "paragraphTranslation": "लेन-देन (ट्रांजैक्शन) के लिए",
-          "words": [
-            "विनिमयाय"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "देवादान-व्यवहाराय",
-          "hindi_gloss": "लेन-देन (ट्रांजैक्शन) के लिए"
-        },
-        {
-          "sanskrit": "चलदूरभाषयन्त्रम्",
-          "meaning": "Mobile phone device",
-          "paragraphTranslation": "मोबाइल फोन",
-          "words": [
-            "चलदूरभाषयन्त्रम्"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "मोबाइल-फोन-यन्त्रम्",
-          "hindi_gloss": "मोबाइल फोन"
-        },
-        {
-          "sanskrit": "सौकर्येण",
-          "meaning": "Easily / with convenience",
-          "paragraphTranslation": "आसानी से / सुगमता से",
-          "words": [
-            "सौकर्येण"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "सुलभतया / काठिन्यं विना",
-          "hindi_gloss": "आसानी से / सुगमता से"
-        },
-        {
-          "sanskrit": "वस्त्रपुटके",
-          "meaning": "In the pocket",
-          "paragraphTranslation": "जेब में",
-          "words": [
-            "वस्त्रपुटके"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "वस्त्रस्य स्यूते / खिशे",
-          "hindi_gloss": "जेब में"
-        },
-        {
-          "sanskrit": "विश्रामगृहेषु",
-          "meaning": "In hotels / guest houses",
-          "paragraphTranslation": "होटलों में / विश्राम गृहों में",
-          "words": [
-            "विश्रामगृहेषु"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "उपाहारगृहेषु / होटल",
-          "hindi_gloss": "होटलों में / विश्राम गृहों में"
-        },
-        {
-          "sanskrit": "कक्षाकक्षम्",
-          "meaning": "Room",
-          "paragraphTranslation": "कमरा / कक्ष",
-          "words": [
-            "कक्षाकक्षम्"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "प्रकोष्ठम्",
-          "hindi_gloss": "कमरा / कक्ष"
-        },
-        {
-          "sanskrit": "अलम्",
-          "meaning": "Sufficient / enough",
-          "paragraphTranslation": "काफी है / पर्याप्त है",
-          "words": [
-            "अलम्"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "पर्याप्तम्",
-          "hindi_gloss": "काफी है / पर्याप्त है"
-        },
-        {
-          "sanskrit": "द्रुतगत्या",
-          "meaning": "At a rapid pace",
-          "paragraphTranslation": "तेज गति से",
-          "words": [
-            "द्रुतगत्या"
-          ],
-          "kind": "glossary",
-          "sanskrit_gloss": "तीव्रगत्या",
-          "hindi_gloss": "तेज गति से"
-        },
-        {
-          "sanskrit": "अभ्यासकार्यम् (Chapter Exercises & Solved Solutions — Pages 65–66)",
-          "meaning": "Complete Solved Textbook Exercises: Q1 One-word, Q2 Full Sentences, Q3 Question Formulation",
-          "paragraphTranslation": "अभ्यासकार्यम् — पाठ्यपुस्तक के पूर्ण हल प्रश्नोत्तरी (पृष्ठ ६५–६६)",
-          "words": [
-            "अभ्यासकार्यम्",
-            "Chapter",
-            "Exercises",
-            "&",
-            "Solved",
-            "Solutions",
-            "Pages",
-            "65",
-            "66"
-          ],
-          "kind": "exercise-header"
-        },
-        {
-          "sanskrit": "(क) कुत्र 'डिजिभारतम्' इत्यस्य चर्चा श्रूयते?",
-          "meaning": "Where is the discussion of 'Digital India' heard? -> Across the entire world.",
-          "paragraphTranslation": "'डिजिटल इंडिया' की चर्चा कहाँ सुनी जाती है? ➔ संपूर्ण विश्व में।",
-          "words": [
-            "क",
-            "कुत्र",
-            "डिजिभारतम्",
+            "डिजिटल",
+            "भारतम्",
             "इत्यस्य",
             "चर्चा",
             "श्रूयते"
           ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "सम्पूर्णविश्वे",
-          "hindi_gloss": "'डिजिटल इंडिया' की चर्चा कहाँ सुनी जाती है? ➔ संपूर्ण विश्व में।"
+          "kind": null
         },
         {
-          "sanskrit": "(ख) केन सह मानवस्य आवश्यकता परिवर्तते?",
-          "meaning": "Along with what do human needs change? -> With the change of time.",
-          "paragraphTranslation": "किसके साथ मनुष्य की आवश्यकता बदलती है? ➔ समय बदलने के साथ।",
+          "sanskrit": "एकस्यैव पिञ्जस्य नोदनेन सर्वं नागरिक-सौविध्यं लभ्यते। अनेन भारतीयानां जीवनम् अधिकं सरलं जायमानम् अस्ति।",
+          "meaning": "By pressing just a single button, all citizen amenities are made available. Due to this, the lives of Indians are becoming much simpler.",
+          "paragraphTranslation": "मात्र एक बटन दबाने से नागरिकों को सभी प्रकार की सुविधाएं प्राप्त हो जाती हैं। इससे भारतीयों का जीवन बहुत सरल हो रहा है।",
           "words": [
-            "ख",
-            "केन",
-            "सह",
-            "मानवस्य",
-            "आवश्यकता",
-            "परिवर्तते"
+            "एकस्यैव",
+            "पिञ्जस्य",
+            "नोदनेन",
+            "सर्वं",
+            "नागरिक",
+            "सौविध्यं",
+            "लभ्यते",
+            "अनेन",
+            "भारतीयानां",
+            "जीवनम्",
+            "अधिकं",
+            "सरलं",
+            "जायमानम्",
+            "अस्ति"
           ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "कालपरिवर्तनेन (समयपरिवर्तनेन)",
-          "hindi_gloss": "किसके साथ मनुष्य की आवश्यकता बदलती है? ➔ समय बदलने के साथ।"
+          "kind": null
         },
         {
-          "sanskrit": "(ग) आपणे वस्तुनां क्रयसमये केषाम् अनिवार्यता न भविष्यति?",
-          "meaning": "What will not be mandatory while purchasing goods in the market? -> Cash / Paper money.",
-          "paragraphTranslation": "बाजार में वस्तुएँ खरीदते समय किसकी अनिवार्यता नहीं होगी? ➔ रुपयों (नकद) की।",
+          "sanskrit": "डिजिटल-पटले सम्पूर्ण-वसुधा कुटुम्बवत् अस्ति। अधुना वयं भारतस्य डिजिटल-प्रगतेः विषये पठामः।",
+          "meaning": "On the digital screen/platform, the entire Earth has become like one single family. Now we shall study the digital progress of India.",
+          "paragraphTranslation": "डिजिटल प्लेटफॉर्म पर पूरी पृथ्वी एक परिवार की तरह बन गई है। अब हम भारत की डिजिटल प्रगति के विषय में पढ़ेंगे।",
           "words": [
-            "ग",
-            "आपणे",
-            "वस्तुनां",
-            "क्रयसमये",
-            "केषाम्",
-            "अनिवार्यता",
-            "न",
+            "डिजिटल",
+            "पटले",
+            "सम्पूर्ण",
+            "वसुधा",
+            "कुटुम्बवत्",
+            "अस्ति",
+            "अधुना",
+            "वयं",
+            "भारतस्य",
+            "डिजिटल",
+            "प्रगतेः",
+            "विषये",
+            "पठामः"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अध्यापकः – बालाः ! प्रधानमन्त्रिसङ्ग्रहालये युष्माकं सर्वेषां स्वागतम्। अत्र विविधाः डिजिटल-प्रौद्योगिक्यः प्रयुक्ताः सन्ति। सानन्दं सावधानं च पश्यन्तु। अनन्तरं एतस्योपरि चर्चां करिष्यामः।",
+          "meaning": "Teacher: Children! Welcome to all of you to the Prime Ministers' Museum. Various digital technologies are employed here. Observe with joy and attention. Afterwards we shall discuss this.",
+          "paragraphTranslation": "अध्यापक: बच्चों! प्रधानमंत्री संग्रहालय में आप सभी का स्वागत है। यहाँ विभिन्न डिजिटल तकनीकों का उपयोग किया गया है। आनंदपूर्वक और ध्यान से देखिए। इसके बाद हम इस पर चर्चा करेंगे।",
+          "words": [
+            "अध्यापकः",
+            "बालाः",
+            "प्रधानमन्त्रिसङ्ग्रहालये",
+            "युष्माकं",
+            "सर्वेषां",
+            "स्वागतम्",
+            "अत्र",
+            "विविधाः",
+            "डिजिटल",
+            "प्रौद्योगिक्यः",
+            "प्रयुक्ताः",
+            "सन्ति",
+            "सानन्दं",
+            "सावधानं",
+            "च",
+            "पश्यन्तु",
+            "अनन्तरं",
+            "एतस्योपरि",
+            "चर्चां",
+            "करिष्यामः"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "(सर्वे बालाः प्रदर्शितानि विविधानि वस्तूनि उत्साहेन पश्यन्ति, अनुभवन्ति, परस्परं चर्चाम् अपि कुर्वन्ति ।)",
+          "meaning": "(All children view the displayed items with enthusiasm, experience them, and also hold discussions amongst themselves.)",
+          "paragraphTranslation": "(सभी बच्चे प्रदर्शित की गई विविध वस्तुओं को उत्साह के साथ देखते हैं, अनुभव करते हैं और आपस में चर्चा भी करते हैं।)",
+          "words": [
+            "सर्वे",
+            "बालाः",
+            "प्रदर्शितानि",
+            "विविधानि",
+            "वस्तूनि",
+            "उत्साहेन",
+            "पश्यन्ति",
+            "अनुभवन्ति",
+            "परस्परं",
+            "चर्चाम्",
+            "अपि",
+            "कुर्वन्ति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "सर्वे छात्राः – अद्भुतं महोदय ! अत्र हॉलोग्राम-द्वारा प्रधानमन्त्रिणः भाषणं श्रूयते दृश्यते च। प्रत्यक्षमेव प्रधानमन्त्री अत्र उपविष्टः इति भासते।",
+          "meaning": "All Students: Wonderful Sir! Here, the Prime Minister's speech is heard and seen through a hologram. It appears as if the Prime Minister is physically seated right here.",
+          "paragraphTranslation": "सभी छात्र: अद्भुत महोदय! यहाँ होलोग्राम के माध्यम से प्रधानमंत्री का भाषण सुनाई और दिखाई दे रहा है। ऐसा लगता है मानो साक्षात् प्रधानमंत्री यहाँ बैठे हों।",
+          "words": [
+            "सर्वे",
+            "छात्राः",
+            "अद्भुतं",
+            "महोदय",
+            "अत्र",
+            "हॉलोग्राम",
+            "द्वारा",
+            "प्रधानमन्त्रिणः",
+            "भाषणं",
+            "श्रूयते",
+            "दृश्यते",
+            "च",
+            "प्रत्यक्षमेव",
+            "प्रधानमन्त्री",
+            "अत्र",
+            "उपविष्टः",
+            "इति",
+            "भासते"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "यशिका – सत्यम्, अहम् अपि हॉलोग्राम् दृष्टवती। अनेन दिवङ्गताः नेतारः अपि जीविताः इव दृश्यन्ते।",
+          "meaning": "Yashika: True, I also saw the hologram. Through this, even departed leaders appear as if they are alive.",
+          "paragraphTranslation": "यशिका: सच है, मैंने भी होलोग्राम देखा। इससे दिवंगत नेता भी जीवित जैसे दिखाई देते हैं।",
+          "words": [
+            "यशिका",
+            "सत्यम्",
+            "अहम्",
+            "अपि",
+            "हॉलोग्राम्",
+            "दृष्टवती",
+            "अनेन",
+            "दिवङ्गताः",
+            "नेतारः",
+            "अपि",
+            "जीविताः",
+            "इव",
+            "दृश्यन्ते"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अथर्वः – अत्र ‘वर्धिता-वास्तविकता’ (AR) ‘आभासीया-वास्तविकता’ (VR) च इत्याभ्यां सम्बद्धानि उपकरणानि अपि सन्ति, अनेन ऐतिहासिकवृत्तानि प्रत्यक्षम् इव अनुभूयन्ते। ‘भारतीय-स्वतन्त्रता-सङ्ग्रामं’ दृष्ट्वा अस्माकं पूर्वजानां सङ्घर्षः कियान् विशालः आसीत् इति ज्ञायते।",
+          "meaning": "Atharva: Here there are devices related to Augmented Reality (AR) and Virtual Reality (VR), through which historical chronicles are experienced as if live. Looking at the Indian Freedom Struggle, one realizes how vast the struggle of our ancestors was.",
+          "paragraphTranslation": "अथर्व: यहाँ ऑगमेंटेड रियलिटी (AR) और वर्चुअल रियलिटी (VR) से संबंधित उपकरण भी हैं, जिससे ऐतिहासिक घटनाएँ साक्षात् जैसी महसूस होती हैं। 'भारतीय स्वतंत्रता संग्राम' को देखकर पता चलता है कि हमारे पूर्वजों का संघर्ष कितना बड़ा था।",
+          "words": [
+            "अथर्वः",
+            "अत्र",
+            "वर्धिता",
+            "वास्तविकता",
+            "आभासीया",
+            "वास्तविकता",
+            "च",
+            "इत्याभ्यां",
+            "सम्बद्धानि",
+            "उपकरणानि",
+            "अपि",
+            "सन्ति",
+            "अनेन",
+            "ऐतिहासिकवृत्तानि",
+            "प्रत्यक्षम्",
+            "इव",
+            "अनुभूयन्ते",
+            "भारतीय",
+            "स्वतन्त्रता",
+            "सङ्ग्रामं",
+            "दृष्ट्वा",
+            "अस्माकं",
+            "पूर्वजानां",
+            "सङ्घर्षः",
+            "कियान्",
+            "विशालः",
+            "आसीत्",
+            "इति",
+            "ज्ञायते"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "भास्करः – अहम् अत्र कृत्रिमबुद्धि-आधारितं संवादयन्त्रं दृष्टवान्। एतत् यन्त्रम् अस्माकं सर्वविधप्रश्नानाम् उत्तराणि ददाति।",
+          "meaning": "Bhaskar: I saw an Artificial Intelligence-based chatbot/interactive machine here. This instrument answers all varieties of our questions.",
+          "paragraphTranslation": "भास्कर: मैंने यहाँ आर्टिफिशियल इंटेलिजेंस (AI) पर आधारित संवाद मशीन देखी है। यह मशीन हमारे सभी प्रकार के प्रश्नों के उत्तर देती है।",
+          "words": [
+            "भास्करः",
+            "अहम्",
+            "अत्र",
+            "कृत्रिमबुद्धि",
+            "आधारितं",
+            "संवादयन्त्रं",
+            "दृष्टवान्",
+            "एतत्",
+            "यन्त्रम्",
+            "अस्माकं",
+            "सर्वविधप्रश्नानाम्",
+            "उत्तराणि",
+            "ददाति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "वेदिका – अहो ! ‘डिजिटल-प्रक्षेपण-चलच्चित्रं’ दृष्ट्वा अहं विस्मिता अभवम्। अत्र सम्पूर्णस्य भारतस्य विकास-यात्रा प्रदर्शिता अस्ति। श्रेया – एषः कश्चन अपूर्वः अनुभवः अस्ति। यश्च चिरकालपर्यन्तं स्मरणीयः भविष्यति।",
+          "meaning": "Vedika: Oh! Watching the Digital Projection Movie I was astonished; the development journey of all India is shown here. Shreya: This is an unprecedented experience that will be remembered for a long time.",
+          "paragraphTranslation": "वेदिका: अरे वाह! 'डिजिटल प्रोजेक्शन मूवी' देखकर मैं हैरान रह गई। यहाँ पूरे भारत की विकास यात्रा दिखाई गई है। श्रेया: यह एक अनोखा अनुभव है जो लंबे समय तक याद रहेगा।",
+          "words": [
+            "वेदिका",
+            "अहो",
+            "डिजिटल",
+            "प्रक्षेपण",
+            "चलच्चित्रं",
+            "दृष्ट्वा",
+            "अहं",
+            "विस्मिता",
+            "अभवम्",
+            "अत्र",
+            "सम्पूर्णस्य",
+            "भारतस्य",
+            "विकास",
+            "यात्रा",
+            "प्रदर्शिता",
+            "अस्ति",
+            "श्रेया",
+            "एषः",
+            "कश्चन",
+            "अपूर्वः",
+            "अनुभवः",
+            "अस्ति",
+            "यश्च",
+            "चिरकालपर्यन्तं",
+            "स्मरणीयः",
             "भविष्यति"
           ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "रुपयाणाम्",
-          "hindi_gloss": "बाजार में वस्तुएँ खरीदते समय किसकी अनिवार्यता नहीं होगी? ➔ रुपयों (नकद) की।"
+          "kind": null
         },
         {
-          "sanskrit": "(घ) कस्मिन् उद्योगे वृक्षाः उपयुज्यन्ते स्म?",
-          "meaning": "In which industry were trees used extensively? -> Paper industry.",
-          "paragraphTranslation": "किस उद्योग में पेड़ उपयोग किए जाते थे? ➔ कागज उद्योग में।",
+          "sanskrit": "भागः २: वित्तीयसमावेशनं डिजिटल-शासनं च (Financial Inclusion & Digital Governance — Pages 63–64)",
+          "meaning": "Part 2: Financial Inclusion and Digital Governance Systems (Pages 63–64)",
+          "paragraphTranslation": "भाग २: वित्तीय समावेशन एवं डिजिटल सुशासन (पृष्ठ ६३–६४)",
           "words": [
-            "घ",
-            "कस्मिन्",
-            "उद्योगे",
-            "वृक्षाः",
-            "उपयुज्यन्ते",
-            "स्म"
+            "भागः",
+            "वित्तीयसमावेशनं",
+            "डिजिटल",
+            "शासनं",
+            "च"
           ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "करगदोद्योगे (कागज-उद्योगे)",
-          "hindi_gloss": "किस उद्योग में पेड़ उपयोग किए जाते थे? ➔ कागज उद्योग में।"
+          "kind": "chapter-header"
         },
         {
-          "sanskrit": "(ङ) अद्य सर्वाणि कार्याणि केन यन्त्रेण साधितानि भवन्ति?",
-          "meaning": "Today, all tasks are accomplished by which device? -> Computer.",
-          "paragraphTranslation": "आज सभी कार्य किस यन्त्र से संपन्न होते हैं? ➔ कम्प्यूटर (सङ्गणक) यन्त्र से।",
+          "sanskrit": "अध्यापकः – उत्तमम् ! अस्माकं दैनिकं जीवनं ‘डिजिटल’ इत्यनेन परिवर्तितं प्रभावितं च भवति। अस्य क्षेत्रं व्यापकम् अस्ति। यथा – ‘डिजिटल-शासनं, स्वास्थ्यसेवा, शिक्षणं, वित्तीयं समावेशनम्’ इत्यादीनि क्षेत्राणि।",
+          "meaning": "Teacher: Excellent! Our daily life is transformed and influenced by digital technology. Its domain is vast: digital governance, healthcare, education, financial inclusion, and related arenas.",
+          "paragraphTranslation": "अध्यापक: बहुत अच्छे! हमारा दैनिक जीवन 'डिजिटल' माध्यम से बदल गया है और प्रभावित हुआ है। इसका क्षेत्र बहुत विस्तृत है — डिजिटल गवर्नेंस, स्वास्थ्य सेवाएं, शिक्षा और वित्तीय समावेशन आदि।",
           "words": [
-            "ङ",
-            "अद्य",
-            "सर्वाणि",
-            "कार्याणि",
-            "केन",
-            "यन्त्रेण",
-            "साधितानि",
+            "अध्यापकः",
+            "उत्तमम्",
+            "अस्माकं",
+            "दैनिकं",
+            "जीवनं",
+            "डिजिटल",
+            "इत्यनेन",
+            "परिवर्तितं",
+            "प्रभावितं",
+            "च",
+            "भवति",
+            "अस्य",
+            "क्षेत्रं",
+            "व्यापकम्",
+            "अस्ति",
+            "यथा",
+            "डिजिटल",
+            "शासनं",
+            "स्वास्थ्यसेवा",
+            "शिक्षणं",
+            "वित्तीयं",
+            "समावेशनम्",
+            "इत्यादीनि",
+            "क्षेत्राणि"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "यशिका – अहम् स्वयं ‘डिजि-लॉकर’ इत्यस्य उपयोगं करोमि। मम आधारपत्रं विद्यालयीयं प्रमाणपत्रं च तत्र सुरक्षितम् अस्ति। अथर्वः – मम पितरौ ‘फ़ास्टॅग्’ इत्यस्य उपयोगं कुरुतः। अनेन राजमार्गेषु स्वचालितविधिना मार्गशुल्कस्य सङ्ग्रहणं शीघ्रं भवति।",
+          "meaning": "Yashika: I myself use DigiLocker; my Aadhaar card and school certificates are secured there. Atharva: My parents use FASTag; by this, toll collection on highways happens rapidly via automated processes.",
+          "paragraphTranslation": "यशिका: मैं स्वयं 'डिजी लॉकर' का उपयोग करती हूँ। मेरा आधार कार्ड और स्कूल के प्रमाण पत्र वहाँ सुरक्षित हैं। अथर्व: मेरे माता-पिता 'फास्टैग' का उपयोग करते हैं, जिससे राजमार्गों पर टोल टैक्स जल्दी कट जाता है।",
+          "words": [
+            "यशिका",
+            "अहम्",
+            "स्वयं",
+            "डिजि",
+            "लॉकर",
+            "इत्यस्य",
+            "उपयोगं",
+            "करोमि",
+            "मम",
+            "आधारपत्रं",
+            "विद्यालयीयं",
+            "प्रमाणपत्रं",
+            "च",
+            "तत्र",
+            "सुरक्षितम्",
+            "अस्ति",
+            "अथर्वः",
+            "मम",
+            "पितरौ",
+            "फ़ास्टॅग्",
+            "इत्यस्य",
+            "उपयोगं",
+            "कुरुतः",
+            "अनेन",
+            "राजमार्गेषु",
+            "स्वचालितविधिना",
+            "मार्गशुल्कस्य",
+            "सङ्ग्रहणं",
+            "शीघ्रं",
+            "भवति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "भास्करः – अहम् ‘एकीकृत-धनदेयप्रत्यर्पण-अन्तरफलकस्य’ (यूआईडी/यूपीआई) उपयोगं करोमि। अनेन मम पितरौ अपि त्वरया मह्यं धनं प्रेषयितुं शक्नुतः। अध्यापकः – उत्तमम् ! वित्तीयसमावेशनस्य क्षेत्रे ‘यूपीआई, रूपे-कार्ड्, जनधनयोजना’ इत्यादीनि बहूनि साधनानि सन्ति।",
+          "meaning": "Bhaskar: I use Unified Payments Interface (UPI); through this, my parents can instantly send money to me. Teacher: Very good! In financial inclusion, UPI, RuPay cards, Jan Dhan Yojana, etc., are powerful tools.",
+          "paragraphTranslation": "भास्कर: मैं यूपीआई (UPI) का उपयोग करता हूँ, जिससे माता-पिता मुझे तुरंत पैसे भेज पाते हैं। अध्यापक: बहुत बढ़िया! वित्तीय समावेशन में यूपीआई, रूपे-कार्ड, जनधन योजना जैसे अनेक साधन हैं।",
+          "words": [
+            "भास्करः",
+            "अहम्",
+            "एकीकृत",
+            "धनदेयप्रत्यर्पण",
+            "अन्तरफलकस्य",
+            "उपयोगं",
+            "करोमि",
+            "अनेन",
+            "मम",
+            "पितरौ",
+            "अपि",
+            "त्वरया",
+            "मह्यं",
+            "धनं",
+            "प्रेषयितुं",
+            "शक्नुतः",
+            "अध्यापकः",
+            "उत्तमम्",
+            "वित्तीयसमावेशनस्य",
+            "क्षेत्रे",
+            "यूपीआई",
+            "रूपे",
+            "कार्ड्",
+            "जनधनयोजना",
+            "इत्यादीनि",
+            "बहूनि",
+            "साधनानि",
+            "सन्ति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अधुना आपणेेषु वस्तुक्रयणार्थं साक्षात् मुद्रायाः आवश्यकता नास्ति। मुद्रारहित-विनिमयसन्दर्भे विश्वे भारतस्य अग्रगण्यं स्थानम् अस्ति।",
+          "meaning": "Now in markets, there is no need for physical cash to purchase goods. Regarding cashless transactions, India holds the foremost ranking in the world.",
+          "paragraphTranslation": "अब दुकानों में सामान खरीदने के लिए नकद रुपयों की आवश्यकता नहीं है। कैशलेस लेनदेन के मामले में विश्व में भारत का स्थान सबसे आगे है।",
+          "words": [
+            "अधुना",
+            "आपणेेषु",
+            "वस्तुक्रयणार्थं",
+            "साक्षात्",
+            "मुद्रायाः",
+            "आवश्यकता",
+            "नास्ति",
+            "मुद्रारहित",
+            "विनिमयसन्दर्भे",
+            "विश्वे",
+            "भारतस्य",
+            "अग्रगण्यं",
+            "स्थानम्",
+            "अस्ति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "राघवः – डिजिटल-योजना भारतस्य काचित् महत्त्वाकाङ्क्षिणी योजना अस्ति। अध्यापकः – आम राघव ! एषा भारतसर्वकारस्य विशिष्टा महत्त्वाकाङ्क्षिणी योजना अस्ति। राष्ट्रं डिजिटल-रूपेण सुशक्तं भवेत् इत्येव अस्याः योजनायाः लक्ष्यम्। डिजिटल-शक्तिः सर्वजनान् सुशक्तान कुर्यात् इति अस्माकं ध्येयम्।",
+          "meaning": "Raghav: The Digital initiative is an ambitious scheme of India. Teacher: Yes Raghav! That the nation becomes digitally empowered is the goal, and that digital power empowers every citizen is our objective.",
+          "paragraphTranslation": "राघव: डिजिटल योजना भारत की बहुत बड़ी महत्वाकांक्षी योजना है। अध्यापक: हाँ राघव! राष्ट्र डिजिटल रूप से सशक्त बने, यही इसका लक्ष्य है। डिजिटल शक्ति सभी नागरिकों को समर्थ बनाए, यही हमारा ध्येय है।",
+          "words": [
+            "राघवः",
+            "डिजिटल",
+            "योजना",
+            "भारतस्य",
+            "काचित्",
+            "महत्त्वाकाङ्क्षिणी",
+            "योजना",
+            "अस्ति",
+            "अध्यापकः",
+            "आम",
+            "राघव",
+            "एषा",
+            "भारतसर्वकारस्य",
+            "विशिष्टा",
+            "महत्त्वाकाङ्क्षिणी",
+            "योजना",
+            "अस्ति",
+            "राष्ट्रं",
+            "डिजिटल",
+            "रूपेण",
+            "सुशक्तं",
+            "भवेत्",
+            "इत्येव",
+            "अस्याः",
+            "योजनायाः",
+            "लक्ष्यम्",
+            "डिजिटल",
+            "शक्तिः",
+            "सर्वजनान्",
+            "सुशक्तान",
+            "कुर्यात्",
+            "इति",
+            "अस्माकं",
+            "ध्येयम्"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "श्रेया – महोदय ! अस्य स्वरूपं किञ्चित् स्पष्टीकरोतु। अध्यापकः – अवश्यम् ! पश्य, डिजिटल-शासन-सेवायाः अन्तर्गतं ‘डिजी-लॉकर’ (आधार-पैन-कार्ड् इत्यादीनां डिजिटल-सङ्ग्रहणम्), ‘ई-शासनपटलम्’ यथा – ‘उमङ्ग्’ (UMANG), ‘माय-गव’ (My-Gov), ‘जेम’ (GeM) इत्यादयः। ऑन-लैन-टीकाकरण-पञ्जीकरणार्थं ‘कोविन-पटलम्’ (COWIN) अस्ति।",
+          "meaning": "Shreya: Sir! Please clarify its structure. Teacher: Surely! Under digital governance services come DigiLocker, e-Governance portals such as UMANG, MyGov, GeM, and for online vaccine registration, the CoWIN portal.",
+          "paragraphTranslation": "श्रेया: महोदय! इसके स्वरूप को थोड़ा स्पष्ट कीजिए। अध्यापक: अवश्य! देखो, डिजिटल गवर्नेंस के अंतर्गत डिजी-लॉकर, ई-गवर्नेंस पोर्टल जैसे उमंग, माय-गव, जेम आदि और ऑनलाइन वैक्सीन रजिस्ट्रेशन के लिए कोविन पोर्टल है।",
+          "words": [
+            "श्रेया",
+            "महोदय",
+            "अस्य",
+            "स्वरूपं",
+            "किञ्चित्",
+            "स्पष्टीकरोतु",
+            "अध्यापकः",
+            "अवश्यम्",
+            "पश्य",
+            "डिजिटल",
+            "शासन",
+            "सेवायाः",
+            "अन्तर्गतं",
+            "डिजी",
+            "लॉकर",
+            "आधार",
+            "पैन",
+            "कार्ड्",
+            "इत्यादीनां",
+            "डिजिटल",
+            "सङ्ग्रहणम्",
+            "ई",
+            "शासनपटलम्",
+            "यथा",
+            "उमङ्ग्",
+            "माय",
+            "गव",
+            "जेम",
+            "इत्यादयः",
+            "ऑन",
+            "लैन",
+            "टीकाकरण",
+            "पञ्जीकरणार्थं",
+            "कोविन",
+            "पटलम्",
+            "अस्ति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "भागः ३: ग्रामीण-विस्तारः, शिक्षा, कृषिः, साङ्गणिक-सुरक्षा च (Rural Expansion, Education, Agriculture & Cyber Security — Page 65)",
+          "meaning": "Part 3: Internet in Rural Areas, E-Education, Digital Agriculture, and Cyber Security (Page 65)",
+          "paragraphTranslation": "भाग ३: ग्रामीण क्षेत्रों में इंटरनेट, डिजिटल शिक्षा, कृषि एवं साइबर सुरक्षा (पृष्ठ ६५)",
+          "words": [
+            "भागः",
+            "ग्रामीण",
+            "विस्तारः",
+            "शिक्षा",
+            "कृषिः",
+            "साङ्गणिक",
+            "सुरक्षा",
+            "च"
+          ],
+          "kind": "chapter-header"
+        },
+        {
+          "sanskrit": "यशिका – किन्तु यदि ग्राम्य-क्षेत्रे अन्तर्जालस्य समस्या अस्ति तर्हि तत्र कथम् एतासां सेवानाम् उपयोगः भविष्यति? श्रेया – मान्यवर ! मया श्रुतं यत् सर्वकारः अन्तर्जालस्य उत्तरोत्तरं विस्ताराय कार्यं करोति। अनेन ग्राम्य-क्षेत्रे अपि उच्चगतेः जालस्य उपलब्धिः भविष्यति।",
+          "meaning": "Yashika: But if there are internet issues in villages, how will these services be used? Shreya: Respected Sir, I have heard that the government works for expanding internet connectivity so high-speed internet reaches villages too.",
+          "paragraphTranslation": "यशिका: लेकिन यदि गाँवों में इंटरनेट की समस्या हो, तो इन सेवाओं का उपयोग कैसे होगा? श्रेया: आदरणीय महोदय! मैंने सुना है कि सरकार इंटरनेट के विस्तार पर कार्य कर रही है जिससे गाँवों में भी हाई-स्पीड इंटरनेट मिलेगा।",
+          "words": [
+            "यशिका",
+            "किन्तु",
+            "यदि",
+            "ग्राम्य",
+            "क्षेत्रे",
+            "अन्तर्जालस्य",
+            "समस्या",
+            "अस्ति",
+            "तर्हि",
+            "तत्र",
+            "कथम्",
+            "एतासां",
+            "सेवानाम्",
+            "उपयोगः",
+            "भविष्यति",
+            "श्रेया",
+            "मान्यवर",
+            "मया",
+            "श्रुतं",
+            "यत्",
+            "सर्वकारः",
+            "अन्तर्जालस्य",
+            "उत्तरोत्तरं",
+            "विस्ताराय",
+            "कार्यं",
+            "करोति",
+            "अनेन",
+            "ग्राम्य",
+            "क्षेत्रे",
+            "अपि",
+            "उच्चगतेः",
+            "जालस्य",
+            "उपलब्धिः",
+            "भविष्यति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "भास्करः – बहु समीचीनम् । एतासां सेवानाम् उपयोगः शिक्षायाः माध्यमेन अधिकाधिकं प्रचारणीयः। अध्यापकः – सत्यम् ! शिक्षायाः क्षेत्रे ‘दीक्षा’ (DIKSHA), ‘स्वयम्’ (SWAYAM), ‘स्वयं-प्रभा’ (SWAYAM PRABHA), ‘ई-पाठशाला’ (ePathshala), ‘निष्ठा’ (NISHTHA), ‘पीएम-ई-विद्या’ (PM e-VIDYA) इत्यादीनां निःशुल्क-डिजिटल-शैक्षिकमञ्चाः उपयोगः करणीयः।",
+          "meaning": "Bhaskar: Very appropriate! Use of these services should be popularized via education. Teacher: True! In education, free educational platforms like DIKSHA, SWAYAM, SWAYAM PRABHA, ePathshala, NISHTHA, and PM e-VIDYA should be leveraged.",
+          "paragraphTranslation": "भास्कर: बहुत उचित! इन सेवाओं का उपयोग शिक्षा के माध्यम से अधिक प्रचारित होना चाहिए। अध्यापक: सही! शिक्षा में दीक्षा, स्वयम्, स्वयं-प्रभा, ई-पाठशाला, निष्ठा, पीएम ई-विद्या जैसे मुफ़्त शैक्षिक मंचों का उपयोग करना चाहिए।",
+          "words": [
+            "भास्करः",
+            "बहु",
+            "समीचीनम्",
+            "एतासां",
+            "सेवानाम्",
+            "उपयोगः",
+            "शिक्षायाः",
+            "माध्यमेन",
+            "अधिकाधिकं",
+            "प्रचारणीयः",
+            "अध्यापकः",
+            "सत्यम्",
+            "शिक्षायाः",
+            "क्षेत्रे",
+            "दीक्षा",
+            "स्वयम्",
+            "स्वयं",
+            "प्रभा",
+            "ई",
+            "पाठशाला",
+            "निष्ठा",
+            "पीएम",
+            "ई",
+            "विद्या",
+            "इत्यादीनां",
+            "निःशुल्क",
+            "डिजिटल",
+            "शैक्षिकमञ्चाः",
+            "उपयोगः",
+            "करणीयः"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "अथर्वः – आचार्य ! किं कृषिक्षेत्रे अपि डिजिटल-भारतस्य योगदानम् अस्ति? अध्यापकः – आम् ! ‘ई-नाम’ (e-NAM), ‘पीएम-किसान-अनुप्रयोगः’ (PM KISAN), ड्रोन-प्रौद्योगिकी इत्यादीनि पटलानि सन्ति।",
+          "meaning": "Atharva: Master! Is there contribution of Digital India in agriculture too? Teacher: Yes! There are platforms like e-NAM, PM KISAN mobile app, and drone technologies.",
+          "paragraphTranslation": "अथर्व: आचार्य! क्या कृषि के क्षेत्र में भी डिजिटल इंडिया का योगदान है? अध्यापक: हाँ! ई-नाम, पीएम-किसान ऐप, और ड्रोन तकनीक जैसे कई डिजिटल मंच उपलब्ध हैं।",
+          "words": [
+            "अथर्वः",
+            "आचार्य",
+            "किं",
+            "कृषिक्षेत्रे",
+            "अपि",
+            "डिजिटल",
+            "भारतस्य",
+            "योगदानम्",
+            "अस्ति",
+            "अध्यापकः",
+            "आम्",
+            "ई",
+            "नाम",
+            "पीएम",
+            "किसान",
+            "अनुप्रयोगः",
+            "ड्रोन",
+            "प्रौद्योगिकी",
+            "इत्यादीनि",
+            "पटलानि",
+            "सन्ति"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "यशिका – बहु सम्यक् । किन्तु ‘डिजिटल’ इत्यस्य वाणिज्ये कीदृशः प्रभावः अस्ति? अध्यापकः – ऑन-लैन विक्रयणं भवति। ‘आशु-प्रतिक्रिया-कूटः’ (QR Code) इत्याधारितः विनिमयश्च भवति। किन्तु अस्माभिः ‘साङ्गणिक-सुरक्षा’-विषये अपि चिन्तनीयम्। अनेकविधाः साङ्गणिक-अपराधाः भवन्ति।",
+          "meaning": "Yashika: Very good. But what is the impact in commerce? Teacher: Online sales happen, QR-code based transactions occur. But we must also think about Cyber Security; diverse cybercrimes take place.",
+          "paragraphTranslation": "यशिका: व्यापार में इसका क्या प्रभाव है? अध्यापक: ऑनलाइन बिक्री होती है, क्यूआर कोड आधारित भुगतान होता है। लेकिन हमें साइबर सुरक्षा के विषय में भी सोचना चाहिए; कई प्रकार के साइबर अपराध होते हैं।",
+          "words": [
+            "यशिका",
+            "बहु",
+            "सम्यक्",
+            "किन्तु",
+            "डिजिटल",
+            "इत्यस्य",
+            "वाणिज्ये",
+            "कीदृशः",
+            "प्रभावः",
+            "अस्ति",
+            "अध्यापकः",
+            "ऑन",
+            "लैन",
+            "विक्रयणं",
+            "भवति",
+            "आशु",
+            "प्रतिक्रिया",
+            "कूटः",
+            "इत्याधारितः",
+            "विनिमयश्च",
+            "भवति",
+            "किन्तु",
+            "अस्माभिः",
+            "साङ्गणिक",
+            "सुरक्षा",
+            "विषये",
+            "अपि",
+            "चिन्तनीयम्",
+            "अनेकविधाः",
+            "साङ्गणिक",
+            "अपराधाः",
             "भवन्ति"
           ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "सङ्गणकयन्त्रेण",
-          "hindi_gloss": "आज सभी कार्य किस यन्त्र से संपन्न होते हैं? ➔ कम्प्यूटर (सङ्गणक) यन्त्र से।"
+          "kind": null
         },
         {
-          "sanskrit": "(क) प्राचीनकाले विद्या कथं गृह्यते स्म?",
-          "meaning": "How was education received in ancient times? -> In ancient times, education was received through the oral tradition (Shruti).",
-          "paragraphTranslation": "प्राचीन काल में विद्या श्रुति-परंपरा द्वारा ग्रहण की जाती थी।",
+          "sanskrit": "भास्करः – एतस्मिन् विषये जनाः जागृताः भवेयुः तदर्थम् अपि उपायाः चिन्तनीयाः। अध्यापकः – सत्यं कथितम् ! अनेन प्रकारेण डिजिटल-क्रान्तौ भारतम् अग्रगण्यं राष्ट्रं भविष्यति।",
+          "meaning": "Bhaskar: Citizens should become aware in this matter, measures must be devised. Teacher: Well said! In this manner, India will become the foremost leading nation in the digital revolution.",
+          "paragraphTranslation": "भास्कर: लोग इसके प्रति जागरूक हों, इसके लिए उपाय सोचे जाने चाहिए। अध्यापक: बिल्कुल सत्य कहा! इस प्रकार डिजिटल क्रांति में भारत विश्व का अग्रणी राष्ट्र बनेगा।",
           "words": [
-            "क",
-            "प्राचीनकाले",
-            "विद्या",
-            "कथं",
-            "गृह्यते",
-            "स्म"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "प्राचीनकाले विद्या श्रुतिपरम्परया (श्रवणेन) गृह्यते स्म।",
-          "hindi_gloss": "प्राचीन काल में विद्या श्रुति-परंपरा द्वारा ग्रहण की जाती थी।"
-        },
-        {
-          "sanskrit": "(ख) वृक्षाणां कर्तनं कथं न्यूनतां गमिष्यति?",
-          "meaning": "How will tree cutting reduce? -> By maximizing computer usage, dependency on paper will decrease, reducing the felling of trees.",
-          "paragraphTranslation": "कम्प्यूटर के अधिकाधिक प्रयोग से कागज का उपयोग घटेगा, जिससे पेड़ों की कटाई में कमी आएगी।",
-          "words": [
-            "ख",
-            "वृक्षाणां",
-            "कर्तनं",
-            "कथं",
-            "न्यूनतां",
-            "गमिष्यति"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "सङ्गणकस्य अधिकाधिकप्रयोगेण करगदस्य आवश्यकता न्यूना भविष्यति, अनेन वृक्षाणां कर्तनं न्यूनतां गमिष्यति।",
-          "hindi_gloss": "कम्प्यूटर के अधिकाधिक प्रयोग से कागज का उपयोग घटेगा, जिससे पेड़ों की कटाई में कमी आएगी।"
-        },
-        {
-          "sanskrit": "(ग) चिकित्सालये कस्य आवश्यकता अद्य नानुभूयते?",
-          "meaning": "What is no longer felt necessary in hospitals today? -> Physical cash notes, as fees can be paid via cards or e-banking.",
-          "paragraphTranslation": "अस्पताल में इलाज के लिए नकद रुपयों की आवश्यकता महसूस नहीं होती, क्योंकि कार्ड या ई-बैंकिंग से भुगतान संभव है।",
-          "words": [
-            "ग",
-            "चिकित्सालये",
-            "कस्य",
-            "आवश्यकता",
-            "अद्य",
-            "नानुभूयते"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "चिकित्सालये उपचारार्थं रुपयाणां आवश्यकता अद्य नानुभूयते, सर्वत्र कार्डमाध्यमेन ई-बैंकिङ्गमाध्यमेन च शुल्कं प्रदातुं शक्यते।",
-          "hindi_gloss": "अस्पताल में इलाज के लिए नकद रुपयों की आवश्यकता महसूस नहीं होती, क्योंकि कार्ड या ई-बैंकिंग से भुगतान संभव है।"
-        },
-        {
-          "sanskrit": "(घ) वयम् अस्यां दिशि केन गत्या अग्रे सरामः?",
-          "meaning": "At what speed are we moving forward in this direction? -> We are marching forward at a rapid pace in the direction of Digital India.",
-          "paragraphTranslation": "हम डिजिटल इंडिया की दिशा में तीव्र गति से आगे बढ़ रहे हैं।",
-          "words": [
-            "घ",
-            "वयम्",
-            "अस्यां",
-            "दिशि",
-            "केन",
-            "गत्या",
-            "अग्रे",
-            "सरामः"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "वयं 'डिजिभारतम्' इति अस्यां दिशि द्रुतगत्या (तीव्रगत्या) अग्रे सरामः।",
-          "hindi_gloss": "हम डिजिटल इंडिया की दिशा में तीव्र गति से आगे बढ़ रहे हैं।"
-        },
-        {
-          "sanskrit": "(ङ) वस्त्रपुटके केषाम् आवश्यकता न भविष्यति?",
-          "meaning": "What will not be needed in pockets? -> There will be no need for paper cash notes in pockets.",
-          "paragraphTranslation": "जेब (वस्त्रपुटक) में नकद रुपयों की आवश्यकता नहीं होगी।",
-          "words": [
-            "ङ",
-            "वस्त्रपुटके",
-            "केषाम्",
-            "आवश्यकता",
-            "न",
+            "भास्करः",
+            "एतस्मिन्",
+            "विषये",
+            "जनाः",
+            "जागृताः",
+            "भवेयुः",
+            "तदर्थम्",
+            "अपि",
+            "उपायाः",
+            "चिन्तनीयाः",
+            "अध्यापकः",
+            "सत्यं",
+            "कथितम्",
+            "अनेन",
+            "प्रकारेण",
+            "डिजिटल",
+            "क्रान्तौ",
+            "भारतम्",
+            "अग्रगण्यं",
+            "राष्ट्रं",
             "भविष्यति"
           ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "वस्त्रपुटके रुपयाणाम् (कागजीयमुद्राणाम्) आवश्यकता न भविष्यति।",
-          "hindi_gloss": "जेब (वस्त्रपुटक) में नकद रुपयों की आवश्यकता नहीं होगी।"
+          "kind": null
         },
         {
-          "sanskrit": "(क) भोजपत्रोपरि लेखनम् आरब्धम्।",
-          "meaning": "What began on the birch bark? -> भोजपत्रोपरि किम् आरब्धम्?",
-          "paragraphTranslation": "भोजपत्र के ऊपर क्या प्रारंभ हुआ?",
+          "sanskrit": "शब्दार्थाः (Complete Chapter Vocabulary & Glossary — Pages 61–65)",
+          "meaning": "Comprehensive Chapter Vocabulary with Sanskrit, Hindi, and English Definitions",
+          "paragraphTranslation": "पाठ के सम्पूर्ण कठिन शब्दार्थ एवं तकनीकी पारिभाषिक शब्दावली (पृष्ठ ६१–६५)",
           "words": [
-            "क",
-            "भोजपत्रोपरि",
-            "लेखनम्",
-            "आरब्धम्।"
+            "शब्दार्थाः",
+            "कठिन",
+            "शब्दार्थ",
+            "एवं",
+            "तकनीकी",
+            "शब्दावली"
           ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "भोजपत्रोपरि किम् आरब्धम्?",
-          "hindi_gloss": "भोजपत्र के ऊपर क्या प्रारंभ हुआ?"
+          "kind": "glossary-header"
         },
         {
-          "sanskrit": "(ख) लेखनार्थं करगदस्य आवश्यकतायाः अनुभूतिः न भविष्यति।",
-          "meaning": "For writing, whose necessity will not be felt? -> लेखनार्थं कस्य आवश्यकतायाः अनुभूतिः न भविष्यति?",
-          "paragraphTranslation": "लिखने के लिए किसकी आवश्यकता महसूस नहीं होगी?",
+          "sanskrit": "प्रौद्योगिक्यः — तकनीक / technologies",
+          "meaning": "Technologies, technical methodologies.",
+          "paragraphTranslation": "प्रौद्योगिक्यः = तकनीकें, टेक्नोलॉजी।",
           "words": [
-            "ख",
-            "लेखनार्थं",
-            "करगदस्य",
-            "आवश्यकतायाः",
-            "अनुभूतिः",
-            "न",
-            "भविष्यति।"
+            "प्रौद्योगिक्यः",
+            "तकनीक",
+            "technologies"
           ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "लेखनार्थं कस्य आवश्यकतायाः अनुभूतिः न भविष्यति?",
-          "hindi_gloss": "लिखने के लिए किसकी आवश्यकता महसूस नहीं होगी?"
+          "kind": "glossary"
         },
         {
-          "sanskrit": "(ग) विश्रामगृहेषु कक्षाकक्षम् सुनिश्चितं कर्तुं चलदूरभाषयन्त्रं आवश्यकम्।",
-          "meaning": "To ensure what in guest houses is mobile needed? -> विश्रामगृहेषु किम् सुनिश्चितं कर्तुं चलदूरभाषयन्त्रं आवश्यकम्?",
-          "paragraphTranslation": "होटलों में क्या सुनिश्चित करने के लिए मोबाइल आवश्यक है?",
+          "sanskrit": "उत्सुकतया — उत्सुकता के साथ (with curiosity)",
+          "meaning": "Eagerly, inquisitively, with keen interest.",
+          "paragraphTranslation": "उत्सुकतया = जानने की प्रबल इच्छा व उत्सुकता के साथ।",
           "words": [
-            "ग",
-            "विश्रामगृहेषु",
-            "कक्षाकक्षम्",
-            "सुनिश्चितं",
-            "कर्तुं",
-            "चलदूरभाषयन्त्रं",
-            "आवश्यकम्।"
+            "उत्सुकतया",
+            "उत्सुकता",
+            "curiosity"
           ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "विश्रामगृहेषु किम् सुनिश्चितं कर्तुं चलदूरभाषयन्त्रं आवश्यकम्?",
-          "hindi_gloss": "होटलों में क्या सुनिश्चित करने के लिए मोबाइल आवश्यक है?"
+          "kind": "glossary"
         },
         {
-          "sanskrit": "(घ) सर्वाणि पत्राणि चलदूरभाषयन्त्रे सुरक्षितानि भवन्ति।",
-          "meaning": "In what do all tickets remain secure? -> सर्वाणि पत्राणि कस्मिन् सुरक्षितानि भवन्ति?",
-          "paragraphTranslation": "सभी पत्र (टिकट) किसमें सुरक्षित रहते हैं?",
+          "sanskrit": "पिञ्जस्य नोदनेन — एक बटन दबाने से (by pressing a button)",
+          "meaning": "By pushing or clicking a key/switch.",
+          "paragraphTranslation": "पिञ्जस्य नोदनेन = मात्र एक बटन दबाने से।",
           "words": [
-            "घ",
-            "सर्वाणि",
-            "पत्राणि",
-            "चलदूरभाषयन्त्रे",
-            "सुरक्षितानि",
-            "भवन्ति।"
+            "पिञ्जस्य",
+            "नोदनेन",
+            "बटन",
+            "दबाने",
+            "से",
+            "pressing",
+            "button"
           ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "सर्वाणि पत्राणि कस्मिन् सुरक्षितानि भवन्ति?",
-          "hindi_gloss": "सभी पत्र (टिकट) किसमें सुरक्षित रहते हैं?"
+          "kind": "glossary"
         },
         {
-          "sanskrit": "(ङ) वयम् उपचारार्थम् चिकित्सालयं गच्छामः।",
-          "meaning": "For what purpose do we visit the hospital? -> वयं किमर्थम् चिकित्सालयं गच्छामः?",
-          "paragraphTranslation": "हम किसलिए अस्पताल जाते हैं?",
+          "sanskrit": "नागरिक-सौविध्यम् — नागरिक सुविधाएं (citizen amenities / civic conveniences)",
+          "meaning": "Public services and conveniences provided to citizens.",
+          "paragraphTranslation": "नागरिक-सौविध्यम् = नागरिकों की सुविधाएँ व जनसेवाएँ।",
           "words": [
-            "ङ",
-            "वयम्",
-            "उपचारार्थम्",
-            "चिकित्सालयं",
-            "गच्छामः।"
+            "नागरिक",
+            "सौविध्यम्",
+            "citizen",
+            "amenities"
           ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "वयं किमर्थम् चिकित्सालयं गच्छामः?",
-          "hindi_gloss": "हम किसलिए अस्पताल जाते हैं?"
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "वसुधा कुटुम्बवत् — पूरी पृथ्वी एक परिवार की तरह (Earth like a family)",
+          "meaning": "The global community acting as a single unified family.",
+          "paragraphTranslation": "वसुधा कुटुम्बवत् = सम्पूर्ण पृथ्वी एक परिवार के समान।",
+          "words": [
+            "वसुधा",
+            "कुटुम्बवत्",
+            "earth",
+            "like",
+            "family"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "डिजिटल-पटले — डिजिटल स्क्रीन/मंच पर (on the digital screen/platform)",
+          "meaning": "On the digital interface or screen display.",
+          "paragraphTranslation": "डिजिटल-पटले = डिजिटल स्क्रीन अथवा इलेक्ट्रॉनिक पटल पर।",
+          "words": [
+            "डिजिटल",
+            "पटले",
+            "digital",
+            "platform",
+            "screen"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "हॉलोग्राम् — त्रिविमीय प्रतिमूर्ति (3D Hologram projection)",
+          "meaning": "Three-dimensional photographic image formed by light projection.",
+          "paragraphTranslation": "हॉलोग्राम् = त्रिविमीय (3D) आभासी प्रतिमूर्ति।",
+          "words": [
+            "हॉलोग्राम्",
+            "hologram",
+            "projection"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "भासते — प्रतीत होता है (appears to be / seems)",
+          "meaning": "Appears, shines, manifests as if real.",
+          "paragraphTranslation": "भासते = दिखाई देता है, प्रतीत होता है।",
+          "words": [
+            "भासते",
+            "प्रतीत",
+            "होता",
+            "है",
+            "appears"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "दिवङ्गताः — परलोक गए हुए / मृत (late / deceased leaders)",
+          "meaning": "Deceased, departed persons who have passed away.",
+          "paragraphTranslation": "दिवङ्गताः = परलोक सिधारे हुए, दिवंगत।",
+          "words": [
+            "दिवङ्गताः",
+            "deceased",
+            "late"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "वर्धिता-वास्तविकता — संवर्धित वास्तविकता / Augmented Reality (AR)",
+          "meaning": "Augmented Reality (AR) combining digital elements with physical environment.",
+          "paragraphTranslation": "वर्धिता-वास्तविकता = ऑगमेंटेड रियलिटी (AR)।",
+          "words": [
+            "वर्धिता",
+            "वास्तविकता",
+            "augmented",
+            "reality",
+            "AR"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "आभासीया-वास्तविकता — आभासी वास्तविकता / Virtual Reality (VR)",
+          "meaning": "Virtual Reality (VR) creating simulated 3D environments.",
+          "paragraphTranslation": "आभासीया-वास्तविकता = वर्चुअल रियलिटी (VR)।",
+          "words": [
+            "आभासीया",
+            "वास्तविकता",
+            "virtual",
+            "reality",
+            "VR"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "कृत्रिमबुद्धिः — मशीनी बुद्धिमत्ता / Artificial Intelligence (AI)",
+          "meaning": "Artificial Intelligence capable of simulation, analysis, and dialogue.",
+          "paragraphTranslation": "कृत्रिमबुद्धिः = कृत्रिम बुद्धिमत्ता, मशीनी समझ (AI)।",
+          "words": [
+            "कृत्रिमबुद्धिः",
+            "artificial",
+            "intelligence",
+            "AI"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "संवादयन्त्रम् — चैटबॉट / बातचीत करने वाली मशीन (Chatbot / dialogue bot)",
+          "meaning": "Interactive AI-driven communication system or chatbot.",
+          "paragraphTranslation": "संवादयन्त्रम् = प्रश्नों के उत्तर देने वाली संवाद मशीन (चैटबॉट)।",
+          "words": [
+            "संवादयन्त्रम्",
+            "chatbot",
+            "interactive",
+            "machine"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "चलच्चित्रम् — फिल्म / सिनेमा (movie / motion picture)",
+          "meaning": "Cinema, movie, projection film.",
+          "paragraphTranslation": "चलच्चित्रम् = सिनेमा, मूवी।",
+          "words": [
+            "चलच्चित्रम्",
+            "movie",
+            "motion",
+            "picture"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "वित्तीयसमावेशनम् — बैंकिंग व धन प्रणाली से जोड़ना (Financial Inclusion)",
+          "meaning": "Financial inclusion connecting every citizen to formal banking networks.",
+          "paragraphTranslation": "वित्तीयसमावेशनम् = सभी नागरिकों को बैंकिंग व आर्थिक तंत्र से जोड़ना।",
+          "words": [
+            "वित्तीयसमावेशनम्",
+            "financial",
+            "inclusion"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "डिजि-लॉकर — डिजिटल दस्तावेज़ भंडार (DigiLocker)",
+          "meaning": "Secure cloud-based digital document depository.",
+          "paragraphTranslation": "डिजि-लॉकर = आधार, प्रमाण पत्र आदि सुरक्षित रखने का डिजिटल लॉकर।",
+          "words": [
+            "डिजि",
+            "लॉकर",
+            "digilocker",
+            "digital",
+            "depository"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "स्वचालितविधिना — ऑटोमेटिक तरीके से (by automatic automated process)",
+          "meaning": "Automatically, without manual intervention.",
+          "paragraphTranslation": "स्वचालितविधिना = स्वचालित तरीके से, ऑटोमेशन द्वारा।",
+          "words": [
+            "स्वचालितविधिना",
+            "automatically",
+            "automated"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "मार्गशुल्कम् — टोल टैक्स (toll fee / highway charge)",
+          "meaning": "Highway toll charge for transit.",
+          "paragraphTranslation": "मार्गशुल्कम् = राजमार्गों पर लगने वाला पथकर (टोल टैक्स)।",
+          "words": [
+            "मार्गशुल्कम्",
+            "toll",
+            "fee",
+            "highway",
+            "charge"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "मुद्रारहित-विनिमयः — कैशलेस लेनदेन (cashless digital transactions)",
+          "meaning": "Cashless exchange and digital payments.",
+          "paragraphTranslation": "मुद्रारहित-विनिमयः = बिना नकद रुपयों के डिजिटल लेनदेन।",
+          "words": [
+            "मुद्रारहित",
+            "विनिमयः",
+            "cashless",
+            "transaction"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "सुशक्तम् — अत्यधिक समर्थ व मजबूत (highly empowered)",
+          "meaning": "Thoroughly empowered, capable, robust.",
+          "paragraphTranslation": "सुशक्तम् = पूरी तरह सशक्त व मजबूत।",
+          "words": [
+            "सुशक्तम्",
+            "highly",
+            "empowered",
+            "capable"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "उच्चगतेः जालस्य — हाई स्पीड इंटरनेट (High-speed internet network)",
+          "meaning": "High-speed broadband or optical fibre internet connection.",
+          "paragraphTranslation": "उच्चगतेः जालस्य = तीव्र गति वाला हाई-स्पीड इंटरनेट।",
+          "words": [
+            "उच्चगतेः",
+            "जालस्य",
+            "high",
+            "speed",
+            "internet"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "शैक्षिकमञ्चः — शैक्षणिक प्लेटफॉर्म (Educational portal / platform)",
+          "meaning": "Digital learning portal or e-learning platform.",
+          "paragraphTranslation": "शैक्षिकमञ्चः = डिजिटल शिक्षा का मंच।",
+          "words": [
+            "शैक्षिकमञ्चः",
+            "educational",
+            "platform",
+            "portal"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "अनुप्रयोगः — ऍप्लिकेशन / मोबाइल ऐप (Mobile application / App)",
+          "meaning": "Application software or mobile app.",
+          "paragraphTranslation": "अनुप्रयोगः = ऍप्लिकेशन, मोबाइल ऐप।",
+          "words": [
+            "अनुप्रयोगः",
+            "mobile",
+            "application",
+            "app"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "आशु-प्रतिक्रिया-कूटः — क्यूआर कोड / Quick Response (QR) Code",
+          "meaning": "Quick Response (QR) optical code for swift digital transactions.",
+          "paragraphTranslation": "आशु-प्रतिक्रिया-कूटः = क्यूआर कोड (QR Code)।",
+          "words": [
+            "आशु",
+            "प्रतिक्रिया",
+            "कूटः",
+            "QR",
+            "code",
+            "quick",
+            "response"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "साङ्गणिक-सुरक्षा — साइबर सुरक्षा (Cyber security)",
+          "meaning": "Information security and safety of computer networks.",
+          "paragraphTranslation": "साङ्गणिक-सुरक्षा = कंप्यूटर और इंटरनेट की सुरक्षा (साइबर सुरक्षा)।",
+          "words": [
+            "साङ्गणिक",
+            "सुरक्षा",
+            "cyber",
+            "security"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "साङ्गणिक-अपराधाः — साइबर अपराध (Cyber crimes)",
+          "meaning": "Offences committed using internet networks and computers.",
+          "paragraphTranslation": "साङ्गणिक-अपराधाः = ऑनलाइन धोखे, हैकिंग व साइबर अपराध।",
+          "words": [
+            "साङ्गणिक",
+            "अपराधाः",
+            "cyber",
+            "crimes"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "अभ्यासकार्यम् (Chapter Exercises & Solved Solutions — Pages 66–71)",
+          "meaning": "Textbook Exercises Solved with Explanations (Pages 66 to 71)",
+          "paragraphTranslation": "पाठ्यपुस्तक के सम्पूर्ण अभ्यास प्रश्नोत्तर एवं व्याकरण समाधान (पृष्ठ ६६–७१)",
+          "words": [
+            "अभ्यासकार्यम्",
+            "अभ्यास",
+            "प्रश्नोत्तर"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "१. पाठस्य आधारेण अधोलिखितानां प्रश्नानाम् उत्तराणि एकपदेन लिखत (Answer in one word):",
+          "meaning": "1. Answer the following questions in a single word:",
+          "paragraphTranslation": "१. पाठ के आधार पर निम्नलिखित प्रश्नों के उत्तर एक शब्द में लिखिए:",
+          "words": [
+            "पाठस्य",
+            "आधारेण",
+            "अधोलिखितानां",
+            "प्रश्नानाम्",
+            "उत्तराणि",
+            "एकपदेन",
+            "लिखत"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(क) प्रधानमन्त्रिसङ्ग्रहालये कीदृशी प्रौद्योगिकी प्रयुक्ता अस्ति ? ➔ उत्तरम्: डिजिटल-प्रौद्योगिकी",
+          "meaning": "(a) What kind of technology is implemented in the PM Museum? ➔ Answer: Digital Technology (डिजिटल-प्रौद्योगिकी)",
+          "paragraphTranslation": "(क) प्रधानमंत्री संग्रहालय में किस प्रकार की तकनीक प्रयुक्त है? ➔ उत्तर: डिजिटल-प्रौद्योगिकी",
+          "words": [
+            "प्रधानमन्त्रिसङ्ग्रहालये",
+            "कीदृशी",
+            "प्रौद्योगिकी",
+            "प्रयुक्ता",
+            "अस्ति",
+            "उत्तरम्",
+            "डिजिटल",
+            "प्रौद्योगिकी"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ख) हॉलोग्राम-द्वारा कस्य भाषणं श्रूयते दृश्यते च ? ➔ उत्तरम्: प्रधानमन्त्रिणः",
+          "meaning": "(b) Whose speech is heard and seen via Hologram? ➔ Answer: Of the Prime Minister (प्रधानमन्त्रिणः)",
+          "paragraphTranslation": "(ख) होलोग्राम द्वारा किसका भाषण सुनाई और दिखाई देता है? ➔ उत्तर: प्रधानमन्त्रिणः (प्रधानमंत्री का)",
+          "words": [
+            "हॉलोग्राम",
+            "द्वारा",
+            "कस्य",
+            "भाषणं",
+            "श्रूयते",
+            "दृश्यते",
+            "च",
+            "उत्तरम्",
+            "प्रधानमन्त्रिणः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) कस्याः प्रभावः दैनन्दिनजीवने दृश्यते ? ➔ उत्तरम्: डिजिटल-योजनायाः",
+          "meaning": "(c) Whose influence is seen in daily life? ➔ Answer: Of the Digital Scheme (डिजिटल-योजनायाः)",
+          "paragraphTranslation": "(ग) किसका प्रभाव हमारे दैनिक जीवन में दिखता है? ➔ उत्तर: डिजिटल-योजनायाः (डिजिटल योजना का)",
+          "words": [
+            "कस्याः",
+            "प्रभावः",
+            "दैनन्दिनजीवने",
+            "दृश्यते",
+            "उत्तरम्",
+            "डिजिटल",
+            "योजनायाः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(घ) भारत-सर्वकारस्य महत्त्वाकाङ्क्षिणी योजना का अस्ति ? ➔ उत्तरम्: डिजिटल-भारतम्",
+          "meaning": "(d) Which is the ambitious scheme of Government of India? ➔ Answer: Digital India (डिजिटल-भारतम्)",
+          "paragraphTranslation": "(घ) भारत सरकार की महत्वाकांक्षी योजना कौन-सी है? ➔ उत्तर: डिजिटल-भारतम् (डिजिटल इंडिया)",
+          "words": [
+            "भारत",
+            "सर्वकारस्य",
+            "महत्त्वाकाङ्क्षिणी",
+            "योजना",
+            "का",
+            "अस्ति",
+            "उत्तरम्",
+            "डिजिटल",
+            "भारतम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ङ) ‘फ़ास्टॅग्’ इत्यस्य उपयोगेन कस्य सङ्ग्रहणं शीघ्रं भवति ? ➔ उत्तरम्: मार्गशुल्कस्य",
+          "meaning": "(e) Collection of what becomes swift using FASTag? ➔ Answer: Toll fee (मार्गशुल्कस्य)",
+          "paragraphTranslation": "(ङ) फास्टैग के उपयोग से किसका संग्रह जल्दी होता है? ➔ उत्तर: मार्गशुल्कस्य (टोल टैक्स का)",
+          "words": [
+            "फ़ास्टॅग्",
+            "इत्यस्य",
+            "उपयोगेन",
+            "कस्य",
+            "सङ्ग्रहणं",
+            "शीघ्रं",
+            "भवति",
+            "उत्तरम्",
+            "मार्गशुल्कस्य"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "२. पाठस्य आधारेण अधोलिखितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन लिखत (Answer in full sentence):",
+          "meaning": "2. Answer the following questions in full sentences:",
+          "paragraphTranslation": "२. पाठ के आधार पर निम्नलिखित प्रश्नों के उत्तर पूर्ण वाक्य में लिखिए:",
+          "words": [
+            "पाठस्य",
+            "आधारेण",
+            "अधोलिखितानां",
+            "प्रश्नानाम्",
+            "उत्तराणि",
+            "पूर्णवाक्येन",
+            "लिखत"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(क) प्रधानमन्त्रिसङ्ग्रहालये काः डिजिटल-प्रौद्योगिक्यः प्रदर्शिताः सन्ति ? ➔ उत्तरम्: प्रधानमन्त्रिसङ्ग्रहालये हॉलोग्राम, वर्धिता-वास्तविकता (AR), आभासीया-वास्तविकता (VR), कृत्रिमबुद्धिः (AI) च प्रदर्शिताः सन्ति।",
+          "meaning": "(a) Which digital technologies are exhibited in the PM Museum? ➔ Answer: Hologram, AR, VR, and AI are displayed in the PM Museum.",
+          "paragraphTranslation": "(क) प्रधानमंत्री संग्रहालय में कौन-सी डिजिटल तकनीकें प्रदर्शित हैं? ➔ उत्तर: यहाँ होलोग्राम, एआर, वीआर और एआई प्रदर्शित हैं।",
+          "words": [
+            "प्रधानमन्त्रिसङ्ग्रहालये",
+            "काः",
+            "डिजिटल",
+            "प्रौद्योगिक्यः",
+            "प्रदर्शिताः",
+            "सन्ति",
+            "हॉलोग्राम",
+            "वर्धिता",
+            "वास्तविकता",
+            "आभासीया",
+            "वास्तविकता",
+            "कृत्रिमबुद्धिः",
+            "च"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ख) जनाः किमर्थं साङ्गणिक-अपराधेन पीडिताः भवन्ति ? ➔ उत्तरम्: जनाः प्रायशः लोभात् भयात् वा साङ्गणिक-अपराधेन पीडिताः भवन्ति।",
+          "meaning": "(b) Why do people become victims of cybercrime? ➔ Answer: People generally fall victim to cybercrime out of greed or fear.",
+          "paragraphTranslation": "(ख) लोग साइबर अपराध के शिकार क्यों हो जाते हैं? ➔ उत्तर: लोग प्रायः लालच या डर के कारण साइबर अपराध के शिकार होते हैं।",
+          "words": [
+            "जनाः",
+            "किमर्थं",
+            "साङ्गणिक",
+            "अपराधेन",
+            "पीडिताः",
+            "भवन्ति",
+            "प्रायशः",
+            "लोभात्",
+            "भयात्",
+            "वा"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ग) यशिका ‘डिजि-लॉकर’ इत्यस्य उपयोगं कथं करोति ? ➔ उत्तरम्: यशिका स्वस्य आधारपत्रं विद्यालयीयं प्रमाणपत्रं च सुरक्षितं रखितुं ‘डिजि-लॉकर’ इत्यस्य उपयोगं करोति।",
+          "meaning": "(c) How does Yashika use DigiLocker? ➔ Answer: Yashika uses DigiLocker to keep her Aadhaar card and school certificates secure.",
+          "paragraphTranslation": "(ग) यशिका डिजी-लॉकर का उपयोग कैसे करती है? ➔ उत्तर: यशिका अपने आधार कार्ड और स्कूल के प्रमाण पत्र सुरक्षित रखने के लिए इसका उपयोग करती है।",
+          "words": [
+            "यशिका",
+            "डिजि",
+            "लॉकर",
+            "उपयोगं",
+            "कथं",
+            "करोति",
+            "स्वस्य",
+            "आधारपत्रं",
+            "विद्यालयीयं",
+            "प्रमाणपत्रं",
+            "च",
+            "सुरक्षितं",
+            "रखितुं"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(घ) डिजिटल-भारतस्य वित्तीयसमावेशने काः योजनाः सन्ति ? ➔ उत्तरम्: डिजिटल-भारतस्य वित्तीयसमावेशने यूपीआई (UPI), रूपे-कार्ड्, जनधनयोजना च सन्ति।",
+          "meaning": "(d) Which schemes exist in the financial inclusion of Digital India? ➔ Answer: UPI, RuPay Card, and Jan Dhan Yojana exist in financial inclusion.",
+          "paragraphTranslation": "(घ) वित्तीय समावेशन में कौन-सी योजनाएं हैं? ➔ उत्तर: यूपीआई, रूपे-कार्ड और जनधन योजना प्रमुख हैं।",
+          "words": [
+            "डिजिटल",
+            "भारतस्य",
+            "वित्तीयसमावेशने",
+            "काः",
+            "योजनाः",
+            "सन्ति",
+            "यूपीआई",
+            "रूपे",
+            "कार्ड्",
+            "जनधनयोजना",
+            "च"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "(ङ) डिजिटल-भारते शिक्षायाः क्षेत्रे केषां पटलानाम उपयोगः करणीयः ? ➔ उत्तरम्: शिक्षायाः क्षेत्रे दीक्षा, स्वयम्, स्वयं-प्रभा, ई-पाठशाला इत्यादीनां मञ्चानाम् उपयोगः करणीयः।",
+          "meaning": "(e) Which portals should be used in education? ➔ Answer: In education, portals like DIKSHA, SWAYAM, SWAYAM PRABHA, ePathshala, etc., should be utilized.",
+          "paragraphTranslation": "(ङ) शिक्षा के क्षेत्र में किन पोर्टलों का उपयोग करना चाहिए? ➔ उत्तर: दीक्षा, स्वयम्, स्वयं-प्रभा, ई-पाठशाला आदि मंचों का उपयोग करना चाहिए।",
+          "words": [
+            "शिक्षायाः",
+            "क्षेत्रे",
+            "केषां",
+            "पटलानाम",
+            "उपयोगः",
+            "करणीयः",
+            "दीक्षा",
+            "स्वयम्",
+            "स्वयं",
+            "प्रभा",
+            "ई",
+            "पाठशाला",
+            "मञ्चानाम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "३. अधः दत्तान् शब्दान् सम्यक् सङ्योजयत (Column matching pairs):",
+          "meaning": "3. Match the terms of Column A with Column B correctly:",
+          "paragraphTranslation": "३. नीचे दिए गए शब्दों का उचित मिलान कीजिए:",
+          "words": [
+            "अधः",
+            "दत्तान्",
+            "शब्दान्",
+            "सम्यक्",
+            "सङ्योजयत"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "क. हॉलोग्राम् ➔ शीघ्रं, सुरक्षितं, सुगमं च | ख. यूपीआई (UPI) ➔ डिजिटल-धनदेय-प्रत्यर्पणम् | ग. डिजि-लॉकर् ➔ डिजिटल-प्रमाणपत्रम्",
+          "meaning": "(a) Hologram ➔ Fast, secure, easy | (b) UPI ➔ Digital payment return | (c) DigiLocker ➔ Digital certificate",
+          "paragraphTranslation": "क. हॉलोग्राम् ➔ शीघ्रं, सुरक्षितं, सुगमं च | ख. यूपीआई ➔ डिजिटल धनदेय | ग. डिजि-लॉकर ➔ डिजिटल प्रमाण पत्र",
+          "words": [
+            "हॉलोग्राम्",
+            "शीघ्रं",
+            "सुरक्षितं",
+            "सुगमं",
+            "च",
+            "यूपीआई",
+            "डिजिटल",
+            "धनदेय",
+            "प्रत्यर्पणम्",
+            "डिजि",
+            "लॉकर्",
+            "डिजिटल",
+            "प्रमाणपत्रम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "घ. फ़ास्टॅग् (FASTag) ➔ राजमार्गेषु स्वचालितविधिना मार्गशुल्कस्य शीघ्रं सङ्ग्रहणम् | ङ. वीआर (VR) ➔ आभासीया-वास्तविकता",
+          "meaning": "(d) FASTag ➔ Rapid automated highway toll collection | (e) VR ➔ Virtual Reality",
+          "paragraphTranslation": "घ. फास्टैग ➔ राजमार्गों पर स्वचालित पथकर संग्रह | ङ. वीआर ➔ आभासी वास्तविकता",
+          "words": [
+            "फ़ास्टॅग्",
+            "राजमार्गेषु",
+            "स्वचालितविधिना",
+            "मार्गशुल्कस्य",
+            "शीघ्रं",
+            "सङ्ग्रहणम्",
+            "वीआर",
+            "आभासीया",
+            "वास्तविकता"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "४. मञ्जूषातः शब्दान् चित्वा रिक्तस्थानानि पूरयत (Fill in the blanks from the box clues): [यूपीआई, दीक्षा, प्रधानमन्त्रिणः भाषणं, स्वचालितं पारदर्शकं च, जीवन]",
+          "meaning": "4. Fill in the blanks choosing words from the box:",
+          "paragraphTranslation": "४. मञ्जूषा से उचित पद चुनकर रिक्त स्थान भरिए:",
+          "words": [
+            "मञ्जूषातः",
+            "शब्दान्",
+            "चित्वा",
+            "रिक्तस्थानानि",
+            "पूरयत"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) प्रधानमन्त्रिसङ्ग्रहालये हॉलोग्राम-द्वारा प्रधानमन्त्रिणः भाषणं दृश्यते। • (ख) डिजिटल-भारतस्य आर्थिकसमावेशनं सुगमं कर्तुं यूपीआई प्रणाली अस्ति।",
+          "meaning": "(a) In PM Museum, the PM's speech is seen via Hologram. (b) To ease financial inclusion, the UPI system exists.",
+          "paragraphTranslation": "(क) प्रधानमंत्री संग्रहालय में होलोग्राम से प्रधानमंत्री का भाषण दिखता है। (ख) वित्तीय समावेशन सुगम करने हेतु यूपीआई प्रणाली है।",
+          "words": [
+            "प्रधानमन्त्रिसङ्ग्रहालये",
+            "हॉलोग्राम",
+            "द्वारा",
+            "प्रधानमन्त्रिणः",
+            "भाषणं",
+            "दृश्यते",
+            "डिजिटल",
+            "भारतस्य",
+            "आर्थिकसमावेशनं",
+            "यूपीआई",
+            "प्रणाली"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (ग) डिजिटल-शासनं स्वचालितं पारदर्शकं च सेवां प्रददाति। • (घ) डिजिटल-भारतस्य शिक्षाक्षेत्रे दीक्षा नाम डिजिटल-शैक्षिकमञ्चः अस्ति। • (ङ) भारतस्य डिजिटल-परिवर्तनं सर्वाणि जीवन क्षेत्राणि स्पृशति।",
+          "meaning": "(c) Digital governance provides automated, transparent service. (d) DIKSHA is an educational platform. (e) Digital transformation touches all aspects of life.",
+          "paragraphTranslation": "(ग) डिजिटल शासन स्वचालित और पारदर्शी सेवा देता है। (घ) शिक्षा क्षेत्र में दीक्षा मंच है। (ङ) डिजिटल परिवर्तन जीवन के सभी क्षेत्रों को छूता है।",
+          "words": [
+            "डिजिटल",
+            "शासनं",
+            "स्वचालितं",
+            "पारदर्शकं",
+            "च",
+            "सेवां",
+            "प्रददाति",
+            "शिक्षाक्षेत्रे",
+            "दीक्षा",
+            "नाम",
+            "शैक्षिकमञ्चः",
+            "डिजिटल",
+            "परिवर्तनं",
+            "जीवन",
+            "क्षेत्राणि",
+            "स्पृशति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "६. अधोलिखितान् शब्दान् वर्गद्वये विभजत (Classify terms into Computer-related vs Non-Computer related):",
+          "meaning": "6. Classify terms into Computer related and Non-computer related groups:",
+          "paragraphTranslation": "६. शब्दों को कंप्यूटर-सम्बद्ध एवं असम्बद्ध वर्गों में विभाजित कीजिए:",
+          "words": [
+            "अधोलिखितान्",
+            "शब्दान्",
+            "वर्गद्वये",
+            "विभजत"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "[सङ्गणकसम्बद्धाः (Computer Related)]: अन्तर्जालम्, सङ्गणकः, ई-पत्रम्, डिजिटल। [असङ्गणकसम्बद्धाः (Non-Computer Related)]: शिक्षिका, विद्यालयः, पाठ्यपुस्तकम्, लेखनी।",
+          "meaning": "Computer related: Internet, Computer, Email, Digital. Non-computer related: Female Teacher, School, Textbook, Pen.",
+          "paragraphTranslation": "कंप्यूटर सम्बद्ध: इंटरनेट, कंप्यूटर, ई-मेल, डिजिटल। गैर-कंप्यूटर: शिक्षिका, विद्यालय, पाठ्यपुस्तक, कलम।",
+          "words": [
+            "सङ्गणकसम्बद्धाः",
+            "अन्तर्जालम्",
+            "सङ्गणकः",
+            "ई",
+            "पत्रम्",
+            "डिजिटल",
+            "असङ्गणकसम्बद्धाः",
+            "शिक्षिका",
+            "विद्यालयः",
+            "पाठ्यपुस्तकम्",
+            "लेखनी"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "७. वाक्यानि पठित्वा शुद्धं (✓) अशुद्धं (✗) वा इति लिखत (True or False):",
+          "meaning": "7. Read sentences and mark True or False:",
+          "paragraphTranslation": "७. वाक्यों को पढ़कर शुद्ध अथवा अशुद्ध लिखिए:",
+          "words": [
+            "वाक्यानि",
+            "पठित्वा",
+            "शुद्धं",
+            "अशुद्धं",
+            "वा",
+            "इति",
+            "लिखत"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) हॉलोग्राम् कृत्रिमबुद्धेः एकः प्रकारः अस्ति। ➔ ✗ | • (ख) वर्धित-वास्तविकतायाः उपयोगिता ऐतिहासिक-घटनानां प्रत्यक्षानुभवाय अस्ति। ➔ ✓",
+          "meaning": "(a) Hologram is a type of AI ➔ False. (b) AR is useful for live experience of history ➔ True.",
+          "paragraphTranslation": "(क) होलोग्राम एआई का प्रकार है ➔ अशुद्ध। (ख) एआर ऐतिहासिक घटनाओं के अनुभव के लिए उपयोगी है ➔ शुद्ध।",
+          "words": [
+            "हॉलोग्राम्",
+            "कृत्रिमबुद्धेः",
+            "प्रकारः",
+            "अस्ति",
+            "वर्धित",
+            "वास्तविकतायाः",
+            "उपयोगिता",
+            "ऐतिहासिक",
+            "घटनानां"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (ग) डिजिटल-प्रक्षेपण-मानचित्रं भारतस्य विकासयात्रां प्रदर्शयति। ➔ ✓ | • (घ) फ़ास्टॅग् इति राजमार्गेषु स्वचालितविधिना मार्गशुल्कस्य शीघ्रं सङ्ग्रहणं करोति। ➔ ✓",
+          "meaning": "(c) Projection movie exhibits India's development journey ➔ True. (d) FASTag collects highway tolls swiftly ➔ True.",
+          "paragraphTranslation": "(ग) प्रोजेक्शन चलचित्र विकास यात्रा दिखाता है ➔ शुद्ध। (घ) फास्टैग राजमार्गों पर पथकर जल्दी लेता है ➔ शुद्ध।",
+          "words": [
+            "डिजिटल",
+            "प्रक्षेपण",
+            "मानचित्रं",
+            "विकासयात्रां",
+            "प्रदर्शयति",
+            "फ़ास्टॅग्",
+            "राजमार्गेषु",
+            "स्वचालितविधिना",
+            "मार्गशुल्कस्य",
+            "सङ्ग्रहणं",
+            "करोति"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (ङ) डिजी-लॉकर इत्यस्य माध्यमेन केवलं आधार-पत्रं सुरक्षितुं शक्यते। ➔ ✗ (प्रमाणपत्राणि अपि सुरक्षितुं शक्यन्ते)",
+          "meaning": "(e) Only Aadhaar can be saved in DigiLocker ➔ False (certificates also saved).",
+          "paragraphTranslation": "(ङ) डिजी-लॉकर में केवल आधार सुरक्षित रहता है ➔ अशुद्ध (अन्य प्रमाणपत्र भी सुरक्षित रहते हैं)।",
+          "words": [
+            "डिजी",
+            "लॉकर",
+            "केवलं",
+            "आधार",
+            "पत्रं",
+            "सुरक्षितुं",
+            "प्रमाणपत्राणि",
+            "अपि"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "८. अव्यवस्थितान् वर्णान् शब्ददृष्ट्या व्यवस्थितरूपेण लिखत (Anagram Word Builder):",
+          "meaning": "8. Unscramble jumbled letters into meaningful words:",
+          "paragraphTranslation": "८. अव्यवस्थित वर्णों को सही क्रम में रखकर सार्थक शब्द बनाइए:",
+          "words": [
+            "अव्यवस्थितान्",
+            "वर्णान्",
+            "शब्ददृष्ट्या",
+            "व्यवस्थितरूपेण",
+            "लिखत"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) कसङ्गम्ण ➔ सङ्गणकम् | • (ख) कार्वसरः ➔ सर्वकारः | • (ग) लयःविद्या ➔ विद्यालयः",
+          "meaning": "(a) Sanganakam (Computer) | (b) Sarvakarah (Government) | (c) Vidyalayah (School)",
+          "paragraphTranslation": "(क) सङ्गणकम् | (ख) सर्वकारः | (ग) विद्यालयः",
+          "words": [
+            "सङ्गणकम्",
+            "सर्वकारः",
+            "विद्यालयः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (घ) जिकडिलॉर् ➔ डििजलॉकर | • (ङ) शक्तसमु् ➔ सुशक्तम्",
+          "meaning": "(d) DigiLocker | (e) Sushaktam (Empowered)",
+          "paragraphTranslation": "(घ) डििजलॉकर | (ङ) सुशक्तम्",
+          "words": [
+            "डििजलॉकर",
+            "सुशक्तम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "कार्यपत्रिका १: शब्दावली परिज्ञानं च (Worksheet 1: Vocabulary & Identification)",
+          "meaning": "1. साङ्गणिक-सुरक्षा; 2. आशुप्रतिक्रियाकूटः; 3. आधारपत्रम्; 4. आभासीया वास्तविकता।",
+          "paragraphTranslation": "कार्यपत्रिका १ समाधान: १. साङ्गणिक-सुरक्षा; २. आशुप्रतिक्रियाकूटः; ३. आधारपत्रम्; ४. आभासीया वास्तविकता।",
+          "words": [
+            "कार्यपत्रिका",
+            "शब्दावली",
+            "परिज्ञानं",
+            "साङ्गणिक",
+            "सुरक्षा",
+            "आशुप्रतिक्रियाकूटः",
+            "आधारपत्रम्",
+            "आभासीया",
+            "वास्तविकता"
+          ],
+          "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "कार्यपत्रिका २: कृदन्त-प्रत्ययाभ्यासः (Worksheet 2: Participle Grammar - क्त & शतृ)",
+          "meaning": "1. भू + क्त ➔ भूतः; 2. दा + क्त ➔ दत्ता; 3. दृश् + शतृ ➔ पश्यन्।",
+          "paragraphTranslation": "कार्यपत्रिका २ समाधान: १. भूतः; २. दत्ता; ३. पश्यन्।",
+          "words": [
+            "कार्यपत्रिका",
+            "कृदन्त",
+            "प्रत्ययाभ्यासः",
+            "भूतः",
+            "दत्ता",
+            "पश्यन्",
+            "क्त",
+            "शतृ"
+          ],
+          "kind": "exercise-note"
         }
       ]
     },
