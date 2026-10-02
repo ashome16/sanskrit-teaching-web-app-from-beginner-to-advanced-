@@ -38,7 +38,7 @@ function normalizeEntry(raw: Record<string, unknown>): DhatuEntry | null {
   };
 }
 
-/** Load the 100-root Dhātupāṭha once (cached). */
+/** Load the Dhātupāṭha library once (cached). */
 export async function loadDhatupatha(): Promise<DhatuEntry[]> {
   if (cache) return cache;
   if (inflight) return inflight;

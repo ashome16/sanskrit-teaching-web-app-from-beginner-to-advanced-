@@ -48,6 +48,45 @@
   white-space: nowrap;
 }
 
+.dp-playall {
+  min-height: 44px;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  border: 1.5px solid #0f766e;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dp-playall:hover,
+.dp-playall:focus-visible {
+  background: #0b5f58;
+  outline: none;
+}
+
+.dp-playall:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.dp-playall--active {
+  background: #9a3412;
+  border-color: #9a3412;
+}
+
+.dp-playall--active:hover,
+.dp-playall--active:focus-visible {
+  background: #7c2d12;
+}
+
+.dp-card--speaking {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.25);
+}
+
 .dp-chips {
   display: flex;
   flex-wrap: wrap;
