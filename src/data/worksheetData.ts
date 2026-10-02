@@ -11260,73 +11260,73 @@ export const WORKSHEETS: Worksheet[] = [
 ,
 {
   "id": "ws-grade8-app1-ws1",
-  "title": "Appendix 1 · Worksheet 1: उपसर्ग-प्रकरणम् (Verbal Prefixes & Meaning Shifts)",
-  "titleSanskrit": "परिशिष्टम् १ · कार्यपत्रिका १: उपसर्ग-प्रकरणम्",
+  "title": "Worksheet 1: Upasargas & Verbal Shifts (उपसर्गाः धात्वर्थ-परिवर्तनञ्च)",
+  "titleSanskrit": "परिशिष्टम् १ · कार्यपत्रिका १: उपसर्गाः धात्वर्थ-परिवर्तनञ्च",
   "category": "grade8",
-  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
-  "grade": "Grade 8 (Deepakam)",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
-  "timeLimit": "25 Minutes",
-  "description": "Worksheet exploring the 22 Sanskrit verbal prefixes (उपसर्गाः), their position before roots, meaning shifts, and voice changes.",
+  "timeLimit": "30 Minutes",
+  "description": "Separation of prefixes and roots, and semantic variations of root 'हृ' (Pages 159–160).",
   "sections": [
     {
-      "sectionTitle": "Section A: Prefix Count & Formation (उपसर्ग-परिचयः)",
-      "sectionTitleSanskrit": "खण्डः 'क' · उपसर्ग-परिचयः",
-      "instructions": "Answer the foundational prefix identification questions:",
-      "totalMarks": 8,
+      "sectionTitle": "Section A: Separation of Prefix and Root (उपसर्ग-धातु-पृथक्करणम्)",
+      "sectionTitleSanskrit": "खण्डः 'क' · उपसर्गं धातुं च पृथक् कुरुत",
+      "instructions": "Separate the Upasarga (prefix) and the Dhatu (root) from the following verbal forms:",
+      "totalMarks": 12,
       "questions": [
         {
           "num": 1,
-          "question": "१. संस्कृत भाषायां कति उपसर्गाः भवन्ति? (How many verbal prefixes are there in Sanskrit?)",
-          "questionSanskrit": "संस्कृत भाषायां कति उपसर्गाः भवन्ति?",
-          "marks": 4,
+          "question": "१. आगच्छति = __________ + __________",
+          "questionSanskrit": "आगच्छति = __________ + __________",
+          "marks": 3,
           "type": "short_ans",
-          "answer": "द्वाविंशतिः (२२ / Twenty-two)",
-          "explanation": "संस्कृतव्याकरणे द्वाविंशतिः (२२) उपसर्गाः स्वीकृताः सन्ति।"
+          "answer": "आ (उपसर्गः) + गम् / गच्छति (धातुः)",
+          "explanation": "आङ् (आ) उपसर्गः + गम् धातुः = आगच्छति (आता है)।"
         },
         {
           "num": 2,
-          "question": "२. 'आगच्छति' इति पदे कः उपसर्गः अस्ति?",
-          "questionSanskrit": "'आगच्छति' इति पदे कः उपसर्गः अस्ति?",
-          "marks": 4,
+          "question": "२. सम्पूज्य = __________ + __________",
+          "questionSanskrit": "सम्पूज्य = __________ + __________",
+          "marks": 3,
           "type": "short_ans",
-          "answer": "आङ् (आ) उपसर्गः",
-          "explanation": "आ + गच्छति = आगच्छति। अत्र 'आङ्' (आ) उपसर्गः अस्ति।"
+          "answer": "सम् (उपसर्गः) + पूज् (धातुः)",
+          "explanation": "सम् उपसर्गः + पूज् धातुः + ल्यप् = सम्पूज्य (भली-भाँति पूजा करके)।"
+        },
+        {
+          "num": 3,
+          "question": "३. विजयते = __________ + __________",
+          "questionSanskrit": "विजयते = __________ + __________",
+          "marks": 3,
+          "type": "short_ans",
+          "answer": "वि (उपसर्गः) + जि / जयते (धातुः)",
+          "explanation": "वि उपसर्ग के योग से 'जि' धातु आत्मनेपद में परिवर्तित होकर 'विजयते' बनती है।"
+        },
+        {
+          "num": 4,
+          "question": "४. प्रहरति = __________ + __________",
+          "questionSanskrit": "प्रहरति = __________ + __________",
+          "marks": 3,
+          "type": "short_ans",
+          "answer": "प्र (उपसर्गः) + हृ / हरति (धातुः)",
+          "explanation": "प्र उपसर्गः + हृ धातुः = प्रहरति (चोट करता है / प्रहार करता है)।"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Position, Root & Morphological Shift (उपसर्ग-प्रयोगः रूपान्तरं च)",
-      "sectionTitleSanskrit": "खण्डः 'ख' · उपसर्ग-प्रयोगः रूपान्तरं च",
-      "instructions": "Analyze the prefix position, root derivation, and voice transformations:",
-      "totalMarks": 12,
+      "sectionTitle": "Section B: Semantic Variations of Root 'हृ' (हृ-धातोः अर्थ-परिवर्तनम्)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · उपसर्गभेदेन अर्थभेदः",
+      "instructions": "Match the prefixed forms of root 'हृ' with their appropriate meanings:",
+      "totalMarks": 8,
       "questions": [
         {
-          "num": 3,
-          "question": "३. उपसर्गाः धातोः ______ (पूर्वं / अनन्तरं) भवन्ति।",
-          "questionSanskrit": "उपसर्गाः धातोः ______ (पूर्वं / अनन्तरं) भवन्ति।",
-          "marks": 4,
-          "type": "fill",
-          "answer": "पूर्वम् (Before)",
-          "explanation": "उपसर्गाः सर्वदा धातोः पूर्वं योज्यन्ते।"
-        },
-        {
-          "num": 4,
-          "question": "४. 'प्रहारः' इत्यत्र कः धातुः अस्ति?",
-          "questionSanskrit": "'प्रहारः' इत्यत्र कः धातुः अस्ति?",
-          "marks": 4,
-          "type": "short_ans",
-          "answer": "हृ (हरणार्थकः) धातुः",
-          "explanation": "प्र + हृ + घञ् = प्रहारः। अत्र मूलधातुः 'हृ' अस्ति।"
-        },
-        {
           "num": 5,
-          "question": "५. 'वि + जयति' इत्यस्य संयुक्तं रूपं किम्?",
-          "questionSanskrit": "'वि + जयति' इत्यस्य संयुक्तं रूपं किम्?",
-          "marks": 4,
-          "type": "short_ans",
-          "answer": "विजयते (आत्मनेपदम्)",
-          "explanation": "वि-उपसर्गस्य सम्बन्धेन 'जि' धातुः परस्मैपदात् आत्मनेपदे परिवर्तते — विजयते।"
+          "question": "उपसर्गसहित-हृ-धातोः अर्थमेलनं कुरुत (Match prefix with meaning):\n१. आहारः ➔ ____\n२. संहारः ➔ ____\n३. विहारः ➔ ____",
+          "questionSanskrit": "आहारः, संहारः, विहारः इत्येतेषाम् अर्थान् मेलयत।",
+          "marks": 8,
+          "type": "matching",
+          "answer": "१-भोजनम् (Food / Diet), २-विनाशः (Destruction / Annihilation), ३-भ्रमणम् (Recreation / Wandering)",
+          "explanation": "उपसर्गेण धात्वर्थो बलादन्यत्र नीयते: प्रहाराहारसंहारविहारपरिहारवत्।"
         }
       ]
     }
@@ -11334,73 +11334,73 @@ export const WORKSHEETS: Worksheet[] = [
 },
 {
   "id": "ws-grade8-app1-ws2",
-  "title": "Appendix 1 · Worksheet 2: क्त्वा एवं ल्यप् प्रत्ययौ (Ktvā & Lyap Suffix Formations)",
-  "titleSanskrit": "परिशिष्टम् १ · कार्यपत्रिका २: क्त्वा एवं ल्यप् प्रत्ययौ",
+  "title": "Worksheet 2: Krit Suffix Conversions (कृत्-प्रत्ययाः - क्त्वा, ल्यप्, क्तवतु)",
+  "titleSanskrit": "परिशिष्टम् १ · कार्यपत्रिका २: कृत्-प्रत्ययाः - क्त्वा, ल्यप्, क्तवतु",
   "category": "grade8",
-  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
-  "grade": "Grade 8 (Deepakam)",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
-  "timeLimit": "25 Minutes",
-  "description": "Drills on sequential action past indeclinable participles: standard Ktva and prefix-bound Lyap substitutions.",
+  "timeLimit": "30 Minutes",
+  "description": "Sentence transformation using Ktva and Lyap, and past participle formations (Pages 160–162).",
   "sections": [
     {
-      "sectionTitle": "Section A: Ktva Suffix Joining (क्त्वा-प्रत्यय-संयोजनम्)",
-      "sectionTitleSanskrit": "खण्डः 'क' · क्त्वा-प्रत्यय-संयोजनम्",
-      "instructions": "Combine the verbal roots with Ktva suffix:",
-      "totalMarks": 8,
+      "sectionTitle": "Section A: Sentence Transformation (वाक्य-संयोजनम्)",
+      "sectionTitleSanskrit": "खण्डः 'क' · क्त्वा / ल्यप् प्रत्ययाभ्यां वाक्य-संयोजनम्",
+      "instructions": "Transform the twin sentences into a single sentence using 'क्त्वा' or 'ल्यप्' as applicable:",
+      "totalMarks": 10,
       "questions": [
         {
           "num": 1,
-          "question": "१. पठ् + क्त्वा = ____________",
-          "questionSanskrit": "पठ् + क्त्वा = ____________",
-          "marks": 4,
-          "type": "fill",
-          "answer": "पठित्वा (After reading)",
-          "explanation": "पठ् + क्त्वा = पठित्वा (पठनं कृत्वा)।"
+          "question": "१. छात्रः पुस्तकं पठति। तदनन्तरं छात्रः उत्तराणि लिखति।\n➔ _____________________________________________________",
+          "questionSanskrit": "छात्रः पुस्तकं पठति। तदनन्तरं छात्रः उत्तराणि लिखति।",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "छात्रः पुस्तकं पठित्वा उत्तराणि लिखति।",
+          "explanation": "पूर्वकालिक क्रिया 'पठति' में कोई उपसर्ग नहीं है, अतः 'क्त्वा' प्रत्यय लगकर 'पठित्वा' बनेगा।"
         },
         {
           "num": 2,
-          "question": "२. लिख् + क्त्वा = ____________",
-          "questionSanskrit": "लिख् + क्त्वा = ____________",
-          "marks": 4,
-          "type": "fill",
-          "answer": "लिखित्वा (After writing)",
-          "explanation": "लिख् + क्त्वा = लिखित्वा (लेखनं कृत्वा)।"
+          "question": "२. शिष्यः गुरुं प्रणमति। तदनन्तरं शिष्यः पठति।\n➔ _____________________________________________________",
+          "questionSanskrit": "शिष्यः गुरुं प्रणमति। तदनन्तरं शिष्यः पठति।",
+          "marks": 5,
+          "type": "short_ans",
+          "answer": "शिष्यः गुरुं प्रणम्य पठति।",
+          "explanation": "'प्रणमति' क्रिया में 'प्र' उपसर्ग है, अतः उपसर्गयुक्त होने के कारण क्त्वा के स्थान पर 'ल्यप्' (प्र + नम् + ल्यप् = प्रणम्य) लगेगा।"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Lyap Suffix Joining (ल्यप्-प्रत्यय-संयोजनम्)",
-      "sectionTitleSanskrit": "खण्डः 'ख' · ल्यप्-प्रत्यय-संयोजनम्",
-      "instructions": "Combine the prefixed roots with Lyap suffix:",
-      "totalMarks": 12,
+      "sectionTitle": "Section B: Past Active Participle Formations (क्तवतु प्रत्यय-रूपाणि)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · पुंलिङ्ग क्तवतु रूपाणि",
+      "instructions": "Supply the masculine past active participle (क्तवतु) forms for these verbal roots:",
+      "totalMarks": 10,
       "questions": [
         {
           "num": 3,
-          "question": "३. वि + ज्ञा + ल्यप् = ____________",
-          "questionSanskrit": "वि + ज्ञा + ल्यप् = ____________",
-          "marks": 4,
+          "question": "१. श्रु + क्तवतु = _______________ (पुंलिङ्ग प्रथमा एकवचन)",
+          "questionSanskrit": "श्रु + क्तवतु = _______________",
+          "marks": 3,
           "type": "fill",
-          "answer": "विज्ञाय (After knowing)",
-          "explanation": "उपसर्गयुक्तधातोः परं ल्यप् भवति — वि + ज्ञा + ल्यप् = विज्ञाय।"
+          "answer": "श्रुतवान् (He heard / listened)",
+          "explanation": "श्रु + क्तवतु (पुंलिङ्ग) = श्रुतवान्। स्त्रीलिङ्गे 'श्रुतवती'।"
         },
         {
           "num": 4,
-          "question": "४. सम् + पूज् + ल्यप् = ____________",
-          "questionSanskrit": "सम् + पूज् + ल्यप् = ____________",
-          "marks": 4,
+          "question": "२. स्था + क्तवतु = _______________ (पुंलिङ्ग प्रथमा एकवचन)",
+          "questionSanskrit": "स्था + क्तवतु = _______________",
+          "marks": 3,
           "type": "fill",
-          "answer": "सम्पूज्य (After worshipping)",
-          "explanation": "सम् + पूज् + ल्यप् = सम्पूज्य (पूजां कृत्वा)।"
+          "answer": "स्थितवान् (He stood / stayed)",
+          "explanation": "स्था + क्तवतु (पुंलिङ्ग) = स्थितवान्।"
         },
         {
           "num": 5,
-          "question": "५. आ + नी + ल्यप् = ____________",
-          "questionSanskrit": "आ + नी + ल्यप् = ____________",
+          "question": "३. दृश् + क्तवतु = _______________ (पुंलिङ्ग प्रथमा एकवचन)",
+          "questionSanskrit": "दृश् + क्तवतु = _______________",
           "marks": 4,
           "type": "fill",
-          "answer": "आनीय (After bringing)",
-          "explanation": "आ + नी + ल्यप् = आनीय (आनयनं कृत्वा)।"
+          "answer": "दृष्टवान् (He saw)",
+          "explanation": "दृश् + क्तवतु (पुंलिङ्ग) = दृष्टवान्।"
         }
       ]
     }
@@ -11408,73 +11408,86 @@ export const WORKSHEETS: Worksheet[] = [
 },
 {
   "id": "ws-grade8-app1-ws3",
-  "title": "Appendix 1 · Worksheet 3: तुमुन् एवं क्तवतु प्रत्ययौ (Purpose & Past Active Participle)",
-  "titleSanskrit": "परिशिष्टम् १ · कार्यपत्रिका ३: तुमुन् एवं क्तवतु प्रत्ययौ",
+  "title": "Worksheet 3: Upapada & Case Governance (उपपद-विभक्तयः कारक-प्रयोगश्च)",
+  "titleSanskrit": "परिशिष्टम् १ · कार्यपत्रिका ३: उपपद-विभक्तयः कारक-प्रयोगश्च",
   "category": "grade8",
-  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
-  "grade": "Grade 8 (Deepakam)",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
-  "timeLimit": "25 Minutes",
-  "description": "Mastery drills on purpose infinitive suffix Tumun and past active participial suffix Ktavatu across masculine and feminine genders.",
+  "timeLimit": "30 Minutes",
+  "description": "Case governance by Upapada indeclinables and structural Karaka syntax (Pages 162–164).",
   "sections": [
     {
-      "sectionTitle": "Section A: Tumun Purpose Infinitive (तुमुन्-प्रत्यय-प्रयोगः)",
-      "sectionTitleSanskrit": "खण्डः 'क' · तुमुन्-प्रत्यय-प्रयोगः",
-      "instructions": "Analyze and identify Tumun suffix formations:",
-      "totalMarks": 8,
+      "sectionTitle": "Section A: Fill in the Blanks with Upapada Rules (उचित-विभक्ति-प्रयोगः)",
+      "sectionTitleSanskrit": "खण्डः 'क' · उपपद-नियमानुसारं रिक्तस्थान-पूर्तिः",
+      "instructions": "Fill in the blanks with the correct case-form of the bracketed words based on Upapada rules:",
+      "totalMarks": 12,
       "questions": [
         {
           "num": 1,
-          "question": "१. 'गन्तुम्' इति पदे कः धातुः कः च प्रत्ययः?",
-          "questionSanskrit": "'गन्तुम्' इति पदे कः धातुः कः च प्रत्ययः?",
-          "marks": 4,
-          "type": "short_ans",
-          "answer": "गम् (धातुः) + तुमुन् (प्रत्ययः)",
-          "explanation": "गम् + तुमुन् = गन्तुम् (गमनार्थम्)।"
+          "question": "१. _______________ परितः उद्यानम अस्ति। (ग्राम)",
+          "questionSanskrit": "_______________ परितः उद्यानम अस्ति। (ग्राम)",
+          "marks": 3,
+          "type": "fill",
+          "answer": "ग्रामम् (द्वितीया विभक्तिः)",
+          "explanation": "'परितः' (चारों ओर) के योग में द्वितीया विभक्ति होती है।"
         },
         {
           "num": 2,
-          "question": "२. निमित्तार्थे (प्रयोजनार्थे) कः प्रत्ययः प्रयुज्यते?",
-          "questionSanskrit": "निमित्तार्थे (प्रयोजनार्थे) कः प्रत्ययः प्रयुज्यते?",
-          "marks": 4,
-          "type": "short_ans",
-          "answer": "तुमुन्-प्रत्ययः",
-          "explanation": "क्रियार्थायां क्रियायाम् उपपदे निमित्तार्थे तुमुन्-प्रत्ययः भवति।"
+          "question": "२. _______________ नमः। (गुरु)",
+          "questionSanskrit": "_______________ नमः। (गुरु)",
+          "marks": 3,
+          "type": "fill",
+          "answer": "गुरवे (चतुर्थी विभक्तिः)",
+          "explanation": "'नमः' के योग में चतुर्थी विभक्ति होती है (गुरु ➔ गुरवे)।"
+        },
+        {
+          "num": 3,
+          "question": "३. मन्दिरस्य _______________ ध्वजः अस्ति। (उपरि / अधः)",
+          "questionSanskrit": "मन्दिरस्य _______________ ध्वजः अस्ति। (उपरि / अधः)",
+          "marks": 3,
+          "type": "mcq",
+          "options": [
+            "उपरि",
+            "अधः"
+          ],
+          "answer": "उपरि",
+          "explanation": "मन्दिर के ऊपर ध्वज फहराता है, अतः 'उपरि' उपयुक्त है (षष्ठी विभक्ति मन्दिरस्य)।"
+        },
+        {
+          "num": 4,
+          "question": "४. पिता _______________ सह आगच्छति। (पुत्र)",
+          "questionSanskrit": "पिता _______________ सह आगच्छति। (पुत्र)",
+          "marks": 3,
+          "type": "fill",
+          "answer": "पुत्रेण (तृतीया विभक्तिः)",
+          "explanation": "'सह' के योग में तृतीया विभक्ति होती है (पुत्र ➔ पुत्रेण)।"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Ktavatu & Practical Usage (क्तवतु-प्रत्यय-रूपाणि प्रयोगश्च)",
-      "sectionTitleSanskrit": "खण्डः 'ख' · क्तवतु-प्रत्यय-रूपाणि प्रयोगश्च",
-      "instructions": "Determine grammatical gender and complete sentences:",
-      "totalMarks": 12,
+      "sectionTitle": "Section B: Case Identification & Syntactic Reason (विभक्तिः कारणं च)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · विभक्ति-कारण-निर्देशः",
+      "instructions": "Identify the case (विभक्तिः) and grammatical reason for its selection:",
+      "totalMarks": 8,
       "questions": [
         {
-          "num": 3,
-          "question": "३. 'कृतवान्' इति पदं कस्मिन् लिङ्गे अस्ति?",
-          "questionSanskrit": "'कृतवान्' इति पदं कस्मिन् लिङ्गे अस्ति?",
-          "marks": 4,
-          "type": "short_ans",
-          "answer": "पुल्लिंगे (Masculine)",
-          "explanation": "कृ + क्तवतु = कृतवान् (पुं.), कृतवती (स्त्री.), कृतवत् (नपुं.)।"
-        },
-        {
-          "num": 4,
-          "question": "४. 'हस् + क्तवतु' इत्यस्य स्त्रीलिंगे रूपं किं भवति?",
-          "questionSanskrit": "'हस् + क्तवतु' इत्यस्य स्त्रीलिंगे रूपं किं भवति?",
-          "marks": 4,
-          "type": "short_ans",
-          "answer": "हसितवती (Feminine)",
-          "explanation": "हस् + क्तवतु स्त्रीलिंगे 'हसितवती' भवति।"
-        },
-        {
           "num": 5,
-          "question": "५. बालकः भोजनं ______ (खाद् + तुमुन्) आगच्छति।",
-          "questionSanskrit": "बालकः भोजनं ______ (खाद् + तुमुन्) आगच्छति।",
+          "question": "१. 'वृक्षात् पत्रं पतति' — अत्र 'वृक्षात्' पदे का विभक्तिः किं च कारणम्?",
+          "questionSanskrit": "वृक्षात् पत्रं पतति — विभक्तिः कारणं च लिखत।",
           "marks": 4,
-          "type": "fill",
-          "answer": "खादितुम् (To eat)",
-          "explanation": "खाद् + तुमुन् = खादितुम् (भोक्तुम् आगच्छति)।"
+          "type": "short_ans",
+          "answer": "विभक्तिः: पञ्चमी विभक्तिः | कारणम्: अपादानकारके (पृथग्भावे / separation)",
+          "explanation": "ध्रुवमपायेऽपादानम् — वृक्ष से पत्ते का अलग होना दर्शाने के कारण अपादान कारक में पञ्चमी है।"
+        },
+        {
+          "num": 6,
+          "question": "२. 'अलं कोलाहलेन' — अत्र 'कोलाहलेन' पदे का विभक्तिः किं च कारणम्?",
+          "questionSanskrit": "अलं कोलाहलेन — विभक्तिः कारणं च लिखत।",
+          "marks": 4,
+          "type": "short_ans",
+          "answer": "विभक्तिः: तृतीया विभक्तिः | कारणम्: 'अलम्' उपपद-योगे (निषेधार्थे / prohibition)",
+          "explanation": "निषेध (मना करने) के अर्थ में 'अलम्' के योग में तृतीया विभक्ति होती है।"
         }
       ]
     }

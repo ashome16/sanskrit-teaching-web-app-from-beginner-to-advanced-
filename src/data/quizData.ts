@@ -47,7 +47,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade8_ch11', label: "Grade 8 Ch 11: सन्निमित्ते वरं त्यागः (ख-भागः) (3 Quizzes · 30 Qs)", icon: '👑' },
   { id: 'grade8_ch12', label: "Grade 8 Ch 12: सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (3 Quizzes · 30 Qs)", icon: '🗣️' },
   { id: 'grade8_ch13', label: "Grade 8 Ch 13: वर्णोच्चारण-शिक्षा १ (3 Quizzes · 30 Qs)", icon: '🔤' },
-  { id: 'grade8_app1', label: 'Grade 8 App 1: व्याकरणम् (2 Quizzes · 10 Qs)', icon: '📐' },
+  { id: 'grade8_app1', label: "Grade 8 App 1: व्याकरणम् (3 Quizzes · 30 Qs)", icon: '📐' },
   { id: 'grade9_ch1', label: 'Grade 9 Ch 1: सत्यं शिवं सुन्दरं संस्कृतम् (3 Quizzes · 30 Qs)', icon: '🌸' },
   { id: 'grade9_ch2', label: 'Grade 9 Ch 2: सुखस्य मूलं धर्मः (3 Quizzes · 30 Qs)', icon: '⚖️' },
   { id: 'grade9_ch3', label: 'Grade 9 Ch 3: आत्मवत्सर्वभूतेषु यः पश्यति सः पण्डितः (3 Quizzes · 30 Qs)', icon: '👁️' },
@@ -16623,163 +16623,572 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
   "points": 10
 },
 {
+  "id": "g8-app1-q1-1",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 1: Karakas & Upapada Applications (कारकाणि उपपद-विभक्तयश्च)",
+  "question": "संस्कृत व्याकरण में कुल कितने कारक माने जाते हैं? (How many Karakas are in Sanskrit grammar?)",
+  "questionSanskrit": "संस्कृतव्याकरणे कति कारकाणि भवन्ति?",
+  "options": [
+    "(A) पञ्च",
+    "(B) षट् (६)",
+    "(C) सप्त",
+    "(D) अष्टौ"
+  ],
+  "correctIndex": 1,
+  "explanation": "'क्रियान्वयि कारकम्' — संस्कृत में क्रिया के साथ साक्षात् सम्बन्ध रखने वाले केवल ६ कारक होते हैं (कर्ता, कर्म, करण, सम्प्रदान, अपादान, अधिकरण)। सम्बन्ध (षष्ठी) कारक नहीं है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
   "id": "g8-app1-q1-2",
   "category": "grade8_app1",
-  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी १)",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
   "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
-  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – प्रत्ययाः एवं उपसर्गाः (MCQ Type)",
-  "question": "'शयनम्' इति पदे कः सन्धिः अस्ति?",
-  "questionSanskrit": "'शयनम्' इति पदे कः सन्धिः अस्ति?",
+  "subCategory": "Quiz 1: Karakas & Upapada Applications (कारकाणि उपपद-विभक्तयश्च)",
+  "question": "कर्तृ-कारक में कौन-सी विभक्ति प्रयुक्त होती है? (Which case is used for the Agent / Kartri-karaka?)",
+  "questionSanskrit": "कर्तृ-कारके का विभक्तिः प्रयुज्यते?",
   "options": [
-    "A) दीर्घः",
-    "B) गुणः",
-    "C) अयादिः",
-    "D) पूर्वरूपः"
+    "(A) प्रथमा विभक्तिः (Nominative)",
+    "(B) द्वितीया विभक्तिः",
+    "(C) तृतीया विभक्तिः",
+    "(D) चतुर्थी विभक्तिः"
   ],
-  "correctIndex": 2,
-  "explanation": "शे + अनम् = शयनम्। ए-कारस्य स्थाने 'अय्' आदेशः भवति, अतः अत्र अयादि-सन्धिः अस्ति।",
+  "correctIndex": 0,
+  "explanation": "क्रिया को स्वतंत्र रूप से करने वाले कर्ता कारक में प्रथमा विभक्ति का प्रयोग होता है (यथा: रामः गच्छति)।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-app1-q1-3",
   "category": "grade8_app1",
-  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी १)",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
   "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
-  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – प्रत्ययाः एवं उपसर्गाः (MCQ Type)",
-  "question": "'प्रत्यागच्छति' इति पदे कति उपसर्गाः सन्ति?",
-  "questionSanskrit": "'प्रत्यागच्छति' इति पदे कति उपसर्गाः सन्ति?",
+  "subCategory": "Quiz 1: Karakas & Upapada Applications (कारकाणि उपपद-विभक्तयश्च)",
+  "question": "'सह' (साथ) इस उपपद शब्द के योग में कौन-सी विभक्ति होती है? (Which case is required by 'Saha'?)",
+  "questionSanskrit": "'सह' इति शब्दस्य योगे का विभक्तिः भवति?",
   "options": [
-    "A) एकः (1)",
-    "B) द्वौ (2)",
-    "C) त्रयः (3)",
-    "D) चत्वारः (4)"
+    "(A) द्वितीया विभक्तिः",
+    "(B) तृतीया विभक्तिः (Instrumental)",
+    "(C) चतुर्थी विभक्तिः",
+    "(D) पञ्चमी विभक्तिः"
   ],
   "correctIndex": 1,
-  "explanation": "प्रति + आ + गच्छति = प्रत्यागच्छति। अत्र 'प्रति' तथा 'आ' इति द्वौ उपसर्गौ स्तः।",
-  "difficulty": "medium",
+  "explanation": "'सहयुक्तप्रधाने' सूत्र के अनुसार 'सह' के योग में अप्रधान कर्ता में तृतीया विभक्ति होती है (यथा: पिता पुत्रेण सह आगच्छति)।",
+  "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-app1-q1-4",
   "category": "grade8_app1",
-  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी १)",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
   "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
-  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – प्रत्ययाः एवं उपसर्गाः (MCQ Type)",
-  "question": "'श्रुतवती' इति पदे कः प्रत्ययः अस्ति?",
-  "questionSanskrit": "'श्रुतवती' इति पदे कः प्रत्ययः अस्ति?",
+  "subCategory": "Quiz 1: Karakas & Upapada Applications (कारकाणि उपपद-विभक्तयश्च)",
+  "question": "'नमः' (नमस्कार) अव्यय के प्रयोग में कौन-सी विभक्ति निर्धारित है? (Which case is prescribed for 'Namah'?)",
+  "questionSanskrit": "'नमः' इत्यस्य अव्ययस्य प्रयोगे का विभक्तिः विहिता?",
   "options": [
-    "A) क्त्वा",
-    "B) तुमुन्",
-    "C) क्तवतु",
-    "D) ल्यप्"
+    "(A) द्वितीया विभक्तिः",
+    "(B) तृतीया विभक्तिः",
+    "(C) चतुर्थी विभक्तिः (Dative)",
+    "(D) षष्ठी विभक्तिः"
   ],
   "correctIndex": 2,
-  "explanation": "श्रु + क्तवतु = श्रुतवान् (पुं.), श्रुतवती (स्त्री.), श्रुतवत् (नपुं.)। अतः अत्र क्तवतु-प्रत्ययः अस्ति।",
+  "explanation": "'नमःस्वस्तिस्वाहास्वधाऽलंवषड्योगाच्च' सूत्र के अनुसार 'नमः' के योग में चतुर्थी विभक्ति होती है (यथा: गुरवे नमः, गणेशाय नमः)।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-app1-q1-5",
   "category": "grade8_app1",
-  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी १)",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
   "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
-  "subCategory": "प्रश्नोत्तरी १ (Quiz 1) – प्रत्ययाः एवं उपसर्गाः (MCQ Type)",
-  "question": "'रामम् वन्दे' इत्यत्र मकारस्य अनुस्वारः केन सन्धिना भवति?",
-  "questionSanskrit": "'रामम् वन्दे' इत्यत्र मकारस्य अनुस्वारः केन सन्धिना भवति?",
+  "subCategory": "Quiz 1: Karakas & Upapada Applications (कारकाणि उपपद-विभक्तयश्च)",
+  "question": "'वृक्षात् पत्रं पतति' — यहाँ 'वृक्षात्' पद में कौन-सी विभक्ति और किसलिए है? (Why is 'Vrikshat' in 5th case?)",
+  "questionSanskrit": "'वृक्षात् पत्रं पतति' — अत्र 'वृक्षात्' पदे का विभक्तिः किमर्थं च अस्ति?",
   "options": [
-    "A) जश्त्व-सन्धिना",
-    "B) श्चुत्व-सन्धिना",
-    "C) अनुस्वार-सन्धिना",
-    "D) परसवर्ण-सन्धिना"
+    "(A) तृतीया विभक्तिः, करणकारके",
+    "(B) पञ्चमी विभक्तिः, अपादानकारके (Ablative / Separation)",
+    "(C) द्वितीया विभक्तिः, कर्मकारके",
+    "(D) सप्तमी विभक्तिः, अधिकरणकारके"
   ],
-  "correctIndex": 2,
-  "explanation": "'मोऽनुस्वारः' सूत्रेण पदान्तस्य मकारस्य व्यञ्जने परे अनुस्वारः (रामं वन्दे) भवति।",
+  "correctIndex": 1,
+  "explanation": "'ध्रुवमपायेऽपादानम्' — किसी वस्तु के अलग होने पर स्थिर आधार में अपादान कारक होकर पञ्चमी विभक्ति होती है (वृक्षात् पत्रं पतति)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app1-q1-6",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 1: Karakas & Upapada Applications (कारकाणि उपपद-विभक्तयश्च)",
+  "question": "'उभयतः' (दोनों ओर) पद के योग में किस विभक्ति का नियम है? (Which case is governed by 'Ubhayatah'?)",
+  "questionSanskrit": "'उभयतः' इति पदस्य योगे कस्याः विभक्तेः नियमः अस्ति?",
+  "options": [
+    "(A) प्रथमा विभक्तिः",
+    "(B) द्वितीया विभक्तिः (Accusative)",
+    "(C) तृतीया विभक्तिः",
+    "(D) षष्ठी विभक्तिः"
+  ],
+  "correctIndex": 1,
+  "explanation": "'उभयतः' और 'परितः' के योग में द्वितीया विभक्ति होती है (यथा: मार्गम् उभयतः वृक्षाः सन्ति)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app1-q1-7",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 1: Karakas & Upapada Applications (कारकाणि उपपद-विभक्तयश्च)",
+  "question": "क्रिया का आधार (स्थान/काल) कौन-सा कारक माना जाता है? (What is the base of action called?)",
+  "questionSanskrit": "क्रियायाः आधारः कः कारकः मन्यते?",
+  "options": [
+    "(A) करणकारकः",
+    "(B) अधिकरणकारकः (Locative / Base)",
+    "(C) कर्मकारकः",
+    "(D) सम्प्रदानकारकः"
+  ],
+  "correctIndex": 1,
+  "explanation": "'आधारोऽधिकरणम्' — क्रिया की सिद्धि में जो स्थान या काल आधार बनता है, उसे अधिकरण कारक (सप्तमी विभक्ति) कहते हैं।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app1-q1-8",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 1: Karakas & Upapada Applications (कारकाणि उपपद-विभक्तयश्च)",
+  "question": "'अलम्' पद का निषेध (रोकने/मना करने) के अर्थ में किस विभक्ति में प्रयोग होता है? (Which case with 'Alam' for prohibition?)",
+  "questionSanskrit": "'अलं' पदस्य निषेधार्थे कस्याः विभक्तेः प्रयोगः क्रियते?",
+  "options": [
+    "(A) द्वितीया विभक्तिः",
+    "(B) तृतीया विभक्तिः (Instrumental)",
+    "(C) चतुर्थी विभक्तिः",
+    "(D) पञ्चमी विभक्तिः"
+  ],
+  "correctIndex": 1,
+  "explanation": "निषेध के अर्थ में 'अलम्' के साथ तृतीया विभक्ति का प्रयोग होता है (यथा: अलं कोलाहलेन, अलं विवादेन)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app1-q1-9",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 1: Karakas & Upapada Applications (कारकाणि उपपद-विभक्तयश्च)",
+  "question": "'पिता पुत्रेण सह आगच्छति' — यहाँ 'पुत्रेण' पद में कारक-विभक्ति है अथवा उपपद-विभक्ति? (Is 'putrena' Karaka or Upapada?)",
+  "questionSanskrit": "'पिता पुत्रेण सह आगच्छति' — अत्र कारकविभक्तिः अस्ति उत उपपदविभक्तिः?",
+  "options": [
+    "(A) कारक-विभक्तिः",
+    "(B) उपपद-विभक्तिः ('सह' अव्यय के योग के कारण)",
+    "(C) क्रिया-विभक्तिः",
+    "(D) विशेषण-विभक्तिः"
+  ],
+  "correctIndex": 1,
+  "explanation": "जब क्रिया के सम्बन्ध से नहीं बल्कि किसी पद ('सह') के समीप होने से विभक्ति लगे, तो उसे उपपद-विभक्ति कहते हैं।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app1-q1-10",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 1: Karakas & Upapada Applications (कारकाणि उपपद-विभक्तयश्च)",
+  "question": "किस सम्बन्ध की कारको में गणना नहीं होती है? (Which relationship is excluded from the 6 Karakas?)",
+  "questionSanskrit": "कस्य सम्बन्धस्य कारकाणां गणना न भवति?",
+  "options": [
+    "(A) कर्तुः",
+    "(B) सम्बन्धस्य (षष्ठी विभक्तेः / Possessive)",
+    "(C) कर्मणः",
+    "(D) अधिकरणस्य"
+  ],
+  "correctIndex": 1,
+  "explanation": "सम्बन्ध (षष्ठी विभक्ति) का क्रिया के साथ साक्षात् अन्वय न होने के कारण पाणिनीय व्याकरण में इसे कारक नहीं माना गया है।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-app1-q2-1",
   "category": "grade8_app1",
-  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी २)",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
   "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
-  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – कारकाणि एवं सन्धयः (True / False - आम् / न)",
-  "question": "क्रियायाः सम्पादने यत् प्रकृष्टं साधनं भवति तत् कर्म-कारकम्। (आम् / न)",
-  "questionSanskrit": "क्रियायाः सम्पादने यत् प्रकृष्टं साधनं भवति तत् कर्म-कारकम्।",
+  "subCategory": "Quiz 2: Verbal Roots & Morphological Derivations (धातवः कृत्-प्रत्ययाश्च)",
+  "question": "'ल्यप्' प्रत्यय का प्रयोग कब होता है? (When is suffix 'Lyap' used instead of 'Ktva'?)",
+  "questionSanskrit": "'ल्यप्' प्रत्ययस्य प्रयोगः कदा भवति?",
   "options": [
-    "A) आम् (True)",
-    "B) न (False)"
+    "(A) यदा धातुः उपसर्गयुक्तः न भवति",
+    "(B) यदा धातुः उपसर्गेण युक्तः भवति (When root is preceded by an Upasarga)",
+    "(C) केवलं भविष्यत्काले",
+    "(D) केवलं कर्मवाच्ये"
   ],
   "correctIndex": 1,
-  "explanation": "न (असत्यम्)। 'साधकतमं करणम्' — क्रियायाः सिद्धौ यत् सर्वाधिकं साहाय्यकं साधनं भवति तत् करण-कारकं भवति, कर्म तु 'कर्तुरीप्सिततमं कर्म'।",
+  "explanation": "'समासेऽनञ्पूर्वे क्त्वो ल्यप्' — जब धातु से पहले कोई उपसर्ग जुड़ा हो, तो क्त्वा के स्थान पर 'ल्यप्' प्रत्यय लगता है।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-app1-q2-2",
   "category": "grade8_app1",
-  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी २)",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
   "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
-  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – कारकाणि एवं सन्धयः (True / False - आम् / न)",
-  "question": "'नमः' इति पदस्य प्रयोगे सर्वदा चतुर्थी विभक्तिः भवति। (आम् / न)",
-  "questionSanskrit": "'नमः' इति पदस्य प्रयोगे सर्वदा चतुर्थी विभक्तिः भवति।",
+  "subCategory": "Quiz 2: Verbal Roots & Morphological Derivations (धातवः कृत्-प्रत्ययाश्च)",
+  "question": "'गम्' धातु में 'तुमुन्' प्रत्यय लगाने पर क्या रूप बनता है? (What form is derived from root 'Gam' + 'Tumun'?)",
+  "questionSanskrit": "'गम्' धातोः 'तुमुन्' प्रत्यये किं रूपं निष्पद्यते?",
   "options": [
-    "A) आम् (True)",
-    "B) न (False)"
+    "(A) गमितुम्",
+    "(B) गन्तुम् (In order to go)",
+    "(C) गमनीयम्",
+    "(D) गत्वा"
   ],
-  "correctIndex": 0,
-  "explanation": "आम् (सत्यम्)। 'नमःस्वस्तिस्वाहास्वधालंवषड्योगाच्च' सूत्रेण नमः-योगे चतुर्थी विभक्तिः भवति (यथा — श्रीगणेशाय नमः, गुरवे नमः)।",
+  "correctIndex": 1,
+  "explanation": "गम् + तुमुन् = गन्तुम् (जाने के लिए)। मकार तकार के योग में दन्त्य नकार में बदलता है।",
   "difficulty": "easy",
   "points": 10
 },
 {
   "id": "g8-app1-q2-3",
   "category": "grade8_app1",
-  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी २)",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
   "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
-  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – कारकाणि एवं सन्धयः (True / False - आम् / न)",
-  "question": "पूर्वरूप सन्धौ 'अ' वर्णस्य स्थाने अवग्रह चिन्हं (ऽ) प्रयुज्यते। (आम् / न)",
-  "questionSanskrit": "पूर्वरूप सन्धौ 'अ' वर्णस्य स्थाने अवग्रह चिन्हं (ऽ) प्रयुज्यते।",
+  "subCategory": "Quiz 2: Verbal Roots & Morphological Derivations (धातवः कृत्-प्रत्ययाश्च)",
+  "question": "'ज्ञा' धातु में उपसर्गसहित 'ल्यप्' प्रत्यय लगाने पर क्या रूप बनता है? (Form with root 'Jna' + prefix + Lyap?)",
+  "questionSanskrit": "'ज्ञा' धातोः 'ल्यप्' प्रत्यये किं रूपं जायते?",
   "options": [
-    "A) आम् (True)",
-    "B) न (False)"
+    "(A) ज्ञातुम्",
+    "(B) विज्ञाय (Having known / understood)",
+    "(C) ज्ञात्वा",
+    "(D) प्रज्ञाय"
   ],
-  "correctIndex": 0,
-  "explanation": "आम् (सत्यम्)। एङः पदान्तादति — पदान्ते ए/ओ अनन्तरं ह्रस्व 'अ' आगच्छति चेत् पूर्वरूपं भवति, 'अ' वर्णस्य स्थाने अवग्रहः (ऽ) दीयते (यथा — ते + अपि = तेऽपि)।",
-  "difficulty": "easy",
+  "correctIndex": 1,
+  "explanation": "वि + ज्ञा + ल्यप् = विज्ञाय (जानकर / भली-भाँति समझकर)।",
+  "difficulty": "medium",
   "points": 10
 },
 {
   "id": "g8-app1-q2-4",
   "category": "grade8_app1",
-  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी २)",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
   "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
-  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – कारकाणि एवं सन्धयः (True / False - आम् / न)",
-  "question": "'णत्व-विधाने' ऋ, र, ष वर्णानां पश्चात् 'न' इत्यस्य 'ण' भवति। (आम् / न)",
-  "questionSanskrit": "'णत्व-विधाने' ऋ, र, ष वर्णानां पश्चात् 'न' इत्यस्य 'ण' भवति।",
+  "subCategory": "Quiz 2: Verbal Roots & Morphological Derivations (धातवः कृत्-प्रत्ययाश्च)",
+  "question": "'श्रु' धातु का स्त्रीलिङ्ग में 'क्तवतु' प्रत्यय का रूप क्या होगा? (Feminine Ktavatu form of root 'Shru'?)",
+  "questionSanskrit": "'श्रु' धातोः स्त्रीलिङ्गे 'क्तवतु' प्रत्ययस्य रूपं किं भविष्यति?",
   "options": [
-    "A) आम् (True)",
-    "B) न (False)"
+    "(A) श्रुतवान्",
+    "(B) श्रुतवती (She heard / listened)",
+    "(C) श्रुत्वा",
+    "(D) श्रोतव्यम्"
   ],
-  "correctIndex": 0,
-  "explanation": "आम् (सत्यम्)। 'रषाभ्यां नो णः समानपदे' सूत्रेण ऋ, ॠ, र्, ष् वर्णानां पश्चात् 'न्' वर्णस्य 'ण्' भवति (यथा — रामेण, विष्णवे)।",
-  "difficulty": "easy",
+  "correctIndex": 1,
+  "explanation": "श्रु + क्तवतु रूप: पुंलिङ्ग में 'श्रुतवान्', स्त्रीलिङ्ग में 'श्रुतवती' (नदी-वत्), नपुंसकलिङ्ग में 'श्रुतवत्'।",
+  "difficulty": "medium",
   "points": 10
 },
 {
   "id": "g8-app1-q2-5",
   "category": "grade8_app1",
-  "categoryLabel": "Grade 8 App 1: व्याकरणम् (प्रश्नोत्तरी २)",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
   "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
-  "subCategory": "प्रश्नोत्तरी २ (Quiz 2) – कारकाणि एवं सन्धयः (True / False - आम् / न)",
-  "question": "'तच्चित्रम्' इति पदे जश्त्व-सन्धिः अस्ति। (आम् / न)",
-  "questionSanskrit": "'तच्चित्रम्' इति पदे जश्त्व-सन्धिः अस्ति।",
+  "subCategory": "Quiz 2: Verbal Roots & Morphological Derivations (धातवः कृत्-प्रत्ययाश्च)",
+  "question": "'त्यजति' क्रियापद को 'क्त्वा' प्रत्यय में परिवर्तित करें। (Convert 'Tyajati' into Ktva participle.)",
+  "questionSanskrit": "'त्यजति' इति क्रियापदस्य 'क्त्वा' प्रत्यये परिवर्तनं कुरुत।",
   "options": [
-    "A) आम् (True)",
-    "B) न (False)"
+    "(A) त्यजित्वा",
+    "(B) त्यक्त्वा (Having abandoned)",
+    "(C) परित्यज्य",
+    "(D) त्यक्तुम्"
   ],
   "correctIndex": 1,
-  "explanation": "न (असत्यम्)। तत् + चित्रम् = तच्चित्रम्। अत्र 'स्तोः श्चुना श्चुः' सूत्रेण श्चुत्व-सन्धिः (त् ➔ च्) अस्ति, जश्त्वं न।",
+  "explanation": "त्यज् + क्त्वा = त्यक्त्वा (त्याग करके / छोड़ कर)। जकार का ककार होता है।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app1-q2-6",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 2: Verbal Roots & Morphological Derivations (धातवः कृत्-प्रत्ययाश्च)",
+  "question": "'ददाति' (दा) धातु का 'तुमुन्' प्रत्ययान्त रूप क्या है? (What is the Tumun form of root 'Da'?)",
+  "questionSanskrit": "'ददाति' धातोः 'तुमुन्' प्रत्ययान्तरूपं किम्?",
+  "options": [
+    "(A) ददितुम्",
+    "(B) दातुम् (In order to give)",
+    "(C) दत्त्वा",
+    "(D) प्रदाय"
+  ],
+  "correctIndex": 1,
+  "explanation": "दा + तुमुन् = दातुम् (देने के लिए / In order to give)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app1-q2-7",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 2: Verbal Roots & Morphological Derivations (धातवः कृत्-प्रत्ययाश्च)",
+  "question": "'प्रक्षाल्य' पद में कौन-सा उपसर्ग, धातु और प्रत्यय है? (Identify prefix, root, suffix in 'Prakshalya'.)",
+  "questionSanskrit": "'प्रक्षाल्य' पदे कः उपसर्गः, कः धातुः, कश्च प्रत्ययः अस्ति?",
+  "options": [
+    "(A) प्र + क्षल् + क्त्वा",
+    "(B) प्र + क्षाल् + ल्यप्",
+    "(C) परि + क्षाल् + तुमुन्",
+    "(D) प्र + क्षालि + क्तवतु"
+  ],
+  "correctIndex": 1,
+  "explanation": "प्र (उपसर्गः) + क्षाल् (धातुः) + ल्यप् (प्रत्ययः) = प्रक्षाल्य (धोकर / Having washed)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app1-q2-8",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 2: Verbal Roots & Morphological Derivations (धातवः कृत्-प्रत्ययाश्च)",
+  "question": "'पठितवान्' पद में कौन-सा प्रत्यय है? (Which suffix is in 'Pathitavan'?)",
+  "questionSanskrit": "'पठितवान्' पदस्य कः प्रत्ययः अस्ति?",
+  "options": [
+    "(A) क्त्वा",
+    "(B) क्तवतु (Past active participle)",
+    "(C) तुमुन्",
+    "(D) ल्यप्"
+  ],
+  "correctIndex": 1,
+  "explanation": "पठ् + क्तवतु (पुंलिङ्ग प्रथमा एकवचन) = पठितवान् (उसने पढ़ा / He studied)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app1-q2-9",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 2: Verbal Roots & Morphological Derivations (धातवः कृत्-प्रत्ययाश्च)",
+  "question": "'गृहीत्वा' पद में मूल धातु कौन-सी है? (What is the base root in 'Grihitva'?)",
+  "questionSanskrit": "'गृहीत्वा' पदे मूलधातुः कः अस्ति?",
+  "options": [
+    "(A) ग्रह् (To seize / catch)",
+    "(B) गृह्",
+    "(C) गृहा",
+    "(D) ग्राह्"
+  ],
+  "correctIndex": 0,
+  "explanation": "मूल धातु 'ग्रह्' है। ग्रह् + क्त्वा = गृहीत्वा (ग्रहण करके / पकड़कर)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app1-q2-10",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 2: Verbal Roots & Morphological Derivations (धातवः कृत्-प्रत्ययाश्च)",
+  "question": "'उदित्वा' पद में किस मूल धातु का सम्प्रसारण रूप है? (Which root forms 'Uditva'?)",
+  "questionSanskrit": "'उदित्वा' पदे कस्य धातुमूलात् परिवर्तनं जातम्?",
+  "options": [
+    "(A) उद्",
+    "(B) वद् (To speak)",
+    "(C) वाद्",
+    "(D) विद्"
+  ],
+  "correctIndex": 1,
+  "explanation": "वद् + क्त्वा = उदित्वा (बोलकर)। यहाँ 'वद्' धातु के वकार को सम्प्रसारण होकर 'उ' बनता है।",
+  "difficulty": "hard",
+  "points": 10
+},
+{
+  "id": "g8-app1-q3-1",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 3: Sandhi Alterations & Form Identification (सन्धि-नियमाः रूपाणि च)",
+  "question": "'भवनम्' इस पद का सही सन्धि-विच्छेद क्या है? (What is the correct Sandhi split of 'Bhavanam'?)",
+  "questionSanskrit": "'भवनम्' इति पदस्य कः सन्धिच्छेदः अस्ति?",
+  "options": [
+    "(A) भव + अनम्",
+    "(B) भो + अनम् (अयादि-सन्धिः)",
+    "(C) भौ + अनम्",
+    "(D) भू + अनम्"
+  ],
+  "correctIndex": 1,
+  "explanation": "भो + अनम् = भवनम्। अयादि सन्धि के नियमानुसार 'ओ' के बाद स्वर आने पर 'अव्' आदेश होता है (भो ➔ भव् + अनम् = भवनम्)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app1-q3-2",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 3: Sandhi Alterations & Form Identification (सन्धि-नियमाः रूपाणि च)",
+  "question": "'तेऽपि' पद में कौन-सी सन्धि प्रयुक्त हुई है? (Which Sandhi is applied in 'Te'pi'?)",
+  "questionSanskrit": "'तेऽपि' पदे कः सन्धिः प्रयुक्तः?",
+  "options": [
+    "(A) गुण-सन्धिः",
+    "(B) पूर्वरूप-सन्धिः (Purvarupa Sandhi)",
+    "(C) वृद्धि-सन्धिः",
+    "(D) दीर्घ-सन्धिः"
+  ],
+  "correctIndex": 1,
+  "explanation": "पदान्त 'ए' या 'ओ' के बाद यदि ह्रस्व 'अ' आए, तो 'अ' पूर्वरूप में मिलकर अवग्रह (ऽ) बन जाता है: ते + अपि = तेऽपि।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app1-q3-3",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 3: Sandhi Alterations & Form Identification (सन्धि-नियमाः रूपाणि च)",
+  "question": "'वाक् + अर्थौ' इसका शुद्ध सन्धि-पद क्या होगा? (What is the combined Sandhi form of 'Vak + arthau'?)",
+  "questionSanskrit": "'वाक् + अर्थौ' इत्यस्य सन्धिपदं किं भविष्यति?",
+  "options": [
+    "(A) वाकार्थौ",
+    "(B) वागार्थौ (जश्त्व-सन्धिः)",
+    "(C) वाक्यर्थौ",
+    "(D) वाङ्नार्थौ"
+  ],
+  "correctIndex": 1,
+  "explanation": "जश्त्व सन्धि (झलां जशोऽन्ते) के अनुसार वर्ग के प्रथम वर्ण (क्) के बाद स्वर आने पर वह अपने वर्ग के तीसरे वर्ण (ग्) में बदल जाता है: वाक् + अर्थौ = वागार्थौ।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app1-q3-4",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 3: Sandhi Alterations & Form Identification (सन्धि-नियमाः रूपाणि च)",
+  "question": "'उत् + चारणम् = उच्चारणम्' यहाँ किस सन्धि का नियम लागू होता है? (Which Sandhi rule applies in 'Ut + charanam'?)",
+  "questionSanskrit": "'उत् + चारणम्' अत्र कस्य सन्धि नियमः अस्ति?",
+  "options": [
+    "(A) जश्त्व-सन्धिः",
+    "(B) श्चुत्व-सन्धिः (उच्चारणम् — स्तोः श्चुना श्चुः)",
+    "(C) परसवर्ण-सन्धिः",
+    "(D) अनुस्वार-सन्धिः"
+  ],
+  "correctIndex": 1,
+  "explanation": "'स्तोः श्चुना श्चुः' — त-वर्ग (त्) के बाद च-वर्ग (च्) आने पर त् का च् में परिवर्तन हो जाता है: उत् + चारणम् = उच्चारणम्।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app1-q3-5",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 3: Sandhi Alterations & Form Identification (सन्धि-नियमाः रूपाणि च)",
+  "question": "'अं + कितः' का परसवर्ण-सन्धि रूप क्या होगा? (What is the Parasavarna form of 'Am + kitah'?)",
+  "questionSanskrit": "'अं + कितः' इत्यस्य परसवर्णसन्धि रूपं लिखत।",
+  "options": [
+    "(A) अंकीतः",
+    "(B) अङ्कितः (Parasavarna Sandhi)",
+    "(C) अञ्चितः",
+    "(D) अन्तितः"
+  ],
+  "correctIndex": 1,
+  "explanation": "अनुस्वार के बाद क-वर्ग आने पर अनुस्वार क-वर्ग के ५वें वर्ण (ङ्) में बदल जाता है: अं + कितः = अङ्कितः।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app1-q3-6",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 3: Sandhi Alterations & Form Identification (सन्धि-नियमाः रूपाणि च)",
+  "question": "'रामायणम्' यहाँ 'न'कार का 'ण'कार किस नियम से होता है? (By which rule does 'n' become 'n' in 'Ramayanam'?)",
+  "questionSanskrit": "'रामायणम्' इत्यत्र 'न'कारस्य 'ण'कारः केन विधानेन भवति?",
+  "options": [
+    "(A) श्चुत्व-विधानेन",
+    "(B) णत्व-विधानेन (रषाभ्यां नो णः समानपदे)",
+    "(C) जश्त्व-विधानेन",
+    "(D) अयादि-विधानेन"
+  ],
+  "correctIndex": 1,
+  "explanation": "णत्व-विधान (अट्कुप्वाङ्नुम्व्यवायेऽपि) के अनुसार 'र' के बाद आने वाला 'न' 'ण' में बदल जाता है: राम + अयनम् = रामायणम्।",
+  "difficulty": "hard",
+  "points": 10
+},
+{
+  "id": "g8-app1-q3-7",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 3: Sandhi Alterations & Form Identification (सन्धि-नियमाः रूपाणि च)",
+  "question": "'नमोऽस्तु' का सन्धि-विच्छेद एवं सन्धि-प्रकार बताइए। (Split 'Namo'stu' and identify Sandhi.)",
+  "questionSanskrit": "'नमोऽस्तु' इत्यस्य सन्धिं विच्छेद्य नियमं वदत।",
+  "options": [
+    "(A) नम + अस्तु (दीर्घः)",
+    "(B) नमो + अस्तु (पूर्वरूप-सन्धिः)",
+    "(C) नमः + अस्तु (यण्)",
+    "(D) नमे + अस्तु (गुणः)"
+  ],
+  "correctIndex": 1,
+  "explanation": "पदान्त ओकार के बाद ह्रस्व अकार आने पर अकार का लोप होकर अवग्रह बन जाता है: नमो + अस्तु = नमोऽस्तु (पूर्वरूप-सन्धिः)।",
+  "difficulty": "easy",
+  "points": 10
+},
+{
+  "id": "g8-app1-q3-8",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 3: Sandhi Alterations & Form Identification (सन्धि-नियमाः रूपाणि च)",
+  "question": "'गायकः' पद में कौन-सा स्वर-सन्धि भेद और विच्छेद है? (In 'Gayakah', which vowel Sandhi and split apply?)",
+  "questionSanskrit": "'गायकः' पदे कः स्वरसन्धिभेदः अस्ति?",
+  "options": [
+    "(A) गुण-सन्धिः, गा + अकः",
+    "(B) अयादि-सन्धिः, गै + अकः (ऐ ➔ आय्)",
+    "(C) वृद्धि-सन्धिः, गै + इकः",
+    "(D) यण्-सन्धिः, गी + अकः"
+  ],
+  "correctIndex": 1,
+  "explanation": "अयादि सन्धि में 'ऐ' के बाद स्वर आने पर 'आय्' आदेश होता है (गै + अकः ➔ गाय् + अकः = गायकः)।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app1-q3-9",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 3: Sandhi Alterations & Form Identification (सन्धि-नियमाः रूपाणि च)",
+  "question": "'हरिस् + शेते' का श्चुत्व-सन्धि रूप क्या होगा? (What is the Schutva form of 'Haris + shete'?)",
+  "questionSanskrit": "'हरिस् + शेते' इत्यस्य श्चुत्वसन्धि रूपं किम्?",
+  "options": [
+    "(A) हरिस्सेते",
+    "(B) हरिश्येते (Dental स ➔ Palatal श)",
+    "(C) हरिशेते",
+    "(D) हरिःशेते"
+  ],
+  "correctIndex": 1,
+  "explanation": "दन्त्य सकार के बाद तालव्य शकार आने पर 'स्तोः श्चुना श्चुः' नियम से सकार शकार में बदल जाता है: हरिस् + शेते = हरिश्येते।",
+  "difficulty": "medium",
+  "points": 10
+},
+{
+  "id": "g8-app1-q3-10",
+  "category": "grade8_app1",
+  "categoryLabel": "Grade 8 App 1: व्याकरणम्",
+  "chapterRef": "Grade 8: परिशिष्टम् १ — व्याकरणम्",
+  "subCategory": "Quiz 3: Sandhi Alterations & Form Identification (सन्धि-नियमाः रूपाणि च)",
+  "question": "'धर्मं चर' यहाँ मकार का अनुस्वार किस कारण से हुआ? (Why did 'm' become Anusvara in 'Dharmam char'?)",
+  "questionSanskrit": "'धर्मं चर' इत्यत्र मकारस्य अनुस्वारः कस्मात् कारणात् अभवत्?",
+  "options": [
+    "(A) जश्त्व-नियमात्",
+    "(B) अनुस्वार-सन्धि-नियमात् (मोऽनुस्वारः — व्यंजन परे होने पर)",
+    "(C) श्चुत्व-नियमात्",
+    "(D) पूर्वरूप-नियमात्"
+  ],
+  "correctIndex": 1,
+  "explanation": "'मोऽनुस्वारः' सूत्र के अनुसार पद के अन्त में स्थित 'म्' के बाद यदि कोई भी व्यंजन (च्) आए, तो म् का अनुस्वार (ं) हो जाता है (धर्मम् + चर = धर्मं चर)।",
   "difficulty": "easy",
   "points": 10
 },

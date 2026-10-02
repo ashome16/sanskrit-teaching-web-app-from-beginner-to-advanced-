@@ -37840,7 +37840,7 @@
       "id": "grade8_app1",
       "fileName": "grade8_app1.txt",
       "title": "परिशिष्टम् १: व्याकरणम् — उपसर्गाः, प्रत्ययाः, कारकाणि, सन्धयः",
-      "page_numbers": "159-165",
+      "page_numbers": "159–165",
       "sentences": [
         {
           "sanskrit": "॥ परिशिष्टम् १: व्याकरणम् — उपसर्गाः, प्रत्ययाः, कारकाणि, सन्धयः ॥",
@@ -37848,6 +37848,23 @@
           "paragraphTranslation": "परिशिष्टम् १: व्याकरणम् — उपसर्ग, प्रत्यय, कारक और सन्धि (पृष्ठ १५९–१६५)",
           "words": [
             "परिशिष्टम्",
+            "व्याकरणम्",
+            "उपसर्गाः",
+            "प्रत्ययाः",
+            "कारकाणि",
+            "सन्धयः"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "📌 पाठ्यक्रम-मार्गदर्शिका (CBSE / NCERT / NEP 2020) — इदं व्याकरण-परिशिष्टं कक्षा-८-छात्रेभ्यः आधारभूत-स्तम्भानां (२२ उपसर्गाः, कृत्-प्रत्ययाः [क्त्वा, ल्यप्, तुमुन्, क्तवतु], षट् कारकाणि, उपपद-विभक्तयः, स्वर-व्यञ्जन-सन्धयश्च) सर्वाङ्गीण-बोधं प्रददाति।",
+          "meaning": "Curriculum Framework (CBSE / NCERT / NEP 2020): This grammar appendix provides comprehensive competency-based mastery of core Sanskrit grammatical pillars: 22 prefixes (Upasargas), Krit suffixes (Ktva, Lyap, Tumun, Ktavatu), 6 Karakas and Upapada cases, and essential Svara/Vyanjana Sandhi rules.",
+          "paragraphTranslation": "पाठ्यक्रम मार्गदर्शिका (CBSE / NCERT / NEP 2020): यह व्याकरण परिशिष्ट कक्षा ८ के विद्यार्थियों को संस्कृत व्याकरण के आधारभूत स्तम्भों—२२ उपसर्ग, कृत् प्रत्यय (क्त्वा, ल्यप्, तुमुन्, क्तवतु), ६ कारक व उपपद-विभक्तियाँ तथा स्वर-व्यञ्जन सन्धियों का व्यावहारिक व सर्वांगीण ज्ञान प्रदान करता है।",
+          "words": [
+            "पाठ्यक्रम",
+            "CBSE",
+            "NCERT",
+            "NEP2020",
             "व्याकरणम्",
             "उपसर्गाः",
             "प्रत्ययाः",
