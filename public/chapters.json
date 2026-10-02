@@ -33875,12 +33875,12 @@
       "id": "grade8_ch7",
       "fileName": "grade8_ch7.txt",
       "title": "सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
-      "page_numbers": "75-83",
+      "page_numbers": "75–84",
       "sentences": [
         {
           "sanskrit": "॥ सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा ॥",
-          "meaning": "Chapter 7: The Charming Treasury of the Divine Sanskrit Language (Pages 75–83)",
-          "paragraphTranslation": "सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा (पृष्ठ ७५–८३)",
+          "meaning": "Chapter 7: The Charming Treasury of the Divine Sanskrit Language (Pages 75–84)",
+          "paragraphTranslation": "सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा (पृष्ठ ७५–८४)",
           "words": [
             "सप्तमः",
             "पाठः",
@@ -33890,29 +33890,48 @@
           "kind": "section-header"
         },
         {
-          "sanskrit": "अस्मिन् पाठे श्रावणी-पूर्णिमायाः (संस्कृतदिवसस्य) सन्दर्भे भगिन्योः संवादेन तथा च चतुर्भिः मधुर-श्लोकैः देववाणी-संस्कृतस्य माधुर्यं, कविवर-साहित्यं, नवरसाः, विज्ञानानि च वर्णितानि सन्ति।",
-          "meaning": "This chapter honors Sanskrit Day through an engaging dialogue between sisters and four lyrical verses celebrating Sanskrit's poetic mastery, nine aesthetic rasas, and scientific heritage.",
-          "paragraphTranslation": "इस पाठ में श्रावणी पूर्णिमा (संस्कृत दिवस) पर दो बहनों के संवाद तथा चार श्लोकों के द्वारा संस्कृत भाषा के माधुर्य, नवरस और शास्त्रों की महत्ता का वर्णन है।",
+          "sanskrit": "अस्मिन् पाठे श्रावणी-पूर्णिमायाः (संस्कृतदिवसस्य) सन्दर्भे भगिन्योः संवादेन तथा च चतुर्भिः मधुर-श्लोकैः देववाणी-संस्कृतस्य माधुर्यं, मुनिवराणां कवीनां च अमूल्य-साहित्यं, नवरसाः, आयुर्वेद-व्योमशास्त्रादिविज्ञानानि तथा च विश्वसंस्कृतेः पोषकतायाः अनुपमं वर्णनं कृतम् अस्ति।",
+          "meaning": "This chapter celebrates Sanskrit Day (Shravani Purnima) through a lively dialogue between two sisters and four lyrical verses highlighting Sanskrit's melodic elegance, sage and poetic heritage (Valmiki, Vyasa, Kalidasa, Bana), nine rasas, sciences (Ayurveda, Astronomy), and universal cultural nurturing.",
+          "paragraphTranslation": "इस पाठ में श्रावणी पूर्णिमा (संस्कृत दिवस) के अवसर पर दो बहनों के संवाद तथा चार मधुर श्लोकों के माध्यम से देवभाषा संस्कृत के माधुर्य, मुनियों-कवियों (वाल्मीकि, व्यास, कालिदास, बाणभट्ट) की साहित्यिक धरोहर, नौ रसों, आयुर्वेद व खगोलशास्त्र तथा वैश्विक संस्कृति के पोषण का अनुपम गुणगान किया गया है।",
           "words": [
             "अस्मिन्",
             "पाठे",
-            "श्रावणी-पूर्णिमायाः",
+            "श्रावणी",
+            "पूर्णिमायाः",
             "संस्कृतदिवसस्य",
             "भगिन्योः",
             "संवादेन",
+            "चतुर्भिः",
+            "मधुर",
             "श्लोकैः",
             "संस्कृतस्य",
-            "माधुर्यम्"
+            "माधुर्यम्",
+            "मुनिवराणाम्",
+            "कवीनाम्",
+            "नवरसाः",
+            "आयुर्वेद",
+            "व्योमशास्त्र"
           ],
-          "kind": "section-header"
+          "kind": null
         },
         {
-          "sanskrit": "ओमिता – भगिनि! अद्य श्रावणी पूर्णिमा अस्ति। वदतु एतस्याः किं वैशिष्ट्यम्?",
-          "meaning": "Omita – Sister! Today is Shravani Purnima. Tell me, what is its special significance?",
-          "paragraphTranslation": "ओमिता – बहन! आज सावन की पूर्णिमा है। बताइए इसकी क्या विशेषता है?",
+          "sanskrit": "भागः १: श्रावणी-पूर्णिमा (संस्कृतदिवस-संवादः — पृष्ठ ७५)",
+          "meaning": "Part 1: Dialogue on Shravani Purnima & Sanskrit Day Celebration (Page 75)",
+          "paragraphTranslation": "भाग १: श्रावणी पूर्णिमा और संस्कृत दिवस का संवाद (पृष्ठ ७५)",
+          "words": [
+            "भागः",
+            "श्रावणी-पूर्णिमा",
+            "संस्कृतदिवस",
+            "संवादः"
+          ],
+          "kind": "chapter-header"
+        },
+        {
+          "sanskrit": "ओमिता: भगिनि! अद्य श्रावणी पूर्णिमा अस्ति । वदतु एतस्याः किं वैशिष्ट्यम् ?",
+          "meaning": "Omita: Sister! Today is Shravani Purnima (the full moon day of Shravan month). Tell me, what is its specialty?",
+          "paragraphTranslation": "ओमिता: दीदी! आज श्रावणी पूर्णिमा है। बताइए इसकी क्या विशेषता है?",
           "words": [
             "ओमिता",
-            "–",
             "भगिनि",
             "अद्य",
             "श्रावणी",
@@ -33923,17 +33942,16 @@
             "किं",
             "वैशिष्ट्यम्"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "भगिनी – अह जानीमि अद्य संस्कृतदिवसः अस्ति। वयम् एतम् आसप्ताहम् आचरामः।",
-          "meaning": "Sister – I know that today is Sanskrit Day. We celebrate this festival for the whole week as Sanskrit Week.",
-          "paragraphTranslation": "बहन – मैं जानती हूँ, आज संस्कृत दिवस है। हम इसे पूरे सप्ताह मनाते हैं।",
+          "sanskrit": "भगिनी: अहं जानामि अद्य संस्कृतदिवसः अस्ति । वयम् एतम् आसप्ताहम् आचरामः ।",
+          "meaning": "Sister: I know that today is Sanskrit Diwas. We celebrate this all through the week as Sanskrit Week.",
+          "paragraphTranslation": "दीदी: मैं जानती हूँ आज संस्कृत दिवस है। हम इसे पूरे सप्ताह (संस्कृत सप्ताह) के रूप में मनाते हैं।",
           "words": [
             "भगिनी",
-            "–",
-            "अह",
-            "जानीमि",
+            "अहं",
+            "जानामि",
             "अद्य",
             "संस्कृतदिवसः",
             "अस्ति",
@@ -33942,15 +33960,14 @@
             "आसप्ताहम्",
             "आचरामः"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "ओमिता – सत्यम्। किं भवत्याः विद्यालये संस्कृतदिवसम् अधिकृत्य केषाञ्चन विशिष्टकार्यक्रमाणां योजना कृता?",
-          "meaning": "Omita – Truly! Has your school planned special cultural programs for Sanskrit Day?",
-          "paragraphTranslation": "ओमिता – सच में! क्या आपके विद्यालय में संस्कृत दिवस को लेकर कुछ विशेष कार्यक्रमों की योजना बनाई गई है?",
+          "sanskrit": "ओमिता: सत्यम् । किं भवत्याः विद्यालये संस्कृतदिवसम् अधिकृत्य केषाञ्चन विशिष्टकार्यक्रमाणां योजना कृता?",
+          "meaning": "Omita: Really! Has your school planned any special programs regarding Sanskrit Diwas?",
+          "paragraphTranslation": "ओमिता: सच में! क्या आपके विद्यालय में संस्कृत दिवस के उपलक्ष्य में कुछ विशेष कार्यक्रमों की योजना बनाई गई है?",
           "words": [
             "ओमिता",
-            "–",
             "सत्यम्",
             "किं",
             "भवत्याः",
@@ -33962,15 +33979,14 @@
             "योजना",
             "कृता"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "भगिनी – आम ओमिते! मम विद्यालये अनेकेषां कार्यक्रमाणां योजना रचिता।",
-          "meaning": "Sister – Yes Omita! Many cultural programs have been arranged at my school.",
-          "paragraphTranslation": "बहन – हाँ ओमिता! मेरे विद्यालय में अनेक कार्यक्रमों की योजना बनाई गई है।",
+          "sanskrit": "भगिनी: आम ओमिते! मम विद्यालये अनेकेषां कार्यक्रमाणां योजना रचिता ।",
+          "meaning": "Sister: Yes Omita! In my school, a grand plan for many programs has been designed.",
+          "paragraphTranslation": "दीदी: हाँ ओमिता! मेरे विद्यालय में कई कार्यक्रमों की योजना बनाई गई है।",
           "words": [
             "भगिनी",
-            "–",
             "आम",
             "ओमिते",
             "मम",
@@ -33980,15 +33996,14 @@
             "योजना",
             "रचिता"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "ओमिता – भगिनि! तत्र भवती किं गीतं गास्यति? कृपया मामपि श्रावयातु।",
-          "meaning": "Omita – Sister! Which song will you sing there? Please make me listen to it too.",
-          "paragraphTranslation": "ओमिता – बहन! वहाँ आप कौन-सा गीत गाएंगी? कृपया मुझे भी सुनाइए।",
+          "sanskrit": "ओमिता: भगिनि! तत्र भवती किं गीतं गास्यति? कृपया मामपि श्रावयतु।",
+          "meaning": "Omita: Sister! Which song will you sing there? Please let me hear it too.",
+          "paragraphTranslation": "ओमिता: दीदी! क्या आप वहाँ कोई गीत गाएंगी? कृपया मुझे भी सुनाइए।",
           "words": [
             "ओमिता",
-            "–",
             "भगिनि",
             "तत्र",
             "भवती",
@@ -33997,17 +34012,16 @@
             "गास्यति",
             "कृपया",
             "मामपि",
-            "श्रावयातु"
+            "श्रावयतु"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "भगिनी – आम ओमिते! अहं तु गीतगायनप्रतियोगितायां भागं ग्रहीष्यामि।",
-          "meaning": "Sister – Yes Omita! I will be taking part in the song singing competition.",
-          "paragraphTranslation": "बहन – हाँ ओमिता! मैं तो गीत गायन प्रतियोगिता में भाग लूँगी।",
+          "sanskrit": "भगिनी: आम ओमिते! अहं तु गीतगायनप्रतियोगितायां भागं ग्रहीष्यामि ।",
+          "meaning": "Sister: Yes Omita! I am going to participate in the song-singing competition.",
+          "paragraphTranslation": "दीदी: हाँ ओमिता! मैं तो गीत गायन प्रतियोगिता में भाग लूँगी।",
           "words": [
             "भगिनी",
-            "–",
             "आम",
             "ओमिते",
             "अहं",
@@ -34016,15 +34030,14 @@
             "भागं",
             "ग्रहीष्यामि"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "ओमिता – अहो एवम्! किं तत्र भवती भागं ग्रहीष्यति?",
-          "meaning": "Omita – Oh, is it so! Will you perform there?",
-          "paragraphTranslation": "ओमिता – अरे ऐसा है! क्या आप वहाँ भाग ले रही हैं?",
+          "sanskrit": "ओमिता: अहो एवम् ! किं तत्र भवती भागं ग्रहीष्यति ?",
+          "meaning": "Omita: Oh, wow! Are you really going to participate?",
+          "paragraphTranslation": "ओमिता: अरे वाह! क्या आप सच में भाग ले रही हैं?",
           "words": [
             "ओमिता",
-            "–",
             "अहो",
             "एवम्",
             "किं",
@@ -34033,15 +34046,14 @@
             "भागं",
             "ग्रहीष्यति"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "भगिनी – अवश्यम्। अहं भवत्याः कृते अधुना एव निमंत्रणपत्रं यच्छामि।",
-          "meaning": "Sister – Certainly! I am handing over an invitation card to you right now.",
-          "paragraphTranslation": "बहन – ज़रूर! मैं आपके लिए अभी ही निमंत्रण पत्र देती हूँ।",
+          "sanskrit": "भगिनी: अवश्यम् । अहं भवत्याः कृते अधुना एव निमंत्रणपत्रं यच्छामि ।",
+          "meaning": "Sister: Definitely. I will give you an invitation card right now.",
+          "paragraphTranslation": "दीदी: अवश्य। मैं तुम्हारे लिए अभी ही निमंत्रण पत्र दे देती हूँ।",
           "words": [
             "भगिनी",
-            "–",
             "अवश्यम्",
             "अहं",
             "भवत्याः",
@@ -34051,384 +34063,555 @@
             "निमंत्रणपत्रं",
             "यच्छामि"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "ओमिता – भगिनि! अहमपि आगन्तुम् इच्छामि।",
-          "meaning": "Omita – Sister! I also wish to attend.",
-          "paragraphTranslation": "ओमिता – बहन! मैं भी आना चाहती हूँ।",
+          "sanskrit": "ओमिता: भगिनि! अहमपि आगन्तुम् इच्छामि ।",
+          "meaning": "Omita: Sister! I also wish to come along.",
+          "paragraphTranslation": "ओमिता: दीदी! मैं भी आना चाहती हूँ।",
           "words": [
             "ओमिता",
-            "–",
             "भगिनि",
             "अहमपि",
             "आगन्तुम्",
             "इच्छामि"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "भगिनी – अस्तु अहं गायामि, भवती अनुगायतु।",
-          "meaning": "Sister – All right, I will sing, and you please sing along after me!",
-          "paragraphTranslation": "बहन – ठीक है, मैं गाती हूँ, आप मेरे पीछे-पीछे गाइए।",
+          "sanskrit": "भगिनी: अस्तु अहं गायामि, भवती अनुगायतु।",
+          "meaning": "Sister: Alright, I will sing now, and you can sing along with me.",
+          "paragraphTranslation": "दीदी: ठीक है, मैं गाती हूँ, तुम मेरे पीछे-पीछे गाओ।",
           "words": [
             "भगिनी",
-            "–",
             "अस्तु",
             "अहं",
             "गायामि",
             "भवती",
             "अनुगायतु"
           ],
-          "kind": "sentence"
+          "kind": null
         },
         {
-          "sanskrit": "मुनिवरविकसितकविवरविलसित-मञ्जुलमञ्जूषा सुन्दरसुरभाषा। अयि मातस्तव पोषणक्षमता मम वचनातीता सुन्दरसुरभाषा॥ १ ॥",
-          "meaning": "Verse 1: O beautiful divine language Sanskrit, nurtured by great sages and adored by glorious poets! You are an exquisite jewel-box of wisdom. O Mother! Your nurturing benevolence is beyond words.",
-          "paragraphTranslation": "श्लोक १: हे श्रेष्ठ मुनियों द्वारा विकसित और श्रेष्ठ कवियों द्वारा सुशोभित, सुंदर देववाणी! तुम ज्ञान की सुंदर मंजूषा हो। हे माता! तुम्हारी पोषण क्षमता मेरी वाणी से परे है।",
+          "sanskrit": "भागः २: मञ्जुलमञ्जूषा सुन्दरसुरभाषा — चतुर्णीं श्लोकानाम् अन्वयः भावार्थः च (पृष्ठ ७६–७९)",
+          "meaning": "Part 2: Four Divine Verses with Anvaya, Hindi & English Explications (Pages 76–79)",
+          "paragraphTranslation": "भाग २: सुन्दरसुरभाषा के चार श्लोक, अन्वय और भावार्थ (पृष्ठ ७६–७९)",
           "words": [
-            "मुनिवरविकसितकविवरविलसित",
+            "भागः",
             "मञ्जुलमञ्जूषा",
             "सुन्दरसुरभाषा",
-            "अयि",
-            "मातस्तव",
-            "पोषणक्षमता",
-            "मम",
-            "वचनातीता",
-            "सुन्दरसुरभाषा",
-            "१"
+            "चतुर्णीं",
+            "श्लोकानाम्",
+            "अन्वयः",
+            "भावार्थः"
           ],
-          "kind": "verse"
+          "kind": "chapter-header"
         },
         {
-          "sanskrit": "अन्वयः – (त्वं) मुनिवर-विकसित-कविवर-विलसित-मञ्जुल-मञ्जूषा सुन्दरसुरभाषा (असि)। अयि मातः! तव पोषणक्षमता मम वचनातीता (अस्ति)।",
-          "meaning": "Anvaya 1: (O divine language!) You are the charming box nurtured by sages and adorned by poets. O Mother, your nurturing capacity transcends my words.",
-          "paragraphTranslation": "अन्वय १: (तुम) श्रेष्ठ मुनियों द्वारा विकसित व कवियों द्वारा शोभित सुंदर मंजूषा हो। हे माता! तुम्हारी पोषण क्षमता वर्णनातीत है।",
+          "sanskrit": "मुनिवरविकसितकविवरविलसितमञ्जुलमञ्जूषा, सुन्दरसुरभाषा । अयि मातस्तव पोषणक्षमता मम वचनातीता, सुन्दरसुरभाषा ॥ १ ॥",
+          "meaning": "Verse 1: Oh Sanskrit, the beautiful language of the gods, you are a lovely treasure box developed by the best sages and adorned by the greatest poets. Oh Mother! Your capacity to nurture all other languages is beyond my words to describe.",
+          "paragraphTranslation": "श्लोक १: संस्कृत भाषा देवभाषा के रूप में जानी जाती है जो सर्वश्रेष्ठ मुनियों द्वारा विकसित और महान कवियों द्वारा सुशोभित है। यह सुंदर शब्दों की एक मंजूषा (ज्ञान की तिजोरी) है। हे संस्कृत माता! अन्य सभी भाषाओं को सींचने और पोषित करने की आपकी क्षमता मेरी वाणी के वर्णन से परे है।",
           "words": [
-            "अन्वयः",
-            "–",
-            "(त्वं)",
-            "मुनिवर",
-            "विकसित",
-            "कविवर",
-            "विलसित",
-            "मञ्जुल",
-            "मञ्जूषा",
+            "मुनिवरविकसित",
+            "कविवरविलसित",
+            "मञ्जुलमञ्जूषा",
             "सुन्दरसुरभाषा",
-            "(असि)",
             "अयि",
             "मातः",
             "तव",
             "पोषणक्षमता",
             "मम",
-            "वचनातीता",
-            "(अस्ति)"
+            "वचनातीता"
           ],
-          "kind": "anvaya"
+          "kind": "exercise-note"
         },
         {
-          "sanskrit": "वेदव्यास-वाल्मीकि-मुनीनां कालिदास-बाणादिकवीनाम्। पौराणिक-सामान्य-जनानां जीवनस्य आशा सुन्दरसुरभाषा॥ २ ॥",
-          "meaning": "Verse 2: You are the eternal hope of life for sages like Vedavyasa and Valmiki, for supreme poets like Kalidasa and Bana, and for ancient as well as ordinary people, O charming language of the gods!",
-          "paragraphTranslation": "श्लोक २: तुम वेदव्यास और वाल्मीकि जैसे मुनियों की, कालिदास और बाणभट्ट जैसे कवियों की तथा पौराणिक एवं सामान्य मनुष्यों के जीवन की आशा हो, हे सुंदर देवभाषा!",
+          "sanskrit": "अन्वयः: (त्वं) मुनिवरविकसितकविवरविलसितमञ्जुलमञ्जूषा सुन्दरसुरभाषा (असि)। अयि मातः! तव पोषणक्षमता मम वचनातीता अस्ति।",
+          "meaning": "Anvaya: (You) are the charming treasury developed by noble sages and adorned by best poets, O beautiful divine language! O Mother! Your nurturing capacity is beyond my words.",
+          "paragraphTranslation": "अन्वय: हे मुनियों द्वारा विकसित और कवियों द्वारा सुशोभित सुंदर ज्ञानपेटिका संस्कृत! हे माता! आपका पोषण सामर्थ्य मेरी वाणी से परे है।",
+          "words": [
+            "अन्वयः",
+            "मुनिवरविकसित",
+            "कविवरविलसित",
+            "मञ्जुलमञ्जूषा",
+            "सुन्दरसुरभाषा",
+            "मातः",
+            "पोषणक्षमता",
+            "वचनातीता"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "वेदव्यास-वाल्मीकि-मुनीनां कालिदास-बाणादिकवीनाम् । पौराणिक-सामान्य-जनानां जीवनस्य आशा, सुन्दरसुरभाषा ॥ २ ॥",
+          "meaning": "Verse 2: You are the absolute hope and essence of life for sages like Vedavyasa and Valmiki, for classical poets like Kalidasa and Bana, and for mythological as well as common human beings. You are the beautiful language of the divine forces.",
+          "paragraphTranslation": "श्लोक २: संस्कृत भाषा महर्षि वाल्मीकि, वेदव्यास जैसे मुनियों, और कालिदास तथा बाणभट्ट जैसे महान कवियों के अमर ग्रंथों का आधार है। यह पौराणिक पात्रों तथा आज के सामान्य जन दोनों के जीवन की आशा और प्रेरणा स्रोत है।",
           "words": [
             "वेदव्यास",
             "वाल्मीकि",
             "मुनीनां",
             "कालिदास",
-            "बाणादिकवीनाम्",
+            "बाणादि",
+            "कवीनाम्",
             "पौराणिक",
             "सामान्य",
             "जनानां",
             "जीवनस्य",
             "आशा",
-            "सुन्दरसुरभाषा",
-            "२"
+            "सुन्दरसुरभाषा"
           ],
-          "kind": "verse"
+          "kind": "exercise-note"
         },
         {
-          "sanskrit": "अन्वयः – (त्वं) वेदव्यास-वाल्मीकि-मुनीनां कालिदास-बाणादिकवीनां पौराणिक-सामान्यजनानां जीवनस्य आशा (असि)।",
-          "meaning": "Anvaya 2: You are the hope of life for sage Vedavyasa and Valmiki, poets Kalidasa and Bana, and ancient and common people alike.",
-          "paragraphTranslation": "अन्वय २: तुम व्यास-वाल्मीकि, कालिदास-बाणभट्ट और समस्त पौराणिक व सामान्य जनों के जीवन की आशा हो।",
+          "sanskrit": "अन्वयः: (त्वं) वेदव्यासवाल्मीकिमुनीनां कालिदास-बाणादिकवीनां पौराणिक-सामान्यजनानां जीवनस्य आशा (असि)। त्वं सुन्दरसुरभाषा (असि)।",
+          "meaning": "Anvaya: You are the hope of life for sages Vyasa and Valmiki, poets Kalidasa and Bana, and for common and mythological people. You are the beautiful divine language.",
+          "paragraphTranslation": "अन्वय: आप वेदव्यास, वाल्मीकि आदि मुनियों, कालिदास, बाणभट्ट आदि कवियों और समस्त सामान्य लोगों के जीवन की आशा हैं।",
           "words": [
             "अन्वयः",
-            "–",
-            "(त्वं)",
             "वेदव्यास",
             "वाल्मीकि",
             "मुनीनां",
             "कालिदास",
-            "बाणादिकवीनां",
+            "बाणादि",
+            "कवीनाम्",
             "पौराणिक",
-            "सामान्यजनानां",
-            "जीवनस्य",
-            "आशा",
-            "(असि)"
+            "सामान्य",
+            "जनानाम्",
+            "आशा"
           ],
-          "kind": "anvaya"
+          "kind": null
         },
         {
-          "sanskrit": "श्रुतिसुखनिनदे सकलप्रमोदे स्मृतिहितवरदे सरसविनोदे। गति-मति-प्रेरक-काव्यविशारदे तव संस्कृतिरेषा सुन्दरसुरभाषा॥ ३ ॥",
-          "meaning": "Verse 3: O melody pleasant to the ears, bestower of universal delight, granter of welfare through Smritis, joyful humorist, and master of elevating literature! This culture belongs to you.",
-          "paragraphTranslation": "श्लोक ३: कानों को सुख देने वाली ध्वनि वाली, सबको आनंदित करने वाली, स्मृतियों के हित का वरदान देने वाली, मधुर परिहास कराने वाली, तथा सद्गति व मति को प्रेरित करने वाले काव्यों में निपुण! यह संस्कृति तुम्हारी ही देन है।",
+          "sanskrit": "श्रुतिसुखनिनदे सकलप्रमोदे स्मृतिहितवरदे सरसविनोदे । गति-मति-प्रेरक-काव्यविशारदे तव संस्कृतिरेषा, सुन्दरसुरभाषा ॥ ३ ॥",
+          "meaning": "Verse 3: Your sound is pleasant to the ears, giving immense joy to everyone. You grant the beneficial boons of the Smritis and host delightful humor. You inspire true path (Gati) and intellect (Mati) through proficient poetry, and our culture is completely anchored in you.",
+          "paragraphTranslation": "श्लोक ३: इस भाषा की ध्वनि कानों को असीम सुख देती है और सभी को आनंदित करती है। यह स्मृतियों के कल्याणकारी ज्ञान का वरदान देती है और सरस मनोरंजन कराती है। यह मानव जीवन को सही दिशा (गति) और बुद्धि (मति) देने वाले काव्यों की रचयिता है और हमारी गौरवशाली संस्कृति की संरक्षिका है।",
           "words": [
             "श्रुतिसुखनिनदे",
             "सकलप्रमोदे",
             "स्मृतिहितवरदे",
             "सरसविनोदे",
-            "गति",
-            "मति",
-            "प्रेरक",
+            "गति-मति-प्रेरक",
             "काव्यविशारदे",
             "तव",
-            "संस्कृतिरेषा",
-            "सुन्दरसुरभाषा",
-            "३"
-          ],
-          "kind": "verse"
-        },
-        {
-          "sanskrit": "अन्वयः – हे श्रुतिसुखनिनदे! सकलप्रमोदे! स्मृतिहितवरदे! सरसविनोदे! गति-मति-प्रेरक-काव्यविशारदे! तव एषा संस्कृतिः (अस्ति)।",
-          "meaning": "Anvaya 3: O delightful to hear, all-pleasing, grantor of Smriti virtues, witty, and adept in inspiring poetry, this culture is yours!",
-          "paragraphTranslation": "अन्वय ३: हे श्रुतिसुखदायिनी, सर्वप्रमोददायिनी, काव्यविशारदे, यह संस्कृति तुम्हारी ही है।",
-          "words": [
-            "अन्वयः",
-            "–",
-            "हे",
-            "श्रुतिसुखनिनदे",
-            "सकलप्रमोदे",
-            "स्मृतिहितवरदे",
-            "सरसविनोदे",
-            "गति",
-            "मति",
-            "प्रेरक",
-            "काव्यविशारदे",
-            "तव",
-            "एषा",
             "संस्कृतिः",
-            "(अस्ति)"
+            "एषा",
+            "सुन्दरसुरभाषा"
           ],
-          "kind": "anvaya"
+          "kind": "exercise-note"
         },
         {
-          "sanskrit": "नवरस-रुचिरालङ्कृति-धारा वेदविषय-वेदान्त-विचारा। वैद्य-व्योम-शास्त्रादि-विहारा विजयते धरायां सुन्दरसुरभाषा॥ ४ ॥",
-          "meaning": "Verse 4: Radiant with the nine aesthetic rasas, cascading with figurative ornaments, profound with Vedic and Vedantic philosophy, and exploring medical and astronomical sciences, the divine language reigns supreme on earth!",
-          "paragraphTranslation": "श्लोक ४: नौ रसों से मनोहर, अलंकारों की अविरल धारा बहाने वाली, वेदों और वेदान्त के विचारों से युक्त, तथा आयुर्वेद और खगोलशास्त्र में विचरण करने वाली यह सुंदर देववाणी पृथ्वी पर सर्वोपरि विजय प्राप्त करती है।",
-          "words": [
-            "नवरस",
-            "रुचिरालङ्कृति",
-            "धारा",
-            "वेदविषय",
-            "वेदान्त",
-            "विचारा",
-            "वैद्य",
-            "व्योम",
-            "शास्त्रादि",
-            "विहारा",
-            "विजयते",
-            "धरायां",
-            "सुन्दरसुरभाषा",
-            "४"
-          ],
-          "kind": "verse"
-        },
-        {
-          "sanskrit": "अन्वयः – नवरस-रुचिरा अलङ्कृति-धारा वेदविषय-वेदान्त-विचारा वैद्य-व्योम-शास्त्रादि-विहारा सुन्दरसुरभाषा धरायां विजयते।",
-          "meaning": "Anvaya 4: The beautiful Sanskrit language, delightful with nine rasas and ornaments, rich with Vedas and sciences, triumphs across the world.",
-          "paragraphTranslation": "अन्वय ४: नवरस-रुचिरा, अलङ्कारमयी, वेद-वेदान्त-आयुर्वेद-व्योमशास्त्र-विहारिणी सुन्दरसुरभाषा धरा पर विजय प्राप्त करती है।",
+          "sanskrit": "अन्वयः: हे श्रुतिसुखनिनदे! सकलप्रमोदे! स्मृतिहितवरदे! सरसविनोदे! गति-मति-प्रेरक-काव्यविशारदे! तव एषा संस्कृतिः (अस्ति)।",
+          "meaning": "Anvaya: O pleasant-sounding, all-delighting, boon-bestowing with Smriti wisdom, charmingly witty, inspirer of righteous conduct and intellect, proficient in poetry! This culture is yours.",
+          "paragraphTranslation": "अन्वय: हे कर्णप्रिय ध्वनि वाली, सबको आनंद देने वाली, स्मृतियों का हितकारी वरदान देने वाली, सरस विनोदमयी, गति व मति की प्रेरक काव्यनिपुणा! यह संस्कृति आपकी ही है।",
           "words": [
             "अन्वयः",
-            "–",
-            "नवरस",
-            "रुचिरा",
-            "अलङ्कृति",
-            "धारा",
+            "श्रुतिसुखनिनदे",
+            "सकलप्रमोदे",
+            "स्मृतिहितवरदे",
+            "सरसविनोदे",
+            "गति-मति-प्रेरक",
+            "काव्यविशारदे",
+            "संस्कृतिः"
+          ],
+          "kind": null
+        },
+        {
+          "sanskrit": "नवरस-रुचिरालङ्कृति-धारा वेदविषय-वेदान्त-विचारा । वैद्य-व्योम-शास्त्रादि-विहारा विजयते धरायां, सुन्दरसुरभाषा ॥ ४ ॥",
+          "meaning": "Verse 4: Adorned with the nine literary sentiments (Navarasa) and beautiful figures of speech, carrying the profound thoughts of Vedas and Vedanta, and encompassing medical and astronomical sciences, the beautiful language Sanskrit reigns supreme over the entire earth.",
+          "paragraphTranslation": "श्लोक ४: नौ रसों (शृंगार, हास्य, करुण आदि) से युक्त और सुंदर अलंकारों से सुसज्जित संस्कृत भाषा पृथ्वी पर सर्वश्रेष्ठ है। इसमें वेदों और वेदान्तों के गहरे विचार समाहित हैं। यह केवल पूजा की भाषा नहीं है, बल्कि चिकित्सा विज्ञान (आयुर्वेद) और खगोल विज्ञान (अंतरिक्ष शास्त्र) जैसे विज्ञानों से युक्त होकर पूरी पृथ्वी पर गौरव के साथ विजयी हो रही है।",
+          "words": [
+            "नवरस-रुचिरा",
+            "अलङ्कृति-धारा",
             "वेदविषय",
-            "वेदान्त",
-            "विचारा",
-            "वैद्य",
-            "व्योम",
-            "शास्त्रादि",
-            "विहारा",
+            "वेदान्त-विचारा",
+            "वैद्य-व्योम-शास्त्रादि-विहारा",
+            "विजयते",
+            "धरायाम्",
+            "सुन्दरसुरभाषा"
+          ],
+          "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "अन्वयः: नवरस-रुचिरा अलङ्कृतिधारा वेदविषयवेदान्तविचारा वैद्यव्योमशास्त्रादिविहारा धरायां सुन्दरसुरभाषा विजयते।",
+          "meaning": "Anvaya: The beautiful language of the gods, pleasing with nine rasas, flowing with rhetorical embellishments, pondering Vedic and Vedantic wisdom, and traversing medicine and astronomy, triumphs on earth.",
+          "paragraphTranslation": "अन्वय: नौ रसों से मनोहर, अलंकारों की धारा वाली, वेदों-वेदान्तों के विचारों से युक्त और आयुर्वेद व खगोल विज्ञान में गतिमान सुंदर देववाणी पृथ्वी पर सर्वोत्कृष्ट रूप से विजयी हो रही है।",
+          "words": [
+            "अन्वयः",
+            "नवरस-रुचिरा",
+            "अलङ्कृतिधारा",
+            "वेदविषयवेदान्तविचारा",
+            "वैद्यव्योमशास्त्रादिविहारा",
+            "धरायाम्",
             "सुन्दरसुरभाषा",
-            "धरायां",
             "विजयते"
           ],
-          "kind": "anvaya"
+          "kind": null
         },
         {
-          "sanskrit": "मञ्जूषा (पेटिका)",
-          "meaning": "Treasury box / Jewel casket",
-          "paragraphTranslation": "ज्ञान की पेटी / बक्सा",
+          "sanskrit": "शब्दार्थाः (Complete Chapter Vocabulary & Word Analysis — Pages 79–80)",
+          "meaning": "Vocabulary: Core Sanskrit Words, Synonyms, Hindi & English Meanings",
+          "paragraphTranslation": "शब्दार्थाः — पाठ के समस्त प्रमुख पदों के अर्थ (पृष्ठ ७९–८०)",
+          "words": [
+            "शब्दार्थाः",
+            "संस्कृत",
+            "हिन्दी",
+            "आङ्ग्ल"
+          ],
+          "kind": "glossary-header"
+        },
+        {
+          "sanskrit": "विकसिता — विस्तारिता / विकसित की गई (Progressively developed)",
+          "meaning": "vikasitā: expanded / developed progressively",
+          "paragraphTranslation": "विकसिता: बढ़ाई गई / विस्तार को प्राप्त",
+          "words": [
+            "विकसिता",
+            "विस्तारिता"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "विलसिता — रञ्जिता / सुशोभित (Adorned / glorified)",
+          "meaning": "vilasitā: adorned / delightfully presented",
+          "paragraphTranslation": "विलसिता: सुंदर रूप से शोभित",
+          "words": [
+            "विलसिता",
+            "रञ्जिता",
+            "शोभिता"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "मञ्जुला — मनोहरा / मन को हरने वाली (Charming / lovely)",
+          "meaning": "mañjulā: beautiful / enchanting",
+          "paragraphTranslation": "मञ्जुला: मन को मोह लेने वाली, मनोहर",
+          "words": [
+            "मञ्जुला",
+            "मनोहरा"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "मञ्जूषा — पेटिका / ज्ञान की पेटी, तिजोरी (Treasury box / casket)",
+          "meaning": "mañjūṣā: chest / treasure box of jewels & wisdom",
+          "paragraphTranslation": "मञ्जूषा: ज्ञान की पेटी / बक्सा",
           "words": [
             "मञ्जूषा",
             "पेटिका"
           ],
-          "kind": "word-gloss"
+          "kind": "glossary"
         },
         {
-          "sanskrit": "पोषणक्षमता (पालनशक्तिः)",
-          "meaning": "Nurturing capacity / Power of sustenance",
-          "paragraphTranslation": "पोषण की क्षमता / पालनशक्ति",
+          "sanskrit": "पोषणक्षमता — पालनशक्तिः / पोषण करने की क्षमता (Nurturing capacity)",
+          "meaning": "poṣaṇakṣamatā: capacity to nourish and sustain languages",
+          "paragraphTranslation": "पोषणक्षमता: सभी भाषाओं को समृद्ध करने की शक्ति",
           "words": [
             "पोषणक्षमता",
             "पालनशक्तिः"
           ],
-          "kind": "word-gloss"
+          "kind": "glossary"
         },
         {
-          "sanskrit": "वचनातीता (वर्णनातीता)",
-          "meaning": "Beyond description in spoken words",
-          "paragraphTranslation": "वाणी से परे / वर्णनातीत",
+          "sanskrit": "वचनातीता — वर्णनातीता / वाणी से परे (Beyond description in words)",
+          "meaning": "vacanātītā: inexpressible in words / beyond verbal appraisal",
+          "paragraphTranslation": "वचनातीता: जिसका शब्दों में वर्णन असंभव हो",
           "words": [
             "वचनातीता",
             "वर्णनातीता"
           ],
-          "kind": "word-gloss"
+          "kind": "glossary"
         },
         {
-          "sanskrit": "व्योमशास्त्रम् (अन्तरिक्षशास्त्रम्)",
-          "meaning": "Astronomy / Cosmic space science",
-          "paragraphTranslation": "खगोलशास्त्र / अंतरिक्ष विज्ञान",
+          "sanskrit": "धरायाम् — पृथिव्याम् / धरती पर (On earth)",
+          "meaning": "dharāyām: on the earth / across the globe",
+          "paragraphTranslation": "धरायाम्: इस धरा (पृथ्वी) पर",
+          "words": [
+            "धरायाम्",
+            "पृथिव्याम्"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "व्योमशास्त्रम् — अन्तरिक्षशास्त्रम् / खगोलशास्त्र (Astronomy / space science)",
+          "meaning": "vyomaśāstram: astronomy and cosmic astrophysics",
+          "paragraphTranslation": "व्योमशास्त्रम्: खगोल एवं अंतरिक्ष विज्ञान",
           "words": [
             "व्योमशास्त्रम्",
             "अन्तरिक्षशास्त्रम्"
           ],
-          "kind": "word-gloss"
+          "kind": "glossary"
         },
         {
-          "sanskrit": "सकलप्रमोदे (सर्वेभ्यः आनन्दमयि)",
-          "meaning": "Giving pure joy and delight to all",
-          "paragraphTranslation": "सबको आनंदित करने वाली",
+          "sanskrit": "रुचिरा — रुचिकरा / मनोहर व आनंददायी (Pleasing / delightful)",
+          "meaning": "rucirā: pleasing / charming / appealing",
+          "paragraphTranslation": "रुचिरा: अत्यंत मनभावन और सुंदर",
+          "words": [
+            "रुचिरा",
+            "रुचिकरा"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "सकलप्रमोदे — सर्वेभ्यः आनन्दमयि / सबको आनंद देने वाली (Bestowing joy to all)",
+          "meaning": "sakalapramode: giver of joy to all living beings",
+          "paragraphTranslation": "सकलप्रमोदे: समस्त प्राणियों को प्रमुदित करने वाली",
           "words": [
             "सकलप्रमोदे",
             "आनन्दमयि"
           ],
-          "kind": "word-gloss"
+          "kind": "glossary"
         },
         {
-          "sanskrit": "काव्यविशारदे (काव्यपारङ्गते)",
-          "meaning": "Proficient and masterful in poetics",
-          "paragraphTranslation": "काव्य-रचना में निपुण",
+          "sanskrit": "सरसविनोदे — मधुरविनोदशीले / सरस मनोरंजन कराने वाली (Refined wit & humor)",
+          "meaning": "sarasavinode: filled with sweet and refined humor",
+          "paragraphTranslation": "सरसविनोदे: सुंदर एवं आनंदमय हास्य-विनोद से युक्त",
+          "words": [
+            "सरसविनोदे",
+            "विनोदशीले"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "काव्यविशारदे — काव्यपारङ्गते / काव्य में निपुण (Proficient in poetry)",
+          "meaning": "kāvyaviśārade: supreme master of poetic artistry",
+          "paragraphTranslation": "काव्यविशारदे: काव्य-सृजन में अत्यंत कुशल",
           "words": [
             "काव्यविशारदे",
             "काव्यपारङ्गते"
           ],
-          "kind": "word-gloss"
+          "kind": "glossary"
         },
         {
-          "sanskrit": "१. (क) सुन्दरसुरभाषा कस्य वचनातीता?",
-          "meaning": "Whose words is Sanskrit beyond? -> मम (कवेः)",
-          "paragraphTranslation": "सुंदर देवभाषा किसकी वाणी से परे है?",
+          "sanskrit": "सुरभाषा — देवभाषा (गीर्वाणभारती) / देवताओं की भाषा (Divine language)",
+          "meaning": "surabhāṣā: language of gods (Sanskrit)",
+          "paragraphTranslation": "सुरभाषा: देववाणी संस्कृत",
           "words": [
-            "क",
-            "सुन्दरसुरभाषा",
-            "कस्य",
-            "वचनातीता"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "मम (कवेः)",
-          "hindi_gloss": "कवि की वाणी से परे"
-        },
-        {
-          "sanskrit": "१. (ख) संस्कृतभाषा कुत्र विजयते?",
-          "meaning": "Where does the Sanskrit language triumph? -> धरायाम्",
-          "paragraphTranslation": "संस्कृत भाषा कहाँ विजय प्राप्त करती है?",
-          "words": [
-            "ख",
-            "संस्कृतभाषा",
-            "कुत्र",
-            "विजयते"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "धरायाम्",
-          "hindi_gloss": "पृथ्वी पर"
-        },
-        {
-          "sanskrit": "१. (ग) संस्कृतभाषा कस्य आशा?",
-          "meaning": "Whose hope is Sanskrit? -> पौराणिक-सामान्यजनानाम्",
-          "paragraphTranslation": "संस्कृत भाषा किसके जीवन की आशा है?",
-          "words": [
-            "ग",
-            "संस्कृतभाषा",
-            "कस्य",
-            "आशा"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "पौराणिक-सामान्यजनानाम् (मुनीनां कवीनां च)",
-          "hindi_gloss": "पौराणिक व सामान्य जनों की"
-        },
-        {
-          "sanskrit": "१. (घ) संस्कृते कति रसाः सन्ति?",
-          "meaning": "How many rasas are there in Sanskrit? -> नव (९)",
-          "paragraphTranslation": "संस्कृत में कितने रस हैं?",
-          "words": [
-            "घ",
-            "संस्कृते",
-            "कति",
-            "रसाः",
-            "सन्ति"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "नव (९)",
-          "hindi_gloss": "नौ रस"
-        },
-        {
-          "sanskrit": "१. (ङ) कस्याः ध्वनिश्रवणेन सुखं वर्धते?",
-          "meaning": "Hearing whose sound does joy increase? -> संस्कृतभाषायाः",
-          "paragraphTranslation": "किसकी ध्वनि सुनने से सुख बढ़ता है?",
-          "words": [
-            "ङ",
-            "कस्याः",
-            "ध्वनिश्रवणेन",
-            "सुखं",
-            "वर्धते"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "संस्कृतभाषायाः (श्रुतिसुखनिनदे)",
-          "hindi_gloss": "संस्कृत भाषा की ध्वनि से"
-        },
-        {
-          "sanskrit": "२. (क) संस्कृतभाषा केषां जीवनस्य आशा अस्ति?",
-          "meaning": "Whose hope of life is Sanskrit language?",
-          "paragraphTranslation": "संस्कृत भाषा किनके जीवन की आशा है?",
-          "words": [
-            "क",
-            "संस्कृतभाषा",
-            "केषां",
-            "जीवनस्य",
-            "आशा",
-            "अस्ति"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "संस्कृतभाषा वेदव्यास-वाल्मीकि-मुनीनां, कालिदास-बाणादिकवीनां पौराणिक-सामान्यजनानां च जीवनस्य आशा अस्ति।",
-          "hindi_gloss": "व्यास, वाल्मीकि, कालिदास, बाणभट्ट तथा सामान्य जनों की आशा है।"
-        },
-        {
-          "sanskrit": "२. (घ) संस्कृतभाषा केषु शास्त्रेषु विहरति?",
-          "meaning": "In which sciences does Sanskrit dwell and roam?",
-          "paragraphTranslation": "संस्कृत भाषा किन शास्त्रों में विचरण करती है?",
-          "words": [
-            "घ",
-            "संस्कृतभाषा",
-            "केषु",
-            "शास्त्रेषु",
-            "विहरति"
-          ],
-          "kind": "exercise-qa",
-          "answer_sanskrit": "संस्कृतभाषा वैद्य-व्योम-शास्त्रादिषु विहरति।",
-          "hindi_gloss": "संस्कृत भाषा आयुर्वेद और खगोल-शास्त्र आदि में विचरण करती है।"
-        },
-        {
-          "sanskrit": "५. समासाः – सुराणां भाषा = सुरभाषा; नवरसैः रुचिरा = नवरसरुचिरा; पोषणस्य क्षमता = पोषणक्षमता; मञ्जुला मञ्जूषा = मञ्जुलमञ्जूषा",
-          "meaning": "Compound words: Surabhasha, Navarasaruchira, Poshana-kshamata, Manjula-manjusha.",
-          "paragraphTranslation": "समास-विग्रह एवं सामासिक पद।",
-          "words": [
-            "समासाः",
             "सुरभाषा",
+            "देवभाषा"
+          ],
+          "kind": "glossary"
+        },
+        {
+          "sanskrit": "अभ्यासकार्यम् (Chapter Exercises & Solved Textbook Solutions — Pages 81–83)",
+          "meaning": "Textbook Exercises: Q1 to Q8 with Complete Solutions",
+          "paragraphTranslation": "अभ्यास-प्रश्नोत्तराणि (पृष्ठ ८१–८३)",
+          "words": [
+            "अभ्यासकार्यम्",
+            "प्रश्नोत्तराणि"
+          ],
+          "kind": "exercise-header"
+        },
+        {
+          "sanskrit": "१. अधः प्रदत्तानां प्रश्नानां एकपदेन उत्तरं लिखत (Answer in one word):",
+          "meaning": "Q1: Answer the following questions in one word:",
+          "paragraphTranslation": "१. एक शब्द में उत्तर दीजिए:",
+          "words": [
+            "एकपदेन",
+            "उत्तरम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) सुन्दरसुरभाषा कस्य वचनातीता? ➔ उत्तरम्: पोषणक्षमता (पोषण की क्षमता) [अथवा मम / कवेः]\n• (ख) संस्कृतभाषा कुत्र विजयते? ➔ उत्तरम्: धरायाम् (पृथ्वी पर)\n• (ग) संस्कृतभाषा कस्य आशा? ➔ उत्तरम्: पौराणिक-सामान्य-जनानाम् (पौराणिक और सामान्य लोगों की)\n• (घ) संस्कृते कति रसाः सन्ति ? ➔ उत्तरम्: नवरसाः / नव (नौ रस)\n• (ङ) कस्याः ध्वनिश्रवणेन सुखं वर्धते? ➔ उत्तरम्: संस्कृतभाषायाः (या श्रुतिसुखनिनद्याः)",
+          "meaning": "(a) Beyond words: Nurturing capacity (poṣaṇakṣamatā). (b) Triumphs where: On earth (dharāyām). (c) Hope of whom: Mythological and common people (paurāṇika-sāmānya-janānām). (d) How many rasas: Nine (nava). (e) Hearing whose sound brings joy: Sanskrit's (śrutisukhaninadyāḥ).",
+          "paragraphTranslation": "(क) पोषणक्षमता; (ख) धरायाम्; (ग) पौराणिक-सामान्य-जनानाम्; (घ) नवरसाः (९); (ङ) संस्कृतभाषायाः।",
+          "words": [
+            "पोषणक्षमता",
+            "धरायाम्",
+            "पौराणिक-सामान्य-जनानाम्",
+            "नवरसाः",
+            "संस्कृतभाषायाः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "२. अधः प्रदत्तानां प्रश्नानां पूर्णवाक्येन उत्तरं लिखत (Answer in a full sentence):",
+          "meaning": "Q2: Answer the following questions in a complete sentence:",
+          "paragraphTranslation": "२. पूर्ण वाक्य में उत्तर दीजिए:",
+          "words": [
+            "पूर्णवाक्येन",
+            "उत्तरम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) संस्कृतभाषा केषां जीवनस्य आशा अस्ति ? ➔ उत्तरम्: संस्कृतभाषा वेदव्यास-वाल्मीकि-मुनीनां कालिदास-बाणादिकवीनां पौराणिक-सामान्य-जनानां च जीवनस्य आशा अस्ति।\n• (ख) केषां विचाराः जनान् अभिप्रेरयन्ति ? ➔ उत्तरम्: वेदविषय-वेदान्त-विचाराः जनान् अभिप्रेरयन्ति।\n• (ग) कैः रसैः समृद्धा साहित्यपरम्परा विराजते? ➔ उत्तरम्: शृङ्गार-हास्य-करुण-रौद्र-वीर-भयानक-बीभत्स-अद्भुत-शान्त इति नवरसैः समृद्धा साहित्यपरम्परा विराजते।\n• (घ) संस्कृतभाषा केषु शास्त्रेषु विहरति ? ➔ उत्तरम्: संस्कृतभाषा वैद्य-व्योम-शास्त्रादिषु विविधेषु विज्ञानशास्त्रेषु विहरति।\n• (ङ) संस्कृतभाषायाः कानि कानि सम्बोधनपदानि अत्र प्रयुक्तानि? ➔ उत्तरम्: अत्र मञ्जुलमञ्जूषा, सुन्दरसुरभाषा, मातः, श्रुतिसुखनिनदे, सकलप्रमोदे, स्मृतिहितवरदे, सरसविनोदे, काव्यविशारदे इत्यादीनि सम्बोधनपदानि प्रयुक्तानि।",
+          "meaning": "Complete answers: (a) Sanskrit is life's hope for Vyasa, Valmiki, Kalidasa, Bana, and mythological as well as common citizens. (b) Vedic and Vedantic thoughts inspire people. (c) Sanskrit tradition is enriched by the nine rasas (Shringara, Hasya, Karuna, Raudra, Vira, Bhayanaka, Bibhatsa, Adbhuta, Shanta). (d) Sanskrit traverses medicine, astronomy, and diverse sciences. (e) Address vocatives used: Mañjulamañjūṣā, Sundarasurabhāṣā, Mātā, Śrutisukhaninade, Sakalapramode, Smṛtihitavarade, Sarasavinode, Kāvyaviśārade.",
+          "paragraphTranslation": "पूर्णवाक्य-समाधान: (क) वेदव्यास, वाल्मीकि, कालिदास, बाणभट्ट तथा सामान्य जनों की आशा; (ख) वेद-वेदान्त विचार; (ग) नवरस; (घ) वैद्य-व्योम आदि विज्ञान शास्त्र; (ङ) मातः, श्रुतिसुखनिनदे आदि सम्बोधन।",
+          "words": [
+            "वेदव्यास",
+            "वाल्मीकि",
+            "कालिदास",
+            "बाण",
+            "नवरसैः",
+            "वैद्य-व्योम-शास्त्रेषु",
+            "सम्बोधनपदानि"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "३. रेखाङ्कितपदानि आश्रित्य प्रश्ननिर्माणं कुरुत (Frame questions based on underlined terms):",
+          "meaning": "Q3: Frame interrogative sentences based on highlighted nouns:",
+          "paragraphTranslation": "३. प्रश्न-निर्माण कीजिए:",
+          "words": [
+            "प्रश्ननिर्माणम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) मुनिगणाः संस्कृतभाषायाः विकासं कृतवन्तः । ➔ प्रश्नः: मुनिगणाः कस्याः विकासं कृतवन्तः ?\n• (ख) सामान्यजनानाम् जीवनं काव्यैः प्रभावितम् अस्ति । ➔ प्रश्नः: केषाम् जीवनं काव्यैः प्रभावितम् अस्ति ?\n• (ग) कवयः अपि उपादेयानि काव्यानि रचितवन्तः । ➔ प्रश्नः: के अपि उपादेयानि काव्यानि रचितवन्तः ?\n• (घ) संस्कृतभाषा पृथिव्याम् (धरायाम्) विहरति । ➔ प्रश्नः: संस्कृतभाषा कुत्र (कस्याम्) विहरति ?\n• (ङ) संस्कृतभाषा विविधभाषाः परिपोषयति । ➔ प्रश्नः: संस्कृतभाषा काः परिपोषयति ?",
+          "meaning": "Interrogatives: (a) kasyāḥ, (b) keṣām, (c) ke, (d) kutra / kasyām, (e) kāḥ.",
+          "paragraphTranslation": "प्रश्ननिर्माण: (क) कस्याः; (ख) केषाम्; (ग) के; (घ) कुत्र / कस्याम्; (ङ) काः।",
+          "words": [
+            "कस्याः",
+            "केषाम्",
+            "के",
+            "कुत्र",
+            "काः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "४. पदानाम् उदाहरणानुसारं विभक्तिं वचनं च लिखत (Identify Case and Number):",
+          "meaning": "Q4: State the grammatical case (Vibhakti) and number (Vachana):",
+          "paragraphTranslation": "४. विभक्ति और वचन लिखिए:",
+          "words": [
+            "विभक्तिः",
+            "वचनम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• मातः ➔ सम्बोधनम्, एकवचनम्\n• तव ➔ षष्ठी, एकवचनम्\n• मञ्जूषा ➔ प्रथमा / सम्बोधनम्, एकवचनम्\n• संस्कृतिः ➔ प्रथमा, एकवचनम्\n• जनानाम् ➔ षष्ठी, बहुवचनम्\n• जीवनस्य ➔ षष्ठी, एकवचनम्\n• धरायाम् ➔ सप्तमी, एकवचनम्\n• शास्त्रेषु ➔ सप्तमी, बहुवचनम्",
+          "meaning": "Case declensions: mātah (vocative singular), tava (genitive singular), mañjūṣā (nominative/vocative singular), saṃskṛtiḥ (nominative singular), janānām (genitive plural), jīvanasya (genitive singular), dharāyām (locative singular), śāstreṣu (locative plural).",
+          "paragraphTranslation": "विभक्ति-वचन: मातः (सम्बोधन एक०), तव (षष्ठी एक०), मञ्जूषा (प्रथमा एक०), संस्कृतिः (प्रथमा एक०), जनानाम् (षष्ठी बहु०), जीवनस्य (षष्ठी एक०), धरायाम् (सप्तमी एक०), शास्त्रेषु (सप्तमी बहु०)।",
+          "words": [
+            "सम्बोधनम्",
+            "षष्ठी",
+            "प्रथमा",
+            "सप्तमी",
+            "एकवचनम्",
+            "बहुवचनम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "५. अधोलिखितानां पद्यांशानां यथायोग्यं मेलनं कुरुत (Match the verse segments):",
+          "meaning": "Q5: Match the hemistiches / shloka segments:",
+          "paragraphTranslation": "५. पद्यांशों का सुमेल कीजिए:",
+          "words": [
+            "पद्यांशानाम्",
+            "मेलनम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) अयि मातस्तव पोषणक्षमता ➔ मम वचनातीता, सुन्दरसुरभाषा\n• (ख) वेदव्यास-वाल्मीकि-मुनीनां ➔ कालिदासबाणादिकवीनाम्\n• (ग) पौराणिक-सामान्यजनानाम् ➔ जीवनस्य आशा, सुन्दरसुरभाषा\n• (घ) श्रुतिसुखनिनदे सकलप्रमोदे ➔ स्मृतिहितवरदे सरसविनोदे\n• (ङ) वैद्यव्योम-शास्त्रादिविहारा ➔ विजयते धरायाम्",
+          "meaning": "Verse matching pairs: (a) poshanakshamata -> mama vachanatita. (b) Vedavyasa-Valmiki-muninam -> Kalidasa-Banadikavinam. (c) pauranika-samanya-jananam -> jivanasya asha. (d) shrutisukhaninade sakalapramode -> smritihitavarade sarasavinode. (e) vaidyavyoma-shastradivihara -> vijayate dharayam.",
+          "paragraphTranslation": "पद्यांश-मेलन: (क) मम वचनातीता; (ख) कालिदासबाणादिकवीनाम्; (ग) जीवनस्य आशा; (घ) स्मृतिहितवरदे सरसविनोदे; (ङ) विजयते धरायाम्।",
+          "words": [
+            "अयि",
+            "पोषणक्षमता",
+            "वचनातीता",
+            "वेदव्यास",
+            "कालिदास",
+            "श्रुतिसुखनिनदे",
+            "स्मृतिहितवरदे"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "६. उदाहरणानुसारम् अधः प्रदत्तानां पदानाम् एकपदेन अर्थं लिखत (समस्तपदम् / समासः):",
+          "meaning": "Q6: Combine into single compound words (Samastapadam) and identify Samasa:",
+          "paragraphTranslation": "६. समस्तपद बनाइए और समास पहचानिए:",
+          "words": [
+            "समस्तपदम्",
+            "समासः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) सुराणां भाषा ➔ सुरभाषा (षष्ठी तत्पुरुषः)\n• (ख) सुन्दरी सुरभाषा ➔ सुन्दरसुरभाषा (कर्मधारयः)\n• (ग) नवरसैः रुचिरा ➔ नवरसरुचिरा (तृतीया तत्पुरुषः)\n• (घ) पोषणस्य क्षमता ➔ पोषणक्षमता (षष्ठी तत्पुरुषः)\n• (ङ) मञ्जुला मञ्जूषा ➔ मञ्जुलमञ्जूषा (कर्मधारयः)",
+          "meaning": "Compounds: (a) surāṇāṃ bhāṣā = surabhāṣā (ṣaṣṭhī tatpuruṣa), (b) sundarī surabhāṣā = sundarasurabhāṣā (karmadhāraya), (c) navarasaiḥ rucirā = navarasarucirā (tṛtīyā tatpuruṣa), (d) poṣaṇasya kṣamatā = poṣaṇakṣamatā (ṣaṣṭhī tatpuruṣa), (e) mañjulā mañjūṣā = mañjulamañjūṣā (karmadhāraya).",
+          "paragraphTranslation": "समस्तपद: सुरभाषा (षष्ठी तत्पुरुष), सुन्दरसुरभाषा (कर्मधारय), नवरसरुचिरा (तृतीया तत्पुरुष), पोषणक्षमता (षष्ठी तत्पुरुष), मञ्जुलमञ्जूषा (कर्मधारय)।",
+          "words": [
+            "सुरभाषा",
+            "सुन्दरसुरभाषा",
             "नवरसरुचिरा",
             "पोषणक्षमता",
-            "मञ्जुलमञ्जूषा"
+            "मञ्जुलमञ्जूषा",
+            "तत्पुरुषः",
+            "कर्मधारयः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "७. पेटिकातः पदानि चित्वा रिक्तस्थानानि पूरयत (Fill in the blanks using words from the box):",
+          "meaning": "Q7: Fill in the missing words from the word bank:",
+          "paragraphTranslation": "७. रिक्त स्थानों की पूर्ति कीजिए:",
+          "words": [
+            "रिक्तस्थानानि",
+            "पूरयत"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) अयि मातः तव पोषणक्षमता मम वचनातीता ।\n• (ख) वेदव्यास-वाल्मीकि-मुनीनां कालिदासबाणादि कवीनाम् ।\n• (ग) पौराणिक-सामान्य-जनानां जीवनस्य आशा ।\n• (घ) श्रुतिसुखनिनदे सकलप्रमोदे स्मृतिहित वरदे सरसविनोदे।\n• (ङ) गति-मति-प्रेरक-काव्य-विशारदे, तव संस्कृतिः एषा सुन्दरसुरभाषा ।\n• (च) नवरस-रुचिरालङ्कृतिधारा वेदविषय -वेदान्तविचारा ।\n• (छ) वैद्य-व्योम-शास्त्रादि-विहारा विजयते धरायाम्, सुन्दरसुरभाषा ।",
+          "meaning": "Blanks filled: (a) vacanātītā, (b) kavīnām, (c) āśā, (d) smṛtihitavarade, (e) kāvyaviśārade, (f) vedāntavicārā, (g) vijayate dharāyām.",
+          "paragraphTranslation": "रिक्तस्थान पूर्ति: (क) वचनातीता; (ख) कवीनाम्; (ग) आशा; (घ) स्मृतिहित वरदे; (ङ) काव्य-विशारदे; (च) वेदान्तविचारा; (छ) विजयते धरायाम्।",
+          "words": [
+            "वचनातीता",
+            "कवीनाम्",
+            "आशा",
+            "स्मृतिहितवरदे",
+            "काव्यविशारदे",
+            "वेदान्तविचारा",
+            "विजयते"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "८. अधोलिखितविकल्पेषु प्रसङ्गानुसारम् अर्थं चिनुत (Select the correct contextual option):",
+          "meaning": "Q8: Choose the correct contextual multiple-choice option:",
+          "paragraphTranslation": "८. सही विकल्प चुनिए:",
+          "words": [
+            "विकल्पचयनम्"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "• (क) \"मञ्जुलमञ्जूषा\" इत्यस्य अर्थः कः? ➔ (iii) मनोहररूपेण सङ्कलिता (सुन्दरज्ञानपेटिका)\n• (ख) सुन्दरसुरभाषा केषां जीवनस्य आशा उच्यते? ➔ (iii) पौराणिक-सामान्यजनानाम्\n• (ग) सुन्दरसुरभाषा कुत्र विजयते? ➔ (iii) धरायाम्\n• (घ) सुन्दरसुरभाषायां किं नास्ति ? ➔ (iv) अशुद्धिः\n• (ङ) कविः सुन्दरसुरभाषां केन पदेन सम्बोधयति? ➔ (ii) मातः",
+          "meaning": "MCQ selections: (a) mañjulamañjūṣā = manohararūpeṇa saṅkalitā, (b) hope of life = paurāṇika-sāmānyajanānām, (c) triumphs where = dharāyām, (d) what is absent in Sanskrit = aśuddhiḥ (impurity), (e) addressing vocative = mātaḥ.",
+          "paragraphTranslation": "विकल्प चयन: (क) मनोहररूपेण सङ्कलिता; (ख) पौराणिक-सामान्यजनानाम्; (ग) धरायाम्; (घ) अशुद्धिः; (ङ) मातः।",
+          "words": [
+            "मनोहररूपेण",
+            "पौराणिक-सामान्यजनानाम्",
+            "धरायाम्",
+            "अशुद्धिः",
+            "मातः"
+          ],
+          "kind": "exercise-qa"
+        },
+        {
+          "sanskrit": "कार्यपत्रिका १: समास-परिचयः (Worksheet 1: Compound Identification - Samasa)",
+          "meaning": "Worksheet 1: Compound classification into Tatpurusha, Dvigu, Bahuvrihi, and Avyayibhava.",
+          "paragraphTranslation": "कार्यपत्रिका १: समास-परिचय (षष्ठी तत्पुरुष, द्विगु, बहुव्रीहि, अव्ययीभाव)।",
+          "words": [
+            "कार्यपत्रिका",
+            "समासः",
+            "तत्पुरुषः",
+            "द्विगुः",
+            "बहुव्रीहिः",
+            "अव्ययीभावः"
+          ],
+          "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "कार्यपत्रिका २: श्लोक-संरचना अन्वय-परीक्षणं च (Worksheet 2: Shloka Syntax Check & Anvaya)",
+          "meaning": "Worksheet 2: Fill-in-the-blank verse completions (kāvyaviśārade, śāstrādivihārā, poṣaṇakṣamatā).",
+          "paragraphTranslation": "कार्यपत्रिका २: श्लोक-संरचना और अन्वय परीक्षण।",
+          "words": [
+            "कार्यपत्रिका",
+            "श्लोक-संरचना",
+            "अन्वयः"
           ],
           "kind": "exercise-note"
         }

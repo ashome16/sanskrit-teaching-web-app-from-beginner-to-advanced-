@@ -9053,69 +9053,70 @@ export const WORKSHEETS: Worksheet[] = [
   },
   {
   "id": "ws-grade8-ch7-ws1",
-  "title": "Worksheet 1: Dialogue Comprehension (श्रावणी-पूर्णिमा & संस्कृतदिवसः)",
-  "titleSanskrit": "सप्तमः पाठः कार्यपत्रिका १: श्रावणी-पूर्णिमा & संस्कृतदिवसः",
+  "title": "Worksheet 1: Compound Identification (समास-परिचयः)",
+  "titleSanskrit": "सप्तमः पाठः कार्यपत्रिका १: समास-परिचयः",
   "category": "grade8",
   "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
   "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
   "timeLimit": "45 Mins",
-  "description": "Extract-based reading from Omita and her sister's conversation regarding Sanskrit Day celebration, school programs, and song competition.",
+  "description": "Identify compound words (Samasa), match expanded vigraha terms to their grammatical categories using Page 80 notes, and master Tatpurusha, Dvigu, Bahuvrihi, and Avyayibhava.",
   "sections": [
     {
-      "sectionTitle": "Section A: Dialogue Extraction & Short Answers",
-      "sectionTitleSanskrit": "खण्डः 'क' · संवाद-अवबोधनम्",
-      "instructions": "Read the conversation extract and answer:",
+      "sectionTitle": "Section A: Compound Identification (Samasa)",
+      "sectionTitleSanskrit": "खण्डः 'क' · समास-प्रकार-परिज्ञानम्",
+      "instructions": "Match the expanded terms to their grammatical categories using the notes on Page 80:",
       "totalMarks": 10,
       "questions": [
         {
           "num": 1,
-          "question": "I. एकपदेन उत्तरत (Answer in one word):\n(क) श्रावणी-पूर्णिमायाम् कः उत्सवः भवति?\n(ख) भगिनी कस्यां प्रतियोगितायां भागं ग्रहीष्यति?\n(ग) कस्य आमंत्रणपत्रं भगिनी ददाति?",
-          "questionSanskrit": "एकपदेन उत्तरत:",
-          "marks": 6,
-          "type": "short_ans",
-          "answer": "(क) संस्कृतदिवसः (संस्कृतसप्ताहः)\n(ख) गीतगायनप्रतियोगितायाम्\n(ग) निमन्त्रणपत्रम्",
-          "explanation": "पाठान्तर्गत-संवादे स्पष्टं यत् श्रावणीपूर्णिमायाम् संस्कृतदिवसः भवति, भगिनी च गीतप्रतियोगितायां भागं गृह्णाति।"
+          "question": "Fill in the correct Samasa category (Page 80):\n१. सुराणां भाषा (सुरभाषा) ➔ _______________ तत्पुरुषः\n२. पञ्चानां वटानां समाहारः (पञ्चवटी) ➔ _______________ समासः\n३. पीतम् अम्बरं यस्य सः (पीताम्बरः) ➔ _______________ समासः\n४. रूपस्य योग्यम् (अनुरूपम्) ➔ _______________ समासः",
+          "questionSanskrit": "समासानां नामानि लिखत:",
+          "marks": 8,
+          "type": "fill",
+          "answer": "१. षष्ठी तत्पुरुषः\n२. द्विगु समासः\n३. बहुव्रीहि समासः\n४. अव्ययीभाव समासः",
+          "explanation": "१. सुराणां भाषा = षष्ठी तत्पुरुषः; २. पञ्चानां वटानां समाहारः = द्विगु समासः; ३. पीतम् अम्बरं यस्य सः = बहुव्रीहि समासः; ४. रूपस्य योग्यम् = अव्ययीभाव समासः।"
         },
         {
           "num": 2,
-          "question": "II. पूर्णवाक्येन उत्तरत:\nसंस्कृतसप्ताहः कथम् आचर्यते? विद्यालये का योजना कृता?",
-          "questionSanskrit": "पूर्णवाक्येन उत्तरत:",
-          "marks": 4,
+          "question": "Define 'समसनं समासः' and state which term holds prominence in a Tatpurusha compound.",
+          "questionSanskrit": "समासस्य परिभाषां तत्पुरुषे च कस्य पदस्य प्राधान्यं भवति इति लिखत:",
+          "marks": 2,
           "type": "short_ans",
-          "answer": "संस्कृतदिवसम् अधिकृत्य आसप्ताहं विविधकार्यक्रमाणां योजना विद्यालये रचिता अस्ति।",
-          "explanation": "संस्कृतदिवसस्य महत्ता पाठे वर्णिता।"
+          "answer": "परस्पर-सम्बद्धानां सार्थक-पदानां संक्षिप्तीकरणं समासः उच्यते। तत्पुरुषसमासे प्रायेण उत्तरपदस्य अर्थः प्रधानः भवति।",
+          "explanation": "समास-लक्षणम् उत्तरपद-प्रधान-तत्पुरुष-नियमः च।"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Vocabulary and Grammar in Context",
-      "sectionTitleSanskrit": "खण्डः 'ख' · भाषिककार्यम्",
-      "instructions": "Choose the correct grammatical form:",
+      "sectionTitle": "Section B: Textbook Compound Formations (समस्तपद-रचना)",
+      "sectionTitleSanskrit": "खण्डः 'ख' · पाठगत-समस्तपदानि",
+      "instructions": "Combine the words into a single compound word (समस्तपदम्):",
       "totalMarks": 10,
       "questions": [
         {
           "num": 3,
-          "question": "१. 'गास्यति' इति पदे कः लकारः?\n(A) लट् (B) लृट् (C) लोट् (D) लङ्\n\n२. 'अहम् अपि आगन्तुम् इच्छामि' इत्यत्र 'आगन्तुम्' पदे कः प्रत्ययः?\n(A) क्त्वा (B) तुमुन् (C) ल्यप् (D) शतृ",
-          "questionSanskrit": "व्याकरण-विकल्पं चिनुत:",
+          "question": "Write the compound word (समस्तपदम्) for the following (Page 82 Q6):\n(क) सुराणां भाषा = _______________\n(ख) सुन्दरी सुरभाषा = _______________\n(ग) नवरसैः रुचिरा = _______________\n(घ) पोषणस्य क्षमता = _______________\n(ङ) मञ्जुला मञ्जूषा = _______________",
+          "questionSanskrit": "समस्तपदं रचयत:",
           "marks": 5,
-          "type": "mcq",
-          "options": [
-            "१. (B) लृट् लकारः, २. (B) तुमुन्",
-            "१. (A) लट्, २. (A) क्त्वा",
-            "१. (C) लोट्, २. (C) ल्यप्"
-          ],
-          "answer": "१. (B) लृट् लकारः (भविष्यत्कालः)\n२. (B) तुमुन् प्रत्ययः (आ + गम् + तुमुन् = आगन्तुम्)",
-          "explanation": "गास्यति = लृट्लकारः; आगन्तुम् = तुमुन्-प्रत्ययः।"
+          "type": "grammar",
+          "answer": "(क) सुरभाषा\n(ख) सुन्दरसुरभाषा\n(ग) नवरसरुचिरा\n(घ) पोषणक्षमता\n(ङ) मञ्जुलमञ्जूषा",
+          "explanation": "पाठान्तर्गत-पदानां समस्तपद-निर्माणम्।"
         },
         {
           "num": 4,
-          "question": "Fill in the blanks from the dialogue:\n(क) वयम् एतम् ______________ आचरामः। (आसप्ताहम् / प्रतिदिनम्)\n(ख) भवती ______________। (अनुगायतु / पठतु)",
-          "questionSanskrit": "रिक्तस्थानं पूरयत:",
+          "question": "Identify which of the following is an Avyayibhava compound:\n(A) पञ्चवटी (B) अनुरूपम् (C) सुरभाषा (D) पीताम्बरः",
+          "questionSanskrit": "अव्ययीभावसमासस्य उदाहरणं किम्?",
           "marks": 5,
-          "type": "fill",
-          "answer": "(क) आसप्ताहम्; (ख) अनुगायतु",
-          "explanation": "पाठानुरूप-रिक्तस्थानपूर्तिः।"
+          "type": "mcq",
+          "options": [
+            "(A) पञ्चवटी (द्विगुः)",
+            "(B) अनुरूपम् (अव्ययीभावः)",
+            "(C) सुरभाषा (षष्ठी तत्पुरुषः)",
+            "(D) पीताम्बरः (बहुव्रीहिः)"
+          ],
+          "answer": "(B) अनुरूपम् (अव्ययीभावः)",
+          "explanation": "'अनु' उपसर्गः (अव्ययम्) पूर्वपदे अस्ति, रूपस्य योग्यम् = अनुरूपम्।"
         }
       ]
     }
@@ -9123,70 +9124,77 @@ export const WORKSHEETS: Worksheet[] = [
 },
 {
   "id": "ws-grade8-ch7-ws2",
-  "title": "Worksheet 2: Verse Analysis & Blanks (श्लोक-विश्लेषणं रिक्तस्थानपूर्तिः च)",
-  "titleSanskrit": "सप्तमः पाठः कार्यपत्रिका २: श्लोक-विश्लेषणं रिक्तस्थानपूर्तिः च",
+  "title": "Worksheet 2: Shloka Syntax Check & Anvaya (श्लोक-संरचना अन्वय-परीक्षणं च)",
+  "titleSanskrit": "सप्तमः पाठः कार्यपत्रिका २: श्लोक-संरचना अन्वय-परीक्षणं च",
   "category": "grade8",
   "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
   "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
   "timeLimit": "45 Mins",
-  "description": "Fill missing poetic terms from Shlokas 1–4, explore Anvaya, and understand aesthetic and philosophical dimensions of Sanskrit.",
+  "description": "Test shloka syntax and poetic phrasing from the 4 verses, complete missing compounds, and master Anvaya and poetic interpretations.",
   "sections": [
     {
-      "sectionTitle": "Section A: Shloka Text Fill-in-the-Blanks",
-      "sectionTitleSanskrit": "खण्डः 'क' · श्लोकांश-पूरणम्",
-      "instructions": "Complete the shloka phrases with the exact textbook terms:",
+      "sectionTitle": "Section A: Shloka Syntax Check",
+      "sectionTitleSanskrit": "खण्डः 'क' · श्लोक-संरचना-परीक्षणम्",
+      "instructions": "Complete the remaining fields based on the textbook's phrasing:",
       "totalMarks": 10,
       "questions": [
         {
           "num": 1,
-          "question": "Fill in the missing words from the shlokas:\n१. वेदव्यास-वाल्मीकि-___________ कालिदास-बाणादिकवीनाम्।\n२. वैद्य-___________-शास्त्रादि-विहारा विजयते धरायां सुन्दरसुरभाषा।\n३. अयि मातस्तव ___________ मम वचनातीता।\n४. नवरस-रुचिरा ___________ वेदविषय-वेदान्त-विचारा।",
-          "questionSanskrit": "श्लोकेषु रिक्तस्थानानि पूरयत:",
+          "question": "Complete the remaining fields based on the textbook's phrasing:\n१. गति-मति-प्रेरक- _______________\n२. वैद्य-व्योम- _______________\n३. अयि मातस्तव _______________",
+          "questionSanskrit": "पाठानुरूपं पदं पूरयत:",
           "marks": 6,
           "type": "fill",
-          "answer": "१. मुनीनां; २. व्योम; ३. पोषणक्षमता; ४. अलङ्कृति-धारा",
-          "explanation": "पाठे श्लोक १, २, ४ इत्येतेभ्यः पदानि सन्ति।"
+          "answer": "१. काव्यविशारदे\n२. शास्त्रादिविहारा\n३. पोषणक्षमता",
+          "explanation": "१. गति-मति-प्रेरक-काव्यविशारदे (श्लोक ३); २. वैद्य-व्योम-शास्त्रादिविहारा (श्लोक ४); ३. अयि मातस्तव पोषणक्षमता (श्लोक १)।"
         },
         {
           "num": 2,
-          "question": "Explain the meaning of 'नवरस-रुचिरा' and list any four rasas in Sanskrit.",
-          "questionSanskrit": "'नवरस-रुचिरा' इत्यस्य भावार्थं चतुरः रसान् च लिखत:",
+          "question": "Fill in the missing words from Verse 2 and Verse 4:\n(क) वेदव्यास-वाल्मीकि-___________ कालिदास-बाणादिकवीनाम्।\n(ख) नवरस-रुचिरा ___________ वेदविषय-वेदान्त-विचारा।",
+          "questionSanskrit": "श्लोकांशे रिक्तस्थानं पूरयत:",
           "marks": 4,
-          "type": "short_ans",
-          "answer": "'नवरस-रुचिरा' अर्थात् नौ रसों से मनोहर। चत्वारः रसाः: शृङ्गारः, हास्यः, वीरः, शान्तः च।",
-          "explanation": "साहित्ये नवरसाः भवन्ति येन काव्यं रुचिरा भवति।"
+          "type": "fill",
+          "answer": "(क) मुनीनां\n(ख) अलङ्कृति-धारा",
+          "explanation": "श्लोक २ श्लोक ४ च।"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Anvaya & Verse Translation",
-      "sectionTitleSanskrit": "खण्डः 'ख' · अन्वयः अनुवादः च",
-      "instructions": "Rearrange the anvaya and translate:",
+      "sectionTitle": "Section B: Anvaya & Poetic Analysis",
+      "sectionTitleSanskrit": "खण्डः 'ख' · अन्वयः भावार्थश्च",
+      "instructions": "Analyze the poetic structure and Anvaya of the verses:",
       "totalMarks": 10,
       "questions": [
         {
           "num": 3,
-          "question": "Translate Verse 1 into English or Hindi:\n'मुनिवरविकसितकविवरविलसित-मञ्जुलमञ्जूषा सुन्दरसुरभाषा। अयि मातस्तव पोषणक्षमता मम वचनातीता सुन्दरसुरभाषा॥'",
-          "questionSanskrit": "श्लोकस्य अनुवादं कुरुत:",
-          "marks": 5,
+          "question": "Write the Anvaya and Hindi or English meaning of Shloka 1:\n'मुनिवरविकसितकविवरविलसितमञ्जुलमञ्जूषा, सुन्दरसुरभाषा। अयि मातस्तव पोषणक्षमता मम वचनातीता, सुन्दरसुरभाषा॥'",
+          "questionSanskrit": "श्लोकस्य अन्वयं भावार्थं च लिखत:",
+          "marks": 6,
           "type": "short_ans",
-          "answer": "हे श्रेष्ठ मुनियों द्वारा विकसित और कवियों द्वारा सुशोभित देववाणी संस्कृत! तुम सुंदर ज्ञान की मंजूषा (पेटी) हो। हे माता! तुम्हारी सबको पोषण देने की क्षमता मेरी वाणी से सर्वथा परे है। (O beautiful divine language Sanskrit, expanded by noble sages and adorned by poets! You are a lovely jewel-box of wisdom. Your nurturing power is beyond words).",
-          "explanation": "श्लोक १ इत्यस्य सरलार्थः।"
+          "answer": "अन्वयः: (त्वं) मुनिवरविकसितकविवरविलसितमञ्जुलमञ्जूषा सुन्दरसुरभाषा (असि)। अयि मातः! तव पोषणक्षमता मम वचनातीता अस्ति।\nभावार्थ: हे श्रेष्ठ मुनियों द्वारा विकसित और कवियों द्वारा सुशोभित सुंदर ज्ञान की मंजूषा (तिजोरी) संस्कृत माता! अन्य सभी भाषाओं को पोषित करने की आपकी अद्भुत क्षमता मेरी वाणी के वर्णन से परे है।",
+          "explanation": "प्रथम-श्लोकस्य सरलार्थः।"
         },
         {
           "num": 4,
-          "question": "Which great authors and poets are mentioned in Verse 2 as finding hope of life in Sanskrit?",
-          "questionSanskrit": "द्वितीये श्लोके केषां मुनीनां कवीनां च नामानि सन्ति?",
-          "marks": 5,
-          "type": "short_ans",
-          "answer": "मुनयः: वेदव्यासः, वाल्मीकिः च। कवयः: कालिदासः, बाणभट्टः च।",
-          "explanation": "श्लोक २: वेदव्यास-वाल्मीकि-मुनीनां कालिदास-बाणादिकवीनाम्।"
+          "question": "Which two sciences are explicitly mentioned in Shloka 4 as areas traversed by Sanskrit?\n(A) रसायन-भौतिकी (B) वैद्यशास्त्र (आयुर्वेद) एवं व्योमशास्त्र (खगोल विज्ञान) (C) भूगर्भ एवं वनस्पति (D) राजनीति एवं अर्थशास्त्र",
+          "questionSanskrit": "चतुर्थे श्लोके कयोः विज्ञानशास्त्रयोः नाम उल्लिखितम्?",
+          "marks": 4,
+          "type": "mcq",
+          "options": [
+            "(A) रसायन-भौतिकी",
+            "(B) वैद्यशास्त्र (आयुर्वेद) एवं व्योमशास्त्र (खगोल/अंतरिक्ष विज्ञान)",
+            "(C) भूगर्भ एवं वनस्पति विज्ञान",
+            "(D) राजनीति एवं अर्थशास्त्र"
+          ],
+          "answer": "(B) वैद्यशास्त्र (आयुर्वेद) एवं व्योमशास्त्र (खगोल/अंतरिक्ष विज्ञान)",
+          "explanation": "'वैद्य-व्योम-शास्त्रादि-विहारा'—वैद्यशास्त्रं (चिकित्सा/आयुर्वेदः) व्योमशास्त्रं (खगोलशास्त्रं/अंतरिक्षविज्ञानम्) च।"
         }
       ]
     }
   ]
 },
 {
+
   "id": "ws-grade8-ch7-ws3",
   "title": "Worksheet 3: Compound Identification (समास-बोधः)",
   "titleSanskrit": "सप्तमः पाठः कार्यपत्रिका ३: समास-बोधः",

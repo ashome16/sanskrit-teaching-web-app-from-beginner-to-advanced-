@@ -40,7 +40,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade8_ch4', label: 'Grade 8 Ch 4: प्रणम्यो देशभक्तोऽयं (3 Quizzes · 30 Qs)', icon: '🇮🇳' },
   { id: 'grade8_ch5', label: 'Grade 8 Ch 5: गीता सुगीता कर्तव्या (3 Quizzes · 30 Qs)', icon: '🕉️' },
   { id: 'grade8_ch6', label: 'Grade 8 Ch 6: डिजिभारतम्-युगपरिवर्तनम् (3 Quizzes · 30 Qs)', icon: '💻' },
-  { id: 'grade8_ch7', label: 'Grade 8 Ch 7: मञ्जुलमञ्जूषा सुन्दरसुरभाषा (2 Quizzes · 8 Qs)', icon: '💎' },
+  { id: 'grade8_ch7', label: 'Grade 8 Ch 7: मञ्जुलमञ्जूषा सुन्दरसुरभाषा (3 Quizzes · 30 Qs)', icon: '💎' },
   { id: 'grade8_ch8', label: 'Grade 8 Ch 8: पश्यत कोणमैशान्यं भारतस्य मनोहरम् (2 Quizzes · 8 Qs)', icon: '🏞️' },
   { id: 'grade8_ch9', label: 'Grade 8 Ch 9: कोऽरुक्? कोऽरुक्? कोऽरुक्? (2 Quizzes · 8 Qs)', icon: '🌿' },
   { id: 'grade8_ch10', label: 'Grade 8 Ch 10: सन्निमित्ते वरं त्यागः (2 Quizzes · 8 Qs)', icon: '⚖️' },
@@ -12632,159 +12632,577 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
     "difficulty": "easy",
     "points": 10
   },
+    {
+    "id": "g8-ch7-q1-1",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: पाठ्यविषयः शब्दावली च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 1: Textual Core & Vocabulary",
+    "question": "संस्कृत दिवस वर्ष के किस दिन मनाया जाता है?",
+    "questionSanskrit": "संस्कृतदिवसः कदा आचर्यते?",
+    "options": [
+      "A) आश्विन पूर्णिमा",
+      "B) श्रावणी पूर्णिमा",
+      "C) कार्तिक अमावस्या",
+      "D) चैत्र प्रतिपदा"
+    ],
+    "correctIndex": 1,
+    "explanation": "प्रतिवर्षं श्रावणमासस्य पूर्णिमायां (रक्षाबन्धनदिने) सम्पूर्णभारते संस्कृतदिवसः आचर्यते।",
+    "difficulty": "easy",
+    "points": 10
+  },
   {
-  "id": "g8-ch7-q1-1",
-  "category": "grade8_ch7",
-  "categoryLabel": "Grade 8 Ch 7: समास-परिचयः",
-  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
-  "subCategory": "Quiz 1: Compounds (समास) Theme",
-  "question": "'सुराणां भाषा = सुरभाषा'— अत्र कः समासः अस्ति? (Which compound is 'सुरभाषा'?)",
-  "questionSanskrit": "'सुराणां भाषा = सुरभाषा'— अत्र कः समासः अस्ति?",
-  "options": [
-    "A) अव्ययीभावः",
-    "B) तत्पुरुषः",
-    "C) द्विगुः",
-    "D) द्वन्द्वः"
-  ],
-  "correctIndex": 1,
-  "explanation": "षष्ठीविभक्तियुक्तपदस्य उत्तरपदेन सह समासे षष्ठी-तत्पुरुष-समासः भवति (सुराणां भाषा = सुरभाषा)।",
-  "difficulty": "easy",
-  "points": 10
-},
-{
-  "id": "g8-ch7-q1-2",
-  "category": "grade8_ch7",
-  "categoryLabel": "Grade 8 Ch 7: समास-परिचयः",
-  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
-  "subCategory": "Quiz 1: Compounds (समास) Theme",
-  "question": "'पञ्चवटी' (पञ्चानां वटानां समाहारः) इत्यत्र कः समासः भवति?",
-  "questionSanskrit": "'पञ्चवटी' (पञ्चानां वटानां समाहारः) इत्यत्र कः समासः भवति?",
-  "options": [
-    "A) बहुव्रीहिः",
-    "B) तत्पुरुषः",
-    "C) द्विगुः",
-    "D) कर्मधारयः"
-  ],
-  "correctIndex": 2,
-  "explanation": "संख्यापूर्वो द्विगुः—यस्मिन् समासे पूर्वपदं संख्यावाचकं भवति समाहारार्थे च प्रयुज्यते, सः द्विगु-समासः भवति।",
-  "difficulty": "medium",
-  "points": 10
-},
-{
-  "id": "g8-ch7-q1-3",
-  "category": "grade8_ch7",
-  "categoryLabel": "Grade 8 Ch 7: समास-परिचयः",
-  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
-  "subCategory": "Quiz 1: Compounds (समास) Theme",
-  "question": "समासे प्रायेण द्वयोः ततोऽधिकानां वा पदानां किं क्रियते?",
-  "questionSanskrit": "समासे प्रायेण द्वयोः ततोऽधिकानां वा पदानां किं क्रियते?",
-  "options": [
-    "A) विस्तारः",
-    "B) संक्षिप्तीकरणम्",
-    "C) परिवर्तनम्",
-    "D) लोपः"
-  ],
-  "correctIndex": 1,
-  "explanation": "'समसनं समासः'—अनेकपदानां मिलित्वा एकपदीभवनं संक्षिप्तीकरणं वा समासः उच्यते।",
-  "difficulty": "easy",
-  "points": 10
-},
-{
-  "id": "g8-ch7-q1-4",
-  "category": "grade8_ch7",
-  "categoryLabel": "Grade 8 Ch 7: समास-परिचयः",
-  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
-  "subCategory": "Quiz 1: Compounds (समास) Theme",
-  "question": "'पीतम् अम्बरं यस्य सः = पीताम्बरः' इत्यत्र कस्य पदस्य प्राधान्यं भवति?",
-  "questionSanskrit": "'पीतम् अम्बरं यस्य सः = पीताम्बरः' इत्यत्र कस्य पदस्य प्राधान्यं भवति?",
-  "options": [
-    "A) पूर्वपदस्य",
-    "B) उत्तरपदस्य",
-    "C) अन्यपदस्य",
-    "D) उभयपदस्य"
-  ],
-  "correctIndex": 2,
-  "explanation": "बहुव्रीहिसमासे अन्यपदार्थस्य (अत्र श्रीकृष्णस्य/विष्णोः) प्राधान्यं भवति।",
-  "difficulty": "medium",
-  "points": 10
-},
-{
-  "id": "g8-ch7-q2-1",
-  "category": "grade8_ch7",
-  "categoryLabel": "Grade 8 Ch 7: लकार-वाक्यसंरचना",
-  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
-  "subCategory": "Quiz 2: Verb Tenses & Sentence Structure",
-  "question": "In the dialogue 'अहं तु गीतगायनप्रतियोगितायां भागं ग्रहीष्यामि', which Lakāra (tense) is 'ग्रहीष्यामि'?",
-  "questionSanskrit": "'ग्रहीष्यामि' क्रियापदे कः लकारः अस्ति?",
-  "options": [
-    "A) लट् लकारः",
-    "B) लृट् लकारः",
-    "C) लङ् लकारः",
-    "D) लोट् लकारः"
-  ],
-  "correctIndex": 1,
-  "explanation": "ग्रहीष्यामि (ग्रह् धातुः + लृट्लकारः + उत्तमपुरुषः + एकवचनम्) भविष्यत्कालार्थे लृट्लकारस्य प्रयोगः अस्ति।",
-  "difficulty": "easy",
-  "points": 10
-},
-{
-  "id": "g8-ch7-q2-2",
-  "category": "grade8_ch7",
-  "categoryLabel": "Grade 8 Ch 7: लकार-वाक्यसंरचना",
-  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
-  "subCategory": "Quiz 2: Verb Tenses & Sentence Structure",
-  "question": "'भवती अनुगायतु'— अत्र 'अनुगायतु' क्रियापदस्य कः पुरुषः अस्ति?",
-  "questionSanskrit": "'भवती अनुगायतु'— अत्र 'अनुगायतु' क्रियापदस्य कः पुरुषः अस्ति?",
-  "options": [
-    "A) उत्तमपुरुषः",
-    "B) मध्यमपुरुषः",
-    "C) प्रथमपुरुषः",
-    "D) कोऽपि न"
-  ],
-  "correctIndex": 2,
-  "explanation": "'भवत्' शब्दस्य योगे सर्वदा प्रथमपुरुषस्य क्रिया प्रयुज्यते। अनुगायतु लोट्लकारे प्रथमपुरुषैकवचने अस्ति।",
-  "difficulty": "medium",
-  "points": 10
-},
-{
-  "id": "g8-ch7-q2-3",
-  "category": "grade8_ch7",
-  "categoryLabel": "Grade 8 Ch 7: लकार-वाक्यसंरचना",
-  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
-  "subCategory": "Quiz 2: Verb Tenses & Sentence Structure",
-  "question": "'धरायाम्' इति पदे का विभक्तिः प्रयुक्ता?",
-  "questionSanskrit": "'धरायाम्' इति पदे का विभक्तिः प्रयुक्ता?",
-  "options": [
-    "A) द्वितीया",
-    "B) पञ्चमी",
-    "C) सप्तमी",
-    "D) तृतीया"
-  ],
-  "correctIndex": 2,
-  "explanation": "आकारान्त-स्त्रीलिङ्ग 'धरा' शब्दस्य सप्तमी-विभक्तौ एकवचने 'धरायाम्' (पृथिव्याम्) इति रूपं भवति।",
-  "difficulty": "easy",
-  "points": 10
-},
-{
-  "id": "g8-ch7-q2-4",
-  "category": "grade8_ch7",
-  "categoryLabel": "Grade 8 Ch 7: लकार-वाक्यसंरचना",
-  "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
-  "subCategory": "Quiz 2: Verb Tenses & Sentence Structure",
-  "question": "'विजयते' इति क्रियापदस्य विलोमप्रवृत्तिः पाठाधारेण का भवितुं शक्नोति?",
-  "questionSanskrit": "'विजयते' इति क्रियापदस्य विपरीतार्थकं पदं किम्?",
-  "options": [
-    "A) शोभन्ते",
-    "B) पराजयते",
-    "C) प्रवहन्ति",
-    "D) विहरति"
-  ],
-  "correctIndex": 1,
-  "explanation": "'वि + जि' (विजयते = जीतता है) इत्यस्य विपरीतार्थकं पदं 'परा + जि' (पराजयते = हारता है) भवति।",
-  "difficulty": "medium",
-  "points": 10
-},
-{
+    "id": "g8-ch7-q1-2",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: पाठ्यविषयः शब्दावली च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 1: Textual Core & Vocabulary",
+    "question": "'आसप्ताहम्' शब्द का शुद्ध अर्थ पाठ के अनुसार क्या है?",
+    "questionSanskrit": "'आसप्ताहम्' इत्यस्य पदस्य शुद्धः अर्थः कः?",
+    "options": [
+      "A) एक दिन",
+      "B) सप्ताह भर",
+      "C) महीने भर",
+      "D) एक वर्ष"
+    ],
+    "correctIndex": 1,
+    "explanation": "'आसप्ताहम्' इत्युक्ते सम्पूर्णसप्ताहं व्याप्य (पूरे सप्ताह भर)। संस्कृतसप्ताहः श्रावणीपूर्णिमातः आरभ्य सप्ताहं यावत् आचर्यते।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q1-3",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: पाठ्यविषयः शब्दावली च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 1: Textual Core & Vocabulary",
+    "question": "कवि के अनुसार संस्कृत भाषा की पोषण क्षमता कैसी है?",
+    "questionSanskrit": "कवेः अनुसारं संस्कृतभाषायाः पोषणक्षमता कीदृशी अस्ति?",
+    "options": [
+      "A) मन्द स्वरूपा",
+      "B) वचनातीता (वाणी से परे)",
+      "C) सामान्य",
+      "D) अल्प"
+    ],
+    "correctIndex": 1,
+    "explanation": "श्लोके उक्तम्—'अयि मातस्तव पोषणक्षमता मम वचनातीता' अर्थात् संस्कृतस्य पोषणशक्तिः अनिर्वचनीया वाणी-अतीता च अस्ति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q1-4",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: पाठ्यविषयः शब्दावली च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 1: Textual Core & Vocabulary",
+    "question": "'मञ्जूषा' शब्द का शाब्दिक अर्थ क्या होता है?",
+    "questionSanskrit": "'मञ्जूषा' शब्दस्य कः अर्थः?",
+    "options": [
+      "A) पुस्तक",
+      "B) पेटिका / तिजोरी",
+      "C) लेखनी",
+      "D) माला"
+    ],
+    "correctIndex": 1,
+    "explanation": "'मञ्जूषा' इत्युक्ते पेटिका (casket/box)। अत्र संस्कृतं ज्ञान-रत्नानां सुन्दरी पेटी (मञ्जुलमञ्जूषा) इत्युक्ता।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q1-5",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: पाठ्यविषयः शब्दावली च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 1: Textual Core & Vocabulary",
+    "question": "संस्कृत को किसका 'मञ्जुलमञ्जूषा' (सुन्दर पेटी) कहा गया है?",
+    "questionSanskrit": "संस्कृतं कस्य मञ्जुलमञ्जूषा उच्यते?",
+    "options": [
+      "A) धन की",
+      "B) कोमल ज्ञान और सुंदर पदों की",
+      "C) अलंकारों की",
+      "D) मुनियों की"
+    ],
+    "correctIndex": 1,
+    "explanation": "संस्कृतभाषा मुनिवरविकसिता कविवरविलसिता च अस्ति, अतः एषा मधुरज्ञानस्य सुकोमलपदानां च मञ्जूषा अस्ति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q1-6",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: पाठ्यविषयः शब्दावली च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 1: Textual Core & Vocabulary",
+    "question": "कालिदास और बाणभट्ट किस भाषा के प्रसिद्ध कवि हैं?",
+    "questionSanskrit": "कालिदास-बाणभट्टौ कस्याः भाषायाः महाकवी स्तः?",
+    "options": [
+      "A) प्राकृत भाषा के",
+      "B) संस्कृत भाषा के",
+      "C) अपभ्रंश के",
+      "D) पालि भाषा के"
+    ],
+    "correctIndex": 1,
+    "explanation": "महाकविः कालिदासः (अभिज्ञानशाकुन्तलस्य रचयिता) बाणभट्टः च (कादम्बर्याः रचयिता) संस्कृतभाषायाः मूर्धन्यकवयः स्तः।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q1-7",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: पाठ्यविषयः शब्दावली च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 1: Textual Core & Vocabulary",
+    "question": "'श्रुतिसुखनिनदे' का अर्थ क्या है?",
+    "questionSanskrit": "'श्रुतिसुखनिनदे' इत्यस्य विशेषणस्य कः भावः?",
+    "options": [
+      "A) आँखों को भाने वाली",
+      "B) कानों को प्रिय ध्वनि देने वाली",
+      "C) स्पर्श सुख देने वाली",
+      "D) कटु बोलने वाली"
+    ],
+    "correctIndex": 1,
+    "explanation": "श्रुतिः = कर्णौ (कान); सुखः निनदः (ध्वनिः) यस्याः सा 'श्रुतिसुखनिनदा'। अर्थात् कर्णप्रिया ध्वनिप्रदायिनी संस्कृतभाषा।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q1-8",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: पाठ्यविषयः शब्दावली च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 1: Textual Core & Vocabulary",
+    "question": "संस्कृत भाषा किसकी संरक्षिका और जननी मानी गई है?",
+    "questionSanskrit": "संस्कृतभाषा कस्याः संरक्षिका जननी च मता?",
+    "options": [
+      "A) विदेशी संस्कृतियों की",
+      "B) भारतीय संस्कृति की",
+      "C) केवल मुनियों की",
+      "D) आधुनिक विज्ञान की"
+    ],
+    "correctIndex": 1,
+    "explanation": "'तव संस्कृतिरेषा'—भारतीयसंस्कृतिः संस्कृते एव समन्विता सुरक्षिता च अस्ति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q1-9",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: पाठ्यविषयः शब्दावली च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 1: Textual Core & Vocabulary",
+    "question": "'व्योमशास्त्रम्' का आधुनिक वैज्ञानिक अर्थ क्या है?",
+    "questionSanskrit": "'व्योमशास्त्रम्' इति पदस्य आधुनिकं तात्पर्यं किम्?",
+    "options": [
+      "A) भूगर्भ विज्ञान",
+      "B) अन्तरिक्ष विज्ञान / खगोलशास्त्र",
+      "C) रसायन विज्ञान",
+      "D) जीव विज्ञान"
+    ],
+    "correctIndex": 1,
+    "explanation": "'व्योम' इत्युक्ते आकाशः/अन्तरिक्षम्। अतः व्योमशास्त्रम् अर्थात् खगोलशास्त्रम् (Astronomy & Space Science)।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q1-10",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: पाठ्यविषयः शब्दावली च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 1: Textual Core & Vocabulary",
+    "question": "कवि संस्कृत माता को धरती पर किस रूप में देखना चाहता है?",
+    "questionSanskrit": "कविः संस्कृतमातरं धरायां कीदृशरूपे पश्यति?",
+    "options": [
+      "A) पराजित रूप में",
+      "B) सर्वत्र विजयी रूप में (विजयते धरायाम्)",
+      "C) लुप्त रूप में",
+      "D) संकुचित रूप में"
+    ],
+    "correctIndex": 1,
+    "explanation": "श्लोके अन्तिमे घोषितम्—'विजयते धरायां सुन्दरसुरभाषा' अर्थात् देववाणी संस्कृतं सम्पूर्णे भूमण्डले सर्वदा विजयशालिनी भवतु।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q2-1",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: काव्यसौन्दर्यं रसाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 2: Poetic Themes & Literary Analytics",
+    "question": "संस्कृत काव्यों में कितने रसों की सुंदर धारा बहती है?",
+    "questionSanskrit": "संस्कृतसाहित्ये कति रसाः वर्णिताः सन्ति?",
+    "options": [
+      "A) पाँच",
+      "B) सात",
+      "C) नौ (नवरस)",
+      "D) ग्यारह"
+    ],
+    "correctIndex": 2,
+    "explanation": "संस्कृते नव रसाः प्रसिद्धाः—शृङ्गार, हास्य, करुण, रौद्र, वीर, भयानक, बीभत्स, अद्भुत, शान्तश्च। पाठे उक्तम्—\"नवरस-रुचिरालङ्कृतिधारा\"।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q2-2",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: काव्यसौन्दर्यं रसाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 2: Poetic Themes & Literary Analytics",
+    "question": "रामायण और महाभारत जैसे महाकाव्य मूलतः किस भाषा में लिखे गए हैं?",
+    "questionSanskrit": "रामायण-महाभारत-महाकाव्ये कस्यां भाषायां निबद्धे स्तः?",
+    "options": [
+      "A) हिन्दी",
+      "B) संस्कृत",
+      "C) पालि",
+      "D) मैथिली"
+    ],
+    "correctIndex": 1,
+    "explanation": "महर्षिणा वाल्मीकिना रामायणं महर्षिणा वेदव्यासेन च महाभारतं देववाणी-संस्कृते एव विरचितम्।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q2-3",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: काव्यसौन्दर्यं रसाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 2: Poetic Themes & Literary Analytics",
+    "question": "संस्कृत भाषा मनुष्यों की क्या जाग्रत करने के लिए 'गति-मति-प्रेरक' है?",
+    "questionSanskrit": "संस्कृतभाषा कस्य प्रेरणार्थं 'गति-मति-प्रेरक-काव्यविशारदे' उच्यते?",
+    "options": [
+      "A) क्रोध और ईर्ष्या",
+      "B) उत्तम आचरण और सन्मति (बुद्धि)",
+      "C) धन लोलुपता",
+      "D) निद्रा"
+    ],
+    "correctIndex": 1,
+    "explanation": "'गति' इत्युक्ते सन्मार्गगमनम् (सदाचारः), 'मति' इत्युक्ते सद्बुद्धिः। संस्कृतकाव्यानि मनुष्याणां गतिं मतिं च प्रेरयन्ति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q2-4",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: काव्यसौन्दर्यं रसाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 2: Poetic Themes & Literary Analytics",
+    "question": "'वैद्यशास्त्र' का संबंध संस्कृत साहित्य के किस प्राचीन आयाम से है?",
+    "questionSanskrit": "'वैद्यशास्त्रम्' कस्य विज्ञानस्य बोधकम् अस्ति?",
+    "options": [
+      "A) ज्योतिष शास्त्र से",
+      "B) चिकित्सा विज्ञान (आयुर्वेद) से",
+      "C) व्याकरण से",
+      "D) नृत्य कला से"
+    ],
+    "correctIndex": 1,
+    "explanation": "वैद्यशास्त्रम् अर्थात् आयुर्वेदचिकित्साशास्त्रम् (चरकसंहिता, सुश्रुतसंहिता इत्यादयः प्राचीन-चिकित्सा-ग्रन्थाः)।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q2-5",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: काव्यसौन्दर्यं रसाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 2: Poetic Themes & Literary Analytics",
+    "question": "किसके विचारों को संस्कृत का अनमोल हिस्सा माना गया है?",
+    "questionSanskrit": "केषां विचाराः संस्कृतस्य अमूल्यांशः वर्तन्ते?",
+    "options": [
+      "A) पाश्चात्य विचारों को",
+      "B) वेद और वेदान्त के विचारों को",
+      "C) नास्तिक दर्शन को",
+      "D) आधुनिक राजनीतिक लेखों को"
+    ],
+    "correctIndex": 1,
+    "explanation": "पाठे उक्तम्—'वेदविषय-वेदान्त-विचारा'। वेदानाम् उपनिषदां (वेदान्तस्य) च गम्भीर-तत्वज्ञानात्मक-विचाराः संस्कृते सन्ति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q2-6",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: काव्यसौन्दर्यं रसाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 2: Poetic Themes & Literary Analytics",
+    "question": "'सकलप्रमोदे' विशेषण किसके लिए प्रयुक्त हुआ है?",
+    "questionSanskrit": "'सकलप्रमोदे' इति सम्बोधनपदं कस्यै प्रयुक्तम्?",
+    "options": [
+      "A) ओमिता के लिए",
+      "B) सबको आनंद प्रदान करने वाली संस्कृत के लिए",
+      "C) विद्यालय के लिए",
+      "D) महोत्सव के लिए"
+    ],
+    "correctIndex": 1,
+    "explanation": "'सकलप्रमोदे' इत्यनेन समस्तजनान् आनन्दयित्री देववाणी संस्कृतभाषा एव सम्बोधिता अस्ति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q2-7",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: काव्यसौन्दर्यं रसाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 2: Poetic Themes & Literary Analytics",
+    "question": "संस्कृत साहित्य की परंपरा किससे समृद्ध होकर सुशोभित होती है?",
+    "questionSanskrit": "संस्कृतसाहित्यपरम्परा कैः समलङ्कृता विराजते?",
+    "options": [
+      "A) नीरस वचनों से",
+      "B) विविध रसों और अलंकारों से",
+      "C) गद्य मात्र से",
+      "D) केवल नाटकों से"
+    ],
+    "correctIndex": 1,
+    "explanation": "संस्कृतसाहित्ये नवरसाः (शृङ्गारादयः) उपमा-अनुप्रासादि-विविधालङ्काराः च प्रवहन्ति येन एषा परम्परा जगति अनुपमा अस्ति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q2-8",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: काव्यसौन्दर्यं रसाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 2: Poetic Themes & Literary Analytics",
+    "question": "'धरायाम्' शब्द का शुद्ध अर्थ क्या है?",
+    "questionSanskrit": "'धरायाम्' पदस्य समानार्थकं पदं किम्?",
+    "options": [
+      "A) आकाश में",
+      "B) पृथिव्याम् (धरती पर)",
+      "C) समुद्र में",
+      "D) बादलों में"
+    ],
+    "correctIndex": 1,
+    "explanation": "'धरा' पृथिव्याः पर्यायपदम् अस्ति। सप्तमी-एकवचने 'धरायाम्' अर्थात् पृथिव्यां भूमौ वा।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q2-9",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: काव्यसौन्दर्यं रसाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 2: Poetic Themes & Literary Analytics",
+    "question": "'स्मृतिहितवरदे' का तात्पर्य क्या है?",
+    "questionSanskrit": "'स्मृतिहितवरदे' इत्यस्य कः अभिप्रायः?",
+    "options": [
+      "A) विस्मृति पैदा करने वाली",
+      "B) स्मृतियों के अनुसार कल्याणकारी ज्ञान का वरदान देने वाली",
+      "C) कष्ट देने वाली",
+      "D) मौन रहने वाली"
+    ],
+    "correctIndex": 1,
+    "explanation": "मनुस्मृति-याज्ञवल्क्यस्मृत्यादि-धर्मशास्त्रेषु मानवमात्रस्य हितकारिणः नियमाः सन्ति। संस्कृतभाषा तानि कल्याणकारी-ज्ञानानि वरदानरूपेण ददाति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q2-10",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: काव्यसौन्दर्यं रसाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 2: Poetic Themes & Literary Analytics",
+    "question": "भारत की दो ऐतिहासिक प्रतिष्ठाएं कौन-सी बताई गई हैं (योग्यताविस्तर)?",
+    "questionSanskrit": "भारतस्य द्वे प्रतिष्ठे के उक्ते?",
+    "options": [
+      "A) धन और वैभव",
+      "B) संस्कृतम् और संस्कृतिः",
+      "C) उद्योग और कृषि",
+      "D) अस्त्र और शस्त्र"
+    ],
+    "correctIndex": 1,
+    "explanation": "प्रसिद्धोक्तिः अस्ति—\"द्वे प्रतिष्ठे भारतस्य संस्कृतं संस्कृतिस्तथा\" अर्थात् भारतस्य द्वे मुख्ये प्रतिष्ठे संस्कृतभाषा भारतीयसंस्कृतिश्च स्तः।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q3-1",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: समासः विभक्ति-प्रयोगाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 3: Grammatical Configurations (Samasa & Cases)",
+    "question": "परस्पर सम्बद्ध सार्थक पदों को संक्षिप्त करके एक पद बनाने की प्रक्रिया को क्या कहते हैं?",
+    "questionSanskrit": "अनेकपदानां संक्षिप्तीकरणं कृत्वा एकपदीभवनं किं कथ्यते?",
+    "options": [
+      "A) सन्धिः",
+      "B) समासः",
+      "C) कारकम्",
+      "D) प्रत्ययः"
+    ],
+    "correctIndex": 1,
+    "explanation": "'समसनं समासः'—परस्परसम्बद्धानां पदानां मिलित्वा एकपद-निर्माणं समासः उच्यते।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q3-2",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: समासः विभक्ति-प्रयोगाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 3: Grammatical Configurations (Samasa & Cases)",
+    "question": "'अनुरूपम्' (रूपस्य योग्यम्) किस समास का शुद्ध उदाहरण है?",
+    "questionSanskrit": "'अनुरूपम्' इत्यत्र कः समासः?",
+    "options": [
+      "A) तत्पुरुष समास का",
+      "B) अव्ययीभाव समास का",
+      "C) द्विगु समास का",
+      "D) बहुव्रीहि समास का"
+    ],
+    "correctIndex": 1,
+    "explanation": "यत्र पूर्वपदम् अव्ययं भवति उत्तरपदं च संज्ञा, तत्र अव्ययीभावसमासः भवति। 'अनु' अव्ययस्य योगे 'रूपस्य योग्यम् = अनुरूपम्' भवति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q3-3",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: समासः विभक्ति-प्रयोगाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 3: Grammatical Configurations (Samasa & Cases)",
+    "question": "जिस समास में पहला पद संख्यावाचक होता है, उसे क्या कहते हैं?",
+    "questionSanskrit": "संख्यापूर्वो कः समासः भवति?",
+    "options": [
+      "A) द्वन्द्व समास",
+      "B) द्विगु समास",
+      "C) तत्पुरुष समास",
+      "D) बहुव्रीहि समास"
+    ],
+    "correctIndex": 1,
+    "explanation": "'संख्यापूर्वो द्विगुः'—यस्य समासस्य पूर्वपदं संख्यावाचकं भवति समूहार्थे च प्रयुज्यते (यथा पञ्चवटी, त्रिभुवनम्), सः द्विगुसमासः कथ्यते।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q3-4",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: समासः विभक्ति-प्रयोगाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 3: Grammatical Configurations (Samasa & Cases)",
+    "question": "'सुरभाषा' (सुराणां भाषा) में कौन-सा तत्पुरुष समास का भेद है?",
+    "questionSanskrit": "'सुराणां भाषा = सुरभाषा' अत्र कः तत्पुरुष-भेदः?",
+    "options": [
+      "A) द्वितीया तत्पुरुष",
+      "B) षष्ठी तत्पुरुष",
+      "C) सप्तमी तत्पुरुष",
+      "D) पञ्चमी तत्पुरुष"
+    ],
+    "correctIndex": 1,
+    "explanation": "विग्रहे 'सुराणाम्' इति षष्ठी-विभक्तेः पदम् अस्ति, अतः अत्र षष्ठी-तत्पुरुषसमासः अस्ति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q3-5",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: समासः विभक्ति-प्रयोगाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 3: Grammatical Configurations (Samasa & Cases)",
+    "question": "'पीताम्बरः' (पीतम् अम्बरं यस्य सः - श्रीविष्णुः) में किस समास का विधान है?",
+    "questionSanskrit": "'पीतम् अम्बरं यस्य सः' इत्यत्र कः समासः?",
+    "options": [
+      "A) अव्ययीभाव",
+      "B) बहुव्रीहि समास",
+      "C) द्विगु",
+      "D) द्वन्द्व"
+    ],
+    "correctIndex": 1,
+    "explanation": "यत्र अन्यपदार्थस्य प्राधान्यं भवति (अत्र श्रीविष्णोः बोधः), तत्र बहुव्रीहिसमासः भवति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q3-6",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: समासः विभक्ति-प्रयोगाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 3: Grammatical Configurations (Samasa & Cases)",
+    "question": "'जनानाम्' पद में कौन-सी विभक्ति और वचन है?",
+    "questionSanskrit": "'जनानाम्' इत्यत्र का विभक्तिः किं च वचनम्?",
+    "options": [
+      "A) षष्ठी विभक्ति, एकवचन",
+      "B) षष्ठी विभक्ति, बहुवचन",
+      "C) सप्तमी विभक्ति, बहुवचन",
+      "D) तृतीया विभक्ति, एकवचन"
+    ],
+    "correctIndex": 1,
+    "explanation": "अकारान्त-पुल्लिङ्ग 'जन' शब्दस्य षष्ठी-विभक्तौ बहुवचने रूपं 'जनानाम्' (लोगों का) भवति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q3-7",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: समासः विभक्ति-प्रयोगाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 3: Grammatical Configurations (Samasa & Cases)",
+    "question": "'शास्त्रेषु' पद में लगी हुई शुद्ध विभक्ति पहचानें:",
+    "questionSanskrit": "'शास्त्रेषु' इति पदे का विभक्तिः?",
+    "options": [
+      "A) पञ्चमी",
+      "B) सप्तमी विभक्ति (बहुवचन)",
+      "C) चतुर्थी",
+      "D) द्वितीया"
+    ],
+    "correctIndex": 1,
+    "explanation": "अकारान्त-नपुंसकलिंग 'शास्त्र' शब्दस्य सप्तमी-बहुवचने 'शास्त्रेषु' (शास्त्रों में) इति रूपं सिध्यति।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q3-8",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: समासः विभक्ति-प्रयोगाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 3: Grammatical Configurations (Samasa & Cases)",
+    "question": "'वचनातीता' का सही विग्रह क्या होगा?",
+    "questionSanskrit": "'वचनातीता' इत्यस्य शुद्धः समासविग्रहः कः?",
+    "options": [
+      "A) वचनेन अतीता",
+      "B) वचनम् अतीता",
+      "C) वचनाय अतीता",
+      "D) वचनेषु अतीता"
+    ],
+    "correctIndex": 1,
+    "explanation": "'अतीत' शब्दस्य योगे द्वितीया विभक्तिः भवति (द्वितीया श्रितातीतपतितगतात्यस्तप्राप्तापन्नैः)। अतः 'वचनम् अतीता = वचनातीता' (द्वितीया तत्पुरुषः)।",
+    "difficulty": "hard",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q3-9",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: समासः विभक्ति-प्रयोगाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 3: Grammatical Configurations (Samasa & Cases)",
+    "question": "'नवरस' पद में कौन-सा समास निहित है?",
+    "questionSanskrit": "'नवरस' पदे कः समासः?",
+    "options": [
+      "A) द्वन्द्वः",
+      "B) द्विगुः / कर्मधारयः",
+      "C) अव्ययीभावः",
+      "D) तत्पुरुषः"
+    ],
+    "correctIndex": 1,
+    "explanation": "'नवानां रसानां समाहारः' इति विग्रहे संख्यापूर्वो द्विगुः (कर्मधारयस्य भेदः) समासः भवति।",
+    "difficulty": "medium",
+    "points": 10
+  },
+  {
+    "id": "g8-ch7-q3-10",
+    "category": "grade8_ch7",
+    "categoryLabel": "Grade 8 Ch 7: समासः विभक्ति-प्रयोगाः च",
+    "chapterRef": "Grade 8: सप्तमः पाठः — मञ्जुलमञ्जूषा सुन्दरसुरभाषा",
+    "subCategory": "Quiz 3: Grammatical Configurations (Samasa & Cases)",
+    "question": "'मातः' पद में कौन-सी विभक्ति प्रयुक्त है?",
+    "questionSanskrit": "'मातः' इति पदे का विभक्तिः?",
+    "options": [
+      "A) द्वितीया",
+      "B) सम्बोधनम्",
+      "C) प्रथमा",
+      "D) तृतीया"
+    ],
+    "correctIndex": 1,
+    "explanation": "ऋकारान्त-स्त्रीलिङ्ग 'मातृ' शब्दस्य सम्बोधनस्य एकवचने 'हे मातः!' इति रूपं भवति। श्लोके उक्तम्—'अयि मातः!'।",
+    "difficulty": "easy",
+    "points": 10
+  },
+  {
   "id": "g8-ch8-q1-1",
   "category": "grade8_ch8",
   "categoryLabel": "Grade 8 Ch 8: प्रत्ययाः वाक्यसंरचना च",
