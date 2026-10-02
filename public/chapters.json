@@ -37125,7 +37125,7 @@
       "id": "grade8_ch12",
       "fileName": "grade8_ch12.txt",
       "title": "द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते",
-      "page_numbers": "137-145",
+      "page_numbers": "137–146",
       "sentences": [
         {
           "sanskrit": "॥ द्वादशः पाठः — सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते ॥",
@@ -37137,6 +37137,20 @@
             "सम्यग्वर्णप्रयोगेण",
             "ब्रह्मलोके",
             "महीयते"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "📌 पाठ्यक्रम-मार्गदर्शिका (CBSE / NCERT / NEP 2020) — एषः पाठः पाणिनीयशिक्षायाः आधारेण वर्णोच्चारण-माहात्म्यं, शुद्धोच्चारणस्य नियमान्, पाठकानां गुण-दोष-विवेकं च बोधयितुं निर्मितः अस्ति।",
+          "meaning": "Curriculum Framework (CBSE / NCERT / NEP 2020): Derived from Paniniya Shiksha, this lesson empowers learners to master the precision of Sanskrit phonetics, sound articulation, and the distinguishing virtues and vices of reading.",
+          "paragraphTranslation": "पाठ्यक्रम मार्गदर्शिका (CBSE / NCERT / NEP 2020): पाणिनीय-शिक्षा पर आधारित यह पाठ शिक्षार्थियों को वर्णोच्चारण की शुद्धता, उच्चारण के वैज्ञानिक नियमों तथा पाठक के छह गुणों और छह दोषों का व्यावहारिक ज्ञान प्रदान करता है।",
+          "words": [
+            "पाठ्यक्रम",
+            "CBSE",
+            "NCERT",
+            "NEP2020",
+            "वर्णोच्चारण",
+            "पाणिनीयशिक्षा"
           ],
           "kind": "section-header"
         },
@@ -37420,6 +37434,19 @@
             "अक्षरव्यक्तिः",
             "शीघ्री",
             "सुस्वरः"
+          ],
+          "kind": "exercise-note"
+        },
+        {
+          "sanskrit": "५. श्लोकानुसारं रिक्तस्थानपूर्तिः – 'भीता पतनभेदाभ्यां तद्वद् वर्णान् प्रयोजयेत्', 'धैर्यं लयसमर्थं च षडेते पाठका गुणाः', 'स्वजनः श्वजनो माभूत् सकलं शकलं सकृत् शकृत्'। वेदाङ्गानि षट् सन्ति—शिक्षा, कल्पः, व्याकरणम्, निरुक्तम्, छन्दः, ज्योतिषम् च।",
+          "meaning": "Exercise 5: Shloka Verse Completion & Vedangas Overview (Six limbs of the Veda: Shiksha, Kalpa, Vyakarana, Nirukta, Chandas, Jyotisha).",
+          "paragraphTranslation": "अभ्यास ५: श्लोकानुसार रिक्तस्थान पूर्ति तथा षड्वेदाङ्गों का संक्षिप्त परिचय।",
+          "words": [
+            "रिक्तस्थानपूर्तिः",
+            "वेदाङ्गानि",
+            "शिक्षा",
+            "व्याकरणम्",
+            "निरुक्तम्"
           ],
           "kind": "exercise-note"
         },

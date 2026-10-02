@@ -10601,64 +10601,46 @@ export const WORKSHEETS: Worksheet[] = [
 },
 {
   "id": "ws-grade8-ch12-ws1",
-  "title": "Chapter 12 · Worksheet 1: Minimal Pairs Exploration (वर्ण-भेद विवेकः)",
-  "titleSanskrit": "द्वादशः पाठः · कार्यपत्रिका १: वर्ण-भेद-विवेकः",
+  "title": "Worksheet 1: Vocabulary & Sound Contrasts (वर्ण-ध्वनि-विवेकः)",
+  "titleSanskrit": "द्वादशः पाठः कार्यपत्रिका १: वर्ण-ध्वनि-विवेकः शब्दार्थाश्च",
   "category": "grade8",
-  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
-  "grade": "Grade 8 (Deepakam)",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
-  "timeLimit": "30 Minutes",
-  "description": "Choosing the correct phonological minimal pair word based on contextual meaning (Page 144).",
+  "timeLimit": "40 Mins",
+  "description": "Discriminate subtle sound variations (सकृत्/शकृत्, स्वजनः/श्वजनः, सकलम्/शकलम्) and understand the impact of phonetic shift on meaning.",
   "sections": [
     {
-      "sectionTitle": "Section A: Minimal Pairs Contextual Selection",
-      "sectionTitleSanskrit": "खण्डः 'क' · स्वजन-शकल-प्रयोगः",
-      "instructions": "Choose the correct word based on the contextual meaning provided in brackets:",
+      "sectionTitle": "Section A: Word Meaning Discrimination",
+      "sectionTitleSanskrit": "खण्डः 'क' · ध्वनिसाम्ये अर्थभेदः",
+      "instructions": "Write meanings of matching sounds demonstrating semantic shifts:",
       "totalMarks": 10,
       "questions": [
         {
           "num": 1,
-          "question": "सः मम ______________ अस्ति। (Family relative - स्वजनः / श्वजनः)",
-          "questionSanskrit": "सः मम ______________ अस्ति। (आत्मीयजनः)",
-          "marks": 5,
-          "type": "fill",
-          "answer": "स्वजनः",
-          "explanation": "दन्त्य-सकारेण 'स्वजनः' इत्युक्ते आत्मीयः बन्धुः, तालव्य-शकारेण 'श्वजनः' इत्युक्ते कुक्कुरः (Dog) भवति।"
-        },
-        {
-          "num": 2,
-          "question": "पात्रे अन्नस्य ______________ अस्ति। (Piece/Fragment - सकलम् / शकलम्)",
-          "questionSanskrit": "पात्रे अन्नस्य ______________ अस्ति। (खण्डम्)",
-          "marks": 5,
-          "type": "fill",
-          "answer": "शकलम्",
-          "explanation": "तालव्य-शकारेण 'शकलम्' इत्युक्ते खण्डः (Piece), दन्त्य-सकारेण 'सकलम्' इत्युक्ते समग्रम् (Entire) भवति।"
+          "question": "अर्थं लिखत (Write meanings of matching sounds):\n१. सकृत् = ______________________________\n२. शकृत् = ______________________________\n३. स्वजनः = ______________________________\n४. श्वजनः = ______________________________\n५. सकलम् = ______________________________\n६. शकलम् = ______________________________",
+          "questionSanskrit": "समानोच्चारित-शब्दानाम् अर्थं लिखत:",
+          "marks": 10,
+          "type": "short_ans",
+          "answer": "१. सकृत् = एकवारम् (Once)\n२. शकृत् = मलम् / विष्ठा (Feces / dung)\n३. स्वजनः = बन्धुजनः / आत्मीयः (One's own people / relatives)\n४. श्वजनः = शुनकः / कुक्कुरः (Dog)\n५. सकलम् = सम्पूर्णम् / सर्वम् (Entire / whole)\n६. शकलम् = खण्डम् / भागः (Piece / fragment)",
+          "explanation": "दन्त्य-सकारस्य (स) तथा तालव्य-शकारस्य (श) भेदेन समग्रस्य पदस्य अर्थः परिवर्तितः भवति।"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Minimal Pairs Contextual Selection",
-      "sectionTitleSanskrit": "खण्डः 'ख' · सकृत्-सकल-प्रयोगः",
-      "instructions": "Select the correct phonemic alternative for the sentence:",
+      "sectionTitle": "Section B: Fill in the Blanks with Contextual Terms",
+      "sectionTitleSanskrit": "खण्डः 'ख' · उचितविकल्पचयनम्",
+      "instructions": "Choose the correct option to complete the sentences:",
       "totalMarks": 10,
       "questions": [
         {
-          "num": 3,
-          "question": "अहम् ______________ तत्र गतवान्। (Once - सकृत् / शकृत्)",
-          "questionSanskrit": "अहम् ______________ तत्र गतवान्। (एकवारम्)",
-          "marks": 5,
+          "num": 2,
+          "question": "शुद्धं पदं चित्वा रिक्तस्थानं पूरयत (Choose correct option):\n१. वृत्रासुरस्य मन्त्रे ऋत्विजः __________ परिवर्तितवन्तः। (पदम् / स्वरम्)\n२. वर्णाः अतीव कठोररूपेण मा उच्चारणीयाः, नापि __________। (अतिशैथिल्येन / स्पष्टतया)\n३. सम्यग्वर्णप्रयोगेण जनः __________ महीयते। (ब्रह्मलोके / भूलोके)",
+          "questionSanskrit": "कोष्ठकात् उचितपदं चित्वा रिक्तस्थानं पूरयत:",
+          "marks": 10,
           "type": "fill",
-          "answer": "सकृत्",
-          "explanation": "'सकृत्' इत्युक्ते एकवारम् (Once), 'शकृत्' इत्युक्ते पुरीषम् / मलं (Excrement) भवति।"
-        },
-        {
-          "num": 4,
-          "question": "गगने ______________ मण्डलम् दृश्यते। (Full/Entire - सकलम् / शकलम्)",
-          "questionSanskrit": "गगने ______________ मण्डलम् दृश्यते। (समग्रम्)",
-          "marks": 5,
-          "type": "fill",
-          "answer": "सकलम्",
-          "explanation": "'सकलम्' इत्युक्ते सम्पूर्णम् (Full/Entire), 'शकलम्' इत्युक्ते तु खण्डः।"
+          "answer": "१. स्वरम्\n२. अतिशैथिल्येन\n३. ब्रह्मलोके",
+          "explanation": "पाठान्तर्गत-कथनानि श्लोकभावाश्च।"
         }
       ]
     }
@@ -10666,64 +10648,46 @@ export const WORKSHEETS: Worksheet[] = [
 },
 {
   "id": "ws-grade8-ch12-ws2",
-  "title": "Chapter 12 · Worksheet 2: Reader Profile Identification (पाठकगुणाः पाठकाधमाश्च)",
-  "titleSanskrit": "द्वादशः पाठः · कार्यपत्रिका २: पाठक-गुण-दोष-विवेकः",
+  "title": "Worksheet 2: Grammar & Classification of Readers (व्याकरणं पाठकवर्गीकरणं च)",
+  "titleSanskrit": "द्वादशः पाठः कार्यपत्रिका २: व्याकरणं पाठकगुणाः दोषाश्च",
   "category": "grade8",
-  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
-  "grade": "Grade 8 (Deepakam)",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
-  "timeLimit": "30 Minutes",
-  "description": "Evaluating reciting student profiles and tagging them as उत्तमपाठकः (Good reader) or अधमपाठकः (Poor reader).",
+  "timeLimit": "40 Mins",
+  "description": "Master Sandhi splits from Chapter 12 and categorize the six virtues and six flaws of reading.",
   "sections": [
     {
-      "sectionTitle": "Section A: Physical Habits & Reading Styles",
-      "sectionTitleSanskrit": "खण्डः 'क' · पाठक-शारीरिक-चेष्टा-परीक्षणम्",
-      "instructions": "Read the reader behavior and label as उत्तमपाठकः or अधमपाठकः:",
+      "sectionTitle": "Section A: Sandhi Splitting",
+      "sectionTitleSanskrit": "खण्डः 'क' · सन्धिच्छेदः",
+      "instructions": "Split the joined Sanskrit terms according to grammatical rules:",
       "totalMarks": 10,
       "questions": [
         {
           "num": 1,
-          "question": "Ramesh shakes his head vigorously while reading a text line (शिरःकम्पी). → _________________",
-          "questionSanskrit": "वाचनसमये शिरःकम्पनं करोति।",
-          "marks": 5,
-          "type": "short_ans",
-          "answer": "अधमपाठकः",
-          "explanation": "पाणिनीयशिक्षायां 'गीती शीघ्री शिरःकम्पी... षडेते पाठकाधमाः' इति शिरःकम्पी अधमपाठकेषु गण्यते।"
-        },
-        {
-          "num": 2,
-          "question": "Sunita pauses perfectly at commas and word junctions with clear separation (पदच्छेदः). → _________________",
-          "questionSanskrit": "पदानां स्पष्टतया पृथक्करणं कृत्वा पठति।",
-          "marks": 5,
-          "type": "short_ans",
-          "answer": "उत्तमपाठकः",
-          "explanation": "'माधुर्यम् अक्षरव्यक्तिः पदच्छेदस्तु सुस्वरः... षडेते पाठका गुणाः' इति पदच्छेदः उत्तमपाठकस्य गुणः।"
+          "question": "सन्धिच्छेदं कुरुत (Split the joined terms):\n१. यद्यपि = _____ + _____\n२. नाधीषे = _____ + _____\n३. माभूत् = _____ + _____\n४. षडेते = _____ + _____\n५. पाठकाधमाः = _____ + _____",
+          "questionSanskrit": "पदानां सन्धिच्छेदं कुरुत:",
+          "marks": 10,
+          "type": "fill",
+          "answer": "१. यद्यपि = यदि + अपि (यण् सन्धिः)\n२. नाधीषे = न + अधीषे (दीर्घ सन्धिः)\n३. माभूत् = मा + अभूत् (अडभाव-योगे सन्धिः)\n४. षडेते = षट् + एते (जश्त्व सन्धिः)\n५. पाठकाधमाः = पाठकाः + अधमाः (विसर्गलोप सन्धिः)",
+          "explanation": "पाठान्तर्गत-सन्धिकार्याणि।"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Pace, Articulation & Sound Dynamics",
-      "sectionTitleSanskrit": "खण्डः 'ख' · गतिः उच्चारस्पष्टता च",
-      "instructions": "Analyze the reading performance and categorize:",
+      "sectionTitle": "Section B: Classification of Reader Virtues and Flaws",
+      "sectionTitleSanskrit": "खण्डः 'ख' · पाठकगुणाः दोषाः च",
+      "instructions": "Categorize reader attributes into virtues (गुणाः) and vices (दोषाः):",
       "totalMarks": 10,
       "questions": [
         {
-          "num": 3,
-          "question": "Akhil reads sentences at an extremely rapid rushing velocity (शीघ्री). → _________________",
-          "questionSanskrit": "अतीव द्रुतगत्या अस्पष्टं धावन् इव पठति।",
-          "marks": 5,
-          "type": "short_ans",
-          "answer": "अधमपाठकः",
-          "explanation": "'शीघ्री' (अतिद्रुतं पठन्) अधमपाठकेषु परिगणितः अस्ति।"
-        },
-        {
-          "num": 4,
-          "question": "Priya delivers the shlokas with accurate sound dynamics and clarity (अक्षरव्यक्तिः, सुस्वरः, धैर्यम्). → _________________",
-          "questionSanskrit": "स्पष्टाक्षरैः सुस्वरेण धैर्येण च श्लोकं गायति।",
-          "marks": 5,
-          "type": "short_ans",
-          "answer": "उत्तमपाठकः",
-          "explanation": "अक्षरव्यक्तिः, सुस्वरः, धैर्यं च उत्तमपाठकस्य प्रमुखाः गुणाः सन्ति।"
+          "num": 2,
+          "question": "पाठकस्य गुणानां दोषाणां च मञ्जूषातः चयनं कुरुत (Categorize into Box):\nमञ्जूषा: [ सुस्वरः, शिरःकम्पी, शीघ्री, धैर्यम्, अक्षरव्यक्तिः, लिखितपाठकः, माधुर्यम्, अनर्थज्ञः ]\n• गुणाः: __________________________________________________\n• दोषाः: __________________________________________________",
+          "questionSanskrit": "मञ्जूषातः गुणान् दोषान् च पृथक् कुरुत:",
+          "marks": 10,
+          "type": "grammar",
+          "answer": "• गुणाः: सुस्वरः, धैर्यम्, अक्षरव्यक्तिः, माधुर्यम्\n• दोषाः: शिरःकम्पी, शीघ्री, लिखितपाठकः, अनर्थज्ञः",
+          "explanation": "पाणिनीयशिक्षायाः अनुसारं षड् पाठकाः गुणाः तथा षट् पाठकाधमाः भवन्ति।"
         }
       ]
     }
@@ -10731,64 +10695,46 @@ export const WORKSHEETS: Worksheet[] = [
 },
 {
   "id": "ws-grade8-ch12-ws3",
-  "title": "Chapter 12 · Worksheet 3: Textual Comprehension Passage (गद्यांश-बोधनम्)",
-  "titleSanskrit": "द्वादशः पाठः · कार्यपत्रिका ३: गद्यांश-बोधनम्",
+  "title": "Worksheet 3: Vedangas Knowledge Check (षड्वेदाङ्ग-परिज्ञानम्)",
+  "titleSanskrit": "द्वादशः पाठः कार्यपत्रिका ३: षड्वेदाङ्ग-परिज्ञानम्",
   "category": "grade8",
-  "categoryLabel": "Grade 8 Sanskrit (अष्टमकक्षा)",
-  "grade": "Grade 8 (Deepakam)",
+  "categoryLabel": "Grade 8 Sanskrit · CBSE Deepakam",
+  "grade": "CBSE Grade 8 (Deepakam Framework)",
   "totalMarks": 20,
-  "timeLimit": "30 Minutes",
-  "description": "Reading comprehension questions based on the Vritrasura, sacrificial priests, and Indra narrative (Page 137).",
+  "timeLimit": "40 Mins",
+  "description": "Explore the six auxiliary disciplines (षड्वेदाङ्गानि) of Vedic knowledge and their specialized domains.",
   "sections": [
     {
-      "sectionTitle": "Section A: Mythological Context Comprehension",
-      "sectionTitleSanskrit": "खण्डः 'क' · मन्त्र-स्वर-विपर्यासः",
-      "instructions": "Read the snippet: 'स्वरपरिवर्तनेन अर्थः परिवर्तितः। परिणामतः वृत्रासुरस्य स्थाने इन्द्रस्य बलं वर्धितम्।' and answer:",
+      "sectionTitle": "Section A: Vedangas to Core Subject Matching",
+      "sectionTitleSanskrit": "खण्डः 'क' · वेदाङ्ग-मेलनम्",
+      "instructions": "Match the Vedanga branch to its core subject:",
       "totalMarks": 10,
       "questions": [
         {
           "num": 1,
-          "question": "मन्त्रेषु कस्य परिवर्तनेन अर्थः परिवर्तितः? (By the alteration of what did the meaning change?)",
-          "questionSanskrit": "मन्त्रेषु कस्य परिवर्तनेन अर्थः परिवर्तितः?",
-          "marks": 5,
-          "type": "short_ans",
-          "answer": "स्वरस्य परिवर्तनेन (स्वरपरिवर्तनेन / उदात्तादि-स्वरदोषात्)",
-          "explanation": "ऋत्विजः मन्त्रे स्वरपरिवर्तनम् अकुर्वन्, येन मन्त्रस्यार्थः परिवर्तितः अभवत्।"
-        },
-        {
-          "num": 2,
-          "question": "स्वस्य बलं वर्धयितुम् इन्द्रं जेतुं च यज्ञस्य आयोजनं कः कृतवान्?",
-          "questionSanskrit": "यज्ञस्य आयोजनं कः कृतवान्?",
-          "marks": 5,
-          "type": "short_ans",
-          "answer": "वृत्रासुरः (असुराणां राजा)",
-          "explanation": "असुराणां राजा वृत्रासुरः इन्द्रं पराजेतुं यज्ञम् अकारयत्।"
+          "question": "उचितं मेलनं कुरुत (Match the Vedanga branch to its core subject):\nस्तम्भ 'क' (वेदाङ्गम्)    स्तम्भ 'ख' (मुख्यविषयः)         उत्तरम्\n(१) शिक्षा              (A) भाषायाः नियमाः             १. _____\n(२) व्याकरणम्          (B) यज्ञादीनां क्रियाविधिः        २. _____\n(३) कल्पः              (C) वर्णानाम् उच्चारणविधिः      ३. _____\n(४) निरुक्तम्           (D) शब्दानां व्युत्पत्तिः         ४. _____",
+          "questionSanskrit": "वेदाङ्गैः सह तेषां विषयान् मेलयत:",
+          "marks": 10,
+          "type": "matching",
+          "answer": "१. (१) → (C) वर्णानाम् उच्चारणविधिः\n२. (२) → (A) भाषायाः नियमाः\n३. (३) → (B) यज्ञादीनां क्रियाविधिः\n४. (४) → (D) शब्दानां व्युत्पत्तिः",
+          "explanation": "वेदाङ्गानि वेदस्य अवगमनाय षट् अङ्गानि भवन्ति।"
         }
       ]
     },
     {
-      "sectionTitle": "Section B: Outcome & Grammatical Inference",
-      "sectionTitleSanskrit": "खण्डः 'ख' · यज्ञफलम्",
-      "instructions": "Answer the inference and outcome questions in Sanskrit:",
+      "sectionTitle": "Section B: Vedanga Enumeration & Tigress Analogy",
+      "sectionTitleSanskrit": "खण्डः 'ख' · वेदाङ्ग-संख्या व्याघ्री-दृष्टान्तश्च",
+      "instructions": "Fill the blanks and explain the tigress analogy in short answers:",
       "totalMarks": 10,
       "questions": [
         {
-          "num": 3,
-          "question": "यज्ञावसाने कस्य बलं वर्धितम्? (Whose strength increased as a result?)",
-          "questionSanskrit": "यज्ञावसाने कस्य बलं वर्धितम्?",
-          "marks": 5,
+          "num": 2,
+          "question": "रिक्तस्थानं पूरयत लघूत्तरं च लिखत:\n१. वेदाङ्गानि __________ सन्ति। (पञ्च / षट्)\n२. व्याघ्री स्वपुत्रान् दंष्ट्राभ्यां नयन्ती किमर्थं भीता भवति? (Why is the tigress fearful?)\n→ __________________________________________________",
+          "questionSanskrit": "रिक्तस्थानं पूरयत प्रश्नस्य च उत्तरं लिखत:",
+          "marks": 10,
           "type": "short_ans",
-          "answer": "इन्द्रस्य (देवानां राज्ञः)",
-          "explanation": "मन्त्रे स्वरविपर्यासात् वृत्रासुरस्य स्थाने इन्द्रस्य बलं वर्धितम् अभवत्।"
-        },
-        {
-          "num": 4,
-          "question": "'इन्द्रशत्रुर्वर्धस्व' मन्त्रे ऋत्विजां स्वरदोषात् कः इन्द्रेण हतः?",
-          "questionSanskrit": "स्वरदोषात् कः हतः अभवत्?",
-          "marks": 5,
-          "type": "short_ans",
-          "answer": "वृत्रासुरः",
-          "explanation": "यथोक्तम्—'स वाग्वज्रो यजमानं हिनस्ति यथेन्द्रशत्रुः स्वरतोऽपराधात्' अर्थात् वृत्रासुरः एव हतः।"
+          "answer": "१. षट्\n२. व्याघ्री पतनभेदाभ्यां (शिशोः भूमौ पतनात् तथा दन्तानां तीक्ष्णतया शिशोः पीडनात्) भीता भवति। तथैव वर्णानाम् उच्चारणम् अतिकठोररूपेण अतिशैथिल्येण वा न कर्तव्यम्।",
+          "explanation": "यथा पतनभेदाभ्यां भीता व्याघ्री दंष्ट्राभ्यां पुत्रान् हरेत् न च पीडयेत्, तद्वद् वर्णान् प्रयोजयेत्।"
         }
       ]
     }
