@@ -64,6 +64,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade9_samasa', label: 'Grade 9 Appendix 2: समास-प्रकरणम् (3 Quizzes · 30 Qs)', icon: '🧩' },
     { id: 'grade9_vachya', label: 'Grade 9 Appendix 3: वाच्य-परिवर्तनम् (3 Quizzes · 30 Qs)', icon: '🔄' },
     { id: 'grade9_shabda', label: 'Grade 9 Appendix 4: शब्दरूपाणि (3 Quizzes · 30 Qs)', icon: '📖' },
+    { id: 'grade9_dhatu', label: 'Grade 9 Appendix 5: धातुरूपाणि (3 Quizzes · 30 Qs)', icon: '⚡' },
 
 
 ] as const;
@@ -25953,6 +25954,585 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
     correctIndex: 1,
     explanation: "'ङि' इति सप्तमी-एकवचनस्य प्रत्ययः, यस्य 'इ' अवशिष्यते (यथा— ब्रह्मणि, पथि, विदुषि, वाचि, जगति)।",
     difficulty: "easy",
+    points: 10
+  },
+// ==========================================
+  // GRADE 9 APPENDIX 5: धातुरूपाणि (30 MCQs)
+  // ==========================================
+
+  // --- Quiz 1: Causative Verbs & Present Tense ---
+  {
+    id: "g9-dhatu-q1-1",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 1: Causative Verbs & Present Tense",
+    question: "Translate the active verb form 'पठति' (he reads) into its correct causative (णिजन्त) form:",
+    questionSanskrit: "'पठति' इत्यस्य णिजन्त-रूपं किं भवति?",
+    options: [
+      "पाठयति",
+      "पाठीयते",
+      "पठयति",
+      "पाठापयति"
+    ],
+    correctIndex: 0,
+    explanation: "पठ् धातोः णिच्-प्रत्यये उपधायाम् अकारस्य वृद्धौ 'पाठयति' इति रूपं सिध्यति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q1-2",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 1: Causative Verbs & Present Tense",
+    question: "What is the causative present singular form of the root 'पा' (to drink)?",
+    questionSanskrit: "'पा' धातोः लट् लकारे णिजन्त-रूपं किम्?",
+    options: [
+      "पालयति",
+      "पाययति",
+      "पाति",
+      "पिबयति"
+    ],
+    correctIndex: 1,
+    explanation: "पा-धातोः णिच्-प्रत्यये आय्-आदेशे 'पाययति' (माता शिशुं दुग्धं पाययति) इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q1-3",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 1: Causative Verbs & Present Tense",
+    question: "Identify the causative present form corresponding to the root 'दृश्' (to see):",
+    questionSanskrit: "'दृश्' धातोः णिजन्त-रूपं किम्?",
+    options: [
+      "पश्ययति",
+      "दृशयति",
+      "दर्शयति",
+      "दीक्षयति"
+    ],
+    correctIndex: 2,
+    explanation: "दृश् धातोः णिचि लघूपधगुणे ऋकारस्य अर्-आदेशे 'दर्शयति' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q1-4",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 1: Causative Verbs & Present Tense",
+    question: "Conjugate the root 'वृध्' into the लट् लकार प्रथमपुरुष बहुवचन slot:",
+    questionSanskrit: "'वृध्' धातोः लट् लकार प्रथमपुरुष-बहुवचने किं रूपम्?",
+    options: [
+      "वर्धति",
+      "वर्धते",
+      "वर्धेते",
+      "वर्धन्ते"
+    ],
+    correctIndex: 3,
+    explanation: "वृध् धातोः आत्मनेपदे लट् लकार प्रथमपुरुष बहुवचने 'वर्धन्ते' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q1-5",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 1: Causative Verbs & Present Tense",
+    question: "What is the लट् लकार उत्तमपुरुष एकवचन form of the root 'लभ्' (to obtain)?",
+    questionSanskrit: "'लभ्' धातोः लट् लकार उत्तमपुरुष-एकवचने किं रूपम्?",
+    options: [
+      "लभे",
+      "लभामि",
+      "लभते",
+      "लभावहे"
+    ],
+    correctIndex: 0,
+    explanation: "लभ् धातोः आत्मनेपदे उत्तमपुरुष एकवचने 'इट्' प्रत्यये 'लभे' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q1-6",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 1: Causative Verbs & Present Tense",
+    question: "Identify the person and number coordinates for the verbal form 'शेते' (शीङ् धातुः):",
+    questionSanskrit: "'शेते' इति क्रियापदस्य कः पुरुषः किं च वचनम्?",
+    options: [
+      "प्रथमपुरुषः, द्विवचनम्",
+      "प्रथमपुरुषः, एकवचनम्",
+      "मध्यमपुरुषः, एकवचनम्",
+      "उत्तमपुरुषः, एकवचनम्"
+    ],
+    correctIndex: 1,
+    explanation: "शीङ्-धातोः अदादिगणे लट् लकारस्य प्रथमपुरुषैकवचने 'शेते' (शिशुः शेते) इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q1-7",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 1: Causative Verbs & Present Tense",
+    question: "Give the लट् लकार प्रथमपुरुष बहुवचन form of the unique root 'शीङ्':",
+    questionSanskrit: "'शीङ्' धातोः लट् लकार प्रथमपुरुष-बहुवचने किं रूपम्?",
+    options: [
+      "शयन्ते",
+      "शयाते",
+      "शेरते",
+      "शीरते"
+    ],
+    correctIndex: 2,
+    explanation: "'शीङः सार्वधातुके गुणः' तथा 'शीङो रुट्' इति सूत्रेण बहुवचने 'शेरते' इति रूपं सिध्यति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q1-8",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 1: Causative Verbs & Present Tense",
+    question: "Conjugate 'भुज्' (to eat/enjoy) in the लट् लकार प्रथमपुरुष एकवचन position:",
+    questionSanskrit: "'भुज्' धातोः लट् प्रथमपुरुष-एकवचने किं रूपम्?",
+    options: [
+      "भुजति",
+      "भोजते",
+      "भुञ्जते",
+      "भुङ्क्ते"
+    ],
+    correctIndex: 3,
+    explanation: "रुधादिगणस्य भुज्-धातोः श्नम्-विकरणे आत्मनेपदे 'भुङ्क्ते' इति रूपं भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q1-9",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 1: Causative Verbs & Present Tense",
+    question: "What is the लट् लकार मध्यमपुरुष बहुवचन form of the root 'लभ्'?",
+    questionSanskrit: "'लभ्' धातोः लट् लकार मध्यमपुरुष-बहुवचने किं रूपम्?",
+    options: [
+      "लभध्वे",
+      "लभथ",
+      "लभन्ते",
+      "लभध्वेम"
+    ],
+    correctIndex: 0,
+    explanation: "आत्मनेपदे मध्यमपुरुष-बहुवचने 'ध्वम्' प्रत्यये 'लभध्वे' इति रूपं सिध्यति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q1-10",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 1: Causative Verbs & Present Tense",
+    question: "Identify the causative (णिजन्त) form of the root 'श्रु' (to hear):",
+    questionSanskrit: "'श्रु' धातोः णिजन्त-रूपं किं भवति?",
+    options: [
+      "श्रवयति",
+      "श्रावयति",
+      "शृण्वयति",
+      "श्राययति"
+    ],
+    correctIndex: 1,
+    explanation: "श्रु-धातोः णिचि वृद्धौ उकारस्य आवादेशे 'श्रावयति' (सः कथां श्रावयति) इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+
+  // --- Quiz 2: Future, Past, & Imperative Moods ---
+  {
+    id: "g9-dhatu-q2-1",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 2: Future, Past, & Imperative Moods",
+    question: "Conjugate the root 'पठ्' into the लृट् लकार प्रथमपुरुष द्विवचन position:",
+    questionSanskrit: "'पठ्' धातोः लृट् लकार प्रथमपुरुष-द्विवचने किं रूपम्?",
+    options: [
+      "पठिष्यतः",
+      "पठतः",
+      "पठिष्यन्ति",
+      "पठेताम्"
+    ],
+    correctIndex: 0,
+    explanation: "पठ् धातोः लृटि प्रथमपुरुष-द्विवचने 'पठिष्यतः' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q2-2",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 2: Future, Past, & Imperative Moods",
+    question: "What is the लङ् लकार प्रथमपुरुष बहुवचन form of the root 'पठ्'?",
+    questionSanskrit: "'पठ्' धातोः लङ् लकार प्रथमपुरुष-बहुवचने किं रूपम्?",
+    options: [
+      "अपठत्",
+      "अपठन्",
+      "अपठताम्",
+      "अपठनः"
+    ],
+    correctIndex: 1,
+    explanation: "पठ् धातोः लङ् लकार प्रथमपुरुष-बहुवचने 'झि' प्रत्ययस्य अन्-आदेशे 'अपठन्'।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q2-3",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 2: Future, Past, & Imperative Moods",
+    question: "Provide the लोट् लकार प्रथमपुरुष एकवचन choices listed for 'पठ्':",
+    questionSanskrit: "'पठ्' धातोः लोट् प्रथमपुरुष-एकवचने किं रूपद्वयम्?",
+    options: [
+      "पठतु / पठेत्",
+      "अपठत् / पठतु",
+      "पठतु / पठतात्",
+      "पठानि / पठतु"
+    ],
+    correctIndex: 2,
+    explanation: "लोट् लकार प्रथमपुरुष-एकवचने तातङ्-आदेशविकल्पेन 'पठतु' तथा 'पठतात्' इति रूपद्वयं भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q2-4",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 2: Future, Past, & Imperative Moods",
+    question: "Give the लृट् लकार प्रथमपुरुष बहुवचन form of the root 'लभ्':",
+    questionSanskrit: "'लभ्' धातोः लृट् लकार प्रथमपुरुष-बहुवचने किं रूपम्?",
+    options: [
+      "लभिष्यन्ते",
+      "लप्स्यते",
+      "लभन्ते",
+      "लप्स्यन्ते"
+    ],
+    correctIndex: 3,
+    explanation: "लभ् धातोः लृति भकारस्य चर्त्वे पकारे सति 'लप्स्यन्ते' इति रूपं भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q2-5",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 2: Future, Past, & Imperative Moods",
+    question: "Conjugate 'वृध्' into its लङ् लकार प्रथमपुरुष एकवचन form:",
+    questionSanskrit: "'वृध्' धातोः लङ् प्रथमपुरुष-एकवचने किं रूपम्?",
+    options: [
+      "अवर्धत",
+      "अवर्धन्त",
+      "वर्धते",
+      "अवर्धेताम्"
+    ],
+    correctIndex: 0,
+    explanation: "लङ् लकार प्रथमपुरुष-एकवचने 'त' प्रत्यये अट्-आगमे 'अवर्धत' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q2-6",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 2: Future, Past, & Imperative Moods",
+    question: "What is the लङ् लकार प्रथमपुरुष बहुवचन form of the unique root 'शीङ्'?",
+    questionSanskrit: "'शीङ्' धातोः लङ् लकार प्रथमपुरुष-बहुवचने किं रूपम्?",
+    options: [
+      "अशयन्त",
+      "अशेरत",
+      "अशेताम्",
+      "अशयिषत"
+    ],
+    correctIndex: 1,
+    explanation: "शीङ्-धातोः लङ् लकार प्रथमपुरुष-बहुवचने 'अशेरत' इति रूपं सिध्यति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q2-7",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 2: Future, Past, & Imperative Moods",
+    question: "Conjugate 'भुज्' inside the लोट् लकार प्रथमपुरुष एकवचन grid slot:",
+    questionSanskrit: "'भुज्' धातोः लोट् प्रथमपुरुष-एकवचने किं रूपम्?",
+    options: [
+      "भुञ्जताम्",
+      "भुजताम्",
+      "भुङ्क्ताम्",
+      "भोक्ष्यताम्"
+    ],
+    correctIndex: 2,
+    explanation: "भुज्-धातोः लोट् प्रथमपुरुष-एकवचने 'ताम्' प्रत्यये 'भुङ्क्ताम्' इति रूपं भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q2-8",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 2: Future, Past, & Imperative Moods",
+    question: "What is the लोट् लकार मध्यमपुरुष एकवचन form of the root 'वृध्'?",
+    questionSanskrit: "'वृध्' धातोः लोट् मध्यमपुरुष-एकवचने किं रूपम्?",
+    options: [
+      "वर्धत",
+      "अवर्धथाः",
+      "वर्धेथाम्",
+      "वर्धस्व"
+    ],
+    correctIndex: 3,
+    explanation: "लोट् मध्यमपुरुष-एकवचने 'थास्' स्थाने 'स्व' आदेशे 'वर्धस्व' इति रूपं सिध्यति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q2-9",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 2: Future, Past, & Imperative Moods",
+    question: "Provide the लङ् लकार मध्यमपुरुष एकवचन form of 'लभ्':",
+    questionSanskrit: "'लभ्' धातोः लङ् लकार मध्यमपुरुष-एकवचने किं रूपम्?",
+    options: [
+      "अलभथाः",
+      "अलभत",
+      "लभस्व",
+      "अलभध्वम्"
+    ],
+    correctIndex: 0,
+    explanation: "लङ् लकार मध्यमपुरुष-एकवचने 'थास्' प्रत्यये 'अलभथाः' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q2-10",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 2: Future, Past, & Imperative Moods",
+    question: "Give the लृट् लकार प्रथमपुरुष एकवचन form of 'शीङ्' (to sleep):",
+    questionSanskrit: "'शीङ्' धातोः लृट् लकार प्रथमपुरुष-एकवचने किं रूपम्?",
+    options: [
+      "शेष्यते",
+      "शयिष्यते",
+      "शायिष्यते",
+      "शेरते"
+    ],
+    correctIndex: 1,
+    explanation: "शीङ्-धातोः लृटि इट्-आगमे गुणे च 'शयिष्यते' इति रूपं सिध्यति।",
+    difficulty: "easy",
+    points: 10
+  },
+
+  // --- Quiz 3: Potential Mood & Paradigm Settings ---
+  {
+    id: "g9-dhatu-q3-1",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 3: Potential Mood & Paradigm Settings",
+    question: "Conjugate the root 'पठ्' into the विधिलिङ् प्रथमपुरुष बहुवचन slot:",
+    questionSanskrit: "'पठ्' धातोः विधिलिङ् प्रथमपुरुष-बहुवचने किं रूपम्?",
+    options: [
+      "पठेयुः",
+      "पठेताम्",
+      "पठेत्",
+      "पठन्ति"
+    ],
+    correctIndex: 0,
+    explanation: "विधिलिङ् प्रथमपुरुष-बहुवचने 'जुस्' प्रत्यये 'पठेयुः' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q3-2",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 3: Potential Mood & Paradigm Settings",
+    question: "What is the विधिलिङ् उत्तमपुरुष एकवचन form of the root 'पठ्'?",
+    questionSanskrit: "'पठ्' धातोः विधिलिङ् उत्तमपुरुष-एकवचने किं रूपम्?",
+    options: [
+      "पठेव",
+      "पठेयम्",
+      "पठेम",
+      "पठानि"
+    ],
+    correctIndex: 1,
+    explanation: "विधिलिङ् उत्तमपुरुष-एकवचने 'इयम्' आदेशे 'पठेयम्' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q3-3",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 3: Potential Mood & Paradigm Settings",
+    question: "Provide the विधिलिङ् प्रथमपुरुष बहुवचन form of 'वृध्':",
+    questionSanskrit: "'वृध्' धातोः विधिलिङ् प्रथमपुरुष-बहुवचने किं रूपम्?",
+    options: [
+      "वर्धन्ते",
+      "वर्धेरम्",
+      "वर्धेरन्",
+      "वर्धेयाताम्"
+    ],
+    correctIndex: 2,
+    explanation: "आत्मनेपदे विधिलिङ् प्रथमपुरुष-बहुवचने 'रन्' प्रत्यये 'वर्धेरन्' इति रूपं भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q3-4",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 3: Potential Mood & Paradigm Settings",
+    question: "Conjugate 'लभ्' inside the विधिलिङ् मध्यमपुरुष एकवचन slot:",
+    questionSanskrit: "'लभ्' धातोः विधिलिङ् मध्यमपुरुष-एकवचने किं रूपम्?",
+    options: [
+      "लभेथा",
+      "लभस्व",
+      "लभेत",
+      "लभेथाः"
+    ],
+    correctIndex: 3,
+    explanation: "विधिलिङ् मध्यमपुरुष-एकवचने 'थास्' स्थाने 'सीयुट्' आगमे 'लभेथाः' इति रूपं भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q3-5",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 3: Potential Mood & Paradigm Settings",
+    question: "What is the विधिलिङ् प्रथमपुरुष एकवचन form of the special root 'शीङ्'?",
+    questionSanskrit: "'शीङ्' धातोः विधिलिङ् प्रथमपुरुष-एकवचने किं रूपम्?",
+    options: [
+      "शयीत",
+      "शेत",
+      "शयेत",
+      "शयीयाताम्"
+    ],
+    correctIndex: 0,
+    explanation: "शीङ्-धातोः विधिलिङ् लकार प्रथमपुरुष-एकवचने 'शयीत' इति रूपं भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q3-6",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 3: Potential Mood & Paradigm Settings",
+    question: "Conjugate 'भुज्' into the विधिलिङ् प्रथमपुरुष बहुवचन slot:",
+    questionSanskrit: "'भुज्' धातोः विधिलिङ् प्रथमपुरुष-बहुवचने किं रूपम्?",
+    options: [
+      "भोक्ष्येरन्",
+      "भुञ्जीरन्",
+      "भुञ्जीरम्",
+      "भुञ्जते"
+    ],
+    correctIndex: 1,
+    explanation: "भुज्-धातोः आत्मनेपदे विधिलिङ् बहुवचने 'भुञ्जीरन्' इति रूपं सिध्यति।",
+    difficulty: "hard",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q3-7",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 3: Potential Mood & Paradigm Settings",
+    question: "Identify the tense, person, and number of the verb form 'अवर्धन्त':",
+    questionSanskrit: "'अवर्धन्त' इत्यस्य कः लकारः कः पुरुषः किं च वचनम्?",
+    options: [
+      "लट् लकारः, प्रथमपुरुषः, एकवचनम्",
+      "लृट् लकारः, उत्तमपुरुषः, बहुवचनम्",
+      "लङ् लकारः, प्रथमपुरुषः, बहुवचनम्",
+      "लोट् लकारः, मध्यमपुरुषः, द्विवचनम्"
+    ],
+    correctIndex: 2,
+    explanation: "'अवर्धन्त' इति वृध्-धातोः लङ् लकार प्रथमपुरुष-बहुवचनस्य रूपम्।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q3-8",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 3: Potential Mood & Paradigm Settings",
+    question: "Identify the grammatical coordinate for 'भोजनं भोक्ष्यते':",
+    questionSanskrit: "'भोक्ष्यते' इत्यस्य कः लकारः?",
+    options: [
+      "लट् लकारः, मध्यमपुरुषः",
+      "लङ् लकारः, प्रथमपुरुषः",
+      "लोट् लकारः, उत्तमपुरुषः",
+      "लृट् लकारः, प्रथमपुरुषः, एकवचनम्"
+    ],
+    correctIndex: 3,
+    explanation: "'भोक्ष्यते' इति भुज्-धातोः भविष्यत्काले लृट् लकारे प्रथमपुरुषैकवचने रूपम्।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q3-9",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 3: Potential Mood & Paradigm Settings",
+    question: "Which group of roots shares the exact Atmanepada conjugation pattern of 'वृध्'?",
+    questionSanskrit: "के धातवः 'वृध्' धातुवत् आत्मनेपदे रूपं धारयन्ति?",
+    options: [
+      "भाषते, वर्तते, कम्पते",
+      "पठति, लिखति, खादति",
+      "करोति, शृणोति, जानाति",
+      "अस्ति, भवति, गच्छति"
+    ],
+    correctIndex: 0,
+    explanation: "भाषते, वर्तते, कम्पते, मोदते इत्यादयः सर्वे भ्वादिगणीयाः आत्मनेपदिनः धातवः।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-dhatu-q3-10",
+    category: "grade9_dhatu",
+    categoryLabel: "Grade 9 Appendix 5: धातुरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+    subCategory: "Quiz 3: Potential Mood & Paradigm Settings",
+    question: "What is the लोट् लकार उत्तमपुरुष बहुवचन form of 'शीङ्' (to sleep)?",
+    questionSanskrit: "'शीङ्' धातोः लोट् लकार उत्तमपुरुष-बहुवचने किं रूपम्?",
+    options: [
+      "शयामहे",
+      "शयामहै",
+      "शेरताम्",
+      "शयावहै"
+    ],
+    correctIndex: 1,
+    explanation: "लोट् उत्तमपुरुष-बहुवचने 'महै' प्रत्यये 'शयामहै' इति रूपं भवति।",
+    difficulty: "medium",
     points: 10
   }
 ];

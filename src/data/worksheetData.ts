@@ -17772,5 +17772,349 @@ export const WORKSHEETS: Worksheet[] = [
         ]
       }
     ]
+  },
+// ==========================================
+  // GRADE 9 APPENDIX 5 WORKSHEET 1: Active & Causative Transitions (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-dhatu-ws1",
+    title: "Worksheet 1: Active & Causative Transitions (10 Questions)",
+    titleSanskrit: "परिशिष्टम् ५ कार्यपत्रिका १: णिजन्त-परिवर्तनम् (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Complete the missing slots for active tenses and causative pairs based on pages 229–233 of the textbook.",
+    sections: [
+      {
+        sectionTitle: "Section A: Active & Causative Verbal Paradigms",
+        sectionTitleSanskrit: "खण्डः 'क' · णिजन्त-धातुरूपाणि",
+        instructions: "Complete the missing slots for the verbal paradigms and causative conversions.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "पठ् (लृट् प्रथमपुरुष) $\\rightarrow$ पठिष्यति | ___________ | ___________",
+            questionSanskrit: "पठ् धातोः लृट् लकार प्रथमपुरुषस्य रिक्तस्थाने पूरयत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "पठिष्यतः | पठिष्यन्ति",
+            explanation: "लृट् लकार प्रथमपुरुष-द्विवचने 'पठिष्यतः' तथा बहुवचने 'पठिष्यन्ति' इति भवतः।"
+          },
+          {
+            num: 2,
+            question: "पठ् (लङ् प्रथमपुरुष) $\\rightarrow$ ___________ | अपठताम् | ___________",
+            questionSanskrit: "पठ् धातोः लङ् लकार प्रथमपुरुषस्य रिक्तस्थाने पूरयत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "अपठत् | अपठन्",
+            explanation: "लङ् लकार प्रथमपुरुष-एकवचने 'अपठत्' तथा बहुवचने 'अपठन्' इति भवतः।"
+          },
+          {
+            num: 3,
+            question: "पठ् (विधिलिङ् प्रथमपुरुष) $\\rightarrow$ पठेत् | ___________ | ___________",
+            questionSanskrit: "पठ् धातोः विधिलिङ् प्रथमपुरुषस्य रिक्तस्थाने पूरयत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "पठेताम् | पठेयुः",
+            explanation: "विधिलिङ् प्रथमपुरुष-द्विवचने 'पठेताम्' तथा बहुवचने 'पठेयुः' इति भवतः।"
+          },
+          {
+            num: 4,
+            question: "लिख् धातोः प्रेरणार्थकं (Causative) रूपं किम्? $\\rightarrow$ ___________",
+            questionSanskrit: "लिख् धातोः णिजन्त-रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "लेखयति",
+            explanation: "लिख् धातोः णिचि लघूपधगुणे 'लेखयति' इति रूपं भवति।"
+          },
+          {
+            num: 5,
+            question: "हस् धातोः प्रेरणार्थकं (Causative) रूपं किम्? $\\rightarrow$ ___________",
+            questionSanskrit: "हस् धातोः णिजन्त-रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "हासयति",
+            explanation: "हस् धातोः णिचि उपधादीर्घे 'हासयति' इति रूपं भवति।"
+          },
+          {
+            num: 6,
+            question: "पा धातोः प्रेरणार्थकं (Causative) रूपं किम्? $\\rightarrow$ ___________",
+            questionSanskrit: "पा धातोः णिजन्त-रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "पाययति",
+            explanation: "पा धातोः णिचि आय्-आदेशे 'पाययति' इति रूपं सिध्यति।"
+          },
+          {
+            num: 7,
+            question: "गम् धातोः प्रेरणार्थकं (Causative) रूपं किम्? $\\rightarrow$ ___________",
+            questionSanskrit: "गम् धातोः णिजन्त-रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "गमयति",
+            explanation: "गम् धातोः णिचि उपधावृद्ध्यभावे 'गमयति' इति रूपं भवति।"
+          },
+          {
+            num: 8,
+            question: "दा धातोः प्रेरणार्थकं (Causative) रूपं किम्? $\\rightarrow$ ___________",
+            questionSanskrit: "दा धातोः णिजन्त-रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "दापयति",
+            explanation: "दा धातोः णिचि पुगागमे (प्) 'दापयति' इति रूपं सिध्यति।"
+          },
+          {
+            num: 9,
+            question: "पठ् (लोट् उत्तमपुरुष) $\\rightarrow$ ___________ | पठाव | पठाम",
+            questionSanskrit: "पठ् धातोः लोट् उत्तमपुरुषस्य रिक्तस्थानं पूरयत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "पठानि",
+            explanation: "लोट् लकार उत्तमपुरुष-एकवचने 'आनि' प्रत्यये 'पठानि' इति रूपं भवति।"
+          },
+          {
+            num: 10,
+            question: "पठ् (लङ् मध्यमपुरुष) $\\rightarrow$ अपठः | ___________ | ___________",
+            questionSanskrit: "पठ् धातोः लङ् मध्यमपुरुषस्य रिक्तस्थाने पूरयत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "अपठतम् | अपठत",
+            explanation: "लङ् लकार मध्यमपुरुष-द्विवचने 'अपठतम्' तथा बहुवचने 'अपठत' इति भवतः।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 APPENDIX 5 WORKSHEET 2: Atmanepada & Special Conjugations (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-dhatu-ws2",
+    title: "Worksheet 2: Atmanepada & Special Conjugations (10 Questions)",
+    titleSanskrit: "परिशिष्टम् ५ कार्यपत्रिका २: आत्मनेपद-विशिष्टधातवश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Supply the correct Atmanepada forms for वृध्, लभ्, शीङ्, and भुज् based on pages 234–240 of the textbook.",
+    sections: [
+      {
+        sectionTitle: "Section A: Atmanepada Paradigms",
+        sectionTitleSanskrit: "खण्डः 'क' · आत्मनेपदि-रूपाणि",
+        instructions: "Conjugate the given roots in the indicated tense, person, and number.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "वृध् (लट् लकार प्रथमपुरुष बहुवचनम्) $\\rightarrow$ ___________",
+            questionSanskrit: "वृध् धातोः लट् लकार प्रथमपुरुष-बहुवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "वर्धन्ते",
+            explanation: "वृध् धातोः लट् प्रथमपुरुष-बहुवचने 'झ' (अन्त) प्रत्यये 'वर्धन्ते' इति भवति।"
+          },
+          {
+            num: 2,
+            question: "लभ् (लट् लकार उत्तमपुरुष एकवचनम्) $\\rightarrow$ ___________",
+            questionSanskrit: "लभ् धातोः लट् उत्तमपुरुष-एकवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "लभे",
+            explanation: "लभ् धातोः लट् उत्तमपुरुष-एकवचने 'इट्' प्रत्यये 'लभे' इति रूपं भवति।"
+          },
+          {
+            num: 3,
+            question: "लभ् (लृट् लकार प्रथमपुरुष एकवचनम्) $\\rightarrow$ ___________",
+            questionSanskrit: "लभ् धातोः लृट् लकार प्रथमपुरुष-एकवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "लप्स्यते",
+            explanation: "लभ् धातोः लृति भकारस्य चर्त्वे पकारे 'लप्स्यते' इति रूपं सिध्यति।"
+          },
+          {
+            num: 4,
+            question: "वृध् (लङ् लकार प्रथमपुरुष एकवचनम्) $\\rightarrow$ ___________",
+            questionSanskrit: "वृध् धातोः लङ् लकार प्रथमपुरुष-एकवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "अवर्धत",
+            explanation: "लङ् लकार प्रथमपुरुष-एकवचने 'त' प्रत्यये अट्-आगमे 'अवर्धत' इति भवति।"
+          },
+          {
+            num: 5,
+            question: "वृध् (लोट् लकार मध्यमपुरुष एकवचनम्) $\\rightarrow$ ___________",
+            questionSanskrit: "वृध् धातोः लोट् मध्यमपुरुष-एकवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "वर्धस्व",
+            explanation: "लोट् मध्यमपुरुष-एकवचने 'थास्' स्थाने 'स्व' आदेशे 'वर्धस्व' इति भवति।"
+          },
+          {
+            num: 6,
+            question: "शीङ् (लट् लकार प्रथमपुरुष बहुवचनम्) $\\rightarrow$ ___________",
+            questionSanskrit: "शीङ् धातोः लट् प्रथमपुरुष-बहुवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "शेरते",
+            explanation: "अदादिगणस्य शीङ्-धातोः लटि 'शेरते' इति विशेषरूपम्।"
+          },
+          {
+            num: 7,
+            question: "शीङ् (लङ् लकार प्रथमपुरुष बहुवचनम्) $\\rightarrow$ ___________",
+            questionSanskrit: "शीङ् धातोः लङ् लकार प्रथमपुरुष-बहुवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "अशेरत",
+            explanation: "शीङ् धातोः लङ् प्रथमपुरुष-बहुवचने 'अशेरत' इति रूपं सिध्यति।"
+          },
+          {
+            num: 8,
+            question: "भुज् (लट् लकार प्रथमपुरुष एकवचनम्) $\\rightarrow$ ___________",
+            questionSanskrit: "भुज् धातोः लट् प्रथमपुरुष-एकवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "भुङ्क्ते",
+            explanation: "रुधादिगणस्य भुज्-धातोः श्नम्-विकरणे आत्मनेपदे 'भुङ्क्ते' इति रूपं भवति।"
+          },
+          {
+            num: 9,
+            question: "भुज् (लोट् लकार प्रथमपुरुष एकवचनम्) $\\rightarrow$ ___________",
+            questionSanskrit: "भुज् धातोः लोट् प्रथमपुरुष-एकवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "भुङ्क्ताम्",
+            explanation: "भुज् धातोः लोट् प्रथमपुरुष-एकवचने 'ताम्' प्रत्यये 'भुङ्क्ताम्' इति रूपं भवति।"
+          },
+          {
+            num: 10,
+            question: "शीङ् (विधिलिङ् प्रथमपुरुष एकवचनम्) $\\rightarrow$ ___________",
+            questionSanskrit: "शीङ् धातोः विधिलिङ् प्रथमपुरुष-एकवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "शयीत",
+            explanation: "शीङ् धातोः विधिलिङ् प्रथमपुरुष-एकवचने 'शयीत' इति रूपं भवति।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 APPENDIX 5 WORKSHEET 3: Five Lakar Transformations & Sentence Synthesis (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-dhatu-ws3",
+    title: "Worksheet 3: Five Lakar Transformations & Sentence Synthesis (10 Questions)",
+    titleSanskrit: "परिशिष्टम् ५ कार्यपत्रिका ३: पञ्चलकार-वाक्यप्रयोगः (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Transform active sentences across different tenses and moods based on pages 241–244 of the textbook.",
+    sections: [
+      {
+        sectionTitle: "Section A: Sentence Transformations",
+        sectionTitleSanskrit: "खण्डः 'क' · लकार-रूपान्तरणम्",
+        instructions: "Convert each sentence into the specified tense or mood.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "बालकः पुस्तकं पठति। $\\rightarrow$ Past Tense (लङ्): ___________",
+            questionSanskrit: "लङ् लकारे परिवर्तयत: बालकः पुस्तकं पठति।",
+            marks: 2,
+            type: "short_ans",
+            answer: "बालकः पुस्तकम् अपठत्।",
+            explanation: "पठ् धातोः लङ् लकार प्रथमपुरुष-एकवचने 'अपठत्'।"
+          },
+          {
+            num: 2,
+            question: "ते विद्यालये वर्धन्ते। $\\rightarrow$ Future Tense (लृट्): ___________",
+            questionSanskrit: "लृट् लकारे परिवर्तयत: ते विद्यालये वर्धन्ते।",
+            marks: 2,
+            type: "short_ans",
+            answer: "ते विद्यालये वर्धिष्यन्ते।",
+            explanation: "वृध् धातोः लृट् लकार प्रथमपुरुष-बहुवचने 'वर्धिष्यन्ते'।"
+          },
+          {
+            num: 3,
+            question: "शिशुः पर्यङ्के शेते। $\\rightarrow$ Past Tense (लङ्): ___________",
+            questionSanskrit: "लङ् लकारे परिवर्तयत: शिशुः पर्यङ्के शेते।",
+            marks: 2,
+            type: "short_ans",
+            answer: "शिशुः पर्यङ्के अशेते।",
+            explanation: "शीङ् धातोः लङ् लकार प्रथमपुरुष-एकवचने 'अशेते'।"
+          },
+          {
+            num: 4,
+            question: "अहम् आनन्दं लभे। $\\rightarrow$ Potential Mood (विधिलिङ्): ___________",
+            questionSanskrit: "विधिलिङि परिवर्तयत: अहम् आनन्दं लभे।",
+            marks: 2,
+            type: "short_ans",
+            answer: "अहम् आनन्दं लभेय।",
+            explanation: "लभ् धातोः विधिलिङ् उत्तमपुरुष-एकवचने 'लभेय'।"
+          },
+          {
+            num: 5,
+            question: "राजा प्रजां पालयतु। $\\rightarrow$ Causative Present (णिच् लट्): ___________",
+            questionSanskrit: "णिच् लटि परिवर्तयत: राजा प्रजां पालयतु।",
+            marks: 2,
+            type: "short_ans",
+            answer: "राजा प्रजां पालयति।",
+            explanation: "पालि णिजन्तधातोः लट् प्रथमपुरुषैकवचने 'पालयति'।"
+          },
+          {
+            num: 6,
+            question: "सः मधुरं फलं भुङ्क्ते। $\\rightarrow$ Future Tense (लृट्): ___________",
+            questionSanskrit: "लृट् लकारे परिवर्तयत: सः मधुरं फलं भुङ्क्ते।",
+            marks: 2,
+            type: "short_ans",
+            answer: "सः मधुरं फलं भोक्ष्यते।",
+            explanation: "भुज् धातोः लृट् प्रथमपुरुष-एकवचने 'भोक्ष्यते'।"
+          },
+          {
+            num: 7,
+            question: "यूयं सत्यं वदत। $\\rightarrow$ Imperative (लोट् मध्यमपुरुष बहुवचन): ___________",
+            questionSanskrit: "लोट् लकारे परिवर्तयत: यूयं सत्यं वदथ।",
+            marks: 2,
+            type: "short_ans",
+            answer: "यूयं सत्यं वदत।",
+            explanation: "वद् धातोः लोट् मध्यमपुरुष-बहुवचने 'वदत'।"
+          },
+          {
+            num: 8,
+            question: "त्वं धर्मम् आचर। $\\rightarrow$ Potential Mood (विधिलिङ्): ___________",
+            questionSanskrit: "विधिलिङि परिवर्तयत: त्वं धर्मम् आचर।",
+            marks: 2,
+            type: "short_ans",
+            answer: "त्वं धर्मम् आचरेः।",
+            explanation: "आङ्+चर् धातोः विधिलिङ् मध्यमपुरुष-एकवचने 'आचरेः'।"
+          },
+          {
+            num: 9,
+            question: "छात्राः गुरुं वन्दन्ताम्। $\\rightarrow$ Present Tense (लट्): ___________",
+            questionSanskrit: "लट् लकारे परिवर्तयत: छात्राः गुरुं वन्दन्ताम्।",
+            marks: 2,
+            type: "short_ans",
+            answer: "छात्राः गुरुं वन्दन्ते।",
+            explanation: "वन्द् धातोः लट् प्रथमपुरुष-बहुवचने 'वन्दन्ते'।"
+          },
+          {
+            num: 10,
+            question: "शिक्षकः छात्रं पाठयति। $\\rightarrow$ Past Tense (लङ्): ___________",
+            questionSanskrit: "लङ् लकारे परिवर्तयत: शिक्षकः छात्रं पाठयति।",
+            marks: 2,
+            type: "short_ans",
+            answer: "शिक्षकः छात्रम् अपाठयत्।",
+            explanation: "पाठि णिजन्तधातोः लङ् लकार प्रथमपुरुष-एकवचने 'अपाठयत्'।"
+          }
+        ]
+      }
+    ]
   }
 ];

@@ -302,5 +302,20 @@ export const GRADE_9_SYLLABUS: Grade9Chapter[] = [
     grammarFocus: "हलन्त-पुंलिङ्ग (ब्रह्मन्, गुणिन्, पथिन्, विद्वस्), हलन्त-स्त्रीलिङ्ग (वाच्, सरित्, दिश्), हलन्त-नपुंसकलिङ्ग (जगत्, नामन्, मनस्, चक्षुष्), सुप्-प्रत्ययाः",
     status: "available",
     icon: "📖"
+  },
+  {
+    id: "grade9_dhatu",
+    num: "परिशिष्टम् ५",
+    chNumber: "परिशिष्टम् ५",
+    title: "परिशिष्टम् ५ : धातुरूपाणि (णिजन्ताः पञ्चलकाराश्च)",
+    hindiTitle: "धातुरूपाणि (णिजन्त-धातवः पञ्चलकाराश्च)",
+    englishTitle: "Appendix 5: Sanskrit Verbal Conjugations (Causatives & Five Tenses)",
+    page: "Pages 229–244",
+    category: "grammar",
+    genreBadge: "व्याकरणम् · Verbal Stems (धातुरूपाणि)",
+    theme: "Systematic conjugation matrices across five lakarās (लट्, लृट्, लङ्, लोट्, विधिलिङ्) in Parasmaipada, Atmanepada (वृध्, लभ्), special paradigms (शीङ्, भुज्), and causative verbal formations (णिच्-प्रत्ययः).",
+    grammarFocus: "णिजन्त-धातवः (पाठयति, श्रावयति), पञ्चलकाराः, परस्मैपदिनः, आत्मनेपदिनः (वृध्, लभ्), विशेषधातवः (शीङ्, भुज्)",
+    status: "available",
+    icon: "⚡"
   }
 ];

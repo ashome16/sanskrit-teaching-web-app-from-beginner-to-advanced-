@@ -41830,6 +41830,143 @@
           "kind": "narrative"
         }
       ]
+    },
+    {
+      "id": "grade9_dhatu",
+      "fileName": "grade9_dhatu.txt",
+      "title": "Grade 9: परिशिष्टम् ५ — धातुरूपाणि (Pages 229–244)",
+      "page_numbers": "Pages 229–244",
+      "sentences": [
+        {
+          "sanskrit": "संस्कृतव्याकरणे क्रियापदस्य मूलप्रकृतिः धातुः इति कथ्यते। तत्र धातुरूपाणि दशसु लकारेषु, त्रिषु पुरुषेषु (प्रथम-मध्यम-उत्तमेषु), त्रिषु च वचनेषु (एक-द्वि-बहुवचनेषु) निष्पद्यन्ते।",
+          "meaning": "In Sanskrit grammar, the root or radical base of a verb is termed Dhatu. Verbal paradigms are conjugated across ten tenses and moods (lakarās), three persons (third, second, first), and three numbers (singular, dual, plural).",
+          "paragraphTranslation": "संस्कृत व्याकरण में क्रियापद के मूल रूप को धातु कहते हैं। धातुरूप दस लकारों, तीन पुरुषों (प्रथम, मध्यम, उत्तम) और तीन वचनों (एक, द्वि, बहुवचन) में निष्पन्न होते हैं।",
+          "words": [
+            "संस्कृतव्याकरणे",
+            "क्रियापदस्य",
+            "मूलप्रकृतिः",
+            "धातुः",
+            "धातुरूपाणि",
+            "दशसु",
+            "लकारेषु",
+            "त्रिषु",
+            "पुरुषेषु",
+            "त्रिषु",
+            "वचनेषु",
+            "निष्पद्यन्ते"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "नवमकक्षायाः पाठ्यक्रमे मुख्याः पञ्चलकाराः विहिताः सन्ति— वर्तमाने लट्, भविष्यति लृट्, अनद्यतन-भूते लङ्, आज्ञार्थे लोट्, विधौ प्रार्थनायां च विधिलिङ् लकारः।",
+          "meaning": "In the Class 9 curriculum, five primary lakarās are prescribed: Lat (Present), Lrit (Future), Lang (Imperfect Past), Lot (Imperative), and Vidhiling (Potential/Optative).",
+          "paragraphTranslation": "नौवीं कक्षा के पाठ्यक्रम में मुख्य पाँच लकार निर्धारित हैं— वर्तमान काल में लट्, भविष्यत् काल में लृट्, भूतकाल में लङ्, आज्ञार्थ में लोट् और विधि/प्रार्थना में विधिलिङ्।",
+          "words": [
+            "नवमकक्षायाः",
+            "पाठ्यक्रमे",
+            "मुख्याः",
+            "पञ्चलकाराः",
+            "विहिताः",
+            "लट्",
+            "लृट्",
+            "लङ्",
+            "लोट्",
+            "विधिलिङ्"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "यदा क्रिया कस्यचित् प्रेरणया क्रियते, तदा 'हेतुमति च' इति सूत्रेण धातोः परतः 'णिच्' (इ) प्रत्ययः प्रयुज्यते; यथा— बालकः पठति, शिक्षकः छात्रं पाठयति।",
+          "meaning": "When an action is caused or prompted by another agent, the causative suffix 'Nich' (i) is appended to the root by the aphorism 'Hetumati cha'; e.g., The boy reads, but The teacher causes the student to read (teaches).",
+          "paragraphTranslation": "जब क्रिया किसी अन्य की प्रेरणा से कराई जाती है, तब 'हेतुमति च' सूत्र से धातु के बाद 'णिच्' (इ) प्रत्यय लगता है; जैसे— बालकः पठति, शिक्षकः छात्रं पाठयति।",
+          "words": [
+            "क्रिया",
+            "प्रेरणया",
+            "हेतुमति",
+            "णिच्-प्रत्ययः",
+            "प्रयुज्यते",
+            "बालकः",
+            "पठति",
+            "शिक्षकः",
+            "छात्रं",
+            "पाठयति"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "णिजन्त-रूपेषु उपधावृद्धौ गुणे पुगागमे च विविधाः धातवः परिवर्तन्ते— लिख् $\\rightarrow$ लेखयति, पा $\\rightarrow$ पाययति, दा $\\rightarrow$ दापयति, श्रु $\\rightarrow$ श्रावयति, दृश् $\\rightarrow$ दर्शयति, ज्ञा $\\rightarrow$ ज्ञापयति।",
+          "meaning": "In causative formations, roots undergo characteristic lengthening, guna, vriddhi, or puk-agama: likh becomes lekhayati, pa becomes payayati, da becomes dapayati, shru becomes shravayati, drish becomes darshayati, and jna becomes jnapayati.",
+          "paragraphTranslation": "णिजन्त रूपों में उपधावृद्धि, गुण और पुगागम आदि से धातुओं में परिवर्तन होते हैं— लिख् से लेखयति, पा से पाययति, दा से दापयति, श्रु से श्रावयति, दृश् से दर्शयति, ज्ञा से ज्ञापयति।",
+          "words": [
+            "णिजन्त-रूपेषु",
+            "उपधावृद्धौ",
+            "गुणे",
+            "पुगागमे",
+            "लेखयति",
+            "पाययति",
+            "दापयति",
+            "श्रावयति",
+            "दर्शयति",
+            "ज्ञापयति"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "परस्मैपदिषु 'पठ्'-धातोः रूपाणि लटि पठति, लृति पठिष्यति, लङि अपठत्, लोटि पठतु/पठतात्, विधिलिङि च पठेत् इति पञ्चसु लकारेषु प्रयुज्यन्ते।",
+          "meaning": "Among Parasmaipada verbs, the root 'path' inflects across the five lakarās as pathati in Lat, pathishyati in Lrit, apathat in Lang, pathatu/pathatat in Lot, and pathet in Vidhiling.",
+          "paragraphTranslation": "परस्मैपद में 'पठ्' धातु के रूप पाँचों लकारों में लट् में पठति, लृट् में पठिष्यति, लङ् में अपठत्, लोट् में पठतु/पठतात् तथा विधिलिङ् में पठेत् होते हैं।",
+          "words": [
+            "परस्मैपदिषु",
+            "पठ्-धातोः",
+            "रूपाणि",
+            "पठति",
+            "पठिष्यति",
+            "अपठत्",
+            "पठतु",
+            "पठेत्",
+            "पञ्चसु",
+            "लकारेषु"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "आत्मनेपदिषु 'वृध्' (वर्धते, वर्धिष्यते, अवर्धत, वर्धताम्, वर्धेत) तथा 'लभ्' (लभते, लप्स्यते, अलभत, लभताम्, लभेत) इति द्वौ प्रमुखौ धातू भ्वादिगणे स्तः।",
+          "meaning": "Among Atmanepada verbs, 'vridh' (vardhate, vardhishyate, avardhata, vardhatam, vardheta) and 'labh' (labhate, lapsyate, alabhata, labhatam, labheta) represent baseline models in the Bhvadi class.",
+          "paragraphTranslation": "आत्मनेपद में 'वृध्' (वर्धते आदि) और 'लभ्' (लभते आदि) भ्वादिगण के दो प्रमुख धातु हैं।",
+          "words": [
+            "आत्मनेपदिषु",
+            "वृध्",
+            "वर्धते",
+            "लभ्",
+            "लभते",
+            "लप्स्यते",
+            "अलभत",
+            "प्रमुखौ",
+            "धातूं",
+            "भ्वादिगणे"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "विशिष्टेषु आत्मनेपद-धातुषु अदादिगणस्य 'शीङ्' (शेते, शयाते, शेरते) तथा रुधादिगणस्य 'भुज्' (भुङ्क्ते, भुञ्जाते, भुञ्जते) इति रूपद्वयं व्याकरणे विशेषमहत्त्वं भजते।",
+          "meaning": "Among special Atmanepada paradigms, the Adadi class root 'shing' (shete, shayate, sherate) and the Rudhadi class root 'bhuj' (bhungkte, bhunjate, bhunjate) hold distinct grammatical importance.",
+          "paragraphTranslation": "विशिष्ट आत्मनेपद धातुओं में अदादिगण का 'शीङ्' (शेते, शयाते, शेरते) और रुधादिगण का 'भुज्' (भुङ्क्ते, भुञ्जाते, भुञ्जते) व्याकरण में विशेष महत्त्व रखते हैं।",
+          "words": [
+            "विशिष्टेषु",
+            "आत्मनेपद-धातुषु",
+            "अदादिगणस्य",
+            "शीङ्",
+            "शेते",
+            "शेरते",
+            "रुधादिगणस्य",
+            "भुज्",
+            "भुङ्क्ते",
+            "भुञ्जते",
+            "विशेषमहत्त्वं"
+          ],
+          "kind": "narrative"
+        }
+      ]
     }
   ]
 }
