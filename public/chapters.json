@@ -41540,6 +41540,149 @@
           "kind": "narrative"
         }
       ]
+    },
+    {
+      "id": "grade9_vachya",
+      "fileName": "grade9_vachya.txt",
+      "title": "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+      "page_numbers": "Pages 196–215",
+      "sentences": [
+        {
+          "sanskrit": "वाच्यं नाम वाक्ये कर्त्तुः, कर्मणः, भावस्य (क्रियायाः) वा प्राधान्यबोधकः प्रयोगः। संस्कृतव्याकरणे त्रयः प्रयोगाः (वाच्यानि) भवन्ति— कर्तृवाच्यम्, कर्मवाच्यम्, भाववाच्यं चेति।",
+          "meaning": "Vachya (voice) refers to the syntactic construction that indicates whether the subject, the object, or the action itself is dominant in a sentence. Sanskrit grammar establishes three distinct voices: Kartri-vachya (Active), Karmani-vachya (Passive), and Bhava-vachya (Impersonal).",
+          "paragraphTranslation": "वाच्य का अर्थ वाक्य में कर्ता, कर्म या भाव (क्रिया) की प्रधानता का बोध कराने वाला प्रयोग है। संस्कृत व्याकरण में तीन वाच्य होते हैं— कर्तृवाच्य, कर्मवाच्य और भाववाच्य।",
+          "words": [
+            "वाच्यं",
+            "नाम",
+            "वाक्ये",
+            "कर्त्तुः",
+            "कर्मणः",
+            "भावस्य",
+            "प्राधान्यबोधकः",
+            "प्रयोगः।",
+            "संस्कृतव्याकरणे",
+            "त्रयः",
+            "प्रयोगाः",
+            "कर्तृवाच्यम्",
+            "कर्मवाच्यम्",
+            "भाववाच्यं"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "कर्तृवाच्ये कर्ता सर्वदा प्रथमाविभक्तौ, कर्म च द्वितीयाविभक्तौ भवति; क्रियापदं च कर्तुः पुरुषं वचनं च अनुसरति (यथा— बालकः श्लोकं पठति, बालाः चित्रं पश्यन्ति)।",
+          "meaning": "In Kartri-vachya (Active Voice), the subject is always in the Nominative case, the object in the Accusative case, and the verb strictly follows the person and number of the subject (e.g., The boy reads the verse; The girls view the picture).",
+          "paragraphTranslation": "कर्तृवाच्य में कर्ता सदैव प्रथमा विभक्ति में तथा कर्म द्वितीया विभक्ति में होता है; क्रियापद कर्ता के पुरुष और वचन के अनुसार चलता है (जैसे— बालकः श्लोकं पठति)।",
+          "words": [
+            "कर्तृवाच्ये",
+            "कर्ता",
+            "सर्वदा",
+            "प्रथमाविभक्तौ",
+            "कर्म",
+            "द्वितीयाविभक्तौ",
+            "क्रियापदं",
+            "कर्तुः",
+            "पुरुषं",
+            "वचनं",
+            "अनुसरति"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "कर्मवाच्ये कर्ता तृतीयाविभक्तौ, कर्म च प्रथमाविभक्तौ परिवर्तते; धातोः परतः 'यक्' (य) प्रत्यये कृते क्रियापदम् आत्मनेपदे कर्मणः पुरुषवचनानुसारि भवति (यथा— बालकेन श्लोकः पठ्यते, सुनीतया फलानि खाद्यन्ते)।",
+          "meaning": "In Karmani-vachya (Passive Voice), the subject shifts to the Instrumental case, and the object is elevated to the Nominative case. With the addition of the 'yak' (ya) suffix to the root, the verb inflects in Atmanepada matching the person and number of the object.",
+          "paragraphTranslation": "कर्मवाच्य में कर्ता तृतीया विभक्ति में और कर्म प्रथमा विभक्ति में बदल जाता है; धातु के बाद 'यक्' (य) प्रत्यय लगने पर क्रियापद आत्मनेपद में कर्म के पुरुष और वचन के अनुसार प्रयुक्त होता है (जैसे— बालकेन श्लोकः पठ्यते)।",
+          "words": [
+            "कर्मवाच्ये",
+            "कर्ता",
+            "तृतीयाविभक्तौ",
+            "कर्म",
+            "प्रथमाविभक्तौ",
+            "परिवर्तते",
+            "यक्-प्रत्यये",
+            "क्रियापदम्",
+            "आत्मनेपदे",
+            "कर्मणः",
+            "पुरुषवचनानुसारि"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "भाववाच्ये अकर्मकधातुभिः सह कर्ता तृतीयाविभक्तौ भवति, कर्मणः सर्वथा अभावात् क्रियापदं नित्यं प्रथमपुरुषस्य एकवचने एव तिष्ठति (यथा— तैः हस्यते, बालैः उद्याने क्रीड्यते, तया उत्थीयते)।",
+          "meaning": "In Bhava-vachya (Impersonal Voice), used only with intransitive roots, the subject is in the Instrumental case. Due to the complete absence of an object, the verb is permanently locked in the Third Person Singular (e.g., Laughter is done by them; Playing is done by boys).",
+          "paragraphTranslation": "भाववाच्य में अकर्मक धातुओं के साथ कर्ता तृतीया विभक्ति में होता है, कर्म के अभाव के कारण क्रियापद सदैव प्रथम पुरुष एकवचन में ही रहता है (जैसे— तैः हस्यते, तया उत्थीयते)।",
+          "words": [
+            "भाववाच्ये",
+            "अकर्मकधातुभिः",
+            "कर्ता",
+            "तृतीयाविभक्तौ",
+            "कर्मणः",
+            "अभावात्",
+            "क्रियापदं",
+            "नित्यं",
+            "प्रथमपुरुषस्य",
+            "एकवचने"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "कर्मणि भावे च यक्-प्रत्यययोगे धातोः रूपाणि विशेषपरिवर्तनं प्राप्नुवन्ति— पा $\\rightarrow$ पीयते, दा $\\rightarrow$ दीयते, श्रु $\\rightarrow$ श्रूयते, कृ $\\rightarrow$ क्रियते, दृश् $\\rightarrow$ दृश्यते, वद् $\\rightarrow$ उद्यते/उच्यते, ज्ञा $\\rightarrow$ ज्ञायते।",
+          "meaning": "When affixing 'yak' in passive and impersonal voices, verbal roots undergo characteristic morpho-phonemic mutations: pa becomes peeyate, da becomes deeyate, shru becomes shrooyate, kri becomes kriyate, drish becomes drishyate, vad becomes udyate/uchyate, and jna becomes jnayate.",
+          "paragraphTranslation": "कर्मवाच्य और भाववाच्य में यक् प्रत्यय लगने पर धातुओं के रूपों में विशेष परिवर्तन होते हैं— पा से पीयते, दा से दीयते, श्रु से श्रूयते, कृ से क्रियते, दृश् से दृश्यते, वद् से उद्यते/उच्यते, ज्ञा से ज्ञायते।",
+          "words": [
+            "कर्मणि",
+            "भावे",
+            "यक्-प्रत्यययोगे",
+            "धातोः",
+            "रूपाणि",
+            "विशेषपरिवर्तनं",
+            "पीयते",
+            "दीयते",
+            "श्रूयते",
+            "क्रियते",
+            "दृश्यते",
+            "उद्यते",
+            "ज्ञायते"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "कृदन्तरूपेषु भूतकाले कर्तृवाच्ये 'क्तवतु' (पठितवान्) प्रयुज्यते, कर्मणि भावे च 'क्त' (पठितः, लिखिता, पठितम्) प्रयुज्यते; तथा च विधिलिङ्-स्थाने कर्मणि भावे 'तव्यत्-अनीयर्' प्रत्ययौ (पठितव्यः, करणीयम्) प्रयुज्येते।",
+          "meaning": "Among participial formations, past active uses 'ktavatu' (pathitavan), whereas passive and impersonal use 'kta' (pathitah, likhita, pathitam); similarly, in place of Vidhilining, passive and impersonal employ 'tavyat' and 'aniyar' participles (pathitavyah, karaniyam).",
+          "paragraphTranslation": "कृदन्त रूपों में भूतकाल में कर्तृवाच्य में 'क्तवतु' (पठितवान्) तथा कर्मवाच्य/भाववाच्य में 'क्त' (पठितः, लिखिता, पठितम्) का प्रयोग होता है; एवं विधिलिङ् के स्थान पर 'तव्यत्-अनीयर्' (पठितव्यः, करणीयम्) का प्रयोग होता है।",
+          "words": [
+            "कृदन्तरूपेषु",
+            "भूतकाले",
+            "कर्तृवाच्ये",
+            "क्तवतु",
+            "कर्मणि",
+            "भावे",
+            "क्त",
+            "विधिलिङ्-स्थाने",
+            "तव्यत्-अनीयर्",
+            "पठितव्यः",
+            "करणीयम्"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "एवं वाच्य-त्रयस्य नियमानां सम्यग् अध्ययनेन वयं संस्कृत-वाक्यरचनायाः विशुद्धं प्रयोगं भावप्रकाशन-सामर्थ्यं च लभामहे।",
+          "meaning": "Thus, through a thorough study of the three voice systems and their transformation rules, we attain flawless proficiency in Sanskrit sentence construction and expressive capacity.",
+          "paragraphTranslation": "इस प्रकार तीनों वाच्यों के नियमों के सम्यक् अध्ययन से हम संस्कृत वाक्य-रचना का विशुद्ध प्रयोग और भाव-प्रकाशन का सामर्थ्य प्राप्त करते हैं।",
+          "words": [
+            "वाच्य-त्रयस्य",
+            "नियमानां",
+            "सम्यग्",
+            "अध्ययनेन",
+            "संस्कृत-वाक्यरचनायाः",
+            "विशुद्धं",
+            "प्रयोगं",
+            "भावप्रकाशन-सामर्थ्यं",
+            "लभामहे"
+          ],
+          "kind": "narrative"
+        }
+      ]
     }
   ]
 }

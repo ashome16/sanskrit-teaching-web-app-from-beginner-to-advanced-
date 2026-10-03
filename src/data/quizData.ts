@@ -62,6 +62,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade9_ch11', label: 'Grade 9 Ch 11: वर्णोच्चारण-शिक्षा २ (3 Quizzes · 30 Qs)', icon: '🗣️' },
   { id: 'grade9_ch12', label: 'Grade 9 Ch 12: अन्वय-शिक्षा (3 Quizzes · 30 Qs)', icon: '📜' },
   { id: 'grade9_samasa', label: 'Grade 9 Appendix 2: समास-प्रकरणम् (3 Quizzes · 30 Qs)', icon: '🧩' },
+    { id: 'grade9_vachya', label: 'Grade 9 Appendix 3: वाच्य-परिवर्तनम् (3 Quizzes · 30 Qs)', icon: '🔄' },
 
 
 ] as const;
@@ -24792,6 +24793,585 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
     options: ["गजस्य आननम्", "गजस्य आननमिव आननं यस्य सः (गणेशः)", "गजे आननम्", "गजश्च आननश्च"],
     correctIndex: 1,
     explanation: "उपमानपूर्वपद-बहुव्रीहिसमासः: गजस्य आननमिव आननं यस्य सः गजाननः।",
+    difficulty: "medium",
+    points: 10
+  },
+// ==========================================
+  // GRADE 9 APPENDIX 3: वाच्य-परिवर्तनम् (30 MCQs)
+  // ==========================================
+
+  // --- Quiz 1: Foundational Structural Coordinates ---
+  {
+    id: "g9-vachya-q1-1",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 1: Foundational Structural Coordinates",
+    question: "Name the three distinct types of voice systems (वाच्यानि) found in Sanskrit grammar:",
+    questionSanskrit: "संस्कृतव्याकरणे कति वाच्यानि (प्रयोगाः) सन्ति?",
+    options: [
+      "कर्तृवाच्यम् (Active), कर्मवाच्यम् (Passive), and भाववाच्यम् (Impersonal)",
+      "केवलवाच्यम्, विशेषवाच्यम्, and समाहारवाच्यम्",
+      "नामवाच्यम्, क्रियावाच्यम्, and अव्ययवाच्यम्",
+      "प्रथमावाच्यम्, द्वितीयावाच्यम्, and तृतीयावाच्यम्"
+    ],
+    correctIndex: 0,
+    explanation: "संस्कृतव्याकरणे त्रयः प्रयोगाः (वाच्यानि) सन्ति— कर्तृवाच्यम्, कर्मवाच्यम्, भाववाच्यं च।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q1-2",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 1: Foundational Structural Coordinates",
+    question: "Which case ending (विभक्तिः) is assigned to the subject in Kartari Prayoga (Active Voice)?",
+    questionSanskrit: "कर्तृवाच्ये कर्तरि का विभक्तिः भवति?",
+    options: [
+      "द्वितीया विभक्तिः (Accusative)",
+      "प्रथमा विभक्तिः (Nominative)",
+      "तृतीया विभक्तिः (Instrumental)",
+      "षष्ठी विभक्तिः (Genitive)"
+    ],
+    correctIndex: 1,
+    explanation: "कर्तृवाच्ये कर्ता सर्वदा प्रथमाविभक्तौ भवति, कर्म च द्वितीयाविभक्तौ।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q1-3",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 1: Foundational Structural Coordinates",
+    question: "In Karmani Prayoga (Passive Voice), which case ending must the object noun take?",
+    questionSanskrit: "कर्मवाच्ये कर्मणि का विभक्तिः विधीयते?",
+    options: [
+      "द्वितीया विभक्तिः (Accusative)",
+      "तृतीया विभक्तिः (Instrumental)",
+      "प्रथमा विभक्तिः (Nominative)",
+      "चतुर्थी विभक्तिः (Dative)"
+    ],
+    correctIndex: 2,
+    explanation: "कर्मवाच्ये कर्म उक्तं भवति, अतः तत्र प्रथमा विभक्तिः भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q1-4",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 1: Foundational Structural Coordinates",
+    question: "When a sentence is converted from Active to Passive voice, what case ending does the subject take?",
+    questionSanskrit: "कर्तृवाच्यात् कर्मवाच्ये परिवर्तने कर्ता कस्यां विभक्तौ भवति?",
+    options: [
+      "प्रथमा विभक्तिः (Nominative)",
+      "द्वितीया विभक्तिः (Accusative)",
+      "पञ्चमी विभक्तिः (Ablative)",
+      "तृतीया विभक्तिः (Instrumental)"
+    ],
+    correctIndex: 3,
+    explanation: "कर्मवाच्ये भाववाच्ये च कर्ता अनुक्तः सन् तृतीयाविभक्तौ परिवर्तते ('कर्तृकरणयोस्तृतीया')।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q1-5",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 1: Foundational Structural Coordinates",
+    question: "What specific structural suffix (विकरणः) is added directly to verbal roots in passive voice?",
+    questionSanskrit: "कर्मवाच्ये धातोः परतः कः विकरण-प्रत्ययः भवति?",
+    options: [
+      "'यक्' (य) विकरण-प्रत्ययः",
+      "'शप्' (अ) विकरण-प्रत्ययः",
+      "'श्यन्' (य) विकरण-प्रत्ययः",
+      "'तव्यत्' कृत्-प्रत्ययः"
+    ],
+    correctIndex: 0,
+    explanation: "सार्वधातुके यक् इति सूत्रेण कर्मणि भावे च धातोः परतः 'यक्' प्रत्ययः भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q1-6",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 1: Foundational Structural Coordinates",
+    question: "In Kartari Prayoga (Active Voice), does changing the number of the object alter the verb form?",
+    questionSanskrit: "किं कर्तृवाच्ये कर्मणः वचनेन क्रियापदस्य रूपं परिवर्तते?",
+    options: [
+      "आम्, कर्मानुसारं क्रिया परिवर्तते",
+      "नहि, कर्तृवाच्ये क्रियापदं केवलं कर्तृपदम् एव अनुसरति",
+      "केवलं द्विवचने परिवर्तते",
+      "क्रियापदम् आत्मनेपदे गच्छति"
+    ],
+    correctIndex: 1,
+    explanation: "कर्तृवाच्ये क्रियापदं केवलं कर्तुः पुरुषं वचनं च अनुसरति; कर्मणः परिवर्त्तनेन क्रिया न परिवर्तते।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q1-7",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 1: Foundational Structural Coordinates",
+    question: "What person and number are permanently locked into a Bhava Vachya (Impersonal) verb?",
+    questionSanskrit: "भाववाच्ये क्रियापदं कस्मिन् पुरुषे कस्मिन् च वचने नित्यं भवति?",
+    options: [
+      "उत्तमपुरुषः एकवचनम्",
+      "मध्यमपुरुषः बहुवचनम्",
+      "प्रथमपुरुषः एकवचनम् (Third Person Singular)",
+      "प्रथमपुरुषः बहुवचनम् (Third Person Plural)"
+    ],
+    correctIndex: 2,
+    explanation: "भाववाच्ये कर्मणः अभावात् क्रियापदं नित्यं प्रथमपुरुषस्य एकवचने एव तिष्ठति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q1-8",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 1: Foundational Structural Coordinates",
+    question: "To which category of verbs do Bhava Vachya transformations apply exclusively?",
+    questionSanskrit: "भाववाच्यस्य प्रयोगः कैः धातुभिः सह एव भवति?",
+    options: [
+      "सकर्मकधातुभिः (Transitive roots)",
+      "द्विकर्मकधातुभिः (Ditransitive roots)",
+      "णिजन्तधातुभिः (Causative roots)",
+      "अकर्मकधातुभिः (Intransitive roots)"
+    ],
+    correctIndex: 3,
+    explanation: "भाववाच्यस्य प्रयोगः केवलम् अकर्मकधातुभिः (हस्, शी, क्रीड्, स्था इत्यादिभिः) सह भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q1-9",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 1: Foundational Structural Coordinates",
+    question: "How is an intransitive verbal root (अकर्मकधातुः) defined in Sanskrit grammar?",
+    questionSanskrit: "अकर्मकधातोः किं लक्षणम्?",
+    options: [
+      "यस्य धातोः फलव्यापारयोः कर्मणि सम्बन्धो न भवति (No direct object)",
+      "यस्य धातोः द्वे कर्मणी भवतः",
+      "यस्य धातोः केवलं परस्मैपदे रूपाणि भवन्ति",
+      "यः धातुः उपसर्गं विना न प्रयुज्यते"
+    ],
+    correctIndex: 0,
+    explanation: "यस्मिन् क्रियायाः फलं कर्मणि न पतति, सः अकर्मकः उच्यते।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q1-10",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 1: Foundational Structural Coordinates",
+    question: "Which core voice mode is completely impossible for an intransitive verb?",
+    questionSanskrit: "अकर्मकधातोः कस्य वाच्यस्य प्रयोगः असम्भवः अस्ति?",
+    options: [
+      "कर्तृवाच्यस्य (Active Voice)",
+      "कर्मवाच्यस्य (Passive Voice)",
+      "भाववाच्यस्य (Impersonal Voice)",
+      "सर्वेषां वाच्यानां सम्भवः अस्ति"
+    ],
+    correctIndex: 1,
+    explanation: "अकर्मकधातुषु कर्मणः अभावात् कर्मवाच्यस्य (Passive Voice) प्रयोगः कदापि न सम्भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+
+  // --- Quiz 2: Verbal Stem Conjugations ---
+  {
+    id: "g9-vachya-q2-1",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 2: Verbal Stem Conjugations",
+    question: "Convert the active verb 'पिबति' (पा धातुः) into its correct passive form:",
+    questionSanskrit: "'पिबति' इत्यस्य कर्मणि रूपं किं भवति?",
+    options: [
+      "पीयते",
+      "पिब्यते",
+      "पाव्यते",
+      "पेयते"
+    ],
+    correctIndex: 0,
+    explanation: "पा-धातोः यक्-प्रत्यये आकारस्य ईकारे 'पीयते' इति रूपं सिध्यति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q2-2",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 2: Verbal Stem Conjugations",
+    question: "What is the passive counter-form of the active root expression 'ददाति' (दा धातुः)?",
+    questionSanskrit: "'ददाति' इत्यस्य कर्मणि किं रूपम्?",
+    options: [
+      "दास्यते",
+      "दीयते",
+      "दायते",
+      "दद्यते"
+    ],
+    correctIndex: 1,
+    explanation: "दा-धातोः कर्मणि यक्-प्रत्यये ईकारादेशे 'दीयते' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q2-3",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 2: Verbal Stem Conjugations",
+    question: "If the active verb form is 'शृणोति' (श्रु धातुः), what is its passive form?",
+    questionSanskrit: "'शृणोति' इत्यस्य कर्मणि किं रूपम्?",
+    options: [
+      "श्रुयते",
+      "शृण्यते",
+      "श्रूयते",
+      "श्राव्यते"
+    ],
+    correctIndex: 2,
+    explanation: "श्रु-धातोः यक्-प्रत्यये उकारस्य दीर्घे 'श्रूयते' इति रूपं सिध्यति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q2-4",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 2: Verbal Stem Conjugations",
+    question: "Conjugate the root 'कृ' (करोति) into its passive present-tense form:",
+    questionSanskrit: "'करोति' (कृ धातुः) इत्यस्य कर्मणि किं रूपम्?",
+    options: [
+      "कार्यते",
+      "क्रियति",
+      "कर्ते",
+      "क्रियते"
+    ],
+    correctIndex: 3,
+    explanation: "कृ-धातोः यक्-प्रत्यये ऋकारस्य 'रिङ्' आदेशे 'क्रियते' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q2-5",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 2: Verbal Stem Conjugations",
+    question: "Convert the active verb 'पश्यति' (दृश् धातुः) into its passive present-tense form:",
+    questionSanskrit: "'पश्यति' (दृश् धातुः) इत्यस्य कर्मणि किं रूपम्?",
+    options: [
+      "दृश्यते",
+      "पश्यते",
+      "दर्शते",
+      "दीक्ष्यते"
+    ],
+    correctIndex: 0,
+    explanation: "कर्मवाच्ये पश्यादेशः न भवति, मूलधातोः यक्-प्रत्यये 'दृश्यते' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q2-6",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 2: Verbal Stem Conjugations",
+    question: "What are the passive forms of the active verbs 'वदति' and 'वक्ति' (वद् / वच् धातू)?",
+    questionSanskrit: "'वदति' / 'वक्ति' इत्यनयोः कर्मणि रूपे के?",
+    options: [
+      "वद्यते / वच्यते",
+      "उद्यते / उच्यते",
+      "वाद्यते / वाच्यते",
+      "विद्यते / उच्यते"
+    ],
+    correctIndex: 1,
+    explanation: "वद् तथा वच् धातुषु सम्प्रसारणे सति वकारस्य उकारे 'उद्यते' तथा 'उच्यते' इति रूपे भवतः।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q2-7",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 2: Verbal Stem Conjugations",
+    question: "Conjugate the active root 'पृच्छति' (प्रछ् धातुः) into its passive counterpart:",
+    questionSanskrit: "'पृच्छति' (प्रछ् धातुः) इत्यस्य कर्मणि किं रूपम्?",
+    options: [
+      "प्रच्छ्यते",
+      "प्राश्यते",
+      "पृच्छ्यते",
+      "पर्छ्यते"
+    ],
+    correctIndex: 2,
+    explanation: "प्रछ् धातोः यक्-प्रत्यये 'पृच्छ्यते' इति रूपं सिध्यति (गुरुणा प्रश्नः पृच्छ्यते)।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q2-8",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 2: Verbal Stem Conjugations",
+    question: "What form does the active root 'जानाति' (ज्ञा धातुः) take in the passive present tense?",
+    questionSanskrit: "'जानाति' (ज्ञा धातुः) इत्यस्य कर्मणि किं रूपम्?",
+    options: [
+      "जानीते",
+      "ज्ञेयते",
+      "ज्ञायति",
+      "ज्ञायते"
+    ],
+    correctIndex: 3,
+    explanation: "ज्ञा-धातोः यक्-प्रत्यये आत्मनेपदे 'ज्ञायते' इति रूपं सिध्यति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q2-9",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 2: Verbal Stem Conjugations",
+    question: "Provide the passive present-tense form for the prefixed root 'प्राप्नोति' (प्र + आप्):",
+    questionSanskrit: "'प्राप्नोति' इत्यस्य कर्मणि किं रूपम्?",
+    options: [
+      "प्राप्यते",
+      "प्राम्नोते",
+      "आप्यते",
+      "प्रप्यते"
+    ],
+    correctIndex: 0,
+    explanation: "प्र-उपसर्गपूर्वक-आप्-धातोः यक्-प्रत्यये 'प्राप्यते' इति रूपं भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q2-10",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 2: Verbal Stem Conjugations",
+    question: "Convert the active verbs 'जिघ्रति' (घ्रा) and 'ध्यायति' (ध्यै) into passive forms:",
+    questionSanskrit: "'जिघ्रति' तथा 'ध्यायति' इत्यनयोः कर्मणि रूपे के?",
+    options: [
+      "जिघ्र्यते / ध्येयते",
+      "घ्रायते / ध्यायते",
+      "घ्रीयते / धीयाते",
+      "घ्रास्यते / ध्यास्यते"
+    ],
+    correctIndex: 1,
+    explanation: "घ्रा धातोः 'घ्रायते' तथा ध्यै धातोः 'ध्यायते' इति रूपे कर्मणि भवतः।",
+    difficulty: "medium",
+    points: 10
+  },
+
+  // --- Quiz 3: Participle Suffix Tense Extensions ---
+  {
+    id: "g9-vachya-q3-1",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 3: Participle Suffix Tense Extensions",
+    question: "Which participle suffix (कृदन्त-प्रत्ययः) represents the past active voice format?",
+    questionSanskrit: "भूतकाले कर्तृवाच्ये कः कृदन्तप्रत्ययः प्रयुज्यते?",
+    options: [
+      "'क्तवतु' प्रत्ययः (वान् / वती / वत्)",
+      "'क्त' प्रत्ययः (तः / ता / तम्)",
+      "'शतृ' प्रत्ययः",
+      "'शानच्' प्रत्ययः"
+    ],
+    correctIndex: 0,
+    explanation: "भूतकाले कर्तर्येव 'क्तवतु' प्रत्ययः भवति (यथा— बालकः पठितवान्, सा लिखितवती)।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q3-2",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 3: Participle Suffix Tense Extensions",
+    question: "Name the past passive participle suffix that replaces 'क्तवतु' in passive and impersonal voice:",
+    questionSanskrit: "कर्मवाच्ये भाववाच्ये च क्तवतु-स्थाने कः भूतकालिकः प्रत्ययः भवति?",
+    options: [
+      "'ल्युट्' प्रत्ययः",
+      "'क्त' प्रत्ययः (तः / ता / तम्)",
+      "'तुमुन्' प्रत्ययः",
+      "'क्त्वा' प्रत्ययः"
+    ],
+    correctIndex: 1,
+    explanation: "कर्मणि भावे च भूतकाले 'क्त' प्रत्ययः भवति (यथा— बालकेन श्लोकः पठितः)।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q3-3",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 3: Participle Suffix Tense Extensions",
+    question: "Which two potential/obligation participle suffixes mirror Vidhilining in passive voice?",
+    questionSanskrit: "विधिलिङ्-स्थाने कर्मणि भावे च कौ प्रत्ययौ प्रयुज्येते?",
+    options: [
+      "'क्त' and 'क्तवतु'",
+      "'शतृ' and 'शानच्'",
+      "'तव्यत्' and 'अनीयर्'",
+      "'तुमुन्' and 'ल्यप्'"
+    ],
+    correctIndex: 2,
+    explanation: "विधिलिङ्-स्थाने योग्यार्थे च कर्मणि भावे 'तव्यत्' तथा 'अनीयर्' प्रत्ययौ प्रयुज्येते।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q3-4",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 3: Participle Suffix Tense Extensions",
+    question: "In past passive voice (क्त), what grammatical features of the object must the participle match?",
+    questionSanskrit: "कर्मवाच्ये क्त-प्रत्ययान्तं पदं कर्मणः कानि अङ्गानि अनुसरति?",
+    options: [
+      "केवलं विभक्तिम्",
+      "केवलं पुरुषम्",
+      "केवलं कालम्",
+      "लिङ्ग (Gender), विभक्ति (Case), and वचन (Number)"
+    ],
+    correctIndex: 3,
+    explanation: "क्त-प्रत्ययान्तः शब्दः विशेषणवत् कर्मणः लिङ्गं, विभक्तिं, वचनं च अनुसरति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q3-5",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 3: Participle Suffix Tense Extensions",
+    question: "Convert the active past form 'पठितवान्' into its passive counterpart agreeing with a masculine singular object:",
+    questionSanskrit: "पुंल्लिङ्ग-एकवचने कर्मणि 'पठितवान्' इत्यस्य क्त-प्रत्ययान्तरूपं किम्?",
+    options: [
+      "पठितः",
+      "पठिता",
+      "पठितम्",
+      "पठितानि"
+    ],
+    correctIndex: 0,
+    explanation: "पुंल्लिङ्ग-प्रथमा-एकवचने 'पठितः' इति रूपं भवति (बालकेन श्लोकः पठितः)।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q3-6",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 3: Participle Suffix Tense Extensions",
+    question: "What is the passive past participle form corresponding to the feminine active word 'लिखितवती'?",
+    questionSanskrit: "स्त्रीलिङ्ग-एकवचने कर्मणि 'लिखितवती' इत्यस्य क्त-प्रत्ययान्तरूपं किम्?",
+    options: [
+      "लिखितः",
+      "लिखिता",
+      "लिखितम्",
+      "लिखितवन्तः"
+    ],
+    correctIndex: 1,
+    explanation: "स्त्रीलिङ्ग-प्रथमा-एकवचने 'लिखिता' इति रूपं भवति (तया कविता लिखिता)।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q3-7",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 3: Participle Suffix Tense Extensions",
+    question: "Convert the plural active past phrase 'आरक्षकाः चोरान् नीतवन्तः' into passive voice:",
+    questionSanskrit: "'आरक्षकाः चोरान् नीतवन्तः' इत्यस्य कर्मवाच्ये रूपं किं स्यात्?",
+    options: [
+      "आरक्षकैः चोराः नीतः",
+      "आरक्षकैः चोरान् नीतम्",
+      "आरक्षकैः चोराः नीताः",
+      "आरक्षकेण चोराः नीताः"
+    ],
+    correctIndex: 2,
+    explanation: "चोरान् $\\rightarrow$ चोराः (पुंल्लिङ्ग प्रथमा बहुवचनम्), तदनुसारं क्त-प्रत्यये 'नीताः' इति रूपं भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q3-8",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 3: Participle Suffix Tense Extensions",
+    question: "What invariant form do Kta, Tavyat, and Aniyar participles take in Bhava Vachya (Impersonal)?",
+    questionSanskrit: "भाववाच्ये क्त-तव्यत्-अनीयर्-प्रत्ययाः कस्मिन् लिङ्गे कस्मिन् च वचने भवन्ति?",
+    options: [
+      "पुंल्लिङ्ग-प्रथमाविभक्ति-एकवचनम्",
+      "स्त्रीलिङ्ग-प्रथमाविभक्ति-एकवचनम्",
+      "नपुंसकलिङ्ग-प्रथमाविभक्ति-बहुवचनम्",
+      "नपुंसकलिङ्ग-प्रथमाविभक्ति-एकवचनम् (Neuter Singular ending in -म्)"
+    ],
+    correctIndex: 3,
+    explanation: "भाववाच्ये कर्मणः अभावात् कृदन्तप्रत्ययाः नित्यं नपुंसकलिङ्ग-प्रथमा-एकवचने भवन्ति (स्थितम्, धावितव्यम्)।",
+    difficulty: "hard",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q3-9",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 3: Participle Suffix Tense Extensions",
+    question: "Convert the potential active sentence 'महेशः आपणं गच्छेत्' into its correct passive formulation:",
+    questionSanskrit: "'महेशः आपणं गच्छेत्' इत्यस्य कर्मवाच्ये रूपं किम्?",
+    options: [
+      "महेशेन आपणः गन्तव्यः / गमनीयः",
+      "महेशाय आपणं गम्यते",
+      "महेशेन आपणं गच्छेत्",
+      "महेशः आपणेन गम्यते"
+    ],
+    correctIndex: 0,
+    explanation: "महेशः $\\rightarrow$ महेशेन; आपणम् $\\rightarrow$ आपणः; गच्छेत् $\\rightarrow$ गन्तव्यः / गमनीयः।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-vachya-q3-10",
+    category: "grade9_vachya",
+    categoryLabel: "Grade 9 Appendix 3: वाच्य-परिवर्तनम्",
+    chapterRef: "Grade 9: परिशिष्टम् ३ — वाच्य-परिवर्तनम् (Pages 196–215)",
+    subCategory: "Quiz 3: Participle Suffix Tense Extensions",
+    question: "Convert the potential active sentence 'छात्राः स्वाध्यायं कुर्युः' into passive voice:",
+    questionSanskrit: "'छात्राः स्वाध्यायं कुर्युः' इत्यस्य कर्मवाच्ये रूपं किम्?",
+    options: [
+      "छात्रैः स्वाध्यायः कर्तव्यम्",
+      "छात्रैः स्वाध्यायः कर्तव्यः / करणीयः",
+      "छात्राभिः स्वाध्यायं क्रियते",
+      "छात्रैः स्वाध्याये क्रियेरन्"
+    ],
+    correctIndex: 1,
+    explanation: "छात्राः $\\rightarrow$ छात्रैः; स्वाध्यायम् $\\rightarrow$ स्वाध्यायः (पुं. एक.); कुर्युः $\\rightarrow$ कर्तव्यः / करणीयः।",
     difficulty: "medium",
     points: 10
   }

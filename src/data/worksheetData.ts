@@ -17084,5 +17084,349 @@ export const WORKSHEETS: Worksheet[] = [
         ]
       }
     ]
+  },
+// ==========================================
+  // GRADE 9 APPENDIX 3 WORKSHEET 1: Present Tense Structural Shifts (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-vachya-ws1",
+    title: "Worksheet 1: Present Tense Structural Shifts (10 Questions)",
+    titleSanskrit: "परिशिष्टम् ३ कार्यपत्रिका १: लट् लकार वाच्य-परिवर्तनम् (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Convert sentences between Active Voice and Passive Voice based on present-tense (लट् लकार) rules on pages 178–180.",
+    sections: [
+      {
+        sectionTitle: "Section A: Present Tense Voice Transformations",
+        sectionTitleSanskrit: "खण्डः 'क' · लट् लकार वाच्य-परिवर्तनम्",
+        instructions: "Convert the following sentences between Active and Passive voices.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "बालकः श्लोकं पठति। $\\rightarrow$ Passive: ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: बालकः श्लोकं पठति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "बालकेन श्लोकः पठ्यते।",
+            explanation: "बालकः (प्रथमा) $\\rightarrow$ बालकेन (तृतीया); श्लोकम् (द्वितीया) $\\rightarrow$ श्लोकः (प्रथमा); पठति $\\rightarrow$ पठ्यते।"
+          },
+          {
+            num: 2,
+            question: "सा कवितां लिखति। $\\rightarrow$ Passive: ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: सा कवितां लिखति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "तया कविता लिख्यते।",
+            explanation: "सा (स्त्री. प्रथमा) $\\rightarrow$ तया (तृतीया); कविताम् $\\rightarrow$ कविता (प्रथमा); लिखति $\\rightarrow$ लिख्यते।"
+          },
+          {
+            num: 3,
+            question: "शिक्षकः ग्रन्थालयं गच्छति। $\\rightarrow$ Passive: ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: शिक्षकः ग्रन्थालयं गच्छति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "शिक्षकेण ग्रन्थालयः गम्यते।",
+            explanation: "शिक्षकः $\\rightarrow$ शिक्षकेण; ग्रन्थालयं $\\rightarrow$ ग्रन्थालयः; गच्छति $\\rightarrow$ गम्यते (गम् + यक् + ते)।"
+          },
+          {
+            num: 4,
+            question: "अहम् इक्षुरसं पिबामि। $\\rightarrow$ Passive: ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: अहम् इक्षुरसं पिबामि। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "मया इक्षुरसः पीयते।",
+            explanation: "अहम् $\\rightarrow$ मया; इक्षुरसम् $\\rightarrow$ इक्षुरसः; पिबामि $\\rightarrow$ पा धातोः ईकारादेशे 'पीयते'।"
+          },
+          {
+            num: 5,
+            question: "आरक्षकाः चोरान् नयन्ति। $\\rightarrow$ Passive: ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: आरक्षकाः चोरान् नयन्ति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "आरक्षकैः चोराः नीयन्ते।",
+            explanation: "आरक्षकाः $\\rightarrow$ आरक्षकैः; चोरान् (द्वितीया बहु.) $\\rightarrow$ चोराः (प्रथमा बहु.); नयन्ति $\\rightarrow$ नीयन्ते (कर्मानुसारि बहुवचनम्)।"
+          },
+          {
+            num: 6,
+            question: "राधा पूजां करोति। $\\rightarrow$ Passive: ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: राधा पूजां करोति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "राधया पूजा क्रियते।",
+            explanation: "राधा $\\rightarrow$ राधया (स्त्री. तृतीया); पूजाम् $\\rightarrow$ पूजा; करोति $\\rightarrow$ कृ धातोः 'क्रियते'।"
+          },
+          {
+            num: 7,
+            question: "मित्राणि चलच्चित्रं पश्यन्ति। $\\rightarrow$ Passive: ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: मित्राणि चलच्चित्रं पश्यन्ति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "मित्रैः चलच्चित्रं दृश्यते।",
+            explanation: "मित्राणि $\\rightarrow$ मित्रैः; चलच्चित्रम् $\\rightarrow$ चलच्चित्रम्; पश्यन्ति $\\rightarrow$ दृश् धातोः 'दृश्यते'।"
+          },
+          {
+            num: 8,
+            question: "Active: ______ $\\leftarrow$ तेन दुर्गुणाः त्यज्यन्ते।",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: तेन दुर्गुणाः त्यज्यन्ते। $\\leftarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "सः दुर्गुणान् त्यजति।",
+            explanation: "तेन $\\rightarrow$ सः (प्रथमा); दुर्गुणाः $\\rightarrow$ दुर्गुणान् (द्वितीया बहु.); त्यज्यन्ते $\\rightarrow$ त्यजति (कर्त्रनुसारि एकवचनम्)।"
+          },
+          {
+            num: 9,
+            question: "Active: ______ $\\leftarrow$ सञ्जयेन लेखन्यः दीयन्ते।",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: सञ्जयेन लेखन्यः दीयन्ते। $\\leftarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "सञ्जयः लेखनीः ददाति।",
+            explanation: "सञ्जयेन $\\rightarrow$ सञ्जयः; लेखन्यः (प्रथमा बहु.) $\\rightarrow$ लेखनीः (द्वितीया बहु.); दीयन्ते $\\rightarrow$ ददाति।"
+          },
+          {
+            num: 10,
+            question: "Active: ______ $\\leftarrow$ सुनीतया फलानि खाद्यन्ते।",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: सुनीतया फलानि खाद्यन्ते। $\\leftarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "सुनीता फलानि खादति।",
+            explanation: "सुनीतया $\\rightarrow$ सुनीता; फलानि $\\rightarrow$ फलानि (द्वितीया बहु.); खाद्यन्ते $\\rightarrow$ खादति (कर्त्रनुसारि एकवचनम्)।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 APPENDIX 3 WORKSHEET 2: Past Tense Suffix Splits (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-vachya-ws2",
+    title: "Worksheet 2: Past Tense Suffix Splits (10 Questions)",
+    titleSanskrit: "परिशिष्टम् ३ कार्यपत्रिका २: भूतकाल प्रत्यय-परिवर्तनम् (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Convert sentences between Active Voice and Passive Voice using past participles (क्तवतु vs क्त) based on pages 180–181.",
+    sections: [
+      {
+        sectionTitle: "Section A: Past Participle Voice Transformations",
+        sectionTitleSanskrit: "खण्डः 'क' · भूतकाल प्रत्यय-परिवर्तनम् (क्तवतु / क्त)",
+        instructions: "Convert the following sentences between Active and Passive voices using past participles.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "बालकः श्लोकं पठितवान्। $\\rightarrow$ Passive: ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: बालकः श्लोकं पठितवान्। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "बालकेन श्लोकः पठितः।",
+            explanation: "बालकः $\\rightarrow$ बालकेन; श्लोकम् $\\rightarrow$ श्लोकः; पठितवान् (क्तवतु) $\\rightarrow$ पठितः (क्त, पुंल्लिङ्ग एकवचनम्)।"
+          },
+          {
+            num: 2,
+            question: "सा कवितां लिखितवती। $\\rightarrow$ Passive: ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: सा कवितां लिखितवती। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "तया कविता लिखिता।",
+            explanation: "सा $\\rightarrow$ तया; कविताम् $\\rightarrow$ कविता; लिखितवती (क्तवतु) $\\rightarrow$ लिखिता (क्त, स्त्रीलिङ्ग एकवचनम्)।"
+          },
+          {
+            num: 3,
+            question: "शिक्षकः ग्रन्थालयं गतवान्। $\\rightarrow$ Passive: ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: शिक्षकः ग्रन्थालयं गतवान्। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "शिक्षकेण ग्रन्थालयः गतः।",
+            explanation: "शिक्षकः $\\rightarrow$ शिक्षकेण; ग्रन्थालयं $\\rightarrow$ ग्रन्थालयः; गतवान् $\\rightarrow$ गतः (क्त, पुंल्लिङ्ग एकवचनम्)।"
+          },
+          {
+            num: 4,
+            question: "अहम् इक्षुरसं पीतवान्। $\\rightarrow$ Passive: ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: अहम् इक्षुरसं पीतवान्। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "मया इक्षुरसः पीतः।",
+            explanation: "अहम् $\\rightarrow$ मया; इक्षुरसम् $\\rightarrow$ इक्षुरसः; पीतवान् $\\rightarrow$ पीतः (क्त, पुंल्लिङ्ग एकवचनम्)।"
+          },
+          {
+            num: 5,
+            question: "आरक्षकाः चोरान् नीतवन्तः। $\\rightarrow$ Passive: ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: आरक्षकाः चोरान् नीतवन्तः। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "आरक्षकैः चोराः नीताः।",
+            explanation: "आरक्षकाः $\\rightarrow$ आरक्षकैः; चोरान् $\\rightarrow$ चोराः; नीतवन्तः $\\rightarrow$ नीताः (क्त, कर्मानुसारेण पुं. बहु.)।"
+          },
+          {
+            num: 6,
+            question: "Active: ______ $\\leftarrow$ सुनीतया फलानि खादितानि।",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: सुनीतया फलानि खादितानि। $\\leftarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "सुनीता फलानि खादितवती।",
+            explanation: "सुनीतया $\\rightarrow$ सुनीता; फलानि $\\rightarrow$ फलानि; खादितानि $\\rightarrow$ खादितवती (क्तवतु स्त्री. एक.)।"
+          },
+          {
+            num: 7,
+            question: "Active: ______ $\\leftarrow$ तेन दुर्गुणाः त्यक्ताः।",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: तेन दुर्गुणाः त्यक्ताः। $\\leftarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "सः दुर्गुणान् त्यक्तवान्।",
+            explanation: "तेन $\\rightarrow$ सः; दुर्गुणाः $\\rightarrow$ दुर्गुणान्; त्यक्ताः $\\rightarrow$ त्यक्तवान् (क्तवतु पुं. एक.)।"
+          },
+          {
+            num: 8,
+            question: "Active: ______ $\\leftarrow$ सञ्जयेन लेखन्यः दत्ताः।",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: सञ्जयेन लेखन्यः दत्ताः। $\\leftarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "सञ्जयः लेखनीः दत्तवान्।",
+            explanation: "सञ्जयेन $\\rightarrow$ सञ्जयः; लेखन्यः $\\rightarrow$ लेखनीः (द्वितीया बहु.); दत्ताः $\\rightarrow$ दत्तवान् (क्तवतु पुं. एक.)।"
+          },
+          {
+            num: 9,
+            question: "Active: ______ $\\leftarrow$ राधया पूजा कृता।",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: राधया पूजा कृता। $\\leftarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "राधा पूजां कृतवती।",
+            explanation: "राधया $\\rightarrow$ राधा; पूजा $\\rightarrow$ पूजाम्; कृता $\\rightarrow$ कृतवती (क्तवतु स्त्री. एक.)।"
+          },
+          {
+            num: 10,
+            question: "Active: ______ $\\leftarrow$ मित्रैः चलच्चित्रं दृष्टम्।",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: मित्रैः चलच्चित्रं दृष्टम्। $\\leftarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "मित्राणि चलच्चित्रं दृष्टवन्तः (दृष्टवन्ति)।",
+            explanation: "मित्रैः $\\rightarrow$ मित्राणि; चलच्चित्रम् $\\rightarrow$ चलच्चित्रम्; दृष्टम् $\\rightarrow$ दृष्टवन्तः / दृष्टवन्ति (क्तवतु बहुवचनम्)।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 APPENDIX 3 WORKSHEET 3: Impersonal Voice Operations (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-vachya-ws3",
+    title: "Worksheet 3: Impersonal Voice Operations (10 Questions)",
+    titleSanskrit: "परिशिष्टम् ३ कार्यपत्रिका ३: भाववाच्य चक्रम् (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Convert intransitive sentences from Active Voice into Impersonal Voice (भाववाच्य) or vice-versa based on pages 181–183.",
+    sections: [
+      {
+        sectionTitle: "Section A: Impersonal Voice Transformations",
+        sectionTitleSanskrit: "खण्डः 'क' · भाववाच्य-परिवर्तनम् (अकर्मकधातवः)",
+        instructions: "Convert the following intransitive sentences between Active and Impersonal voices.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "ते हसन्ति। $\\rightarrow$ Impersonal: ______",
+            questionSanskrit: "भाववाच्ये परिवर्तयत: ते हसन्ति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "तैः हस्यते।",
+            explanation: "ते (प्रथमा बहु.) $\\rightarrow$ तैः (तृतीया बहु.); हस् अकर्मकधातोः क्रियापदं नित्यं प्रथमपुरुषैकवचने 'हस्यते'।"
+          },
+          {
+            num: 2,
+            question: "बालाः उद्याने क्रीडन्ति। $\\rightarrow$ Impersonal: ______",
+            questionSanskrit: "भाववाच्ये परिवर्तयत: बालाः उद्याने क्रीडन्ति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "बालैः उद्याने क्रीड्यते।",
+            explanation: "बालाः $\\rightarrow$ बालैः; उद्याने अधिकरणम्; अकर्मकक्रियापदं नित्यं प्रथमपुरुषैकवचने 'क्रीड्यते'।"
+          },
+          {
+            num: 3,
+            question: "फलानि भूमौ पतन्ति। $\\rightarrow$ Impersonal: ______",
+            questionSanskrit: "भाववाच्ये परिवर्तयत: फलानि भूमौ पतन्ति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "फलैः भूमौ पत्यते।",
+            explanation: "फलानि $\\rightarrow$ फलैः; भूमौ अधिकरणम्; पत् धातोः प्रथमपुरुषैकवचने 'पत्यते'।"
+          },
+          {
+            num: 4,
+            question: "सा उत्तिष्ठति। $\\rightarrow$ Impersonal: ______",
+            questionSanskrit: "भाववाच्ये परिवर्तयत: सा उत्तिष्ठति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "तया उत्थीयते।",
+            explanation: "सा $\\rightarrow$ तया; उत् + स्था धातोः आकारस्य ईकारादेशे 'उत्थीयते'।"
+          },
+          {
+            num: 5,
+            question: "शुनकः धावति। $\\rightarrow$ Impersonal: ______",
+            questionSanskrit: "भाववाच्ये परिवर्तयत: शुनकः धावति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "शुनकेन धाव्यते।",
+            explanation: "शुनकः $\\rightarrow$ शुनकेन; धाव् + यक् + ते = 'धाव्यते'।"
+          },
+          {
+            num: 6,
+            question: "शिशुः शेते। $\\rightarrow$ Impersonal: ______",
+            questionSanskrit: "भाववाच्ये परिवर्तयत: शिशुः शेते। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "शिशुना शय्यते।",
+            explanation: "शिशुः $\\rightarrow$ शिशुना (इकारान्त पुं. तृतीया); शी धातोः अय्-आदेशे 'शय्यते'।"
+          },
+          {
+            num: 7,
+            question: "Active Past: ______ $\\leftarrow$ वाहनैः मार्गे स्थितम्।",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: वाहनैः मार्गे स्थितम्। $\\leftarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "वाहनानि मार्गे स्थितवन्ति (अतिष्ठन्)।",
+            explanation: "वाहनैः $\\rightarrow$ वाहनानि; स्थितम् (क्त, नपुं. एक.) $\\rightarrow$ स्थितवन्ति (क्तवतु नपुं. बहु.) / अतिष्ठन्।"
+          },
+          {
+            num: 8,
+            question: "Active Past: ______ $\\leftarrow$ तया उत्थितम्।",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: तया उत्थितम्। $\\leftarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "सा उत्थितवती (उदतिष्ठत्)।",
+            explanation: "तया $\\rightarrow$ सा; उत्थितम् $\\rightarrow$ उत्थितवती (क्तवतु स्त्री. एक.) / उदतिष्ठत्।"
+          },
+          {
+            num: 9,
+            question: "Potential Active: ______ $\\rightarrow$ Impersonal: शुनकेन धावितव्यम् / धावनीयम्।",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: शुनकेन धावितव्यम् / धावनीयम्। $\\leftarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "शुनकः धावेत्।",
+            explanation: "शुनकेन $\\rightarrow$ शुनकः; धावितव्यम् $\\rightarrow$ विधिलिङ् प्रथमपुरुषैकवचने 'धावेत्'।"
+          },
+          {
+            num: 10,
+            question: "Potential Active: ______ $\\rightarrow$ Impersonal: वृक्षेण वर्धितव्यम् / वर्धनीयम्।",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: वृक्षेण वर्धितव्यम् / वर्धनीयम्। $\\leftarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "वृक्षः वर्धेत।",
+            explanation: "वृक्षेण $\\rightarrow$ वृक्षः; वर्धितव्यम् $\\rightarrow$ विधिलिङ् आत्मनेपद प्रथमपुरुषैकवचने 'वर्धेत'।"
+          }
+        ]
+      }
+    ]
   }
 ];

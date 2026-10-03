@@ -1,0 +1,660 @@
+================================================================================
+कक्षा ९ संस्कृतम् (CBSE / NCERT शारदा - Sharda)
+परिशिष्टम् ३ : वाच्य-परिवर्तनम् (कर्तृ-कर्म-भाववाच्यानि)
+(The Science of Sanskrit Voices: Morpho-Syntactic Voice Conjugation & Transformations)
+पाठ्यपुस्तक पृष्ठानि: 196–215 (परिशिष्टम् ३ — वाच्य-परिवर्तनम्)
+मुख्य-विषयाः: कर्तृवाच्यम् (Active), कर्मवाच्यम् (Passive), भाववाच्यम् (Impersonal), यक्-प्रत्ययः, धातुरूपाणि, क्त/क्तवतु, तव्यत्/अनीयर्
+================================================================================
+
+================================================================================
+🌟 CURRICULUM FRAMEWORK & PEDAGOGICAL ALIGNMENT: CBSE & NCERT CLASS 9 SANSKRIT
+   Paninian Morpho-Syntax: Sanskrit Voices (वाच्यम् / प्रयोगः) & Voice Transformation
+================================================================================
+
+The Central Board of Secondary Education (CBSE) and NCERT in the Class 9 Sanskrit
+curriculum ('शारदा' / 'Sharda', परिशिष्टम् ३, पृष्ठानि १९६–२१५) present the rigorous
+and systematic study of Sanskrit Voices (वाच्यम् / प्रयोगः) and Voice Transformation
+(वाच्य-परिवर्तनम्).
+
+In Paninian Sanskrit grammar, 'Vachya' (वाच्यम्) designates the syntactic orientation
+and relationship of the predicate verb (क्रियापदम्) towards the primary nominal
+arguments—the Agent/Subject (कर्ता), the Patient/Object (कर्म), or the abstract verbal
+action/state itself (भावः). Unlike English and modern vernaculars where voice is
+primarily syntactic and periphrastic, Sanskrit voice transformation is an organic,
+morphological metamorphosis governed by verbal suffixes (तिङ्-प्रत्ययाः), class infixes
+(यक्-विकरणः), and participial formations (कृदन्त-प्रत्ययाः).
+
+Pedagogical Core Objectives (NEP 2020 & CBSE Competencies):
+  1. Foundational Tripartite Voice Architecture (त्रिविध-वाच्य-व्यवस्था):
+     - कर्तृवाच्यम् (Active Voice / कर्तरि प्रयोगः): 1-2-Active Coordinate System.
+       The subject governs the verb; verb inflects in person and number matching the subject.
+     - कर्मवाच्यम् (Passive Voice / कर्मणि प्रयोगः): 3-1-Passive Coordinate System.
+       The patient/object is elevated to Nominative; subject recedes into Instrumental;
+       the verb takes the 'यक्' (य) infix and strictly Atmanepada personal terminations,
+       harmonizing person and number with the object.
+     - भाववाच्यम् (Impersonal Voice / भावे प्रयोगः): 3-X-Impersonal Coordinate System.
+       Exclusive to intransitive roots (अकर्मक-धातवः); subject in Instrumental; object is
+       absent; verb is permanently locked in Third Person Singular (प्रथमपुरुषः एकवचनम्).
+  2. Root Morpho-Phonemics & 'यक्' Conjugation (धातु-रूपान्तरणम्):
+     - Direct root attachment without thematic intermediate guna (e.g., पठ् + य + ते = पठ्यते).
+     - Vowel elongation and vocalic shifts (पा $\rightarrow$ पीयते, गा $\rightarrow$ गीयते, दा $\rightarrow$ दीयते, श्रु $\rightarrow$ श्रूयते).
+     - Vocalic modification of 'ऋ' (कृ $\rightarrow$ क्रियते, भृ $\rightarrow$ भ्रियते, स्मृ $\rightarrow$ स्मर्यते/स्म्रियते).
+     - Samprasarana semivowel reduction (वद् $\rightarrow$ उद्यते/उच्यते, वच् $\rightarrow$ उच्यते, यज् $\rightarrow$ इज्यते, ग्रह् $\rightarrow$ गृह्यते).
+  3. Universal Tense & Participial Voice Adaptations (कृदन्त-वाच्य-परिवर्तनम्):
+     - Past Tense: Active uses 'क्तवतु' (पठितवान् / लिखितवती); Passive/Impersonal uses 'क्त'
+       (पठितः / लिखिता / पठितम्), agreeing in gender, case, and number with the object.
+     - Potential / Injunction: Active uses विधिलिङ् (पठेत् / लिखेयुः); Passive/Impersonal uses
+       'तव्यत्' / 'अनीयर्' (पठितव्यः / पठनीयः).
+     - Impersonal Voice Participles: Fixed unconditionally in Neuter Nominative Singular
+       (नपुंसकलिङ्ग-प्रथमाविभक्ति-एकवचनम्: स्थितम्, धावितव्यम्, शयितव्यम्).
+
+================================================================================
+📖 Part 1: Complete Vachya Chapter Guide & Structural Classification
+================================================================================
+
+Vachya (वाच्यम् / प्रयोगः) refers to the voice or syntactic layout of a sentence in Sanskrit
+grammar. It defines the specific structural relationships shared between the Subject (कर्ता),
+Object (कर्म), and Verb (क्रियापदम्).
+
+Sanskrit grammar outlines exactly three structural modes for speech delivery:
+
+                                वाच्यम् (Voices)
+                                       |
+       -----------------------------------------------------------------
+      |                                |                                |
+१. कर्तृवाच्यम् (Active)         २. कर्मवाच्यम् (Passive)          ३. भाववाच्यम् (Impersonal)
+ [Subject Dominant]               [Object Dominant]               [Action/State Dominant]
+
+--------------------------------------------------------------------------------
+1. कर्तृवाच्यम् (Active Voice / कर्तरि प्रयोगः)
+--------------------------------------------------------------------------------
+The action of the verb tracks the subject directly. The verb alters its numerical
+properties strictly based on the number and person of the subject, leaving the object
+with no control over conjugation.
+
+• Structural Coordinates (1-2-Active System):
+  - Subject (कर्ता): Always assigned प्रथमा विभक्तिः (Nominative case).
+  - Object (कर्म): Always assigned द्वितीया विभक्तिः (Accusative case).
+  - Verb (क्रियापदम्): Follows the person and number of the subject. It can use either
+    Parasmaipada or Atmanepada based on the inherent nature of the verbal root.
+
+• Syntactic Matrix:
+  +---------------+---------------+------------------------------+
+  | Subject (कर्ता)| Object (कर्म) | Verb (क्रियापदम्)             |
+  +---------------+---------------+------------------------------+
+  | प्रथमा विभक्तिः| द्वितीया      | कर्त्रनुसारि (पुरुष-वचने कर्ता)|
+  | (Nominative)  | (Accusative)  | Parasmaipada / Atmanepada    |
+  +---------------+---------------+------------------------------+
+
+• Textbook Examples:
+  - बालः चित्रं पश्यति। (Singular subject 'बालः' $\rightarrow$ Singular verb 'पश्यति')
+  - बालौ चित्रं पश्यतः। (Dual subject 'बालौ' $\rightarrow$ Dual verb 'पश्यतः')
+  - बालाः चित्रं पश्यन्ति। (Plural subject 'बालाः' $\rightarrow$ Plural verb 'पश्यन्ति')
+  - अहम् इक्षुरसं पिबामि। (First person subject 'अहम्' $\rightarrow$ First person verb 'पिबामि')
+  - ते हसन्ति। (Intransitive active: Third person plural 'ते' $\rightarrow$ 'हसन्ति')
+
+--------------------------------------------------------------------------------
+2. कर्मवाच्यम् (Passive Voice / कर्मणि प्रयोगः)
+--------------------------------------------------------------------------------
+The action of the verb tracks the object directly. The subject is sidelined into the
+instrumental case, and the verb adapts its person and number configuration based
+exclusively on the target object. This mode applies only to transitive roots (सकर्मक-धातवः).
+
+• Structural Coordinates (3-1-Passive System):
+  - Subject (कर्ता): Always shifted to तृतीया विभक्तिः (Instrumental case).
+  - Object (कर्म): Always elevated to प्रथमा विभक्तिः (Nominative case).
+  - Verb Mechanic (Conjugation): Formed by appending the suffix 'यक्' (य) directly to
+    the verbal root, followed strictly by Atmanepada personal endings (ते, येते, न्ते).
+  - Mathematical Formula: Verbal Root + यक् (य) + आत्मनेपद-प्रत्ययः = Passive Verb.
+    (e.g., पठ् + य + ते = पठ्यते; पठ् + य + न्ते = पठ्यन्ते).
+
+• Syntactic Matrix:
+  +---------------+---------------+-------------------------------+
+  | Subject (कर्ता)| Object (कर्म) | Verb (क्रियापदम्)              |
+  +---------------+---------------+-------------------------------+
+  | तृतीया विभक्तिः | प्रथमा विभक्तिः | कर्मानुसारि (पुरुष-वचने कर्म)  |
+  | (Instrumental)| (Nominative)  | धातु + य + आत्मनेपद-प्रत्ययः   |
+  +---------------+---------------+-------------------------------+
+
+• Textbook Examples:
+  - Active: बालकः श्लोकं पठति। $\rightarrow$ Passive: बालकेन श्लोकः पठ्यते।
+    (Singular object 'श्लोकः' $\rightarrow$ Singular passive verb 'पठ्यते')
+  - Active: सुनीता फलानि खादति। $\rightarrow$ Passive: सुनीतया फलानि खाद्यन्ते।
+    (Plural object 'फलानि' requires plural passive verb 'खाद्यन्ते')
+  - Active: आरक्षकाः चोरान् नयन्ति। $\rightarrow$ Passive: आरक्षकैः चोराः नीयन्ते।
+    (Plural subject 'आरक्षकैः' has no impact; plural object 'चोराः' dictates 'नीयन्ते')
+  - Active: अहम् इक्षुरसं पिबामि। $\rightarrow$ Passive: मया इक्षुरसः पीयते।
+    (Subject becomes 'मया'; masculine singular object 'इक्षुरसः' takes 'पीयते')
+
+--------------------------------------------------------------------------------
+3. भाववाच्यम् (Impersonal Voice / भावे प्रयोगः)
+--------------------------------------------------------------------------------
+This mode applies exclusively to intransitive verbs (अकर्मकधातवः)—verbs that cannot take
+a direct object (e.g., हस् - to laugh, क्रीड् - to play, पत् - to fall, उत् + स्था - to stand up,
+धाव् - to run, शी - to sleep, स्था - to stay/stand). Since there is no object to trace,
+the verb highlights the abstract action or state of being itself (भावः = क्रियायाः व्यापारः).
+
+• Structural Coordinates (3-X-Impersonal System):
+  - Subject (कर्ता): Always assigned तृतीया विभक्तिः (Instrumental case).
+  - Object (कर्म): अभावः (Completely absent / structurally impossible).
+  - Verb Mechanic (Immutable Singular): The verb uses the same structural suffix format
+    as the passive (Root + य + ते). However, it is permanently and unconditionally locked
+    in the प्रथमपुरुषः एकवचनम् (Third Person Singular), regardless of the subject's number!
+
+• Syntactic Matrix:
+  +---------------+---------------+-------------------------------+
+  | Subject (कर्ता)| Object (कर्म) | Verb (क्रियापदम्)              |
+  +---------------+---------------+-------------------------------+
+  | तृतीया विभक्तिः | नास्ति         | नित्यम् प्रथमपुरुष-एकवचनम्     |
+  | (Instrumental)| (ABSENT)      | धातु + य + ते (Immutable -te)  |
+  +---------------+---------------+-------------------------------+
+
+• Textbook Examples:
+  - Active: ते हसन्ति। $\rightarrow$ Impersonal: तैः हस्यते।
+    (Plural subject 'तैः', yet the verb remains strictly singular 'हस्यते')
+  - Active: बालाः उद्याने क्रीडन्ति। $\rightarrow$ Impersonal: बालैः उद्याने क्रीड्यते।
+  - Active: फलानि भूमौ पतन्ति। $\rightarrow$ Impersonal: फलैः भूमौ पत्यते।
+  - Active: सा उत्तिष्ठति। $\rightarrow$ Impersonal: तया उत्थीयते।
+  - Active: शुनकः धावति। $\rightarrow$ Impersonal: शुनकेन धाव्यते।
+  - Active: शिशुः शेते। $\rightarrow$ Impersonal: शिशुना शय्यते।
+
+================================================================================
+📊 Part 2: Master Voice-Conjugation Mapping Charts (धातु-परिवर्तन-तालिका)
+================================================================================
+
+Below is the definitive voice-conjugation mapping for major verbal roots categorized by
+their morphological mutation behavior when receiving the 'यक्' (य) infix:
+
++---------+--------------------+---------------------+-----------------------------------+
+| धातुः   | Active (कर्तरि लट्)| Passive/Bhava (कर्म/भाव)| Morphological Mutation Category   |
++---------+--------------------+---------------------+-----------------------------------+
+| पठ्     | पठति               | पठ्यते               | Standard + य insertion           |
+| लिख्    | लिखति              | लिख्यते              | Standard + य insertion           |
+| गम्     | गच्छति             | गम्यते               | Original root retained + य        |
+| खाद्    | खादति              | खाद्यते              | Standard + य insertion           |
+| त्यज्   | त्यजति             | त्यज्यते             | Standard + य insertion           |
+| गा      | गायति              | गीयते               | Root vowel 'आ' $\rightarrow$ 'ई' elongation  |
+| पा      | पिबति              | पीयते               | Root vowel 'आ' $\rightarrow$ 'ई' elongation  |
+| दा      | ददाति              | दीयते               | Root vowel 'आ' $\rightarrow$ 'ई' elongation  |
+| धा      | दधाति              | धीयते               | Root vowel 'आ' $\rightarrow$ 'ई' elongation  |
+| स्था    | तिष्ठति            | स्थीयते              | Root vowel 'आ' $\rightarrow$ 'ई' elongation  |
+| नी      | नयति               | नीयते               | Root vowel retained + य           |
+| जी      | जयति               | जीयते               | Root vowel retained + य           |
+| श्रु    | शृणोति             | श्रूयते              | Short 'उ' elongated to 'ऊ'         |
+| भू      | भवति               | भूयते               | Long 'ऊ' retained + य             |
+| कृ      | करोति              | क्रियते              | Short 'ऋ' $\rightarrow$ 'रि' vocalic change   |
+| भृ      | बिभर्ति            | भ्रियते              | Short 'ऋ' $\rightarrow$ 'रि' vocalic change   |
+| स्मृ     | स्मरति             | स्मर्यते / स्म्रियते | Vocalic retention / 'रि' shift    |
+| दृश्    | पश्यति             | दृश्यते              | Restores original root 'दृश्'     |
+| वद्     | वदति               | उद्यते / उच्यते      | Samprasarana: 'व' $\rightarrow$ 'उ'        |
+| वच्     | वक्ति              | उच्यते              | Samprasarana: 'व' $\rightarrow$ 'उ'        |
+| यज्     | यजति               | इज्यते               | Samprasarana: 'य' $\rightarrow$ 'इ'        |
+| ग्रह्   | गृह्णाति           | गृह्यते              | Samprasarana: 'र' $\rightarrow$ 'ऋ'        |
+| प्रछ्   | पृच्छति            | पृच्छ्यते            | Base retained + य insertion       |
+| ज्ञा    | जानाति             | ज्ञायते              | Root 'ज्ञा' + य insertion          |
+| आप्     | प्राप्नोति (प्र+आप्)| प्राप्यते           | Prefix + root 'आप्' + य           |
+| घ्रा    | जिघ्रति            | घ्रायते              | Root 'घ्रा' + य insertion         |
+| ध्यै    | ध्यायति            | ध्यायते              | Root 'ध्यै' $\rightarrow$ ध्याय् + य insertion  |
+| शी      | शेते               | शय्यते               | Root 'शी' $\rightarrow$ 'शय्' + य             |
+| पत्     | पतति               | पत्यते               | Standard + य insertion           |
+| हस्     | हसति               | हस्यते               | Standard + य insertion           |
+| क्रीड्  | क्रीडति            | क्रीड्यते            | Standard + य insertion           |
++---------+--------------------+---------------------+-----------------------------------+
+
+================================================================================
+⏳ Part 3: Tense & Participle Suffix Adaptations (काल-प्रत्यय-सङ्गतिः)
+================================================================================
+
+Voice transformation operates symmetrically across both conjugated finite verbs (तिङन्त)
+and verbal participial adjectives (कृदन्त):
+
+--------------------------------------------------------------------------------
+1. Past Tense Formations (भूतकालः — क्तवतु vs क्त)
+--------------------------------------------------------------------------------
+• Active Voice (कर्तरि प्रयोगः):
+  - Employs the past active participle 'क्तवतु' (वान् / वती / वत्).
+  - Agrees strictly with the gender and number of the Subject (कर्ता).
+  - Examples:
+    - बालकः श्लोकं पठितवान्। (Masc. Sing. Subject)
+    - सा कवितां लिखितवती। (Fem. Sing. Subject)
+    - आरक्षकाः चोरान् नीतवन्तः। (Masc. Plur. Subject)
+
+• Passive Voice (कर्मणि प्रयोगः):
+  - Replaces 'क्तवतु' with the past passive participle 'क्त' (तः / ता / तम्).
+  - The subject shifts to Instrumental (तृतीया विभक्तिः).
+  - The participle functions adjectivally, mirroring the Gender (लिङ्गम्), Number (वचनम्),
+    and Case (विभक्तिः — प्रथमा) of the Object (कर्म).
+  - Examples:
+    - बालकेन श्लोकः पठितः। ('श्लोकः' is Masc. Sing. $\rightarrow$ 'पठितः')
+    - तया कविता लिखिता। ('कविता' is Fem. Sing. $\rightarrow$ 'लिखिता')
+    - सुनीतया फलानि खादितानि। ('फलानि' is Neut. Plur. $\rightarrow$ 'खादितानि')
+    - आरक्षकैः चोराः नीताः। ('चोराः' is Masc. Plur. $\rightarrow$ 'नीताः')
+
+• Impersonal Voice (भाववाच्यम्):
+  - Uses the past participle 'क्त'.
+  - Subject is in Instrumental (तृतीया विभक्तिः).
+  - Since there is no object, the participle is permanently locked in the Neuter
+    Nominative Singular (नपुंसकलिङ्ग-प्रथमाविभक्ति-एकवचनम्: -तम्).
+  - Examples:
+    - Active: वाहनानि मार्गे अतिष्ठन् / स्थितवन्ति। $\rightarrow$ Impersonal: वाहनैः मार्गे स्थितम्।
+    - Active: सा उदतिष्ठत् / उत्थितवती। $\rightarrow$ Impersonal: तया उत्थितम्।
+    - Active: शिशुः अशेत / शयितवान्। $\rightarrow$ Impersonal: शिशुना शयितम्।
+
+--------------------------------------------------------------------------------
+2. Potential / Injunction Suffixes (विधिलिङ् — तव्यत् / अनीयर्)
+--------------------------------------------------------------------------------
+• Active Voice (कर्तरि प्रयोगः):
+  - Uses conjugated Vidhilining forms (पठेत्, गच्छेत्, कुर्युः).
+  - Governed by the person and number of the Subject.
+
+• Passive Voice (कर्मणि प्रयोगः):
+  - Replaces Vidhilining with obligation/potential participles 'तव्यत्' or 'अनीयर्'.
+  - Subject takes Instrumental (तृतीया विभक्तिः).
+  - Participle matches the Gender and Number of the Object in Nominative.
+  - Examples:
+    - Active: महेशः आपणं गच्छेत्। $\rightarrow$ Passive: महेशेन आपणः गन्तव्यः / गमनीयः।
+    - Active: छात्राः स्वाध्यायं कुर्युः। $\rightarrow$ Passive: छात्रैः स्वाध्यायः कर्तव्यः / करणीयः।
+
+• Impersonal Voice (भाववाच्यम्):
+  - 'तव्यत्' / 'अनीयर्' participles are locked permanently in Neuter Singular (-तव्यम् / -नीयम्).
+  - Examples:
+    - Active: शुनकः धावेत्। $\rightarrow$ Impersonal: शुनकेन धावितव्यम् / धावनीयम्।
+    - Active: वृक्षः वर्धेत। $\rightarrow$ Impersonal: वृक्षेण वर्धितव्यम् / वर्धनीयम्।
+
+================================================================================
+📝 Part 4: 3 Comprehensive Interactive Worksheets (30 Questions with Solutions)
+================================================================================
+
+--------------------------------------------------------------------------------
+Worksheet 1: Present Tense Structural Shifts (लट् लकार)
+--------------------------------------------------------------------------------
+Direction: Convert sentences between Active Voice and Passive Voice based on the
+present-tense rules on pages 178–180 of the textbook.
+
+Questions:
+  1. बालकः श्लोकं पठति। $\rightarrow$ Passive: __________________________
+  2. सा कवितां लिखति। $\rightarrow$ Passive: __________________________
+  3. शिक्षकः ग्रन्थालयं गच्छति। $\rightarrow$ Passive: __________________________
+  4. अहम् इक्षुरसं पिबामि। $\rightarrow$ Passive: __________________________
+  5. आरक्षकाः चोरान् नयन्ति। $\rightarrow$ Passive: __________________________
+  6. राधा पूजां करोति। $\rightarrow$ Passive: __________________________
+  7. मित्राणि चलच्चित्रं पश्यन्ति। $\rightarrow$ Passive: __________________________
+  8. Active: _____________________ $\leftarrow$ तेन दुर्गुणाः त्यज्यन्ते।
+  9. Active: _____________________ $\leftarrow$ सञ्जयेन लेखन्यः दीयन्ते।
+ 10. Active: _____________________ $\leftarrow$ सुनीतया फलानि खाद्यन्ते।
+
+Worksheet 1 Detailed Answer Key & Morphological Rationales:
+  1. बालकेन श्लोकः पठ्यते।
+     Rationale: बालकः (प्रथमा) $\rightarrow$ बालकेन (तृतीया); श्लोकम् (द्वितीया) $\rightarrow$ श्लोकः (प्रथमा, पुं. एक.);
+     पठति $\rightarrow$ पठ् + य + ते = पठ्यते (agrees with श्लोकः).
+  2. तया कविता लिख्यते।
+     Rationale: सा (प्रथमा, स्त्री.) $\rightarrow$ तया (तृतीया); कविताम् $\rightarrow$ कविता (प्रथमा, स्त्री. एक.);
+     लिखति $\rightarrow$ लिख्यते.
+  3. शिक्षकेण ग्रन्थालयः गम्यते।
+     Rationale: शिक्षकः $\rightarrow$ शिक्षकेण; ग्रन्थालयं $\rightarrow$ ग्रन्थालयः; गच्छति $\rightarrow$ गम्यते (root गम् + य + ते).
+  4. मया इक्षुरसः पीयते।
+     Rationale: अहम् $\rightarrow$ मया; इक्षुरसम् $\rightarrow$ इक्षुरसः; पिबामि $\rightarrow$ पा $\rightarrow$ पी + य + ते = पीयते.
+  5. आरक्षकैः चोराः नीयन्ते।
+     Rationale: आरक्षकाः $\rightarrow$ आरक्षकैः; चोरान् (द्वितीया बहुवचन) $\rightarrow$ चोराः (प्रथमा बहुवचन);
+     नयन्ति $\rightarrow$ नी + य + न्ते = नीयन्ते (agrees in plural with चोराः).
+  6. राधया पूजा क्रियते।
+     Rationale: राधा $\rightarrow$ राधया (स्त्री. तृतीया); पूजाम् $\rightarrow$ पूजा; करोति $\rightarrow$ कृ $\rightarrow$ क्रियते.
+  7. मित्रैः चलच्चित्रं दृश्यते।
+     Rationale: मित्राणि (प्रथमा बहु.) $\rightarrow$ मित्रैः (तृतीया बहु.); चलच्चित्रम् (द्वितीया नपुं.) $\rightarrow$ चलच्चित्रम् (प्रथमा नपुं. एक.);
+     पश्यन्ति $\rightarrow$ दृश् + य + ते = दृश्यते.
+  8. सः दुर्गुणान् त्यजति।
+     Rationale: तेन (तृतीया) $\rightarrow$ सः (प्रथमा); दुर्गुणाः (प्रथमा बहु.) $\rightarrow$ दुर्गुणान् (द्वितीया बहु.);
+     त्यज्यन्ते $\rightarrow$ त्यजति (verb agrees with singular subject सः).
+  9. सञ्जयः लेखनीः ददाति।
+     Rationale: सञ्जयेन $\rightarrow$ सञ्जयः; लेखन्यः (प्रथमा बहु.) $\rightarrow$ लेखनीः (द्वितीया बहु.);
+     दीयन्ते $\rightarrow$ ददाति (agrees with singular subject सञ्जयः).
+ 10. सुनीता फलानि खादति।
+     Rationale: सुनीतया $\rightarrow$ सुनीता; फलानि (प्रथमा बहु.) $\rightarrow$ फलानि (द्वितीया बहु.);
+     खाद्यन्ते $\rightarrow$ खादति (verb agrees with singular subject सुनीता).
+
+--------------------------------------------------------------------------------
+Worksheet 2: Past Tense Suffix Splits (भूतकाल प्रत्यय — क्तवतु vs क्त)
+--------------------------------------------------------------------------------
+Direction: Convert sentences between Active Voice and Passive Voice using past participles
+based on pages 180–181 of the textbook.
+
+Questions:
+  1. बालकः श्लोकं पठितवान्। $\rightarrow$ Passive: __________________________
+  2. सा कवितां लिखितवती। $\rightarrow$ Passive: __________________________
+  3. शिक्षकः ग्रन्थालयं गतवान्। $\rightarrow$ Passive: __________________________
+  4. अहम् इक्षुरसं पीतवान्। $\rightarrow$ Passive: __________________________
+  5. आरक्षकाः चोरान् नीतवन्तः। $\rightarrow$ Passive: __________________________
+  6. Active: _____________________ $\leftarrow$ सुनीतया फलानि खादितानि।
+  7. Active: _____________________ $\leftarrow$ तेन दुर्गुणाः त्यक्ताः।
+  8. Active: _____________________ $\leftarrow$ सञ्जयेन लेखन्यः दत्ताः।
+  9. Active: _____________________ $\leftarrow$ राधया पूजा कृता।
+ 10. Active: _____________________ $\leftarrow$ मित्रैः चलच्चित्रं दृष्टम्।
+
+Worksheet 2 Detailed Answer Key & Morphological Rationales:
+  1. बालकेन श्लोकः पठितः।
+     Rationale: बालकः $\rightarrow$ बालकेन; श्लोकम् $\rightarrow$ श्लोकः (Masc. Sing.);
+     पठितवान् (क्तवतु) $\rightarrow$ पठितः (क्त, agreeing with श्लोकः).
+  2. तया कविता लिखिता।
+     Rationale: सा $\rightarrow$ तया; कविताम् $\rightarrow$ कविता (Fem. Sing.);
+     लिखितवती $\rightarrow$ लिखिता (क्त, Fem. Sing.).
+  3. शिक्षकेण ग्रन्थालयः गतः।
+     Rationale: शिक्षकः $\rightarrow$ शिक्षकेण; ग्रन्थालयं $\rightarrow$ ग्रन्थालयः (Masc. Sing.);
+     गतवान् $\rightarrow$ गतः (क्त).
+  4. मया इक्षुरसः पीतः।
+     Rationale: अहम् $\rightarrow$ मया; इक्षुरसम् $\rightarrow$ इक्षुरसः;
+     पीतवान् $\rightarrow$ पीतः (क्त, Masc. Sing.).
+  5. आरक्षकैः चोराः नीताः।
+     Rationale: आरक्षकाः $\rightarrow$ आरक्षकैः; चोरान् $\rightarrow$ चोराः (Masc. Plur.);
+     नीतवन्तः $\rightarrow$ नीताः (क्त, Masc. Plur. matching चोराः).
+  6. सुनीता फलानि खादितवती।
+     Rationale: सुनीतया $\rightarrow$ सुनीता (Fem. Sing.); फलानि remains फलानि (द्वितीया बहु.);
+     खादितानि $\rightarrow$ खादितवती (क्तवतु, Fem. Sing. matching सुनीता).
+  7. सः दुर्गुणान् त्यक्तवान्।
+     Rationale: तेन $\rightarrow$ सः (Masc. Sing.); त्यक्ताः $\rightarrow$ त्यक्तवान् (क्तवतु, Masc. Sing. matching सः);
+     दुर्गुणाः $\rightarrow$ दुर्गुणान् (Accusative plural).
+  8. सञ्जयः लेखनीः दत्तवान्।
+     Rationale: सञ्जयेन $\rightarrow$ सञ्जयः (Masc. Sing.); दत्ताः $\rightarrow$ दत्तवान् (क्तवतु, Masc. Sing.);
+     लेखन्यः $\rightarrow$ लेखनीः (द्वितीया बहुवचनम्).
+  9. राधा पूजां कृतवती।
+     Rationale: राधया $\rightarrow$ राधा (Fem. Sing.); पूजा $\rightarrow$ पूजाम् (द्वितीया एक.);
+     कृता $\rightarrow$ कृतवती (क्तवतु, Fem. Sing. matching राधा).
+ 10. मित्राणि चलच्चित्रं दृष्टवन्तः (दृष्टवन्ति)।
+     Rationale: मित्रैः $\rightarrow$ मित्राणि (Subject); चलच्चित्रम् $\rightarrow$ चलच्चित्रम् (Object);
+     दृष्टम् $\rightarrow$ दृष्टवन्तः / दृष्टवन्ति (क्तवतु).
+
+--------------------------------------------------------------------------------
+Worksheet 3: Impersonal Voice Operations (भाववाच्य चक्र — अकर्मकधातवः)
+--------------------------------------------------------------------------------
+Direction: Convert intransitive sentences from Active Voice into Impersonal Voice (भाववाच्य)
+or vice-versa based on pages 181–183 of the textbook.
+
+Questions:
+  1. ते हसन्ति। $\rightarrow$ Impersonal: __________________________
+  2. बालाः उद्याने क्रीडन्ति। $\rightarrow$ Impersonal: __________________________
+  3. फलानि भूमौ पतन्ति। $\rightarrow$ Impersonal: __________________________
+  4. सा उत्तिष्ठति। $\rightarrow$ Impersonal: __________________________
+  5. शुनकः धावति। $\rightarrow$ Impersonal: __________________________
+  6. शिशुः शेते। $\rightarrow$ Impersonal: __________________________
+  7. Active Past: ___________________ $\leftarrow$ वाहनैः मार्गे स्थितम्।
+  8. Active Past: ___________________ $\leftarrow$ तया उत्थितम्।
+  9. Potential Active: ________________ $\rightarrow$ Impersonal: शुनकेन धावितव्यम् / धावनीयम्।
+ 10. Potential Active: ________________ $\rightarrow$ Impersonal: वृक्षेण वर्धितव्यम् / वर्धनीयम्।
+
+Worksheet 3 Detailed Answer Key & Morphological Rationales:
+  1. तैः हस्यते।
+     Rationale: ते (प्रथमा बहु.) $\rightarrow$ तैः (तृतीया बहु.); हस् has no object; verb locks into 3rd person singular 'हस्यते'.
+  2. बालैः उद्याने क्रीड्यते।
+     Rationale: बालाः $\rightarrow$ बालैः; उद्याने remains locative; verb locks into singular 'क्रीड्यते'.
+  3. फलैः भूमौ पत्यते।
+     Rationale: फलानि $\rightarrow$ फलैः (तृतीया बहु.); भूमौ remains locative; verb locks into singular 'पत्यते'.
+  4. तया उत्थीयते।
+     Rationale: सा $\rightarrow$ तया; उत् + स्था takes 'ई' elongation: उत्थीयते (singular).
+  5. शुनकेन धाव्यते।
+     Rationale: शुनकः $\rightarrow$ शुनकेन; धाव् + य + ते = धाव्यते (singular).
+  6. शिशुना शय्यते।
+     Rationale: शिशुः $\rightarrow$ शिशुना (इकारान्त पुं. तृतीया); शी becomes शय् + य + ते = शय्यते.
+  7. वाहनानि मार्गे अतिष्ठन् / स्थितवन्ति।
+     Rationale: वाहनैः $\rightarrow$ वाहनानि; स्थितम् (क्त, Neuter Sing.) $\rightarrow$ स्थितवन्ति (क्तवतु Neuter Plural) or लङ् लकार अतिष्ठन्.
+  8. सा उदतिष्ठत् / उत्थितवती।
+     Rationale: तया $\rightarrow$ सा; उत्थितम् $\rightarrow$ उत्थितवती (क्तवतु Feminine Singular) or उदतिष्ठत्.
+  9. शुनकः धावेत्।
+     Rationale: शुनकेन $\rightarrow$ शुनकः; धावितव्यम् / धावनीयम् $\rightarrow$ विधिलिङ् प्रथमपुरुष एकवचन 'धावेत्'.
+ 10. वृक्षः वर्धेत।
+     Rationale: वृक्षेण $\rightarrow$ वृक्षः; वर्धितव्यम् / वर्धनीयम् $\rightarrow$ विधिलिङ् आत्मनेपद प्रथमपुरुष एकवचन 'वर्धेत' (वृध् धातुः).
+
+================================================================================
+🎯 Part 5: 3 Assessment Quizzes (30 MCQs with Rotating Keys & Explanations)
+================================================================================
+
+--------------------------------------------------------------------------------
+Quiz 1: Foundational Structural Coordinates (वाच्य-संरचना-मूलतत्त्वानि)
+--------------------------------------------------------------------------------
+
+[Q1] Name the three distinct types of voice systems (वाच्यानि) established in Paninian Sanskrit grammar:
+     (A) कर्तृवाच्यम् (Active), कर्मवाच्यम् (Passive), and भाववाच्यम् (Impersonal)
+     (B) केवलवाच्यम्, विशेषवाच्यम्, and समाहारवाच्यम्
+     (C) नामवाच्यम्, क्रियावाच्यम्, and अव्ययवाच्यम्
+     (D) प्रथमावाच्यम्, द्वितीयावाच्यम्, and तृतीयावाच्यम्
+     Correct Option: (A)
+     Rationale: संस्कृतव्याकरणे त्रयः प्रयोगाः (वाच्यानि) सन्ति— कर्तृवाच्यम्, कर्मवाच्यम्, भाववाच्यम् च।
+
+[Q2] Which case ending (विभक्तिः) is assigned to the Subject (कर्ता) in Kartari Prayoga (Active Voice)?
+     (A) द्वितीया विभक्तिः (Accusative)
+     (B) प्रथमा विभक्तिः (Nominative)
+     (C) तृतीया विभक्तिः (Instrumental)
+     (D) षष्ठी विभक्तिः (Genitive)
+     Correct Option: (B)
+     Rationale: कर्तृवाच्ये कर्ता सर्वदा प्रथमाविभक्तौ भवति, कर्म च द्वितीयाविभक्तौ।
+
+[Q3] In Karmani Prayoga (Passive Voice), which case ending must the Object (कर्म) noun take?
+     (A) द्वितीया विभक्तिः (Accusative)
+     (B) तृतीया विभक्तिः (Instrumental)
+     (C) प्रथमा विभक्तिः (Nominative)
+     (D) चतुर्थी विभक्तिः (Dative)
+     Correct Option: (C)
+     Rationale: कर्मवाच्ये कर्म उक्तं भवति, अतः कर्मणि प्रथमा विभक्तिः विधीयते।
+
+[Q4] When an active sentence is transformed into passive voice, which case ending does the Subject take?
+     (A) प्रथमा विभक्तिः (Nominative)
+     (B) द्वितीया विभक्तिः (Accusative)
+     (C) पञ्चमी विभक्तिः (Ablative)
+     (D) तृतीया विभक्तिः (Instrumental)
+     Correct Option: (D)
+     Rationale: कर्मवाच्ये भाववाच्ये च कर्ता अनुक्तः सन् तृतीयाविभक्तौ परिवर्तते ('कर्तृकरणयोस्तृतीया')।
+
+[Q5] What specific structural suffix (विकरणः) is directly appended to the verbal root to form passive and impersonal verbs?
+     (A) 'यक्' (य) विकरण-प्रत्ययः
+     (B) 'शप्' (अ) विकरण-प्रत्ययः
+     (C) 'श्यन्' (य) प्रत्ययः
+     (D) 'तव्यत्' प्रत्ययः
+     Correct Option: (A)
+     Rationale: कर्मणि भावे च धातोः परतः 'सार्वधातुके यक्' इति सूत्रेण 'यक्' (य) प्रत्ययः भवति।
+
+[Q6] In Kartari Prayoga (Active Voice), if the numerical count of the object changes, what happens to the verb?
+     (A) The verb changes its number to match the object
+     (B) The verb remains unaffected because it tracks only the subject
+     (C) The verb switches automatically into Atmanepada
+     (D) The sentence becomes grammatically defective
+     Correct Option: (B)
+     Rationale: कर्तृवाच्ये क्रियापदं केवलं कर्तुः पुरुषं वचनं च अनुसरति, कर्मणः परिवर्तनेन क्रियायाः कोऽपि विकारो न भवति।
+
+[Q7] What person and number (पुरुष-वचने) are permanently locked into a Bhava Vachya (Impersonal Voice) verb?
+     (A) उत्तमपुरुषः एकवचनम् (First Person Singular)
+     (B) मध्यमपुरुषः बहुवचनम् (Second Person Plural)
+     (C) प्रथमपुरुषः एकवचनम् (Third Person Singular)
+     (D) प्रथमपुरुषः बहुवचनम् (Third Person Plural)
+     Correct Option: (C)
+     Rationale: भाववाच्ये कर्मणः अभावात् क्रियापदं नित्यं प्रथमपुरुषस्य एकवचने एव तिष्ठति (यथा— तैः हस्यते)।
+
+[Q8] To which category of verbal roots do Bhava Vachya (Impersonal Voice) transformations apply exclusively?
+     (A) सकर्मकधातवः (Transitive roots)
+     (B) द्विकर्मकधातवः (Ditransitive roots)
+     (C) प्रेरणार्थकधातवः (Causative roots)
+     (D) अकर्मकधातवः (Intransitive roots)
+     Correct Option: (D)
+     Rationale: भाववाच्यस्य प्रयोगः केवलम् अकर्मकधातुभिः (हस्, क्रीड्, शी, स्था आदिभिः) सह एव भवति।
+
+[Q9] How is an 'अकर्मक धातुः' (intransitive verb) precisely defined in the textbook context?
+     (A) A verb that takes two objects simultaneously
+     (B) A verb whose action does not extend to or require a direct object
+     (C) A verb that only conjugates in Atmanepada
+     (D) An indeclinable verbal participle
+     Correct Option: (B)
+     Rationale: यस्य धातोः फलव्यापारयोः कर्मणि सम्बन्धो न भवति, यत्र कर्म न सम्भवति, सः अकर्मकधातुः।
+
+[Q10] Which core syntactic voice mode is completely impossible for an intransitive verbal root?
+     (A) कर्तृवाच्यम् (Active Voice)
+     (B) भाववाच्यम् (Impersonal Voice)
+     (C) कर्मवाच्यम् (Passive Voice)
+     (D) All three voices are possible
+     Correct Option: (C)
+     Rationale: अकर्मकधातुषु कर्मणः अभावात् कर्मवाच्यस्य (Passive Voice) सम्भवः कदापि न भवति।
+
+--------------------------------------------------------------------------------
+Quiz 2: Verbal Stem Conjugations (धातु-रूपान्तरणम्)
+--------------------------------------------------------------------------------
+
+[Q1] Convert the active verb 'पिबति' (पा धातुः) into its correct passive / impersonal present form:
+     (A) पीयते
+     (B) पिब्यते
+     (C) पाव्यते
+     (D) पेयते
+     Correct Option: (A)
+     Rationale: पा-धातोः कर्मणि यक्-प्रत्यये 'घुमास्थागापा...' इति सूत्रेण आकारस्य ईकारे पीयते इति रूपं भवति।
+
+[Q2] What is the passive counter-form of the active root expression 'ददाति' (दा धातुः)?
+     (A) दास्यते
+     (B) दीयते
+     (C) दायते
+     (D) दद्यते
+     Correct Option: (B)
+     Rationale: दा-धातोः कर्मणि यक्-प्रत्यये ईकारादेशे 'दीयते' इति रूपं सिध्यति।
+
+[Q3] If the active verb form is 'शृणोति' (श्रु धातुः), what is its correct passive form?
+     (A) श्रुयते
+     (B) शृण्यते
+     (C) श्रूयते
+     (D) श्राव्यते
+     Correct Option: (C)
+     Rationale: श्रु-धातोः यक्-प्रत्यये उकारस्य दीर्घे 'श्रूयते' इति रूपं भवति।
+
+[Q4] Conjugate the versatile root 'कृ' (करोति) into its passive present-tense form:
+     (A) कार्यते
+     (B) क्रियति
+     (C) कर्ते
+     (D) क्रियते
+     Correct Option: (D)
+     Rationale: कृ-धातोः यक्-प्रत्यये ऋकारस्य 'रिङ्' आदेशे 'क्रियते' (राधया पूजा क्रियते) इति रूपं भवति।
+
+[Q5] Convert the active verb 'पश्यति' (दृश् धातुः) into its passive present-tense counterpart:
+     (A) दृश्यते
+     (B) पश्यते
+     (C) दर्शते
+     (D) दीक्ष्यते
+     Correct Option: (A)
+     Rationale: कर्मवाच्ये लाक्षणिकः पश्यादेशः न भवति, मूलधातोः एव यक्-प्रत्यये 'दृश्यते' इति रूपं भवति।
+
+[Q6] What are the correct passive forms of the active verbs 'वदति' and 'वक्ति' (वद् / वच् धातू)?
+     (A) वद्यते / वच्यते
+     (B) उद्यते / उच्यते
+     (C) वाद्यते / वाच्यते
+     (D) विद्द्यते / उच्यते
+     Correct Option: (B)
+     Rationale: वद् तथा वच् धातुषु सम्प्रसारणे वकारस्य उकारे सति 'उद्यते' तथा 'उच्यते' इति रूपे भवतः।
+
+[Q7] Conjugate the active root 'पृच्छति' (प्रछ् धातुः) into its passive counterpart:
+     (A) प्रच्छ्यते
+     (B) प्राश्यते
+     (C) पृच्छ्यते
+     (D) पर्छ्यते
+     Correct Option: (C)
+     Rationale: प्रछ् धातोः यक्-प्रत्यये 'पृच्छ्यते' इति रूपं सिध्यति (गुरुणा प्रश्नः पृच्छ्यते)।
+
+[Q8] What form does the active root 'जानाति' (ज्ञा धातुः) take in the passive present tense?
+     (A) जानीते
+     (B) ज्ञेयते
+     (C) ज्ञायति
+     (D) ज्ञायते
+     Correct Option: (D)
+     Rationale: ज्ञा-धातोः कर्मणि यक्-प्रत्यये आत्मनेपदे 'ज्ञायते' (नियमः ज्ञायते) इति रूपं भवति।
+
+[Q9] Provide the correct passive present-tense form for the prefixed root 'प्राप्नोति' (प्र + आप्):
+     (A) प्राप्यते
+     (B) प्राम्नोते
+     (C) आप्यते
+     (D) प्रप्यते
+     Correct Option: (A)
+     Rationale: प्र-उपसर्गपूर्वक-आप्-धातोः यक्-प्रत्यये 'प्राप्यते' (सुखं प्राप्यते) इति रूपं भवति।
+
+[Q10] Following the pattern of 'लिखति $\rightarrow$ लिख्यते', what are the passive forms of 'जिघ्रति' (घ्रा) and 'ध्यायति' (ध्यै)?
+     (A) जिघ्र्यते / ध्येयते
+     (B) घ्रायते / ध्यायते
+     (C) घ्रीयते / धीयाते
+     (D) घ्रास्यते / ध्यास्यते
+     Correct Option: (B)
+     Rationale: घ्रा-धातोः 'घ्रायते' तथा ध्यै-धातोः 'ध्यायते' इति रूपं कर्मणि प्रयुज्यते।
+
+--------------------------------------------------------------------------------
+Quiz 3: Participle Suffix Tense Extensions (कृदन्त-वाच्य-विस्तारः)
+--------------------------------------------------------------------------------
+
+[Q1] Which participle suffix (कृदन्त-प्रत्ययः) represents the past active voice (भूतकाले कर्तृवाच्यम्)?
+     (A) 'क्तवतु' प्रत्ययः (वान् / वती / वत्)
+     (B) 'क्त' प्रत्ययः (तः / ता / तम्)
+     (C) 'शतृ' प्रत्ययः
+     (D) 'शानच्' प्रत्ययः
+     Correct Option: (A)
+     Rationale: भूतकाले कर्तर्येव 'क्तवतु' प्रत्ययः भवति (यथा— सः पठितवान्, सा लिखितवती)।
+
+[Q2] Name the past passive participle suffix that replaces 'क्तवतु' in passive and impersonal voice:
+     (A) 'ल्युट्' प्रत्ययः
+     (B) 'क्त' प्रत्ययः (तः / ता / तम्)
+     (C) 'तुमुन्' प्रत्ययः
+     (D) 'क्त्वा' प्रत्ययः
+     Correct Option: (B)
+     Rationale: कर्मणि भावे च भूतकाले 'क्त' प्रत्ययः प्रयुज्यते (यथा— बालकेन श्लोकः पठितः)।
+
+[Q3] Which two potential/obligation participle suffixes mirror the Vidhilining mood in passive voice?
+     (A) 'क्त' and 'क्तवतु'
+     (B) 'शतृ' and 'शानच्'
+     (C) 'तव्यत्' and 'अनीयर्'
+     (D) 'तुमुन्' and 'ल्यप्'
+     Correct Option: (C)
+     Rationale: विधिलिङ्-स्थाने कर्मणि भावे च 'तव्यत्' तथा 'अनीयर्' प्रत्ययौ प्रयुज्येते (यथा— कर्तव्यम्, करणीयम्)।
+
+[Q4] In past passive voice (क्त-प्रत्ययः), which grammatical properties of the object must the participle match?
+     (A) Only case ending
+     (B) Only person (पुरुषः)
+     (C) Only tense (कालः)
+     (D) लिङ्ग (Gender), विभक्ति (Case), and वचन (Number)
+     Correct Option: (D)
+     Rationale: क्त-प्रत्ययान्तः शब्दः विशेषणवत् कर्मणः लिङ्गं, विभक्तिं, वचनं च अनुसरति (श्लोकः पठितः, कविता लिखिता, फलानि खादितानि)।
+
+[Q5] Convert the active past form 'पठितवान्' into its passive counterpart agreeing with a masculine singular object:
+     (A) पठितः
+     (B) पठिता
+     (C) पठितम्
+     (D) पठितानि
+     Correct Option: (A)
+     Rationale: पुंल्लिङ्ग-एकवचने कर्मणि 'पठितः' इति रूपं भवति (बालकेन श्लोकः पठितः)।
+
+[Q6] What is the passive past participle form corresponding to the feminine active word 'लिखितवती'?
+     (A) लिखितः
+     (B) लिखिता
+     (C) लिखितम्
+     (D) लिखितवन्तः
+     Correct Option: (B)
+     Rationale: स्त्रीलिङ्ग-एकवचने कर्मणि 'लिखिता' इति रूपं भवति (तया कविता लिखिता)।
+
+[Q7] Convert the plural active past phrase 'आरक्षकाः चोरान् नीतवन्तः' into passive past voice:
+     (A) आरक्षकैः चोराः नीतः
+     (B) आरक्षकैः चोरान् नीतम्
+     (C) आरक्षकैः चोराः नीताः
+     (D) आरक्षकेण चोराः नीताः
+     Correct Option: (C)
+     Rationale: 'चोराः' इति पुंल्लिङ्ग-प्रथमा-बहुवचनं, तदनुसारं क्त-प्रत्यये 'नीताः' इति रूपं भवति।
+
+[Q8] What invariant grammatical form do Kta, Tavyat, and Aniyar participles take in Bhava Vachya (Impersonal)?
+     (A) पुंल्लिङ्ग-प्रथमाविभक्ति-एकवचनम् (Masc. Sing.)
+     (B) स्त्रीलिङ्ग-प्रथमाविभक्ति-एकवचनम् (Fem. Sing.)
+     (C) नपुंसकलिङ्ग-प्रथमाविभक्ति-बहुवचनम् (Neuter Plur.)
+     (D) नपुंसकलिङ्ग-प्रथमाविभक्ति-एकवचनम् (Neuter Sing. ending in -म्)
+     Correct Option: (D)
+     Rationale: भाववाच्ये कर्मणः अभावात् कृदन्तप्रत्ययाः नित्यं नपुंसकलिङ्ग-प्रथमा-एकवचने भवन्ति (स्थितम्, धावितव्यम्, शयितव्यम्)।
+
+[Q9] Convert the active potential sentence 'महेशः आपणं गच्छेत्' into its correct passive formulation:
+     (A) महेशेन आपणः गन्तव्यः / गमनीयः
+     (B) महेशाय आपणं गम्यते
+     (C) महेशेन आपणं गच्छेत्
+     (D) महेशः आपणेन गम्यते
+     Correct Option: (A)
+     Rationale: महेशः $\rightarrow$ महेशेन; आपणम् $\rightarrow$ आपणः (पुं. एक.); गच्छेत् $\rightarrow$ गन्तव्यः / गमनीयः।
+
+[Q10] Convert the potential active sentence 'छात्राः स्वाध्यायं कुर्युः' into passive voice:
+     (A) छात्रैः स्वाध्यायः कर्तव्यम्
+     (B) छात्रैः स्वाध्यायः कर्तव्यः / करणीयः
+     (C) छात्राभिः स्वाध्यायं क्रियते
+     (D) छात्रैः स्वाध्याये क्रियेरन्
+     Correct Option: (B)
+     Rationale: छात्राः $\rightarrow$ छात्रैः; स्वाध्यायम् $\rightarrow$ स्वाध्यायः (पुं. एक.); कुर्युः $\rightarrow$ कर्तव्यः / करणीयः (matches स्वाध्यायः).
+================================================================================

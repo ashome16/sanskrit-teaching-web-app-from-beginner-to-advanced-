@@ -272,5 +272,20 @@ export const GRADE_9_SYLLABUS: Grade9Chapter[] = [
     grammarFocus: "समस्तपदानि, विग्रहवाक्यम् (स्वपद-अस्वपद), पूर्वपद-उत्तरपद-प्राधान्यम्, विभक्तितत्पुरुषः, अव्ययीभावः",
     status: "available",
     icon: "🧩"
+  },
+  {
+    id: "grade9_vachya",
+    num: "परिशिष्टम् ३",
+    chNumber: "परिशिष्टम् ३",
+    title: "परिशिष्टम् ३ : वाच्य-परिवर्तनम् (कर्तृ-कर्म-भाववाच्यानि)",
+    hindiTitle: "वाच्य-परिवर्तनम् (कर्तृवाच्य, कर्मवाच्य एवं भाववाच्य)",
+    englishTitle: "Appendix 3: Sanskrit Voices & Voice Transformation (Vachya-Parivartanam)",
+    page: "Pages 196–215",
+    category: "grammar",
+    genreBadge: "व्याकरणम् · Syntactic Voices & Transformations (वाच्यम्)",
+    theme: "Comprehensive classification of Sanskrit voices: Kartri-vachya (1-2-Active), Karmani-vachya (3-1-Passive with यक् + आत्मनेपद), and Bhava-vachya (3-X-Impersonal locked in 3rd person singular).",
+    grammarFocus: "कर्तृवाच्यम् (1-2-Active), कर्मवाच्यम् (3-1-Passive), भाववाच्यम् (3-X-Impersonal), यक्-प्रत्ययः, क्त-क्तवतु, तव्यत्-अनीयर्",
+    status: "available",
+    icon: "🔄"
   }
 ];
