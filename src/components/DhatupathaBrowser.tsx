@@ -217,18 +217,45 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
     };
   }, [playingAll]);
 
+  /** Keep the root below the fixed pause bar (it is viewport-fixed, not in the scroller). */
+  const scrollRootIntoView = (key: string) => {
+    const el = document.querySelector<HTMLElement>(`[data-dhatu-id="${CSS.escape(key)}"]`);
+    if (!el) return;
+    const viewH = window.innerHeight || document.documentElement.clientHeight;
+    const bar = playingAll ? playbackBarRef.current : null;
+    const barBottom = bar ? bar.getBoundingClientRect().bottom : 0;
+    let portTop = 0;
+    let parent: HTMLElement | null = el.parentElement;
+    while (parent) {
+      const style = getComputedStyle(parent);
+      const scrolls = /(auto|scroll)/.test(style.overflowY) && parent.scrollHeight > parent.clientHeight + 1;
+      if (scrolls) {
+        portTop = parent.getBoundingClientRect().top;
+        break;
+      }
+      parent = parent.parentElement;
+    }
+    const topLimit = Math.max(8, barBottom + 12);
+    const clearance = Math.max(8, topLimit - portTop);
+    el.style.scrollMarginTop = `${Math.round(clearance)}px`;
+    const rect = el.getBoundingClientRect();
+    const covered = rect.top < topLimit - 4;
+    const above = rect.bottom < topLimit;
+    const below = rect.top > viewH - 24;
+    if (!covered && !above && !below) return;
+    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+  };
+
   useEffect(() => {
     if (!playingAll || !speakingKey) return;
-    const el = document.querySelector<HTMLElement>(`[data-dhatu-id="${CSS.escape(speakingKey)}"]`);
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const viewH = window.innerHeight || document.documentElement.clientHeight;
-    if (rect.top >= 0 && rect.bottom <= viewH) return;
-    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+    scrollRootIntoView(speakingKey);
   }, [playingAll, speakingKey]);
 
   const startPlayAll = (start: number) => {
+    // Drop any queue already speaking so Next can restart on the chosen root.
+    stopPlayAllRef.current?.();
+    stopPlayAllRef.current = null;
     const list = filteredRef.current;
     if (!list.length) return;
     const index = start >= list.length ? 0 : Math.max(0, start);
@@ -283,6 +310,57 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
   const toggleExpand = (entry: DhatuEntry) => {
     const key = entry.id ?? entry.devanagari;
     setExpandedId((prev) => (prev === key ? null : key));
+  };
+
+  /** Move within the current filtered list (gaṇa or meaning order). */
+  const stepFrom = (fromKey: string, delta: number) => {
+    const list = filteredRef.current;
+    const from = list.findIndex((entry) => entryKey(entry) === fromKey);
+    if (from < 0) return;
+    const next = from + delta;
+    if (next < 0 || next >= list.length) return;
+    const entry = list[next];
+    const key = entryKey(entry);
+    setExpandedId(key);
+    if (playingAll) {
+      startPlayAll(next);
+      return;
+    }
+    resumeIndexRef.current = next;
+    requestAnimationFrame(() => scrollRootIntoView(key));
+  };
+
+  const renderStepControls = (fromKey: string) => {
+    const list = filteredRef.current;
+    const index = list.findIndex((entry) => entryKey(entry) === fromKey);
+    const canPrev = index > 0;
+    const canNext = index >= 0 && index < list.length - 1;
+    return (
+      <div className="dp-step" role="group" aria-label="Previous and next root">
+        <button
+          type="button"
+          className="dp-step-btn"
+          disabled={!canPrev}
+          onClick={(e) => {
+            e.stopPropagation();
+            stepFrom(fromKey, -1);
+          }}
+        >
+          ← Previous
+        </button>
+        <button
+          type="button"
+          className="dp-step-btn"
+          disabled={!canNext}
+          onClick={(e) => {
+            e.stopPropagation();
+            stepFrom(fromKey, 1);
+          }}
+        >
+          Next →
+        </button>
+      </div>
+    );
   };
 
   const renderCard = (entry: DhatuEntry) => {
@@ -359,6 +437,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
 
         {open && (
           <div className="dp-detail" onClick={(e) => e.stopPropagation()}>
+            {renderStepControls(key)}
             <LatFormsTable key={key} entry={entry} />
             {(entry.examples ?? []).length > 0 && (
               <>
@@ -428,6 +507,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
             ref={playbackBarRef}
             className={`dp-playback-bar${playingAll ? ' dp-playback-bar--live' : ''}`}
           >
+          {playingAll && speakingKey && renderStepControls(speakingKey)}
           <div className="dp-speed" role="group" aria-label="Root speech speed">
             {DHATU_SPEEDS.map((item) => (
               <button
