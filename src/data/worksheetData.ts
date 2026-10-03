@@ -16751,5 +16751,338 @@ export const WORKSHEETS: Worksheet[] = [
         ]
       }
     ]
+  },
+{
+    id: "ws-grade9-samasa-ws1",
+    title: "Worksheet 1: Structural Splits & Cases (10 Questions)",
+    titleSanskrit: "परिशिष्टम् २ कार्यपत्रिका १: विभक्तितत्पुरुषः कर्मधारयश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Supply the correct final compound or split form and name the Samasa case level based on Appendix 2 Samasa guidelines.",
+    sections: [
+      {
+        sectionTitle: "Section A: Structural Splits & Cases",
+        sectionTitleSanskrit: "खण्डः 'क' · विभक्तितत्पुरुषः कर्मधारयश्च",
+        instructions: "Supply the correct final compound or split form and name the Samasa case level.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "गृहं गतः $\\rightarrow$ Compound: ______, Class: ______",
+            questionSanskrit: "समस्तपदं समासभेदं च लिखत: गृहं गतः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "गृहगतः | द्वितीयातत्पुरुषः",
+            explanation: "द्वितीयाविभक्तियुक्तस्य 'गृहम्' पदस्य 'गत' पदेन सह द्वितीयातत्पुरुषः।"
+          },
+          {
+            num: 2,
+            question: "नखैः भिन्नः $\\rightarrow$ Compound: ______, Class: ______",
+            questionSanskrit: "समस्तपदं समासभेदं च लिखत: नखैः भिन्नः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "नखभिन्नः | तृतीयातत्पुरुषः",
+            explanation: "तृतीयाविभक्तेः लोपं कृत्वा 'नखभिन्नः' इति तृतीयातत्पुरुषः सिध्यति।"
+          },
+          {
+            num: 3,
+            question: "वृक्षस्य मूलम् $\\rightarrow$ Compound: ______, Class: ______",
+            questionSanskrit: "समस्तपदं समासभेदं च लिखत: वृक्षस्य मूलम् $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "वृक्षमूलम् | षष्ठीतत्पुरुषः",
+            explanation: "षष्ठीविभक्तेः लोपेन 'वृक्षमूलम्' इति षष्ठीतत्पुरुषः।"
+          },
+          {
+            num: 4,
+            question: "चोरात् भयम् $\\rightarrow$ Compound: ______, Class: ______",
+            questionSanskrit: "समस्तपदं समासभेदं च लिखत: चोरात् भयम् $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "चोरभयम् | पञ्चमीतत्पुरुषः",
+            explanation: "'भय' शब्दयोगे पञ्चमीतत्पुरुषः भवति (चोरात् भयम् = चोरभयम्)।"
+          },
+          {
+            num: 5,
+            question: "कार्ये कुशलः $\\rightarrow$ Compound: ______, Class: ______",
+            questionSanskrit: "समस्तपदं समासभेदं च लिखत: कार्ये कुशलः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "कार्यकुशलः | सप्तमीतत्पुरुषः",
+            explanation: "सप्तम्याः शौण्डैः इति सूत्रेण सप्तमीतत्पुरुषः।"
+          },
+          {
+            num: 6,
+            question: "गवे हितम् $\\rightarrow$ Compound: ______, Class: ______",
+            questionSanskrit: "समस्तपदं समासभेदं च लिखत: गवे हितम् $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "गोहितम् | चतुर्थीतत्पुरुषः",
+            explanation: "चतुर्थी तदर्थार्थबलिहितसुखरक्षितैः इति चतुर्थीतत्पुरुषः।"
+          },
+          {
+            num: 7,
+            question: "Split form: विद्याधनम् $\\rightarrow$ ______",
+            questionSanskrit: "विग्रहवाक्यं लिखत: विद्याधनम् $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "विद्या एव धनम् / विद्या इव धनम् (अवधारणापूर्वपद-कर्मधारयः)",
+            explanation: "अभेदोपचारेण विद्या एव धनं विद्याधनम्।"
+          },
+          {
+            num: 8,
+            question: "Split form: कुपुत्रः $\\rightarrow$ ______",
+            questionSanskrit: "विग्रहवाक्यं लिखत: कुपुत्रः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "कुत्सितः पुत्रः (कुतत्पुरुषः)",
+            explanation: "'कु' इति निपातस्य कुत्सितार्थे समासः।"
+          },
+          {
+            num: 9,
+            question: "Split form: प्राचार्यः $\\rightarrow$ ______",
+            questionSanskrit: "विग्रहवाक्यं लिखत: प्राचार्यः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रगतः आचार्यः (प्रादितत्पुरुषः)",
+            explanation: "'प्र' इति उपसर्गेण सह प्रादितत्पुरुषः भवति।"
+          },
+          {
+            num: 10,
+            question: "Split form: भूतपूर्वः $\\rightarrow$ ______",
+            questionSanskrit: "विग्रहवाक्यं लिखत: भूतपूर्वः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "पूर्वं भूतः (केवलसमासः)",
+            explanation: "विशेषसंज्ञाविनिर्मुक्तः केवलसमासः।"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "ws-grade9-samasa-ws2",
+    title: "Worksheet 2: Advanced Value Splits (Dvandva & Bahuvrihi) (10 Questions)",
+    titleSanskrit: "परिशिष्टम् २ कार्यपत्रिका २: द्वन्द्व-बहुव्रीहि-समास-विवेचनम् (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Identify sub-types of Dvandva (Itaretara, Samahara) and Bahuvrihi (Samanadhikarana, Vyadhikarana, Saha) with Vigraha-vakya expansions.",
+    sections: [
+      {
+        sectionTitle: "Section A: Advanced Value Splits (Dvandva & Bahuvrihi)",
+        sectionTitleSanskrit: "खण्डः 'क' · द्वन्द्व-बहुव्रीहि-समास-विग्रहः",
+        instructions: "Identify the sub-type and solve the compound expansions.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "रामश्च कृष्णश्च सुरेशश्च गिरीशश्च $\\rightarrow$ Compound: ______",
+            questionSanskrit: "समस्तपदं रचयत: रामश्च कृष्णश्च सुरेशश्च गिरीशश्च $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "रामकृष्णसुरेशगिरीशाः (बहुपद-इतरेतरद्वन्द्वः)",
+            explanation: "बहूनां पदानाम् इतरेतरयोगे बहुवचनं भवति।"
+          },
+          {
+            num: 2,
+            question: "पाणी च पादौ च $\\rightarrow$ Compound: ______",
+            questionSanskrit: "समस्तपदं रचयत: पाणी च पादौ च $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "पाणिपादम् (नित्यसमाहारद्वन्द्वः)",
+            explanation: "द्वन्द्वश्च प्राणितूर्यसेनाङ्गानाम् इति नित्यमेकवद्भावः।"
+          },
+          {
+            num: 3,
+            question: "संज्ञा च परिभाषा च $\\rightarrow$ Compound: ______",
+            questionSanskrit: "समस्तपदं रचयत: संज्ञा च परिभाषा च $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "संज्ञापरिभाषम् (समाहारद्वन्द्वः)",
+            explanation: "समाहारद्वन्द्वे नपुंसकलिङ्गम् एकवचनं च भवति।"
+          },
+          {
+            num: 4,
+            question: "चक्रं पाणौ यस्य सः $\\rightarrow$ Compound: ______",
+            questionSanskrit: "समस्तपदं रचयत: चक्रं पाणौ यस्य सः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "चक्रपाणिः (व्यधिकरण-बहुव्रीहिः — विष्णुः)",
+            explanation: "विभिन्नविभक्तियुक्तयोः पदयोः व्यधिकरणबहुव्रीहिः।"
+          },
+          {
+            num: 5,
+            question: "पीतं क्षीरं येन सः $\\rightarrow$ Compound: ______",
+            questionSanskrit: "समस्तपदं रचयत: पीतं क्षीरं येन सः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "पीतक्षीरः (तृतीयार्थ-समानाधिकरण-बहुव्रीहिः — शिशुः)",
+            explanation: "तृतीयाविभक्त्यर्थे अन्यपदप्रधानः बहुव्रीहिः।"
+          },
+          {
+            num: 6,
+            question: "Split form: सशिष्यः $\\rightarrow$ ______",
+            questionSanskrit: "विग्रहवाक्यं लिखत: सशिष्यः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "शिष्येण सह वर्तते इति (सहपूर्वपद-बहुव्रीहिः)",
+            explanation: "तेन सहेति तुल्ययोगे इति बहुव्रीहौ सहस्य सः भवति।"
+          },
+          {
+            num: 7,
+            question: "Split form: द्वित्राः $\\rightarrow$ ______",
+            questionSanskrit: "विग्रहवाक्यं लिखत: द्वित्राः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "द्वौ वा त्रयो वा (सङ्ख्योभयपद-बहुव्रीहिः)",
+            explanation: "सङ्ख्येयार्थे सङ्ख्यावाचकपदयोः बहुव्रीहिः।"
+          },
+          {
+            num: 8,
+            question: "Split form: अपुत्रः $\\rightarrow$ ______",
+            questionSanskrit: "विग्रहवाक्यं लिखत: अपुत्रः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "अविद्यमानः पुत्रः यस्य सः (नञ्-बहुव्रीहिः)",
+            explanation: "अविद्यमानपुत्रवान् पुरुषः अपुत्रः कथ्यते।"
+          },
+          {
+            num: 9,
+            question: "Split form: बहुफलः $\\rightarrow$ ______",
+            questionSanskrit: "विग्रहवाक्यं लिखत: बहुफलः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "बहूनि फलानि यस्मिन् सः (सप्तम्यर्थ-बहुव्रीहिः — वृक्षः)",
+            explanation: "सप्तम्यर्थे अन्यपदप्रधानः बहुव्रीहिः।"
+          },
+          {
+            num: 10,
+            question: "Is 'त्रिलोकी' an example of Dvandva or Dvigu?",
+            questionSanskrit: "'त्रिलोकी' पदे द्वन्द्वसमासः अस्ति अथवा द्विगुसमासः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "द्विगुसमासः (त्रयाणां लोकानां समाहारः)",
+            explanation: "सङ्ख्यापूर्वो द्विगुः इति सूत्रेण अत्र द्विगुसमासः अस्ति।"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "ws-grade9-samasa-ws3",
+    title: "Worksheet 3: Adverbial Compounds (Avyayibhava Chakra) (10 Questions)",
+    titleSanskrit: "परिशिष्टम् २ कार्यपत्रिका ३: अव्ययीभाव-समास-चक्रम् (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Form and expand Avyayibhava adverbial compounds across proximity, absence, repetition, and limitation meanings.",
+    sections: [
+      {
+        sectionTitle: "Section A: Adverbial Compounds (Avyayibhava Chakra)",
+        sectionTitleSanskrit: "खण्डः 'क' · अव्ययीभाव-समास-रूपाणि",
+        instructions: "Form Avyayibhava compounds from the following descriptions.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "ग्रामस्य समीपे $\\rightarrow$ Compound: ______",
+            questionSanskrit: "समस्तपदं रचयत: ग्रामस्य समीपे $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "उपग्रामम् (समीपार्थे अव्ययीभावः)",
+            explanation: "'उप' इति अव्ययस्य सामीप्ये अव्ययीभावः भवति।"
+          },
+          {
+            num: 2,
+            question: "मशकानाम् अभावः $\\rightarrow$ Compound: ______",
+            questionSanskrit: "समस्तपदं रचयत: मशकानाम् अभावः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "निर्मशकम् (अभावार्थे अव्ययीभावः)",
+            explanation: "'निर्' इति अव्ययं अभावार्थे प्रयुज्यते।"
+          },
+          {
+            num: 3,
+            question: "रूपस्य योग्यम् $\\rightarrow$ Compound: ______",
+            questionSanskrit: "समस्तपदं रचयत: रूपस्य योग्यम् $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "अनुरूपम् (योग्यतार्थे अव्ययीभावः)",
+            explanation: "'अनु' इति अव्ययस्य योग्यतार्थे समासः।"
+          },
+          {
+            num: 4,
+            question: "दिने दिने $\\rightarrow$ Compound: ______",
+            questionSanskrit: "समस्तपदं रचयत: दिने दिने $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रतिदिनम् (वीप्सार्थे अव्ययीभावः)",
+            explanation: "'प्रति' इति अव्ययस्य वीप्सार्थे अव्ययीभावः।"
+          },
+          {
+            num: 5,
+            question: "शक्तिम् अनतिक्रम्य $\\rightarrow$ Compound: ______",
+            questionSanskrit: "समस्तपदं रचयत: शक्तिम् अनतिक्रम्य $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "यथाशक्ति (पदार्थानतिवृत्तौ अव्ययीभावः)",
+            explanation: "'यथा' इति अव्ययस्य अनतिक्रमार्थे समासः।"
+          },
+          {
+            num: 6,
+            question: "रामस्य पश्चात् $\\rightarrow$ Compound: ______",
+            questionSanskrit: "समस्तपदं रचयत: रामस्य पश्चात् $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "अनुरामम् (पश्चादर्थे अव्ययीभावः)",
+            explanation: "'अनु' इति अव्ययं पश्चादर्थे प्रयुज्यते।"
+          },
+          {
+            num: 7,
+            question: "तृणम् अपि अपरित्यज्य $\\rightarrow$ Compound: ______",
+            questionSanskrit: "समस्तपदं रचयत: तृणम् अपि अपरित्यज्य $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "सतृणम् (साकल्ये अव्ययीभावः)",
+            explanation: "'स' इति अव्ययस्य साकल्ये समासः।"
+          },
+          {
+            num: 8,
+            question: "गङ्गायाः मध्ये $\\rightarrow$ Compound: ______",
+            questionSanskrit: "समस्तपदं रचयत: गङ्गायाः मध्ये $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "मध्येगङ्गम् (अव्ययीभावः)",
+            explanation: "'मध्ये' इत्यस्य पूर्वप्रयोगे अव्ययीभावः।"
+          },
+          {
+            num: 9,
+            question: "Split form: अधिविद्यालयम् $\\rightarrow$ ______",
+            questionSanskrit: "विग्रहवाक्यं लिखत: अधिविद्यालयम् $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "विद्यालये इति (विभक्त्यर्थे अव्ययीभावः)",
+            explanation: "'अधि' इति अव्ययस्य सप्तमीविभक्त्यर्थे समासः।"
+          },
+          {
+            num: 10,
+            question: "Split form: अनुज्येष्ठम् $\\rightarrow$ ______",
+            questionSanskrit: "विग्रहवाक्यं लिखत: अनुज्येष्ठम् $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "ज्येष्ठस्य आनुपूर्व्येण (आनुपूर्व्ये अव्ययीभावः)",
+            explanation: "'अनु' इति अव्ययस्य क्रमार्थे (आनुपूर्व्ये) समासः।"
+          }
+        ]
+      }
+    ]
   }
 ];

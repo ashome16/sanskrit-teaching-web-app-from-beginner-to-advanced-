@@ -41423,6 +41423,123 @@
           "kind": "narrative"
         }
       ]
+    },
+    {
+      "id": "grade9_samasa",
+      "fileName": "grade9_samasa.txt",
+      "title": "Grade 9: परिशिष्टम् २ — समास-प्रकरणम् (Pages 177–195)",
+      "page_numbers": "Pages 177–195",
+      "sentences": [
+        {
+          "sanskrit": "समसनं समासः (सङ्क्षेपणं समासः)— अनेकपदानाम् एकपदीभवनं समासः इति उच्यते। यदा द्वे वा बहूनि वा सुबन्तपदानि परस्परम् अन्वितानां सतां मिलित्वा एकं पदं भवन्ति, तदा सः समासः भवति।",
+          "meaning": "Samasa means compounding or condensing multiple inflected words into a single semantic unit. When two or more syntactically related words merge into one, it forms a compound.",
+          "paragraphTranslation": "समसनं समासः अर्थात् अनेक पदों का मिलकर एक पद हो जाना (संक्षेपीकरण) ही समास कहलाता है। परस्पर अन्वित पदों के मिलने पर समास बनता है।",
+          "words": [
+            "समसनं",
+            "समासः",
+            "अनेकपदानाम्",
+            "एकपदीभवनं",
+            "सुबन्तपदानि",
+            "परस्परम्",
+            "अन्वितानां",
+            "मिलित्वा",
+            "एकं",
+            "पदं"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "समासस्य द्वौ मुख्यौ प्रकारौ भवतः— केवलसमासः, विशेषसमासश्च। केवलसमासः विशेषसंज्ञाविनिर्मुक्तः भवति (यथा: पूर्वं भूतः = भूतपूर्वः)।",
+          "meaning": "Compounds are primarily of two divisions: Kevala-samasa (general/unclassified) and Vishesha-samasa (special compounds). Kevala-samasa is free from special categorical titles, exemplified by 'bhoota-poorvah' (formerly existed).",
+          "paragraphTranslation": "समास के दो मुख्य भेद होते हैं— केवलसमास और विशेषसमास। केवलसमास विशेष संज्ञाओं से रहित होता है (जैसे: पूर्वं भूतः = भूतपूर्वः)।",
+          "words": [
+            "समासस्य",
+            "द्वौ",
+            "प्रकारौ",
+            "केवलसमासः,",
+            "विशेषसमासश्च।",
+            "विशेषसंज्ञाविनिर्मुक्तः",
+            "भूतपूर्वः"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "विशेषसमासः चतुर्धा भवति— तत्पुरुषसमासः (उत्तरपदार्थप्रधानः), द्वन्द्वसमासः (उभयपदार्थप्रधानः), बहुव्रीहिसमासः (अन्यपदार्थप्रधानः), अव्ययीभावसमासश्च (पूर्वपदार्थप्रधानः)।",
+          "meaning": "Vishesha-samasa is divided into four classes based on semantic dominance: Tatpurusha (final element dominant), Dvandva (both elements dominant), Bahuvrihi (external element dominant), and Avyayibhava (initial indeclinable element dominant).",
+          "paragraphTranslation": "विशेषसमास चार प्रकार का होता है— तत्पुरुष (उत्तरपदार्थ-प्रधान), द्वन्द्व (उभयपदार्थ-प्रधान), बहुव्रीहि (अन्यपदार्थ-प्रधान) और अव्ययीभाव (पूर्वपदार्थ-प्रधान)।",
+          "words": [
+            "विशेषसमासः",
+            "चतुर्धा",
+            "भवति—",
+            "तत्पुरुषसमासः",
+            "द्वन्द्वसमासः",
+            "बहुव्रीहिसमासः",
+            "अव्ययीभावसमासश्च।"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "प्रायेण उत्तरपदार्थप्रधानः तत्पुरुषः भवति। अस्य षड् विभक्तितत्पुरुषाः, कर्मधारयः (समानाधिकरणः), द्विगुः (सङ्ख्यापूर्वः), उपपदतत्पुरुषः, नञ्-तत्पुरुषश्चेति भेदाः सन्ति।",
+          "meaning": "Tatpurusha is characterized by the dominance of its trailing word. Its major varieties include the six case-inflected Tatpurushas, appositional Karmadharaya, numeral-first Dvigu, Upapada, and negative Nan-tatpurusha.",
+          "paragraphTranslation": "प्रायः उत्तरपद के अर्थ की प्रधानता वाला तत्पुरुष समास होता है। इसके छह विभक्ति-तत्पुरुष, कर्मधारय, द्विगु, उपपद और नञ्-तत्पुरुष आदि भेद हैं।",
+          "words": [
+            "प्रायेण",
+            "उत्तरपदार्थप्रधानः",
+            "तत्पुरुषः",
+            "विभक्तितत्पुरुषाः,",
+            "कर्मधारयः,",
+            "द्विगुः,",
+            "उपपदतत्पुरुषः,",
+            "नञ्-तत्पुरुषः"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "प्रायेण उभयपदार्थप्रधानः द्वन्द्वः भवति, यत्र पदानि 'च' इत्यनेन सम्बध्यन्ते। अस्य इतरेतरद्वन्द्वः (रामकृष्णौ) समाहारद्वन्द्वश्च (पाणिपादम्) इति द्वौ भेदौ स्तः।",
+          "meaning": "Dvandva features the equal dominance of both compounded elements, conjoined by 'cha' (and). It manifests as Itaretara-dvandva (distinct dual/plural forms) and Samahara-dvandva (collective neuter singular).",
+          "paragraphTranslation": "प्रायः दोनों पदों के अर्थ की प्रधानता वाला द्वन्द्व समास होता है, जहाँ पद 'च' से जुड़े होते हैं। इसके इतरेतरद्वन्द्व (रामकृष्णौ) और समाहारद्वन्द्व (पाणिपादम्) दो भेद हैं।",
+          "words": [
+            "उभयपदार्थप्रधानः",
+            "द्वन्द्वः",
+            "इतरेतरद्वन्द्वः",
+            "समाहारद्वन्द्वश्च",
+            "रामकृष्णौ",
+            "पाणिपादम्"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "प्रायेण अन्यपदार्थप्रधानः बहुव्रीहिः (पीताम्बरः विष्णुः, चक्रपाणिः), पूर्वपदार्थप्रधानश्च अव्ययीभावः भवति (प्रतिदिनम्, यथाशक्ति, उपग्रामम्)।",
+          "meaning": "Bahuvrihi refers to an external entity not denoted by either constituent word (e.g., Peetambarah = Lord Vishnu, Chakrapanih). Avyayibhava is governed by an initial indeclinable prefix, creating an adverbial neuter compound (e.g., pratidinam, yathashakti, upagramam).",
+          "paragraphTranslation": "अन्यपद के अर्थ की प्रधानता वाला बहुव्रीहि समास (पीताम्बरः, चक्रपाणिः) और पूर्वपद के अर्थ की प्रधानता वाला अव्ययीभाव समास (प्रतिदिनम्, यथाशक्ति, उपग्रामम्) होता है।",
+          "words": [
+            "अन्यपदार्थप्रधानः",
+            "बहुव्रीहिः",
+            "पीताम्बरः",
+            "चक्रपाणिः,",
+            "पूर्वपदार्थप्रधानश्च",
+            "अव्ययीभावः",
+            "प्रतिदिनम्,",
+            "यथाशक्ति"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "एवं समास-विग्रह-ज्ञानेन वयं संस्कृत-साहित्यस्य पदरचनायाः सामर्थ्यं सङ्क्षेपण-सौन्दर्यं च अवगन्तुं समर्थाः भवेम।",
+          "meaning": "Thus, by mastering compound formation and its analytical Vigraha, we become capable of appreciating the power, elegance, and semantic economy of Sanskrit literature.",
+          "paragraphTranslation": "इस प्रकार समास और विग्रह के सम्यक् ज्ञान से हम संस्कृत साहित्य की पद-रचना के सामर्थ्य और संक्षेपीकरण के सौंदर्य को समझने में समर्थ होते हैं।",
+          "words": [
+            "समास-विग्रह-ज्ञानेन",
+            "संस्कृत-साहित्यस्य",
+            "पदरचनायाः",
+            "सामर्थ्यं",
+            "सङ्क्षेपण-सौन्दर्यं",
+            "अवगन्तुं",
+            "समर्थाः"
+          ],
+          "kind": "narrative"
+        }
+      ]
     }
   ]
 }

@@ -257,5 +257,20 @@ export const GRADE_9_SYLLABUS: Grade9Chapter[] = [
     grammarFocus: "अन्वय-रचना, विशेषण-विशेष्य-सम्बन्धः, आकाङ्क्षा-योग्यता-आसत्ति-तात्पर्यम्, कृदन्तरूपाणि",
     status: "available",
     icon: "📜"
+  },
+  {
+    id: "grade9_samasa",
+    num: "परिशिष्टम् २",
+    chNumber: "परिशिष्टम् २",
+    title: "परिशिष्टम् २ : समास-प्रकरणम् (समसनं समासः)",
+    hindiTitle: "समास-प्रकरणम् (समस्तपदानि विग्रहवाक्यानि च)",
+    englishTitle: "Appendix 2: Sanskrit Compounds (Samasa-Prakaranam)",
+    page: "Pages 177–195",
+    category: "grammar",
+    genreBadge: "व्याकरणम् · Paninian Compounding (समासः)",
+    theme: "Comprehensive classification of Sanskrit compounding: Kevala-samasa, Tatpurusha (Karmadharaya, Dvigu, Upapada, Nan), Dvandva, Bahuvrihi, and Avyayibhava.",
+    grammarFocus: "समस्तपदानि, विग्रहवाक्यम् (स्वपद-अस्वपद), पूर्वपद-उत्तरपद-प्राधान्यम्, विभक्तितत्पुरुषः, अव्ययीभावः",
+    status: "available",
+    icon: "🧩"
   }
 ];
