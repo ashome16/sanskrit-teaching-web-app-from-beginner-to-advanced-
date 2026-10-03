@@ -117,6 +117,25 @@ export const GANA_LABELS: Record<number, string> = {
   10: 'curādi',
 };
 
+/**
+ * Section headings for the ten gaṇas, in class order.
+ * Sanskrit names and the short English labels match the ten-gaṇa cards
+ * already stored in the Dhātupāṭha articles (nameSan / titleBadge).
+ * IAST (`bhvādi` …) stays on GANA_LABELS, which is also `gana_name` in the library.
+ */
+export const GANA_HEADINGS: Record<number, { san: string; en: string }> = {
+  1: { san: 'भ्वादिगणः', en: 'The Paradigm Class' },
+  2: { san: 'अदादिगणः', en: 'The Direct Class' },
+  3: { san: 'जुहोत्यादिगणः', en: 'The Reduplicating Class' },
+  4: { san: 'दिवादिगणः', en: 'The "Ya" Class' },
+  5: { san: 'स्वादिगणः', en: 'The "Nu" Class' },
+  6: { san: 'तुदादिगणः', en: 'The Unstrengthened "A" Class' },
+  7: { san: 'रुधादिगणः', en: 'The Infix Class' },
+  8: { san: 'तनादिगणः', en: 'The "O" Class' },
+  9: { san: 'क्र्यादिगणः', en: 'The "Nā" Class' },
+  10: { san: 'चुरादिगणः', en: 'The Causative "Aya" Class' },
+};
+
 export const PADAM_LABELS: Record<DhatuPadam, string> = {
   parasmaipada: 'परस्मैपद · Parasmaipada',
   atmanepada: 'आत्मनेपद · Ātmanepada',

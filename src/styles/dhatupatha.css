@@ -203,6 +203,85 @@
   background: #0b5f58;
 }
 
+.dp-ganas {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.dp-gana-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  margin: 0 0 0.7rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #e3d5b3;
+}
+
+.dp-gana-title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+  font-size: 1.28rem;
+  font-weight: 800;
+  color: #1c1917;
+  line-height: 1.2;
+}
+
+.dp-gana-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.7rem;
+  height: 1.7rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  background: #0f766e;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.dp-gana-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.65rem;
+  margin: 0;
+  color: #78716c;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.dp-gana-iast {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  color: #57534e;
+}
+
+.dp-gana-en::before {
+  content: "·";
+  margin-right: 0.65rem;
+  color: #d6c7a4;
+  font-style: normal;
+}
+
+.dp-gana-count {
+  color: #a8a29e;
+  font-weight: 700;
+}
+
+.dp-gana-count::before {
+  content: "·";
+  margin-right: 0.65rem;
+  color: #d6c7a4;
+}
+
 .dp-status,
 .dp-empty {
   margin: 0;

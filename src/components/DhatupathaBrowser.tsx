@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import type { DhatuEntry } from '../types/linguistics';
+import type { DhatuEntry, DhatuPadam } from '../types/linguistics';
 import {
+  GANA_HEADINGS,
   GANA_LABELS,
   PADAM_LABELS,
   loadDhatupatha,
@@ -47,6 +48,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState('');
   const [ganaFilter, setGanaFilter] = useState<number | null>(null);
+  const [padamFilter, setPadamFilter] = useState<DhatuPadam | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   /** True while ▶ Play all is speaking the visible roots. */
   const [playingAll, setPlayingAll] = useState(false);
@@ -106,10 +108,39 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
     if (ganaFilter != null) {
       list = list.filter((e) => e.gana === ganaFilter || e.class === ganaFilter);
     }
+    if (padamFilter != null) {
+      list = list.filter((e) => e.padam === padamFilter);
+    }
     return list;
-  }, [entries, query, ganaFilter]);
+  }, [entries, query, ganaFilter, padamFilter]);
 
-  filteredRef.current = filtered;
+  /** Visible roots in gaṇa order 1–10 (stable within a class) so sections and Play all match. */
+  const grouped = useMemo(() => {
+    const buckets = new Map<number, DhatuEntry[]>();
+    const other: DhatuEntry[] = [];
+    for (const entry of filtered) {
+      const gana = entry.gana ?? entry.class;
+      if (gana != null && GANA_ORDER.includes(gana as (typeof GANA_ORDER)[number])) {
+        const list = buckets.get(gana) ?? [];
+        list.push(entry);
+        buckets.set(gana, list);
+      } else {
+        other.push(entry);
+      }
+    }
+    const sections = GANA_ORDER.flatMap((n) => {
+      const roots = buckets.get(n);
+      if (!roots?.length) return [];
+      const heading = GANA_HEADINGS[n];
+      const iast = roots.find((e) => e.gana_name)?.gana_name ?? GANA_LABELS[n];
+      return [{ n, san: heading?.san ?? `Gaṇa ${n}`, iast, en: heading?.en, roots }];
+    });
+    return { sections, other, ordered: [...sections.flatMap((s) => s.roots), ...other] };
+  }, [filtered]);
+
+  filteredRef.current = grouped.ordered;
+
+  const hasPadam = useMemo(() => entries.some((e) => e.padam), [entries]);
 
   // A new search or gaṇa shows a different list — drop the old queue.
   useEffect(() => {
@@ -119,7 +150,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
     resumeIndexRef.current = 0;
     setPlayingAll(false);
     setSpeakingKey(null);
-  }, [query, ganaFilter]);
+  }, [query, ganaFilter, padamFilter]);
 
   // While Play all runs, pin speed + Pause under the site header (or the
   // screen top once the header has scrolled away). Fixed, not sticky: the
@@ -214,6 +245,112 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
     setExpandedId((prev) => (prev === key ? null : key));
   };
 
+  const renderCard = (entry: DhatuEntry) => {
+    const key = entry.id ?? entry.devanagari;
+    const open = expandedId === key;
+    const gana = entry.gana ?? entry.class;
+    const ganaName = entry.gana_name ?? (gana != null ? GANA_LABELS[gana] : undefined);
+    const previewExamples = (entry.examples ?? []).slice(0, open ? undefined : 3);
+
+    return (
+      <article
+        key={key}
+        data-dhatu-id={key}
+        className={`dp-card${open ? ' dp-card--open' : ''}${speakingKey === key ? ' dp-card--speaking' : ''}`}
+        onClick={() => toggleExpand(entry)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleExpand(entry);
+          }
+        }}
+        role="button"
+        tabIndex={0}
+        aria-expanded={open}
+      >
+        <div className="dp-card-top">
+          <div>
+            <span className="dp-root">{entry.devanagari}</span>
+            <span className="dp-iast">{entry.transliteration}</span>
+          </div>
+          <button
+            type="button"
+            className="dp-audio"
+            title={`Pronounce ${entry.devanagari}`}
+            aria-label={`Pronounce ${entry.devanagari}`}
+            onClick={(e) => {
+              e.stopPropagation();
+              speakOne(entry.devanagari);
+            }}
+          >
+            🔊
+          </button>
+        </div>
+
+        <div className="dp-meanings">
+          <span className="dp-meaning-en">{entry.meaning}</span>
+          {entry.meaning_hi && <span className="dp-meaning-hi">{entry.meaning_hi}</span>}
+        </div>
+
+        <div className="dp-tags">
+          {gana != null && (
+            <span className="dp-tag dp-tag--gana">
+              Gaṇa {gana}
+              {ganaName ? ` · ${ganaName}` : ''}
+            </span>
+          )}
+          {entry.padam && (
+            <span className="dp-tag dp-tag--padam">{PADAM_LABELS[entry.padam]}</span>
+          )}
+          {entry.set_anit && (
+            <span className="dp-tag dp-tag--set">{entry.set_anit}</span>
+          )}
+        </div>
+
+        {previewExamples.length > 0 && !open && (
+          <div className="dp-examples-preview">
+            {previewExamples.map((ex) => (
+              <span className="dp-example-chip" key={ex}>
+                {ex}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {open && (
+          <div className="dp-detail" onClick={(e) => e.stopPropagation()}>
+            <LatFormsTable key={key} entry={entry} />
+            {(entry.examples ?? []).length > 0 && (
+              <>
+                <h4 className="dp-detail-heading">Quick examples</h4>
+                <ul className="dp-example-list">
+                  {entry.examples!.map((ex) => (
+                    <li key={ex}>
+                      <button
+                        type="button"
+                        className="dp-example-btn"
+                        onClick={() => speakOne(ex)}
+                      >
+                        {ex} <span aria-hidden="true">🔊</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {entry.notes && entry.notes.trim() && (
+              <>
+                <h4 className="dp-detail-heading">Notes</h4>
+                <p className="dp-notes">{entry.notes}</p>
+              </>
+            )}
+            <p className="dp-hint">Tap the card again to collapse · Laṭ present tables · Phase 2</p>
+          </div>
+        )}
+      </article>
+    );
+  };
+
   return (
     <div className="dp-browser" aria-label="Dhātupāṭha root browser">
       <div className="dp-toolbar">
@@ -266,6 +403,27 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
           </button>
           </div>
         </div>
+        {hasPadam && (
+          <div className="dp-chips" role="group" aria-label="Filter by pada">
+            <button
+              type="button"
+              className={`dp-chip${padamFilter == null ? ' dp-chip--active' : ''}`}
+              onClick={() => setPadamFilter(null)}
+            >
+              All padas
+            </button>
+            {(Object.keys(PADAM_LABELS) as DhatuPadam[]).map((padam) => (
+              <button
+                type="button"
+                key={padam}
+                className={`dp-chip${padamFilter === padam ? ' dp-chip--active' : ''}`}
+                onClick={() => setPadamFilter((prev) => (prev === padam ? null : padam))}
+              >
+                {PADAM_LABELS[padam]}
+              </button>
+            ))}
+          </div>
+        )}
         <div className="dp-chips" role="group" aria-label="Filter by gaṇa">
           <button
             type="button"
@@ -295,115 +453,37 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
       )}
 
       {!loading && !error && filtered.length === 0 && (
-        <p className="dp-empty">No roots match this search. Try another spelling or clear the gaṇa filter.</p>
+        <p className="dp-empty">No roots match this search. Try another spelling or clear the gaṇa and pada filters.</p>
       )}
 
-      <div className="dp-list">
-        {filtered.map((entry) => {
-          const key = entry.id ?? entry.devanagari;
-          const open = expandedId === key;
-          const gana = entry.gana ?? entry.class;
-          const ganaName = entry.gana_name ?? (gana != null ? GANA_LABELS[gana] : undefined);
-          const previewExamples = (entry.examples ?? []).slice(0, open ? undefined : 3);
-
-          return (
-            <article
-              key={key}
-              data-dhatu-id={key}
-              className={`dp-card${open ? ' dp-card--open' : ''}${speakingKey === key ? ' dp-card--speaking' : ''}`}
-              onClick={() => toggleExpand(entry)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  toggleExpand(entry);
-                }
-              }}
-              role="button"
-              tabIndex={0}
-              aria-expanded={open}
-            >
-              <div className="dp-card-top">
-                <div>
-                  <span className="dp-root">{entry.devanagari}</span>
-                  <span className="dp-iast">{entry.transliteration}</span>
-                </div>
-                <button
-                  type="button"
-                  className="dp-audio"
-                  title={`Pronounce ${entry.devanagari}`}
-                  aria-label={`Pronounce ${entry.devanagari}`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    speakOne(entry.devanagari);
-                  }}
-                >
-                  🔊
-                </button>
-              </div>
-
-              <div className="dp-meanings">
-                <span className="dp-meaning-en">{entry.meaning}</span>
-                {entry.meaning_hi && <span className="dp-meaning-hi">{entry.meaning_hi}</span>}
-              </div>
-
-              <div className="dp-tags">
-                {gana != null && (
-                  <span className="dp-tag dp-tag--gana">
-                    Gaṇa {gana}
-                    {ganaName ? ` · ${ganaName}` : ''}
-                  </span>
-                )}
-                {entry.padam && (
-                  <span className="dp-tag dp-tag--padam">{PADAM_LABELS[entry.padam]}</span>
-                )}
-                {entry.set_anit && (
-                  <span className="dp-tag dp-tag--set">{entry.set_anit}</span>
-                )}
-              </div>
-
-              {previewExamples.length > 0 && !open && (
-                <div className="dp-examples-preview">
-                  {previewExamples.map((ex) => (
-                    <span className="dp-example-chip" key={ex}>
-                      {ex}
-                    </span>
-                  ))}
-                </div>
-              )}
-
-              {open && (
-                <div className="dp-detail" onClick={(e) => e.stopPropagation()}>
-                  <LatFormsTable key={key} entry={entry} />
-                  {(entry.examples ?? []).length > 0 && (
-                    <>
-                      <h4 className="dp-detail-heading">Quick examples</h4>
-                      <ul className="dp-example-list">
-                        {entry.examples!.map((ex) => (
-                          <li key={ex}>
-                            <button
-                              type="button"
-                              className="dp-example-btn"
-                              onClick={() => speakOne(ex)}
-                            >
-                              {ex} <span aria-hidden="true">🔊</span>
-                            </button>
-                          </li>
-                        ))}
-                      </ul>
-                    </>
-                  )}
-                  {entry.notes && entry.notes.trim() && (
-                    <>
-                      <h4 className="dp-detail-heading">Notes</h4>
-                      <p className="dp-notes">{entry.notes}</p>
-                    </>
-                  )}
-                  <p className="dp-hint">Tap the card again to collapse · Laṭ present tables · Phase 2</p>
-                </div>
-              )}
-            </article>
-          );
-        })}
+      <div className="dp-ganas">
+        {grouped.sections.map((section) => (
+          <section key={section.n} className="dp-gana" aria-labelledby={`dp-gana-${section.n}`}>
+            <header className="dp-gana-head">
+              <h2 id={`dp-gana-${section.n}`} className="dp-gana-title">
+                <span className="dp-gana-index">{section.n}</span>
+                <span className="dp-gana-san">{section.san}</span>
+              </h2>
+              <p className="dp-gana-label">
+                <span className="dp-gana-iast">{section.iast}</span>
+                {section.en ? <span className="dp-gana-en">{section.en}</span> : null}
+                <span className="dp-gana-count">
+                  {section.roots.length} {section.roots.length === 1 ? 'root' : 'roots'}
+                </span>
+              </p>
+            </header>
+            <div className="dp-list">
+              {section.roots.map((entry) => renderCard(entry))}
+            </div>
+          </section>
+        ))}
+        {grouped.other.length > 0 && (
+          <section className="dp-gana" aria-label="Roots without a gaṇa">
+            <div className="dp-list">
+              {grouped.other.map((entry) => renderCard(entry))}
+            </div>
+          </section>
+        )}
       </div>
 
       {onGoBack && (
