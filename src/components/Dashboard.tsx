@@ -246,7 +246,7 @@ const Dashboard: React.FC = () => {
   const [grammarResetKey, setGrammarResetKey] = useState(0);
   const [grammarTargetTopic, setGrammarTargetTopic] = useState<GrammarTopic>('home');
   const [grammarTargetArticleId, setGrammarTargetArticleId] = useState<string | null>(null);
-  const [vedicTarget, setVedicTarget] = useState<{ tab: VedicTab; anchor?: string; key: number }>({ tab: 'solvers', key: 0 });
+  const [vedicTarget, setVedicTarget] = useState<{ tab: VedicTab; anchor?: string; key: number }>({ tab: 'sutras', key: 0 });
   const [philosophyEssay, setPhilosophyEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind'>('ai_sanskrit');
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
@@ -406,11 +406,12 @@ const Dashboard: React.FC = () => {
 
     if (target.view === 'vedic-maths') {
       const anchor = target.vedicAnchor;
-      let tab: VedicTab = 'solvers';
+      let tab: VedicTab = 'sutras';
       if (anchor === 'zero' || target.mathsTab === 'zero') tab = 'zero';
       else if (anchor?.startsWith('sutra-') || anchor === 'vedic-path' || target.mathsTab === 'sutras') tab = 'sutras';
-      else if (anchor?.startsWith('solver-')) tab = 'solvers';
+      else if (anchor?.startsWith('solver-') || target.mathsTab === 'multiplication' || target.mathsTab === 'divisibility') tab = 'solvers';
       else if (anchor?.startsWith('article-')) tab = 'articles';
+      else if (target.mathsTab === 'altars') tab = 'geometry';
       setVedicTarget((prev) => ({ tab, anchor, key: prev.key + 1 }));
       navigateToView('vedic-maths');
       return;

@@ -220,6 +220,86 @@ function renderJodoSentenceWithSlot(
   );
 }
 
+/** Render a standard fill-in / sentence prompt with an interactive tactile slot. */
+function renderStandardPromptWithSlot(
+  puzzle: BoardPuzzle,
+  chosen: string[],
+  checked: boolean,
+  isCorrect: boolean,
+  wrongAttempt: boolean
+): React.ReactNode {
+  const prompt = (puzzle.prompt || '').normalize('NFC');
+  const sentence = (puzzle.sentence || '').normalize('NFC');
+  const target = (puzzle.target || '').normalize('NFC');
+  const chosenWord = chosen.length > 0 ? cleanTile(chosen[0]) : '';
+
+  let slotStatus: 'empty' | 'filled' | 'correct' | 'wrong' = 'empty';
+  if (chosenWord) {
+    if (checked && isCorrect) slotStatus = 'correct';
+    else if (wrongAttempt) slotStatus = 'wrong';
+    else slotStatus = 'filled';
+  }
+
+  const slotNode = (
+    <span
+      className={`interactive-slot interactive-slot--${slotStatus}`}
+      aria-label={chosenWord ? `Selected: ${chosenWord}` : 'Blank slot: tap a tile'}
+    >
+      {chosenWord ? (
+        <span className="slot-pill-content">
+          {slotStatus === 'correct' && (
+            <span className="slot-status-icon slot-status-icon--ok" aria-hidden="true">✓</span>
+          )}
+          {slotStatus === 'wrong' && (
+            <span className="slot-status-icon slot-status-icon--err" aria-hidden="true">✗</span>
+          )}
+          <span className="slot-pill-word">{chosenWord}</span>
+        </span>
+      ) : (
+        <span className="slot-pill-placeholder">
+          <span className="slot-dash-line" aria-hidden="true">••••</span>
+          <span className="slot-hint-text">रिक्तम्</span>
+        </span>
+      )}
+    </span>
+  );
+
+  // If prompt has underscores (e.g. "____ मन्दं चलति।" or "____रदः गजः मन्दं चलति।")
+  const underscoreRegex = /_{2,}/;
+  if (underscoreRegex.test(prompt)) {
+    const parts = prompt.split(underscoreRegex);
+    return (
+      <span className="standard-sentence-wrap">
+        {parts[0] ? <span className="sentence-text-chunk">{parts[0]}</span> : null}
+        {slotNode}
+        {parts[1] ? <span className="sentence-text-chunk">{parts[1]}</span> : null}
+      </span>
+    );
+  }
+
+  // If sentence contains target and target is not empty
+  if (sentence && target && sentence.includes(target)) {
+    const matchIdx = sentence.indexOf(target);
+    const before = sentence.slice(0, matchIdx);
+    const after = sentence.slice(matchIdx + target.length);
+    return (
+      <span className="standard-sentence-wrap">
+        {before ? <span className="sentence-text-chunk">{before}</span> : null}
+        {slotNode}
+        {after ? <span className="sentence-text-chunk">{after}</span> : null}
+      </span>
+    );
+  }
+
+  // Standalone word or custom question prompt
+  const displayPrompt = prompt || target;
+  return (
+    <span className="standard-sentence-wrap standalone-target">
+      <span className="target-main-word">{displayPrompt}</span>
+    </span>
+  );
+}
+
 
 /** Bold Click Next (and legacy phrases) inside tip or welcome copy (labels loop + visitor **markdown**). */
 function emphasizeTipText(text: string): React.ReactNode {
@@ -806,7 +886,7 @@ const Board: React.FC<BoardProps> = ({
 
         if (puzzleText.trim()) {
           const parsedPuzzles = parse(puzzleText)
-            .map(([_shape, target, answer, tiles, sentence, english, seed]) => ({
+            .map(([, target, answer, tiles, sentence, english, seed]) => ({
               target,
               answer,
               tiles: tiles.split(',').map((tile) => cleanTile(tile)).filter(Boolean),
@@ -1500,25 +1580,39 @@ const Board: React.FC<BoardProps> = ({
     )}
 
     <div className="board-tip-row">
-      <p className="board-tip">{isLearnPhase
-        ? <>Hear the word, read the meaning, then <strong className="tip-next">Click Next</strong>.</>
-        : isJodoSkin
-          ? <>Click letter chips to join them (e.g. क then आ) — picture and sentence appear. Then <strong className="tip-next">Click Next</strong>.</>
-          : emphasizeTipText('Click a cream tile. The picture and sentence appear. Then Click Next.')}</p>
+      <p className="board-tip">
+        <span className="tip-bulb" aria-hidden="true">💡</span>
+        {isLearnPhase
+          ? <>Hear the word, read the meaning, then <strong className="tip-next">Click Next</strong>.</>
+          : isJodoSkin
+            ? <>Click letter chips to join them (e.g. क then आ) — picture and sentence appear. Then <strong className="tip-next">Click Next</strong>.</>
+            : emphasizeTipText('Click a cream tile. The picture and sentence appear. Then Click Next.')}
+      </p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
-      <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
+      <button className="welcome-open" type="button" aria-label="Open Welcome Guide" onClick={() => setWelcomeOpen(true)}>
+        <span className="welcome-open-icon">?</span>
+        <span className="welcome-open-label">Guide</span>
+      </button>
     </div>
 
     {loading && <p className="board-status">Loading today&apos;s shelf…</p>}
     {error && <p className="board-status error">{error}</p>}
 
     {!loading && !error && activePuzzle && <>
-      {packTitle && <div className="pack-shelf" aria-label="Packs">
-        <div className="pack-card active">
-          <strong>{displayPackTitle}</strong>
-          {displayPackGloss && <small>{displayPackGloss}</small>}
+      {packTitle && (
+        <div className="pack-shelf" aria-label="Category Pack">
+          <div className="pack-card active">
+            <span className="pack-card-icon">{activeShelfInfo?.icon || '🌿'}</span>
+            <strong className="pack-card-title">{displayPackTitle}</strong>
+            {displayPackGloss && (
+              <>
+                <span className="pack-card-sep" aria-hidden="true">•</span>
+                <span className="pack-card-gloss">{displayPackGloss}</span>
+              </>
+            )}
+          </div>
         </div>
-      </div>}
+      )}
 
       <section ref={puzzleBoardRef} className="puzzle-board">
         <div className="puzzle-meta">
@@ -1531,6 +1625,11 @@ const Board: React.FC<BoardProps> = ({
                   ? '🎯 जोडो · Join tiles'
                   : '👆 1 tile → Next'}
             </span>
+            {activeShelfInfo && (
+              <span className="meta-shelf-name">
+                {activeShelfInfo.icon} {activeShelfInfo.title.split('·')[0].trim()}
+              </span>
+            )}
           </div>
           <div className="puzzle-nav-controls">
             <button
@@ -1568,15 +1667,21 @@ const Board: React.FC<BoardProps> = ({
 
         {!isLearnPhase && !isJodoSkin && (
           <ol className="puzzle-steps" aria-label="Puzzle steps">
-            <li className={activeStep === 1 ? 'active' : undefined}>
-              <span className="step-num" aria-hidden="true">1</span>
+            <li className={activeStep === 1 ? 'active' : 'completed'}>
+              <span className="step-num" aria-hidden="true">
+                {activeStep === 2 ? '✓' : '1'}
+              </span>
               <span className="step-label">
-                <>Click a cream tile <small>(numbers on tiles)</small></>
+                {activeStep === 2 ? (
+                  <>Cream tile placed</>
+                ) : (
+                  <>Click a cream tile <small>(numbers on tiles)</small></>
+                )}
               </span>
             </li>
-            <li className={activeStep === 2 ? 'active' : undefined}>
+            <li className={activeStep === 2 ? 'active ready-next' : undefined}>
               <span className="step-num" aria-hidden="true">2</span>
-              <span className="step-label">Click Next</span>
+              <span className="step-label">Click Next Puzzle ▶</span>
             </li>
           </ol>
         )}
@@ -1601,7 +1706,7 @@ const Board: React.FC<BoardProps> = ({
                   onClick={() => playPronunciation(cleanTile(tile))}
                 >
                   <span className="tile-num" aria-hidden="true">{index + 1}</span>
-                  <span>{tile}</span>
+                  <span className="tile-sanskrit">{tile}</span>
                 </button>
               ))}
             </div>
@@ -1630,7 +1735,7 @@ const Board: React.FC<BoardProps> = ({
                     title={`Hear pronunciation for ${activePuzzle.target}`}
                     aria-label={`Hear ${activePuzzle.target}`}
                   >
-                    🔊
+                    🔊 Hear
                   </button>
                 </div>
                 <div className="jodo-sentence-line">
@@ -1638,25 +1743,68 @@ const Board: React.FC<BoardProps> = ({
                 </div>
               </div>
             ) : (
-              <div className="standard-prompt-block">
-                <p className="puzzle-prompt">
-                  {isMatchMeaningPhase
-                    ? (activePuzzle.prompt ?? `Which word means · ${activePuzzle.gloss ?? activePuzzle.english}?`)
-                    : (activePuzzle.prompt ?? activePuzzle.target)}
-                </p>
+              <div className="standard-prompt-card">
+                <div className="standard-prompt-header">
+                  <div className="prompt-header-left">
+                    <span className="prompt-type-badge">
+                      {isMatchMeaningPhase
+                        ? '📖 अर्थ-मेलनम् · Match Meaning'
+                        : hasBlank
+                          ? '✨ रिक्त-स्थानं पूरयत · Fill Blank'
+                          : '🎯 शब्द-परिचयः · Target Word'}
+                    </span>
+                    {activePuzzle.english && (
+                      <span className="prompt-english-hint" title="English translation/meaning">
+                        ({activePuzzle.english})
+                      </span>
+                    )}
+                  </div>
+                  <button
+                    type="button"
+                    className="prompt-sound-btn"
+                    onClick={() => playPronunciation(activePuzzle.sentence || activePuzzle.target)}
+                    title={`Hear pronunciation: ${activePuzzle.sentence || activePuzzle.target}`}
+                    aria-label={`Hear ${activePuzzle.sentence || activePuzzle.target}`}
+                  >
+                    🔊 Hear
+                  </button>
+                </div>
+                <div className="standard-sentence-line">
+                  {renderStandardPromptWithSlot(activePuzzle, chosen, checked, isCorrect, wrongAttempt)}
+                </div>
                 {isPrashnaPart && activePuzzle.english && (
                   <p className="prashna-english-clue">({activePuzzle.english})</p>
                 )}
               </div>
             )}
 
-            <div className="tile-row">
-              {activePuzzle.tiles.map((tile, index) => (
-                <button key={`${tile}-${index}`} className={chosen.includes(cleanTile(tile)) ? 'puzzle-tile chosen' : 'puzzle-tile'} onClick={() => toggleTile(tile)}>
-                  <span className="tile-num" aria-hidden="true">{index + 1}</span>
-                  <span>{tile}</span>
-                </button>
-              ))}
+            <div className="tile-row" role="group" aria-label="Answer cream tiles">
+              {activePuzzle.tiles.map((tile, index) => {
+                const clean = cleanTile(tile);
+                const isSelected = chosen.includes(clean);
+                let tileStatusClass = '';
+                if (isSelected) {
+                  if (checked && isCorrect) tileStatusClass = 'chosen correct';
+                  else if (wrongAttempt) tileStatusClass = 'chosen wrong';
+                  else tileStatusClass = 'chosen';
+                }
+                return (
+                  <button
+                    key={`${tile}-${index}`}
+                    type="button"
+                    className={`puzzle-tile ${tileStatusClass}`}
+                    onClick={() => toggleTile(tile)}
+                    aria-pressed={isSelected}
+                    aria-label={`Tile ${index + 1}: ${tile}`}
+                  >
+                    <span className="tile-num" aria-hidden="true">{index + 1}</span>
+                    <span className="tile-sanskrit">{tile}</span>
+                    {isSelected && checked && isCorrect && (
+                      <span className="tile-badge-correct" aria-hidden="true">✓</span>
+                    )}
+                  </button>
+                );
+              })}
             </div>
 
             {checked && isCorrect && (
@@ -1665,7 +1813,9 @@ const Board: React.FC<BoardProps> = ({
                   <span className="success-emoji">🎉</span>
                   <span className="success-text">उत्तमम्! Correct!</span>
                 </div>
-                <div className="puzzle-graphic" aria-hidden="true">{puzzleGraphic}</div>
+                <div className="puzzle-graphic-pedestal">
+                  <div className="puzzle-graphic" aria-hidden="true">{puzzleGraphic}</div>
+                </div>
                 <p className="result-sanskrit">{highlightedSentence(activePuzzle.sentence, activePuzzle.highlight, activePuzzle.tapHighlight)}</p>
                 <p className="result-english">{activePuzzle.english}</p>
                 <div className="result-audio-row">
@@ -1690,7 +1840,11 @@ const Board: React.FC<BoardProps> = ({
                 </div>
                 {activePuzzle.explanation && <p className="result-explanation">💡 {activePuzzle.explanation}</p>}
                 {activePuzzle.seed && <p className="result-seed">{activePuzzle.seed}</p>}
-                {hasNextPuzzle && <button ref={nextBtnRef} className="next-button" type="button" onClick={onNextOrAgain}>{isLastPuzzle ? 'Play Again ↺' : 'Next Puzzle ▶'}</button>}
+                {hasNextPuzzle && (
+                  <button ref={nextBtnRef} className="next-button next-button--celebrate" type="button" onClick={onNextOrAgain}>
+                    {isLastPuzzle ? 'Play Again ↺' : 'Next Puzzle ▶'}
+                  </button>
+                )}
               </div>
             )}
             {wrongAttempt && (
@@ -1698,7 +1852,9 @@ const Board: React.FC<BoardProps> = ({
                 <span className="wrong-icon">🤔</span>
                 <div className="wrong-content">
                   <strong>{wrongAttemptMessage}</strong>
-                  <button type="button" className="reset-try-btn" onClick={resetPuzzleUi}>Reset selection</button>
+                  <button type="button" className="reset-try-btn" onClick={resetPuzzleUi}>
+                    ↺ Reset selection
+                  </button>
                 </div>
               </div>
             )}

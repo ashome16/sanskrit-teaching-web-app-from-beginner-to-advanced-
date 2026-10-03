@@ -47,7 +47,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({
   onOpenGrammar,
   onOpenRegister,
   onOpenLogin,
-  initialTab = 'solvers',
+  initialTab = 'sutras',
   initialAnchor,
   onOpenNumbers,
 }) => {
@@ -56,6 +56,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({
   const canDownload = canDownloadContent(currentUser, isAdminLoggedIn);
 
   const [activeTab, setActiveTab] = useState<VedicTab>(initialTab);
+  const [selectedTrack, setSelectedTrack] = useState<'all' | 'core' | 'domains' | 'heritage' | 'mastery'>('all');
 
   // Sub-Sutra Practice Worksheet States
   const [activeWorksheetSubSutraId, setActiveWorksheetSubSutraId] = useState<number | null>(null);
@@ -386,6 +387,33 @@ ${bodyHtml}
       setActiveTab('articles');
       setSelectedArticleId(article.id);
       scrollId = 'vedic-article-card';
+    } else if (clean === 'algebra') {
+      setActiveTab('algebra');
+      scrollId = 'vedic-tabs';
+    } else if (clean === 'geometry') {
+      setActiveTab('geometry');
+      scrollId = 'vedic-tabs';
+    } else if (clean === 'fluid') {
+      setActiveTab('fluid');
+      scrollId = 'vedic-tabs';
+    } else if (clean === 'logic') {
+      setActiveTab('logic');
+      scrollId = 'vedic-tabs';
+    } else if (clean === 'parampara') {
+      setActiveTab('parampara');
+      scrollId = 'vedic-tabs';
+    } else if (clean === 'quiz') {
+      setActiveTab('quiz');
+      scrollId = 'vedic-tabs';
+    } else if (clean === 'sutras') {
+      setActiveTab('sutras');
+      scrollId = 'vedic-tabs';
+    } else if (clean === 'solvers') {
+      setActiveTab('solvers');
+      scrollId = 'vedic-tabs';
+    } else if (clean === 'articles' || clean === 'essay') {
+      setActiveTab('articles');
+      scrollId = 'vedic-tabs';
     } else {
       return false;
     }
@@ -595,94 +623,882 @@ ${bodyHtml}
           </p>
         )}
 
-        {/* Tab Navigation */}
-        <div className="vedic-tabs" id="vedic-tabs">
-          <button
-            type="button"
-            className={`vedic-tab-btn${activeTab === 'solvers' ? ' active' : ''}`}
-            onClick={() => setActiveTab('solvers')}
-          >
-            <span>🧮</span>
-            <span>Interactive Solvers</span>
-          </button>
-          <button
-            type="button"
-            className={`vedic-tab-btn${activeTab === 'articles' || activeTab === 'essay' ? ' active' : ''}`}
-            onClick={() => setActiveTab('articles')}
-          >
-            <span>📖</span>
-            <span>Articles Masterclass</span>
-          </button>
-          <button
-            type="button"
-            className={`vedic-tab-btn${activeTab === 'zero' ? ' active' : ''}`}
-            onClick={() => setActiveTab('zero')}
-          >
-            <span>🪐</span>
-            <span>The Numerical Grid &amp; Zero</span>
-          </button>
-          <button
-            type="button"
-            className={`vedic-tab-btn${activeTab === 'fluid' ? ' active' : ''}`}
-            onClick={() => setActiveTab('fluid')}
-          >
-            <span>🌊</span>
-            <span>Fluid Space &amp; Parallel Math</span>
-          </button>
-          <button
-            type="button"
-            className={`vedic-tab-btn${activeTab === 'algebra' ? ' active' : ''}`}
-            onClick={() => setActiveTab('algebra')}
-          >
-            <span>📐</span>
-            <span>Universal Algebra Engine</span>
-          </button>
-          <button
-            type="button"
-            className={`vedic-tab-btn${activeTab === 'geometry' ? ' active' : ''}`}
-            onClick={() => setActiveTab('geometry')}
-          >
-            <span>🔺</span>
-            <span>Vedic Geometry</span>
-          </button>
-          <button
-            type="button"
-            className={`vedic-tab-btn${activeTab === 'parampara' ? ' active' : ''}`}
-            onClick={() => setActiveTab('parampara')}
-          >
-            <span>🕉️</span>
-            <span>The Source &amp; Guru Parampara</span>
-          </button>
-          <button
-            type="button"
-            className={`vedic-tab-btn${activeTab === 'logic' ? ' active' : ''}`}
-            onClick={() => setActiveTab('logic')}
-          >
-            <span>🗣️</span>
-            <span>Logic &amp; Language</span>
-          </button>
-          <button
-            type="button"
-            className={`vedic-tab-btn${activeTab === 'sutras' ? ' active' : ''}`}
-            onClick={() => setActiveTab('sutras')}
-          >
-            <span>📜</span>
-            <span>16 Sutras &amp; 13 Sub-Sutras</span>
-          </button>
-          <button
-            type="button"
-            className={`vedic-tab-btn${activeTab === 'quiz' ? ' active' : ''}`}
-            onClick={() => setActiveTab('quiz')}
-          >
-            <span>⚡</span>
-            <span>Speed Math Challenge</span>
-          </button>
+
+        {/* Tab Navigation & Curriculum Track Guide */}
+        <div className="vedic-curriculum-nav" id="vedic-tabs">
+          {/* Quick Track Filter Bar */}
+          <div className="vedic-track-filters" role="tablist" aria-label="Curriculum Tracks">
+            <button
+              type="button"
+              className={`vedic-track-filter-btn${selectedTrack === 'all' ? ' active' : ''}`}
+              onClick={() => setSelectedTrack('all')}
+            >
+              <span>🌟 Complete Curriculum</span>
+              <span className="vedic-track-filter-count">10 Modules</span>
+            </button>
+            <button
+              type="button"
+              className={`vedic-track-filter-btn${selectedTrack === 'core' ? ' active' : ''}`}
+              onClick={() => setSelectedTrack('core')}
+            >
+              <span>📜 1. Core Curriculum</span>
+              <span className="vedic-track-filter-count">2</span>
+            </button>
+            <button
+              type="button"
+              className={`vedic-track-filter-btn${selectedTrack === 'domains' ? ' active' : ''}`}
+              onClick={() => setSelectedTrack('domains')}
+            >
+              <span>📐 2. Domains</span>
+              <span className="vedic-track-filter-count">3</span>
+            </button>
+            <button
+              type="button"
+              className={`vedic-track-filter-btn${selectedTrack === 'heritage' ? ' active' : ''}`}
+              onClick={() => setSelectedTrack('heritage')}
+            >
+              <span>🏛️ 3. Heritage &amp; Logic</span>
+              <span className="vedic-track-filter-count">3</span>
+            </button>
+            <button
+              type="button"
+              className={`vedic-track-filter-btn${selectedTrack === 'mastery' ? ' active' : ''}`}
+              onClick={() => setSelectedTrack('mastery')}
+            >
+              <span>⚡ 4. Mastery &amp; Treatises</span>
+              <span className="vedic-track-filter-count">2</span>
+            </button>
+          </div>
+
+          {/* Grouped Tracks Grid */}
+          <div className="vedic-tracks-grid">
+            {(selectedTrack === 'all' || selectedTrack === 'core') && (
+              <div className="vedic-track-card">
+                <div className="vedic-track-header">
+                  <div className="vedic-track-badge">Track 1 · आधारशिला</div>
+                  <div className="vedic-track-title-wrap">
+                    <h3 className="vedic-track-title">Core Curriculum &amp; Solvers</h3>
+                    <span className="vedic-track-sa">मूलसूत्राणि साधनागारं च</span>
+                  </div>
+                  <p className="vedic-track-desc">Foundational 16 canonical aphorisms, 13 sub-sutras, learning path &amp; mental math lab.</p>
+                </div>
+                <div className="vedic-track-btns">
+                  <button
+                    type="button"
+                    className={`vedic-tab-btn${activeTab === 'sutras' ? ' active' : ''}`}
+                    onClick={() => {
+                      setActiveTab('sutras');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <span className="vedic-tab-num">1</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">📜</span>
+                    <div className="vedic-tab-content">
+                      <span className="vedic-tab-title">16 Sūtras &amp; Learning Path</span>
+                      <span className="vedic-tab-sub">Foundations · Path · Worksheets</span>
+                    </div>
+                  </button>
+                  <button
+                    type="button"
+                    className={`vedic-tab-btn${activeTab === 'solvers' ? ' active' : ''}`}
+                    onClick={() => {
+                      setActiveTab('solvers');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <span className="vedic-tab-num">2</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">🧮</span>
+                    <div className="vedic-tab-content">
+                      <span className="vedic-tab-title">Interactive Solvers Studio</span>
+                      <span className="vedic-tab-sub">7 Mental Math Calculators</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {(selectedTrack === 'all' || selectedTrack === 'domains') && (
+              <div className="vedic-track-card">
+                <div className="vedic-track-header">
+                  <div className="vedic-track-badge">Track 2 · प्रयोगाः</div>
+                  <div className="vedic-track-title-wrap">
+                    <h3 className="vedic-track-title">Universal Applications</h3>
+                    <span className="vedic-track-sa">बीजगणितं शुल्बसूत्राणि च</span>
+                  </div>
+                  <p className="vedic-track-desc">Vedic algebra, Baudhayana geometric constructions, and cognitive fluid calculation streams.</p>
+                </div>
+                <div className="vedic-track-btns">
+                  <button
+                    type="button"
+                    className={`vedic-tab-btn${activeTab === 'algebra' ? ' active' : ''}`}
+                    onClick={() => {
+                      setActiveTab('algebra');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <span className="vedic-tab-num">3</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">📐</span>
+                    <div className="vedic-tab-content">
+                      <span className="vedic-tab-title">Universal Algebra Engine</span>
+                      <span className="vedic-tab-sub">Vilokanam &amp; Parāvartya</span>
+                    </div>
+                  </button>
+                  <button
+                    type="button"
+                    className={`vedic-tab-btn${activeTab === 'geometry' ? ' active' : ''}`}
+                    onClick={() => {
+                      setActiveTab('geometry');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <span className="vedic-tab-num">4</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">🔺</span>
+                    <div className="vedic-tab-content">
+                      <span className="vedic-tab-title">Vedic Geometry &amp; Śulba</span>
+                      <span className="vedic-tab-sub">Baudhāyana · Altars · Pi</span>
+                    </div>
+                  </button>
+                  <button
+                    type="button"
+                    className={`vedic-tab-btn${activeTab === 'fluid' ? ' active' : ''}`}
+                    onClick={() => {
+                      setActiveTab('fluid');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <span className="vedic-tab-num">5</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">🌊</span>
+                    <div className="vedic-tab-content">
+                      <span className="vedic-tab-title">Fluid Space &amp; Mental Math</span>
+                      <span className="vedic-tab-sub">Visual Grid &amp; Parallel Streams</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {(selectedTrack === 'all' || selectedTrack === 'heritage') && (
+              <div className="vedic-track-card">
+                <div className="vedic-track-header">
+                  <div className="vedic-track-badge">Track 3 · दर्शनम्</div>
+                  <div className="vedic-track-title-wrap">
+                    <h3 className="vedic-track-title">Heritage &amp; Epistemology</h3>
+                    <span className="vedic-track-sa">शून्यं तर्कशास्त्रं परम्परा च</span>
+                  </div>
+                  <p className="vedic-track-desc">The invention of zero, formal logic, Paninian computational linguistics, and unbroken lineage.</p>
+                </div>
+                <div className="vedic-track-btns">
+                  <button
+                    type="button"
+                    className={`vedic-tab-btn${activeTab === 'zero' ? ' active' : ''}`}
+                    onClick={() => {
+                      setActiveTab('zero');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <span className="vedic-tab-num">6</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">🪐</span>
+                    <div className="vedic-tab-content">
+                      <span className="vedic-tab-title">The Numerical Grid &amp; Zero</span>
+                      <span className="vedic-tab-sub">Śūnya &amp; Positional Notation</span>
+                    </div>
+                  </button>
+                  <button
+                    type="button"
+                    className={`vedic-tab-btn${activeTab === 'logic' ? ' active' : ''}`}
+                    onClick={() => {
+                      setActiveTab('logic');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <span className="vedic-tab-num">7</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">🗣️</span>
+                    <div className="vedic-tab-content">
+                      <span className="vedic-tab-title">Logic &amp; Language (AI)</span>
+                      <span className="vedic-tab-sub">Nyāya · Kaṭapayādi · NASA AI</span>
+                    </div>
+                  </button>
+                  <button
+                    type="button"
+                    className={`vedic-tab-btn${activeTab === 'parampara' ? ' active' : ''}`}
+                    onClick={() => {
+                      setActiveTab('parampara');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <span className="vedic-tab-num">8</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">🕉️</span>
+                    <div className="vedic-tab-content">
+                      <span className="vedic-tab-title">Guru Paramparā &amp; Lineage</span>
+                      <span className="vedic-tab-sub">Āryabhaṭa to Bhāratī Kṛṣṇa</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {(selectedTrack === 'all' || selectedTrack === 'mastery') && (
+              <div className="vedic-track-card">
+                <div className="vedic-track-header">
+                  <div className="vedic-track-badge">Track 4 · अभ्यासः</div>
+                  <div className="vedic-track-title-wrap">
+                    <h3 className="vedic-track-title">Mastery &amp; Treatises</h3>
+                    <span className="vedic-track-sa">अभ्यासपरीक्षा सिद्धान्तमञ्जरी</span>
+                  </div>
+                  <p className="vedic-track-desc">Speed math self-assessment quiz and 6 illustrated academic masterclasses with historical manuscripts.</p>
+                </div>
+                <div className="vedic-track-btns">
+                  <button
+                    type="button"
+                    className={`vedic-tab-btn${activeTab === 'quiz' ? ' active' : ''}`}
+                    onClick={() => {
+                      setActiveTab('quiz');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <span className="vedic-tab-num">9</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">⚡</span>
+                    <div className="vedic-tab-content">
+                      <span className="vedic-tab-title">Speed Math Challenge</span>
+                      <span className="vedic-tab-sub">Timed Quiz &amp; Mastery Check</span>
+                    </div>
+                  </button>
+                  <button
+                    type="button"
+                    className={`vedic-tab-btn${activeTab === 'articles' || activeTab === 'essay' ? ' active' : ''}`}
+                    onClick={() => {
+                      setActiveTab('articles');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <span className="vedic-tab-num">10</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">📖</span>
+                    <div className="vedic-tab-content">
+                      <span className="vedic-tab-title">Articles Masterclass</span>
+                      <span className="vedic-tab-sub">6 Illustrated Treatises</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
       {/* Main Content Area */}
       <main className="vedic-content-wrap">
+
+        {activeTab === 'sutras' && (
+          <div>
+            {/* Official 16 Foundational Sutras Poster Banner */}
+            <div className="vedic-poster-banner" style={{ marginTop: '0.5rem' }}>
+              <div
+                className="vedic-poster-thumb-wrap"
+                onClick={() => setIsPosterModalOpen(true)}
+                title="Click to view full-size poster"
+              >
+                <img
+                  src="/vedic-sutras-poster-v3.webp"
+                  alt="EdNet Learn poster: the 16 Vedic Mathematics sutras of Swami Bharati Krishna Tirtha in standard order (Ekādhikena Pūrveṇa to Guṇakasamuccayaḥ), each with Sanskrit name, IAST, English meaning, use and a worked example"
+                  className="vedic-poster-thumb-img"
+                />
+              </div>
+              <div className="vedic-poster-content">
+                <span className="vedic-poster-badge">✦ Official Academy Wall Poster ✦</span>
+                <h3 className="vedic-poster-title">16 Foundational Sutras of Vedic Mathematics</h3>
+                <p className="vedic-poster-quote">
+                  "Vedic Mathematics is not just a method, it is a way of thinking."
+                </p>
+                <p className="vedic-poster-desc">
+                  The complete 16 sutras with Sanskrit aphorisms, English translations, and worked arithmetic &amp; algebraic examples for rapid mental calculation (Ekādhikena, Nikhilam, Ūrdhva-Tiryagbhyām, Parāvartya, and more).
+                </p>
+                <div className="vedic-poster-actions">
+                  <button
+                    type="button"
+                    className="vedic-poster-btn-primary"
+                    onClick={() => setIsPosterModalOpen(true)}
+                  >
+                    <span>🔍</span>
+                    <span>View Full Poster</span>
+                  </button>
+                  <a
+                    href="/vedic-sutras-poster-v3.png"
+                    download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.png"
+                    className="vedic-poster-btn-secondary"
+                  >
+                    <span>📥</span>
+                    <span>Download High-Res (PNG)</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Practical Starting Path Card */}
+            <div className="vedic-starting-path-card">
+              <div className="vedic-path-badge">🎯 Recommended 4-Step Learning Sequence</div>
+              <h3>A Practical Starting Path with the 16 Sutras</h3>
+              <ol className="vedic-path-steps">
+                <li>
+                  <strong>Pick 2–3 Frequent Sutras:</strong> Start with sutras that solve problems you actually encounter often — e.g., <em>Nikhilaṁ Navataścaramam</em> for multiplication near powers of 10, or <em>Dvandva / Ekādhikena</em> for squaring numbers ending in 5.
+                </li>
+                <li>
+                  <strong>Watch a Video Walkthrough:</strong> Focus on just those 2–3 sutras on YouTube to absorb the visual cross-multiplication or base-complement patterns with worked examples.
+                </li>
+                <li>
+                  <strong>Drill 10–15 Problems Daily:</strong> Pair sutra techniques with a free timed mental-math test site (5 minutes a day) until the calculation pattern becomes automatic.
+                </li>
+                <li>
+                  <strong>Add One New Sutra per Week:</strong> Expand gradually through the remaining 14 sutras rather than trying to absorb all 16 at once.
+                </li>
+              </ol>
+            </div>
+
+            <VedicLearningPath
+              id="vedic-path"
+              heading="🧭 Step-by-step path: Numbers → Vedic Maths (Classes 6–8)"
+              intro="The sutra cards below follow this same order. Start at Step 1 and use ← Previous / Next → on each card."
+              onOpen={(anchor, e) => {
+                if (goToAnchor(anchor)) e.preventDefault();
+              }}
+            />
+
+            <div className="sutra-search-bar">
+              <input
+                type="text"
+                className="sutra-search-input"
+                placeholder="🔍 Search sutra by Sanskrit name, English meaning, or formula..."
+                value={sutraSearch}
+                onChange={(e) => setSutraSearch(e.target.value)}
+              />
+
+              <div className="sutra-filter-chips">
+                {[
+                  { id: 'all', label: 'All (16)' },
+                  { id: 'multiplication', label: '✖️ Multiplication' },
+                  { id: 'squaring', label: '² Squaring' },
+                  { id: 'subtraction', label: '➖ Subtraction' },
+                  { id: 'division', label: '➗ Division' },
+                  { id: 'algebra', label: '📐 Algebra' }
+                ].map((chip) => (
+                  <button
+                    key={chip.id}
+                    type="button"
+                    className={`sutra-filter-chip${sutraFilter === chip.id ? ' active' : ''}`}
+                    onClick={() => setSutraFilter(chip.id)}
+                  >
+                    {chip.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="sutras-grid">
+              {orderedSutras.map((sutra: VedicSutra) => {
+                const stepIdx = vedicPathIndex(`sutra-${sutra.id}`);
+                const prevStep = stepIdx > 0 ? VEDIC_LEARNING_PATH[stepIdx - 1] : null;
+                const nextStep = stepIdx >= 0 && stepIdx < VEDIC_LEARNING_PATH.length - 1 ? VEDIC_LEARNING_PATH[stepIdx + 1] : null;
+                const pathStep = stepIdx >= 0 ? VEDIC_LEARNING_PATH[stepIdx] : null;
+                return (
+                <div
+                  key={sutra.id}
+                  id={`sutra-${sutra.id}`}
+                  className={`sutra-card${flashId === `sutra-${sutra.id}` ? ' sutra-card--flash' : ''}`}
+                >
+                  {pathStep && (
+                    <div className="sutra-step-tag">
+                      Step {stepIdx + 1} of {VEDIC_LEARNING_PATH.length}
+                    </div>
+                  )}
+                  <div className="sutra-card-top">
+                    <div className="sutra-card-badge-row">
+                      <span className="sutra-card-num">Sutra {sutra.id}</span>
+                      <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
+                        <button
+                          type="button"
+                          onClick={() => playPronunciation(sutra.sanskrit)}
+                          title="Listen to Sanskrit pronunciation"
+                          style={{
+                            background: '#fef3c7',
+                            border: '1px solid #fde68a',
+                            borderRadius: '6px',
+                            cursor: 'pointer',
+                            fontSize: '0.85rem',
+                            padding: '0.15rem 0.45rem'
+                          }}
+                        >
+                          🔊
+                        </button>
+                        <span className="sutra-card-cat">{sutra.category}</span>
+                      </div>
+                    </div>
+
+                    <h3 className="sutra-card-sanskrit">{sutra.sanskrit}</h3>
+                    <p className="sutra-card-iast">{sutra.transliteration}</p>
+                    <p className="sutra-card-meaning">&ldquo;{sutra.meaning}&rdquo;</p>
+                    <p className="sutra-card-desc">{sutra.description}</p>
+                  </div>
+
+                  <div className="sutra-card-example">
+                    <div className="sutra-card-example-title">💡 Example: {sutra.example.problem}</div>
+                    <ul className="sutra-card-example-steps">
+                      {sutra.example.steps.map((st, sIdx) => (
+                        <li key={sIdx}>{st}</li>
+                      ))}
+                    </ul>
+                    <div className="sutra-card-example-ans">➔ Answer: {sutra.example.answer}</div>
+                  </div>
+
+                  {pathStep && (
+                    <nav className="sutra-step-nav" aria-label={`Learning path step ${stepIdx + 1}`}>
+                      {prevStep ? (
+                        <a href={`/vedic-maths#${prevStep.anchor}`} onClick={onAnchorLink(prevStep.anchor)} className="sutra-step-nav-link">
+                          ← Previous: {prevStep.title}
+                        </a>
+                      ) : (
+                        <span />
+                      )}
+                      {pathStep.solver && (
+                        <a href={`/vedic-maths#solver-${pathStep.solver}`} onClick={onAnchorLink(`solver-${pathStep.solver}`)} className="sutra-step-nav-link sutra-step-nav-link--try">
+                          ▶ Try it
+                        </a>
+                      )}
+                      {nextStep ? (
+                        <a href={`/vedic-maths#${nextStep.anchor}`} onClick={onAnchorLink(nextStep.anchor)} className="sutra-step-nav-link sutra-step-nav-link--next">
+                          Next: {nextStep.title} →
+                        </a>
+                      ) : (
+                        <span className="sutra-step-nav-done">🎉 Path complete — explore the other sutras below</span>
+                      )}
+                    </nav>
+                  )}
+                </div>
+                );
+              })}
+            </div>
+
+            {/* Sub-Sutras Section with Subscription Practice Worksheets */}
+            <div className="subsutras-section">
+              <div className="subsutras-header-intro">
+                <h2 className="subsutras-title">त्रयोदश उपसूत्राणि · 13 Sub-Sutras (Upa-Sutras)</h2>
+                <p className="subsutras-subtitle">
+                  Corollaries that extend the 16 primary sutras into specialized domains such as proportion, divisibility osculation, and factor reduction. Each sub-sutra now includes a dedicated <strong>Online Practice Worksheet</strong> with live algorithmic verification!
+                </p>
+              </div>
+
+              {/* Sub-Sutras Navigation Bar & Member Status */}
+              <div className="subsutras-header-banner">
+                <div className="subsutras-status-row">
+                  {isSubscribed ? (
+                    <div className="subsutras-member-chip active">
+                      <span className="chip-icon">👑</span>
+                      <span><strong>Gurukul Member Active:</strong> All 13 Sub-Sutra Interactive Worksheets Unlocked</span>
+                    </div>
+                  ) : (
+                    <div className="subsutras-member-chip preview">
+                      <span className="chip-icon">⭐</span>
+                      <span>
+                        <strong>Member Preview Mode:</strong> Problem 1 open on each Sub-Sutra.
+                      </span>
+                      <button
+                        type="button"
+                        className="subsutras-header-subscribe-btn"
+                        onClick={handleUnlockWorksheet}
+                      >
+                        Unlock All 13 Worksheets
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                <div className="subsutras-quick-select-wrap">
+                  <span className="subsutras-quick-label">⚡ Jump to Practice Worksheet:</span>
+                  <div className="subsutras-quick-pills">
+                    {VEDIC_SUBSUTRAS.map((sub) => (
+                      <button
+                        key={sub.id}
+                        type="button"
+                        className={`subsutras-quick-pill ${activeWorksheetSubSutraId === sub.id ? 'active' : ''}`}
+                        onClick={() => {
+                          setActiveWorksheetSubSutraId(sub.id);
+                          setTimeout(() => {
+                            const el = document.getElementById(`subsutra-ws-${sub.id}`);
+                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                          }, 100);
+                        }}
+                      >
+                        #{sub.id} {sub.transliteration}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="subsutras-table-wrap">
+                <table className="subsutras-table">
+                  <thead>
+                    <tr>
+                      <th style={{ width: '50px' }}>No.</th>
+                      <th>उपसूत्रम् (Sanskrit)</th>
+                      <th>Transliteration</th>
+                      <th>English Meaning</th>
+                      <th>Mathematical Application</th>
+                      <th style={{ width: '150px' }}>Online Practice</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {VEDIC_SUBSUTRAS.map((sub) => (
+                      <React.Fragment key={sub.id}>
+                        <tr className={`subsutra-table-row ${activeWorksheetSubSutraId === sub.id ? 'active-row' : ''}`}>
+                          <td><strong>#{sub.id}</strong></td>
+                          <td style={{ fontWeight: 700, color: '#78350f', fontFamily: "'Noto Serif Devanagari', serif" }}>
+                            {sub.sanskrit}
+                          </td>
+                          <td style={{ fontStyle: 'italic', color: '#4b5563' }}>{sub.transliteration}</td>
+                          <td style={{ fontWeight: 600 }}>{sub.meaning}</td>
+                          <td style={{ color: '#4b5563' }}>{sub.application}</td>
+                          <td>
+                            <button
+                              type="button"
+                              className={`subsutra-open-ws-btn ${activeWorksheetSubSutraId === sub.id ? 'active' : ''}`}
+                              onClick={() => handleToggleWorksheet(sub.id)}
+                              title={`Open Practice Worksheet for Sub-Sutra #${sub.id}`}
+                            >
+                              {activeWorksheetSubSutraId === sub.id ? 'Close Sheet ▲' : '📝 Practice Sheet ▼'}
+                            </button>
+                          </td>
+                        </tr>
+
+                        {activeWorksheetSubSutraId === sub.id && (() => {
+                          const ws = VEDIC_SUBSUTRA_WORKSHEETS.find((w) => w.subSutraId === sub.id);
+                          if (!ws) return null;
+                          const scoreInfo = wsOverallScore[ws.subSutraId];
+
+                          return (
+                            <tr className="subsutra-ws-drawer-tr">
+                              <td colSpan={6}>
+                                <div className="subsutra-ws-drawer-content" id={`subsutra-ws-${sub.id}`}>
+                                  {/* Worksheet Card Header */}
+                                  <div className="subsutra-ws-card-header">
+                                    <div className="subsutra-ws-header-left">
+                                      <div className="subsutra-ws-tag-row">
+                                        <span className="subsutra-ws-num-badge">Sub-Sutra #{sub.id}</span>
+                                        <span className="subsutra-ws-level-badge">{ws.level}</span>
+                                        <span className="subsutra-ws-time-badge">⏱️ {ws.targetTimeMinutes} mins</span>
+                                        {isSubscribed ? (
+                                          <span className="subsutra-ws-access-badge member">👑 Gurukul Member Access</span>
+                                        ) : (
+                                          <span className="subsutra-ws-access-badge trial">⭐ Free Preview Mode (Problem 1 Open)</span>
+                                        )}
+                                      </div>
+                                      <h3 className="subsutra-ws-title">
+                                        {ws.titleSa} · {ws.title}
+                                      </h3>
+                                      <p className="subsutra-ws-description">{ws.description}</p>
+                                    </div>
+
+                                    <div className="subsutra-ws-header-actions">
+                                      <label className="subsutra-ws-download-toggle">
+                                        <input
+                                          type="checkbox"
+                                          checked={wsIncludeAnswersInDownload}
+                                          onChange={(e) => setWsIncludeAnswersInDownload(e.target.checked)}
+                                        />
+                                        <span>Include Answer Key in Download</span>
+                                      </label>
+                                      <button
+                                        type="button"
+                                        className="subsutra-ws-download-btn"
+                                        onClick={() => handleDownloadWorksheet(ws)}
+                                        title={canDownload ? "Download printable HTML/PDF worksheet" : "Upgrade to download printable worksheet"}
+                                      >
+                                        📥 Download Printable Sheet
+                                      </button>
+                                      {wsDownloadSuccessMsg && (
+                                        <div className="subsutra-ws-download-toast">
+                                          ✓ {wsDownloadSuccessMsg}
+                                        </div>
+                                      )}
+                                    </div>
+                                  </div>
+
+                                  {/* Problems List */}
+                                  <div className="subsutra-problems-list">
+                                    {ws.problems.map((problem, pIdx) => {
+                                      const isLocked = !isSubscribed && pIdx > 0;
+                                      const feedback = wsFeedback[problem.id];
+                                      const hintShown = !!wsShowHints[problem.id];
+                                      const stepsShown = !!wsShowSteps[problem.id];
+                                      const userVal = wsUserAnswers[problem.id] || '';
+
+                                      if (isLocked) {
+                                        return (
+                                          <div key={problem.id} className="subsutra-problem-card locked">
+                                            <div className="subsutra-locked-ribbon">
+                                              <span className="subsutra-lock-icon">🔒</span>
+                                              <span>Gurukul Member Problem #{pIdx + 1}</span>
+                                            </div>
+                                            <div className="subsutra-locked-body">
+                                              <h4 className="subsutra-locked-title">
+                                                Problem {pIdx + 1}: {problem.question.split('(')[0]}...
+                                              </h4>
+                                              <p className="subsutra-locked-text">
+                                                This interactive worksheet drill, its step-by-step Vedic solution algorithms, and score tracking are available with a Gurukul Subscription or Free Trial.
+                                              </p>
+                                              <div className="subsutra-locked-btns">
+                                                <button
+                                                  type="button"
+                                                  className="subsutra-unlock-btn"
+                                                  onClick={handleUnlockWorksheet}
+                                                >
+                                                  ⭐ Unlock All 13 Sub-Sutra Worksheets
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className="subsutra-login-link-btn"
+                                                  onClick={handleOpenLoginModal}
+                                                >
+                                                  Already a Member? Sign In
+                                                </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        );
+                                      }
+
+                                      return (
+                                        <div
+                                          key={problem.id}
+                                          className={`subsutra-problem-card ${
+                                            feedback?.checked
+                                              ? feedback.isCorrect
+                                                ? 'problem-correct'
+                                                : 'problem-incorrect'
+                                              : ''
+                                          }`}
+                                        >
+                                          <div className="subsutra-problem-card-top">
+                                            <div className="subsutra-problem-index">
+                                              <span className="subsutra-q-badge">Problem {pIdx + 1}</span>
+                                              {!isSubscribed && pIdx === 0 && (
+                                                <span className="subsutra-free-pill">Free Interactive Preview</span>
+                                              )}
+                                            </div>
+                                            <div className="subsutra-problem-tools">
+                                              <button
+                                                type="button"
+                                                className={`subsutra-tool-btn ${hintShown ? 'active' : ''}`}
+                                                onClick={() =>
+                                                  setWsShowHints((prev) => ({
+                                                    ...prev,
+                                                    [problem.id]: !hintShown
+                                                  }))
+                                                }
+                                              >
+                                                💡 {hintShown ? 'Hide Hint' : 'Hint'}
+                                              </button>
+                                              <button
+                                                type="button"
+                                                className={`subsutra-tool-btn ${stepsShown ? 'active' : ''}`}
+                                                onClick={() =>
+                                                  setWsShowSteps((prev) => ({
+                                                    ...prev,
+                                                    [problem.id]: !stepsShown
+                                                  }))
+                                                }
+                                              >
+                                                ⚡ {stepsShown ? 'Hide Vedic Steps' : 'Vedic Steps'}
+                                              </button>
+                                            </div>
+                                          </div>
+
+                                          <div className="subsutra-problem-question">
+                                            {problem.question}
+                                          </div>
+
+                                          {hintShown && (
+                                            <div className="subsutra-hint-card">
+                                              <strong>💡 Vedic Hint:</strong> {problem.hint}
+                                            </div>
+                                          )}
+
+                                          {/* Input & Action Area */}
+                                          <div className="subsutra-problem-input-group">
+                                            <input
+                                              type="text"
+                                              className={`subsutra-problem-input ${
+                                                feedback?.checked
+                                                  ? feedback.isCorrect
+                                                    ? 'input-success'
+                                                    : 'input-error'
+                                                  : ''
+                                              }`}
+                                              placeholder="Enter your calculation answer..."
+                                              value={userVal}
+                                              onChange={(e) =>
+                                                setWsUserAnswers((prev) => ({
+                                                  ...prev,
+                                                  [problem.id]: e.target.value
+                                                }))
+                                              }
+                                              onKeyDown={(e) => {
+                                                if (e.key === 'Enter') {
+                                                  handleCheckProblem(problem);
+                                                }
+                                              }}
+                                            />
+                                            <button
+                                              type="button"
+                                              className="subsutra-check-answer-btn"
+                                              onClick={() => handleCheckProblem(problem)}
+                                              disabled={!userVal.trim()}
+                                            >
+                                              Check Answer
+                                            </button>
+                                          </div>
+
+                                          {/* Feedback pill */}
+                                          {feedback?.checked && (
+                                            <div
+                                              className={`subsutra-feedback-banner ${
+                                                feedback.isCorrect ? 'banner-correct' : 'banner-incorrect'
+                                              }`}
+                                            >
+                                              {feedback.isCorrect ? (
+                                                <span>✓ उत्तमोत्तमम्! Correct answer ({problem.answer}). Great Vedic calculation!</span>
+                                              ) : (
+                                                <span>
+                                                  ✗ Not quite ({userVal || 'no answer'}). Check the hint or view the Vedic steps!
+                                                </span>
+                                              )}
+                                            </div>
+                                          )}
+
+                                          {/* Step-by-Step Vedic Method */}
+                                          {stepsShown && (
+                                            <div className="subsutra-solution-steps-card">
+                                              <div className="subsutra-steps-header">
+                                                <strong>⚡ Step-by-Step Vedic Algorithmic Solution:</strong>
+                                                <span className="subsutra-steps-ans">
+                                                  Answer: <strong>{problem.answer}</strong>
+                                                </span>
+                                              </div>
+                                              <ol className="subsutra-steps-ol">
+                                                {problem.solutionSteps.map((step, sIndex) => (
+                                                  <li key={sIndex}>{step}</li>
+                                                ))}
+                                              </ol>
+                                              <p className="subsutra-steps-explanation">
+                                                <em>{problem.explanation}</em>
+                                              </p>
+                                            </div>
+                                          )}
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+
+                                  {/* Worksheet Card Footer */}
+                                  <div className="subsutra-ws-card-footer">
+                                    <div className="subsutra-ws-footer-score">
+                                      {scoreInfo ? (
+                                        <span className="subsutra-score-pill">
+                                          🎯 Score: <strong>{scoreInfo.score} / {scoreInfo.total}</strong> (
+                                          {Math.round((scoreInfo.score / scoreInfo.total) * 100)}%)
+                                          {scoreInfo.score === scoreInfo.total ? ' 🌟 Adbhutam!' : ' Keep practicing!'}
+                                        </span>
+                                      ) : (
+                                        <span className="subsutra-unscored-pill">
+                                          {isSubscribed
+                                            ? 'Fill your answers and click Check All'
+                                            : 'Solve Problem 1 or Subscribe for all 3 problems'}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <div className="subsutra-ws-footer-actions">
+                                      <button
+                                        type="button"
+                                        className="subsutra-check-all-btn"
+                                        onClick={() => handleCheckAllForSubSutra(ws)}
+                                      >
+                                        ✓ Check All Answers
+                                      </button>
+                                      <button
+                                        type="button"
+                                        className="subsutra-reset-btn"
+                                        onClick={() => handleResetSubSutraWorksheet(ws)}
+                                      >
+                                        🔄 Reset Sheet
+                                      </button>
+                                      <button
+                                        type="button"
+                                        className="subsutra-close-btn"
+                                        onClick={() => setActiveWorksheetSubSutraId(null)}
+                                      >
+                                        ✕ Close Sheet
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          );
+                        })()}
+                      </React.Fragment>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* NEXT CHAPTER ROADMAP CARD */}
+            <div className="vedic-next-track-card">
+              <div className="vedic-next-track-header">
+                <span className="vedic-next-track-badge">Next Step in Vedic Mathematics · Track 1</span>
+                <h3 className="vedic-next-track-title">Step 2: Mental Math Solvers Studio</h3>
+                <p className="vedic-next-track-desc">
+                  Now that you have explored the 16 core aphorisms and sub-sūtras, see them in real-time action! Test Ekādhikena, Nikhilam, and Ūrdhva-Tiryagbhyām with live interactive calculators and step-by-step traces.
+                </p>
+              </div>
+              <div className="vedic-next-track-actions">
+                <button
+                  type="button"
+                  className="article-interactive-cta"
+                  onClick={() => {
+                    setActiveTab('solvers');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  🧮 Launch Interactive Solvers Studio →
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setActiveTab('quiz');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  ⚡ Take Speed Math Quiz
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
         {activeTab === 'solvers' && (
+          <div>
           <div className="solver-layout" id="vedic-solver-layout">
             {/* Sidebar with Solver Methods */}
             <aside className="solver-sidebar">
@@ -1461,6 +2277,1299 @@ ${bodyHtml}
               })()}
             </section>
           </div>
+
+            {/* NEXT CHAPTER ROADMAP CARD */}
+            <div className="vedic-next-track-card">
+              <div className="vedic-next-track-header">
+                <span className="vedic-next-track-badge">Next Step in Vedic Mathematics · Track 2</span>
+                <h3 className="vedic-next-track-title">Step 3: Universal Algebra Engine</h3>
+                <p className="vedic-next-track-desc">
+                  Transcend arithmetic into abstract variables. Discover how Parāvartya Yojayet (Transpose &amp; Apply) and Vilokanam (Inspection) solve quadratics, simultaneous equations, and polynomial factorisations instantly.
+                </p>
+              </div>
+              <div className="vedic-next-track-actions">
+                <button
+                  type="button"
+                  className="article-interactive-cta"
+                  onClick={() => {
+                    setActiveTab('algebra');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  📐 Open Universal Algebra Engine →
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setActiveTab('sutras');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  ← Back to 1. 16 Sūtras Directory
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ==================================================================
+            TAB: UNIVERSAL ENGINE OF ALGEBRA (BASE 10 VS BASE X)
+            ================================================================== */}
+        {activeTab === 'algebra' && (
+          <div className="zero-essay-container">
+            <div className="zero-badge-pill" style={{ background: '#fef3c7', color: '#92400e' }}>
+              <span>॥ बीजगणितस्य सार्वभौम-यन्त्रम् ॥</span>
+              <span>·</span>
+              <span>Base 10 vs Base x Unification</span>
+            </div>
+
+            <h1 className="zero-essay-title">The Universal Engine of Algebra</h1>
+            <p className="zero-essay-subtitle">
+              The most profound proof that Vedic math is a deep conceptual system rather than a bag of tricks is its seamless transition into Algebra. Universally, arithmetic and algebra are not two distinct subjects—algebra is simply generalized arithmetic.
+            </p>
+
+            {/* Interactive Algebra Bridge */}
+            <div className="algebra-bridge-box" style={{ marginTop: '1.5rem' }}>
+              <h3 className="algebra-bridge-title">
+                📐 Interactive Proof: Identical Coefficient Vector [1, a+b, ab]
+              </h3>
+              <p className="algebra-bridge-desc">
+                Notice how the Vedic Sutra <em>Ūrdhva-Tiryagbhyām</em> generates the exact identical coefficient array whether the base is concrete 10 or unknown variable x:
+              </p>
+
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
+                <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#6b7280' }}>Try Coefficients:</span>
+                {[
+                  { a: 2, b: 3 },
+                  { a: 3, b: 4 },
+                  { a: 1, b: 5 },
+                  { a: 4, b: 5 },
+                  { a: 6, b: 7 }
+                ].map((item, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    className={`solver-preset-chip${algebraConstA === item.a && algebraConstB === item.b ? ' active' : ''}`}
+                    onClick={() => {
+                      setAlgebraConstA(item.a);
+                      setAlgebraConstB(item.b);
+                    }}
+                  >
+                    (x + {item.a})(x + {item.b})
+                  </button>
+                ))}
+              </div>
+
+              {(() => {
+                const a = algebraConstA;
+                const b = algebraConstB;
+                const sum = a + b;
+                const prod = a * b;
+                const arithNum1 = 10 + a;
+                const arithNum2 = 10 + b;
+                const arithAns = arithNum1 * arithNum2;
+
+                return (
+                  <div className="algebra-bridge-grid">
+                    <div className="algebra-col-card">
+                      <h4 className="algebra-col-title">Arithmetic (Base 10)</h4>
+                      <div className="algebra-math-formula">
+                        {arithNum1} × {arithNum2} = (10 + {a})(10 + {b})
+                      </div>
+                      <div style={{ fontSize: '0.92rem', color: '#374151', margin: '0.4rem 0' }}>
+                        = 1·(10²) + {sum}·(10) + {prod}
+                      </div>
+                      <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#15803d' }}>
+                        = {arithAns}
+                      </div>
+                      <div className="algebra-coeff-chip">
+                        Coefficients: [1, {sum}, {prod}]
+                      </div>
+                    </div>
+
+                    <div className="algebra-col-card">
+                      <h4 className="algebra-col-title">Algebra (Base x)</h4>
+                      <div className="algebra-math-formula">
+                        (x + {a})(x + {b})
+                      </div>
+                      <div style={{ fontSize: '0.92rem', color: '#374151', margin: '0.4rem 0' }}>
+                        = 1·(x²) + {sum}·(x) + {prod}
+                      </div>
+                      <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#b45309' }}>
+                        = x² + {sum}x + {prod}
+                      </div>
+                      <div className="algebra-coeff-chip" style={{ background: '#fef3c7', color: '#92400e' }}>
+                        Coefficients: [1, {sum}, {prod}]
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
+
+              <p style={{ fontSize: '0.95rem', color: '#374151', lineHeight: 1.65, margin: '1.25rem 0 0 0' }}>
+                {VEDIC_ZERO_ESSAY.algebraEngine.summary}
+              </p>
+            </div>
+
+                        <div className="vedic-next-track-card">
+              <div className="vedic-next-track-header">
+                <span className="vedic-next-track-badge">Next Step in Vedic Mathematics · Track 2</span>
+                <h3 className="vedic-next-track-title">Step 4: Vedic Geometry &amp; Śulba Sūtras</h3>
+                <p className="vedic-next-track-desc">
+                  Explore the sacred geometry of the Śulba Sūtras: Baudhāyana's theorem (800 BCE), ritual altar geometries, and ancient rational approximations of √2 and π.
+                </p>
+              </div>
+              <div className="vedic-next-track-actions">
+                <button
+                  type="button"
+                  className="article-interactive-cta"
+                  onClick={() => {
+                    setActiveTab('geometry');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  🔺 Explore Vedic Geometry &amp; Śulba →
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setSelectedArticleId('algebra-engine');
+                    setActiveTab('articles');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  📖 Read Universal Algebra Article
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setActiveTab('solvers');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  ← Back to 2. Solvers Studio
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ==================================================================
+            TAB: VEDIC GEOMETRY & THE SCIENCE OF SHAPES (शुल्बसूत्राणि)
+            ================================================================== */}
+        {activeTab === 'geometry' && (
+          <div className="zero-essay-container">
+            <div className="zero-badge-pill" style={{ background: '#ecfdf5', color: '#065f46' }}>
+              <span>॥ शुल्बसूत्राणि · रेखागणितम् ॥</span>
+              <span>·</span>
+              <span>The Sacred Science of Shapes</span>
+            </div>
+
+            <h1 className="zero-essay-title">Vedic Geometry: The Science of Shapes</h1>
+            <p className="zero-essay-subtitle">
+              Centuries before Euclidean geometry arose in the Mediterranean, ancient Indian master-geometers documented the Śulba Sūtras (शुल्बसूत्राणि)—using ropes, pegs, and exact geometric transformations to construct monumental fire altars, squares, circles, and Pythagorean triples.
+            </p>
+
+            {/* Video Player Box */}
+            <div
+              style={{
+                background: '#ffffff',
+                borderRadius: '16px',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
+                overflow: 'hidden',
+                margin: '2rem 0',
+              }}
+            >
+              <div
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  paddingBottom: '56.25%',
+                  height: 0,
+                  background: '#090d16',
+                }}
+              >
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/bp9m53Tp6xg?start=11&rel=0"
+                  title="Vedic Geometry: The Science Of Shapes"
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    border: 0,
+                  }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+              <div
+                style={{
+                  padding: '1.25rem 1.5rem',
+                  background: '#fafaf9',
+                  borderTop: '1px solid #f0ece1',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  flexWrap: 'wrap',
+                  gap: '0.75rem',
+                }}
+              >
+                <div>
+                  <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#1c1917' }}>
+                    🎥 Masterclass: Vedic Geometry — The Science of Shapes
+                  </div>
+                  <div style={{ fontSize: '0.85rem', color: '#78716c', marginTop: '0.2rem' }}>
+                    Curated Documentary by <strong>Conscious Cosmos</strong> · Timestamp: starts at 0:11
+                  </div>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=bp9m53Tp6xg&t=11s"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    background: '#dc2626',
+                    color: '#ffffff',
+                    padding: '0.5rem 1rem',
+                    borderRadius: '8px',
+                    fontWeight: 700,
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <span>▶ Watch on YouTube</span>
+                </a>
+              </div>
+            </div>
+
+            {/* In-depth geometric cards */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginTop: '1.5rem' }}>
+              <div style={{ background: '#ffffff', padding: '1.5rem', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>📐</div>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
+                  The Śulba Sūtras (शुल्बसूत्राणि)
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
+                  <em>"Śulba"</em> literally means a measuring cord or rope. The texts of <em>Baudhāyana, Āpastamba, Kātyāyana</em>, and <em>Mānava</em> (c. 800–500 BCE) documented exact geometric algorithms used to lay out coordinates, cardinal orientations, and right angles on the earth.
+                </p>
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '1.5rem', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>🔺</div>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
+                  Baudhāyana’s Theorem (The Diagonal Principle)
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
+                  <em>"दीर्घचतुरश्रस्याक्ष्णया रज्जुः पार्श्वमानी तिर्यङ्ग्मानी च यत् पृथग् भूते कुरुतस्तदुभयं करोति ॥"</em> (Baudhāyana Śulba Sūtra 1.48). Centuries before Pythagoras, Baudhāyana proved that the diagonal of a rectangle produces the sum of the areas produced separately by its length and breadth.
+                </p>
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '1.5rem', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>⭕</div>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
+                  Circle &amp; Square Transformations (Circling the Square)
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
+                  Because Vedic altars had to possess identical surface area regardless of whether their geometry was circular (<em>Gārhapatya</em>) or square (<em>Āhavanīya</em>), Vedic seers devised exact cord-and-peg algorithms to transform squares to circles and circles to squares without area loss.
+                </p>
+              </div>
+            </div>
+
+            {/* Sacred Altars & The Invariant Area Problem */}
+            <div style={{ marginTop: '2.5rem', background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: '16px', padding: '1.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                <span style={{ fontSize: '1.5rem' }}>🔥</span>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>
+                  The Invariant Area Problem &amp; Sacred Altars (यज्ञकुण्डानि)
+                </h3>
+              </div>
+              <p style={{ fontSize: '0.94rem', color: '#475569', lineHeight: 1.6, margin: '0 0 1.25rem' }}>
+                The catalyst for ancient Indian geometry was the strict ritual injunction that every sacrificial fire altar (<em>Chiti</em>)
+                must possess the exact same surface area—traditionally <strong>7½ square puruṣas (approx. 108 square aṅgulas)</strong>—even
+                when constructed in drastically different symbolic silhouettes:
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
+                <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
+                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>🦅</div>
+                  <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
+                    Śyenaciti (श्येनचितिः · Falcon Altar)
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5 }}>
+                    Shaped as a magnificent soaring eagle with outstretched wings and tail to carry prayers up to heaven. Required complex polygon dissection while maintaining exact 7½ puruṣa area.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
+                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>🐢</div>
+                  <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
+                    Kūrmaciti (कूर्मचितिः · Tortoise Altar)
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5 }}>
+                    Symbolizing cosmic stability, foundation, and steady equilibrium of the universe. Required segmental circular boundaries matching square areas.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
+                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>☸️</div>
+                  <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
+                    Rathacakraciti (रथचक्रचितिः · Chariot Wheel)
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5 }}>
+                    Symbolizing movement, cyclical cosmic time (<em>kālacakra</em>), and seasonal progression. Built with concentric annular bands and spoke divisions.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
+                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>🏺</div>
+                  <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
+                    Droṇaciti (द्रोणचितिः · Trough Altar)
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5 }}>
+                    Representing abundance, nourishment, and a vessel of divine soma. Formed with trapezoidal prisms and precise step gradations.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Baudhayana's √2 Approximation Masterclass */}
+            <div style={{ marginTop: '2rem', background: 'linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%)', border: '1.5px solid #a7f3d0', borderRadius: '16px', padding: '1.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                <span style={{ fontSize: '1.5rem' }}>✨</span>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#065f46', margin: 0 }}>
+                  Baudhāyana’s √2 Approximation Formula (800 BCE)
+                </h3>
+              </div>
+              <p style={{ fontSize: '0.94rem', color: '#065f46', lineHeight: 1.6, margin: '0 0 1rem' }}>
+                When constructing a square altar double the size of an existing one, Baudhāyana needed the exact diagonal length (<em>d = s√2</em>). In <em>Baudhāyana Śulba Sūtra (1.61–62)</em>, he recorded the legendary verse:
+              </p>
+              <div style={{ background: '#ffffff', border: '1px solid #86efac', borderRadius: '10px', padding: '1rem 1.25rem', fontFamily: 'monospace', fontSize: '0.98rem', color: '#166534', marginBottom: '1rem' }}>
+                <strong>समस्य द्विकरणी । प्रमाणं तृतीयेन वर्धयेत्तच्च चतुर्थेनात्मचतुस्त्रिंशोनेन सविशेषः ॥</strong>
+                <div style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: '#15803d' }}>
+                  <em>"Increase the unit measure by its third, that third by its fourth, less the thirty-fourth part of that fourth."</em>
+                </div>
+                <div style={{ marginTop: '0.5rem', fontSize: '1.1rem', fontWeight: 800, color: '#047857' }}>
+                  √2 ≈ 1 + ⅓ + (⅓ × ¼) - (⅓ × ¼ × ⅟₃₄) = 577 / 408 ≈ 1.414215686...
+                </div>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #bbf7d0' }}>
+                  <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 700 }}>Baudhāyana’s Value (c. 800 BCE)</div>
+                  <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#166534' }}>1.414215686</div>
+                  <div style={{ fontSize: '0.78rem', color: '#059669', marginTop: '0.2rem' }}>577 / 408 (8th continued-fraction convergent)</div>
+                </div>
+
+                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #bbf7d0' }}>
+                  <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 700 }}>Modern Value of √2</div>
+                  <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#0f172a' }}>1.414213562</div>
+                  <div style={{ fontSize: '0.78rem', color: '#64748b', marginTop: '0.2rem' }}>Calculated with 64-bit IEEE floating point</div>
+                </div>
+
+                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #bbf7d0' }}>
+                  <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 700 }}>Historical Accuracy</div>
+                  <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2563eb' }}>99.99985%</div>
+                  <div style={{ fontSize: '0.78rem', color: '#3b82f6', marginTop: '0.2rem' }}>Error of only 0.00000212!</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Modern Echoes in Computer Science & Algorithms */}
+            <div style={{ marginTop: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem' }}>
+              <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '1.4rem' }}>
+                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>💻</div>
+                <h4 style={{ margin: '0 0 0.4rem', color: '#0f172a', fontSize: '1.05rem', fontWeight: 800 }}>
+                  1. Constructive Algorithmic Geometry (CAD)
+                </h4>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 }}>
+                  Because the Śulba Sūtras do not deal in abstract proofs but in sequential constructive instructions (<em>"stretch cord AB, bisect at M, swing arc to C"</em>), computer scientists classify them as early <strong>imperative constructive algorithms</strong> directly mirroring parametric CAD and 3D graphic rendering logic.
+                </p>
+              </div>
+
+              <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '1.4rem' }}>
+                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>🏛️</div>
+                <h4 style={{ margin: '0 0 0.4rem', color: '#0f172a', fontSize: '1.05rem', fontWeight: 800 }}>
+                  2. Vāstu Śāstra &amp; Sustainable Architecture
+                </h4>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 }}>
+                  The cord-geometry of altar construction laid the groundwork for Indian architecture (<em>Vāstu Śāstra</em>), where symmetry, orientation relative to the solar cardinal axis, and proportional area subdivisions are utilized in modern green architecture to maximize ventilation and thermal efficiency.
+                </p>
+              </div>
+
+              <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '1.4rem' }}>
+                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>🔐</div>
+                <h4 style={{ margin: '0 0 0.4rem', color: '#0f172a', fontSize: '1.05rem', fontWeight: 800 }}>
+                  3. Continued Fractions &amp; Signal Processing
+                </h4>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 }}>
+                  Baudhāyana's 577/408 corresponds to the 8th convergent of continued fractions (<em>[1; 2, 2, 2...]</em>). These Diophantine approximations are foundational to digital signal processing, Fourier quantization, and modern cryptographic key generation.
+                </p>
+              </div>
+            </div>
+
+            {/* NEXT CHAPTER ROADMAP CARD */}
+            <div className="vedic-next-track-card">
+              <div className="vedic-next-track-header">
+                <span className="vedic-next-track-badge">Next Step in Vedic Mathematics · Track 2</span>
+                <h3 className="vedic-next-track-title">Step 5: Fluid Space &amp; Mental Parallel Math</h3>
+                <p className="vedic-next-track-desc">
+                  Understand the cognitive science of mental calculation: left-to-right processing, cross-multiplication streams, and the mental blackboard.
+                </p>
+              </div>
+              <div className="vedic-next-track-actions">
+                <button
+                  type="button"
+                  className="article-interactive-cta"
+                  onClick={() => {
+                    setActiveTab('fluid');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  🌊 Enter Fluid Space &amp; Parallel Math →
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setSelectedArticleId('geometry-infinite');
+                    setActiveTab('articles');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  📖 Read Sacred Geometry Article
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setActiveTab('algebra');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  ← Back to 3. Universal Algebra
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ==================================================================
+            TAB: FLUID SPACE & SIMULTANEOUS PARALLEL PROCESSING
+            ================================================================== */}
+        {activeTab === 'fluid' && (
+          <div className="fluid-space-container">
+            <div className="zero-badge-pill" style={{ background: '#ecfdf5', color: '#065f46' }}>
+              <span>॥ स्थानमानस्य सातत्यं युगपत्-प्रक्रिया च ॥</span>
+              <span>·</span>
+              <span>Fluid Space &amp; Simultaneous Processing</span>
+            </div>
+
+            <div className="fluid-space-hero">
+              <h1 className="zero-essay-title">Treating Place Value as Fluid Space</h1>
+              <p className="zero-essay-subtitle">
+                While conventional school mathematics treats place value as a rigid set of isolated columns, Vedic Mathematics treats it as a continuous, fluid continuum. The Sutra <em>Ūrdhva-Tiryagbhyām</em> (Vertically and Crosswise) allows you to calculate units, tens, and hundreds simultaneously in parallel in a single line!
+              </p>
+            </div>
+
+            {/* Interactive Parallel Flow Visualizer */}
+            <div className="fluid-interactive-card">
+              <div className="fluid-inputs-bar">
+                <div className="fluid-presets">
+                  <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#78350f' }}>Try Presets:</span>
+                  {[
+                    { a: 23, b: 45 },
+                    { a: 31, b: 52 },
+                    { a: 42, b: 36 },
+                    { a: 64, b: 25 }
+                  ].map((p, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      className={`solver-preset-chip${fluidNumA === p.a && fluidNumB === p.b ? ' active' : ''}`}
+                      onClick={() => {
+                        setFluidNumA(p.a);
+                        setFluidNumB(p.b);
+                      }}
+                    >
+                      {p.a} × {p.b}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="fluid-inputs-direct">
+                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#4b5563' }}>Custom 2-Digit:</span>
+                  <input
+                    type="number"
+                    min={10}
+                    max={99}
+                    value={fluidNumA}
+                    onChange={(e) => setFluidNumA(Math.min(99, Math.max(10, parseInt(e.target.value, 10) || 10)))}
+                    className="fluid-input-field"
+                  />
+                  <span style={{ fontWeight: 800, color: '#9ca3af' }}>×</span>
+                  <input
+                    type="number"
+                    min={10}
+                    max={99}
+                    value={fluidNumB}
+                    onChange={(e) => setFluidNumB(Math.min(99, Math.max(10, parseInt(e.target.value, 10) || 10)))}
+                    className="fluid-input-field"
+                  />
+                </div>
+              </div>
+
+              {(() => {
+                const a1 = Math.floor(fluidNumA / 10);
+                const a0 = fluidNumA % 10;
+                const b1 = Math.floor(fluidNumB / 10);
+                const b0 = fluidNumB % 10;
+
+                // Step 1: Units
+                const prod1 = a0 * b0;
+                const unitDigit = prod1 % 10;
+                const carry1 = Math.floor(prod1 / 10);
+
+                // Step 2: Crosswise
+                const cross1 = a1 * b0;
+                const cross2 = a0 * b1;
+                const crossSum = cross1 + cross2 + carry1;
+                const tensDigit = crossSum % 10;
+                const carry2 = Math.floor(crossSum / 10);
+
+                // Step 3: Left
+                const prod3 = a1 * b1;
+                const hundredVal = prod3 + carry2;
+
+                const finalProd = fluidNumA * fluidNumB;
+
+                return (
+                  <div>
+                    <div className="fluid-comparison-grid">
+                      {/* Conventional School Long Multiplication */}
+                      <div className="fluid-school-card">
+                        <span className="fluid-card-tag">Traditional School Method</span>
+                        <h3 className="fluid-card-title">Rigid Columnar Scrap Work</h3>
+                        
+                        <div className="fluid-school-stack">
+                          <div>&nbsp;&nbsp;{fluidNumA}</div>
+                          <div>×&nbsp;{fluidNumB}</div>
+                          <div className="fluid-school-line" />
+                          <div>&nbsp;{fluidNumA * b0} <span style={{ fontSize: '0.75rem', color: '#6b7280' }}>({fluidNumA}×{b0})</span></div>
+                          <div>{fluidNumA * b1}0 <span style={{ fontSize: '0.75rem', color: '#6b7280' }}>({fluidNumA}×{b1}0)</span></div>
+                          <div className="fluid-school-line" />
+                          <div style={{ fontWeight: 800, color: '#1f2937' }}>{finalProd}</div>
+                        </div>
+
+                        <p style={{ fontSize: '0.85rem', color: '#6b7280', margin: 0, lineHeight: 1.5 }}>
+                          ⚠️ Requires 3 distinct rows of paper writing, indenting with placeholder zeros, multiple isolated carries, and vertical column addition.
+                        </p>
+                      </div>
+
+                      {/* Vedic Simultaneous Parallel Stream */}
+                      <div className="fluid-vedic-card">
+                        <span className="fluid-card-tag">Vedic Ūrdhva-Tiryagbhyām</span>
+                        <h3 className="fluid-card-title">Simultaneous Symmetrical Matrix</h3>
+
+                        <div className="fluid-vedic-steps">
+                          <div className="fluid-vedic-step">
+                            <div className="fluid-vedic-step-label">
+                              <span>↓ Vertical Right (Units):</span>
+                            </div>
+                            <div className="fluid-vedic-step-calc">
+                              {a0} × {b0} = {prod1} ➔ <strong>{unitDigit}</strong> (carry {carry1})
+                            </div>
+                          </div>
+
+                          <div className="fluid-vedic-step">
+                            <div className="fluid-vedic-step-label">
+                              <span>✕ Crosswise (Tens):</span>
+                            </div>
+                            <div className="fluid-vedic-step-calc">
+                              ({a1}×{b0}) + ({a0}×{b1}) + {carry1} = {crossSum} ➔ <strong>{tensDigit}</strong> (carry {carry2})
+                            </div>
+                          </div>
+
+                          <div className="fluid-vedic-step">
+                            <div className="fluid-vedic-step-label">
+                              <span>↓ Vertical Left (Hundreds):</span>
+                            </div>
+                            <div className="fluid-vedic-step-calc">
+                              ({a1}×{b1}) + {carry2} = <strong>{hundredVal}</strong>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="fluid-vedic-single-line">
+                          <div className="fluid-single-line-label">Direct Single-Line Answer</div>
+                          <div className="fluid-single-line-ans">{finalProd.toLocaleString()}</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Metric Contrast Bar */}
+                    <div className="fluid-metric-contrast">
+                      <div>
+                        <div className="fluid-metric-item-num">0</div>
+                        <div className="fluid-metric-item-label">Scrap Rows Needed</div>
+                      </div>
+                      <div>
+                        <div className="fluid-metric-item-num">10–15×</div>
+                        <div className="fluid-metric-item-label">Faster Mental Processing</div>
+                      </div>
+                      <div>
+                        <div className="fluid-metric-item-num">100%</div>
+                        <div className="fluid-metric-item-label">Parallel Geometric Sync</div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
+            </div>
+
+                        <div className="vedic-next-track-card">
+              <div className="vedic-next-track-header">
+                <span className="vedic-next-track-badge">Next Step in Vedic Mathematics · Track 3</span>
+                <h3 className="vedic-next-track-title">Step 6: The Numerical Grid &amp; Absolute Zero</h3>
+                <p className="vedic-next-track-desc">
+                  Uncover the greatest intellectual revolution in human mathematics: the decimal place-value system and Brahmagupta's laws of Śūnya (Zero).
+                </p>
+              </div>
+              <div className="vedic-next-track-actions">
+                <button
+                  type="button"
+                  className="article-interactive-cta"
+                  onClick={() => {
+                    setActiveTab('zero');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  🪐 Explore The Numerical Grid &amp; Zero →
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setSelectedArticleId('fluid-space');
+                    setActiveTab('articles');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  📖 Read Fluid Space Article
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setActiveTab('geometry');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  ← Back to 4. Vedic Geometry
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ==================================================================
+            TAB: THE ARCHITECTURE OF ABSOLUTE ZERO & THE NUMERICAL GRID
+            ================================================================== */}
+        {activeTab === 'zero' && (
+          <div className="zero-essay-container">
+            <div className="zero-badge-pill">
+              <span>॥ शून्यं सर्वप्रपञ्चस्य मूलम् ॥</span>
+              <span>·</span>
+              <span>The Architecture of Absolute Zero</span>
+            </div>
+
+            <h1 className="zero-essay-title">{VEDIC_ZERO_ESSAY.title}</h1>
+            <p className="zero-essay-subtitle">{VEDIC_ZERO_ESSAY.subtitle}</p>
+
+            {VEDIC_ZERO_ESSAY.intro.map((p, idx) => (
+              <p key={idx} className="vedic-essay-p">{p}</p>
+            ))}
+
+            {/* Section 1: The Birth of the Grid */}
+            <h2 className="vedic-essay-h2">{VEDIC_ZERO_ESSAY.birthGrid.title}</h2>
+            {VEDIC_ZERO_ESSAY.birthGrid.paragraphs.map((p, idx) => (
+              <p key={idx} className="vedic-essay-p">{p}</p>
+            ))}
+
+            {/* Interactive Roman vs Decimal Place-Value Tester */}
+            <div className="roman-compare-card">
+              <div className="roman-compare-header">
+                <span>🏛️ Interactive Grid Test: Roman Tally vs. Indian Decimal System</span>
+              </div>
+              <p style={{ fontSize: '0.9rem', color: '#4b5563', marginBottom: '1rem' }}>
+                Test any number to see why Roman numerals required immense paper real estate, while the Indian positional system represents numbers dynamically:
+              </p>
+
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center', marginBottom: '1rem' }}>
+                <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#6b7280' }}>Presets:</span>
+                {[333, 1984, 2026, 3888].map((val) => (
+                  <button
+                    key={val}
+                    type="button"
+                    className={`solver-preset-chip${romanInputNum === val ? ' active' : ''}`}
+                    onClick={() => setRomanInputNum(val)}
+                  >
+                    {val}
+                  </button>
+                ))}
+                <input
+                  type="number"
+                  min={1}
+                  max={3999}
+                  value={romanInputNum}
+                  onChange={(e) => setRomanInputNum(Math.min(3999, Math.max(1, parseInt(e.target.value, 10) || 1)))}
+                  style={{
+                    padding: '0.3rem 0.6rem',
+                    fontSize: '0.95rem',
+                    borderRadius: '6px',
+                    border: '1.5px solid #d1d5db',
+                    width: '100px',
+                    marginLeft: '0.5rem'
+                  }}
+                />
+              </div>
+
+              <div className="roman-compare-grid">
+                <div className="roman-box">
+                  <div className="roman-box-label">Roman Numeral (Fixed Tally System)</div>
+                  <div className="roman-output-val">{getRoman(romanInputNum)}</div>
+                  <div className="roman-note">
+                    Length: <strong>{getRoman(romanInputNum).length} static characters</strong> with no positional multiplication scaling.
+                  </div>
+                </div>
+
+                <div className="roman-box" style={{ background: '#f0fdf4', borderColor: '#bbf7d0' }}>
+                  <div className="roman-box-label" style={{ color: '#166534' }}>Indian Decimal Place-Value System</div>
+                  <div className="decimal-output-val">{romanInputNum.toLocaleString()}</div>
+                  <div className="roman-note" style={{ color: '#166534' }}>
+                    Length: <strong>{romanInputNum.toString().length} dynamic digits</strong> ={' '}
+                    {romanInputNum
+                      .toString()
+                      .split('')
+                      .map((d, i, arr) => `${d} × 10^${arr.length - 1 - i}`)
+                      .join(' + ')}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Section 2: Global Journey */}
+            <h2 className="vedic-essay-h2">{VEDIC_ZERO_ESSAY.globalJourney.title}</h2>
+            <div className="timeline-wrap">
+              {VEDIC_ZERO_ESSAY.globalJourney.timeline.map((item, idx) => (
+                <div key={idx} className="timeline-item">
+                  <div className="timeline-era">{item.era}</div>
+                  <div className="timeline-who">{item.who}</div>
+                  <div className="timeline-desc">{item.description}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Section 3: Conclusion & Next Steps */}
+            <h2 className="vedic-essay-h2">{VEDIC_ZERO_ESSAY.conclusion.title}</h2>
+            {VEDIC_ZERO_ESSAY.conclusion.paragraphs.map((p, idx) => (
+              <p key={idx} className="vedic-essay-p">{p}</p>
+            ))}
+
+                        <div className="vedic-next-track-card">
+              <div className="vedic-next-track-header">
+                <span className="vedic-next-track-badge">Next Step in Vedic Mathematics · Track 3</span>
+                <h3 className="vedic-next-track-title">Step 7: Logic &amp; Language (Nyāya &amp; Pāṇini AI)</h3>
+                <p className="vedic-next-track-desc">
+                  Examine the mathematical rigor of Sanskrit linguistics, Nyāya formal logic, Rick Briggs' NASA AI paper, and the Kaṭapayādi alphanumeric cipher.
+                </p>
+              </div>
+              <div className="vedic-next-track-actions">
+                <button
+                  type="button"
+                  className="article-interactive-cta"
+                  onClick={() => {
+                    setActiveTab('logic');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  🗣️ Explore Logic, Language &amp; AI →
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setSelectedArticleId('birth-grid');
+                    setActiveTab('articles');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  📖 Read The Birth of the Grid Article
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setActiveTab('fluid');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  ← Back to 5. Fluid Space
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'logic' && (
+          <div className="logic-essay-container">
+            <div className="zero-badge-pill" style={{ background: '#ede9fe', color: '#5b21b6' }}>
+              <span>॥ सूत्रं ज्ञानाय मङ्गलम् ॥</span>
+              <span>·</span>
+              <span>The Linguistic Architecture of Calculation</span>
+            </div>
+
+            <h1 className="zero-essay-title">{VEDIC_LOGIC_LANGUAGE_ESSAY.title}</h1>
+            <p className="zero-essay-subtitle">{VEDIC_LOGIC_LANGUAGE_ESSAY.subtitle}</p>
+
+            {VEDIC_LOGIC_LANGUAGE_ESSAY.intro.map((p, idx) => (
+              <p key={idx} className="vedic-essay-p">{p}</p>
+            ))}
+
+            {/* Section 1: The 16 Core Sutras and Sub-Sutras */}
+            <h2 className="vedic-essay-h2">{VEDIC_LOGIC_LANGUAGE_ESSAY.sutraFramework.title}</h2>
+            <p className="vedic-essay-p">{VEDIC_LOGIC_LANGUAGE_ESSAY.sutraFramework.desc}</p>
+
+            <div className="anchor-sutras-grid">
+              {VEDIC_LOGIC_LANGUAGE_ESSAY.sutraFramework.keySutras.map((sutra) => (
+                <div key={sutra.id} className="anchor-sutra-card">
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                      <span className="sutra-card-num">Sutra {sutra.id}</span>
+                      <button
+                        type="button"
+                        onClick={() => playPronunciation(sutra.sanskrit)}
+                        title="Listen to Sanskrit pronunciation"
+                        style={{
+                          background: '#fef3c7',
+                          border: '1px solid #fde68a',
+                          borderRadius: '6px',
+                          cursor: 'pointer',
+                          fontSize: '0.85rem',
+                          padding: '0.15rem 0.45rem'
+                        }}
+                      >
+                        🔊
+                      </button>
+                    </div>
+                    <h3 className="anchor-sutra-title">{sutra.sanskrit}</h3>
+                    <div className="anchor-sutra-iast">{sutra.transliteration}</div>
+                    <div className="anchor-sutra-meaning">&ldquo;{sutra.meaning}&rdquo;</div>
+                    <div className="anchor-sutra-app">{sutra.application}</div>
+                  </div>
+                  {sutra.example && (
+                    <div className="anchor-sutra-ex">
+                      <strong>💡 Example:</strong> {sutra.example}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Section 2: Historical Context: Vedic or Modern? */}
+            <h2 className="vedic-essay-h2">{VEDIC_LOGIC_LANGUAGE_ESSAY.historicalContext.title}</h2>
+            <p className="vedic-essay-p">{VEDIC_LOGIC_LANGUAGE_ESSAY.historicalContext.intro}</p>
+
+            <div className="historical-matrix-wrap">
+              <table className="historical-matrix-table">
+                <thead>
+                  <tr>
+                    <th style={{ width: '22%' }}>Historical Dimension</th>
+                    <th style={{ width: '39%' }}>Traditional Vedic View</th>
+                    <th style={{ width: '39%' }}>Historical Academic View</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {VEDIC_LOGIC_LANGUAGE_ESSAY.historicalContext.comparisonMatrix.map((row, idx) => (
+                    <tr key={idx}>
+                      <td>
+                        <span className="matrix-dim-badge">{row.dimension}</span>
+                      </td>
+                      <td>
+                        <span className="matrix-trad-badge">Traditional Perspective</span>
+                        <div>{row.traditional}</div>
+                      </td>
+                      <td>
+                        <span className="matrix-acad-badge">Academic Perspective</span>
+                        <div>{row.academic}</div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="vedic-essay-quote">
+              &ldquo;{VEDIC_LOGIC_LANGUAGE_ESSAY.historicalContext.synthesis}&rdquo;
+            </div>
+
+            {/* Section 3: Why the Sanskrit Structure Works: Cognitive Load Shift */}
+            <h2 className="vedic-essay-h2">{VEDIC_LOGIC_LANGUAGE_ESSAY.cognitiveLoad.title}</h2>
+            <p className="vedic-essay-p">{VEDIC_LOGIC_LANGUAGE_ESSAY.cognitiveLoad.p1}</p>
+
+            <div className="cognitive-load-box">
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1e293b', marginBottom: '0.5rem' }}>
+                🧠 Cognitive Load: Western Columnar Arithmetic vs. Vedic Sanskrit Aphorisms
+              </h3>
+              <div className="cognitive-grid">
+                <div className="cognitive-card">
+                  <div className="cognitive-card-title" style={{ color: '#b91c1c' }}>
+                    <span>⚠️ Conventional Columnar Arithmetic</span>
+                  </div>
+                  <div className="cognitive-card-desc">
+                    High cognitive strain on working memory. Requires keeping multiple carries in mind, shifting partial product rows with placeholder zeroes, and performing multi-tier vertical addition. Focus is absorbed by scrap management rather than holistic problem structure.
+                  </div>
+                </div>
+
+                <div className="cognitive-card" style={{ borderColor: '#86efac', background: '#f0fdf4' }}>
+                  <div className="cognitive-card-title" style={{ color: '#15803d' }}>
+                    <span>✨ Vedic Sanskrit Cognitive Triggers</span>
+                  </div>
+                  <div className="cognitive-card-desc">
+                    Low working memory load. Short poetic Sanskrit aphorisms trigger spatial, geometric visualization and whole-number pattern recognition. Problems are perceived globally, processed in parallel, and solved in a single line.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p className="vedic-essay-p">{VEDIC_LOGIC_LANGUAGE_ESSAY.cognitiveLoad.p2}</p>
+            <p className="vedic-essay-p" style={{ fontWeight: 700, color: '#15803d' }}>
+              {VEDIC_LOGIC_LANGUAGE_ESSAY.cognitiveLoad.conclusion}
+            </p>
+
+            {/* NEXT CHAPTER ROADMAP CARD */}
+            <div className="vedic-next-track-card">
+              <div className="vedic-next-track-header">
+                <span className="vedic-next-track-badge">Next Step in Vedic Mathematics · Track 3</span>
+                <h3 className="vedic-next-track-title">Step 8: The Source &amp; Guru Paramparā</h3>
+                <p className="vedic-next-track-desc">
+                  Trace the unbroken golden chain of Indian mathematical geniuses from Āryabhaṭa, Brahmagupta, and Mādhava of Saṅgamagrāma to Svāmī Bhāratī Kṛṣṇa Tīrtha.
+                </p>
+              </div>
+              <div className="vedic-next-track-actions">
+                <button
+                  type="button"
+                  className="article-interactive-cta"
+                  onClick={() => {
+                    setActiveTab('parampara');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  🕉️ Meet the Masters in Guru Paramparā →
+                </button>
+                {onOpenGrammar && (
+                  <button
+                    type="button"
+                    className="article-pager-btn"
+                    onClick={onOpenGrammar}
+                  >
+                    📚 Explore Grammar &amp; Kaṭapayādi Shelf
+                  </button>
+                )}
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setActiveTab('zero');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  ← Back to 6. The Numerical Grid &amp; Zero
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ==================================================================
+            TAB: GURU PARAMPARA & THE SOURCE (SACRED LINEAGE)
+            ================================================================== */}
+        {activeTab === 'parampara' && (
+          <div className="parampara-container">
+            <div className="parampara-hero-crest">
+              <div className="parampara-badge-pill">
+                <span>॥ मूलस्रोतः गुरुपरम्परा च ॥</span>
+                <span>·</span>
+                <span>The Sacred Awakening &amp; The Living Lineage</span>
+              </div>
+              <h1 className="parampara-title">The Lineage of Continuity</h1>
+              <p className="parampara-subtitle">
+                Vedic Mathematics is far more than an ultra-efficient system of calculation; it is a living stream of knowledge (Vidya) flowing through an ancient spiritual lineage. Meet the visionary masters who revived, guarded, and spread this wisdom worldwide.
+              </p>
+            </div>
+
+            {/* Lineage Member Cards */}
+            <div className="parampara-lineage-flow">
+              {GURU_PARAMPARA.map((member) => (
+                <div key={member.id} className="lineage-card">
+                  <div className="lineage-header">
+                    <div className="lineage-identity">
+                      <div className="lineage-avatar-icon">{member.imageIcon}</div>
+                      <div className="lineage-names">
+                        <span className="lineage-name-sa">{member.sanskritName}</span>
+                        <h2 className="lineage-name-en">{member.name}</h2>
+                      </div>
+                    </div>
+                    <span className="lineage-badge-pill">{member.badge}</span>
+                  </div>
+
+                  <div className="lineage-role-period">
+                    <span className="lineage-role">{member.role}</span>
+                    <span className="lineage-period">📅 {member.period}</span>
+                  </div>
+
+                  <p className="lineage-desc">{member.description}</p>
+
+                  <div className="lineage-contributions">
+                    <div className="lineage-contributions-title">Historic Milestones &amp; Contributions:</div>
+                    {member.keyContributions.map((c, cIdx) => (
+                      <div key={cIdx} className="lineage-contribution-bullet">
+                        <span>{c}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {member.quote && (
+                    <div className="lineage-quote">
+                      &ldquo;{member.quote}&rdquo;
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+                        <div className="vedic-next-track-card">
+              <div className="vedic-next-track-header">
+                <span className="vedic-next-track-badge">Next Step in Vedic Mathematics · Track 4</span>
+                <h3 className="vedic-next-track-title">Step 9: Speed Math Challenge &amp; Quiz</h3>
+                <p className="vedic-next-track-desc">
+                  Test your grasp of the 16 Sūtras and mental calculation shortcuts with interactive, timed self-assessment questions.
+                </p>
+              </div>
+              <div className="vedic-next-track-actions">
+                <button
+                  type="button"
+                  className="article-interactive-cta"
+                  onClick={() => {
+                    setActiveTab('quiz');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  ⚡ Take Speed Math Challenge Quiz →
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setActiveTab('articles');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  📖 Explore Masterclass Articles
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setActiveTab('logic');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  ← Back to 7. Logic &amp; Language
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'quiz' && (
+          <div className="quiz-container">
+            {!quizFinished ? (
+              <div>
+                {/* Quiz Header */}
+                <div className="quiz-header">
+                  <span className="quiz-progress-pill">
+                    Question {quizIndex + 1} of {VEDIC_QUIZ_QUESTIONS.length}
+                  </span>
+                  <span className="quiz-score-pill">
+                    Score: {quizScore} / {VEDIC_QUIZ_QUESTIONS.length}
+                  </span>
+                </div>
+
+                {/* Current Question */}
+                {(() => {
+                  const q = VEDIC_QUIZ_QUESTIONS[quizIndex];
+                  return (
+                    <div>
+                      <div className="quiz-sutra-badge">
+                        <span>⚡ Apply: {q.sutraSanskrit}</span>
+                        <span>({q.sutraName})</span>
+                      </div>
+
+                      <h2 className="quiz-question-text">{q.question}</h2>
+
+                      <div className="quiz-options-grid">
+                        {q.options.map((opt, i) => {
+                          const isSelected = selectedOption === opt;
+                          const isCorrect = opt === q.correctAnswer;
+                          let className = 'quiz-option-btn';
+
+                          if (selectedOption !== null) {
+                            if (isCorrect) className += ' correct';
+                            else if (isSelected) className += ' incorrect';
+                          }
+
+                          return (
+                            <button
+                              key={i}
+                              type="button"
+                              className={className}
+                              disabled={selectedOption !== null}
+                              onClick={() => handleSelectOption(opt)}
+                            >
+                              {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      {showExplanation && (
+                        <div
+                          className={`quiz-feedback-box ${
+                            selectedOption === q.correctAnswer ? 'correct' : 'incorrect'
+                          }`}
+                        >
+                          <div className="quiz-feedback-title">
+                            {selectedOption === q.correctAnswer
+                              ? '🎉 Correct! Brilliant Mental Math!'
+                              : `❌ Not quite! The correct answer is ${q.correctAnswer}`}
+                          </div>
+                          <div className="quiz-feedback-trick">
+                            <strong>⚡ Fast Vedic Trick:</strong> {q.quickTrick}
+                          </div>
+                          <div className="quiz-feedback-explanation">
+                            <strong>Step-by-step:</strong> {q.explanation}
+                          </div>
+                        </div>
+                      )}
+
+                      {selectedOption !== null && (
+                        <div className="quiz-actions">
+                          <button
+                            type="button"
+                            className="quiz-next-btn"
+                            onClick={handleNextQuestion}
+                          >
+                            {quizIndex < VEDIC_QUIZ_QUESTIONS.length - 1
+                              ? 'Next Question ➔'
+                              : 'View Final Score 🏆'}
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })()}
+              </div>
+            ) : (
+              <div className="quiz-complete-card">
+                <div className="quiz-complete-icon">🏆</div>
+                <h2 className="quiz-complete-title">Vedic Speed Challenge Completed!</h2>
+                <p className="quiz-complete-score">
+                  You scored <strong>{quizScore} out of {VEDIC_QUIZ_QUESTIONS.length}</strong> (
+                  {Math.round((quizScore / VEDIC_QUIZ_QUESTIONS.length) * 100)}%)
+                </p>
+                <button
+                  type="button"
+                  className="quiz-next-btn"
+                  onClick={handleRestartQuiz}
+                >
+                  🔄 Retake Challenge
+                </button>
+              </div>
+            )}
+
+            {/* NEXT CHAPTER ROADMAP CARD */}
+            <div className="vedic-next-track-card">
+              <div className="vedic-next-track-header">
+                <span className="vedic-next-track-badge">Next Step in Vedic Mathematics · Track 4</span>
+                <h3 className="vedic-next-track-title">Step 10: Articles Masterclass &amp; Treatises</h3>
+                <p className="vedic-next-track-desc">
+                  Deepen your knowledge with 6 illustrated scholarly treatises, complete with historical manuscript reproductions, diagrams, and proofs.
+                </p>
+              </div>
+              <div className="vedic-next-track-actions">
+                <button
+                  type="button"
+                  className="article-interactive-cta"
+                  onClick={() => {
+                    setActiveTab('articles');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  📖 Read Articles Masterclass →
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setActiveTab('sutras');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  📜 Review 16 Sūtras Directory
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setActiveTab('solvers');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  🧮 Practice in Solvers Studio
+                </button>
+              </div>
+            </div>
+          </div>
         )}
 
         {/* ==================================================================
@@ -1725,1581 +3834,52 @@ ${bodyHtml}
                 </button>
               </div>
             )}
-          </div>
-        )}
 
-        {/* ==================================================================
-            TAB: THE ARCHITECTURE OF ABSOLUTE ZERO & THE NUMERICAL GRID
-            ================================================================== */}
-        {activeTab === 'zero' && (
-          <div className="zero-essay-container">
-            <div className="zero-badge-pill">
-              <span>॥ शून्यं सर्वप्रपञ्चस्य मूलम् ॥</span>
-              <span>·</span>
-              <span>The Architecture of Absolute Zero</span>
-            </div>
-
-            <h1 className="zero-essay-title">{VEDIC_ZERO_ESSAY.title}</h1>
-            <p className="zero-essay-subtitle">{VEDIC_ZERO_ESSAY.subtitle}</p>
-
-            {VEDIC_ZERO_ESSAY.intro.map((p, idx) => (
-              <p key={idx} className="vedic-essay-p">{p}</p>
-            ))}
-
-            {/* Section 1: The Birth of the Grid */}
-            <h2 className="vedic-essay-h2">{VEDIC_ZERO_ESSAY.birthGrid.title}</h2>
-            {VEDIC_ZERO_ESSAY.birthGrid.paragraphs.map((p, idx) => (
-              <p key={idx} className="vedic-essay-p">{p}</p>
-            ))}
-
-            {/* Interactive Roman vs Decimal Place-Value Tester */}
-            <div className="roman-compare-card">
-              <div className="roman-compare-header">
-                <span>🏛️ Interactive Grid Test: Roman Tally vs. Indian Decimal System</span>
-              </div>
-              <p style={{ fontSize: '0.9rem', color: '#4b5563', marginBottom: '1rem' }}>
-                Test any number to see why Roman numerals required immense paper real estate, while the Indian positional system represents numbers dynamically:
-              </p>
-
-              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center', marginBottom: '1rem' }}>
-                <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#6b7280' }}>Presets:</span>
-                {[333, 1984, 2026, 3888].map((val) => (
-                  <button
-                    key={val}
-                    type="button"
-                    className={`solver-preset-chip${romanInputNum === val ? ' active' : ''}`}
-                    onClick={() => setRomanInputNum(val)}
-                  >
-                    {val}
-                  </button>
-                ))}
-                <input
-                  type="number"
-                  min={1}
-                  max={3999}
-                  value={romanInputNum}
-                  onChange={(e) => setRomanInputNum(Math.min(3999, Math.max(1, parseInt(e.target.value, 10) || 1)))}
-                  style={{
-                    padding: '0.3rem 0.6rem',
-                    fontSize: '0.95rem',
-                    borderRadius: '6px',
-                    border: '1.5px solid #d1d5db',
-                    width: '100px',
-                    marginLeft: '0.5rem'
-                  }}
-                />
-              </div>
-
-              <div className="roman-compare-grid">
-                <div className="roman-box">
-                  <div className="roman-box-label">Roman Numeral (Fixed Tally System)</div>
-                  <div className="roman-output-val">{getRoman(romanInputNum)}</div>
-                  <div className="roman-note">
-                    Length: <strong>{getRoman(romanInputNum).length} static characters</strong> with no positional multiplication scaling.
-                  </div>
-                </div>
-
-                <div className="roman-box" style={{ background: '#f0fdf4', borderColor: '#bbf7d0' }}>
-                  <div className="roman-box-label" style={{ color: '#166534' }}>Indian Decimal Place-Value System</div>
-                  <div className="decimal-output-val">{romanInputNum.toLocaleString()}</div>
-                  <div className="roman-note" style={{ color: '#166534' }}>
-                    Length: <strong>{romanInputNum.toString().length} dynamic digits</strong> ={' '}
-                    {romanInputNum
-                      .toString()
-                      .split('')
-                      .map((d, i, arr) => `${d} × 10^${arr.length - 1 - i}`)
-                      .join(' + ')}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Section 2: Global Journey */}
-            <h2 className="vedic-essay-h2">{VEDIC_ZERO_ESSAY.globalJourney.title}</h2>
-            <div className="timeline-wrap">
-              {VEDIC_ZERO_ESSAY.globalJourney.timeline.map((item, idx) => (
-                <div key={idx} className="timeline-item">
-                  <div className="timeline-era">{item.era}</div>
-                  <div className="timeline-who">{item.who}</div>
-                  <div className="timeline-desc">{item.description}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* Section 3: Conclusion & Next Steps */}
-            <h2 className="vedic-essay-h2">{VEDIC_ZERO_ESSAY.conclusion.title}</h2>
-            {VEDIC_ZERO_ESSAY.conclusion.paragraphs.map((p, idx) => (
-              <p key={idx} className="vedic-essay-p">{p}</p>
-            ))}
-
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
-              <button
-                type="button"
-                className="article-interactive-cta"
-                onClick={() => setActiveTab('fluid')}
-              >
-                🌊 Continue to Fluid Space &amp; Simultaneous Math →
-              </button>
-              <button
-                type="button"
-                className="article-pager-btn"
-                onClick={() => {
-                  setSelectedArticleId('birth-grid');
-                  setActiveTab('articles');
-                }}
-              >
-                📖 Read Full Grid Article in Masterclass
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* ==================================================================
-            TAB: FLUID SPACE & SIMULTANEOUS PARALLEL PROCESSING
-            ================================================================== */}
-        {activeTab === 'fluid' && (
-          <div className="fluid-space-container">
-            <div className="zero-badge-pill" style={{ background: '#ecfdf5', color: '#065f46' }}>
-              <span>॥ स्थानमानस्य सातत्यं युगपत्-प्रक्रिया च ॥</span>
-              <span>·</span>
-              <span>Fluid Space &amp; Simultaneous Processing</span>
-            </div>
-
-            <div className="fluid-space-hero">
-              <h1 className="zero-essay-title">Treating Place Value as Fluid Space</h1>
-              <p className="zero-essay-subtitle">
-                While conventional school mathematics treats place value as a rigid set of isolated columns, Vedic Mathematics treats it as a continuous, fluid continuum. The Sutra <em>Ūrdhva-Tiryagbhyām</em> (Vertically and Crosswise) allows you to calculate units, tens, and hundreds simultaneously in parallel in a single line!
-              </p>
-            </div>
-
-            {/* Interactive Parallel Flow Visualizer */}
-            <div className="fluid-interactive-card">
-              <div className="fluid-inputs-bar">
-                <div className="fluid-presets">
-                  <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#78350f' }}>Try Presets:</span>
-                  {[
-                    { a: 23, b: 45 },
-                    { a: 31, b: 52 },
-                    { a: 42, b: 36 },
-                    { a: 64, b: 25 }
-                  ].map((p, idx) => (
-                    <button
-                      key={idx}
-                      type="button"
-                      className={`solver-preset-chip${fluidNumA === p.a && fluidNumB === p.b ? ' active' : ''}`}
-                      onClick={() => {
-                        setFluidNumA(p.a);
-                        setFluidNumB(p.b);
-                      }}
-                    >
-                      {p.a} × {p.b}
-                    </button>
-                  ))}
-                </div>
-
-                <div className="fluid-inputs-direct">
-                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#4b5563' }}>Custom 2-Digit:</span>
-                  <input
-                    type="number"
-                    min={10}
-                    max={99}
-                    value={fluidNumA}
-                    onChange={(e) => setFluidNumA(Math.min(99, Math.max(10, parseInt(e.target.value, 10) || 10)))}
-                    className="fluid-input-field"
-                  />
-                  <span style={{ fontWeight: 800, color: '#9ca3af' }}>×</span>
-                  <input
-                    type="number"
-                    min={10}
-                    max={99}
-                    value={fluidNumB}
-                    onChange={(e) => setFluidNumB(Math.min(99, Math.max(10, parseInt(e.target.value, 10) || 10)))}
-                    className="fluid-input-field"
-                  />
-                </div>
-              </div>
-
-              {(() => {
-                const a1 = Math.floor(fluidNumA / 10);
-                const a0 = fluidNumA % 10;
-                const b1 = Math.floor(fluidNumB / 10);
-                const b0 = fluidNumB % 10;
-
-                // Step 1: Units
-                const prod1 = a0 * b0;
-                const unitDigit = prod1 % 10;
-                const carry1 = Math.floor(prod1 / 10);
-
-                // Step 2: Crosswise
-                const cross1 = a1 * b0;
-                const cross2 = a0 * b1;
-                const crossSum = cross1 + cross2 + carry1;
-                const tensDigit = crossSum % 10;
-                const carry2 = Math.floor(crossSum / 10);
-
-                // Step 3: Left
-                const prod3 = a1 * b1;
-                const hundredVal = prod3 + carry2;
-
-                const finalProd = fluidNumA * fluidNumB;
-
-                return (
-                  <div>
-                    <div className="fluid-comparison-grid">
-                      {/* Conventional School Long Multiplication */}
-                      <div className="fluid-school-card">
-                        <span className="fluid-card-tag">Traditional School Method</span>
-                        <h3 className="fluid-card-title">Rigid Columnar Scrap Work</h3>
-                        
-                        <div className="fluid-school-stack">
-                          <div>&nbsp;&nbsp;{fluidNumA}</div>
-                          <div>×&nbsp;{fluidNumB}</div>
-                          <div className="fluid-school-line" />
-                          <div>&nbsp;{fluidNumA * b0} <span style={{ fontSize: '0.75rem', color: '#6b7280' }}>({fluidNumA}×{b0})</span></div>
-                          <div>{fluidNumA * b1}0 <span style={{ fontSize: '0.75rem', color: '#6b7280' }}>({fluidNumA}×{b1}0)</span></div>
-                          <div className="fluid-school-line" />
-                          <div style={{ fontWeight: 800, color: '#1f2937' }}>{finalProd}</div>
-                        </div>
-
-                        <p style={{ fontSize: '0.85rem', color: '#6b7280', margin: 0, lineHeight: 1.5 }}>
-                          ⚠️ Requires 3 distinct rows of paper writing, indenting with placeholder zeros, multiple isolated carries, and vertical column addition.
-                        </p>
-                      </div>
-
-                      {/* Vedic Simultaneous Parallel Stream */}
-                      <div className="fluid-vedic-card">
-                        <span className="fluid-card-tag">Vedic Ūrdhva-Tiryagbhyām</span>
-                        <h3 className="fluid-card-title">Simultaneous Symmetrical Matrix</h3>
-
-                        <div className="fluid-vedic-steps">
-                          <div className="fluid-vedic-step">
-                            <div className="fluid-vedic-step-label">
-                              <span>↓ Vertical Right (Units):</span>
-                            </div>
-                            <div className="fluid-vedic-step-calc">
-                              {a0} × {b0} = {prod1} ➔ <strong>{unitDigit}</strong> (carry {carry1})
-                            </div>
-                          </div>
-
-                          <div className="fluid-vedic-step">
-                            <div className="fluid-vedic-step-label">
-                              <span>✕ Crosswise (Tens):</span>
-                            </div>
-                            <div className="fluid-vedic-step-calc">
-                              ({a1}×{b0}) + ({a0}×{b1}) + {carry1} = {crossSum} ➔ <strong>{tensDigit}</strong> (carry {carry2})
-                            </div>
-                          </div>
-
-                          <div className="fluid-vedic-step">
-                            <div className="fluid-vedic-step-label">
-                              <span>↓ Vertical Left (Hundreds):</span>
-                            </div>
-                            <div className="fluid-vedic-step-calc">
-                              ({a1}×{b1}) + {carry2} = <strong>{hundredVal}</strong>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="fluid-vedic-single-line">
-                          <div className="fluid-single-line-label">Direct Single-Line Answer</div>
-                          <div className="fluid-single-line-ans">{finalProd.toLocaleString()}</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Metric Contrast Bar */}
-                    <div className="fluid-metric-contrast">
-                      <div>
-                        <div className="fluid-metric-item-num">0</div>
-                        <div className="fluid-metric-item-label">Scrap Rows Needed</div>
-                      </div>
-                      <div>
-                        <div className="fluid-metric-item-num">10–15×</div>
-                        <div className="fluid-metric-item-label">Faster Mental Processing</div>
-                      </div>
-                      <div>
-                        <div className="fluid-metric-item-num">100%</div>
-                        <div className="fluid-metric-item-label">Parallel Geometric Sync</div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })()}
-            </div>
-
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <button
-                type="button"
-                className="article-interactive-cta"
-                onClick={() => setActiveTab('algebra')}
-              >
-                📐 See how this exact formula powers Algebra →
-              </button>
-              <button
-                type="button"
-                className="article-pager-btn"
-                onClick={() => {
-                  setSelectedArticleId('fluid-space');
-                  setActiveTab('articles');
-                }}
-              >
-                📖 Read Complete Fluid Space Article
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* ==================================================================
-            TAB: UNIVERSAL ENGINE OF ALGEBRA (BASE 10 VS BASE X)
-            ================================================================== */}
-        {activeTab === 'algebra' && (
-          <div className="zero-essay-container">
-            <div className="zero-badge-pill" style={{ background: '#fef3c7', color: '#92400e' }}>
-              <span>॥ बीजगणितस्य सार्वभौम-यन्त्रम् ॥</span>
-              <span>·</span>
-              <span>Base 10 vs Base x Unification</span>
-            </div>
-
-            <h1 className="zero-essay-title">The Universal Engine of Algebra</h1>
-            <p className="zero-essay-subtitle">
-              The most profound proof that Vedic math is a deep conceptual system rather than a bag of tricks is its seamless transition into Algebra. Universally, arithmetic and algebra are not two distinct subjects—algebra is simply generalized arithmetic.
-            </p>
-
-            {/* Interactive Algebra Bridge */}
-            <div className="algebra-bridge-box" style={{ marginTop: '1.5rem' }}>
-              <h3 className="algebra-bridge-title">
-                📐 Interactive Proof: Identical Coefficient Vector [1, a+b, ab]
-              </h3>
-              <p className="algebra-bridge-desc">
-                Notice how the Vedic Sutra <em>Ūrdhva-Tiryagbhyām</em> generates the exact identical coefficient array whether the base is concrete 10 or unknown variable x:
-              </p>
-
-              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
-                <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#6b7280' }}>Try Coefficients:</span>
-                {[
-                  { a: 2, b: 3 },
-                  { a: 3, b: 4 },
-                  { a: 1, b: 5 },
-                  { a: 4, b: 5 },
-                  { a: 6, b: 7 }
-                ].map((item, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    className={`solver-preset-chip${algebraConstA === item.a && algebraConstB === item.b ? ' active' : ''}`}
-                    onClick={() => {
-                      setAlgebraConstA(item.a);
-                      setAlgebraConstB(item.b);
-                    }}
-                  >
-                    (x + {item.a})(x + {item.b})
-                  </button>
-                ))}
-              </div>
-
-              {(() => {
-                const a = algebraConstA;
-                const b = algebraConstB;
-                const sum = a + b;
-                const prod = a * b;
-                const arithNum1 = 10 + a;
-                const arithNum2 = 10 + b;
-                const arithAns = arithNum1 * arithNum2;
-
-                return (
-                  <div className="algebra-bridge-grid">
-                    <div className="algebra-col-card">
-                      <h4 className="algebra-col-title">Arithmetic (Base 10)</h4>
-                      <div className="algebra-math-formula">
-                        {arithNum1} × {arithNum2} = (10 + {a})(10 + {b})
-                      </div>
-                      <div style={{ fontSize: '0.92rem', color: '#374151', margin: '0.4rem 0' }}>
-                        = 1·(10²) + {sum}·(10) + {prod}
-                      </div>
-                      <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#15803d' }}>
-                        = {arithAns}
-                      </div>
-                      <div className="algebra-coeff-chip">
-                        Coefficients: [1, {sum}, {prod}]
-                      </div>
-                    </div>
-
-                    <div className="algebra-col-card">
-                      <h4 className="algebra-col-title">Algebra (Base x)</h4>
-                      <div className="algebra-math-formula">
-                        (x + {a})(x + {b})
-                      </div>
-                      <div style={{ fontSize: '0.92rem', color: '#374151', margin: '0.4rem 0' }}>
-                        = 1·(x²) + {sum}·(x) + {prod}
-                      </div>
-                      <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#b45309' }}>
-                        = x² + {sum}x + {prod}
-                      </div>
-                      <div className="algebra-coeff-chip" style={{ background: '#fef3c7', color: '#92400e' }}>
-                        Coefficients: [1, {sum}, {prod}]
-                      </div>
-                    </div>
-                  </div>
-                );
-              })()}
-
-              <p style={{ fontSize: '0.95rem', color: '#374151', lineHeight: 1.65, margin: '1.25rem 0 0 0' }}>
-                {VEDIC_ZERO_ESSAY.algebraEngine.summary}
-              </p>
-            </div>
-
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '1.75rem' }}>
-              <button
-                type="button"
-                className="article-interactive-cta"
-                onClick={() => setActiveTab('parampara')}
-              >
-                🕉️ Discover the Guru Parampara Lineage →
-              </button>
-              <button
-                type="button"
-                className="article-pager-btn"
-                onClick={() => {
-                  setSelectedArticleId('algebra-engine');
-                  setActiveTab('articles');
-                }}
-              >
-                📖 Read Full Algebra Article in Masterclass
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* ==================================================================
-            TAB: VEDIC GEOMETRY & THE SCIENCE OF SHAPES (शुल्बसूत्राणि)
-            ================================================================== */}
-        {activeTab === 'geometry' && (
-          <div className="zero-essay-container">
-            <div className="zero-badge-pill" style={{ background: '#ecfdf5', color: '#065f46' }}>
-              <span>॥ शुल्बसूत्राणि · रेखागणितम् ॥</span>
-              <span>·</span>
-              <span>The Sacred Science of Shapes</span>
-            </div>
-
-            <h1 className="zero-essay-title">Vedic Geometry: The Science of Shapes</h1>
-            <p className="zero-essay-subtitle">
-              Centuries before Euclidean geometry arose in the Mediterranean, ancient Indian master-geometers documented the Śulba Sūtras (शुल्बसूत्राणि)—using ropes, pegs, and exact geometric transformations to construct monumental fire altars, squares, circles, and Pythagorean triples.
-            </p>
-
-            {/* Video Player Box */}
-            <div
-              style={{
-                background: '#ffffff',
-                borderRadius: '16px',
-                border: '1px solid #e2e8f0',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
-                overflow: 'hidden',
-                margin: '2rem 0',
-              }}
-            >
-              <div
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  paddingBottom: '56.25%',
-                  height: 0,
-                  background: '#090d16',
-                }}
-              >
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/bp9m53Tp6xg?start=11&rel=0"
-                  title="Vedic Geometry: The Science Of Shapes"
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    border: 0,
-                  }}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
-              <div
-                style={{
-                  padding: '1.25rem 1.5rem',
-                  background: '#fafaf9',
-                  borderTop: '1px solid #f0ece1',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  flexWrap: 'wrap',
-                  gap: '0.75rem',
-                }}
-              >
-                <div>
-                  <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#1c1917' }}>
-                    🎥 Masterclass: Vedic Geometry — The Science of Shapes
-                  </div>
-                  <div style={{ fontSize: '0.85rem', color: '#78716c', marginTop: '0.2rem' }}>
-                    Curated Documentary by <strong>Conscious Cosmos</strong> · Timestamp: starts at 0:11
-                  </div>
-                </div>
-                <a
-                  href="https://www.youtube.com/watch?v=bp9m53Tp6xg&t=11s"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                    background: '#dc2626',
-                    color: '#ffffff',
-                    padding: '0.5rem 1rem',
-                    borderRadius: '8px',
-                    fontWeight: 700,
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                  }}
-                >
-                  <span>▶ Watch on YouTube</span>
-                </a>
-              </div>
-            </div>
-
-            {/* In-depth geometric cards */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginTop: '1.5rem' }}>
-              <div style={{ background: '#ffffff', padding: '1.5rem', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>📐</div>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
-                  The Śulba Sūtras (शुल्बसूत्राणि)
-                </h3>
-                <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
-                  <em>"Śulba"</em> literally means a measuring cord or rope. The texts of <em>Baudhāyana, Āpastamba, Kātyāyana</em>, and <em>Mānava</em> (c. 800–500 BCE) documented exact geometric algorithms used to lay out coordinates, cardinal orientations, and right angles on the earth.
+            {/* CURRICULUM JOURNEY COMPLETION CARD */}
+            <div className="vedic-next-track-card">
+              <div className="vedic-next-track-header">
+                <span className="vedic-next-track-badge">Curriculum Journey Complete · कृतकृत्यता</span>
+                <h3 className="vedic-next-track-title">Mastery of Vedic Mathematics</h3>
+                <p className="vedic-next-track-desc">
+                  You have explored all four tracks: from the foundational 16 Sūtras to Algebra, Geometry, the Philosophy of Zero, Logic, and Historical Masterclasses. Revisit any section to sharpen your mental calculation speed.
                 </p>
               </div>
-
-              <div style={{ background: '#ffffff', padding: '1.5rem', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>🔺</div>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
-                  Baudhāyana’s Theorem (The Diagonal Principle)
-                </h3>
-                <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
-                  <em>"दीर्घचतुरश्रस्याक्ष्णया रज्जुः पार्श्वमानी तिर्यङ्ग्मानी च यत् पृथग् भूते कुरुतस्तदुभयं करोति ॥"</em> (Baudhāyana Śulba Sūtra 1.48). Centuries before Pythagoras, Baudhāyana proved that the diagonal of a rectangle produces the sum of the areas produced separately by its length and breadth.
-                </p>
-              </div>
-
-              <div style={{ background: '#ffffff', padding: '1.5rem', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>⭕</div>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
-                  Circle &amp; Square Transformations (Circling the Square)
-                </h3>
-                <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
-                  Because Vedic altars had to possess identical surface area regardless of whether their geometry was circular (<em>Gārhapatya</em>) or square (<em>Āhavanīya</em>), Vedic seers devised exact cord-and-peg algorithms to transform squares to circles and circles to squares without area loss.
-                </p>
-              </div>
-            </div>
-
-            {/* Sacred Altars & The Invariant Area Problem */}
-            <div style={{ marginTop: '2.5rem', background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: '16px', padding: '1.75rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>🔥</span>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>
-                  The Invariant Area Problem &amp; Sacred Altars (यज्ञकुण्डानि)
-                </h3>
-              </div>
-              <p style={{ fontSize: '0.94rem', color: '#475569', lineHeight: 1.6, margin: '0 0 1.25rem' }}>
-                The catalyst for ancient Indian geometry was the strict ritual injunction that every sacrificial fire altar (<em>Chiti</em>)
-                must possess the exact same surface area—traditionally <strong>7½ square puruṣas (approx. 108 square aṅgulas)</strong>—even
-                when constructed in drastically different symbolic silhouettes:
-              </p>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
-                <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
-                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>🦅</div>
-                  <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
-                    Śyenaciti (श्येनचितिः · Falcon Altar)
-                  </h4>
-                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5 }}>
-                    Shaped as a magnificent soaring eagle with outstretched wings and tail to carry prayers up to heaven. Required complex polygon dissection while maintaining exact 7½ puruṣa area.
-                  </p>
-                </div>
-
-                <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
-                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>🐢</div>
-                  <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
-                    Kūrmaciti (कूर्मचितिः · Tortoise Altar)
-                  </h4>
-                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5 }}>
-                    Symbolizing cosmic stability, foundation, and steady equilibrium of the universe. Required segmental circular boundaries matching square areas.
-                  </p>
-                </div>
-
-                <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
-                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>☸️</div>
-                  <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
-                    Rathacakraciti (रथचक्रचितिः · Chariot Wheel)
-                  </h4>
-                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5 }}>
-                    Symbolizing movement, cyclical cosmic time (<em>kālacakra</em>), and seasonal progression. Built with concentric annular bands and spoke divisions.
-                  </p>
-                </div>
-
-                <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
-                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>🏺</div>
-                  <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
-                    Droṇaciti (द्रोणचितिः · Trough Altar)
-                  </h4>
-                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5 }}>
-                    Representing abundance, nourishment, and a vessel of divine soma. Formed with trapezoidal prisms and precise step gradations.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Baudhayana's √2 Approximation Masterclass */}
-            <div style={{ marginTop: '2rem', background: 'linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%)', border: '1.5px solid #a7f3d0', borderRadius: '16px', padding: '1.75rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>✨</span>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#065f46', margin: 0 }}>
-                  Baudhāyana’s √2 Approximation Formula (800 BCE)
-                </h3>
-              </div>
-              <p style={{ fontSize: '0.94rem', color: '#065f46', lineHeight: 1.6, margin: '0 0 1rem' }}>
-                When constructing a square altar double the size of an existing one, Baudhāyana needed the exact diagonal length (<em>d = s√2</em>). In <em>Baudhāyana Śulba Sūtra (1.61–62)</em>, he recorded the legendary verse:
-              </p>
-              <div style={{ background: '#ffffff', border: '1px solid #86efac', borderRadius: '10px', padding: '1rem 1.25rem', fontFamily: 'monospace', fontSize: '0.98rem', color: '#166534', marginBottom: '1rem' }}>
-                <strong>समस्य द्विकरणी । प्रमाणं तृतीयेन वर्धयेत्तच्च चतुर्थेनात्मचतुस्त्रिंशोनेन सविशेषः ॥</strong>
-                <div style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: '#15803d' }}>
-                  <em>"Increase the unit measure by its third, that third by its fourth, less the thirty-fourth part of that fourth."</em>
-                </div>
-                <div style={{ marginTop: '0.5rem', fontSize: '1.1rem', fontWeight: 800, color: '#047857' }}>
-                  √2 ≈ 1 + ⅓ + (⅓ × ¼) - (⅓ × ¼ × ⅟₃₄) = 577 / 408 ≈ 1.414215686...
-                </div>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
-                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #bbf7d0' }}>
-                  <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 700 }}>Baudhāyana’s Value (c. 800 BCE)</div>
-                  <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#166534' }}>1.414215686</div>
-                  <div style={{ fontSize: '0.78rem', color: '#059669', marginTop: '0.2rem' }}>577 / 408 (8th continued-fraction convergent)</div>
-                </div>
-
-                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #bbf7d0' }}>
-                  <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 700 }}>Modern Value of √2</div>
-                  <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#0f172a' }}>1.414213562</div>
-                  <div style={{ fontSize: '0.78rem', color: '#64748b', marginTop: '0.2rem' }}>Calculated with 64-bit IEEE floating point</div>
-                </div>
-
-                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #bbf7d0' }}>
-                  <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 700 }}>Historical Accuracy</div>
-                  <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2563eb' }}>99.99985%</div>
-                  <div style={{ fontSize: '0.78rem', color: '#3b82f6', marginTop: '0.2rem' }}>Error of only 0.00000212!</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Modern Echoes in Computer Science & Algorithms */}
-            <div style={{ marginTop: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem' }}>
-              <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '1.4rem' }}>
-                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>💻</div>
-                <h4 style={{ margin: '0 0 0.4rem', color: '#0f172a', fontSize: '1.05rem', fontWeight: 800 }}>
-                  1. Constructive Algorithmic Geometry (CAD)
-                </h4>
-                <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 }}>
-                  Because the Śulba Sūtras do not deal in abstract proofs but in sequential constructive instructions (<em>"stretch cord AB, bisect at M, swing arc to C"</em>), computer scientists classify them as early <strong>imperative constructive algorithms</strong> directly mirroring parametric CAD and 3D graphic rendering logic.
-                </p>
-              </div>
-
-              <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '1.4rem' }}>
-                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>🏛️</div>
-                <h4 style={{ margin: '0 0 0.4rem', color: '#0f172a', fontSize: '1.05rem', fontWeight: 800 }}>
-                  2. Vāstu Śāstra &amp; Sustainable Architecture
-                </h4>
-                <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 }}>
-                  The cord-geometry of altar construction laid the groundwork for Indian architecture (<em>Vāstu Śāstra</em>), where symmetry, orientation relative to the solar cardinal axis, and proportional area subdivisions are utilized in modern green architecture to maximize ventilation and thermal efficiency.
-                </p>
-              </div>
-
-              <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '1.4rem' }}>
-                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>🔐</div>
-                <h4 style={{ margin: '0 0 0.4rem', color: '#0f172a', fontSize: '1.05rem', fontWeight: 800 }}>
-                  3. Continued Fractions &amp; Signal Processing
-                </h4>
-                <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 }}>
-                  Baudhāyana's 577/408 corresponds to the 8th convergent of continued fractions (<em>[1; 2, 2, 2...]</em>). These Diophantine approximations are foundational to digital signal processing, Fourier quantization, and modern cryptographic key generation.
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* ==================================================================
-            TAB: GURU PARAMPARA & THE SOURCE (SACRED LINEAGE)
-            ================================================================== */}
-        {activeTab === 'parampara' && (
-          <div className="parampara-container">
-            <div className="parampara-hero-crest">
-              <div className="parampara-badge-pill">
-                <span>॥ मूलस्रोतः गुरुपरम्परा च ॥</span>
-                <span>·</span>
-                <span>The Sacred Awakening &amp; The Living Lineage</span>
-              </div>
-              <h1 className="parampara-title">The Lineage of Continuity</h1>
-              <p className="parampara-subtitle">
-                Vedic Mathematics is far more than an ultra-efficient system of calculation; it is a living stream of knowledge (Vidya) flowing through an ancient spiritual lineage. Meet the visionary masters who revived, guarded, and spread this wisdom worldwide.
-              </p>
-            </div>
-
-            {/* Lineage Member Cards */}
-            <div className="parampara-lineage-flow">
-              {GURU_PARAMPARA.map((member) => (
-                <div key={member.id} className="lineage-card">
-                  <div className="lineage-header">
-                    <div className="lineage-identity">
-                      <div className="lineage-avatar-icon">{member.imageIcon}</div>
-                      <div className="lineage-names">
-                        <span className="lineage-name-sa">{member.sanskritName}</span>
-                        <h2 className="lineage-name-en">{member.name}</h2>
-                      </div>
-                    </div>
-                    <span className="lineage-badge-pill">{member.badge}</span>
-                  </div>
-
-                  <div className="lineage-role-period">
-                    <span className="lineage-role">{member.role}</span>
-                    <span className="lineage-period">📅 {member.period}</span>
-                  </div>
-
-                  <p className="lineage-desc">{member.description}</p>
-
-                  <div className="lineage-contributions">
-                    <div className="lineage-contributions-title">Historic Milestones &amp; Contributions:</div>
-                    {member.keyContributions.map((c, cIdx) => (
-                      <div key={cIdx} className="lineage-contribution-bullet">
-                        <span>{c}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {member.quote && (
-                    <div className="lineage-quote">
-                      &ldquo;{member.quote}&rdquo;
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2.5rem', justifyContent: 'center' }}>
-              <button
-                type="button"
-                className="article-interactive-cta"
-                onClick={() => setActiveTab('articles')}
-              >
-                📖 Explore All 6 Masterclass Articles →
-              </button>
-              <button
-                type="button"
-                className="article-pager-btn"
-                onClick={() => setActiveTab('solvers')}
-              >
-                🧮 Practice with Vedic Solvers
-              </button>
-            </div>
-          </div>
-        )}
-        {activeTab === 'logic' && (
-          <div className="logic-essay-container">
-            <div className="zero-badge-pill" style={{ background: '#ede9fe', color: '#5b21b6' }}>
-              <span>॥ सूत्रं ज्ञानाय मङ्गलम् ॥</span>
-              <span>·</span>
-              <span>The Linguistic Architecture of Calculation</span>
-            </div>
-
-            <h1 className="zero-essay-title">{VEDIC_LOGIC_LANGUAGE_ESSAY.title}</h1>
-            <p className="zero-essay-subtitle">{VEDIC_LOGIC_LANGUAGE_ESSAY.subtitle}</p>
-
-            {VEDIC_LOGIC_LANGUAGE_ESSAY.intro.map((p, idx) => (
-              <p key={idx} className="vedic-essay-p">{p}</p>
-            ))}
-
-            {/* Section 1: The 16 Core Sutras and Sub-Sutras */}
-            <h2 className="vedic-essay-h2">{VEDIC_LOGIC_LANGUAGE_ESSAY.sutraFramework.title}</h2>
-            <p className="vedic-essay-p">{VEDIC_LOGIC_LANGUAGE_ESSAY.sutraFramework.desc}</p>
-
-            <div className="anchor-sutras-grid">
-              {VEDIC_LOGIC_LANGUAGE_ESSAY.sutraFramework.keySutras.map((sutra) => (
-                <div key={sutra.id} className="anchor-sutra-card">
-                  <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
-                      <span className="sutra-card-num">Sutra {sutra.id}</span>
-                      <button
-                        type="button"
-                        onClick={() => playPronunciation(sutra.sanskrit)}
-                        title="Listen to Sanskrit pronunciation"
-                        style={{
-                          background: '#fef3c7',
-                          border: '1px solid #fde68a',
-                          borderRadius: '6px',
-                          cursor: 'pointer',
-                          fontSize: '0.85rem',
-                          padding: '0.15rem 0.45rem'
-                        }}
-                      >
-                        🔊
-                      </button>
-                    </div>
-                    <h3 className="anchor-sutra-title">{sutra.sanskrit}</h3>
-                    <div className="anchor-sutra-iast">{sutra.transliteration}</div>
-                    <div className="anchor-sutra-meaning">&ldquo;{sutra.meaning}&rdquo;</div>
-                    <div className="anchor-sutra-app">{sutra.application}</div>
-                  </div>
-                  {sutra.example && (
-                    <div className="anchor-sutra-ex">
-                      <strong>💡 Example:</strong> {sutra.example}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {/* Section 2: Historical Context: Vedic or Modern? */}
-            <h2 className="vedic-essay-h2">{VEDIC_LOGIC_LANGUAGE_ESSAY.historicalContext.title}</h2>
-            <p className="vedic-essay-p">{VEDIC_LOGIC_LANGUAGE_ESSAY.historicalContext.intro}</p>
-
-            <div className="historical-matrix-wrap">
-              <table className="historical-matrix-table">
-                <thead>
-                  <tr>
-                    <th style={{ width: '22%' }}>Historical Dimension</th>
-                    <th style={{ width: '39%' }}>Traditional Vedic View</th>
-                    <th style={{ width: '39%' }}>Historical Academic View</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {VEDIC_LOGIC_LANGUAGE_ESSAY.historicalContext.comparisonMatrix.map((row, idx) => (
-                    <tr key={idx}>
-                      <td>
-                        <span className="matrix-dim-badge">{row.dimension}</span>
-                      </td>
-                      <td>
-                        <span className="matrix-trad-badge">Traditional Perspective</span>
-                        <div>{row.traditional}</div>
-                      </td>
-                      <td>
-                        <span className="matrix-acad-badge">Academic Perspective</span>
-                        <div>{row.academic}</div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="vedic-essay-quote">
-              &ldquo;{VEDIC_LOGIC_LANGUAGE_ESSAY.historicalContext.synthesis}&rdquo;
-            </div>
-
-            {/* Section 3: Why the Sanskrit Structure Works: Cognitive Load Shift */}
-            <h2 className="vedic-essay-h2">{VEDIC_LOGIC_LANGUAGE_ESSAY.cognitiveLoad.title}</h2>
-            <p className="vedic-essay-p">{VEDIC_LOGIC_LANGUAGE_ESSAY.cognitiveLoad.p1}</p>
-
-            <div className="cognitive-load-box">
-              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1e293b', marginBottom: '0.5rem' }}>
-                🧠 Cognitive Load: Western Columnar Arithmetic vs. Vedic Sanskrit Aphorisms
-              </h3>
-              <div className="cognitive-grid">
-                <div className="cognitive-card">
-                  <div className="cognitive-card-title" style={{ color: '#b91c1c' }}>
-                    <span>⚠️ Conventional Columnar Arithmetic</span>
-                  </div>
-                  <div className="cognitive-card-desc">
-                    High cognitive strain on working memory. Requires keeping multiple carries in mind, shifting partial product rows with placeholder zeroes, and performing multi-tier vertical addition. Focus is absorbed by scrap management rather than holistic problem structure.
-                  </div>
-                </div>
-
-                <div className="cognitive-card" style={{ borderColor: '#86efac', background: '#f0fdf4' }}>
-                  <div className="cognitive-card-title" style={{ color: '#15803d' }}>
-                    <span>✨ Vedic Sanskrit Cognitive Triggers</span>
-                  </div>
-                  <div className="cognitive-card-desc">
-                    Low working memory load. Short poetic Sanskrit aphorisms trigger spatial, geometric visualization and whole-number pattern recognition. Problems are perceived globally, processed in parallel, and solved in a single line.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <p className="vedic-essay-p">{VEDIC_LOGIC_LANGUAGE_ESSAY.cognitiveLoad.p2}</p>
-            <p className="vedic-essay-p" style={{ fontWeight: 700, color: '#15803d' }}>
-              {VEDIC_LOGIC_LANGUAGE_ESSAY.cognitiveLoad.conclusion}
-            </p>
-          </div>
-        )}
-        {activeTab === 'sutras' && (
-          <div>
-            {/* Official 16 Foundational Sutras Poster Banner */}
-            <div className="vedic-poster-banner" style={{ marginTop: '0.5rem' }}>
-              <div
-                className="vedic-poster-thumb-wrap"
-                onClick={() => setIsPosterModalOpen(true)}
-                title="Click to view full-size poster"
-              >
-                <img
-                  src="/vedic-sutras-poster-v3.webp"
-                  alt="EdNet Learn poster: the 16 Vedic Mathematics sutras of Swami Bharati Krishna Tirtha in standard order (Ekādhikena Pūrveṇa to Guṇakasamuccayaḥ), each with Sanskrit name, IAST, English meaning, use and a worked example"
-                  className="vedic-poster-thumb-img"
-                />
-              </div>
-              <div className="vedic-poster-content">
-                <span className="vedic-poster-badge">✦ Official Academy Wall Poster ✦</span>
-                <h3 className="vedic-poster-title">16 Foundational Sutras of Vedic Mathematics</h3>
-                <p className="vedic-poster-quote">
-                  "Vedic Mathematics is not just a method, it is a way of thinking."
-                </p>
-                <p className="vedic-poster-desc">
-                  The complete 16 sutras with Sanskrit aphorisms, English translations, and worked arithmetic &amp; algebraic examples for rapid mental calculation (Ekādhikena, Nikhilam, Ūrdhva-Tiryagbhyām, Parāvartya, and more).
-                </p>
-                <div className="vedic-poster-actions">
-                  <button
-                    type="button"
-                    className="vedic-poster-btn-primary"
-                    onClick={() => setIsPosterModalOpen(true)}
-                  >
-                    <span>🔍</span>
-                    <span>View Full Poster</span>
-                  </button>
-                  <a
-                    href="/vedic-sutras-poster-v3.png"
-                    download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.png"
-                    className="vedic-poster-btn-secondary"
-                  >
-                    <span>📥</span>
-                    <span>Download High-Res (PNG)</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Practical Starting Path Card */}
-            <div className="vedic-starting-path-card">
-              <div className="vedic-path-badge">🎯 Recommended 4-Step Learning Sequence</div>
-              <h3>A Practical Starting Path with the 16 Sutras</h3>
-              <ol className="vedic-path-steps">
-                <li>
-                  <strong>Pick 2–3 Frequent Sutras:</strong> Start with sutras that solve problems you actually encounter often — e.g., <em>Nikhilaṁ Navataścaramam</em> for multiplication near powers of 10, or <em>Dvandva / Ekādhikena</em> for squaring numbers ending in 5.
-                </li>
-                <li>
-                  <strong>Watch a Video Walkthrough:</strong> Focus on just those 2–3 sutras on YouTube to absorb the visual cross-multiplication or base-complement patterns with worked examples.
-                </li>
-                <li>
-                  <strong>Drill 10–15 Problems Daily:</strong> Pair sutra techniques with a free timed mental-math test site (5 minutes a day) until the calculation pattern becomes automatic.
-                </li>
-                <li>
-                  <strong>Add One New Sutra per Week:</strong> Expand gradually through the remaining 14 sutras rather than trying to absorb all 16 at once.
-                </li>
-              </ol>
-            </div>
-
-            <VedicLearningPath
-              id="vedic-path"
-              heading="🧭 Step-by-step path: Numbers → Vedic Maths (Classes 6–8)"
-              intro="The sutra cards below follow this same order. Start at Step 1 and use ← Previous / Next → on each card."
-              onOpen={(anchor, e) => {
-                if (goToAnchor(anchor)) e.preventDefault();
-              }}
-            />
-
-            <div className="sutra-search-bar">
-              <input
-                type="text"
-                className="sutra-search-input"
-                placeholder="🔍 Search sutra by Sanskrit name, English meaning, or formula..."
-                value={sutraSearch}
-                onChange={(e) => setSutraSearch(e.target.value)}
-              />
-
-              <div className="sutra-filter-chips">
-                {[
-                  { id: 'all', label: 'All (16)' },
-                  { id: 'multiplication', label: '✖️ Multiplication' },
-                  { id: 'squaring', label: '² Squaring' },
-                  { id: 'subtraction', label: '➖ Subtraction' },
-                  { id: 'division', label: '➗ Division' },
-                  { id: 'algebra', label: '📐 Algebra' }
-                ].map((chip) => (
-                  <button
-                    key={chip.id}
-                    type="button"
-                    className={`sutra-filter-chip${sutraFilter === chip.id ? ' active' : ''}`}
-                    onClick={() => setSutraFilter(chip.id)}
-                  >
-                    {chip.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="sutras-grid">
-              {orderedSutras.map((sutra: VedicSutra) => {
-                const stepIdx = vedicPathIndex(`sutra-${sutra.id}`);
-                const prevStep = stepIdx > 0 ? VEDIC_LEARNING_PATH[stepIdx - 1] : null;
-                const nextStep = stepIdx >= 0 && stepIdx < VEDIC_LEARNING_PATH.length - 1 ? VEDIC_LEARNING_PATH[stepIdx + 1] : null;
-                const pathStep = stepIdx >= 0 ? VEDIC_LEARNING_PATH[stepIdx] : null;
-                return (
-                <div
-                  key={sutra.id}
-                  id={`sutra-${sutra.id}`}
-                  className={`sutra-card${flashId === `sutra-${sutra.id}` ? ' sutra-card--flash' : ''}`}
-                >
-                  {pathStep && (
-                    <div className="sutra-step-tag">
-                      Step {stepIdx + 1} of {VEDIC_LEARNING_PATH.length}
-                    </div>
-                  )}
-                  <div className="sutra-card-top">
-                    <div className="sutra-card-badge-row">
-                      <span className="sutra-card-num">Sutra {sutra.id}</span>
-                      <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
-                        <button
-                          type="button"
-                          onClick={() => playPronunciation(sutra.sanskrit)}
-                          title="Listen to Sanskrit pronunciation"
-                          style={{
-                            background: '#fef3c7',
-                            border: '1px solid #fde68a',
-                            borderRadius: '6px',
-                            cursor: 'pointer',
-                            fontSize: '0.85rem',
-                            padding: '0.15rem 0.45rem'
-                          }}
-                        >
-                          🔊
-                        </button>
-                        <span className="sutra-card-cat">{sutra.category}</span>
-                      </div>
-                    </div>
-
-                    <h3 className="sutra-card-sanskrit">{sutra.sanskrit}</h3>
-                    <p className="sutra-card-iast">{sutra.transliteration}</p>
-                    <p className="sutra-card-meaning">&ldquo;{sutra.meaning}&rdquo;</p>
-                    <p className="sutra-card-desc">{sutra.description}</p>
-                  </div>
-
-                  <div className="sutra-card-example">
-                    <div className="sutra-card-example-title">💡 Example: {sutra.example.problem}</div>
-                    <ul className="sutra-card-example-steps">
-                      {sutra.example.steps.map((st, sIdx) => (
-                        <li key={sIdx}>{st}</li>
-                      ))}
-                    </ul>
-                    <div className="sutra-card-example-ans">➔ Answer: {sutra.example.answer}</div>
-                  </div>
-
-                  {pathStep && (
-                    <nav className="sutra-step-nav" aria-label={`Learning path step ${stepIdx + 1}`}>
-                      {prevStep ? (
-                        <a href={`/vedic-maths#${prevStep.anchor}`} onClick={onAnchorLink(prevStep.anchor)} className="sutra-step-nav-link">
-                          ← Previous: {prevStep.title}
-                        </a>
-                      ) : (
-                        <span />
-                      )}
-                      {pathStep.solver && (
-                        <a href={`/vedic-maths#solver-${pathStep.solver}`} onClick={onAnchorLink(`solver-${pathStep.solver}`)} className="sutra-step-nav-link sutra-step-nav-link--try">
-                          ▶ Try it
-                        </a>
-                      )}
-                      {nextStep ? (
-                        <a href={`/vedic-maths#${nextStep.anchor}`} onClick={onAnchorLink(nextStep.anchor)} className="sutra-step-nav-link sutra-step-nav-link--next">
-                          Next: {nextStep.title} →
-                        </a>
-                      ) : (
-                        <span className="sutra-step-nav-done">🎉 Path complete — explore the other sutras below</span>
-                      )}
-                    </nav>
-                  )}
-                </div>
-                );
-              })}
-            </div>
-
-            {/* Sub-Sutras Section with Subscription Practice Worksheets */}
-            <div className="subsutras-section">
-              <div className="subsutras-header-intro">
-                <h2 className="subsutras-title">त्रयोदश उपसूत्राणि · 13 Sub-Sutras (Upa-Sutras)</h2>
-                <p className="subsutras-subtitle">
-                  Corollaries that extend the 16 primary sutras into specialized domains such as proportion, divisibility osculation, and factor reduction. Each sub-sutra now includes a dedicated <strong>Online Practice Worksheet</strong> with live algorithmic verification!
-                </p>
-              </div>
-
-              {/* Sub-Sutras Navigation Bar & Member Status */}
-              <div className="subsutras-header-banner">
-                <div className="subsutras-status-row">
-                  {isSubscribed ? (
-                    <div className="subsutras-member-chip active">
-                      <span className="chip-icon">👑</span>
-                      <span><strong>Gurukul Member Active:</strong> All 13 Sub-Sutra Interactive Worksheets Unlocked</span>
-                    </div>
-                  ) : (
-                    <div className="subsutras-member-chip preview">
-                      <span className="chip-icon">⭐</span>
-                      <span>
-                        <strong>Member Preview Mode:</strong> Problem 1 open on each Sub-Sutra.
-                      </span>
-                      <button
-                        type="button"
-                        className="subsutras-header-subscribe-btn"
-                        onClick={handleUnlockWorksheet}
-                      >
-                        Unlock All 13 Worksheets
-                      </button>
-                    </div>
-                  )}
-                </div>
-
-                <div className="subsutras-quick-select-wrap">
-                  <span className="subsutras-quick-label">⚡ Jump to Practice Worksheet:</span>
-                  <div className="subsutras-quick-pills">
-                    {VEDIC_SUBSUTRAS.map((sub) => (
-                      <button
-                        key={sub.id}
-                        type="button"
-                        className={`subsutras-quick-pill ${activeWorksheetSubSutraId === sub.id ? 'active' : ''}`}
-                        onClick={() => {
-                          setActiveWorksheetSubSutraId(sub.id);
-                          setTimeout(() => {
-                            const el = document.getElementById(`subsutra-ws-${sub.id}`);
-                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                          }, 100);
-                        }}
-                      >
-                        #{sub.id} {sub.transliteration}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="subsutras-table-wrap">
-                <table className="subsutras-table">
-                  <thead>
-                    <tr>
-                      <th style={{ width: '50px' }}>No.</th>
-                      <th>उपसूत्रम् (Sanskrit)</th>
-                      <th>Transliteration</th>
-                      <th>English Meaning</th>
-                      <th>Mathematical Application</th>
-                      <th style={{ width: '150px' }}>Online Practice</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {VEDIC_SUBSUTRAS.map((sub) => (
-                      <React.Fragment key={sub.id}>
-                        <tr className={`subsutra-table-row ${activeWorksheetSubSutraId === sub.id ? 'active-row' : ''}`}>
-                          <td><strong>#{sub.id}</strong></td>
-                          <td style={{ fontWeight: 700, color: '#78350f', fontFamily: "'Noto Serif Devanagari', serif" }}>
-                            {sub.sanskrit}
-                          </td>
-                          <td style={{ fontStyle: 'italic', color: '#4b5563' }}>{sub.transliteration}</td>
-                          <td style={{ fontWeight: 600 }}>{sub.meaning}</td>
-                          <td style={{ color: '#4b5563' }}>{sub.application}</td>
-                          <td>
-                            <button
-                              type="button"
-                              className={`subsutra-open-ws-btn ${activeWorksheetSubSutraId === sub.id ? 'active' : ''}`}
-                              onClick={() => handleToggleWorksheet(sub.id)}
-                              title={`Open Practice Worksheet for Sub-Sutra #${sub.id}`}
-                            >
-                              {activeWorksheetSubSutraId === sub.id ? 'Close Sheet ▲' : '📝 Practice Sheet ▼'}
-                            </button>
-                          </td>
-                        </tr>
-
-                        {activeWorksheetSubSutraId === sub.id && (() => {
-                          const ws = VEDIC_SUBSUTRA_WORKSHEETS.find((w) => w.subSutraId === sub.id);
-                          if (!ws) return null;
-                          const scoreInfo = wsOverallScore[ws.subSutraId];
-
-                          return (
-                            <tr className="subsutra-ws-drawer-tr">
-                              <td colSpan={6}>
-                                <div className="subsutra-ws-drawer-content" id={`subsutra-ws-${sub.id}`}>
-                                  {/* Worksheet Card Header */}
-                                  <div className="subsutra-ws-card-header">
-                                    <div className="subsutra-ws-header-left">
-                                      <div className="subsutra-ws-tag-row">
-                                        <span className="subsutra-ws-num-badge">Sub-Sutra #{sub.id}</span>
-                                        <span className="subsutra-ws-level-badge">{ws.level}</span>
-                                        <span className="subsutra-ws-time-badge">⏱️ {ws.targetTimeMinutes} mins</span>
-                                        {isSubscribed ? (
-                                          <span className="subsutra-ws-access-badge member">👑 Gurukul Member Access</span>
-                                        ) : (
-                                          <span className="subsutra-ws-access-badge trial">⭐ Free Preview Mode (Problem 1 Open)</span>
-                                        )}
-                                      </div>
-                                      <h3 className="subsutra-ws-title">
-                                        {ws.titleSa} · {ws.title}
-                                      </h3>
-                                      <p className="subsutra-ws-description">{ws.description}</p>
-                                    </div>
-
-                                    <div className="subsutra-ws-header-actions">
-                                      <label className="subsutra-ws-download-toggle">
-                                        <input
-                                          type="checkbox"
-                                          checked={wsIncludeAnswersInDownload}
-                                          onChange={(e) => setWsIncludeAnswersInDownload(e.target.checked)}
-                                        />
-                                        <span>Include Answer Key in Download</span>
-                                      </label>
-                                      <button
-                                        type="button"
-                                        className="subsutra-ws-download-btn"
-                                        onClick={() => handleDownloadWorksheet(ws)}
-                                        title={canDownload ? "Download printable HTML/PDF worksheet" : "Upgrade to download printable worksheet"}
-                                      >
-                                        📥 Download Printable Sheet
-                                      </button>
-                                      {wsDownloadSuccessMsg && (
-                                        <div className="subsutra-ws-download-toast">
-                                          ✓ {wsDownloadSuccessMsg}
-                                        </div>
-                                      )}
-                                    </div>
-                                  </div>
-
-                                  {/* Problems List */}
-                                  <div className="subsutra-problems-list">
-                                    {ws.problems.map((problem, pIdx) => {
-                                      const isLocked = !isSubscribed && pIdx > 0;
-                                      const feedback = wsFeedback[problem.id];
-                                      const hintShown = !!wsShowHints[problem.id];
-                                      const stepsShown = !!wsShowSteps[problem.id];
-                                      const userVal = wsUserAnswers[problem.id] || '';
-
-                                      if (isLocked) {
-                                        return (
-                                          <div key={problem.id} className="subsutra-problem-card locked">
-                                            <div className="subsutra-locked-ribbon">
-                                              <span className="subsutra-lock-icon">🔒</span>
-                                              <span>Gurukul Member Problem #{pIdx + 1}</span>
-                                            </div>
-                                            <div className="subsutra-locked-body">
-                                              <h4 className="subsutra-locked-title">
-                                                Problem {pIdx + 1}: {problem.question.split('(')[0]}...
-                                              </h4>
-                                              <p className="subsutra-locked-text">
-                                                This interactive worksheet drill, its step-by-step Vedic solution algorithms, and score tracking are available with a Gurukul Subscription or Free Trial.
-                                              </p>
-                                              <div className="subsutra-locked-btns">
-                                                <button
-                                                  type="button"
-                                                  className="subsutra-unlock-btn"
-                                                  onClick={handleUnlockWorksheet}
-                                                >
-                                                  ⭐ Unlock All 13 Sub-Sutra Worksheets
-                                                </button>
-                                                <button
-                                                  type="button"
-                                                  className="subsutra-login-link-btn"
-                                                  onClick={handleOpenLoginModal}
-                                                >
-                                                  Already a Member? Sign In
-                                                </button>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        );
-                                      }
-
-                                      return (
-                                        <div
-                                          key={problem.id}
-                                          className={`subsutra-problem-card ${
-                                            feedback?.checked
-                                              ? feedback.isCorrect
-                                                ? 'problem-correct'
-                                                : 'problem-incorrect'
-                                              : ''
-                                          }`}
-                                        >
-                                          <div className="subsutra-problem-card-top">
-                                            <div className="subsutra-problem-index">
-                                              <span className="subsutra-q-badge">Problem {pIdx + 1}</span>
-                                              {!isSubscribed && pIdx === 0 && (
-                                                <span className="subsutra-free-pill">Free Interactive Preview</span>
-                                              )}
-                                            </div>
-                                            <div className="subsutra-problem-tools">
-                                              <button
-                                                type="button"
-                                                className={`subsutra-tool-btn ${hintShown ? 'active' : ''}`}
-                                                onClick={() =>
-                                                  setWsShowHints((prev) => ({
-                                                    ...prev,
-                                                    [problem.id]: !hintShown
-                                                  }))
-                                                }
-                                              >
-                                                💡 {hintShown ? 'Hide Hint' : 'Hint'}
-                                              </button>
-                                              <button
-                                                type="button"
-                                                className={`subsutra-tool-btn ${stepsShown ? 'active' : ''}`}
-                                                onClick={() =>
-                                                  setWsShowSteps((prev) => ({
-                                                    ...prev,
-                                                    [problem.id]: !stepsShown
-                                                  }))
-                                                }
-                                              >
-                                                ⚡ {stepsShown ? 'Hide Vedic Steps' : 'Vedic Steps'}
-                                              </button>
-                                            </div>
-                                          </div>
-
-                                          <div className="subsutra-problem-question">
-                                            {problem.question}
-                                          </div>
-
-                                          {hintShown && (
-                                            <div className="subsutra-hint-card">
-                                              <strong>💡 Vedic Hint:</strong> {problem.hint}
-                                            </div>
-                                          )}
-
-                                          {/* Input & Action Area */}
-                                          <div className="subsutra-problem-input-group">
-                                            <input
-                                              type="text"
-                                              className={`subsutra-problem-input ${
-                                                feedback?.checked
-                                                  ? feedback.isCorrect
-                                                    ? 'input-success'
-                                                    : 'input-error'
-                                                  : ''
-                                              }`}
-                                              placeholder="Enter your calculation answer..."
-                                              value={userVal}
-                                              onChange={(e) =>
-                                                setWsUserAnswers((prev) => ({
-                                                  ...prev,
-                                                  [problem.id]: e.target.value
-                                                }))
-                                              }
-                                              onKeyDown={(e) => {
-                                                if (e.key === 'Enter') {
-                                                  handleCheckProblem(problem);
-                                                }
-                                              }}
-                                            />
-                                            <button
-                                              type="button"
-                                              className="subsutra-check-answer-btn"
-                                              onClick={() => handleCheckProblem(problem)}
-                                              disabled={!userVal.trim()}
-                                            >
-                                              Check Answer
-                                            </button>
-                                          </div>
-
-                                          {/* Feedback pill */}
-                                          {feedback?.checked && (
-                                            <div
-                                              className={`subsutra-feedback-banner ${
-                                                feedback.isCorrect ? 'banner-correct' : 'banner-incorrect'
-                                              }`}
-                                            >
-                                              {feedback.isCorrect ? (
-                                                <span>✓ उत्तमोत्तमम्! Correct answer ({problem.answer}). Great Vedic calculation!</span>
-                                              ) : (
-                                                <span>
-                                                  ✗ Not quite ({userVal || 'no answer'}). Check the hint or view the Vedic steps!
-                                                </span>
-                                              )}
-                                            </div>
-                                          )}
-
-                                          {/* Step-by-Step Vedic Method */}
-                                          {stepsShown && (
-                                            <div className="subsutra-solution-steps-card">
-                                              <div className="subsutra-steps-header">
-                                                <strong>⚡ Step-by-Step Vedic Algorithmic Solution:</strong>
-                                                <span className="subsutra-steps-ans">
-                                                  Answer: <strong>{problem.answer}</strong>
-                                                </span>
-                                              </div>
-                                              <ol className="subsutra-steps-ol">
-                                                {problem.solutionSteps.map((step, sIndex) => (
-                                                  <li key={sIndex}>{step}</li>
-                                                ))}
-                                              </ol>
-                                              <p className="subsutra-steps-explanation">
-                                                <em>{problem.explanation}</em>
-                                              </p>
-                                            </div>
-                                          )}
-                                        </div>
-                                      );
-                                    })}
-                                  </div>
-
-                                  {/* Worksheet Card Footer */}
-                                  <div className="subsutra-ws-card-footer">
-                                    <div className="subsutra-ws-footer-score">
-                                      {scoreInfo ? (
-                                        <span className="subsutra-score-pill">
-                                          🎯 Score: <strong>{scoreInfo.score} / {scoreInfo.total}</strong> (
-                                          {Math.round((scoreInfo.score / scoreInfo.total) * 100)}%)
-                                          {scoreInfo.score === scoreInfo.total ? ' 🌟 Adbhutam!' : ' Keep practicing!'}
-                                        </span>
-                                      ) : (
-                                        <span className="subsutra-unscored-pill">
-                                          {isSubscribed
-                                            ? 'Fill your answers and click Check All'
-                                            : 'Solve Problem 1 or Subscribe for all 3 problems'}
-                                        </span>
-                                      )}
-                                    </div>
-                                    <div className="subsutra-ws-footer-actions">
-                                      <button
-                                        type="button"
-                                        className="subsutra-check-all-btn"
-                                        onClick={() => handleCheckAllForSubSutra(ws)}
-                                      >
-                                        ✓ Check All Answers
-                                      </button>
-                                      <button
-                                        type="button"
-                                        className="subsutra-reset-btn"
-                                        onClick={() => handleResetSubSutraWorksheet(ws)}
-                                      >
-                                        🔄 Reset Sheet
-                                      </button>
-                                      <button
-                                        type="button"
-                                        className="subsutra-close-btn"
-                                        onClick={() => setActiveWorksheetSubSutraId(null)}
-                                      >
-                                        ✕ Close Sheet
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                          );
-                        })()}
-                      </React.Fragment>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        )}
-        {activeTab === 'quiz' && (
-          <div className="quiz-container">
-            {!quizFinished ? (
-              <div>
-                {/* Quiz Header */}
-                <div className="quiz-header">
-                  <span className="quiz-progress-pill">
-                    Question {quizIndex + 1} of {VEDIC_QUIZ_QUESTIONS.length}
-                  </span>
-                  <span className="quiz-score-pill">
-                    Score: {quizScore} / {VEDIC_QUIZ_QUESTIONS.length}
-                  </span>
-                </div>
-
-                {/* Current Question */}
-                {(() => {
-                  const q = VEDIC_QUIZ_QUESTIONS[quizIndex];
-                  return (
-                    <div>
-                      <div className="quiz-sutra-badge">
-                        <span>⚡ Apply: {q.sutraSanskrit}</span>
-                        <span>({q.sutraName})</span>
-                      </div>
-
-                      <h2 className="quiz-question-text">{q.question}</h2>
-
-                      <div className="quiz-options-grid">
-                        {q.options.map((opt, i) => {
-                          const isSelected = selectedOption === opt;
-                          const isCorrect = opt === q.correctAnswer;
-                          let className = 'quiz-option-btn';
-
-                          if (selectedOption !== null) {
-                            if (isCorrect) className += ' correct';
-                            else if (isSelected) className += ' incorrect';
-                          }
-
-                          return (
-                            <button
-                              key={i}
-                              type="button"
-                              className={className}
-                              disabled={selectedOption !== null}
-                              onClick={() => handleSelectOption(opt)}
-                            >
-                              {opt}
-                            </button>
-                          );
-                        })}
-                      </div>
-
-                      {showExplanation && (
-                        <div
-                          className={`quiz-feedback-box ${
-                            selectedOption === q.correctAnswer ? 'correct' : 'incorrect'
-                          }`}
-                        >
-                          <div className="quiz-feedback-title">
-                            {selectedOption === q.correctAnswer
-                              ? '🎉 Correct! Brilliant Mental Math!'
-                              : `❌ Not quite! The correct answer is ${q.correctAnswer}`}
-                          </div>
-                          <div className="quiz-feedback-trick">
-                            <strong>⚡ Fast Vedic Trick:</strong> {q.quickTrick}
-                          </div>
-                          <div className="quiz-feedback-explanation">
-                            <strong>Step-by-step:</strong> {q.explanation}
-                          </div>
-                        </div>
-                      )}
-
-                      {selectedOption !== null && (
-                        <div className="quiz-actions">
-                          <button
-                            type="button"
-                            className="quiz-next-btn"
-                            onClick={handleNextQuestion}
-                          >
-                            {quizIndex < VEDIC_QUIZ_QUESTIONS.length - 1
-                              ? 'Next Question ➔'
-                              : 'View Final Score 🏆'}
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })()}
-              </div>
-            ) : (
-              <div className="quiz-complete-card">
-                <div className="quiz-complete-icon">🏆</div>
-                <h2 className="quiz-complete-title">Vedic Speed Challenge Completed!</h2>
-                <p className="quiz-complete-score">
-                  You scored <strong>{quizScore} out of {VEDIC_QUIZ_QUESTIONS.length}</strong> (
-                  {Math.round((quizScore / VEDIC_QUIZ_QUESTIONS.length) * 100)}%)
-                </p>
+              <div className="vedic-next-track-actions">
                 <button
                   type="button"
-                  className="quiz-next-btn"
-                  onClick={handleRestartQuiz}
+                  className="article-interactive-cta"
+                  onClick={() => {
+                    setActiveTab('sutras');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
                 >
-                  🔄 Retake Challenge
+                  📜 Return to Step 1: 16 Sūtras &amp; Path →
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setActiveTab('solvers');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  🧮 Practice with Interactive Solvers
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setActiveTab('quiz');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  ⚡ Challenge Speed Math Quiz
                 </button>
               </div>
-            )}
+            </div>
           </div>
         )}
 
