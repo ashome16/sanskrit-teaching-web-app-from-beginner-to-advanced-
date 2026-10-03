@@ -15053,5 +15053,349 @@ export const WORKSHEETS: Worksheet[] = [
         ]
       }
     ]
+  },
+// ==========================================
+  // GRADE 9 CH 8 WORKSHEET 1: Structural Transformations (Active to Passive Voice) (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch8-ws1",
+    title: "Worksheet 1: Structural Transformations (Active to Passive Voice) (10 Questions)",
+    titleSanskrit: "अष्टमः पाठः कार्यपत्रिका १: वाच्य-परिवर्तनम् (कर्तृवाच्यात् कर्मवाच्ये) (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Master Active to Passive voice transformations (कर्तृवाच्य $\\rightarrow$ कर्मवाच्य) across present tense and imperative mood based on Chapter 8.",
+    sections: [
+      {
+        sectionTitle: "Section A: Active to Passive Voice Transformations",
+        sectionTitleSanskrit: "खण्डः 'क' · कर्तृवाच्यात् कर्मवाच्ये परिवर्तनम्",
+        instructions: "Convert the following Active Voice expressions into Passive Voice based on the rules on pages 104-105.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Convert Active to Passive: 'छात्राः विद्यालयं गच्छन्ति।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: छात्राः विद्यालयं गच्छन्ति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "छात्रैः विद्यालयः गम्यते।",
+            explanation: "छात्राः (तृतीया बहुवचने 'छात्रैः'), विद्यालयम् (प्रथमा एकवचने 'विद्यालयः'), गच्छन्ति (कर्मवाच्ये 'गम्यते')।"
+          },
+          {
+            num: 2,
+            question: "Convert Active to Passive: 'छात्रः श्लोकान् लिखति।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: छात्रः श्लोकान् लिखति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "छात्रेण श्लोकाः लिख्यन्ते।",
+            explanation: "छात्रः $\\rightarrow$ छात्रेण, श्लोकान् $\\rightarrow$ श्लोकाः (प्रथमा बहुवचनम्), लिखति $\\rightarrow$ लिख्यन्ते।"
+          },
+          {
+            num: 3,
+            question: "Convert Active to Passive: 'माता पुत्रौ पश्यति।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: माता पुत्रौ पश्यति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "मात्रा पुत्रौ दृश्येते।",
+            explanation: "माता $\\rightarrow$ मात्रा (तृतीया एकवचनम्), पुत्रौ $\\rightarrow$ पुत्रौ (प्रथमा द्विवचनम्), पश्यति $\\rightarrow$ दृश्येते।"
+          },
+          {
+            num: 4,
+            question: "Convert Active to Passive: 'मनः सर्वाणि इन्द्रियाणि सञ्चालयति।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: मनः सर्वाणि इन्द्रियाणि सञ्चालयति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "मनसा सर्वाणि इन्द्रियाणि सञ्चाल्यन्ते।",
+            explanation: "मनः $\\rightarrow$ मनसा, सर्वाणि इन्द्रियाणि $\\rightarrow$ सर्वाणि इन्द्रियाणि, सञ्चालयति $\\rightarrow$ सञ्चाल्यन्ते।"
+          },
+          {
+            num: 5,
+            question: "Convert Active to Passive: 'ब्रह्मज्ञानाय त्वं स्वयमेव अन्वेषणं कुरु।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: ब्रह्मज्ञानाय त्वं स्वयमेव अन्वेषणं कुरु। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "ब्रह्मज्ञानाय त्वया स्वयमेव अन्वेषणं क्रियताम्।",
+            explanation: "त्वम् $\\rightarrow$ त्वया, अन्वेषणम् $\\rightarrow$ अन्वेषणम्, कुरु $\\rightarrow$ क्रियताम् (लोट्-लकारः)।"
+          },
+          {
+            num: 6,
+            question: "Convert Active to Passive: 'अहम् बौद्धिकविकासाय योगासनं करोमि।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: अहम् बौद्धिकविकासाय योगासनं करोमि। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "मया बौद्धिकविकासाय योगासनं क्रियते।",
+            explanation: "अहम् $\\rightarrow$ मया, योगासनम् $\\rightarrow$ योगासनम्, करोमि $\\rightarrow$ क्रियते।"
+          },
+          {
+            num: 7,
+            question: "Convert Active to Passive: 'रमेशः सत्यं भाषते।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: रमेशः सत्यं भाषते। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "रमेशेण सत्यं भाष्यते।",
+            explanation: "रमेशः $\\rightarrow$ रमेशेण, सत्यम् $\\rightarrow$ सत्यम्, भाषते $\\rightarrow$ भाष्यते।"
+          },
+          {
+            num: 8,
+            question: "Convert Active to Passive: 'भवान् योगेन आरोग्यं लभते।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: भवान् योगेन आरोग्यं लभते। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "भवता योगेन आरोग्यं लभ्यते।",
+            explanation: "भवान् $\\rightarrow$ भवता, आरोग्यम् $\\rightarrow$ आरोग्यम्, लभते $\\rightarrow$ लभ्यते।"
+          },
+          {
+            num: 9,
+            question: "Convert Active to Passive: 'भक्तः ईश्वरं वन्दते।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: भक्तः ईश्वरं वन्दते। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "भक्तेन ईश्वरः वन्द्यते।",
+            explanation: "भक्तः $\\rightarrow$ भक्तेन, ईश्वरम् $\\rightarrow$ ईश्वरः (प्रथमा), वन्दते $\\rightarrow$ वन्द्यते।"
+          },
+          {
+            num: 10,
+            question: "Convert Active to Passive: 'शिष्यः वेदं पठति।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्मवाच्ये परिवर्तयत: शिष्यः वेदं पठति। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "शिष्येण वेदः पठ्यते।",
+            explanation: "शिष्यः $\\rightarrow$ शिष्येण, वेदम् $\\rightarrow$ वेदः, पठति $\\rightarrow$ पठ्यते।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 CH 8 WORKSHEET 2: Suffix Splits & Vocabulary Integration (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch8-ws2",
+    title: "Worksheet 2: Suffix Splits & Vocabulary Integration (10 Questions)",
+    titleSanskrit: "अष्टमः पाठः कार्यपत्रिका २: कृत्य-प्रत्ययाः (तव्यत्-अनीयरौ) शब्दार्थाश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Analyze gerundive suffixes of duty (तव्यत् and अनीयर), split prefixes and roots, and translate core Upanishadic maxims.",
+    sections: [
+      {
+        sectionTitle: "Section A: Suffix Splits & Vocabulary Integration",
+        sectionTitleSanskrit: "खण्डः 'क' · प्रत्ययविभागः पदपरिचयश्च",
+        instructions: "Break down root words and suffixes (तव्यत् and अनीयर) or provide accurate definitions.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Isolate Prefix + Root + Suffix: 'परिहर्तव्यम्' = ______ + ______ + ______",
+            questionSanskrit: "प्रकृति-प्रत्यय-विभागं कुरुत: परिहर्तव्यम् $\\rightarrow$ ______ + ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "परि + √हृ + तव्यत्",
+            explanation: "परि उपसर्गपूर्वकस्य हृ-धातोः तव्यत्-प्रत्यये 'परिहर्तव्यम्' रूपं भवति।"
+          },
+          {
+            num: 2,
+            question: "Isolate Root + Suffix: 'करणीयम्' = ______ + ______",
+            questionSanskrit: "प्रकृति-प्रत्यय-विभागं कुरुत: करणीयम् $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "√कृ + अनीयर",
+            explanation: "कृ-धातोः अनीयर-प्रत्यये कृते 'करणीयम्' रूपं सिध्यति।"
+          },
+          {
+            num: 3,
+            question: "Isolate Root + Suffix: 'त्यक्तव्यः' = ______ + ______",
+            questionSanskrit: "प्रकृति-प्रत्यय-विभागं कुरुत: त्यक्तव्यः $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "√त्यज् + तव्यत्",
+            explanation: "त्यज् धातोः तव्यत्-प्रत्यये पुंलिङ्गे 'त्यक्तव्यः' भवति।"
+          },
+          {
+            num: 4,
+            question: "Isolate Root + Suffix: 'रक्षणीया' = ______ + ______",
+            questionSanskrit: "प्रकृति-प्रत्यय-विभागं कुरुत: रक्षणीया $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "√रक्ष् + अनीयर",
+            explanation: "रक्ष् धातोः अनीयर-प्रत्यये स्त्रीलिङ्गे 'रक्षणीया' भवति।"
+          },
+          {
+            num: 5,
+            question: "Isolate Root + Suffix: 'साधनीयम्' = ______ + ______",
+            questionSanskrit: "प्रकृति-प्रत्यय-विभागं कुरुत: साधनीयम् $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "√साध् + अनीयर",
+            explanation: "साध् धातोः अनीयर-प्रत्यये नपुंसकलिङ्गे 'साधनीयम्' रूपं भवति।"
+          },
+          {
+            num: 6,
+            question: "Identify Prefix + Root + Suffix in 'अन्वेष्टव्यम्':",
+            questionSanskrit: "'अन्वेष्टव्यम्' इत्यस्य प्रकृति-प्रत्यय-विभागं कुरुत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "अनु + √इष् + तव्यत्",
+            explanation: "अनु उपसर्गपूर्वकस्य इष्-धातोः तव्यत्-प्रत्यये 'अन्वेष्टव्यम्' रूपं भवति।"
+          },
+          {
+            num: 7,
+            question: "Combine Root + Suffix: पठ् + तव्यत् (Feminine Singular) = ______",
+            questionSanskrit: "पठ् + तव्यत् (स्त्रीलिङ्गम्, एकवचनम्) $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "पठितव्या",
+            explanation: "पठ् + तव्यत् स्त्रीलिङ्गे 'पठितव्या' भवति।"
+          },
+          {
+            num: 8,
+            question: "Fill in the blank from textbook table: 'सर्वथा ______ रक्षणीयः।'",
+            questionSanskrit: "रिक्तस्थानं पूरयत: सर्वथा ______ रक्षणीयः।",
+            marks: 2,
+            type: "short_ans",
+            answer: "धर्मः",
+            explanation: "धर्मः सर्वथा रक्षणीयः इति पाठ्यपुस्तकीय-तालिकायाः वाक्यम्।"
+          },
+          {
+            num: 9,
+            question: "Translate into Hindi: 'अन्नं न निन्द्यात्।'",
+            questionSanskrit: "हिन्दी-भाषया अनुवदत: 'अन्नं न निन्द्यात्।'",
+            marks: 2,
+            type: "short_ans",
+            answer: "अन्न की कभी निंदा नहीं करनी चाहिए।",
+            explanation: "तैत्तिरीयोपनिषदः व्रतम् अस्ति यत् भोजनस्य कदापि निन्दा न कर्तव्या।"
+          },
+          {
+            num: 10,
+            question: "Give the English definition for the Upanishadic term 'विप्रमोक्षः':",
+            questionSanskrit: "आङ्ग्ल-भाषया 'विप्रमोक्षः' पदस्य अर्थं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "Final liberation / Complete release from inner knots and doubts.",
+            explanation: "'स्मृतिलम्भे सर्वग्रन्थीनां विप्रमोक्षः' अर्थात् अन्तःकरणस्य ग्रन्थीनां सम्पूर्णं विमोचनम्।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 CH 8 WORKSHEET 3: Chronological Dialogue & Context Assembly (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch8-ws3",
+    title: "Worksheet 3: Chronological Dialogue & Context Assembly (10 Questions)",
+    titleSanskrit: "अष्टमः पाठः कार्यपत्रिका ३: पञ्चकोष-क्रमः पाठावबोधनं च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Reassemble the sequential findings Bhrigu reports to Varuna across the Five Sheaths (पञ्चकोषाः) and analyze their philosophical meanings.",
+    sections: [
+      {
+        sectionTitle: "Section A: Chronological Dialogue & Context Assembly",
+        sectionTitleSanskrit: "खण्डः 'क' · पञ्चकोष-क्रमः कथा-विश्लेषणं च",
+        instructions: "Answer short textual questions examining the progression from food to supreme spiritual bliss.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "What was Bhrigu's very first deduction about Brahman?",
+            questionSanskrit: "भृगोः प्रथमं ब्रह्मविषयकं ज्ञानं किं वर्तते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "अन्नं वै ब्रह्म (Food is Brahman)।",
+            explanation: "अन्नाद्ध्येव खल्विमानि भूतानि जायन्ते, अन्नेन जीवन्ति।"
+          },
+          {
+            num: 2,
+            question: "Which entity did Bhrigu identify as Brahman in his second realization?",
+            questionSanskrit: "द्वितीये सोपाने भृगुः किं ब्रह्मरूपेण ज्ञातवान्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्राणो वै ब्रह्म (Breath/Life-force is Brahman)।",
+            explanation: "प्राणो हि भूतानाम् आयुः, प्राणे शरीरं प्रतिष्ठितम्।"
+          },
+          {
+            num: 3,
+            question: "In the third phase of introspection, what did Bhrigu discover to be Brahman?",
+            questionSanskrit: "तृतीयायाम् अनुभूतौ भृगुणा किं ब्रह्म इति साक्षात्कृतम्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "मनो वै ब्रह्म (Mind is Brahman)।",
+            explanation: "मन एव सर्वकर्मणः प्रवर्तकम्, समस्तेन्द्रियाणां सञ्चालकम्।"
+          },
+          {
+            num: 4,
+            question: "What represents the fourth level of realization (चतुर्थ स्तर)?",
+            questionSanskrit: "चतुर्थे स्तरे कस्य तत्त्वस्य साक्षात्कारः जातः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "बुद्धितत्त्वम् / विज्ञानं वै ब्रह्म (Intellect/Vijnana is Brahman)।",
+            explanation: "बुद्धिरेव सारथिरूपेण अस्मान् कर्मणि प्रवर्तयति।"
+          },
+          {
+            num: 5,
+            question: "What is the final, supreme peak of understanding (पञ्चम स्तर)?",
+            questionSanskrit: "पञ्चमे चरम-स्तरे भृगुणा किं परमतत्त्वं ज्ञातम्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "आनन्दो वै ब्रह्म (Bliss is Brahman)।",
+            explanation: "आनन्दाद्ध्येव खल्विमानि भूतानि जायन्ते, आनन्देन जीवन्ति।"
+          },
+          {
+            num: 6,
+            question: "Why must we perform pranayama daily according to the text?",
+            questionSanskrit: "वरुणस्य उपदेशानुसारं प्राणमयकोषस्य रक्षणार्थं किं करणीयम्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "नित्यं प्राणायामः करणीयः (To harness and regulate the vital breath)।",
+            explanation: "ततो वायुं निरोधयेत्, प्राणायामेन प्राणमयकोषः पुष्टो भवति।"
+          },
+          {
+            num: 7,
+            question: "How does the mind direct all sensory and motor organs?",
+            questionSanskrit: "मनः इन्द्रियाणि प्रति कीदृशीं भूमिकां निर्वहति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "सर्वकर्मणां प्रवर्तकरूपेण समस्तेन्द्रियाणां सञ्चालनम् करोति।",
+            explanation: "मनसा एव समस्तानि इन्द्रियाणि सञ्चाल्यन्ते।"
+          },
+          {
+            num: 8,
+            question: "Complete the verse: 'यावद् वायुः स्थितो देहे ______।'",
+            questionSanskrit: "श्लोकपूर्तिं कुरुत: यावद् वायुः स्थितो देहे ______।",
+            marks: 2,
+            type: "short_ans",
+            answer: "तावज्जीवनमुच्यते।",
+            explanation: "यावद् वायुः स्थितो देहे तावज्जीवनमुच्यते।"
+          },
+          {
+            num: 9,
+            question: "How is a life devoid of bliss (आनन्दरहितं जीवनम्) characterized?",
+            questionSanskrit: "आनन्दहीनं जीवनं पाठे केन उपमितम्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "मृत्युरूपम् (A life devoid of bliss is equivalent to death)।",
+            explanation: "आनन्दरहितं जीवनं मृत्युरूपमिति पाठे उक्तम्।"
+          },
+          {
+            num: 10,
+            question: "How do human beings achieve comprehensive self-development (आत्मविकासः)?",
+            questionSanskrit: "मनुष्यः कया पद्धत्या सर्वाङ्गीणं विकासं प्राप्नोति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "पञ्चकोषाणां क्रमिकविकासेन आत्मविकासं प्राप्नोति।",
+            explanation: "अन्न-प्राण-मन-विज्ञान-आनन्दानां समन्वयेन सर्वाङ्गीण-विकासः सिध्यति।"
+          }
+        ]
+      }
+    ]
   }
 ];
