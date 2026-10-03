@@ -63,6 +63,7 @@ export const QUIZ_CATEGORIES = [
   { id: 'grade9_ch12', label: 'Grade 9 Ch 12: अन्वय-शिक्षा (3 Quizzes · 30 Qs)', icon: '📜' },
   { id: 'grade9_samasa', label: 'Grade 9 Appendix 2: समास-प्रकरणम् (3 Quizzes · 30 Qs)', icon: '🧩' },
     { id: 'grade9_vachya', label: 'Grade 9 Appendix 3: वाच्य-परिवर्तनम् (3 Quizzes · 30 Qs)', icon: '🔄' },
+    { id: 'grade9_shabda', label: 'Grade 9 Appendix 4: शब्दरूपाणि (3 Quizzes · 30 Qs)', icon: '📖' },
 
 
 ] as const;
@@ -25373,6 +25374,585 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
     correctIndex: 1,
     explanation: "छात्राः $\\rightarrow$ छात्रैः; स्वाध्यायम् $\\rightarrow$ स्वाध्यायः (पुं. एक.); कुर्युः $\\rightarrow$ कर्तव्यः / करणीयः।",
     difficulty: "medium",
+    points: 10
+  },
+// ==========================================
+  // GRADE 9 APPENDIX 4: शब्दरूपाणि (30 MCQs)
+  // ==========================================
+
+  // --- Quiz 1: Case Forms & Case Trajectories ---
+  {
+    id: "g9-shabda-q1-1",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 1: Case Forms & Case Trajectories",
+    question: "Identify the exact case and number coordinates for the inflected form 'ब्रह्मणा':",
+    questionSanskrit: "'ब्रह्मणा' इत्यस्य का विभक्तिः किं च वचनम्?",
+    options: [
+      "तृतीया विभक्तिः, एकवचनम्",
+      "प्रथमा विभक्तिः, एकवचनम्",
+      "षष्ठी विभक्तिः, एकवचनम्",
+      "सप्तमी विभक्तिः, एकवचनम्"
+    ],
+    correctIndex: 0,
+    explanation: "'ब्रह्मन्' शब्दस्य तृतीयाविभक्तौ एकवचने 'टा' (आ) प्रत्यये 'ब्रह्मणा' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q1-2",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 1: Case Forms & Case Trajectories",
+    question: "Provide the word form for 'विद्वस्' in the सप्तमी विभक्तिः एकवचन position:",
+    questionSanskrit: "'विद्वस्' शब्दस्य सप्तमी-विभक्तौ एकवचने किं रूपम्?",
+    options: [
+      "विद्वसि",
+      "विदुषि",
+      "विदुषे",
+      "विद्वत्सु"
+    ],
+    correctIndex: 1,
+    explanation: "'विद्वस्' शब्दस्य सप्तमी-एकवचने सम्प्रसारणे सति 'विदुषि' इति रूपं भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q1-3",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 1: Case Forms & Case Trajectories",
+    question: "What is the द्वितीया विभक्तिः बहुवचन form of the masculine noun 'पथिन्'?",
+    questionSanskrit: "'पथिन्' शब्दस्य द्वितीया-विभक्तौ बहुवचने किं रूपम्?",
+    options: [
+      "पन्थानः",
+      "पथिन्",
+      "पथः",
+      "पथीन्"
+    ],
+    correctIndex: 2,
+    explanation: "'पथिन्' शब्दस्य द्वितीया-बहुवचने शस्-प्रत्यये 'पथः' इति रूपं भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q1-4",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 1: Case Forms & Case Trajectories",
+    question: "Find the षष्ठी विभक्तिः बहुवचन form of 'चन्द्रमस्' in the declension tables:",
+    questionSanskrit: "'चन्द्रमस्' शब्दस्य षष्ठी-विभक्तौ बहुवचने किं रूपम्?",
+    options: [
+      "चन्द्रमसानाम्",
+      "चन्द्रमोणाम्",
+      "चन्द्रमसि",
+      "चन्द्रमसाम्"
+    ],
+    correctIndex: 3,
+    explanation: "'चन्द्रमस्' शब्दस्य षष्ठी-बहुवचने 'आम्' प्रत्यये 'चन्द्रमसाम्' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q1-5",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 1: Case Forms & Case Trajectories",
+    question: "Identify the case and number configuration of the word block 'वाक्षु':",
+    questionSanskrit: "'वाक्षु' इति पदस्य का विभक्तिः किं च वचनम्?",
+    options: [
+      "सप्तमी विभक्तिः, बहुवचनम्",
+      "द्वितीया विभक्तिः, बहुवचनम्",
+      "तृतीया विभक्तिः, बहुवचनम्",
+      "प्रथमा विभक्तिः, एकवचनम्"
+    ],
+    correctIndex: 0,
+    explanation: "'वाच्' शब्दस्य सप्तमी-बहुवचने 'सुप्' प्रत्यये ककार-षकार-संयोगे 'वाक्षु' इति रूपं सिध्यति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q1-6",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 1: Case Forms & Case Trajectories",
+    question: "What alternative spelling options are given for the सप्तमी विभक्तिः एकवचन of 'नामन्'?",
+    questionSanskrit: "'नामन्' शब्दस्य सप्तमी-विभक्तौ एकवचने किं रूपद्वयम्?",
+    options: [
+      "नामानि / नाम्ना",
+      "नाम्नि / नामनि",
+      "नाम्ने / नामनः",
+      "नामसु / नामभिः"
+    ],
+    correctIndex: 1,
+    explanation: "'नामन्' शब्दस्य सप्तमी-एकवचने अलोपस्य पाक्षिकत्वात् 'नाम्नि' तथा 'नामनि' इति रूपद्वयं भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q1-7",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 1: Case Forms & Case Trajectories",
+    question: "In which case and number layout do we locate the term 'भिषग्भ्याम्'?",
+    questionSanskrit: "'भिषग्भ्याम्' इति रूपं कुत्र सिध्यति?",
+    options: [
+      "प्रथमा-द्विवचने",
+      "सप्तमी-द्विवचने",
+      "तृतीया / चतुर्थी / पञ्चमी विभक्तिः, द्विवचनम्",
+      "षष्ठी-द्विवचने"
+    ],
+    correctIndex: 2,
+    explanation: "'भ्याम्' प्रत्ययः तृतीया, चतुर्थी, पञ्चमी इत्येतासां तिसृणां विभक्तीनां द्विवचने भवति (भिषग्भ्याम्)।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q1-8",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 1: Case Forms & Case Trajectories",
+    question: "Give the प्रथमा विभक्तिः बहुवचन form of the masculine noun 'पुंस्':",
+    questionSanskrit: "'पुंस्' शब्दस्य प्रथमा-विभक्तौ बहुवचने किं रूपम्?",
+    options: [
+      "पुंसः",
+      "पुमान्",
+      "पुम्भ्याम्",
+      "पुमांसः"
+    ],
+    correctIndex: 3,
+    explanation: "'पुंस्' शब्दस्य प्रथमा-बहुवचने जस्-प्रत्यये नुम्-आगमे 'पुमांसः' इति रूपं भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q1-9",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 1: Case Forms & Case Trajectories",
+    question: "Look up the द्वितीया विभक्तिः बहुवचन form of the feminine word paradigm 'दिश्':",
+    questionSanskrit: "'दिश्' शब्दस्य द्वितीया-विभक्तौ बहुवचने किं रूपम्?",
+    options: [
+      "दिशः",
+      "दिक्षु",
+      "दिशाम्",
+      "दिशीः"
+    ],
+    correctIndex: 0,
+    explanation: "'दिश्' शब्दस्य द्वितीया-बहुवचने शस्-प्रत्यये 'दिशः' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q1-10",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 1: Case Forms & Case Trajectories",
+    question: "Identify the case coordinates for the inflected phrase 'जगद्भिः':",
+    questionSanskrit: "'जगद्भिः' इति रूपस्य का विभक्तिः किं च वचनम्?",
+    options: [
+      "चतुर्थी विभक्तिः, बहुवचनम्",
+      "तृतीया विभक्तिः, बहुवचनम्",
+      "पञ्चमी विभक्तिः, बहुवचनम्",
+      "षष्ठी विभक्तिः, बहुवचनम्"
+    ],
+    correctIndex: 1,
+    explanation: "'जगत्' शब्दस्य तृतीया-बहुवचने 'भिस्' प्रत्यये जश्त्वे 'जगद्भिः' इति रूपं सिध्यति।",
+    difficulty: "easy",
+    points: 10
+  },
+
+  // --- Quiz 2: Neuter Patterns & Consonant Grids ---
+  {
+    id: "g9-shabda-q2-1",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 2: Neuter Patterns & Consonant Grids",
+    question: "What is the प्रथमा विभक्तिः बहुवचन form of the neuter paradigm 'मनस्'?",
+    questionSanskrit: "'मनस्' शब्दस्य प्रथमा-विभक्तौ बहुवचने किं रूपम्?",
+    options: [
+      "मनांसि",
+      "मनानि",
+      "मनसी",
+      "मनसाः"
+    ],
+    correctIndex: 0,
+    explanation: "'मनस्' शब्दस्य प्रथमा-बहुवचने 'शि' प्रत्यये नुमागमे उपधादीर्घे 'मनांसि' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q2-2",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 2: Neuter Patterns & Consonant Grids",
+    question: "Conjugate the neuter word 'कर्मन्' into its सप्तमी विभक्तिः एकवचन form:",
+    questionSanskrit: "'कर्मन्' शब्दस्य सप्तमी-विभक्तौ एकवचने किं रूपम्?",
+    options: [
+      "कर्मणे",
+      "कर्मणि",
+      "कर्मणः",
+      "कर्मसु"
+    ],
+    correctIndex: 1,
+    explanation: "'कर्मन्' शब्दस्य सप्तमी-एकवचने ङि-प्रत्यये 'कर्मणि' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q2-3",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 2: Neuter Patterns & Consonant Grids",
+    question: "Provide the चतुर्थी विभक्तिः द्विवचन output form shared by the word 'तपस्':",
+    questionSanskrit: "'तपस्' शब्दस्य चतुर्थी-विभक्तौ द्विवचने किं रूपम्?",
+    options: [
+      "तपद्भ्याम्",
+      "तपसे",
+      "तपोभ्याम्",
+      "तपोभिः"
+    ],
+    correctIndex: 2,
+    explanation: "'तपस्' शब्दस्य भ्याम्-प्रत्यये सकारस्य उत्वे गुणसन्धौ 'तपोभ्याम्' इति रूपं सिध्यति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q2-4",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 2: Neuter Patterns & Consonant Grids",
+    question: "Identify the structural difference between the द्विवचन and बहुवचन forms of 'चक्षुष्' in प्रथमा:",
+    questionSanskrit: "'चक्षुष्' शब्दस्य प्रथमा-द्विवचने बहुवचने च कः रूपभेदः?",
+    options: [
+      "द्विवचने अकारः, बहुवचने इकारः",
+      "द्विवचने विसर्गः, बहुवचने अनुस्वारः",
+      "द्विवचनं नास्ति",
+      "द्विवचने 'चक्षुषी' (दीर्घ-ईकारः) तथा बहुवचने 'चक्षूंषि' (अनुस्वारः दीर्घ-ऊकारश्च)"
+    ],
+    correctIndex: 3,
+    explanation: "प्रथमा-द्विवचने 'चक्षुषी' तथा बहुवचने शि-भावे नुमि 'चक्षूंषि' इति रूपभेदः दृश्यते।",
+    difficulty: "hard",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q2-5",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 2: Neuter Patterns & Consonant Grids",
+    question: "What form does 'जगत्' assume in the षष्ठी विभक्तिः एकवचन position?",
+    questionSanskrit: "'जगत्' शब्दस्य षष्ठी-विभक्तौ एकवचने किं रूपम्?",
+    options: [
+      "जगतः",
+      "जगते",
+      "जगताम्",
+      "जगति"
+    ],
+    correctIndex: 0,
+    explanation: "'जगत्' शब्दस्य षष्ठी-एकवचने ङस्-प्रत्यये 'जगतः' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q2-6",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 2: Neuter Patterns & Consonant Grids",
+    question: "Give the complete द्वितीया विभक्तिः declension track for the neuter noun 'चर्मन्':",
+    questionSanskrit: "'चर्मन्' शब्दस्य द्वितीया-विभक्तेः सम्पूर्णा तालिका का?",
+    options: [
+      "चर्म | चर्मा | चर्माणि",
+      "चर्म | चर्मणी | चर्माणि",
+      "चर्मम् | चर्मणौ | चर्मणः",
+      "चर्मणा | चर्मभ्याम् | चर्मभिः"
+    ],
+    correctIndex: 1,
+    explanation: "नपुंसके द्वितीयायाम् एकवचने चर्म, द्विवचने चर्मणी, बहुवचने चर्माणि भवन्ति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q2-7",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 2: Neuter Patterns & Consonant Grids",
+    question: "In the neuter paradigm 'छन्दस्', what is the exact layout form for the तृतीया एकवचन?",
+    questionSanskrit: "'छन्दस्' शब्दस्य तृतीया-विभक्तौ एकवचने किं रूपम्?",
+    options: [
+      "छन्दसेन",
+      "छन्दोभ्याम्",
+      "छन्दसा",
+      "छन्दसि"
+    ],
+    correctIndex: 2,
+    explanation: "'छन्दस्' शब्दस्य तृतीया-एकवचने टा-प्रत्यये 'छन्दसा' इति रूपं भवति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q2-8",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 2: Neuter Patterns & Consonant Grids",
+    question: "Identify the base crude stem shape (प्रातिपदिकम्) behind the inflected token 'शिरोभिः':",
+    questionSanskrit: "'शिरोभिः' इति पदस्य मूल-प्रातिपदिकं किम्?",
+    options: [
+      "शिर",
+      "शिरिन्",
+      "शिरो",
+      "शिरस्"
+    ],
+    correctIndex: 3,
+    explanation: "'शिरस्' इति सकारान्त-नपुंसकलिङ्ग-प्रातिपदिकम् अस्ति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q2-9",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 2: Neuter Patterns & Consonant Grids",
+    question: "True or False: In neuter paradigms like 'जगत्' and 'नामन्', the प्रथमा and द्वितीया rows are completely identical:",
+    questionSanskrit: "किं नपुंसकलिङ्गे प्रथमा-द्वितीयाविभक्त्योः रूपाणि सर्वथा समानानि भवन्ति?",
+    options: [
+      "सत्यम् (True)",
+      "असत्यम् (False)",
+      "केवलं द्विवचने समाने भवतः",
+      "केवलं बहुवचने समाने भवतः"
+    ],
+    correctIndex: 0,
+    explanation: "संस्कृतव्याकरणे सर्वेषां नपुंसकलिङ्गशब्दानां प्रथमा-द्वितीयाविभक्त्योरूपाणि सर्वथा समानानि भवन्ति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q2-10",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 2: Neuter Patterns & Consonant Grids",
+    question: "What is the सप्तमी बहुवचन variant string for the word block 'पयस्'?",
+    questionSanskrit: "'पयस्' शब्दस्य सप्तमी-विभक्तौ बहुवचने किं रूपद्वयम्?",
+    options: [
+      "पयेषु",
+      "पयःसु / पयस्सु",
+      "पयोसु",
+      "पयित्सु"
+    ],
+    correctIndex: 1,
+    explanation: "विसर्गसन्धौ 'वा शरि' इति विकल्पेन 'पयःसु' तथा 'पयस्सु' इति रूपद्वयं सिध्यति।",
+    difficulty: "medium",
+    points: 10
+  },
+
+  // --- Quiz 3: Suffix Mechanics & Sandhi Operations ---
+  {
+    id: "g9-shabda-q3-1",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 3: Suffix Mechanics & Sandhi Operations",
+    question: "What is the total count of foundational Paninian nominal case terminations (सुप्-प्रत्ययाः)?",
+    questionSanskrit: "पाणिनीय-व्याकरणे सुप्-प्रत्ययानां कुलसङ्ख्या का अस्ति?",
+    options: [
+      "एकविंशतिः (21 Suffixes)",
+      "अष्टादश (18 Suffixes)",
+      "चतुर्दश (14 Suffixes)",
+      "चतुर्विंशतिः (24 Suffixes)"
+    ],
+    correctIndex: 0,
+    explanation: "सप्त विभक्तयः, तिस्रः सङ्ख्याः (एक, द्वि, बहु) इति मिलित्वा ७ $\\times$ ३ = २१ सुप्-प्रत्ययाः भवन्ति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q3-2",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 3: Suffix Mechanics & Sandhi Operations",
+    question: "Which case termination from the Sup-pratyaya list designates तृतीया विभक्तिः एकवचनम्?",
+    questionSanskrit: "तृतीया-विभक्तेः एकवचनस्य सुप्-प्रत्ययः कः?",
+    options: [
+      "अम्",
+      "टा",
+      "ङे",
+      "ङसि"
+    ],
+    correctIndex: 1,
+    explanation: "'टा' प्रत्ययस्य अनुबन्धलोपे 'आ' अवशिष्यते (यथा— वाचा, ब्रह्मणा, मनसा)।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q3-3",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 3: Suffix Mechanics & Sandhi Operations",
+    question: "What case suffix is designated by the technical code 'ङसि'?",
+    questionSanskrit: "'ङसि' इति प्रत्ययेन का विभक्तिः कञ्च वचनम् उच्यते?",
+    options: [
+      "चतुर्थी विभक्तिः, एकवचनम्",
+      "षष्ठी विभक्तिः, एकवचनम्",
+      "पञ्चमी विभक्तिः, एकवचनम्",
+      "सप्तमी विभक्तिः, एकवचनम्"
+    ],
+    correctIndex: 2,
+    explanation: "'ङसि' इति पञ्चमी-एकवचनस्य प्रत्ययः, यस्मात् 'अस्' (:) अवशिष्यते (जगतः, ब्रह्मणः)।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q3-4",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 3: Suffix Mechanics & Sandhi Operations",
+    question: "What happens to consonant stems ending in 'न्' (e.g., ब्रह्मन्, नामन्) before consonantal suffixes (भ्याम्, भिः, भ्यः, सु)?",
+    questionSanskrit: "'न्'-कारान्तशब्दानां हलादौ प्रत्यये परे किं भवति?",
+    options: [
+      "'न्' transforms into 'म्'",
+      "'न्' transforms into visarga",
+      "'न्' becomes doubled",
+      "'न्' is completely dropped (नलोपः प्रातिपदिकान्तस्य)"
+    ],
+    correctIndex: 3,
+    explanation: "'नलोपः प्रातिपदिकान्तस्य' इति सूत्रेण हलादौ स्वादिप्रत्यये नलोपः भवति (ब्रह्मभ्याम्, नामसु)।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q3-5",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 3: Suffix Mechanics & Sandhi Operations",
+    question: "How is the locative plural (सप्तमी बहुवचन) formed for the feminine stem 'वाच्'?",
+    questionSanskrit: "'वाच्' शब्दस्य सप्तमी-बहुवचने किं रूपं सिध्यति?",
+    options: [
+      "वाक्षु",
+      "वाचुषु",
+      "वाक्शु",
+      "वाग्सु"
+    ],
+    correctIndex: 0,
+    explanation: "चकारस्य ककारे सति 'आदेशप्रत्यययोः' इति षत्वे 'वाक्षु' इति रूपं सिध्यति।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q3-6",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 3: Suffix Mechanics & Sandhi Operations",
+    question: "What is the technical Paninian term for the first five case suffixes (सु, औ, जस्, अम्, औट्) in masculine/feminine?",
+    questionSanskrit: "पुंलिङ्ग-स्त्रीलिङ्गयोः आद्यानां पञ्चप्रत्ययानां का संज्ञा अस्ति?",
+    options: [
+      "विभाषा",
+      "सर्वनामस्थानम् (सुट्)",
+      "पदसंज्ञा",
+      "भसंज्ञा"
+    ],
+    correctIndex: 1,
+    explanation: "'सुडनपुंसकस्य' इति सूत्रेण नपुंसकं विहाय आद्यानां पञ्चानां प्रत्ययानां सर्वनामस्थानसंज्ञा भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q3-7",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 3: Suffix Mechanics & Sandhi Operations",
+    question: "In the declension of the feminine stem 'दिव्' (Sky/Heaven), what unique form occurs in प्रथमा एकवचनम्?",
+    questionSanskrit: "'दिव्' शब्दस्य प्रथमा-एकवचने किं विशिष्टं रूपम्?",
+    options: [
+      "दिवीः",
+      "दिवा",
+      "द्यौः",
+      "दिम्"
+    ],
+    correctIndex: 2,
+    explanation: "'दिव औत्' इति सूत्रेण सु-प्रत्यये परे वकारस्य औकारादेशे 'द्यौः' इति विशिष्तं रूपं सिध्यति।",
+    difficulty: "hard",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q3-8",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 3: Suffix Mechanics & Sandhi Operations",
+    question: "What morphological transformation occurs to the final 'स्' of 'मनस्' or 'तपस्' before 'भ्याम्'?",
+    questionSanskrit: "'तपस्' शब्दस्य भ्याम्-प्रत्यये परे सकारस्य किं परिवर्तनं भवति?",
+    options: [
+      "Drops completely without trace",
+      "Doubled to 'स्स्'",
+      "Mutates to velar 'ग्'",
+      "Converts to 'रु' and then to 'ओ' via Rutva-Utva"
+    ],
+    correctIndex: 3,
+    explanation: "सकारस्य रुत्वे उत्वे च गुणसन्धौ 'तपोभ्याम्', 'मनोभ्याम्' इति रूपं भवति।",
+    difficulty: "medium",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q3-9",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 3: Suffix Mechanics & Sandhi Operations",
+    question: "What is the genitive plural (षष्ठी बहुवचनम्) termination in the Sup-pratyaya list?",
+    questionSanskrit: "षष्ठी-विभक्तेः बहुवचनस्य सुप्-प्रत्ययः कः?",
+    options: [
+      "आम्",
+      "भ्यस्",
+      "ओस्",
+      "शस्"
+    ],
+    correctIndex: 0,
+    explanation: "षष्ठी-बहुवचने 'आम्' प्रत्ययः भवति (यथा— वाचाम्, पथाम्, विदुषाम्, जगताम्)।",
+    difficulty: "easy",
+    points: 10
+  },
+  {
+    id: "g9-shabda-q3-10",
+    category: "grade9_shabda",
+    categoryLabel: "Grade 9 Appendix 4: शब्दरूपाणि",
+    chapterRef: "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+    subCategory: "Quiz 3: Suffix Mechanics & Sandhi Operations",
+    question: "What is the case and number of the suffix 'ङि' in Paninian grammar?",
+    questionSanskrit: "'ङि' इति सुप्-प्रत्ययस्य का विभक्तिः किं च वचनम्?",
+    options: [
+      "चतुर्थी विभक्तिः, एकवचनम्",
+      "सप्तमी विभक्तिः, एकवचनम्",
+      "षष्ठी विभक्तिः, द्विवचनम्",
+      "तृतीया विभक्तिः, बहुवचनम्"
+    ],
+    correctIndex: 1,
+    explanation: "'ङि' इति सप्तमी-एकवचनस्य प्रत्ययः, यस्य 'इ' अवशिष्यते (यथा— ब्रह्मणि, पथि, विदुषि, वाचि, जगति)।",
+    difficulty: "easy",
     points: 10
   }
 ];

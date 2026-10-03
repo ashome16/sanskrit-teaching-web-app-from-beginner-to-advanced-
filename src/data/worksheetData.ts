@@ -17428,5 +17428,349 @@ export const WORKSHEETS: Worksheet[] = [
         ]
       }
     ]
+  },
+// ==========================================
+  // GRADE 9 APPENDIX 4 WORKSHEET 1: Masculine & Feminine Consonant Paradigms (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-shabda-ws1",
+    title: "Worksheet 1: Masculine & Feminine Consonant Paradigms (10 Questions)",
+    titleSanskrit: "परिशिष्टम् ४ कार्यपत्रिका १: हलन्त पुंल्लिङ्ग-स्त्रीलिङ्ग-शब्दाः (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Supply the exact declined nominal form for the indicated coordinates based on the textbook tables on pages 216–224.",
+    sections: [
+      {
+        sectionTitle: "Section A: Masculine & Feminine Paradigms",
+        sectionTitleSanskrit: "खण्डः 'क' · हलन्त पुंल्लिङ्ग-स्त्रीलिङ्ग-शब्दाः",
+        instructions: "Supply the correct inflected word form according to the specified case and number.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "ब्रह्मण शब्दस्य तृतीया-विभक्ति-एकवचने किं रूपम्?",
+            questionSanskrit: "ब्रह्मन् शब्दस्य तृतीया-विभक्तौ एकवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "ब्रह्मणा",
+            explanation: "ब्रह्मन् + टा (आ) = ब्रह्मणा (अजादौ प्रत्यये नलोपो न भवति)।"
+          },
+          {
+            num: 2,
+            question: "विद्वस् शब्दस्य प्रथमा-विभक्ति-बहुवचने किं रूपम्?",
+            questionSanskrit: "विद्वस् शब्दस्य प्रथमा-विभक्तौ बहुवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "विद्वांसः",
+            explanation: "सर्वनामस्थाने 'जस्' प्रत्यये नुम्-आगमे उपधादीर्घे च 'विद्वांसः' इति रूपं भवति।"
+          },
+          {
+            num: 3,
+            question: "पथिन् शब्दस्य द्वितीया-विभक्ति-बहुवचने किं रूपम्?",
+            questionSanskrit: "पथिन् शब्दस्य द्वितीया-विभक्तौ बहुवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "पथः",
+            explanation: "शस्-प्रत्यये भ-संज्ञायां 'भस्य टेर्लोपः' इति सूत्रेण 'पथः' इति सिध्यति।"
+          },
+          {
+            num: 4,
+            question: "सुहृद् शब्दस्य सप्तमी-विभक्ति-बहुवचने किं रूपम्?",
+            questionSanskrit: "सुहृद् शब्दस्य सप्तमी-विभक्तौ बहुवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "सुहृत्सु",
+            explanation: "'खरि च' इति सूत्रेण दकारस्य चर्त्वे तकारे 'सुहृत्सु' इति रूपं भवति।"
+          },
+          {
+            num: 5,
+            question: "वणिज् शब्दस्य प्रथमा-विभक्ति-एकवचने किं रूपम्?",
+            questionSanskrit: "वणिज् शब्दस्य प्रथमा-विभक्तौ एकवचने रूपद्वयं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "वणिग् / वणिक्",
+            explanation: "पदान्ते जश्त्वे चर्त्वे च विकल्पेन 'वणिग्' तथा 'वणिक्' इति रूपद्वयं सिध्यति।"
+          },
+          {
+            num: 6,
+            question: "वाच् शब्दस्य तृतीया-विभक्ति-द्विवचने किं रूपम्?",
+            questionSanskrit: "वाच् शब्दस्य तृतीया-विभक्तौ द्विवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "वाग्भ्याम्",
+            explanation: "झलां जशोऽन्ते इति पदान्ते चकारस्य गकारे 'वाग्भ्याम्' इति रूपं भवति।"
+          },
+          {
+            num: 7,
+            question: "सरित् शब्दस्य षष्ठी-विभक्ति-एकवचने किं रूपम्?",
+            questionSanskrit: "सरित् शब्दस्य षष्ठी-विभक्तौ एकवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "सरितः",
+            explanation: "ङस्-प्रत्यये अजादौ 'सरितः' इति रूपं भवति।"
+          },
+          {
+            num: 8,
+            question: "दिव् शब्दस्य प्रथमा-विभक्ति-एकवचने किं रूपम्?",
+            questionSanskrit: "दिव् शब्दस्य प्रथमा-विभक्तौ एकवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "द्यौः",
+            explanation: "'दिव औत्' इति सूत्रेण सु-प्रत्यये परे वकारस्य औकारादेशे 'द्यौः' इति रूपं सिध्यति।"
+          },
+          {
+            num: 9,
+            question: "दिश् शब्दस्य सप्तमी-विभक्ति-बहुवचने किं रूपम्?",
+            questionSanskrit: "दिश् शब्दस्य सप्तमी-विभक्तौ बहुवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "दिक्षु",
+            explanation: "शकारस्य ककारे सति 'आदेशप्रत्यययोः' इति षत्वे 'दिक्षु' इति रूपं भवति।"
+          },
+          {
+            num: 10,
+            question: "गुणिन् शब्दस्य प्रथमा-विभक्ति-एकवचने किं रूपम्?",
+            questionSanskrit: "गुणिन् शब्दस्य प्रथमा-विभक्तौ एकवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "गुणी",
+            explanation: "सौ परे 'सर्वनामस्थाने चासम्बुद्धौ' इति उपधादीर्घे नलोपे च 'गुणी' इति रूपं भवति।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 APPENDIX 4 WORKSHEET 2: Neuter Consonant Paradigms (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-shabda-ws2",
+    title: "Worksheet 2: Neuter Consonant Paradigms (10 Questions)",
+    titleSanskrit: "परिशिष्टम् ४ कार्यपत्रिका २: हलन्त नपुंसकलिङ्ग-शब्दाः (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Supply the exact declined nominal form for the indicated coordinates based on the textbook tables on pages 224–227.",
+    sections: [
+      {
+        sectionTitle: "Section A: Neuter Paradigms",
+        sectionTitleSanskrit: "खण्डः 'क' · हलन्त नपुंसकलिङ्ग-शब्दाः",
+        instructions: "Supply the correct inflected word form according to the specified case and number.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "जगत् शब्दस्य प्रथमा-विभक्ति-बहुवचने किं रूपम्?",
+            questionSanskrit: "जगत् शब्दस्य प्रथमा-विभक्तौ बहुवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "जगन्ति",
+            explanation: "नपुंसके जस्-शसोः 'शि' आदेशे 'नपुंसकस्य झलचः' इति नुमागमे 'जगन्ति' इति रूपम्।"
+          },
+          {
+            num: 2,
+            question: "नामन् शब्दस्य सप्तमी-विभक्ति-एकवचने विकल्पेन किं रूपद्वयं भवति?",
+            questionSanskrit: "नामन् शब्दस्य सप्तमी-विभक्तौ एकवचने रूपद्वयं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "नाम्नि / नामनि",
+            explanation: "ङि-प्रत्यये परे 'विभाषा ङिश्योः' इति अलोपे विकल्पेन 'नाम्नि' तथा 'नामनि' इति रूपद्वयं सिध्यति।"
+          },
+          {
+            num: 3,
+            question: "कर्मन् शब्दस्य द्वितीया-विभक्ति-द्विवचने किं रूपम्?",
+            questionSanskrit: "कर्मन् शब्दस्य द्वितीया-विभक्तौ द्विवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "कर्मणी",
+            explanation: "औङः 'शी' आदेशे ईकारे 'कर्मणी' इति रूपं भवति।"
+          },
+          {
+            num: 4,
+            question: "मनस् शब्दस्य प्रथमा-विभक्ति-बहुवचने किं रूपम्?",
+            questionSanskrit: "मनस् शब्दस्य प्रथमा-विभक्तौ बहुवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "मनांसि",
+            explanation: "शि-प्रत्यये नुमागमे उपधादीर्घे च 'मनांसि' इति सिध्यति।"
+          },
+          {
+            num: 5,
+            question: "तपस् शब्दस्य तृतीया-विभक्ति-द्विवचने किं रूपम्?",
+            questionSanskrit: "तपस् शब्दस्य तृतीया-विभक्तौ द्विवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "तपोभ्याम्",
+            explanation: "सकारस्य रुत्वे उत्वे च गुणसन्धौ 'तपोभ्याम्' इति रूपं भवति।"
+          },
+          {
+            num: 6,
+            question: "पयस् शब्दस्य षष्ठी-विभक्ति-एकवचने किं रूपम्?",
+            questionSanskrit: "पयस् शब्दस्य षष्ठी-विभक्तौ एकवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "पयसः",
+            explanation: "ङस्-प्रत्यये अजादौ 'पयसः' इति रूपं भवति।"
+          },
+          {
+            num: 7,
+            question: "शिरस् शब्दस्य तृतीया-विभक्ति-बहुवचने किं रूपम्?",
+            questionSanskrit: "शिरस् शब्दस्य तृतीया-विभक्तौ बहुवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "शिरोभिः",
+            explanation: "भिस्-प्रत्यये सकारस्य रुत्वे उत्वे 'शिरोभिः' इति सिध्यति।"
+          },
+          {
+            num: 8,
+            question: "चक्षुष् शब्दस्य प्रथमा-विभक्ति-बहुवचने किं रूपम्?",
+            questionSanskrit: "चक्षुष् शब्दस्य प्रथमा-विभक्तौ बहुवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "चक्षूंषि",
+            explanation: "ष्-कारान्तस्य शि-भावे नुमागमे दीर्घे च 'चक्षूंषि' इति रूपं भवति।"
+          },
+          {
+            num: 9,
+            question: "चक्षुष् शब्दस्य तृतीया-विभक्ति-द्विवचने किं रूपम्?",
+            questionSanskrit: "चक्षुष् शब्दस्य तृतीया-विभक्तौ द्विवचने रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "चक्षुर्भ्याम्",
+            explanation: "ससजुषो रुः इति सकारस्य/षकारस्य रुत्वे रेफे 'चक्षुर्भ्याम्' इति रूपं सिध्यति।"
+          },
+          {
+            num: 10,
+            question: "छन्दस् शब्दस्य सप्तमी-विभक्ति-बहुवचने किं रूपद्वयं भवति?",
+            questionSanskrit: "छन्दस् शब्दस्य सप्तमी-विभक्तौ बहुवचने रूपद्वयं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "छन्दःसु / छन्दस्सु",
+            explanation: "विसर्जनीयस्य सः अथवा वा शरि इति विकल्पेन विसर्गे सकारे च 'छन्दःसु / छन्दस्सु'। "
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 APPENDIX 4 WORKSHEET 3: Sup-Pratyaya Integration & Morphological Sandhi (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-shabda-ws3",
+    title: "Worksheet 3: Sup-Pratyaya Integration & Morphological Sandhi (10 Questions)",
+    titleSanskrit: "परिशिष्टम् ४ कार्यपत्रिका ३: सुप्-प्रत्ययाः सन्धि-नियमाश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Analyze case endings, sandhi mutations, and morphological designations based on pages 227–228 of the textbook.",
+    sections: [
+      {
+        sectionTitle: "Section A: Sup-Pratyayas & Morphological Rules",
+        sectionTitleSanskrit: "खण्डः 'क' · सुप्-प्रत्ययाः सन्धि-नियमाश्च",
+        instructions: "Identify the case endings, technical terms, and sandhi outputs.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "सुप्-प्रत्ययानां कुलसङ्ख्या का अस्ति?",
+            questionSanskrit: "पाणिनीय-व्याकरणे सुप्-प्रत्ययाः कति सन्ति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "एकविंशतिः (२१)",
+            explanation: "सप्त विभक्तयः $\\times$ ३ वचनानि = २१ सुप्-प्रत्ययाः।"
+          },
+          {
+            num: 2,
+            question: "प्रथमा-विभक्तेः त्रयः सुप्-प्रत्ययाः के सन्ति?",
+            questionSanskrit: "प्रथमा-विभक्तेः त्रीन् प्रत्ययान् लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "सु, औ, जस्",
+            explanation: "अष्टाध्याय्यां ४.१.२ प्रथमाविभक्तौ 'स्वौजसमौट्...' इति क्रमेण एते त्रयः।"
+          },
+          {
+            num: 3,
+            question: "द्वितीया-विभक्ति-बहुवचनस्य सुप्-प्रत्ययः कः?",
+            questionSanskrit: "द्वितीया-बहुवचनस्य प्रत्ययं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "शस्",
+            explanation: "द्वितीयायाः बहुवचने 'शस्' प्रत्ययः भवति।"
+          },
+          {
+            num: 4,
+            question: "'टा' इति कस्याः विभक्तेः कस्य वचनस्य च प्रत्ययः?",
+            questionSanskrit: "'टा' प्रत्ययस्य विभक्तिं वचनं च लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "तृतीया विभक्तिः, एकवचनम्",
+            explanation: "'टा' प्रत्ययस्य अनुबन्धलोपे 'आ' अवशिष्यते (यथा— वाचा, पथा)।"
+          },
+          {
+            num: 5,
+            question: "पञ्चमी-एकवचनस्य षष्ठी-एकवचनस्य च प्रत्ययौ कौ?",
+            questionSanskrit: "पञ्चमी-एकवचनस्य षष्ठी-एकवचनस्य च प्रत्ययौ लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "ङसि (पञ्चमी), ङस् (षष्ठी)",
+            explanation: "उभावपि प्रत्ययौ अनुबन्धलोपे सति 'अस्' (:) स्वरूपं गृह्णीतः।"
+          },
+          {
+            num: 6,
+            question: "सप्तमी-विभक्ति-बहुवचनस्य सुप्-प्रत्ययः कः?",
+            questionSanskrit: "सप्तमी-बहुवचनस्य प्रत्ययं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "सुप्",
+            explanation: "सप्तमीबहुवचने 'सुप्' प्रत्ययः भवति, पकारस्य इत्संज्ञा भवति।"
+          },
+          {
+            num: 7,
+            question: "'वाच् + सुप्' इत्यत्र सन्धिकार्ये किं रूपं सिध्यति?",
+            questionSanskrit: "'वाच् + सुप्' इत्यस्य समस्त-सन्धि-रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "वाक्षु",
+            explanation: "चकारस्य ककारे सति सु-प्रत्ययस्य सकारस्य षत्वे 'वाक्षु' सिध्यति।"
+          },
+          {
+            num: 8,
+            question: "'ब्रह्मन् + भ्याम्' इत्यत्र 'न्' लोपे किं रूपं भवति?",
+            questionSanskrit: "'ब्रह्मन् + भ्याम्' इत्यत्र नलोपे किं रूपं जायते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "ब्रह्मभ्याम्",
+            explanation: "'नलोपः प्रातिपदिकान्तस्य' इति सूत्रेण नलोपे 'ब्रह्मभ्याम्'। "
+          },
+          {
+            num: 9,
+            question: "'तपस् + भ्याम्' इत्यत्र सकारस्य उत्वे किं रूपं सिध्यति?",
+            questionSanskrit: "'तपस् + भ्याम्' इत्यस्य सन्धि-रूपं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "तपोभ्याम्",
+            explanation: "'हशि च' इति सूत्रेण सकारस्य रुत्वे उत्वे च 'तपोभ्याम्'। "
+          },
+          {
+            num: 10,
+            question: "पुंलिङ्ग-स्त्रीलिङ्गयोः प्रथमा-द्वितीयाविभक्त्योः आद्यानां पञ्चप्रत्ययानां का संज्ञा भवति?",
+            questionSanskrit: "सु, औ, जस्, अम्, औट् इत्येतेषां पञ्चानां का संज्ञा अस्ति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "सर्वनामस्थानम् (सुट्)",
+            explanation: "'सुडनपुंसकस्य' इति सूत्रेण सु, औ, जस्, अम्, औट् इत्येतेषां पञ्चानां सर्वनामस्थानसंज्ञा भवति।"
+          }
+        ]
+      }
+    ]
   }
 ];

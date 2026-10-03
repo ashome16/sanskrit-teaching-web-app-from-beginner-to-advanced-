@@ -41683,6 +41683,153 @@
           "kind": "narrative"
         }
       ]
+    },
+    {
+      "id": "grade9_shabda",
+      "fileName": "grade9_shabda.txt",
+      "title": "Grade 9: परिशिष्टम् ४ — शब्दरूपाणि (Pages 216–228)",
+      "page_numbers": "Pages 216–228",
+      "sentences": [
+        {
+          "sanskrit": "संस्कृतव्याकरणे नामपदानां प्रातिपदिकानां च त्रिलिङ्गेषु सप्तसु विभक्तिषु सम्बोधने च रूपनिष्पत्तिः शब्दरूपाणि इति कथ्यते। सुप्तिङन्तं पदम् इति नियमेन प्रातिपदिकात् सुप्-प्रत्यययोगे पदत्वं सिध्यति।",
+          "meaning": "In Sanskrit grammar, the morphological generation of nominal stems across the three genders, seven cases, and vocative is termed Shabda-rupani (Nominal Declensions). By the rule 'Suptingantam padam', affixing Sup suffixes to raw nominal stems yields syntactically complete words.",
+          "paragraphTranslation": "संस्कृत व्याकरण में नामपदों (प्रातिपदिकों) के तीनों लिङ्गों, सातों विभक्तियों और सम्बोधन में रूप-निर्माण को शब्दरूप कहा जाता है। 'सुप्तिङन्तं पदम्' नियम से प्रातिपदिक में सुप्-प्रत्यय लगने पर पद बनता है।",
+          "words": [
+            "संस्कृतव्याकरणे",
+            "नामपदानां",
+            "प्रातिपदिकानां",
+            "त्रिलिङ्गेषु",
+            "सप्तसु",
+            "विभक्तिषु",
+            "सम्बोधने",
+            "रूपनिष्पत्तिः",
+            "शब्दरूपाणि",
+            "सुप्तिङन्तं",
+            "पदम्",
+            "सुप्-प्रत्यययोगे"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "हलन्तशब्दाः (व्यञ्जनान्तशब्दाः) त्रिषु लिङ्गेषु विभक्ताः सन्ति— पुंलिङ्गशब्दाः, स्त्रीलिङ्गशब्दाः, नपुंसकलिङ्गशब्दाश्च। अत्र मूलधातुसदृशाः व्यञ्जनान्ताः शब्दाः साक्षात् सुप्-प्रत्ययान् गृह्णन्ति।",
+          "meaning": "Halanta (consonant-ending) stems are categorized into three genders: masculine, feminine, and neuter. Here, consonant-terminating nominal stems directly receive the Sup case terminations according to classical sandhi rules.",
+          "paragraphTranslation": "हलन्त (व्यञ्जनान्त) शब्द तीनों लिङ्गों में विभक्त हैं— पुंल्लिङ्ग, स्त्रीलिङ्ग और नपुंसकलिङ्ग। यहाँ व्यञ्जनान्त शब्द साक्षात् सुप्-प्रत्ययों को ग्रहण करते हैं।",
+          "words": [
+            "हलन्तशब्दाः",
+            "व्यञ्जनान्तशब्दाः",
+            "त्रिषु",
+            "लिङ्गेषु",
+            "विभक्ताः",
+            "पुंलिङ्गशब्दाः",
+            "स्त्रीलिङ्गशब्दाः",
+            "नपुंसकलिङ्गशब्दाश्च",
+            "साक्षात्",
+            "सुप्-प्रत्ययान्",
+            "गृह्णन्ति"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "पुंलिङ्गे 'न्'-अन्ताः ब्रह्मन् (ब्रह्मा), गुणिन् (गुणी), पथिन् (पन्थाः); 'स्'-अन्ताः विद्वस् (विद्वान्), चन्द्रमस् (चन्द्रमाः), पुंस् (पुमान्); 'द्'-अन्तः सुहृद्; 'ज्'-अन्तौ वणिज्, भिषज् इत्यादयः प्रसिद्धाः शब्दाः सन्ति।",
+          "meaning": "In the masculine paradigm, key consonant stems include n-ending Brahman, Gunin, Pathin; s-ending Vidvas, Chandramas, Pums; d-ending Suhrid; and j-ending Vanij and Bhishaj.",
+          "paragraphTranslation": "पुंल्लिङ्ग में 'न्'-अन्त ब्रह्मन्, गुणिन्, पथिन्; 'स्'-अन्त विद्वस्, चन्द्रमस्, पुंस्; 'द्'-अन्त सुहृद्; तथा 'ज्'-अन्त वणिज् और भिषज् आदि प्रमुख शब्द हैं।",
+          "words": [
+            "पुंलिङ्गे",
+            "ब्रह्मन्",
+            "गुणिन्",
+            "पथिन्",
+            "विद्वस्",
+            "चन्द्रमस्",
+            "पुंस्",
+            "सुहृद्",
+            "वणिज्",
+            "भिषज्",
+            "प्रसिद्धाः",
+            "शब्दाः"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "स्त्रीलिङ्गे 'च्'-अन्तौ वाच् (वाक्), त्वच्; 'ज्'-अन्तौ स्रज् (स्रक्), रुज् (रुक्); 'त्'-अन्तौ सरित्, विद्युत्; 'व्'-अन्तः दिव् (द्यौः); 'श्'-अन्तः दिश् (दिक्) इत्यादयः विविधाः शब्दाः प्रयुज्यन्ते।",
+          "meaning": "In the feminine paradigm, widely used consonant stems include ch-ending Vach and Tvach; j-ending Sraj and Ruj; t-ending Sarit and Vidyut; v-ending Div (Dyauh); and sh-ending Dish (Dik).",
+          "paragraphTranslation": "स्त्रीलिङ्ग में 'च्'-अन्त वाच्, त्वच्; 'ज्'-अन्त स्रज्, रुज्; 'त्'-अन्त सरित्, विद्युत्; 'व्'-अन्त दिव् (द्यौः); और 'श्'-अन्त दिश् (दिक्) आदि शब्द प्रयुक्त होते हैं।",
+          "words": [
+            "स्त्रीलिङ्गे",
+            "वाच्",
+            "त्वच्",
+            "स्रज्",
+            "रुज्",
+            "सरित्",
+            "विद्युत्",
+            "दिव्",
+            "दिश्",
+            "विविधाः",
+            "शब्दाः",
+            "प्रयुज्यन्ते"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "नपुंसकलिङ्गे 'त्'-अन्तः जगत् (जगती जगन्ति); 'न्'-अन्ताः नामन्, कर्मन्, चर्मन्; 'स्'-अन्ताः मनस्, तपस्, पयस्, शिरस्, छन्दस्; 'ष्'-अन्तः चक्षुष् इत्यादयः शब्दाः भवन्ति, यत्र प्रथमा-द्वितीयाविभक्त्योरूपाणि समानानि भवन्ति।",
+          "meaning": "In the neuter paradigm, consonant stems include t-ending Jagat; n-ending Naman, Karman, Charman; s-ending Manas, Tapas, Payas, Shiras, Chhandas; and sh-ending Chakshush, where Nominative and Accusative forms are entirely identical.",
+          "paragraphTranslation": "नपुंसकलिङ्ग में 'त्'-अन्त जगत्; 'न्'-अन्त नामन्, कर्मन्, चर्मन्; 'स्'-अन्त मनस्, तपस्, पयस्, शिरस्, छन्दस्; और 'ष्'-अन्त चक्षुष् आदि शब्द होते हैं, जहाँ प्रथमा और द्वितीया के रूप समान होते हैं।",
+          "words": [
+            "नपुंसकलिङ्गे",
+            "जगत्",
+            "नामन्",
+            "कर्मन्",
+            "चर्मन्",
+            "मनस्",
+            "तपस्",
+            "पयस्",
+            "शिरस्",
+            "छन्दस्",
+            "चक्षुष्",
+            "प्रथमा-द्वितीयाविभक्त्योरूपाणि",
+            "समानानि"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "पाणिनीय-व्याकरणे प्रातिपदिकेभ्यः परतः एकविंशतिः (२१) सुप्-प्रत्ययाः (सु, औ, जस्, अम्, औट्, शस्, टा, भ्याम्, भिस्, ङे, भ्याम्, भ्यस्, ङसि, भ्याम्, भ्यस्, ङस्, ओस्, आम्, ङि, ओस्, सुप्) विधीयन्ते।",
+          "meaning": "In Paninian grammar, twenty-one primary Sup suffixes (Su, Au, Jas, Am, Aut, Shas, Ta, Bhyam, Bhis, Nge, Bhyam, Bhyas, Ngasi, Bhyam, Bhyas, Ngas, Os, Aam, Ngi, Os, Sup) are enjoined after nominal stems.",
+          "paragraphTranslation": "पाणिनीय व्याकरण में प्रातिपदिकों के बाद इक्कीस (२१) सुप्-प्रत्यय (सु, औ, जस् आदि) सातों विभक्तियों में प्रयुक्त होते हैं।",
+          "words": [
+            "पाणिनीय-व्याकरणे",
+            "प्रातिपदिकेभ्यः",
+            "एकविंशतिः",
+            "सुप्-प्रत्ययाः",
+            "सु",
+            "औ",
+            "जस्",
+            "भ्याम्",
+            "भिस्",
+            "भ्यस्",
+            "आम्",
+            "सुप्",
+            "विधीयन्ते"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "एवं हलन्त-शब्दरूपाणां सुप्-प्रत्ययानां च सम्यग् ज्ञानेन वयं संस्कृत-वाक्येषु विशुद्धं पदप्रयोगं सन्धिकार्यं च अवगन्तुं समर्थाः भवेम।",
+          "meaning": "Thus, through a thorough understanding of consonant-ending nominal declensions and Sup case suffixes, we become capable of flawless syntactic word deployment and sandhi operations in Sanskrit sentences.",
+          "paragraphTranslation": "इस प्रकार हलन्त शब्दरूपों और सुप्-प्रत्ययों के सम्यक् ज्ञान से हम संस्कृत वाक्यों में विशुद्ध पद-प्रयोग और सन्धि-कार्य को समझने में समर्थ होते हैं।",
+          "words": [
+            "हलन्त-शब्दरूपाणां",
+            "सुप्-प्रत्ययानां",
+            "सम्यग्",
+            "ज्ञानेन",
+            "संस्कृत-वाक्येषु",
+            "विशुद्धं",
+            "पदप्रयोगं",
+            "सन्धिकार्यं",
+            "अवगन्तुं",
+            "समर्थाः"
+          ],
+          "kind": "narrative"
+        }
+      ]
     }
   ]
 }

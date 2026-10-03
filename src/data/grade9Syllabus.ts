@@ -287,5 +287,20 @@ export const GRADE_9_SYLLABUS: Grade9Chapter[] = [
     grammarFocus: "कर्तृवाच्यम् (1-2-Active), कर्मवाच्यम् (3-1-Passive), भाववाच्यम् (3-X-Impersonal), यक्-प्रत्ययः, क्त-क्तवतु, तव्यत्-अनीयर्",
     status: "available",
     icon: "🔄"
+  },
+  {
+    id: "grade9_shabda",
+    num: "परिशिष्टम् ४",
+    chNumber: "परिशिष्टम् ४",
+    title: "परिशिष्टम् ४ : शब्दरूपाणि (हलन्त-शब्दाः सुप्-प्रत्ययाश्च)",
+    hindiTitle: "शब्दरूपाणि (हलन्त-शब्दाः सुप्-प्रत्ययाश्च)",
+    englishTitle: "Appendix 4: Sanskrit Nominal Declensions (Consonant Paradigms & Sup Suffixes)",
+    page: "Pages 216–228",
+    category: "grammar",
+    genreBadge: "व्याकरणम् · Consonant Nominal Paradigms (हलन्तरूपाणि)",
+    theme: "Comprehensive inflection matrices of consonant-ending nouns (हलन्तशब्दाः) across masculine, feminine, and neuter genders along with the 21 foundational Paninian Sup-pratyayas (सुप्-प्रत्ययाः).",
+    grammarFocus: "हलन्त-पुंलिङ्ग (ब्रह्मन्, गुणिन्, पथिन्, विद्वस्), हलन्त-स्त्रीलिङ्ग (वाच्, सरित्, दिश्), हलन्त-नपुंसकलिङ्ग (जगत्, नामन्, मनस्, चक्षुष्), सुप्-प्रत्ययाः",
+    status: "available",
+    icon: "📖"
   }
 ];
