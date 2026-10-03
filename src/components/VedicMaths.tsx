@@ -40,6 +40,215 @@ export interface VedicMathsProps {
   onOpenNumbers?: () => void;
 }
 
+export type DhanurStanceKey = 'alidha' | 'pratyalidha' | 'samapada' | 'vaisakha' | 'mandala';
+
+export interface DhanurStance {
+  id: DhanurStanceKey;
+  nameSa: string;
+  nameIast: string;
+  nameEn: string;
+  shapeEmoji: string;
+  shapeName: string;
+  shapeGeometry: string;
+  spanLabel: string;
+  spanDesc: string;
+  weightFront: number;
+  weightRear: number;
+  weightDesc: string;
+  combatRole: string;
+  recoilPhysics: string;
+  bodyMechanics: string;
+  sourceText: string;
+  textDiagram: string;
+  tacticalTip: string;
+}
+
+const DHANUR_STANCES: DhanurStance[] = [
+  {
+    id: 'alidha',
+    nameSa: 'आलीढ स्थानम्',
+    nameIast: 'Ālīḍha Sthānam',
+    nameEn: 'The Forward Bow Stance',
+    shapeEmoji: '📐',
+    shapeName: 'Right-Angled Scalene Triangle',
+    shapeGeometry: 'Scalene right-angled triangle between front foot, rear foot, and pelvic center of gravity.',
+    spanLabel: '3 Cubits (त्र्यरत्नि / ~4.5 ft / ~1.37 m)',
+    spanDesc: 'Roughly 4.5 feet wide',
+    weightFront: 70,
+    weightRear: 30,
+    weightDesc: '70% Forward / 30% Rear',
+    combatRole: 'Aggressive long-range heavy attack. Transforms the archer into a forward kinetic wedge to drive maximum piercing force into oncoming cavalry or infantry.',
+    recoilPhysics: 'Converts full body momentum forward into the arrow shaft, while the straight trailing leg anchors and absorbs heavy recoil.',
+    bodyMechanics: 'Right knee bent deeply forward directly above ankle; left leg stretched out straight behind. Torso leans aggressively forward toward the target.',
+    sourceText: 'Agni Purāṇa (Ch. 249) & Vasiṣṭha Dhanurveda Saṃhitā',
+    textDiagram: `[Target Direction ->] 🎯
+       ( Head/Torso )
+          /       \\
+         /         \\
+        /           \\  <- Extended Leg
+   [Bent Knee]       \\
+      L_              \\
+     /  \\______________\\
+   [Front Foot]    [Back Foot]
+   |<--- 3 Cubits (4.5 ft) --->|`,
+    tacticalTip: 'Śulba Mapping: Ground span between feet acts as Pārśvamānī (base a), vertical spine as Tiryaṅmānī (height b), and arrow line of sight as Akṣṇayā Rajjuḥ (hypotenuse c).'
+  },
+  {
+    id: 'pratyalidha',
+    nameSa: 'प्रत्यालीढ स्थानम्',
+    nameIast: 'Pratyālīḍha Sthānam',
+    nameEn: 'The Defensive Wedge Stance',
+    shapeEmoji: '📐',
+    shapeName: 'Reflected / Inverted Triangle',
+    shapeGeometry: 'Exact mirror reflection of the Ālīḍha triangle, anchored rearward for defensive counter-strikes.',
+    spanLabel: '3 Cubits (त्र्यरत्नि / ~4.5 ft / ~1.37 m)',
+    spanDesc: 'Roughly 4.5 feet wide',
+    weightFront: 30,
+    weightRear: 70,
+    weightDesc: '30% Forward / 70% Rear',
+    combatRole: 'Lean-away defense. Absorbs heavy counter-impact and shockwaves while dodging incoming projectiles and returning rapid counter-fire.',
+    recoilPhysics: 'The deeply bent rear leg acts as a compressed mechanical shock absorber that catches backward recoil and launches immediate return volleys.',
+    bodyMechanics: 'Left knee drawn back and deeply bent; right leg extended straight forward toward target. Torso reclines back defensively to evade incoming missiles.',
+    sourceText: 'Agni Purāṇa (Ch. 249) & Vasiṣṭha Dhanurveda Saṃhitā',
+    textDiagram: `🎯 [<- Target Direction]
+       ( Head/Torso )
+          /       \\
+         /         \\
+        /           \\
+       /             \\  [Bent Knee]
+      /_______________\\_/
+   [Front Foot]    [Back Foot]
+   |<--- 3 Cubits (4.5 ft) --->|`,
+    tacticalTip: 'Used by veteran archers to slip beneath enemy arrow trajectories while keeping the arrow notched and aimed at enemy officers.'
+  },
+  {
+    id: 'samapada',
+    nameSa: 'समपद स्थानम्',
+    nameIast: 'Samapada Sthānam',
+    nameEn: 'The Symmetrical Parallel Stance',
+    shapeEmoji: '█',
+    shapeName: 'Symmetrical Vertical Rectangle / Square',
+    shapeGeometry: 'Balanced bilateral rectangle with an erect vertical spine perpendicular to the earth.',
+    spanLabel: '1 Palm-Width (समपद / ~4–5 inches)',
+    spanDesc: 'Exactly 1 palm-width apart',
+    weightFront: 50,
+    weightRear: 50,
+    weightDesc: '50% Left / 50% Right (Absolute Symmetry)',
+    combatRole: 'Formal salutations (Praṇāma), mental centering before practice, ritual zeroing, and calibrating steady breathing (Prāṇāyāma).',
+    recoilPhysics: 'Distributes body weight with absolute bilateral equilibrium along both legs, eliminating muscle tremor and steadying the visual sightline.',
+    bodyMechanics: 'Both feet placed flat on the ground, pointing forward, perfectly parallel and one palm-width apart. Knees straight, spine strictly perpendicular.',
+    sourceText: 'Vasiṣṭha Dhanurveda Saṃhitā',
+    textDiagram: `       ( Head/Torso )
+          |       |
+          |       |
+          |       |
+          |       |
+          ||     ||
+        [||]     [||]
+     [Left Foot] [Right Foot]
+     |<-- 1 Palm-width -->|`,
+    tacticalTip: 'The archer’s foundational centering posture. Used to achieve heart-rate stillness before drawing the first arrow in competition or ritual.'
+  },
+  {
+    id: 'vaisakha',
+    nameSa: 'वैशाख स्थानम्',
+    nameIast: 'Vaiśākha Sthānam',
+    nameEn: 'The Equilateral Power Squat',
+    shapeEmoji: '⏃',
+    shapeName: 'Equilateral Triangle / Isosceles Trapezoid',
+    shapeGeometry: 'Broad trapezoidal power base with dropped pelvic center of gravity and outward knee flares.',
+    spanLabel: '3 Spans (त्रि-वितस्ति / ~2 to 2.5 ft / ~75 cm)',
+    spanDesc: 'Approximately 2.5 feet wide',
+    weightFront: 50,
+    weightRear: 50,
+    weightDesc: '50% Left / 50% Right (Ultra-Low Center of Gravity)',
+    combatRole: 'Drawing exceptionally stiff, heavy composite or solid iron bows (Loha-Dhanuṣ) requiring massive draw weights (80–120+ lbs).',
+    recoilPhysics: 'The lowered pelvis and broad bilateral base prevent the archer from being tipped backward by massive string release energy.',
+    bodyMechanics: 'Feet spread wide apart (three spans); both knees flexed slightly outward into a firm half-squat. Thighs and core locked in isometric tension.',
+    sourceText: 'Agni Purāṇa (Ch. 249) & Vasiṣṭha Dhanurveda Saṃhitā',
+    textDiagram: `       ( Head/Torso )
+          /       \\
+         /         \\
+      [Knee]     [Knee]
+       /             \\
+      /               \\
+   [Left Foot]   [Right Foot]
+   |<--- 3 Spans (2.5 ft) --->|`,
+    tacticalTip: 'Standard stance for fortress rampart snipers launching heavy armor-piercing iron arrows (Nārāca) into siege engines.'
+  },
+  {
+    id: 'mandala',
+    nameSa: 'मण्डल स्थानम्',
+    nameIast: 'Maṇḍala Sthānam',
+    nameEn: 'The Circular / Hexagonal Pivot',
+    shapeEmoji: '⬡',
+    shapeName: 'Regular Hexagon / Circle',
+    shapeGeometry: 'Circular radial base enabling 360-degree rotational mobility without feet crossing or tangling.',
+    spanLabel: '1 Vitasti (वितस्ति / ~9 inches)',
+    spanDesc: 'Approximately 9 inches apart',
+    weightFront: 50,
+    weightRear: 50,
+    weightDesc: 'Omnidirectional Dynamic Equilibrium (360°)',
+    combatRole: 'Chariot archers (Rathis) and warriors surrounded by multiple adversaries in close-quarters melee skirmishes.',
+    recoilPhysics: 'Circular knee curvature allows radial torque redirection, absorbing violent string snap while pivoting smoothly in all 360 degrees.',
+    bodyMechanics: 'Feet spaced one Vitasti (9 inches) apart, pointing diagonally outward; knees bent wide to create a round circular silhouette.',
+    sourceText: 'Agni Purāṇa (Ch. 249) & Vasiṣṭha Dhanurveda Saṃhitā',
+    textDiagram: `       ( Head/Torso )
+          /       \\
+         /         \\
+      [Knee]  ( )  [Knee]
+         \\         /
+          \\       /
+      [Left]     [Right]
+      [Foot]     [Foot]
+       |<-- 9 inches -->|`,
+    tacticalTip: 'Allows charioteers to pivot instantaneously and unleash backward Parthian shots or flank shots without tripping over their own feet.'
+  }
+];
+
+const MURDHANYA_PHONETICS = [
+  {
+    letterSa: 'ट',
+    letterIast: 'ṭa',
+    phoneticName: 'Voiceless Unaspirated Retroflex Stop',
+    sanskritClass: 'अघोष अल्पप्राण',
+    biomechanics: 'Tip of the tongue curls upward to strike the apex of the hard palate (Mūrdhan), builds intra-oral pressure, and snaps forward like a drawn bowstring released.',
+    acousticArrow: 'A swift, sharp, high-frequency sound wave projectile.'
+  },
+  {
+    letterSa: 'ठ',
+    letterIast: 'ṭha',
+    phoneticName: 'Voiceless Aspirated Retroflex Stop',
+    sanskritClass: 'अघोष महाप्राण',
+    biomechanics: 'The retroflex palatal snap is immediately accompanied by an explosive burst of breath (Prāṇa), propelling acoustic energy with high kinetic velocity.',
+    acousticArrow: 'An explosive shockwave arrow driven by compressed breath.'
+  },
+  {
+    letterSa: 'ड',
+    letterIast: 'ḍa',
+    phoneticName: 'Voiced Unaspirated Retroflex Stop',
+    sanskritClass: 'घोष अल्पप्राण',
+    biomechanics: 'Vocal cords vibrate in resonance before and during the retroflex release, infusing the sound wave with deep harmonic weight.',
+    acousticArrow: 'A heavy iron-tipped arrow with dense vocal resonance.'
+  },
+  {
+    letterSa: 'ढ',
+    letterIast: 'ḍha',
+    phoneticName: 'Voiced Aspirated Retroflex Stop',
+    sanskritClass: 'घोष महाप्राण',
+    biomechanics: 'The most energetic retroflex stop: vocal cord vibration coupled with deep thoracic air projection upon the elastic palatal snap.',
+    acousticArrow: 'A blazing siege arrow combining deep acoustic mass and velocity.'
+  },
+  {
+    letterSa: 'ण',
+    letterIast: 'ṇa',
+    phoneticName: 'Voiced Retroflex Nasal',
+    sanskritClass: 'घोष अनुनासिक',
+    biomechanics: 'The tongue seals against the retroflex palate while the soft palate drops, directing acoustic sound waves through the nasal resonator chamber.',
+    acousticArrow: 'A continuous, ringing harmonic drone that vibrates and lingers.'
+  }
+];
+
 const VedicMaths: React.FC<VedicMathsProps> = ({
   onGoHome,
   onOpenReader,
@@ -299,6 +508,12 @@ ${bodyHtml}
   const [baudA, setBaudA] = useState<number>(3);
   const [baudB, setBaudB] = useState<number>(4);
   const [showBaudVyakarana, setShowBaudVyakarana] = useState<boolean>(true);
+
+  // Dhanurveda & Ballistics Studio States
+  const [dhanurStance, setDhanurStance] = useState<DhanurStanceKey>('alidha');
+  const [dhanurDistA, setDhanurDistA] = useState<number>(40);
+  const [dhanurElevB, setDhanurElevB] = useState<number>(15);
+  const [activePhoneticLetter, setActivePhoneticLetter] = useState<string>('ṭa');
 
   // Sutra Directory States
   const [sutraSearch, setSutraSearch] = useState('');
@@ -3033,6 +3248,611 @@ ${bodyHtml}
                 <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 }}>
                   Baudhāyana's 577/408 corresponds to the 8th convergent of continued fractions (<em>[1; 2, 2, 2...]</em>). These Diophantine approximations are foundational to digital signal processing, Fourier quantization, and modern cryptographic key generation.
                 </p>
+              </div>
+            </div>
+
+            {/* ================================================================
+                DHANURVEDA STUDIO: THE GEOMETRY OF ARCHERY, PHONETICS & BALLISTICS
+                ================================================================ */}
+            <div id="dhanurveda-studio" className="dhanur-studio-card">
+              {/* Header */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem' }}>
+                <div>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: '#ffedd5', color: '#c2410c', padding: '0.35rem 0.85rem', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.5rem' }}>
+                    <span>॥ धनुर्वेदः · ज्यामितीय-स्थानानि ॥</span>
+                    <span>·</span>
+                    <span>The Sacred Upaveda of the Bow</span>
+                  </div>
+                  <h2 style={{ fontSize: '1.65rem', fontWeight: 800, color: '#9a3412', margin: '0 0 0.4rem 0' }}>
+                    🏹 The Geometry of Dhanurveda: Stances, Ballistics &amp; Sanskrit Phonetics
+                  </h2>
+                  <p style={{ fontSize: '0.95rem', color: '#4b5563', margin: 0, maxWidth: '880px', lineHeight: 1.6 }}>
+                    In ancient India, archery was not mere physical combat—it was a sacred, systematic <strong>Upaveda</strong> (applied Vedic science) connected to the Yajurveda.
+                    It synthesised human biomechanics, the triangle theorems of the <em>Śulba Sūtras</em>, and the acoustic physics of Sanskrit <em>Vyākaraṇa</em> into an integrated martial and spiritual art.
+                  </p>
+                </div>
+              </div>
+
+              {/* The 4 Structural Pillars */}
+              <div style={{ background: 'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)', border: '1.5px solid #fed7aa', borderRadius: '14px', padding: '1.25rem 1.5rem', marginBottom: '2rem' }}>
+                <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#c2410c', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.6rem' }}>
+                  The 4 Educational Pillars of Dhanurveda · वसिष्ठ-धनुर्वेद-संहिता
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.85rem' }}>
+                  <div style={{ background: '#ffffff', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #fed7aa' }}>
+                    <div style={{ fontWeight: 800, color: '#9a3412', fontSize: '0.95rem' }}>१. स्थानम् (Sthāna)</div>
+                    <div style={{ fontSize: '0.82rem', color: '#64748b', marginTop: '0.2rem' }}>The Geometric Stance: triangular foot alignment to balance center of gravity &amp; absorb recoil.</div>
+                  </div>
+                  <div style={{ background: '#ffffff', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #fed7aa' }}>
+                    <div style={{ fontWeight: 800, color: '#9a3412', fontSize: '0.95rem' }}>२. छुरिका / मुष्टि (Churikā)</div>
+                    <div style={{ fontSize: '0.82rem', color: '#64748b', marginTop: '0.2rem' }}>The Grip &amp; Tension: physics of finger lock, drawing leverage, and thumb-ring release torque.</div>
+                  </div>
+                  <div style={{ background: '#ffffff', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #fed7aa' }}>
+                    <div style={{ fontWeight: 800, color: '#9a3412', fontSize: '0.95rem' }}>३. मुक्त-विमुक्त (Release)</div>
+                    <div style={{ fontSize: '0.82rem', color: '#64748b', marginTop: '0.2rem' }}>The Release Timing: precise microsecond discharge synchronized with breath suspension (Prāṇāyāma).</div>
+                  </div>
+                  <div style={{ background: '#ffffff', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #fed7aa' }}>
+                    <div style={{ fontWeight: 800, color: '#9a3412', fontSize: '0.95rem' }}>४. लक्ष्य-वेध (Targeting)</div>
+                    <div style={{ fontSize: '0.82rem', color: '#64748b', marginTop: '0.2rem' }}>Penetrative Focus: absolute one-pointed concentration—the martial root of Yogic Dhāraṇā.</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* MODULE 1: INTERACTIVE 5 STANCES EXPLORER */}
+              <div style={{ marginBottom: '2.5rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
+                  <div>
+                    <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#1f2937', margin: 0 }}>
+                      1. The Five Geometric Stances (Sthānas) of Ancient Archery
+                    </h3>
+                    <p style={{ margin: '0.25rem 0 0', fontSize: '0.88rem', color: '#6b7280' }}>
+                      Codified in the <em>Agni Purāṇa</em> and <em>Vasiṣṭha Dhanurveda</em>: select a posture to inspect its biomechanical polygon, center-of-gravity shifts, and recoil physics.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Stance Selector Tab Buttons */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '0.65rem', marginBottom: '1.25rem' }}>
+                  {DHANUR_STANCES.map((st) => {
+                    const isActive = dhanurStance === st.id;
+                    return (
+                      <button
+                        key={st.id}
+                        type="button"
+                        className={`dhanur-stance-btn ${isActive ? 'active' : ''}`}
+                        onClick={() => setDhanurStance(st.id)}
+                      >
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginBottom: '0.3rem' }}>
+                          <span style={{ fontSize: '1.3rem' }}>{st.shapeEmoji}</span>
+                          <span style={{ fontSize: '0.72rem', fontWeight: 800, padding: '0.15rem 0.45rem', borderRadius: '4px', background: isActive ? '#ea580c' : '#f1f5f9', color: isActive ? '#ffffff' : '#64748b' }}>
+                            {st.weightDesc.split('/')[0].trim()}
+                          </span>
+                        </div>
+                        <div style={{ fontFamily: "'Noto Serif Devanagari', serif", fontWeight: 700, fontSize: '0.96rem', color: isActive ? '#9a3412' : '#1e293b' }}>
+                          {st.nameSa}
+                        </div>
+                        <div style={{ fontSize: '0.78rem', color: isActive ? '#c2410c' : '#64748b', fontWeight: 600 }}>
+                          {st.nameIast}
+                        </div>
+                        <div style={{ fontSize: '0.72rem', color: '#94a3b8', marginTop: '0.2rem' }}>
+                          {st.shapeName.split(' ')[0]}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Selected Stance Interactive Inspector */}
+                {(() => {
+                  const current = DHANUR_STANCES.find((s) => s.id === dhanurStance) || DHANUR_STANCES[0];
+                  return (
+                    <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '16px', padding: '1.5rem' }}>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem', alignItems: 'start' }}>
+                        {/* Left Details Column */}
+                        <div>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
+                            <h4 style={{ margin: 0, fontSize: '1.35rem', fontWeight: 800, color: '#0f172a' }}>
+                              {current.nameSa} ({current.nameIast})
+                            </h4>
+                            <button
+                              type="button"
+                              onClick={() => playPronunciation(current.nameSa)}
+                              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', background: '#ffedd5', border: '1px solid #fdba74', color: '#c2410c', padding: '0.25rem 0.6rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700, cursor: 'pointer' }}
+                              title="Hear pronunciation in Sanskrit"
+                            >
+                              🔊 Listen
+                            </button>
+                          </div>
+
+                          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+                            <span style={{ background: '#e0f2fe', color: '#0369a1', padding: '0.2rem 0.6rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700 }}>
+                              Shape: {current.shapeName}
+                            </span>
+                            <span style={{ background: '#fef3c7', color: '#92400e', padding: '0.2rem 0.6rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700 }}>
+                              Foot Span: {current.spanLabel}
+                            </span>
+                            <span style={{ background: '#dcfce7', color: '#15803d', padding: '0.2rem 0.6rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700 }}>
+                              Weight: {current.weightDesc}
+                            </span>
+                          </div>
+
+                          <div style={{ marginBottom: '1rem' }}>
+                            <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#475569', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
+                              Physical Body Alignment &amp; Geometry:
+                            </div>
+                            <p style={{ margin: 0, fontSize: '0.9rem', color: '#334155', lineHeight: 1.55 }}>
+                              {current.bodyMechanics}
+                            </p>
+                          </div>
+
+                          <div style={{ marginBottom: '1rem' }}>
+                            <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#475569', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
+                              Tactical Combat Application &amp; Recoil Physics:
+                            </div>
+                            <p style={{ margin: 0, fontSize: '0.9rem', color: '#334155', lineHeight: 1.55 }}>
+                              {current.combatRole} {current.recoilPhysics}
+                            </p>
+                          </div>
+
+                          <div style={{ background: '#ffffff', borderLeft: '3px solid #ea580c', padding: '0.65rem 0.85rem', borderRadius: '0 8px 8px 0', fontSize: '0.84rem', color: '#475569', lineHeight: 1.5, marginBottom: '0.85rem' }}>
+                            <strong>💡 Śulba Sūtra Geometry Link:</strong> {current.tacticalTip}
+                          </div>
+
+                          <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', padding: '0.65rem 0.85rem', borderRadius: '8px', fontSize: '0.8rem', color: '#64748b' }}>
+                            <strong>Sanskrit Root Study:</strong> The term <em>स्थान (Sthāna)</em> originates from the Dhātu <strong>स्था (Sthā - to stand firm)</strong>. It is the direct Indo-European ancestor of English <em>"stance"</em>, <em>"station"</em>, <em>"state"</em>, and <em>"constant"</em>.
+                            <div style={{ marginTop: '0.25rem', fontStyle: 'italic' }}>Source: {current.sourceText}</div>
+                          </div>
+                        </div>
+
+                        {/* Right Visual Diagram & Blueprint Box */}
+                        <div>
+                          {/* SVG Visualizer Canvas */}
+                          <div style={{ background: '#ffffff', border: '1px solid #cbd5e1', borderRadius: '12px', padding: '1rem', marginBottom: '1rem' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                              <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                                Dynamic Geometric Vector Model
+                              </span>
+                              <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#ea580c' }}>
+                                {current.shapeEmoji} {current.shapeName}
+                              </span>
+                            </div>
+
+                            <svg viewBox="0 0 380 200" style={{ width: '100%', height: 'auto', display: 'block' }}>
+                              <defs>
+                                <pattern id="dhanurGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f1f5f9" strokeWidth="1" />
+                                </pattern>
+                                <marker id="arrowHead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                                  <path d="M0,0 L0,6 L8,3 z" fill="#dc2626" />
+                                </marker>
+                              </defs>
+                              <rect width="380" height="200" fill="url(#dhanurGrid)" />
+
+                              {/* Ground Baseline (Pārśvamānī) */}
+                              <line x1="30" y1="160" x2="350" y2="160" stroke="#94a3b8" strokeWidth="2" strokeDasharray="4 4" />
+                              <text x="190" y="188" textAnchor="middle" fill="#64748b" fontSize="10" fontWeight="bold">
+                                Pārśvamānī (Base Foot Span: {current.spanDesc})
+                              </text>
+
+                              {/* Dynamic Shapes based on current stance */}
+                              {current.id === 'alidha' && (
+                                <g>
+                                  {/* Right-angled Scalene Triangle */}
+                                  <polygon points="90,160 290,160 120,60" fill="rgba(234, 88, 12, 0.15)" stroke="#ea580c" strokeWidth="2.5" />
+                                  {/* Torso & Head */}
+                                  <circle cx="120" cy="45" r="14" fill="#ffedd5" stroke="#ea580c" strokeWidth="2" />
+                                  <text x="120" y="49" textAnchor="middle" fontSize="11">🏹</text>
+                                  {/* Bent Front Knee */}
+                                  <circle cx="105" cy="115" r="5" fill="#ea580c" />
+                                  <line x1="120" y1="60" x2="105" y2="115" stroke="#ea580c" strokeWidth="3" />
+                                  <line x1="105" y1="115" x2="90" y2="160" stroke="#ea580c" strokeWidth="3" />
+                                  {/* Straight Extended Back Leg */}
+                                  <line x1="120" y1="60" x2="290" y2="160" stroke="#9a3412" strokeWidth="3" />
+                                  {/* Feet pads */}
+                                  <rect x="75" y="156" width="30" height="8" rx="4" fill="#c2410c" />
+                                  <text x="90" y="174" textAnchor="middle" fill="#c2410c" fontSize="9" fontWeight="bold">Front (70%)</text>
+                                  <rect x="275" y="156" width="30" height="8" rx="4" fill="#64748b" />
+                                  <text x="290" y="174" textAnchor="middle" fill="#64748b" fontSize="9">Rear (30%)</text>
+                                  {/* Center of Gravity Node */}
+                                  <circle cx="115" cy="100" r="6" fill="#f59e0b" stroke="#ffffff" strokeWidth="2" />
+                                  <text x="135" y="104" fill="#b45309" fontSize="9" fontWeight="bold">CG (70% fwd)</text>
+                                  {/* Arrow vector */}
+                                  <line x1="120" y1="50" x2="330" y2="50" stroke="#dc2626" strokeWidth="2.5" markerEnd="url(#arrowHead)" />
+                                  <text x="320" y="42" textAnchor="end" fill="#dc2626" fontSize="10" fontWeight="bold">Target Direction 🎯</text>
+                                </g>
+                              )}
+
+                              {current.id === 'pratyalidha' && (
+                                <g>
+                                  {/* Reflected Triangle */}
+                                  <polygon points="90,160 290,160 260,60" fill="rgba(59, 130, 246, 0.15)" stroke="#2563eb" strokeWidth="2.5" />
+                                  {/* Torso & Head leaning back */}
+                                  <circle cx="260" cy="45" r="14" fill="#dbeafe" stroke="#2563eb" strokeWidth="2" />
+                                  <text x="260" y="49" textAnchor="middle" fontSize="11">🏹</text>
+                                  {/* Bent Rear Knee */}
+                                  <circle cx="275" cy="115" r="5" fill="#2563eb" />
+                                  <line x1="260" y1="60" x2="275" y2="115" stroke="#2563eb" strokeWidth="3" />
+                                  <line x1="275" y1="115" x2="290" y2="160" stroke="#2563eb" strokeWidth="3" />
+                                  {/* Straight Extended Front Leg */}
+                                  <line x1="260" y1="60" x2="90" y2="160" stroke="#1d4ed8" strokeWidth="3" />
+                                  {/* Feet pads */}
+                                  <rect x="75" y="156" width="30" height="8" rx="4" fill="#64748b" />
+                                  <text x="90" y="174" textAnchor="middle" fill="#64748b" fontSize="9">Front (30%)</text>
+                                  <rect x="275" y="156" width="30" height="8" rx="4" fill="#1d4ed8" />
+                                  <text x="290" y="174" textAnchor="middle" fill="#1d4ed8" fontSize="9" fontWeight="bold">Rear (70%)</text>
+                                  {/* Center of Gravity Node */}
+                                  <circle cx="265" cy="100" r="6" fill="#3b82f6" stroke="#ffffff" strokeWidth="2" />
+                                  <text x="245" y="104" textAnchor="end" fill="#1d4ed8" fontSize="9" fontWeight="bold">CG (70% rear)</text>
+                                  {/* Arrow vector forward */}
+                                  <line x1="250" y1="50" x2="50" y2="50" stroke="#dc2626" strokeWidth="2.5" markerEnd="url(#arrowHead)" />
+                                  <text x="60" y="42" fill="#dc2626" fontSize="10" fontWeight="bold">Counter-Fire 🎯</text>
+                                </g>
+                              )}
+
+                              {current.id === 'samapada' && (
+                                <g>
+                                  {/* Parallel Vertical Rectangle */}
+                                  <rect x="160" y="60" width="60" height="100" fill="rgba(16, 185, 129, 0.15)" stroke="#059669" strokeWidth="2.5" />
+                                  {/* Torso & Head */}
+                                  <circle cx="190" cy="40" r="14" fill="#d1fae5" stroke="#059669" strokeWidth="2" />
+                                  <text x="190" y="44" textAnchor="middle" fontSize="11">🙏</text>
+                                  {/* Parallel legs */}
+                                  <line x1="175" y1="60" x2="175" y2="160" stroke="#059669" strokeWidth="3" />
+                                  <line x1="205" y1="60" x2="205" y2="160" stroke="#059669" strokeWidth="3" />
+                                  {/* Feet pads (1 palm-width apart) */}
+                                  <rect x="163" y="156" width="22" height="8" rx="4" fill="#059669" />
+                                  <rect x="195" y="156" width="22" height="8" rx="4" fill="#059669" />
+                                  <text x="190" y="176" textAnchor="middle" fill="#059669" fontSize="9" fontWeight="bold">50% Left | 50% Right</text>
+                                  {/* Center of Gravity Node */}
+                                  <circle cx="190" cy="110" r="6" fill="#10b981" stroke="#ffffff" strokeWidth="2" />
+                                  <text x="190" y="125" textAnchor="middle" fill="#047857" fontSize="9" fontWeight="bold">Symmetric Equilibrium</text>
+                                </g>
+                              )}
+
+                              {current.id === 'vaisakha' && (
+                                <g>
+                                  {/* Equilateral Trapezoid / Power Squat */}
+                                  <polygon points="110,160 270,160 230,85 150,85" fill="rgba(217, 119, 6, 0.15)" stroke="#d97706" strokeWidth="2.5" />
+                                  {/* Torso & Head */}
+                                  <circle cx="190" cy="65" r="14" fill="#fef3c7" stroke="#d97706" strokeWidth="2" />
+                                  <text x="190" y="69" textAnchor="middle" fontSize="11">⚔️</text>
+                                  {/* Outward bent knees */}
+                                  <circle cx="130" cy="120" r="5" fill="#d97706" />
+                                  <circle cx="250" cy="120" r="5" fill="#d97706" />
+                                  <line x1="160" y1="85" x2="130" y2="120" stroke="#d97706" strokeWidth="3" />
+                                  <line x1="130" y1="120" x2="110" y2="160" stroke="#d97706" strokeWidth="3" />
+                                  <line x1="220" y1="85" x2="250" y2="120" stroke="#d97706" strokeWidth="3" />
+                                  <line x1="250" y1="120" x2="270" y2="160" stroke="#d97706" strokeWidth="3" />
+                                  {/* Feet pads (wide base) */}
+                                  <rect x="95" y="156" width="30" height="8" rx="4" fill="#b45309" />
+                                  <rect x="255" y="156" width="30" height="8" rx="4" fill="#b45309" />
+                                  <text x="190" y="176" textAnchor="middle" fill="#b45309" fontSize="9" fontWeight="bold">Wide Power Base (3 Spans / ~2.5 ft)</text>
+                                  {/* Low Center of Gravity Node */}
+                                  <circle cx="190" cy="125" r="7" fill="#d97706" stroke="#ffffff" strokeWidth="2" />
+                                  <text x="190" y="142" textAnchor="middle" fill="#92400e" fontSize="9" fontWeight="bold">Ultra-Low CG (Iron Bow Power)</text>
+                                </g>
+                              )}
+
+                              {current.id === 'mandala' && (
+                                <g>
+                                  {/* Hexagonal / Circular 360 Pivot */}
+                                  <polygon points="190,50 240,85 245,130 220,160 160,160 135,130 140,85" fill="rgba(147, 51, 234, 0.12)" stroke="#9333ea" strokeWidth="2.5" />
+                                  {/* Circular rotation guide ring */}
+                                  <circle cx="190" cy="110" r="55" fill="none" stroke="#a855f7" strokeWidth="1.5" strokeDasharray="3 3" />
+                                  {/* Torso & Head */}
+                                  <circle cx="190" cy="45" r="14" fill="#f3e8ff" stroke="#9333ea" strokeWidth="2" />
+                                  <text x="190" y="49" textAnchor="middle" fontSize="11">🔄</text>
+                                  {/* Radial outward legs */}
+                                  <circle cx="145" cy="120" r="5" fill="#9333ea" />
+                                  <circle cx="235" cy="120" r="5" fill="#9333ea" />
+                                  <line x1="175" y1="80" x2="145" y2="120" stroke="#9333ea" strokeWidth="3" />
+                                  <line x1="145" y1="120" x2="160" y2="160" stroke="#9333ea" strokeWidth="3" />
+                                  <line x1="205" y1="80" x2="235" y2="120" stroke="#9333ea" strokeWidth="3" />
+                                  <line x1="235" y1="120" x2="220" y2="160" stroke="#9333ea" strokeWidth="3" />
+                                  {/* Feet pads (1 vitasti apart) */}
+                                  <rect x="145" y="156" width="25" height="8" rx="4" fill="#7e22ce" />
+                                  <rect x="210" y="156" width="25" height="8" rx="4" fill="#7e22ce" />
+                                  <text x="190" y="176" textAnchor="middle" fill="#7e22ce" fontSize="9" fontWeight="bold">1 Vitasti (~9 in) · 360° Rotational Pivot</text>
+                                  {/* Dynamic rotational arrow */}
+                                  <path d="M 235 90 A 55 55 0 0 1 235 130" fill="none" stroke="#7e22ce" strokeWidth="2" markerEnd="url(#arrowHead)" />
+                                  <path d="M 145 130 A 55 55 0 0 1 145 90" fill="none" stroke="#7e22ce" strokeWidth="2" markerEnd="url(#arrowHead)" />
+                                </g>
+                              )}
+                            </svg>
+                          </div>
+
+                          {/* Visual Text Blueprint Box */}
+                          <div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                              <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>
+                                Canonical Text Blueprint
+                              </span>
+                              <span style={{ fontSize: '0.74rem', color: '#94a3b8' }}>Vedic Stance Layout</span>
+                            </div>
+                            <pre className="dhanur-ascii-box">{current.textDiagram}</pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+
+              {/* MODULE 2: THE LINGUISTIC CONNECTION (THE MOUTH AS A BOW) */}
+              <div style={{ background: '#fdf4ff', border: '1.5px solid #f0abfc', borderRadius: '16px', padding: '1.5rem', marginBottom: '2.5rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                  <span style={{ fontSize: '1.4rem' }}>🏹</span>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#86198f', margin: 0 }}>
+                    2. The Linguistic Connection: The Mouth as a Bow (Dhanuṣ &amp; Sanskrit Phonetics)
+                  </h3>
+                </div>
+                <p style={{ margin: '0 0 1.25rem', fontSize: '0.92rem', color: '#4a044e', lineHeight: 1.6 }}>
+                  In Sanskrit grammar (<em>Vyākaraṇa</em>) and phonetics (<em>Śikṣā</em>), archery is the supreme physical metaphor for how speech sounds are generated.
+                  The vocal tract is mapped directly onto the anatomy of a flexed bow:
+                </p>
+
+                {/* Anatomy Analogy Grid */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem', marginBottom: '1.25rem' }}>
+                  <div style={{ background: '#ffffff', border: '1px solid #f5d0fe', borderRadius: '10px', padding: '0.75rem 1rem' }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#a21caf', textTransform: 'uppercase' }}>Bow Stave (धनुर्दण्डः)</div>
+                    <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#701a75', marginTop: '0.15rem' }}>The Hard Palate (Mūrdhan)</div>
+                    <div style={{ fontSize: '0.78rem', color: '#64748b' }}>Curved ceiling of the mouth acting as the rigid bow frame.</div>
+                  </div>
+                  <div style={{ background: '#ffffff', border: '1px solid #f5d0fe', borderRadius: '10px', padding: '0.75rem 1rem' }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#a21caf', textTransform: 'uppercase' }}>Bowstring (ज्या / मौर्वी)</div>
+                    <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#701a75', marginTop: '0.15rem' }}>The Tongue (Jihvā)</div>
+                    <div style={{ fontSize: '0.78rem', color: '#64748b' }}>Elastic muscle that curls back under tension and snaps forward.</div>
+                  </div>
+                  <div style={{ background: '#ffffff', border: '1px solid #f5d0fe', borderRadius: '10px', padding: '0.75rem 1rem' }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#a21caf', textTransform: 'uppercase' }}>Drawing Tension (कर्ष-शक्तिः)</div>
+                    <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#701a75', marginTop: '0.15rem' }}>Vocal Breath (Prāṇa)</div>
+                    <div style={{ fontSize: '0.78rem', color: '#64748b' }}>Thoracic air compression building behind the palatal closure.</div>
+                  </div>
+                  <div style={{ background: '#ffffff', border: '1px solid #f5d0fe', borderRadius: '10px', padding: '0.75rem 1rem' }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#a21caf', textTransform: 'uppercase' }}>Sonic Arrows (ध्वनि-शराः)</div>
+                    <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#701a75', marginTop: '0.15rem' }}>Mūrdhanya Consonants</div>
+                    <div style={{ fontSize: '0.78rem', color: '#64748b' }}>The retroflex series: ट (ṭa), ठ (ṭha), ड (ḍa), ढ (ḍha), ण (ṇa).</div>
+                  </div>
+                </div>
+
+                {/* Interactive Retroflex Consonants Soundboard */}
+                <div style={{ background: '#ffffff', border: '1px solid #f5d0fe', borderRadius: '12px', padding: '1.25rem' }}>
+                  <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#86198f', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                    🔊 Interactive Mūrdhanya Soundboard (Click to hear each sound-arrow release):
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
+                    {MURDHANYA_PHONETICS.map((ph) => {
+                      const isSelected = activePhoneticLetter === ph.letterIast;
+                      return (
+                        <button
+                          key={ph.letterIast}
+                          type="button"
+                          className={`dhanur-phonetic-btn ${isSelected ? 'active' : ''}`}
+                          onClick={() => {
+                            setActivePhoneticLetter(ph.letterIast);
+                            playPronunciation(ph.letterSa);
+                          }}
+                        >
+                          <span style={{ fontFamily: "'Noto Serif Devanagari', serif", fontSize: '1.6rem', fontWeight: 800, color: isSelected ? '#c2410c' : '#1e293b' }}>
+                            {ph.letterSa}
+                          </span>
+                          <span style={{ fontSize: '0.82rem', fontWeight: 700, color: isSelected ? '#ea580c' : '#64748b' }}>
+                            {ph.letterIast}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Active Phonetic Letter Deep Dive */}
+                  {(() => {
+                    const sel = MURDHANYA_PHONETICS.find((p) => p.letterIast === activePhoneticLetter) || MURDHANYA_PHONETICS[0];
+                    return (
+                      <div style={{ background: '#faf5ff', border: '1px solid #e9d5ff', borderRadius: '10px', padding: '1rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
+                          <span style={{ fontFamily: "'Noto Serif Devanagari', serif", fontSize: '1.4rem', fontWeight: 800, color: '#7e22ce' }}>
+                            {sel.letterSa} ({sel.letterIast})
+                          </span>
+                          <span style={{ background: '#f3e8ff', color: '#6b21a8', padding: '0.2rem 0.6rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700 }}>
+                            {sel.phoneticName}
+                          </span>
+                          <span style={{ background: '#fce7f3', color: '#9d174d', padding: '0.2rem 0.6rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700 }}>
+                            {sel.sanskritClass}
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => playPronunciation(sel.letterSa)}
+                            style={{ background: '#e9d5ff', border: 'none', color: '#581c87', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 700, cursor: 'pointer' }}
+                          >
+                            🔊 Play Sound
+                          </button>
+                        </div>
+                        <div style={{ fontSize: '0.86rem', color: '#374151', lineHeight: 1.5, marginBottom: '0.4rem' }}>
+                          <strong>Tongue &amp; Palate Mechanics:</strong> {sel.biomechanics}
+                        </div>
+                        <div style={{ fontSize: '0.84rem', color: '#7e22ce', fontWeight: 600 }}>
+                          <strong>Acoustic Arrow Type:</strong> {sel.acousticArrow}
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
+              </div>
+
+              {/* MODULE 3: THE VEDIC MATH CONNECTION (BALLISTICS & ŚARA-ABHYĀSA) */}
+              <div style={{ background: '#f0fdf4', border: '1.5px solid #bbf7d0', borderRadius: '16px', padding: '1.5rem', marginBottom: '1.75rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                  <span style={{ fontSize: '1.4rem' }}>📐</span>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#166534', margin: 0 }}>
+                    3. The Vedic Math Connection: Ballistics &amp; Trajectory Triangles
+                  </h3>
+                </div>
+                <p style={{ margin: '0 0 1.25rem', fontSize: '0.92rem', color: '#14532d', lineHeight: 1.6 }}>
+                  Vedic archers were master calculators of ballistics. Hitting an elevated target required computing the diagonal hypotenuse
+                  using the exact principles recorded in Baudhāyana’s <em>Śulba Sūtra 1.48</em>:
+                </p>
+
+                {(() => {
+                  const cDist = Math.sqrt(dhanurDistA * dhanurDistA + dhanurElevB * dhanurElevB);
+                  const angleDeg = (Math.atan2(dhanurElevB, dhanurDistA) * 180) / Math.PI;
+                  const flightTime = cDist / 65; // ~65 m/s arrow velocity
+                  const dropMeters = 0.5 * 9.8 * flightTime * flightTime;
+                  const adjustedAim = dhanurElevB + dropMeters;
+
+                  return (
+                    <div style={{ background: '#ffffff', border: '1px solid #bbf7d0', borderRadius: '12px', padding: '1.25rem' }}>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem', marginBottom: '1.25rem' }}>
+                        {/* Sliders */}
+                        <div>
+                          <div style={{ marginBottom: '1rem' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem' }}>
+                              <span>Pārśvamānī (Ground Distance a):</span>
+                              <strong style={{ color: '#15803d' }}>{dhanurDistA} meters</strong>
+                            </div>
+                            <input
+                              type="range"
+                              min="10"
+                              max="100"
+                              step="5"
+                              value={dhanurDistA}
+                              onChange={(e) => setDhanurDistA(parseInt(e.target.value, 10))}
+                              style={{ width: '100%', accentColor: '#16a34a' }}
+                            />
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#94a3b8' }}>
+                              <span>10 m</span>
+                              <span>Close Skirmish</span>
+                              <span>100 m (Maximum Range)</span>
+                            </div>
+                          </div>
+
+                          <div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem' }}>
+                              <span>Tiryaṅmānī (Target Elevation b):</span>
+                              <strong style={{ color: '#0369a1' }}>{dhanurElevB} meters</strong>
+                            </div>
+                            <input
+                              type="range"
+                              min="0"
+                              max="40"
+                              step="1"
+                              value={dhanurElevB}
+                              onChange={(e) => setDhanurElevB(parseInt(e.target.value, 10))}
+                              style={{ width: '100%', accentColor: '#0284c7' }}
+                            />
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#94a3b8' }}>
+                              <span>0 m (Ground Level)</span>
+                              <span>20 m (Rampart)</span>
+                              <span>40 m (High Tower)</span>
+                            </div>
+                          </div>
+
+                          {/* Historical Presets */}
+                          <div style={{ marginTop: '1rem' }}>
+                            <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748b', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
+                              Historical Presets:
+                            </div>
+                            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                              <button
+                                type="button"
+                                onClick={() => { setDhanurDistA(25); setDhanurElevB(12); }}
+                                style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', padding: '0.25rem 0.55rem', borderRadius: '6px', fontSize: '0.74rem', cursor: 'pointer', fontWeight: 600 }}
+                              >
+                                🎯 Arjuna's Matsya-Vedha (25m, 12m)
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => { setDhanurDistA(50); setDhanurElevB(0); }}
+                                style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', padding: '0.25rem 0.55rem', borderRadius: '6px', fontSize: '0.74rem', cursor: 'pointer', fontWeight: 600 }}
+                              >
+                                ⚔️ Cavalry Flat Shot (50m, 0m)
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => { setDhanurDistA(70); setDhanurElevB(25); }}
+                                style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', padding: '0.25rem 0.55rem', borderRadius: '6px', fontSize: '0.74rem', cursor: 'pointer', fontWeight: 600 }}
+                              >
+                                🏰 Fortress Siege (70m, 25m)
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Calculated Output Cards */}
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.75rem' }}>
+                          <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '0.85rem' }}>
+                            <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 700 }}>Akṣṇayā Rajjuḥ (Line of Sight)</div>
+                            <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#16a34a' }}>
+                              {cDist.toFixed(2)} m
+                            </div>
+                            <div style={{ fontSize: '0.72rem', color: '#475569', marginTop: '0.2rem' }}>
+                              c = √({dhanurDistA}² + {dhanurElevB}²)
+                            </div>
+                          </div>
+
+                          <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '0.85rem' }}>
+                            <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 700 }}>Angle of Release (θ)</div>
+                            <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#0284c7' }}>
+                              {angleDeg.toFixed(1)}°
+                            </div>
+                            <div style={{ fontSize: '0.72rem', color: '#475569', marginTop: '0.2rem' }}>
+                              arctan({dhanurElevB} / {dhanurDistA})
+                            </div>
+                          </div>
+
+                          <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '0.85rem' }}>
+                            <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 700 }}>Arrow Flight Time</div>
+                            <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#9333ea' }}>
+                              {(flightTime * 1000).toFixed(0)} ms
+                            </div>
+                            <div style={{ fontSize: '0.72rem', color: '#475569', marginTop: '0.2rem' }}>
+                              at ~65 m/s release
+                            </div>
+                          </div>
+
+                          <div style={{ background: '#fef3c7', border: '1px solid #fde68a', borderRadius: '10px', padding: '0.85rem' }}>
+                            <div style={{ fontSize: '0.72rem', color: '#92400e', fontWeight: 700 }}>Śara-Abhyāsa Drop</div>
+                            <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#b45309' }}>
+                              +{dropMeters.toFixed(2)} m
+                            </div>
+                            <div style={{ fontSize: '0.72rem', color: '#78350f', marginTop: '0.2rem' }}>
+                              Aim point: {adjustedAim.toFixed(2)} m
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div style={{ background: '#f0fdf4', borderLeft: '3px solid #16a34a', padding: '0.65rem 0.85rem', borderRadius: '0 8px 8px 0', fontSize: '0.85rem', color: '#166534', lineHeight: 1.5 }}>
+                        <strong>Tactical Ballistic Rule:</strong> In the <em>Śara-Abhyāsa</em> (Arrow Practice Grid), archers calibrated for gravity drop by aiming higher than the target by exactly $\Delta y = \frac{1}{2} g t^2$. For an elevation of {dhanurElevB}m at {dhanurDistA}m range, aim {dropMeters.toFixed(2)}m above the target ({adjustedAim.toFixed(2)}m total height) using the <strong>{dhanurElevB > 15 ? 'Vaiśākha (Power Squat)' : 'Ālīḍha (Forward Attack)'}</strong> stance.
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+
+              {/* Masterclass Link CTA */}
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', background: 'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)', border: '1.5px solid #fed7aa', borderRadius: '14px', padding: '1.25rem 1.5rem' }}>
+                <div>
+                  <div style={{ fontWeight: 800, color: '#9a3412', fontSize: '1rem' }}>
+                    📖 Read the Scholarly Treatise on Dhanurveda
+                  </div>
+                  <div style={{ fontSize: '0.85rem', color: '#64748b', marginTop: '0.2rem' }}>
+                    Explore the complete 10-minute masterclass on Dhanurveda, the 5 combat stances, Mūrdhanya phonetics, and Yogic Dhāraṇā.
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  className="article-interactive-cta"
+                  style={{ background: '#ea580c', color: '#ffffff', border: 'none', padding: '0.65rem 1.25rem', borderRadius: '8px', fontWeight: 800, cursor: 'pointer' }}
+                  onClick={() => {
+                    selectArticle('dhanurveda-geometry-phonetics');
+                    setActiveTab('articles');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  Read Full Masterclass Treatise →
+                </button>
               </div>
             </div>
 

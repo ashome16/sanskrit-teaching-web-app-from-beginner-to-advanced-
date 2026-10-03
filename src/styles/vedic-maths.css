@@ -3598,3 +3598,90 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* ==========================================================================
+   DHANURVEDA: THE GEOMETRY OF ARCHERY, PHONETICS & BALLISTICS
+   ========================================================================== */
+.dhanur-studio-card {
+  margin-top: 2.5rem;
+  background: #ffffff;
+  border: 2px solid #fed7aa;
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(180, 83, 9, 0.07);
+}
+
+.dhanur-stance-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 1.15rem;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.dhanur-stance-btn:hover {
+  border-color: #f97316;
+  background: #fff7ed;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.12);
+}
+
+.dhanur-stance-btn.active {
+  border-color: #ea580c;
+  background: #fff7ed;
+  box-shadow: 0 4px 16px rgba(234, 88, 12, 0.18);
+}
+
+.dhanur-phonetic-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 68px;
+  padding: 0.75rem 0.5rem;
+  border-radius: 12px;
+  border: 2px solid #fed7aa;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  user-select: none;
+}
+
+.dhanur-phonetic-btn:hover {
+  border-color: #ea580c;
+  background: #fff7ed;
+  transform: scale(1.05);
+}
+
+.dhanur-phonetic-btn.active {
+  border-color: #c2410c;
+  background: #ffedd5;
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.25);
+}
+
+.dhanur-ascii-box {
+  background: #0f172a;
+  color: #f8fafc;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  padding: 1.25rem 1.4rem;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+@media (max-width: 768px) {
+  .dhanur-studio-card {
+    padding: 1.25rem;
+  }
+}
+

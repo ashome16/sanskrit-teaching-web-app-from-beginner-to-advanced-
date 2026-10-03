@@ -1234,6 +1234,108 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Baudhāyana explicitly listed the fundamental integer triples (3:4:5, 5:12:13, 8:15:17, 12:35:37) in Śulba Sūtra 1.49.',
       'The number 2 is the unique even prime, acting as the fundamental bridge between even symmetry and prime indivisibility.',
       'Agnicayana fire altar construction pioneered the practical application of composite and prime area geometries.'
+    ],
+    next: { id: 'dhanurveda-geometry-phonetics', label: 'Dhanurveda: The Sacred Science of the Bow' }
+  },
+  {
+    id: 'dhanurveda-geometry-phonetics',
+    slug: 'dhanurveda-geometry-phonetics',
+    title: 'Dhanurveda: The Sacred Science of the Bow — Phonetics, Ballistics & The 5 Geometric Stances',
+    sanskritTitle: '॥ धनुर्वेदः शब्दोत्पत्तिः ज्यामितीय-स्थानानि च ॥',
+    subtitle: 'How ancient India synthesized Vyākaraṇa phonetics (the mouth as a bow), Śulba Sūtra ballistics triangles, and the 5 martial postures.',
+    readingTime: '10 min read',
+    badge: 'Applied Upaveda & Ballistics',
+    prequel: { id: 'baudhayana-even-prime-geometry', label: 'Baudhāyana, Sacred Triples & The Even Prime' },
+    sections: [
+      {
+        title: 'The Sacred Upaveda: Overview & The Four Structural Pillars',
+        sanskritTitle: 'धनुर्वेदस्य स्वरूपम् · चत्वारः स्तम्भाः',
+        paragraphs: [
+          'In ancient India, archery was never regarded merely as physical combat or casual recreation. It was revered as a sacred, systematic science possessing its own dedicated Upaveda (applied Vedic treatise) affiliated with the Yajurveda, known as Dhanurveda (literally, "The Science of the Bow").',
+          'Foundational manuals such as the Vasiṣṭha Dhanurveda Saṃhitā and the Agni Purāṇa codify archery through an interdisciplinary synthesis of biomechanics, trajectory geometry, phonetics, and yogic concentration.',
+          'According to the Vasiṣṭha Dhanurveda, the education of an archer rested upon four rigorous structural pillars that mirror classical Vedic pedagogy:\n1. स्थान (Sthāna / The Stance): The geometric grounding and triangular alignment of the feet to balance center of gravity and withstand string recoil.\n2. छुरिका / मुष्टि (Churikā / Muṣṭi / The Grip): The physics of finger tension, mechanical drawing leverage, and thumb-ring release torque.\n3. मुक्त-विमुक्त (Mukta-Vimukta / The Release): The exact microsecond of arrow discharge coordinated with breath suspension (Prāṇāyāma).\n4. लक्ष्य-वेध (Lakṣya-Vedha / Targeting & Penetration): Absolute, unbroken mental focus upon the target—the practical combat genesis of Yogic Dhāraṇā.'
+        ],
+        terms: [
+          { sa: 'धनुर्वेदः', iast: 'Dhanurvedaḥ', gloss: 'Applied Vedic science of archery and spatial ballistics' },
+          { sa: 'स्थानम्', iast: 'Sthānam', gloss: 'Geometric stance / physical grounding position' },
+          { sa: 'लक्ष्यवेधः', iast: 'Lakṣya-vedhaḥ', gloss: 'Penetrative targeting and one-pointed focus' }
+        ],
+        highlight: 'Dhanurveda unified physical mechanics, mathematical ballistics, and mental discipline into a single sacred Upaveda.'
+      },
+      {
+        title: 'The Linguistic Connection: The Mouth as a Bow (Dhanuṣ & Phonetics)',
+        sanskritTitle: 'शब्दार्चिः · मुखं धनुः जिह्वा च मौर्वी',
+        paragraphs: [
+          'For students of Sanskrit Grammar (Vyākaraṇa), archery is far more than a military pursuit—it provides the supreme classical physical metaphor for how human speech is generated.',
+          'In Sanskrit phonetics (Śikṣā), the human mouth is conceptualized as a flexed composite bow (Dhanuṣ):\n• The curved dome of the palate (Mūrdhan) serves as the rigid bow stave.\n• The muscular, flexible tongue acts as the elastic bowstring (Jyā or Maurvī).\n• The acoustic breath (Prāṇa) provides the drawing tension.',
+          'This anatomical bow comes alive in the production of the Mūrdhanya (Retroflex) consonants: ट (ṭa), ठ (ṭha), ड (ḍa), ढ (ḍha), and ण (ṇa). To articulate these sounds correctly, the tongue tip must curl upward and backward against the highest dome of the palate, drawing tension like a notched arrow, before snapping forward against the alveolar ridge to discharge an acoustic shockwave into the vocal tract.',
+          'Practicing Sanskrit phonetics was understood as an internal form of archery, where the spoken word was a precisely aimed sonic missile.'
+        ],
+        terms: [
+          { sa: 'मूर्धन्य', iast: 'Mūrdhanya', gloss: 'Retroflex consonants produced at the roof of the palate' },
+          { sa: 'ज्या', iast: 'Jyā', gloss: 'Bowstring; also the Sanskrit mathematical term for the sine chord' },
+          { sa: 'मौर्वी', iast: 'Maurvī', gloss: 'Bowstring fashioned from bow-string hemp (Sansevieria)' }
+        ],
+        highlight: '॥ मुखं धनुः जिह्वा ज्या वर्णाः शराः स्मृताः ॥ — The mouth is the bow, the tongue is the string, and the letters (Varṇas) are the arrows released into speech.'
+      },
+      {
+        title: 'The Vedic Math Connection: Ballistics & Trajectory Triangles',
+        sanskritTitle: 'प्रक्षेप्य-गणितम् · शर-अभ्यास-मण्डलम्',
+        paragraphs: [
+          'Archery in ancient India was directly grounded in the spatial geometry of the Śulba Sūtras. Ancient archers had to compute trajectory, gravitational drop, and wind velocity in real time:',
+          '1. The Triangle of Release: To strike an elevated or moving target (such as the famous Matsya-Vedha spinning fish eye challenge won by Arjuna in the Mahābhārata), archers computed the line-of-sight hypotenuse using the exact Baudhāyana Śulba Sūtra 1.48 theorem:\n• Pārśvamānī (पार्श्वमानी): The horizontal distance along the ground (base a).\n• Tiryaṅmānī (तिर्यङ्मानी): The vertical elevation of the target or altitude compensation (height b).\n• Akṣṇayā Rajjuḥ (अक्ष्णया रज्जुः): The direct line of sight / arrow flight path (diagonal c = √(a² + b²)).',
+          '2. The Śara-Abhyāsa (Arrow Practice Grid): Trainees calibrated their bows on concentric circular sand courts inscribed with parabolic measurement lines. By observing arrow grouping drops over measured distances (Dhanus / spans), archers used linear proportional interpolation to adjust aim for the weight of varying iron arrowheads (Śara-mukha).'
+        ],
+        terms: [
+          { sa: 'पार्श्वमानी', iast: 'Pārśvamānī', gloss: 'Horizontal base side in Śulba geometry' },
+          { sa: 'तिर्यङ्मानी', iast: 'Tiryaṅmānī', gloss: 'Transverse vertical side in Śulba geometry' },
+          { sa: 'अक्ष्णया रज्जुः', iast: 'Akṣṇayā rajjuḥ', gloss: 'Diagonal chord / hypotenuse line of sight' }
+        ],
+        highlight: 'Hypotenuse² = Base Distance² + Target Elevation². Vedic archers solved trajectory ballistics using Baudhāyana’s Śulba Sūtra 1.48.'
+      },
+      {
+        title: 'The Five Geometric Stances (Sthānas) of Dhanurveda',
+        sanskritTitle: 'पञ्च ज्यामितीय-स्थानानि · अग्निपुराणं वसिष्ठधनुर्वेदश्च',
+        paragraphs: [
+          'The Agni Purāṇa and Vasiṣṭha Dhanurveda Saṃhitā codify five primary shooting stances (Sthāna). Each posture is a deliberate geometric polygon designed to balance kinetic energy, center of gravity, and string recoil:',
+          '१. आलीढ स्थानम् (Ālīḍha Sthānam) — The Forward Bow Stance\n• Geometric Form: Right-angled scalene triangle (📐).\n• Physical Alignment: Right knee bent deeply forward, left leg stretched straight behind. Feet spaced approximately 3 cubits (~4.5 feet / ~1.37 m) apart.\n• Combat Physics: Shifts 70% of body mass to the front leg, transforming the torso into a rigid forward wedge. Used for launching aggressive, high-velocity heavy armor-piercing arrows into advancing enemy ranks.',
+          '२. प्रत्यालीढ स्थानम् (Pratyālīḍha Sthānam) — The Defensive Wedge Stance\n• Geometric Form: Reflected / inverted right-angled triangle (📐).\n• Physical Alignment: Left knee drawn back and bent deeply, right leg extended forward toward target. Feet 3 cubits apart.\n• Combat Physics: Pulls center of gravity backward (70% rear weight). Acts as a shock-absorbing defensive anchor, allowing the warrior to duck incoming missiles while keeping string tension primed to return immediate counter-fire.',
+          '३. समपद स्थानम् (Samapada Sthānam) — The Symmetrical Parallel Stance\n• Geometric Form: Symmetrical vertical rectangle / square (█).\n• Physical Alignment: Both feet placed flat and parallel, exactly one palm-width apart. Spine erect and perpendicular to the earth.\n• Combat Physics: Absolute 50/50 bilateral weight distribution. Used during ceremonial salutations (Praṇāma), mental centering (Dhyāna), and calibrating breath before entering the shooting field.',
+          '४. वैशाख स्थानम् (Vaiśākha Sthānam) — The Equilateral Power Stance\n• Geometric Form: Equilateral triangle / isosceles trapezoid (⏃).\n• Physical Alignment: Feet spread wide apart—three spans (~2.5 feet / ~75 cm). Both knees flexed outward into a firm half-squat.\n• Combat Physics: Drops the pelvic center of gravity dramatically. Essential for anchoring the thigh and core muscles to draw massive, stiff composite and iron bows (Loha-Dhanuṣ) exceeding 80–120 lbs draw weight.',
+          '५. मण्डल स्थानम् (Maṇḍala Sthānam) — The Circular Pivot Stance\n• Geometric Form: Circle / regular hexagon (⬡).\n• Physical Alignment: Feet spaced one Vitasti (~9 inches) apart, pointing outward; knees bent wide to create a round silhouette.\n• Combat Physics: Provides seamless 360-degree rotational agility. Chosen by chariot archers (Rathis) and warriors encircled by multiple foes, enabling instant torso swivel without tangling the legs.'
+        ],
+        terms: [
+          { sa: 'आलीढ', iast: 'Ālīḍha', gloss: 'Forward offensive stance with 70% weight on front leg' },
+          { sa: 'प्रत्यालीढ', iast: 'Pratyālīḍha', gloss: 'Defensive counter-firing stance with 70% weight on rear leg' },
+          { sa: 'समपद', iast: 'Samapada', gloss: 'Parallel, balanced stance for centering and salutations' },
+          { sa: 'वैशाख', iast: 'Vaiśākha', gloss: 'Wide equilateral squat for drawing heavy iron bows' },
+          { sa: 'मण्डल', iast: 'Maṇḍala', gloss: 'Circular 360-degree pivot stance for chariot archers' }
+        ],
+        highlight: 'The 5 stances distribute body weight and ground geometry to balance recoil and kinetic force: Scalene Triangle (Ālīḍha), Inverted Triangle (Pratyālīḍha), Rectangle (Samapada), Trapezoid (Vaiśākha), and Circle (Maṇḍala).'
+      },
+      {
+        title: 'Etymological Roots & The Archer’s Yoga (Dhāraṇā)',
+        sanskritTitle: 'स्था-धातु-व्युत्पत्तिः · योगशास्त्रे धारणा',
+        paragraphs: [
+          'The linguistic and philosophical roots of Dhanurveda reveal profound links to modern language and yogic psychology:',
+          '1. Linguistic Kinship of Sthāna: The word स्थान (Sthāna) derives directly from the Sanskrit root स्था (Sthā - to stand, remain firm). Through the Proto-Indo-European root *steh₂-, this single Sanskrit verbal root generated Latin stāre, Greek histēmi, Old English standan, and modern English stance, station, state, status, static, and constant.',
+          '2. Archery as Active Yoga: In the Mahābhārata, when Droṇācārya tests the young Pāṇḍava and Kaurava princes on the artificial wooden bird (Bhāsa) perched in a distant tree, every warrior except Arjuna describes seeing the sky, the tree, and the bird’s body. Arjuna famously replies: "I see neither tree nor bird, but only the pupil of its right eye." This supreme state of Lakṣya-Vedha is nothing other than Dhāraṇā (one-pointed focus of consciousness) as formulated by Patañjali in Yoga Sūtra 3.1: "Deśa-bandhaś cittasya dhāraṇā" (Dhāraṇā is the binding of consciousness to a single locus).'
+        ],
+        terms: [
+          { sa: 'स्था', iast: 'Sthā', gloss: 'Verbal root "to stand firm", origin of "stance" and "station"' },
+          { sa: 'धारणा', iast: 'Dhāraṇā', gloss: 'One-pointed focus of attention; the 6th limb of Patañjali Yoga' },
+          { sa: 'एकाग्रता', iast: 'Ekāgratā', gloss: 'Unbroken concentration upon a single object' }
+        ]
+      }
+    ],
+    quote: 'In the Vedic world, the warrior and the mathematician walked the same path: where feet draw the triangles of the Śulba Sūtras, the palate flexes the bow of phonetics, and the mind strikes the target with the laser focus of Dhāraṇā.',
+    keyTakeaways: [
+      'Dhanurveda is a classical Upaveda synthesizing martial biomechanics, Śulba geometry, and spiritual focus.',
+      'Sanskrit Vyākaraṇa uses the mouth as a bow: palate as frame, tongue as string, releasing Mūrdhanya retroflex consonants (ट, ठ, ड, ढ, ण).',
+      'Ballistic trajectories map directly to Baudhāyana Śulba Sūtra 1.48: Pārśvamānī (base), Tiryaṅmānī (height), Akṣṇayā Rajjuḥ (hypotenuse line of sight).',
+      'The 5 Sthānas (Ālīḍha, Pratyālīḍha, Samapada, Vaiśākha, Maṇḍala) exploit precise geometric polygons to optimize center of gravity and string recoil.',
+      'The Sanskrit root Sthā (स्था) is the direct ancestor of English "stance", "station", "state", and "constant".',
+      'Lakṣya-Vedha (target focus) in Dhanurveda represents the martial realization of Yogic Dhāraṇā (one-pointed attention).'
     ]
   },
 ];
