@@ -14710,4 +14710,348 @@ export const WORKSHEETS: Worksheet[] = [
       }
     ]
   },
+// ==========================================
+  // GRADE 9 CH 7 WORKSHEET 1: Grammatical Shifts & Suffix Application (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch7-ws1",
+    title: "Worksheet 1: Grammatical Shifts & Suffix Application (10 Questions)",
+    titleSanskrit: "सप्तमः पाठः कार्यपत्रिका १: व्याकरण-प्रश्नावली प्रत्ययाः सन्धयश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Master Ktavatu active past participles, Sandhi disjunctions, suffix separations, and modifier-noun agreements based on Chapter 7.",
+    sections: [
+      {
+        sectionTitle: "Section A: Grammatical Shifts & Suffix Application",
+        sectionTitleSanskrit: "खण्डः 'क' · प्रत्ययाः सन्धिच्छेदः पदपरिचयश्च",
+        instructions: "Apply Ktavatu participles, solve sandhi splits, and identify grammatical attributes.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Combine Root + Suffix: पठ् + क्तवतु (Masculine Singular) = ______",
+            questionSanskrit: "क्तवतु-प्रत्ययं योजयत: पठ् + क्तवतु (पुंलिङ्ग, एकवचनम्) $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "पठितवान्",
+            explanation: "पठ् + क्तवतु पुंलिङ्गे 'पठितवान्' भवति।"
+          },
+          {
+            num: 2,
+            question: "Combine Root + Suffix: कृ + क्तवतु (Feminine Singular) = ______",
+            questionSanskrit: "क्तवतु-प्रत्ययं योजयत: कृ + क्तवतु (स्त्रीलिङ्ग, एकवचनम्) $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "कृतवती",
+            explanation: "कृ + क्तवतु स्त्रीलिङ्गे नदीवत् 'कृतवती' भवति।"
+          },
+          {
+            num: 3,
+            question: "Combine Root + Suffix: खाद् + क्तवतु (Neuter Singular) = ______",
+            questionSanskrit: "क्तवतु-प्रत्ययं योजयत: खाद् + क्तवतु (नपुंसकलिङ्ग, एकवचनम्) $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "खादितवत्",
+            explanation: "खाद् + क्तवतु नपुंसकलिङ्गे जगद्वत् 'खादितवत्' भवति।"
+          },
+          {
+            num: 4,
+            question: "Disjoin Sandhi: 'प्राज्ञस्तथापायं' = ______ + ______ + ______",
+            questionSanskrit: "सन्धिविच्छेदं कुरुत: प्राज्ञस्तथापायं $\\rightarrow$ ______ + ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्राज्ञः + तथा + अपायम् (विसर्ग-सत्वं दीर्घसन्धिः च)।",
+            explanation: "प्राज्ञः + तथा = प्राज्ञस्तथा (विसर्ग-सत्वम्); तथा + अपायम् = तथापायम् (सवर्णदीर्घ-सन्धिः)।"
+          },
+          {
+            num: 5,
+            question: "Disjoin Sandhi: 'तावन्नाप्नोति' = ______ + ______ + ______",
+            questionSanskrit: "सन्धिविच्छेदं कुरुत: तावन्नाप्नोति $\\rightarrow$ ______ + ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "तावत् + न + आप्नोति (अनुनासिक-सन्धिः दीर्घसन्धिः च)।",
+            explanation: "तावत् + न = तावन्न (अनुनासिकसन्धिः); न + आप्नोति = नाप्नोति (दीर्घसन्धिः)।"
+          },
+          {
+            num: 6,
+            question: "Disjoin Sandhi: 'देशान्तरम्' = ______ + ______",
+            questionSanskrit: "सन्धिविच्छेदं कुरुत: देशान्तरम् $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "देशात् + अन्तरम् (जश्त्व-सन्धिः) अथवा देश + अन्तरम् (दीर्घसन्धिः)।",
+            explanation: "देशात् + अन्तरम् = देशान्तरम्।"
+          },
+          {
+            num: 7,
+            question: "Convert Past Tense Verb to Ktavatu Participle: 'राजपुरुषाः पापबुद्धिं अदण्डयन्।'",
+            questionSanskrit: "भूतकालिक-क्तवतु-प्रयोगेण परिवर्तयत: राजपुरुषाः पापबुद्धिं अदण्डयन्। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "राजपुरुषाः पापबुद्धिं दण्डितवन्तः।",
+            explanation: "कर्तृपदं 'राजपुरुषाः' बहुवचने अस्ति, अतः क्तवतु-रूपमपि पुंलिङ्ग-बहुवचने 'दण्डितवन्तः' भविष्यति।"
+          },
+          {
+            num: 8,
+            question: "Isolate Root and Suffix in 'वञ्चयित्वा':",
+            questionSanskrit: "प्रकृति-प्रत्यय-विभागं कुरुत: 'वञ्चयित्वा' $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "√वञ्च् + क्त्वा (णिच् + क्त्वा)।",
+            explanation: "वञ्च् धातोः णिजन्त-रूपेण सह क्त्वा-प्रत्ययः प्रयुक्तः।"
+          },
+          {
+            num: 9,
+            question: "Identify the substantive noun (विशेष्यपदम्) in: 'प्रहृष्टमनाः पापबुद्धिः'",
+            questionSanskrit: "'प्रहृष्टमनाः पापबुद्धिः' इत्यत्र विशेष्यपदं किम् अस्ति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "पापबुद्धिः (प्रहृष्टमनाः विशेषणम् अस्ति)।",
+            explanation: "पापबुद्धिः विशेष्यपदम्, यस्य गुणं 'प्रहृष्टमनाः' इति विशेषणपदं वर्णयति।"
+          },
+          {
+            num: 10,
+            question: "Explain the gender and number agreement rule for Ktavatu participles:",
+            questionSanskrit: "क्तवतु-प्रत्ययान्तपदानां लिङ्गं, वचनं, पुरुषश्च कस्य अनुसारेण भवति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "कर्तुः (Subject) अनुसारेण भवति।",
+            explanation: "कर्तरि वाच्ये क्तवतु-प्रत्ययान्तपदानि कर्तुः लिङ्ग-वचनानुसारिणि भवन्ति।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 CH 7 WORKSHEET 2: Syntax Construction & Case Identification (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch7-ws2",
+    title: "Worksheet 2: Syntax Construction & Case Identification (10 Questions)",
+    titleSanskrit: "सप्तमः पाठः कार्यपत्रिका २: वाक्यरचना कारकं विभक्ति-परिचयश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Form interrogative sentences, translate expressions into Sanskrit, rectify case errors, and identify compound disjunctions.",
+    sections: [
+      {
+        sectionTitle: "Section A: Syntax Construction & Case Identification",
+        sectionTitleSanskrit: "खण्डः 'क' · प्रश्ननिर्माणम् अनुवादः विभक्तिशोधनं च",
+        instructions: "Construct questions using underlined clues, translate into Sanskrit, and analyze compound words.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Frame Question: 'ततस्तौ गुरुजनानाम् अनुमतिं प्राप्य देशान्तरं प्रस्थितौ।' (Underlined: गुरुजनानाम्)",
+            questionSanskrit: "प्रश्ननिर्माणं कुरुत: ततस्तौ [गुरुजनानाम्] अनुमतिं प्राप्य देशान्तरं प्रस्थितौ।",
+            marks: 2,
+            type: "short_ans",
+            answer: "ततस्तौ केषाम् अनुमतिं प्राप्य देशान्तरं प्रस्थितौ?",
+            explanation: "'गुरुजनानाम्' षष्ठी-बहुवचने अस्ति, अतः 'केषाम्' इति प्रश्नवाचकपदं भविष्यति।"
+          },
+          {
+            num: 2,
+            question: "Frame Question: 'पापबुद्धिः निशीथे अटव्यां गतवान्।' (Underlined: निशीथे)",
+            questionSanskrit: "प्रश्ननिर्माणं कुरुत: पापबुद्धिः [निशीथे] अटव्यां गतवान्।",
+            marks: 2,
+            type: "short_ans",
+            answer: "पापबुद्धिः कदा अटव्यां गतवान्?",
+            explanation: "'निशीथे' समयवाचकपदम् (अर्धरात्रे) अस्ति, अतः कालवाचकं 'कदा' प्रयुज्यते।"
+          },
+          {
+            num: 3,
+            question: "Frame Question: 'अन्यस्य धनं तृणम् इव गणनीयम्।' (Underlined: तृणम् इव)",
+            questionSanskrit: "प्रश्ननिर्माणं कुरुत: अन्यस्य धनं [तृणम् इव] गणनीयम्।",
+            marks: 2,
+            type: "short_ans",
+            answer: "अन्यस्य धनं कथम् इव / कम् इव गणनीयम्?",
+            explanation: "तुलनावाचकपदस्य स्थाने 'कथम् इव' अथवा 'कम् इव' प्रयुज्यते।"
+          },
+          {
+            num: 4,
+            question: "Translate into Sanskrit: 'A wise person should think of the remedy.'",
+            questionSanskrit: "संस्कृते अनुवादं कुरुत: बुद्धिमान व्यक्ति को उपाय सोचना चाहिए।",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्राज्ञः उपायं चिन्तयेत्।",
+            explanation: "प्राज्ञः (कर्ता) उपायम् (कर्म) चिन्तयेत् (विधिलिङ्-प्रथमपुरुष-एकवचनम्)।"
+          },
+          {
+            num: 5,
+            question: "Translate into Sanskrit: 'Both of them traveled from one land to another.'",
+            questionSanskrit: "संस्कृते अनुवादं कुरुत: वे दोनों एक देश से दूसरे देश गए।",
+            marks: 2,
+            type: "short_ans",
+            answer: "तौ देशाद्देशान्तरं गतवन्तौ / अगच्छताम्।",
+            explanation: "द्विवचने 'तौ गतवन्तौ' अथवा 'तौ अगच्छताम्' इति प्रयुज्यते।"
+          },
+          {
+            num: 6,
+            question: "Identify Case and Number in 'देशान्तरेषु':",
+            questionSanskrit: "'देशान्तरेषु' पदे का विभक्तिः किं च वचनम्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "सप्तमी विभक्तिः, बहुवचनम्।",
+            explanation: "अकारान्त-नपुंसकलिङ्गवत् सप्तमी-बहुवचने 'देशान्तरेषु' रूपं सिध्यति।"
+          },
+          {
+            num: 7,
+            question: "Identify Case and Number in 'परद्रव्येषु':",
+            questionSanskrit: "'परद्रव्येषु' पदे का विभक्तिः किं च वचनम्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "सप्तमी विभक्तिः, बहुवचनम्।",
+            explanation: "द्रव्य-शब्दात् सप्तमी-बहुवचने 'परद्रव्येषु' रूपं भवति।"
+          },
+          {
+            num: 8,
+            question: "Identify the Subject in passive voice: 'मया धर्मबुद्धेः प्रभूतः अर्थः चोरितः':",
+            questionSanskrit: "'मया धर्मबुद्धेः प्रभूतः अर्थः चोरितः' इत्यत्र कर्मवाच्ये कर्ता कः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "मया (अस्मद्-शब्दस्य तृतीया एकवचनम्)।",
+            explanation: "कर्मवाच्ये कर्ता तृतीया-विभक्तौ भवति, अतः 'मया' कर्ता अस्ति।"
+          },
+          {
+            num: 9,
+            question: "Rectify the sentence agreement error: 'चतुरः बालाः पठति।'",
+            questionSanskrit: "वाक्यदोषं शोधयत: 'चतुरः बालाः पठति।'",
+            marks: 2,
+            type: "short_ans",
+            answer: "चतुराः बालाः पठन्ति। (विशेषण-विशेष्य-क्रिया-मेलनम्)।",
+            explanation: "कर्तृपदं 'बालाः' बहुवचने अस्ति, अतः विशेषणम् 'चतुराः' तथा क्रिया 'पठन्ति' भवेत्।"
+          },
+          {
+            num: 10,
+            question: "Provide Compound Disjunction for 'राजकुलम्':",
+            questionSanskrit: "समस्तपदस्य विग्रहं कुरुत: 'राजकुलम्' $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "राज्ञः कुलम् (षष्ठीतत्पुरुष-समासः)।",
+            explanation: "राज्ञः कुलम् = राजकुलम् (राजा का दरबार / राजभवन)।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 CH 7 WORKSHEET 3: Core Theme Analysis & Text Context (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch7-ws3",
+    title: "Worksheet 3: Core Theme Analysis & Text Context (10 Questions)",
+    titleSanskrit: "सप्तमः पाठः कार्यपत्रिका ३: पाठावबोधनं साहित्यिक-सन्दर्भश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Analyze the structure of the Panchatantra, the cosmic witnesses of Dharma, the fable's moral conclusions, and character motivations.",
+    sections: [
+      {
+        sectionTitle: "Section A: Core Theme Analysis & Text Context",
+        sectionTitleSanskrit: "खण्डः 'क' · पाठावबोधनं कथा-विश्लेषणं च",
+        instructions: "Answer short textual questions examining Panchatantra wisdom and the narrative events.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "How many Tantras (books/divisions) comprise the Panchatantra?",
+            questionSanskrit: "पञ्चतन्त्रे कति तन्त्राणि (विभागाः) सन्ति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "पञ्च (५) तन्त्राणि सन्ति।",
+            explanation: "पञ्चानां तन्त्राणां समाहारः पञ्चतन्त्रम्।"
+          },
+          {
+            num: 2,
+            question: "Name the five Tantras of Pandit Vishnu Sharma's Panchatantra:",
+            questionSanskrit: "पञ्चतन्त्रस्य पञ्चानां तन्त्राणां नामानि लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "मित्रभेदः, मित्रसम्प्राप्तिः, काकोलूकीयम्, लब्धप्रणाशः, अपरीक्षितकारकम् च।",
+            explanation: "एतानि पञ्च तन्त्राणि सन्ति।"
+          },
+          {
+            num: 3,
+            question: "What trait does Papabuddhi demonstrate by beating his head upon finding the empty pot?",
+            questionSanskrit: "रिक्तं भाण्डं दृष्ट्वा शिरस्ताडयन् पापबुद्धिः कस्य स्वभावस्य प्रदर्शनं करोति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "कपटस्य, वञ्चनायाः, धूर्ततायाश्च (Deceitfulness / Cunning hypocrisy)।",
+            explanation: "सः स्वयं धनं चोरयित्वा धर्मबुद्धौ दोषारोपणाय कपटाभिनयं करोति।"
+          },
+          {
+            num: 4,
+            question: "How do virtuous souls regard others' wealth according to Shloka 3?",
+            questionSanskrit: "सन्तजनाः परकीये धने कीदृशीं दृष्टिं धारयन्ति? श्लोक-३ आधारेण लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "'परद्रव्येषु लोष्टवत्' (मिट्टी के ढेले के समान / Like a lump of clay)।",
+            explanation: "मातृवत्परदारेषु परद्रव्येषु लोष्टवत्।"
+          },
+          {
+            num: 5,
+            question: "Name four cosmic witnesses of human actions listed in Shloka 4:",
+            questionSanskrit: "श्लोक-४ अनुसारेण मनुष्यस्य कर्मणां साक्षिणः चत्वारः के?",
+            marks: 2,
+            type: "short_ans",
+            answer: "सूर्यः, चन्द्रः, वायुः, अग्निः (अथवा द्यौः, भूमिः, आपः, यमः)।",
+            explanation: "आदित्याचन्द्रावनिलोऽनलश्च द्यौर्भूमिरापो हृदयं यमश्च।"
+          },
+          {
+            num: 6,
+            question: "What materials did Dharmabuddhi use to ignite fire at the tree hollow?",
+            questionSanskrit: "धर्मबुद्धिः वृक्षकोटरे वह्निप्रज्वालनाय कानि द्रव्याणि प्रयुक्तवान्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "शुष्ककाष्ठानि तृणानि च (सूखी लकड़ियाँ और घास)।",
+            explanation: "सः शुष्ककाष्ठानि तृणानि च सङ्गृह्य वृक्षकोटरस्य मुखे निक्षिप्य वह्निं प्रज्वालितवान्।"
+          },
+          {
+            num: 7,
+            question: "Why did Papabuddhi's father agree to give false testimony inside the hollow?",
+            questionSanskrit: "वृक्षकोटरे स्थितः पिता किमर्थम् असत्यं साक्ष्यम् अददात्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "स्वपुत्रस्य पापबुद्धेः धनलोभं रक्षितुम् अन्धपुत्रमोहेन च।",
+            explanation: "वृद्धः पिता धनलोभेन पुत्रवञ्चनायाम् भागीदारः अभवत्।"
+          },
+          {
+            num: 8,
+            question: "What is the ultimate moral teaching of this chapter?",
+            questionSanskrit: "अस्याः सम्पूर्णकथायाः अन्तिमा नैतिकी शिक्षा का अस्ति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "कार्यस्य उपायं चिन्तयता प्राज्ञेन सम्भावितः अपायः (विपत्तिः) अपि विचारणीयः; कपटस्य परिणामः विनाशकारी भवति।",
+            explanation: "उपायं चिन्तयेत् प्राज्ञस्तथापायं च चिन्तयेत्।"
+          },
+          {
+            num: 9,
+            question: "Which three valuable assets does a human acquire through travel?",
+            questionSanskrit: "देशाटनेन मानवः कानि त्रीणि तत्त्वानि सम्यक् प्राप्नोति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "विद्याम्, वित्तम्, शिल्पम् च (ज्ञान, धन और कौशल)।",
+            explanation: "विद्यां वित्तं शिल्पं तावन्नाप्नोति मानवः सम्यक् यावद् व्रजति न भूमौ।"
+          },
+          {
+            num: 10,
+            question: "What is the feminine form of √गम् + क्तवतु across numbers?",
+            questionSanskrit: "'गम्' धातोः स्त्रीलिङ्ग-क्तवतु-रूपं किं भवति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "गतवती (एकवचने), गतवत्यौ (द्विवचने), गतवत्यः (बहुवचने)।",
+            explanation: "स्त्रीलिङ्गे नदी-शब्दवत् रूपं प्रचलति।"
+          }
+        ]
+      }
+    ]
+  }
 ];
