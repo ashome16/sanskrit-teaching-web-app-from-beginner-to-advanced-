@@ -14022,4 +14022,348 @@ export const WORKSHEETS: Worksheet[] = [
     ]
   },
 
+// ==========================================
+  // GRADE 9 CH 4 WORKSHEET 1: Comprehension & Core Plot Retrieval (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch4-ws1",
+    title: "Worksheet 1: Comprehension & Textual Knowledge (10 Questions)",
+    titleSanskrit: "चतुर्थः पाठः कार्यपत्रिका १: पाठावबोधनं मुख्यकथा च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Answer textual recall, one-word, and full-sentence comprehension questions based strictly on Chapter 4 (Khudiram Bose & Prafulla Chaki).",
+    sections: [
+      {
+        sectionTitle: "Section A: Comprehension & Historical Context",
+        sectionTitleSanskrit: "खण्डः 'क' · पाठावबोधनं ऐतिहासिक-कथा च",
+        instructions: "Answer all questions based strictly on Chapter 4 (Khudiram Bose & Prafulla Chaki).",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "When and where was Khudiram Bose born?",
+            questionSanskrit: "खुदीरामस्य जन्म कस्मिन् वर्षे, कस्मिन् दिनाङ्के च अभवत्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "१८८९ तमे वर्षे दिसम्बरमासस्य तृतीये दिनाङ्के बङ्गप्रान्तस्य मेदिनीपुर-जनपदस्य मोहोबनी-ग्रामे अभवत्।",
+            explanation: "खुदीरामस्य जन्म ३ दिसम्बर १८८९ दिनाङ्के मेदिनीपुरस्य मोहोबनी-ग्रामे अभवत्।"
+          },
+          {
+            num: 2,
+            question: "Who brought up Khudiram after his parents passed away during his childhood?",
+            questionSanskrit: "खुदीरामस्य बाल्यकाले एव मातापित्रोः दिवङ्गतत्वात् तस्य पालन-पोषणं का अकरोत्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "तस्य ज्येष्ठा भगिनी अपरूपा देवी अकरोत्।",
+            explanation: "बाल्यकाले एव मातापित्रोः निधनात् तस्य ज्येष्ठा भगिनी अपरूपा देवी तं पालितवती।"
+          },
+          {
+            num: 3,
+            question: "Who partitioned Bengal in 1905, and what was the anti-partition movement called?",
+            questionSanskrit: "वर्ष १९०५ मध्ये बङ्गप्रान्तस्य विभाजनं कः कृतवान्? तस्य आन्दोलनस्य किं नाम आसीत्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "वायसरायः लार्ड कर्जनमहोदयः कृतवान्, तस्य जनान्दोलनस्य नाम 'बङ्ग-भङ्ग-आन्दोलनम्' आसीत्।",
+            explanation: "१९०५ तमे वर्षे लार्ड कर्जनमहोदयेन बङ्गविभाजनं कृतम्, तस्य विरोधाय 'बङ्ग-भङ्ग-आन्दोलनम्' प्रवृत्तम्।"
+          },
+          {
+            num: 4,
+            question: "How old was Khudiram when he jumped into the freedom struggle?",
+            questionSanskrit: "खुदीरामः कतिवर्षीयः आसीत् यदा सः देशान्दोलने अकूर्दत्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "पञ्चदशवर्षीयः (१५ वर्ष) आसीत्।",
+            explanation: "यद्यपि खुदीरामः तदानीं केवलं पञ्चदशवर्षीयः आसीत्, तथापि देशकार्याय सः अकूर्दत्।"
+          },
+          {
+            num: 5,
+            question: "What precept did Satyendranath give regarding the body, intellect, and mind required for revolutionary action?",
+            questionSanskrit: "गुप्तमण्डलस्य सञ्चालकः सत्येन्द्रनाथः क्रान्तिकार्याय कीदृशं शरीरं, बुद्धिं, मनः च भवेत् इति आदिष्टवान्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "शरीरं वज्रसदृशं दृढं, बुद्धिः असिधारा इव तीक्ष्णा, मनः गङ्गाजलमिव निर्मलं च भवेत्।",
+            explanation: "सत्येन्द्रनाथस्य उपदेशः: शरीरं वज्रवत् दृढं, बुद्धिः खड्गधारावत् तीक्ष्णा, मनः च गङ्गावत् निर्मलं भवेत्।"
+          },
+          {
+            num: 6,
+            question: "Inspired by Maharana Pratap, what solemn vow did Khudiram take?",
+            questionSanskrit: "खुदीरामः महाराणाप्रतापस्य चरित्रेण प्रेरितः भूत्वा कां प्रतिज्ञां कृतवान्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "'यावत् भारतम् आङ्ग्लशासनात् मुक्तं न भविष्यति, तावत् पादत्राणं न धरिष्यामि' इति।",
+            explanation: "महाराणाप्रतापवत् देशमुक्तिपर्यन्तं पादत्राण-त्यागस्य प्रतिज्ञां खुदीरामः कृतवान्।"
+          },
+          {
+            num: 7,
+            question: "Who was the ruthless chief presidency magistrate of Kolkata district targeted by the revolutionaries?",
+            questionSanskrit: "कलकत्ता-जनपदस्य क्रूरः मुख्यः न्यायिकः आङ्ग्लः अधिकारी कः आसीत्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "किङ्ग्ज़फोर्ड् (Chief Presidency Magistrate Kingsford) आसीत्।",
+            explanation: "किङ्ग्ज़फोर्डः भारतीयदेशभक्तान् बालकान् अपि निर्दयतया दण्डयति स्म।"
+          },
+          {
+            num: 8,
+            question: "On whose carriage was the explosive thrown on April 28, 1908, in Muzaffarpur?",
+            questionSanskrit: "२८ अप्रैल १९०८ दिनाङ्के प्रफुल्ल-खुदीरामाभ्यां कस्य रथस्य उपरि विस्फोटकः प्रक्षिप्तः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "किङ्ग्ज़फोर्डस्य विशेषरथस्य उपरि (यस्मिन् भ्रमवशात् कैनेडीमहोदयस्य परिवारः आसीत्)।",
+            explanation: "किङ्ग्ज़फोर्डस्य रथे भ्रमवशात् कैनेडीमहोदयस्य भार्या कन्या च आस्ताम्।"
+          },
+          {
+            num: 9,
+            question: "How did the brave hero Prafulla Chaki achieve martyrdom to avoid British arrest?",
+            questionSanskrit: "वीरप्रफुल्लः आङ्ग्लानां हस्ते बन्धनं परिहर्तुं किं कृतवान्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "'वन्दे मातरम्' इत्युद्घोषयन् स्वीयवक्षःस्थले भुशुण्ड्या गोलिकाप्रहारं कृत्वा आत्मबलिदानम् अकरोत्।",
+            explanation: "मोकामा-रेलस्थानके आरक्षकैः परिवेष्टितः प्रफुल्लः 'वन्दे मातरम्' जपन् स्ववक्षसि गोलिकां प्रहृतवान्।"
+          },
+          {
+            num: 10,
+            question: "What was Khudiram's sole definitive answer to every interrogation question in the court?",
+            questionSanskrit: "न्यायालये अधिवक्तॄणां प्रत्येकस्य प्रश्नस्य खुदीरामस्य किं निश्चितम् उत्तरम् आसीत्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "'वन्दे मातरम्' इत्येव निश्चितम् उत्तरम् आसीत्।",
+            explanation: "न्यायालये सर्वेषां प्रश्नानाम् एकम् एव उत्तरम् आसीत्— 'वन्दे मातरम्'।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 CH 4 WORKSHEET 2: Sandhi & Samasa (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch4-ws2",
+    title: "Worksheet 2: Sandhi, Samasa & Morphological Structures (10 Questions)",
+    titleSanskrit: "चतुर्थः पाठः कार्यपत्रिका २: सन्धिः समासश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Analyze sandhi splits, compound formations (Tatpurusha, Karmadharaya, Bahuvrihi), and grammatical structures.",
+    sections: [
+      {
+        sectionTitle: "Section A: Sandhi & Samasa Analysis",
+        sectionTitleSanskrit: "खण्डः 'क' · सन्धि-समास-विश्लेषणम्",
+        instructions: "Identify sandhi splits, compound classifications, and vigraha vakyas.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Sandhi: 'इत्यादयः' पदस्य शुद्धं सन्धिच्छेदं कुरुत।",
+            questionSanskrit: "सन्धिच्छेदं कुरुत: इत्यादयः $\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "इति + आदयः (यण्-सन्धिः)।",
+            explanation: "इ + आ = या (इको यणचि नियमः)।"
+          },
+          {
+            num: 2,
+            question: "Sandhi: 'वयस्तेजसः' इति पदे कः सन्धिः अस्ति? सन्धिच्छेदं लिखत।",
+            questionSanskrit: "सन्धिच्छेदं सन्धिनाम च लिखत: वयस्तेजसः $\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "वयः + तेजसः (विसर्ग-सत्व-सन्धिः)।",
+            explanation: "विसर्जनीयस्य सः (विसर्गस्य पश्चात् त-कारस्य आगमने सत्वं भवति)।"
+          },
+          {
+            num: 3,
+            question: "Sandhi: 'अचिरादेव' पदस्य सन्धिच्छेदं कृत्वा सन्धेः नाम लिखत।",
+            questionSanskrit: "सन्धिच्छेदं कुरुत: अचिरादेव $\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "अचिरात् + एव (जश्त्व-व्यञ्जनसन्धिः)।",
+            explanation: "वर्गप्रथमवर्णस्य (त्) स्वरपरे तृतीयाक्षरत्वे (द्) जश्त्वसन्धिः भवति।"
+          },
+          {
+            num: 4,
+            question: "Samasa: 'देशस्य भक्ताः' इति विग्रहपदस्य समस्तपदं किम्?",
+            questionSanskrit: "समस्तपदं लिखत: देशस्य भक्ताः $\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "देशभक्ताः (षष्ठीतत्पुरुष-समासः)।",
+            explanation: "देशस्य भक्ताः = देशभक्ताः।"
+          },
+          {
+            num: 5,
+            question: "Samasa: 'बालक्रान्तिवीरः' समस्तपदस्य समास-विग्रहं कुरुत।",
+            questionSanskrit: "समास-विग्रहं कुरुत: बालक्रान्तिवीरः $\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "बालः चासौ क्रान्तिवीरः (विशेषण-विशेष्य-कर्मधारय-समासः)।",
+            explanation: "बालः चासौ क्रान्तिवीरः = बालक्रान्तिवीरः।"
+          },
+          {
+            num: 6,
+            question: "Samasa: 'निर्गता दया यस्मात् सः' इति विग्रहस्य समस्तपदं समासनाम च लिखत।",
+            questionSanskrit: "समस्तपदं समासनाम च लिखत: निर्गता दया यस्मात् सः $\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "निर्दयः (बहुव्रीहि-समासः)।",
+            explanation: "निर्गता दया यस्मात् सः = निर्दयः (अन्यपदप्रधानः बहुव्रीहिः)।"
+          },
+          {
+            num: 7,
+            question: "Samasa: 'असाधारणः' पदे कः समासः प्रयुक्तः अस्ति?",
+            questionSanskrit: "समासनाम विग्रहं च लिखत: असाधारणः $\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "न साधारणः (नञ्-तत्पुरुष-समासः)।",
+            explanation: "निषेधार्थक-नकारस्य समासे नञ्-तत्पुरुषः भवति।"
+          },
+          {
+            num: 8,
+            question: "Samasa: 'मृत्युदण्डः' पदस्य समास-विग्रहं कुरुत।",
+            questionSanskrit: "समास-विग्रहं कुरुत: मृत्युदण्डः $\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "मृत्युः एव दण्डः (अवधारणापूर्वपद-कर्मधारयः) अथवा मृत्यवे दण्डः (चतुर्थीतत्पुरुषः)।",
+            explanation: "मृत्युः एव दण्डः = मृत्युदण्डः।"
+          },
+          {
+            num: 9,
+            question: "Samasa: 'वज्रसदृशम्' पदे कः समासः अस्ति?",
+            questionSanskrit: "समास-विग्रहं समासनाम च लिखत: वज्रसदृशम् $\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "वज्रेण सदृशम् (तृतीयातत्पुरुष-समासः)।",
+            explanation: "सदृश-शब्देन सह तृतीयातत्पुरुषः भवति (यथा मात्रिसदृशः, वज्रसदृशः)।"
+          },
+          {
+            num: 10,
+            question: "Samasa: 'असिधारा' पदस्य विग्रहं कुरुत।",
+            questionSanskrit: "समास-विग्रहं लिखत: असिधारा $\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "असेः धारा (षष्ठीतत्पुरुष-समासः)।",
+            explanation: "असिः (खड्गः), तस्य धारा = असेः धारा (तलवार की धार)।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 CH 4 WORKSHEET 3: Language Usage & Transformations (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch4-ws3",
+    title: "Worksheet 3: Language Usage, Avyayas & Sentence Transformation (10 Questions)",
+    titleSanskrit: "चतुर्थः पाठः कार्यपत्रिका ३: भाषाप्रयोगः वाक्यपरिवर्तनं च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Master Lakara transformations, correlative particles (Yadyapi...tathapi), and indefinite suffixes (-chit/-chan).",
+    sections: [
+      {
+        sectionTitle: "Section A: Language Transformations & Particles",
+        sectionTitleSanskrit: "खण्डः 'क' · भाषाप्रयोगः वाक्यपरिवर्तनं च",
+        instructions: "Convert verbal forms, fill correlative avyayas, and construct indefinite sentences.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Lakara Transformation: 'वन्दे मातरम् इत्यादयः घोषणाः भवन्ति स्म।' Convert into Lang-lakara.",
+            questionSanskrit: "लङ्लकारे परिवर्तयत: वन्दे मातरम् इत्यादयः घोषणाः भवन्ति स्म। $\rightarrow$ ______",
+            marks: 2,
+            type: "grammar",
+            answer: "वन्दे मातरम् इत्यादयः घोषणाः अभवन्।",
+            explanation: "भवन्ति स्म (लट् + स्म = भूतकालः) $\rightarrow$ अभवन् (लङ् प्रथमपुरुष बहुवचनम्)।"
+          },
+          {
+            num: 2,
+            question: "Participle Conversion: 'सत्येन्द्रनाथः खुदीरामम् उपादिशत्।' Convert using Ktavatu suffix.",
+            questionSanskrit: "क्तवतु-प्रत्ययं प्रयुज्य परिवर्तयत: सत्येन्द्रनाथः खुदीरामम् उपादिशत्। $\rightarrow$ ______",
+            marks: 2,
+            type: "grammar",
+            answer: "सत्येन्द्रनाथः खुदीरामम् उपदिष्टवान्।",
+            explanation: "उपादिशत् (लङ्) $\rightarrow$ उपदिष्टवान् (क्तवतु पुंलिङ्ग एकवचनम्)।"
+          },
+          {
+            num: 3,
+            question: "Past Tense: 'प्रफुल्लः गोलिकाप्रहारं कृतवान्।' Rewrite using finite past verb 'अकरोत्'.",
+            questionSanskrit: "लङ्लकारे अकरोत् पदं प्रयुज्य लिखत: प्रफुल्लः गोलिकाप्रहारं कृतवान्। $\rightarrow$ ______",
+            marks: 2,
+            type: "grammar",
+            answer: "प्रफुल्लः गोलिकाप्रहारम् अकरोत्।",
+            explanation: "कृतवान् (क्तवतु) $\rightarrow$ अकरोत् (कृ-धातोः लङ्-लकारः प्रथमपुरुषैकवचनम्)।"
+          },
+          {
+            num: 4,
+            question: "Correlative Avyaya: Fill the blank: '_______ मेघाः सन्ति _______ वृष्टिः न भवति।' (यद्यपि...तथापि / यदा...तदा)",
+            questionSanskrit: "उचितयुगलपदेन पूरयत: ______ मेघाः सन्ति ______ वृष्टिः न भवति।",
+            marks: 2,
+            type: "fill",
+            answer: "यद्यपि...तथापि (यद्यपि मेघाः सन्ति तथापि वृष्टिः न भवति)।",
+            explanation: "विरोधार्थक-सम्बन्धे 'यद्यपि...तथापि' इति युगलपदं प्रयुज्यते।"
+          },
+          {
+            num: 5,
+            question: "Correlative Avyaya: Fill the blank: '_______ खुदीरामः बालः _______ सः देशकार्यं कृतवान्।'",
+            questionSanskrit: "उचितयुगलपदेन पूरयत: ______ खुदीरामः बालः ______ सः देशकार्यं कृतवान्।",
+            marks: 2,
+            type: "fill",
+            answer: "यद्यपि...तथापि (यद्यपि खुदीरामः बालः तथापि सः देशकार्यं कृतवान्)।",
+            explanation: "कन्सेशन / विरोधार्थक-सम्बन्धे 'यद्यपि...तथापि' भवति।"
+          },
+          {
+            num: 6,
+            question: "Indefinite Pronoun: Add '-चित्' suffix to make 'बालकः गच्छति' indefinite.",
+            questionSanskrit: "अनिश्चयवाचकं रूपं प्रयुज्य लिखत: ______ बालकः गच्छति।",
+            marks: 2,
+            type: "fill",
+            answer: "कश्चित् बालकः गच्छति।",
+            explanation: "कः + चित् = कश्चित् (कोई बालक / Some boy)।"
+          },
+          {
+            num: 7,
+            question: "Indefinite Particle: Fill the blank using 'कुत्र + चित्': '______ लेखनी लुप्ता।'",
+            questionSanskrit: "कुत्र+चित् योजयित्वा पूरयत: ______ लेखनी लुप्ता।",
+            marks: 2,
+            type: "fill",
+            answer: "कुत्रचित् (कुत्रचित् लेखनी लुप्ता)।",
+            explanation: "कुत्र + चित् = कुत्रचित् (कहीं / somewhere)।"
+          },
+          {
+            num: 8,
+            question: "Avyaya Meaning: What is the meaning and grammatical function of 'कदाचित्'?",
+            questionSanskrit: "'कदाचित्' अव्ययस्य कः अर्थः अस्ति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "कदाचित् = कभी / किसी समय (Sometimes / At some time)।",
+            explanation: "कदा (कालवाचक-प्रश्न) + चित् = अनिश्चयवाचकं कालाव्ययम्।"
+          },
+          {
+            num: 9,
+            question: "Correlative Pair: 'यथा अध्ययनं सदृढं भवति _______ ज्ञानं विकसितं भवति।' Fill the matching correlative.",
+            questionSanskrit: "उचितपदेन पूरयत: यथा अध्ययनं सदृढं भवति ______ ज्ञानं विकसितं भवति।",
+            marks: 2,
+            type: "fill",
+            answer: "तथा ('यथा...तथा' युगलपदम्)।",
+            explanation: "सादृश्य-द्योतने 'यथा...तथा' इति युगल-अव्ययस्य अन्वयः भवति।"
+          },
+          {
+            num: 10,
+            question: "Vocabulary: Give the Hindi and English meanings of 'भुशुण्डी' and 'आतङ्कम्'.",
+            questionSanskrit: "'भुशुण्डी' तथा 'आतङ्कम्' शब्दयोः अर्थं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "भुशुण्डी = बन्दूक (Gun / Firearm); आतङ्कम् = भय, डर, संत्रास (Terror / Fear)।",
+            explanation: "भुशुण्डी आग्नेयास्त्रं (बन्दूक) भवति; आतङ्कम् सन्त्रासः भवति।"
+          }
+        ]
+      }
+    ]
+  },
 ];
