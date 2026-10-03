@@ -3,12 +3,46 @@ import { GANA_HEADINGS, GANA_LABELS } from '../utils/dhatupatha';
 
 const GANA_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 
+/** Usual class sign only — not a full Pāṇini lesson. */
+const VIKARANA: Record<number, string> = {
+  1: 'usual class sign: शप् · śap (a)',
+  2: 'usual class sign: none (लुक् · luk)',
+  3: 'usual class sign: reduplication · द्वित्वम्',
+  4: 'usual class sign: श्यन् · śyan (ya)',
+  5: 'usual class sign: श्नु · śnu (nu)',
+  6: 'usual class sign: श · śa (a, weak)',
+  7: 'usual class sign: श्नम् · śnam (na infix)',
+  8: 'usual class sign: उ · u',
+  9: 'usual class sign: श्ना · śnā (nā)',
+  10: 'usual class sign: णिच् · ṇic (aya)',
+};
+
+const EXAMPLE_ROOTS = [
+  { id: 'bhu', root: 'भू', line: '→ भवति — He/She/It is, becomes (होना).' },
+  {
+    id: 'gam',
+    root: 'गम्',
+    line: '→ गच्छति — He/She/It goes (जाना). In the present the stem is an आदेश · ādeśa: गम् is replaced by गच्छ.',
+  },
+  { id: 'path', root: 'पठ्', line: '→ पठति — He/She/It reads, studies (पढ़ना).' },
+  {
+    id: 'drsh',
+    root: 'दृश्',
+    line: '→ पश्यति — He/She/It sees (देखना). Present ādeśa: दृश् is replaced by पश्य.',
+  },
+  { id: 'vad', root: 'वद्', line: '→ वदति — He/She/It speaks (बोलना).' },
+] as const;
+
+type DhatupathaGuideProps = {
+  onOpenRoot?: (id: string) => void;
+};
+
 /**
  * Short reading notes for the library. Collapsed so the toolbar and root list
  * stay where they are. Gaṇa labels, seṭ/aniṭ tags, Hindi, and the English
  * sentences are the ones already stored for these roots.
  */
-const DhatupathaGuide: React.FC = () => {
+const DhatupathaGuide: React.FC<DhatupathaGuideProps> = ({ onOpenRoot }) => {
   return (
     <section className="dp-guide" aria-label="How to read the Dhātupāṭha">
       <details className="dp-guide-block">
@@ -41,6 +75,7 @@ const DhatupathaGuide: React.FC = () => {
               {GANA_LABELS[n]}
               {' — '}
               {GANA_HEADINGS[n].en}
+              <span className="dp-guide-vik">{VIKARANA[n]}</span>
             </li>
           ))}
         </ol>
@@ -69,16 +104,18 @@ const DhatupathaGuide: React.FC = () => {
           2nd person is “You (one)” or “You (singular)”, “You two”, “You all”; 1st person is “I”, “We two”, “We all”.
         </p>
         <ul className="dp-guide-ganas">
-          <li>भू → भवति — He/She/It is, becomes (होना).</li>
-          <li>
-            गम् → गच्छति — He/She/It goes (जाना). In the present the stem is an <strong>आदेश · ādeśa</strong>:
-            गम् is replaced by गच्छ.
-          </li>
-          <li>पठ् → पठति — He/She/It reads, studies (पढ़ना).</li>
-          <li>
-            दृश् → पश्यति — He/She/It sees (देखना). Present ādeśa: दृश् is replaced by पश्य.
-          </li>
-          <li>वद् → वदति — He/She/It speaks (बोलना).</li>
+          {EXAMPLE_ROOTS.map((example) => (
+            <li key={example.id}>
+              <button
+                type="button"
+                className="dp-guide-root"
+                onClick={() => onOpenRoot?.(example.id)}
+              >
+                {example.root}
+              </button>{' '}
+              {example.line}
+            </li>
+          ))}
         </ul>
       </details>
     </section>

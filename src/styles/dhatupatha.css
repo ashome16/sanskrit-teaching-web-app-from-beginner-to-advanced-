@@ -393,6 +393,36 @@
   font-weight: 700;
 }
 
+.dp-guide-vik {
+  display: block;
+  margin-top: 0.1rem;
+  color: #57534e;
+  font-size: 0.88rem;
+}
+
+.dp-guide-root {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 0.2rem;
+  border: 0;
+  background: transparent;
+  color: #0f766e;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dp-guide-root:hover,
+.dp-guide-root:focus-visible {
+  color: #0b5f58;
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
 .dp-ganas {
   display: flex;
   flex-direction: column;

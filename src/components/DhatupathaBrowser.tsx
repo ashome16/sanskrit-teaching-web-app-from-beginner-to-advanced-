@@ -65,6 +65,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
   const [ganaFilter, setGanaFilter] = useState<number | null>(null);
   const [padamFilter, setPadamFilter] = useState<DhatuPadam | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [revealTick, setRevealTick] = useState(0);
   /** True while ▶ Play all is speaking the visible roots. */
   const [playingAll, setPlayingAll] = useState(false);
   const [speakingKey, setSpeakingKey] = useState<string | null>(null);
@@ -73,6 +74,8 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
   const resumeIndexRef = useRef(0);
   const playTokenRef = useRef(0);
   const filteredRef = useRef<DhatuEntry[]>([]);
+  /** Root id to scroll into view once its card is on screen. */
+  const revealKeyRef = useRef<string | null>(null);
   const [speechSpeed, setSpeechSpeed] = useState<DhatuSpeed>(loadDhatuSpeed);
   const speechSpeedRef = useRef<DhatuSpeed>(speechSpeed);
   speechSpeedRef.current = speechSpeed;
@@ -252,6 +255,29 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
     if (!playingAll || !speakingKey) return;
     scrollRootIntoView(speakingKey);
   }, [playingAll, speakingKey]);
+
+  useEffect(() => {
+    const key = revealKeyRef.current;
+    if (!key) return;
+    if (!ordered.some((entry) => entryKey(entry) === key)) return;
+    if (!document.querySelector(`[data-dhatu-id="${CSS.escape(key)}"]`)) return;
+    revealKeyRef.current = null;
+    requestAnimationFrame(() => scrollRootIntoView(key));
+  }, [ordered, expandedId, revealTick]);
+
+  const openListedRoot = (id: string) => {
+    const entry = entries.find((item) => item.id === id);
+    if (!entry) return;
+    const key = entryKey(entry);
+    revealKeyRef.current = key;
+    setRevealTick((n) => n + 1);
+    if (!ordered.some((item) => entryKey(item) === key)) {
+      setQuery('');
+      setGanaFilter(null);
+      setPadamFilter(null);
+    }
+    setExpandedId(key);
+  };
 
   const startPlayAll = (start: number) => {
     // Drop any queue already speaking so Next can restart on the chosen root.
@@ -587,7 +613,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
         )}
       </div>
 
-      <DhatupathaGuide />
+      <DhatupathaGuide onOpenRoot={openListedRoot} />
 
       {error && (
         <p className="dp-status dp-status--error" role="alert">
