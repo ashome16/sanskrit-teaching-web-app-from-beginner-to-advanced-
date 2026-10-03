@@ -342,6 +342,57 @@
   background: #0b5f58;
 }
 
+.dp-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.dp-guide-block {
+  border: 1px solid #e3d5b3;
+  border-radius: 12px;
+  background: #fffef9;
+  padding: 0 0.9rem;
+}
+
+.dp-guide-block summary {
+  cursor: pointer;
+  font-weight: 800;
+  min-height: 44px;
+  padding: 0.55rem 0.15rem;
+  color: #1c1917;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+  line-height: 1.35;
+}
+
+.dp-guide-block summary:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+.dp-guide-block p,
+.dp-guide-ganas {
+  margin: 0 0 0.75rem;
+  color: #44403c;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.dp-guide-ganas {
+  padding-left: 1.25rem;
+}
+
+.dp-guide-ganas li + li {
+  margin-top: 0.15rem;
+}
+
+.dp-guide-sa {
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+  font-weight: 700;
+}
+
 .dp-ganas {
   display: flex;
   flex-direction: column;

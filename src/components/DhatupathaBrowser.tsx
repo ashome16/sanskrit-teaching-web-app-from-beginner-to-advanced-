@@ -10,6 +10,7 @@ import {
   searchDhatupatha,
 } from '../utils/dhatupatha';
 import { playPronunciation, playSequence } from '../utils/pronunciation';
+import DhatupathaGuide from './DhatupathaGuide';
 import LatFormsTable from './LatFormsTable';
 import '../styles/dhatupatha.css';
 
@@ -585,6 +586,8 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
         </div>
         )}
       </div>
+
+      <DhatupathaGuide />
 
       {error && (
         <p className="dp-status dp-status--error" role="alert">
