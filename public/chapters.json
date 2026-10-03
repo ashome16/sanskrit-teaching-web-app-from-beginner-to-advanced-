@@ -41164,6 +41164,134 @@
           "kind": "narrative"
         }
       ]
+    },
+    {
+      "id": "grade9_ch11",
+      "fileName": "grade9_ch11.txt",
+      "title": "Grade 9: एकादशः पाठः — वर्णोच्चारण-शिक्षा २ (Pages 145–160)",
+      "page_numbers": "Pages 145–160",
+      "sentences": [
+        {
+          "sanskrit": "आस्यस्य अभ्यन्तरे वर्णानाम् उत्पत्त्यर्थं त्रीणि तत्त्वानि आवश्यकानि भवन्ति— (क) स्थानम्, (ख) करणम्, (ग) आभ्यन्तर-प्रयत्नः च। षट् स्थानानि षट् करणानि च सन्ति।",
+          "meaning": "Inside the mouth cavity, three essential elements are required for the production of speech sounds (letters)— (a) Sthana (Place of articulation), (b) Karana (Articulator/Tool), and (c) Abhyantara-prayatna (Internal effort). There are six places and six articulators.",
+          "paragraphTranslation": "मुख (आस्य) के भीतर वर्णों की उत्पत्ति के लिए तीन तत्त्व आवश्यक होते हैं— (क) स्थान, (ख) करण, और (ग) आभ्यन्तर-प्रयत्न। इनमें से छह स्थान और छह करण होते हैं।",
+          "words": [
+            "आस्यस्य",
+            "अभ्यन्तरे",
+            "वर्णानाम्",
+            "उत्पत्त्यर्थं",
+            "त्रीणि",
+            "तत्त्वानि",
+            "स्थानम्",
+            "करणम्",
+            "आभ्यन्तर-प्रयत्नः"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "आस्यस्य अभ्यन्तरे करणं येन प्रयत्नेन स्थानं स्पृशति, स्थानस्य समीपं वा याति, सः प्रयत्नः— 'आभ्यन्तर-प्रयत्नः' इति उच्यते। आभ्यन्तर-प्रयत्नः पञ्चविधः भवति— स्पृष्टः, ईषत्स्पृष्टः, ईषद्विवृतः, विवृतः, संवृतश्च।",
+          "meaning": "The internal effort through which an articulator touches the place of articulation or approaches near it within the oral cavity is termed Abhyantara-prayatna. It is of five kinds: Sprishta, Ishat-sprishta, Ishad-vivrita, Vivrita, and Samvrita.",
+          "paragraphTranslation": "मुख के भीतर करण जिस प्रयत्न से उच्चारण स्थान को स्पर्श करता है या उसके समीप जाता है, वह 'आभ्यन्तर-प्रयत्न' कहलाता है। यह पाँच प्रकार का होता है— स्पृष्ट, ईषत्स्पृष्ट, ईषद्विवृत, विवृत और संवृत।",
+          "words": [
+            "आस्यस्य",
+            "अभ्यन्तरे",
+            "करणं",
+            "येन",
+            "प्रयत्नेन",
+            "स्थानं",
+            "स्पृशति",
+            "आभ्यन्तर-प्रयत्नः",
+            "पञ्चविधः",
+            "भवति"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "प्रयत्नोऽपि द्विविधः। आभ्यन्तरो बाह्यश्च।\nस्पृष्टकरणाः स्पर्शाः। ईषत्स्पृष्टकरणा अन्तस्थाः।\nईषद्विवृतकरणा ऊष्माणः। विवृतकरणाः स्वराः।\nसंवृतस्त्ववकारः। इत्येषोऽन्तःप्रयत्नः॥",
+          "meaning": "Effort is twofold: internal and external. Complete contact belongs to stop consonants (sparsha). Slight contact belongs to semi-vowels (antastha). Slightly open contact belongs to sibilants/fricatives (ooshman). Open contact belongs to vowels (svara). However, the short 'a' is contracted/closed (samvrita). Such is the internal effort.",
+          "paragraphTranslation": "प्रयत्न दो प्रकार का होता है— आभ्यन्तर और बाह्य। स्पर्श वर्णों का प्रयत्न स्पृष्ट है, अन्तःस्थ वर्णों का ईषत्स्पृष्ट, ऊष्म वर्णों का ईषद्विवृत, और सभी स्वरों का विवृत होता है। परन्तु ह्रस्व 'अ' का प्रयत्न संवृत होता है। यही आभ्यन्तर प्रयत्न है।",
+          "words": [
+            "प्रयत्नोऽपि",
+            "द्विविधः।",
+            "आभ्यन्तरो",
+            "बाह्यश्च।",
+            "स्पृष्टकरणाः",
+            "स्पर्शाः।",
+            "ईषत्स्पृष्टकरणा",
+            "अन्तस्थाः।",
+            "ईषद्विवृतकरणा",
+            "ऊष्माणः।",
+            "विवृतकरणाः",
+            "स्वराः।",
+            "संवृतस्त्ववकारः।"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "करणं यदा स्थानं स्पष्ट-रूपेण स्पृशति, तदा करणस्य 'स्पृष्ट-प्रयत्नः' भवति। अनेन क-कारात् म-कार-पर्यन्तानि पञ्चविंशतिः स्पर्श-व्यञ्जनानि जायन्ते।",
+          "meaning": "When the articulator touches the place of articulation completely and clearly, that effort is called Sprishta (Contact). Through this, the twenty-five stop consonants from 'ka' to 'ma' are produced.",
+          "paragraphTranslation": "जब करण उच्चारण स्थान को स्पष्ट रूप से स्पर्श करता है, तब 'स्पृष्ट प्रयत्न' होता है। इससे क से म तक के २५ स्पर्श व्यंजन उत्पन्न होते हैं।",
+          "words": [
+            "करणं",
+            "यदा",
+            "स्थानं",
+            "स्पष्ट-रूपेण",
+            "स्पृशति",
+            "स्पृष्ट-प्रयत्नः",
+            "पञ्चविंशतिः",
+            "स्पर्श-व्यञ्जनानि"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "करणं यदा स्थानं स्वल्पम् एव स्पृशति तदा 'ईषत्-स्पृष्ट-प्रयत्नः' भवति (य, र, ल, व)। यदा स्थानं न स्पृशति किन्तु बहु समीपं याति तदा 'ईषद्-विवृत-प्रयत्नः' भवति (श, ष, स, ह, अं, अः)।",
+          "meaning": "When the articulator touches the place only slightly, it is Ishat-sprishta (semi-vowels: ya, ra, la, va). When it does not touch but comes very close, leaving a small slit, it is Ishad-vivrita (sibilants: sha, sha, sa, ha and ayogavahas: am, ah).",
+          "paragraphTranslation": "जब करण स्थान को बहुत थोड़ा छूता है, तब 'ईषत्-स्पृष्ट प्रयत्न' होता है (य, र, ल, व)। जब स्थान को नहीं छूता अपितु बहुत पास आ जाता है, तब 'ईषद्-विवृत प्रयत्न' होता है (श, ष, स, ह, अं, अः)।",
+          "words": [
+            "करणं",
+            "यदा",
+            "स्थानं",
+            "स्वल्पम्",
+            "ईषत्-स्पृष्ट-प्रयत्नः",
+            "ईषद्-विवृत-प्रयत्नः",
+            "अन्तःस्थ",
+            "ऊष्म"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "करणं यदा स्थानं न स्पृशति अपितु स्फुटः विवरः जायते तदा 'विवृत-प्रयत्नः' भवति, येन ह्रस्वम् अ-कारं विहाय अन्ये सर्वे स्वराः उच्चार्यन्ते। केवलं ह्रस्वस्य अ-कारस्य उच्चारणे कण्ठस्य सङ्कोचात् 'संवृत-प्रयत्नः' भवति।",
+          "meaning": "When the articulator does not touch the place and a clear open aperture is formed, it is Vivrita effort, producing all vowels except the short 'a'. Only in articulating the short vowel 'a', due to contraction/narrowing of the throat, does Samvrita effort occur.",
+          "paragraphTranslation": "जब करण स्थान को नहीं छूता और एक स्पष्ट खुला मार्ग रहता है, तब 'विवृत प्रयत्न' होता है, जिससे ह्रस्व 'अ' को छोड़कर बाकी सभी स्वर बोले जाते हैं। केवल ह्रस्व 'अ' के उच्चारण में कंठ के संकोच के कारण 'संवृत प्रयत्न' होता है।",
+          "words": [
+            "स्फुटः",
+            "विवरः",
+            "विवृत-प्रयत्नः",
+            "सर्वे",
+            "स्वराः",
+            "ह्रस्वस्य",
+            "अ-कारस्य",
+            "संवृत-प्रयत्नः"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "एवं स्थान-करण-प्रयत्न-ज्ञानेन वयं संस्कृतवर्णानां शुद्धम् उच्चारणे समर्थाः भवेम। स्वराः स्वतन्त्राः, व्यञ्जनानि च अर्धमात्रिकाणि परतन्त्राणि भवन्ति।",
+          "meaning": "Thus, by mastering place, articulator, and internal effort, we become capable of pure, precise pronunciation of Sanskrit sounds. Vowels are independent, whereas pure consonants are dependent and carry a duration of half a matra.",
+          "paragraphTranslation": "इस प्रकार स्थान, करण और प्रयत्न के सम्यक् ज्ञान से हम संस्कृत वर्णों के शुद्ध उच्चारण में समर्थ होते हैं। स्वर स्वतंत्र होते हैं तथा व्यंजन अर्धमात्रिक और परतंत्र होते हैं।",
+          "words": [
+            "स्थान-करण-प्रयत्न-ज्ञानेन",
+            "शुद्धम्",
+            "उच्चारणे",
+            "समर्थाः",
+            "स्वराः",
+            "स्वतन्त्राः",
+            "व्यञ्जनानि",
+            "अर्धमात्रिकाणि"
+          ],
+          "kind": "narrative"
+        }
+      ]
     }
   ]
 }

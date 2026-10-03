@@ -16085,5 +16085,338 @@ export const WORKSHEETS: Worksheet[] = [
         ]
       }
     ]
+  },
+{
+    id: "ws-grade9-ch11-ws1",
+    title: "Worksheet 1: Phonetic Feature Mapping (10 Questions)",
+    titleSanskrit: "एकादशः पाठः कार्यपत्रिका १: वर्ण-स्थान-करण-प्रयत्न-विवरणम् (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Systematic mapping of internal effort (आभ्यन्तर-प्रयत्नः), place of articulation (स्थानम्), and active articulator (करणम्) across diverse Sanskrit phonemes based on Chapter 11 guidelines.",
+    sections: [
+      {
+        sectionTitle: "Section A: Phonetic Feature Mapping",
+        sectionTitleSanskrit: "खण्डः 'क' · वर्ण-स्थान-करण-प्रयत्न-तालिका",
+        instructions: "Supply the internal effort, place, and articulator values for each listed letter based on the text guidelines.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Map Phonetic Features for letter 'ग्': Effort: ______, Place: ______, Articulator: ______",
+            questionSanskrit: "वर्णस्य 'ग्' प्रयत्न-स्थान-करणानि लिखत: प्रयत्नः: ______, स्थानम्: ______, करणम्: ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रयत्नः: स्पृष्टः | स्थानम्: कण्ठः | करणम्: कण्ठः (स्वस्थानम्)",
+            explanation: "ग्-वर्णः क-वर्गीयो वर्णः, अतः अस्य स्थानं करणं च कण्ठः, प्रयत्नः स्पृष्टः।"
+          },
+          {
+            num: 2,
+            question: "Map Phonetic Features for letter 'य्': Effort: ______, Place: ______, Articulator: ______",
+            questionSanskrit: "वर्णस्य 'य्' प्रयत्न-स्थान-करणानि लिखत: प्रयत्नः: ______, स्थानम्: ______, करणम्: ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रयत्नः: ईषत्-स्पृष्टः | स्थानम्: तालु | करणम्: जिह्वा-मध्यम्",
+            explanation: "य्-वर्णः अन्तःस्थः, अस्य स्थानं तालु, करणं जिह्वामध्यम्, प्रयत्नः ईषत्स्पृष्टः।"
+          },
+          {
+            num: 3,
+            question: "Map Phonetic Features for letter 'स्': Effort: ______, Place: ______, Articulator: ______",
+            questionSanskrit: "वर्णस्य 'स्' प्रयत्न-स्थान-करणानि लिखत: प्रयत्नः: ______, स्थानम्: ______, करणम्: ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रयत्नः: ईषद्-विवृतः | स्थानम्: दन्ताः | करणम्: जिह्वा-अग्रम्",
+            explanation: "स्-वर्णः ऊष्मा, दन्त्यः, जिह्वाग्रेण उच्चार्यते, प्रयत्नः ईषद्विवृतः।"
+          },
+          {
+            num: 4,
+            question: "Map Phonetic Features for short vowel 'ह्रस्व अ': Effort: ______, Place: ______, Articulator: ______",
+            questionSanskrit: "वर्णस्य 'ह्रस्व अ' प्रयत्न-स्थान-करणानि लिखत: प्रयत्नः: ______, स्थानम्: ______, करणम्: ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रयत्नः: संवृतः | स्थानम्: कण्ठः | करणम्: कण्ठः (स्वस्थानम्)",
+            explanation: "ह्रस्वस्य अ-कारस्य कण्ठसङ्कोचात् संवृतः प्रयत्नः भवति।"
+          },
+          {
+            num: 5,
+            question: "Map Phonetic Features for long vowel 'दीर्घ आ': Effort: ______, Place: ______, Articulator: ______",
+            questionSanskrit: "वर्णस्य 'दीर्घ आ' प्रयत्न-स्थान-करणानि लिखत: प्रयत्नः: ______, स्थानम्: ______, करणम्: ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रयत्नः: विवृतः | स्थानम्: कण्ठः | करणम्: कण्ठः (स्वस्थानम्)",
+            explanation: "दीर्घस्य आकारस्य विवृतः प्रयत्नः भवति (स्फुटविवरत्वात्)।"
+          },
+          {
+            num: 6,
+            question: "Map Phonetic Features for letter 'ठ्': Effort: ______, Place: ______, Articulator: ______",
+            questionSanskrit: "वर्णस्य 'ठ्' प्रयत्न-स्थान-करणानि लिखत: प्रयत्नः: ______, स्थानम्: ______, करणम्: ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रयत्नः: स्पृष्टः | स्थानम्: मूर्धा | करणम्: जिह्वा-उपाग्रम्",
+            explanation: "ठ्-वर्णः ट-वर्गीयः, मूर्धन्यः, स्पर्शः, जिह्वा-उपाग्रेण उच्चार्यते।"
+          },
+          {
+            num: 7,
+            question: "Map Phonetic Features for letter 'भ्': Effort: ______, Place: ______, Articulator: ______",
+            questionSanskrit: "वर्णस्य 'भ्' प्रयत्न-स्थान-करणानि लिखत: प्रयत्नः: ______, स्थानम्: ______, करणम्: ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रयत्नः: स्पृष्टः | स्थानम्: ओष्ठौ | करणम्: ओष्ठौ (स्वस्थानम्)",
+            explanation: "भ्-वर्णः प-वर्गीयः, ओष्ठ्यः, स्पर्शः, ओष्ठद्वयस्य स्पष्टस्पर्शेन जायते।"
+          },
+          {
+            num: 8,
+            question: "Map Phonetic Features for vowel 'ई': Effort: ______, Place: ______, Articulator: ______",
+            questionSanskrit: "वर्णस्य 'ई' प्रयत्न-स्थान-करणानि लिखत: प्रयत्नः: ______, स्थानम्: ______, करणम्: ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रयत्नः: विवृतः | स्थानम्: तालु | करणम्: जिह्वा-मध्यम्",
+            explanation: "ई-वर्णः तालव्यः स्वरः, अस्य प्रयत्नः विवृतः भवति।"
+          },
+          {
+            num: 9,
+            question: "Map Phonetic Features for letter 'ळ्': Effort: ______, Place: ______, Articulator: ______",
+            questionSanskrit: "वर्णस्य 'ळ्' प्रयत्न-स्थान-करणानि लिखत: प्रयत्नः: ______, स्थानम्: ______, करणम्: ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रयत्नः: ईषत्-स्पृष्टः | स्थानम्: मूर्धा/दन्तः | करणम्: जिह्वाग्रम्",
+            explanation: "ळ्-वर्णः अन्तःस्थवत् ईषत्स्पृष्टप्रयत्नेन उच्चार्यते।"
+          },
+          {
+            num: 10,
+            question: "Map Phonetic Features for 'अः' (विसर्गः): Effort: ______, Place: ______, Articulator: ______",
+            questionSanskrit: "वर्णस्य 'अः' (विसर्गः) प्रयत्न-स्थान-करणानि लिखत: प्रयत्नः: ______, स्थानम्: ______, करणम्: ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रयत्नः: ईषद्-विवृतः | स्थानम्: कण्ठः | करणम्: कण्ठः",
+            explanation: "विसर्गः अयोगवाहः, कण्ठ्यः, अस्य आभ्यन्तरप्रयत्नः ईषद्विवृतः।"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "ws-grade9-ch11-ws2",
+    title: "Worksheet 2: Structural True/False & Identification (10 Questions)",
+    titleSanskrit: "एकादशः पाठः कार्यपत्रिका २: संरचनात्मक-सत्यासत्य-निर्णयः (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Evaluate assertions regarding Sanskrit phonological rules, Sandhi disjunction, voice shifts, and interrogative sentence construction based on Chapter 11.",
+    sections: [
+      {
+        sectionTitle: "Section A: Structural True/False & Identification",
+        sectionTitleSanskrit: "खण्डः 'क' · सत्यासत्य-निर्णयः प्रश्ननिर्माणं च",
+        instructions: "Evaluate statements using आम् (True) or न (False) and complete the question framing tasks.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Evaluate: 'ऋ' वर्णस्य आभ्यन्तर प्रयत्नः विवृतः भवति। (आम् / न)",
+            questionSanskrit: "'ऋ' वर्णस्य आभ्यन्तर प्रयत्नः विवृतः भवति। (आम् / न)",
+            marks: 2,
+            type: "short_ans",
+            answer: "आम्",
+            explanation: "ह्रस्व-अ-कारं विहाय सर्वेषां स्वराणां प्रयत्नः विवृतः भवति।"
+          },
+          {
+            num: 2,
+            question: "Evaluate: विसर्गस्य उच्चारणं विवृत प्रयत्नेन सिध्यति। (आम् / न)",
+            questionSanskrit: "विसर्गस्य उच्चारणं विवृत प्रयत्नेन सिध्यति। (आम् / न)",
+            marks: 2,
+            type: "short_ans",
+            answer: "न",
+            explanation: "विसर्गस्य प्रयत्नः ईषद्विवृतः भवति, न तु विवृतः।"
+          },
+          {
+            num: 3,
+            question: "Evaluate: ए, ऐ, ओ, औ वर्णाः समानाक्षराणि सन्ति। (आम् / न)",
+            questionSanskrit: "ए, ऐ, ओ, औ वर्णाः समानाक्षराणि सन्ति। (आम् / न)",
+            marks: 2,
+            type: "short_ans",
+            answer: "न",
+            explanation: "ए, ऐ, ओ, औ वर्णाः सन्ध्यक्षराणि (द्विस्थानि-स्वराः) सन्ति।"
+          },
+          {
+            num: 4,
+            question: "Evaluate: कण्ठ्य-वर्णानाम् स्थाने कण्ठः एव करणं भवति। (आम् / न)",
+            questionSanskrit: "कण्ठ्य-वर्णानाम् स्थाने कण्ठः एव करणं भवति। (आम् / न)",
+            marks: 2,
+            type: "short_ans",
+            answer: "आम्",
+            explanation: "कण्ठ्यवर्णानां स्वस्थानमेव करणरूपेण कार्यं करोति।"
+          },
+          {
+            num: 5,
+            question: "Frame Question: [स्वराः] स्वतन्त्रवर्णाः सन्ति।",
+            questionSanskrit: "रेखाङ्कितपदम् आधृत्य प्रश्ननिर्माणं कुरुत: [स्वराः] स्वतन्त्रवर्णाः सन्ति।",
+            marks: 2,
+            type: "short_ans",
+            answer: "के स्वतन्त्रवर्णाः सन्ति?",
+            explanation: "स्वराः (प्रथमा बहुवचन) $\rightarrow$ के।"
+          },
+          {
+            num: 6,
+            question: "Frame Question: व्यञ्जनानां [चत्वारो] भेदाः भवन्ति।",
+            questionSanskrit: "रेखाङ्कितपदम् आधृत्य प्रश्ननिर्माणं कुरुत: व्यञ्जनानां [चत्वारो] भेदाः भवन्ति।",
+            marks: 2,
+            type: "short_ans",
+            answer: "व्यञ्जनानां कति भेदाः भवन्ति?",
+            explanation: "सङ्ख्यावाचकपदस्य स्थाने 'कति' इति प्रयुज्यते।"
+          },
+          {
+            num: 7,
+            question: "Disjoin Sandhi: प्रयत्नोऽपि = ______ + ______",
+            questionSanskrit: "सन्धिविच्छेदं कुरुत: प्रयत्नोऽपि = ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रयत्नः + अपि (उत्व-पूर्वरूप-विसर्गसन्धिः)",
+            explanation: "अतः परस्य विसर्गस्य उत्वं पूर्वरूपं च भूत्वा 'प्रयत्नोऽपि' सिध्यति।"
+          },
+          {
+            num: 8,
+            question: "Convert to Active Voice: 'अस्माभिः वर्णोच्चारण-शिक्षा ज्ञायते।'",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: 'अस्माभिः वर्णोच्चारण-शिक्षा ज्ञायते।'",
+            marks: 2,
+            type: "short_ans",
+            answer: "वयं वर्णोच्चारण-शिक्षां जानीमः।",
+            explanation: "अस्माभिः (तृतीया) $\rightarrow$ वयम् (प्रथमा), ज्ञायते $\rightarrow$ जानीमः।"
+          },
+          {
+            num: 9,
+            question: "Form Compound: आस्यस्य अभ्यन्तरे = ______",
+            questionSanskrit: "समस्तपदं रचयत: आस्यस्य अभ्यन्तरे = ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "आस्याभ्यन्तरे (षष्ठीतत्पुरुष-समासः)",
+            explanation: "आस्यस्य + अभ्यन्तरे = आस्याभ्यन्तरे।"
+          },
+          {
+            num: 10,
+            question: "Hindi Meaning: 'सङ्कुचितः' पदस्य हिन्दी-पर्यायं लिखत:",
+            questionSanskrit: "'सङ्कुचितः' पदस्य हिन्दी-पर्यायं लिखत:",
+            marks: 2,
+            type: "short_ans",
+            answer: "सिकुड़ा हुआ / संकीर्ण (Narrowed / Constricted)",
+            explanation: "कण्ठस्य संकोचात् ह्रस्व-अ-कारस्य संवृतप्रयत्नः भवति।"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "ws-grade9-ch11-ws3",
+    title: "Worksheet 3: Conceptual Analysis & Grid Placement (10 Questions)",
+    titleSanskrit: "एकादशः पाठः कार्यपत्रिका ३: अवधारणात्मक-विश्लेषणं वर्णवर्गीकरणं च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Deep analytical investigation into Paninian phonetic sutras, vocal aperture mechanics, vowel duration, and physiological sound matrices.",
+    sections: [
+      {
+        sectionTitle: "Section A: Conceptual Analysis & Grid Placement",
+        sectionTitleSanskrit: "खण्डः 'क' · ध्वनिविज्ञान-सिद्धान्त-विश्लेषणम्",
+        instructions: "Answer analytical phonetics questions based on Paninian Shiksha mechanics.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Why does the textbook describe short vowel 'अ' as an exception among the vowels?",
+            questionSanskrit: "स्वरेषु ह्रस्वः 'अ-कारः' अपवादरूपेण किमर्थं वर्णितः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "Because all other vowels follow the विवृत (open cavity) format, while short 'अ' is uniquely produced by narrowing or contracting (संवृत) the throat.",
+            explanation: "प्रयोगे ह्रस्वस्य अ-कारस्य संवृतप्रयत्नः भवति, प्रक्रियादशायां तु विवृतमेव।"
+          },
+          {
+            num: 2,
+            question: "What is the fundamental functional difference between a समानाक्षर and a सन्ध्यक्षर?",
+            questionSanskrit: "समानाक्षरस्य सन्ध्यक्षरस्य च मध्ये कः भेदः वर्तते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "A समानाक्षर involves a single place of articulation (एक-स्थानी), while a सन्ध्यक्षर requires two distinct structural spaces (द्वि-स्थानी) to form a diphthong.",
+            explanation: "समानाक्षराणि एकस्थानेन उच्चार्यन्ते, सन्ध्यक्षराणि (ए, ऐ, ओ, औ) स्थानद्वयेन।"
+          },
+          {
+            num: 3,
+            question: "How does ईषत्-स्पृष्ट differ from ईषद्-विवृत in terms of mouth mechanics?",
+            questionSanskrit: "मुखव्यापारदृष्ट्या ईषत्-स्पृष्टस्य ईषद्-विवृतस्य च कः भेदः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "In ईषत्-स्पृष्ट, the articulator slightly touches the place, while in ईषद्-विवृत, it does not touch at all but gets close enough to leave a small air channel.",
+            explanation: "ईषत्स्पृष्टे स्वल्पस्पर्शः भवति, ईषद्विवृते तु स्पर्शाभावः लघुविवरश्च।"
+          },
+          {
+            num: 4,
+            question: "Complete the Paniniya sutra line: 'विवृतकरणाः ___________।'",
+            questionSanskrit: "पाणिनीय-शिक्षायाः पङ्क्तिं पूरयत: 'विवृतकरणाः ___________।'",
+            marks: 2,
+            type: "short_ans",
+            answer: "स्वराः।",
+            explanation: "विवृतकरणाः स्वराः।"
+          },
+          {
+            num: 5,
+            question: "Which two acoustic values are classified together under the umbrella term अयोगवाहौ?",
+            questionSanskrit: "अयोगवाहौ इति नाम्ना कौ द्वौ वर्णौ प्रसिद्धौ?",
+            marks: 2,
+            type: "short_ans",
+            answer: "अनुस्वारः (अं) एवं विसर्गः (अः)।",
+            explanation: "अयोगवाहाः आश्रयान् विना न प्रयुज्यन्ते।"
+          },
+          {
+            num: 6,
+            question: "Write out the consonants that belong to the जिह्वा-मध्य (middle of the tongue) articulator bracket:",
+            questionSanskrit: "जिह्वा-मध्यं करणं येषां ते के वर्णाः सन्ति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "च, छ, ज, झ, ञ, य, श (तालव्याः वर्णाः)।",
+            explanation: "तालुस्थाने जिह्वामध्यं करणं भवति।"
+          },
+          {
+            num: 7,
+            question: "Explain why pure consonants are considered dependent (परतन्त्रः वर्णः) letters:",
+            questionSanskrit: "शुद्धव्यञ्जनानि परतन्त्राणि किमर्थं कथ्यन्ते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "Because pure consonants have half a matra (अर्धमात्रा) and cannot be pronounced without the support of a vowel.",
+            explanation: "उच्चारणार्थम् आधार-स्वरः अनिवार्यः भवति।"
+          },
+          {
+            num: 8,
+            question: "What kind of effort takes place when a distinct, wide gap (स्फुटः विवरः) is formed between the articulator and place?",
+            questionSanskrit: "यदा स्थान-करणयोर्मध्ये स्फुटः विवरः जायते, तदा कः प्रयत्नः भवति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "विवृत-प्रयत्नः (Open effort)।",
+            explanation: "स्फुटविवरत्वात् सर्वेषां स्वराणां विवृतप्रयत्नः भवति।"
+          },
+          {
+            num: 9,
+            question: "Group the consonants त्, थ्, द्, ध्, न् under their precise place-name class heading:",
+            questionSanskrit: "त्, थ्, द्, ध्, न् वर्णानां स्थानसंज्ञा का अस्ति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "दन्त्याः वर्णाः (Dental sounds)।",
+            explanation: "ऋतुलसानां दन्ताः।"
+          },
+          {
+            num: 10,
+            question: "Translate to Sanskrit: 'Through continuous practice, we can achieve clear pronunciation.'",
+            questionSanskrit: "संस्कृते अनुवादं कुरुत: 'निरन्तर अभ्यास से हम स्पष्ट उच्चारण प्राप्त कर सकते हैं।'",
+            marks: 2,
+            type: "short_ans",
+            answer: "पुनः पुनः अभ्यासेन वयं सुस्पष्टम् उच्चारणं कर्तुं शक्नुमः / प्रभवामः।",
+            explanation: "अभ्यासेन सर्वं सिध्यति।"
+          }
+        ]
+      }
+    ]
   }
 ];
