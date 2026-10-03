@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import type { DhatuEntry, DhatuPadam } from '../types/linguistics';
+import type { DhatuEntry } from '../types/linguistics';
 import {
   GANA_HEADINGS,
   GANA_LABELS,
@@ -16,6 +16,7 @@ import '../styles/dhatupatha.css';
 
 type DhatupathaBrowserProps = {
   onGoBack?: () => void;
+  onSelectDhatu?: (dhatuId: string, action: 'generator' | 'deconstructor' | 'comparator') => void;
 };
 
 const GANA_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
@@ -30,6 +31,22 @@ type BrowseSection = {
   en?: string;
   roots: DhatuEntry[];
 };
+
+const CBSE_CORE_ROOT_IDS = new Set([
+  'path', 'likh', 'gam', 'bhu', 'has', 'khel', 'krid', 'chal', 'dhav', 'pat',
+  'nam', 'pa', 'pib', 'drsh', 'pash', 'stha', 'tishth', 'smr', 'vad', 'vas',
+  'khad', 'kr', 'da', 'grah', 'graha', 'shru', 'jna', 'labh', 'sev', 'vrdh',
+  'ruch', 'shubh', 'mud', 'jan', 'shi', 'bhuj', 'ni', 'as', 'han', 'ish',
+  'pracch', 'tyaj', 'jiv', 'mil', 'yuj', 'vrsh', 'cur', 'kath'
+]);
+
+const CBSE_CORE_DEVANAGARI = new Set([
+  'पठ्', 'लिख्', 'गम्', 'भू', 'हस्', 'खेल्', 'क्रीड्', 'चल्', 'धाव्', 'पत्',
+  'नम्', 'पा', 'दृश्', 'स्था', 'स्मृ', 'वद्', 'वस्', 'खाद्', 'कृ', 'दा',
+  'ग्रह्', 'श्रु', 'ज्ञा', 'लभ्', 'सेव्', 'वृध्', 'रुच्', 'शुभ्', 'मुद्', 'जन्',
+  'शी', 'भुज्', 'नी', 'अस्', 'हन्', 'इष्', 'प्रच्छ्', 'त्यज्', 'जीव्', 'मिल्',
+  'युज्', 'वृष्', 'चुर्', 'कथ्'
+]);
 
 /** Page-only speech pace. Normal is Web Speech rate 1. Session only, not Bodhi. */
 const DHATU_SPEEDS = [
@@ -56,14 +73,15 @@ const loadDhatuSpeed = (): DhatuSpeed => {
 const rateForSpeed = (speed: DhatuSpeed): number =>
   DHATU_SPEEDS.find((item) => item.id === speed)?.rate ?? 1;
 
-const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
+const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack, onSelectDhatu }) => {
   const [entries, setEntries] = useState<DhatuEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState('');
   const [browseMode, setBrowseMode] = useState<BrowseMode>('gana');
   const [ganaFilter, setGanaFilter] = useState<number | null>(null);
-  const [padamFilter, setPadamFilter] = useState<DhatuPadam | null>(null);
+  const [padamFilter, setPadamFilter] = useState<'all' | 'parasmaipada' | 'atmanepada' | 'ubhayapada'>('all');
+  const [cbseOnly, setCbseOnly] = useState(false);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [revealTick, setRevealTick] = useState(0);
   /** True while ▶ Play all is speaking the visible roots. */
@@ -126,11 +144,17 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
     if (browseMode === 'gana' && ganaFilter != null) {
       list = list.filter((e) => e.gana === ganaFilter || e.class === ganaFilter);
     }
-    if (padamFilter != null) {
+    if (padamFilter !== 'all') {
       list = list.filter((e) => e.padam === padamFilter);
     }
+    if (cbseOnly) {
+      list = list.filter((e) => {
+        const id = (e.id || '').toLowerCase();
+        return CBSE_CORE_ROOT_IDS.has(id) || CBSE_CORE_DEVANAGARI.has(e.devanagari);
+      });
+    }
     return list;
-  }, [entries, query, ganaFilter, padamFilter, browseMode]);
+  }, [entries, query, ganaFilter, padamFilter, cbseOnly, browseMode]);
 
   /** Visible roots in the active browse order so sections and Play all match. */
   const sections = useMemo((): BrowseSection[] => {
@@ -184,9 +208,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
   const ordered = useMemo(() => sections.flatMap((section) => section.roots), [sections]);
   filteredRef.current = ordered;
 
-  const hasPadam = useMemo(() => entries.some((e) => e.padam), [entries]);
-
-  // A new search, filter, or browse mode shows a different list — drop the old queue.
+  // A new search, gaṇa, voice, or CBSE filter shows a different list — drop the old queue.
   useEffect(() => {
     stopPlayAllRef.current?.();
     stopPlayAllRef.current = null;
@@ -194,7 +216,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
     resumeIndexRef.current = 0;
     setPlayingAll(false);
     setSpeakingKey(null);
-  }, [query, ganaFilter, padamFilter, browseMode]);
+  }, [query, ganaFilter, padamFilter, cbseOnly, browseMode]);
 
   // While Play all runs, pin speed + Pause under the site header (or the
   // screen top once the header has scrolled away). Fixed, not sticky: the
@@ -274,7 +296,8 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
     if (!ordered.some((item) => entryKey(item) === key)) {
       setQuery('');
       setGanaFilter(null);
-      setPadamFilter(null);
+      setPadamFilter('all');
+      setCbseOnly(false);
     }
     setExpandedId(key);
   };
@@ -490,6 +513,37 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
                 <p className="dp-notes">{entry.notes}</p>
               </>
             )}
+            {onSelectDhatu && (
+              <div className="dp-card-actions-row" onClick={(e) => e.stopPropagation()}>
+                <button
+                  type="button"
+                  className="dp-card-action-btn dp-card-action-btn--primary"
+                  onClick={() => onSelectDhatu(entry.id || entry.devanagari, 'generator')}
+                  title={`Generate full 5-Lakāra conjugations for ${entry.devanagari}`}
+                >
+                  ⚙️ 5-लकार रूपाणि (Conjugate)
+                </button>
+                <button
+                  type="button"
+                  className="dp-card-action-btn dp-card-action-btn--secondary"
+                  onClick={() => onSelectDhatu(entry.id || entry.devanagari, 'comparator')}
+                  title={`Compare ${entry.devanagari} against other verbs or causative forms`}
+                >
+                  ⚖️ तुलना (Compare)
+                </button>
+                <button
+                  type="button"
+                  className="dp-card-action-btn dp-card-action-btn--ghost"
+                  onClick={() => {
+                    const sampleWord = entry.examples?.[0] || entry.devanagari;
+                    onSelectDhatu(sampleWord, 'deconstructor');
+                  }}
+                  title={`Deconstruct words derived from ${entry.devanagari}`}
+                >
+                  🔍 पद-विश्लेषणम् (Deconstruct)
+                </button>
+              </div>
+            )}
             <p className="dp-hint">Tap the card again to collapse · Laṭ present tables · Phase 2</p>
           </div>
         )}
@@ -568,35 +622,62 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
           </button>
           </div>
         </div>
-        {hasPadam && (
-          <div className="dp-chips" role="group" aria-label="Filter by pada">
+        {/* Voice & Curriculum filters */}
+        <div className="dp-filter-row">
+          <div className="dp-chips" role="group" aria-label="Filter by voice / padam">
+            <span className="dp-filter-sublabel">पदम्:</span>
             <button
               type="button"
-              className={`dp-chip${padamFilter == null ? ' dp-chip--active' : ''}`}
-              onClick={() => setPadamFilter(null)}
+              className={`dp-chip${padamFilter === 'all' ? ' dp-chip--active' : ''}`}
+              onClick={() => setPadamFilter('all')}
             >
-              All padas
+              All Voices (सर्वाणि)
             </button>
-            {(Object.keys(PADAM_LABELS) as DhatuPadam[]).map((padam) => (
-              <button
-                type="button"
-                key={padam}
-                className={`dp-chip${padamFilter === padam ? ' dp-chip--active' : ''}`}
-                onClick={() => setPadamFilter((prev) => (prev === padam ? null : padam))}
-              >
-                {PADAM_LABELS[padam]}
-              </button>
-            ))}
+            <button
+              type="button"
+              className={`dp-chip${padamFilter === 'parasmaipada' ? ' dp-chip--active' : ''}`}
+              onClick={() => setPadamFilter((prev) => (prev === 'parasmaipada' ? 'all' : 'parasmaipada'))}
+            >
+              परस्मैपदम् (Active)
+            </button>
+            <button
+              type="button"
+              className={`dp-chip${padamFilter === 'atmanepada' ? ' dp-chip--active' : ''}`}
+              onClick={() => setPadamFilter((prev) => (prev === 'atmanepada' ? 'all' : 'atmanepada'))}
+            >
+              आत्मनेपदम् (Middle)
+            </button>
+            <button
+              type="button"
+              className={`dp-chip${padamFilter === 'ubhayapada' ? ' dp-chip--active' : ''}`}
+              onClick={() => setPadamFilter((prev) => (prev === 'ubhayapada' ? 'all' : 'ubhayapada'))}
+            >
+              उभयपदम् (Dual Voice)
+            </button>
           </div>
-        )}
+
+          <div className="dp-curriculum-chips">
+            <button
+              type="button"
+              className={`dp-chip dp-chip--cbse${cbseOnly ? ' dp-chip--cbse-active' : ''}`}
+              onClick={() => setCbseOnly((prev) => !prev)}
+              title="Show essential verbs prescribed in CBSE Class 6-10 syllabus"
+            >
+              {cbseOnly ? '⭐ CBSE Core Roots (Active)' : '⭐ CBSE Core 50 Roots'}
+            </button>
+          </div>
+        </div>
+
+        {/* Gaṇa filter chips */}
         {browseMode === 'gana' && (
         <div className="dp-chips" role="group" aria-label="Filter by gaṇa">
+          <span className="dp-filter-sublabel">गणः:</span>
           <button
             type="button"
             className={`dp-chip${ganaFilter == null ? ' dp-chip--active' : ''}`}
             onClick={() => setGanaFilter(null)}
           >
-            All gaṇas
+            All 10 gaṇas
           </button>
           {GANA_ORDER.map((n) => (
             <button

@@ -1,11 +1,13 @@
 /**
- * Pāṇinian Morphological Derivation & Deconstruction Engine
+ * Pāṇinian Morphological Derivation & Deconstruction Engine (Enhanced)
  * Implements:
  * 1. Guṇa & Vṛddhi vowel gradations
- * 2. 5 Core CBSE Lakāras (लट्, लृट्, लङ्, लोट्, विधिलिङ्)
- * 3. Kṛt Participle Generator (क्त्वा, तुमुन्, ल्यप्, क्त, शतृ)
- * 4. Word Deconstructor (Input word ➔ Root + Suffix + Meaning + Sūtra)
- * 5. Interactive Practice Challenges
+ * 2. 5 Core CBSE Lakāras (लट्, लृट्, लङ्, लोट्, विधिलिङ्) across Parasmaipada & Atmanepada
+ * 3. Causative (णिच्-प्रत्ययः / हेतुमण्णिच्) 5-Lakāra Conjugation Engine
+ * 4. Kṛt Participle Generator (क्त्वा, तुमुन्, ल्यप्, क्त, शतृ, शानच्, तव्यत्, अनीयर्)
+ * 5. Word Deconstructor (Input word ➔ Root + Upasarga + Vikaraṇa + Suffix + Sūtra)
+ * 6. Paradigm Comparison Engine (तुलनात्मक-दर्शनम्)
+ * 7. Comprehensive Interactive Practice Challenges (25 Questions)
  */
 
 import type { DhatuEntry } from '../types/linguistics';
@@ -15,6 +17,7 @@ import { personNumberEnglish } from './personGloss';
 export { PERSON_LABELS, NUMBER_LABELS };
 
 export type LakaraId = 'lat' | 'lrt' | 'lang' | 'lot' | 'vidhiling';
+export type VoiceType = 'parasmaipada' | 'atmanepada';
 
 export interface LakaraInfo {
   id: LakaraId;
@@ -34,7 +37,7 @@ export const LAKARAS: LakaraInfo[] = [
     tenseCategory: 'वर्तमान काल',
     description: 'Used for ongoing or habitual actions happening now.',
     paniniSutra: 'वर्तमाने लट् (३.२.१२३)',
-    example: 'सः पुस्तकं पठति। (He reads a book.)',
+    example: 'सः पुस्तकं पठति। / छात्रः विद्यां लभते।',
   },
   {
     id: 'lrt',
@@ -43,7 +46,7 @@ export const LAKARAS: LakaraInfo[] = [
     tenseCategory: 'भविष्यत् काल',
     description: 'Used for future events that will happen.',
     paniniSutra: 'लृट् शेषे च (३.३.१३)',
-    example: 'सः श्वः गमिष्यति। (He will go tomorrow.)',
+    example: 'सः श्वः गमिष्यति। / ज्ञानं लप्स्यते।',
   },
   {
     id: 'lang',
@@ -52,7 +55,7 @@ export const LAKARAS: LakaraInfo[] = [
     tenseCategory: 'भूतकाल (अनद्यतन)',
     description: 'Used for past actions with augment prefix अ- (अडागम).',
     paniniSutra: 'अनद्यतने लङ् (३.२.१११)',
-    example: 'सः पाठम् अपठत्। (He studied the lesson.)',
+    example: 'सः पाठम् अपठत्। / तेन आनन्दम् अलभत।',
   },
   {
     id: 'lot',
@@ -61,7 +64,7 @@ export const LAKARAS: LakaraInfo[] = [
     tenseCategory: 'आज्ञा / प्रार्थना',
     description: 'Used for orders, commands, wishes, and prayers.',
     paniniSutra: 'लोट् च (३.३.१६२)',
-    example: 'त्वं सत्यं वद। (You speak the truth!)',
+    example: 'त्वं सत्यं वद। / बालः वर्धताम्।',
   },
   {
     id: 'vidhiling',
@@ -70,7 +73,7 @@ export const LAKARAS: LakaraInfo[] = [
     tenseCategory: 'विधि / सम्भावना',
     description: 'Used for advice, duty, possibility, or "should / ought to".',
     paniniSutra: 'विधिनिमन्त्रणामन्त्रणाधीष्टसंप्रश्नप्रार्थनेषु लिङ् (३.३.१६१)',
-    example: 'छात्रः परिश्रमं कुर्यात्। (A student should work hard.)',
+    example: 'छात्रः परिश्रमं कुर्यात्। / धर्मेण वर्धेत।',
   },
 ];
 
@@ -129,28 +132,38 @@ export interface DeconstructionResult {
 }
 
 // =========================================================================
-// 1. Core Known Conjugation Models for Common Roots (5 Lakāras)
+// 1. Core Verified Conjugation Paradigms (Parasmaipada & Atmanepada)
 // =========================================================================
 
-interface ParadigmData {
+export interface ParadigmData {
   root: string;
+  padam?: 'parasmaipada' | 'atmanepada' | 'ubhayapada';
   lat: [[string, string, string], [string, string, string], [string, string, string]];
   lrt: [[string, string, string], [string, string, string], [string, string, string]];
   lang: [[string, string, string], [string, string, string], [string, string, string]];
   lot: [[string, string, string], [string, string, string], [string, string, string]];
   vidhiling: [[string, string, string], [string, string, string], [string, string, string]];
+  atmanepada_lat?: [[string, string, string], [string, string, string], [string, string, string]];
+  atmanepada_lrt?: [[string, string, string], [string, string, string], [string, string, string]];
+  atmanepada_lang?: [[string, string, string], [string, string, string], [string, string, string]];
+  atmanepada_lot?: [[string, string, string], [string, string, string], [string, string, string]];
+  atmanepada_vidhiling?: [[string, string, string], [string, string, string], [string, string, string]];
   krt: {
     ktva?: string;
     tumun?: string;
     lyap?: string;
     kta?: string;
     shatr?: string;
+    shanac?: string;
+    tavyat?: string;
+    aniyar?: string;
   };
 }
 
-const COMMON_PARADIGMS: Record<string, ParadigmData> = {
+export const COMMON_PARADIGMS: Record<string, ParadigmData> = {
   path: {
     root: 'पठ्',
+    padam: 'parasmaipada',
     lat: [
       ['पठति', 'पठतः', 'पठन्ति'],
       ['पठसि', 'पठथः', 'पठथ'],
@@ -182,10 +195,14 @@ const COMMON_PARADIGMS: Record<string, ParadigmData> = {
       lyap: 'संपठ्य',
       kta: 'पठितः / पठिता / पठितम्',
       shatr: 'पठन् / पठन्ती',
+      tavyat: 'पठितव्यम्',
+      aniyar: 'पठनीयम्',
     },
   },
+
   gam: {
     root: 'गम्',
+    padam: 'parasmaipada',
     lat: [
       ['गच्छति', 'गच्छतः', 'गच्छन्ति'],
       ['गच्छसि', 'गच्छथः', 'गच्छथ'],
@@ -217,10 +234,14 @@ const COMMON_PARADIGMS: Record<string, ParadigmData> = {
       lyap: 'आगत्य',
       kta: 'गतः / गता / गतम्',
       shatr: 'गच्छन् / गच्छन्ती',
+      tavyat: 'गन्तव्यम्',
+      aniyar: 'गमनीयम्',
     },
   },
+
   bhu: {
     root: 'भू',
+    padam: 'parasmaipada',
     lat: [
       ['भवति', 'भवतः', 'भवन्ति'],
       ['भवसि', 'भवथः', 'भवथ'],
@@ -252,10 +273,14 @@ const COMMON_PARADIGMS: Record<string, ParadigmData> = {
       lyap: 'संभूय',
       kta: 'भूतः / भूता / भूतम्',
       shatr: 'भवन् / भवन्ती',
+      tavyat: 'भवितव्यम्',
+      aniyar: 'भवनीयम्',
     },
   },
+
   likh: {
     root: 'लिख्',
+    padam: 'parasmaipada',
     lat: [
       ['लिखति', 'लिखतः', 'लिखन्ति'],
       ['लिखसि', 'लिखथः', 'लिखथ'],
@@ -287,10 +312,176 @@ const COMMON_PARADIGMS: Record<string, ParadigmData> = {
       lyap: 'विलिख्य',
       kta: 'लिखितः / लिखिता / लिखितम्',
       shatr: 'लिखन् / लिखन्ती',
+      tavyat: 'लेखितव्यम्',
+      aniyar: 'लेखनीयम्',
     },
   },
+
+  // -------------------------------------------------------------
+  // Atmanepada Canonical Roots (Grade 9 Appendix 5 Framework)
+  // -------------------------------------------------------------
+  labh: {
+    root: 'लभ्',
+    padam: 'atmanepada',
+    lat: [
+      ['लभते', 'लभेते', 'लभन्ते'],
+      ['लभसे', 'लभेथे', 'लभध्वम्'],
+      ['लभे', 'लभावहे', 'लभामहे'],
+    ],
+    lrt: [
+      ['लप्स्यते', 'लप्स्येते', 'लप्स्यन्ते'],
+      ['लप्स्यसे', 'लप्स्येथे', 'लप्स्यध्वम्'],
+      ['लप्स्ये', 'लप्स्यावहे', 'लप्स्यामहे'],
+    ],
+    lang: [
+      ['अलभत', 'अलभेताम्', 'अलभन्त'],
+      ['अलभथाः', 'अलभेथाम्', 'अलभध्वम्'],
+      ['अलभे', 'अलभावहि', 'अलभामहि'],
+    ],
+    lot: [
+      ['लभताम्', 'लभेताम्', 'लभन्ताम्'],
+      ['लभस्व', 'लभेथाम्', 'लभध्वम्'],
+      ['लभै', 'लभावहै', 'लभामहै'],
+    ],
+    vidhiling: [
+      ['लभेत', 'लभेयाताम्', 'लभेरन्'],
+      ['लभेथाः', 'लभेयाथाम्', 'लभेध्वम्'],
+      ['लभेय', 'लभेवहि', 'लभेमहि'],
+    ],
+    krt: {
+      ktva: 'लब्ध्वा',
+      tumun: 'लब्धुम्',
+      lyap: 'प्रलभ्य',
+      kta: 'लब्धः / लब्धा / लब्धम्',
+      shanac: 'लभमानः / लभमाना',
+      tavyat: 'लब्धव्यम्',
+      aniyar: 'लभनीयम्',
+    },
+  },
+
+  vrdh: {
+    root: 'वृध्',
+    padam: 'atmanepada',
+    lat: [
+      ['वर्धते', 'वर्धेते', 'वर्धन्ते'],
+      ['वर्धसे', 'वर्धेथे', 'वर्धध्वम्'],
+      ['वर्धे', 'वर्धावहे', 'वर्धामहे'],
+    ],
+    lrt: [
+      ['वर्धिष्यते', 'वर्धिष्येते', 'वर्धिष्यन्ते'],
+      ['वर्धिष्यसे', 'वर्धिष्येथे', 'वर्धिष्यध्वम्'],
+      ['वर्धिष्ये', 'वर्धिष्यावहे', 'वर्धिष्यामहे'],
+    ],
+    lang: [
+      ['अवर्धत', 'अवर्धेताम्', 'अवर्धन्त'],
+      ['अवर्धथाः', 'अवर्धेथाम्', 'अवर्धध्वम्'],
+      ['अवर्धे', 'अवर्धावहि', 'अवर्धामहि'],
+    ],
+    lot: [
+      ['वर्धताम्', 'वर्धेताम्', 'वर्धन्ताम्'],
+      ['वर्धस्व', 'वर्धेथाम्', 'वर्धध्वम्'],
+      ['वर्धै', 'वर्धावहै', 'वर्धामहै'],
+    ],
+    vidhiling: [
+      ['वर्धेत', 'वर्धेयाताम्', 'वर्धेरन्'],
+      ['वर्धेथाः', 'वर्धेयाथाम्', 'वर्धेध्वम्'],
+      ['वर्धेय', 'वर्धेवहि', 'वर्धेमहि'],
+    ],
+    krt: {
+      ktva: 'वृद्ध्वा / वर्धित्वा',
+      tumun: 'वर्धितुम्',
+      lyap: 'संवृध्य',
+      kta: 'वृद्धः / वृद्धा / वृद्धम्',
+      shanac: 'वर्धमानः / वर्धमाना',
+      tavyat: 'वर्धितव्यम्',
+      aniyar: 'वर्धनीयम्',
+    },
+  },
+
+  sev: {
+    root: 'सेव्',
+    padam: 'atmanepada',
+    lat: [
+      ['सेवते', 'सेवेते', 'सेवन्ते'],
+      ['सेवसे', 'सेवेथे', 'सेवध्वम्'],
+      ['सेवे', 'सेवावहे', 'सेवामहे'],
+    ],
+    lrt: [
+      ['सेविष्यते', 'सेविष्येते', 'सेविष्यन्ते'],
+      ['सेविष्यसे', 'सेविष्येथे', 'सेविष्यध्वम्'],
+      ['सेविष्ये', 'सेविष्यावहे', 'सेविष्यामहे'],
+    ],
+    lang: [
+      ['असेवत', 'असेवेताम्', 'असेवन्त'],
+      ['असेवथाः', 'असेवेथाम्', 'असेवध्वम्'],
+      ['असेवे', 'असेवावहि', 'असेवामहि'],
+    ],
+    lot: [
+      ['सेवताम्', 'सेवेताम्', 'सेवन्ताम्'],
+      ['सेवस्व', 'सेवेथाम्', 'सेवध्वम्'],
+      ['सेवै', 'सेवावहै', 'सेवामहै'],
+    ],
+    vidhiling: [
+      ['सेवेत', 'सेवेयाताम्', 'सेवेरन्'],
+      ['सेवेथाः', 'सेवेयाथाम्', 'सेवेध्वम्'],
+      ['सेवेय', 'सेवेवहि', 'सेवेमहि'],
+    ],
+    krt: {
+      ktva: 'सेवित्वा',
+      tumun: 'सेवितुम्',
+      lyap: 'निषेव्य',
+      kta: 'सेवितः / सेविता / सेवितम्',
+      shanac: 'सेवमानः / सेवमाना',
+      tavyat: 'सेवितव्यम्',
+      aniyar: 'सेवनीयम्',
+    },
+  },
+
+  shi: {
+    root: 'शी',
+    padam: 'atmanepada',
+    lat: [
+      ['शेते', 'शयाते', 'शेरते'],
+      ['शेषे', 'शयाथे', 'शेध्वे'],
+      ['शये', 'शेवहे', 'शेमहे'],
+    ],
+    lrt: [
+      ['शयिष्यते', 'शयिष्येते', 'शयिष्यन्ते'],
+      ['शयिष्यसे', 'शयिष्येथे', 'शयिष्यध्वम्'],
+      ['शयिष्ये', 'शयिष्यावहे', 'शयिष्यामहे'],
+    ],
+    lang: [
+      ['अशेते', 'अशयाताम्', 'अशेरत'],
+      ['अशेथाः', 'अशयाथाम्', 'अशेध्वम्'],
+      ['अशयि', 'अशेवहि', 'अशेमहि'],
+    ],
+    lot: [
+      ['शेताम्', 'शयाताम्', 'शेरताम्'],
+      ['शेष्व', 'शयाथाम्', 'शेध्वम्'],
+      ['शयै', 'शयावहै', 'शयामहे'],
+    ],
+    vidhiling: [
+      ['शयीत', 'शयीयाताम्', 'शयीरन्'],
+      ['शयीथाः', 'शयीयाथाम्', 'शयीध्वम्'],
+      ['शयीय', 'शयीवहि', 'शयीमहि'],
+    ],
+    krt: {
+      ktva: 'शयित्वा',
+      tumun: 'शयितुम्',
+      lyap: 'अधिशीय',
+      kta: 'शयितः / शयिता / शयितम्',
+      shanac: 'शयानः / शयाना',
+      tavyat: 'शयितव्यम्',
+      aniyar: 'शयनीयम्',
+    },
+  },
+
+  // -------------------------------------------------------------
+  // Ubhayapada Paradigms (Dual Parasmaipada & Atmanepada)
+  // -------------------------------------------------------------
   kr: {
     root: 'कृ',
+    padam: 'ubhayapada',
     lat: [
       ['करोति', 'कुरुतः', 'कुर्वन्ति'],
       ['करोषि', 'कुरुथः', 'कुरुथ'],
@@ -316,16 +507,241 @@ const COMMON_PARADIGMS: Record<string, ParadigmData> = {
       ['कुर्याः', 'कुर्यातम्', 'कुर्यात'],
       ['कुर्याम्', 'कुर्याव', 'कुर्याम'],
     ],
+    atmanepada_lat: [
+      ['कुरुते', 'कुर्वाते', 'कुर्वते'],
+      ['कुरुषे', 'कुर्वाथे', 'कुरुध्वम्'],
+      ['कुर्वे', 'कुर्वहे', 'कुर्महे'],
+    ],
+    atmanepada_lrt: [
+      ['करिष्यते', 'करिष्येते', 'करिष्यन्ते'],
+      ['करिष्यसे', 'करिष्येथे', 'करिष्यध्वम्'],
+      ['करिष्ये', 'करिष्यावहे', 'करिष्यामहे'],
+    ],
+    atmanepada_lang: [
+      ['अकुरुत', 'अकुर्वाताम्', 'अकुर्वत'],
+      ['अकुरुथाः', 'अकुर्वाथाम्', 'अकुरुध्वम्'],
+      ['अकुर्वि', 'अकुर्वहि', 'अकुर्महि'],
+    ],
+    atmanepada_lot: [
+      ['कुरुताम्', 'कुर्वाताम्', 'कुर्वताम्'],
+      ['कुरुष्व', 'कुर्वाथाम्', 'कुरुध्वम्'],
+      ['करवै', 'करवावहै', 'करवामहै'],
+    ],
+    atmanepada_vidhiling: [
+      ['कुर्वीत', 'कुर्वीयाताम्', 'कुर्वीरन्'],
+      ['कुर्वीथाः', 'कुर्वीयाथाम्', 'कुर्वीध्वम्'],
+      ['कुर्वीय', 'कुर्वीवहि', 'कुर्वीमहि'],
+    ],
     krt: {
       ktva: 'कृत्वा',
       tumun: 'कर्तुम्',
       lyap: 'प्रकृत्य / उपकृत्य',
       kta: 'कृतः / कृता / कृतम्',
       shatr: 'कुर्वन् / कुर्वती',
+      shanac: 'कुर्वाणः / कुर्वाणा',
+      tavyat: 'कर्तव्यम्',
+      aniyar: 'करणीयम्',
     },
   },
+
+  bhuj: {
+    root: 'भुज्',
+    padam: 'ubhayapada',
+    lat: [
+      ['भुनक्ति', 'भुङ्क्तः', 'भुञ्जन्ति'],
+      ['भुनक्षि', 'भुङ्क्थः', 'भुङ्क्थ'],
+      ['भुनज्मि', 'भुञ्ज्वः', 'भुञ्ज्मः'],
+    ],
+    lrt: [
+      ['भोक्ष्यति', 'भोक्ष्यतः', 'भोक्ष्यन्ति'],
+      ['भोक्ष्यसि', 'भोक्ष्यथः', 'भोक्ष्यथ'],
+      ['भोक्ष्यामि', 'भोक्ष्यावः', 'भोक्ष्यामः'],
+    ],
+    lang: [
+      ['अभुनक्', 'अभुङ्क्ताम्', 'अभुञ्जन्'],
+      ['अभुनक्', 'अभुङ्क्तम्', 'अभुङ्क्त'],
+      ['अभुनजम्', 'अभुञ्ज्व', 'अभुञ्ज्म'],
+    ],
+    lot: [
+      ['भुनक्तु', 'भुङ्क्ताम्', 'भुञ्जन्तु'],
+      ['भुङ्ग्धि', 'भुङ्क्तम्', 'भुङ्क्त'],
+      ['भुनजानि', 'भुनजाव', 'भुनजाम'],
+    ],
+    vidhiling: [
+      ['भुञ्ज्यात्', 'भुञ्ज्याताम्', 'भुञ्ज्युः'],
+      ['भुञ्ज्याः', 'भुञ्ज्यातम्', 'भुञ्ज्यात'],
+      ['भुञ्ज्याम्', 'भुञ्ज्याव', 'भुञ्ज्याम'],
+    ],
+    atmanepada_lat: [
+      ['भुङ्क्ते', 'भुञ्जाते', 'भुञ्जते'],
+      ['भुङ्क्षे', 'भुञ्जाथे', 'भुङ्ग्ध्वे'],
+      ['भुञ्जे', 'भुञ्ज्वहे', 'भुञ्ज्महे'],
+    ],
+    atmanepada_lrt: [
+      ['भोक्ष्यते', 'भोक्ष्येते', 'भोक्ष्यन्ते'],
+      ['भोक्ष्यसे', 'भोक्ष्येथे', 'भोक्ष्यध्वम्'],
+      ['भोक्ष्ये', 'भोक्ष्यावहे', 'भोक्ष्यामहे'],
+    ],
+    atmanepada_lang: [
+      ['अभुङ्क्त', 'अभुञ्जाताम्', 'अभुञ्जत'],
+      ['अभुङ्क्थाः', 'अभुञ्जाथाम्', 'अभुङ्ग्ध्वम्'],
+      ['अभुञ्जि', 'अभुञ्ज्वहि', 'अभुञ्ज्महि'],
+    ],
+    atmanepada_lot: [
+      ['भुङ्क्ताम्', 'भुञ्जाताम्', 'भुञ्जताम्'],
+      ['भुङ्क्ष्व', 'भुञ्जाथाम्', 'भुङ्ग्ध्वम्'],
+      ['भुञ्जै', 'भुञ्जावहै', 'भुञ्जामहै'],
+    ],
+    atmanepada_vidhiling: [
+      ['भुञ्जीत', 'भुञ्जीयाताम्', 'भुञ्जीरन्'],
+      ['भुञ्जीथाः', 'भुञ्जीयाथाम्', 'भुञ्जीध्वम्'],
+      ['भुञ्जीय', 'भुञ्जीवहि', 'भुञ्जीमहि'],
+    ],
+    krt: {
+      ktva: 'भुक्त्वा',
+      tumun: 'भोक्तुम्',
+      lyap: 'उपभुज्य',
+      kta: 'भुक्तः / भुक्ता / भुक्तम्',
+      shatr: 'भुञ्जन्',
+      shanac: 'भुञ्जानः',
+      tavyat: 'भोक्तव्यम्',
+      aniyar: 'भोजनीयम्',
+    },
+  },
+
+  da: {
+    root: 'दा',
+    padam: 'ubhayapada',
+    lat: [
+      ['यच्छति / ददाति', 'यच्छतः / दत्ततः', 'यच्छन्ति / ददति'],
+      ['यच्छसि / ददासि', 'यच्छथः / दत्थः', 'यच्छथ / दत्थ'],
+      ['यच्छामि / ददामि', 'यच्छावः / दद्वः', 'यच्छामः / दद्मः'],
+    ],
+    lrt: [
+      ['दास्यति', 'दास्यतः', 'दास्यन्ति'],
+      ['दास्यसि', 'दास्यथः', 'दास्यथ'],
+      ['दास्यामि', 'दास्यावः', 'दास्यामः'],
+    ],
+    lang: [
+      ['अयच्छत् / अददात्', 'अयच्छताम् / अदत्ताम्', 'अयच्छन् / अददुः'],
+      ['अयच्छः / अदाः', 'अयच्छतम् / अदत्तम्', 'अयच्छत / अदत्त'],
+      ['अयच्छम् / अददाम्', 'अयच्छाव / अदद्व', 'अयच्छाम / अदद्म'],
+    ],
+    lot: [
+      ['यच्छतु / ददातु', 'यच्छताम् / दत्ताम्', 'यच्छन्तु / ददतु'],
+      ['यच्छ / देहि', 'यच्छतम् / दत्तम्', 'यच्छत / दत्त'],
+      ['यच्छानि / ददानि', 'यच्छाव / ददाव', 'यच्छाम / ददाम'],
+    ],
+    vidhiling: [
+      ['यच्छेत् / दद्यात्', 'यच्छेताम् / दद्याताम्', 'यच्छेयुः / दद्युः'],
+      ['यच्छेः / दद्याः', 'यच्छेतम् / दद्यातम्', 'यच्छेत / दद्यात'],
+      ['यच्छेयम् / दद्याम्', 'यच्छेव / दद्याव', 'यच्छेम / दद्याम'],
+    ],
+    atmanepada_lat: [
+      ['दत्ते', 'ददाते', 'ददते'],
+      ['दत्से', 'ददाथे', 'दद्ध्वे'],
+      ['ददे', 'दद्वहे', 'दद्महे'],
+    ],
+    atmanepada_lrt: [
+      ['दास्यते', 'दास्य्येते', 'दास्यन्ते'],
+      ['दास्यसे', 'दास्येथे', 'दास्यध्वम्'],
+      ['दास्ये', 'दास्यावहे', 'दास्यामहे'],
+    ],
+    atmanepada_lang: [
+      ['अदत्त', 'अददाताम्', 'अददत'],
+      ['अदत्थाः', 'अददाथाम्', 'अदद्ध्वम्'],
+      ['अददि', 'अदद्वहि', 'अदद्महि'],
+    ],
+    atmanepada_lot: [
+      ['दत्ताम्', 'ददाताम्', 'ददताम्'],
+      ['दत्स्व', 'ददाथाम्', 'दद्ध्वम्'],
+      ['ददै', 'ददावहै', 'ददामहै'],
+    ],
+    atmanepada_vidhiling: [
+      ['ददीत', 'ददीयाताम्', 'ददीरन्'],
+      ['ददीथाः', 'ददीयाथाम्', 'ददीध्वम्'],
+      ['ददीय', 'ददीवहि', 'ददीमहि'],
+    ],
+    krt: {
+      ktva: 'दत्त्वा',
+      tumun: 'दातुम्',
+      lyap: 'प्रदाय / आदाय',
+      kta: 'दत्तः / दत्ता / दत्तम्',
+      shatr: 'यच्छन् / ददत्',
+      shanac: 'ददानः / ददाना',
+      tavyat: 'दातव्यम्',
+      aniyar: 'दानीयम्',
+    },
+  },
+
+  ni: {
+    root: 'नी',
+    padam: 'ubhayapada',
+    lat: [
+      ['नयति', 'नयततः', 'नयन्ति'],
+      ['नयसि', 'नयथः', 'नयथ'],
+      ['नयामि', 'नयावः', 'नयामः'],
+    ],
+    lrt: [
+      ['नेष्यति', 'नेष्यतः', 'नेष्यन्ति'],
+      ['नेष्यसि', 'नेष्यथः', 'नेष्यथ'],
+      ['नेष्यामि', 'नेष्यावः', 'नेष्यामः'],
+    ],
+    lang: [
+      ['अनयत्', 'अनयताम्', 'अनयन्'],
+      ['अनयः', 'अनयतम्', 'अनयत'],
+      ['अनयम्', 'अनयाव', 'अनयाम'],
+    ],
+    lot: [
+      ['नयतु', 'नयताम्', 'नयन्तु'],
+      ['नय', 'नयतम्', 'नयत'],
+      ['नयानि', 'नयाव', 'नयाम'],
+    ],
+    vidhiling: [
+      ['नयेत्', 'नयेताम्', 'नयेयुः'],
+      ['नयेः', 'नयेतम्', 'नयेत'],
+      ['नयेयम्', 'नयेव', 'नयेम'],
+    ],
+    atmanepada_lat: [
+      ['नयते', 'नयेते', 'नयन्ते'],
+      ['नयसे', 'नयेथे', 'नयध्वम्'],
+      ['नये', 'नयावहे', 'नयामहे'],
+    ],
+    atmanepada_lrt: [
+      ['नेष्यते', 'नेष्येते', 'नेष्यन्ते'],
+      ['नेष्यसे', 'नेष्येथे', 'नेष्यध्वम्'],
+      ['नेष्ये', 'नेष्यावहे', 'नेष्यामहे'],
+    ],
+    atmanepada_lang: [
+      ['अनयत', 'अनयेताम्', 'अनयन्त'],
+      ['अनयथाः', 'अनयेथाम्', 'अनयध्वम्'],
+      ['अनये', 'अनयावहि', 'अनयामहि'],
+    ],
+    atmanepada_lot: [
+      ['नयताम्', 'नयेताम्', 'नयन्ताम्'],
+      ['नयस्व', 'नयेथाम्', 'नयध्वम्'],
+      ['नयै', 'नयावहै', 'नयामहै'],
+    ],
+    atmanepada_vidhiling: [
+      ['नयेत', 'नयेयाताम्', 'नयेरन्'],
+      ['नयेथाः', 'नयेयाथाम्', 'नयेध्वम्'],
+      ['नयेय', 'नयेवहि', 'नयेमहि'],
+    ],
+    krt: {
+      ktva: 'नीत्वा',
+      tumun: 'नेतुम्',
+      lyap: 'प्रणीय / आनीय',
+      kta: 'नीतः / नीता / नीतम्',
+      shatr: 'नयन् / नयन्ती',
+      shanac: 'नयमानः / नयमाना',
+      tavyat: 'नेतव्यम्',
+      aniyar: 'नयनीयम्',
+    },
+  },
+
   as: {
     root: 'अस्',
+    padam: 'parasmaipada',
     lat: [
       ['अस्ति', 'स्तः', 'सन्ति'],
       ['असि', 'स्थः', 'स्थ'],
@@ -359,8 +775,10 @@ const COMMON_PARADIGMS: Record<string, ParadigmData> = {
       shatr: 'सन् / सती',
     },
   },
+
   drsh: {
     root: 'दृश्',
+    padam: 'parasmaipada',
     lat: [
       ['पश्यति', 'पश्यतः', 'पश्यन्ति'],
       ['पश्यसि', 'पश्यथः', 'पश्यथ'],
@@ -392,10 +810,14 @@ const COMMON_PARADIGMS: Record<string, ParadigmData> = {
       lyap: 'संदृश्य',
       kta: 'दृष्टः / दृष्टा / दृष्टम्',
       shatr: 'पश्यन् / पश्यन्ती',
+      tavyat: 'द्रष्टव्यम्',
+      aniyar: 'दर्शनीयम्',
     },
   },
+
   stha: {
     root: 'स्था',
+    padam: 'parasmaipada',
     lat: [
       ['तिष्ठति', 'तिष्ठतः', 'तिष्ठन्ति'],
       ['तिष्ठसि', 'तिष्ठथः', 'तिष्ठथ'],
@@ -424,48 +846,17 @@ const COMMON_PARADIGMS: Record<string, ParadigmData> = {
     krt: {
       ktva: 'स्थित्वा',
       tumun: 'स्थातुम्',
-      lyap: 'उत्तस्थौ / प्रस्थाय',
+      lyap: 'प्रस्थाय',
       kta: 'स्थितः / स्थिता / स्थितम्',
       shatr: 'तिष्ठन् / तिष्ठन्ती',
+      tavyat: 'स्थातव्यम्',
+      aniyar: 'स्थानीयम्',
     },
   },
-  da: {
-    root: 'दा',
-    lat: [
-      ['यच्छति', 'यच्छतः', 'यच्छन्ति'],
-      ['यच्छसि', 'यच्छथः', 'यच्छथ'],
-      ['यच्छामि', 'यच्छावः', 'यच्छामः'],
-    ],
-    lrt: [
-      ['दास्यति', 'दास्यतः', 'दास्यन्ति'],
-      ['दास्यसि', 'दास्यथः', 'दास्यथ'],
-      ['दास्यामि', 'दास्यावः', 'दास्यामः'],
-    ],
-    lang: [
-      ['अयच्छत्', 'अयच्छताम्', 'अयच्छन्'],
-      ['अयच्छः', 'अयच्छतम्', 'अयच्छत'],
-      ['अयच्छम्', 'अयच्छाव', 'अयच्छाम'],
-    ],
-    lot: [
-      ['यच्छतु', 'यच्छताम्', 'यच्छन्तु'],
-      ['यच्छ', 'यच्छतम्', 'यच्छत'],
-      ['यच्छानि', 'यच्छाव', 'यच्छाम'],
-    ],
-    vidhiling: [
-      ['यच्छेत्', 'यच्छेताम्', 'यच्छेयुः'],
-      ['यच्छेः', 'यच्छेतम्', 'यच्छेत'],
-      ['यच्छेयम्', 'यच्छेव', 'यच्छेम'],
-    ],
-    krt: {
-      ktva: 'दत्त्वा',
-      tumun: 'दातुम्',
-      lyap: 'प्रदाय / आदाय',
-      kta: 'दत्तः / दत्ता / दत्तम्',
-      shatr: 'यच्छन् / यच्छन्ती',
-    },
-  },
+
   pa: {
     root: 'पा',
+    padam: 'parasmaipada',
     lat: [
       ['पिबति', 'पिबतः', 'पिबन्ति'],
       ['पिबसि', 'पिबथः', 'पिबथ'],
@@ -497,10 +888,14 @@ const COMMON_PARADIGMS: Record<string, ParadigmData> = {
       lyap: 'निपीय',
       kta: 'पीतः / पीता / पीतम्',
       shatr: 'पिबन् / पिबन्ती',
+      tavyat: 'पातव्यम्',
+      aniyar: 'पानीयम्',
     },
   },
+
   vad: {
     root: 'वद्',
+    padam: 'parasmaipada',
     lat: [
       ['वदति', 'वदतः', 'वदन्ति'],
       ['वदसि', 'वदथः', 'वदथ'],
@@ -532,10 +927,14 @@ const COMMON_PARADIGMS: Record<string, ParadigmData> = {
       lyap: 'संवाद्य',
       kta: 'उदितः / उदिता / उदितम्',
       shatr: 'वदन् / वदन्ती',
+      tavyat: 'वदितव्यम्',
+      aniyar: 'वदनीयम्',
     },
   },
+
   nam: {
     root: 'नम्',
+    padam: 'parasmaipada',
     lat: [
       ['नमति', 'नमतः', 'नमन्ति'],
       ['नमसि', 'नमथः', 'नमथ'],
@@ -567,15 +966,290 @@ const COMMON_PARADIGMS: Record<string, ParadigmData> = {
       lyap: 'प्रणम्य',
       kta: 'नतः / नता / नतम्',
       shatr: 'नमन् / नमन्ती',
+      tavyat: 'नन्तव्यम्',
+      aniyar: 'नमनीयम्',
+    },
+  },
+
+  shru: {
+    root: 'श्रु',
+    padam: 'parasmaipada',
+    lat: [
+      ['शृणोति', 'शृणुतः', 'शृण्वन्ति'],
+      ['शृणोषि', 'शृणुथः', 'शृणुथ'],
+      ['शृणोमि', 'शृण्वः', 'शृण्मः'],
+    ],
+    lrt: [
+      ['श्रोष्यति', 'श्रोष्यतः', 'श्रोष्यन्ति'],
+      ['श्रोष्यसि', 'श्रोष्यथः', 'श्रोष्यथ'],
+      ['श्रोश्यामि', 'श्रोश्यावः', 'श्रोश्यामः'],
+    ],
+    lang: [
+      ['अशृणोत्', 'अशृणुताम्', 'अशृण्वन्'],
+      ['अशृणोः', 'अशृणुतम्', 'अशृणुत'],
+      ['अशृणवम्', 'अशृण्व', 'अशृण्म'],
+    ],
+    lot: [
+      ['शृणोतु', 'शृणुताम्', 'शृण्वन्तु'],
+      ['शृणु', 'शृणुतम्', 'शृणुत'],
+      ['शृणवानि', 'शृणवाव', 'शृणवाम'],
+    ],
+    vidhiling: [
+      ['शृणुयात्', 'शृणुयाताम्', 'शृणुयुः'],
+      ['शृणुयाः', 'शृणुयातम्', 'शृणुयात'],
+      ['शृणुयाम्', 'शृणुयाव', 'शृणुयाम'],
+    ],
+    krt: {
+      ktva: 'श्रुत्वा',
+      tumun: 'श्रोतुम्',
+      lyap: 'संश्रुत्य',
+      kta: 'श्रुतः / श्रुता / श्रुतम्',
+      shatr: 'शृण्वन् / शृण्वती',
+      tavyat: 'श्रोतव्यम्',
+      aniyar: 'श्रवणीयम्',
+    },
+  },
+
+  smr: {
+    root: 'स्मृ',
+    padam: 'parasmaipada',
+    lat: [
+      ['स्मरति', 'स्मरतः', 'स्मरन्ति'],
+      ['स्मरसि', 'स्मरथः', 'स्मरथ'],
+      ['स्मरामि', 'स्मरावः', 'स्मरामः'],
+    ],
+    lrt: [
+      ['स्मरिष्यति', 'स्मरिष्यतः', 'स्मरिष्यन्ति'],
+      ['स्मरिष्यसि', 'स्मरिष्यथः', 'स्मरिष्यथ'],
+      ['स्मरिष्यामि', 'स्मरिष्यावः', 'स्मरिष्यामः'],
+    ],
+    lang: [
+      ['अस्मरत्', 'अस्मरताम्', 'अस्मरन्'],
+      ['अस्मरः', 'अस्मरतम्', 'अस्मरत'],
+      ['अस्मरम्', 'अस्मराव', 'अस्मराम'],
+    ],
+    lot: [
+      ['स्मरतु', 'स्मरताम्', 'स्मरन्तु'],
+      ['स्मर', 'स्मरतम्', 'स्मरत'],
+      ['स्मराणि', 'स्मराव', 'स्मराम'],
+    ],
+    vidhiling: [
+      ['स्मरेत्', 'स्मरेताम्', 'स्मरेयुः'],
+      ['स्मरेः', 'स्मरेतम्', 'स्मरेत'],
+      ['स्मरेयम्', 'स्मरेव', 'स्मरेम'],
+    ],
+    krt: {
+      ktva: 'स्मृत्वा',
+      tumun: 'स्मर्तुम्',
+      lyap: 'संस्मृत्य',
+      kta: 'स्मृतः / स्मृता / स्मृतम्',
+      shatr: 'स्मरन् / स्मरन्ती',
+      tavyat: 'स्मर्तव्यम्',
+      aniyar: 'स्मरणीयम्',
+    },
+  },
+
+  khad: {
+    root: 'खाद्',
+    padam: 'parasmaipada',
+    lat: [
+      ['खादति', 'खादतः', 'खादन्ति'],
+      ['खादसि', 'खादथः', 'खादथ'],
+      ['खादामि', 'खादावः', 'खादामः'],
+    ],
+    lrt: [
+      ['खादिष्यति', 'खादिष्यतः', 'खादिष्यन्ति'],
+      ['खादिष्यसि', 'खादिष्यथः', 'खादिष्यथ'],
+      ['खादिष्यामि', 'खादिष्यावः', 'खादिष्यामः'],
+    ],
+    lang: [
+      ['अखादत्', 'अखादताम्', 'अखादन्'],
+      ['अखादः', 'अखादतम्', 'अखादत'],
+      ['अखादम्', 'अखादाव', 'अखादाम'],
+    ],
+    lot: [
+      ['खादतु', 'खादताम्', 'खादन्तु'],
+      ['खाद', 'खादतम्', 'खादत'],
+      ['खादानि', 'खादाव', 'खादाम'],
+    ],
+    vidhiling: [
+      ['खादेत्', 'खादेताम्', 'खादेयुः'],
+      ['खादेः', 'खादेतम्', 'खादेत'],
+      ['खादेयम्', 'खादेव', 'खादेम'],
+    ],
+    krt: {
+      ktva: 'खादित्वा',
+      tumun: 'खादितुम्',
+      lyap: 'संखाद्य',
+      kta: 'खादितः / खादिता / खादितम्',
+      shatr: 'खादन् / खादन्ती',
+      tavyat: 'खादितव्यम्',
+      aniyar: 'खादनीयम्',
+    },
+  },
+
+  has: {
+    root: 'हस्',
+    padam: 'parasmaipada',
+    lat: [
+      ['हसति', 'हसतः', 'हसन्ति'],
+      ['हससि', 'हसथः', 'हसथ'],
+      ['हसामि', 'हसावः', 'हसामः'],
+    ],
+    lrt: [
+      ['हसिष्यति', 'हसिष्यतः', 'हसिष्यन्ति'],
+      ['हसिष्यसि', 'हसिष्यथः', 'हसिष्यथ'],
+      ['हसिष्यामि', 'हसिष्यावः', 'हसिष्यामः'],
+    ],
+    lang: [
+      ['अहसत्', 'अहसताम्', 'अहसन्'],
+      ['अहसः', 'अहसतम्', 'अहसत'],
+      ['अहसम्', 'अहसाव', 'अहसाम'],
+    ],
+    lot: [
+      ['हसतु', 'हसताम्', 'हसन्तु'],
+      ['हस', 'हसतम्', 'हसत'],
+      ['हसानि', 'हसाव', 'हसाम'],
+    ],
+    vidhiling: [
+      ['हसेत्', 'हसेताम्', 'हसेयुः'],
+      ['हसेः', 'हसेतम्', 'हसेत'],
+      ['हसेयम्', 'हसेव', 'हसेम'],
+    ],
+    krt: {
+      ktva: 'हसित्वा',
+      tumun: 'हसितुम्',
+      lyap: 'विहस्य',
+      kta: 'हसितः / हसिता / हसितम्',
+      shatr: 'हसन् / हसन्ती',
+      tavyat: 'हसितव्यम्',
+      aniyar: 'हसनीयम्',
+    },
+  },
+
+  krid: {
+    root: 'क्रीड्',
+    padam: 'parasmaipada',
+    lat: [
+      ['क्रीडति', 'क्रीडतः', 'क्रीडन्ति'],
+      ['क्रीडसि', 'क्रीडथः', 'क्रीडथ'],
+      ['क्रीडामि', 'क्रीडावः', 'क्रीडामः'],
+    ],
+    lrt: [
+      ['क्रीडिष्यति', 'क्रीडिष्यतः', 'क्रीडिष्यन्ति'],
+      ['क्रीडिष्यसि', 'क्रीडिष्यथः', 'क्रीडिष्यथ'],
+      ['क्रीडिष्यामि', 'क्रीडिष्यावः', 'क्रीडिष्यामः'],
+    ],
+    lang: [
+      ['अक्रीडत्', 'अक्रीडताम्', 'अक्रीडन्'],
+      ['अक्रीडः', 'अक्रीडतम्', 'अक्रीडत'],
+      ['अक्रीडम्', 'अक्रीडाव', 'अक्रीडाम'],
+    ],
+    lot: [
+      ['क्रीडतु', 'क्रीडताम्', 'क्रीडन्तु'],
+      ['क्रीड', 'क्रीडतम्', 'क्रीडत'],
+      ['क्रीडानि', 'क्रीडाव', 'क्रीडाम'],
+    ],
+    vidhiling: [
+      ['क्रीडेत्', 'क्रीडेताम्', 'क्रीडेयुः'],
+      ['क्रीडेः', 'क्रीडेतम्', 'क्रीडेत'],
+      ['क्रीडेयम्', 'क्रीडेव', 'क्रीडेम'],
+    ],
+    krt: {
+      ktva: 'क्रीडित्वा',
+      tumun: 'क्रीडितुम्',
+      lyap: 'संकीड्य',
+      kta: 'क्रीडितः / क्रीडिता / क्रीडितम्',
+      shatr: 'क्रीडन् / क्रीडन्ती',
+      tavyat: 'क्रीडितव्यम्',
+      aniyar: 'क्रीडनीयम्',
+    },
+  },
+
+  prachh: {
+    root: 'प्रच्छ्',
+    padam: 'parasmaipada',
+    lat: [
+      ['पृच्छति', 'पृच्छतः', 'पृच्छन्ति'],
+      ['पृच्छसि', 'पृच्छथः', 'पृच्छथ'],
+      ['पृच्छामि', 'पृच्छावः', 'पृच्छामः'],
+    ],
+    lrt: [
+      ['प्रक्ष्यति', 'प्रक्ष्यतः', 'प्रक्ष्यन्ति'],
+      ['प्रक्ष्यसि', 'प्रक्ष्यथः', 'प्रक्ष्यथ'],
+      ['प्रक्ष्यामि', 'प्रक्ष्यावः', 'प्रक्ष्यामः'],
+    ],
+    lang: [
+      ['अपृच्छत्', 'अपृच्छताम्', 'अपृच्छन्'],
+      ['अपृच्छः', 'अपृच्छतम्', 'अपृच्छत'],
+      ['अपृच्छम्', 'अपृच्छाव', 'अपृच्छाम'],
+    ],
+    lot: [
+      ['पृच्छतु', 'पृच्छताम्', 'पृच्छन्तु'],
+      ['पृच्छ', 'पृच्छतम्', 'पृच्छत'],
+      ['पृच्छानि', 'पृच्छाव', 'पृच्छाम'],
+    ],
+    vidhiling: [
+      ['पृच्छेत्', 'पृच्छेताम्', 'पृच्छेयुः'],
+      ['पृच्छेः', 'पृच्छेतम्', 'पृच्छेत'],
+      ['पृच्छेयम्', 'पृच्छेव', 'पृच्छेम'],
+    ],
+    krt: {
+      ktva: 'पृष्ट्वा',
+      tumun: 'प्रष्टुम्',
+      lyap: 'संप्रच्छ्य',
+      kta: 'पृष्टः / पृष्टा / पृष्टम्',
+      shatr: 'पृच्छन् / पृच्छन्ती',
+      tavyat: 'प्रष्टव्यम्',
+      aniyar: 'प्रच्छनीयम्',
+    },
+  },
+
+  mud: {
+    root: 'मुद्',
+    padam: 'atmanepada',
+    lat: [
+      ['मोदते', 'मोदेते', 'मोदन्ते'],
+      ['मोदसे', 'मोदेथे', 'मोदध्वम्'],
+      ['मोदे', 'मोदावहे', 'मोदामहे'],
+    ],
+    lrt: [
+      ['मोदिष्यते', 'मोदिष्येते', 'मोदिष्यन्ते'],
+      ['मोदिष्यसे', 'मोदिष्येथे', 'मोदिष्यध्वम्'],
+      ['मोदिष्ये', 'मोदिष्यावहे', 'मोदिष्यामहे'],
+    ],
+    lang: [
+      ['अमोदत', 'अमोदेताम्', 'अमोदन्त'],
+      ['अमोदथाः', 'अमोदेथाम्', 'अमोदध्वम्'],
+      ['अमोदे', 'अमोदावहि', 'अमोदामहि'],
+    ],
+    lot: [
+      ['मोदताम्', 'मोदेताम्', 'मोदन्ताम्'],
+      ['मोदस्व', 'मोदेथाम्', 'मोदध्वम्'],
+      ['मोदै', 'मोदावहै', 'मोदामहै'],
+    ],
+    vidhiling: [
+      ['मोदेत', 'मोदेयाताम्', 'मोदेरन्'],
+      ['मोदेथाः', 'मोदेयाथाम्', 'मोदेध्वम्'],
+      ['मोदेय', 'मोदेवहि', 'मोदेमहि'],
+    ],
+    krt: {
+      ktva: 'मुदित्वा',
+      tumun: 'मोदितुम्',
+      lyap: 'प्रमोद्य',
+      kta: 'मुदितः / मुदिता / मुदितम्',
+      shanac: 'मोदमानः / मोदमाना',
+      tavyat: 'मोदितव्यम्',
+      aniyar: 'मोदनीयम्',
     },
   },
 };
 
 // =========================================================================
-// 2. Thematic Derivation Engine for Generic Roots
+// 2. Thematic Derivation Engine for Generic Roots (Parasmaipada & Atmanepada)
 // =========================================================================
 
-const THEMATIC_ENDINGS: Record<
+export const PARASMAIPADA_THEMATIC_ENDINGS: Record<
   LakaraId,
   [[string, string, string], [string, string, string], [string, string, string]]
 > = {
@@ -606,8 +1280,39 @@ const THEMATIC_ENDINGS: Record<
   ],
 };
 
+export const ATMANEPADA_THEMATIC_ENDINGS: Record<
+  LakaraId,
+  [[string, string, string], [string, string, string], [string, string, string]]
+> = {
+  lat: [
+    ['ते', 'ेते', 'न्ते'],
+    ['से', 'ेथे', 'ध्वम्'],
+    ['े', 'ावहे', 'ामहे'],
+  ],
+  lrt: [
+    ['ष्यते', 'ष्येते', 'ष्यन्ते'],
+    ['ष्यसे', 'ष्येथे', 'ष्यध्वम्'],
+    ['ष्ये', 'ष्यावहे', 'ष्यामहे'],
+  ],
+  lang: [
+    ['त', 'ेताम्', 'न्त'],
+    ['थाः', 'ेथाम्', 'ध्वम्'],
+    ['ि', 'ावहि', 'ामहि'],
+  ],
+  lot: [
+    ['ताम्', 'ेताम्', 'न्ताम्'],
+    ['स्व', 'ेथाम्', 'ध्वम्'],
+    ['ै', 'ावहै', 'ामहै'],
+  ],
+  vidhiling: [
+    ['ेत', 'ेयाताम्', 'ेरन्'],
+    ['ेथाः', 'ेयाथाम्', 'ेध्वम्'],
+    ['ेय', 'ेवहि', 'ेमहि'],
+  ],
+};
+
 /** Get the primary stem for a root. Checks example forms or computes regular thematic stem. */
-function getThematicStem(entry: DhatuEntry): string {
+export function getThematicStem(entry: DhatuEntry): string {
   const ex = entry.examples?.[0];
   if (ex && ex.endsWith('ति')) {
     return ex.slice(0, -2);
@@ -620,67 +1325,223 @@ function getThematicStem(entry: DhatuEntry): string {
   return clean;
 }
 
+// =========================================================================
+// 3. Causative (णिच्-प्रत्ययः) Derivation Engine
+// =========================================================================
+
+export interface CausativeInfo {
+  stem: string; // e.g. पाठय्, लेखय्, गमय्
+  sutra: string;
+  meaningEn: string;
+  meaningHi: string;
+}
+
+const CAUSATIVE_STEM_OVERRIDES: Record<string, CausativeInfo> = {
+  path: { stem: 'पाठय', sutra: 'हेतुमति च (३.१.२६) & अचो ञ्णिति (७.२.११५ उपधावृद्धिः)', meaningEn: 'to teach / cause to read', meaningHi: 'पढ़ाना (अध्ययन कराना)' },
+  likh: { stem: 'लेखय', sutra: 'पुगन्तलघूपधस्य च (७.३.८६ लघूपधगुणः: इ➔ए)', meaningEn: 'to cause to write / dictate', meaningHi: 'लिखवाना' },
+  gam: { stem: 'गमय', sutra: 'मितां ह्रस्वः (६.४.९२ गम् धातोः ह्रस्वत्वे गमयति)', meaningEn: 'to cause to go / send', meaningHi: 'भेजना / गमन कराना' },
+  pa: { stem: 'पायय', sutra: 'अर्तिह्रीव्रीरीक्नवीक्ष्माय्यातां पुङ् णौ (७.३.३६ आय्-आदेशः)', meaningEn: 'to cause to drink / give to drink', meaningHi: 'पिलाना' },
+  da: { stem: 'दापय', sutra: 'अर्तिह्रीव्री… (७.३.३६ पुगागमः: दा + पुक् + णिच्)', meaningEn: 'to cause to give / make someone give', meaningHi: 'दिलाना' },
+  drsh: { stem: 'दर्शय', sutra: 'पुगन्तलघूपधस्य च (७.३.८६ गुणः: ऋ➔अर्)', meaningEn: 'to show / exhibit / reveal', meaningHi: 'दिखाना / दर्शन कराना' },
+  khad: { stem: 'खादय', sutra: 'हेतुमति च (३.१.२६ णिच्-प्रत्ययः)', meaningEn: 'to feed / cause to eat', meaningHi: 'खिलाना' },
+  has: { stem: 'हासय', sutra: 'अत उपधायाः (७.२.११६ उपधावृद्धिः: अ➔आ)', meaningEn: 'to cause to laugh / amuse', meaningHi: 'हँसाना' },
+  chal: { stem: 'चालय', sutra: 'अत उपधायाः (७.२.११६ उपधावृद्धिः)', meaningEn: 'to drive / cause to move', meaningHi: 'चलाना' },
+  krid: { stem: 'क्रीडय', sutra: 'हेतुमति च (३.१.२६)', meaningEn: 'to cause to play / entertain', meaningHi: 'खिलाना (खेल कराना)' },
+  smr: { stem: 'स्मारय', sutra: 'अचो ञ्णिति (७.२.११५ वृद्धिः: ऋ➔आर्)', meaningEn: 'to remind / cause to remember', meaningHi: 'याद दिलाना' },
+  bhu: { stem: 'भावय', sutra: 'अचो ञ्णिति (७.२.११५ वृद्धिः: ऊ➔औ ➔ आव्)', meaningEn: 'to foster / manifest / produce', meaningHi: 'उत्पन्न करना / भावना करना' },
+  kr: { stem: 'कारय', sutra: 'अचो ञ्णिति (७.२.११५ वृद्धिः: ऋ➔आर्)', meaningEn: 'to cause to do / manage', meaningHi: 'कराना' },
+  shru: { stem: 'श्रावय', sutra: 'अचो ञ्णिति (७.२.११५ वृद्धिः: उ➔औ ➔ आव्)', meaningEn: 'to recite / cause to hear', meaningHi: 'सुनाना' },
+  stha: { stem: 'स्थापय', sutra: 'अर्तिह्री… (७.३.३६ पुगागमः)', meaningEn: 'to establish / place / set up', meaningHi: 'स्थापित करना / रखना' },
+  nam: { stem: 'नामय', sutra: 'अत उपधायाः (७.२.११६ उपधावृद्धिः)', meaningEn: 'to cause to bend / bow', meaningHi: 'झुकाना / नमाना' },
+  vad: { stem: 'वादय', sutra: 'अत उपधायाः (७.२.११६)', meaningEn: 'to cause to speak / play instrument', meaningHi: 'बोलवाना / बजाना' },
+  sev: { stem: 'सेवय', sutra: 'हेतुमति च (३.१.२६)', meaningEn: 'to cause to serve', meaningHi: 'सेवा कराना' },
+  vrdh: { stem: 'वर्धय', sutra: 'पुगन्तलघूपधस्य च (७.३.८६ गुणः: ऋ➔अर्)', meaningEn: 'to cultivate / increase / nourish', meaningHi: 'बढ़ाना / संवर्धन करना' },
+  labh: { stem: 'लम्भय', sutra: 'रधादिभ्यश्च (७.१.६१ नुमागमः: लम्भयति)', meaningEn: 'to bestow / cause to gain', meaningHi: 'दिलाना / लाभ कराना' },
+};
+
+export function getCausativeInfo(entry: DhatuEntry): CausativeInfo {
+  const id = entry.id?.toLowerCase() || '';
+  if (CAUSATIVE_STEM_OVERRIDES[id]) {
+    return CAUSATIVE_STEM_OVERRIDES[id];
+  }
+  // Generic causative rule:
+  const clean = entry.devanagari.replace(/्$/, '');
+  const stem = `${clean}य`;
+  return {
+    stem,
+    sutra: 'हेतुमति च (३.१.२६) — प्रयोजकव्यापारे णिच्-प्रत्ययः',
+    meaningEn: `to cause to ${entry.meaning}`,
+    meaningHi: `${entry.meaning_hi || entry.meaning} कराना`,
+  };
+}
+
 export function deriveConjugationTable(
   entry: DhatuEntry,
-  lakara: LakaraId
+  lakara: LakaraId,
+  options?: {
+    voice?: VoiceType;
+    isCausative?: boolean;
+  }
 ): ConjugationTable3x3 {
   const id = entry.id?.toLowerCase() || '';
   const paradigm = COMMON_PARADIGMS[id];
+  const reqVoice: VoiceType =
+    options?.voice ||
+    (entry.padam === 'atmanepada' ? 'atmanepada' : 'parasmaipada');
+  const isCausative = !!options?.isCausative;
 
-  // If we have a verified paradigm, use it
-  if (paradigm && paradigm[lakara]) {
-    const raw = paradigm[lakara];
-    const rootName = entry.devanagari;
-    const meaning = entry.meaning;
+  // 1. Causative Conjugation Engine
+  if (isCausative) {
+    const cInfo = getCausativeInfo(entry);
+    const cStem = cInfo.stem; // e.g. 'पाठय'
+    const isPast = lakara === 'lang';
+    const prefix = isPast ? 'अ' : '';
+    const endings = PARASMAIPADA_THEMATIC_ENDINGS[lakara];
 
-    return raw.map((row, pIdx) =>
-      row.map((fullVal, nIdx) => {
+    return endings.map((row, pIdx) =>
+      row.map((end, nIdx) => {
+        let full = prefix + cStem + end;
+        if (lakara === 'lrt') {
+          // e.g. अपाठयत् vs पाठयिष्यति
+          full = prefix + cStem + 'ि' + end;
+        }
+        const pLabel = PERSON_LABELS[pIdx].en;
+        const nLabel = NUMBER_LABELS[nIdx].en;
         const personHindi = pIdx === 0 ? 'वह / वे' : pIdx === 1 ? 'तुम' : 'मैं / हम';
 
         return {
-          full: fullVal,
-          rootPart: rootName,
-          suffixPart: fullVal.replace(new RegExp(`^${rootName}`), '') || fullVal,
-          meaningEn: personNumberEnglish(entry, pIdx, nIdx),
-          meaningHi: `${personHindi} (${entry.meaning_hi || meaning})`,
+          full,
+          rootPart: entry.devanagari,
+          vikaranaPart: 'णिच् (इ) + शप् (अ)',
+          suffixPart: end,
+          meaningEn: `[Causative] ${pLabel} ${nLabel}: ${cInfo.meaningEn}`,
+          meaningHi: `[प्रेरणार्थक] ${personHindi}: ${cInfo.meaningHi}`,
         };
       })
     ) as ConjugationTable3x3;
   }
 
-  // Generic Thematic Generator
+  // 2. Verified Paradigm with Voice Discrimination
+  if (paradigm) {
+    let raw: [[string, string, string], [string, string, string], [string, string, string]] | undefined;
+
+    if (reqVoice === 'atmanepada') {
+      const atmKey = `atmanepada_${lakara}` as keyof ParadigmData;
+      if (paradigm[atmKey]) {
+        raw = paradigm[atmKey] as [[string, string, string], [string, string, string], [string, string, string]];
+      } else if (paradigm.padam === 'atmanepada' && paradigm[lakara]) {
+        raw = paradigm[lakara];
+      }
+    } else {
+      // Parasmaipada
+      if (paradigm.padam !== 'atmanepada' && paradigm[lakara]) {
+        raw = paradigm[lakara];
+      }
+    }
+
+    if (raw) {
+      const rootName = entry.devanagari;
+      const meaning = entry.meaning;
+
+      return raw.map((row, pIdx) =>
+        row.map((fullVal, nIdx) => {
+          const pLabel = PERSON_LABELS[pIdx].en;
+          const nLabel = NUMBER_LABELS[nIdx].en;
+          const personHindi = pIdx === 0 ? 'वह / वे' : pIdx === 1 ? 'तुम' : 'मैं / हम';
+
+          return {
+            full: fullVal,
+            rootPart: rootName,
+            suffixPart: fullVal.replace(new RegExp(`^${rootName}`), '') || fullVal,
+            meaningEn: `${pLabel} ${nLabel}: (${meaning})`,
+            meaningHi: `${personHindi} (${entry.meaning_hi || meaning})`,
+          };
+        })
+      ) as ConjugationTable3x3;
+    }
+  }
+
+  // 3. Generic Thematic Generator (Voice aware: Parasmaipada or Atmanepada)
   const stem = getThematicStem(entry);
-  const endings = THEMATIC_ENDINGS[lakara];
   const isPast = lakara === 'lang';
   const prefix = isPast ? 'अ' : '';
+  const endings =
+    reqVoice === 'atmanepada'
+      ? ATMANEPADA_THEMATIC_ENDINGS[lakara]
+      : PARASMAIPADA_THEMATIC_ENDINGS[lakara];
 
   return endings.map((row, pIdx) =>
     row.map((end, nIdx) => {
       let full = prefix + stem + end;
       if (lakara === 'lrt') {
-        // e.g. stem + इ + ष्यति
         full = prefix + stem + 'ि' + end;
       }
       return {
         full,
         rootPart: entry.devanagari,
         suffixPart: end,
-        meaningEn: personNumberEnglish(entry, pIdx, nIdx),
-        meaningHi: `${PERSON_LABELS[pIdx].short} ${NUMBER_LABELS[nIdx].short}`,
+        meaningEn: personNumberEnglish(entry, pIdx, nIdx) || `${PERSON_LABELS[pIdx].en} ${NUMBER_LABELS[nIdx].en} [${reqVoice}]`,
+        meaningHi: `${PERSON_LABELS[pIdx].short} ${NUMBER_LABELS[nIdx].short} [${reqVoice === 'atmanepada' ? 'आत्मने' : 'परस्मै'}]`,
       };
     })
   ) as ConjugationTable3x3;
 }
 
-export function getKrtParticiples(entry: DhatuEntry): KrtFormEntry[] {
+export function getKrtParticiples(entry: DhatuEntry, isCausative?: boolean): KrtFormEntry[] {
   const id = entry.id?.toLowerCase() || '';
   const p = COMMON_PARADIGMS[id]?.krt;
+
+  if (isCausative) {
+    const cInfo = getCausativeInfo(entry);
+    const stem = cInfo.stem;
+    return [
+      {
+        suffixName: 'क्त्वा (Causative)',
+        suffixCode: 'ktva',
+        devanagariForm: `${stem}यित्वा`,
+        rootPart: entry.devanagari,
+        suffixPart: 'णिच् + क्त्वा',
+        meaningEn: `Having caused to ${entry.meaning}`,
+        meaningHi: `${entry.meaning_hi || entry.meaning} कराकर`,
+        paniniRule: 'समानकर्तृकयोः पूर्वकाले (३.४.२१) & हेतुमति च (३.१.२६)',
+        exampleSentence: `शिक्षकः छात्रं पाठं पाठयित्वा गृहं प्रेषयति।`,
+        exampleTranslation: 'Having made the student read the lesson, the teacher sends him home.',
+      },
+      {
+        suffixName: 'तुमुन् (Causative)',
+        suffixCode: 'tumun',
+        devanagariForm: `${stem}यितुम्`,
+        rootPart: entry.devanagari,
+        suffixPart: 'णिच् + तुमुन्',
+        meaningEn: `In order to cause to ${entry.meaning}`,
+        meaningHi: `${entry.meaning_hi || entry.meaning} कराने के लिए`,
+        paniniRule: 'तुमुन्ण्वुलौ क्रियायां क्रियार्थायाम् (३.३.१०)',
+        exampleSentence: `माता शिशुं दुग्धं पाययितुम् इच्छति।`,
+        exampleTranslation: 'Mother desires to feed milk to the baby.',
+      },
+      {
+        suffixName: 'शतृ (Causative Active)',
+        suffixCode: 'shatr',
+        devanagariForm: `${stem}यन् / ${stem}यन्ती`,
+        rootPart: entry.devanagari,
+        suffixPart: 'णिच् + शतृ',
+        meaningEn: `While causing to ${entry.meaning}`,
+        meaningHi: `कराते हुए (वर्तमान कृदन्त)`,
+        paniniRule: 'लटः शतृशानचावप्रथमासमानाधिकरणे (३.२.१२४)',
+        exampleSentence: `गुरुः छात्रान् पाठयन् सन्तोषम् अनुभवति।`,
+        exampleTranslation: 'While teaching students, the guru feels joy.',
+      },
+    ];
+  }
 
   const ktvaForm = p?.ktva || `${entry.devanagari.replace(/्$/, '')}ित्वा`;
   const tumunForm = p?.tumun || `${entry.devanagari.replace(/्$/, '')}ितुम्`;
   const lyapForm = p?.lyap || `सम्${entry.devanagari}य`;
   const ktaForm = p?.kta || `${entry.devanagari.replace(/्$/, '')}ितः`;
   const shatrForm = p?.shatr || `${getThematicStem(entry)}न्`;
+  const shanacForm = p?.shanac || `${getThematicStem(entry)}मानः`;
+  const tavyatForm = p?.tavyat || `${entry.devanagari.replace(/्$/, '')}ितव्यम्`;
+  const aniyarForm = p?.aniyar || `${getThematicStem(entry)}नीयम्`;
 
   return [
     {
@@ -714,10 +1575,10 @@ export function getKrtParticiples(entry: DhatuEntry): KrtFormEntry[] {
       rootPart: entry.devanagari,
       suffixPart: 'ल्यप् (उपसर्गयुक्त)',
       meaningEn: `Having ${entry.meaning} (used when a prefix is present)`,
-      meaningHi: `उपसर्ग के साथ पूर्वकालिक क्रिया (करके)`,
+      meaningHi: 'उपसर्ग के साथ पूर्वकालिक क्रिया (करके)',
       paniniRule: 'समासेऽनञ्पूर्वे क्त्वो ल्यप् (७.१.३७) — Replaces ktvā when verb has Upasarga.',
       exampleSentence: `सः गुरुं ${lyapForm} आशीर्वादं प्राप्नोति।`,
-      exampleTranslation: `Having approached with reverence, he receives blessings.`,
+      exampleTranslation: 'Having approached with reverence, he receives blessings.',
     },
     {
       suffixName: 'क्त (kta)',
@@ -726,28 +1587,64 @@ export function getKrtParticiples(entry: DhatuEntry): KrtFormEntry[] {
       rootPart: entry.devanagari,
       suffixPart: 'क्त',
       meaningEn: `Past Passive Participle (Was ${entry.meaning})`,
-      meaningHi: `भूतकालिक कृदन्त (कर्मणि / भावे)`,
+      meaningHi: 'भूतकालिक कृदन्त (कर्मणि / भावे)',
       paniniRule: 'क्तक्तवतू निष्ठा (१.१.२६) — Used for completed past events.',
       exampleSentence: `तेन पाठः ${ktaForm.split(' ')[0]}।`,
-      exampleTranslation: `The lesson was studied by him.`,
+      exampleTranslation: 'The lesson was studied by him.',
     },
     {
-      suffixName: 'शतृ (śatṛ)',
+      suffixName: 'शतृ (śatṛ - Parasmaipada)',
       suffixCode: 'shatr',
       devanagariForm: shatrForm,
       rootPart: entry.devanagari,
       suffixPart: 'शतृ',
-      meaningEn: `While doing / continuous (Present active participle)`,
-      meaningHi: `वर्तमानकालिक कृदन्त (करते हुए)`,
+      meaningEn: 'While doing / continuous (Present active participle)',
+      meaningHi: 'वर्तमानकालिक कृदन्त (करते हुए)',
       paniniRule: 'लटः शतृशानचावप्रथमासमानाधिकरणे (३.२.१२४) — Simultaneous active action.',
       exampleSentence: `बालकः ${shatrForm.split(' ')[0]} हसति।`,
-      exampleTranslation: `The boy smiles while performing the action.`,
+      exampleTranslation: 'The boy smiles while performing the action.',
+    },
+    {
+      suffixName: 'शानच् (śānac - Atmanepada)',
+      suffixCode: 'shanac',
+      devanagariForm: shanacForm,
+      rootPart: entry.devanagari,
+      suffixPart: 'शानच्',
+      meaningEn: 'Continuous Middle Participle (while acquiring/experiencing)',
+      meaningHi: 'वर्तमानकालिक आत्मनेपदी कृदन्त (करते/पाते हुए)',
+      paniniRule: 'लटः शतृशानचौ… (३.२.१२४ आत्मनेपदेषु)',
+      exampleSentence: `विद्यां ${shanacForm.split(' ')[0]} छात्रः मोदते।`,
+      exampleTranslation: 'Gaining knowledge, the student rejoices.',
+    },
+    {
+      suffixName: 'तव्यत् (tavyat)',
+      suffixCode: 'tavyat',
+      devanagariForm: tavyatForm,
+      rootPart: entry.devanagari,
+      suffixPart: 'तव्यत्',
+      meaningEn: 'Obligation / Should be done (Gerundive)',
+      meaningHi: 'चाहिए / कर्तव्य बोधक',
+      paniniRule: 'तव्यत्तव्यानीयरः (३.१.९६)',
+      exampleSentence: `सत्यं ${tavyatForm}।`,
+      exampleTranslation: 'Truth ought to be observed.',
+    },
+    {
+      suffixName: 'अनीयर् (anīyar)',
+      suffixCode: 'aniyar',
+      devanagariForm: aniyarForm,
+      rootPart: entry.devanagari,
+      suffixPart: 'अनीयर्',
+      meaningEn: 'Worthy of being done / Deserving',
+      meaningHi: 'योग्य / करणीय',
+      paniniRule: 'तव्यत्तव्यानीयरः (३.१.९६)',
+      exampleSentence: `सद्ग्रन्थाः ${aniyarForm}।`,
+      exampleTranslation: 'Good texts are worthy of being studied.',
     },
   ];
 }
 
 // =========================================================================
-// 3. Word Deconstruction Index & Engine
+// 4. Expanded Word Deconstruction Index & Engine
 // =========================================================================
 
 interface DeconSeed {
@@ -767,7 +1664,8 @@ interface DeconSeed {
   exampleMeaning: string;
 }
 
-const DECONSTRUCTION_INDEX: Record<string, DeconSeed> = {
+export const DECONSTRUCTION_INDEX: Record<string, DeconSeed> = {
+  // --- Basic Parasmaipada ---
   गत्वा: {
     root: 'गम्',
     iast: 'gam',
@@ -859,7 +1757,6 @@ const DECONSTRUCTION_INDEX: Record<string, DeconSeed> = {
     translationEn: 'He / She / It becomes or is',
     translationHi: 'वह होता है',
     sutra: 'सार्वधातुकार्धधातुकयोः (७.३.८४ Guṇa: ऊ➔ओ) & एचोऽयवायावः (६.१.७८ भो+अ=भव्)',
-    notes: 'Root vowel ऊ gets Guṇa to ओ. Then Sandhi transforms भो + अ to भव्.',
     exampleUsage: 'विद्या विनयेन शोभते, सत्यं जयति, धर्मः भवति।',
     exampleMeaning: 'Virtue shines through humility; truth conquers; righteousness prevails.',
   },
@@ -905,7 +1802,6 @@ const DECONSTRUCTION_INDEX: Record<string, DeconSeed> = {
     translationEn: 'He / She read (past)',
     translationHi: 'उसने पढ़ा',
     sutra: 'लुङ्लङ्ऌङ्क्ष्वडभ्युदात्तः (६.४.७१)',
-    notes: 'Past tense prefix अ- (अडागम) is attached to the beginning of the verbal base.',
     exampleUsage: 'ह्यः छात्रः पुस्तकालयम् अपठत्।',
     exampleMeaning: 'Yesterday the student studied in the library.',
   },
@@ -921,7 +1817,6 @@ const DECONSTRUCTION_INDEX: Record<string, DeconSeed> = {
     translationEn: 'He / She will go',
     translationHi: 'वह जाएगा / जाएगी',
     sutra: 'लृट् शेषे च (३.३.१३) & आदेशप्रत्यययोः (८.३.५९ स➔ष)',
-    notes: 'The future tense marker स्य transforms to ष resonance due to preceding vowel इ.',
     exampleUsage: 'सः रविवासरे काशीं गमिष्यति।',
     exampleMeaning: 'He will go to Varanasi on Sunday.',
   },
@@ -936,8 +1831,7 @@ const DECONSTRUCTION_INDEX: Record<string, DeconSeed> = {
     formula: { root: 'गम् (➔ गच्छ)', vikarana: 'शप् (अ)', suffix: 'तिप् (ति)', result: 'गच्छति' },
     translationEn: 'He / She / It goes',
     translationHi: 'वह जाता / जाती है',
-    sutra: 'इषुगमियमां छः (७.३.७७ gam ➔ gacch) & तिप्तस्झि… (३.४.७८)',
-    notes: 'The root गम् substitutes into गच्छ before Śit affixes like शप् (अ).',
+    sutra: 'इषुगमियमां छः (७.३.७७ gam ➔ gacch)',
     exampleUsage: 'बालकः प्रतिदिनं विद्यालयं गच्छति।',
     exampleMeaning: 'The boy goes to school every day.',
   },
@@ -959,7 +1853,6 @@ const DECONSTRUCTION_INDEX: Record<string, DeconSeed> = {
     translationEn: 'He / She / It approaches completely (reaches closely)',
     translationHi: 'वह पूर्ण रूप से समीप आता है',
     sutra: 'उपसर्गाः प्रादयः (१.४.५८) & इषुगमियमां छः (७.३.७७) & अकः सवर्णे दीर्घः (६.१.१०१)',
-    notes: 'Modular assembly: 3 Upasargas (सम् + उप + आ fuse smoothly by Sandhi into समूपा-) + root गम् (mutates to present-stem गच्छ-) + Vikaraṇa spacer शप् (अ) + Pratyaya तिप् (ति).',
     exampleUsage: 'विद्वान् शिष्यं प्रेम्णा समूपागच्छति।',
     exampleMeaning: 'The wise teacher affectionately approaches close to the student.',
   },
@@ -1005,7 +1898,6 @@ const DECONSTRUCTION_INDEX: Record<string, DeconSeed> = {
     translationEn: 'In order to do / To do',
     translationHi: 'करने के लिए',
     sutra: 'सार्वधातुकार्धधातुकयोः (७.३.८४ — Guṇa: ऋ➔अर्)',
-    notes: 'The vowel ऋ of root कृ undergoes Guṇa to अर् before suffix तुमुन्.',
     exampleUsage: 'सः देशसेवा कर्तुम् उद्यतः अस्ति।',
     exampleMeaning: 'He is dedicated to serve the nation.',
   },
@@ -1039,6 +1931,213 @@ const DECONSTRUCTION_INDEX: Record<string, DeconSeed> = {
     exampleUsage: 'सर्वे बालकाः ध्यानेन पठन्तु।',
     exampleMeaning: 'Let all boys study attentively.',
   },
+
+  // --- Atmanepada Words (Grade 9 Curriculum) ---
+  लभते: {
+    root: 'लभ्',
+    iast: 'labh',
+    meaningEn: 'to obtain / gain',
+    meaningHi: 'प्राप्त करना / पाना',
+    gana: 1,
+    type: 'tinanta',
+    label: 'लट्-लकारः (Present Atmanepada), प्रथम पुरुष, एकवचन',
+    formula: { root: 'लभ्', vikarana: 'शप् (अ)', suffix: 'त (➔ ते)', result: 'लभते' },
+    translationEn: 'He / She obtains / gains',
+    translationHi: 'वह प्राप्त करता / करती है',
+    sutra: 'टित आत्मनेपदानां टेरे (३.४.७९ त➔ते)',
+    notes: 'In Atmanepada present (लट्), suffix त is modified to ते by Pāṇini 3.4.79.',
+    exampleUsage: 'श्रद्धावाँल्लभते ज्ञानं तत्परः संयतेन्द्रियः।',
+    exampleMeaning: 'The faithful who is earnest and self-restrained gains supreme wisdom.',
+  },
+  वर्धते: {
+    root: 'वृध्',
+    iast: 'vṛdh',
+    meaningEn: 'to grow / increase',
+    meaningHi: 'बढ़ना',
+    gana: 1,
+    type: 'tinanta',
+    label: 'लट्-लकारः (Present Atmanepada), प्रथम पुरुष, एकवचन',
+    formula: { root: 'वृध् (➔ वर्ध्)', vikarana: 'शप् (अ)', suffix: 'त (➔ ते)', result: 'वर्धते' },
+    translationEn: 'He / She / It grows or prospers',
+    translationHi: 'वह बढ़ता / समृद्ध होता है',
+    sutra: 'पुगन्तलघूपधस्य च (७.३.८६ Guṇa: ऋ➔अर्)',
+    notes: 'Light penultimate syllable vowel ऋ undergoes Guṇa mutation to अर्.',
+    exampleUsage: 'सत्कर्मणा यशः वर्धते।',
+    exampleMeaning: 'Fame grows through virtuous conduct.',
+  },
+  शेते: {
+    root: 'शी',
+    iast: 'śī',
+    meaningEn: 'to sleep / lie down',
+    meaningHi: 'सोना / लेटना',
+    gana: 2,
+    type: 'tinanta',
+    label: 'लट्-लकारः (Adādi Atmanepada), प्रथम पुरुष, एकवचन',
+    formula: { root: 'शी (➔ शे)', vikarana: 'लुक् (अदादि)', suffix: 'ते', result: 'शेते' },
+    translationEn: 'He / She sleeps',
+    translationHi: 'वह सोता / सोती है',
+    sutra: 'शीङः सार्वधातुके गुणः (७.४.२१ शी➔शे)',
+    notes: 'Root शी undergoes Guṇa to शे throughout all Sārvadhātuka environments.',
+    exampleUsage: 'शिशुः पर्यङ्के सुखं शेते।',
+    exampleMeaning: 'The infant sleeps peacefully on the bed.',
+  },
+  भुङ्क्ते: {
+    root: 'भुज्',
+    iast: 'bhuj',
+    meaningEn: 'to eat / enjoy / protect',
+    meaningHi: 'खाना / भोगना',
+    gana: 7,
+    type: 'tinanta',
+    label: 'लट्-लकारः (Rudhādi Atmanepada), प्रथम पुरुष, एकवचन',
+    formula: { root: 'भुज्', vikarana: 'श्नम् (न्)', suffix: 'ते', result: 'भुङ्क्ते' },
+    translationEn: 'He / She enjoys or eats',
+    translationHi: 'वह भोजन करता है / भोगता है',
+    sutra: 'रुधादिभ्यः श्नम् (३.१.७८) & चोः कुः (८.२.३०)',
+    notes: 'Vikarana श्नम् enters the root. Velar substitution transforms palatal j to guttural ṅk.',
+    exampleUsage: 'सः मधुरं फलं भुङ्क्ते।',
+    exampleMeaning: 'He enjoys sweet fruit.',
+  },
+  अवर्धत: {
+    root: 'वृध्',
+    iast: 'vṛdh',
+    meaningEn: 'to grow / increase',
+    meaningHi: 'बढ़ना',
+    gana: 1,
+    type: 'tinanta',
+    label: 'लङ्-लकारः (Past Atmanepada), प्रथम पुरुष, एकवचन',
+    formula: { prefix: 'अ (अडागम)', root: 'वृध् (➔ वर्ध्)', vikarana: 'शप् (अ)', suffix: 'त', result: 'अवर्धत' },
+    translationEn: 'He / She / It grew',
+    translationHi: 'वह बढ़ा',
+    sutra: 'लुङ्लङ्ऌङ्क्ष्वडभ्युदात्तः (६.४.७१)',
+    exampleUsage: 'वृक्षः जलसेकेना अवर्धत।',
+    exampleMeaning: 'The tree grew through watering.',
+  },
+  लप्स्यते: {
+    root: 'लभ्',
+    iast: 'labh',
+    meaningEn: 'to obtain / gain',
+    meaningHi: 'पाना',
+    gana: 1,
+    type: 'tinanta',
+    label: 'लृट्-लकारः (Future Atmanepada), प्रथम पुरुष, एकवचन',
+    formula: { root: 'लभ्', vikarana: 'स्य', suffix: 'ते', result: 'लप्स्यते' },
+    translationEn: 'He / She will obtain',
+    translationHi: 'वह प्राप्त करेगा / करेगी',
+    sutra: 'खरि च (८.४.५५ चर्त्व: भ्➔प्)',
+    notes: 'The aspirated bh turns into voiceless unaspirated p before s per Khar sandhi.',
+    exampleUsage: 'सत्यवादी पुरुषः सर्वत्र सम्मानं लप्स्यते।',
+    exampleMeaning: 'The truthful person will gain honor everywhere.',
+  },
+  कुरुते: {
+    root: 'कृ',
+    iast: 'kṛ',
+    meaningEn: 'to do, to make',
+    meaningHi: 'करना',
+    gana: 8,
+    type: 'tinanta',
+    label: 'लट्-लकारः (Present Atmanepada), प्रथम पुरुष, एकवचन',
+    formula: { root: 'कृ', vikarana: 'उ', suffix: 'त (➔ ते)', result: 'कुरुते' },
+    translationEn: 'He / She does (for oneself / middle voice)',
+    translationHi: 'वह (अपने लिए) करता है',
+    sutra: 'तनादिकृञ्भ्य उः (३.१.७९)',
+    exampleUsage: 'सः स्वयमेव सर्वं कार्यं कुरुते।',
+    exampleMeaning: 'He does all the work himself.',
+  },
+
+  // --- Causative (णिजन्ताः) ---
+  पाठयति: {
+    root: 'पठ्',
+    iast: 'paṭh',
+    meaningEn: 'to read ➔ to teach / cause to read',
+    meaningHi: 'पढ़ना ➔ पढ़ाना',
+    gana: 1,
+    type: 'tinanta',
+    label: 'णिजन्त लट्-लकारः (Causative Present), प्रथम पुरुष, एकवचन',
+    formula: { root: 'पठ् (➔ पाठ्)', vikarana: 'णिच् (इ) + शप् (अ)', suffix: 'ति', result: 'पाठयति' },
+    translationEn: 'He / She teaches (causes someone to read)',
+    translationHi: 'वह पढ़ाता / सिखाता है',
+    sutra: 'हेतुमति च (३.१.२६) & अचो ञ्णिति (७.२.११५ उपधावृद्धिः: अ➔आ)',
+    notes: 'Penultimate short a undergoes Vṛddhi elongation to long ā before causative ṇic.',
+    exampleUsage: 'शिक्षकः छात्रान् व्याकरणं पाठयति।',
+    exampleMeaning: 'The teacher teaches grammar to the students.',
+  },
+  लेखयति: {
+    root: 'लिख्',
+    iast: 'likh',
+    meaningEn: 'to write ➔ to cause to write / dictate',
+    meaningHi: 'लिखना ➔ लिखवाना',
+    gana: 6,
+    type: 'tinanta',
+    label: 'णिजन्त लट्-लकारः (Causative Present), प्रथम पुरुष, एकवचन',
+    formula: { root: 'लिख् (➔ लेख्)', vikarana: 'णिच् (इ) + शप् (अ)', suffix: 'ति', result: 'लेखयति' },
+    translationEn: 'He / She causes to write',
+    translationHi: 'वह लिखवाता / लिखवाती है',
+    sutra: 'पुगन्तलघूपधस्य च (७.३.८६ लघूपधगुणः: इ➔ए)',
+    exampleUsage: 'अध्यापकः पत्रं लेखयति।',
+    exampleMeaning: 'The teacher makes the student write a letter.',
+  },
+  गमयति: {
+    root: 'गम्',
+    iast: 'gam',
+    meaningEn: 'to go ➔ to send / cause to go',
+    meaningHi: 'जाना ➔ भेजना / ले जाना',
+    gana: 1,
+    type: 'tinanta',
+    label: 'णिजन्त लट्-लकारः (Causative Present), प्रथम पुरुष, एकवचन',
+    formula: { root: 'गम्', vikarana: 'णिच् (इ) + शप् (अ)', suffix: 'ति', result: 'गमयति' },
+    translationEn: 'He / She sends or causes to go',
+    translationHi: 'वह भेजता है / ले जाता है',
+    sutra: 'मितां ह्रस्वः (६.४.९२)',
+    notes: 'Roots of the Mit class retain short vowel a without undergoing Vṛddhi.',
+    exampleUsage: 'पिता पुत्रं नगरं गमयति।',
+    exampleMeaning: 'The father sends his son to the city.',
+  },
+  दापयति: {
+    root: 'दा',
+    iast: 'dā',
+    meaningEn: 'to give ➔ to cause to give',
+    meaningHi: 'देना ➔ दिलाना',
+    gana: 3,
+    type: 'tinanta',
+    label: 'णिजन्त लट्-लकारः (Causative Present), प्रथम पुरुष, एकवचन',
+    formula: { root: 'दा', vikarana: 'पुक् (प) + णिच् (इ) + शप् (अ)', suffix: 'ति', result: 'दापयति' },
+    translationEn: 'He / She causes to give / arranges to give',
+    translationHi: 'वह दिलाता / दिलवाती है',
+    sutra: 'अर्तिह्रीव्रीरीक्नवीक्ष्माय्यातां पुङ् णौ (७.३.३६ पुगागमः)',
+    notes: 'Roots ending in ā insert epenthetic pug-āgama (p) before causative suffix ṇic.',
+    exampleUsage: 'न्यायाधीशः निर्धनाय साहाय्यं दापयति।',
+    exampleMeaning: 'The judge arranges assistance to be given to the poor person.',
+  },
+  पाययति: {
+    root: 'पा',
+    iast: 'pā',
+    meaningEn: 'to drink ➔ to feed / cause to drink',
+    meaningHi: 'पीना ➔ पिलाना',
+    gana: 1,
+    type: 'tinanta',
+    label: 'णिजन्त लट्-लकारः (Causative Present), प्रथम पुरुष, एकवचन',
+    formula: { root: 'पा', vikarana: 'आय् + णिच् (इ) + शप् (अ)', suffix: 'ति', result: 'पाययति' },
+    translationEn: 'He / She gives to drink / feeds',
+    translationHi: 'वह पिलाता / पिलाती है',
+    sutra: 'अर्तिह्री… (७.३.३६ आय्-आदेशः)',
+    exampleUsage: 'माता शिशुं क्षीरं पाययति।',
+    exampleMeaning: 'Mother feeds milk to the child.',
+  },
+  दर्शयति: {
+    root: 'दृश्',
+    iast: 'dṛś',
+    meaningEn: 'to see ➔ to show / display',
+    meaningHi: 'देखना ➔ दिखाना',
+    gana: 1,
+    type: 'tinanta',
+    label: 'णिजन्त लट्-लकारः (Causative Present), प्रथम पुरुष, एकवचन',
+    formula: { root: 'दृश् (➔ दर्श्)', vikarana: 'णिच् (इ) + शप् (अ)', suffix: 'ति', result: 'दर्शयति' },
+    translationEn: 'He / She shows or exhibits',
+    translationHi: 'वह दिखाता / दिखाती है',
+    sutra: 'पुगन्तलघूपधस्य च (७.३.८६ गुणः: ऋ➔अर्)',
+    exampleUsage: 'सखा नूतनं पुस्तकं दर्शयति।',
+    exampleMeaning: 'The friend shows the new book.',
+  },
 };
 
 /** Deconstruct an entered Sanskrit token into root, suffix, and grammatical formula. */
@@ -1046,7 +2145,7 @@ export function deconstructWord(
   query: string,
   dhatuLibrary: DhatuEntry[] = []
 ): DeconstructionResult {
-  const clean = query.trim().replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९./\\=+#*~_`]+/g, '');
+  const clean = query.trim().replace(/[\s।॥,;:!?()[\]{}<>'“”‘’\-–—०-९./\\=+#*~_`]+/g, '');
 
   if (!clean) {
     return {
@@ -1089,11 +2188,12 @@ export function deconstructWord(
   }
 
   // 2. Dynamic Algorithmic Deconstruction
-  // Suffix checks:
   // -त्वा (ktvā)
   if (clean.endsWith('त्वा')) {
     const rootGuess = clean.slice(0, -4) + '्';
-    const match = dhatuLibrary.find((d) => d.devanagari === rootGuess || clean.startsWith(d.devanagari.replace(/्$/, '')));
+    const match = dhatuLibrary.find(
+      (d) => d.devanagari === rootGuess || clean.startsWith(d.devanagari.replace(/्$/, ''))
+    );
     return {
       query: clean,
       matched: true,
@@ -1109,14 +2209,16 @@ export function deconstructWord(
       englishTranslation: `Having ${match?.meaning || 'done the action'}`,
       hindiTranslation: `${match?.meaning_hi || 'कार्य'} करके`,
       exampleUsage: `सः कार्यं ${clean} सन्तुष्टः अभवत्।`,
-      exampleMeaning: `Having completed the action, he became pleased.`,
+      exampleMeaning: 'Having completed the action, he became pleased.',
     };
   }
 
   // -तुम् / -ितुम् (tumun)
   if (clean.endsWith('तुम्')) {
     const rootGuess = clean.slice(0, -4).replace(/ि$/, '') + '्';
-    const match = dhatuLibrary.find((d) => d.devanagari === rootGuess || clean.startsWith(d.devanagari.replace(/्$/, '')));
+    const match = dhatuLibrary.find(
+      (d) => d.devanagari === rootGuess || clean.startsWith(d.devanagari.replace(/्$/, ''))
+    );
     return {
       query: clean,
       matched: true,
@@ -1132,11 +2234,36 @@ export function deconstructWord(
       englishTranslation: `In order to ${match?.meaning || 'perform action'}`,
       hindiTranslation: `${match?.meaning_hi || 'कार्य'} करने के लिए`,
       exampleUsage: `सः ${clean} इच्छति।`,
-      exampleMeaning: `He desires to perform the action.`,
+      exampleMeaning: 'He desires to perform the action.',
     };
   }
 
-  // Finite Verb heuristics (-ति, -न्ति, -सि, -ामि, etc.)
+  // -ते (Atmanepada Present)
+  if (clean.endsWith('ते')) {
+    const base = clean.slice(0, -2);
+    const match = dhatuLibrary.find(
+      (d) => d.devanagari.replace(/्$/, '') === base || d.examples?.includes(clean)
+    );
+    return {
+      query: clean,
+      matched: true,
+      rootDevanagari: match?.devanagari || base + '्',
+      rootIast: match?.transliteration || 'root',
+      rootMeaningEn: match?.meaning || 'verbal action',
+      rootMeaningHi: match?.meaning_hi || 'क्रिया',
+      gana: match?.gana,
+      morphologyType: 'tinanta',
+      grammaticalLabel: 'लट्-लकारः (आत्मनेपदम्), प्रथम पुरुष, एकवचन',
+      paniniSutra: 'टित आत्मनेपदानां टेरे (३.४.७९)',
+      formula: { root: match?.devanagari || base + '्', suffix: 'त (➔ ते)', result: clean },
+      englishTranslation: `He / She ${match?.meaning || 'performs action'}`,
+      hindiTranslation: `वह ${match?.meaning_hi || 'कार्य'} करता / करती है`,
+      exampleUsage: `छात्रः ${clean}।`,
+      exampleMeaning: 'The student performs the action.',
+    };
+  }
+
+  // Finite Verb heuristics (-ति, etc.)
   if (clean.endsWith('ति')) {
     const base = clean.slice(0, -2);
     const match = dhatuLibrary.find(
@@ -1157,7 +2284,7 @@ export function deconstructWord(
       englishTranslation: `He / She ${match?.meaning || 'performs action'}`,
       hindiTranslation: `वह ${match?.meaning_hi || 'कार्य'} करता / करती है`,
       exampleUsage: `छात्रः ${clean}।`,
-      exampleMeaning: `The student performs the action.`,
+      exampleMeaning: 'The student performs the action.',
     };
   }
 
@@ -1173,18 +2300,19 @@ export function deconstructWord(
     formula: { root: clean, suffix: '?', result: clean },
     englishTranslation: `Word: ${clean}`,
     hindiTranslation: `शब्द: ${clean}`,
-    notes: 'Try searching one of our verified school samples: गत्वा, पठितुम्, भवति, अपठत्, गमिष्यति, आगत्य, कृत्वा.',
+    notes: 'Try searching one of our verified school samples: गत्वा, पठितुम्, भवति, लभते, वर्धते, पाठयति, अपठत्, गमिष्यति, आगत्य, कृत्वा.',
     exampleUsage: `${clean} वाक्ये प्रयुज्यते।`,
-    exampleMeaning: `Used in Sanskrit context.`,
+    exampleMeaning: 'Used in Sanskrit context.',
   };
 }
 
 // =========================================================================
-// 4. Interactive Pratyaya Practice / Quiz Questions
+// 5. Interactive Practice Challenges (25 Questions)
 // =========================================================================
 
 export interface PratyayaQuestion {
   id: string;
+  category: 'krt' | 'lakara' | 'causative' | 'atmanepada';
   prompt: string;
   hindiPrompt: string;
   formula: string;
@@ -1197,6 +2325,7 @@ export interface PratyayaQuestion {
 export const PRATYAYA_QUIZ_SET: PratyayaQuestion[] = [
   {
     id: 'pq_1',
+    category: 'krt',
     prompt: 'Which suffix converts a verb into "having done" (e.g. "having read" / "पढ़कर")?',
     hindiPrompt: 'पूर्वकालिक क्रिया (करके) दर्शाने के लिए कौन-सा प्रत्यय प्रयुक्त होता है?',
     formula: 'पठ् + [ ? ] = पठित्वा',
@@ -1207,6 +2336,7 @@ export const PRATYAYA_QUIZ_SET: PratyayaQuestion[] = [
   },
   {
     id: 'pq_2',
+    category: 'krt',
     prompt: 'Which suffix expresses intention or purpose ("in order to go" / "जाने के लिए")?',
     hindiPrompt: 'प्रयोजन या उद्देश्य (के लिए) दर्शाने के लिए कौन-सा प्रत्यय आता है?',
     formula: 'गम् + [ ? ] = गन्तुम्',
@@ -1217,6 +2347,7 @@ export const PRATYAYA_QUIZ_SET: PratyayaQuestion[] = [
   },
   {
     id: 'pq_3',
+    category: 'krt',
     prompt: 'When a verbal root is prefixed with an Upasarga (like आ-), what suffix replaces क्त्वा?',
     hindiPrompt: 'जब धातु से पहले कोई उपसर्ग जुड़ा हो, तो क्त्वा के स्थान पर कौन-सा प्रत्यय लगता है?',
     formula: 'आ + गम् + [ ? ] = आगत्य',
@@ -1227,6 +2358,7 @@ export const PRATYAYA_QUIZ_SET: PratyayaQuestion[] = [
   },
   {
     id: 'pq_4',
+    category: 'lakara',
     prompt: 'What is the correct 3rd Person Singular Future (लृट्-लकार) form of पठ्?',
     hindiPrompt: 'पठ् धातु का लृट्-लकार (भविष्यत् काल), प्रथम पुरुष, एकवचन रूप क्या है?',
     formula: 'पठ् + स्य (लृट्) + ति = [ ? ]',
@@ -1237,6 +2369,7 @@ export const PRATYAYA_QUIZ_SET: PratyayaQuestion[] = [
   },
   {
     id: 'pq_5',
+    category: 'lakara',
     prompt: 'What past tense prefix (augment) is added at the beginning of verbs in लङ्-लकारः?',
     hindiPrompt: 'लङ्-लकार (भूतकाल) में धातु के आरम्भ में कौन-सा आगम जुड़ता है?',
     formula: '[ ? ] + पठ् + त् = अपठत्',
@@ -1247,6 +2380,7 @@ export const PRATYAYA_QUIZ_SET: PratyayaQuestion[] = [
   },
   {
     id: 'pq_6',
+    category: 'lakara',
     prompt: 'In Pāṇinian grammar, what vowel transformation (Guṇa) occurs when root भू meets the present suffix?',
     hindiPrompt: 'भू धातु में सार्वधातुक प्रत्यय मिलने पर कौन-सा गुण परिवर्तन होता है?',
     formula: 'भू ➔ [ ? ] + अ + ति = भवति',
@@ -1254,5 +2388,104 @@ export const PRATYAYA_QUIZ_SET: PratyayaQuestion[] = [
     correctAnswer: 'भो',
     explanation: 'Pāṇini Sūtra ७.३.८४ (सार्वधातुकार्धधातुकयोः): Radical vowel ऊ undergoes Guṇa to ओ (भो). Then भो + अ undergoes Sandhi (६.१.७८) to become भव् + ति = भवति.',
     example: 'सत्यं जयति, धर्मः भवति। (Truth triumphs; righteousness becomes.)',
+  },
+  {
+    id: 'pq_7',
+    category: 'atmanepada',
+    prompt: 'What is the 3rd person singular present form of root लभ् (Atmanepada)?',
+    hindiPrompt: 'लभ् धातु का लट् लकार, प्रथम पुरुष, एकवचन रूप क्या है?',
+    formula: 'लभ् + शप् + त (लट्) = [ ? ]',
+    options: ['लभति', 'लभते', 'लभेते', 'लभन्ति'],
+    correctAnswer: 'लभते',
+    explanation: 'Pāṇini Sūtra ३.४.७९ (टित आत्मनेपदानां टेरे): Atmanepada singular termination त becomes ते (लभ् + अ + ते = लभते).',
+    example: 'सः परिश्रमेण ज्ञानं लभते। (He obtains knowledge through perseverance.)',
+  },
+  {
+    id: 'pq_8',
+    category: 'atmanepada',
+    prompt: 'In root लभ्, how does the future tense (लृट्) form mutated into लप्स्यते?',
+    hindiPrompt: 'लभ् धातु के लृट् लकार में "भ्" किस वर्ण में परिवर्तित होता है?',
+    formula: 'लभ् + स्यते = [ ? ]',
+    options: ['लभिस्यते', 'लप्स्यते', 'लभिष्यते', 'लभ्स्ते'],
+    correctAnswer: 'लप्स्यते',
+    explanation: 'Pāṇini Sūtra ८.४.५५ (खरि च): The sonorant भ् turns into unaspirated voiceless प् before voiceless sibilant स्य (लभ्+स्य = लप्स्यते).',
+    example: 'सत्यवादी विजयं लप्स्यते। (The truthful person will gain victory.)',
+  },
+  {
+    id: 'pq_9',
+    category: 'causative',
+    prompt: 'What suffix creates the causative verb ("causes to read / teaches") from पठ्?',
+    hindiPrompt: 'पठ् से "पाठयति" (पढ़ाता है) बनाने के लिए कौन-सा प्रत्यय लगता है?',
+    formula: 'पठ् + [ ? ] = पाठयति',
+    options: ['सन्', 'णिच्', 'यङ्', 'ण्यत्'],
+    correctAnswer: 'णिच्',
+    explanation: 'Pāṇini Sūtra ३.१.२६ (हेतुमति च): The causative suffix णिच् (इ) creates causative verbs where one prompts an action.',
+    example: 'आचार्यः छात्रान् पाठयति। (The teacher causes the students to read.)',
+  },
+  {
+    id: 'pq_10',
+    category: 'causative',
+    prompt: 'What is the causative present form of the root "लिख्" (to write)?',
+    hindiPrompt: 'लिख् धातु का णिजन्त (प्रेरणार्थक) लट् लकार रूप क्या है?',
+    formula: 'लिख् + णिच् + ति = [ ? ]',
+    options: ['लिखयति', 'लेखयति', 'लीखयति', 'लिखापयति'],
+    correctAnswer: 'लेखयति',
+    explanation: 'Pāṇini Sūtra ७.३.८६ (पुगन्तलघूपधस्य च): Penultimate short vowel इ undergoes Guṇa mutation to ए (लेख् + इ + ति = लेखयति).',
+    example: 'शिक्षकः छात्रैः सुन्दरं लेखयति। (The teacher has the students write beautifully.)',
+  },
+  {
+    id: 'pq_11',
+    category: 'causative',
+    prompt: 'What is the causative present form of root "पा" (to drink)?',
+    hindiPrompt: 'पा (पीना) धातु का णिजन्त रूप "पिलाता है" क्या है?',
+    formula: 'पा + णिच् + ति = [ ? ]',
+    options: ['पिबयति', 'पाययति', 'पाति', 'पालयति'],
+    correctAnswer: 'पाययति',
+    explanation: 'Pāṇini Sūtra ७.३.३६: Roots ending in vowel take āy-ādeśa in causative (पा ➔ पाययति).',
+    example: 'माता बालं दुग्धं पाययति। (Mother feeds milk to the child.)',
+  },
+  {
+    id: 'pq_12',
+    category: 'atmanepada',
+    prompt: 'Which form belongs to the irregular Atmanepada root "शी" (to sleep) in लट् प्रथमपुरुष बहुवचन?',
+    hindiPrompt: 'शी (सोना) धातु का लट् लकार प्रथम पुरुष बहुवचन रूप क्या है?',
+    formula: 'शी + झि (लट्) = [ ? ]',
+    options: ['शयान्ति', 'शयन्ते', 'शेरते', 'शीयन्ते'],
+    correctAnswer: 'शेरते',
+    explanation: 'Pāṇini Sūtra ७.१.६ (शीङो रुट्): Root शीङ् takes special ending -रते in 3rd person plural (शेरते).',
+    example: 'सर्वे बालकाः रात्रौ शेरते। (All boys sleep at night.)',
+  },
+  {
+    id: 'pq_13',
+    category: 'lakara',
+    prompt: 'Which Lakāra is used to express advice, duty, or moral obligation ("should/ought to")?',
+    hindiPrompt: 'कर्तव्य, विधि अथवा "चाहिए" अर्थ में कौन-सा लकार प्रयुक्त होता है?',
+    formula: 'सत्यं वदेत्, धर्मं चरेत् (लकारः = ?)',
+    options: ['लट्', 'लोट्', 'लङ्', 'विधिलिङ्'],
+    correctAnswer: 'विधिलिङ्',
+    explanation: 'Pāṇini Sūtra ३.३.१६१ (विधिनिमन्त्रणा… लिङ्): Vidhiliṅ is utilized for moral injunctions, duties, and recommendations.',
+    example: 'सदा धर्मं चरेत्। (One should always follow righteousness.)',
+  },
+  {
+    id: 'pq_14',
+    category: 'causative',
+    prompt: 'What is the causative form of "गम्" (to go)?',
+    hindiPrompt: 'गम् (जाना) का णिजन्त रूप (भेजना) क्या है?',
+    formula: 'गम् + णिच् + ति = [ ? ]',
+    options: ['गामयति', 'गमयति', 'गच्छयति', 'गमितुम'],
+    correctAnswer: 'गमयति',
+    explanation: 'Pāṇini Sūtra ६.४.९२ (मितां ह्रस्वः): Root गम् retains short penultimate a without lengthening into ā.',
+    example: 'राजा दूतं गमयति। (The king dispatches the messenger.)',
+  },
+  {
+    id: 'pq_15',
+    category: 'krt',
+    prompt: 'Which participle suffix is used with Atmanepada verbs to signify continuous action ("while doing")?',
+    hindiPrompt: 'आत्मनेपदी धातुओं से वर्तमानकालिक निरन्तर क्रिया (करते हुए) दर्शाने के लिए कौन-सा प्रत्यय लगता है?',
+    formula: 'लभ् + [ ? ] = लभमानः',
+    options: ['शतृ', 'शानच्', 'क्तवतु', 'क्त'],
+    correctAnswer: 'शानच्',
+    explanation: 'Pāṇini Sūtra ३.२.१२४: Śānac is used with Atmanepada verbs for continuous present action, corresponding to Śatṛ for Parasmaipada.',
+    example: 'विद्यां लभमानः छात्रः मोदते। (While obtaining knowledge, the student rejoices.)',
   },
 ];

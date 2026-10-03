@@ -3256,3 +3256,639 @@
   }
 }
 
+
+
+/* ========================================================================= */
+/* Upgraded Dhātupāṭha Studio: Voice, Causative, Comparator & Worksheet CSS */
+/* ========================================================================= */
+
+/* Toast notification */
+.dp-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #0f766e;
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  box-shadow: 0 10px 25px rgba(15, 118, 110, 0.35);
+  z-index: 1000;
+  animation: dpToastIn 0.25s ease-out;
+}
+
+@keyframes dpToastIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Voice & Curriculum Toolbar Filters in Browser */
+.dp-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed #e3d5b3;
+}
+
+.dp-filter-sublabel {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #78716c;
+  margin-right: 0.25rem;
+  align-self: center;
+}
+
+.dp-chip--cbse {
+  border-color: #f59e0b;
+  color: #b45309;
+  background: #fffbeb;
+}
+
+.dp-chip--cbse:hover {
+  background: #fef3c7;
+  border-color: #d97706;
+  color: #92400e;
+}
+
+.dp-chip--cbse-active {
+  background: #d97706 !important;
+  border-color: #d97706 !important;
+  color: #ffffff !important;
+}
+
+/* Browser Card Action Buttons */
+.dp-card-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #e3d5b3;
+}
+
+.dp-card-action-btn {
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.dp-card-action-btn--primary {
+  background: #0f766e;
+  color: #ffffff;
+  border-color: #0f766e;
+}
+
+.dp-card-action-btn--primary:hover {
+  background: #115e59;
+}
+
+.dp-card-action-btn--secondary {
+  background: #fffbeb;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+.dp-card-action-btn--secondary:hover {
+  background: #fef3c7;
+  border-color: #f59e0b;
+}
+
+.dp-card-action-btn--ghost {
+  background: #f1f5f9;
+  color: #334155;
+  border-color: #cbd5e1;
+}
+
+.dp-card-action-btn--ghost:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Voice & Causative Dual Controls in Generator */
+.dp-voice-causative-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  background: #fffdfa;
+  border: 1px solid #ebd9b7;
+  border-radius: 12px;
+}
+
+.dp-voice-toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.dp-vc-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #78716c;
+  margin-right: 0.2rem;
+}
+
+.dp-voice-btn {
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1.5px solid #d6c7a4;
+  background: #ffffff;
+  color: #44403c;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dp-voice-btn:hover {
+  border-color: #0f766e;
+  color: #0f766e;
+}
+
+.dp-voice-btn--active {
+  background: #0f766e;
+  border-color: #0f766e;
+  color: #ffffff;
+}
+
+.dp-voice-btn--active:hover {
+  background: #115e59;
+  color: #ffffff;
+}
+
+.dp-causative-switch-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.dp-causative-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  border: 1.5px solid #d97706;
+  background: #fffbeb;
+  color: #92400e;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dp-causative-toggle:hover {
+  background: #fef3c7;
+  border-color: #b45309;
+}
+
+.dp-causative-toggle--active {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  border-color: #92400e;
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(180, 83, 9, 0.3);
+}
+
+.dp-causative-toggle--active:hover {
+  background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+  color: #ffffff;
+}
+
+/* Causative Golden Banner */
+.dp-causative-banner {
+  background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1.5px solid #fde68a;
+  border-radius: 12px;
+  padding: 0.9rem 1.15rem;
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.08);
+}
+
+.dp-cb-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: #d97706;
+  color: #ffffff;
+  padding: 0.15rem 0.55rem;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+}
+
+.dp-cb-formula {
+  font-size: 1rem;
+  color: #78350f;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+}
+
+.dp-cb-meaning {
+  font-size: 0.88rem;
+  color: #92400e;
+}
+
+.dp-cb-sutra {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: #b45309;
+}
+
+/* Lakāra Meta Banner & Actions */
+.dp-lakara-meta-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.dp-lakara-badge-voice {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: #ccfbf1;
+  color: #0f766e;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  margin-left: 0.5rem;
+}
+
+.dp-table-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dp-tool-btn {
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  white-space: nowrap;
+}
+
+.dp-tool-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.dp-tool-btn--compare {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #166534;
+}
+
+.dp-tool-btn--compare:hover {
+  background: #dcfce7;
+  border-color: #22c55e;
+}
+
+/* Comparator Section */
+.dp-comparator-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.dp-comparator-presets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  background: #fffdf9;
+  border: 1px solid #ebd9b7;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+
+.dp-presets-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #92400e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dp-preset-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.dp-preset-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.dp-preset-chip:hover {
+  border-color: #0f766e;
+  background: #f0fdfa;
+  transform: translateY(-1px);
+}
+
+.dp-preset-chip strong {
+  font-size: 0.86rem;
+  color: #0f766e;
+}
+
+.dp-preset-chip-sub {
+  font-size: 0.72rem;
+  color: #64748b;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dp-comparator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .dp-comparator-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dp-comparator-panel {
+  background: #ffffff;
+  border: 1.5px solid #d5c8a5;
+  border-radius: 14px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 4px 12px rgba(43, 33, 24, 0.05);
+}
+
+.dp-comparator-panel--b {
+  border-color: #cbd5e1;
+  background: #fafbfc;
+}
+
+.dp-comp-panel-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #ebd9b7;
+}
+
+.dp-panel-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: #0f766e;
+  color: #ffffff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.dp-panel-tag--b {
+  background: #475569;
+}
+
+.dp-comp-select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.dp-select--sm {
+  min-height: 38px;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.9rem;
+}
+
+.dp-comp-toggles {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.dp-comp-pill-btn {
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dp-comp-pill-btn--active {
+  background: #d97706;
+  border-color: #d97706;
+  color: #ffffff;
+}
+
+.dp-comp-summary {
+  background: #fffdf8;
+  border: 1px solid #ebd9b7;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+}
+
+.dp-comp-summary--b {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+.dp-comp-summary-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.dp-comp-summary-sub {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-top: 0.2rem;
+}
+
+.dp-matrix-table--compact th,
+.dp-matrix-table--compact td {
+  padding: 0.5rem 0.6rem;
+  font-size: 0.88rem;
+}
+
+/* Morphological Contrast Analysis Box */
+.dp-comparison-insight {
+  margin-top: 1.5rem;
+  background: #fffefb;
+  border: 1.5px solid #e3d5b3;
+  border-radius: 12px;
+  padding: 1.15rem 1.35rem;
+}
+
+.dp-insight-title {
+  margin: 0 0 0.85rem 0;
+  font-size: 1.05rem;
+  color: #0f766e;
+  font-weight: 800;
+}
+
+.dp-insight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.dp-insight-item {
+  background: #faf6ed;
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  border-left: 3px solid #0f766e;
+}
+
+.dp-insight-item strong {
+  display: block;
+  font-size: 0.86rem;
+  color: #2b2118;
+  margin-bottom: 0.25rem;
+}
+
+.dp-insight-item p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #57534e;
+  line-height: 1.45;
+}
+
+/* Deconstructor Category Filters & Suggestion Chips */
+.dp-decon-filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.dp-schip-word {
+  font-weight: 700;
+}
+
+.dp-schip-root {
+  font-size: 0.76rem;
+  color: #78716c;
+}
+
+/* Quiz Improvements */
+.dp-quiz-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.dp-quiz-cat-pill {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+}
+
+/* Kṛt header row */
+.dp-krt-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+/* Printable Worksheet Styles */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .dp-studio-nav,
+  .dp-control-row,
+  .dp-voice-causative-row,
+  .dp-lakara-tabs,
+  .dp-table-actions,
+  .dp-audio-mini,
+  .dp-audio-inline,
+  .grammar-back,
+  .dp-toast {
+    display: none !important;
+  }
+
+  .dp-section {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .dp-table-wrapper {
+    box-shadow: none !important;
+    border: 1px solid #000000 !important;
+    page-break-inside: avoid;
+  }
+
+  .dp-matrix-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  .dp-matrix-table th,
+  .dp-matrix-table td {
+    border: 1px solid #333333 !important;
+    color: #000000 !important;
+    padding: 8px !important;
+  }
+
+  .dp-cell-word {
+    font-size: 1.1rem !important;
+    color: #000000 !important;
+  }
+}
