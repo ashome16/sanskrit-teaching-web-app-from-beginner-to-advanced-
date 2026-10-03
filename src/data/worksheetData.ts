@@ -14366,4 +14366,348 @@ export const WORKSHEETS: Worksheet[] = [
       }
     ]
   },
+// ==========================================
+  // GRADE 9 CH 6 WORKSHEET 1: Grammatical Formations & Disjunctions (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch6-ws1",
+    title: "Worksheet 1: Grammatical Formations & Disjunctions (10 Questions)",
+    titleSanskrit: "षष्ठः पाठः कार्यपत्रिका १: व्याकरण-प्रश्नावली सन्धयः समासाश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Master Sandhi separations, compound formations (Tatpurusha, Karmadharaya), noun declensions, and optative verbal forms based on Chapter 6.",
+    sections: [
+      {
+        sectionTitle: "Section A: Grammatical Formations & Disjunctions",
+        sectionTitleSanskrit: "खण्डः 'क' · सन्धिच्छेदः समस्तपदानि पदपरिचयश्च",
+        instructions: "Solve the sandhi separations, provide compound words, and identify grammatical categories.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Separate Sandhi: 'दमोऽस्तेयम्' = ______ + ______",
+            questionSanskrit: "सन्धिच्छेदं कुरुत: दमोऽस्तेयम् $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "दमः + अस्तेयम् (विसर्गस्य उत्वे गुणे पूर्वरूपे च)।",
+            explanation: "दमः + अस्तेयम् = दमोऽस्तेयम्।"
+          },
+          {
+            num: 2,
+            question: "Separate Sandhi: 'पुनरपि' = ______ + ______",
+            questionSanskrit: "सन्धिच्छेदं कुरुत: पुनरपि $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "पुनः + अपि (विसर्ग-ऋत्व-सन्धिः)।",
+            explanation: "पुनः + अपि = पुनरपि।"
+          },
+          {
+            num: 3,
+            question: "Separate Sandhi: 'चोत्तमजनाः' = ______ + ______",
+            questionSanskrit: "सन्धिच्छेदं कुरुत: चोत्तमजनाः $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "च + उत्तमजनाः (गुण-स्वरसन्धिः)।",
+            explanation: "अ + उ = ओ (गुण-सन्धिः)।"
+          },
+          {
+            num: 4,
+            question: "Separate Sandhi: 'लोकस्तदनुवर्तते' = ______ + ______ + ______",
+            questionSanskrit: "सन्धिच्छेदं कुरुत: लोकस्तदनुवर्तते $\\rightarrow$ ______ + ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "लोकः + तत् + अनुवर्तते (विसर्ग-सत्वं जश्त्वं च)।",
+            explanation: "लोकः + तत् + अनुवर्तते = लोकस्तदनुवर्तते।"
+          },
+          {
+            num: 5,
+            question: "Compound: Provide the compound word for 'वस्त्रेण पूतम्' $\\rightarrow$ ______",
+            questionSanskrit: "समस्तपदं लिखत: वस्त्रेण पूतम् $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "वस्त्रपूतम् (तृतीयातत्पुरुष-समासः)।",
+            explanation: "वस्त्रेण पूतम् = वस्त्रपूतम्।"
+          },
+          {
+            num: 6,
+            question: "Compound: Provide the compound word for 'न विवेकः' $\\rightarrow$ ______",
+            questionSanskrit: "समस्तपदं लिखत: न विवेकः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "अविवेकः (नञ्-तत्पुरुष-समासः)।",
+            explanation: "न विवेकः = अविवेकः।"
+          },
+          {
+            num: 7,
+            question: "Compound: Provide the compound word for 'उत्तमाः जनाः' $\\rightarrow$ ______",
+            questionSanskrit: "समस्तपदं लिखत: उत्तमाः जनाः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "उत्तमजनाः (कर्मधारय-समासः)।",
+            explanation: "उत्तमाः जनाः = उत्तमजनाः।"
+          },
+          {
+            num: 8,
+            question: "Case Identification: Identify the grammatical case (विभक्ति) and number in 'आपदाम्'.",
+            questionSanskrit: "'आपदाम्' पदे का विभक्तिः किं च वचनम्?",
+            marks: 2,
+            type: "grammar",
+            answer: "षष्ठी विभक्तिः, बहुवचनम् (स्त्रीलिङ्गम्)।",
+            explanation: "आपद्-शब्दस्य षष्ठी बहुवचने 'आपदाम्' रूपं भवति।"
+          },
+          {
+            num: 9,
+            question: "Gender & Number: Identify the gender, case, and number of 'सम्पदः'.",
+            questionSanskrit: "'सम्पदः' पदस्य लिङ्गं, विभक्तिं वचनं च लिखत।",
+            marks: 2,
+            type: "grammar",
+            answer: "स्त्रीलिङ्गम्, प्रथमा विभक्तिः, बहुवचनम्।",
+            explanation: "सम्पद्-शब्दस्य प्रथमा बहुवचने 'सम्पदः' रूपं भवति।"
+          },
+          {
+            num: 10,
+            question: "Verb Conjugation: Identify the root verb, lakara, person, and number of 'विदधीत'.",
+            questionSanskrit: "'विदधीत' क्रियापदस्य धातुं, लकारं, पुरुषं वचनं च लिखत।",
+            marks: 2,
+            type: "grammar",
+            answer: "वि + धा-धातुः, विधिलिङ्-लकारः, प्रथमपुरुषः, एकवचनम् (आत्मनेपदम्)।",
+            explanation: "वि-उपसर्गपूर्वकस्य धा-धातोः विधिलिङ् प्रथमपुरुषैकवचने 'विदधीत' भवति।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 CH 6 WORKSHEET 2: Sentence Transformations & Question Framing (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch6-ws2",
+    title: "Worksheet 2: Sentence Transformations & Question Framing (10 Questions)",
+    titleSanskrit: "षष्ठः पाठः कार्यपत्रिका २: वाक्य-परिवर्तनं प्रश्ननिर्माणं च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Frame questions on underlined terms, translate moral maxims into Sanskrit, complete Anvaya blanks, and rectify grammatical errors.",
+    sections: [
+      {
+        sectionTitle: "Section A: Sentence Transformations & Question Framing",
+        sectionTitleSanskrit: "खण्डः 'क' · प्रश्ननिर्माणं संस्कृतानुवादः अन्वयपूर्तिश्च",
+        instructions: "Frame questions for underlined segments, translate to Sanskrit, and complete Anvaya splits.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Frame Question: 'नीचैः विघ्नभयेन कार्यं न प्रारभ्यते।' (Underlined: नीचैः)",
+            questionSanskrit: "प्रश्ननिर्माणं कुरुत: नीचैः विघ्नभयेन कार्यं न प्रारभ्यते।",
+            marks: 2,
+            type: "short_ans",
+            answer: "कैः विघ्नभयेन कार्यं न प्रारभ्यते?",
+            explanation: "नीचैः (तृतीया बहुवचनम्) $\\rightarrow$ कैः।"
+          },
+          {
+            num: 2,
+            question: "Frame Question: 'सकलाः कलाः अभ्यासात् सिध्यन्ति।' (Underlined: अभ्यासात्)",
+            questionSanskrit: "प्रश्ननिर्माणं कुरुत: सकलाः कलाः अभ्यासात् सिध्यन्ति।",
+            marks: 2,
+            type: "short_ans",
+            answer: "सकलाः कलाः कस्मात् सिध्यन्ति?",
+            explanation: "अभ्यासात् (पञ्चमी एकवचनम्) $\\rightarrow$ कस्मात्।"
+          },
+          {
+            num: 3,
+            question: "Frame Question: 'लक्ष्मीः पुरुषसिंहम् उपैति।' (Underlined: पुरुषसिंहम्)",
+            questionSanskrit: "प्रश्ननिर्माणं कुरुत: लक्ष्मीः पुरुषसिंहम् उपैति।",
+            marks: 2,
+            type: "short_ans",
+            answer: "लक्ष्मीः कम् उपैति?",
+            explanation: "पुरुषसिंहम् (द्वितीया एकवचनम्) $\\rightarrow$ कम्।"
+          },
+          {
+            num: 4,
+            question: "Frame Question: 'वस्त्रपूतं जलं पिबेत्।' (Underlined: वस्त्रपूतम्)",
+            questionSanskrit: "प्रश्ननिर्माणं कुरुत: वस्त्रपूतं जलं पिबेत्।",
+            marks: 2,
+            type: "short_ans",
+            answer: "कीदृशं जलं पिबेत्?",
+            explanation: "वस्त्रपूतम् (विशेषणम्) $\\rightarrow$ कीदृशम्।"
+          },
+          {
+            num: 5,
+            question: "Translate to Sanskrit: 'मनुष्य को सत्य से पवित्र वाणी बोलनी चाहिए।'",
+            questionSanskrit: "संस्कृते अनुवादं कुरुत: 'मनुष्य को सत्य से पवित्र वाणी बोलनी चाहिए।'",
+            marks: 2,
+            type: "short_ans",
+            answer: "सत्यपूतां वाचं वदेत्।",
+            explanation: "(मनुष्यः) सत्यपूतां वाचं वदेत्।"
+          },
+          {
+            num: 6,
+            question: "Translate to Sanskrit: 'बिना सोचे-विचारे कार्य नहीं करना चाहिए।'",
+            questionSanskrit: "संस्कृते अनुवादं कुरुत: 'बिना सोचे-विचारे कार्य नहीं करना चाहिए।'",
+            marks: 2,
+            type: "short_ans",
+            answer: "सहसा क्रियां न विदधीत।",
+            explanation: "सहसा (बिना विचारे) क्रियां न विदधीत।"
+          },
+          {
+            num: 7,
+            question: "Complete Anvaya: श्रेष्ठः यत् यत् ______ इतरः जनः तत्तत् एव आचरति।",
+            questionSanskrit: "अन्वयपूर्तिं कुरुत: श्रेष्ठः यत् यत् ______ इतरः जनः तत्तत् एव आचरति।",
+            marks: 2,
+            type: "fill",
+            answer: "आचरति",
+            explanation: "यद्यदाचरति श्रेष्ठः $\\rightarrow$ श्रेष्ठः यत् यत् आचरति।"
+          },
+          {
+            num: 8,
+            question: "Complete Anvaya: सर्वाः क्रियाः ______ सिध्यन्ति।",
+            questionSanskrit: "अन्वयपूर्तिं कुरुत: सर्वाः क्रियाः ______ सिध्यन्ति।",
+            marks: 2,
+            type: "fill",
+            answer: "अभ्यासेन",
+            explanation: "अभ्यासेन क्रियाः सर्वाः सिध्यन्ति।"
+          },
+          {
+            num: 9,
+            question: "Rectify Error: 'वस्त्रपूतं जलं पिबन्ति।' (Change verb to singular Optative/Vidhilin)",
+            questionSanskrit: "दोषं संशोध्य लिखत: वस्त्रपूतं जलं पिबन्ति।",
+            marks: 2,
+            type: "grammar",
+            answer: "वस्त्रपूतं जलं पिबेत्।",
+            explanation: "पिबन्ति (लट् बहुवचनम्) $\\rightarrow$ पिबेत् (विधिलिङ् एकवचनम् उपदेशार्थे)।"
+          },
+          {
+            num: 10,
+            question: "Scripture Authorship: 'नीतिशतकम्' is authored by which great poet-philosopher?",
+            questionSanskrit: "नीतिशतकम् कस्य महाकवेः कृतिः अस्ति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "भर्तृहरेः (महाराज-भर्तृहरिणा विरचितम्)।",
+            explanation: "नीतिशतकम्, शृङ्गारशतकम्, वैराग्यशतकम् च भर्तृहरेः रचनाः सन्ति।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 CH 6 WORKSHEET 3: Descriptive & Applied Analytical Tasks (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch6-ws3",
+    title: "Worksheet 3: Descriptive & Applied Analytical Tasks (10 Questions)",
+    titleSanskrit: "षष्ठः पाठः कार्यपत्रिका ३: प्रयोगात्मक-पाठावबोधनम् (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Answer analytical questions on source scriptures, ethical traits of Dharma, critical testing over ancient dogmatism, and circumspect action.",
+    sections: [
+      {
+        sectionTitle: "Section A: Descriptive & Applied Analytical Tasks",
+        sectionTitleSanskrit: "खण्डः 'क' · नैतिक-सिद्धान्ताः ग्रन्थ-परिचयश्च",
+        instructions: "Answer short textual and contextual questions based on the moral principles of Chapter 6.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Source Identification: Name the source scripture for Shloka 1 ('दृष्टिपूतं न्यसेत् पादम्...').",
+            questionSanskrit: "श्लोक-१ ('दृष्टिपूतं...') कस्मात् ग्रन्थात् उद्धृतः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "मनुस्मृतिः (६.४६)।",
+            explanation: "मनुस्मृतेः षष्ठाध्यायात् एषः श्लोकः उद्धृतः।"
+          },
+          {
+            num: 2,
+            question: "Textual Recall: What are the two items mentioned that should be purified by sight and cloth?",
+            questionSanskrit: "दृष्ट्या वस्त्रेण च पूतीकृत्य किं करणीयम् इति श्लोके कथितम्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "पादम् (Footstep) and जलम् (Water)।",
+            explanation: "दृष्टिपूतं पादं न्यसेत्, वस्त्रपूतं जलं पिबेत्।"
+          },
+          {
+            num: 3,
+            question: "Listing: List any 4 characteristics of Dharma highlighted in Shloka 2.",
+            questionSanskrit: "श्लोक-२ आधारेण धर्मस्य चत्वारि लक्षणानि लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "धृतिः (Patience), क्षमा (Forgiveness), दमः (Self-restraint), अस्तेयम् (Non-stealing)।",
+            explanation: "दशसु लक्षणेषु चत्वारि: धृतिः, क्षमा, दमः, अस्तेयम्।"
+          },
+          {
+            num: 4,
+            question: "Core Principle: What must be completely pure before undertaking any action?",
+            questionSanskrit: "पाठानुरोधेन कार्यकरणात् पूर्वं किं पवित्रं भवेत्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "मनः (The Mind / Conscience)।",
+            explanation: "'मनःपूतं समाचरेत्'—मनः पवित्रं कृत्वा एव आचरणीयम्।"
+          },
+          {
+            num: 5,
+            question: "Analogy: Complete the pairing: 'मध्याः : विरमन्ति :: उत्तमजनाः : ___________'.",
+            questionSanskrit: "सादृश्यसम्बन्धं पूरयत: मध्याः : विरमन्ति :: उत्तमजनाः : ______",
+            marks: 2,
+            type: "fill",
+            answer: "न परित्यजन्ति।",
+            explanation: "मध्यमाः विघ्नविहताः विरमन्ति, उत्तमजनाः न परित्यजन्ति।"
+          },
+          {
+            num: 6,
+            question: "Consequence: What happens if our mind is polluted ('मलिनं स्यात्') before undertaking an objective?",
+            questionSanskrit: "यदि मनः मलिनं स्यात् तर्हि कर्मणः किं भवति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "कर्मणः फलं दूषितं पापयुक्तं च भवति (The fruit of the action becomes polluted)।",
+            explanation: "मनसि मलिने सति सर्वं कर्म दूषितं भवति।"
+          },
+          {
+            num: 7,
+            question: "Character Analysis: Explain the meaning of 'परप्रत्ययनेयबुद्धिः' in short.",
+            questionSanskrit: "'परप्रत्ययनेयबुद्धिः' इत्यस्य कः अर्थः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "A person whose mind/intellect is blindly led by the opinions of others (दूसरों की बुद्धि के इशारे पर चलने वाला मूर्ख)।",
+            explanation: "परस्य प्रत्ययेन (विश्वासेन) नेया (चालनीया) बुद्धिः यस्य सः मूढः।"
+          },
+          {
+            num: 8,
+            question: "Textual Understanding: Whom do virtue-loving prosperities ('गुणलुब्धाः सम्पदः') automatically choose?",
+            questionSanskrit: "'गुणलुब्धाः सम्पदः' कम् आश्रयन्ते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "विमृश्यकारिणम् (One who acts with forethought and deliberation)।",
+            explanation: "विमृश्यकारिणं गुणलुब्धाः स्वयमेव सम्पदः वृणते।"
+          },
+          {
+            num: 9,
+            question: "Critical Discrimination: Is something inherently good simply because it is ancient ('पुराणम्')? Answer yes/no according to the text.",
+            questionSanskrit: "किं पुराणम् इत्येव सर्वं साधु भवति? आम् अथवा न लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "न (No — 'पुराणमित्येव न साधु सर्वम्')।",
+            explanation: "कालिदासस्य मते प्राचीनं सर्वं साधु न भवति, परीक्षणानन्तरम् एव ग्राह्यम्।"
+          },
+          {
+            num: 10,
+            question: "Literary Context: Name the historical dramatic play by Kalidasa sourced in Shloka 7.",
+            questionSanskrit: "श्लोक-७ कस्य कालिदास-नाटकस्य अस्ति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "मालविकाग्निमित्रम् (Malavikagnimitram 1.2)।",
+            explanation: "कालिदासस्य मालविकाग्निमित्र-नाटकस्य प्रस्तावनायाम् एषः प्रसिद्धः श्लोकः वर्तते।"
+          }
+        ]
+      }
+    ]
+  },
 ];
