@@ -15397,5 +15397,349 @@ export const WORKSHEETS: Worksheet[] = [
         ]
       }
     ]
+  },
+// ==========================================
+  // GRADE 9 CH 9 WORKSHEET 1: Grammatical Mechanics & Sandhi Operations (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch9-ws1",
+    title: "Worksheet 1: Grammatical Mechanics & Sandhi Operations (10 Questions)",
+    titleSanskrit: "नवमः पाठः कार्यपत्रिका १: सन्धि-कार्यम् कारक-समासाश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Analyze Sandhi separations and unions, compound formations (Tatpurusha, Bahuvrihi), and case endings based on Chapter 9.",
+    sections: [
+      {
+        sectionTitle: "Section A: Grammatical Mechanics & Sandhi Operations",
+        sectionTitleSanskrit: "खण्डः 'क' · सन्धिच्छेदः समस्तपदानि पदपरिचयश्च",
+        instructions: "Split or combine the sandhi components and identify grammatical compounds.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Disjoin Sandhi: 'खल्वेकपुत्रः' = ______ + ______",
+            questionSanskrit: "सन्धिविच्छेदं कुरुत: खल्वेकपुत्रः $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "खलु + एकपुत्रः (यण्-सन्धिः)।",
+            explanation: "खलु + एकपुत्रः = खल्वेकपुत्रः (उ + ए = वे)।"
+          },
+          {
+            num: 2,
+            question: "Disjoin Sandhi: 'धर्मसङ्ग्रहोऽत्र' = ______ + ______",
+            questionSanskrit: "सन्धिविच्छेदं कुरुत: धर्मसङ्ग्रहोऽत्र $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "धर्मसङ्ग्रहः + अत्र (उत्व-पूर्वरूप-विसर्गसन्धिः)।",
+            explanation: "विसर्गस्य उत्वे गुणे पूर्वरूपे च 'धर्मसङ्ग्रहोऽत्र' भवति।"
+          },
+          {
+            num: 3,
+            question: "Disjoin Sandhi: 'राक्षस इति' = ______ + ______",
+            questionSanskrit: "सन्धिविच्छेदं कुरुत: राक्षस इति $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "राक्षसः + इति (लोप-विसर्गसन्धिः)।",
+            explanation: "अकारात् परस्य विसर्गस्य इ-वर्णे परे लोपो भवति (राक्षसः + इति = राक्षस इति)।"
+          },
+          {
+            num: 4,
+            question: "Disjoin Sandhi: 'सम्यगनुष्ठितम्' = ______ + ______",
+            questionSanskrit: "सन्धिविच्छेदं कुरुत: सम्यगनुष्ठितम् $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "सम्यक् + अनुष्ठितम् (जश्त्व-व्यञ्जनसन्धिः)।",
+            explanation: "क् स्थाने तृतीयवर्णः ग् भवति (जश्त्व-सन्धिः)।"
+          },
+          {
+            num: 5,
+            question: "Combine Sandhi & Identify Rule: 'च + एतावत्' = ______",
+            questionSanskrit: "सन्धिं कुरुत सन्धिनाम च लिखत: च + एतावत् $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "चैतावत् (वृद्धि-स्वरसन्धिः)।",
+            explanation: "अ + ए = ऐ (वृद्धिरेचि सूत्रेण वृद्धि-सन्धिः)।"
+          },
+          {
+            num: 6,
+            question: "Combine Sandhi: 'नास्ति + अत्र' = ______",
+            questionSanskrit: "सन्धिं कुरुत: नास्ति + अत्र $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "नास्त्यत्र (यण्-सन्धिः)।",
+            explanation: "इ + अ = य् (इको यणचि सूत्रेण यण्-सन्धिः)।"
+          },
+          {
+            num: 7,
+            question: "Provide Compound Disjunction for 'दुरात्मनः':",
+            questionSanskrit: "'दुरात्मनः' इत्यस्य विग्रहं कुरुत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "दुष्टा आत्मा यस्य सः दुरात्मा, तस्य (बहुव्रीहि-समासः, षष्ठी-एकवचनम्)।",
+            explanation: "दुरात्मन् शब्दस्य षष्ठी-एकवचने 'दुरात्मनः' रूपं भवति।"
+          },
+          {
+            num: 8,
+            question: "Identify Case and Semantic Function in 'हुताशनाय':",
+            questionSanskrit: "'हुताशनाय' पदे का विभक्तिः कश्च कारकः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "चतुर्थी विभक्तिः, सम्प्रदानकारकम् (Fire god)।",
+            explanation: "जठराग्निरूपाय हुताशनाय समर्पणार्थे चतुर्थी विभक्तिः प्रयुक्ता।"
+          },
+          {
+            num: 9,
+            question: "Form Compound: 'वीरस्य भुजयोः बलम्' = ______",
+            questionSanskrit: "समस्तपदं रचयत: 'वीरस्य भुजयोः बलम्' $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "वीरभुजबलम् (षष्ठीतत्पुरुष-समासः)।",
+            explanation: "वीर + भुज + बलम् = वीरभुजबलम्।"
+          },
+          {
+            num: 10,
+            question: "Form Compound: 'धनुः धरति इति' = ______",
+            questionSanskrit: "समस्तपदं रचयत: 'धनुः धरति इति' $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "धनुर्धरः (उपपद-तत्पुरुष-समासः)।",
+            explanation: "धनुः धरति यः सः धनुर्धरः।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 CH 9 WORKSHEET 2: Voice Shifts & Syntax Transformation (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch9-ws2",
+    title: "Worksheet 2: Voice Shifts & Syntax Transformation (10 Questions)",
+    titleSanskrit: "नवमः पाठः कार्यपत्रिका २: वाच्यपरिवर्तनं वाक्यरचना च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Transform sentences from Passive to Active voice, frame interrogatives, correct grammatical mismatches, and identify speakers.",
+    sections: [
+      {
+        sectionTitle: "Section A: Voice Shifts & Syntax Transformation",
+        sectionTitleSanskrit: "खण्डः 'क' · वाच्यपरिवर्तनम् प्रश्ननिर्माणं च",
+        instructions: "Alter sentence formats between Active and Passive and frame contextual questions.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Convert Passive to Active: 'भवत्या प्रतिश्रुतम्।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: 'भवत्या प्रतिश्रुतम्।' $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "भवती प्रतिश्रुतवती।",
+            explanation: "भवत्या (तृतीया) $\\rightarrow$ भवती (प्रथमा), प्रतिश्रुतम् (नपुंसक) $\\rightarrow$ प्रतिश्रुतवती (स्त्रीलिङ्ग क्तवतु)।"
+          },
+          {
+            num: 2,
+            question: "Convert Passive to Active: 'क्षत्रियाण्या अनुष्ठितम्।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: 'क्षत्रियाण्या अनुष्ठितम्।' $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "क्षत्रियाणी अनुष्ठितवती।",
+            explanation: "क्षत्रियाण्या $\\rightarrow$ क्षत्रियाणी, अनुष्ठितम् $\\rightarrow$ अनुष्ठितवती।"
+          },
+          {
+            num: 3,
+            question: "Convert Passive to Active: 'भवत्या सज्जीक्रियताम्।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: 'भवत्या सज्जीक्रियताम्।' $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "भवती सज्जीकरोतु।",
+            explanation: "भवत्या सज्जीक्रियताम् (लोट् कर्मवाच्य) $\\rightarrow$ भवती सज्जीकरोतु (लोट् कर्तृवाच्य)।"
+          },
+          {
+            num: 4,
+            question: "Convert Passive to Active: 'त्वया सङ्कल्पितम्।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: 'त्वया सङ्कल्पितम्।' $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "त्वं सङ्कल्पितवान्।",
+            explanation: "त्वया $\\rightarrow$ त्वम्, सङ्कल्पितम् $\\rightarrow$ सङ्कल्पितवान् (पुंलिङ्ग क्तवतु)।"
+          },
+          {
+            num: 5,
+            question: "Frame Question: 'पुरस्यादूरवर्तिनि पर्वते वसति [बकनामा] दैत्यः।'",
+            questionSanskrit: "प्रश्ननिर्माणं कुरुत: पुरस्यादूरवर्तिनि पर्वते वसति [बकनामा] दैत्यः।",
+            marks: 2,
+            type: "short_ans",
+            answer: "पुरस्यादूरवर्तिनि पर्वते वसति कः / कीदृशः दैत्यः?",
+            explanation: "'बकनामा' इति नाम/विशेषणवाचकपदस्य स्थाने 'कः' अथवा 'कीदृशः' प्रयुज्यते।"
+          },
+          {
+            num: 6,
+            question: "Frame Question: 'भीमसेनः [मृष्टान्नेन सह] बकासुरस्य समीपं गच्छति।'",
+            questionSanskrit: "प्रश्ननिर्माणं कुरुत: भीमसेनः [मृष्टान्नेन सह] बकासुरस्य समीपं गच्छति।",
+            marks: 2,
+            type: "short_ans",
+            answer: "भीमसेनः केन सह बकासुरस्य समीपं गच्छति?",
+            explanation: "तृतीयाविभक्त्यन्तपदस्य स्थाने 'केन सह' इति प्रश्नवाचकपदं भवति।"
+          },
+          {
+            num: 7,
+            question: "Rectify Agreement Error: 'भीमः बाहू अपि स्फुरति।'",
+            questionSanskrit: "वाक्यदोषं शोधयत: 'भीमः बाहू अपि स्फुरति।'",
+            marks: 2,
+            type: "short_ans",
+            answer: "भीमस्य बाहू अपि स्फुरतः।",
+            explanation: "'बाहू' द्विवचने अस्ति, अतः क्रिया अपि प्रथमपुरुष-द्विवचने 'स्फुरतः' भवेत्, भीमस्य च सम्बन्धः।"
+          },
+          {
+            num: 8,
+            question: "Identify Speaker and Listener: 'अपि हस्तद्वयेन भोक्ष्यसे?'",
+            questionSanskrit: "कः कं प्रति कथयति: 'अपि हस्तद्वयेन भोक्ष्यसे?'",
+            marks: 2,
+            type: "short_ans",
+            answer: "सहदेवः भीमं प्रति।",
+            explanation: "भोजनोत्सुकं भीमं दृष्ट्वा सहदेवः सपरिहासं वदति।"
+          },
+          {
+            num: 9,
+            question: "Identify Speaker and Listener: 'नरभक्षणं नाम मांसाशिनां राक्षसानां धर्मः।'",
+            questionSanskrit: "कः कं प्रति कथयति: 'नरभक्षणं नाम मांसाशिनां राक्षसानां धर्मः।'",
+            marks: 2,
+            type: "short_ans",
+            answer: "बकः भीमं प्रति।",
+            explanation: "बकासुरः स्वहिंसावृत्तिं धर्मरूपेण समर्थयन् भीमम् अवदत्।"
+          },
+          {
+            num: 10,
+            question: "Provide the Antonym of 'उचितम्':",
+            questionSanskrit: "'उचितम्' पदस्य विलोमपदं किं भवति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "अनुचितम्।",
+            explanation: "उचितम् $\\times$ अनुचितम्।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 CH 9 WORKSHEET 3: Structural Context & Plot Analysis (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch9-ws3",
+    title: "Worksheet 3: Structural Context & Plot Analysis (10 Questions)",
+    titleSanskrit: "नवमः पाठः कार्यपत्रिका ३: नाटकावबोधनं चरित्रचित्रणं च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Analyze the authorship, source play 'एकचक्रम्', ethical ideals of reciprocity, and dramatic combat events.",
+    sections: [
+      {
+        sectionTitle: "Section A: Structural Context & Plot Analysis",
+        sectionTitleSanskrit: "खण्डः 'क' · नाटकावबोधनं कथा-विश्लेषणं च",
+        instructions: "Answer short textual questions examining the dramatic script source and narrative developments.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Who authored the modern Sanskrit dramatic play 'एकचक्रम्'?",
+            questionSanskrit: "'एकचक्रम्' इति मूलनाटकस्य रचयिता कः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "विद्वान् एन्. रङ्गनाथशर्मा (Vidwan N. Ranganatha Sharma)।",
+            explanation: "आधुनिक-संस्कृतसाहित्यस्य मूर्धन्यविदुषा एन्. रङ्गनाथशर्मणा एतत् नाटकं रचितम्।"
+          },
+          {
+            num: 2,
+            question: "Where was the author scholar born according to textbook records?",
+            questionSanskrit: "अस्य नाटकस्य रचयितुः जन्मस्थानं कुत्र वर्तते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "नडळल्ली-ग्रामः, शिवमोग्गा-मण्डलम्, कर्णाटक-राज्यम्।",
+            explanation: "कर्णाटकस्य शिवमोग्गा-जनपदस्य नडळल्ली-ग्रामे तस्य जन्म अभवत्।"
+          },
+          {
+            num: 3,
+            question: "What core ethical message is taught by the shloka 'भैक्षप्रदानेन...'?",
+            questionSanskrit: "'भैक्षप्रदानेन...' इति श्लोकस्य केन्द्रीयः सन्देशः कः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "विपत्काले उपकृतस्य जनस्य प्रत्युपकारः सर्वदा कर्त्तव्यः; उपकारस्य बदला उपकारेण एव भवति।",
+            explanation: "कृतं प्रतिकृतं भूयादेष धर्मः सनातनः।"
+          },
+          {
+            num: 4,
+            question: "Why does Arjuna offer to accompany Bhima into the mountain forest?",
+            questionSanskrit: "अर्जुनः भीमस्य पृष्ठतः गन्तुं किमर्थं सन्नद्धः भवति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "अग्रजस्य भीमस्य रक्षणार्थं धनुर्धररूपेण साहाय्यं कर्तुम्।",
+            explanation: "धनुर्धरोऽहमनुगमिष्यामि इति भ्रातृस्नेहात् अर्जुनः अवदत्।"
+          },
+          {
+            num: 5,
+            question: "Explain the meaning of Bhima's statement: 'न हि खरदंष्ट्रो मृगाधिपः सहायमपेक्षते':",
+            questionSanskrit: "भीमस्य अस्य कथनस्य भावार्थः कः: 'न हि खरदंष्ट्रो मृगाधिपः सहायमपेक्षते'?",
+            marks: 2,
+            type: "short_ans",
+            answer: "तीक्ष्णदन्तः पराक्रमी सिंहः कदापि अन्यस्य साहाय्यं नापेक्षते; तथैव भीमः एकाकी एव बकं हन्तुं समर्थः।",
+            explanation: "स्वावलम्बनं स्वपराक्रमविश्वासं च दर्शयति।"
+          },
+          {
+            num: 6,
+            question: "How does Bhima respond when Bakasura aggressively demands that food be served?",
+            questionSanskrit: "यदा बकः भोजनं याचते तदा भीमः किं प्रत्युत्तरं ददाति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "सः अवदत् यत् सर्वं भोजनं मदीय-जठरस्थाय हुताशनाय समर्पितम्।",
+            explanation: "भीमः सर्वं भोजनं स्वयं खादित्वा बकासुरम् उपहसितवान्।"
+          },
+          {
+            num: 7,
+            question: "What is proclaimed as the defining duty (धर्मः) of Kshatriya rulers?",
+            questionSanskrit: "भूमिपालानां क्षत्रियाणां परमः धर्मः कः घोषितः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "नररक्षणम् (दीनानां प्रजानां रक्षणम् / Protection of humanity)।",
+            explanation: "नररक्षणं नाम भूमिपालानां क्षत्रियाणां धर्मः।"
+          },
+          {
+            num: 8,
+            question: "How does Bakasura react upon hearing that Bhima slew Hidimba?",
+            questionSanskrit: "हिडिम्बस्य वधवार्तां श्रुत्वा बकासुरः कीदृशीं प्रतिक्रियाम् अकरोत्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "सः क्रुद्धः सन् अवदत् यत् त्वं स्वयं व्याघ्रगह्वरे प्रविष्टः।",
+            explanation: "बकः मन्यते यत् भीमः तस्य सम्मुखम् आगत्य मृत्युमुखे एव पतितः।"
+          },
+          {
+            num: 9,
+            question: "Complete the analogical pair based on the narrative: 'Hidimba : Bhima :: Bakasura : ______':",
+            questionSanskrit: "अनुपातः पूरयत: हिडिम्बः : भीमः :: बकासुरः : ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "भीमसेनः।",
+            explanation: "उभयोः राक्षसोः वधः भीमेन एव कृतः।"
+          },
+          {
+            num: 10,
+            question: "Provide two Sanskrit synonyms for the word 'असुरः':",
+            questionSanskrit: "'असुरः' पदस्य द्वौ पर्यायौ लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "दैत्यः, दानवः (राक्षसः वा)।",
+            explanation: "दैत्यः, दानवः, दनुजेन्द्रः इति पर्यायाः।"
+          }
+        ]
+      }
+    ]
   }
 ];

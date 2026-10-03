@@ -40895,6 +40895,137 @@
           "kind": "dialogue"
         }
       ]
+    },
+    {
+      "id": "grade9_ch9",
+      "fileName": "grade9_ch9.txt",
+      "title": "Grade 9: नवमः पाठः — कृतं प्रतिकृतं भूयादेष धर्मः सनातनः (Pages 112–126)",
+      "page_numbers": "Pages 112–126",
+      "sentences": [
+        {
+          "sanskrit": "॥ नवमः पाठः — कृतं प्रतिकृतं भूयादेष धर्मः सनातनः ॥",
+          "meaning": "Chapter 9: Action Should Be Met with Counter-Action, This is the Eternal Law (Pages 112–126)",
+          "paragraphTranslation": "नवमः पाठः — कृतं प्रतिकृतं भूयादेष धर्मः सनातनः (पृष्ठ ११२–१२६)",
+          "words": [
+            "॥",
+            "नवमः",
+            "पाठः",
+            "—",
+            "कृतं",
+            "प्रतिकृतं",
+            "भूयादेष",
+            "धर्मः",
+            "सनातनः",
+            "॥"
+          ],
+          "kind": "section-header"
+        },
+        {
+          "sanskrit": "पाण्डवाः एकचक्रनगरे कस्यचित् ब्राह्मणस्य गृहे निवसन्ति। गृहस्वामिनः गृहे रोदनध्वनिं श्रुत्वा तत्र गता पाण्डवानां माता कुन्ती रोदनकारणम् पृच्छति। ततः शोकाकुलेन परिवारेण सा ज्ञापिता यत् एकचक्रनगरवासिनां नातिदूरस्थितेन बकनाम्ना असुरेण सह सन्धिनियमानुसारं प्रतिदिनं कश्चित् नगरवासी स्वेच्छया असुरस्य भक्ष्यं भवेत्, तद्दिने पर्यायेण तस्यैव ब्राह्मणपरिवारस्य बलिदानस्य वारः आसीत् इति। तेषां दुःस्थितिं ज्ञात्वा स्वपुत्रेषु एकं बकासुरस्य समीपं प्रेषयामीति कुन्ती प्रतिज्ञां कृतवती। इमं विषयं ज्ञात्वा ब्राह्मणेन कृतस्य उपकारस्य प्रत्युपकारकालः सन्निहितः इति भावयन् भीमः मृष्टान्न-भाण्डसहितः बकासुरस्य समीपं गन्तुम् उद्युक्तः भवति।",
+          "meaning": "The Pandavas are residing in a Brahmin's house in the town of Ekachakra. Hearing the sound of crying from the host's house, Kunti, the mother of the Pandavas, goes there and asks the reason. The grief-stricken family informs her that according to a peace treaty made with a demon named Baka who lives nearby, one townsman must voluntarily become his food every day. Today, by rotation, it is this Brahmin family's turn. Witnessing their plight, Kunti promises that she will send one of her own sons to Bakasura. Realizing that the time has come to repay the kindness shown by the Brahmin, Bhima prepares to go to Bakasura along with a cart full of delicious food.",
+          "paragraphTranslation": "पाण्डव एकचक्र नगरी में किसी ब्राह्मण के घर में रह रहे हैं। गृहस्वामी के घर से रोने की आवाज़ सुनकर पाण्डवों की माता कुन्ती वहाँ जाती हैं और रोने का कारण पूछती हैं। तब दुखी परिवार द्वारा उन्हें पता चलता है कि एकचक्र नगर के पास ही रहने वाले बक नाम के असुर के साथ हुई संधि के नियमों के अनुसार प्रतिदिन नगर के एक निवासी को भोजन के रूप में उसके पास जाना पड़ता है, और आज बारी इस ब्राह्मण परिवार की है। उनकी इस दयनीय स्थिति को देखकर कुन्ती प्रतिज्ञा करती हैं कि वह अपने पुत्रों में से एक को बकासुर के पास भेजेंगी। इस बात को जानकर भीम सोचते हैं कि ब्राह्मण द्वारा किए गए उपकार का बदला चुकाने का समय आ गया है और वे स्वादिष्ट भोजन की टोकरी के साथ बकासुर के पास जाने के लिए तैयार हो जाते हैं।",
+          "words": [
+            "पाण्डवाः",
+            "एकचक्रनगरे",
+            "कस्यचित्",
+            "ब्राह्मणस्य",
+            "गृहे",
+            "निवसन्ति।",
+            "गृहस्वामिनः",
+            "गृहे",
+            "रोदनध्वनिं",
+            "श्रुत्वा",
+            "तत्र",
+            "गता",
+            "पाण्डवानां",
+            "माता",
+            "कुन्ती",
+            "रोदनकारणम्",
+            "पृच्छति।"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "भैक्षप्रदानेन चिरं परैरुपकृता वयम्।\nकृतं प्रतिकृतं भूयादेष धर्मः सनातनः॥ १ ॥",
+          "meaning": "We have been sustained for a long time by the food given in alms by these citizens. To repay kindness with kindness in return is the eternal and timeless law of righteousness.",
+          "paragraphTranslation": "हम नागरिकों द्वारा लंबे समय तक भिक्षा पाकर पोषित हुए हैं। किए गए उपकार के बदले प्रत्युपकार (भलाई का बदला भलाई से) करना ही सनातन धर्म है।",
+          "words": [
+            "भैक्षप्रदानेन",
+            "चिरं",
+            "परैरुपकृता",
+            "वयम्।",
+            "कृतं",
+            "प्रतिकृतं",
+            "भूयादेष",
+            "धर्मः",
+            "सनातनः॥",
+            "१",
+            "॥"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "इमौ हि पीवरौ बाहू सहायौ सहजौ मम।\nबकं विध्वंसयिष्यामि सिंहः क्षुद्रमृगं यथा॥ २ ॥",
+          "meaning": "These two powerful and stout arms of mine are my natural allies. I will utterly crush Bakasura just as a lion destroys a small, helpless animal.",
+          "paragraphTranslation": "मेरी ये दोनों बलशाली भुजाएँ ही मेरी जन्मजात सहायक हैं। मैं बकासुर को उसी प्रकार नष्ट कर दूँगा जैसे एक शेर किसी अत्यंत छोटे जीव को नष्ट कर देता है।",
+          "words": [
+            "इमौ",
+            "हि",
+            "पीवरौ",
+            "बाहू",
+            "सहायौ",
+            "सहजौ",
+            "मम।",
+            "बकं",
+            "विध्वंसयिष्यामि",
+            "सिंहः",
+            "क्षुद्रमृगं",
+            "यथा॥",
+            "२",
+            "॥"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "रक्षिता साधुलोकानां वरिष्ठो बाहुशालिनाम्।\nनिषूदको हिडिम्बस्य मृत्युश्चास्मि भवादृशाम्॥ ३ ॥",
+          "meaning": "I am the protector of righteous people, the foremost among the strong-armed, the slayer of Hidimba, and I am the absolute death for wretched monsters like you.",
+          "paragraphTranslation": "मैं सज्जन पुरुषों का रक्षक हूँ, बलवानों में सबसे श्रेष्ठ हूँ, हिडिम्ब राक्षस का वध करने वाला हूँ और तुम्हारे जैसे दुष्टों के लिए साक्षात् काल (मृत्यु) हूँ।",
+          "words": [
+            "रक्षिता",
+            "साधुलोकानां",
+            "वरिष्ठो",
+            "बाहुशालिनाम्।",
+            "निषूदको",
+            "हिडिम्बस्य",
+            "मृत्युश्चास्मि",
+            "भवादृशाम्॥",
+            "३",
+            "॥"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "ततः भीमसेनः बकासुरेण सह घोरं मल्लयुद्धं कृत्वा तं दुष्टं दानवं निष्पिष्य यमपुरं प्रेषितवान्। एकचक्रनगरवासिनः भयरहिताः भूत्वा पाण्डवानां जयजयकारम् अकुर्वन्। विप्रपरिवारः च सानन्दं पाण्डवेभ्यः शुभाशिषः प्रादात्।",
+          "meaning": "Then Bhimasena, engaging in a fierce hand-to-hand wrestling duel with Bakasura, crushed that wicked demon and sent him to the abode of Yama. The citizens of Ekachakra became completely free from fear and hailed the victory of the Pandavas. The Brahmin family joyfully bestowed auspicious blessings upon the Pandavas.",
+          "paragraphTranslation": "तब भीमसेन ने बकासुर के साथ घोर मल्लयुद्ध करके उस दुष्ट दानव को कुचलकर यमलोक पहुँचा दिया। एकचक्र नगर के निवासी भयमुक्त होकर पाण्डवों की जय-जयकार करने लगे और ब्राह्मण परिवार ने सानन्द पाण्डवों को आशीर्वाद दिया।",
+          "words": [
+            "ततः",
+            "भीमसेनः",
+            "बकासुरेण",
+            "सह",
+            "घोरं",
+            "मल्लयुद्धं",
+            "कृत्वा",
+            "तं",
+            "दुष्टं",
+            "दानवं",
+            "निष्पिष्य",
+            "यमपुरं",
+            "प्रेषितवान्।"
+          ],
+          "kind": "narrative"
+        }
+      ]
     }
   ]
 }
