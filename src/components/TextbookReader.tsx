@@ -755,10 +755,32 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     return family[at + 1];
   })();
   const sectionJumps = buildSectionJumps(activeLesson);
+  /**
+   * Skip to already jumps to शब्दार्थ / अभ्यास. Hide those same targets in the
+   * older chip row so a lesson that already had them (Class 8 lesson 1 has both)
+   * does not draw the link twice. Other chips stay. Skip to itself stays.
+   */
+  const chipJumps = (() => {
+    const covered = new Set<number>();
+    if (studyJumps.glossary) covered.add(studyJumps.glossary.index);
+    if (studyJumps.exercise) covered.add(studyJumps.exercise.index);
+    const seen = new Set<string>();
+    return sectionJumps.filter((jump) => {
+      if (covered.has(jump.index)) return false;
+      if (studyJumps.glossary && jump.kind === 'glossary-header') return false;
+      const label = getJumpChipLabel(jump, activeLessonId);
+      if (studyJumps.glossary && label === 'शब्दार्थ') return false;
+      if (label === 'पाठः' || label === 'शब्दार्थ' || label === 'प्रार्थना' || label === 'अभ्यास') {
+        if (seen.has(label)) return false;
+        seen.add(label);
+      }
+      return true;
+    });
+  })();
   const currentJumpIndex = (() => {
-    if (!sectionJumps.length) return 0;
-    let best = sectionJumps[0].index;
-    for (const jump of sectionJumps) {
+    if (!chipJumps.length) return 0;
+    let best = chipJumps[0].index;
+    for (const jump of chipJumps) {
       if (jump.index <= sentenceNumber - 1) best = jump.index;
     }
     return best;
@@ -1040,7 +1062,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         </div>
 
         {/* Quick Section Jump Chips */}
-        {!isGroupedLesson && sectionJumps.length > 1 && (
+        {!isGroupedLesson && chipJumps.length > 1 && (
           <div className="textbook-jump-row">
             <span className="textbook-jump-label">Jump:</span>
             <select
@@ -1050,14 +1072,14 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               onChange={(event) => jumpReaderSection(Number(event.target.value))}
               aria-label="Jump to lesson section"
             >
-              {sectionJumps.map((jump) => (
+              {chipJumps.map((jump) => (
                 <option key={`${jump.index}-${jump.label}`} value={String(jump.index)}>
                   {jump.label}
                 </option>
               ))}
             </select>
             <div className="textbook-jump-chips" aria-label="Quick sections">
-              {sectionJumps.map((jump) => (
+              {chipJumps.map((jump) => (
                 <button
                   key={`chip-${jump.index}`}
                   type="button"
