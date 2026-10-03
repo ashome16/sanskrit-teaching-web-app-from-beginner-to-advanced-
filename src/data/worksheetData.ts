@@ -16418,5 +16418,338 @@ export const WORKSHEETS: Worksheet[] = [
         ]
       }
     ]
+  },
+{
+    id: "ws-grade9-ch12-ws1",
+    title: "Worksheet 1: Syntactic Rule Analysis & Missing Links (10 Questions)",
+    titleSanskrit: "द्वादशः पाठः कार्यपत्रिका १: दण्डान्वय-नियमाः अध्याहारश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Analyze Dandanvaya linear syntax, adjective-noun placement, absolutive participles (Ktva, Lyap, Namul), and Adhyahara omission filling based on Chapter 12.",
+    sections: [
+      {
+        sectionTitle: "Section A: Syntactic Rule Analysis & Missing Links",
+        sectionTitleSanskrit: "खण्डः 'क' · दण्डान्वय-नियमाः पदयोजना च",
+        instructions: "Identify grammatical requirements and supply missing structural components based on Chapter 12 rules.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "The primary elementary structure of a Sanskrit prose sentence follows the order: Subject $\\rightarrow$ ______ $\\rightarrow$ Verb.",
+            questionSanskrit: "संस्कृत-गद्यवाक्ये सामान्यतः क्रमः भवति: कर्ता $\\rightarrow$ ______ $\\rightarrow$ क्रिया।",
+            marks: 2,
+            type: "short_ans",
+            answer: "कर्मपदम् (Object)",
+            explanation: "संस्कृत-वाक्ये कर्ता, कर्म, क्रिया इति स्वाभाविकः गद्यक्रमः अस्ति।"
+          },
+          {
+            num: 2,
+            question: "If an adjective modifies an object noun in Dandanvaya, it must be placed directly ______ the object noun.",
+            questionSanskrit: "दण्डान्वये विशेषणं विशेष्यात् कुत्र योजनीयम्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "पूर्वम् (Before)",
+            explanation: "सूत्रम्: 'आद्ये विशेषणं योज्यं विशेष्यं तदनन्तरम्।' अतः विशेषणं पूर्वं भवति।"
+          },
+          {
+            num: 3,
+            question: "The process of inserting an unexpressed word like 'यथा' or 'भवति' to complete a verse's prose meaning is called ______.",
+            questionSanskrit: "श्लोके अनुक्तानाम् आवश्यकपदानां पूरणप्रक्रिया किं कथ्यते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "अध्याहारः / अध्याहार्यम् (Supplying implied words)",
+            explanation: "अर्थपूर्तये अप्रयुक्तपदानां योजनम् 'अध्याहारः' उच्यते।"
+          },
+          {
+            num: 4,
+            question: "Split the sandhi combination: प्रयत्नोऽपि = ______ + ______",
+            questionSanskrit: "सन्धिविच्छेदं कुरुत: प्रयत्नोऽपि = ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रयत्नः + अपि (उत्व-पूर्वरूप-विसर्गसन्धिः)",
+            explanation: "अतः परस्य विसर्गस्य उत्वं पूर्वरूपं च भूत्वा 'प्रयत्नोऽपि' सिध्यति।"
+          },
+          {
+            num: 5,
+            question: "Split the sandhi combination: ततस्ततः = ______ + ______",
+            questionSanskrit: "सन्धिविच्छेदं कुरुत: ततस्ततः = ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "ततः + ततः (सत्व-विसर्गसन्धिः)",
+            explanation: "त-कारे परे विसर्गस्य सकारः भवति (विसर्जनीयस्य सः)।"
+          },
+          {
+            num: 6,
+            question: "Why cannot a Khandanvaya function properly if words lack Akanksha?",
+            questionSanskrit: "आकाङ्क्षायाः अभावे खण्डान्वयः किमर्थं न प्रवर्तते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "Because Khandanvaya relies entirely on natural structural curiosity; without Akanksha, questions cannot be triggered to link words.",
+            explanation: "खण्डान्वयः आकाङ्क्षा-प्रश्नान् आधृत्यैव पदसम्बन्धं स्थापयति।"
+          },
+          {
+            num: 7,
+            question: "Identify the suffix used in the grammatical term 'अध्याहार्यम्':",
+            questionSanskrit: "'अध्याहार्यम्' पदे कः प्रत्ययः प्रयुक्तः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "ण्यत् प्रत्ययः (अधि + आ + √हृ + ण्यत्)",
+            explanation: "ऋहलोर्ण्यत् इति सूत्रेण ण्यत् प्रत्ययः भवति।"
+          },
+          {
+            num: 8,
+            question: "Translate the traditional phrase 'दण्डवत् अन्वयः' into English:",
+            questionSanskrit: "'दण्डवत् अन्वयः' इत्यस्य आङ्ग्लानुवादं लिखत:",
+            marks: 2,
+            type: "short_ans",
+            answer: "Reordering linearly like a straight staff or rod.",
+            explanation: "दण्डस्य इव सरलतया क्रमिकः अन्वयः दण्डान्वयः कथ्यते।"
+          },
+          {
+            num: 9,
+            question: "Correct the structural error: 'In Dandanvaya, adjectives are placed after the nouns they modify.' (Rewrite correctly).",
+            questionSanskrit: "दोषं संशोध्य लिखत: 'दण्डान्वये विशेषणं विशेष्यानन्तरं भवति।'",
+            marks: 2,
+            type: "short_ans",
+            answer: "In Dandanvaya, adjectives are placed before the nouns they modify (आद्ये विशेषणं योज्यं विशेष्यं तदनन्तरम्)।",
+            explanation: "विशेषणं पूर्वं भवति, विशेष्यं तदनन्तरम्।"
+          },
+          {
+            num: 10,
+            question: "What part of speech is the word 'तु' in the verse 'यस्तु क्रियावान्'?",
+            questionSanskrit: "'यस्तु क्रियावान्' इत्यत्र 'तु' किं पदम् अस्ति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "अव्ययम् (Indeclinable particle used for contrast/emphasis)",
+            explanation: "'तु' इति पदम् अव्ययं भवति, यत् भेदं विशिष्टिं वा बोधयति।"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "ws-grade9-ch12-ws2",
+    title: "Worksheet 2: Factor Verification & Logic Sorting (10 Questions)",
+    titleSanskrit: "द्वादशः पाठः कार्यपत्रिका २: चत्वारि सहकारिकारणानि (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Evaluate sentence validity and verify the four auxiliary factors: Akanksha, Yogyata, Aasatti (Sannidhi), and Tatparyam based on Chapter 12 principles.",
+    sections: [
+      {
+        sectionTitle: "Section A: Factor Verification & Logic Sorting",
+        sectionTitleSanskrit: "खण्डः 'क' · वाक्यार्थ-सहकारिकारण-परीक्षणम्",
+        instructions: "Determine which sentence attribute (आकाङ्क्षा, योग्यता, आसत्तिः, तात्पर्यम्) is being tested or violated.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Sentence: 'He irrigates the garden with fire.' Which factor is violated here?",
+            questionSanskrit: "'वह्निना सिञ्चति' इति वाक्ये कस्य कारणस्य अभावः वर्तते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "योग्यता (Irrigating with fire is semantically and physically impossible)",
+            explanation: "वह्नौ सेचनसामर्थ्याभावात् अत्र योग्यता नास्ति।"
+          },
+          {
+            num: 2,
+            question: "If a speaker dictates one word at 9:00 AM and the next word at 10:00 AM, which factor is missing?",
+            questionSanskrit: "एकस्य पदस्य उच्चारणात् परम् एकघण्टानन्तरं द्वितीयपदस्य उच्चारणे कस्य अभावः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "आसत्तिः / सन्निधिः (Lack of temporal proximity)",
+            explanation: "पदानाम् अविलम्बेन उच्चारणम् आसत्तिः कथ्यते।"
+          },
+          {
+            num: 3,
+            question: "Hearing the word 'ददाति' (gives) makes a student ask, 'Who gives? What does he give?' This demonstrates ______.",
+            questionSanskrit: "'ददाति' इति श्रुत्वा 'कः ददाति? किं ददाति?' इति जिज्ञासा किं कथ्यते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "आकाङ्क्षा (Syntactic expectancy/curiosity)",
+            explanation: "पदानां परस्परजिज्ञासा एव आकाङ्क्षा भवति।"
+          },
+          {
+            num: 4,
+            question: "The literal interpretation of a phrase completely misses the speaker's true ironic intent. This is a failure to understand ______.",
+            questionSanskrit: "वक्तुः तात्त्विकम् अभिप्रायम् अज्ञात्वा केवलं शब्दार्थग्रहणं कस्य दोषः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "तात्पर्यम् (Contextual intent)",
+            explanation: "प्रसङ्गानुकूलः वक्तुरभिप्रायः एव तात्पर्यम् उच्यते।"
+          },
+          {
+            num: 5,
+            question: "Provide the exact textbook synonym used to define 'आसत्तिः':",
+            questionSanskrit: "पाठ्यपुस्तके 'आसत्तिः' पदस्य कः पर्यायः दत्तः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "सन्निधिः (Sannidhi)",
+            explanation: "आसत्तिः नाम सन्निधिः (कालस्य देशस्य वा सामीप्यम्)।"
+          },
+          {
+            num: 6,
+            question: "Translate to Sanskrit: 'The compatibility of meaning between words is called Yogyata.'",
+            questionSanskrit: "संस्कृते अनुवादं कुरुत: 'पदों के बीच अर्थ का सामंजस्य ही योग्यता कहलाता है।'",
+            marks: 2,
+            type: "short_ans",
+            answer: "पदानां मध्ये परस्पर-सम्बन्धस्य पात्रता एव योग्यता कथ्यते।",
+            explanation: "अर्थबाधाभावः परस्परसम्बन्धपात्रता योग्यता।"
+          },
+          {
+            num: 7,
+            question: "Complete the classical series: 'पूर्वापरं पदं ज्ञातुम् इच्छा = ______।'",
+            questionSanskrit: "रिक्तस्थानं पूरयत: 'पूर्वापरं पदं ज्ञातुम् इच्छा = ______।'",
+            marks: 2,
+            type: "short_ans",
+            answer: "आकाङ्क्षा",
+            explanation: "एकपदश्रवणे परपदजिज्ञासा आकाङ्क्षा।"
+          },
+          {
+            num: 8,
+            question: "Why is Aasatti also referred to as Sannidhi (सन्निधिः)?",
+            questionSanskrit: "आसत्तिः 'सन्निधिः' इति किमर्थम् उच्यते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "Because both terms mean close proximity in time and space without prolonged delay.",
+            explanation: "उच्चारणे कालव्यवधानाभावात् सन्निधिः इत्युच्यते।"
+          },
+          {
+            num: 9,
+            question: "Does a textbook sentence like 'The elephant flies in the sky' possess Yogyata? (Yes/No)",
+            questionSanskrit: "'गजः आकाशे उत्पतति' इत्यत्र योग्यता अस्ति न वा? (आम् / न)",
+            marks: 2,
+            type: "short_ans",
+            answer: "No / न (योग्यतायाः अभावात्)",
+            explanation: "गजे उत्पतनसामर्थ्याभावात् अत्र योग्यता नास्ति।"
+          },
+          {
+            num: 10,
+            question: "True or False: Short, bite-sized questions in Khandanvaya are typically made of two to three words.",
+            questionSanskrit: "खण्डान्वये लघुप्रश्नाः सामान्यतः द्विपदात्मकाः त्रिपदात्मकाः वा भवन्ति सत्यम् असत्यं वा?",
+            marks: 2,
+            type: "short_ans",
+            answer: "True / आम् (द्विपदात्मकाः त्रिपदात्मकाः वा भवन्ति)",
+            explanation: "'कः करोति?', 'किं करोति?' इति लघुरूपेण प्रश्नाः क्रियन्ते।"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "ws-grade9-ch12-ws3",
+    title: "Worksheet 3: Practical Verse Reordering Applications (10 Questions)",
+    titleSanskrit: "द्वादशः पाठः कार्यपत्रिका ३: प्रायोगिक-श्लोकान्वयाभ्यासः (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Practical Padachheda, Akanksha question-framing, and prose synthesis on the two textbook shlokas (शास्त्राण्यधीत्यापि... and सम्पूर्णकुम्भो न करोति शब्दम्...).",
+    sections: [
+      {
+        sectionTitle: "Section A: Practical Verse Reordering Applications",
+        sectionTitleSanskrit: "खण्डः 'क' · श्लोकपदच्छेदः अन्वयनिर्माणं च",
+        instructions: "Solve practical syntactic queries based on the two textbook shlokas.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Provide the complete Padachheda word splits for: 'शास्त्राण्यधीत्यापि'।",
+            questionSanskrit: "पदच्छेदं कुरुत: 'शास्त्राण्यधीत्यापि' = ______ + ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "शास्त्राणि + अधीत्य + अपि",
+            explanation: "शास्त्राणि + अधीत्य (यण्-सन्धिः) + अपि (दीर्घ-सन्धिः)।"
+          },
+          {
+            num: 2,
+            question: "Provide the complete Padachheda word splits for: 'घोषमुपैति'।",
+            questionSanskrit: "पदच्छेदं कुरुत: 'घोषमुपैति' = ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "घोषम् + उपैति",
+            explanation: "व्यञ्जनसंयोगः: म् + उ = मु।"
+          },
+          {
+            num: 3,
+            question: "Reorder this segment using Dandanvaya rules: 'मूर्खाः भवन्ति शास्त्राणि अधीत्य अपि'।",
+            questionSanskrit: "दण्डान्वयेन क्रमीकुरुत: 'मूर्खाः भवन्ति शास्त्राणि अधीत्य अपि'।",
+            marks: 2,
+            type: "short_ans",
+            answer: "(केचन) शास्त्राणि अधीत्य अपि मूर्खाः भवन्ति।",
+            explanation: "पूर्वकालिक-ल्यबन्तं पूर्वं भवति, क्रियापदं चान्ते।"
+          },
+          {
+            num: 4,
+            question: "Frame the core Akanksha question to find the object in: 'सम्पूर्णकुम्भो न करोति शब्दम्'।",
+            questionSanskrit: "कर्मपदप्राप्तये आकाङ्क्षाप्रश्नं रचयत: 'सम्पूर्णकुम्भो न करोति शब्दम्' $\\rightarrow$ ______?",
+            marks: 2,
+            type: "short_ans",
+            answer: "सम्पूर्णकुम्भः किं न करोति?",
+            explanation: "कर्मपदस्य (शब्दम्) उत्तरार्थं 'किम्' इति प्रश्नः प्रयुज्यते।"
+          },
+          {
+            num: 5,
+            question: "Write the adjective modifying the noun 'घटः' in the textbook example:",
+            questionSanskrit: "'घटः' इति विशेष्यस्य विशेषणपदं किम्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "अर्धः (अर्धः घटः)",
+            explanation: "'अर्धः' इति पदं घटस्य परिमाणं सूचयति।"
+          },
+          {
+            num: 6,
+            question: "Frame the Akanksha question that extracts the adjective 'कुलीनः' from the verse context:",
+            questionSanskrit: "'कुलीनः' इति विशेषणप्राप्तये प्रश्नं रचयत:",
+            marks: 2,
+            type: "short_ans",
+            answer: "कीदृशः विद्वान् गर्वं न करोति?",
+            explanation: "गुणविशेषणस्य कृते 'कीदृशः' इति प्रश्नः भवति।"
+          },
+          {
+            num: 7,
+            question: "What is the prose meaning of 'अरोगं करोति'?",
+            questionSanskrit: "'अरोगं करोति' इत्यस्य गद्यार्थः कः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "रोगमुक्त करता है / Cures or restores to health",
+            explanation: "न अरोगः इति अरोगः, तं करोति अर्थात् रोगमुक्तं करोति।"
+          },
+          {
+            num: 8,
+            question: "Fill in the blank from the verse Anvaya text: 'अल्पः जनः ______ जल्पति।'",
+            questionSanskrit: "रिक्तस्थानं पूरयत: 'अल्पः जनः ______ जल्पति।'",
+            marks: 2,
+            type: "short_ans",
+            answer: "साट्टहासम्",
+            explanation: "श्लोके 'अल्पो जनो जल्पति साट्टहासम्' इति वर्तते।"
+          },
+          {
+            num: 9,
+            question: "Identify the main verbs in both example verses included in Chapter 12:",
+            questionSanskrit: "द्वादशपाठस्य उभयोः श्लोकयोः मुख्यक्रियापदानि कानि?",
+            marks: 2,
+            type: "short_ans",
+            answer: "Verse 1: भवन्ति, करोति; Verse 2: उपैति, करोति, जल्पति।",
+            explanation: "प्रथमश्लोके 'भवन्ति', 'करोति'; द्वितीयश्लोके 'करोति', 'उपैति', 'जल्पति'।"
+          },
+          {
+            num: 10,
+            question: "Translate the completed prose line into English: 'कुलीनः विद्वान् गर्वं न करोति।'",
+            questionSanskrit: "'कुलीनः विद्वान् गर्वं न करोति' इत्यस्य आङ्ग्लानुवादं कुरुत:",
+            marks: 2,
+            type: "short_ans",
+            answer: "A wise person born of noble character never boasts.",
+            explanation: "कुलीनः विद्वान् जातु अपि गर्वं न प्रदर्शयति।"
+          }
+        ]
+      }
+    ]
   }
 ];

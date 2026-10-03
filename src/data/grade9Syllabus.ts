@@ -242,5 +242,20 @@ export const GRADE_9_SYLLABUS: Grade9Chapter[] = [
     grammarFocus: "उच्चारण-स्थानानि (कण्ठ, तालु, मूर्धा, दन्त, ओष्ठ), आभ्यन्तर-बाह्य-प्रयत्नाः",
     status: "available",
     icon: "🗣️"
+  },
+  {
+    id: "grade9_ch12",
+    num: "Chapter 12",
+    chNumber: "द्वादशः पाठः",
+    title: "१२. द्वादशः पाठः : अन्वय-शिक्षा (दण्डान्वयः खण्डान्वयश्च)",
+    hindiTitle: "अन्वय-शिक्षा : दण्डान्वय एवं खण्डान्वय विधि",
+    englishTitle: "The Science and Art of Anvaya (Poetic Prose Reordering)",
+    page: "Pages 161–176",
+    category: "grammar",
+    genreBadge: "व्याकरणम् · Poetic Syntax & Hermeneutics",
+    theme: "Systematic methodologies of poetic prose construction in Sanskrit: Dandanvaya, Khandanvaya, and the four auxiliary sentence comprehension factors (आकाङ्क्षा, योग्यता, आसत्तिः, तात्पर्यम्).",
+    grammarFocus: "अन्वय-रचना, विशेषण-विशेष्य-सम्बन्धः, आकाङ्क्षा-योग्यता-आसत्ति-तात्पर्यम्, कृदन्तरूपाणि",
+    status: "available",
+    icon: "📜"
   }
 ];

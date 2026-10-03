@@ -41292,6 +41292,137 @@
           "kind": "narrative"
         }
       ]
+    },
+    {
+      "id": "grade9_ch12",
+      "fileName": "grade9_ch12.txt",
+      "title": "Grade 9: द्वादशः पाठः — अन्वय-शिक्षा (Pages 161–176)",
+      "page_numbers": "Pages 161–176",
+      "sentences": [
+        {
+          "sanskrit": "संस्कृत-पद्येषु (श्लोकेषु) छन्दोनुरोधेन पदानां (कर्तृ-कर्म-क्रिया-विशेषणादीनां) क्रमः परिवर्तितः दृश्यते। श्लोकस्य यथार्थं भावम् अर्थं च सुलभतया अवगन्तुं पद्ये विद्यमानानां पदानां गद्यक्रमेण सुसम्बद्धा रचना एव 'अन्वयः' इति कथ्यते।",
+          "meaning": "In Sanskrit poetry (shlokas), the order of words is arranged flexibly to conform to poetic meter (Chhandas). The systematic rearrangement of these words into a logical prose structure to easily comprehend the true meaning and emotion is called Anvaya.",
+          "paragraphTranslation": "संस्कृत पद्यों (श्लोकों) में छंद के नियमों के अनुसार शब्दों का क्रम बदला हुआ दिखाई देता है। श्लोक के वास्तविक भाव और अर्थ को सरलता से समझने के लिए पदों की गद्यक्रम में सुव्यवस्थित रचना ही 'अन्वय' कहलाती है।",
+          "words": [
+            "संस्कृत-पद्येषु",
+            "छन्दोनुरोधेन",
+            "पदानां",
+            "क्रमः",
+            "परिवर्तितः।",
+            "श्लोकस्य",
+            "भावम्",
+            "अर्थं",
+            "गद्यक्रमेण",
+            "अन्वयः"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "अन्वय-निर्माणार्थं मुख्यतया पद्धतियोः प्रयोगः क्रियते— (१) दण्डान्वयविधिः, (२) खण्डान्वयविधिः च। दण्डवत् ऋजुरूपेण व्याकरणनियमान् अनुसृत्य क्रियमाणः अन्वयः 'दण्डान्वयः' उच्यते।",
+          "meaning": "Two main methodologies are used for constructing an Anvaya: (1) Dandanvaya method, and (2) Khandanvaya method. Reordering words in a straight, rod-like linear prose sequence following strict grammatical rules is called Dandanvaya.",
+          "paragraphTranslation": "अन्वय निर्माण के लिए मुख्यतः दो विधियों का प्रयोग किया जाता है— (१) दण्डान्वय-विधि, और (२) खण्डान्वय-विधि। दण्ड की तरह सीधे व्याकरणसम्मत क्रम में किया जाने वाला अन्वय 'दण्डान्वय' कहलाता है।",
+          "words": [
+            "अन्वय-निर्माणार्थं",
+            "पद्धतियोः",
+            "प्रयोगः",
+            "दण्डान्वयविधिः,",
+            "खण्डान्वयविधिः",
+            "दण्डवत्",
+            "ऋजुरूपेण",
+            "व्याकरणनियमान्"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "आद्ये विशेषणं योज्यं विशेष्यं तदनन्तरम्।\nक्त्वा-णमुल्-ल्यप्-प्रभृत्येवं पूर्वं दण्डान्वये भवेत्॥",
+          "meaning": "In Dandanvaya, the qualifying adjective must be positioned first, followed immediately by its substantive noun. Likewise, absolutive participles such as Ktva, Namul, and Lyap must be positioned before the finite verb.",
+          "paragraphTranslation": "दण्डान्वय में सबसे पहले विशेषण जोड़ना चाहिए, उसके बाद विशेष्य (संज्ञा) रखना चाहिए। इसी प्रकार क्त्वा, णमुल्, ल्यप् आदि पूर्वकालिक कृदन्त पदों को मुख्य क्रिया से पूर्व रखना चाहिए।",
+          "words": [
+            "आद्ये",
+            "विशेषणं",
+            "योज्यं",
+            "विशेष्यं",
+            "तदनन्तरम्।",
+            "क्त्वा-णमुल्-ल्यप्-प्रभृत्येवं",
+            "पूर्वं",
+            "दण्डान्वये",
+            "भवेत्॥"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "शास्त्राण्यधीत्यापि भवन्ति मूर्खाः यस्तु क्रियावान् पुरुषस्स विद्वान्।\nसुचिन्तितं चौषधमातुराणां न नाममात्रेण करोत्यरोगम्॥",
+          "meaning": "Some individuals remain foolish despite studying the scriptures; only that man who acts upon knowledge is truly wise. Just as a well-prescribed medicine cannot cure diseased patients merely by chanting its name, knowledge requires practical action.",
+          "paragraphTranslation": "कुछ लोग शास्त्रों को पढ़कर भी मूर्ख ही बने रहते हैं, जो कर्मशील है वही वास्तव में विद्वान् है। जैसे रोगियों के लिए भली-भाँति सोची गई औषधि केवल नाम लेने मात्र से रोगमुक्त नहीं करती।",
+          "words": [
+            "शास्त्राण्यधीत्यापि",
+            "भवन्ति",
+            "मूर्खाः",
+            "यस्तु",
+            "क्रियावान्",
+            "पुरुषस्स",
+            "विद्वान्।",
+            "सुचिन्तितं",
+            "चौषधमातुराणां",
+            "नाममात्रेण",
+            "करोत्यरोगम्॥"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "खण्डशः आकाङ्क्षा-प्रश्नोत्तरी-माध्यमेन क्रियमाणः अन्वयः 'खण्डान्वयः' (आकाङ्क्षाविधिः) उच्यते। वाक्यार्थ-ज्ञानाय चत्वारि सहकारिकारणानि अपेक्षितानि भवन्ति— (१) आकाङ्क्षा, (२) योग्यता, (३) आसत्तिः (सन्निधिः), (४) तात्पर्यं च।",
+          "meaning": "Segmenting the verse and connecting words step-by-step through interactive question-and-answer prompts is termed Khandanvaya (or Akanksha-vidhi). For understanding sentence meaning, four auxiliary factors are essential: (1) Akanksha (expectancy), (2) Yogyata (compatibility), (3) Aasatti (contiguity), and (4) Tatparyam (intent).",
+          "paragraphTranslation": "श्लोक को छोटे-छोटे खंडों में बाँटकर आकाङ्क्षा-प्रश्नोत्तरी के माध्यम से किया जाने वाला अन्वय 'खण्डान्वय' कहलाता है। वाक्यार्थ ज्ञान के लिए चार सहकारिकारण आवश्यक हैं— आकाङ्क्षा, योग्यता, आसत्ति (सन्निधि) और तात्पर्य।",
+          "words": [
+            "खण्डशः",
+            "आकाङ्क्षा-प्रश्नोत्तरी-माध्यमेन",
+            "खण्डान्वयः",
+            "सहकारिकारणानि",
+            "आकाङ्क्षा,",
+            "योग्यता,",
+            "आसत्तिः",
+            "तात्पर्यं"
+          ],
+          "kind": "narrative"
+        },
+        {
+          "sanskrit": "सम्पूर्णकुम्भो न करोति शब्दमर्धो घटो घोषमुपैति नूनम्।\nविद्वान् कुलीनो न करोति गर्वमल्पो जनो जल्पति साट्टहासम्॥",
+          "meaning": "A fully filled pot makes no splashing noise, whereas a half-filled pitcher invariably splashes and makes a loud noise. Similarly, a wise person of noble birth never displays arrogance, while a petty, shallow individual prattles excessively with loud laughter.",
+          "paragraphTranslation": "पूरी तरह भरा घड़ा आवाज नहीं करता, जबकि आधा भरा घड़ा निश्चय ही बहुत छलक कर शोर करता है। इसी तरह कुलीन विद्वान् कभी घमंड नहीं करता, जबकि ओछा व्यक्ति अट्टहास करते हुए बहुत अधिक बड़बड़ाता है।",
+          "words": [
+            "सम्पूर्णकुम्भो",
+            "न",
+            "करोति",
+            "शब्दमर्धो",
+            "घटो",
+            "घोषमुपैति",
+            "नूनम्।",
+            "विद्वान्",
+            "कुलीनो",
+            "गर्वमल्पो",
+            "जनो",
+            "जल्पति",
+            "साट्टहासम्॥"
+          ],
+          "kind": "shloka"
+        },
+        {
+          "sanskrit": "एवम् अन्वय-ज्ञानेन वयं संस्कृत-काव्यानां श्लोकानां च गूढार्थं भावं च सरलताया अवगन्तुं समर्थाः भवेम।",
+          "meaning": "Thus, through the mastery of Anvaya methodologies, we become capable of effortlessly comprehending the profound inner meaning and emotional beauty of Sanskrit poetry and verses.",
+          "paragraphTranslation": "इस प्रकार अन्वय के सम्यक् ज्ञान से हम संस्कृत काव्यों और श्लोकों के गूढ़ अर्थ तथा भाव को सरलता से समझने में समर्थ होते हैं।",
+          "words": [
+            "अन्वय-ज्ञानेन",
+            "संस्कृत-काव्यानां",
+            "श्लोकानां",
+            "गूढार्थं",
+            "भावं",
+            "सरलताया",
+            "अवगन्तुं",
+            "समर्थाः"
+          ],
+          "kind": "narrative"
+        }
+      ]
     }
   ]
 }
