@@ -1,4 +1,5 @@
 import React from 'react';
+import { LAKARAS, type LakaraId } from '../utils/paninianEngine';
 import { GANA_HEADINGS, GANA_LABELS } from '../utils/dhatupatha';
 
 const GANA_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
@@ -15,6 +16,15 @@ const VIKARANA: Record<number, string> = {
   8: 'usual class sign: उ · u',
   9: 'usual class sign: श्ना · śnā (nā)',
   10: 'usual class sign: णिच् · ṇic (aya)',
+};
+
+/** Short English for the generator tabs only. Omitted if a lakāra has no line here. */
+const LAKARA_USUAL: Record<LakaraId, string> = {
+  lat: 'present',
+  lrt: 'simple future',
+  lang: 'imperfect',
+  lot: 'imperative',
+  vidhiling: 'optative',
 };
 
 const EXAMPLE_ROOTS = [
@@ -116,6 +126,26 @@ const DhatupathaGuide: React.FC<DhatupathaGuideProps> = ({ onOpenRoot }) => {
               {example.line}
             </li>
           ))}
+        </ul>
+      </details>
+
+      <details className="dp-guide-block">
+        <summary>लकाराः · lakāras on the generator</summary>
+        <p>
+          The generator on this page offers these lakāras. Each name is a label for that table, not a full tense lesson.
+        </p>
+        <ul className="dp-guide-ganas">
+          {LAKARAS.flatMap((lakara) => {
+            const usual = LAKARA_USUAL[lakara.id];
+            if (!usual) return [];
+            return [
+              <li key={lakara.id}>
+                <span className="dp-guide-sa">{lakara.nameSa}</span>
+                {' — '}
+                {usual}
+              </li>,
+            ];
+          })}
         </ul>
       </details>
     </section>
