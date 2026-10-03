@@ -295,6 +295,11 @@ ${bodyHtml}
   const [fluidNumA, setFluidNumA] = useState<number>(23);
   const [fluidNumB, setFluidNumB] = useState<number>(45);
 
+  // Baudhāyana Geometric Studio States
+  const [baudA, setBaudA] = useState<number>(3);
+  const [baudB, setBaudB] = useState<number>(4);
+  const [showBaudVyakarana, setShowBaudVyakarana] = useState<boolean>(true);
+
   // Sutra Directory States
   const [sutraSearch, setSutraSearch] = useState('');
   const [sutraFilter, setSutraFilter] = useState<string>('all');
@@ -2585,6 +2590,317 @@ ${bodyHtml}
                 <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
                   Because Vedic altars had to possess identical surface area regardless of whether their geometry was circular (<em>Gārhapatya</em>) or square (<em>Āhavanīya</em>), Vedic seers devised exact cord-and-peg algorithms to transform squares to circles and circles to squares without area loss.
                 </p>
+              </div>
+            </div>
+
+            {/* ================================================================
+                BAUDHĀYANA-PYTHAGORAS THEOREM & SACRED TRIPLES STUDIO
+                ================================================================ */}
+            <div className="baudhayana-studio-card" style={{ marginTop: '2.5rem', background: '#ffffff', border: '2px solid #fde68a', borderRadius: '18px', padding: '2rem', boxShadow: '0 4px 20px rgba(180, 83, 9, 0.08)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
+                <div>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: '#fef3c7', color: '#92400e', padding: '0.3rem 0.8rem', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.5rem' }}>
+                    <span>॥ बौधायन-पायथागोरस-सिद्धान्तः ॥</span>
+                    <span>·</span>
+                    <span>c. 800 BCE (250+ Years Before Pythagoras)</span>
+                  </div>
+                  <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#78350f', margin: '0 0 0.4rem 0' }}>
+                    Baudhāyana’s Theorem (Śulba Sūtra 1.48) &amp; The Sacred Triples (1.49)
+                  </h2>
+                  <p style={{ fontSize: '0.95rem', color: '#4b5563', margin: 0, maxWidth: '850px', lineHeight: 1.55 }}>
+                    Centuries before Pythagoras formulated the theorem algebraically in Greece, Ācārya Baudhāyana recorded the diagonal relationship of a right-angled triangle as a spatial rope algorithm for constructing Vedic fire altars (<em>Agnicayana</em>).
+                  </p>
+                </div>
+              </div>
+
+              {/* Canonical Shloka Presentation Box */}
+              <div style={{ background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)', border: '1.5px solid #fde68a', borderRadius: '14px', padding: '1.4rem 1.6rem', marginBottom: '1.75rem' }}>
+                <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#b45309', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.4rem' }}>
+                  Baudhāyana Śulba Sūtra (१.४८) · The Canonical Diagonal Aphorism
+                </div>
+                <div style={{ fontFamily: "'Noto Serif Devanagari', Georgia, serif", fontSize: '1.35rem', fontWeight: 700, color: '#78350f', lineHeight: 1.6 }}>
+                  दीर्घचतुरश्रस्याक्ष्णया रज्जुः पार्श्वमानी तिर्यङ्मानी च यत्पृथग्भूते कुरुतस्तदुभयं करोति ॥
+                </div>
+                <div style={{ fontStyle: 'italic', color: '#5b3414', fontSize: '0.92rem', marginTop: '0.35rem' }}>
+                  Dīrghacaturaśrasyākṣṇayā rajjuḥ pārśvamānī tiryaṅmānī ca yatpṛthagbhūte kurutastadubhayaṃ karoti.
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.7)', borderLeft: '3px solid #d97706', padding: '0.65rem 0.9rem', borderRadius: '0 8px 8px 0', marginTop: '0.85rem', color: '#1f2937', fontSize: '0.92rem', lineHeight: 1.5 }}>
+                  <strong>Translation:</strong> "The diagonal chord of a rectangle produces both areas which its flank (horizontal base) and lateral (vertical height) sides produce separately."
+                  <div style={{ marginTop: '0.35rem', color: '#b45309', fontWeight: 800 }}>
+                    Formula: (Akṣṇayā Rajjuḥ)² = (Pārśvamānī)² + (Tiryaṅmānī)² &nbsp;⟺&nbsp; c² = a² + b²
+                  </div>
+                </div>
+              </div>
+
+              {/* Interactive Visualizer & Chord Calculator */}
+              {(() => {
+                const cVal = Math.sqrt(baudA * baudA + baudB * baudB);
+                const isIntTriple = Number.isInteger(cVal);
+                const areaA = baudA * baudA;
+                const areaB = baudB * baudB;
+                const areaC = Math.round(cVal * cVal * 100) / 100;
+
+                return (
+                  <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '14px', padding: '1.5rem', marginBottom: '1.75rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1.25rem' }}>
+                      <div>
+                        <h3 style={{ margin: 0, fontSize: '1.15rem', fontWeight: 800, color: '#1e293b' }}>
+                          ⚡ Interactive Baudhāyana Chord &amp; Area Lab
+                        </h3>
+                        <p style={{ margin: '0.2rem 0 0', fontSize: '0.85rem', color: '#64748b' }}>
+                          Adjust base (पार्श्वमानी) and height (तिर्यङ्मानी) to see the rope area verification.
+                        </p>
+                      </div>
+                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: isIntTriple ? '#dcfce7' : '#fef3c7', color: isIntTriple ? '#166534' : '#92400e', padding: '0.35rem 0.85rem', borderRadius: '9999px', fontSize: '0.85rem', fontWeight: 800 }}>
+                        {isIntTriple ? `✓ Whole-Number Baudhāyana Triple (${baudA}, ${baudB}, ${cVal})` : `Irrational Chord (c ≈ ${cVal.toFixed(3)})`}
+                      </div>
+                    </div>
+
+                    {/* Presets from Sulba Sutra 1.49 */}
+                    <div style={{ marginBottom: '1.25rem' }}>
+                      <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#475569', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.5rem' }}>
+                        Sacred Canonical Triples (Baudhāyana Śulba Sūtra 1.49):
+                      </div>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                        {[
+                          { a: 3, b: 4, name: 'त्रिक-चतुष्कयोः पञ्चकः', ratio: '3 : 4 : 5' },
+                          { a: 5, b: 12, name: 'पञ्चक-द्वादशकोः त्रयोदशः', ratio: '5 : 12 : 13' },
+                          { a: 8, b: 15, name: 'अष्टक-पञ्चदशकोः सप्तदशः', ratio: '8 : 15 : 17' },
+                          { a: 12, b: 35, name: 'द्वादशक-पञ्चत्रिंशकोः सप्तत्रिंशः', ratio: '12 : 35 : 37' }
+                        ].map((tr) => (
+                          <button
+                            key={tr.ratio}
+                            type="button"
+                            onClick={() => { setBaudA(tr.a); setBaudB(tr.b); }}
+                            style={{
+                              background: baudA === tr.a && baudB === tr.b ? '#78350f' : '#ffffff',
+                              color: baudA === tr.a && baudB === tr.b ? '#ffffff' : '#334155',
+                              border: '1.5px solid',
+                              borderColor: baudA === tr.a && baudB === tr.b ? '#78350f' : '#cbd5e1',
+                              borderRadius: '8px',
+                              padding: '0.4rem 0.75rem',
+                              fontSize: '0.85rem',
+                              fontWeight: 700,
+                              cursor: 'pointer',
+                              transition: 'all 0.2s ease',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.4rem'
+                            }}
+                          >
+                            <span>{tr.ratio}</span>
+                            <span style={{ fontSize: '0.75rem', opacity: 0.85 }}>({tr.name})</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Inputs & Visualizer Grid */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', alignItems: 'center' }}>
+                      <div>
+                        <div style={{ marginBottom: '1rem' }}>
+                          <label style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem' }}>
+                            <span>Horizontal Base (पार्श्वमानी a):</span>
+                            <strong style={{ color: '#b45309' }}>{baudA} units</strong>
+                          </label>
+                          <input
+                            type="range"
+                            min="1"
+                            max="50"
+                            value={baudA}
+                            onChange={(e) => setBaudA(Math.max(1, parseInt(e.target.value, 10) || 1))}
+                            style={{ width: '100%', accentColor: '#b45309' }}
+                          />
+                        </div>
+
+                        <div style={{ marginBottom: '1.25rem' }}>
+                          <label style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem' }}>
+                            <span>Vertical Height (तिर्यङ्मानी b):</span>
+                            <strong style={{ color: '#0284c7' }}>{baudB} units</strong>
+                          </label>
+                          <input
+                            type="range"
+                            min="1"
+                            max="50"
+                            value={baudB}
+                            onChange={(e) => setBaudB(Math.max(1, parseInt(e.target.value, 10) || 1))}
+                            style={{ width: '100%', accentColor: '#0284c7' }}
+                          />
+                        </div>
+
+                        {/* Equation Breakdown Box */}
+                        <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '1rem' }}>
+                          <div style={{ fontSize: '0.85rem', color: '#64748b', marginBottom: '0.4rem', fontWeight: 600 }}>
+                            Mathematical Area Synthesis (यत्पृथग्भूते कुरुतस्तदुभयं करोति):
+                          </div>
+                          <div style={{ fontFamily: 'monospace', fontSize: '1.05rem', color: '#1e293b', fontWeight: 700 }}>
+                            <span style={{ color: '#b45309' }}>{baudA}²</span> + <span style={{ color: '#0284c7' }}>{baudB}²</span> = <span style={{ color: '#16a34a' }}>{cVal % 1 === 0 ? cVal : cVal.toFixed(2)}²</span>
+                          </div>
+                          <div style={{ fontFamily: 'monospace', fontSize: '0.92rem', color: '#475569', marginTop: '0.2rem' }}>
+                            <span style={{ color: '#b45309' }}>{areaA}</span> + <span style={{ color: '#0284c7' }}>{areaB}</span> = <span style={{ color: '#16a34a', fontWeight: 800 }}>{areaA + areaB} sq units</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Geometric SVG Diagram */}
+                      <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                        <svg viewBox="0 0 320 240" style={{ width: '100%', maxWidth: '280px', height: 'auto' }} aria-label="Baudhayana Theorem Triangle Diagram">
+                          {/* Triangle */}
+                          <polygon points="50,190 270,190 50,50" fill="#fef3c7" stroke="#b45309" strokeWidth="2.5" />
+                          {/* Right Angle Marker */}
+                          <polyline points="50,172 68,172 68,190" fill="none" stroke="#78350f" strokeWidth="1.5" />
+                          {/* Labels */}
+                          <text x="160" y="212" textAnchor="middle" fill="#b45309" fontSize="13" fontWeight="800">
+                            पार्श्वमानी a = {baudA} (Area: {areaA})
+                          </text>
+                          <text x="35" y="125" textAnchor="middle" fill="#0284c7" fontSize="13" fontWeight="800" transform="rotate(-90, 35, 125)">
+                            तिर्यङ्मानी b = {baudB} (Area: {areaB})
+                          </text>
+                          <text x="175" y="105" textAnchor="middle" fill="#16a34a" fontSize="13" fontWeight="800" transform="rotate(-33, 175, 105)">
+                            अक्ष्णया रज्जुः c = {cVal % 1 === 0 ? cVal : cVal.toFixed(2)} (Area: {areaA + areaB})
+                          </text>
+                        </svg>
+                        <div style={{ fontSize: '0.78rem', color: '#64748b', textAlign: 'center', marginTop: '0.5rem' }}>
+                          Area of Hypotenuse Square ({areaC}) = Base Square ({areaA}) + Height Square ({areaB})
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
+
+              {/* Comparative Table: Baudhāyana vs. Pythagoras */}
+              <div style={{ marginBottom: '1.75rem' }}>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1e293b', marginBottom: '0.75rem' }}>
+                  🏛️ The Direct Bridge: Baudhāyana (800 BCE) to Pythagoras (530 BCE)
+                </h3>
+                <div style={{ overflowX: 'auto', border: '1px solid #e2e8f0', borderRadius: '12px' }}>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem', textAlign: 'left' }}>
+                    <thead>
+                      <tr style={{ background: '#f8fafc', borderBottom: '2px solid #e2e8f0', color: '#475569' }}>
+                        <th style={{ padding: '0.75rem 1rem' }}>Baudhāyana’s Sanskrit Term</th>
+                        <th style={{ padding: '0.75rem 1rem' }}>Sacred Geometric Role (800 BCE)</th>
+                        <th style={{ padding: '0.75rem 1rem' }}>Modern Pythagorean Equivalent</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr style={{ borderBottom: '1px solid #f1f5f9' }}>
+                        <td style={{ padding: '0.75rem 1rem', fontWeight: 700, color: '#b45309' }}>पार्श्वमानी (Pārśvamānī)</td>
+                        <td style={{ padding: '0.75rem 1rem', color: '#334155' }}>The flank-measuring horizontal cord</td>
+                        <td style={{ padding: '0.75rem 1rem', fontWeight: 700 }}>Base (<em>a</em>)</td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #f1f5f9', background: '#fafaf9' }}>
+                        <td style={{ padding: '0.75rem 1rem', fontWeight: 700, color: '#0284c7' }}>तिर्यङ्मानी (Tiryaṅmānī)</td>
+                        <td style={{ padding: '0.75rem 1rem', color: '#334155' }}>The transverse-measuring vertical cord</td>
+                        <td style={{ padding: '0.75rem 1rem', fontWeight: 700 }}>Perpendicular / Height (<em>b</em>)</td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #f1f5f9' }}>
+                        <td style={{ padding: '0.75rem 1rem', fontWeight: 700, color: '#16a34a' }}>अक्ष्णया रज्जुः (Akṣṇayā rajjuḥ)</td>
+                        <td style={{ padding: '0.75rem 1rem', color: '#334155' }}>The diagonal measuring rope across the corner</td>
+                        <td style={{ padding: '0.75rem 1rem', fontWeight: 700 }}>Hypotenuse (<em>c</em>)</td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #f1f5f9', background: '#fafaf9' }}>
+                        <td style={{ padding: '0.75rem 1rem', fontWeight: 700, color: '#7c3aed' }}>पृथग्भूते कुरुतः (Pṛthagbhūte kurutaḥ)</td>
+                        <td style={{ padding: '0.75rem 1rem', color: '#334155' }}>What the base and height separately produce (dual verb)</td>
+                        <td style={{ padding: '0.75rem 1rem', fontWeight: 700 }}><em>a² + b²</em></td>
+                      </tr>
+                      <tr>
+                        <td style={{ padding: '0.75rem 1rem', fontWeight: 700, color: '#ea580c' }}>तदुभयं करोति (Tadubhayaṃ karoti)</td>
+                        <td style={{ padding: '0.75rem 1rem', color: '#334155' }}>The single diagonal produces both of those combined (singular verb)</td>
+                        <td style={{ padding: '0.75rem 1rem', fontWeight: 700 }}><em>= c²</em></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Complete Word-by-Word Sanskrit Vyākaraṇa Breakdown */}
+              <div style={{ marginBottom: '1.75rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                  <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1e293b', margin: 0 }}>
+                    📖 Complete Sanskrit Vyākaraṇa Breakdown (12 Morphological Steps)
+                  </h3>
+                  <button
+                    type="button"
+                    onClick={() => setShowBaudVyakarana(!showBaudVyakarana)}
+                    style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '0.35rem 0.75rem', fontSize: '0.82rem', fontWeight: 700, color: '#475569', cursor: 'pointer' }}
+                  >
+                    {showBaudVyakarana ? 'Hide Grammar Table ▴' : 'Show Grammar Table ▾'}
+                  </button>
+                </div>
+
+                {showBaudVyakarana && (
+                  <div style={{ overflowX: 'auto', border: '1px solid #e2e8f0', borderRadius: '12px' }}>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem', textAlign: 'left' }}>
+                      <thead>
+                        <tr style={{ background: '#f8fafc', borderBottom: '2px solid #e2e8f0', color: '#475569' }}>
+                          <th style={{ padding: '0.65rem 0.9rem' }}>Sanskrit Word</th>
+                          <th style={{ padding: '0.65rem 0.9rem' }}>Case / Vibhakti</th>
+                          <th style={{ padding: '0.65rem 0.9rem' }}>Morphology &amp; Compound</th>
+                          <th style={{ padding: '0.65rem 0.9rem' }}>Mathematical Meaning</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { w: 'दीर्घचतुरश्रस्य', i: 'Dīrghacaturaśrasya', v: 'Ṣaṣṭhī (6th/Genitive) Sg.', m: 'Karmadhāraya: Dīrgha (long) + Caturaśra (rectangle)', e: 'Of a rectangle' },
+                          { w: 'अक्ष्णया', i: 'Akṣṇayā', v: 'Tṛtīyā (3rd/Instrumental) Sg.', m: 'Noun akṣṇā (across corner / diagonal)', e: 'Along the diagonal direction' },
+                          { w: 'रज्जुः', i: 'Rajjuḥ', v: 'Prathamā (1st/Nominative) Sg.', m: 'Feminine noun rajju (measuring cord)', e: 'The diagonal measuring rope (Hypotenuse)' },
+                          { w: 'पार्श्वमानी', i: 'Pārśvamānī', v: 'Prathamā (1st) Sg. Fem.', m: 'Pārśva (side/flank) + Māna (measure)', e: 'The horizontal side / base (a)' },
+                          { w: 'तिर्यङ्मानी', i: 'Tiryaṅmānī', v: 'Prathamā (1st) Sg. Fem.', m: 'Tiryañc (transverse/vertical) + Māna', e: 'The vertical side / height (b)' },
+                          { w: 'च', i: 'Ca', v: 'Avyaya (Indeclinable)', m: 'Conjunction', e: 'And' },
+                          { w: 'यत्', i: 'Yat', v: 'Relative Pronoun (Neuter) Sg.', m: 'Yad stem', e: 'Whatever area' },
+                          { w: 'पृथग्भूते', i: 'Pṛthagbhūte', v: 'Saptamī/Dual Participle', m: 'Pṛthak (separately) + Bhūta (become)', e: 'Separately / individually' },
+                          { w: 'कुरुतः', i: 'Kurutaḥ', v: 'Verb: Kṛ, Laṭ, 3rd Person, DUAL', m: 'Note the dual number for base + height!', e: 'They two (base and height) produce' },
+                          { w: 'तत्', i: 'Tat', v: 'Correlative Pronoun (Neuter) Sg.', m: 'Tad stem (corresponds to Yat)', e: 'That combined area' },
+                          { w: 'उभयम्', i: 'Ubhayam', v: 'Dvitīyā (Accusative) Neuter Sg.', m: 'Both together', e: 'Both areas combined' },
+                          { w: 'करोति', i: 'Karoti', v: 'Verb: Kṛ, Laṭ, 3rd Person, SINGULAR', m: 'Switches to singular for the single diagonal rope!', e: 'It (the single diagonal rope) produces' }
+                        ].map((row, idx) => (
+                          <tr key={row.w} style={{ borderBottom: '1px solid #f1f5f9', background: idx % 2 === 1 ? '#fafaf9' : '#ffffff' }}>
+                            <td style={{ padding: '0.65rem 0.9rem', fontWeight: 700, color: '#78350f' }}>
+                              {row.w} <span style={{ fontSize: '0.8rem', color: '#6b7280', fontStyle: 'italic' }}>({row.i})</span>
+                            </td>
+                            <td style={{ padding: '0.65rem 0.9rem', color: '#475569', fontWeight: 600 }}>{row.v}</td>
+                            <td style={{ padding: '0.65rem 0.9rem', color: '#334155' }}>{row.m}</td>
+                            <td style={{ padding: '0.65rem 0.9rem', color: '#0f172a', fontWeight: 700 }}>{row.e}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
+
+              {/* Vedic Parity & The Lone Even Prime (2) Card */}
+              <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '1.5rem', marginBottom: '1.5rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                  <span style={{ fontSize: '1.4rem' }}>🪐</span>
+                  <h4 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#1e293b' }}>
+                    Vedic Roots of Parity &amp; Why 2 Sits as the Only Even Prime
+                  </h4>
+                </div>
+                <p style={{ margin: '0 0 0.85rem', fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 }}>
+                  In the <em>Taittirīya Saṃhitā</em> (Yajurveda), sacred arithmetic chants alternated between <strong>Yugma</strong> (paired, balanced, even numbers) and <strong>Ayugma</strong> (unpaired, dynamic, odd numbers).
+                  When designing <em>Agnicayana</em> brick altars, Vedic architects encountered the fundamental distinction between <strong>Composite Areas</strong> (which tile into uniform rectangular grids) and <strong>Prime Dimensions</strong> (which refuse rectangular factorisation and demand custom fractional bricks).
+                </p>
+                <div style={{ background: '#ffffff', borderLeft: '3px solid #78350f', padding: '0.75rem 1rem', borderRadius: '0 8px 8px 0', fontSize: '0.88rem', color: '#334155', lineHeight: 1.5 }}>
+                  <strong>The "Even Prime" Anomaly:</strong> The number 2 is divisible by 2 (making it even / Yugma), yet its only divisors are 1 and 2 (making it prime / indivisible). Every other even number (4, 6, 8, 10...) is a multiple of 2 and carries at least three factors. Thus, 2 stands alone as the foundational bridge of number theory and modern binary computing.
+                </div>
+              </div>
+
+              {/* Link to Full Masterclass Treatise */}
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                <button
+                  type="button"
+                  className="article-interactive-cta"
+                  onClick={() => {
+                    selectArticle('baudhayana-even-prime-geometry');
+                    setActiveTab('articles');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  📖 Read Full Illustrated Masterclass on Baudhāyana &amp; The Even Prime →
+                </button>
               </div>
             </div>
 

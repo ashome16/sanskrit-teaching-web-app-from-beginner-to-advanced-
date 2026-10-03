@@ -1158,6 +1158,84 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Bhartṛhari’s four speech levels (Vaikharī, Madhyamā, Paśyantī, Parā) and holistic Sphoṭa mirror the multi-head self-attention mechanisms of modern Transformer architectures.',
     ],
   },
+  {
+    id: 'baudhayana-even-prime-geometry',
+    slug: 'baudhayana-even-prime-geometry',
+    title: 'The Ancient Roots of the Even Prime: How Baudhayana and Vedic Geometry Mapped the Number 2',
+    sanskritTitle: '॥ सम-विषम-संख्यानां मूलं बौधायनस्य शुल्बसूत्रं च ॥',
+    subtitle: 'How Vedic altars, the Taittirīya Saṃhitā parity chants, and Baudhāyana’s chord theorem unlocked the secrets of primality and geometry 300 years before Pythagoras.',
+    readingTime: '7 min read',
+    badge: 'Geometry & Number Theory',
+    prequel: { id: 'geometry-infinite', label: 'The Geometry of the Infinite' },
+    sections: [
+      {
+        title: 'The Vedic Rhythm of Yugma (Even) and Ayugma (Odd)',
+        sanskritTitle: 'युग्म-अयुग्म-व्यवस्था · तैत्तिरीय-संहिता',
+        paragraphs: [
+          'When modern textbooks introduce prime numbers, even numbers, and the unique anomaly of the number 2 as the world’s only even prime, the narrative almost always begins in ancient Greece with Euclid and the Pythagoreans. However, for students of Vedic Mathematics, the true timeline reveals a deeper, older chapter rooted in the Vedic tradition.',
+          'Centuries before Pythagoras (c. 570–495 BCE) and Euclid (c. 300 BCE), ancient Indian seers and mathematicians were already mapping the fundamental properties of numbers. In the Taittirīya Saṃhitā of the Kṛṣṇa Yajurveda (4.7.24), sequential chants for sacred rituals alternate systematically between odd numbers (Ayugma, literally "unpaired" or "without a yoke") and even numbers (Yugma, "paired" or "coupled"): "Ekā ca me, tisraś ca me, pañca ca me, sapta ca me..."',
+          'To Vedic thinkers, parity was not an arbitrary classroom rule—it was a cosmic rhythm. Yugma represented symmetry, equilibrium, and matched pairs, while Ayugma represented dynamic movement and the mathematical remainder.'
+        ],
+        highlight: '॥ एका च मे तिस्रश्च मे पञ्च च मे सप्त च मे ॥ — Parity in Vedic India was not an abstract rule, but the cosmic rhythm of equilibrium (Yugma) and dynamic remainder (Ayugma).'
+      },
+      {
+        title: 'Baudhāyana’s Geometry: Prime vs. Composite Logic in Sacred Fire Altars',
+        sanskritTitle: 'अग्निचयनम् · शुल्बसूत्राणां रेखागणितम्',
+        paragraphs: [
+          'By 800 BCE, this numerical awareness transitioned from sacred liturgy to advanced spatial engineering. Ācārya Baudhāyana composed the Baudhāyana Śulba Sūtra (the earliest surviving treatise of geometry in human history), which served as a precise mathematical manual for constructing ritual brick fire altars (Agnicayana).',
+          'These altars—built in complex shapes such as the Śyenaciti (Falcon), Kūrmaciti (Tortoise), and Rathacakraciti (Chariot Wheel)—had to cover exact, invariant surface areas (traditionally 7½ square puruṣas) using exact counts of whole bricks. This engineering necessity forced Vedic mathematicians to invent the practical logic of factorization:',
+          '• Composite Logic: Builders needed to identify which spatial areas could be tiled cleanly into uniform rectangular grids of square bricks (e.g., an area of 12 tiled as a 3 × 4 grid).\n• Prime Logic: They confronted irreducible prime quantities—dimensions that stubbornly resisted decomposition into rectangular rows, forcing the invention of custom fractional and trapezoidal bricks (Aparimitā, Dvyardhā, Pañcamī) to fill structural gaps without violating ritual area rules.'
+        ]
+      },
+      {
+        title: 'The Diagonal Chord Theorem: Baudhāyana Śulba Sūtra 1.48',
+        sanskritTitle: 'दीर्घचतुरश्रस्याक्ष्णया रज्जुः · बौधायन-शुल्बसूत्रम् १.४८',
+        paragraphs: [
+          'It was during these altar designs that Baudhāyana recorded the universal geometric relationship of the right-angled triangle—at least 250 years before Pythagoras was born:',
+          'दीर्घचतुरश्रस्याक्ष्णया रज्जुः पार्श्वमानी तिर्यङ्मानी च यत्पृथग्भूते कुरुतस्तदुभयं करोति ॥',
+          '(Dīrghacaturaśrasyākṣṇayā rajjuḥ pārśvamānī tiryaṅmānī ca yatpṛthagbhūte kurutastadubhayaṃ karoti.)',
+          'Translation: "The diagonal chord of a rectangle produces both areas which its flank (horizontal base) and lateral (vertical height) sides produce separately."'
+        ],
+        highlight: 'Diagonal² = Base² + Height² (c² = a² + b²). Baudhāyana formulated this theorem as an exact geometric law of areas produced by stretched cords (Rajju).'
+      },
+      {
+        title: 'Word-by-Word Sanskrit Vyākaraṇa Breakdown',
+        sanskritTitle: 'व्याकरण-विश्लेषणम् · सूत्रपदच्छेदः',
+        paragraphs: [
+          'A precise linguistic analysis reveals the structural elegance of Baudhāyana’s Sanskrit formulation:',
+          '१. दीर्घचतुरश्रस्य (Dīrghacaturaśrasya) — Ṣaṣṭhī Vibhakti (Genitive), Singular. Karmadhāraya compound: Dīrgha (long) + Caturaśra (rectangle). "Of a rectangle."\n२. अक्ष्णया (Akṣṇayā) — Tṛtīyā Vibhakti (Instrumental), Singular. "Across the corners / along the diagonal."\n३. रज्जुः (Rajjuḥ) — Prathamā Vibhakti (Nominative), Singular. "The measuring cord / rope (hypotenuse)."\n४. पार्श्वमानी (Pārśvamānī) — Nominative Singular Feminine. Pārśva (flank/horizontal side) + Māna (measuring). "The flank-measuring horizontal side (base a)."\n५. तिर्यङ्मानी (Tiryaṅmānī) — Nominative Singular Feminine. Tiryañc (transverse/vertical) + Māna. "The transverse-measuring vertical side (height b)."\n६. च (Ca) — Avyaya (Indeclinable). "And."\n७. यत् (Yat) — Relative Neuter Pronoun. "Whatever (area)."\n८. पृथग्भूते (Pṛthagbhūte) — Saptamī/Dual Participle. Pṛthak (separately) + Bhūta (become). "Separately / individually."\n९. कुरुतः (Kurutaḥ) — Verb root Kṛ (to make), Laṭ Lakāra (Present), Prathama Puruṣa (3rd person), Dvivacana (Dual). "They two (base and height) produce." Notice the precise dual verb!\n१०. तत् (Tat) — Correlative Neuter Pronoun. "That."\n११. उभयम् (Ubhayam) — Accusative Neuter. "Both combined."\n१२. करोति (Karoti) — Verb root Kṛ, Laṭ Lakāra, Prathama Puruṣa, Ekavacana (Singular). "It (the single diagonal cord) produces."'
+        ]
+      },
+      {
+        title: 'Baudhāyana’s Sacred Triples: Śulba Sūtra 1.49',
+        sanskritTitle: 'बौधायन-त्रिकाणि · १.४९',
+        paragraphs: [
+          'Centuries before the term "Pythagorean Triples" existed, Baudhāyana catalogued the exact integer ratios used by Vedic master builders to construct perfect 90° right angles in the field using a knotted rope:',
+          'तस्या अक्षा श्लक्ष्णानि रूपाण्येकैकशः पृथगुपदध्यात्। त्रिकचतुष्कयोः पञ्चकः। पञ्चकद्वादशकोस्त्रयोदशः। अष्टकपञ्चदशकोस्सप्तदशः। द्वादशकपञ्चत्रिंशकोस्सप्तत्रिंश इति ॥',
+          '• Trika-Catuṣkayoḥ Pañcakaḥ (3 : 4 : 5) → 3² + 4² = 9 + 16 = 25 = 5²\n• Pañcaka-Dvādaśakoḥ Trayodaśaḥ (5 : 12 : 13) → 5² + 12² = 25 + 144 = 169 = 13²\n• Aṣṭaka-Pañcadaśakoḥ Saptadaśaḥ (8 : 15 : 17) → 8² + 15² = 64 + 225 = 289 = 17²\n• Dvādaśaka-Pañcatriṃśakoḥ Saptatriṃśaḥ (12 : 35 : 37) → 12² + 35² = 144 + 1225 = 1369 = 37²'
+        ]
+      },
+      {
+        title: 'How the "Even Prime" Paradox Formed',
+        sanskritTitle: 'सम-अभाज्य-संख्यायाः रहस्यम् · केवलं द्वौ',
+        paragraphs: [
+          'When Greek mathematicians centuries later translated spatial geometry into axiomatic definitions, Euclid formalized:',
+          '1. Even: Any integer divisible by 2.\n2. Prime: Any whole number > 1 having exactly two factors (1 and itself).',
+          'The number 2 (द्वौ) sits uniquely at the intersection: it can be split into two equal halves of 1 (making it even), yet its only divisors are 1 and 2 (making it prime). Every other even number (4, 6, 8, 10...) is an even composite with at least three factors (1, 2, and the number itself).',
+          'In computer science and modern cryptography (RSA, elliptic curves), the number 2 is treated as a separate category of existence: "the prime 2" (the binary bit foundation) vs "all odd primes."'
+        ]
+      }
+    ],
+    quote: 'Before mathematics was ever confined to abstract symbols in a textbook, it was woven into the sacred rhythm of Yugma and Ayugma, and laid out with measuring cords in the holy fire altars of Baudhāyana.',
+    keyTakeaways: [
+      'The Taittirīya Saṃhitā established numerical parity (Yugma = even, Ayugma = odd) centuries before Greek philosophy.',
+      'Baudhāyana’s Śulba Sūtra (1.48, c. 800 BCE) stated the diagonal theorem (a² + b² = c²) at least 250 years before Pythagoras.',
+      'Sanskrit grammar in Sūtra 1.48 uses the dual verb kurutaḥ for base and height, and the singular verb karoti for the diagonal rope.',
+      'Baudhāyana explicitly listed the fundamental integer triples (3:4:5, 5:12:13, 8:15:17, 12:35:37) in Śulba Sūtra 1.49.',
+      'The number 2 is the unique even prime, acting as the fundamental bridge between even symmetry and prime indivisibility.',
+      'Agnicayana fire altar construction pioneered the practical application of composite and prime area geometries.'
+    ]
+  },
 ];
 
 export const VEDIC_INTRO = {
