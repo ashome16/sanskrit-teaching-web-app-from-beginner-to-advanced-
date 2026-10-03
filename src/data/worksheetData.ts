@@ -15741,5 +15741,349 @@ export const WORKSHEETS: Worksheet[] = [
         ]
       }
     ]
+  },
+// ==========================================
+  // GRADE 9 CH 10 WORKSHEET 1: Grammatical Formations & Voice Concord (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch10-ws1",
+    title: "Worksheet 1: Grammatical Formations & Voice Concord (10 Questions)",
+    titleSanskrit: "दशमः पाठः कार्यपत्रिका १: व्याकरणं वाच्यपरिवर्तनं समासाश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Master Passive to Active voice conversions (कर्मवाच्यतः कर्तृवाच्ये), compound disjunctions (Tatpurusha, Karmadharaya), and Sandhi rules based on Chapter 10.",
+    sections: [
+      {
+        sectionTitle: "Section A: Grammatical Formations & Voice Concord",
+        sectionTitleSanskrit: "खण्डः 'क' · वाच्यपरिवर्तनं समासाः सन्धयश्च",
+        instructions: "Conjugate terms or transform from Passive to Active voice according to standard rules.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Convert Passive to Active: 'महाराजेन राज्यं समर्पितम्।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: महाराजेन राज्यं समर्पितम्। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "महाराजः राज्यं समर्पितवान्।",
+            explanation: "महाराजेन $\\rightarrow$ महाराजः, समर्पितम् $\\rightarrow$ समर्पितवान्।"
+          },
+          {
+            num: 2,
+            question: "Convert Passive to Active: 'जनैः जीवनपद्धतिः परिवर्तिता।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: जनैः जीवनपद्धतिः परिवर्तिता। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "जनाः जीवनपद्धतिं परिवर्तितवन्तः।",
+            explanation: "जनैः (तृतीया बहुवचन) $\\rightarrow$ जनाः (प्रथमा बहुवचन), परिवर्तिता $\\rightarrow$ परिवर्तितवन्तः।"
+          },
+          {
+            num: 3,
+            question: "Convert Passive to Active: 'ऋषभेण योजना कृता।' $\\rightarrow$ ______",
+            questionSanskrit: "कर्तृवाच्ये परिवर्तयत: ऋषभेण योजना कृता। $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "ऋषभः योजनां कृतवान्।",
+            explanation: "ऋषभेण $\\rightarrow$ ऋषभः, योजना $\\rightarrow$ योजनाम्, कृता $\\rightarrow$ कृतवान्।"
+          },
+          {
+            num: 4,
+            question: "Disjoin Compound: 'मूलसमस्याः' = ______ + ______",
+            questionSanskrit: "समस्तपदस्य विग्रहं कुरुत: 'मूलसमस्याः' $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "मूलाः समस्याः (कर्मधारय-समासः)।",
+            explanation: "मूलाः समस्याः = मूलसमस्याः।"
+          },
+          {
+            num: 5,
+            question: "Disjoin Compound: 'भोजननिर्माणम्' = ______ + ______",
+            questionSanskrit: "समस्तपदस्य विग्रहं कुरुत: 'भोजननिर्माणम्' $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "भोजनस्य निर्माणम् (षष्ठीतत्पुरुष-समासः)।",
+            explanation: "भोजनस्य निर्माणम् = भोजननिर्माणम्।"
+          },
+          {
+            num: 6,
+            question: "Combine Sandhi: तथा + एव = ______",
+            questionSanskrit: "सन्धिं कुरुत: तथा + एव $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "तथैव (वृद्धि-स्वरसन्धिः)।",
+            explanation: "आ + ए = ऐ (वृद्धि-सन्धिः)।"
+          },
+          {
+            num: 7,
+            question: "Combine Sandhi: इति + अतः = ______",
+            questionSanskrit: "सन्धिं कुरुत: इति + अतः $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "इत्यतः (यण्-स्वरसन्धिः)।",
+            explanation: "इ + अ = य् (यण्-सन्धिः)।"
+          },
+          {
+            num: 8,
+            question: "Identify Root, Mood, Person, and Number in 'अचिन्तयत्':",
+            questionSanskrit: "धातु-लकार-पुरुष-वचनानि पृथक् कुरुत: 'अचिन्तयत्' $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "√चिन्त् धातुः, लङ्-लकारः, प्रथमपुरुषः, एकवचनम्।",
+            explanation: "अचिन्तयत् लङ्-लकारस्य रूपं भवति।"
+          },
+          {
+            num: 9,
+            question: "Identify Case and Number in 'कठोरतपसा':",
+            questionSanskrit: "'कठोरतपसा' पदे का विभक्तिः किं च वचनम्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "तृतीया विभक्तिः, एकवचनम् (कठोरेण तपसा)।",
+            explanation: "तपस्-शब्दस्य तृतीया-एकवचने 'तपसा' भवति।"
+          },
+          {
+            num: 10,
+            question: "Form Single Compound: 'महान् च असौ राजा च' = ______",
+            questionSanskrit: "समस्तपदं रचयत: 'महान् च असौ राजा च' $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "महाराजः (कर्मधारय-समासः)।",
+            explanation: "महान् राजा = महाराजः।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 CH 10 WORKSHEET 2: Prakrit Translations & Context Building (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch10-ws2",
+    title: "Worksheet 2: Prakrit Translations & Context Building (10 Questions)",
+    titleSanskrit: "दशमः पाठः कार्यपत्रिका २: प्राकृत-संस्कृत-अनुवादः शब्दार्थाश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Map Sanskrit sentences to Prakrit equivalents, analyze Avyayibhava compounds, split sandhis, and formulate questions.",
+    sections: [
+      {
+        sectionTitle: "Section A: Prakrit Translations & Context Building",
+        sectionTitleSanskrit: "खण्डः 'क' · प्राकृत-संस्कृत-रूपान्तरणम्",
+        instructions: "Translate between Sanskrit and Prakrit and frame contextual questions.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Translate to Prakrit: 'अहं विद्यालयं गच्छामि।'",
+            questionSanskrit: "संस्कृतात् प्राकृते परिवर्तयत: 'अहं विद्यालयं गच्छामि।' $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "अह विज्जालयं गच्छामि / गच्छमि / गच्छं।",
+            explanation: "अहम् = अह, विद्यालयम् = विज्जालयं।"
+          },
+          {
+            num: 2,
+            question: "Translate to Prakrit: 'सः जलं पिबति।'",
+            questionSanskrit: "संस्कृतात् प्राकृते परिवर्तयत: 'सः जलं पिबति।' $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "सो जलं पिवइ।",
+            explanation: "सः = सो, पिबति = पिवइ।"
+          },
+          {
+            num: 3,
+            question: "Translate to Prakrit: 'बालकः पद्यं पठति।'",
+            questionSanskrit: "संस्कृतात् प्राकृते परिवर्तयत: 'बालकः पद्यं पठति।' $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "बालओ पोत्थं पढइ / पढए / पढदि।",
+            explanation: "बालकः = बालओ, पठति = पढइ।"
+          },
+          {
+            num: 4,
+            question: "Translate to Prakrit: 'भवान् कुत्र गच्छति?'",
+            questionSanskrit: "संस्कृतात् प्राकृते परिवर्तयत: 'भवान् कुत्र गच्छति?' $\\rightarrow$ ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "भवतो कत्थ गच्छउ।",
+            explanation: "कुत्र = कत्थ।"
+          },
+          {
+            num: 5,
+            question: "Disjoin Sandhi: 'इत्येतादृश्यः' = ______ + ______",
+            questionSanskrit: "सन्धिविच्छेदं कुरुत: 'इत्येतादृश्यः' $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "इति + एतादृश्यः (यण्-स्वरसन्धिः)।",
+            explanation: "इ + ए = ये (यण्-सन्धिः)।"
+          },
+          {
+            num: 6,
+            question: "Disjoin Compound: 'प्रतिगृहम्' = ______ + ______",
+            questionSanskrit: "समस्तपदस्य विग्रहं कुरुत: 'प्रतिगृहम्' $\\rightarrow$ ______ + ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "गृहं गृहं प्रति (अव्ययीभाव-समासः)।",
+            explanation: "प्रति-उपसर्गयोगे अव्ययीभावः।"
+          },
+          {
+            num: 7,
+            question: "Frame Question: 'तयोः एव प्रियपुत्रः [ऋषभः] आसीत्।'",
+            questionSanskrit: "प्रश्ननिर्माणं कुरुत: तयोः एव प्रियपुत्रः [ऋषभः] आसीत्।",
+            marks: 2,
+            type: "short_ans",
+            answer: "तयोः एव प्रियपुत्रः कः आसीत्?",
+            explanation: "पुंलिङ्ग-प्रथमैकवचने 'कः' प्रयुज्यते।"
+          },
+          {
+            num: 8,
+            question: "Frame Question: 'ऋषभदेवः [अक्षयवटवृक्षस्य] अधः ज्ञानं प्राप्तवान्।'",
+            questionSanskrit: "प्रश्ननिर्माणं कुरुत: ऋषभदेवः [अक्षयवटवृक्षस्य] अधः ज्ञानं प्राप्तवान्।",
+            marks: 2,
+            type: "short_ans",
+            answer: "ऋषभदेवः कस्य अधः ज्ञानं प्राप्तवान्?",
+            explanation: "षष्ठी-एकवचनपदस्य स्थाने 'कस्य' भवति।"
+          },
+          {
+            num: 9,
+            question: "Give the Hindi translation of the term 'दुर्भिक्षम्':",
+            questionSanskrit: "'दुर्भिक्षम्' पदस्य हिन्दी-पर्यायं लिखत।",
+            marks: 2,
+            type: "short_ans",
+            answer: "अकाल / भिक्षायाः अन्नस्य वा अभावः (Famine)।",
+            explanation: "दुःखेन भिक्षा लभ्यते यस्मिन् सः दुर्भिक्षः (अकाल)।"
+          },
+          {
+            num: 10,
+            question: "Provide the Antonym of 'संयोगः':",
+            questionSanskrit: "'संयोगः' पदस्य विलोमपदं किं भवति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "वियोगः।",
+            explanation: "संयोगः $\\times$ वियोगः।"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ==========================================
+  // GRADE 9 CH 10 WORKSHEET 3: Chronological Historical Timelines (10 Qs)
+  // ==========================================
+  {
+    id: "ws-grade9-ch10-ws3",
+    title: "Worksheet 3: Chronological Historical Timelines (10 Questions)",
+    titleSanskrit: "दशमः पाठः कार्यपत्रिका ३: ऋषभदेव-जीवन-कालक्रमः तीर्थङ्कराश्च (१० प्रश्नाः)",
+    category: "grade9",
+    categoryLabel: "Grade 9 Sanskrit · CBSE Sharda",
+    grade: "CBSE Grade 9 (Sharda Framework)",
+    totalMarks: 20,
+    timeLimit: "30 Mins",
+    description: "Chronicle the milestones of Adinatha's life, the Navkar Parameshthis, Jain Tirthankara lineages, and sacred pilgrimage geography.",
+    sections: [
+      {
+        sectionTitle: "Section A: Chronological Historical Timelines",
+        sectionTitleSanskrit: "खण्डः 'क' · इतिहास-तीर्थङ्कर-परम्परा",
+        instructions: "Answer short questions examining the life of Adinatha and Jain heritage.",
+        totalMarks: 20,
+        questions: [
+          {
+            num: 1,
+            question: "Where did Lord Rishabhadeva attain absolute enlightenment (केवलज्ञानम्)?",
+            questionSanskrit: "ऋषभदेवेन केवलज्ञानं कुत्र प्राप्तम्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "प्रयागराज-क्षेत्रे पवित्र-अक्षयवटवृक्षस्य अधः।",
+            explanation: "प्रयागे अक्षयवटवृक्षस्य मूले केवलज्ञानम् अभवत्।"
+          },
+          {
+            num: 2,
+            question: "In which modern Indian state are the sacred cities Hastinapur and Ayodhya situated?",
+            questionSanskrit: "प्राचीन-तीर्थनगर्यौ 'हस्तिनापुरम्' 'अयोध्या' च कस्मिन् भारतीय-राज्ये स्तः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "उत्तर-प्रदेश-राज्ये (Uttar Pradesh)।",
+            explanation: "उभे नगर्यौ उत्तर-प्रदेशे स्थिते।"
+          },
+          {
+            num: 3,
+            question: "Name the two prominent locations where the Varshatapa Parana festival is celebrated today:",
+            questionSanskrit: "वर्षीतप-पारणा-महोत्सवः मुख्यतया कुत्र आयोज्यते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "पालिताणा (गुजरात) तथा हस्तिनापुरम् (उत्तर प्रदेश)।",
+            explanation: "शत्रुञ्जय-तीर्थे पालिताणा-नगरे हस्तिनापुरे च आयोज्यते।"
+          },
+          {
+            num: 4,
+            question: "Summarize King Rishabhadeva's role as an educator of essential life skills:",
+            questionSanskrit: "ऋषभदेवेन प्रजाः कानि जीवनकौशलानि शिक्षिताः?",
+            marks: 2,
+            type: "short_ans",
+            answer: "कृषिकार्यं, वस्त्रनिर्माणं, भोजनपाकविद्या, पशुपालनं, गृह-नगर-निर्माणं चेत्यादीनि।",
+            explanation: "सः प्रजानां स्वावलम्बनाय जीवनोपयोगीनि कौशलानि अशिक्षयत्।"
+          },
+          {
+            num: 5,
+            question: "Name the four sections forming the fourfold Jain community (चतुर्विध-सङ्घः):",
+            questionSanskrit: "जैनसङ्घस्य चत्वारः प्रमुखाः विभागाः के सन्ति?",
+            marks: 2,
+            type: "short_ans",
+            answer: "भिक्षुः (साधुः), भिक्षुणी (साध्वी), श्रावकः, श्राविका च (चतुर्विध-सङ्घः)।",
+            explanation: "साधु-साध्वी-श्रावक-श्राविका इति चतुर्विधसङ्घः।"
+          },
+          {
+            num: 6,
+            question: "Complete the analogical pair: 'Vinita : Bharata :: Takshashila : ______':",
+            questionSanskrit: "अनुपातं पूरयत: विनिता : भरतः :: तक्षशिला : ______",
+            marks: 2,
+            type: "short_ans",
+            answer: "बाहुबलिः।",
+            explanation: "ऋषभदेवेन बाहुबलिने तक्षशिला समर्पितम्।"
+          },
+          {
+            num: 7,
+            question: "Name the 2nd, 3rd, and 4th Tirthankaras in Jain lineage:",
+            questionSanskrit: "जैनपरम्परायाः द्वितीयः, तृतीयः, चतुर्थश्च तीर्थङ्कराः के?",
+            marks: 2,
+            type: "short_ans",
+            answer: "अजितनाथः (द्वितीयः), सम्भवनाथः (तृतीयः), अभिनन्दननाथः (चतुर्थः)।",
+            explanation: "एते ऋषभदेवानन्तरं क्रमिकाः तीर्थङ्कराः।"
+          },
+          {
+            num: 8,
+            question: "Name the Five Supreme Beings (पञ्चपरमेष्ठिनः) revered in the Navkar Mantra:",
+            questionSanskrit: "णमोकार-महामन्त्रे केषां पञ्चानां वन्दना कृता?",
+            marks: 2,
+            type: "short_ans",
+            answer: "अरिहन्त, सिद्ध, आचार्य, उपाध्याय, सर्वसाधूनाम् (पञ्चपरमेष्ठिनः)।",
+            explanation: "पञ्चपरमेष्ठिनः सर्वपापप्रणाशनाः।"
+          },
+          {
+            num: 9,
+            question: "Name the sacred Jain pilgrimage mountain situated in Jharkhand state:",
+            questionSanskrit: "झारखण्ड-राज्ये स्थितस्य जैन-पवित्र-पर्वतस्य नाम किम्?",
+            marks: 2,
+            type: "short_ans",
+            answer: "सम्मेतशिखरम् (पारसनाथ-पर्वतः)।",
+            explanation: "तत्र विंशतिः तीर्थङ्कराः मोक्षं प्राप्तवन्तः।"
+          },
+          {
+            num: 10,
+            question: "What is the birthplace of Lord Mahavira, the 24th Tirthankara?",
+            questionSanskrit: "चतुर्विंशतितमस्य तीर्थङ्करस्य महावीरस्य जन्मस्थानं कुत्र वर्तते?",
+            marks: 2,
+            type: "short_ans",
+            answer: "कुण्डग्रामः (वैशाली-समीपे, बिहार-राज्ये)।",
+            explanation: "वैशाली-जनपदे कुण्डग्रामे भगवान् महावीरः अजायत।"
+          }
+        ]
+      }
+    ]
   }
 ];
