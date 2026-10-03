@@ -1,29 +1,86 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { GRADE_8_SYLLABUS, type Grade8Chapter } from '../data/grade8Syllabus';
+import { GRADE_8_SYLLABUS } from '../data/grade8Syllabus';
 import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters } from '../utils/premiumAccess';
 import '../styles/grade8-syllabus.css';
 import { expandDigitsInLessonText } from '../utils/lessonNumberSpeech';
+
+export interface SyllabusChapter {
+  id: string;
+  num: string;
+  chNumber: string;
+  title: string;
+  hindiTitle?: string;
+  englishTitle: string;
+  page: string;
+  category: string;
+  genreBadge: string;
+  theme: string;
+  grammarFocus: string;
+  sampleVerse?: string;
+  status: 'available' | 'in_curriculum' | 'overview';
+  icon: string;
+}
 
 interface Grade8SyllabusModalProps {
   isOpen: boolean;
   onClose: () => void;
   onSelectLesson?: (lessonId: string) => void;
   onOpenCbseGuide?: () => void;
+  /** Defaults to the Class 8 index. Pass Grade 7 or Grade 9 data to reuse this modal. */
+  syllabus?: readonly SyllabusChapter[];
+  gradeBadge?: string;
+  intro?: string;
+  coreLessonCount?: number;
+  appendixCount?: number;
+  pageSpan?: string;
+  pageStatSuffix?: string;
+  searchPlaceholder?: string;
+  /** Lesson ids that can be opened. Defaults to ids starting with lessonIdPrefix. */
+  lessonIdPrefix?: string;
+  knownLessonIds?: readonly string[];
+  /** Class 8 and 9 lessons need an account. Class 7 does not. */
+  accessGated?: boolean;
+  accountNote?: string;
+  examTitle?: string;
+  examBlurb?: string;
 }
 
-type FilterCategory = 'all' | 'shlokas' | 'stories' | 'dialogue' | 'grammar' | 'preface';
+const FILTER_LABELS: { id: string; label: string }[] = [
+  { id: 'all', label: 'सर्वम् · All' },
+  { id: 'shlokas', label: 'श्लोकाः · Shlokas' },
+  { id: 'stories', label: 'कथाः · Stories' },
+  { id: 'dialogue', label: 'सम्भाषणम् · Dialogues' },
+  { id: 'grammar', label: 'व्याकरणम् · Grammar' },
+  { id: 'preface', label: 'प्रस्तावना · Preface' },
+  { id: 'anthem', label: 'राष्ट्रगीतम् · Anthem' },
+];
 
 export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
   isOpen,
   onClose,
   onSelectLesson,
   onOpenCbseGuide,
+  syllabus,
+  gradeBadge = 'अष्टमकक्षा-पाठ्यक्रमः · NCERT / CBSE Class 8',
+  intro = 'Complete index of all 13 textbook chapters, introductory prayers, and grammatical appendices with exact page references.',
+  coreLessonCount = 13,
+  appendixCount = 3,
+  pageSpan = 'Page iii to 173',
+  pageStatSuffix = 'References',
+  searchPlaceholder = '🔍 Search chapter title, page number, grammar topic (e.g. डिजिभारतम्, Page 49, सङ्ख्याशब्दाः)...',
+  lessonIdPrefix = 'grade8_',
+  knownLessonIds,
+  accessGated = true,
+  accountNote = 'Class 8 lessons, worksheets, and quizzes are open to everyone with an account. Sign in or register for free to start learning!',
+  examTitle = 'CBSE Class 8 Sanskrit Exam Guide & Question Directives',
+  examBlurb = 'Master standardized instructions (यथानिर्देशम्, अन्वयः, घटनाक्रमः), 10 interrogative क-कार words, and grammatical components (कर्तृपदम्, क्रियापदम्) for board-pattern scoring.',
 }) => {
+  const chapters: readonly SyllabusChapter[] = syllabus ?? GRADE_8_SYLLABUS;
   const { isAdminLoggedIn, currentUser } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeCategory, setActiveCategory] = useState<FilterCategory>('all');
+  const [activeCategory, setActiveCategory] = useState('all');
   const [speakingId, setSpeakingId] = useState<string | null>(null);
 
   // Close on Escape key
@@ -56,7 +113,7 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
   };
 
   const filteredChapters = useMemo(() => {
-    return GRADE_8_SYLLABUS.filter((ch: Grade8Chapter) => {
+    return chapters.filter((ch) => {
       const matchesCategory = activeCategory === 'all' || ch.category === activeCategory;
       if (!matchesCategory) return false;
 
@@ -72,24 +129,17 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
         (ch.sampleVerse && ch.sampleVerse.toLowerCase().includes(q))
       );
     });
-  }, [searchQuery, activeCategory]);
+  }, [searchQuery, activeCategory, chapters]);
 
   const categoryCounts = useMemo(() => {
-    const counts: Record<FilterCategory, number> = {
-      all: GRADE_8_SYLLABUS.length,
-      shlokas: 0,
-      stories: 0,
-      dialogue: 0,
-      grammar: 0,
-      preface: 0,
-    };
-    GRADE_8_SYLLABUS.forEach((ch) => {
-      if (counts[ch.category] !== undefined) {
-        counts[ch.category]++;
-      }
+    const counts: Record<string, number> = { all: chapters.length };
+    chapters.forEach((ch) => {
+      counts[ch.category] = (counts[ch.category] || 0) + 1;
     });
     return counts;
-  }, []);
+  }, [chapters]);
+
+  const filterTabs = FILTER_LABELS.filter((tab) => tab.id === 'all' || (categoryCounts[tab.id] || 0) > 0);
 
   if (!isOpen) return null;
 
@@ -99,13 +149,11 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
         {/* Modal Header */}
         <div className="g8-modal-header">
           <div className="g8-modal-title-box">
-            <span className="g8-badge-grade">अष्टमकक्षा-पाठ्यक्रमः · NCERT / CBSE Class 8</span>
+            <span className="g8-badge-grade">{gradeBadge}</span>
             <h2 id="g8-title">
               <span>📜</span> पाठानुक्रमणिका (Table of Contents)
             </h2>
-            <p>
-              Complete index of all 13 textbook chapters, introductory prayers, and grammatical appendices with exact page references.
-            </p>
+            <p>{intro}</p>
           </div>
           <button
             type="button"
@@ -122,19 +170,19 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
         <div className="g8-stats-row">
           <div className="g8-stat-chip">
             <span>📚</span>
-            <span><strong>{GRADE_8_SYLLABUS.length}</strong> Total Modules</span>
+            <span><strong>{chapters.length}</strong> Total Modules</span>
           </div>
           <div className="g8-stat-chip">
             <span>📖</span>
-            <span><strong>13</strong> Core Lessons</span>
+            <span><strong>{coreLessonCount}</strong> Core Lessons</span>
           </div>
           <div className="g8-stat-chip">
             <span>📐</span>
-            <span><strong>3</strong> Grammar Appendices</span>
+            <span><strong>{appendixCount}</strong> Grammar Appendices</span>
           </div>
           <div className="g8-stat-chip">
             <span>📄</span>
-            <span><strong>Page iii to 173</strong> References</span>
+            <span><strong>{pageSpan}</strong> {pageStatSuffix}</span>
           </div>
         </div>
 
@@ -143,30 +191,21 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
           <input
             type="text"
             className="g8-search-input"
-            placeholder="🔍 Search chapter title, page number, grammar topic (e.g. डिजिभारतम्, Page 49, सङ्ख्याशब्दाः)..."
+            placeholder={searchPlaceholder}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             aria-label="Search Grade 8 Syllabus"
           />
 
           <div className="g8-filters">
-            {(
-              [
-                { id: 'all', label: 'सर्वम् · All' },
-                { id: 'shlokas', label: 'श्लोकाः · Shlokas' },
-                { id: 'stories', label: 'कथाः · Stories' },
-                { id: 'dialogue', label: 'सम्भाषणम् · Dialogues' },
-                { id: 'grammar', label: 'व्याकरणम् · Grammar' },
-                { id: 'preface', label: 'प्रस्तावना · Preface' },
-              ] as { id: FilterCategory; label: string }[]
-            ).map((tab) => (
+            {filterTabs.map((tab) => (
               <button
                 key={tab.id}
                 type="button"
                 className={`g8-filter-btn ${activeCategory === tab.id ? 'active' : ''}`}
                 onClick={() => setActiveCategory(tab.id)}
               >
-                {tab.label} <span className="g8-filter-count">({categoryCounts[tab.id]})</span>
+                {tab.label} <span className="g8-filter-count">({categoryCounts[tab.id] || 0})</span>
               </button>
             ))}
           </div>
@@ -174,12 +213,10 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
 
         {/* Modal Body / Chapter Cards */}
         <div className="g8-modal-body">
-          {!canReadAllChapters && (
+          {accessGated && !canReadAllChapters && (
             <div className="g8-upcoming-overlay-note" role="status">
               <strong>ACCOUNT REQUIRED · लेखा आवश्यकः</strong>
-              <span>
-                Class 8 lessons, worksheets, and quizzes are open to everyone with an account. Sign in or register for free to start learning!
-              </span>
+              <span>{accountNote}</span>
             </div>
           )}
           {filteredChapters.length === 0 ? (
@@ -202,8 +239,10 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
             </div>
           ) : (
             filteredChapters.map((ch) => {
-              const isAvailable =
-                canReadAllChapters && (ch.status === 'available' || ch.id.startsWith('grade8_'));
+              const inThisReader =
+                !knownLessonIds || knownLessonIds.includes(ch.id);
+              const markedOpen = ch.status === 'available' || ch.id.startsWith(lessonIdPrefix);
+              const isAvailable = inThisReader && markedOpen && (!accessGated || canReadAllChapters);
               const isSpeaking = speakingId === ch.id;
               const isVerseSpeaking = speakingId === `${ch.id}_verse`;
 
@@ -228,7 +267,7 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
                         <span className="g8-status-pill ready">✅ Available in App</span>
                       ) : (
                         <span className="g8-status-pill syllabus">
-                          {canReadAllChapters ? '📚 In Syllabus' : '⏳ UPCOMING · शीघ्रम्'}
+                          {!accessGated || canReadAllChapters ? '📚 In Syllabus' : '⏳ UPCOMING · शीघ्रम्'}
                         </span>
                       )}
                     </div>
@@ -288,9 +327,9 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
                       </button>
                     ) : (
                       <span className="g8-card-ref-label">
-                        {canReadAllChapters
+                        {!accessGated || canReadAllChapters
                           ? `NCERT Prescribed Text · ${ch.page}`
-                          : 'Coming soon · Class 8 content is being prepared'}
+                          : 'Coming soon · This class content is being prepared'}
                       </span>
                     )}
                   </div>
@@ -318,10 +357,8 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
           >
             <div className="g8-guide-content">
               <span className="g8-banner-badge">📋 CBSE &amp; NCERT EXAM BLUEPRINT</span>
-              <h4>CBSE Class 8 Sanskrit Exam Guide &amp; Question Directives</h4>
-              <p>
-                Master standardized instructions (यथानिर्देशम्, अन्वयः, घटनाक्रमः), 10 interrogative क-कार words, and grammatical components (कर्तृपदम्, क्रियापदम्) for board-pattern scoring.
-              </p>
+              <h4>{examTitle}</h4>
+              <p>{examBlurb}</p>
             </div>
             <button
               type="button"

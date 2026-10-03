@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import type { Lesson, LessonSentence } from '../types/chapters';
 import { aksharaLabel, varnamalaLabel } from '../utils/barakhadiPhonetics';
-import { playLessonText, playPronunciation, playSequence, stopPronunciation } from '../utils/pronunciation';
+import { playLessonText, playPronunciation, playSequence, speakAsBodhi, stopPronunciation } from '../utils/pronunciation';
 import { setBarakhadiSpeechContext } from '../utils/macBarakhadiSpeech';
 import { hasDevanagariLetter, isDandaOrVerseNumberToken } from '../utils/dandaSpeech';
 import {
@@ -13,6 +13,9 @@ import {
 import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters } from '../utils/premiumAccess';
 import { Grade8SyllabusModal } from './Grade8SyllabusModal';
+import { BodhiAvatar } from './BodhiAvatar';
+import { GRADE_7_SYLLABUS } from '../data/grade7Syllabus';
+import { GRADE_9_SYLLABUS } from '../data/grade9Syllabus';
 import { getLetterMnemonic } from '../data/varnamalaMnemonics';
 import { VarnamalaWritingPad } from './VarnamalaWritingPad';
 import { ErrorBoundary } from './ErrorBoundary';
@@ -126,6 +129,62 @@ const getJumpChipLabel = (jump: SectionJump, activeLessonId: string): string => 
   if (jump.label.includes('पृष्ठम् ५६') || jump.label.includes('पृष्ठ ५६')) return 'पृष्ठ ५६';
   if (jump.label.includes('पृष्ठम् ३८') || jump.label.includes('पृष्ठ ३८') || jump.label.includes('Page 38')) return 'पृष्ठ ३८';
   return jump.label.split('·')[0].trim().slice(0, 10);
+};
+
+
+type StudyJump = { index: number; label: string; hint: string; heading: string };
+
+const lessonTrack = (id: string): 'gsde' | 'grade8' | 'grade9' | null => {
+  if (id.startsWith('grade8_')) return 'grade8';
+  if (id.startsWith('grade9_')) return 'grade9';
+  if (id.startsWith('gsde')) return 'gsde';
+  return null;
+};
+
+/** Short link text taken from the lesson's own section heading. */
+const glossaryLinkLabel = (heading: string): string => {
+  if (heading.includes('शब्दार्थाः')) return 'शब्दार्थाः';
+  if (heading.includes('शब्दार्थ')) return 'शब्दार्थः';
+  return 'शब्दार्थः';
+};
+
+const exerciseLinkLabel = (sentences: LessonSentence[], start: number): string => {
+  const blob = sentences.slice(start, start + 12).map((item) => item.sanskrit || '').join('\n');
+  if (blob.includes('अभ्यासकार्यम्')) return 'अभ्यासकार्यम्';
+  if (blob.includes('अभ्यास-समाधानम्')) return 'अभ्यास-समाधानम्';
+  if (blob.includes('अभ्यासाः')) return 'अभ्यासाः';
+  if (blob.includes('अभ्यास')) return 'अभ्यासः';
+  return 'अभ्यासः';
+};
+
+const findStudyJumps = (lesson: Lesson | undefined): { glossary?: StudyJump; exercise?: StudyJump } => {
+  if (!lesson?.sentences?.length) return {};
+  const glossaryAt = lesson.sentences.findIndex(
+    (item) => item.kind === 'glossary-header' || item.kind === 'glossary',
+  );
+  const exerciseAt = lesson.sentences.findIndex(
+    (item) => item.kind === 'exercise-header' || (item.kind || '').startsWith('exercise'),
+  );
+  const out: { glossary?: StudyJump; exercise?: StudyJump } = {};
+  if (glossaryAt >= 0) {
+    const heading = (lesson.sentences[glossaryAt].sanskrit || '').replace(/\s+/g, ' ').trim();
+    out.glossary = {
+      index: glossaryAt,
+      label: glossaryLinkLabel(heading),
+      hint: 'Word meanings',
+      heading: heading || 'शब्दार्थः',
+    };
+  }
+  if (exerciseAt >= 0) {
+    const heading = (lesson.sentences[exerciseAt].sanskrit || '').replace(/\s+/g, ' ').trim();
+    out.exercise = {
+      index: exerciseAt,
+      label: exerciseLinkLabel(lesson.sentences, exerciseAt),
+      hint: 'Exercises',
+      heading: heading || 'अभ्यासः',
+    };
+  }
+  return out;
 };
 
 interface SanskritSymbolItem {
@@ -287,6 +346,14 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const paragraphIndexRef = useRef(0);
   /** Set only when Play all itself moves to the next paragraph, so that navigation does not cancel it. */
   const continueAfterAdvanceRef = useRef(false);
+  /** Section jump while paused: change the card, keep Pause. Do not speak. */
+  const stayPausedOnJumpRef = useRef(false);
+  /** Replay from the first card after Bodhi's line has stopped. */
+  const replayFromStartRef = useRef(false);
+  const [replayTick, setReplayTick] = useState(0);
+  const endBodhiStopRef = useRef<(() => void) | null>(null);
+  const [isGrade7SyllabusOpen, setIsGrade7SyllabusOpen] = useState(false);
+  const [isGrade9SyllabusOpen, setIsGrade9SyllabusOpen] = useState(false);
   const beginLessonParagraphRef = useRef<(fromIndex: number) => void>(() => {});
   /** Letter shown in the mobile "now playing" chip after a single tile tap. */
   const [tapPlayingLetter, setTapPlayingLetter] = useState<string | null>(null);
@@ -387,6 +454,14 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
       beginLessonParagraphRef.current(0);
       return;
     }
+    // A शब्दार्थ / अभ्यास jump while paused only moves the card.
+    if (stayPausedOnJumpRef.current) {
+      stayPausedOnJumpRef.current = false;
+      paragraphIndexRef.current = 0;
+      setPlayAllPhase('paused');
+      setIsPlayingAll(false);
+      return;
+    }
     // Lesson change, or the student moved paragraphs: stop. Do not resume or skip.
     stopPlayAllRef.current?.();
     stopPlayAllRef.current = null;
@@ -402,6 +477,33 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     setPlayingGroupIdx(null);
     clearTapChip();
   }, [activeLessonId, sentenceNumber]);
+
+  const atLessonEnd = !isGroupedLesson && totalSentences > 0 && sentenceNumber === totalSentences;
+  const showEndGuide = atLessonEnd && playAllPhase !== 'playing';
+
+  useEffect(() => {
+    if (replayFromStartRef.current || !showEndGuide || playAllPhase === 'paused') {
+      endBodhiStopRef.current?.();
+      endBodhiStopRef.current = null;
+      return;
+    }
+    const stop = speakAsBodhi('साधु। अयं पाठः समाप्तः।');
+    endBodhiStopRef.current = stop;
+    return () => {
+      stop();
+      if (endBodhiStopRef.current === stop) endBodhiStopRef.current = null;
+    };
+  }, [showEndGuide, playAllPhase, activeLessonId]);
+
+  useEffect(() => {
+    if (!replayFromStartRef.current) return;
+    if (sentenceNumber !== 1) {
+      replayFromStartRef.current = false;
+      return;
+    }
+    replayFromStartRef.current = false;
+    beginLessonParagraphRef.current(0);
+  }, [replayTick, sentenceNumber]);
 
   // Leaving Sound & Pictures (writing / worksheets) cancels playback.
   useEffect(() => {
@@ -525,6 +627,47 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     onJumpToSentence(index);
   };
 
+  /**
+   * शब्दार्थ / अभ्यास links. Play all keeps going (it continues from that
+   * section). Only Pause stops it.
+   */
+  const jumpStudySection = (index: number) => {
+    const same = index === sentenceNumber - 1;
+    if (playAllPhase === 'playing') {
+      stopPlayAllRef.current?.();
+      stopPlayAllRef.current = null;
+      stopPronunciation();
+      paragraphIndexRef.current = 0;
+      if (same) {
+        beginLessonParagraph(0);
+        return;
+      }
+      continueAfterAdvanceRef.current = true;
+      onJumpToSentence(index);
+      return;
+    }
+    if (playAllPhase === 'paused') {
+      paragraphIndexRef.current = 0;
+      if (same) return;
+      stayPausedOnJumpRef.current = true;
+      onJumpToSentence(index);
+      return;
+    }
+    if (!same) onJumpToSentence(index);
+  };
+
+  const replayLessonFromStart = () => {
+    endBodhiStopRef.current?.();
+    if (sentenceNumber <= 1) {
+      replayFromStartRef.current = true;
+      setReplayTick((tick) => tick + 1);
+      return;
+    }
+    continueAfterAdvanceRef.current = true;
+    paragraphIndexRef.current = 0;
+    onJumpToSentence(0);
+  };
+
   const handlePlayAll = () => {
     if (isGroupedLesson) {
       if (isPlayingAll) {
@@ -602,6 +745,15 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     ? (isPlayingAll && playingLetter ? playingLetter : tapPlayingLetter)
     : null;
   const nowPlayingMnemonic = nowPlayingLetter ? getLetterMnemonic(nowPlayingLetter) : undefined;
+  const studyJumps = isGroupedLesson ? {} : findStudyJumps(activeLesson);
+  const nextLessonInTrack = (() => {
+    const track = lessonTrack(activeLessonId);
+    if (!track) return undefined;
+    const family = lessons.filter((item) => lessonTrack(item.id) === track);
+    const at = family.findIndex((item) => item.id === activeLessonId);
+    if (at < 0 || at >= family.length - 1) return undefined;
+    return family[at + 1];
+  })();
   const sectionJumps = buildSectionJumps(activeLesson);
   const currentJumpIndex = (() => {
     if (!sectionJumps.length) return 0;
@@ -834,12 +986,32 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 📋 CBSE Guide
               </button>
             )}
+            {!isGrade8Lesson && !isGrade9Lesson && !isGroupedLesson && (
+              <button
+                type="button"
+                className="textbook-action-chip textbook-action-chip--syllabus"
+                onClick={() => setIsGrade7SyllabusOpen(true)}
+                title="Grade 7 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+              >
+                📜 पाठानुक्रमणिका (Syllabus)
+              </button>
+            )}
             {isGrade8Lesson && (
               <button
                 type="button"
                 className="textbook-action-chip textbook-action-chip--syllabus"
                 onClick={() => setIsGrade8SyllabusOpen(true)}
                 title="Grade 8 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
+              >
+                📜 पाठानुक्रमणिका (Syllabus)
+              </button>
+            )}
+            {isGrade9Lesson && (
+              <button
+                type="button"
+                className="textbook-action-chip textbook-action-chip--syllabus"
+                onClick={() => setIsGrade9SyllabusOpen(true)}
+                title="Grade 9 Complete Syllabus & Table of Contents (पाठानुक्रमणिका)"
               >
                 📜 पाठानुक्रमणिका (Syllabus)
               </button>
@@ -901,6 +1073,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 
         {/* Compact Controls Strip: Audio Play + Paragraph Nav */}
         {!isGroupedLesson ? (
+          <>
           <div className="textbook-controls-strip">
             <div className="textbook-controls-left">
               <button
@@ -949,6 +1122,34 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               </button>
             </div>
           </div>
+          {studyJumps.glossary || studyJumps.exercise ? (
+            <div className="textbook-study-jumps" aria-label="Jump to word meanings or exercises">
+              <span className="textbook-jump-label">Skip to:</span>
+              {studyJumps.glossary ? (
+                <button
+                  type="button"
+                  className={`textbook-study-jump${sentenceNumber - 1 === studyJumps.glossary.index ? ' active' : ''}`}
+                  onClick={() => jumpStudySection(studyJumps.glossary!.index)}
+                  title={studyJumps.glossary.heading}
+                >
+                  {studyJumps.glossary.label}
+                  <span className="textbook-study-jump-hint">{studyJumps.glossary.hint}</span>
+                </button>
+              ) : null}
+              {studyJumps.exercise ? (
+                <button
+                  type="button"
+                  className={`textbook-study-jump${sentenceNumber - 1 === studyJumps.exercise.index ? ' active' : ''}`}
+                  onClick={() => jumpStudySection(studyJumps.exercise!.index)}
+                  title={studyJumps.exercise.heading}
+                >
+                  {studyJumps.exercise.label}
+                  <span className="textbook-study-jump-hint">{studyJumps.exercise.hint}</span>
+                </button>
+              ) : null}
+            </div>
+          ) : null}
+          </>
         ) : (
           <div className="textbook-controls-strip">
             <div className="textbook-controls-left">
@@ -1899,6 +2100,55 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         </div>
       )}
 
+      {showEndGuide ? (
+        <aside className="textbook-end-guide" aria-label="Bodhi, what to read next">
+          <BodhiAvatar mood="celebrate" size="sm" isSpeaking={playAllPhase !== 'paused'} />
+          <div className="textbook-end-guide-copy">
+            <p className="textbook-end-guide-line">साधु। अयं पाठः समाप्तः।</p>
+            <p className="textbook-end-guide-en">This lesson is finished. What next?</p>
+            <div className="textbook-end-guide-actions">
+              {nextLessonInTrack ? (
+                <button
+                  type="button"
+                  className="textbook-end-guide-btn"
+                  onClick={() => onSelectLesson(nextLessonInTrack.id)}
+                  title={nextLessonInTrack.title}
+                >
+                  अग्रिमः पाठः
+                  <span>{nextLessonInTrack.title}</span>
+                </button>
+              ) : null}
+              {studyJumps.glossary ? (
+                <button
+                  type="button"
+                  className="textbook-end-guide-btn"
+                  onClick={() => jumpStudySection(studyJumps.glossary!.index)}
+                  title={studyJumps.glossary.heading}
+                >
+                  {studyJumps.glossary.label}
+                  <span>{studyJumps.glossary.hint}</span>
+                </button>
+              ) : null}
+              {studyJumps.exercise ? (
+                <button
+                  type="button"
+                  className="textbook-end-guide-btn"
+                  onClick={() => jumpStudySection(studyJumps.exercise!.index)}
+                  title={studyJumps.exercise.heading}
+                >
+                  {studyJumps.exercise.label}
+                  <span>{studyJumps.exercise.hint}</span>
+                </button>
+              ) : null}
+              <button type="button" className="textbook-end-guide-btn" onClick={replayLessonFromStart}>
+                पुनः शृणु
+                <span>Replay</span>
+              </button>
+            </div>
+          </div>
+        </aside>
+      ) : null}
+
       {isSymbolsOpen && (
         <div
           className="symbols-modal-overlay"
@@ -2087,10 +2337,48 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
       )}
 
       <Grade8SyllabusModal
+        isOpen={isGrade7SyllabusOpen}
+        onClose={() => setIsGrade7SyllabusOpen(false)}
+        onSelectLesson={(id) => onSelectLesson(id)}
+        onOpenCbseGuide={onOpenCbseGuide}
+        syllabus={GRADE_7_SYLLABUS}
+        gradeBadge="सप्तमकक्षा-पाठ्यक्रमः · NCERT / CBSE Class 7"
+        intro="Index of the Class 7 Deepakam lessons in this reader: chapters, extra study, and the two grammar appendices."
+        coreLessonCount={12}
+        appendixCount={2}
+        pageSpan="1–15"
+        pageStatSuffix="Deepakam lessons"
+        searchPlaceholder="🔍 Search Class 7 chapter, theme, or grammar (e.g. वन्दे भारतमातरम्, लट्)..."
+        lessonIdPrefix="gsde"
+        knownLessonIds={lessons.map((item) => item.id)}
+        accessGated={false}
+        examTitle="CBSE Class 7 Sanskrit Exam Guide & Question Directives"
+        examBlurb="The same CBSE Sanskrit exam guide used with this reader: question words, section instructions, and how the paper grows from Class 7."
+      />
+      <Grade8SyllabusModal
         isOpen={isGrade8SyllabusOpen}
         onClose={() => setIsGrade8SyllabusOpen(false)}
         onSelectLesson={(id) => onSelectLesson(id)}
         onOpenCbseGuide={onOpenCbseGuide}
+      />
+      <Grade8SyllabusModal
+        isOpen={isGrade9SyllabusOpen}
+        onClose={() => setIsGrade9SyllabusOpen(false)}
+        onSelectLesson={(id) => onSelectLesson(id)}
+        onOpenCbseGuide={onOpenCbseGuide}
+        syllabus={GRADE_9_SYLLABUS}
+        gradeBadge="नवमकक्षा-पाठ्यक्रमः · NCERT / CBSE Class 9"
+        intro="Index of the Class 9 Sharda lessons in this reader, including the prayer, twelve chapters, and grammar appendices."
+        coreLessonCount={12}
+        appendixCount={4}
+        pageSpan="Page iii to 244"
+        searchPlaceholder="🔍 Search Class 9 chapter, page, or grammar (e.g. समास, वन्दे मातरम्)..."
+        lessonIdPrefix="grade9_"
+        knownLessonIds={lessons.map((item) => item.id)}
+        accessGated
+        accountNote="Class 9 lessons, worksheets, and quizzes are open to everyone with an account. Sign in or register for free to start learning!"
+        examTitle="CBSE Class 9 Sanskrit Exam Guide & Question Directives"
+        examBlurb="The same CBSE Sanskrit exam guide used with this reader: question words, section instructions, and board-pattern practice."
       />
       {nowPlayingLetter ? (
         <div className="varna-now-playing" role="status" aria-live="polite">

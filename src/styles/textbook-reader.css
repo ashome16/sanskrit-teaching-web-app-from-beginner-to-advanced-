@@ -1305,3 +1305,120 @@
 .textbook-grade8-upcoming-note p {
   margin: 0;
 }
+
+/* Sticky शब्दार्थ / अभ्यास jumps. Does not pause Play all. */
+.textbook-study-jumps {
+  position: sticky;
+  top: 0.35rem;
+  z-index: 8;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.45rem;
+  padding: 0.35rem 0.55rem;
+  background: rgba(255, 253, 248, 0.96);
+  border: 1px solid #ead9b8;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(39, 59, 53, 0.06);
+}
+
+.textbook-study-jump {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  border-radius: 999px;
+  color: #9a3412;
+  cursor: pointer;
+  font: 700 0.82rem "Noto Sans Devanagari", Georgia, serif;
+  padding: 0.28rem 0.7rem;
+}
+
+.textbook-study-jump-hint {
+  color: #9a3412;
+  font: 600 0.68rem Georgia, serif;
+  opacity: 0.8;
+}
+
+.textbook-study-jump:hover,
+.textbook-study-jump.active {
+  background: #9a3412;
+  border-color: #9a3412;
+  color: #fffdf8;
+}
+
+.textbook-study-jump:hover .textbook-study-jump-hint,
+.textbook-study-jump.active .textbook-study-jump-hint {
+  color: #ffedd5;
+}
+
+.textbook-end-guide {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  margin: 1rem 0 0.5rem;
+  padding: 0.85rem 1rem;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #f59e0b;
+  border-radius: 12px;
+}
+
+.textbook-end-guide-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.textbook-end-guide-line {
+  margin: 0;
+  color: #7c2d12;
+  font: 700 1.05rem/1.45 "Noto Sans Devanagari", Georgia, serif;
+}
+
+.textbook-end-guide-en {
+  margin: 0.15rem 0 0.55rem;
+  color: #92400e;
+  font-size: 0.88rem;
+}
+
+.textbook-end-guide-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.textbook-end-guide-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.05rem;
+  max-width: 16rem;
+  background: #fffdf8;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  color: #9a3412;
+  cursor: pointer;
+  font: 700 0.82rem "Noto Sans Devanagari", Georgia, serif;
+  padding: 0.35rem 0.65rem;
+  text-align: left;
+}
+
+.textbook-end-guide-btn span {
+  color: #78716c;
+  font: 600 0.68rem Georgia, "Noto Sans Devanagari", serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 14rem;
+}
+
+.textbook-end-guide-btn:hover {
+  background: #9a3412;
+  border-color: #9a3412;
+  color: #fffdf8;
+}
+
+.textbook-end-guide-btn:hover span {
+  color: #ffedd5;
+}
