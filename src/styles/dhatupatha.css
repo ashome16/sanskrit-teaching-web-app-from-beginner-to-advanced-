@@ -48,6 +48,46 @@
   white-space: nowrap;
 }
 
+.dp-mode {
+  display: inline-flex;
+  align-self: flex-start;
+  border-radius: 999px;
+  border: 1.5px solid #e3d5b3;
+  background: #fffdf8;
+  overflow: hidden;
+}
+
+.dp-mode-btn {
+  min-height: 40px;
+  padding: 0.35rem 0.95rem;
+  border: 0;
+  background: transparent;
+  color: #5b5348;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dp-mode-btn + .dp-mode-btn {
+  border-left: 1px solid #e3d5b3;
+}
+
+.dp-mode-btn:hover,
+.dp-mode-btn:focus-visible {
+  color: #0f766e;
+  outline: none;
+}
+
+.dp-mode-btn--active {
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.dp-mode-btn--active:hover,
+.dp-mode-btn--active:focus-visible {
+  color: #ffffff;
+}
+
 .dp-playback-bar {
   display: inline-flex;
   flex-wrap: wrap;
@@ -276,7 +316,8 @@
   font-weight: 700;
 }
 
-.dp-gana-count::before {
+.dp-gana-iast ~ .dp-gana-count::before,
+.dp-gana-en ~ .dp-gana-count::before {
   content: "·";
   margin-right: 0.65rem;
   color: #d6c7a4;

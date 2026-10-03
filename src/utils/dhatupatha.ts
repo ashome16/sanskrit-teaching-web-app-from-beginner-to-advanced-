@@ -136,6 +136,108 @@ export const GANA_HEADINGS: Record<number, { san: string; en: string }> = {
   10: { san: 'चुरादिगणः', en: 'The Causative "Aya" Class' },
 };
 
+
+/**
+ * Meaning-theme browse. Buckets are the suggested set; a root is placed in
+ * the single closest one by words already present in its English `meaning`.
+ * Nothing is added to the gloss. Glosses that match none land in Other.
+ * Check order is priority (first match wins), not the order shown on the page.
+ */
+export const MEANING_THEMES = [
+  { id: 'movement', label: 'Movement' },
+  { id: 'speech', label: 'Speech and senses' },
+  { id: 'daily', label: 'Daily life' },
+  { id: 'giving', label: 'Giving and taking' },
+  { id: 'protection', label: 'Protection and worship' },
+  { id: 'feeling', label: 'Feeling' },
+  { id: 'existence', label: 'Existence and growth' },
+  { id: 'conflict', label: 'Conflict and release' },
+  { id: 'other', label: 'Other' },
+] as const;
+
+export type MeaningThemeId = (typeof MEANING_THEMES)[number]['id'];
+
+const THEME_RULES: { id: MeaningThemeId; words: readonly string[] }[] = [
+  {
+    id: 'protection',
+    words: ['worship', 'honor', 'honour', 'sacrifice', 'protect', 'guard', 'austerity', 'soma', 'serve', 'offer'],
+  },
+  {
+    id: 'giving',
+    words: ['give', 'take', 'obtain', 'attain', 'seize', 'grasp', 'buy', 'steal', 'beg', 'request', 'find'],
+  },
+  {
+    id: 'conflict',
+    words: [
+      'conquer', 'win', 'fight', 'kill', 'strike', 'release', 'free', 'abandon', 'cut', 'split', 'break',
+      'tear', 'injure', 'injured', 'harm', 'hurt', 'oppress', 'hinder', 'obstruct', 'block', 'punish',
+      'bind', 'tie', 'hunt', 'empty',
+    ],
+  },
+  {
+    id: 'feeling',
+    words: [
+      'angry', 'fear', 'wish', 'desire', 'envy', 'covet', 'love', 'hate', 'rejoice', 'glad', 'delight',
+      'pleased', 'pleasing', 'satisfied', 'ashamed', 'forgive', 'endure', 'suffer', 'afflicted',
+      'confused', 'bold', 'dare', 'weep', 'laugh',
+    ],
+  },
+  {
+    id: 'speech',
+    words: [
+      'speak', 'say', 'hear', 'see', 'read', 'study', 'write', 'tell', 'narrate', 'sing', 'smell', 'touch',
+      'know', 'remember', 'think', 'understand', 'reason', 'infer', 'guess', 'perceive', 'notice', 'sound',
+      'resound', 'roar', 'proclaim', 'announce', 'chatter', 'prattle', 'coo', 'warble', 'thunder', 'praise',
+      'counsel', 'consult', 'describe', 'indicate', 'point', 'show', 'direct', 'name', 'call', 'blame',
+      'criticize', 'meditate', 'contemplate',
+    ],
+  },
+  {
+    id: 'daily',
+    words: [
+      'eat', 'drink', 'cook', 'dwell', 'sleep', 'wash', 'wear', 'clothe', 'milk', 'grind', 'lick',
+      'swallow', 'play', 'dance', 'purify', 'sprinkle', 'pour', 'toil', 'hungry', 'kiss', 'do', 'make',
+    ],
+  },
+  {
+    id: 'existence',
+    words: [
+      'become', 'exist', 'born', 'die', 'live', 'grow', 'increase', 'prosper', 'thrive', 'nourish',
+      'perish', 'decay', 'wither', 'create', 'happen', 'awake', 'breathe',
+    ],
+  },
+  {
+    id: 'movement',
+    words: [
+      'go', 'walk', 'run', 'move', 'fall', 'fly', 'stand', 'sit', 'enter', 'creep', 'crawl', 'step',
+      'stride', 'flow', 'cross', 'wander', 'roam', 'float', 'swim', 'travel', 'hasten', 'hurry', 'flee',
+      'throw', 'lead', 'carry', 'bow', 'bend', 'tremble', 'shake', 'throb', 'quiver', 'stir', 'place', 'put',
+    ],
+  },
+];
+
+function glossHas(meaning: string, word: string): boolean {
+  return new RegExp(`\\b${word}\\b`, 'i').test(meaning);
+}
+
+/** One theme per root, from the English gloss only. */
+export function meaningThemeFor(meaning: string): MeaningThemeId {
+  const text = meaning.trim();
+  // "to rule, …" does not name a theme; its other glosses split across speech and conflict.
+  if (/^to rule\b/i.test(text)) return 'other';
+  for (const rule of THEME_RULES) {
+    if (rule.words.some((word) => glossHas(text, word))) return rule.id;
+  }
+  // Copula "to be" / "to become" is existence. "to be angry" and the like are not.
+  if (
+    /\bto be\b/i.test(text) &&
+    !/\bto be (able|hungry|white|bright|fit|accomplished|lost|hurt|injured|angry|afraid|pleased|confused|glad|awake|ashamed)\b/i.test(text)
+  ) {
+    return 'existence';
+  }
+  return 'other';
+}
+
 export const PADAM_LABELS: Record<DhatuPadam, string> = {
   parasmaipada: 'परस्मैपद · Parasmaipada',
   atmanepada: 'आत्मनेपद · Ātmanepada',

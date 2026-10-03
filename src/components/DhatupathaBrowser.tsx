@@ -3,8 +3,10 @@ import type { DhatuEntry, DhatuPadam } from '../types/linguistics';
 import {
   GANA_HEADINGS,
   GANA_LABELS,
+  MEANING_THEMES,
   PADAM_LABELS,
   loadDhatupatha,
+  meaningThemeFor,
   searchDhatupatha,
 } from '../utils/dhatupatha';
 import { playPronunciation, playSequence } from '../utils/pronunciation';
@@ -16,6 +18,17 @@ type DhatupathaBrowserProps = {
 };
 
 const GANA_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
+
+type BrowseMode = 'gana' | 'theme';
+
+type BrowseSection = {
+  key: string;
+  index?: number;
+  title: string;
+  iast?: string;
+  en?: string;
+  roots: DhatuEntry[];
+};
 
 /** Page-only speech pace. Normal is Web Speech rate 1. Session only, not Bodhi. */
 const DHATU_SPEEDS = [
@@ -47,6 +60,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState('');
+  const [browseMode, setBrowseMode] = useState<BrowseMode>('gana');
   const [ganaFilter, setGanaFilter] = useState<number | null>(null);
   const [padamFilter, setPadamFilter] = useState<DhatuPadam | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -105,17 +119,32 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
 
   const filtered = useMemo(() => {
     let list = searchDhatupatha(entries, query);
-    if (ganaFilter != null) {
+    if (browseMode === 'gana' && ganaFilter != null) {
       list = list.filter((e) => e.gana === ganaFilter || e.class === ganaFilter);
     }
     if (padamFilter != null) {
       list = list.filter((e) => e.padam === padamFilter);
     }
     return list;
-  }, [entries, query, ganaFilter, padamFilter]);
+  }, [entries, query, ganaFilter, padamFilter, browseMode]);
 
-  /** Visible roots in gaṇa order 1–10 (stable within a class) so sections and Play all match. */
-  const grouped = useMemo(() => {
+  /** Visible roots in the active browse order so sections and Play all match. */
+  const sections = useMemo((): BrowseSection[] => {
+    if (browseMode === 'theme') {
+      const buckets = new Map<string, DhatuEntry[]>();
+      for (const entry of filtered) {
+        const id = meaningThemeFor(entry.meaning ?? '');
+        const list = buckets.get(id) ?? [];
+        list.push(entry);
+        buckets.set(id, list);
+      }
+      return MEANING_THEMES.flatMap((theme) => {
+        const roots = buckets.get(theme.id);
+        if (!roots?.length) return [];
+        return [{ key: theme.id, title: theme.label, roots }];
+      });
+    }
+
     const buckets = new Map<number, DhatuEntry[]>();
     const other: DhatuEntry[] = [];
     for (const entry of filtered) {
@@ -128,21 +157,32 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
         other.push(entry);
       }
     }
-    const sections = GANA_ORDER.flatMap((n) => {
+    const headed: BrowseSection[] = GANA_ORDER.flatMap((n) => {
       const roots = buckets.get(n);
       if (!roots?.length) return [];
       const heading = GANA_HEADINGS[n];
       const iast = roots.find((e) => e.gana_name)?.gana_name ?? GANA_LABELS[n];
-      return [{ n, san: heading?.san ?? `Gaṇa ${n}`, iast, en: heading?.en, roots }];
+      return [{
+        key: `gana-${n}`,
+        index: n,
+        title: heading?.san ?? `Gaṇa ${n}`,
+        iast,
+        en: heading?.en,
+        roots,
+      }];
     });
-    return { sections, other, ordered: [...sections.flatMap((s) => s.roots), ...other] };
-  }, [filtered]);
+    if (other.length) {
+      headed.push({ key: 'gana-other', title: 'Other', roots: other });
+    }
+    return headed;
+  }, [filtered, browseMode]);
 
-  filteredRef.current = grouped.ordered;
+  const ordered = useMemo(() => sections.flatMap((section) => section.roots), [sections]);
+  filteredRef.current = ordered;
 
   const hasPadam = useMemo(() => entries.some((e) => e.padam), [entries]);
 
-  // A new search or gaṇa shows a different list — drop the old queue.
+  // A new search, filter, or browse mode shows a different list — drop the old queue.
   useEffect(() => {
     stopPlayAllRef.current?.();
     stopPlayAllRef.current = null;
@@ -150,7 +190,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
     resumeIndexRef.current = 0;
     setPlayingAll(false);
     setSpeakingKey(null);
-  }, [query, ganaFilter, padamFilter]);
+  }, [query, ganaFilter, padamFilter, browseMode]);
 
   // While Play all runs, pin speed + Pause under the site header (or the
   // screen top once the header has scrolled away). Fixed, not sticky: the
@@ -354,6 +394,24 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
   return (
     <div className="dp-browser" aria-label="Dhātupāṭha root browser">
       <div className="dp-toolbar">
+        <div className="dp-mode" role="group" aria-label="Browse roots by">
+          <button
+            type="button"
+            className={`dp-mode-btn${browseMode === 'gana' ? ' dp-mode-btn--active' : ''}`}
+            aria-pressed={browseMode === 'gana'}
+            onClick={() => setBrowseMode('gana')}
+          >
+            By gaṇa
+          </button>
+          <button
+            type="button"
+            className={`dp-mode-btn${browseMode === 'theme' ? ' dp-mode-btn--active' : ''}`}
+            aria-pressed={browseMode === 'theme'}
+            onClick={() => setBrowseMode('theme')}
+          >
+            By meaning
+          </button>
+        </div>
         <div className="dp-search-row">
           <input
             type="search"
@@ -424,6 +482,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
             ))}
           </div>
         )}
+        {browseMode === 'gana' && (
         <div className="dp-chips" role="group" aria-label="Filter by gaṇa">
           <button
             type="button"
@@ -444,6 +503,7 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
             </button>
           ))}
         </div>
+        )}
       </div>
 
       {error && (
@@ -453,19 +513,22 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
       )}
 
       {!loading && !error && filtered.length === 0 && (
-        <p className="dp-empty">No roots match this search. Try another spelling or clear the gaṇa and pada filters.</p>
+        <p className="dp-empty">
+          No roots match this search. Try another spelling or clear the{' '}
+          {browseMode === 'gana' ? 'gaṇa and pada filters' : 'pada filter'}.
+        </p>
       )}
 
       <div className="dp-ganas">
-        {grouped.sections.map((section) => (
-          <section key={section.n} className="dp-gana" aria-labelledby={`dp-gana-${section.n}`}>
+        {sections.map((section) => (
+          <section key={section.key} className="dp-gana" aria-labelledby={`dp-section-${section.key}`}>
             <header className="dp-gana-head">
-              <h2 id={`dp-gana-${section.n}`} className="dp-gana-title">
-                <span className="dp-gana-index">{section.n}</span>
-                <span className="dp-gana-san">{section.san}</span>
+              <h2 id={`dp-section-${section.key}`} className="dp-gana-title">
+                {section.index != null && <span className="dp-gana-index">{section.index}</span>}
+                <span className="dp-gana-san">{section.title}</span>
               </h2>
               <p className="dp-gana-label">
-                <span className="dp-gana-iast">{section.iast}</span>
+                {section.iast ? <span className="dp-gana-iast">{section.iast}</span> : null}
                 {section.en ? <span className="dp-gana-en">{section.en}</span> : null}
                 <span className="dp-gana-count">
                   {section.roots.length} {section.roots.length === 1 ? 'root' : 'roots'}
@@ -477,13 +540,6 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack }) => {
             </div>
           </section>
         ))}
-        {grouped.other.length > 0 && (
-          <section className="dp-gana" aria-label="Roots without a gaṇa">
-            <div className="dp-list">
-              {grouped.other.map((entry) => renderCard(entry))}
-            </div>
-          </section>
-        )}
       </div>
 
       {onGoBack && (
