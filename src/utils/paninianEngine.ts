@@ -10,6 +10,7 @@
 
 import type { DhatuEntry } from '../types/linguistics';
 import { PERSON_LABELS, NUMBER_LABELS } from './latForms';
+import { personNumberEnglish } from './personGloss';
 
 export { PERSON_LABELS, NUMBER_LABELS };
 
@@ -634,15 +635,13 @@ export function deriveConjugationTable(
 
     return raw.map((row, pIdx) =>
       row.map((fullVal, nIdx) => {
-        const pLabel = PERSON_LABELS[pIdx].en;
-        const nLabel = NUMBER_LABELS[nIdx].en;
         const personHindi = pIdx === 0 ? 'वह / वे' : pIdx === 1 ? 'तुम' : 'मैं / हम';
 
         return {
           full: fullVal,
           rootPart: rootName,
           suffixPart: fullVal.replace(new RegExp(`^${rootName}`), '') || fullVal,
-          meaningEn: `${pLabel} ${nLabel}: (${meaning})`,
+          meaningEn: personNumberEnglish(entry, pIdx, nIdx),
           meaningHi: `${personHindi} (${entry.meaning_hi || meaning})`,
         };
       })
@@ -666,7 +665,7 @@ export function deriveConjugationTable(
         full,
         rootPart: entry.devanagari,
         suffixPart: end,
-        meaningEn: `${PERSON_LABELS[pIdx].en} ${NUMBER_LABELS[nIdx].en}`,
+        meaningEn: personNumberEnglish(entry, pIdx, nIdx),
         meaningHi: `${PERSON_LABELS[pIdx].short} ${NUMBER_LABELS[nIdx].short}`,
       };
     })

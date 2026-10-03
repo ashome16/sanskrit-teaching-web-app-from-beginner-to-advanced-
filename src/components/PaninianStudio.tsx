@@ -479,6 +479,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                                 🔊
                               </button>
                             </div>
+                            <div className="dp-cell-meaning dp-cell-meaning-en">{cell.meaningEn}</div>
                             <div className="dp-cell-meaning">{cell.meaningHi}</div>
                             <div className="dp-cell-formula">
                               <span className="dp-f-root">{cell.rootPart}</span>

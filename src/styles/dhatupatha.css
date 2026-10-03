@@ -639,6 +639,14 @@
   line-height: 1.2;
 }
 
+.dp-lat-gloss {
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #44403c;
+  max-width: 9.5rem;
+}
+
 .dp-lat-speak {
   font-size: 0.75rem;
   opacity: 0.55;
@@ -1247,6 +1255,12 @@
   font-size: 0.78rem;
   color: #64748b;
   margin: 0.2rem 0;
+}
+
+.dp-cell-meaning-en {
+  color: #1c1917;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .dp-cell-formula {

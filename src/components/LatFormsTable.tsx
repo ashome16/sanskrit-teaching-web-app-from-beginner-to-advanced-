@@ -6,6 +6,7 @@ import {
   PERSON_LABELS,
   type LatTable,
 } from '../utils/latForms';
+import { personNumberEnglish } from '../utils/personGloss';
 import { playPronunciation } from '../utils/pronunciation';
 
 type LatFormsTableProps = {
@@ -92,22 +93,26 @@ const LatFormsTable: React.FC<LatFormsTableProps> = ({ entry }) => {
                   <span className="dp-lat-th-sa">{person.sa}</span>
                   <span className="dp-lat-th-en">{person.en}</span>
                 </th>
-                {active.forms[ri].map((form, ci) => (
-                  <td key={`${ri}-${ci}`}>
-                    <button
-                      type="button"
-                      className="dp-lat-cell"
-                      title={`Pronounce ${form}`}
-                      aria-label={`${person.en} ${NUMBER_LABELS[ci].en}: ${form}`}
-                      onClick={() => playPronunciation(form)}
-                    >
-                      <span className="dp-lat-form">{form}</span>
-                      <span className="dp-lat-speak" aria-hidden="true">
-                        🔊
-                      </span>
-                    </button>
-                  </td>
-                ))}
+                {active.forms[ri].map((form, ci) => {
+                  const gloss = personNumberEnglish(entry, ri, ci);
+                  return (
+                    <td key={`${ri}-${ci}`}>
+                      <button
+                        type="button"
+                        className="dp-lat-cell"
+                        title={`Pronounce ${form}`}
+                        aria-label={`${form}: ${gloss}`}
+                        onClick={() => playPronunciation(form)}
+                      >
+                        <span className="dp-lat-form">{form}</span>
+                        <span className="dp-lat-gloss">{gloss}</span>
+                        <span className="dp-lat-speak" aria-hidden="true">
+                          🔊
+                        </span>
+                      </button>
+                    </td>
+                  );
+                })}
               </tr>
             ))}
           </tbody>
