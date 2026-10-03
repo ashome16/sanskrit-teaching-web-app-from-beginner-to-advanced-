@@ -1,8 +1,9 @@
 /**
  * Person-number English beside each generated tiṅanta.
- * 100 roots use the latest Laṭ sheet (same verb phrase on every person,
- * lakāra, and pada). Roots absent from that sheet keep the stored library
- * gloss, or the pronoun alone when the library has no English.
+ * 100 roots use the Laṭ sheet's meaning words, conjugated for person
+ * (He/She/It goes; They two go; I am, become). Same line on every lakāra
+ * and pada. Other library roots use the same pattern on their stored gloss.
+ * No gloss → pronoun only. No roots are added.
  */
 import type { DhatuEntry } from '../types/linguistics';
 
@@ -124,20 +125,64 @@ const SHEET_VERB: Record<string, string> = {
   sprh: 'desire, envy',
 };
 
+type Agreement = 'thirdSg' | 'firstSg' | 'base';
+
+function agreementOf(personIndex: number, numberIndex: number): Agreement {
+  if (personIndex === 0 && numberIndex === 0) return 'thirdSg';
+  if (personIndex === 2 && numberIndex === 0) return 'firstSg';
+  return 'base';
+}
+
+/** 3rd-singular -s, plus be/have/do/can. */
+function thirdSingularWord(word: string): string {
+  const lower = word.toLowerCase();
+  if (lower === 'be') return 'is';
+  if (lower === 'have') return 'has';
+  if (lower === 'do') return 'does';
+  if (lower === 'can') return word;
+  if (/(?:s|x|z|ch|sh|o)$/i.test(word)) return `${word}es`;
+  if (/[^aeiou]y$/i.test(word)) return `${word.slice(0, -1)}ies`;
+  return `${word}s`;
+}
+
+/** One comma-separated sense: "be angry", "study", "sacrifice (infire)". */
+function conjugateSense(sense: string, agreement: Agreement): string {
+  const bare = sense.trim().replace(/^to\s+/i, '');
+  const match = bare.match(/^(\S+)([\s\S]*)$/);
+  if (!match) return bare;
+  const head = match[1];
+  const rest = match[2];
+  if (head.toLowerCase() === 'be') {
+    const copula = agreement === 'thirdSg' ? 'is' : agreement === 'firstSg' ? 'am' : 'are';
+    return `${copula}${rest}`;
+  }
+  if (head.toLowerCase() === 'can' || agreement !== 'thirdSg') return bare;
+  return `${thirdSingularWord(head)}${rest}`;
+}
+
+function conjugatePhrase(phrase: string, agreement: Agreement): string {
+  return phrase
+    .split(',')
+    .map((sense) => conjugateSense(sense, agreement))
+    .filter((sense) => sense.length > 0)
+    .join(', ');
+}
+
 export function personNumberEnglish(
   entry: Pick<DhatuEntry, 'id' | 'meaning'>,
   personIndex: number,
   numberIndex: number,
 ): string {
-  const verb = SHEET_VERB[(entry.id || '').toLowerCase()];
-  if (verb) {
+  const agreement = agreementOf(personIndex, numberIndex);
+  const sheet = SHEET_VERB[(entry.id || '').toLowerCase()];
+  if (sheet) {
     const pronoun =
       SHEET_PRONOUNS[personIndex]?.[numberIndex] ?? SHEET_PRONOUNS[0][0];
-    return `${pronoun} ${verb}`;
+    return `${pronoun} ${conjugatePhrase(sheet, agreement)}`;
   }
   const pronoun =
     PERSON_PRONOUNS[personIndex]?.[numberIndex] ?? PERSON_PRONOUNS[0][0];
   const gloss = (entry.meaning || '').trim();
   if (!gloss) return pronoun;
-  return `${pronoun} (${gloss})`;
+  return `${pronoun} ${conjugatePhrase(gloss, agreement)}`;
 }
