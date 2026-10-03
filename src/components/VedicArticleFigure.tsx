@@ -743,6 +743,24 @@ const TIME_UNITS: { id: string; label: string; seconds: number; source: string }
     source:
       'Not the Manu chain. A tithi is 12° of sun–moon separation (thirty tithis to a lunar month: Sūrya Siddhānta 1.12–13 and 1.28). A real tithi varies, about 19–26 hours. This box uses the mean only: 1/30 of the modern mean synodic month, 29.530588853 days.',
   },
+  {
+    id: 'prana',
+    label: 'prāṇa (respiration · Sūrya Siddhānta 1.11)',
+    seconds: 4,
+    source: 'Sūrya Siddhānta 1.11: 6 prāṇa = 1 vighaṭī. 21,600 prāṇa = 1 ahorātra (24 hours). 1 prāṇa = 4 seconds.',
+  },
+  {
+    id: 'vighati',
+    label: 'vighaṭī / vighaḍiyā (24 seconds)',
+    seconds: 24,
+    source: 'Sūrya Siddhānta 1.11: 60 vighaṭī = 1 ghaṭī. 3,600 vighaṭī = 1 ahorātra. 1 vighaṭī = 24 seconds.',
+  },
+  {
+    id: 'ghati',
+    label: 'ghaṭī / ghaḍiyā (nāḍī · 24 minutes)',
+    seconds: 1440,
+    source: 'Sūrya Siddhānta 1.11: 60 ghaṭī = 1 ahorātra (24 hours). 1 ghaṭī = 24 minutes.',
+  },
 ];
 
 function formatAmount(n: number): string {
@@ -998,6 +1016,196 @@ const VakyapadiyaSemanticNet = () => (
   </div>
 );
 
+const BhishmaAdhikaMasaFigure = () => {
+  const [exileYears, setExileYears] = useState<number>(13);
+
+  // Astronomical constants from Sūrya Siddhānta
+  const SOLAR_YEAR_DAYS = 365.25875;
+  const LUNAR_YEAR_DAYS = 354.3670;
+  const SYNODIC_MONTH_DAYS = 29.53059;
+
+  const totalSolarDays = exileYears * SOLAR_YEAR_DAYS;
+  const totalLunarDays = exileYears * LUNAR_YEAR_DAYS;
+  const totalDivergence = totalSolarDays - totalLunarDays;
+  const extraMonthsExact = totalDivergence / SYNODIC_MONTH_DAYS;
+  const fullMonths = Math.floor(extraMonthsExact);
+  const remainingDays = (extraMonthsExact - fullMonths) * SYNODIC_MONTH_DAYS;
+
+  return (
+    <div className="vaf-table-wrap" style={{ background: '#f8fafc', padding: '1.25rem', borderRadius: '12px', border: '1px solid #e2e8f0', color: '#1e293b' }}>
+      {/* Canonical Shloka Box */}
+      <div style={{ background: '#fffbeb', border: '1.5px solid #fde68a', borderRadius: '10px', padding: '1rem 1.25rem', marginBottom: '1.25rem' }}>
+        <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#b45309', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.35rem' }}>
+          Mahābhārata · Virāṭa Parva (४.५२.३–४) · Bhīṣma’s Adhika Māsa Formula
+        </div>
+        <div style={{ fontFamily: "'Noto Serif Devanagari', Georgia, serif", fontSize: '1.2rem', fontWeight: 700, color: '#78350f', lineHeight: 1.6 }}>
+          तेषां कालातिरेकेण ज्योतिषां च व्यतिक्रमात् ।<br />
+          पञ्चमे पञ्चमे वर्षे द्वौ मासावुपजायतः ॥
+        </div>
+        <div style={{ fontStyle: 'italic', color: '#92400e', fontSize: '0.85rem', marginTop: '0.35rem' }}>
+          teṣāṃ kālātirekeṇa jyotiṣāṃ ca vyatikramāt | pañcame pañcame varṣe dvau māsāvupajāyataḥ ||
+        </div>
+        <div style={{ fontSize: '0.86rem', color: '#451a03', marginTop: '0.5rem', lineHeight: 1.5 }}>
+          <strong>Translation:</strong> "Due to the fractional excesses of time (<em>kālātireka</em>) and the orbital variations of celestial bodies (<em>jyotiṣāṃ vyatikrama</em>), two extra intercalary months (<em>Adhika Māsa</em>) are created every five years."
+        </div>
+      </div>
+
+      {/* Interactive Exile Accumulator */}
+      <div style={{ background: '#ffffff', border: '1px solid #cbd5e1', borderRadius: '10px', padding: '1.25rem', marginBottom: '1.25rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+          <h4 style={{ margin: 0, fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>
+            ⚖️ Interactive Pāṇḍava Exile Calculator
+          </h4>
+          <span style={{ fontSize: '0.82rem', fontWeight: 700, color: '#0369a1', background: '#e0f2fe', padding: '0.2rem 0.6rem', borderRadius: '6px' }}>
+            {exileYears} Years of Exile
+          </span>
+        </div>
+        <p style={{ margin: '0 0 1rem', fontSize: '0.86rem', color: '#64748b', lineHeight: 1.5 }}>
+          Duryodhana claimed the Pāṇḍavas revealed themselves before the 13th year concluded. Adjust the slider to test Bhīṣma's astronomical calculation:
+        </p>
+
+        <div style={{ marginBottom: '1rem' }}>
+          <input
+            type="range"
+            min="1"
+            max="20"
+            step="1"
+            value={exileYears}
+            onChange={(e) => setExileYears(parseInt(e.target.value, 10))}
+            style={{ width: '100%', accentColor: '#b45309' }}
+          />
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.74rem', color: '#94a3b8' }}>
+            <span>1 Year</span>
+            <span>5-Year Yuga (2 extra months)</span>
+            <span>13 Years (Mahābhārata Term)</span>
+            <span>20 Years</span>
+          </div>
+        </div>
+
+        {/* Calculation Grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
+          <div style={{ background: '#f8fafc', padding: '0.75rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+            <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 700 }}>Solar Days (Saura)</div>
+            <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0f172a' }}>
+              {totalSolarDays.toFixed(1)} d
+            </div>
+            <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>{exileYears} × 365.2588 d</div>
+          </div>
+
+          <div style={{ background: '#f8fafc', padding: '0.75rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+            <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 700 }}>Lunar Days (Cāndra)</div>
+            <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0f172a' }}>
+              {totalLunarDays.toFixed(1)} d
+            </div>
+            <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>{exileYears} × 354.3670 d</div>
+          </div>
+
+          <div style={{ background: '#f8fafc', padding: '0.75rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+            <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 700 }}>Solar-Lunar Deficit</div>
+            <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#b45309' }}>
+              +{totalDivergence.toFixed(1)} d
+            </div>
+            <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>~10.892 d/year gap</div>
+          </div>
+
+          <div style={{ background: '#ecfdf5', padding: '0.75rem', borderRadius: '8px', border: '1px solid #a7f3d0' }}>
+            <div style={{ fontSize: '0.72rem', color: '#065f46', fontWeight: 700 }}>Extra Months (Adhika)</div>
+            <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#047857' }}>
+              {extraMonthsExact.toFixed(2)} m
+            </div>
+            <div style={{ fontSize: '0.7rem', color: '#059669' }}>
+              {fullMonths} Months + {remainingDays.toFixed(0)} Days
+            </div>
+          </div>
+        </div>
+
+        {/* Legal Verdict Callout */}
+        <div style={{ background: '#f0fdf4', borderLeft: '4px solid #10b981', padding: '0.75rem 1rem', borderRadius: '0 8px 8px 0', fontSize: '0.86rem', color: '#065f46', lineHeight: 1.5 }}>
+          <strong>⚖️ Bhīṣma’s Astronomical Verdict for {exileYears} Years:</strong> Over 13 solar years, the accumulated variance equals <strong>5 full months and 12 nights</strong> ({totalDivergence.toFixed(1)} civil days). The Pāṇḍavas had not merely fulfilled their 13 years—they had served an extra 5 months and 12 days beyond the covenant! Duryodhana was legally and mathematically refuted.
+        </div>
+      </div>
+
+      {/* Sexagesimal Time Matrix Table */}
+      <table className="vaf-table" style={{ marginTop: '1rem', width: '100%' }}>
+        <caption>Sūrya Siddhānta (1.11–12) Sexagesimal Hierarchy vs. Modern Units</caption>
+        <thead>
+          <tr>
+            <th scope="col">Vedic Unit</th>
+            <th scope="col">Sanskrit Name</th>
+            <th scope="col">Sexagesimal Factor</th>
+            <th scope="col">Modern Equivalent</th>
+            <th scope="col">Cosmic / Biological Basis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Prāṇa (प्राण)</th>
+            <td>प्राणः (Respiration)</td>
+            <td>1 / 21,600 Ahorātra</td>
+            <td><strong>4 seconds</strong></td>
+            <td>Time of 1 healthy human breath at rest</td>
+          </tr>
+          <tr>
+            <th scope="row">Vighaṭī (विघटी)</th>
+            <td>विघटी / विनाडी / पलं</td>
+            <td>6 Prāṇas (1/3,600 day)</td>
+            <td><strong>24 seconds</strong></td>
+            <td>1/60th of a Ghaṭī (also called Pala)</td>
+          </tr>
+          <tr>
+            <th scope="row">Ghaṭī (घटी)</th>
+            <td>घटी / नाडी / दण्डः</td>
+            <td>60 Vighaṭīs (1/60 day)</td>
+            <td><strong>24 minutes</strong></td>
+            <td>Time for a floating copper bowl (Ghaṭī-yantra) to fill &amp; sink</td>
+          </tr>
+          <tr>
+            <th scope="row">Muhūrta (मुहूर्त)</th>
+            <td>मुहूर्तः</td>
+            <td>2 Ghaṭīs (1/30 day)</td>
+            <td><strong>48 minutes</strong></td>
+            <td>Canonical ritual division of the day</td>
+          </tr>
+          <tr>
+            <th scope="row">Ahorātra (अहोरात्र)</th>
+            <td>अहोरात्रम् (Day + Night)</td>
+            <td>60 Ghaṭīs = 3,600 Vighaṭīs</td>
+            <td><strong>24 hours (86,400 s)</strong></td>
+            <td>1 full sidereal/civil diurnal cycle</td>
+          </tr>
+        </tbody>
+      </table>
+
+      {/* Adhika Māsa Constant & Saṅkrānti Rule */}
+      <div style={{ marginTop: '1.25rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+        <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+          <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#b45309', textTransform: 'uppercase', marginBottom: '0.3rem' }}>
+            The Adhika Māsa Recurrence Constant
+          </div>
+          <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#92400e' }}>
+            32 Months, 16 Days, 4 Ghaṭīs, 48 Vighaṭīs
+          </div>
+          <p style={{ margin: '0.4rem 0 0', fontSize: '0.82rem', color: '#64748b', lineHeight: 1.5 }}>
+            Derived by dividing 1 synodic lunar month (29.53059 d) by the annual solar-lunar divergence (10.89175 d) = <strong>2.711 Solar Years</strong>. Yields exactly 7 intercalary months across 19 solar years (the Metonic harmony).
+          </p>
+        </div>
+
+        <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+          <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0369a1', textTransform: 'uppercase', marginBottom: '0.3rem' }}>
+            The Saṅkrānti Zero-Crossing Rule (ΔSaṅkrānti = 0)
+          </div>
+          <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0284c7' }}>
+            Zero Solar Ingresses = Adhika Māsa
+          </div>
+          <p style={{ margin: '0.4rem 0 0', fontSize: '0.82rem', color: '#64748b', lineHeight: 1.5 }}>
+            Because the Moon travels faster than the Sun, a lunar month will occasionally start and finish entirely within one zodiac sign. When <strong>ΔSaṅkrānti = 0</strong>, that month is mathematically identified as the intercalary Adhika Māsa.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId }) {
   switch (id) {
     case 'algebra-lineage':
@@ -1042,6 +1250,8 @@ export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId })
       return <NamedPowersThree />;
     case 'vakyapadiya-semantic-net':
       return <VakyapadiyaSemanticNet />;
+    case 'bhishma-adhika-masa':
+      return <BhishmaAdhikaMasaFigure />;
     default:
       return null;
   }

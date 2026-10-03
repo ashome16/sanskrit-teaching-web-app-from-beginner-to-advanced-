@@ -86,7 +86,8 @@ export type VedicArticleFigureId =
   | 'manu-time-chain'
   | 'panchanga-compared'
   | 'named-powers-three'
-  | 'vakyapadiya-semantic-net';
+  | 'vakyapadiya-semantic-net'
+  | 'bhishma-adhika-masa';
 
 export interface VedicArticleSection {
   title: string;
@@ -900,6 +901,43 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
         ],
       },
       {
+        title: 'Bhīṣma’s Astronomical Verdict: Adhika Māsa in the Mahābhārata',
+        sanskritTitle: 'भीष्मस्य निर्णयः · महाभारतस्य विराटपर्वणि कालमापनम्',
+        paragraphs: [
+          'The oldest and most dramatic textual reference to the Adhika Māsa (the intercalary lunar month) occurs during a pivotal constitutional crisis in the Mahābhārata (Virāṭa Parva, Chapter 52).',
+          'At the conclusion of the Pāṇḍavas\' 13-year term of exile—twelve years in the forest followed by a thirteenth year spent incognito (Ajñātavāsa) in King Virāṭa\'s court—the Pāṇḍavas reveal themselves during the Cattle Raid of Virāṭa. Duryodhana immediately protests that Arjuna has broken his oath by emerging prematurely, arguing that the Pāṇḍavas must be banished to the forest for another twelve years.',
+          'To resolve the dispute with absolute legal finality, the patriarch Bhīṣma Pitāmaha steps forward. As a master of Jyotiṣa (Vedic astronomy), Bhīṣma calculates the accumulated fractional variance between the solar and lunar calendar systems, delivering his canonical verdict (Virāṭa Parva 52.3–4):',
+          'तेषां कालातिरेकेण ज्योतिषां च व्यतिक्रमात् ।\nपञ्चमे पञ्चमे वर्षे द्वौ मासावुपजायतः ॥\n(Teṣāṃ kālātirekeṇa jyotiṣāṃ ca vyatikramāt | Pañcame pañcame varṣe dvau māsāvupajāyataḥ ||)',
+          'Translation: "Due to the fractional excesses of time (kālātirekeṇa) and the cyclical variations of celestial bodies (jyotiṣāṃ vyatikramāt), two extra intercalary months (dvau māsau) are generated every five years."',
+          'Bhīṣma then calculates that over the 13-year span of their exile, this solar-lunar divergence generated an excess of exactly 5 months and 12 nights (five months and twelve days). Far from breaking their covenant prematurely, the Pāṇḍavas had overfulfilled their exile with days to spare. Duryodhana’s legal objection was mathematically dismantled and the Pāṇḍavas were declared free.'
+        ],
+        highlight: '॥ पञ्चमे पञ्चमे वर्षे द्वौ मासावुपजायतः ॥ — Bhīṣma’s verdict in the Mahābhārata is the oldest recorded legal trial in human history decided entirely by sexagesimal astronomical calculation.',
+        terms: [
+          { sa: 'कालातिरेकः', iast: 'kālātirekaḥ', gloss: 'fractional excess / accumulation of celestial time' },
+          { sa: 'व्यतिक्रमः', iast: 'vyatikramaḥ', gloss: 'orbital divergence / variance of celestial bodies' },
+          { sa: 'अज्ञातवासः', iast: 'ajñātavāsaḥ', gloss: 'the 13th year of incognito exile' }
+        ]
+      },
+      {
+        title: 'Sexagesimal Architecture of Time: Ghaṭī, Vighaṭī & The Sūrya Siddhānta Threshold',
+        sanskritTitle: 'घटी-विघटी-प्राण-व्यवस्था · सूर्यसिद्धान्तस्य कालमानम्',
+        paragraphs: [
+          'To understand the mathematical precision behind Bhīṣma Pitāmaha’s calculations, one must examine the foundational sexagesimal (base-60) astronomy of the Sūrya Siddhānta (Chapter 1, Verses 11–12). Indian astronomy built time from biological respiration (Prāṇa):',
+          '• 1 Sidereal Day (Ahorātra) = 60 Ghaṭīs (or Nāḍīs) = 3,600 Vighaṭīs = 21,600 Prāṇas = 24 Hours (86,400 seconds).\n• 1 Ghaṭī (Ghaḍiyā) = 24 Minutes (1/60th of a day).\n• 1 Vighaṭī (Vighaḍiyā) = 24 Seconds (1/3,600th of a day, or 6 Prāṇas).\n• 1 Prāṇa = 4 Seconds (the duration of one human respiration).',
+          'The Sūrya Siddhānta calculates the discrepancy between two distinct definitions of the year:\n1. Saura Māna (Solar Year): The time taken for the Sun to cross all 12 signs of the Zodiac = 365 days, 15 Ghaṭīs, 31 Vighaṭīs, 31.4 Prāṇas (≈ 365.25875 days).\n2. Cāndra Māna (Lunar Year): 12 full synodic lunar cycles = 354 days, 22 Ghaṭīs, 1 Vighaṭī, 23.4 Prāṇas (≈ 354.3670 days).\n3. Annual Solar-Lunar Deficit: Subtracting the two yields an accumulated error of 10 days, 53 Ghaṭīs, 30 Vighaṭīs (≈ 10.89175 days per year).',
+          'The Exact Adhika Māsa Threshold Constant:\nBecause one standard synodic lunar month lasts 29 days, 31 Ghaṭīs, 50 Vighaṭīs, and 7 Prāṇas (≈ 29.53059 days), dividing the lunar month by the annual divergence (29.53059 / 10.89175 ≈ 2.711 solar years) reveals that an Adhika Māsa must be inserted precisely every:\n32 Months, 16 Days, 4 Ghaṭīs, and 48 Vighaṭīs.',
+          'The Mathematical Rule of Saṅkrānti (ΔSaṅkrānti = 0):\nHow does an astronomer identify which month becomes the intercalary buffer? A normal lunar month must contain exactly one Solar Saṅkrānti (solar ingress into a new zodiac sign). Because the Moon travels faster than the Sun, a lunar month will occasionally begin and conclude entirely within a single zodiac sign without any solar ingress occurring. Whenever a lunar month experiences zero Solar Saṅkrāntis (ΔSaṅkrānti = 0), it is mathematically designated as Adhika Māsa (e.g. Adhika Jyeṣṭha), perfectly buffering the seasons.'
+        ],
+        figure: 'bhishma-adhika-masa',
+        terms: [
+          { sa: 'घटी', iast: 'ghaṭī', gloss: '24 minutes (1/60th of a mean solar day)' },
+          { sa: 'विघटी', iast: 'vighaṭī', gloss: '24 seconds (1/60th of a ghaṭī)' },
+          { sa: 'प्राण', iast: 'prāṇa', gloss: '4 seconds (1 human respiration)' },
+          { sa: 'संक्रान्ति', iast: 'saṅkrānti', gloss: 'solar ingress into a new zodiac sign' }
+        ],
+        highlight: 'Adhika Māsa Recurrence Constant: Exactly 32 Months, 16 Days, 4 Ghaṭīs, and 48 Vighaṭīs.'
+      },
+      {
         title: 'Sidereal Precision vs. Civil Convention',
         paragraphs: [
           'The Gregorian calendar is a tropical calendar: it measures the return of the sun to the vernal equinox (~365.2422 days), ignoring the backdrop of the stars. In contrast, traditional Indian calendars follow the Nirayaṇa (sidereal) system: measuring the return of the sun to the exact same fixed star in the Nakṣatra belt (~365.25636 days).',
@@ -919,8 +957,13 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'The Indian calendar did not wait for papal decrees or administrative patches: by uniting the 366-day solar baseline of the Vedāṅga Jyotiṣa with self-correcting Adhika Māsas, it stayed in perpetual sync with the heavens.',
     keyTakeaways: [
       'The Indian calendar is inherently accurate and self-correcting via Adhika Māsa (intercalary lunar months); it never required a "fix" from the Gregorian calendar.',
+      'Bhīṣma Pitāmaha in the Mahābhārata (Virāṭa Parva 52.3–4) used the Adhika Māsa formula (2 extra months every 5 years) to mathematically prove the Pāṇḍavas completed their 13-year exile with 5 months and 12 days to spare.',
+      'Sūrya Siddhānta base-60 sexagesimal time derives from human respiration: 1 Ahorātra = 60 Ghaṭīs = 3,600 Vighaṭīs = 21,600 Prāṇas.',
+      'The annual solar-lunar divergence is 10 days, 53 Ghaṭīs, 30 Vighaṭīs (~10.89175 days).',
+      'An Adhika Māsa occurs precisely every 32 Months, 16 Days, 4 Ghaṭīs, and 48 Vighaṭīs, harmonizing with the 19-year Metonic cycle.',
+      'A lunar month experiencing zero solar ingresses (ΔSaṅkrānti = 0) is mathematically designated as Adhika Māsa.',
       'The 1582 Gregorian reform was an emergency correction for the Roman Julian calendar, which had drifted by 10 days due to an inaccurate 365.25-day year.',
-      'Sage Lagadha in the Vedāṅga Jyotiṣa (c. 1400–1200 BCE) established the 5-year Yuga containing 1,830 civil days, giving a 366-day solar year baseline with 2 intercalary months long before modern resources.',
+      'Sage Lagadha in the Vedāṅga Jyotiṣa (c. 1400–1200 BCE) established the 5-year Yuga containing 1,830 civil days, giving a 366-day solar year baseline with 2 intercalary months.',
       'Aryabhata (499 CE) calculated the sidereal year to 365.25868 days and proved the Earth\'s daily rotation on its axis; Bhāskarācārya (1150 CE) refined it to 365.25875648 days.',
       'A Pañcāṅga tracks five true astronomical coordinates: Tithi, Vāra, Nakṣatra, Yoga, and Karaṇa, keeping religious and agricultural cycles locked to the sidereal cosmos.',
     ],
