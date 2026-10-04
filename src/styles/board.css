@@ -17,7 +17,7 @@
 }
 
 
-/* Title first, then the puzzle card. Instructions and shelf tools follow the card. */
+/* Title, then the shelf selector, then the puzzle card. Instructions, search, banner, and letter chips follow the card. */
 .board-puzzle-stage {
   margin: 0;
 }
@@ -126,7 +126,7 @@
   justify-content: space-between;
   padding: 0.4rem 0 0.65rem;
   border-bottom: 1px solid #eee7db;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.45rem;
 }
 
 .eyebrow {

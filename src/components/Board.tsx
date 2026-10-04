@@ -1823,6 +1823,18 @@ const Board: React.FC<BoardProps> = ({
       <div className="board-mark" aria-hidden="true">ॐ</div>
     </div>
 
+    <nav className="wing-nav" aria-label="Shelves">
+      {shelfButtons.map((item) => (
+        <button
+          key={item.id}
+          className={activeShelf === item.id ? 'wing-button active' : 'wing-button'}
+          onClick={() => chooseShelf(item.id)}
+        >
+          {SHELF_DESCRIPTIONS[item.id]?.icon ? `${SHELF_DESCRIPTIONS[item.id].icon} ` : ''}{item.label}
+        </button>
+      ))}
+    </nav>
+
     <div className="board-puzzle-stage">
     <div className="board-tip-row">
       {(!activePuzzle || loading || error) && (
@@ -2136,33 +2148,21 @@ const Board: React.FC<BoardProps> = ({
         <div className="jodo-guide-content">
           <div className="jodo-guide-step">
             <span className="jodo-step-badge">Step 1</span>
-            <p><strong>Observe the target word</strong> displayed in large Sanskrit letters inside the puzzle card.</p>
+            <p><strong>Read the word</strong> in large Sanskrit letters on the card.</p>
           </div>
           <div className="jodo-guide-step">
             <span className="jodo-step-badge">Step 2</span>
-            <p><strong>Tap cream tiles in sequence</strong> to blend consonants and vowel matras (e.g., tap <span className="jodo-sample-tile">क</span> then <span className="jodo-sample-tile">ा</span> to make <span className="jodo-sample-tile">का</span>).</p>
+            <p><strong>Tap cream tiles in order</strong> — <span className="jodo-sample-tile">क</span> then <span className="jodo-sample-tile">ा</span> makes <span className="jodo-sample-tile">का</span>.</p>
           </div>
           <div className="jodo-guide-step">
             <span className="jodo-step-badge">Step 3</span>
-            <p><strong>Success!</strong> The illustration, meaning, and sentence will appear automatically. Tap <span className="jodo-sample-next">Next Puzzle ▶</span> to advance.</p>
+            <p><strong>Picture, meaning, and sentence appear</strong> — tap <span className="jodo-sample-next">Next Puzzle ▶</span>.</p>
           </div>
         </div>
       )}
     </div>
 
     <div className="board-after-puzzle">
-    <nav className="wing-nav" aria-label="Shelves">
-      {shelfButtons.map((item) => (
-        <button
-          key={item.id}
-          className={activeShelf === item.id ? 'wing-button active' : 'wing-button'}
-          onClick={() => chooseShelf(item.id)}
-        >
-          {SHELF_DESCRIPTIONS[item.id]?.icon ? `${SHELF_DESCRIPTIONS[item.id].icon} ` : ''}{item.label}
-        </button>
-      ))}
-    </nav>
-
     {/* Search Bar for Tile Puzzles */}
     <section className="board-search-section" aria-label="Search Tile Puzzles">
       <div className="board-search-bar-wrap">
