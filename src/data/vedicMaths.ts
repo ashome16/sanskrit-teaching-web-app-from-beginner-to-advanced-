@@ -525,7 +525,7 @@ export const SHAKA_ERA_CHRONOLOGY: ShakaMathematician[] = [
     ceNumeric: 1150,
     century: '12th Century CE',
     primaryTreatise: 'Siddhānta Śiromaṇi (Līlāvatī, Bījagaṇita, Grahagaṇita, Golādhyāya)',
-    contributions: 'Recorded his exact date of birth using the cryptographic Bhūta-Saṅkhyā system in Siddhānta Śiromaṇi: "రసగుణపూర్ణమహీసమశకనృపసమయే భవన్మమోత్పత్తిః | రసగుణవర్షేణ మయా సిద్ధాంతశిరోమణి రచితా ||" (Rasa=6, Guṇa=3, Pūrṇa=0, Mahī=1 → Shaka 1036 = 1114 CE; composed Siddhānta Śiromaṇi at age 36 in 1150 CE). Formalized the epistemological divide between Vyakta Gaṇitam (manifest arithmetic of Līlāvatī) and Avyakta Gaṇitam (unexpressed multivariate algebra of Bījagaṇita using colors/Varṇa as variables). Pioneered differential calculus precursors (instantaneous velocity d(sin θ) = cos θ dθ), solved Pell\'s equation via the cyclic Cakravāla algorithm, and analyzed infinity (a / 0 = ∞).',
+    contributions: 'Recorded his exact date of birth using the cryptographic Bhūta-Saṅkhyā system in Siddhānta Śiromaṇi: "रसगुणपूर्णमहीसमशकनृपसमये भवन्ममोत्पत्तिः । रसगुणवर्षेण मया सिद्धान्तशिरोमणि रचितः ॥" (Rasa=6, Guṇa=3, Pūrṇa=0, Mahī=1 → Shaka 1036 = 1114 CE; composed Siddhānta Śiromaṇi at age 36 in 1150 CE). Formalized the epistemological divide between Vyakta Gaṇitam (manifest arithmetic of Līlāvatī) and Avyakta Gaṇitam (unexpressed multivariate algebra of Bījagaṇita using colors/Varṇa as variables). Pioneered differential calculus precursors (instantaneous velocity d(sin θ) = cos θ dθ), solved Pell\'s equation via the cyclic Cakravāla algorithm, and analyzed infinity (a / 0 = ∞).',
     focusArea: 'Arithmetic & Algebra'
   },
   {
@@ -1097,9 +1097,9 @@ export interface BhaskaraDobRecord {
 }
 
 export const BHASKARA_DOB_RECORD: BhaskaraDobRecord = {
+  shlokaDevanagari: 'रसगुणपूर्णमहीसमशकनृपसमये भवन्ममोत्पत्तिः ।\nरसगुणवर्षेण मया सिद्धान्तशिरोमणि रचितः ॥',
+  shlokaIast: 'Rasaguṇapūrṇamahīsamaśakanṛpasamaye bhavanmamotpattiḥ |\nRasaguṇavarṣeṇa mayā siddhāntaśiromaṇi racitaḥ ||',
   shlokaTelugu: 'రసగుణపూర్ణమహీసమశకనృపసమయే భవన్మమోత్పత్తిః |\nరసగుణవర్షేణ మయా సిద్ధాంతశిరోమణి రచితా ||',
-  shlokaDevanagari: 'रसगुणपूर्णमहीसमशकनृपसमये भवन्ममोत्पत्तिः ।\nरसगुणवर्षेण मया सिद्धान्तशिरोमणी रचिता ॥',
-  shlokaIast: 'Rasa-guṇa-pūrṇa-mahī-sama-śaka-nṛpa-samaye bhavan-mamotpattiḥ |\nRasa-guṇa-varṣeṇa mayā siddhānta-śiromaṇi racitā ||',
   sourceTreatise: 'Siddhānta Śiromaṇi (Golādhyāya, Praśnādhyāya)',
   author: 'Bhāskarācārya II (1114–1185 CE)',
   ruleOfReversal: 'अङ्कानां वामतो गतिः (Aṅkānāṃ Vāmato Gatiḥ — "Numbers proceed from right to left")',
@@ -1165,9 +1165,9 @@ export interface SuryaSiddhantaMangalacharana {
 }
 
 export const SURYA_SIDDHANTA_MANGALACHARANA: SuryaSiddhantaMangalacharana = {
-  shlokaTelugu: 'అచింత్యావ్యక్తరూపాయ నిర్గుణాయ గుణాత్మనే ।\nసమస్త జగదాధార మూర్తయే బ్రహ్మణే నమః ॥',
   shlokaDevanagari: 'अचिन्त्याव्यक्तरूपाय निर्गुणाय गुणात्मने ।\nसमस्तजगदाधारमूर्तये ब्रह्मणे नमः ॥',
   shlokaIast: 'Acintyāvyaktarūpāya nirguṇāya guṇātmane |\nSamastajagadādhāramūrtaye brahmaṇe namaḥ ||',
+  shlokaTelugu: 'అచింత్యావ్యక్తరూపాయ నిర్గుణాయ గుణాత్మనే ।\nసమస్త జగదాధార మూర్తయే బ్రహ్మణే నమః ॥',
   sourceText: 'Sūrya Siddhānta (Chapter 1, Verse 1 — Opening Maṅgalācaraṇa)',
   philosophicalContext: 'A Mathematician’s Epistemology of Cosmic Reality and Consciousness (as illuminated by Dr. Remella Avadhanulu)',
   pillars: [
@@ -2662,9 +2662,9 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
         sanskritTitle: 'गूढ-जन्मवर्षम् · रसगुणपूर्णमहीसमशकनृपसमये',
         paragraphs: [
           'In classical Indian civilization, mathematical genius was inseparable from poetic mastery. When Bhāskarācārya II (1114–1185 CE), the supreme polymath of the 12th century, recorded his date of birth and the timing of his magnum opus Siddhānta Śiromaṇi, he did not use mundane digits. Instead, he encoded his autobiography in an immortal Sanskrit metric verse found in the Praśnādhyāya section of the Golādhyāya:',
-          'రసగుణపూర్ణమహీసమశకనృపసమయే భవన్మమోత్పత్తిః |\nరసగుణవర్షేణ మయా సిద్ధాంతశిరోమణి రచితా ||',
-          'Devanagari: रसगुणपूर्णमहीसमशकनृपसमये भवन्ममोत्पत्तिः । रसगुणवर्षेण मया सिद्धान्तशिरोमणी रचिता ॥',
-          'IAST: Rasa-guṇa-pūrṇa-mahī-sama-śaka-nṛpa-samaye bhavan-mamotpattiḥ | Rasa-guṇa-varṣeṇa mayā siddhānta-śiromaṇi racitā ||',
+          'रसगुणपूर्णमहीसमशकनृपसमये भवन्ममोत्पत्तिः ।\nरसगुणवर्षेण मया सिद्धान्तशिरोमणि रचितः ॥',
+          'Transliteration (IAST): Rasaguṇapūrṇamahīsamaśakanṛpasamaye bhavanmamotpattiḥ | Rasaguṇavarṣeṇa mayā siddhāntaśiromaṇi racitaḥ ||',
+          '(Telugu Script from lecture slides: రసగుణపూర్ణమహీసమశకనృపసమయే భవన్మమోత్పత్తిః | రసగుణవర్షేణ మయా సిద్ధాంతశిరోమణి రచితా ||)',
           'The Cryptographic System: Bhūta-Saṅkhyā (Object-Number Notation) — Rather than writing abstract numerals that could easily be corrupted through successive manuscript transcriptions, Indian astronomers mapped numbers to immutable cosmic, philosophical, and natural constants. In this system:',
           '• Rasa (రస / रस — Tastes): In Ayurveda and Indian aesthetic philosophy, there are exactly 6 fundamental tastes (sweet, sour, salty, bitter, pungent, astringent) → Digit 6.',
           '• Guṇa (గుణ / गुण — Fundamental Qualities): In Sāṅkhya philosophy and natural metaphysics, there are 3 cosmic Gunas (Sattva, Rajas, Tamas) → Digit 3.',
@@ -2715,9 +2715,9 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
         sanskritTitle: 'गणितज्ञस्य विश्वदृष्टिः · अचिन्त्याव्यक्तरूपाय',
         paragraphs: [
           'In his celebrated lectures on the intersection of Sanskrit and computer science, Dr. Remella Avadhanulu points to the opening invocatory verse (Maṅgalācaraṇa, 1.1) of the ancient Sūrya Siddhānta as the definitive statement of how ancient Indian mathematicians conceptualized cosmic reality, consciousness, and physical law:',
-          'అచింత్యావ్యక్తరూపాయ నిర్గుణాయ గుణాత్మనే ।\nసమస్త జగదాధార మూర్తయే బ్రహ్మణే నమః ॥',
-          'Devanagari: अचिन्त्याव्यक्तरूपाय निर्गुणाय गुणात्मने । समस्तजगदाधारमूर्तये ब्रह्मणे नमः ॥',
-          'IAST: Acintyāvyaktarūpāya nirguṇāya guṇātmane | Samastajagadādhāramūrtaye brahmaṇe namaḥ ||',
+          'अचिन्त्याव्यक्तरूपाय निर्गुणाय गुणात्मने ।\nसमस्तजगदाधारमूर्तये ब्रह्मणे नमः ॥',
+          'Transliteration (IAST): Acintyāvyaktarūpāya nirguṇāya guṇātmane | Samastajagadādhāramūrtaye brahmaṇe namaḥ ||',
+          '(Telugu Script from lecture slides: అచింత్యావ్యక్తరూపాయ నిర్గుణాయ గుణాత్మనే । సమస్త జగదాధార మూర్తయే బ్రహ్మణే నమః ॥)',
           'This shloka is not an invocation to a localized mythological deity. It is a profound mathematical metaphysics where cosmic consciousness (Brahman) is understood as the unmanifest cosmic code and physical geometry of the universe across three epistemic dimensions:',
           '1. Acintya & Avyakta-rūpāya (Inconceivable & Unmanifest Form): The Primordial Quantum Vacuum & Zero (Śūnya). Before the manifest cosmos crystallizes into finite coordinates, spacetime, or matter, it resides in an unconditioned, non-local state of pure potentiality. In mathematics, this is Avyakta—the infinite variable field prior to the setting of boundary constraints.',
           '2. Nirguṇāya Guṇātmane (Attribute-less, yet the Source of All Physical Attributes): The Universal Constants & Laws of Nature. "Nirguṇa" indicates that the fundamental consciousness possesses no physical mass, boundary, or local coordinates. Yet it is "Guṇātman"—the generative software matrix from which all physical constants emerge: the speed of light (c), the gravitational constant (G), Planck’s constant (ℏ), transcendental ratios (π, φ), and orbital wave resonances.',

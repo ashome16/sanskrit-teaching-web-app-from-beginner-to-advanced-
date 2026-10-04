@@ -3034,16 +3034,24 @@ ${bodyHtml}
                 <div className="bhuta-banner-badge">
                   <span>📜 Siddhānta Śiromaṇi · Golādhyāya (Praśnādhyāya)</span>
                 </div>
-                <div className="bhuta-verse-telugu">
-                  రసగుణపూర్ణమహీసమశకనృపసమయే భవన్మమోత్పత్తిః |<br />
-                  రసగుణవర్షేణ మయా సిద్ధాంతశిరోమణి రచితా ||
-                </div>
                 <div className="bhuta-verse-sa">
-                  रसगुणपूर्णमहीसमशकनृपसमये भवन्ममोत्पत्तिः ।<br />
-                  रसगुणवर्षेण मया सिद्धान्तशिरोमणी रचिता ॥
+                  {BHASKARA_DOB_RECORD.shlokaDevanagari.split('\n').map((line, idx) => (
+                    <span key={idx}>
+                      {line}
+                      {idx === 0 && <br />}
+                    </span>
+                  ))}
                 </div>
                 <div className="bhuta-verse-iast">
-                  {BHASKARA_DOB_RECORD.shlokaIast}
+                  {BHASKARA_DOB_RECORD.shlokaIast.split('\n').map((line, idx) => (
+                    <span key={idx}>
+                      {line}
+                      {idx === 0 && <br />}
+                    </span>
+                  ))}
+                </div>
+                <div className="bhuta-verse-telugu">
+                  <span className="bhuta-script-label">Lecture Slide Reference (Telugu):</span> {BHASKARA_DOB_RECORD.shlokaTelugu.replace('\n', ' ')}
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem', marginTop: '1rem' }}>
                   <button
@@ -3130,7 +3138,7 @@ ${bodyHtml}
                       1150 CE (At Age 36)
                     </div>
                     <div className="bhuta-result-formula">
-                      <strong>Second Line Token:</strong> <em>Rasa-Guṇa-Varṣeṇa</em> (రసగుణవర్షేణ)<br />
+                      <strong>Second Line Token:</strong> <em>Rasa-Guṇa-Varṣeṇa</em> (रसगुणवर्षेण / రసగుణవర్షేణ)<br />
                       Rasa (6) and Guṇa (3) reversed = <strong>36 Years of Age</strong><br />
                       1114 CE + 36 = <strong>1150 CE</strong>
                     </div>
@@ -3277,16 +3285,24 @@ ${bodyHtml}
                 <div className="surya-hero-badge">
                   <span>🌌 Sūrya Siddhānta (1.1) · Opening Maṅgalācaraṇa</span>
                 </div>
-                <div className="surya-verse-telugu">
-                  అచింత్యావ్యక్తరూపాయ నిర్గుణాయ గుణాత్మనే ।<br />
-                  సమస్త జగదాధార మూర్తయే బ్రహ్మణే నమః ॥
-                </div>
                 <div className="surya-verse-sa">
-                  अचिन्त्याव्यक्तरूपाय निर्गुणाय गुणात्मने ।<br />
-                  समस्तजगदाधारमूर्तये ब्रह्मणे नमः ॥
+                  {SURYA_SIDDHANTA_MANGALACHARANA.shlokaDevanagari.split('\n').map((line, idx) => (
+                    <span key={idx}>
+                      {line}
+                      {idx === 0 && <br />}
+                    </span>
+                  ))}
                 </div>
                 <div className="surya-verse-iast">
-                  {SURYA_SIDDHANTA_MANGALACHARANA.shlokaIast}
+                  {SURYA_SIDDHANTA_MANGALACHARANA.shlokaIast.split('\n').map((line, idx) => (
+                    <span key={idx}>
+                      {line}
+                      {idx === 0 && <br />}
+                    </span>
+                  ))}
+                </div>
+                <div className="surya-verse-telugu">
+                  <span className="surya-script-label">Lecture Slide Reference (Telugu):</span> {SURYA_SIDDHANTA_MANGALACHARANA.shlokaTelugu.replace('\n', ' ')}
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem', marginTop: '1.25rem' }}>
                   <button
