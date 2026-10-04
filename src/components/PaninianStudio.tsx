@@ -188,6 +188,48 @@ const COMPARATOR_PRESETS: ComparatorPreset[] = [
   },
 ];
 
+
+const GANA_BROWSE_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
+
+/** Same gaṇa buckets the dhātupāṭha browser uses when no filter is on. */
+function orderRootsLikeBrowser(entries: DhatuEntry[]): DhatuEntry[] {
+  const buckets = new Map<number, DhatuEntry[]>();
+  const other: DhatuEntry[] = [];
+  for (const entry of entries) {
+    const gana = entry.gana ?? entry.class;
+    if (gana != null && (GANA_BROWSE_ORDER as readonly number[]).includes(gana)) {
+      const list = buckets.get(gana) ?? [];
+      list.push(entry);
+      buckets.set(gana, list);
+    } else {
+      other.push(entry);
+    }
+  }
+  return GANA_BROWSE_ORDER.flatMap((n) => buckets.get(n) ?? []).concat(other);
+}
+
+function rootKey(entry: DhatuEntry): string {
+  return entry.id || entry.devanagari;
+}
+
+function sameRoot(entry: DhatuEntry, id: string): boolean {
+  const needle = id.trim().toLowerCase();
+  return (entry.id || '').toLowerCase() === needle || entry.devanagari === id;
+}
+
+/** One short line. Several senses (comma or slash) are named; one sense is shown once. */
+function rootSenseLine(meaning: string | undefined): string {
+  const text = (meaning ?? '').replace(/\s+/g, ' ').trim();
+  if (!text) return '';
+  if (text.includes(',') || text.includes('/')) {
+    const body = /[.!?]$/.test(text) ? text : `${text}.`;
+    return `More than one sense: ${body}`;
+  }
+  return text;
+}
+
+type LakaraPhase = 'root' | number;
+
 const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
   const [mode, setMode] = useState<StudioMode>('generator');
   const [dhatuLibrary, setDhatuLibrary] = useState<DhatuEntry[]>([]);
@@ -219,6 +261,8 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
   const [showExplanation, setShowExplanation] = useState(false);
   const [score, setScore] = useState(0);
   const [quizFilter, setQuizFilter] = useState<'all' | 'lakara' | 'krt' | 'causative' | 'atmanepada'>('all');
+  /** Root ids in the order the dhātupāṭha browser is showing. Null until that list is known. */
+  const [browseIds, setBrowseIds] = useState<string[] | null>(null);
 
   useEffect(() => {
     loadDhatupatha().then((data) => {
@@ -270,16 +314,47 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
     );
   }, [dhatuLibrary, selectedDhatuId]);
 
-  // Sync default voice when root changes
-  const handleRootChange = (id: string) => {
-    setSelectedDhatuId(id);
-    const root = dhatuLibrary.find((d) => (d.id || '').toLowerCase() === id.toLowerCase());
-    if (root?.padam === 'atmanepada') {
-      setSelectedVoice('atmanepada');
-    } else {
-      setSelectedVoice('parasmaipada');
+  // The list the dhātupāṭha browser is showing (gaṇa or theme, with its filters).
+  // Before that tab reports an order, use the same default: gaṇa 1–10, then the rest.
+  const browseList = useMemo(() => {
+    if (browseIds?.length) {
+      const ordered = browseIds
+        .map((id) => dhatuLibrary.find((entry) => sameRoot(entry, id)))
+        .filter((entry): entry is DhatuEntry => Boolean(entry));
+      if (ordered.length) return ordered;
     }
-  };
+    return orderRootsLikeBrowser(dhatuLibrary);
+  }, [browseIds, dhatuLibrary]);
+
+  const tourList = useMemo(() => {
+    const listed = browseList.some((entry) => sameRoot(entry, selectedDhatuId));
+    if (listed) return browseList;
+    return [currentDhatu, ...browseList.filter((entry) => rootKey(entry) !== rootKey(currentDhatu))];
+  }, [browseList, currentDhatu, selectedDhatuId]);
+
+  const tourListRef = useRef(tourList);
+  tourListRef.current = tourList;
+
+  // Play all on the open lakāra grid: this root, then its nine forms, then the next root.
+  // Not the root-library Play all, and not the Laṭ card.
+  const [playingAll, setPlayingAll] = useState(false);
+  const [speakingIndex, setSpeakingIndex] = useState<number | null>(null);
+  const [speakingRoot, setSpeakingRoot] = useState(false);
+  const [speakEpoch, setSpeakEpoch] = useState(0);
+  const stopPlayRef = useRef<(() => void) | null>(null);
+  const resumeRootRef = useRef(0);
+  const resumePhaseRef = useRef<LakaraPhase>('root');
+  const playTokenRef = useRef(0);
+  const playAllBtnRef = useRef<HTMLDivElement | null>(null);
+  const holdPlaybackRef = useRef(false);
+  /** playbackKey we expect while a tour step is opening the next root. */
+  const sessionKeyRef = useRef('');
+  const playingAllRef = useRef(false);
+  playingAllRef.current = playingAll;
+  const selectedIdRef = useRef(selectedDhatuId);
+  selectedIdRef.current = selectedDhatuId;
+  const selectedVoiceRef = useRef(selectedVoice);
+  selectedVoiceRef.current = selectedVoice;
 
   const activeLakaraInfo = LAKARAS.find((l) => l.id === activeLakara);
   const conjugationTable = useMemo(() => {
@@ -299,14 +374,6 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
     return getCausativeInfo(currentDhatu);
   }, [currentDhatu]);
 
-  // Play all on the lakāra 3×3 (not the root library, not the Laṭ card).
-  const [playingAll, setPlayingAll] = useState(false);
-  const [speakingIndex, setSpeakingIndex] = useState<number | null>(null);
-  const stopPlayRef = useRef<(() => void) | null>(null);
-  const resumeIndexRef = useRef(0);
-  const playTokenRef = useRef(0);
-  const playAllBtnRef = useRef<HTMLDivElement | null>(null);
-
   const playCells = useMemo(() => {
     if (activeLakara === 'krt' || !conjugationTable) return [];
     const list: { sanskrit: string }[] = [];
@@ -323,13 +390,28 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
 
   const playbackKey = `${selectedDhatuId}|${activeLakara}|${selectedVoice}|${isCausative ? 'c' : 'b'}|${mode}`;
 
+  const applyListedRoot = (entry: DhatuEntry, hold: boolean) => {
+    const id = rootKey(entry);
+    const voice: VoiceType = entry.padam === 'atmanepada' ? 'atmanepada' : 'parasmaipada';
+    const idChanged = !sameRoot(entry, selectedIdRef.current);
+    const voiceChanged = voice !== selectedVoiceRef.current;
+    if (hold && (idChanged || voiceChanged)) holdPlaybackRef.current = true;
+    if (idChanged) setSelectedDhatuId(id);
+    if (voiceChanged) setSelectedVoice(voice);
+  };
+
   useEffect(() => {
+    if (holdPlaybackRef.current) {
+      holdPlaybackRef.current = false;
+      return;
+    }
     playTokenRef.current += 1;
     stopPlayRef.current?.();
     stopPlayRef.current = null;
-    resumeIndexRef.current = 0;
+    resumePhaseRef.current = 'root';
     setPlayingAll(false);
     setSpeakingIndex(null);
+    setSpeakingRoot(false);
     return () => {
       playTokenRef.current += 1;
       stopPlayRef.current?.();
@@ -362,8 +444,12 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
   }, [playingAll]);
 
   useEffect(() => {
-    if (!playingAll || speakingIndex === null) return;
-    const el = document.querySelector<HTMLElement>(`[data-lakara-cell="${speakingIndex}"]`);
+    if (!playingAll) return;
+    const el = speakingRoot
+      ? document.querySelector<HTMLElement>('[data-lakara-root]')
+      : speakingIndex !== null
+        ? document.querySelector<HTMLElement>(`[data-lakara-cell="${speakingIndex}"]`)
+        : null;
     if (!el) return;
     const rect = el.getBoundingClientRect();
     const btn = playAllBtnRef.current;
@@ -374,7 +460,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
     const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     el.style.scrollMarginTop = `${Math.round(topLimit)}px`;
     el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
-  }, [playingAll, speakingIndex]);
+  }, [playingAll, speakingIndex, speakingRoot]);
 
   const cancelLakaraPlay = () => {
     playTokenRef.current += 1;
@@ -382,52 +468,185 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
     stopPlayRef.current = null;
   };
 
-  const startLakaraPlayAll = (start: number) => {
+  const startLakaraPlayAll = (rootIndex: number, phase: LakaraPhase) => {
+    const list = tourListRef.current;
+    if (!list.length || activeLakara === 'krt') return;
+    const index = rootIndex >= list.length ? list.length - 1 : Math.max(0, rootIndex);
+    const entry = list[index];
+    if (!entry) return;
     cancelLakaraPlay();
-    const list = playCellsRef.current;
-    if (!list.length) return;
-    const index = start >= list.length ? 0 : Math.max(0, start);
-    const slice = list.slice(index);
-    const token = playTokenRef.current;
-    resumeIndexRef.current = index;
+    const voice: VoiceType = entry.padam === 'atmanepada' ? 'atmanepada' : 'parasmaipada';
+    sessionKeyRef.current = `${rootKey(entry)}|${activeLakara}|${voice}|${isCausative ? 'c' : 'b'}|${mode}`;
+    resumeRootRef.current = index;
+    resumePhaseRef.current = phase;
     setPlayingAll(true);
-    setSpeakingIndex(index);
-    // Sanskrit only. English stays on the cell as text and is never spoken.
-    stopPlayRef.current = playBilingualSequence(
-      slice.map(({ sanskrit }) => ({ sanskrit })),
-      {
-      gapMs: 250,
-      onItem: (itemIndex) => {
-        if (playTokenRef.current !== token) return;
-        const absolute = index + itemIndex;
-        resumeIndexRef.current = absolute;
-        setSpeakingIndex(absolute);
-      },
-      onDone: () => {
-        if (playTokenRef.current !== token) return;
-        stopPlayRef.current = null;
-        setPlayingAll(false);
-        setSpeakingIndex(null);
-        resumeIndexRef.current = 0;
-      },
-    });
+    setSpeakingRoot(phase === 'root');
+    setSpeakingIndex(phase === 'root' ? null : phase);
+    applyListedRoot(entry, true);
+    setSpeakEpoch((n) => n + 1);
   };
 
+  // Speak the current root word, then each Sanskrit form, then open the next root.
+  // No extra click. English stays on screen and is never spoken.
+  useEffect(() => {
+    if (!playingAll) return;
+    if (playbackKey !== sessionKeyRef.current) return;
+    const token = playTokenRef.current;
+    const list = tourListRef.current;
+    const rootIndex = resumeRootRef.current;
+    const phase = resumePhaseRef.current;
+    const entry = list[rootIndex];
+    if (!entry || !sameRoot(entry, selectedIdRef.current)) return;
+
+    let stopped = false;
+    const still = () => !stopped && playTokenRef.current === token;
+
+    const go = (nextRoot: number, nextPhase: LakaraPhase) => {
+      if (!still()) return;
+      const next = list[nextRoot];
+      if (!next) return;
+      const voice: VoiceType = next.padam === 'atmanepada' ? 'atmanepada' : 'parasmaipada';
+      sessionKeyRef.current = `${rootKey(next)}|${activeLakara}|${voice}|${isCausative ? 'c' : 'b'}|${mode}`;
+      resumeRootRef.current = nextRoot;
+      resumePhaseRef.current = nextPhase;
+      if (nextPhase === 'root') applyListedRoot(next, true);
+      setSpeakEpoch((n) => n + 1);
+    };
+
+    const afterThis = () => {
+      if (!still()) return;
+      if (phase === 'root') {
+        go(rootIndex, 0);
+        return;
+      }
+      const cells = playCellsRef.current;
+      if (phase + 1 < cells.length) {
+        go(rootIndex, phase + 1);
+        return;
+      }
+      const nextRoot = rootIndex + 1;
+      if (nextRoot >= list.length) {
+        stopPlayRef.current = null;
+        setPlayingAll(false);
+        setSpeakingRoot(false);
+        setSpeakingIndex(null);
+        resumeRootRef.current = 0;
+        resumePhaseRef.current = 'root';
+        return;
+      }
+      go(nextRoot, 'root');
+    };
+
+    let localStop: (() => void) | null = null;
+    if (phase === 'root') {
+      setSpeakingRoot(true);
+      setSpeakingIndex(null);
+      localStop = playBilingualSequence([{ sanskrit: entry.devanagari }], {
+        gapMs: 250,
+        onDone: afterThis,
+      });
+    } else {
+      const cell = playCellsRef.current[phase];
+      if (!cell?.sanskrit) {
+        afterThis();
+        return () => {
+          stopped = true;
+        };
+      }
+      setSpeakingRoot(false);
+      setSpeakingIndex(phase);
+      localStop = playBilingualSequence([{ sanskrit: cell.sanskrit }], {
+        gapMs: 250,
+        onDone: afterThis,
+      });
+    }
+    stopPlayRef.current = localStop;
+    return () => {
+      stopped = true;
+      localStop?.();
+      if (stopPlayRef.current === localStop) stopPlayRef.current = null;
+    };
+  }, [playingAll, speakEpoch, playbackKey, activeLakara, isCausative, mode]);
+
   const toggleLakaraPlayAll = () => {
-    if (playingAll) {
+    if (playingAllRef.current) {
       cancelLakaraPlay();
       setPlayingAll(false);
+      setSpeakingRoot(false);
       setSpeakingIndex(null);
       return;
     }
-    startLakaraPlayAll(resumeIndexRef.current);
+    const list = tourListRef.current;
+    if (!list.length || activeLakara === 'krt') return;
+    let index = resumeRootRef.current;
+    const current = list.findIndex((entry) => sameRoot(entry, selectedIdRef.current));
+    const onThisRoot = index >= 0 && index < list.length && sameRoot(list[index], selectedIdRef.current);
+    if (!onThisRoot) {
+      index = current >= 0 ? current : 0;
+      resumePhaseRef.current = 'root';
+    }
+    startLakaraPlayAll(index, resumePhaseRef.current);
+  };
+
+  const stepRoot = (delta: number) => {
+    const list = tourListRef.current;
+    if (!list.length) return;
+    const index = list.findIndex((entry) => sameRoot(entry, selectedIdRef.current));
+    const next = index < 0 ? (delta > 0 ? 0 : -1) : index + delta;
+    if (next < 0 || next >= list.length) return;
+    if (playingAllRef.current) {
+      startLakaraPlayAll(next, 'root');
+      return;
+    }
+    resumeRootRef.current = next;
+    resumePhaseRef.current = 'root';
+    applyListedRoot(list[next], false);
+  };
+
+  // Sync default voice when the learner picks a root. A running tour restarts there.
+  const handleRootChange = (id: string) => {
+    const list = tourListRef.current;
+    const index = list.findIndex((entry) => sameRoot(entry, id));
+    if (playingAllRef.current && index >= 0) {
+      startLakaraPlayAll(index, 'root');
+      return;
+    }
+    const entry = index >= 0 ? list[index] : dhatuLibrary.find((item) => sameRoot(item, id));
+    if (!entry) {
+      setSelectedDhatuId(id);
+      return;
+    }
+    if (index >= 0) resumeRootRef.current = index;
+    resumePhaseRef.current = 'root';
+    applyListedRoot(entry, false);
+  };
+
+  const playRootOnly = () => {
+    cancelLakaraPlay();
+    setPlayingAll(false);
+    setSpeakingIndex(null);
+    resumePhaseRef.current = 'root';
+    const token = playTokenRef.current;
+    const word = currentDhatu.devanagari;
+    if (!word) return;
+    setSpeakingRoot(true);
+    const localStop = playBilingualSequence([{ sanskrit: word }], {
+      gapMs: 250,
+      onDone: () => {
+        if (playTokenRef.current !== token) return;
+        stopPlayRef.current = null;
+        setSpeakingRoot(false);
+      },
+    });
+    stopPlayRef.current = localStop;
   };
 
   const speakLakaraCell = (cellIndex: number) => {
-    // A single 🔊 cancels Play all. Next Play all starts at the first cell.
+    // A single 🔊 cancels Play all. Next Play all starts again at this root's word.
     cancelLakaraPlay();
     setPlayingAll(false);
-    resumeIndexRef.current = 0;
+    setSpeakingRoot(false);
+    resumePhaseRef.current = 'root';
     const cell = playCellsRef.current[cellIndex];
     if (!cell) {
       setSpeakingIndex(null);
@@ -435,19 +654,21 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
     }
     const token = playTokenRef.current;
     setSpeakingIndex(cellIndex);
-    stopPlayRef.current = playBilingualSequence([{ sanskrit: cell.sanskrit }], {
+    const localStop = playBilingualSequence([{ sanskrit: cell.sanskrit }], {
       gapMs: 250,
-      onItem: () => {
-        if (playTokenRef.current !== token) return;
-        setSpeakingIndex(cellIndex);
-      },
       onDone: () => {
         if (playTokenRef.current !== token) return;
         stopPlayRef.current = null;
         setSpeakingIndex(null);
       },
     });
+    stopPlayRef.current = localStop;
   };
+
+  const tourIndex = tourList.findIndex((entry) => sameRoot(entry, selectedDhatuId));
+  const canPrevRoot = tourIndex > 0;
+  const canNextRoot = tourIndex >= 0 ? tourIndex < tourList.length - 1 : tourList.length > 0;
+  const senseLine = rootSenseLine(currentDhatu.meaning);
 
   // Comparator resolved entities
   const compDhatuA = useMemo(() => {
@@ -658,7 +879,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                 value={selectedDhatuId}
                 onChange={(e) => handleRootChange(e.target.value)}
               >
-                {dhatuLibrary.map((d) => (
+                {(browseList.length ? browseList : dhatuLibrary).map((d) => (
                   <option key={d.id || d.devanagari} value={d.id || d.devanagari}>
                     {d.devanagari} ({d.transliteration}) — {d.meaning} [Gaṇa {d.gana || 1} · {d.padam || 'parasmaipada'}]
                   </option>
@@ -748,7 +969,8 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
             </div>
           </div>
 
-          {/* Root Info Bar */}
+          {/* Participle tab keeps the compact root bar. The lakāra grid has its own word line. */}
+          {activeLakara === 'krt' && (
           <div className="dp-root-infobar">
             <div className="dp-root-title">
               <span className="dp-root-bold">{currentDhatu.devanagari}</span>
@@ -769,6 +991,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
               <strong>Meaning:</strong> {currentDhatu.meaning} {currentDhatu.meaning_hi ? `(${currentDhatu.meaning_hi})` : ''}
             </div>
           </div>
+          )}
 
           {/* Causative Active Highlight Banner */}
           {isCausative && (
@@ -789,6 +1012,52 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
           {/* 3×3 Conjugation Table */}
           {activeLakara !== 'krt' && conjugationTable && activeLakaraInfo && (
             <>
+            <div className="dp-lakara-wordline">
+              <div
+                className={`dp-lakara-word${speakingRoot ? ' dp-lakara-word--speaking' : ''}`}
+                data-lakara-root=""
+              >
+                <span className="dp-lakara-word-sa">{currentDhatu.devanagari}</span>
+                {currentDhatu.transliteration ? (
+                  <span className="dp-lakara-word-iast">({currentDhatu.transliteration})</span>
+                ) : null}
+                <span className="dp-root-tag">Gaṇa {currentDhatu.gana || 1} ({currentDhatu.gana_name || 'bhvādi'})</span>
+                <span className="dp-root-tag">{currentDhatu.padam || 'parasmaipada'}</span>
+              </div>
+              {senseLine ? <p className="dp-lakara-sense">{senseLine}</p> : null}
+              <div className="dp-lakara-word-actions">
+                <button
+                  type="button"
+                  className="dp-step-btn"
+                  disabled={!canPrevRoot}
+                  onClick={() => stepRoot(-1)}
+                >
+                  ← Previous
+                </button>
+                <button
+                  type="button"
+                  className={`dp-playall${speakingRoot && !playingAll ? ' dp-playall--active' : ''}`}
+                  onClick={playRootOnly}
+                  aria-pressed={speakingRoot && !playingAll}
+                  aria-label={`Play ${currentDhatu.devanagari}. Sanskrit only.`}
+                >
+                  ▶ Play
+                </button>
+                <button
+                  type="button"
+                  className={`dp-playall${playingAll ? ' dp-playall--active' : ''}`}
+                  onClick={toggleLakaraPlayAll}
+                  aria-pressed={playingAll}
+                  aria-label={
+                    playingAll
+                      ? 'Pause'
+                      : 'Play all. Speaks this root, then its nine forms, then the next root, until pause or the list ends. Sanskrit only.'
+                  }
+                >
+                  {playingAll ? '⏸ Pause' : '▶ Play all'}
+                </button>
+              </div>
+            </div>
             {playingAll && (
               <div
                 ref={playAllBtnRef}
@@ -801,7 +1070,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                   className="dp-playall dp-playall--active"
                   onClick={toggleLakaraPlayAll}
                   aria-pressed={true}
-                  aria-label="Pause. Reads the nine forms in Sanskrit"
+                  aria-label="Pause"
                 >
                   ⏸ Pause
                 </button>
@@ -814,19 +1083,6 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                   <span className="dp-lakara-title-en">
                     ({activeLakaraInfo.nameEn}) · <em>{activeLakaraInfo.tenseCategory}</em>
                   </span>
-                  <button
-                    type="button"
-                    className={`dp-playall dp-lakara-playall${playingAll ? ' dp-playall--active' : ''}`}
-                    onClick={toggleLakaraPlayAll}
-                    aria-pressed={playingAll}
-                    aria-label={
-                      playingAll
-                        ? 'Pause. Reads the nine forms in Sanskrit'
-                        : 'Play all nine forms in Sanskrit'
-                    }
-                  >
-                    {playingAll ? '⏸ Pause' : '▶ Play all'}
-                  </button>
                   <span className="dp-lakara-badge-voice">
                     {isCausative ? 'णिजन्तः (प्रेरणार्थक)' : selectedVoice === 'atmanepada' ? 'आत्मनेपदम्' : 'परस्मैपदम्'}
                   </span>
@@ -913,6 +1169,17 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
 
               <div className="dp-table-legend">
                 <span>💡 <strong>Color Breakdown:</strong> <span className="dp-legend-root">Root / Stem (धातु/अङ्ग)</span> + <span className="dp-legend-suffix">Tiṅ Suffix (प्रत्यय)</span>. Tap 🔊 on any cell to hear that form in Sanskrit.</span>
+              </div>
+              <div className="dp-lakara-playnext">
+                <button
+                  type="button"
+                  className="dp-playall"
+                  disabled={!canNextRoot}
+                  onClick={() => stepRoot(1)}
+                  aria-label="Play next root. Optional skip. Play all already moves on by itself."
+                >
+                  ▶ Play next
+                </button>
               </div>
             </div>
             </>
@@ -1640,6 +1907,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
             </p>
           </div>
           <DhatupathaBrowser
+            onBrowseOrder={setBrowseIds}
             onSelectDhatu={(dhatuId, action) => {
               if (action === 'generator') {
                 setSelectedDhatuId(dhatuId);
