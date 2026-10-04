@@ -3247,12 +3247,13 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', marginTop: '1rem' }} aria-label="Artwork thematic navigation">
                 <a href="#lilavati-divide" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🪷 1. Shattering the Divide</a>
-                <a href="#lilavati-bees" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🐝 2. Swarm of Bees (Quadratic)</a>
-                <a href="#lilavati-necklace" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>📿 3. Broken Necklace (Fractions)</a>
-                <a href="#lilavati-peacock-lotus" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🦚 4. Peacock &amp; Lotus (Geometry)</a>
-                <a href="#lilavati-studio" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>⚙️ 5. Interactive Riddle Studio</a>
-                <a href="#lilavati-currency" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🐚 6. Cowrie Currency (Gavvalu) &amp; Place-Value</a>
-                <a href="#lilavati-aesthetics" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🎨 7. Sanskrit Aesthetics &amp; Rasa</a>
+                <a href="#lilavati-parikarma" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🔢 2. Śleṣa &amp; Parikarmāṣṭakam</a>
+                <a href="#lilavati-bees" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🐝 3. Swarm of Bees (Quadratic)</a>
+                <a href="#lilavati-necklace" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>📿 4. Broken Necklace (Fractions)</a>
+                <a href="#lilavati-peacock-lotus" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🦚 5. Peacock &amp; Lotus (Geometry)</a>
+                <a href="#lilavati-studio" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>⚙️ 6. Interactive Riddle Studio</a>
+                <a href="#lilavati-currency" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🐚 7. Cowrie Currency (Varāṭaka) &amp; Place-Value</a>
+                <a href="#lilavati-aesthetics" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🎨 8. Sanskrit Aesthetics &amp; Rasa</a>
               </div>
             </figure>
 
@@ -3280,9 +3281,198 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
-            {/* Section 2: Resolution of the Swarm of Bees Riddle */}
+            {/* Section 2: The Shlesha Invocation, Parikarmashtaka & Khahara */}
+            <section className="philosophy-section" id="lilavati-parikarma" aria-labelledby="heading-lilavati-parikarma">
+              <h2 id="heading-lilavati-parikarma">2. The Śleṣa Invocation, the 8 Operations (परिकर्माष्टकम्) &amp; Calculus of Zero (खहरः)</h2>
+              <p className="philosophy-lead">
+                The opening verse of the <em>Līlāvatī</em> is an acknowledged masterpiece of classical Sanskrit <strong>श्लेषालङ्कारः (Śleṣālaṅkāra / double entendre)</strong>. Composed in the noble 14-syllable <strong>वसन्ततिलका (Vasantatilakā)</strong> meter, the verse is intentionally crafted with two entirely coherent, parallel meanings: one as a romantic tribute to a graceful maiden, and the other as an exact technical blueprint for mathematical arithmetic.
+              </p>
+
+              {/* The Shlesha Verse Card */}
+              <div className="philosophy-card" style={{ background: '#fefce8', border: '1.5px solid #fef08a', margin: '1.25rem 0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#854d0e', textTransform: 'uppercase' }}>
+                    Śleṣālaṅkāra Invocation · Vasantatilakā Chandaḥ (वसन्ततिलका)
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handlePlayAudio('येषां सुजातिगुणवर्गविभूषिताङ्गी शुद्धाखिला व्यवहृतिः खलु कण्ठसक्ता । लीलावतीह सरसोक्तिमुदाहरन्ती तेषां सदैव सुखसम्पदुपैति वृद्धिम् ॥')}
+                    style={{
+                      padding: '0.2rem 0.65rem',
+                      fontSize: '0.78rem',
+                      borderRadius: '6px',
+                      border: '1px solid #fde047',
+                      background: '#ffffff',
+                      cursor: 'pointer',
+                      fontWeight: 700,
+                      color: '#854d0e',
+                    }}
+                  >
+                    🔊 Chant Śleṣa Verse
+                  </button>
+                </div>
+
+                <div style={{ fontSize: '1.12rem', fontWeight: 800, color: '#713f12', lineHeight: 1.7, marginBottom: '0.4rem' }}>
+                  येषां सुजातिगुणवर्गविभूषिताङ्गी शुद्धाखिला व्यवहृतिः खलु कण्ठसक्ता ।<br />
+                  लीलावतीह सरसोक्तिमुदाहरन्ती तेषां सदैव सुखसम्पदुपैति वृद्धिम् ॥<br />
+                  <span style={{ fontSize: '0.92rem', fontWeight: 600, color: '#a16207' }}>
+                    yeṣāṃ sujātiguṇavargavibhūṣitāṅgī śuddhākhilā vyavahṛtiḥ khalu kaṇṭhasaktā |<br />
+                    līlāvatīha sarasoktimudāharantī teṣāṃ sadaiva sukhasampadupaiti vṛddhim ||
+                  </span>
+                </div>
+              </div>
+
+              {/* Dual Interpretation Grid */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1rem', margin: '1.25rem 0' }}>
+                <div style={{ background: '#f0fdf4', padding: '1.2rem', borderRadius: '12px', border: '1.5px solid #bbf7d0' }}>
+                  <h3 style={{ margin: '0 0 0.5rem', fontSize: '1.08rem', fontWeight: 800, color: '#166534' }}>
+                    📐 1. गणित-परः अर्थः (The Mathematical Meaning)
+                  </h3>
+                  <p style={{ fontSize: '0.86rem', color: '#15803d', marginBottom: '0.75rem', lineHeight: 1.5 }}>
+                    In classical Indian mathematics (<em>Pāṭīgaṇita</em>), each technical compound maps to algorithmic operations:
+                  </p>
+                  <ul style={{ fontSize: '0.85rem', color: '#14532d', paddingLeft: '1.2rem', lineHeight: 1.6, margin: 0 }}>
+                    <li><strong>सुजाति (Su-jāti):</strong> Fractional reductions, classification of integer types, and operations on similar fractions (<em>Bhāgajāti</em>).</li>
+                    <li><strong>गुण (Guṇa):</strong> The operation of multiplication (<em>Guṇana / Guṇakāra</em>).</li>
+                    <li><strong>वर्ग (Varga):</strong> Squaring operations and second-degree rules (<em>Varga-parikarma</em>).</li>
+                    <li><strong>विभूषिताङ्गी (Vibhūṣitāṅgī):</strong> A textbook treatise structured with these essential computational chapters.</li>
+                    <li><strong>शुद्धाखिला व्यवहृतिः (Śuddhākhilā vyavahṛtiḥ):</strong> Flawless execution of practical mathematical transactions, commercial calculations, and word problems (<em>Vyavahāra-gaṇita</em>).</li>
+                    <li><strong>कण्ठसक्ता (Kaṇṭhasaktā):</strong> Firmly memorized (&quot;clinging to the throat&quot;), enabling instant mental calculation without slate aids.</li>
+                    <li><strong>लीलावती (Līlāvatī):</strong> The mathematical treatise itself, denoting &quot;The Playful, Joyful Science.&quot;</li>
+                    <li><strong>सुखसम्पदुपैति वृद्धिम् (Sukhasampad upaiti vṛddhim):</strong> Intellectual mastery and worldly prosperity constantly multiply.</li>
+                  </ul>
+                  <div style={{ marginTop: '0.75rem', padding: '0.6rem', background: '#dcfce7', borderRadius: '8px', fontSize: '0.84rem', color: '#14532d', fontStyle: 'italic' }}>
+                    <strong>Mathematical Translation:</strong> &quot;For those who hold this Līlāvatī text at their throat (in fluent memory)—a treatise adorned with fractions (Jāti), multiplication (Guṇa), and squares (Varga), producing error-free calculations (Vyavahāra)—joy, wealth, and analytical prosperity will forever multiply.&quot;
+                  </div>
+                </div>
+
+                <div style={{ background: '#fdf2f8', padding: '1.2rem', borderRadius: '12px', border: '1.5px solid #fbcfe8' }}>
+                  <h3 style={{ margin: '0 0 0.5rem', fontSize: '1.08rem', fontWeight: 800, color: '#9d174d' }}>
+                    🌺 2. काव्य-परः अर्थः (The Romantic / Poetic Meaning)
+                  </h3>
+                  <p style={{ fontSize: '0.86rem', color: '#be185d', marginBottom: '0.75rem', lineHeight: 1.5 }}>
+                    Read through classical Sanskrit aesthetics (<em>Kāvya / Śṛṅgāra</em>), the exact same words portray a beloved companion:
+                  </p>
+                  <ul style={{ fontSize: '0.85rem', color: '#831843', paddingLeft: '1.2rem', lineHeight: 1.6, margin: 0 }}>
+                    <li><strong>सुजाति (Su-jāti):</strong> Born of noble, virtuous, and distinguished lineage.</li>
+                    <li><strong>गुण (Guṇa):</strong> Endowed with high moral virtues, sweetness of speech, and gracious charm.</li>
+                    <li><strong>वर्ग (Varga):</strong> Beloved and preeminent among her circle of kindred companions.</li>
+                    <li><strong>विभूषिताङ्गी (Vibhūṣitāṅgī):</strong> Whose limbs and body are gracefully adorned with radiant gems and ornaments.</li>
+                    <li><strong>शुद्धाखिला व्यवहृतिः (Śuddhākhilā vyavahṛtiḥ):</strong> Whose daily conduct, manners, and social interactions are pure and spotless.</li>
+                    <li><strong>कण्ठसक्ता (Kaṇṭhasaktā):</strong> Who affectionately embraces her beloved’s neck with tender devotion.</li>
+                    <li><strong>लीलावती (Līlāvatī):</strong> A charming, playful, and affectionate maiden.</li>
+                    <li><strong>सुखसम्पदुपैति वृद्धिम् (Sukhasampad upaiti vṛddhim):</strong> Daily happiness, peace, and domestic fulfillment continually increase.</li>
+                  </ul>
+                  <div style={{ marginTop: '0.75rem', padding: '0.6rem', background: '#fce7f3', borderRadius: '8px', fontSize: '0.84rem', color: '#831843', fontStyle: 'italic' }}>
+                    <strong>Poetic Translation:</strong> &quot;For the one who holds a charming woman named Līlāvatī close to his heart—one born of noble pedigree (Sujāti), endowed with virtues (Guṇa), adorned with ornaments (Vibhūṣitāṅgī), whose conduct is spotless (Vyavahṛti), and who tenderly embraces his neck—endless joy and domestic prosperity will forever flourish.&quot;
+                  </div>
+                </div>
+              </div>
+
+              {/* Parikarmashtaka: The 8 Fundamental Operations */}
+              <div style={{ marginTop: '1.75rem' }}>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.5rem' }}>
+                  The 8 Fundamental Operations of Arithmetic (परिकर्माष्टकम्)
+                </h3>
+                <p style={{ fontSize: '0.92rem', color: '#334155', lineHeight: 1.6 }}>
+                  Directly after the introductory invocation, Bhāskarāchārya establishes the sequence of eight fundamental operations (<em>Parikarmāṣṭakam</em>) that forms the procedural engine of classical Indian algebra and astronomy, extending basic arithmetic to include powers and roots:
+                </p>
+
+                <div style={{ overflowX: 'auto', margin: '1rem 0' }}>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem', textAlign: 'left', background: '#ffffff', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                    <thead>
+                      <tr style={{ background: '#f8fafc', borderBottom: '2px solid #cbd5e1' }}>
+                        <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Operation (परिकर्म)</th>
+                        <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Sanskrit Canon</th>
+                        <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Algorithmic Core in Līlāvatī</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                        <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#0f766e' }}>1. Saṅkalita (सङ्कलितम्)</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#334155' }}>सङ्कलने रूपैक्यम्</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Addition: Combining magnitudes into a single sum using column place-value alignments from left-to-right or right-to-left.</td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
+                        <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#0f766e' }}>2. Vyavakalita (व्यवकलितम्)</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#334155' }}>व्युत्कलनेऽन्तरं भवेत्</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Subtraction: Computing the algebraic difference between minuend and subtrahend, handling positive and negative signs (<em>Dhana-Ṛṇa</em>).</td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                        <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#0f766e' }}>3. Guṇana (गुणनम् / गुणकारः)</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#334155' }}>गुण्यो गुणकगुणिता गुणितः स्यात्</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Multiplication: Employs 5 distinct algorithms (<em>Pañca Guṇana-vidhayaḥ</em>): Sthānaguṇana (place-by-place), Khaṇḍaguṇana (factoring: A(b₁+b₂)), Vibhāga, Rūpavibhāga, and Kapāṭasandhi (lattice grid).</td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
+                        <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#0f766e' }}>4. Bhāgahāra (भागहारः)</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#334155' }}>भागहारेण भाजिते</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Division: Partitioning quantities and factoring, isolating common divisors (<em>Apavartana</em>) prior to formal long division.</td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                        <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#0f766e' }}>5. Varga (वर्गः)</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#334155' }}>समद्विघातः कृतिरुच्यते</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Squaring: Self-multiplication leveraging algebraic identities: (a+b)² = a² + 2ab + b² and a² = (a+d)(a-d) + d² (using chosen difference <em>iṣṭa</em>).</td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
+                        <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#0f766e' }}>6. Varga-mūla (वर्गमूलम्)</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#334155' }}>पदं मूलं प्रकीर्तितम्</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Square Root: Digit-by-digit place extraction dividing odd (<em>Viṣama</em>) and even (<em>Sama</em>) place columns systematically.</td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                        <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#0f766e' }}>7. Ghana (घनः)</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#334155' }}>समत्रिघातो घन उच्यते</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Cubing: Three-fold continuous product (a × a × a), proven through spatial cubic volume expansion: (a+b)³ = a³ + 3a²b + 3ab² + b³.</td>
+                      </tr>
+                      <tr style={{ background: '#f8fafc' }}>
+                        <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#0f766e' }}>8. Ghana-mūla (घनमूलम्)</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#334155' }}>आद्यं घनस्थानमथाघने द्वे</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Cube Root: Grouping digits into trinary place sets (one cubic, two non-cubic) to extract roots of large astronomical numbers.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Shunya-parikarma & Khahara */}
+              <div className="philosophy-card" style={{ background: '#eff6ff', border: '1.5px solid #bfdbfe', margin: '1.25rem 0' }}>
+                <h3 style={{ margin: '0 0 0.5rem', fontSize: '1.08rem', fontWeight: 800, color: '#1e40af' }}>
+                  🌌 शून्यपरिकर्म (Śūnya-parikarma): Operations on Zero &amp; The Infinite Khahara (खहरः)
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#1e3a8a', lineHeight: 1.5, margin: '0 0 0.75rem' }}>
+                  Bhāskarāchārya articulates the exact arithmetic laws for combining Zero (<em>Kha / Śūnya</em>) with standard numbers, establishing how Zero affects addition, subtraction, multiplication, and powers:
+                </p>
+
+                <div style={{ background: '#ffffff', padding: '0.75rem 1rem', borderRadius: '8px', border: '1px solid #dbeafe', margin: '0.5rem 0' }}>
+                  <div style={{ fontSize: '0.98rem', fontWeight: 800, color: '#1e40af', lineHeight: 1.6 }}>
+                    योगे खं क्षेपसमं वर्गादौ खं खभाजितो राशिः ।<br />
+                    खहरः स्यात् खगुणः खं खगुणश्चिन्त्यश्च शेषविधौ ॥
+                  </div>
+                  <div style={{ fontSize: '0.84rem', color: '#3b82f6', marginTop: '0.25rem', fontStyle: 'italic' }}>
+                    yogē khaṁ kṣēpasamaṁ vargādau khaṁ khabhājitō rāśiḥ | khaharaḥ syāt khaguṇaḥ khaṁ khaguṇaścintyaśca śēṣavidhau ||
+                  </div>
+                  <p style={{ fontSize: '0.84rem', color: '#1e3a8a', margin: '0.5rem 0 0', lineHeight: 1.5 }}>
+                    <strong>Mathematical Axiom:</strong> In addition, zero leaves the augend unchanged (a + 0 = a); the square or power of zero remains zero (0² = 0, 0³ = 0); a number multiplied by zero becomes zero (a × 0 = 0); and a quantity divided by zero is known as <strong>खहर (Khahara)</strong>—a fraction with zero as denominator (a / 0 = ∞).
+                  </p>
+                </div>
+
+                <div style={{ background: '#ffffff', padding: '0.75rem 1rem', borderRadius: '8px', border: '1px solid #dbeafe', margin: '0.75rem 0 0.25rem' }}>
+                  <div style={{ fontSize: '0.98rem', fontWeight: 800, color: '#1e40af', lineHeight: 1.6 }}>
+                    अस्मिन् विकारः खहरे न राशावपि प्रविष्टेष्वपि निःसृतेषु ।<br />
+                    बहुष्वपि स्याल्लयसृष्टिकालेऽनन्तेऽच्युते भूतगणेषु यद्वत् ॥
+                  </div>
+                  <div style={{ fontSize: '0.84rem', color: '#3b82f6', marginTop: '0.25rem', fontStyle: 'italic' }}>
+                    asmin vikāraḥ khaharē na rāśāvapi praviṣṭēṣvapi niḥsṛtēṣu | bahuṣvapi syāllayasṛṣṭikālē&apos;nantē&apos;cyutē bhūtagaṇēṣu yadvat ||
+                  </div>
+                  <p style={{ fontSize: '0.84rem', color: '#1e3a8a', margin: '0.5rem 0 0', lineHeight: 1.5 }}>
+                    <strong>The Cosmological Comparison of Mathematical Infinity:</strong> &quot;In this quantity called <em>Khahara</em> (division by zero), no change or alteration occurs, even though finite quantities enter into it or issue forth from it—just as no alteration occurs in the Infinite, Immutable Reality (<em>Ananta / Acyuta</em>), when endless hosts of beings emerge at cosmic creation (<em>Sṛṣṭi</em>) or dissolve back at cosmic dissolution (<em>Laya</em>)!&quot;
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 3: Resolution of the Swarm of Bees Riddle */}
             <section className="philosophy-section" id="lilavati-bees" aria-labelledby="heading-lilavati-bees">
-              <h2 id="heading-lilavati-bees">2. Resolution of the Classic &quot;Swarm of Bees&quot; Riddle</h2>
+              <h2 id="heading-lilavati-bees">3. Resolution of the Classic &quot;Swarm of Bees&quot; Riddle</h2>
               <p className="philosophy-lead">
                 The poetic riddle of the swarming bees demonstrates Bhāskara’s ability to disguise a multi-step quadratic equation as a romantic woodland narrative.
               </p>
@@ -3313,9 +3503,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </p>
             </section>
 
-            {/* Section 3: The Broken Necklace */}
+            {/* Section 4: The Broken Necklace */}
             <section className="philosophy-section" id="lilavati-necklace" aria-labelledby="heading-lilavati-necklace">
-              <h2 id="heading-lilavati-necklace">3. The Broken Necklace: Elevating a Lover’s Quarrel into Fractions</h2>
+              <h2 id="heading-lilavati-necklace">4. The Broken Necklace: Elevating a Lover’s Quarrel into Fractions</h2>
               <p className="philosophy-lead">
                 Another spectacular instance of elevating the mundane to the magical occurs in a problem regarding a broken pearl necklace during a passionate embrace:
               </p>
@@ -3333,9 +3523,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
-            {/* Section 4: Geometry Puzzles: The Peacock and the Lotus */}
+            {/* Section 5: Geometry Puzzles: The Peacock and the Lotus */}
             <section className="philosophy-section" id="lilavati-peacock-lotus" aria-labelledby="heading-lilavati-peacock-lotus">
-              <h2 id="heading-lilavati-peacock-lotus">4. Geometry in Nature: The Perched Peacock and the Wind-Blown Lotus</h2>
+              <h2 id="heading-lilavati-peacock-lotus">5. Geometry in Nature: The Perched Peacock and the Wind-Blown Lotus</h2>
               <p className="philosophy-lead">
                 Bhāskara transforms geometric constraints into living kinetic scenes rather than static chalkboard figures:
               </p>
@@ -3368,9 +3558,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
-            {/* Section 5: Interactive Riddle Studio */}
+            {/* Section 6: Interactive Riddle Studio */}
             <section className="philosophy-section" id="lilavati-studio" aria-labelledby="heading-lilavati-studio">
-              <h2 id="heading-lilavati-studio">5. Interactive Riddle Studio: Solve Bhāskara’s Four Riddles</h2>
+              <h2 id="heading-lilavati-studio">6. Interactive Riddle Studio: Solve Bhāskara’s Four Riddles</h2>
               <p className="philosophy-lead">
                 Experiment with the interactive sliders below to solve the quadratic bee swarm, string the pearls, calculate the peacock’s dive, measure the lake depth, and convert cowrie shell currency into silver and gold:
               </p>
@@ -3379,9 +3569,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               <LilavatiPoeticMathStudio onPlayAudio={handlePlayAudio} />
             </section>
 
-            {/* Section 6: Cowrie Shell Currency & Place-Value */}
+            {/* Section 7: Cowrie Shell Currency & Place-Value */}
             <section className="philosophy-section" id="lilavati-currency" aria-labelledby="heading-lilavati-currency">
-              <h2 id="heading-lilavati-currency">6. The Micro-Currency Foundation: Cowrie Shells (Varāṭaka / Gavvalu), Global Trade &amp; Physical Place-Value</h2>
+              <h2 id="heading-lilavati-currency">7. The Micro-Currency Foundation: Cowrie Shells (Varāṭaka), Global Trade &amp; Physical Place-Value</h2>
               <p className="philosophy-lead">
                 In Chapter 1 of the <em>Līlāvatī</em> (the <em>Paribhāṣā</em> metrological chapter), Bhāskarāchārya does not begin with abstract cosmic numbers. Instead, he anchors mathematical calculation in the tangible micro-currency of the common person: the cowrie seashell (वराटक / <em>varāṭaka</em>).
               </p>
@@ -3417,11 +3607,11 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   </span>
                 </div>
                 <div style={{ fontSize: '0.85rem', color: '#854d0e', background: '#fef9c3', padding: '0.5rem 0.75rem', borderRadius: '6px', margin: '0.4rem 0', border: '1px solid #fde047' }}>
-                  <strong>16th c. Telugu Translation (<em>Prakīrṇa Gaṇitamu</em> by Eluganti Pedana):</strong><br />
-                  <em>&quot;ఇరువది గవ్వలు కాకిణి (20 Gavvalu = 1 Kakini) · పరగునాల్గు కాకిణులు ఒక పణము (4 Kakinis = 1 Pana) · పదహారు పణములు ద్రమ్మము (16 Panas = 1 Dramma) · పదహారు ద్రమ్మములు ఒక నిష్కము (16 Drammas = 1 Nishka).&quot;</em>
+                  <strong>16th c. Vernacular Transmission (<em>Prakīrṇa Gaṇitamu</em> by Eluganti Pedana):</strong><br />
+                  <em>&quot;Twenty cowries make one kākiṇī · four kākiṇīs make one paṇa · sixteen paṇas make one dramma · sixteen drammas make one niṣka.&quot;</em>
                 </div>
                 <p style={{ margin: 0, fontSize: '0.88rem', color: '#713f12', lineHeight: 1.5 }}>
-                  <strong>Literal Axiom:</strong> &quot;Twice ten (20) varāṭakas (cowrie shells / <em>gavvalu</em>) make one kākiṇī; four kākiṇīs make one paṇa; sixteen paṇas make one dramma; and sixteen drammas make one niṣka.&quot;
+                  <strong>Literal Sanskrit Axiom:</strong> &quot;Twice ten (20) varāṭakas (cowrie shells) make one kākiṇī; four kākiṇīs make one paṇa; sixteen paṇas make one dramma; and sixteen drammas make one niṣka.&quot;
                 </p>
               </div>
 
@@ -3430,39 +3620,39 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem', textAlign: 'left', background: '#ffffff', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
                   <thead>
                     <tr style={{ background: '#f8fafc', borderBottom: '2px solid #cbd5e1' }}>
-                      <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Denomination (Sanskrit / Telugu)</th>
-                      <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Shell Count (Varāṭaka / Gavvalu)</th>
+                      <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Denomination (Sanskrit / Classical)</th>
+                      <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Shell Count (Varāṭaka)</th>
                       <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Marketplace &amp; Metallic Reality</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Phooṭī Kauḍī / Badda Gavva (बद्द गవ్వ)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Phooṭī Kauḍī / Kapardikā-pāda (पादवराटकः / फूटी कौड़ी)</td>
                       <td style={{ padding: '0.6rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>1/4 Shell (0.25)</td>
                       <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Quarter piece of a broken shell; fractional ledger unit (origin of the idiom <em>&quot;not even a phooṭī kauḍī&quot;</em>)</td>
                     </tr>
                     <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
-                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Varāṭaka / Gavva (वराटक / గవ్వ)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Varāṭaka / Kapardikā (वराटकः / कपर्दिका)</td>
                       <td style={{ padding: '0.6rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>1 Whole Shell</td>
                       <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Individual <em>Monetaria moneta</em>; indivisible micro-currency for buying daily produce, salt, and clay pots</td>
                     </tr>
                     <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Kākiṇī (काकिणी / కాకిణి)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Kākiṇī (काकिणी)</td>
                       <td style={{ padding: '0.6rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>20 Shells</td>
                       <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Handful barter standard; bridges retail counters with wholesale bulk transactions</td>
                     </tr>
                     <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
-                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Paṇa (पण / పణము)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Paṇa / Kārṣāpaṇa (पणः / कार्षापणः)</td>
                       <td style={{ padding: '0.6rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>80 Shells (4 Kākiṇīs)</td>
                       <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Standard copper coin (~9.5 grams); 80 uniform cowries balanced 1 copper coin on the scales</td>
                     </tr>
                     <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Dramma (द्रम्म / ద్రమ్మము)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Dramma (द्रम्मः)</td>
                       <td style={{ padding: '0.6rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>1,280 Shells (16 Paṇas)</td>
                       <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>Standard silver coin; money changers used pre-calibrated scoops/baskets containing 1,280 shells</td>
                     </tr>
                     <tr style={{ background: '#f8fafc' }}>
-                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Niṣka (निष्क / నిష్కము)</td>
+                      <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Niṣka (निष्कः)</td>
                       <td style={{ padding: '0.6rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>20,480 Shells (16 Drammas)</td>
                       <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>High-denomination gold coin; state revenue reserves, real-estate transactions, and merchant fleet financing</td>
                     </tr>
@@ -3477,7 +3667,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                     🐚 Why Seashells, Not Tamarind Seeds?
                   </h3>
                   <p style={{ fontSize: '0.85rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
-                    While tamarind seeds (<em>chinta gittalu</em>) were used casually in domestic folk games like <em>Vāmana Guṇṭalu</em> (Pallāṅguḻi), they rot, chip, get eaten by insects, and change weight as they dry.
+                    While tamarind seeds were used casually in domestic folk games like <em>Pallāṅguḻi / Vāmana Guṇṭalu</em>, they rot, chip, get eaten by insects, and change weight as they dry.
                     Formal treatises required <strong>Monetaria moneta</strong>: mineralized, lightweight, permanent, and impossible to counterfeit inland.
                     Meanwhile, botanical seeds like <strong>Guñjā (ratti)</strong> and <strong>Yava (barleycorn)</strong> were reserved for balance scales (<em>tulā</em>) to weigh gold and gems.
                   </p>
@@ -3511,9 +3701,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
-            {/* Section 7: Sanskrit Aesthetics & Rasa */}
+            {/* Section 8: Sanskrit Aesthetics & Rasa */}
             <section className="philosophy-section" id="lilavati-aesthetics" aria-labelledby="heading-lilavati-aesthetics">
-              <h2 id="heading-lilavati-aesthetics">7. Sanskrit Aesthetics: The Philosophy Behind the Poetry</h2>
+              <h2 id="heading-lilavati-aesthetics">8. Sanskrit Aesthetics: The Philosophy Behind the Poetry</h2>
               <p className="philosophy-lead">
                 The synthesis of quantitative mathematics and high poetry was the absolute norm in classical Sanskrit text production, driven by a profound educational philosophy:
               </p>
