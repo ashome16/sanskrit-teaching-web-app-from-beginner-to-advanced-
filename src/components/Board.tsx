@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 're
 import { createPortal } from 'react-dom';
 import '../styles/board.css';
 import { iconForExampleWord } from '../data/exampleIcons';
-import { playPronunciation, stopPronunciation } from '../utils/pronunciation';
+import { getSpeechGeneration, playPronunciation, stopPronunciation } from '../utils/pronunciation';
 
 type ShelfId = 'prarambhah' | 'sariram' | 'ganitam' | 'bhugolah' | 'sanskritih' | 'krida' | 'prakrtih';
 
@@ -837,6 +837,17 @@ function activeSectionChipId(chips: BoardSectionChip[], puzzleIndex: number): st
   return active;
 }
 
+/** Guess window before English and Sanskrit audio. Play all uses the same gap. */
+const PUZZLE_REVEAL_MS = 3200;
+
+/** Sanskrit only. Learn cards speak the target; other puzzles speak the sentence, else the word. */
+function spokenSanskrit(puzzle: BoardPuzzle, learn: boolean): string {
+  if (learn) return puzzle.target || '';
+  const sentence = (puzzle.sentence || '').trim();
+  if (sentence) return sentence;
+  return (puzzle.answer ?? puzzle.target) || '';
+}
+
 const Board: React.FC<BoardProps> = ({
   onNavigateToHome,
   onNavigateToReader,
@@ -888,11 +899,16 @@ const Board: React.FC<BoardProps> = ({
   const [lockIndex, setLockIndex] = useState<number | null>(null);
   const [joinGhost, setJoinGhost] = useState<{ word: string; left: number; top: number } | null>(null);
   const [learnPulse, setLearnPulse] = useState(false);
+  const [meaningShown, setMeaningShown] = useState(false);
+  const [leadHighlight, setLeadHighlight] = useState(false);
   const playingRef = useRef(false);
   const playTokenRef = useRef(0);
   const playTimersRef = useRef<number[]>([]);
   const playWakeRef = useRef<Array<() => void>>([]);
   const playDockRef = useRef<HTMLDivElement | null>(null);
+  const revealTimerRef = useRef<number | null>(null);
+  const revealGenRef = useRef<number | null>(null);
+  const revealWatchRef = useRef(0);
   const playCtxRef = useRef({
     activePuzzles: [] as BoardPuzzle[],
     activeShelf: 'prarambhah' as ShelfId,
@@ -1000,6 +1016,63 @@ const Board: React.FC<BoardProps> = ({
     setLearnPulse(false);
   };
 
+  const clearRevealTimer = () => {
+    if (revealTimerRef.current != null) {
+      window.clearTimeout(revealTimerRef.current);
+      revealTimerRef.current = null;
+    }
+  };
+
+  const clearLeadHighlight = () => {
+    revealWatchRef.current += 1;
+    revealGenRef.current = null;
+    setLeadHighlight(false);
+  };
+
+  /** Highlight while the auto-started Sanskrit clip is the current playback. */
+  const speakLead = (spoken: string) => {
+    const textToSpeak = (spoken || '').trim();
+    if (!textToSpeak) {
+      clearLeadHighlight();
+      return;
+    }
+    const before = getSpeechGeneration();
+    playPronunciation(textToSpeak);
+    const gen = getSpeechGeneration();
+    if (gen === before) {
+      clearLeadHighlight();
+      return;
+    }
+    revealGenRef.current = gen;
+    setLeadHighlight(true);
+    const watch = revealWatchRef.current + 1;
+    revealWatchRef.current = watch;
+    const startedAt = Date.now();
+    let sawSpeaking = false;
+    const tick = () => {
+      if (revealWatchRef.current !== watch) return;
+      if (getSpeechGeneration() !== gen) {
+        setLeadHighlight(false);
+        if (revealGenRef.current === gen) revealGenRef.current = null;
+        return;
+      }
+      const synth = window.speechSynthesis;
+      const active = !!(synth && (synth.speaking || synth.pending));
+      if (active) sawSpeaking = true;
+      if (sawSpeaking && !active) {
+        setLeadHighlight(false);
+        if (revealGenRef.current === gen) revealGenRef.current = null;
+        return;
+      }
+      if (!sawSpeaking && Date.now() - startedAt > 6000) {
+        setLeadHighlight(false);
+        return;
+      }
+      window.setTimeout(tick, 160);
+    };
+    window.setTimeout(tick, 200);
+  };
+
   const playSleep = (ms: number) => new Promise<void>((resolve) => {
     let settled = false;
     const done = () => {
@@ -1029,6 +1102,8 @@ const Board: React.FC<BoardProps> = ({
     playTimersRef.current = [];
     const wake = playWakeRef.current.splice(0);
     wake.forEach((fn) => fn());
+    clearRevealTimer();
+    clearLeadHighlight();
     stopPronunciation();
     clearBoardMotion();
     setChosen([]);
@@ -1154,40 +1229,38 @@ const Board: React.FC<BoardProps> = ({
       setChecked(false);
       setWrongAttempt(false);
       clearBoardMotion();
+      setMeaningShown(false);
+      clearLeadHighlight();
       await nextPaint();
       if (!alive()) return;
 
       const fresh = playCtxRef.current.activePuzzles[index] ?? puzzle;
       const learn = (fresh.phase || '').trim() === 'learn';
-      if (learn) {
-        setLearnPulse(true);
-        playPronunciation(fresh.target);
-        await playSleep(1800);
-        if (!alive()) return;
-        setLearnPulse(false);
-      } else {
+      if (!learn) {
         const move = findSolvingSelection(fresh);
-        if (!move) {
-          await playSleep(320);
-          if (!alive()) return;
-        } else {
+        if (move) {
           const joined = await animateBoardJoin(token, fresh, move);
           if (!alive()) return;
-          if (!joined) {
-            await playSleep(280);
-            if (!alive()) return;
-          } else {
-            const word = ((fresh.answer ?? fresh.target) || '').normalize('NFC');
+          if (joined) {
             playCtxRef.current.applySelection(move.selection);
             await nextPaint();
             if (!alive()) return;
             clearBoardMotion();
-            playPronunciation(word);
-            await playSleep(1800);
-            if (!alive()) return;
           }
         }
+      } else {
+        setLearnPulse(true);
       }
+      if (!alive()) return;
+      // Picture and Sanskrit word stay up; English stays hidden through the guess gap.
+      setMeaningShown(false);
+      await playSleep(PUZZLE_REVEAL_MS);
+      if (!alive()) return;
+      setMeaningShown(true);
+      speakLead(spokenSanskrit(fresh, learn));
+      await playSleep(1800);
+      if (!alive()) return;
+      if (learn) setLearnPulse(false);
 
       if (index + 1 >= playCtxRef.current.activePuzzles.length) {
         finishBoardPlayAll(token);
@@ -1203,6 +1276,10 @@ const Board: React.FC<BoardProps> = ({
       return;
     }
     if (!activePuzzles.length || !activePuzzle) return;
+    clearRevealTimer();
+    clearLeadHighlight();
+    setMeaningShown(false);
+    stopPronunciation();
     const token = playTokenRef.current + 1;
     playTokenRef.current = token;
     playingRef.current = true;
@@ -1484,6 +1561,35 @@ const Board: React.FC<BoardProps> = ({
     setWrongAttempt(false);
   }, [puzzleIndex, activeShelf]);
 
+  // First view is picture + Sanskrit only. After the guess gap, show English and speak Sanskrit.
+  // Play all owns that timing itself, so this effect must not also speak.
+  useEffect(() => {
+    setMeaningShown(false);
+    clearLeadHighlight();
+    clearRevealTimer();
+    const puzzle = activePuzzle;
+    if (!puzzle) return undefined;
+    if (playingRef.current) return undefined;
+    const learn = (puzzle.phase || '').trim() === 'learn';
+    const timer = window.setTimeout(() => {
+      if (revealTimerRef.current === timer) revealTimerRef.current = null;
+      if (playingRef.current) return;
+      setMeaningShown(true);
+      speakLead(spokenSanskrit(puzzle, learn));
+    }, PUZZLE_REVEAL_MS);
+    revealTimerRef.current = timer;
+    return () => {
+      window.clearTimeout(timer);
+      if (revealTimerRef.current === timer) revealTimerRef.current = null;
+      if (revealGenRef.current != null && getSpeechGeneration() === revealGenRef.current) {
+        stopPronunciation();
+      }
+      clearLeadHighlight();
+    };
+    // speakLead/clearLeadHighlight identity changes every render; puzzle identity is the trigger.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [puzzleIndex, activeShelf, activePuzzle]);
+
   /** Navigate to previous puzzle on this shelf. */
   const goPrev = () => {
     if (playingRef.current) stopBoardPlayAll();
@@ -1568,6 +1674,11 @@ const Board: React.FC<BoardProps> = ({
   const activeStep = (checked && isCorrect) ? 2 : 1;
   const graphicWord = ((activePuzzle?.answer ?? activePuzzle?.target ?? activePuzzle?.highlight) || '').normalize('NFC');
   const puzzleGraphic = graphicWord ? iconForExampleWord(graphicWord) : '✨';
+  const leadWord = (activePuzzle?.answer ?? activePuzzle?.target) || '';
+  const leadEnglish = isLearnPhase
+    ? (activePuzzle?.gloss ?? activePuzzle?.english ?? '')
+    : (activePuzzle?.english ?? '');
+  const leadMark = leadHighlight ? ' puzzle-lead-highlight' : '';
   const activeShelfInfo = SHELF_DESCRIPTIONS[activeShelf];
   const nextCue = describeNextTap(activePuzzle, chosen, {
     learn: isLearnPhase,
@@ -2026,10 +2137,16 @@ const Board: React.FC<BoardProps> = ({
           </ol>
         )}
 
+        <div className="puzzle-lead">
+          <div className="puzzle-lead-graphic" aria-hidden="true">{puzzleGraphic}</div>
+          <p className={`puzzle-lead-word${learnPulse ? ' learn-word--settle' : ''}${leadMark}`}>{leadWord}</p>
+          <p className={`puzzle-lead-english${meaningShown ? leadMark : ''}`} aria-hidden={!meaningShown}>
+            {meaningShown ? leadEnglish : ''}
+          </p>
+        </div>
+
         {isLearnPhase ? (
           <div className={`learn-card${learnPulse ? ' learn-card--settling' : ''}`}>
-            <p className={`learn-word${learnPulse ? ' learn-word--settle' : ''}`}>{activePuzzle.target}</p>
-            <p className="learn-gloss">{activePuzzle.gloss ?? activePuzzle.english}</p>
             <button
               className="hear-button"
               type="button"
@@ -2067,8 +2184,8 @@ const Board: React.FC<BoardProps> = ({
                 <div className="jodo-goal-bar">
                   <span className="jodo-goal-tag">🎯 जोडो (Join):</span>
                   <span className="jodo-goal-target">{activePuzzle.target}</span>
-                  {activePuzzle.english && (
-                    <span className="jodo-goal-meaning" title="Meaning in English">
+                  {meaningShown && activePuzzle.english && (
+                    <span className={`jodo-goal-meaning${leadMark}`} title="Meaning in English">
                       ({activePuzzle.english})
                     </span>
                   )}
@@ -2093,8 +2210,8 @@ const Board: React.FC<BoardProps> = ({
                     ? (activePuzzle.prompt ?? `Which word means · ${activePuzzle.gloss ?? activePuzzle.english}?`)
                     : renderPromptWithHole(activePuzzle.prompt ?? activePuzzle.target)}
                 </p>
-                {isPrashnaPart && activePuzzle.english && (
-                  <p className="prashna-english-clue">({activePuzzle.english})</p>
+                {meaningShown && isPrashnaPart && activePuzzle.english && (
+                  <p className={`prashna-english-clue${leadMark}`}>({activePuzzle.english})</p>
                 )}
               </div>
             )}
@@ -2138,9 +2255,10 @@ const Board: React.FC<BoardProps> = ({
                   <span className="success-emoji">🎉</span>
                   <span className="success-text">उत्तमम्! Correct!</span>
                 </div>
-                <div className="puzzle-graphic" aria-hidden="true">{puzzleGraphic}</div>
                 <p className="result-sanskrit">{highlightedSentence(activePuzzle.sentence, activePuzzle.highlight, activePuzzle.tapHighlight)}</p>
-                <p className="result-english">{activePuzzle.english}</p>
+                {meaningShown && activePuzzle.english ? (
+                  <p className={`result-english${leadMark}`}>{activePuzzle.english}</p>
+                ) : null}
                 <div className="result-audio-row">
                   <button
                     className="hear-button hear-button--inline hear-button--subtle"
