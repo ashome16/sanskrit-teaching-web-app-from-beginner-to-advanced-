@@ -11,6 +11,9 @@ import {
   SHAKA_TO_CE_OFFSET,
   SHAKA_ERA_CHRONOLOGY,
   VEDIC_SUBSUTRA_WORKSHEETS,
+  KERALA_CORRECTION_TERMS,
+  KERALA_YANTRAS,
+  KATAPAYADI_DIGIT_MAP,
   type VedicSutra,
   type VedicSubSutraWorksheet,
   type VedicSubSutraProblem
@@ -25,7 +28,7 @@ import VedicArticleFigure from './VedicArticleFigure';
 import '../styles/vedic-maths.css';
 import '../styles/resources.css';
 
-export type VedicTab = 'solvers' | 'articles' | 'zero' | 'fluid' | 'algebra' | 'geometry' | 'parampara' | 'logic' | 'sutras' | 'quiz' | 'essay';
+export type VedicTab = 'solvers' | 'articles' | 'zero' | 'fluid' | 'algebra' | 'geometry' | 'kerala' | 'parampara' | 'logic' | 'sutras' | 'quiz' | 'essay';
 type SolverKey = 'ekadhikena' | 'nikhilam-sub' | 'nikhilam-mul' | 'urdhva' | 'ekanyunena' | 'antya' | 'beejank';
 
 export interface VedicMathsProps {
@@ -518,6 +521,18 @@ ${bodyHtml}
   const [dhanurElevB, setDhanurElevB] = useState<number>(15);
   const [activePhoneticLetter, setActivePhoneticLetter] = useState<string>('ṭa');
 
+  // Kerala School & Calculus Studio States
+  const [keralaSubTab, setKeralaSubTab] = useState<'all' | 'series' | 'yuktibhasa' | 'astronomy' | 'cipher' | 'yantras'>('all');
+  const [keralaTermsN, setKeralaTermsN] = useState<number>(10);
+  const [keralaThetaDeg, setKeralaThetaDeg] = useState<number>(30);
+  const [keralaSineTermsCount, setKeralaSineTermsCount] = useState<number>(3);
+  const [yuktibhasaStep, setYuktibhasaStep] = useState<'caturasra' | 'samakhanda' | 'projection' | 'sankalita'>('caturasra');
+  const [selectedMelakartaRaga, setSelectedMelakartaRaga] = useState<string>('kanakangi');
+  const [customKatapayadiInput, setCustomKatapayadiInput] = useState<string>('harikambhoji');
+  const [eclipseObserver, setEclipseObserver] = useState<'kerala' | 'ujjain' | 'equator' | 'high_lat'>('kerala');
+  const [sphutaMeanAnomaly, setSphutaMeanAnomaly] = useState<number>(45);
+  const [inverseSineS, setInverseSineS] = useState<number>(0.5);
+
   // Historiography & Shaka Chronology States
   const [paramparaSubTab, setParamparaSubTab] = useState<'all' | 'historiography' | 'shaka-matrix' | 'lineage'>('all');
   const [shakaInputYear, setShakaInputYear] = useState<number>(520);
@@ -630,6 +645,22 @@ ${bodyHtml}
     } else if (clean === 'logic') {
       setActiveTab('logic');
       scrollId = 'vedic-tabs';
+    } else if (clean === 'kerala') {
+      setActiveTab('kerala');
+      setKeralaSubTab('all');
+      scrollId = 'vedic-tabs';
+    } else if (clean === 'yuktibhasa') {
+      setActiveTab('kerala');
+      setKeralaSubTab('yuktibhasa');
+      scrollId = 'yuktibhasa-section';
+    } else if (clean === 'melakarta' || clean === 'katapayadi') {
+      setActiveTab('kerala');
+      setKeralaSubTab('cipher');
+      scrollId = 'katapayadi-section';
+    } else if (clean === 'astronomy-kerala' || clean === 'eclipse') {
+      setActiveTab('kerala');
+      setKeralaSubTab('astronomy');
+      scrollId = 'kerala-astronomy-section';
     } else if (clean === 'parampara') {
       setActiveTab('parampara');
       setParamparaSubTab('all');
@@ -1028,9 +1059,9 @@ ${bodyHtml}
                   <div className="vedic-track-badge">Track 3 · दर्शनम्</div>
                   <div className="vedic-track-title-wrap">
                     <h3 className="vedic-track-title">Heritage &amp; Epistemology</h3>
-                    <span className="vedic-track-sa">शून्यं तर्कशास्त्रं परम्परा च</span>
+                    <span className="vedic-track-sa">शून्यं तर्कशास्त्रं केरलगणितं परम्परा च</span>
                   </div>
-                  <p className="vedic-track-desc">The invention of zero, formal logic, Paninian computational linguistics, and unbroken lineage.</p>
+                  <p className="vedic-track-desc">The invention of zero, formal logic, Kerala calculus &amp; infinite series, and unbroken lineage.</p>
                 </div>
                 <div className="vedic-track-btns">
                   <button
@@ -1067,6 +1098,22 @@ ${bodyHtml}
                   </button>
                   <button
                     type="button"
+                    className={`vedic-tab-btn${activeTab === 'kerala' ? ' active' : ''}`}
+                    onClick={() => {
+                      setActiveTab('kerala');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <span className="vedic-tab-num">8</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">♾️</span>
+                    <div className="vedic-tab-content">
+                      <span className="vedic-tab-title">The Kerala School &amp; Calculus</span>
+                      <span className="vedic-tab-sub">Mādhava · Yuktibhāṣā · Series</span>
+                    </div>
+                  </button>
+                  <button
+                    type="button"
                     className={`vedic-tab-btn${activeTab === 'parampara' ? ' active' : ''}`}
                     onClick={() => {
                       setActiveTab('parampara');
@@ -1074,7 +1121,7 @@ ${bodyHtml}
                       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
                   >
-                    <span className="vedic-tab-num">8</span>
+                    <span className="vedic-tab-num">9</span>
                     <span className="vedic-tab-icon" aria-hidden="true">🕉️</span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">Guru Paramparā &amp; Lineage</span>
@@ -1093,7 +1140,7 @@ ${bodyHtml}
                     <h3 className="vedic-track-title">Mastery &amp; Treatises</h3>
                     <span className="vedic-track-sa">अभ्यासपरीक्षा सिद्धान्तमञ्जरी</span>
                   </div>
-                  <p className="vedic-track-desc">Speed math self-assessment quiz and 6 illustrated academic masterclasses with historical manuscripts.</p>
+                  <p className="vedic-track-desc">Speed math self-assessment quiz and 15 illustrated academic masterclasses with historical manuscripts.</p>
                 </div>
                 <div className="vedic-track-btns">
                   <button
@@ -1105,7 +1152,7 @@ ${bodyHtml}
                       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
                   >
-                    <span className="vedic-tab-num">9</span>
+                    <span className="vedic-tab-num">10</span>
                     <span className="vedic-tab-icon" aria-hidden="true">⚡</span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">Speed Math Challenge</span>
@@ -1121,11 +1168,11 @@ ${bodyHtml}
                       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
                   >
-                    <span className="vedic-tab-num">10</span>
+                    <span className="vedic-tab-num">11</span>
                     <span className="vedic-tab-icon" aria-hidden="true">📖</span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">Articles Masterclass</span>
-                      <span className="vedic-tab-sub">6 Illustrated Treatises</span>
+                      <span className="vedic-tab-sub">15 Illustrated Treatises</span>
                     </div>
                   </button>
                 </div>
@@ -4465,16 +4512,1442 @@ ${bodyHtml}
                 >
                   ← Back to 6. The Numerical Grid &amp; Zero
                 </button>
+                <button
+                  type="button"
+                  className="article-pager-btn primary"
+                  onClick={() => {
+                    setActiveTab('kerala');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  Proceed to 8. The Kerala School &amp; Calculus →
+                </button>
               </div>
             </div>
           </div>
         )}
 
         {/* ==================================================================
-            TAB: GURU PARAMPARA & THE SOURCE (SACRED LINEAGE)
+            TAB: THE KERALA SCHOOL & CALCULUS (TRACK 3 · STEP 8)
+            Mādhava · Yuktibhāṣā · Infinite Series · Parallax Mechanics · Kaṭapayādi
             ================================================================== */}
+        {activeTab === 'kerala' && (() => {
+          // --- 1. Pi Series Calculations with Madhava Correction Terms ---
+          let partialSumPiOver4 = 0;
+          for (let i = 1; i <= keralaTermsN; i++) {
+            const term = Math.pow(-1, i - 1) / (2 * i - 1);
+            partialSumPiOver4 += term;
+          }
+          const uncorrectedPiVal = 4 * partialSumPiOver4;
+
+          // Sign of correction:
+          // Odd n: overshot, subtract correction.
+          // Even n: undershot, add correction.
+          const corrSign = Math.pow(-1, keralaTermsN);
+
+          const f1Val = KERALA_CORRECTION_TERMS[0].compute(keralaTermsN);
+          const piValF1 = 4 * (partialSumPiOver4 + corrSign * f1Val);
+
+          const f2Val = KERALA_CORRECTION_TERMS[1].compute(keralaTermsN);
+          const piValF2 = 4 * (partialSumPiOver4 + corrSign * f2Val);
+
+          const f3Val = KERALA_CORRECTION_TERMS[2].compute(keralaTermsN);
+          const piValF3 = 4 * (partialSumPiOver4 + corrSign * f3Val);
+
+          const getCorrectDecimals = (val: number): number => {
+            const targetStr = Math.PI.toFixed(14);
+            const valStr = val.toFixed(14);
+            let count = 0;
+            for (let i = 2; i < targetStr.length; i++) {
+              if (targetStr[i] === valStr[i]) {
+                count++;
+              } else {
+                break;
+              }
+            }
+            return count;
+          };
+
+          // --- 2. Madhava's Sine Series Calculation ---
+          const thetaRad = (keralaThetaDeg * Math.PI) / 180;
+          const sineExpansionTerms = [
+            { order: 1, label: '+ θ / 1!', val: thetaRad, sign: '+' },
+            { order: 3, label: '- θ³ / 3!', val: -Math.pow(thetaRad, 3) / 6, sign: '-' },
+            { order: 5, label: '+ θ⁵ / 5!', val: Math.pow(thetaRad, 5) / 120, sign: '+' },
+            { order: 7, label: '- θ⁷ / 7!', val: -Math.pow(thetaRad, 7) / 5040, sign: '-' },
+            { order: 9, label: '+ θ⁹ / 9!', val: Math.pow(thetaRad, 9) / 362880, sign: '+' },
+          ];
+          let approxSin = 0;
+          for (let i = 0; i < keralaSineTermsCount; i++) {
+            approxSin += sineExpansionTerms[i].val;
+          }
+          const exactSin = Math.sin(thetaRad);
+          const sinDiff = Math.abs(approxSin - exactSin);
+
+          // --- 3. Nīlakaṇṭha Inverse Sine & Sphuṭa-Gati ---
+          const invSineExactRad = Math.asin(inverseSineS);
+          const invSineExactDeg = (invSineExactRad * 180) / Math.PI;
+          const invSineApproxRad =
+            inverseSineS + (Math.pow(inverseSineS, 3) / 6) / (1 - Math.pow(inverseSineS, 2) / 10);
+          const invSineApproxDeg = (invSineApproxRad * 180) / Math.PI;
+          const invSineDiff = Math.abs(invSineApproxRad - invSineExactRad);
+
+          const meanAnomalyRad = (sphutaMeanAnomaly * Math.PI) / 180;
+          const velocityRatio = 1 + 0.2 * Math.cos(meanAnomalyRad);
+
+          // --- 4. Solar Eclipse Parallax Calculation ---
+          const eclipseDataByLoc: Record<string, { name: string; lat: string; lambanaMin: number; natiArcmin: number; note: string }> = {
+            kerala: {
+              name: 'Kerala Coast (Tirur / Sangamagrama)',
+              lat: '10.9° N',
+              lambanaMin: 14.2,
+              natiArcmin: 18.5,
+              note: 'Sub-tropical coastal latitude. Nilakantha and Parameshvara observed eclipses here to calibrate Drk parameters.'
+            },
+            ujjain: {
+              name: 'Ujjain (0° Prime Meridian of Ancient India)',
+              lat: '23.2° N',
+              lambanaMin: 24.8,
+              natiArcmin: 31.2,
+              note: 'Traditional central meridian (Avanti). Parallax increases noticeably due to higher latitude angle.'
+            },
+            equator: {
+              name: 'Terrestrial Equator (Lankā / 0° Lat)',
+              lat: '0.0°',
+              lambanaMin: 4.5,
+              natiArcmin: 2.1,
+              note: 'Zero geographic latitude minimizes latitudinal parallax (Nati), maximizing solar eclipse symmetry.'
+            },
+            high_lat: {
+              name: 'Himalayan Foothills / High North',
+              lat: '32.0° N',
+              lambanaMin: 38.6,
+              natiArcmin: 44.7,
+              note: 'Extreme northern angle yields massive Lambana shift, causing dramatic duration and timing differences.'
+            }
+          };
+          const activeEclipse = eclipseDataByLoc[eclipseObserver] || eclipseDataByLoc.kerala;
+
+          // --- 5. Melakarta Rāga Database & Decoder ---
+          const MELAKARTA_PRESETS = [
+            {
+              id: 'kanakangi',
+              index: 1,
+              name: 'Kanakāṅgī',
+              telugu: 'కనకాంగి',
+              sa: 'कनकाङ्गी',
+              s1: 'Ka (క / क)',
+              d1: 1,
+              s2: 'Na (న / न)',
+              d2: 0,
+              swaras: 'S R₁ G₁ M₁ P D₁ N₁ Ṡ',
+              chakra: '1 · Indu',
+              desc: 'First Melakarta raga. Encoded as Ka (1) + Na (0) = [1, 0]. By the Rule of Reversal (Vāmato Gatiḥ), 01 = Raga 1.'
+            },
+            {
+              id: 'ratnangi',
+              index: 2,
+              name: 'Ratnāṅgī',
+              telugu: 'రత్నాంగి',
+              sa: 'रत्नाङ्गी',
+              s1: 'Ra (ర / र)',
+              d1: 2,
+              s2: 'Tna/Na (న / न)',
+              d2: 0,
+              swaras: 'S R₁ G₁ M₁ P D₁ N₂ Ṡ',
+              chakra: '1 · Indu',
+              desc: 'Ra (2) + Na (0) = [2, 0]. Reversing gives 02 = Raga 2.'
+            },
+            {
+              id: 'ganamurti',
+              index: 3,
+              name: 'Gānamūrti',
+              telugu: 'గానమూర్తి',
+              sa: 'गानमूर्ति',
+              s1: 'Ga (గ / ग)',
+              d1: 3,
+              s2: 'Na (న / న)',
+              d2: 0,
+              swaras: 'S R₁ G₁ M₁ P D₁ N₃ Ṡ',
+              chakra: '1 · Indu',
+              desc: 'Ga (3) + Na (0) = [3, 0]. Reversing gives 03 = Raga 3.'
+            },
+            {
+              id: 'vanaspati',
+              index: 4,
+              name: 'Vanaspati',
+              telugu: 'వనస్పతి',
+              sa: 'वनस्पति',
+              s1: 'Va (వ / व)',
+              d1: 4,
+              s2: 'Na (న / न)',
+              d2: 0,
+              swaras: 'S R₁ G₁ M₁ P D₂ N₂ Ṡ',
+              chakra: '1 · Indu',
+              desc: 'Va (4) + Na (0) = [4, 0]. Reversing gives 04 = Raga 4.'
+            },
+            {
+              id: 'manavati',
+              index: 5,
+              name: 'Mānāvatī',
+              telugu: 'మానావతి',
+              sa: 'मानावती',
+              s1: 'Ma (మ / म)',
+              d1: 5,
+              s2: 'Na (న / न)',
+              d2: 0,
+              swaras: 'S R₁ G₁ M₁ P D₂ N₃ Ṡ',
+              chakra: '1 · Indu',
+              desc: 'Ma (5) + Na (0) = [5, 0]. Reversing gives 05 = Raga 5.'
+            },
+            {
+              id: 'tanarupi',
+              index: 6,
+              name: 'Tānarūpī',
+              telugu: 'తానరూపి',
+              sa: 'तानरूपी',
+              s1: 'Ta (త / त)',
+              d1: 6,
+              s2: 'Na (న / न)',
+              d2: 0,
+              swaras: 'S R₁ G₁ M₁ P D₃ N₃ Ṡ',
+              chakra: '1 · Indu',
+              desc: 'Ta (6) + Na (0) = [6, 0]. Reversing gives 06 = Raga 6.'
+            },
+            {
+              id: 'senavati',
+              index: 7,
+              name: 'Senāvatī',
+              telugu: 'సేనావతి',
+              sa: 'सेनापती / सेनावाती',
+              s1: 'Sa (స / स)',
+              d1: 7,
+              s2: 'Na (న / न)',
+              d2: 0,
+              swaras: 'S R₁ G₂ M₁ P D₁ N₁ Ṡ',
+              chakra: '2 · Netra',
+              desc: 'Sa (7) + Na (0) = [7, 0]. Reversing gives 07 = Raga 7.'
+            },
+            {
+              id: 'hanumatodi',
+              index: 8,
+              name: 'Hanumatodi',
+              telugu: 'హనుమత్తోడి',
+              sa: 'हनुमत्तोडि',
+              s1: 'Ha (హ / ह)',
+              d1: 8,
+              s2: 'Nu/Na (న / न)',
+              d2: 0,
+              swaras: 'S R₁ G₂ M₁ P D₁ N₂ Ṡ',
+              chakra: '2 · Netra',
+              desc: 'Ha (8) + Nu (0) = [8, 0]. Reversing gives 08 = Raga 8.'
+            },
+            {
+              id: 'mayamalavagowla',
+              index: 15,
+              name: 'Māyāmāḻavagouḻa',
+              telugu: 'మాయామాళవగౌళ',
+              sa: 'मायामाळवगौळ',
+              s1: 'Ma (మ / म)',
+              d1: 5,
+              s2: 'Ya (య / य)',
+              d2: 1,
+              swaras: 'S R₁ G₃ M₁ P D₁ N₃ Ṡ',
+              chakra: '3 · Agni',
+              desc: 'Ma (5) + Ya (1) = [5, 1]. Reversing gives 15 = Raga 15. The foundational practice scale of South Indian classical music.'
+            },
+            {
+              id: 'kharaharapriya',
+              index: 22,
+              name: 'Kharaharapriyā',
+              telugu: 'ఖరహరప్రియ',
+              sa: 'खरहरप्रिया',
+              s1: 'Kha (ఖ / ख)',
+              d1: 2,
+              s2: 'Ra (ర / र)',
+              d2: 2,
+              swaras: 'S R₂ G₂ M₁ P D₂ N₂ Ṡ',
+              chakra: '4 · Veda',
+              desc: 'Kha (2) + Ra (2) = [2, 2]. Reversing gives 22 = Raga 22 (equivalent to Western Dorian mode).'
+            },
+            {
+              id: 'carukesi',
+              index: 26,
+              name: 'Cārukēśī',
+              telugu: 'చారుకేశి',
+              sa: 'चारुकेशी',
+              s1: 'Ca (చ / च)',
+              d1: 6,
+              s2: 'Ru/Ra (ర / र)',
+              d2: 2,
+              swaras: 'S R₂ G₃ M₁ P D₁ N₂ Ṡ',
+              chakra: '5 · Bāṇa',
+              desc: 'Ca (6) + Ru (2) = [6, 2]. Reversing gives 26 = Raga 26.'
+            },
+            {
+              id: 'harikambhoji',
+              index: 28,
+              name: 'Harikāmbhoji',
+              telugu: 'హరికాంభోజి',
+              sa: 'हरिकाम्भोजी',
+              s1: 'Ha (హ / ह)',
+              d1: 8,
+              s2: 'Ri/Ra (ర / र)',
+              d2: 2,
+              swaras: 'S R₂ G₃ M₁ P D₂ N₂ Ṡ',
+              chakra: '5 · Bāṇa',
+              desc: 'Ha (8) + Ri (2) = [8, 2]. Reversing gives 28 = Raga 28 (equivalent to Mixolydian mode).'
+            },
+            {
+              id: 'dhirashankarabharana',
+              index: 29,
+              name: 'Dhīraśaṅkarābharaṇa',
+              telugu: 'ధీరశంకరాభరణం',
+              sa: 'धीरशङ्कराभरणम्',
+              s1: 'Dhi (ధ / ध)',
+              d1: 9,
+              s2: 'Ra (ర / र)',
+              d2: 2,
+              swaras: 'S R₂ G₃ M₁ P D₂ N₃ Ṡ',
+              chakra: '5 · Bāṇa',
+              desc: 'Dhi (9) + Ra (2) = [9, 2]. Reversing gives 29 = Raga 29 (equivalent to Western Major scale / Bilāval).'
+            },
+            {
+              id: 'subhapantuvarali',
+              index: 45,
+              name: 'Śubhapantuvarāḻi',
+              telugu: 'శుభపంతువరాళి',
+              sa: 'शुभपन्तुवराळी',
+              s1: 'Śu (శ / श)',
+              d1: 5,
+              s2: 'Bha (భ / भ)',
+              d2: 4,
+              swaras: 'S R₁ G₂ M₂ P D₁ N₃ Ṡ',
+              chakra: '8 · Vasu',
+              desc: 'Śu (5) + Bha (4) = [5, 4]. Reversing gives 45 = Raga 45 (Prati Madhyama).'
+            },
+            {
+              id: 'kamavardhani',
+              index: 51,
+              name: 'Kāmavardhanī (Pantuvarāḻi)',
+              telugu: 'కామవర్ధని',
+              sa: 'कामवर्धनी',
+              s1: 'Ka (క / क)',
+              d1: 1,
+              s2: 'Ma (మ / म)',
+              d2: 5,
+              swaras: 'S R₁ G₃ M₂ P D₁ N₃ Ṡ',
+              chakra: '9 · Brahma',
+              desc: 'Ka (1) + Ma (5) = [1, 5]. Reversing gives 51 = Raga 51.'
+            },
+            {
+              id: 'mechakalyani',
+              index: 65,
+              name: 'Mēchakalyāṇī',
+              telugu: 'మేచకల్యాణి',
+              sa: 'मेचकल्याणी',
+              s1: 'Me (మ / म)',
+              d1: 5,
+              s2: 'Cha (చ / च)',
+              d2: 6,
+              swaras: 'S R₂ G₃ M₂ P D₂ N₃ Ṡ',
+              chakra: '11 · Rudra',
+              desc: 'Me (5) + Cha (6) = [5, 6]. Reversing gives 65 = Raga 65 (equivalent to Lydian mode).'
+            },
+            {
+              id: 'rasikapriya',
+              index: 72,
+              name: 'Rasikapriyā',
+              telugu: 'రసికప్రియ',
+              sa: 'रसिकप्रिया',
+              s1: 'Ra (ర / र)',
+              d1: 2,
+              s2: 'Sa (స / स)',
+              d2: 7,
+              swaras: 'S R₃ G₃ M₂ P D₃ N₃ Ṡ',
+              chakra: '12 · Āditya',
+              desc: 'Final 72nd Melakarta raga! Ra (2) + Sa (7) = [2, 7]. Reversing gives 72 = Raga 72.'
+            }
+          ];
+
+          const activeMelakarta =
+            MELAKARTA_PRESETS.find((r) => r.id === selectedMelakartaRaga) || MELAKARTA_PRESETS[0];
+
+          // Dynamic parser for custom Kaṭapayādi word:
+          const parseKatapayadiWord = (text: string) => {
+            const clean = text.toLowerCase().trim();
+            const charMappings: { char: string; digit: number; consonant: string }[] = [];
+            let i = 0;
+            while (i < clean.length) {
+              let matchedDigit: number | null = null;
+              let matchedCons = '';
+              let advance = 1;
+
+              if (clean.slice(i, i + 4) === 'ksha' || clean.slice(i, i + 4) === 'kṣa') {
+                matchedDigit = 0; matchedCons = 'kṣa'; advance = 4;
+              } else if (clean.slice(i, i + 2) === 'kṣ') {
+                matchedDigit = 0; matchedCons = 'kṣ'; advance = 2;
+              } else if (['kha', 'ṭha', 'pha'].includes(clean.slice(i, i + 3))) {
+                matchedDigit = 2; matchedCons = clean.slice(i, i + 3); advance = 3;
+              } else if (['gha', 'ḍha', 'bha'].includes(clean.slice(i, i + 3))) {
+                matchedDigit = 4; matchedCons = clean.slice(i, i + 3); advance = 3;
+              } else if (['cha', 'tha'].includes(clean.slice(i, i + 3))) {
+                matchedDigit = 7; matchedCons = clean.slice(i, i + 3); advance = 3;
+              } else if (['jha', 'dha'].includes(clean.slice(i, i + 3))) {
+                matchedDigit = 9; matchedCons = clean.slice(i, i + 3); advance = 3;
+              } else if (['sha', 'śa'].includes(clean.slice(i, i + 3)) || clean.slice(i, i + 2) === 'sh') {
+                matchedDigit = 5; matchedCons = 'śa'; advance = 2;
+              } else if (['ka', 'ṭa', 'pa', 'ya'].includes(clean.slice(i, i + 2))) {
+                matchedDigit = 1; matchedCons = clean.slice(i, i + 2); advance = 2;
+              } else if (['kh', 'ph', 'ra'].includes(clean.slice(i, i + 2))) {
+                matchedDigit = 2; matchedCons = clean.slice(i, i + 2); advance = 2;
+              } else if (['ga', 'ḍa', 'ba', 'la'].includes(clean.slice(i, i + 2))) {
+                matchedDigit = 3; matchedCons = clean.slice(i, i + 2); advance = 2;
+              } else if (['gh', 'bh', 'va'].includes(clean.slice(i, i + 2))) {
+                matchedDigit = 4; matchedCons = clean.slice(i, i + 2); advance = 2;
+              } else if (['ṅa', 'ṇa', 'ma'].includes(clean.slice(i, i + 2))) {
+                matchedDigit = 5; matchedCons = clean.slice(i, i + 2); advance = 2;
+              } else if (['ca', 'ta', 'ṣa'].includes(clean.slice(i, i + 2))) {
+                matchedDigit = 6; matchedCons = clean.slice(i, i + 2); advance = 2;
+              } else if (['ch', 'th', 'sa'].includes(clean.slice(i, i + 2))) {
+                matchedDigit = 7; matchedCons = clean.slice(i, i + 2); advance = 2;
+              } else if (['ja', 'da', 'ha'].includes(clean.slice(i, i + 2))) {
+                matchedDigit = 8; matchedCons = clean.slice(i, i + 2); advance = 2;
+              } else if (['jh', 'dh', 'ḷa'].includes(clean.slice(i, i + 2))) {
+                matchedDigit = 9; matchedCons = clean.slice(i, i + 2); advance = 2;
+              } else if (['ña', 'na'].includes(clean.slice(i, i + 2))) {
+                matchedDigit = 0; matchedCons = clean.slice(i, i + 2); advance = 2;
+              } else {
+                const one = clean[i];
+                if (['k', 't', 'p', 'y', 'क', 'ट', 'प', 'य', 'క', 'ట', 'ప', 'య'].includes(one)) {
+                  matchedDigit = 1; matchedCons = one;
+                } else if (['r', 'ख', 'ठ', 'फ', 'र', 'ఖ', 'ఠ', 'ఫ', 'ర'].includes(one)) {
+                  matchedDigit = 2; matchedCons = one;
+                } else if (['g', 'b', 'l', 'ग', 'ड', 'ब', 'ल', 'గ', 'డ', 'బ', 'ల'].includes(one)) {
+                  matchedDigit = 3; matchedCons = one;
+                } else if (['v', 'w', 'घ', 'ढ', 'भ', 'व', 'ఘ', 'ఢ', 'భ', 'వ'].includes(one)) {
+                  matchedDigit = 4; matchedCons = one;
+                } else if (['m', 'ś', 'ङ', 'ण', 'म', 'श', 'ఙ', 'ణ', 'మ', 'శ'].includes(one)) {
+                  matchedDigit = 5; matchedCons = one;
+                } else if (['c', 'ṣ', 'च', 'त', 'ष', 'చ', 'త', 'ష'].includes(one)) {
+                  matchedDigit = 6; matchedCons = one;
+                } else if (['s', 'छ', 'थ', 'स', 'ఛ', 'థ', 'స'].includes(one)) {
+                  matchedDigit = 7; matchedCons = one;
+                } else if (['j', 'd', 'h', 'ज', 'द', 'ह', 'జ', 'ద', 'హ'].includes(one)) {
+                  matchedDigit = 8; matchedCons = one;
+                } else if (['झ', 'ध', 'ळ', 'ఝ', 'ధ', 'ళ'].includes(one)) {
+                  matchedDigit = 9; matchedCons = one;
+                } else if (['n', 'ञ', 'न', 'क्ष', 'ఞ', 'న', 'క్ష'].includes(one)) {
+                  matchedDigit = 0; matchedCons = one;
+                }
+              }
+
+              if (matchedDigit !== null) {
+                charMappings.push({ char: matchedCons, digit: matchedDigit, consonant: matchedCons });
+              }
+              i += advance;
+            }
+            const rawDigits = charMappings.map((m) => m.digit).join('');
+            const reversedDigits = charMappings.map((m) => m.digit).reverse().join('');
+            return { charMappings, rawDigits, reversedDigits };
+          };
+
+          const customDecoded = parseKatapayadiWord(customKatapayadiInput);
+
+          return (
+            <div className="kerala-studio-container" id="kerala-section-root">
+              {/* Hero Crest */}
+              <div className="kerala-hero-crest">
+                <div className="kerala-badge-pill">
+                  <span>॥ केरलीय-गणित-सम्प्रदायः · कलनगणितम् ॥</span>
+                  <span>·</span>
+                  <span>14th–16th Century CE</span>
+                  <span>·</span>
+                  <span>300 Years Before Newton &amp; Leibniz</span>
+                </div>
+                <h2 className="kerala-title">The Kerala School &amp; The Invention of Calculus</h2>
+                <p className="kerala-subtitle">
+                  Explore how Mādhava of Saṅgamagrāma, Jyeṣṭhadeva (Yuktibhāṣā), and Nīlakaṇṭha Somayājī
+                  formulated infinite series, rigorous geometric integration, differential chord calculus,
+                  and astronomical parallax centuries ahead of Europe.
+                </p>
+
+                {/* Sub-Nav Bar */}
+                <div className="kerala-subnav-bar">
+                  <div className="kerala-subnav-pills">
+                    <button
+                      type="button"
+                      className={`kerala-subnav-pill ${keralaSubTab === 'all' ? 'active' : ''}`}
+                      onClick={() => setKeralaSubTab('all')}
+                    >
+                      🌟 Overview (All)
+                    </button>
+                    <button
+                      type="button"
+                      className={`kerala-subnav-pill ${keralaSubTab === 'series' ? 'active' : ''}`}
+                      onClick={() => setKeralaSubTab('series')}
+                    >
+                      ♾️ Infinite Series &amp; Errors
+                    </button>
+                    <button
+                      type="button"
+                      className={`kerala-subnav-pill ${keralaSubTab === 'yuktibhasa' ? 'active' : ''}`}
+                      onClick={() => setKeralaSubTab('yuktibhasa')}
+                    >
+                      📐 Yuktibhāṣā Proof
+                    </button>
+                    <button
+                      type="button"
+                      className={`kerala-subnav-pill ${keralaSubTab === 'astronomy' ? 'active' : ''}`}
+                      onClick={() => setKeralaSubTab('astronomy')}
+                    >
+                      🪐 Astronomy &amp; Parallax
+                    </button>
+                    <button
+                      type="button"
+                      className={`kerala-subnav-pill ${keralaSubTab === 'cipher' ? 'active' : ''}`}
+                      onClick={() => setKeralaSubTab('cipher')}
+                    >
+                      🎵 Kaṭapayādi Cipher
+                    </button>
+                    <button
+                      type="button"
+                      className={`kerala-subnav-pill ${keralaSubTab === 'yantras' ? 'active' : ''}`}
+                      onClick={() => setKeralaSubTab('yantras')}
+                    >
+                      🔭 Yantras &amp; Transmission
+                    </button>
+                  </div>
+
+                  <button
+                    type="button"
+                    className="parampara-article-cta-btn"
+                    onClick={() => {
+                      setSelectedArticleId('kerala-school-calculus-infinite-series');
+                      setActiveTab('articles');
+                      const el = document.getElementById('vedic-article-card');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    📖 Read Academic Masterclass Treatise →
+                  </button>
+                </div>
+              </div>
+
+              {/* SECTION 1: Infinite Series Convergence Lab */}
+              {(keralaSubTab === 'all' || keralaSubTab === 'series') && (
+                <div className="kerala-section-card" id="kerala-series-section">
+                  <div className="kerala-section-header">
+                    <span className="kerala-step-badge">Lab 1 · अनन्तश्रेणी-संस्कारः</span>
+                    <h3 className="kerala-section-title">
+                      Mādhava’s Infinite Series &amp; Rational Error Correction Terms
+                    </h3>
+                    <p className="kerala-section-desc">
+                      James Gregory (1671) and Gottfried Leibniz (1676) discovered the alternating series
+                      π/4 = 1 - 1/3 + 1/5 - 1/7 + ..., but it converges so slowly that 1,000 terms yield only 2 decimal places.
+                      Centuries earlier, Mādhava formulated 3 rational error correction terms F₁(n), F₂(n), F₃(n) to achieve 11 decimal places of π in just 50 steps!
+                    </p>
+                  </div>
+
+                  {/* Interactive Controls */}
+                  <div className="kerala-control-panel">
+                    <div className="kerala-slider-group">
+                      <div className="kerala-slider-label">
+                        <span>Summation Limit (\(n\) Terms): <strong>{keralaTermsN}</strong></span>
+                        <span className="kerala-slider-sub">Adjust terms from 1 to 50</span>
+                      </div>
+                      <input
+                        type="range"
+                        min="1"
+                        max="50"
+                        value={keralaTermsN}
+                        onChange={(e) => setKeralaTermsN(parseInt(e.target.value, 10))}
+                        className="kerala-range-slider"
+                      />
+                      <div className="kerala-quick-btns">
+                        {[5, 10, 20, 35, 50].map((val) => (
+                          <button
+                            key={val}
+                            type="button"
+                            className={`kerala-quick-btn ${keralaTermsN === val ? 'active' : ''}`}
+                            onClick={() => setKeralaTermsN(val)}
+                          >
+                            n = {val}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Convergence Comparison Table */}
+                  <div className="kerala-table-wrap">
+                    <table className="kerala-comparison-table">
+                      <thead>
+                        <tr>
+                          <th>Mathematical Formulation</th>
+                          <th>Formula Expression</th>
+                          <th>Computed π ({keralaTermsN} terms)</th>
+                          <th>Error |Computed - π|</th>
+                          <th>Correct Decimals</th>
+                          <th>Convergence Power</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="kerala-row-base">
+                          <td>
+                            <strong>Standard Leibniz / Gregory</strong>
+                            <div className="kerala-subtext">Uncorrected alternating sum</div>
+                          </td>
+                          <td><code>4 · ∑ (-1)ⁱ⁻¹ / (2i-1)</code></td>
+                          <td className="kerala-val-cell">{uncorrectedPiVal.toFixed(10)}</td>
+                          <td className="kerala-err-cell">{Math.abs(uncorrectedPiVal - Math.PI).toExponential(3)}</td>
+                          <td>
+                            <span className="kerala-badge-dec zero">
+                              {getCorrectDecimals(uncorrectedPiVal)} digits
+                            </span>
+                          </td>
+                          <td className="kerala-power-cell">Extremely Slow (~10,000 terms for 4 digits)</td>
+                        </tr>
+
+                        <tr className="kerala-row-f1">
+                          <td>
+                            <strong>Mādhava First-Order \(F_1\)</strong>
+                            <div className="kerala-subtext">Linear asymptotic correction</div>
+                          </td>
+                          <td><code>F₁(n) = 1 / (4n)</code></td>
+                          <td className="kerala-val-cell">{piValF1.toFixed(10)}</td>
+                          <td className="kerala-err-cell">{Math.abs(piValF1 - Math.PI).toExponential(3)}</td>
+                          <td>
+                            <span className="kerala-badge-dec f1">
+                              {getCorrectDecimals(piValF1)} digits
+                            </span>
+                          </td>
+                          <td className="kerala-power-cell">10 terms equal to 1,000 European terms (100x speedup)</td>
+                        </tr>
+
+                        <tr className="kerala-row-f2">
+                          <td>
+                            <strong>Nīlakaṇṭha Second-Order \(F_2\)</strong>
+                            <div className="kerala-subtext">Parabolic refinement (Tantrasaṅgraha)</div>
+                          </td>
+                          <td><code>F₂(n) = n / (4n² + 1)</code></td>
+                          <td className="kerala-val-cell">{piValF2.toFixed(10)}</td>
+                          <td className="kerala-err-cell">{Math.abs(piValF2 - Math.PI).toExponential(3)}</td>
+                          <td>
+                            <span className="kerala-badge-dec f2">
+                              {getCorrectDecimals(piValF2)} digits
+                            </span>
+                          </td>
+                          <td className="kerala-power-cell">10 terms yield 5 decimals; completely removes oscillation</td>
+                        </tr>
+
+                        <tr className="kerala-row-f3">
+                          <td>
+                            <strong>Yuktibhāṣā Third-Order \(F_3\)</strong>
+                            <div className="kerala-subtext">Cubic continued fraction convergent</div>
+                          </td>
+                          <td><code>F₃(n) = (n² + 1) / (4n³ + 5n)</code></td>
+                          <td className="kerala-val-cell highlight">{piValF3.toFixed(11)}</td>
+                          <td className="kerala-err-cell highlight">{Math.abs(piValF3 - Math.PI).toExponential(3)}</td>
+                          <td>
+                            <span className="kerala-badge-dec f3">
+                              {getCorrectDecimals(piValF3)} digits
+                            </span>
+                          </td>
+                          <td className="kerala-power-cell highlight">
+                            Reaches 11 decimals at n=50! (Standard sum needs 100,000,000,000 terms)
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* Precision Meter */}
+                  <div className="kerala-meter-card">
+                    <div className="kerala-meter-title">
+                      🎯 Live Pi Decimal Precision Meter (Target: <code>3.14159265358979...</code>)
+                    </div>
+                    <div className="kerala-precision-display">
+                      <span className="kerala-digit-match">3.</span>
+                      {Math.PI.toFixed(12).slice(2).split('').map((char, idx) => {
+                        const isF3Match = idx < getCorrectDecimals(piValF3);
+                        return (
+                          <span
+                            key={idx}
+                            className={`kerala-digit ${isF3Match ? 'match-gold' : 'unmatched'}`}
+                            title={`Digit ${idx + 1}: ${char} ${isF3Match ? '(Matched by F₃)' : '(Unmatched)'}`}
+                          >
+                            {char}
+                          </span>
+                        );
+                      })}
+                    </div>
+                    <p className="kerala-meter-caption">
+                      Golden highlighted digits match true \(\pi\) precisely using Yuktibhāṣā’s \(F_3(n)\) at step \(n = {keralaTermsN}\).
+                    </p>
+                  </div>
+
+                  {/* Madhava Sine & Cosine Series Simulator */}
+                  <div className="kerala-submodule-card">
+                    <h4 className="kerala-submodule-title">
+                      🌸 Mādhava’s Power Series for Sine (Jīvā-Saṅkalita)
+                    </h4>
+                    <p className="kerala-submodule-desc">
+                      Formulated in the 14th century: sin(θ) = θ - (θ³ / 3!) + (θ⁵ / 5!) - (θ⁷ / 7!) + ... (known today as Taylor-Maclaurin series).
+                    </p>
+
+                    <div className="kerala-sin-controls">
+                      <div className="kerala-sin-control">
+                        <label>Angle \(\theta\) (Degrees): <strong>{keralaThetaDeg}°</strong> ({thetaRad.toFixed(4)} rad)</label>
+                        <input
+                          type="range"
+                          min="0"
+                          max="90"
+                          value={keralaThetaDeg}
+                          onChange={(e) => setKeralaThetaDeg(parseInt(e.target.value, 10))}
+                          className="kerala-range-slider"
+                        />
+                        <div className="kerala-quick-btns">
+                          {[15, 30, 45, 60, 90].map((deg) => (
+                            <button
+                              key={deg}
+                              type="button"
+                              className={`kerala-quick-btn ${keralaThetaDeg === deg ? 'active' : ''}`}
+                              onClick={() => setKeralaThetaDeg(deg)}
+                            >
+                              {deg}°
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="kerala-sin-control">
+                        <label>Polynomial Terms Used: <strong>{keralaSineTermsCount}</strong> (up to power {sineExpansionTerms[keralaSineTermsCount - 1].order})</label>
+                        <input
+                          type="range"
+                          min="1"
+                          max="5"
+                          value={keralaSineTermsCount}
+                          onChange={(e) => setKeralaSineTermsCount(parseInt(e.target.value, 10))}
+                          className="kerala-range-slider"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="kerala-sin-result-grid">
+                      <div className="kerala-sin-result-card">
+                        <div className="kerala-res-label">Mādhava Expansion Sum</div>
+                        <div className="kerala-res-num">{approxSin.toFixed(10)}</div>
+                        <div className="kerala-res-sub">Computed with {keralaSineTermsCount} series terms</div>
+                      </div>
+                      <div className="kerala-sin-result-card">
+                        <div className="kerala-res-label">Exact Modern Sin(\(\theta\))</div>
+                        <div className="kerala-res-num">{exactSin.toFixed(10)}</div>
+                        <div className="kerala-res-sub">Standard trigonometric reference</div>
+                      </div>
+                      <div className="kerala-sin-result-card">
+                        <div className="kerala-res-label">Absolute Discrepancy</div>
+                        <div className="kerala-res-num highlight">{sinDiff.toExponential(4)}</div>
+                        <div className="kerala-res-sub">Accuracy down to microscopic arcseconds!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* SECTION 2: Yuktibhāṣā Geometric Proof & Integration Studio */}
+              {(keralaSubTab === 'all' || keralaSubTab === 'yuktibhasa') && (
+                <div className="kerala-section-card" id="yuktibhasa-section">
+                  <div className="kerala-section-header">
+                    <span className="kerala-step-badge">Lab 2 · युक्तिभाषा परिधि-व्यास-सम्बन्धः</span>
+                    <h3 className="kerala-section-title">
+                      Jyeṣṭhadeva’s Yuktibhāṣā: The First Systematic Proof of Calculus
+                    </h3>
+                    <p className="kerala-section-desc">
+                      Written in medieval Malayalam and Sanskrit verse (c. 1530 CE), Chapter 6 of the <em>Yuktibhāṣā</em> gives the world’s first step-by-step geometric proof for integrating the circle into an infinite polynomial sum.
+                    </p>
+                  </div>
+
+                  {/* 4 Step Selector */}
+                  <div className="kerala-step-pills">
+                    {[
+                      { key: 'caturasra', num: '1', title: 'Caturasra (Square Octant)', desc: 'Tangency & 45° Sector' },
+                      { key: 'samakhanda', num: '2', title: 'Samakhaṇḍa (Micro-Segments)', desc: 'Dividing R into n intervals' },
+                      { key: 'projection', num: '3', title: 'Kṣudra-Cāpa (Projection)', desc: 'Similar triangles Δs ~ Δx · R²/K²' },
+                      { key: 'sankalita', num: '4', title: 'Vārasaṅkalita (Integration)', desc: 'Summation limit → π/4' },
+                    ].map((st) => (
+                      <button
+                        key={st.key}
+                        type="button"
+                        className={`kerala-step-pill ${yuktibhasaStep === st.key ? 'active' : ''}`}
+                        onClick={() => setYuktibhasaStep(st.key as typeof yuktibhasaStep)}
+                      >
+                        <span className="kerala-step-pill-num">{st.num}</span>
+                        <div className="kerala-step-pill-text">
+                          <span className="kerala-step-pill-title">{st.title}</span>
+                          <span className="kerala-step-pill-sub">{st.desc}</span>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Interactive Proof Canvas & Explanation */}
+                  <div className="kerala-proof-grid">
+                    {/* SVG Visualizer */}
+                    <div className="kerala-svg-container">
+                      <svg viewBox="0 0 340 300" className="kerala-svg-canvas">
+                        <defs>
+                          <marker id="keralaArrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                            <path d="M0,0 L0,6 L6,3 z" fill="#047857" />
+                          </marker>
+                          <linearGradient id="arcGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
+                            <stop offset="100%" stopColor="#059669" stopOpacity="0.05" />
+                          </linearGradient>
+                        </defs>
+
+                        {/* Origin Axes */}
+                        <line x1="40" y1="260" x2="300" y2="260" stroke="#cbd5e1" strokeWidth="2" />
+                        <line x1="40" y1="260" x2="40" y2="20" stroke="#cbd5e1" strokeWidth="2" />
+                        <text x="32" y="278" fill="#64748b" fontSize="12" fontWeight="bold">O (0,0)</text>
+
+                        {/* Radius line OA */}
+                        <line x1="40" y1="260" x2="240" y2="260" stroke="#047857" strokeWidth="3" />
+                        <text x="135" y="278" fill="#047857" fontSize="11" fontWeight="bold">Radius R</text>
+                        <circle cx="240" cy="260" r="4" fill="#047857" />
+                        <text x="245" y="276" fill="#047857" fontSize="12" fontWeight="bold">A (R, 0)</text>
+
+                        {/* Circumscribed Tangent Line at x = 240 */}
+                        <line
+                          x1="240"
+                          y1="260"
+                          x2="240"
+                          y2="60"
+                          stroke={yuktibhasaStep === 'caturasra' || yuktibhasaStep === 'samakhanda' ? '#dc2626' : '#94a3b8'}
+                          strokeWidth={yuktibhasaStep === 'samakhanda' ? '3' : '2'}
+                          strokeDasharray={yuktibhasaStep === 'caturasra' ? '4 2' : 'none'}
+                        />
+                        <text x="248" y="58" fill="#dc2626" fontSize="11" fontWeight="bold">C (R, R) [45°]</text>
+                        <circle cx="240" cy="60" r="4" fill="#dc2626" />
+
+                        {/* Circle Arc 45° */}
+                        {/* R = 200; 45° point = (40 + 200*cos45, 260 - 200*sin45) = (40 + 141.42, 260 - 141.42) = (181.42, 118.58) */}
+                        <path
+                          d="M 240,260 A 200,200 0 0,0 181.42,118.58"
+                          fill="none"
+                          stroke={yuktibhasaStep === 'sankalita' ? '#f59e0b' : '#0284c7'}
+                          strokeWidth={yuktibhasaStep === 'sankalita' ? '5' : '3'}
+                        />
+                        <text x="200" y="160" fill="#0284c7" fontSize="11" fontWeight="bold">Circle Arc (πR / 4)</text>
+
+                        {/* 45° Ray OC */}
+                        <line x1="40" y1="260" x2="240" y2="60" stroke="#64748b" strokeWidth="1.5" strokeDasharray="3 3" />
+
+                        {/* Step 2 & 3: Subdivision and Rays */}
+                        {(yuktibhasaStep === 'samakhanda' || yuktibhasaStep === 'projection' || yuktibhasaStep === 'sankalita') && (
+                          <>
+                            {/* Division markers on AC */}
+                            {[0.2, 0.4, 0.6, 0.8, 1.0].map((frac, idx) => {
+                              const yPos = 260 - frac * 200;
+                              return (
+                                <g key={idx}>
+                                  <circle cx="240" cy={yPos} r="3" fill="#ea580c" />
+                                  <line
+                                    x1="40"
+                                    y1="260"
+                                    x2="240"
+                                    y2={yPos}
+                                    stroke="#fdba74"
+                                    strokeWidth="1"
+                                  />
+                                </g>
+                              );
+                            })}
+                            <text x="252" y="170" fill="#ea580c" fontSize="10" fontWeight="bold">Δx = R/n</text>
+                          </>
+                        )}
+
+                        {/* Step 3: Projection Highlight */}
+                        {yuktibhasaStep === 'projection' && (
+                          <>
+                            {/* Highlight i-th ray */}
+                            <line x1="40" y1="260" x2="240" y2="140" stroke="#7c3aed" strokeWidth="2.5" />
+                            <text x="110" y="195" fill="#7c3aed" fontSize="10" fontWeight="bold">Hypotenuse Kᵢ</text>
+                            {/* Micro-segment Δx on tangent */}
+                            <rect x="238" y="130" width="4" height="20" fill="#dc2626" />
+                            {/* Projected arc element Δs on circle */}
+                            {/* At ray angle: tan(alpha) = 120/200 = 0.6 -> alpha ≈ 31° -> circle pt: (40 + 200*cos31, 260 - 200*sin31) = (211, 157) */}
+                            <circle cx="211" cy="157" r="4" fill="#10b981" />
+                            <line x1="240" y1="140" x2="211" y2="157" stroke="#047857" strokeWidth="1.5" strokeDasharray="2 2" markerEnd="url(#keralaArrow)" />
+                            <text x="180" y="148" fill="#047857" fontSize="10" fontWeight="bold">Δsᵢ</text>
+                          </>
+                        )}
+
+                        {/* Step 4: Full Sector Glow */}
+                        {yuktibhasaStep === 'sankalita' && (
+                          <path
+                            d="M 40,260 L 240,260 A 200,200 0 0,0 181.42,118.58 Z"
+                            fill="url(#arcGlow)"
+                            stroke="#10b981"
+                            strokeWidth="2"
+                          />
+                        )}
+                      </svg>
+                    </div>
+
+                    {/* Step Mathematical Text Box */}
+                    <div className="kerala-proof-content">
+                      {yuktibhasaStep === 'caturasra' && (
+                        <div>
+                          <div className="kerala-step-sa-verse">
+                            ॥ चतुरस्रे वृत्तं परिकल्प्य अष्टमभागे स्पर्शरेखा ॥
+                          </div>
+                          <h4>Step 1: The Circumscribed Square Octant</h4>
+                          <p>
+                            Jyeṣṭhadeva begins by constructing a square around a circle of radius R.
+                            He examines the 45° sector from (R, 0) to the diagonal (R, R).
+                          </p>
+                          <ul className="kerala-proof-bullets">
+                            <li>The circle arc inside this octant has length <strong>πR / 4</strong> (one-eighth of circumference 2πR / 8).</li>
+                            <li>The vertical tangent line segment AC from the horizontal axis to the diagonal has length exactly equal to R.</li>
+                            <li><strong>The Problem:</strong> How do you map a straight linear segment of length R onto a curving circular arc of length πR / 4?</li>
+                          </ul>
+                        </div>
+                      )}
+
+                      {yuktibhasaStep === 'samakhanda' && (
+                        <div>
+                          <div className="kerala-step-sa-verse">
+                            ॥ तत्र स्पर्शरेखां समखण्डां कृत्वा कोटिकर्णाः ॥
+                          </div>
+                          <h4>Step 2: Subdivision into n Infinitesimal Intervals</h4>
+                          <p>
+                            Jyeṣṭhadeva partitions the tangent line segment AC into n microscopic equal pieces, each of width Δx = R / n.
+                          </p>
+                          <ul className="kerala-proof-bullets">
+                            <li>Each division point along the tangent line is at distance xᵢ = (i · R) / n from the axis.</li>
+                            <li>From the origin O, draw hypotenuse rays Kᵢ to each division point:
+                              <div style={{ margin: '0.4rem 0', fontFamily: 'monospace', fontWeight: 'bold' }}>
+                                Kᵢ = √(R² + xᵢ²) = √[R² + (i·R/n)²] = R · √(1 + (i/n)²)
+                              </div>
+                            </li>
+                            <li>As n grows toward infinity (n → ∞), each segment Δx becomes an infinitesimal differential dx.</li>
+                          </ul>
+                        </div>
+                      )}
+
+                      {yuktibhasaStep === 'projection' && (
+                        <div>
+                          <div className="kerala-step-sa-verse">
+                            ॥ त्रैराशिकेन कर्णवर्गेण ह्रियते सूक्ष्मचापम् ॥
+                          </div>
+                          <h4>Step 3: Projective Reflection via Similar Triangles</h4>
+                          <p>
+                            Each vertical micro-segment Δx does not lie flat against the circle; it is tilted at an oblique angle and sits at a greater distance Kᵢ from the center.
+                          </p>
+                          <ul className="kerala-proof-bullets">
+                            <li>Using two pairs of similar right-angled triangles (the fundamental differential triangle), Jyeṣṭhadeva demonstrates that the projected arc segment Δsᵢ is scaled by two factors of (R / Kᵢ):
+                              <div style={{ margin: '0.4rem 0', fontFamily: 'monospace', fontWeight: 'bold' }}>
+                                Δsᵢ ≈ Δx · (R / Kᵢ)² = (R / n) · [R² / (R² + (iR/n)²)] = (R / n) · [1 / (1 + (i/n)²)]
+                              </div>
+                            </li>
+                            <li>Notice that 1 / [1 + (i/n)²] is the discrete analog of the derivative of the inverse tangent: d/dt [arctan(t)] = 1 / (1 + t²)!</li>
+                          </ul>
+                        </div>
+                      )}
+
+                      {yuktibhasaStep === 'sankalita' && (
+                        <div>
+                          <div className="kerala-step-sa-verse">
+                            ॥ व्यासे वारिधिनिहते रूपहृते व्याससागराभिहते । त्रिशरादिविषमसंख्याभक्तमृणं स्वं पृथक् कुर्यात् ॥
+                          </div>
+                          <h4>Step 4: Saṅkalita (Successive Integration &amp; Series Sum)</h4>
+                          <p>
+                            To obtain the total arc length, Jyeṣṭhadeva sums all n arc elements and expands the binomial denominator 1 / (1 + t²) = 1 - t² + t⁴ - t⁶ + ...:
+                          </p>
+                          <ul className="kerala-proof-bullets">
+                            <li>By applying the Kerala polynomial integral theorem:
+                              <div style={{ margin: '0.4rem 0', fontFamily: 'monospace', fontWeight: 'bold' }}>
+                                lim (1 / n^(k+1)) · ∑ i^k = 1 / (k+1) ⟺ ∫₀¹ t^k dt = 1 / (k+1)
+                              </div>
+                            </li>
+                            <li>Each power t^(2m) integrates to 1 / (2m+1), yielding the alternating odd-number sum:
+                              <div style={{ margin: '0.4rem 0', fontFamily: 'monospace', fontWeight: 'bold' }}>
+                                Arc = R · (1 - 1/3 + 1/5 - 1/7 + 1/9 - ...)
+                              </div>
+                            </li>
+                            <li>Since the octant arc is πR / 4, dividing by R gives the exact formula:
+                              <div style={{ margin: '0.4rem 0', fontFamily: 'monospace', fontWeight: 'bold', color: '#047857' }}>
+                                π / 4 = 1 - 1/3 + 1/5 - 1/7 + ...
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* SECTION 3: Geo-Heliocentrism & Solar Eclipse Parallax Studio */}
+              {(keralaSubTab === 'all' || keralaSubTab === 'astronomy') && (
+                <div className="kerala-section-card" id="kerala-astronomy-section">
+                  <div className="kerala-section-header">
+                    <span className="kerala-step-badge">Lab 3 · तन्त्रसङ्ग्रहः खगोलगणितम्</span>
+                    <h3 className="kerala-section-title">
+                      Nīlakaṇṭha Somayājī: Geo-Heliocentrism &amp; Parallax Calculus
+                    </h3>
+                    <p className="kerala-section-desc">
+                      In the <em>Tantrasaṅgraha</em> (1501 CE), Nīlakaṇṭha proved that interior and exterior planets
+                      orbit the Sun, which in turn orbits the Earth—formulated 87 years before Tycho Brahe.
+                      He utilized differential rates of change to predict solar eclipse timings down to fractional Ghatis.
+                    </p>
+                  </div>
+
+                  <div className="kerala-astro-grid">
+                    {/* Planetary Orbit Model Card */}
+                    <div className="kerala-astro-card">
+                      <h4>☀️ Nīlakaṇṭha’s Geo-Heliocentric Architecture</h4>
+                      <p className="kerala-card-desc">
+                        Mercury, Venus, Mars, Jupiter, and Saturn revolve directly around the Sun; the Sun and Moon orbit the central Earth.
+                      </p>
+                      <div className="kerala-orbital-schematic">
+                        <div className="kerala-orbit-ring ring-outer">
+                          <span className="kerala-planet-dot saturn" title="Saturn (Śani)">Śani</span>
+                          <div className="kerala-orbit-ring ring-mid">
+                            <span className="kerala-planet-dot mars" title="Mars (Maṅgala)">Maṅgala</span>
+                            <div className="kerala-orbit-sun-path">
+                              <span className="kerala-planet-dot sun" title="Sun (Sūrya)">Sūrya ☀️</span>
+                              <div className="kerala-inner-orbit">
+                                <span className="kerala-planet-dot venus" title="Venus (Śukra)">Śukra</span>
+                                <span className="kerala-planet-dot mercury" title="Mercury (Budha)">Budha</span>
+                              </div>
+                            </div>
+                            <div className="kerala-earth-center">
+                              🌍 Bhūmi
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="kerala-astro-note">
+                        <strong>Historiographical Milestones:</strong> Nīlakaṇṭha (1501 CE) vs. Tycho Brahe (1588 CE).
+                        Recognized that Mercury and Venus never wander far from the Sun because their centers of motion are tied to the solar body.
+                      </div>
+                    </div>
+
+                    {/* Instantaneous Velocity & Inverse Sine */}
+                    <div className="kerala-astro-card">
+                      <h4>⚡ Instantaneous Velocity (Sphuṭa-Gati)</h4>
+                      <p className="kerala-card-desc">
+                        Nīlakaṇṭha calculated true instantaneous orbital speeds using differential increments:
+                        \(V_t = V_m (1 \pm k \cos\phi)\), recognizing the derivative of \(\sin(\phi)\) is \(\cos(\phi)\).
+                      </p>
+
+                      <div className="kerala-slider-group">
+                        <div className="kerala-slider-label">
+                          <span>Mean Anomaly \(\phi\): <strong>{sphutaMeanAnomaly}°</strong></span>
+                          <span>
+                            {sphutaMeanAnomaly === 0 || sphutaMeanAnomaly === 360
+                              ? 'Perigee (Maximum Speed)'
+                              : sphutaMeanAnomaly === 180
+                              ? 'Apogee (Minimum Speed)'
+                              : 'Quadrature'}
+                          </span>
+                        </div>
+                        <input
+                          type="range"
+                          min="0"
+                          max="360"
+                          value={sphutaMeanAnomaly}
+                          onChange={(e) => setSphutaMeanAnomaly(parseInt(e.target.value, 10))}
+                          className="kerala-range-slider"
+                        />
+                      </div>
+
+                      <div className="kerala-stat-badge-row">
+                        <div className="kerala-stat-badge">
+                          <span className="lbl">Velocity Ratio \(V_t / V_m\)</span>
+                          <span className="val highlight">{velocityRatio.toFixed(3)}x</span>
+                        </div>
+                        <div className="kerala-stat-badge">
+                          <span className="lbl">Derivative Factor \(\cos(\phi)\)</span>
+                          <span className="val">{Math.cos(meanAnomalyRad).toFixed(3)}</span>
+                        </div>
+                      </div>
+
+                      {/* Rapid Inverse Sine Formula */}
+                      <div className="kerala-inv-sine-box">
+                        <div className="kerala-inv-title">
+                          📐 Nīlakaṇṭha’s Rapid Inverse Sine: θ ≈ S + (S³ / 6) · [1 / (1 - S² / 10)]
+                        </div>
+                        <div className="kerala-inv-control">
+                          <label>Sine Chord Ratio \(S\): <strong>{inverseSineS}</strong></label>
+                          <input
+                            type="range"
+                            min="0.05"
+                            max="0.95"
+                            step="0.05"
+                            value={inverseSineS}
+                            onChange={(e) => setInverseSineS(parseFloat(e.target.value))}
+                            className="kerala-range-slider"
+                          />
+                        </div>
+                        <div className="kerala-inv-compare">
+                          <span>Approx: <strong>{invSineApproxDeg.toFixed(2)}°</strong></span>
+                          <span>Exact \(\arcsin\): <strong>{invSineExactDeg.toFixed(2)}°</strong></span>
+                          <span className="kerala-diff-pill">Diff: {(invSineDiff * 180 / Math.PI).toFixed(4)}°</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Solar Eclipse Parallax Simulator */}
+                  <div className="kerala-submodule-card">
+                    <h4 className="kerala-submodule-title">
+                      🌑 Solar Eclipse Parallax Mechanics (Lambana &amp; Nati)
+                    </h4>
+                    <p className="kerala-submodule-desc">
+                      Unlike lunar eclipses (which occur globally simultaneously), solar eclipses require topocentric parallax corrections.
+                      Because the Moon is closer than the Sun, the observer on the Earth’s surface sees the Moon shifted along longitude (<strong>Lambana / लम्बनम्</strong>)
+                      and latitude (<strong>Nati / नतिः</strong>).
+                    </p>
+
+                    <div className="kerala-observer-selector">
+                      <span className="kerala-obs-label">Select Observer Location:</span>
+                      <div className="kerala-obs-btns">
+                        {(['kerala', 'ujjain', 'equator', 'high_lat'] as const).map((locKey) => (
+                          <button
+                            key={locKey}
+                            type="button"
+                            className={`kerala-obs-btn ${eclipseObserver === locKey ? 'active' : ''}`}
+                            onClick={() => setEclipseObserver(locKey)}
+                          >
+                            {eclipseDataByLoc[locKey].name} ({eclipseDataByLoc[locKey].lat})
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="kerala-eclipse-calc-grid">
+                      <div className="kerala-eclipse-stat">
+                        <div className="kerala-e-label">Geocentric Syzygy (True New Moon)</div>
+                        <div className="kerala-e-num">12:00:00 PM</div>
+                        <div className="kerala-e-sub">Center of Earth alignment</div>
+                      </div>
+
+                      <div className="kerala-eclipse-stat">
+                        <div className="kerala-e-label">Lambana Time Shift (लम्बनम्)</div>
+                        <div className="kerala-e-num highlight">+{activeEclipse.lambanaMin} min</div>
+                        <div className="kerala-e-sub">({(activeEclipse.lambanaMin * 2.5).toFixed(1)} Vighatis / విఘడియలు)</div>
+                      </div>
+
+                      <div className="kerala-eclipse-stat">
+                        <div className="kerala-e-label">Latitudinal Parallax (नतिः)</div>
+                        <div className="kerala-e-num">{activeEclipse.natiArcmin}′</div>
+                        <div className="kerala-e-sub">Apparent southern/northern shift</div>
+                      </div>
+
+                      <div className="kerala-eclipse-stat">
+                        <div className="kerala-e-label">Apparent Peak Eclipse (Madhya)</div>
+                        <div className="kerala-e-num highlight">
+                          12:{Math.floor(activeEclipse.lambanaMin)}:
+                          {Math.round((activeEclipse.lambanaMin % 1) * 60).toString().padStart(2, '0')} PM
+                        </div>
+                        <div className="kerala-e-sub">Contact time for local surface observer</div>
+                      </div>
+                    </div>
+
+                    {/* Timeline visualization */}
+                    <div className="kerala-eclipse-timeline">
+                      <div className="kerala-timeline-point start">
+                        <span className="dot" />
+                        <span className="time">10:42 AM</span>
+                        <span className="label">Sparśa (First Contact)</span>
+                      </div>
+                      <div className="kerala-timeline-line" />
+                      <div className="kerala-timeline-point peak">
+                        <span className="dot highlight" />
+                        <span className="time">12:{Math.floor(activeEclipse.lambanaMin)} PM</span>
+                        <span className="label">Madhya (Peak Totality)</span>
+                      </div>
+                      <div className="kerala-timeline-line" />
+                      <div className="kerala-timeline-point end">
+                        <span className="dot" />
+                        <span className="time">01:18 PM</span>
+                        <span className="label">Mokṣa (Release)</span>
+                      </div>
+                    </div>
+
+                    <div className="kerala-location-note">
+                      <strong>Observational Insight:</strong> {activeEclipse.note}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* SECTION 4: Kaṭapayādi Alphanumeric Cipher & Melakarta Rāga Studio */}
+              {(keralaSubTab === 'all' || keralaSubTab === 'cipher') && (
+                <div className="kerala-section-card" id="katapayadi-section">
+                  <div className="kerala-section-header">
+                    <span className="kerala-step-badge">Lab 4 · कटपयादि-संख्या-मेळकर्ता</span>
+                    <h3 className="kerala-section-title">
+                      The Kaṭapayādi Alphanumeric Cipher &amp; The 72 Melakarta Rāgas
+                    </h3>
+                    <p className="kerala-section-desc">
+                      The ancient alphanumeric encryption system mapped Sanskrit and Telugu consonants to numbers 0–9.
+                      Its golden rule—<strong>Aṅkānāṃ Vāmato Gatiḥ (अङ्कानां वामतो गतिः)</strong>—states that numbers proceed from right to left (read in reverse).
+                      South Indian musicologists used this cipher to encode the exact mathematical index of all 72 Melakarta parent ragas in their first two syllables!
+                    </p>
+                  </div>
+
+                  {/* Preset Melakarta Rāga Decoder */}
+                  <div className="kerala-melakarta-studio">
+                    <div className="kerala-raga-selector-wrap">
+                      <label htmlFor="melakarta-select" className="kerala-raga-label">
+                        Select a Melakarta Parent Rāga:
+                      </label>
+                      <select
+                        id="melakarta-select"
+                        value={selectedMelakartaRaga}
+                        onChange={(e) => setSelectedMelakartaRaga(e.target.value)}
+                        className="kerala-raga-select"
+                      >
+                        {MELAKARTA_PRESETS.map((raga) => (
+                          <option key={raga.id} value={raga.id}>
+                            #{raga.index.toString().padStart(2, '0')} · {raga.name} ({raga.telugu} / {raga.sa})
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    {/* Step-by-Step Decoder Box */}
+                    <div className="kerala-decoder-card">
+                      <div className="kerala-decoder-header">
+                        <div className="kerala-raga-title-block">
+                          <h4>
+                            Rāga #{activeMelakarta.index}: {activeMelakarta.name}
+                            <span className="sa-alt">({activeMelakarta.telugu} · {activeMelakarta.sa})</span>
+                          </h4>
+                          <span className="kerala-chakra-tag">Chakra: {activeMelakarta.chakra}</span>
+                        </div>
+                        <div className="kerala-swara-box">
+                          <span className="swara-label">Scale (Swaras):</span>
+                          <span className="swara-text">{activeMelakarta.swaras}</span>
+                        </div>
+                      </div>
+
+                      <div className="kerala-decoding-flow">
+                        <div className="kerala-flow-step">
+                          <span className="step-num">Step 1</span>
+                          <span className="step-val">{activeMelakarta.s1}</span>
+                          <span className="step-map">Maps to Digit <strong>{activeMelakarta.d1}</strong></span>
+                        </div>
+                        <div className="kerala-flow-arrow">+</div>
+                        <div className="kerala-flow-step">
+                          <span className="step-num">Step 2</span>
+                          <span className="step-val">{activeMelakarta.s2}</span>
+                          <span className="step-map">Maps to Digit <strong>{activeMelakarta.d2}</strong></span>
+                        </div>
+                        <div className="kerala-flow-arrow">→</div>
+                        <div className="kerala-flow-step">
+                          <span className="step-num">Raw Sequence</span>
+                          <span className="step-val raw">[{activeMelakarta.d1}, {activeMelakarta.d2}]</span>
+                          <span className="step-map">Forward reading</span>
+                        </div>
+                        <div className="kerala-flow-arrow">⤹</div>
+                        <div className="kerala-flow-step highlight">
+                          <span className="step-num">Vāmato Gatiḥ (Reverse)</span>
+                          <span className="step-val final">{activeMelakarta.d2}{activeMelakarta.d1}</span>
+                          <span className="step-map">
+                            = <strong>Rāga #{activeMelakarta.index}</strong>
+                          </span>
+                        </div>
+                      </div>
+
+                      <p className="kerala-raga-desc">{activeMelakarta.desc}</p>
+                    </div>
+                  </div>
+
+                  {/* Custom Word Kaṭapayādi Parser */}
+                  <div className="kerala-custom-cipher-card">
+                    <h4>🔤 Interactive Custom Kaṭapayādi Word Decoder</h4>
+                    <p className="kerala-cipher-sub">
+                      Type any word or verse snippet in English transliteration or Indian script (e.g. <code>kanakangi</code>, <code>harikambhoji</code>, <code>gopibhagyamadhuvrata</code>)
+                      to see consonants dynamically mapped to digits and reversed:
+                    </p>
+
+                    <div className="kerala-input-row">
+                      <input
+                        type="text"
+                        value={customKatapayadiInput}
+                        onChange={(e) => setCustomKatapayadiInput(e.target.value)}
+                        placeholder="Type word (e.g. harikambhoji)..."
+                        className="kerala-cipher-input"
+                      />
+                      <button
+                        type="button"
+                        className="kerala-quick-btn"
+                        onClick={() => setCustomKatapayadiInput('gopibhagyamadhuvrata')}
+                      >
+                        Try Famous Pi Shloka: Gopībhāgyamadhu...
+                      </button>
+                    </div>
+
+                    <div className="kerala-cipher-results">
+                      <div className="kerala-char-chips">
+                        {customDecoded.charMappings.length > 0 ? (
+                          customDecoded.charMappings.map((item, idx) => (
+                            <div key={idx} className="kerala-char-chip">
+                              <span className="chip-consonant">{item.consonant}</span>
+                              <span className="chip-arrow">↓</span>
+                              <span className="chip-digit">{item.digit}</span>
+                            </div>
+                          ))
+                        ) : (
+                          <span className="kerala-no-chars">No matching consonants detected yet.</span>
+                        )}
+                      </div>
+
+                      {customDecoded.charMappings.length > 0 && (
+                        <div className="kerala-cipher-summary">
+                          <span>Raw Digits (Left-to-Right): <strong>{customDecoded.rawDigits}</strong></span>
+                          <span>·</span>
+                          <span>Reversed by Vāmato Gatiḥ (Right-to-Left): <strong className="gold-text">{customDecoded.reversedDigits}</strong></span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Consonant Mapping Grid Table */}
+                  <div className="kerala-consonant-matrix">
+                    <h4>📋 The 10-Digit Kaṭapayādi Consonant Reference Matrix</h4>
+                    <div className="kerala-matrix-grid">
+                      {KATAPAYADI_DIGIT_MAP.map((mapItem) => (
+                        <div key={mapItem.digit} className="kerala-matrix-card">
+                          <div className="kerala-matrix-digit-badge">
+                            {mapItem.digit}
+                          </div>
+                          <div className="kerala-matrix-names">
+                            <span className="sa">{mapItem.sanskritName}</span>
+                            <span className="te">{mapItem.teluguName}</span>
+                          </div>
+                          <div className="kerala-matrix-chars">
+                            <div className="dev">{mapItem.consonantsDevanagari.join(', ')}</div>
+                            <div className="tel">{mapItem.consonantsTelugu.join(', ')}</div>
+                            <div className="iast">{mapItem.consonantsIast.join(', ')}</div>
+                          </div>
+                          <div className="kerala-matrix-rule">{mapItem.ruleSummary}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* SECTION 5: Observational Yantras & Empirical Transmission */}
+              {(keralaSubTab === 'all' || keralaSubTab === 'yantras') && (
+                <div className="kerala-section-card" id="kerala-yantras-section">
+                  <div className="kerala-section-header">
+                    <span className="kerala-step-badge">Lab 5 · यन्त्राणि इतिहासश्च</span>
+                    <h3 className="kerala-section-title">
+                      Observational Yantras &amp; The Global Transmission Hypothesis
+                    </h3>
+                    <p className="kerala-section-desc">
+                      The Kerala School was not a purely theoretical ivory tower; their calculus was driven by 55 years
+                      of continuous observational astronomy (Parameshvara’s Dṛk system) using precision astronomical instruments.
+                    </p>
+                  </div>
+
+                  {/* 4 Yantras Grid */}
+                  <div className="kerala-yantras-grid">
+                    {KERALA_YANTRAS.map((yantra) => (
+                      <div key={yantra.id} className="kerala-yantra-card">
+                        <div className="kerala-yantra-icon-wrap">
+                          <span className="kerala-yantra-icon">{yantra.icon}</span>
+                          <span className="kerala-yantra-cat">{yantra.category}</span>
+                        </div>
+                        <h4 className="kerala-yantra-name">
+                          {yantra.nameEn}
+                          <span className="sa-sub">({yantra.nameSa} · {yantra.nameIast})</span>
+                        </h4>
+                        <p className="kerala-yantra-func">
+                          <strong>Primary Function:</strong> {yantra.primaryFunction}
+                        </p>
+                        <div className="kerala-yantra-link">
+                          <strong>Mathematical Link:</strong> {yantra.mathematicalLink}
+                        </div>
+                        <div className="kerala-yantra-hist">
+                          <strong>Historical Use:</strong> {yantra.historicalUse}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Whish-Joseph Transmission Hypothesis Card */}
+                  <div className="kerala-transmission-card">
+                    <div className="kerala-trans-badge">Historiographical Milestone</div>
+                    <h4>The Whish-Joseph Transmission Hypothesis</h4>
+                    <p>
+                      In 1832, British scholar <strong>Charles Whish</strong> submitted a groundbreaking paper to the Royal Asiatic Society
+                      proving that Indian mathematicians had founded the core tenets of calculus centuries before Newton and Leibniz.
+                    </p>
+                    <p>
+                      More recently, historian of science <strong>George Gheverghese Joseph</strong> (<em>The Crest of the Peacock</em>)
+                      and Dennis Almeida highlighted that Portuguese Jesuit colleges were actively operating in Cochin and Trichur
+                      from 1577 CE. Jesuit scholars like Matteo Ricci were tasked by European academies to obtain Indian astronomical
+                      and calendrical tables, potentially transmitting Kerala infinite series methods into Europe prior to Cavalieri,
+                      Gregory, and Newton.
+                    </p>
+                    <div className="kerala-trans-footer">
+                      <button
+                        type="button"
+                        className="parampara-article-cta-btn"
+                        onClick={() => {
+                          setSelectedArticleId('kerala-school-calculus-infinite-series');
+                          setActiveTab('articles');
+                          const el = document.getElementById('vedic-article-card');
+                          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }}
+                      >
+                        📜 Read Full Article with Manuscript Citations →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Bottom Pager Navigation */}
+              <div className="article-pager-nav" style={{ marginTop: '2.5rem' }}>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setActiveTab('logic');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  ← Back to 7. Logic &amp; Language
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn primary"
+                  onClick={() => {
+                    setActiveTab('parampara');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  Proceed to 9. Guru Paramparā &amp; Lineage →
+                </button>
+              </div>
+            </div>
+          );
+        })()}
+
         {/* ==================================================================
-            TAB: GURU PARAMPARA, HISTORIOGRAPHY & SHAKA CHRONOLOGY (TRACK 3 · STEP 8)
+            TAB: GURU PARAMPARA, HISTORIOGRAPHY & SHAKA CHRONOLOGY (TRACK 3 · STEP 9)
             ================================================================== */}
         {activeTab === 'parampara' && (() => {
           const convertedCeYear = shakaInputYear + SHAKA_TO_CE_OFFSET;
@@ -5050,12 +6523,23 @@ ${bodyHtml}
                     type="button"
                     className="article-pager-btn"
                     onClick={() => {
-                      setActiveTab('logic');
+                      setActiveTab('kerala');
                       const el = document.getElementById('vedic-tabs');
                       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
                   >
-                    ← Back to 7. Logic &amp; Language
+                    ← Back to 8. The Kerala School &amp; Calculus
+                  </button>
+                  <button
+                    type="button"
+                    className="article-pager-btn primary"
+                    onClick={() => {
+                      setActiveTab('quiz');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    Proceed to 10. Speed Math Challenge →
                   </button>
                 </div>
               </div>

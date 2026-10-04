@@ -37,7 +37,7 @@ export interface SearchTarget {
   courseAddendumId?: string;
   courseMode?: 'curriculum' | 'addendum' | 'flashcards' | 'exam';
   philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind';
-  mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero';
+  mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero' | 'kerala';
   /** /vedic-maths anchor: 'zero', 'sutra-<id>', 'solver-<key>' (see vedicLearningPath.ts), 'article-<slug>'. */
   vedicAnchor?: string;
   worksheetsCategory?: string;
@@ -920,6 +920,100 @@ export const SEARCH_INDEX: SearchItem[] = [
     target: {
       view: 'vedic-maths',
       vedicAnchor: 'article-historiographical-framework-and-shaka-chronology',
+    },
+  },
+  {
+    id: 'math-kerala-school-calculus',
+    title: 'The Kerala School of Mathematics: Madhava, Yuktibhāṣā & The Invention of Calculus',
+    subtitle: 'Infinite Series, Jyeṣṭhadeva’s Yuktibhāṣā, Nīlakaṇṭha’s Parallax Calculus & Rational Correction Terms',
+    category: 'maths',
+    categoryLabel: 'Vedic Maths · Calculus & Infinite Series',
+    badgeEmoji: '♾️',
+    badgeColor: '#059669',
+    description:
+      'Explore the 14th–16th century Kerala School of Astronomy & Mathematics: Madhava’s Sine/Cosine and Pi series, Jyeṣṭhadeva’s Yuktibhāṣā integration proof, Nīlakaṇṭha Somayaji’s geo-heliocentric planetary model & solar eclipse parallax calculations, and high-order error correction terms.',
+    keywords: [
+      'kerala school',
+      'madhava',
+      'sangamagrama',
+      'jyeshthadeva',
+      'yuktibhasa',
+      'nilakantha',
+      'somayaji',
+      'parameshvara',
+      'calculus',
+      'infinite series',
+      'taylor series',
+      'maclaurin series',
+      'gregory leibniz',
+      'correction terms',
+      'paridhi vyasa sambandha',
+      'geo-heliocentric',
+      'solar eclipse',
+      'lambana',
+      'nati',
+      'sparsha',
+      'madhya',
+      'moksha',
+      'sankalita',
+      'varasankalita',
+      'sphuta gati',
+      'yantras',
+      'armillary sphere',
+      'gnomon',
+      'chaya yantra',
+      'kartari yantra',
+      'shanku yantra',
+      'మాధవుడు',
+      'జ్యేష్ఠదేవుడు',
+      'నీలకంఠ సోమయాజి',
+      'యుక్తిభాష',
+      'కలనగణితం',
+      'अनन्तश्रेणी',
+      'कलनगणित'
+    ],
+    target: {
+      view: 'vedic-maths',
+      mathsTab: 'kerala',
+      vedicAnchor: 'article-kerala-school-calculus-and-infinite-series',
+    },
+  },
+  {
+    id: 'math-katapayadi-melakarta',
+    title: 'Kaṭapayādi Alphanumeric Cipher & The 72 Melakarta Rāgas',
+    subtitle: 'Aṅkānāṃ Vāmato Gatiḥ · Consonant-to-Number Encryption & Carnatic Music Theory',
+    category: 'maths',
+    categoryLabel: 'Vedic Maths · Cryptography & Music',
+    badgeEmoji: '🎵',
+    badgeColor: '#7c3aed',
+    description:
+      'Discover the ancient Kaṭapayādi alphanumeric cipher: encoding digits 0–9 into Sanskrit and Telugu consonants, the fundamental Rule of Reversal (Vāmato Gatiḥ), and how South Indian musicologists encoded the 72 Melakarta parent ragas (e.g. Kanakāṅgī = 1, Harikāmbhoji = 28).',
+    keywords: [
+      'katapayadi',
+      'melakarta',
+      'carnatic music',
+      'ragas',
+      'ankanam vamato gatih',
+      'rule of reversal',
+      'kanakangi',
+      'harikambhoji',
+      'dhirashankarabharana',
+      'kalyani',
+      'mayamalavagowla',
+      'kharaharapriya',
+      'cipher',
+      'cryptography',
+      'alphanumeric encryption',
+      'కటపయాది',
+      'మేళకర్త',
+      'వామతో గతిః',
+      'कटपयादि',
+      'मेळकर्ता'
+    ],
+    target: {
+      view: 'vedic-maths',
+      mathsTab: 'kerala',
+      vedicAnchor: 'melakarta',
     },
   },
   {

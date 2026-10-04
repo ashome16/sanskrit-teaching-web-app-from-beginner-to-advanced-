@@ -93,6 +93,38 @@ export interface ShakaMathematician {
   focusArea: 'Astronomy & Siddhanta' | 'Arithmetic & Algebra' | 'Geometry & Trigonometry' | 'Commentary & Reconstruction' | 'Observational & Calendrical';
 }
 
+export interface KeralaCorrectionTerm {
+  order: number;
+  label: string;
+  nameSa: string;
+  formula: string;
+  description: string;
+  convergenceImpact: string;
+  compute: (n: number) => number;
+}
+
+export interface KeralaYantra {
+  id: string;
+  nameEn: string;
+  nameSa: string;
+  nameIast: string;
+  icon: string;
+  category: string;
+  primaryFunction: string;
+  mathematicalLink: string;
+  historicalUse: string;
+}
+
+export interface KatapayadiDigitMap {
+  digit: number;
+  sanskritName: string;
+  teluguName: string;
+  consonantsDevanagari: string[];
+  consonantsTelugu: string[];
+  consonantsIast: string[];
+  ruleSummary: string;
+}
+
 /** Diagrams rendered by VedicArticleFigure.tsx (clean HTML/SVG, no ASCII art). */
 export type VedicArticleFigureId =
   | 'algebra-lineage'
@@ -469,6 +501,62 @@ export const SHAKA_ERA_CHRONOLOGY: ShakaMathematician[] = [
     focusArea: 'Arithmetic & Algebra'
   },
   {
+    id: 'madhava-sangamagrama',
+    name: 'Madhava of Sangamagrama',
+    teluguName: 'మాధవుడు (సంగమగ్రామ మాధవుడు)',
+    sanskritName: 'सङ्गमग्राम-माधवः',
+    shakaYear: '1262 (Birth) / 1302',
+    shakaNumeric: 1262,
+    ceYear: '1340 / 1380 CE',
+    ceNumeric: 1340,
+    century: '14th Century CE',
+    primaryTreatise: 'Veṇvāroha, Sphuṭacandrāpti, Golavāda',
+    contributions: 'Founder of the Kerala School. Formulated the infinite series for Sine, Cosine, and Arctangent (Pi series), invented high-order rational correction terms (F₁, F₂, F₃) converging Pi to 11 decimal places, establishing the core foundations of calculus 250–300 years before Newton and Leibniz.',
+    focusArea: 'Arithmetic & Algebra'
+  },
+  {
+    id: 'parameshvara-kerala',
+    name: 'Parameshvara',
+    teluguName: 'పరమేశ్వరుడు',
+    sanskritName: 'परमेश्वरः',
+    shakaYear: '1302 (Birth) / 1353',
+    shakaNumeric: 1302,
+    ceYear: '1380 / 1431 CE',
+    ceNumeric: 1380,
+    century: '14th–15th Century CE',
+    primaryTreatise: 'Dṛggaṇita (దృగ్గణితం), Goladīpikā',
+    contributions: 'Conducted a 55-year unbroken observational campaign correcting astronomical models (Dṛk system); discovered the circumradius formula for cyclic quadrilaterals (350 years before Simon Lhuilier) and a precursor to the Mean Value Theorem of differential calculus.',
+    focusArea: 'Observational & Calendrical'
+  },
+  {
+    id: 'nilakantha-somayaji',
+    name: 'Nilakantha Somayaji',
+    teluguName: 'నీలకంఠ సోమయాజి',
+    sanskritName: 'नीलकण्ठ-सोमयाजी',
+    shakaYear: '1366 (Birth) / 1423',
+    shakaNumeric: 1366,
+    ceYear: '1444 / 1501 CE',
+    ceNumeric: 1444,
+    century: '15th–16th Century CE',
+    primaryTreatise: 'Tantrasaṅgraha (తంత్రసంగ్రహం), Āryabhaṭīyabhāṣya',
+    contributions: 'Formulated a unified Geo-Heliocentric planetary model in 1501 CE (a century before Tycho Brahe) where all five planets orbit the Sun; developed rapid inverse-sine rational approximations and applied differential calculus to determine instantaneous planetary velocities (Sphuṭa-Gati).',
+    focusArea: 'Astronomy & Siddhanta'
+  },
+  {
+    id: 'jyeshthadeva-kerala',
+    name: 'Jyeshthadeva',
+    teluguName: 'జ్యేష్ఠదేవుడు',
+    sanskritName: 'ज्येष्ठदेवः',
+    shakaYear: '1422 (Birth) / 1452',
+    shakaNumeric: 1422,
+    ceYear: '1500 / 1530 CE',
+    ceNumeric: 1500,
+    century: '16th Century CE',
+    primaryTreatise: 'Yuktibhāṣā (యుక్తిభాష / The Rationale)',
+    contributions: 'Authored the Yuktibhāṣā (c. 1530 CE), considered the world’s first systematic calculus textbook; detailed geometric step-by-step proofs of Madhava’s infinite series, integral summation rules (Vārasaṅkalita), and differential chord iterations.',
+    focusArea: 'Commentary & Reconstruction'
+  },
+  {
     id: 'nrisimha-1',
     name: 'Nrisimha I',
     teluguName: 'నృసింహుడు-1',
@@ -593,6 +681,176 @@ export const SHAKA_ERA_CHRONOLOGY: ShakaMathematician[] = [
     primaryTreatise: 'Golānandaḥ, Adhikamāsanirṇayaḥ',
     contributions: 'Specialized in algorithmic mathematics for tracking rare celestial conjunctions, solar and lunar eclipse limits, and calculating exact Adhika Māsa adjustments with sexagesimal fractional time algorithms.',
     focusArea: 'Observational & Calendrical'
+  }
+];
+
+export const KERALA_CORRECTION_TERMS: KeralaCorrectionTerm[] = [
+  {
+    order: 1,
+    label: 'First-Order Linear Limit (F₁)',
+    nameSa: 'प्रथमः संस्कारः (रैखिक-सीमा)',
+    formula: 'F₁(n) = 1 / (4n)',
+    description: 'The fundamental asymptotic error correction term discovered by Madhava. Directly offsets the triangular truncation overshoot at step n.',
+    convergenceImpact: 'Cuts down series calculation time dramatically; computes Pi to 3 decimal places with only 10 terms (compared to 1,000 uncorrected terms).',
+    compute: (n: number) => 1 / (4 * n)
+  },
+  {
+    order: 2,
+    label: 'Second-Order Parabolic Refinement (F₂)',
+    nameSa: 'द्वितीयः संस्कारः (परवलयिक-शुद्धिः)',
+    formula: 'F₂(n) = n / (4n² + 1)',
+    description: 'A higher-order parabolic refinement recorded as an exact Sanskrit verse in Nilakantha Somayaji’s Tantrasangraha commentary.',
+    convergenceImpact: 'Yields 5 correct decimal places with just 10 terms, eliminating the residual oscillation between successive odd denominators.',
+    compute: (n: number) => n / (4 * n * n + 1)
+  },
+  {
+    order: 3,
+    label: 'Third-Order Cubic Refinement (F₃)',
+    nameSa: 'तृतीयः संस्कारः (घन-अनन्त-शुद्धिः)',
+    formula: 'F₃(n) = (n² + 1) / (4n³ + 5n)',
+    description: 'The crowning jewel of Kerala algebraic analysis. Derived from the successive convergents of continued fractions in the Yuktibhāṣā.',
+    convergenceImpact: 'Reaches Pi correct to 11 decimal places (3.14159265359) with just 50 terms! Without F₃(n), standard summation would require 100,000,000,000 steps.',
+    compute: (n: number) => (n * n + 1) / (4 * n * n * n + 5 * n)
+  }
+];
+
+export const KERALA_YANTRAS: KeralaYantra[] = [
+  {
+    id: 'gola-yantra',
+    nameEn: 'Gola Yantra (Armillary Sphere)',
+    nameSa: 'गोलयन्त्रम्',
+    nameIast: 'Gola Yantram',
+    icon: '🌐',
+    category: 'Celestial Mapping',
+    primaryFunction: 'Three-dimensional structural model of the celestial sphere tracking planetary orbits, the ecliptic circle, and the equinoctial colures.',
+    mathematicalLink: 'Used by Nilakantha Somayaji to verify true planetary longitudes against his Geo-Heliocentric orbital calculations.',
+    historicalUse: 'Reconciled mathematical Sine tables with physical line-of-sight sightings of planets across the Kerala night sky.'
+  },
+  {
+    id: 'chaya-yantra',
+    nameEn: 'Chāyā Yantra (Gnomon & Shadow Dial)',
+    nameSa: 'छायायन्त्रम्',
+    nameIast: 'Chāyā Yantram',
+    icon: '☀️',
+    category: 'Solar Altitude & Timekeeping',
+    primaryFunction: 'Vertical rod calibrated perpendicular to a leveled stone floor plane to measure solar elevation angles via cast shadow lengths.',
+    mathematicalLink: 'Shadow lengths were converted into exact solar altitudes using Madhava’s Sine series, computing local time down to fractional Ghatis and Vighatis.',
+    historicalUse: 'Provided the daily empirical calibration standard for astronomical observatories across southwest India.'
+  },
+  {
+    id: 'kartari-yantra',
+    nameEn: 'Kartarī Yantra (Scissors Instrument)',
+    nameSa: 'कर्तरीशलाकयन्त्रम्',
+    nameIast: 'Kartarī Yantram',
+    icon: '✂️',
+    category: 'Angular Separation',
+    primaryFunction: 'Precision observational instrument with pivoting calibrated metallic arms and sight vanes for measuring angular distance between celestial bodies.',
+    mathematicalLink: 'Directly verified planetary conjunction angles (Yuti) and evaluated parallax (Lambana) during solar-lunar eclipses.',
+    historicalUse: 'Enabled Parameshvara during his 55-year observational campaign to discover eclipse timing errors in earlier treatises.'
+  },
+  {
+    id: 'shanku-yantra',
+    nameEn: 'Śaṅku Yantra (Conical Dial)',
+    nameSa: 'शङ्कुयन्त्रम्',
+    nameIast: 'Śaṅku Yantram',
+    icon: '📐',
+    category: 'Declination & Solstices',
+    primaryFunction: 'Conical/cylindrical dial used to calculate planetary declination angles (Krānti) and pinpoint solstice and equinox entries.',
+    mathematicalLink: 'Connected directly to Baudhayana right-triangle trigonometry and spherical Sine rules for latitude corrections.',
+    historicalUse: 'Calculated the precise moment of Dakshinayana and Uttarayana transitions for regional agricultural and temple calendars.'
+  }
+];
+
+export const KATAPAYADI_DIGIT_MAP: KatapayadiDigitMap[] = [
+  {
+    digit: 1,
+    sanskritName: 'एक (Eka)',
+    teluguName: 'ఒకటి (1)',
+    consonantsDevanagari: ['क', 'ट', 'प', 'य'],
+    consonantsTelugu: ['క', 'ట', 'ప', 'య'],
+    consonantsIast: ['ka', 'ṭa', 'pa', 'ya'],
+    ruleSummary: 'Ka, Ṭa, Pa, Ya = 1'
+  },
+  {
+    digit: 2,
+    sanskritName: 'द्वि (Dvi)',
+    teluguName: 'రెండు (2)',
+    consonantsDevanagari: ['ख', 'ठ', 'फ', 'र'],
+    consonantsTelugu: ['ఖ', 'ఠ', 'ఫ', 'ర'],
+    consonantsIast: ['kha', 'ṭha', 'pha', 'ra'],
+    ruleSummary: 'Kha, Ṭha, Pha, Ra = 2'
+  },
+  {
+    digit: 3,
+    sanskritName: 'त्रि (Tri)',
+    teluguName: 'మూడు (3)',
+    consonantsDevanagari: ['ग', 'ड', 'ब', 'ल'],
+    consonantsTelugu: ['గ', 'డ', 'బ', 'ల'],
+    consonantsIast: ['ga', 'ḍa', 'ba', 'la'],
+    ruleSummary: 'Ga, Ḍa, Ba, La = 3'
+  },
+  {
+    digit: 4,
+    sanskritName: 'चतुर् (Catur)',
+    teluguName: 'నాలుగు (4)',
+    consonantsDevanagari: ['घ', 'ढ', 'भ', 'व'],
+    consonantsTelugu: ['ఘ', 'ఢ', 'భ', 'వ'],
+    consonantsIast: ['gha', 'ḍha', 'bha', 'va'],
+    ruleSummary: 'Gha, Ḍha, Bha, Va = 4'
+  },
+  {
+    digit: 5,
+    sanskritName: 'पञ्चन् (Pañcan)',
+    teluguName: 'ఐదు (5)',
+    consonantsDevanagari: ['ङ', 'ण', 'म', 'श'],
+    consonantsTelugu: ['ఙ', 'ణ', 'మ', 'శ'],
+    consonantsIast: ['ṅa', 'ṇa', 'ma', 'śa'],
+    ruleSummary: 'Ṅa, Ṇa, Ma, Śa = 5'
+  },
+  {
+    digit: 6,
+    sanskritName: 'षष् (Ṣaṣ)',
+    teluguName: 'ఆరు (6)',
+    consonantsDevanagari: ['च', 'त', 'ष'],
+    consonantsTelugu: ['చ', 'త', 'ష'],
+    consonantsIast: ['ca', 'ta', 'ṣa'],
+    ruleSummary: 'Ca, Ta, Ṣa = 6'
+  },
+  {
+    digit: 7,
+    sanskritName: 'सप्तन् (Saptan)',
+    teluguName: 'ఏడు (7)',
+    consonantsDevanagari: ['छ', 'थ', 'स'],
+    consonantsTelugu: ['ఛ', 'థ', 'స'],
+    consonantsIast: ['cha', 'tha', 'sa'],
+    ruleSummary: 'Cha, Tha, Sa = 7'
+  },
+  {
+    digit: 8,
+    sanskritName: 'अष्टन् (Aṣṭan)',
+    teluguName: 'ఎనిమిది (8)',
+    consonantsDevanagari: ['ज', 'द', 'ह'],
+    consonantsTelugu: ['జ', 'ద', 'హ'],
+    consonantsIast: ['ja', 'da', 'ha'],
+    ruleSummary: 'Ja, Da, Ha = 8'
+  },
+  {
+    digit: 9,
+    sanskritName: 'नवन् (Navan)',
+    teluguName: 'తొమ్మిది (9)',
+    consonantsDevanagari: ['झ', 'ध', 'ळ'],
+    consonantsTelugu: ['ఝ', 'ధ', 'ళ'],
+    consonantsIast: ['jha', 'dha', 'ḷa'],
+    ruleSummary: 'Jha, Dha, Ḷa = 9'
+  },
+  {
+    digit: 0,
+    sanskritName: 'शून्य (Śūnya)',
+    teluguName: 'సున్నా (0)',
+    consonantsDevanagari: ['ञ', 'न', 'क्ष', 'स्वरः'],
+    consonantsTelugu: ['ఞ', 'న', 'క్ష', 'అచ్చులు'],
+    consonantsIast: ['ña', 'na', 'kṣa', 'vowels'],
+    ruleSummary: 'Ña, Na, Kṣa, and initial Vowels = 0'
   }
 ];
 
@@ -1775,7 +2033,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
     readingTime: '9 min read',
     badge: 'Historiography & Timeline',
     prequel: { id: 'dhanurveda-geometry-phonetics', label: 'Dhanurveda: The Sacred Science of the Bow' },
-    next: { id: 'source-lineage', label: 'The Living Lineage: Guru Parampara' },
+    next: { id: 'kerala-school-calculus-infinite-series', label: 'The Kerala School: Infinite Series & Calculus' },
     sections: [
       {
         title: 'Beyond Western Philological Dating: The Indian Epistemic Framework',
@@ -1883,6 +2141,164 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Destruction of Nālandā, Takṣaśilā, and Vikramaśīlā led to preservation through decentralized commentaries by Bhaṭṭotpala, Nīlakaṇṭha, and Raṅganātha.',
       'Āryabhaṭa I (476 CE) and II (953 CE), and Bhāskara I (7th c.) and II (12th c.) are distinct figures distinguished by their algebraic and astronomical complexity.',
       'The standard calendar conversion formula CE = Shaka + 78 connects classical Indian Siddhāntas directly to global historical timelines.'
+    ]
+  },
+  {
+    id: 'kerala-school-calculus-infinite-series',
+    slug: 'kerala-school-calculus-and-infinite-series',
+    title: 'The Kerala School of Mathematics: Madhava, Yuktibhāṣā & The Invention of Calculus',
+    sanskritTitle: '॥ सङ्गमग्राम-माधवः युक्तिभाषा अनन्तश्रेणी-कलनशास्त्रं च ॥',
+    subtitle: 'Infinite series expansions for Pi, Sine and Cosine, early integration (Vārasaṅkalita), rational correction terms, and the geo-heliocentric model 300 years before Newton & Leibniz.',
+    readingTime: '12 min read',
+    badge: 'Infinite Series & Calculus',
+    prequel: { id: 'historiographical-framework-indian-mathematics', label: 'Historiographical Framework & Shaka Chronology' },
+    next: { id: 'source-lineage', label: 'The Living Lineage: Guru Parampara' },
+    sections: [
+      {
+        title: 'The Kerala School & The Indian Origins of Calculus',
+        sanskritTitle: 'केरल-गणित-परम्परा · कलनशास्त्रस्य मूलस्रोतः',
+        paragraphs: [
+          'The Kerala School of Astronomy and Mathematics, founded by Madhava of Sangamagrama (c. 1340–1425 CE) along the fertile banks of the Nila River, independently developed the mathematical core of calculus and infinite series expansions roughly 250 to 300 years before Sir Isaac Newton and Gottfried Wilhelm Leibniz.',
+          'While Western calculus emerged in the 17th century as a unified theory of fluxions and differentials driven by physics and the study of terrestrial motion, the Kerala School arrived at these identical mathematical tools to resolve profound astronomical and geometric challenges—specifically, determining the exact circumference of a circle (rectification of the arc) and compiling hyper-precise trigonometric Sine and Cosine tables for planetary navigation.',
+          'Through uninterrupted guru-shishya lineages flourishing in traditional hereditary homes (Illams), Kerala scholars including Parameshvara, Nilakantha Somayaji, and Jyeshthadeva transitioned mathematics from static geometric finite constructions to continuous, infinite limiting processes.'
+        ],
+        highlight: 'Nearly three centuries before Newton and Leibniz, Madhava of Sangamagrama bypassed the static geometric limits of antiquity by inventing continuous infinite power series.'
+      },
+      {
+        title: 'The Core Mathematical Breakthroughs: Madhava’s Infinite Series',
+        sanskritTitle: 'अनन्तश्रेणी-सूत्राणि · माधव-लेबनिज-श्रेणी',
+        paragraphs: [
+          'What modern university textbooks refer to as the Taylor, Maclaurin, and Gregory-Leibniz series were explicitly formulated in Sanskrit metric verse by Madhava centuries earlier:',
+          '• Madhava’s Sine Series: $$\\sin(\\theta) = \\theta - \\frac{\\theta^3}{3!} + \\frac{\\theta^5}{5!} - \\frac{\\theta^7}{7!} + \\dots$$',
+          '• Madhava’s Cosine Series: $$\\cos(\\theta) = 1 - \\frac{\\theta^2}{2!} + \\frac{\\theta^4}{4!} - \\frac{\\theta^6}{6!} + \\dots$$',
+          '• Madhava-Leibniz Pi Series: $$\\frac{\\pi}{4} = 1 - \\frac{1}{3} + \\frac{1}{5} - \\frac{1}{7} + \\frac{1}{9} - \\dots$$',
+          'Using these continuous infinite summations, Madhava computed the value of Pi correct to 11 decimal places (3.14159265359)—a breathtaking level of precision that remained completely unmatched in Europe until the late Renaissance.'
+        ],
+        terms: [
+          { sa: 'अनन्तश्रेणी', iast: 'Ananta-Śreṇī', gloss: 'Infinite power series expansion' },
+          { sa: 'चाप', iast: 'Cāpa', gloss: 'Circular arc length, corresponding to angle theta' },
+          { sa: 'ज्या', iast: 'Jyā', gloss: 'Trigonometric half-chord Sine component (R sin θ)' },
+          { sa: 'कोटिकारुक', iast: 'Koṭi', gloss: 'Trigonometric Cosine component (R cos θ)' }
+        ],
+        highlight: 'Madhava’s power series allowed astronomers to evaluate trigonometric functions for any arbitrary continuous angle, eliminating the errors inherent in discrete interpolation.'
+      },
+      {
+        title: 'The Geometric Proof in the Yuktibhāṣā (Paridhi-Vyāsa Sambandha)',
+        sanskritTitle: 'युक्तिभाषा-प्रमाणम् · परिधि-व्यास-सम्बन्धः',
+        paragraphs: [
+          'In the landmark Malayalam treatise Yuktibhāṣā (c. 1530 CE), Jyeshthadeva provided the world’s first systematic analytical and geometric exposition of integration, demonstrating how a curved circular arc unfolds into a rectilinear infinite series:',
+          'Step A: Circumscribing the Square (Caturaśra) — Consider a circle of radius R inscribed within a square. Isolate an octant covering an angle of 45° (π/4 radians). A tangent line drawn from the point of tangency to the corner of the octant has a length equal to the radius R itself (since tan 45° = 1).',
+          'Step B: Division into Micro-segments (Samakhaṇḍa) — Divide this tangent segment into a large number n of microscopic sections, each of length Δx = R/n. Draw a radial ray from center O to each division point P_i on the tangent. By the Pythagorean theorem, the hypotenuse (Kara) to the i-th point is: $$K_i = \\sqrt{R^2 + \\left(\\frac{i \\cdot R}{n}\\right)^2}$$',
+          'Step C: Projective Arc Mapping — As the tangent segment Δx projectively reflects back onto the curved arc of the circle, its length shrinks twice by the lengthening hypotenuse K_i (once due to oblique inclination, once due to radial projection distance): $$\\Delta s_i \\approx \\Delta x \\cdot \\frac{R^2}{K_i^2} = \\frac{R}{n} \\cdot \\frac{1}{1 + (i/n)^2}$$',
+          'Step D: Summation & Polynomial Power Reduction (Vārasaṅkalita) — Expanding 1 / (1 + (i/n)²) as a geometric series (1 - (i/n)² + (i/n)⁴ - ...) and integrating term by term using the Vedic power summation rule: $$\\lim_{n \\to \\infty} \\frac{1}{n^{k+1}} \\sum_{i=1}^n i^k = \\frac{1}{k+1}$$',
+          'This summation directly produces the odd denominators: $$\\text{Arc} = R \\left(1 - \\frac{1}{3} + \\frac{1}{5} - \\frac{1}{7} + \\dots\\right) = \\frac{\\pi}{4} R$$',
+          'Dividing both sides by R yields Madhava’s celebrated formula for Pi.'
+        ],
+        terms: [
+          { sa: 'समखण्ड', iast: 'Samakhaṇḍa', gloss: 'Division into equal infinitesimal micro-segments' },
+          { sa: 'कर्ण', iast: 'Karṇa / Kara', gloss: 'Hypotenuse ray connecting center to the tangent intersection' },
+          { sa: 'वारसङ्कलितम्', iast: 'Vārasaṅkalitam', gloss: 'Repeated nested summation mirroring Riemann integral sums' }
+        ],
+        highlight: 'Jyeshthadeva’s proof in the Yuktibhāṣā constitutes the earliest documented geometric integration of an algebraic rational function in human history.'
+      },
+      {
+        title: 'Madhava’s High-Order Rational Correction Terms (F_n)',
+        sanskritTitle: 'माधवस्य शोधन-संस्काराः (अन्त्य-संस्काराः)',
+        paragraphs: [
+          'The standard infinite Leibniz series converges notoriously slowly: adding 1,000,000 terms yields barely 5 correct decimal places. Recognizing this severe practical barrier, Madhava engineered high-order end-correction terms (F_n) applied to the trailing boundary of a truncated series:',
+          '$$\\frac{\\pi}{4} \\approx \\left(1 - \\frac{1}{3} + \\frac{1}{5} - \\dots \\pm \\frac{1}{2n-1}\\right) \\mp F(n)$$',
+          'The Yuktibhāṣā records three successive tiers of correction, representing the convergents of continued fractions:',
+          '1. First-Order Linear Limit: $$F_1(n) = \\frac{1}{4n}$$ — Offsets the triangular truncation overshoot, yielding 3 correct decimal places with only 10 terms.',
+          '2. Second-Order Parabolic Refinement: $$F_2(n) = \\frac{n}{4n^2 + 1}$$ — Formally preserved in Nilakantha’s Tantrasangraha commentary, giving 5 decimal places with 10 terms.',
+          '3. Third-Order Cubic Refinement: $$F_3(n) = \\frac{n^2 + 1}{4n^3 + 5n}$$ — The crowning jewel of Kerala algebraic analysis. Appending F_3(n) to just 50 terms produces Pi accurate to 11 decimal places (3.14159265359)!',
+          'Without Madhava’s F_3(n) correction term, achieving that identical 11-digit precision using standard uncorrected summation would require calculating 100,000,000,000 (one hundred billion) manual terms.'
+        ],
+        terms: [
+          { sa: 'शोधन', iast: 'Śodhana / Saṃskāra', gloss: 'Algebraic error-correction term applied to a truncated series' },
+          { sa: 'अन्त्यसंस्कार', iast: 'Antya-Saṃskāra', gloss: 'End-correction factor guaranteeing rapid asymptotic convergence' }
+        ],
+        highlight: 'By combining continued fractions with infinite series, Madhava solved the problem of slow convergence three centuries before Leonhard Euler.'
+      },
+      {
+        title: 'Precursors to Differentiation: Jīvā-Saṅkalita & Instantaneous Motion',
+        sanskritTitle: 'अवकलन-बीजानि · जीवा-सङ्कलितम् तात्कालिकी गतिश्च',
+        paragraphs: [
+          'To compute real-time celestial coordinates, Kerala mathematicians derived the differential relationships of circular chords:',
+          'For an infinitesimal arc increment δθ: $$d(\\sin\\theta) = \\cos\\theta \\, d\\theta \\qquad\\text{and}\\qquad d(\\cos\\theta) = -\\sin\\theta \\, d\\theta$$',
+          'Using successive iterative approximations (Jīvā-Saṅkalita):',
+          '• Beginning with the linear limit: sin θ ≈ θ and cos θ ≈ 1.',
+          '• Integrating the Sine approximation yields the quadratic Cosine error: $$\\int \\theta \\, d\\theta = \\frac{\\theta^2}{2!} \\implies \\cos\\theta \\approx 1 - \\frac{\\theta^2}{2!}$$',
+          '• Integrating this new Cosine approximation yields the cubic Sine term: $$\\int \\left(1 - \\frac{\\theta^2}{2!}\\right) d\\theta = \\theta - \\frac{\\theta^3}{3!} \\implies \\sin\\theta \\approx \\theta - \\frac{\\theta^3}{3!}$$',
+          'Repeating this recursive feedback loop produced the universal Sine and Cosine power series expansions.'
+        ],
+        highlight: 'The Kerala School treated curves as infinite sequences of microscopic chords, inventing the core iterative methods of modern differential equations.'
+      },
+      {
+        title: 'Nilakantha Somayaji’s Geo-Heliocentric Universe & Solar Eclipse Calculus',
+        sanskritTitle: 'नीलकण्ठस्य सौर-केन्द्रिक-सिद्धान्तः · सूर्यग्रहण-लम्बनम्',
+        paragraphs: [
+          'In his 1501 CE masterpiece Tantrasaṅgraha, Nilakantha Somayaji revolutionized planetary kinematics. He proved that the five planets (Mercury, Venus, Mars, Jupiter, Saturn) do not move in fictional epicycles centered on empty space; instead, they orbit the Sun in independent paths, while the Sun—carrying these planets with it—orbits the Earth as the central observer.',
+          'This geo-heliocentric model was mathematically identical to the system proposed by Tycho Brahe in Europe in 1588 CE, but Nilakantha published it nearly a century earlier.',
+          'Nilakantha also resolved the supreme challenge of solar eclipse prediction by applying differential calculus to observer parallax:',
+          '• Geocentric Syzygy: Calculated the true geocentric intersection of the Sun and Moon near Rahu/Ketu using his Sphuta-Gati (instantaneous planetary velocity) equations.',
+          '• Differential Parallax Corrections: Evaluated Lambana (longitudinal parallax, causing a local time shift in minutes) and Nati (latitudinal parallax, determining whether the eclipse appears total or partial from a specific ground horizon).',
+          '• Parallax Time Derivative: By calculating the rate of change of parallax d(Parallax)/dt as the Earth rotated, Nilakantha predicted the exact minutes of Sparsha (first contact), Madhya (maximum totality), and Moksha (final separation) without optical telescopes!'
+        ],
+        terms: [
+          { sa: 'लम्बन', iast: 'Lambana', gloss: 'Longitudinal parallax causing local time shifts in solar eclipse phases' },
+          { sa: 'नति', iast: 'Nati', gloss: 'Latitudinal parallax determining eclipse magnitude and totality' },
+          { sa: 'स्फुटगति', iast: 'Sphuṭa-Gati', gloss: 'Instantaneous planetary velocity derived via differential rates of change' },
+          { sa: 'स्पर्श-मध्य-मोक्षाः', iast: 'Sparśa-Madhya-Mokṣāḥ', gloss: 'The three critical phases of eclipse: contact, totality, and release' }
+        ],
+        highlight: 'Nilakantha’s Tantrasaṅgraha unified geo-heliocentric kinematics with differential parallax calculus to compute solar eclipse timings to the exact minute.'
+      },
+      {
+        title: 'The Kaṭapayādi Alphanumeric Cipher & Melakarta Rāgas',
+        sanskritTitle: 'कटपयादि-सङ्ख्याप्रणाली · मेलकर्तारागाणां रहस्यम्',
+        paragraphs: [
+          'To preserve massive floating-point trigonometric tables and astronomical constants across generations of oral chanting without scribal corruption, the Kerala School extensively utilized the Kaṭapayādi alphanumeric cipher.',
+          'Consonants map to digits 0–9 across four phonetic groups: Ka-group (1–5), Ṭa-group (1–5), Pa-group (1–5), Ya-group (1–5), and initial vowels / nasals acting as 0.',
+          'The Rule of Reversal (Aṅkānāṃ Vāmato Gatiḥ): Crucially, numbers are always read from right to left (least significant to most significant digit).',
+          'Carnatic Musicology Application: South Indian musicologists used this cipher to catalog the 72 Melakarta parent ragas from their first two syllables:',
+          '• Rāga Kanakāṅgī (కనకాంగి): Ka = 1, Na = 0. Reversing digits "1, 0" yields 01 $\\implies$ Rāga Number 1!',
+          '• Rāga Harikāmbhoji (హరికాంభోజి): Ha = 8, Ri = 2. Reversing digits "8, 2" yields 28 $\\implies$ Rāga Number 28!',
+          '• Rāga Dhīraśaṅkarābharaṇa: Dha = 9, Ra = 2. Reversing yields 29 $\\implies$ Rāga Number 29!',
+          'Musicians and astronomers alike could instantly reconstruct complex numerical ratios and musical scale intervals simply by hearing a name chanted aloud.'
+        ],
+        terms: [
+          { sa: 'कटपयादि', iast: 'Kaṭapayādi', gloss: 'Consonant-to-numeral cipher mapping Ka, Ṭa, Pa, Ya to 1' },
+          { sa: 'अङ्कानां वामतो गतिः', iast: 'Aṅkānāṃ Vāmato Gatiḥ', gloss: 'Universal mathematical rule: numbers proceed from right to left' },
+          { sa: 'मेलकर्ता', iast: 'Melakartā', gloss: 'Parent scale system of 72 fundamental ragas in Carnatic music' }
+        ],
+        highlight: 'The Kaṭapayādi cipher allowed Kerala mathematicians to embed 11-decimal-place numbers inside melodious devotional hymns that survived centuries without error.'
+      },
+      {
+        title: 'Observational Yantras & The Whish-Joseph Transmission Hypothesis',
+        sanskritTitle: 'वेधशाला-यन्त्राणि · विश-जोसेफ-सङ्क्रमण-प्रमेयम्',
+        paragraphs: [
+          'To empirically validate their theoretical calculus series, Kerala astronomers constructed four monumental observational instruments (Yantras):',
+          '1. Gola Yantra (Armillary Sphere): 3D celestial sphere mapping ecliptic orbital planes.',
+          '2. Chāyā Yantra (Gnomon & Shadow Dial): Calibrated vertical rod converting solar shadow lengths into altitude angles to calculate time down to fractional Ghatis.',
+          '3. Kartarī Yantra (Scissors Instrument): Calibrated scissor-vane instrument measuring angular separation between planets during rare conjunctions (Yuti).',
+          '4. Śaṅku Yantra (Conical Dial): Conical gnomon determining solstice transitions and planetary declination.',
+          'The Whish-Joseph Transmission Hypothesis: In 1832, British scholar Charles Whish published the first European paper on the Kerala School in the Transactions of the Royal Asiatic Society, bringing Madhava’s proofs to Western attention. Modern historians like C.K. Raju and George Gheverghese Joseph have explored the transmission hypothesis: 16th-century Jesuit missionaries based at the Jesuit College in Cochin (established in 1579 CE) sought precise calendar data for navigating monsoon trade routes. These Jesuit scholars acquired Kerala mathematical palm-leaf manuscripts and dispatched translations back to Rome (Christopher Clavius) and European mathematical circles shortly before the sudden emergence of European calculus.'
+        ],
+        terms: [
+          { sa: 'गोलयन्त्र', iast: 'Gola-Yantra', gloss: 'Armillary sphere celestial observation instrument' },
+          { sa: 'छायायन्त्र', iast: 'Chāyā-Yantra', gloss: 'Solar gnomon shadow-measurement instrument' },
+          { sa: 'कर्तरीशलाका', iast: 'Kartarī-Yantra', gloss: 'Scissors instrument for measuring angular planetary separations' }
+        ],
+        highlight: 'The Kerala School achieved the synthesis of abstract calculus and empirical astronomy: validating infinite power series through the physical sighting of celestial bodies with observational Yantras.'
+      }
+    ],
+    quote: 'Centuries before the European Enlightenment, the astronomers of the Kerala School stood on the banks of the Nila River, peered into the night sky with Gola Yantras, and unfolded the curved geometry of the heavens into the infinite series of calculus.',
+    keyTakeaways: [
+      'Madhava of Sangamagrama (c. 1340–1425 CE) formulated the Taylor, Maclaurin, and Leibniz infinite series for Sine, Cosine, and Pi 250–300 years before European calculus.',
+      'Jyeshthadeva’s Yuktibhāṣā (1530 CE) contains the world’s first systematic geometric proof of integration, unfolding circular arcs into polynomial power series (Vārasaṅkalita).',
+      'Madhava’s cubic rational correction term F₃(n) calculates Pi accurate to 11 decimal places with only 50 terms, compared to 100 billion terms required without it.',
+      'Nilakantha Somayaji’s Tantrasaṅgraha (1501 CE) formulated a geo-heliocentric planetary model a century before Tycho Brahe and solved solar eclipse timing to the exact minute using differential parallax calculus (Lambana and Nati).',
+      'The Kaṭapayādi cipher encoded high-precision floating point tables in metric verse, functioning as the indexing key for the 72 Melakarta ragas of Indian classical music.',
+      'The Whish-Joseph Transmission Hypothesis investigates the pathway through which 16th-century Jesuit scholars in Cochin may have transmitted Kerala astronomical mathematics to Europe.'
     ]
   },
 ];

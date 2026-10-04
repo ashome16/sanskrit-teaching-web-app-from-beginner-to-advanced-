@@ -408,6 +408,7 @@ const Dashboard: React.FC = () => {
       const anchor = target.vedicAnchor;
       let tab: VedicTab = 'sutras';
       if (anchor === 'zero' || target.mathsTab === 'zero') tab = 'zero';
+      else if (anchor === 'kerala' || anchor === 'yuktibhasa' || anchor === 'melakarta' || target.mathsTab === 'kerala') tab = 'kerala';
       else if (anchor?.startsWith('sutra-') || anchor === 'vedic-path' || target.mathsTab === 'sutras') tab = 'sutras';
       else if (anchor?.startsWith('solver-') || target.mathsTab === 'multiplication' || target.mathsTab === 'divisibility') tab = 'solvers';
       else if (anchor?.startsWith('article-')) tab = 'articles';
