@@ -14,6 +14,9 @@ import {
   KERALA_CORRECTION_TERMS,
   KERALA_YANTRAS,
   KATAPAYADI_DIGIT_MAP,
+  BHUTA_SANKHYA_DIGITS,
+  BHASKARA_DOB_RECORD,
+  SURYA_SIDDHANTA_MANGALACHARANA,
   type VedicSutra,
   type VedicSubSutraWorksheet,
   type VedicSubSutraProblem
@@ -541,6 +544,14 @@ ${bodyHtml}
   const [expandedPillarId, setExpandedPillarId] = useState<string | null>(null);
   const [selectedMathematicianId, setSelectedMathematicianId] = useState<string | null>(null);
 
+  // Bhaskara Algebra & Bhūta-Saṅkhyā States
+  const [selectedBhutaDigit, setSelectedBhutaDigit] = useState<number>(6);
+  const [varnaVarX, setVarnaVarX] = useState<number>(3);
+  const [varnaVarY, setVarnaVarY] = useState<number>(4);
+  const [varnaVarZ, setVarnaVarZ] = useState<number>(2);
+  const [varnaPreset, setVarnaPreset] = useState<'linear' | 'quadratic' | 'trivariate'>('linear');
+  const [customBhutaYear, setCustomBhutaYear] = useState<string>('1036');
+
   // Sutra Directory States
   const [sutraSearch, setSutraSearch] = useState('');
   const [sutraFilter, setSutraFilter] = useState<string>('all');
@@ -636,6 +647,15 @@ ${bodyHtml}
     } else if (clean === 'algebra') {
       setActiveTab('algebra');
       scrollId = 'vedic-tabs';
+    } else if (clean === 'bhaskara-dob' || clean === 'bhuta-sankhya') {
+      setActiveTab('algebra');
+      scrollId = 'bhaskara-dob-section';
+    } else if (clean === 'vyakta-avyakta' || clean === 'varna-algebra') {
+      setActiveTab('algebra');
+      scrollId = 'vyakta-avyakta-section';
+    } else if (clean === 'surya-siddhanta' || clean === 'cosmic-consciousness') {
+      setActiveTab('algebra');
+      scrollId = 'surya-siddhanta-section';
     } else if (clean === 'geometry') {
       setActiveTab('geometry');
       scrollId = 'vedic-tabs';
@@ -2701,7 +2721,652 @@ ${bodyHtml}
               </p>
             </div>
 
-                        <div className="vedic-next-track-card">
+            {/* ==================================================================
+                SECTION 1: VYAKTA GANITAM VS AVYAKTA GANITAM & VARNA COLOR VARIABLES
+                ================================================================== */}
+            <div id="vyakta-avyakta-section" className="vyakta-avyakta-section">
+              <div className="zero-badge-pill" style={{ background: '#dbeafe', color: '#1e40af' }}>
+                <span>॥ व्यक्तगणितम् अव्यक्तगणितं च ॥</span>
+                <span>·</span>
+                <span>The Two Realms of Mathematics</span>
+              </div>
+
+              <h2 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 0.35rem 0' }}>
+                Vyakta Gaṇitam (Arithmetic) vs. Avyakta Gaṇitam (Algebra)
+              </h2>
+              <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.6, margin: '0 0 1.5rem 0' }}>
+                In classical Indian epistemology, mathematics was divided into two complementary wings: <strong>Vyakta Gaṇitam</strong> (the manifest mathematics of concrete numbers) and <strong>Avyakta Gaṇitam</strong> (the unmanifest mathematics of unknown variables, colors, and indeterminate equations).
+              </p>
+
+              <div className="vyakta-avyakta-grid">
+                {/* Vyakta Card */}
+                <div className="vyakta-card">
+                  <div className="va-header-badge" style={{ background: '#dcfce7', color: '#15803d' }}>
+                    <span>🌱 Manifest &amp; Concrete</span>
+                  </div>
+                  <h3 className="va-card-title" style={{ color: '#166534' }}>
+                    Vyakta Gaṇitam (వ్యక్త గణితం)
+                  </h3>
+                  <div className="va-card-subtitle">व्यक्तगणितम् · Expressed Mathematics</div>
+                  <ul className="va-points-list">
+                    <li>
+                      <span>🌿</span>
+                      <span><strong>Etymology:</strong> <em>Vyakta</em> means &quot;unfolded, manifest, tangible, and visible&quot;.</span>
+                    </li>
+                    <li>
+                      <span>📐</span>
+                      <span><strong>Domain:</strong> Concrete arithmetic, fractions, proportions, interest calculations, permutations &amp; combinations (<em>Aṅka-Pāśa</em>), and practical surveying geometry.</span>
+                    </li>
+                    <li>
+                      <span>📜</span>
+                      <span><strong>Canonical Treatise:</strong> The world-renowned <strong>Līlāvatī (లీలావతి)</strong>, where Bhāskara II frames algorithmic brilliance inside poetic riddles featuring swarms of bees, swans, and lotus flowers.</span>
+                    </li>
+                    <li>
+                      <span>✨</span>
+                      <span><strong>Philosophy:</strong> Deals with known, tangible quantities directly accessible to sensory observation and daily commerce.</span>
+                    </li>
+                  </ul>
+                  <div className="va-treatise-pill" style={{ background: '#dcfce7', color: '#14532d' }}>
+                    <span>📖 Primary Text:</span>
+                    <span>Līlāvatī (277 Verses) by Bhāskarācārya II (1150 CE)</span>
+                  </div>
+                </div>
+
+                {/* Avyakta Card */}
+                <div className="avyakta-card">
+                  <div className="va-header-badge" style={{ background: '#dbeafe', color: '#1d4ed8' }}>
+                    <span>🌌 Unmanifest &amp; Symbolic</span>
+                  </div>
+                  <h3 className="va-card-title" style={{ color: '#1e40af' }}>
+                    Avyakta Gaṇitam (అవ్యక్త గణితం)
+                  </h3>
+                  <div className="va-card-subtitle">अव्यक्तगणितम् · Unexpressed / Symbolic Algebra</div>
+                  <ul className="va-points-list">
+                    <li>
+                      <span>🔮</span>
+                      <span><strong>Etymology:</strong> <em>Avyakta</em> means &quot;unmanifested, latent, hidden, and formless&quot;.</span>
+                    </li>
+                    <li>
+                      <span>🔣</span>
+                      <span><strong>Domain:</strong> Higher multivariate algebra, signed numbers, negative signs via <em>Bindu</em> (dot), zero arithmetic (<em>Khahara</em>: a/0 = ∞), and indeterminate analysis.</span>
+                    </li>
+                    <li>
+                      <span>📜</span>
+                      <span><strong>Canonical Treatise:</strong> The monumental <strong>Bījagaṇita (బీజగణితం)</strong>, containing the world’s earliest multivariate algebraic notation and the <em>Cakravāla</em> cyclic algorithm.</span>
+                    </li>
+                    <li>
+                      <span>✨</span>
+                      <span><strong>Philosophy:</strong> Manipulates the invisible potential of unknowns before they crystallize into definite numerical values.</span>
+                    </li>
+                  </ul>
+                  <div className="va-treatise-pill" style={{ background: '#dbeafe', color: '#1e3a8a' }}>
+                    <span>📖 Primary Text:</span>
+                    <span>Bījagaṇita (213 Verses) by Bhāskarācārya II (1150 CE)</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Varṇa Matrix (Color Variables) */}
+              <div className="varna-matrix-box">
+                <div className="varna-matrix-header">
+                  <span className="badge-pill" style={{ background: '#fef3c7', color: '#92400e', fontSize: '0.78rem', fontWeight: 800, padding: '0.2rem 0.65rem', borderRadius: '9999px', textTransform: 'uppercase' }}>
+                    The World’s First Multivariate Notation
+                  </span>
+                  <h3 style={{ marginTop: '0.5rem' }}>
+                    🎨 Bhāskarācārya’s Varṇa (Color-Variable) System
+                  </h3>
+                  <p style={{ fontSize: '0.94rem', color: '#475569', lineHeight: 1.55 }}>
+                    Centuries before European algebra adopted x, y, and z, Indian mathematicians invented multivariate algebraic symbolism using <strong>Varṇa</strong> (वर्णाः — meaning both &quot;colors&quot; and &quot;alphabetic letters&quot;). Each unknown quantity was assigned a distinct cosmic hue:
+                  </p>
+                </div>
+
+                <div className="varna-palette-grid">
+                  <div className="varna-chip-card" style={{ background: '#f8fafc', borderColor: '#0f172a' }}>
+                    <div className="varna-chip-top">
+                      <span className="varna-chip-color">🖤</span>
+                      <span className="varna-chip-var" style={{ color: '#0f172a' }}>x</span>
+                    </div>
+                    <div className="varna-chip-name" style={{ color: '#0f172a' }}>Kālaka (కాలక)</div>
+                    <div className="varna-chip-te">कालक · Black Variable</div>
+                    <div className="varna-chip-desc">Primary unknown variable in equations, identical to modern variable <em>x</em>.</div>
+                  </div>
+
+                  <div className="varna-chip-card" style={{ background: '#eff6ff', borderColor: '#3b82f6' }}>
+                    <div className="varna-chip-top">
+                      <span className="varna-chip-color">💙</span>
+                      <span className="varna-chip-var" style={{ color: '#2563eb' }}>y</span>
+                    </div>
+                    <div className="varna-chip-name" style={{ color: '#1e40af' }}>Nīlaka (నీలక)</div>
+                    <div className="varna-chip-te">नीलक · Blue Variable</div>
+                    <div className="varna-chip-desc">Secondary unknown variable in systems of simultaneous equations, identical to <em>y</em>.</div>
+                  </div>
+
+                  <div className="varna-chip-card" style={{ background: '#fefce8', borderColor: '#eab308' }}>
+                    <div className="varna-chip-top">
+                      <span className="varna-chip-color">💛</span>
+                      <span className="varna-chip-var" style={{ color: '#ca8a04' }}>z</span>
+                    </div>
+                    <div className="varna-chip-name" style={{ color: '#854d0e' }}>Pītaka (పీతక)</div>
+                    <div className="varna-chip-te">पीतक · Yellow Variable</div>
+                    <div className="varna-chip-desc">Tertiary unknown variable used for 3D and 3-variable equations, identical to <em>z</em>.</div>
+                  </div>
+
+                  <div className="varna-chip-card" style={{ background: '#f0fdf4', borderColor: '#22c55e' }}>
+                    <div className="varna-chip-top">
+                      <span className="varna-chip-color">💚</span>
+                      <span className="varna-chip-var" style={{ color: '#16a34a' }}>w</span>
+                    </div>
+                    <div className="varna-chip-name" style={{ color: '#166534' }}>Haritaka (హరితక)</div>
+                    <div className="varna-chip-te">हरितक · Green Variable</div>
+                    <div className="varna-chip-desc">Quaternary variable for 4th-degree systems, indeterminate equations, and astronomical orbital parameters.</div>
+                  </div>
+
+                  <div className="varna-chip-card" style={{ background: '#f1f5f9', borderColor: '#64748b' }}>
+                    <div className="varna-chip-top">
+                      <span className="varna-chip-color">⚪</span>
+                      <span className="varna-chip-var" style={{ color: '#475569' }}>c</span>
+                    </div>
+                    <div className="varna-chip-name" style={{ color: '#334155' }}>Rūpa (రూప)</div>
+                    <div className="varna-chip-te">रूप · Unit Constant</div>
+                    <div className="varna-chip-desc">Concrete numerical constant term with absolute value (e.g. 5 Rūpa = constant integer 5).</div>
+                  </div>
+                </div>
+
+                {/* Interactive Varna Playground */}
+                <div className="varna-playground-card">
+                  <div className="varna-playground-title">
+                    <span>🧪</span>
+                    <span>Interactive Varṇa Expression Calculator</span>
+                  </div>
+                  <p style={{ fontSize: '0.88rem', color: '#475569', marginBottom: '1rem' }}>
+                    Adjust the values of Kālaka (x), Nīlaka (y), and Pītaka (z) to watch Bhāskarācārya&apos;s Sanskrit Varṇa formulas evaluate dynamically in real time:
+                  </p>
+
+                  <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+                    <span style={{ fontSize: '0.82rem', fontWeight: 700, color: '#64748b' }}>Select Equation:</span>
+                    <button
+                      type="button"
+                      className={`solver-preset-chip${varnaPreset === 'linear' ? ' active' : ''}`}
+                      onClick={() => setVarnaPreset('linear')}
+                    >
+                      Linear: 3x + 2y + 5
+                    </button>
+                    <button
+                      type="button"
+                      className={`solver-preset-chip${varnaPreset === 'quadratic' ? ' active' : ''}`}
+                      onClick={() => setVarnaPreset('quadratic')}
+                    >
+                      Quadratic: x² + 4xy + 2
+                    </button>
+                    <button
+                      type="button"
+                      className={`solver-preset-chip${varnaPreset === 'trivariate' ? ' active' : ''}`}
+                      onClick={() => setVarnaPreset('trivariate')}
+                    >
+                      3-Var (Bindu Dot): 5x - 3y + 4z + 12
+                    </button>
+                  </div>
+
+                  <div className="varna-sliders-grid">
+                    <div className="varna-slider-col">
+                      <label htmlFor="varna-slider-x">
+                        <span>🖤 Kālaka (x):</span>
+                        <strong style={{ color: '#0f172a' }}>{varnaVarX}</strong>
+                      </label>
+                      <input
+                        id="varna-slider-x"
+                        aria-label="Kālaka (x) variable value"
+                        type="range"
+                        min="1"
+                        max="12"
+                        value={varnaVarX}
+                        onChange={(e) => setVarnaVarX(Number(e.target.value))}
+                      />
+                    </div>
+                    <div className="varna-slider-col">
+                      <label htmlFor="varna-slider-y">
+                        <span>💙 Nīlaka (y):</span>
+                        <strong style={{ color: '#2563eb' }}>{varnaVarY}</strong>
+                      </label>
+                      <input
+                        id="varna-slider-y"
+                        aria-label="Nīlaka (y) variable value"
+                        type="range"
+                        min="1"
+                        max="12"
+                        value={varnaVarY}
+                        onChange={(e) => setVarnaVarY(Number(e.target.value))}
+                      />
+                    </div>
+                    {varnaPreset === 'trivariate' && (
+                      <div className="varna-slider-col">
+                        <label htmlFor="varna-slider-z">
+                          <span>💛 Pītaka (z):</span>
+                          <strong style={{ color: '#ca8a04' }}>{varnaVarZ}</strong>
+                        </label>
+                        <input
+                          id="varna-slider-z"
+                          aria-label="Pītaka (z) variable value"
+                          type="range"
+                          min="1"
+                          max="12"
+                          value={varnaVarZ}
+                          onChange={(e) => setVarnaVarZ(Number(e.target.value))}
+                        />
+                      </div>
+                    )}
+                  </div>
+
+                  {(() => {
+                    const x = varnaVarX;
+                    const y = varnaVarY;
+                    const z = varnaVarZ;
+                    let saNotation = '';
+                    let teNotation = '';
+                    let modernFormula = '';
+                    let evaluatedResult = 0;
+
+                    if (varnaPreset === 'linear') {
+                      saNotation = '३ का १ + २ नी १ + ५ रू';
+                      teNotation = '3 కాలక + 2 నీలక + 5 రూప';
+                      modernFormula = `3(${x}) + 2(${y}) + 5`;
+                      evaluatedResult = 3 * x + 2 * y + 5;
+                    } else if (varnaPreset === 'quadratic') {
+                      saNotation = 'का २ + ४ का १ नी १ + २ रू';
+                      teNotation = 'కాలక² + 4 కాలక·నీలక + 2 రూప';
+                      modernFormula = `(${x})² + 4(${x})(${y}) + 2`;
+                      evaluatedResult = x * x + 4 * x * y + 2;
+                    } else {
+                      saNotation = '५ का १ + ३̇ नी १ + ४ पी १ + १२ रू';
+                      teNotation = '5 కాలక + 3̇ నీలక (బిందు / Negative) + 4 పీతక + 12 రూప';
+                      modernFormula = `5(${x}) - 3(${y}) + 4(${z}) + 12`;
+                      evaluatedResult = 5 * x - 3 * y + 4 * z + 12;
+                    }
+
+                    return (
+                      <div className="varna-math-output-box">
+                        <div className="varna-math-row">
+                          <span className="varna-math-label">Sanskrit Bījagaṇita Notation:</span>
+                          <span className="varna-math-val" style={{ color: '#b45309' }}>{saNotation}</span>
+                        </div>
+                        <div className="varna-math-row">
+                          <span className="varna-math-label">Telugu Transliteration:</span>
+                          <span style={{ fontSize: '0.98rem', fontWeight: 700, color: '#475569' }}>{teNotation}</span>
+                        </div>
+                        <div className="varna-math-row">
+                          <span className="varna-math-label">Modern Algebraic Expansion:</span>
+                          <span className="varna-math-val" style={{ color: '#2563eb' }}>{modernFormula}</span>
+                        </div>
+                        <div className="varna-math-row" style={{ borderTop: '1px solid #e2e8f0', paddingTop: '0.5rem', marginTop: '0.25rem' }}>
+                          <span className="varna-math-label" style={{ fontSize: '0.9rem', color: '#15803d' }}>Evaluated Numerical Value:</span>
+                          <span className="varna-math-val" style={{ fontSize: '1.45rem', color: '#15803d' }}>= {evaluatedResult}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
+              </div>
+            </div>
+
+            {/* ==================================================================
+                SECTION 2: BHASKARACHARYA'S CRYPTOGRAPHIC D.O.B. & BHUTA-SANKHYA
+                ================================================================== */}
+            <div id="bhaskara-dob-section" className="bhaskara-dob-section">
+              <div className="zero-badge-pill" style={{ background: '#fef3c7', color: '#92400e' }}>
+                <span>॥ रसगुणपूर्णमहीसमशकनृपसमये ॥</span>
+                <span>·</span>
+                <span>Historical Cryptography</span>
+              </div>
+
+              <h2 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 0.35rem 0' }}>
+                How Bhāskarācārya Encrypted His Date of Birth (D.O.B.)
+              </h2>
+              <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.6, margin: '0 0 1.5rem 0' }}>
+                Instead of mundane numerals that could degrade over centuries of manuscript copying, Bhāskarācārya II (1114–1185 CE) embedded his birth date and the completion age of the <em>Siddhānta Śiromaṇi</em> into an immortal Sanskrit metric verse using the <strong>Bhūta-Saṅkhyā</strong> (object-number) cipher.
+              </p>
+
+              {/* Verse Banner */}
+              <div className="bhuta-shloka-banner">
+                <div className="bhuta-banner-badge">
+                  <span>📜 Siddhānta Śiromaṇi · Golādhyāya (Praśnādhyāya)</span>
+                </div>
+                <div className="bhuta-verse-telugu">
+                  రసగుణపూర్ణమహీసమశకనృపసమయే భవన్మమోత్పత్తిః |<br />
+                  రసగుణవర్షేణ మయా సిద్ధాంతశిరోమణి రచితా ||
+                </div>
+                <div className="bhuta-verse-sa">
+                  रसगुणपूर्णमहीसमशकनृपसमये भवन्ममोत्पत्तिः ।<br />
+                  रसगुणवर्षेण मया सिद्धान्तशिरोमणी रचिता ॥
+                </div>
+                <div className="bhuta-verse-iast">
+                  {BHASKARA_DOB_RECORD.shlokaIast}
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem', marginTop: '1rem' }}>
+                  <button
+                    type="button"
+                    className="bhuta-audio-btn"
+                    onClick={() => playPronunciation(BHASKARA_DOB_RECORD.shlokaDevanagari)}
+                  >
+                    <span>🔊</span>
+                    <span>Listen to Sanskrit Shloka</span>
+                  </button>
+                  <span style={{ fontSize: '0.85rem', color: '#92400e', fontWeight: 700 }}>
+                    Composed by Bhāskarācārya II at age 36 (1150 CE)
+                  </span>
+                </div>
+              </div>
+
+              {/* Decryptor Pipeline */}
+              <div className="bhuta-decryptor-flow">
+                <h3 className="bhuta-decryptor-title">
+                  <span>🔐</span>
+                  <span>Step-by-Step Cryptographic Decryption</span>
+                </h3>
+                <p style={{ fontSize: '0.92rem', color: '#475569', marginBottom: '1.25rem' }}>
+                  In the Bhūta-Saṅkhyā system, numbers are represented by universal philosophical and cosmic concepts. Let us map each word token to its mathematical digit:
+                </p>
+
+                <div className="bhuta-tokens-grid">
+                  {BHASKARA_DOB_RECORD.cryptographicTokens.map((tok, idx) => (
+                    <div key={idx} className="bhuta-token-chip">
+                      <div className="bhuta-token-name">{tok.tokenTe}</div>
+                      <div style={{ fontSize: '0.88rem', fontWeight: 700, color: '#c2410c' }}>{tok.tokenSa}</div>
+                      <div className="bhuta-token-meaning">{tok.meaning}</div>
+                      <div className="bhuta-token-digit">{tok.digit}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Rule of Reversal */}
+                <div className="bhuta-reversal-box">
+                  <div className="bhuta-reversal-rule">
+                    <span>🔄</span>
+                    <span>The Foundational Rule of Reversal: अङ्कानां वामतो गतिः (Aṅkānāṃ Vāmato Gatiḥ)</span>
+                  </div>
+                  <p style={{ fontSize: '0.92rem', color: '#7c2d12', margin: 0, lineHeight: 1.5 }}>
+                    In ancient Indian numerical cryptography, <strong>&quot;Numbers proceed from right to left&quot;</strong>. The tokens appear in order as:
+                  </p>
+                  <div className="bhuta-reversal-steps">
+                    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                      <span className="bhuta-digit-pill">Rasa (6)</span>
+                      <span>+</span>
+                      <span className="bhuta-digit-pill">Guṇa (3)</span>
+                      <span>+</span>
+                      <span className="bhuta-digit-pill">Pūrṇa (0)</span>
+                      <span>+</span>
+                      <span className="bhuta-digit-pill">Mahī (1)</span>
+                    </div>
+                    <span style={{ color: '#ea580c' }}>➔ Read Right-to-Left (Vāmato Gatiḥ) ➔</span>
+                    <span style={{ fontSize: '1.45rem', color: '#9a3412', background: '#ffffff', padding: '0.35rem 1rem', borderRadius: '10px', border: '2px solid #ea580c' }}>
+                      <strong>1 0 3 6</strong> (Shaka Year)
+                    </span>
+                  </div>
+                </div>
+
+                {/* Final Results Grid */}
+                <div className="bhuta-result-cards-grid">
+                  <div className="bhuta-result-card birth">
+                    <div className="bhuta-result-label" style={{ color: '#15803d' }}>
+                      🎂 Decoded Date of Birth (D.O.B.)
+                    </div>
+                    <div className="bhuta-result-year" style={{ color: '#166534' }}>
+                      1114 CE (శక 1036)
+                    </div>
+                    <div className="bhuta-result-formula">
+                      <strong>Conversion Formula:</strong> CE = Shaka + 78<br />
+                      1036 (Shaka) + 78 = <strong>1114 CE</strong>
+                    </div>
+                  </div>
+
+                  <div className="bhuta-result-card composition">
+                    <div className="bhuta-result-label" style={{ color: '#a16207' }}>
+                      📜 Siddhānta Śiromaṇi Composition
+                    </div>
+                    <div className="bhuta-result-year" style={{ color: '#854d0e' }}>
+                      1150 CE (At Age 36)
+                    </div>
+                    <div className="bhuta-result-formula">
+                      <strong>Second Line Token:</strong> <em>Rasa-Guṇa-Varṣeṇa</em> (రసగుణవర్షేణ)<br />
+                      Rasa (6) and Guṇa (3) reversed = <strong>36 Years of Age</strong><br />
+                      1114 CE + 36 = <strong>1150 CE</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bhūta-Saṅkhyā Universal Dictionary Explorer */}
+              <div className="bhuta-dict-card">
+                <span className="badge-pill" style={{ background: '#ffedd5', color: '#c2410c', fontSize: '0.78rem', fontWeight: 800, padding: '0.2rem 0.65rem', borderRadius: '9999px', textTransform: 'uppercase' }}>
+                  Cryptographic Reference
+                </span>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 0.35rem 0' }}>
+                  📖 Bhūta-Saṅkhyā Word Numeral Dictionary (Digits 0 to 9)
+                </h3>
+                <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: 1.55 }}>
+                  Click on any digit from 0 to 9 to inspect its traditional Sanskrit and Telugu cosmological word mappings used across ancient Indian astronomical treatises:
+                </p>
+
+                <div className="bhuta-digit-tabs">
+                  {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((digit) => (
+                    <button
+                      key={digit}
+                      type="button"
+                      className={`bhuta-digit-btn${selectedBhutaDigit === digit ? ' active' : ''}`}
+                      onClick={() => setSelectedBhutaDigit(digit)}
+                    >
+                      {digit}
+                    </button>
+                  ))}
+                </div>
+
+                {(() => {
+                  const info = BHUTA_SANKHYA_DIGITS.find((item) => item.digit === selectedBhutaDigit) || BHUTA_SANKHYA_DIGITS[0];
+                  return (
+                    <div className="bhuta-digit-detail">
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+                        <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#9a3412' }}>
+                          Digit {info.digit}: {info.sanskritName} ({info.teluguName})
+                        </div>
+                        <span style={{ fontSize: '0.82rem', background: '#ea580c', color: '#ffffff', padding: '0.2rem 0.6rem', borderRadius: '9999px', fontWeight: 700 }}>
+                          {info.cosmicConcepts.length} Traditional Concepts
+                        </span>
+                      </div>
+                      <div className="bhuta-word-chips">
+                        {info.cosmicConcepts.map((w, idx) => (
+                          <span key={idx} className="bhuta-word-chip">
+                            {w}
+                          </span>
+                        ))}
+                      </div>
+                      <div style={{ fontSize: '0.9rem', color: '#7c2d12', lineHeight: 1.5 }}>
+                        <strong>Cosmic &amp; Philosophical Meaning:</strong> {info.philosophicalSymbolism}
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* Custom Year Cryptogram Generator */}
+                <div className="bhuta-encoder-box">
+                  <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#1e293b' }}>
+                    ✍️ Try Custom Year Encoder (Vāmato Gatiḥ)
+                  </div>
+                  <div className="bhuta-encoder-input-row">
+                    <label htmlFor="custom-bhuta-input" style={{ fontSize: '0.88rem', fontWeight: 700, color: '#475569' }}>
+                      Enter Any Year (CE or Shaka):
+                    </label>
+                    <input
+                      id="custom-bhuta-input"
+                      type="text"
+                      className="bhuta-encoder-input"
+                      value={customBhutaYear}
+                      onChange={(e) => setCustomBhutaYear(e.target.value.slice(0, 4))}
+                      placeholder="e.g. 1036"
+                    />
+                  </div>
+
+                  {(() => {
+                    const clean = customBhutaYear.replace(/\D/g, '');
+                    if (!clean) return null;
+                    const digits = clean.split('').map(Number);
+                    const rev = [...digits].reverse();
+                    const words = rev.map((d) => {
+                      const match = BHUTA_SANKHYA_DIGITS.find((item) => item.digit === d);
+                      return match ? match.cosmicConceptsSa[0] || match.sanskritName.split(' ')[0] : `Digit-${d}`;
+                    });
+                    const phrase = words.join('-');
+
+                    return (
+                      <div className="bhuta-encoder-output">
+                        <div>
+                          <strong>Digits:</strong> {digits.join(', ')} ➔ <strong>Reversed (Vāmato Gatiḥ):</strong> {rev.join(', ')}
+                        </div>
+                        <div style={{ marginTop: '0.35rem', fontSize: '1.05rem', fontWeight: 800, color: '#c2410c' }}>
+                          Bhūta-Saṅkhyā Verse Form: <em>{phrase}-sama-samaye</em>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
+              </div>
+
+              {/* The Four Quadrants of Siddhānta Śiromaṇi */}
+              <div style={{ marginTop: '2rem' }}>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.35rem' }}>
+                  📚 The Four Quadrants of Siddhānta Śiromaṇi (1150 CE)
+                </h3>
+                <p style={{ fontSize: '0.92rem', color: '#475569', marginBottom: '1.25rem' }}>
+                  At age 36, Bhāskarācārya organized his life&apos;s magnum opus into four monumental books covering arithmetic, multivariate algebra, computational astronomy, and celestial physics:
+                </p>
+
+                <div className="quadrants-grid">
+                  {BHASKARA_DOB_RECORD.fourQuadrants.map((q, idx) => (
+                    <div key={idx} className="quadrant-card">
+                      <div className="quadrant-num">Quadrant {idx + 1}</div>
+                      <div className="quadrant-title">{q.name}</div>
+                      <div className="quadrant-focus">{q.focus}</div>
+                      <div className="quadrant-desc">{q.sections}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* ==================================================================
+                SECTION 3: COSMIC REALITY & CONSCIOUSNESS (DR. REMELLA AVADHANULU)
+                ================================================================== */}
+            <div id="surya-siddhanta-section" className="surya-siddhanta-section">
+              <div className="zero-badge-pill" style={{ background: '#ede9fe', color: '#5b21b6' }}>
+                <span>॥ अचिन्त्याव्यक्तरूपाय ॥</span>
+                <span>·</span>
+                <span>Cosmic Epistemology</span>
+              </div>
+
+              <h2 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 0.35rem 0' }}>
+                A Mathematician’s View of Cosmic Reality &amp; Consciousness
+              </h2>
+              <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.6, margin: '0 0 1.5rem 0' }}>
+                In his landmark lectures connecting ancient Sanskrit treatises to modern computational physics, <strong>Dr. Remella Avadhanulu</strong> highlights the opening invocatory verse (<em>Maṅgalācaraṇa</em>, 1.1) of the <em>Sūrya Siddhānta</em> as the definitive statement of Indian mathematical metaphysics:
+              </p>
+
+              {/* Shloka Hero Card */}
+              <div className="surya-shloka-hero">
+                <div className="surya-hero-badge">
+                  <span>🌌 Sūrya Siddhānta (1.1) · Opening Maṅgalācaraṇa</span>
+                </div>
+                <div className="surya-verse-telugu">
+                  అచింత్యావ్యక్తరూపాయ నిర్గుణాయ గుణాత్మనే ।<br />
+                  సమస్త జగదాధార మూర్తయే బ్రహ్మణే నమః ॥
+                </div>
+                <div className="surya-verse-sa">
+                  अचिन्त्याव्यक्तरूपाय निर्गुणाय गुणात्मने ।<br />
+                  समस्तजगदाधारमूर्तये ब्रह्मणे नमः ॥
+                </div>
+                <div className="surya-verse-iast">
+                  {SURYA_SIDDHANTA_MANGALACHARANA.shlokaIast}
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem', marginTop: '1.25rem' }}>
+                  <button
+                    type="button"
+                    className="surya-audio-btn"
+                    onClick={() => playPronunciation(SURYA_SIDDHANTA_MANGALACHARANA.shlokaDevanagari)}
+                  >
+                    <span>🔊</span>
+                    <span>Listen to Sūrya Siddhānta Shloka</span>
+                  </button>
+                  <span style={{ fontSize: '0.85rem', color: '#c7d2fe', fontWeight: 600 }}>
+                    As illuminated by Dr. Remella Avadhanulu
+                  </span>
+                </div>
+              </div>
+
+              {/* 3 Epistemic Pillars */}
+              <div className="surya-pillars-grid">
+                {SURYA_SIDDHANTA_MANGALACHARANA.pillars.map((pillar, idx) => (
+                  <div key={idx} className="surya-pillar-card">
+                    <div className="surya-pillar-num">Pillar {idx + 1} of Cosmic Geometry</div>
+                    <div className="surya-pillar-title-sa">{pillar.sanskrit}</div>
+                    <div className="surya-pillar-title-te">{pillar.telugu} ({pillar.iast})</div>
+                    <div className="surya-pillar-literal">
+                      <strong>Literal Meaning:</strong> &quot;{pillar.literal}&quot;
+                    </div>
+                    <div className="surya-pillar-math">
+                      <strong>Mathematical Interpretation:</strong> {pillar.mathematicalInterpretation}
+                    </div>
+                    <div className="surya-pillar-science">
+                      <strong>Scientific Analogy:</strong> {pillar.scientificAnalogy}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Epistemology Conclusion */}
+              <div className="surya-epistemology-box">
+                <div className="surya-epistemology-title">
+                  <span>⚛️</span>
+                  <span>Gaṇita as Darśana: Mathematics as Sacred Epistemology</span>
+                </div>
+                <p className="surya-epistemology-text">
+                  {SURYA_SIDDHANTA_MANGALACHARANA.epistemologyConclusion}
+                </p>
+                <div style={{ marginTop: '1.25rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                  <button
+                    type="button"
+                    className="article-interactive-cta"
+                    style={{ background: '#86198f', borderColor: '#701a75' }}
+                    onClick={() => {
+                      setSelectedArticleId('bhaskara-algebra-cosmic-consciousness');
+                      setActiveTab('articles');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    📖 Read In-Depth Masterclass Article →
+                  </button>
+                  <button
+                    type="button"
+                    className="article-pager-btn"
+                    onClick={() => {
+                      const el = document.getElementById('bhaskara-dob-section');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    🔐 Bhāskara D.O.B. Cryptogram ↑
+                  </button>
+                  <button
+                    type="button"
+                    className="article-pager-btn"
+                    onClick={() => {
+                      const el = document.getElementById('vyakta-avyakta-section');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    🎨 Varṇa Color Algebra ↑
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="vedic-next-track-card">
               <div className="vedic-next-track-header">
                 <span className="vedic-next-track-badge">Next Step in Vedic Mathematics · Track 2</span>
                 <h3 className="vedic-next-track-title">Step 4: Vedic Geometry &amp; Śulba Sūtras</h3>

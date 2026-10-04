@@ -497,7 +497,7 @@ export const SHAKA_ERA_CHRONOLOGY: ShakaMathematician[] = [
     ceNumeric: 1150,
     century: '12th Century CE',
     primaryTreatise: 'Siddhānta Śiromaṇi (Līlāvatī, Bījagaṇita, Grahagaṇita, Golādhyāya)',
-    contributions: 'Synthesized classical Indian mathematics. Formulated early concepts of differential calculus (instantaneous motion d(sin θ) = cos θ dθ), solved indeterminate quadratic equations via the cyclic Cakravala algorithm, and established infinite division (a / 0 = ∞).',
+    contributions: 'Recorded his exact date of birth using the cryptographic Bhūta-Saṅkhyā system in Siddhānta Śiromaṇi: "రసగుణపూర్ణమహీసమశకనృపసమయే భవన్మమోత్పత్తిః | రసగుణవర్షేణ మయా సిద్ధాంతశిరోమణి రచితా ||" (Rasa=6, Guṇa=3, Pūrṇa=0, Mahī=1 → Shaka 1036 = 1114 CE; composed Siddhānta Śiromaṇi at age 36 in 1150 CE). Formalized the epistemological divide between Vyakta Gaṇitam (manifest arithmetic of Līlāvatī) and Avyakta Gaṇitam (unexpressed multivariate algebra of Bījagaṇita using colors/Varṇa as variables). Pioneered differential calculus precursors (instantaneous velocity d(sin θ) = cos θ dθ), solved Pell\'s equation via the cyclic Cakravāla algorithm, and analyzed infinity (a / 0 = ∞).',
     focusArea: 'Arithmetic & Algebra'
   },
   {
@@ -853,6 +853,253 @@ export const KATAPAYADI_DIGIT_MAP: KatapayadiDigitMap[] = [
     ruleSummary: 'Ña, Na, Kṣa, and initial Vowels = 0'
   }
 ];
+
+export interface BhutaSankhyaDigit {
+  digit: number;
+  sanskritName: string;
+  teluguName: string;
+  englishMeaning: string;
+  cosmicConcepts: string[];
+  cosmicConceptsSa: string[];
+  cosmicConceptsTe: string[];
+  philosophicalSymbolism: string;
+  keyWordsExample: string;
+}
+
+export const BHUTA_SANKHYA_DIGITS: BhutaSankhyaDigit[] = [
+  {
+    digit: 0,
+    sanskritName: 'पूर्ण / शून्य (Pūrṇa / Śūnya)',
+    teluguName: 'పూర్ణము / సున్నా (0)',
+    englishMeaning: 'Fullness / Void / Absolute Space',
+    cosmicConcepts: ['Pūrṇa (Fullness)', 'Śūnya (Void)', 'Kha (Ether/Sky)', 'Ākāśa (Space)', 'Gagana (Firmament)', 'Ananta (Infinite Space)'],
+    cosmicConceptsSa: ['पूर्ण', 'शून्य', 'ख', 'आकाश', 'गगन', 'अनन्त'],
+    cosmicConceptsTe: ['పూర్ణ', 'శూన్య', 'ఖ', 'ఆకాశ', 'గగన', 'అనంత'],
+    philosophicalSymbolism: 'Represents Brahman in its unmanifest, limitless state—both completely empty of finite shapes and full of infinite potential.',
+    keyWordsExample: 'Pūrṇa (used in Bhāskarācārya’s birth chronogram)'
+  },
+  {
+    digit: 1,
+    sanskritName: 'मही / भू (Mahī / Bhū)',
+    teluguName: 'మహీ / భూమి (1)',
+    englishMeaning: 'Earth / Primordial Singularity',
+    cosmicConcepts: ['Mahī (Earth)', 'Bhū (World)', 'Pṛthvī (Firm Earth)', 'Śaśin / Candra (Moon)', 'Ravi / Sūrya (Sun)', 'Tanu / Rūpa (Form)'],
+    cosmicConceptsSa: ['मही', 'भू', 'पृथ्वी', 'शशिन्', 'रवि', 'तनु'],
+    cosmicConceptsTe: ['మహీ', 'భూ', 'పృథ్వీ', 'శశి', 'రవి', 'తనువు'],
+    philosophicalSymbolism: 'The singular terrestrial realm or the unique luminary illuminating day and night; the initial manifest center.',
+    keyWordsExample: 'Mahī (used in Bhāskarācārya’s birth verse: Mahī = 1)'
+  },
+  {
+    digit: 2,
+    sanskritName: 'नेत्र / यम (Netra / Yama)',
+    teluguName: 'నేత్రములు / జంట (2)',
+    englishMeaning: 'Eyes / Binary Pairs / Polarity',
+    cosmicConcepts: ['Netra / Akṣi / Locana (Eyes)', 'Bāhu / Kara (Hands/Arms)', 'Yama / Yugma (Twin/Pair)', 'Pakṣa (Fortnights / Wings)', 'Aśvin (Twin Celestial Physicians)'],
+    cosmicConceptsSa: ['नेत्र', 'अक्षि', 'बाहु', 'युग्म', 'पक्ष', 'अश्विन्'],
+    cosmicConceptsTe: ['నేత్ర', 'అక్షి', 'బాహు', 'యుగ్మ', 'పక్ష', 'అశ్విని'],
+    philosophicalSymbolism: 'Duality, stereoscopic sight, complementary dualities (Puruṣa-Prakṛti, light-dark, incoming-outgoing breath).',
+    keyWordsExample: 'Locana (eyes = 2), Bāhu (arms = 2)'
+  },
+  {
+    digit: 3,
+    sanskritName: 'गुण / लोक (Guṇa / Loka)',
+    teluguName: 'గుణములు / లోకములు (3)',
+    englishMeaning: 'Triads / Fundamental Qualities of Cosmic Nature',
+    cosmicConcepts: ['Guṇa (3 Gunas: Sattva, Rajas, Tamas)', 'Loka / Bhuvana (3 Worlds: Bhūḥ, Bhuvaḥ, Svaḥ)', 'Agni / Vahni / Pāvaka (3 Sacred Fires: Gārhapatya, Āhavanīya, Anvāhāryapacana)', 'Netra (Shiva’s 3 Eyes)', 'Kāla (3 Phases of Time: Past, Present, Future)'],
+    cosmicConceptsSa: ['गुण', 'लोक', 'अग्नि', 'वह्नि', 'कालत्रय'],
+    cosmicConceptsTe: ['గుణ', 'లోక', 'అగ్ని', 'వహ్ని', 'కాలత్రయ'],
+    philosophicalSymbolism: 'The threefold dynamic equilibrium of cosmic transformation through which all physical matter manifests.',
+    keyWordsExample: 'Guṇa (used in Bhāskarācārya’s verse: Guṇa = 3)'
+  },
+  {
+    digit: 4,
+    sanskritName: 'वेद / समुद्र (Veda / Samudra)',
+    teluguName: 'వేదములు / సముద్రములు (4)',
+    englishMeaning: 'Tetrads / Foundational Cosmic Pillars',
+    cosmicConcepts: ['Veda (4 Vedas: Ṛg, Yajur, Sāma, Atharva)', 'Samudra / Sāgara / Abdhi (4 Oceans)', 'Yuga (4 Cosmic Epochs: Kṛta, Tretā, Dvāpara, Kali)', 'Diś / Āśā (4 Cardinal Directions)', 'Puruṣārtha (4 Life Aims: Dharma, Artha, Kāma, Mokṣa)'],
+    cosmicConceptsSa: ['वेद', 'समुद्र', 'युग', 'दिश', 'पुरुषार्थ'],
+    cosmicConceptsTe: ['వేద', 'సముద్ర', 'యుగ', 'దిశ', 'పురుషార్థ'],
+    philosophicalSymbolism: 'The structural quadrilateral stability of knowledge, spatial orientation, and cyclical time.',
+    keyWordsExample: 'Veda = 4, Sāgara = 4, Yuga = 4'
+  },
+  {
+    digit: 5,
+    sanskritName: 'बाण / भूत (Bāṇa / Bhūta)',
+    teluguName: 'బాణములు / పంచభూతములు (5)',
+    englishMeaning: 'Pentads / Five Great Elemental Fields',
+    cosmicConcepts: ['Bhūta / Mahābhūta (5 Elements: Earth, Water, Fire, Air, Space)', 'Bāṇa / Śara / Iṣu (5 Flower-Arrows of Kāmadeva)', 'Indriya (5 Senses)', 'Prāṇa (5 Vital Breaths: Prāṇa, Apāna, Vyāna, Udāna, Samāna)'],
+    cosmicConceptsSa: ['भूत', 'बाण', 'शर', 'इन्द्रिय', 'प्राण'],
+    cosmicConceptsTe: ['భూత', 'బాణ', 'శర', 'ఇంద్రియ', 'ప్రాణ'],
+    philosophicalSymbolism: 'The five elemental states of matter through which the unmanifest universe densifies into sensory experience.',
+    keyWordsExample: 'Śara = 5, Bāṇa = 5, Bhūta = 5'
+  },
+  {
+    digit: 6,
+    sanskritName: 'रस / ऋतु (Rasa / Ṛtu)',
+    teluguName: 'రసములు / ఋతువులు (6)',
+    englishMeaning: 'Hextads / Primary Tastes and Rhythms of Nature',
+    cosmicConcepts: ['Rasa (6 Classical Tastes: Madhura/Sweet, Amla/Sour, Lavaṇa/Salty, Kaṭu/Pungent, Tikta/Bitter, Kaṣāya/Astringent)', 'Ṛtu (6 Seasons: Vasanta, Grīṣma, Varṣā, Śarad, Hemanta, Śiśira)', 'Aṅga / Vedāṅga (6 Auxiliary Sciences of Veda)', 'Darśana (6 Classical Philosophies)'],
+    cosmicConceptsSa: ['रस', 'ऋतु', 'वेदाङ्ग', 'दर्शन'],
+    cosmicConceptsTe: ['రస', 'ఋతు', 'వేదాంగ', 'దర్శన'],
+    philosophicalSymbolism: 'The sixfold biological and seasonal frequencies sustaining life, perception, and inquiry.',
+    keyWordsExample: 'Rasa (used in Bhāskarācārya’s verse: Rasa = 6)'
+  },
+  {
+    digit: 7,
+    sanskritName: 'मुनि / ऋषि / स्वर (Muni / Ṛṣi / Svara)',
+    teluguName: 'మునులు / సప్తస్వరములు (7)',
+    englishMeaning: 'Heptads / Cosmic Seers and Harmonics',
+    cosmicConcepts: ['Muni / Ṛṣi / Saptarṣi (7 Cosmic Sages / Big Dipper)', 'Svara (7 Musical Notes: Sa, Ri, Ga, Ma, Pa, Dha, Ni)', 'Parvata / Adri / Giri (7 Sacred Kulaparvatas)', 'Aśva (7 Solar Horses / 7 Colors of White Light)', 'Dhātu (7 Body Tissues)'],
+    cosmicConceptsSa: ['मुनि', 'ऋषि', 'स्वर', 'पर्वत', 'अश्व'],
+    cosmicConceptsTe: ['ముని', 'ఋషి', 'స్వర', 'పర్వత', 'అశ్వ'],
+    philosophicalSymbolism: 'The cosmic heptachord: harmonics of sound, solar spectrum rays, and archetypal visionary intelligence.',
+    keyWordsExample: 'Muni = 7, Svara = 7, Adri = 7'
+  },
+  {
+    digit: 8,
+    sanskritName: 'वसु / गज (Vasu / Gaja)',
+    teluguName: 'వసువులు / గజములు (8)',
+    englishMeaning: 'Octads / Elemental Guardians and Perfections',
+    cosmicConcepts: ['Vasu (8 Solar-Terrestrial Deities)', 'Dantin / Gaja / Diggaja / Mātaṅga (8 Cardinal Elephants guarding spacetime directions)', 'Siddhi (8 Ashta-Siddhis / Yogic Perfections)', 'Sarpa / Ahi (8 Serpent Kings)'],
+    cosmicConceptsSa: ['वसु', 'गज', 'दन्तिन्', 'सिद्धि', 'सर्प'],
+    cosmicConceptsTe: ['వసు', 'గజ', 'దంతి', 'సిద్ధి', 'సర్ప'],
+    philosophicalSymbolism: 'The eight directional pillars stabilizing the celestial and physical sphere.',
+    keyWordsExample: 'Vasu = 8, Gaja = 8, Dantin = 8'
+  },
+  {
+    digit: 9,
+    sanskritName: 'ग्रह / नन्द (Graha / Nanda)',
+    teluguName: 'గ్రహములు / నవనిధులు (9)',
+    englishMeaning: 'Enneads / Planetary Trackers and Maximum Single-Digit Power',
+    cosmicConcepts: ['Graha (9 Celestial Luminaries / Planets in Classical Astronomy)', 'Nanda (9 Treasures of Kubera / 9 Nandas)', 'Randhra / Chidra (9 Gateways / Apertures of the Human Body)', 'Aṅka (9 Single-Digit Numbers)'],
+    cosmicConceptsSa: ['ग्रह', 'नन्द', 'रन्ध्र', 'अङ्क'],
+    cosmicConceptsTe: ['గ్రహ', 'నంద', 'రంధ్ర', 'అంక'],
+    philosophicalSymbolism: 'The highest single-digit magnitude before recycling into zero; the complete celestial orchestra orbiting the solar center.',
+    keyWordsExample: 'Graha = 9, Nanda = 9, Randhra = 9'
+  }
+];
+
+export interface BhaskaraDobRecord {
+  shlokaTelugu: string;
+  shlokaDevanagari: string;
+  shlokaIast: string;
+  sourceTreatise: string;
+  author: string;
+  ruleOfReversal: string;
+  cryptographicTokens: { token: string; tokenTe: string; tokenSa: string; meaning: string; digit: number }[];
+  rawSequence: string;
+  reversedShakaYear: number;
+  shakaToCeFormula: string;
+  birthCeYear: number;
+  compositionAgeToken: string;
+  compositionShakaYear: number;
+  compositionCeYear: number;
+  treatiseName: string;
+  fourQuadrants: { name: string; nameTe: string; focus: string; sections: string }[];
+}
+
+export const BHASKARA_DOB_RECORD: BhaskaraDobRecord = {
+  shlokaTelugu: 'రసగుణపూర్ణమహీసమశకనృపసమయే భవన్మమోత్పత్తిః |\nరసగుణవర్షేణ మయా సిద్ధాంతశిరోమణి రచితా ||',
+  shlokaDevanagari: 'रसगुणपूर्णमहीसमशकनृपसमये भवन्ममोत्पत्तिः ।\nरसगुणवर्षेण मया सिद्धान्तशिरोमणी रचिता ॥',
+  shlokaIast: 'Rasa-guṇa-pūrṇa-mahī-sama-śaka-nṛpa-samaye bhavan-mamotpattiḥ |\nRasa-guṇa-varṣeṇa mayā siddhānta-śiromaṇi racitā ||',
+  sourceTreatise: 'Siddhānta Śiromaṇi (Golādhyāya, Praśnādhyāya)',
+  author: 'Bhāskarācārya II (1114–1185 CE)',
+  ruleOfReversal: 'अङ्कानां वामतो गतिः (Aṅkānāṃ Vāmato Gatiḥ — "Numbers proceed from right to left")',
+  cryptographicTokens: [
+    { token: 'Rasa', tokenTe: 'రస (Rasa)', tokenSa: 'रस', meaning: '6 Fundamental Tastes (Sweet, Sour, Salty, Bitter, Pungent, Astringent)', digit: 6 },
+    { token: 'Guṇa', tokenTe: 'గుణ (Guṇa)', tokenSa: 'गुण', meaning: '3 Gunas of Nature (Sattva, Rajas, Tamas)', digit: 3 },
+    { token: 'Pūrṇa', tokenTe: 'పూర్ణ (Pūrṇa)', tokenSa: 'पूर्ण', meaning: 'Fullness / Void (Śūnya / Zero)', digit: 0 },
+    { token: 'Mahī', tokenTe: 'మహీ (Mahī)', tokenSa: 'मही', meaning: '1 Earth', digit: 1 }
+  ],
+  rawSequence: '6, 3, 0, 1',
+  reversedShakaYear: 1036,
+  shakaToCeFormula: 'CE = Shaka + 78 → 1036 + 78 = 1114 CE',
+  birthCeYear: 1114,
+  compositionAgeToken: 'Rasa-Guṇa-Varṣeṇa (రసగుణవర్షేణ) → Rasa (6) + Guṇa (3) reversed = 36 Years Old',
+  compositionShakaYear: 1072,
+  compositionCeYear: 1150,
+  treatiseName: 'Siddhānta Śiromaṇi',
+  fourQuadrants: [
+    {
+      name: 'Līlāvatī (లీలావతి)',
+      nameTe: 'లీలావతి',
+      focus: 'Vyakta Gaṇitam (Expressed Arithmetic & Practical Geometry)',
+      sections: 'Pāṭīgaṇita arithmetic, fractions, permutations (Anka-Pāśa), rule of three, interest, surveying'
+    },
+    {
+      name: 'Bījagaṇita (బీజగణితం)',
+      nameTe: 'బీజగణితం',
+      focus: 'Avyakta Gaṇitam (Unmanifest Multivariate Symbolic Algebra)',
+      sections: 'Color-coded variables (Varṇa: Kālaka, Nīlaka, Pītaka), quadratic formulas, indeterminate equations, Cakravāla method'
+    },
+    {
+      name: 'Grahagaṇitādhyāya (గ్రహగణితాధ్యాయం)',
+      nameTe: 'గ్రహగణితాధ్యాయం',
+      focus: 'Planetary Astronomy & True Longitudes',
+      sections: 'Mean motions, true planetary orbital speeds, epicycles, lunar-solar conjunctions'
+    },
+    {
+      name: 'Golādhyāya (గోలాధ్యాయం)',
+      nameTe: 'గోలాధ్యాయం',
+      focus: 'Spherical Geometry & Celestial Mechanics',
+      sections: 'The celestial sphere, armillary sphere (Gola Yantra), solar-lunar eclipses, diurnal motion'
+    }
+  ]
+};
+
+export interface SuryaSiddhantaPillar {
+  sanskrit: string;
+  telugu: string;
+  iast: string;
+  literal: string;
+  mathematicalInterpretation: string;
+  scientificAnalogy: string;
+}
+
+export interface SuryaSiddhantaMangalacharana {
+  shlokaTelugu: string;
+  shlokaDevanagari: string;
+  shlokaIast: string;
+  sourceText: string;
+  philosophicalContext: string;
+  pillars: SuryaSiddhantaPillar[];
+  epistemologyConclusion: string;
+}
+
+export const SURYA_SIDDHANTA_MANGALACHARANA: SuryaSiddhantaMangalacharana = {
+  shlokaTelugu: 'అచింత్యావ్యక్తరూపాయ నిర్గుణాయ గుణాత్మనే ।\nసమస్త జగదాధార మూర్తయే బ్రహ్మణే నమః ॥',
+  shlokaDevanagari: 'अचिन्त्याव्यक्तरूपाय निर्गुणाय गुणात्मने ।\nसमस्तजगदाधारमूर्तये ब्रह्मणे नमः ॥',
+  shlokaIast: 'Acintyāvyaktarūpāya nirguṇāya guṇātmane |\nSamastajagadādhāramūrtaye brahmaṇe namaḥ ||',
+  sourceText: 'Sūrya Siddhānta (Chapter 1, Verse 1 — Opening Maṅgalācaraṇa)',
+  philosophicalContext: 'A Mathematician’s Epistemology of Cosmic Reality and Consciousness (as illuminated by Dr. Remella Avadhanulu)',
+  pillars: [
+    {
+      sanskrit: 'अचिन्त्याव्यक्तरूपाय',
+      telugu: 'అచింత్యావ్యక్తరూపాయ',
+      iast: 'Acintyāvyaktarūpāya',
+      literal: 'To the Inconceivable and Unmanifest Form',
+      mathematicalInterpretation: 'The Primordial Quantum Vacuum & Zero (Śūnya): In consciousness philosophy, the absolute prior to creation—unconditioned, infinite, empty of specific coordinate boundaries. In mathematics, the unmanifest algebraic field (Avyakta) before unknown variables crystallize into explicit equations.',
+      scientificAnalogy: 'The vacuum state, singularity before cosmic inflation, and pure potential energy where no spacetime curvature or finite boundary yet exists.'
+    },
+    {
+      sanskrit: 'निर्गुणाय गुणात्मने',
+      telugu: 'నిర్గుణాయ గుణాత్మనే',
+      iast: 'Nirguṇāya Guṇātmane',
+      literal: 'To the Attribute-less Absolute that is simultaneously the Embodiment of All Attributes',
+      mathematicalInterpretation: 'The Unified Field & Universal Constants: Nirguṇa indicates total freedom from physical dimensions, mass, or local coordinates. Guṇātman indicates that it is the generative source code of every fundamental constant (G, c, ℏ, π, φ), gravitational tensors, planetary orbital resonances, and wave harmonics.',
+      scientificAnalogy: 'The mathematician’s Absolute: an unconstrained blank canvas containing the exact mathematical constants governing every particle and planetary orbit.'
+    },
+    {
+      sanskrit: 'समस्तजगदाधारमूर्तये',
+      telugu: 'సమస్త జగదాధార మూర్తయే',
+      iast: 'Samastajagadādhāramūrtaye',
+      literal: 'To the Embodiment (Mūrti) that Supports the Entire Universe',
+      mathematicalInterpretation: 'The Physical Spacetime Continuum as the Visible Body of Consciousness: "Mūrti" does not mean a limited stone idol; it means dimensionalization, crystallization, and geometric structure. The physical cosmos itself—with its spinning galaxies, orbital ellipses, gravitational curvature, and trigonometric harmonies—is the literal living body of Brahman.',
+      scientificAnalogy: 'General relativity and cosmic geometry: physical matter and gravitation are the geometric curvature of the cosmos itself.'
+    }
+  ],
+  epistemologyConclusion: 'To ancient Indian mathematical astronomers, practicing Gaṇita was not detached secular bookkeeping, but the highest form of epistemological worship. Decoding planetary periods, eclipses, and trigonometry was viewed as the most direct method to interface with the mind of cosmic consciousness.'
+};
 
 export const VEDIC_ARTICLES: VedicArticle[] = [
   {
@@ -2152,7 +2399,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
     readingTime: '12 min read',
     badge: 'Infinite Series & Calculus',
     prequel: { id: 'historiographical-framework-indian-mathematics', label: 'Historiographical Framework & Shaka Chronology' },
-    next: { id: 'source-lineage', label: 'The Living Lineage: Guru Parampara' },
+    next: { id: 'bhaskara-algebra-cosmic-consciousness', label: 'Bhāskarācārya: D.O.B., The Two Algebras & Cosmic Consciousness' },
     sections: [
       {
         title: 'The Kerala School & The Indian Origins of Calculus',
@@ -2301,6 +2548,125 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'The Whish-Joseph Transmission Hypothesis investigates the pathway through which 16th-century Jesuit scholars in Cochin may have transmitted Kerala astronomical mathematics to Europe.'
     ]
   },
+  {
+    id: 'bhaskara-algebra-cosmic-consciousness',
+    slug: 'bhaskaracharya-dob-algebra-and-cosmic-consciousness',
+    title: 'Bhāskarācārya: Cryptographic D.O.B., The Two Algebras & Cosmic Consciousness',
+    sanskritTitle: '॥ भास्कराचार्यः · गूढ-जन्मवर्षम् व्यक्त-अव्यक्तगणितं विश्वचेतना च ॥',
+    subtitle: 'How Bhāskarācārya encoded his 1114 CE birth date using the Bhūta-Saṅkhyā cipher, the division of Vyakta (Arithmetic) and Avyakta (Symbolic Algebra) with color variables, and the Sūrya Siddhānta vision of the cosmos as the geometric body of Brahman.',
+    readingTime: '13 min read',
+    badge: 'Algebra & Cosmic Epistemology',
+    prequel: { id: 'kerala-school-calculus-infinite-series', label: 'The Kerala School: Infinite Series & Calculus' },
+    next: { id: 'source-lineage', label: 'The Living Lineage: Guru Parampara' },
+    sections: [
+      {
+        title: 'The Cryptographic Genius of Bhāskarācārya’s Date of Birth',
+        sanskritTitle: 'गूढ-जन्मवर्षम् · रसगुणपूर्णमहीसमशकनृपसमये',
+        paragraphs: [
+          'In classical Indian civilization, mathematical genius was inseparable from poetic mastery. When Bhāskarācārya II (1114–1185 CE), the supreme polymath of the 12th century, recorded his date of birth and the timing of his magnum opus Siddhānta Śiromaṇi, he did not use mundane digits. Instead, he encoded his autobiography in an immortal Sanskrit metric verse found in the Praśnādhyāya section of the Golādhyāya:',
+          'రసగుణపూర్ణమహీసమశకనృపసమయే భవన్మమోత్పత్తిః |\nరసగుణవర్షేణ మయా సిద్ధాంతశిరోమణి రచితా ||',
+          'Devanagari: रसगुणपूर्णमहीसमशकनृपसमये भवन्ममोत्पत्तिः । रसगुणवर्षेण मया सिद्धान्तशिरोमणी रचिता ॥',
+          'IAST: Rasa-guṇa-pūrṇa-mahī-sama-śaka-nṛpa-samaye bhavan-mamotpattiḥ | Rasa-guṇa-varṣeṇa mayā siddhānta-śiromaṇi racitā ||',
+          'The Cryptographic System: Bhūta-Saṅkhyā (Object-Number Notation) — Rather than writing abstract numerals that could easily be corrupted through successive manuscript transcriptions, Indian astronomers mapped numbers to immutable cosmic, philosophical, and natural constants. In this system:',
+          '• Rasa (రస / रस — Tastes): In Ayurveda and Indian aesthetic philosophy, there are exactly 6 fundamental tastes (sweet, sour, salty, bitter, pungent, astringent) → Digit 6.',
+          '• Guṇa (గుణ / गुण — Fundamental Qualities): In Sāṅkhya philosophy and natural metaphysics, there are 3 cosmic Gunas (Sattva, Rajas, Tamas) → Digit 3.',
+          '• Pūrṇa (పూర్ణ / पूर्ण — Fullness / Void): The cosmic zero (Śūnya), representing both infinite fullness and spatial void → Digit 0.',
+          '• Mahī (మహీ / मही — The Earth): In Indian cosmology, there is 1 physical Earth supporting living beings → Digit 1.',
+          'The Rule of Reversal (Aṅkānāṃ Vāmato Gatiḥ): The foundational cryptographic axiom of Indian numerical poetry mandates that numbers are read from right to left (least significant digit to most significant digit). Assembling the tokens gives 6, 3, 0, 1. Reversing them produces Shaka Year 1036.',
+          'Conversion to Common Era (CE): Using the standard historical offset CE = Shaka + 78, we calculate 1036 + 78 = 1114 CE! Thus, Bhāskara II was born exactly in 1114 CE.',
+          'Age of Composition: The second line proclaims "Rasa-Guṇa-Varṣeṇa" (రసగుణవర్షేణ). Using the same Bhūta-Saṅkhyā values (Rasa = 6, Guṇa = 3) and applying the rule of reversal, this directly represents 36 years of age. Therefore, Bhāskara completed the Siddhānta Śiromaṇi at age 36 in the year 1150 CE (1114 + 36 = 1150 CE), creating the most celebrated mathematical astronomy textbook in Indian history.'
+        ],
+        terms: [
+          { sa: 'भूतसङ्ख्या', iast: 'Bhūta-Saṅkhyā', gloss: 'Object-number word numeral cryptographic system' },
+          { sa: 'अङ्कानां वामतो गतिः', iast: 'Aṅkānāṃ Vāmato Gatiḥ', gloss: 'Universal rule of reversal: numbers proceed from right to left' },
+          { sa: 'शकसंवत्', iast: 'Śaka-Saṃvat', gloss: 'Shaka Era calendar starting in 78 CE (CE = Shaka + 78)' },
+          { sa: 'सिद्धान्तशिरोमणि', iast: 'Siddhānta Śiromaṇi', gloss: 'Crown Jewel of Treatises, composed by Bhāskara II in 1150 CE' }
+        ],
+        highlight: 'Bhāskarācārya encrypted his 1114 CE birth date into a four-word poetic riddle (Rasa-Guṇa-Pūrṇa-Mahī) that preserved his exact chronology against a thousand years of manuscript copying errors.'
+      },
+      {
+        title: 'The Two Types of Mathematics: Vyakta Gaṇitam vs. Avyakta Gaṇitam',
+        sanskritTitle: 'व्यक्तगणितम् अव्यक्तगणितं च · रूप-वर्ण-बीजगणितम्',
+        paragraphs: [
+          'In traditional Indian epistemology, mathematics was divided into two distinct yet interdependent kingdoms: Vyakta Gaṇitam (Expressed/Known Mathematics) and Avyakta Gaṇitam (Unexpressed/Unknown Mathematics).',
+          '1. Vyakta Gaṇitam (వ్యక్త గణితం / व्यक्तगणितम् — Arithmetic & Concrete Geometry):',
+          '• Vyakta literally translates to "manifested", "unfolded", or "tangible". It represents the mathematics of explicit numbers and definite quantities.',
+          '• Vyakta Gaṇitam encompasses foundational pāṭīgaṇita arithmetic, fractions, commercial transactions, permutations and combinations (Aṅka-Pāśa), interest calculations, the rule of three (Trairāśika), and plane geometry.',
+          '• Bhāskarācārya dedicated the first book of his treatise, the world-renowned Līlāvatī (named after his beloved daughter), to Vyakta Gaṇitam, presenting profound algorithmic calculations through graceful poetic word problems featuring peacocks, swarms of bees, and water lilies.',
+          '2. Avyakta Gaṇitam (అవ్యక్త గణితం / अव्यक्तगणितम् — Symbolic Multivariate Algebra):',
+          '• Avyakta translates to "unmanifested", "latent", or "hidden". It represents the higher mathematics where numerical values are not yet visible or determined—they exist as abstract unknowns to be unveiled through algebraic equations.',
+          '• To express unknown variables centuries before Descartes and Viète, Indian mathematicians used Varṇa (వవర్ణం / वर्ण — meaning both "color" and "syllable"). In Bījagaṇita, Bhāskarācārya established the world’s first systematic multivariate algebraic notation:',
+          '  - Unknown 1: Kālaka (కాలాక / कालक — Black) = Modern x',
+          '  - Unknown 2: Nīlaka (నీలక / नीलक — Blue) = Modern y',
+          '  - Unknown 3: Pītaka (పీతక / पीतक — Yellow) = Modern z',
+          '  - Unknown 4: Haritaka (హరితక / हरितक — Green) = Modern w',
+          '  - Concrete Constants: Rūpa (రూప / रूप — Form/Unit) = Standalone numerical integers',
+          '• Negative signs were denoted by a Bindu (dot) placed directly above the coefficient (e.g., 5̇ meant -5).',
+          '• In Avyakta Gaṇitam, Bhāskarācārya solved indeterminate quadratic equations of the second degree (Nx² + 1 = y², erroneously named Pell’s equation by Euler) using the revolutionary Cakravāla (cyclic) method. German mathematician Hermann Hankel remarked that the Cakravāla algorithm is the highest triumph of number theory prior to Joseph-Louis Lagrange in 1767.'
+        ],
+        terms: [
+          { sa: 'व्यक्तगणितम्', iast: 'Vyakta-Gaṇitam', gloss: 'Manifest mathematics: arithmetic, fractions, and practical geometry (Līlāvatī)' },
+          { sa: 'अव्यक्तगणितम्', iast: 'Avyakta-Gaṇitam', gloss: 'Unmanifest mathematics: multivariate symbolic algebra and indeterminate equations (Bījagaṇita)' },
+          { sa: 'वर्ण', iast: 'Varṇa', gloss: 'Colors used as variable names (Kālaka [black/x], Nīlaka [blue/y], Pītaka [yellow/z])' },
+          { sa: 'चक्रवाल', iast: 'Cakravāla', gloss: 'Cyclic algorithm for solving quadratic indeterminate equations Nx² + 1 = y²' }
+        ],
+        highlight: 'Centuries before European algebra adopted x, y, and z, Bhāskarācārya manipulated multivariate equations using the Varṇa system of color-coded algebraic variables.'
+      },
+      {
+        title: 'A Mathematician’s View of Cosmic Reality: Acintyāvyaktarūpāya',
+        sanskritTitle: 'गणितज्ञस्य विश्वदृष्टिः · अचिन्त्याव्यक्तरूपाय',
+        paragraphs: [
+          'In his celebrated lectures on the intersection of Sanskrit and computer science, Dr. Remella Avadhanulu points to the opening invocatory verse (Maṅgalācaraṇa, 1.1) of the ancient Sūrya Siddhānta as the definitive statement of how ancient Indian mathematicians conceptualized cosmic reality, consciousness, and physical law:',
+          'అచింత్యావ్యక్తరూపాయ నిర్గుణాయ గుణాత్మనే ।\nసమస్త జగదాధార మూర్తయే బ్రహ్మణే నమః ॥',
+          'Devanagari: अचिन्त्याव्यक्तरूपाय निर्गुणाय गुणात्मने । समस्तजगदाधारमूर्तये ब्रह्मणे नमः ॥',
+          'IAST: Acintyāvyaktarūpāya nirguṇāya guṇātmane | Samastajagadādhāramūrtaye brahmaṇe namaḥ ||',
+          'This shloka is not an invocation to a localized mythological deity. It is a profound mathematical metaphysics where cosmic consciousness (Brahman) is understood as the unmanifest cosmic code and physical geometry of the universe across three epistemic dimensions:',
+          '1. Acintya & Avyakta-rūpāya (Inconceivable & Unmanifest Form): The Primordial Quantum Vacuum & Zero (Śūnya). Before the manifest cosmos crystallizes into finite coordinates, spacetime, or matter, it resides in an unconditioned, non-local state of pure potentiality. In mathematics, this is Avyakta—the infinite variable field prior to the setting of boundary constraints.',
+          '2. Nirguṇāya Guṇātmane (Attribute-less, yet the Source of All Physical Attributes): The Universal Constants & Laws of Nature. "Nirguṇa" indicates that the fundamental consciousness possesses no physical mass, boundary, or local coordinates. Yet it is "Guṇātman"—the generative software matrix from which all physical constants emerge: the speed of light (c), the gravitational constant (G), Planck’s constant (ℏ), transcendental ratios (π, φ), and orbital wave resonances.',
+          '3. Samasta-Jagad-Ādhāra-Mūrtaye (The Embodiment that Supports the Entire Universe): Spacetime Curvature & Cosmic Geometry as the Body of Brahman. In Sanskrit, "Mūrti" does not mean a crude stone idol; it signifies crystallization, dimensionalization, and geometric form. The entire universe—with its gravitational curvature, revolving planetary ellipses, and thermodynamic cycles—is the visible, tangible body (Mūrti) of the supreme cosmic intelligence.',
+          'The Epistemological Climax: To the Indian mathematician-astronomer, calculating planetary orbits, solar eclipses, and trigonometric ratios was not a secular or commercial enterprise. It was the highest form of spiritual contemplation (Darśana)—a method of directly beholding the mind of the cosmic architect through the language of geometry and numbers.'
+        ],
+        terms: [
+          { sa: 'अचिन्त्याव्यक्त', iast: 'Acintya-Avyakta', gloss: 'Inconceivable and unmanifest state of primordial potentiality' },
+          { sa: 'निर्गुण-गुणात्मन्', iast: 'Nirguṇa-Guṇātman', gloss: 'Dimensionless transcendent reality acting as the seed of all physical laws and constants' },
+          { sa: 'मूर्ति', iast: 'Mūrti', gloss: 'Dimensional crystallization; the physical cosmos as the tangible body of cosmic intelligence' },
+          { sa: 'सूर्यसिद्धान्त', iast: 'Sūrya Siddhānta', gloss: 'Foundational Sanskrit treatise on planetary astronomy and cosmic geometry' }
+        ],
+        highlight: 'To ancient Indian astronomers, practicing Gaṇita was not detached bookkeeping, but an epistemological interface with cosmic consciousness—viewing physical spacetime as the geometric Mūrti of Brahman.'
+      },
+      {
+        title: 'The Four Quadrants of Siddhānta Śiromaṇi & Cosmic Gravitation',
+        sanskritTitle: 'सिद्धान्तशिरोमणेः चत्वारः भागाः · धारणात्मिका शक्तिः',
+        paragraphs: [
+          'Composed in 1150 CE in the Sahyadri mountains of modern Maharashtra, Bhāskarācārya’s Siddhānta Śiromaṇi is organized into four monumental treatises covering the complete spectrum of mathematical and physical sciences:',
+          '1. Līlāvatī (లీలావతి — 277 Verses): Vyakta Gaṇitam, arithmetical operations, interest, progressions, permutations (Aṅka-Pāśa), and geometry. Famous for framing high-level mathematics within charming poetic riddles.',
+          '2. Bījagaṇita (బీజగణితం — 213 Verses): Avyakta Gaṇitam, signed numbers, operations with zero (declaring that a / 0 is an infinite quantity termed Khahara), multivariate algebra with Varṇas, and the Cakravāla method for indeterminate equations.',
+          '3. Grahagaṇitādhyāya (గ్రహగణితాధ్యాయం — 453 Verses): Computational planetary astronomy, mean and true celestial longitudes, planetary retrogradations, lunar and solar conjunctions, and eclipse computations.',
+          '4. Golādhyāya (గోలాధ్యాయం — 501 Verses): Spherical geometry, armillary sphere construction (Gola Yantra), diurnal motion, and cosmic physics.',
+          'Cosmic Gravitation (Dhāraṇātmikā Śaktiḥ): Centures before Newton’s Principia, Bhāskara II refuted the misconception that the Earth must rest on an elephant, tortoise, or serpent. In the Golādhyāya (Bhuvanakośa section, verse 9), he wrote:',
+          '"आकृष्टिशक्तिश्च मही तया यत् खस्थं गुरुस्वाभिमुखं स्वशक्त्या । आकृष्यते तत्पततीव भाति समे समन्तात् क्व पतत्वियं खे ॥"',
+          '"The Earth possesses an attractive force (Ākṛṣṭi-Śakti). By this inherent power, the Earth pulls toward itself any heavy object stationed in space. That object appears to fall; but when space is equal in all directions, where could this Earth fall in empty void?"',
+          'He identified gravity as an inherent cosmic property (Dhāraṇātmikā Śaktiḥ), explaining why people living on opposite sides of the spherical Earth (such as at the antipodes) do not fall off into space.'
+        ],
+        terms: [
+          { sa: 'आकृष्टिशक्ति', iast: 'Ākṛṣṭi-Śakti', gloss: 'Universal attractive force / gravitational attraction' },
+          { sa: 'धारणात्मिका शक्तिः', iast: 'Dhāraṇātmikā Śaktiḥ', gloss: 'Inherent holding / self-suspending power of celestial bodies in space' },
+          { sa: 'खहर', iast: 'Khahara', gloss: 'A finite quantity divided by zero, recognized by Bhāskara as an infinite quantity' },
+          { sa: 'गोलाध्याय', iast: 'Golādhyāya', gloss: 'The fourth book of Siddhānta Śiromaṇi dedicated to celestial spheres and cosmic physics' }
+        ],
+        highlight: 'Five hundred years before Newton, Bhāskarācārya formulated the principle of cosmic gravitational attraction (Ākṛṣṭi-Śakti), explaining that spherical Earth holds all objects toward its center by its own inherent force.'
+      }
+    ],
+    quote: 'The Earth attracts by its own force whatever heavy thing is stationed in space; that object appears to fall, but in an omnidirectional cosmos, where could the spherical Earth itself fall? It rests suspended in the geometric body of the infinite.',
+    keyTakeaways: [
+      'Bhāskarācārya II encoded his birth year (1114 CE) and composition age (36 years in 1150 CE) in the famous Bhūta-Saṅkhyā shloka: "Rasa-Guṇa-Pūrṇa-Mahī-sama-śaka-nṛpa-samaye".',
+      'The foundational cryptographic rule Aṅkānāṃ Vāmato Gatiḥ (numbers move to the left) converts the digits 6, 3, 0, 1 into Shaka 1036, which resolves to 1114 CE via CE = Shaka + 78.',
+      'Vyakta Gaṇitam is the mathematics of manifest concrete quantities (arithmetic, commercial math, geometry in Līlāvatī); Avyakta Gaṇitam is unmanifest symbolic multivariate algebra (Bījagaṇita).',
+      'Bhāskara II utilized the Varṇa system of color names (Kālaka [black/x], Nīlaka [blue/y], Pītaka [yellow/z], Haritaka [green/w], and Rūpa [constants]) to formulate multivariate equations.',
+      'The Sūrya Siddhānta opening shloka "Acintyāvyaktarūpāya" presents a mathematician’s vision of Brahman: the unmanifest quantum vacuum (Acintya-Avyakta), the generator of physical constants (Nirguṇa-Guṇātman), and the physical cosmos as its living geometric body (Mūrti).',
+      'In the Golādhyāya, Bhāskara II articulated the law of gravitational attraction (Ākṛṣṭi-Śakti) and the self-suspending nature of the spherical Earth (Dhāraṇātmikā Śaktiḥ) centuries before modern European physics.'
+    ]
+  }
 ];
 
 export const VEDIC_INTRO = {
