@@ -13,9 +13,9 @@ type LatFormsTableProps = {
   entry: DhatuEntry;
 };
 
-type LatCell = { sanskrit: string; english: string };
+type LatCell = { sanskrit: string };
 
-const PLAY_ALL_LABEL = 'Reads the nine forms in Sanskrit and English';
+const PLAY_ALL_LABEL = 'Reads the nine forms in Sanskrit';
 
 const LatFormsTable: React.FC<LatFormsTableProps> = ({ entry }) => {
   const result = useMemo(() => getLatForms(entry), [entry]);
@@ -42,16 +42,13 @@ const LatFormsTable: React.FC<LatFormsTableProps> = ({ entry }) => {
   const cells = useMemo<LatCell[]>(() => {
     if (!active) return [];
     const list: LatCell[] = [];
-    active.forms.forEach((row, ri) => {
-      row.forEach((form, ci) => {
-        list.push({
-          sanskrit: form,
-          english: personNumberEnglish(entry, ri, ci),
-        });
+    active.forms.forEach((row) => {
+      row.forEach((form) => {
+        list.push({ sanskrit: form });
       });
     });
     return list;
-  }, [active, entry]);
+  }, [active]);
 
   const cellsRef = useRef(cells);
   cellsRef.current = cells;
@@ -88,7 +85,9 @@ const LatFormsTable: React.FC<LatFormsTableProps> = ({ entry }) => {
     resumeIndexRef.current = index;
     setPlayingAll(true);
     setSpeakingIndex(index);
-    stopRef.current = playBilingualSequence(slice, {
+    stopRef.current = playBilingualSequence(
+      slice.map(({ sanskrit }) => ({ sanskrit })),
+      {
       gapMs: 250,
       onItem: (itemIndex) => {
         if (tokenRef.current !== token) return;
@@ -130,9 +129,7 @@ const LatFormsTable: React.FC<LatFormsTableProps> = ({ entry }) => {
     }
     const token = tokenRef.current;
     setSpeakingIndex(cellIndex);
-    stopRef.current = playBilingualSequence(
-      [{ sanskrit: cell.sanskrit, english: cell.english }],
-      {
+    stopRef.current = playBilingualSequence([{ sanskrit: cell.sanskrit }], {
         gapMs: 250,
         onItem: () => {
           if (tokenRef.current !== token) return;
@@ -175,7 +172,7 @@ const LatFormsTable: React.FC<LatFormsTableProps> = ({ entry }) => {
             aria-label={
               playingAll
                 ? `Pause. ${PLAY_ALL_LABEL}`
-                : `Play all nine forms in Sanskrit and English`
+                : `Play all nine forms in Sanskrit`
             }
           >
             {playingAll ? '⏸ Pause' : '▶ Play all'}

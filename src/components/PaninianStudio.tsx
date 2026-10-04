@@ -309,18 +309,14 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
 
   const playCells = useMemo(() => {
     if (activeLakara === 'krt' || !conjugationTable) return [];
-    const list: { sanskrit: string; english: string }[] = [];
-    conjugationTable.forEach((row, pIdx) => {
-      row.forEach((cell, nIdx) => {
-        const gloss = personNumberEnglish(currentDhatu, pIdx, nIdx).trim();
-        list.push({
-          sanskrit: cell.full,
-          english: gloss || (cell.meaningEn || '').trim(),
-        });
+    const list: { sanskrit: string }[] = [];
+    conjugationTable.forEach((row) => {
+      row.forEach((cell) => {
+        list.push({ sanskrit: cell.full });
       });
     });
     return list;
-  }, [conjugationTable, activeLakara, currentDhatu]);
+  }, [conjugationTable, activeLakara]);
 
   const playCellsRef = useRef(playCells);
   playCellsRef.current = playCells;
@@ -396,7 +392,10 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
     resumeIndexRef.current = index;
     setPlayingAll(true);
     setSpeakingIndex(index);
-    stopPlayRef.current = playBilingualSequence(slice, {
+    // Sanskrit only. English stays on the cell as text and is never spoken.
+    stopPlayRef.current = playBilingualSequence(
+      slice.map(({ sanskrit }) => ({ sanskrit })),
+      {
       gapMs: 250,
       onItem: (itemIndex) => {
         if (playTokenRef.current !== token) return;
@@ -436,7 +435,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
     }
     const token = playTokenRef.current;
     setSpeakingIndex(cellIndex);
-    stopPlayRef.current = playBilingualSequence([{ sanskrit: cell.sanskrit, english: cell.english }], {
+    stopPlayRef.current = playBilingualSequence([{ sanskrit: cell.sanskrit }], {
       gapMs: 250,
       onItem: () => {
         if (playTokenRef.current !== token) return;
@@ -802,7 +801,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                   className="dp-playall dp-playall--active"
                   onClick={toggleLakaraPlayAll}
                   aria-pressed={true}
-                  aria-label="Pause. Reads the nine forms in Sanskrit and English"
+                  aria-label="Pause. Reads the nine forms in Sanskrit"
                 >
                   ⏸ Pause
                 </button>
@@ -822,8 +821,8 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                     aria-pressed={playingAll}
                     aria-label={
                       playingAll
-                        ? 'Pause. Reads the nine forms in Sanskrit and English'
-                        : 'Play all nine forms in Sanskrit and English'
+                        ? 'Pause. Reads the nine forms in Sanskrit'
+                        : 'Play all nine forms in Sanskrit'
                     }
                   >
                     {playingAll ? '⏸ Pause' : '▶ Play all'}
@@ -878,7 +877,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                         {row.map((cell, nIdx) => {
                           const cellIndex = pIdx * 3 + nIdx;
                           const speaking = speakingIndex === cellIndex;
-                          const gloss = playCells[cellIndex]?.english || cell.meaningEn;
+                          const personSentence = personNumberEnglish(currentDhatu, pIdx, nIdx).trim();
                           return (
                           <td
                             key={`${pIdx}-${nIdx}`}
@@ -893,12 +892,12 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                                 className="dp-audio-mini"
                                 onClick={() => speakLakaraCell(cellIndex)}
                                 title={`Pronounce ${cell.full}`}
-                                aria-label={`${cell.full}: ${gloss}`}
+                                aria-label={`Pronounce ${cell.full}`}
                               >
                                 🔊
                               </button>
                             </div>
-                            <div className="dp-cell-meaning">{cell.meaningHi}</div>
+                            <div className="dp-cell-meaning">{isCausative ? cell.meaningHi : personSentence}</div>
                             <div className="dp-cell-formula">
                               <span className="dp-f-root">{cell.rootPart}</span>
                               <span className="dp-f-suffix">+{cell.suffixPart}</span>
@@ -913,7 +912,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
               </div>
 
               <div className="dp-table-legend">
-                <span>💡 <strong>Color Breakdown:</strong> <span className="dp-legend-root">Root / Stem (धातु/अङ्ग)</span> + <span className="dp-legend-suffix">Tiṅ Suffix (प्रत्यय)</span>. Tap 🔊 on any cell to hear that form in Sanskrit, then English.</span>
+                <span>💡 <strong>Color Breakdown:</strong> <span className="dp-legend-root">Root / Stem (धातु/अङ्ग)</span> + <span className="dp-legend-suffix">Tiṅ Suffix (प्रत्यय)</span>. Tap 🔊 on any cell to hear that form in Sanskrit.</span>
               </div>
             </div>
             </>
