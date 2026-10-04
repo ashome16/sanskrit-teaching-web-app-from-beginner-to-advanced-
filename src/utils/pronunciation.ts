@@ -566,6 +566,168 @@ export const playSequence = (
   return stop;
 };
 
+export type BilingualSpeechItem = { sanskrit: string; english?: string };
+
+type BilingualStep = {
+  /** Index in the caller's items array (not the flattened step list). */
+  itemIndex: number;
+  kind: 'sa' | 'en';
+  text: string;
+  /** First spoken step of this item — highlight starts here. */
+  notify: boolean;
+};
+
+/**
+ * English glosses must not go through speakConfigured / isSanskritText.
+ * That filter drops Latin sentences, and "He/She/It" would miss the English voice.
+ * Rate 1, pitch 1, en-IN when no English cue voice is installed.
+ */
+const speakEnglishGloss = (text: string, onEnd?: () => void): void => {
+  if (pronunciationMuted) return;
+  const voices = window.speechSynthesis.getVoices();
+  const voice = pickEnglishCueVoice(voices);
+  const utterance = new SpeechSynthesisUtterance(text);
+  if (voice) {
+    utterance.voice = voice;
+    utterance.lang = voice.lang || 'en-IN';
+  } else {
+    utterance.voice = null;
+    utterance.lang = 'en-IN';
+  }
+  utterance.rate = 1;
+  utterance.pitch = 1;
+  utterance.volume = 1;
+  applySafeProsody(utterance);
+  if (onEnd) {
+    utterance.onend = onEnd;
+    utterance.onerror = onEnd;
+  }
+  window.speechSynthesis.speak(utterance);
+};
+
+const bilingualSteps = (items: BilingualSpeechItem[]): BilingualStep[] => {
+  const steps: BilingualStep[] = [];
+  items.forEach((item, itemIndex) => {
+    const sanskrit = (item.sanskrit ?? '').replace(/\s+/g, ' ').trim();
+    const english = (item.english ?? '').replace(/\s+/g, ' ').trim();
+    // Bare daṇḍa / verse-number tokens are punctuation, never spoken.
+    const sanskritSpeak = sanskrit && !isDandaOrVerseNumberToken(sanskrit) ? sanskrit : '';
+    const first = steps.length;
+    if (sanskritSpeak) {
+      steps.push({ itemIndex, kind: 'sa', text: sanskritSpeak, notify: false });
+    }
+    if (english) {
+      steps.push({ itemIndex, kind: 'en', text: english, notify: false });
+    }
+    if (steps.length > first) steps[first].notify = true;
+  });
+  return steps;
+};
+
+/**
+ * Speak each item as Devanagari (Hindi, plain) then its English gloss.
+ * Returns stop(), which cancels timers and any in-flight speech.
+ * A short gap separates Sanskrit from English and one item from the next.
+ * Empty / whitespace English is skipped. Does not change playPronunciation or playSequence.
+ */
+export const playBilingualSequence = (
+  items: BilingualSpeechItem[],
+  options?: {
+    gapMs?: number;
+    onItem?: (index: number) => void;
+    onDone?: () => void;
+  },
+): (() => void) => {
+  const gapMs = options?.gapMs ?? 250;
+  stopPronunciation();
+  const gen = speakGeneration;
+
+  if (pronunciationMuted || typeof window === 'undefined' || !window.speechSynthesis) {
+    options?.onDone?.();
+    return () => {
+      stopPronunciation();
+    };
+  }
+
+  const steps = bilingualSteps(items);
+  if (!steps.length) {
+    options?.onDone?.();
+    return () => {
+      stopPronunciation();
+    };
+  }
+
+  let cancelled = false;
+  let timer: ReturnType<typeof setTimeout> | null = null;
+  let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
+  let index = 0;
+  let settledKey = '';
+
+  const clearTimer = () => {
+    if (timer !== null) {
+      clearTimeout(timer);
+      timer = null;
+    }
+    if (fallbackTimer !== null) {
+      clearTimeout(fallbackTimer);
+      fallbackTimer = null;
+    }
+  };
+
+  const stop = () => {
+    cancelled = true;
+    clearTimer();
+    stopPronunciation();
+  };
+
+  const speakNext = () => {
+    if (cancelled) return;
+    if (gen !== speakGeneration) {
+      cancelled = true;
+      clearTimer();
+      return;
+    }
+    if (index >= steps.length) {
+      options?.onDone?.();
+      return;
+    }
+    const step = steps[index];
+    const stepKey = String(index);
+    index += 1;
+    if (step.notify) options?.onItem?.(step.itemIndex);
+
+    const after = () => {
+      if (cancelled || settledKey === stepKey) return;
+      if (gen !== speakGeneration) {
+        cancelled = true;
+        clearTimer();
+        return;
+      }
+      settledKey = stepKey;
+      clearTimer();
+      timer = setTimeout(speakNext, gapMs);
+    };
+
+    // Chrome/Edge sometimes skip onend. English glosses are full sentences, so
+    // the bound grows with the text (same idea as playSequence) and cannot stall.
+    const perChar = step.kind === 'en' ? 220 : 420;
+    const fallbackMs = Math.max(step.kind === 'en' ? 2500 : 1800, step.text.length * perChar);
+    fallbackTimer = setTimeout(after, fallbackMs);
+    if (step.kind === 'sa') {
+      // plain=true: Hindi voice, Devanagari as written, pitch 1, no letter MP3s or roman cues.
+      speakConfigured(step.text, after, true);
+    } else {
+      speakEnglishGloss(step.text, after);
+    }
+  };
+
+  void whenVoicesReady().then(() => {
+    if (cancelled || gen !== speakGeneration) return;
+    speakNext();
+  });
+  return stop;
+};
+
 /** Lesson reader: speak Sanskrit cardinals already written in Devanagari. */
 export const playLessonCardinals = (words: string[]): void => {
   playSequence(words, { plainDevanagari: true, gapMs: 80 });

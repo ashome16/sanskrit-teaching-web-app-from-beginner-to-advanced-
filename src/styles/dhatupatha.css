@@ -775,6 +775,27 @@
   gap: 0.4rem;
 }
 
+.dp-lat-title {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+/* Laṭ header only — do not restyle the Dhātupāṭha toolbar .dp-playall. */
+.dp-lat-title .dp-playall {
+  min-height: 44px;
+  min-width: 44px;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+  .dp-lat-title .dp-playall {
+    width: auto;
+  }
+}
+
 .dp-lat-source {
   font-size: 0.72rem;
   font-weight: 700;
@@ -929,6 +950,19 @@
   background: #e6f7f5;
   border-color: #99d5cd;
   outline: none;
+}
+
+.dp-lat-cell.dp-lat-cell--speaking,
+.dp-lat-cell.dp-lat-cell--speaking:hover,
+.dp-lat-cell.dp-lat-cell--speaking:focus-visible {
+  background: #fef3c7;
+  border-color: #d97706;
+  box-shadow: inset 0 0 0 1px #d97706;
+  outline: none;
+}
+
+.dp-lat-cell--speaking .dp-lat-speak {
+  opacity: 1;
 }
 
 .dp-lat-form {
